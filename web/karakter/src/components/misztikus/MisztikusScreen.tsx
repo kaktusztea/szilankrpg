@@ -13,12 +13,13 @@ import { ŐsiNyelvSection } from './OsiNyelvSection';
 import { MisztikusFortélyokSection } from './MisztikusFortelyokSection';
 import { MisztikusPopups } from './MisztikusPopups';
 import { HINT_DURATION_MS } from '../../ui-constants';
+import { useHint } from '../harcertekek/hooks/useHint';
 import './MisztikusScreen.css';
 
 export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, fortélyok, setFortélyok, gameMode }: MisztikusScreenProps) {
   const konstansok = data.konstansok;
   const { state: popups, actions } = useMisztikusPopups();
-  const [hint, setHint] = useState('');
+  const { hint, showHint } = useHint(HINT_DURATION_MS);
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
 
   // Aura computation
@@ -92,10 +93,6 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
     if (popups.misztFokTarget === null) return;
     setFortélyok(prev => prev.map((f, j) => j === popups.misztFokTarget ? { ...f, fok } : f));
     actions.closeFok();
-  }
-  function showHint(msg: string) {
-    setHint(msg);
-    setTimeout(() => setHint(''), HINT_DURATION_MS);
   }
 
   return (

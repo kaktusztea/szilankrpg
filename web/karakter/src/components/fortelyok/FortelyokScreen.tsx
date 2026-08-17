@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import type { FortelyokScreenProps, DeleteTarget } from './types';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport, calcSzabadFelvettKp } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
@@ -6,12 +6,12 @@ import { FokPickerPopup, MultiPicker, SzabadTypePickerPopup, EgyediFortelyPopup 
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { useFortelyActions } from './useFortelyActions';
 import { HINT_DURATION_MS } from '../../ui-constants';
+import { useHint } from '../harcertekek/hooks/useHint';
 import './FortelyokScreen.css';
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, karakter, setKarakter, tsz, fegyverNevek, nyelvtanulásSzint, képzettségek }: FortelyokScreenProps) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
-  const [hint, setHint] = useState('');
-  const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { hint, showHint } = useHint(HINT_DURATION_MS);
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
 
@@ -30,12 +30,6 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
   const defsByGroup = useMemo(() => buildDefsByGroup(data.fortelySummaries), [data]);
 
   useEffect(() => { setInfoTarget(null); }, [gameMode]);
-
-  function showHint(msg: string, duration = HINT_DURATION_MS) {
-    setHint(msg);
-    if (hintTimer.current) clearTimeout(hintTimer.current);
-    hintTimer.current = setTimeout(() => setHint(''), duration);
-  }
 
   return (
     <div className="screen fort-screen">

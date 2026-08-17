@@ -74,6 +74,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     setUndoStack([]);
     setTestMode(false);
     setIsDirty(true);
+    // WORKAROUND: state-settle-delay — 100ms delay lets React re-render with new karakter before opening overlay
     setTimeout(() => setOverlay('showSlotList', true), 100);
   }
 

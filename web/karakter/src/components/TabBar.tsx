@@ -22,6 +22,8 @@ export function TabBar({ tabs, activeTab, setActiveTab }: Props) {
     const centerX = btn.offsetLeft + btn.offsetWidth / 2;
     ind.style.transform = `translateX(${centerX - size / 2}px)`;
     if (!indicatorInit.current) {
+      // WORKAROUND: initial-position-no-transition — delay enabling CSS transition until after
+      // first position is set, preventing indicator from animating from origin on mount
       requestAnimationFrame(() => {
         if (ind) ind.style.transition = 'transform 0.2s ease-out';
         indicatorInit.current = true;

@@ -1283,3 +1283,17 @@ App mount-kor automatikusan fut, ha `window.location.hash` nem üres és legalá
 | Végül | hash törlése: `history.replaceState(null, '', window.location.pathname + window.location.search)` |
 
 Confirm dialog stílus: az app meglévő overlay/modal stílusát követi (sötét háttér, centered box, 3 gomb sor).
+
+---
+
+## Workaround regiszter
+
+Kódban `// WORKAROUND: <id>` kommenttel jelölve. Mindegyik platform-quirk vagy timing-issue, nem alkalmazás-logikai hiba.
+
+| ID | Fájl | Leírás | Miért szükséges |
+|----|------|--------|-----------------|
+| `iOS-ghost-click` | `hooks/useOverlays.ts` | 400ms guard overlay backdrop dismiss-nél | iOS touchend→click event átmegy az alatta lévő elemre |
+| `double-rAF-paint` | `components/SlotList.tsx` (2 hely) | Double requestAnimationFrame a save/download előtt | Natív file dialog blokkolja a main thread-et, a spinner paint 2 frame-et igényel |
+| `state-settle-delay` | `hooks/useKarakterActions.ts` | 100ms setTimeout duplikálás után overlay megnyitásra | React state update után kell az UI-nak frissülnie mielőtt az overlay renderelődne |
+| `tab-render-delay` | `components/harc/HarcScreen.tsx` | 200ms setTimeout scrollIntoView előtt tab váltásnál | Tab transition/animáció alatt a célelem még nem DOM-ban |
+| `initial-position-no-transition` | `components/TabBar.tsx` | rAF delay a CSS transition engedélyezésére | Indikátor ne animáljon origóból mount-kor, csak pozíció beállítás után |

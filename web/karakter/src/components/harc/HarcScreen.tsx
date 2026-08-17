@@ -148,6 +148,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
   const handleNavigateToFt = useCallback(() => {
     onNavigate?.('tulajdonsagok');
+    // WORKAROUND: tab-render-delay — 200ms wait for tab transition to complete before scrolling
     setTimeout(() => {
       document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
     }, 200);

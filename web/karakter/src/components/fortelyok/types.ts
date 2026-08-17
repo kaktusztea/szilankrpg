@@ -35,7 +35,7 @@ export interface FortelyCsoportProps {
   onToggleInfo: (globalIdx: number) => void;
   onFokChange: (globalIdx: number, fok: number) => void;
   onRemove: (idx: number) => void;
-  onHint: (msg: string, duration?: number) => void;
+  onHint: (msg: string) => void;
   infoTarget: string | null;
 }
 
@@ -56,7 +56,7 @@ export interface FortelyRowProps {
   fegyverHarcmodorNév?: string;
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
-  onHint: (msg: string, duration?: number) => void;
+  onHint: (msg: string) => void;
   onRemove: () => void;
 }
 

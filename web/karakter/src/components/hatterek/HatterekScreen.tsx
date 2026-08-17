@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import type { GameData } from '../../engine/data-types';
 import type { Karakter } from '../../engine/types';
 import type { UndoPatch } from '../../hooks/useUndo';
@@ -7,6 +7,7 @@ import { TagCloud } from './TagCloud';
 import { KarmaCloud } from './KarmaCloud';
 import { FreeTextPopup } from './FreeTextPopup';
 import { MAX_AZONOS_HÁTTÉR, HINT_DURATION_MS } from '../../ui-constants';
+import { useHint } from '../harcertekek/hooks/useHint';
 import './HatterekScreen.css';
 
 interface Props {
@@ -25,14 +26,7 @@ function baseName(entry: string): string {
 
 export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode, onNavigate }: Props) {
   const [popup, setPopup] = useState<{ field: HátterField; elem: string } | null>(null);
-  const [hint, setHint] = useState('');
-  const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  function showHint(msg: string) {
-    setHint(msg);
-    if (hintTimer.current) clearTimeout(hintTimer.current);
-    hintTimer.current = setTimeout(() => setHint(''), HINT_DURATION_MS);
-  }
+  const { hint, showHint } = useHint(HINT_DURATION_MS);
 
   function updateField(field: HátterField, updater: (arr: string[]) => string[], undoMsg: string) {
     pushUndo(undoMsg, [{ field: 'hátterek', prev: karakter.hátterek }]);

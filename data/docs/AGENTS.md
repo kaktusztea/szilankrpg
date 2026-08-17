@@ -59,6 +59,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 - Értékválasztó: kiválasztás = bezárás (nincs OK gomb)
 - Dark theme, mobil-first, LF sorvégek
 - Tab bar: tükrözött renderelés (reverse), swipe invertált
+- Workaround jelölés: `// WORKAROUND: <id> — <leírás>`. Regiszter: `gui_spec.md` → „Workaround regiszter"
 
 ### Karakter adatmodell
 - Schema v2 (`data/schemas/karakter.yaml`)

@@ -60,6 +60,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
     if (!isDesktop) { onSaveFile(uid); return; }
     if (isSaving) return;
     setSavingId(uid);
+    // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking native file dialog
     requestAnimationFrame(() => requestAnimationFrame(() => onSaveFile(uid)));
   }
 
@@ -90,7 +91,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
           onClick={() => {
             if (newDisabled || isSaving) return;
             setSavingId('__backup__');
-            // Let the spinner paint before the (possibly blocking) save generation + dialog.
+            // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking save dialog
             requestAnimationFrame(() => requestAnimationFrame(() => onSave()));
           }}>{savingId === '__backup__' ? <span className="slot-btn-spinner" /> : '📦'}</button>
       </div>

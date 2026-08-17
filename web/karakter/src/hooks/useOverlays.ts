@@ -57,9 +57,9 @@ export function useOverlays() {
     function handler(e: MouseEvent) {
       const el = e.target as HTMLElement;
       if (el.classList.contains('kep-prompt-overlay')) {
-        // ponytail: 400ms guard drops iOS ghost click-through onto the newly
-        // exposed backdrop. Ceiling: two deliberate backdrop taps <400ms apart
-        // register as one — acceptable for modal overlays.
+        // WORKAROUND: iOS-ghost-click — 400ms guard prevents iOS ghost click-through
+        // onto the newly exposed backdrop after overlay dismiss. Ceiling: two deliberate
+        // backdrop taps <400ms apart register as one — acceptable for modal overlays.
         const now = Date.now();
         if (now - lastBackdropDismiss.current < 400) return;
         lastBackdropDismiss.current = now;
