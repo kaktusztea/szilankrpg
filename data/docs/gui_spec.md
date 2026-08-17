@@ -462,7 +462,11 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 
 - CÉ: fehér szöveg, `Yx` = támadások/kör
 - VÉ: zöld (`#4caf50`) ha VÉ ≤ CÉ+1 (tuti találat), narancssárga (`#ffa726`) normál, piros (`#e53935`) ha lehetetlen (VÉ-CÉ > 20)
-- **Célzó dobás** (Játék mód): a CÉ/VÉ box kattintható (cursor: pointer). Kattintásra `DobasPopup` nyílik (`CÉ + k20 vs VÉ`): nagy eredmény szám + „vs" + VÉ szám (Tulajdonságpróba stílus — két nagy szám egymás mellett), alatta részlet: `CÉ (X) + k20 (Y)`, alatta Találat (zöld) / Nem talált (piros). Mellé katt / Escape bezár.
+- **Célzó dobás** (Játék mód): a CÉ/VÉ box kattintható (cursor: pointer). Kattintásra `CélzóDobasPopup` nyílik (TamadoDobasPopup mintájára, két fázis):
+  - **Fázis 1:** Megjegyzések (ha vannak) → ElőnyPicker (default: aktív hatásokból számolt nettó szint) → Hatások lista (aktív helyzetek/taktikák/fortélyok `cé_dobás` hatásai, badge + forrás) → Dobás gomb + ManualDicePicker (🎲)
+  - **Fázis 2:** Eredmény vs VÉ kijelzés (két nagy szám „vs"-sel), alatta részlet: `CÉ (X) + k20 [rolls] → Y`, alatta Találat (zöld) / Nem talált (piros).
+  - Hatásforrások: harci helyzetek, taktikák (fokok), státuszok, fortélyok — mind aminek `cé_dobás` célú Előny/Hátrány hatása van.
+  - Mellé katt / Escape bezár.
 - Szorzó×Cella: szürke (`#999`), nem kattintható
 - Táv: zöld keret + zöld érték, kattintható → Távolság popup (−/+ gombok, cella kijelzés)
 

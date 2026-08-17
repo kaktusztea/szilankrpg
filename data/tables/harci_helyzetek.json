@@ -57,12 +57,17 @@
   },
   {
     "név": "Csúszós talaj",
-    "infó": "Hátrány-1 TÉ dobásra.",
+    "infó": "Hátrány-1 Támadó dobásra.",
     "hatások": [
       {
         "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
+      },
+      {
+        "operátor": "hátrány",
+        "érték": -1,
+        "cél": "cé_dobás"
       }
     ],
     "id": "csúszós_talaj",
@@ -74,12 +79,17 @@
   },
   {
     "név": "Elvesztett egyensúly",
-    "infó": "Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja.",
+    "infó": "Hátrány-1 Támadó dobásra, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja.",
     "hatások": [
       {
         "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
+      },
+      {
+        "operátor": "hátrány",
+        "érték": -1,
+        "cél": "cé_dobás"
       },
       {
         "operátor": "szöveges",
@@ -105,14 +115,7 @@
   {
     "név": "Fegyverrántás váratlanul",
     "infó": "KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza.",
-    "hatások": [
-      {
-        "operátor": "előny",
-        "érték": 1,
-        "cél": "té_dobás",
-        "megjegyzés": "első csapás"
-      }
-    ],
+    "hatások": [],
     "id": "fegyverrántás",
     "csoport": "semleges",
     "rejtett": false,
@@ -474,12 +477,17 @@
   },
   {
     "név": "Gyengébb kéz",
-    "infó": "Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja.",
+    "infó": "Hátrány-1 Támadó dobásra. Kétkezesség fortély kioltja.",
     "hatások": [
       {
         "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
+      },
+      {
+        "operátor": "hátrány",
+        "érték": -1,
+        "cél": "cé_dobás"
       }
     ],
     "id": "gyengébb_kéz",
@@ -529,12 +537,17 @@
   },
   {
     "név": "Tűz ruhán - ég",
-    "infó": "Hátrány-1 TÉ, (-5+k20) SP/kör. Eloltás: 1 kör.",
+    "infó": "Hátrány-1 Támadó dobásra, (-5+k20) SP/kör. Eloltás: 1 kör.",
     "hatások": [
       {
         "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
+      },
+      {
+        "operátor": "hátrány",
+        "érték": -1,
+        "cél": "cé_dobás"
       }
     ],
     "id": "tűz_ruhán_1",
@@ -548,12 +561,17 @@
   },
   {
     "név": "Tűz ruhán - lángol",
-    "infó": "Hátrány-2 TÉ, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség.",
+    "infó": "Hátrány-2 Támadó dobásra, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség.",
     "hatások": [
       {
         "operátor": "hátrány",
         "érték": -2,
         "cél": "té_dobás"
+      },
+      {
+        "operátor": "hátrány",
+        "érték": -2,
+        "cél": "cé_dobás"
       }
     ],
     "id": "tűz_ruhán_2",
@@ -629,12 +647,22 @@
   },
   {
     "név": "Vér elvakít",
-    "infó": "Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés.",
+    "infó": "Hátrány-1 Támadó dobásra, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés.",
     "hatások": [
       {
         "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
+      },
+      {
+        "operátor": "hátrány",
+        "érték": -1,
+        "cél": "cé_dobás"
+      },
+      {
+        "operátor": "hátrány",
+        "érték": -1,
+        "cél": "érzék_látás"
       }
     ],
     "id": "vér_elvakít",
@@ -749,8 +777,14 @@
   },
   {
     "név": "Lövés reflexből",
-    "infó": "Váratlan lövés/hajítás. Lövés reflexből fejlesztése fortély kioltja a CÉ büntetést.",
-    "hatások": [],
+    "infó": "Váratlan lövés/hajítás. Hátrány-1 CÉ dobásra. Lövés reflexből fejlesztése fortély kioltja.",
+    "hatások": [
+      {
+        "operátor": "hátrány",
+        "érték": -1,
+        "cél": "cé_dobás"
+      }
+    ],
     "id": "lövés_reflexből",
     "csoport": "távharc",
     "rejtett": false,

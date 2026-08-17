@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
 import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
+import { collectCéDobásInfo, netCéElőnySzint } from './tavharc-roll-info';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
 import { TavharcGameSelector } from './TavharcGameSelector';
@@ -11,8 +12,7 @@ import { TavharcKepzettsegekSection } from './TavharcKepzettsegekSection';
 import { PopupOverlay } from '../PopupOverlay';
 import { SzintGrid } from '../harcertekek/PickerComponents';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
-import { DobasPopup } from '../harc/DobasPopup';
-import { rollK20 } from '../../engine/dice';
+import { CélzóDobasPopup } from './CelzoDobasPopup';
 import './TavharcScreen.css';
 
 export function TavharcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, képzettségek, setKépzettségek, gameMode }: TavharcProps) {
@@ -29,8 +29,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   // --- Idea (local state, not persisted) ---
   const [idea, setIdea] = useState(0);
 
-  // --- Célzó dobás ---
-  const [céDobás, setCéDobás] = useState<{ alap: number; eredmény: number; vé: number } | null>(null);
+  // --- Célzó dobás popup ---
+  const [showCéDobás, setShowCéDobás] = useState(false);
 
   // --- CÉ bontás ---
   const fortélyCÉ = getFortélyCÉ(k, data, session, tfPeldany?.alap);
@@ -120,7 +120,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           cé={bontás.cé} vé={vé} támadásLabel={támadásLabel} szorzóÖsszeg={szorzóÖsszeg} cella={cella} távolság={távolság}
           szorzok={szorzok} szorzóState={szorzóState} onSzorzóChange={onSzorzóChange}
           onTávolságPopup={() => setPopup(s => ({ ...s, távolságPopup: true }))}
-          onCéDobás={() => setCéDobás({ alap: bontás.cé, eredmény: bontás.cé + rollK20(), vé })}
+          onCéDobás={() => setShowCéDobás(true)}
           karakter={k} konstansok={konstansok} tavfegyverek={data.tavfegyverek}
         />
       )}
@@ -166,16 +166,19 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         />
       )}
 
-      {céDobás !== null && (
-        <DobasPopup
-          cím="Célzó dobás"
-          alapLabel="CÉ"
-          alap={céDobás.alap}
-          eredmény={céDobás.eredmény}
-          vsCélszám={céDobás.vé}
-          onClose={() => setCéDobás(null)}
-        />
-      )}
+      {showCéDobás && (() => {
+        const céInfo = collectCéDobásInfo(session, k, data);
+        return (
+          <CélzóDobasPopup
+            cé={bontás.cé}
+            vé={vé}
+            céHatások={céInfo.céHatások}
+            céMegjegyzések={céInfo.céMegjegyzések}
+            defaultSzint={netCéElőnySzint(céInfo.céHatások)}
+            onClose={() => setShowCéDobás(false)}
+          />
+        );
+      })()}
     </div>
   );
 }
