@@ -154,7 +154,7 @@ function App() {
     setLatestSnapshot(null);
     setViewingCheckpointId(null);
     setViewingMode(false);
-    setOverlay('toast', { msg: 'Verzió duplikálva', type: 'success' });
+    setOverlay('toast', { msg: 'Új karakter példányba duplikálva', type: 'success' });
   }
 
   if (error) return <div className="error">Hiba: {error}</div>;

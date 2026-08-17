@@ -56,6 +56,7 @@ export function CheckpointSection({ karakter, setKarakter, onViewCheckpoint }: P
             placeholder="Verzió neve (max 20)"
             value={név}
             onChange={e => setNév(e.target.value.slice(0, MAX_CHECKPOINT_NÉV))}
+            onKeyDown={e => { if (e.key === 'Enter') handleCreate(); }}
             maxLength={MAX_CHECKPOINT_NÉV}
             autoFocus
           />
