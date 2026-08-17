@@ -92,7 +92,7 @@ export function getTaktikaMods(t: { név: string; fok?: number }, data: GameData
   if (!def) return [];
   const mods: string[] = [];
   if (def.fokozatos && def.fokok && t.fok != null) {
-    const fokDef = interpolateFokDef(def.fokok, t.fok, !!def.fortély_bővítés);
+    const fokDef = interpolateFokDef(def.fokok, t.fok, !!def.fortély_bővítés || !!def.skálázható);
     if (fokDef) {
       for (const [k, v] of Object.entries(fokDef)) {
         if (k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`);

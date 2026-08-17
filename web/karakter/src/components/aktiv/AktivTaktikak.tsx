@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../../engine/types';
 import type { UndoPatch } from '../../hooks/useUndo';
-import { fmtHatás } from '../formatters';
+import { fmtHatás, fmtCode } from '../formatters';
 import { isTaktikaAllowed, getTaktikaMods } from './AktivHelpers';
 import { PickerOverlay } from './PickerOverlay';
 import { TaktikaPickerList } from './TaktikaPickerList';
@@ -15,10 +15,11 @@ interface Props {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   taktikaHatásPerElem: { név: string; hatások: any[] }[];
+  taktikaFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
   eseményNév: (id: string) => string;
 }
 
-export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, taktikaHatásPerElem, eseményNév }: Props) {
+export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, taktikaHatásPerElem, taktikaFortélyok, eseményNév }: Props) {
   const [showPicker, setShowPicker] = useState(false);
   const [fokválasztó, setFokválasztó] = useState<string | null>(null);
 
@@ -65,27 +66,35 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
           const mods = getTaktikaMods(t, data);
           const hatásLabel = `${t.név}${t.fok != null ? ` (${t.fok})` : ''}`;
           const hatásEntry = taktikaHatásPerElem.find(h => h.név === hatásLabel);
+          const kötöttFortélyok = taktikaFortélyok.get(t.név) || [];
           return (
-            <div key={i} className={`item-row aktiv-taktika-item${def?.fokozatos ? ' aktiv-taktika-row-clickable' : ''}`}
-              onClick={() => { if (def?.fokozatos) { setFokválasztó(t.név); setShowPicker(true); } }}>
-              <div className="aktiv-flex-1">
-                <div className="aktiv-taktika-header">
-                  <span>
-                    <strong className="aktiv-taktika-name">{hatásLabel}:</strong>
-                    {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.join(', ')} ✔</span>}
-                  </span>
-                  <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}>✕</button>
-                </div>
-                {hatásEntry && (
-                  <div className="aktiv-taktika-hatas">
-                    {hatásEntry.hatások.map((h: any, j: number) => {
-                      const txt = fmtHatás({ operátor: h.hatás ?? h.operátor, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
-                      return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
-                    })}
+            <div key={i} className="aktiv-flex-col">
+              <div className={`item-row aktiv-taktika-item${def?.fokozatos ? ' aktiv-taktika-row-clickable' : ''}`}
+                onClick={() => { if (def?.fokozatos) { setFokválasztó(t.név); setShowPicker(true); } }}>
+                <div className="aktiv-flex-1">
+                  <div className="aktiv-taktika-header">
+                    <span>
+                      <strong className="aktiv-taktika-name">{hatásLabel}:</strong>
+                      {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.join(', ')} ✔</span>}
+                    </span>
+                    <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}>✕</button>
                   </div>
-                )}
-                {def?.megjegyzés && <div className="aktiv-taktika-note">{def.megjegyzés}</div>}
+                  {hatásEntry && (
+                    <div className="aktiv-taktika-hatas">
+                      {hatásEntry.hatások.map((h: any, j: number) => {
+                        const txt = fmtHatás({ operátor: h.hatás ?? h.operátor, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
+                        return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
+                      })}
+                    </div>
+                  )}
+                  {def?.megjegyzés && <div className="aktiv-taktika-note">{def.megjegyzés}</div>}
+                </div>
               </div>
+              {kötöttFortélyok.map((kf, j) => (
+                <div key={j} className={`item-row aktiv-helyzet-fortely-sor ${kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
+                  <span>→ {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}</span>
+                </div>
+              ))}
             </div>
           );
         })}

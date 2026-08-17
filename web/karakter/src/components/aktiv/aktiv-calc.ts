@@ -17,6 +17,7 @@ export interface AktivCalcData {
   taktikaHatásPerElem: TaktikaHatásPerElem[];
   fortélyEmlékeztetők: FortélyEmlékeztető[];
   helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>;
+  taktikaFortélyok: Map<string, HelyzetFortélyEntry[]>;
   manőverBónuszok: ManőverBónusz[];
   alapesetekFiltered: AktívAlapeset[];
   eseményNév: (id: string) => string;
@@ -78,9 +79,10 @@ function extractHelyzetKötés(feltétel: unknown): string {
 
 export function calcFortélyPool(
   karakter: Karakter, data: GameData, aktívFeltételek: Set<string>,
-): { fortélyEmlékeztetők: FortélyEmlékeztető[]; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[] } {
+): { fortélyEmlékeztetők: FortélyEmlékeztető[]; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; taktikaFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[] } {
   const fortélyEmlékeztetők: FortélyEmlékeztető[] = [];
   const helyzetFortélyok = new Map<string, HelyzetFortélyEntry[]>();
+  const taktikaFortélyok = new Map<string, HelyzetFortélyEntry[]>();
   const manőverBónuszok: ManőverBónusz[] = [];
 
   for (const kf of karakter.fortélyok) {
@@ -90,8 +92,9 @@ export function calcFortélyPool(
     if (!fokDef) continue;
 
     let helyzetKötés = '';
+    let taktikaKötés = '';
 
-    // Process modifiers: collect manőver bónusz, előny/hátrány, helyzet kötés
+    // Process modifiers: collect manőver bónusz, előny/hátrány, helyzet/taktika kötés
     if (fokDef.módosítók && Array.isArray(fokDef.módosítók) && fokDef.módosítók.length > 0) {
       for (const mod of fokDef.módosítók) {
         if (!isFeltételAktív(mod.feltétel, aktívFeltételek)) continue;
@@ -102,20 +105,29 @@ export function calcFortélyPool(
 
         const kötés = extractHelyzetKötés(mod.feltétel);
         if (kötés) helyzetKötés = kötés;
+
+        if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('taktika:')) {
+          taktikaKötés = mod.feltétel.slice(8);
+        }
       }
     }
 
-    // Categorize: helyzet-bound vs emlékeztető
+    // Categorize: helyzet-bound vs taktika-bound vs emlékeztető
     if (helyzetKötés) {
       const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
       const arr = helyzetFortélyok.get(hNév) || [];
       arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
       helyzetFortélyok.set(hNév, arr);
+    } else if (taktikaKötés) {
+      const tNév = data.taktikak.find(d => d.feltétel_kulcs === `taktika:${taktikaKötés}`)?.név || taktikaKötés;
+      const arr = taktikaFortélyok.get(tNév) || [];
+      arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`taktika:${taktikaKötés}`) });
+      taktikaFortélyok.set(tNév, arr);
     } else if (def.emlékeztető && fokDef.hatás && fokDef.hatás.length > 0) {
       fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
     }
   }
-  return { fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok };
+  return { fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok };
 }
 
 export function calcAlapesetPool(
@@ -152,8 +164,8 @@ export function calcAktivData(data: GameData, karakter: Karakter, session: Sessi
     return data.esemenyek.find(e => e.id === id)?.név ?? id;
   };
 
-  const { fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok } = calcFortélyPool(karakter, data, aktívFeltételek);
+  const { fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok } = calcFortélyPool(karakter, data, aktívFeltételek);
   const alapesetekFiltered = calcAlapesetPool(data, karakter, session, aktívFeltételek, helyzetFortélyok);
 
-  return { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév };
+  return { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév };
 }

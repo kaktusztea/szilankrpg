@@ -7,7 +7,7 @@ import { AktivStatuszok } from './AktivStatuszok';
 import './AktivScreen.css';
 
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
-  const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, alapesetekFiltered, eseményNév } = calcAktivData(data, karakter, session);
+  const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, alapesetekFiltered, eseményNév } = calcAktivData(data, karakter, session);
 
   return (
     <div className="screen aktiv-screen">
@@ -16,7 +16,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
       <AktivHatasPool fortélyEmlékeztetők={fortélyEmlékeztetők} alapesetekFiltered={alapesetekFiltered} />
 
       <AktivTaktikak data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
-        taktikaHatásPerElem={taktikaHatásPerElem} eseményNév={eseményNév} />
+        taktikaHatásPerElem={taktikaHatásPerElem} taktikaFortélyok={taktikaFortélyok} eseményNév={eseményNév} />
 
       <AktivHelyzetek data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
         helyzetFortélyok={helyzetFortélyok} />

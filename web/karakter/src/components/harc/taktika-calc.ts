@@ -9,7 +9,7 @@ export function calcTaktikaMods(session: Session, data: GameData): Record<string
     const def = data.taktikak.find(t => t.név === at.név);
     if (!def) continue;
     if (def.fokozatos && def.fokok && at.fok != null) {
-      const fokDef = interpolateFokDef(def.fokok, at.fok, !!def.fortély_bővítés);
+      const fokDef = interpolateFokDef(def.fokok, at.fok, !!def.fortély_bővítés || !!def.skálázható);
       if (fokDef) {
         if (fokDef.TÉ) mods['TÉ'] += fokDef.TÉ as number;
         if (fokDef.VÉ) mods['VÉ'] += fokDef.VÉ as number;
