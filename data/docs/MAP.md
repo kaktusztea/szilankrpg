@@ -93,10 +93,16 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   shared.ts                Közös utils: findMfFok, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév
   ep-logic.ts              ÉP sebesülés/gyógyulás pure logika
   harc-reszletek-calc.ts   Részletes értékek bontás
+  combat-roll-info.ts      Támadó/Sebzés dobás bónusz kalkuláció (pure fn)
   EpTable.tsx              ÉP sebesülés tábla (S1-S4)
   EpDialogs.tsx            Seb/Gyógy dialógusok (explicit click handler)
   HarcFegyverTable.tsx     Fegyver harcértékek tábla
   HarcHeader.tsx           KÉ, SFÉ, VÉ csökk, MP boxok
+  TamadoDobasPopup.tsx     Támadó dobás popup (manuális/auto k20, bónuszok)
+  SebzesPopup.tsx          Sebzésdobás popup (SP bontás, másodlagos sebzés, újradobás)
+  PancelInfoPopup.tsx      SFÉ infó popup (páncél részletek)
+  ElonyPicker.tsx          Előny/Hátrány kocka picker
+  ManualDicePicker.tsx     Manuális kockadobás érték választó
 
 tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
   TavharcScreen.tsx        Fő screen (szerkesztő + game mód)

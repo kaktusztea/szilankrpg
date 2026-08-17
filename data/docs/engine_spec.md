@@ -945,7 +945,7 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 ### Implementációs illeszkedés
 
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
-- `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika: módosítók, fokok, kombó szabályok)
+- `data/sources/taktikak.yaml` → `tables/taktikak.json` (14+3 taktika: módosítók, fokok, kombó szabályok, skálázható flag)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
 - `data/sources/szituaciok.yaml` TÖRÖLVE — 7 elem beolvadt `harci_helyzetek.yaml`-ba (pozitív/semleges csoportba)
 - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: id, nehézség, fázisok, hatás)
@@ -990,24 +990,27 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 
 | Taktika | Módosítók | Kombó ✅ | Kombó ❌ |
 |---------|-----------|---------|---------|
-| 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás |
+| 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás, Tettetés |
 | Érintő | TÉ:+3, sebzés:0 | Támadó, Védő, Kezdeményező, Kiváró, 1 tám, Plusz tám | más |
 | Fárasztás | VÉ csökk: 2/kör (+fortély+pengeelőny) | — | más |
-| Kezdeményező | KÉ:+1..+5, VÉ:-1..-5 | Támadó, Érintő, Visszafogott, 1 tám | más |
-| Kiváró | KÉ:átengedett, TÉ:+2 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám | más |
+| Kezdeményező 📶 | KÉ:+1..+3, VÉ:-1..-3 (alap max 3) | Támadó, Érintő, Visszafogott, 1 tám | más |
+| Kiváró | KÉ:átengedett, TÉ:+3 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám, Tettetés | más |
 | Öngyilkos roham | TÉ:+5, VÉ:-10, SP:+7, VÉcsökk 2x | — | más (max 1x/küzdelem) |
 | Plusz támadás | +1 támadás, VÉ:-3 azonnal | Támadó, Érintő, Tám.erőből | más |
 | Roham | TÉ:+4, VÉ:-8, SP:+5, VÉcsökk 2x | — | más |
-| Támadás erőből | TÉ:-1..-2, SP:+1..+2 (fortéllyal: max -6/+6) | Kiváró, Plusz tám, 1 tám | más |
-| Támadó | TÉ:+1..+3, VÉ:-2..-6 | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
-| Védő | VÉ:+1..+4, TÉ:-2..-8 | Érintő, 1 tám | más |
+| Támadás erőből 📶 | TÉ:-1..-3, SP:+1..+3 (alap max 3) | Kiváró, Plusz tám, 1 tám | más |
+| Támadó 📶 | TÉ:+1..+3, VÉ:-2..-6 (alap max 3) | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
+| Védő 📶 | VÉ:+1..+3, TÉ:-2..-6 (alap max 3) | Érintő, 1 tám | más |
 | Teljes Védekezés | VÉ:+6, nem támad, hátrál | — | más |
-| Visszafogott | TÉ:-3/-6/-9, Hátrány-1/-2/— sebzésdobás | Kezdeményező, Kiváró, 1 tám | más |
-| Tettetés | — (informatív) | — | más |
+| Visszafogott | TÉ:-3/-6/-9, Hátrány-1/-2/— sebzésdobás | Kezdeményező, Kiváró, 1 tám, Tettetés | más |
+| Tettetés | — (informatív) | Kiváró, Visszafogott | más |
 
 note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
+      📶 Skálázható taktikák: Harcmodor szinttől függően a felső korlát nőhet (6.sz→max4, 9.sz→max5, 12.sz→max6).
+      A "Támadás erőből" fortély megszűnt — a skálázható rendszer váltja ki.
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
       Fárasztás: nem támadás, nem kombinálható mással.
+      Körönként maximum 1 manőver alkalmazható.
 
 #### Távharci taktikák
 
@@ -1023,30 +1026,38 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
 - `szűrő_harcmodorok`: string[] — ha nem üres, a taktika CÉ módosítója csak akkor érvényes, ha az aktív távfegyver Harcmodor mezője szerepel a listában. A picker-ben a taktika nem jelenik meg ha a feltétel nem teljesül.
 - `megkötések[].típus === 'távfegyver_kategória'` + `mód: 'szükséges'`: taktika disabled ha az aktív távfegyver Kategória mezője nem egyezik az értékkel.
 
-### 21.1b Taktika fortély_bővítés
+### 21.1b Skálázható taktikák
 
-Fokozatos taktikáknál a `fortély_bővítés` yaml mező lehetővé teszi, hogy egy fortély extra fokokat
-engedélyezzen a taktika picker-ben.
+A `skálázható: true` flag-gel jelölt taktikáknál (Támadó, Védő, Kezdeményező, Támadás erőből) a felső fok korlát
+a karakter Harcmodor szintjétől függően nőhet.
 
-Schema: `fortély_bővítés: { fortély: string, extra_fokok_per_fok: number } | null`
+Schema: `skálázható: true` + `konstansok.skálázható_taktika_max_fok[]`
+
+Konstansok (konstansok.yaml):
+```
+skálázható_taktika_max_fok:
+  - szint: 6, max_fok: 4
+  - szint: 9, max_fok: 5
+  - szint: 12, max_fok: 6
+```
 
 Kalkuláció:
 ```
-alap_max_fok = def.fokok.length (yaml-ban definiált fokok)
-fortély_fok = karakter.fortélyok[fortély_bővítés.fortély].fok ?? 0
-max_fok = alap_max_fok + fortély_fok * extra_fokok_per_fok
+alap_max_fok = def.fokok.length (yaml-ban definiált fokok: mindegyiknél 3)
+harcmodor_szint = aktív fegyver harcmodorának szintje
+max_fok = MAX(alap_max_fok, legmagasabb küszöb ahol harcmodor_szint >= szint)
 ```
 
+Ha van `fortély_bővítés` IS (jelenleg nincs ilyen): előbb az fut, UTÁNA a skálázható cap truncál/extend.
+
 Extra fokok módosítói: lineáris extrapoláció az utolsó definiált fok mintájából.
-Pl. Támadás erőből: alap 2 fok (SP:+1/TÉ:-1, SP:+2/TÉ:-2), `extra_fokok_per_fok: 2`
-- Fortély 1.fok → max 4 fok (SP:+4, TÉ:-4)
-- Fortély 2.fok → max 6 fok (SP:+6, TÉ:-6)
+Pl. Támadó: alap 3 fok (TÉ:+1/VÉ:-2 … TÉ:+3/VÉ:-6), Harcmodor 9 → max 5 fok → 4.fok: TÉ:+4/VÉ:-8, 5.fok: TÉ:+5/VÉ:-10.
 
 Implementáció:
-- AktivScreen fok picker: dinamikusan generálja az extra fokokat, lila ● jelölés
-- HarcScreen taktikaMods: extrapoláció ha `fokDef` nem található a def.fokok-ban
-- AktivScreen chip: extrapolált módosítók megjelenítése
-- App.tsx useEffect: taktika invalidáció ha fortély törlés után az aktív fok > megengedett max
+- `taktika-helpers.ts` `getExtraFokok()`: harcmodor szint lookup → fokok extend/truncate
+- `TaktikaFokPicker.tsx`: extra fokok kék ● jelölés (szín: `--color-kepzettseg`)
+- `taktika-calc.ts` `calcTaktikaMods()`: `interpolateFokDef` with `hasBővítés = !!def.skálázható`
+- `getTaktikaMods()`: ugyanígy, Aktív fül chip módosítók kijelzése
 
 ### 21.2 Harci Helyzetek
 

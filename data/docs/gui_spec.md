@@ -239,7 +239,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
   - Ha a fortély törlődik/csökken és az aktív taktika fok > megengedett max → taktika automatikusan kikapcsol
 
 ### Aktív fül szekciók (a Hatás pool box-on kívül)
-1. **Taktikák**: per-taktika sorok (`.item-row`). Kétsoros layout: fejléc sor (név+fok bold halvány kék `#90caf9`, módosítók zöld `#66bb6a` + ✔, jobb szélen ✕ gomb) + alatta hatás sor (inline, az adott taktika hatásai kiírva). Ha van `megjegyzés`: harmadik sor (dim szín). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
+1. **Taktikák**: per-taktika sorok (`.item-row`). Kétsoros layout: fejléc sor (név+fok bold halvány kék `#90caf9`, módosítók zöld `#66bb6a` + ✔, jobb szélen ✕ gomb) + alatta hatás sor (inline, az adott taktika hatásai kiírva). Ha van `megjegyzés`: harmadik sor (dim szín). Ha van fortély aminek feltétele `taktika:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
+   - Skálázható taktikák (📶): extra fokok kék pöttyel (`●`, szín: `--color-kepzettseg`) jelölve a fok picker-ben. Megjelennek ha a karakter Harcmodor szintje eléri a küszöböt (konstansok.skálázható_taktika_max_fok).
 2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#4dd0e1`), utána az `infó` mező szövege (fehér). Ha van 0.fok alapeset aminek feltétele ez a helyzet: " Alapeset: {hatástext}" hozzáfűzve. Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem).
 3. **Manőver**: `<h3>` fejléc, field-btn. Manőver cím világos szürke (`#bbb`). Alatta: Nehézség+fázisok sor, hatás sor.
 4. **Státuszok**: per-elem megjelenítés (nem aggregált). Státusz hatás: `Név (fok) alcím` gesztenye/bordó (`#cd7c6f`), félkövér, alatta soronként fehér hatás sorok. Szöveges operátor: csak `megjegyzés` szöveg (cél nem jelenik meg).
@@ -350,7 +351,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
       - Részlet: "KÉ (X) + k20 (Y)" (13px, dim szín)
       - Mellé kattintás bezárja → eredmény push a session `ké_dobások` FIFO tömbbe (max 3, legújabb elöl)
     - Box alján: utolsó max 3 dobott érték egymás mellett (11px, monospace). Színek balról jobbra egyre sötétülnek: #ccc → #888 → #555 (legújabb a legvilágosabb).
-  - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold)
+  - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold). Kattintásra **PancelInfoPopup** nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT, csatolt tagok részletek).
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
   - **MP box**: label `MP` (14px, bold, fehér, uppercase), érték `X/Y` (20px, bold, success/zöld szín), alatta gombok: -1, ⟲ (12px). Default: max.
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
@@ -364,7 +365,12 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Pajzs fegyver sor: ha van pajzs méret → megjelenik a fegyvertáblában (kategória: "pajzs", Közelharc harcmodor). Aktív ha idx=-2 kiválasztva.
   - Tám cella kattintható (Játék mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
-  - **Támadó dobás** (Játék mód): a `TÉ` fejléc (kattintható gomb) ÉS az éppen aktív fegyver sorának TÉ cellája (pontozott aláhúzás) rányomásra **Támadó dobás** popupot nyit — mindkettő ugyanazt, az aktív fegyver aktuális TÉ-jét dobja. Viselkedés azonos a Kezdeményezéssel (KÉ), csak TÉ + k20: nagy eredmény szám, „TÉ (X) + k20 (Y)" részlet, mellé katt / Escape bezár → eredmény push a session `té_dobások` FIFO tömbbe (max 3, legújabb elöl). Közös popup komponens: `DobasPopup`.
+  - **Támadó dobás** (Játék mód): a `TÉ` fejléc (kattintható gomb) ÉS az éppen aktív fegyver sorának TÉ cellája (pontozott aláhúzás) rányomásra **TamadoDobasPopup**-ot nyit. Kétfázisú:
+    - Fázis 1: aktív hatások infó (Előny/Hátrány lista forrással) + Előny/Hátrány picker + "Dobás" gomb + manuális dobás lehetőség (ManualDicePicker)
+    - Fázis 2: eredmény (TÉ + k20), részlet kiírás, "Sebzés" gomb (ha k20≥16: Előny+1, k20=20: Előny+2 jelzéssel)
+    - Sebzés gomb → **SebzesPopup** nyílik (SP bontás, statikus bónuszok, Előny/Hátrány picker, másodlagos sebzés toggle, újradobás gomb)
+    - Mellé katt / Escape bezár → eredmény push a session `té_dobások` FIFO tömbbe (max 3, legújabb elöl).
+    - Komponensek: `TamadoDobasPopup.tsx`, `SebzesPopup.tsx`, `ElonyPicker.tsx`, `ManualDicePicker.tsx`, `combat-roll-info.ts`
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
   - TÉ értékek: dinamikusan csökkennek sebesülés kategória TÉ levonással
   - VÉ értékek: dinamikusan csökkennek VÉ csökkenés értékkel
