@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { FortelySummary } from '../../engine/data-loader';
 import type { GameData } from '../../engine/data-loader';
-import type { Fortely } from '../../engine/types';
+import type { Fortely, Karakter } from '../../engine/types';
 import type { SzabadTypePicker } from './types';
 import { EGYEDI_FORTELY_SENTINEL } from '../../ui-constants';
 
@@ -9,9 +9,11 @@ interface Opts {
   data: GameData;
   fortélyok: Fortely[];
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
+  karakter: Karakter;
+  setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
 }
 
-export function useFortelyActions({ data, setFortélyok }: Opts) {
+export function useFortelyActions({ data, setFortélyok, karakter, setKarakter }: Opts) {
   const [pendingFort, setPendingFort] = useState<Fortely | null>(null);
   const [multiPickerDef, setMultiPickerDef] = useState<FortelySummary | null>(null);
   const [szabadTypePicker, setSzabadTypePicker] = useState<SzabadTypePicker | null>(null);
@@ -77,7 +79,23 @@ export function useFortelyActions({ data, setFortélyok }: Opts) {
   function confirmFok(fok: number) {
     if (!pendingFort) return;
     setFortélyok(prev => [...prev, { ...pendingFort, fok }]);
+    // Auto-add weapon to karakter.fegyverek if this is a weapon-type fortély (Mesterfegyver)
+    if (pendingFort.spec_típus === 'fegyver' && pendingFort.spec_elem) {
+      ensureFegyverOnKarakter(pendingFort.spec_elem);
+    }
     setPendingFort(null);
+  }
+
+  /** If the weapon is not yet in karakter.fegyverek, add it automatically. */
+  function ensureFegyverOnKarakter(fegyverNév: string) {
+    const already = karakter.fegyverek.some(f => f.alap.toLowerCase() === fegyverNév.toLowerCase());
+    if (already) return;
+    const defaultAnyag = (data.konstansok.fegyver_anyagok as string[])[0] ?? '';
+    setKarakter(prev => {
+      if (!prev) return prev;
+      if (prev.fegyverek.some(f => f.alap.toLowerCase() === fegyverNév.toLowerCase())) return prev;
+      return { ...prev, fegyverek: [...prev.fegyverek, { alap: fegyverNév, név: '', anyag: defaultAnyag, idea: 0 }] };
+    });
   }
 
   return {

@@ -5,14 +5,14 @@ import { calcNyelvPontKeret, calcNyelvTúllépés, isSlotIngyenes } from './help
 
 export function FortelyCsoport({
   csoport, csoportLabel, csoportDefs, slotok, collapsed, gameMode, tsz,
-  lockedSet, többszörösNevek, fortélyok, fegyverNevek, távfegyverNevek,
+  többszörösNevek, fortélyok, fegyverNevek,
   nyelvtanulásSzint, nyelvFokLabels, képzettségek, harcmodorNevek, data,
   onToggleCollapse, onAddFortely, onToggleInfo, onFokChange, onRemove, onHint, infoTarget
 }: FortelyCsoportProps) {
   if (gameMode && slotok.length === 0) return null;
 
   const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
-  const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && !lockedSet.has(d.név));
+  const available = csoportDefs.filter(d => !usedNonMulti.has(d.név) || többszörösNevek.has(d.név));
 
   const nyelvPontKeret = calcNyelvPontKeret(nyelvtanulásSzint);
   const { overSet: nyelvOverSet } = calcNyelvTúllépés(slotok, nyelvPontKeret);
@@ -54,7 +54,6 @@ export function FortelyCsoport({
               def={def}
               globalIdx={globalIdx}
               isIngyenes={isIngyenes}
-              locked={lockedSet.has(slot.név)}
               gameMode={gameMode}
               isOpen={isOpen || (!gameMode && kiterjesztHiányos)}
               kiterjesztHiányos={kiterjesztHiányos}
@@ -64,7 +63,6 @@ export function FortelyCsoport({
               képzettségek={képzettségek}
               fortélyok={fortélyok}
               harcmodorNevek={harcmodorNevek}
-              távfegyverNevek={távfegyverNevek}
               fegyverHarcmodorNév={fegyverHarcmodorNév}
               onToggleInfo={() => onToggleInfo(globalIdx)}
               onFokChange={fok => onFokChange(globalIdx, fok)}

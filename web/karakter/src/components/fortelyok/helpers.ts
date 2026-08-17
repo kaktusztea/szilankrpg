@@ -11,17 +11,12 @@ export function getFortelyokForCsoport(
   csoport: string,
   fortélyok: Fortely[],
   defsByGroup: Map<string, FortelySummary[]>,
-  lockedSet: Set<string>
 ): Fortely[] {
   const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
   const items = fortélyok.filter(f =>
     csoportNevek.has(f.név) || (csoport === 'szabad' && f.spec_típus === 'egyedi')
   );
   items.sort((a, b) => {
-    const aLocked = lockedSet.has(a.név);
-    const bLocked = lockedSet.has(b.név);
-    if (aLocked && !bLocked) return -1;
-    if (bLocked && !aLocked) return 1;
     const nameComp = a.név.localeCompare(b.név);
     if (nameComp !== 0) return nameComp;
     return b.fok - a.fok;

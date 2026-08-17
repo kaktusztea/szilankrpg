@@ -74,10 +74,11 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
       />;
     }
     case 'fortelyok': {
-      const { fegyverNevek, távfegyverNevek, nyelvtanulásSzint } = buildFortelyokProps(karakter, data);
+      const { fegyverNevek, nyelvtanulásSzint } = buildFortelyokProps(karakter, data);
       return <FortelyokScreen data={data} gameMode={gameMode}
         fortélyok={fortélyok} setFortélyok={setFortélyokUndo}
-        tsz={karakter.tsz} fegyverNevek={fegyverNevek} távfegyverNevek={távfegyverNevek} nyelvtanulásSzint={nyelvtanulásSzint}
+        karakter={karakter} setKarakter={setKarakter}
+        tsz={karakter.tsz} fegyverNevek={fegyverNevek} nyelvtanulásSzint={nyelvtanulásSzint}
         képzettségek={képzettségek}
       />;
     }

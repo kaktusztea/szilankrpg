@@ -1,7 +1,6 @@
 import type { Karakter, Fortely } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { UndoPatch } from '../hooks/useUndo';
-import { lookupFegyver } from '../engine/utils';
 
 /** Generikus undo-aware field setter gyár. */
 export function makeFieldSetter(
@@ -42,12 +41,9 @@ export function makeAnyanyelvSetter(
 
 /** Fortélyok screen props builder. */
 export function buildFortelyokProps(karakter: Karakter, data: GameData) {
-  const fegyverNevek = karakter.fegyverek.map(f => {
-    const fd = lookupFegyver(data.fegyverek, f.alap);
-    return fd?.Alapnév || f.alap;
-  });
+  const fegyverNevek = [...new Set(data.fegyverek.map(f => f.Alapnév || f.Fegyver))];
   const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
-  return { fegyverNevek, távfegyverNevek: karakter.távfegyverek.map(tf => tf.alap), nyelvtanulásSzint };
+  return { fegyverNevek, nyelvtanulásSzint };
 }
 
 /** Faj setter (nested hátterek.faj). */

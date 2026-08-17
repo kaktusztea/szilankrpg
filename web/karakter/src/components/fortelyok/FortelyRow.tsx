@@ -7,8 +7,8 @@ import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 export function FortelyRow({
   slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,
-  isIngyenes, locked, onHint, overLimit, nyelvPontKeret, nyelvFokLabels,
-  képzettségek, fortélyok, harcmodorNevek, távfegyverNevek, fegyverHarcmodorNév, kiterjesztHiányos
+  isIngyenes, onHint, overLimit, nyelvPontKeret, nyelvFokLabels,
+  képzettségek, fortélyok, harcmodorNevek, fegyverHarcmodorNév, kiterjesztHiányos
 }: FortelyRowProps) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
@@ -21,9 +21,7 @@ export function FortelyRow({
       const btnRect = delBtn.getBoundingClientRect();
       if (e.clientX >= btnRect.left - 25) return;
     }
-    if (locked) {
-      onHint(távfegyverNevek.includes(slot.spec_elem) ? 'Ezt a fortélyt a Távharc fülön kezeld!' : 'Ezt a fortélyt a Harcértékek fülön kezeld!', 3000);
-    } else if (maxfok <= 1) {
+    if (maxfok <= 1) {
       onHint('1 fok a maximum');
     } else {
       setEditing(true);
@@ -44,7 +42,7 @@ export function FortelyRow({
           {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{giftBadge && <span className="fort-gift">{giftBadge}</span>}
         </span>
         <span className="fort-right">
-          {!gameMode && !locked && (
+          {!gameMode && (
             <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`fort-fok${isNyelv ? ' nyelvismeret-fok' : ''}${overLimit ? ' fort-over' : ''}`}>

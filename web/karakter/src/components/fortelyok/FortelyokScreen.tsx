@@ -8,7 +8,7 @@ import { useFortelyActions } from './useFortelyActions';
 import { HINT_DURATION_MS } from '../../ui-constants';
 import './FortelyokScreen.css';
 
-export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, távfegyverNevek, nyelvtanulásSzint, képzettségek }: FortelyokScreenProps) {
+export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, karakter, setKarakter, tsz, fegyverNevek, nyelvtanulásSzint, képzettségek }: FortelyokScreenProps) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -19,13 +19,12 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
     pendingFort, multiPickerDef, szabadTypePicker, egyediPicker,
     setPendingFort, setMultiPickerDef, setSzabadTypePicker, setEgyediPicker,
     setFok, addFortely, addMultiInstance, confirmSzabad, confirmEgyedi, confirmFok, pendingSlot,
-  } = useFortelyActions({ data, fortélyok, setFortélyok });
+  } = useFortelyActions({ data, fortélyok, setFortélyok, karakter, setKarakter });
 
   const fortCsoportSorrend = data.konstansok.fortély_csoport_sorrend;
   const CSOPORT_SORREND = fortCsoportSorrend.map(c => c.id);
   const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(fortCsoportSorrend.map(c => [c.id, c.label]));
   const NYELV_FOK_LABELS: Record<number, string> = data.konstansok.nyelv_fok_nevek;
-  const lockedSet = useMemo(() => new Set(data.konstansok.locked_fortélyok), [data]);
   const többszörösNevek = useMemo(() => new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név)), [data]);
   const harcmodorNevek = useMemo(() => [...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági], [data]);
   const defsByGroup = useMemo(() => buildDefsByGroup(data.fortelySummaries), [data]);
@@ -48,15 +47,13 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
             csoport={csoport}
             csoportLabel={CSOPORT_LABEL[csoport]}
             csoportDefs={defsByGroup.get(csoport) || []}
-            slotok={getFortelyokForCsoport(csoport, fortélyok, defsByGroup, lockedSet)}
+            slotok={getFortelyokForCsoport(csoport, fortélyok, defsByGroup)}
             collapsed={collapsedGroups.has(csoport)}
             gameMode={gameMode}
             tsz={tsz}
-            lockedSet={lockedSet}
             többszörösNevek={többszörösNevek}
             fortélyok={fortélyok}
             fegyverNevek={fegyverNevek}
-            távfegyverNevek={távfegyverNevek}
             nyelvtanulásSzint={nyelvtanulásSzint}
             nyelvFokLabels={NYELV_FOK_LABELS}
             képzettségek={képzettségek}
