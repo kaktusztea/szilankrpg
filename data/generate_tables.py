@@ -121,6 +121,7 @@ def generate_fortelyok():
     errors = []
     valid_csoportok = {'harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'}
     for root, dirs, files in os.walk(fdir):
+        dirs.sort()
         for f in sorted(files):
             if not f.endswith('.yaml'):
                 continue

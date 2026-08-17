@@ -84,7 +84,7 @@
     "típus": "általános",
     "nehézség": 9,
     "fázisok": "V,E",
-    "hatás": "Ellenfél fegyvere foglyul ejtve — nem használhatja. Helyhez kötve harci helyzet módosítók.",
+    "hatás": "Ellenfél fegyvere foglyul ejtve - nem használhatja. Helyhez kötve harci helyzet módosítók.",
     "id": "lánccsapda"
   },
   {
@@ -282,7 +282,7 @@
   {
     "név": "Lovas áttörés",
     "típus": "lovas",
-    "nehézség": 0,
+    "nehézség": 4,
     "fázisok": "V,E",
     "hatás": "Áttörés ellenfél sorain galopp/roham tempóval. Sikernél ellenfelek szétszóródnak, hátrány a következő körben. Nehézség: 4-10 (ellenfelek száma és fegyverzete függvénye).",
     "id": "lovas_áttörés"
@@ -290,7 +290,7 @@
   {
     "név": "Lóhátról lerántás",
     "típus": "lovas",
-    "nehézség": 0,
+    "nehézség": 6,
     "fázisok": "M,V,E",
     "hatás": "GYALOGOS végzi lovas ellen. Közvetlen harcérintkezés szükséges. Sikernél a lovas földre kerül. Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye).",
     "id": "lóhátról_lerántás"

@@ -88,12 +88,12 @@ feltétel_prefixek:
   - "szituáció"           # pl. "szituáció:belharc", "szituáció:roham"
   - "harci_helyzet"       # pl. "harci_helyzet:meglepetés", "harci_helyzet:hátulról_támadás"
   - "taktika"             # pl. "taktika:fárasztás", "taktika:visszafogott"
-  - "fegyver"             # pl. "fegyver:kard, hosszú" — konkrét fegyverre vonatkozik
+  - "fegyver"             # pl. "fegyver:kard, hosszú" - konkrét fegyverre vonatkozik
   - "fegyver_kategória"   # pl. "fegyver_kategória:kardvívó"
   - "fegyverfogás"        # pl. "fegyverfogás:fegyver_hárító", "fegyverfogás:fegyver_pajzs"
   - "manőver"             # pl. "manőver:kibontakozás"
   - "státusz"             # pl. "státusz:bénultság"
-  - "páncél"              # pl. "páncél:viselt" — aktív páncél MGT > 0
+  - "páncél"              # pl. "páncél:viselt" - aktív páncél MGT > 0
 
 # ============================================================
 # Harcérték konstansok
@@ -527,7 +527,7 @@ fájdalomtűrés_enyhítés:
     enyhítés: 9
 
 # ============================================================
-# Lövéskitérés — Akrobatika próba célszám (md/073_tavharci_taktikak.md)
+# Lövéskitérés - Akrobatika próba célszám (md/073_tavharci_taktikak.md)
 # Kategória × távolság → célszám. Az első sor, ahol táv <= max_táv.
 # Max távon túl: nincs célszám (hatótávon kívül). Közelebb = magasabb célszám.
 # ============================================================
