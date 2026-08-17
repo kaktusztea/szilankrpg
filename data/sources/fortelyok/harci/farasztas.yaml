@@ -3,7 +3,7 @@ név: "Fárasztás"
 névkomment: ""
 maxfok: 1
 session_toggle: false
-emlékeztető: false
+emlékeztető: true
 kiérdemelhető: false
 többszörösség:
   spec_típus: ""
@@ -29,10 +29,4 @@ fokok:
     típus: "képzettség"
   hatástext:
   - text: "Fárasztás taktika alkalmazásakor: extra +1 VÉ csökkentés bónusz az ellenfélen."
-  módosítók:
-  - cél: "VÉ"
-    érték: -3
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "taktika:fárasztás"
+  módosítók: ""
