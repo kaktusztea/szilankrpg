@@ -509,6 +509,13 @@
   align-items: center;
   gap: 12px;
   margin-top: 4px;
+  width: 100%;
+}
+.dobas-btn-row > button:first-child,
+.dobas-btn-row > .tamado-dobas-btn,
+.dobas-btn-row > .tamado-sebzes-btn,
+.dobas-btn-row > .kep-proba-roll-btn {
+  flex: 1;
 }
 
 .manual-dice-btn {
@@ -522,11 +529,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
 }
 
 .manual-dice-btn:hover {
-  opacity: 1;
+  background: var(--surface-alt);
+}
+.manual-dice-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
 /* --- Manual dice popup --- */
@@ -549,6 +559,13 @@
   color: var(--success);
   font-weight: bold;
 }
+.manual-dice-alap {
+  font-size: 16px;
+  color: var(--text);
+  font-weight: bold;
+}
+.manual-dice-alap-szint.elony { color: var(--success); }
+.manual-dice-alap-szint.hatrany { color: var(--error); }
 
 .manual-dice-grid {
   display: grid;

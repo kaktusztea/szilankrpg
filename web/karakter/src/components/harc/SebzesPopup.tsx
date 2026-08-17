@@ -135,7 +135,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
 
             <div className="dobas-btn-row">
               <button className="tamado-sebzes-btn" onClick={handleDobás}>Dobás</button>
-              <ManualDicePicker szint={szint} onSelect={handleManualK20} />
+              <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={sp + bónusz} alapLabel="SP" />
             </div>
           </>
         ) : (

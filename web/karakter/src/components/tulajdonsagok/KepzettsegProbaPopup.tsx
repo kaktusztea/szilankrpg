@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Tulajdonsagok, Fortely } from '../../engine/types';
 import type { KiterjesztesEntry } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
+import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { rollElőnyHátrány, rollDie, type ProbaDobás } from '../../engine/dice';
 
 // Képzettségpróba célszámok (engine_spec §37.2, md/030_06_01) — elnevezés csak 21-ig.
@@ -131,6 +132,7 @@ export function KepzettsegProbaPopup({
   // Összetett + Vállalás eredmények
   const [összetettEredmény, setÖsszetettEredmény] = useState<ÖsszetettEredmény | null>(null);
   const [vállalásEredmény, setVállalásEredmény] = useState<VállalásEredmény | null>(null);
+  const [összetettManual, setÖsszetettManual] = useState<number[]>([]);
 
   const kit = selKit >= 0 ? kiterjesztesek[selKit] : null;
   const ehAlap = kit ? kiterjesztésElőnyHátrány(kit.típus, fortélyFokok[kit.fortély] ?? 0) : { szint: 0, tiltott: false };
@@ -149,9 +151,11 @@ export function KepzettsegProbaPopup({
     setDobás(null);
     setÖsszetettEredmény(null);
     setVállalásEredmény(null);
+    setÖsszetettManual([]);
   };
 
   // Ellenpróba módban nincs célszám szükséges
+  const ismeretlen = nehézség === -1;
   const kész = selTul !== null && (ellenpróba || nehézség !== null);
   const tulÉrték = selTul !== null ? tulajdonságok[selTul] : 0;
   const effSzint = (() => {
@@ -163,12 +167,12 @@ export function KepzettsegProbaPopup({
     return szint + vállalás;
   })();
   // Lehetetlen/biztos siker: csak ha nincs ellenpróba mód
-  const lehetetlen = !ellenpróba && kész && nehézség !== null && probaLehetetlen(tulÉrték, effSzint, nehézség);
-  const biztosSiker = !ellenpróba && kész && nehézség !== null && !lehetetlen && probaBiztosSiker(tulÉrték, effSzint, nehézség);
+  const lehetetlen = !ellenpróba && !ismeretlen && kész && nehézség !== null && probaLehetetlen(tulÉrték, effSzint, nehézség);
+  const biztosSiker = !ellenpróba && !ismeretlen && kész && nehézség !== null && !lehetetlen && probaBiztosSiker(tulÉrték, effSzint, nehézség);
 
   // Sima (nem összetett) eredmény
   const eredmény = dobás !== null && kész ? tulÉrték + effSzint + dobás.eredmény : null;
-  const siker = !ellenpróba && eredmény !== null && nehézség !== null && (tulÉrték + effSzint + dobás!.eredmény >= nehézség);
+  const siker = !ellenpróba && !ismeretlen && eredmény !== null && nehézség !== null && (tulÉrték + effSzint + dobás!.eredmény >= nehézség);
   const ehCímke = előnyHátrányLabel(eh.szint);
 
   // Van-e eredmény megjelenítendő?
@@ -206,6 +210,39 @@ export function KepzettsegProbaPopup({
       setVállalásEredmény({ k6, vállalásÉrték: vállalás, kritikusHiba: k6 <= vállalás });
     }
   };
+
+  const handleManualK10 = (value: number) => {
+    if (összetettDb > 0 && nehézség !== null) {
+      const rolls = [...összetettManual, value];
+      const total = összetettDb + 1;
+      if (rolls.length < total) {
+        setÖsszetettManual(rolls);
+        return;
+      }
+      // All collected → finalize
+      const célszámok = [nehézség, ...Array(összetettDb).fill(nehézség - 3)];
+      const labels = ['Elsődleges', ...Array(összetettDb).fill('Másodlagos')];
+      const sorok: ÖsszetettSor[] = rolls.map((v, i) => {
+        const d: ProbaDobás = { rolls: [v], eredmény: v };
+        const összeg = tulÉrték + effSzint + d.eredmény;
+        return { label: labels[i], célszám: célszámok[i], dobás: d, összeg, siker: összeg >= célszámok[i] };
+      });
+      setÖsszetettEredmény({ sorok, összSiker: sorok.every(s => s.siker) });
+      setDobás(sorok[0].dobás);
+      setÖsszetettManual([]);
+    } else {
+      setDobás({ rolls: [value], eredmény: value });
+    }
+    if (vállalás > 0) {
+      const k6 = rollDie(6);
+      setVállalásEredmény({ k6, vállalásÉrték: vállalás, kritikusHiba: k6 <= vállalás });
+    }
+  };
+
+  /** Label for the current manual összetett step. */
+  const összetettManualLabel = összetettDb > 0 && összetettManual.length < összetettDb + 1
+    ? (összetettManual.length === 0 ? 'Elsődleges' : `Másodlagos ${összetettManual.length}/${összetettDb}`)
+    : null;
 
   // Escape: ha belső picker nyitva → azt zárjuk, ne a teljes popup-ot.
   const handleOuterClose = () => {
@@ -253,6 +290,10 @@ export function KepzettsegProbaPopup({
           </div>
           {!ellenpróba && (
             <div className="kep-proba-dual-col">
+              <button className={`he-field-btn${nehézség === -1 ? ' vallas-active' : ''}`}
+                onClick={() => { setNehézség(-1); resetDobás(); }}>
+                Ismeretlen célszám
+              </button>
               {NEHÉZSÉGEK.map(n => (
                 <button key={n.érték} className={`he-field-btn${nehézség === n.érték ? ' vallas-active' : ''}`}
                   onClick={() => { setNehézség(n.érték); resetDobás(); }}>
@@ -360,12 +401,12 @@ export function KepzettsegProbaPopup({
           <div className="kep-proba-tiltott">{sérültTiltott ? 'Haldoklás — Automatikus kudarc' : 'Nem dobhatsz'}</div>
         ) : !vanEredmény ? (
           <>
-            {kész && !ellenpróba && (
+            {kész && !ellenpróba && !ismeretlen && (
               <div className="kep-proba-summary">
                 {effSzint} + {tulÉrték}{vállalás > 0 ? ` (+${vállalás})` : ''} <span className="kep-proba-vs">vs</span> <span className="kep-proba-celszam">{nehézség}</span>
               </div>
             )}
-            {kész && ellenpróba && (
+            {kész && (ellenpróba || ismeretlen) && (
               <div className="kep-proba-summary">
                 {effSzint} + {tulÉrték}{vállalás > 0 ? ` (+${vállalás})` : ''} + k10
               </div>
@@ -375,12 +416,15 @@ export function KepzettsegProbaPopup({
             ) : biztosSiker ? (
               <div className="kep-proba-biztos">Biztos siker</div>
             ) : (
-              <button className="kep-proba-roll-btn" disabled={!kész} onClick={handleDobás}>
-                {sérültFok === 1 && <span className="kep-proba-roll-serult">S3</span>}
-                {sérültFok === 2 && <span className="kep-proba-roll-serult">S4</span>}
-                Dobás
-                {ehCímke && <span className={`kep-proba-roll-eh${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}>{ehCímke}</span>}
-              </button>
+              <div className="dobas-btn-row">
+                <button className="kep-proba-roll-btn" disabled={!kész} onClick={handleDobás}>
+                  {sérültFok === 1 && <span className="kep-proba-roll-serult">S3</span>}
+                  {sérültFok === 2 && <span className="kep-proba-roll-serult">S4</span>}
+                  Dobás
+                  {ehCímke && <span className={`kep-proba-roll-eh${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}>{ehCímke}</span>}
+                </button>
+                <ManualDicePicker sides={10} szint={eh.szint} onSelect={handleManualK10} disabled={!kész} alapÉrték={tulÉrték + effSzint} alapLabel={összetettManualLabel ?? 'Alap'} forceOpen={összetettManual.length > 0} />
+              </div>
             )}
           </>
         ) : összetettDb > 0 && összetettEredmény ? (
@@ -388,23 +432,27 @@ export function KepzettsegProbaPopup({
           <div className="kep-proba-result">
             <div className="kep-proba-osszetett-rows">
               {összetettEredmény.sorok.map((s, i) => (
-                <div key={i} className={`kep-proba-osszetett-sor${s.siker ? '' : ' kep-proba-osszetett-fail'}`}>
-                  <span className="kep-proba-osszetett-label">{s.label} ({s.célszám}):</span>
+                <div key={i} className={`kep-proba-osszetett-sor${!ismeretlen && !s.siker ? ' kep-proba-osszetett-fail' : ''}`}>
+                  <span className="kep-proba-osszetett-label">{s.label}{!ismeretlen ? ` (${s.célszám})` : ''}:</span>
                   <span className="kep-proba-osszetett-sum">{s.összeg}</span>
-                  <span className={s.siker ? 'kep-proba-osszetett-ok' : 'kep-proba-osszetett-x'}>
-                    {s.siker ? '✓' : '✗'}
-                  </span>
+                  {!ismeretlen && (
+                    <span className={s.siker ? 'kep-proba-osszetett-ok' : 'kep-proba-osszetett-x'}>
+                      {s.siker ? '✓' : '✗'}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
-            <div className={összetettEredmény.összSiker ? 'kep-proba-siker' : 'kep-proba-sikertelen'}>
-              {összetettEredmény.összSiker ? 'Siker' : 'Sikertelen'}
-              {` (${összetettEredmény.sorok.filter(s => s.siker).length}/${összetettEredmény.sorok.length})`}
-            </div>
+            {!ismeretlen && (
+              <div className={összetettEredmény.összSiker ? 'kep-proba-siker' : 'kep-proba-sikertelen'}>
+                {összetettEredmény.összSiker ? 'Siker' : 'Sikertelen'}
+                {` (${összetettEredmény.sorok.filter(s => s.siker).length}/${összetettEredmény.sorok.length})`}
+              </div>
+            )}
             {renderVállalásEredmény()}
           </div>
-        ) : ellenpróba && dobás ? (
-          /* --- Ellenpróba eredmény (csak szám, nincs vs) --- */
+        ) : (ellenpróba || ismeretlen) && dobás ? (
+          /* --- Ellenpróba / Ismeretlen eredmény (csak szám, nincs vs) --- */
           <div className="kep-proba-result">
             <div className="kep-proba-result-num">
               {tulÉrték + effSzint + dobás.eredmény}

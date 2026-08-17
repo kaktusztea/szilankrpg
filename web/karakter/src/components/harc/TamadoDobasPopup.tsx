@@ -93,7 +93,7 @@ export function TamadoDobasPopup({ té, sp, dobásInfo, onClose }: Props) {
             )}
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
-              <ManualDicePicker szint={szint} onSelect={handleManualK20} />
+              <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={té} alapLabel="TÉ" />
             </div>
           </>
         ) : (
