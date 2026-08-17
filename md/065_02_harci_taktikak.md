@@ -96,6 +96,8 @@ KÉ:+2, VÉ:-2
 KÉ:+3, VÉ:-3
 ```
 
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
 ✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
 
 ✅ **Érintő, Visszafogott, 1 támadás taktikával** együtt
@@ -211,14 +213,15 @@ Első oda-vissza csapásnál:
 ---
 ### Támadás erőből taktika
 
-Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `2`-ig.
+Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `3`-ig.
 
 ```
 TÉ:-1, SP:+1
 TÉ:-2, SP:+2
+TÉ:-3, SP:+3
 ```
 
-A fenti limit a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortéllyal növelhető.
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
 ✅ **Kiváró, Plusz támadás, 1 támadás taktikával** együtt
 
@@ -234,6 +237,8 @@ TÉ:+1, VÉ:-2
 TÉ:+2, VÉ:-4
 TÉ:+3, VÉ:-6
 ```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
 ✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
@@ -252,8 +257,9 @@ A támadásra helyezed a hangsúlyt. Lehetőségeidhez mérten folyamatosan nyom
 VÉ:+1, TÉ:-2
 VÉ:+2, TÉ:-4
 VÉ:+3, TÉ:-6
-VÉ:+4, TÉ:-8
 ```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
 ❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
 

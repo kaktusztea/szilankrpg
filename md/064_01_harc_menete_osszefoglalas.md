@@ -132,7 +132,7 @@ VÉ csökkentés
 ```
 Módosítók
   Roham: SP:+5
-  Támadás erőből fortély bónusza
+  Támadás erőből taktika: SP:+1..+3
 ```
 
 ```

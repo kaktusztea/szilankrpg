@@ -32,7 +32,6 @@
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
-- [Támadás erőből](fortelyok.harci/tamadas_erobol.md)
 - [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md)
 - [Természetes páncél](fortelyok.harci/termeszetes_pancel.md)
 - [Testőr](fortelyok.harci/testor.md)
