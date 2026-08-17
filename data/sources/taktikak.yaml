@@ -63,12 +63,6 @@ taktikák:
   - fok: 3
     KÉ: 3
     VÉ: -3
-  - fok: 4
-    KÉ: 4
-    VÉ: -4
-  - fok: 5
-    KÉ: 5
-    VÉ: -5
   kombó_mód: "whitelist"
   kombó_lista: ["Támadó", "Érintő", "Visszafogott", "1 támadás"]
   fortély_bővítés: null
