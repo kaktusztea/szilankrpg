@@ -63,6 +63,7 @@ taktikák:
   - fok: 3
     KÉ: 3
     VÉ: -3
+  megjegyzés: "Skálázható. Harcmodor szinttel nő a max fok."
   kombó_mód: "whitelist"
   kombó_lista: ["Támadó", "Érintő", "Visszafogott", "1 támadás"]
   fortély_bővítés: null
@@ -152,16 +153,17 @@ taktikák:
   - fok: 2
     TÉ: -2
     SP: 2
-  megjegyzés: "Fortéllyal növelhető limit."
+  - fok: 3
+    TÉ: -3
+    SP: 3
+  megjegyzés: "Skálázható. Harcmodor szinttel nő a max fok."
   megkötések:
   - típus: "harcmodor"
     mód: "tiltott"
     érték: "Ostorharc"
   kombó_mód: "whitelist"
   kombó_lista: ["Kiváró", "Plusz támadás", "1 támadás"]
-  fortély_bővítés:
-    fortély: "Támadás erőből"
-    extra_fokok_per_fok: 2
+  fortély_bővítés: null
   megkötések: []
   szűrő_harcmodorok: []
 - név: "Támadó"
@@ -178,6 +180,7 @@ taktikák:
   - fok: 3
     TÉ: 3
     VÉ: -6
+  megjegyzés: "Skálázható. Harcmodor szinttel nő a max fok."
   megkötések:
   - típus: "harci_helyzet"
     mód: "tiltott"
@@ -201,9 +204,7 @@ taktikák:
   - fok: 3
     VÉ: 3
     TÉ: -6
-  - fok: 4
-    VÉ: 4
-    TÉ: -8
+  megjegyzés: "Skálázható. Harcmodor szinttel nő a max fok."
   megkötések:
   - típus: "harci_helyzet"
     mód: "tiltott"

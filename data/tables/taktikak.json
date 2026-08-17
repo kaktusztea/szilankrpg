@@ -94,6 +94,7 @@
         "VÉ": -3
       }
     ],
+    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Támadó",
@@ -194,9 +195,14 @@
         "fok": 2,
         "TÉ": -2,
         "SP": 2
+      },
+      {
+        "fok": 3,
+        "TÉ": -3,
+        "SP": 3
       }
     ],
-    "megjegyzés": "Fortéllyal növelhető limit.",
+    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
@@ -204,10 +210,7 @@
       "Plusz támadás",
       "1 támadás"
     ],
-    "fortély_bővítés": {
-      "fortély": "Támadás erőből",
-      "extra_fokok_per_fok": 2
-    },
+    "fortély_bővítés": null,
     "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:támadás_erőből"
   },
@@ -233,6 +236,7 @@
         "VÉ": -6
       }
     ],
+    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
@@ -266,13 +270,9 @@
         "fok": 3,
         "VÉ": 3,
         "TÉ": -6
-      },
-      {
-        "fok": 4,
-        "VÉ": 4,
-        "TÉ": -8
       }
     ],
+    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
