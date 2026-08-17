@@ -23,6 +23,8 @@ interface Props {
   hideMásodlagos?: boolean;
   /** Hide the automatic SP bonuses list inside StatikusBonuszBtn (e.g. távharc) */
   hideAutoBónusz?: boolean;
+  /** Fegyver Átütés értéke (informatív kijelzés, ha > 0) */
+  átütés?: number;
   onClose: () => void;
 }
 
@@ -34,7 +36,7 @@ interface SebzésEredmény {
 }
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + k20 roll + info. */
-export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBónuszok, megjegyzések, hideMásodlagos, hideAutoBónusz, onClose }: Props) {
+export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBónuszok, megjegyzések, hideMásodlagos, hideAutoBónusz, átütés, onClose }: Props) {
   // Combined default: TÉ k20 bonus + net from active effects, clamped to [-2, +2]
   const combinedDefault = Math.max(-2, Math.min(2, defaultElőny + netElőnySzint(sebzésHatások)));
   const [szint, setSzint] = useState(combinedDefault);
@@ -131,6 +133,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
                 return sp;
               })()} + k20
               {effSzint !== 0 ? ` (${effSzint > 0 ? `Előny+${effSzint}` : `Hátrány${effSzint}`})` : ''}
+              {(átütés ?? 0) > 0 && <span className="sebzes-atutes"> | Átütés: {átütés}</span>}
             </div>
 
             <div className="dobas-btn-row">
@@ -148,6 +151,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
               {' + '}SP ({eredmény.sp})
               {eredmény.bónusz !== 0 ? ` ${eredmény.bónusz > 0 ? '+' : ''}${eredmény.bónusz}` : ''}
             </div>
+            {(átütés ?? 0) > 0 && <div className="sebzes-atutes-result">Átütés: {átütés}</div>}
           </>
         )}
       </div>

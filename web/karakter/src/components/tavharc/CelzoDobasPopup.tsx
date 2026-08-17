@@ -24,6 +24,8 @@ interface Props {
   vé: number;
   /** Weapon SP value */
   sp: number;
+  /** Fegyver Átütés értéke (informatív, ha > 0) */
+  átütés?: number;
   /** Collected active effects on CÉ rolls */
   céHatások: CéDobásHatás[];
   /** Megjegyzések (taktika notes relevant to CÉ) */
@@ -47,7 +49,7 @@ interface CéEredmény {
  *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat → Sebzés button
  *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
  */
-export function CélzóDobasPopup({ cé, vé, sp, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, onClose }: Props) {
+export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, onClose }: Props) {
   const [szint, setSzint] = useState(defaultSzint);
   const [result, setResult] = useState<CéEredmény | null>(null);
   const [showSebzés, setShowSebzés] = useState(false);
@@ -77,6 +79,7 @@ export function CélzóDobasPopup({ cé, vé, sp, céHatások, céMegjegyzések,
         megjegyzések={[]}
         hideMásodlagos
         hideAutoBónusz
+        átütés={átütés}
         onClose={onClose}
       />
     );

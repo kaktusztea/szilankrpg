@@ -22,6 +22,8 @@ interface Props {
   té: number;
   /** Active weapon SP value (from reactive engine) */
   sp: number;
+  /** Fegyver Átütés értéke (informatív, ha > 0) */
+  átütés?: number;
   /** Collected active effects on TÉ/Sebzés rolls */
   dobásInfo: DobásInfo;
   onClose: (téEredmény: number | null) => void;
@@ -38,7 +40,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, dobásInfo, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, onClose }: Props) {
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
   const [téResult, setTéResult] = useState<TéEredmény | null>(null);
   const [showSebzés, setShowSebzés] = useState(false);
@@ -65,6 +67,7 @@ export function TamadoDobasPopup({ té, sp, dobásInfo, onClose }: Props) {
         sebzésHatások={dobásInfo.sebzésHatások}
         spBónuszok={dobásInfo.spBónuszok}
         megjegyzések={dobásInfo.sebzésMegjegyzések}
+        átütés={átütés}
         onClose={() => onClose(téResult?.eredmény ?? null)}
       />
     );

@@ -255,6 +255,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         <TamadoDobasPopup
           té={aktívTÉ}
           sp={ctx?.result.SP ?? 0}
+          átütés={ctx ? parseInt(lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.Átütés ?? '0') || 0 : 0}
           dobásInfo={collectDobásInfo(session, karakter, data)}
           onClose={handleTamadoClose}
         />

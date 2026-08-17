@@ -171,11 +171,13 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         const céInfo = collectCéDobásInfo(session, k, data);
         const dobásInfo = collectDobásInfo(session, k, data);
         const fegyverSP = parseInt(tfDef?.SP ?? '0') || 0;
+        const fegyverÁtütés = parseInt(tfDef?.Átütés ?? '0') || 0;
         return (
           <CélzóDobasPopup
             cé={bontás.cé}
             vé={vé}
             sp={fegyverSP}
+            átütés={fegyverÁtütés}
             céHatások={céInfo.céHatások}
             céMegjegyzések={céInfo.céMegjegyzések}
             sebzésHatások={dobásInfo.sebzésHatások}

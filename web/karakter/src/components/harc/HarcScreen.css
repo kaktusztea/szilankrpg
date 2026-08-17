@@ -508,6 +508,18 @@
   font-family: monospace;
 }
 
+.sebzes-atutes {
+  color: var(--warning, #ffa726);
+  font-weight: 600;
+}
+
+.sebzes-atutes-result {
+  font-size: 13px;
+  color: var(--warning, #ffa726);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
 /* --- Dobás info (active effects, informational) --- */
 .dobas-info-list {
   width: 100%;
