@@ -118,13 +118,13 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 
 ![](https://progress-bar.xyz/100/?title=Karakteralkotás%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/100/?title=K%C3%A9pzetts%C3%A9grendszer%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/95/?title=K%C3%A9pzetts%C3%A9gek%20%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/100/?title=Fort%C3%A9lyok%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/98/?title=K%C3%A9pzetts%C3%A9gek%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/95/?title=Fort%C3%A9lyok%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/95/?title=H%C3%A1tterek%20%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/100/?title=Harcrendszer%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/85/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/95/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
+![](https://progress-bar.xyz/90/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
 
 ## Eszközök
 
@@ -12371,7 +12371,6 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
-- [Támadás erőből](fortelyok.harci/tamadas_erobol.md)
 - [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md)
 - [Természetes páncél](fortelyok.harci/termeszetes_pancel.md)
 - [Testőr](fortelyok.harci/testor.md)
@@ -15322,48 +15321,6 @@ TÉ, VÉ :+6
 
 ---
 ---
-## File: md/fortelyok.harci/tamadas_erobol.md
-
-## 🟣 Támadás erőből (2)
-
-Jobban tudod kihasználni a [Támadás erőből](../065_02_harci_taktikak.md#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) harci helyzetet.
-
-### 1. fok
-
-🔒 [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
-
-🌟 Legfeljebb `+4 SP` (`TÉ:-4`) pakolható át
-
-```
-TÉ:-1, SP:+1
-...
-TÉ:-4, SP:+4
-```
-
-<br />
-
-### 2. fok
-
-🔒 Harcmodor - `6.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
-
-🌟 Legfeljebb `+6 SP` (`TÉ:-6`) pakolható át
-
-```
-TÉ:-1, SP:+1
-...
-TÉ:-6, SP:+6
-```
-
----
-### Harcmodor korlátozás
-
-A fortély **Közelharc** és **Ostorharc** Harcmodorban **NEM** használható.
-
----
-
-
----
----
 ## File: md/fortelyok.harci/termeszetes_fegyver.md
 
 ## 🟣 Természetes fegyver (1)
@@ -18176,7 +18133,11 @@ Mágikus lövedékek esetén NEM használható.
 
 ### Alapeset
 
-Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet aktív), a **Célzó Értéket** `-7` levonás sújtja.
+Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet aktív):
+
+```
+Hátrány-1 CÉ dobásra
+```
 
 <br />
 
@@ -18186,7 +18147,7 @@ Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövé
 - Távolsági harcmodor – `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
-🌟 Téged nem érint a [Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet okozta büntetés, az ott leírt `CÉ` **levonás** nélkül támadhatod a váratlanul felbukkanó célpontot.
+🌟 Téged nem érint a [Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet okozta büntetés, hátrány nélkül támadhatod a váratlanul felbukkanó célpontot.
 
 ---
 
@@ -20578,7 +20539,7 @@ VÉ csökkentés
 ```
 Módosítók
   Roham: SP:+5
-  Támadás erőből fortély bónusza
+  Támadás erőből taktika: SP:+1..+3
 ```
 
 ```
@@ -21089,7 +21050,7 @@ SP = k20
 Módosítók:
    → Mesterfegyver fortély
    → Erőbónusz
-   → Támadás erőből fortély
+   → Támadás erőből taktika
    → Harci anatómia fortély
      (csak Precíz támadás
       manőverrel, vértmentes ponton)
@@ -21918,9 +21879,9 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Csúszós talaj](065_01_03_negativ_helyzetek.md#csúszós-talaj)
 - [Elvesztett egyensúly](065_01_03_negativ_helyzetek.md#elvesztett-egyensúly)
 - [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve)
+- [Gyengébb kéz](065_01_03_negativ_helyzetek.md#gyengébb-kéz)
 - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
 - [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
-- [Gyengébb kéz](065_01_03_negativ_helyzetek.md#gyengébb-kéz)
 - [Tűz ruhán - ég](065_01_03_negativ_helyzetek.md#tűz-ruhán---ég)
 - [Tűz ruhán - lángol](065_01_03_negativ_helyzetek.md#tűz-ruhán---lángol)
 - [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
@@ -22062,7 +22023,7 @@ Előny+1 TÉ dobásra
 
 🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
 
-❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás
+❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás, Belharci helyzet, Elvesztett egyensúly, Harci szekér
 
 <br />
 
@@ -22112,7 +22073,7 @@ Sikeres próba kell:
   Közelharci VÉ (Puszta kézzel)
 
 Bónuszok
-  Előny+2 Támadó dobásra
+  Előny+2 TÉ dobásra
 
   Orgyilkos fortély
     1.fok: Előny+1 Sebzés dobásra, +1 SP
@@ -22311,7 +22272,7 @@ VÉ: +5
 
 🔆 Példa: kapu, belógó falrész mögül harcolsz.
 
-❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás
+❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás, Belharci helyzet
 
 <br />
 
@@ -22360,7 +22321,7 @@ Sokféle állat van, ezért nem lehet egységes szabályt alkotni. Az állatok n
 ## Csúszós talaj
 
 ```
-Hátrány-1 TÉ dobásra
+Hátrány-1 Támadó dobásra
 ```
 
 Addig tart, amíg a csúszós felületen áll, mozog a karakter.
@@ -22371,7 +22332,7 @@ Addig tart, amíg a csúszós felületen áll, mozog a karakter.
 ## Elvesztett egyensúly
 
 ```
-Hátrány-1 TÉ dobásra
+Hátrány-1 Támadó dobásra
 Többszörös támadás elvesztése
 Mozgás - feleződik
 ```
@@ -22391,6 +22352,19 @@ VÉ veszteség duplázódik
 ```
 
 ❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Helyhez kötve, VÉ kiterjesztés, Közrefogás
+
+<br />
+
+---
+## Gyengébb kéz
+
+```
+Hátrány-1 Támadó dobásra
+
+Megszűnteti: Kétkezesség fortély
+```
+
+🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
 
 <br />
 
@@ -22442,19 +22416,6 @@ Ogár
 ### Pengeméret-különbség és lények mérete
 
 A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
-
-<br />
-
----
-## Gyengébb kéz
-
-```
-Hátrány-1 TÉ dobásra
-
-Megszűnteti: Kétkezesség fortély
-```
-
-🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
 
 <br />
 
@@ -22790,9 +22751,11 @@ Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy se
 
 ```
 KÉ:+1, VÉ:-1
-...
-KÉ:+5, VÉ:-5
+KÉ:+2, VÉ:-2
+KÉ:+3, VÉ:-3
 ```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
 ✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
 
@@ -22909,14 +22872,15 @@ Első oda-vissza csapásnál:
 ---
 ### Támadás erőből taktika
 
-Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `2`-ig.
+Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `3`-ig.
 
 ```
 TÉ:-1, SP:+1
 TÉ:-2, SP:+2
+TÉ:-3, SP:+3
 ```
 
-A fenti limit a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortéllyal növelhető.
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
 ✅ **Kiváró, Plusz támadás, 1 támadás taktikával** együtt
 
@@ -22932,6 +22896,8 @@ TÉ:+1, VÉ:-2
 TÉ:+2, VÉ:-4
 TÉ:+3, VÉ:-6
 ```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
 ✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
@@ -22950,8 +22916,9 @@ A támadásra helyezed a hangsúlyt. Lehetőségeidhez mérten folyamatosan nyom
 VÉ:+1, TÉ:-2
 VÉ:+2, TÉ:-4
 VÉ:+3, TÉ:-6
-VÉ:+4, TÉ:-8
 ```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
 ❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
@@ -26832,8 +26799,8 @@ Kitartott célzás helyzet
      (+3 alapeset + 4 fortély)
 
 Lövés reflexből helyzet
- -7: Lövés reflexből
- -0: "Lövés reflexből fejlesztése" fortéllyal
+ Hátrány-1 CÉ dobásra
+ Hátrány nélkül: "Lövés reflexből fejlesztése" fortéllyal
 ```
 
 🔆 **Kitartott célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
@@ -27274,7 +27241,6 @@ A [Harci helyzetek](065_01_04_fegyver_harci_helyzetek.md) távolsági harcra von
 - [Lövés reflexből](#lövés-reflexből)
 - [Nyílpuska újratöltés](#nyílpuska-újratöltés)
 
-
 ---
 ## Hajítás alkalmatlan fegyverrel
 
@@ -27310,7 +27276,11 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 ---
 ### Lövés reflexből
 
-Ha váratlanul kell lőnöd/hajítanod, a **Célzó Értékedet** `CÉ:-7` levonás sújtja.
+Ha váratlanul kell lőnöd/hajítanod:
+
+```
+Hátrány-1 CÉ dobásra
+```
 
 🔆 [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md) fortéllyal a büntetés nem érint.
 
@@ -29792,7 +29762,7 @@ Auraérintés és Aurapárbaj szükséges.
 
 # Aura jellemzői
 
-⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni.
+⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni
 
 - Mágiaellenállást adja
 - Mágikus akaratot adja támadó oldalon
