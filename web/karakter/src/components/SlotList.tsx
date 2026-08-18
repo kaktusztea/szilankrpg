@@ -5,6 +5,8 @@ import { isValidKarakter } from '../engine/validate';
 import { sanitizeUndo } from '../hooks/useUndo';
 import { readSlots, type SlotEntry } from '../hooks/slot-utils';
 import { SlotRow } from './SlotRow';
+import { SaveOptionsPopup } from './overlays/SaveOptionsPopup';
+import { ImportOptionsPopup } from './overlays/ImportOptionsPopup';
 
 interface Props {
   activeUid: string | undefined;
@@ -15,6 +17,7 @@ interface Props {
   onShareFile: (uid: string) => void;
   onDuplicate: (uid: string) => void;
   onFileLoad: () => void;
+  onClipboardImport: (text: string) => void;
   onNew: () => void;
   onSave: () => void;
   newDisabled: boolean;
@@ -23,23 +26,27 @@ interface Props {
   onClose: () => void;
 }
 
-export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
-  // Full backup / single save: show a spinner in place of the icon while the
-  // (Windows) native save dialog is being prepared. The dialog stealing focus
-  // fires window 'blur' → close the menu. Fallback timeout if blur never fires.
-  // savingId: '__backup__' for the backup button, or a slot uid for its 💾.
-  const [savingId, setSavingId] = useState<string | null>(null);
-  const isSaving = savingId !== null;
-  // Desktop = no Web Share API → direct download → OS save dialog (has the lag).
+export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+  // Full backup: show a spinner in place of the icon while the
+  // (Windows) native save dialog is being prepared.
+  const [savingBackup, setSavingBackup] = useState(false);
+  const isSaving = savingBackup;
   const isDesktop = typeof navigator.share !== 'function';
   const canShare = typeof navigator.share === 'function';
+
+  // SaveOptions popup state: which slot uid is open (null = closed)
+  const [savePopupUid, setSavePopupUid] = useState<string | null>(null);
+
+  // Import popup state
+  const [showImportPopup, setShowImportPopup] = useState(false);
+
   useEffect(() => {
-    if (!savingId) return;
+    if (!savingBackup) return;
     const finish = () => onClose();
     window.addEventListener('blur', finish, { once: true });
     const t = setTimeout(finish, 8000);
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
-  }, [savingId, onClose]);
+  }, [savingBackup, onClose]);
 
   const slots: SlotEntry[] = readSlots();
   slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
@@ -55,13 +62,28 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
     } catch { /* */ }
   }
 
-  /** Save a slot to file. On desktop: show spinner (native dialog lag), let it paint before triggering download. */
-  function saveSlot(uid: string) {
-    if (!isDesktop) { onSaveFile(uid); return; }
-    if (isSaving) return;
-    setSavingId(uid);
-    // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking native file dialog
-    requestAnimationFrame(() => requestAnimationFrame(() => onSaveFile(uid)));
+  /** SaveOptionsPopup handlers */
+  function handleUrlLink(uid: string) {
+    setSavePopupUid(null);
+    onShare(uid);
+  }
+
+  function handleSaveFile(uid: string) {
+    // Desktop: SaveOptionsPopup handles spinner + close on window blur.
+    // Mobile: close popup immediately, proceed with download.
+    if (!isDesktop) setSavePopupUid(null);
+    onSaveFile(uid);
+  }
+
+  function handleShareFile(uid: string) {
+    setSavePopupUid(null);
+    onShareFile(uid);
+  }
+
+  // Get the name of the slot for the popup header
+  function getSlotNév(uid: string): string {
+    const s = slots.find(x => x.uid === uid);
+    return s?.név || s?.becenév || 'Névtelen';
   }
 
   function renderSlot(s: SlotEntry) {
@@ -70,12 +92,8 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
         key={s.uid}
         slot={s}
         active={activeUid === s.uid}
-        savingId={savingId}
-        canShare={canShare}
         onLoad={loadSlot}
-        onShare={onShare}
-        onSaveSlot={saveSlot}
-        onShareFile={onShareFile}
+        onSaveOptions={setSavePopupUid}
         onDuplicate={onDuplicate}
         onDelete={onDelete}
       />
@@ -85,22 +103,27 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
   return (
     <>
       <div className="slot-actions slot-actions-top">
-        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Új karakter" onClick={() => { if (!newDisabled) onNew(); }}>📄</button>
-        <button className="menu-item slot-file-btn" title="Betöltés fájlból" onClick={onFileLoad}>📁</button>
+        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Új karakter" onClick={() => { if (!newDisabled) onNew(); }}>
+          <span className="slot-btn-icon">✚</span><span className="slot-btn-label">Új</span>
+        </button>
+        <button className="menu-item slot-file-btn" title="Importálás" onClick={() => setShowImportPopup(true)}>
+          <span className="slot-btn-icon">📥</span><span className="slot-btn-label">Importálás</span>
+        </button>
         <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled || isSaving} title="Összes karakter mentése"
           onClick={() => {
             if (newDisabled || isSaving) return;
-            setSavingId('__backup__');
+            setSavingBackup(true);
             // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking save dialog
             requestAnimationFrame(() => requestAnimationFrame(() => onSave()));
-          }}>{savingId === '__backup__' ? <span className="slot-btn-spinner" /> : '📦'}</button>
+          }}>
+          {savingBackup ? <span className="slot-btn-spinner" /> : <><span className="slot-btn-icon">📦</span><span className="slot-btn-label">Összes mentése</span></>}
+        </button>
       </div>
       <div className="slot-list">
         {slots.length === 0 && <span className="slot-empty">Nincs mentett karakter</span>}
         {(() => {
           const jkRows = slots.filter(s => s.jk !== false);
           const njkRows = slots.filter(s => s.jk === false);
-          // Szekció-fejlécek csak akkor, ha van legalább 1 NJK; különben sima lista.
           if (njkRows.length === 0) return jkRows.map(s => renderSlot(s));
           return [
             { title: 'Játékos karakterek', rows: jkRows },
@@ -126,6 +149,25 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
           <button className="menu-fs-chip" title="Teljes képernyő" onClick={onFullscreenHint}>⛶</button>
         ))}
       </div>
+
+      {savePopupUid && (
+        <SaveOptionsPopup
+          név={getSlotNév(savePopupUid)}
+          canShare={canShare}
+          onUrlLink={() => handleUrlLink(savePopupUid)}
+          onSaveFile={() => handleSaveFile(savePopupUid)}
+          onShareFile={() => handleShareFile(savePopupUid)}
+          onClose={() => setSavePopupUid(null)}
+        />
+      )}
+
+      {showImportPopup && (
+        <ImportOptionsPopup
+          onFileLoad={() => { setShowImportPopup(false); onFileLoad(); }}
+          onClipboardLoad={(text) => { setShowImportPopup(false); onClipboardImport(text); }}
+          onClose={() => setShowImportPopup(false)}
+        />
+      )}
     </>
   );
 }

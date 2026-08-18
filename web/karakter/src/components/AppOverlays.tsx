@@ -6,6 +6,7 @@ import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { isSlotFull } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
+import { decodeKarakterFromHash } from '../engine/url-share';
 import {
   SzilankPickerOverlay, NewCharConfirmOverlay, TestConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveFileOverlay,
@@ -121,6 +122,42 @@ export function AppOverlays({
     }
   };
 
+  /** Clipboard import: try to decode as URL (hash part) or full URL. */
+  const handleClipboardImport = (text: string) => {
+    // Extract hash: either a full URL with #hash, or just the hash/base64 string
+    let hash = '';
+    if (text.includes('#')) {
+      hash = text.split('#').slice(1).join('#');
+    } else {
+      // Assume the whole text is the base64url hash
+      hash = text;
+    }
+
+    if (!hash) {
+      set('toast', { msg: 'A vágólap nem tartalmaz karakter linket.', type: 'error' });
+      return;
+    }
+
+    const result = decodeKarakterFromHash(hash);
+    if ('error' in result) {
+      set('toast', { msg: result.error, type: 'error' });
+      return;
+    }
+
+    const k = { ...result.karakter, uid: generateUid(), id_leíró: generateIdLeíró(result.karakter.név, result.karakter.tsz), mentés_dátum: '' };
+    if (isSlotFull()) {
+      set('showSlotList', false);
+      set('showSlotLimit', true);
+      return;
+    }
+    set('showSlotList', false);
+    setKarakter(k);
+    setUndoStack([]);
+    setTestMode(false);
+    setIsDirty(true);
+    set('toast', { msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
+  };
+
   return (
     <>
 
@@ -146,6 +183,7 @@ export function AppOverlays({
           onShareFile={(uid) => saveSlotToFile(uid, 'share')}
           onDuplicate={duplicateSlot}
           onFileLoad={() => { set('showSlotList', false); loadKarakter(); }}
+          onClipboardImport={handleClipboardImport}
           onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
           onSave={() => { handleGenerateSave('backup'); }}
           newDisabled={!isDirty}

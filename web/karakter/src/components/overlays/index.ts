@@ -14,3 +14,5 @@ export { ToastOverlay } from './ToastOverlay';
 export { ImportConfirmOverlay } from './ImportConfirmOverlay';
 export { SlotLimitOverlay } from './SlotLimitOverlay';
 export { BackupRestoreOverlay } from './BackupRestoreOverlay';
+export { SaveOptionsPopup } from './SaveOptionsPopup';
+export { ImportOptionsPopup } from './ImportOptionsPopup';

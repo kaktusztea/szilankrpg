@@ -119,9 +119,11 @@
 .slot-chip-del { color: #e53935; font-weight: bold; }
 .slot-actions { display: flex; gap: 8px; margin-top: 8px; }
 .slot-actions-top { margin-top: 0; margin-bottom: 8px; }
-.slot-actions-top .slot-file-btn { font-size: 18px; padding: 7px 11px; }
+.slot-actions-top .slot-file-btn { padding: 8px 6px 6px; display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .slot-actions-top .slot-file-btn.is-disabled { opacity: 0.4; cursor: default; }
-.slot-file-btn { flex: 1; font-size: 13px; }
+.slot-file-btn { flex: 1; }
+.slot-btn-icon { font-size: 22px; line-height: 1; }
+.slot-btn-label { font-size: 9px; color: var(--text-dim); line-height: 1; opacity: 0.6; }
 .slot-btn-spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--border-input); border-top-color: var(--text); border-radius: 50%; animation: slot-spin 0.7s linear infinite; vertical-align: middle; }
 @keyframes slot-spin { to { transform: rotate(360deg); } }
 
@@ -203,3 +205,28 @@
 .backup-restore-limit { font-size: 12px; color: var(--warning); text-align: center; }
 .backup-restore-date { font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 4px; }
 .backup-confirm-summary { font-size: 14px; color: var(--text); text-align: center; line-height: 1.6; }
+
+/* --- 11. Save options popup --- */
+.save-options-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 16px;
+}
+.menu-item-sub {
+  font-size: 14px;
+  padding: 8px 14px;
+  text-align: left;
+}
+.menu-item-disabled {
+  opacity: 0.4;
+  cursor: default;
+  font-style: italic;
+}
+
+/* --- 12. Import options popup --- */
+.import-clip-error {
+  font-size: 12px;
+  color: var(--error);
+  text-align: center;
+}

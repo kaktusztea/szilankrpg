@@ -11,6 +11,7 @@ interface Props {
   onShareFile: (uid: string) => void;
   onDuplicate: (uid: string) => void;
   onFileLoad: () => void;
+  onClipboardImport: (text: string) => void;
   onNew: () => void;
   onSave: () => void;
   newDisabled: boolean;
@@ -19,7 +20,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function SlotListOverlay({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+export function SlotListOverlay({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt overlay-slots">
@@ -33,6 +34,7 @@ export function SlotListOverlay({ activeUid, onLoad, onDelete, onShare, onSaveFi
           onShareFile={onShareFile}
           onDuplicate={onDuplicate}
           onFileLoad={onFileLoad}
+          onClipboardImport={onClipboardImport}
           onNew={onNew}
           onSave={onSave}
           newDisabled={newDisabled}
