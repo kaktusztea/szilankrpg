@@ -37,17 +37,21 @@ interface SebzésEredmény {
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + k20 roll + info. */
 export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBónuszok, megjegyzések, hideMásodlagos, hideAutoBónusz, átütés, onClose }: Props) {
-  // Combined default: TÉ k20 bonus + net from active effects, clamped to [-2, +2]
-  const combinedDefault = Math.max(-2, Math.min(2, defaultElőny + netElőnySzint(sebzésHatások)));
-  const [szint, setSzint] = useState(combinedDefault);
+  const clamp = (v: number) => Math.max(-2, Math.min(2, v));
+  // Raw (unclamped) combined value — includes TÉ k20 bonus + active effects
+  const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
+  const [rawSzint, setRawSzint] = useState(baseRaw);
   const [bónusz, setBónusz] = useState(0);
   const [másodlagos, setMásodlagos] = useState(false);
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
 
-  const effSzint = Math.max(-2, Math.min(2, szint + (másodlagos ? -1 : 0)));
+  // Computed value includes másodlagos — this is the "calculated" level
+  const számított = clamp(baseRaw + (másodlagos ? -1 : 0));
+  // Actual value shown on chips and used for dice roll
+  const aktuális = clamp(rawSzint);
 
   function handleDobás() {
-    const dobás = rollElőnyHátrányK20(effSzint);
+    const dobás = rollElőnyHátrányK20(aktuális);
     setEredmény({ dobás, sp, bónusz, végső: dobás.eredmény + sp + bónusz });
   }
 
@@ -62,7 +66,15 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
   }
 
   function handleSzintChange(newSzint: number) {
-    setSzint(newSzint);
+    // Manual chip click: set raw to the clicked value
+    setRawSzint(newSzint);
+    setEredmény(null);
+  }
+
+  function toggleMásodlagos() {
+    const next = !másodlagos;
+    setMásodlagos(next);
+    setRawSzint(s => s + (next ? -1 : 1));
     setEredmény(null);
   }
 
@@ -85,7 +97,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
               </div>
             )}
 
-            <ElonyPicker szint={szint} onChange={handleSzintChange} />
+            <ElonyPicker szint={aktuális} eredeti={aktuális !== számított ? számított : undefined} onChange={handleSzintChange} />
 
             {(sebzésHatások.length > 0 || defaultElőny > 0) && (
               <div className="dobas-info-list">
@@ -119,7 +131,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
             {!hideMásodlagos && (
               <button
                 className={`sebzes-masodlagos-btn${másodlagos ? ' active' : ''}`}
-                onClick={() => { setMásodlagos(m => !m); setEredmény(null); }}>
+                onClick={toggleMásodlagos}>
                 Sebzéstípus másodlagos: {másodlagos ? 'igen' : 'nem'}
               </button>
             )}
@@ -132,13 +144,13 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
                 if (totalBónusz !== 0) return <>{base}<span className={totalBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{totalBónusz > 0 ? '+' : ''}{totalBónusz}</span></>;
                 return sp;
               })()} + k20
-              {effSzint !== 0 ? ` (${effSzint > 0 ? `Előny+${effSzint}` : `Hátrány${effSzint}`})` : ''}
+              {aktuális !== 0 ? ` (${aktuális > 0 ? `Előny+${aktuális}` : `Hátrány${aktuális}`})` : ''}
               {(átütés ?? 0) > 0 && <span className="sebzes-atutes"> | Átütés: {átütés}</span>}
             </div>
 
             <div className="dobas-btn-row">
               <button className="tamado-sebzes-btn" onClick={handleDobás}>Dobás</button>
-              <ManualDicePicker szint={effSzint} onSelect={handleManualK20} alapÉrték={sp + bónusz} alapLabel="SP" />
+              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={sp + bónusz} alapLabel="SP" />
             </div>
           </>
         ) : (

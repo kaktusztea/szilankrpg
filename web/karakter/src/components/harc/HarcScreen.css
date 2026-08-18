@@ -375,6 +375,11 @@
   font-weight: bold;
 }
 
+.tamado-elony-chip.eredeti {
+  border-color: var(--success);
+  border-style: dashed;
+}
+
 .tamado-dobas-btn {
   padding: 12px 32px;
   border: 1px solid var(--success);

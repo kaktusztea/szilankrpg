@@ -13,3 +13,4 @@ node_modules
 web/karakter/dist
 web/karakter/public/metadata.json
 web/karakter/.build_counter
+*.tsbuildinfo
