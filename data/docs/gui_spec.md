@@ -383,7 +383,6 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 
 ### Formázás
 - Fegyver táblázat számok (nem első oszlop): `font-family: monospace`
-- Fegyver táblázat aktív sor (`.harc-fegyver-active-row`) számok: `font-size: 18px` (alap 16px + 2px kiemelés)
 - VÉ csökkentés gombok: `font-family: monospace`
 - SFÉ értékek (`<strong>`): `font-family: monospace`
 - SFÉ lefedettség %: `font-family: monospace`
