@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { encode, renderSVG } from 'uqr';
 
@@ -10,8 +10,28 @@ interface Props {
 
 const QR_OPTS = { ecc: 'L' as const, border: 2 };
 const PNG_SIZE = 512;
-// privacy.resistFingerprinting (LibreWolf, hardened Firefox) spoofs buildID to this fixed value
-const isCanvasPoisoned = (navigator as any).buildID === '20181001000000';
+
+/** Detect if canvas export is poisoned by privacy.resistFingerprinting (runtime check). */
+function detectCanvasPoison(): boolean {
+  try {
+    const c = document.createElement('canvas');
+    c.width = 2;
+    c.height = 2;
+    const ctx = c.getContext('2d')!;
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, 1, 1);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(1, 0, 1, 1);
+    ctx.fillRect(0, 1, 2, 1);
+    const data = ctx.getImageData(0, 0, 2, 2).data;
+    // Pixel (0,0) should be black (0,0,0,255), pixel (1,0) should be white (255,255,255,255)
+    return data[0] !== 0 || data[4] !== 255 || data[8] !== 255 || data[12] !== 255;
+  } catch {
+    return false;
+  }
+}
+
+const isCanvasPoisoned = detectCanvasPoison();
 
 /** Generate PNG Blob from QR data matrix directly on canvas (no SVG→Image round-trip). */
 function qrToPngBlob(data: string, size: number): Promise<Blob> {
@@ -47,6 +67,7 @@ function qrToPngBlob(data: string, size: number): Promise<Blob> {
 export function QrCodePopup({ url, név, onClose }: Props) {
   const canShare = typeof navigator.share === 'function';
   const filename = `szilank_qr_${név.replace(/\s+/g, '_')}.png`;
+  const [saving, setSaving] = useState(false);
 
   // Escape: close (capture phase to prevent parent overlay closing)
   useEffect(() => {
@@ -83,10 +104,13 @@ export function QrCodePopup({ url, név, onClose }: Props) {
   }
 
   async function handleDownload() {
+    if (saving) return;
+    setSaving(true);
     try {
       const blob = await qrToPngBlob(url, PNG_SIZE);
       downloadBlob(blob);
     } catch { /* */ }
+    setSaving(false);
   }
 
   async function handleShare() {
@@ -112,7 +136,9 @@ export function QrCodePopup({ url, név, onClose }: Props) {
         ) : (
           <div className="qr-popup-actions">
             <button type="button" className="qr-popup-chip qr-popup-chip-disabled" disabled>📋 Vágólapra</button>
-            <button type="button" className="qr-popup-chip" onClick={handleDownload}>💾 PNG fájlba</button>
+            <button type="button" className="qr-popup-chip" disabled={saving} onClick={handleDownload}>
+              {saving ? <span className="slot-btn-spinner" /> : '💾 PNG fájlba'}
+            </button>
             {canShare && (
               <button type="button" className="qr-popup-chip" onClick={handleShare}>📤 Megosztás</button>
             )}
