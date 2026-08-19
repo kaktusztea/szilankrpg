@@ -277,3 +277,19 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+.qr-popup-warning {
+  background: var(--error);
+  color: #fff;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.qr-popup-warning code {
+  background: rgba(0,0,0,0.2);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 11px;
+}

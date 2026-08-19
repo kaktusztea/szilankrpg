@@ -10,6 +10,8 @@ interface Props {
 
 const QR_OPTS = { ecc: 'L' as const, border: 2 };
 const PNG_SIZE = 512;
+// privacy.resistFingerprinting (LibreWolf, hardened Firefox) spoofs buildID to this fixed value
+const isCanvasPoisoned = (navigator as any).buildID === '20181001000000';
 
 /** Generate PNG Blob from QR data matrix directly on canvas (no SVG→Image round-trip). */
 function qrToPngBlob(data: string, size: number): Promise<Blob> {
@@ -103,13 +105,19 @@ export function QrCodePopup({ url, név, onClose }: Props) {
       <div className="kep-prompt overlay-menu qr-popup">
         <label className="overlay-label-center">QR kód — {név}</label>
         <div className="qr-popup-svg" dangerouslySetInnerHTML={{ __html: svgString }} />
-        <div className="qr-popup-actions">
-          <button type="button" className="qr-popup-chip qr-popup-chip-disabled" disabled>📋 Vágólapra</button>
-          <button type="button" className="qr-popup-chip" onClick={handleDownload}>💾 PNG fájlba</button>
-          {canShare && (
-            <button type="button" className="qr-popup-chip" onClick={handleShare}>📤 Megosztás</button>
-          )}
-        </div>
+        {isCanvasPoisoned ? (
+          <div className="qr-popup-warning">
+            A böngésző fingerprint védelme megakadályozza a PNG exportot. Használd a képernyőkép funkciót, vagy kapcsold ki: <code>privacy.resistFingerprinting</code>
+          </div>
+        ) : (
+          <div className="qr-popup-actions">
+            <button type="button" className="qr-popup-chip qr-popup-chip-disabled" disabled>📋 Vágólapra</button>
+            <button type="button" className="qr-popup-chip" onClick={handleDownload}>💾 PNG fájlba</button>
+            {canShare && (
+              <button type="button" className="qr-popup-chip" onClick={handleShare}>📤 Megosztás</button>
+            )}
+          </div>
+        )}
       </div>
     </div>,
     document.body
