@@ -230,3 +230,9 @@
   color: var(--error);
   text-align: center;
 }
+.import-sub-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  opacity: 0.6;
+}
