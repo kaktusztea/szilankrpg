@@ -168,7 +168,6 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
         <button className="menu-item" disabled={loadingFile} onClick={handleFileLoad}>
           {loadingFile ? <span className="slot-btn-spinner" /> : '📁 JSON fájlból'}
         </button>
-        <button className="menu-item" onClick={handleClipboard}>📋 Vágólapról<span className="slot-btn-label import-sub-hint">(URL / QR)</span></button>
 
         <button className="menu-item" disabled={loadingQr} onClick={() => {
           if (loadingQr) return;
@@ -178,6 +177,8 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
           {loadingQr ? <span className="slot-btn-spinner" /> : '▣ QR kód képfájlból'}
         </button>
         <input ref={qrInputRef} type="file" accept="image/*" hidden onChange={handleQrImageSelect} />
+
+        <button className="menu-item" onClick={handleClipboard}>📋 Vágólapról<span className="slot-btn-label import-sub-hint">(URL / QR)</span></button>
 
         {clipError && <span className="import-clip-error">{clipError}</span>}
         {qrError && <span className="import-clip-error">{qrError}</span>}

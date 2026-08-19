@@ -15,6 +15,7 @@ interface Props {
 export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShareFile, onQrCode, onClose }: Props) {
   const [fileExpanded, setFileExpanded] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   // Escape: close this popup only (capture phase + stopPropagation prevents parent overlays from closing)
   useEffect(() => {
@@ -57,8 +58,6 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
       <div className="kep-prompt overlay-menu">
         <label className="overlay-label-center">Mentés — {név}</label>
 
-        <button className="menu-item" onClick={onUrlLink}>🔗 URL link</button>
-
         {canShare ? (
           <>
             <button className="menu-item" onClick={() => setFileExpanded(v => !v)}>
@@ -77,7 +76,27 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
           </button>
         )}
 
-        <button className="menu-item" onClick={onQrCode}>▣ QR kód</button>
+        <div className="save-row-with-info">
+          <button className="menu-item" onClick={onUrlLink}>🔗 URL link<span className="save-info-btn" onClick={e => { e.stopPropagation(); setShowInfo(true); }}>ⓘ</span></button>
+        </div>
+
+        <div className="save-row-with-info">
+          <button className="menu-item" onClick={onQrCode}>▣ QR kód<span className="save-info-btn" onClick={e => { e.stopPropagation(); setShowInfo(true); }}>ⓘ</span></button>
+        </div>
+
+        {showInfo && (
+          <div className="save-info-panel" onClick={() => setShowInfo(false)}>
+            <b>URL link / QR kód — nem tartalmazza:</b>
+            <ul>
+              <li>Előtörténet (szöveges mező)</li>
+              <li>Karakter verziók (checkpoint-ok)</li>
+              <li>Napló bejegyzések</li>
+              <li>Jegyzetek</li>
+              <li>Undo előzmények</li>
+            </ul>
+            <span className="save-info-dismiss">Koppints a bezáráshoz</span>
+          </div>
+        )}
       </div>
     </div>,
     document.body
