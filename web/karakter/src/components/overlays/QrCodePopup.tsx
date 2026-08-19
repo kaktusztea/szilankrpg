@@ -103,14 +103,27 @@ export function QrCodePopup({ url, név, onClose }: Props) {
     URL.revokeObjectURL(a.href);
   }
 
+  // Close popup when native save dialog steals focus, or fallback timeout
+  useEffect(() => {
+    if (!saving) return;
+    const finish = () => setSaving(false);
+    window.addEventListener('blur', finish, { once: true });
+    const t = setTimeout(finish, 8000);
+    return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
+  }, [saving]);
+
   async function handleDownload() {
     if (saving) return;
     setSaving(true);
-    try {
-      const blob = await qrToPngBlob(url, PNG_SIZE);
-      downloadBlob(blob);
-    } catch { /* */ }
-    setSaving(false);
+    // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking native file dialog
+    requestAnimationFrame(() => requestAnimationFrame(async () => {
+      try {
+        const blob = await qrToPngBlob(url, PNG_SIZE);
+        downloadBlob(blob);
+      } catch {
+        setSaving(false);
+      }
+    }));
   }
 
   async function handleShare() {
