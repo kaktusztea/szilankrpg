@@ -32,7 +32,10 @@ export function useKarakterState() {
   useAutoSave(karakter, undoStack, isDirty, testMode, setKarakter, viewingMode);
 
   // Document title
-  useEffect(() => { document.title = karakter?.becenév || 'Szilánk'; }, [karakter?.becenév]);
+  useEffect(() => {
+    const név = karakter?.becenév || 'Szilánk';
+    document.title = karakter?.jk === false ? `NJK ${név}` : név;
+  }, [karakter?.becenév, karakter?.jk]);
 
   // --- Field setters ---
   const setField = useCallback(<K extends keyof Karakter>(field: K) =>

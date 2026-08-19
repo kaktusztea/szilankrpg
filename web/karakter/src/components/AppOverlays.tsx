@@ -6,7 +6,8 @@ import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { isSlotFull } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
-import { decodeKarakterFromHash } from '../engine/url-share';
+import { decodeKarakterFromHash, encodeKarakterUrl } from '../engine/url-share';
+import { useState } from 'react';
 import {
   SzilankPickerOverlay, NewCharConfirmOverlay, TestConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveFileOverlay,
@@ -14,6 +15,7 @@ import {
   OverlayScreenOverlay, SharePopupOverlay, ToastOverlay, ImportConfirmOverlay,
   SlotLimitOverlay, BackupRestoreOverlay,
 } from './overlays';
+import { QrCodePopup } from './overlays/QrCodePopup';
 
 export interface OverlayState {
   showSzilánkPicker: boolean;
@@ -67,6 +69,21 @@ export function AppOverlays({
   shareFile, downloadFile, loadKarakter, shareSlotUrl, saveSlotToFile, importKarakter, deleteSlot,
   setUndoStack, setTestMode, setIsDirty, isDirty, onViewCheckpoint,
 }: Props) {
+
+  // --- QR code popup state ---
+  const [qrPopup, setQrPopup] = useState<{ url: string; név: string } | null>(null);
+
+  const handleQrCode = (uid: string) => {
+    const charData = localStorage.getItem(`szilank_char_${uid}`);
+    if (!charData) return;
+    try {
+      const parsed = JSON.parse(charData) as Karakter;
+      const url = encodeKarakterUrl(parsed);
+      setQrPopup({ url, név: parsed.becenév || parsed.név || 'Névtelen' });
+    } catch {
+      set('toast', { msg: 'Hiba a QR kód generálásakor.', type: 'error' });
+    }
+  };
 
   // --- Slot delete handler ---
   const handleSlotDelete = () => {
@@ -179,6 +196,7 @@ export function AppOverlays({
           onLoad={handleSlotLoad}
           onDelete={(uid, név) => set('slotDeleteTarget', { uid, név })}
           onShare={shareSlotUrl}
+          onQrCode={handleQrCode}
           onSaveFile={(uid) => saveSlotToFile(uid, 'download')}
           onShareFile={(uid) => saveSlotToFile(uid, 'share')}
           onDuplicate={duplicateSlot}
@@ -275,6 +293,14 @@ export function AppOverlays({
             set('toast', { msg: `${selected.length} karakter betöltve`, type: 'success' });
           }}
           onClose={() => set('backupRestore', null)}
+        />
+      )}
+
+      {qrPopup && (
+        <QrCodePopup
+          url={qrPopup.url}
+          név={qrPopup.név}
+          onClose={() => setQrPopup(null)}
         />
       )}
     </>

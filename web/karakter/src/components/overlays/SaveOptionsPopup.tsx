@@ -7,11 +7,12 @@ interface Props {
   onUrlLink: () => void;
   onSaveFile: () => void;
   onShareFile: () => void;
+  onQrCode: () => void;
   onClose: () => void;
 }
 
 /** 💾 Mentés/Exportálás popup: URL link, JSON fájlba, QR (placeholder). */
-export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShareFile, onClose }: Props) {
+export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShareFile, onQrCode, onClose }: Props) {
   const [fileExpanded, setFileExpanded] = useState(false);
   const [saving, setSaving] = useState(false);
 
@@ -76,7 +77,7 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
           </button>
         )}
 
-        <button className="menu-item menu-item-disabled" disabled>▣ QR kód (hamarosan)</button>
+        <button className="menu-item" onClick={onQrCode}>▣ QR kód</button>
       </div>
     </div>,
     document.body

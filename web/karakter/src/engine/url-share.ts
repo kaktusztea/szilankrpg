@@ -55,6 +55,7 @@ interface CompactKarakter {
   pa?: Record<string, string | number | boolean>;
   pj?: string;
   fl?: { nt: [string, number][] };
+  sh?: string;
 }
 
 function compactEncode(k: Karakter): CompactKarakter {
@@ -126,6 +127,9 @@ function compactEncode(k: Karakter): CompactKarakter {
   if (k.felszerelés.nagy_tárgyak.length) {
     c.fl = { nt: k.felszerelés.nagy_tárgyak.map(t => [t.név, t.MGT]) };
   }
+
+  // előtörténet (csak származás_helye)
+  if (k.előtörténet?.származás_helye) c.sh = k.előtörténet.származás_helye;
 
   return c;
 }
@@ -203,7 +207,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     páncél,
     pajzs: { méret: c.pj || '' },
     felszerelés: { nagy_tárgyak: c.fl?.nt?.map(([név, MGT]) => ({ név, MGT })) || [] },
-    előtörténet: { ...DEFAULT_ELOTORTENET },
+    előtörténet: { ...DEFAULT_ELOTORTENET, ...(c.sh ? { származás_helye: c.sh } : {}) },
   };
 }
 
@@ -238,7 +242,7 @@ export function decodeKarakterFromHash(hash: string): { karakter: Karakter } | {
       id_leíró: '',
       mentés_dátum: '',
       jegyzetek: '',
-      előtörténet: { ...DEFAULT_ELOTORTENET },
+      előtörténet: { ...DEFAULT_ELOTORTENET, ...partial.előtörténet },
       napló: [],
       checkpoints: [],
       session: { ...DEFAULT_SESSION },

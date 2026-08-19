@@ -58,4 +58,16 @@ describe('url-share encode/decode roundtrip', () => {
     const result = decodeKarakterFromHash('!!!! not valid base64 !!!!');
     expect('error' in result).toBe(true);
   });
+
+  it('preserves előtörténet.származás_helye', () => {
+    const k = { ...karakter, előtörténet: { ...karakter.előtörténet, származás_helye: 'Pyarroni királyság' } };
+    const d = roundtrip(k);
+    expect(d.előtörténet.származás_helye).toBe('Pyarroni királyság');
+  });
+
+  it('omits előtörténet.előtörténet from roundtrip', () => {
+    const k = { ...karakter, előtörténet: { ...karakter.előtörténet, előtörténet: 'Hosszú történet...' } };
+    const d = roundtrip(k);
+    expect(d.előtörténet.előtörténet).toBe('');
+  });
 });

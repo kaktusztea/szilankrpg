@@ -13,6 +13,7 @@ interface Props {
   onLoad: (karakter: Karakter, undo: any[]) => void;
   onDelete: (uid: string, név: string) => void;
   onShare: (uid: string) => void;
+  onQrCode: (uid: string) => void;
   onSaveFile: (uid: string) => void;
   onShareFile: (uid: string) => void;
   onDuplicate: (uid: string) => void;
@@ -26,7 +27,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
   // Full backup: show a spinner in place of the icon while the
   // (Windows) native save dialog is being prepared.
   const [savingBackup, setSavingBackup] = useState(false);
@@ -66,6 +67,11 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
   function handleUrlLink(uid: string) {
     setSavePopupUid(null);
     onShare(uid);
+  }
+
+  function handleQrCode(uid: string) {
+    setSavePopupUid(null);
+    onQrCode(uid);
   }
 
   function handleSaveFile(uid: string) {
@@ -157,6 +163,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
           onUrlLink={() => handleUrlLink(savePopupUid)}
           onSaveFile={() => handleSaveFile(savePopupUid)}
           onShareFile={() => handleShareFile(savePopupUid)}
+          onQrCode={() => handleQrCode(savePopupUid)}
           onClose={() => setSavePopupUid(null)}
         />
       )}
