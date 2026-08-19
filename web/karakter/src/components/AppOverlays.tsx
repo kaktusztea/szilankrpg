@@ -4,7 +4,7 @@ import type { UndoPatch } from '../hooks/useUndo';
 import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { isSlotFull } from '../hooks/slot-utils';
+import { isSlotFull, readSlots } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
 import { decodeKarakterFromHash, encodeKarakterUrl } from '../engine/url-share';
 import { useState } from 'react';
@@ -162,12 +162,17 @@ export function AppOverlays({
     }
 
     const k = { ...result.karakter, uid: generateUid(), id_leíró: generateIdLeíró(result.karakter.név, result.karakter.tsz), mentés_dátum: '' };
+    const slots = readSlots();
+    const match = slots.find(s => s.név === k.név && s.tsz === k.tsz);
+    if (match) {
+      set('importConfirm', { karakter: k, matchUid: match.uid });
+      return;
+    }
     if (isSlotFull()) {
       set('showSlotList', false);
       set('showSlotLimit', true);
       return;
     }
-    set('showSlotList', false);
     setKarakter(k);
     setUndoStack([]);
     setTestMode(false);
@@ -200,7 +205,7 @@ export function AppOverlays({
           onSaveFile={(uid) => saveSlotToFile(uid, 'download')}
           onShareFile={(uid) => saveSlotToFile(uid, 'share')}
           onDuplicate={duplicateSlot}
-          onFileLoad={() => { set('showSlotList', false); loadKarakter(); }}
+          onFileLoad={async () => { await loadKarakter(); set('showSlotList', false); }}
           onClipboardImport={handleClipboardImport}
           onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
           onSave={() => { handleGenerateSave('backup'); }}

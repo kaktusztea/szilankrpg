@@ -170,7 +170,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
 
       {showImportPopup && (
         <ImportOptionsPopup
-          onFileLoad={() => { setShowImportPopup(false); onFileLoad(); }}
+          onFileLoad={() => { onFileLoad(); }}
           onClipboardLoad={(text) => { setShowImportPopup(false); onClipboardImport(text); }}
           onClose={() => setShowImportPopup(false)}
         />

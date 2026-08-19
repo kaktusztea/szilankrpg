@@ -63,6 +63,11 @@
   color: #fff;
   border-color: var(--error);
 }
+.btn-new-confirm {
+  background: var(--success);
+  color: #fff;
+  border-color: var(--success);
+}
 
 /* --- 2. Popup helper utilities --- */
 .kep-prompt-align-center { align-items: center; }
@@ -255,6 +260,11 @@
   height: auto;
   max-width: 260px;
 }
+.qr-popup-svg-img img {
+  width: 260px;
+  height: 260px;
+  display: block;
+}
 .qr-popup-actions {
   display: flex;
   gap: 10px;
@@ -292,4 +302,10 @@
   padding: 1px 4px;
   border-radius: 3px;
   font-size: 11px;
+}
+.qr-popup-hint {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 6px;
 }

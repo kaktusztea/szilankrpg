@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import jsQR from 'jsqr';
 
 interface Props {
   onFileLoad: () => void;
@@ -7,10 +8,13 @@ interface Props {
   onClose: () => void;
 }
 
-/** 📥 Importálás popup: JSON fájlból vagy vágólapról (URL/QR link). */
+/** 📥 Importálás popup: JSON fájlból, vágólapról, vagy QR kód képfájlból. */
 export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Props) {
   const [clipError, setClipError] = useState('');
   const [loadingFile, setLoadingFile] = useState(false);
+  const [qrError, setQrError] = useState('');
+  const [loadingQr, setLoadingQr] = useState(false);
+  const qrInputRef = useRef<HTMLInputElement>(null);
 
   // Escape: close this popup only (capture phase + stopPropagation prevents parent overlays from closing)
   useEffect(() => {
@@ -25,6 +29,7 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
   }, [onClose]);
 
   // Close popup when native file dialog steals focus (window blur), or fallback timeout.
+  // Only for JSON file load — QR image picker needs the popup alive for the onChange callback.
   useEffect(() => {
     if (!loadingFile) return;
     const finish = () => onClose();
@@ -32,6 +37,15 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
     const t = setTimeout(finish, 8000);
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
   }, [loadingFile, onClose]);
+
+  // Reset QR loading state when window regains focus (user returned from file picker)
+  useEffect(() => {
+    if (!loadingQr) return;
+    const reset = () => setLoadingQr(false);
+    window.addEventListener('focus', reset, { once: true });
+    const t = setTimeout(reset, 8000);
+    return () => { window.removeEventListener('focus', reset); clearTimeout(t); };
+  }, [loadingQr]);
 
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) {
@@ -58,6 +72,58 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
     }
   }
 
+  function handleQrImageSelect(e: React.ChangeEvent<HTMLInputElement>) {
+    setQrError('');
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // SVG files need special handling: inject width/height for proper rasterization
+    if (file.type === 'image/svg+xml' || file.name.endsWith('.svg')) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        let svgText = reader.result as string;
+        // Extract viewBox dimensions and inject as width/height
+        const vbMatch = svgText.match(/viewBox="0 0 (\d+) (\d+)"/);
+        if (vbMatch) {
+          svgText = svgText.replace('<svg ', `<svg width="${vbMatch[1]}" height="${vbMatch[2]}" `);
+        }
+        const blob = new Blob([svgText], { type: 'image/svg+xml;charset=utf-8' });
+        loadImageAndDecode(URL.createObjectURL(blob));
+      };
+      reader.onerror = () => setQrError('A képfájl nem olvasható.');
+      reader.readAsText(file);
+    } else {
+      loadImageAndDecode(URL.createObjectURL(file));
+    }
+  }
+
+  function loadImageAndDecode(objectUrl: string) {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth || img.width;
+      canvas.height = img.naturalHeight || img.height;
+      const ctx = canvas.getContext('2d')!;
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(objectUrl);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const result = jsQR(imageData.data, canvas.width, canvas.height);
+      if (result?.data) {
+        onClipboardLoad(result.data);
+      } else {
+        setQrError('Nem található QR kód a képen.');
+      }
+      // Reset input so same file can be re-selected
+      if (qrInputRef.current) qrInputRef.current.value = '';
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(objectUrl);
+      setQrError('A képfájl nem olvasható.');
+      if (qrInputRef.current) qrInputRef.current.value = '';
+    };
+    img.src = objectUrl;
+  }
+
   return createPortal(
     <div className="kep-prompt-overlay" onClick={handleBackdrop}>
       <div className="kep-prompt overlay-menu">
@@ -68,7 +134,17 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
         </button>
         <button className="menu-item" onClick={handleClipboard}>📋 Vágólapról<span className="slot-btn-label import-sub-hint">(URL / QR)</span></button>
 
+        <button className="menu-item" disabled={loadingQr} onClick={() => {
+          if (loadingQr) return;
+          setLoadingQr(true);
+          requestAnimationFrame(() => requestAnimationFrame(() => qrInputRef.current?.click()));
+        }}>
+          {loadingQr ? <span className="slot-btn-spinner" /> : '▣ QR kód képfájlból'}
+        </button>
+        <input ref={qrInputRef} type="file" accept="image/*" hidden onChange={handleQrImageSelect} />
+
         {clipError && <span className="import-clip-error">{clipError}</span>}
+        {qrError && <span className="import-clip-error">{qrError}</span>}
       </div>
     </div>,
     document.body
