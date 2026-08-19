@@ -64,12 +64,48 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
   async function handleClipboard() {
     setClipError('');
     try {
+      // Try text first
       const text = await navigator.clipboard.readText();
-      if (!text.trim()) { setClipError('A vágólap üres.'); return; }
-      onClipboardLoad(text.trim());
+      if (text.trim()) { onClipboardLoad(text.trim()); return; }
+    } catch { /* text read failed, try image */ }
+
+    // Try reading image from clipboard (e.g. copied QR code image)
+    try {
+      const items = await navigator.clipboard.read();
+      for (const item of items) {
+        const imageType = item.types.find(t => t.startsWith('image/'));
+        if (imageType) {
+          const blob = await item.getType(imageType);
+          const objectUrl = URL.createObjectURL(blob);
+          const decoded = await decodeQrFromUrl(objectUrl);
+          if (decoded) { onClipboardLoad(decoded); return; }
+          setClipError('Nem található QR kód a képen.');
+          return;
+        }
+      }
+      setClipError('A vágólap üres.');
     } catch {
       setClipError('Nincs hozzáférés a vágólaphoz.');
     }
+  }
+
+  function decodeQrFromUrl(objectUrl: string): Promise<string | null> {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth || img.width;
+        canvas.height = img.naturalHeight || img.height;
+        const ctx = canvas.getContext('2d')!;
+        ctx.drawImage(img, 0, 0);
+        URL.revokeObjectURL(objectUrl);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const result = jsQR(imageData.data, canvas.width, canvas.height);
+        resolve(result?.data || null);
+      };
+      img.onerror = () => { URL.revokeObjectURL(objectUrl); resolve(null); };
+      img.src = objectUrl;
+    });
   }
 
   function handleQrImageSelect(e: React.ChangeEvent<HTMLInputElement>) {
