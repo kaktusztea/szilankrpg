@@ -13,7 +13,6 @@ interface Props {
 
 /** 💾 Mentés/Exportálás popup: URL link, JSON fájlba, QR (placeholder). */
 export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShareFile, onQrCode, onClose }: Props) {
-  const [fileExpanded, setFileExpanded] = useState(false);
   const [saving, setSaving] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
@@ -60,15 +59,10 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
 
         {canShare ? (
           <>
-            <button className="menu-item" onClick={() => setFileExpanded(v => !v)}>
-              📄 JSON fájlba {fileExpanded ? '▾' : '▸'}
+            <button className="menu-item" disabled={saving} onClick={handleDesktopSave}>
+              {saving ? <span className="slot-btn-spinner" /> : '📄 JSON háttértárra'}
             </button>
-            {fileExpanded && (
-              <div className="save-options-sub">
-                <button className="menu-item menu-item-sub" onClick={onSaveFile}>🖴 Mentés háttértárra</button>
-                <button className="menu-item menu-item-sub" onClick={onShareFile}>📤 Megosztás</button>
-              </div>
-            )}
+            <button className="menu-item" onClick={onShareFile}>📤 JSON megosztása</button>
           </>
         ) : (
           <button className="menu-item" disabled={saving} onClick={handleDesktopSave}>
