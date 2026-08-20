@@ -143,8 +143,10 @@ export function QrCodePopup({ url, név, onClose }: Props) {
       const blob = await qrToPngBlob(url, PNG_SIZE);
       const file = new File([blob], filename, { type: 'image/png' });
       await navigator.share({ title: `Szilánk — ${név}`, files: [file] });
-    } catch {
-      // Fallback: share URL only
+    } catch (e: any) {
+      // User cancelled (iOS AbortError) — do NOT retry with URL fallback
+      if (e?.name === 'AbortError') return;
+      // Fallback: share URL only (files not supported on this platform)
       try { await navigator.share({ title: `Szilánk — ${név}`, url }); } catch { /* cancelled */ }
     }
   }
