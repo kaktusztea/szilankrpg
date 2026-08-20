@@ -221,7 +221,7 @@ taktikák:
   id: "teljes_védekezés"
   fokozatos: false
   módosítók:
-    VÉ: 6
+    VÉ: 8
   megjegyzés: "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20T."
   kombó_mód: "whitelist"
   kombó_lista: []
