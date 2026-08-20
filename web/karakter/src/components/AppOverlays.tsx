@@ -71,7 +71,7 @@ export function AppOverlays({
 }: Props) {
 
   // --- QR code popup state ---
-  const [qrPopup, setQrPopup] = useState<{ url: string; név: string } | null>(null);
+  const [qrPopup, setQrPopup] = useState<{ url: string; név: string; tsz: number } | null>(null);
 
   const handleQrCode = (uid: string) => {
     const charData = localStorage.getItem(`szilank_char_${uid}`);
@@ -79,7 +79,7 @@ export function AppOverlays({
     try {
       const parsed = JSON.parse(charData) as Karakter;
       const url = encodeKarakterUrl(parsed);
-      setQrPopup({ url, név: parsed.becenév || parsed.név || 'Névtelen' });
+      setQrPopup({ url, név: parsed.becenév || parsed.név || 'Névtelen', tsz: parsed.tsz });
     } catch {
       set('toast', { msg: 'Hiba a QR kód generálásakor.', type: 'error' });
     }
@@ -309,6 +309,7 @@ export function AppOverlays({
         <QrCodePopup
           url={qrPopup.url}
           név={qrPopup.név}
+          tsz={qrPopup.tsz}
           onClose={() => setQrPopup(null)}
         />
       )}

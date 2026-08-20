@@ -5,6 +5,7 @@ import { encode, renderSVG } from 'uqr';
 interface Props {
   url: string;
   név: string;
+  tsz: number;
   onClose: () => void;
 }
 
@@ -33,18 +34,22 @@ function detectCanvasPoison(): boolean {
 
 const isCanvasPoisoned = detectCanvasPoison();
 
-/** Generate PNG Blob from QR data matrix directly on canvas (no SVG→Image round-trip). */
-function qrToPngBlob(data: string, size: number): Promise<Blob> {
+/** Generate PNG Blob from QR data matrix directly on canvas (no SVG→Image round-trip).
+ *  Optional label is rendered in a dark footer band below the QR area. */
+function qrToPngBlob(data: string, size: number, label?: string): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const qr = encode(data, QR_OPTS);
     const modules = qr.size;
     const scale = Math.floor(size / modules);
     const actualSize = scale * modules;
+    // Footer: dark band with label text, separated from QR white zone
+    const footerH = label ? Math.round(actualSize * 0.1) : 0;
+    const totalH = actualSize + footerH;
     const canvas = document.createElement('canvas');
     canvas.width = actualSize;
-    canvas.height = actualSize;
+    canvas.height = totalH;
     const ctx = canvas.getContext('2d')!;
-    // White background
+    // White background (QR area)
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, actualSize, actualSize);
     // Black modules
@@ -56,6 +61,17 @@ function qrToPngBlob(data: string, size: number): Promise<Blob> {
         }
       }
     }
+    // Footer band with label
+    if (label && footerH > 0) {
+      ctx.fillStyle = '#222222';
+      ctx.fillRect(0, actualSize, actualSize, footerH);
+      const fontSize = Math.round(footerH * 0.55);
+      ctx.font = `bold ${fontSize}px sans-serif`;
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, actualSize / 2, actualSize + footerH / 2, actualSize - 20);
+    }
     canvas.toBlob(blob => {
       if (blob) resolve(blob);
       else reject(new Error('canvas toBlob failed'));
@@ -64,9 +80,10 @@ function qrToPngBlob(data: string, size: number): Promise<Blob> {
 }
 
 /** QR kód popup — karakter URL megjelenítése beolvasható QR kódként. */
-export function QrCodePopup({ url, név, onClose }: Props) {
+export function QrCodePopup({ url, név, tsz, onClose }: Props) {
   const canShare = typeof navigator.share === 'function';
   const filename = `szilank_qr_${név.replace(/\s+/g, '_')}.png`;
+  const pngLabel = `${név} — ${tsz}. szint`;
   const [saving, setSaving] = useState(false);
   const [hint, setHint] = useState('');
 
@@ -130,7 +147,7 @@ export function QrCodePopup({ url, név, onClose }: Props) {
     // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking native file dialog
     requestAnimationFrame(() => requestAnimationFrame(async () => {
       try {
-        const blob = await qrToPngBlob(url, PNG_SIZE);
+        const blob = await qrToPngBlob(url, PNG_SIZE, pngLabel);
         downloadBlob(blob);
       } catch {
         setSaving(false);
@@ -140,7 +157,7 @@ export function QrCodePopup({ url, név, onClose }: Props) {
 
   async function handleShare() {
     try {
-      const blob = await qrToPngBlob(url, PNG_SIZE);
+      const blob = await qrToPngBlob(url, PNG_SIZE, pngLabel);
       const file = new File([blob], filename, { type: 'image/png' });
       await navigator.share({ title: `Szilánk — ${név}`, files: [file] });
     } catch (e: any) {
