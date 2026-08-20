@@ -28,8 +28,19 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
       const final = { ...k, uid: overwriteUid, id_leíró: generateIdLeíró(k.név, k.tsz) };
       localStorage.setItem(`szilank_char_${overwriteUid}`, JSON.stringify(final));
       setKarakter(final);
+      // Immediately update slot entry
+      const slots = readSlots();
+      const idx = slots.findIndex(s => s.uid === overwriteUid);
+      const entry = { uid: overwriteUid, id_leíró: final.id_leíró, név: final.név, becenév: final.becenév, tsz: final.tsz, mentés_dátum: new Date().toISOString(), jk: final.jk ?? true };
+      if (idx >= 0) slots[idx] = entry; else slots.unshift(entry);
+      writeSlots(slots);
     } else {
-      setKarakter(k);
+      const newK = { ...k, uid: k.uid || generateUid(), id_leíró: generateIdLeíró(k.név, k.tsz) };
+      setKarakter(newK);
+      // Immediately persist slot entry so SlotList shows it without waiting for auto-save
+      const slots = readSlots();
+      slots.unshift({ uid: newK.uid, id_leíró: newK.id_leíró, név: newK.név, becenév: newK.becenév, tsz: newK.tsz, mentés_dátum: new Date().toISOString(), jk: newK.jk ?? true });
+      writeSlots(slots);
     }
     setUndoStack([]);
     setTestMode(false);

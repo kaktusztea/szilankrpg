@@ -4,7 +4,7 @@ import type { UndoPatch } from '../hooks/useUndo';
 import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { isSlotFull, readSlots } from '../hooks/slot-utils';
+import { isSlotFull, readSlots, writeSlots } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
 import { decodeKarakterFromHash, encodeKarakterUrl } from '../engine/url-share';
 import { useState } from 'react';
@@ -177,6 +177,10 @@ export function AppOverlays({
     setUndoStack([]);
     setTestMode(false);
     setIsDirty(true);
+    // Immediately persist slot entry so SlotList shows it without waiting for auto-save
+    const updatedSlots = readSlots();
+    updatedSlots.unshift({ uid: k.uid, id_leíró: k.id_leíró, név: k.név, becenév: k.becenév, tsz: k.tsz, mentés_dátum: new Date().toISOString(), jk: k.jk ?? true });
+    writeSlots(updatedSlots);
     set('toast', { msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
   };
 
