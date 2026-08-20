@@ -284,7 +284,7 @@ Nagy pajzs
 
 ```
 Max Védő taktikában harcol
-  VÉ:+15; TÉ:-30
+  VÉ:+3(..6); TÉ:-6(..12)
 
 Hátrány-1
   Szociális képzettségpróbákra
@@ -308,7 +308,7 @@ Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 ```
 Többszörös támadás elvesztése
 Csak Teljes Védekezés taktikát
-  használhat: VÉ:+30
+  használhat: VÉ:+8
 
 Automatikus kudarc
   Szociális képzettségpróbákra

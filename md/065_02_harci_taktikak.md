@@ -275,7 +275,7 @@ A védekezésedre helyezed a hangsúlyt, ekkor kisebb vehemenciával támadsz.
 ### Teljes Védekezés Taktika
 
 ```
-VÉ:+6, folyamatos hátrálás
+VÉ:+8, folyamatos hátrálás
 
 Nem támadhatsz, nem varázsolhatsz
 
