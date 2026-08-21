@@ -2469,50 +2469,6 @@
     "md_fájl": "fortelyok.harci/alakzat_vedekezo.md"
   },
   {
-    "név": "Alakzatharc",
-    "csoport": "harci",
-    "alcsoport": "harci",
-    "maxfok": 2,
-    "session_toggle": false,
-    "emlékeztető": false,
-    "kiérdemelhető": false,
-    "kp_perfok": 6,
-    "ingyenes_perszint": 0,
-    "többszörös_típus": "harci alakzatok",
-    "többszörös_lista": [
-      "lovas ék",
-      "testudo"
-    ],
-    "leírás": "Sok féle alakzat létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok.",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
-    "fokok": [
-      {
-        "fok": 1,
-        "hatás": [
-          "Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2` olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod."
-        ],
-        "követelmény": [
-          "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!"
-        ],
-        "követelmények": [],
-        "módosítók": []
-      },
-      {
-        "fok": 2,
-        "hatás": [
-          "Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2` olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod."
-        ],
-        "követelmény": [
-          "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!"
-        ],
-        "követelmények": [],
-        "módosítók": []
-      }
-    ],
-    "md_fájl": "fortelyok.harci/alakzatharc.md"
-  },
-  {
     "név": "Alkalmatlan fegyver hajítása",
     "csoport": "harci",
     "alcsoport": "harci",

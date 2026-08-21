@@ -11,8 +11,8 @@ próba: "nincs"
 domináns_tulajdonságok: []
 mesterbónuszok:
   - szint: 9
-    leírás: ""
+    leírás: "Alakzat tartása vezető nélkül. Mentális/asztrális védelem +3. Társak helyzetének, érzéseinek, sebesülésének érzése."
   - szint: 12
-    leírás: ""
+    leírás: "Mentális/asztrális védelem +6. Szellembeszéd a társakkal (min. 9.szint szükséges a fogadó félnek)."
   - szint: 15
-    leírás: ""
+    leírás: "Mentális/asztrális védelem +9. Érzékszervek összekapcsolódása a társakkal."
