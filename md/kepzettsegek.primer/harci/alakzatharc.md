@@ -27,12 +27,12 @@ Ez írja le a képzettség használatát.
 
 #### 🌟 `12.szint`
 
-Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra.
+- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra.
 - Társaiddal közvetlen szellembeszédre vagytok képes mind - ha legalább egy valaki `12.szinten` birtokolja a képzettséget. A társnak minimum `9.szinten` kell ismernie, hogy képes legyen együttműködni.
 
 #### 🌟 `15.szint`
 
-Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra.
-- Társaiddal összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
+- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra.
+- Társaiddal hatékonyan összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
 
 ---
