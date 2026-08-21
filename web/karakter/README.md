@@ -96,8 +96,10 @@ A Tulajdonságok fül fejlécében a 🪪 gombbal nyíló ablak a karakter biogr
 ---
 ## Rejtett funkciók
 
-### Karakter URL megosztás
-A Karakterek ablakban (🧑) minden slot sorában a 🔗 gombbal egyetlen URL-be tömörítheted a karaktert és vágólapra másolhatod. Az URL megnyitásakor az app automatikusan importálja a karaktert.
+### Karakter megosztás és QR kód
+A Karakterek ablakban (🧑) a slot sorában 💾 → megnyíló popup-ból érhető el:
+- **🔗 URL link**: egyetlen URL-be tömöríti a karaktert és vágólapra másolja. Az URL megnyitásakor az app automatikusan importálja.
+- **▣ QR kód**: PNG képet generál a karakter URL-jéből, a karakter nevével a kód alatt. A kép letölthető vagy megosztható. Import: 📥 → „QR kód képfájlból" vagy „Vágólapról" (beillesztett QR kép) — az app beolvassa és importálja a karaktert.
 
 ### VÉ csökkenés történet
 
@@ -171,9 +173,18 @@ A "Szilánk" feliratra duplán koppintva 5 másodpercre megjelenik a build verzi
 
 - Max 10 karakter tárolható a böngésző localStorage-ában
 - 🧑 Karakterek: slot lista (aktív ●, többi ○), relatív idő kijelzéssel
-- Felső sor: 📄 új karakter, 📁 betöltés fájlból, 📦 összes karakter mentése (backup)
-- Slot soronkénti gombok: 🔗 link másolása, 💾 mentés fájlba, 📤 megosztás (mobil), ⧉ duplikálás, ✕ törlés
-- Betöltés: fájlból (JSON, egyedi vagy backup) vagy URL-ből
+- Felső sor: ✚ Új karakter, 📥 Importálás, 📦 Összes mentése (backup)
+- Slot soronkénti gombok: 💾 Mentés/Exportálás, ⧉ Duplikálás, ✕ Törlés
+- **💾 Mentés/Exportálás** popup:
+  - 🔗 URL link (vágólapra)
+  - ▣ QR kód (PNG letöltés, karakter névvel a kép alatt)
+  - 📄 JSON fájlba
+  - 📤 JSON megosztása (mobilon, natív share)
+  - ⓘ infó gomb: mit nem tartalmaz az URL/QR export (session, napló stb.)
+- **📥 Importálás** popup:
+  - 📁 JSON fájlból (egyedi vagy backup)
+  - ▣ QR kód képfájlból (galériából vagy fájlkezelőből)
+  - 📋 Vágólapról (URL vagy beillesztett QR kép)
 
 ---
 ## Technikai tudnivalók
