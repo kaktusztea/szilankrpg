@@ -40,6 +40,7 @@ Gyors mozgatás (EM)
   15:  1m
   12:  2m
    9:  3m, Testközelben
+   6:  4m
 ```
 
 ```
@@ -50,6 +51,7 @@ Mágiatáv II
   15:  2m
   12:  3m
    9:  4m, Testközelben
+   6:  5m
 ```
 
 ```
@@ -61,6 +63,7 @@ Sebes mozgatás (EM)
   15:  5m - 6m
   12:  7m - 8m
    9:  9m - 10m, Testközelben
+   6:  11m - 12m
 ```
 
 ```
@@ -82,11 +85,14 @@ Leggyorsabb mozgatás (EM)
   15:  21m - 30m
   12:  31m - 40m
    9:  40m - 50m, Testközelben
+   6:  51m - 60m
 ```
 
 🔆 Ha a próba sikeres, sikerült elugrani a lövedék elől, a támadó automatikusan elvesztette a támadását - már nem is tehet **Célzó dobást**.
 
 🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy betalál-e. Ennek módosítóiról itt: [Lövéskitérés sikertelen](szituaciok/loveskiteres_sikertelen.md).
+
+🔆 Miért a legkönnyebb kategóriába tartozik a "Testközelben"? Ennek az az oka, hogy így van lehetősége a megtámadottnak kézzel eltérítő mozdulatokat alkalmazni a támadó fegyvere, karja ellen.
 
 <br />
 
