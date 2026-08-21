@@ -29,6 +29,112 @@ Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a
 <br />
 
 ---
+## Skálázható taktikák
+
+Összesen 4 harci taktika tartozik ebbe az alcsoportba: Kezdeményező, Támadó, Védő, Támadás erőből.
+
+Ezek mind statikus formában adnak skálázható eltolást egyes harcértékekre - alapesetben maximum "+3"-at. Ez a felső korlát nő a karakter legmagasabb Harcmodor képzettségének szintjétől függően:
+
+```
+max +4: 6.szint
+max +5: 9.szint
+max +6: 12.szint
+```
+
+### Kezdeményező taktika
+
+```
+KÉ:+1, VÉ:-1
+KÉ:+2, VÉ:-2
+KÉ:+3, VÉ:-3
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
+
+✅ **Érintő, Visszafogott, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+Mindenképp szeretnéd magadhoz ragadni a Kezdeményezést.
+
+🔆 A `VÉ` büntetés az ellenfél `1.` támadásával szemben érvényesül - mindenképp.
+
+---
+### Támadó taktika
+
+```
+TÉ:+1, VÉ:-2
+TÉ:+2, VÉ:-4
+TÉ:+3, VÉ:-6
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+
+❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+
+✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+A támadásra helyezed a hangsúlyt. Lehetőségeidhez mérten folyamatosan nyomulsz előre.
+
+---
+### Védő taktika
+
+```
+VÉ:+1, TÉ:-2
+VÉ:+2, TÉ:-4
+VÉ:+3, TÉ:-6
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+
+❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+
+✅ **Érintő, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+A védekezésedre helyezed a hangsúlyt, ekkor kisebb vehemenciával támadsz.
+
+<br />
+
+---
+### Támadás erőből taktika
+
+Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `3`-ig.
+
+```
+TÉ:-1, SP:+1
+TÉ:-2, SP:+2
+TÉ:-3, SP:+3
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+✅ **Kiváró, Plusz támadás, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+❌ Ostorharc harcmodorban
+
+<br />
+
+---
+## Nem skálázható taktikák
+
+Ezek a taktikák fix módosítókat adnak alkalmazásukkor.
+
 ### 1 támadás taktika
 
 ```
@@ -88,25 +194,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta. Leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a "vadat", míg vezetőjük felkészül.
 
 ---
-### Kezdeményező taktika
 
-```
-KÉ:+1, VÉ:-1
-KÉ:+2, VÉ:-2
-KÉ:+3, VÉ:-3
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
-
-✅ **Érintő, Visszafogott, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-Mindenképp szeretnéd magadhoz ragadni a Kezdeményezést.
-
-🔆 A `VÉ` büntetés az ellenfél `1.` támadásával szemben érvényesül - mindenképp.
 
 ---
 ### Kiváró Taktika
@@ -209,67 +297,6 @@ Első oda-vissza csapásnál:
 🔆 **Körön belüli** további támadások már normál harcértékekkel történnek, harci taktika is választható
 
 🔆 Rohamhoz min `5-10m` nekifutás szükséges (terepviszony, felszerelés súly függő)
-
----
-### Támadás erőből taktika
-
-Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `3`-ig.
-
-```
-TÉ:-1, SP:+1
-TÉ:-2, SP:+2
-TÉ:-3, SP:+3
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-✅ **Kiváró, Plusz támadás, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-❌ Ostorharc harcmodorban
-
----
-### Támadó taktika
-
-```
-TÉ:+1, VÉ:-2
-TÉ:+2, VÉ:-4
-TÉ:+3, VÉ:-6
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
-
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
-
-✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-A támadásra helyezed a hangsúlyt. Lehetőségeidhez mérten folyamatosan nyomulsz előre.
-
----
-### Védő taktika
-
-```
-VÉ:+1, TÉ:-2
-VÉ:+2, TÉ:-4
-VÉ:+3, TÉ:-6
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
-
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
-
-✅ **Érintő, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-A védekezésedre helyezed a hangsúlyt, ekkor kisebb vehemenciával támadsz.
 
 ---
 ### Teljes Védekezés Taktika
