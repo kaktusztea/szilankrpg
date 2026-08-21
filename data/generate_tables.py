@@ -77,6 +77,7 @@ def generate_kepzettsegek():
     result = []
     errors = []
     for root, dirs, files in os.walk(kdir):
+        dirs.sort()
         for f in sorted(files):
             if not f.endswith('.yaml'):
                 continue
@@ -111,6 +112,7 @@ def generate_kepzettsegek():
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)
+    result.sort(key=lambda x: x['név'])
     write_json('kepzettsegek.json', result)
 
 
@@ -244,7 +246,11 @@ def generate_kiterjesztesek():
                 mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'normál'})
             for kep in (kit.get('erős') or []):
                 mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'erős'})
-    write_json('kiterjesztesek.json', mapping)
+    # Sort keys and value lists for deterministic output
+    sorted_mapping = {}
+    for key in sorted(mapping.keys()):
+        sorted_mapping[key] = sorted(mapping[key], key=lambda x: x['fortély'])
+    write_json('kiterjesztesek.json', sorted_mapping)
 
 
 def generate_primer_fortelyok():

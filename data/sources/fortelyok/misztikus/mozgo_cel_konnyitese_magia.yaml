@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 
-név: "Mozgó cél mestere mágiához"
+név: "Mozgó cél könnyítése (mágia)"
 névkomment: ""
 maxfok: 1
 session_toggle: false

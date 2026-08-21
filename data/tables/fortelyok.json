@@ -6946,7 +6946,7 @@
     "md_fájl": "fortelyok.misztikus/mentalfonal.md"
   },
   {
-    "név": "Mozgó cél mestere mágiához",
+    "név": "Mozgó cél könnyítése (mágia)",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
     "maxfok": 1,
@@ -6980,7 +6980,7 @@
         "módosítók": []
       }
     ],
-    "md_fájl": "fortelyok.misztikus/mozgo_cel_mestere_magiahoz.md"
+    "md_fájl": "fortelyok.misztikus/mozgo_cel_konnyitese_magia.md"
   },
   {
     "név": "Pszí Telekinézis",
@@ -9322,7 +9322,7 @@
     "md_fájl": "fortelyok.tavharc/mesterlovesz.md"
   },
   {
-    "név": "Mozgó cél mestere fegyverrel",
+    "név": "Mozgó cél könnyítése (fegyveres)",
     "csoport": "harci",
     "alcsoport": "tavharc",
     "maxfok": 1,
@@ -9368,7 +9368,7 @@
         "módosítók": []
       }
     ],
-    "md_fájl": "fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md"
+    "md_fájl": "fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md"
   },
   {
     "név": "Nyílpuska újratöltés fejlesztése",
