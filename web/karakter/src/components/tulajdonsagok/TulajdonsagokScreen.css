@@ -314,12 +314,14 @@
 .kep-proba-summary {
   text-align: center;
   font-family: monospace;
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
 }
-.kep-proba-vs { color: #888; font-size: 0.7em; margin: 0 6px; }
-.kep-proba-celszam { color: #e53935; }
+.kep-proba-sum-total { font-size: 22px; font-weight: bold; color: var(--text); }
+.kep-proba-vs { color: #888; font-size: 13px; margin: 0 4px; }
+.kep-proba-celszam { color: #e53935; font-size: 22px; font-weight: bold; }
 .kep-proba-eh { color: var(--warning); font-size: 13px; }
 .kep-proba-rolls { font-size: 13px; color: var(--text-dim); font-family: monospace; }
 .kep-proba-roll-sel { color: var(--text); font-weight: bold; }

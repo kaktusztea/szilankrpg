@@ -11,8 +11,8 @@ const NEHÉZSÉGEK: { érték: number; label: string }[] = [
   { érték: 6, label: 'Könnyű' },
   { érték: 9, label: 'Átlagos' },
   { érték: 12, label: 'Nehéz' },
-  { érték: 15, label: 'Nagyon nehéz' },
-  { érték: 18, label: 'Rendkívül nehéz' },
+  { érték: 15, label: 'N. nehéz' },
+  { érték: 18, label: 'Rendkívüli' },
   { érték: 21, label: 'Emberfeletti' },
 ];
 // 21 felett nincs elnevezés (max 30), a picker lenyitható részében jelenik meg.
@@ -428,12 +428,14 @@ export function KepzettsegProbaPopup({
           <>
             {kész && !ellenpróba && !ismeretlen && (
               <div className="kep-proba-summary">
-                {effSzint} + {tulÉrték}{vállalás > 0 ? ` (+${vállalás})` : ''} <span className="kep-proba-vs">vs</span> <span className="kep-proba-celszam">{nehézség}</span>
+                <span className="kep-proba-sum-total">{effSzint + tulÉrték}+k10</span>
+                <span className="kep-proba-vs">vs</span>
+                <span className="kep-proba-celszam">{nehézség}</span>
               </div>
             )}
             {kész && (ellenpróba || ismeretlen) && (
               <div className="kep-proba-summary">
-                {effSzint} + {tulÉrték}{vállalás > 0 ? ` (+${vállalás})` : ''} + k10
+                <span className="kep-proba-sum-total">{effSzint + tulÉrték}+k10</span>
               </div>
             )}
             {lehetetlen ? (
