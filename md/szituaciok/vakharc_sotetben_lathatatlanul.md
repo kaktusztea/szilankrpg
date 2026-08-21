@@ -32,9 +32,9 @@ Mindketten a látási viszonyok
 - bónuszait elveszíti
 - [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
 
-[Láthatatlan - teljesen](../md/065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---teljesen) harcoló
+[Láthatatlan - teljesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---teljesen) harcoló
 - bónuszai lecsökkennek [Láthatatlan - részlegesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---r%C3%A9szlegesen) bónuszaira
-- [Vakharc sötétben](../md/065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
+- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
 
 Másik harcos
 - [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
