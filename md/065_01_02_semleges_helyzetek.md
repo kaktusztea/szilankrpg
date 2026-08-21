@@ -51,7 +51,8 @@ Nem belharcos fegyverek
 ---
 ## Fegyverrántás váratlanul
 
-→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
+→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély\
+→ Kapcsolódik: [Fegyverrántás szituációi](szituaciok/fegyverrantas.md) (ennek a fejezetnek a gyorslinkjei)
 
 ### ⚜️ `1.`Harci kör elején
 
