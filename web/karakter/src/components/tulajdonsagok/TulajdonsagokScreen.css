@@ -500,8 +500,8 @@
 }
 .kep-proba-szit-item:active { opacity: 0.7; }
 .kep-proba-szit-item-active {
-  border-color: var(--accent, #7af);
-  background: rgba(119, 170, 255, 0.12);
+  border-color: #888;
+  background: rgba(136, 136, 136, 0.12);
 }
 .kep-proba-szit-item-active.kep-proba-szit-pos {
   border-color: var(--success);

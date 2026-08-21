@@ -16,3 +16,9 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Időjárás"
+    sorok:
+      - { érték: -6, leírás: "Szélsőséges időjárás" }
+      - { érték: -3, leírás: "Rossz időjárás" }
+      - { érték: 0, leírás: "Normál időjárás" }

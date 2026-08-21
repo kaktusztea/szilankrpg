@@ -16,3 +16,9 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Körülmény"
+    sorok:
+      - { érték: -3, leírás: "Gyorsan, nyomás alatt keresni" }
+      - { érték: 0, leírás: "Normál körülmények" }
+      - { érték: 3, leírás: "Aktív, koncentrált keresés" }

@@ -16,3 +16,13 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Kontaktus"
+    sorok:
+      - { érték: -3, leírás: "Rövidebb kontaktus" }
+      - { érték: 0, leírás: "Átlagos kontaktus" }
+      - { érték: 3, leírás: "Hosszabb, mélyebb kontaktus" }
+  - kategória: "Faj"
+    sorok:
+      - { érték: -3, leírás: "Más fajú a célszemély" }
+      - { érték: 0, leírás: "Azonos faj" }

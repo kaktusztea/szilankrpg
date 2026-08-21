@@ -16,3 +16,19 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Könyvtár"
+    sorok:
+      - { érték: 6, leírás: "Kiváló könyvtár" }
+      - { érték: 3, leírás: "Jó könyvtár" }
+      - { érték: 0, leírás: "Nincs könyvtár" }
+  - kategória: "Hozzáférés"
+    sorok:
+      - { érték: -6, leírás: "Tiltott/hiányos anyag, súlyos" }
+      - { érték: -3, leírás: "Hiányos anyag" }
+      - { érték: 0, leírás: "Szabad hozzáférés" }
+  - kategória: "Nyelv"
+    sorok:
+      - { érték: -4, leírás: "Súlyos nyelvi nehézség" }
+      - { érték: -2, leírás: "Nyelvjárás, fordítás" }
+      - { érték: 0, leírás: "Anyanyelvű szöveg" }

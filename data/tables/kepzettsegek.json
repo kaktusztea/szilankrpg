@@ -32,7 +32,29 @@
       "Intelligencia",
       "Emlékezet"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Felszerelés",
+        "sorok": [
+          {
+            "érték": -9,
+            "leírás": "Súlyosan hiányos labor"
+          },
+          {
+            "érték": -6,
+            "leírás": "Rosszul felszerelt labor"
+          },
+          {
+            "érték": -3,
+            "leírás": "Hiányos műszerek"
+          },
+          {
+            "érték": 0,
+            "leírás": "Megfelelő labor"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/alkimia.md"
   },
   {
@@ -74,6 +96,16 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/elemi_magia.md"
+  },
+  {
+    "név": "Arkánum: Életerő Manipulálása",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
+    "md_fájl": "kepzettsegek.primer/arkanumok/eletero_manipulalasa.md"
   },
   {
     "név": "Arkánum: Időmágia",
@@ -186,14 +218,67 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/termagia.md"
   },
   {
-    "név": "Arkánum: Életerő Manipulálása",
-    "csoport": "misztikus",
-    "primer": true,
+    "név": "Álcázás/Álruha",
+    "csoport": "alvilági",
+    "primer": false,
     "többszörös": [],
-    "próba": "nem dobható",
-    "domináns_tulajdonságok": [],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.primer/arkanumok/eletero_manipulalasa.md"
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Intelligencia",
+      "Önuralom",
+      "Érzékenység"
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Archetípus",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "Kiemelt archetípusod"
+          },
+          {
+            "érték": 0,
+            "leírás": "Egyéb archetípus"
+          }
+        ]
+      },
+      {
+        "kategória": "Idő",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Átöltözés másodpercek alatt"
+          },
+          {
+            "érték": -3,
+            "leírás": "Gyors átöltözés"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál tempó"
+          }
+        ]
+      },
+      {
+        "kategória": "Felszerelés",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Minimális felszerelés"
+          },
+          {
+            "érték": -3,
+            "leírás": "Szegényes felszerelés"
+          },
+          {
+            "érték": 0,
+            "leírás": "Megfelelő felszerelés"
+          }
+        ]
+      }
+    ],
+    "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
   },
   {
     "név": "Befolyásolás",
@@ -205,7 +290,21 @@
       "Intelligencia",
       "Érzékenység"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Nyelvi akadály",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Olyan nyelven próbálsz hatni, amit nem ért"
+          },
+          {
+            "érték": 0,
+            "leírás": "Közös nyelv"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/befolyasolas.md"
   },
   {
@@ -218,7 +317,21 @@
       "Intelligencia",
       "Önuralom"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Nyom nélkül hatástalanítani"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/csapdaallitas.md"
   },
   {
@@ -231,7 +344,25 @@
       "Érzékenység",
       "Emlékezet"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Közönség",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Ellenséges tömeg"
+          },
+          {
+            "érték": -3,
+            "leírás": "Közönyös közönség"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál közönség"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/eloadomuveszet.md"
   },
   {
@@ -244,7 +375,38 @@
       "Érzékenység",
       "Intelligencia"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Kontaktus",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Rövidebb kontaktus"
+          },
+          {
+            "érték": 0,
+            "leírás": "Átlagos kontaktus"
+          },
+          {
+            "érték": 3,
+            "leírás": "Hosszabb, mélyebb kontaktus"
+          }
+        ]
+      },
+      {
+        "kategória": "Faj",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Más fajú a célszemély"
+          },
+          {
+            "érték": 0,
+            "leírás": "Azonos faj"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/emberismeret.md"
   },
   {
@@ -261,6 +423,50 @@
     ],
     "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
+  },
+  {
+    "név": "Értékbecslés",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ],
+    "helyzetfüggő_módosítók": [],
+    "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
+  },
+  {
+    "név": "Észlelés",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Gyorsan, nyomás alatt keresni"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          },
+          {
+            "érték": 3,
+            "leírás": "Aktív, koncentrált keresés"
+          }
+        ]
+      }
+    ],
+    "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
   },
   {
     "név": "Faj misztérium: Amund",
@@ -323,16 +529,6 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md"
   },
   {
-    "név": "Faj misztérium: Ember (Slan)",
-    "csoport": "misztikus",
-    "primer": true,
-    "többszörös": [],
-    "próba": "nem dobható",
-    "domináns_tulajdonságok": [],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md"
-  },
-  {
     "név": "Faj misztérium: Ember (déli)",
     "csoport": "misztikus",
     "primer": true,
@@ -341,6 +537,16 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md"
+  },
+  {
+    "név": "Faj misztérium: Ember (Északi)",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
+    "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md"
   },
   {
     "név": "Faj misztérium: Ember (korg)",
@@ -353,14 +559,14 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md"
   },
   {
-    "név": "Faj misztérium: Ember (Északi)",
+    "név": "Faj misztérium: Ember (Slan)",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md"
+    "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md"
   },
   {
     "név": "Faj misztérium: Erdőpille",
@@ -558,7 +764,63 @@
       "Emlékezet",
       "Ügyesség"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Időjárás",
+        "sorok": [
+          {
+            "érték": -9,
+            "leírás": "Vihar, orkán"
+          },
+          {
+            "érték": -6,
+            "leírás": "Erős vihar"
+          },
+          {
+            "érték": -3,
+            "leírás": "Erős szél, zivatar"
+          },
+          {
+            "érték": 0,
+            "leírás": "Enyhe szél, jó idő"
+          }
+        ]
+      },
+      {
+        "kategória": "Hajó állapota",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Súlyosan sérült vagy túlterhelt"
+          },
+          {
+            "érték": -3,
+            "leírás": "Sérült vagy túlterhelt"
+          },
+          {
+            "érték": 0,
+            "leírás": "Karbantartott, jó állapotú"
+          }
+        ]
+      },
+      {
+        "kategória": "Legénység",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Képzetlen zsoldosok"
+          },
+          {
+            "érték": -3,
+            "leírás": "Fegyelmezetlen legénység"
+          },
+          {
+            "érték": 0,
+            "leírás": "Tapasztalt legénység"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/hajozas.md"
   },
   {
@@ -591,19 +853,6 @@
     "md_fájl": "kepzettsegek.primer/harci/harcmodor.md"
   },
   {
-    "név": "Kvantikum",
-    "csoport": "tudományos",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Intelligencia",
-      "Emlékezet"
-    ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
-  },
-  {
     "név": "Képzőművészet",
     "csoport": "művészeti",
     "primer": false,
@@ -613,7 +862,38 @@
       "Érzékenység",
       "Ügyesség"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Idő",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Kapkodás"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál tempó"
+          },
+          {
+            "érték": 2,
+            "leírás": "Ráérős munka"
+          }
+        ]
+      },
+      {
+        "kategória": "Környezet",
+        "sorok": [
+          {
+            "érték": 0,
+            "leírás": "Normál környezet"
+          },
+          {
+            "érték": 2,
+            "leírás": "Inspiráló környezet"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
   },
   {
@@ -626,8 +906,49 @@
       "Ügyesség",
       "Intelligencia"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Rövid határidő"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
+  },
+  {
+    "név": "Kvantikum",
+    "csoport": "tudományos",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Emlékezet"
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Kapkodó munka"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          }
+        ]
+      }
+    ],
+    "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
   },
   {
     "név": "Lexikum",
@@ -639,8 +960,105 @@
       "Emlékezet",
       "Intelligencia"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Könyvtár",
+        "sorok": [
+          {
+            "érték": 6,
+            "leírás": "Kiváló könyvtár"
+          },
+          {
+            "érték": 3,
+            "leírás": "Jó könyvtár"
+          },
+          {
+            "érték": 0,
+            "leírás": "Nincs könyvtár"
+          }
+        ]
+      },
+      {
+        "kategória": "Hozzáférés",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Tiltott/hiányos anyag, súlyos"
+          },
+          {
+            "érték": -3,
+            "leírás": "Hiányos anyag"
+          },
+          {
+            "érték": 0,
+            "leírás": "Szabad hozzáférés"
+          }
+        ]
+      },
+      {
+        "kategória": "Nyelv",
+        "sorok": [
+          {
+            "érték": -4,
+            "leírás": "Súlyos nyelvi nehézség"
+          },
+          {
+            "érték": -2,
+            "leírás": "Nyelvjárás, fordítás"
+          },
+          {
+            "érték": 0,
+            "leírás": "Anyanyelvű szöveg"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/lexikum.md"
+  },
+  {
+    "név": "Léglovaglás",
+    "csoport": "fizikai",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Ügyesség",
+      "Gyorsaság"
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Hátas",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Vad hátas"
+          },
+          {
+            "érték": 0,
+            "leírás": "Betört hátas"
+          }
+        ]
+      },
+      {
+        "kategória": "Időjárás",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Vihar, orkán"
+          },
+          {
+            "érték": -3,
+            "leírás": "Erős szél vagy felhőszaggatás"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál időjárás"
+          }
+        ]
+      }
+    ],
+    "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
   },
   {
     "név": "Lopakodás/Rejtőzés",
@@ -792,7 +1210,33 @@
       "Ügyesség",
       "Önuralom"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Kapkodni kell"
+          },
+          {
+            "érték": -3,
+            "leírás": "Nincs meg a testközelség"
+          },
+          {
+            "érték": -3,
+            "leírás": "Több tárgy egyszerre"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          },
+          {
+            "érték": 3,
+            "leírás": "Zajos, zsibongó környezet"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/lopas.md"
   },
   {
@@ -806,22 +1250,22 @@
       "Ügyesség",
       "Gyorsaság"
     ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
-  },
-  {
-    "név": "Léglovaglás",
-    "csoport": "fizikai",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Önuralom",
-      "Ügyesség",
-      "Gyorsaság"
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Hátas",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Vad hátas"
+          },
+          {
+            "érték": 0,
+            "leírás": "Betört hátas"
+          }
+        ]
+      }
     ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
+    "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
   },
   {
     "név": "Mágikus célzás",
@@ -843,7 +1287,37 @@
       "Ügyesség",
       "Edzettség"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Gyorsan mászni"
+          },
+          {
+            "érték": -3,
+            "leírás": "Sötétben"
+          },
+          {
+            "érték": -3,
+            "leírás": "Lengő kötélen"
+          },
+          {
+            "érték": -3,
+            "leírás": "Mentő próba (rontás után)"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          },
+          {
+            "érték": 3,
+            "leírás": "Mászókampók"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/maszas.md"
   },
   {
@@ -884,7 +1358,25 @@
       "Emlékezet",
       "Érzékenység"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Segédeszköz",
+        "sorok": [
+          {
+            "érték": 0,
+            "leírás": "Egyedül tanulsz"
+          },
+          {
+            "érték": 3,
+            "leírás": "Könyvtár"
+          },
+          {
+            "érték": 3,
+            "leírás": "Tanító aktívan segít"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
   },
   {
@@ -914,6 +1406,20 @@
     "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
   },
   {
+    "név": "Ősi nyelv ismerete",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [
+      "*"
+    ],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet"
+    ],
+    "helyzetfüggő_módosítók": [],
+    "md_fájl": "kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md"
+  },
+  {
     "név": "Szerencsejáték",
     "csoport": "alvilági",
     "primer": false,
@@ -923,31 +1429,26 @@
       "Önuralom",
       "Intelligencia"
     ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
-  },
-  {
-    "név": "Természetjárás",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia"
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Közeg",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Ismeretlen kaszinó, idegen szabályok"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál környezet"
+          },
+          {
+            "érték": 3,
+            "leírás": "Kocsma, barátságos közeg"
+          }
+        ]
+      }
     ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
-  },
-  {
-    "név": "Tradíció",
-    "csoport": "misztikus",
-    "primer": true,
-    "többszörös": [],
-    "próba": "nincs",
-    "domináns_tulajdonságok": [],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
+    "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
   },
   {
     "név": "Távolsági harcmodor",
@@ -964,6 +1465,47 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/harci/tavolsagi_harcmodor.md"
+  },
+  {
+    "név": "Természetjárás",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Időjárás",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Szélsőséges időjárás"
+          },
+          {
+            "érték": -3,
+            "leírás": "Rossz időjárás"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál időjárás"
+          }
+        ]
+      }
+    ],
+    "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
+  },
+  {
+    "név": "Tradíció",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nincs",
+    "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
+    "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
   },
   {
     "név": "Vajákosság",
@@ -988,7 +1530,42 @@
       "Emlékezet",
       "Intelligencia"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Szűkös határidő"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          },
+          {
+            "érték": 3,
+            "leírás": "Jó hírnév"
+          }
+        ]
+      },
+      {
+        "kategória": "Hírnév/Karma",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Rossz hírnév, súlyos karma"
+          },
+          {
+            "érték": -3,
+            "leírás": "Rossz hírnév, karma"
+          },
+          {
+            "érték": 0,
+            "leírás": "Semleges"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/varosi_jartassag.md"
   },
   {
@@ -1001,62 +1578,29 @@
       "Ügyesség",
       "Önuralom"
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Körülmény",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Sietős nyitás"
+          },
+          {
+            "érték": -3,
+            "leírás": "Zavaró tényezők (zaj, sötét)"
+          },
+          {
+            "érték": -3,
+            "leírás": "Hiányos eszközök"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál körülmények"
+          }
+        ]
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/zarnyitas.md"
-  },
-  {
-    "név": "Álcázás/Álruha",
-    "csoport": "alvilági",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Ügyesség",
-      "Intelligencia",
-      "Önuralom",
-      "Érzékenység"
-    ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
-  },
-  {
-    "név": "Értékbecslés",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet",
-      "Intelligencia"
-    ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
-  },
-  {
-    "név": "Észlelés",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia"
-    ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
-  },
-  {
-    "név": "Ősi nyelv ismerete",
-    "csoport": "misztikus",
-    "primer": true,
-    "többszörös": [
-      "*"
-    ],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet"
-    ],
-    "helyzetfüggő_módosítók": [],
-    "md_fájl": "kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md"
   }
 ]

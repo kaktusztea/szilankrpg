@@ -8,6 +8,17 @@ Usage: python3 data/generate_tables.py
 
 import yaml, json, os, sys, hashlib
 
+# Hungarian alphabetical sort key: normalize accented chars for ordering.
+# Á→A+suffix, É→E+suffix, etc. so they sort right after their base letter.
+# Hungarian alphabetical sort key: accented letters sort after their base.
+# Á after A, É after E, etc. We replace them with base+suffix that sorts correctly.
+def hu_sort_key(s: str) -> str:
+    r = s.lower()
+    r = r.replace('á', 'a~').replace('é', 'e~').replace('í', 'i~')
+    r = r.replace('ő', 'o~~').replace('ö', 'o~').replace('ó', 'o\x7e')
+    r = r.replace('ű', 'u~~').replace('ü', 'u~').replace('ú', 'u\x7e')
+    return r
+
 # Resolve data directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = SCRIPT_DIR
@@ -113,7 +124,7 @@ def generate_kepzettsegek():
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)
-    result.sort(key=lambda x: x['név'])
+    result.sort(key=lambda x: hu_sort_key(x['név']))
     write_json('kepzettsegek.json', result)
 
 

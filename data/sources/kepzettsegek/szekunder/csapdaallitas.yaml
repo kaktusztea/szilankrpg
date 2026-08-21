@@ -16,3 +16,8 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Körülmény"
+    sorok:
+      - { érték: -3, leírás: "Nyom nélkül hatástalanítani" }
+      - { érték: 0, leírás: "Normál körülmények" }

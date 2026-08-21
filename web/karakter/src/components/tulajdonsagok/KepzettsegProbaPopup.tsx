@@ -137,7 +137,14 @@ export function KepzettsegProbaPopup({
   const [összetettManual, setÖsszetettManual] = useState<number[]>([]);
 
   // Szituációs módosítók: kategóriánként kiválasztott sor indexe (-1 = nincs kiválasztva)
-  const [szitMods, setSzitMods] = useState<Record<string, number>>({});
+  const [szitMods, setSzitMods] = useState<Record<string, number>>(() => {
+    const init: Record<string, number> = {};
+    for (const t of módosítóTáblák) {
+      const zeroIdx = t.sorok.findIndex(s => s.érték === 0);
+      if (zeroIdx >= 0) init[t.kategória] = zeroIdx;
+    }
+    return init;
+  });
   const szitModÖsszeg = módosítóTáblák.reduce((sum, t) => {
     const idx = szitMods[t.kategória];
     return sum + (idx != null && idx >= 0 ? t.sorok[idx].érték : 0);

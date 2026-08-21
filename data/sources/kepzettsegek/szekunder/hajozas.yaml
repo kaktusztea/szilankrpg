@@ -16,3 +16,20 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Időjárás"
+    sorok:
+      - { érték: -9, leírás: "Vihar, orkán" }
+      - { érték: -6, leírás: "Erős vihar" }
+      - { érték: -3, leírás: "Erős szél, zivatar" }
+      - { érték: 0, leírás: "Enyhe szél, jó idő" }
+  - kategória: "Hajó állapota"
+    sorok:
+      - { érték: -6, leírás: "Súlyosan sérült vagy túlterhelt" }
+      - { érték: -3, leírás: "Sérült vagy túlterhelt" }
+      - { érték: 0, leírás: "Karbantartott, jó állapotú" }
+  - kategória: "Legénység"
+    sorok:
+      - { érték: -6, leírás: "Képzetlen zsoldosok" }
+      - { érték: -3, leírás: "Fegyelmezetlen legénység" }
+      - { érték: 0, leírás: "Tapasztalt legénység" }

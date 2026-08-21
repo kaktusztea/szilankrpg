@@ -16,3 +16,8 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Nyelvi akadály"
+    sorok:
+      - { érték: -3, leírás: "Olyan nyelven próbálsz hatni, amit nem ért" }
+      - { érték: 0, leírás: "Közös nyelv" }

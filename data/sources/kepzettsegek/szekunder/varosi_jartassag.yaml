@@ -16,3 +16,14 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Körülmény"
+    sorok:
+      - { érték: -3, leírás: "Szűkös határidő" }
+      - { érték: 0, leírás: "Normál körülmények" }
+      - { érték: 3, leírás: "Jó hírnév" }
+  - kategória: "Hírnév/Karma"
+    sorok:
+      - { érték: -6, leírás: "Rossz hírnév, súlyos karma" }
+      - { érték: -3, leírás: "Rossz hírnév, karma" }
+      - { érték: 0, leírás: "Semleges" }

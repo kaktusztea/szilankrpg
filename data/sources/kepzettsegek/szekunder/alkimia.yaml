@@ -16,3 +16,10 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Felszerelés"
+    sorok:
+      - { érték: -9, leírás: "Súlyosan hiányos labor" }
+      - { érték: -6, leírás: "Rosszul felszerelt labor" }
+      - { érték: -3, leírás: "Hiányos műszerek" }
+      - { érték: 0, leírás: "Megfelelő labor" }

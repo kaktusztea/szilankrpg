@@ -16,3 +16,13 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Idő"
+    sorok:
+      - { érték: -3, leírás: "Kapkodás" }
+      - { érték: 0, leírás: "Normál tempó" }
+      - { érték: 2, leírás: "Ráérős munka" }
+  - kategória: "Környezet"
+    sorok:
+      - { érték: 0, leírás: "Normál környezet" }
+      - { érték: 2, leírás: "Inspiráló környezet" }

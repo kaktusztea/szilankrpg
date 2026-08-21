@@ -16,3 +16,18 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Archetípus"
+    sorok:
+      - { érték: 3, leírás: "Kiemelt archetípusod" }
+      - { érték: 0, leírás: "Egyéb archetípus" }
+  - kategória: "Idő"
+    sorok:
+      - { érték: -6, leírás: "Átöltözés másodpercek alatt" }
+      - { érték: -3, leírás: "Gyors átöltözés" }
+      - { érték: 0, leírás: "Normál tempó" }
+  - kategória: "Felszerelés"
+    sorok:
+      - { érték: -6, leírás: "Minimális felszerelés" }
+      - { érték: -3, leírás: "Szegényes felszerelés" }
+      - { érték: 0, leírás: "Megfelelő felszerelés" }

@@ -16,3 +16,9 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Közönség"
+    sorok:
+      - { érték: -6, leírás: "Ellenséges tömeg" }
+      - { érték: -3, leírás: "Közönyös közönség" }
+      - { érték: 0, leírás: "Normál közönség" }

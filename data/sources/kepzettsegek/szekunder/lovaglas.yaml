@@ -16,3 +16,8 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Hátas"
+    sorok:
+      - { érték: -3, leírás: "Vad hátas" }
+      - { érték: 0, leírás: "Betört hátas" }
