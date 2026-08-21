@@ -4,7 +4,7 @@
 
 leíró_hátterek:
   - kategória: "Származás"
-    elemek: ["Apród", "Árva", "Erdőlakó", "Fejvadász", "Gladiátor", "Harcművész", "Jobbágy", "Lovag", "Nemes", "Polgár", "Varázsló", "Városlakó"]
+    elemek: ["Apród", "Árva", "Erdőlakó", "Fejvadász", "Gladiátor", "Harcművész", "Jobbágy", "Lovag", "Nemes", "Polgár", "Varázstudó", "Városlakó"]
     többszörös: false
   - kategória: "Jellem"
     elemek: ["Élet", "Rend", "Halál", "Káosz", "Alattomos", "Alattvaló", "Álmodozó", "Autoriter", "Barátságos", "Cinikus", "Gondoskodó", "Gyanakvó", "Gyáva", "Gyűjtögető", "Hallgatag", "Hiszékeny", "Hitehagyott", "Idealista", "Identitáskrízis", "Kapzsi", "Kényes", "Megfontolt", "Megbízhatatlan", "Megbízható", "Meggondolatlan", "Nagyképű", "Nagyvonalú", "Naív", "Nárcisztikus", "Piperkőc", "Pojáca", "Precíz", "Szerény", "Talpnyaló", "Teszetosza", "Tiszteletreméltó", "Tudálékos", "Vezéralkat", "Zsugori"]
