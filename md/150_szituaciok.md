@@ -10,6 +10,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
+- [Vakharc, sötétben, láthatatlanul](szituaciok/vakharc_sotetben_lathatatlanul.md)
 
 ## Sunyi támadások
 
