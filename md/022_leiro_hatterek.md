@@ -18,7 +18,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Lovag
 - Nemes
 - Polgár
-- Varázsló
+- Varázstudó
 - Városlakó
 
 ### Jellem
