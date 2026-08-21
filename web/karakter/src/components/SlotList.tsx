@@ -118,9 +118,14 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
         <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled || isSaving} title="Összes karakter mentése"
           onClick={() => {
             if (newDisabled || isSaving) return;
-            setSavingBackup(true);
-            // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking save dialog
-            requestAnimationFrame(() => requestAnimationFrame(() => onSave()));
+            if (isDesktop) {
+              setSavingBackup(true);
+              // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking save dialog
+              requestAnimationFrame(() => requestAnimationFrame(() => onSave()));
+            } else {
+              // Mobile: no spinner needed — handleGenerateSave opens an overlay immediately
+              onSave();
+            }
           }}>
           {savingBackup ? <span className="slot-btn-spinner" /> : <><span className="slot-btn-icon">📦</span><span className="slot-btn-label">Összes mentése</span></>}
         </button>
