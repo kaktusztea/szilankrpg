@@ -687,6 +687,10 @@
       {
         "max_táv": 3,
         "célszám": 9
+      },
+      {
+        "max_táv": 4,
+        "célszám": 6
       }
     ],
     "korlátosan_alkalmas": [
@@ -705,6 +709,10 @@
       {
         "max_táv": 4,
         "célszám": 9
+      },
+      {
+        "max_táv": 5,
+        "célszám": 6
       }
     ],
     "dobófegyverek": [
@@ -727,6 +735,10 @@
       {
         "max_táv": 10,
         "célszám": 9
+      },
+      {
+        "max_táv": 12,
+        "célszám": 6
       }
     ],
     "íjak": [
@@ -749,6 +761,10 @@
       {
         "max_táv": 25,
         "célszám": 9
+      },
+      {
+        "max_táv": 30,
+        "célszám": 6
       }
     ],
     "nyílpuskák": [
@@ -771,6 +787,10 @@
       {
         "max_táv": 50,
         "célszám": 9
+      },
+      {
+        "max_táv": 60,
+        "célszám": 6
       }
     ]
   },

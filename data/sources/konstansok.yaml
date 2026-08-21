@@ -539,29 +539,34 @@ lövéskitérés:
     - { max_táv: 1, célszám: 15 }
     - { max_táv: 2, célszám: 12 }
     - { max_táv: 3, célszám: 9 }
+    - { max_táv: 4, célszám: 6 }
   korlátosan_alkalmas:       # Mágiatáv II
     - { max_táv: 1, célszám: 18 }
     - { max_táv: 2, célszám: 15 }
     - { max_táv: 3, célszám: 12 }
     - { max_táv: 4, célszám: 9 }
+    - { max_táv: 5, célszám: 6 }
   dobófegyverek:             # Mágiatáv III
     - { max_táv: 2, célszám: 21 }
     - { max_táv: 4, célszám: 18 }
     - { max_táv: 6, célszám: 15 }
     - { max_táv: 8, célszám: 12 }
     - { max_táv: 10, célszám: 9 }
+    - { max_táv: 12, célszám: 6 }
   íjak:                      # Mágiatáv IV
     - { max_táv: 5, célszám: 21 }
     - { max_táv: 10, célszám: 18 }
     - { max_táv: 15, célszám: 15 }
     - { max_táv: 20, célszám: 12 }
     - { max_táv: 25, célszám: 9 }
+    - { max_táv: 30, célszám: 6 }
   nyílpuskák:
     - { max_táv: 10, célszám: 21 }
     - { max_táv: 20, célszám: 18 }
     - { max_táv: 30, célszám: 15 }
     - { max_táv: 40, célszám: 12 }
     - { max_táv: 50, célszám: 9 }
+    - { max_táv: 60, célszám: 6 }
 
 # ============================================================
 # Harci akrobatika páncél korlátok
