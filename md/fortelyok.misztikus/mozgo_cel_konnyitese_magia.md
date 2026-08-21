@@ -1,4 +1,4 @@
-## 🟣 Mozgó cél mestere mágiához (1)
+## 🟣 Mozgó cél könnyítése (mágia) (1)
 
 Nem okoz számodra gondot, hogy összevissza mozgó ellenfelet kell eltalálnod.
 

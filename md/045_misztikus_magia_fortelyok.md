@@ -12,7 +12,7 @@
 - [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md)
 - [Mágikus lövedék gyorsítása](fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
 - [Mentálfonál](fortelyok.misztikus/mentalfonal.md)
-- [Mozgó cél mestere mágiához](fortelyok.misztikus/mozgo_cel_mestere_magiahoz.md)
+- [Mozgó cél könnyítése (mágia)](fortelyok.misztikus/mozgo_cel_konnyitese_magia.md)
 - [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md)
 - [Pszí Telepátia](fortelyok.misztikus/pszi_telepatia.md)
 

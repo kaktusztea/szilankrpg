@@ -67,7 +67,7 @@
 - [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md)
 - [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md)
 - [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
-- [Mozgó cél mestere fegyverrel](fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md)
+- [Mozgó cél könnyítése (fegyveres)](fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md)
 
 ---
 

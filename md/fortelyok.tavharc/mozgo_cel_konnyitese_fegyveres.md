@@ -1,4 +1,4 @@
-## 🟣 Mozgó cél mestere fegyverrel (1)
+## 🟣 Mozgó cél könnyítése (fegyveres) (1)
 
 Összevissza mozgó ellenfélre is gyakorlottan célzol. Kapcsolódó 🗡️[Szorzó](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)  módosítók lecsökkennek.
 
