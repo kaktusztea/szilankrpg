@@ -40,7 +40,7 @@ Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harc
 ---
 ## Láthatatlan - részlegesen
 
-Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek.
+Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy.
 
 ```
 Előny+1 TÉ dobásra
@@ -48,7 +48,7 @@ VÉ csökkentés: +1 bónusz
 VÉ: +5
 ```
 
-🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat
+🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat, mert te is rosszabbul látsz
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
@@ -65,11 +65,11 @@ VÉ csökkentés: +2 bónusz
 VÉ: +10
 ```
 
-🔆 [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat
+🔆 [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat, mert te sem látsz
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
-🔆  Ha bármely érzékeléssel (Infra)
+🔆 Ha bármely érzékeléssel (Infra) meglátnak, elveszted előnyödet, vagy 1 fokot, vagy mind 2-t (helyzetfüggő)
 
 <br />
 

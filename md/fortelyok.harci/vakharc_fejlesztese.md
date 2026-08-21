@@ -2,7 +2,7 @@
 
 Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány okozta hátrányokat.
 
-### Alapesetek (Harci helyzetek)
+### Harci helyzetek
 
 - [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
 - [Vakharc - sötétben](../065_01_03_negativ_helyzetek.md#vakharc---sötétben)
