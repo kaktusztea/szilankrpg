@@ -75,6 +75,7 @@ Villámgyors mozgatás (EM)
   15:  11m - 15m
   12:  16m - 20m
    9:  21m - 25m, Testközelben
+   6:  26m - 30m
 ```
 
 ```
