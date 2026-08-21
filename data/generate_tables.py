@@ -105,6 +105,7 @@ def generate_kepzettsegek():
                 'többszörös': data.get('többszörös', []),
                 'próba': data.get('próba', 'nincs'),
                 'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
+                'helyzetfüggő_módosítók': data.get('helyzetfüggő_módosítók', []),
                 'md_fájl': md_fajl,
             })
     if errors:

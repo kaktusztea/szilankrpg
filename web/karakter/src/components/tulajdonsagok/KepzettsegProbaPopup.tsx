@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Tulajdonsagok, Fortely } from '../../engine/types';
 import type { KiterjesztesEntry } from '../../engine/data-loader';
+import type { ModositoTabla } from '../../engine/data-types';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { rollElőnyHátrány, rollDie, type ProbaDobás } from '../../engine/dice';
@@ -95,7 +96,7 @@ interface VállalásEredmény {
   kritikusHiba: boolean;
 }
 
-type PickerId = 'kit' | null;
+type PickerId = 'kit' | 'szit' | null;
 
 interface Props {
   képzettségNév: string;
@@ -105,6 +106,7 @@ interface Props {
   fortélyFokok: Record<string, number>;
   képzettségek: { név: string; szint: number }[];
   sérültFok: number;
+  módosítóTáblák: ModositoTabla[];
   onClose: () => void;
 }
 
@@ -113,7 +115,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, sérültFok, onClose,
+  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, sérültFok, módosítóTáblák, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -133,6 +135,13 @@ export function KepzettsegProbaPopup({
   const [összetettEredmény, setÖsszetettEredmény] = useState<ÖsszetettEredmény | null>(null);
   const [vállalásEredmény, setVállalásEredmény] = useState<VállalásEredmény | null>(null);
   const [összetettManual, setÖsszetettManual] = useState<number[]>([]);
+
+  // Szituációs módosítók: kategóriánként kiválasztott sor indexe (-1 = nincs kiválasztva)
+  const [szitMods, setSzitMods] = useState<Record<string, number>>({});
+  const szitModÖsszeg = módosítóTáblák.reduce((sum, t) => {
+    const idx = szitMods[t.kategória];
+    return sum + (idx != null && idx >= 0 ? t.sorok[idx].érték : 0);
+  }, 0);
 
   const kit = selKit >= 0 ? kiterjesztesek[selKit] : null;
   const ehAlap = kit ? kiterjesztésElőnyHátrány(kit.típus, fortélyFokok[kit.fortély] ?? 0) : { szint: 0, tiltott: false };
@@ -162,9 +171,9 @@ export function KepzettsegProbaPopup({
     if (helyettesítés) {
       const hKep = képzettségek.find(k => k.név === helyettesítés);
       const hSzint = hKep ? Math.min(5, Math.floor(hKep.szint / 3)) : 0;
-      return hSzint + vállalás; // helyettesítő kiváltja az eredeti szintet
+      return hSzint + vállalás + szitModÖsszeg;
     }
-    return szint + vállalás;
+    return szint + vállalás + szitModÖsszeg;
   })();
   // Lehetetlen/biztos siker: csak ha nincs ellenpróba mód
   const lehetetlen = !ellenpróba && !ismeretlen && kész && nehézség !== null && probaLehetetlen(tulÉrték, effSzint, nehézség);
@@ -322,12 +331,28 @@ export function KepzettsegProbaPopup({
           </div>
         )}
 
+        {/* --- Módosító értékek chip (opens picker popup) --- */}
+        {módosítóTáblák.length > 0 && (
+          <div className="kep-proba-row">
+            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('szit')}>
+              Helyzetfüggő módosítók: <span className={szitModÖsszeg > 0 ? 'kep-proba-szit-pos' : szitModÖsszeg < 0 ? 'kep-proba-szit-neg' : ''}>{szitModÖsszeg === 0 ? '0' : `${szitModÖsszeg > 0 ? '+' : ''}${szitModÖsszeg}`}</span>
+            </button>
+          </div>
+        )}
+
         {/* --- Extrák szekció (eltűnik ha van eredmény) --- */}
         {!vanEredmény && (
         <div className="kep-proba-extras-box">
           <button className="kep-proba-extras-toggle" onClick={() => setExtrákNyitva(v => !v)}>
-            Extrák {extrákNyitva ? '▴' : '▾'}
+            Extra dobás funkciók {extrákNyitva ? '▴' : '▾'}
           </button>
+          {!extrákNyitva && (() => {
+            const parts: string[] = [];
+            if (összetettDb > 0) parts.push(`+${összetettDb}M`);
+            if (vállalás > 0) parts.push(`V:${vállalás}`);
+            if (helyettesítés) parts.push(`H:${helyettesítés}`);
+            return parts.length > 0 ? <span className="kep-proba-extras-summary">{parts.join(', ')}</span> : null;
+          })()}
           {extrákNyitva && (
             <div className="kep-proba-extras-body">
               {/* Összetett próba */}
@@ -487,7 +512,7 @@ export function KepzettsegProbaPopup({
         ) : null}
       </div>
 
-      {openPicker !== null && (
+      {openPicker === 'kit' && (
         <PopupOverlay onClose={() => setOpenPicker(null)}>
           <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
             <label className="kep-prompt-label-bold-mb">Kiterjesztő fortély</label>
@@ -503,6 +528,36 @@ export function KepzettsegProbaPopup({
                 </button>
               ))}
             </div>
+          </div>
+        </PopupOverlay>
+      )}
+
+      {openPicker === 'szit' && (
+        <PopupOverlay onClose={() => { setOpenPicker(null); resetDobás(); }}>
+          <div className="kep-prompt kep-proba-szit-popup" onClick={e => e.stopPropagation()}>
+            <label className="kep-prompt-label-bold-mb">Helyzetfüggő módosítók</label>
+            <div className="kep-proba-szit-body">
+              {módosítóTáblák.map(t => (
+                <div key={t.kategória} className="kep-proba-szit-cat">
+                  <span className="kep-proba-szit-label">{t.kategória}</span>
+                  <div className="kep-proba-szit-items">
+                    {t.sorok.map((s, i) => (
+                      <button key={i}
+                        className={`kep-proba-szit-item${szitMods[t.kategória] === i ? ' kep-proba-szit-item-active' : ''}${s.érték > 0 ? ' kep-proba-szit-pos' : s.érték < 0 ? ' kep-proba-szit-neg' : ''}`}
+                        onClick={() => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }))}>
+                        <span className="kep-proba-szit-val">{s.érték > 0 ? '+' : ''}{s.érték}</span>
+                        <span className="kep-proba-szit-desc">{s.leírás}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {szitModÖsszeg !== 0 && (
+              <div className={`kep-proba-szit-sum-footer${szitModÖsszeg > 0 ? ' kep-proba-szit-pos' : ' kep-proba-szit-neg'}`}>
+                Összesen: {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
+              </div>
+            )}
           </div>
         </PopupOverlay>
       )}

@@ -408,6 +408,13 @@
   text-align: left;
 }
 .kep-proba-extras-toggle:active { opacity: 0.8; }
+.kep-proba-extras-summary {
+  display: block;
+  font-size: 12px;
+  font-family: monospace;
+  opacity: 0.7;
+  padding: 2px 0 0 4px;
+}
 .kep-proba-extras-body {
   display: flex;
   flex-direction: column;
@@ -447,6 +454,80 @@
   border-color: var(--success);
   background: var(--success);
   color: #000;
+}
+
+/* Szituációs módosítók popup */
+.kep-proba-szit-popup {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.kep-proba-szit-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.kep-proba-szit-cat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.kep-proba-szit-label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.kep-proba-szit-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.kep-proba-szit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.kep-proba-szit-item:active { opacity: 0.7; }
+.kep-proba-szit-item-active {
+  border-color: var(--accent, #7af);
+  background: rgba(119, 170, 255, 0.12);
+}
+.kep-proba-szit-item-active.kep-proba-szit-pos {
+  border-color: var(--success);
+  background: rgba(80, 200, 120, 0.12);
+}
+.kep-proba-szit-item-active.kep-proba-szit-neg {
+  border-color: var(--danger, #e55);
+  background: rgba(230, 80, 80, 0.12);
+}
+.kep-proba-szit-val {
+  font-family: monospace;
+  font-weight: 700;
+  min-width: 28px;
+  text-align: right;
+}
+.kep-proba-szit-desc {
+  opacity: 0.85;
+}
+.kep-proba-szit-pos .kep-proba-szit-val { color: var(--success); }
+.kep-proba-szit-neg .kep-proba-szit-val { color: var(--danger, #e55); }
+span.kep-proba-szit-pos { color: var(--success); font-weight: 700; }
+span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
+.kep-proba-szit-sum-footer {
+  margin-top: 10px;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
 }
 
 /* Összetett próba eredmény sorok */

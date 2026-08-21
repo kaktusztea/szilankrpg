@@ -2,6 +2,16 @@ import type { FegyverAlap, TavfegyverAlap, TavharcSzorzok, Karakter } from './ty
 import type { Rule } from './reactive';
 
 // --- Képzettség definíció ---
+export interface ModositoSor {
+  érték: number;
+  leírás: string;
+}
+
+export interface ModositoTabla {
+  kategória: string;
+  sorok: ModositoSor[];
+}
+
 export interface KepzettsegDef {
   név: string;
   csoport: string;
@@ -9,6 +19,7 @@ export interface KepzettsegDef {
   többszörös: string[];
   próba: string;
   domináns_tulajdonságok: string[];
+  helyzetfüggő_módosítók: ModositoTabla[];
   md_fájl: string;
 }
 

@@ -16,3 +16,40 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók:
+  - kategória: "Láthatóság"
+    sorok:
+      - { érték: -6, leírás: "Világosban, éles kontúrral válsz el a háttértől" }
+      - { érték: -3, leírás: "Háttértől elütő ruházatban" }
+      - { érték: 0, leírás: "Átlagos nappali fény, ruhád nem üt el" }
+      - { érték: 3, leírás: "Szürkület, félhomály" }
+      - { érték: 6, leírás: "Vaksötét / Láthatatlan" }
+  - kategória: "Látótér"
+    sorok:
+      - { érték: -6, leírás: "Direkt a látótérben" }
+      - { érték: 0, leírás: "Periférián halad" }
+      - { érték: 6, leírás: "Látókörön kívül" }
+  - kategória: "Mozgás"
+    sorok:
+      - { érték: -6, leírás: "Gyors haladás" }
+      - { érték: 0, leírás: "Lassú, óvatos haladás" }
+  - kategória: "Zajok"
+    sorok:
+      - { érték: -6, leírás: "Csörgő ruha, fémpáncél" }
+      - { érték: -3, leírás: "Süket csend, nyikorgós ruha" }
+      - { érték: 0, leírás: "Gyenge alapzaj" }
+      - { érték: 3, leírás: "Közepesen zajos környezet" }
+      - { érték: 3, leírás: "Hangzavar (hallással észlelhetetlen)" }
+  - kategória: "Környezet"
+    sorok:
+      - { érték: -6, leírás: "Nyílt tér fedezék nélkül" }
+      - { érték: 0, leírás: "Néhány rejtekhely, fedezék" }
+      - { érték: 6, leírás: "Zsúfolt, rengeteg fedezék" }
+  - kategória: "Távolság"
+    sorok:
+      - { érték: -9, leírás: "Testközelbe; Orvtámadás" }
+      - { érték: -6, leírás: "1-5 méter; Meglepetés" }
+      - { érték: -3, leírás: "6-9 méter" }
+      - { érték: 0, leírás: "10-15 méter" }
+      - { érték: 3, leírás: "16-20 méter" }
+      - { érték: 6, leírás: "20-30 méter" }

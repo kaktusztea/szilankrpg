@@ -9,6 +9,7 @@
       "Ügyesség",
       "Gyorsaság"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/akrobatika.md"
   },
   {
@@ -18,6 +19,7 @@
     "többszörös": [],
     "próba": "nincs",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/harci/alakzatharc.md"
   },
   {
@@ -30,6 +32,7 @@
       "Intelligencia",
       "Emlékezet"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/alkimia.md"
   },
   {
@@ -39,6 +42,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/asztralmagia.md"
   },
   {
@@ -48,6 +52,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/aurahangolas.md"
   },
   {
@@ -57,6 +62,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_belso_sikok.md"
   },
   {
@@ -66,6 +72,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/elemi_magia.md"
   },
   {
@@ -75,6 +82,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idomagia.md"
   },
   {
@@ -84,6 +92,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/illuziok.md"
   },
   {
@@ -93,6 +102,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md"
   },
   {
@@ -102,6 +112,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/mentalmagia.md"
   },
   {
@@ -111,6 +122,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/metamagia.md"
   },
   {
@@ -120,6 +132,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/nekromancia.md"
   },
   {
@@ -129,6 +142,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_befolyasolas.md"
   },
   {
@@ -138,6 +152,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_erzekeles.md"
   },
   {
@@ -147,6 +162,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md"
   },
   {
@@ -156,6 +172,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md"
   },
   {
@@ -165,6 +182,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termagia.md"
   },
   {
@@ -174,6 +192,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/eletero_manipulalasa.md"
   },
   {
@@ -186,6 +205,7 @@
       "Intelligencia",
       "Érzékenység"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/befolyasolas.md"
   },
   {
@@ -198,6 +218,7 @@
       "Intelligencia",
       "Önuralom"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/csapdaallitas.md"
   },
   {
@@ -210,6 +231,7 @@
       "Érzékenység",
       "Emlékezet"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/eloadomuveszet.md"
   },
   {
@@ -222,6 +244,7 @@
       "Érzékenység",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/emberismeret.md"
   },
   {
@@ -236,6 +259,7 @@
       "Önuralom",
       "Emlékezet"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
   },
   {
@@ -245,6 +269,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md"
   },
   {
@@ -254,6 +279,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_anatyda.md"
   },
   {
@@ -263,6 +289,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_buzzgoblin.md"
   },
   {
@@ -272,6 +299,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_dzsenn.md"
   },
   {
@@ -281,6 +309,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elar.md"
   },
   {
@@ -290,6 +319,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md"
   },
   {
@@ -299,6 +329,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md"
   },
   {
@@ -308,6 +339,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md"
   },
   {
@@ -317,6 +349,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md"
   },
   {
@@ -326,6 +359,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md"
   },
   {
@@ -335,6 +369,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_erdopille.md"
   },
   {
@@ -344,6 +379,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_feenhar.md"
   },
   {
@@ -353,6 +389,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gnom.md"
   },
   {
@@ -362,6 +399,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_goblin.md"
   },
   {
@@ -371,6 +409,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gyikleny.md"
   },
   {
@@ -380,6 +419,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homoki_elf.md"
   },
   {
@@ -389,6 +429,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homano.md"
   },
   {
@@ -398,6 +439,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_khal.md"
   },
   {
@@ -407,6 +449,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kineta.md"
   },
   {
@@ -416,6 +459,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kobold.md"
   },
   {
@@ -425,6 +469,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kyr.md"
   },
   {
@@ -434,6 +479,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ork.md"
   },
   {
@@ -443,6 +489,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_saskaharcos.md"
   },
   {
@@ -452,6 +499,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md"
   },
   {
@@ -461,6 +509,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_tuzkobold.md"
   },
   {
@@ -470,6 +519,7 @@
     "többszörös": [],
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md"
   },
   {
@@ -481,6 +531,7 @@
     "domináns_tulajdonságok": [
       "Önuralom"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/fajdalomtures.md"
   },
   {
@@ -492,6 +543,7 @@
     "domináns_tulajdonságok": [
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/hadaszat.md"
   },
   {
@@ -506,6 +558,7 @@
       "Emlékezet",
       "Ügyesség"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/hajozas.md"
   },
   {
@@ -518,6 +571,7 @@
       "Önuralom",
       "Edzettség"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/harci/harci_laz.md"
   },
   {
@@ -533,6 +587,7 @@
     ],
     "próba": "nincs",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/harci/harcmodor.md"
   },
   {
@@ -545,6 +600,7 @@
       "Intelligencia",
       "Emlékezet"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
   },
   {
@@ -557,6 +613,7 @@
       "Érzékenység",
       "Ügyesség"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
   },
   {
@@ -569,6 +626,7 @@
       "Ügyesség",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
   },
   {
@@ -581,6 +639,7 @@
       "Emlékezet",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/lexikum.md"
   },
   {
@@ -592,6 +651,134 @@
     "domináns_tulajdonságok": [
       "Ügyesség",
       "Önuralom"
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Láthatóság",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Világosban, éles kontúrral válsz el a háttértől"
+          },
+          {
+            "érték": -3,
+            "leírás": "Háttértől elütő ruházatban"
+          },
+          {
+            "érték": 0,
+            "leírás": "Átlagos nappali fény, ruhád nem üt el"
+          },
+          {
+            "érték": 3,
+            "leírás": "Szürkület, félhomály"
+          },
+          {
+            "érték": 6,
+            "leírás": "Vaksötét / Láthatatlan"
+          }
+        ]
+      },
+      {
+        "kategória": "Látótér",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Direkt a látótérben"
+          },
+          {
+            "érték": 0,
+            "leírás": "Periférián halad"
+          },
+          {
+            "érték": 6,
+            "leírás": "Látókörön kívül"
+          }
+        ]
+      },
+      {
+        "kategória": "Mozgás",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Gyors haladás"
+          },
+          {
+            "érték": 0,
+            "leírás": "Lassú, óvatos haladás"
+          }
+        ]
+      },
+      {
+        "kategória": "Zajok",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Csörgő ruha, fémpáncél"
+          },
+          {
+            "érték": -3,
+            "leírás": "Süket csend, nyikorgós ruha"
+          },
+          {
+            "érték": 0,
+            "leírás": "Gyenge alapzaj"
+          },
+          {
+            "érték": 3,
+            "leírás": "Közepesen zajos környezet"
+          },
+          {
+            "érték": 3,
+            "leírás": "Hangzavar (hallással észlelhetetlen)"
+          }
+        ]
+      },
+      {
+        "kategória": "Környezet",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Nyílt tér fedezék nélkül"
+          },
+          {
+            "érték": 0,
+            "leírás": "Néhány rejtekhely, fedezék"
+          },
+          {
+            "érték": 6,
+            "leírás": "Zsúfolt, rengeteg fedezék"
+          }
+        ]
+      },
+      {
+        "kategória": "Távolság",
+        "sorok": [
+          {
+            "érték": -9,
+            "leírás": "Testközelbe; Orvtámadás"
+          },
+          {
+            "érték": -6,
+            "leírás": "1-5 méter; Meglepetés"
+          },
+          {
+            "érték": -3,
+            "leírás": "6-9 méter"
+          },
+          {
+            "érték": 0,
+            "leírás": "10-15 méter"
+          },
+          {
+            "érték": 3,
+            "leírás": "16-20 méter"
+          },
+          {
+            "érték": 6,
+            "leírás": "20-30 méter"
+          }
+        ]
+      }
     ],
     "md_fájl": "kepzettsegek.primer/altalanos/lopakodas_rejtozes.md"
   },
@@ -605,6 +792,7 @@
       "Ügyesség",
       "Önuralom"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/lopas.md"
   },
   {
@@ -618,6 +806,7 @@
       "Ügyesség",
       "Gyorsaság"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
   },
   {
@@ -631,6 +820,7 @@
       "Ügyesség",
       "Gyorsaság"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
   },
   {
@@ -640,6 +830,7 @@
     "többszörös": [],
     "próba": "nincs",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/harci/magikus_celzas.md"
   },
   {
@@ -652,6 +843,7 @@
       "Ügyesség",
       "Edzettség"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/maszas.md"
   },
   {
@@ -665,6 +857,7 @@
       "Önuralom",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
   },
   {
@@ -678,6 +871,7 @@
       "Intelligencia",
       "Érzékenység"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
   },
   {
@@ -690,6 +884,7 @@
       "Emlékezet",
       "Érzékenység"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
   },
   {
@@ -702,6 +897,7 @@
       "Intelligencia",
       "Emlékezet"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/nyomozas.md"
   },
   {
@@ -714,6 +910,7 @@
       "Érzékenység",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
   },
   {
@@ -726,6 +923,7 @@
       "Önuralom",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
   },
   {
@@ -738,6 +936,7 @@
       "Érzékenység",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
   },
   {
@@ -747,6 +946,7 @@
     "többszörös": [],
     "próba": "nincs",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
   },
   {
@@ -762,6 +962,7 @@
     ],
     "próba": "nincs",
     "domináns_tulajdonságok": [],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/harci/tavolsagi_harcmodor.md"
   },
   {
@@ -774,6 +975,7 @@
       "Emlékezet",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
   },
   {
@@ -786,6 +988,7 @@
       "Emlékezet",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/varosi_jartassag.md"
   },
   {
@@ -798,6 +1001,7 @@
       "Ügyesség",
       "Önuralom"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/zarnyitas.md"
   },
   {
@@ -812,6 +1016,7 @@
       "Önuralom",
       "Érzékenység"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
   },
   {
@@ -824,6 +1029,7 @@
       "Emlékezet",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
   },
   {
@@ -836,6 +1042,7 @@
       "Érzékenység",
       "Intelligencia"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
   },
   {
@@ -849,6 +1056,7 @@
     "domináns_tulajdonságok": [
       "Emlékezet"
     ],
+    "helyzetfüggő_módosítók": [],
     "md_fájl": "kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md"
   }
 ]

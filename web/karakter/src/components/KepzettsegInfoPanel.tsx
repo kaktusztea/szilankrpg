@@ -55,6 +55,7 @@ export function KepzettsegInfoPanel({ def, kit, fortélyFokok, tulajdonságok, s
           fortélyFokok={fortélyFokok}
           képzettségek={képzettségek || []}
           sérültFok={sérültFok || 0}
+          módosítóTáblák={def.helyzetfüggő_módosítók || []}
           onClose={() => setShowProba(false)}
         />
       )}
