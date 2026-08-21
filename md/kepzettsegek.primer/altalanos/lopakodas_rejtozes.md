@@ -89,63 +89,63 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 - Mozgás: a lopakodó az észlelő látásának perifériáján halad
 - Távolság: `10-15` méter
 
-### ⚜️ Láthatóság célszám módosító (lopakodó)
+### ⚜️ Láthatóság módosító (lopakodó)
 
 ```
-+6 Világosban, éles kontúrral válsz el a háttértől
-+3: Világosban, háttértől elütő ruházatban
+-6 Világosban, éles kontúrral válsz el a háttértől
+-3: Világosban, háttértől elütő ruházatban
 +0: Átlagos nappali fény, ruhád nem üt el a háttértől
--3: Szürkület, félhomály
--6: Vaksötét. Szabad szemmel csak
++3: Szürkület, félhomály
++6: Vaksötét. Szabad szemmel csak
     Infra- vagy Ultralátással vagy észlelhető
--6: a lopakodó Láthatatlan
++6: a lopakodó Láthatatlan
 ```
 
 Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
-### ⚜️ Látótér célszám módosító (lopakodó)
+### ⚜️ Látótér módosító (lopakodó)
 
 ```
-+6: lopakodó direkt a látótérben
+-6: lopakodó direkt a látótérben
 +0: lopakodó az észlelő látásának perifériáján halad
--6: lopakodó az észlelő látókörén kívül halad
++6: lopakodó az észlelő látókörén kívül halad
 ```
 
-### ⚜️ Mozgás célszám módosító (lopakodó)
+### ⚜️ Mozgás módosító (lopakodó)
 
 ```
-+6: gyors haladás
+-6: gyors haladás
 ```
 
  [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
 
-### ⚜️ Zajok célszám módosító (lopakodó)
+### ⚜️ Zajok módosító (lopakodó)
 
 ```
-+6: csörgő ruha, fémpáncél
-+3: süket csend, nyikorgós ruha
+-6: csörgő ruha, fémpáncél
+-3: süket csend, nyikorgós ruha
 +0: gyenge alapzaj
--3: közepesen zajos környezet (nyugisabb piac)
--3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
++3: közepesen zajos környezet (nyugisabb piac)
++3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
 ```
 
-### ⚜️ Környezet, rejtekhely célszám módosító (lopakodó)
+### ⚜️ Környezet, rejtekhely módosító (lopakodó)
 
 ```
-+6: nyílt tér fedezék nélkül
+-6: nyílt tér fedezék nélkül
 +0: pár tucat ember a piacon, néhány jól használható rejtekhely, fedezék
--6: zsúfolt piac, rengeteg pult, beugró, alkóv
++6: zsúfolt piac, rengeteg pult, beugró, alkóv
 ```
 
-### ⚜️ Távolság rejtekhely módosító, Harci szituáció megteremtése (lopakodó)
+### ⚜️ Távolság módosító, Harci szituáció megteremtése (lopakodó)
 
 ```
-+9: Testközelbe kerülni; Orvtámadás
-+6: 1 - 5 méter; Meglepetésből támadás
-+3: 6 - 9 méter
+-9: Testközelbe kerülni; Orvtámadás
+-6: 1 - 5 méter; Meglepetésből támadás
+-3: 6 - 9 méter
 +0: 10 - 15 méter 🔆
--3: 16 - 20 méter
--6: 20 - 30 méter
++3: 16 - 20 méter
++6: 20 - 30 méter
 ```
 
 ---
