@@ -2,14 +2,14 @@
 
 Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 
-### Kapcsolódik
+### Követelmény
 
 - [Keresés/rejtés](kereses_rejtes.md) fortély
 
 ---
 ### Alapeset
 
-Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#célszám-módosító-körülmények) képzettségpróbát.
+Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#célszám-módosító-körülmények) képzettségpróbát (amit kiterjeszt a Keresés/rejtés fortély).
 
 <br />
 
