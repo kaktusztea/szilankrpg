@@ -8,7 +8,7 @@
 
 ⚜️ [Meglepetésből, vagy észrevétlen fegyverrántás](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-4meglepet%C3%A9sb%C5%91l-vagy-%C3%A9szrev%C3%A9tlen-fegyverr%C3%A1nt%C3%A1s)
 
-→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
+→ Kapcsolódik: [Fegyverrántás](../fortelyok.harci/fegyverrantas.md) harci fortély
 
 ---
 
