@@ -4287,7 +4287,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Lovag
 - Nemes
 - Polgár
-- Varázsló
+- Varázstudó
 - Városlakó
 
 ### Jellem
@@ -5630,63 +5630,63 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 - Mozgás: a lopakodó az észlelő látásának perifériáján halad
 - Távolság: `10-15` méter
 
-### ⚜️ Láthatóság célszám módosító (lopakodó)
+### ⚜️ Láthatóság módosító (lopakodó)
 
 ```
-+6 Világosban, éles kontúrral válsz el a háttértől
-+3: Világosban, háttértől elütő ruházatban
+-6 Világosban, éles kontúrral válsz el a háttértől
+-3: Világosban, háttértől elütő ruházatban
 +0: Átlagos nappali fény, ruhád nem üt el a háttértől
--3: Szürkület, félhomály
--6: Vaksötét. Szabad szemmel csak
++3: Szürkület, félhomály
++6: Vaksötét. Szabad szemmel csak
     Infra- vagy Ultralátással vagy észlelhető
--6: a lopakodó Láthatatlan
++6: a lopakodó Láthatatlan
 ```
 
 Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
-### ⚜️ Látótér célszám módosító (lopakodó)
+### ⚜️ Látótér módosító (lopakodó)
 
 ```
-+6: lopakodó direkt a látótérben
+-6: lopakodó direkt a látótérben
 +0: lopakodó az észlelő látásának perifériáján halad
--6: lopakodó az észlelő látókörén kívül halad
++6: lopakodó az észlelő látókörén kívül halad
 ```
 
-### ⚜️ Mozgás célszám módosító (lopakodó)
+### ⚜️ Mozgás módosító (lopakodó)
 
 ```
-+6: gyors haladás
+-6: gyors haladás
 ```
 
  [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
 
-### ⚜️ Zajok célszám módosító (lopakodó)
+### ⚜️ Zajok módosító (lopakodó)
 
 ```
-+6: csörgő ruha, fémpáncél
-+3: süket csend, nyikorgós ruha
+-6: csörgő ruha, fémpáncél
+-3: süket csend, nyikorgós ruha
 +0: gyenge alapzaj
--3: közepesen zajos környezet (nyugisabb piac)
--3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
++3: közepesen zajos környezet (nyugisabb piac)
++3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
 ```
 
-### ⚜️ Környezet, rejtekhely célszám módosító (lopakodó)
+### ⚜️ Környezet, rejtekhely módosító (lopakodó)
 
 ```
-+6: nyílt tér fedezék nélkül
+-6: nyílt tér fedezék nélkül
 +0: pár tucat ember a piacon, néhány jól használható rejtekhely, fedezék
--6: zsúfolt piac, rengeteg pult, beugró, alkóv
++6: zsúfolt piac, rengeteg pult, beugró, alkóv
 ```
 
-### ⚜️ Távolság rejtekhely módosító, Harci szituáció megteremtése (lopakodó)
+### ⚜️ Távolság módosító, Harci szituáció megteremtése (lopakodó)
 
 ```
-+9: Testközelbe kerülni; Orvtámadás
-+6: 1 - 5 méter; Meglepetésből támadás
-+3: 6 - 9 méter
+-9: Testközelbe kerülni; Orvtámadás
+-6: 1 - 5 méter; Meglepetésből támadás
+-3: 6 - 9 méter
 +0: 10 - 15 méter 🔆
--3: 16 - 20 méter
--6: 20 - 30 méter
++3: 16 - 20 méter
++6: 20 - 30 méter
 ```
 
 ---
@@ -8266,13 +8266,13 @@ Ez írja le a képzettség használatát.
 
 #### 🌟 `12.szint`
 
-Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra.
+- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra.
 - Társaiddal közvetlen szellembeszédre vagytok képes mind - ha legalább egy valaki `12.szinten` birtokolja a képzettséget. A társnak minimum `9.szinten` kell ismernie, hogy képes legyen együttműködni.
 
 #### 🌟 `15.szint`
 
-Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra.
-- Társaiddal összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
+- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra.
+- Társaiddal hatékonyan összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
 
 ---
 
@@ -12406,7 +12406,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md)
 - [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md)
 - [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
-- [Mozgó cél mestere fegyverrel](fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md)
+- [Mozgó cél könnyítése (fegyveres)](fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md)
 
 ---
 
@@ -12435,7 +12435,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md)
 - [Mágikus lövedék gyorsítása](fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
 - [Mentálfonál](fortelyok.misztikus/mentalfonal.md)
-- [Mozgó cél mestere mágiához](fortelyok.misztikus/mozgo_cel_mestere_magiahoz.md)
+- [Mozgó cél könnyítése (mágia)](fortelyok.misztikus/mozgo_cel_konnyitese_magia.md)
 - [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md)
 - [Pszí Telepátia](fortelyok.misztikus/pszi_telepatia.md)
 
@@ -13285,7 +13285,7 @@ Gyorsabban tudsz lopózni.
 
 🔒 [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) - `6.szint`
 
-🌟 A [gyors lopakodás](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-mozgás-célszám-módosító-lopakodó) Mozgás célszám levonása rád nem érvényes.
+🌟 A [gyors lopakodás](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#%EF%B8%8F-mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-lopakod%C3%B3) Mozgás célszám levonása rád nem érvényes.
 
 ---
 
@@ -13676,14 +13676,14 @@ NJK ismeret.
 
 Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 
-### Kapcsolódik
+### Követelmény
 
 - [Keresés/rejtés](kereses_rejtes.md) fortély
 
 ---
 ### Alapeset
 
-Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#célszám-módosító-körülmények) képzettségpróbát.
+Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#célszám-módosító-körülmények) képzettségpróbát (amit kiterjeszt a Keresés/rejtés fortély).
 
 <br />
 
@@ -13862,7 +13862,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 Mintha félhomályban tájékozódnál. A harc a [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival folyik számodra.
+🌟 Vaksötétben: mintha félhomályban tájékozódnál. [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival harcolsz.
 
 <br />
 
@@ -13937,7 +13937,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 1.fok**, mint felvehető Érzék-fortély
 
 🌟**Hatás**:
-- Mintha telihold fényénél tájékozódnál vaksötétben.
+- Vaksötétben: mintha telihold fényénél tájékozódnál
 - A harc a [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival folyik számodra.
 
 <br />
@@ -15427,7 +15427,7 @@ Az oltalmazott személy nem harcolhat, a testőrnek pedig **`2` méteren** belü
 
 Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány okozta hátrányokat.
 
-### Alapesetek (Harci helyzetek)
+### Harci helyzetek
 
 - [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
 - [Vakharc - sötétben](../065_01_03_negativ_helyzetek.md#vakharc---sötétben)
@@ -18192,9 +18192,9 @@ Gyakorlott vagy a nagy távolságú célokra lövésben. Csak nyílpuska, vagy m
 
 ---
 ---
-## File: md/fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md
+## File: md/fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md
 
-## 🟣 Mozgó cél mestere fegyverrel (1)
+## 🟣 Mozgó cél könnyítése (fegyveres) (1)
 
 Összevissza mozgó ellenfélre is gyakorlottan célzol. Kapcsolódó 🗡️[Szorzó](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)  módosítók lecsökkennek.
 
@@ -21948,7 +21948,7 @@ Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harc
 ---
 ## Láthatatlan - részlegesen
 
-Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek.
+Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy.
 
 ```
 Előny+1 TÉ dobásra
@@ -21956,7 +21956,7 @@ VÉ csökkentés: +1 bónusz
 VÉ: +5
 ```
 
-🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat
+🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat, mert te is rosszabbul látsz
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
@@ -21973,11 +21973,11 @@ VÉ csökkentés: +2 bónusz
 VÉ: +10
 ```
 
-🔆 [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat
+🔆 [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat, mert te sem látsz
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
-🔆  Ha bármely érzékeléssel (Infra)
+🔆 Ha bármely érzékeléssel (Infra) meglátnak, elveszted előnyödet, vagy 1 fokot, vagy mind 2-t (helyzetfüggő)
 
 <br />
 
@@ -22160,7 +22160,8 @@ Nem belharcos fegyverek
 ---
 ## Fegyverrántás váratlanul
 
-→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
+→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély\
+→ Kapcsolódik: [Fegyverrántás szituációi](szituaciok/fegyverrantas.md) (ennek a fejezetnek a gyorslinkjei)
 
 ### ⚜️ `1.`Harci kör elején
 
@@ -22688,6 +22689,112 @@ Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a
 <br />
 
 ---
+## Skálázható taktikák
+
+Összesen 4 harci taktika tartozik ebbe az alcsoportba: Kezdeményező, Támadó, Védő, Támadás erőből.
+
+Ezek mind statikus formában adnak skálázható eltolást egyes harcértékekre - alapesetben maximum "+3"-at. Ez a felső korlát nő a karakter legmagasabb Harcmodor képzettségének szintjétől függően:
+
+```
+max +4: 6.szint
+max +5: 9.szint
+max +6: 12.szint
+```
+
+### Kezdeményező taktika
+
+```
+KÉ:+1, VÉ:-1
+KÉ:+2, VÉ:-2
+KÉ:+3, VÉ:-3
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
+
+✅ **Érintő, Visszafogott, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+Mindenképp szeretnéd magadhoz ragadni a Kezdeményezést.
+
+🔆 A `VÉ` büntetés az ellenfél `1.` támadásával szemben érvényesül - mindenképp.
+
+---
+### Támadó taktika
+
+```
+TÉ:+1, VÉ:-2
+TÉ:+2, VÉ:-4
+TÉ:+3, VÉ:-6
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+
+❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+
+✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+A támadásra helyezed a hangsúlyt. Lehetőségeidhez mérten folyamatosan nyomulsz előre.
+
+---
+### Védő taktika
+
+```
+VÉ:+1, TÉ:-2
+VÉ:+2, TÉ:-4
+VÉ:+3, TÉ:-6
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+
+❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+
+✅ **Érintő, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+A védekezésedre helyezed a hangsúlyt, ekkor kisebb vehemenciával támadsz.
+
+<br />
+
+---
+### Támadás erőből taktika
+
+Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `3`-ig.
+
+```
+TÉ:-1, SP:+1
+TÉ:-2, SP:+2
+TÉ:-3, SP:+3
+...
+```
+
+📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
+
+✅ **Kiváró, Plusz támadás, 1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
+
+❌ Ostorharc harcmodorban
+
+<br />
+
+---
+## Nem skálázható taktikák
+
+Ezek a taktikák fix módosítókat adnak alkalmazásukkor.
+
 ### 1 támadás taktika
 
 ```
@@ -22747,25 +22854,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta. Leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a "vadat", míg vezetőjük felkészül.
 
 ---
-### Kezdeményező taktika
 
-```
-KÉ:+1, VÉ:-1
-KÉ:+2, VÉ:-2
-KÉ:+3, VÉ:-3
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
-
-✅ **Érintő, Visszafogott, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-Mindenképp szeretnéd magadhoz ragadni a Kezdeményezést.
-
-🔆 A `VÉ` büntetés az ellenfél `1.` támadásával szemben érvényesül - mindenképp.
 
 ---
 ### Kiváró Taktika
@@ -22868,67 +22957,6 @@ Első oda-vissza csapásnál:
 🔆 **Körön belüli** további támadások már normál harcértékekkel történnek, harci taktika is választható
 
 🔆 Rohamhoz min `5-10m` nekifutás szükséges (terepviszony, felszerelés súly függő)
-
----
-### Támadás erőből taktika
-
-Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `3`-ig.
-
-```
-TÉ:-1, SP:+1
-TÉ:-2, SP:+2
-TÉ:-3, SP:+3
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-✅ **Kiváró, Plusz támadás, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-❌ Ostorharc harcmodorban
-
----
-### Támadó taktika
-
-```
-TÉ:+1, VÉ:-2
-TÉ:+2, VÉ:-4
-TÉ:+3, VÉ:-6
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
-
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
-
-✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-A támadásra helyezed a hangsúlyt. Lehetőségeidhez mérten folyamatosan nyomulsz előre.
-
----
-### Védő taktika
-
-```
-VÉ:+1, TÉ:-2
-VÉ:+2, TÉ:-4
-VÉ:+3, TÉ:-6
-```
-
-📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
-
-❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
-
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
-
-✅ **Érintő, 1 támadás taktikával** együtt
-
-❌ Más taktikával együtt
-
-A védekezésedre helyezed a hangsúlyt, ekkor kisebb vehemenciával támadsz.
 
 ---
 ### Teljes Védekezés Taktika
@@ -27155,6 +27183,7 @@ Gyors mozgatás (EM)
   15:  1m
   12:  2m
    9:  3m, Testközelben
+   6:  4m
 ```
 
 ```
@@ -27165,6 +27194,7 @@ Mágiatáv II
   15:  2m
   12:  3m
    9:  4m, Testközelben
+   6:  5m
 ```
 
 ```
@@ -27176,6 +27206,7 @@ Sebes mozgatás (EM)
   15:  5m - 6m
   12:  7m - 8m
    9:  9m - 10m, Testközelben
+   6:  11m - 12m
 ```
 
 ```
@@ -27187,6 +27218,7 @@ Villámgyors mozgatás (EM)
   15:  11m - 15m
   12:  16m - 20m
    9:  21m - 25m, Testközelben
+   6:  26m - 30m
 ```
 
 ```
@@ -27197,11 +27229,14 @@ Leggyorsabb mozgatás (EM)
   15:  21m - 30m
   12:  31m - 40m
    9:  40m - 50m, Testközelben
+   6:  51m - 60m
 ```
 
 🔆 Ha a próba sikeres, sikerült elugrani a lövedék elől, a támadó automatikusan elvesztette a támadását - már nem is tehet **Célzó dobást**.
 
 🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy betalál-e. Ennek módosítóiról itt: [Lövéskitérés sikertelen](szituaciok/loveskiteres_sikertelen.md).
+
+🔆 Miért a legkönnyebb kategóriába tartozik a "Testközelben"? Ennek az az oka, hogy így van lehetősége a megtámadottnak kézzel eltérítő mozdulatokat alkalmazni a támadó fegyvere, karja ellen.
 
 <br />
 
@@ -31480,9 +31515,11 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 - [Ajtóstul nekirontani az túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
 - [Belharc folyamata](szituaciok/belharc_folyamata.md)
+- [Fegyverrántás](szituaciok/fegyverrantas.md)
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
+- [Vakharc, sötétben, láthatatlanul](szituaciok/vakharc_sotetben_lathatatlanul.md)
 
 ## Sunyi támadások
 
@@ -32028,6 +32065,29 @@ Célszám: 8
 - 3 (susnyásba)
 + 2 (könnyű bőrvért)
 ```
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/fegyverrantas.md
+
+## Fegyverrántás szituációi
+
+⚜️ [Harci kör elején](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-1harci-k%C3%B6r-elej%C3%A9n)
+
+⚜️ [Kör közben, Akció után](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-2-k%C3%B6r-k%C3%B6zben-akci%C3%B3-ut%C3%A1n)
+
+⚜️ [Mindkét fél fegyverrántást alkalmaz](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-3mindk%C3%A9t-f%C3%A9l-fegyverr%C3%A1nt%C3%A1st-alkalmaz)
+
+⚜️ [Meglepetésből, vagy észrevétlen fegyverrántás](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-4meglepet%C3%A9sb%C5%91l-vagy-%C3%A9szrev%C3%A9tlen-fegyverr%C3%A1nt%C3%A1s)
+
+→ Kapcsolódik: [Fegyverrántás](../fortelyok.harci/fegyverrantas.md) harci fortély
 
 ---
 
@@ -32819,7 +32879,7 @@ A manőver után, az ellenfél visszatámadása során a manővert végző `VÉ:
 
 Gyakori eset, hogy a játékosok és / vagy Nem Játékos Karakterek között kergetőzés veszi kezdetét.
 
-### 🔆 Menekülés / Üldözés
+### 🔆 Menekülés
 
 Ha harc közben dönt úgy egy karakter, hogy ideje távozni, akkor [Kibontakozás Manővert](../066_05_altalanos_manoverek.md#kibontakozás) kell dobnia. Ha sikertelen, akkor is kibontakozik, de ellenfele kap egy extra támadást, amivel még utána csaphat.
 
@@ -32831,14 +32891,39 @@ Ha elveszíti az ellenpróbát, dönthet VAGY-VAGY:
 
 Ha megnyerted a Futás ellenpróbát, sikerült lehagynod üldöződet.
 
+<br />
+
 ---
-### 🔆 Futás ellenpróba
+### 🔆 Futás ellenpróba - rövidtáv
 
-Ez egy sima ⚪ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba).
+→ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba)\
+→ Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
+→ [MGT hatása a próbára](../069_03_pancel_MGT.md): KM dönt a helyzet ismeretében
 
-🔆 Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
+Aki győz, az ér oda előbb a célhoz.
 
-🔆 [MGT hatása a próbára](../069_03_pancel_MGT.md): KM dönt a helyzet ismeretében
+<br />
+
+---
+### 🔆 Futás ellenpróba - üldözés
+
+```
+Távolság: 1 db szám
+  → Minél távolabb vagytok egymástól, annál nagyobb
+  → KM határozza meg érzésre
+```
+
+→ Több ⚪ **Gyorsaság** és **Edzettség** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba) felváltva\
+→ Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
+
+```
+→ Megnyersz egy ellenpróbát:  Távolság: -1 (csökken)
+→ Elvesztesz egy ellenpróbát: Távolság: +1 (nő)
+
+→ Távolság 0-ra csökken: üldöző utólérte az üldözöttet
+```
+
+🔆 A szám nem mindig publikus, nagy távolságú üldözéseknél a KM jellemzően nem mondja meg. Ilyen esetekben ráadásul más ismeretekre is dobathat próbákat. Lásd például: [Nyomok észrevétele, Nyomkövetés - természetben](nyomok_nyomkovetes_termeszet.md); [Nyomok észrevétele, Nyomkövetés - városban](nyomok_nyomkovetes_varos.md).
 
 ---
 
@@ -33162,6 +33247,72 @@ Tulajdonságok
 ### Módosítók
 
 - Lásd fenn, az "Ugrás magasba" módosítóit!
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/vakharc_sotetben_lathatatlanul.md
+
+## Vakharc, sötétben, láthatatlanul
+
+Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesszük a harci helyzeteket
+
+### ⚜️ Nappali fényben: Érzékelhetetlen harcoló  vs. másik harcos
+
+- sikeres  [Lopakodás/rejtőzés és észlelése](lopakodas_rejtozes_es_eszlelese.md)
+- Érzékelhetetlen harcoló: [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvt%C3%A1mad%C3%A1s) bónuszait kapja
+- Másik harcos: alap harcértékeivel harcol
+
+<br />
+
+---
+### ⚜️ Nappali fényben: Láthatatlan harcoló  vs. másik harcos
+
+Láthatatlan harcoló bónuszai:
+- [Láthatatlan - részlegesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---r%C3%A9szlegesen)  vagy
+- [Láthatatlan - teljesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---teljesen)
+
+Másik harcos
+- alap harcértékeivel harcol
+
+<br />
+
+---
+### ⚜️ Sötétben: Láthatatlan harcoló   vs.  másik harcos
+
+Ez egy speciális eset, a Láthatatlanság bónuszai megszűnnek. 
+Mindketten a látási viszonyok
+
+[Láthatatlan - részlegesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---r%C3%A9szlegesen)  harcoló
+- bónuszait elveszíti
+- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
+
+[Láthatatlan - teljesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---teljesen) harcoló
+- bónuszai lecsökkennek [Láthatatlan - részlegesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---r%C3%A9szlegesen) bónuszaira
+- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
+
+Másik harcos
+- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
+
+<br />
+
+---
+### ⚜️ Vakharc: félhomályban, sötétben
+
+Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol.
+
+- [Vakharc félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---f%C3%A9lhom%C3%A1lyban)
+- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben)
+
+🔆 A sötét a [Lopakodás/Rejtőzés vs Észlelés](lopakodas_rejtozes_es_eszlelese.md) szituációban bónuszt ad
+
+🔆 Hallás: nem vesszük külön a csendes és zajos helyzeteket, CSAK akkor ha érzékelhetetlen [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvt%C3%A1mad%C3%A1s) harci helyzetbe akar kerülni az egyik fél.
 
 ---
 
