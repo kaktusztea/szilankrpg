@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { KepzettsegDef } from '../../engine/data-loader';
 import { OverlayPortal } from '../overlays/OverlayPortal';
+import { MD_BASE } from '../MdLink';
 
 interface PickerOption {
   label: string;
@@ -62,6 +63,16 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, onAdd, onCl
                     {def.primer && (
                       <div className="fort-picker-details-line">
                         <span className="fort-picker-details-fok">Primer</span>
+                      </div>
+                    )}
+                    {def.kapcsolódó_szituációk?.length > 0 && (
+                      <div className="fort-picker-details-szit">
+                        <span className="fort-picker-details-fok">Szituációk:</span>
+                        {def.kapcsolódó_szituációk.map((sz, i) => (
+                          <a key={i} className="info-panel-szit-link" href={MD_BASE + sz.fájl}
+                            target="_blank" rel="noopener noreferrer"
+                            onClick={e => e.stopPropagation()}>{sz.név}</a>
+                        ))}
                       </div>
                     )}
                   </div>

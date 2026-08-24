@@ -53,6 +53,10 @@
 .info-panel-label { color: var(--text-dim); margin-right: 4px; }
 .info-panel-kit { color: var(--success); }
 .info-panel-error { color: var(--error); }
+.info-panel-szit { flex-direction: column; align-items: flex-start; }
+.info-panel-szit-list { display: flex; flex-direction: column; gap: 2px; margin-top: 2px; }
+.info-panel-szit-link { color: var(--color-kepzettseg); font-size: 12px; text-decoration: none; }
+.info-panel-szit-link::before { content: '🔗 '; font-size: 10px; }
 
 /* ===================
    Törlés gomb (sor végén)

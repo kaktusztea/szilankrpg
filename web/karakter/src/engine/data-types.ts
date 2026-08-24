@@ -22,6 +22,7 @@ export interface KepzettsegDef {
   domináns_tulajdonságok: string[];
   helyzetfüggő_módosítók: ModositoTabla[];
   szerepjátékos_módosító: boolean;
+  kapcsolódó_szituációk: { név: string; fájl: string }[];
   md_fájl: string;
 }
 

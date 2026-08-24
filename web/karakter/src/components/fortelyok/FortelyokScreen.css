@@ -128,7 +128,7 @@
   border: none;
   background: transparent;
   color: #fff;
-  font-size: 12px;
+  font-size: 18px;
   cursor: pointer;
   border-radius: 50%;
 }
@@ -157,6 +157,12 @@
 .fort-picker-details-fok {
   color: var(--text);
   font-weight: bold;
+}
+.fort-picker-details-szit {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
 }
 
 .fort-picker-disabled {

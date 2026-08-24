@@ -11,6 +11,32 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Elugrani lovaskocsi elől",
+        "fájl": "szituaciok/elugrani_lovaskocsi_elol.md"
+      },
+      {
+        "név": "Esés magasból",
+        "fájl": "szituaciok/eses_magasbol.md"
+      },
+      {
+        "név": "Hátasról leesés",
+        "fájl": "szituaciok/hatasrol_leeses.md"
+      },
+      {
+        "név": "Kötéltánc",
+        "fájl": "szituaciok/koteltanc.md"
+      },
+      {
+        "név": "Ugrás magasba / távolba",
+        "fájl": "szituaciok/ugras_magasba_tavolba.md"
+      },
+      {
+        "név": "Lövéskitérés sikertelen",
+        "fájl": "szituaciok/loveskiteres_sikertelen.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/akrobatika.md"
   },
   {
@@ -22,6 +48,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/alakzatharc.md"
   },
   {
@@ -58,6 +85,7 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/alkimia.md"
   },
   {
@@ -69,6 +97,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/asztralmagia.md"
   },
   {
@@ -80,6 +109,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/aurahangolas.md"
   },
   {
@@ -91,6 +121,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_belso_sikok.md"
   },
   {
@@ -102,6 +133,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/elemi_magia.md"
   },
   {
@@ -113,6 +145,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/eletero_manipulalasa.md"
   },
   {
@@ -124,6 +157,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idomagia.md"
   },
   {
@@ -135,6 +169,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/illuziok.md"
   },
   {
@@ -146,6 +181,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md"
   },
   {
@@ -157,6 +193,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/mentalmagia.md"
   },
   {
@@ -168,6 +205,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/metamagia.md"
   },
   {
@@ -179,6 +217,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/nekromancia.md"
   },
   {
@@ -190,6 +229,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_befolyasolas.md"
   },
   {
@@ -201,6 +241,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_erzekeles.md"
   },
   {
@@ -212,6 +253,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md"
   },
   {
@@ -223,6 +265,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md"
   },
   {
@@ -234,6 +277,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termagia.md"
   },
   {
@@ -298,6 +342,12 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Hamisítás és felismerése",
+        "fájl": "szituaciok/hamisitas_es_felismerese.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
   },
   {
@@ -326,6 +376,24 @@
       }
     ],
     "szerepjátékos_módosító": true,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Befolyásolás módszerei",
+        "fájl": "szituaciok/befolyasolas_modszerei.md"
+      },
+      {
+        "név": "Énekléssel bájolás",
+        "fájl": "szituaciok/eneklessel_bajolas.md"
+      },
+      {
+        "név": "Információszerzés valakitől",
+        "fájl": "szituaciok/informacioszerzes_valakitol.md"
+      },
+      {
+        "név": "Állat, bestia idomítása",
+        "fájl": "szituaciok/allat_bestia_idomitasa.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/befolyasolas.md"
   },
   {
@@ -354,6 +422,12 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Csapda hatástalanítás, szabotálás",
+        "fájl": "szituaciok/csapda_hatatalanitas_szabotalas.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/csapdaallitas.md"
   },
   {
@@ -386,6 +460,12 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Énekléssel bájolás",
+        "fájl": "szituaciok/eneklessel_bajolas.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/eloadomuveszet.md"
   },
   {
@@ -431,6 +511,20 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Befolyásolás módszerei",
+        "fájl": "szituaciok/befolyasolas_modszerei.md"
+      },
+      {
+        "név": "Érzékelés, Aktív/Passzív Észlelés",
+        "fájl": "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+      },
+      {
+        "név": "Információszerzés valakitől",
+        "fájl": "szituaciok/informacioszerzes_valakitol.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/emberismeret.md"
   },
   {
@@ -447,6 +541,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
   },
   {
@@ -461,6 +556,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
   },
   {
@@ -503,6 +599,40 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Érzékelés, Aktív/Passzív Észlelés",
+        "fájl": "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+      },
+      {
+        "név": "Lopakodás/rejtőzés és észlelése",
+        "fájl": "szituaciok/lopakodas_rejtozes_es_eszlelese.md"
+      },
+      {
+        "név": "Meglopni, kirabolni valakit",
+        "fájl": "szituaciok/lopas_kirablas.md"
+      },
+      {
+        "név": "Nyomok észrevétele - városban",
+        "fájl": "szituaciok/nyomok_nyomkovetes_varos.md"
+      },
+      {
+        "név": "Orvtámadás - harcon kívül",
+        "fájl": "szituaciok/orvtamadas_harcon_kivul.md"
+      },
+      {
+        "név": "Orvtámadás - harcoló ellenfélre",
+        "fájl": "szituaciok/orvtamadas_harcolo_ellenfelre.md"
+      },
+      {
+        "név": "Vakharc, sötétben, láthatatlanul",
+        "fájl": "szituaciok/vakharc_sotetben_lathatatlanul.md"
+      },
+      {
+        "név": "Elugrani lovaskocsi elől",
+        "fájl": "szituaciok/elugrani_lovaskocsi_elol.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
   },
   {
@@ -514,6 +644,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md"
   },
   {
@@ -525,6 +656,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_anatyda.md"
   },
   {
@@ -536,6 +668,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_buzzgoblin.md"
   },
   {
@@ -547,6 +680,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_dzsenn.md"
   },
   {
@@ -558,6 +692,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elar.md"
   },
   {
@@ -569,6 +704,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md"
   },
   {
@@ -580,6 +716,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md"
   },
   {
@@ -591,6 +728,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md"
   },
   {
@@ -602,6 +740,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md"
   },
   {
@@ -613,6 +752,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md"
   },
   {
@@ -624,6 +764,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_erdopille.md"
   },
   {
@@ -635,6 +776,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_feenhar.md"
   },
   {
@@ -646,6 +788,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gnom.md"
   },
   {
@@ -657,6 +800,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_goblin.md"
   },
   {
@@ -668,6 +812,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gyikleny.md"
   },
   {
@@ -679,6 +824,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homoki_elf.md"
   },
   {
@@ -690,6 +836,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homano.md"
   },
   {
@@ -701,6 +848,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_khal.md"
   },
   {
@@ -712,6 +860,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kineta.md"
   },
   {
@@ -723,6 +872,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kobold.md"
   },
   {
@@ -734,6 +884,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kyr.md"
   },
   {
@@ -745,6 +896,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ork.md"
   },
   {
@@ -756,6 +908,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_saskaharcos.md"
   },
   {
@@ -767,6 +920,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md"
   },
   {
@@ -778,6 +932,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_tuzkobold.md"
   },
   {
@@ -789,6 +944,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md"
   },
   {
@@ -802,6 +958,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/fajdalomtures.md"
   },
   {
@@ -815,6 +972,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/hadaszat.md"
   },
   {
@@ -887,6 +1045,7 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/hajozas.md"
   },
   {
@@ -901,6 +1060,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/harci_laz.md"
   },
   {
@@ -918,6 +1078,12 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Harci jártasság felmérése",
+        "fájl": "szituaciok/harci_jartassag_felmerese.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/harci/harcmodor.md"
   },
   {
@@ -963,6 +1129,7 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
   },
   {
@@ -991,6 +1158,12 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Hamisítás és felismerése",
+        "fájl": "szituaciok/hamisitas_es_felismerese.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
   },
   {
@@ -1019,6 +1192,16 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Nyomok észrevétele - városban",
+        "fájl": "szituaciok/nyomok_nyomkovetes_varos.md"
+      },
+      {
+        "név": "Térkép készítése, értelmezése",
+        "fájl": "szituaciok/terkep_keszitese_ertelmezes.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
   },
   {
@@ -1085,6 +1268,16 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Ismerem ezt a nevet? Mit tudhatok róla?",
+        "fájl": "szituaciok/ismerem_mit_tudhatok_rola.md"
+      },
+      {
+        "név": "Csapda hatástalanítás, szabotálás",
+        "fájl": "szituaciok/csapda_hatatalanitas_szabotalas.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/lexikum.md"
   },
   {
@@ -1131,6 +1324,7 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
   },
   {
@@ -1272,6 +1466,28 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Lopakodás/rejtőzés és észlelése",
+        "fájl": "szituaciok/lopakodas_rejtozes_es_eszlelese.md"
+      },
+      {
+        "név": "Meglopni, kirabolni valakit",
+        "fájl": "szituaciok/lopas_kirablas.md"
+      },
+      {
+        "név": "Orvtámadás - harcon kívül",
+        "fájl": "szituaciok/orvtamadas_harcon_kivul.md"
+      },
+      {
+        "név": "Orvtámadás - harcoló ellenfélre",
+        "fájl": "szituaciok/orvtamadas_harcolo_ellenfelre.md"
+      },
+      {
+        "név": "Vakharc, sötétben, láthatatlanul",
+        "fájl": "szituaciok/vakharc_sotetben_lathatatlanul.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/lopakodas_rejtozes.md"
   },
   {
@@ -1309,6 +1525,12 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Meglopni, kirabolni valakit",
+        "fájl": "szituaciok/lopas_kirablas.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/lopas.md"
   },
   {
@@ -1338,6 +1560,12 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Hátasról leesés",
+        "fájl": "szituaciok/hatasrol_leeses.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
   },
   {
@@ -1349,6 +1577,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/magikus_celzas.md"
   },
   {
@@ -1390,6 +1619,16 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Mászás képzettségpróbára összetett példa",
+        "fájl": "szituaciok/maszas_osszetett_pelda.md"
+      },
+      {
+        "név": "Esés magasból",
+        "fájl": "szituaciok/eses_magasbol.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/maszas.md"
   },
   {
@@ -1405,6 +1644,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
   },
   {
@@ -1420,6 +1660,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
   },
   {
@@ -1449,6 +1690,7 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
   },
   {
@@ -1463,6 +1705,24 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": true,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Érzékelés, Aktív/Passzív Észlelés",
+        "fájl": "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+      },
+      {
+        "név": "Információszerzés valakitől",
+        "fájl": "szituaciok/informacioszerzes_valakitol.md"
+      },
+      {
+        "név": "Ismerem ezt a nevet? Mit tudhatok róla?",
+        "fájl": "szituaciok/ismerem_mit_tudhatok_rola.md"
+      },
+      {
+        "név": "Nyomok észrevétele - városban",
+        "fájl": "szituaciok/nyomok_nyomkovetes_varos.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.primer/altalanos/nyomozas.md"
   },
   {
@@ -1477,6 +1737,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
   },
   {
@@ -1492,6 +1753,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md"
   },
   {
@@ -1524,6 +1786,7 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
   },
   {
@@ -1541,6 +1804,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/tavolsagi_harcmodor.md"
   },
   {
@@ -1573,6 +1837,16 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Érzékelés, Aktív/Passzív Észlelés",
+        "fájl": "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+      },
+      {
+        "név": "Nyomok észrevétele - természetben",
+        "fájl": "szituaciok/nyomok_nyomkovetes_termeszet.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
   },
   {
@@ -1584,6 +1858,7 @@
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
   },
   {
@@ -1598,6 +1873,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
   },
   {
@@ -1647,6 +1923,12 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Ismerem ezt a nevet? Mit tudhatok róla?",
+        "fájl": "szituaciok/ismerem_mit_tudhatok_rola.md"
+      }
+    ],
     "md_fájl": "kepzettsegek.szekunder/varosi_jartassag.md"
   },
   {
@@ -1680,6 +1962,7 @@
       }
     ],
     "szerepjátékos_módosító": false,
+    "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/zarnyitas.md"
   }
 ]

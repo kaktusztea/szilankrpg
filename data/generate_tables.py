@@ -85,6 +85,9 @@ def generate_konstansok():
 def generate_kepzettsegek():
     """kepzettsegek/**/*.yaml → kepzettsegek.json"""
     kdir = os.path.join(SOURCES_DIR, 'kepzettsegek')
+    # Load szituáció mapping
+    szit_path = os.path.join(SOURCES_DIR, 'szituacio_mapping.yaml')
+    szit_mapping = load_yaml(szit_path) if os.path.exists(szit_path) else {}
     result = []
     errors = []
     for root, dirs, files in os.walk(kdir):
@@ -118,6 +121,7 @@ def generate_kepzettsegek():
                 'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
                 'helyzetfüggő_módosítók': data.get('helyzetfüggő_módosítók', []),
                 'szerepjátékos_módosító': data.get('szerepjátékos_módosító', False),
+                'kapcsolódó_szituációk': szit_mapping.get(data['név'], []),
                 'md_fájl': md_fajl,
             })
     if errors:

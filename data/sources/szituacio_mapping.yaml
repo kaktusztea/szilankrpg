@@ -1,0 +1,145 @@
+# Képzettség → Szituáció mapping
+# Kulcs: képzettség neve (exact match a kepzettsegek.json-ból)
+# Érték: lista [{név, fájl}] — fájl = relatív útvonal a md/ könyvtárhoz képest
+
+Akrobatika:
+  - név: "Elugrani lovaskocsi elől"
+    fájl: "szituaciok/elugrani_lovaskocsi_elol.md"
+  - név: "Esés magasból"
+    fájl: "szituaciok/eses_magasbol.md"
+  - név: "Hátasról leesés"
+    fájl: "szituaciok/hatasrol_leeses.md"
+  - név: "Kötéltánc"
+    fájl: "szituaciok/koteltanc.md"
+  - név: "Ugrás magasba / távolba"
+    fájl: "szituaciok/ugras_magasba_tavolba.md"
+  - név: "Lövéskitérés sikertelen"
+    fájl: "szituaciok/loveskiteres_sikertelen.md"
+
+Álcázás/Álruha:
+  - név: "Hamisítás és felismerése"
+    fájl: "szituaciok/hamisitas_es_felismerese.md"
+
+Befolyásolás:
+  - név: "Befolyásolás módszerei"
+    fájl: "szituaciok/befolyasolas_modszerei.md"
+  - név: "Énekléssel bájolás"
+    fájl: "szituaciok/eneklessel_bajolas.md"
+  - név: "Információszerzés valakitől"
+    fájl: "szituaciok/informacioszerzes_valakitol.md"
+  - név: "Állat, bestia idomítása"
+    fájl: "szituaciok/allat_bestia_idomitasa.md"
+
+Csapdaállítás:
+  - név: "Csapda hatástalanítás, szabotálás"
+    fájl: "szituaciok/csapda_hatatalanitas_szabotalas.md"
+
+Előadóművészet:
+  - név: "Énekléssel bájolás"
+    fájl: "szituaciok/eneklessel_bajolas.md"
+
+Emberismeret:
+  - név: "Befolyásolás módszerei"
+    fájl: "szituaciok/befolyasolas_modszerei.md"
+  - név: "Érzékelés, Aktív/Passzív Észlelés"
+    fájl: "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+  - név: "Információszerzés valakitől"
+    fájl: "szituaciok/informacioszerzes_valakitol.md"
+
+Észlelés:
+  - név: "Érzékelés, Aktív/Passzív Észlelés"
+    fájl: "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+  - név: "Lopakodás/rejtőzés és észlelése"
+    fájl: "szituaciok/lopakodas_rejtozes_es_eszlelese.md"
+  - név: "Meglopni, kirabolni valakit"
+    fájl: "szituaciok/lopas_kirablas.md"
+  - név: "Nyomok észrevétele - városban"
+    fájl: "szituaciok/nyomok_nyomkovetes_varos.md"
+  - név: "Orvtámadás - harcon kívül"
+    fájl: "szituaciok/orvtamadas_harcon_kivul.md"
+  - név: "Orvtámadás - harcoló ellenfélre"
+    fájl: "szituaciok/orvtamadas_harcolo_ellenfelre.md"
+  - név: "Vakharc, sötétben, láthatatlanul"
+    fájl: "szituaciok/vakharc_sotetben_lathatatlanul.md"
+  - név: "Elugrani lovaskocsi elől"
+    fájl: "szituaciok/elugrani_lovaskocsi_elol.md"
+
+Hajítás:
+  - név: "Hajítás alkalmatlan fegyverrel"
+    fájl: "szituaciok/hajitas_alkalmatlan_fegyverrel.md"
+  - név: "Hajítás nem dobásra készített tárgyakkal"
+    fájl: "szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md"
+
+Kézművesség:
+  - név: "Hamisítás és felismerése"
+    fájl: "szituaciok/hamisitas_es_felismerese.md"
+
+Kvantikum:
+  - név: "Nyomok észrevétele - városban"
+    fájl: "szituaciok/nyomok_nyomkovetes_varos.md"
+  - név: "Térkép készítése, értelmezése"
+    fájl: "szituaciok/terkep_keszitese_ertelmezes.md"
+
+Lexikum:
+  - név: "Ismerem ezt a nevet? Mit tudhatok róla?"
+    fájl: "szituaciok/ismerem_mit_tudhatok_rola.md"
+  - név: "Csapda hatástalanítás, szabotálás"
+    fájl: "szituaciok/csapda_hatatalanitas_szabotalas.md"
+
+Lopakodás/Rejtőzés:
+  - név: "Lopakodás/rejtőzés és észlelése"
+    fájl: "szituaciok/lopakodas_rejtozes_es_eszlelese.md"
+  - név: "Meglopni, kirabolni valakit"
+    fájl: "szituaciok/lopas_kirablas.md"
+  - név: "Orvtámadás - harcon kívül"
+    fájl: "szituaciok/orvtamadas_harcon_kivul.md"
+  - név: "Orvtámadás - harcoló ellenfélre"
+    fájl: "szituaciok/orvtamadas_harcolo_ellenfelre.md"
+  - név: "Vakharc, sötétben, láthatatlanul"
+    fájl: "szituaciok/vakharc_sotetben_lathatatlanul.md"
+
+Lopás:
+  - név: "Meglopni, kirabolni valakit"
+    fájl: "szituaciok/lopas_kirablas.md"
+
+Lovaglás:
+  - név: "Hátasról leesés"
+    fájl: "szituaciok/hatasrol_leeses.md"
+
+Mászás:
+  - név: "Mászás képzettségpróbára összetett példa"
+    fájl: "szituaciok/maszas_osszetett_pelda.md"
+  - név: "Esés magasból"
+    fájl: "szituaciok/eses_magasbol.md"
+
+Nyomozás:
+  - név: "Érzékelés, Aktív/Passzív Észlelés"
+    fájl: "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+  - név: "Információszerzés valakitől"
+    fájl: "szituaciok/informacioszerzes_valakitol.md"
+  - név: "Ismerem ezt a nevet? Mit tudhatok róla?"
+    fájl: "szituaciok/ismerem_mit_tudhatok_rola.md"
+  - név: "Nyomok észrevétele - városban"
+    fájl: "szituaciok/nyomok_nyomkovetes_varos.md"
+
+Természetjárás:
+  - név: "Érzékelés, Aktív/Passzív Észlelés"
+    fájl: "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
+  - név: "Nyomok észrevétele - természetben"
+    fájl: "szituaciok/nyomok_nyomkovetes_termeszet.md"
+
+Úszás:
+  - név: "Víz alatt bírni"
+    fájl: "szituaciok/viz_alatt_birni.md"
+
+Városi jártasság:
+  - név: "Ismerem ezt a nevet? Mit tudhatok róla?"
+    fájl: "szituaciok/ismerem_mit_tudhatok_rola.md"
+
+Közelharc:
+  - név: "Belharc folyamata"
+    fájl: "szituaciok/belharc_folyamata.md"
+
+Harcmodor:
+  - név: "Harci jártasság felmérése"
+    fájl: "szituaciok/harci_jartassag_felmerese.md"
