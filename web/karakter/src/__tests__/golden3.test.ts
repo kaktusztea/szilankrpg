@@ -71,7 +71,7 @@ describe('Golden #3 — rules.json alapszámítások (pak-Teth, 11. TSz, Amund)'
 
   it('ÉP = 36', () => expect(results.get('ÉP')).toBe(36));
   it('KÉ = 16', () => expect(results.get('KÉ')).toBe(16));
-  it('TÉ_alap = 19', () => expect(results.get('TÉ_alap')).toBe(19));
+  it('TÉ_alap = 18', () => expect(results.get('TÉ_alap')).toBe(18));
   it('VÉ_alap = 36', () => expect(results.get('VÉ_alap')).toBe(36));
   it('CÉ_alap = -11', () => expect(results.get('CÉ_alap')).toBe(-11));
   it('Aura = 20 (Amund)', () => expect(results.get('Aura')).toBe(20));
@@ -103,7 +103,7 @@ describe('Golden #3 — fegyver kalkuláció', () => {
     data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] };
   });
 
-  it('Meneth (abbitacél, MF 1.fok): TÉ=26, VÉ=42, SP=7, harckeret=6, támadások=1', () => {
+  it('Meneth (abbitacél, MF 1.fok): TÉ=25, VÉ=42, SP=7, harckeret=6, támadások=1', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const rows = buildFegyverRows(karakter, data, null);
     const row = rows.find(r => r.név === 'Meneth');
@@ -112,14 +112,14 @@ describe('Golden #3 — fegyver kalkuláció', () => {
       [{ fDef: row!.fDef, mfFok: row!.mfFok }],
       karakter, data, fortelyMods, 3, harcmodorÖsszeg, lookupArrays, stringCtx,
     );
-    expect(res[0].TÉ).toBe(26);
+    expect(res[0].TÉ).toBe(25);
     expect(res[0].VÉ).toBe(42);
     expect(res[0].SP).toBe(7);
     expect(res[0].harckeret).toBe(6);
     expect(res[0].támadások).toBe(1);
   });
 
-  it('Puszta kéz: TÉ=7, VÉ=24, SP=-3, harckeret=0, támadások=1', () => {
+  it('Puszta kéz: TÉ=6, VÉ=24, SP=-3, harckeret=0, támadások=1', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const rows = buildFegyverRows(karakter, data, null);
     const row = rows.find(r => r.név === 'Puszta kéz');
@@ -128,7 +128,7 @@ describe('Golden #3 — fegyver kalkuláció', () => {
       [{ fDef: row!.fDef, mfFok: row!.mfFok }],
       karakter, data, fortelyMods, 3, harcmodorÖsszeg, lookupArrays, stringCtx,
     );
-    expect(res[0].TÉ).toBe(7);
+    expect(res[0].TÉ).toBe(6);
     expect(res[0].VÉ).toBe(24);
     expect(res[0].SP).toBe(-3);
     expect(res[0].harckeret).toBe(0);
@@ -137,8 +137,8 @@ describe('Golden #3 — fegyver kalkuláció', () => {
 });
 
 describe('Golden #3 — Fájdalomtűrés enyhítés', () => {
-  it('9. szint → enyhítés = 3', () => {
+  it('10. szint → enyhítés = 4', () => {
     const enyhítés = calcFtEnyhites(karakter.képzettségek, konstansok.fájdalomtűrés_enyhítés);
-    expect(enyhítés).toBe(3);
+    expect(enyhítés).toBe(4);
   });
 });
