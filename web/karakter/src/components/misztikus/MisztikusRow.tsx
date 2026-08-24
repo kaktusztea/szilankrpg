@@ -19,7 +19,7 @@ interface MisztikusRowProps {
   onInfoToggle?: () => void;
 }
 
-export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning = false, gameMode, infoOpen, def, kit, fortélyFokok, tulajdonságok, onEdit, onDelete, onInfoToggle }: MisztikusRowProps) {
+export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning = false, gameMode, infoOpen, def, kit, fortélyFokok, tulajdonságok: _tulajdonságok, onEdit, onDelete, onInfoToggle }: MisztikusRowProps) {
   const displayName = név.includes(':') ? név.split(':')[1].trim() : név;
   const szintClass = `kep-szint${szint > maxSzint ? ' kep-over' : szint >= 9 ? ' kep-szint-high' : ''}`;
 
@@ -33,7 +33,7 @@ export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning 
         <strong className={szintClass}>{szint}</strong>
       </div>
       {gameMode && infoOpen && def && (
-        <KepzettsegInfoPanel def={def} kit={kit || []} fortélyFokok={fortélyFokok} tulajdonságok={tulajdonságok} szint={szint} />
+        <KepzettsegInfoPanel def={def} kit={kit || []} fortélyFokok={fortélyFokok} />
       )}
     </div>
   );

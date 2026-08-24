@@ -112,6 +112,14 @@
 .kep-over { color: var(--error) !important; }
 .kep-right { display: flex; align-items: center; gap: 6px; }
 
+.kep-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
 /* Törlés → base: .item-delete (common.css) */
 
 /* Select → base: .field-select (common.css) */
