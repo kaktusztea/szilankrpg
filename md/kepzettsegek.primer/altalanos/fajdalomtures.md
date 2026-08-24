@@ -15,6 +15,8 @@ Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve k�
 - [Harci láz](../harci/harci_laz.md) képzettség
 - [Kínokozás](../../fortelyok.harci/kinokozas.md) fortély
 - [Fakír](../../fortelyok.altalanos/fakir.md) fortély
+- [Eszmélet: Bódultság](../../082_statuszok.md#️-eszmélet-1-bódultság) státusz (Áfiumok, kábítószerek, fejbekólintás hatására)
+- [Eszmélet: Kábultság](../../082_statuszok.md#️-eszmélet-2-kábultság) státusz
 
 ### Bónusz: Fakír
 
@@ -64,12 +66,3 @@ Hang nélkül kiállni, hogy csonkolnak. Nagyon súlyos sebet (minimum `9 ÉP`) 
 #### Emberfeletti (21) 🎲
 
 Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják le.
-
-<br />
-
-### Dobás módosító körülmények
-
-- Áfiumok, kábítószerek, fejbekólintás hatására:
-  - [Eszmélet: Bódultság Státusz](../../082_statuszok.md#️-eszmélet-1-bódultság): `Előny+1` Fájdalomtűrés dobásra
-  - [Eszmélet: Kábultság Státusz](../../082_statuszok.md#️-eszmélet-2-kábultság): `Előny+2` Fájdalomtűrés dobásra
-- [Harci láz](../harci/harci_laz.md) képzettség

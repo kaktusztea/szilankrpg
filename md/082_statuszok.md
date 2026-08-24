@@ -171,6 +171,9 @@ Hátrány-2
   1 támadás elvesztése
   ⭕nincs (at-will) varázslás
   kivéve papok: részegen is tudnak⭕
+
+Előny+1 Fájdalomtűrés dobásra
+  Áfiumok, kábítószerek, fejbekólintás hatására
 ```
 
 ### ✴️ Eszmélet (2) Kábultság
@@ -187,6 +190,9 @@ Hátrány-2
   Manőver Ellenpróba dobásra
   Képzettségpróbákra
   Tulajdonságpróbákra
+
+Előny+2 Fájdalomtűrés dobásra
+  Áfiumok, kábítószerek, fejbekólintás hatására
 
 Többszörös támadás elvesztése
 Varázslás képesség elvesztése

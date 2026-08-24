@@ -69,11 +69,3 @@ Tor0ni vérnászt megnyerni. Több tor0ni dáma együttes támadását látszól
 #### Emberfeletti (21) 🎲
 
 Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynök -, túlélnie egy t0roni vérnászt és az egész nemesi bált, sőt még a párbajra hívást is.
-
-<br />
-
----
-### Dobás módosító körülmények
-
-- [Eszmélet: Bódultság Státusz](../082_statuszok.md#️-eszmélet-1-bódultság) módosítói
-- [Eszmélet: Kábultság Státusz](../082_statuszok.md#️-eszmélet-2-kábultság) módosítói
