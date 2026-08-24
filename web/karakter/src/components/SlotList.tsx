@@ -88,15 +88,15 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
 
   // Get the name of the slot for the popup header
   function getSlotNév(uid: string): string {
-    const s = slots.find(x => x.uid === uid);
-    return s?.név || s?.becenév || 'Névtelen';
+    return slotDisplayNames.get(uid) || 'Névtelen';
   }
 
-  function renderSlot(s: SlotEntry) {
+  function renderSlot(s: SlotEntry, displayName: string) {
     return (
       <SlotRow
         key={s.uid}
         slot={s}
+        displayName={displayName}
         active={activeUid === s.uid}
         onLoad={loadSlot}
         onSaveOptions={setSavePopupUid}
@@ -105,6 +105,34 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
       />
     );
   }
+
+  // Build display names: disambiguate nameless slots with v1, v2, etc.
+  // Numbering follows creation order (oldest = v1), not display order.
+  const slotDisplayNames = (() => {
+    const names = new Map<string, string>();
+    // Slots are sorted newest-first; reverse to assign v1 to the oldest
+    const namelessUids: string[] = [];
+    for (const s of slots) {
+      if (!s.név && !s.becenév) namelessUids.push(s.uid);
+    }
+    if (namelessUids.length <= 1) {
+      // Single or no nameless: plain "Névtelen", no suffix
+      for (const s of slots) names.set(s.uid, s.név || s.becenév || 'Névtelen');
+      return names;
+    }
+    // Multiple nameless: oldest (last in sorted array) = v1
+    namelessUids.reverse();
+    const suffixMap = new Map<string, number>();
+    namelessUids.forEach((uid, i) => suffixMap.set(uid, i + 1));
+    for (const s of slots) {
+      if (s.név || s.becenév) {
+        names.set(s.uid, s.név || s.becenév || '');
+      } else {
+        names.set(s.uid, `Névtelen v${suffixMap.get(s.uid)}`);
+      }
+    }
+    return names;
+  })();
 
   return (
     <>
@@ -135,14 +163,14 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
         {(() => {
           const jkRows = slots.filter(s => s.jk !== false);
           const njkRows = slots.filter(s => s.jk === false);
-          if (njkRows.length === 0) return jkRows.map(s => renderSlot(s));
+          if (njkRows.length === 0) return jkRows.map(s => renderSlot(s, slotDisplayNames.get(s.uid) || 'Névtelen'));
           return [
             { title: 'Játékos karakterek', rows: jkRows },
             { title: 'Nem Játékos karakterek', rows: njkRows },
           ].map(section => section.rows.length > 0 && (
             <div key={section.title} className="slot-section">
               <div className="slot-section-title">{section.title}</div>
-              {section.rows.map(s => renderSlot(s))}
+              {section.rows.map(s => renderSlot(s, slotDisplayNames.get(s.uid) || 'Névtelen'))}
             </div>
           ));
         })()}
