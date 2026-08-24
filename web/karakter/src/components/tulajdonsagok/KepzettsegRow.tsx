@@ -34,8 +34,8 @@ export function KepzettsegRow({
         <span className={`kep-név${overLimit || warning ? ' kep-over' : ''}`}>{displayName}</span>
         {gameMode && infoOpen && (
           <span className="kep-header-actions" onClick={e => e.stopPropagation()}>
-            {def?.md_fájl && <MdLink mdFájl={def.md_fájl} />}
             <button className="kep-proba-dice-btn" title="Képzettségpróba dobás" onClick={() => setShowProba(true)}>🎲</button>
+            {def?.md_fájl && <MdLink mdFájl={def.md_fájl} />}
           </span>
         )}
         <span className="kep-right">

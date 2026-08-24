@@ -6,7 +6,7 @@ import { readSlots, writeSlots } from './slot-utils';
 
 /**
  * Persists karakter + undoStack to localStorage whenever they change.
- * Skips save if testMode, !isDirty, viewingCheckpoint, or karakter is empty (no name/skills/feats).
+ * Skips save if testMode, !isDirty, or viewingCheckpoint.
  */
 export function useAutoSave(
   karakter: Karakter | null,
@@ -18,8 +18,6 @@ export function useAutoSave(
 ) {
   useEffect(() => {
     if (!karakter || testMode || !isDirty || viewingCheckpoint) return;
-    const tulajDefault = Object.values(karakter.tulajdonságok).every(v => v === 0);
-    if (!karakter.név && !karakter.becenév && karakter.képzettségek.length === 0 && karakter.fortélyok.length === 0 && tulajDefault) return;
 
     const expectedLeíró = generateIdLeíró(karakter.név, karakter.tsz);
     if (karakter.id_leíró !== expectedLeíró) {

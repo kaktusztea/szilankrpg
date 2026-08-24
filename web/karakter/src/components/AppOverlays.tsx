@@ -97,7 +97,7 @@ export function AppOverlays({
     setKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
     setUndoStack([]);
     setTestMode(false);
-    setIsDirty(false);
+    setIsDirty(true);
     set('showNewConfirm', false);
   };
 
