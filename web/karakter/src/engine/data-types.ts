@@ -9,7 +9,7 @@ export interface ModositoSor {
 
 export interface ModositoTabla {
   kategória: string;
-  mód?: 'single' | 'multi';  // default: 'single'
+  mód?: 'single' | 'multi' | 'chips';  // default: 'single'
   sorok: ModositoSor[];
 }
 

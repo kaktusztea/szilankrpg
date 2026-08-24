@@ -147,7 +147,7 @@ export function KepzettsegProbaPopup({
   const [szitMods, setSzitMods] = useState<Record<string, number>>(() => {
     const init: Record<string, number> = {};
     for (const t of módosítóTáblák) {
-      if (t.mód === 'multi') continue;
+      if (t.mód === 'multi' || t.mód === 'chips') continue;
       const zeroIdx = t.sorok.findIndex(s => s.érték === 0);
       if (zeroIdx >= 0) init[t.kategória] = zeroIdx;
     }
@@ -618,6 +618,20 @@ export function KepzettsegProbaPopup({
               {módosítóTáblák.map(t => (
                 <div key={t.kategória} className="kep-proba-szit-cat">
                   <span className="kep-proba-szit-label">{t.kategória}</span>
+                  {t.mód === 'chips' ? (
+                    <div className="kep-proba-szerepjatekos-chips">
+                      {t.sorok.map((s, i) => {
+                        const isActive = szitMods[t.kategória] === i;
+                        return (
+                          <button key={i}
+                            className={`fort-fok-btn kep-proba-szerepjatekos-chip${isActive ? ' active' : ''}${s.érték > 0 ? ' kep-proba-szerepjatekos-pos' : ' kep-proba-szerepjatekos-neg'}`}
+                            onClick={() => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }))}>
+                            {s.érték > 0 ? `+${s.érték}` : s.érték}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : (
                   <div className="kep-proba-szit-items">
                     {t.sorok.map((s, i) => {
                       // Enyhítés kalkuláció a sorra
@@ -649,6 +663,7 @@ export function KepzettsegProbaPopup({
                       );
                     })}
                   </div>
+                  )}
                 </div>
               ))}
               {szerepjátékosMódosító && (
