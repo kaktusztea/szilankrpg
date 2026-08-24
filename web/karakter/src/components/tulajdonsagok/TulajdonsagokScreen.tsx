@@ -36,14 +36,6 @@ export function TulajdonsagokScreen({
     return result;
   }, [karakter.fortélyok, data.fortelySummaries]);
 
-  // Sérült státusz fok kiolvasása (0=nem sérült, 1=S3, 2=S4, 3=Haldoklás)
-  const sérültFok = useMemo(() => {
-    const s = karakter.session.aktív_státuszok.find((st: string) => st.startsWith('Sérült ('));
-    if (!s) return 0;
-    const m = s.match(/\((\d)\)/);
-    return m ? parseInt(m[1], 10) : 0;
-  }, [karakter.session.aktív_státuszok]);
-
   const [popup, setPopup] = useState<PopupState>(INITIAL_POPUP_STATE);
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
@@ -164,7 +156,8 @@ export function TulajdonsagokScreen({
             onAddKepzettseg={addKepzettseg}
             onSzintChange={handleSzintChange}
             onRemove={handleRemove}
-            sérültFok={sérültFok}
+            aktívStátuszok={karakter.session.aktív_státuszok}
+            statuszDefs={data.statuszok}
             próbaEnyhítésekByKép={próbaEnyhítésekByKép}
           />
         ))}

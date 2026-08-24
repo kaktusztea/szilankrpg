@@ -1,5 +1,5 @@
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import type { PróbaEnyhítés } from '../../engine/data-types';
+import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegSlot } from './types';
 import { KepzettsegRow } from './KepzettsegRow';
@@ -23,14 +23,15 @@ interface Props {
   onAddKepzettseg: (csoport: string, név: string) => void;
   onSzintChange: (globalIdx: number, szint: number) => void;
   onRemove: (globalIdx: number, slot: KepzettsegSlot) => void;
-  sérültFok?: number;
+  aktívStátuszok: string[];
+  statuszDefs: StatuszEntry[];
   próbaEnyhítésekByKép: Record<string, PróbaEnyhítés[]>;
 }
 
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, tsz, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
-  fortélyFokok, tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, sérültFok, próbaEnyhítésekByKép
+  fortélyFokok, tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, próbaEnyhítésekByKép
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -66,7 +67,8 @@ export function KepzettsegCsoport({
               fortélyFokok={fortélyFokok}
               tulajdonságok={tulajdonságok}
               képzettségek={képzettségek}
-              sérültFok={sérültFok}
+              aktívStátuszok={aktívStátuszok}
+              statuszDefs={statuszDefs}
               próbaEnyhítések={próbaEnyhítésekByKép[slot.név] || []}
             />
           );

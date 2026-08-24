@@ -152,6 +152,7 @@ export interface StatuszHatas {
   operátor: string;
   érték?: number;
   cél: string;
+  alcél?: string;
   megjegyzés?: string;
 }
 
