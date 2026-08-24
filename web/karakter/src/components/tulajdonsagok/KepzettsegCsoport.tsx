@@ -2,7 +2,9 @@ import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader'
 import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegSlot } from './types';
+import { useState } from 'react';
 import { KepzettsegRow } from './KepzettsegRow';
+import { KepzettsegPickerOverlay } from './KepzettsegPickerOverlay';
 import { getDisplayName, findDef as findDefHelper, getAvailableNames, getKepzettsegekForCsoport, sortKepzettsegSlotok } from './helpers';
 
 interface Props {
@@ -76,14 +78,34 @@ export function KepzettsegCsoport({
         {/* Misztikus képzettségek felvétele a Misztikus fülön történik (faj/tradíció
             megkötések miatt) — itt csak megjelenítés + szint/törlés. */}
         {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
-          <div className="item-row item-row-new">
-            <select className="field-select kep-select" value="" onChange={e => { if (e.target.value) onAddKepzettseg(csoport, e.target.value); }}>
-              <option value="">+ Új képzettség...</option>
-              {available.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
-            </select>
-          </div>
+          <NewKepzettsegButton available={available} kepzettsegDefs={kepzettsegDefs} onAdd={v => onAddKepzettseg(csoport, v)} />
         )}
       </>)}
     </div>
+  );
+}
+
+function NewKepzettsegButton({ available, kepzettsegDefs, onAdd }: {
+  available: { label: string; value: string }[];
+  kepzettsegDefs: KepzettsegDef[];
+  onAdd: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div className="item-row item-row-new">
+        <button className="field-select kep-select fort-picker-btn" onClick={() => setOpen(true)}>
+          + Új képzettség...
+        </button>
+      </div>
+      {open && (
+        <KepzettsegPickerOverlay
+          available={available}
+          kepzettsegDefs={kepzettsegDefs}
+          onAdd={onAdd}
+          onClose={() => setOpen(false)}
+        />
+      )}
+    </>
   );
 }
