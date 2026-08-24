@@ -110,25 +110,16 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
   // Numbering follows creation order (oldest = v1), not display order.
   const slotDisplayNames = (() => {
     const names = new Map<string, string>();
-    // Slots are sorted newest-first; reverse to assign v1 to the oldest
-    const namelessUids: string[] = [];
-    for (const s of slots) {
-      if (!s.név && !s.becenév) namelessUids.push(s.uid);
-    }
-    if (namelessUids.length <= 1) {
-      // Single or no nameless: plain "Névtelen", no suffix
-      for (const s of slots) names.set(s.uid, s.név || s.becenév || 'Névtelen');
-      return names;
-    }
-    // Multiple nameless: oldest (last in sorted array) = v1
-    namelessUids.reverse();
-    const suffixMap = new Map<string, number>();
-    namelessUids.forEach((uid, i) => suffixMap.set(uid, i + 1));
+    const namelessUids = slots.filter(s => !s.név && !s.becenév).map(s => s.uid);
+    const needsSuffix = namelessUids.length > 1;
+    // Reverse: slots are newest-first, we want oldest = v1
+    if (needsSuffix) namelessUids.reverse();
     for (const s of slots) {
       if (s.név || s.becenév) {
-        names.set(s.uid, s.név || s.becenév || '');
+        names.set(s.uid, s.név || s.becenév!);
       } else {
-        names.set(s.uid, `Névtelen v${suffixMap.get(s.uid)}`);
+        const idx = needsSuffix ? namelessUids.indexOf(s.uid) + 1 : 0;
+        names.set(s.uid, idx ? `Névtelen v${idx}` : 'Névtelen');
       }
     }
     return names;
