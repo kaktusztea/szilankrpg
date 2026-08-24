@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import { OverlayPortal } from '../overlays/OverlayPortal';
@@ -18,6 +19,8 @@ interface Props {
 }
 
 export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, onAdd, onClose }: Props) {
+  const [expandedNév, setExpandedNév] = useState<string | null>(null);
+
   function handlePick(név: string) {
     onClose();
     onAdd(név);
@@ -25,34 +28,56 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
 
   return (
     <OverlayPortal dismissible onClose={onClose}>
-      <div className="kep-prompt fort-picker-popup" onClick={e => e.stopPropagation()}>
-        <button className="aktiv-picker-close" onClick={onClose}>✕</button>
-        <label className="kep-prompt-label-bold-mb">+ Új fortély</label>
+      <div className="fort-picker-popup" onClick={e => e.stopPropagation()}>
+        <div className="fort-picker-header">
+          <label>+ Új fortély</label>
+          <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}>✕</button>
+        </div>
         <div className="fort-picker-list">
           {available.map(d => {
             const disabled = isOptionDisabled(d, fortélyok, fegyverNevek, nyelvtanulásSzint);
             const suffix = buildSuffix(d, csoport, slotok, tsz, fortélyok, nyelvtanulásSzint);
             const desc = getDescription(d);
+            const isExpanded = expandedNév === d.név;
+            const hatásLines = getHatásLines(d);
+
             return (
-              <button
-                key={d.név}
-                className={`fort-picker-item${disabled ? ' fort-picker-disabled' : ''}`}
-                disabled={disabled}
-                onClick={() => handlePick(d.név)}
-              >
-                <span className="fort-picker-item-name">
-                  {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
-                  {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
-                </span>
-                {desc && <span className="fort-picker-item-desc">{desc}</span>}
-              </button>
+              <div key={d.név} className={`fort-picker-item-wrap${disabled ? ' fort-picker-disabled' : ''}`}>
+                <div className="fort-picker-item-top" onClick={() => !disabled && handlePick(d.név)}>
+                  <div className="fort-picker-item-content">
+                    <span className="fort-picker-item-name">
+                      {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
+                      {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
+                    </span>
+                    {desc && <span className="fort-picker-item-desc">{desc}</span>}
+                  </div>
+                  {hatásLines.length > 0 && (
+                    <button
+                      className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
+                      onClick={e => { e.stopPropagation(); setExpandedNév(isExpanded ? null : d.név); }}
+                      aria-label="Részletek"
+                    >●</button>
+                  )}
+                </div>
+                {isExpanded && hatásLines.length > 0 && (
+                  <div className="fort-picker-details" onClick={() => setExpandedNév(null)}>
+                    {hatásLines.map((line, i) => (
+                      <div key={i} className="fort-picker-details-line">{line}</div>
+                    ))}
+                  </div>
+                )}
+              </div>
             );
           })}
           {csoport === 'szabad' && (
-            <button className="fort-picker-item" onClick={() => handlePick(EGYEDI_FORTELY_SENTINEL)}>
-              <span className="fort-picker-item-name">⭐ Egyedi fortély</span>
-              <span className="fort-picker-item-desc">Saját, egyedi fortély létrehozása</span>
-            </button>
+            <div className="fort-picker-item-wrap">
+              <div className="fort-picker-item-top" onClick={() => handlePick(EGYEDI_FORTELY_SENTINEL)}>
+                <div className="fort-picker-item-content">
+                  <span className="fort-picker-item-name">⭐ Egyedi fortély</span>
+                  <span className="fort-picker-item-desc">Saját, egyedi fortély létrehozása</span>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </div>
@@ -66,6 +91,18 @@ function getDescription(d: FortelySummary): string {
   const firstFok = d.fokok.find(f => f.fok >= 1) ?? d.fokok[0];
   if (firstFok?.hatás?.[0]) return firstFok.hatás[0];
   return '';
+}
+
+/** Build detailed hatás lines for accordion (per fok) */
+function getHatásLines(d: FortelySummary): string[] {
+  const lines: string[] = [];
+  for (const fokDef of d.fokok) {
+    if (fokDef.fok === 0) continue; // skip alapeset
+    if (!fokDef.hatás?.length) continue;
+    const prefix = d.maxfok > 1 ? `${fokDef.fok}. fok: ` : '';
+    lines.push(`${prefix}${fokDef.hatás.join(' ')}`);
+  }
+  return lines;
 }
 
 function buildSuffix(

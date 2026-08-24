@@ -613,6 +613,11 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - Összesítő sor: `{tulajdonság érték} + {szint} vs {célszám}` (monospace)
   - **Dobás gomb** → `Tulajdonság + Képzettség szint + k10` (rollK10). Eredmény inline a Lövéskitérés popup mintájára: két érték egy sorban — nagy eredményszám + kis „vs" + piros célszám —, alatta színes Siker / Sikertelen. Tulajdonság/nehézség váltás törli az eredményt (újbóli Dobás gomb jelenik meg).
   - Escape: ha belső picker (Kiterjesztő fortély) nyitva → azt zárja; egyébként teljes popup bezárás.
+  - **Helyzetfüggő módosítók** picker (ha a képzettségnek van `helyzetfüggő_módosítók` tábla a yaml-ban): field-btn gomb → overlay popup. Kategóriánként lista (pl. "Fényviszonyok", "Zaj", "Anyag minősége"), soronként érték + leírás. Kiválasztott sor(ok) bónusza hozzáadódik a próba képlethez (`szitModÖsszeg`). Pozitív: zöld, negatív: piros megjelenítés. Dobás/eredmény resetelődik módosítóváltáskor.
+  - **Szerepjátékos módosító** (ha a képzettség yaml `szerepjátékos_módosító: true`): a Helyzetfüggő módosítók picker-en belül, alul. Chip gombok: -3, -2, -1, +1, +2, +3 (toggle, ismételt klikk = 0). Értéke hozzáadódik a `szitModÖsszeg`-hez.
+  - **Aktív státuszok hatása** (automatikus): a session `aktív_státuszok`-ból kiszámolt Előny/Hátrány (`engine/statusz-proba.ts`). Ha a státusz `hatások[]`-ban van `képzettségpróba` célú `előny`/`hátrány`, az automatikusan bekalkulálódik a dobásba. E/H bontás accordion a Dobás gomb alatt.
+  - **Próba enyhítések** (fortély yaml `próba_enyhítések[]`): ha a karakter rendelkezik a fortéllyal, az csökkenti/kioltja a helyzetfüggő módosítók negatív hatását (kategória + sor szintű illesztés).
+  - **Módosító tábla módok** (`ModositoTabla.mód`): `'single'` (default, egy sor választható), `'multi'` (több sor összegződik), `'chips'` (toggle chipek, pl. Zavaró körülmények — nem kizárólagos).
   - Dismissible (háttér-katt zár)
 
 ### KP sáv (Szerkesztő módban, minden fülön)
@@ -651,17 +656,46 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
   - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok, `.nyelvismeret-fok` class
 - Ingyenes keret alatti többszörös fortélyoknál halvány zöld ● pötty a név mellett (`fort-ingyenes-dot` class)
 - ✕ törlés gomb minden fortélynál (szerkesztő módban)
-- Csoportonként 1 db dropdown (szerkesztő módban): új fortély felvétele
+- Csoportonként 1 db "Új fortély..." gomb (szerkesztő módban): kattintásra overlay picker popup nyílik
 
-### Dropdown lista jelölések
-- Normál: `"FortélyNév (X)"` ahol X a maxfok
-- Ingyenes kerettel (Kultúrkör, Helyismeret): `"Név (1) ●N"` ahol N a maradék ingyenes keret
-- Szabad fortélyok: `"Név (1) ●N"` ha van szabad ingyenes keret (TSz db összesen a csoportból)
-- Nyelvismeret: `"Nyelvismeret (2) ●N"` ahol N a maradék nyelvtanulás pont
-- KP-t adó (Vakság, stb.): `"Név (X) 🎁6KP"` vagy több foknál: `"Név (3) 🎁6-12-18KP"`
-- `spec_típus: "fegyver"`: disabled ha nincs fegyver a karakteren vagy mindhez felvéve
+### Fortély picker overlay (FortelyPickerOverlay)
+
+Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta mint a Tradíció/Altípus picker).
+
+**Felépítés:**
+- Fejléc: "+ Új fortély" label + ✕ bezáró gomb (jobb felső sarok)
+- Lista: görgethető kártya-lista (`.fort-picker-list`), max 80vh-60px magasság
+- Háttér-katt / Escape: bezár (OverlayPortal dismissible)
+
+**Entry (kártya) felépítése:**
+- **Felső rész** (kattintásra kiválaszt + bezár):
+  - Bal: Fortély neve (bold) + (maxfok) + opcionális jelölések (●N, 🎁KP)
+  - Alatta: leírás szöveg (dim, 13px, max 2 sor CSS clamp) — forrás: yaml `leírás` mező, fallback: 1. fok `hatás[0]`
+  - Jobb szél: fehér ● info pötty (ha van hatásszöveg)
+- **Accordion details panel** (● pötty kattintásra nyílik/csukódik):
+  - Fokonként hatás szövegek (12px, dim)
+  - Panelre kattintva becsukódik
+
+**Jelölések a név sorban:**
+- Normál: `FortélyNév (maxfok)`
+- Ingyenes kerettel (Kultúrkör, Helyismeret): `●N` (N = maradék ingyenes keret, zöld szín)
+- Szabad fortélyok: `●N` ha van szabad ingyenes keret (TSz db összesen a csoportból)
+- Nyelvismeret: `●N` (N = maradék nyelvtanulás pont)
+- KP-t adó (Vakság, stb.): `🎁6KP` vagy több foknál: `🎁6-12-18KP`
+- `spec_típus: "fegyver"`: disabled (szürkítve) ha nincs fegyver a karakteren vagy mindhez felvéve
 - `spec_típus: "nyelv"` (Nyelvismeret): disabled ha pont keret elfogyott
-- Többszörösen felvehető fortélyok mindig láthatóak a dropdown-ban (nem szűrődnek ki)
+- Szabad csoport: lista alján "⭐ Egyedi fortély" entry (saját, egyedi fortély létrehozása)
+
+**Stílus (FortelyokScreen.css):**
+- `.fort-picker-popup`: saját background/border/border-radius, `max-height: 80vh; overflow-y: auto` — NEM flex layout (lásd Overlay Layout Konvenció)
+- `.fort-picker-list`: flex column, padding, gap — NEM kap saját scroll (a szülő popup scrolloz)
+- `.fort-picker-item-wrap`: kártya wrapper (input-bg, border, border-radius)
+- `.fort-picker-item-top`: flex row (tartalom + opcionális pötty)
+- `.fort-picker-dot`: 28×28 kerek gomb, fehér ●, katt → accordion toggle
+- `.fort-picker-details`: accordion panel (border-top, dim szöveg, katt → becsuk)
+- `.fort-picker-disabled`: opacity 0.4, pointer-events none
+
+**Komponens:** `FortelyPickerOverlay.tsx` (OverlayPortal, useState expandedNév)
 
 ### Többszörös fortélyok (generikus, `többszörösség` yaml mező alapján)
 - `spec_típus: ""` → normál, egyszer felvehető
@@ -677,6 +711,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - Keret felett: 6 KP/db (szekunder KP-ból)
 - Kiérdemelt fortélyok (`kiérdemelt: true`): ⭐ jelölés (fok>1: ⭐➕), nem fogyasztják se a keretet se a KP-t
 - Felvételkor popup: "Felvett" / "⭐ Kiérdemelt" választó (csak `kiérdemelhető: true` fortélyoknál)
+- **Egyedi fortély popup** (`EgyediFortelyPopup`): név input (max 20) + "Kiterjeszti (opcionális)" képzettség lista (ABC rendezés, hu locale, toggle gombok)
 
 ### Nyelvismeret pont keret
 - Nyelvtanulás képzettség 4. szinttől: `(szint - 3) x 3` pont
@@ -989,6 +1024,20 @@ Overlay screen-ek:
 - Fok radios (fortélyok): `flex; gap: 8px; justify-content: center`
 - Értékválasztás azonnal bezárja a popup-ot (nincs OK/Mégse gomb)
 
+### Overlay Layout Konvenció (scrollozható popup-ok)
+
+A `.kep-prompt-overlay` (`display: flex; align-items: center; justify-content: center`) mint szülő flex container a gyermek popup elemet a viewport közepére centeri. **Ha a tartalom magasabb mint a viewport:**
+
+- ❌ **NEM MŰKÖDIK**: `display: flex; flex-direction: column` a popup-on + `flex: 1; min-height: 0` a listán. A flex parent (`kep-prompt-overlay`) összenyomja a gyerekeket.
+- ❌ **NEM MŰKÖDIK**: `max-height` a popup-on + `overflow: hidden` + flex list belül. A flex layout nem propagálja a height constraint-et.
+- ✅ **MŰKÖDIK**: `max-height: Xvh; overflow-y: auto` közvetlenül a popup div-en (NEM flex layout). A popup maga scrollozódik. A belső lista nem kap saját scroll-t.
+- ✅ **MŰKÖDIK (alternatív)**: Nyelv picker minta — `.kep-prompt` class + saját class-on `max-height: 70vh; overflow-y: auto`.
+
+**Példák:**
+- `.nyelv-picker`: `max-height: 70vh; overflow-y: auto` (a teljes popup scrolloz)
+- `.fort-picker-popup`: `max-height: 80vh; overflow-y: auto` (a teljes popup scrolloz)
+- `.aktiv-picker`: `max-height: 80vh; display: flex; flex-direction: column` — működik mert az elemszám sosem lépi túl a viewport-ot
+
 ---
 
 ## Adatfolyam
@@ -1078,7 +1127,7 @@ Minden adat `fetchJson`-nel:
 - `tables/tavfegyverek.json`, `tables/pajzsok.json` — távfegyver/pajzs adatok
 - `tables/kepzettseg_kp.json` — KP költség tábla szintenként
 - `tables/harcmodor_kepzettsegek_bonuszok.json` — harcmodor bónuszok szintenként
-- `tables/kepzettsegek.json` — 81 képzettség definíció
+- `tables/kepzettsegek.json` — 81 képzettség definíció (+ helyzetfüggő_módosítók táblák)
 - `tables/kiterjesztesek.json` — képzettség→fortély inverz mapping
 - `tables/fajok.json` — 27 faj neve
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
@@ -1266,9 +1315,27 @@ Slot chip elrendezés:
 🔗  💾  📤  ⧉  ✕
 ```
 
-### Import (URL hash)
+### Mentés/Exportálás popup (SaveOptionsPopup)
 
-App mount-kor automatikusan fut, ha `window.location.hash` nem üres és legalább 20 karakter hosszú.
+A 💾 chipre nyíló overlay (slot-specifikus). Opciók:
+- **🔗 Link másolása** — URL vágólapra (azonos a slot 🔗 chipjével)
+- **💾 Mentés fájlba** — JSON letöltés
+- **📤 Megosztás** — Web Share API (mobilon, ha elérhető)
+- **📱 QR kód** — QR kód popup (lásd alább)
+- **ℹ️ Infó gomb** — megosztási lehetőségek magyarázó szöveg (accordion)
+
+### QR kód export (QrCodePopup)
+
+QR kód generálás a karakter URL-ből (engine_spec §40). Dependency: `uqr`.
+
+- SVG előnézet (inline renderelés, `renderSVG`)
+- **PNG mentés** gomb: 512px canvas-alapú generálás, karakter név footer sávban a QR alatt
+- **Canvas fingerprint védelem**: `detectCanvasPoison()` runtime check (Firefox `privacy.resistFingerprinting`) — ha aktív, warning jelenik meg
+- Háttér-katt / Escape bezár
+
+### Import (URL hash + fájl + vágólap + QR kép)
+
+**URL hash import**: App mount-kor automatikusan fut, ha `window.location.hash` nem üres és legalább 20 karakter hosszú.
 
 | Lépés | Viselkedés |
 |-------|-----------|
@@ -1280,6 +1347,11 @@ App mount-kor automatikusan fut, ha `window.location.hash` nem üres és legalá
 | Dialog: "Mégse" | Import elvetése, hash törlése |
 | Decode hiba | Toast: "Érvénytelen karakter link" (error szín) |
 | Végül | hash törlése: `history.replaceState(null, '', window.location.pathname + window.location.search)` |
+
+**Import popup (ImportOptionsPopup)**: A 📁 gomb nyitja. Három import mód:
+- **JSON fájlból** — fájlválasztó (single + backup)
+- **Vágólapról** — clipboard text beolvasás (URL vagy JSON)
+- **QR kód képből** — képfájl kiválasztás → `jsQR` dekódolás → URL import. Dependency: `jsqr`.
 
 Confirm dialog stílus: az app meglévő overlay/modal stílusát követi (sötét háttér, centered box, 3 gomb sor).
 

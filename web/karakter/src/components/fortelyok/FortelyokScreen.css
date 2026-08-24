@@ -72,27 +72,56 @@
 .egyedi-kit-btn.active { background: var(--primary); border-color: var(--color-kepzettseg); color: #fff; }
 
 /* --- Fortély picker overlay --- */
-.fort-picker-popup { position: relative; max-width: 380px; width: 90vw; }
-.fort-picker-list { max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; }
+.fort-picker-popup {
+  max-width: 380px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+}
 
-.fort-picker-item {
+.fort-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-weight: bold;
+}
+
+.fort-picker-list {
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 2px;
+}
+
+.fort-picker-item-wrap {
   background: var(--input-bg);
   border: 1px solid var(--border-input);
   border-radius: 4px;
-  padding: 10px 12px;
-  font-size: 15px;
-  color: var(--text);
-  text-align: left;
-  cursor: pointer;
-  width: 100%;
+  overflow: hidden;
 }
-.fort-picker-item:active:not(:disabled) { background: var(--primary); }
 
-.fort-picker-item-name { font-weight: bold; font-size: 15px; }
+.fort-picker-item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.fort-picker-item-top:active { background: var(--primary); }
+
+.fort-picker-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fort-picker-item-name { font-weight: bold; font-size: 15px; color: var(--text); }
 .fort-picker-item-maxfok { font-weight: normal; color: var(--text-dim); font-size: 13px; }
 .fort-picker-item-suffix { color: #a5d6a7; font-size: 13px; margin-left: 6px; }
 
@@ -106,9 +135,40 @@
   overflow: hidden;
 }
 
+/* Info dot (accordion trigger) */
+.fort-picker-dot {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.fort-picker-dot:active,
+.fort-picker-dot-active { background: var(--primary); }
+
+/* Accordion details panel */
+.fort-picker-details {
+  padding: 6px 12px 10px;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+}
+.fort-picker-details-line {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.4;
+  padding: 1px 0;
+}
+
 .fort-picker-disabled {
   opacity: 0.4;
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .fort-picker-btn {

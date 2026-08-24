@@ -37,6 +37,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `dice.ts` | Kockadobás: rollDie(sides), rollK20, rollK10 (közös randomizálás) |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
+| `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció |
 | `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange |
 
 ### Hooks (`hooks/`)
@@ -120,6 +121,8 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
 fortelyok/                 Fortélyok fül
   FortelyokScreen.tsx      Fő screen (csoportok, felvétel, fok kezelés)
   FortelyFelvetel.tsx      Felvétel wizard (többszörös, kiérdemelt)
+  FortelyPickerOverlay.tsx Fortély picker overlay popup (név+leírás+hatás accordion)
+  NewFortelySelect.tsx     "+ Új fortély" gomb (picker overlay trigger)
   FortelyRow.tsx           Fortély sor (pöttyök, követelmény jelzés)
 
 harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
@@ -144,6 +147,9 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
   OverlayScreenOverlay.tsx Verziók/Napló/Jegyzetek összevont overlay (NaploTab + jegyzetek + próba)
   SzilankPickerOverlay.tsx Szilánk pont (0-3) + gyors-elérési hub (Szabályrendszer link, próba táblák)
   SlotListOverlay.tsx      Karakterek hub (slot lista → SlotList.tsx)
+  SaveOptionsPopup.tsx     Mentés/Exportálás popup (link, fájl, share, QR)
+  ImportOptionsPopup.tsx   Import popup (fájl, vágólap, QR képből)
+  QrCodePopup.tsx          QR kód generálás + PNG mentés (uqr lib)
 ```
 
 ## Data Sources (`data/sources/`)

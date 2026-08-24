@@ -57,6 +57,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 - CSS class (prefix: `he-`, `aktiv-`, `naplo-`, stb.) — NEM inline style
 - Popup: `createPortal(document.body)`, Escape bezár, mellé-katt bezár
 - Értékválasztó: kiválasztás = bezárás (nincs OK gomb)
+- Scrollozható overlay popup: `max-height: Xvh; overflow-y: auto` közvetlenül a popup div-en. NEM flex layout a szülőn! (A `.kep-prompt-overlay` flex center összenyomja a flex gyerekeket.)
 - Dark theme, mobil-first, LF sorvégek
 - Tab bar: tükrözött renderelés (reverse), swipe invertált
 - Workaround jelölés: `// WORKAROUND: <id> — <leírás>`. Regiszter: `gui_spec.md` → „Workaround regiszter"
