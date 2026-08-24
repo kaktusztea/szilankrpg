@@ -70,3 +70,48 @@
 .egyedi-kit-list { display: flex; flex-direction: column; gap: 4px; max-height: calc(6 * 36px); overflow-y: auto; }
 .egyedi-kit-btn { background: var(--input-bg); border: 1px solid var(--border-input); border-radius: 4px; padding: 6px 10px; font-size: 14px; color: var(--text); cursor: pointer; text-align: left; }
 .egyedi-kit-btn.active { background: var(--primary); border-color: var(--color-kepzettseg); color: #fff; }
+
+/* --- Fortély picker overlay --- */
+.fort-picker-popup { position: relative; max-width: 380px; width: 90vw; }
+.fort-picker-list { max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 2px; }
+
+.fort-picker-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+.fort-picker-item:active:not(:disabled) { background: var(--primary); }
+
+.fort-picker-item-name { font-weight: bold; font-size: 15px; }
+.fort-picker-item-maxfok { font-weight: normal; color: var(--text-dim); font-size: 13px; }
+.fort-picker-item-suffix { color: #a5d6a7; font-size: 13px; margin-left: 6px; }
+
+.fort-picker-item-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fort-picker-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.fort-picker-btn {
+  cursor: pointer;
+  text-align: left;
+}

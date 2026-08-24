@@ -99,7 +99,7 @@ export function EgyediFortelyPopup({ képzettségek, onConfirm, onCancel }: {
         <div className="egyedi-kit-section">
           <label className="egyedi-kit-label">Kiterjeszti (opcionális):</label>
           <div className="egyedi-kit-list">
-            {képzettségek.map(k => (
+            {[...képzettségek].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(k => (
               <button key={k.név}
                 className={`egyedi-kit-btn${kiterjeszti.has(k.név) ? ' active' : ''}`}
                 onClick={() => toggleKép(k.név)}>{k.név}</button>
