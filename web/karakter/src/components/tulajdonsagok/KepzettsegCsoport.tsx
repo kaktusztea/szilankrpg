@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegSlot } from './types';
-import { useState } from 'react';
 import { KepzettsegRow } from './KepzettsegRow';
 import { KepzettsegPickerOverlay } from './KepzettsegPickerOverlay';
 import { getDisplayName, findDef as findDefHelper, getAvailableNames, getKepzettsegekForCsoport, sortKepzettsegSlotok } from './helpers';
