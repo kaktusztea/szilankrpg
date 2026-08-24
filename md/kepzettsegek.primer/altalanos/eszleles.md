@@ -95,10 +95,10 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Gyorsan, nyomás alatt keresni: `+3`
-- Zavaró körülmények: `[+1; +6]`
-- Ha az észlelés aktív: `-3`
+- Gyorsan, nyomás alatt keresni: `-3`
+- Zavaró körülmények: `[-1; -6]`
+- Ha az észlelés aktív: `+3`
 
 ---

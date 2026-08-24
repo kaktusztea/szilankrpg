@@ -16,7 +16,7 @@ Leírását és a próba körülményeit, módosítóit lásd a [Lopakodás/rejt
 
 ### ⚜️ Módosítók
 
-A **Lopakodás/rejtőzés** képzettség oldalán a [Célszámok, módosító körülmények](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) bekezdés alatt található.
+A **Lopakodás/rejtőzés** képzettség oldalán a [Helyzetfüggő módosítók](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#helyzetfüggő-módosítók) bekezdés alatt található.
 
 ---
 ### ⚜️ Passzív észlelés

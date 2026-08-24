@@ -67,6 +67,6 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - ⭕TODO⭕

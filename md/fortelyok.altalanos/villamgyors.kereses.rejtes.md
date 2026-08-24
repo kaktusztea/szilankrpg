@@ -9,7 +9,7 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 ---
 ### Alapeset
 
-Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#célszám-módosító-körülmények) képzettségpróbát (amit kiterjeszt a Keresés/rejtés fortély).
+Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#helyzetfüggő-módosítók) képzettségpróbát (amit kiterjeszt a Keresés/rejtés fortély).
 
 <br />
 

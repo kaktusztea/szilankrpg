@@ -117,6 +117,6 @@ Gyógyulási sebesség szorzó: `x3`.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - ⭕TODO⭕

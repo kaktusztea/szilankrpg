@@ -110,10 +110,10 @@ Alapvető nem leplezett személyiségvonások felismerése.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - Rövidebb/Hosszabb a kontaktus ideje és/vagy mély / kevésbé mély az alapesetnél: `[-3;+3]`
-- Más fajú a célszemély: `+3`
+- Más fajú a célszemély: `-3`
 - Asztrál szem hatása: ⭕TODO⭕
 
 ---

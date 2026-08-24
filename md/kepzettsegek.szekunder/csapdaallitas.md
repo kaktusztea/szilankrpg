@@ -76,8 +76,8 @@ Intelligencia, Önuralom
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Csapda hatástalanítása külső nyom hátrahagyása nélkül: `+3`
+- Csapda hatástalanítása külső nyom hátrahagyása nélkül: `-3`
 
 ---

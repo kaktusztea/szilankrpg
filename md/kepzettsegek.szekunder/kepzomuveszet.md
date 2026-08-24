@@ -88,11 +88,11 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - Rendelkezésre álló idő
-  - Kapkodás: `+3`
-  - ráérős munka `-2`
-- Környezet inspiráló hatása (pl. szent hely, művésztelep): `-2`
+  - Kapkodás: `-3`
+  - ráérős munka `+2`
+- Környezet inspiráló hatása (pl. szent hely, művésztelep): `+2`
 
 ---

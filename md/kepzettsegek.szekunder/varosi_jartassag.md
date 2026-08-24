@@ -103,10 +103,10 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Szűkös határidő: `+3`
-- Jó hírnév: `-3`
-- Rossz hírnév, karma: `[+3; +6]`
+- Szűkös határidő: `-3`
+- Jó hírnév: `+3`
+- Rossz hírnév, karma: `[-3; -6]`
 
 ---

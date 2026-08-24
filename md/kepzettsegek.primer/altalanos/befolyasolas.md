@@ -73,9 +73,9 @@ Biztos tudás erejű Aurád (nem dobhatsz rá) hatása érvényesül a célszem�
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Olyan nyelven próbálsz hatni, amit nem ért(enek) a célszemély(ek): `+3`
+- Olyan nyelven próbálsz hatni, amit nem ért(enek) a célszemély(ek): `-3`
 - Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
 
 ---

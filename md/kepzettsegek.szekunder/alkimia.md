@@ -93,8 +93,8 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-Rosszul felszerelt labor, műszerek hiánya: `[+3; +9]`
+Rosszul felszerelt labor, műszerek hiánya: `[-3; -9]`
 
 ---

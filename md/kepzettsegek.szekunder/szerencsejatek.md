@@ -80,9 +80,9 @@ Szerencsejáték
 - Komoly bűnszervezet vagy arisztokrácia legendás bajnokságának is bajnoka is vagy.
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Kocsma, barátságos közeg: `-3`
-- Teljesen idegen kaszinó, ismeretlen szabályok: `+3`
+- Kocsma, barátságos közeg: `+3`
+- Teljesen idegen kaszinó, ismeretlen szabályok: `-3`
 
 ---

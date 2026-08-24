@@ -100,8 +100,8 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Kapkodó munka: `+3`
+- Kapkodó munka: `-3`
 
 ---

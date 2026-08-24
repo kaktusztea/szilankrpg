@@ -84,11 +84,11 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Kapkodni kell: `+3`
-- Nincs meg a testközeli távolság, csak pár lépés: `+3`
-- Több tárgy manipulálása szinte egy időben: `+3`
-- Zajos, zsibongó környezet: `-3`
+- Kapkodni kell: `-3`
+- Nincs meg a testközeli távolság, csak pár lépés: `-3`
+- Több tárgy manipulálása szinte egy időben: `-3`
+- Zajos, zsibongó környezet: `+3`
 
 ---

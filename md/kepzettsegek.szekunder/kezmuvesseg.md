@@ -130,6 +130,6 @@ Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegp
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Rövid határidő: `+3`
+- Rövid határidő: `-3`

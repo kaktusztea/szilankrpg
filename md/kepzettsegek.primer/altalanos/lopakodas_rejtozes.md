@@ -89,7 +89,9 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 - Mozgás: a lopakodó az észlelő látásának perifériáján halad
 - Távolság: `10-15` méter
 
-### ⚜️ Láthatóság módosító (lopakodó)
+### Helyzetfüggő módosítók
+
+#### ⚜️ Láthatóság (lopakodó)
 
 ```
 -6 Világosban, éles kontúrral válsz el a háttértől
@@ -103,7 +105,7 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 
 Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
-### ⚜️ Látótér módosító (lopakodó)
+#### ⚜️ Látótér (lopakodó)
 
 ```
 -6: lopakodó direkt a látótérben
@@ -111,7 +113,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 +6: lopakodó az észlelő látókörén kívül halad
 ```
 
-### ⚜️ Mozgás módosító (lopakodó)
+#### ⚜️ Mozgás (lopakodó)
 
 ```
 -6: gyors haladás
@@ -119,7 +121,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 
  [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
 
-### ⚜️ Zajok módosító (lopakodó)
+#### ⚜️ Zajok (lopakodó)
 
 ```
 -6: csörgő ruha, fémpáncél
@@ -129,7 +131,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 +3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
 ```
 
-### ⚜️ Környezet, rejtekhely módosító (lopakodó)
+#### ⚜️ Környezet, rejtekhely (lopakodó)
 
 ```
 -6: nyílt tér fedezék nélkül
@@ -137,7 +139,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 +6: zsúfolt piac, rengeteg pult, beugró, alkóv
 ```
 
-### ⚜️ Távolság módosító, Harci szituáció megteremtése (lopakodó)
+#### ⚜️ Távolság, Harci szituáció megteremtése (lopakodó)
 
 ```
 -9: Testközelbe kerülni; Orvtámadás

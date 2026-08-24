@@ -80,20 +80,20 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 **Időjárás**:
 - Enyhe szél, jó idő: `+0`
-- Erős szél, zivatar: `+3`
-- Vihar, orkán: `+6 / +9`
+- Erős szél, zivatar: `-3`
+- Vihar, orkán: `-6 / -9`
 
 **Hajó állapota**:
 - Karbantartott, jó állapotú: `+0`
-- Sérült vagy túlterhelt: `+3 / +6`
+- Sérült vagy túlterhelt: `-3 / -6`
 
 **Legénység**:
 - Tapasztalt legénység: `+0`
-- Egyenetlen, fegyelmezetlen: `+3`
-- Képzetlen zsoldosok, rakodómunkások: `+6`
+- Egyenetlen, fegyelmezetlen: `-3`
+- Képzetlen zsoldosok, rakodómunkások: `-6`
 
 ---

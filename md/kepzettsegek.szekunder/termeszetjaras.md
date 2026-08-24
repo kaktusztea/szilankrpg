@@ -101,8 +101,8 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Rossz időjárás: `[+1; +6]`
+- Rossz időjárás: `[-1; -6]`
 
 ---

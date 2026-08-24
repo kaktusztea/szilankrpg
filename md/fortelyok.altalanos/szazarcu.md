@@ -2,7 +2,7 @@
 
 Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át tudsz változni.
 
-🔆 Ne feledjük: ilyen esetekben a [próba Célszáma növekszik](../kepzettsegek.szekunder/alcazas_alruha.md#c%C3%A9lsz%C3%A1m-m%C3%B3dos%C3%ADt%C3%B3-k%C3%B6r%C3%BClm%C3%A9nyek)!
+🔆 Ne feledjük: ilyen esetekben [módosító büntetés](../kepzettsegek.szekunder/alcazas_alruha.md#helyzetfüggő-módosítók) jár a próbadobásra!
 
 ### Kapcsolódik
 
@@ -11,27 +11,19 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 ### Alapeset
 
-```
-+3: Gyors átöltözés
-+6: Átöltözés másodpercek alatt
-```
-
-```
-+3: Szegényes felszerelés
-+6: Minimális felszerelés
-```
+[Álcázás/álruha — Helyzetfüggő módosítók](../kepzettsegek.szekunder/alcazas_alruha.md#helyzetfüggő-módosítók)
 
 ---
 ### 1. fok
 
 🔒 [Álcázás/álruha](../kepzettsegek.szekunder/alcazas_alruha.md) - `4.szint`
 
-🌟 Mindegyik eset büntetéseit `3`-mal csökkentheted képzettségpróbánál.
+🌟 Mindegyik büntetést `+3`-mal enyhítheted.
 
 ### 2. fok
 
 🔒Álcázás/Álruha - `8.szint`
 
-🌟 Mindegyik eset büntetéseit `6`-tal csökkentheted képzettségpróbánál.
+🌟 Mindegyik büntetést `+6`-tal enyhítheted.
 
 ---

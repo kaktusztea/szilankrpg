@@ -109,10 +109,10 @@ Próba dobható.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Könyvtár: `[-1; -6]`
-- Hozzáférés: tiltott források vagy hiányos anyag: `[+1; +6]`
-- Nyelvi nehézségek: fordítás, nyelvjárás: `[+2; +4]`
+- Könyvtár: `[+1; +6]`
+- Hozzáférés: tiltott források vagy hiányos anyag: `[-1; -6]`
+- Nyelvi nehézségek: fordítás, nyelvjárás: `[-2; -4]`
 
 ---

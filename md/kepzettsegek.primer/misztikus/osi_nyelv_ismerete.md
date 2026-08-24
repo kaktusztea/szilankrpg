@@ -86,6 +86,6 @@ Emlékezet
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - ⭕TODO⭕

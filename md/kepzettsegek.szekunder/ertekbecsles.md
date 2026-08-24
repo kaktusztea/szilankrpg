@@ -83,7 +83,7 @@ Emlékezet, Intelligencia
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - Tárgy komplexitása
 - Tárgy ritkasága
