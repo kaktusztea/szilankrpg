@@ -16,6 +16,7 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+szerepjátékos_módosító: false    # true: KM ad [-3;+3] módosítót a játékos előadásáért
 helyzetfüggő_módosítók: ""      # Üres ("") ha nincs. Lista ha van:
   # - kategória: ""             # Kategória neve (pl. "Körülmény", "Időjárás")
   #   mód: "single"            # "single" (default): skála, 1 választható. "multi": független tényezők, toggle-ök.

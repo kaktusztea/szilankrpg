@@ -18,3 +18,4 @@ mesterbónuszok:
     leírás: "Skálázható Harci taktikák felső korlátja +6-tal nő. Fegyver sebzése mágikus lesz. Sebzéstípus másodlagos/alkalmatlan büntetés -1."
   - szint: 15
     leírás: "Sebzéstípus büntetések megszűnnek. Alacsonyabb szintű ellenfél azonnali harcképtelenné tétele sebzéskor."
+szerepjátékos_módosító: false

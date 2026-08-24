@@ -565,6 +565,29 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
   text-align: center;
 }
 
+/* Szerepjátékos módosító chips */
+.kep-proba-szerepjatekos-chips {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 4px;
+}
+.kep-proba-szerepjatekos-chip {
+  width: 29px;
+  height: 29px;
+  font-size: 11px;
+}
+.kep-proba-szerepjatekos-chip.active.kep-proba-szerepjatekos-pos {
+  border-color: var(--success);
+  background: var(--success);
+  color: #000;
+}
+.kep-proba-szerepjatekos-chip.active.kep-proba-szerepjatekos-neg {
+  border-color: var(--danger, #e55);
+  background: var(--danger, #e55);
+  color: #fff;
+}
+
 /* Összetett próba eredmény sorok */
 .kep-proba-osszetett-rows {
   display: flex;

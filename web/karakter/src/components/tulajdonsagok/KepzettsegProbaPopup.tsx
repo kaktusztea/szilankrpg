@@ -111,6 +111,7 @@ interface Props {
   statuszDefs: StatuszEntry[];
   módosítóTáblák: ModositoTabla[];
   próbaEnyhítések: PróbaEnyhítés[];
+  szerepjátékosMódosító: boolean;
   onClose: () => void;
 }
 
@@ -119,7 +120,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, onClose,
+  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, szerepjátékosMódosító, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -161,6 +162,9 @@ export function KepzettsegProbaPopup({
     return init;
   });
 
+  // Szerepjátékos módosító: [-3..+3], 0 = nincs kiválasztva
+  const [szerepjátékosÉrték, setSzerepjátékosÉrték] = useState(0);
+
   // Enyhítés helper
   const enyhítSor = (kategória: string, sor: ModositoSor): number => {
     const raw = sor.érték;
@@ -181,7 +185,7 @@ export function KepzettsegProbaPopup({
     const idx = szitMods[t.kategória];
     if (idx == null || idx < 0) return sum;
     return sum + enyhítSor(t.kategória, t.sorok[idx]);
-  }, 0);
+  }, 0) + szerepjátékosÉrték;
 
   const kit = selKit >= 0 ? kiterjesztesek[selKit] : null;
   const ehAlap = kit ? kiterjesztésElőnyHátrány(kit.típus, fortélyFokok[kit.fortély] ?? 0) : { szint: 0, tiltott: false };
@@ -378,7 +382,7 @@ export function KepzettsegProbaPopup({
         )}
 
         {/* --- Módosító értékek chip (opens picker popup) --- */}
-        {módosítóTáblák.length > 0 && (
+        {(módosítóTáblák.length > 0 || szerepjátékosMódosító) && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('szit')}>
               Helyzetfüggő módosítók: <span className={szitModÖsszeg > 0 ? 'kep-proba-szit-pos' : szitModÖsszeg < 0 ? 'kep-proba-szit-neg' : ''}>{szitModÖsszeg === 0 ? '0' : `${szitModÖsszeg > 0 ? '+' : ''}${szitModÖsszeg}`}</span>
@@ -647,6 +651,20 @@ export function KepzettsegProbaPopup({
                   </div>
                 </div>
               ))}
+              {szerepjátékosMódosító && (
+                <div className="kep-proba-szit-cat">
+                  <span className="kep-proba-szit-label">Szerepjátékos módosító</span>
+                  <div className="kep-proba-szerepjatekos-chips">
+                    {[-3, -2, -1, 1, 2, 3].map(v => (
+                      <button key={v}
+                        className={`fort-fok-btn kep-proba-szerepjatekos-chip${szerepjátékosÉrték === v ? ' active' : ''}${v > 0 ? ' kep-proba-szerepjatekos-pos' : ' kep-proba-szerepjatekos-neg'}`}
+                        onClick={() => setSzerepjátékosÉrték(szerepjátékosÉrték === v ? 0 : v)}>
+                        {v > 0 ? `+${v}` : v}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
             {szitModÖsszeg !== 0 && (
               <div className={`kep-proba-szit-sum-footer${szitModÖsszeg > 0 ? ' kep-proba-szit-pos' : ' kep-proba-szit-neg'}`}>
