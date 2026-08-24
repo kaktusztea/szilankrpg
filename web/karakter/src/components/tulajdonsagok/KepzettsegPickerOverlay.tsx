@@ -57,14 +57,10 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, onAdd, onCl
                       </div>
                     )}
                     <div className="fort-picker-details-line">
+                      {def.primer ? <><span className="fort-picker-details-fok">Primer</span> &nbsp;•&nbsp; </> : ''}
                       <span className="fort-picker-details-fok">Próba:</span>{' '}
                       {def.próba || '—'}
                     </div>
-                    {def.primer && (
-                      <div className="fort-picker-details-line">
-                        <span className="fort-picker-details-fok">Primer</span>
-                      </div>
-                    )}
                     {def.kapcsolódó_szituációk?.length > 0 && (
                       <div className="fort-picker-details-szit">
                         <span className="fort-picker-details-fok">Szituációk:</span>

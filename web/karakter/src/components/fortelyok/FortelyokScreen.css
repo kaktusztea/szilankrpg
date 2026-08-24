@@ -164,6 +164,9 @@
   gap: 2px;
   margin-top: 4px;
 }
+.fort-picker-details-szit > .fort-picker-details-fok {
+  font-size: 12px;
+}
 
 .fort-picker-disabled {
   opacity: 0.4;
