@@ -567,7 +567,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Játék módban: üres csoportok elrejtve
 - Minden képzettség: név + szint (0-15) + ✕ törlés gomb
 - Szint színkód: 0=piros, 1-8=fehér, 9+=zöld, >tsz limit=piros
-- Csoportonként 1 db dropdown választó (Szerkesztő módban): új képzettség felvétele → azonnal felugrik a szint választó popup
+- Csoportonként 1 db "Új képzettség..." gomb (Szerkesztő módban): kattintásra overlay picker popup nyílik (azonos stílus mint a Fortély picker — `fort-picker-popup` CSS). Entry-k: képzettség név + ● info pötty (accordion: Tulajdonságok, Próba, Primer, Szituációk linkek). Kiválasztás → azonnal felugrik a szint választó popup.
 - Törlés (✕ gomb): szint=0 → azonnal töröl, szint>0 → piros "Törlés" gombot tartalmazó megerősítő dialógus
 - Többszörös képzettségek felvételkor csoportosítva a testvéreik mellé kerülnek
 
@@ -603,6 +603,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - **Próba**: dobható / nem dobható / ellenpróba
   - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
   - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel)
+  - **Szituációk**: kapcsolódó szituáció linkek (🔗 prefix, kék, új tab). Forrás: `data/sources/szituacio_mapping.yaml` → `kepzettsegek.json` `kapcsolódó_szituációk` mező.
   - **Akció sor** (alul): 🔗 Szabályrendszer link + 🎲 Képzettségpróba dobás gomb
 - **🎲 Képzettségpróba popup** (csak Játék módban, accordion alján): kattintásra `PopupOverlay`
   - Fejléc: "Képzettségpróba" (normál font-weight) + jobb felső sarokban ⟲ reset gomb (36px, disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)

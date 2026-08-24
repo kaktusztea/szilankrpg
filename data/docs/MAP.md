@@ -112,6 +112,7 @@ tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
 tulajdonsagok/             Tulajdonságok + Képzettségek fül
   TulajdonsagokScreen.tsx  Fő screen (név, faj, kor, tulajdonságok, képzettségek)
   KepzettsegCsoport.tsx    Képzettség csoport (csukható, game/edit mód)
+  KepzettsegPickerOverlay.tsx  Képzettség picker overlay popup (név+info accordion+szituáció linkek)
   TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
   KepzettsegProbaPopup.tsx   Képzettségpróba dobás popup (Játék mód, k10)
   ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
@@ -168,6 +169,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `hatas_operatorok.yaml` | Hatás operátorok (8 db) | `hatas_operatorok.json` |
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
 | `hatterek.yaml` | Leíró + Karma hátterek | `hatterek.json` |
+| `szituacio_mapping.yaml` | Képzettség → Szituáció kapcsolatok | → `kepzettsegek.json` (`kapcsolódó_szituációk` mező) |
 
 ## Spec dokumentáció (`data/docs/`)
 
