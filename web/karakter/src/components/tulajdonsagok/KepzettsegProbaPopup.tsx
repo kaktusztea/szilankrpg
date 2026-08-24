@@ -514,7 +514,7 @@ export function KepzettsegProbaPopup({
                     {ehBontásNyitva ? '▴' : '▾'}
                   </button>
                   {ehBontásNyitva && (
-                    <div className="kep-proba-eh-accordion-body">
+                    <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
                       {ehAlap.szint !== 0 && (
                         <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({kit?.fortély ?? '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
                       )}

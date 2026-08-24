@@ -553,7 +553,7 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-eh-accordion-body {
   margin-top: 2px; font-size: 12px; color: #aaa; text-align: center;
   border: 1px solid #444; border-radius: 4px;
-  padding: 4px 8px;
+  padding: 4px 8px; cursor: pointer;
 }
 .kep-proba-eh-accordion-toggle[data-open="true"] { }
 .kep-proba-rejtett-label { color: #c8c080; }
