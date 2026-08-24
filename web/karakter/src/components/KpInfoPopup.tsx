@@ -16,7 +16,7 @@ export function KpInfoPopup({ kp, tsz, intelligencia, emlékezet, perszint, szek
     <div className="kp-info-popup">
       <h3 className="kp-info-title">KP képlet bontás</h3>
 
-      <Section label="Keret">
+      <Section label="Keret" colorClass="kp-info-label-keret">
         <Row name="Összes KP" value={kp.összesKp} />
         <Formula>{tsz} × ({perszint} + {intelligencia}(Int))</Formula>
         <Row name="Szekunder KP" value={kp.szekunderKp} />
@@ -25,7 +25,7 @@ export function KpInfoPopup({ kp, tsz, intelligencia, emlékezet, perszint, szek
         <SumRow name="Összes keret" value={összesKeret} />
       </Section>
 
-      <Section label="Elköltött">
+      <Section label="Elköltött" colorClass="kp-info-label-elkoltott">
         <Row name="Képzettségek" value={kp.kpKépzettségek} />
         <Row name="Fortélyok" value={kp.kpFortélyok} />
         <Row name="HM" value={kp.kpHm} />
@@ -34,11 +34,11 @@ export function KpInfoPopup({ kp, tsz, intelligencia, emlékezet, perszint, szek
         <SumRow name="Összes elköltött" value={kp.elköltöttKp} />
       </Section>
 
-      <Section label="Eredmény">
+      <Section label="Eredmény" colorClass="kp-info-label-eredmeny">
         <ResultRow name="Maradt KP" value={kp.maradékKp} />
       </Section>
 
-      <Section label="Primer bontás">
+      <Section label="Primer bontás" colorClass="kp-info-label-primer">
         <Row name="Primer keret" value={kp.primerKeret} />
         <Formula>összes_kp + spec_kp</Formula>
         <Row name="Primer költés" value={kp.primerKöltés} />
@@ -50,10 +50,10 @@ export function KpInfoPopup({ kp, tsz, intelligencia, emlékezet, perszint, szek
 
 // --- Helper sub-components ---
 
-function Section({ label, children }: { label: string; children: React.ReactNode }) {
+function Section({ label, colorClass, children }: { label: string; colorClass?: string; children: React.ReactNode }) {
   return (
     <div className="kp-info-section">
-      <div className="kp-info-label">{label}</div>
+      <div className={`kp-info-label${colorClass ? ` ${colorClass}` : ''}`}>{label}</div>
       {children}
     </div>
   );
