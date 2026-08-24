@@ -98,7 +98,9 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 ### Helyzetfüggő módosítók
 
 - Gyorsan, nyomás alatt keresni: `-3`
-- Zavaró körülmények: `[-1; -6]`
+- Zavaró körülmények
+    - `enyhén: -3`
+    - `nagyon: -6`
 - Ha az észlelés aktív: `+3`
 
 ---
