@@ -163,6 +163,12 @@ export function KepzettsegProbaPopup({
     (fortélyFokok[k.fortély] ?? 0) > 0 ? 'kep-proba-dot-green'
       : k.típus === 'erős' ? 'kep-proba-dot-red' : 'kep-proba-dot-yellow';
 
+  // Annyi pötty, ahány fokon van felvéve a fortély (min 1 ha nincs felvéve → szín jelzi hiányt).
+  const kitDots = (k: KiterjesztesEntry): string => {
+    const fok = fortélyFokok[k.fortély] ?? 0;
+    return '●'.repeat(Math.max(1, fok));
+  };
+
   const resetDobás = () => {
     setDobás(null);
     setÖsszetettEredmény(null);
@@ -333,7 +339,7 @@ export function KepzettsegProbaPopup({
         {kiterjesztesek.length > 0 && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
-              {kit ? <>Kiterjesztő fortély: {kit.fortély} <span className={kitDotClass(kit)}>●</span></> : 'Kiterjesztő fortély: nincs'}
+              {kit ? <>Kiterjesztő fortély: {kit.fortély} <span className={kitDotClass(kit)}>{kitDots(kit)}</span></> : 'Kiterjesztő fortély: nincs'}
             </button>
           </div>
         )}
@@ -533,7 +539,7 @@ export function KepzettsegProbaPopup({
               {kiterjesztesek.map((k, i) => (
                 <button key={i} className={`he-field-btn${selKit === i ? ' vallas-active' : ''}`}
                   onClick={() => { setSelKit(i); resetDobás(); setOpenPicker(null); }}>
-                  {k.fortély} <span className={kitDotClass(k)}>●</span>
+                  {k.fortély} <span className={kitDotClass(k)}>{kitDots(k)}</span>
                 </button>
               ))}
             </div>
