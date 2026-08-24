@@ -113,27 +113,9 @@
 }
 .fort-picker-item-top:active { background: var(--primary); }
 
-.fort-picker-item-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  min-width: 0;
-}
-
-.fort-picker-item-name { font-weight: bold; font-size: 15px; color: var(--text); }
+.fort-picker-item-name { font-weight: bold; font-size: 15px; color: var(--text); flex: 1; }
 .fort-picker-item-maxfok { font-weight: normal; color: var(--text-dim); font-size: 13px; }
 .fort-picker-item-suffix { color: #a5d6a7; font-size: 13px; margin-left: 6px; }
-
-.fort-picker-item-desc {
-  font-size: 13px;
-  color: var(--text-dim);
-  line-height: 1.3;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 
 /* Info dot (accordion trigger) */
 .fort-picker-dot {
@@ -159,11 +141,22 @@
   border-top: 1px solid var(--border);
   cursor: pointer;
 }
+.fort-picker-details-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-style: italic;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
 .fort-picker-details-line {
   font-size: 12px;
   color: var(--text-dim);
   line-height: 1.4;
   padding: 1px 0;
+}
+.fort-picker-details-fok {
+  color: var(--text);
+  font-weight: bold;
 }
 
 .fort-picker-disabled {

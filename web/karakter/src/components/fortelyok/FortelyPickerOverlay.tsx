@@ -44,14 +44,11 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
             return (
               <div key={d.név} className={`fort-picker-item-wrap${disabled ? ' fort-picker-disabled' : ''}`}>
                 <div className="fort-picker-item-top" onClick={() => !disabled && handlePick(d.név)}>
-                  <div className="fort-picker-item-content">
-                    <span className="fort-picker-item-name">
-                      {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
-                      {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
-                    </span>
-                    {desc && <span className="fort-picker-item-desc">{desc}</span>}
-                  </div>
-                  {hatásLines.length > 0 && (
+                  <span className="fort-picker-item-name">
+                    {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
+                    {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
+                  </span>
+                  {(desc || hatásLines.length > 0) && (
                     <button
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
                       onClick={e => { e.stopPropagation(); setExpandedNév(isExpanded ? null : d.név); }}
@@ -59,10 +56,14 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                     >●</button>
                   )}
                 </div>
-                {isExpanded && hatásLines.length > 0 && (
+                {isExpanded && (
                   <div className="fort-picker-details" onClick={() => setExpandedNév(null)}>
+                    {desc && <div className="fort-picker-details-desc">{desc}</div>}
                     {hatásLines.map((line, i) => (
-                      <div key={i} className="fort-picker-details-line">{line}</div>
+                      <div key={i} className="fort-picker-details-line">
+                        {line.prefix && <span className="fort-picker-details-fok">{line.prefix}</span>}
+                        {line.prefix ? ' ' : ''}{line.text}
+                      </div>
                     ))}
                   </div>
                 )}
@@ -94,13 +95,13 @@ function getDescription(d: FortelySummary): string {
 }
 
 /** Build detailed hatás lines for accordion (per fok) */
-function getHatásLines(d: FortelySummary): string[] {
-  const lines: string[] = [];
+function getHatásLines(d: FortelySummary): { prefix: string; text: string }[] {
+  const lines: { prefix: string; text: string }[] = [];
   for (const fokDef of d.fokok) {
     if (fokDef.fok === 0) continue; // skip alapeset
     if (!fokDef.hatás?.length) continue;
-    const prefix = d.maxfok > 1 ? `${fokDef.fok}. fok: ` : '';
-    lines.push(`${prefix}${fokDef.hatás.join(' ')}`);
+    const prefix = d.maxfok > 1 ? `${fokDef.fok}. fok:` : '';
+    lines.push({ prefix, text: fokDef.hatás.join(' ') });
   }
   return lines;
 }
