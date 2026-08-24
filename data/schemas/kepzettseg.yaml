@@ -16,3 +16,8 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
+helyzetfüggő_módosítók: ""      # Üres ("") ha nincs. Lista ha van:
+  # - kategória: ""             # Kategória neve (pl. "Körülmény", "Időjárás")
+  #   mód: "single"            # "single" (default): skála, 1 választható. "multi": független tényezők, toggle-ök.
+  #   sorok:
+  #     - { érték: 0, leírás: "" }

@@ -158,7 +158,9 @@ def generate_fortelyok():
                     mods = []
                 követelmények = fok.get('követelmények') or []
                 if követelmények == '': követelmények = []
-                fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv, 'követelmények': követelmények, 'módosítók': mods})
+                próba_e = fok.get('próba_enyhítések') or []
+                if próba_e == '': próba_e = []
+                fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv, 'követelmények': követelmények, 'módosítók': mods, 'próba_enyhítések': próba_e})
             leírás = ' '.join([l['text'] for l in (data.get('leírások') or []) if l.get('text')])
             leírás = leírás.replace('**', '').replace('`', '')
             kiterjeszti = data.get('kiterjeszti', {})

@@ -18,7 +18,7 @@ mesterbónuszok:
     leírás: ""
 helyzetfüggő_módosítók:
   - kategória: "Segédeszköz"
+    mód: "multi"
     sorok:
-      - { érték: 0, leírás: "Egyedül tanulsz" }
       - { érték: 3, leírás: "Könyvtár" }
       - { érték: 3, leírás: "Tanító aktívan segít" }

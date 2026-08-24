@@ -52,5 +52,10 @@ fokok:
         arány: 0              # Arányos módnál: szorzó (pl. 0.5, 1)
         feltétel: ""          # Mikor aktív: "" = MINDIG. Egyébként "prefix:érték" formátum.
         megjegyzés: ""        # Opcionális: emberi olvasásra (pl. "méregellenállás dobásakor")
+    próba_enyhítések: ""      # Képzettségpróba helyzetfüggő módosítók enyhítése. Üres ("") ha nincs.
+      # - képzettség: ""      # Melyik képzettség próbájára hat (pontos név)
+      #   kategória: ""       # Melyik módosító kategóriára hat (pontos név a képzettség YAML-ból)
+      #   sorok: []           # Opcionális: konkrét sor leírások listája. Üres [] = egész kategória.
+      #   érték: 0            # Enyhítés mértéke (pozitív szám). 999 = teljes immunítás (nullázás).
 
 

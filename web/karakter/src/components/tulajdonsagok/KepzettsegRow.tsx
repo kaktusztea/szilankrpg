@@ -10,7 +10,7 @@ const SZINT_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
   kiterjesztesek, infoOpen, onInfoToggle,
-  displayName, findDef, overLimit, warning, fortélyFokok, tulajdonságok, képzettségek, sérültFok
+  displayName, findDef, overLimit, warning, fortélyFokok, tulajdonságok, képzettségek, sérültFok, próbaEnyhítések
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
@@ -62,6 +62,7 @@ export function KepzettsegRow({
           képzettségek={képzettségek}
           sérültFok={sérültFok || 0}
           módosítóTáblák={def.helyzetfüggő_módosítók || []}
+          próbaEnyhítések={próbaEnyhítések}
           onClose={() => setShowProba(false)}
         />
       )}

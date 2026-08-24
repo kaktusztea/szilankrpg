@@ -9,6 +9,7 @@ export interface ModositoSor {
 
 export interface ModositoTabla {
   kategória: string;
+  mód?: 'single' | 'multi';  // default: 'single'
   sorok: ModositoSor[];
 }
 
@@ -39,12 +40,21 @@ export interface FortelyModosito {
   feltétel: string;
 }
 
+export interface PróbaEnyhítés {
+  képzettség: string;
+  kategória: string;
+  sorok: string[];   // üres = egész kategória
+  érték: number;     // 999 = teljes immunítás
+  fortély?: string;  // runtime: melyik fortélyból származik
+}
+
 export interface FortelyFokSummary {
   fok: number;
   hatás: string[];
   követelmény: string[];
   követelmények: { név: string | string[]; érték: number; típus: string }[];
   módosítók: FortelyModosito[];
+  próba_enyhítések: PróbaEnyhítés[];
 }
 
 export interface FortelySummary {

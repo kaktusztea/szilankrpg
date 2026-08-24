@@ -450,14 +450,11 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "multi",
         "sorok": [
           {
             "érték": -3,
             "leírás": "Gyorsan, nyomás alatt keresni"
-          },
-          {
-            "érték": 0,
-            "leírás": "Normál körülmények"
           },
           {
             "érték": 3,
@@ -1213,6 +1210,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "multi",
         "sorok": [
           {
             "érték": -3,
@@ -1225,10 +1223,6 @@
           {
             "érték": -3,
             "leírás": "Több tárgy egyszerre"
-          },
-          {
-            "érték": 0,
-            "leírás": "Normál körülmények"
           },
           {
             "érték": 3,
@@ -1290,6 +1284,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "multi",
         "sorok": [
           {
             "érték": -3,
@@ -1306,10 +1301,6 @@
           {
             "érték": -3,
             "leírás": "Mentő próba (rontás után)"
-          },
-          {
-            "érték": 0,
-            "leírás": "Normál körülmények"
           },
           {
             "érték": 3,
@@ -1361,11 +1352,8 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Segédeszköz",
+        "mód": "multi",
         "sorok": [
-          {
-            "érték": 0,
-            "leírás": "Egyedül tanulsz"
-          },
           {
             "érték": 3,
             "leírás": "Könyvtár"
@@ -1581,6 +1569,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "multi",
         "sorok": [
           {
             "érték": -3,
@@ -1593,10 +1582,6 @@
           {
             "érték": -3,
             "leírás": "Hiányos eszközök"
-          },
-          {
-            "érték": 0,
-            "leírás": "Normál körülmények"
           }
         ]
       }

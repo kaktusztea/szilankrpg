@@ -23,7 +23,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/barati_allatok.md"
@@ -59,7 +60,17 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": [
+          {
+            "képzettség": "Mászás",
+            "kategória": "Körülmény",
+            "sorok": [
+              "Mentő próba (rontás után)"
+            ],
+            "érték": 999
+          }
+        ]
       }
     ],
     "md_fájl": "fortelyok.altalanos/biztos_kezu_maszo.md"
@@ -90,7 +101,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/csabitas.md"
@@ -130,7 +142,8 @@
             "megjegyzés": "Ügyesség ellenpróba (csomózás)",
             "alcél": "Ügyesség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -151,7 +164,8 @@
             "megjegyzés": "Ügyesség ellenpróba (csomózás)",
             "alcél": "Ügyesség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/csomozas.md"
@@ -190,7 +204,8 @@
             "megjegyzés": "Észlelés próba alvás közben",
             "alcél": "Észlelés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/eber_alvo.md"
@@ -233,7 +248,8 @@
             "megjegyzés": "Méregkeverés képzettségre",
             "alcél": "Méregkeverés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/elettan.md"
@@ -266,7 +282,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -275,7 +292,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/epiteszet.md"
@@ -314,7 +332,8 @@
             "megjegyzés": "Fájdalomtűrés próba",
             "alcél": "Fájdalomtűrés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -334,7 +353,8 @@
             "megjegyzés": "Fájdalomtűrés próba",
             "alcél": "Fájdalomtűrés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/fakir.md"
@@ -384,7 +404,8 @@
             "megjegyzés": "Gyorsaság próba rövidtávfutáskor",
             "alcél": "Gyorsaság"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -415,7 +436,8 @@
             "megjegyzés": "Gyorsaság próba rövidtávfutáskor",
             "alcél": "Gyorsaság"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/futas.md"
@@ -451,7 +473,8 @@
             "típus": "fortély"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -468,7 +491,8 @@
             "típus": "fortély"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/gyongyhalasz.md"
@@ -501,7 +525,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/hamisitas.md"
@@ -529,7 +554,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -546,7 +572,8 @@
             "típus": "fortély"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/hangutanzas.md"
@@ -578,7 +605,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/hazudozas.md"
@@ -617,7 +645,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -634,7 +663,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/kereses_rejtes.md"
@@ -672,7 +702,8 @@
             "típus": "fortély"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -700,7 +731,8 @@
             "megjegyzés": "Kézművesség (fegyver kovácsolás)",
             "alcél": "Kézművesség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/kezmuves_fegyverkovacs.md"
@@ -738,7 +770,8 @@
             "típus": "fortély"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -766,7 +799,8 @@
             "megjegyzés": "Kézművesség (páncél kovácsolás)",
             "alcél": "Kézművesség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/kezmuves_pancelkovacs.md"
@@ -805,7 +839,8 @@
             "megjegyzés": "Edzettség próba tartós igénybevételnél",
             "alcél": "Edzettség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/kitartas.md"
@@ -844,7 +879,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/kocsihajtas.md"
@@ -883,7 +919,8 @@
             "megjegyzés": "Ügyesség ellenpróba (szabadulás)",
             "alcél": "Ügyesség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -903,7 +940,8 @@
             "megjegyzés": "Ügyesség ellenpróba (szabadulás)",
             "alcél": "Ügyesség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/kotelekbol_szabadulas.md"
@@ -948,7 +986,8 @@
             "megjegyzés": "Zárnyitás képzettségre",
             "alcél": "Zárnyitás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -969,7 +1008,8 @@
             "megjegyzés": "Zárnyitás képzettségre",
             "alcél": "Zárnyitás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/mechanika.md"
@@ -1000,7 +1040,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/megfelemlites.md"
@@ -1039,7 +1080,8 @@
             "megjegyzés": "Edzettség (méregellenállás)",
             "alcél": "Edzettség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1059,7 +1101,8 @@
             "megjegyzés": "Edzettség (méregellenállás)",
             "alcél": "Edzettség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -1079,7 +1122,8 @@
             "megjegyzés": "Edzettség (méregellenállás)",
             "alcél": "Edzettség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/meregallo.md"
@@ -1118,7 +1162,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/muhelymester.md"
@@ -1148,7 +1193,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1157,7 +1203,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/nyomolvasas_eltuntetes.md"
@@ -1188,7 +1235,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/osi_kulturkor.md"
@@ -1212,7 +1260,7 @@
       {
         "fok": 1,
         "hatás": [
-          "A \"Gyorsan mászni\" Célszám módosító büntetése rád nem vonatkozik."
+          "A \"Gyorsan mászni\" helyzetfüggő módosító büntetése rád nem vonatkozik."
         ],
         "követelmény": [
           "Mászás - 6.szint"
@@ -1224,7 +1272,17 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": [
+          {
+            "képzettség": "Mászás",
+            "kategória": "Körülmény",
+            "sorok": [
+              "Gyorsan mászni"
+            ],
+            "érték": 999
+          }
+        ]
       }
     ],
     "md_fájl": "fortelyok.altalanos/pok.md"
@@ -1263,7 +1321,8 @@
             "megjegyzés": "Gyorsaság próba rövid távú futásnál",
             "alcél": "Gyorsaság"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/sprint.md"
@@ -1287,7 +1346,7 @@
       {
         "fok": 1,
         "hatás": [
-          "A gyors lopakodás Mozgás célszám levonása rád nem érvényes."
+          "A \"Mozgás\" helyzetfüggő módosító büntetése rád nem vonatkozik."
         ],
         "követelmény": [
           "Lopakodás/Rejtőzés - 6.szint"
@@ -1299,7 +1358,15 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": [
+          {
+            "képzettség": "Lopakodás/Rejtőzés",
+            "kategória": "Mozgás",
+            "sorok": [],
+            "érték": 999
+          }
+        ]
       }
     ],
     "md_fájl": "fortelyok.altalanos/suhano_arnyek.md"
@@ -1346,7 +1413,8 @@
             "megjegyzés": "Érzékenység próba célszám csökkentés (szájról olvasás)",
             "alcél": "Érzékenység"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/szajrol_olvasas.md"
@@ -1382,7 +1450,21 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": [
+          {
+            "képzettség": "Álcázás/Álruha",
+            "kategória": "Idő",
+            "sorok": [],
+            "érték": 3
+          },
+          {
+            "képzettség": "Álcázás/Álruha",
+            "kategória": "Felszerelés",
+            "sorok": [],
+            "érték": 3
+          }
+        ]
       },
       {
         "fok": 2,
@@ -1399,7 +1481,21 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": [
+          {
+            "képzettség": "Álcázás/Álruha",
+            "kategória": "Idő",
+            "sorok": [],
+            "érték": 6
+          },
+          {
+            "képzettség": "Álcázás/Álruha",
+            "kategória": "Felszerelés",
+            "sorok": [],
+            "érték": 6
+          }
+        ]
       }
     ],
     "md_fájl": "fortelyok.altalanos/szazarcu.md"
@@ -1429,7 +1525,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/szivossag.md"
@@ -1461,7 +1558,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1482,7 +1580,8 @@
             "megjegyzés": "Lexikum próba történelmi témában",
             "alcél": "Lexikum"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/tortenelemismeret.md"
@@ -1510,7 +1609,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -1519,7 +1619,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1540,7 +1641,8 @@
             "megjegyzés": "Edzettség próba hosszú távú úszásnál",
             "alcél": "Edzettség"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/uszas.md"
@@ -1587,7 +1689,8 @@
             "megjegyzés": "csoportos Lexikum értékre",
             "alcél": "Lexikum"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1615,7 +1718,8 @@
             "megjegyzés": "csoportos Lexikum értékre",
             "alcél": "Lexikum"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/vezeto_bolcseszprofesszor.md"
@@ -1662,7 +1766,8 @@
             "megjegyzés": "csoportos Hajózás értékre",
             "alcél": "Hajózás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1690,7 +1795,8 @@
             "megjegyzés": "csoportos Hajózás értékre",
             "alcél": "Hajózás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/vezeto_hajoskapitany.md"
@@ -1737,7 +1843,8 @@
             "megjegyzés": "csoportos Nyomozás értékre",
             "alcél": "Nyomozás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1765,7 +1872,8 @@
             "megjegyzés": "csoportos Nyomozás értékre",
             "alcél": "Nyomozás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/vezeto_nyomozo.md"
@@ -1812,7 +1920,8 @@
             "megjegyzés": "csoportos Orvoslás értékre",
             "alcél": "Orvoslás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1840,7 +1949,8 @@
             "megjegyzés": "csoportos Orvoslás értékre",
             "alcél": "Orvoslás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/vezeto_orvosprofesszor.md"
@@ -1887,7 +1997,8 @@
             "megjegyzés": "csoportos Előadóművészet értékre",
             "alcél": "Előadóművészet"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1915,7 +2026,8 @@
             "megjegyzés": "csoportos Előadóművészet értékre",
             "alcél": "Előadóművészet"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/vezeto_rendezo.md"
@@ -1962,7 +2074,8 @@
             "megjegyzés": "csoportos Kvantikum értékre",
             "alcél": "Kvantikum"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -1990,7 +2103,8 @@
             "megjegyzés": "csoportos Kvantikum értékre",
             "alcél": "Kvantikum"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.altalanos/vezeto_tudosprofesszor.md"
@@ -2032,7 +2146,17 @@
             "típus": "fortély"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": [
+          {
+            "képzettség": "Észlelés",
+            "kategória": "Körülmény",
+            "sorok": [
+              "Gyorsan, nyomás alatt keresni"
+            ],
+            "érték": 999
+          }
+        ]
       }
     ],
     "md_fájl": "fortelyok.altalanos/villamgyors.kereses.rejtes.md"
@@ -2056,7 +2180,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Sietős zárnyitás esetén sem emelkedik a célszám."
+          "A \"Sietős nyitás\" helyzetfüggő módosító büntetése rád nem vonatkozik."
         ],
         "követelmény": [
           "Zárnyitás - 6.szint"
@@ -2068,7 +2192,17 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": [
+          {
+            "képzettség": "Zárnyitás",
+            "kategória": "Körülmény",
+            "sorok": [
+              "Sietős nyitás"
+            ],
+            "érték": 999
+          }
+        ]
       }
     ],
     "md_fájl": "fortelyok.altalanos/zartoro.md"
@@ -2110,7 +2244,8 @@
             "megjegyzés": "Hallás Tulajdonságpróba",
             "alcél": "Hallás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.erzekek/emberentuli_hallas.md"
@@ -2153,7 +2288,8 @@
             "megjegyzés": "Látás Tulajdonságpróba",
             "alcél": "Látás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.erzekek/emberentuli_latas.md"
@@ -2197,7 +2333,8 @@
             "megjegyzés": "Szaglás Tulajdonságpróba",
             "alcél": "Szaglás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.erzekek/emberentuli_szaglas.md"
@@ -2225,7 +2362,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -2236,7 +2374,8 @@
           "Kapcsolódó Faj Háttér szükséges."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2247,7 +2386,8 @@
           "Kapcsolódó Faj Háttér szükséges."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.erzekek/infralatas.md"
@@ -2278,7 +2418,8 @@
           "Kapcsolódó Faj Háttér szükséges."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.erzekek/iranyerzek.md"
@@ -2309,7 +2450,8 @@
           "Kapcsolódó Faj Háttér szükséges."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2321,7 +2463,8 @@
           "Kapcsolódó Faj Háttér szükséges."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -2333,7 +2476,8 @@
           "Kapcsolódó Faj Háttér szükséges."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.erzekek/ultralatas.md"
@@ -2375,7 +2519,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2398,7 +2543,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/alakzat_tamado.md"
@@ -2440,7 +2586,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2463,7 +2610,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/alakzat_vedekezo.md"
@@ -2529,7 +2677,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2576,7 +2725,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/alkalmatlan_fegyver_hajitasa.md"
@@ -2630,7 +2780,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2665,7 +2816,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/alkalmatlan_targyak_hajitasa.md"
@@ -2774,7 +2926,8 @@
               }
             ]
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2864,7 +3017,8 @@
               }
             ]
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/belharcos.md"
@@ -2900,7 +3054,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -2917,7 +3072,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/elpusztithatatlan.md"
@@ -2976,7 +3132,8 @@
             "arány": 1,
             "feltétel": "taktika:roham"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/elsopro_roham.md"
@@ -3018,7 +3175,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/farasztas.md"
@@ -3067,7 +3225,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:fegyverrántás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -3097,7 +3256,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:fegyverrántás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/fegyverrantas.md"
@@ -3148,7 +3308,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:szörnyeteg_elleni_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/gladiator.bestiai.md"
@@ -3199,7 +3360,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:közönség_előtt"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/gladiator.kozonsege.md"
@@ -3236,7 +3398,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -3254,7 +3417,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -3272,7 +3436,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/gyors_kezdemenyezes.md"
@@ -3334,7 +3499,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -3378,7 +3544,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -3430,7 +3597,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/harci_akrobatika.md"
@@ -3499,7 +3667,8 @@
             "arány": 0,
             "feltétel": "taktika:visszafogott"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -3555,7 +3724,8 @@
             "arány": 0,
             "feltétel": "taktika:visszafogott"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -3612,7 +3782,8 @@
             "arány": 0,
             "feltétel": "taktika:visszafogott"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/harci_anatomia.md"
@@ -3675,7 +3846,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:harci_szekér"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -3719,7 +3891,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:harci_szekér"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/harci_kocsihajtas.md"
@@ -3779,7 +3952,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -3820,7 +3994,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -3861,7 +4036,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/harckeret_noveles.md"
@@ -3903,7 +4079,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -3926,7 +4103,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -3949,7 +4127,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/harcos_elme.md"
@@ -3985,7 +4164,8 @@
             "feltétel": "fegyverfogás:fegyver_hárító",
             "megjegyzés": "Alapeset: hárítófegyver VÉ nem aktív"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -3996,7 +4176,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/haritofegyver_hasznalat.md"
@@ -4024,7 +4205,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -4056,7 +4238,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:helyhez_kötve"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -4088,7 +4271,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:helyhez_kötve"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/helyhez_kotve_fejlesztese.md"
@@ -4131,7 +4315,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -4155,7 +4340,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/kaszabolas.md"
@@ -4196,7 +4382,8 @@
             "arány": 0,
             "feltétel": "fegyverfogás:kétkezes"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -4218,7 +4405,8 @@
             "arány": 0,
             "feltétel": "fegyverfogás:kétkezes"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -4240,7 +4428,8 @@
             "arány": 0,
             "feltétel": "fegyverfogás:kétkezes"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/ketkezes_harc.md"
@@ -4268,7 +4457,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -4294,7 +4484,8 @@
               }
             ]
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/ketkezesseg.md"
@@ -4326,7 +4517,8 @@
           "Egykezes szúró-vágó-ostor fegyver. Sikeres Precíz támadás manőver."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/kinokozas.md"
@@ -4357,7 +4549,8 @@
           "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2)."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/korkoros_harc.md"
@@ -4411,7 +4604,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -4455,7 +4649,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/lefegyverzes_mestere.md"
@@ -4500,7 +4695,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:léglovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -4552,7 +4748,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:léglovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -4604,7 +4801,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:léglovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -4656,7 +4854,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:léglovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/leglovas_harc.md"
@@ -4701,7 +4900,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -4765,7 +4965,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -4829,7 +5030,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -4893,7 +5095,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/lovas_harc.md"
@@ -4942,7 +5145,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -4972,7 +5176,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -5022,7 +5227,8 @@
               }
             ]
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/merevvertviselet.md"
@@ -5097,7 +5303,8 @@
             "arány": 0,
             "feltétel": "fegyver:"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -5153,7 +5360,8 @@
             "arány": 0,
             "feltétel": "fegyver:"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -5209,7 +5417,8 @@
             "arány": 0,
             "feltétel": "fegyver:"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/mesterfegyver.md"
@@ -5268,7 +5477,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:orvtámadás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -5308,7 +5518,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:orvtámadás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -5348,7 +5559,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:orvtámadás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/orgyilkos.md"
@@ -5411,7 +5623,8 @@
             "érték": 1,
             "feltétel": "fegyver_kategória:pajzs"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -5456,7 +5669,8 @@
             "érték": 2,
             "feltétel": "fegyver_kategória:pajzs"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -5501,7 +5715,8 @@
             "érték": 3,
             "feltétel": "fegyver_kategória:pajzs"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/pajzshasznalat.md"
@@ -5570,7 +5785,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:páros_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -5619,7 +5835,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:páros_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -5668,7 +5885,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:páros_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/paros_harc.md"
@@ -5698,7 +5916,8 @@
           "Faj Háttér ahol ajánlott a Természetes fegyver."
         ],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/termeszetes_fegyver.md"
@@ -5737,7 +5956,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -5757,7 +5977,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -5777,7 +5998,8 @@
             "arány": 0,
             "feltétel": ""
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/termeszetes_pancel.md"
@@ -5815,7 +6037,8 @@
             "feltétel": "harci_helyzet:vé_kiterjesztés",
             "megjegyzés": "Alapeset: VÉ veszteség duplázódik kiterjesztéskor"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -5847,7 +6070,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:vé_kiterjesztés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -5887,7 +6111,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:vé_kiterjesztés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/testor.md"
@@ -5915,7 +6140,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -5924,7 +6150,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -5933,7 +6160,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -5944,7 +6172,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/vakharc_fejlesztese.md"
@@ -5986,7 +6215,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6009,7 +6239,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/vezeto_alakzatparancsnok.md"
@@ -6047,7 +6278,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6064,7 +6296,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/vezeto_fejvadasz_strategis.md"
@@ -6105,7 +6338,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6125,7 +6359,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/vezeto_ijaszparancsnok.md"
@@ -6169,7 +6404,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6192,7 +6428,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/vezeto_leglovaskapitany.md"
@@ -6236,7 +6473,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6259,7 +6497,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/vezeto_lovaskapitany.md"
@@ -6309,7 +6548,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6332,7 +6572,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.harci/vezeto_testorparancsnok.md"
@@ -6362,7 +6603,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/analfabeta.md"
@@ -6392,7 +6634,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/apro_meretu_leny.md"
@@ -6427,7 +6670,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/helyismeret.md"
@@ -6494,7 +6738,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/kulturkor.md"
@@ -6522,7 +6767,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6531,7 +6777,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -6540,7 +6787,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/nagy_meretu_leny.md"
@@ -6568,7 +6816,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6578,7 +6827,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/nyelvismeret.md"
@@ -6608,7 +6858,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/suketseg.md"
@@ -6636,7 +6887,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6645,7 +6897,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -6654,7 +6907,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/tartos_serultseg.md"
@@ -6684,7 +6938,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.kiemelt/vaksag.md"
@@ -6712,7 +6967,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/antissjaras.md"
@@ -6749,7 +7005,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md"
@@ -6784,7 +7041,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/kulso_sikok_lenyeinek_ismerete.md"
@@ -6812,7 +7070,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6821,7 +7080,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -6830,7 +7090,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/magiatav_noveles.md"
@@ -6858,7 +7119,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6867,7 +7129,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/magikus_lovedek_gyorsitasa.md"
@@ -6896,7 +7159,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/mentalfonal.md"
@@ -6924,7 +7188,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -6933,7 +7198,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/mozgo_cel_konnyitese_magia.md"
@@ -6961,7 +7227,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -6970,7 +7237,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -6979,7 +7247,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/pszi_telekinezis.md"
@@ -7007,7 +7276,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -7017,7 +7287,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 3,
@@ -7026,7 +7297,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.misztikus/pszi_telepatia.md"
@@ -7057,7 +7329,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/alkudozas.md"
@@ -7087,7 +7360,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/asztrologia.md"
@@ -7119,7 +7393,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/buveszet.md"
@@ -7150,7 +7425,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/enekles.md"
@@ -7182,7 +7458,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/festeszet.md"
@@ -7212,7 +7489,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/gazdalkodas.md"
@@ -7242,7 +7520,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/hadtap.md"
@@ -7270,7 +7549,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/harci_iskola.md"
@@ -7301,7 +7581,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/hatas.md"
@@ -7331,7 +7612,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/haziallatok_idomitasa.md"
@@ -7362,7 +7644,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/heraldika.md"
@@ -7392,7 +7675,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/hivatalnok.md"
@@ -7423,7 +7707,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/irodalom.md"
@@ -7454,7 +7739,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/jogismeret.md"
@@ -7485,7 +7771,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kalligrafia.md"
@@ -7515,7 +7802,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_acs.md"
@@ -7545,7 +7833,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_asztalos.md"
@@ -7575,7 +7864,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_cipesz.md"
@@ -7605,7 +7895,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_cserzo.md"
@@ -7635,7 +7926,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_cukrasz.md"
@@ -7665,7 +7957,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_ekszeresz.md"
@@ -7695,7 +7988,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_kadar.md"
@@ -7725,7 +8019,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_komuves.md"
@@ -7755,7 +8050,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_kotelgyarto.md"
@@ -7785,7 +8081,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_kovacs.md"
@@ -7815,7 +8112,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_lakatos.md"
@@ -7845,7 +8143,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_molnar.md"
@@ -7875,7 +8174,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_penzvero.md"
@@ -7905,7 +8205,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_szabo.md"
@@ -7935,7 +8236,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_szakacs.md"
@@ -7965,7 +8267,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kezmuves_szucs.md"
@@ -7996,7 +8299,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kihallgatas.md"
@@ -8024,7 +8328,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/kulonleges_faj_boncolasa.md"
@@ -8055,7 +8360,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/penzugyek.md"
@@ -8086,7 +8392,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/rejtjelfejto.md"
@@ -8117,7 +8424,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/strategia.md"
@@ -8147,7 +8455,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/szertartas.md"
@@ -8178,7 +8487,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/szinjatszas.md"
@@ -8210,7 +8520,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/szobraszat.md"
@@ -8241,7 +8552,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/szonoklas.md"
@@ -8275,7 +8587,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_barlangi.md"
@@ -8309,7 +8622,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_dzsungel.md"
@@ -8343,7 +8657,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_erdos.md"
@@ -8377,7 +8692,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_jegmezok.md"
@@ -8411,7 +8727,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_magaslati.md"
@@ -8445,7 +8762,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_mocsaras.md"
@@ -8479,7 +8797,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_puszta.md"
@@ -8513,7 +8832,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_sivatagi.md"
@@ -8545,7 +8865,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tajtipus_tengerek.md"
@@ -8576,7 +8897,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tanc.md"
@@ -8608,7 +8930,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/tanc_belso_stilus.md"
@@ -8640,7 +8963,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/terkepeszet.md"
@@ -8672,7 +8996,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/titkos_szervezet.md"
@@ -8702,7 +9027,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/vadallat_idomitasa.md"
@@ -8733,7 +9059,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/zeneles_fuvos_hangszerek.md"
@@ -8764,7 +9091,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/zeneles_huros_hangszerek.md"
@@ -8795,7 +9123,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/zeneles_utos_hangszerek.md"
@@ -8825,7 +9154,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/zeneszerzo.md"
@@ -8855,7 +9185,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.szabad/zsonglorkodes.md"
@@ -8891,7 +9222,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/gyors_hajitas.md"
@@ -8927,7 +9259,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/gyors_loves.md"
@@ -8953,7 +9286,8 @@
         "hatás": [],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -8986,7 +9320,8 @@
             "arány": 0,
             "feltétel": "taktika:kitartott_célzás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/kitartott_celzas_fejlesztes.md"
@@ -9014,7 +9349,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -9035,7 +9371,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/loves_futas_kozben.md"
@@ -9073,7 +9410,8 @@
             "feltétel": "harci_helyzet:lovas_harc",
             "megjegyzés": "Alapeset: léptetés CÉ levonás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -9111,7 +9449,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -9149,7 +9488,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/loves_hatasrol.md"
@@ -9187,7 +9527,8 @@
             "feltétel": "harci_helyzet:lövés_reflexből",
             "megjegyzés": "Alapeset: hirtelen lövés CÉ levonás"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -9208,7 +9549,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/loves_reflexbol_fejlesztese.md"
@@ -9236,7 +9578,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/loveskiteres_fejlesztese.md"
@@ -9272,7 +9615,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/mesterlovesz.md"
@@ -9300,7 +9644,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -9321,7 +9666,8 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md"
@@ -9349,7 +9695,8 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [],
+        "próba_enyhítések": []
       },
       {
         "fok": 1,
@@ -9375,7 +9722,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:nyílpuska_újratöltés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       },
       {
         "fok": 2,
@@ -9401,7 +9749,8 @@
             "arány": 0,
             "feltétel": "harci_helyzet:nyílpuska_újratöltés"
           }
-        ]
+        ],
+        "próba_enyhítések": []
       }
     ],
     "md_fájl": "fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md"

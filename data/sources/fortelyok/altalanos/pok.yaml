@@ -32,5 +32,10 @@ fokok:
         érték: 6
         típus: "képzettség"
     hatástext:
-      - text: 'A "Gyorsan mászni" Célszám módosító büntetése rád nem vonatkozik.'
+      - text: 'A "Gyorsan mászni" helyzetfüggő módosító büntetése rád nem vonatkozik.'
     módosítók: ""
+    próba_enyhítések:
+      - képzettség: "Mászás"
+        kategória: "Körülmény"
+        sorok: ["Gyorsan mászni"]
+        érték: 999

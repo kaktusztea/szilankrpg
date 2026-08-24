@@ -32,5 +32,10 @@ fokok:
         érték: 6
         típus: "képzettség"
     hatástext:
-      - text: "Sietős zárnyitás esetén sem emelkedik a célszám."
+      - text: "A \"Sietős nyitás\" helyzetfüggő módosító büntetése rád nem vonatkozik."
     módosítók: ""
+    próba_enyhítések:
+      - képzettség: "Zárnyitás"
+        kategória: "Körülmény"
+        sorok: ["Sietős nyitás"]
+        érték: 999

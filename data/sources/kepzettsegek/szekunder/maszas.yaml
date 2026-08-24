@@ -18,10 +18,10 @@ mesterbónuszok:
     leírás: ""
 helyzetfüggő_módosítók:
   - kategória: "Körülmény"
+    mód: "multi"
     sorok:
       - { érték: -3, leírás: "Gyorsan mászni" }
       - { érték: -3, leírás: "Sötétben" }
       - { érték: -3, leírás: "Lengő kötélen" }
       - { érték: -3, leírás: "Mentő próba (rontás után)" }
-      - { érték: 0, leírás: "Normál körülmények" }
       - { érték: 3, leírás: "Mászókampók" }

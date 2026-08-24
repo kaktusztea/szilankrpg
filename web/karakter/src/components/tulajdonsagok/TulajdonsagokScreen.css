@@ -532,6 +532,13 @@
 .kep-proba-szit-neg .kep-proba-szit-val { color: var(--danger, #e55); }
 span.kep-proba-szit-pos { color: var(--success); font-weight: 700; }
 span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
+.kep-proba-szit-old { color: #888; font-weight: 400; }
+.kep-proba-szit-arrow { color: #888; margin: 0 3px; font-size: 11px; }
+.kep-proba-szit-new { color: var(--success); font-weight: 700; }
+.kep-proba-szit-enyhitett .kep-proba-szit-desc { color: #ccc; }
+.kep-proba-enyhites-lista { display: block; margin-top: 2px; }
+.kep-proba-enyhites-fortely { display: block; font-size: 12px; color: #aaa; font-weight: 400; }
+.kep-proba-enyhites-nev { color: var(--success); }
 .kep-proba-szit-sum-footer {
   margin-top: 10px;
   font-family: monospace;

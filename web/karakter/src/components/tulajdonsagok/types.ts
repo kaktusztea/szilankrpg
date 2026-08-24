@@ -1,4 +1,5 @@
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
+import type { PróbaEnyhítés } from '../../engine/data-types';
 import type { Tulajdonsagok, Karakter } from '../../engine/types';
 
 export interface KepzettsegSlot {
@@ -50,4 +51,5 @@ export interface KepzettsegRowProps {
   tulajdonságok: Tulajdonsagok;
   képzettségek: KepzettsegSlot[];
   sérültFok?: number;
+  próbaEnyhítések: PróbaEnyhítés[];
 }

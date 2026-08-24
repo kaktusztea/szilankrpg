@@ -33,3 +33,8 @@ fokok:
   hatástext: 
   - text: "Villámgyors keresés kapkodós helyzetekben nullázza az alapeset -3 büntetését."
   módosítók: ""
+  próba_enyhítések:
+    - képzettség: "Észlelés"
+      kategória: "Körülmény"
+      sorok: ["Gyorsan, nyomás alatt keresni"]
+      érték: 999

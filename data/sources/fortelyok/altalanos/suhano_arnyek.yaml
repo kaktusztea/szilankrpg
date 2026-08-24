@@ -32,5 +32,10 @@ fokok:
         érték: 6
         típus: "képzettség"
     hatástext:
-      - text: "A gyors lopakodás Mozgás célszám levonása rád nem érvényes."
+      - text: "A \"Mozgás\" helyzetfüggő módosító büntetése rád nem vonatkozik."
     módosítók: ""
+    próba_enyhítések:
+      - képzettség: "Lopakodás/Rejtőzés"
+        kategória: "Mozgás"
+        sorok: []
+        érték: 999

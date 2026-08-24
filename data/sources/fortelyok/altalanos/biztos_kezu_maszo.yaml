@@ -34,3 +34,8 @@ fokok:
     hatástext:
       - text: "A Mászás képzettségpróba rontása után a megkapaszkodás Nehézség büntetése rád nem vonatkozik."
     módosítók: ""
+    próba_enyhítések:
+      - képzettség: "Mászás"
+        kategória: "Körülmény"
+        sorok: ["Mentő próba (rontás után)"]
+        érték: 999

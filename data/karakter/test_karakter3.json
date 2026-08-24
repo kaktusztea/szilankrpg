@@ -6,7 +6,7 @@
   "becenév": "pakkk",
   "jk": false,
   "játékos": "Béluska",
-  "mentés_dátum": "2026-07-01 13:53",
+  "mentés_dátum": "2026-08-24 15:04",
   "tsz": 11,
   "leírás": "",
   "kor": 33,
@@ -22,7 +22,7 @@
     "önuralom": -1,
     "érzékenység": 3
   },
-  "HM_TÉ": 2,
+  "HM_TÉ": 1,
   "HM_VÉ": 1,
   "CM": 5,
   "képzettségek": [
@@ -32,7 +32,7 @@
     },
     {
       "név": "Fájdalomtűrés",
-      "szint": 9
+      "szint": 10
     },
     {
       "név": "Tradíció: Szakrális (Amhe-Ramun)",
@@ -92,7 +92,7 @@
     },
     {
       "név": "Nyelvtanulás",
-      "szint": 5
+      "szint": 6
     },
     {
       "név": "Észlelés",
@@ -100,11 +100,11 @@
     },
     {
       "név": "Nyomozás",
-      "szint": 7
+      "szint": 5
     },
     {
       "név": "Természetjárás",
-      "szint": 8
+      "szint": 7
     },
     {
       "név": "Emberismeret",
@@ -113,6 +113,10 @@
     {
       "név": "Kardvívás",
       "szint": 6
+    },
+    {
+      "név": "Lopás",
+      "szint": 3
     }
   ],
   "fortélyok": [
@@ -270,37 +274,37 @@
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "el-Sobira"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "el-xyz"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "el-xyz2"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "el-xy3"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "el-xyz4"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "el-xyz5"
     },
     {
@@ -524,7 +528,92 @@
     "ké_dobások": [],
     "té_dobások": []
   },
-  "_undo": [],
+  "_undo": [
+    {
+      "timestamp": 1787583839645,
+      "leírás": "Képzettség: Lopás 0→3",
+      "patches": [
+        {
+          "field": "képzettségek",
+          "op": "add",
+          "item": {
+            "név": "Lopás",
+            "szint": 3
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1787583805777,
+      "leírás": "Képzettség: Nyelvtanulás 5→6",
+      "patches": [
+        {
+          "field": "képzettségek",
+          "op": "update",
+          "index": 16,
+          "prev": {
+            "név": "Nyelvtanulás",
+            "szint": 5
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1787583775660,
+      "leírás": "HM TÉ: 2 → 1",
+      "patches": [
+        {
+          "field": "HM_TÉ",
+          "prev": 2
+        }
+      ]
+    },
+    {
+      "timestamp": 1787583769210,
+      "leírás": "Képzettség: Természetjárás 8→7",
+      "patches": [
+        {
+          "field": "képzettségek",
+          "op": "update",
+          "index": 19,
+          "prev": {
+            "név": "Természetjárás",
+            "szint": 8
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1787583767560,
+      "leírás": "Képzettség: Nyomozás 4→5",
+      "patches": [
+        {
+          "field": "képzettségek",
+          "op": "update",
+          "index": 18,
+          "prev": {
+            "név": "Nyomozás",
+            "szint": 7
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1787583749793,
+      "leírás": "Képzettség: Fájdalomtűrés 9→10",
+      "patches": [
+        {
+          "field": "képzettségek",
+          "op": "update",
+          "index": 1,
+          "prev": {
+            "név": "Fájdalomtűrés",
+            "szint": 9
+          }
+        }
+      ]
+    }
+  ],
   "előtörténet": {
     "származás_helye": "",
     "szociális_érzék": "",

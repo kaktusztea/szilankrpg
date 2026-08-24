@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import type { Tulajdonsagok } from '../../engine/types';
+import type { PróbaEnyhítés } from '../../engine/data-types';
 import type { Props, KepzettsegSlot } from './types';
 import { buildDefsByGroup, getDisplayName } from './helpers';
 import { TulajdonsagokHeader } from './TulajdonsagokHeader';
@@ -18,6 +19,22 @@ export function TulajdonsagokScreen({
   jk, setJk, onTestReset
 }: Props) {
   const fortélyFokok = buildFortélyFokok(karakter.fortélyok);
+
+  // Fortélyok próba-enyhítő hatásainak összegyűjtése képzettségenként
+  const próbaEnyhítésekByKép = useMemo(() => {
+    const result: Record<string, PróbaEnyhítés[]> = {};
+    for (const kf of karakter.fortélyok) {
+      const def = data.fortelySummaries.find(d => d.név === kf.név);
+      if (!def) continue;
+      const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
+      const pe_lista = fokDef?.próba_enyhítések;
+      if (!pe_lista || !pe_lista.length) continue;
+      for (const pe of pe_lista) {
+        (result[pe.képzettség] ??= []).push({ ...pe, fortély: kf.név });
+      }
+    }
+    return result;
+  }, [karakter.fortélyok, data.fortelySummaries]);
 
   // Sérült státusz fok kiolvasása (0=nem sérült, 1=S3, 2=S4, 3=Haldoklás)
   const sérültFok = useMemo(() => {
@@ -148,6 +165,7 @@ export function TulajdonsagokScreen({
             onSzintChange={handleSzintChange}
             onRemove={handleRemove}
             sérültFok={sérültFok}
+            próbaEnyhítésekByKép={próbaEnyhítésekByKép}
           />
         ))}
       </div>

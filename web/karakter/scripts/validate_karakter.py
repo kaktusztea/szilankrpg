@@ -11,7 +11,7 @@ import sys
 import os
 from pathlib import Path
 
-BASE = Path(__file__).parent.parent.parent / "data"
+BASE = Path(__file__).parent.parent.parent.parent / "data"
 TABLES = BASE / "tables"
 
 # --- Load shared data ---
@@ -137,6 +137,34 @@ def validate_karakter(karakter_path, leírás, expected):
 
         if fo["fok"] > ddef["maxfok"]:
             err(f"Fortély '{fo['név']}': fok={fo['fok']} > maxfok={ddef['maxfok']}")
+
+        # Követelmény ellenőrzés
+        fokdef = next((fd for fd in ddef.get("fokok", []) if fd["fok"] == fo["fok"]), None)
+        if fokdef and fokdef.get("követelmények"):
+            for köv in fokdef["követelmények"]:
+                if köv["típus"] == "képzettség":
+                    név_lista = köv["név"] if isinstance(köv["név"], list) else [köv["név"]]
+                    found_szint = max(
+                        (kp["szint"] for kp in karakter["képzettségek"] if kp["név"] in név_lista),
+                        default=0
+                    )
+                    if found_szint < köv["érték"]:
+                        err(f"Fortély '{fo['név']}' ({fo['fok']}.fok) követelmény: {köv['név']} >= {köv['érték']}, van: {found_szint}")
+                elif köv["típus"] == "fortély":
+                    # Többszörös fortélynál a legmagasabb fok számít
+                    max_fok = max(
+                        (ft["fok"] for ft in karakter["fortélyok"] if ft["név"] == köv["név"]),
+                        default=0
+                    )
+                    if max_fok < köv["érték"]:
+                        err(f"Fortély '{fo['név']}' ({fo['fok']}.fok) követelmény: {köv['név']} >= {köv['érték']}.fok, van: {max_fok}")
+                elif köv["típus"] == "mesterfegyver":
+                    mf_fok = max(
+                        (ft["fok"] for ft in karakter["fortélyok"] if ft["név"] == "Mesterfegyver"),
+                        default=0
+                    )
+                    if mf_fok < köv["érték"]:
+                        err(f"Fortély '{fo['név']}' ({fo['fok']}.fok) követelmény: Mesterfegyver >= {köv['érték']}.fok, van: {mf_fok}")
 
     if not any("spec_típus" in e for e in errors):
         ok("Minden fortély spec_típus konzisztens a yaml definícióval")

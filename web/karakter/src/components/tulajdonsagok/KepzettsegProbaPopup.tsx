@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Tulajdonsagok, Fortely } from '../../engine/types';
 import type { KiterjesztesEntry } from '../../engine/data-loader';
-import type { ModositoTabla } from '../../engine/data-types';
+import type { ModositoTabla, ModositoSor, PróbaEnyhítés } from '../../engine/data-types';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { rollElőnyHátrány, rollDie, type ProbaDobás } from '../../engine/dice';
@@ -107,6 +107,7 @@ interface Props {
   képzettségek: { név: string; szint: number }[];
   sérültFok: number;
   módosítóTáblák: ModositoTabla[];
+  próbaEnyhítések: PróbaEnyhítés[];
   onClose: () => void;
 }
 
@@ -115,7 +116,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, sérültFok, módosítóTáblák, onClose,
+  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, sérültFok, módosítóTáblák, próbaEnyhítések, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -136,18 +137,45 @@ export function KepzettsegProbaPopup({
   const [vállalásEredmény, setVállalásEredmény] = useState<VállalásEredmény | null>(null);
   const [összetettManual, setÖsszetettManual] = useState<number[]>([]);
 
-  // Szituációs módosítók: kategóriánként kiválasztott sor indexe (-1 = nincs kiválasztva)
+  // Szituációs módosítók: single kategóriánként kiválasztott sor indexe (-1 = nincs kiválasztva)
   const [szitMods, setSzitMods] = useState<Record<string, number>>(() => {
     const init: Record<string, number> = {};
     for (const t of módosítóTáblák) {
+      if (t.mód === 'multi') continue;
       const zeroIdx = t.sorok.findIndex(s => s.érték === 0);
       if (zeroIdx >= 0) init[t.kategória] = zeroIdx;
     }
     return init;
   });
+  // Multi módú kategóriák: soronként be/ki toggle
+  const [multiMods, setMultiMods] = useState<Record<string, boolean[]>>(() => {
+    const init: Record<string, boolean[]> = {};
+    for (const t of módosítóTáblák) {
+      if (t.mód === 'multi') init[t.kategória] = t.sorok.map(() => false);
+    }
+    return init;
+  });
+
+  // Enyhítés helper
+  const enyhítSor = (kategória: string, sor: ModositoSor): number => {
+    const raw = sor.érték;
+    if (raw >= 0) return raw;
+    const enyhítés = próbaEnyhítések
+      .filter(e => e.kategória === kategória && (e.sorok.length === 0 || e.sorok.includes(sor.leírás)))
+      .reduce((max, e) => Math.max(max, e.érték), 0);
+    if (enyhítés >= 999) return 0;
+    return Math.min(0, raw + enyhítés);
+  };
+
   const szitModÖsszeg = módosítóTáblák.reduce((sum, t) => {
+    if (t.mód === 'multi') {
+      const flags = multiMods[t.kategória];
+      if (!flags) return sum;
+      return sum + t.sorok.reduce((s, sor, i) => s + (flags[i] ? enyhítSor(t.kategória, sor) : 0), 0);
+    }
     const idx = szitMods[t.kategória];
-    return sum + (idx != null && idx >= 0 ? t.sorok[idx].érték : 0);
+    if (idx == null || idx < 0) return sum;
+    return sum + enyhítSor(t.kategória, t.sorok[idx]);
   }, 0);
 
   const kit = selKit >= 0 ? kiterjesztesek[selKit] : null;
@@ -349,6 +377,13 @@ export function KepzettsegProbaPopup({
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('szit')}>
               Helyzetfüggő módosítók: <span className={szitModÖsszeg > 0 ? 'kep-proba-szit-pos' : szitModÖsszeg < 0 ? 'kep-proba-szit-neg' : ''}>{szitModÖsszeg === 0 ? '0' : `${szitModÖsszeg > 0 ? '+' : ''}${szitModÖsszeg}`}</span>
+              {próbaEnyhítések.length > 0 && (
+                <span className="kep-proba-enyhites-lista">
+                  {[...new Map(próbaEnyhítések.map(e => [e.fortély, e])).values()].filter(e => e.fortély).map(e => (
+                    <span key={e.fortély} className="kep-proba-enyhites-fortely">→ fortély: <span className="kep-proba-enyhites-nev">{e.fortély} ({fortélyFokok[e.fortély!] ?? 0})</span></span>
+                  ))}
+                </span>
+              )}
             </button>
           </div>
         )}
@@ -556,14 +591,35 @@ export function KepzettsegProbaPopup({
                 <div key={t.kategória} className="kep-proba-szit-cat">
                   <span className="kep-proba-szit-label">{t.kategória}</span>
                   <div className="kep-proba-szit-items">
-                    {t.sorok.map((s, i) => (
+                    {t.sorok.map((s, i) => {
+                      // Enyhítés kalkuláció a sorra
+                      let enyhítettÉrték = s.érték;
+                      let immunis = false;
+                      if (s.érték < 0) {
+                        const enyhítés = próbaEnyhítések
+                          .filter(e => e.kategória === t.kategória && (e.sorok.length === 0 || e.sorok.includes(s.leírás)))
+                          .reduce((max, e) => Math.max(max, e.érték), 0);
+                        if (enyhítés >= 999) { immunis = true; enyhítettÉrték = 0; }
+                        else enyhítettÉrték = Math.min(0, s.érték + enyhítés);
+                      }
+                      const isMulti = t.mód === 'multi';
+                      const isActive = isMulti ? !!(multiMods[t.kategória]?.[i]) : szitMods[t.kategória] === i;
+                      const handleClick = isMulti
+                        ? () => setMultiMods(m => ({ ...m, [t.kategória]: m[t.kategória].map((v, j) => j === i ? !v : v) }))
+                        : () => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }));
+                      return (
                       <button key={i}
-                        className={`kep-proba-szit-item${szitMods[t.kategória] === i ? ' kep-proba-szit-item-active' : ''}${s.érték > 0 ? ' kep-proba-szit-pos' : s.érték < 0 ? ' kep-proba-szit-neg' : ''}`}
-                        onClick={() => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }))}>
-                        <span className="kep-proba-szit-val">{s.érték > 0 ? '+' : ''}{s.érték}</span>
+                        className={`kep-proba-szit-item${isActive ? ' kep-proba-szit-item-active' : ''}${immunis || enyhítettÉrték !== s.érték ? ' kep-proba-szit-enyhitett' : s.érték > 0 ? ' kep-proba-szit-pos' : s.érték < 0 ? ' kep-proba-szit-neg' : ''}`}
+                        onClick={handleClick}>
+                        <span className="kep-proba-szit-val">
+                          {immunis || enyhítettÉrték !== s.érték
+                            ? <><span className="kep-proba-szit-old">{s.érték}</span><span className="kep-proba-szit-arrow">→</span><span className="kep-proba-szit-new">{immunis ? 0 : enyhítettÉrték}</span></>
+                            : <>{s.érték > 0 ? '+' : ''}{s.érték}</>}
+                        </span>
                         <span className="kep-proba-szit-desc">{s.leírás}</span>
                       </button>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               ))}

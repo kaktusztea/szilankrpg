@@ -6,7 +6,7 @@
   "becenév": "Teszt kari",
   "jk": true,
   "játékos": "Benedek",
-  "mentés_dátum": "2026-06-29 13:55",
+  "mentés_dátum": "2026-08-24 14:54",
   "tsz": 10,
   "leírás": "Toroni paplovag, dezertált zsoldos",
   "kor": 32,
@@ -23,7 +23,7 @@
     "érzékenység": 0
   },
   "HM_TÉ": 15,
-  "HM_VÉ": 14,
+  "HM_VÉ": 13,
   "CM": 1,
   "képzettségek": [
     {
@@ -84,7 +84,7 @@
     },
     {
       "név": "Városi jártasság",
-      "szint": 6
+      "szint": 4
     },
     {
       "név": "Természetjárás",
@@ -92,7 +92,7 @@
     },
     {
       "név": "Tradíció: Vulgármágia",
-      "szint": 8
+      "szint": 6
     },
     {
       "név": "Arkánum: Illúziók",
@@ -108,6 +108,18 @@
     },
     {
       "név": "Íjászat",
+      "szint": 5
+    },
+    {
+      "név": "Befolyásolás",
+      "szint": 3
+    },
+    {
+      "név": "Kézművesség",
+      "szint": 4
+    },
+    {
+      "név": "Emberismeret",
       "szint": 5
     }
   ],
@@ -235,25 +247,25 @@
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "Erion"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "Pyarron"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "Haonwell"
     },
     {
       "név": "Helyismeret",
       "fok": 1,
-      "spec_típus": "település",
+      "spec_típus": "terület",
       "spec_elem": "Shulur"
     },
     {
@@ -601,104 +613,5 @@
     "ké_dobások": [],
     "té_dobások": []
   },
-  "_undo": [
-    {
-      "timestamp": 1782741272129,
-      "leírás": "Képzettség: Értékbecslés 3→4",
-      "patches": [
-        {
-          "field": "képzettségek",
-          "op": "update",
-          "index": 12,
-          "prev": {
-            "név": "Értékbecslés",
-            "szint": 3
-          }
-        }
-      ]
-    },
-    {
-      "timestamp": 1782741261028,
-      "leírás": "Fortély: Hamisítás 0→1",
-      "patches": [
-        {
-          "field": "fortélyok",
-          "op": "add",
-          "item": {
-            "név": "Hamisítás",
-            "fok": 1,
-            "spec_típus": "",
-            "spec_elem": ""
-          }
-        }
-      ]
-    },
-    {
-      "timestamp": 1782741254612,
-      "leírás": "Fortély: Elpusztíthatatlan 2→1",
-      "patches": [
-        {
-          "field": "fortélyok",
-          "op": "update",
-          "index": 7,
-          "prev": {
-            "név": "Elpusztíthatatlan",
-            "fok": 2,
-            "spec_típus": "",
-            "spec_elem": ""
-          }
-        }
-      ]
-    },
-    {
-      "timestamp": 1782741251645,
-      "leírás": "Fortély: Elpusztíthatatlan 1→2",
-      "patches": [
-        {
-          "field": "fortélyok",
-          "op": "update",
-          "index": 7,
-          "prev": {
-            "név": "Elpusztíthatatlan",
-            "fok": 1,
-            "spec_típus": "",
-            "spec_elem": ""
-          }
-        }
-      ]
-    },
-    {
-      "timestamp": 1782741216444,
-      "leírás": "Fortély: Lövés reflexből 0→1",
-      "patches": [
-        {
-          "field": "fortélyok",
-          "op": "add",
-          "item": {
-            "név": "Lövés reflexből fejlesztése",
-            "fok": 1,
-            "spec_típus": "",
-            "spec_elem": ""
-          }
-        }
-      ]
-    },
-    {
-      "timestamp": 1782741213761,
-      "leírás": "Fortély: Gyors hajítás 1→0❌",
-      "patches": [
-        {
-          "field": "fortélyok",
-          "op": "remove",
-          "index": 49,
-          "item": {
-            "név": "Gyors hajítás",
-            "fok": 1,
-            "spec_típus": "",
-            "spec_elem": ""
-          }
-        }
-      ]
-    }
-  ]
+  "_undo": []
 }
