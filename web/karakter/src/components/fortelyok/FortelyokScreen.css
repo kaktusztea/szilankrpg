@@ -128,10 +128,12 @@
   border: none;
   background: transparent;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   border-radius: 50%;
+  transition: transform 0.15s ease;
 }
+.fort-picker-dot-active { transform: rotate(180deg); }
 .fort-picker-dot:active,
 .fort-picker-dot-active { background: var(--primary); }
 

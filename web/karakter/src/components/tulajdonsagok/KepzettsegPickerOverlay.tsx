@@ -45,7 +45,7 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, onAdd, onCl
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
                       onClick={e => { e.stopPropagation(); setExpandedValue(isExpanded ? null : opt.value); }}
                       aria-label="Részletek"
-                    >●</button>
+                    >▾</button>
                   )}
                 </div>
                 {isExpanded && def && (

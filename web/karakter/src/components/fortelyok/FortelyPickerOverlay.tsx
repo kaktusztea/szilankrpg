@@ -53,7 +53,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
                       onClick={e => { e.stopPropagation(); setExpandedNév(isExpanded ? null : d.név); }}
                       aria-label="Részletek"
-                    >●</button>
+                    >▾</button>
                   )}
                 </div>
                 {isExpanded && (
