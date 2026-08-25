@@ -4,6 +4,7 @@ import type { GameData } from '../../engine/data-loader';
 import { OverlayPortal } from '../overlays/OverlayPortal';
 import { KorPicker } from './KorPicker';
 import { VallasPickerOverlay } from './VallasPickerOverlay';
+import { MAX_ELOTORTENET_MEZŐ } from '../../ui-constants';
 
 interface Props {
   karakter: Karakter;
@@ -99,10 +100,10 @@ export function ElotortenetOverlay({ karakter, setKarakter, data, onClose }: Pro
             <textarea
               className="field-input elotortenet-textarea-sm"
               value={et.szociális_érzék}
-              onChange={e => setField('szociális_érzék', e.target.value.slice(0, 200))}
-              maxLength={200}
+              onChange={e => setField('szociális_érzék', e.target.value.slice(0, MAX_ELOTORTENET_MEZŐ))}
+              maxLength={MAX_ELOTORTENET_MEZŐ}
               rows={2}
-              placeholder="max 200 karakter"
+              placeholder={`max ${MAX_ELOTORTENET_MEZŐ} karakter`}
             />
           </div>
 
@@ -112,10 +113,10 @@ export function ElotortenetOverlay({ karakter, setKarakter, data, onClose }: Pro
             <textarea
               className="field-input elotortenet-textarea-sm"
               value={et.külső}
-              onChange={e => setField('külső', e.target.value.slice(0, 200))}
-              maxLength={200}
+              onChange={e => setField('külső', e.target.value.slice(0, MAX_ELOTORTENET_MEZŐ))}
+              maxLength={MAX_ELOTORTENET_MEZŐ}
               rows={2}
-              placeholder="max 200 karakter"
+              placeholder={`max ${MAX_ELOTORTENET_MEZŐ} karakter`}
             />
           </div>
 

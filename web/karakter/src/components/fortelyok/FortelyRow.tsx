@@ -4,7 +4,7 @@ import { displayName, checkKövetelmények } from './helpers';
 import { FortelyDetails } from '../FortelyDetails';
 import { MdLink } from '../MdLink';
 import { PopupOverlay } from '../PopupOverlay';
-import { MAX_FORTÉLY_FOK } from '../../ui-constants';
+import { MAX_FORTÉLY_FOK, DELETE_BTN_TAP_ZONE_PX } from '../../ui-constants';
 
 export function FortelyRow({
   slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,
@@ -20,7 +20,7 @@ export function FortelyRow({
     const delBtn = row.querySelector('.item-delete') as HTMLElement | null;
     if (delBtn) {
       const btnRect = delBtn.getBoundingClientRect();
-      if (e.clientX >= btnRect.left - 25) return;
+      if (e.clientX >= btnRect.left - DELETE_BTN_TAP_ZONE_PX) return;
     }
     if (maxfok <= 1) {
       onHint('1 fok a maximum');
@@ -43,7 +43,7 @@ export function FortelyRow({
           {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{giftBadge && <span className="fort-gift">{giftBadge}</span>}
         </span>
         <span className="fort-right">
-          {def?.md_fájl && <span className="fort-md-link" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
+          {def?.md_fájl && <span className="md-link-wrap" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
           {!gameMode && (
             <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}

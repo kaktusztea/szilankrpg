@@ -567,7 +567,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Játék módban: üres csoportok elrejtve
 - Minden képzettség: név + szint (0-15) + ✕ törlés gomb
 - Szint színkód: 0=piros, 1-8=fehér, 9+=zöld, >tsz limit=piros
-- Csoportonként 1 db "Új képzettség..." gomb (Szerkesztő módban): kattintásra overlay picker popup nyílik (azonos stílus mint a Fortély picker — `fort-picker-popup` CSS). Entry-k: képzettség név + ● info pötty (accordion: Tulajdonságok, Próba, Primer, Szituációk linkek). Kiválasztás → azonnal felugrik a szint választó popup.
+- Csoportonként 1 db "Új képzettség..." gomb (Szerkesztő módban): kattintásra overlay picker popup nyílik (azonos stílus mint a Fortély picker — `fort-picker-popup` CSS). Entry-k: képzettség név + 🔗 szabályrendszer link + ▾ lenyitó nyíl. Accordion tartalma: `KepzettsegDetails` közös komponens (Primer, Próba, Domináns, Kiterjesztő fortélyok, Szituáció linkek). Kiválasztás → azonnal felugrik a szint választó popup.
 - Törlés (✕ gomb): szint=0 → azonnal töröl, szint>0 → piros "Törlés" gombot tartalmazó megerősítő dialógus
 - Többszörös képzettségek felvételkor csoportosítva a testvéreik mellé kerülnek
 
@@ -599,12 +599,15 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Escape: popup bezárás
 
 #### Viselkedés Játék módban
-- Koppintás: lenyílik accordion adatlap:
+- Koppintás: lenyílik accordion adatlap — `KepzettsegDetails` közös komponens:
+  - **Primer** jelölés (ha primer képzettség)
   - **Próba**: dobható / nem dobható / ellenpróba
   - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
-  - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel)
+  - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel, zöld=felvett / szürke=hiányzó)
   - **Szituációk**: kapcsolódó szituáció linkek (🔗 prefix, kék, új tab). Forrás: `data/sources/szituacio_mapping.yaml` → `kepzettsegek.json` `kapcsolódó_szituációk` mező.
-  - **Akció sor** (alul): 🔗 Szabályrendszer link + 🎲 Képzettségpróba dobás gomb
+- **Szabályrendszer link** (🔗): mindig látható a sor jobb oldalán (nem az accordion-ban), mindkét módban
+- **🎲 gomb**: csak Játék módban, csak accordion nyitva, a sor headerben jelenik meg
+- **Közös komponens**: `KepzettsegDetails.tsx` — a picker és a game-mode accordion azonos komponenst használja
 - **🎲 Képzettségpróba popup** (csak Játék módban, accordion alján): kattintásra `PopupOverlay`
   - Fejléc: "Képzettségpróba" (normál font-weight) + jobb felső sarokban ⟲ reset gomb (36px, disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
   - Alcím: `{képzettség neve} ({szint})` (kék szín, bold)
@@ -671,11 +674,10 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 **Entry (kártya) felépítése:**
 - **Felső rész** (kattintásra kiválaszt + bezár):
   - Bal: Fortély neve (bold) + (maxfok) + opcionális jelölések (●N, 🎁KP)
-  - Alatta: leírás szöveg (dim, 13px, max 2 sor CSS clamp) — forrás: yaml `leírás` mező, fallback: 1. fok `hatás[0]`
-  - Jobb szél: fehér ● info pötty (ha van hatásszöveg)
-- **Accordion details panel** (● pötty kattintásra nyílik/csukódik):
-  - Fokonként hatás szövegek (12px, dim)
-  - Panelre kattintva becsukódik
+  - Jobb szél: 🔗 szabályrendszer link (ha van md_fájl) + ▾ lenyitó nyíl (ha van tartalom)
+- **Accordion details panel** (▾ nyíl kattintásra nyílik/csukódik, nyitva → ▴ rotate animáció):
+  - Tartalom: `FortelyDetails` közös komponens (leírás, fokonkénti hatás, követelmény, kiterjesztés normál/erős)
+  - Picker módban: összes fok hatása és követelménye megjelenik
 
 **Jelölések a név sorban:**
 - Normál: `FortélyNév (maxfok)`
@@ -691,10 +693,10 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 - `.fort-picker-popup`: saját background/border/border-radius, `max-height: 80vh; overflow-y: auto` — NEM flex layout (lásd Overlay Layout Konvenció)
 - `.fort-picker-list`: flex column, padding, gap — NEM kap saját scroll (a szülő popup scrolloz)
 - `.fort-picker-item-wrap`: kártya wrapper (input-bg, border, border-radius)
-- `.fort-picker-item-top`: flex row (tartalom + opcionális pötty)
-- `.fort-picker-dot`: 28×28 kerek gomb, fehér ●, katt → accordion toggle
-- `.fort-picker-details`: accordion panel (border-top, dim szöveg, katt → becsuk)
+- `.fort-picker-item-top`: flex row (tartalom + opcionális md link + nyíl)
+- `.fort-picker-dot`: 28×28 kerek gomb, ▾ nyíl (16px), katt → accordion toggle, nyitva: `rotate(180deg)` + `transition: 0.15s`
 - `.fort-picker-disabled`: opacity 0.4, pointer-events none
+- `.md-link-wrap`: inline span (stopPropagation wrapper a szabályrendszer linkhez)
 
 **Komponens:** `FortelyPickerOverlay.tsx` (OverlayPortal, useState expandedNév)
 
@@ -740,11 +742,13 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 - Escape: popup bezárás
 
 ### Viselkedés Játék módban
-- Koppintás: lenyílik inline accordion info panel (`.info-panel`):
+- Koppintás: lenyílik inline accordion info panel (`.info-panel`) — `FortelyDetails` közös komponens:
   - Leírás (dőlt)
   - Hatás (aktuális fok hatás szövege)
   - Követelmény (ha van)
-  - Kiterjeszti (normál + erős képzettség lista, zöld szín)
+  - Kiterjeszti (normál + erős képzettség lista, zöld=felvett / szürke=hiányzó)
+- Szabályrendszer link (🔗): mindig látható a sor jobb oldalán (nem az accordion-ban)
+- **Közös komponens**: `FortelyDetails.tsx` — a picker és a game-mode accordion azonos komponenst használja
 
 ### Követelmény ellenőrzés
 - Gépileg ellenőrizhető típusok: `képzettség` (szint), `fortély` (fok)

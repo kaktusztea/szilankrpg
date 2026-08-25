@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { FortelySummary } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
 import { PopupOverlay } from '../PopupOverlay';
+import { MAX_FREETEXT_NÉV } from '../../ui-constants';
 
 /**
  * Generikus fortély felvételi wizard overlay.
@@ -75,7 +76,7 @@ export function FortélyFelvétel({ def, kiérdemeltOpció, felvettSpecElemek, o
       {step === 'többszörös' && hasFreeText && (
         <>
           <label>{def.név}: {def.többszörös_típus}</label>
-          <input autoFocus maxLength={30} value={freetextValue} onChange={e => setFreetextValue(e.target.value)}
+          <input autoFocus maxLength={MAX_FREETEXT_NÉV} value={freetextValue} onChange={e => setFreetextValue(e.target.value)}
             onKeyDown={e => { if (e.key === 'Enter') handleFreetextOk(); if (e.key === 'Escape') onCancel(); }} />
           <div className="kep-prompt-btns">
             <button onClick={handleFreetextOk} disabled={!freetextValue.trim()}>OK</button>

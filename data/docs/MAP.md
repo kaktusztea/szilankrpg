@@ -66,6 +66,8 @@ TabContent.tsx             Screen slider wrapper
 KpBar.tsx                  KP sáv (szerkesztő módban)
 PopupOverlay.tsx           Központi kis popup shell (portál + ESC + háttér katt)
 SpecPicker.tsx             Többszörös fortély/spec picker (lista/csoportos/freetext)
+FortelyDetails.tsx         Közös fortély info panel (picker + game-mode accordion)
+KepzettsegDetails.tsx      Közös képzettség info panel (picker + game-mode accordion)
 AppOverlays.tsx            Globális overlay-ek összefogó
 ScreenErrorBoundary.tsx    Per-tab error boundary
 
@@ -112,7 +114,7 @@ tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
 tulajdonsagok/             Tulajdonságok + Képzettségek fül
   TulajdonsagokScreen.tsx  Fő screen (név, faj, kor, tulajdonságok, képzettségek)
   KepzettsegCsoport.tsx    Képzettség csoport (csukható, game/edit mód)
-  KepzettsegPickerOverlay.tsx  Képzettség picker overlay popup (név+info accordion+szituáció linkek)
+  KepzettsegPickerOverlay.tsx  Képzettség picker overlay popup (név + md link + ▾ accordion → KepzettsegDetails)
   TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
   KepzettsegProbaPopup.tsx   Képzettségpróba dobás popup (Játék mód, k10)
   ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
@@ -122,7 +124,7 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
 fortelyok/                 Fortélyok fül
   FortelyokScreen.tsx      Fő screen (csoportok, felvétel, fok kezelés)
   FortelyFelvetel.tsx      Felvétel wizard (többszörös, kiérdemelt)
-  FortelyPickerOverlay.tsx Fortély picker overlay popup (név+leírás+hatás accordion)
+  FortelyPickerOverlay.tsx Fortély picker overlay popup (név + md link + ▾ accordion → FortelyDetails)
   NewFortelySelect.tsx     "+ Új fortély" gomb (picker overlay trigger)
   FortelyRow.tsx           Fortély sor (pöttyök, követelmény jelzés)
 

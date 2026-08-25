@@ -21,6 +21,7 @@ import { PickerOverlay } from '../aktiv/PickerOverlay';
 import { computeTÉ, computeVÉ } from './shared';
 import { lookupFegyver } from '../../engine/utils';
 import { rollK20 } from '../../engine/dice';
+import { VÉ_FLASH_MS } from '../../ui-constants';
 import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, onNavigate, gameMode }: HarcBaseProps) {
@@ -46,7 +47,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const triggerVéFlash = useCallback((dir: 'down' | 'up') => {
     setVéFlash(dir);
     if (véFlashTimer.current) clearTimeout(véFlashTimer.current);
-    véFlashTimer.current = setTimeout(() => setVéFlash(''), 1000);
+    véFlashTimer.current = setTimeout(() => setVéFlash(''), VÉ_FLASH_MS);
   }, []);
 
   const changeVé = useCallback((newVal: number) => {

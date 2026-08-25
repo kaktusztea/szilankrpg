@@ -1,4 +1,5 @@
 import { OverlayPortal } from '../../overlays/OverlayPortal';
+import { MAX_FREETEXT_NÉV } from '../../../ui-constants';
 
 interface Props {
   target: string;
@@ -13,7 +14,7 @@ export function TextPromptPopup({ target, value, onChange, onConfirm, onClose }:
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt" onClick={e => e.stopPropagation()}>
         <label>{target}: név</label>
-        <input autoFocus maxLength={30} value={value}
+        <input autoFocus maxLength={MAX_FREETEXT_NÉV} value={value}
           onChange={e => onChange(e.target.value)}
           onKeyDown={e => {
             if (e.key === 'Enter' && value.trim()) onConfirm();

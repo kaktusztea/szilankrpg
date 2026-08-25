@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useHoldRepeat } from '../../hooks/useHoldRepeat';
-import { MAX_KOR } from '../../ui-constants';
+import { MAX_KOR, DEFAULT_KOR } from '../../ui-constants';
 
 interface Props {
   kor: number;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function KorPicker({ kor, onSelect }: Props) {
-  const [value, setValue] = useState(kor || 25);
+  const [value, setValue] = useState(kor || DEFAULT_KOR);
 
   const step = useCallback((dir: 1 | -1, amount?: number) => {
     setValue(v => Math.max(1, Math.min(MAX_KOR, v + dir * (amount ?? 1))));

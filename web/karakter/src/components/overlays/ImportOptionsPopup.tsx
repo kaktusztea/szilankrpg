@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import jsQR from 'jsqr';
+import { FEEDBACK_TIMEOUT_MS } from '../../ui-constants';
 
 interface Props {
   onFileLoad: () => void;
@@ -34,7 +35,7 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
     if (!loadingFile) return;
     const finish = () => onClose();
     window.addEventListener('blur', finish, { once: true });
-    const t = setTimeout(finish, 8000);
+    const t = setTimeout(finish, FEEDBACK_TIMEOUT_MS);
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
   }, [loadingFile, onClose]);
 
@@ -43,7 +44,7 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
     if (!loadingQr) return;
     const reset = () => setLoadingQr(false);
     window.addEventListener('focus', reset, { once: true });
-    const t = setTimeout(reset, 8000);
+    const t = setTimeout(reset, FEEDBACK_TIMEOUT_MS);
     return () => { window.removeEventListener('focus', reset); clearTimeout(t); };
   }, [loadingQr]);
 

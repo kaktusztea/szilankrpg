@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { encode, renderSVG } from 'uqr';
+import { FEEDBACK_TIMEOUT_MS, HINT_DURATION_MS } from '../../ui-constants';
 
 interface Props {
   url: string;
@@ -130,14 +131,14 @@ export function QrCodePopup({ url, név, tsz, onClose }: Props) {
     if (!saving) return;
     const finish = () => setSaving(false);
     window.addEventListener('blur', finish, { once: true });
-    const t = setTimeout(finish, 8000);
+    const t = setTimeout(finish, FEEDBACK_TIMEOUT_MS);
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
   }, [saving]);
 
   // Auto-clear hint
   useEffect(() => {
     if (!hint) return;
-    const t = setTimeout(() => setHint(''), 2000);
+    const t = setTimeout(() => setHint(''), HINT_DURATION_MS);
     return () => clearTimeout(t);
   }, [hint]);
 

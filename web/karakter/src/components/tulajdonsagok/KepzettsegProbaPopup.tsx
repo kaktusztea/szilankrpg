@@ -6,6 +6,7 @@ import { calcStátuszPróbaEH } from '../../engine/statusz-proba';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { rollElőnyHátrány, rollDie, type ProbaDobás } from '../../engine/dice';
+import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
 
 // Képzettségpróba célszámok (engine_spec §37.2, md/030_06_01) — elnevezés csak 21-ig.
 const NEHÉZSÉGEK: { érték: number; label: string }[] = [
@@ -172,7 +173,7 @@ export function KepzettsegProbaPopup({
     const enyhítés = próbaEnyhítések
       .filter(e => e.kategória === kategória && (e.sorok.length === 0 || e.sorok.includes(sor.leírás)))
       .reduce((max, e) => Math.max(max, e.érték), 0);
-    if (enyhítés >= 999) return 0;
+    if (enyhítés >= PRÓBA_IMMUNITÁS_KÜSZÖB) return 0;
     return Math.min(0, raw + enyhítés);
   };
 
@@ -641,7 +642,7 @@ export function KepzettsegProbaPopup({
                         const enyhítés = próbaEnyhítések
                           .filter(e => e.kategória === t.kategória && (e.sorok.length === 0 || e.sorok.includes(s.leírás)))
                           .reduce((max, e) => Math.max(max, e.érték), 0);
-                        if (enyhítés >= 999) { immunis = true; enyhítettÉrték = 0; }
+                        if (enyhítés >= PRÓBA_IMMUNITÁS_KÜSZÖB) { immunis = true; enyhítettÉrték = 0; }
                         else enyhítettÉrték = Math.min(0, s.érték + enyhítés);
                       }
                       const isMulti = t.mód === 'multi';

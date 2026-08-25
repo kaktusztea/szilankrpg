@@ -5,8 +5,7 @@ import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { KorPicker } from './KorPicker';
 import { OverlayPortal } from '../overlays/OverlayPortal';
 import { getDisplayName } from './helpers';
-
-const SZINT_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+import { SZINT_VALUES } from '../../ui-constants';
 
 interface PromptState { alapNév: string }
 interface DeleteTarget { idx: number; név: string; szint: number }

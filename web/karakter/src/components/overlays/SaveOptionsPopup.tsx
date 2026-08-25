@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { FEEDBACK_TIMEOUT_MS } from '../../ui-constants';
 
 interface Props {
   név: string;
@@ -34,7 +35,7 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
     if (!saving) return;
     const finish = () => onClose();
     window.addEventListener('blur', finish, { once: true });
-    const t = setTimeout(finish, 8000);
+    const t = setTimeout(finish, FEEDBACK_TIMEOUT_MS);
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
   }, [saving, onClose]);
 

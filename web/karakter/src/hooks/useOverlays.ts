@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { OverlayState } from '../components/AppOverlays';
+import { TOAST_DURATION_MS } from '../ui-constants';
 
 const INITIAL_OVERLAYS: OverlayState = {
   showSzilánkPicker: false, showSlotList: false,
@@ -48,7 +49,7 @@ export function useOverlays() {
   // Toast auto-dismiss
   useEffect(() => {
     if (!overlays.toast) return;
-    const t = setTimeout(() => setOverlay('toast', null), 2500);
+    const t = setTimeout(() => setOverlay('toast', null), TOAST_DURATION_MS);
     return () => clearTimeout(t);
   }, [overlays.toast, setOverlay]);
 

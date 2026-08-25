@@ -42,7 +42,7 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, kiterjeszte
               <div key={opt.value} className="fort-picker-item-wrap">
                 <div className="fort-picker-item-top" onClick={() => handlePick(opt.value)}>
                   <span className="fort-picker-item-name">{opt.label}</span>
-                  {def?.md_fájl && <span className="fort-picker-md-link" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
+                  {def?.md_fájl && <span className="md-link-wrap" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
                   {hasInfo && (
                     <button
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}

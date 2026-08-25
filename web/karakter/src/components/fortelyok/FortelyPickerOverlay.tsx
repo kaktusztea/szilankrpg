@@ -39,7 +39,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
             const disabled = isOptionDisabled(d, fortélyok, fegyverNevek, nyelvtanulásSzint);
             const suffix = buildSuffix(d, csoport, slotok, tsz, fortélyok, nyelvtanulásSzint);
             const isExpanded = expandedNév === d.név;
-            const hasDetails = !!(d.leírás || d.fokok.some(f => f.fok >= 1 && f.hatás?.length) || d.kiterjeszti_normál.length || d.kiterjeszti_erős.length || d.md_fájl);
+            const hasDetails = !!(d.leírás || d.fokok.some(f => f.fok >= 1 && f.hatás?.length) || d.kiterjeszti_normál.length || d.kiterjeszti_erős.length);
 
             return (
               <div key={d.név} className={`fort-picker-item-wrap${disabled ? ' fort-picker-disabled' : ''}`}>
@@ -48,7 +48,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                     {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
                     {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
                   </span>
-                  {d.md_fájl && <span className="fort-picker-md-link" onClick={e => e.stopPropagation()}><MdLink mdFájl={d.md_fájl} /></span>}
+                  {d.md_fájl && <span className="md-link-wrap" onClick={e => e.stopPropagation()}><MdLink mdFájl={d.md_fájl} /></span>}
                   {hasDetails && (
                     <button
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}

@@ -4,8 +4,7 @@ import { KepzettsegDetails } from '../KepzettsegDetails';
 import { GridPickerPopup } from './popups';
 import { MdLink } from '../MdLink';
 import { KepzettsegProbaPopup } from './KepzettsegProbaPopup';
-
-const SZINT_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+import { DELETE_BTN_TAP_ZONE_PX, SZINT_VALUES } from '../../ui-constants';
 
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
@@ -20,7 +19,7 @@ export function KepzettsegRow({
     const delBtn = e.currentTarget.querySelector('.item-delete') as HTMLElement | null;
     if (delBtn) {
       const btnRect = delBtn.getBoundingClientRect();
-      if (e.clientX >= btnRect.left - 25) return;
+      if (e.clientX >= btnRect.left - DELETE_BTN_TAP_ZONE_PX) return;
     }
     setSzintEditing(true);
   }
@@ -38,7 +37,7 @@ export function KepzettsegRow({
           </span>
         )}
         <span className="kep-right">
-          {def?.md_fájl && <span className="kep-md-link" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
+          {def?.md_fájl && <span className="md-link-wrap" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
           {!gameMode && (
             <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}

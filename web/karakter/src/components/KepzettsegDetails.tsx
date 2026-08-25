@@ -9,40 +9,19 @@ interface Props {
 }
 
 export function KepzettsegDetails({ def, kit, fortélyFokok }: Props) {
-  const van = (fortély: string) => (fortélyFokok?.[fortély] ?? 0) > 0;
   const normál = kit.filter(k => k.típus !== 'erős');
   const erős = kit.filter(k => k.típus === 'erős');
   const szituációk = def.kapcsolódó_szituációk ?? [];
 
   return (
     <div className="info-panel">
-      {def.primer && (
-        <div className="info-panel-row"><span className="info-panel-label">Primer</span></div>
-      )}
+      {def.primer && <div className="info-panel-row"><span className="info-panel-label">Primer</span></div>}
       <div className="info-panel-row"><span className="info-panel-label">Próba:</span> {def.próba}</div>
       {def.domináns_tulajdonságok.length > 0 && (
         <div className="info-panel-row"><span className="info-panel-label">Domináns:</span> {def.domináns_tulajdonságok.join(', ')}</div>
       )}
-      {normál.length > 0 && (
-        <div className="info-panel-row">
-          <span className="info-panel-label">Kiterjeszti Normál:</span>
-          <span className="info-panel-kit">{normál.map((k, i) => (
-            <span key={i} className={fortélyFokok ? (van(k.fortély) ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
-              {i > 0 ? '; ' : ''}{k.fortély}
-            </span>
-          ))}</span>
-        </div>
-      )}
-      {erős.length > 0 && (
-        <div className="info-panel-row">
-          <span className="info-panel-label">Kiterjeszti Erős:</span>
-          <span className="info-panel-kit">{erős.map((k, i) => (
-            <span key={i} className={fortélyFokok ? (van(k.fortély) ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
-              {i > 0 ? '; ' : ''}{k.fortély}
-            </span>
-          ))}</span>
-        </div>
-      )}
+      <FortelyLista label="Kiterjeszti Normál" entries={normál} fortélyFokok={fortélyFokok} />
+      <FortelyLista label="Kiterjeszti Erős" entries={erős} fortélyFokok={fortélyFokok} />
       {szituációk.length > 0 && (
         <div className="info-panel-row info-panel-szit">
           <span className="info-panel-label">Szituációk:</span>
@@ -51,6 +30,25 @@ export function KepzettsegDetails({ def, kit, fortélyFokok }: Props) {
           ))}</span>
         </div>
       )}
+    </div>
+  );
+}
+
+/** Közös fortély lista renderelő (kiterjesztő fortélyok) */
+function FortelyLista({ label, entries, fortélyFokok }: {
+  label: string;
+  entries: KiterjesztesEntry[];
+  fortélyFokok?: Record<string, number>;
+}) {
+  if (entries.length === 0) return null;
+  return (
+    <div className="info-panel-row">
+      <span className="info-panel-label">{label}:</span>
+      <span className="info-panel-kit">{entries.map((k, i) => (
+        <span key={i} className={fortélyFokok ? ((fortélyFokok[k.fortély] ?? 0) > 0 ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
+          {i > 0 ? '; ' : ''}{k.fortély}
+        </span>
+      ))}</span>
     </div>
   );
 }

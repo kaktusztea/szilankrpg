@@ -133,43 +133,10 @@
   border-radius: 50%;
   transition: transform 0.15s ease;
 }
-.fort-picker-dot-active { transform: rotate(180deg); }
-.fort-picker-dot:active,
-.fort-picker-dot-active { background: var(--primary); }
+.fort-picker-dot:active { background: var(--primary); }
+.fort-picker-dot-active { transform: rotate(180deg); background: var(--primary); }
 
 /* Accordion details panel */
-.fort-picker-details {
-  padding: 6px 12px 10px;
-  border-top: 1px solid var(--border);
-  cursor: pointer;
-}
-.fort-picker-details-desc {
-  font-size: 13px;
-  color: var(--text-dim);
-  font-style: italic;
-  line-height: 1.3;
-  margin-bottom: 4px;
-}
-.fort-picker-details-line {
-  font-size: 12px;
-  color: var(--text-dim);
-  line-height: 1.4;
-  padding: 1px 0;
-}
-.fort-picker-details-fok {
-  color: var(--text);
-  font-weight: bold;
-}
-.fort-picker-details-szit {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin-top: 4px;
-}
-.fort-picker-details-szit > .fort-picker-details-fok {
-  font-size: 12px;
-}
-
 .fort-picker-disabled {
   opacity: 0.4;
   pointer-events: none;

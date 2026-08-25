@@ -3,6 +3,7 @@ import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { isValidKarakter } from '../engine/validate';
 import { sanitizeUndo } from '../hooks/useUndo';
+import { FEEDBACK_TIMEOUT_MS } from '../ui-constants';
 import { readSlots, type SlotEntry } from '../hooks/slot-utils';
 import { SlotRow } from './SlotRow';
 import { SaveOptionsPopup } from './overlays/SaveOptionsPopup';
@@ -45,7 +46,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
     if (!savingBackup) return;
     const finish = () => onClose();
     window.addEventListener('blur', finish, { once: true });
-    const t = setTimeout(finish, 8000);
+    const t = setTimeout(finish, FEEDBACK_TIMEOUT_MS);
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
   }, [savingBackup, onClose]);
 
