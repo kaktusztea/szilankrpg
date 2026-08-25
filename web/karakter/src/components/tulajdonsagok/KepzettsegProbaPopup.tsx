@@ -65,6 +65,60 @@ export function kiterjesztésElőnyHátrány(típus: 'normál' | 'erős', fok: n
   return { szint: Math.min(fok - 1, 2), tiltott: false };
 }
 
+/**
+ * Több kiterjesztő fortély összesített Előny/Hátrány (md/030_08_01 "Speciális: Több fortély").
+ * - Több hiányzó Normál: Hátrány-2 NEM halmozódik.
+ * - Bármelyik Erős hiányzik (0.fok): tiltott.
+ * - Előny: min(bónuszok), kivéve ha az alacsonyabb maxfokú → magasabb számít.
+ */
+export function calcMultiKiterjesztésEH(
+  selectedKits: KiterjesztesEntry[],
+  fortélyFokok: Record<string, number>,
+): { szint: number; tiltott: boolean } {
+  if (selectedKits.length === 0) return { szint: 0, tiltott: false };
+  if (selectedKits.length === 1) {
+    const k = selectedKits[0];
+    return kiterjesztésElőnyHátrány(k.típus, fortélyFokok[k.fortély] ?? 0);
+  }
+
+  // Check erős tiltás
+  for (const k of selectedKits) {
+    if (k.típus === 'erős' && (fortélyFokok[k.fortély] ?? 0) <= 0) {
+      return { szint: 0, tiltott: true };
+    }
+  }
+
+  // Check normál hátrány (nem halmozódik)
+  let vanHiányzóNormál = false;
+  for (const k of selectedKits) {
+    if (k.típus === 'normál' && (fortélyFokok[k.fortély] ?? 0) <= 0) {
+      vanHiányzóNormál = true;
+      break;
+    }
+  }
+  if (vanHiányzóNormál) return { szint: -2, tiltott: false };
+
+  // Előny kalkuláció: min(bónuszok), de ha alacsonyabb maxfokú → magasabb számít
+  const bónuszok = selectedKits.map(k => {
+    const fok = fortélyFokok[k.fortély] ?? 0;
+    const bónusz = Math.min(fok - 1, 2); // 1.fok=0, 2.fok=1, 3.fok=2
+    const maxolt = fok >= k.maxfok;
+    return { bónusz, maxolt };
+  }).filter(b => b.bónusz >= 0);
+
+  if (bónuszok.length === 0) return { szint: 0, tiltott: false };
+
+  // Sort by bónusz ascending
+  bónuszok.sort((a, b) => a.bónusz - b.bónusz);
+
+  // Az alacsonyabb számít, KIVÉVE ha az maxfokú → következő számít
+  for (const b of bónuszok) {
+    if (!b.maxolt) return { szint: b.bónusz, tiltott: false };
+  }
+  // Mind maxfokú → a legmagasabb bónusz érvényes
+  return { szint: bónuszok[bónuszok.length - 1].bónusz, tiltott: false };
+}
+
 /** Előny/Hátrány szint → megjelenítendő címke (pl. "Előny+1", "Hátrány-2", "" ha sima). */
 export function előnyHátrányLabel(szint: number): string {
   if (szint > 0) return `Előny+${szint}`;
@@ -125,7 +179,7 @@ export function KepzettsegProbaPopup({
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
-  const [selKit, setSelKit] = useState(-1); // -1 = törzstudás (nincs kiterjesztés)
+  const [selKits, setSelKits] = useState<Set<number>>(new Set()); // multi-select indexes into kiterjesztesek[]
   const [openPicker, setOpenPicker] = useState<PickerId>(null);
   const [nehTöbbi, setNehTöbbi] = useState(false); // 21 feletti célszámok lenyitva?
   const [dobás, setDobás] = useState<ProbaDobás | null>(null);
@@ -188,8 +242,8 @@ export function KepzettsegProbaPopup({
     return sum + enyhítSor(t.kategória, t.sorok[idx]);
   }, 0) + szerepjátékosÉrték;
 
-  const kit = selKit >= 0 ? kiterjesztesek[selKit] : null;
-  const ehAlap = kit ? kiterjesztésElőnyHátrány(kit.típus, fortélyFokok[kit.fortély] ?? 0) : { szint: 0, tiltott: false };
+  const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
+  const ehAlap = calcMultiKiterjesztésEH(selectedKits, fortélyFokok);
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt)
   const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségNév, képzettségCsoport);
   const ehSzintRaw = ehAlap.szint + státuszEH.szint;
@@ -377,7 +431,9 @@ export function KepzettsegProbaPopup({
         {kiterjesztesek.length > 0 && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
-              {kit ? <>Kiterjesztő fortély: {kit.fortély} <span className={kitDotClass(kit)}>{kitDots(kit)}</span></> : 'Kiterjesztő fortély: nincs'}
+              {selKits.size === 0 ? 'Kiterjesztő fortély: nincs'
+                : selKits.size === 1 ? <>Kiterjesztő: {selectedKits[0].fortély} <span className={kitDotClass(selectedKits[0])}>{kitDots(selectedKits[0])}</span></>
+                : `Kiterjesztő: ${selKits.size} fortély`}
             </button>
           </div>
         )}
@@ -521,7 +577,7 @@ export function KepzettsegProbaPopup({
                   {ehBontásNyitva && (
                     <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
                       {ehAlap.szint !== 0 && (
-                        <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({kit?.fortély ?? '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
+                        <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({selectedKits.map(k => k.fortély).join(', ') || '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
                       )}
                       {státuszEH.források.map((f, i) => <div key={i} className="kep-proba-eh-bontas-sor">{f}</div>)}
                     </div>
@@ -594,18 +650,21 @@ export function KepzettsegProbaPopup({
       {openPicker === 'kit' && (
         <PopupOverlay onClose={() => setOpenPicker(null)}>
           <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
-            <label className="kep-prompt-label-bold-mb">Kiterjesztő fortély</label>
+            <label className="kep-prompt-label-bold-mb">Kiterjesztő fortélyok</label>
             <div className="kep-prompt-flex-col-list">
-              <button className={`he-field-btn${selKit === -1 ? ' vallas-active' : ''}`}
-                onClick={() => { setSelKit(-1); resetDobás(); setOpenPicker(null); }}>
-                nincs ❌
+              <button className={`he-field-btn${selKits.size === 0 ? ' vallas-active' : ''}`}
+                onClick={() => { setSelKits(new Set()); resetDobás(); }}>
+                Törzstudás (nincs) ❌
               </button>
-              {kiterjesztesek.map((k, i) => (
-                <button key={i} className={`he-field-btn${selKit === i ? ' vallas-active' : ''}`}
-                  onClick={() => { setSelKit(i); resetDobás(); setOpenPicker(null); }}>
-                  {k.fortély} <span className={kitDotClass(k)}>{kitDots(k)}</span>
-                </button>
-              ))}
+              {kiterjesztesek.map((k, i) => {
+                const active = selKits.has(i);
+                return (
+                  <button key={i} className={`he-field-btn${active ? ' vallas-active' : ''}`}
+                    onClick={() => { setSelKits(prev => { const next = new Set(prev); if (next.has(i)) next.delete(i); else next.add(i); return next; }); resetDobás(); }}>
+                    {k.fortély} <span className={kitDotClass(k)}>{kitDots(k)}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
         </PopupOverlay>

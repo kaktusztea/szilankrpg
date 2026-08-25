@@ -258,13 +258,14 @@ def generate_kiterjesztesek():
                 continue
             data = load_yaml(os.path.join(root, f))
             nev = data.get('név', '')
+            maxfok = data.get('maxfok', 1)
             kit = data.get('kiterjeszti', {})
             if not kit:
                 continue
             for kep in (kit.get('normál') or []):
-                mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'normál'})
+                mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'normál', 'maxfok': maxfok})
             for kep in (kit.get('erős') or []):
-                mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'erős'})
+                mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'erős', 'maxfok': maxfok})
     # Sort keys and value lists for deterministic output
     sorted_mapping = {}
     for key in sorted(mapping.keys()):

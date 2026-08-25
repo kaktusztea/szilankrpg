@@ -30,6 +30,7 @@ export interface KepzettsegDef {
 export interface KiterjesztesEntry {
   fortély: string;
   típus: 'normál' | 'erős';
+  maxfok: number;
 }
 
 // --- Fortély összefoglaló (UI-hoz) ---
