@@ -21,10 +21,30 @@ interface Props {
 
 export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, onAdd, onClose }: Props) {
   const [expandedNév, setExpandedNév] = useState<string | null>(null);
+  const [allExpanded, setAllExpanded] = useState(false);
 
   function handlePick(név: string) {
     onClose();
     onAdd(név);
+  }
+
+  function toggleAll() {
+    if (allExpanded) {
+      setExpandedNév(null);
+      setAllExpanded(false);
+    } else {
+      setAllExpanded(true);
+    }
+  }
+
+  function toggleItem(név: string) {
+    if (allExpanded) {
+      // collapse all, then open only this one (if it was open → close all)
+      setAllExpanded(false);
+      setExpandedNév(null); // effectively closes all
+    } else {
+      setExpandedNév(prev => prev === név ? null : név);
+    }
   }
 
   return (
@@ -32,14 +52,15 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
       <div className="fort-picker-popup" onClick={e => e.stopPropagation()}>
         <div className="fort-picker-header">
           <label>+ Új fortély</label>
+          <button type="button" className={`fort-picker-expand-all${allExpanded ? ' fort-picker-dot-active' : ''}`} aria-label="Összes lenyitása" onClick={toggleAll}>▾</button>
           <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}>✕</button>
         </div>
         <div className="fort-picker-list">
           {available.map(d => {
             const disabled = isOptionDisabled(d, fortélyok, fegyverNevek, nyelvtanulásSzint);
             const suffix = buildSuffix(d, csoport, slotok, tsz, fortélyok, nyelvtanulásSzint);
-            const isExpanded = expandedNév === d.név;
             const hasDetails = !!(d.leírás || d.fokok.some(f => f.fok >= 1 && f.hatás?.length) || d.kiterjeszti_normál.length || d.kiterjeszti_erős.length);
+            const isExpanded = expandedNév === d.név || (allExpanded && hasDetails);
 
             return (
               <div key={d.név} className={`fort-picker-item-wrap${disabled ? ' fort-picker-disabled' : ''}`}>
@@ -52,7 +73,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                   {hasDetails && (
                     <button
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
-                      onClick={e => { e.stopPropagation(); setExpandedNév(isExpanded ? null : d.név); }}
+                      onClick={e => { e.stopPropagation(); toggleItem(d.név); }}
                       aria-label="Részletek"
                     >▾</button>
                   )}

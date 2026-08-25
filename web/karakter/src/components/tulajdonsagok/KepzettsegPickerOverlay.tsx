@@ -19,10 +19,29 @@ interface Props {
 
 export function KepzettsegPickerOverlay({ available, kepzettsegDefs, kiterjesztesek, onAdd, onClose }: Props) {
   const [expandedValue, setExpandedValue] = useState<string | null>(null);
+  const [allExpanded, setAllExpanded] = useState(false);
 
   function handlePick(value: string) {
     onClose();
     onAdd(value);
+  }
+
+  function toggleAll() {
+    if (allExpanded) {
+      setExpandedValue(null);
+      setAllExpanded(false);
+    } else {
+      setAllExpanded(true);
+    }
+  }
+
+  function toggleItem(value: string) {
+    if (allExpanded) {
+      setAllExpanded(false);
+      setExpandedValue(null);
+    } else {
+      setExpandedValue(prev => prev === value ? null : value);
+    }
   }
 
   return (
@@ -30,13 +49,14 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, kiterjeszte
       <div className="fort-picker-popup" onClick={e => e.stopPropagation()}>
         <div className="fort-picker-header">
           <label>+ Új képzettség</label>
+          <button type="button" className={`fort-picker-expand-all${allExpanded ? ' fort-picker-dot-active' : ''}`} aria-label="Összes lenyitása" onClick={toggleAll}>▾</button>
           <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}>✕</button>
         </div>
         <div className="fort-picker-list">
           {available.map(opt => {
-            const isExpanded = expandedValue === opt.value;
             const def = findDef(opt, kepzettsegDefs);
             const hasInfo = !!def;
+            const isExpanded = expandedValue === opt.value || (allExpanded && hasInfo);
 
             return (
               <div key={opt.value} className="fort-picker-item-wrap">
@@ -46,7 +66,7 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, kiterjeszte
                   {hasInfo && (
                     <button
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
-                      onClick={e => { e.stopPropagation(); setExpandedValue(isExpanded ? null : opt.value); }}
+                      onClick={e => { e.stopPropagation(); toggleItem(opt.value); }}
                       aria-label="Részletek"
                     >▾</button>
                   )}

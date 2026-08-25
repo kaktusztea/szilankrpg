@@ -136,6 +136,23 @@
 .fort-picker-dot:active { background: var(--primary); }
 .fort-picker-dot-active { transform: rotate(180deg); background: var(--primary); }
 
+/* Expand all toggle (header) */
+.fort-picker-expand-all {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
 /* Accordion details panel */
 .fort-picker-disabled {
   opacity: 0.4;
