@@ -5117,9 +5117,9 @@ Biztos tudás erejű Aurád (nem dobhatsz rá) hatása érvényesül a célszem�
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Olyan nyelven próbálsz hatni, amit nem ért(enek) a célszemély(ek): `+3`
+- Olyan nyelven próbálsz hatni, amit nem ért(enek) a célszemély(ek): `-3`
 - Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
 
 ---
@@ -5241,10 +5241,10 @@ Alapvető nem leplezett személyiségvonások felismerése.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - Rövidebb/Hosszabb a kontaktus ideje és/vagy mély / kevésbé mély az alapesetnél: `[-3;+3]`
-- Más fajú a célszemély: `+3`
+- Más fajú a célszemély: `-3`
 - Asztrál szem hatása: ⭕TODO⭕
 
 ---
@@ -5351,11 +5351,13 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Gyorsan, nyomás alatt keresni: `+3`
-- Zavaró körülmények: `[+1; +6]`
-- Ha az észlelés aktív: `-3`
+- Gyorsan, nyomás alatt keresni: `-3`
+- Zavaró körülmények
+    - `enyhén: -3`
+    - `nagyon: -6`
+- Ha az észlelés aktív: `+3`
 
 ---
 
@@ -5381,6 +5383,8 @@ Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve k�
 - [Harci láz](../harci/harci_laz.md) képzettség
 - [Kínokozás](../../fortelyok.harci/kinokozas.md) fortély
 - [Fakír](../../fortelyok.altalanos/fakir.md) fortély
+- [Eszmélet: Bódultság](../../082_statuszok.md#️-eszmélet-1-bódultság) státusz (Áfiumok, kábítószerek, fejbekólintás hatására)
+- [Eszmélet: Kábultság](../../082_statuszok.md#️-eszmélet-2-kábultság) státusz
 
 ### Bónusz: Fakír
 
@@ -5430,15 +5434,6 @@ Hang nélkül kiállni, hogy csonkolnak. Nagyon súlyos sebet (minimum `9 ÉP`) 
 #### Emberfeletti (21) 🎲
 
 Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják le.
-
-<br />
-
-### Dobás módosító körülmények
-
-- Áfiumok, kábítószerek, fejbekólintás hatására:
-  - [Eszmélet: Bódultság Státusz](../../082_statuszok.md#️-eszmélet-1-bódultság): `Előny+1` Fájdalomtűrés dobásra
-  - [Eszmélet: Kábultság Státusz](../../082_statuszok.md#️-eszmélet-2-kábultság): `Előny+2` Fájdalomtűrés dobásra
-- [Harci láz](../harci/harci_laz.md) képzettség
 
 
 ---
@@ -5630,7 +5625,9 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 - Mozgás: a lopakodó az észlelő látásának perifériáján halad
 - Távolság: `10-15` méter
 
-### ⚜️ Láthatóság módosító (lopakodó)
+### Helyzetfüggő módosítók
+
+#### ⚜️ Láthatóság (lopakodó)
 
 ```
 -6 Világosban, éles kontúrral válsz el a háttértől
@@ -5644,7 +5641,7 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 
 Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
-### ⚜️ Látótér módosító (lopakodó)
+#### ⚜️ Látótér (lopakodó)
 
 ```
 -6: lopakodó direkt a látótérben
@@ -5652,7 +5649,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 +6: lopakodó az észlelő látókörén kívül halad
 ```
 
-### ⚜️ Mozgás módosító (lopakodó)
+#### ⚜️ Mozgás (lopakodó)
 
 ```
 -6: gyors haladás
@@ -5660,7 +5657,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 
  [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
 
-### ⚜️ Zajok módosító (lopakodó)
+#### ⚜️ Zajok (lopakodó)
 
 ```
 -6: csörgő ruha, fémpáncél
@@ -5670,7 +5667,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 +3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
 ```
 
-### ⚜️ Környezet, rejtekhely módosító (lopakodó)
+#### ⚜️ Környezet, rejtekhely (lopakodó)
 
 ```
 -6: nyílt tér fedezék nélkül
@@ -5678,7 +5675,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 +6: zsúfolt piac, rengeteg pult, beugró, alkóv
 ```
 
-### ⚜️ Távolság módosító, Harci szituáció megteremtése (lopakodó)
+#### ⚜️ Távolság, Harci szituáció megteremtése (lopakodó)
 
 ```
 -9: Testközelbe kerülni; Orvtámadás
@@ -5994,7 +5991,7 @@ Gyógyulási sebesség szorzó: `x3`.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - ⭕TODO⭕
 
@@ -6085,7 +6082,7 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - ⭕TODO⭕
 
@@ -6572,7 +6569,7 @@ Ha a fenti próba sikeres, akkor a démon játéktechnikailag rendes mágiaellen
 
 <br />
 
-##### Célszám módosító körülmények
+##### Helyzetfüggő módosítók
 
 - ⭕xyz
 
@@ -8625,7 +8622,7 @@ Emlékezet
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - ⭕TODO⭕
 
@@ -8774,20 +8771,20 @@ Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzőe
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 ```
-Kiemelt archetípusod: -3
-```
-
-```
-+3: Gyors átöltözés
-+6: Átöltözés másodpercek alatt
+Kiemelt archetípusod: +3
 ```
 
 ```
-+3: Szegényes felszerelés
-+6: Minimális felszerelés
+-3: Gyors átöltözés
+-6: Átöltözés másodpercek alatt
+```
+
+```
+-3: Szegényes felszerelés
+-6: Minimális felszerelés
 ```
 
 Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
@@ -8894,9 +8891,9 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-Rosszul felszerelt labor, műszerek hiánya: `[+3; +9]`
+Rosszul felszerelt labor, műszerek hiánya: `[-3; -9]`
 
 ---
 
@@ -8983,9 +8980,9 @@ Intelligencia, Önuralom
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Csapda hatástalanítása külső nyom hátrahagyása nélkül: `+3`
+- Csapda hatástalanítása külső nyom hátrahagyása nélkül: `-3`
 
 ---
 
@@ -9090,9 +9087,9 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Ellenséges tömeg: `+3-6`
+- Ellenséges tömeg: `-3 / -6`
 
 ---
 
@@ -9186,7 +9183,7 @@ Emlékezet, Intelligencia
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - Tárgy komplexitása
 - Tárgy ritkasága
@@ -9268,14 +9265,6 @@ Tor0ni vérnászt megnyerni. Több tor0ni dáma együttes támadását látszól
 #### Emberfeletti (21) 🎲
 
 Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynök -, túlélnie egy t0roni vérnászt és az egész nemesi bált, sőt még a párbajra hívást is.
-
-<br />
-
----
-### Dobás módosító körülmények
-
-- [Eszmélet: Bódultság Státusz](../082_statuszok.md#️-eszmélet-1-bódultság) módosítói
-- [Eszmélet: Kábultság Státusz](../082_statuszok.md#️-eszmélet-2-kábultság) módosítói
 
 
 ---
@@ -9364,21 +9353,21 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 **Időjárás**:
 - Enyhe szél, jó idő: `+0`
-- Erős szél, zivatar: `+3`
-- Vihar, orkán: `+6 / +9`
+- Erős szél, zivatar: `-3`
+- Vihar, orkán: `-6 / -9`
 
 **Hajó állapota**:
 - Karbantartott, jó állapotú: `+0`
-- Sérült vagy túlterhelt: `+3 / +6`
+- Sérült vagy túlterhelt: `-3 / -6`
 
 **Legénység**:
 - Tapasztalt legénység: `+0`
-- Egyenetlen, fegyelmezetlen: `+3`
-- Képzetlen zsoldosok, rakodómunkások: `+6`
+- Egyenetlen, fegyelmezetlen: `-3`
+- Képzetlen zsoldosok, rakodómunkások: `-6`
 
 ---
 
@@ -9477,12 +9466,12 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
 - Rendelkezésre álló idő
-  - Kapkodás: `+3`
-  - ráérős munka `-2`
-- Környezet inspiráló hatása (pl. szent hely, művésztelep): `-2`
+  - Kapkodás: `-3`
+  - ráérős munka `+2`
+- Környezet inspiráló hatása (pl. szent hely, művésztelep): `+2`
 
 ---
 
@@ -9623,9 +9612,9 @@ Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegp
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Rövid határidő: `+3`
+- Rövid határidő: `-3`
 
 
 ---
@@ -9734,9 +9723,9 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Kapkodó munka: `+3`
+- Kapkodó munka: `-3`
 
 ---
 
@@ -9827,13 +9816,13 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Vad hátas: `[+1; +3]`
+- Vad hátas: `[-1; -3]`
 - Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
 - Időjárás:
-    - Erős szél vagy felhőszaggatás: `+3`
-    - Vihar, orkán: `+6`
+    - Erős szél vagy felhőszakadás: `-3`
+    - Vihar, orkán: `-6`
 
 
 ---
@@ -9951,11 +9940,11 @@ Próba dobható.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Könyvtár: `[-1; -6]`
-- Hozzáférés: tiltott források vagy hiányos anyag: `[+1; +6]`
-- Nyelvi nehézségek: fordítás, nyelvjárás: `[+2; +4]`
+- Könyvtár: `[+1; +6]`
+- Hozzáférés: tiltott források vagy hiányos anyag: `[-1; -6]`
+- Nyelvi nehézségek: fordítás, nyelvjárás: `[-2; -4]`
 
 ---
 
@@ -10050,12 +10039,12 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Kapkodni kell: `+3`
-- Nincs meg a testközeli távolság, csak pár lépés: `+3`
-- Több tárgy manipulálása szinte egy időben: `+3`
-- Zajos, zsibongó környezet: `-3`
+- Kapkodni kell: `-3`
+- Nincs meg a testközeli távolság, csak pár lépés: `-3`
+- Több tárgy manipulálása szinte egy időben: `-3`
+- Zajos, zsibongó környezet: `+3`
 
 ---
 
@@ -10144,9 +10133,9 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Vad hátas: `[+1; +3]`
+- Vad hátas: `[-1; -3]`
 - Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
 
 
@@ -10231,15 +10220,15 @@ Visszahajló acélfalon felmászni.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Rontott próba utáni **Mentő** képzettségpróba: `+3`
-- Gyorsan mászni: `+3`
-- Sötétben mászni: `+3`
-- Plusz súllyal mászni: Erőtől függ, a KM dönt. Keretek: `[+1; +6]` ; Erőpróba kellhet
-- Lengő kötélen mászni: `+3`
+- Rontott próba utáni **Mentő** képzettségpróba: `-3`
+- Gyorsan mászni: `-3`
+- Sötétben mászni: `-3`
+- Plusz súllyal mászni: Erőtől függ, a KM dönt. Keretek: `[-1; -6]` ; Erőpróba kellhet
+- Lengő kötélen mászni: `-3`
 - Sérülten mászni: [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
-- Mászókampók: `-3` → csak ha a mászófelületbe könnyen rögzíthetőek.
+- Mászókampók: `+3` → csak ha a mászófelületbe könnyen rögzíthetőek.
 
 <br />
 
@@ -10534,10 +10523,10 @@ Emlékezet, Érzékenység.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Könyvtár: `-3`
-- Tanító aktívan segít: `-3`
+- Könyvtár: `+3`
+- Tanító aktívan segít: `+3`
 
 ---
 
@@ -10628,10 +10617,10 @@ Szerencsejáték
 - Komoly bűnszervezet vagy arisztokrácia legendás bajnokságának is bajnoka is vagy.
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Kocsma, barátságos közeg: `-3`
-- Teljesen idegen kaszinó, ismeretlen szabályok: `+3`
+- Kocsma, barátságos közeg: `+3`
+- Teljesen idegen kaszinó, ismeretlen szabályok: `-3`
 
 ---
 
@@ -10743,9 +10732,9 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Rossz időjárás: `[+1; +6]`
+- Rossz időjárás: `[-1; -6]`
 
 ---
 
@@ -10959,11 +10948,11 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Szűkös határidő: `+3`
-- Jó hírnév: `-3`
-- Rossz hírnév, karma: `[+3; +6]`
+- Szűkös határidő: `-3`
+- Jó hírnév: `+3`
+- Rossz hírnév, karma: `[-3; -6]`
 
 ---
 
@@ -11055,11 +11044,11 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 <br />
 
 ---
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
 
-- Sietős nyitás: `+3`
-- Zavaró tényezők (zaj, káosz, sötét): `+3`
-- Hiányos eszközök: `+3`
+- Sietős nyitás: `-3`
+- Zavaró tényezők (zaj, káosz, sötét): `-3`
+- Hiányos eszközök: `-3`
 
 ---
 
@@ -13249,7 +13238,7 @@ Gyorsabban tudsz mászni.
 
 🔒 [Mászás](../kepzettsegek.szekunder/maszas.md) - `6.szint`
 
-🌟A "[Gyorsan mászni](../kepzettsegek.szekunder/maszas.md#c%C3%A9lsz%C3%A1m-m%C3%B3dos%C3%ADt%C3%B3-k%C3%B6r%C3%BClm%C3%A9nyek)" Célszám módosító büntetése rád nem vonatkozik.
+🌟A "[Gyorsan mászni](../kepzettsegek.szekunder/maszas.md#helyzetfüggő-módosítók)" helyzetfüggő módosító büntetése rád nem vonatkozik.
 
 ---
 
@@ -13286,7 +13275,7 @@ Gyorsabban tudsz lopózni.
 
 🔒 [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) - `6.szint`
 
-🌟 A [gyors lopakodás](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#%EF%B8%8F-mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-lopakod%C3%B3) Mozgás célszám levonása rád nem érvényes.
+🌟 A [gyors lopakodás](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#%EF%B8%8F-mozg%C3%A1s-lopakod%C3%B3) Mozgás módosító rád nem érvényes.
 
 ---
 
@@ -13318,7 +13307,7 @@ Gyorsabban tudsz lopózni.
 
 Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át tudsz változni.
 
-🔆 Ne feledjük: ilyen esetekben a [próba Célszáma növekszik](../kepzettsegek.szekunder/alcazas_alruha.md#c%C3%A9lsz%C3%A1m-m%C3%B3dos%C3%ADt%C3%B3-k%C3%B6r%C3%BClm%C3%A9nyek)!
+🔆 Ne feledjük: ilyen esetekben [módosító büntetés](../kepzettsegek.szekunder/alcazas_alruha.md#helyzetfüggő-módosítók) jár a próbadobásra!
 
 ### Kapcsolódik
 
@@ -13327,28 +13316,20 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 ### Alapeset
 
-```
-+3: Gyors átöltözés
-+6: Átöltözés másodpercek alatt
-```
-
-```
-+3: Szegényes felszerelés
-+6: Minimális felszerelés
-```
+[Álcázás/álruha — Helyzetfüggő módosítók](../kepzettsegek.szekunder/alcazas_alruha.md#helyzetfüggő-módosítók)
 
 ---
 ### 1. fok
 
 🔒 [Álcázás/álruha](../kepzettsegek.szekunder/alcazas_alruha.md) - `4.szint`
 
-🌟 Mindegyik eset büntetéseit `3`-mal csökkentheted képzettségpróbánál.
+🌟 Mindegyik büntetést `+3`-mal enyhítheted.
 
 ### 2. fok
 
 🔒Álcázás/Álruha - `8.szint`
 
-🌟 Mindegyik eset büntetéseit `6`-tal csökkentheted képzettségpróbánál.
+🌟 Mindegyik büntetést `+6`-tal enyhítheted.
 
 ---
 
@@ -13684,7 +13665,7 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 ---
 ### Alapeset
 
-Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#célszám-módosító-körülmények) képzettségpróbát (amit kiterjeszt a Keresés/rejtés fortély).
+Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#helyzetfüggő-módosítók) képzettségpróbát (amit kiterjeszt a Keresés/rejtés fortély).
 
 <br />
 
@@ -13705,13 +13686,13 @@ Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` bü
 
 ## 🟣 Zártörő (1)
 
-Alapesetben ha gyorsabban akarsz kinyitni egy zárat, akkor [büntetés jár a próbadobásra](../kepzettsegek.szekunder/zarnyitas.md#c%C3%A9lsz%C3%A1m-m%C3%B3dos%C3%ADt%C3%B3-k%C3%B6r%C3%BClm%C3%A9nyek).
+Alapesetben ha gyorsabban akarsz kinyitni egy zárat, akkor [büntetés jár a próbadobásra](../kepzettsegek.szekunder/zarnyitas.md#helyzetfüggő-módosítók).
 
 ### 1. fok
 
 🔒 [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) - `6.szint`
 
-🌟 Sietős zárnyitás esetén sem emelkedik a célszám.
+🌟 A "Sietős nyitás" helyzetfüggő módosító büntetése rád nem vonatkozik.
 
 ---
 
@@ -28482,6 +28463,9 @@ Hátrány-2
   1 támadás elvesztése
   ⭕nincs (at-will) varázslás
   kivéve papok: részegen is tudnak⭕
+
+Előny+1 Fájdalomtűrés dobásra
+  Áfiumok, kábítószerek, fejbekólintás hatására
 ```
 
 ### ✴️ Eszmélet (2) Kábultság
@@ -28498,6 +28482,9 @@ Hátrány-2
   Manőver Ellenpróba dobásra
   Képzettségpróbákra
   Tulajdonságpróbákra
+
+Előny+2 Fájdalomtűrés dobásra
+  Áfiumok, kábítószerek, fejbekólintás hatására
 
 Többszörös támadás elvesztése
 Varázslás képesség elvesztése
@@ -32577,7 +32564,7 @@ Leírását és a próba körülményeit, módosítóit lásd a [Lopakodás/rejt
 
 ### ⚜️ Módosítók
 
-A **Lopakodás/rejtőzés** képzettség oldalán a [Célszámok, módosító körülmények](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) bekezdés alatt található.
+A **Lopakodás/rejtőzés** képzettség oldalán a [Helyzetfüggő módosítók](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#helyzetfüggő-módosítók) bekezdés alatt található.
 
 ---
 ### ⚜️ Passzív észlelés
