@@ -4,7 +4,7 @@ Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepját�
 
 ## **[Szabályrendszer](md/szabalyrendszer.md)** ⚜️
 
-## **[Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/)** ⚜️
+## **[Szilánk webapp](https://kaktusztea.github.io/szilankrpg/)** ⚜️
 
 ## **[Segédlet pdf](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)** ⚜️
 
