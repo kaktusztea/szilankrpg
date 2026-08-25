@@ -1,6 +1,6 @@
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
-import { FortelyInfoPanel } from '../fortelyok/FortelyInfoPanel';
+import { FortelyDetails } from '../FortelyDetails';
 import { MAX_FORTÉLY_FOK, MAX_AZONOS_FORTÉLY } from '../../ui-constants';
 import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
 
@@ -64,10 +64,8 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
               </span>
             </div>
             {gameMode && isOpen && def && (
-              <FortelyInfoPanel
+              <FortelyDetails
                 def={def} fokDef={fokDef}
-                kiterjesztiNormál={def.kiterjeszti_normál}
-                kiterjesztiErős={def.kiterjeszti_erős}
                 képzettségek={képzettségek}
               />
             )}

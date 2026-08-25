@@ -78,16 +78,17 @@ export function KepzettsegCsoport({
         {/* Misztikus képzettségek felvétele a Misztikus fülön történik (faj/tradíció
             megkötések miatt) — itt csak megjelenítés + szint/törlés. */}
         {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
-          <NewKepzettsegButton available={available} kepzettsegDefs={kepzettsegDefs} onAdd={v => onAddKepzettseg(csoport, v)} />
+          <NewKepzettsegButton available={available} kepzettsegDefs={kepzettsegDefs} kiterjesztesek={kiterjesztesek} onAdd={v => onAddKepzettseg(csoport, v)} />
         )}
       </>)}
     </div>
   );
 }
 
-function NewKepzettsegButton({ available, kepzettsegDefs, onAdd }: {
+function NewKepzettsegButton({ available, kepzettsegDefs, kiterjesztesek, onAdd }: {
   available: { label: string; value: string }[];
   kepzettsegDefs: KepzettsegDef[];
+  kiterjesztesek: Record<string, KiterjesztesEntry[]>;
   onAdd: (value: string) => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -102,6 +103,7 @@ function NewKepzettsegButton({ available, kepzettsegDefs, onAdd }: {
         <KepzettsegPickerOverlay
           available={available}
           kepzettsegDefs={kepzettsegDefs}
+          kiterjesztesek={kiterjesztesek}
           onAdd={onAdd}
           onClose={() => setOpen(false)}
         />

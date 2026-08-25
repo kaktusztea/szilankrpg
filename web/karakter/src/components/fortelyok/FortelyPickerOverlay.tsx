@@ -2,6 +2,8 @@ import { useState } from 'react';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import { OverlayPortal } from '../overlays/OverlayPortal';
+import { FortelyDetails } from '../FortelyDetails';
+import { MdLink } from '../MdLink';
 import { EGYEDI_FORTELY_SENTINEL, MAX_AZONOS_FORTÉLY } from '../../ui-constants';
 import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
 
@@ -36,10 +38,8 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
           {available.map(d => {
             const disabled = isOptionDisabled(d, fortélyok, fegyverNevek, nyelvtanulásSzint);
             const suffix = buildSuffix(d, csoport, slotok, tsz, fortélyok, nyelvtanulásSzint);
-            const desc = getDescription(d);
             const isExpanded = expandedNév === d.név;
-            const hatásLines = getHatásLines(d);
-            const hasDetails = !!(desc || hatásLines.length > 0);
+            const hasDetails = !!(d.leírás || d.fokok.some(f => f.fok >= 1 && f.hatás?.length) || d.kiterjeszti_normál.length || d.kiterjeszti_erős.length || d.md_fájl);
 
             return (
               <div key={d.név} className={`fort-picker-item-wrap${disabled ? ' fort-picker-disabled' : ''}`}>
@@ -48,6 +48,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                     {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
                     {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
                   </span>
+                  {d.md_fájl && <span className="fort-picker-md-link" onClick={e => e.stopPropagation()}><MdLink mdFájl={d.md_fájl} /></span>}
                   {hasDetails && (
                     <button
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
@@ -57,15 +58,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                   )}
                 </div>
                 {isExpanded && (
-                  <div className="fort-picker-details" onClick={() => setExpandedNév(null)}>
-                    {desc && <div className="fort-picker-details-desc">{desc}</div>}
-                    {hatásLines.map((line, i) => (
-                      <div key={i} className="fort-picker-details-line">
-                        {line.prefix && <span className="fort-picker-details-fok">{line.prefix}</span>}
-                        {line.prefix ? ' ' : ''}{line.text}
-                      </div>
-                    ))}
-                  </div>
+                  <FortelyDetails def={d} />
                 )}
               </div>
             );
@@ -84,22 +77,6 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
 }
 
 // --- Pure helpers ---
-
-function getDescription(d: FortelySummary): string {
-  if (d.leírás) return d.leírás;
-  const firstFok = d.fokok.find(f => f.fok >= 1) ?? d.fokok[0];
-  return firstFok?.hatás?.[0] ?? '';
-}
-
-function getHatásLines(d: FortelySummary): { prefix: string; text: string }[] {
-  const lines: { prefix: string; text: string }[] = [];
-  for (const fokDef of d.fokok) {
-    if (fokDef.fok === 0 || !fokDef.hatás?.length) continue;
-    const prefix = d.maxfok > 1 ? `${fokDef.fok}. fok:` : '';
-    lines.push({ prefix, text: fokDef.hatás.join(' ') });
-  }
-  return lines;
-}
 
 function buildSuffix(
   d: FortelySummary, csoport: string, slotok: Fortely[],

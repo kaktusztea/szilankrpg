@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import type { FortelyRowProps } from './types';
 import { displayName, checkKövetelmények } from './helpers';
-import { FortelyInfoPanel } from './FortelyInfoPanel';
+import { FortelyDetails } from '../FortelyDetails';
+import { MdLink } from '../MdLink';
 import { PopupOverlay } from '../PopupOverlay';
 import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
@@ -42,6 +43,7 @@ export function FortelyRow({
           {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{giftBadge && <span className="fort-gift">{giftBadge}</span>}
         </span>
         <span className="fort-right">
+          {def?.md_fájl && <span className="fort-md-link" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
           {!gameMode && (
             <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
@@ -58,11 +60,9 @@ export function FortelyRow({
       </div>
 
       {isOpen && def && (
-        <FortelyInfoPanel
+        <FortelyDetails
           def={def}
           fokDef={fokDef}
-          kiterjesztiNormál={def.kiterjeszti_normál}
-          kiterjesztiErős={def.kiterjeszti_erős}
           képzettségek={képzettségek}
         />
       )}

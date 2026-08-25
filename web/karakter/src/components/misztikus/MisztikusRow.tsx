@@ -1,6 +1,6 @@
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
-import { KepzettsegInfoPanel } from '../KepzettsegInfoPanel';
+import { KepzettsegDetails } from '../KepzettsegDetails';
 
 interface MisztikusRowProps {
   név: string;
@@ -33,7 +33,7 @@ export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning 
         <strong className={szintClass}>{szint}</strong>
       </div>
       {gameMode && infoOpen && def && (
-        <KepzettsegInfoPanel def={def} kit={kit || []} fortélyFokok={fortélyFokok} />
+        <KepzettsegDetails def={def} kit={kit || []} fortélyFokok={fortélyFokok} />
       )}
     </div>
   );

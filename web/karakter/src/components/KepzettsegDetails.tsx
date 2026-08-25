@@ -4,16 +4,21 @@ import { MD_BASE } from './MdLink';
 interface Props {
   def: KepzettsegDef;
   kit: KiterjesztesEntry[];
-  fortélyFokok: Record<string, number>;
+  /** Felvett fortélyok fok-mapje szín-jelzéshez; ha üres/undefined → nincs szín */
+  fortélyFokok?: Record<string, number>;
 }
 
-export function KepzettsegInfoPanel({ def, kit, fortélyFokok }: Props) {
-  const van = (fortély: string) => (fortélyFokok[fortély] ?? 0) > 0;
+export function KepzettsegDetails({ def, kit, fortélyFokok }: Props) {
+  const van = (fortély: string) => (fortélyFokok?.[fortély] ?? 0) > 0;
   const normál = kit.filter(k => k.típus !== 'erős');
   const erős = kit.filter(k => k.típus === 'erős');
   const szituációk = def.kapcsolódó_szituációk ?? [];
+
   return (
     <div className="info-panel">
+      {def.primer && (
+        <div className="info-panel-row"><span className="info-panel-label">Primer</span></div>
+      )}
       <div className="info-panel-row"><span className="info-panel-label">Próba:</span> {def.próba}</div>
       {def.domináns_tulajdonságok.length > 0 && (
         <div className="info-panel-row"><span className="info-panel-label">Domináns:</span> {def.domináns_tulajdonságok.join(', ')}</div>
@@ -22,7 +27,9 @@ export function KepzettsegInfoPanel({ def, kit, fortélyFokok }: Props) {
         <div className="info-panel-row">
           <span className="info-panel-label">Kiterjeszti Normál:</span>
           <span className="info-panel-kit">{normál.map((k, i) => (
-            <span key={i} className={van(k.fortély) ? 'fort-req-met' : 'fort-req-unmet'}>{i > 0 ? '; ' : ''}{k.fortély}</span>
+            <span key={i} className={fortélyFokok ? (van(k.fortély) ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
+              {i > 0 ? '; ' : ''}{k.fortély}
+            </span>
           ))}</span>
         </div>
       )}
@@ -30,7 +37,9 @@ export function KepzettsegInfoPanel({ def, kit, fortélyFokok }: Props) {
         <div className="info-panel-row">
           <span className="info-panel-label">Kiterjeszti Erős:</span>
           <span className="info-panel-kit">{erős.map((k, i) => (
-            <span key={i} className={van(k.fortély) ? 'fort-req-met' : 'fort-req-unmet'}>{i > 0 ? '; ' : ''}{k.fortély}</span>
+            <span key={i} className={fortélyFokok ? (van(k.fortély) ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
+              {i > 0 ? '; ' : ''}{k.fortély}
+            </span>
           ))}</span>
         </div>
       )}

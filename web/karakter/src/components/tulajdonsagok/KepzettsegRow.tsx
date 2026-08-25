@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { KepzettsegRowProps } from './types';
-import { KepzettsegInfoPanel } from '../KepzettsegInfoPanel';
+import { KepzettsegDetails } from '../KepzettsegDetails';
 import { GridPickerPopup } from './popups';
 import { MdLink } from '../MdLink';
 import { KepzettsegProbaPopup } from './KepzettsegProbaPopup';
@@ -35,10 +35,10 @@ export function KepzettsegRow({
         {gameMode && infoOpen && (
           <span className="kep-header-actions" onClick={e => e.stopPropagation()}>
             <button className="kep-proba-dice-btn" title="Képzettségpróba dobás" onClick={() => setShowProba(true)}>🎲</button>
-            {def?.md_fájl && <MdLink mdFájl={def.md_fájl} />}
           </span>
         )}
         <span className="kep-right">
+          {def?.md_fájl && <span className="kep-md-link" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
           {!gameMode && (
             <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
@@ -49,7 +49,7 @@ export function KepzettsegRow({
       </div>
 
       {gameMode && infoOpen && def && (
-        <KepzettsegInfoPanel def={def} kit={kit} fortélyFokok={fortélyFokok} />
+        <KepzettsegDetails def={def} kit={kit} fortélyFokok={fortélyFokok} />
       )}
 
       {showProba && def && (
