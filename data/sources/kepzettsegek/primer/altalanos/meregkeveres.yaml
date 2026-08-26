@@ -22,7 +22,7 @@ helyzetfüggő_módosítók:
     mód: "single"
     sorok:
       - { érték: -3, leírás: "Szegényes felszerelés" }
-      - { érték: +3, leírás: "Jól felszerelt laboratórium" }
+      - { érték: +3, leírás: "Jól felszerelt labor" }
   - kategória: "Körülmény"
     mód: "multi"
     sorok:
