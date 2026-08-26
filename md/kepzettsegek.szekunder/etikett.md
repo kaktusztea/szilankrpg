@@ -69,3 +69,15 @@ Tor0ni vérnászt megnyerni. Több tor0ni dáma együttes támadását látszól
 #### Emberfeletti (21) 🎲
 
 Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynök -, túlélnie egy t0roni vérnászt és az egész nemesi bált, sőt még a párbajra hívást is.
+
+<br />
+
+---
+### Helyzetfüggő módosítók
+
+#### ⚜️ Ruházat 1️⃣
+
+```
+-6: Szegényes, sérült ruházat
+-3: szabálytalan ruházat, smink
+```
