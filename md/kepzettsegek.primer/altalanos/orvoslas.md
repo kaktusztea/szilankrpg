@@ -119,4 +119,6 @@ Gyógyulási sebesség szorzó: `x3`.
 ---
 ### Helyzetfüggő módosítók
 
-- ⭕TODO⭕
+- Szegényes felszerelés: `-3`
+- Felszerelés nélkül: `-6`
+- Páciens ellenáll: `-6`
