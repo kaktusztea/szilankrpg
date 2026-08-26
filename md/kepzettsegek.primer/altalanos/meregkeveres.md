@@ -61,7 +61,7 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 ```
 -3: Szegényes felszerelés
 +0: Normál felszerelés
-+3: Jól felszerelt laboratórium
++3: Jól felszerelt labor
 ```
 
 #### ⚜️ Körülmény 🔀

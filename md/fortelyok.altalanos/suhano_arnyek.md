@@ -6,6 +6,6 @@ Gyorsabban tudsz lopózni.
 
 🔒 [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) - `6.szint`
 
-🌟 A [gyors lopakodás](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#%EF%B8%8F-mozg%C3%A1s-lopakod%C3%B3) Mozgás módosító rád nem érvényes.
+🌟 A [gyors lopakodás](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#%EF%B8%8F-mozg%C3%A1s-lopakod%C3%B3-1%EF%B8%8F%E2%83%A3) Mozgás módosító büntetése rád nem érvényes.
 
 ---
