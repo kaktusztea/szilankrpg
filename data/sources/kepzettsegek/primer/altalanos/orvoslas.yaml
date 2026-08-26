@@ -17,3 +17,13 @@ mesterbónuszok:
   - szint: 15
     leírás: ""
 szerepjátékos_módosító: false
+helyzetfüggő_módosítók:
+  - kategória: "Felszerelés"
+    mód: "single"
+    sorok:
+      - { érték: -3, leírás: "Szegényes felszerelés" }
+      - { érték: -6, leírás: "Felszerelés nélkül" }
+  - kategória: "Körülmény"
+    mód: "multi"
+    sorok:
+      - { érték: -6, leírás: "Páciens ellenáll" }
