@@ -74,3 +74,8 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 #### Emberfeletti (21) 🎲
 
 - Szakadékba ugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.
+
+---
+### Helyzetfüggő módosítók
+
+- csúszós talaj: `-6`

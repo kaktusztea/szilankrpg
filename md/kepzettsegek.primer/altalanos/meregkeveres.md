@@ -52,3 +52,10 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 - Sima Méregkeverés próba, alap célszám: `6`
 - Félrevezető (speciális) :`+3/6 Nehézség`
 - [Élettan](../../fortelyok.altalanos/elettan.md) fortély: `+2 dobás bónusz / fok`
+
+---
+### Helyzetfüggő módosítók
+
+- Szegényes felszerelés: `-3`
+- Jó felszerelt laboratórium: `+3`
+- Hiányzó, de helyettesíthető komponensek: `-3`

@@ -85,4 +85,14 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 - Az ellenség taktikáját napokkal korábban **átérezni**, szinte úgy, mintha a fejében járna.
 - Saját csapatai számára a jelenlétével azonnali hadrendfegyelmet és morált biztosítani
 
+<br />
+
 ---
+### Helyzetfüggő módosítók
+
+Tanácsadók
+- rossz tanácsadók: `-3`
+- jó tanácsadók: `+3`
+
+Szabotőr
+- szabotőr aknamunkája: `-6`

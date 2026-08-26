@@ -111,3 +111,16 @@ Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befoly
 
 - Évek múltán, egy felújított szobában is érzed: "itt gyilkosság történt."
 - Töredékjegyzetekből és szétszórt dokumentumokból képes vagy rekonstruálni egy teljes összeesküvés történetét.
+
+---
+### Helyzetfüggő módosítók
+
+Helyszín
+- megbolygatott helyszín: `-3`
+- összejárkált helyszín: `-6`
+
+Szemtanú
+- hasznos szemtanú: `+3`
+
+Eszközök
+- Porok, nagyító, lámpák: `+3` (HA segítenek)
