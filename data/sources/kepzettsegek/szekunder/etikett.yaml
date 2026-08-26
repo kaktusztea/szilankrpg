@@ -17,4 +17,9 @@ mesterbónuszok:
   - szint: 15
     leírás: ""
 szerepjátékos_módosító: false
-helyzetfüggő_módosítók: ""
+helyzetfüggő_módosítók:
+  - kategória: "Ruházat"
+    mód: "single"
+    sorok:
+      - { érték: -6, leírás: "Szegényes, sérült ruházat" }
+      - { érték: -3, leírás: "szabálytalan ruházat, smink" }

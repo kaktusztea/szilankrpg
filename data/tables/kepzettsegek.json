@@ -559,7 +559,22 @@
       "Önuralom",
       "Emlékezet"
     ],
-    "helyzetfüggő_módosítók": "",
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Ruházat",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Szegényes, sérült ruházat"
+          },
+          {
+            "érték": -3,
+            "leírás": "szabálytalan ruházat, smink"
+          }
+        ]
+      }
+    ],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
