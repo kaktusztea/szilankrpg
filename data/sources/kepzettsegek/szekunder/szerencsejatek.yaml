@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Közeg"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Ismeretlen kaszinó, idegen szabályok" }
       - { érték: 0, leírás: "Normál környezet" }

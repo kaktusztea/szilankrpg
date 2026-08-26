@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Időjárás"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Szélsőséges időjárás" }
       - { érték: -3, leírás: "Rossz időjárás" }

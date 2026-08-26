@@ -24,6 +24,7 @@ helyzetfüggő_módosítók:
       - { érték: -3, leírás: "Gyorsan, nyomás alatt keresni" }
       - { érték: 3, leírás: "Aktív, koncentrált keresés" }
   - kategória: "Zavaró körülmények"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Enyhén zavaró" }
       - { érték: -6, leírás: "Nagyon zavaró" }

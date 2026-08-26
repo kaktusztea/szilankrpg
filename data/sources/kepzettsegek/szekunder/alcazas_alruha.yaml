@@ -19,15 +19,18 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Archetípus"
+    mód: "single"
     sorok:
       - { érték: 3, leírás: "Kiemelt archetípusod" }
       - { érték: 0, leírás: "Egyéb archetípus" }
   - kategória: "Idő"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Átöltözés másodpercek alatt" }
       - { érték: -3, leírás: "Gyors átöltözés" }
       - { érték: 0, leírás: "Normál tempó" }
   - kategória: "Felszerelés"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Minimális felszerelés" }
       - { érték: -3, leírás: "Szegényes felszerelés" }

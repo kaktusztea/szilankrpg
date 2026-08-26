@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Körülmény"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Kapkodó munka" }
       - { érték: 0, leírás: "Normál körülmények" }

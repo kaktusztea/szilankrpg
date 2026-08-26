@@ -19,11 +19,13 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Kontaktus"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Rövidebb kontaktus" }
       - { érték: 0, leírás: "Átlagos kontaktus" }
       - { érték: 3, leírás: "Hosszabb, mélyebb kontaktus" }
   - kategória: "Faj"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Más fajú a célszemély" }
       - { érték: 0, leírás: "Azonos faj" }

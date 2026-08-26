@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Felszerelés"
+    mód: "single"
     sorok:
       - { érték: -9, leírás: "Súlyosan hiányos labor" }
       - { érték: -6, leírás: "Rosszul felszerelt labor" }

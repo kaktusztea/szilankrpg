@@ -75,6 +75,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Felszerelés",
+        "mód": "single",
         "sorok": [
           {
             "érték": -9,
@@ -306,6 +307,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Archetípus",
+        "mód": "single",
         "sorok": [
           {
             "érték": 3,
@@ -319,6 +321,7 @@
       },
       {
         "kategória": "Idő",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -336,6 +339,7 @@
       },
       {
         "kategória": "Felszerelés",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -374,6 +378,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Nyelvi akadály",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -420,6 +425,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -454,6 +460,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Közönség",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -492,6 +499,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Kontaktus",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -509,6 +517,7 @@
       },
       {
         "kategória": "Faj",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -597,6 +606,7 @@
       },
       {
         "kategória": "Zavaró körülmények",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -1026,6 +1036,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Időjárás",
+        "mód": "single",
         "sorok": [
           {
             "érték": -9,
@@ -1047,6 +1058,7 @@
       },
       {
         "kategória": "Hajó állapota",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1064,6 +1076,7 @@
       },
       {
         "kategória": "Legénység",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1135,6 +1148,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Idő",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -1152,6 +1166,7 @@
       },
       {
         "kategória": "Környezet",
+        "mód": "single",
         "sorok": [
           {
             "érték": 0,
@@ -1181,6 +1196,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -1215,6 +1231,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -1253,6 +1270,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Könyvtár",
+        "mód": "single",
         "sorok": [
           {
             "érték": 6,
@@ -1270,6 +1288,7 @@
       },
       {
         "kategória": "Hozzáférés",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1287,6 +1306,7 @@
       },
       {
         "kategória": "Nyelv",
+        "mód": "single",
         "sorok": [
           {
             "érték": -4,
@@ -1330,6 +1350,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Hátas",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -1343,6 +1364,7 @@
       },
       {
         "kategória": "Időjárás",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1376,6 +1398,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Láthatóság",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1401,6 +1424,7 @@
       },
       {
         "kategória": "Látótér",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1418,6 +1442,7 @@
       },
       {
         "kategória": "Mozgás",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1431,6 +1456,7 @@
       },
       {
         "kategória": "Zajok",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1456,6 +1482,7 @@
       },
       {
         "kategória": "Környezet",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -1473,6 +1500,7 @@
       },
       {
         "kategória": "Távolság",
+        "mód": "single",
         "sorok": [
           {
             "érték": -9,
@@ -1583,6 +1611,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Hátas",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -1890,6 +1919,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Közeg",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -1941,6 +1971,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Időjárás",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
@@ -2010,6 +2041,7 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
@@ -2027,6 +2059,7 @@
       },
       {
         "kategória": "Hírnév/Karma",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,

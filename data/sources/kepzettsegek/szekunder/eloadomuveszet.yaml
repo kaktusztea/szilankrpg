@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Közönség"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Ellenséges tömeg" }
       - { érték: -3, leírás: "Közönyös közönség" }

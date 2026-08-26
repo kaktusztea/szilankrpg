@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: true
 helyzetfüggő_módosítók:
   - kategória: "Nyelvi akadály"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Olyan nyelven próbálsz hatni, amit nem ért" }
       - { érték: 0, leírás: "Közös nyelv" }

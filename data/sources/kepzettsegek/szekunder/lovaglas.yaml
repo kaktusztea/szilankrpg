@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Hátas"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Vad hátas" }
       - { érték: 0, leírás: "Betört hátas" }

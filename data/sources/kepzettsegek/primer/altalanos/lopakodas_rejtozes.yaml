@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Láthatóság"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Világosban, éles kontúrral válsz el a háttértől" }
       - { érték: -3, leírás: "Háttértől elütő ruházatban" }
@@ -26,15 +27,18 @@ helyzetfüggő_módosítók:
       - { érték: 3, leírás: "Szürkület, félhomály" }
       - { érték: 6, leírás: "Vaksötét / Láthatatlan" }
   - kategória: "Látótér"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Direkt a látótérben" }
       - { érték: 0, leírás: "Periférián halad" }
       - { érték: 6, leírás: "Látókörön kívül" }
   - kategória: "Mozgás"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Gyors haladás" }
       - { érték: 0, leírás: "Lassú, óvatos haladás" }
   - kategória: "Zajok"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Csörgő ruha, fémpáncél" }
       - { érték: -3, leírás: "Süket csend, nyikorgós ruha" }
@@ -42,11 +46,13 @@ helyzetfüggő_módosítók:
       - { érték: 3, leírás: "Közepesen zajos környezet" }
       - { érték: 3, leírás: "Hangzavar (hallással észlelhetetlen)" }
   - kategória: "Környezet"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Nyílt tér fedezék nélkül" }
       - { érték: 0, leírás: "Néhány rejtekhely, fedezék" }
       - { érték: 6, leírás: "Zsúfolt, rengeteg fedezék" }
   - kategória: "Távolság"
+    mód: "single"
     sorok:
       - { érték: -9, leírás: "Testközelbe; Orvtámadás" }
       - { érték: -6, leírás: "1-5 méter; Meglepetés" }
