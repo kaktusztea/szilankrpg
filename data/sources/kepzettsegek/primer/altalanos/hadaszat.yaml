@@ -17,3 +17,13 @@ mesterbónuszok:
   - szint: 15
     leírás: ""
 szerepjátékos_módosító: false
+helyzetfüggő_módosítók:
+  - kategória: "Tanácsadók"
+    mód: "single"
+    sorok:
+      - { érték: -3, leírás: "Rossz tanácsadók" }
+      - { érték: +3, leírás: "Jó tanácsadók" }
+  - kategória: "Szabotőr"
+    mód: "multi"
+    sorok:
+      - { érték: -6, leírás: "Szabotőr aknamunkája" }

@@ -17,3 +17,8 @@ mesterbónuszok:
   - szint: 15
     leírás: "Bármilyen magasból puha érkezés. Ugrásmagasság négyszereződik."
 szerepjátékos_módosító: false
+helyzetfüggő_módosítók:
+  - kategória: "Körülmény"
+    mód: "multi"
+    sorok:
+      - { érték: -6, leírás: "Csúszós talaj" }

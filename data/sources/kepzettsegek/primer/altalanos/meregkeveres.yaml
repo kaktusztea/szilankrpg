@@ -17,3 +17,13 @@ mesterbónuszok:
   - szint: 15
     leírás: ""
 szerepjátékos_módosító: false
+helyzetfüggő_módosítók:
+  - kategória: "Felszerelés"
+    mód: "single"
+    sorok:
+      - { érték: -3, leírás: "Szegényes felszerelés" }
+      - { érték: +3, leírás: "Jól felszerelt laboratórium" }
+  - kategória: "Körülmény"
+    mód: "multi"
+    sorok:
+      - { érték: -3, leírás: "Hiányzó, de helyettesíthető komponensek" }

@@ -19,3 +19,4 @@ mesterbónuszok:
   - szint: 15
     leírás: "Sebzéstípus büntetések megszűnnek. Alacsonyabb szintű ellenfél azonnali harcképtelenné tétele sebzéskor."
 szerepjátékos_módosító: false
+helyzetfüggő_módosítók: ""

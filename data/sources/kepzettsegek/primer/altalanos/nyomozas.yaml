@@ -17,3 +17,17 @@ mesterbónuszok:
   - szint: 15
     leírás: ""
 szerepjátékos_módosító: true
+helyzetfüggő_módosítók:
+  - kategória: "Helyszín"
+    mód: "single"
+    sorok:
+      - { érték: -3, leírás: "Megbolygatott helyszín" }
+      - { érték: -6, leírás: "Összejárkált helyszín" }
+  - kategória: "Szemtanú"
+    mód: "multi"
+    sorok:
+      - { érték: +3, leírás: "Hasznos szemtanú" }
+  - kategória: "Eszközök"
+    mód: "multi"
+    sorok:
+      - { érték: +3, leírás: "Porok, nagyító, lámpák (ha segítenek)" }
