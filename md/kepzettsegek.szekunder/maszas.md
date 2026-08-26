@@ -77,13 +77,19 @@ Visszahajló acélfalon felmászni.
 ---
 ### Helyzetfüggő módosítók
 
-- Rontott próba utáni **Mentő** képzettségpróba: `-3`
-- Gyorsan mászni: `-3`
-- Sötétben mászni: `-3`
-- Plusz súllyal mászni: Erőtől függ, a KM dönt. Keretek: `[-1; -6]` ; Erőpróba kellhet
-- Lengő kötélen mászni: `-3`
-- Sérülten mászni: [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
-- Mászókampók: `+3` → csak ha a mászófelületbe könnyen rögzíthetőek.
+#### ⚜️ Körülmény 🔀
+
+```
+-3: Gyorsan mászni
+-3: Sötétben mászni
+-3: Lengő kötélen mászni
+-3: Mentő próba (rontás után)
++3: Mászókampók (csak ha könnyen rögzíthetőek)
+```
+
+Plusz súllyal mászni: Erőtől függ, a KM dönt. Keretek: `[-1; -6]` ; Erőpróba kellhet
+
+Sérülten mászni: [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
 
 <br />
 

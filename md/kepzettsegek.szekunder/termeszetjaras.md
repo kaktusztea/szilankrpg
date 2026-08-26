@@ -103,6 +103,12 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 ---
 ### Helyzetfüggő módosítók
 
-- Rossz időjárás: `[-1; -6]`
+#### ⚜️ Időjárás 1️⃣
+
+```
+-6: Szélsőséges időjárás
+-3: Rossz időjárás
++0: Normál időjárás
+```
 
 ---

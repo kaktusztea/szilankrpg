@@ -112,8 +112,21 @@ Alapvető nem leplezett személyiségvonások felismerése.
 ---
 ### Helyzetfüggő módosítók
 
-- Rövidebb/Hosszabb a kontaktus ideje és/vagy mély / kevésbé mély az alapesetnél: `[-3;+3]`
-- Más fajú a célszemély: `-3`
-- Asztrál szem hatása: ⭕TODO⭕
+#### ⚜️ Kontaktus 1️⃣
+
+```
+-3: Rövidebb kontaktus
++0: Átlagos kontaktus
++3: Hosszabb, mélyebb kontaktus
+```
+
+#### ⚜️ Faj 1️⃣
+
+```
+-3: Más fajú a célszemély
++0: Azonos faj
+```
+
+Asztrál szem hatása: ⭕TODO⭕
 
 ---

@@ -132,4 +132,9 @@ Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegp
 ---
 ### Helyzetfüggő módosítók
 
-- Rövid határidő: `-3`
+#### ⚜️ Körülmény 1️⃣
+
+```
+-3: Rövid határidő
++0: Normál körülmények
+```

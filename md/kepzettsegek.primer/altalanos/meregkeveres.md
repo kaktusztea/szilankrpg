@@ -56,6 +56,16 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 ---
 ### Helyzetfüggő módosítók
 
-- Szegényes felszerelés: `-3`
-- Jó felszerelt laboratórium: `+3`
-- Hiányzó, de helyettesíthető komponensek: `-3`
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-3: Szegényes felszerelés
++0: Normál felszerelés
++3: Jól felszerelt laboratórium
+```
+
+#### ⚜️ Körülmény 🔀
+
+```
+-3: Hiányzó, de helyettesíthető komponensek
+```

@@ -78,4 +78,8 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 ---
 ### Helyzetfüggő módosítók
 
-- csúszós talaj: `-6`
+#### ⚜️ Körülmény 🔀
+
+```
+-6: Csúszós talaj
+```

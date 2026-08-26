@@ -90,9 +90,19 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 ---
 ### Helyzetfüggő módosítók
 
-- Rendelkezésre álló idő
-  - Kapkodás: `-3`
-  - ráérős munka `+2`
-- Környezet inspiráló hatása (pl. szent hely, művésztelep): `+2`
+#### ⚜️ Idő 1️⃣
+
+```
+-3: Kapkodás
++0: Normál tempó
++2: Ráérős munka
+```
+
+#### ⚜️ Környezet 1️⃣
+
+```
++0: Normál környezet
++2: Inspiráló környezet (pl. szent hely, művésztelep)
+```
 
 ---

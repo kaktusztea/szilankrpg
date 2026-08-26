@@ -102,6 +102,11 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ---
 ### Helyzetfüggő módosítók
 
-- Kapkodó munka: `-3`
+#### ⚜️ Körülmény 1️⃣
+
+```
+-3: Kapkodó munka
++0: Normál körülmények
+```
 
 ---

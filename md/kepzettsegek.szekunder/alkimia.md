@@ -95,6 +95,13 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 ---
 ### Helyzetfüggő módosítók
 
-Rosszul felszerelt labor, műszerek hiánya: `[-3; -9]`
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-9: Súlyosan hiányos labor
+-6: Rosszul felszerelt labor
+-3: Hiányos műszerek
++0: Megfelelő labor
+```
 
 ---

@@ -97,10 +97,19 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 ---
 ### Helyzetfüggő módosítók
 
-- Gyorsan, nyomás alatt keresni: `-3`
-- Zavaró körülmények
-    - `enyhén: -3`
-    - `nagyon: -6`
-- Ha az észlelés aktív: `+3`
+#### ⚜️ Körülmény 🔀
+
+```
+-3: Gyorsan, nyomás alatt keresni
++3: Aktív, koncentrált keresés
+```
+
+#### ⚜️ Zavaró körülmények 1️⃣
+
+```
+-6: Nagyon zavaró
+-3: Enyhén zavaró
++0: Normál körülmények
+```
 
 ---

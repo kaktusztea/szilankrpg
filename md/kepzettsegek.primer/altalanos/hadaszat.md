@@ -90,9 +90,16 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 ---
 ### Helyzetfüggő módosítók
 
-Tanácsadók
-- rossz tanácsadók: `-3`
-- jó tanácsadók: `+3`
+#### ⚜️ Tanácsadók 1️⃣
 
-Szabotőr
-- szabotőr aknamunkája: `-6`
+```
+-3: Rossz tanácsadók
++0: Átlagos tanácsadók
++3: Jó tanácsadók
+```
+
+#### ⚜️ Szabotőr 🔀
+
+```
+-6: Szabotőr aknamunkája
+```

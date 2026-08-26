@@ -80,5 +80,11 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 ---
 ### Helyzetfüggő módosítók
 
-- Vad hátas: `[-1; -3]`
-- Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
+#### ⚜️ Hátas 1️⃣
+
+```
+-3: Vad hátas
++0: Betört hátas
+```
+
+Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges

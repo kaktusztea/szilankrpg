@@ -78,6 +78,11 @@ Intelligencia, Önuralom
 ---
 ### Helyzetfüggő módosítók
 
-- Csapda hatástalanítása külső nyom hátrahagyása nélkül: `-3`
+#### ⚜️ Körülmény 1️⃣
+
+```
+-3: Nyom nélkül hatástalanítani
++0: Normál körülmények
+```
 
 ---

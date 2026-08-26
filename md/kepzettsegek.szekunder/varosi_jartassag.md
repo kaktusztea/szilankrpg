@@ -105,8 +105,20 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 ---
 ### Helyzetfüggő módosítók
 
-- Szűkös határidő: `-3`
-- Jó hírnév: `+3`
-- Rossz hírnév, karma: `[-3; -6]`
+#### ⚜️ Körülmény 1️⃣
+
+```
+-3: Szűkös határidő
++0: Normál körülmények
++3: Jó hírnév
+```
+
+#### ⚜️ Hírnév/Karma 1️⃣
+
+```
+-6: Rossz hírnév, súlyos karma
+-3: Rossz hírnév, karma
++0: Semleges
+```
 
 ---

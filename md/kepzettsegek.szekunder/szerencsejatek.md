@@ -82,7 +82,12 @@ Szerencsejáték
 ---
 ### Helyzetfüggő módosítók
 
-- Kocsma, barátságos közeg: `+3`
-- Teljesen idegen kaszinó, ismeretlen szabályok: `-3`
+#### ⚜️ Közeg 1️⃣
+
+```
+-3: Ismeretlen kaszinó, idegen szabályok
++0: Normál környezet
++3: Kocsma, barátságos közeg
+```
 
 ---

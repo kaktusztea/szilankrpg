@@ -111,8 +111,28 @@ Próba dobható.
 ---
 ### Helyzetfüggő módosítók
 
-- Könyvtár: `[+1; +6]`
-- Hozzáférés: tiltott források vagy hiányos anyag: `[-1; -6]`
-- Nyelvi nehézségek: fordítás, nyelvjárás: `[-2; -4]`
+#### ⚜️ Könyvtár 1️⃣
+
+```
++0: Nincs könyvtár
++3: Jó könyvtár
++6: Kiváló könyvtár
+```
+
+#### ⚜️ Hozzáférés 1️⃣
+
+```
+-6: Tiltott/hiányos anyag, súlyos
+-3: Hiányos anyag
++0: Szabad hozzáférés
+```
+
+#### ⚜️ Nyelv 1️⃣
+
+```
+-4: Súlyos nyelvi nehézség
+-2: Nyelvjárás, fordítás
++0: Anyanyelvű szöveg
+```
 
 ---

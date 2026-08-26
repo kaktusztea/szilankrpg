@@ -115,12 +115,22 @@ Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befoly
 ---
 ### Helyzetfüggő módosítók
 
-Helyszín
-- megbolygatott helyszín: `-3`
-- összejárkált helyszín: `-6`
+#### ⚜️ Helyszín 1️⃣
 
-Szemtanú
-- hasznos szemtanú: `+3`
+```
+-6: Összejárkált helyszín
+-3: Megbolygatott helyszín
++0: Érintetlen helyszín
+```
 
-Eszközök
-- Porok, nagyító, lámpák: `+3` (HA segítenek)
+#### ⚜️ Szemtanú 🔀
+
+```
++3: Hasznos szemtanú
+```
+
+#### ⚜️ Eszközök 🔀
+
+```
++3: Porok, nagyító, lámpák (ha segítenek)
+```

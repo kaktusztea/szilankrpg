@@ -82,18 +82,29 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 ---
 ### Helyzetfüggő módosítók
 
-**Időjárás**:
-- Enyhe szél, jó idő: `+0`
-- Erős szél, zivatar: `-3`
-- Vihar, orkán: `-6 / -9`
+#### ⚜️ Időjárás 1️⃣
 
-**Hajó állapota**:
-- Karbantartott, jó állapotú: `+0`
-- Sérült vagy túlterhelt: `-3 / -6`
+```
+-9: Vihar, orkán
+-6: Erős vihar
+-3: Erős szél, zivatar
++0: Enyhe szél, jó idő
+```
 
-**Legénység**:
-- Tapasztalt legénység: `+0`
-- Egyenetlen, fegyelmezetlen: `-3`
-- Képzetlen zsoldosok, rakodómunkások: `-6`
+#### ⚜️ Hajó állapota 1️⃣
+
+```
+-6: Súlyosan sérült vagy túlterhelt
+-3: Sérült vagy túlterhelt
++0: Karbantartott, jó állapotú
+```
+
+#### ⚜️ Legénység 1️⃣
+
+```
+-6: Képzetlen zsoldosok
+-3: Fegyelmezetlen legénység
++0: Tapasztalt legénység
+```
 
 ---

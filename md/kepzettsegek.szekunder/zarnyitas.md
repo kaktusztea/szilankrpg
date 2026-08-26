@@ -83,8 +83,12 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 ---
 ### Helyzetfüggő módosítók
 
-- Sietős nyitás: `-3`
-- Zavaró tényezők (zaj, káosz, sötét): `-3`
-- Hiányos eszközök: `-3`
+#### ⚜️ Körülmény 🔀
+
+```
+-3: Sietős nyitás
+-3: Zavaró tényezők (zaj, káosz, sötét)
+-3: Hiányos eszközök
+```
 
 ---

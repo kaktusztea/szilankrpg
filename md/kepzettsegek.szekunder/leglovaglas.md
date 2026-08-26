@@ -82,8 +82,19 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 ---
 ### Helyzetfüggő módosítók
 
-- Vad hátas: `[-1; -3]`
-- Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
-- Időjárás:
-    - Erős szél vagy felhőszakadás: `-3`
-    - Vihar, orkán: `-6`
+#### ⚜️ Hátas 1️⃣
+
+```
+-3: Vad hátas
++0: Betört hátas
+```
+
+Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
+
+#### ⚜️ Időjárás 1️⃣
+
+```
+-6: Vihar, orkán
+-3: Erős szél vagy felhőszakadás
++0: Normál időjárás
+```

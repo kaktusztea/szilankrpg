@@ -119,18 +119,27 @@ Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzőe
 ---
 ### Helyzetfüggő módosítók
 
-```
-Kiemelt archetípusod: +3
-```
+#### ⚜️ Archetípus 1️⃣
 
 ```
--3: Gyors átöltözés
++0: Egyéb archetípus
++3: Kiemelt archetípusod
+```
+
+#### ⚜️ Idő 1️⃣
+
+```
 -6: Átöltözés másodpercek alatt
+-3: Gyors átöltözés
++0: Normál tempó
 ```
 
+#### ⚜️ Felszerelés 1️⃣
+
 ```
--3: Szegényes felszerelés
 -6: Minimális felszerelés
+-3: Szegényes felszerelés
++0: Megfelelő felszerelés
 ```
 
 Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély

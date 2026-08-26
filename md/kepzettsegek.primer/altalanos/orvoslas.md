@@ -119,9 +119,15 @@ Gyógyulási sebesség szorzó: `x3`.
 ---
 ### Helyzetfüggő módosítók
 
-Felszerelés
-- Szegényes felszerelés: `-3`
-- Felszerelés nélkül: `-6`
+#### ⚜️ Felszerelés 1️⃣
 
-Körülmény
-- Páciens ellenáll: `-6`
+```
+-3: Szegényes felszerelés
+-6: Felszerelés nélkül
+```
+
+#### ⚜️ Körülmény 🔀
+
+```
+-6: Páciens ellenáll
+```

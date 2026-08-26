@@ -128,7 +128,11 @@ Emlékezet, Érzékenység.
 ---
 ### Helyzetfüggő módosítók
 
-- Könyvtár: `+3`
-- Tanító aktívan segít: `+3`
+#### ⚜️ Segédeszköz 🔀
+
+```
++3: Könyvtár
++3: Tanító aktívan segít
+```
 
 ---
