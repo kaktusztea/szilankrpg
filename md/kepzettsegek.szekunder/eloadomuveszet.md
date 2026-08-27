@@ -100,7 +100,7 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 
 ```
 -6: Ellenséges tömeg
--3: Közönyös közönség
+-3: Ellenszenves közönség
 +0: Normál közönség
 ```
 

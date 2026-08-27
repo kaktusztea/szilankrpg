@@ -87,8 +87,14 @@ Emlékezet, Intelligencia
 - Legendás lény (pl. unikornis, mantikór, sárkány) szervének kezelése és hatásainak kinyerése, tartósítása.
 
 ---
-## Módosító körülmények
+### Helyzetfüggő módosítók
 
-- Felszereltség: `[-3;+3]`
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-3: Szegényes felszerelés
++0: Normál felszerelés
++3: Jól felszerelt labor
+```
 
 ---

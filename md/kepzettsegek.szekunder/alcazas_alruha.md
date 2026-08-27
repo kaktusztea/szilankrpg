@@ -119,10 +119,9 @@ Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzőe
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Archetípus 1️⃣
+#### ⚜️ Archetípus 🔀
 
 ```
-+0: Egyéb archetípus
 +3: Kiemelt archetípusod
 ```
 

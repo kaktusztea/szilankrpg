@@ -78,11 +78,25 @@ Intelligencia, Önuralom
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Körülmény 1️⃣
+#### ⚜️ Idő 1️⃣
+
+```
+-6: Kapkodós állítás/hatástalanítás
+-3: Gyors állítás/hatástalanítás
++0: Normál tempó
+```
+
+#### ⚜️ Környezet 🔀
+
+```
+-3: Zavaró körülmények
+-3: Rossz látási viszonyok
+```
+
+#### ⚜️ Csapda hatástalanítás 🔀
 
 ```
 -3: Nyom nélkül hatástalanítani
-+0: Normál körülmények
 ```
 
 ---

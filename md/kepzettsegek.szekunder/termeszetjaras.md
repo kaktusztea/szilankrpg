@@ -111,4 +111,12 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 +0: Normál időjárás
 ```
 
+#### ⚜️ Vad becserkészése 🔀
+
+```
+-6: Szél felől közelítesz
+    jó szaglású vad felé
+-6: Zajos aljnövényzet
+```
+
 ---

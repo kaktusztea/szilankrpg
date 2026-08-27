@@ -106,7 +106,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 ```
 -3: Kapkodó munka
-+0: Normál körülmények
+ 0: Normális kutatás
 ```
 
 ---

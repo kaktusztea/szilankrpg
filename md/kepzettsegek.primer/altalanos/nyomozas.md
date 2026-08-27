@@ -123,14 +123,16 @@ Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befoly
 +0: Érintetlen helyszín
 ```
 
-#### ⚜️ Szemtanú 🔀
+#### ⚜️ Szemtanú 1️⃣
 
 ```
+ 0: Nincs hasznos szemtanú
 +3: Hasznos szemtanú
 ```
 
-#### ⚜️ Eszközök 🔀
+#### ⚜️ Eszközök 1️⃣
 
 ```
-+3: Porok, nagyító, lámpák (ha segítenek)
+ 0: Eszközök nélkül
++3: Porok / nagyító / lámpák (ha segítenek)
 ```

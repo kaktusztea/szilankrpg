@@ -122,12 +122,15 @@ Gyógyulási sebesség szorzó: `x3`.
 #### ⚜️ Felszerelés 1️⃣
 
 ```
--3: Szegényes felszerelés
 -6: Felszerelés nélkül
+-3: Szegényes felszerelés
+ 0: Normál felszerelés
 ```
 
 #### ⚜️ Körülmény 🔀
 
 ```
 -6: Páciens ellenáll
++3: hasznos gyógyszer (vajákos készítette)
++6: legjobb gyógyszer (vajákos készítette)
 ```

@@ -94,3 +94,12 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 - Olyan rejtett, kódolt üzeneteket megfejteni, amit az alkotó szándékosan rejtett el.
 
 ---
+### Helyzetfüggő módosítók
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
++0: Nincs könyvtár
++3: Jó könyvtár
++6: Kiváló könyvtár
+```

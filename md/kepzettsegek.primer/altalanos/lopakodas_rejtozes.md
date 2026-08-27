@@ -94,13 +94,13 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 #### ⚜️ Láthatóság (lopakodó) 1️⃣
 
 ```
--6 Világosban, éles kontúrral válsz el a háttértől
+-6: Világosban, éles kontúrral válsz el a háttértől
 -3: Világosban, háttértől elütő ruházatban
 +0: Átlagos nappali fény, ruhád nem üt el a háttértől
 +3: Szürkület, félhomály
 +6: Vaksötét. Szabad szemmel csak
     Infra- vagy Ultralátással vagy észlelhető
-+6: a lopakodó Láthatatlan
++6: Láthatatlan vagy
 ```
 
 Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
@@ -108,15 +108,16 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 #### ⚜️ Látótér (lopakodó) 1️⃣
 
 ```
--6: lopakodó direkt a látótérben
-+0: lopakodó az észlelő látásának perifériáján halad
-+6: lopakodó az észlelő látókörén kívül halad
+-6: lopakodó a látótérben van
++0: lopakodó az észlelő látásának perifériáján
++6: lopakodó az észlelő látókörén kívül
 ```
 
 #### ⚜️ Mozgás (lopakodó) 1️⃣
 
 ```
 -6: gyors haladás
+ 0: Megfontolt haladás
 ```
 
  [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.

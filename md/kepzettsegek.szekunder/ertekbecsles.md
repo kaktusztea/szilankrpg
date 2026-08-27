@@ -43,6 +43,11 @@ Emlékezet, Intelligencia
 ---
 ### Próbák 🎲
 
+A Nehézség meghatározásánál vegyük figyelmebe az alábbiakat (is):
+- Tárgy komplexitása
+- Tárgy ritkasága
+- Tárgy kora
+
 #### Könnyű (6) 🎲
 
 - Megállapítani egy hétköznapi tárgy (pl. egyszerű ékszer, boros kupa) hozzávetőleges piaci értékét.
@@ -85,6 +90,12 @@ Emlékezet, Intelligencia
 ---
 ### Helyzetfüggő módosítók
 
-- Tárgy komplexitása
-- Tárgy ritkasága
-- Tárgy kora
+#### ⚜️ Könyvtár 1️⃣
+
+```
++0: Nincs könyvtár
++3: Jó könyvtár
++6: Kiváló könyvtár
+```
+
+---

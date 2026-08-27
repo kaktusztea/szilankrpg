@@ -78,10 +78,11 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Körülmény 🔀
+#### ⚜️ Körülmény  1️⃣
 
 ```
 -6: Csúszós talaj
+ 0: Normál talaj
 ```
 
 Kapcsolódhat: [Csúszós talaj](../../065_01_03_negativ_helyzetek.md#cs%C3%BAsz%C3%B3s-talaj) harci helyzet (küzdelem esetén)

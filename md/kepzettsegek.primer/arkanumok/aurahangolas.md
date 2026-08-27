@@ -69,4 +69,11 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 ---
 ### Helyzetfüggő módosítók
 
-- ⭕TODO⭕
+A Mágia akaratát külön kezeljük.
+
+```
+→ Aurakiterjesztés (szellemkéz, zóna)
+→ Auraerősítés formula bónusza
+→ Metódus 3. foka
+→ Szituáció, összhang
+```

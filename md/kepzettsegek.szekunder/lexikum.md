@@ -122,7 +122,7 @@ Próba dobható.
 #### ⚜️ Hozzáférés 1️⃣
 
 ```
--6: Tiltott/hiányos anyag, súlyos
+-6: Tiltott/erősen hiányos anyag
 -3: Hiányos anyag
 +0: Szabad hozzáférés
 ```
@@ -130,8 +130,8 @@ Próba dobható.
 #### ⚜️ Nyelv 1️⃣
 
 ```
--4: Súlyos nyelvi nehézség
--2: Nyelvjárás, fordítás
+-6: Súlyos nyelvi nehézség
+-3: Idegen nyelvjárás
 +0: Anyanyelvű szöveg
 ```
 

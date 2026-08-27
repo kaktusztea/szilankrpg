@@ -80,4 +80,5 @@ Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynö
 ```
 -6: Szegényes, sérült ruházat
 -3: szabálytalan ruházat, smink
+ 0: Megfelelő ruházat, smink
 ```

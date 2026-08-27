@@ -136,5 +136,5 @@ Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegp
 
 ```
 -3: Rövid határidő
-+0: Normál körülmények
+ 0: Normál határidő
 ```

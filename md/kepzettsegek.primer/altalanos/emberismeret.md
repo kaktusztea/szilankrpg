@@ -112,7 +112,7 @@ Alapvető nem leplezett személyiségvonások felismerése.
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Kontaktus 1️⃣
+#### ⚜️ Személyiség érzékelése esetén 1️⃣
 
 ```
 -3: Rövidebb kontaktus
@@ -123,10 +123,9 @@ Alapvető nem leplezett személyiségvonások felismerése.
 #### ⚜️ Faj 1️⃣
 
 ```
--3: Más fajú a célszemély
-+0: Azonos faj
+-6: Teljesen idegen fajú célszemély
+-3: Más fajú/kultúrájú célszemély
+ 0: Azonos fajú/kultúrájú célszemély
 ```
-
-Asztrál szem hatása: ⭕TODO⭕
 
 ---

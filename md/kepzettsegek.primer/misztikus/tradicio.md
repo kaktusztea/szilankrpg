@@ -7,3 +7,10 @@ A Tradíciók összefoglaló leírását és listáját lásd annak a saját fej
 ### Domináns Tulajdonságok
 
 Tradíciótól függ.
+
+---
+### Helyzetfüggő módosítók
+
+\-
+
+---

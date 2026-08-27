@@ -95,14 +95,14 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 ```
 -3: Kapkodás
 +0: Normál tempó
-+2: Ráérős munka
++3: Ráérős munka
 ```
 
 #### ⚜️ Környezet 1️⃣
 
 ```
 +0: Normál környezet
-+2: Inspiráló környezet (pl. szent hely, művésztelep)
++3: Inspiráló környezet (szent hely, művésztelep)
 ```
 
 ---

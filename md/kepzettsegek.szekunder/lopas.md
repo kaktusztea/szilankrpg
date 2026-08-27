@@ -90,7 +90,7 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
 ```
 -3: Kapkodni kell
--3: Nincs meg a testközeli távolság, csak pár lépés
+-3: Nincs meg a testközel-távolság, csak pár lépés
 -3: Több tárgy manipulálása szinte egy időben
 +3: Zajos, zsibongó környezet
 ```

@@ -98,8 +98,9 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 +3: Jó tanácsadók
 ```
 
-#### ⚜️ Szabotőr 🔀
+#### ⚜️ Szabotőr 1️⃣
 
 ```
 -6: Szabotőr aknamunkája
+ 0: Nincs szabotőr
 ```

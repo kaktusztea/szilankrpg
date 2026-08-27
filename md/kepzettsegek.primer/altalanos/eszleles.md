@@ -97,7 +97,7 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Körülmény 🔀
+#### ⚜️ Keresés 🔀
 
 ```
 -3: Gyorsan, nyomás alatt keresni
