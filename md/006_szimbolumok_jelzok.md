@@ -18,6 +18,10 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🔁 Többször felvehető ismeret
 
+1️⃣ Képzettségek - Helyzetfüggő módosítók - `1 db` választható
+
+🔀 Képzettségek - Helyzetfüggő módosítók - több választható
+
 🗡️ Harci taktika, Harci szituáció vagy Manőver
 
 `k20T`: `k20` dobás tízes része (`5 → 0,  16 → 1,  20 → 2`)
