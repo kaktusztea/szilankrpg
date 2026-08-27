@@ -83,13 +83,33 @@ Visszahajló acélfalon felmászni.
 -3: Gyorsan mászni
 -3: Sötétben mászni
 -3: Lengő kötélen mászni
--3: Mentő próba (rontás után)
-+3: Mászókampók (csak ha könnyen rögzíthetőek)
+-3: Rontott próba ❗ után Mentő dobás
++3: Mászókampók (csak segítenek)
 ```
 
-Plusz súllyal mászni: Erőtől függ, a KM dönt. Keretek: `[-1; -6]` ; Erőpróba kellhet
+#### ⚜️ Túlsúly
 
-Sérülten mászni: [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
+```
+-6: nagy túlsúly
+-3: kis túlsúly
+ 0: nincs túlsúly
+ 
+ Infó: Erőpróba kellhet
+```
+
+#### ⚜️ Erő Tulajdonság bevetése mentő dobásnál 🔀
+
+```
+1 ... +X
+
+→ X = Erő Tulajdonság, felhasználása levon Erőből
+→ Erő +0 értékig lehet lemenni
+→ Pihenésben 1 pont / perc tér vissza
+```
+
+#### ⚜️ Sérülten mászni
+
+[Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
 
 <br />
 
@@ -101,25 +121,25 @@ Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#ö
 ---
 ### Rontott mászás próba után: Mentő képzettségpróba
 
-Kiemelt szituáció a mászás próba rontása, hiszen itt sokszor élet-halál szituációban van a karakter - adnunk kell számára esélyt, hogy hibájából kikeveredjen. Ilyenkor azonnal egy új - soron kívüli - Mászás képzettségpróbát (sima, nem összetett) kell dobni **Edzettség** Tulajdonsággal és emelt Nehézséggel:
-
-Mentő Mászás képzettségpróba dobás:
+Kiemelt szituáció a mászás próba rontása, hiszen itt sokszor élet-halál szituációban van a karakter - adnunk kell számára esélyt, hogy hibájából kikeveredjen. Ilyenkor azonnal egy új - soron kívüli - Mentő Mászás képzettségpróbát (sima, nem összetett) kell dobni **Edzettség** Tulajdonsággal:
 
 ```
-Eredeti Nehézség +3
+Mentő dobás módosító: -3
+(rontás után)
 ```
 
 #### Erő bevetése rontott mászás utáni mentő képzettségpróba dobásnál
 
 ```
 +0 Erőig lehet lemenni
-Mentő Mászás dobásnál
+   Mentő Mászás dobásnál
 ```
 
 Az **Erő** Tulajdonság bevethető rontás utáni Mentő Mászás képzettségpróbánál. ilyenkor **Erő** Tulajdonságból pontokat tehetünk a próbába. Ennek hatására az **Erő** Tulajdonság - a költés mértékével - ideiglenesen lecsökken. Korlát: `+0` értékig csökkenthetjük így a Tulajdonságot.
 
 Az elköltött **Erő** pontok az aktuális mászó szituáció végéig nem térnek vissza. Pihenésben `1 pont / perc` tér vissza.
 
+---
 ### Megállás ÉS pihenés a falon rontás után
 
 Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg kell állni, pihenni a falon.
