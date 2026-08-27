@@ -24,3 +24,8 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Szélsőséges időjárás" }
       - { érték: -3, leírás: "Rossz időjárás" }
       - { érték: 0, leírás: "Normál időjárás" }
+  - kategória: "Vad becserkészése"
+    mód: "multi"
+    sorok:
+      - { érték: -6, leírás: "Szél felől közelítesz jó szaglású vad felé" }
+      - { érték: -6, leírás: "Zajos aljnövényzet" }

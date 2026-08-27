@@ -21,5 +21,5 @@ helyzetfüggő_módosítók:
   - kategória: "Nyelvi akadály"
     mód: "single"
     sorok:
-      - { érték: -3, leírás: "Olyan nyelven próbálsz hatni, amit nem ért" }
-      - { érték: 0, leírás: "Közös nyelv" }
+      - { érték: -3, leírás: "Célszemély nem érti a nyelved" }
+      - { érték: 0, leírás: "Azonos nyelven beszéltek" }

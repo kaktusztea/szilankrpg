@@ -18,8 +18,18 @@ mesterbónuszok:
     leírás: ""
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
-  - kategória: "Körülmény"
+  - kategória: "Idő"
     mód: "single"
     sorok:
+      - { érték: -6, leírás: "Kapkodós állítás/hatástalanítás" }
+      - { érték: -3, leírás: "Gyors állítás/hatástalanítás" }
+      - { érték: 0, leírás: "Normál tempó" }
+  - kategória: "Környezet"
+    mód: "multi"
+    sorok:
+      - { érték: -3, leírás: "Zavaró körülmények" }
+      - { érték: -3, leírás: "Rossz látási viszonyok" }
+  - kategória: "Csapda hatástalanítás"
+    mód: "multi"
+    sorok:
       - { érték: -3, leírás: "Nyom nélkül hatástalanítani" }
-      - { érték: 0, leírás: "Normál körülmények" }

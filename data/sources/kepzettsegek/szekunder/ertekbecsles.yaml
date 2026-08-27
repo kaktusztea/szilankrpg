@@ -17,4 +17,10 @@ mesterbónuszok:
   - szint: 15
     leírás: ""
 szerepjátékos_módosító: false
-helyzetfüggő_módosítók: ""
+helyzetfüggő_módosítók:
+  - kategória: "Könyvtár"
+    mód: "single"
+    sorok:
+      - { érték: 0, leírás: "Nincs könyvtár" }
+      - { érték: 3, leírás: "Jó könyvtár" }
+      - { érték: 6, leírás: "Kiváló könyvtár" }

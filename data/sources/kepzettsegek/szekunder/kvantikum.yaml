@@ -22,4 +22,4 @@ helyzetfüggő_módosítók:
     mód: "single"
     sorok:
       - { érték: -3, leírás: "Kapkodó munka" }
-      - { érték: 0, leírás: "Normál körülmények" }
+      - { érték: 0, leírás: "Normális kutatás" }

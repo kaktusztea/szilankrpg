@@ -23,9 +23,9 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -3, leírás: "Kapkodás" }
       - { érték: 0, leírás: "Normál tempó" }
-      - { érték: 2, leírás: "Ráérős munka" }
+      - { érték: 3, leírás: "Ráérős munka" }
   - kategória: "Környezet"
     mód: "single"
     sorok:
       - { érték: 0, leírás: "Normál környezet" }
-      - { érték: 2, leírás: "Inspiráló környezet" }
+      - { érték: 3, leírás: "Inspiráló környezet (szent hely, művésztelep)" }

@@ -21,8 +21,8 @@ helyzetfüggő_módosítók:
   - kategória: "Archetípus"
     mód: "single"
     sorok:
-      - { érték: 3, leírás: "Kiemelt archetípusod" }
-      - { érték: 0, leírás: "Egyéb archetípus" }
+      - { érték: 0, leírás: "Nem kiemelt" }
+      - { érték: 3, leírás: "Kiemelt" }
   - kategória: "Idő"
     mód: "single"
     sorok:

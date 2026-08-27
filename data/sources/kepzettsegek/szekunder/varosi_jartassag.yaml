@@ -18,15 +18,15 @@ mesterbónuszok:
     leírás: ""
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
-  - kategória: "Körülmény"
+  - kategória: "Idő"
     mód: "single"
     sorok:
       - { érték: -3, leírás: "Szűkös határidő" }
-      - { érték: 0, leírás: "Normál körülmények" }
-      - { érték: 3, leírás: "Jó hírnév" }
+      - { érték: 0, leírás: "Normál ügymenet" }
   - kategória: "Hírnév/Karma"
     mód: "single"
     sorok:
       - { érték: -6, leírás: "Rossz hírnév, súlyos karma" }
       - { érték: -3, leírás: "Rossz hírnév, karma" }
       - { érték: 0, leírás: "Semleges" }
+      - { érték: 3, leírás: "Jó hírnév" }

@@ -19,6 +19,7 @@ mesterbónuszok:
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Körülmény"
-    mód: "multi"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Csúszós talaj" }
+      - { érték: 0, leírás: "Normál talaj" }

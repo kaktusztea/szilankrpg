@@ -12,11 +12,15 @@
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
-        "mód": "multi",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
             "leírás": "Csúszós talaj"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál talaj"
           }
         ]
       }
@@ -310,12 +314,12 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 3,
-            "leírás": "Kiemelt archetípusod"
+            "érték": 0,
+            "leírás": "Nem kiemelt"
           },
           {
-            "érték": 0,
-            "leírás": "Egyéb archetípus"
+            "érték": 3,
+            "leírás": "Kiemelt"
           }
         ]
       },
@@ -382,11 +386,11 @@
         "sorok": [
           {
             "érték": -3,
-            "leírás": "Olyan nyelven próbálsz hatni, amit nem ért"
+            "leírás": "Célszemély nem érti a nyelved"
           },
           {
             "érték": 0,
-            "leírás": "Közös nyelv"
+            "leírás": "Azonos nyelven beszéltek"
           }
         ]
       }
@@ -424,16 +428,44 @@
     ],
     "helyzetfüggő_módosítók": [
       {
-        "kategória": "Körülmény",
+        "kategória": "Idő",
         "mód": "single",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Kapkodós állítás/hatástalanítás"
+          },
+          {
+            "érték": -3,
+            "leírás": "Gyors állítás/hatástalanítás"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál tempó"
+          }
+        ]
+      },
+      {
+        "kategória": "Környezet",
+        "mód": "multi",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Zavaró körülmények"
+          },
+          {
+            "érték": -3,
+            "leírás": "Rossz látási viszonyok"
+          }
+        ]
+      },
+      {
+        "kategória": "Csapda hatástalanítás",
+        "mód": "multi",
         "sorok": [
           {
             "érték": -3,
             "leírás": "Nyom nélkül hatástalanítani"
-          },
-          {
-            "érték": 0,
-            "leírás": "Normál körülmények"
           }
         ]
       }
@@ -468,7 +500,7 @@
           },
           {
             "érték": -3,
-            "leírás": "Közönyös közönség"
+            "leírás": "Ellenszenves közönség"
           },
           {
             "érték": 0,
@@ -498,7 +530,7 @@
     ],
     "helyzetfüggő_módosítók": [
       {
-        "kategória": "Kontaktus",
+        "kategória": "Személyiség érzékelése esetén",
         "mód": "single",
         "sorok": [
           {
@@ -520,12 +552,16 @@
         "mód": "single",
         "sorok": [
           {
+            "érték": -6,
+            "leírás": "Teljesen idegen fajú célszemély"
+          },
+          {
             "érték": -3,
-            "leírás": "Más fajú a célszemély"
+            "leírás": "Más fajú/kultúrájú célszemély"
           },
           {
             "érték": 0,
-            "leírás": "Azonos faj"
+            "leírás": "Azonos fajú/kultúrájú célszemély"
           }
         ]
       }
@@ -571,6 +607,10 @@
           {
             "érték": -3,
             "leírás": "szabálytalan ruházat, smink"
+          },
+          {
+            "érték": 0,
+            "leírás": "Megfelelő ruházat, smink"
           }
         ]
       }
@@ -589,7 +629,26 @@
       "Emlékezet",
       "Intelligencia"
     ],
-    "helyzetfüggő_módosítók": "",
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Könyvtár",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 0,
+            "leírás": "Nincs könyvtár"
+          },
+          {
+            "érték": 3,
+            "leírás": "Jó könyvtár"
+          },
+          {
+            "érték": 6,
+            "leírás": "Kiváló könyvtár"
+          }
+        ]
+      }
+    ],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
@@ -606,7 +665,7 @@
     ],
     "helyzetfüggő_módosítók": [
       {
-        "kategória": "Körülmény",
+        "kategória": "Keresés",
         "mód": "multi",
         "sorok": [
           {
@@ -1023,11 +1082,15 @@
       },
       {
         "kategória": "Szabotőr",
-        "mód": "multi",
+        "mód": "single",
         "sorok": [
           {
             "érték": -6,
             "leírás": "Szabotőr aknamunkája"
+          },
+          {
+            "érték": 0,
+            "leírás": "Nincs szabotőr"
           }
         ]
       }
@@ -1174,7 +1237,7 @@
             "leírás": "Normál tempó"
           },
           {
-            "érték": 2,
+            "érték": 3,
             "leírás": "Ráérős munka"
           }
         ]
@@ -1188,8 +1251,8 @@
             "leírás": "Normál környezet"
           },
           {
-            "érték": 2,
-            "leírás": "Inspiráló környezet"
+            "érték": 3,
+            "leírás": "Inspiráló környezet (szent hely, művésztelep)"
           }
         ]
       }
@@ -1219,7 +1282,7 @@
           },
           {
             "érték": 0,
-            "leírás": "Normál körülmények"
+            "leírás": "Normál határidő"
           }
         ]
       }
@@ -1254,7 +1317,7 @@
           },
           {
             "érték": 0,
-            "leírás": "Normál körülmények"
+            "leírás": "Normális kutatás"
           }
         ]
       }
@@ -1307,7 +1370,7 @@
         "sorok": [
           {
             "érték": -6,
-            "leírás": "Tiltott/hiányos anyag, súlyos"
+            "leírás": "Tiltott/erősen hiányos anyag"
           },
           {
             "érték": -3,
@@ -1324,12 +1387,12 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -4,
+            "érték": -6,
             "leírás": "Súlyos nyelvi nehézség"
           },
           {
-            "érték": -2,
-            "leírás": "Nyelvjárás, fordítás"
+            "érték": -3,
+            "leírás": "Idegen nyelvjárás"
           },
           {
             "érték": 0,
@@ -1443,15 +1506,15 @@
         "sorok": [
           {
             "érték": -6,
-            "leírás": "Direkt a látótérben"
+            "leírás": "lopakodó a látótérben van"
           },
           {
             "érték": 0,
-            "leírás": "Periférián halad"
+            "leírás": "lopakodó az észlelő látásának perifériáján"
           },
           {
             "érték": 6,
-            "leírás": "Látókörön kívül"
+            "leírás": "lopakodó az észlelő látókörén kívül"
           }
         ]
       },
@@ -1465,7 +1528,7 @@
           },
           {
             "érték": 0,
-            "leírás": "Lassú, óvatos haladás"
+            "leírás": "Megfontolt haladás"
           }
         ]
       },
@@ -1590,7 +1653,7 @@
           },
           {
             "érték": -3,
-            "leírás": "Nincs meg a testközelség"
+            "leírás": "Nincs meg a testközel-távolság, csak pár lépés"
           },
           {
             "érték": -3,
@@ -1668,7 +1731,10 @@
     "próba": "dobható",
     "domináns_tulajdonságok": [
       "Ügyesség",
-      "Edzettség"
+      "Edzettség",
+      "Önuralom",
+      "Erő",
+      "Intelligencia"
     ],
     "helyzetfüggő_módosítók": [
       {
@@ -1689,11 +1755,29 @@
           },
           {
             "érték": -3,
-            "leírás": "Mentő próba (rontás után)"
+            "leírás": "Rontott próba után Mentő dobás"
           },
           {
             "érték": 3,
-            "leírás": "Mászókampók"
+            "leírás": "Mászókampók (csak segítenek)"
+          }
+        ]
+      },
+      {
+        "kategória": "Túlsúly",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "nagy túlsúly"
+          },
+          {
+            "érték": -3,
+            "leírás": "kis túlsúly"
+          },
+          {
+            "érték": 0,
+            "leírás": "nincs túlsúly"
           }
         ]
       }
@@ -1739,11 +1823,15 @@
       },
       {
         "kategória": "Körülmény",
-        "mód": "multi",
+        "mód": "single",
         "sorok": [
           {
             "érték": -3,
             "leírás": "Hiányzó, de helyettesíthető komponensek"
+          },
+          {
+            "érték": 0,
+            "leírás": "Szükséges komponensek mind megvannak"
           }
         ]
       }
@@ -1763,7 +1851,26 @@
       "Intelligencia",
       "Érzékenység"
     ],
-    "helyzetfüggő_módosítók": "",
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Felszerelés",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 0,
+            "leírás": "Nincs könyvtár"
+          },
+          {
+            "érték": 3,
+            "leírás": "Jó könyvtár"
+          },
+          {
+            "érték": 6,
+            "leírás": "Kiváló könyvtár"
+          }
+        ]
+      }
+    ],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
@@ -1814,19 +1921,27 @@
         "mód": "single",
         "sorok": [
           {
+            "érték": -6,
+            "leírás": "Összejárkált helyszín"
+          },
+          {
             "érték": -3,
             "leírás": "Megbolygatott helyszín"
           },
           {
-            "érték": -6,
-            "leírás": "Összejárkált helyszín"
+            "érték": 0,
+            "leírás": "Érintetlen helyszín"
           }
         ]
       },
       {
         "kategória": "Szemtanú",
-        "mód": "multi",
+        "mód": "single",
         "sorok": [
+          {
+            "érték": 0,
+            "leírás": "Nincs hasznos szemtanú"
+          },
           {
             "érték": 3,
             "leírás": "Hasznos szemtanú"
@@ -1835,11 +1950,15 @@
       },
       {
         "kategória": "Eszközök",
-        "mód": "multi",
+        "mód": "single",
         "sorok": [
           {
+            "érték": 0,
+            "leírás": "Eszközök nélkül"
+          },
+          {
             "érték": 3,
-            "leírás": "Porok, nagyító, lámpák (ha segítenek)"
+            "leírás": "Porok / nagyító / lámpák (ha segítenek)"
           }
         ]
       }
@@ -1881,12 +2000,16 @@
         "mód": "single",
         "sorok": [
           {
+            "érték": -6,
+            "leírás": "Felszerelés nélkül"
+          },
+          {
             "érték": -3,
             "leírás": "Szegényes felszerelés"
           },
           {
-            "érték": -6,
-            "leírás": "Felszerelés nélkül"
+            "érték": 0,
+            "leírás": "Normál felszerelés"
           }
         ]
       },
@@ -1897,6 +2020,14 @@
           {
             "érték": -6,
             "leírás": "Páciens ellenáll"
+          },
+          {
+            "érték": 3,
+            "leírás": "hasznos gyógyszer (vajákos készítette)"
+          },
+          {
+            "érték": 6,
+            "leírás": "legjobb gyógyszer (vajákos készítette)"
           }
         ]
       }
@@ -2001,6 +2132,20 @@
             "leírás": "Normál időjárás"
           }
         ]
+      },
+      {
+        "kategória": "Vad becserkészése",
+        "mód": "multi",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Szél felől közelítesz jó szaglású vad felé"
+          },
+          {
+            "érték": -6,
+            "leírás": "Zajos aljnövényzet"
+          }
+        ]
       }
     ],
     "szerepjátékos_módosító": false,
@@ -2038,7 +2183,26 @@
       "Emlékezet",
       "Intelligencia"
     ],
-    "helyzetfüggő_módosítók": "",
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Felszerelés",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Szegényes felszerelés"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál felszerelés"
+          },
+          {
+            "érték": 3,
+            "leírás": "Jól felszerelt labor"
+          }
+        ]
+      }
+    ],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
@@ -2055,7 +2219,7 @@
     ],
     "helyzetfüggő_módosítók": [
       {
-        "kategória": "Körülmény",
+        "kategória": "Idő",
         "mód": "single",
         "sorok": [
           {
@@ -2064,11 +2228,7 @@
           },
           {
             "érték": 0,
-            "leírás": "Normál körülmények"
-          },
-          {
-            "érték": 3,
-            "leírás": "Jó hírnév"
+            "leírás": "Normál ügymenet"
           }
         ]
       },
@@ -2087,6 +2247,10 @@
           {
             "érték": 0,
             "leírás": "Semleges"
+          },
+          {
+            "érték": 3,
+            "leírás": "Jó hírnév"
           }
         ]
       }

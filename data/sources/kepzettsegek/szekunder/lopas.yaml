@@ -22,6 +22,6 @@ helyzetfüggő_módosítók:
     mód: "multi"
     sorok:
       - { érték: -3, leírás: "Kapkodni kell" }
-      - { érték: -3, leírás: "Nincs meg a testközelség" }
+      - { érték: -3, leírás: "Nincs meg a testközel-távolság, csak pár lépés" }
       - { érték: -3, leírás: "Több tárgy egyszerre" }
       - { érték: 3, leírás: "Zajos, zsibongó környezet" }

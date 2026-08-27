@@ -24,6 +24,7 @@ helyzetfüggő_módosítók:
       - { érték: -3, leírás: "Szegényes felszerelés" }
       - { érték: +3, leírás: "Jól felszerelt labor" }
   - kategória: "Körülmény"
-    mód: "multi"
+    mód: "single"
     sorok:
       - { érték: -3, leírás: "Hiányzó, de helyettesíthető komponensek" }
+      - { érték: 0, leírás: "Szükséges komponensek mind megvannak" }

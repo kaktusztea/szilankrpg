@@ -22,5 +22,5 @@ helyzetfüggő_módosítók:
     mód: "single"
     sorok:
       - { érték: -6, leírás: "Ellenséges tömeg" }
-      - { érték: -3, leírás: "Közönyös közönség" }
+      - { érték: -3, leírás: "Ellenszenves közönség" }
       - { érték: 0, leírás: "Normál közönség" }

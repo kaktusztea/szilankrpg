@@ -18,7 +18,7 @@ mesterbónuszok:
     leírás: ""
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
-  - kategória: "Kontaktus"
+  - kategória: "Személyiség érzékelése esetén"
     mód: "single"
     sorok:
       - { érték: -3, leírás: "Rövidebb kontaktus" }
@@ -27,5 +27,6 @@ helyzetfüggő_módosítók:
   - kategória: "Faj"
     mód: "single"
     sorok:
-      - { érték: -3, leírás: "Más fajú a célszemély" }
-      - { érték: 0, leírás: "Azonos faj" }
+      - { érték: -6, leírás: "Teljesen idegen fajú célszemély" }
+      - { érték: -3, leírás: "Más fajú/kultúrájú célszemély" }
+      - { érték: 0, leírás: "Azonos fajú/kultúrájú célszemély" }

@@ -8,14 +8,14 @@ csoport: "fizikai"
 többszörös: []
 csoportos: false
 próba: "dobható"
-domináns_tulajdonságok: ["Ügyesség", "Edzettség"]
+domináns_tulajdonságok: ["Ügyesség", "Edzettség", "Önuralom", "Erő", "Intelligencia"]
 mesterbónuszok:
   - szint: 9
     leírás: ""
   - szint: 12
     leírás: ""
   - szint: 15
-    leírás: ""
+    leírás: "Puszta, csúszós sziklafalon is tudsz haladni. Pókként tapadás falon, mennyezeten. Függeszkedve órákat kibírsz."
 szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Körülmény"
@@ -24,5 +24,11 @@ helyzetfüggő_módosítók:
       - { érték: -3, leírás: "Gyorsan mászni" }
       - { érték: -3, leírás: "Sötétben" }
       - { érték: -3, leírás: "Lengő kötélen" }
-      - { érték: -3, leírás: "Mentő próba (rontás után)" }
-      - { érték: 3, leírás: "Mászókampók" }
+      - { érték: -3, leírás: "Rontott próba után Mentő dobás" }
+      - { érték: 3, leírás: "Mászókampók (csak segítenek)" }
+  - kategória: "Túlsúly"
+    mód: "single"
+    sorok:
+      - { érték: -6, leírás: "nagy túlsúly" }
+      - { érték: -3, leírás: "kis túlsúly" }
+      - { érték: 0, leírás: "nincs túlsúly" }

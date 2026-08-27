@@ -24,6 +24,7 @@ helyzetfüggő_módosítók:
       - { érték: -3, leírás: "Rossz tanácsadók" }
       - { érték: +3, leírás: "Jó tanácsadók" }
   - kategória: "Szabotőr"
-    mód: "multi"
+    mód: "single"
     sorok:
       - { érték: -6, leírás: "Szabotőr aknamunkája" }
+      - { érték: 0, leírás: "Nincs szabotőr" }

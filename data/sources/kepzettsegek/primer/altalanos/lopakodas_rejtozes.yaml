@@ -29,14 +29,14 @@ helyzetfüggő_módosítók:
   - kategória: "Látótér"
     mód: "single"
     sorok:
-      - { érték: -6, leírás: "Direkt a látótérben" }
-      - { érték: 0, leírás: "Periférián halad" }
-      - { érték: 6, leírás: "Látókörön kívül" }
+      - { érték: -6, leírás: "lopakodó a látótérben van" }
+      - { érték: 0, leírás: "lopakodó az észlelő látásának perifériáján" }
+      - { érték: 6, leírás: "lopakodó az észlelő látókörén kívül" }
   - kategória: "Mozgás"
     mód: "single"
     sorok:
       - { érték: -6, leírás: "Gyors haladás" }
-      - { érték: 0, leírás: "Lassú, óvatos haladás" }
+      - { érték: 0, leírás: "Megfontolt haladás" }
   - kategória: "Zajok"
     mód: "single"
     sorok:
