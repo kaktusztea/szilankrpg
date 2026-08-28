@@ -82,7 +82,7 @@ Visszahajló acélfalon felmászni.
 ```
 -3: Gyorsan mászni
 -3: Sötétben mászni
--3: Rontott próba ❗ után Mentő dobás
+-3: Rontott próba után Mentő dobás ❗
 ```
 
 #### ⚜️ Segédeszköz 1️⃣
