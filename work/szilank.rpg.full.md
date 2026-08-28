@@ -913,6 +913,10 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🔁 Többször felvehető ismeret
 
+1️⃣ Képzettségek - Helyzetfüggő módosítók - `1 db` választható
+
+🔀 Képzettségek - Helyzetfüggő módosítók - több választható
+
 🗡️ Harci taktika, Harci szituáció vagy Manőver
 
 `k20T`: `k20` dobás tízes része (`5 → 0,  16 → 1,  20 → 2`)
@@ -5040,10 +5044,11 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Körülmény 🔀
+#### ⚜️ Körülmény  1️⃣
 
 ```
 -6: Csúszós talaj
+ 0: Normál talaj
 ```
 
 Kapcsolódhat: [Csúszós talaj](../../065_01_03_negativ_helyzetek.md#cs%C3%BAsz%C3%B3s-talaj) harci helyzet (küzdelem esetén)
@@ -5133,8 +5138,8 @@ Biztos tudás erejű Aurád (nem dobhatsz rá) hatása érvényesül a célszem�
 #### ⚜️ Nyelvi akadály 1️⃣
 
 ```
--3: Olyan nyelven próbálsz hatni, amit nem ért(enek) a célszemély(ek)
-+0: Közös nyelv
+-3: Célszemély nem érti a nyelved
++0: Azonos nyelven beszéltek
 ```
 
 Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
@@ -5260,7 +5265,7 @@ Alapvető nem leplezett személyiségvonások felismerése.
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Kontaktus 1️⃣
+#### ⚜️ Személyiség érzékelése esetén 1️⃣
 
 ```
 -3: Rövidebb kontaktus
@@ -5271,11 +5276,10 @@ Alapvető nem leplezett személyiségvonások felismerése.
 #### ⚜️ Faj 1️⃣
 
 ```
--3: Más fajú a célszemély
-+0: Azonos faj
+-6: Teljesen idegen fajú célszemély
+-3: Más fajú/kultúrájú célszemély
+ 0: Azonos fajú/kultúrájú célszemély
 ```
-
-Asztrál szem hatása: ⭕TODO⭕
 
 ---
 
@@ -5383,7 +5387,7 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Körülmény 🔀
+#### ⚜️ Keresés 🔀
 
 ```
 -3: Gyorsan, nyomás alatt keresni
@@ -5584,10 +5588,11 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 +3: Jó tanácsadók
 ```
 
-#### ⚜️ Szabotőr 🔀
+#### ⚜️ Szabotőr 1️⃣
 
 ```
 -6: Szabotőr aknamunkája
+ 0: Nincs szabotőr
 ```
 
 
@@ -5691,13 +5696,13 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 #### ⚜️ Láthatóság (lopakodó) 1️⃣
 
 ```
--6 Világosban, éles kontúrral válsz el a háttértől
+-6: Világosban, éles kontúrral válsz el a háttértől
 -3: Világosban, háttértől elütő ruházatban
 +0: Átlagos nappali fény, ruhád nem üt el a háttértől
 +3: Szürkület, félhomály
 +6: Vaksötét. Szabad szemmel csak
     Infra- vagy Ultralátással vagy észlelhető
-+6: a lopakodó Láthatatlan
++6: Láthatatlan vagy
 ```
 
 Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
@@ -5705,15 +5710,16 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#
 #### ⚜️ Látótér (lopakodó) 1️⃣
 
 ```
--6: lopakodó direkt a látótérben
-+0: lopakodó az észlelő látásának perifériáján halad
-+6: lopakodó az észlelő látókörén kívül halad
+-6: lopakodó a látótérben van
++0: lopakodó az észlelő látásának perifériáján
++6: lopakodó az észlelő látókörén kívül
 ```
 
 #### ⚜️ Mozgás (lopakodó) 1️⃣
 
 ```
 -6: gyors haladás
+ 0: Megfontolt haladás
 ```
 
  [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
@@ -5820,10 +5826,11 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 +3: Jól felszerelt labor
 ```
 
-#### ⚜️ Körülmény 🔀
+#### ⚜️ Körülmény 1️⃣
 
 ```
 -3: Hiányzó, de helyettesíthető komponensek
+ 0: Szükséges komponensek mind megvannak
 ```
 
 
@@ -5956,16 +5963,18 @@ Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befoly
 +0: Érintetlen helyszín
 ```
 
-#### ⚜️ Szemtanú 🔀
+#### ⚜️ Szemtanú 1️⃣
 
 ```
+ 0: Nincs hasznos szemtanú
 +3: Hasznos szemtanú
 ```
 
-#### ⚜️ Eszközök 🔀
+#### ⚜️ Eszközök 1️⃣
 
 ```
-+3: Porok, nagyító, lámpák (ha segítenek)
+ 0: Eszközök nélkül
++3: Porok / nagyító / lámpák (ha segítenek)
 ```
 
 
@@ -6097,14 +6106,17 @@ Gyógyulási sebesség szorzó: `x3`.
 #### ⚜️ Felszerelés 1️⃣
 
 ```
--3: Szegényes felszerelés
 -6: Felszerelés nélkül
+-3: Szegényes felszerelés
+ 0: Normál felszerelés
 ```
 
 #### ⚜️ Körülmény 🔀
 
 ```
 -6: Páciens ellenáll
++3: hasznos gyógyszer (vajákos készítette)
++6: legjobb gyógyszer (vajákos készítette)
 ```
 
 
@@ -6196,7 +6208,14 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 ---
 ### Helyzetfüggő módosítók
 
-- ⭕TODO⭕
+A Mágia akaratát külön kezeljük.
+
+```
+→ Aurakiterjesztés (szellemkéz, zóna)
+→ Auraerősítés formula bónusza
+→ Metódus 3. foka
+→ Szituáció, összhang
+```
 
 
 ---
@@ -8753,6 +8772,13 @@ A Tradíciók összefoglaló leírását és listáját lásd annak a saját fej
 
 Tradíciótól függ.
 
+---
+### Helyzetfüggő módosítók
+
+\-
+
+---
+
 
 ---
 ---
@@ -8888,8 +8914,8 @@ Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzőe
 #### ⚜️ Archetípus 1️⃣
 
 ```
-+0: Egyéb archetípus
-+3: Kiemelt archetípusod
++0: Nem kiemelt
++3: Kiemelt
 ```
 
 #### ⚜️ Idő 1️⃣
@@ -9110,11 +9136,25 @@ Intelligencia, Önuralom
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Körülmény 1️⃣
+#### ⚜️ Idő 1️⃣
+
+```
+-6: Kapkodós állítás/hatástalanítás
+-3: Gyors állítás/hatástalanítás
++0: Normál tempó
+```
+
+#### ⚜️ Környezet 🔀
+
+```
+-3: Zavaró körülmények
+-3: Rossz látási viszonyok
+```
+
+#### ⚜️ Csapda hatástalanítás 🔀
 
 ```
 -3: Nyom nélkül hatástalanítani
-+0: Normál körülmények
 ```
 
 ---
@@ -9226,7 +9266,7 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 
 ```
 -6: Ellenséges tömeg
--3: Közönyös közönség
+-3: Ellenszenves közönség
 +0: Normál közönség
 ```
 
@@ -9282,6 +9322,11 @@ Emlékezet, Intelligencia
 ---
 ### Próbák 🎲
 
+A Nehézség meghatározásánál vegyük figyelmebe az alábbiakat (is):
+- Tárgy komplexitása
+- Tárgy ritkasága
+- Tárgy kora
+
 #### Könnyű (6) 🎲
 
 - Megállapítani egy hétköznapi tárgy (pl. egyszerű ékszer, boros kupa) hozzávetőleges piaci értékét.
@@ -9324,9 +9369,15 @@ Emlékezet, Intelligencia
 ---
 ### Helyzetfüggő módosítók
 
-- Tárgy komplexitása
-- Tárgy ritkasága
-- Tárgy kora
+#### ⚜️ Könyvtár 1️⃣
+
+```
++0: Nincs könyvtár
++3: Jó könyvtár
++6: Kiváló könyvtár
+```
+
+---
 
 
 ---
@@ -9415,6 +9466,7 @@ Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynö
 ```
 -6: Szegényes, sérült ruházat
 -3: szabálytalan ruházat, smink
+ 0: Megfelelő ruházat, smink
 ```
 
 
@@ -9635,14 +9687,14 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 ```
 -3: Kapkodás
 +0: Normál tempó
-+2: Ráérős munka
++3: Ráérős munka
 ```
 
 #### ⚜️ Környezet 1️⃣
 
 ```
 +0: Normál környezet
-+2: Inspiráló környezet (pl. szent hely, művésztelep)
++3: Inspiráló környezet (szent hely, művésztelep)
 ```
 
 ---
@@ -9790,7 +9842,7 @@ Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegp
 
 ```
 -3: Rövid határidő
-+0: Normál körülmények
+ 0: Normál határidő
 ```
 
 
@@ -9906,7 +9958,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 ```
 -3: Kapkodó munka
-+0: Normál körülmények
+ 0: Normális kutatás
 ```
 
 ---
@@ -10146,7 +10198,7 @@ Próba dobható.
 #### ⚜️ Hozzáférés 1️⃣
 
 ```
--6: Tiltott/hiányos anyag, súlyos
+-6: Tiltott/erősen hiányos anyag
 -3: Hiányos anyag
 +0: Szabad hozzáférés
 ```
@@ -10154,8 +10206,8 @@ Próba dobható.
 #### ⚜️ Nyelv 1️⃣
 
 ```
--4: Súlyos nyelvi nehézség
--2: Nyelvjárás, fordítás
+-6: Súlyos nyelvi nehézség
+-3: Idegen nyelvjárás
 +0: Anyanyelvű szöveg
 ```
 
@@ -10258,7 +10310,7 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
 ```
 -3: Kapkodni kell
--3: Nincs meg a testközeli távolság, csak pár lépés
+-3: Nincs meg a testközel-távolság, csak pár lépés
 -3: Több tárgy manipulálása szinte egy időben
 +3: Zajos, zsibongó környezet
 ```
@@ -10450,14 +10502,40 @@ Visszahajló acélfalon felmászni.
 ```
 -3: Gyorsan mászni
 -3: Sötétben mászni
--3: Lengő kötélen mászni
--3: Mentő próba (rontás után)
-+3: Mászókampók (csak ha könnyen rögzíthetőek)
+-3: Rontott próba után Mentő dobás ❗
 ```
 
-Plusz súllyal mászni: Erőtől függ, a KM dönt. Keretek: `[-1; -6]` ; Erőpróba kellhet
+#### ⚜️ Segédeszköz 1️⃣
 
-Sérülten mászni: [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
+```
++3: Mászókampók (csak ha segítenek)
++3: Lengő kötél
++6: Stabil kötél
+```
+
+#### ⚜️ Túlsúly 1️⃣
+
+```
+-6: nagy túlsúly
+-3: kis túlsúly
+ 0: nincs túlsúly
+ 
+ Infó: Erőpróba kellhet
+```
+
+#### ⚜️ Erő Tulajdonság bevetése mentő dobásnál 🔀
+
+```
+1 ... +X
+
+→ X = Erő Tulajdonság, felhasználása levon Erőből
+→ Erő +0 értékig lehet lemenni
+→ Pihenésben 1 pont / perc tér vissza
+```
+
+#### ⚜️ Sérülten mászni
+
+[Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
 
 <br />
 
@@ -10469,25 +10547,25 @@ Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#ö
 ---
 ### Rontott mászás próba után: Mentő képzettségpróba
 
-Kiemelt szituáció a mászás próba rontása, hiszen itt sokszor élet-halál szituációban van a karakter - adnunk kell számára esélyt, hogy hibájából kikeveredjen. Ilyenkor azonnal egy új - soron kívüli - Mászás képzettségpróbát (sima, nem összetett) kell dobni **Edzettség** Tulajdonsággal és emelt Nehézséggel:
-
-Mentő Mászás képzettségpróba dobás:
+Kiemelt szituáció a mászás próba rontása, hiszen itt sokszor élet-halál szituációban van a karakter - adnunk kell számára esélyt, hogy hibájából kikeveredjen. Ilyenkor azonnal egy új - soron kívüli - Mentő Mászás képzettségpróbát (sima, nem összetett) kell dobni **Edzettség** Tulajdonsággal:
 
 ```
-Eredeti Nehézség +3
+Mentő dobás módosító: -3
+(rontás után)
 ```
 
 #### Erő bevetése rontott mászás utáni mentő képzettségpróba dobásnál
 
 ```
 +0 Erőig lehet lemenni
-Mentő Mászás dobásnál
+   Mentő Mászás dobásnál
 ```
 
 Az **Erő** Tulajdonság bevethető rontás utáni Mentő Mászás képzettségpróbánál. ilyenkor **Erő** Tulajdonságból pontokat tehetünk a próbába. Ennek hatására az **Erő** Tulajdonság - a költés mértékével - ideiglenesen lecsökken. Korlát: `+0` értékig csökkenthetjük így a Tulajdonságot.
 
 Az elköltött **Erő** pontok az aktuális mászó szituáció végéig nem térnek vissza. Pihenésben `1 pont / perc` tér vissza.
 
+---
 ### Megállás ÉS pihenés a falon rontás után
 
 Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg kell állni, pihenni a falon.
@@ -10618,6 +10696,15 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 - Olyan rejtett, kódolt üzeneteket megfejteni, amit az alkotó szándékosan rejtett el.
 
 ---
+### Helyzetfüggő módosítók
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
++0: Nincs könyvtár
++3: Jó könyvtár
++6: Kiváló könyvtár
+```
 
 
 ---
@@ -10980,6 +11067,14 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 +0: Normál időjárás
 ```
 
+#### ⚜️ Vad becserkészése 🔀
+
+```
+-6: Szél felől közelítesz
+    jó szaglású vad felé
+-6: Zajos aljnövényzet
+```
+
 ---
 
 
@@ -11076,9 +11171,15 @@ Emlékezet, Intelligencia
 - Legendás lény (pl. unikornis, mantikór, sárkány) szervének kezelése és hatásainak kinyerése, tartósítása.
 
 ---
-## Módosító körülmények
+### Helyzetfüggő módosítók
 
-- Felszereltség: `[-3;+3]`
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-3: Szegényes felszerelés
++0: Normál felszerelés
++3: Jól felszerelt labor
+```
 
 ---
 
@@ -11194,12 +11295,11 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 ---
 ### Helyzetfüggő módosítók
 
-#### ⚜️ Körülmény 1️⃣
+#### ⚜️ Idő  1️⃣
 
 ```
 -3: Szűkös határidő
-+0: Normál körülmények
-+3: Jó hírnév
+ 0: Normál ügymenet
 ```
 
 #### ⚜️ Hírnév/Karma 1️⃣
@@ -11208,6 +11308,7 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 -6: Rossz hírnév, súlyos karma
 -3: Rossz hírnév, karma
 +0: Semleges
++3: Jó hírnév
 ```
 
 ---
