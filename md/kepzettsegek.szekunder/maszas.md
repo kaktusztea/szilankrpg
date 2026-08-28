@@ -82,9 +82,11 @@ Visszahajló acélfalon felmászni.
 ```
 -3: Gyorsan mászni
 -3: Sötétben mászni
--3: Lengő kötélen mászni
+
 -3: Rontott próba ❗ után Mentő dobás
 +3: Mászókampók (csak segítenek)
++3: Lengő kötélen mászni
++6: Kötélen mászni
 ```
 
 #### ⚜️ Túlsúly
