@@ -11,9 +11,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
 
-🌟 **Hatás**:
-- `TÉ:+1, VÉ:+1`
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+1` bónuszt kapsz
+🌟 **Hatás**: `TÉ:+1, VÉ:+1`
 
 <br />
 
@@ -24,9 +22,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
 
-🌟 **Hatás**:
-- `TÉ:+2, VÉ:+2`
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+2` bónuszt kapsz
+🌟 **Hatás**: `TÉ:+2, VÉ:+2`
 
 <br />
 
@@ -37,9 +33,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Csak Hajlékonyvértben
 - Maximum `MGT:10` értékű vértben
 
-🌟 **Hatás**:
-- `TÉ:+3, VÉ:+3`
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+3` bónuszt kapsz
+🌟 **Hatás**: `TÉ:+3, VÉ:+3`
 
 ---
 ### Általános követelmények
