@@ -1,4 +1,4 @@
-## 🟣 Manőverfókusz: Lefegyverzés (2)
+## 🟣 Manőverfókusz: Lefegyverzés (1)
 
 Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét.
 
