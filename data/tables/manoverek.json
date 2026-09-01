@@ -96,12 +96,20 @@
     "id": "lánccsapdából_szabadítás"
   },
   {
-    "név": "Lefegyverzés / Fegyvertörés",
+    "név": "Lefegyverzés",
     "típus": "általános",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": "Ellenfél fegyvere kiesik kezéből vagy eltörik.",
-    "id": "lefegyverzés_fegyvertörés"
+    "hatás": "Ellenfél fegyvere kiesik kezéből.",
+    "id": "lefegyverzés"
+  },
+  {
+    "név": "Fegyvertörés",
+    "típus": "általános",
+    "nehézség": 12,
+    "fázisok": "V,E",
+    "hatás": "Ellenfél fegyvere eltörik.",
+    "id": "fegyvertörés"
   },
   {
     "név": "Leütés hátulról",

@@ -1,0 +1,43 @@
+---
+schema_version: 1
+
+név: "Manőverfókusz: Lefegyverzés"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: false
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+- text: "Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét."
+megjegyzések:
+- text: ""
+kiterjeszti:
+  normál: []
+  erős: []
+kp_perfok: 6
+ingyenes_perszint: 0
+fokok:
+- fok: 1
+  követelménytext:
+    - text: "Kardvívás VAGY Lándzsavívás - 9.szint"
+    - text: "Mesterfegyver - 1.fok"
+  követelmények:
+  - név: ["Kardvívás", "Lándzsavívás"]
+    érték: 9
+    típus: "képzettség"
+  - név: "Mesterfegyver"
+    érték: 1
+    típus: "fortély"
+  hatástext:
+  - text: "Lefegyverzés Manőver: +2 MP bónusz Ellenpróbánál."
+  módosítók:
+  - cél: "manőver:lefegyverzés"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
