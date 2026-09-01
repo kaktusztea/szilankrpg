@@ -12719,6 +12719,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Lefegyverzés mestere](fortelyok.harci/lefegyverzes_mestere.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
+- [Nyúlcipő](fortelyok.harci/nyulcipo.md)
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
@@ -14648,9 +14649,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
 
-🌟 **Hatás**:
-- `TÉ:+1, VÉ:+1`
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+1` bónuszt kapsz
+🌟 **Hatás**: `TÉ:+1, VÉ:+1`
 
 <br />
 
@@ -14661,9 +14660,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
 
-🌟 **Hatás**:
-- `TÉ:+2, VÉ:+2`
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+2` bónuszt kapsz
+🌟 **Hatás**: `TÉ:+2, VÉ:+2`
 
 <br />
 
@@ -14674,9 +14671,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Csak Hajlékonyvértben
 - Maximum `MGT:10` értékű vértben
 
-🌟 **Hatás**:
-- `TÉ:+3, VÉ:+3`
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+3` bónuszt kapsz
+🌟 **Hatás**: `TÉ:+3, VÉ:+3`
 
 ---
 ### Általános követelmények
@@ -14749,9 +14744,8 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+6 MP` bónusz **Ellenpróbánál**
 - [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+6 MP` bónusz **Ellenpróbánál**
-- [Visszafogott ](../065_02_harci_taktikak.md#visszafogott-taktika-) **taktika** alkalmazásakor `9`-cel csökken a kapott `TÉ` büntetés
-
 - [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor `9`-mal csökken a **Visszafogott taktika** esetén kapott `TÉ` büntetés
 - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
 - Szemgolyót szedhet ki harc közben: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
@@ -15443,6 +15437,37 @@ A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 ### Manőverek
 
 Bizonyos [manőverek](../066_00_manoverek.md) végbevitelének követelménye lehet ennek a fortélynak valamely foka, melyet csak az adott fegyverrel képes végrehajtani a forgatója. Például: [Mesterjel](../066_05_altalanos_manoverek.md#mesterjel)
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/nyulcipo.md
+
+## 🟣 Nyúlcipő (2)
+
+"Én most lelépek..."
+
+Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled.
+
+### 1. fok
+
+🔒 **Követelmény**: -
+
+🌟 **Hatás**:
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2` bónuszt kapsz (`E`)
+- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2` bónuszt kapsz (`E`)
+
+<br />
+
+### 2. fok
+
+🔒 **Követelmény**: -
+
+🌟 **Hatás**:
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+4` bónuszt kapsz (`E`)
+- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+4` bónuszt kapsz (`E`)
 
 ---
 
