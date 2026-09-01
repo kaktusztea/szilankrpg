@@ -210,12 +210,12 @@ Láncos fegyverekkel hajthatod végre.
 
 **Hatás**:
 - Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
-- Ha ellenfeled elengedi fegyverét, akkor gyakorlatilag sikeres [Lefegyverzéssé](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) változik a Manőver
+- Ha ellenfeled elengedi fegyverét, akkor gyakorlatilag sikeres [Lefegyverzéssé](#lefegyverz%C3%A9s) változik a Manőver
 - Ha továbbra is kezében tartja:
   - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve) módosítói sújtják
   - Ha másik keze üres, akkor [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc) harcértékekkel harcol
   - Kétkezes harc esetén a továbbiakban a másik kezében tartott fegyver harcértékeivel küzd.
-- a foglyul ejtett fegyverre a [Lefegyverezés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver csak `5`-ös Nehézségű
+- a foglyul ejtett fegyverre a [Lefegyverezés](#lefegyverz%C3%A9s) Manőver csak `5`-ös Nehézségű
 - A fegyvert kiszabadítani [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s) Manőverrel lehet.
 
 <br />
