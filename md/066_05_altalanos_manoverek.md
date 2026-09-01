@@ -5,6 +5,7 @@
 - [Csonkolás](#csonkol%C3%A1s)
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
 - [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
+- [Fegyvertörés](#fegyvert%C3%B6r%C3%A9s)
 - [Forgószél támadás](#forg%C3%B3sz%C3%A9l-t%C3%A1mad%C3%A1s)
 - [Kibontakozás](#kibontakoz%C3%A1s)
 - [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
@@ -12,7 +13,7 @@
 - [Lábsöprés / Felöklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--fel%C3%B6klel%C3%A9s)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
-- [Lefegyverzés / Fegyvertörés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s)
+- [Lefegyverzés](#lefegyverz%C3%A9s)
 - [Leütés hátulról](#le%C3%BCt%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Lovas, léglovas megakasztása](#lovas-l%C3%A9glovas-megakaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
@@ -89,6 +90,25 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 - Fázisok: `Megakasztás, Ellenpróba`
 
 **Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
+
+<br />
+
+---
+### Fegyvertörés
+
+Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted.
+
+❌ Karmok és szarvak ellen nem használható a Manőver, ott **Csonkolás** szükséges.
+
+- Nehézség: `12`
+	- `-4`: ellenfél fegyvere fából készült szálfegyver (sokkal könnyebb)
+    - `-2`: fegyvered nagyobb/alkalmasabb ellenfeledénél törésre
+    - `+2`: fegyvered kisebb/alkalmatlanabb ellenfeledénél törésre
+	- `+99`: a használt fegyver nem alkalmas fegyvertörésre. KM dönt.
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény: Harcmodor – `5.szint`
+
+**Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
 
 <br />
 
@@ -215,18 +235,16 @@ Láncos fegyverrel foglyul ejtett fegyveredet kiszabadítod.
 ---
 ### Lefegyverzés / Fegyvertörés
 
-Ha meg akarod fosztani ellenfeledet fegyverétől, vagy kiütve kezéből, vagy annak eltörésével, akkor lefegyverezés manővert kell alkalmaznod. Azokra a Harcmodorokra és fegyverre kapod meg az adott szint bónuszát, amelyek követelményeit teljesíted. Hogy fegyvercsellel, végtagsebzéssel, vagy fegyvertöréssel fosztja meg ellenfelét a karakter, arról a KM dönt és az esetleges módosítókat is ő határozza meg.
-
-❌ Karmok és szarvak ellen nem használható a Manőver, ott **Csonkolás** szükséges.
+Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manővert kell alkalmaznod. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted. A pontos lefegyverzés menetéről a KM dönt és az esetleges módosítókat is ő határozza meg.
 
 - Nehézség: `10`
-	- `+2`: fegyvertörés: alaphelyzet. Nehezebb, mint a lefegyverzés.
-	- `-2`: fegyvertörés: fából készült szálfegyverekre (sokkal (`-4`) könnyebb, mint az alap fegyvertörés)
-	- `[-2;+2]`: a használt fegyver mennyire alkalmas a másik fegyver elvételére. KM dönt.
+    - `-2`: fegyvered kimondottan alkalmas ellenfeled fegyverének elvételére
+    - `+2`: fegyvered nem kimondottan alkalmas ellenfeled fegyverének elvételére
+	- `+99`: a használt fegyver nem alkalmas lefegyverzésre. KM dönt.
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény: Harcmodor – `5.szint`
 
-**Hatás**: A lefegyverzés/fegyvertörés sikeres. Ellenfeled kezéből kihullik a fegyver, vagy eltörik.
+**Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
 
 <br />
 
