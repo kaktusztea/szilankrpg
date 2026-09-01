@@ -27,13 +27,13 @@ export function FortelyDetails({ def, fokDef, képzettségek }: Props) {
         </div>
       ))}
 
-      {fokDef && fokDef.követelmény.filter(t => t).length > 0 && (
-        <div className="info-panel-row"><span className="info-panel-label">Követelmény:</span> {fmtCode(fokDef.követelmény.filter(t => t).join('; '))}</div>
+      {fokDef && fokDef.követelmény.filter(t => t && t !== '-').length > 0 && (
+        <div className="info-panel-row"><span className="info-panel-label">Követelmény:</span> {fmtCode(fokDef.követelmény.filter(t => t && t !== '-').join('; '))}</div>
       )}
-      {pickerMode && def.fokok.filter(f => f.fok >= 1 && f.követelmény?.filter(t => t).length).map(f => (
+      {pickerMode && def.fokok.filter(f => f.fok >= 1 && f.követelmény?.filter(t => t && t !== '-').length).map(f => (
         <div key={`kov-${f.fok}`} className="info-panel-row">
           <span className="info-panel-label">{def.maxfok > 1 ? `Köv. ${f.fok}. fok:` : 'Követelmény:'}</span>
-          {' '}{fmtCode(f.követelmény.filter(t => t).join('; '))}
+          {' '}{fmtCode(f.követelmény.filter(t => t && t !== '-').join('; '))}
         </div>
       ))}
 

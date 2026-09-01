@@ -1,0 +1,60 @@
+schema_version: 1
+név: "Nyúlcipő"
+névkomment: ""
+maxfok: 2
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: false
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+- text: "\"Én most lelépek...\""
+- text: "Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled."
+megjegyzések:
+- text: ""
+kiterjeszti:
+  normál: []
+  erős: []
+kp_perfok: 6
+ingyenes_perszint: 0
+fokok:
+- fok: 1
+  követelménytext: []
+  követelmények: []
+  hatástext:
+  - text: "Átsiklás Manőverre +2 bónuszt kapsz."
+  - text: "Kibontakozás Manőverre +2 bónuszt kapsz."
+  módosítók:
+  - cél: "manőver:átsiklás"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+  - cél: "manőver:kibontakozás"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+- fok: 2
+  követelménytext: []
+  követelmények: []
+  hatástext:
+  - text: "Átsiklás Manőverre +4 bónuszt kapsz."
+  - text: "Kibontakozás Manőverre +4 bónuszt kapsz."
+  módosítók:
+  - cél: "manőver:átsiklás"
+    érték: 4
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+  - cél: "manőver:kibontakozás"
+    érték: 4
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""

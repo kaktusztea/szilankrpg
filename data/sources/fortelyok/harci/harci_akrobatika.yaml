@@ -53,12 +53,6 @@ fokok:
     forrás: "akrobatika"
     arány: 0.5
     feltétel: ""
-  - cél: "manőver:kibontakozás"
-    érték: 1
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: ""
 - fok: 2
   követelménytext:
     - text: "Csak posztó, fegyverkabát, bőr páncél struktúrában"
@@ -69,7 +63,6 @@ fokok:
     típus: "képzettség"
   hatástext:
   - text: "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez."
-  - text: "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
   módosítók:
   - cél: "TÉ"
     érték: 0
@@ -82,12 +75,6 @@ fokok:
     mód: "scaled"
     forrás: "akrobatika"
     arány: 1
-    feltétel: ""
-  - cél: "manőver:kibontakozás"
-    érték: 3
-    mód: "flat"
-    forrás: ""
-    arány: 0
     feltétel: ""
 - fok: 3
   követelménytext:
@@ -99,7 +86,6 @@ fokok:
     típus: "képzettség"
   hatástext:
   - text: "TÉ:+3, VÉ:+3."
-  - text: "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
   módosítók:
   - cél: "TÉ"
     érték: 3
@@ -108,18 +94,6 @@ fokok:
     arány: 0
     feltétel: ""
   - cél: "VÉ"
-    érték: 3
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: ""
-  - cél: "manőver:kibontakozás"
-    érték: 3
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: ""
-  - cél: "manőver:átsiklás"
     érték: 3
     mód: "flat"
     forrás: ""

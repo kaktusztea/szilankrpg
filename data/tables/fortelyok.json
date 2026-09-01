@@ -3490,14 +3490,6 @@
             "forrás": "akrobatika",
             "arány": 0.5,
             "feltétel": ""
-          },
-          {
-            "cél": "manőver:kibontakozás",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
           }
         ],
         "próba_enyhítések": []
@@ -3505,8 +3497,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez.",
-          "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
+          "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez."
         ],
         "követelmény": [
           "Csak posztó, fegyverkabát, bőr páncél struktúrában",
@@ -3535,14 +3526,6 @@
             "forrás": "akrobatika",
             "arány": 1,
             "feltétel": ""
-          },
-          {
-            "cél": "manőver:kibontakozás",
-            "érték": 3,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
           }
         ],
         "próba_enyhítések": []
@@ -3550,8 +3533,7 @@
       {
         "fok": 3,
         "hatás": [
-          "TÉ:+3, VÉ:+3.",
-          "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
+          "TÉ:+3, VÉ:+3."
         ],
         "követelmény": [
           "Csak posztó, fegyverkabát, bőr páncél struktúrában",
@@ -3575,22 +3557,6 @@
           },
           {
             "cél": "VÉ",
-            "érték": 3,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
-          },
-          {
-            "cél": "manőver:kibontakozás",
-            "érték": 3,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
-          },
-          {
-            "cél": "manőver:átsiklás",
             "érték": 3,
             "mód": "flat",
             "forrás": "",
@@ -5422,6 +5388,81 @@
       }
     ],
     "md_fájl": "fortelyok.harci/mesterfegyver.md"
+  },
+  {
+    "név": "Nyúlcipő",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "\"Én most lelépek...\" Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Átsiklás Manőverre +2 bónuszt kapsz.",
+          "Kibontakozás Manőverre +2 bónuszt kapsz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "manőver:átsiklás",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:kibontakozás",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ],
+        "próba_enyhítések": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Átsiklás Manőverre +4 bónuszt kapsz.",
+          "Kibontakozás Manőverre +4 bónuszt kapsz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "manőver:átsiklás",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:kibontakozás",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ],
+        "próba_enyhítések": []
+      }
+    ],
+    "md_fájl": "fortelyok.harci/nyulcipo.md"
   },
   {
     "név": "Orgyilkos",

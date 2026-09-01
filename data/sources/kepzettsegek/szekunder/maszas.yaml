@@ -23,9 +23,13 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -3, leírás: "Gyorsan mászni" }
       - { érték: -3, leírás: "Sötétben" }
-      - { érték: -3, leírás: "Lengő kötélen" }
       - { érték: -3, leírás: "Rontott próba után Mentő dobás" }
-      - { érték: 3, leírás: "Mászókampók (csak segítenek)" }
+  - kategória: "Segédeszköz"
+    mód: "single"
+    sorok:
+      - { érték: 3, leírás: "Mászókampók (csak ha segítenek)" }
+      - { érték: 3, leírás: "Lengő kötél" }
+      - { érték: 6, leírás: "Stabil kötél" }
   - kategória: "Túlsúly"
     mód: "single"
     sorok:
