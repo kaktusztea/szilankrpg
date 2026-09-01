@@ -5068,6 +5068,53 @@
     "md_fájl": "fortelyok.harci/lovas_harc.md"
   },
   {
+    "név": "Manőverfókusz: Nyúlcipő",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "\"Én most lelépek...\" Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Átsiklás Manőverre +2 bónuszt kapsz.",
+          "Kibontakozás Manőverre +2 bónuszt kapsz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "manőver:átsiklás",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:kibontakozás",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ],
+        "próba_enyhítések": []
+      }
+    ],
+    "md_fájl": "fortelyok.harci/manoverfokusz_nyulcipo.md"
+  },
+  {
     "név": "Merevvértviselet",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5388,81 +5435,6 @@
       }
     ],
     "md_fájl": "fortelyok.harci/mesterfegyver.md"
-  },
-  {
-    "név": "Nyúlcipő",
-    "csoport": "harci",
-    "alcsoport": "harci",
-    "maxfok": 2,
-    "session_toggle": false,
-    "emlékeztető": true,
-    "kiérdemelhető": false,
-    "kp_perfok": 6,
-    "ingyenes_perszint": 0,
-    "többszörös_típus": "",
-    "többszörös_lista": [],
-    "leírás": "\"Én most lelépek...\" Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled.",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
-    "fokok": [
-      {
-        "fok": 1,
-        "hatás": [
-          "Átsiklás Manőverre +2 bónuszt kapsz.",
-          "Kibontakozás Manőverre +2 bónuszt kapsz."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "manőver:átsiklás",
-            "érték": 2,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
-          },
-          {
-            "cél": "manőver:kibontakozás",
-            "érték": 2,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
-          }
-        ],
-        "próba_enyhítések": []
-      },
-      {
-        "fok": 2,
-        "hatás": [
-          "Átsiklás Manőverre +4 bónuszt kapsz.",
-          "Kibontakozás Manőverre +4 bónuszt kapsz."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "manőver:átsiklás",
-            "érték": 4,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
-          },
-          {
-            "cél": "manőver:kibontakozás",
-            "érték": 4,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": ""
-          }
-        ],
-        "próba_enyhítések": []
-      }
-    ],
-    "md_fájl": "fortelyok.harci/nyulcipo.md"
   },
   {
     "név": "Orgyilkos",

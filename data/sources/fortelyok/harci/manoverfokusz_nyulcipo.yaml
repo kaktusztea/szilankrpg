@@ -1,7 +1,7 @@
 schema_version: 1
-név: "Nyúlcipő"
+név: "Manőverfókusz: Nyúlcipő"
 névkomment: ""
-maxfok: 2
+maxfok: 1
 session_toggle: false
 emlékeztető: true
 kiérdemelhető: false
@@ -35,25 +35,6 @@ fokok:
     feltétel: ""
   - cél: "manőver:kibontakozás"
     érték: 2
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: ""
-- fok: 2
-  követelménytext: []
-  követelmények: []
-  hatástext:
-  - text: "Átsiklás Manőverre +4 bónuszt kapsz."
-  - text: "Kibontakozás Manőverre +4 bónuszt kapsz."
-  módosítók:
-  - cél: "manőver:átsiklás"
-    érték: 4
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: ""
-  - cél: "manőver:kibontakozás"
-    érték: 4
     mód: "flat"
     forrás: ""
     arány: 0
