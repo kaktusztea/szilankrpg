@@ -30,5 +30,5 @@ A fegyver a harc idejére jelenik meg. Akkor tűnik el, ha az Exterminusra kijel
 #### Szabályok
 
 - Szent fegyver harcértékei: lásd a varázslat [leírását](../szent_fegyver.md).
-- Szent pajzs: törhetetlen, [Lefegyverzés/Fegyvertörés](../../066_05_altalanos_manoverek.md#lefegyverzés--fegyvertörés) nem alkalmazható ellene.
+- Szent pajzs: törhetetlen,  [Lefegyverzés](../../066_05_altalanos_manoverek.md#lefegyverzés) és [Fegyvertörés](../../066_05_altalanos_manoverek.md#fegyvertörés) Manőver nem alkalmazható ellene.
 - Szent páncél: `SFÉ: 5 + Kisszféra`.

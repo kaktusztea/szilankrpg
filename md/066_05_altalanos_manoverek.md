@@ -233,7 +233,7 @@ Láncos fegyverrel foglyul ejtett fegyveredet kiszabadítod.
 <br />
 
 ---
-### Lefegyverzés / Fegyvertörés
+### Lefegyverzés
 
 Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manővert kell alkalmaznod. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted. A pontos lefegyverzés menetéről a KM dönt és az esetleges módosítókat is ő határozza meg.
 

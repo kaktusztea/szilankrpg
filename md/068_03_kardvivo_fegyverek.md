@@ -53,7 +53,7 @@ KF: Különleges fegyver
 Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.
 
 - [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőver → Nehézség: `-2`
-- Könnyebb **ellene** a [Lefegyverzés/Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
+- Könnyebb **ellene** a [Lefegyverzés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s) és [Fegyvertörés](066_05_altalanos_manoverek.md#fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
 - Zúzó fegyverek ellen: `VÉ` veszteség duplázódik a tőrkardos oldalán
 
 ---
