@@ -29,7 +29,7 @@
 - [Lefegyverzés mestere](fortelyok.harci/lefegyverzes_mestere.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
-- [Nyúlcipő](fortelyok.harci/nyulcipo.md)
+- [Nyúlcipő](fortelyok.harci/manoverfokusz_nyulcipo.md)
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
