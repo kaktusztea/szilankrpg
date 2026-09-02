@@ -13,9 +13,7 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 
 ### 1. fok
 
-🔒 **Követelmény**:
-
-- Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
+🔒 **Követelmény**: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
 
 🌟 **Hatás**: Eltaláltad a kiszemelt fájdalmas pontot ellenfeled testén
 
