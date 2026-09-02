@@ -12716,10 +12716,10 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Kétkezesség](fortelyok.harci/ketkezesseg.md)
 - [Kínokozás](fortelyok.harci/kinokozas.md)
 - [Körkörös harc](fortelyok.harci/korkoros_harc.md)
-- [Lefegyverzés mestere](fortelyok.harci/lefegyverzes_mestere.md)
+- [Manőverfókusz: Lefegyverzés](fortelyok.harci/manoverfokusz_lefegyverzes.md)
+- [Manőverfókusz: Nyúlcipő](fortelyok.harci/manoverfokusz_nyulcipo.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
-- [Nyúlcipő](fortelyok.harci/nyulcipo.md)
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
@@ -15186,38 +15186,6 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 
 ---
 ---
-## File: md/fortelyok.harci/lefegyverzes_mestere.md
-
-## 🟣 Lefegyverzés mestere (2)
-
-Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét, vagy töröd el egy gyenge pontján.
-
----
-### 1. fok
-
-🔒 **Követelmény**:
-- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
-- [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
-
-🌟 **Hatás**:
-- [Lefegyverzés / Fegyvertörés](../066_05_altalanos_manoverek.md#lefegyverzés--fegyvertörés) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
-<br />
-
-### 2. fok
-
-🔒 **Követelmény**:
-- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) - `12.szint`
-- [Mesterfegyver](mesterfegyver.md) fortély: `2.fok`
-
-🌟 **Hatás**:
-- [Lefegyverzés / Fegyvertörés](../066_05_altalanos_manoverek.md#lefegyverzés--fegyvertörés) Manőver esetén `+4 MP` bónusz **Ellenpróbánál**
-- [Lánccsapda](../066_05_altalanos_manoverek.md#lánccsapda) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
-
----
-
-
----
----
 ## File: md/fortelyok.harci/leglovas_harc.md
 
 ## 🟣 Léglovas harc (3)
@@ -15339,6 +15307,48 @@ TÉ/VÉ: -9
 
 ---
 ---
+## File: md/fortelyok.harci/manoverfokusz_lefegyverzes.md
+
+## 🟣 Manőverfókusz: Lefegyverzés (1)
+
+Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét.
+
+---
+### 1. fok
+
+🔒 **Követelmény**:
+- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
+- [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
+
+🌟 **Hatás**:
+- [Lefegyverzés](../066_05_altalanos_manoverek.md#lefegyverzés) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/manoverfokusz_nyulcipo.md
+
+## 🟣 Manőverfókusz: Nyúlcipő (1)
+
+"Én most lelépek..."
+
+Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled.
+
+### 1. fok
+
+🔒 **Követelmény**: -
+
+🌟 **Hatás**:
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2` bónuszt kapsz (`E`)
+- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2` bónuszt kapsz (`E`)
+
+---
+
+
+---
+---
 ## File: md/fortelyok.harci/merevvertviselet.md
 
 ## 🟣 Merevvértviselet (3)
@@ -15437,37 +15447,6 @@ A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 ### Manőverek
 
 Bizonyos [manőverek](../066_00_manoverek.md) végbevitelének követelménye lehet ennek a fortélynak valamely foka, melyet csak az adott fegyverrel képes végrehajtani a forgatója. Például: [Mesterjel](../066_05_altalanos_manoverek.md#mesterjel)
-
----
-
-
----
----
-## File: md/fortelyok.harci/nyulcipo.md
-
-## 🟣 Nyúlcipő (2)
-
-"Én most lelépek..."
-
-Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled.
-
-### 1. fok
-
-🔒 **Követelmény**: -
-
-🌟 **Hatás**:
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2` bónuszt kapsz (`E`)
-- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2` bónuszt kapsz (`E`)
-
-<br />
-
-### 2. fok
-
-🔒 **Követelmény**: -
-
-🌟 **Hatás**:
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+4` bónuszt kapsz (`E`)
-- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+4` bónuszt kapsz (`E`)
 
 ---
 
@@ -24268,6 +24247,7 @@ A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mint
 - [Csonkolás](#csonkol%C3%A1s)
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
 - [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
+- [Fegyvertörés](#fegyvert%C3%B6r%C3%A9s)
 - [Forgószél támadás](#forg%C3%B3sz%C3%A9l-t%C3%A1mad%C3%A1s)
 - [Kibontakozás](#kibontakoz%C3%A1s)
 - [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
@@ -24275,7 +24255,7 @@ A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mint
 - [Lábsöprés / Felöklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--fel%C3%B6klel%C3%A9s)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
-- [Lefegyverzés / Fegyvertörés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s)
+- [Lefegyverzés](#lefegyverz%C3%A9s)
 - [Leütés hátulról](#le%C3%BCt%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Lovas, léglovas megakasztása](#lovas-l%C3%A9glovas-megakaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
@@ -24352,6 +24332,25 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 - Fázisok: `Megakasztás, Ellenpróba`
 
 **Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
+
+<br />
+
+---
+### Fegyvertörés
+
+Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted.
+
+❌ Karmok és szarvak ellen nem használható a Manőver, ott **Csonkolás** szükséges.
+
+- Nehézség: `12`
+	- `-4`: ellenfél fegyvere fából készült szálfegyver (sokkal könnyebb)
+    - `-2`: fegyvered nagyobb/alkalmasabb ellenfeledénél törésre
+    - `+2`: fegyvered kisebb/alkalmatlanabb ellenfeledénél törésre
+	- `+99`: a használt fegyver nem alkalmas fegyvertörésre. KM dönt.
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény: Harcmodor – `5.szint`
+
+**Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
 
 <br />
 
@@ -24453,12 +24452,12 @@ Láncos fegyverekkel hajthatod végre.
 
 **Hatás**:
 - Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
-- Ha ellenfeled elengedi fegyverét, akkor gyakorlatilag sikeres [Lefegyverzéssé](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) változik a Manőver
+- Ha ellenfeled elengedi fegyverét, akkor gyakorlatilag sikeres [Lefegyverzéssé](#lefegyverz%C3%A9s) változik a Manőver
 - Ha továbbra is kezében tartja:
   - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve) módosítói sújtják
   - Ha másik keze üres, akkor [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc) harcértékekkel harcol
   - Kétkezes harc esetén a továbbiakban a másik kezében tartott fegyver harcértékeivel küzd.
-- a foglyul ejtett fegyverre a [Lefegyverezés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver csak `5`-ös Nehézségű
+- a foglyul ejtett fegyverre a [Lefegyverezés](#lefegyverz%C3%A9s) Manőver csak `5`-ös Nehézségű
 - A fegyvert kiszabadítani [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s) Manőverrel lehet.
 
 <br />
@@ -24476,20 +24475,18 @@ Láncos fegyverrel foglyul ejtett fegyveredet kiszabadítod.
 <br />
 
 ---
-### Lefegyverzés / Fegyvertörés
+### Lefegyverzés
 
-Ha meg akarod fosztani ellenfeledet fegyverétől, vagy kiütve kezéből, vagy annak eltörésével, akkor lefegyverezés manővert kell alkalmaznod. Azokra a Harcmodorokra és fegyverre kapod meg az adott szint bónuszát, amelyek követelményeit teljesíted. Hogy fegyvercsellel, végtagsebzéssel, vagy fegyvertöréssel fosztja meg ellenfelét a karakter, arról a KM dönt és az esetleges módosítókat is ő határozza meg.
-
-❌ Karmok és szarvak ellen nem használható a Manőver, ott **Csonkolás** szükséges.
+Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manővert kell alkalmaznod. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted. A pontos lefegyverzés menetéről a KM dönt és az esetleges módosítókat is ő határozza meg.
 
 - Nehézség: `10`
-	- `+2`: fegyvertörés: alaphelyzet. Nehezebb, mint a lefegyverzés.
-	- `-2`: fegyvertörés: fából készült szálfegyverekre (sokkal (`-4`) könnyebb, mint az alap fegyvertörés)
-	- `[-2;+2]`: a használt fegyver mennyire alkalmas a másik fegyver elvételére. KM dönt.
+    - `-2`: fegyvered kimondottan alkalmas ellenfeled fegyverének elvételére
+    - `+2`: fegyvered nem kimondottan alkalmas ellenfeled fegyverének elvételére
+	- `+99`: a használt fegyver nem alkalmas lefegyverzésre. KM dönt.
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény: Harcmodor – `5.szint`
 
-**Hatás**: A lefegyverzés/fegyvertörés sikeres. Ellenfeled kezéből kihullik a fegyver, vagy eltörik.
+**Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
 
 <br />
 
@@ -25908,7 +25905,7 @@ KF: Különleges fegyver
 Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.
 
 - [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőver → Nehézség: `-2`
-- Könnyebb **ellene** a [Lefegyverzés/Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
+- Könnyebb **ellene** a [Lefegyverzés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s) és [Fegyvertörés](066_05_altalanos_manoverek.md#fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
 - Zúzó fegyverek ellen: `VÉ` veszteség duplázódik a tőrkardos oldalán
 
 ---
