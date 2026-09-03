@@ -27,8 +27,8 @@
 
 🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 
-🌟 **Hatás**:
-- Orvtámadáskor `Előny+2` Sebzés dobásra
+🌟 **Hatás**: Orvtámadáskor
+- `Előny+2` Sebzés dobásra
 - `+3 SP`
 
 ---
