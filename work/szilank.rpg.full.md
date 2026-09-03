@@ -15136,9 +15136,7 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 
 ### 1. fok
 
-🔒 **Követelmény**:
-
-- Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
+🔒 **Követelmény**: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
 
 🌟 **Hatás**: Eltaláltad a kiszemelt fájdalmas pontot ellenfeled testén
 
@@ -24619,7 +24617,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
 - Követelmény: Aktuális harcmodor - `6.szint`
 
-**Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén a [Harci Anatómia](fortelyok.harci/harci_anatomia.md) **SP** bónusz érvényesül.
+**Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély
 
