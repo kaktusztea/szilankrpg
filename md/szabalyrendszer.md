@@ -302,24 +302,6 @@
 ### 15. [Szituációk](150_szituaciok.md)
 
 ---
-### 16. [Példa karakterek](160_pelda_karakterek.md)### 12. [Varázstárgyak](120_varazstargyak.md)
-
----
-### 13. [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md)
-
----
-
-### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
-
-- [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
-- [Méregellenállás próba](142_meregellenallas.md)
-- [Méregérzékelés](143_meregerzekeles.md)
-- [Példamérgek](144_peldamergek.md) ⚡
-
----
-### 15. [Szituációk](150_szituaciok.md)
-
----
 ### 16. [Példa karakterek](160_pelda_karakterek.md)
 
 ---
