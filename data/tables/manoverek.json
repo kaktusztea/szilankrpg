@@ -40,12 +40,12 @@
     "id": "felállás_földről"
   },
   {
-    "név": "Forgószél támadás",
+    "név": "Forgószél",
     "típus": "általános",
     "nehézség": 7,
     "fázisok": "V,E",
     "hatás": "Köríves támadás több ellenfélre egyszerre. Külön sebzés mindegyikre. Nem okoz VÉ csökkentést.",
-    "id": "forgószél_támadás"
+    "id": "forgószél"
   },
   {
     "név": "Kibontakozás",

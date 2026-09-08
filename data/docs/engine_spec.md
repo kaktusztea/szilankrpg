@@ -1241,7 +1241,7 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 | Csonkolás                   | 8(kéz)/10(láb)                  | V,E          | Precíz támadás                                    | Végtaglevágás (ÉP/3↑ ill. ÉP/2↑ sebzés)    |
 | Ellenfél elfogása           | 10                              | V,E          | —                                                 | Kiszolgáltatott pozícióba kényszerítés     |
 | Felállás földről            | 6 (-akro/3)                     | M,E          | —                                                 | Felkelés földről                           |
-| Forgószél támadás           | 7+ellenfél                      | V,E          | —                                                 | Köríves támadás több ellenfélre            |
+| Forgószél                   | 7+ellenfél                      | V,E          | —                                                 | Köríves támadás több ellenfélre            |
 | Kibontakozás                | 5 (±2/penge, +2/extra ellenfél) | E (M*)       | —                                                 | Kilépés a harcból                          |
 | Kiegészítő támadás          | 7                               | V,E          | Közelharc 4, MF 1                                 | Alattomos ütés (k20+0 SP)                  |
 | Lábkirántás szálfegyverrel  | 6                               | V,E          | Lándzsavívás 6, szálfegyver                       | Ellenfél földre kerül                      |
