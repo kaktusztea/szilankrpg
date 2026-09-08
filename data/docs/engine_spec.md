@@ -1243,7 +1243,7 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 | Felállás földről            | 6 (-akro/3)                     | M,E          | —                                                 | Felkelés földről                           |
 | Forgószél                   | 7+ellenfél                      | V,E          | —                                                 | Köríves támadás több ellenfélre            |
 | Kibontakozás                | 5 (±2/penge, +2/extra ellenfél) | E (M*)       | —                                                 | Kilépés a harcból                          |
-| Kiegészítő támadás          | 7                               | V,E          | Közelharc 4, MF 1                                 | Alattomos ütés (k20+0 SP)                  |
+| Piszkos trükk               | 7                               | V,E          | Közelharc 4, MF 1                                 | Alattomos ütés (k20+0 SP)                  |
 | Lábkirántás szálfegyverrel  | 6                               | V,E          | Lándzsavívás 6, szálfegyver                       | Ellenfél földre kerül                      |
 | Földrevitel                 | 8 (±erő)                        | V,E          | Harcmodor 5                                       | Ellenfél földre kerül                      |
 | Lánccsapda                  | 9                               | V,E          | MF 1, láncos fegyver                              | Ellenfél fegyverének foglyul ejtése        |

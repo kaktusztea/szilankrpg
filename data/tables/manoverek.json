@@ -32,6 +32,14 @@
     "id": "ellenfél_elfogása"
   },
   {
+    "név": "Fegyvertörés",
+    "típus": "általános",
+    "nehézség": 12,
+    "fázisok": "V,E",
+    "hatás": "Ellenfél fegyvere eltörik.",
+    "id": "fegyvertörés"
+  },
+  {
     "név": "Felállás földről",
     "típus": "általános",
     "nehézség": 6,
@@ -48,6 +56,14 @@
     "id": "forgószél"
   },
   {
+    "név": "Földrevitel",
+    "típus": "általános",
+    "nehézség": 8,
+    "fázisok": "V,E",
+    "hatás": "Ellenfél földre kerül (Földön fekve módosítók). Felállás: Felállás földről manőver.",
+    "id": "földrevitel"
+  },
+  {
     "név": "Kibontakozás",
     "típus": "általános",
     "nehézség": 5,
@@ -56,28 +72,12 @@
     "id": "kibontakozás"
   },
   {
-    "név": "Kiegészítő támadás",
-    "típus": "általános",
-    "nehézség": 7,
-    "fázisok": "V,E",
-    "hatás": "Alattomos ütés (k20+0 SP). Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását.",
-    "id": "kiegészítő_támadás"
-  },
-  {
     "név": "Lábkirántás szálfegyverrel",
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "V,E",
     "hatás": "Ellenfél földre kerül (Földön fekve módosítók). Felállás: Felállás földről manőver.",
     "id": "lábkirántás_szálfegyverrel"
-  },
-  {
-    "név": "Földrevitel",
-    "típus": "általános",
-    "nehézség": 8,
-    "fázisok": "V,E",
-    "hatás": "Ellenfél földre kerül (Földön fekve módosítók). Felállás: Felállás földről manőver.",
-    "id": "földrevitel"
   },
   {
     "név": "Lánccsapda",
@@ -104,28 +104,12 @@
     "id": "lefegyverzés"
   },
   {
-    "név": "Fegyvertörés",
-    "típus": "általános",
-    "nehézség": 12,
-    "fázisok": "V,E",
-    "hatás": "Ellenfél fegyvere eltörik.",
-    "id": "fegyvertörés"
-  },
-  {
     "név": "Leütés hátulról",
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "V,E",
     "hatás": "Ájulás ha sebzés ≥ ÉP/4↓. Egyébként Bódultság státusz. Sebzés FP-ként jelenik meg.",
     "id": "leütés_hátulról"
-  },
-  {
-    "név": "Lovas megakasztása",
-    "típus": "lovas",
-    "nehézség": 4,
-    "fázisok": "M,E",
-    "hatás": "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra, aki elveszíti támadását.",
-    "id": "lovas_megakasztása"
   },
   {
     "név": "Mesterjel",
@@ -144,6 +128,14 @@
     "id": "mögékerülés"
   },
   {
+    "név": "Pajzsrongálás",
+    "típus": "általános",
+    "nehézség": 6,
+    "fázisok": "V,E",
+    "hatás": "Pajzs VÉ végleges csökkentése. Zúzó: SP/2, Vágó: SP/4.",
+    "id": "pajzsrongálás"
+  },
+  {
     "név": "Pajzzsal felöklelés",
     "típus": "általános",
     "nehézség": 7,
@@ -152,12 +144,12 @@
     "id": "pajzzsal_felöklelés"
   },
   {
-    "név": "Pajzsrongálás",
+    "név": "Piszkos trükk",
     "típus": "általános",
-    "nehézség": 6,
+    "nehézség": 7,
     "fázisok": "V,E",
-    "hatás": "Pajzs VÉ végleges csökkentése. Zúzó: SP/2, Vágó: SP/4.",
-    "id": "pajzsrongálás"
+    "hatás": "Alattomos ütés (k20+0 SP). Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását.",
+    "id": "piszkos_trükk"
   },
   {
     "név": "Precíz támadás",
@@ -192,6 +184,14 @@
     "id": "terelés"
   },
   {
+    "név": "Átdobás",
+    "típus": "belharcos",
+    "nehézség": 7,
+    "fázisok": "V,E",
+    "hatás": "Ellenfél földre kerül (Földön fekve módosítók).",
+    "id": "átdobás"
+  },
+  {
     "név": "Belharcba kerülés",
     "típus": "belharcos",
     "nehézség": 9,
@@ -206,14 +206,6 @@
     "fázisok": "M,E",
     "hatás": "Kilépés belharcból, sima harci szituáció. Sebzés esetén automatikus kibontakozás.",
     "id": "belharcból_kibontakozás"
-  },
-  {
-    "név": "Átdobás",
-    "típus": "belharcos",
-    "nehézség": 7,
-    "fázisok": "V,E",
-    "hatás": "Ellenfél földre kerül (Földön fekve módosítók).",
-    "id": "átdobás"
   },
   {
     "név": "Feszítés, Leszorítás",
@@ -288,6 +280,14 @@
     "id": "hátas_táncoltatása"
   },
   {
+    "név": "Lóhátról lerántás",
+    "típus": "lovas",
+    "nehézség": 6,
+    "fázisok": "M,V,E",
+    "hatás": "GYALOGOS végzi lovas ellen. Közvetlen harcérintkezés szükséges. Sikernél a lovas földre kerül. Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye).",
+    "id": "lóhátról_lerántás"
+  },
+  {
     "név": "Lovas áttörés",
     "típus": "lovas",
     "nehézség": 4,
@@ -296,11 +296,11 @@
     "id": "lovas_áttörés"
   },
   {
-    "név": "Lóhátról lerántás",
+    "név": "Lovas megakasztása",
     "típus": "lovas",
-    "nehézség": 6,
-    "fázisok": "M,V,E",
-    "hatás": "GYALOGOS végzi lovas ellen. Közvetlen harcérintkezés szükséges. Sikernél a lovas földre kerül. Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye).",
-    "id": "lóhátról_lerántás"
+    "nehézség": 4,
+    "fázisok": "M,E",
+    "hatás": "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra, aki elveszíti támadását.",
+    "id": "lovas_megakasztása"
   }
 ]
