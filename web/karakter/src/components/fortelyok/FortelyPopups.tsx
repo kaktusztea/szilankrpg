@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import type { FortelySummary, NyelvEntry } from '../../engine/data-loader';
+import type { FortelySummary } from '../../engine/data-loader';
+import type { GameData } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
 import type { SzabadTypePicker } from './types';
 import { displayName } from './helpers';
@@ -34,16 +35,15 @@ export function FokPickerPopup({ slot, maxfok, nyelvFokLabels, onSelect, onCance
 }
 
 // --- Multi picker (lista / fegyver / nyelv / freetext) ---
-export function MultiPicker({ def, fortélyok, fegyverNevek, nyelvek, onSelect, onCancel }: {
+export function MultiPicker({ def, fortélyok, data, onSelect, onCancel }: {
   def: FortelySummary;
   fortélyok: Fortely[];
-  fegyverNevek: string[];
-  nyelvek: NyelvEntry[];
+  data: GameData;
   onSelect: (subName: string) => void;
   onCancel: () => void;
 }) {
   const usedSubs = new Set(fortélyok.filter(f => f.név === def.név).map(f => f.spec_elem));
-  const source = buildFortelyPickerSource(def, usedSubs, { fegyverNevek, nyelvek });
+  const source = buildFortelyPickerSource(def, usedSubs, data);
   return <SpecPicker source={source} onSelect={onSelect} onCancel={onCancel} />;
 }
 

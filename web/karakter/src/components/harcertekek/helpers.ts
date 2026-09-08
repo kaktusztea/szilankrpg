@@ -98,24 +98,6 @@ export function mfKövetelményText(data: GameData, k: Karakter, fegyverAlap: st
 
 // --- Fegyver dropdown építése ---
 
-export function buildFegyverByKat(
-  data: GameData,
-  felvettFegyverek: Set<string>
-): Map<string, { id: string; label: string }[]> {
-  const map = new Map<string, { id: string; label: string }[]>();
-  for (const f of data.fegyverek) {
-    if (f.MK_pár && f['Forgatás módja'] === 'kétkezes') continue;
-    if (f.Kategória === 'pajzs') continue;
-    if (felvettFegyverek.has(f.Fegyver.toLowerCase())) continue;
-    const arr = map.get(f.Kategória) || [];
-    arr.push({ id: f.Fegyver, label: f.Alapnév || f.Fegyver });
-    map.set(f.Kategória, arr);
-  }
-  return map;
-}
-
-export const FEGYVER_KATEGORIAK = ['kardvívó', 'közelharci', 'romboló', 'lándzsavívó', 'ostorharc'];
-
 // --- Harci képzettségek ---
 
 export function getAllHarciNames(data: GameData): string[] {

@@ -41,11 +41,13 @@
 .fort-over { color: var(--error) !important; }
 
 /* --- Nyelv picker --- */
-.nyelv-picker { max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
-.nyelv-csoport-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
-.nyelv-csoport { display: flex; flex-direction: column; gap: 3px; }
+.spec-picker { max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+.spec-picker-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
+.spec-picker-csoport-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
+.spec-picker-list { display: flex; flex-direction: column; gap: 3px; }
+.spec-picker-csoport { display: flex; flex-direction: column; gap: 3px; }
 
-.nyelv-btn {
+.spec-picker-btn {
   background: var(--input-bg);
   border: 1px solid var(--border-input);
   border-radius: 4px;

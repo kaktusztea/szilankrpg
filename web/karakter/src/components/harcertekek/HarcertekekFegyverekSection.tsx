@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import type { Karakter, FegyverPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
 import { FegyverChip } from './HarcertekekFegyverChip';
-import { getMfFok, mfKövetelményHiba, mfKövetelményText, buildFegyverByKat, FEGYVER_KATEGORIAK } from './helpers';
+import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './helpers';
+import { SpecPicker, type PickerSource } from '../SpecPicker';
+import { buildFegyverGroups } from '../fegyver-groups';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 
 interface Props {
@@ -18,6 +21,7 @@ interface Props {
 
 export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onIdeaTarget, onMfTarget, onAnyagTarget, onDeleteTarget }: Props) {
   const { konstansok } = data;
+  const [pickerOpen, setPickerOpen] = useState(false);
 
   function addFegyver(alap: string) {
     setKarakter(prev => {
@@ -28,7 +32,11 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
   }
 
   const felvettFegyverek = new Set(k.fegyverek.map(fp => fp.alap.toLowerCase()));
-  const fegyverByKat = buildFegyverByKat(data, felvettFegyverek);
+  const pickerSource: PickerSource = {
+    type: 'grouped',
+    label: '+ Új fegyver:',
+    groups: buildFegyverGroups(data, f => f.Fegyver, felvettFegyverek),
+  };
 
   return (
     <section className="he-section">
@@ -48,14 +56,14 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
         />
       ))}
       {!gameMode && k.fegyverek.length < MAX_FEGYVER_DARAB && (
-        <select className="he-add-select" value="" onChange={e => { if (e.target.value) addFegyver(e.target.value); }}>
-          <option value="">+ Új fegyver...</option>
-          {FEGYVER_KATEGORIAK.filter(kat => fegyverByKat.has(kat)).map(kat => (
-            <optgroup key={kat} label={kat}>
-              {fegyverByKat.get(kat)!.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}
-            </optgroup>
-          ))}
-        </select>
+        <button className="he-add-select" onClick={() => setPickerOpen(true)}>+ Új fegyver…</button>
+      )}
+      {pickerOpen && (
+        <SpecPicker
+          source={pickerSource}
+          onSelect={alap => { addFegyver(alap); setPickerOpen(false); }}
+          onCancel={() => setPickerOpen(false)}
+        />
       )}
     </section>
   );

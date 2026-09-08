@@ -1,11 +1,15 @@
 import { useState } from 'react';
+import type { GameData } from '../engine/data-loader';
 import { PopupOverlay } from './PopupOverlay';
+import { buildFegyverGroups } from './fegyver-groups';
 
 // --- Source types ---
 
+export interface PickerItem { value: string; label: string }
+
 export type PickerSource =
-  | { type: 'list'; label: string; items: string[] }
-  | { type: 'grouped'; label: string; groups: { label: string; items: string[] }[] }
+  | { type: 'list'; label: string; items: PickerItem[] }
+  | { type: 'grouped'; label: string; groups: { label: string; items: PickerItem[] }[] }
   | { type: 'freetext'; label: string; placeholder?: string; maxLength?: number }
 
 // --- Props ---
@@ -23,25 +27,25 @@ export function SpecPicker({ source, onSelect, onCancel }: SpecPickerProps) {
 
   if (source.type === 'list') {
     return (
-      <PopupOverlay onClose={onCancel}>
-        <label>{source.label}</label>
-        <select className="fort-select" autoFocus value="" onChange={e => { if (e.target.value) onSelect(e.target.value); }}>
-          <option value="">Válassz...</option>
-          {source.items.map(k => <option key={k} value={k}>{k}</option>)}
-        </select>
-        <div className="kep-prompt-btns"><button onClick={onCancel}>Mégse</button></div>
+      <PopupOverlay onClose={onCancel} className="kep-prompt spec-picker">
+        <div className="spec-picker-label">{source.label}</div>
+        <div className="spec-picker-list">
+          {source.items.map(it => (
+            <button key={it.value} className="spec-picker-btn" onClick={() => onSelect(it.value)}>{it.label}</button>
+          ))}
+        </div>
       </PopupOverlay>
     );
   }
 
   if (source.type === 'grouped') {
     return (
-      <PopupOverlay onClose={onCancel} className="kep-prompt nyelv-picker">
+      <PopupOverlay onClose={onCancel} className="kep-prompt spec-picker">
         {source.groups.map(g => (
-          <div key={g.label} className="nyelv-csoport">
-            <div className="nyelv-csoport-label">{g.label}</div>
-            {g.items.map(item => (
-              <button key={item} className="nyelv-btn" onClick={() => onSelect(item)}>{item}</button>
+          <div key={g.label} className="spec-picker-csoport">
+            <div className="spec-picker-csoport-label">{g.label}</div>
+            {g.items.map(it => (
+              <button key={it.value} className="spec-picker-btn" onClick={() => onSelect(it.value)}>{it.label}</button>
             ))}
           </div>
         ))}
@@ -74,19 +78,29 @@ export function SpecPicker({ source, onSelect, onCancel }: SpecPickerProps) {
 export function buildFortelyPickerSource(
   def: { név: string; többszörös_típus: string; többszörös_lista: string[] },
   usedSubs: Set<string>,
-  runtimeLists: { fegyverNevek: string[]; nyelvek: { név: string; csoport: string }[] }
+  data: GameData,
 ): PickerSource {
   if (def.többszörös_lista.length > 0) {
-    return { type: 'list', label: `${def.név} — ${def.többszörös_típus}:`, items: def.többszörös_lista.filter(s => !usedSubs.has(s)) };
+    return {
+      type: 'list',
+      label: `${def.név} — ${def.többszörös_típus}:`,
+      items: def.többszörös_lista.filter(s => !usedSubs.has(s)).map(s => ({ value: s, label: s })),
+    };
   }
   if (def.többszörös_típus === 'fegyver') {
-    return { type: 'list', label: `${def.név} — fegyver:`, items: runtimeLists.fegyverNevek.filter(n => !usedSubs.has(n)) };
+    // Fortély spec_elem = Alapnév (case-insensitive összevetés a usedSubs-szal).
+    const felvett = new Set([...usedSubs].map(s => s.toLowerCase()));
+    return {
+      type: 'grouped',
+      label: `${def.név} — fegyver:`,
+      groups: buildFegyverGroups(data, f => f.Alapnév || f.Fegyver, felvett),
+    };
   }
   if (def.többszörös_típus === 'nyelv') {
-    const byGroup = new Map<string, string[]>();
-    for (const n of runtimeLists.nyelvek.filter(l => !usedSubs.has(l.név))) {
+    const byGroup = new Map<string, PickerItem[]>();
+    for (const n of data.nyelvek.filter(l => !usedSubs.has(l.név))) {
       const arr = byGroup.get(n.csoport) || [];
-      arr.push(n.név);
+      arr.push({ value: n.név, label: n.név });
       byGroup.set(n.csoport, arr);
     }
     return { type: 'grouped', label: def.név, groups: [...byGroup.entries()].map(([label, items]) => ({ label, items })) };

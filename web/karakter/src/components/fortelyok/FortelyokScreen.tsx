@@ -89,8 +89,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
         <MultiPicker
           def={multiPickerDef}
           fortélyok={fortélyok}
-          fegyverNevek={fegyverNevek}
-          nyelvek={data.nyelvek}
+          data={data}
           onSelect={addMultiInstance}
           onCancel={() => setMultiPickerDef(null)}
         />
