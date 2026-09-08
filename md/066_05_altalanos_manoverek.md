@@ -6,11 +6,11 @@
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
 - [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
 - [Fegyvertörés](#fegyvert%C3%B6r%C3%A9s)
+- [Földrevitel](#földrevitel)
 - [Forgószél támadás](#forg%C3%B3sz%C3%A9l-t%C3%A1mad%C3%A1s)
 - [Kibontakozás](#kibontakoz%C3%A1s)
 - [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
 - [Lábkirántás szálfegyverrel](#l%C3%A1bkir%C3%A1nt%C3%A1s-sz%C3%A1lfegyverrel)
-- [Földrevitel](#földrevitel)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
 - [Lefegyverzés](#lefegyverz%C3%A9s)
@@ -113,6 +113,22 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 <br />
 
 ---
+### Földrevitel
+
+Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
+
+- Nehézség: `8`
+  - ± **Erő** különbség
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény:
+  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
+  - Aktuális harcmodor - `5.szint`
+
+**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+
+<br />
+
+---
 ### Forgószél támadás
 
 - Nehézség: `7 + ellenfél`
@@ -178,22 +194,6 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 	- Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 
 **Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
-
-<br />
-
----
-### Földrevitel
-
-Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
-
-- Nehézség: `8`
-  - ± **Erő** különbség
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény:
-  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
-  - Aktuális harcmodor - `5.szint`
-
-**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 <br />
 
