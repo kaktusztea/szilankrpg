@@ -4,12 +4,11 @@
 - [Áttörés](#átt%C3%B6r%C3%A9s)
 - [Csonkolás](#csonkol%C3%A1s)
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
-- [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
 - [Fegyvertörés](#fegyvert%C3%B6r%C3%A9s)
-- [Földrevitel](#földrevitel)
+- [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
 - [Forgószél](#forgószél)
+- [Földrevitel](#földrevitel)
 - [Kibontakozás](#kibontakoz%C3%A1s)
-- [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
 - [Lábkirántás szálfegyverrel](#l%C3%A1bkir%C3%A1nt%C3%A1s-sz%C3%A1lfegyverrel)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
@@ -18,8 +17,9 @@
 - [Lovas, léglovas megakasztása](#lovas-l%C3%A9glovas-megakaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
-- [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
+- [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
+- [Piszkos trükk](#piszkos-trükk)
 - [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s)
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
@@ -83,17 +83,6 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 <br />
 
 ---
-### Felállás földről
-
-- Nehézség: `6`
-  - csökkenti: `(Akrobatika szint / 3)` (↓)
-- Fázisok: `Megakasztás, Ellenpróba`
-
-**Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
-
-<br />
-
----
 ### Fegyvertörés
 
 Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted.
@@ -113,18 +102,13 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 <br />
 
 ---
-### Földrevitel
+### Felállás földről
 
-Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
+- Nehézség: `6`
+  - csökkenti: `(Akrobatika szint / 3)` (↓)
+- Fázisok: `Megakasztás, Ellenpróba`
 
-- Nehézség: `8`
-  - ± **Erő** különbség
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény:
-  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
-  - Aktuális harcmodor - `5.szint`
-
-**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+**Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
 
 <br />
 
@@ -149,6 +133,22 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 <br />
 
 ---
+### Földrevitel
+
+Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
+
+- Nehézség: `8`
+  - ± **Erő** különbség
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény:
+  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
+  - Aktuális harcmodor - `5.szint`
+
+**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+
+<br />
+
+---
 ### Kibontakozás
 
 - Nehézség: `5`
@@ -162,21 +162,6 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető Kibontakozás.
 
 **Hatás**: Sikerül a harcból kibontakoznod, ellenfele(i)d már nem támadhat(nak) rád. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróba ([Sprint](fortelyok.altalanos/sprint.md) fortély számít!). Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`Előny+2` Támadó dobásra).
-
-<br />
-
----
-### Kiegészítő támadás
-
-- Nehézség: `7`
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény:
-	- Közelharc – `4.szint`
-	- Forgatott fegyverre: Mesterfegyver – `1.fok`
-
-**Hatás**: Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
-
-Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a bement sebzés legalább `5 ÉP`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
 
 <br />
 
@@ -311,22 +296,6 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 <br />
 
 ---
-### Pajzzsal felöklelés
-
-- Nehézség: `7`
-    - ± **Erő** különbség
-    - Ellenfél minden **Pajzshasználat** foka után `+2` (ha használ épp pajzsot ő is)
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény:
-  - Aktuális harcmodor: - `5.szint`
-  - Pajzshasználat – `2.fok`
-  - Nagy és Közepes pajzzsal lehetséges csak
-
-**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
-
-<br />
-
----
 ### Pajzsrongálás
 
 Szándékosan rongálod ellenfeled pajzsát, csökkentve annak **Védő Értékét**.
@@ -352,6 +321,37 @@ Anyagok erőssége
 ↑ Bronz
 ↑ Fa
 ```
+
+<br />
+
+---
+### Pajzzsal felöklelés
+
+- Nehézség: `7`
+    - ± **Erő** különbség
+    - Ellenfél minden **Pajzshasználat** foka után `+2` (ha használ épp pajzsot ő is)
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény:
+  - Aktuális harcmodor: - `5.szint`
+  - Pajzshasználat – `2.fok`
+  - Nagy és Közepes pajzzsal lehetséges csak
+
+**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
+
+<br />
+
+---
+### Piszkos trükk
+
+- Nehézség: `7`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény:
+	- Közelharc – `4.szint`
+	- Forgatott fegyverre: Mesterfegyver – `1.fok`
+
+**Hatás**: Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
+
+Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a bement sebzés legalább `5 ÉP`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
 
 <br />
 
