@@ -7,10 +7,14 @@ interface Props {
   /** If true, clicking the backdrop closes the overlay via onClose */
   dismissible?: boolean;
   onClose?: () => void;
+  /** Escape handler; defaults to onClose. Use when Escape must cancel while a
+   *  backdrop click does something else (e.g. commits the typed value). */
+  onEscape?: () => void;
 }
 
-export function OverlayPortal({ children, dismissible, onClose }: Props) {
-  useEscapeClose(!!onClose, onClose ?? (() => {}));
+export function OverlayPortal({ children, dismissible, onClose, onEscape }: Props) {
+  const escapeHandler = onEscape ?? onClose;
+  useEscapeClose(!!escapeHandler, escapeHandler ?? (() => {}));
 
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (dismissible && onClose && (e.target as HTMLElement).classList.contains('kep-prompt-overlay')) {
