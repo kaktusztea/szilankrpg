@@ -7,7 +7,7 @@
 - [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
 - [Fegyvertörés](#fegyvert%C3%B6r%C3%A9s)
 - [Földrevitel](#földrevitel)
-- [Forgószél támadás](#forg%C3%B3sz%C3%A9l-t%C3%A1mad%C3%A1s)
+- [Forgószél](#forgószél)
 - [Kibontakozás](#kibontakoz%C3%A1s)
 - [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
 - [Lábkirántás szálfegyverrel](#l%C3%A1bkir%C3%A1nt%C3%A1s-sz%C3%A1lfegyverrel)
@@ -129,7 +129,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 <br />
 
 ---
-### Forgószél támadás
+### Forgószél
 
 - Nehézség: `7 + ellenfél`
 - Fázisok: `Végrehajtás, Ellenpróba`
