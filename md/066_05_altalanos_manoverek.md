@@ -10,7 +10,7 @@
 - [Kibontakozás](#kibontakoz%C3%A1s)
 - [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
 - [Lábkirántás szálfegyverrel](#l%C3%A1bkir%C3%A1nt%C3%A1s-sz%C3%A1lfegyverrel)
-- [Lábsöprés / Felöklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--fel%C3%B6klel%C3%A9s)
+- [Földrevitel](#földrevitel)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
 - [Lefegyverzés](#lefegyverz%C3%A9s)
@@ -167,7 +167,7 @@ Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* é
 ---
 ### Lábkirántás szálfegyverrel
 
-Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél [Felökleléssel](#l%C3%A1bs%C3%B6pr%C3%A9s--fel%C3%B6klel%C3%A9s) kell próbálkoznod.
+Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél [Földrevitellel](#földrevitel) kell próbálkoznod.
 
 - Nehézség: `6`
 	- `-2`: Kifejezetten lábkirántásra alkalmas fegyverrel próbálkozol
@@ -182,7 +182,7 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 <br />
 
 ---
-### Lábsöprés / Felöklelés
+### Földrevitel
 
 Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
 

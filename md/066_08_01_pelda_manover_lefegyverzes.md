@@ -64,6 +64,6 @@ Ha Rühes `4` Manőver Pontot költött volna el, akkor már `+4` járna a prób
 
 ---
 
-🔗 [Példa Manőver: Lábsöprés](066_08_02_pelda_manover_labsopres.md) →
+🔗 [Példa Manőver: Földrevitel](066_08_02_pelda_manover_labsopres.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

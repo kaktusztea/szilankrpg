@@ -128,7 +128,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 - [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 - [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver sikeres alkalmazásával kelhet fel
 
-Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Felökleléssel](066_05_altalanos_manoverek.md#lábsöprés--felöklelés) kell próbálkoznod.
+Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_05_altalanos_manoverek.md#földrevitel) kell próbálkoznod.
 
 <br />
 

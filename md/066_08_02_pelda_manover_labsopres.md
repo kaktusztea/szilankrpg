@@ -1,6 +1,6 @@
-## ⚡Példa Manőver alkalmazására: Lábsöprés
+## ⚡Példa Manőver alkalmazására: Földrevitel
 
-Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr. Hogy növelje esélyeit, elkölt `2` **Manőver Pontot**.
+Tetves **Földrevitelt** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr. Hogy növelje esélyeit, elkölt `2` **Manőver Pontot**.
 
 ```
 Tetves értékei
