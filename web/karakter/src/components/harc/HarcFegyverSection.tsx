@@ -75,7 +75,7 @@ function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: P
 function PáncélToggle({ session, setSession, pushUndo }: Pick<HarcBaseProps, 'session' | 'setSession' | 'pushUndo'>) {
   return (
     <div className={`aktiv-field-btn aktiv-field-toggle${session.aktív_páncél ? ' on' : ''}`}
-      onClick={() => { pushUndo(`Páncél: ${!session.aktív_páncél ? 'Igen' : 'Nem'}`, [{ field: 'session', prev: session }]); setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél })); }}>
+      onClick={() => { const next = { ...session, aktív_páncél: !session.aktív_páncél }; pushUndo(`Páncél: ${next.aktív_páncél ? 'Igen' : 'Nem'}`, [{ field: 'session', prev: session, ckey: 'aktív_páncél' }], next); setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél })); }}>
       <span className="aktiv-field-label">Páncél viselve</span>
       <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
     </div>

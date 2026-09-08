@@ -74,10 +74,14 @@ const COALESCE_FIELDS = new Set(['HM_TÉ', 'HM_VÉ', 'CM', 'jk', 'képzettségek
  * Returns a string key if the entry is coalescable, or null otherwise.
  * Two entries with the same key targeting the same element can be merged.
  */
-function coalesceKey(patches: UndoPatch[]): string | null {
+export function coalesceKey(patches: UndoPatch[]): string | null {
   if (patches.length !== 1) return null;
   const p = patches[0];
-  if (!COALESCE_FIELDS.has(p.field)) return null;
+  // 'session' is coalescable only when the caller opts in via an explicit ckey
+  // discriminator (e.g. toggles like Páncél Igen/Nem). Discrete session events
+  // (sebzés, taktika, státusz) omit ckey and stay as separate undo entries.
+  const eligible = COALESCE_FIELDS.has(p.field) || (p.field === 'session' && 'ckey' in p && !!(p as { ckey?: string }).ckey);
+  if (!eligible) return null;
   if ('op' in p) {
     // Array element: key by field + item identity
     if (p.op === 'update') {
@@ -102,7 +106,7 @@ function coalesceKey(patches: UndoPatch[]): string | null {
  * After coalescing, check if undoing would be a noop (prev === current post-modification value).
  * This happens when a user toggles a value back to its original state (e.g. erő 3→4→3).
  */
-function isNoopAfterCoalesce(patches: UndoPatch[], nextValue: unknown): boolean {
+export function isNoopAfterCoalesce(patches: UndoPatch[], nextValue: unknown): boolean {
   if (patches.length !== 1) return false;
   const p = patches[0];
   if ('op' in p) {
