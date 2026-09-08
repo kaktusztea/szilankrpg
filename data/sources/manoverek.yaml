@@ -57,12 +57,12 @@ manőverek:
   fázisok: "V,E"
   hatás: "Ellenfél földre kerül (Földön fekve módosítók). Felállás: Felállás földről manőver."
   id: "lábkirántás_szálfegyverrel"
-- név: "Lábsöprés / Felöklelés"
+- név: "Földrevitel"
   típus: "általános"
   nehézség: 8
   fázisok: "V,E"
   hatás: "Ellenfél földre kerül (Földön fekve módosítók). Felállás: Felállás földről manőver."
-  id: "lábsöprés_felöklelés"
+  id: "földrevitel"
 - név: "Lánccsapda"
   típus: "általános"
   nehézség: 9
