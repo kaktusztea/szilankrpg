@@ -1,10 +1,10 @@
 ## 🟣 Manőverfókuszok: Belharcmozgás (1)
 
-Otthonosan mozogsz a testközeli tülekedésben — be is jutsz, ki is jutsz, amikor csak akarsz.
+Életveszélyesen gyorsan mozdulsz testközelbe, vagy éppen ugrasz ki.
 
 ### 1. fok
 
-🔒 **Követelmény**: -
+🔒 **Követelmény**: [Közelharc](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) Manőverre `+2` bónuszt kapsz (`E`)

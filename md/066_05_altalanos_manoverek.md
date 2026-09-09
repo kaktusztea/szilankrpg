@@ -233,9 +233,13 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
     - `+2`: fegyvered nem kimondottan alkalmas ellenfeled fegyverének elvételére
 	- `+99`: a használt fegyver nem alkalmas lefegyverzésre. KM dönt.
 - Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény: Harcmodor – `5.szint`
+- Követelmény:
+  - Harcmodor – `5.szint`
+  - Kardvívás / Lándzsavívás / Ostorharc harcmodor
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
+
+**Kapcsolódik**: [Manőverfókuszok: Lefegyverzés](fortelyok.harci/manoverfokuszok_lefegyverzes.md) fortély
 
 <br />
 

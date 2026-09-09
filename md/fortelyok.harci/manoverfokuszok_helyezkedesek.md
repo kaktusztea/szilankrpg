@@ -1,6 +1,6 @@
 ## 🟣 Manőverfókuszok: Helyezkedések (1)
 
-Mestere vagy a csatatéri helyezkedésnek — kijátszod és a kívánt irányba tereled ellenfeleidet.
+Nagyon érzed a helyezkedést a harctéren.
 
 ### 1. fok
 

@@ -1,8 +1,7 @@
 ## 🟣 Manőverfókusz: Fegyvertörés (1)
 
-Pontosan tudod, hol és hogyan éri a legnagyobb terhelés az ellenfél fegyverét, hogy azt kettétörd.
+Sokat gyakoroltad, hol érdemes erőt kifejteni ellenfeled változatos fegyvereire - hogy könnyebben törjenek.
 
----
 ### 1. fok
 
 🔒 **Követelmény**:

@@ -1,12 +1,11 @@
 ## 🟣 Manőverfókusz: Lefegyverzés (1)
 
-Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét.
+Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.
 
----
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
+- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Ostorharc](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 
 🌟 **Hatás**:
