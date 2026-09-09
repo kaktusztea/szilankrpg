@@ -1,0 +1,41 @@
+schema_version: 1
+név: "Manőverfókusz: Fegyvertörés"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: false
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+- text: "Pontosan tudod, hol és hogyan éri a legnagyobb terhelés az ellenfél fegyverét, hogy azt kettétörd."
+megjegyzések:
+- text: ""
+kiterjeszti:
+  normál: []
+  erős: []
+kp_perfok: 6
+ingyenes_perszint: 0
+fokok:
+- fok: 1
+  követelménytext:
+    - text: "Harcmodor - 9.szint"
+    - text: "Mesterfegyver - 1.fok"
+  követelmények:
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás"]
+    érték: 9
+    típus: "képzettség"
+  - név: "Mesterfegyver"
+    érték: 1
+    típus: "fortély"
+  hatástext:
+  - text: "Fegyvertörés Manőver: +2 MP bónusz Ellenpróbánál."
+  módosítók:
+  - cél: "manőver:fegyvertörés"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""

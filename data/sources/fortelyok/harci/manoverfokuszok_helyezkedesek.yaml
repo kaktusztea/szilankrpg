@@ -1,5 +1,5 @@
 schema_version: 1
-név: "Manőverfókuszok: Nyúlcipő"
+név: "Manőverfókuszok: Helyezkedések"
 névkomment: ""
 maxfok: 1
 session_toggle: false
@@ -10,8 +10,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-- text: "\"Én most lelépek...\""
-- text: "Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különösen mesterien műveled."
+- text: "Mestere vagy a csatatéri helyezkedésnek — kijátszod és a kívánt irányba tereled ellenfeleidet."
 megjegyzések:
 - text: ""
 kiterjeszti:
@@ -24,16 +23,16 @@ fokok:
   követelménytext: []
   követelmények: []
   hatástext:
-  - text: "Átsiklás Manőverre +2 bónuszt kapsz."
-  - text: "Kibontakozás Manőverre +2 bónuszt kapsz."
+  - text: "Mögékerülés Manőverre +2 bónuszt kapsz."
+  - text: "Terelés Manőverre +2 bónuszt kapsz."
   módosítók:
-  - cél: "manőver:átsiklás"
+  - cél: "manőver:mögékerülés"
     érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
     feltétel: ""
-  - cél: "manőver:kibontakozás"
+  - cél: "manőver:terelés"
     érték: 2
     mód: "flat"
     forrás: ""
