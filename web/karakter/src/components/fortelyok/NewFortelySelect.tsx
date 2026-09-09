@@ -11,10 +11,11 @@ interface Props {
   fortélyok: Fortely[];
   fegyverNevek: string[];
   nyelvtanulásSzint: number;
+  képzettségek: { név: string; szint: number }[];
   onAdd: (név: string) => void;
 }
 
-export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, onAdd }: Props) {
+export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, képzettségek, onAdd }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -33,6 +34,7 @@ export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, 
           fortélyok={fortélyok}
           fegyverNevek={fegyverNevek}
           nyelvtanulásSzint={nyelvtanulásSzint}
+          képzettségek={képzettségek}
           onAdd={onAdd}
           onClose={() => setOpen(false)}
         />

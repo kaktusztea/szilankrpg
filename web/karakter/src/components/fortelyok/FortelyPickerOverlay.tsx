@@ -15,11 +15,12 @@ interface Props {
   fortélyok: Fortely[];
   fegyverNevek: string[];
   nyelvtanulásSzint: number;
+  képzettségek: { név: string; szint: number }[];
   onAdd: (név: string) => void;
   onClose: () => void;
 }
 
-export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, onAdd, onClose }: Props) {
+export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, képzettségek, onAdd, onClose }: Props) {
   const [expandedNév, setExpandedNév] = useState<string | null>(null);
   const [allExpanded, setAllExpanded] = useState(false);
 
@@ -79,7 +80,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                   )}
                 </div>
                 {isExpanded && (
-                  <FortelyDetails def={d} />
+                  <FortelyDetails def={d} képzettségek={képzettségek} />
                 )}
               </div>
             );

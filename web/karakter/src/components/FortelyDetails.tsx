@@ -56,7 +56,7 @@ function KiterjesztesLista({ label, nevek, képzettségek }: {
       <span className="info-panel-kit">
         {nevek.map((kn, i) => (
           <span key={i} className={képzettségek ? (képzettségek.some(k => k.név === kn && k.szint >= 1) ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
-            {i > 0 ? ', ' : ''}{kn}
+            {kn}{i < nevek.length - 1 ? ', ' : ''}
           </span>
         ))}
       </span>

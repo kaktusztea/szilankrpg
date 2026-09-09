@@ -83,6 +83,7 @@ export function FortelyCsoport({
             fortélyok={fortélyok}
             fegyverNevek={fegyverNevek}
             nyelvtanulásSzint={nyelvtanulásSzint}
+            képzettségek={képzettségek}
             onAdd={onAddFortely}
           />
         )}
