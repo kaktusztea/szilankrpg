@@ -1,0 +1,63 @@
+import type { Karakter } from '../engine/types';
+
+/**
+ * Minimális, séma-érvényes (v2) karakter teszt fixture.
+ * Függvény, hogy minden hívó friss objektumot kapjon (nincs megosztott mutáció).
+ */
+export function validKarakter(overrides: Partial<Karakter> = {}): Karakter {
+  return {
+    schema_version: 2,
+    uid: 'test',
+    id_leíró: 'test',
+    név: 'Teszt',
+    becenév: '',
+    jk: true,
+    játékos: '',
+    mentés_dátum: '',
+    tsz: 4,
+    leírás: '',
+    kor: 20,
+    anyanyelv: '',
+    vallás: '',
+    tulajdonságok: { erő: 3 },
+    HM_TÉ: 0,
+    HM_VÉ: 0,
+    CM: 0,
+    képzettségek: [],
+    fortélyok: [],
+    fortélyok_speciális: {},
+    hátterek: {},
+    fegyverek: [],
+    távfegyverek: [],
+    páncél: {},
+    pajzs: {},
+    felszerelés: {},
+    előtörténet: {},
+    jegyzetek: '',
+    napló: [],
+    checkpoints: [],
+    session: {
+      szilánk: 1,
+      vé_csökkenés: 0,
+      vé_history: [],
+      manőver_pont_használt: 0,
+      sebzések: [],
+      aktív_fegyver_index: 0,
+      aktív_fegyver_bal_index: -1,
+      kétkezes_harc: false,
+      aktív_pajzs: false,
+      aktív_páncél: true,
+      aktív_taktikák: [],
+      aktív_helyzetek: [],
+      aktív_manőver: '',
+      aktív_státuszok: [],
+      narratív_módosítók: [],
+      harci_akrobatika: false,
+      fegyverfogás: 'egyfegyveres',
+      aktív_távfegyver_index: -1,
+      ké_dobások: [],
+      té_dobások: [],
+    },
+    ...overrides,
+  } as unknown as Karakter;
+}

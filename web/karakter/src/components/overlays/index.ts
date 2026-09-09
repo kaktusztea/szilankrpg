@@ -12,7 +12,7 @@ export { OverlayScreenOverlay } from './OverlayScreenOverlay';
 export { SharePopupOverlay } from './SharePopupOverlay';
 export { ToastOverlay } from './ToastOverlay';
 export { ImportConfirmOverlay } from './ImportConfirmOverlay';
-export { SlotLimitOverlay } from './SlotLimitOverlay';
+export { SlotLimitOverlay, type SlotLimitKind } from './SlotLimitOverlay';
 export { BackupRestoreOverlay } from './BackupRestoreOverlay';
 export { SaveOptionsPopup } from './SaveOptionsPopup';
 export { ImportOptionsPopup } from './ImportOptionsPopup';

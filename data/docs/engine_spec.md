@@ -2264,7 +2264,7 @@ Az aktuális karakter állapot és undo stack automatikusan localStorage-ba ment
 
 | Key | Tartalom |
 |-----|----------|
-| `szilank_slots` | Slot lista: `{ uid, id_leíró, név, tsz, mentés_dátum }[]` (max 10) |
+| `szilank_slots` | Slot lista: `{ uid, id_leíró, név, tsz, mentés_dátum }[]` (max 16, ebből max 10 NJK) |
 | `szilank_char_{uid}` | Karakter JSON + `_undo` mező (undo stack integrálva) |
 | `szilank_active` | Aktív karakter uid-ja |
 
@@ -2334,7 +2334,7 @@ Minden karakter két azonosítót kap:
 
 | Key | Tartalom |
 |-----|----------|
-| `szilank_slots` | JSON tömb: `{ uid, id_leíró, név, mentés_dátum }[]` — max 10 entry, rendezve utolsó módosítás szerint |
+| `szilank_slots` | JSON tömb: `{ uid, id_leíró, név, mentés_dátum }[]` — max 16 entry (max 10 NJK), rendezve utolsó módosítás szerint |
 | `szilank_char_{uid}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
 | `szilank_active` | Az aktív karakter `uid`-ja (amelyik épp szerkesztés alatt van) |
 
@@ -2371,7 +2371,7 @@ Az undo stack a karakter JSON részévé válik:
 1. `crypto.randomUUID()` → `uid` generálás
 2. `id_leíró` generálás (üres névből: `"új-karakter-3tsz"`)
 3. `emptyKarakter` + uid + id_leíró → localStorage slot foglalás
-4. Ha 10 slot betelt: figyelmeztetés ("Töröld egy régit, vagy mentsd fájlba")
+4. Ha 16 slot (vagy 10 NJK) betelt: figyelmeztetés ("Töröld egy régit, vagy mentsd fájlba")
 5. Aktív karakter váltás az új slot-ra
 6. Undo stack reset
 7. `isDirty = false` → nem mentődik amíg a user nem módosít
@@ -2499,7 +2499,8 @@ Automatikus felismerés a JSON tartalma alapján:
 - `crypto.randomUUID()`: modern böngészők (HTTPS/localhost) támogatják
 - Fallback uid generálás: `Date.now().toString(36) + Math.random().toString(36).slice(2)`
 - `id_leíró` generálás: `"{név-slug}-{tsz}tsz"` (slug: kisbetű, szóköz→kötőjel)
-- localStorage limit: ~5MB böngészőnként — 10 karakter × ~15KB = ~150KB, bőven belefér
+- localStorage limit: ~5MB böngészőnként. Egy karakter ~12KB, de a checkpointok (max 20, mindegyik közel teljes karakter-snapshot ~10KB) miatt worst case ~210KB/karakter → 16 karakter worst case ~3.4MB. Tipikus használatnál (kevés checkpoint) ~200-500KB.
+- Kvóta betelése: az autosave `setItem` hibáját elkapja, és számlálót növel (`useAutoSave` visszatérési érték) → App piros toast ("megtelt a böngésző tárhelye"). NEM néma adatvesztés.
 - Migrálás: ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba, uid generálás
 - `navigator.share()`: csak HTTPS + mobil böngésző; desktop-on fallback = csak "Helyi mentés"
 

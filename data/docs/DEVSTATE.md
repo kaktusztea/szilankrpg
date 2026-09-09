@@ -55,7 +55,7 @@ TODO:
 - `session`: runtime harc state (vé_csökkenés, aktív_taktikák, fegyverfogás, stb.)
 - `előtörténet`: biográfiai mezők (`{ származás_helye, szociális_érzék, külső, előtörténet }`) — Előtörténet overlay (🪪)
 - `checkpoints[]`: kiemelt karakter verziók (snapshot-alapú, → engine_spec §31b)
-- Multi-slot localStorage: `szilank_char_{uid}`, max 10 slot
+- Multi-slot localStorage: `szilank_char_{uid}`, max 16 slot (ebből max 10 NJK)
 - Teszt karakter: `data/karakter/test_karakter2.json` (single source of truth)
 
 ### Képzettségek

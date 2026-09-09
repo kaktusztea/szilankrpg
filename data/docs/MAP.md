@@ -45,10 +45,10 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 |------|-----------|
 | `useKarakterState` | localStorage multi-slot, karakter load/save |
 | `useUndo` | Undo stack kezelés (pushUndo, undoTo) |
-| `useKarakterActions` | mentés, betöltés, teszt, import, share |
+| `useKarakterActions` | mentés, betöltés, teszt, import, share + `activateKarakter` (karakter aktívvá tétel) |
 | `useUndoWrappedSetters` | Undo-aware setter wrapperek |
 | `useOverlays` | Overlay state kezelés (Escape, toast, gombok) |
-| `useAutoSave` | localStorage auto-mentés |
+| `useAutoSave` | localStorage auto-mentés (kvótahiba számláló visszaadás) |
 | `useGameDataLoader` | GameData fetch + karakter init |
 | `useSwipe` | Swipe gesture |
 | `useUrlImport` | URL hash import (mount-kor) |
@@ -56,11 +56,19 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `useEscapeClose` | Escape billentyű popup bezárás |
 | `usePopupState` | Generikus popup/overlay state kezelő |
 
+### Slot (karaktertár) modulok (`hooks/`)
+| Fájl | Felelősség |
+|------|-----------|
+| `slot-utils.ts` | Slot metaadat I/O: readSlots, writeSlots, `upsertSlotEntry`, `isUidTaken`, `isSlotFull`, `loadSlotKarakter` |
+| `njk-slots.ts` | NJK szabályok: `njkCount`, `njkLimitBlocked` (tárolási limit egyetlen döntési helye), `njkSlots` (switcher sáv adatai) |
+| `backup-restore.ts` | Backup visszaállítás (össz- + NJK limit betartatással) |
+
 ### Komponensek (`components/`)
 
 ```
 App.tsx                    Shell: tab navigáció, mód toggle, KP számítás
 Header.tsx                 Fejléc (cím, menü, mód toggle)
+NjkSwitcher.tsx            NJK switcher fix sáv (KM eszköz, Header alatt — csak NJK karakternél)
 TabBar.tsx                 Alsó tab bar (tükrözött, ikon-only)
 TabContent.tsx             Screen slider wrapper
 KpBar.tsx                  KP sáv (szerkesztő módban)

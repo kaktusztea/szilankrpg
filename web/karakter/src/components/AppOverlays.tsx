@@ -4,7 +4,8 @@ import type { UndoPatch } from '../hooks/useUndo';
 import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { isSlotFull, readSlots, writeSlots } from '../hooks/slot-utils';
+import { isSlotFull, readSlots, upsertSlotEntry } from '../hooks/slot-utils';
+import { njkLimitBlocked } from '../hooks/njk-slots';
 import { restoreBackup } from '../hooks/backup-restore';
 import { decodeKarakterFromHash, encodeKarakterUrl } from '../engine/url-share';
 import { useState } from 'react';
@@ -13,7 +14,7 @@ import {
   SlotListOverlay, SlotDeleteOverlay, SaveFileOverlay,
   UndoOverlay, LoadErrorOverlay, FullscreenHintOverlay,
   OverlayScreenOverlay, SharePopupOverlay, ToastOverlay, ImportConfirmOverlay,
-  SlotLimitOverlay, BackupRestoreOverlay,
+  SlotLimitOverlay, BackupRestoreOverlay, type SlotLimitKind,
 } from './overlays';
 import { QrCodePopup } from './overlays/QrCodePopup';
 
@@ -32,7 +33,7 @@ export interface OverlayState {
   sharePopup: { név: string; copied: boolean; url?: string } | null;
   toast: { msg: string; type: 'success' | 'error' } | null;
   importConfirm: { karakter: Karakter; matchUid: string } | null;
-  showSlotLimit: boolean;
+  slotLimit: SlotLimitKind | null;
   backupRestore: { karakterek: { karakter: Karakter; undo: any[] }[]; dátum: string } | null;
 }
 
@@ -56,9 +57,9 @@ interface Props {
   saveSlotToFile: (uid: string, action: 'download' | 'share') => void;
   importKarakter: (k: Karakter, overwriteUid: string | false) => void;
   deleteSlot: (uid: string) => void;
+  /** Karakter aktívvá tétele (state + undo + teszt mód + dirty) — useKarakterActions */
+  activateKarakter: (k: Karakter, undo?: any[]) => void;
   setUndoStack: React.Dispatch<React.SetStateAction<any[]>>;
-  setTestMode: (v: boolean) => void;
-  setIsDirty: (v: boolean) => void;
   isDirty: boolean;
   onViewCheckpoint?: (id: string) => void;
 }
@@ -67,7 +68,7 @@ export function AppOverlays({
   state: s, setState: set, data, karakter, session, setSession,
   setKarakter, pushUndo, undoStack, undoTo, duplicateSlot, handleGenerateSave,
   shareFile, downloadFile, loadKarakter, shareSlotUrl, saveSlotToFile, importKarakter, deleteSlot,
-  setUndoStack, setTestMode, setIsDirty, isDirty, onViewCheckpoint,
+  activateKarakter, setUndoStack, isDirty, onViewCheckpoint,
 }: Props) {
 
   // --- QR code popup state ---
@@ -94,29 +95,27 @@ export function AppOverlays({
   // --- New char handler ---
   const handleNewChar = () => {
     const uid = generateUid();
-    setKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
-    setUndoStack([]);
-    setTestMode(false);
-    setIsDirty(true);
+    activateKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
     set('showNewConfirm', false);
   };
 
   // --- Slot list handlers ---
   const handleSlotLoad = (k: Karakter, undo: any[]) => {
-    setKarakter(k); setUndoStack(undo); setTestMode(false); setIsDirty(true); set('showSlotList', false);
+    activateKarakter(k, undo);
+    set('showSlotList', false);
   };
 
   const loadTestKarakter = () => {
     const refErr = validateKarakterData(data.testKarakter, data);
     if (refErr) { set('showTestConfirm', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
-    setKarakter({
+    activateKarakter({
       ...data.testKarakter,
       uid: data.testKarakter.uid || generateUid(),
       id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
       előtörténet: { ...DEFAULT_ELOTORTENET, ...data.testKarakter.előtörténet },
       session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
     });
-    setUndoStack([]); setTestMode(false); setIsDirty(true); set('showTestConfirm', false);
+    set('showTestConfirm', false);
   };
 
   const handleSlotTest = () => loadTestKarakter();
@@ -170,17 +169,17 @@ export function AppOverlays({
     }
     if (isSlotFull()) {
       set('showSlotList', false);
-      set('showSlotLimit', true);
+      set('slotLimit', 'total');
       return;
     }
-    setKarakter(k);
-    setUndoStack([]);
-    setTestMode(false);
-    setIsDirty(true);
-    // Immediately persist slot entry so SlotList shows it without waiting for auto-save
-    const updatedSlots = readSlots();
-    updatedSlots.unshift({ uid: k.uid, id_leíró: k.id_leíró, név: k.név, becenév: k.becenév, tsz: k.tsz, mentés_dátum: new Date().toISOString(), jk: k.jk ?? true });
-    writeSlots(updatedSlots);
+    if (njkLimitBlocked(k.jk)) {
+      set('showSlotList', false);
+      set('slotLimit', 'njk');
+      return;
+    }
+    activateKarakter(k);
+    // Slot entry azonnal, hogy a Karakterek hub ne az autosave-re várjon
+    upsertSlotEntry(k);
     set('toast', { msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
   };
 
@@ -211,7 +210,7 @@ export function AppOverlays({
           onDuplicate={duplicateSlot}
           onFileLoad={async () => { await loadKarakter(); set('showSlotList', false); }}
           onClipboardImport={handleClipboardImport}
-          onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
+          onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('slotLimit', 'total'); } else { set('showNewConfirm', true); } }}
           onSave={() => { handleGenerateSave('backup'); }}
           newDisabled={!isDirty}
           onTest={handleTestBtn}
@@ -282,8 +281,8 @@ export function AppOverlays({
         />
       )}
 
-      {s.showSlotLimit && (
-        <SlotLimitOverlay onClose={() => set('showSlotLimit', false)} />
+      {s.slotLimit && (
+        <SlotLimitOverlay kind={s.slotLimit} onClose={() => set('slotLimit', null)} />
       )}
 
       {s.backupRestore && (
@@ -293,10 +292,7 @@ export function AppOverlays({
           onRestore={(selected) => {
             const restored = restoreBackup(selected);
             if (restored) {
-              setKarakter(restored.karakter);
-              setUndoStack(restored.undo as typeof undoStack);
-              setTestMode(false);
-              setIsDirty(true);
+              activateKarakter(restored.karakter, restored.undo as typeof undoStack);
             }
             set('backupRestore', null);
             set('toast', { msg: `${selected.length} karakter betöltve`, type: 'success' });

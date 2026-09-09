@@ -7,7 +7,8 @@ import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
 import type { UndoEntry } from './useUndo';
 import { sanitizeUndo } from './useUndo';
-import { isSlotFull, readSlots, writeSlots } from './slot-utils';
+import { isSlotFull, isUidTaken, readSlots, writeSlots, upsertSlotEntry } from './slot-utils';
+import { njkLimitBlocked } from './njk-slots';
 
 interface Deps {
   data: GameData | null;
@@ -22,32 +23,35 @@ interface Deps {
 
 export function useKarakterActions({ data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay }: Deps) {
 
-  const importKarakter = useCallback((k: Karakter, overwriteUid: string | false) => {
-    if (!overwriteUid && isSlotFull()) { setOverlay('showSlotLimit', true); setOverlay('importConfirm', null); return; }
-    if (overwriteUid) {
-      const final = { ...k, uid: overwriteUid, id_leíró: generateIdLeíró(k.név, k.tsz) };
-      localStorage.setItem(`szilank_char_${overwriteUid}`, JSON.stringify(final));
-      setKarakter(final);
-      // Immediately update slot entry
-      const slots = readSlots();
-      const idx = slots.findIndex(s => s.uid === overwriteUid);
-      const entry = { uid: overwriteUid, id_leíró: final.id_leíró, név: final.név, becenév: final.becenév, tsz: final.tsz, mentés_dátum: new Date().toISOString(), jk: final.jk ?? true };
-      if (idx >= 0) slots[idx] = entry; else slots.unshift(entry);
-      writeSlots(slots);
-    } else {
-      const newK = { ...k, uid: k.uid || generateUid(), id_leíró: generateIdLeíró(k.név, k.tsz) };
-      setKarakter(newK);
-      // Immediately persist slot entry so SlotList shows it without waiting for auto-save
-      const slots = readSlots();
-      slots.unshift({ uid: newK.uid, id_leíró: newK.id_leíró, név: newK.név, becenév: newK.becenév, tsz: newK.tsz, mentés_dátum: new Date().toISOString(), jk: newK.jk ?? true });
-      writeSlots(slots);
-    }
-    setUndoStack([]);
+  /**
+   * Egy karakter aktívvá tétele: state csere + undo stack + teszt mód ki + dirty.
+   * Minden betöltési/import/duplikálási út ezen megy át.
+   */
+  const activateKarakter = useCallback((k: Karakter, undo: UndoEntry[] = []) => {
+    setKarakter(k);
+    setUndoStack(undo);
     setTestMode(false);
     setIsDirty(true);
+  }, [setKarakter, setUndoStack, setTestMode, setIsDirty]);
+
+  const importKarakter = useCallback((k: Karakter, overwriteUid: string | false) => {
+    if (!overwriteUid && isSlotFull()) { setOverlay('slotLimit', 'total'); setOverlay('importConfirm', null); return; }
+    if (njkLimitBlocked(k.jk, overwriteUid || null)) { setOverlay('slotLimit', 'njk'); setOverlay('importConfirm', null); return; }
+    const final = {
+      ...k,
+      // "Új példány" (overwriteUid === false): ütköző uid-nál friss uid kell,
+      // különben a meglévő karaktert írnánk felül a "másolat" helyett.
+      uid: overwriteUid || (k.uid && !isUidTaken(k.uid) ? k.uid : generateUid()),
+      id_leíró: generateIdLeíró(k.név, k.tsz),
+    };
+    // Felülírásnál a karakter azonnal a helyére kerül; a slot entry mindkét
+    // úton azonnal frissül, hogy a Karakterek hub ne az autosave-re várjon.
+    if (overwriteUid) localStorage.setItem(`szilank_char_${overwriteUid}`, JSON.stringify(final));
+    upsertSlotEntry(final);
+    activateKarakter(final);
     setOverlay('toast', { msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
     setOverlay('importConfirm', null);
-  }, [setKarakter, setUndoStack, setTestMode, setIsDirty, setOverlay]);
+  }, [activateKarakter, setOverlay]);
 
   async function shareSlotUrl(slotUid: string) {
     const charData = localStorage.getItem(`szilank_char_${slotUid}`);
@@ -75,16 +79,14 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
 
   // Duplicate a specific stored slot (not necessarily the active character); the duplicate becomes active
   function duplicateSlot(uid: string) {
-    if (isSlotFull()) { setOverlay('showSlotLimit', true); return; }
+    if (isSlotFull()) { setOverlay('slotLimit', 'total'); return; }
     const charData = localStorage.getItem(`szilank_char_${uid}`);
     if (!charData) return;
     let parsed: Karakter;
     try { parsed = JSON.parse(charData); } catch { setOverlay('toast', { msg: 'Hiba a duplikáláskor.', type: 'error' }); return; }
+    if (njkLimitBlocked(parsed.jk)) { setOverlay('slotLimit', 'njk'); return; }
     const dup = dupKarakter(parsed);
-    setKarakter(dup);
-    setUndoStack([]);
-    setTestMode(false);
-    setIsDirty(true);
+    activateKarakter(dup);
     // WORKAROUND: state-settle-delay — 100ms delay lets React re-render with new karakter before opening overlay
     setTimeout(() => setOverlay('showSlotList', true), 100);
   }
@@ -132,13 +134,11 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
       // uid already exists → ask for confirmation
       setOverlay('importConfirm', { karakter: result.karakter, matchUid: match.uid });
     } else {
-      if (isSlotFull()) { setOverlay('showSlotLimit', true); return; }
-      setKarakter(result.karakter);
-      setUndoStack(result.undo);
-      setTestMode(false);
-      setIsDirty(true);
+      if (isSlotFull()) { setOverlay('slotLimit', 'total'); return; }
+      if (njkLimitBlocked(result.karakter.jk)) { setOverlay('slotLimit', 'njk'); return; }
+      activateKarakter(result.karakter, result.undo);
     }
   }
 
-  return { importKarakter, shareSlotUrl, saveSlotToFile, duplicateSlot, handleGenerateSave, loadKarakter, deleteSlot };
+  return { activateKarakter, importKarakter, shareSlotUrl, saveSlotToFile, duplicateSlot, handleGenerateSave, loadKarakter, deleteSlot };
 }

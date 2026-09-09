@@ -159,13 +159,18 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Leírás formátum (minden fülről): `Képzettség: {név} {régi}→{új}`, `Fortély: {név} {régi}→{új}`, `{Tulajdonság}: {régi} → {új}`, `TSz: X → Y`, stb.
 
 ### Local Storage (multi-slot)
-- `szilank_slots`: slot lista (max 10, uid + név + tsz + mentés_dátum)
+- `szilank_slots`: slot lista (max 16, ebből max 10 NJK; uid + név + tsz + mentés_dátum)
 - `szilank_char_{uid}`: per-karakter JSON (session + `_undo` integrálva)
 - `szilank_active`: aktív karakter uid
 - Autosave: minden karakter/undo változáskor, ha `isDirty=true` és nem testMode
 - "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
 - "Duplikál": deep clone, új uid, név ":2" suffix (ismétlésnél :3, :4...), Karakterek ablak megnyílik
-- **Slot limit**: ha `MAX_KARAKTER_DB` (10) elérve → "Új karakter" / "Duplikál" / import / fájlból betöltés (új slot) helyett `SlotLimitOverlay` jelenik meg ("Karakter limit" felirat, piros, max szám kiírva, hint: töröld egy régit)
+- **Slot limit**: ha `MAX_KARAKTER_DB` (16) elérve → "Új karakter" / "Duplikál" / import / fájlból betöltés (új slot) helyett `SlotLimitOverlay` jelenik meg (`kind='total'`: "Karakter limit" felirat, piros, max szám kiírva, hint: töröld egy régit)
+- **NJK limit**: `MAX_NJK_DB` (10) tárolt NJK felett nem jöhet létre új NJK. Betartatási pontok:
+  - Import (fájl/URL/vágólap), fájlból betöltés, duplikálás NJK-ra → `SlotLimitOverlay kind='njk'` ("NJK limit")
+  - Backup visszaállítás: a limit felett új NJK-k csendben kimaradnak (mint az összlimitnél); a `BackupRestoreOverlay` kiírja: „Tárolt NJK: X / 10 — új NJK kimarad"
+  - JK/NJK toggle chip (Tulajdonságok fejléc): JK → NJK váltás blokkolva, piros toast („Maximum 10 NJK tárolható"). Ez a limit legkönnyebben elérhető útja, ezért nem modális.
+- **Kvóta figyelmeztetés**: ha az autosave `setItem` kvótahibára fut, piros toast jelzi („A mentés nem sikerült: megtelt a böngésző tárhelye…"). A hiba korábban néma volt.
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
 - **Fájlnév**: `{becenév||név}__{játékos}_{tsz}tsz.json` (ékezet nélkül, szóköz→`_`, dupla `__` elválasztja a karakter és játékos nevet)
 - Karakterek hub overlay (🧑): az összes karakter-kezelés egy helyen. Felépítés fentről lefelé:
@@ -178,6 +183,20 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - **Fájlból betöltés**: single JSON és backup JSON egyaránt támogatott
   - Single: uid ütközés vizsgálat → ha létezik: importConfirm dialog (Felülírás / Új példány / Mégse)
   - Backup (`szilánk_backup: true`): `BackupRestoreOverlay` felugrik (multi-select lista, meglévők ⚠️ jelöléssel, megerősítő lépés)
+
+---
+
+## NJK switcher sáv (KM eszköz)
+
+Második fix sáv közvetlenül a Header alatt (`NjkSwitcher.tsx`, `.njk-bar`). Célja: a Kalandmester harc közben egy kattintással váltogathat az NJK-k között anélkül, hogy a Karakterek hubot megnyitná.
+
+- **Megjelenés feltétele**: az aktív karakter `jk === false` (NJK) **és** nem verzió-megtekintés (`viewingCheckpoint`) van. Egyetlen NJK esetén is látszik (jelzi az NJK módot).
+- **Tartalom**: box (`.njk-box`) minden NJK slothoz (`jk === false`), feliratként `becenév`, ha üres akkor `név`, ha az is üres akkor „Névtelen". Nincs TSz suffix.
+- **Sorrend**: ABC a megjelenített név szerint (`localeCompare('hu')`) — NEM `mentés_dátum`, hogy a boxok pozíciója autosave-kor ne rendeződjön át.
+- **Tördelés**: a boxok tartalom szerinti szélességgel töltik a sávot; ha nem férnek bele, új sáv nyílik (`flex-wrap: wrap`). Nincs sáv-limit és nincs scroll — a sávok számát a tárolt NJK limit (`MAX_NJK_DB` = 10) tartja kordában. Nagyon hosszú neveknél a sáv tömöttebb lesz (`max-width: 100%` + ellipszis), ez elfogadott.
+- **Aktív box**: `.njk-box-active` (accent keret + accent szöveg + bold). Katt rá: no-op.
+- **Váltás**: `loadSlotKarakter(uid)` (ugyanaz a betöltő, amit a Karakterek hub slot kártyája használ) → `activateKarakter` (state + undo stack + testMode=false + isDirty=true; `useKarakterActions`). Az elhagyott karakter mentése az autosave-en keresztül már megtörtént (szinkron, minden `karakter` változásnál).
+- **Késés**: a becenév átírása 1 render késéssel jelenik meg a sávon, mert a slot entry csak autosave-kor frissül.
 
 ---
 
@@ -1241,7 +1260,7 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 | sharePopup | {név, copied, url?} \| null | URL share eredmény popup |
 | toast | {msg, type} \| null | Toast üzenet (2.5s auto-dismiss) |
 | importConfirm | {karakter, matchUid} \| null | Import ütközés confirm dialog |
-| showSlotLimit | boolean | Slot limit elérve (max 10) popup |
+| slotLimit | `'total'` \| `'njk'` \| null | Karakter- (16) vagy NJK-limit (10) elérve popup |
 | backupRestore | {karakterek, dátum} \| null | Backup restore overlay (multi-select) |
 
 ### Közös viselkedés

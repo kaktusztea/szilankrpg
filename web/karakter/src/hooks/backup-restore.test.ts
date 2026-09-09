@@ -1,21 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import type { Karakter } from '../engine/types';
-import { MAX_KARAKTER_DB } from '../ui-constants';
+import { MAX_KARAKTER_DB, MAX_NJK_DB } from '../ui-constants';
 import { restoreBackup, type BackupItem } from './backup-restore';
 import { readSlots } from './slot-utils';
-
-// Minimal in-memory localStorage stub (vitest runs in node, no DOM).
-function installLocalStorage() {
-  const store = new Map<string, string>();
-  (globalThis as { localStorage?: Storage }).localStorage = {
-    getItem: (k: string) => (store.has(k) ? store.get(k)! : null),
-    setItem: (k: string, v: string) => { store.set(k, String(v)); },
-    removeItem: (k: string) => { store.delete(k); },
-    clear: () => store.clear(),
-    key: (i: number) => [...store.keys()][i] ?? null,
-    get length() { return store.size; },
-  } as Storage;
-}
+import { installLocalStorage } from '../__tests__/localstorage-stub';
 
 function makeItem(uid: string, név = uid): BackupItem {
   return {
@@ -54,6 +42,21 @@ describe('restoreBackup', () => {
     restoreBackup(items);
 
     expect(readSlots()).toHaveLength(MAX_KARAKTER_DB);
+  });
+
+  it('does not insert new NJK characters beyond MAX_NJK_DB', () => {
+    const njk = (uid: string) => {
+      const item = makeItem(uid);
+      (item.karakter as { jk?: boolean }).jk = false;
+      return item;
+    };
+    restoreBackup(Array.from({ length: MAX_NJK_DB + 3 }, (_, i) => njk(`n${i}`)));
+
+    const slots = readSlots();
+    expect(slots.filter(s => s.jk === false)).toHaveLength(MAX_NJK_DB);
+    // A JK karakterek visszaállítása nem sérül az NJK limit miatt
+    restoreBackup([makeItem('jk1')]);
+    expect(readSlots().find(s => s.uid === 'jk1')).toBeDefined();
   });
 
   it('returns null when nothing can be restored (empty selection)', () => {

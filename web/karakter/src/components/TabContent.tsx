@@ -3,7 +3,7 @@ import type { Karakter, Session, Fortely, Tulajdonsagok } from '../engine/types'
 import type { UndoPatch } from '../hooks/useUndo';
 import type { TabDef } from './TabBar';
 import { useUndoWrappedSetters } from '../hooks/useUndoWrappedSetters';
-import { makeFieldSetter, makeAnyanyelvSetter, buildFortelyokProps, makeFajSetter } from './karakter-setters';
+import { makeFieldSetter, makeAnyanyelvSetter, makeJkSetter, buildFortelyokProps, makeFajSetter } from './karakter-setters';
 import { AktivScreen } from './aktiv';
 import { HarcScreen } from './harc';
 import { TavharcScreen } from './tavharc';
@@ -40,12 +40,13 @@ interface Props {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  onToast: (msg: string, type: 'success' | 'error') => void;
   onTestReset?: () => void;
 }
 
 export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
   képzettségek, fortélyok, setFortélyok, session, setSession,
-  karakter, setKarakter, pushUndo, onTestReset }: Props) {
+  karakter, setKarakter, pushUndo, onToast, onTestReset }: Props) {
 
   const { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo } = useUndoWrappedSetters({ karakter, setKarakter, pushUndo });
 
@@ -64,7 +65,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
         képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
         név={karakter.név} setNév={sf('név', (p, n) => `Név: ${p} → ${n}`)}
         becenév={karakter.becenév} setBecenév={sf('becenév', (_, n) => `Becenév: ${n}`)}
-        jk={karakter.jk} setJk={sf('jk', (_, n) => `Típus: ${n ? 'JK' : 'NJK'}`)}
+        jk={karakter.jk} setJk={makeJkSetter(karakter, sf, onToast)}
         játékos={karakter.játékos} setJátékos={sf('játékos', (_, n) => `Játékos: ${n}`)}
         tsz={karakter.tsz} setTsz={sf('tsz', (p, n) => `TSz: ${p} → ${n}`)}
         kor={karakter.kor} setKor={sf('kor', (p, n) => `Kor: ${p} → ${n}`)}

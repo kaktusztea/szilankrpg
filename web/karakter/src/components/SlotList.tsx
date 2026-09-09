@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Karakter } from '../engine/types';
-import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { isValidKarakter } from '../engine/validate';
-import { sanitizeUndo } from '../hooks/useUndo';
 import { FEEDBACK_TIMEOUT_MS } from '../ui-constants';
-import { readSlots, type SlotEntry } from '../hooks/slot-utils';
+import { readSlots, loadSlotKarakter, type SlotEntry } from '../hooks/slot-utils';
 import { SlotRow } from './SlotRow';
 import { SaveOptionsPopup } from './overlays/SaveOptionsPopup';
 import { ImportOptionsPopup } from './overlays/ImportOptionsPopup';
@@ -54,14 +51,8 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
   slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
 
   function loadSlot(uid: string) {
-    const charData = localStorage.getItem(`szilank_char_${uid}`);
-    if (!charData) return;
-    try {
-      const parsed = JSON.parse(charData);
-      if (isValidKarakter(parsed)) {
-        onLoad({ ...parsed, jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [] }, sanitizeUndo((parsed as any)._undo));
-      }
-    } catch { /* */ }
+    const loaded = loadSlotKarakter(uid);
+    if (loaded) onLoad(loaded.karakter, loaded.undo);
   }
 
   /** SaveOptionsPopup handlers */

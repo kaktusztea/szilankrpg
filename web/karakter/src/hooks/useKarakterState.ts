@@ -29,7 +29,7 @@ export function useKarakterState() {
   }, [initialKarakter]);
 
   // Autosave
-  useAutoSave(karakter, undoStack, isDirty, testMode, setKarakter, viewingMode);
+  const saveErrors = useAutoSave(karakter, undoStack, isDirty, testMode, setKarakter, viewingMode);
 
   // Document title
   useEffect(() => {
@@ -56,5 +56,6 @@ export function useKarakterState() {
     viewingMode, setViewingMode,
     undoStack, setUndoStack, pushUndo, undoTo,
     setTulajdonságok, setKépzettségek, setFortélyok, setSession,
+    saveErrors,
   };
 }

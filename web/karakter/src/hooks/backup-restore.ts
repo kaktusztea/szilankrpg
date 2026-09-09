@@ -1,6 +1,7 @@
 import type { Karakter } from '../engine/types';
-import { MAX_KARAKTER_DB } from '../ui-constants';
+import { MAX_KARAKTER_DB, MAX_NJK_DB } from '../ui-constants';
 import { readSlots, writeSlots, type SlotEntry } from './slot-utils';
+import { njkCount } from './njk-slots';
 
 export interface BackupItem {
   karakter: Karakter;
@@ -11,13 +12,15 @@ export interface BackupItem {
  * Restores selected characters from a backup into localStorage slots.
  *
  * Existing slots (matched by uid) are overwritten; new characters are inserted
- * up to MAX_KARAKTER_DB. Returns the last successfully restored item so the
+ * up to MAX_KARAKTER_DB, and NJK characters up to MAX_NJK_DB. Items over a limit
+ * are silently skipped. Returns the last successfully restored item so the
  * caller can activate it, or null if nothing was restored.
  */
 export function restoreBackup(selected: BackupItem[]): BackupItem | null {
   const slots = readSlots();
   const maxNew = MAX_KARAKTER_DB - slots.length;
   let newInserted = 0;
+  let njkStored = njkCount(slots);
   let last: BackupItem | null = null;
 
   for (const item of selected) {
@@ -36,10 +39,17 @@ export function restoreBackup(selected: BackupItem[]): BackupItem | null {
       jk: (k as { jk?: boolean }).jk ?? true,
     };
 
+    // Would this item raise the stored NJK count above the limit? → skip.
+    // (Nem `njkLimitBlocked`: itt a cikluson belül inkrementálisan számolunk.)
+    const wasNjk = existingIdx >= 0 && slots[existingIdx].jk === false;
+    const isNjk = entry.jk === false;
+    if (isNjk && !wasNjk && njkStored >= MAX_NJK_DB) continue;
+
     try {
       localStorage.setItem(`szilank_char_${k.uid}`, JSON.stringify({ ...k, _undo: undo }));
       if (existingIdx >= 0) { slots[existingIdx] = entry; }
       else { slots.push(entry); newInserted++; }
+      njkStored += (isNjk ? 1 : 0) - (wasNjk ? 1 : 0);
       last = item;
     } catch {
       // quota exceeded → stop restoring further items

@@ -127,6 +127,40 @@
   100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
 }
 
+/* --- NJK switcher sáv (KM eszköz, Header alatt) --- */
+.njk-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding: 4px 8px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
+  flex-shrink: 0;
+}
+
+.njk-box {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  color: var(--text-dim);
+  font-size: 13px;
+  padding: 4px 10px;
+  /* Nincs sáv-limit: a boxok tartalom szerint sorakoznak, és tördelnek */
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.njk-box-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: bold;
+}
+
 /* --- Content & screen slider --- */
 .content {
   flex: 1;

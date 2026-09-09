@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useKarakterState } from './hooks/useKarakterState';
 import { useOverlays } from './hooks/useOverlays';
 import { useSwipe } from './hooks/useSwipe';
@@ -7,6 +7,7 @@ import { useKarakterActions } from './hooks/useKarakterActions';
 import { useGameModeTabSync } from './hooks/useGameModeTabSync';
 import { useTaktikaInvalidation } from './hooks/useTaktikaInvalidation';
 import { Header } from './components/Header';
+import { NjkSwitcher } from './components/NjkSwitcher';
 import { TabBar } from './components/TabBar';
 import { KpBar } from './components/KpBar';
 import { TabContent, ALL_TABS } from './components/TabContent';
@@ -29,6 +30,7 @@ function App() {
     viewingMode: _viewingMode, setViewingMode,
     undoStack, setUndoStack, pushUndo, undoTo,
     setTulajdonságok, setKépzettségek, setFortélyok, setSession,
+    saveErrors,
   } = useKarakterState();
 
   const { overlays, setOverlay } = useOverlays();
@@ -45,7 +47,12 @@ function App() {
   useGameModeTabSync(gameMode, activeTab, setActiveTab);
   useTaktikaInvalidation(karakter, data, setKarakter);
 
-  const { importKarakter, shareSlotUrl, saveSlotToFile, duplicateSlot, handleGenerateSave, loadKarakter, deleteSlot } = useKarakterActions({
+  // Autosave kvótahiba → figyelmeztetés (ne maradjon néma adatvesztés)
+  useEffect(() => {
+    if (saveErrors > 0) setOverlay('toast', { msg: 'A mentés nem sikerült: megtelt a böngésző tárhelye. Törölj egy karaktert vagy verziót!', type: 'error' });
+  }, [saveErrors]);
+
+  const { activateKarakter, importKarakter, shareSlotUrl, saveSlotToFile, duplicateSlot, handleGenerateSave, loadKarakter, deleteSlot } = useKarakterActions({
     data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay,
   });
 
@@ -170,6 +177,10 @@ function App() {
         session={session} undoCount={undoStack.length} setOverlay={setOverlay}
       />
 
+      {karakter.jk === false && !viewingCheckpointId && (
+        <NjkSwitcher activeUid={karakter.uid} onLoad={activateKarakter} />
+      )}
+
       {viewingCheckpoint && (
         <CheckpointBanner
           checkpoint={viewingCheckpoint}
@@ -202,6 +213,7 @@ function App() {
                       session={session} setSession={setSession}
                       karakter={karakter} setKarakter={setKarakter}
                       pushUndo={pushUndo}
+                      onToast={(msg, type) => setOverlay('toast', { msg, type })}
                       onTestReset={handleTestReset}
                     />
                   </ScreenErrorBoundary>
@@ -227,7 +239,8 @@ function App() {
         shareFile={shareFile} downloadFile={downloadFile}
         loadKarakter={loadKarakter} shareSlotUrl={shareSlotUrl} saveSlotToFile={saveSlotToFile}
         importKarakter={importKarakter} deleteSlot={deleteSlot}
-        setUndoStack={setUndoStack} setTestMode={setTestMode} setIsDirty={setIsDirty}
+        activateKarakter={activateKarakter}
+        setUndoStack={setUndoStack}
         isDirty={isDirty}
         onViewCheckpoint={handleViewCheckpoint}
       />

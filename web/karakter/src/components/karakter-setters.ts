@@ -1,6 +1,8 @@
 import type { Karakter, Fortely } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { UndoPatch } from '../hooks/useUndo';
+import { njkLimitBlocked } from '../hooks/njk-slots';
+import { MAX_NJK_DB } from '../ui-constants';
 
 /** Generikus undo-aware field setter gyár. */
 export function makeFieldSetter(
@@ -44,6 +46,25 @@ export function buildFortelyokProps(karakter: Karakter, data: GameData) {
   const fegyverNevek = [...new Set(data.fegyverek.map(f => f.Alapnév || f.Fegyver))];
   const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
   return { fegyverNevek, nyelvtanulásSzint };
+}
+
+/**
+ * JK/NJK setter: JK → NJK váltás csak a tárolt NJK limitig engedett,
+ * felette toast figyelmeztetés (a chip inline kontroll, ezért nem modális).
+ */
+export function makeJkSetter(
+  karakter: Karakter,
+  setField: ReturnType<typeof makeFieldSetter>,
+  onToast: (msg: string, type: 'success' | 'error') => void,
+) {
+  return (v: boolean) => {
+    // v === false → NJK lesz; a saját slotját nem számoljuk kétszer (uid átadva)
+    if (njkLimitBlocked(v, karakter.uid)) {
+      onToast(`Maximum ${MAX_NJK_DB} NJK tárolható`, 'error');
+      return;
+    }
+    setField('jk', (_, n) => `Típus: ${n ? 'JK' : 'NJK'}`)(v);
+  };
 }
 
 /** Faj setter (nested hátterek.faj). */

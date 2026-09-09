@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { OverlayPortal } from './OverlayPortal';
-import { MAX_KARAKTER_DB } from '../../ui-constants';
+import { MAX_KARAKTER_DB, MAX_NJK_DB } from '../../ui-constants';
 import { readSlots } from '../../hooks/slot-utils';
+import { njkCount } from '../../hooks/njk-slots';
 import type { Karakter } from '../../engine/types';
 
 interface BackupEntry {
@@ -33,6 +34,7 @@ function formatDátum(iso: string): string {
 export function BackupRestoreOverlay({ karakterek, dátum, onRestore, onClose }: Props) {
   const { existingUids, slotCount } = getSlotInfo();
   const freeSlots = MAX_KARAKTER_DB - slotCount;
+  const njkTárolt = njkCount();
 
   const [selected, setSelected] = useState<Set<number>>(() => {
     // Pre-select all that fit: overwrites always, new ones up to freeSlots
@@ -90,6 +92,9 @@ export function BackupRestoreOverlay({ karakterek, dátum, onRestore, onClose }:
         <label className="overlay-label overlay-label-center">Backup visszaállítás</label>
         {freeSlots < karakterek.filter(e => !existingUids.has(e.karakter.uid)).length && (
           <div className="backup-restore-limit">Szabad hely: {freeSlots} / {MAX_KARAKTER_DB}</div>
+        )}
+        {njkTárolt >= MAX_NJK_DB && karakterek.some(e => e.karakter.jk === false && !existingUids.has(e.karakter.uid)) && (
+          <div className="backup-restore-limit">Tárolt NJK: {njkTárolt} / {MAX_NJK_DB} — új NJK kimarad</div>
         )}
         <div className="backup-restore-list">
           {karakterek.map((entry, i) => {

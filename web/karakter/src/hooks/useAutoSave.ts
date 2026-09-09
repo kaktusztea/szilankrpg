@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { Karakter } from '../engine/types';
 import type { UndoEntry } from './useUndo';
 import { generateIdLeíró } from '../engine/file-ops';
-import { readSlots, writeSlots } from './slot-utils';
+import { upsertSlotEntry } from './slot-utils';
 
 /**
  * Persists karakter + undoStack to localStorage whenever they change.
  * Skips save if testMode, !isDirty, or viewingCheckpoint.
+ * Visszaadja a sikertelen mentések számlálóját (kvóta tele) — a hívó ebből
+ * tud figyelmeztetést megjeleníteni, hogy a hiba ne maradjon néma.
  */
 export function useAutoSave(
   karakter: Karakter | null,
@@ -15,7 +17,9 @@ export function useAutoSave(
   testMode: boolean,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
   viewingCheckpoint = false,
-) {
+): number {
+  const [saveErrors, setSaveErrors] = useState(0);
+
   useEffect(() => {
     if (!karakter || testMode || !isDirty || viewingCheckpoint) return;
 
@@ -29,12 +33,12 @@ export function useAutoSave(
     try {
       localStorage.setItem(`szilank_char_${karakter.uid}`, JSON.stringify(toSave));
       localStorage.setItem('szilank_active', karakter.uid);
-
-      const slots = readSlots();
-      const existing = slots.findIndex(s => s.uid === karakter.uid);
-      const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, becenév: karakter.becenév, tsz: karakter.tsz, mentés_dátum: new Date().toISOString(), jk: karakter.jk ?? true };
-      if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
-      writeSlots(slots);
-    } catch { /* quota exceeded */ }
+      upsertSlotEntry(karakter);
+    } catch {
+      // quota exceeded (vagy blokkolt storage) → jelezzük a hívónak
+      setSaveErrors(n => n + 1);
+    }
   }, [karakter, undoStack, isDirty, testMode, viewingCheckpoint]);
+
+  return saveErrors;
 }

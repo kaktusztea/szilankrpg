@@ -66,7 +66,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 - Schema v2 (`data/schemas/karakter.yaml`)
 - `session` szekció = runtime harc state (NEM mentett állapot)
 - Fortélyok: `{ név, fok, spec_típus, spec_elem, kiérdemelt? }` — név = alapnév
-- Multi-slot localStorage: `szilank_char_{uid}`, max 10
+- Multi-slot localStorage: `szilank_char_{uid}`, max 16 (ebből max 10 NJK)
 
 ### Feltétel rendszer
 - String feltétel: `"prefix:érték"` → aktívFeltételek Set lookup
