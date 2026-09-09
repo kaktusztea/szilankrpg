@@ -345,11 +345,10 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 ---
 ### Visszafogott taktika ⇄
 
-```
-TÉ levonásért cserébe
-  kisebb Sebzés
+TÉ levonásért cserébe kisebb Sebzés
 
-TÉ:-10 →  Hátrány-2 Sebzés dobásra
+```
+TÉ:-10  →  Hátrány-2 Sebzés dobásra
 ```
 
 🔗 **[Taktikafókusz: Visszafogott](fortelyok.harci/taktikafokusz_visszafogott.md)** fortély megszünteti a `TÉ` büntetést, és a Sebzés a fegyver alap sebzése lesz (nincs dobás).
