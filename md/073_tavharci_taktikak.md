@@ -102,7 +102,7 @@ Leggyorsabb mozgatás (EM)
 
 `1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. Csak mozdulatlan állapotban végezhető.
 
-→ [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md) fortély további `+4 CÉ`-t ad (összesen `+7`).
+→ [Taktikafókusz: Kitartott célzás](fortelyok.tavharc/taktikafokusz_kitartott_celzas.md) fortély további `+4 CÉ`-t ad (összesen `+7`).
 
 ---
 ### Páros, kétkezes hajítás

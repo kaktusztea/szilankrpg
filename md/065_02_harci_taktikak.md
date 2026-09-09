@@ -352,7 +352,7 @@ TÉ levonásért cserébe
 TÉ:-10 →  Hátrány-2 Sebzés dobásra
 ```
 
-🔗 TODO
+🔗 **[Taktikafókusz: Visszafogott](fortelyok.harci/taktikafokusz_visszafogott.md)** fortély megszünteti a `TÉ` büntetést, és a Sebzés a fegyver alap sebzése lesz (nincs dobás).
 
 ✅ **Kezdeményező, Kiváró, 1 támadás taktikával** együtt
 

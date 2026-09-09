@@ -8,7 +8,6 @@
 - [Alakzat: védekező](fortelyok.harci/alakzat_vedekezo.md)
 - [Belharc](fortelyok.harci/belharcos.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
-- [Elsöprő roham](fortelyok.harci/elsopro_roham.md)
 - [Fárasztás](fortelyok.harci/farasztas.md)
 - [Fegyverrántás](fortelyok.harci/fegyverrantas.md)
 - [Gladiátor bestiái](fortelyok.harci/gladiator.bestiai.md)
@@ -33,6 +32,8 @@
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
+- [Taktikafókusz: Roham](fortelyok.harci/taktikafokusz_roham.md)
+- [Taktikafókusz: Visszafogott](fortelyok.harci/taktikafokusz_visszafogott.md)
 - [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md)
 - [Természetes páncél](fortelyok.harci/termeszetes_pancel.md)
 - [Testőr](fortelyok.harci/testor.md)
@@ -62,13 +63,13 @@
 - [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md)
 - [Gyors hajítás](fortelyok.tavharc/gyors_hajitas.md)
 - [Gyors lövés](fortelyok.tavharc/gyors_loves.md)
-- [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md)
 - [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md)
 - [Lövés futás közben](fortelyok.tavharc/loves_futas_kozben.md)
 - [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md)
 - [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md)
 - [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
 - [Mozgó cél könnyítése (fegyveres)](fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md)
+- [Taktikafókusz: Kitartott célzás](fortelyok.tavharc/taktikafokusz_kitartott_celzas.md)
 
 ---
 

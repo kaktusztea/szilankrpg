@@ -66,7 +66,7 @@ Lásd bővebben:
 ```
 Kitartott célzás helyzet
  +3: alapeset
- +7: "Kitartott célzás fejlesztése" fortéllyal
+ +7: "Taktikafókusz: Kitartott célzás" fortéllyal
      (+3 alapeset + 4 fortély)
 
 Lövés reflexből helyzet

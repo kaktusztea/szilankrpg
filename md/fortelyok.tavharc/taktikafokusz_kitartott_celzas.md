@@ -1,4 +1,4 @@
-## 🟣 Kitartott célzás fejlesztése (1)
+## 🟣 Taktikafókusz: Kitartott célzás (1)
 
 Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót célzáskor.
 
