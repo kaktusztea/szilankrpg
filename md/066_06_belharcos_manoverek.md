@@ -62,6 +62,8 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 🔆 Ha az ellenfél úgy dönt, hogy szándékosan beenged belharcba, akkor nincs szükség a Manőverre.
 
+**Kapcsolódik**: [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md) fortély
+
 <br />
 
 ---
@@ -74,6 +76,8 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 **Hatás**: Sikeresen kibontakoztál belharcból. Most sima harci szituációban vagy ellenfeleddel.
 
 🔆 Ha belharcban sebzel, automatikusan, bármilyen dobás nélkül kibontakozhatsz a belharci szituációból.
+
+**Kapcsolódik**: [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md) fortély
 
 <br />
 

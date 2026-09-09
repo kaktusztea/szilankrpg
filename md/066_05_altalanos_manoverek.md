@@ -40,6 +40,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 
 **Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróbát dobtok. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóival.
 
+**Kapcsolódik**: [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md) fortély
+
 <br />
 
 ---
@@ -98,6 +100,8 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 - Követelmény: Harcmodor – `5.szint`
 
 **Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
+
+**Kapcsolódik**: [Manőverfókusz: Fegyvertörés](fortelyok.harci/manoverfokusz_fegyvertores.md) fortély
 
 <br />
 
@@ -162,6 +166,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető Kibontakozás.
 
 **Hatás**: Sikerül a harcból kibontakoznod, ellenfele(i)d már nem támadhat(nak) rád. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróba ([Sprint](fortelyok.altalanos/sprint.md) fortély számít!). Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`Előny+2` Támadó dobásra).
+
+**Kapcsolódik**: [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md) fortély
 
 <br />
 
@@ -292,6 +298,8 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 
 - **Követelmény**: a környezetnek, harctérnek alkalmasnak kell lennie a hátbakerülésre. Ha nincs elég hely, a KM megtagadhatja a Manőver használatát.
 - **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról** bónuszait - attól függően, hogy milyen pozícióban van.
+
+**Kapcsolódik**: [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md) fortély
 
 <br />
 
@@ -431,6 +439,8 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 - Követelmény: Aktuális harcmodor - `6.szint`
 
 **Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
+
+**Kapcsolódik**: [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md) fortély
 
 **Kapcsolódó szituáció:** [Orvtámadás](szituaciok/orvtamadas_harcon_kivul.md)
 

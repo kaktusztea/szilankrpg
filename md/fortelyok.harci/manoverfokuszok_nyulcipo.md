@@ -1,4 +1,4 @@
-## 🟣 Manőverfókusz: Nyúlcipő (1)
+## 🟣 Manőverfókuszok: Nyúlcipő (1)
 
 "Én most lelépek..."
 
