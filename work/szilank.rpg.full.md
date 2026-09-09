@@ -348,7 +348,7 @@ https://github.com/kaktusztea/szilankrpg/
 - [Belharcos Manőverek listája](066_06_belharcos_manoverek.md) 🎲
 - [Lovas Manőverek listája](066_07_lovas_manoverek.md) 🎲
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md) ⚡
-- [Példa Manőver alkalmazására: Lábsöprés](066_08_02_pelda_manover_labsopres.md) ⚡
+- [Példa Manőver alkalmazására: Földrevitel](066_08_02_pelda_manover_labsopres.md) ⚡
 
 ### 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
 
@@ -2784,7 +2784,7 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 ## Manőver Pontok (MP)
 
-A [Manőverek](066_00_manoverek.md) (mint pl. Lábsöprés, Lefegyverzés, Átdobás) kivételek, mert nem kerülnek `KP`-ba, bárki megpróbálkozhat velük alapesetben is.
+A [Manőverek](066_00_manoverek.md) (mint pl. Földrevitel, Lefegyverzés, Átdobás) kivételek, mert nem kerülnek `KP`-ba, bárki megpróbálkozhat velük alapesetben is.
 
 A **Manőver Pontokat** javadalmazását a Manőverek [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) fázisánál használhatjuk fel játék közben - opcionálisan, könnyítésre.
 
@@ -19636,7 +19636,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Belharcos Manőverek listája](066_06_belharcos_manoverek.md) 🎲
 - [Lovas Manőverek listája](066_07_lovas_manoverek.md) 🎲
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md)
-- [Példa Manőver alkalmazására: Lábsöprés](066_08_02_pelda_manover_labsopres.md)
+- [Példa Manőver alkalmazására: Földrevitel](066_08_02_pelda_manover_labsopres.md)
 
 ## 6.7 [Harc lóhátról](067_00_harc_hatasrol.md)
 
@@ -23871,7 +23871,7 @@ Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket:
 Egy-két jó példa többet mond a száraz szabályleírásoknál.
 
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md) ⚡
-- [Példa Manőver alkalmazására:  Lábsöprés](066_08_02_pelda_manover_labsopres.md) ⚡
+- [Példa Manőver alkalmazására:  Földrevitel](066_08_02_pelda_manover_labsopres.md) ⚡
 
 ---
 
@@ -24226,13 +24226,12 @@ A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mint
 - [Áttörés](#átt%C3%B6r%C3%A9s)
 - [Csonkolás](#csonkol%C3%A1s)
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
-- [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
 - [Fegyvertörés](#fegyvert%C3%B6r%C3%A9s)
-- [Forgószél támadás](#forg%C3%B3sz%C3%A9l-t%C3%A1mad%C3%A1s)
+- [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
+- [Forgószél](#forgószél)
+- [Földrevitel](#földrevitel)
 - [Kibontakozás](#kibontakoz%C3%A1s)
-- [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
 - [Lábkirántás szálfegyverrel](#l%C3%A1bkir%C3%A1nt%C3%A1s-sz%C3%A1lfegyverrel)
-- [Lábsöprés / Felöklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--fel%C3%B6klel%C3%A9s)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
 - [Lefegyverzés](#lefegyverz%C3%A9s)
@@ -24240,8 +24239,9 @@ A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mint
 - [Lovas, léglovas megakasztása](#lovas-l%C3%A9glovas-megakaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
-- [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
+- [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
+- [Piszkos trükk](#piszkos-trükk)
 - [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s)
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
@@ -24305,17 +24305,6 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 <br />
 
 ---
-### Felállás földről
-
-- Nehézség: `6`
-  - csökkenti: `(Akrobatika szint / 3)` (↓)
-- Fázisok: `Megakasztás, Ellenpróba`
-
-**Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
-
-<br />
-
----
 ### Fegyvertörés
 
 Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted.
@@ -24335,7 +24324,18 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 <br />
 
 ---
-### Forgószél támadás
+### Felállás földről
+
+- Nehézség: `6`
+  - csökkenti: `(Akrobatika szint / 3)` (↓)
+- Fázisok: `Megakasztás, Ellenpróba`
+
+**Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
+
+<br />
+
+---
+### Forgószél
 
 - Nehézség: `7 + ellenfél`
 - Fázisok: `Végrehajtás, Ellenpróba`
@@ -24351,6 +24351,22 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 ❌ VÉ csökkentést az így végrehajtott támadás **NEM** okoz.
 
 🔆 Körönként maximum `1x` alkalmazható
+
+<br />
+
+---
+### Földrevitel
+
+Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
+
+- Nehézség: `8`
+  - ± **Erő** különbség
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény:
+  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
+  - Aktuális harcmodor - `5.szint`
+
+**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 <br />
 
@@ -24372,24 +24388,9 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 <br />
 
 ---
-### Kiegészítő támadás
-
-- Nehézség: `7`
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény:
-	- Közelharc – `4.szint`
-	- Forgatott fegyverre: Mesterfegyver – `1.fok`
-
-**Hatás**: Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
-
-Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a bement sebzés legalább `5 ÉP`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
-
-<br />
-
----
 ### Lábkirántás szálfegyverrel
 
-Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél [Felökleléssel](#l%C3%A1bs%C3%B6pr%C3%A9s--fel%C3%B6klel%C3%A9s) kell próbálkoznod.
+Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél [Földrevitellel](#földrevitel) kell próbálkoznod.
 
 - Nehézség: `6`
 	- `-2`: Kifejezetten lábkirántásra alkalmas fegyverrel próbálkozol
@@ -24400,22 +24401,6 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 	- Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 
 **Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
-
-<br />
-
----
-### Lábsöprés / Felöklelés
-
-Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
-
-- Nehézség: `8`
-  - ± **Erő** különbség
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény:
-  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
-  - Aktuális harcmodor - `5.szint`
-
-**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 <br />
 
@@ -24533,22 +24518,6 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 <br />
 
 ---
-### Pajzzsal felöklelés
-
-- Nehézség: `7`
-    - ± **Erő** különbség
-    - Ellenfél minden **Pajzshasználat** foka után `+2` (ha használ épp pajzsot ő is)
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény:
-  - Aktuális harcmodor: - `5.szint`
-  - Pajzshasználat – `2.fok`
-  - Nagy és Közepes pajzzsal lehetséges csak
-
-**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
-
-<br />
-
----
 ### Pajzsrongálás
 
 Szándékosan rongálod ellenfeled pajzsát, csökkentve annak **Védő Értékét**.
@@ -24574,6 +24543,37 @@ Anyagok erőssége
 ↑ Bronz
 ↑ Fa
 ```
+
+<br />
+
+---
+### Pajzzsal felöklelés
+
+- Nehézség: `7`
+    - ± **Erő** különbség
+    - Ellenfél minden **Pajzshasználat** foka után `+2` (ha használ épp pajzsot ő is)
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény:
+  - Aktuális harcmodor: - `5.szint`
+  - Pajzshasználat – `2.fok`
+  - Nagy és Közepes pajzzsal lehetséges csak
+
+**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
+
+<br />
+
+---
+### Piszkos trükk
+
+- Nehézség: `7`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Követelmény:
+	- Közelharc – `4.szint`
+	- Forgatott fegyverre: Mesterfegyver – `1.fok`
+
+**Hatás**: Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
+
+Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a bement sebzés legalább `5 ÉP`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
 
 <br />
 
@@ -24799,7 +24799,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 - [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 - [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver sikeres alkalmazásával kelhet fel
 
-Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Felökleléssel](066_05_altalanos_manoverek.md#lábsöprés--felöklelés) kell próbálkoznod.
+Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_05_altalanos_manoverek.md#földrevitel) kell próbálkoznod.
 
 <br />
 
@@ -24948,7 +24948,7 @@ Ha Rühes `4` Manőver Pontot költött volna el, akkor már `+4` járna a prób
 
 ---
 
-🔗 [Példa Manőver: Lábsöprés](066_08_02_pelda_manover_labsopres.md) →
+🔗 [Példa Manőver: Földrevitel](066_08_02_pelda_manover_labsopres.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
@@ -24957,9 +24957,9 @@ Ha Rühes `4` Manőver Pontot költött volna el, akkor már `+4` járna a prób
 ---
 ## File: md/066_08_02_pelda_manover_labsopres.md
 
-## ⚡Példa Manőver alkalmazására: Lábsöprés
+## ⚡Példa Manőver alkalmazására: Földrevitel
 
-Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr. Hogy növelje esélyeit, elkölt `2` **Manőver Pontot**.
+Tetves **Földrevitelt** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr. Hogy növelje esélyeit, elkölt `2` **Manőver Pontot**.
 
 ```
 Tetves értékei
