@@ -36,3 +36,8 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "nagy túlsúly" }
       - { érték: -3, leírás: "kis túlsúly" }
       - { érték: 0, leírás: "nincs túlsúly" }
+dobás_komment:
+  - line: "Rontott mászás próba után azonnal egy soron kívüli Mentő Mászás képzettségpróbát kell dobni (sima, nem összetett) Edzettség Tulajdonsággal. Módosító: -3."
+  - line: "Erő bevetése: a rontás utáni Mentő dobásnál Erő pontokat tehetsz a próbába, ezzel az Erő Tulajdonság ideiglenesen csökken (legföljebb +0 értékig). Az elköltött pontok a mászó szituáció végéig nem térnek vissza, pihenésben 1 pont / perc."
+  - line: "Hosszabb mászandó úthoz Összetett képzettségpróbát dobj Edzettség Tulajdonsággal."
+  - line: "Pánik: életveszélyes helyzetben rontott próbánál a KM Önuralom próbát dobathat."

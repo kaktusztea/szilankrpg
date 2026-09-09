@@ -152,7 +152,7 @@ interface VállalásEredmény {
   kritikusHiba: boolean;
 }
 
-type PickerId = 'kit' | 'szit' | null;
+type PickerId = 'kit' | 'szit' | 'info' | null;
 
 interface Props {
   képzettségNév: string;
@@ -167,6 +167,7 @@ interface Props {
   módosítóTáblák: ModositoTabla[];
   próbaEnyhítések: PróbaEnyhítés[];
   szerepjátékosMódosító: boolean;
+  dobásKomment: { line: string }[];
   onClose: () => void;
 }
 
@@ -175,7 +176,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, szerepjátékosMódosító, onClose,
+  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, szerepjátékosMódosító, dobásKomment, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -391,6 +392,9 @@ export function KepzettsegProbaPopup({
           {helyettesítés
             ? <><span className="kep-proba-strike">{képzettségNév} ({szint})</span><br/>{helyettesítés} ({effSzint - vállalás})</>
             : <>{képzettségNév} ({szint})</>}
+          {dobásKomment.length > 0 && (
+            <button className="kep-proba-info-btn" title="Próbadobás magyarázat" onClick={() => setOpenPicker('info')}>💡</button>
+          )}
         </div>
 
         <div className="kep-proba-dual-list">
@@ -746,6 +750,16 @@ export function KepzettsegProbaPopup({
                 Összesen: {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
               </div>
             )}
+          </div>
+        </PopupOverlay>
+      )}
+      {openPicker === 'info' && (
+        <PopupOverlay className="kep-prompt kep-proba-info-popup" onClose={() => setOpenPicker(null)}>
+          <label className="kep-prompt-label-bold-mb">{képzettségNév} — próbadobás</label>
+          <div className="kep-proba-info-body">
+            {dobásKomment.map((k, i) => (
+              <p key={i} className="kep-proba-info-line">{k.line}</p>
+            ))}
           </div>
         </PopupOverlay>
       )}

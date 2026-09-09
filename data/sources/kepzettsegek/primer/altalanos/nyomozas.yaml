@@ -34,3 +34,4 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: 0, leírás: "Eszközök nélkül" }
       - { érték: 3, leírás: "Porok / nagyító / lámpák (ha segítenek)" }
+dobás_komment: []

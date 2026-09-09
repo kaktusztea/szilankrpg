@@ -28,3 +28,4 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -3, leírás: "Enyhén zavaró" }
       - { érték: -6, leírás: "Nagyon zavaró" }
+dobás_komment: []

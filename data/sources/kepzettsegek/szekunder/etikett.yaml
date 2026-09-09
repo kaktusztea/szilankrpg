@@ -24,3 +24,4 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Szegényes, sérült ruházat" }
       - { érték: -3, leírás: "szabálytalan ruházat, smink" }
       - { érték: 0, leírás: "Megfelelő ruházat, smink" }
+dobás_komment: []

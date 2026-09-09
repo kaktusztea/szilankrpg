@@ -22,3 +22,5 @@ helyzetfüggő_módosítók: ""      # Üres ("") ha nincs. Lista ha van:
   #   mód: "single"            # "single" (default): skála, 1 választható. "multi": független tényezők, toggle-ök.
   #   sorok:
   #     - { érték: 0, leírás: "" }
+dobás_komment: []               # 💡 Próbadobás magyarázat. Üres lista = nincs info ikon. Ha van:
+  # - line: ""                  # 1 bekezdés / sor a magyarázat popupban

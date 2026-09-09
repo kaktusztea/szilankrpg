@@ -25,3 +25,4 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Rosszul felszerelt labor" }
       - { érték: -3, leírás: "Hiányos műszerek" }
       - { érték: 0, leírás: "Megfelelő labor" }
+dobás_komment: []

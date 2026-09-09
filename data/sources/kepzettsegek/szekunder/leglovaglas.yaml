@@ -29,3 +29,4 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Vihar, orkán" }
       - { érték: -3, leírás: "Erős szél vagy felhőszaggatás" }
       - { érték: 0, leírás: "Normál időjárás" }
+dobás_komment: []

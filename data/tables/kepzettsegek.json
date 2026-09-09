@@ -25,6 +25,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -62,6 +63,7 @@
     "próba": "nincs",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/alakzatharc.md"
@@ -100,6 +102,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/alkimia.md"
@@ -112,6 +115,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/asztralmagia.md"
@@ -124,6 +128,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/aurahangolas.md"
@@ -136,6 +141,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_belso_sikok.md"
@@ -148,6 +154,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/elemi_magia.md"
@@ -160,6 +167,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/eletero_manipulalasa.md"
@@ -172,6 +180,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idomagia.md"
@@ -184,6 +193,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/illuziok.md"
@@ -196,6 +206,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md"
@@ -208,6 +219,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/mentalmagia.md"
@@ -220,6 +232,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/metamagia.md"
@@ -232,6 +245,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/nekromancia.md"
@@ -244,6 +258,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_befolyasolas.md"
@@ -256,6 +271,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_erzekeles.md"
@@ -268,6 +284,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md"
@@ -280,6 +297,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md"
@@ -292,6 +310,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/arkanumok/termagia.md"
@@ -360,6 +379,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -395,6 +415,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": true,
     "kapcsolódó_szituációk": [
       {
@@ -470,6 +491,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -509,6 +531,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -566,6 +589,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -615,6 +639,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
@@ -649,6 +674,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
@@ -693,6 +719,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -738,6 +765,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md"
@@ -750,6 +778,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_anatyda.md"
@@ -762,6 +791,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_buzzgoblin.md"
@@ -774,6 +804,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_dzsenn.md"
@@ -786,6 +817,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elar.md"
@@ -798,6 +830,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md"
@@ -810,6 +843,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md"
@@ -822,6 +856,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md"
@@ -834,6 +869,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md"
@@ -846,6 +882,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md"
@@ -858,6 +895,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_erdopille.md"
@@ -870,6 +908,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_feenhar.md"
@@ -882,6 +921,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gnom.md"
@@ -894,6 +934,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_goblin.md"
@@ -906,6 +947,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gyikleny.md"
@@ -918,6 +960,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homoki_elf.md"
@@ -930,6 +973,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homano.md"
@@ -942,6 +986,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_khal.md"
@@ -954,6 +999,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kineta.md"
@@ -966,6 +1012,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kobold.md"
@@ -978,6 +1025,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kyr.md"
@@ -990,6 +1038,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ork.md"
@@ -1002,6 +1051,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_saskaharcos.md"
@@ -1014,6 +1064,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md"
@@ -1026,6 +1077,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_tuzkobold.md"
@@ -1038,6 +1090,7 @@
     "próba": "nem dobható",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md"
@@ -1052,6 +1105,7 @@
       "Önuralom"
     ],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/fajdalomtures.md"
@@ -1095,6 +1149,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/hadaszat.md"
@@ -1171,6 +1226,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/hajozas.md"
@@ -1186,6 +1242,7 @@
       "Edzettség"
     ],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/harci_laz.md"
@@ -1204,6 +1261,7 @@
     "próba": "nincs",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1257,6 +1315,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
@@ -1287,6 +1346,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1322,6 +1382,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1401,6 +1462,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1459,6 +1521,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
@@ -1607,6 +1670,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1666,6 +1730,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1702,6 +1767,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1719,6 +1785,7 @@
     "próba": "nincs",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/magikus_celzas.md"
@@ -1792,6 +1859,20 @@
         ]
       }
     ],
+    "dobás_komment": [
+      {
+        "line": "Rontott mászás próba után azonnal egy soron kívüli Mentő Mászás képzettségpróbát kell dobni (sima, nem összetett) Edzettség Tulajdonsággal. Módosító: -3."
+      },
+      {
+        "line": "Erő bevetése: a rontás utáni Mentő dobásnál Erő pontokat tehetsz a próbába, ezzel az Erő Tulajdonság ideiglenesen csökken (legföljebb +0 értékig). Az elköltött pontok a mászó szituáció végéig nem térnek vissza, pihenésben 1 pont / perc."
+      },
+      {
+        "line": "Hosszabb mászandó úthoz Összetett képzettségpróbát dobj Edzettség Tulajdonsággal."
+      },
+      {
+        "line": "Pánik: életveszélyes helyzetben rontott próbánál a KM Önuralom próbát dobathat."
+      }
+    ],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -1846,6 +1927,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
@@ -1881,6 +1963,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
@@ -1911,6 +1994,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
@@ -1973,6 +2057,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": true,
     "kapcsolódó_szituációk": [
       {
@@ -2042,6 +2127,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
@@ -2058,6 +2144,7 @@
       "Emlékezet"
     ],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md"
@@ -2092,6 +2179,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
@@ -2110,6 +2198,7 @@
     "próba": "nincs",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/harci/tavolsagi_harcmodor.md"
@@ -2158,6 +2247,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -2179,6 +2269,7 @@
     "próba": "nincs",
     "domináns_tulajdonságok": [],
     "helyzetfüggő_módosítók": "",
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
@@ -2213,6 +2304,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
@@ -2265,6 +2357,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [
       {
@@ -2304,6 +2397,7 @@
         ]
       }
     ],
+    "dobás_komment": [],
     "szerepjátékos_módosító": false,
     "kapcsolódó_szituációk": [],
     "md_fájl": "kepzettsegek.szekunder/zarnyitas.md"

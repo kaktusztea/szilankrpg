@@ -120,6 +120,7 @@ def generate_kepzettsegek():
                 'próba': data.get('próba', 'nincs'),
                 'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
                 'helyzetfüggő_módosítók': data.get('helyzetfüggő_módosítók', []),
+                'dobás_komment': data.get('dobás_komment', []),
                 'szerepjátékos_módosító': data.get('szerepjátékos_módosító', False),
                 'kapcsolódó_szituációk': szit_mapping.get(data['név'], []),
                 'md_fájl': md_fajl,

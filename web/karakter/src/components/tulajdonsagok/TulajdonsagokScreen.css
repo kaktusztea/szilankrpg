@@ -282,6 +282,42 @@
   font-weight: bold;
   margin-top: -6px;
 }
+
+/* Villódzó 💡 info ikon a próbadobás magyarázathoz */
+.kep-proba-info-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0 4px;
+  vertical-align: middle;
+  animation: kep-proba-info-glow 1.6s ease-in-out infinite;
+}
+@keyframes kep-proba-info-glow {
+  0%, 100% { opacity: 0.45; filter: drop-shadow(0 0 0 transparent); }
+  50%      { opacity: 1; filter: drop-shadow(0 0 4px #ffd54f); }
+}
+
+/* Próbadobás magyarázat popup.
+   Szélesség: az effektív app-szélesség 90%-a. Az .app konténer max-width: 600px
+   (styles/layout.css), ezért desktopon 540px a felső korlát, keskeny ablakon 90vw. */
+.kep-proba-info-popup {
+  width: min(90vw, 540px);
+  box-sizing: border-box;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.kep-proba-info-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kep-proba-info-line {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+}
 .kep-proba-row {
   display: flex;
   flex-direction: column;

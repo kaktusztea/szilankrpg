@@ -30,3 +30,4 @@ helyzetfüggő_módosítók:
       - { érték: -3, leírás: "Rossz hírnév, karma" }
       - { érték: 0, leírás: "Semleges" }
       - { érték: 3, leírás: "Jó hírnév" }
+dobás_komment: []

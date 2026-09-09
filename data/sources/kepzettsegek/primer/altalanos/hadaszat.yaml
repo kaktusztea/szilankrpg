@@ -28,3 +28,4 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -6, leírás: "Szabotőr aknamunkája" }
       - { érték: 0, leírás: "Nincs szabotőr" }
+dobás_komment: []

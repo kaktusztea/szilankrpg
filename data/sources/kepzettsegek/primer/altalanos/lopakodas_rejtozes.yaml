@@ -60,3 +60,4 @@ helyzetfüggő_módosítók:
       - { érték: 0, leírás: "10-15 méter" }
       - { érték: 3, leírás: "16-20 méter" }
       - { érték: 6, leírás: "20-30 méter" }
+dobás_komment: []

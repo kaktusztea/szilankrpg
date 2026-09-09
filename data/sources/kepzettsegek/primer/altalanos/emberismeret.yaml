@@ -30,3 +30,4 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Teljesen idegen fajú célszemély" }
       - { érték: -3, leírás: "Más fajú/kultúrájú célszemély" }
       - { érték: 0, leírás: "Azonos fajú/kultúrájú célszemély" }
+dobás_komment: []

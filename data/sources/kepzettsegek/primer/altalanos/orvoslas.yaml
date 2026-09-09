@@ -30,3 +30,4 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Páciens ellenáll" }
       - { érték: 3, leírás: "hasznos gyógyszer (vajákos készítette)" }
       - { érték: 6, leírás: "legjobb gyógyszer (vajákos készítette)" }
+dobás_komment: []

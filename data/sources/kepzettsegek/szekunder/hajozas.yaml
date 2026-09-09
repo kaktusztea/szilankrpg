@@ -37,3 +37,4 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Képzetlen zsoldosok" }
       - { érték: -3, leírás: "Fegyelmezetlen legénység" }
       - { érték: 0, leírás: "Tapasztalt legénység" }
+dobás_komment: []

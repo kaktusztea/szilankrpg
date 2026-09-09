@@ -29,3 +29,4 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -6, leírás: "Szél felől közelítesz jó szaglású vad felé" }
       - { érték: -6, leírás: "Zajos aljnövényzet" }
+dobás_komment: []

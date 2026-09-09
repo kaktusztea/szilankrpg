@@ -24,3 +24,4 @@ helyzetfüggő_módosítók:
       - { érték: -3, leírás: "Szegényes felszerelés" }
       - { érték: 0, leírás: "Normál felszerelés" }
       - { érték: 3, leírás: "Jól felszerelt labor" }
+dobás_komment: []

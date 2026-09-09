@@ -64,6 +64,7 @@ export function KepzettsegRow({
           statuszDefs={statuszDefs}
           módosítóTáblák={def.helyzetfüggő_módosítók || []}
           próbaEnyhítések={próbaEnyhítések}
+          dobásKomment={def.dobás_komment || []}
           szerepjátékosMódosító={def.szerepjátékos_módosító || false}
           onClose={() => setShowProba(false)}
         />

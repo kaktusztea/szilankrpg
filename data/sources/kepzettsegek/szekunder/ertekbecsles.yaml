@@ -24,3 +24,4 @@ helyzetfüggő_módosítók:
       - { érték: 0, leírás: "Nincs könyvtár" }
       - { érték: 3, leírás: "Jó könyvtár" }
       - { érték: 6, leírás: "Kiváló könyvtár" }
+dobás_komment: []

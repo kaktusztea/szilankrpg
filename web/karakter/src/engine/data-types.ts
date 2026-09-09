@@ -21,6 +21,7 @@ export interface KepzettsegDef {
   próba: string;
   domináns_tulajdonságok: string[];
   helyzetfüggő_módosítók: ModositoTabla[];
+  dobás_komment: { line: string }[];
   szerepjátékos_módosító: boolean;
   kapcsolódó_szituációk: { név: string; fájl: string }[];
   md_fájl: string;

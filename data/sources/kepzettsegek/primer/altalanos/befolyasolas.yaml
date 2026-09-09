@@ -23,3 +23,4 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -3, leírás: "Célszemély nem érti a nyelved" }
       - { érték: 0, leírás: "Azonos nyelven beszéltek" }
+dobás_komment: []

@@ -36,3 +36,4 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Súlyos nyelvi nehézség" }
       - { érték: -3, leírás: "Idegen nyelvjárás" }
       - { érték: 0, leírás: "Anyanyelvű szöveg" }
+dobás_komment: []

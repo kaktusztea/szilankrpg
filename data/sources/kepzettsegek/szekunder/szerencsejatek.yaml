@@ -24,3 +24,4 @@ helyzetfüggő_módosítók:
       - { érték: -3, leírás: "Ismeretlen kaszinó, idegen szabályok" }
       - { érték: 0, leírás: "Normál környezet" }
       - { érték: 3, leírás: "Kocsma, barátságos közeg" }
+dobás_komment: []

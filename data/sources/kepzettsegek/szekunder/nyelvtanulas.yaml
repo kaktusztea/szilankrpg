@@ -23,3 +23,4 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: 3, leírás: "Könyvtár" }
       - { érték: 3, leírás: "Tanító aktívan segít" }
+dobás_komment: []

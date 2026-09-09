@@ -33,3 +33,4 @@ helyzetfüggő_módosítók:
     mód: "multi"
     sorok:
       - { érték: -3, leírás: "Nyom nélkül hatástalanítani" }
+dobás_komment: []
