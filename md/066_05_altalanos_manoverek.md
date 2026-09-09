@@ -239,7 +239,7 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
 
-**Kapcsolódik**: [Manőverfókuszok: Lefegyverzés](fortelyok.harci/manoverfokuszok_lefegyverzes.md) fortély
+**Kapcsolódik**: [Manőverfókusz: Lefegyverzés](fortelyok.harci/manoverfokusz_lefegyverzes.md) fortély
 
 <br />
 
