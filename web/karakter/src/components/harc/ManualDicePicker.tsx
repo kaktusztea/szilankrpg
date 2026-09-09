@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
+import { előnyHátrányLabel } from '../../engine/dice';
 
 interface Props {
   /** Called with the manually chosen value. */
@@ -28,9 +29,7 @@ export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, side
   const [open, setOpen] = useState(false);
   const isOpen = open || (forceOpen ?? false);
 
-  const szintLabel = szint != null && szint !== 0
-    ? szint > 0 ? `Előny+${szint}` : `Hátrány${szint}`
-    : null;
+  const szintLabel = szint != null ? (előnyHátrányLabel(szint) || null) : null;
 
   return (
     <>

@@ -5,6 +5,7 @@ import type { UndoPatch } from '../../hooks/useUndo';
 import { fmtHatás } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 import { PickerOverlay } from './PickerOverlay';
+import { előnyHátrányLabel } from '../../engine/dice';
 
 interface Props {
   data: GameData;
@@ -80,7 +81,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           <div key={`nar${i}`} className="item-row">
             <span className="aktiv-flex-1">
               <strong className="aktiv-statusz-name">{nm.szöveg}:</strong>
-              <span> {(nm.érték ?? 0) > 0 ? `Előny+${nm.érték}` : `Hátrány${nm.érték}`}</span>
+              <span> {előnyHátrányLabel(nm.érték ?? 0)}</span>
             </span>
             <button className="item-delete" onClick={() => {
               pushUndo(`Narratív−: ${nm.szöveg}`, [{ field: 'session', prev: session }]);

@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { rollElőnyHátrányK6, type ProbaDobás } from '../../engine/dice';
-import { előnyHátrányLabel } from './KepzettsegProbaPopup';
+import {
+  előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK,
+  probaLehetetlen as probaLehetetlenKözös,
+  probaBiztosSiker as probaBiztosSikerKözös,
+  type ÖsszetettSor, type ÖsszetettEredmény,
+} from './proba-common';
 
 // Tulajdonságpróba célszámok (engine_spec §37.1, md/010_05_04)
 const NEHÉZSÉGEK: { érték: number; label: string }[] = [
@@ -14,36 +19,14 @@ const NEHÉZSÉGEK: { érték: number; label: string }[] = [
   { érték: 8, label: 'Emberfeletti' },
 ];
 
-const ELŐNY_HÁTRÁNY: { szint: number; label: string }[] = [
-  { szint: -2, label: 'Hátrány-2' },
-  { szint: -1, label: 'Hátrány-1' },
-  { szint: 0, label: '—' },
-  { szint: 1, label: 'Előny+1' },
-  { szint: 2, label: 'Előny+2' },
-];
-
-/** Tulajdonságpróba lehetetlen, ha max k6 (6) dobással sem éri el a célszámot. */
-export function tulProbaLehetetlen(tulÉrték: number, célszám: number): boolean {
-  return tulÉrték + 6 < célszám;
+/** Tulajdonságpróba lehetetlen: Tulajdonság + max k6 (6) < célszám. */
+function tulProbaLehetetlen(tulÉrték: number, célszám: number): boolean {
+  return probaLehetetlenKözös(tulÉrték, 6, célszám);
 }
 
-/** Tulajdonságpróba biztos siker, ha min k6 (1) dobással is eléri a célszámot. */
-export function tulProbaBiztosSiker(tulÉrték: number, célszám: number): boolean {
-  return tulÉrték + 1 >= célszám;
-}
-
-// --- Összetett próba eredmény típus ---
-interface ÖsszetettSor {
-  label: string;
-  célszám: number;
-  dobás: ProbaDobás;
-  összeg: number;
-  siker: boolean;
-}
-
-interface ÖsszetettEredmény {
-  sorok: ÖsszetettSor[];
-  összSiker: boolean;
+/** Tulajdonságpróba biztos siker: Tulajdonság + min k6 (1) ≥ célszám. */
+function tulProbaBiztosSiker(tulÉrték: number, célszám: number): boolean {
+  return probaBiztosSikerKözös(tulÉrték, célszám);
 }
 
 interface Props {
@@ -190,7 +173,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
               <div className="kep-proba-extras-row">
                 <span className="kep-proba-extras-label">Előny/Hátrány:</span>
                 <div className="kep-proba-extras-btns">
-                  {ELŐNY_HÁTRÁNY.map(e => (
+                  {ELŐNY_HÁTRÁNY_SZINTEK.map(e => (
                     <button key={e.szint}
                       className={`kep-proba-extras-btn${ehSzint === e.szint ? ' kep-proba-extras-btn-active' : ''}`}
                       onClick={() => { setEhSzint(e.szint); resetDobás(); }}>

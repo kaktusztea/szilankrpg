@@ -2,7 +2,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult } from './types';
 import { lookupFegyver } from '../../engine/utils';
-import { findMfFok, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév } from './shared';
+import { findMfFokByName, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév } from './shared';
 
 export interface KétkezesBontás {
   nagyobb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };
@@ -65,13 +65,13 @@ function calcKétkezesMf(
   const { nagyobb: nagyobbDef, kisebb: kisebbDef, nagyobbFp, kisebbFp } = resolveNagyobbKisebb(jobbDef, balDef, jobbFp, balFp);
 
   const nagyobbNév = nagyobbDef.Alapnév || nagyobbDef.Fegyver || '';
-  const nagyobbMfFok = findMfFok(k, nagyobbNév, nagyobbFp.alap);
+  const nagyobbMfFok = findMfFokByName(k, nagyobbNév, nagyobbFp.alap);
   const mfN = getMfBónusz(konstansok, nagyobbMfFok);
 
   if (mfMode !== 'mindkettő') return { ...mfN, nagyobb: mfN, kisebb: MF_ZERO };
 
   const kisebbNév = kisebbDef.Alapnév || kisebbDef.Fegyver || '';
-  const kisebbMfFok = findMfFok(k, kisebbNév, kisebbFp.alap);
+  const kisebbMfFok = findMfFokByName(k, kisebbNév, kisebbFp.alap);
   const mfK = getMfBónusz(konstansok, kisebbMfFok);
   return { TÉ: mfN.TÉ + mfK.TÉ, VÉ: mfN.VÉ + mfK.VÉ, SP: mfN.SP + mfK.SP, nagyobb: mfN, kisebb: mfK };
 }
@@ -121,7 +121,7 @@ export function calcReszletekData(
 
   // Mesterfegyver bónusz
   const fNév = fDef?.Alapnév || fDef?.Fegyver || '';
-  const mfFok = findMfFok(k, fNév, fDefLookupNév);
+  const mfFok = findMfFokByName(k, fNév, fDefLookupNév);
   const mfResult = kétkezesResult
     ? calcKétkezesMf(k, session, data, mfFok)
     : null;

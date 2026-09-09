@@ -16,41 +16,41 @@ export function rollK10(): number {
 }
 
 /**
- * Előny/Hátrány dobás k10-zel (md/030_08_01, §37):
- *  - szint > 0 (Előny+N): (N+1) db k10, a legnagyobb számít
- *  - szint < 0 (Hátrány-N): (|N|+1) db k10, a legkisebb számít
- *  - szint == 0: egyetlen k10 (sima dobás)
+ * Előny/Hátrány dobás (md/030_08_01, §37):
+ *  - szint > 0 (Előny+N): (N+1) db kocka, a LEGNAGYOBB számít
+ *  - szint < 0 (Hátrány-N): (|N|+1) db kocka, a LEGKISEBB számít
+ *  - szint == 0: egyetlen kocka (sima dobás)
  */
 export interface ProbaDobás { rolls: number[]; eredmény: number }
+
+/**
+ * Előny/Hátrány szint → megjelenítendő címke: `Előny+2`, `Hátrány-1`, `''` (sima dobás).
+ * Egyetlen hely, ahol ez a formázás el van döntve.
+ */
+export function előnyHátrányLabel(szint: number): string {
+  if (szint > 0) return `Előny+${szint}`;
+  if (szint < 0) return `Hátrány${szint}`;
+  return '';
+}
+
+export function rollElőnyHátrányDie(szint: number, sides: number): ProbaDobás {
+  const count = Math.abs(szint) + 1;
+  const rolls = Array.from({ length: count }, () => rollDie(sides));
+  const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
+  return { rolls, eredmény };
+}
+
+/** Előny/Hátrány k10-zel (Képzettségpróba). */
 export function rollElőnyHátrány(szint: number): ProbaDobás {
-  const count = Math.abs(szint) + 1;
-  const rolls = Array.from({ length: count }, () => rollK10());
-  const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
-  return { rolls, eredmény };
+  return rollElőnyHátrányDie(szint, 10);
 }
 
-/**
- * Előny/Hátrány dobás k6-tal (Tulajdonságpróba, md/010_05_04):
- *  - szint > 0 (Előny+N): (N+1) db k6, a legnagyobb számít
- *  - szint < 0 (Hátrány-N): (|N|+1) db k6, a legkisebb számít
- *  - szint == 0: egyetlen k6 (sima dobás)
- */
+/** Előny/Hátrány k6-tal (Tulajdonságpróba, md/010_05_04). */
 export function rollElőnyHátrányK6(szint: number): ProbaDobás {
-  const count = Math.abs(szint) + 1;
-  const rolls = Array.from({ length: count }, () => rollDie(6));
-  const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
-  return { rolls, eredmény };
+  return rollElőnyHátrányDie(szint, 6);
 }
 
-/**
- * Előny/Hátrány dobás k20-szal (Támadó dobás, Sebzésdobás):
- *  - szint > 0 (Előny+N): (N+1) db k20, a legnagyobb számít
- *  - szint < 0 (Hátrány-N): (|N|+1) db k20, a legkisebb számít
- *  - szint == 0: egyetlen k20 (sima dobás)
- */
+/** Előny/Hátrány k20-szal (Támadó dobás, Sebzésdobás). */
 export function rollElőnyHátrányK20(szint: number): ProbaDobás {
-  const count = Math.abs(szint) + 1;
-  const rolls = Array.from({ length: count }, () => rollDie(20));
-  const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
-  return { rolls, eredmény };
+  return rollElőnyHátrányDie(szint, 20);
 }

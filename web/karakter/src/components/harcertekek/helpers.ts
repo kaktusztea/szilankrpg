@@ -2,6 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
 import { findMfFok as findMfFokCanonical } from '../../engine/mf-utils';
+import { evaluate, buildContext } from '../../engine/reactive';
 
 // --- HM számítás ---
 
@@ -20,8 +21,14 @@ export function calcMaxHM(data: GameData, k: Karakter): number {
   return harciFokok + harcmodorÖsszeg + alakzatharcSzint;
 }
 
+/**
+ * Max HM aszimmetria (§18): a formula a `rules.json`-ban él (`max_HM_aszimmetria`),
+ * itt csak kiértékeljük — így az osztó (`konstansok.hm_aszimmetria_osztó`) egy helyen van.
+ */
 export function calcMaxAszimmetria(data: GameData, tsz: number): number {
-  return Math.floor(tsz / data.konstansok.hm_aszimmetria_osztó);
+  const rules = data.rules.filter(r => r.id === 'max_HM_aszimmetria');
+  const computed = evaluate(rules, buildContext({}, tsz, data.konstansok));
+  return computed.get('max_HM_aszimmetria') ?? 0;
 }
 
 // --- Harcmodor nevek ---

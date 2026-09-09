@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findMfFok, getMfBónusz } from './mf-utils';
+import { findMfFok, findMfFokByName, getMfBónusz } from './mf-utils';
 import type { Karakter, FegyverAlap } from './types';
 
 const karakter = {
@@ -23,6 +23,18 @@ describe('findMfFok', () => {
   });
   it('returns 0 if not found', () => {
     expect(findMfFok(karakter, fegyverek, 'Buzogány')).toBe(0);
+  });
+});
+
+describe('findMfFokByName', () => {
+  it('egyezik a megjelenített névvel', () => {
+    expect(findMfFokByName(karakter, 'Hosszúkard', 'hosszúkard (2k)')).toBe(2);
+  });
+  it('egyezik az alapnévvel is (case-insensitive)', () => {
+    expect(findMfFokByName(karakter, 'Bármi más', 'RÖVIDKARD')).toBe(1);
+  });
+  it('0, ha egyik név sem egyezik', () => {
+    expect(findMfFokByName(karakter, 'Buzogány', 'buzogány')).toBe(0);
   });
 });
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { Tulajdonsagok } from '../../engine/types';
-import { tulKulcs, probaSiker, probaBiztosSiker, kiterjesztésElőnyHátrány, buildFortélyFokok, előnyHátrányLabel, probaLehetetlen, nehézségDisplay } from './KepzettsegProbaPopup';
+import { tulKulcs, probaSiker, probaBiztosSiker, kiterjesztésElőnyHátrány, buildFortélyFokok, probaLehetetlen, nehézségDisplay } from './KepzettsegProbaPopup';
 import { rollElőnyHátrány } from '../../engine/dice';
 
 // A 8 séma-kulcs (Tulajdonsagok) — a display→kulcs mapping-nek ezekre kell esnie.
@@ -50,15 +50,6 @@ describe('buildFortélyFokok', () => {
     ]);
     expect(m['Történelemismeret']).toBe(2);
     expect(m['Kultúrkör']).toBe(3); // max, nem az utolsó
-  });
-});
-
-describe('előnyHátrányLabel', () => {
-  it('címkék', () => {
-    expect(előnyHátrányLabel(1)).toBe('Előny+1');
-    expect(előnyHátrányLabel(2)).toBe('Előny+2');
-    expect(előnyHátrányLabel(-2)).toBe('Hátrány-2');
-    expect(előnyHátrányLabel(0)).toBe('');
   });
 });
 

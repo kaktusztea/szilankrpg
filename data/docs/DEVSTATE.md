@@ -79,7 +79,7 @@ TODO:
 - Részletek → engine_spec §21
 
 ### Reactive Engine
-- 54 szabály `data/rules.json`
+- 53 szabály `data/rules.json`
 - Maradék TS: Fájdalomtűrés, Kétkezes harc, Fortély mods, Taktika mods
 - Részletek → engine_spec §41
 

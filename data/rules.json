@@ -258,22 +258,6 @@
       ]
     },
     {
-      "id": "távharc_cella",
-      "formula": "ceil(távharc_távolság / távharc_osztó)",
-      "inputs": [
-        "távharc_távolság",
-        "távharc_osztó"
-      ]
-    },
-    {
-      "id": "távharc_cél_VÉ",
-      "formula": "max(távharc_szorzó, 1) * távharc_cella + min(távharc_szorzó, 0)",
-      "inputs": [
-        "távharc_szorzó",
-        "távharc_cella"
-      ]
-    },
-    {
       "id": "képzettség_max_szint_primer",
       "formula": "min(konstansok.arányok.képzettség_max_szint, tsz)",
       "inputs": [
@@ -301,9 +285,10 @@
     },
     {
       "id": "max_HM_aszimmetria",
-      "formula": "floor(tsz / 2)",
+      "formula": "floor(tsz / konstansok.hm_aszimmetria_osztó)",
       "inputs": [
-        "tsz"
+        "tsz",
+        "konstansok.hm_aszimmetria_osztó"
       ]
     },
     {

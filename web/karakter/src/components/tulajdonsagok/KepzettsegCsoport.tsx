@@ -3,6 +3,7 @@ import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader'
 import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegSlot } from './types';
+import type { KépzettségLimitek } from './kepzettseg-limit';
 import { KepzettsegRow } from './KepzettsegRow';
 import { KepzettsegPickerOverlay } from './KepzettsegPickerOverlay';
 import { getDisplayName, findDef as findDefHelper, getAvailableNames, getKepzettsegekForCsoport, sortKepzettsegSlotok } from './helpers';
@@ -15,7 +16,8 @@ interface Props {
   defsByGroup: Map<string, KepzettsegDef[]>;
   kepzettsegDefs: KepzettsegDef[];
   kiterjesztesek: Record<string, KiterjesztesEntry[]>;
-  tsz: number;
+  /** Képzettség max szintek a rules.json-ból (§19) */
+  szintLimitek: KépzettségLimitek;
   collapsed: boolean;
   onToggleCollapse: () => void;
   infoTarget: string | null;
@@ -32,7 +34,7 @@ interface Props {
 
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
-  kiterjesztesek, tsz, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
+  kiterjesztesek, szintLimitek, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
   fortélyFokok, tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, próbaEnyhítésekByKép
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
@@ -51,7 +53,7 @@ export function KepzettsegCsoport({
         {slotok.map((slot, i) => {
           const globalIdx = képzettségek.findIndex(k => k === slot);
           const kepDef = boundFindDef(slot.név);
-          const maxSzint = kepDef?.primer ? tsz : tsz + 3;
+          const maxSzint = kepDef?.primer ? szintLimitek.primer : szintLimitek.szekunder;
           return (
             <KepzettsegRow
               key={`${csoport}-${i}`}

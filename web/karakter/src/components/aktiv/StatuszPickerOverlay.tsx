@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
 import { PickerOverlay } from './PickerOverlay';
+import { fmtHatás } from '../formatters';
 
 interface Props {
   data: GameData;
@@ -14,6 +15,8 @@ interface Props {
 export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarratív }: Props) {
   const [fokválasztó, setFokválasztó] = useState<string | null>(null);
   const [érzékválasztó, setÉrzékválasztó] = useState<string | null>(null);
+
+  const eseményNév = (id: string) => data.esemenyek.find(e => e.id === id)?.név ?? id;
 
   return (
     <PickerOverlay title={fokválasztó ? `${fokválasztó} — fok választó` : 'Státusz választó'} onClose={onClose}>
@@ -74,17 +77,9 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
         return def.fokok.map(f => (
           <div key={f.fok} className="aktiv-picker-item" onClick={() => { onPick(`${fokválasztó} (${f.fok})`); }}>
             <span className="aktiv-picker-item-name">{f.alcím} ({f.fok})</span>
-            <span className="aktiv-picker-item-hatas">{f.hatások.slice(0, 4).map((h: any) => {
-              if (typeof h === 'string') return h;
-              const célNév = data.esemenyek.find(e => e.id === h.cél)?.név ?? h.cél;
-              if (h.operátor === 'hátrány') return `Hátrány${h.érték} ${célNév}`;
-              if (h.operátor === 'előny') return `Előny+${h.érték} ${célNév}`;
-              if (h.operátor === 'letilt') return `❌ ${célNév}`;
-              if (h.operátor === 'max_limit') return `Max ${h.érték} ${célNév}`;
-              if (h.operátor === 'arányos') return `${célNév} ×${h.érték}`;
-              if (h.operátor === 'szöveges') return h.megjegyzés || célNév;
-              return `${célNév}: ${h.operátor}`;
-            }).join('; ')}</span>
+            <span className="aktiv-picker-item-hatas">{f.hatások.slice(0, 4)
+              .map(h => typeof h === 'string' ? h : fmtHatás(h, eseményNév))
+              .filter(Boolean).join('; ')}</span>
           </div>
         ));
       })()}

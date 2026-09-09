@@ -10,6 +10,7 @@ import { TulajdonsagokPopups, INITIAL_POPUP_STATE, type PopupState } from './Tul
 import { PrimerKpBox } from './PrimerKpBox';
 import { ElotortenetOverlay } from './ElotortenetOverlay';
 import { useEscapeClose } from './useEscapeClose';
+import { képzettségLimitek } from './kepzettseg-limit';
 import './TulajdonsagokScreen.css';
 
 export function TulajdonsagokScreen({
@@ -46,6 +47,7 @@ export function TulajdonsagokScreen({
   const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(csoportSorrend.map(c => [c.id, c.label]));
 
   const defsByGroup = useMemo(() => buildDefsByGroup(data.kepzettsegDefs), [data.kepzettsegDefs]);
+  const szintLimitek = useMemo(() => képzettségLimitek(data, tsz), [data, tsz]);
 
   // Escape bezárja az aktív popup-ot
   const hasAnyPopup = popup.editingNév || popup.editingBecenév || popup.editingTsz
@@ -146,7 +148,7 @@ export function TulajdonsagokScreen({
             defsByGroup={defsByGroup}
             kepzettsegDefs={data.kepzettsegDefs}
             kiterjesztesek={data.kiterjesztesek}
-            tsz={tsz}
+            szintLimitek={szintLimitek}
             collapsed={collapsedGroups.has(csoport)}
             onToggleCollapse={() => toggleCollapse(csoport)}
             infoTarget={infoTarget}

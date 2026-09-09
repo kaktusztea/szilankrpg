@@ -10,7 +10,7 @@ data/
   schemas/                   YAML sémák (karakter, fortely, kepzettseg, fegyver, stb.)
   tables/                    Generált JSON (runtime adat, NE kézzel szerkeszd)
   karakter/                  Template-ek (empty_karakter.json, test_karakter.json)
-  rules.json                 Reactive engine: 54 deklaratív szabály
+  rules.json                 Reactive engine: 53 deklaratív szabály
   generate_tables.py         YAML→JSON generáló (Vite buildStart + prebuild futtatja)
 web/karakter/                React app gyökere
 code/                        Python scriptek (process_fegyverek.py + lib/)
@@ -27,14 +27,14 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `data-types.ts` | GameData, FortelySummary, TaktikaEntry, HarciHelyzetEntry stb. |
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
 | `fortely-mods.ts` | calcFortelyMods — feltételes fortély módosítók |
-| `mf-utils.ts` | Canonical findMfFok + getMfBónusz |
+| `mf-utils.ts` | `findMfFokByName` (egyetlen MF egyeztető) + `findMfFok` (fegyvertáblából) + `getMfBónusz` |
 | `alapeset.ts` | Fortély 0.fok (Alapeset) kiértékelés |
 | `ketkezes.ts` | Kétkezes harc összesítő kalkuláció |
 | `feltetelek.ts` | buildAktívFeltételek helper |
 | `feltetel-eval.ts` | FeltételEvaluator factory (context-alapú feltétel kiértékelés) |
 | `url-share.ts` | Karakter URL export/import (deflate+base64url) |
 | `checkpoint-utils.ts` | Karakter verziók (checkpoint): snapshot, create, restore (truncate/append), delete — §31b |
-| `dice.ts` | Kockadobás: rollDie(sides), rollK20, rollK10 (közös randomizálás) |
+| `dice.ts` | Kockadobás: rollDie(sides), rollK20/K10, `rollElőnyHátrányDie(szint, sides)` + k6/k10/k20 wrapperek, `előnyHátrányLabel` |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
 | `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció |
@@ -124,6 +124,8 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
   KepzettsegCsoport.tsx    Képzettség csoport (csukható, game/edit mód)
   KepzettsegPickerOverlay.tsx  Képzettség picker overlay popup (név + md link + ▾ accordion → KepzettsegDetails)
   TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
+  proba-common.ts          Próba közös logika (Előny/Hátrány szintek, lehetetlen/biztos siker, összetett próba típusok)
+  kepzettseg-limit.ts      Képzettség max szint a rules.json-ból (§19)
   KepzettsegProbaPopup.tsx   Képzettségpróba dobás popup (Játék mód, k10)
   ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
   KorPicker.tsx            Kor +/- picker overlay

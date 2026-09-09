@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
-import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
+import { rollElőnyHátrányK20, type ProbaDobás, előnyHátrányLabel } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
 import { netElőnySzint } from './combat-roll-info';
+import { HatasokInfo } from './HatasokInfo';
 
 interface Props {
   /** Weapon SP from reactive engine */
@@ -100,25 +101,14 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
             <ElonyPicker szint={aktuális} eredeti={aktuális !== számított ? számított : undefined} onChange={handleSzintChange} />
 
             {(sebzésHatások.length > 0 || defaultElőny > 0) && (
-              <div className="dobas-info-list">
+              <HatasokInfo hatások={sebzésHatások}>
                 {defaultElőny > 0 && (
                   <div className="dobas-info-item">
                     <span className="dobas-info-badge előny">Előny+{defaultElőny}</span>
                     <span className="dobas-info-source">Támadó dobás ({téK20})</span>
                   </div>
                 )}
-                {sebzésHatások.map((h, i) => (
-                  <div key={i} className="dobas-info-item">
-                    <span className={`dobas-info-badge ${h.operátor}`}>
-                      {h.operátor === 'előny' ? `Előny+${Math.abs(h.érték)}` :
-                       h.operátor === 'hátrány' ? `Hátrány-${Math.abs(h.érték)}` :
-                       h.operátor === 'enyhít' ? `Enyhít+${Math.abs(h.érték)}` :
-                       h.megjegyzés ?? '—'}
-                    </span>
-                    <span className="dobas-info-source">{h.forrás}</span>
-                  </div>
-                ))}
-              </div>
+              </HatasokInfo>
             )}
 
             <StatikusBonuszBtn
@@ -144,7 +134,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
                 if (totalBónusz !== 0) return <>{base}<span className={totalBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{totalBónusz > 0 ? '+' : ''}{totalBónusz}</span></>;
                 return sp;
               })()} + k20
-              {aktuális !== 0 ? ` (${aktuális > 0 ? `Előny+${aktuális}` : `Hátrány${aktuális}`})` : ''}
+              {aktuális !== 0 ? ` (${előnyHátrányLabel(aktuális)})` : ''}
               {(átütés ?? 0) > 0 && <span className="sebzes-atutes"> | Átütés: {átütés}</span>}
             </div>
 

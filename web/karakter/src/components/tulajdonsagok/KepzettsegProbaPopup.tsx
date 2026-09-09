@@ -6,6 +6,12 @@ import { calcStátuszPróbaEH } from '../../engine/statusz-proba';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { rollElőnyHátrány, rollDie, type ProbaDobás } from '../../engine/dice';
+import {
+  előnyHátrányLabel,
+  probaLehetetlen as probaLehetetlenKözös,
+  probaBiztosSiker as probaBiztosSikerKözös,
+  type ÖsszetettSor, type ÖsszetettEredmény,
+} from './proba-common';
 import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
 
 // Képzettségpróba célszámok (engine_spec §37.2, md/030_06_01) — elnevezés csak 21-ig.
@@ -39,14 +45,14 @@ export function nehézségDisplay(érték: number): string {
   return l ? `${érték} (${l})` : `${érték}`;
 }
 
-/** A próba lehetetlen, ha még a max k10 (10) dobással sem érhető el a célszám. */
+/** Képzettségpróba lehetetlen: Tulajdonság + szint + max k10 (10) < célszám. */
 export function probaLehetetlen(tulÉrték: number, szint: number, célszám: number): boolean {
-  return tulÉrték + szint + 10 < célszám;
+  return probaLehetetlenKözös(tulÉrték + szint, 10, célszám);
 }
 
-/** A próba biztos siker, ha min k10 (1) dobással is eléri a célszámot. */
+/** Képzettségpróba biztos siker: Tulajdonság + szint + min k10 (1) ≥ célszám. */
 export function probaBiztosSiker(tulÉrték: number, szint: number, célszám: number): boolean {
-  return tulÉrték + szint + 1 >= célszám;
+  return probaBiztosSikerKözös(tulÉrték + szint, célszám);
 }
 
 /** Fortély név → felvett (max) fok. Többszörös fortélynél a legmagasabb példány foka. */
@@ -119,32 +125,12 @@ export function calcMultiKiterjesztésEH(
   return { szint: bónuszok[bónuszok.length - 1].bónusz, tiltott: false };
 }
 
-/** Előny/Hátrány szint → megjelenítendő címke (pl. "Előny+1", "Hátrány-2", "" ha sima). */
-export function előnyHátrányLabel(szint: number): string {
-  if (szint > 0) return `Előny+${szint}`;
-  if (szint < 0) return `Hátrány${szint}`;
-  return '';
-}
-
 /** Képzettségpróba sikeres, ha Tulajdonság + Képzettség szint + k10 ≥ célszám. */
 export function probaSiker(tulÉrték: number, szint: number, k10: number, célszám: number): boolean {
   return tulÉrték + szint + k10 >= célszám;
 }
 
 // --- Összetett próba eredmény típus ---
-interface ÖsszetettSor {
-  label: string;       // "Elsődleges" / "Másodlagos"
-  célszám: number;
-  dobás: ProbaDobás;
-  összeg: number;      // tul + szint + (vállalás) + k10 eredmény
-  siker: boolean;
-}
-
-interface ÖsszetettEredmény {
-  sorok: ÖsszetettSor[];
-  összSiker: boolean;
-}
-
 // --- Vállalás próba eredmény ---
 interface VállalásEredmény {
   k6: number;

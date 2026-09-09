@@ -859,14 +859,14 @@ formula:
   // HM elosztás: 1 HM → VAGY 1 TÉ, VAGY 1 VÉ (nem mindkettő!)
   // HM_TÉ + HM_VÉ = HM (összesen)
   // TÉ/VÉ aszimmetria limit:
-  max_HM_aszimmetria = FLOOR(tsz / 2)
+  max_HM_aszimmetria = FLOOR(tsz / konstansok.hm_aszimmetria_osztó)
   validate: ABS(HM_TÉ - HM_VÉ) ≤ max_HM_aszimmetria
 
 output: max_HM, max_CM, max_HM_aszimmetria
 
 reactive rules.json:
   max_HM: sum_where(harci_fortélyok, fok, is_mesterfegyver, 0) + harcmodor_összeg + alakzatharc_szint
-  max_HM_aszimmetria: floor(tsz / 2)
+  max_HM_aszimmetria: floor(tsz / konstansok.hm_aszimmetria_osztó)   → TS: helpers.calcMaxAszimmetria
   max_CM: tsz * konstansok.arányok.max_cm_perszint
 
 note: A Mesterfegyver fortély fokai NEM számítanak a max_HM-be.
@@ -3552,7 +3552,7 @@ Forrás: `web/karakter/src/engine/reactive.ts`, `data/rules.json`
 
 ### 41.1 Architektúra
 
-A webapp **minden numerikus kalkulációja** deklaratív szabályokból áll (`rules.json`, 54 szabály).
+A webapp **minden numerikus kalkulációja** deklaratív szabályokból áll (`rules.json`, 53 szabály).
 Nincs hardcoded TS kalkuláció — a TypeScript kód csak context-et épít és `evaluate()`-ot hív.
 
 Kivétel (maradék TS inline logika):
@@ -3611,6 +3611,7 @@ Automatikusan bejárja:
 - `konstansok.kp.*` → `"konstansok.kp.perszint"`, stb.
 - `konstansok.arányok.*` → `"konstansok.arányok.max_cm_perszint"`, stb.
 - `konstansok.kp_bónusz.*` → `"konstansok.kp_bónusz.analfabéta"`, stb.
+- **top-level skalár konstansok** → `"konstansok.hm_aszimmetria_osztó"`, `"konstansok.több_támadás_TÉ_levonás"`, stb. (minden szám típusú konstans elérhető formulában, hardcode nélkül)
 - `tsz` → egyetlen érték
 - `extras` → tetszőleges kulcs-érték párok (HM_TÉ, HM_VÉ, CM, páncél mezők, fegyver mezők, stb.)
 
@@ -3687,7 +3688,7 @@ Végső kiértékelés: `new Function(...)` — biztonságos (nincs user input a
 | felszerelés_mgt | képlet | terhelés, keret |
 | max_CM | képlet | tsz |
 | max_HM | sum_where | harci_fortélyok, harcmodor_összeg, alakzatharc |
-| max_HM_aszimmetria | képlet | tsz |
+| max_HM_aszimmetria | képlet | tsz, konstansok.hm_aszimmetria_osztó |
 | kp_képzettségek | sum_lookup | képzettségek, kp_tábla |
 | kp_fortélyok | sum | fortélyok fok |
 | kp_hm | képlet | HM_TÉ, HM_VÉ |
@@ -3715,8 +3716,6 @@ Végső kiértékelés: `new Function(...)` — biztonságos (nincs user input a
 | páncél_lefedettség | if | páncél_van, végtagvédettség, sisak |
 | páncél_MGT | képlet + nested if/lookup | struktúra + alapanyag + csatolt + méret - erő |
 | merevvért_TÉ_büntetés | if | páncél_merev, MGT, csökkentés |
-| távharc_cella | képlet | távolság, osztó |
-| távharc_cél_VÉ | képlet | szorzó, cella |
 | képzettség_max_szint_primer | képlet | max_szint, tsz |
 | képzettség_max_szint_szekunder | képlet | max_szint, tsz + plusz |
 | fegyver_TÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély |

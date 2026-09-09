@@ -1121,8 +1121,6 @@ Deklaratív számítási szabályok dependency graph-ban:
 | sfé_energia | képlet | struktúra + alapanyag + idea - rongálódás |
 | páncél_MGT | képlet | max(0, struktúra_mgt + alapanyag_mgt + csatolt_mgt + méret_mgt - erő) |
 | merevvért_TÉ_büntetés | if | if(merev, max(0, MGT - csökkentés), 0) |
-| távharc_cella | képlet | ceil(távolság / osztó) |
-| távharc_cél_VÉ | képlet | max(szorzó,1)xcella + min(szorzó,0) |
 | képzettség_max_szint_primer | képlet | min(max_szint, tsz) |
 | képzettség_max_szint_szekunder | képlet | min(max_szint, tsz + plusz) |
 | fegyver_TÉ | képlet | alap + erő + ügy + gyor + HM + harcmodor + fegyver + MF + fortély |

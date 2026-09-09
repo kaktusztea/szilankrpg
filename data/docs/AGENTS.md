@@ -26,7 +26,7 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
 ## Architektúra — 3 pillér
 
 ### 1. Reactive Engine
-- `data/rules.json` (54 deklaratív szabály) + `engine/reactive.ts` (evaluate)
+- `data/rules.json` (53 deklaratív szabály) + `engine/reactive.ts` (evaluate)
 - Minden kalkuláció ide megy, ha a formula nyelv elég kifejező
 - Maradék TS logika: Fájdalomtűrés, Kétkezes harc, Fortély módosítók, Taktika mods
 

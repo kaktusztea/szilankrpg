@@ -83,6 +83,12 @@ export function buildContext(
     }
   }
 
+  // Top-level skalár konstansok (pl. konstansok.hm_aszimmetria_osztó) — így minden
+  // egyszerű számkonstans használható formulában, hardcode nélkül.
+  for (const [key, val] of Object.entries(konstansok)) {
+    if (typeof val === 'number') ctx.set(`konstansok.${key}`, val);
+  }
+
   if (extras) {
     for (const [key, val] of Object.entries(extras)) {
       ctx.set(key, val);
