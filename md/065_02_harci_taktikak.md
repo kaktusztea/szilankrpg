@@ -347,16 +347,12 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 
 ```
 TÉ levonásért cserébe
-  kisebb Sebzéskocka
+  kisebb Sebzés
 
-TÉ:-3  →  Hátrány-1 Sebzés dobásra
-TÉ:-6  →  Hátrány-2 Sebzés dobásra
-TÉ:-9  →  nincs kockadobás,
-           csak a fegyver
-           alap sebzése
+TÉ:-10 →  Hátrány-2 Sebzés dobásra
 ```
 
-🔗 **[Harci anatómia](fortelyok.harci/harci_anatomia.md)** fortély minden foka `3` ponttal csökkenti a `TÉ` büntetést.
+🔗 TODO
 
 ✅ **Kezdeményező, Kiváró, 1 támadás taktikával** együtt
 
