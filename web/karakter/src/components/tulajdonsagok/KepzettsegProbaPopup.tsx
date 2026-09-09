@@ -1,134 +1,18 @@
 import { useState, useRef } from 'react';
-import type { Tulajdonsagok, Fortely } from '../../engine/types';
+import type { Tulajdonsagok } from '../../engine/types';
 import type { KiterjesztesEntry } from '../../engine/data-loader';
-import type { ModositoTabla, ModositoSor, PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
+import type { ModositoTabla, PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
 import { calcStátuszPróbaEH } from '../../engine/statusz-proba';
 import { PopupOverlay } from '../PopupOverlay';
+import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { rollElőnyHátrány, rollDie, type ProbaDobás } from '../../engine/dice';
+import { előnyHátrányLabel, type ÖsszetettSor, type ÖsszetettEredmény } from './proba-common';
 import {
-  előnyHátrányLabel,
-  probaLehetetlen as probaLehetetlenKözös,
-  probaBiztosSiker as probaBiztosSikerKözös,
-  type ÖsszetettSor, type ÖsszetettEredmény,
-} from './proba-common';
-import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
-
-// Képzettségpróba célszámok (engine_spec §37.2, md/030_06_01) — elnevezés csak 21-ig.
-const NEHÉZSÉGEK: { érték: number; label: string }[] = [
-  { érték: 6, label: 'Könnyű' },
-  { érték: 9, label: 'Átlagos' },
-  { érték: 12, label: 'Nehéz' },
-  { érték: 15, label: 'N. nehéz' },
-  { érték: 18, label: 'Rendkívüli' },
-  { érték: 21, label: 'Emberfeletti' },
-];
-// 21 felett nincs elnevezés (max 30), a picker lenyitható részében jelenik meg.
-const NEHÉZSÉGEK_EXTRA = [24, 27, 30];
-
-const MIND_TULAJDONSÁG: (keyof Tulajdonsagok)[] = [
-  'erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység',
-];
-
-// Domináns tulajdonság display név (nagybetűs, pl. "Ügyesség") → séma kulcs (kisbetűs).
-export function tulKulcs(display: string): keyof Tulajdonsagok {
-  return display.toLowerCase() as keyof Tulajdonsagok;
-}
-function tulLabel(kulcs: string): string {
-  return kulcs.charAt(0).toUpperCase() + kulcs.slice(1);
-}
-function nehézségLabel(érték: number): string {
-  return NEHÉZSÉGEK.find(n => n.érték === érték)?.label ?? '';
-}
-export function nehézségDisplay(érték: number): string {
-  const l = nehézségLabel(érték);
-  return l ? `${érték} (${l})` : `${érték}`;
-}
-
-/** Képzettségpróba lehetetlen: Tulajdonság + szint + max k10 (10) < célszám. */
-export function probaLehetetlen(tulÉrték: number, szint: number, célszám: number): boolean {
-  return probaLehetetlenKözös(tulÉrték + szint, 10, célszám);
-}
-
-/** Képzettségpróba biztos siker: Tulajdonság + szint + min k10 (1) ≥ célszám. */
-export function probaBiztosSiker(tulÉrték: number, szint: number, célszám: number): boolean {
-  return probaBiztosSikerKözös(tulÉrték + szint, célszám);
-}
-
-/** Fortély név → felvett (max) fok. Többszörös fortélynél a legmagasabb példány foka. */
-export function buildFortélyFokok(fortélyok: Fortely[]): Record<string, number> {
-  const m: Record<string, number> = {};
-  for (const f of fortélyok) m[f.név] = Math.max(m[f.név] ?? 0, f.fok);
-  return m;
-}
-
-/**
- * Képzettség-kiterjesztés fok → próba Előny/Hátrány szint (md/030_08_01).
- * Normál 0.fok: Hátrány-2. Erős 0.fok: nem dobható. 1.fok: 0, 2.fok: Előny+1, 3.fok: Előny+2.
- */
-export function kiterjesztésElőnyHátrány(típus: 'normál' | 'erős', fok: number): { szint: number; tiltott: boolean } {
-  if (fok <= 0) return típus === 'erős' ? { szint: 0, tiltott: true } : { szint: -2, tiltott: false };
-  return { szint: Math.min(fok - 1, 2), tiltott: false };
-}
-
-/**
- * Több kiterjesztő fortély összesített Előny/Hátrány (md/030_08_01 "Speciális: Több fortély").
- * - Több hiányzó Normál: Hátrány-2 NEM halmozódik.
- * - Bármelyik Erős hiányzik (0.fok): tiltott.
- * - Előny: min(bónuszok), kivéve ha az alacsonyabb maxfokú → magasabb számít.
- */
-export function calcMultiKiterjesztésEH(
-  selectedKits: KiterjesztesEntry[],
-  fortélyFokok: Record<string, number>,
-): { szint: number; tiltott: boolean } {
-  if (selectedKits.length === 0) return { szint: 0, tiltott: false };
-  if (selectedKits.length === 1) {
-    const k = selectedKits[0];
-    return kiterjesztésElőnyHátrány(k.típus, fortélyFokok[k.fortély] ?? 0);
-  }
-
-  // Check erős tiltás
-  for (const k of selectedKits) {
-    if (k.típus === 'erős' && (fortélyFokok[k.fortély] ?? 0) <= 0) {
-      return { szint: 0, tiltott: true };
-    }
-  }
-
-  // Check normál hátrány (nem halmozódik)
-  let vanHiányzóNormál = false;
-  for (const k of selectedKits) {
-    if (k.típus === 'normál' && (fortélyFokok[k.fortély] ?? 0) <= 0) {
-      vanHiányzóNormál = true;
-      break;
-    }
-  }
-  if (vanHiányzóNormál) return { szint: -2, tiltott: false };
-
-  // Előny kalkuláció: min(bónuszok), de ha alacsonyabb maxfokú → magasabb számít
-  const bónuszok = selectedKits.map(k => {
-    const fok = fortélyFokok[k.fortély] ?? 0;
-    const bónusz = Math.min(fok - 1, 2); // 1.fok=0, 2.fok=1, 3.fok=2
-    const maxolt = fok >= k.maxfok;
-    return { bónusz, maxolt };
-  }).filter(b => b.bónusz >= 0);
-
-  if (bónuszok.length === 0) return { szint: 0, tiltott: false };
-
-  // Sort by bónusz ascending
-  bónuszok.sort((a, b) => a.bónusz - b.bónusz);
-
-  // Az alacsonyabb számít, KIVÉVE ha az maxfokú → következő számít
-  for (const b of bónuszok) {
-    if (!b.maxolt) return { szint: b.bónusz, tiltott: false };
-  }
-  // Mind maxfokú → a legmagasabb bónusz érvényes
-  return { szint: bónuszok[bónuszok.length - 1].bónusz, tiltott: false };
-}
-
-/** Képzettségpróba sikeres, ha Tulajdonság + Képzettség szint + k10 ≥ célszám. */
-export function probaSiker(tulÉrték: number, szint: number, k10: number, célszám: number): boolean {
-  return tulÉrték + szint + k10 >= célszám;
-}
+  NEHÉZSÉGEK, NEHÉZSÉGEK_EXTRA, MIND_TULAJDONSÁG,
+  tulLabel, probaLehetetlen, probaBiztosSiker, calcMultiKiterjesztésEH,
+  calcSzitModÖsszeg, calcEffSzint, összetettCélszámok,
+} from './kepzettseg-proba-calc';
 
 // --- Összetett próba eredmény típus ---
 // --- Vállalás próba eredmény ---
@@ -137,8 +21,6 @@ interface VállalásEredmény {
   vállalásÉrték: number;
   kritikusHiba: boolean;
 }
-
-type PickerId = 'kit' | 'szit' | 'info' | null;
 
 interface Props {
   képzettségNév: string;
@@ -167,7 +49,7 @@ export function KepzettsegProbaPopup({
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
   const [selKits, setSelKits] = useState<Set<number>>(new Set()); // multi-select indexes into kiterjesztesek[]
-  const [openPicker, setOpenPicker] = useState<PickerId>(null);
+  const [openPicker, setOpenPicker] = useState<ProbaPickerId>(null);
   const [nehTöbbi, setNehTöbbi] = useState(false); // 21 feletti célszámok lenyitva?
   const [dobás, setDobás] = useState<ProbaDobás | null>(null);
 
@@ -207,27 +89,7 @@ export function KepzettsegProbaPopup({
   // Szerepjátékos módosító: [-3..+3], 0 = nincs kiválasztva
   const [szerepjátékosÉrték, setSzerepjátékosÉrték] = useState(0);
 
-  // Enyhítés helper
-  const enyhítSor = (kategória: string, sor: ModositoSor): number => {
-    const raw = sor.érték;
-    if (raw >= 0) return raw;
-    const enyhítés = próbaEnyhítések
-      .filter(e => e.kategória === kategória && (e.sorok.length === 0 || e.sorok.includes(sor.leírás)))
-      .reduce((max, e) => Math.max(max, e.érték), 0);
-    if (enyhítés >= PRÓBA_IMMUNITÁS_KÜSZÖB) return 0;
-    return Math.min(0, raw + enyhítés);
-  };
-
-  const szitModÖsszeg = módosítóTáblák.reduce((sum, t) => {
-    if (t.mód === 'multi') {
-      const flags = multiMods[t.kategória];
-      if (!flags) return sum;
-      return sum + t.sorok.reduce((s, sor, i) => s + (flags[i] ? enyhítSor(t.kategória, sor) : 0), 0);
-    }
-    const idx = szitMods[t.kategória];
-    if (idx == null || idx < 0) return sum;
-    return sum + enyhítSor(t.kategória, t.sorok[idx]);
-  }, 0) + szerepjátékosÉrték;
+  const szitModÖsszeg = calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, próbaEnyhítések, szerepjátékosÉrték);
 
   const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
   const ehAlap = calcMultiKiterjesztésEH(selectedKits, fortélyFokok);
@@ -259,14 +121,8 @@ export function KepzettsegProbaPopup({
   const ismeretlen = nehézség === -1;
   const kész = selTul !== null && (ellenpróba || nehézség !== null);
   const tulÉrték = selTul !== null ? tulajdonságok[selTul] : 0;
-  const effSzint = (() => {
-    if (helyettesítés) {
-      const hKep = képzettségek.find(k => k.név === helyettesítés);
-      const hSzint = hKep ? Math.min(5, Math.floor(hKep.szint / 3)) : 0;
-      return hSzint + vállalás + szitModÖsszeg;
-    }
-    return szint + vállalás + szitModÖsszeg;
-  })();
+  const helyettesítőSzint = helyettesítés ? (képzettségek.find(k => k.név === helyettesítés)?.szint ?? 0) : null;
+  const effSzint = calcEffSzint(szint, helyettesítőSzint, vállalás, szitModÖsszeg);
   // Lehetetlen/biztos siker: csak ha nincs ellenpróba mód
   const lehetetlen = !ellenpróba && !ismeretlen && kész && nehézség !== null && probaLehetetlen(tulÉrték, effSzint, nehézség);
   const biztosSiker = !ellenpróba && !ismeretlen && kész && nehézség !== null && !lehetetlen && probaBiztosSiker(tulÉrték, effSzint, nehézség);
@@ -284,8 +140,9 @@ export function KepzettsegProbaPopup({
     if (összetettDb > 0 && nehézség !== null) {
       // Összetett próba: 1 elsődleges + N másodlagos
       const sorok: ÖsszetettSor[] = [];
-      const célszámok = [nehézség, ...Array(összetettDb).fill(nehézség - 3)];
-      const labels = ['Elsődleges', ...Array(összetettDb).fill('Másodlagos')];
+      const sorDefek = összetettCélszámok(nehézség, összetettDb);
+      const célszámok = sorDefek.map(d => d.célszám);
+      const labels = sorDefek.map(d => d.label);
       for (let i = 0; i < célszámok.length; i++) {
         const d = rollElőnyHátrány(eh.szint);
         const összeg = tulÉrték + effSzint + d.eredmény;
@@ -321,8 +178,9 @@ export function KepzettsegProbaPopup({
         return;
       }
       // All collected → finalize
-      const célszámok = [nehézség, ...Array(összetettDb).fill(nehézség - 3)];
-      const labels = ['Elsődleges', ...Array(összetettDb).fill('Másodlagos')];
+      const sorDefek = összetettCélszámok(nehézség, összetettDb);
+      const célszámok = sorDefek.map(d => d.célszám);
+      const labels = sorDefek.map(d => d.label);
       const sorok: ÖsszetettSor[] = rolls.map((v, i) => {
         const d: ProbaDobás = { rolls: [v], eredmény: v };
         const összeg = tulÉrték + effSzint + d.eredmény;
@@ -637,118 +495,16 @@ export function KepzettsegProbaPopup({
         ) : null}
       </div>
 
-      {openPicker === 'kit' && (
-        <PopupOverlay onClose={() => setOpenPicker(null)}>
-          <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
-            <label className="kep-prompt-label-bold-mb">Kiterjesztő fortélyok</label>
-            <div className="kep-prompt-flex-col-list">
-              <button className={`he-field-btn${selKits.size === 0 ? ' vallas-active' : ''}`}
-                onClick={() => { setSelKits(new Set()); resetDobás(); }}>
-                Törzstudás (nincs) ❌
-              </button>
-              {kiterjesztesek.map((k, i) => {
-                const active = selKits.has(i);
-                return (
-                  <button key={i} className={`he-field-btn${active ? ' vallas-active' : ''}`}
-                    onClick={() => { setSelKits(prev => { const next = new Set(prev); if (next.has(i)) next.delete(i); else next.add(i); return next; }); resetDobás(); }}>
-                    {k.fortély} <span className={kitDotClass(k)}>{kitDots(k)}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </PopupOverlay>
-      )}
-
-      {openPicker === 'szit' && (
-        <PopupOverlay onClose={() => { setOpenPicker(null); resetDobás(); }}>
-          <div className="kep-prompt kep-proba-szit-popup" onClick={e => e.stopPropagation()}>
-            <label className="kep-prompt-label-bold-mb">Helyzetfüggő módosítók</label>
-            <div className="kep-proba-szit-body">
-              {módosítóTáblák.map(t => (
-                <div key={t.kategória} className="kep-proba-szit-cat">
-                  <span className="kep-proba-szit-label">{t.kategória}</span>
-                  {t.mód === 'chips' ? (
-                    <div className="kep-proba-szerepjatekos-chips">
-                      {t.sorok.map((s, i) => {
-                        const isActive = szitMods[t.kategória] === i;
-                        return (
-                          <button key={i}
-                            className={`fort-fok-btn kep-proba-szerepjatekos-chip${isActive ? ' active' : ''}${s.érték > 0 ? ' kep-proba-szerepjatekos-pos' : ' kep-proba-szerepjatekos-neg'}`}
-                            onClick={() => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }))}>
-                            {s.érték > 0 ? `+${s.érték}` : s.érték}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                  <div className="kep-proba-szit-items">
-                    {t.sorok.map((s, i) => {
-                      // Enyhítés kalkuláció a sorra
-                      let enyhítettÉrték = s.érték;
-                      let immunis = false;
-                      if (s.érték < 0) {
-                        const enyhítés = próbaEnyhítések
-                          .filter(e => e.kategória === t.kategória && (e.sorok.length === 0 || e.sorok.includes(s.leírás)))
-                          .reduce((max, e) => Math.max(max, e.érték), 0);
-                        if (enyhítés >= PRÓBA_IMMUNITÁS_KÜSZÖB) { immunis = true; enyhítettÉrték = 0; }
-                        else enyhítettÉrték = Math.min(0, s.érték + enyhítés);
-                      }
-                      const isMulti = t.mód === 'multi';
-                      const isActive = isMulti ? !!(multiMods[t.kategória]?.[i]) : szitMods[t.kategória] === i;
-                      const handleClick = isMulti
-                        ? () => setMultiMods(m => ({ ...m, [t.kategória]: m[t.kategória].map((v, j) => j === i ? !v : v) }))
-                        : () => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }));
-                      return (
-                      <button key={i}
-                        className={`kep-proba-szit-item${isActive ? ' kep-proba-szit-item-active' : ''}${immunis || enyhítettÉrték !== s.érték ? ' kep-proba-szit-enyhitett' : s.érték > 0 ? ' kep-proba-szit-pos' : s.érték < 0 ? ' kep-proba-szit-neg' : ''}`}
-                        onClick={handleClick}>
-                        <span className="kep-proba-szit-val">
-                          {immunis || enyhítettÉrték !== s.érték
-                            ? <><span className="kep-proba-szit-old">{s.érték}</span><span className="kep-proba-szit-arrow">→</span><span className="kep-proba-szit-new">{immunis ? 0 : enyhítettÉrték}</span></>
-                            : <>{s.érték > 0 ? '+' : ''}{s.érték}</>}
-                        </span>
-                        <span className="kep-proba-szit-desc">{s.leírás}</span>
-                      </button>
-                      );
-                    })}
-                  </div>
-                  )}
-                </div>
-              ))}
-              {szerepjátékosMódosító && (
-                <div className="kep-proba-szit-cat">
-                  <span className="kep-proba-szit-label">Szerepjátékos módosító</span>
-                  <div className="kep-proba-szerepjatekos-chips">
-                    {[-3, -2, -1, 1, 2, 3].map(v => (
-                      <button key={v}
-                        className={`fort-fok-btn kep-proba-szerepjatekos-chip${szerepjátékosÉrték === v ? ' active' : ''}${v > 0 ? ' kep-proba-szerepjatekos-pos' : ' kep-proba-szerepjatekos-neg'}`}
-                        onClick={() => setSzerepjátékosÉrték(szerepjátékosÉrték === v ? 0 : v)}>
-                        {v > 0 ? `+${v}` : v}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-            {szitModÖsszeg !== 0 && (
-              <div className={`kep-proba-szit-sum-footer${szitModÖsszeg > 0 ? ' kep-proba-szit-pos' : ' kep-proba-szit-neg'}`}>
-                Összesen: {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
-              </div>
-            )}
-          </div>
-        </PopupOverlay>
-      )}
-      {openPicker === 'info' && (
-        <PopupOverlay className="kep-prompt kep-proba-info-popup" onClose={() => setOpenPicker(null)}>
-          <label className="kep-prompt-label-bold-mb">{képzettségNév} — próbadobás</label>
-          <div className="kep-proba-info-body">
-            {dobásKomment.map((k, i) => (
-              <p key={i} className="kep-proba-info-line">{k.line}</p>
-            ))}
-          </div>
-        </PopupOverlay>
-      )}
+      <KepzettsegProbaPickers
+        openPicker={openPicker} setOpenPicker={setOpenPicker} resetDobás={resetDobás}
+        kiterjesztesek={kiterjesztesek} selKits={selKits} setSelKits={setSelKits}
+        kitDotClass={kitDotClass} kitDots={kitDots}
+        módosítóTáblák={módosítóTáblák} próbaEnyhítések={próbaEnyhítések}
+        szitMods={szitMods} setSzitMods={setSzitMods} multiMods={multiMods} setMultiMods={setMultiMods}
+        szerepjátékosMódosító={szerepjátékosMódosító} szerepjátékosÉrték={szerepjátékosÉrték}
+        setSzerepjátékosÉrték={setSzerepjátékosÉrték} szitModÖsszeg={szitModÖsszeg}
+        képzettségNév={képzettségNév} dobásKomment={dobásKomment}
+      />
     </PopupOverlay>
   );
 }

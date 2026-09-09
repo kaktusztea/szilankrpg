@@ -1,6 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import type { Tulajdonsagok } from '../../engine/types';
-import { tulKulcs, probaSiker, probaBiztosSiker, kiterjesztésElőnyHátrány, buildFortélyFokok, probaLehetetlen, nehézségDisplay } from './KepzettsegProbaPopup';
+import {
+  tulKulcs, probaSiker, probaBiztosSiker, kiterjesztésElőnyHátrány, buildFortélyFokok,
+  probaLehetetlen, nehézségDisplay, enyhítettSorRészletes, calcSzitModÖsszeg,
+  calcEffSzint, helyettesítésSzint, összetettCélszámok,
+} from './kepzettseg-proba-calc';
+import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
 import { rollElőnyHátrány } from '../../engine/dice';
 
 // A 8 séma-kulcs (Tulajdonsagok) — a display→kulcs mapping-nek ezekre kell esnie.
@@ -167,5 +172,67 @@ describe('Vállalás + Képzettségpróba együttes eredmény', () => {
     // Vállalás: k6=1, vállalás=2 → kritikus hiba
     const kritikusHiba = 1 <= 2;
     expect(kritikusHiba).toBe(true);
+  });
+});
+
+describe('enyhítettSorRészletes', () => {
+  const sor = { érték: -6, leírás: 'Vaksötét' };
+
+  it('pozitív értéket nem enyhít', () => {
+    expect(enyhítettSorRészletes([], 'Fény', { érték: 3, leírás: 'Nappal' })).toEqual({ érték: 3, immunis: false });
+  });
+
+  it('a legnagyobb illeszkedő enyhítés csökkenti a levonást (nullánál megáll)', () => {
+    const e = [
+      { képzettség: 'X', kategória: 'Fény', sorok: [], érték: 2 },
+      { képzettség: 'X', kategória: 'Fény', sorok: ['Vaksötét'], érték: 4 },
+    ];
+    expect(enyhítettSorRészletes(e, 'Fény', sor)).toEqual({ érték: -2, immunis: false });
+    expect(enyhítettSorRészletes(e, 'Más kategória', sor)).toEqual({ érték: -6, immunis: false });
+  });
+
+  it('immunitás küszöb: a levonás nullázódik és immunis jelzést kap', () => {
+    const e = [{ képzettség: 'X', kategória: 'Fény', sorok: [], érték: PRÓBA_IMMUNITÁS_KÜSZÖB }];
+    expect(enyhítettSorRészletes(e, 'Fény', sor)).toEqual({ érték: 0, immunis: true });
+  });
+});
+
+describe('calcSzitModÖsszeg', () => {
+  const táblák = [
+    { kategória: 'Fény', sorok: [{ érték: -3, leírás: 'Félhomály' }, { érték: -6, leírás: 'Vaksötét' }] },
+    { kategória: 'Egyéb', mód: 'multi' as const, sorok: [{ érték: -1, leírás: 'A' }, { érték: -2, leírás: 'B' }] },
+  ];
+
+  it('single tábla: a kiválasztott index értéke; multi: a bejelölt sorok összege', () => {
+    const összeg = calcSzitModÖsszeg(táblák, { Fény: 1 }, { Egyéb: [true, false] }, [], 0);
+    expect(összeg).toBe(-7);   // -6 + -1
+  });
+
+  it('kiválasztás nélkül 0, a szerepjátékos bónusz mindig hozzáadódik', () => {
+    expect(calcSzitModÖsszeg(táblák, {}, {}, [], 2)).toBe(2);
+    expect(calcSzitModÖsszeg(táblák, { Fény: -1 }, {}, [], 0)).toBe(0);
+  });
+});
+
+describe('calcEffSzint / helyettesítésSzint', () => {
+  it('saját szint + vállalás + szituációs módosítók', () => {
+    expect(calcEffSzint(7, null, 2, -3)).toBe(6);
+  });
+
+  it('helyettesítő képzettség: FLOOR(szint / 3), max 5', () => {
+    expect(helyettesítésSzint(8)).toBe(2);
+    expect(helyettesítésSzint(21)).toBe(5);
+    expect(calcEffSzint(7, 8, 0, 0)).toBe(2);   // a helyettesítő szint felülírja a sajátot
+  });
+});
+
+describe('összetettCélszámok', () => {
+  it('elsődleges a célszámon, a másodlagosak 3-mal könnyebbek', () => {
+    expect(összetettCélszámok(12, 2)).toEqual([
+      { label: 'Elsődleges', célszám: 12 },
+      { label: 'Másodlagos', célszám: 9 },
+      { label: 'Másodlagos', célszám: 9 },
+    ]);
+    expect(összetettCélszámok(12, 0)).toEqual([{ label: 'Elsődleges', célszám: 12 }]);
   });
 });

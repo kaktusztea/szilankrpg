@@ -1,14 +1,8 @@
 import type { Karakter, Session } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { UndoPatch } from '../hooks/useUndo';
-import { validateKarakterData } from '../engine/validate';
-import { generateUid, generateIdLeíró } from '../engine/file-ops';
-import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { isSlotFull, readSlots, upsertSlotEntry } from '../hooks/slot-utils';
-import { njkLimitBlocked } from '../hooks/njk-slots';
+import { isSlotFull } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
-import { decodeKarakterFromHash, encodeKarakterUrl } from '../engine/url-share';
-import { useState } from 'react';
 import {
   SzilankPickerOverlay, NewCharConfirmOverlay, TestConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveFileOverlay,
@@ -17,6 +11,7 @@ import {
   SlotLimitOverlay, BackupRestoreOverlay, type SlotLimitKind,
 } from './overlays';
 import { QrCodePopup } from './overlays/QrCodePopup';
+import { useOverlayHandlers } from '../hooks/useOverlayHandlers';
 
 export interface OverlayState {
   showSzilánkPicker: boolean;
@@ -71,117 +66,11 @@ export function AppOverlays({
   activateKarakter, setUndoStack, isDirty, onViewCheckpoint,
 }: Props) {
 
-  // --- QR code popup state ---
-  const [qrPopup, setQrPopup] = useState<{ url: string; név: string; tsz: number } | null>(null);
-
-  const handleQrCode = (uid: string) => {
-    const charData = localStorage.getItem(`szilank_char_${uid}`);
-    if (!charData) return;
-    try {
-      const parsed = JSON.parse(charData) as Karakter;
-      const url = encodeKarakterUrl(parsed);
-      setQrPopup({ url, név: parsed.becenév || parsed.név || 'Névtelen', tsz: parsed.tsz });
-    } catch {
-      set('toast', { msg: 'Hiba a QR kód generálásakor.', type: 'error' });
-    }
-  };
-
-  // --- Slot delete handler ---
-  const handleSlotDelete = () => {
-    deleteSlot(s.slotDeleteTarget!.uid);
-    set('slotDeleteTarget', null);
-  };
-
-  // --- New char handler ---
-  const handleNewChar = () => {
-    const uid = generateUid();
-    activateKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
-    set('showNewConfirm', false);
-  };
-
-  // --- Slot list handlers ---
-  const handleSlotLoad = (k: Karakter, undo: any[]) => {
-    activateKarakter(k, undo);
-    set('showSlotList', false);
-  };
-
-  const loadTestKarakter = () => {
-    const refErr = validateKarakterData(data.testKarakter, data);
-    if (refErr) { set('showTestConfirm', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
-    activateKarakter({
-      ...data.testKarakter,
-      uid: data.testKarakter.uid || generateUid(),
-      id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
-      előtörténet: { ...DEFAULT_ELOTORTENET, ...data.testKarakter.előtörténet },
-      session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
-    });
-    set('showTestConfirm', false);
-  };
-
-  const handleSlotTest = () => loadTestKarakter();
-
-  /** Reset test char if already active, otherwise open confirm dialog */
-  const handleTestBtn = () => {
-    const testUid = data.testKarakter.uid;
-    if (testUid && karakter?.uid === testUid) {
-      // Already viewing test char → reset to original state
-      loadTestKarakter();
-      set('showSlotList', false);
-      set('toast', { msg: 'Teszt karakter alapállapotba állítva', type: 'success' });
-    } else if (!isDirty) {
-      // Untouched empty karakter → load without confirmation
-      set('showSlotList', false);
-      loadTestKarakter();
-    } else {
-      set('showSlotList', false);
-      set('showTestConfirm', true);
-    }
-  };
-
-  /** Clipboard import: try to decode as URL (hash part) or full URL. */
-  const handleClipboardImport = (text: string) => {
-    // Extract hash: either a full URL with #hash, or just the hash/base64 string
-    let hash = '';
-    if (text.includes('#')) {
-      hash = text.split('#').slice(1).join('#');
-    } else {
-      // Assume the whole text is the base64url hash
-      hash = text;
-    }
-
-    if (!hash) {
-      set('toast', { msg: 'A vágólap nem tartalmaz karakter linket.', type: 'error' });
-      return;
-    }
-
-    const result = decodeKarakterFromHash(hash);
-    if ('error' in result) {
-      set('toast', { msg: result.error, type: 'error' });
-      return;
-    }
-
-    const k = { ...result.karakter, uid: generateUid(), id_leíró: generateIdLeíró(result.karakter.név, result.karakter.tsz), mentés_dátum: '' };
-    const slots = readSlots();
-    const match = slots.find(s => s.név === k.név && s.tsz === k.tsz);
-    if (match) {
-      set('importConfirm', { karakter: k, matchUid: match.uid });
-      return;
-    }
-    if (isSlotFull()) {
-      set('showSlotList', false);
-      set('slotLimit', 'total');
-      return;
-    }
-    if (njkLimitBlocked(k.jk)) {
-      set('showSlotList', false);
-      set('slotLimit', 'njk');
-      return;
-    }
-    activateKarakter(k);
-    // Slot entry azonnal, hogy a Karakterek hub ne az autosave-re várjon
-    upsertSlotEntry(k);
-    set('toast', { msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
-  };
+  const {
+    qrPopup, setQrPopup,
+    handleQrCode, handleSlotDelete, handleNewChar, handleSlotLoad,
+    loadTestKarakter, handleTestBtn, handleClipboardImport,
+  } = useOverlayHandlers({ state: s, set, data, karakter, isDirty, activateKarakter, deleteSlot });
 
   return (
     <>
@@ -196,7 +85,7 @@ export function AppOverlays({
 
       {s.showNewConfirm && <NewCharConfirmOverlay onConfirm={handleNewChar} />}
 
-      {s.showTestConfirm && <TestConfirmOverlay onConfirm={handleSlotTest} />}
+      {s.showTestConfirm && <TestConfirmOverlay onConfirm={loadTestKarakter} />}
 
       {s.showSlotList && (
         <SlotListOverlay

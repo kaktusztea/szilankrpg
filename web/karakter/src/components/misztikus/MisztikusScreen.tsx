@@ -3,7 +3,7 @@ import type { MisztikusScreenProps, SectionContext } from './types';
 import type { Fortely } from '../../engine/types';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { findDef as findKepzDef } from '../tulajdonsagok/helpers';
-import { buildFortélyFokok } from '../tulajdonsagok/KepzettsegProbaPopup';
+import { buildFortélyFokok } from '../tulajdonsagok/kepzettseg-proba-calc';
 import { useMisztikusPopups } from './useMisztikusPopups';
 import { AuraPanel } from './AuraPanel';
 import { TradícióSection } from './TradicioSection';

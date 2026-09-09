@@ -225,6 +225,16 @@ export function encodeKarakterUrl(karakter: Karakter): string {
   return `${window.location.origin}${window.location.pathname}#${hash}`;
 }
 
+/**
+ * Karakter hash kinyerése beillesztett szövegből: lehet teljes URL (`...#hash`),
+ * vagy önmagában a base64url hash. Üres string, ha nincs benne értelmezhető rész.
+ */
+export function extractHashFromText(text: string): string {
+  const trimmed = text.trim();
+  if (!trimmed) return '';
+  return trimmed.includes('#') ? trimmed.split('#').slice(1).join('#') : trimmed;
+}
+
 export function decodeKarakterFromHash(hash: string): { karakter: Karakter } | { error: string } {
   try {
     const bytes = fromBase64Url(hash);

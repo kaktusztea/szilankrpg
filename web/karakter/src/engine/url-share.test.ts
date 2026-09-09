@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import { encodeKarakterUrl, decodeKarakterFromHash } from './url-share';
+import { encodeKarakterUrl, decodeKarakterFromHash, extractHashFromText } from './url-share';
 import { DEFAULT_SESSION, type Karakter } from './types';
 
 const DATA_ROOT = resolve(__dirname, '../../../../data');
@@ -69,5 +69,21 @@ describe('url-share encode/decode roundtrip', () => {
     const k = { ...karakter, előtörténet: { ...karakter.előtörténet, előtörténet: 'Hosszú történet...' } };
     const d = roundtrip(k);
     expect(d.előtörténet.előtörténet).toBe('');
+  });
+});
+
+describe('extractHashFromText', () => {
+  it('teljes URL-ből a hash rész', () => {
+    expect(extractHashFromText('https://example.com/app/#AbC123')).toBe('AbC123');
+  });
+  it('több # esetén az első utáni teljes rész', () => {
+    expect(extractHashFromText('https://x/#a#b')).toBe('a#b');
+  });
+  it('önálló hash változatlanul (körülvágott szóközökkel)', () => {
+    expect(extractHashFromText('  AbC123  ')).toBe('AbC123');
+  });
+  it('üres szöveg / csak szóköz → üres', () => {
+    expect(extractHashFromText('')).toBe('');
+    expect(extractHashFromText('   ')).toBe('');
   });
 });

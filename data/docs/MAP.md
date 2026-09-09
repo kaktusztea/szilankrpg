@@ -52,6 +52,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `useGameDataLoader` | GameData fetch + karakter init |
 | `useSwipe` | Swipe gesture |
 | `useUrlImport` | URL hash import (mount-kor) |
+| `useOverlayHandlers` | AppOverlays akció-logika (új/betöltés/import/QR/teszt karakter) |
 | `useHoldRepeat` | Hold-to-repeat gomb gyorsulás |
 | `useEscapeClose` | Escape billentyű popup bezárás |
 | `usePopupState` | Generikus popup/overlay state kezelő |
@@ -114,6 +115,8 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   PancelInfoPopup.tsx      SFÉ infó popup (páncél részletek)
   ElonyPicker.tsx          Előny/Hátrány kocka picker
   ManualDicePicker.tsx     Manuális kockadobás érték választó
+  ManoverPicker.tsx        Manőver választó (mód + lista, 2 lépés)
+  aktiv-fegyver-ctx.ts     Aktív fegyver kontextus feloldás (kétkezes > fogás > pajzs > jobb kéz)
 
 tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
   TavharcScreen.tsx        Fő screen (szerkesztő + game mód)
@@ -125,6 +128,8 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
   KepzettsegPickerOverlay.tsx  Képzettség picker overlay popup (név + md link + ▾ accordion → KepzettsegDetails)
   TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
   proba-common.ts          Próba közös logika (Előny/Hátrány szintek, lehetetlen/biztos siker, összetett próba típusok)
+  kepzettseg-proba-calc.ts Képzettségpróba tiszta kalkuláció (célszámok, kiterjesztés EH, szituációs módosítók, enyhítés)
+  KepzettsegProbaPickers.tsx Képzettségpróba alpickerei (kiterjesztés, helyzetfüggő módosítók, infó)
   kepzettseg-limit.ts      Képzettség max szint a rules.json-ból (§19)
   KepzettsegProbaPopup.tsx   Képzettségpróba dobás popup (Játék mód, k10)
   ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
