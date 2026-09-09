@@ -11,7 +11,10 @@ data/
   tables/                    Generált JSON (runtime adat, NE kézzel szerkeszd)
   karakter/                  Template-ek (empty_karakter.json, test_karakter.json)
   rules.json                 Reactive engine: 53 deklaratív szabály
-  generate_tables.py         YAML→JSON generáló (Vite buildStart + prebuild futtatja)
+  generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
+  gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
+                             fortelyok, fajok, aktiv_ful, validators
+  patterns/                  md→json kinyerés konfig (kézzel szerkesztett, code/process_fegyverek.py olvassa)
 web/karakter/                React app gyökere
 code/                        Python scriptek (process_fegyverek.py + lib/)
 ```

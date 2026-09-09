@@ -31,7 +31,7 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
 - Maradék TS logika: Fájdalomtűrés, Kétkezes harc, Fortély módosítók, Taktika mods
 
 ### 2. Data Pipeline
-- **YAML** (`data/sources/`) → **`generate_tables.py`** → **JSON** (`data/tables/`) → **fetchJson** (runtime)
+- **YAML** (`data/sources/`) → **`generate_tables.py`** (+ `data/gen/*.py` modulok) → **JSON** (`data/tables/`) → **fetchJson** (runtime)
 - Vite plugin automatikusan futtatja `buildStart`-kor
 - Nincs runtime YAML parse, nincs js-yaml dependency
 
@@ -86,7 +86,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 |---|---|
 | Engine kalkuláció | `engine_spec.md` releváns §-ja + `rules.json` |
 | UI viselkedés | `gui_spec.md` releváns szekció |
-| Data módosítás | `data/sources/*.yaml` + `generate_tables.py` |
+| Data módosítás | `data/sources/*.yaml` + `data/gen/{terület}.py` |
 | Séma változás | `data/schemas/*.yaml` + `engine/types.ts` |
 | Komponens | `gui_spec.md` + `components/{screen}/` |
 | Fortély/képzettség | `engine_spec.md §16/§25` + `data/sources/fortelyok/` |

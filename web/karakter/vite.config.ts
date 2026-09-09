@@ -5,7 +5,7 @@ import { createReadStream, existsSync, readFileSync, statSync, readdirSync } fro
 import { execSync } from 'child_process';
 import type { Plugin } from 'vite';
 
-/** Check if generated tables are newer than all YAML sources (uses .generated_marker) */
+/** Check if generated tables are newer than all inputs (YAML sources + generator code) */
 function tablesAreFresh(dataDir: string): boolean {
   const marker = path.join(dataDir, 'tables', '.generated_marker');
   if (!existsSync(marker)) return false;
@@ -23,7 +23,20 @@ function tablesAreFresh(dataDir: string): boolean {
     }
     return newest;
   }
-  return markerMtime > newestYaml(sourcesDir);
+
+  // A generátor kód (generate_tables.py + gen/*.py) változása is elavulttá teszi a táblákat
+  function newestGeneratorCode(): number {
+    let newest = statSync(path.join(dataDir, 'generate_tables.py')).mtimeMs;
+    const genDir = path.join(dataDir, 'gen');
+    if (existsSync(genDir)) {
+      for (const entry of readdirSync(genDir)) {
+        if (entry.endsWith('.py')) newest = Math.max(newest, statSync(path.join(genDir, entry)).mtimeMs);
+      }
+    }
+    return newest;
+  }
+
+  return markerMtime > Math.max(newestYaml(sourcesDir), newestGeneratorCode());
 }
 
 function serveDataPlugin(): Plugin {

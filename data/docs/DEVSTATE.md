@@ -84,7 +84,8 @@ TODO:
 - Részletek → engine_spec §41
 
 ### Build pipeline
-- `generate_tables.py`: YAML → JSON (Vite buildStart + prebuild)
+- `generate_tables.py`: belépési pont (CLI + freshness + sorrend), a generátorok a `data/gen/` csomagban (Vite buildStart + prebuild)
+  - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful}.py` · `gen/validators.py` (referenciális ellenőrzések)
   - **Séma validáció**: minden source entitás kulcshalmazát a `schemas/*.yaml`-hoz méri (ismeretlen kulcs / hiányzó kötelező mező → build hiba). Kötelezőség a séma megjegyzéseiből: `# opcionális` → elhagyható, `# generált` → a generátor adja hozzá
   - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
   - Marker fájl: `tables/.generated_marker` — Vite plugin ezt nézi freshness check-hez
@@ -108,6 +109,6 @@ A natív Linux fájlrendszeren (`/repo/github/szilank.code/`) a teljes build ~18
 
 Inkrementális működés:
 - **TypeScript**: `incremental: true` + `tsBuildInfoFile` → változatlan fájlok skip
-- **generate_tables.py**: MD5 hash az összes YAML source + a script tartalma alapján
-- **Vite plugin**: `tables/.generated_marker` mtime vs source YAML-ok mtime
+- **generate_tables.py**: MD5 hash az összes YAML source + a teljes generátor kód (`generate_tables.py` + `gen/*.py`) alapján
+- **Vite plugin**: `tables/.generated_marker` mtime vs a source YAML-ok ÉS a generátor `.py` fájlok mtime-ja
 - **vitest --changed**: git diff-ből határozza meg az érintett teszteket
