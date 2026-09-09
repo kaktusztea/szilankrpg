@@ -7,7 +7,7 @@ Nagyon érzed a helyezkedést a harctéren.
 🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- [Mögékerülés](../066_05_altalanos_manoverek.md#mögékerülés) Manőverre `+2` bónuszt kapsz (`E`)
-- [Terelés](../066_05_altalanos_manoverek.md#terelés) Manőverre `+2` bónuszt kapsz (`E`)
+- [Mögékerülés](../066_05_altalanos_manoverek.md#mögékerülés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+- [Terelés](../066_05_altalanos_manoverek.md#terelés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---

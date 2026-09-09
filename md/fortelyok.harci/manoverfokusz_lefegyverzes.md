@@ -9,6 +9,6 @@ Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Lefegyverzés](../066_05_altalanos_manoverek.md#lefegyverzés) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
+- [Lefegyverzés](../066_05_altalanos_manoverek.md#lefegyverzés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---

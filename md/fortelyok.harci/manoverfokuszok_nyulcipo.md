@@ -9,7 +9,7 @@ Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különös
 🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2` bónuszt kapsz (`E`)
-- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2` bónuszt kapsz (`E`)
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---
