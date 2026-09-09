@@ -92,7 +92,15 @@ TODO:
   - `--force` flag: kényszerített újragenerálás (`python3 generate_tables.py --force`)
 - `vitest run`: 227 unit teszt (31 fájl); build előtt fut
 - Deploy: GitHub Pages, auto-deploy push master
-- Metadata: `ÉV.ÉVNAPJA.napibuild`
+- Metadata: `ÉV.ÉVNAPJA.napibuild` — a `public/metadata.json` és a bundle `__APP_VERSION__` ugyanabból a fájlból jön (egy build = egy verzió)
+
+### Cache / friss verzió (GitHub Pages)
+
+A Pages `Cache-Control: max-age=600`-at ad az `index.html`-re, és **nem** engedi headert állítani. Két védelem:
+1. **Adat cache-busting**: minden runtime JSON kérés `?v={APP_VERSION}`-nel megy (`data-loader.ts`) → deploy után sosem jön régi tábla új bundle-hez.
+2. **Verzió-ellenőrzés indításkor** (`engine/version-check.ts`, `main.tsx`): `metadata.json` `no-store` kéréssel; ha a szerver verziója ≠ a bundle verziója, a böngésző elavult HTML-t szolgált ki → egyszeri, `?v=`-vel cache-kerülő újratöltés, a `#hash` (megosztott karakter) megőrzésével. Loop védelem: sessionStorage (`szilank_reload_version`), 1s timeout, hibánál csendben tovább. A `?v=` utána `replaceState`-tel eltűnik a címsorból.
+
+Korlát: a 2. pont kódja az ÚJ bundle-ben él, tehát egy már beragadt (elavult HTML-t futtató) klienst nem gyógyít meg visszamenőleg — ott egyszeri hard refresh kell. A HTML cache teljes kikapcsolásához CDN kell a Pages előtt.
 
 ### Build scriptek
 

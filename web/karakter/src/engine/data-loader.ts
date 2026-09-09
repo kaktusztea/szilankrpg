@@ -3,13 +3,17 @@ import type { Rule } from './reactive';
 import type { KonstansokRaw, KepzettsegDef, KiterjesztesEntry, FortelySummary, TradicioEntry, NyelvEntry, TaktikaEntry, HarciHelyzetEntry, ManoverEntry, StatuszEntry, HatasOperator, EsemenyEntry, HatterekData, GameData } from './data-types';
 export type { KepzettsegDef, KiterjesztesEntry, FortelyModosito, FortelyFokSummary, FortelySummary, TradicioAltipus, TradicioEntry, NyelvEntry, TaktikaMegkötés, TaktikaEntry, HarciHelyzetEntry, SzituacioEntry, ManoverEntry, StatuszHatas, StatuszFok, StatuszEntry, HatasOperator, EsemenyEntry, LeíróHátterKategória, KarmaHátterEntry, HatterekData, GameData } from './data-types';
 
+import { APP_VERSION } from '../version';
+
 const BASE = import.meta.env.BASE_URL + 'data/';
 
 interface KepzettsegKpEntry { 'Képzettség Szint': string; 'KP igény': string; }
 interface HarcmodorBonuszEntry { 'Harcmodor Szint': string; 'TÉ': string; 'VÉ': string; 'CÉ': string; }
 
 async function fetchJson<T>(path: string): Promise<T> {
-  const res = await fetch(BASE + path);
+  // Cache-busting: a build verzió az URL-ben → deploy után sosem jön régi tábla a
+  // böngésző cache-éből (GitHub Pages max-age=600-at ad, headert nem tudunk állítani).
+  const res = await fetch(`${BASE}${path}?v=${APP_VERSION}`);
   if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
   return res.json();
 }

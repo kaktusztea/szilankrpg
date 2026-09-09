@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Karakter } from '../engine/types';
 import { FEEDBACK_TIMEOUT_MS } from '../ui-constants';
+import { APP_VERSION } from '../version';
 import { readSlots, loadSlotKarakter, type SlotEntry } from '../hooks/slot-utils';
 import { SlotRow } from './SlotRow';
 import { SaveOptionsPopup } from './overlays/SaveOptionsPopup';
@@ -160,7 +161,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
       </div>
       <div className="menu-footer">
         <button className="menu-test-chip" onClick={onTest}>T</button>
-        <span className="menu-build">{__APP_VERSION__}</span>
+        <span className="menu-build">{APP_VERSION}</span>
         {document.fullscreenEnabled ? (
           <button className="menu-fs-chip" title="Teljes képernyő" onClick={() => {
             if (document.fullscreenElement) document.exitFullscreen();

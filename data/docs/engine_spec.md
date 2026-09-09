@@ -2291,6 +2291,24 @@ Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik
 - Slot törlés: `szilank_char_{uid}` eltávolítás + slots frissítés (TODO: UI)
 - Fájlba exportálás: `_undo` is belekerül a JSON-ba
 
+### 30.5 Böngésző cache — friss app verzió kikényszerítése
+
+Probléma: a GitHub Pages `Cache-Control: max-age=600`-at ad az `index.html`-re (headert nem
+lehet állítani). Egy már megnyitott URL (pl. megosztott karakter link) újbóli megnyitásakor a
+böngésző a cache-elt HTML-t szolgálja ki, ami a RÉGI hash-elt JS bundle-re hivatkozik.
+
+| Védelem | Hol | Mit ér el |
+|---|---|---|
+| `?v={APP_VERSION}` minden runtime JSON kérésen | `engine/data-loader.ts` | nincs „új bundle + régi tábla" kombináció |
+| Indulási verzió-ellenőrzés (`metadata.json`, `cache: 'no-store'`) | `engine/version-check.ts` → `main.tsx` | elavult HTML esetén egyszeri, `?v=`-vel cache-kerülő újratöltés |
+
+Az újratöltés a `#hash`-t (a megosztott karaktert) megőrzi, és a mount ELŐTT fut, különben az
+URL-es import kétszer futna le (két slot). Loop védelem: `sessionStorage.szilank_reload_version`
+tárolja, melyik verzióra töltöttünk már újra. Timeout 1s → offline/lassú hálón nem blokkol.
+
+Korlát: az ellenőrzés kódja az új bundle-ben van, tehát egy már elavult HTML-t futtató kliens
+nem gyógyul meg magától — ott egyszeri hard refresh kell (Ctrl+Shift+R).
+
 
 ---
 

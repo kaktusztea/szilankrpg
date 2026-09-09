@@ -16,6 +16,7 @@ data/
                              fortelyok, fajok, aktiv_ful, validators
   patterns/                  md→json kinyerés konfig (kézzel szerkesztett, code/process_fegyverek.py olvassa)
 web/karakter/                React app gyökere
+web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (process_fegyverek.py + lib/)
 ```
 
@@ -35,7 +36,8 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `ketkezes.ts` | Kétkezes harc összesítő kalkuláció |
 | `feltetelek.ts` | buildAktívFeltételek helper |
 | `feltetel-eval.ts` | FeltételEvaluator factory (context-alapú feltétel kiértékelés) |
-| `url-share.ts` | Karakter URL export/import (deflate+base64url) |
+| `url-share.ts` | Karakter URL export/import (deflate+base64url) + `extractHashFromText` |
+| `version-check.ts` | Elavult HTML felismerés → egyszeri cache-kerülő újratöltés (§30b) |
 | `checkpoint-utils.ts` | Karakter verziók (checkpoint): snapshot, create, restore (truncate/append), delete — §31b |
 | `dice.ts` | Kockadobás: rollDie(sides), rollK20/K10, `rollElőnyHátrányDie(szint, sides)` + k6/k10/k20 wrapperek, `előnyHátrányLabel` |
 | `file-ops.ts` | Save/Load/Duplicate |
@@ -200,6 +202,12 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `DEVSTATE.md` | Backlog, TODO, állapot | Státusz áttekintéshez |
 | `engine_spec.md` | Kalkulációs formulák (§1-§41) | Engine logika módosításkor |
 | `gui_spec.md` | UI viselkedés, screen-ek, stílusok | UI módosításkor |
+
+## Refaktor naplók (`web/karakter/refactorlog/`)
+
+| Fájl | Tartalom | Mikor olvasd |
+|------|----------|-------------|
+| `ÉÉÉÉ-HH-NN.md` | Egy nagy refaktor: fázisok, döntések, csapdák, újrahasznosítható detektáló scriptek | Refaktor, halott kód keresés, data layer átalakítás ELŐTT |
 
 ## Engine Spec szekciók (gyorshivatkozás)
 

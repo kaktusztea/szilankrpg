@@ -78,7 +78,9 @@ function serveDataPlugin(): Plugin {
     },
     configureServer(server) {
       server.middlewares.use('/szilankrpg/data', (req, res, next) => {
-        const filePath = path.join(dataDir, req.url ?? '');
+        // A query stringet (pl. a cache-busting `?v=`) le kell vágni a fájl feloldás előtt
+        const urlPath = (req.url ?? '').split('?')[0];
+        const filePath = path.join(dataDir, urlPath);
         if (existsSync(filePath)) {
           const ext = path.extname(filePath);
           const mime: Record<string, string> = { '.json': 'application/json', '.yaml': 'text/yaml', '.yml': 'text/yaml' };

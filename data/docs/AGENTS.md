@@ -22,6 +22,10 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
 1. Tervet SOHA ne hajtsd végre automatikusan — mutasd be, kérj jóváhagyást
 2. Nem egyértelmű kérésnél kérdezz vissza
 3. Backward compatibility: NEM szükséges (régi localStorage invalidálódhat)
+4. **Nagy refaktor / halott kód vadászat / data layer átalakítás**:
+   - ELŐTTE olvasd be a `web/karakter/refactorlog/*.md` naplókat (csapdák, detektáló scriptek,
+     rögzített konvenciók — a legtöbb ott leírt hiba CSENDBEN hibázik)
+   - UTÁNA írj naplót: `web/karakter/refactorlog/ÉÉÉÉ-HH-NN.md` (mit, miért, milyen csapda derült ki)
 
 ## Architektúra — 3 pillér
 
@@ -91,3 +95,4 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 | Komponens | `gui_spec.md` + `components/{screen}/` |
 | Fortély/képzettség | `engine_spec.md §16/§25` + `data/sources/fortelyok/` |
 | Új feature | Releváns `features/*.md` ha létezik |
+| Refaktor / halott kód / duplikáció | `web/karakter/refactorlog/*.md` (korábbi refaktorok tanulságai + kipróbált detektáló scriptek) |

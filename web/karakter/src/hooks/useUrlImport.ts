@@ -21,7 +21,7 @@ export function useUrlImport(
     const result = decodeKarakterFromHash(hash);
     if ('error' in result) {
       setOverlay('toast', { msg: result.error, type: 'error' });
-      history.replaceState(null, '', window.location.pathname + window.location.search);
+      history.replaceState(null, '', window.location.pathname);
       return;
     }
     const imported = result.karakter;
@@ -34,6 +34,6 @@ export function useUrlImport(
     } else {
       importKarakter(imported, false);
     }
-    history.replaceState(null, '', window.location.pathname + window.location.search);
+    history.replaceState(null, '', window.location.pathname);
   }, [data]);
 }
