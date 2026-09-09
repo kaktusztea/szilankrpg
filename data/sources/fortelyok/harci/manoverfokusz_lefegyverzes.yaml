@@ -12,7 +12,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-- text: "Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét."
+- text: "Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét."
 megjegyzések:
 - text: ""
 kiterjeszti:
@@ -23,10 +23,10 @@ ingyenes_perszint: 0
 fokok:
 - fok: 1
   követelménytext:
-    - text: "Kardvívás VAGY Lándzsavívás - 9.szint"
+    - text: "Kardvívás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
     - text: "Mesterfegyver - 1.fok"
   követelmények:
-  - név: ["Kardvívás", "Lándzsavívás"]
+  - név: ["Kardvívás", "Lándzsavívás", "Ostorharc"]
     érték: 9
     típus: "képzettség"
   - név: "Mesterfegyver"

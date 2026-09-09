@@ -4892,7 +4892,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Pontosan tudod, hol és hogyan éri a legnagyobb terhelés az ellenfél fegyverét, hogy azt kettétörd.",
+    "leírás": "Sokat gyakoroltad, hol érdemes erőt kifejteni ellenfeled változatos fegyvereire - hogy könnyebben törjenek.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -4949,7 +4949,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét.",
+    "leírás": "Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -4959,14 +4959,15 @@
           "Lefegyverzés Manőver: +2 MP bónusz Ellenpróbánál."
         ],
         "követelmény": [
-          "Kardvívás VAGY Lándzsavívás - 9.szint",
+          "Kardvívás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
           "Mesterfegyver - 1.fok"
         ],
         "követelmények": [
           {
             "név": [
               "Kardvívás",
-              "Lándzsavívás"
+              "Lándzsavívás",
+              "Ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -5004,7 +5005,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Otthonosan mozogsz a testközeli tülekedésben — be is jutsz, ki is jutsz, amikor csak akarsz.",
+    "leírás": "Életveszélyesen gyorsan mozdulsz testközelbe, vagy éppen ugrasz ki.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -5014,8 +5015,18 @@
           "Belharcba kerülés Manőverre +2 bónuszt kapsz.",
           "Belharcból kibontakozás Manőverre +2 bónuszt kapsz."
         ],
-        "követelmény": [],
-        "követelmények": [],
+        "követelmény": [
+          "Közelharc - 6.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
         "módosítók": [
           {
             "cél": "manőver:belharcba_kerülés",
@@ -5051,7 +5062,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Mestere vagy a csatatéri helyezkedésnek — kijátszod és a kívánt irányba tereled ellenfeleidet.",
+    "leírás": "Nagyon érzed a helyezkedést a harctéren.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
