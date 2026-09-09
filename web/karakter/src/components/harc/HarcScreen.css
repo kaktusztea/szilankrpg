@@ -91,6 +91,43 @@
   text-transform: uppercase;
 }
 
+/* MA: statikus érték — halványabb, nem kattintható */
+.harc-header-bottom .mp-box .ma-label {
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.harc-header-bottom .mp-box .ma-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-dim);
+  font-family: monospace;
+}
+
+.harc-header-bottom .mp-box .mp-box-sep {
+  color: var(--success);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* MA tap-zóna: infó popup (képlet-bontás) */
+.harc-header-bottom .mp-box .ma-tap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* MP tap-zóna: a picker CSAK az elválasztótól jobbra nyílik */
+.harc-header-bottom .mp-box .mp-tap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
 .harc-header-bottom .mp-box .mp-value {
   font-size: 20px;
   font-weight: bold;
@@ -659,6 +696,49 @@
   grid-template-columns: repeat(7, 36px);
   gap: 6px;
   justify-content: center;
+}
+
+/* --- Páncél info popup --- */
+/* --- MA (Manőver Alap) infó popup --- */
+.ma-info-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  min-width: 240px;
+}
+
+.ma-info-formula {
+  font-family: monospace;
+  font-size: 16px;
+  color: var(--text-dim);
+}
+
+.ma-info-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.ma-info-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.ma-info-value {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text);
+  font-family: monospace;
+}
+
+/* A képletsor mérete egységes (14px monospace, a .ma-info-formula-ból öröklődik);
+   az eredmény csak színnel + bolddal van kiemelve. */
+.ma-info-result {
+  font-weight: bold;
+  color: var(--success);
 }
 
 /* --- Páncél info popup --- */

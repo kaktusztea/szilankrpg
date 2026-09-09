@@ -96,6 +96,14 @@
       ]
     },
     {
+      "id": "manőver_alap",
+      "formula": "ceil((HM_TÉ + HM_VÉ) / 10)",
+      "inputs": [
+        "HM_TÉ",
+        "HM_VÉ"
+      ]
+    },
+    {
       "id": "manőver_pont",
       "formula": "ceil(harcmodor_összeg * 2 / tsz)",
       "inputs": [

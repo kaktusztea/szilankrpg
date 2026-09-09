@@ -353,7 +353,11 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - Box alján: utolsó max 3 dobott érték egymás mellett (11px, monospace). Színek balról jobbra egyre sötétülnek: #ccc → #888 → #555 (legújabb a legvilágosabb).
   - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold). Kattintásra **PancelInfoPopup** nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT, csatolt tagok részletek).
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
-  - **MP box**: label `MP` (14px, bold, fehér, uppercase), érték `X/Y` (20px, bold, success/zöld szín), alatta gombok: -1, ⟲ (12px). Default: max.
+  - **MA/MP box** (alsó sáv, a „⚔️ Manőver" gomb mellett, egysoros): `MA X · MP Y/Z` vízszintesen.
+    - `MA` (Manőver Alap, §14): statikus, HM-ből derivált érték — label + érték dim színnel. **Tap** → `Manőver Alap` infó popup: képletsor az eredménnyel (`X = (HM / 10) ↑`, egységes 16px monospace; X = MA érték zöld + bold), alatta egy sor: `HM (TÉ+VÉ) = Y` (középre, nem kifeszítve). Mindkét módban elérhető.
+    - `·` elválasztó (success/zöld, bold)
+    - `MP`: label (18px, uppercase) + érték `Y/Z` (20px, bold, success/zöld, monospace). Default: max.
+    - **Tap zóna**: a picker CSAK az elválasztótól jobbra (MP rész) nyílik → MP picker popup (0…max rács). Játék módon kívül a Szerk/Játék toggle villan.
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz

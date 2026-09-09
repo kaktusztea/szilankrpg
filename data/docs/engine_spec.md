@@ -450,6 +450,18 @@ Harcértékek fül: "pajzs" kategória kiszűrve a fegyver felvétel dropdown-b�
 ## 14. Manőver Alap / Manőver Pont
 
 ```
+input:  karakter.HM_TÉ, karakter.HM_VÉ
+
+formula:
+  manőver_alap = CEIL((HM_TÉ + HM_VÉ) / 10)
+
+output: manőver_alap
+note: A felvett HM pontok tizede, felfelé kerekítve. Statikus (karakteralkotási időben
+      számított) érték, harc közben nem változik. A Manőver Ellenpróba fázisában vesz részt
+      (Manőver Alap + MP + k10 vs Nehézség + ellenfél Manőver Alap).
+```
+
+```
 input:  közelharci harcmodor szintek (konstansok.fegyver_kategória_harcmodor values),
         karakter.tsz
 

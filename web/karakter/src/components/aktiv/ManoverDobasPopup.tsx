@@ -21,6 +21,8 @@ interface Props {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   data: GameData;
+  /** Manőver Alap — kanonikus érték a reactive engine-ből (rules.json: manőver_alap). */
+  manőverAlap: number;
   /** Aktív fegyver TÉ (from Harc fül computed — may be unavailable). */
   aktívTÉ: number | null;
   /** Aktuális VÉ (base - csökkenés). */
@@ -37,10 +39,6 @@ export function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
   return result;
 }
 
-function calcManőverAlap(karakter: Karakter): number {
-  return Math.ceil((karakter.HM_TÉ + karakter.HM_VÉ) / 10);
-}
-
 function calcManőverPont(karakter: Karakter, data: GameData): number {
   const { képzettségek, tsz } = karakter;
   const harcmodorNevek = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
@@ -53,12 +51,11 @@ function getBelharcFok(karakter: Karakter): number {
   return f?.fok ?? 0;
 }
 
-export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, aktívTÉ, aktívVÉ, onClose }: Props) {
+export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, onClose }: Props) {
   const fázisok = parseFázisok(manőver.fázisok);
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
 
-  const manőverAlap = calcManőverAlap(karakter);
   const manőverPont = calcManőverPont(karakter, data);
   const aktMP = Math.max(0, manőverPont - session.manőver_pont_használt);
   const belharcFok = getBelharcFok(karakter);

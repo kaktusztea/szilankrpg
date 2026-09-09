@@ -179,6 +179,8 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         sfé_energia={hc.sfé_energia}
         páncélLefedettség={hc.páncélLefedettség}
         manöverPont={hc.manöverPont}
+        manőverAlap={hc.manőverAlap}
+        hm={karakter.HM_TÉ + karakter.HM_VÉ}
         maxVéCsökk={hc.maxVéCsökk}
         session={session}
         setSession={setSession}
@@ -328,6 +330,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           session={session}
           setSession={setSession}
           data={data}
+          manőverAlap={hc.manőverAlap}
           aktívTÉ={baseTÉ}
           aktívVÉ={baseVÉ}
           onClose={() => setPopupManőver(null)}

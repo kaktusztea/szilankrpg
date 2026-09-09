@@ -37,6 +37,7 @@ export interface HarcComputed {
   ké: number;
   épValue: number;
   manöverPont: number;
+  manőverAlap: number;
   sfé_fizikai: number;
   sfé_energia: number;
   páncélLefedettség: number;

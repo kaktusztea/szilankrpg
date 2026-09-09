@@ -71,6 +71,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const épValue = computed.get('ÉP') ?? 40;
   const ké = (computed.get('KÉ') ?? 0) + taktikaMods['KÉ'] + fortelyMods['KÉ'];
   const manöverPont = computed.get('manőver_pont') ?? 0;
+  const manőverAlap = computed.get('manőver_alap') ?? 0;
   const sfé_fizikai = (session.aktív_páncél ? (computed.get('sfé_fizikai') ?? 0) : 0) + fortelyMods['SFÉ'];
   const sfé_energia = (session.aktív_páncél ? (computed.get('sfé_energia') ?? 0) : 0) + fortelyMods['SFÉ'];
   const páncélLefedettség = session.aktív_páncél ? (computed.get('páncél_lefedettség') ?? 0) : 0;
@@ -103,7 +104,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     });
 
   return {
-    ké, épValue, manöverPont, sfé_fizikai, sfé_energia, páncélLefedettség, páncélMGT, merevvértBüntetés,
+    ké, épValue, manöverPont, manőverAlap, sfé_fizikai, sfé_energia, páncélLefedettség, páncélMGT, merevvértBüntetés,
     taktikaMods, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
     pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások,
     feltételTeljesül,

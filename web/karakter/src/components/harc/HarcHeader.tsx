@@ -12,6 +12,9 @@ interface HarcHeaderProps {
   sfé_energia: number;
   páncélLefedettség: number;
   manöverPont: number;
+  manőverAlap: number;
+  /** MA bontáshoz: HM összeg (TÉ+VÉ) — MA = ceil(HM / 10). */
+  hm: number;
   maxVéCsökk: number;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
@@ -28,11 +31,12 @@ interface HarcHeaderProps {
 }
 
 export function HarcHeader({
-  ké, aktívTÉ, aktívVÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
+  ké, aktívTÉ, aktívVÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont, manőverAlap, hm,
   maxVéCsökk, session, setSession, pushUndo, konstansok,
   onVéChange, onVéLabelTap, onVéResetClick, onKéClick, onTéClick, onSféClick, onManőverClick, gameMode,
 }: HarcHeaderProps) {
   const [showMpPicker, setShowMpPicker] = useState(false);
+  const [showMaInfo, setShowMaInfo] = useState(false);
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
   /** Dupla villanás a Szerk/Játék gombon — jelzi hogy csak Játék módban elérhető */
@@ -99,16 +103,55 @@ export function HarcHeader({
         </div>
       </div>
 
-      {/* Row 3 (mobile) / Row 2 (desktop): Manőver + MP */}
+      {/* Row 3 (mobile) / Row 2 (desktop): Manőver + MA/MP */}
       <div className="harc-header-bottom">
         <button className={`harc-manover-btn${!gameMode ? ' harc-manover-btn-disabled' : ''}`}
-          onClick={gameMode ? onManőverClick : flashModeToggle}>⚔️ Manőver végrehajtása</button>
-        <div className="mp-box" onClick={gameMode ? () => setShowMpPicker(true) : flashModeToggle}
-          style={gameMode ? { cursor: 'pointer' } : undefined}>
-          <span className="label">MP</span>
-          <span className="mp-value">{aktMP}/{manöverPont}</span>
+          onClick={gameMode ? onManőverClick : flashModeToggle}>⚔️ Manőver</button>
+        <div className="mp-box">
+          {/* MA: statikus érték → tap = képlet-bontás infó popup (mindkét módban) */}
+          <span className="ma-tap" role="button" tabIndex={0}
+            aria-label={`Manőver Alap: ${manőverAlap} — képlet részletei`}
+            onClick={() => setShowMaInfo(true)}
+            onKeyDown={e => {
+              if (e.key !== 'Enter' && e.key !== ' ') return;
+              e.preventDefault();
+              setShowMaInfo(true);
+            }}
+            style={{ cursor: 'pointer' }}>
+            <span className="ma-label">MA</span>
+            <span className="ma-value">{manőverAlap}</span>
+          </span>
+          <span className="mp-box-sep" aria-hidden="true">·</span>
+          {/* MP: a picker CSAK innen (az elválasztótól jobbra) nyílik */}
+          <span className="mp-tap" role="button" tabIndex={0}
+            aria-label={`Manőver Pont: ${aktMP} / ${manöverPont}`}
+            onClick={gameMode ? () => setShowMpPicker(true) : flashModeToggle}
+            onKeyDown={e => {
+              if (e.key !== 'Enter' && e.key !== ' ') return;
+              e.preventDefault();
+              if (gameMode) setShowMpPicker(true); else flashModeToggle();
+            }}
+            style={{ cursor: 'pointer' }}>
+            <span className="label">MP</span>
+            <span className="mp-value">{aktMP}/{manöverPont}</span>
+          </span>
         </div>
       </div>
+
+      {showMaInfo && (
+        <PopupOverlay onClose={() => setShowMaInfo(false)}>
+          <div className="ma-info-popup">
+            <div className="ke-dobas-header">Manőver Alap</div>
+            <div className="ma-info-formula">
+              <span className="ma-info-result">{manőverAlap}</span> = (HM / 10) ↑
+            </div>
+            <div className="ma-info-row">
+              <span className="ma-info-label">HM (TÉ+VÉ) =</span>
+              <span className="ma-info-value">{hm}</span>
+            </div>
+          </div>
+        </PopupOverlay>
+      )}
 
       {showMpPicker && (
         <PopupOverlay onClose={() => setShowMpPicker(false)}>
