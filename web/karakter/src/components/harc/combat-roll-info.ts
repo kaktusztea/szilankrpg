@@ -88,7 +88,7 @@ function collectFortélyHatások(
         continue;
       }
       if (!célFilter.has(mod.cél)) continue;
-      if (mod.mód !== 'előny' && mod.mód !== 'hátrány' && mod.mód !== 'enyhít') continue;
+      if (mod.mód !== 'előny' && mod.mód !== 'hátrány' && mod.mód !== 'enyhít' && mod.mód !== 'szöveges') continue;
       hatások.push({ forrás, cél: mod.cél as DobásCél, operátor: mod.mód as DobásHatás['operátor'], érték: mod.érték });
     }
   }

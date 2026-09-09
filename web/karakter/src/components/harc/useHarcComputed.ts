@@ -16,7 +16,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const { konstansok } = data;
 
   const aktívFeltételek = buildAktívFeltételek(session, data);
-  const taktikaMods = calcTaktikaMods(session, data);
+  const taktikaMods = calcTaktikaMods(session, data, k);
 
   const harcmodorÖsszeg = [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]
     .reduce((s: number, név: string) => s + (k.képzettségek.find(kp => kp.név === név)?.szint ?? 0), 0);

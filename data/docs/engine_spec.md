@@ -1029,11 +1029,12 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
       Visszafogott: nem-skálázható taktika. A `-10 TÉ` a `módosítók.TÉ`-ben, a Hátrány-2 sebzésdobás strukturált
       `hatások` listában (`hatás: hátrány, cél: sebzésdobás`). Nem-fokozatos taktika is hordozhat strukturált
       `hatások`-at (nem csak `módosítók` map-et) — a combat-roll-info és aktiv-calc a nem-fokozatos ágon is begyűjti.
-      TERV (még nincs implementálva) — jövőbeli fortély a Visszafogott büntetéseit AKTÍV taktika mellett semlegesíti:
-        - TÉ-büntetés: `letilt` a taktika `módosítók.TÉ`-jére (feltétel: `taktika:visszafogott`) — NEM additív +10 (szám-független).
+      Taktikafókusz: Visszafogott fortély a Visszafogott büntetéseit AKTÍV taktika mellett semlegesíti:
+        - TÉ-büntetés: `letilt` a taktika `TÉ`-jére (feltétel: `taktika:visszafogott`) — szám-független, NEM additív +10.
+          A `calcTaktikaMods` a `letilt` módú, taktika-feltételes fortély-módosítót felismeri (`collectTaktikaLetiltások`),
+          és az adott taktika érintett módosítóját (itt: TÉ) kihagyja az összegzésből.
         - Sebzés-hátrány: `enyhít` a sebzésdobásra (a Hátrány-2-t kioltja, netElőnySzint clamp kezeli).
-        - Sebzés = fegyver alapsebzése, nincs dobás: `szöveges` hatás a sebzésdobásra.
-      A `letilt` taktika-módosítóra ma még nincs engine-mechanika — a fortély implementációjakor épül be.
+        - Sebzés = fegyver alapsebzése, nincs dobás: `szöveges` hatás a sebzésdobásra (collectFortélyHatások átengedi).
 
 #### Távharci taktikák
 
