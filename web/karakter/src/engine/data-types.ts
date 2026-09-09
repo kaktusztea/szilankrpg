@@ -110,7 +110,8 @@ export interface TaktikaEntry {
   fokozatos: boolean;
   skálázható?: boolean;
   módosítók?: Record<string, number>;
-  fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number; hatások?: { operátor: string; érték?: number; cél: string; megjegyzés?: string }[] }[];
+  hatások?: StatuszHatas[];
+  fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number; hatások?: StatuszHatas[] }[];
   megjegyzés?: string;
   megkötések?: TaktikaMegkötés[];
   kombó_mód: string;
@@ -153,7 +154,8 @@ export interface ManoverEntry {
 }
 
 export interface StatuszHatas {
-  operátor: string;
+  operátor?: string;
+  hatás?: string;
   érték?: number;
   cél: string;
   alcél?: string;

@@ -29,7 +29,6 @@ fokok:
   hatástext: 
   - text: "Leütés hátulról Manőver: +2 MP bónusz Ellenpróbánál."
   - text: "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál."
-  - text: "Visszafogott taktika TÉ büntetés: 3-mal csökken."
   módosítók: 
   - cél: "manőver:leütés_hátulról"
     érték: 2
@@ -43,12 +42,6 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: ""
-  - cél: "TÉ"
-    érték: 3
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "taktika:visszafogott"
 - fok: 2
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
@@ -63,7 +56,6 @@ fokok:
   hatástext: 
   - text: "Leütés hátulról Manőver: +4 MP bónusz Ellenpróbánál."
   - text: "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál."
-  - text: "Visszafogott taktika TÉ büntetés: 6-mal csökken."
   módosítók: 
   - cél: "manőver:leütés_hátulról"
     érték: 4
@@ -77,12 +69,6 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: ""
-  - cél: "TÉ"
-    érték: 6
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "taktika:visszafogott"
 - fok: 3
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 12.szint"
@@ -97,7 +83,6 @@ fokok:
   hatástext: 
   - text: "Leütés hátulról Manőver: +6 MP bónusz Ellenpróbánál."
   - text: "Precíz támadás Manőver: +6 MP bónusz Ellenpróbánál."
-  - text: "Visszafogott taktika TÉ büntetés: 9-mal csökken."
   - text: "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
   módosítók: 
   - cél: "manőver:leütés_hátulról"
@@ -112,9 +97,3 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: ""
-  - cél: "TÉ"
-    érték: 9
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "taktika:visszafogott"

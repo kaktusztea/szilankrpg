@@ -14,6 +14,10 @@ taktikák:
       VÉ: 0
       KÉ: 0
       SP: 0
+    # Nem-fokozatos taktika strukturált hatása (előny/hátrány/enyhít/szöveges) egy dobáscélra.
+    # Pl. Visszafogott: Hátrány-2 a sebzésdobásra (a módosítók.TÉ mellett).
+    hatások:                   # opcionális (fokozatos: false esetén)
+      - { hatás: "", érték: 0, cél: "", megjegyzés: "" }
     # Ha fokozatos: true → fokok lista (mindegyik fok+módosítók)
     fokok:                     # opcionális (fokozatos: true esetén)
       - { fok: 1, TÉ: 0, VÉ: 0, KÉ: 0, SP: 0 }

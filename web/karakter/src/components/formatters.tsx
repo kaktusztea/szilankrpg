@@ -8,12 +8,14 @@ export function fmtCode(text: string): ReactNode[] {
   );
 }
 
-export function fmtHatás(h: { operátor: string; cél: string; érték?: number; megjegyzés?: string }, eseményNév: (id: string) => string): string | null {
-  if (h.operátor === 'szöveges') return h.megjegyzés || null;
-  if (h.operátor === 'letilt') return `❌ Letiltva: ${eseményNév(h.cél)}`;
-  if (h.operátor === 'előny' || h.operátor === 'hátrány') return `${h.operátor === 'előny' ? 'Előny' : 'Hátrány'}${(h.érték ?? 0) > 0 ? '+' : ''}${h.érték ?? 0}: ${eseményNév(h.cél)}`;
-  if (h.operátor === 'duplázás' || h.operátor === 'arányos') return `×${h.érték ?? 1}: ${eseményNév(h.cél)}`;
-  if (h.operátor === 'max_limit') return `max ${h.érték}: ${eseményNév(h.cél)}`;
-  if (h.operátor === 'enyhít') return `Enyhítés+${h.érték}: ${eseményNév(h.cél)}`;
-  return `${h.operátor} ${h.érték ?? ''}: ${eseményNév(h.cél)}`;
+export function fmtHatás(h: { operátor?: string; hatás?: string; cél: string; érték?: number; megjegyzés?: string }, eseményNév: (id: string) => string): string | null {
+  // Státusz hatások 'operátor' kulcsot, taktika hatások 'hatás' kulcsot használnak.
+  const op = h.operátor ?? h.hatás;
+  if (op === 'szöveges') return h.megjegyzés || null;
+  if (op === 'letilt') return `❌ Letiltva: ${eseményNév(h.cél)}`;
+  if (op === 'előny' || op === 'hátrány') return `${op === 'előny' ? 'Előny' : 'Hátrány'}${(h.érték ?? 0) > 0 ? '+' : ''}${h.érték ?? 0}: ${eseményNév(h.cél)}`;
+  if (op === 'duplázás' || op === 'arányos') return `×${h.érték ?? 1}: ${eseményNév(h.cél)}`;
+  if (op === 'max_limit') return `max ${h.érték}: ${eseményNév(h.cél)}`;
+  if (op === 'enyhít') return `Enyhítés+${h.érték}: ${eseményNév(h.cél)}`;
+  return `${op} ${h.érték ?? ''}: ${eseményNév(h.cél)}`;
 }

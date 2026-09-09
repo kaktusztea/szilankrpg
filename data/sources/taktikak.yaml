@@ -230,29 +230,15 @@ taktikák:
   szűrő_harcmodorok: []
 - név: "Visszafogott"
   id: "visszafogott"
-  fokozatos: true
-  fokok:
-  - fok: 1
-    TÉ: -3
-    hatások:
-    - hatás: "hátrány"
-      érték: -1
-      cél: "sebzésdobás"
-      megjegyzés: "Sebzésdobás: Hátrány-1"
-  - fok: 2
-    TÉ: -6
-    hatások:
-    - hatás: "hátrány"
-      érték: -2
-      cél: "sebzésdobás"
-      megjegyzés: "Sebzésdobás: Hátrány-2"
-  - fok: 3
-    TÉ: -9
-    hatások:
-    - hatás: "szöveges"
-      cél: "sebzésdobás"
-      megjegyzés: "Nincs sebzésdobás, csak a fegyver alap statikus sebzése"
-  megjegyzés: "TÉ levonásért szándékos Hátrány-kocká(k) Sebzésdobásra. Harci anatómia csökkenti TÉ büntetést."
+  fokozatos: false
+  módosítók:
+    TÉ: -10
+  hatások:
+  - hatás: "hátrány"
+    érték: -2
+    cél: "sebzésdobás"
+    megjegyzés: "Sebzésdobás: Hátrány-2"
+  megjegyzés: "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra."
   kombó_mód: "whitelist"
   kombó_lista: ["Kezdeményező", "Kiváró", "1 támadás", "Tettetés"]
   fortély_bővítés: null

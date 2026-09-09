@@ -16,6 +16,16 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
         if not isinstance(t.get('kombó_lista'), list): errors.append(f"{ctx}: 'kombó_lista' nem lista")
         if t.get('fokozatos') and not t.get('fokok'): errors.append(f"{ctx}: fokozatos de nincs 'fokok'")
         if not t.get('fokozatos') and not isinstance(t.get('módosítók', {}), dict): errors.append(f"{ctx}: 'módosítók' nem dict")
+        # Nem-fokozatos taktika opcionális strukturált hatások (előny/hátrány/enyhít/szöveges egy dobáscélra)
+        valid_hatas_operator = {'előny', 'hátrány', 'enyhít', 'szöveges'}
+        valid_hatas_cel = {'té_dobás', 'sebzésdobás', 'cé_dobás'}
+        if not t.get('fokozatos'):
+            for j, h in enumerate(t.get('hatások') or []):
+                hctx = f"{ctx} hatások[{j}]"
+                if h.get('hatás') not in valid_hatas_operator:
+                    errors.append(f"{hctx}: 'hatás' invalid: '{h.get('hatás')}' (érvényes: {valid_hatas_operator})")
+                if h.get('cél') not in valid_hatas_cel:
+                    errors.append(f"{hctx}: 'cél' invalid: '{h.get('cél')}' (érvényes: {valid_hatas_cel})")
         # Megkötések validáció
         for j, mk in enumerate(t.get('megkötések') or []):
             mctx = f"{ctx} megkötések[{j}]"

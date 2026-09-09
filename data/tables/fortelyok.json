@@ -3589,8 +3589,7 @@
         "fok": 1,
         "hatás": [
           "Leütés hátulról Manőver: +2 MP bónusz Ellenpróbánál.",
-          "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál.",
-          "Visszafogott taktika TÉ büntetés: 3-mal csökken."
+          "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
@@ -3624,14 +3623,6 @@
             "forrás": "",
             "arány": 0,
             "feltétel": ""
-          },
-          {
-            "cél": "TÉ",
-            "érték": 3,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "taktika:visszafogott"
           }
         ],
         "próba_enyhítések": []
@@ -3640,8 +3631,7 @@
         "fok": 2,
         "hatás": [
           "Leütés hátulról Manőver: +4 MP bónusz Ellenpróbánál.",
-          "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál.",
-          "Visszafogott taktika TÉ büntetés: 6-mal csökken."
+          "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
@@ -3681,14 +3671,6 @@
             "forrás": "",
             "arány": 0,
             "feltétel": ""
-          },
-          {
-            "cél": "TÉ",
-            "érték": 6,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "taktika:visszafogott"
           }
         ],
         "próba_enyhítések": []
@@ -3698,7 +3680,6 @@
         "hatás": [
           "Leütés hátulról Manőver: +6 MP bónusz Ellenpróbánál.",
           "Precíz támadás Manőver: +6 MP bónusz Ellenpróbánál.",
-          "Visszafogott taktika TÉ büntetés: 9-mal csökken.",
           "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
         ],
         "követelmény": [
@@ -3739,14 +3720,6 @@
             "forrás": "",
             "arány": 0,
             "feltétel": ""
-          },
-          {
-            "cél": "TÉ",
-            "érték": 9,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "taktika:visszafogott"
           }
         ],
         "próba_enyhítések": []

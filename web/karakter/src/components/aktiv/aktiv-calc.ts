@@ -6,7 +6,7 @@ import { buildAktívFeltételek } from '../../engine/feltetelek';
 
 // --- Types ---
 
-export interface HatásEntry { cél: string; operátor: string; érték?: number; megjegyzés?: string }
+export interface HatásEntry { cél: string; operátor?: string; hatás?: string; érték?: number; megjegyzés?: string }
 export interface StátuszPerElem { név: string; alcím?: string; hatások: HatásEntry[] }
 export interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
 interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
@@ -51,6 +51,8 @@ function calcTaktikaHatások(session: Session, data: GameData): TaktikaHatásPer
     if (def.fokozatos && def.fokok && at.fok != null) {
       const fokDef = def.fokok.find(f => f.fok === at.fok);
       if (fokDef?.hatások?.length) result.push({ név: `${def.név} (${at.fok})`, hatások: fokDef.hatások });
+    } else if (!def.fokozatos && def.hatások?.length) {
+      result.push({ név: def.név, hatások: def.hatások });
     }
   }
   return result;

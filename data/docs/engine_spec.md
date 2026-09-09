@@ -1017,7 +1017,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 | Támadó 📶 | TÉ:+1..+3, VÉ:-2..-6 (alap max 3) | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
 | Védő 📶 | VÉ:+1..+3, TÉ:-2..-6 (alap max 3) | Érintő, 1 tám | más |
 | Teljes Védekezés | VÉ:+6, nem támad, hátrál | — | más |
-| Visszafogott | TÉ:-3/-6/-9, Hátrány-1/-2/— sebzésdobás | Kezdeményező, Kiváró, 1 tám, Tettetés | más |
+| Visszafogott | TÉ:-10, Hátrány-2 sebzésdobás | Kezdeményező, Kiváró, 1 tám, Tettetés | más |
 | Tettetés | — (informatív) | Kiváró, Visszafogott | más |
 
 note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
@@ -1026,6 +1026,14 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
       Fárasztás: nem támadás, nem kombinálható mással.
       Körönként maximum 1 manőver alkalmazható.
+      Visszafogott: nem-skálázható taktika. A `-10 TÉ` a `módosítók.TÉ`-ben, a Hátrány-2 sebzésdobás strukturált
+      `hatások` listában (`hatás: hátrány, cél: sebzésdobás`). Nem-fokozatos taktika is hordozhat strukturált
+      `hatások`-at (nem csak `módosítók` map-et) — a combat-roll-info és aktiv-calc a nem-fokozatos ágon is begyűjti.
+      TERV (még nincs implementálva) — jövőbeli fortély a Visszafogott büntetéseit AKTÍV taktika mellett semlegesíti:
+        - TÉ-büntetés: `letilt` a taktika `módosítók.TÉ`-jére (feltétel: `taktika:visszafogott`) — NEM additív +10 (szám-független).
+        - Sebzés-hátrány: `enyhít` a sebzésdobásra (a Hátrány-2-t kioltja, netElőnySzint clamp kezeli).
+        - Sebzés = fegyver alapsebzése, nincs dobás: `szöveges` hatás a sebzésdobásra.
+      A `letilt` taktika-módosítóra ma még nincs engine-mechanika — a fortély implementációjakor épül be.
 
 #### Távharci taktikák
 
@@ -1294,7 +1302,6 @@ note: A manőverek nem adnak statikus harcérték módosítókat — ellenpróba
         - Harci anatómia → `manőver:leütés_hátulról` +2/+4/+6, `manőver:precíz_támadás` +2/+4/+6
         - Lefegyverzés mestere → `manőver:lefegyverzés_fegyvertörés` +2/+4, `manőver:lánccsapda` +2 (2.fok)
       UI: AktivScreen Hatás pool "Manőver bónuszok" szekció gyűjti ezeket.
-      Visszafogott taktika TÉ csökkentés (Harci anatómia): `cél: TÉ, feltétel: "taktika:visszafogott"`, +3/+6/+9.
       Belharcos manőverek: Belharci helyzet szükséges (kivéve Belharcba kerülés).
 
 #### Belharc rendszer összefoglaló

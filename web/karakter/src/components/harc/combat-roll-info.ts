@@ -42,11 +42,13 @@ function extractHatások(hatások: StatuszHatas[] | undefined, forrás: string, 
   const result: DobásHatás[] = [];
   for (const h of hatások) {
     if (!célFilter.has(h.cél)) continue;
-    if (h.operátor !== 'előny' && h.operátor !== 'hátrány' && h.operátor !== 'enyhít' && h.operátor !== 'szöveges') continue;
+    // Státusz hatások 'operátor' kulcsot, taktika hatások 'hatás' kulcsot használnak — mindkettőt elfogadjuk.
+    const op = h.operátor ?? (h as { hatás?: string }).hatás;
+    if (op !== 'előny' && op !== 'hátrány' && op !== 'enyhít' && op !== 'szöveges') continue;
     result.push({
       forrás,
       cél: h.cél as DobásCél,
-      operátor: h.operátor as DobásHatás['operátor'],
+      operátor: op as DobásHatás['operátor'],
       érték: h.érték ?? 0,
       megjegyzés: h.megjegyzés,
     });
@@ -134,6 +136,9 @@ export function collectDobásInfo(session: Session, karakter: Karakter, data: Ga
       }
     } else {
       if (def.módosítók?.SP) spBónuszok.push({ forrás: at.név, érték: def.módosítók.SP });
+      for (const e of extractHatások(def.hatások, at.név, célFilter)) {
+        (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
+      }
     }
   }
 
@@ -186,6 +191,8 @@ export function collectCéDobásInfo(session: Session, karakter: Karakter, data:
     if (def.fokozatos && def.fokok) {
       const fokDef = def.fokok.find(f => f.fok === (at.fok ?? 1));
       if (fokDef) céHatások.push(...extractHatások(fokDef.hatások, `${at.név} (${fokDef.fok})`, célFilter));
+    } else {
+      céHatások.push(...extractHatások(def.hatások, at.név, célFilter));
     }
   }
 
