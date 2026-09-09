@@ -203,27 +203,35 @@ export interface HatterekData {
 }
 
 // --- Konstansok (belső, nem exportált a data-loader-ből) ---
+// A `konstansok.yaml` MINDEN top-level kulcsa deklarált — nincs `[key: string]` catch-all,
+// hogy a yaml ↔ típus drift fordítási hibaként jelentkezzen.
 export interface KonstansokRaw {
+  version: number;
   harcérték_alap: { KÉ: number; TÉ: number; VÉ: number; CÉ: number };
   kp: { perszint: number; szekunder_perszint: number; fortályfok: number; hm: number; cm: number; max_cm_perszint: number };
   kp_bónusz: { analfabéta: number; apró_méretű_lény: number; süketség: number; vakság: number; tartós_sérülés_per_fok: number };
   arányok: { max_tsz: number; max_hm_diff_szintlépésenként: number; képzettség_nemprimer_max_szint_plusz: number; képzettség_max_szint: number; tulajdonság_pont_alap: number; tulajdonság_pont_tsz_bónusz: number; max_cm_perszint: number };
   tulajdonság_pontok: Record<string, number>;
-  páncél_struktúrák: any[];
-  páncél_fémalapanyagok: any[];
+  páncél_struktúrák: {
+    struktúra: string; leírás: string; fém: boolean; merev: boolean; harci_akrobatika: boolean;
+    mgt: number; sfé_fizikai: number; sfé_energia: number; ár_szorzó: number; idea_plusz_minusz: number;
+  }[];
+  páncél_fémalapanyagok: { anyag: string; sfé_bónusz: number; mgt: number; ár_szorzó: number }[];
   páncél_csatolt_tag_mgt: { hajlékonyvért_nem_fém: Record<string, number>; hajlékonyvért_fém: Record<string, number>; merevvért_fém: Record<string, number> };
   mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; CÉ: number; SP: number }[];
   merevvértviselet_bónuszok: { fok: number; TÉ_büntetés_csökkentés: number }[];
-  pajzs_TÉ_büntetés: { méret: string; büntetés: number }[];
+  pajzs_hatások: Record<string, { fok: number; VÉ: number; TÉ: number }[]>;
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;
   kétkezes_harc_max_pengeméret: number;
-  kétkezes_harc_bónuszok: any[];
+  kétkezes_harc_bónuszok: {
+    fok: number; harckeret: number; TÉ: number; VÉ: number; mindkét_fegyver_értékei: boolean; mf: string;
+  }[];
   kétkezes_harc_pengelevonás_osztó: number;
   fegyverfogás_opciók: { id: string; név: string }[];
   locked_fortélyok: string[];
-  egészség_kategória_levonás: any[];
+  egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
   lövéskitérés: Record<string, { max_táv: number; célszám: number }[]>;
   sebesülés_kategóriák_száma: number;
@@ -238,7 +246,31 @@ export interface KonstansokRaw {
   nyelv_fok_nevek: Record<number, string>;
   tulajdonság_sorrend: string[];
   képzettség_csoport_sorrend: { id: string; label: string }[];
-  [key: string]: any;
+
+  // Aura / Misztikus (§34)
+  aura: {
+    mágiaellenállás_konstans: number;
+    aurakiterjesztés_levonás: Record<string, number>;
+    auraerősítés_tábla: { komplexitás: number; bónusz: number }[];
+  };
+  harci_akrobatika: { max_mgt: number };
+  manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number };
+  pinned_taktikák: string[];
+  fegyver_anyagok: string[];
+  páncél_méret_illeszkedés: { fokozat: string; mgt: number }[];
+
+  // Referencia adat: a szabálykönyv szerkezetét dokumentálja, a kód nem olvassa.
+  // (Ha kód lesz rá, innen kell kiindulni — NE hardcode-old a listákat!)
+  aura_bónusz: { nehézség: number; bónusz: number }[];
+  feltétel_prefixek: string[];
+  fortély_csoportok: string[];
+  fortély_követelmény_típusok: string[];
+  háttér_csoportok: string[];
+  képzettség_csoportok: string[];
+  módosító_célok: string[];
+  páncél_védett_terület: Record<string, number>;
+  páncél_ár_szorzó_idea: { idea: number; ár_szorzó: number }[];
+  páncél_ár_szorzó_kidolgozottság: Record<string, number>;
 }
 
 // --- Betöltött adat ---

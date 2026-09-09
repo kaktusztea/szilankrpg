@@ -1,4 +1,5 @@
 import type { Karakter, FegyverAlap } from './types';
+import type { KonstansokRaw } from './data-types';
 
 /** Mesterfegyver fok keresés (canonical, case-insensitive). */
 export function findMfFok(karakter: Karakter, fegyverek: FegyverAlap[], alap: string): number {
@@ -12,6 +13,6 @@ export function findMfFok(karakter: Karakter, fegyverek: FegyverAlap[], alap: st
 }
 
 /** MF bónusz lookup fokszám alapján. */
-export function getMfBónusz(konstansok: { mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; SP: number }[] }, fok: number): { TÉ: number; VÉ: number; SP: number } {
+export function getMfBónusz(konstansok: Pick<KonstansokRaw, 'mesterfegyver_bónuszok'>, fok: number): { TÉ: number; VÉ: number; SP: number } {
   return konstansok.mesterfegyver_bónuszok.find(b => b.fok === fok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
 }

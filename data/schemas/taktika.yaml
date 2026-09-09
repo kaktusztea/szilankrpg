@@ -5,16 +5,17 @@
 taktikák:
   - név: ""                    # kötelező, string
     id: ""                     # kötelező, egyedi azonosító (snake_case, ékezetes)
-    feltétel_kulcs: ""         # kötelező, "taktika:xyz" formátum
+    feltétel_kulcs: ""         # generált (id-ból), "taktika:xyz" formátum — a source yaml-ban NEM szerepel
     fokozatos: false           # kötelező, boolean
+    skálázható: false          # opcionális, boolean — a fok a karakter szintjéhez skálázódik (konstansok.skálázható_taktika_max_fok)
     # Ha fokozatos: false → módosítók dict (opcionális, TÉ/VÉ/KÉ/SP kulcsok)
-    módosítók:
+    módosítók:                 # opcionális (fokozatos: false esetén)
       TÉ: 0
       VÉ: 0
       KÉ: 0
       SP: 0
     # Ha fokozatos: true → fokok lista (mindegyik fok+módosítók)
-    fokok:
+    fokok:                     # opcionális (fokozatos: true esetén)
       - { fok: 1, TÉ: 0, VÉ: 0, KÉ: 0, SP: 0 }
     megjegyzés: ""             # opcionális, string
     # Megkötések: kontextuális feltételek a taktika alkalmazhatóságára

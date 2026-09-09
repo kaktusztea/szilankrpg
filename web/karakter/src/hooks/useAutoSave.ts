@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter, StoredKarakter } from '../engine/types';
 import type { UndoEntry } from './useUndo';
 import { generateIdLeíró } from '../engine/file-ops';
 import { upsertSlotEntry } from './slot-utils';
@@ -29,7 +29,7 @@ export function useAutoSave(
       return;
     }
 
-    const toSave = { ...karakter, _undo: undoStack } as Karakter & { _undo: unknown };
+    const toSave: StoredKarakter = { ...karakter, _undo: undoStack };
     try {
       localStorage.setItem(`szilank_char_${karakter.uid}`, JSON.stringify(toSave));
       localStorage.setItem('szilank_active', karakter.uid);

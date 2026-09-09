@@ -3,16 +3,12 @@
  * against a context of named values (scalars and arrays).
  */
 import { evalFormula } from './reactive-parse';
+import type { KonstansokRaw } from './data-types';
 
 export interface Rule {
   id: string;
   formula: string;
   inputs: string[];
-}
-
-export interface RulesFile {
-  version: number;
-  rules: Rule[];
 }
 
 export type Context = Map<string, number>;
@@ -61,7 +57,7 @@ export function filterFegyverRules(rules: Rule[]): Rule[] {
 export function buildContext(
   tulajdonságok: Record<string, number> | object,
   tsz: number,
-  konstansok: { harcérték_alap: Record<string, number>; kp: Record<string, number>; arányok: Record<string, number>; kp_bónusz?: Record<string, number>; [key: string]: unknown },
+  konstansok: KontextusKonstansok,
   extras?: Record<string, number>,
 ): Context {
   const ctx: Context = new Map();
@@ -97,11 +93,18 @@ export function buildContext(
 }
 
 /**
+ * A buildContext által olvasott konstansok szeletek (a `KonstansokRaw`-ból származtatva,
+ * hogy a yaml ↔ típus drift itt is fordítási hiba legyen). `Pick`, hogy a tesztek
+ * részleges konstansok objektumot adhassanak.
+ */
+export type KontextusKonstansok = Pick<KonstansokRaw, 'harcérték_alap' | 'kp' | 'arányok' | 'kp_bónusz'>;
+
+/**
  * Build array context from character data (képzettségek, fortélyok, etc.)
  */
 export function buildArrayContext(
   képzettségek: { név: string; szint: number }[],
-  fortélyok: readonly { név: string; fok: number }[],
+  fortélyok: readonly { név: string; fok: number; kiérdemelt?: boolean }[],
   kepzettsegKpTable: { szint: number; kp: number }[],
   fortelyKpMap?: Map<string, number>,
   harciFortelyNevek?: Set<string>,
@@ -125,11 +128,11 @@ export function buildArrayContext(
   // Kiérdemelt fortélyok: soha nem kerülnek KP-ba
   // Szabad fortélyok: az első TSz db ingyenes (nem kerül be a KP összegbe)
   const kpFortélyok = fortélyok.filter(f => {
-    if ((f as any).kiérdemelt) return false;
+    if (f.kiérdemelt) return false;
     if (!fortelyKpMap) return true;
     const perFok = fortelyKpMap.get(f.név) ?? 6;
     if (perFok <= 0) return false;
-    if (opts?.szabadFortelyNevek?.has(f.név) && !(f as any).kiérdemelt && szabadCount < szabadIngyenesDb) {
+    if (opts?.szabadFortelyNevek?.has(f.név) && !f.kiérdemelt && szabadCount < szabadIngyenesDb) {
       szabadCount++;
       return false;
     }
@@ -162,7 +165,7 @@ export function buildArrayContext(
     const kiemelt: Record<string, number | string>[] = [];
     for (const d of opts.ingyenesFortelyok) {
       const ingyenesDb = Math.floor((opts.tsz + 1) / d.ingyenes_perszint);
-      const felvettDb = fortélyok.filter(f => f.név === d.név && !(f as any).kiérdemelt).reduce((s, f) => s + f.fok, 0);
+      const felvettDb = fortélyok.filter(f => f.név === d.név && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0);
       const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
       if (fizetősDb > 0) {
         kiemelt.push({ fizetős_kp: fizetősDb * d.kp_perfok });
@@ -181,7 +184,7 @@ export function buildArrayContext(
   if (opts?.primerFortNevek && fortelyKpMap) {
     const primerFort: Record<string, number | string>[] = [];
     for (const f of fortélyok) {
-      if ((f as any).kiérdemelt) continue;
+      if (f.kiérdemelt) continue;
       if (opts.primerFortNevek.has(f.név)) {
         const perFok = fortelyKpMap.get(f.név) ?? 6;
         if (perFok > 0) primerFort.push({ kp: f.fok * perFok });

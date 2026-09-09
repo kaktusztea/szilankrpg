@@ -80,16 +80,3 @@ export function makeFajSetter(
     setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev);
   };
 }
-
-/** Generic undo-wrapping setKarakter (fixed label). */
-export function makeUndoKarakterSetter(
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
-  setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
-  undoLabel: string,
-) {
-  return (updater: React.SetStateAction<Karakter | null>) => {
-    // No explicit patches — pushUndo will snapshot the full karakter as fallback
-    pushUndo(undoLabel);
-    setKarakter(updater);
-  };
-}

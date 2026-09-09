@@ -124,7 +124,7 @@ export function calcCÉ(p: { céAlap: number; önuralom: number; CM: number; har
 }
 
 /** Mágikus vs normál CÉ input — kategória alapján adaptálja az értékeket */
-export function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number) {
+function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number) {
   const isMágikus = def?.Kategória === 'mágikus';
   const mágikusTulajdonságCÉ = k.tsz + (k.tulajdonságok.gyorsaság ?? 0) + (k.tulajdonságok.intelligencia ?? 0);
   return {

@@ -18,7 +18,7 @@ const SZOCIÁLIS_NEVEK = new Set(['Befolyásolás', 'Etikett', 'Emberismeret']);
 /** Érzék képzettségek */
 const ÉRZÉK_NEVEK = new Set(['Észlelés']);
 
-export interface PróbaEHEredmény {
+interface PróbaEHEredmény {
   /** Összesített EH szint (clamp [-2, +2]) */
   szint: number;
   /** Automatikus kudarc (letilt operátor) */

@@ -3,7 +3,7 @@ import type { Karakter } from '../../engine/types';
 
 export interface KpDetail { név: string; szint?: number; fok?: number; spec?: string; kp: number }
 
-export interface PrimerKpData {
+interface PrimerKpData {
   kp_hm_cm: number;
   kp_harcmodor: number;
   kp_misztikus: number;

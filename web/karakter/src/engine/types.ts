@@ -160,6 +160,12 @@ export interface Karakter {
   session: Session;
 }
 
+/**
+ * Tárolt/mentett karakter: a `Karakter` + az undo stack, ahogy a localStorage-ban
+ * és a mentett fájlokban szerepel. Az `_undo` NEM része a séma-validációnak.
+ */
+export type StoredKarakter = Karakter & { _undo?: unknown };
+
 // ============================================================
 // Default előtörténet (betöltéskor hiányzó előtörténet pótlása)
 // ============================================================
@@ -304,106 +310,4 @@ export interface TavfegyverAlap {
   Kategória?: string;
   Harcmodor?: string;
   'Speciális / Megjegyzés'?: string;
-}
-
-// ============================================================
-// Konstansok
-// ============================================================
-
-export interface HarcertekAlap {
-  KÉ: number;
-  TÉ: number;
-  VÉ: number;
-  CÉ: number;
-}
-
-export interface MesterfegyverBonusz {
-  fok: number;
-  TÉ: number;
-  VÉ: number;
-  CÉ: number;
-  SP: number;
-}
-
-export interface PancelStruktura {
-  struktúra: string;
-  leírás: string;
-  fém: boolean;
-  merev: boolean;
-  mgt: number;
-  sfé_fizikai: number;
-  sfé_energia: number;
-  ár_szorzó: number;
-  idea_plusz_minusz: number;
-}
-
-export interface PancelFemalapanyag {
-  anyag: string;
-  sfé_bónusz: number;
-  mgt: number;
-  ár_szorzó: number;
-}
-
-export interface KpConfig {
-  perszint: number;
-  szekunder_perszint: number;
-  fortélyfok: number;
-  hm: number;
-  cm: number;
-  max_cm_perszint: number;
-}
-
-export interface Aranyok {
-  max_tsz: number;
-  max_hm_diff_szintlépésenként: number;
-  képzettség_nemprimer_max_szint_plusz: number;
-  képzettség_max_szint: number;
-  tulajdonság_pont_alap: number;
-  tulajdonság_pont_tsz_bónusz: number;
-  max_cm_perszint: number;
-}
-
-// ============================================================
-// Származtatott értékek (engine output — NEM mentjük)
-// ============================================================
-
-export interface FegyverHarcertekek {
-  fegyver_név: string;
-  TÉ: number;
-  VÉ: number;
-  CÉ: number;
-  SP: number;
-  támadások: number;
-  pengehossz: number;
-  sebzésmód: string;
-}
-
-export interface PancelErtekek {
-  sfé_fizikai: number;
-  sfé_energia: number;
-  MGT: number;
-  merevvért_TÉ_büntetés: number;
-  lefedettség: number;
-}
-
-export interface SzarmaztatottErtekek {
-  ÉP: number;
-  S1_max: number;
-  S2_max: number;
-  S3_max: number;
-  S4_max: number;
-  KÉ: number;
-  összes_kp: number;
-  összes_szekunder_kp: number;
-  spec_kp: number;
-  elköltött_kp: number;
-  maradék_kp: number;
-  tulajdonság_pont_keret: number;
-  tulajdonság_pont_maradék: number;
-  manőver_pont: number;
-  felszerelés_mgt: number;
-  fegyverek: FegyverHarcertekek[];
-  páncél: PancelErtekek;
-  max_HM: number;
-  max_CM: number;
 }

@@ -52,6 +52,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 ### Strict schema
 - Minden YAML source explicit tartalmaz minden sémamezőt (nincs implicit default)
 - Új mező: schema + ÖSSZES source yaml frissítendő
+- **Gépi ellenőrzés**: `generate_tables.py` a `schemas/*.yaml`-hoz méri a source-okat (ismeretlen kulcs vagy hiányzó kötelező mező → build hiba). A séma megjegyzései adják a kötelezőséget: `# opcionális`, `# generált`
 
 ### UI konvenciók
 - CSS class (prefix: `he-`, `aktiv-`, `naplo-`, stb.) — NEM inline style

@@ -1,5 +1,5 @@
 import { MAX_KARAKTER_DB } from '../ui-constants';
-import type { Karakter } from '../engine/types';
+import type { Karakter, StoredKarakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { isValidKarakter } from '../engine/validate';
 import { sanitizeUndo } from './useUndo';
@@ -80,7 +80,7 @@ export function loadSlotKarakter(uid: string): { karakter: Karakter; undo: any[]
         session: { ...DEFAULT_SESSION, ...parsed.session },
         checkpoints: parsed.checkpoints || [],
       },
-      undo: sanitizeUndo((parsed as { _undo?: unknown })._undo),
+      undo: sanitizeUndo((parsed as StoredKarakter)._undo),
     };
   } catch {
     return null;

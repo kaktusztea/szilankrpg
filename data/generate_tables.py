@@ -7,6 +7,7 @@ Usage: python3 data/generate_tables.py
 """
 
 import yaml, json, os, sys, hashlib
+from functools import lru_cache
 
 # Hungarian alphabetical sort key: normalize accented chars for ordering.
 # Á→A+suffix, É→E+suffix, etc. so they sort right after their base letter.
@@ -23,6 +24,7 @@ def hu_sort_key(s: str) -> str:
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = SCRIPT_DIR
 SOURCES_DIR = os.path.join(DATA_DIR, 'sources')
+SCHEMAS_DIR = os.path.join(DATA_DIR, 'schemas')
 TABLES_DIR = os.path.join(DATA_DIR, 'tables')
 HASH_FILE = os.path.join(TABLES_DIR, '.sources_hash')
 
@@ -76,6 +78,60 @@ def load_yaml(path):
         return yaml.safe_load(f)
 
 
+# ============================================================
+# Séma validáció
+# ============================================================
+# A `schemas/*.yaml` fájlok eddig csak dokumentációk voltak. Itt gépivé tesszük őket:
+# minden source entitás kulcshalmazát a sémához mérjük. A kötelezőséget a séma
+# meglévő megjegyzés-konvenciója adja:
+#   `# opcionális ...` → a source-ban elhagyható
+#   `# generált ...`   → a source-ban NEM szerepel (a generátor adja hozzá)
+#   bármi más          → kötelező (AGENTS.md: strict schema, nincs implicit default)
+
+@lru_cache(maxsize=None)
+def _schema_fields(schema_name, root_key=None):
+    """(kulcsok, opcionális, generált) halmazok a séma yaml-ból + a megjegyzéseiből."""
+    path = os.path.join(SCHEMAS_DIR, f'{schema_name}.yaml')
+    doc = load_yaml(path)
+    if root_key:
+        node = doc[root_key]
+        node = node[0] if isinstance(node, list) else node
+    else:
+        node = doc
+    fields = set(node.keys())
+
+    optional, generated = set(), set()
+    for line in open(path, encoding='utf-8'):
+        if '#' not in line:
+            continue
+        key_part, comment = line.split('#', 1)
+        # "  - kulcs: érték   # megjegyzés" → "kulcs"
+        key = key_part.strip().lstrip('- ').split(':')[0].strip()
+        if key not in fields:
+            continue
+        if 'opcionális' in comment:
+            optional.add(key)
+        elif 'generált' in comment:
+            generated.add(key)
+    return fields, optional, generated
+
+
+def validate_schema(schema_name, docs, label, root_key=None, name_key='név'):
+    """Strict séma ellenőrzés: ismeretlen kulcs vagy hiányzó kötelező mező → hiba."""
+    fields, optional, generated = _schema_fields(schema_name, root_key)
+    required = fields - optional - generated
+    errors = []
+    for doc in docs:
+        keys = set(doc.keys())
+        who = doc.get(name_key) or doc.get('id') or '(névtelen)'
+        for k in sorted(keys - fields):
+            errors.append(f'{label} [{who}]: ismeretlen kulcs "{k}" (nincs a {schema_name} sémában)')
+        for k in sorted(required - keys):
+            errors.append(f'{label} [{who}]: hiányzó kötelező mező "{k}"')
+    if errors:
+        raise SystemExit('SÉMA HIBA:\n  ' + '\n  '.join(errors))
+
+
 def generate_konstansok():
     """konstansok.yaml → konstansok.json"""
     data = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
@@ -97,6 +153,7 @@ def generate_kepzettsegek():
                 continue
             data = load_yaml(os.path.join(root, f))
             ctx = f"kepzettsegek/{os.path.relpath(os.path.join(root, f), kdir)}"
+            validate_schema('kepzettseg', [data], ctx)
             if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
             if not data.get('csoport'): errors.append(f"{ctx}: hiányzó 'csoport'")
             if not isinstance(data.get('primer', False), bool): errors.append(f"{ctx}: 'primer' nem boolean")
@@ -147,6 +204,7 @@ def generate_fortelyok():
                 continue
             data = load_yaml(os.path.join(root, f))
             ctx = f"fortelyok/{os.path.relpath(os.path.join(root, f), fdir)}"
+            validate_schema('fortely', [data], ctx)
             if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
             if data.get('csoport', '') not in valid_csoportok: errors.append(f"{ctx}: 'csoport' invalid: '{data.get('csoport')}'")
             if not isinstance(data.get('maxfok', 1), int): errors.append(f"{ctx}: 'maxfok' nem szám")
@@ -230,6 +288,7 @@ def generate_fortelyok():
                 continue
             data = load_yaml(os.path.join(root, f))
             ctx = f"fortelyok/{os.path.relpath(os.path.join(root, f), fdir)}"
+            validate_schema('fortely', [data], ctx)
             for fok in (data.get('fokok') or []):
                 for mod in (fok.get('módosítók') or []):
                     if isinstance(mod, str) or not mod:
@@ -301,6 +360,7 @@ def generate_fajok():
             continue
         data = load_yaml(os.path.join(fdir, f))
         ctx = f"fajok/{f}"
+        validate_schema('faj', [data], ctx)
         if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
         tk = data.get('tulajdonság_keretek', {})
         if not tk: errors.append(f"{ctx}: hiányzó 'tulajdonság_keretek'")
@@ -375,7 +435,8 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
 
 
 def generate_aktiv_ful():
-    """taktikak.yaml, harci_helyzetek.yaml, manoverek.yaml, statuszok.yaml, hatas_operatorok.yaml, esemenyek.yaml, hatasok.yaml → JSON"""
+    """taktikak.yaml, harci_helyzetek.yaml, manoverek.yaml, statuszok.yaml, hatas_operatorok.yaml, esemenyek.yaml → JSON
+    (hatasok.yaml csak validációhoz töltődik be, nincs JSON kimenete)"""
     taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))['taktikák']
     helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek']
     manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))['manőverek']
@@ -385,6 +446,12 @@ def generate_aktiv_ful():
     hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatások']
     hatterek = load_yaml(os.path.join(SOURCES_DIR, 'hatterek.yaml'))
 
+    validate_schema('taktika', taktikak, 'taktikak.yaml', root_key='taktikák')
+    validate_schema('harci_helyzet', helyzetek, 'harci_helyzetek.yaml', root_key='harci_helyzetek')
+    validate_schema('manover', manoverek, 'manoverek.yaml', root_key='manőverek')
+    validate_schema('statusz', statuszok, 'statuszok.yaml', root_key='státuszok')
+    validate_schema('esemeny', esemenyek, 'esemenyek.yaml', root_key='események')
+    validate_schema('hatas', hatas_operatorok, 'hatas_operatorok.yaml', root_key='hatás_operátorok')
     validate_aktiv_ful(taktikak, helyzetek, [], manoverek)
     validate_hatasok(hatas_operatorok)
     validate_esemenyek(esemenyek)
@@ -402,7 +469,7 @@ def generate_aktiv_ful():
     write_json('manoverek.json', manoverek)
     write_json('hatas_operatorok.json', hatas_operatorok)
     write_json('esemenyek.json', esemenyek)
-    write_json('hatasok.json', hatasok)
+    # hatasok.json NEM generálódik: az app nem tölti be, csak a validáció használja
     # Statuszok: default mezők biztosítása
     for s in statuszok:
         s.setdefault('többszörös', False)

@@ -12,3 +12,9 @@ harci_helyzetek:
     tiltott_fegyverfogások: [] # opcionális, lista (ezen fegyverfogások disabled amíg ez a helyzet aktív)
     csoport: ""                # kötelező, "játékos" | "km" — picker csoportosítás
     rejtett: false             # opcionális, bool (ha true: nem jelenik meg a picker-ben, automatikus)
+    # Fegyver-szintű override: adott feltétel esetén a fegyver harcértékeit felülírja
+    fegyver_override:          # opcionális
+      feltétel:
+        - { forrás: "", operátor: "", érték: 0 }
+      módosítók:
+        - { cél: "", érték: 0, mód: "override" }

@@ -41,7 +41,7 @@ export function Popups({
   const { ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget } = state;
   const { konstansok } = data;
 
-  const pancelIdeaRange = (konstansok.páncél_struktúrák as any[])
+  const pancelIdeaRange = konstansok.páncél_struktúrák
     .find(s => s.struktúra === k.páncél.alap)?.idea_plusz_minusz ?? 0;
 
   return (

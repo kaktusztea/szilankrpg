@@ -1,4 +1,4 @@
-import type { Karakter } from './types';
+import type { Karakter, StoredKarakter } from './types';
 import type { GameData } from './data-loader';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
 import { validateKarakter, validateKarakterData } from './validate';
@@ -45,7 +45,7 @@ export function generateSaveFile(karakter: Karakter, undoStack: any[], mode: 'si
   let filename: string;
 
   if (mode === 'single') {
-    const saved = { ...karakter, mentés_dátum: dátum, _undo: undoStack } as any;
+    const saved: StoredKarakter = { ...karakter, mentés_dátum: dátum, _undo: undoStack };
     json = JSON.stringify(saved, null, 2);
     const charRaw = (karakter.becenév || karakter.név || 'karakter');
     const charAscii = charRaw.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_').replace(/[^a-zA-Z_-]/g, '').toLowerCase();

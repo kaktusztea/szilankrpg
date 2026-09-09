@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter, StoredKarakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile, downloadFile, shareFile } from '../engine/file-ops';
@@ -69,9 +69,9 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
   async function saveSlotToFile(slotUid: string, action: 'download' | 'share') {
     const charData = localStorage.getItem(`szilank_char_${slotUid}`);
     if (!charData) return;
-    let parsed: Karakter & { _undo?: unknown };
+    let parsed: StoredKarakter;
     try { parsed = JSON.parse(charData); } catch { setOverlay('toast', { msg: 'Hiba a mentés generálásakor.', type: 'error' }); return; }
-    const undo = sanitizeUndo((parsed as any)._undo);
+    const undo = sanitizeUndo(parsed._undo);
     const { blob, filename } = generateSaveFile(parsed, undo, 'single');
     if (action === 'download') downloadFile(blob, filename);
     else await shareFile(blob, filename);
@@ -107,7 +107,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     if (karakter?.uid === uid) {
       if (sl.length > 0) {
         const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
-        if (next) { const p = JSON.parse(next); setKarakter({ ...p, előtörténet: { ...DEFAULT_ELOTORTENET, ...p.előtörténet }, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack(sanitizeUndo((p as any)._undo)); }
+        if (next) { const p = JSON.parse(next) as StoredKarakter; setKarakter({ ...p, előtörténet: { ...DEFAULT_ELOTORTENET, ...p.előtörténet }, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack(sanitizeUndo(p._undo)); }
       } else if (data) {
         setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
         setUndoStack([]);

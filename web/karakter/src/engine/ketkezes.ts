@@ -1,19 +1,14 @@
 import type { FegyverAlap, Karakter } from './types';
+import type { KonstansokRaw } from './data-types';
 
 interface KétkezesInput {
   jobbFp: { alap: string };
   balFp: { alap: string };
   fegyverek: FegyverAlap[];
   karakter: Karakter;
-  konstansok: {
-    kétkezes_harc_max_pengeméret: number;
-    kétkezes_harc_pengelevonás_osztó: number;
-    kétkezes_harc_bónuszok: { fok: number; harckeret: number; TÉ: number; VÉ: number; mindkét_fegyver_értékei: boolean; mf: string }[];
-    mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; SP: number }[];
-    fegyver_kategória_harcmodor: Record<string, string>;
-    harcérték_alap: { TÉ: number; VÉ: number };
-    [key: string]: unknown;
-  };
+  konstansok: Pick<KonstansokRaw,
+    'kétkezes_harc_max_pengeméret' | 'kétkezes_harc_pengelevonás_osztó' | 'kétkezes_harc_bónuszok'
+    | 'mesterfegyver_bónuszok' | 'fegyver_kategória_harcmodor' | 'harcérték_alap'>;
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number }[];
   fortelyMods: Record<string, number>;
   páncélMGT?: number;

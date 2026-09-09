@@ -30,11 +30,11 @@ export function getHarcmodorok(data: GameData): string[] {
   return [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
 }
 
-export function getKözelharciHmSet(data: GameData): Set<string> {
+function getKözelharciHmSet(data: GameData): Set<string> {
   return new Set(getHarcmodorok(data));
 }
 
-export function getTávharciHmSet(data: GameData): Set<string> {
+function getTávharciHmSet(data: GameData): Set<string> {
   return new Set(
     data.kepzettsegDefs.find(d => d.név === 'Távolsági harcmodor')?.többszörös ?? []
   );
@@ -100,7 +100,7 @@ export function mfKövetelményText(data: GameData, k: Karakter, fegyverAlap: st
 
 // --- Harci képzettségek ---
 
-export function getAllHarciNames(data: GameData): string[] {
+function getAllHarciNames(data: GameData): string[] {
   const harciDefs = data.kepzettsegDefs.filter(d => d.csoport === 'harci');
   const names: string[] = [];
   for (const d of harciDefs) {

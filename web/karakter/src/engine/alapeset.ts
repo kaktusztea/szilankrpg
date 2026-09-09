@@ -1,5 +1,6 @@
 import type { Session, Karakter } from './types';
 import { evaluateFeltétel } from './utils';
+import type { FortelySummary } from './data-types';
 
 export interface AktívAlapeset {
   fortély_név: string;
@@ -12,7 +13,7 @@ export interface AktívAlapeset {
  * Aktív ha: karakter NEM rendelkezik a fortéllyal ÉS feltétel teljesül.
  */
 export function evaluateAlapesetek(
-  fortelyDefs: { név: string; fokok: { fok: number; hatás: string[]; módosítók: any[] }[] }[],
+  fortelyDefs: readonly Pick<FortelySummary, 'név' | 'fokok'>[],
   karakter: Karakter,
   session: Session,
   aktívFeltételek?: Set<string>

@@ -151,9 +151,6 @@
 .fullscreen-overlay-title { margin-left: 10px; font-weight: bold; color: var(--text); }
 .fullscreen-overlay-body { flex: 1; overflow: auto; padding: 12px; }
 
-/* --- 7. URL Share --- */
-.slot-share-btn { color: var(--color-taktika); cursor: pointer; font-size: 14px; margin-right: 8px; }
-
 .share-popup-label { font-weight: bold; }
 .share-popup-msg { font-size: 13px; color: var(--text); text-align: center; }
 .share-popup-input {
@@ -210,23 +207,6 @@
 .backup-restore-limit { font-size: 12px; color: var(--warning); text-align: center; }
 .backup-restore-date { font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 4px; }
 .backup-confirm-summary { font-size: 14px; color: var(--text); text-align: center; line-height: 1.6; }
-
-/* --- 11. Save options popup --- */
-.save-options-sub {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-left: 16px;
-}
-.menu-item-sub {
-  font-size: 14px;
-  padding: 8px 14px;
-  text-align: left;
-}
-.menu-item-disabled {
-  opacity: 0.4;
-  cursor: default;
-}
 
 /* Save info button & panel */
 .save-row-with-info {

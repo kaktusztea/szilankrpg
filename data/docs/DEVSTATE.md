@@ -70,7 +70,7 @@ TODO:
 
 ### Fegyverek / Páncél
 - MK fegyverek: 2 entry (1K/2K), 1 kártya Harcértékek fülön
-- Pattern fájlok: `tables/*_pattern.json`; Pajzs hozzáfűzve fegyverek.json-hoz
+- Pattern fájlok: `data/patterns/*_pattern.json` (kézzel szerkesztett md→json konfig, NEM generált); Pajzs hozzáfűzve fegyverek.json-hoz
 - Részletek → engine_spec §5-§13, §26-§27
 
 ### Taktikák / Helyzetek
@@ -85,6 +85,7 @@ TODO:
 
 ### Build pipeline
 - `generate_tables.py`: YAML → JSON (Vite buildStart + prebuild)
+  - **Séma validáció**: minden source entitás kulcshalmazát a `schemas/*.yaml`-hoz méri (ismeretlen kulcs / hiányzó kötelező mező → build hiba). Kötelezőség a séma megjegyzéseiből: `# opcionális` → elhagyható, `# generált` → a generátor adja hozzá
   - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
   - Marker fájl: `tables/.generated_marker` — Vite plugin ezt nézi freshness check-hez
   - `--force` flag: kényszerített újragenerálás (`python3 generate_tables.py --force`)

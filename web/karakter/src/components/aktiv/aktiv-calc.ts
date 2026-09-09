@@ -9,9 +9,9 @@ import { buildAktívFeltételek } from '../../engine/feltetelek';
 export interface HatásEntry { cél: string; operátor: string; érték?: number; megjegyzés?: string }
 export interface StátuszPerElem { név: string; alcím?: string; hatások: HatásEntry[] }
 export interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
-export interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
-export interface HelyzetFortélyEntry { név: string; fok: number; hatás: string; aktív: boolean }
-export interface ManőverBónusz { név: string; manőver: string; érték: number }
+interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
+interface HelyzetFortélyEntry { név: string; fok: number; hatás: string; aktív: boolean }
+interface ManőverBónusz { név: string; manőver: string; érték: number }
 export interface AktivCalcData {
   státuszPerElem: StátuszPerElem[];
   taktikaHatásPerElem: TaktikaHatásPerElem[];
@@ -25,7 +25,7 @@ export interface AktivCalcData {
 
 // --- Sub-calculators ---
 
-export function calcStátuszHatások(session: Session, data: GameData): StátuszPerElem[] {
+function calcStátuszHatások(session: Session, data: GameData): StátuszPerElem[] {
   const result: StátuszPerElem[] = [];
   for (const st of session.aktív_státuszok) {
     const match = st.match(/^(.+) \((\d+)\)$/);
@@ -37,13 +37,13 @@ export function calcStátuszHatások(session: Session, data: GameData): Státusz
     const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
     if (fokDef) {
       const hatások = fokDef.hatások.map(h => subName ? { ...h, cél: `${h.cél} (${subName.toLowerCase()})` } : h);
-      result.push({ név: st, alcím: (fokDef as any).alcím, hatások });
+      result.push({ név: st, alcím: fokDef.alcím, hatások });
     }
   }
   return result;
 }
 
-export function calcTaktikaHatások(session: Session, data: GameData): TaktikaHatásPerElem[] {
+function calcTaktikaHatások(session: Session, data: GameData): TaktikaHatásPerElem[] {
   const result: TaktikaHatásPerElem[] = [];
   for (const at of session.aktív_taktikák) {
     const def = data.taktikak.find(t => t.név === at.név);
@@ -77,7 +77,7 @@ function extractHelyzetKötés(feltétel: unknown): string {
   return '';
 }
 
-export function calcFortélyPool(
+function calcFortélyPool(
   karakter: Karakter, data: GameData, aktívFeltételek: Set<string>,
 ): { fortélyEmlékeztetők: FortélyEmlékeztető[]; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; taktikaFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[] } {
   const fortélyEmlékeztetők: FortélyEmlékeztető[] = [];
@@ -130,12 +130,12 @@ export function calcFortélyPool(
   return { fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok };
 }
 
-export function calcAlapesetPool(
+function calcAlapesetPool(
   data: GameData, karakter: Karakter, session: Session,
   aktívFeltételek: Set<string>,
   helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>,
 ): AktívAlapeset[] {
-  const alapesetek = evaluateAlapesetek(data.fortelySummaries as any, karakter, session, aktívFeltételek);
+  const alapesetek = evaluateAlapesetek(data.fortelySummaries, karakter, session, aktívFeltételek);
   return alapesetek.filter(ae => {
     const hFelt = ae.módosítók.find(m => m.feltétel?.startsWith('harci_helyzet:'));
     if (hFelt) {

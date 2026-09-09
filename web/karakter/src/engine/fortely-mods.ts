@@ -25,7 +25,7 @@ export function calcFortelyMods(
       }
     }
   }
-  for (const ae of evaluateAlapesetek(data.fortelySummaries as any, k, session, aktívFeltételek)) {
+  for (const ae of evaluateAlapesetek(data.fortelySummaries, k, session, aktívFeltételek)) {
     for (const mod of ae.módosítók) {
       if (mod.mód === 'flat' && mod.cél in mods) {
         mods[mod.cél] = (mods[mod.cél] ?? 0) + mod.érték;

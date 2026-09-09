@@ -23,10 +23,10 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
 
   // Aura computation
-  const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, konstansok as any, {});
+  const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, konstansok, {});
   const computed = evaluate(data.rules, ctx);
   const aura = computed.get('Aura') ?? 0;
-  const me = aura + (konstansok as any).aura.mágiaellenállás_konstans;
+  const me = aura + konstansok.aura.mágiaellenállás_konstans;
 
   // Section context (shared across all sections)
   const sectionCtx: SectionContext = {

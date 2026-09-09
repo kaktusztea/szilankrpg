@@ -3,12 +3,13 @@ import type { Karakter, Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
 
 /** Extrapolált fokDef interpoláció: ha a keresett fok nincs a fokok listában de van fortély_bővítés. */
-export function interpolateFokDef<T extends Record<string, unknown>>(fokok: T[], fok: number, hasBővítés: boolean): T | undefined {
-  const found = fokok.find((f: any) => f.fok === fok);
+export function interpolateFokDef<T extends { fok: number }>(fokok: T[], fok: number, hasBővítés: boolean): T | undefined {
+  const found = fokok.find(f => f.fok === fok);
   if (found) return found;
   if (!hasBővítés || fokok.length === 0) return undefined;
-  const utolsó = fokok[fokok.length - 1] as any;
-  const result: any = { fok };
+  const utolsó = fokok[fokok.length - 1];
+  // Lineáris extrapoláció az utolsó definiált fokból: minden numerikus mező arányosan skálázódik
+  const result: Record<string, unknown> = { fok };
   for (const [k, v] of Object.entries(utolsó)) {
     if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') result[k] = Math.round((v / utolsó.fok) * fok);
   }

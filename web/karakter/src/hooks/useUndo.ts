@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter, StoredKarakter } from '../engine/types';
 import { UNDO_MAX } from '../ui-constants';
 
 /**
@@ -151,8 +151,8 @@ export function useUndo(
     const entry: UndoEntry = patches
       ? { timestamp: Date.now(), leírás, patches }
       : (() => {
-          const clone = structuredClone(k);
-          delete (clone as any)._undo;
+          const clone = structuredClone(k) as StoredKarakter;
+          delete clone._undo;
           const { jegyzetek: _n, napló: _na, ...rest } = clone;
           const allPatches: UndoPatch[] = Object.entries(rest).map(
             ([field, prev]) => ({ field, prev })

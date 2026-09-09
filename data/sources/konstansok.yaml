@@ -68,11 +68,13 @@ fortély_csoport_sorrend:
 # ============================================================
 
 # Követelmény típusok (fortélyoknál)
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 fortély_követelmény_típusok:
   - képzettség           # harcmodor képzettségek is ide tartoznak
   - mesterfegyver        # egyetlen megengedett fortély-követelmény
 
 # Módosító célok (fortély hatásoknál, egészség levonásoknál, stb.)
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 módosító_célok:
   - KÉ
   - TÉ
@@ -86,6 +88,7 @@ módosító_célok:
 
 # Feltétel prefixek (módosítók feltétel mezőjében)
 # "" = mindig aktív. Egyébként "prefix:érték" formátum.
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 feltétel_prefixek:
   - "szituáció"           # pl. "szituáció:belharc", "szituáció:roham"
   - "harci_helyzet"       # pl. "harci_helyzet:meglepetés", "harci_helyzet:hátulról_támadás"
@@ -237,6 +240,7 @@ páncél_struktúrák:
     ár_szorzó: 100
     idea_plusz_minusz: 3
 
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 páncél_védett_terület:      # százalékban
   torzó: 50
   sisak: 10
@@ -298,11 +302,13 @@ páncél_fémalapanyagok:
     mgt: -6
     ár_szorzó: 100000
 
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 páncél_ár_szorzó_kidolgozottság:
   pocsék: 0.5
   átlagos: 1
   mestermunka: 100
 
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 páncél_ár_szorzó_idea:
   - idea: -4
     ár_szorzó: 0.1
@@ -478,6 +484,7 @@ pajzs_hatások:
 # Aura bónusz tábla
 # ============================================================
 
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 aura_bónusz:
   - nehézség: 9
     bónusz: 1
@@ -500,8 +507,11 @@ aura_bónusz:
 # Csoportok
 # ============================================================
 
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 háttér_csoportok: [faj, leíró, karma]
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 fortély_csoportok: [általános, érzékek, harci, kiemelt, mágia.metódusok, misztikus, szabad, távharc]
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 képzettség_csoportok: [harci, fizikai, világi, alvilági, művészeti, tudományos, faj misztériumok, misztikus, mágikus szférák és arkánumaik, papi mágia]
 
 # ============================================================

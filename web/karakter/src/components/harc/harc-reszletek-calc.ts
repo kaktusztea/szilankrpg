@@ -9,7 +9,7 @@ export interface KétkezesBontás {
   kisebb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };
 }
 
-export interface ReszletekData {
+interface ReszletekData {
   fegyverNév: string;
   kategória: string;
   harcmodorNév: string;

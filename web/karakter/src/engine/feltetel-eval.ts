@@ -1,7 +1,7 @@
 import type { Session } from './types';
 import type { Context, StringContext } from './reactive';
 
-export interface FeltételEvaluator {
+interface FeltételEvaluator {
   getFeltételÉrték(forrás: string): number | boolean | string | undefined;
   feltételTeljesül(feltétel: unknown): boolean;
 }

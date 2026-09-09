@@ -7,7 +7,7 @@ import type { Session, Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { HarciHelyzetEntry, TaktikaEntry, StatuszHatas, FortelySummary } from '../../engine/data-types';
 
-export type DobásCél = 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
+type DobásCél = 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
 
 export interface DobásHatás {
   forrás: string;
