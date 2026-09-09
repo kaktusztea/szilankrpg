@@ -31,7 +31,7 @@ fokok:
     érték: 1
     típus: "fortély"
   hatástext:
-  - text: "Fegyvertörés Manőver: +2 MP bónusz Ellenpróbánál."
+  - text: "Fegyvertörés Manőverre +2 MP bónusz Ellenpróbánál. (E)"
   módosítók:
   - cél: "manőver:fegyvertörés"
     érték: 2

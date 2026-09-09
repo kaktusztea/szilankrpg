@@ -4899,7 +4899,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Fegyvertörés Manőver: +2 MP bónusz Ellenpróbánál."
+          "Fegyvertörés Manőverre +2 MP bónusz Ellenpróbánál. (E)"
         ],
         "követelmény": [
           "Harcmodor - 9.szint",
@@ -4956,7 +4956,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Lefegyverzés Manőver: +2 MP bónusz Ellenpróbánál."
+          "Lefegyverzés Manőverre +2 MP bónusz Ellenpróbánál. (E)"
         ],
         "követelmény": [
           "Kardvívás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
@@ -5012,8 +5012,8 @@
       {
         "fok": 1,
         "hatás": [
-          "Belharcba kerülés Manőverre +2 bónuszt kapsz.",
-          "Belharcból kibontakozás Manőverre +2 bónuszt kapsz."
+          "Belharcba kerülés Manőverre +2 MP bónusz Ellenpróbánál. (E)",
+          "Belharcból kibontakozás Manőverre +2 MP bónusz Ellenpróbánál. (E)"
         ],
         "követelmény": [
           "Közelharc - 6.szint"
@@ -5069,8 +5069,8 @@
       {
         "fok": 1,
         "hatás": [
-          "Mögékerülés Manőverre +2 bónuszt kapsz.",
-          "Terelés Manőverre +2 bónuszt kapsz."
+          "Mögékerülés Manőverre +2 MP bónusz Ellenpróbánál. (E)",
+          "Terelés Manőverre +2 MP bónusz Ellenpróbánál. (E)"
         ],
         "követelmény": [],
         "követelmények": [],
@@ -5116,8 +5116,8 @@
       {
         "fok": 1,
         "hatás": [
-          "Átsiklás Manőverre +2 bónuszt kapsz.",
-          "Kibontakozás Manőverre +2 bónuszt kapsz."
+          "Átsiklás Manőverre +2 MP bónusz Ellenpróbánál. (E)",
+          "Kibontakozás Manőverre +2 MP bónusz Ellenpróbánál. (E)"
         ],
         "követelmény": [],
         "követelmények": [],

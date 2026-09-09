@@ -23,8 +23,8 @@ fokok:
   követelménytext: []
   követelmények: []
   hatástext:
-  - text: "Mögékerülés Manőverre +2 bónuszt kapsz."
-  - text: "Terelés Manőverre +2 bónuszt kapsz."
+  - text: "Mögékerülés Manőverre +2 MP bónusz Ellenpróbánál. (E)"
+  - text: "Terelés Manőverre +2 MP bónusz Ellenpróbánál. (E)"
   módosítók:
   - cél: "manőver:mögékerülés"
     érték: 2

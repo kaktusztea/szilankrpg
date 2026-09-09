@@ -27,8 +27,8 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext:
-  - text: "Belharcba kerülés Manőverre +2 bónuszt kapsz."
-  - text: "Belharcból kibontakozás Manőverre +2 bónuszt kapsz."
+  - text: "Belharcba kerülés Manőverre +2 MP bónusz Ellenpróbánál. (E)"
+  - text: "Belharcból kibontakozás Manőverre +2 MP bónusz Ellenpróbánál. (E)"
   módosítók:
   - cél: "manőver:belharcba_kerülés"
     érték: 2

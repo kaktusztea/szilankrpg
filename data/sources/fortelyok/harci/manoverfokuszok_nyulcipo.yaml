@@ -24,8 +24,8 @@ fokok:
   követelménytext: []
   követelmények: []
   hatástext:
-  - text: "Átsiklás Manőverre +2 bónuszt kapsz."
-  - text: "Kibontakozás Manőverre +2 bónuszt kapsz."
+  - text: "Átsiklás Manőverre +2 MP bónusz Ellenpróbánál. (E)"
+  - text: "Kibontakozás Manőverre +2 MP bónusz Ellenpróbánál. (E)"
   módosítók:
   - cél: "manőver:átsiklás"
     érték: 2
