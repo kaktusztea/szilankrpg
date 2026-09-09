@@ -5844,19 +5844,19 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Fegyelmezett, mértéktartó csapásaid már nem rontják a találást — a visszafogott mozdulat is telibe talál.",
+    "leírás": "Célod a visszafogott sebzés bevitele, nem az ölés.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
         "hatás": [
-          "Visszafogott taktika esetén: a TÉ büntetés megszűnik.",
-          "Sebzés a fegyver alap (statikus) sebzése, nincs Sebzésdobás (a Hátrány-2 sem érvényesül)."
+          "Visszafogott taktika alkalmazásakor az ott leírt TÉ büntetés megszűnik.",
+          "A Sebzésdobás elmarad, a fegyver alap (statikus) sebzése érvényesül csak - így a Hátrány-2 sem érvényesül rá."
         ],
         "követelmény": [
-          "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás - 9.szint",
-          "Visszafogott taktika"
+          "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás - 6.szint",
+          "Visszafogott taktika használata"
         ],
         "követelmények": [
           {
@@ -5866,7 +5866,7 @@
               "Rombolás",
               "Lándzsavívás"
             ],
-            "érték": 9,
+            "érték": 6,
             "típus": "képzettség"
           }
         ],

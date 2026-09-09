@@ -12,10 +12,9 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-- text: "Fegyelmezett, mértéktartó csapásaid már nem rontják a találást — a visszafogott mozdulat is telibe talál."
+- text: "Célod a visszafogott sebzés bevitele, nem az ölés."
 megjegyzések:
-- text: "Csak a Visszafogott taktika aktív alkalmazásakor érvényesül."
-- text: "Távharcos harcmodorokra NEM alkalmazható."
+- text: ""
 kiterjeszti:
   normál: []
   erős: []
@@ -24,15 +23,15 @@ ingyenes_perszint: 0
 fokok:
 - fok: 1
   követelménytext:
-    - text: "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás - 9.szint"
-    - text: "Visszafogott taktika"
+    - text: "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás - 6.szint"
+    - text: "Visszafogott taktika használata"
   követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás"]
-    érték: 9
+    érték: 6
     típus: "képzettség"
   hatástext:
-  - text: "Visszafogott taktika esetén: a TÉ büntetés megszűnik."
-  - text: "Sebzés a fegyver alap (statikus) sebzése, nincs Sebzésdobás (a Hátrány-2 sem érvényesül)."
+  - text: "Visszafogott taktika alkalmazásakor az ott leírt TÉ büntetés megszűnik."
+  - text: "A Sebzésdobás elmarad, a fegyver alap (statikus) sebzése érvényesül csak - így a Hátrány-2 sem érvényesül rá."
   módosítók:
   - cél: "TÉ"
     érték: 0
