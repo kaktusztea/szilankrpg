@@ -3,7 +3,7 @@ schema_version: 1
 
 név: "Kínokozás"
 névkomment: ""
-maxfok: 1
+maxfok: 2
 session_toggle: false
 emlékeztető: true
 kiérdemelhető: false
@@ -30,6 +30,15 @@ fokok:
     követelmények: ""
     hatástext:
       - text: "Sebzésed: 1 ÉP."
-      - text: "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: Harci anatómia fokától függ: 9/12/15)."
+      - text: "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: 12)."
+      - text: "Rontott próba: Indulat(1) Harag vagy Félelem(1) Szorongás Státusz."
+    módosítók: ""
+  - fok: 2
+    követelménytext:
+      - text: "Egykezes szúró-vágó-ostor fegyver. Sikeres Precíz támadás manőver."
+    követelmények: ""
+    hatástext:
+      - text: "Sebzésed: 1 ÉP."
+      - text: "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: 15)."
       - text: "Rontott próba: Indulat(1) Harag vagy Félelem(1) Szorongás Státusz."
     módosítók: ""

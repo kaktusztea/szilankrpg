@@ -121,7 +121,7 @@ manőverek:
   típus: "általános"
   nehézség: 6
   fázisok: "V,E"
-  hatás: "Adott területre támadás. Harci anatómia SP bónusz érvényesül vértmentes pontra."
+  hatás: "Adott területre támadás. Manőverfókusz: Szike SP bónusz érvényesül vértmentes pontra."
   id: "precíz_támadás"
 - név: "Rávetődés hátulról"
   típus: "általános"

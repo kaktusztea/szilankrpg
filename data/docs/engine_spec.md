@@ -1300,7 +1300,7 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 note: A manőverek nem adnak statikus harcérték módosítókat — ellenpróba alapúak (Manőver Alap + MP + k10 vs Nehézség + ellenfél Manőver Alap).
       Kivétel: fortélyok amik manőver Ellenpróba bónuszt adnak (cél: `manőver:név`, mód: flat):
         - Harci akrobatika → `manőver:kibontakozás` +1/+3
-        - Harci anatómia → `manőver:leütés_hátulról` +2/+4/+6, `manőver:precíz_támadás` +2/+4/+6
+        - Manőverfókusz: Szike → `manőver:leütés_hátulról` +2, `manőver:precíz_támadás` +2
         - Lefegyverzés mestere → `manőver:lefegyverzés_fegyvertörés` +2/+4, `manőver:lánccsapda` +2 (2.fok)
       UI: AktivScreen Hatás pool "Manőver bónuszok" szekció gyűjti ezeket.
       Belharcos manőverek: Belharci helyzet szükséges (kivéve Belharcba kerülés).
@@ -1740,9 +1740,7 @@ Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista é
 | Harci akrobatika | 1 | képzettség | Akrobatika | 6 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
 | Harci akrobatika | 2 | képzettség | Akrobatika | 9 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
 | Harci akrobatika | 3 | képzettség | Akrobatika | 12 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
-| Harci anatómia | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Harci anatómia | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | + Élettan fortély ≥ 1 |
-| Harci anatómia | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | + Élettan fortély ≥ 1 |
+| Manőverfókusz: Szike | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | + Élettan fortély ≥ 1 |
 | Harci kocsihajtás | 1 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 6 |
 | Harci kocsihajtás | 2 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 9 |
 | Harckeret növelés | 1 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 6 | |

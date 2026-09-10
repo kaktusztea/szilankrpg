@@ -1,0 +1,49 @@
+schema_version: 1
+név: "Manőverfókusz: Szike"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: false
+többszörösség: 
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások: 
+- text: "A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhető pontjait, létfontosságú szervek elhelyezkedését."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
+  normál: []
+  erős: []
+kp_perfok: 6
+ingyenes_perszint: 0
+fokok: 
+- fok: 1
+  követelménytext:
+    - text: "Harcmodor - 6.szint"
+    - text: "Élettan - 1.fok"
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+    érték: 6
+    típus: "képzettség"
+  - név: "Élettan"
+    érték: 1
+    típus: "fortély"
+  hatástext: 
+  - text: "Leütés hátulról Manőver: +2 MP bónusz Ellenpróbánál."
+  - text: "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál."
+  - text: "Bénítás, görcs, kábulat okozása és megszüntetése. Szemgolyó kiszedése Puszta kézzel."
+  módosítók: 
+  - cél: "manőver:leütés_hátulról"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+  - cél: "manőver:precíz_támadás"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""

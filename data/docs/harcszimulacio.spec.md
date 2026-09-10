@@ -945,7 +945,7 @@ támadások_effektív(h):
 | Taktikafókusz: Visszafogott | `letilt` a taktika TÉ-jére; `enyhít 2` a sebzés-hátrányon; sebzés = fix alapsebzés | `taktika: visszafogott` |
 | Helyhez kötve fejlesztése | `enyhít 1` vé_veszteség (1.fok) / té_dobás (2.fok) | helyhez kötve |
 | Testőr | 0.fok: vé_veszteség ×2 · 1-2.fok: `enyhít 1` | VÉ kiterjesztés |
-| Harci anatómia / Manőverfókuszok | manőver ellenpróba bónuszok | adott manőverre |
+| Manőverfókusz: Szike / Manőverfókuszok | manőver ellenpróba bónuszok | adott manőverre |
 
 ⚠ **0. fok = "Alapeset"**: néhány fortélynak van `fok: 0` bejegyzése, ami a **fortély
 NEM birtoklásának** büntetését írja le (pl. `Lovas harc 0.fok: TÉ/VÉ −9`). Ezt akkor kell

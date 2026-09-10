@@ -21,9 +21,9 @@ ingyenes_perszint: 0
 fokok:
 - fok: 1
   követelménytext:
-    - text: "Közelharc - 6.szint"
+    - text: "Harcmodor - 6.szint"
   követelmények:
-  - név: ["Közelharc"]
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
     típus: "képzettség"
   hatástext:
