@@ -32,7 +32,13 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
   let pajzsVÉ = 0;
   let pajzsTÉBüntetés = 0;
   if (hasPajzs) {
-    const hatások = (konstansok.pajzs_hatások as Record<string, { fok: number; VÉ: number; TÉ: number }[]>)?.[k.pajzs.méret];
+    // Belharcban a pajzs legfeljebb "kis" pajzsként számít (testközelben a nagy pajzs használhatatlan).
+    const méretRang: Record<string, number> = { kis: 0, közepes: 1, nagy: 2 };
+    const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');
+    const maxMéret = (konstansok.belharc_pajzs_max_méret as string) ?? 'kis';
+    let méret = k.pajzs.méret;
+    if (belharciAktív && (méretRang[méret] ?? 0) > (méretRang[maxMéret] ?? 0)) méret = maxMéret;
+    const hatások = (konstansok.pajzs_hatások as Record<string, { fok: number; VÉ: number; TÉ: number }[]>)?.[méret];
     const entry = hatások?.find(h => h.fok === pajzsFok) ?? hatások?.[0];
     if (entry) {
       pajzsVÉ = entry.VÉ;

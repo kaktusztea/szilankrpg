@@ -428,6 +428,17 @@ note: Fegyver+pajzs mód automatikusan aktív_pajzs = true.
       Pajzshasználat fok 3: VÉ+2 extra + teljes büntetés mérsékelve (TÉ: 0 minden pajzshoz).
 ```
 
+### 13.2 Belharc pajzs degradáció
+
+Belharci helyzetben (`session.aktív_helyzetek` tartalmazza a "Belharci helyzet"-et) a pajzs mérete a
+`konstansok.belharc_pajzs_max_méret` (= "kis") maximumra degradálódik a `pajzs_hatások` lookup ELŐTT.
+Testközelben a nagy/közepes pajzs használhatatlan, ezért belharcban minden pajzs legfeljebb Kis pajzsként
+véd (VÉ:3, Pajzshasználat 3.fok esetén 5). Kód: `pancel-calc.ts` → `calcFogas` (méretRang klamp).
+
+Szabály (md, KM-oldali kiegészítés a védekező ellenfélre): a Belharcba kerülés manőver Ellenpróbájának
+nehézségét a védekező pajzsmérete növeli — Kis +1, Közepes +2, Nagy +3. Ezt az app nem automatizálja
+(az ellenfél KM-oldali), csak a saját karakter pajzs-VÉ degradációja számítódik.
+
 ### 13.1 Pajzs fegyverként (csak pajzs harc)
 
 Ha a karakter kizárólag a pajzzsal harcol (fegyver nélkül):

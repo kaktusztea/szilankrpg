@@ -357,6 +357,11 @@ TÉ büntetés nincs. Hárítófegyverrel **nem lehet támadni**.
 
 ⚠ `Hátulról támadás` helyzetben a **pajzs VÉ nem számít** (a hárító igen).
 
+⚠ `Belharci helyzet`-ben a pajzs mérete a `konstansok.belharc_pajzs_max_méret` (= "kis") maximumra
+degradálódik: minden pajzs legfeljebb Kis pajzsként véd (VÉ 3, fok 3 esetén 5). A nagy toronypajzs
+testközelben használhatatlan. Emellett (KM-oldali szabály) a Belharcba kerülés manőver Ellenpróbájának
+nehézségét a védekező pajzsmérete növeli: Kis +1, Közepes +2, Nagy +3.
+
 ### 3.13 Manőver Alap / Manőver Pont / Fájdalomtűrés
 
 ```
@@ -826,7 +831,7 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 
 | Helyzet | Hatás |
 |---|---|
-| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 pengehosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0 |
+| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 pengehosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +1/+2/+3 (KM) |
 | Közrefogás | Semlegesíti az ellenfél Pengeelőnyét → Alappenge |
 | Fegyverrántás váratlanul | `Fegyverrántás` fortély: KÉ+5 / +10 |
 | Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Pengehossz +1` |

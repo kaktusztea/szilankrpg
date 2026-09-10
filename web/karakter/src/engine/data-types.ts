@@ -223,6 +223,7 @@ export interface KonstansokRaw {
   mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; CÉ: number; SP: number }[];
   merevvértviselet_bónuszok: { fok: number; TÉ_büntetés_csökkentés: number }[];
   pajzs_hatások: Record<string, { fok: number; VÉ: number; TÉ: number }[]>;
+  belharc_pajzs_max_méret: string;
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;

@@ -462,6 +462,10 @@ merevvértviselet_bónuszok:
 #   - 3. fokon a büntetés teljesen eltűnik + extra VÉ:+2 a pajzs alap VÉ-hez
 #   - Pajzs alap VÉ: kis:3, közepes:10, nagy:16
 #   - Az alábbi tábla az előre kiszámított végső értékeket tartalmazza
+#   - Belharcban minden pajzs legfeljebb "kis" pajzsként számít (belharc_pajzs_max_méret)
+
+# Belharcban a pajzs mérete erre a maximumra degradálódik (testközelben a nagy pajzs használhatatlan)
+belharc_pajzs_max_méret: "kis"
 
 pajzs_hatások:
   kis:
