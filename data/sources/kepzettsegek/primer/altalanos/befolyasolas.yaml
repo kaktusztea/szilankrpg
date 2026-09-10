@@ -16,11 +16,16 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
-szerepjátékos_módosító: true
 helyzetfüggő_módosítók:
   - kategória: "Nyelvi akadály"
     mód: "single"
     sorok:
       - { érték: -3, leírás: "Célszemély nem érti a nyelved" }
       - { érték: 0, leírás: "Azonos nyelven beszéltek" }
+  - kategória: "Szerepjátékos módosító"
+    mód: "single"
+    sorok:
+      - { érték: -3, leírás: "Gyenge előadás / átlátszó próbálkozás" }
+      - { érték: 0, leírás: "Átlagos előadás" }
+      - { érték: 3, leírás: "Kiváló előadás" }
 dobás_komment: []

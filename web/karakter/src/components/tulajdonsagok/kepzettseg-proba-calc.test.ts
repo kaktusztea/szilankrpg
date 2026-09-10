@@ -201,16 +201,22 @@ describe('calcSzitModÖsszeg', () => {
   const táblák = [
     { kategória: 'Fény', sorok: [{ érték: -3, leírás: 'Félhomály' }, { érték: -6, leírás: 'Vaksötét' }] },
     { kategória: 'Egyéb', mód: 'multi' as const, sorok: [{ érték: -1, leírás: 'A' }, { érték: -2, leírás: 'B' }] },
+    { kategória: 'Szerepjátékos módosító', sorok: [{ érték: -3, leírás: 'Gyenge' }, { érték: 0, leírás: 'Átlagos' }, { érték: 3, leírás: 'Kiváló' }] },
   ];
 
   it('single tábla: a kiválasztott index értéke; multi: a bejelölt sorok összege', () => {
-    const összeg = calcSzitModÖsszeg(táblák, { Fény: 1 }, { Egyéb: [true, false] }, [], 0);
+    const összeg = calcSzitModÖsszeg(táblák, { Fény: 1 }, { Egyéb: [true, false] }, []);
     expect(összeg).toBe(-7);   // -6 + -1
   });
 
-  it('kiválasztás nélkül 0, a szerepjátékos bónusz mindig hozzáadódik', () => {
-    expect(calcSzitModÖsszeg(táblák, {}, {}, [], 2)).toBe(2);
-    expect(calcSzitModÖsszeg(táblák, { Fény: -1 }, {}, [], 0)).toBe(0);
+  it('a szerepjátékos módosító standard single táblaként adódik hozzá', () => {
+    expect(calcSzitModÖsszeg(táblák, { 'Szerepjátékos módosító': 2 }, {}, [])).toBe(3);   // +3 sor
+    expect(calcSzitModÖsszeg(táblák, { 'Szerepjátékos módosító': 0 }, {}, [])).toBe(-3);  // -3 sor
+  });
+
+  it('kiválasztás nélkül 0', () => {
+    expect(calcSzitModÖsszeg(táblák, {}, {}, [])).toBe(0);
+    expect(calcSzitModÖsszeg(táblák, { Fény: -1 }, {}, [])).toBe(0);
   });
 });
 

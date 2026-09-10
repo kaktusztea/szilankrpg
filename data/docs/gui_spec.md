@@ -641,10 +641,10 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - **Dobás gomb** → `Tulajdonság + Képzettség szint + k10` (rollK10). Eredmény inline a Lövéskitérés popup mintájára: két érték egy sorban — nagy eredményszám + kis „vs" + piros célszám —, alatta színes Siker / Sikertelen. Tulajdonság/nehézség váltás törli az eredményt (újbóli Dobás gomb jelenik meg).
   - Escape: ha belső picker (Kiterjesztő fortély) nyitva → azt zárja; egyébként teljes popup bezárás.
   - **Helyzetfüggő módosítók** picker (ha a képzettségnek van `helyzetfüggő_módosítók` tábla a yaml-ban): field-btn gomb → overlay popup. Kategóriánként lista (pl. "Fényviszonyok", "Zaj", "Anyag minősége"), soronként érték + leírás. Kiválasztott sor(ok) bónusza hozzáadódik a próba képlethez (`szitModÖsszeg`). Pozitív: zöld, negatív: piros megjelenítés. Dobás/eredmény resetelődik módosítóváltáskor.
-  - **Szerepjátékos módosító** (ha a képzettség yaml `szerepjátékos_módosító: true`): a Helyzetfüggő módosítók picker-en belül, alul. Chip gombok: -3, -2, -1, +1, +2, +3 (toggle, ismételt klikk = 0). Értéke hozzáadódik a `szitModÖsszeg`-hez.
+  - **Szerepjátékos módosító**: nincs külön UI — a képzettség yaml `helyzetfüggő_módosítók` közé felvett standard `single` tábla ("Szerepjátékos módosító" kategória, `-3; 0; +3` sorok). Ugyanúgy jelenik meg és számol, mint a többi helyzetfüggő módosító. (Jelenleg: Befolyásolás, Nyomozás.)
   - **Aktív státuszok hatása** (automatikus): a session `aktív_státuszok`-ból kiszámolt Előny/Hátrány (`engine/statusz-proba.ts`). Ha a státusz `hatások[]`-ban van `képzettségpróba` célú `előny`/`hátrány`, az automatikusan bekalkulálódik a dobásba. E/H bontás accordion a Dobás gomb alatt.
   - **Próba enyhítések** (fortély yaml `próba_enyhítések[]`): ha a karakter rendelkezik a fortéllyal, az csökkenti/kioltja a helyzetfüggő módosítók negatív hatását (kategória + sor szintű illesztés).
-  - **Módosító tábla módok** (`ModositoTabla.mód`): `'single'` (default, egy sor választható), `'multi'` (több sor összegződik), `'chips'` (toggle chipek, pl. Zavaró körülmények — nem kizárólagos).
+  - **Módosító tábla módok** (`ModositoTabla.mód`): `'single'` (default, egy sor választható), `'multi'` (több sor összegződik).
   - Dismissible (háttér-katt zár)
 
 ### KP sáv (Szerkesztő módban, minden fülön)

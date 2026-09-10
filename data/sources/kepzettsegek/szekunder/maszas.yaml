@@ -16,7 +16,6 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: "Puszta, csúszós sziklafalon is tudsz haladni. Pókként tapadás falon, mennyezeten. Függeszkedve órákat kibírsz."
-szerepjátékos_módosító: false
 helyzetfüggő_módosítók:
   - kategória: "Körülmény"
     mód: "multi"

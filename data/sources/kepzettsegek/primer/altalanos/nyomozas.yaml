@@ -16,7 +16,6 @@ mesterbónuszok:
     leírás: ""
   - szint: 15
     leírás: ""
-szerepjátékos_módosító: true
 helyzetfüggő_módosítók:
   - kategória: "Helyszín"
     mód: "single"
@@ -34,4 +33,10 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: 0, leírás: "Eszközök nélkül" }
       - { érték: 3, leírás: "Porok / nagyító / lámpák (ha segítenek)" }
+  - kategória: "Szerepjátékos módosító"
+    mód: "single"
+    sorok:
+      - { érték: -3, leírás: "Gyenge előadás / kevés kreativitás" }
+      - { érték: 0, leírás: "Átlagos előadás" }
+      - { érték: 3, leírás: "Kiváló, kreatív előadás" }
 dobás_komment: []

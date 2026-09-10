@@ -34,7 +34,6 @@ interface Props {
   statuszDefs: StatuszEntry[];
   módosítóTáblák: ModositoTabla[];
   próbaEnyhítések: PróbaEnyhítés[];
-  szerepjátékosMódosító: boolean;
   dobásKomment: { line: string }[];
   onClose: () => void;
 }
@@ -44,7 +43,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, szerepjátékosMódosító, dobásKomment, onClose,
+  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -71,7 +70,7 @@ export function KepzettsegProbaPopup({
   const [szitMods, setSzitMods] = useState<Record<string, number>>(() => {
     const init: Record<string, number> = {};
     for (const t of módosítóTáblák) {
-      if (t.mód === 'multi' || t.mód === 'chips') continue;
+      if (t.mód === 'multi') continue;
       const zeroIdx = t.sorok.findIndex(s => s.érték === 0);
       if (zeroIdx >= 0) init[t.kategória] = zeroIdx;
     }
@@ -86,10 +85,9 @@ export function KepzettsegProbaPopup({
     return init;
   });
 
-  // Szerepjátékos módosító: [-3..+3], 0 = nincs kiválasztva
-  const [szerepjátékosÉrték, setSzerepjátékosÉrték] = useState(0);
+  // (A szerepjátékos módosító nem külön state: standard helyzetfüggő módosító tábla a yaml-ból.)
 
-  const szitModÖsszeg = calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, próbaEnyhítések, szerepjátékosÉrték);
+  const szitModÖsszeg = calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, próbaEnyhítések);
 
   const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
   const ehAlap = calcMultiKiterjesztésEH(selectedKits, fortélyFokok);
@@ -287,7 +285,7 @@ export function KepzettsegProbaPopup({
         )}
 
         {/* --- Módosító értékek chip (opens picker popup) --- */}
-        {(módosítóTáblák.length > 0 || szerepjátékosMódosító) && (
+        {módosítóTáblák.length > 0 && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('szit')}>
               Helyzetfüggő módosítók: <span className={szitModÖsszeg > 0 ? 'kep-proba-szit-pos' : szitModÖsszeg < 0 ? 'kep-proba-szit-neg' : ''}>{szitModÖsszeg === 0 ? '0' : `${szitModÖsszeg > 0 ? '+' : ''}${szitModÖsszeg}`}</span>
@@ -501,8 +499,7 @@ export function KepzettsegProbaPopup({
         kitDotClass={kitDotClass} kitDots={kitDots}
         módosítóTáblák={módosítóTáblák} próbaEnyhítések={próbaEnyhítések}
         szitMods={szitMods} setSzitMods={setSzitMods} multiMods={multiMods} setMultiMods={setMultiMods}
-        szerepjátékosMódosító={szerepjátékosMódosító} szerepjátékosÉrték={szerepjátékosÉrték}
-        setSzerepjátékosÉrték={setSzerepjátékosÉrték} szitModÖsszeg={szitModÖsszeg}
+        szitModÖsszeg={szitModÖsszeg}
         képzettségNév={képzettségNév} dobásKomment={dobásKomment}
       />
     </PopupOverlay>

@@ -9,7 +9,7 @@ export interface ModositoSor {
 
 export interface ModositoTabla {
   kategória: string;
-  mód?: 'single' | 'multi' | 'chips';  // default: 'single'
+  mód?: 'single' | 'multi';  // default: 'single'
   sorok: ModositoSor[];
 }
 
@@ -22,7 +22,6 @@ export interface KepzettsegDef {
   domináns_tulajdonságok: string[];
   helyzetfüggő_módosítók: ModositoTabla[];
   dobás_komment: { line: string }[];
-  szerepjátékos_módosító: boolean;
   kapcsolódó_szituációk: { név: string; fájl: string }[];
   md_fájl: string;
 }

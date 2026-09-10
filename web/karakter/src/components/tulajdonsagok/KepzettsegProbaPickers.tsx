@@ -25,9 +25,6 @@ interface Props {
   setSzitMods: React.Dispatch<React.SetStateAction<Record<string, number>>>;
   multiMods: Record<string, boolean[]>;
   setMultiMods: React.Dispatch<React.SetStateAction<Record<string, boolean[]>>>;
-  szerepjátékosMódosító: boolean;
-  szerepjátékosÉrték: number;
-  setSzerepjátékosÉrték: (v: number) => void;
   szitModÖsszeg: number;
 
   // Infó popup
@@ -43,7 +40,7 @@ export function KepzettsegProbaPickers({
   openPicker, setOpenPicker, resetDobás,
   kiterjesztesek, selKits, setSelKits, kitDotClass, kitDots,
   módosítóTáblák, próbaEnyhítések, szitMods, setSzitMods, multiMods, setMultiMods,
-  szerepjátékosMódosító, szerepjátékosÉrték, setSzerepjátékosÉrték, szitModÖsszeg,
+  szitModÖsszeg,
   képzettségNév, dobásKomment,
 }: Props) {
   return (
@@ -79,20 +76,6 @@ export function KepzettsegProbaPickers({
               {módosítóTáblák.map(t => (
                 <div key={t.kategória} className="kep-proba-szit-cat">
                   <span className="kep-proba-szit-label">{t.kategória}</span>
-                  {t.mód === 'chips' ? (
-                    <div className="kep-proba-szerepjatekos-chips">
-                      {t.sorok.map((s, i) => {
-                        const isActive = szitMods[t.kategória] === i;
-                        return (
-                          <button key={i}
-                            className={`fort-fok-btn kep-proba-szerepjatekos-chip${isActive ? ' active' : ''}${s.érték > 0 ? ' kep-proba-szerepjatekos-pos' : ' kep-proba-szerepjatekos-neg'}`}
-                            onClick={() => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }))}>
-                            {s.érték > 0 ? `+${s.érték}` : s.érték}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  ) : (
                   <div className="kep-proba-szit-items">
                     {t.sorok.map((s, i) => {
                       // Enyhítés kalkuláció a sorra
@@ -116,23 +99,8 @@ export function KepzettsegProbaPickers({
                       );
                     })}
                   </div>
-                  )}
                 </div>
               ))}
-              {szerepjátékosMódosító && (
-                <div className="kep-proba-szit-cat">
-                  <span className="kep-proba-szit-label">Szerepjátékos módosító</span>
-                  <div className="kep-proba-szerepjatekos-chips">
-                    {[-3, -2, -1, 1, 2, 3].map(v => (
-                      <button key={v}
-                        className={`fort-fok-btn kep-proba-szerepjatekos-chip${szerepjátékosÉrték === v ? ' active' : ''}${v > 0 ? ' kep-proba-szerepjatekos-pos' : ' kep-proba-szerepjatekos-neg'}`}
-                        onClick={() => setSzerepjátékosÉrték(szerepjátékosÉrték === v ? 0 : v)}>
-                        {v > 0 ? `+${v}` : v}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
             {szitModÖsszeg !== 0 && (
               <div className={`kep-proba-szit-sum-footer${szitModÖsszeg > 0 ? ' kep-proba-szit-pos' : ' kep-proba-szit-neg'}`}>

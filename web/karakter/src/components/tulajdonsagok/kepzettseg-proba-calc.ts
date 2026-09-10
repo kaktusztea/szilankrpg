@@ -151,15 +151,14 @@ export function enyhítettSor(próbaEnyhítések: PróbaEnyhítés[], kategória
   return enyhítettSorRészletes(próbaEnyhítések, kategória, sor).érték;
 }
 
-/** A kiválasztott szituációs módosítók összege (single + multi táblák) + szerepjátékos bónusz. */
+/** A kiválasztott szituációs módosítók összege (single + multi táblák). */
 export function calcSzitModÖsszeg(
   módosítóTáblák: ModositoTabla[],
   szitMods: Record<string, number>,
   multiMods: Record<string, boolean[]>,
   próbaEnyhítések: PróbaEnyhítés[],
-  szerepjátékosÉrték: number,
 ): number {
-  const összeg = módosítóTáblák.reduce((sum, t) => {
+  return módosítóTáblák.reduce((sum, t) => {
     if (t.mód === 'multi') {
       const flags = multiMods[t.kategória];
       if (!flags) return sum;
@@ -169,7 +168,6 @@ export function calcSzitModÖsszeg(
     if (idx == null || idx < 0) return sum;
     return sum + enyhítettSor(próbaEnyhítések, t.kategória, t.sorok[idx]);
   }, 0);
-  return összeg + szerepjátékosÉrték;
 }
 
 /** Helyettesítő képzettség effektív szintje: FLOOR(szint / 3), max 5 (md/030_06_01). */
