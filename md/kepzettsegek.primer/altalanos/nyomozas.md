@@ -48,11 +48,16 @@ Intelligencia, Emlékezet
 
 ### 🔆 Szerepjátékos módosító
 
+
+```
+-3; 0; +3
+```
+
 A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
-A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót `[-3;+3]` tartományban és a játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
+A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót (lásd fenn).  A játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
 
-Például a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
+Például a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan megkaphatja a `-3` büntetést a dobásra.
 
 Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
