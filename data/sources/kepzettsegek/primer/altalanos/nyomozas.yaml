@@ -36,7 +36,7 @@ helyzetfüggő_módosítók:
   - kategória: "Szerepjátékos módosító"
     mód: "single"
     sorok:
-      - { érték: -3, leírás: "Gyenge előadás / kevés kreativitás" }
-      - { érték: 0, leírás: "Átlagos előadás" }
-      - { érték: 3, leírás: "Kiváló, kreatív előadás" }
+      - { érték: -3, leírás: "Kevés ötlet / erőtlen átvizsgálás" }
+      - { érték: 0, leírás: "Átlagos ötletek" }
+      - { érték: 3, leírás: "Kreatív, alapos átvizsgálás" }
 dobás_komment: []

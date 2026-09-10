@@ -2009,15 +2009,15 @@
         "sorok": [
           {
             "érték": -3,
-            "leírás": "Gyenge előadás / kevés kreativitás"
+            "leírás": "Kevés ötlet / erőtlen átvizsgálás"
           },
           {
             "érték": 0,
-            "leírás": "Átlagos előadás"
+            "leírás": "Átlagos ötletek"
           },
           {
             "érték": 3,
-            "leírás": "Kiváló, kreatív előadás"
+            "leírás": "Kreatív, alapos átvizsgálás"
           }
         ]
       }
