@@ -48,7 +48,7 @@
     "id": "fárasztás",
     "fokozatos": false,
     "módosítók": {},
-    "megjegyzés": "VÉ csökkentés: 2/kör fixen, nincs támadódobás. Csak Pengeelőnyben lehet.",
+    "megjegyzés": "VÉ csökkentés: 3/kör fixen, nincs támadódobás. Pengehátrányból nem alkalmazható.",
     "megkötések": [
       {
         "típus": "harci_helyzet",

@@ -1007,7 +1007,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 |---------|-----------|---------|---------|
 | 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás, Tettetés |
 | Érintő | TÉ:+3, sebzés:0 | Támadó, Védő, Kezdeményező, Kiváró, 1 tám, Plusz tám | más |
-| Fárasztás | VÉ csökk: 2/kör (+fortély+pengeelőny) | — | más |
+| Fárasztás | VÉ csökk: 3/kör (+fortély+pengeelőny) | — | más |
 | Kezdeményező 📶 | KÉ:+1..+3, VÉ:-1..-3 (alap max 3) | Támadó, Érintő, Visszafogott, 1 tám | más |
 | Kiváró | KÉ:átengedett, TÉ:+3 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám, Tettetés | más |
 | Öngyilkos roham | TÉ:+5, VÉ:-10, SP:+7, VÉcsökk 2x | — | más (max 1x/küzdelem) |
@@ -2099,7 +2099,7 @@ Engedélyezett taktikák (fix értékek):
   Támadó:   TÉ: +3, VÉ: -6
   Védő:     VÉ: +4, TÉ: -8
   Roham:    TÉ: +4, VÉ: -8
-  Fárasztó:  +2 VÉ csökkentés
+  Fárasztó:  +3 VÉ csökkentés
 
 Manőverek: NEM használhatók alakzatban.
 ```

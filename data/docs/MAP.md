@@ -18,6 +18,9 @@ data/
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (process_fegyverek.py + lib/)
+  fegyvergenerator_balansz.py       Fegyvergenerátor modell + balansz teszt (tervezői eszköz, NEM pipeline)
+  fegyvergenerator_fegyverlista.py  A generátorból md fegyvertábla emittálás (importálja a balanszt)
+  harcszimulacio_selftest.py        harcszimulacio.spec.md §15 önteszt validálása (a data layerből olvas)
 ```
 
 ## Web App (`web/karakter/src/`)
@@ -202,6 +205,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `DEVSTATE.md` | Backlog, TODO, állapot | Státusz áttekintéshez |
 | `engine_spec.md` | Kalkulációs formulák (§1-§41) | Engine logika módosításkor |
 | `gui_spec.md` | UI viselkedés, screen-ek, stílusok | UI módosításkor |
+| `harcszimulacio.spec.md` | Önhordó harcrendszer spec tesztharc szimulációhoz (statblokk, körfeloldás, VÉ könyvelés, taktika/helyzet/státusz táblák, ambiguitás-regiszter, önteszt) | Szabály-hangolás, tesztharc, balance vizsgálat |
 
 ## Refaktor naplók (`web/karakter/refactorlog/`)
 
