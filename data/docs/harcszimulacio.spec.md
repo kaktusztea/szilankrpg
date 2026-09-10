@@ -96,12 +96,13 @@ harcos:
   fegyver:                                # az AKTÍV fegyver (fegyverek.json egy sora)
     { Fegyver, TÉ, VÉ, SP, Sebesség, "Sebzés módja", Pengehossz,
       "Erőbónusz limit", Átütés, Íves, Kategória }
+  fegyver_idea: -5..+5                    # §3.10b — a webapp NEM számol vele!
   fegyverfogás: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes
   bal_fegyver: <fegyver vagy null>        # kétkezes / hárító fogáshoz
   pajzs_méret: "" | kis | közepes | nagy
   páncél: { alap, fémalapanyag, kidolgozottság, idea, rongálódás,
             sisak: bool, végtagvédettség: 0..4, méret_illeszkedés }
-  felszerelés_terhelés: int               # nagy tárgyak MGT összege
+  felszerelés_terhelés: int               # nagy tárgyak + FEGYVER + PAJZS (§3.6)
 
   # --- származtatott (§3) ---
   származtatott:
@@ -220,6 +221,18 @@ felszerelés_keret = 2 + erő
 felszerelés_mgt   = MAX(0, felszerelés_terhelés - felszerelés_keret)
 ```
 
+⚠ A `felszerelés_terhelés`-be **a kézben tartott fegyver és pajzs is beleszámít**
+(`md/068_01_13`, `md/082_statuszok.md` → „Fegyver/Pajzs akadályoztatása"):
+
+```
+1 pont:  közepes tárgy · másfélkezes kard · közepes pajzs
+2 pont:  nagy tárgy · kétkezes kard · nagy pajzs
+```
+
+Fegyverekre **nem** a páncél MGT pontrendszere érvényes — a fegyver kizárólag ezen a
+felszerelés-terhelésen keresztül hat (ami `-1 TÉ` és `-1 harckeret` pontonként, ha
+túllépi a keretet).
+
 ### 3.7 Harckeret és támadások száma
 
 ```
@@ -270,6 +283,41 @@ Csatolt tag MGT / db: `hajlékony nem-fém` pocsék 1 / átlagos 0,5 / mestermun
 Merevvértviselet fortély TÉ-büntetés csökkentés: fok 1 → 5, fok 2 → 10, fok 3 → 15
 
 Mesterfegyver bónusz: fok 1 → TÉ/VÉ/CÉ/SP +1 · fok 2 → +2 · fok 3 → +3
+
+### 3.10b Fegyver Idea (minőség) — `[-5; +5]`
+
+Forrás: `md/068_01_14`. A karakter séma tartalmazza: `fegyverek[].idea`.
+
+| Idea | TÉ / CÉ | VÉ | SP |
+|---|---|---|---|
+| -5 | -3 | -2 | -5 |
+| -4 | -2 | -2 | -4 |
+| -3 | -2 | -1 | -3 |
+| -2 | -1 | -1 | -2 |
+| -1 | -1 | 0 | -1 |
+| **0** | — | — | — |
+| +1 | +1 | 0 | +1 |
+| +2 | +1 | +1 | +2 |
+| +3 | +2 | +1 | +3 |
+| +4 | +2 | +2 | +4 |
+| +5 | +3 | +2 | +5 |
+
+⚠ **A webapp ezt NEM implementálja** (§16/8). A mező szerializálódik (`url-share.ts`),
+de sem a `rules.json`, sem a `fegyver-calc.ts` nem használja. A `golden.test.ts` értékei
+`idea: 0`-s fegyverekkel készültek, tehát az egyezés nem bizonyítja a hiányt.
+Szimulátorban **implementálni kell**, ha nem-0 Ideájú fegyverrel tesztelsz.
+
+### 3.10c Másfélkezes fegyver egy kézzel (MK) — NE alkalmazd kétszer
+
+`md/068_01_06`: MK fegyver 1 kézzel forgatva `TÉ-2, VÉ-2`, Átütés megszűnik,
+Erőbónusz limit ~2-re csökken.
+
+⚠ Ez a büntetés **már be van építve** a `fegyverek.json` `(1K)` sorába — a `(1K)` és `(2K)`
+két külön entry, az `MK_pár` mező kapcsolja őket. Használd a megfelelő sort, és NE vonj le
+újra semmit.
+
+Adat-állapot (§16/10): `Kard, másfélkezes` és `Kard, mesterkard` követi a szabályt;
+`Kard, Slan` (ΔVÉ csak -1, Átütés megmarad) és `Mara-sequor` (ΔTÉ/ΔVÉ csak -1) eltér.
 
 ### 3.11 Kétkezes harc
 
@@ -1316,6 +1364,9 @@ javítani kell, kérj rá külön döntést.
 | 5 | `golden.test.ts` | A "Kard, lovag" teszt **címe** `VÉ=61`, az `expect` viszont `60`. A cím elavult. |
 | 6 | Szabálykönyv-szintű | A `k20T` forrása sikertelen támadásnál nincs meghatározva (§13.1). |
 | 7 | Szabálykönyv-szintű | A Teljes Védekezés `1 + k20T` sorának jelentése nem egyértelmű (§13.9). |
+| 8 | **Webapp hiba** | **A fegyver Ideája (`fegyverek[].idea`, `[-5;+5]`) nincs implementálva.** A `md/068_01_14` szerint `TÉ/CÉ`, `VÉ`, `SP` módosítót ad (max `+3/+2/+5`), a mező a karakter sémában létezik és az `url-share.ts` szerializálja is — de sem a `rules.json`, sem a `fegyver-calc.ts` nem használja. A felhasználó beállíthatja, és semmi nem történik. A `golden.test.ts` nem fogja el, mert a teszt karakter fegyverei `idea: 0`. |
+| 9 | Data layer hiány | A `md/082_statuszok.md` két státuszt definiál, amik **nincsenek** a `statuszok.yaml`-ban: `Fegyver/Pajzs akadályoztatása (1,2)` (:255) és `Páncél akadályoztatása (1 MGT, ♾️ MGT)` (:532). A `062_03` és `068_01_13` hivatkozik rájuk. Közelharci szimulációt nem érint (próbákra hatnak), de a 4 rétegű státusz-modell (§22) inkomplett. |
+| 10 | Adat-inkonzisztencia | Az MK szabály (`md/068_01_06`: 1 kézzel `TÉ-2/VÉ-2`, Átütés megszűnik) a `fegyverek.json` `(1K)/(2K)` sorpárjaiba van beépítve. `Kard, másfélkezes` és `Kard, mesterkard` követi; `Kard, Slan` (ΔVÉ csak `-1`, Átütés `2` marad) és `Mara-sequor` (ΔTÉ/ΔVÉ csak `-1`) eltér. Lehet szándékos (legendás fegyverek), de nincs jelölve. |
 
 ---
 

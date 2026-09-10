@@ -94,5 +94,6 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 | Séma változás | `data/schemas/*.yaml` + `engine/types.ts` |
 | Komponens | `gui_spec.md` + `components/{screen}/` |
 | Fortély/képzettség | `engine_spec.md §16/§25` + `data/sources/fortelyok/` |
+| **Szabály-hangolás / balance / tesztharc** | `harcszimulacio.spec.md` — önhordó harcrendszer spec (statblokk, körfeloldás, VÉ könyvelés, taktika/helyzet/státusz táblák, referencia statblokkok, ambiguitás-regiszter). Önteszt: `python3 code/harcszimulacio_selftest.py` |
 | Új feature | Releváns `features/*.md` ha létezik |
 | Refaktor / halott kód / duplikáció | `web/karakter/refactorlog/*.md` (korábbi refaktorok tanulságai + kipróbált detektáló scriptek) |
