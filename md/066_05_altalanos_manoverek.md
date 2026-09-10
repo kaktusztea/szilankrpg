@@ -55,6 +55,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 
 **Hatás**: Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már.
 
+**Kapcsolódik**: [Manőverfókuszok: Kitörés](fortelyok.harci/manoverfokuszok_kitores.md) fortély
+
 <br />
 
 ---
@@ -113,6 +115,8 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 - Fázisok: `Megakasztás, Ellenpróba`
 
 **Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
+
+**Kapcsolódik**: [Manőverfókuszok: Kitörés](fortelyok.harci/manoverfokuszok_kitores.md) fortély
 
 <br />
 

@@ -30,6 +30,7 @@
 - [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md)
 - [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md)
 - [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md)
+- [Manőverfókuszok: Kitörés](fortelyok.harci/manoverfokuszok_kitores.md)
 - [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
