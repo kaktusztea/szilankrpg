@@ -18,9 +18,12 @@ data/
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (process_fegyverek.py + lib/)
-  fegyvergenerator_balansz.py       Fegyvergenerátor modell + balansz teszt (tervezői eszköz, NEM pipeline)
-  fegyvergenerator_fegyverlista.py  A generátorból md fegyvertábla emittálás (importálja a balanszt)
-  harcszimulacio_selftest.py        harcszimulacio.spec.md §15 önteszt validálása (a data layerből olvas)
+  balance/                   Balansz / tesztharc tervezői eszközök (NEM pipeline):
+    fegyvergenerator_balansz.py       Fegyvergenerátor modell + balansz teszt
+    fegyvergenerator_fegyverlista.py  A generátorból md fegyvertábla emittálás (importálja a balanszt)
+    harcszimulacio_selftest.py        harcszimulacio.spec.md §15 önteszt validálása (a data layerből olvas)
+    elony_hatrany_eloszlasok.py       Előny/Hátrány kockaeloszlás analízis (matplotlib)
+    sfe_hangolas.py                   Páncél SFÉ hangolási szimulátor (spec §3-§6 motor + MGT-ellensúly, jelleg-bónusz, harci helyzetek)
 ```
 
 ## Web App (`web/karakter/src/`)

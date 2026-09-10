@@ -1307,11 +1307,11 @@ Ez a spec **nem** modellezi (tudatosan):
 Egy szimulátor akkor tekinthető hitelesnek, ha **mind a 16 állítás** teljesül.
 Ezek a `golden.test.ts` értékeivel és a §3 formuláival vannak összehangolva.
 
-**Futtatható referencia-implementáció**: `code/harcszimulacio_selftest.py`
+**Futtatható referencia-implementáció**: `code/balance/harcszimulacio_selftest.py`
 (a data layerből olvassa a táblákat, nem hardcode-olja — ha egy YAML változik, a teszt bukik).
 
 ```bash
-cd /repo/github/szilank.code && python3 code/harcszimulacio_selftest.py
+cd /repo/github/szilank.code && python3 code/balance/harcszimulacio_selftest.py
 ```
 
 ### Statikus (deterministic)
