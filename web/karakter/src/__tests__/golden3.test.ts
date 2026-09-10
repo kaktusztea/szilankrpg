@@ -78,8 +78,8 @@ describe('Golden #3 — rules.json alapszámítások (pak-Teth, 11. TSz, Amund)'
 
   // Bőr páncél, mestermunka, nincs fémalapanyag, idea=0, sisak=false, végtagvédettség=0, passzol, rongálódás=0
   it('páncél_MGT = 3', () => expect(results.get('páncél_MGT')).toBe(3));
-  it('sfé_fizikai = 7', () => expect(results.get('sfé_fizikai')).toBe(7));
-  it('sfé_energia = 10', () => expect(results.get('sfé_energia')).toBe(10));
+  it('sfé_fizikai = 8', () => expect(results.get('sfé_fizikai')).toBe(8));
+  it('sfé_energia = 14', () => expect(results.get('sfé_energia')).toBe(14));
   it('páncél_lefedettség = 50', () => expect(results.get('páncél_lefedettség')).toBe(50));
   it('merevvért_TÉ_büntetés = 0 (bőr nem merev)', () => expect(results.get('merevvért_TÉ_büntetés')).toBe(0));
 });

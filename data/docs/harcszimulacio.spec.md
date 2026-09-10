@@ -268,9 +268,9 @@ már a táblában van).
 
 | struktúra | fém | merev | MGT | SFÉ fiz | SFÉ ener | idea ± |
 |---|---|---|---|---|---|---|
-| posztó | – | – | 2 | 2 | 4 | 0 |
-| fegyverkabát | – | – | 3 | 3 | 5 | 0 |
-| bőr | – | – | 5 | 7 | 10 | 1 |
+| posztó | – | – | 2 | 4 | 4 | 0 |
+| fegyverkabát | – | – | 3 | 6 | 8 | 0 |
+| bőr | – | – | 5 | 8 | 14 | 1 |
 | lánc/sodrony | ✔ | – | 8 | 10 | 10 | 1 |
 | pikkely | ✔ | ✔ | 8 | 15 | 10 | 2 |
 | lemez | ✔ | ✔ | 10 | 20 | 8 | 3 |

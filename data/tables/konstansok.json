@@ -191,7 +191,7 @@
       "merev": false,
       "harci_akrobatika": true,
       "mgt": 2,
-      "sfé_fizikai": 2,
+      "sfé_fizikai": 4,
       "sfé_energia": 4,
       "ár_szorzó": 0.1,
       "idea_plusz_minusz": 0
@@ -203,8 +203,8 @@
       "merev": false,
       "harci_akrobatika": true,
       "mgt": 3,
-      "sfé_fizikai": 3,
-      "sfé_energia": 5,
+      "sfé_fizikai": 6,
+      "sfé_energia": 8,
       "ár_szorzó": 0.5,
       "idea_plusz_minusz": 0
     },
@@ -215,8 +215,8 @@
       "merev": false,
       "harci_akrobatika": true,
       "mgt": 5,
-      "sfé_fizikai": 7,
-      "sfé_energia": 10,
+      "sfé_fizikai": 8,
+      "sfé_energia": 14,
       "ár_szorzó": 1,
       "idea_plusz_minusz": 1
     },
