@@ -209,7 +209,7 @@ VÉ csökkentés
 +1 VÉ: 5+ főnél (nem additív)
 ```
 
-Tehát az egyén, - a számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
+Tehát az egyén - a számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
 
 <br />
 
@@ -263,7 +263,8 @@ Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok 
 TÉ:+3 / VÉ:-6: Támadó taktika (fix)
 VÉ:+4 / TÉ:-8: Védő taktika (fix)
 TÉ:+4 / VÉ:-8: Roham taktika
-+3 VÉ csökkentés: Fárasztó taktika (fix)
+
++1 VÉ extra csökkentés: Fárasztó taktika
 ```
 
 Manőverek használata alakzatban nem lehetséges.
@@ -300,6 +301,8 @@ VÉ csökkentés/kör: 2
 
 +1 VÉ csökkentés / +3 ember
   (max: +5 VÉ)
+
++1 VÉ extra csökkentés: Fárasztó taktika
 ```
 
 ---
