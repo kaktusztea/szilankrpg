@@ -166,7 +166,7 @@ Fedetlen terület célzásához:
 ```
 Fárasztó taktika alkalmazásakor:
 • nincs támadó dobás, nincs Sebzés
-• 2 VÉ csökkentés
+• 3 VÉ csökkentés
    +1: Fárasztás fortély
    +1: Pengeelőnyben
 ```

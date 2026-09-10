@@ -172,7 +172,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 ### Fárasztó taktika ⇄
 
 ```
-2 VÉ: Fárasztás taktika
+3 VÉ: Fárasztás taktika
   +1: Fárasztás fortély
   +1: Pengeelőnyben
 ```
