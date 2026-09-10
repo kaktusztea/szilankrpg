@@ -1,4 +1,4 @@
-## 🟣 Kínokozás (1)
+## 🟣 Kínokozás (2)
 
 Harc közben nem a pusztítás a célod, hanem különösen fájdalmas pontokat támadsz, amivel kibillentheted ellenfeledet lelki nyugalmából.
 
@@ -11,7 +11,7 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 - Csak vértmentes pontot támadhatsz
 - A fortély által leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
 
-### 1. fok
+### 1. fok, 2.fok
 
 🔒 **Követelmény**: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
 
@@ -21,10 +21,8 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 Sebzésed: 1 ÉP
 
 Áldozat: Fájdalomtűrés + Önuralom próba
-  Harci anatómiád
-    1.fok: 9 Célszám
-    2.fok: 12 Célszám
-    3.fok: 15 Célszám
+    1.fok: 12 Célszám
+    2.fok: 15 Célszám
 ```
 
 Ha az áldozat elrontja a próbát, akkor a következő körben valamelyik módosítóval harcol (KM dönt):
