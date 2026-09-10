@@ -53,6 +53,9 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 Átjutva a nagyobb fegyverek fenyegetésén testközelbe lavírozod magad.
 
 - Nehézség: `9` (ellenfél háttal áll: `5`)
+  - Ellenfélnél kis pajzs: `+2`
+  - Ellenfélnél közepes pajzs: `+4`
+  - Ellenfélnél nagy pajzs: `+6`
 - Fázisok: `Megakasztás, Ellenpróba`
 - Követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
 

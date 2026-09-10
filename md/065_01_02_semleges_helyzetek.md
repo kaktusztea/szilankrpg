@@ -46,6 +46,13 @@ Nem belharcos fegyverek
 Állatoknak általában van Belharcos fortélya
 ```
 
+```
+Pajzsok belharcban
+
+Minden pajzs TÉ,VÉ értéke
+  Kis Pajzsnak számít
+```
+
 <br />
 
 ---
