@@ -12680,7 +12680,6 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Alakzat: védekező](fortelyok.harci/alakzat_vedekezo.md)
 - [Belharc](fortelyok.harci/belharcos.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
-- [Elsöprő roham](fortelyok.harci/elsopro_roham.md)
 - [Fárasztás](fortelyok.harci/farasztas.md)
 - [Fegyverrántás](fortelyok.harci/fegyverrantas.md)
 - [Gladiátor bestiái](fortelyok.harci/gladiator.bestiai.md)
@@ -12698,13 +12697,18 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Kétkezesség](fortelyok.harci/ketkezesseg.md)
 - [Kínokozás](fortelyok.harci/kinokozas.md)
 - [Körkörös harc](fortelyok.harci/korkoros_harc.md)
+- [Manőverfókusz: Fegyvertörés](fortelyok.harci/manoverfokusz_fegyvertores.md)
 - [Manőverfókusz: Lefegyverzés](fortelyok.harci/manoverfokusz_lefegyverzes.md)
-- [Manőverfókusz: Nyúlcipő](fortelyok.harci/manoverfokusz_nyulcipo.md)
+- [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md)
+- [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md)
+- [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
+- [Taktikafókusz: Roham](fortelyok.harci/taktikafokusz_roham.md)
+- [Taktikafókusz: Visszafogott](fortelyok.harci/taktikafokusz_visszafogott.md)
 - [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md)
 - [Természetes páncél](fortelyok.harci/termeszetes_pancel.md)
 - [Testőr](fortelyok.harci/testor.md)
@@ -12734,13 +12738,13 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md)
 - [Gyors hajítás](fortelyok.tavharc/gyors_hajitas.md)
 - [Gyors lövés](fortelyok.tavharc/gyors_loves.md)
-- [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md)
 - [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md)
 - [Lövés futás közben](fortelyok.tavharc/loves_futas_kozben.md)
 - [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md)
 - [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md)
 - [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
 - [Mozgó cél könnyítése (fegyveres)](fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md)
+- [Taktikafókusz: Kitartott célzás](fortelyok.tavharc/taktikafokusz_kitartott_celzas.md)
 
 ---
 
@@ -14454,37 +14458,6 @@ A fenti 11 ÉP átalakul:
 
 ---
 ---
-## File: md/fortelyok.harci/elsopro_roham.md
-
-## 🟣 Elsöprő roham (1)
-
-Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
-
-### 1. fok
-
-🔒 **Követelmény**:
-- Harcmodor - `4.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Rombolás** vagy **Lándzsavívás**)
-- [Roham](../065_02_harci_taktikak.md#roham-taktika) taktika
-
-🌟 **Hatás**:
-
-```
-Roham esetén: KÉ:+5
-Erőbónusz duplázódik
-```
-
----
-### Megjegyzések
-
-- [Öngyilkos roham](../065_02_harci_taktikak.md#öngyilkos-roham-taktika) esetén a fentiek nem használhatóak.
-- Ostorharc harcmodorban nem lehet Roham taktikát használni, így ez a fortély sem vonatkozik rá
-
----
-
-
----
----
 ## File: md/fortelyok.harci/farasztas.md
 
 ## 🟣 Fárasztás (1)
@@ -14704,7 +14677,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 🌟 **Hatás**:
 - [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
 - [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
-- [Visszafogott](../065_02_harci_taktikak.md#visszafogott-taktika-) **taktika** alkalmazásakor `3`-mal csökken a kapott `TÉ` büntetés
+
 <br />
 
 ### 2. fok
@@ -14716,7 +14689,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 🌟 **Hatás**:
 - [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+4 MP` bónusz **Ellenpróbánál**
 - [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+4 MP` bónusz **Ellenpróbánál**
-- [Visszafogott ](../065_02_harci_taktikak.md#visszafogott-taktika-) **taktika** alkalmazásakor `6`-tal csökken a kapott `TÉ` büntetés
+
 <br />
 
 ### 3. fok
@@ -14728,7 +14701,6 @@ Távharcos harcmodorokra NEM alkalmazható.
 🌟 **Hatás**:
 - [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+6 MP` bónusz **Ellenpróbánál**
 - [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+6 MP` bónusz **Ellenpróbánál**
-- [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor `9`-mal csökken a **Visszafogott taktika** esetén kapott `TÉ` büntetés
 - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
 - Szemgolyót szedhet ki harc közben: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
 
@@ -15287,30 +15259,87 @@ TÉ/VÉ: -9
 
 ---
 ---
+## File: md/fortelyok.harci/manoverfokusz_fegyvertores.md
+
+## 🟣 Manőverfókusz: Fegyvertörés (1)
+
+Sokat gyakoroltad, hol érdemes erőt kifejteni ellenfeled változatos fegyvereire - hogy könnyebben törjenek.
+
+### 1. fok
+
+🔒 **Követelmény**:
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
+- [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
+
+🌟 **Hatás**:
+- [Fegyvertörés](../066_05_altalanos_manoverek.md#fegyvertörés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+
+---
+
+
+---
+---
 ## File: md/fortelyok.harci/manoverfokusz_lefegyverzes.md
 
 ## 🟣 Manőverfókusz: Lefegyverzés (1)
 
-Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét.
+Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.
 
----
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
+- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Ostorharc](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Lefegyverzés](../066_05_altalanos_manoverek.md#lefegyverzés) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
+- [Lefegyverzés](../066_05_altalanos_manoverek.md#lefegyverzés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---
 
 
 ---
 ---
-## File: md/fortelyok.harci/manoverfokusz_nyulcipo.md
+## File: md/fortelyok.harci/manoverfokuszok_belharcmozgas.md
 
-## 🟣 Manőverfókusz: Nyúlcipő (1)
+## 🟣 Manőverfókuszok: Belharcmozgás (1)
+
+Életveszélyesen gyorsan mozdulsz testközelbe, vagy éppen ugrasz ki.
+
+### 1. fok
+
+🔒 **Követelmény**: [Közelharc](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+
+🌟 **Hatás**:
+- [Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+- [Belharcból kibontakozás](../066_06_belharcos_manoverek.md#belharcból-kibontakozás) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/manoverfokuszok_helyezkedesek.md
+
+## 🟣 Manőverfókuszok: Helyezkedések (1)
+
+Nagyon érzed a helyezkedést a harctéren.
+
+### 1. fok
+
+🔒 **Követelmény**: -
+
+🌟 **Hatás**:
+- [Mögékerülés](../066_05_altalanos_manoverek.md#mögékerülés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+- [Terelés](../066_05_altalanos_manoverek.md#terelés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/manoverfokuszok_nyulcipo.md
+
+## 🟣 Manőverfókuszok: Nyúlcipő (1)
 
 "Én most lelépek..."
 
@@ -15321,8 +15350,8 @@ Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különös
 🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2` bónuszt kapsz (`E`)
-- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2` bónuszt kapsz (`E`)
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+- [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---
 
@@ -15642,6 +15671,59 @@ TÉ, VÉ :+6
 
 - Csak egypetéjű ikertestvérek között lehetséges, az is csak akkor ha kisgyerekkoruk óta folyamatosan legalább `5 évig` gyakorolták a közös taktikát, mivel mély rezdülések és teljes összhang szükséges.
 - Ha a két fél haragban van, kapcsolatuk disszonáns, vagy már `1 éve` nem gyakoroltak együtt, akkor a `2.foknak` megfelelő szintre esnek vissza.
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/taktikafokusz_roham.md
+
+## 🟣 Taktikafókusz: Roham (1)
+
+Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
+
+### 1. fok
+
+🔒 **Követelmény**:
+- Harcmodor - `4.szint`
+- (**Közelharc** vagy **Kardvívás** vagy **Rombolás** vagy **Lándzsavívás**)
+- [Roham](../065_02_harci_taktikak.md#roham-taktika) taktika
+
+🌟 **Hatás**:
+
+```
+Roham esetén: KÉ:+5
+Erőbónusz duplázódik
+```
+
+---
+### Megjegyzések
+
+- [Öngyilkos roham](../065_02_harci_taktikak.md#öngyilkos-roham-taktika) esetén a fentiek nem használhatóak.
+- Ostorharc harcmodorban nem lehet Roham taktikát használni, így ez a fortély sem vonatkozik rá
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/taktikafokusz_visszafogott.md
+
+## 🟣 Taktikafókusz: Visszafogott (1)
+
+Célod a visszafogott sebzés bevitele, nem az ölés.
+
+### 1. fok
+
+🔒 **Követelmény**:
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- (**Közelharc** vagy **Kardvívás** vagy **Rombolás** vagy **Lándzsavívás**)
+- [Visszafogott](../065_02_harci_taktikak.md#visszafogott-taktika-) taktika használata
+
+🌟 **Hatás**:
+- [Visszafogott](../065_02_harci_taktikak.md#visszafogott-taktika-) taktika alkalmazásakor az ott leírt `TÉ` büntetés megszűnik.
+- A Sebzésdobás elmarad, a fegyver alap (statikus) sebzése érvényesül csak - így a **Hátrány-2** sem érvényesül rá.
 
 ---
 
@@ -18354,32 +18436,6 @@ Lövéseidet íjjal kivételesen gyorsan tudod leadni.
 
 ---
 ---
-## File: md/fortelyok.tavharc/kitartott_celzas_fejlesztes.md
-
-## 🟣 Kitartott célzás fejlesztése (1)
-
-Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót célzáskor.
-
-### 1. fok
-
-🔒 **Követelmény**:
-- Íjakkal és lőfegyverekkel végezhető
-- Íjászat vagy Lövészet - `5.szint`
-
-🌟 Kitartott célzás helyzetben: további `+4 CÉ` módosító (összesen `+7`). Nem additív.
-
----
-### Megkötések
-
-- Csak kiszámíthatóan mozgó cél ellen
-- Íj max `1` körig tartható ki
-- `1 kör` után minden plusz kör `CÉ:-3` büntetés (körönként)
-
----
-
-
----
----
 ## File: md/fortelyok.tavharc/loves_futas_kozben.md
 
 ## 🟣 Lövés futás közben (1)
@@ -18575,6 +18631,32 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 - A kilőtt nyílpuskád újratöltéséhez szükséges idő lecsökken.
 - Már minden körben tudsz (`1x`) lőni
 - [Mozgásodat](../063_01_harci_kor.md#2-mozgás) ezúttal már szabadon elhasználhatod mellette
+
+---
+
+
+---
+---
+## File: md/fortelyok.tavharc/taktikafokusz_kitartott_celzas.md
+
+## 🟣 Taktikafókusz: Kitartott célzás (1)
+
+Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót célzáskor.
+
+### 1. fok
+
+🔒 **Követelmény**:
+- Íjakkal és lőfegyverekkel végezhető
+- Íjászat vagy Lövészet - `5.szint`
+
+🌟 Kitartott célzás helyzetben: további `+4 CÉ` módosító (összesen `+7`). Nem additív.
+
+---
+### Megkötések
+
+- Csak kiszámíthatóan mozgó cél ellen
+- Íj max `1` körig tartható ki
+- `1 kör` után minden plusz kör `CÉ:-3` büntetés (körönként)
 
 ---
 
@@ -23332,18 +23414,13 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 ---
 ### Visszafogott taktika ⇄
 
-```
-TÉ levonásért cserébe
-  kisebb Sebzéskocka
+TÉ levonásért cserébe kisebb Sebzés
 
-TÉ:-3  →  Hátrány-1 Sebzés dobásra
-TÉ:-6  →  Hátrány-2 Sebzés dobásra
-TÉ:-9  →  nincs kockadobás,
-           csak a fegyver
-           alap sebzése
+```
+TÉ:-10  →  Hátrány-2 Sebzés dobásra
 ```
 
-🔗 **[Harci anatómia](fortelyok.harci/harci_anatomia.md)** fortély minden foka `3` ponttal csökkenti a `TÉ` büntetést.
+🔗 **[Taktikafókusz: Visszafogott](fortelyok.harci/taktikafokusz_visszafogott.md)** fortély megszünteti a `TÉ` büntetést, és a Sebzés a fegyver alap sebzése lesz (nincs dobás).
 
 ✅ **Kezdeményező, Kiváró, 1 támadás taktikával** együtt
 
@@ -24262,6 +24339,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 
 **Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróbát dobtok. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóival.
 
+**Kapcsolódik**: [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md) fortély
+
 <br />
 
 ---
@@ -24320,6 +24399,8 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 - Követelmény: Harcmodor – `5.szint`
 
 **Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
+
+**Kapcsolódik**: [Manőverfókusz: Fegyvertörés](fortelyok.harci/manoverfokusz_fegyvertores.md) fortély
 
 <br />
 
@@ -24385,6 +24466,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 
 **Hatás**: Sikerül a harcból kibontakoznod, ellenfele(i)d már nem támadhat(nak) rád. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróba ([Sprint](fortelyok.altalanos/sprint.md) fortély számít!). Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`Előny+2` Támadó dobásra).
 
+**Kapcsolódik**: [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md) fortély
+
 <br />
 
 ---
@@ -24449,9 +24532,13 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
     - `+2`: fegyvered nem kimondottan alkalmas ellenfeled fegyverének elvételére
 	- `+99`: a használt fegyver nem alkalmas lefegyverzésre. KM dönt.
 - Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény: Harcmodor – `5.szint`
+- Követelmény:
+  - Harcmodor – `5.szint`
+  - Kardvívás / Lándzsavívás / Ostorharc harcmodor
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
+
+**Kapcsolódik**: [Manőverfókusz: Lefegyverzés](fortelyok.harci/manoverfokusz_lefegyverzes.md) fortély
 
 <br />
 
@@ -24514,6 +24601,8 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 
 - **Követelmény**: a környezetnek, harctérnek alkalmasnak kell lennie a hátbakerülésre. Ha nincs elég hely, a KM megtagadhatja a Manőver használatát.
 - **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról** bónuszait - attól függően, hogy milyen pozícióban van.
+
+**Kapcsolódik**: [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md) fortély
 
 <br />
 
@@ -24654,6 +24743,8 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 
 **Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
 
+**Kapcsolódik**: [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md) fortély
+
 **Kapcsolódó szituáció:** [Orvtámadás](szituaciok/orvtamadas_harcon_kivul.md)
 
 <br/>
@@ -24733,6 +24824,8 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 🔆 Ha az ellenfél úgy dönt, hogy szándékosan beenged belharcba, akkor nincs szükség a Manőverre.
 
+**Kapcsolódik**: [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md) fortély
+
 <br />
 
 ---
@@ -24745,6 +24838,8 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 **Hatás**: Sikeresen kibontakoztál belharcból. Most sima harci szituációban vagy ellenfeleddel.
 
 🔆 Ha belharcban sebzel, automatikusan, bármilyen dobás nélkül kibontakozhatsz a belharci szituációból.
+
+**Kapcsolódik**: [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md) fortély
 
 <br />
 
@@ -27168,7 +27263,7 @@ Lásd bővebben:
 ```
 Kitartott célzás helyzet
  +3: alapeset
- +7: "Kitartott célzás fejlesztése" fortéllyal
+ +7: "Taktikafókusz: Kitartott célzás" fortéllyal
      (+3 alapeset + 4 fortély)
 
 Lövés reflexből helyzet
@@ -27590,7 +27685,7 @@ Leggyorsabb mozgatás (EM)
 
 `1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. Csak mozdulatlan állapotban végezhető.
 
-→ [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md) fortély további `+4 CÉ`-t ad (összesen `+7`).
+→ [Taktikafókusz: Kitartott célzás](fortelyok.tavharc/taktikafokusz_kitartott_celzas.md) fortély további `+4 CÉ`-t ad (összesen `+7`).
 
 ---
 ### Páros, kétkezes hajítás
