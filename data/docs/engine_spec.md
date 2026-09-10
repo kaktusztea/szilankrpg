@@ -2083,6 +2083,8 @@ Az alakzat ellen elszenvedett VÉ csökkentésből levonás:
 Túlerő módosító:
   +0: 3 fő (legkisebb alakzat)
   +1: 5+ fő
+
+Legrosszabb eset az egyén számára sebző támadásnál: -5 VÉ/kör
 ```
 
 ### 28.8 Alakzat ÉP
@@ -2099,7 +2101,7 @@ Engedélyezett taktikák (fix értékek):
   Támadó:   TÉ: +3, VÉ: -6
   Védő:     VÉ: +4, TÉ: -8
   Roham:    TÉ: +4, VÉ: -8
-  Fárasztó:  +3 VÉ csökkentés
+  Fárasztó:  +1 VÉ EXTRA csökkentés (a §28.7 pengeméret-alapértékre adódik)
 
 Manőverek: NEM használhatók alakzatban.
 ```
@@ -2120,6 +2122,7 @@ Nem használható egyén által alakzat ellen:
 Mindkét alakzat: 1 támadás/kör
 VÉ csökkentés/kör: 2
 Túlerő: +1 VÉ csökkentés / +3 ember (max +5)
+Fárasztó taktika: +1 VÉ EXTRA csökkentés (ua. mint egyén ellen — §28.9)
 Max létszám modellezéshez: 20 fő / alakzat
 ```
 

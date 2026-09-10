@@ -449,6 +449,28 @@ találat_VÉ_csökkentés(védő):
     védő.állapot.vé_seb += 3        # ← SEB könyvelés, akkor is ha az SFÉ mindent felfogott
 ```
 
+#### ⚠ NE „javítsd" a 3-at — szándékosan konzervatív
+
+Kísértő megfigyelés: a `3` kisebb, mint amit egy Alakzat tévesztése ad (`3..5`), és épp
+annyi, mint az egyén Fárasztása (`3..5`). Ez **nem hiba**, két okból:
+
+1. **Egyénnél a `3` a sáv teteje, garantáltan.** Az Alappenge tévesztés `1 + k20T`, azaz
+   `1` (45 %) / `2` (50 %) / `3` (5 %), átlag `1,6`. A találat tehát átlagban `1,9×` annyi
+   eróziót ad, mint egy tévesztés — a magasabb tévesztési értékek a szerencsés farok, nem
+   a tipikus eset. Fix számot NE hasonlíts sávmaximumhoz.
+2. **A találat már hordozza a sebzést.** Ha maximális eróziót IS adna, végzetes spirál
+   indulna: találat → nagy VÉ-esés → könnyebb következő találat → nagyobb túldobás
+   (`+3 SP / 5`, felső limit nélkül) → nagyobb sebzés. A `3` szándékosan hagy esélyt
+   az áldozatnak: egy sebesülés ne legyen rögtön végzetes.
+
+Ebből következik, hogy az **Alakzat találata is `-3`**, nem a fix pengeméret-érték —
+noha így az Alakzat VÉ-eróziója lassul, ahogy elkezd betalálni (`5 → 3`). Ez a
+szándékolt fék, nem önfékezési hiba: közben a sebzés veszi át a hajtóerőt (a túldobás
+miatt meredeken), tehát a halálozási ütem gyorsul.
+
+(KM döntés, 2026-09-10. Korábbi verzió ezt hibaként azonosította és a fix érték
+átvezetését javasolta — az elemzés téves volt, lásd az 1. pontot.)
+
 ```
 kör_eleji_regeneráció(harcos):
     r = harcos_elme_fok(harcos)              # 1.fok → 1,  2.fok → 2
