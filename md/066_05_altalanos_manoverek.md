@@ -380,7 +380,6 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
     - `8`: egy adott végtagra támadni
     - `10`: egy adott (nagy érme méretű) pontra támadás
         - Csak Szúrófegyverrel
-        - [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) harci fortély **SP bónusza** csak itt használható - ha vértmentes pont a cél.
         - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
     - `12`: Szemkiszúrás
 - Nehézség módosítók:
@@ -397,6 +396,8 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély
+
+**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) fortély
 
 <br />
 
