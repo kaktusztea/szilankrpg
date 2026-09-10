@@ -8,7 +8,6 @@ Sokat gyakoroltad, hol érdemes erőt kifejteni ellenfeled változatos fegyverei
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 
-🌟 **Hatás**:
-- [Fegyvertörés](../066_05_altalanos_manoverek.md#fegyvertörés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+🌟 **Hatás**: [Fegyvertörés](../066_05_altalanos_manoverek.md#fegyvertörés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---

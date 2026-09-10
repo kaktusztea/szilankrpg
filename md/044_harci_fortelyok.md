@@ -25,6 +25,7 @@
 - [Kínokozás](fortelyok.harci/kinokozas.md)
 - [Körkörös harc](fortelyok.harci/korkoros_harc.md)
 - [Manőverfókusz: Fegyvertörés](fortelyok.harci/manoverfokusz_fegyvertores.md)
+- [Manőverfókusz: Földrevitel](fortelyok.harci/manoverfokusz_foldrevitel.md)
 - [Manőverfókusz: Lefegyverzés](fortelyok.harci/manoverfokusz_lefegyverzes.md)
 - [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md)
 - [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md)
