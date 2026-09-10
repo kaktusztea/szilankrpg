@@ -304,10 +304,11 @@ Első oda-vissza csapásnál:
 ```
 VÉ:+8, folyamatos hátrálás
 
-Nem támadhatsz, nem varázsolhatsz
+Nem támadhatsz, nem varázsolhatsz, VÉ csökkentés: 0
 
-Ellenfél VÉ csökkentés: (1 + k20T)
-  + "Fárasztó taktika" bónuszuk megmarad
+Ellenfél VÉ csökkentése rajtad:
+  (1 + k20T)
+  + "Fárasztó taktika" bónusza
 ```
 
 ❌ Más taktikával együtt
