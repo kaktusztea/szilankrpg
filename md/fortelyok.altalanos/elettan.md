@@ -6,7 +6,8 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 
 ### Kapcsolódik
 
-- [Harci anatómia](../fortelyok.harci/harci_anatomia.md)
+- [Manőverfókusz: Szike](../fortelyok.harci/manoverfokusz_szike.md)
+- [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
 
 ### Bónuszt ad erre
 

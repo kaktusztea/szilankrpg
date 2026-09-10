@@ -249,7 +249,6 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
 Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
 
 - Nehézség: `6`
-    - `-2`: [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka után
     - `+0`: Sisak nélküli célpont
     - `+3`: Sisakos célpont, ha tarkón ütés lehetséges
 - Fázisok: `Végrehajtás, Ellenpróba`
@@ -266,6 +265,8 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 - A sebzés `FP` sebesülésként jelenik meg mindkét esetben (minden `5.` ÉP).
 
 **Megjegyezés**: a **Fegyver markolat** sebzése: `k20 + 0 SP + Erőbónusz` (Zúzó)
+
+**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) fortély
 
 <br />
 
@@ -377,7 +378,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
     - `8`: egy adott végtagra támadni
     - `10`: egy adott (nagy érme méretű) pontra támadás
         - Csak Szúrófegyverrel
-        - [Harci Anatómia](fortelyok.harci/harci_anatomia.md) harci fortély **SP bónusza** csak itt használható - ha vértmentes pont a cél.
+        - [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) harci fortély **SP bónusza** csak itt használható - ha vértmentes pont a cél.
         - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
     - `12`: Szemkiszúrás
 - Nehézség módosítók:
@@ -387,7 +388,9 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
     - `+2`: [Roham](065_02_harci_taktikak.md#roham-taktika) alkalmazása esetén
 - Fázisok: `Végrehajtás, Ellenpróba`
 	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
-- Követelmény: Aktuális harcmodor - `6.szint`
+- Követelmény:
+  - [Közelharc](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+  - A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
 
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
 
