@@ -4,7 +4,7 @@
 
 ### 1. fok
 
-🔒 **Követelmény**: [Közelharc](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)

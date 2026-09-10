@@ -7,7 +7,7 @@ A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhet�
 
 🔒 **Követelmény**:
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
-- [Közelharc](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
