@@ -436,7 +436,7 @@ Testközelben a nagy/közepes pajzs használhatatlan, ezért belharcban minden p
 véd (VÉ:3, Pajzshasználat 3.fok esetén 5). Kód: `pancel-calc.ts` → `calcFogas` (méretRang klamp).
 
 Szabály (md, KM-oldali kiegészítés a védekező ellenfélre): a Belharcba kerülés manőver Ellenpróbájának
-nehézségét a védekező pajzsmérete növeli — Kis +1, Közepes +2, Nagy +3. Ezt az app nem automatizálja
+nehézségét a védekező pajzsmérete növeli — Kis +2, Közepes +4, Nagy +6. Ezt az app nem automatizálja
 (az ellenfél KM-oldali), csak a saját karakter pajzs-VÉ degradációja számítódik.
 
 ### 13.1 Pajzs fegyverként (csak pajzs harc)
