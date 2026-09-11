@@ -13,6 +13,8 @@ interface ManőverDef {
   nehézség: number;
   fázisok: string;
   fázis_info: Record<string, string>;
+  fázis_cselekvő: Record<string, 'én' | 'ellenfél'>;
+  ellenpróba_bünteti: boolean;
   típus: string;
   hatás: string[];
   végrehajtás_té_módosító: number;
@@ -175,8 +177,15 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // Hátrány-2 az Ellenpróbán, ha a döntés "normál" (Normál hiány).
   const ellenpróbaHátrány2 = követelményDöntés === 'normál';
 
+  // Egy fázis sikere a manővernek: cselekvő-alapú, DE ha ellenpróba_bünteti és E fázis,
+  // a rontott dobás NEM buktat (a manőver sikeres, csak büntetés jár).
+  const fázisSikeresM = (i: number, e: FázisEredmény): boolean => {
+    if (manőver.ellenpróba_bünteti && fázisok[i] === 'E') return e !== 'pending';
+    return fázisSikeres(e, fázisCselekvő(fázisok[i], manőver.fázis_cselekvő));
+  };
+
   // Find current active phase (first pending), but stop if manőver already failed.
-  const manőverMárSikertelen = eredmények.some((e, i) => e !== 'pending' && !fázisSikeres(fázisok[i], e, mód));
+  const manőverMárSikertelen = eredmények.some((e, i) => e !== 'pending' && !fázisSikeresM(i, e));
   const aktívFázisIdx = (!követelményKész || követelményKudarc || manőverMárSikertelen)
     ? -1 : eredmények.findIndex(e => e === 'pending');
   const végeredmény: 'folyamatban' | 'sikeres' | 'sikertelen' =
@@ -184,7 +193,12 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     : !követelményKész ? 'folyamatban'
     : manőverMárSikertelen ? 'sikertelen'
     : eredmények.includes('pending') ? 'folyamatban'
-    : isDone(eredmények, fázisok) ? 'sikeres' : 'sikertelen';
+    : eredmények.every((e, i) => fázisSikeresM(i, e)) ? 'sikeres' : 'sikertelen';
+
+  // Bünteti-manőver (Átsiklás/Kibontakozás) sikeres, de rontott ellenpróbával → "büntetve"
+  // (a manőver átment, de megcsaphatták/megcsaptad). Ez a végeredmény-sáv SÁRGA átmeneti állapota.
+  const bünteti_büntetve = végeredmény === 'sikeres' && manőver.ellenpróba_bünteti
+    && fázisok.some((f, i) => f === 'E' && eredmények[i] === 'nem');
 
   function handleChip(igen: boolean) {
     if (aktívFázisIdx === -1) return;
@@ -198,12 +212,13 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   }
 
   /**
-   * A gombok a MANŐVER sikerére vonatkoznak (Siker/Kudarc). A tárolt igen/nem
-   * reprezentáció fázisfüggő: Megakasztásnál a "nem" (elhibázta) = manőver-siker.
+   * A gombok a MANŐVER sikere felé mutatnak. A tárolt igen/nem reprezentáció a cselekvőtől
+   * függ: én-cselekvőnél a találat (igen) a siker, ellenfél-megakasztónál a hibázás (nem).
    */
   function handleSiker(siker: boolean) {
     if (aktívFázisIdx === -1) return;
-    handleChip(fázisok[aktívFázisIdx] === 'M' ? !siker : siker);
+    const cs = fázisCselekvő(fázisok[aktívFázisIdx], manőver.fázis_cselekvő);
+    handleChip(cs === 'én' ? siker : !siker);
   }
 
   function renderFázisInfo(fázis: 'M' | 'V' | 'E') {
@@ -373,7 +388,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             const isAktív = i === aktívFázisIdx;
             const isDonePhase = eredmény !== 'pending';
             // Determine if this phase was a success FOR THE MANŐVER.
-            const sikeresAManőverSzempontjából = fázisSikeres(f, eredmény, mód);
+            const sikeresAManőverSzempontjából = fázisSikeresM(i, eredmény);
 
             return (
               <div key={i} className={`manover-fazis${isAktív ? ' manover-fazis-aktiv' : ''}${isDonePhase ? ' manover-fazis-done' : ''}`}>
@@ -395,8 +410,28 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                     <div className="manover-fazis-chips">
                       {/* Szín az ALKALMAZÓ szempontjából: aktívban a manőver-siker jó (zöld);
                           passzívban ÉN védekezem, így a manőver-siker nekem ROSSZ (piros). */}
-                      <button className={`manover-chip ${mód === 'passzív' ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => handleSiker(true)}>{getFázisFelirat(f, mód).siker}</button>
-                      <button className={`manover-chip ${mód === 'passzív' ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => handleSiker(false)}>{getFázisFelirat(f, mód).kudarc}</button>
+                      {(() => {
+                        // ellenpróba_bünteti + E: a rontott dobás is sikeres manőver (csak büntetés).
+                        // A feliratok és a szín az ALKALMAZÓ/VÉDŐ szemszögéből mód-függők.
+                        const bünt = manőver.ellenpróba_bünteti && f === 'E';
+                        if (bünt) {
+                          // handleSiker(true) = elért (nincs büntetés); handleSiker(false) = rontott (büntetés).
+                          const felirat = mód === 'passzív'
+                            ? { siker: 'Átjutott', kudarc: 'Megcsapkodod (1x)' }   // ellenfél siklik mellettem
+                            : { siker: 'Sikeres', kudarc: 'Rontott (megcsapkodnak)' };
+                          const sikerZöld = mód !== 'passzív';               // passzívban az ő sikere nekem rossz
+                          return <>
+                            <button className={`manover-chip ${sikerZöld ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => handleSiker(true)}>{felirat.siker}</button>
+                            <button className={`manover-chip ${sikerZöld ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => handleSiker(false)}>{felirat.kudarc}</button>
+                          </>;
+                        }
+                        const felirat = getFázisFelirat(f, mód, fázisCselekvő(f, manőver.fázis_cselekvő));
+                        const sikerZöld = mód !== 'passzív';
+                        return <>
+                          <button className={`manover-chip ${sikerZöld ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => handleSiker(true)}>{felirat.siker}</button>
+                          <button className={`manover-chip ${sikerZöld ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => handleSiker(false)}>{felirat.kudarc}</button>
+                        </>;
+                      })()}
                     </div>
                   </>
                 )}
@@ -406,8 +441,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         </div>
 
         {végeredmény !== 'folyamatban' && (
-          <div className={`manover-dobas-veg ${(végeredmény === 'sikeres') === (mód !== 'passzív') ? 'manover-veg-sikeres' : 'manover-veg-sikertelen'}`}>
-            {végeredmény === 'sikeres'
+          <div className={`manover-dobas-veg ${
+            bünteti_büntetve ? 'manover-veg-buntetve'
+            : (végeredmény === 'sikeres') === (mód !== 'passzív') ? 'manover-veg-sikeres' : 'manover-veg-sikertelen'}`}>
+            {bünteti_büntetve
+              ? (mód === 'passzív'
+                  ? '⚠ Átjutott, de megcsaptad (1x)'
+                  : '⚠ Sikeres, de megcsaptak (1x)')
+              : végeredmény === 'sikeres'
               ? (mód === 'passzív' ? '✓ Manőver sikeres ellened' : '✓ Manőver sikeres')
               : (mód === 'passzív' ? '✗ Manőver sikertelen ellened' : '✗ Manőver sikertelen')}
             {végeredmény === 'sikeres' && (
@@ -494,44 +535,55 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 }
 
 /**
- * Determine if a phase result means success for the manőver.
- * M: "igen" (hit) = FAILURE for manőver; "nem" (missed) = success.
- * V: "igen" (hit) = success; "nem" = failure.
- * E: "igen" (reached) = success; "nem" = failure.
+ * Ki a cselekvő az adott fázisban (az ALKALMAZÓ szemszögéből, aktív mód).
+ * Default: M → ellenfél (ő akaszt), V/E → én. A manőver `fázis_cselekvő` felülírhatja
+ * (pl. Távoltartás M → én).
  */
-export function fázisSikeres(fázis: 'M' | 'V' | 'E', eredmény: FázisEredmény, _mód: Mód): boolean {
-  if (eredmény === 'pending') return false;
-  if (fázis === 'M') return eredmény === 'nem'; // miss = manőver continues
-  return eredmény === 'igen';
-}
-
-/** All done and all successful for the manőver? */
-function isDone(eredmények: FázisEredmény[], fázisok: ('M' | 'V' | 'E')[]): boolean {
-  return eredmények.every((e, i) => e !== 'pending' && fázisSikeres(fázisok[i], e, 'aktív'));
+export function fázisCselekvő(
+  fázis: 'M' | 'V' | 'E', cselekvők: Record<string, 'én' | 'ellenfél'> | undefined,
+): 'én' | 'ellenfél' {
+  const override = cselekvők?.[fázis];
+  if (override) return override;
+  return fázis === 'M' ? 'ellenfél' : 'én';
 }
 
 /**
- * Fázis+mód-specifikus gomb-feliratok. A `siker` felirat a zöld gombra kerül (a KONKRÉT
- * dobás eredménye, ami a MANŐVER továbbhaladásához vezet), a `kudarc` a pirosra.
- * A szín fix: zöld = manőver felé jó, piros = manőver felé rossz — a felirat mondja meg,
- * ténylegesen mit kell bejelölni (ki dobott, talált-e).
+ * Egy fázis eredménye a MANŐVER szempontjából sikeres-e.
+ * A CSELEKVŐ éri-e el a célját: ha a cselekvő = én → találat/elérés (`igen`) a jó;
+ * ha a cselekvő = ellenfél (megakaszt) → a hibázása (`nem`) a jó a manővernek.
  */
-export function getFázisFelirat(fázis: 'M' | 'V' | 'E', mód: Mód): { siker: string; kudarc: string } {
-  if (fázis === 'M') {
-    // Megakasztás sikere a MANŐVERnek = a megakasztó NEM talált.
-    return mód === 'aktív'
-      ? { siker: 'Elhibázta', kudarc: 'Eltalált' }       // ellenfél akaszt
-      : { siker: 'Elhibáztam', kudarc: 'Eltaláltam' };   // én (védő) akasztok
+export function fázisSikeres(eredmény: FázisEredmény, cselekvő: 'én' | 'ellenfél'): boolean {
+  if (eredmény === 'pending') return false;
+  return cselekvő === 'én' ? eredmény === 'igen' : eredmény === 'nem';
+}
+
+/**
+ * Fázis gomb-feliratok a KONKRÉT dobás alapján. A cselekvő (én/ellenfél) + a mód
+ * együtt adja, hogy a képernyő előtt ülő dob-e: tényleges = cselekvő XOR (passzív).
+ * A `siker`/`kudarc` a MANŐVER-siker felé mutató, ill. attól elvezető dobás-eredmény.
+ */
+export function getFázisFelirat(
+  fázis: 'M' | 'V' | 'E', mód: Mód, cselekvő: 'én' | 'ellenfél',
+): { siker: string; kudarc: string } {
+  // A képernyő előtt ülő az adott fázisban maga dob-e?
+  const énDobok = (cselekvő === 'én') === (mód === 'aktív');
+  if (fázis === 'M' && cselekvő === 'ellenfél') {
+    // Megakasztó az ellenfél — a manőver-siker = a megakasztás NEM talál.
+    return énDobok
+      ? { siker: 'Elhibáztam', kudarc: 'Eltaláltam' }
+      : { siker: 'Elhibázta', kudarc: 'Eltalált' };
   }
-  if (fázis === 'V') {
-    return mód === 'aktív'
-      ? { siker: 'Talált', kudarc: 'Nem talált' }        // én támadok
-      : { siker: 'Eltalált', kudarc: 'Nem talált' };     // ellenfél támad
+  // Cselekvő = én-típusú akció (V, E, vagy én-Megakasztás mint Távoltartás):
+  // a cselekvő találata/elérése a manőver-siker.
+  if (fázis === 'E') {
+    return énDobok
+      ? { siker: 'Elértem', kudarc: 'Nem értem el' }
+      : { siker: 'Elérte', kudarc: 'Nem érte el' };
   }
-  // E — Ellenpróba
-  return mód === 'aktív'
-    ? { siker: 'Elértem', kudarc: 'Nem értem el' }
-    : { siker: 'Elérte', kudarc: 'Nem érte el' };
+  // M (én-cselekvő, pl. Távoltartás) vagy V — támadás/találat
+  return énDobok
+    ? { siker: 'Talált', kudarc: 'Nem talált' }
+    : { siker: 'Eltalált', kudarc: 'Nem talált' };
 }
 
 /**

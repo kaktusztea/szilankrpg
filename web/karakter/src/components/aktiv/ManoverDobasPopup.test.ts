@@ -21,27 +21,20 @@ describe('parseFázisok', () => {
 });
 
 describe('fázisSikeres', () => {
-  it('M: "nem" (miss) = manőver continues (sikeres)', () => {
-    expect(fázisSikeres('M', 'nem', 'aktív')).toBe(true);
+  it('ellenfél akaszt: "nem" (elhibázta) = manőver siker', () => {
+    expect(fázisSikeres('nem', 'ellenfél')).toBe(true);
   });
-  it('M: "igen" (hit) = manőver fails', () => {
-    expect(fázisSikeres('M', 'igen', 'aktív')).toBe(false);
+  it('ellenfél akaszt: "igen" (talált) = manőver kudarc', () => {
+    expect(fázisSikeres('igen', 'ellenfél')).toBe(false);
   });
-  it('V: "igen" (hit) = manőver continues', () => {
-    expect(fázisSikeres('V', 'igen', 'aktív')).toBe(true);
+  it('én cselekvő (Távoltartás-M / V / E): "igen" (talált/elért) = siker', () => {
+    expect(fázisSikeres('igen', 'én')).toBe(true);
   });
-  it('V: "nem" (miss) = manőver fails', () => {
-    expect(fázisSikeres('V', 'nem', 'aktív')).toBe(false);
+  it('én cselekvő: "nem" = kudarc', () => {
+    expect(fázisSikeres('nem', 'én')).toBe(false);
   });
-  it('E: "igen" (reached) = manőver succeeds', () => {
-    expect(fázisSikeres('E', 'igen', 'aktív')).toBe(true);
-  });
-  it('E: "nem" (not reached) = manőver fails', () => {
-    expect(fázisSikeres('E', 'nem', 'aktív')).toBe(false);
-  });
-  it('pending = always false', () => {
-    expect(fázisSikeres('M', 'pending', 'aktív')).toBe(false);
-    expect(fázisSikeres('V', 'pending', 'aktív')).toBe(false);
-    expect(fázisSikeres('E', 'pending', 'aktív')).toBe(false);
+  it('pending = mindig false', () => {
+    expect(fázisSikeres('pending', 'ellenfél')).toBe(false);
+    expect(fázisSikeres('pending', 'én')).toBe(false);
   });
 });

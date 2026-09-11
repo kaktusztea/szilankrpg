@@ -209,6 +209,7 @@
 .manover-dobas-veg { margin-top: 12px; padding: 10px; border-radius: 6px; font-size: 15px; font-weight: 600; text-align: center; }
 .manover-veg-sikeres { background: rgba(76, 175, 80, 0.12); color: var(--success); }
 .manover-veg-sikertelen { background: rgba(244, 67, 54, 0.1); color: var(--error); }
+.manover-veg-buntetve { background: rgba(212, 160, 23, 0.14); color: #e0b84a; }
 .manover-dobas-hatas { font-size: 12px; font-weight: normal; color: var(--text-dim); margin-top: 6px; display: flex; flex-direction: column; gap: 3px; }
 .manover-dobas-hatas-mondat { overflow-wrap: anywhere; white-space: normal; line-height: 1.4; }
 

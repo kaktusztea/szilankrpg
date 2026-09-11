@@ -48,6 +48,9 @@ def generate_aktiv_ful():
         m['követelmények'] = köv if isinstance(köv, list) else []
         fi = m.get('fázis_info')
         m['fázis_info'] = fi if isinstance(fi, dict) else {}
+        fcs = m.get('fázis_cselekvő')
+        m['fázis_cselekvő'] = fcs if isinstance(fcs, dict) else {}
+        m.setdefault('ellenpróba_bünteti', False)
         m.setdefault('végrehajtás_té_módosító', 4)
 
     write_json('taktikak.json', taktikak)

@@ -12,6 +12,10 @@ manőverek:
       # M: ""                  # pl. "A Megakasztást TE adod le (megszakító támadás)"
       # V: ""
       # E: ""
+    fázis_cselekvő: ""         # opcionális. Üres ("") ha nincs. Map: fázis-betű → "én" | "ellenfél"
+      # Default (ha nincs megadva): M → ellenfél, V → én, E → én (az alkalmazó szemszögéből).
+      # Pl. Távoltartás: { M: "én" } — a Megakasztást az alkalmazó adja.
+    ellenpróba_bünteti: false  # opcionális. true = az Ellenpróba NEM buktató: sikertelenül is sikeres a manőver, de büntetés jár (pl. Átsiklás, Kibontakozás).
     hatás: []                  # kötelező, lista — mondatonként egy elem (rövid hatás leírás)
     végrehajtás_té_módosító: 4 # opcionális. Végrehajtás fázis TÉ módosítója. Default: 4 (standard +4). 0 = nincs (sima támadás).
     követelmények: ""          # opcionális. Üres ("") ha nincs. Lista ha van:

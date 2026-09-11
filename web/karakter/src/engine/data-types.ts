@@ -158,6 +158,8 @@ export interface ManoverEntry {
   nehézség: number;
   fázisok: string;
   fázis_info: Record<string, string>;
+  fázis_cselekvő: Record<string, 'én' | 'ellenfél'>;
+  ellenpróba_bünteti: boolean;
   hatás: string[];
   végrehajtás_té_módosító: number;
   követelmények: ManoverKövetelmény[];

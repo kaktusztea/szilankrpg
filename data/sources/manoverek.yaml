@@ -6,13 +6,14 @@ manőverek:
 - név: "Átsiklás"
   típus: "általános"
   nehézség: 6
-  fázisok: "E (M*)"
+  fázisok: "E"
+  ellenpróba_bünteti: true
   hatás:
     - "Átsiklás harcolók között."
-    - "Sikertelen: ellenfelek Megakasztás támadást kapnak."
+    - "Sikertelen: átsiklottál, DE minden köztes ellenfél leadhat rád egy Megakasztó támadást."
   id: "átsiklás"
   fázis_info:
-    M: "A Megakasztás CSAK sikertelen Ellenpróba esetén jár: ekkor az ellenfeleid adhatnak le fejenként egy Megakasztás támadást rád."
+    E: "Nem buktató: rontott dobásnál is átsiklasz, de minden köztes ellenfél leadhat rád egy Megakasztó támadást."
   helyzetfüggő_módosítók:
     - kategória: "Körülmény"
       mód: "single"
@@ -128,15 +129,15 @@ manőverek:
 - név: "Kibontakozás"
   típus: "általános"
   nehézség: 5
-  fázisok: "E (M*)"
+  fázisok: "E"
+  ellenpróba_bünteti: true
   hatás:
     - "Kilépés a harcból."
-    - "Sikertelen: ellenfelek Megakasztás támadást kapnak."
+    - "Sikertelen: kibontakoztál, DE minden köztes ellenfél leadhat rád egy Megakasztó támadást."
     - "Utána Futás (Gyorsaság próba)."
   id: "kibontakozás"
   fázis_info:
-    M: "A Megakasztás CSAK sikertelen Ellenpróba esetén jár: ekkor az ellenfeleid adhatnak le fejenként egy Megakasztás támadást rád."
-    E: "Sikeres kibontakozás után, ha üldöznek: Futás — Gyorsaság ellenpróba a támadóddal (Sprint fortély számít)."
+    E: "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás — Gyorsaság ellenpróba (Sprint fortély számít)."
 - név: "Lábkirántás szálfegyverrel"
   típus: "általános"
   nehézség: 6
@@ -333,12 +334,14 @@ manőverek:
 - név: "Távoltartás"
   típus: "általános"
   nehézség: 5
-  fázisok: "M*,E"
+  fázisok: "M,E"
   hatás:
     - "Ellenfeled elveszíti következő támadását (nem okozol sebzést)."
   id: "távoltartás"
+  fázis_cselekvő:
+    M: "én"
   fázis_info:
-    M: "A Megakasztást kivételesen TE (!) adod le TÉ:+4 bónusszal."
+    M: "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
     - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny" }
