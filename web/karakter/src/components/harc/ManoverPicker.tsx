@@ -42,7 +42,7 @@ export function ManoverPicker({ fázis, manoverek, onMód, onPick, onClose }: Pr
         const items = manoverek.filter(m => m.típus === típus);
         if (items.length === 0) return null;
         return (
-          <div key={típus}>
+          <div key={típus} className={`manover-cat manover-cat-${típus}`}>
             <div className="aktiv-picker-category">{TÍPUS_LABEL[típus]}</div>
             {items.map(m => (
               <div key={m.név} className="aktiv-picker-item" onClick={() => onPick(m)}>

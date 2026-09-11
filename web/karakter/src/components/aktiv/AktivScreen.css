@@ -210,6 +210,16 @@
 .manover-veg-sikeres { background: rgba(76, 175, 80, 0.12); color: var(--success); }
 .manover-veg-sikertelen { background: rgba(244, 67, 54, 0.1); color: var(--error); }
 .manover-veg-buntetve { background: rgba(212, 160, 23, 0.14); color: #e0b84a; }
+
+/* Manőver picker kategóriák — vékony színes bal-sáv a navigációhoz */
+.manover-cat { border-left: 3px solid transparent; padding-left: 8px; margin-bottom: 4px; }
+.manover-cat-általános { border-left-color: #6b9bd1; }   /* hideg kék */
+.manover-cat-belharcos { border-left-color: #c98b5e; }   /* meleg barna */
+.manover-cat-lovas { border-left-color: #8bbf6b; }       /* zöld */
+/* A szekció-fejléc színe passzol a sáv színéhez */
+.manover-cat-általános .aktiv-picker-category { color: #6b9bd1; }
+.manover-cat-belharcos .aktiv-picker-category { color: #c98b5e; }
+.manover-cat-lovas .aktiv-picker-category { color: #8bbf6b; }
 .manover-dobas-hatas { font-size: 12px; font-weight: normal; color: var(--text-dim); margin-top: 6px; display: flex; flex-direction: column; gap: 3px; }
 .manover-dobas-hatas-mondat { overflow-wrap: anywhere; white-space: normal; line-height: 1.4; }
 
