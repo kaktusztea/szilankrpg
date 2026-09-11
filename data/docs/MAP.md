@@ -96,7 +96,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivTaktikak.tsx        Taktika picker + chip-ek
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
   AktivManover.tsx         Manőver picker
-  ManoverDobasPopup.tsx    Manőver dobás popup (fázis lépegetés, Siker/Kudarc, helyzetfüggő módosítók, MP+TÉ popup)
+  ManoverDobasPopup.tsx    Manőver dobás popup (követelmény 0. lépés Normál/Erős, fázis lépegetés, Siker/Kudarc, helyzetfüggő módosítók, MP+TÉ popup)
   AktivStatuszok.tsx       Státusz picker
   AktivFegyverSection.tsx  Fegyver/fogás/páncél toggle szekció
   AktivHatasPool.tsx       Hatás pool box

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { ModositoTabla } from '../../engine/data-types';
+import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
 import { PopupOverlay } from '../PopupOverlay';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
 
@@ -15,7 +15,51 @@ interface ManőverDef {
   típus: string;
   hatás: string[];
   végrehajtás_té_módosító: number;
+  követelmények: ManoverKövetelmény[];
   helyzetfüggő_módosítók: ModositoTabla[];
+}
+
+/** Egy harcmodor-képzettség szintje-e, ill. bármely harcmodor max szintje ("Harcmodor"). */
+function harcmodorMaxSzint(karakter: Karakter, data: GameData): number {
+  const nevek = new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[]);
+  return Math.max(0, ...karakter.képzettségek.filter(k => nevek.has(k.név)).map(k => k.szint));
+}
+
+/**
+ * Gépi (auto-kiértékelt) követelmény teljesül-e a karakter alapján.
+ * Informatív ('egyéb') követelményt NEM lehet gépileg értékelni → null (a játékos dönt).
+ */
+export function követelményTeljesül(köv: ManoverKövetelmény, karakter: Karakter, data: GameData): boolean | null {
+  if (köv.típus === 'egyéb') return null;
+  const küszöb = köv.érték ?? 0;
+  if (köv.típus === 'képzettség') {
+    const szint = köv.név === 'Harcmodor'
+      ? harcmodorMaxSzint(karakter, data)
+      : (karakter.képzettségek.find(k => k.név === köv.név)?.szint ?? 0);
+    return szint >= küszöb;
+  }
+  // fortély: a felvett (max) fok
+  const fok = Math.max(0, ...karakter.fortélyok.filter(f => f.név === köv.név).map(f => f.fok));
+  return fok >= küszöb;
+}
+
+/**
+ * A gépi követelmények kiértékelése egy manőverre.
+ * - `erősHiány`: van hiányzó gépi Erős követelmény → auto-kudarc (nem dobható).
+ * - `normálHiány`: van hiányzó gépi Normál követelmény → a "Teljesül mind" gomb tiltandó.
+ */
+export function gépiKövetelményStátusz(
+  követelmények: ManoverKövetelmény[], karakter: Karakter, data: GameData,
+): { erősHiány: boolean; normálHiány: boolean } {
+  let erősHiány = false, normálHiány = false;
+  for (const köv of követelmények) {
+    const teljesül = követelményTeljesül(köv, karakter, data);
+    if (teljesül === false) {
+      if (köv.erősség === 'erős') erősHiány = true;
+      else normálHiány = true;
+    }
+  }
+  return { erősHiány, normálHiány };
 }
 
 interface Props {
@@ -103,11 +147,30 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     : Math.min(aktMP, data.konstansok.manőver?.max_mp_védő ?? 2);
   const belharcSzorzó = data.konstansok.manőver?.belharc_fok_szorzó ?? 2;
 
+  // 0. lépés: követelmények (CSAK aktív módban — az alkalmazóra vonatkoznak).
+  const követelmények = mód === 'aktív' ? (manőver.követelmények ?? []) : [];
+  const vanKövetelmény = követelmények.length > 0;
+  const vanNormál = követelmények.some(k => k.erősség === 'normál');
+  const vanErős = követelmények.some(k => k.erősség === 'erős');
+  const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data);
+  // Auto-kudarc, ha gépi Erős hiány. Ekkor a döntés nem is választható.
+  const [követelményDöntés, setKövetelményDöntés] = useState<'pending' | 'mind' | 'normál' | 'erős'>(
+    () => gépiStátusz.erősHiány ? 'erős' : 'pending',
+  );
+  // A 0. lépés akkor "kész", ha van döntés (vagy nincs követelmény).
+  const követelményKész = !vanKövetelmény || követelményDöntés !== 'pending';
+  const követelményKudarc = követelményDöntés === 'erős';
+  // Hátrány-2 az Ellenpróbán, ha a döntés "normál" (Normál hiány).
+  const ellenpróbaHátrány2 = követelményDöntés === 'normál';
+
   // Find current active phase (first pending), but stop if manőver already failed.
   const manőverMárSikertelen = eredmények.some((e, i) => e !== 'pending' && !fázisSikeres(fázisok[i], e, mód));
-  const aktívFázisIdx = manőverMárSikertelen ? -1 : eredmények.findIndex(e => e === 'pending');
+  const aktívFázisIdx = (!követelményKész || követelményKudarc || manőverMárSikertelen)
+    ? -1 : eredmények.findIndex(e => e === 'pending');
   const végeredmény: 'folyamatban' | 'sikeres' | 'sikertelen' =
-    manőverMárSikertelen ? 'sikertelen'
+    követelményKudarc ? 'sikertelen'
+    : !követelményKész ? 'folyamatban'
+    : manőverMárSikertelen ? 'sikertelen'
     : eredmények.includes('pending') ? 'folyamatban'
     : isDone(eredmények, fázisok) ? 'sikeres' : 'sikertelen';
 
@@ -211,7 +274,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           )}
           {renderMpGomb()}
           <div className="manover-ep-vs-row">
-            <span className="manover-ep-side"><strong>{dobásÉrték}</strong> + k10</span>
+            <span className="manover-ep-side"><strong>{dobásÉrték}</strong> + {ellenpróbaHátrány2 ? <span className="manover-hatrany2">k10 (Hátrány-2)</span> : 'k10'}</span>
             <span className="manover-ep-vs">vs</span>
             <span className="manover-ep-side">
               <strong className="manover-celszam-ertek">{célszám}</strong>
@@ -245,13 +308,51 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
   return (
     <>
-    <PopupOverlay onClose={onClose}>
+    <PopupOverlay onClose={onClose} onEscape={() => { if (!szitPickerNyitva && !mpPickerNyitva && !téPopupNyitva) onClose(); }}>
       <div className="manover-dobas-popup">
         <div className="manover-dobas-header">
           <span className="manover-dobas-title">{manőver.név} ({fázisok.join(' ')})</span>
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
 
+        {vanKövetelmény && (
+          <div className={`manover-kov-lepes${követelményKész ? ' manover-fazis-done' : ' manover-fazis-aktiv'}`}>
+            <div className="manover-fazis-label">Követelmények</div>
+            <div className="manover-kov-lista">
+              {követelmények.map((köv, i) => {
+                const teljesül = követelményTeljesül(köv, karakter, data);
+                const cimke = köv.típus === 'egyéb'
+                  ? köv.leírás
+                  : `${köv.név}${köv.érték != null ? ` ${köv.érték}${köv.típus === 'fortély' ? '.fok' : '.szint'}` : ''}`;
+                return (
+                  <div key={i} className="manover-kov-sor">
+                    <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟩'}</span>
+                    <span className="manover-kov-cimke">{cimke}</span>
+                    {teljesül === true && <span className="manover-fazis-ok">✓</span>}
+                    {teljesül === false && <span className="manover-fazis-fail">✗</span>}
+                  </div>
+                );
+              })}
+            </div>
+            {gépiStátusz.erősHiány
+              ? <div className="manover-kov-auto-fail">Erős követelmény hiányzik — a manőver nem kísérelhető meg.</div>
+              : !követelményKész && (
+                <div className="manover-fazis-chips">
+                  <button className="manover-chip manover-chip-igen"
+                    disabled={gépiStátusz.normálHiány}
+                    onClick={() => setKövetelményDöntés('mind')}>Teljesül mind</button>
+                  {vanNormál && (
+                    <button className="manover-chip manover-chip-normal"
+                      onClick={() => setKövetelményDöntés('normál')}>Normál hiány</button>
+                  )}
+                  {vanErős && (
+                    <button className="manover-chip manover-chip-nem"
+                      onClick={() => setKövetelményDöntés('erős')}>Erős hiány</button>
+                  )}
+                </div>
+              )}
+          </div>
+        )}
 
         <div className="manover-dobas-fazisok">
           {fázisok.map((f, i) => {

@@ -143,6 +143,14 @@ export interface SzituacioEntry {
   infó: string;
 }
 
+export interface ManoverKövetelmény {
+  erősség: 'normál' | 'erős';
+  típus: 'képzettség' | 'fortély' | 'egyéb';
+  név?: string;      // gépi (képzettség/fortély)
+  érték?: number;    // gépi: szint/fok küszöb
+  leírás?: string;   // informatív ('egyéb')
+}
+
 export interface ManoverEntry {
   id: string;
   név: string;
@@ -151,6 +159,7 @@ export interface ManoverEntry {
   fázisok: string;
   hatás: string[];
   végrehajtás_té_módosító: number;
+  követelmények: ManoverKövetelmény[];
   helyzetfüggő_módosítók: ModositoTabla[];
 }
 

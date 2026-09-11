@@ -10,6 +10,12 @@ manőverek:
     fázisok: ""                # kötelező, string (pl. "V,E", "M,E", "E (M*)")
     hatás: []                  # kötelező, lista — mondatonként egy elem (rövid hatás leírás)
     végrehajtás_té_módosító: 4 # opcionális. Végrehajtás fázis TÉ módosítója. Default: 4 (standard +4). 0 = nincs (sima támadás).
+    követelmények: ""          # opcionális. Üres ("") ha nincs. Lista ha van:
+      # - erősség: "normál"    # "normál" = hiány → Ellenpróba Hátrány-2 (nem halmozódik); "erős" = hiány → auto-kudarc
+      #   típus: "képzettség"  # gépi (auto-kiértékelt): "képzettség" | "fortély"; informatív: "egyéb"
+      #   név: ""              # gépi: képzettség/fortély neve ("Harcmodor" = bármely harcmodor-képzettség max szintje)
+      #   érték: 0             # gépi: képzettség szint vagy fortély fok küszöb
+      #   leírás: ""           # informatív ("egyéb"): a játékos/KM dönti el, teljesül-e
     helyzetfüggő_módosítók: "" # opcionális. Üres ("") ha nincs. Lista ha van (kepzettseg minta):
       # - kategória: ""        # Kategória neve (pl. "Fegyver", "Ellenfél", "Körülmény")
       #   mód: "single"        # "single" (default): skála, 1 választható. "multi": független toggle-ök.

@@ -191,6 +191,18 @@
 .manover-chip-igen:hover { background: rgba(76, 175, 80, 0.15); }
 .manover-chip-nem { border-color: var(--error); color: var(--error); }
 .manover-chip-nem:hover { background: rgba(244, 67, 54, 0.15); }
+.manover-chip-normal { border-color: #d4a017; color: #e0b84a; }
+.manover-chip-normal:hover { background: rgba(212, 160, 23, 0.15); }
+.manover-chip:disabled { opacity: 0.35; cursor: not-allowed; }
+.manover-chip:disabled:hover { background: transparent; }
+
+.manover-kov-lepes { padding: 8px; border-radius: 6px; background: rgba(255,255,255,0.03); margin-bottom: 10px; }
+.manover-kov-lista { display: flex; flex-direction: column; gap: 3px; margin: 6px 0; }
+.manover-kov-sor { display: flex; align-items: baseline; gap: 6px; font-size: 13px; }
+.manover-kov-erosseg { font-size: 11px; }
+.manover-kov-cimke { flex: 1; }
+.manover-kov-auto-fail { font-size: 13px; color: var(--error); margin-top: 6px; }
+.manover-hatrany2 { color: #e0b84a; font-weight: bold; }
 
 .manover-dobas-veg { margin-top: 12px; padding: 10px; border-radius: 6px; font-size: 15px; font-weight: 600; text-align: center; }
 .manover-veg-sikeres { background: rgba(76, 175, 80, 0.12); color: var(--success); }

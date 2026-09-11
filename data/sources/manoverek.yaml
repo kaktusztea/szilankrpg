@@ -43,6 +43,8 @@ manőverek:
     - "Végtaglevágás."
     - "Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
   id: "csonkolás"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Sikeres Precíz támadás manőver (a Nehézséggel)" }
   helyzetfüggő_módosítók:
     - kategória: "Célzott végtag"
       mód: "single"
@@ -65,6 +67,10 @@ manőverek:
   hatás:
     - "Ellenfél fegyvere eltörik."
   id: "fegyvertörés"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "erős", típus: "egyéb", leírás: "A használt fegyver Harcmodor-követelménye teljesül" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Nem karom/szarv ellen (ott Csonkolás)" }
   helyzetfüggő_módosítók:
     - kategória: "Ellenfél fegyvere"
       mód: "single"
@@ -92,6 +98,9 @@ manőverek:
     - "Külön sebzés mindegyikre."
     - "Nem okoz VÉ csökkentést."
   id: "forgószél"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Csak közvetlenül ellened harcolók ellen" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Egyik ellenfél sincs Pengeelőnyben" }
 - név: "Földrevitel"
   típus: "általános"
   nehézség: 8
@@ -100,6 +109,9 @@ manőverek:
     - "Ellenfél földre kerül (Földön fekve módosítók)."
     - "Felállás: Felállás földről manőver."
   id: "földrevitel"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél nincs Pengeelőnyben veled szemben" }
   helyzetfüggő_módosítók:
     - kategória: "Erő különbség"
       mód: "single"
@@ -123,6 +135,10 @@ manőverek:
     - "Ellenfél földre kerül (Földön fekve módosítók)."
     - "Felállás: Felállás földről manőver."
   id: "lábkirántás_szálfegyverrel"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Lándzsavívás", érték: 6 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Szálfegyver használata" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Csak kétlábú ellenfél ellen" }
   helyzetfüggő_módosítók:
     - kategória: "Fegyver"
       mód: "single"
@@ -136,6 +152,10 @@ manőverek:
     - "Ellenfél fegyvere foglyul ejtve - nem használhatja."
     - "Helyhez kötve harci helyzet módosítók."
   id: "lánccsapda"
+  követelmények:
+    - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 1 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Láncos fegyver használata" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 0.5 penge" }
 - név: "Lánccsapdából szabadítás"
   típus: "általános"
   nehézség: 7
@@ -150,6 +170,9 @@ manőverek:
   hatás:
     - "Ellenfél fegyvere kiesik kezéből."
   id: "lefegyverzés"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Kardvívás / Lándzsavívás / Ostorharc harcmodor" }
   helyzetfüggő_módosítók:
     - kategória: "Saját fegyver alkalmassága"
       mód: "single"
@@ -170,6 +193,11 @@ manőverek:
     - "Egyébként Bódultság státusz."
     - "Sebzés FP-ként jelenik meg."
   id: "leütés_hátulról"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Orvtámadás harci helyzet" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Hátulról támadás harci helyzet" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Célpont elfszabású anatómiával" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Zúzófegyver vagy Puszta kéz" }
   helyzetfüggő_módosítók:
     - kategória: "Célpont"
       mód: "single"
@@ -183,6 +211,9 @@ manőverek:
   hatás:
     - "Mesterjel belekarcolása ellenfél ruhájába/bőrébe (1 ÉP)."
   id: "mesterjel"
+  követelmények:
+    - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 2 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 1 penge hosszú hegyes szúrófegyver" }
   helyzetfüggő_módosítók:
     - kategória: "Jel bonyolultsága"
       mód: "single"
@@ -198,6 +229,8 @@ manőverek:
     - "Hátulról támadás pozíció elérése."
     - "Ellenfél dönthet: átáll rád → szövetségesed kap hátulról bónuszt."
   id: "mögékerülés"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "A harctér alkalmas a hátbakerülésre (KM)" }
   helyzetfüggő_módosítók:
     - kategória: "Túlerő"
       mód: "single"
@@ -213,6 +246,10 @@ manőverek:
     - "Pajzs VÉ végleges csökkentése."
     - "Zúzó: SP/2, Vágó: SP/4."
   id: "pajzsrongálás"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 6 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Erő: +1" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Zúzó- vagy kétkezes fegyver" }
 - név: "Pajzzsal felöklelés"
   típus: "általános"
   nehézség: 7
@@ -220,6 +257,10 @@ manőverek:
   hatás:
     - "Ellenfél földre kerül (Földön fekve módosítók)."
   id: "pajzzsal_felöklelés"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "normál", típus: "fortély", név: "Pajzshasználat", érték: 2 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Nagy vagy Közepes pajzs" }
   helyzetfüggő_módosítók:
     - kategória: "Erő különbség"
       mód: "single"
@@ -240,6 +281,9 @@ manőverek:
     - "Alattomos ütés (k20+0 SP)."
     - "Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását."
   id: "piszkos_trükk"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Közelharc", érték: 4 }
+    - { erősség: "normál", típus: "egyéb", leírás: "Forgatott fegyverre: Mesterfegyver 1.fok" }
 - név: "Precíz támadás"
   típus: "általános"
   nehézség: 6
@@ -248,6 +292,9 @@ manőverek:
     - "Adott területre támadás."
     - "Manőverfókusz: Szike SP bónusz érvényesül vértmentes pontra."
   id: "precíz_támadás"
+  követelmények:
+    - { erősség: "normál", típus: "egyéb", leírás: "Közelharc VAGY Kardvívás 6.szint" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok)" }
   végrehajtás_té_módosító: 0
   helyzetfüggő_módosítók:
     - kategória: "Fegyver"
@@ -267,6 +314,8 @@ manőverek:
   hatás:
     - "Rácsimpaszkodás ellenfél hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
   id: "rávetődés_hátulról"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Orvtámadás vagy Hátulról támadás harci helyzet" }
 - név: "Távoltartás"
   típus: "általános"
   nehézség: 5
@@ -275,6 +324,9 @@ manőverek:
     - "TÉ:+4 Megszakító támadás."
     - "Siker: ellenfél elveszíti következő támadását."
   id: "távoltartás"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny" }
   helyzetfüggő_módosítók:
     - kategória: "Harci alakzat"
       mód: "single"
@@ -293,6 +345,8 @@ manőverek:
   hatás:
     - "Ellenfél terelése kívánt irányba."
   id: "terelés"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 6 }
   helyzetfüggő_módosítók:
     - kategória: "Harci alakzat"
       mód: "single"
@@ -313,6 +367,8 @@ manőverek:
   hatás:
     - "Ellenfél földre kerül (Földön fekve módosítók)."
   id: "átdobás"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -327,6 +383,8 @@ manőverek:
     - "Belharci szituáció létrejön."
     - "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
   id: "belharcba_kerülés"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharcos fegyver és Közelharc harcmodor" }
   helyzetfüggő_módosítók:
     - kategória: "Ellenfél helyzete"
       mód: "single"
@@ -351,6 +409,8 @@ manőverek:
     - "Kilépés belharcból, sima harci szituáció."
     - "Sebzés esetén automatikus kibontakozás."
   id: "belharcból_kibontakozás"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -366,6 +426,8 @@ manőverek:
     - "Csak puszta kézzel harcol."
     - "Körönként Fájdalomtűrés próba (15)."
   id: "feszítés_leszorítás"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -380,6 +442,8 @@ manőverek:
     - "Kilépés feszítésből."
     - "Belharci szituáció megmarad."
   id: "feszítésből_kijövetel"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -393,6 +457,9 @@ manőverek:
   hatás:
     - "Ellenfél földre kerül (Földön fekve módosítók)."
   id: "gáncsolás"
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Közelharc", érték: 5 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -406,6 +473,8 @@ manőverek:
   hatás:
     - "7 ÉP sebzés, kéz használhatatlan."
   id: "kéztörés"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -419,6 +488,8 @@ manőverek:
   hatás:
     - "9 ÉP sebzés, láb használhatatlan."
   id: "lábtörés"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -432,6 +503,8 @@ manőverek:
   hatás:
     - "5 ÉP sebzés."
   id: "lefejelés"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -446,6 +519,8 @@ manőverek:
     - "Ellenfél terelése kívánt irányba (max 5m)."
     - "Lefeszítve: Nehézség 6."
   id: "leforgatás_irányítás"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Ellenfél helyzete"
       mód: "single"
@@ -464,6 +539,10 @@ manőverek:
     - "Azonnali halál (elfszabású anatómia)."
     - "Megelőző Feszítés szükséges."
   id: "nyaktörés"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Megelőző sikeres Feszítés, Leszorítás manőver" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
       mód: "single"
@@ -480,6 +559,9 @@ manőverek:
     - "Távharc VÉ: Kiszámíthatatlan (6x)."
     - "Követelmény: Lovas harc 2.fok."
   id: "hátas_táncoltatása"
+  követelmények:
+    - { erősség: "normál", típus: "fortély", név: "Lovas harc", érték: 2 }
+    - { erősség: "erős", típus: "egyéb", leírás: "Lovas (hátason ülő) hajtja végre" }
 - név: "Lóhátról lerántás"
   típus: "lovas"
   nehézség: 6
@@ -490,6 +572,9 @@ manőverek:
     - "Sikernél a lovas földre kerül."
     - "Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye)."
   id: "lóhátról_lerántás"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Gyalogos ellenfél végzi (nem a lovas)" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Közvetlen harcérintkezés" }
 - név: "Lovas áttörés"
   típus: "lovas"
   nehézség: 4
@@ -499,6 +584,8 @@ manőverek:
     - "Sikernél ellenfelek szétszóródnak, hátrány a következő körben."
     - "Nehézség: 4-10 (ellenfelek száma és fegyverzete függvénye)."
   id: "lovas_áttörés"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Galopp vagy gyorsabb tempó" }
 - név: "Lovas megakasztása"
   típus: "lovas"
   nehézség: 4
@@ -508,3 +595,7 @@ manőverek:
     - "Szúró szálfegyver + Pengeelőny szükséges."
     - "Sebző dobás a lovasra, aki elveszíti támadását."
   id: "lovas_megakasztása"
+  követelmények:
+    - { erősség: "erős", típus: "egyéb", leírás: "Védekező gyalogos végzi (nem a lovas)" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Szúró szálfegyver használata" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny a lovashoz képest" }

@@ -974,7 +974,7 @@ Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_akt
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14+3 taktika: módosítók, fokok, kombó szabályok, skálázható flag)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
 - `data/sources/szituaciok.yaml` TÖRÖLVE — 7 elem beolvadt `harci_helyzetek.yaml`-ba (pozitív/semleges csoportba)
-- `data/sources/manoverek.yaml` → `tables/manoverek.json` (38 manőver: id, típus, nehézség, fázisok, `hatás` [mondatonkénti lista], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (38 manőver: id, típus, nehézség, fázisok, `hatás` [mondatonkénti lista], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `követelmények` [opcionális, Normál/Erős — lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
@@ -1011,6 +1011,10 @@ UI: Manőver szekció `aktiv-label` fejléccel (mint Taktikák/Helyzetek).
 A Manőver dobás popup (§21.4) viszont interaktív dobás-módosítókat használ:
   - `helyzetfüggő_módosítók` → az Ellenpróba célszámába (`nehézség ± szitModÖsszeg`), CSAK aktív módban (mindig az alkalmazó módosítói). A képzettségpróba `calcSzitModÖsszeg`-ét használja üres enyhítés-listával. Színkonvenció FORDÍTOTT a képzettségpróbához képest: pozitív (nehezebb) = piros, negatív (könnyebb) = zöld.
   - `végrehajtás_té_módosító` → a Végrehajtás fázis TÉ értékébe (`aktívTÉ + módosító`). Default 4; `0` = nincs +4 (Ellenfél elfogása, Precíz támadás — a TÉ chip popupja külön jelzi).
+  - `követelmények` → a Manőver dobás popup **0. lépése** (a M/V/E fázisok előtt, CSAK aktív módban, ha van követelmény). Szabály: `md/066_04` „Manőver-követelmények: Normál és Erős" (a Képzettség-kiterjesztés mintája).
+    - Erősség: 🟩 `normál` (hiány → Ellenpróba `Hátrány-2`, nem halmozódik) · 🟥 `erős` (hiány → auto-kudarc, nem dobható; dominál a Normál felett).
+    - Ellenőrizhetőség: gépi (`típus: képzettség|fortély`, `név`+`érték` küszöb — a webapp auto-értékeli a karakterből; „Harcmodor" = bármely harcmodor-képzettség max szintje) · informatív (`típus: egyéb`, `leírás` — a játékos/KM dönt).
+    - 0. lépés UI: minden követelmény listázva (gépieknél ✓/✗ auto-eredmény), 3 gomb: „Teljesül mind" (tiltva, ha gépi Normál hiány), „Normál hiány" (→ Hátrány-2), „Erős hiány" (→ auto-kudarc). Gépi Erős hiány → azonnali auto-kudarc, döntés nem választható.
 Taktikák Hatás pool: módosítók zölddel + ✔ jel a végén (beszámított jelzés).
 
 ### 21.1 Harci Taktikák

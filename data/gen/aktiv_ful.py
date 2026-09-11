@@ -44,6 +44,8 @@ def generate_aktiv_ful():
     for m in manoverek:
         hm = m.get('helyzetfüggő_módosítók')
         m['helyzetfüggő_módosítók'] = hm if isinstance(hm, list) else []
+        köv = m.get('követelmények')
+        m['követelmények'] = köv if isinstance(köv, list) else []
         m.setdefault('végrehajtás_té_módosító', 4)
 
     write_json('taktikak.json', taktikak)
