@@ -1426,6 +1426,12 @@
       "Feltétel: Lovas harc 2.fok."
     ],
     "id": "hátas_táncoltatása",
+    "fázis_cselekvő": {
+      "M": "én"
+    },
+    "fázis_info": {
+      "M": "TE (lovas) adod le a soron kívüli Megakasztást minden harcérintkezésben lévő ellenfélre. Nincs Ellenpróba, nincs Nehézség."
+    },
     "követelmények": [
       {
         "erősség": "normál",
@@ -1440,8 +1446,6 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
-    "fázis_info": {},
-    "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
   },
@@ -1510,6 +1514,12 @@
       "Sebző dobás a lovasra, aki elveszíti támadását."
     ],
     "id": "lovas_megakasztása",
+    "fázis_cselekvő": {
+      "M": "én"
+    },
+    "fázis_info": {
+      "M": "TE (védekező gyalogos) adod le a Megakasztást a rohamozó lovasra, mielőtt lecsapna rád. Siker = eltaláltad."
+    },
     "követelmények": [
       {
         "erősség": "erős",
@@ -1528,8 +1538,6 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
-    "fázis_info": {},
-    "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
   }

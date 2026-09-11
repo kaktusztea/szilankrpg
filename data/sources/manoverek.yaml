@@ -585,6 +585,10 @@ manőverek:
     - "Távharc VÉ: Kiszámíthatatlan (6x)."
     - "Feltétel: Lovas harc 2.fok."
   id: "hátas_táncoltatása"
+  fázis_cselekvő:
+    M: "én"
+  fázis_info:
+    M: "TE (lovas) adod le a soron kívüli Megakasztást minden harcérintkezésben lévő ellenfélre. Nincs Ellenpróba, nincs Nehézség."
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Lovas harc", érték: 2 }
     - { erősség: "erős", típus: "egyéb", leírás: "Lovas (hátason ülő) hajtja végre" }
@@ -621,6 +625,10 @@ manőverek:
     - "Feltétel: szúró szálfegyver + Pengeelőny szükséges."
     - "Sebző dobás a lovasra, aki elveszíti támadását."
   id: "lovas_megakasztása"
+  fázis_cselekvő:
+    M: "én"
+  fázis_info:
+    M: "TE (védekező gyalogos) adod le a Megakasztást a rohamozó lovasra, mielőtt lecsapna rád. Siker = eltaláltad."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Védekező gyalogos végzi (nem a lovas)" }
     - { erősség: "erős", típus: "egyéb", leírás: "Szúró szálfegyver használata" }
