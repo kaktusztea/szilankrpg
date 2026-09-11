@@ -9,6 +9,9 @@
       "Sikertelen: ellenfelek Megakasztás támadást kapnak."
     ],
     "id": "átsiklás",
+    "fázis_info": {
+      "M": "A Megakasztás CSAK sikertelen Ellenpróba esetén jár: ekkor az ellenfeleid adhatnak le fejenként egy Megakasztás támadást rád."
+    },
     "helyzetfüggő_módosítók": [
       {
         "kategória": "Körülmény",
@@ -68,6 +71,7 @@
       }
     ],
     "követelmények": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -77,7 +81,7 @@
     "fázisok": "V,E",
     "hatás": [
       "Végtaglevágás.",
-      "Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
+      "Feltétel: Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
     ],
     "id": "csonkolás",
     "követelmények": [
@@ -103,6 +107,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -115,6 +120,9 @@
       "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
     ],
     "id": "ellenfél_elfogása",
+    "fázis_info": {
+      "E": "Kijövetel a helyzetből: Kibontakozás Nehézség 10; ellenfeled megelőző Megakasztására TÉ:+4 jár."
+    },
     "végrehajtás_té_módosító": 0,
     "helyzetfüggő_módosítók": [],
     "követelmények": []
@@ -176,6 +184,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -189,6 +198,7 @@
     "id": "felállás_földről",
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -202,6 +212,10 @@
       "Nem okoz VÉ csökkentést."
     ],
     "id": "forgószél",
+    "fázis_info": {
+      "V": "Egy köríves támadás egyszerre több ellenfélre; ha talált, dobj sebzést mindegyikre külön.",
+      "E": "Ez a támadás NEM okoz VÉ csökkentést. Körönként max 1x."
+    },
     "követelmények": [
       {
         "erősség": "erős",
@@ -256,6 +270,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -269,6 +284,10 @@
       "Utána Futás (Gyorsaság próba)."
     ],
     "id": "kibontakozás",
+    "fázis_info": {
+      "M": "A Megakasztás CSAK sikertelen Ellenpróba esetén jár: ekkor az ellenfeleid adhatnak le fejenként egy Megakasztás támadást rád.",
+      "E": "Sikeres kibontakozás után, ha üldöznek: Futás — Gyorsaság ellenpróba a támadóddal (Sprint fortély számít)."
+    },
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
     "végrehajtás_té_módosító": 4
@@ -313,6 +332,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -344,6 +364,7 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -357,6 +378,7 @@
     "id": "lánccsapdából_szabadítás",
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -411,6 +433,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -424,6 +447,10 @@
       "Sebzés FP-ként jelenik meg."
     ],
     "id": "leütés_hátulról",
+    "fázis_info": {
+      "V": "Célpont VÉ = a mozgás jellegétől függő érték (lásd Orvtámadás). Fegyver markolat sebzése: k20+0 SP + Erőbónusz (Zúzó).",
+      "E": "Ájulás, ha a sebzés eléri az áldozat Max ÉP/4↓ értékét; egyébként Bódultság. A sebzés FP-ként jelenik meg."
+    },
     "követelmények": [
       {
         "erősség": "erős",
@@ -506,6 +533,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -545,6 +573,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -576,6 +605,7 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -640,6 +670,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -652,6 +683,9 @@
       "Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását."
     ],
     "id": "piszkos_trükk",
+    "fázis_info": {
+      "V": "Alattomos ütés sebzése: k20+0 SP (+ vaskesztyű/szegecs/Erőbónusz beleszámít)."
+    },
     "követelmények": [
       {
         "erősség": "normál",
@@ -719,7 +753,8 @@
           }
         ]
       }
-    ]
+    ],
+    "fázis_info": {}
   },
   {
     "név": "Rávetődés hátulról",
@@ -738,6 +773,7 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -746,10 +782,12 @@
     "nehézség": 5,
     "fázisok": "M*,E",
     "hatás": [
-      "TÉ:+4 Megszakító támadás.",
-      "Ellenfeled elveszíti következő támadását."
+      "Ellenfeled elveszíti következő támadását (nem okozol sebzést)."
     ],
     "id": "távoltartás",
+    "fázis_info": {
+      "M": "A Megakasztást kivételesen TE (!) adod le TÉ:+4 bónusszal."
+    },
     "követelmények": [
       {
         "erősség": "normál",
@@ -850,6 +888,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -884,6 +923,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -896,6 +936,9 @@
       "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
     ],
     "id": "belharcba_kerülés",
+    "fázis_info": {
+      "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül — mindenképp dobj Ellenpróbát."
+    },
     "követelmények": [
       {
         "erősség": "erős",
@@ -959,6 +1002,9 @@
       "Sebzés esetén automatikus kibontakozás."
     ],
     "id": "belharcból_kibontakozás",
+    "fázis_info": {
+      "E": "Ha belharcban sebzel, bármilyen dobás nélkül automatikusan kibontakozol."
+    },
     "követelmények": [
       {
         "erősség": "erős",
@@ -995,6 +1041,9 @@
       "Körönként Fájdalomtűrés próba (15)."
     ],
     "id": "feszítés_leszorítás",
+    "fázis_info": {
+      "E": "Fenntartás: az áldozat körönként Fájdalomtűrés + Önuralom próbát dob (célszám 15). Kudarcnál nem tud visszatámadni, mágiát/pszít/manővert használni."
+    },
     "követelmények": [
       {
         "erősség": "erős",
@@ -1030,6 +1079,9 @@
       "Belharci szituáció megmarad."
     ],
     "id": "feszítésből_kijövetel",
+    "fázis_info": {
+      "E": "Körönként Fájdalomtűrés + Önuralom próba (célszám 15). Kudarcnál nem tudsz visszatámadni, mágiát/pszít/manővert használni."
+    },
     "követelmények": [
       {
         "erősség": "erős",
@@ -1093,6 +1145,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1127,6 +1180,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1161,6 +1215,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1195,6 +1250,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1204,7 +1260,7 @@
     "fázisok": "V,E",
     "hatás": [
       "Ellenfél terelése kívánt irányba (max 5m).",
-      "Lefeszítve: Nehézség 6."
+      "Feltétel: Lefeszített ellenfélnél Nehézség 6."
     ],
     "id": "leforgatás_irányítás",
     "követelmények": [
@@ -1240,6 +1296,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1249,7 +1306,7 @@
     "fázisok": "V,E",
     "hatás": [
       "Azonnali halál (elfszabású anatómia).",
-      "Megelőző Feszítés szükséges."
+      "Feltétel: megelőző sikeres Feszítés szükséges."
     ],
     "id": "nyaktörés",
     "követelmények": [
@@ -1285,6 +1342,7 @@
         ]
       }
     ],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1293,10 +1351,10 @@
     "nehézség": 0,
     "fázisok": "M",
     "hatás": [
-      "Lovas végzi.",
+      "Feltétel: Lovas végzi.",
       "Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen.",
       "Távharc VÉ: Kiszámíthatatlan (6x).",
-      "Követelmény: Lovas harc 2.fok."
+      "Feltétel: Lovas harc 2.fok."
     ],
     "id": "hátas_táncoltatása",
     "követelmények": [
@@ -1313,6 +1371,7 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1321,10 +1380,10 @@
     "nehézség": 6,
     "fázisok": "M,V,E",
     "hatás": [
-      "GYALOGOS végzi lovas ellen.",
-      "Közvetlen harcérintkezés szükséges.",
+      "Feltétel: GYALOGOS végzi lovas ellen.",
+      "Feltétel: közvetlen harcérintkezés szükséges.",
       "Sikernél a lovas földre kerül.",
-      "Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye)."
+      "Feltétel: Nehézség 6-12 (hátas mozgása, lovas figyelme függvénye)."
     ],
     "id": "lóhátról_lerántás",
     "követelmények": [
@@ -1340,6 +1399,7 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1348,9 +1408,9 @@
     "nehézség": 4,
     "fázisok": "V,E",
     "hatás": [
-      "Áttörés ellenfél sorain galopp/roham tempóval.",
+      "Feltétel: galopp/roham tempó, áttörés az ellenfél sorain.",
       "Sikernél ellenfelek szétszóródnak, hátrány a következő körben.",
-      "Nehézség: 4-10 (ellenfelek száma és fegyverzete függvénye)."
+      "Feltétel: Nehézség 4-10 (ellenfelek száma és fegyverzete függvénye)."
     ],
     "id": "lovas_áttörés",
     "követelmények": [
@@ -1361,6 +1421,7 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   },
   {
@@ -1369,8 +1430,8 @@
     "nehézség": 4,
     "fázisok": "M,E",
     "hatás": [
-      "GYALOGOS végzi lovas ellen.",
-      "Szúró szálfegyver + Pengeelőny szükséges.",
+      "Feltétel: GYALOGOS végzi lovas ellen.",
+      "Feltétel: szúró szálfegyver + Pengeelőny szükséges.",
       "Sebző dobás a lovasra, aki elveszíti támadását."
     ],
     "id": "lovas_megakasztása",
@@ -1392,6 +1453,7 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
+    "fázis_info": {},
     "végrehajtás_té_módosító": 4
   }
 ]

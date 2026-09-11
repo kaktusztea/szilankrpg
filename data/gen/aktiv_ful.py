@@ -46,6 +46,8 @@ def generate_aktiv_ful():
         m['helyzetfüggő_módosítók'] = hm if isinstance(hm, list) else []
         köv = m.get('követelmények')
         m['követelmények'] = köv if isinstance(köv, list) else []
+        fi = m.get('fázis_info')
+        m['fázis_info'] = fi if isinstance(fi, dict) else {}
         m.setdefault('végrehajtás_té_módosító', 4)
 
     write_json('taktikak.json', taktikak)

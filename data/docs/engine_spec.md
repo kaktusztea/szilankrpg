@@ -974,7 +974,7 @@ Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_akt
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14+3 taktika: módosítók, fokok, kombó szabályok, skálázható flag)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
 - `data/sources/szituaciok.yaml` TÖRÖLVE — 7 elem beolvadt `harci_helyzetek.yaml`-ba (pozitív/semleges csoportba)
-- `data/sources/manoverek.yaml` → `tables/manoverek.json` (38 manőver: id, típus, nehézség, fázisok, `hatás` [mondatonkénti lista], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `követelmények` [opcionális, Normál/Erős — lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (38 manőver: id, típus, nehézség, fázisok, `fázis_info` [opcionális map: fázis-betű → magyarázó szöveg, pl. speciális `M*` fázis], `hatás` [mondatonkénti lista; a `Sikertelen:` / `Kudarc:` / `Feltétel:` előtagú sorokat a Manőver dobás popup sikeres-boxa kiszűri, de a picker-leírás mind mutatja], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `követelmények` [opcionális, Normál/Erős — lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)

@@ -8,6 +8,10 @@ manőverek:
     típus: ""                  # kötelező, enum: "általános" | "belharcos" | "lovas"
     nehézség: 0                # kötelező, number [0;12]
     fázisok: ""                # kötelező, string (pl. "V,E", "M,E", "E (M*)")
+    fázis_info: ""             # opcionális. Üres ("") ha nincs. Map ha van: fázis-betű → magyarázó szöveg
+      # M: ""                  # pl. "A Megakasztást TE adod le (megszakító támadás)"
+      # V: ""
+      # E: ""
     hatás: []                  # kötelező, lista — mondatonként egy elem (rövid hatás leírás)
     végrehajtás_té_módosító: 4 # opcionális. Végrehajtás fázis TÉ módosítója. Default: 4 (standard +4). 0 = nincs (sima támadás).
     követelmények: ""          # opcionális. Üres ("") ha nincs. Lista ha van:

@@ -157,6 +157,7 @@ export interface ManoverEntry {
   típus: string;
   nehézség: number;
   fázisok: string;
+  fázis_info: Record<string, string>;
   hatás: string[];
   végrehajtás_té_módosító: number;
   követelmények: ManoverKövetelmény[];

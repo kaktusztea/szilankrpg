@@ -11,6 +11,8 @@ manőverek:
     - "Átsiklás harcolók között."
     - "Sikertelen: ellenfelek Megakasztás támadást kapnak."
   id: "átsiklás"
+  fázis_info:
+    M: "A Megakasztás CSAK sikertelen Ellenpróba esetén jár: ekkor az ellenfeleid adhatnak le fejenként egy Megakasztás támadást rád."
   helyzetfüggő_módosítók:
     - kategória: "Körülmény"
       mód: "single"
@@ -41,7 +43,7 @@ manőverek:
   fázisok: "V,E"
   hatás:
     - "Végtaglevágás."
-    - "Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
+    - "Feltétel: Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
   id: "csonkolás"
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Sikeres Precíz támadás manőver (a Nehézséggel)" }
@@ -59,6 +61,8 @@ manőverek:
     - "Kiszolgáltatott pozíció (fegyver a nyakánál)."
     - "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
   id: "ellenfél_elfogása"
+  fázis_info:
+    E: "Kijövetel a helyzetből: Kibontakozás Nehézség 10; ellenfeled megelőző Megakasztására TÉ:+4 jár."
   végrehajtás_té_módosító: 0
 - név: "Fegyvertörés"
   típus: "általános"
@@ -98,6 +102,9 @@ manőverek:
     - "Külön sebzés mindegyikre."
     - "Nem okoz VÉ csökkentést."
   id: "forgószél"
+  fázis_info:
+    V: "Egy köríves támadás egyszerre több ellenfélre; ha talált, dobj sebzést mindegyikre külön."
+    E: "Ez a támadás NEM okoz VÉ csökkentést. Körönként max 1x."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Csak közvetlenül ellened harcolók ellen" }
     - { erősség: "erős", típus: "egyéb", leírás: "Egyik ellenfél sincs Pengeelőnyben" }
@@ -127,6 +134,9 @@ manőverek:
     - "Sikertelen: ellenfelek Megakasztás támadást kapnak."
     - "Utána Futás (Gyorsaság próba)."
   id: "kibontakozás"
+  fázis_info:
+    M: "A Megakasztás CSAK sikertelen Ellenpróba esetén jár: ekkor az ellenfeleid adhatnak le fejenként egy Megakasztás támadást rád."
+    E: "Sikeres kibontakozás után, ha üldöznek: Futás — Gyorsaság ellenpróba a támadóddal (Sprint fortély számít)."
 - név: "Lábkirántás szálfegyverrel"
   típus: "általános"
   nehézség: 6
@@ -193,6 +203,9 @@ manőverek:
     - "Egyébként Bódultság státusz."
     - "Sebzés FP-ként jelenik meg."
   id: "leütés_hátulról"
+  fázis_info:
+    V: "Célpont VÉ = a mozgás jellegétől függő érték (lásd Orvtámadás). Fegyver markolat sebzése: k20+0 SP + Erőbónusz (Zúzó)."
+    E: "Ájulás, ha a sebzés eléri az áldozat Max ÉP/4↓ értékét; egyébként Bódultság. A sebzés FP-ként jelenik meg."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Orvtámadás harci helyzet" }
     - { erősség: "erős", típus: "egyéb", leírás: "Hátulról támadás harci helyzet" }
@@ -281,6 +294,8 @@ manőverek:
     - "Alattomos ütés (k20+0 SP)."
     - "Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását."
   id: "piszkos_trükk"
+  fázis_info:
+    V: "Alattomos ütés sebzése: k20+0 SP (+ vaskesztyű/szegecs/Erőbónusz beleszámít)."
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Közelharc", érték: 4 }
     - { erősség: "normál", típus: "egyéb", leírás: "Forgatott fegyverre: Mesterfegyver 1.fok" }
@@ -320,9 +335,10 @@ manőverek:
   nehézség: 5
   fázisok: "M*,E"
   hatás:
-    - "TÉ:+4 Megszakító támadás."
-    - "Ellenfeled elveszíti következő támadását."
+    - "Ellenfeled elveszíti következő támadását (nem okozol sebzést)."
   id: "távoltartás"
+  fázis_info:
+    M: "A Megakasztást kivételesen TE (!) adod le TÉ:+4 bónusszal."
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
     - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny" }
@@ -382,6 +398,8 @@ manőverek:
     - "Belharci szituáció létrejött."
     - "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
   id: "belharcba_kerülés"
+  fázis_info:
+    E: "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül — mindenképp dobj Ellenpróbát."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharcos fegyver és Közelharc harcmodor" }
   helyzetfüggő_módosítók:
@@ -408,6 +426,8 @@ manőverek:
     - "Kilépés belharcból, sima harci szituáció."
     - "Sebzés esetén automatikus kibontakozás."
   id: "belharcból_kibontakozás"
+  fázis_info:
+    E: "Ha belharcban sebzel, bármilyen dobás nélkül automatikusan kibontakozol."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
@@ -425,6 +445,8 @@ manőverek:
     - "Csak puszta kézzel harcol."
     - "Körönként Fájdalomtűrés próba (15)."
   id: "feszítés_leszorítás"
+  fázis_info:
+    E: "Fenntartás: az áldozat körönként Fájdalomtűrés + Önuralom próbát dob (célszám 15). Kudarcnál nem tud visszatámadni, mágiát/pszít/manővert használni."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
@@ -441,6 +463,8 @@ manőverek:
     - "Kilépés feszítésből."
     - "Belharci szituáció megmarad."
   id: "feszítésből_kijövetel"
+  fázis_info:
+    E: "Körönként Fájdalomtűrés + Önuralom próba (célszám 15). Kudarcnál nem tudsz visszatámadni, mágiát/pszít/manővert használni."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
@@ -516,7 +540,7 @@ manőverek:
   fázisok: "V,E"
   hatás:
     - "Ellenfél terelése kívánt irányba (max 5m)."
-    - "Lefeszítve: Nehézség 6."
+    - "Feltétel: Lefeszített ellenfélnél Nehézség 6."
   id: "leforgatás_irányítás"
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
@@ -536,7 +560,7 @@ manőverek:
   fázisok: "V,E"
   hatás:
     - "Azonnali halál (elfszabású anatómia)."
-    - "Megelőző Feszítés szükséges."
+    - "Feltétel: megelőző sikeres Feszítés szükséges."
   id: "nyaktörés"
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
@@ -553,10 +577,10 @@ manőverek:
   nehézség: 0
   fázisok: "M"
   hatás:
-    - "Lovas végzi."
+    - "Feltétel: Lovas végzi."
     - "Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen."
     - "Távharc VÉ: Kiszámíthatatlan (6x)."
-    - "Követelmény: Lovas harc 2.fok."
+    - "Feltétel: Lovas harc 2.fok."
   id: "hátas_táncoltatása"
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Lovas harc", érték: 2 }
@@ -566,10 +590,10 @@ manőverek:
   nehézség: 6
   fázisok: "M,V,E"
   hatás:
-    - "GYALOGOS végzi lovas ellen."
-    - "Közvetlen harcérintkezés szükséges."
+    - "Feltétel: GYALOGOS végzi lovas ellen."
+    - "Feltétel: közvetlen harcérintkezés szükséges."
     - "Sikernél a lovas földre kerül."
-    - "Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye)."
+    - "Feltétel: Nehézség 6-12 (hátas mozgása, lovas figyelme függvénye)."
   id: "lóhátról_lerántás"
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Gyalogos ellenfél végzi (nem a lovas)" }
@@ -579,9 +603,9 @@ manőverek:
   nehézség: 4
   fázisok: "V,E"
   hatás:
-    - "Áttörés ellenfél sorain galopp/roham tempóval."
+    - "Feltétel: galopp/roham tempó, áttörés az ellenfél sorain."
     - "Sikernél ellenfelek szétszóródnak, hátrány a következő körben."
-    - "Nehézség: 4-10 (ellenfelek száma és fegyverzete függvénye)."
+    - "Feltétel: Nehézség 4-10 (ellenfelek száma és fegyverzete függvénye)."
   id: "lovas_áttörés"
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Galopp vagy gyorsabb tempó" }
@@ -590,8 +614,8 @@ manőverek:
   nehézség: 4
   fázisok: "M,E"
   hatás:
-    - "GYALOGOS végzi lovas ellen."
-    - "Szúró szálfegyver + Pengeelőny szükséges."
+    - "Feltétel: GYALOGOS végzi lovas ellen."
+    - "Feltétel: szúró szálfegyver + Pengeelőny szükséges."
     - "Sebző dobás a lovasra, aki elveszíti támadását."
   id: "lovas_megakasztása"
   követelmények:

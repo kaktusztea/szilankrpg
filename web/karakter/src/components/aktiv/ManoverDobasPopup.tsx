@@ -12,6 +12,7 @@ interface ManőverDef {
   név: string;
   nehézség: number;
   fázisok: string;
+  fázis_info: Record<string, string>;
   típus: string;
   hatás: string[];
   végrehajtás_té_módosító: number;
@@ -150,8 +151,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // 0. lépés: követelmények (CSAK aktív módban — az alkalmazóra vonatkoznak).
   const követelmények = mód === 'aktív' ? (manőver.követelmények ?? []) : [];
   const vanKövetelmény = követelmények.length > 0;
-  const vanNormál = követelmények.some(k => k.erősség === 'normál');
-  const vanErős = követelmények.some(k => k.erősség === 'erős');
+  // Egy erősségre csak akkor kell "hiány" gomb, ha van HIÁNYOZHATÓ eleme:
+  // informatív (a játékos dönthet hiányról) VAGY gépi, ami nem teljesül.
+  // Ha egy erősség minden eleme gépi ÉS mind teljesül → a hiány kizárt → nincs gomb.
+  const hiányLehet = (erősség: 'normál' | 'erős') =>
+    követelmények.some(k => k.erősség === erősség
+      && (k.típus === 'egyéb' || követelményTeljesül(k, karakter, data) === false));
+  const vanNormál = hiányLehet('normál');
+  const vanErős = hiányLehet('erős');
   const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data);
   // Auto-kudarc, ha gépi Erős hiány. Ekkor a döntés nem is választható.
   const [követelményDöntés, setKövetelményDöntés] = useState<'pending' | 'mind' | 'normál' | 'erős'>(
@@ -326,7 +333,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                   : `${köv.név}${köv.érték != null ? ` ${köv.érték}${köv.típus === 'fortély' ? '.fok' : '.szint'}` : ''}`;
                 return (
                   <div key={i} className="manover-kov-sor">
-                    <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟩'}</span>
+                    <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟨'}</span>
                     <span className="manover-kov-cimke">{cimke}</span>
                     {teljesül === true && <span className="manover-fazis-ok">✓</span>}
                     {teljesül === false && <span className="manover-fazis-fail">✗</span>}
@@ -374,7 +381,12 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                 </div>
                 {isAktív && (
                   <>
-                    {renderFázisInfo(f)}
+                    {manőver.fázis_info?.[f] && (
+                      <div className="manover-fazis-magyarazat">ⓘ {manőver.fázis_info[f]}</div>
+                    )}
+                    {/* M/V: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást).
+                        E: a magyarázat KIEGÉSZÍTŐ — a dobás-UI (módosítók, MP, célszám) mindig kell. */}
+                    {(f === 'E' || !manőver.fázis_info?.[f]) && renderFázisInfo(f)}
                     <div className="manover-fazis-chips">
                       <button className="manover-chip manover-chip-igen" onClick={() => handleSiker(true)}>Siker</button>
                       <button className="manover-chip manover-chip-nem" onClick={() => handleSiker(false)}>Kudarc</button>
@@ -393,7 +405,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
               : (mód === 'passzív' ? '✗ Manőver sikertelen ellened' : '✗ Manőver sikertelen')}
             {végeredmény === 'sikeres' && (
               <div className="manover-dobas-hatas">
-                {manőver.hatás.map((mondat, i) => (
+                {eredményHatás(manőver.hatás).map((mondat, i) => (
                   <div key={i} className="manover-dobas-hatas-mondat">{mondat}</div>
                 ))}
               </div>
@@ -489,4 +501,14 @@ export function fázisSikeres(fázis: 'M' | 'V' | 'E', eredmény: FázisEredmén
 /** All done and all successful for the manőver? */
 function isDone(eredmények: FázisEredmény[], fázisok: ('M' | 'V' | 'E')[]): boolean {
   return eredmények.every((e, i) => e !== 'pending' && fázisSikeres(fázisok[i], e, 'aktív'));
+}
+
+/**
+ * A "Manőver sikeres" boxban megjelenő hatás-sorok: a `hatás`-ból kiszűrjük a
+ * kudarc-jellegű ("Sikertelen:" / "Kudarc:") és a feltétel/meta ("Feltétel:") sorokat —
+ * ezek a SIKERES kontextusban félrevezetők/feleslegesek (a teljes `hatás` a pickerben látszik).
+ * C2 (ponytail: prefix-alapú szűrés).
+ */
+export function eredményHatás(hatás: string[]): string[] {
+  return hatás.filter(s => !/^\s*(sikertelen|kudarc|feltétel)\b/i.test(s));
 }
