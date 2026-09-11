@@ -5087,9 +5087,13 @@ Emberismeret + Érzékenység
 
 ### 🔆 Szerepjátékos módosító
 
+```
+-3; 0; +3
+```
+
 A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
-A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy módosítót `[-3;+3]` tartományban és a játékos ezt hozzáadja a **Befolyásolás** képzettségpróbájához.
+A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy módosítót (lásd fenn). A játékos ezt hozzáadja a **Befolyásolás** képzettségpróbájához.
 
 Például a játékos nem feccöl bele túl sok energiát sem a karaktere megszemélyesítésébe, sem az ötletbe, amivel át akarja verni a másik felet, tehát valami nagyon átlátszó hazugságot akar megetetni, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
 
@@ -5870,11 +5874,16 @@ Intelligencia, Emlékezet
 
 ### 🔆 Szerepjátékos módosító
 
+
+```
+-3; 0; +3
+```
+
 A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
-A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót `[-3;+3]` tartományban és a játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
+A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót (lásd fenn).  A játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
 
-Például a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
+Például a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan megkaphatja a `-3` büntetést a dobásra.
 
 Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
@@ -12686,7 +12695,6 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Gladiátor közönsége](fortelyok.harci/gladiator.kozonsege.md)
 - [Gyors kezdeményezés](fortelyok.harci/gyors_kezdemenyezes.md)
 - [Harci akrobatika](fortelyok.harci/harci_akrobatika.md)
-- [Harci anatómia](fortelyok.harci/harci_anatomia.md)
 - [Harci kocsihajtás](fortelyok.harci/harci_kocsihajtas.md)
 - [Harckeret növelés](fortelyok.harci/harckeret_noveles.md)
 - [Harcos elme](fortelyok.harci/harcos_elme.md)
@@ -12698,9 +12706,12 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Kínokozás](fortelyok.harci/kinokozas.md)
 - [Körkörös harc](fortelyok.harci/korkoros_harc.md)
 - [Manőverfókusz: Fegyvertörés](fortelyok.harci/manoverfokusz_fegyvertores.md)
+- [Manőverfókusz: Földrevitel](fortelyok.harci/manoverfokusz_foldrevitel.md)
 - [Manőverfókusz: Lefegyverzés](fortelyok.harci/manoverfokusz_lefegyverzes.md)
+- [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md)
 - [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md)
 - [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md)
+- [Manőverfókuszok: Kitörés](fortelyok.harci/manoverfokuszok_kitores.md)
 - [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
@@ -12954,7 +12965,8 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 
 ### Kapcsolódik
 
-- [Harci anatómia](../fortelyok.harci/harci_anatomia.md)
+- [Manőverfókusz: Szike](../fortelyok.harci/manoverfokusz_szike.md)
+- [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
 
 ### Bónuszt ad erre
 
@@ -14650,65 +14662,6 @@ A KM dönt, hogy van-e elég hely az alkalmazáshoz, de ne legyen túl szigorú;
 
 ---
 ---
-## File: md/fortelyok.harci/harci_anatomia.md
-
-## 🟣 Harci anatómia (3)
-
-Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső szervek elhelyezkedésével.\
-Távharcos harcmodorokra NEM alkalmazható.
-
-### Megkötések
-
-- A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
-- [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
-- Csatabárdokkal, buzogányokkal, kétkezes fegyverekkel a fortély nem alkalmazható.
-- A fortély által leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
-
-### Minek követelménye
-
-[Kínokozás](kinokozas.md) fortély alkalmazásához követelmény
-
----
-### 1. fok
-
-🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
-
-🌟 **Hatás**:
-- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
-
-<br />
-
-### 2. fok
-
-🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
-- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
-
-🌟 **Hatás**:
-- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+4 MP` bónusz **Ellenpróbánál**
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+4 MP` bónusz **Ellenpróbánál**
-
-<br />
-
-### 3. fok
-
-🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `12.szint`
-- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
-
-🌟 **Hatás**:
-- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+6 MP` bónusz **Ellenpróbánál**
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+6 MP` bónusz **Ellenpróbánál**
-- Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
-- Szemgolyót szedhet ki harc közben: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
-
----
-
-
----
----
 ## File: md/fortelyok.harci/harci_kocsihajtas.md
 
 ## 🟣 Harci kocsihajtás (2)
@@ -15075,7 +15028,7 @@ Ha egy fegyver mellé simán pajzsot fogsz a másik kezedbe az **nem kétkezes s
 ---
 ## File: md/fortelyok.harci/kinokozas.md
 
-## 🟣 Kínokozás (1)
+## 🟣 Kínokozás (2)
 
 Harc közben nem a pusztítás a célod, hanem különösen fájdalmas pontokat támadsz, amivel kibillentheted ellenfeledet lelki nyugalmából.
 
@@ -15088,7 +15041,7 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 - Csak vértmentes pontot támadhatsz
 - A fortély által leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
 
-### 1. fok
+### 1. fok, 2.fok
 
 🔒 **Követelmény**: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
 
@@ -15098,10 +15051,8 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 Sebzésed: 1 ÉP
 
 Áldozat: Fájdalomtűrés + Önuralom próba
-  Harci anatómiád
-    1.fok: 9 Célszám
-    2.fok: 12 Célszám
-    3.fok: 15 Célszám
+    1.fok: 12 Célszám
+    2.fok: 15 Célszám
 ```
 
 Ha az áldozat elrontja a próbát, akkor a következő körben valamelyik módosítóval harcol (KM dönt):
@@ -15271,8 +15222,24 @@ Sokat gyakoroltad, hol érdemes erőt kifejteni ellenfeled változatos fegyverei
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 
-🌟 **Hatás**:
-- [Fegyvertörés](../066_05_altalanos_manoverek.md#fegyvertörés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+🌟 **Hatás**: [Fegyvertörés](../066_05_altalanos_manoverek.md#fegyvertörés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/manoverfokusz_foldrevitel.md
+
+## 🟣 Manőverfókusz: Földrevitel (1)
+
+Gyakorlottan viszed le földre ellenfeledet.
+
+### 1. fok
+
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+
+🌟 **Hatás**: [Földrevitel](../066_05_altalanos_manoverek.md#földrevitel) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---
 
@@ -15288,11 +15255,35 @@ Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Ostorharc](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 
+🌟 **Hatás**: [Lefegyverzés](../066_05_altalanos_manoverek.md#lefegyverzés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/manoverfokusz_szike.md
+
+## 🟣 Manőverfókusz: Szike (1)
+
+A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső szervek elhelyezkedésével.
+
+---
+### 1. fok
+
+🔒 **Követelmény**:
+- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+
 🌟 **Hatás**:
-- [Lefegyverzés](../066_05_altalanos_manoverek.md#lefegyverzés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
+- Extra:
+  - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
+  - Szemgolyót szedhet ki harc közben Puszta kézzel.
 
 ---
 
@@ -15307,7 +15298,7 @@ Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.
 
 ### 1. fok
 
-🔒 **Követelmény**: [Közelharc](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
@@ -15331,6 +15322,25 @@ Nagyon érzed a helyezkedést a harctéren.
 🌟 **Hatás**:
 - [Mögékerülés](../066_05_altalanos_manoverek.md#mögékerülés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 - [Terelés](../066_05_altalanos_manoverek.md#terelés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/manoverfokuszok_kitores.md
+
+## 🟣 Manőverfókuszok: Kitörés (1)
+
+Nem hagyod lenyomni magad.
+
+### 1. fok
+
+🔒 **Követelmény**: -
+
+🌟 **Hatás**:
+- [Áttörés](../066_05_altalanos_manoverek.md#áttörés) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+- [Felállás földről](../066_05_altalanos_manoverek.md#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 
 ---
 
@@ -17699,13 +17709,13 @@ Többször felvehető - egyedi fajonként.
 
 Ha olyan faj anatómiáját akarod megismerni, amely KM-ed szerint nem fér bele az [Élettan](../fortelyok.altalanos/elettan.md) fortély által nyújtott általános ismereti körbe, akkor fel kell venned minden ilyen speciális fajra (vagy faj-csoportra) ezt a Szabad Fortélyt. Például: aun, amund, sárkány, ...
 
-Ha alaposan felboncolsz egy nem elfszabású lényt, akkor onnantól arra a fajra is alkalmazhatod a [Harci Anatómia](../fortelyok.harci/harci_anatomia.md) fortély előnyeit.
+Ha alaposan felboncolsz egy nem elfszabású lényt, akkor onnantól arra a fajra is alkalmazhatod a [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manővert.
 
 A fenti információ más módon - ritka, titkos fóliásokkal bújásával - is kinyerhető, amennyiben azokban részletes leírás található a lény anatómiájáról.
 
 ### Kapcsolódik
 
-- [Harci anatómia](../fortelyok.harci/harci_anatomia.md) fortély
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver
 
 ### Követelmény
 
@@ -20982,7 +20992,7 @@ Fedetlen terület célzásához:
 ```
 Fárasztó taktika alkalmazásakor:
 • nincs támadó dobás, nincs Sebzés
-• 2 VÉ csökkentés
+• 3 VÉ csökkentés
    +1: Fárasztás fortély
    +1: Pengeelőnyben
 ```
@@ -21233,7 +21243,15 @@ Megnő a [Támadó/Védő taktika](065_02_harci_taktikak.md#támadó-taktika) je
 Támadó dobás  >=  Védő Érték
 ```
 
-Találatnak nevezzük azt a támadást, amelynek értéke eléri, vagy meghaladja a célpont **Védő Értékét**. Ilyenkor a támadó [Sebzésdobást](064_02_07_sebzes.md) tesz.
+Találatnak nevezzük azt a támadást, amelynek értéke eléri, vagy meghaladja a célpont **Védő Értékét**. Ilyenkor a támadó [Sebzésdobást](064_02_07_sebzes.md) tesz, valamint fixen `VÉ:-3` csökkentést okoz.
+
+### VÉ csökkenés találatnál
+
+```
+VÉ: -3
+```
+
+Akkor is, ha volt `ÉP` seb és akkor is ha nem.
 
 ---
 ### Többszörös találat
@@ -21457,19 +21475,15 @@ SP = k20
    – (aktuális SFÉ)
 
 Módosítók:
-   → Mesterfegyver fortély
+   → Mesterfegyver fortély módosítói
    → Erőbónusz
-   → Támadás erőből taktika
-   → Harci anatómia fortély
-     (csak Precíz támadás
-      manőverrel, vértmentes ponton)
-   → Fegyver támadási típus bónusz
+   → Támadás erőből taktika módosítói
+   → Fegyver támadási típus módosítói
 
 Bónuszok:
    → Többszörös találat
      +5 túldobás  →  +3 SP
-   → Roham
-     +5 SP
+   → Roham: +5 SP
 ```
 
 A `k20` dobás eredményéhez hozzáadódik a fegyver sebzés értéke, a fent részletezett módosítók, bónuszok, és egyes fortélyokból adódó extra értékek.
@@ -22564,6 +22578,13 @@ Nem belharcos fegyverek
 Állatoknak általában van Belharcos fortélya
 ```
 
+```
+Pajzsok belharcban
+
+Minden pajzs TÉ,VÉ értéke
+  Kis Pajzsnak számít
+```
+
 <br />
 
 ---
@@ -23241,7 +23262,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 ### Fárasztó taktika ⇄
 
 ```
-2 VÉ: Fárasztás taktika
+3 VÉ: Fárasztás taktika
   +1: Fárasztás fortély
   +1: Pengeelőnyben
 ```
@@ -23373,10 +23394,11 @@ Első oda-vissza csapásnál:
 ```
 VÉ:+8, folyamatos hátrálás
 
-Nem támadhatsz, nem varázsolhatsz
+Nem támadhatsz, nem varázsolhatsz, VÉ csökkentés: 0
 
-Ellenfél VÉ csökkentés: (1 + k20T)
-  + "Fárasztó taktika" bónuszuk megmarad
+Ellenfél VÉ csökkentése rajtad:
+  (1 + k20T)
+  + "Fárasztó taktika" bónusza
 ```
 
 ❌ Más taktikával együtt
@@ -23650,7 +23672,7 @@ VÉ csökkentés
 +1 VÉ: 5+ főnél (nem additív)
 ```
 
-Tehát az egyén, - a számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
+Tehát az egyén - a számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
 
 <br />
 
@@ -23704,7 +23726,8 @@ Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok 
 TÉ:+3 / VÉ:-6: Támadó taktika (fix)
 VÉ:+4 / TÉ:-8: Védő taktika (fix)
 TÉ:+4 / VÉ:-8: Roham taktika
-+2 VÉ csökkentés: Fárasztó taktika (fix)
+
++1 VÉ extra csökkentés: Fárasztó taktika
 ```
 
 Manőverek használata alakzatban nem lehetséges.
@@ -23741,6 +23764,8 @@ VÉ csökkentés/kör: 2
 
 +1 VÉ csökkentés / +3 ember
   (max: +5 VÉ)
+
++1 VÉ extra csökkentés: Fárasztó taktika
 ```
 
 ---
@@ -24354,6 +24379,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 
 **Hatás**: Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már.
 
+**Kapcsolódik**: [Manőverfókuszok: Kitörés](fortelyok.harci/manoverfokuszok_kitores.md) fortély
+
 <br />
 
 ---
@@ -24413,6 +24440,8 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 
 **Hatás**: Sikerült harc közben a földről feltápászkodnod, folytathatod a harcot, immár levonások nélkül.
 
+**Kapcsolódik**: [Manőverfókuszok: Kitörés](fortelyok.harci/manoverfokuszok_kitores.md) fortély
+
 <br />
 
 ---
@@ -24448,6 +24477,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
   - Aktuális harcmodor - `5.szint`
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+
+**Kapcsolódik**: [Manőverfókusz: Földrevitel](fortelyok.harci/manoverfokusz_foldrevitel.md) fortély
 
 <br />
 
@@ -24548,7 +24579,6 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
 Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
 
 - Nehézség: `6`
-    - `-2`: [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka után
     - `+0`: Sisak nélküli célpont
     - `+3`: Sisakos célpont, ha tarkón ütés lehetséges
 - Fázisok: `Végrehajtás, Ellenpróba`
@@ -24565,6 +24595,8 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 - A sebzés `FP` sebesülésként jelenik meg mindkét esetben (minden `5.` ÉP).
 
 **Megjegyezés**: a **Fegyver markolat** sebzése: `k20 + 0 SP + Erőbónusz` (Zúzó)
+
+**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) fortély
 
 <br />
 
@@ -24676,7 +24708,6 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
     - `8`: egy adott végtagra támadni
     - `10`: egy adott (nagy érme méretű) pontra támadás
         - Csak Szúrófegyverrel
-        - [Harci Anatómia](fortelyok.harci/harci_anatomia.md) harci fortély **SP bónusza** csak itt használható - ha vértmentes pont a cél.
         - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
     - `12`: Szemkiszúrás
 - Nehézség módosítók:
@@ -24686,11 +24717,15 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
     - `+2`: [Roham](065_02_harci_taktikak.md#roham-taktika) alkalmazása esetén
 - Fázisok: `Végrehajtás, Ellenpróba`
 	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
-- Követelmény: Aktuális harcmodor - `6.szint`
+- Követelmény:
+  - [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+  - A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
 
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély
+
+**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) fortély
 
 <br />
 
@@ -24815,6 +24850,9 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 Átjutva a nagyobb fegyverek fenyegetésén testközelbe lavírozod magad.
 
 - Nehézség: `9` (ellenfél háttal áll: `5`)
+  - Ellenfélnél kis pajzs: `+2`
+  - Ellenfélnél közepes pajzs: `+4`
+  - Ellenfélnél nagy pajzs: `+6`
 - Fázisok: `Megakasztás, Ellenpróba`
 - Követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
 
@@ -26489,7 +26527,7 @@ Sebzéskor a támadó karakter dobás után bemondja végleges `SP` értékét (
 
 ```
 Posztó/Bunda SFÉ
- 2: Fizikai
+ 4: Fizikai
  4: Energia
 
 → hajlékonyvért
@@ -26498,8 +26536,8 @@ Posztó/Bunda SFÉ
 
 ```
 Fegyverkabát SFÉ
- 3: Fizikai
- 5: Energia
+ 6: Fizikai
+ 8: Energia
 
 → hajlékonyvért
 → idea: ±0
@@ -26507,8 +26545,8 @@ Fegyverkabát SFÉ
 
 ```
 Bőrpáncél SFÉ
- 7: Fizikai
- 10: Energia
+ 8: Fizikai
+ 14: Energia
 
 → hajlékonyvért
 → idea: ±1
