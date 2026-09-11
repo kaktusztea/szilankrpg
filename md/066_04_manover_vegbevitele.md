@@ -120,7 +120,7 @@ Manőver Pontokat a **Védő Értékkel** együtt, azonos zavartalan pihenési k
 
 Jártassági küszöb - például adott **Harcmodor** szint, **fortély** fok. Ha nem teljesül bármelyik, a Manőver akkor is megkísérelhető, de az **Ellenpróba** dobásnál `Hátrány-2` büntetést kapsz (nem halmozódik).
 
-### 🟥 Erős  Manőver-követelmények
+### 🟥 Erős Manőver-követelmények
 
 ```
 • 3. szintű Harcmodor (mindig)
