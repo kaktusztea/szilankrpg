@@ -34,7 +34,7 @@
     "nehézség": 5,
     "fázisok": "M,V,E",
     "hatás": [
-      "Átlökés egy előtted álló ellenfélen, mögötte állók elérhetők."
+      "Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már."
     ],
     "id": "áttörés",
     "helyzetfüggő_módosítók": [
@@ -111,7 +111,7 @@
     "nehézség": 10,
     "fázisok": "V,E",
     "hatás": [
-      "Kiszolgáltatott pozíció (fegyver nyakánál).",
+      "Kiszolgáltatott pozíció (fegyver a nyakánál).",
       "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
     ],
     "id": "ellenfél_elfogása",
@@ -125,7 +125,7 @@
     "nehézség": 12,
     "fázisok": "V,E",
     "hatás": [
-      "Ellenfél fegyvere eltörik."
+      "Ellenfeled fegyvere eltörik."
     ],
     "id": "fegyvertörés",
     "követelmények": [
@@ -184,7 +184,7 @@
     "nehézség": 6,
     "fázisok": "M,E",
     "hatás": [
-      "Felkelés földről, harc folytatása levonások nélkül."
+      "Felálltál a földről, harc folytatása levonások nélkül."
     ],
     "id": "felállás_földről",
     "helyzetfüggő_módosítók": [],
@@ -266,7 +266,7 @@
     "hatás": [
       "Kilépés a harcból.",
       "Sikertelen: ellenfelek Megakasztás támadást kapnak.",
-      "Utána futás/Gyorsaság próba."
+      "Utána Futás (Gyorsaság próba)."
     ],
     "id": "kibontakozás",
     "helyzetfüggő_módosítók": [],
@@ -322,7 +322,7 @@
     "fázisok": "V,E",
     "hatás": [
       "Ellenfél fegyvere foglyul ejtve - nem használhatja.",
-      "Helyhez kötve harci helyzet módosítók."
+      "Helyhez kötve harci helyzet módosítóit kapja ha nem ejti el."
     ],
     "id": "lánccsapda",
     "követelmények": [
@@ -352,7 +352,7 @@
     "nehézség": 7,
     "fázisok": "E",
     "hatás": [
-      "Fegyver kiszabadítása láncos csapdából."
+      "Fegyver kiszabadult a lánccsapdából."
     ],
     "id": "lánccsapdából_szabadítás",
     "helyzetfüggő_módosítók": [],
@@ -365,7 +365,7 @@
     "nehézség": 10,
     "fázisok": "V,E",
     "hatás": [
-      "Ellenfél fegyvere kiesik kezéből."
+      "Ellenfél fegyvere kiesik a kezéből."
     ],
     "id": "lefegyverzés",
     "követelmények": [
@@ -470,7 +470,7 @@
     "nehézség": 10,
     "fázisok": "V,E",
     "hatás": [
-      "Mesterjel belekarcolása ellenfél ruhájába/bőrébe (1 ÉP)."
+      "Mesterjel belekarcolva az ellenfél ruhájába/bőrébe (1 ÉP)."
     ],
     "id": "mesterjel",
     "követelmények": [
@@ -515,7 +515,7 @@
     "fázisok": "E",
     "hatás": [
       "Hátulról támadás pozíció elérése.",
-      "Ellenfél dönthet: átáll rád → szövetségesed kap hátulról bónuszt."
+      "Ellenfél dönthet: átvált rád → szövetségesed kap hátulról bónuszt."
     ],
     "id": "mögékerülés",
     "követelmények": [
@@ -674,8 +674,7 @@
     "nehézség": 6,
     "fázisok": "V,E",
     "hatás": [
-      "Adott területre támadás.",
-      "Manőverfókusz: Szike SP bónusz érvényesül vértmentes pontra."
+      "Adott területre támadás."
     ],
     "id": "precíz_támadás",
     "követelmények": [
@@ -728,7 +727,7 @@
     "nehézség": 6,
     "fázisok": "E",
     "hatás": [
-      "Rácsimpaszkodás ellenfél hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
+      "Rácsimpaszkodtál ellenfeled hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
     ],
     "id": "rávetődés_hátulról",
     "követelmények": [
@@ -748,7 +747,7 @@
     "fázisok": "M*,E",
     "hatás": [
       "TÉ:+4 Megszakító támadás.",
-      "Siker: ellenfél elveszíti következő támadását."
+      "Ellenfeled elveszíti következő támadását."
     ],
     "id": "távoltartás",
     "követelmények": [
@@ -802,7 +801,7 @@
     "nehézség": 8,
     "fázisok": "E",
     "hatás": [
-      "Ellenfél terelése kívánt irányba."
+      "Ellenféledet a kívánt irányba terelted."
     ],
     "id": "terelés",
     "követelmények": [
@@ -859,7 +858,7 @@
     "nehézség": 7,
     "fázisok": "V,E",
     "hatás": [
-      "Ellenfél földre kerül (Földön fekve módosítók)."
+      "Ellenfeled a földre került (Földön fekve módosítók)."
     ],
     "id": "átdobás",
     "követelmények": [
@@ -893,7 +892,7 @@
     "nehézség": 9,
     "fázisok": "M,E",
     "hatás": [
-      "Belharci szituáció létrejön.",
+      "Belharci szituáció létrejött.",
       "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
     ],
     "id": "belharcba_kerülés",

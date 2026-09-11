@@ -330,6 +330,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                     <span className="manover-kov-cimke">{cimke}</span>
                     {teljesül === true && <span className="manover-fazis-ok">✓</span>}
                     {teljesül === false && <span className="manover-fazis-fail">✗</span>}
+                    {teljesül === null && <span className="manover-kov-info">?</span>}
                   </div>
                 );
               })}
