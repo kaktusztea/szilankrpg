@@ -40,6 +40,12 @@ def generate_aktiv_ful():
     for h in helyzetek:
         h['feltétel_kulcs'] = f"harci_helyzet:{h['id']}"
 
+    # Manőver: helyzetfüggő_módosítók normalizálás ("" vagy hiányzó → [])
+    for m in manoverek:
+        hm = m.get('helyzetfüggő_módosítók')
+        m['helyzetfüggő_módosítók'] = hm if isinstance(hm, list) else []
+        m.setdefault('végrehajtás_té_módosító', 4)
+
     write_json('taktikak.json', taktikak)
     write_json('harci_helyzetek.json', helyzetek)
     write_json('manoverek.json', manoverek)

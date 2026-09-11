@@ -149,7 +149,9 @@ export interface ManoverEntry {
   típus: string;
   nehézség: number;
   fázisok: string;
-  hatás: string;
+  hatás: string[];
+  végrehajtás_té_módosító: number;
+  helyzetfüggő_módosítók: ModositoTabla[];
 }
 
 export interface StatuszHatas {

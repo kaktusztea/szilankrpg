@@ -5,7 +5,13 @@
 manőverek:
   - id: ""                     # kötelező, egyedi azonosító (snake_case, ékezetes)
     név: ""                    # kötelező, string
-    típus: ""                  # kötelező, enum: "általános" | "belharcos"
+    típus: ""                  # kötelező, enum: "általános" | "belharcos" | "lovas"
     nehézség: 0                # kötelező, number [0;12]
     fázisok: ""                # kötelező, string (pl. "V,E", "M,E", "E (M*)")
-    hatás: ""                  # kötelező, string (rövid hatás leírás)
+    hatás: []                  # kötelező, lista — mondatonként egy elem (rövid hatás leírás)
+    végrehajtás_té_módosító: 4 # opcionális. Végrehajtás fázis TÉ módosítója. Default: 4 (standard +4). 0 = nincs (sima támadás).
+    helyzetfüggő_módosítók: "" # opcionális. Üres ("") ha nincs. Lista ha van (kepzettseg minta):
+      # - kategória: ""        # Kategória neve (pl. "Fegyver", "Ellenfél", "Körülmény")
+      #   mód: "single"        # "single" (default): skála, 1 választható. "multi": független toggle-ök.
+      #   sorok:
+      #     - { érték: 0, leírás: "" }

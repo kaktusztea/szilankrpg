@@ -16,7 +16,7 @@ import { DobasPopup, pushDobás } from './DobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
-import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
+import { ManoverDobasPopup, téBontásÖsszeg } from '../aktiv/ManoverDobasPopup';
 import { ManoverPicker } from './ManoverPicker';
 import { computeTÉ, computeVÉ } from './shared';
 import { resolveAktívFegyverContext } from './aktiv-fegyver-ctx';
@@ -139,7 +139,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const hasFt = karakter.képzettségek.some(kp => kp.név === 'Fájdalomtűrés');
 
   // Base TÉ/VÉ for manőver popup (approximation without per-weapon calc).
-  const baseTÉ = (data.konstansok.harcérték_alap?.TÉ ?? 0) + karakter.tulajdonságok.erő + karakter.tulajdonságok.ügyesség + karakter.tulajdonságok.gyorsaság + karakter.HM_TÉ;
+  const baseTÉ = téBontásÖsszeg(karakter, data);
   const baseVÉ = (data.konstansok.harcérték_alap?.VÉ ?? 0) + karakter.tulajdonságok.gyorsaság + karakter.tulajdonságok.ügyesség + karakter.HM_VÉ - session.vé_csökkenés;
 
   return (

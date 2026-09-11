@@ -48,7 +48,7 @@ export function ManoverPicker({ fázis, manoverek, onMód, onPick, onClose }: Pr
               <div key={m.név} className="aktiv-picker-item" onClick={() => onPick(m)}>
                 <span className="aktiv-picker-item-name">{m.név}</span>
                 <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
-                <span className="aktiv-picker-item-hatas">{m.hatás}</span>
+                <span className="aktiv-picker-item-hatas">{m.hatás.join(' ')}</span>
               </div>
             ))}
           </div>

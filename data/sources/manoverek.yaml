@@ -7,227 +7,504 @@ manőverek:
   típus: "általános"
   nehézség: 6
   fázisok: "E (M*)"
-  hatás: "Átsiklás harcolók között. Sikertelen: ellenfelek Megakasztás támadást kapnak."
+  hatás:
+    - "Átsiklás harcolók között."
+    - "Sikertelen: ellenfelek Megakasztás támadást kapnak."
   id: "átsiklás"
+  helyzetfüggő_módosítók:
+    - kategória: "Körülmény"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Fegyverméretek / harcolók száma (KM)" }
+        - { érték: 2, leírás: "Fegyverméretek / harcolók száma (KM)" }
 - név: "Áttörés"
   típus: "általános"
   nehézség: 5
   fázisok: "M,V,E"
-  hatás: "Átlökés egy előtted álló ellenfélen, mögötte állók elérhetők."
+  hatás:
+    - "Átlökés egy előtted álló ellenfélen, mögötte állók elérhetők."
   id: "áttörés"
+  helyzetfüggő_módosítók:
+    - kategória: "Erő különbség"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Erősebb vagy nála" }
+        - { érték: 2, leírás: "Gyengébb vagy nála" }
+    - kategória: "Pajzsos ellenfél"
+      mód: "single"
+      sorok:
+        - { érték: 1, leírás: "Közepes pajzs" }
+        - { érték: 2, leírás: "Nagy pajzs" }
 - név: "Csonkolás"
   típus: "általános"
   nehézség: 8
   fázisok: "V,E"
-  hatás: "Végtaglevágás. Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
+  hatás:
+    - "Végtaglevágás."
+    - "Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
   id: "csonkolás"
+  helyzetfüggő_módosítók:
+    - kategória: "Célzott végtag"
+      mód: "single"
+      sorok:
+        - { érték: 0, leírás: "Kéz" }
+        - { érték: 2, leírás: "Láb" }
 - név: "Ellenfél elfogása"
   típus: "általános"
   nehézség: 10
   fázisok: "V,E"
-  hatás: "Kiszolgáltatott pozíció (fegyver nyakánál). Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
+  hatás:
+    - "Kiszolgáltatott pozíció (fegyver nyakánál)."
+    - "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
   id: "ellenfél_elfogása"
+  végrehajtás_té_módosító: 0
 - név: "Fegyvertörés"
   típus: "általános"
   nehézség: 12
   fázisok: "V,E"
-  hatás: "Ellenfél fegyvere eltörik."
+  hatás:
+    - "Ellenfél fegyvere eltörik."
   id: "fegyvertörés"
+  helyzetfüggő_módosítók:
+    - kategória: "Ellenfél fegyvere"
+      mód: "single"
+      sorok:
+        - { érték: -4, leírás: "Fából készült szálfegyver" }
+    - kategória: "Saját fegyver alkalmassága"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Nagyobb / alkalmasabb törésre" }
+        - { érték: 2, leírás: "Kisebb / alkalmatlanabb törésre" }
+        - { érték: 99, leírás: "Nem alkalmas fegyvertörésre (KM)" }
 - név: "Felállás földről"
   típus: "általános"
   nehézség: 6
   fázisok: "M,E"
-  hatás: "Felkelés földről, harc folytatása levonások nélkül."
+  hatás:
+    - "Felkelés földről, harc folytatása levonások nélkül."
   id: "felállás_földről"
 - név: "Forgószél"
   típus: "általános"
   nehézség: 7
   fázisok: "V,E"
-  hatás: "Köríves támadás több ellenfélre egyszerre. Külön sebzés mindegyikre. Nem okoz VÉ csökkentést."
+  hatás:
+    - "Köríves támadás több ellenfélre egyszerre."
+    - "Külön sebzés mindegyikre."
+    - "Nem okoz VÉ csökkentést."
   id: "forgószél"
 - név: "Földrevitel"
   típus: "általános"
   nehézség: 8
   fázisok: "V,E"
-  hatás: "Ellenfél földre kerül (Földön fekve módosítók). Felállás: Felállás földről manőver."
+  hatás:
+    - "Ellenfél földre kerül (Földön fekve módosítók)."
+    - "Felállás: Felállás földről manőver."
   id: "földrevitel"
+  helyzetfüggő_módosítók:
+    - kategória: "Erő különbség"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Erősebb vagy nála" }
+        - { érték: 2, leírás: "Gyengébb vagy nála" }
 - név: "Kibontakozás"
   típus: "általános"
   nehézség: 5
   fázisok: "E (M*)"
-  hatás: "Kilépés a harcból. Sikertelen: ellenfelek Megakasztás támadást kapnak. Utána futás/Gyorsaság próba."
+  hatás:
+    - "Kilépés a harcból."
+    - "Sikertelen: ellenfelek Megakasztás támadást kapnak."
+    - "Utána futás/Gyorsaság próba."
   id: "kibontakozás"
 - név: "Lábkirántás szálfegyverrel"
   típus: "általános"
   nehézség: 6
   fázisok: "V,E"
-  hatás: "Ellenfél földre kerül (Földön fekve módosítók). Felállás: Felállás földről manőver."
+  hatás:
+    - "Ellenfél földre kerül (Földön fekve módosítók)."
+    - "Felállás: Felállás földről manőver."
   id: "lábkirántás_szálfegyverrel"
+  helyzetfüggő_módosítók:
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Kifejezetten lábkirántásra alkalmas fegyver" }
 - név: "Lánccsapda"
   típus: "általános"
   nehézség: 9
   fázisok: "V,E"
-  hatás: "Ellenfél fegyvere foglyul ejtve - nem használhatja. Helyhez kötve harci helyzet módosítók."
+  hatás:
+    - "Ellenfél fegyvere foglyul ejtve - nem használhatja."
+    - "Helyhez kötve harci helyzet módosítók."
   id: "lánccsapda"
 - név: "Lánccsapdából szabadítás"
   típus: "általános"
   nehézség: 7
   fázisok: "E"
-  hatás: "Fegyver kiszabadítása láncos csapdából."
+  hatás:
+    - "Fegyver kiszabadítása láncos csapdából."
   id: "lánccsapdából_szabadítás"
 - név: "Lefegyverzés"
   típus: "általános"
   nehézség: 10
   fázisok: "V,E"
-  hatás: "Ellenfél fegyvere kiesik kezéből."
+  hatás:
+    - "Ellenfél fegyvere kiesik kezéből."
   id: "lefegyverzés"
+  helyzetfüggő_módosítók:
+    - kategória: "Saját fegyver alkalmassága"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Kimondottan alkalmas lefegyverzésre" }
+        - { érték: 2, leírás: "Nem kimondottan alkalmas" }
+        - { érték: 99, leírás: "Nem alkalmas lefegyverzésre (KM)" }
+    - kategória: "Cél"
+      mód: "single"
+      sorok:
+        - { érték: -5, leírás: "Lánccsapdában foglyul ejtett fegyver (Nehézség: 5)" }
 - név: "Leütés hátulról"
   típus: "általános"
   nehézség: 6
   fázisok: "V,E"
-  hatás: "Ájulás ha sebzés ≥ ÉP/4↓. Egyébként Bódultság státusz. Sebzés FP-ként jelenik meg."
+  hatás:
+    - "Ájulás ha sebzés ≥ ÉP/4↓."
+    - "Egyébként Bódultság státusz."
+    - "Sebzés FP-ként jelenik meg."
   id: "leütés_hátulról"
+  helyzetfüggő_módosítók:
+    - kategória: "Célpont"
+      mód: "single"
+      sorok:
+        - { érték: 0, leírás: "Sisak nélküli célpont" }
+        - { érték: 3, leírás: "Sisakos célpont (tarkón ütés)" }
 - név: "Mesterjel"
   típus: "általános"
   nehézség: 10
   fázisok: "V,E"
-  hatás: "Mesterjel belekarcolása ellenfél ruhájába/bőrébe (1 ÉP)."
+  hatás:
+    - "Mesterjel belekarcolása ellenfél ruhájába/bőrébe (1 ÉP)."
   id: "mesterjel"
+  helyzetfüggő_módosítók:
+    - kategória: "Jel bonyolultsága"
+      mód: "single"
+      sorok:
+        - { érték: 0, leírás: "Egyszerű jel" }
+        - { érték: 1, leírás: "Közepes jel" }
+        - { érték: 2, leírás: "Bonyolult jel" }
 - név: "Mögékerülés"
   típus: "általános"
   nehézség: 8
   fázisok: "E"
-  hatás: "Hátulról támadás pozíció elérése. Ellenfél dönthet: átáll rád → szövetségesed kap hátulról bónuszt."
+  hatás:
+    - "Hátulról támadás pozíció elérése."
+    - "Ellenfél dönthet: átáll rád → szövetségesed kap hátulról bónuszt."
   id: "mögékerülés"
+  helyzetfüggő_módosítók:
+    - kategória: "Túlerő"
+      mód: "single"
+      sorok:
+        - { érték: 0, leírás: "Egy:kettő túlerő" }
+        - { érték: -2, leírás: "Egy:három túlerő" }
+        - { érték: -4, leírás: "Egy:négy+ túlerő" }
 - név: "Pajzsrongálás"
   típus: "általános"
   nehézség: 6
   fázisok: "V,E"
-  hatás: "Pajzs VÉ végleges csökkentése. Zúzó: SP/2, Vágó: SP/4."
+  hatás:
+    - "Pajzs VÉ végleges csökkentése."
+    - "Zúzó: SP/2, Vágó: SP/4."
   id: "pajzsrongálás"
 - név: "Pajzzsal felöklelés"
   típus: "általános"
   nehézség: 7
   fázisok: "V,E"
-  hatás: "Ellenfél földre kerül (Földön fekve módosítók)."
+  hatás:
+    - "Ellenfél földre kerül (Földön fekve módosítók)."
   id: "pajzzsal_felöklelés"
+  helyzetfüggő_módosítók:
+    - kategória: "Erő különbség"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Erősebb vagy nála" }
+        - { érték: 2, leírás: "Gyengébb vagy nála" }
+    - kategória: "Ellenfél Pajzshasználata"
+      mód: "single"
+      sorok:
+        - { érték: 2, leírás: "1. fok (pajzzsal)" }
+        - { érték: 4, leírás: "2. fok (pajzzsal)" }
+        - { érték: 6, leírás: "3. fok (pajzzsal)" }
 - név: "Piszkos trükk"
   típus: "általános"
   nehézség: 7
   fázisok: "V,E"
-  hatás: "Alattomos ütés (k20+0 SP). Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását."
+  hatás:
+    - "Alattomos ütés (k20+0 SP)."
+    - "Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását."
   id: "piszkos_trükk"
 - név: "Precíz támadás"
   típus: "általános"
   nehézség: 6
   fázisok: "V,E"
-  hatás: "Adott területre támadás. Manőverfókusz: Szike SP bónusz érvényesül vértmentes pontra."
+  hatás:
+    - "Adott területre támadás."
+    - "Manőverfókusz: Szike SP bónusz érvényesül vértmentes pontra."
   id: "precíz_támadás"
+  végrehajtás_té_módosító: 0
+  helyzetfüggő_módosítók:
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Tőrkard" }
+        - { érték: 0, leírás: "Egykezes kardvívó fegyver / Puszta kéz" }
+        - { érték: 2, leírás: "Zúzófegyver" }
+    - kategória: "Taktika"
+      mód: "single"
+      sorok:
+        - { érték: 2, leírás: "Roham taktika alkalmazása" }
 - név: "Rávetődés hátulról"
   típus: "általános"
   nehézség: 6
   fázisok: "E"
-  hatás: "Rácsimpaszkodás ellenfél hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
+  hatás:
+    - "Rácsimpaszkodás ellenfél hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
   id: "rávetődés_hátulról"
 - név: "Távoltartás"
   típus: "általános"
   nehézség: 5
   fázisok: "M*,E"
-  hatás: "TÉ:+4 Megszakító támadás. Siker: ellenfél elveszíti következő támadását."
+  hatás:
+    - "TÉ:+4 Megszakító támadás."
+    - "Siker: ellenfél elveszíti következő támadását."
   id: "távoltartás"
+  helyzetfüggő_módosítók:
+    - kategória: "Harci alakzat"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Alakzatban (nagy előny, KM)" }
+        - { érték: -2, leírás: "Alakzatban (KM)" }
+        - { érték: -1, leírás: "Alakzatban (kis előny, KM)" }
+    - kategória: "Ismétlés"
+      mód: "single"
+      sorok:
+        - { érték: 2, leírás: "Ismételt alkalmazás egy harcon belül" }
 - név: "Terelés"
   típus: "általános"
   nehézség: 8
   fázisok: "E"
-  hatás: "Ellenfél terelése kívánt irányba."
+  hatás:
+    - "Ellenfél terelése kívánt irányba."
   id: "terelés"
+  helyzetfüggő_módosítók:
+    - kategória: "Harci alakzat"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Alakzatban (nagy előny, KM)" }
+        - { érték: -2, leírás: "Alakzatban (KM)" }
+        - { érték: -1, leírás: "Alakzatban (kis előny, KM)" }
+    - kategória: "Ellenfél mérete"
+      mód: "single"
+      sorok:
+        - { érték: 1, leírás: "Kissé nagyobb (KM)" }
+        - { érték: 2, leírás: "Nagyobb (KM)" }
+        - { érték: 4, leírás: "Jelentősen nagyobb (KM)" }
 - név: "Átdobás"
   típus: "belharcos"
   nehézség: 7
   fázisok: "V,E"
-  hatás: "Ellenfél földre kerül (Földön fekve módosítók)."
+  hatás:
+    - "Ellenfél földre kerül (Földön fekve módosítók)."
   id: "átdobás"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Belharcba kerülés"
   típus: "belharcos"
   nehézség: 9
   fázisok: "M,E"
-  hatás: "Belharci szituáció létrejön. Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
+  hatás:
+    - "Belharci szituáció létrejön."
+    - "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
   id: "belharcba_kerülés"
+  helyzetfüggő_módosítók:
+    - kategória: "Ellenfél helyzete"
+      mód: "single"
+      sorok:
+        - { érték: -4, leírás: "Ellenfél háttal áll (Nehézség: 5)" }
+    - kategória: "Ellenfél pajzsa"
+      mód: "single"
+      sorok:
+        - { érték: 2, leírás: "Kis pajzs" }
+        - { érték: 4, leírás: "Közepes pajzs" }
+        - { érték: 6, leírás: "Nagy pajzs" }
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Belharcból kibontakozás"
   típus: "belharcos"
   nehézség: 5
   fázisok: "M,E"
-  hatás: "Kilépés belharcból, sima harci szituáció. Sebzés esetén automatikus kibontakozás."
+  hatás:
+    - "Kilépés belharcból, sima harci szituáció."
+    - "Sebzés esetén automatikus kibontakozás."
   id: "belharcból_kibontakozás"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Feszítés, Leszorítás"
   típus: "belharcos"
   nehézség: 8
   fázisok: "V,E"
-  hatás: "TÉ/VÉ:-7, KÉ elvesztés. Csak puszta kézzel harcol. Körönként Fájdalomtűrés próba (15)."
+  hatás:
+    - "TÉ/VÉ:-7, KÉ elvesztés."
+    - "Csak puszta kézzel harcol."
+    - "Körönként Fájdalomtűrés próba (15)."
   id: "feszítés_leszorítás"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Feszítésből kijövetel"
   típus: "belharcos"
   nehézség: 8
   fázisok: "V,E"
-  hatás: "Kilépés feszítésből. Belharci szituáció megmarad."
+  hatás:
+    - "Kilépés feszítésből."
+    - "Belharci szituáció megmarad."
   id: "feszítésből_kijövetel"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Gáncsolás"
   típus: "belharcos"
   nehézség: 7
   fázisok: "V,E"
-  hatás: "Ellenfél földre kerül (Földön fekve módosítók)."
+  hatás:
+    - "Ellenfél földre kerül (Földön fekve módosítók)."
   id: "gáncsolás"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Kéztörés"
   típus: "belharcos"
   nehézség: 9
   fázisok: "V,E"
-  hatás: "7 ÉP sebzés, kéz használhatatlan."
+  hatás:
+    - "7 ÉP sebzés, kéz használhatatlan."
   id: "kéztörés"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Lábtörés"
   típus: "belharcos"
   nehézség: 10
   fázisok: "V,E"
-  hatás: "9 ÉP sebzés, láb használhatatlan."
+  hatás:
+    - "9 ÉP sebzés, láb használhatatlan."
   id: "lábtörés"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Lefejelés"
   típus: "belharcos"
   nehézség: 7
   fázisok: "V,E"
-  hatás: "5 ÉP sebzés."
+  hatás:
+    - "5 ÉP sebzés."
   id: "lefejelés"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Leforgatás/Irányítás"
   típus: "belharcos"
   nehézség: 10
   fázisok: "V,E"
-  hatás: "Ellenfél terelése kívánt irányba (max 5m). Lefeszítve: Nehézség 6."
+  hatás:
+    - "Ellenfél terelése kívánt irányba (max 5m)."
+    - "Lefeszítve: Nehézség 6."
   id: "leforgatás_irányítás"
+  helyzetfüggő_módosítók:
+    - kategória: "Ellenfél helyzete"
+      mód: "single"
+      sorok:
+        - { érték: -4, leírás: "Lefeszített ellenfél (Nehézség: 6)" }
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Nyaktörés"
   típus: "belharcos"
   nehézség: 12
   fázisok: "V,E"
-  hatás: "Azonnali halál (elfszabású anatómia). Megelőző Feszítés szükséges."
+  hatás:
+    - "Azonnali halál (elfszabású anatómia)."
+    - "Megelőző Feszítés szükséges."
   id: "nyaktörés"
+  helyzetfüggő_módosítók:
+    - kategória: "Belharc körülmények (KM)"
+      mód: "single"
+      sorok:
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Hátas táncoltatása"
   típus: "lovas"
   nehézség: 0
   fázisok: "M"
-  hatás: "Lovas végzi. Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen. Távharc VÉ: Kiszámíthatatlan (6x). Követelmény: Lovas harc 2.fok."
+  hatás:
+    - "Lovas végzi."
+    - "Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen."
+    - "Távharc VÉ: Kiszámíthatatlan (6x)."
+    - "Követelmény: Lovas harc 2.fok."
   id: "hátas_táncoltatása"
 - név: "Lóhátról lerántás"
   típus: "lovas"
   nehézség: 6
   fázisok: "M,V,E"
-  hatás: "GYALOGOS végzi lovas ellen. Közvetlen harcérintkezés szükséges. Sikernél a lovas földre kerül. Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye)."
+  hatás:
+    - "GYALOGOS végzi lovas ellen."
+    - "Közvetlen harcérintkezés szükséges."
+    - "Sikernél a lovas földre kerül."
+    - "Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye)."
   id: "lóhátról_lerántás"
 - név: "Lovas áttörés"
   típus: "lovas"
   nehézség: 4
   fázisok: "V,E"
-  hatás: "Áttörés ellenfél sorain galopp/roham tempóval. Sikernél ellenfelek szétszóródnak, hátrány a következő körben. Nehézség: 4-10 (ellenfelek száma és fegyverzete függvénye)."
+  hatás:
+    - "Áttörés ellenfél sorain galopp/roham tempóval."
+    - "Sikernél ellenfelek szétszóródnak, hátrány a következő körben."
+    - "Nehézség: 4-10 (ellenfelek száma és fegyverzete függvénye)."
   id: "lovas_áttörés"
 - név: "Lovas megakasztása"
   típus: "lovas"
   nehézség: 4
   fázisok: "M,E"
-  hatás: "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra, aki elveszíti támadását."
+  hatás:
+    - "GYALOGOS végzi lovas ellen."
+    - "Szúró szálfegyver + Pengeelőny szükséges."
+    - "Sebző dobás a lovasra, aki elveszíti támadását."
   id: "lovas_megakasztása"

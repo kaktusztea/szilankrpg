@@ -69,10 +69,9 @@ export function KepzettsegProbaPickers({
       )}
 
       {openPicker === 'szit' && (
-        <PopupOverlay onClose={() => { setOpenPicker(null); resetDobás(); }}>
-          <div className="kep-prompt kep-proba-szit-popup" onClick={e => e.stopPropagation()}>
-            <label className="kep-prompt-label-bold-mb">Helyzetfüggő módosítók</label>
-            <div className="kep-proba-szit-body">
+        <PopupOverlay className="kep-prompt kep-proba-szit-popup" onClose={() => { setOpenPicker(null); resetDobás(); }}>
+          <label className="kep-prompt-label-bold-mb">Helyzetfüggő módosítók</label>
+          <div className="kep-proba-szit-body">
               {módosítóTáblák.map(t => (
                 <div key={t.kategória} className="kep-proba-szit-cat">
                   <span className="kep-proba-szit-label">{t.kategória}</span>
@@ -107,7 +106,6 @@ export function KepzettsegProbaPickers({
                 Összesen: {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
               </div>
             )}
-          </div>
         </PopupOverlay>
       )}
       {openPicker === 'info' && (
