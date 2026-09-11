@@ -9,8 +9,11 @@ describe('parseFázisok', () => {
   it('parses "V,E" → [V, E]', () => {
     expect(parseFázisok('V,E')).toEqual(['V', 'E']);
   });
-  it('parses "E (M*)" → [M, E] (M is present in string)', () => {
-    expect(parseFázisok('E (M*)')).toEqual(['M', 'E']);
+  it('parses "E (M*)" → [E, M] (megőrzi a stringbeli sorrendet, * eldobva)', () => {
+    expect(parseFázisok('E (M*)')).toEqual(['E', 'M']);
+  });
+  it('parses "M*,E" → [M, E]', () => {
+    expect(parseFázisok('M*,E')).toEqual(['M', 'E']);
   });
   it('parses "E" → [E]', () => {
     expect(parseFázisok('E')).toEqual(['E']);

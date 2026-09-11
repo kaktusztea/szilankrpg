@@ -80,11 +80,16 @@ interface Props {
 }
 
 /** Parse fázisok string (e.g. "M,V,E" or "E (M*)") into ordered phase list. */
+/** Parse fázisok string (e.g. "M,V,E" or "E (M*)") into phase list, PRESERVING the
+ *  order of appearance in the string (the `fázisok:` field encodes the intended order).
+ *  A `*` marker (conditional phase) is ignored; duplicates removed. */
 export function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
   const result: ('M' | 'V' | 'E')[] = [];
-  if (s.includes('M')) result.push('M');
-  if (s.includes('V')) result.push('V');
-  if (s.includes('E')) result.push('E');
+  for (const ch of s) {
+    if ((ch === 'M' || ch === 'V' || ch === 'E') && !result.includes(ch)) {
+      result.push(ch);
+    }
+  }
   return result;
 }
 
@@ -388,8 +393,10 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                         E: a magyarázat KIEGÉSZÍTŐ — a dobás-UI (módosítók, MP, célszám) mindig kell. */}
                     {(f === 'E' || !manőver.fázis_info?.[f]) && renderFázisInfo(f)}
                     <div className="manover-fazis-chips">
-                      <button className="manover-chip manover-chip-igen" onClick={() => handleSiker(true)}>Siker</button>
-                      <button className="manover-chip manover-chip-nem" onClick={() => handleSiker(false)}>Kudarc</button>
+                      {/* Szín az ALKALMAZÓ szempontjából: aktívban a manőver-siker jó (zöld);
+                          passzívban ÉN védekezem, így a manőver-siker nekem ROSSZ (piros). */}
+                      <button className={`manover-chip ${mód === 'passzív' ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => handleSiker(true)}>{getFázisFelirat(f, mód).siker}</button>
+                      <button className={`manover-chip ${mód === 'passzív' ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => handleSiker(false)}>{getFázisFelirat(f, mód).kudarc}</button>
                     </div>
                   </>
                 )}
@@ -399,7 +406,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         </div>
 
         {végeredmény !== 'folyamatban' && (
-          <div className={`manover-dobas-veg ${végeredmény === 'sikeres' ? 'manover-veg-sikeres' : 'manover-veg-sikertelen'}`}>
+          <div className={`manover-dobas-veg ${(végeredmény === 'sikeres') === (mód !== 'passzív') ? 'manover-veg-sikeres' : 'manover-veg-sikertelen'}`}>
             {végeredmény === 'sikeres'
               ? (mód === 'passzív' ? '✓ Manőver sikeres ellened' : '✓ Manőver sikeres')
               : (mód === 'passzív' ? '✗ Manőver sikertelen ellened' : '✗ Manőver sikertelen')}
@@ -501,6 +508,30 @@ export function fázisSikeres(fázis: 'M' | 'V' | 'E', eredmény: FázisEredmén
 /** All done and all successful for the manőver? */
 function isDone(eredmények: FázisEredmény[], fázisok: ('M' | 'V' | 'E')[]): boolean {
   return eredmények.every((e, i) => e !== 'pending' && fázisSikeres(fázisok[i], e, 'aktív'));
+}
+
+/**
+ * Fázis+mód-specifikus gomb-feliratok. A `siker` felirat a zöld gombra kerül (a KONKRÉT
+ * dobás eredménye, ami a MANŐVER továbbhaladásához vezet), a `kudarc` a pirosra.
+ * A szín fix: zöld = manőver felé jó, piros = manőver felé rossz — a felirat mondja meg,
+ * ténylegesen mit kell bejelölni (ki dobott, talált-e).
+ */
+export function getFázisFelirat(fázis: 'M' | 'V' | 'E', mód: Mód): { siker: string; kudarc: string } {
+  if (fázis === 'M') {
+    // Megakasztás sikere a MANŐVERnek = a megakasztó NEM talált.
+    return mód === 'aktív'
+      ? { siker: 'Elhibázta', kudarc: 'Eltalált' }       // ellenfél akaszt
+      : { siker: 'Elhibáztam', kudarc: 'Eltaláltam' };   // én (védő) akasztok
+  }
+  if (fázis === 'V') {
+    return mód === 'aktív'
+      ? { siker: 'Talált', kudarc: 'Nem talált' }        // én támadok
+      : { siker: 'Eltalált', kudarc: 'Nem talált' };     // ellenfél támad
+  }
+  // E — Ellenpróba
+  return mód === 'aktív'
+    ? { siker: 'Elértem', kudarc: 'Nem értem el' }
+    : { siker: 'Elérte', kudarc: 'Nem érte el' };
 }
 
 /**
