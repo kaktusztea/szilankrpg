@@ -116,7 +116,7 @@ Manőver Pontokat a **Védő Értékkel** együtt, azonos zavartalan pihenési k
 ---
 ## Általános szabályok
 
-### 🟩 Normál Manőver-követelmények
+### 🟨 Normál Manőver-követelmények
 
 Jártassági küszöb - például adott **Harcmodor** szint, **fortély** fok. Ha nem teljesül bármelyik, a Manőver akkor is megkísérelhető, de az **Ellenpróba** dobásnál `Hátrány-2` büntetést kapsz (nem halmozódik).
 

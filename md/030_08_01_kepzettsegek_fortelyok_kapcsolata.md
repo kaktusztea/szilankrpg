@@ -34,7 +34,7 @@ Amennyiben nincs olyan fortély, amely az adott próba esetén szükséges lenne
 
 <br />
 
-### 🟩 `2.1` Normál kiterjesztés
+### 🟨 `2.1` Normál kiterjesztés
 
 Ebben a kapcsolatban a fortély megléte nem követelmény, de hiánya esetén hátrány dobással próbálkozhat a játékos, mivel a törzstudás (a képzettség maga) nem nyújt az adott területen teljes körű ismeretet.
 

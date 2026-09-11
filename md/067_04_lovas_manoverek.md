@@ -10,7 +10,7 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 
 - Nehézség: `-`
 - Fázisok: `(M)egakasztás`
-- 🟩 Normál követelmény: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
+- 🟨 Normál követelmény: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
 - 🟥 Erős követelmény: lovas (hátason ülő) hajthatja végre
 - Hatás:
   - Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen.

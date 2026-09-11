@@ -129,7 +129,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 - Nehézség: `7`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Közelharc - `5.szint`
+- 🟨 Normál követelmény: Közelharc - `5.szint`
 
 **Hatás**: Sikeresen kigáncsoltad ellenfeled lábát, aki a földre zuhan.
 - [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.

@@ -66,7 +66,7 @@ A Fegyverméret-kategóriák adta különbségek az **Ellenpróbánál** (`E`) *
 
 A KM bármikor rögtönözhet új Manővert, mindössze az alábbiakat kell meghatároznia:
 - Nehézség `[2;12]`
-- 🟩 Normál követelmények: jártassági küszöb (Harcmodor szint, fortély fok); hiányuk `Hátrány-2` dobás büntetést okoz
+- 🟨 Normál követelmények: jártassági küszöb (Harcmodor szint, fortély fok); hiányuk `Hátrány-2` dobás büntetést okoz
 - Fázisok (`M V E`)
 - Hatás
 - 🟥 Erős követelmények: fizikai / eszköz / szituációs előfeltétel; hiányuk letiltja a Manővert

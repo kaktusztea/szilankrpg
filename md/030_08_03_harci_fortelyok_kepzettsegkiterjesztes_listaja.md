@@ -1,6 +1,6 @@
 ## Harci fortélyok képzettségkiterjesztés listája
 
-🟩 Normál kiterjesztés\
+🟨 Normál kiterjesztés\
 🟥 Erős kiterjesztés
 
 ![](images/038_harci_fortelyok_kiterjeszteslistaja_1.png)

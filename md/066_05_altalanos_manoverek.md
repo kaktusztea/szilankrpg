@@ -97,7 +97,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
     - `+2`: fegyvered kisebb/alkalmatlanabb ellenfeledénél törésre
 	- `+99`: a használt fegyver nem alkalmas fegyvertörésre. KM dönt.
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Harcmodor – `5.szint`
+- 🟨 Normál követelmény: Harcmodor – `5.szint`
 - 🟥 Erős követelmény: karmok/szarvak ellen nem használható (ott **Csonkolás** szükséges).
 
 **Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
@@ -147,7 +147,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Nehézség: `8`
   - ± **Erő** különbség
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Aktuális harcmodor - `5.szint`
+- 🟨 Normál követelmény: Aktuális harcmodor - `5.szint`
 - 🟥 Erős követelmény: Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
@@ -183,7 +183,7 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 - Nehézség: `6`
 	- `-2`: Kifejezetten lábkirántásra alkalmas fegyverrel próbálkozol
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Lándzsavívás – `6.szint`
+- 🟨 Normál követelmény: Lándzsavívás – `6.szint`
 - 🟥 Erős követelmény:
 	- Szálfegyver használata
 	- Csak kétlábú ellenfelek ellen (több lábbal rendelkezőnél [Földrevitel](#földrevitel))
@@ -200,7 +200,7 @@ Láncos fegyverekkel hajthatod végre.
 
 - Nehézség: `9`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Használt láncos fegyverre [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) – `1.fok`
+- 🟨 Normál követelmény: Használt láncos fegyverre [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) – `1.fok`
 - 🟥 Erős követelmény:
   - Láncos fegyver használata
   - Minimum `0.5 penge` nagyságú fegyver ellen lehet csak használni
@@ -239,7 +239,7 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
     - `+2`: fegyvered nem kimondottan alkalmas ellenfeled fegyverének elvételére
 	- `+99`: a használt fegyver nem alkalmas lefegyverzésre. KM dönt.
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Harcmodor – `5.szint`
+- 🟨 Normál követelmény: Harcmodor – `5.szint`
 - 🟥 Erős követelmény: Kardvívás / Lándzsavívás / Ostorharc harcmodor
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
@@ -287,7 +287,7 @@ Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 
 - Nehézség: `10-12` (A jel bonyolultságától függ)
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Mesterfegyver – `2.fok`
+- 🟨 Normál követelmény: Mesterfegyver – `2.fok`
 - 🟥 Erős követelmény: legfeljebb `1` penge hosszú hegyes szúrófegyver
 
 **Hatás**: Sikeres manőver esetén képes vagy mesterjeledet belekarcolni ellenfeled ruhájába vagy bőrébe (`1 ÉP`).
@@ -319,7 +319,7 @@ Szándékosan rongálod ellenfeled pajzsát, csökkentve annak **Védő Érték�
 
 - Nehézség: `6`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény: Aktuális harcmodor - `6.szint`
+- 🟨 Normál követelmény: Aktuális harcmodor - `6.szint`
 - 🟥 Erős követelmény: `Erő: +1`, Zúzó- vagy kétkezes fegyver használata
 - ❌ Ez ellen a manőver ellen **NEM** számít a pajzs adta **Védő Érték**!
 
@@ -349,7 +349,7 @@ Anyagok erőssége
     - ± **Erő** különbség
     - Ellenfél minden **Pajzshasználat** foka után `+2` (ha használ épp pajzsot ő is)
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény:
+- 🟨 Normál követelmény:
   - Aktuális harcmodor: - `5.szint`
   - Pajzshasználat – `2.fok`
 - 🟥 Erős követelmény: Nagy és Közepes pajzzsal lehetséges csak
@@ -363,7 +363,7 @@ Anyagok erőssége
 
 - Nehézség: `7`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟩 Normál követelmény:
+- 🟨 Normál követelmény:
 	- Közelharc – `4.szint`
 	- Forgatott fegyverre: Mesterfegyver – `1.fok`
 
@@ -392,7 +392,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
     - `+2`: [Roham](065_02_harci_taktikak.md#roham-taktika) alkalmazása esetén
 - Fázisok: `Végrehajtás, Ellenpróba`
 	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
-- 🟩 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára
 
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
@@ -429,7 +429,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 - Nehézség: `5`
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás* Ellenpróba`
-- 🟩 Normál követelmény: Harcmodor - `5.szint`
+- 🟨 Normál követelmény: Harcmodor - `5.szint`
 - 🟥 Erős követelmény: [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
 **Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
@@ -447,7 +447,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
   - `[-3; 0]`: Harci alakzatban használva. Az alakzatok jellemzőit ismerve a KM dönt.
   - `[1; 4]`: Ha az ellenfél jelentősen nagyobb méretű az alkalmazónál, a KM dönt.
 - Fázisok: `Ellenpróba`
-- 🟩 Normál követelmény: Aktuális harcmodor - `6.szint`
+- 🟨 Normál követelmény: Aktuális harcmodor - `6.szint`
 
 **Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
 
