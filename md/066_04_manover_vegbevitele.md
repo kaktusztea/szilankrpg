@@ -64,6 +64,8 @@ Manőver Célszám =
  + Manőver Nehézség
 ```
 
+🔆 A dobás `k10`-je **`Hátrány-2`** (`3 db k10`, a legkisebb számít), ha az alkalmazó bármely **Normál követelményt** nem teljesít (lásd lentebb). Hiányzó **Erős követelmény** esetén dobni sem lehet.
+
 ### 🔆 Ellenpróba Dobás extra módosítói
 
 ```
@@ -97,9 +99,6 @@ Hátrány-2
 [-5;+5]
   KM által megadott +/- érték.
   Körülmény függő könnyítés / nehezítés.
-
-+3: Manőver követelményei
-    nem teljesülnek támadó számára
 ```
 
 Az **Ellenpróba** azt modellezi, hogy a karakter képes-e megteremteni maga számára a lehetőséget, úgymond "megágyazni magának", hogy megkísérelhesse a **Manővert**. A harcban ez helyezkedést, "pozícióba kerülést" jelent, amelynek sikere függ a karakter és ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van).
@@ -117,9 +116,20 @@ Manőver Pontokat a **Védő Értékkel** együtt, azonos zavartalan pihenési k
 ---
 ## Általános szabályok
 
-### Manőver Végbevitel-követelmény
+### 🟩 Normál Manőver-követelmények
 
-A Manőverek végrehajtásával bárki próbálkozhat, akkor is, ha az adott Manővernél leírt **Végbevitel-követelményeket** nem teljesíti. Ilyenkor `+3` büntetés jár az **Ellenpróba** Célszámára.
+Jártassági küszöb - például adott **Harcmodor** szint, **fortély** fok. Ha nem teljesül bármelyik, a Manőver akkor is megkísérelhető, de az **Ellenpróba** dobásnál `Hátrány-2` büntetést kapsz (nem halmozódik).
+
+### 🟥 Erős  Manőver-követelmények
+
+```
+• 3. szintű Harcmodor (mindig)
+• Fizikai / eszköz / szituációs előfeltétel
+```
+
+Ezek lehetnek fizikai / eszköz / szituációs előfeltételek - például megfelelő **fegyvertípus**, **harci helyzet**, **anatómia**, megelőző **Manőver**. Ha az Erős követelményekből akár `1 db` is hiányzik, a Manőver automatikus kudarc, dobni sem lehet.
+
+🔆 Ha van akár `1 db` hiányzó Erős követelmény, a Manőver akkor sem dobható, ha egyébként minden Normál követelmény teljesül.
 
 ### Újrapróbálkozás
 

@@ -10,7 +10,8 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 
 - Nehézség: `-`
 - Fázisok: `(M)egakasztás`
-- Végbevitel követelménye: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
+- 🟩 Normál követelmény: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
+- 🟥 Erős követelmény: lovas (hátason ülő) hajthatja végre
 - Hatás:
   - Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen.
   - Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így főleg a feléd irányuló támadásokat háríthatod el.
@@ -25,7 +26,7 @@ Megpróbálsz áttörni az ellenfél sorain, lendületed és hátasod erejét ki
 
 - Nehézség: `[4-10]` (ellenfelek száma és fegyverzete függvénye)
 - Fázisok: `(V)égrehajtás, (E)llenpróba`
-- Követelménye: galopp vagy gyorsabb tempó
+- 🟥 Erős követelmény: galopp vagy gyorsabb tempó
 - Hatás: Az áttörési kísérlet sikeres esetén az ellenfelek szétszóródnak, és hátrányt szenvednek a következő körben.
 
 <br />
@@ -40,7 +41,8 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 
 - Nehézség: `4`
 - Fázisok: `(M)egakasztás, (E)llenpróba`
-- Végbevitel követelménye:
+- 🟥 Erős követelmény:
+  - A **védekező gyalogos** végezheti (nem a lovas)
   - Szúró szálfegyver használata
   - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) a lovashoz képest
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed effektív sebzésétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba). Sikertelen manőver esetén a lovas zavartalanul leadhatja rád rohamozó támadását.
@@ -56,7 +58,9 @@ Megpróbálod lerántani lovas ellenfeled a nyergéből.
 
 - Nehézség: `[6-12]` (függ attól, hogy milyen a hátas mozgása, a lovas hova figyel)
 - Fázisok: `(M)egakasztás, (V)égrehajtás, (E)llenpróba`
-- Végbevitel követelménye: Csak közvetlen harcérintkezés alatt végezhető
+- 🟥 Erős követelmény:
+  - **Gyalogos ellenfél** végezheti (nem a lovas)
+  - Csak közvetlen harcérintkezés alatt végezhető
 - Hatás: Sikeres próbálkozás esetén a lovas a földre kerül.
 
 Megjegyzés: A `(M)egakasztás` lépés csak akkor történik a lovas részéről, ha a látóterében vagy.

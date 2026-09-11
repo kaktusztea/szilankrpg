@@ -17,7 +17,7 @@
 ---
 ## [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet) mint követelmény
 
-Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
+🟥 **Erős követelmény** mindegyik Belharcos Manővernek - kivéve a **Belharcba kerülést**. Enélkül a manőver nem kísérelhető meg.
 
 ## [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) módosítói
 
@@ -37,7 +37,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 
 Amennyiben a lények között akár csak `1` kategória méret különbség is van, akkor ha...
 
-- Támadó kisebb: belharcos manővere automatikusan sikertelen
+- Támadó kisebb: belharcos manővere automatikusan sikertelen (🟥 Erős: nem is dobható)
 - Támadó nagyobb: `+3` Ellenpróba bónusz / méret kategória
 
 ⚡ Példa
@@ -57,7 +57,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
   - Ellenfélnél közepes pajzs: `+4`
   - Ellenfélnél nagy pajzs: `+6`
 - Fázisok: `Megakasztás, Ellenpróba`
-- Követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
+- 🟥 Erős követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
 
 **Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci helyzetnél](065_01_02_semleges_helyzetek.md#belharci-helyzet)** leírt módosítók érvényesülnek.
 
@@ -129,7 +129,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 - Nehézség: `7`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- Követelménye: Közelharc - `5.szint`
+- 🟩 Normál követelmény: Közelharc - `5.szint`
 
 **Hatás**: Sikeresen kigáncsoltad ellenfeled lábát, aki a földre zuhan.
 - [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
@@ -186,7 +186,7 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_0
 
 - Nehézség: `12`
 - Fázisok: `Végrehajtás Ellenpróba`
-- Követelmény: Megelőző sikeres [Feszítés, Leszorítás](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s) Manőver
+- 🟥 Erős követelmény: Megelőző sikeres [Feszítés, Leszorítás](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s) Manőver
 
 **Hatás**:
 - Kitörted ellenfeled nyakát.

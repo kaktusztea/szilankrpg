@@ -10,7 +10,7 @@ Egy Manőver `3` opcionális fázisból épülhet fel (`M V E`). Bővebben a [Ma
 
 Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
 
-Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
+🟥 Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható. Ez **Erős követelmény** (lásd [Manőver-követelmények](066_04_manover_vegbevitele.md#-normál-manőver-követelmények)): enélkül a Manőver nem kísérelhető meg.
 
 <br />
 
@@ -66,10 +66,10 @@ A Fegyverméret-kategóriák adta különbségek az **Ellenpróbánál** (`E`) *
 
 A KM bármikor rögtönözhet új Manővert, mindössze az alábbiakat kell meghatároznia:
 - Nehézség `[2;12]`
-- Követelmények
+- 🟩 Normál követelmények: jártassági küszöb (Harcmodor szint, fortély fok); hiányuk `Hátrány-2` dobás büntetést okoz
 - Fázisok (`M V E`)
 - Hatás
-- Speciális követelmények
+- 🟥 Erős követelmények: fizikai / eszköz / szituációs előfeltétel; hiányuk letiltja a Manővert
 
 Új Manőver kitalálásakor a `[2;12]` intervallum értékei közül válasszunk az alábbi skála figyelembevételével.
 
