@@ -262,6 +262,16 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
    - Skálázható taktikák (📶): extra fokok kék pöttyel (`●`, szín: `--color-kepzettseg`) jelölve a fok picker-ben. Megjelennek ha a karakter Harcmodor szintje eléri a küszöböt (konstansok.skálázható_taktika_max_fok).
 2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#4dd0e1`), utána az `infó` mező szövege (fehér). Ha van 0.fok alapeset aminek feltétele ez a helyzet: " Alapeset: {hatástext}" hozzáfűzve. Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem).
 3. **Manőver**: `<h3>` fejléc, field-btn. Manőver cím világos szürke (`#bbb`). Alatta: Nehézség+fázisok sor, hatás sor.
+
+#### Manőver dobás popup (`ManoverDobasPopup.tsx`)
+A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én hajtom végre / Passzív = ellenem), majd manőver választás (`ManoverPicker`, típus szerint csoportosítva), végül a dobás popup.
+- **Header**: `Manőver név (fázisbetűk)` — pl. „Lánccsapda (V E)". A fázisokat a `parseFázisok` tiszta betűiből (M/V/E) képezi, szóközzel. Jobb oldalt Aktív/Passzív címke.
+- **Fázisok lépegetése**: M/V/E fázisok egymás után; az aktív fázis diszkrét hideg-kék bal-keret + label. Fázisonként két gomb: **Siker** (zöld) / **Kudarc** (piros), középre igazítva. A gombok a MANŐVER sikerére vonatkoznak — Megakasztásnál a belső igen/nem reprezentáció invertált (`handleSiker`). Nincs kérdés-label.
+- **(V)égrehajtás**: TÉ chip (kerekített, kattintható, `ⓘ`), középre. Kattintásra popup a manőver TÉ-módosítójáról: `végrehajtás_té_módosító > 0` → „+X (standard)"; `0` → kiemelt jelzés, hogy nincs a szokásos +4 (sima támadás).
+- **(E)llenpróba**: a képlet és a gombok középre. Ezen a boxon belül:
+  - **Helyzetfüggő módosítók** gomb (a „Helyzetfüggő módosítók" képzettségpróba mintájával azonos stílus), CSAK aktív módban. Overlay picker (kategóriánként single/multi). Az összeg a célszámba számít (`nehézség ± szitModÖsszeg`). Színkonvenció FORDÍTOTT: pozitív = piros (nehezebb), negatív = zöld (könnyebb). A Nehézség bontása nem jelenik meg a képletben, csak a végső célszám.
+  - **MP használata** gomb (azonos stílus): overlay karikás fok-választó (`0`, `+1` … limitig, `fort-fok-btn`). Kiválasztáskor bezár, mellékattintás/Escape = cancel.
+- **Végeredmény**: sikeres/sikertelen sáv; sikernél a `hatás` mondatonként külön sorban (yaml `hatás` lista), tördelve (popup `max-width`).
 4. **Státuszok**: per-elem megjelenítés (nem aggregált). Státusz hatás: `Név (fok) alcím` gesztenye/bordó (`#cd7c6f`), félkövér, alatta soronként fehér hatás sorok. Szöveges operátor: csak `megjegyzés` szöveg (cél nem jelenik meg).
 5. **Narratív Előny/Hátrányok**: KM által hozzáadott szöveges + Előny/Hátrány értékek.
 
@@ -1163,7 +1173,7 @@ Minden adat `fetchJson`-nel:
 - `tables/nyelvek.json` — 37 nyelv (csoportosítva)
 - `tables/taktikak.json` — 14 taktika (módosítók, fokok, kombó szabályok)
 - `tables/harci_helyzetek.json` — 32 harci helyzet (id, infó, hatások, csoport)
-- `tables/manoverek.json` — 34 manőver (id, nehézség, fázisok, hatás)
+- `tables/manoverek.json` — 38 manőver (id, típus, nehézség, fázisok, hatás lista, végrehajtás_té_módosító, helyzetfüggő_módosítók)
 - `tables/statuszok.json` — 19 státusz (fokok, hatások)
 - `tables/hatas_operatorok.json` — 8 hatás mechanika típus
 - `tables/esemenyek.json` — 23 esemény/célpont

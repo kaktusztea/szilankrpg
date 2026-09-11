@@ -974,7 +974,7 @@ Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_akt
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14+3 taktika: módosítók, fokok, kombó szabályok, skálázható flag)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
 - `data/sources/szituaciok.yaml` TÖRÖLVE — 7 elem beolvadt `harci_helyzetek.yaml`-ba (pozitív/semleges csoportba)
-- `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: id, nehézség, fázisok, hatás)
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (38 manőver: id, típus, nehézség, fázisok, `hatás` [mondatonkénti lista], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
@@ -1006,8 +1006,11 @@ Harci helyzetek: NEM kalkuláltak (komplex hatások) — Hatás pool-ban az `inf
   Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva megjelenik: `→ Fortély (fok): hatástext ✔`
   Ha a fortély aktív (feltétel teljesül): zöld szín + ✔. Ha nem: szürke.
   Alapeset (0.fok) hatástext hozzáfűződik az infó szöveghez: `"infó; Alapeset: hatástext"`
-Manőverek: NEM adnak statikus módosítókat — informatív (nehézség, fázisok, hatás megjelenítés).
+Manőverek: NEM adnak statikus harcérték módosítókat a Harc fülre — informatív (nehézség, fázisok, hatás megjelenítés).
 UI: Manőver szekció `aktiv-label` fejléccel (mint Taktikák/Helyzetek).
+A Manőver dobás popup (§21.4) viszont interaktív dobás-módosítókat használ:
+  - `helyzetfüggő_módosítók` → az Ellenpróba célszámába (`nehézség ± szitModÖsszeg`), CSAK aktív módban (mindig az alkalmazó módosítói). A képzettségpróba `calcSzitModÖsszeg`-ét használja üres enyhítés-listával. Színkonvenció FORDÍTOTT a képzettségpróbához képest: pozitív (nehezebb) = piros, negatív (könnyebb) = zöld.
+  - `végrehajtás_té_módosító` → a Végrehajtás fázis TÉ értékébe (`aktívTÉ + módosító`). Default 4; `0` = nincs +4 (Ellenfél elfogása, Precíz támadás — a TÉ chip popupja külön jelzi).
 Taktikák Hatás pool: módosítók zölddel + ✔ jel a végén (beszámított jelzés).
 
 ### 21.1 Harci Taktikák

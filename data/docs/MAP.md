@@ -96,6 +96,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivTaktikak.tsx        Taktika picker + chip-ek
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
   AktivManover.tsx         Manőver picker
+  ManoverDobasPopup.tsx    Manőver dobás popup (fázis lépegetés, Siker/Kudarc, helyzetfüggő módosítók, MP+TÉ popup)
   AktivStatuszok.tsx       Státusz picker
   AktivFegyverSection.tsx  Fegyver/fogás/páncél toggle szekció
   AktivHatasPool.tsx       Hatás pool box
@@ -191,7 +192,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `fajok/*.yaml` | Faj hátterek (27 db) | `fajok.json`, `faj_tulajdonsag_keretek.json` |
 | `taktikak.yaml` | Harci taktikák (14 db) | `taktikak.json` |
 | `harci_helyzetek.yaml` | Harci helyzetek (32 db) | `harci_helyzetek.json` |
-| `manoverek.yaml` | Manőverek (34 db) | `manoverek.json` |
+| `manoverek.yaml` | Manőverek (38 db) | `manoverek.json` |
 | `statuszok.yaml` | Státuszok (19 db) | `statuszok.json` |
 | `hatasok.yaml` | Hatás mechanikák | — (csak validáció, az app nem tölti be) |
 | `hatas_operatorok.yaml` | Hatás operátorok (8 db) | `hatas_operatorok.json` |
