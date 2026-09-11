@@ -6,13 +6,13 @@ import { buildAktívFeltételek } from '../../engine/feltetelek';
 
 // --- Types ---
 
-export interface HatásEntry { cél: string; operátor?: string; hatás?: string; érték?: number; megjegyzés?: string }
-export interface StátuszPerElem { név: string; alcím?: string; hatások: HatásEntry[] }
-export interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
+interface HatásEntry { cél: string; operátor?: string; hatás?: string; érték?: number; megjegyzés?: string }
+interface StátuszPerElem { név: string; alcím?: string; hatások: HatásEntry[] }
+interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
 interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
 interface HelyzetFortélyEntry { név: string; fok: number; hatás: string; aktív: boolean }
 interface ManőverBónusz { név: string; manőver: string; érték: number }
-export interface AktivCalcData {
+interface AktivCalcData {
   státuszPerElem: StátuszPerElem[];
   taktikaHatásPerElem: TaktikaHatásPerElem[];
   fortélyEmlékeztetők: FortélyEmlékeztető[];

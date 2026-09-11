@@ -6,7 +6,7 @@ import { calcStátuszPróbaEH } from '../../engine/statusz-proba';
 import { PopupOverlay } from '../PopupOverlay';
 import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
-import { rollElőnyHátrány, rollDie, type ProbaDobás } from '../../engine/dice';
+import { rollElőnyHátrány, rollDie, type ProbaDobás, clampEHSzint } from '../../engine/dice';
 import { előnyHátrányLabel, type ÖsszetettSor, type ÖsszetettEredmény } from './proba-common';
 import {
   NEHÉZSÉGEK, NEHÉZSÉGEK_EXTRA, MIND_TULAJDONSÁG,
@@ -94,7 +94,7 @@ export function KepzettsegProbaPopup({
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt)
   const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségNév, képzettségCsoport);
   const ehSzintRaw = ehAlap.szint + státuszEH.szint;
-  const eh = { szint: Math.max(-2, Math.min(2, ehSzintRaw)), tiltott: ehAlap.tiltott || státuszEH.tiltott };
+  const eh = { szint: clampEHSzint(ehSzintRaw), tiltott: ehAlap.tiltott || státuszEH.tiltott };
   const erősTiltott = eh.tiltott;
 
   // Pötty szín: felvéve → zöld, hiányzó Erős → piros, hiányzó Normál → sárga.

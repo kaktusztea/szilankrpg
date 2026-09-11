@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { eredményHatás } from './ManoverDobasPopup';
+import { eredményHatás } from './manover-dobas-calc';
 
 describe('eredményHatás (C2 — sikeres-box szűrés)', () => {
   it('kiszűri a "Sikertelen:" kezdetű sort', () => {

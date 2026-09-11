@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
-import { rollElőnyHátrányK20, type ProbaDobás, előnyHátrányLabel } from '../../engine/dice';
+import { rollElőnyHátrányK20, type ProbaDobás, előnyHátrányLabel, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
 import { netElőnySzint } from './combat-roll-info';
 import { HatasokInfo } from './HatasokInfo';
@@ -38,7 +38,6 @@ interface SebzésEredmény {
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + k20 roll + info. */
 export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBónuszok, megjegyzések, hideMásodlagos, hideAutoBónusz, átütés, onClose }: Props) {
-  const clamp = (v: number) => Math.max(-2, Math.min(2, v));
   // Raw (unclamped) combined value — includes TÉ k20 bonus + active effects
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
   const [rawSzint, setRawSzint] = useState(baseRaw);
@@ -47,9 +46,9 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
 
   // Computed value includes másodlagos — this is the "calculated" level
-  const számított = clamp(baseRaw + (másodlagos ? -1 : 0));
+  const számított = clampEHSzint(baseRaw + (másodlagos ? -1 : 0));
   // Actual value shown on chips and used for dice roll
-  const aktuális = clamp(rawSzint);
+  const aktuális = clampEHSzint(rawSzint);
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(aktuális);

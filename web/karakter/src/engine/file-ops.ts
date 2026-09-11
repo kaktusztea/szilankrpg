@@ -138,7 +138,7 @@ export async function shareFile(blob: Blob, filename: string) {
   try { await navigator.share({ files: [file] }); } catch { /* */ }
 }
 
-export type LoadFileResult =
+type LoadFileResult =
   | { type: 'single'; karakter: Karakter; undo: any[] }
   | { type: 'backup'; karakterek: { karakter: Karakter; undo: any[] }[]; dátum: string }
   | { error: string };

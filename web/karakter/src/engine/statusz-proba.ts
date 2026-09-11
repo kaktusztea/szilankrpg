@@ -1,4 +1,5 @@
 import type { StatuszEntry, StatuszHatas } from './data-types';
+import { clampEHSzint } from './dice';
 
 /**
  * Próba cél → képzettség csoport mapping.
@@ -71,7 +72,7 @@ export function calcStátuszPróbaEH(
   }
 
   return {
-    szint: Math.max(-2, Math.min(2, ehSzint)),
+    szint: clampEHSzint(ehSzint),
     tiltott,
     források,
   };

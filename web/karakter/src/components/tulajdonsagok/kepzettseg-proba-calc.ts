@@ -147,7 +147,7 @@ export function enyhítettSorRészletes(
 }
 
 /** Egy szituációs módosító sor effektív értéke (lásd `enyhítettSorRészletes`). */
-export function enyhítettSor(próbaEnyhítések: PróbaEnyhítés[], kategória: string, sor: ModositoSor): number {
+function enyhítettSor(próbaEnyhítések: PróbaEnyhítés[], kategória: string, sor: ModositoSor): number {
   return enyhítettSorRészletes(próbaEnyhítések, kategória, sor).érték;
 }
 

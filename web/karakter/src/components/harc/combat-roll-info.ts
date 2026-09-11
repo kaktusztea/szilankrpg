@@ -6,6 +6,7 @@
 import type { Session, Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { HarciHelyzetEntry, TaktikaEntry, StatuszHatas, FortelySummary } from '../../engine/data-types';
+import { clampEHSzint } from '../../engine/dice';
 
 type DobásCél = 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
 
@@ -30,7 +31,7 @@ export interface DobásInfo {
   sebzésMegjegyzések: { forrás: string; szöveg: string }[];
 }
 
-export interface CéDobásInfo {
+interface CéDobásInfo {
   céHatások: DobásHatás[];
   céMegjegyzések: { forrás: string; szöveg: string }[];
 }
@@ -224,5 +225,5 @@ export function netElőnySzint(hatások: DobásHatás[]): number {
     else if (h.operátor === 'hátrány') szint -= Math.abs(h.érték);
     else if (h.operátor === 'enyhít') szint += Math.abs(h.érték);
   }
-  return Math.max(-2, Math.min(2, szint));
+  return clampEHSzint(szint);
 }

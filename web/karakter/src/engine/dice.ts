@@ -33,6 +33,15 @@ export function előnyHátrányLabel(szint: number): string {
   return '';
 }
 
+/** Az Előny/Hátrány szint értelmezési tartománya (a szabály szerint legfeljebb ±2). */
+const EH_SZINT_MIN = -2;
+const EH_SZINT_MAX = 2;
+
+/** Előny/Hátrány szint a [-2, +2] tartományra szorítva — a kézi `Math.max(-2, Math.min(2, x))` helyett. */
+export function clampEHSzint(szint: number): number {
+  return Math.max(EH_SZINT_MIN, Math.min(EH_SZINT_MAX, szint));
+}
+
 export function rollElőnyHátrányDie(szint: number, sides: number): ProbaDobás {
   const count = Math.abs(szint) + 1;
   const rolls = Array.from({ length: count }, () => rollDie(sides));

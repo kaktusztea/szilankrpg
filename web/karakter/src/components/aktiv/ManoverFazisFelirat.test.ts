@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getFázisFelirat, fázisCselekvő } from './ManoverDobasPopup';
+import { getFázisFelirat, fázisCselekvő } from './manover-dobas-calc';
 
 describe('fázisCselekvő', () => {
   it('default: M → ellenfél, V/E → én', () => {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { rollDie, rollK20, rollK10 } from './dice';
+import { rollDie, rollK20, rollK10, clampEHSzint } from './dice';
 
 describe('dice', () => {
   it('rollDie stays within [1, sides]', () => {
@@ -20,5 +20,13 @@ describe('dice', () => {
       expect(b).toBeGreaterThanOrEqual(1);
       expect(b).toBeLessThanOrEqual(10);
     }
+  });
+
+  it('clampEHSzint a [-2, +2] tartományra szorít', () => {
+    expect(clampEHSzint(0)).toBe(0);
+    expect(clampEHSzint(2)).toBe(2);
+    expect(clampEHSzint(-2)).toBe(-2);
+    expect(clampEHSzint(5)).toBe(2);
+    expect(clampEHSzint(-7)).toBe(-2);
   });
 });

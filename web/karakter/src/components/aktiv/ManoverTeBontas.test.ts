@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { téBontás, téBontásÖsszeg } from './ManoverDobasPopup';
+import { téBontás, téBontásÖsszeg } from './manover-dobas-calc';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 
