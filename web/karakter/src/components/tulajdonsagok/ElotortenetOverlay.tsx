@@ -4,7 +4,7 @@ import type { GameData } from '../../engine/data-loader';
 import { OverlayPortal } from '../overlays/OverlayPortal';
 import { KorPicker } from './KorPicker';
 import { VallasPickerOverlay } from './VallasPickerOverlay';
-import { MAX_ELOTORTENET_MEZŐ } from '../../ui-constants';
+import { MAX_ELOTORTENET_MEZŐ, MAX_NÉV, MAX_BECENÉV } from '../../ui-constants';
 
 interface Props {
   karakter: Karakter;
@@ -40,8 +40,8 @@ export function ElotortenetOverlay({ karakter, setKarakter, data, onClose }: Pro
             <input
               className="field-input"
               value={karakter.becenév}
-              onChange={e => setTopField('becenév', e.target.value.slice(0, 12))}
-              maxLength={12}
+              onChange={e => setTopField('becenév', e.target.value.slice(0, MAX_BECENÉV))}
+              maxLength={MAX_BECENÉV}
               placeholder="max 12 karakter"
             />
           </div>
@@ -52,8 +52,8 @@ export function ElotortenetOverlay({ karakter, setKarakter, data, onClose }: Pro
             <input
               className="field-input"
               value={karakter.név}
-              onChange={e => setTopField('név', e.target.value.slice(0, 40))}
-              maxLength={40}
+              onChange={e => setTopField('név', e.target.value.slice(0, MAX_NÉV))}
+              maxLength={MAX_NÉV}
               placeholder="max 40 karakter"
             />
           </div>

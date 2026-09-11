@@ -4,6 +4,7 @@ import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
 import { validateKarakter, validateKarakterData } from './validate';
 import { sanitizeUndo } from '../hooks/useUndo';
 import { readSlots } from '../hooks/slot-utils';
+import { MAX_NÉV, MAX_BECENÉV } from '../ui-constants';
 
 function generateUid(): string {
   if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
@@ -17,24 +18,81 @@ function generateIdLeíró(név: string, tsz: number): string {
 
 export function duplicateKarakter(karakter: Karakter): Karakter {
   const newUid = generateUid();
-  const slotNames = readSlots().map(s => s.név);
-  const newNév = nextDuplicateName(karakter.név || 'Névtelen', slotNames);
-  return { ...structuredClone(karakter), uid: newUid, név: newNév, id_leíró: generateIdLeíró(newNév, karakter.tsz) };
+  const slots = readSlots();
+  const { név, becenév } = nextDuplicateNamePair(
+    karakter.név || 'Névtelen',
+    karakter.becenév || '',
+    slots.map(s => s.név),
+    slots.map(s => s.becenév || ''),
+  );
+  return { ...structuredClone(karakter), uid: newUid, név, becenév, id_leíró: generateIdLeíró(név, karakter.tsz) };
 }
 
-// Compute the next "<base> vN" name: strips any trailing " vN" from src to get the base,
-// then picks max(existing vN for that base) + 1 (base with no suffix counts as v1 → min result is v2).
-export function nextDuplicateName(srcName: string, existingNames: string[]): string {
-  const baseMatch = srcName.match(/^(.+) v(\d+)$/);
-  const base = baseMatch ? baseMatch[1] : srcName;
+// Duplikált név+becenév pár közös, szinkronban tartott verziószámmal.
+// A közös verziószám (" N" suffix, "v" nélkül) a két forrás-verzió és a slotokban már meglévő
+// azonos bázisú verziók maximumát lépteti: ha az egyikben van szám a másikban nincs, vagy
+// eltérnek, a nagyobb érték nyer, +1. A becenevet csak akkor verziózzuk, ha van (üres marad).
+export function nextDuplicateNamePair(
+  srcNév: string, srcBecenév: string, existingNames: string[], existingBecenevek: string[],
+): { név: string; becenév: string } {
+  const névBase = parseVersion(srcNév).base;
+  const hasBecenév = srcBecenév.length > 0;
+  const becenévBase = hasBecenév ? parseVersion(srcBecenév).base : '';
+
+  const forrásVer = Math.max(
+    parseVersion(srcNév).ver,
+    hasBecenév ? parseVersion(srcBecenév).ver : 1,
+    maxExistingVersion(névBase, existingNames),
+    hasBecenév ? maxExistingVersion(becenévBase, existingBecenevek) : 1,
+  );
+  const newVer = forrásVer + 1;
+
+  return {
+    név: buildVersionedName(névBase, newVer, MAX_NÉV),
+    becenév: hasBecenév ? buildVersionedName(becenévBase, newVer, MAX_BECENÉV) : '',
+  };
+}
+
+// Splits a name into its base and version: "Példa 3" → { base: "Példa", ver: 3 }.
+// A name with no trailing " N" suffix counts as version 1.
+function parseVersion(name: string): { base: string; ver: number } {
+  const m = name.match(/^(.+) (\d+)$/);
+  return m ? { base: m[1], ver: parseInt(m[2]) } : { base: name, ver: 1 };
+}
+
+// Highest existing "<base> N" version among names (base with no suffix counts as v1).
+function maxExistingVersion(base: string, names: string[]): number {
   const esc = base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp(`^${esc} v(\\d+)$`);
+  const re = new RegExp(`^${esc} (\\d+)$`);
   let maxV = 1;
-  for (const n of existingNames) {
+  for (const n of names) {
     const m = (n || '').match(re);
     if (m) maxV = Math.max(maxV, parseInt(m[1]));
   }
-  return `${base} v${maxV + 1}`;
+  return maxV;
+}
+
+// Builds "<base> N" (no "v" prefix — the number alone marks the version).
+// If maxLen is given and it would exceed it, the base is truncated (trimming trailing
+// whitespace) so that " N" still fits.
+function buildVersionedName(base: string, ver: number, maxLen?: number): string {
+  const suffix = ` ${ver}`;
+  let trimmedBase = base;
+  if (maxLen !== undefined && trimmedBase.length + suffix.length > maxLen) {
+    // ponytail: truncation may collide with an existing truncated name at the same version
+    // (extreme edge — needs two ~40-char names sharing a prefix). Ceiling: rare with a
+    // 16-slot cap; upgrade path = re-scan uniqueness against the truncated base if it bites.
+    trimmedBase = trimmedBase.slice(0, maxLen - suffix.length).trimEnd();
+  }
+  return `${trimmedBase}${suffix}`;
+}
+
+// Compute the next "<base> N" name: strips any trailing " N" from src to get the base,
+// then picks max(existing N for that base) + 1 (base with no suffix counts as v1 → min result is 2).
+// If maxLen is given and "<base> N" would exceed it, the base is truncated so that " N" still fits.
+export function nextDuplicateName(srcName: string, existingNames: string[], maxLen?: number): string {
+  const base = parseVersion(srcName).base;
+  return buildVersionedName(base, maxExistingVersion(base, existingNames) + 1, maxLen);
 }
 
 export function generateSaveFile(karakter: Karakter, undoStack: any[], mode: 'single' | 'backup'): { blob: Blob; filename: string } {

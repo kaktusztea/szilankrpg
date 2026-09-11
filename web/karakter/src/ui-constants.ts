@@ -4,6 +4,8 @@ export const MAX_FORTÉLY_FOK = 3;
 export const MAX_KÉPZETTSÉG_SZINT = 15;
 export const SZINT_VALUES = Array.from({ length: MAX_KÉPZETTSÉG_SZINT }, (_, i) => i + 1);
 export const MAX_KARAKTER_DB = 16;
+export const MAX_NÉV = 40;
+export const MAX_BECENÉV = 12;
 /** Max tárolt NJK (jk === false) karakter — az NJK switcher sáv is ennyit mutat. */
 export const MAX_NJK_DB = 10;
 export const MAX_TÁVOLSÁG_MÉTER = 500;

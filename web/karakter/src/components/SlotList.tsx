@@ -99,20 +99,20 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
     );
   }
 
-  // Build display names: disambiguate nameless slots with v1, v2, etc.
-  // Numbering follows creation order (oldest = v1), not display order.
+  // Build display names: disambiguate nameless slots with 1, 2, etc.
+  // Numbering follows creation order (oldest = 1), not display order.
   const slotDisplayNames = (() => {
     const names = new Map<string, string>();
     const namelessUids = slots.filter(s => !s.név && !s.becenév).map(s => s.uid);
     const needsSuffix = namelessUids.length > 1;
-    // Reverse: slots are newest-first, we want oldest = v1
+    // Reverse: slots are newest-first, we want oldest = 1
     if (needsSuffix) namelessUids.reverse();
     for (const s of slots) {
       if (s.név || s.becenév) {
         names.set(s.uid, s.név || s.becenév!);
       } else {
         const idx = needsSuffix ? namelessUids.indexOf(s.uid) + 1 : 0;
-        names.set(s.uid, idx ? `Névtelen v${idx}` : 'Névtelen');
+        names.set(s.uid, idx ? `Névtelen ${idx}` : 'Névtelen');
       }
     }
     return names;
