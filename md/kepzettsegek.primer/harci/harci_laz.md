@@ -23,17 +23,16 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 ⭕TODO: hangolni ezeket az értékeket
 
 ```
-1.fokozat: ⭕fél bónusz
-           ⭕+TÉ,SP: +5   ⭕virtuális ÉP ⭕X
-2.fokozat: ⭕teljes harc bónusz
-           ⭕+TÉ,SP: +10
-3.fokozat: ⭕teljes harc bónusz, Sebzés Előny+1,
-           bárki ellenfelet megtámadsz
-           ⭕+TÉ,SP: +15
-4.fokozat: ⭕teljes harc bónusz, Sebzés Előny+1,
-           berserk, bárkit (barátot is) támadsz,
+1.fokozat: ⭕+TÉ,SP: +5
+           ⭕virtuális ÉP ⭕X  (a láz végén eltűnnek)
+2.fokozat: ⭕+TÉ,SP: +10
+3.fokozat: ⭕+TÉ,SP: +15
+           Sebzés Előny+1
+           Bárki ellenfelet megtámadsz
+4.fokozat: ⭕+TÉ,SP: +20
+           Sebzés Előny+1
+           Berserk, bárkit (barátot is) megtámadsz,
            aki legközelebb van
-           ⭕+TÉ,SP: +20
 ```
 
 ---
