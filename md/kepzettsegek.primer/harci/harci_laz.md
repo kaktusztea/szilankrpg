@@ -24,7 +24,7 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 
 ```
 1.fokozat: ⭕+TÉ,SP: +5
-           ⭕virtuális ÉP ⭕X  (a láz végén eltűnnek)
+           ⭕virtuális ÉP ⭕X
 2.fokozat: ⭕+TÉ,SP: +10
            ⭕virtuális ÉP ⭕X+Y
 3.fokozat: ⭕+TÉ,SP: +15
@@ -40,7 +40,7 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 
 ### Virtuális ÉP keret
 
-Egyes fokozatokon juthatsz hozzá, és úgy kell kezelned, mintha valóban ennyivel magasabb `ÉP` kerettel rendelkeznél - így a harcot is továbbb bírod. Hátránya, hogy a harc végén eltűnik, így könnyen `ÉP` "mínuszba" csúszhatsz, ami azonnali haldokláshoz vezet.
+Egyes fokozatokon juthatsz hozzá, és úgy kell kezelned, mintha valóban ennyivel magasabb `ÉP` kerettel rendelkeznél - így a harcot is tovább bírod. Hátránya, hogy a harc végén ez az extra keret eltűnik, így könnyen `ÉP` "mínuszba" csúszhatsz, ami azonnali haldokláshoz vezet.
 
 ---
 ### Bekerülés, bennmaradás Harci lázban
