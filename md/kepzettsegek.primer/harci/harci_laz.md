@@ -26,14 +26,21 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 1.fokozat: ⭕+TÉ,SP: +5
            ⭕virtuális ÉP ⭕X  (a láz végén eltűnnek)
 2.fokozat: ⭕+TÉ,SP: +10
+           ⭕virtuális ÉP ⭕X+Y
 3.fokozat: ⭕+TÉ,SP: +15
            Sebzés Előny+1
+           ⭕virtuális ÉP ⭕X+Y+Z
            Bárki ellenfelet megtámadsz
 4.fokozat: ⭕+TÉ,SP: +20
            Sebzés Előny+1
+           ⭕virtuális ÉP ⭕X+Y+Z+Q
            Berserk, bárkit (barátot is) megtámadsz,
            aki legközelebb van
 ```
+
+### Virtuális ÉP keret
+
+Egyes fokozatokon juthatsz hozzá, és úgy kell kezelned, mintha valóban ennyivel magasabb `ÉP` kerettel rendelkeznél - így a harcot is továbbb bírod. Hátránya, hogy a harc végén eltűnik, így könnyen `ÉP` "mínuszba" csúszhatsz, ami azonnali haldokláshoz vezet.
 
 ---
 ### Bekerülés, bennmaradás Harci lázban
