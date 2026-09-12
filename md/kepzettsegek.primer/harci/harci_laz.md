@@ -11,7 +11,7 @@ Nincsenek.
 ### Megkötések
 
 - Pajzs `VÉ` **nem** számít, lövés, mágia, pszi tiltott
-- Harci taktikák, manőverek tiltottak
+- Harci taktikák, manőverek tiltottak - kivéve Roham taktika
 - Rendszeres alkalmazása kizárja a harcművészetek (pl. Slan) tanulását, mert teljesen szétzilálja a lelki békét
 
 ### Őrjöngés fokozatai
