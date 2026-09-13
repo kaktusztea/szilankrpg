@@ -21,19 +21,19 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 Érthető, hogy a `2.` és `3.` fokozat közti egyensúlyozás művészete ez: úgy tartani fenn a lázat, hogy ne ess át véglegesen a vérgőzös őrületbe (`4.fokozat`).
 
 ```
-1.fokozat: +TÉ: +2   +SP: +1
-           virtuális ÉP +4
-2.fokozat: +TÉ: +5   +SP: +3
-           virtuális ÉP +6
-3.fokozat: +TÉ: +7   +SP: +5
+1.fokozat: TÉ:+2, +SP:+1
+           Virtuális ÉP: +4
+2.fokozat: TÉ:+5, +SP:+3
+           Virtuális ÉP: +6
+3.fokozat: TÉ:+7, +SP:+5
            Sebzés Előny+1
-           virtuális ÉP +9
+           Virtuális ÉP: +9
            Bárki ellenfelet megtámadsz
-4.fokozat: +TÉ: +10  +SP: +7
+4.fokozat: TÉ:+10, +SP:+7
            Sebzés Előny+1
-           virtuális ÉP +12
-           Berserk, bárkit (barátot is) megtámadsz,
-           aki legközelebb van
+           Virtuális ÉP: +12
+           Berserk, bárkit (barátot is)
+           megtámadsz, aki legközelebb van
 ```
 
 > A `+TÉ` (támadópontosság) és a `+SP` (sebzés) külön nő: a láz elsősorban a támadókedvet és
