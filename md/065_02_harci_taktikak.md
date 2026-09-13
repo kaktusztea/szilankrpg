@@ -206,7 +206,7 @@ TÉ:+3 első
   ha nem kaptál sebet
 ```
 
-✅ **Támadó, Visszafogott, Támadás Erőből, 1 támadás taktikával** együtt
+✅ **Támadó, Visszafogott, Támadás Erőből, 1 támadás, Tettetés taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -347,12 +347,13 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 TÉ levonásért cserébe kisebb Sebzés
 
 ```
-TÉ:-10  →  Hátrány-2 Sebzés dobásra
+TÉ:-10
+Hátrány-2 Sebzés dobásra
 ```
 
 🔗 **[Taktikafókusz: Visszafogott](fortelyok.harci/taktikafokusz_visszafogott.md)** fortély megszünteti a `TÉ` büntetést, és a Sebzés a fegyver alap sebzése lesz (nincs dobás).
 
-✅ **Kezdeményező, Kiváró, 1 támadás taktikával** együtt
+✅ **Kezdeményező, Kiváró, 1 támadás, Tettetés taktikával** együtt
 
 ❌ Más taktikával együtt
 
