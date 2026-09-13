@@ -90,7 +90,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 
 🔵 [Csapdaállítás](kepzettsegek.szekunder/csapdaallitas.md)
 
-🔵 [Lopakodás/Rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) 🅿️ 🤝
+🔵 [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) 🅿️ 🤝
 
 🔵 [Lopás](kepzettsegek.szekunder/lopas.md)
 
