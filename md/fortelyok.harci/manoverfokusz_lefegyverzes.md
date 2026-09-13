@@ -2,6 +2,10 @@
 
 Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.
 
+## Megkötés
+
+Engedélyezett Harcmodorok: Kardvívás, Lándzsavívás, Ostorharc
+
 ### 1. fok
 
 🔒 **Követelmény**:

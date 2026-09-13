@@ -33,8 +33,8 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 ### 2. fok
 
 🔒 **Követelmény**:
-- Alakzatharc - `9.szint`
-- Befolyásolás - `3.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) - `9.szint`
 - Összeszokott tagokat igényel
 
 🌟 `+4` bónusz az **Észlelés** képzettségre
