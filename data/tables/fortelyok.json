@@ -6702,18 +6702,24 @@
           "+4 bónusz csoportos Észlelés értékre."
         ],
         "követelmény": [
-          "Alakzatharc - 9.szint",
-          "Befolyásolás - 3.szint"
+          "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 6.szint",
+          "Észlelés - 9.szint"
         ],
         "követelmények": [
           {
-            "név": "Alakzatharc",
-            "érték": 9,
+            "név": [
+              "közelharc",
+              "kardvívás",
+              "rombolás",
+              "lándzsavívás",
+              "ostorharc"
+            ],
+            "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Befolyásolás",
-            "érték": 3,
+            "név": "Észlelés",
+            "érték": 9,
             "típus": "képzettség"
           }
         ],

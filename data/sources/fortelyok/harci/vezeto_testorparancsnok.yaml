@@ -40,14 +40,14 @@ fokok:
     módosítók: ""
   - fok: 2
     követelménytext:
-      - text: "Alakzatharc - 9.szint"
-      - text: "Befolyásolás - 3.szint"
+      - text: "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 6.szint"
+      - text: "Észlelés - 9.szint"
     követelmények:
-      - név: "Alakzatharc"
-        érték: 9
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
         típus: "képzettség"
-      - név: "Befolyásolás"
-        érték: 3
+      - név: "Észlelés"
+        érték: 9
         típus: "képzettség"
     hatástext:
       - text: "+4 bónusz csoportos Észlelés értékre."
