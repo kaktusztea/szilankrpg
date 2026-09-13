@@ -27,6 +27,8 @@ fokok:
   - fok: 1
     követelménytext:
       - text: "Lopakodás/rejtőzés - 6.szint"
+      - text: "Összeszokott tagokat igényel"
+      - text: "\"Fejvadász\" Leíró Háttér"
     követelmények:
       - név: "Lopakodás/rejtőzés"
         érték: 6
@@ -37,6 +39,8 @@ fokok:
   - fok: 2
     követelménytext:
       - text: "Lopakodás/rejtőzés - 9.szint"
+      - text: "Összeszokott tagokat igényel"
+      - text: "\"Fejvadász\" Leíró Háttér"
     követelmények:
       - név: "Lopakodás/rejtőzés"
         érték: 9
