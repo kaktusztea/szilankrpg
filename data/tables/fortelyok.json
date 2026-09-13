@@ -562,16 +562,8 @@
         "hatás": [
           "Csendes körülmények között is megtévesztően utánzol egy korábban hallott személy vagy állat hangját."
         ],
-        "követelmény": [
-          "Nyelvismeret - 1.fok"
-        ],
-        "követelmények": [
-          {
-            "név": "Nyelvismeret",
-            "érték": 1,
-            "típus": "fortély"
-          }
-        ],
+        "követelmény": [],
+        "követelmények": [],
         "módosítók": [],
         "próba_enyhítések": []
       }

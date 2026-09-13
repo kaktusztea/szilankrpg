@@ -26,12 +26,8 @@ fokok:
   - text: "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott személy vagy állat hangját."
   módosítók: ""
 - fok: 2
-  követelménytext:
-    - text: "Nyelvismeret - 1.fok"
-  követelmények: 
-  - név: "Nyelvismeret"
-    érték: 1
-    típus: "fortély"
+  követelménytext: []
+  követelmények: ""
   hatástext: 
   - text: "Csendes körülmények között is megtévesztően utánzol egy korábban hallott személy vagy állat hangját."
   módosítók: ""
