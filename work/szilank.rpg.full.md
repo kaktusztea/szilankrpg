@@ -8413,7 +8413,7 @@ Nincsenek.
 ### Megkötések
 
 - Pajzs `VÉ` **nem** számít, lövés, mágia, pszi tiltott
-- Harci taktikák, manőverek tiltottak
+- Harci taktikák, manőverek tiltottak - kivéve Roham taktika
 - Rendszeres alkalmazása kizárja a harcművészetek (pl. Slan) tanulását, mert teljesen szétzilálja a lelki békét
 
 ### Őrjöngés fokozatai
@@ -8425,18 +8425,24 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 ⭕TODO: hangolni ezeket az értékeket
 
 ```
-1.fokozat: ⭕fél bónusz
-           ⭕+TÉ,SP: +5   ⭕virtuális ÉP ⭕X
-2.fokozat: ⭕teljes harc bónusz
-           ⭕+TÉ,SP: +10
-3.fokozat: ⭕teljes harc bónusz, Sebzés Előny+1,
-           bárki ellenfelet megtámadsz
-           ⭕+TÉ,SP: +15
-4.fokozat: ⭕teljes harc bónusz, Sebzés Előny+1,
-           berserk, bárkit (barátot is) támadsz,
+1.fokozat: ⭕+TÉ,SP: +5
+           ⭕virtuális ÉP ⭕X
+2.fokozat: ⭕+TÉ,SP: +10
+           ⭕virtuális ÉP ⭕X+Y
+3.fokozat: ⭕+TÉ,SP: +15
+           Sebzés Előny+1
+           ⭕virtuális ÉP ⭕X+Y+Z
+           Bárki ellenfelet megtámadsz
+4.fokozat: ⭕+TÉ,SP: +20
+           Sebzés Előny+1
+           ⭕virtuális ÉP ⭕X+Y+Z+Q
+           Berserk, bárkit (barátot is) megtámadsz,
            aki legközelebb van
-           ⭕+TÉ,SP: +20
 ```
+
+### Virtuális ÉP keret
+
+Egyes fokozatokon juthatsz hozzá, és úgy kell kezelned, mintha valóban ennyivel magasabb `ÉP` kerettel rendelkeznél - így a harcot is tovább bírod. Hátránya, hogy a harc végén ez az extra keret eltűnik, így könnyen `ÉP` "mínuszba" csúszhatsz, ami azonnali haldokláshoz vezet.
 
 ---
 ### Bekerülés, bennmaradás Harci lázban
