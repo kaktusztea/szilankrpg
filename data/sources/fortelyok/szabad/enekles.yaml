@@ -25,7 +25,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
+    követelménytext:
+      - text: "Nyelvismeret fortély (adott nyelv), ha indokolt"
     követelmények: ""
     hatástext:
       - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."

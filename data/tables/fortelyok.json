@@ -7572,7 +7572,9 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Nyelvismeret fortély (adott nyelv), ha indokolt"
+        ],
         "követelmények": [],
         "módosítók": [],
         "próba_enyhítések": []
@@ -7898,7 +7900,13 @@
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
         "követelmény": [],
-        "követelmények": [],
+        "követelmények": [
+          {
+            "név": "Analfabéta",
+            "érték": 1,
+            "típus": "tiltó_fortély"
+          }
+        ],
         "módosítók": [],
         "próba_enyhítések": []
       }
