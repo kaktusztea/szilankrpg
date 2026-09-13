@@ -15,6 +15,8 @@ Ha megvan:
  1 visszacsapás lehetséges
 ```
 
+❌ Más taktikával együtt
+
 Nincs elsöprőbb, mint egy (lég)lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.
 
 🔆 Kiváltja a hagyományos "Roham" taktikát.
@@ -40,6 +42,10 @@ Ha megvan:
  1 támadó csapás lehetséges
  1 visszacsapás lehetséges
 ```
+
+✅ **1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
 
 Nem mindig sikerül elérni a rohamhoz szükséges sebességet, viszont ha a karakter képes galoppra fogni a lovát és úgy támadni, akkor is több előnyhöz jut, mintha csak egy helyben táncoltatna.
 

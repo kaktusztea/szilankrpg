@@ -143,7 +143,7 @@ Csak 1 támadást adsz le a körben:
   több-támadás TÉ levonás (-3) nem érvényesül
 ```
 
-❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés, Fárasztás taktikával együtt
+❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés, Fárasztás, (Lég)Lovas roham taktikával együtt
 
 ✅ Minden **más** taktikával együtt
 
@@ -337,7 +337,7 @@ Harcmodor képzettség + Ügyesség
 
 Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci jártasság felmérését](https://github.com/kaktusztea/szilankrpg/blob/master/md/szituaciok/harci_jartassag_felmerese.md) végezhet, amely nem vesz el Akciót, nem jár semmilyen hátránnyal.
 
-✅ **Kiváró, Visszafogott taktikával** együtt
+✅ **Kiváró, Visszafogott, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
