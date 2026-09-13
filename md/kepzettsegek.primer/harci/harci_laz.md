@@ -36,17 +36,6 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
            megtámadsz, aki legközelebb van
 ```
 
-> A `+TÉ` (támadópontosság) és a `+SP` (sebzés) külön nő: a láz elsősorban a támadókedvet és
-> a lendületet pörgeti fel. A virtuális `ÉP` fokozatonként a megadott (egyre nagyobb) kerettel
-> emeli, mennyit bírsz a harcban — de lásd lentebb a veszélyét.
-
-> **Mikor éri meg?** A Harci láz akkor a legerősebb, ha **egyedül** harcolsz: párbajban vagy
-> nehéz páncélú ellenfél ellen (a `+TÉ`/`+SP` átüti a védelmet), illetve ha magányos hősként
-> gyengébb túlerővel nézel szembe (a virtuális `ÉP` tart életben). Csapatban óvatosan: a `3–4.`
-> fokozaton már nem válogatsz, és a `4.` fokozatú berserk a **legközelebbi** élőt támadja — akár a
-> társaidat. Ha a csapat egyébként is nyerne (gyenge ellenfél, túlerőben vagytok), a láz csak
-> a saját oldaladat veszélyezteti — ilyenkor jobb józannak maradni.
-
 ### Virtuális ÉP keret
 
 Egyes fokozatokon juthatsz hozzá, és úgy kell kezelned, mintha valóban ennyivel magasabb `ÉP` kerettel rendelkeznél - így a harcot is tovább bírod. Hátránya, hogy a harc végén ez az extra keret eltűnik, így könnyen `ÉP` "mínuszba" csúszhatsz, ami azonnali haldokláshoz vezet.
