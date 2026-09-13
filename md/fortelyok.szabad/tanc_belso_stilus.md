@@ -16,7 +16,7 @@ Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális tá
 
 - Előtörténet
 - [Etikett](../kepzettsegek.szekunder/etikett.md) -`9.szint` (képzettség)
-- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) - `9.szint` (képzettség)
+- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) - `6.szint` (képzettség)
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) fortély 🔁
 - [Tánc](tanc.md) fortély
 
