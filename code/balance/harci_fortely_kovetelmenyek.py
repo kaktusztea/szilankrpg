@@ -126,22 +126,24 @@ def md_kovetelmenyek():
 
 
 def fmt_reqs(per_fok):
-    """{1:[('Akrobatika',6)],2:[('Akrobatika',9)]} -> 'Akrobatika 6/9.szint' tömörítve."""
-    # összevonás kép szerint: kép -> [szint fokonként]
+    """{1:[('Akrobatika',6)],2:[('Akrobatika',9)]} -> 'Akrobatika `6/9.szint`'.
+    A VAGY-listát '/'-rel (szóköz nélkül) írja; ha minden fokon azonos a szint,
+    egyetlen értékként jeleníti meg (pl. Befolyásolás `3.szint`, nem `3/3`)."""
     keps = {}
     order = []
     for fok in sorted(per_fok):
         for nev, szint in per_fok[fok]:
-            # a név lehet lista (VAGY-kapcsolat) -> hashelhető szöveggé alakítjuk
-            key = " / ".join(str(x) for x in nev) if isinstance(nev, list) else str(nev)
+            key = "/".join(str(x) for x in nev) if isinstance(nev, list) else str(nev)
             if key not in keps:
                 keps[key] = []
                 order.append(key)
             keps[key].append(str(szint))
     parts = []
     for key in order:
-        szintek = "/".join(keps[key])
-        parts.append(f"{key} `{szintek}.szint`")
+        szintek = keps[key]
+        # ha minden fokon ugyanaz -> egy érték; különben fokonként '/'-tal
+        egyseges = szintek[0] if len(set(szintek)) == 1 else "/".join(szintek)
+        parts.append(f"{key} `{egyseges}.szint`")
     return ", ".join(parts)
 
 
