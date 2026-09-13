@@ -26,7 +26,7 @@ taktikák:
     TÉ: 3
   megjegyzés: "Sebzés: 0. Csak megérintés."
   kombó_mód: "whitelist"
-  kombó_lista: ["Támadó", "Védő", "Kezdeményező", "Kiváró", "1 támadás", "Plusz támadás"]
+  kombó_lista: ["Védő", "Kezdeményező", "1 támadás", "Plusz támadás"]
   fortély_bővítés: null
   megkötések: []
   szűrő_harcmodorok: []
@@ -79,7 +79,7 @@ taktikák:
   - típus: "többes_harc"
     mód: "tiltott"
   kombó_mód: "whitelist"
-  kombó_lista: ["Támadó", "Érintő", "Visszafogott", "Támadás erőből", "1 támadás", "Tettetés"]
+  kombó_lista: ["Támadó", "Visszafogott", "Támadás erőből", "1 támadás", "Tettetés"]
   fortély_bővítés: null
   megkötések: []
   szűrő_harcmodorok: []
@@ -186,7 +186,7 @@ taktikák:
     mód: "tiltott"
     érték: "Orvtámadás"
   kombó_mód: "whitelist"
-  kombó_lista: ["Kezdeményező", "Kiváró", "Érintő", "Plusz támadás", "1 támadás"]
+  kombó_lista: ["Kezdeményező", "Kiváró", "Plusz támadás", "1 támadás"]
   fortély_bővítés: null
   megkötések: []
   szűrő_harcmodorok: []

@@ -31,10 +31,8 @@
     "megjegyzés": "Sebzés: 0. Csak megérintés.",
     "kombó_mód": "whitelist",
     "kombó_lista": [
-      "Támadó",
       "Védő",
       "Kezdeményező",
-      "Kiváró",
       "1 támadás",
       "Plusz támadás"
     ],
@@ -119,7 +117,6 @@
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Támadó",
-      "Érintő",
       "Visszafogott",
       "Támadás erőből",
       "1 támadás",
@@ -242,7 +239,6 @@
     "kombó_lista": [
       "Kezdeményező",
       "Kiváró",
-      "Érintő",
       "Plusz támadás",
       "1 támadás"
     ],
