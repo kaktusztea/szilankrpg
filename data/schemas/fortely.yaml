@@ -37,10 +37,12 @@ fokok:
     követelmények:            # Lista elemei ÉS kapcsolatban. Egy elem "név" mezője ha lista: VAGY kapcsolat (bármelyik teljesíti).
       - név: "harcmodor_neve" # string VAGY lista. Lista = VAGY kapcsolat, pl: ["közelharc", "kardvívás"]
         érték: 0              # képzettség szint
-        típus: "képzettség"
+        típus: "képzettség"   # "képzettség" | "fortély" | "mesterfegyver" | "tiltó_fortély"
       - név: "mesterfegyver"  # Opcionális; CSAK mesterfegyver fortélyra hivatkozhat
         érték: 0              # fok
         típus: "mesterfegyver"
+      # típus: "tiltó_fortély" — a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok
+      #   (pl. "Nem lehetsz Analfabéta"). érték: 1 = a fortély bármely foka tilt.
     hatástext:
       - text: ""
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.

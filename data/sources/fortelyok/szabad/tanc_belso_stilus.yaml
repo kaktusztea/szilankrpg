@@ -26,8 +26,21 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
-    követelmények: ""
+    követelménytext:
+      - text: "Előtörténet"
+    követelmények:
+      - név: "Etikett"
+        érték: 9
+        típus: "képzettség"
+      - név: "Előadóművészet"
+        érték: 6
+        típus: "képzettség"
+      - név: "Kultúrkör"
+        érték: 1
+        típus: "fortély"
+      - név: "Tánc"
+        érték: 1
+        típus: "fortély"
     hatástext:
       - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""

@@ -26,7 +26,10 @@ ingyenes_perszint: 0
 fokok:
   - fok: 1
     követelménytext: []
-    követelmények: ""
+    követelmények:
+      - név: "Analfabéta"
+        érték: 1
+        típus: "tiltó_fortély"
     hatástext:
       - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""

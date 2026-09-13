@@ -7855,7 +7855,18 @@
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
         "követelmény": [],
-        "követelmények": [],
+        "követelmények": [
+          {
+            "név": "Kultúrkör",
+            "érték": 1,
+            "típus": "fortély"
+          },
+          {
+            "név": "Nyelvismeret",
+            "érték": 2,
+            "típus": "fortély"
+          }
+        ],
         "módosítók": [],
         "próba_enyhítések": []
       }
@@ -7919,7 +7930,13 @@
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
         "követelmény": [],
-        "követelmények": [],
+        "követelmények": [
+          {
+            "név": "Analfabéta",
+            "érték": 1,
+            "típus": "tiltó_fortély"
+          }
+        ],
         "módosítók": [],
         "próba_enyhítések": []
       }
@@ -8475,8 +8492,16 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": [],
-        "követelmények": [],
+        "követelmény": [
+          "Legalább egy nap időtartam, míg a boncolás folyik"
+        ],
+        "követelmények": [
+          {
+            "név": "Élettan",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
         "módosítók": [],
         "próba_enyhítések": []
       }
@@ -9077,8 +9102,31 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": [],
-        "követelmények": [],
+        "követelmény": [
+          "Előtörténet"
+        ],
+        "követelmények": [
+          {
+            "név": "Etikett",
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Előadóművészet",
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Kultúrkör",
+            "érték": 1,
+            "típus": "fortély"
+          },
+          {
+            "név": "Tánc",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
         "módosítók": [],
         "próba_enyhítések": []
       }

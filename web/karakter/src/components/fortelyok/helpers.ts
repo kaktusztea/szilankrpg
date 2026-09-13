@@ -111,6 +111,11 @@ export function checkKövetelmények(
       const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
       const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
       if (!megvan) hiányzó.push(`${név} fortély ≥ ${kov.érték}. fok`);
+    } else if (kov.típus === 'tiltó_fortély') {
+      // Tiltó követelmény: a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok.
+      const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
+      const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
+      if (megvan) hiányzó.push(`Nem lehet: ${név} fortély`);
     }
   }
   return hiányzó;

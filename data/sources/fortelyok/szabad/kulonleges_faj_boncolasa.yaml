@@ -25,8 +25,12 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
-    követelmények: ""
+    követelménytext:
+      - text: "Legalább egy nap időtartam, míg a boncolás folyik"
+    követelmények:
+      - név: "Élettan"
+        érték: 1
+        típus: "fortély"
     hatástext:
       - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
