@@ -20,23 +20,32 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 
 Érthető, hogy a `2.` és `3.` fokozat közti egyensúlyozás művészete ez: úgy tartani fenn a lázat, hogy ne ess át véglegesen a vérgőzös őrületbe (`4.fokozat`).
 
-⭕TODO: hangolni ezeket az értékeket
-
 ```
-1.fokozat: ⭕+TÉ,SP: +5
-           ⭕virtuális ÉP ⭕X
-2.fokozat: ⭕+TÉ,SP: +10
-           ⭕virtuális ÉP ⭕X+Y
-3.fokozat: ⭕+TÉ,SP: +15
+1.fokozat: +TÉ: +2   +SP: +1
+           virtuális ÉP +4
+2.fokozat: +TÉ: +5   +SP: +3
+           virtuális ÉP +6
+3.fokozat: +TÉ: +7   +SP: +5
            Sebzés Előny+1
-           ⭕virtuális ÉP ⭕X+Y+Z
+           virtuális ÉP +9
            Bárki ellenfelet megtámadsz
-4.fokozat: ⭕+TÉ,SP: +20
+4.fokozat: +TÉ: +10  +SP: +7
            Sebzés Előny+1
-           ⭕virtuális ÉP ⭕X+Y+Z+Q
+           virtuális ÉP +12
            Berserk, bárkit (barátot is) megtámadsz,
            aki legközelebb van
 ```
+
+> A `+TÉ` (támadópontosság) és a `+SP` (sebzés) külön nő: a láz elsősorban a támadókedvet és
+> a lendületet pörgeti fel. A virtuális `ÉP` fokozatonként a megadott (egyre nagyobb) kerettel
+> emeli, mennyit bírsz a harcban — de lásd lentebb a veszélyét.
+
+> **Mikor éri meg?** A Harci láz akkor a legerősebb, ha **egyedül** harcolsz: párbajban vagy
+> nehéz páncélú ellenfél ellen (a `+TÉ`/`+SP` átüti a védelmet), illetve ha magányos hősként
+> gyengébb túlerővel nézel szembe (a virtuális `ÉP` tart életben). Csapatban óvatosan: a `3–4.`
+> fokon már nem válogatsz, és a `4.` fokú berserk a **legközelebbi** élőt támadja — akár a
+> társaidat. Ha a csapat egyébként is nyerne (gyenge ellenfél, túlerőben vagytok), a láz csak
+> a saját oldaladat veszélyezteti — ilyenkor jobb józannak maradni.
 
 ### Virtuális ÉP keret
 
