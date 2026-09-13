@@ -43,7 +43,7 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 > **Mikor éri meg?** A Harci láz akkor a legerősebb, ha **egyedül** harcolsz: párbajban vagy
 > nehéz páncélú ellenfél ellen (a `+TÉ`/`+SP` átüti a védelmet), illetve ha magányos hősként
 > gyengébb túlerővel nézel szembe (a virtuális `ÉP` tart életben). Csapatban óvatosan: a `3–4.`
-> fokon már nem válogatsz, és a `4.` fokú berserk a **legközelebbi** élőt támadja — akár a
+> fokozaton már nem válogatsz, és a `4.` fokozatú berserk a **legközelebbi** élőt támadja — akár a
 > társaidat. Ha a csapat egyébként is nyerne (gyenge ellenfél, túlerőben vagytok), a láz csak
 > a saját oldaladat veszélyezteti — ilyenkor jobb józannak maradni.
 
