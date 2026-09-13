@@ -15,7 +15,8 @@
       "Plusz támadás",
       "Teljes Védekezés",
       "Fárasztás",
-      "Tettetés"
+      "Tettetés",
+      "(Lég)Lovas roham"
     ],
     "fortély_bővítés": null,
     "szűrő_harcmodorok": [],
@@ -383,7 +384,9 @@
       }
     ],
     "kombó_mód": "whitelist",
-    "kombó_lista": [],
+    "kombó_lista": [
+      "1 támadás"
+    ],
     "fortély_bővítés": null,
     "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:lovas_támadás_galoppból"

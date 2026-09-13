@@ -15,7 +15,7 @@ taktikák:
     mód: "min"
     érték: 2
   kombó_mód: "blacklist"
-  kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás", "Tettetés"]
+  kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás", "(Lég)Lovas roham"]
   fortély_bővítés: null
   megkötések: []
   szűrő_harcmodorok: []
@@ -250,7 +250,7 @@ taktikák:
   módosítók: {}
   megjegyzés: "Képzetlenebbnek tetteted magad. Harcmodor+Ügyesség vs 15 próba. Kiváró, Visszafogott taktikával együtt."
   kombó_mód: "whitelist"
-  kombó_lista: ["Kiváró", "Visszafogott"]
+  kombó_lista: ["Kiváró", "Visszafogott", "1 támadás"]
   fortély_bővítés: null
   megkötések: []
   szűrő_harcmodorok: []
@@ -281,7 +281,7 @@ taktikák:
     mód: "szükséges"
     érték: ["lovas_harc", "léglovas_harc"]
   kombó_mód: "whitelist"
-  kombó_lista: []
+  kombó_lista: ["1 támadás"]
   fortély_bővítés: null
   szűrő_harcmodorok: []
 
