@@ -78,7 +78,7 @@ TÉ:+3, VÉ:-6
 
 ❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
-✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
+✅ **Kezdeményező, Kiváró, Plusz támadás, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -206,7 +206,7 @@ TÉ:+3 első
   ha nem kaptál sebet
 ```
 
-✅ **Támadó, Érintő, Visszafogott, Támadás Erőből, 1 támadás taktikával** együtt
+✅ **Támadó, Visszafogott, Támadás Erőből, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
