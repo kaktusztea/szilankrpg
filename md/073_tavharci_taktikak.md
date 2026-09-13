@@ -6,6 +6,8 @@ Néhány egyedi taktika itt is előfordul.
 - [Kitartott célzás](#kitartott-célzás)
 - [Páros, kétkezes hajítás](#páros-kétkezes-hajítás)
 
+🔆 Sima [Harci taktikákkal](065_02_harci_taktikak.md) és [Lovas harci taktikákkal](067_03_lovas_harci_taktikak.md)NEM kombinálhatóak.
+
 ---
 ### Lövéskitérés
 
