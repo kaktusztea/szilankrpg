@@ -159,7 +159,7 @@ TÉ:+3
 Nincs sebzés
 ```
 
-✅ **Támadó, Védő, Kezdeményező, Kiváró, 1 támadás, Plusz támadás taktikával** együtt
+✅ **Védő, Kezdeményező, 1 támadás, Plusz támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
