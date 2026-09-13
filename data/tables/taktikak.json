@@ -15,7 +15,6 @@
       "Plusz támadás",
       "Teljes Védekezés",
       "Fárasztás",
-      "Tettetés",
       "(Lég)Lovas roham"
     ],
     "fortély_bővítés": null,
@@ -332,7 +331,8 @@
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Kiváró",
-      "Visszafogott"
+      "Visszafogott",
+      "1 támadás"
     ],
     "fortély_bővítés": null,
     "megkötések": [],

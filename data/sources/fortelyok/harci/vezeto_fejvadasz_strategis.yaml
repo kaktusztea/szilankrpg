@@ -26,21 +26,21 @@ ingyenes_perszint: 0
 fokok:
   - fok: 1
     követelménytext:
-      - text: "Lopakodás/Rejtőzés - 6.szint"
+      - text: "Lopakodás/rejtőzés - 6.szint"
     követelmények:
-      - név: "Lopakodás/Rejtőzés"
+      - név: "Lopakodás/rejtőzés"
         érték: 6
         típus: "képzettség"
     hatástext:
-      - text: "+2 bónusz csoportos Lopakodás/Rejtőzés értékre."
+      - text: "+2 bónusz csoportos Lopakodás/rejtőzés értékre."
     módosítók: ""
   - fok: 2
     követelménytext:
-      - text: "Lopakodás/Rejtőzés - 9.szint"
+      - text: "Lopakodás/rejtőzés - 9.szint"
     követelmények:
-      - név: "Lopakodás/Rejtőzés"
+      - név: "Lopakodás/rejtőzés"
         érték: 9
         típus: "képzettség"
     hatástext:
-      - text: "+4 bónusz csoportos Lopakodás/Rejtőzés értékre."
+      - text: "+4 bónusz csoportos Lopakodás/rejtőzés értékre."
     módosítók: ""

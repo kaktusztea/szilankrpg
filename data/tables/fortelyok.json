@@ -1349,11 +1349,11 @@
           "A \"Mozgás\" helyzetfüggő módosító büntetése rád nem vonatkozik."
         ],
         "követelmény": [
-          "Lopakodás/Rejtőzés - 6.szint"
+          "Lopakodás/rejtőzés - 6.szint"
         ],
         "követelmények": [
           {
-            "név": "Lopakodás/Rejtőzés",
+            "név": "Lopakodás/rejtőzés",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1361,7 +1361,7 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Lopakodás/Rejtőzés",
+            "képzettség": "Lopakodás/rejtőzés",
             "kategória": "Mozgás",
             "sorok": [],
             "érték": 999
@@ -6413,14 +6413,14 @@
       {
         "fok": 1,
         "hatás": [
-          "+2 bónusz csoportos Lopakodás/Rejtőzés értékre."
+          "+2 bónusz csoportos Lopakodás/rejtőzés értékre."
         ],
         "követelmény": [
-          "Lopakodás/Rejtőzés - 6.szint"
+          "Lopakodás/rejtőzés - 6.szint"
         ],
         "követelmények": [
           {
-            "név": "Lopakodás/Rejtőzés",
+            "név": "Lopakodás/rejtőzés",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -6431,14 +6431,14 @@
       {
         "fok": 2,
         "hatás": [
-          "+4 bónusz csoportos Lopakodás/Rejtőzés értékre."
+          "+4 bónusz csoportos Lopakodás/rejtőzés értékre."
         ],
         "követelmény": [
-          "Lopakodás/Rejtőzés - 9.szint"
+          "Lopakodás/rejtőzés - 9.szint"
         ],
         "követelmények": [
           {
-            "név": "Lopakodás/Rejtőzés",
+            "név": "Lopakodás/rejtőzés",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -6479,7 +6479,8 @@
           {
             "név": [
               "Íjászat",
-              "Lövészet"
+              "Lövészet",
+              "Ostromlövészet"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -6500,7 +6501,8 @@
           {
             "név": [
               "Íjászat",
-              "Lövészet"
+              "Lövészet",
+              "Ostromlövészet"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -8721,7 +8723,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -8756,7 +8758,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -8791,7 +8793,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -8826,7 +8828,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -8861,7 +8863,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -8896,7 +8898,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -8931,7 +8933,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -8966,7 +8968,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/Rejtőzés",
+      "Lopakodás/rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],

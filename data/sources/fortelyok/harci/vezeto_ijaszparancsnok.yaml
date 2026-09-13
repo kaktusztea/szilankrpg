@@ -23,7 +23,7 @@ fokok:
   követelménytext:
     - text: "Összeszokott tagokat igényel"
   követelmények: 
-  - név: ["Íjászat", "Lövészet"]
+  - név: ["Íjászat", "Lövészet", "Ostromlövészet"]
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -33,7 +33,7 @@ fokok:
   követelménytext:
     - text: "Összeszokott tagokat igényel"
   követelmények: 
-  - név: ["Íjászat", "Lövészet"]
+  - név: ["Íjászat", "Lövészet", "Ostromlövészet"]
     érték: 9
     típus: "képzettség"
   hatástext: 
