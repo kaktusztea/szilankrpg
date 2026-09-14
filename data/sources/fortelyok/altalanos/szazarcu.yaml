@@ -5,7 +5,7 @@ név: "Százarcú"
 névkomment: ""
 maxfok: 2
 session_toggle: false
-emlékeztető: false
+emlékeztető: true
 kiérdemelhető: false
 többszörösség:
   spec_típus: ""

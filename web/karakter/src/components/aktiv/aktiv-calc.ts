@@ -12,14 +12,35 @@ interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
 interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
 interface HelyzetFortélyEntry { név: string; fok: number; hatás: string; aktív: boolean }
 interface ManőverBónusz { név: string; manőver: string; érték: number }
+
+/** Aktív fül box-kombó fülkulcsok (alcsoport → fül leképezés). */
+export type FülKulcs = 'harci' | 'tavharc' | 'misztikus' | 'egyeb';
+export const FÜL_SORREND: { kulcs: FülKulcs; cím: string }[] = [
+  { kulcs: 'harci', cím: 'Harci' },
+  { kulcs: 'tavharc', cím: 'Távharci' },
+  { kulcs: 'misztikus', cím: 'Mágia' },
+  { kulcs: 'egyeb', cím: 'Egyéb' },
+];
+
+/** Fortély alcsoport (könyvtárnév) → box-kombó fülkulcs. NEM a csoport mező (az a KP-t vezérli). */
+export function fülKulcs(alcsoport?: string): FülKulcs {
+  if (alcsoport === 'harci') return 'harci';
+  if (alcsoport === 'tavharc') return 'tavharc';
+  if (alcsoport === 'misztikus') return 'misztikus';
+  return 'egyeb';
+}
+
+type FülPool<T> = Record<FülKulcs, T[]>;
+const üresFülPool = <T,>(): FülPool<T> => ({ harci: [], tavharc: [], misztikus: [], egyeb: [] });
+
 interface AktivCalcData {
   státuszPerElem: StátuszPerElem[];
   taktikaHatásPerElem: TaktikaHatásPerElem[];
-  fortélyEmlékeztetők: FortélyEmlékeztető[];
+  fortélyEmlékeztetők: FülPool<FortélyEmlékeztető>;
   helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>;
   taktikaFortélyok: Map<string, HelyzetFortélyEntry[]>;
   manőverBónuszok: ManőverBónusz[];
-  alapesetekFiltered: AktívAlapeset[];
+  alapesetek: FülPool<AktívAlapeset>;
   eseményNév: (id: string) => string;
 }
 
@@ -81,15 +102,15 @@ function extractHelyzetKötés(feltétel: unknown): string {
 
 function calcFortélyPool(
   karakter: Karakter, data: GameData, aktívFeltételek: Set<string>,
-): { fortélyEmlékeztetők: FortélyEmlékeztető[]; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; taktikaFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[] } {
-  const fortélyEmlékeztetők: FortélyEmlékeztető[] = [];
+): { fortélyEmlékeztetők: FülPool<FortélyEmlékeztető>; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; taktikaFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[] } {
+  const fortélyEmlékeztetők = üresFülPool<FortélyEmlékeztető>();
   const helyzetFortélyok = new Map<string, HelyzetFortélyEntry[]>();
   const taktikaFortélyok = new Map<string, HelyzetFortélyEntry[]>();
   const manőverBónuszok: ManőverBónusz[] = [];
 
   for (const kf of karakter.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
-    if (!def || def.csoport !== 'harci') continue;
+    if (!def) continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef) continue;
 
@@ -114,7 +135,7 @@ function calcFortélyPool(
       }
     }
 
-    // Categorize: helyzet-bound vs taktika-bound vs emlékeztető
+    // Categorize: helyzet-bound vs taktika-bound vs box-kombó emlékeztető
     if (helyzetKötés) {
       const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
       const arr = helyzetFortélyok.get(hNév) || [];
@@ -125,8 +146,17 @@ function calcFortélyPool(
       const arr = taktikaFortélyok.get(tNév) || [];
       arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`taktika:${taktikaKötés}`) });
       taktikaFortélyok.set(tNév, arr);
-    } else if (def.emlékeztető && fokDef.hatás && fokDef.hatás.length > 0) {
-      fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
+    } else {
+      // Box-kombó lila rész. emlékeztető: false → soha (pl. Mesterfegyver: többször felvehető).
+      // Harci/Távharci: mindig (üres hatásnál is, csak név+fok).
+      // Mágia/Egyéb: csak ha a fortélynak van 0.foka (alapeset entry).
+      const kulcs = fülKulcs(def.alcsoport);
+      const hatásText = fokDef.hatás?.join(' ') ?? '';
+      const mindig = kulcs === 'harci' || kulcs === 'tavharc';
+      const vanAlapeset = def.fokok.some(fd => fd.fok === 0);
+      if (def.emlékeztető && (mindig || vanAlapeset)) {
+        fortélyEmlékeztetők[kulcs].push({ név: kf.név, fok: kf.fok, hatás: hatásText });
+      }
     }
   }
   return { fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok };
@@ -136,20 +166,24 @@ function calcAlapesetPool(
   data: GameData, karakter: Karakter, session: Session,
   aktívFeltételek: Set<string>,
   helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>,
-): AktívAlapeset[] {
+): FülPool<AktívAlapeset> {
   const alapesetek = evaluateAlapesetek(data.fortelySummaries, karakter, session, aktívFeltételek);
-  return alapesetek.filter(ae => {
+  const pool = üresFülPool<AktívAlapeset>();
+  for (const ae of alapesetek) {
     const hFelt = ae.módosítók.find(m => m.feltétel?.startsWith('harci_helyzet:'));
     if (hFelt) {
+      // Helyzet-kötött alapeset → a helyzet-chip alá kerül, nem a box-kombóba.
       const hId = hFelt.feltétel.slice(14);
       const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${hId}`)?.név || hId;
       const arr = helyzetFortélyok.get(hNév) || [];
       arr.push({ név: `⚠ ${ae.fortély_név}`, fok: 0, hatás: ae.hatástext.join(' '), aktív: session.aktív_helyzetek.includes(hNév) });
       helyzetFortélyok.set(hNév, arr);
-      return false;
+      continue;
     }
-    return true;
-  });
+    const def = data.fortelySummaries.find(d => d.név === ae.fortély_név);
+    pool[fülKulcs(def?.alcsoport)].push(ae);
+  }
+  return pool;
 }
 
 // --- Orchestrator ---
@@ -167,7 +201,7 @@ export function calcAktivData(data: GameData, karakter: Karakter, session: Sessi
   };
 
   const { fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok } = calcFortélyPool(karakter, data, aktívFeltételek);
-  const alapesetekFiltered = calcAlapesetPool(data, karakter, session, aktívFeltételek, helyzetFortélyok);
+  const alapesetek = calcAlapesetPool(data, karakter, session, aktívFeltételek, helyzetFortélyok);
 
-  return { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév };
+  return { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok, alapesetek, eseményNév };
 }

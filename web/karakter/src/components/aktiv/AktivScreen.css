@@ -32,6 +32,22 @@
   margin-bottom: 12px;
 }
 
+.aktiv-fortely-header {
+  border-top: 1px solid var(--border);
+  margin: 8px 0 12px;
+  padding-top: 12px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.hatas-pool-cim {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 6px;
+}
+
 .hatas-pool-title {
   font-size: 12px;
   font-weight: bold;

@@ -5,7 +5,7 @@ név: "Ultralátás"
 névkomment: ""
 maxfok: 3
 session_toggle: false
-emlékeztető: false
+emlékeztető: true
 kiérdemelhető: false
 többszörösség:
   spec_típus: ""

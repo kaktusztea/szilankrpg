@@ -5,7 +5,7 @@ név: "Színjátszás"
 névkomment: ""
 maxfok: 1
 session_toggle: false
-emlékeztető: false
+emlékeztető: true
 kiérdemelhető: true
 többszörösség:
   spec_típus: ""

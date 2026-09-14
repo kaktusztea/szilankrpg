@@ -5,7 +5,7 @@ név: "Megfélemlítés"
 névkomment: ""
 maxfok: 1
 session_toggle: false
-emlékeztető: false
+emlékeztető: true
 kiérdemelhető: false
 többszörösség:
   spec_típus: ""
