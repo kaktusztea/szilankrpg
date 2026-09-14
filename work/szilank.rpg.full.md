@@ -4775,7 +4775,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 
 🔵 [Csapdaállítás](kepzettsegek.szekunder/csapdaallitas.md)
 
-🔵 [Lopakodás/Rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) 🅿️ 🤝
+🔵 [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) 🅿️ 🤝
 
 🔵 [Lopás](kepzettsegek.szekunder/lopas.md)
 
@@ -8422,22 +8422,20 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 
 Érthető, hogy a `2.` és `3.` fokozat közti egyensúlyozás művészete ez: úgy tartani fenn a lázat, hogy ne ess át véglegesen a vérgőzös őrületbe (`4.fokozat`).
 
-⭕TODO: hangolni ezeket az értékeket
-
 ```
-1.fokozat: ⭕+TÉ,SP: +5
-           ⭕virtuális ÉP ⭕X
-2.fokozat: ⭕+TÉ,SP: +10
-           ⭕virtuális ÉP ⭕X+Y
-3.fokozat: ⭕+TÉ,SP: +15
+1.fokozat: TÉ:+2, +SP:+1
+           Virtuális ÉP: +4
+2.fokozat: TÉ:+5, +SP:+3
+           Virtuális ÉP: +6
+3.fokozat: TÉ:+7, +SP:+5
            Sebzés Előny+1
-           ⭕virtuális ÉP ⭕X+Y+Z
+           Virtuális ÉP: +9
            Bárki ellenfelet megtámadsz
-4.fokozat: ⭕+TÉ,SP: +20
+4.fokozat: TÉ:+10, +SP:+7
            Sebzés Előny+1
-           ⭕virtuális ÉP ⭕X+Y+Z+Q
-           Berserk, bárkit (barátot is) megtámadsz,
-           aki legközelebb van
+           Virtuális ÉP: +12
+           Berserk, bárkit (barátot is)
+           megtámadsz, aki legközelebb van
 ```
 
 ### Virtuális ÉP keret
@@ -11983,7 +11981,7 @@ A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fejezet
 - [Alakzatharc](kepzettsegek.primer/harci/alakzatharc.md) → [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) (fizikai)
 - [Észlelés](kepzettsegek.primer/altalanos/eszleles.md) → [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md) (**szellemi**)
 - [Íjászat/Lövészet/Ostromlövészet](kepzettsegek.primer/harci/tavolsagi_harcmodor.md) → [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md) (fizikai)
-- [Lopakodás/Rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) → [Vezető: Fejvadász Strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md) (fizikai)
+- [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) → [Vezető: Fejvadász Strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md) (fizikai)
 - [Lovaglás](kepzettsegek.szekunder/lovaglas.md) → [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) (fizikai)
 - [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) → [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md) (fizikai)
 
@@ -13154,15 +13152,15 @@ Az egyik legrégebbi alvilági mesterség, amelynek célja sokszor csak a szóra
 
 ### 1. fok
 
+🔒 **Követelmény**: -
+
 🌟 Zajos háttérben megtévesztően képes vagy utánozni egy előzőleg legalább `1` percig beszélni hallott személyt, vagy egy szintén korábban már hallott állat hangját.
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Alap vagy Udvari fok (KM dönt a szituációtól függően)
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) - ha kell (KM dönt)
+🔒 **Követelmény**: -
 
 🌟 Teljesen megtévesztően képes vagy utánozni csendes körülmények között is egy előzőleg legalább `1` percig beszélni hallott személyt, vagy egy szintén korábban már hallott állat hangját.
 
@@ -15258,6 +15256,10 @@ Gyakorlottan viszed le földre ellenfeledet.
 
 Ellenfeled kezéből gyakorlott mozdulatokkal forgatod ki fegyverét.
 
+## Megkötés
+
+Engedélyezett Harcmodorok: Kardvívás, Lándzsavívás, Ostorharc
+
 ### 1. fok
 
 🔒 **Követelmény**:
@@ -16210,8 +16212,8 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 ### 2. fok
 
 🔒 **Követelmény**:
-- Alakzatharc - `9.szint`
-- Befolyásolás - `3.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) - `9.szint`
 - Összeszokott tagokat igényel
 
 🌟 `+4` bónusz az **Észlelés** képzettségre
@@ -18172,7 +18174,7 @@ Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális tá
 
 - Előtörténet
 - [Etikett](../kepzettsegek.szekunder/etikett.md) -`9.szint` (képzettség)
-- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) - `9.szint` (képzettség)
+- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) - `6.szint` (képzettség)
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) fortély 🔁
 - [Tánc](tanc.md) fortély
 
@@ -23174,7 +23176,7 @@ TÉ:+3, VÉ:-6
 
 ❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
-✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
+✅ **Kezdeményező, Kiváró, Plusz támadás, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -23227,6 +23229,7 @@ TÉ:-3, SP:+3
 <br />
 
 ---
+---
 ## Nem skálázható taktikák
 
 Ezek a taktikák fix módosítókat adnak alkalmazásukkor.
@@ -23238,7 +23241,7 @@ Csak 1 támadást adsz le a körben:
   több-támadás TÉ levonás (-3) nem érvényesül
 ```
 
-❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés, Fárasztás taktikával együtt
+❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés, Fárasztás, (Lég)Lovas roham taktikával együtt
 
 ✅ Minden **más** taktikával együtt
 
@@ -23254,7 +23257,7 @@ TÉ:+3
 Nincs sebzés
 ```
 
-✅ **Támadó, Védő, Kezdeményező, Kiváró, 1 támadás, Plusz támadás taktikával** együtt
+✅ **Védő, Kezdeményező, 1 támadás, Plusz támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -23290,9 +23293,6 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta. Leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a "vadat", míg vezetőjük felkészül.
 
 ---
-
-
----
 ### Kiváró Taktika
 
 ```
@@ -23304,7 +23304,7 @@ TÉ:+3 első
   ha nem kaptál sebet
 ```
 
-✅ **Támadó, Érintő, Visszafogott, Támadás Erőből, 1 támadás taktikával** együtt
+✅ **Támadó, Visszafogott, Támadás Erőből, 1 támadás, Tettetés taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -23435,7 +23435,7 @@ Harcmodor képzettség + Ügyesség
 
 Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci jártasság felmérését](https://github.com/kaktusztea/szilankrpg/blob/master/md/szituaciok/harci_jartassag_felmerese.md) végezhet, amely nem vesz el Akciót, nem jár semmilyen hátránnyal.
 
-✅ **Kiváró, Visszafogott taktikával** együtt
+✅ **Kiváró, Visszafogott, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -23445,12 +23445,13 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 TÉ levonásért cserébe kisebb Sebzés
 
 ```
-TÉ:-10  →  Hátrány-2 Sebzés dobásra
+TÉ:-10
+Hátrány-2 Sebzés dobásra
 ```
 
 🔗 **[Taktikafókusz: Visszafogott](fortelyok.harci/taktikafokusz_visszafogott.md)** fortély megszünteti a `TÉ` büntetést, és a Sebzés a fegyver alap sebzése lesz (nincs dobás).
 
-✅ **Kezdeményező, Kiváró, 1 támadás taktikával** együtt
+✅ **Kezdeményező, Kiváró, 1 támadás, Tettetés taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -25315,6 +25316,8 @@ Ha megvan:
  1 visszacsapás lehetséges
 ```
 
+❌ Más taktikával együtt
+
 Nincs elsöprőbb, mint egy (lég)lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.
 
 🔆 Kiváltja a hagyományos "Roham" taktikát.
@@ -25340,6 +25343,10 @@ Ha megvan:
  1 támadó csapás lehetséges
  1 visszacsapás lehetséges
 ```
+
+✅ **1 támadás taktikával** együtt
+
+❌ Más taktikával együtt
 
 Nem mindig sikerül elérni a rohamhoz szükséges sebességet, viszont ha a karakter képes galoppra fogni a lovát és úgy támadni, akkor is több előnyhöz jut, mintha csak egy helyben táncoltatna.
 
@@ -27643,6 +27650,8 @@ Néhány egyedi taktika itt is előfordul.
 - [Lövéskitérés](#lövéskitérés)
 - [Kitartott célzás](#kitartott-célzás)
 - [Páros, kétkezes hajítás](#páros-kétkezes-hajítás)
+
+🔆 Sima [Harci taktikákkal](065_02_harci_taktikak.md) és [Lovas harci taktikákkal](067_03_lovas_harci_taktikak.md)NEM kombinálhatóak.
 
 ---
 ### Lövéskitérés
@@ -33811,7 +33820,7 @@ Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol.
 - [Vakharc félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---f%C3%A9lhom%C3%A1lyban)
 - [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben)
 
-🔆 A sötét a [Lopakodás/Rejtőzés vs Észlelés](lopakodas_rejtozes_es_eszlelese.md) szituációban bónuszt ad
+🔆 A sötét a [Lopakodás/rejtőzés vs Észlelés](lopakodas_rejtozes_es_eszlelese.md) szituációban bónuszt ad
 
 🔆 Hallás: nem vesszük külön a csendes és zajos helyzeteket, CSAK akkor ha érzékelhetetlen [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvt%C3%A1mad%C3%A1s) harci helyzetbe akar kerülni az egyik fél.
 
