@@ -2,6 +2,7 @@ import type { KiterjesztesEntry } from '../../engine/data-loader';
 import type { ModositoTabla, PróbaEnyhítés } from '../../engine/data-types';
 import { PopupOverlay } from '../PopupOverlay';
 import { enyhítettSorRészletes } from './kepzettseg-proba-calc';
+import { useLongPress } from '../../hooks/useLongPress';
 
 /** Melyik alpicker van nyitva a Képzettségpróba popupban. */
 export type ProbaPickerId = 'kit' | 'szit' | 'info' | null;
@@ -17,6 +18,10 @@ interface Props {
   setSelKits: React.Dispatch<React.SetStateAction<Set<number>>>;
   kitDotClass: (k: KiterjesztesEntry) => string;
   kitDots: (k: KiterjesztesEntry) => string;
+  /** Többszörösen felvehető fortélyok nevei — csak ezek negálhatók long-press-szel. */
+  többszörösNevek: ReadonlySet<string>;
+  /** Egy többszörös kiterjesztő fortély teljesül/nem állapotának billentése (long-press). */
+  onToggleNegál: (fortélyNév: string) => void;
 
   // Szituációs módosítók
   módosítóTáblák: ModositoTabla[];
@@ -39,10 +44,25 @@ interface Props {
 export function KepzettsegProbaPickers({
   openPicker, setOpenPicker, resetDobás,
   kiterjesztesek, selKits, setSelKits, kitDotClass, kitDots,
+  többszörösNevek, onToggleNegál,
   módosítóTáblák, próbaEnyhítések, szitMods, setSzitMods, multiMods, setMultiMods,
   szitModÖsszeg,
   képzettségNév, dobásKomment,
 }: Props) {
+  // Kiterjesztő fortély gomb: rövid tap = kijelölés a próbához; long-press = teljesül/nem
+  // negálás (csak többszörösen felvehető fortélynél — a KM dönti el a kapcsolódó spec_elem-et).
+  const toggleSelect = (i: number) => {
+    setSelKits(prev => { const next = new Set(prev); if (next.has(i)) next.delete(i); else next.add(i); return next; });
+    resetDobás();
+  };
+  const longPressNegál = (i: number) => {
+    const k = kiterjesztesek[i];
+    if (!többszörösNevek.has(k.fortély)) { toggleSelect(i); return; } // nem billenthető → sima tap
+    onToggleNegál(k.fortély);
+    resetDobás();
+  };
+  const { pressProps } = useLongPress<number>(longPressNegál, toggleSelect);
+
   return (
     <>
       {openPicker === 'kit' && (
@@ -56,10 +76,11 @@ export function KepzettsegProbaPickers({
               </button>
               {kiterjesztesek.map((k, i) => {
                 const active = selKits.has(i);
+                const billenthető = többszörösNevek.has(k.fortély);
                 return (
-                  <button key={i} className={`he-field-btn${active ? ' vallas-active' : ''}`}
-                    onClick={() => { setSelKits(prev => { const next = new Set(prev); if (next.has(i)) next.delete(i); else next.add(i); return next; }); resetDobás(); }}>
+                  <button key={i} className={`he-field-btn${active ? ' vallas-active' : ''}`} {...pressProps(i)}>
                     {k.fortély} <span className={kitDotClass(k)}>{kitDots(k)}</span>
+                    {billenthető && <span className="kep-proba-kit-longpress" title="Hosszú nyomás: teljesül/nem teljesül">⤺</span>}
                   </button>
                 );
               })}

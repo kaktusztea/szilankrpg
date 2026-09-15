@@ -4,6 +4,7 @@ import {
   tulKulcs, probaSiker, probaBiztosSiker, kiterjesztésElőnyHátrány, buildFortélyFokok,
   probaLehetetlen, nehézségDisplay, enyhítettSorRészletes, calcSzitModÖsszeg,
   calcEffSzint, helyettesítésSzint, összetettCélszámok,
+  effektívKiterjesztésFok, effektívFortélyFokok, negálásKulcs,
 } from './kepzettseg-proba-calc';
 import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
 import { rollElőnyHátrány } from '../../engine/dice';
@@ -55,6 +56,36 @@ describe('buildFortélyFokok', () => {
     ]);
     expect(m['Történelemismeret']).toBe(2);
     expect(m['Kultúrkör']).toBe(3); // max, nem az utolsó
+  });
+});
+
+describe('effektívKiterjesztésFok — manuális negálás', () => {
+  const fokok = { Kultúrkör: 1 }; // felvéve (auto: teljesül)
+  it('nincs negálás → auto (felvett) fok', () => {
+    expect(effektívKiterjesztésFok(fokok, 'Etikett', 'Kultúrkör', new Set())).toBe(1);
+  });
+  it('negálva, miközben fel van véve → 0 (mintha hiányozna)', () => {
+    const neg = new Set([negálásKulcs('Etikett', 'Kultúrkör')]);
+    expect(effektívKiterjesztésFok(fokok, 'Etikett', 'Kultúrkör', neg)).toBe(0);
+  });
+  it('negálva, miközben hiányzik → 1 (mintha meglenne)', () => {
+    const neg = new Set([negálásKulcs('Etikett', 'Kultúrkör')]);
+    expect(effektívKiterjesztésFok({}, 'Etikett', 'Kultúrkör', neg)).toBe(1);
+  });
+  it('a negálás képzettségenként független (más képzettségre nem hat)', () => {
+    const neg = new Set([negálásKulcs('Etikett', 'Kultúrkör')]);
+    expect(effektívKiterjesztésFok(fokok, 'Lexikum', 'Kultúrkör', neg)).toBe(1);
+  });
+});
+
+describe('effektívFortélyFokok — a map csak a képzettség kiterjesztéseit igazítja', () => {
+  it('a negált kiterjesztő fortély fokát felülírja, a többit érintetlenül hagyja', () => {
+    const fokok = { Kultúrkör: 1, Nyelvismeret: 2 };
+    const kitek = [{ fortély: 'Kultúrkör', típus: 'normál', maxfok: 1 }] as never[];
+    const neg = new Set([negálásKulcs('Irodalom', 'Kultúrkör')]);
+    const eff = effektívFortélyFokok(fokok, 'Irodalom', kitek, neg);
+    expect(eff['Kultúrkör']).toBe(0);      // negálva → hiányzóként számol
+    expect(eff['Nyelvismeret']).toBe(2);   // nem kiterjesztés itt → változatlan
   });
 });
 

@@ -5,7 +5,7 @@ import type { Props, KepzettsegSlot } from './types';
 import { buildDefsByGroup, getDisplayName } from './helpers';
 import { TulajdonsagokHeader } from './TulajdonsagokHeader';
 import { KepzettsegCsoport } from './KepzettsegCsoport';
-import { buildFortélyFokok } from './kepzettseg-proba-calc';
+import { buildFortélyFokok, negálásKulcs } from './kepzettseg-proba-calc';
 import { TulajdonsagokPopups, INITIAL_POPUP_STATE, type PopupState } from './TulajdonsagokPopups';
 import { PrimerKpBox } from './PrimerKpBox';
 import { ElotortenetOverlay } from './ElotortenetOverlay';
@@ -20,6 +20,25 @@ export function TulajdonsagokScreen({
   jk, setJk, onTestReset
 }: Props) {
   const fortélyFokok = buildFortélyFokok(karakter.fortélyok);
+
+  // Többszörösen felvehető fortélyok nevei (csak ezek kiterjesztés-teljesülése billenthető).
+  const többszörösNevek = useMemo(
+    () => new Set(data.fortelySummaries.filter(d => d.többszörös_típus !== '').map(d => d.név)),
+    [data.fortelySummaries],
+  );
+  const negáltKulcsok = useMemo(
+    () => new Set(karakter.kiterjesztés_negálva ?? []),
+    [karakter.kiterjesztés_negálva],
+  );
+  const toggleNegál = useCallback((képzettségNév: string, fortélyNév: string) => {
+    const kulcs = negálásKulcs(képzettségNév, fortélyNév);
+    setKarakter(prev => {
+      if (!prev) return prev;
+      const lista = prev.kiterjesztés_negálva ?? [];
+      const van = lista.includes(kulcs);
+      return { ...prev, kiterjesztés_negálva: van ? lista.filter(x => x !== kulcs) : [...lista, kulcs] };
+    });
+  }, [setKarakter]);
 
   // Fortélyok próba-enyhítő hatásainak összegyűjtése képzettségenként
   const próbaEnyhítésekByKép = useMemo(() => {
@@ -155,6 +174,9 @@ export function TulajdonsagokScreen({
             setInfoTarget={setInfoTarget}
             tulajdonságok={tulajdonságok}
             fortélyFokok={fortélyFokok}
+            többszörösNevek={többszörösNevek}
+            negáltKulcsok={negáltKulcsok}
+            onToggleNegál={toggleNegál}
             onAddKepzettseg={addKepzettseg}
             onSzintChange={handleSzintChange}
             onRemove={handleRemove}

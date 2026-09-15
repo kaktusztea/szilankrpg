@@ -164,6 +164,13 @@ export interface Karakter {
   napló: NaploBejegyzes[];
   checkpoints: Checkpoint[];
   session: Session;
+  /**
+   * Kiterjesztő fortélyok manuális teljesül/nem-teljesül felülbírálása képzettségenként.
+   * Kulcs: `"${képzettségNév}|${fortélyNév}"`. A kulcs JELENLÉTE = az automatikus
+   * kiértékelés (legalább 1× felvéve?) NEGÁLVA. Csak többszörösen felvehető fortélyokra
+   * (a KM dönti el, a *kapcsolódó* spec_elem van-e felvéve — gépileg nem tudható). Opcionális.
+   */
+  kiterjesztés_negálva?: string[];
 }
 
 /**

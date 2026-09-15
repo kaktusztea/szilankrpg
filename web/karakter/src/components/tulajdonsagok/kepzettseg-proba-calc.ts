@@ -60,6 +60,48 @@ export function buildFortélyFokok(fortélyok: Fortely[]): Record<string, number
   return m;
 }
 
+/** Kiterjesztés-negálás kulcs egy (képzettség, kiterjesztő fortély) párra. */
+export function negálásKulcs(képzettségNév: string, fortélyNév: string): string {
+  return `${képzettségNév}|${fortélyNév}`;
+}
+
+/**
+ * Egy kiterjesztő fortély EFFEKTÍV foka egy adott képzettségnél, a manuális negálást
+ * figyelembe véve.
+ * - Nem negált (auto): a valós felvett fok (`fortélyFokok`).
+ * - Negált: az automatikus „legalább 1× felvéve?" kiértékelés ellentettje →
+ *   felvéve (>0) → 0 (mintha hiányozna); hiányzik (0) → 1 (mintha 1. fokon meglenne).
+ * A negálás csak többszörösen felvehető fortélyoknál értelmezett (a hívó `többszörösNevek`-kel szűr).
+ */
+export function effektívKiterjesztésFok(
+  fortélyFokok: Record<string, number>,
+  képzettségNév: string,
+  fortélyNév: string,
+  negáltKulcsok: ReadonlySet<string>,
+): number {
+  const auto = fortélyFokok[fortélyNév] ?? 0;
+  if (!negáltKulcsok.has(negálásKulcs(képzettségNév, fortélyNév))) return auto;
+  return auto > 0 ? 0 : 1;
+}
+
+/**
+ * A `fortélyFokok` map egy adott képzettséghez igazított („effektív") változata: a képzettség
+ * kiterjesztő fortélyainál a negálást alkalmazza. A calc (`calcMultiKiterjesztésEH`) ezt kapja,
+ * így a manuális felülbírálás VALÓDI (nem csak színez).
+ */
+export function effektívFortélyFokok(
+  fortélyFokok: Record<string, number>,
+  képzettségNév: string,
+  kitek: KiterjesztesEntry[],
+  negáltKulcsok: ReadonlySet<string>,
+): Record<string, number> {
+  const eff = { ...fortélyFokok };
+  for (const k of kitek) {
+    eff[k.fortély] = effektívKiterjesztésFok(fortélyFokok, képzettségNév, k.fortély, negáltKulcsok);
+  }
+  return eff;
+}
+
 /**
  * Képzettség-kiterjesztés fok → próba Előny/Hátrány szint (md/030_08_01).
  * Normál 0.fok: Hátrány-2. Erős 0.fok: nem dobható. 1.fok: 0, 2.fok: Előny+1, 3.fok: Előny+2.

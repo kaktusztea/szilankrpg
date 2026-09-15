@@ -24,6 +24,9 @@ interface Props {
   setInfoTarget: (v: string | null) => void;
   tulajdonságok: Tulajdonsagok;
   fortélyFokok: Record<string, number>;
+  többszörösNevek: ReadonlySet<string>;
+  negáltKulcsok: ReadonlySet<string>;
+  onToggleNegál: (képzettségNév: string, fortélyNév: string) => void;
   onAddKepzettseg: (csoport: string, név: string) => void;
   onSzintChange: (globalIdx: number, szint: number) => void;
   onRemove: (globalIdx: number, slot: KepzettsegSlot) => void;
@@ -35,7 +38,8 @@ interface Props {
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, szintLimitek, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
-  fortélyFokok, tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, próbaEnyhítésekByKép
+  fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál,
+  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, próbaEnyhítésekByKép
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -69,6 +73,9 @@ export function KepzettsegCsoport({
               overLimit={slot.szint > maxSzint}
               warning={slot.név.startsWith('Arkánum') && !képzettségek.some(k => k.név.startsWith('Tradíció'))}
               fortélyFokok={fortélyFokok}
+              többszörösNevek={többszörösNevek}
+              negáltKulcsok={negáltKulcsok}
+              onToggleNegál={fortélyNév => onToggleNegál(slot.név, fortélyNév)}
               tulajdonságok={tulajdonságok}
               képzettségek={képzettségek}
               aktívStátuszok={aktívStátuszok}

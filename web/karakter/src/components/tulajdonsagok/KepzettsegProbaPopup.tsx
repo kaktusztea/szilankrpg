@@ -12,6 +12,7 @@ import {
   NEHÉZSÉGEK, NEHÉZSÉGEK_EXTRA, MIND_TULAJDONSÁG,
   tulLabel, probaLehetetlen, probaBiztosSiker, calcMultiKiterjesztésEH,
   calcSzitModÖsszeg, calcEffSzint, összetettCélszámok,
+  effektívFortélyFokok,
 } from './kepzettseg-proba-calc';
 
 // --- Összetett próba eredmény típus ---
@@ -29,6 +30,9 @@ interface Props {
   tulajdonságok: Tulajdonsagok;
   kiterjesztesek: KiterjesztesEntry[];
   fortélyFokok: Record<string, number>;
+  többszörösNevek: ReadonlySet<string>;
+  negáltKulcsok: ReadonlySet<string>;
+  onToggleNegál: (fortélyNév: string) => void;
   képzettségek: { név: string; szint: number }[];
   aktívStátuszok: string[];
   statuszDefs: StatuszEntry[];
@@ -43,7 +47,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, onClose,
+  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -89,22 +93,28 @@ export function KepzettsegProbaPopup({
 
   const szitModÖsszeg = calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, próbaEnyhítések);
 
+  // A manuálisan negált kiterjesztéseket VALÓDIként vesszük be: effektív fok-map ehhez a
+  // képzettséghez (a negált fortélyok auto-értéke megfordítva). A calc + pötty ezt használja.
+  const effFortélyFokok = effektívFortélyFokok(fortélyFokok, képzettségNév, kiterjesztesek, negáltKulcsok);
+
   const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
-  const ehAlap = calcMultiKiterjesztésEH(selectedKits, fortélyFokok);
+  const ehAlap = calcMultiKiterjesztésEH(selectedKits, effFortélyFokok);
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt)
   const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségNév, képzettségCsoport);
   const ehSzintRaw = ehAlap.szint + státuszEH.szint;
   const eh = { szint: clampEHSzint(ehSzintRaw), tiltott: ehAlap.tiltott || státuszEH.tiltott };
   const erősTiltott = eh.tiltott;
 
-  // Pötty szín: felvéve → zöld, hiányzó Erős → piros, hiányzó Normál → sárga.
+  // Pötty szín az EFFEKTÍV fok szerint (a negálás már bele van számolva): felvéve → zöld,
+  // hiányzó Erős → piros, hiányzó Normál → sárga. Így a negálás mindkét irányban látható
+  // színváltást ad (felvett→sárga, hiányzó→zöld).
   const kitDotClass = (k: KiterjesztesEntry): string =>
-    (fortélyFokok[k.fortély] ?? 0) > 0 ? 'kep-proba-dot-green'
+    (effFortélyFokok[k.fortély] ?? 0) > 0 ? 'kep-proba-dot-green'
       : k.típus === 'erős' ? 'kep-proba-dot-red' : 'kep-proba-dot-yellow';
 
-  // Annyi pötty, ahány fokon van felvéve a fortély (min 1 ha nincs felvéve → szín jelzi hiányt).
+  // Annyi pötty, ahány fokon EFFEKTÍVEN felvéve (min 1 ha nincs → szín jelzi hiányt).
   const kitDots = (k: KiterjesztesEntry): string => {
-    const fok = fortélyFokok[k.fortély] ?? 0;
+    const fok = effFortélyFokok[k.fortély] ?? 0;
     return '●'.repeat(Math.max(1, fok));
   };
 
@@ -497,6 +507,7 @@ export function KepzettsegProbaPopup({
         openPicker={openPicker} setOpenPicker={setOpenPicker} resetDobás={resetDobás}
         kiterjesztesek={kiterjesztesek} selKits={selKits} setSelKits={setSelKits}
         kitDotClass={kitDotClass} kitDots={kitDots}
+        többszörösNevek={többszörösNevek} onToggleNegál={onToggleNegál}
         módosítóTáblák={módosítóTáblák} próbaEnyhítések={próbaEnyhítések}
         szitMods={szitMods} setSzitMods={setSzitMods} multiMods={multiMods} setMultiMods={setMultiMods}
         szitModÖsszeg={szitModÖsszeg}

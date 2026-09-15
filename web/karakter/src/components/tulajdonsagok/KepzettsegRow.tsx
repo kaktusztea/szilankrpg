@@ -9,7 +9,7 @@ import { DELETE_BTN_TAP_ZONE_PX, SZINT_VALUES } from '../../ui-constants';
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
   kiterjesztesek, infoOpen, onInfoToggle,
-  displayName, findDef, overLimit, warning, fortélyFokok, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések
+  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
@@ -59,6 +59,9 @@ export function KepzettsegRow({
           tulajdonságok={tulajdonságok}
           kiterjesztesek={kit}
           fortélyFokok={fortélyFokok}
+          többszörösNevek={többszörösNevek}
+          negáltKulcsok={negáltKulcsok}
+          onToggleNegál={onToggleNegál}
           képzettségek={képzettségek}
           aktívStátuszok={aktívStátuszok}
           statuszDefs={statuszDefs}

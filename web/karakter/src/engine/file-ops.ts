@@ -155,7 +155,7 @@ function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter
   const raw = obj as Record<string, any>;
   const refErr = validateKarakterData(raw as Karakter, data);
   if (refErr) return { error: `Referencia hiba: ${refErr}` };
-  const karakter = { ...raw, uid: raw.uid || generateUid(), id_leíró: raw.id_leíró || generateIdLeíró(raw.név, raw.tsz), jk: raw.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...raw.előtörténet }, session: { ...DEFAULT_SESSION, ...raw.session } } as Karakter;
+  const karakter = { ...raw, uid: raw.uid || generateUid(), id_leíró: raw.id_leíró || generateIdLeíró(raw.név, raw.tsz), jk: raw.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...raw.előtörténet }, session: { ...DEFAULT_SESSION, ...raw.session }, kiterjesztés_negálva: raw.kiterjesztés_negálva ?? [] } as Karakter;
   return { karakter, undo: sanitizeUndo(raw._undo) };
 }
 

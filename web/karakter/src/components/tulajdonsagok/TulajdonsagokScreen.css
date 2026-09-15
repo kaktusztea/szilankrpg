@@ -355,6 +355,8 @@
 .kep-proba-dot-green { color: #66bb6a; }
 .kep-proba-dot-yellow { color: #ffca28; }
 .kep-proba-dot-red { color: #e53935; }
+/* Long-press affordancia jelző a többszörös kiterjesztő fortélyoknál (teljesül/nem váltás). */
+.kep-proba-kit-longpress { float: right; opacity: 0.4; font-size: 12px; }
 
 .kep-proba-summary {
   text-align: center;

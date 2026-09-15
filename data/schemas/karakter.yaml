@@ -105,6 +105,8 @@ checkpoints:                    # Kiemelt verziók (snapshot-alapú verzióköve
     dátum: ""                   # ISO timestamp
     snapshot: {}                # Full state snapshot (session, checkpoints, uid, id_leíró nélkül)
 
+kiterjesztés_negálva: []        # opcionális — kiterjesztő fortély manuális teljesül/nem felülbírálás; kulcs: "képzettségNév|fortélyNév"; jelenlét = auto-kiértékelés negálva (csak többszörös fortélyokra)
+
 # ============================================================
 # Session (runtime állapot — Game módban változó értékek)
 # Ugyanabban a fájlban, szeparált szekcióban.

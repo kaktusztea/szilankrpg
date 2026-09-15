@@ -40,7 +40,7 @@ export function useGameDataLoader() {
           if (isValidKarakter(parsed)) {
             // `id`: legacy (v1) mező — a régi mentések uid helyett ezt tartalmazták
             const uid = parsed.uid || (parsed as Karakter & { id?: string }).id || generateUid();
-            const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [] };
+            const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [], kiterjesztés_negálva: parsed.kiterjesztés_negálva ?? [] };
             localStorage.setItem(`szilank_char_${uid}`, JSON.stringify(migrated));
             writeSlots([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, becenév: migrated.becenév, tsz: migrated.tsz, mentés_dátum: new Date().toISOString(), jk: migrated.jk }]);
             localStorage.setItem('szilank_active', uid);

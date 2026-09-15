@@ -48,6 +48,9 @@ export interface KepzettsegRowProps {
   overLimit: boolean;
   warning?: boolean;
   fortélyFokok: Record<string, number>;
+  többszörösNevek: ReadonlySet<string>;
+  negáltKulcsok: ReadonlySet<string>;
+  onToggleNegál: (fortélyNév: string) => void;
   tulajdonságok: Tulajdonsagok;
   képzettségek: KepzettsegSlot[];
   aktívStátuszok: string[];
