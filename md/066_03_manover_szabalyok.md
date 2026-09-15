@@ -28,7 +28,8 @@ Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és 
 Vannak Manőverek, amelyek [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetet igényelnek.
 
 ```
-(E)llenpróba dobás csak
+(E)llenpróba dobás van csak
+  az Orvtámadást igénylő Manővereknél
 ```
 
 Miért dobunk ilyenkor **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik, amely az általános harci tapasztalatot szimbolizálja (nem véletlen, hogy az elköltött `HM` pontokon alapszik).
