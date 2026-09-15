@@ -62,14 +62,22 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 ---
 ### Csonkolás
 
-Nehézség: `8` (kéz), `10` (láb)
+Lecsapod ellenfeled kezét, vagy lábát.
 
-Ha le akarod vágni ellenfeled valamely végtagját (kéz, láb), akkor sikeres: [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert kell dobnod a fenti Nehézséggel.
+- Nehézség:
+  - `8`: kéz csonkolása
+  - `10`: láb csonkolása
+- Fázisok: `Végrehajtás, Ellenpróba`
+	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+- 🟨 Normál követelmény: [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- 🟥 Erős követelmény:
+  - Vágófegyver használata
+  - [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) harcmodor
+  - Kéz csonkolása: min (áldozat `max ÉP / 3`) ↑ sebzés szükséges
+  - Láb csonkolása: min (áldozat `max ÉP / 2`) ↑ sebzés szükséges
+- alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 
-Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
-
-- Kéz csonkolása: (áldozat `max ÉP / 3`) ↑ sebzés szükséges
-- Láb csonkolása: (áldozat `max ÉP / 2`) ↑ sebzés szükséges
+**Hatás**: levágtad ellenfeled választott végtagját.
 
 <br />
 
