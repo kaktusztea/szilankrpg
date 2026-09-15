@@ -5,7 +5,7 @@ import { PopupOverlay } from '../PopupOverlay';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
 import {
   type Mód, type FázisEredmény, type ManőverDef,
-  követelményTeljesül, gépiKövetelményStátusz, parseFázisok,
+  követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, követelményJelölés,
   calcManőverPont, getBelharcFok,
   fázisCselekvő, fázisSikeres, getFázisFelirat, eredményHatás,
 } from './manover-dobas-calc';
@@ -27,7 +27,9 @@ interface Props {
 }
 
 export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, onClose }: Props) {
-  const fázisok = parseFázisok(manőver.fázisok);
+  const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
+  const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
+  const fázisok = könnyítettFázisok(parseFázisok(manőver.fázisok), mód, session);
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
 
@@ -60,10 +62,11 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // Ha egy erősség minden eleme gépi ÉS mind teljesül → a hiány kizárt → nincs gomb.
   const hiányLehet = (erősség: 'normál' | 'erős') =>
     követelmények.some(k => k.erősség === erősség
-      && (k.típus === 'egyéb' || követelményTeljesül(k, karakter, data) === false));
+      && (k.típus === 'egyéb' || követelményTeljesül(k, karakter, data, session) === false)
+      && követelményTeljesül(k, karakter, data, session) !== true);
   const vanNormál = hiányLehet('normál');
   const vanErős = hiányLehet('erős');
-  const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data);
+  const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data, session);
   // Auto-kudarc, ha gépi Erős hiány. Ekkor a döntés nem is választható.
   const [követelményDöntés, setKövetelményDöntés] = useState<'pending' | 'mind' | 'normál' | 'erős'>(
     () => gépiStátusz.erősHiány ? 'erős' : 'pending',
@@ -239,22 +242,30 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
 
+        {vanKönnyítés && (
+          <div className="manover-konnyites-chip">
+            {[könnyítés.meglepetés && 'Meglepetés', könnyítés.orvtámadás && 'Orvtámadás'].filter(Boolean).join(' + ')}: nincs Megakasztás és támadó dobás (a találat automatikus, sebzés a fegyvertáblán)
+          </div>
+        )}
+
         {vanKövetelmény && (
           <div className={`manover-kov-lepes${követelményKész ? ' manover-fazis-done' : ' manover-fazis-aktiv'}`}>
             <div className="manover-fazis-label">Követelmények</div>
             <div className="manover-kov-lista">
               {követelmények.map((köv, i) => {
-                const teljesül = követelményTeljesül(köv, karakter, data);
+                const teljesül = követelményTeljesül(köv, karakter, data, session);
                 const cimke = köv.típus === 'egyéb'
                   ? köv.leírás
                   : `${köv.név}${köv.érték != null ? ` ${köv.érték}${köv.típus === 'fortély' ? '.fok' : '.szint'}` : ''}`;
+                // Gépileg eldöntetlen (null) sor a KM döntése UTÁN tükrözze a döntést.
+                const jelölés = követelményJelölés(teljesül, köv.erősség, követelményDöntés);
                 return (
                   <div key={i} className="manover-kov-sor">
                     <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟨'}</span>
                     <span className="manover-kov-cimke">{cimke}</span>
-                    {teljesül === true && <span className="manover-fazis-ok">✓</span>}
-                    {teljesül === false && <span className="manover-fazis-fail">✗</span>}
-                    {teljesül === null && <span className="manover-kov-info">?</span>}
+                    {jelölés === '✓' && <span className="manover-fazis-ok">✓</span>}
+                    {jelölés === '✗' && <span className="manover-fazis-fail">✗</span>}
+                    {jelölés === '?' && <span className="manover-kov-info">?</span>}
                   </div>
                 );
               })}

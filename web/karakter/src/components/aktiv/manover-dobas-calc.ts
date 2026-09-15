@@ -2,9 +2,31 @@
 // Kiemelve a ManoverDobasPopup.tsx-ből (2026-09-11 refaktor): a komponens csak a
 // dobás-folyamat state-jét és JSX-ét tartja, minden számítás/feltétel ide kerül.
 // Ezekre a fn-ekre írt tesztek: Manover{Kovetelmeny,TeBontas,FazisFelirat,EredmenyHatas}.test.ts
-import type { Karakter } from '../../engine/types';
+import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
+
+/** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
+const MEGLEPETÉS = 'Meglepetés';
+const ORVTÁMADÁS = 'Orvtámadás';
+
+/**
+ * Aktív harci helyzet adta könnyítés a manőver dobásra (§066_03: Meglepetés / Orvtámadás).
+ * Mindkettőnél a célpont nem védekezik → nincs Megakasztás (M) és nincs támadó dobás (V);
+ * a találat automatikus (sebzést a fegyvertáblán dobunk, ez nem érinti). Csak Aktív módban.
+ */
+export function helyzetKönnyítés(session: Session): { meglepetés: boolean; orvtámadás: boolean } {
+  return {
+    meglepetés: session.aktív_helyzetek.includes(MEGLEPETÉS),
+    orvtámadás: session.aktív_helyzetek.includes(ORVTÁMADÁS),
+  };
+}
+
+/** Az 'egyéb' (informatív) követelmény szövege Meglepetés/Orvtámadás helyzetre hivatkozik-e. */
+function helyzetKövetelmény(köv: ManoverKövetelmény): { meglepetés: boolean; orvtámadás: boolean } {
+  const sz = (köv.típus === 'egyéb' ? köv.leírás : '') ?? '';
+  return { meglepetés: sz.includes(MEGLEPETÉS), orvtámadás: sz.includes(ORVTÁMADÁS) };
+}
 
 export type Mód = 'aktív' | 'passzív';
 export type FázisEredmény = 'pending' | 'igen' | 'nem';
@@ -32,9 +54,21 @@ function harcmodorMaxSzint(karakter: Karakter, data: GameData): number {
 /**
  * Gépi (auto-kiértékelt) követelmény teljesül-e a karakter alapján.
  * Informatív ('egyéb') követelményt NEM lehet gépileg értékelni → null (a játékos dönt).
+ * KIVÉTEL: ha az 'egyéb' követelmény Meglepetés/Orvtámadás helyzetre hivatkozik ÉS az a
+ * helyzet aktív (session), akkor gépileg teljesítettnek vesszük (§066_03 könnyítés).
  */
-export function követelményTeljesül(köv: ManoverKövetelmény, karakter: Karakter, data: GameData): boolean | null {
-  if (köv.típus === 'egyéb') return null;
+export function követelményTeljesül(
+  köv: ManoverKövetelmény, karakter: Karakter, data: GameData, session?: Session,
+): boolean | null {
+  if (köv.típus === 'egyéb') {
+    if (session) {
+      const h = helyzetKönnyítés(session);
+      const k = helyzetKövetelmény(köv);
+      // A követelmény "X vagy Y" formájú lehet — bármely aktív hivatkozott helyzet teljesíti.
+      if ((k.meglepetés && h.meglepetés) || (k.orvtámadás && h.orvtámadás)) return true;
+    }
+    return null;
+  }
   const küszöb = köv.érték ?? 0;
   if (köv.típus === 'képzettség') {
     const szint = köv.név === 'Harcmodor'
@@ -53,11 +87,11 @@ export function követelményTeljesül(köv: ManoverKövetelmény, karakter: Kar
  * - `normálHiány`: van hiányzó gépi Normál követelmény → a "Teljesül mind" gomb tiltandó.
  */
 export function gépiKövetelményStátusz(
-  követelmények: ManoverKövetelmény[], karakter: Karakter, data: GameData,
+  követelmények: ManoverKövetelmény[], karakter: Karakter, data: GameData, session?: Session,
 ): { erősHiány: boolean; normálHiány: boolean } {
   let erősHiány = false, normálHiány = false;
   for (const köv of követelmények) {
-    const teljesül = követelményTeljesül(köv, karakter, data);
+    const teljesül = követelményTeljesül(köv, karakter, data, session);
     if (teljesül === false) {
       if (köv.erősség === 'erős') erősHiány = true;
       else normálHiány = true;
@@ -77,6 +111,19 @@ export function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
     }
   }
   return result;
+}
+
+/**
+ * Aktív Meglepetés/Orvtámadás könnyítés a fázissorra (§066_03, csak Aktív mód):
+ * a célpont nem védekezik → kimarad a Megakasztás (M) ÉS a támadó dobás (V is).
+ * A sebzést nem a popup dobja (fegyvertábla), így az nem érintett.
+ * Passzív módban (vagy ha nincs ilyen helyzet) a fázissor változatlan.
+ */
+export function könnyítettFázisok(fázisok: ('M' | 'V' | 'E')[], mód: Mód, session: Session): ('M' | 'V' | 'E')[] {
+  if (mód !== 'aktív') return fázisok;
+  const h = helyzetKönnyítés(session);
+  if (!h.meglepetés && !h.orvtámadás) return fázisok;
+  return fázisok.filter(f => f === 'E');
 }
 
 export function calcManőverPont(karakter: Karakter, data: GameData): number {
@@ -173,4 +220,22 @@ export function getFázisFelirat(
  */
 export function eredményHatás(hatás: string[]): string[] {
   return hatás.filter(s => !/^\s*(sikertelen|kudarc|feltétel)\b/i.test(s));
+}
+
+/**
+ * Egy követelménysor megjelenített jelölése. A gépi eredmény (true/false) mindig nyer.
+ * A gépileg eldöntetlen (null) sor a KM döntése UTÁN tükrözi a globális döntést:
+ * 'mind' → ✓; 'erős'/'normál' hiány → az adott erősségű sorok ✗, a másik erősség ✓.
+ * Döntés előtt ('pending') marad '?'.
+ */
+export function követelményJelölés(
+  teljesül: boolean | null,
+  erősség: 'normál' | 'erős',
+  döntés: 'pending' | 'mind' | 'normál' | 'erős',
+): '✓' | '✗' | '?' {
+  if (teljesül === true) return '✓';
+  if (teljesül === false) return '✗';
+  if (döntés === 'pending') return '?';
+  if (döntés === 'mind') return '✓';
+  return erősség === döntés ? '✗' : '✓';
 }
