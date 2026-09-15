@@ -259,8 +259,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 - Fázisok: `Végrehajtás, Ellenpróba`
     - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás))
 - 🟥 Erős követelmény:
-  - [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet → e nélkül csak sima [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet lenne
-  - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet
+  - [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet
   - Célpont elfszabású anatómiával
   - Zúzófegyver (akár fegyver markolat), vagy Puszta kéz mint támadó fegyver
 
