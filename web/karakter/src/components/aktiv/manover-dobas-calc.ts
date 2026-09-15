@@ -22,10 +22,19 @@ export function helyzetKönnyítés(session: Session): { meglepetés: boolean; o
   };
 }
 
-/** Az 'egyéb' (informatív) követelmény szövege Meglepetés/Orvtámadás helyzetre hivatkozik-e. */
-function helyzetKövetelmény(köv: ManoverKövetelmény): { meglepetés: boolean; orvtámadás: boolean } {
-  const sz = (köv.típus === 'egyéb' ? köv.leírás : '') ?? '';
-  return { meglepetés: sz.includes(MEGLEPETÉS), orvtámadás: sz.includes(ORVTÁMADÁS) };
+/**
+ * Egy 'egyéb' követelmény mely aktiválható harci helyzet(ek)re hivatkozik (adatvezérelt).
+ * Az így felismert követelmény GÉPILEG kiértékelhető a session.aktív_helyzetek alapján.
+ * A tagadó szövegeket ("nincs"/"sincs") KIZÁRJUK — azok nem "aktív helyzet kell" jellegűek
+ * (pl. "Ellenfél nincs Pengeelőnyben", "Egyik ellenfél sincs Pengeelőnyben"), maradnak manuálisak.
+ * A hosszabb neveket előbb illesztjük (Pengeelőny vs Pengehátrány szóhatár egyértelműsítése).
+ */
+export function követelményHelyzetei(köv: ManoverKövetelmény, data: GameData): string[] {
+  if (köv.típus !== 'egyéb') return [];
+  const sz = köv.leírás ?? '';
+  if (/\b(nincs|sincs)\b/i.test(sz)) return [];
+  const nevek = [...data.harciHelyzetek.map(h => h.név)].sort((a, b) => b.length - a.length);
+  return nevek.filter(n => sz.includes(n));
 }
 
 export type Mód = 'aktív' | 'passzív';
@@ -53,19 +62,21 @@ function harcmodorMaxSzint(karakter: Karakter, data: GameData): number {
 
 /**
  * Gépi (auto-kiértékelt) követelmény teljesül-e a karakter alapján.
- * Informatív ('egyéb') követelményt NEM lehet gépileg értékelni → null (a játékos dönt).
- * KIVÉTEL: ha az 'egyéb' követelmény Meglepetés/Orvtámadás helyzetre hivatkozik ÉS az a
- * helyzet aktív (session), akkor gépileg teljesítettnek vesszük (§066_03 könnyítés).
+ * Informatív ('egyéb') követelményt alapból NEM lehet gépileg értékelni → null (a játékos dönt).
+ * KIVÉTEL: ha az 'egyéb' követelmény aktiválható harci helyzet(ek)re hivatkozik (session megadva):
+ *   - bármely hivatkozott helyzet aktív → true;
+ *   - egyik hivatkozott helyzet sem aktív → false (auto-kudarc);
+ *   - nem helyzet-alapú szöveg → null (manuális).
  */
 export function követelményTeljesül(
   köv: ManoverKövetelmény, karakter: Karakter, data: GameData, session?: Session,
 ): boolean | null {
   if (köv.típus === 'egyéb') {
     if (session) {
-      const h = helyzetKönnyítés(session);
-      const k = helyzetKövetelmény(köv);
-      // A követelmény "X vagy Y" formájú lehet — bármely aktív hivatkozott helyzet teljesíti.
-      if ((k.meglepetés && h.meglepetés) || (k.orvtámadás && h.orvtámadás)) return true;
+      const helyzetek = követelményHelyzetei(köv, data);
+      if (helyzetek.length > 0) {
+        return helyzetek.some(n => session.aktív_helyzetek.includes(n));
+      }
     }
     return null;
   }

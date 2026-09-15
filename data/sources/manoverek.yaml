@@ -209,7 +209,6 @@ manőverek:
     E: "Ájulás, ha a sebzés eléri az áldozat Max ÉP/4↓ értékét; egyébként Bódultság. A sebzés FP-ként jelenik meg."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Orvtámadás harci helyzet" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Hátulról támadás harci helyzet" }
     - { erősség: "erős", típus: "egyéb", leírás: "Célpont elfszabású anatómiával" }
     - { erősség: "erős", típus: "egyéb", leírás: "Zúzófegyver vagy Puszta kéz" }
   helyzetfüggő_módosítók:

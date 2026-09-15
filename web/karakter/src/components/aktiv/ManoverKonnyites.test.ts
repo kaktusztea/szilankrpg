@@ -8,6 +8,10 @@ import type { GameData } from '../../engine/data-loader';
 
 const data = {
   konstansok: { fegyver_kategória_harcmodor: { kard: 'Kardvívás' } },
+  harciHelyzetek: [
+    { név: 'Orvtámadás' }, { név: 'Hátulról támadás' }, { név: 'Meglepetés' },
+    { név: 'Belharci helyzet' }, { név: 'Pengeelőny' }, { név: 'Pengehátrány' },
+  ],
 } as unknown as GameData;
 
 const karakter = { képzettségek: [], fortélyok: [] } as unknown as Karakter;
@@ -39,25 +43,34 @@ describe('könnyítettFázisok', () => {
   });
 });
 
-describe('követelményTeljesül — helyzet auto-teljesítés', () => {
+describe('követelményTeljesül — helyzet auto-kiértékelés', () => {
   const orvKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Orvtámadás harci helyzet' };
   const orvVagyKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Orvtámadás vagy Hátulról támadás harci helyzet' };
+  const anatómiaKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Célpont elfszabású anatómiával' };
+  const tagadóKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Egyik ellenfél sincs Pengeelőnyben' };
 
-  it('aktív Orvtámadás → a rá hivatkozó egyéb követelmény true', () => {
+  it('aktív Orvtámadás → true', () => {
     expect(követelményTeljesül(orvKöv, karakter, data, sessionWith(['Orvtámadás']))).toBe(true);
-    expect(követelményTeljesül(orvVagyKöv, karakter, data, sessionWith(['Orvtámadás']))).toBe(true);
+    expect(követelményTeljesül(orvVagyKöv, karakter, data, sessionWith(['Hátulról támadás']))).toBe(true);
+  });
+  it('NINCS a hivatkozott helyzet → false (auto-kudarc)', () => {
+    expect(követelményTeljesül(orvKöv, karakter, data, sessionWith([]))).toBe(false);
+    expect(követelményTeljesül(orvKöv, karakter, data, sessionWith(['Meglepetés']))).toBe(false);
+    expect(követelményTeljesül(orvVagyKöv, karakter, data, sessionWith(['Pengeelőny']))).toBe(false);
   });
   it('session nélkül továbbra is null (manuális döntés)', () => {
     expect(követelményTeljesül(orvKöv, karakter, data)).toBeNull();
   });
-  it('nem hivatkozott helyzet → null marad', () => {
-    expect(követelményTeljesül(orvKöv, karakter, data, sessionWith(['Meglepetés']))).toBeNull();
+  it('nem helyzet-alapú szöveg (anatómia) → null marad', () => {
+    expect(követelményTeljesül(anatómiaKöv, karakter, data, sessionWith(['Orvtámadás']))).toBeNull();
   });
-  it('gépiKövetelményStátusz: aktív Orvtámadás feloldja az erős hiányt', () => {
+  it('tagadó szöveg ("sincs Pengeelőnyben") → null (manuális, nem "aktív helyzet kell")', () => {
+    expect(követelményTeljesül(tagadóKöv, karakter, data, sessionWith(['Pengeelőny']))).toBeNull();
+  });
+  it('gépiKövetelményStátusz: nincs Orvtámadás → erős hiány (auto-kudarc)', () => {
+    expect(gépiKövetelményStátusz([orvKöv], karakter, data, sessionWith([])))
+      .toEqual({ erősHiány: true, normálHiány: false });
     expect(gépiKövetelményStátusz([orvKöv], karakter, data, sessionWith(['Orvtámadás'])))
-      .toEqual({ erősHiány: false, normálHiány: false });
-    // helyzet nélkül: egyéb köv. null → nem számít gépi hiánynak (marad false/false)
-    expect(gépiKövetelményStátusz([orvKöv], karakter, data))
       .toEqual({ erősHiány: false, normálHiány: false });
   });
 });
