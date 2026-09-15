@@ -1,21 +1,26 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { KonstansokRaw } from '../../engine/data-types';
 import { lookupFegyver } from '../../engine/utils';
 
 /** Páncél lookup táblák építése */
-export function buildPancelLookups(konstansok: any): Map<string, Record<string, number | string>[]> {
+export function buildPancelLookups(
+  konstansok: Pick<KonstansokRaw,
+    'páncél_csatolt_tag_mgt' | 'páncél_struktúrák' | 'páncél_fémalapanyagok'
+    | 'páncél_méret_illeszkedés' | 'merevvértviselet_bónuszok'>,
+): Map<string, Record<string, number | string>[]> {
   const lookupArrays = new Map<string, Record<string, number | string>[]>();
   const csatoltMgt = konstansok.páncél_csatolt_tag_mgt;
-  lookupArrays.set('csatolt_mgt_merev', Object.entries(csatoltMgt.merevvért_fém).map(([n, v]) => ({ név: n, érték: v as number })));
-  lookupArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([n, v]) => ({ név: n, érték: v as number })));
-  lookupArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([n, v]) => ({ név: n, érték: v as number })));
-  lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map((s: any) => ({
+  lookupArrays.set('csatolt_mgt_merev', Object.entries(csatoltMgt.merevvért_fém).map(([n, v]) => ({ név: n, érték: v })));
+  lookupArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([n, v]) => ({ név: n, érték: v })));
+  lookupArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([n, v]) => ({ név: n, érték: v })));
+  lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map(s => ({
     név: s.struktúra, mgt: s.mgt, sfé_fizikai: s.sfé_fizikai,
     sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0
   })));
-  lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map((a: any) => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
-  lookupArrays.set('méret_tábla', (konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[]).map(m => ({ név: m.fokozat, érték: m.mgt })));
-  lookupArrays.set('merevvért_tábla', konstansok.merevvértviselet_bónuszok.map((b: any) => ({ fok: b.fok, csökkentés: b.TÉ_büntetés_csökkentés })));
+  lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map(a => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
+  lookupArrays.set('méret_tábla', konstansok.páncél_méret_illeszkedés.map(m => ({ név: m.fokozat, érték: m.mgt })));
+  lookupArrays.set('merevvért_tábla', konstansok.merevvértviselet_bónuszok.map(b => ({ fok: b.fok, csökkentés: b.TÉ_büntetés_csökkentés })));
   return lookupArrays;
 }
 
@@ -59,7 +64,7 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
         const hDisplayName = hDef.Alapnév || hDef.Fegyver;
         const hMfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === hDisplayName || f.spec_elem === hFp.alap));
         if (hMfEntry) {
-          const hMf = konstansok.mesterfegyver_bónuszok.find((b: any) => b.fok === hMfEntry.fok);
+          const hMf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === hMfEntry.fok);
           if (hMf) hárítóVÉ += hMf.VÉ;
         }
       }

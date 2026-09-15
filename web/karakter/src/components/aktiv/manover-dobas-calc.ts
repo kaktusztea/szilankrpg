@@ -30,7 +30,7 @@ export function helyzetKönnyítés(session: Session): { meglepetés: boolean; o
  * (pl. "Ellenfél nincs Pengeelőnyben", "Egyik ellenfél sincs Pengeelőnyben"), maradnak manuálisak.
  * A hosszabb neveket előbb illesztjük (Pengeelőny vs Pengehátrány szóhatár egyértelműsítése).
  */
-export function követelményHelyzetei(köv: ManoverKövetelmény, data: GameData): string[] {
+function követelményHelyzetei(köv: ManoverKövetelmény, data: GameData): string[] {
   if (köv.típus !== 'egyéb') return [];
   const sz = köv.leírás ?? '';
   if (/\b(nincs|sincs)\b/i.test(sz)) return [];

@@ -42,7 +42,7 @@ function withTimeout<T>(p: Promise<T>, ms: number): Promise<T | null> {
 }
 
 /** A `?v=` cache-buster eltávolítása a címsorból (a megosztott linkek maradjanak tiszták). */
-export function cleanVersionParam(): void {
+function cleanVersionParam(): void {
   if (!window.location.search) return;
   history.replaceState(null, '', window.location.pathname + window.location.hash);
 }
