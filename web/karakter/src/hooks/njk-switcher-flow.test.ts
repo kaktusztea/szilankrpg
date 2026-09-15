@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { upsertSlotEntry, readSlots, loadSlotKarakter } from './slot-utils';
 import { njkSlots, njkLimitBlocked } from './njk-slots';
+import { mergeAktív } from '../components/NjkSwitcher';
 import { MAX_NJK_DB } from '../ui-constants';
 import { installLocalStorage } from '../__tests__/localstorage-stub';
 import { validKarakter } from '../__tests__/karakter-fixture';
@@ -52,5 +53,31 @@ describe('NJK switcher adatút', () => {
     expect(njkSlots(readSlots())).toHaveLength(MAX_NJK_DB);
     expect(njkLimitBlocked(false)).toBe(true);
     expect(njkLimitBlocked(true)).toBe(false);
+  });
+});
+
+describe('mergeAktív — friss JK/NJK állapot a persistált slot előtt', () => {
+  beforeEach(() => installLocalStorage());
+
+  it('JK→NJK váltás azonnal megjelenik a sávban, még ha a slot-metaadat JK-t mutat is', () => {
+    // Slot-metaadat: még JK (autosave nem futott a váltás után).
+    const stale = mentés('u1', 'Aktív Alfonz', 'Alfi', true);
+    expect(njkSlots(readSlots())).toEqual([]); // JK → nincs a sávban
+
+    // Az aktív karakter React-state-ben már NJK.
+    const merged = mergeAktív(readSlots(), { ...stale, jk: false });
+    expect(njkSlots(merged)).toEqual([{ uid: 'u1', név: 'Alfi' }]);
+  });
+
+  it('a friss becenevet is átveszi (a persistált még a régit tárolja)', () => {
+    const stale = mentés('u2', 'Zord Zoltán', 'Zordi', false);
+    const merged = mergeAktív(readSlots(), { ...stale, becenév: 'Zozó' });
+    expect(njkSlots(merged)[0].név).toBe('Zozó');
+  });
+
+  it('ha a slot még nem létezik, az aktív karakterből építi', () => {
+    const k = validKarakter({ uid: 'u3', név: 'Új NJK', becenév: 'Ujji', jk: false });
+    const merged = mergeAktív([], k);
+    expect(njkSlots(merged)).toEqual([{ uid: 'u3', név: 'Ujji' }]);
   });
 });
