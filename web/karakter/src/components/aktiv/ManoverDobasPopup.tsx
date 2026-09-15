@@ -191,7 +191,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       return (
         <div className="manover-fazis-info">
           {módosítóTáblák.length > 0 && (
-            <button className="manover-szit-btn" onClick={() => setSzitPickerNyitva(true)}>
+            <button className="manover-szit-btn manover-szit-btn-flash" onClick={() => setSzitPickerNyitva(true)}>
               Helyzetfüggő módosítók
               {szitModÖsszeg !== 0 && (
                 <span className={`manover-szit-sum${szitModÖsszeg > 0 ? ' manover-szit-neg' : ' manover-szit-pos'}`}>
