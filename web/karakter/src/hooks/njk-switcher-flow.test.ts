@@ -1,10 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { upsertSlotEntry, readSlots, loadSlotKarakter } from './slot-utils';
-import { njkSlots, njkLimitBlocked } from './njk-slots';
+import { njkSlots, njkLimitBlocked, életerőStat } from './njk-slots';
 import { mergeAktív } from '../components/NjkSwitcher';
 import { MAX_NJK_DB } from '../ui-constants';
 import { installLocalStorage } from '../__tests__/localstorage-stub';
 import { validKarakter } from '../__tests__/karakter-fixture';
+import { loadGameDataSync } from '../__tests__/load-gamedata';
 
 /**
  * Az NJK switcher sáv teljes adatútja React nélkül:
@@ -79,5 +80,33 @@ describe('mergeAktív — friss JK/NJK állapot a persistált slot előtt', () =
     const k = validKarakter({ uid: 'u3', név: 'Új NJK', becenév: 'Ujji', jk: false });
     const merged = mergeAktív([], k);
     expect(njkSlots(merged)).toEqual([{ uid: 'u3', név: 'Ujji' }]);
+  });
+});
+
+describe('életerőStat — ÉP csík + stat a switcher sávhoz', () => {
+  const data = loadGameDataSync();
+  // ÉP formula: 28 + edzettség*4. edzettség=3 → ÉP 40, kategóriák=4 → oszlopméret 10.
+  const alap = () => validKarakter({ jk: false, tulajdonságok: { ...validKarakter().tulajdonságok, edzettség: 3 } });
+
+  it('sértetlen: maradék=max, arány=1, S0', () => {
+    const s = életerőStat(alap(), data);
+    expect(s).toMatchObject({ maradék: 40, max: 40, arány: 1, sKategória: 0 });
+  });
+
+  it('néhány seb: maradék csökken, S-kategória a betöltött rubrikák alapján', () => {
+    const k = alap();
+    k.session.sebzések = Array.from({ length: 12 }, (_, i) => ({ típus: 'S' as const, sorszám: i + 1 }));
+    const s = életerőStat(k, data);
+    expect(s.maradék).toBe(28);          // 40 - 12
+    expect(s.max).toBe(40);
+    expect(s.sKategória).toBe(2);        // ceil(12/10) = 2 → S2
+  });
+
+  it('a Fájdalompont (FP) rubrika IS beleszámít (mint az EpTable-ben)', () => {
+    const k = alap();
+    k.session.sebzések = [{ típus: 'FP', sorszám: 1 }, { típus: 'FP', sorszám: 2 }];
+    const s = életerőStat(k, data);
+    expect(s.maradék).toBe(38);          // 40 - 2 (FP is számít)
+    expect(s.sKategória).toBe(1);        // ceil(2/10) = 1 → S1
   });
 });

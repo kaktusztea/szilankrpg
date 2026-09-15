@@ -178,7 +178,7 @@ function App() {
       />
 
       {karakter.jk === false && !viewingCheckpointId && (
-        <NjkSwitcher aktív={karakter} onLoad={activateKarakter} />
+        <NjkSwitcher aktív={karakter} data={data} onLoad={activateKarakter} />
       )}
 
       {viewingCheckpoint && (
