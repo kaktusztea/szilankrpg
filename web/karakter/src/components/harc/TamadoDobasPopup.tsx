@@ -27,7 +27,7 @@ interface Props {
   átütés?: number;
   /** Collected active effects on TÉ/Sebzés rolls */
   dobásInfo: DobásInfo;
-  onClose: (téEredmény: number | null) => void;
+  onClose: (eredmény: { té: number; sp?: number } | null) => void;
 }
 
 interface TéEredmény {
@@ -69,13 +69,13 @@ export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, onClose }: Pr
         spBónuszok={dobásInfo.spBónuszok}
         megjegyzések={dobásInfo.sebzésMegjegyzések}
         átütés={átütés}
-        onClose={() => onClose(téResult?.eredmény ?? null)}
+        onClose={(spEredmény) => onClose(téResult ? { té: téResult.eredmény, sp: spEredmény } : null)}
       />
     );
   }
 
   return (
-    <PopupOverlay onClose={() => onClose(téResult?.eredmény ?? null)}>
+    <PopupOverlay onClose={() => onClose(téResult ? { té: téResult.eredmény } : null)}>
       <div className="tamado-dobas-popup">
         {téResult && <button className="sebzes-reset-btn" onClick={() => setTéResult(null)}>⟲</button>}
         <div className="ke-dobas-header">Támadó dobás</div>

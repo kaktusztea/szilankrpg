@@ -26,7 +26,7 @@ interface Props {
   hideAutoBónusz?: boolean;
   /** Fegyver Átütés értéke (informatív kijelzés, ha > 0) */
   átütés?: number;
-  onClose: () => void;
+  onClose: (spEredmény?: number) => void;
 }
 
 interface SebzésEredmény {
@@ -79,7 +79,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
   }
 
   return (
-    <PopupOverlay onClose={onClose}>
+    <PopupOverlay onClose={() => onClose(eredmény?.végső)}>
       <div className="tamado-dobas-popup">
         {eredmény && <button className="sebzes-reset-btn" onClick={() => setEredmény(null)}>⟲</button>}
         <div className="ke-dobas-header">Sebzés</div>

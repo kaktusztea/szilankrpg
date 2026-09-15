@@ -111,7 +111,13 @@ export interface Session {
   fegyverfogás: 'egyfegyveres' | 'fegyver_pajzs' | 'fegyver_hárító' | 'kétkezes';
   aktív_távfegyver_index: number;
   ké_dobások: number[];
-  té_dobások: number[];
+  té_dobások: TéDobás[];
+}
+
+/** Egy Támadó dobás naplóbejegyzés: TÉ eredmény + opcionális Sebzés (SP) eredmény, ha sebzésdobás követte. */
+export interface TéDobás {
+  té: number;
+  sp?: number;
 }
 
 export interface NarratívMódosító {

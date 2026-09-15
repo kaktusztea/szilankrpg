@@ -78,7 +78,7 @@ export function AppOverlays({
       {s.showSzilánkPicker && (
         <SzilankPickerOverlay
           current={session.szilánk}
-          onPick={v => { pushUndo(`Szilánk: ${session.szilánk} → ${v}`, [{ field: 'session', prev: session }]); setSession(prev => ({ ...prev, szilánk: v })); set('showSzilánkPicker', false); }}
+          onPick={v => { const next = { ...session, szilánk: v }; pushUndo(`Szilánk: ${session.szilánk} → ${v}`, [{ field: 'session', prev: session, ckey: 'szilánk' }], next); setSession(prev => ({ ...prev, szilánk: v })); set('showSzilánkPicker', false); }}
           onClose={() => set('showSzilánkPicker', false)}
         />
       )}

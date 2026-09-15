@@ -71,7 +71,7 @@ export function HarcHeader({
         {(session.té_dobások ?? []).length > 0 && (
           <div className="ke-history">
             {(session.té_dobások ?? []).map((d, i) => (
-              <span key={i} className="ke-history-item">{d}</span>
+              <span key={i} className="ke-history-item">{d.té}{d.sp != null && <span className="te-history-sp">({d.sp})</span>}</span>
             ))}
           </div>
         )}

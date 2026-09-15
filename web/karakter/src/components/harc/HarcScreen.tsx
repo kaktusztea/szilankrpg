@@ -12,7 +12,7 @@ import { HarcFegyverSection } from './HarcFegyverSection';
 import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
-import { DobasPopup, pushDobás } from './DobasPopup';
+import { DobasPopup, pushDobás, pushTéDobás } from './DobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
@@ -81,12 +81,12 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     setShowTamadoDobas(true);
   }, []);
 
-  const handleTamadoClose = useCallback((eredmény: number | null) => {
+  const handleTamadoClose = useCallback((eredmény: { té: number; sp?: number } | null) => {
     setShowTamadoDobas(false);
     if (eredmény !== null) {
       setSession(prev => ({
         ...prev,
-        té_dobások: pushDobás(prev.té_dobások ?? [], eredmény),
+        té_dobások: pushTéDobás(prev.té_dobások ?? [], eredmény),
       }));
     }
   }, [setSession]);
