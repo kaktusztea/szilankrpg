@@ -43,11 +43,17 @@ manőverek:
   nehézség: 8
   fázisok: "V,E"
   hatás:
-    - "Végtaglevágás."
-    - "Feltétel: Kéz: ÉP/3↑, Láb: ÉP/2↑ sebzés szükséges."
+    - "Levágtad ellenfeled választott végtagját (kéz vagy láb)."
+    - "Kéz: áldozat max ÉP/3↑, láb: max ÉP/2↑ sebzés szükséges a levágáshoz."
   id: "csonkolás"
+  fázis_info:
+    V: "Nem kapod meg a +4 TÉ módosítót — sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+  végrehajtás_té_módosító: 0
   követelmények:
-    - { erősség: "erős", típus: "egyéb", leírás: "Sikeres Precíz támadás manőver (a Nehézséggel)" }
+    - { erősség: "normál", típus: "képzettség", név: "Kardvívás", érték: 6 }
+    - { erősség: "erős", típus: "fegyver_sebzéstípus", érték: "V" }
+    - { erősség: "erős", típus: "fegyver_kategória", érték: "kardvívó" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)" }
   helyzetfüggő_módosítók:
     - kategória: "Célzott végtag"
       mód: "single"

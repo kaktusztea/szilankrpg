@@ -5,6 +5,7 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
+import { lookupFegyver } from '../../engine/utils';
 
 /** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
 const MEGLEPETÉS = 'Meglepetés';
@@ -60,16 +61,40 @@ function harcmodorMaxSzint(karakter: Karakter, data: GameData): number {
   return Math.max(0, ...karakter.képzettségek.filter(k => nevek.has(k.név)).map(k => k.szint));
 }
 
+/** Az aktív (támadó) fegyver a manőver-követelmény gépi kiértékeléséhez. */
+export interface AktívFegyverInfo {
+  kategória: string;   // pl. "kardvívó", "romboló" (fegyverek.json Kategória)
+  sebzésMódja: string; // pl. "V", "V/S", "Z" (fegyverek.json "Sebzés módja")
+}
+
+/**
+ * Az aktív jobb kéz fegyverének kategóriája + sebzésmódja a session alapján.
+ * null, ha nincs kiválasztott fegyver (puszta kéz / index<0) → a fegyver-követelmények manuálisak.
+ * ponytail: a jobb kéz fegyvere a mérvadó (kétkezes/pajzs finomságát nem bontjuk — a kézifegyveres
+ * manőver-követelményekhez ez elég; upgrade: aktív-fegyver-ctx bevonása, ha később kell.)
+ */
+export function aktívFegyverInfo(karakter: Karakter, session: Session, data: GameData): AktívFegyverInfo | null {
+  const idx = session.aktív_fegyver_index;
+  const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
+  if (!fp) return null;
+  const def = lookupFegyver(data.fegyverek, fp.alap);
+  if (!def) return null;
+  return { kategória: def.Kategória, sebzésMódja: def['Sebzés módja'] };
+}
+
 /**
  * Gépi (auto-kiértékelt) követelmény teljesül-e a karakter alapján.
  * Informatív ('egyéb') követelményt alapból NEM lehet gépileg értékelni → null (a játékos dönt).
  * KIVÉTEL: ha az 'egyéb' követelmény aktiválható harci helyzet(ek)re hivatkozik (session megadva):
- *   - bármely hivatkozott helyzet aktív → true;
- *   - egyik hivatkozott helyzet sem aktív → false (auto-kudarc);
- *   - nem helyzet-alapú szöveg → null (manuális).
+ *   - bármely hivatkozott helyzet aktív → true; egyik sem → false; nem helyzet-alapú → null.
+ * Fegyver-alapú gépi típusok (aktívFegyver megadva):
+ *   - "fegyver_kategória": az aktív fegyver Kategóriája == érték → true, egyébként false;
+ *   - "fegyver_sebzéstípus": az aktív fegyver "Sebzés módja" tartalmazza az érték-betűt (V/S/Z) → true.
+ *   aktívFegyver hiányában (nincs aktív fegyver kiválasztva) e típusok → null (manuális).
  */
 export function követelményTeljesül(
-  köv: ManoverKövetelmény, karakter: Karakter, data: GameData, session?: Session,
+  köv: ManoverKövetelmény, karakter: Karakter, data: GameData,
+  session?: Session, aktívFegyver?: AktívFegyverInfo | null,
 ): boolean | null {
   if (köv.típus === 'egyéb') {
     if (session) {
@@ -80,7 +105,17 @@ export function követelményTeljesül(
     }
     return null;
   }
-  const küszöb = köv.érték ?? 0;
+  if (köv.típus === 'fegyver_kategória') {
+    if (!aktívFegyver) return null;
+    return aktívFegyver.kategória === String(köv.érték ?? '');
+  }
+  if (köv.típus === 'fegyver_sebzéstípus') {
+    if (!aktívFegyver) return null;
+    // "Sebzés módja" pl. "V/S" → a keresett betű (V/S/Z) szerepel-e a komponensek közt.
+    const betű = String(köv.érték ?? '').toUpperCase();
+    return aktívFegyver.sebzésMódja.toUpperCase().split(/[^A-ZÁÉÍÓÖŐÚÜŰ]+/).includes(betű);
+  }
+  const küszöb = typeof köv.érték === 'number' ? köv.érték : 0;
   if (köv.típus === 'képzettség') {
     const szint = köv.név === 'Harcmodor'
       ? harcmodorMaxSzint(karakter, data)
@@ -98,11 +133,12 @@ export function követelményTeljesül(
  * - `normálHiány`: van hiányzó gépi Normál követelmény → a "Teljesül mind" gomb tiltandó.
  */
 export function gépiKövetelményStátusz(
-  követelmények: ManoverKövetelmény[], karakter: Karakter, data: GameData, session?: Session,
+  követelmények: ManoverKövetelmény[], karakter: Karakter, data: GameData,
+  session?: Session, aktívFegyver?: AktívFegyverInfo | null,
 ): { erősHiány: boolean; normálHiány: boolean } {
   let erősHiány = false, normálHiány = false;
   for (const köv of követelmények) {
-    const teljesül = követelményTeljesül(köv, karakter, data, session);
+    const teljesül = követelményTeljesül(köv, karakter, data, session, aktívFegyver);
     if (teljesül === false) {
       if (köv.erősség === 'erős') erősHiány = true;
       else normálHiány = true;
@@ -231,6 +267,20 @@ export function getFázisFelirat(
  */
 export function eredményHatás(hatás: string[]): string[] {
   return hatás.filter(s => !/^\s*(sikertelen|kudarc|feltétel)\b/i.test(s));
+}
+
+/** Egy követelménysor emberi olvasású címkéje (minden típusra). */
+export function követelményCimke(köv: ManoverKövetelmény): string {
+  switch (köv.típus) {
+    case 'egyéb': return köv.leírás ?? '';
+    case 'fegyver_kategória': return `${köv.érték} harcmodor`;
+    case 'fegyver_sebzéstípus': {
+      const nevek: Record<string, string> = { V: 'Vágó', S: 'Szúró', Z: 'Zúzó' };
+      return `${nevek[String(köv.érték).toUpperCase()] ?? köv.érték}fegyver`;
+    }
+    default: // képzettség / fortély
+      return `${köv.név}${köv.érték != null ? ` ${köv.érték}${köv.típus === 'fortély' ? '.fok' : '.szint'}` : ''}`;
+  }
 }
 
 /**

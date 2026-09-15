@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   helyzetKönnyítés, könnyítettFázisok, követelményTeljesül, gépiKövetelményStátusz, követelményJelölés,
+  követelményCimke, type AktívFegyverInfo,
 } from './manover-dobas-calc';
 import type { ManoverKövetelmény } from '../../engine/data-types';
 import type { Karakter, Session } from '../../engine/types';
@@ -94,5 +95,44 @@ describe('követelményJelölés', () => {
   it('null + "normál" hiány → a Normál sor ✗, az Erős sor ✓', () => {
     expect(követelményJelölés(null, 'normál', 'normál')).toBe('✗');
     expect(követelményJelölés(null, 'erős', 'normál')).toBe('✓');
+  });
+});
+
+describe('követelményTeljesül — fegyver-alapú gépi típusok', () => {
+  const katKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_kategória', érték: 'kardvívó' };
+  const sebKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' };
+  const kard: AktívFegyverInfo = { kategória: 'kardvívó', sebzésMódja: 'V/S' };
+  const buzogány: AktívFegyverInfo = { kategória: 'romboló', sebzésMódja: 'Z' };
+
+  it('fegyver_kategória: egyezés → true, eltérés → false', () => {
+    expect(követelményTeljesül(katKöv, karakter, data, undefined, kard)).toBe(true);
+    expect(követelményTeljesül(katKöv, karakter, data, undefined, buzogány)).toBe(false);
+  });
+  it('fegyver_sebzéstípus: a "Sebzés módja" komponensei közt van-e a betű', () => {
+    expect(követelményTeljesül(sebKöv, karakter, data, undefined, kard)).toBe(true);      // V/S tartalmaz V
+    expect(követelményTeljesül(sebKöv, karakter, data, undefined, buzogány)).toBe(false);  // Z nem
+  });
+  it('nincs aktív fegyver → null (manuális)', () => {
+    expect(követelményTeljesül(katKöv, karakter, data, undefined, null)).toBeNull();
+    expect(követelményTeljesül(sebKöv, karakter, data)).toBeNull();
+  });
+  it('gépiKövetelményStátusz: rossz fegyver → erős hiány', () => {
+    expect(gépiKövetelményStátusz([katKöv, sebKöv], karakter, data, undefined, buzogány))
+      .toEqual({ erősHiány: true, normálHiány: false });
+    expect(gépiKövetelményStátusz([katKöv, sebKöv], karakter, data, undefined, kard))
+      .toEqual({ erősHiány: false, normálHiány: false });
+  });
+});
+
+describe('követelményCimke', () => {
+  it('fegyver_kategória → "<kulcs> harcmodor"', () => {
+    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_kategória', érték: 'kardvívó' })).toBe('kardvívó harcmodor');
+  });
+  it('fegyver_sebzéstípus → "<Név>fegyver"', () => {
+    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' })).toBe('Vágófegyver');
+    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'Z' })).toBe('Zúzófegyver');
+  });
+  it('képzettség → "<Név> <érték>.szint"', () => {
+    expect(követelményCimke({ erősség: 'normál', típus: 'képzettség', név: 'Kardvívás', érték: 6 })).toBe('Kardvívás 6.szint');
   });
 });

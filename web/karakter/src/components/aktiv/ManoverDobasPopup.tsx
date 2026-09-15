@@ -5,7 +5,7 @@ import { PopupOverlay } from '../PopupOverlay';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
 import {
   type Mód, type FázisEredmény, type ManőverDef,
-  követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, követelményJelölés,
+  követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, követelményJelölés, követelményCimke, aktívFegyverInfo,
   calcManőverPont, getBelharcFok,
   fázisCselekvő, fázisSikeres, getFázisFelirat, eredményHatás,
 } from './manover-dobas-calc';
@@ -29,6 +29,7 @@ interface Props {
 export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, onClose }: Props) {
   const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
   const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
+  const aktívFegyver = mód === 'aktív' ? aktívFegyverInfo(karakter, session, data) : null;
   const fázisok = könnyítettFázisok(parseFázisok(manőver.fázisok), mód, session);
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
@@ -62,11 +63,11 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // Ha egy erősség minden eleme gépi ÉS mind teljesül → a hiány kizárt → nincs gomb.
   const hiányLehet = (erősség: 'normál' | 'erős') =>
     követelmények.some(k => k.erősség === erősség
-      && (k.típus === 'egyéb' || követelményTeljesül(k, karakter, data, session) === false)
-      && követelményTeljesül(k, karakter, data, session) !== true);
+      && (k.típus === 'egyéb' || követelményTeljesül(k, karakter, data, session, aktívFegyver) === false)
+      && követelményTeljesül(k, karakter, data, session, aktívFegyver) !== true);
   const vanNormál = hiányLehet('normál');
   const vanErős = hiányLehet('erős');
-  const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data, session);
+  const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data, session, aktívFegyver);
   // Auto-kudarc, ha gépi Erős hiány. Ekkor a döntés nem is választható.
   const [követelményDöntés, setKövetelményDöntés] = useState<'pending' | 'mind' | 'normál' | 'erős'>(
     () => gépiStátusz.erősHiány ? 'erős' : 'pending',
@@ -253,10 +254,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             <div className="manover-fazis-label">Követelmények</div>
             <div className="manover-kov-lista">
               {követelmények.map((köv, i) => {
-                const teljesül = követelményTeljesül(köv, karakter, data, session);
-                const cimke = köv.típus === 'egyéb'
-                  ? köv.leírás
-                  : `${köv.név}${köv.érték != null ? ` ${köv.érték}${köv.típus === 'fortély' ? '.fok' : '.szint'}` : ''}`;
+                const teljesül = követelményTeljesül(köv, karakter, data, session, aktívFegyver);
+                const cimke = követelményCimke(köv);
                 // Gépileg eldöntetlen (null) sor a KM döntése UTÁN tükrözze a döntést.
                 const jelölés = követelményJelölés(teljesül, köv.erősség, követelményDöntés);
                 return (
@@ -312,9 +311,10 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                     {manőver.fázis_info?.[f] && (
                       <div className="manover-fazis-magyarazat">ⓘ {manőver.fázis_info[f]}</div>
                     )}
-                    {/* M/V: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást).
-                        E: a magyarázat KIEGÉSZÍTŐ — a dobás-UI (módosítók, MP, célszám) mindig kell. */}
-                    {(f === 'E' || !manőver.fázis_info?.[f]) && renderFázisInfo(f)}
+                    {/* E és V: a dobás-UI mindig kell (E: módosítók/MP/célszám; V: TÉ chip a
+                        tényleges támadó dobás értékével — a magyarázat KIEGÉSZÍTI, nem helyettesíti).
+                        M: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást). */}
+                    {(f === 'E' || f === 'V' || !manőver.fázis_info?.[f]) && renderFázisInfo(f)}
                     <div className="manover-fazis-chips">
                       {/* Szín az ALKALMAZÓ szempontjából: aktívban a manőver-siker jó (zöld);
                           passzívban ÉN védekezem, így a manőver-siker nekem ROSSZ (piros). */}

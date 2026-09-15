@@ -145,10 +145,10 @@ export interface SzituacioEntry {
 
 export interface ManoverKövetelmény {
   erősség: 'normál' | 'erős';
-  típus: 'képzettség' | 'fortély' | 'egyéb';
-  név?: string;      // gépi (képzettség/fortély)
-  érték?: number;    // gépi: szint/fok küszöb
-  leírás?: string;   // informatív ('egyéb')
+  típus: 'képzettség' | 'fortély' | 'fegyver_kategória' | 'fegyver_sebzéstípus' | 'egyéb';
+  név?: string;               // gépi (képzettség/fortély)
+  érték?: number | string;    // gépi: képzettség szint/fortély fok (szám); fegyver kategória-kulcs/sebzéstípus-betű (string)
+  leírás?: string;            // informatív ('egyéb')
 }
 
 export interface ManoverEntry {
