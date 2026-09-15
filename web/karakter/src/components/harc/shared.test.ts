@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildPajzsFegyverNév, resolveNagyobbKisebb, computeTÉ, computeVÉ } from './shared';
+import { buildPajzsFegyverNév, resolveNagyobbKisebb, computeTÉ, computeVÉ, coalesceVéHistory } from './shared';
 import type { Karakter } from '../../engine/types';
 
 describe('buildPajzsFegyverNév', () => {
@@ -46,5 +46,30 @@ describe('computeVÉ', () => {
   });
   it('floors at 0', () => {
     expect(computeVÉ(10, 0, -5, 50)).toBe(0);
+  });
+});
+
+describe('coalesceVéHistory', () => {
+  const W = 5000;
+  it('appends first entry (no prior)', () => {
+    expect(coalesceVéHistory([], -3, Infinity, W)).toEqual([-3]);
+  });
+  it('merges consecutive same-direction changes within window (-3,-1,-1 → -5)', () => {
+    let h = coalesceVéHistory([], -3, Infinity, W);
+    h = coalesceVéHistory(h, -1, 1000, W);
+    h = coalesceVéHistory(h, -1, 1000, W);
+    expect(h).toEqual([-5]);
+  });
+  it('starts a new entry when the window has elapsed', () => {
+    const h = coalesceVéHistory([-3], -1, 6000, W);
+    expect(h).toEqual([-3, -1]);
+  });
+  it('does not merge opposite directions (csökkenés then visszanyerés)', () => {
+    const h = coalesceVéHistory([-3], 1, 1000, W);
+    expect(h).toEqual([-3, 1]);
+  });
+  it('merges visszanyerés entries too', () => {
+    const h = coalesceVéHistory([2], 1, 1000, W);
+    expect(h).toEqual([3]);
   });
 });

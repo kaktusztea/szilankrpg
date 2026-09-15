@@ -19,16 +19,17 @@ import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { téBontásÖsszeg } from '../aktiv/manover-dobas-calc';
 import { ManoverPicker } from './ManoverPicker';
-import { computeTÉ, computeVÉ } from './shared';
+import { computeTÉ, computeVÉ, coalesceVéHistory } from './shared';
 import { resolveAktívFegyverContext } from './aktiv-fegyver-ctx';
 import { lookupFegyver } from '../../engine/utils';
 import { rollK20 } from '../../engine/dice';
-import { VÉ_FLASH_MS } from '../../ui-constants';
+import { VÉ_FLASH_MS, VÉ_COALESCE_MS } from '../../ui-constants';
 import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, onNavigate, gameMode }: HarcBaseProps) {
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastVéChangeRef = useRef<number>(0);
   const [showVéHistory, setShowVéHistory] = useState(false);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_felszerelés_mgt: number; hk_fortély: number } | null>(null);
@@ -55,10 +56,15 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const changeVé = useCallback((newVal: number) => {
     const diff = newVal - session.vé_csökkenés;
     if (diff !== 0) pushUndo(`${diff > 0 ? 'VÉ csökkenés' : 'VÉ visszanyerés'}: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`, [{ field: 'session', prev: session }]);
+    const now = Date.now();
+    const elapsed = now - lastVéChangeRef.current;
+    lastVéChangeRef.current = now;
+    // history bejegyzés előjele: csökkenés → negatív, visszanyerés → pozitív
+    const delta = diff > 0 ? -diff : Math.abs(diff);
     setSession(prev => ({
       ...prev,
       vé_csökkenés: newVal,
-      vé_history: newVal === 0 ? [] : [...prev.vé_history, diff > 0 ? -diff : Math.abs(diff)],
+      vé_history: newVal === 0 ? [] : coalesceVéHistory(prev.vé_history, delta, elapsed, VÉ_COALESCE_MS),
     }));
     triggerVéFlash(diff > 0 ? 'down' : 'up');
   }, [session.vé_csökkenés, pushUndo, setSession, triggerVéFlash]);

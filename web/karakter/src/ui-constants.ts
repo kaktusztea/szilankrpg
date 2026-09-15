@@ -19,6 +19,8 @@ export const HINT_DURATION_MS = 2000;
 export const TOAST_DURATION_MS = 2500;
 export const FEEDBACK_TIMEOUT_MS = 8000;
 export const VÉ_FLASH_MS = 1000;
+/** VÉ history összevonási ablak: az ezen belül követő azonos irányú változások egy bejegyzésbe olvadnak. */
+export const VÉ_COALESCE_MS = 5000;
 export const MAX_FEGYVER_DARAB = 10;
 export const MAX_AZONOS_HÁTTÉR = 10;
 export const MAX_AZONOS_FORTÉLY = 10;
