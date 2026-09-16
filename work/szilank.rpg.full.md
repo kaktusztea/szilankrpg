@@ -24113,7 +24113,8 @@ Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és 
 Vannak Manőverek, amelyek [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetet igényelnek.
 
 ```
-(E)llenpróba dobás csak
+(E)llenpróba dobás van csak
+  az Orvtámadást igénylő Manővereknél
 ```
 
 Miért dobunk ilyenkor **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik, amely az általános harci tapasztalatot szimbolizálja (nem véletlen, hogy az elköltött `HM` pontokon alapszik).
@@ -24404,14 +24405,22 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 ---
 ### Csonkolás
 
-Nehézség: `8` (kéz), `10` (láb)
+Lecsapod ellenfeled kezét, vagy lábát.
 
-Ha le akarod vágni ellenfeled valamely végtagját (kéz, láb), akkor sikeres: [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert kell dobnod a fenti Nehézséggel.
+- Nehézség:
+  - `8`: kéz csonkolása
+  - `10`: láb csonkolása
+- Fázisok: `Végrehajtás, Ellenpróba`
+	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+- 🟨 Normál követelmény: [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- 🟥 Erős követelmény:
+  - Vágófegyver használata
+  - [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) harcmodor
+  - Kéz csonkolása: min (áldozat `max ÉP / 3`) ↑ sebzés szükséges
+  - Láb csonkolása: min (áldozat `max ÉP / 2`) ↑ sebzés szükséges
+- alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 
-Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
-
-- Kéz csonkolása: (áldozat `max ÉP / 3`) ↑ sebzés szükséges
-- Láb csonkolása: (áldozat `max ÉP / 2`) ↑ sebzés szükséges
+**Hatás**: levágtad ellenfeled választott végtagját.
 
 <br />
 
@@ -24601,8 +24610,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 - Fázisok: `Végrehajtás, Ellenpróba`
     - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás))
 - 🟥 Erős követelmény:
-  - [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet → e nélkül csak sima [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet lenne
-  - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet
+  - [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet
   - Célpont elfszabású anatómiával
   - Zúzófegyver (akár fegyver markolat), vagy Puszta kéz mint támadó fegyver
 
