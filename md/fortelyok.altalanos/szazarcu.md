@@ -11,7 +11,7 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 ### Alapeset
 
-[Álcázás/álruha — Helyzetfüggő módosítók](../kepzettsegek.szekunder/alcazas_alruha.md#helyzetfüggő-módosítók)
+[Álcázás/álruha → Helyzetfüggő módosítók](../kepzettsegek.szekunder/alcazas_alruha.md#helyzetfüggő-módosítók)
 
 ---
 ### 1. fok
