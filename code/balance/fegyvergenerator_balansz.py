@@ -193,9 +193,15 @@ class Fegyver:
         fd = FEJDARAB[fejdarab]
 
         eredmeny = []
-        for aktor_nev in self.aktorok:
+        for idx, aktor_nev in enumerate(self.aktorok):
             a = AKTOR[aktor_nev]
             tt = TIPUS_TV[a["t"]]
+            # Elsődleges aktor = a lista 1. eleme (alap sebzésmód, nincs büntetés).
+            # Másodlagos aktor(ok) = a többi (lehet több is) → bejelentés után
+            # használható, Hátrány-1 a Sebzésdobásra (064_02_05, státusz). Az
+            # "alkalmatlan" (nincs rá aktor) nem generált mód: KM-engedéllyel Hátrány-2.
+            sebzestipus = "elsődleges" if idx == 0 else "másodlagos"
+            sebzes_hatrany = 0 if idx == 0 else 1
 
             # ── TÉ ──
             te = (h["tv"] + a["te"] + tt["te"] + fd["te"]
@@ -245,6 +251,7 @@ class Fegyver:
                 aktor=aktor_nev, tipus=a["t"],
                 TE=te, VE=ve, SP=sp, AT=at, SEB=seb,
                 parbaj_alkalmatlan=parbaj_alkalmatlan,
+                sebzestipus=sebzestipus, sebzes_hatrany=sebzes_hatrany,
             ))
         return eredmeny
 

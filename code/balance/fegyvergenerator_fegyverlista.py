@@ -100,8 +100,8 @@ def forg(f):
     base = FEGYVERHOSSZ[f.hossz]["forg"]
     return base + (" (1 kézzel)" if f.egykezes_kenyszer else "")
 
-FEJLEC = ["Fegyver", "Mód (Aktor)", "Típus", "TÉ", "VÉ", "SP", "Átütés", "Seb.", "Forgatás", "Fh", "Megj."]
-JOBBRA = {3, 4, 5, 6, 7, 9}  # jobbra igazított (numerikus) oszlopok
+FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Átütés", "Seb.", "Forgatás", "Fh", "Megj."]
+JOBBRA = {4, 5, 6, 7, 8, 10}  # jobbra igazított (numerikus) oszlopok
 
 
 def sorok_kategoriankent():
@@ -112,7 +112,8 @@ def sorok_kategoriankent():
             n = nev if i == 0 else ""
             mm = megj if i == 0 else ""
             par = " ⚠️párbaj:VÉ0" if m["parbaj_alkalmatlan"] else ""
-            rows.append([n, m["aktor"], m["tipus"], str(m["TE"]), str(m["VE"]),
+            rows.append([n, m["aktor"], m["tipus"], m["sebzestipus"],
+                         str(m["TE"]), str(m["VE"]),
                          f"{m['SP']:+d}", str(m["AT"]), str(m["SEB"]), forg(f),
                          str(f.hossz), (mm + par).strip()])
     return out
