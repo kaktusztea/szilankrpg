@@ -91,7 +91,7 @@ A fejléc ✏️ gombjával nyíló ablak három részből áll:
 
 ## Előtörténet (🪪)
 
-A Tulajdonságok fül fejlécében a 🪪 gombbal nyíló ablak a karakter biográfiai adatait fogja össze: Becenév, Név, Kor, Vallás, Származás helye, Szociális érzék, Külső, és egy hosszú Előtörténet szövegmező (max 5000 karakter).
+A Tulajdonságok fül fejlécében a 🪪 gombbal nyíló ablak a karakter biográfiai adatait fogja össze: Becenév, Név, Kor, Vallás, Származás helye, Szociális érzék, Külső, és egy hosszú Előtörténet szövegmező (max 5000 karakter). A 🪪 mellett egy **JK / NJK chip** is van, amivel a karakter Játékos ⇄ Nem Játékos Karakterré váltható (az NJK-k a Karakterek listában külön csoportba kerülnek, és megjelenik számukra az NJK switcher sáv).
 
 ---
 ## Rejtett funkciók
@@ -142,6 +142,18 @@ A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képz
 - ⟲ gombbal újradobhatod (eredmény törlése, beállítások maradnak)
 - Escape / ✕: popup bezárása
 
+### NJK switcher sáv és harci jelölés (KM eszköz)
+
+Ha **NJK** (Nem Játékos Karakter) van kijelölve, a fejléc alatt megjelenik egy fix sáv az összes tárolt NJK-val (egy-egy box: becenév vagy név + Életerő állapot). A Kalandmester harc közben egyetlen koppintással válthat az NJK-k között, anélkül hogy a Karakterek ablakot megnyitná.
+
+Egy karakter a Tulajdonságok fül fejlécében a **JK / NJK chip**-pel tehető Nem Játékos Karakterré (a chip koppintással vált JK ⇄ NJK között).
+
+Az NJK boxokon jelölhető, melyik NJK kivel harcol (pl. „A" = Attila ellenfele):
+
+- **Betű felvétele**: az NJK boxot **hosszan lenyomva** (long-press) felugrik egy betű-picker — A–Z színes karika chipek. A választott betű egy színes karikában a box legelején, a név előtt jelenik meg. „Nincs jelölés ❌" törli a betűt.
+- **Szín**: a betű színe automatikusan, felvételkor dől el úgy, hogy minden eltérő betű eltérő színt kapjon (ugyanaz a betű mindig ugyanazt a színt). Egy betűt több NJK is hordhat.
+- **Jegyzet**: a box elején lévő betű-karikára **koppintva** felugrik egy kis jegyzet ablak, ahova a KM szabadon írhat (pl. „félkezű, akit Attila már hátbaszúrt egyszer"). Mellé koppintás / Escape ment és bezár.
+
 ### Szabály linkek (🔗)
 
 Fortélyoknál és képzettségeknél megjelenik egy 🔗 ikon, ami a GitHub-on lévő szabályrendszer releváns oldalára navigál.
@@ -171,8 +183,8 @@ A "Szilánk" feliratra duplán koppintva 5 másodpercre megjelenik a build verzi
 ---
 ## Karaktertár
 
-- Max 10 karakter tárolható a böngésző localStorage-ában
-- 🧑 Karakterek: slot lista (aktív ●, többi ○), relatív idő kijelzéssel
+- Max 16 karakter tárolható a böngésző localStorage-ában (ebből legfeljebb 10 lehet NJK)
+- 🧑 Karakterek: slot lista (az aktív karakter kiemelve), soronként a névvel és TSz jelzéssel `(Nsz)`. Ha van NJK, a lista „Játékos karakterek" és „Nem Játékos karakterek" csoportokra bomlik.
 - Felső sor: ✚ Új karakter, 📥 Importálás, 📦 Összes mentése (backup)
 - Slot soronkénti gombok: 💾 Mentés/Exportálás, ⧉ Duplikálás, ✕ Törlés
 - **💾 Mentés/Exportálás** popup:
