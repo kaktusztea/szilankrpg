@@ -24,128 +24,37 @@ szinkronizáld automatikusan.
 ─────────────────────────────────────────────────────────────────────────────
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+import pathlib
+import yaml
 
 # ─────────────────────────────────────────────────────────────────────────────
-# PARAMÉTER TÁBLÁK
+# ADAT BETÖLTÉS — minden paraméter a data/fegyvergenerator/ YAML-okból jön.
+# A szkriptben NINCS beégetett adat, csak modell-logika.
 # ─────────────────────────────────────────────────────────────────────────────
-
-# fegyverhossz: kat -> (TÉ/VÉ, SP, Sebesség, forgatás)
-FEGYVERHOSSZ = {
-    0:  dict(tv=0,  sp=0, seb=5, forg="egykezes"),
-    1:  dict(tv=1,  sp=1, seb=5, forg="egykezes"),
-    2:  dict(tv=2,  sp=2, seb=5, forg="egykezes"),
-    3:  dict(tv=3,  sp=3, seb=6, forg="egykezes"),
-    5:  dict(tv=5,  sp=4, seb=6, forg="másfélkezes"),
-    7:  dict(tv=7,  sp=5, seb=7, forg="kétkezes"),
-    9:  dict(tv=9,  sp=5, seb=8, forg="kétkezes"),
-    12: dict(tv=12, sp=5, seb=9, forg="kétkezes"),
-}
-
-# aktor: név -> (típus, sp, átütés, TÉ, VÉ, seb)
-AKTOR = {
-    "botvég":                     dict(t="zúzó",         sp=0, at=0, te=0, ve=0,  seb=0),
-    "buzogányfej-tompa":          dict(t="zúzó",         sp=2, at=0, te=0, ve=-2, seb=0),
-    "buzogányfej-szöges":         dict(t="zúzó",         sp=1, at=2, te=0, ve=-3, seb=0),
-    "pengehegy-apró":             dict(t="szúró",        sp=0, at=0, te=0, ve=0,  seb=0),
-    "pengehegy-tőr":              dict(t="szúró",        sp=1, at=0, te=0, ve=0,  seb=0),
-    "pengehegy-kard":             dict(t="szúró",        sp=2, at=1, te=0, ve=0,  seb=0),
-    "vágóél-egyenes-rövid":       dict(t="vágó-egyenes", sp=0, at=0, te=1, ve=1,  seb=0),
-    "vágóél-egyenes-átlagos":     dict(t="vágó-egyenes", sp=1, at=0, te=2, ve=2,  seb=0),
-    "vágóél-egyenes-nagy":        dict(t="vágó-egyenes", sp=2, at=0, te=2, ve=2,  seb=0),
-    "vágóél-íves-rövid":          dict(t="vágó-íves",    sp=1, at=0, te=0, ve=0,  seb=0),
-    "vágóél-íves-átlagos":        dict(t="vágó-íves",    sp=2, at=0, te=0, ve=0,  seb=1),
-    "vágóél-íves-nagy":           dict(t="vágó-íves",    sp=3, at=0, te=0, ve=0,  seb=1),
-    "lándzsahegy-rövid-átlagos":  dict(t="szúró",        sp=3, at=2, te=0, ve=0,  seb=0),
-    "lándzsahegy-rövid-széles":   dict(t="szúró",        sp=4, at=0, te=0, ve=0,  seb=0),
-    "lándzsahegy-rövid-keskeny":  dict(t="szúró",        sp=2, at=4, te=0, ve=0,  seb=0),
-    "lándzsahegy-tőrhossz":       dict(t="szúró",        sp=4, at=0, te=0, ve=0,  seb=0),
-    "lándzsahegy-rövidkardhossz": dict(t="szúró",        sp=5, at=0, te=0, ve=0,  seb=0),
-    "lándzsahegy-hosszúkardhossz":dict(t="szúró",        sp=6, at=0, te=0, ve=0,  seb=1),
-    "kampós-vég":                 dict(t="nincs",        sp=0, at=0, te=0, ve=0,  seb=0),
-}
-
-# fejdarab: n -> (seb, TÉ)
-FEJDARAB = {0: dict(seb=0, te=0), 1: dict(seb=1, te=0), 2: dict(seb=2, te=-2), 3: dict(seb=3, te=-4)}
-
-# súly: név -> (sp, seb, erőköv)   [nehéz/súlyos: sp VAGY átütés — alább 'nehéz_mód' dönt]
-SULY = {
-    "könnyű":  dict(sp=-1, seb=-1, erő=0),   # DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva)
-    "átlagos": dict(sp=0,  seb=0,  erő=0),
-    "nehéz":   dict(sp=1,  seb=1,  erő=2),
-    "súlyos":  dict(sp=2,  seb=2,  erő=3),
-}
-
-# idea: szint -> (tvc, sp, seb, súly_delta)
-IDEA = {
-    -5: dict(tvc=-3, sp=-5, seb=2,  suly=0),
-    -4: dict(tvc=-2, sp=-4, seb=1,  suly=0),
-    -3: dict(tvc=-1, sp=-3, seb=1,  suly=0),
-    -2: dict(tvc=-1, sp=-2, seb=0,  suly=0),
-    -1: dict(tvc=0,  sp=-1, seb=0,  suly=0),
-     0: dict(tvc=0,  sp=0,  seb=0,  suly=0),
-     1: dict(tvc=0,  sp=1,  seb=0,  suly=0),
-     2: dict(tvc=1,  sp=2,  seb=0,  suly=0),
-     3: dict(tvc=1,  sp=3,  seb=-1, suly=0),
-     4: dict(tvc=2,  sp=4,  seb=-1, suly=-1),
-     5: dict(tvc=3,  sp=5,  seb=-2, suly=-2),
-}
-
-# alapanyag: név -> (tvc, sp, [extra])   — ÚJ értékek a legendás fémekre
-ALAPANYAG = {
-    "test":       dict(tvc=-3, sp=-5),
-    "krumpli":    dict(tvc=-3, sp=-5),
-    "csont":      dict(tvc=0,  sp=-4),
-    "kő":         dict(tvc=0,  sp=-3),
-    "bronz":      dict(tvc=0,  sp=-2),
-    "acél":       dict(tvc=0,  sp=0),
-    "abbitacél":  dict(tvc=1,  sp=1),
-    "mithrill":   dict(tvc=1,  sp=2,  suly=-1),
-    "lunír":      dict(tvc=1,  sp=0,  suly=-2),          # ÚJ: gyorsaság-fém
-    "feketeacél": dict(tvc=1,  sp=1),                    # Mara-Sequor — Chi-harcban törhetetlen
-    "ősfém":      dict(tvc=2,  sp=2),                    # ÚJ: 1-2. kori — szellem/élőholt sebez
-    "élőereklye": dict(tvc=2,  sp=3),                    # ÚJ: törhetetlen, kötődik
-    "álomfém":    dict(tvc=1,  sp=1,  at=2),             # ÚJ: +2 Átütés, mágiaűrben elveszik
-}
-
-# sebzéstípus TÉ/VÉ módosító alkotáskor (típus-szint)
-# MEGJEGYZÉS: a szúró TÉ+1/VÉ-1 variánst teszteltük, de ELVETVE — a szúró módok
-# már +3 SP-t kapnak láncing-és-alatta ellen; egy plusz flat TÉ átfedne a 'pontos'
-# paraméterrel és felülerősítené a szúrást (a cut/thrust egyensúly romlana).
-TIPUS_TV = {
-    "zúzó":         dict(te=0,  ve=0),
-    "szúró":        dict(te=0,  ve=0),
-    "vágó-egyenes": dict(te=0,  ve=0),    # a +2 az AKTOR szinten van elosztva
-    "vágó-íves":    dict(te=0,  ve=0),
-    "nincs":        dict(te=0,  ve=0),
-}
-
-# ─────────────────────────────────────────────────────────────────────────────
-# PÁNCÉLOK (balansz teszthez)
-# ─────────────────────────────────────────────────────────────────────────────
-# név -> (SFÉ, fém?, kategória a típusbónuszokhoz)
-PANCEL = [
-    ("csupasz",      0,  False),
-    ("posztó",       2,  False),
-    ("fegyverkabát", 3,  False),
-    ("bőr",          7,  False),
-    ("lánc",         10, True),
-    ("pikkely",      15, True),
-    ("lemez",        20, True),
-]
-
-K20_ATLAG = 10.5
-EP_PER_KAT = 9.0  # ~ÉP/4 tipikus kalandozónál
+DATA_DIR = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "fegyvergenerator"
 
 
-# típus × páncélosztály: flat SP delta (bónusz + büntetés)
-TIPUS_PANCEL = {
-    "zúzó":         dict(csupasz=0,  puha=0,  bor=+1, lanc=+3, merev=+3),  # páncéltörő, gyenge húson
-    "szúró":        dict(csupasz=+2, puha=+3, bor=+1, lanc=0,  merev=-3),  # réseket talál, plate-ről lecsúszik
-    "vágó-egyenes": dict(csupasz=+1, puha=+1, bor=0,  lanc=-2, merev=-4),  # húson jó, fémen rossz
-    "vágó-íves":    dict(csupasz=+3, puha=+2, bor=0,  lanc=-2, merev=-4),  # húson kiváló, fémen a legrosszabb
-    "nincs":        dict(csupasz=0,  puha=0,  bor=0,  lanc=0,  merev=0),
-}
+def _load(nev):
+    with open(DATA_DIR / nev, encoding="utf-8") as fh:
+        return yaml.safe_load(fh)
+
+
+_K = _load("konstansok.yaml")
+# int kulcsok normalizálása (YAML-ban stringként is jöhetnének)
+FEGYVERHOSSZ = {int(k): v for k, v in _K["fegyverhossz"].items()}
+FEJDARAB     = {int(k): v for k, v in _K["fejdarab"].items()}
+IDEA         = {int(k): v for k, v in _K["idea"].items()}
+AKTOR        = _K["aktor"]
+SULY         = _K["suly"]
+ALAPANYAG    = _K["alapanyag"]
+TIPUS_TV     = _K["tipus_tv"]
+PANCEL       = [tuple(x) for x in _K["pancel"]]
+K20_ATLAG    = _K["k20_atlag"]
+EP_PER_KAT   = _K["ep_per_kat"]
+
+# sebzésjelleg × páncélosztály mátrix (flat SP delta) — a szituációs balansz motorja
+TIPUS_PANCEL = _load("sebzesjelleg_pancel_matrix.yaml")["matrix"]
 
 
 def tipusbonusz(tipus, sfe, fem):
@@ -257,29 +166,14 @@ class Fegyver:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FEGYVER DEFINÍCIÓK (a doksi WORK blokkjai)
+# FEGYVER KATALÓGUS — WORK paraméterek a data/fegyvergenerator/fegyverek.yaml-ből.
+# FEGYVEREK = a `teszt_minta: true` rekordok (balansz self-test/elemzés).
 # ─────────────────────────────────────────────────────────────────────────────
 
-FEGYVEREK = {
-    "Kő": Fegyver("Kő", 0, ["buzogányfej-tompa"], fejdarab_alap=1, suly="könnyű", alapanyag="kő"),
-    "Kés": Fegyver("Kés", 0, ["vágóél-íves-rövid", "pengehegy-apró"], penges=1, suly="könnyű"),
-    "Tőr": Fegyver("Tőr", 1, ["vágóél-egyenes-rövid", "pengehegy-tőr"], penges=1, suly="átlagos"),
-    "Kard, rövid": Fegyver("Kard, rövid", 2, ["vágóél-egyenes-rövid", "pengehegy-tőr"], penges=1),
-    "Furkósbot": Fegyver("Furkósbot", 1, ["botvég"]),
-    "Hosszú kard": Fegyver("Hosszú kard", 3, ["vágóél-egyenes-átlagos", "pengehegy-kard"], penges=1),
-    "Kard, másfélkezes": Fegyver("Kard, másfélkezes", 5, ["vágóél-egyenes-átlagos", "pengehegy-kard"], penges=1),
-    "Kard, kétkezes": Fegyver("Kard, kétkezes", 7, ["vágóél-egyenes-nagy", "pengehegy-kard"], penges=1, suly="nehéz"),
-    "Rapír": Fegyver("Rapír", 3, ["pengehegy-kard", "vágóél-egyenes-átlagos"], penges=1),
-    "Slan kard (Idea2)": Fegyver("Slan kard", 5, ["vágóél-íves-átlagos", "pengehegy-kard"], penges=1, idea=2),
-    "Mara-Sequor (Idea3)": Fegyver("Mara-Sequor", 5, ["vágóél-íves-átlagos"], penges=1, idea=3, alapanyag="feketeacél"),
-    "Alabárd": Fegyver("Alabárd", 9, ["vágóél-íves-nagy", "lándzsahegy-rövid-átlagos", "buzogányfej-tompa"],
-                       fejdarab_alap=2, penges=1, suly="nehéz"),
-    "Lándzsa": Fegyver("Lándzsa", 9, ["lándzsahegy-rövid-átlagos"], penges=1),
-    "Wakizashi": Fegyver("Wakizashi", 2, ["vágóél-íves-rövid"], penges=1),
-    "Naginata (Idea2)": Fegyver("Naginata", 12, ["vágóél-íves-nagy"], penges=1, idea=2),
-    # balansz-referenciák
-    "Kétkezes buzogány": Fegyver("Kétkezes buzogány", 7, ["buzogányfej-tompa"], suly="súlyos"),
-}
+FEGYVER_RECORDS = _load("fegyverek.yaml")
+# A balansz self-testben részt vevő kiemelt fegyverek (teszt_minta: true).
+FEGYVEREK = {r["nev"]: Fegyver(nev=r["nev"], **r["fegyver"])
+             for r in FEGYVER_RECORDS if r.get("teszt_minta")}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -287,30 +181,22 @@ FEGYVEREK = {
 # ─────────────────────────────────────────────────────────────────────────────
 
 def teszt_regresszio():
-    """Ellenőrzi, hogy a modell reprodukálja a doksi GAME értékeit (Erő nélkül a doksi
-    a nyers alapértékeket adja — a GAME blokkok Erő=0-val készültek a legtöbb helyen,
-    de a doksi TÉ/VÉ Erőtől független)."""
-    # (fegyver, aktor, várt TÉ, VÉ)  — a doksi GAME blokkjaiból, TÉ/VÉ Erő-független
-    # FIGYELEM: a doksi thrust-módjai MÉG a régi (szúró TÉ/VÉ=0) szabállyal készültek.
-    # Az új szúró TÉ+1/VÉ-1 szándékos eltérés — a vágó módokat ellenőrizzük regresszióra.
-    vart = [
-        ("Kő", "buzogányfej-tompa", 0, -2),
-        ("Furkósbot", "botvég", 1, 1),
-        ("Hosszú kard", "vágóél-egyenes-átlagos", 6, 6),
-        ("Kard, kétkezes", "vágóél-egyenes-nagy", 10, 10),
-        ("Naginata (Idea2)", "vágóél-íves-nagy", 14, 14),
-        ("Alabárd", "vágóél-íves-nagy", 6, 10),
-    ]
-    print("=== REGRESSZIÓ (vágó/zúzó módok TÉ/VÉ, Erő-független) ===")
+    """Ellenőrzi, hogy a modell reprodukálja az elvárt bázis TÉ/VÉ értékeket.
+    Az elvárt értékek a fegyverek.yaml `elvart` mezőiből jönnek (Erő-független).
+    FIGYELEM: csak vágó/zúzó módokat ellenőrzünk — a doksi thrust-módjai a régi
+    (szúró TÉ/VÉ=0) szabállyal készültek, az új szúró szándékos eltérés lehet."""
+    print("=== REGRESSZIÓ (elvárt TÉ/VÉ, Erő-független) ===")
     ok = True
-    for fnev, aktor, vte, vve in vart:
-        f = FEGYVEREK[fnev]
-        m = next(x for x in f.modok(ero=0) if x["aktor"].startswith(aktor.split("-")[0])
-                 and x["aktor"] == aktor)
-        jel = "✅" if (m["TE"] == vte and m["VE"] == vve) else "❌"
-        if jel == "❌":
-            ok = False
-        print(f"  {jel} {fnev:24s} {aktor:24s} TÉ {m['TE']:>3}(≈{vte}) VÉ {m['VE']:>3}(≈{vve})")
+    for r in FEGYVER_RECORDS:
+        if "elvart" not in r:
+            continue
+        f = FEGYVEREK[r["nev"]]
+        for aktor, (vte, vve) in r["elvart"].items():
+            m = next(x for x in f.modok(ero=0) if x["aktor"] == aktor)
+            jel = "✅" if (m["TE"] == vte and m["VE"] == vve) else "❌"
+            if jel == "❌":
+                ok = False
+            print(f"  {jel} {r['nev']:24s} {aktor:24s} TÉ {m['TE']:>3}(≈{vte}) VÉ {m['VE']:>3}(≈{vve})")
     print(f"  → {'MIND OK' if ok else 'ELTÉRÉS!'}\n")
     return ok
 

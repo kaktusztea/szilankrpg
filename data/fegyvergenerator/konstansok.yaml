@@ -1,0 +1,105 @@
+# Fegyvergenerátor — konstans paramétertáblák (a modell bemenete).
+# Ezt olvassa be a code/balance/fegyvergenerator_balansz.py. A szkriptekben NINCS adat.
+# FIGYELEM: tervezői eszköz adata, NEM a data/sources pipeline része (a generate_tables.py
+# csak a data/sources/ könyvtárat dolgozza fel — ez a mappa kimarad).
+
+# fegyverhossz: kategória -> TÉ/VÉ (tv), SP, Sebesség (seb), forgatás
+fegyverhossz:
+  0:  {tv: 0,  sp: 0, seb: 5, forg: egykezes}
+  1:  {tv: 1,  sp: 1, seb: 5, forg: egykezes}
+  2:  {tv: 2,  sp: 2, seb: 5, forg: egykezes}
+  3:  {tv: 3,  sp: 3, seb: 6, forg: egykezes}
+  5:  {tv: 5,  sp: 4, seb: 6, forg: másfélkezes}
+  7:  {tv: 7,  sp: 5, seb: 7, forg: kétkezes}
+  9:  {tv: 9,  sp: 5, seb: 8, forg: kétkezes}
+  12: {tv: 12, sp: 5, seb: 9, forg: kétkezes}
+
+# aktor: név -> sebzésjelleg (t), SP, Átütés (at), TÉ (te), VÉ (ve), Sebesség (seb)
+aktor:
+  botvég:                      {t: zúzó,         sp: 0, at: 0, te: 0, ve: 0,  seb: 0}
+  buzogányfej-tompa:           {t: zúzó,         sp: 2, at: 0, te: 0, ve: -2, seb: 0}
+  buzogányfej-szöges:          {t: zúzó,         sp: 1, at: 2, te: 0, ve: -3, seb: 0}
+  pengehegy-apró:              {t: szúró,        sp: 0, at: 0, te: 0, ve: 0,  seb: 0}
+  pengehegy-tőr:               {t: szúró,        sp: 1, at: 0, te: 0, ve: 0,  seb: 0}
+  pengehegy-kard:              {t: szúró,        sp: 2, at: 1, te: 0, ve: 0,  seb: 0}
+  vágóél-egyenes-rövid:        {t: vágó-egyenes, sp: 0, at: 0, te: 1, ve: 1,  seb: 0}
+  vágóél-egyenes-átlagos:      {t: vágó-egyenes, sp: 1, at: 0, te: 2, ve: 2,  seb: 0}
+  vágóél-egyenes-nagy:         {t: vágó-egyenes, sp: 2, at: 0, te: 2, ve: 2,  seb: 0}
+  vágóél-íves-rövid:           {t: vágó-íves,    sp: 1, at: 0, te: 0, ve: 0,  seb: 0}
+  vágóél-íves-átlagos:         {t: vágó-íves,    sp: 2, at: 0, te: 0, ve: 0,  seb: 1}
+  vágóél-íves-nagy:            {t: vágó-íves,    sp: 3, at: 0, te: 0, ve: 0,  seb: 1}
+  lándzsahegy-rövid-átlagos:   {t: szúró,        sp: 3, at: 2, te: 0, ve: 0,  seb: 0}
+  lándzsahegy-rövid-széles:    {t: szúró,        sp: 4, at: 0, te: 0, ve: 0,  seb: 0}
+  lándzsahegy-rövid-keskeny:   {t: szúró,        sp: 2, at: 4, te: 0, ve: 0,  seb: 0}
+  lándzsahegy-tőrhossz:        {t: szúró,        sp: 4, at: 0, te: 0, ve: 0,  seb: 0}
+  lándzsahegy-rövidkardhossz:  {t: szúró,        sp: 5, at: 0, te: 0, ve: 0,  seb: 0}
+  lándzsahegy-hosszúkardhossz: {t: szúró,        sp: 6, at: 0, te: 0, ve: 0,  seb: 1}
+  kampós-vég:                  {t: nincs,        sp: 0, at: 0, te: 0, ve: 0,  seb: 0}
+
+# fejdarab: n -> Sebesség (seb), TÉ (te)
+fejdarab:
+  0: {seb: 0, te: 0}
+  1: {seb: 1, te: 0}
+  2: {seb: 2, te: -2}
+  3: {seb: 3, te: -4}
+
+# súly: név -> SP, Sebesség (seb), Erő-követelmény (erő)
+# DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva). nehéz/súlyos: sp VAGY átütés (a fegyver nehez_mod dönt).
+suly:
+  könnyű:  {sp: -1, seb: -1, erő: 0}
+  átlagos: {sp: 0,  seb: 0,  erő: 0}
+  nehéz:   {sp: 1,  seb: 1,  erő: 2}
+  súlyos:  {sp: 2,  seb: 2,  erő: 3}
+
+# idea: szint -> TÉ/VÉ közös (tvc), SP, Sebesség (seb), súly-delta (suly)
+idea:
+  -5: {tvc: -3, sp: -5, seb: 2,  suly: 0}
+  -4: {tvc: -2, sp: -4, seb: 1,  suly: 0}
+  -3: {tvc: -1, sp: -3, seb: 1,  suly: 0}
+  -2: {tvc: -1, sp: -2, seb: 0,  suly: 0}
+  -1: {tvc: 0,  sp: -1, seb: 0,  suly: 0}
+  0:  {tvc: 0,  sp: 0,  seb: 0,  suly: 0}
+  1:  {tvc: 0,  sp: 1,  seb: 0,  suly: 0}
+  2:  {tvc: 1,  sp: 2,  seb: 0,  suly: 0}
+  3:  {tvc: 1,  sp: 3,  seb: -1, suly: 0}
+  4:  {tvc: 2,  sp: 4,  seb: -1, suly: -1}
+  5:  {tvc: 3,  sp: 5,  seb: -2, suly: -2}
+
+# alapanyag: név -> TÉ/VÉ közös (tvc), SP, opcionális súly-delta (suly) és Átütés (at)
+alapanyag:
+  test:       {tvc: -3, sp: -5}
+  krumpli:    {tvc: -3, sp: -5}
+  csont:      {tvc: 0,  sp: -4}
+  kő:         {tvc: 0,  sp: -3}
+  bronz:      {tvc: 0,  sp: -2}
+  acél:       {tvc: 0,  sp: 0}
+  abbitacél:  {tvc: 1,  sp: 1}
+  mithrill:   {tvc: 1,  sp: 2,  suly: -1}
+  lunír:      {tvc: 1,  sp: 0,  suly: -2}   # gyorsaság-fém
+  feketeacél: {tvc: 1,  sp: 1}              # Mara-Sequor — Chi-harcban törhetetlen
+  ősfém:      {tvc: 2,  sp: 2}              # 1-2. kori — szellem/élőholt sebez
+  élőereklye: {tvc: 2,  sp: 3}              # törhetetlen, kötődik
+  álomfém:    {tvc: 1,  sp: 1,  at: 2}      # +2 Átütés, mágiaűrben elveszik
+
+# sebzésjelleg TÉ/VÉ módosító alkotáskor (jelleg-szint). Jelenleg mind 0:
+# a vágó-egyenes +2-je az AKTOR szinten van elosztva; a szúró NEM kap flat TÉ-t (döntés).
+tipus_tv:
+  zúzó:         {te: 0, ve: 0}
+  szúró:        {te: 0, ve: 0}
+  vágó-egyenes: {te: 0, ve: 0}
+  vágó-íves:    {te: 0, ve: 0}
+  nincs:        {te: 0, ve: 0}
+
+# páncélok a balansz-teszthez: [név, SFÉ, fém?]
+pancel:
+  - [csupasz,      0,  false]
+  - [posztó,       2,  false]
+  - [fegyverkabát, 3,  false]
+  - [bőr,          7,  false]
+  - [lánc,         10, true]
+  - [pikkely,      15, true]
+  - [lemez,        20, true]
+
+# balansz-teszt konstansok
+k20_atlag: 10.5     # k20 átlagdobás
+ep_per_kat: 9.0     # ~ÉP/4 tipikus kalandozónál (sebesülés-kategória)

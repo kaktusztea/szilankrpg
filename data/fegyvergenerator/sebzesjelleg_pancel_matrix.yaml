@@ -1,0 +1,10 @@
+# Sebzésjelleg × páncélosztály mátrix — flat SP delta (bónusz ÉS büntetés).
+# Ez a szituációs balansz LELKE: a támadó SP-oldalán módosít, a védő SFÉ-je marad egy szám.
+# Páncélosztály: csupasz | puha (posztó/kabát) | bőr | lánc (fém-hajlékony) | merev (pikkely/lemez).
+# Az osztályba sorolás logikája (SFÉ/fém alapján) a szkriptben van (tipusbonusz), az ÉRTÉKEK itt.
+matrix:
+  zúzó:         {csupasz: 0,  puha: 0,  bor: 1, lanc: 3,  merev: 3}   # páncéltörő, gyenge húson
+  szúró:        {csupasz: 2,  puha: 3,  bor: 1, lanc: 0,  merev: -3}  # réseket talál, lemezről lecsúszik
+  vágó-egyenes: {csupasz: 1,  puha: 1,  bor: 0, lanc: -2, merev: -4}  # húson jó, fémen rossz
+  vágó-íves:    {csupasz: 3,  puha: 2,  bor: 0, lanc: -2, merev: -4}  # húson kiváló, fémen a legrosszabb
+  nincs:        {csupasz: 0,  puha: 0,  bor: 0, lanc: 0,  merev: 0}
