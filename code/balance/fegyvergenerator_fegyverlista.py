@@ -27,7 +27,17 @@ FEGYVERHOSSZ = bal.FEGYVERHOSSZ
 
 # (kategória, megjelenített név, Fegyver, megjegyzés)
 # WORK paraméterek: data/fegyvergenerator/fegyverek.yaml (a `kat` mezővel bíró rekordok)
-W = [(r["kat"], r["nev"], F(nev=r["nev"], **r["fegyver"]), r.get("megj", ""))
+def _megj(r):
+    """Megj. cella: a szöveges megj + a strukturált követelmény (ha van)."""
+    m = r.get("megj", "")
+    k = r.get("kovetelmeny")
+    if k:
+        kv = f"Köv.: {k['nev']} {k['tipus']} {k['ertek']}"
+        m = f"{m}; {kv}" if m else kv
+    return m
+
+
+W = [(r["kat"], r["nev"], F(nev=r["nev"], **r["fegyver"]), _megj(r))
      for r in bal._load("fegyverek.yaml") if "kat" in r]
 
 

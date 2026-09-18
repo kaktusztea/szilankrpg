@@ -6,6 +6,7 @@
 #   megj        : csak a NEM levezethető info (spec mechanika, származás); a levezethetőt (íves/nehéz/Idea…) nem duplázzuk
 #   teszt_minta : true — a balansz self-testben/elemzésben részt vevő kiemelt fegyver
 #   elvart      : {aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték (Erő=0)
+#   kovetelmeny : {nev, tipus, ertek} — általános használati előfeltétel (pl. a régi „KF": Mesterfegyver fortély 2)
 #   fegyver     : a Fegyver modell WORK paraméterei (a defaultok elhagyhatók)
 
 
@@ -15,8 +16,8 @@
 - {nev: Dzsambia, kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], penges: 1, suly: könnyű}}
 - {nev: Kriszkés, kat: Közelharci, megj: páncéltalan szúrás +3 (spec), fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
 - {nev: Levéltőr, kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
-- {nev: Pugoss, kat: Közelharci, megj: "", fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
-- {nev: Ramiera, kat: Közelharci, megj: "", fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
+- {nev: Pugoss, kat: Közelharci, megj: "", kovetelmeny: {nev: Mesterfegyver, tipus: fortély, ertek: 2}, fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
+- {nev: Ramiera, kat: Közelharci, megj: "", kovetelmeny: {nev: Mesterfegyver, tipus: fortély, ertek: 2}, fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
 - {nev: "Tőr, kígyó", kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
 - {nev: "Tőr, páncélszúró", kat: Közelharci, megj: "belharcban SFÉ:0 (spec)", fegyver: {hossz: 2, aktorok: [pengehegy-tőr], penges: 1}}
 - {nev: "Tőr, Slan", kat: Közelharci, megj: "", fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, idea: 2}}
