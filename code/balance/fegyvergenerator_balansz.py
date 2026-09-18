@@ -206,9 +206,10 @@ class Fegyver:
                   + (1 if self.penges else 0)
                   + i["tvc"] + mat["tvc"]
                   - 2 * self.hajlekony)            # hajlékony VÉ:-2
-            # kat 9+ pengés → párbajban (1v1, fürge ellen) VÉ:0 — SZITUÁCIÓS,
-            # nem a bázis VÉ. A bázisértékbe NEM építjük be (lásd doksi GAME).
-            parbaj_alkalmatlan = (self.hossz >= 9 and self.penges)
+            # Beszorított(2) tag (kat. 7 és 9) + pengés → párbajban (1v1, fürge ellen) VÉ:0
+            # SZITUÁCIÓS, nem a bázis VÉ. A bázisértékbe NEM építjük be (lásd doksi GAME).
+            # Kat. 12 NEM: nincs Beszorított(2) tagje.
+            parbaj_alkalmatlan = (self.hossz in (7, 9) and self.penges)
 
             # ── SP ──
             szuro = a["t"] == "szúró"

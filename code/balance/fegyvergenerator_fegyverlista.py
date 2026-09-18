@@ -100,16 +100,37 @@ def forg(f):
     base = FEGYVERHOSSZ[f.hossz]["forg"]
     return base + (" (1 kézzel)" if f.egykezes_kenyszer else "")
 
-last_kat = None
-for kat, nev, f, megj in W:
-    if kat != last_kat:
-        print(f"\n### {kat}\n")
-        print("| Fegyver | Mód (Aktor) | Típus | TÉ | VÉ | SP | Átütés | Seb. | Forgatás | Fh | Megj. |")
-        print("|---|---|---|--:|--:|--:|--:|--:|---|--:|---|")
-        last_kat = kat
-    modok = f.modok(ero=0)
-    for i, m in enumerate(modok):
-        n = nev if i == 0 else ""
-        mm = megj if i == 0 else ""
-        par = " ⚠️párbaj:VÉ0" if m["parbaj_alkalmatlan"] else ""
-        print(f"| {n} | {m['aktor']} | {m['tipus']} | {m['TE']} | {m['VE']} | {m['SP']:+d} | {m['AT']} | {m['SEB']} | {forg(f)} | {f.hossz} | {mm}{par} |")
+FEJLEC = ["Fegyver", "Mód (Aktor)", "Típus", "TÉ", "VÉ", "SP", "Átütés", "Seb.", "Forgatás", "Fh", "Megj."]
+JOBBRA = {3, 4, 5, 6, 7, 9}  # jobbra igazított (numerikus) oszlopok
+
+
+def sorok_kategoriankent():
+    out = {}
+    for kat, nev, f, megj in W:
+        rows = out.setdefault(kat, [])
+        for i, m in enumerate(f.modok(ero=0)):
+            n = nev if i == 0 else ""
+            mm = megj if i == 0 else ""
+            par = " ⚠️párbaj:VÉ0" if m["parbaj_alkalmatlan"] else ""
+            rows.append([n, m["aktor"], m["tipus"], str(m["TE"]), str(m["VE"]),
+                         f"{m['SP']:+d}", str(m["AT"]), str(m["SEB"]), forg(f),
+                         str(f.hossz), (mm + par).strip()])
+    return out
+
+
+def emit_tabla(rows):
+    w = [len(h) for h in FEJLEC]
+    for r in rows:
+        for c, val in enumerate(r):
+            w[c] = max(w[c], len(val))
+    cell = lambda val, c: (val.rjust(w[c]) if c in JOBBRA else val.ljust(w[c]))
+    sep = lambda c: (("-" * (w[c] - 1) + ":") if c in JOBBRA else "-" * w[c])
+    print("| " + " | ".join(cell(FEJLEC[c], c) for c in range(len(FEJLEC))) + " |")
+    print("| " + " | ".join(sep(c) for c in range(len(FEJLEC))) + " |")
+    for r in rows:
+        print("| " + " | ".join(cell(r[c], c) for c in range(len(FEJLEC))) + " |")
+
+
+for kat, rows in sorok_kategoriankent().items():
+    print(f"\n### {kat}\n")
+    emit_tabla(rows)
