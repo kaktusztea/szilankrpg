@@ -199,6 +199,15 @@ Második fix sáv közvetlenül a Header alatt (`NjkSwitcher.tsx`, `.njk-bar`). 
 - **Váltás**: `loadSlotKarakter(uid)` (ugyanaz a betöltő, amit a Karakterek hub slot kártyája használ) → `activateKarakter` (state + undo stack + testMode=false + isDirty=true; `useKarakterActions`). Az elhagyott karakter mentése az autosave-en keresztül már megtörtént (szinkron, minden `karakter` változásnál).
 - **Késés**: a becenév átírása 1 render késéssel jelenik meg a sávon, mert a slot entry csak autosave-kor frissül.
 
+### KM harci jelölés (NJK chip)
+
+A KM harc közben megjelölheti, melyik NJK kivel harcol (pl. „A" = Attila ellenfele). A jelölés tisztán KM helyi eszköz: külön localStorage kulcsban (`szilank_km_jelolesek`, uid → `{ betű, szín, jegyzet }`, `hooks/km-jelolesek.ts`), NEM része a karakter sémának, NEM utazik URL-megosztásban vagy checkpointban. Slot törlésekor takarítódik (`deleteSlot` → `removeKmJelölés`).
+
+- **Betű-picker** (`KmJelolesPicker.tsx`): a chipen **long-press** (`useLongPress`, 500 ms) → overlay popup A–Z színes karika chipekkel (`.km-jel-grid` / `.km-jel-chip`). Kiválasztás = bezárás (nincs OK gomb). „Nincs jelölés ❌" → törli a betűt. A short-tap marad az NJK-váltás.
+- **Szín**: a szín NEM a betűből számolódik, hanem **felvételkor** dől el (`választSzínt`, `KM_JEL_SZÍNEK` 12 elemű paletta) a már használt színek ismeretében, hogy minden eltérő betű eltérő színt kapjon. Ugyanaz a betű ugyanazt a színt kapja (betű↔szín konzisztens); egy betűt több NJK is hordhat. A választott szín tárolódik (`szín` mező). A picker chipjei ugyanezt a színt mutatják előnézetként (`színÉrte` callback), de a döntés az `onPick`-ben rögzül.
+- **Megjelenítés**: a kiválasztott betű színes karikában (`.njk-jel`) a chip legelején, a név előtt.
+- **Jegyzet** (`KmJegyzetPopup.tsx`): a betű-karikára **tap** (a pointer eseményeket a karika elnyeli, hogy ne váltson NJK-t) → kis textarea popup (`.km-jegyzet-input`, max `MAX_KM_JEGYZET` = 120). Nincs OK/Kész gomb: mellé-kattintás vagy Escape ment és zár (`PopupOverlay onClose`). A karika `title` attribútuma a jegyzetet mutatja (hover).
+
 ---
 
 ## Szerkesztő mód vs Játék mód

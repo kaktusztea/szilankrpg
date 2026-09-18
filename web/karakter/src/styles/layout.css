@@ -188,6 +188,71 @@
   font-weight: bold;
 }
 
+/* KM harci jelölés karika (chip elején, a név előtt) */
+.njk-jel {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--jel-szín, var(--input-bg));
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* KM betű-picker grid (A–Z színes karikák) */
+.km-jel-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.km-jel-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: var(--jel-szín, var(--input-bg));
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.km-jel-chip-active {
+  border-color: var(--text);
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--jel-szín);
+}
+
+.km-jel-clear {
+  width: 100%;
+}
+
+/* KM jegyzet popup */
+.km-jegyzet-input {
+  width: 100%;
+  resize: vertical;
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 14px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
 /* --- Content & screen slider --- */
 .content {
   flex: 1;

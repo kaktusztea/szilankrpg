@@ -74,13 +74,16 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `slot-utils.ts` | Slot metaadat I/O: readSlots, writeSlots, `upsertSlotEntry`, `isUidTaken`, `isSlotFull`, `loadSlotKarakter` |
 | `njk-slots.ts` | NJK szabályok: `njkCount`, `njkLimitBlocked` (tárolási limit egyetlen döntési helye), `njkSlots` (switcher sáv adatai) |
 | `backup-restore.ts` | Backup visszaállítás (össz- + NJK limit betartatással) |
+| `km-jelolesek.ts` | KM harci jelölés I/O: NJK chip betű + szín + jegyzet (localStorage `szilank_km_jelolesek`, `választSzínt` felvételkori színválasztás) |
 
 ### Komponensek (`components/`)
 
 ```
 App.tsx                    Shell: tab navigáció, mód toggle, KP számítás
 Header.tsx                 Fejléc (cím, menü, mód toggle)
-NjkSwitcher.tsx            NJK switcher fix sáv (KM eszköz, Header alatt — csak NJK karakternél)
+NjkSwitcher.tsx            NJK switcher fix sáv (KM eszköz, Header alatt — csak NJK karakternél). Chipenként KM harci jelölés: long-press → betű-picker, betű-karika tap → jegyzet
+KmJelolesPicker.tsx        KM harci jelölés betű-picker overlay (A–Z színes karika chipek)
+KmJegyzetPopup.tsx         KM harci jegyzet popup (textarea egy NJK jelöléséhez)
 TabBar.tsx                 Alsó tab bar (tükrözött, ikon-only)
 TabContent.tsx             Screen slider wrapper
 KpBar.tsx                  KP sáv (szerkesztő módban)

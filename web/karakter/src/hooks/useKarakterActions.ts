@@ -9,6 +9,7 @@ import type { UndoEntry } from './useUndo';
 import { sanitizeUndo } from './useUndo';
 import { isSlotFull, isUidTaken, readSlots, writeSlots, upsertSlotEntry } from './slot-utils';
 import { njkLimitBlocked } from './njk-slots';
+import { removeKmJelölés } from './km-jelolesek';
 
 interface Deps {
   data: GameData | null;
@@ -102,6 +103,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
 
   function deleteSlot(uid: string) {
     localStorage.removeItem(`szilank_char_${uid}`);
+    removeKmJelölés(uid);
     const sl = readSlots().filter(x => x.uid !== uid);
     writeSlots(sl);
     if (karakter?.uid === uid) {

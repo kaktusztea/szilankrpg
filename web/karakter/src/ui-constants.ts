@@ -11,6 +11,15 @@ export const MAX_NÉV = 40;
 export const MAX_BECENÉV = 12;
 /** Max tárolt NJK (jk === false) karakter — az NJK switcher sáv is ennyit mutat. */
 export const MAX_NJK_DB = 10;
+/** KM harci jelölés (NJK chip): választható betűk. */
+export const KM_JEL_BETŰK = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+/** KM jelölés karika színpalettája (betűhöz determinisztikusan rendelve). Jól elkülönülő árnyalatok. */
+export const KM_JEL_SZÍNEK = [
+  '#e05252', '#e08a52', '#e0c452', '#a3d047', '#4caf50', '#3cbfa0',
+  '#3aa7d0', '#4f7fe0', '#7a5ce0', '#b455d0', '#d0559e', '#9e6b4f',
+] as const;
+/** KM jelölés jegyzet max hossza. */
+export const MAX_KM_JEGYZET = 120;
 export const MAX_TÁVOLSÁG_MÉTER = 500;
 export const MAX_KOR = 2000;
 export const DEFAULT_KOR = 25;
