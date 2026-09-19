@@ -73,3 +73,16 @@ extrak:
       - {típus: cél_páncél, érték: páncélos}
     hatás:
       - {cél: SFÉ, mód: szorzó, érték: 2}
+
+  # ── TULAJDONSÁG (építési/minőségi opció) ──
+  - id: pontos
+    név: "Pontos (hegyre élezett)"
+    csoport: tulajdonság
+    leírás: >
+      Precíziós szúróhegy: a Pontra támadás manőverre +2. Csak pengehegy aktor + egykezes
+      forgatás mellett értelmes; ára ~20×. Építési opció — jelenleg egy mainstream fegyver sem ilyen.
+    feltétel:
+      - {típus: aktor, érték: pengehegy}
+      - {típus: forgatás, érték: egykezes}
+    hatás:
+      - {cél: "Pontra támadás manőver", mód: flat, érték: 2}

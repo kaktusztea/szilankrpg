@@ -45,3 +45,14 @@ fegyver:
   fejdarab_alap:     {kötelező: false, típus: int,  forrás: fejdarab, default: 0, megjegyzés: "fejdarab alap; konstansok.yaml fejdarab (0..3)"}
   nehez_mod:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta SP-be VAGY Átütésbe menjen"}
   egykezes_kenyszer: {kötelező: false, típus: bool, default: false, megjegyzés: "pl. lándzsa pajzzsal: kétkezes/másfélkezes fegyver 1 kézzel (SP-büntetés)"}
+  szalfegyver_nyel:  {kötelező: false, típus: str,  forrás: szalfegyver_nyel, default: sima, megjegyzés: "szálfegyver nyél: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szalfegyver_nyel"}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SZÁNDÉKOSAN NEM séma-mező (a generátor csak a harcértékeket számolja):
+#   puha          → a soft-anyag TÉ/VÉ/SP hatását az `alapanyag` nyeli el (test/krumpli/csont);
+#                   saját hatása (FP-sebzés ÉP helyett) futásidejű sebzés-típus, nem bázisérték.
+#   forgatás      → SZÁRMAZTATOTT a `hossz`-ból (fegyverhossz `forg`); az 1-kezes SP-büntetést az
+#                   `egykezes_kenyszer` adja. Nem szabad input.
+#   övön hordható → logisztika/Felszerelés (előrántás/cipelés), nem harcérték; levezethető
+#                   (hossz ≤ 3 és nem szálfegyver).
+#   pontos        → futásidejű manőver-bónusz (Pontra támadás +2); már EXTRA: `pontos` az extrak.yaml-ban.

@@ -37,6 +37,7 @@ def _forras_ertekek():
         "idea":         {int(x) for x in k["idea"]},
         "alapanyag":    set(k["alapanyag"]),
         "fejdarab":     {int(x) for x in k["fejdarab"]},
+        "szalfegyver_nyel": set(k["szalfegyver_nyel"]),
         "extrak":    {m["id"] for m in _load("extrak.yaml")["extrak"]},
     }
 

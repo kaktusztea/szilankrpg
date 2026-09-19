@@ -90,6 +90,14 @@ tipus_tv:
   vágó-íves:    {te: 0, ve: 0}
   nincs:        {te: 0, ve: 0}
 
+# szálfegyver nyél: típus -> SP (direkt), súly (kategória-eltolás, mint idea/alapanyag suly_delta)
+# A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika — bázis-hatásuk nincs.
+szalfegyver_nyel:
+  sima:        {sp: 0, suly: 0}   # alap (nincs speciális nyél)
+  fanyelű:     {sp: 0, suly: 0}   # csak Fegyvertörés ellenpróba +2 (runtime) — bázis-hatás nincs
+  vasaltszárú: {sp: 0, suly: 1}   # +1 súly kategória
+  tömörszárú:  {sp: 1, suly: 2}   # +1 SP, +2 súly kategória (+1 Felszerelés pont = logisztika)
+
 # páncélok a balansz-teszthez: [név, SFÉ, fém?]
 pancel:
   - [csupasz,      0,  false]

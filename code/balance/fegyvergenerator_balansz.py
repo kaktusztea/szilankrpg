@@ -49,6 +49,7 @@ AKTOR        = _K["aktor"]
 SULY         = _K["suly"]
 ALAPANYAG    = _K["alapanyag"]
 TIPUS_TV     = _K["tipus_tv"]
+SZALFEGYVER_NYEL = _K["szalfegyver_nyel"]
 PANCEL       = [tuple(x) for x in _K["pancel"]]
 K20_ATLAG    = _K["k20_atlag"]
 EP_PER_KAT   = _K["ep_per_kat"]
@@ -86,6 +87,7 @@ class Fegyver:
     hajlekony: int = 0
     nehez_mod: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát
     egykezes_kenyszer: bool = False  # pl. lándzsa pajzzsal (kétkezes → 1 kézzel)
+    szalfegyver_nyel: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú — súly/SP hatás
 
     def modok(self, ero=2):
         """Visszaadja fegyvermódonként (aktoronként) a végső harcértékeket."""
@@ -93,10 +95,10 @@ class Fegyver:
         s = dict(SULY[self.suly])
         i = IDEA[self.idea]
         mat = ALAPANYAG[self.alapanyag]
+        nyel = SZALFEGYVER_NYEL[self.szalfegyver_nyel]
 
-        # idea és alapanyag súly-delta → eltolja a súly kategóriát (Sebesség/SP-re hat)
-        # egyszerűsítés: a súly-delta közvetlenül a Sebesség-et és a súly-SP-t módosítja
-        suly_delta = i.get("suly", 0) + mat.get("suly", 0)
+        # idea, alapanyag és szálfegyver-nyél súly-delta → eltolja a súly kategóriát (Sebesség/SP-re hat)
+        suly_delta = i.get("suly", 0) + mat.get("suly", 0) + nyel.get("suly", 0)
 
         fejdarab = self.fejdarab_alap + (1 if self.penges else 0)
         fd = FEJDARAB[fejdarab]
@@ -124,7 +126,7 @@ class Fegyver:
 
             # ── SP ──
             szuro = a["t"] == "szúró"
-            sp = h["sp"] + a["sp"] + mat["sp"] + i["sp"] + ero
+            sp = h["sp"] + a["sp"] + mat["sp"] + i["sp"] + ero + nyel.get("sp", 0)
             if self.penges:
                 sp += 1
             if self.lancos:
