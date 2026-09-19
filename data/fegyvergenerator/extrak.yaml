@@ -1,0 +1,75 @@
+# Fegyvergenerátor — EXTRÁK katalógusa (egységes).
+# Minden bejegyzés: {feltétel(ek) → hatás(ok)}. A `feltétel.típus` adja a jellegét,
+# a `csoport` az ember-olvasható / megjelenítési besorolást.
+# Hivatkozás id-vel, KÉT scope-on:
+#   - fegyveren:            fegyverek.yaml → `extrak: [id, ...]`   (fegyver-egyedi)
+#   - fegyverhossz-kat.:    konstansok.yaml fegyverhossz → `extrak: [id]`  (öröklődik minden ilyen hosszú fegyverre)
+# A generátor a kettőt ÖSSZEFÉSÜLI (unió). A hatás SZITUÁCIÓS (nem a bázisérték);
+# a futásidejű kiértékelés a reactive engine későbbi feladata.
+#
+# Mezők (a fortély/módosító vokabulárt tükrözi):
+#   feltétel[] : ÉS-kapcsolat. {típus, név?, érték?}
+#       típus: fortély (érték=fok≥) | tulajdonság (érték=szint≥) | státusz | harci_helyzet | cél_páncél | narratív (KM)
+#   hatás[]    : {cél, mód, érték}. mód: flat | szorzó | override | ...
+
+extrak:
+  # ── FELKÉSZÍTÉS (kiképzett, opt-in — a régi „extra"/KF) ──
+  - id: kulonleges_felkeszites
+    név: "Különleges felkészítés (KF)"
+    csoport: felkészítés
+    leírás: >
+      Megfelelő (gyakran titkos) iskola + Mesterfegyver-tudás kell. Enélkül a felkészítetlen
+      alapértékek érvényesek; felkészítve a Mesterfegyver e fegyverre adott bónusza megduplázódik.
+    feltétel:
+      - {típus: fortély, név: Mesterfegyver, érték: 1}   # az adott fegyverre, fok ≥ 1
+      - {típus: narratív, név: iskola}                   # nem gépi: KM dönti el
+    hatás:
+      # MÁSODRENDŰ: a Mesterfegyver e fegyverre vonatkozó bónuszát szorozza (×2).
+      - {cél: "Mesterfegyver-bónusz", mód: szorzó, érték: 2}
+
+  # ── HARCI HELYZET (szituációs, automatikus) ──
+  - id: beszorithato
+    név: "Beszorított"
+    csoport: harci_helyzet
+    leírás: "Hosszú fegyver (kat. 7/9): ha az ellenfél bejut, nem forgatható rendesen."
+    feltétel:
+      - {típus: státusz, név: Beszorított, érték: 2}      # (2) = súlyosság/tier
+    hatás:
+      - {cél: TÉ, mód: override, érték: 0}
+      - {cél: VÉ, mód: override, érték: 0}
+
+  - id: panceltalan_szuras
+    név: "Páncéltalan szúrás"
+    csoport: harci_helyzet
+    leírás: "Vértelen célon a hegy pontosabban talál."
+    feltétel:
+      - {típus: cél_páncél, érték: vértelen}
+    hatás:
+      - {cél: SP, mód: flat, érték: 3}
+
+  - id: belharc_sfe0
+    név: "Belharc réskeresés"
+    csoport: harci_helyzet
+    leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0."
+    feltétel:
+      - {típus: harci_helyzet, név: belharc}
+    hatás:
+      - {cél: SFÉ, mód: override, érték: 0}
+
+  - id: pajzs_ve_felezes
+    név: "Láncos: pajzs VÉ felezés"
+    csoport: harci_helyzet
+    leírás: "A láncos fej megkerüli a pajzsot — a pajzs adta VÉ feleződik."
+    feltétel:
+      - {típus: cél_felszereles, név: pajzs}
+    hatás:
+      - {cél: "pajzs-VÉ", mód: szorzó, érték: 0.5}
+
+  - id: sfe_duplazodik
+    név: "SFÉ duplán (íves penge)"
+    csoport: harci_helyzet
+    leírás: "Íves rövid penge páncél ellen különösen rossz: a cél páncél SFÉ-je duplán számít."
+    feltétel:
+      - {típus: cél_páncél, érték: páncélos}
+    hatás:
+      - {cél: SFÉ, mód: szorzó, érték: 2}

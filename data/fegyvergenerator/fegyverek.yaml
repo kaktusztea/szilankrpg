@@ -3,10 +3,11 @@
 #
 #   nev         : lookup + megjelenített név
 #   kat         : harcmodor — ha JELEN van, a fegyver MEGJELENIK a generált fegyverlistában (enélkül csak teszt-minta)
-#   megj        : csak a NEM levezethető info (spec mechanika, származás); a levezethetőt (íves/nehéz/Idea…) nem duplázzuk
+#   megj        : csak a NEM levezethető, NEM strukturált info (mechanika-jegyzet)
 #   teszt_minta : true — a balansz self-testben/elemzésben részt vevő kiemelt fegyver
 #   elvart      : {aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték (Erő=0)
-#   kovetelmeny : {nev, tipus, ertek} — általános használati előfeltétel (pl. a régi „KF": Mesterfegyver fortély 2)
+#   extrak   : [id, …] — hivatkozás a extrak.yaml katalógusra (KF, szituációs hatások). A Beszorítottat a
+#                 fegyverhossz-kategória örökíti (konstansok.yaml), NEM itt kell felsorolni.
 #   fegyver     : a Fegyver modell WORK paraméterei (a defaultok elhagyhatók)
 
 
@@ -14,13 +15,13 @@
 - {nev: Kés, kat: Közelharci, megj: "", teszt_minta: true, fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid, pengehegy-apró], penges: 1, suly: könnyű}}
 - {nev: Tőr, kat: Közelharci, megj: "", teszt_minta: true, fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], penges: 1}}
 - {nev: Dzsambia, kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], penges: 1, suly: könnyű}}
-- {nev: Kriszkés, kat: Közelharci, megj: páncéltalan szúrás +3 (spec), fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
+- {nev: Kriszkés, kat: Közelharci, megj: "", extrak: [panceltalan_szuras], fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
 - {nev: Levéltőr, kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
-- {nev: Pugoss, kat: Közelharci, megj: "", kovetelmeny: {nev: Mesterfegyver, tipus: fortély, ertek: 2}, fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
-- {nev: Ramiera, kat: Közelharci, megj: "", kovetelmeny: {nev: Mesterfegyver, tipus: fortély, ertek: 2}, fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
+- {nev: Pugoss, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
+- {nev: Ramiera, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
 - {nev: "Tőr, kígyó", kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
-- {nev: "Tőr, páncélszúró", kat: Közelharci, megj: "belharcban SFÉ:0 (spec)", fegyver: {hossz: 2, aktorok: [pengehegy-tőr], penges: 1}}
-- {nev: "Tőr, Slan", kat: Közelharci, megj: "", fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, idea: 2}}
+- {nev: "Tőr, páncélszúró", kat: Közelharci, megj: "", extrak: [belharc_sfe0], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], penges: 1}}
+- {nev: "Tőr, Slan", kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, idea: 2}}
 
 # ── Kardvívó ──
 - {nev: "Kard, rövid", kat: Kardvívó, megj: "", teszt_minta: true, fegyver: {hossz: 2, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], penges: 1}}
@@ -42,15 +43,15 @@
 - {nev: "Kard, mesterkard (2K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, suly: nehéz}}
 - {nev: "Kard, mesterkard (1K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, suly: nehéz, egykezes_kenyszer: true}}
 - {nev: "Kard, kétkezes", kat: Kardvívó, megj: "", teszt_minta: true, elvart: {vágóél-egyenes-nagy: [10, 10]}, fegyver: {hossz: 7, aktorok: [vágóél-egyenes-nagy, pengehegy-kard], penges: 1, suly: nehéz}}
-- {nev: Meneth, kat: Kardvívó, megj: SFÉ duplán (spec), fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], penges: 1}}
+- {nev: Meneth, kat: Kardvívó, megj: "", extrak: [sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], penges: 1}}
 - {nev: Sequor, kat: Kardvívó, megj: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], penges: 1}}
 - {nev: Vívóbot (fa gyakorló), kat: Kardvívó, megj: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: csont}}
-- {nev: "Kard, Slan rövid", kat: Kardvívó, megj: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], penges: 1, idea: 2}}
-- {nev: "Kard, Slan (1K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 3, egykezes_kenyszer: true}}
-- {nev: "Kard, Slan (2K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 3}}
-- {nev: "Kard, Slan csatakard", kat: Kardvívó, megj: "", fegyver: {hossz: 7, aktorok: [vágóél-íves-nagy, pengehegy-kard], penges: 1, idea: 4, suly: nehéz}}
-- {nev: Mara-sequor (1K), kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], penges: 1, idea: 3, alapanyag: feketeacél, egykezes_kenyszer: true}}
-- {nev: Mara-sequor (2K), kat: Kardvívó, megj: "", teszt_minta: true, fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], penges: 1, idea: 3, alapanyag: feketeacél}}
+- {nev: "Kard, Slan rövid", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], penges: 1, idea: 2}}
+- {nev: "Kard, Slan (1K)", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 3, egykezes_kenyszer: true}}
+- {nev: "Kard, Slan (2K)", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 3}}
+- {nev: "Kard, Slan csatakard", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 7, aktorok: [vágóél-íves-nagy, pengehegy-kard], penges: 1, idea: 4, suly: nehéz}}
+- {nev: Mara-sequor (1K), kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], penges: 1, idea: 3, alapanyag: feketeacél, egykezes_kenyszer: true}}
+- {nev: Mara-sequor (2K), kat: Kardvívó, megj: "", teszt_minta: true, extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], penges: 1, idea: 3, alapanyag: feketeacél}}
 
 # ── Lándzsavívó ──
 - {nev: "Lándzsa, átlagos", kat: Lándzsavívó, megj: "", teszt_minta: true, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], penges: 1}}
@@ -69,7 +70,7 @@
 - {nev: "Bot, furkós", kat: Romboló, megj: "", fegyver: {hossz: 3, aktorok: [botvég]}}
 - {nev: "Buzogány, egykezes", kat: Romboló, megj: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], suly: nehéz}}
 - {nev: "Buzogány, kétkezes", kat: Romboló, megj: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], suly: súlyos}}
-- {nev: "Buzogány, láncos", kat: Romboló, megj: pajzs VÉ feleződik, fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], lancos: 1}}
+- {nev: "Buzogány, láncos", kat: Romboló, megj: "", extrak: [pajzs_ve_felezes], fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], lancos: 1}}
 - {nev: "Buzogány, shadleki", kat: Romboló, megj: "", fegyver: {hossz: 3, aktorok: [buzogányfej-szöges], suly: nehéz}}
 - {nev: "Buzogány, tollas", kat: Romboló, megj: "", fegyver: {hossz: 2, aktorok: [buzogányfej-szöges]}}
 - {nev: "Csatabárd, egykezes", kat: Romboló, megj: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab_alap: 1, suly: nehéz, nehez_mod: átütés}}
@@ -85,7 +86,7 @@
 # ── — csak teszt-minta (nem mainstream) — ──
 - {nev: Kő, teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab_alap: 1, suly: könnyű, alapanyag: kő}}
 - {nev: Furkósbot, teszt_minta: true, elvart: {botvég: [1, 1]}, fegyver: {hossz: 1, aktorok: [botvég]}}
-- {nev: Slan kard, teszt_minta: true, fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 2}}
+- {nev: Slan kard, teszt_minta: true, extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 2}}
 - {nev: Wakizashi, teszt_minta: true, fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], penges: 1}}
 - {nev: Naginata, teszt_minta: true, elvart: {vágóél-íves-nagy: [14, 14]}, fegyver: {hossz: 12, aktorok: [vágóél-íves-nagy], penges: 1, idea: 2}}
 - {nev: Kétkezes buzogány, teszt_minta: true, fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], suly: súlyos}}

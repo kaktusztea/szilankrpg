@@ -1,0 +1,47 @@
+---
+# fegyverek.schema.yaml — a data/fegyvergenerator/fegyverek.yaml rekordjainak sémája.
+# EZT olvassa a validátor: code/balance/fegyverek_validator.py
+#
+# Stílus: strukturált (minden mező = {kötelező, típus, …}) — a validátor kommentek parse-olása
+# NÉLKÜL dolgozik. A katalógus-alapú enumokat NEM duplikáljuk: a `forrás:` / `elem_forrás:` a
+# konstansok.yaml ill. extrak.yaml ÉLŐ értékeire mutat (nem tud elcsúszni).
+#
+# Mező-leíró kulcsok:
+#   kötelező    : true/false
+#   típus       : str | int | bool | list | map
+#   enum        : fix megengedett értékek (itt soroljuk)
+#   forrás      : az érték a megadott katalógusban kell legyen (fegyverhossz|aktor|suly|idea|alapanyag|fejdarab|extrak)
+#   elem_forrás : listánál MINDEN elem a katalógusban kell legyen
+#   min         : lista min. hossza
+#   default / példa / megjegyzés / almezok : csak dokumentáció
+
+schema_version: 1
+
+# ── Top-level rekord mezők ──
+rekord:
+  nev:         {kötelező: true,  típus: str,  példa: "Kard, hosszú", megjegyzés: "lookup + megjelenített név"}
+  kat:         {kötelező: false, típus: str,  enum: [Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc],
+                megjegyzés: "harcmodor; ha JELEN van → a fegyver megjelenik a fegyverlistában (enélkül csak teszt-minta)"}
+  megj:        {kötelező: false, típus: str,  példa: "Z, kétkezes", megjegyzés: "szabad mechanika-jegyzet (a levezethetőt/strukturáltat NEM ide)"}
+  teszt_minta: {kötelező: false, típus: bool, példa: true, megjegyzés: "a balansz self-testben/elemzésben részt vevő kiemelt fegyver"}
+  elvart:      {kötelező: false, típus: map,  példa: {vágóél-egyenes-átlagos: [6, 6]},
+                megjegyzés: "{aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték (Erő=0); az aktor a fegyver aktorai közül"}
+  extrak:   {kötelező: false, típus: list, elem_forrás: extrak, példa: [kulonleges_felkeszites],
+                megjegyzés: "id-k a extrak.yaml-ból (a Beszorítottat a fegyverhossz-kategória örökíti, NEM ide)"}
+  fegyver:     {kötelező: true,  típus: map,  almezok: fegyver, megjegyzés: "a Fegyver modell WORK paraméterei — lásd a 'fegyver' szekciót lent"}
+
+# ── A `fegyver:` blokk almezői (WORK paraméterek) ──
+fegyver:
+  hossz:             {kötelező: true,  típus: int,  forrás: fegyverhossz, példa: 3,
+                      megjegyzés: "fegyverhossz-kategória; konstansok.yaml fegyverhossz kulcsai: 0,1,2,3,5,7,9,12"}
+  aktorok:           {kötelező: true,  típus: list, elem_forrás: aktor, min: 1, példa: [vágóél-egyenes-átlagos, pengehegy-kard],
+                      megjegyzés: "sebzési felületek; ELSŐ = elsődleges, többi = másodlagos. Értékek: konstansok.yaml aktor"}
+  penges:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "pengés? (+1 TÉ/VÉ, +1 fejdarab, +1 SP)"}
+  lancos:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "láncos fej? (+1 SP, +1 Sebesség)"}
+  hajlekony:         {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "hajlékony (ostor)? (-2 VÉ, +1 Sebesség)"}
+  suly:              {kötelező: false, típus: str,  forrás: suly, default: átlagos, megjegyzés: "konstansok.yaml suly: könnyű/átlagos/nehéz/súlyos"}
+  idea:              {kötelező: false, típus: int,  forrás: idea, default: 0, megjegyzés: "inherens minőség; konstansok.yaml idea (-5..5)"}
+  alapanyag:         {kötelező: false, típus: str,  forrás: alapanyag, default: acél, megjegyzés: "konstansok.yaml alapanyag (acél, feketeacél, kő, mithrill, …)"}
+  fejdarab_alap:     {kötelező: false, típus: int,  forrás: fejdarab, default: 0, megjegyzés: "fejdarab alap; konstansok.yaml fejdarab (0..3)"}
+  nehez_mod:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta SP-be VAGY Átütésbe menjen"}
+  egykezes_kenyszer: {kötelező: false, típus: bool, default: false, megjegyzés: "pl. lándzsa pajzzsal: kétkezes/másfélkezes fegyver 1 kézzel (SP-büntetés)"}

@@ -121,10 +121,6 @@ class Fegyver:
                   + (1 if self.penges else 0)
                   + i["tvc"] + mat["tvc"]
                   - 2 * self.hajlekony)            # hajlékony VÉ:-2
-            # Beszorított(2) tag (kat. 7 és 9) + pengés → párbajban (1v1, fürge ellen) VÉ:0
-            # SZITUÁCIÓS, nem a bázis VÉ. A bázisértékbe NEM építjük be (lásd doksi GAME).
-            # Kat. 12 NEM: nincs Beszorított(2) tagje.
-            parbaj_alkalmatlan = (self.hossz in (7, 9) and self.penges)
 
             # ── SP ──
             szuro = a["t"] == "szúró"
@@ -159,7 +155,6 @@ class Fegyver:
             eredmeny.append(dict(
                 aktor=aktor_nev, tipus=a["t"],
                 TE=te, VE=ve, SP=sp, AT=at, SEB=seb,
-                parbaj_alkalmatlan=parbaj_alkalmatlan,
                 sebzestipus=sebzestipus, sebzes_hatrany=sebzes_hatrany,
             ))
         return eredmeny
@@ -266,16 +261,20 @@ def teszt_dump(ero=0):
     Erő=0: a doksi GAME blokkjai Erő nélkül adják a TÉ/VÉ-t; az SP a példákban Erővel."""
     print(f"=== GAME DUMP (Erő={ero}) — regenerált értékek ===")
     for fnev, f in FEGYVEREK.items():
-        print(f"\n### {fnev}")
+        besz = " [Beszorítható]" if "beszorithato" in FEGYVERHOSSZ[f.hossz].get("extrak", []) else ""
+        print(f"\n### {fnev}{besz}")
         for m in f.modok(ero=ero):
-            par = "  [párbajra alkalmatlan: VÉ→0 fürge ellen]" if m["parbaj_alkalmatlan"] else ""
             print(f"  {m['aktor']:26s} ({m['tipus']:12s}) "
                   f"TÉ:{m['TE']:>3} VÉ:{m['VE']:>3} SP:{m['SP']:+d} "
-                  f"Átütés:{m['AT']} Sebesség:{m['SEB']}{par}")
+                  f"Átütés:{m['AT']} Sebesség:{m['SEB']}")
     print()
 
 
 if __name__ == "__main__":
+    import fegyverek_validator
+    if not fegyverek_validator.run():
+        raise SystemExit("fegyverek.yaml séma-hiba — javítsd a fentieket (lásd fenn).")
+    print()
     teszt_regresszio()
     teszt_dump(ero=0)
     teszt_sebzes_matrix(ero=2)

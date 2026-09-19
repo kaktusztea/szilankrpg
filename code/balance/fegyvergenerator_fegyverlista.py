@@ -9,7 +9,7 @@ Leképezés: pengehossz→fegyverhossz (0→0/1, 0.5→2, 1→3, 1.5→5, 2→7,
 sebzés módja→Aktor (S→pengehegy, V-egyenes→vágóél-egyenes, V-íves→vágóél-íves, Z→botvég/buzogányfej),
 súly az Erő-követelményből. Kihagyva: hárítófegyverek, puszta kéz, exotikus-speciális, pajzs, távharc.
 
-Futtatás:  python3 code/fegyvergenerator_fegyverlista.py > /tmp/fegyverlista.md
+Futtatás:  python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md
 
 ─────────────────────────────────────────────────────────────────────────────
 Eredet: szilank.wiki/STUDY.fegyvergenerator_v2_fegyverlista.gen.py — migrálva 2026-09-10.
@@ -20,6 +20,8 @@ FIGYELEM: tervezői eszköz, nem a data pipeline része. A kimenetét NE írd r�
 automatikusan az éles `md/068_0x_*.md` fegyvertáblákra — azok kézzel hangoltak.
 ─────────────────────────────────────────────────────────────────────────────
 """
+import datetime
+
 import fegyvergenerator_balansz as bal
 
 F = bal.Fegyver
@@ -27,13 +29,22 @@ FEGYVERHOSSZ = bal.FEGYVERHOSSZ
 
 # (kategória, megjelenített név, Fegyver, megjegyzés)
 # WORK paraméterek: data/fegyvergenerator/fegyverek.yaml (a `kat` mezővel bíró rekordok)
+_EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
+
+
+def _extra_cimke(mid):
+    m = _EXTRAK.get(mid, {})
+    nev = m.get("név", mid)
+    return ("⚠️" + nev) if m.get("csoport") == "harci_helyzet" else nev
+
+
 def _megj(r):
-    """Megj. cella: a szöveges megj + a strukturált követelmény (ha van)."""
+    """Megj. cella: a szöveges megj + az extrák (saját + a fegyverhossz-kategória örökölt)."""
     m = r.get("megj", "")
-    k = r.get("kovetelmeny")
-    if k:
-        kv = f"Köv.: {k['nev']} {k['tipus']} {k['ertek']}"
-        m = f"{m}; {kv}" if m else kv
+    ids = list(r.get("extrak", [])) + list(bal.FEGYVERHOSSZ[r["fegyver"]["hossz"]].get("extrak", []))
+    for mid in ids:
+        cimke = _extra_cimke(mid)
+        m = f"{m}; {cimke}" if m else cimke
     return m
 
 
@@ -56,11 +67,10 @@ def sorok_kategoriankent():
         for i, m in enumerate(f.modok(ero=0)):
             n = nev if i == 0 else ""
             mm = megj if i == 0 else ""
-            par = " ⚠️párbaj:VÉ0" if m["parbaj_alkalmatlan"] else ""
             rows.append([n, m["aktor"], m["tipus"], m["sebzestipus"],
                          str(m["TE"]), str(m["VE"]),
                          f"{m['SP']:+d}", str(m["AT"]), str(m["SEB"]), forg(f),
-                         str(f.hossz), (mm + par).strip()])
+                         str(f.hossz), mm])
     return out
 
 
@@ -77,6 +87,47 @@ def emit_tabla(rows):
         print("| " + " | ".join(cell(r[c], c) for c in range(len(FEJLEC))) + " |")
 
 
+GEN_CMD = "python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md"
+
+INTRO = """> ⚠️ **AUTOMATIKUSAN GENERÁLT OLDAL — kézzel NE szerkeszd.**
+>
+> Generálva: `{datum}` · Forrás: `data/fegyvergenerator/*.yaml`
+>
+> Előállító parancs (a `szilank.code` repóból, a kimenetet ebbe a fájlba irányítva): `{cmd}`
+
+# Fegyvergenerátor → v2 mainstream fegyverlista
+
+Az éles `068_0x` közelharci fegyvertáblák **mainstream** fegyverei a jelenlegi (v2) generátorral
+leszármaztatva, **harcmodoronként külön táblázatban** (mint az éles doksiban).
+Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
+
+- **Generátor:** `szilank.code/code/balance/fegyvergenerator_fegyverlista.py` (a `fegyvergenerator_balansz.py` modellt használja) → a táblák **reprodukálhatók**.
+- **Értékek:** Erő=0 bázis (a játékban az Erőbónusz hozzáadódik az SP-hez). A sebzésjelleg×páncél módosító NEM ezekben van, hanem harc közben a páncél fajtájától függ.
+- **Nem cél a régi éles fegyvertábla reprodukálása** → a generátor a mérvadó.
+
+## Hogyan olvasd
+
+- **Harcmodoronként külön tábla:** Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc.
+- **Több mód:** a többféle sebzésű fegyverek (pl. kard `V/S`) több sorban szerepelnek, Aktoronként.
+- **Jelleg / Sebzéstípus:** a `Jelleg` a sebzés jellege (szúró / vágó / zúzó); a `Sebzéstípus` a rang: `elsődleges` = alap sebzésmód (nincs büntetés), `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Az `alkalmatlan` nincs a táblában (KM: `Hátrány-2`). Éles: `064_02_05`.
+- **Fh** = Fegyverhossz kategória. **Seb.** = Sebesség (magasabb = lassabb).
+- **⚠️Beszorítható** = Beszorított(2) tag (kat. 7 és 9, hosszú fegyver): ha az ellenfél bejut, `TÉ:0` ÉS `VÉ:0` (szituációs harci helyzet, nem a bázisérték). Kat. 12 NEM.
+- **Extrák** (a Megj oszlopban, `extrak.yaml`): a bázisra jövő, feltételhez kötött hatások. `⚠️` = harci-helyzet (pl. Beszorított, Páncéltalan szúrás); a **Különleges felkészítés (KF)** kiképzés-függő bónusz. A tábla a **felkészítetlen** bázist mutatja; ezek szituációsan jönnek rá.
+- **(spec)** = egyedi mechanika, amit a generátor nem modellez (szöveges szabály az éles anyagban).
+
+## Scope
+
+Tartalmazza: közelharci (tőr-osztály), kardvívó, lándzsavívó, romboló, ostorharc mainstream fegyverek.
+Kihagyva (más alrendszer / egyedi mechanika): hárítófegyverek, Puszta kéz, Garott, Méregfog, Béltépő, Kopja (lovas), pajzsok, hajító- és lőfegyverek.
+
+---"""
+
+
+def emit_intro():
+    print(INTRO.format(datum=datetime.date.today().isoformat(), cmd=GEN_CMD))
+
+
+emit_intro()
 for kat, rows in sorok_kategoriankent().items():
     print(f"\n### {kat}\n")
     emit_tabla(rows)

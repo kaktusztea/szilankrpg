@@ -10,8 +10,8 @@ fegyverhossz:
   2:  {tv: 2,  sp: 2, seb: 5, forg: egykezes}
   3:  {tv: 3,  sp: 3, seb: 6, forg: egykezes}
   5:  {tv: 5,  sp: 4, seb: 6, forg: másfélkezes}
-  7:  {tv: 7,  sp: 5, seb: 7, forg: kétkezes}
-  9:  {tv: 9,  sp: 5, seb: 8, forg: kétkezes}
+  7:  {tv: 7,  sp: 5, seb: 7, forg: kétkezes, extrak: [beszorithato]}
+  9:  {tv: 9,  sp: 5, seb: 8, forg: kétkezes, extrak: [beszorithato]}
   12: {tv: 12, sp: 5, seb: 9, forg: kétkezes}
 
 # aktor: név -> sebzésjelleg (t), SP, Átütés (at), TÉ (te), VÉ (ve), Sebesség (seb)
