@@ -5,4 +5,4 @@
 hatás_operátorok:
   - id: ""                     # kötelező, egyedi string
     név: ""                    # kötelező, string (megjelenítési név)
-    mód: ""                    # kötelező, enum: "előny_hátrány" | "szorzó" | "letilt" | "max_limit" | "szöveges"
+    mód: ""                    # kötelező, egységes effekt-mód (engine_spec §42.2). Enforce: data/gen/validators.py → validate_hatasok. Enum: "előny_hátrány" | "szorzó" | "letilt" | "max_limit" | "szöveges" | "enyhít"

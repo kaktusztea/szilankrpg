@@ -48,8 +48,8 @@ fokok:
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.
       - cél: ""               # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / SFÉ / harckeret / manőver:név / MGT_TÉ_büntetés / sebzésdobás / ké_dobás / té_dobás / cé_dobás / képzettségpróba_dobás / tulajdonságpróba_dobás
         alcél: ""             # Opcionális: konkrét tulajdonság/képzettség neve (pl. "Edzettség", "Zárnyitás", "Látás")
-        érték: 0              # Fix bónusz (flat/előny/hátrány mód esetén)
-        mód: "flat"           # "flat": fix érték. "scaled": forrás x arány. "override": felülírja. "enyhít": Hatás fok csökkentés. "előny": kocka-reroll bónusz. "hátrány": kocka-reroll büntetés. "letilt": adott cél (pl. taktika feltételes TÉ) semlegesítése. "szöveges": informatív hatás (pl. nincs dobás).
+        érték: 0              # Numerikus érték (flat/szorzó/scaled/max_limit/előny_hátrány/enyhít); előny_hátrány: az ELŐJEL az irány
+        mód: "flat"           # egységes effekt-mód (engine_spec §42.2): flat=fix | szorzó=cél×érték | scaled=forrás×arány | override=felülír | max_limit=felső korlát | előny_hátrány=kocka-reroll (érték előjele: + Előny / − Hátrány) | enyhít=Hatás-fok csökkentés | letilt=cél semlegesítése | szöveges=informatív. (FIGYELEM: fortélynál a mód jelenleg NEM build-validált — l. Fázis-3.)
         forrás: ""            # Arányos módnál: melyik értékből (képzettség neve, stb.)
         arány: 0              # Arányos módnál: szorzó (pl. 0.5, 1)
         feltétel: ""          # Mikor aktív: "" = MINDIG. Egyébként "prefix:érték" formátum.
