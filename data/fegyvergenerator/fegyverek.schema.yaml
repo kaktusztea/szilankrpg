@@ -46,6 +46,7 @@ fegyver:
   nehez_mod:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta SP-be VAGY Átütésbe menjen"}
   egykezes_kenyszer: {kötelező: false, típus: bool, default: false, megjegyzés: "pl. lándzsa pajzzsal: kétkezes/másfélkezes fegyver 1 kézzel (SP-büntetés)"}
   szalfegyver_nyel:  {kötelező: false, típus: str,  forrás: szalfegyver_nyel, default: sima, megjegyzés: "szálfegyver nyél: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szalfegyver_nyel"}
+  erőbónusz_limit:   {kötelező: false, típus: int,  default: 99, megjegyzés: "az SP-re alkalmazható Erőbónusz felső plafonja; 99 = nincs plafon; EGYEDI per-fegyver érték (nem levezetett) — 1:1 áthalad a generált rekordba"}
 
 # ─────────────────────────────────────────────────────────────────────────────
 # SZÁNDÉKOSAN NEM séma-mező (a generátor csak a harcértékeket számolja):

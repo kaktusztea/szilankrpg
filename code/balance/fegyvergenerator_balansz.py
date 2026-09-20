@@ -88,6 +88,7 @@ class Fegyver:
     nehez_mod: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát
     egykezes_kenyszer: bool = False  # pl. lándzsa pajzzsal (kétkezes → 1 kézzel)
     szalfegyver_nyel: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú — súly/SP hatás
+    erőbónusz_limit: int = 99        # SP-re alkalmazható Erőbónusz plafonja (md/064_02_06); 99 = nincs plafon; passthrough (Erő=0 bázist nem érinti)
 
     def modok(self, ero=2):
         """Visszaadja fegyvermódonként (aktoronként) a végső harcértékeket."""
