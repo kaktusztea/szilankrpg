@@ -26,6 +26,11 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
    - ELŐTTE olvasd be a `web/karakter/refactorlog/*.md` naplókat (csapdák, detektáló scriptek,
      rögzített konvenciók — a legtöbb ott leírt hiba CSENDBEN hibázik)
    - UTÁNA írj naplót: `web/karakter/refactorlog/ÉÉÉÉ-HH-NN.md` (mit, miért, milyen csapda derült ki)
+5. **Webapp kód VAGY data layer első érintése egy Kiro session-ben** → olvasd be a `data/sources/*.yaml`
+   fájlokat is: fontos STANDARDEK, SÉMÁK és ÉRTÉK-definíciók (kanonikus azonosítók, enumok) élnek bennük —
+   pl. `konstansok.yaml` (feltétel_prefixek, effekt_módok, harcérték-konstansok), `esemenyek.yaml` (cél/esemény id-k),
+   `hatas_operatorok.yaml` (mód-operátorok), `manoverek.yaml` (manőver id-k), `statuszok.yaml`, `harci_helyzetek.yaml`,
+   sebzésjelleg (S/V/Z). NE találj ki új azonosítót/vokabulárt, ha már van kanonikus — AHHOZ igazodj.
 
 ## Architektúra — 3 pillér
 
