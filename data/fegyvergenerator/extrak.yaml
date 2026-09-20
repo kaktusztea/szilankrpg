@@ -13,7 +13,7 @@
 #       típus: fortély | képzettség (érték=fok/szint≥) | státusz | harci_helyzet | cél_páncél
 #            | cél_felszereles | aktor | forgatás | ellenfél_fegyver_sebzésjelleg | narratív (KM)
 #   hatás[]    : a fortély `módosítók` STRINGES formátuma: {cél, mód, érték, feltétel?}
-#       cél: HARCÉRTÉK csupasz string (TÉ / VÉ / SP / SFÉ / pajzs-VÉ / VÉ-veszteség / harckeret …)
+#       cél: HARCÉRTÉK csupasz string (TÉ / VÉ / SP / SFÉ / pajzs-VÉ / vé_veszteség / harckeret …)
 #            VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>")
 #       feltétel?: al-feltétel prefix-string (pl. "manőver_állapot:passzív")
 #       mód: flat | override  (fortély-`módosító` mód) | szorzó  (hatás-operátor mód, hatas_operatorok.yaml: érték 0.5=felez, 2=dupláz)
@@ -80,6 +80,22 @@ extrak:
     hatás:
       - {cél: SFÉ, mód: szorzó, érték: 2}
 
+  - id: beakadas_kockazat
+    név: "Beakad (~50%)"
+    csoport: harci_helyzet
+    leírás: "Sebző találat után (tehát átment a páncélon) ~50% esély, hogy beakad és harc közben nem húzható ki (KM dönti el)."
+    hatás:
+      - {cél: "beakadás", mód: szöveges}
+
+  - id: onsebzes_kockazat
+    név: "Önsebzés-kockázat"
+    csoport: harci_helyzet
+    leírás: >
+      Köz- és önveszélyes: a támadó k20 EGYBEN esélydobás — Mesterfegyver-foktól függő küszöb (Mf nélkül 1-10,
+      Mf:1.fok 1-2, Mf:2-3.fok nincs) alá/rá dobva magadat sebzed (rendes sebzés önmagad ellen). Részletek: md/068_06.
+    hatás:
+      - {cél: "önsebzés", mód: szöveges}
+
   # ── TULAJDONSÁG (építési/minőségi opció) ──
   - id: pontos
     név: "Pontos"
@@ -113,4 +129,4 @@ extrak:
     feltétel:
       - {típus: ellenfél_fegyver_sebzésjelleg, érték: zúzó}
     hatás:
-      - {cél: VÉ-veszteség, mód: szorzó, érték: 2}
+      - {cél: vé_veszteség, mód: szorzó, érték: 2}

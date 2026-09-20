@@ -3803,7 +3803,7 @@ effekt-fázisára halasztva (§41) — addig ez vokabulár-szabvány + fokozatos
 
 ```
 effekt = {cél, mód, érték, feltétel?}
-  cél    : HARCÉRTÉK csupasz string (TÉ/VÉ/SP/SFÉ/CÉ/KÉ/harckeret/pengehossz/pajzs-VÉ/VÉ-veszteség …)
+  cél    : HARCÉRTÉK csupasz string (TÉ/VÉ/SP/SFÉ/CÉ/KÉ/harckeret/pengehossz/pajzs-VÉ/vé_veszteség …)
            VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>", "képzettség:<név>")
   mód    : lásd 42.2
   érték  : numerikus (flat/szorzó/scaled/override/max_limit/előny/hátrány/enyhít) — vagy nincs (letilt/szöveges)
@@ -3853,7 +3853,7 @@ Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ ker
 
 ### 42.4 Cél-fajták (prefix-vokabulár)
 
-- **Csupasz** (harcérték): `TÉ VÉ SP SFÉ CÉ KÉ harckeret pengehossz pajzs-VÉ VÉ-veszteség …`
+- **Csupasz** (harcérték / esemény-cél): `TÉ VÉ SP SFÉ CÉ KÉ harckeret pengehossz pajzs-VÉ vé_veszteség …`
 - **Entitás prefix**: `manőver:<id>` (id a `manoverek.yaml`-ból), `fortély:<név>`, `képzettség:<név>`.
 - A prefix-készletet a `konstansok.yaml → feltétel_prefixek`-kel kell összehangolni (közös vokabulár a
   cél- és a feltétel-oldalon).

@@ -75,13 +75,13 @@
 - {nev: "Buzogány, tollas", kat: Romboló, megj: "", fegyver: {hossz: 2, aktorok: [buzogányfej-szöges]}}
 - {nev: "Csatabárd, egykezes", kat: Romboló, megj: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab_alap: 1, suly: nehéz, nehez_mod: átütés}}
 - {nev: "Csatabárd, kétkezes", kat: Romboló, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-nagy], fejdarab_alap: 1, suly: súlyos, nehez_mod: átütés}}
-- {nev: Csatacsákány, kat: Romboló, megj: 50% beakad (spec), fegyver: {hossz: 3, aktorok: [lándzsahegy-rövid-keskeny]}}
+- {nev: Csatacsákány, kat: Romboló, megj: "", extrak: [beakadas_kockazat], fegyver: {hossz: 3, aktorok: [lándzsahegy-rövid-keskeny]}}
 - {nev: Harci kalapács, kat: Romboló, megj: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], suly: súlyos}}
 
 # ── Ostorharc ──
 - {nev: Korbács, kat: Ostorharc, megj: "", fegyver: {hossz: 3, aktorok: [botvég], hajlekony: 1}}
 - {nev: Ostor, kat: Ostorharc, megj: "", fegyver: {hossz: 9, aktorok: [botvég], hajlekony: 1}}
-- {nev: Ostorkard (Urumi), kat: Ostorharc, megj: önsebzés kockázat (spec), fegyver: {hossz: 9, aktorok: [vágóél-íves-átlagos], hajlekony: 1}}
+- {nev: Ostorkard (Urumi), kat: Ostorharc, megj: "", extrak: [onsebzes_kockazat], fegyver: {hossz: 9, aktorok: [vágóél-íves-átlagos], hajlekony: 1}}
 
 # ── — csak teszt-minta (nem mainstream) — ──
 - {nev: Kő, teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab_alap: 1, suly: könnyű, alapanyag: kő}}
