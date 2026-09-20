@@ -43,6 +43,7 @@ def validate():
     feltetel_tipus = set(s["feltetel_tipus_enum"])
     cel_prefix = set(s["cel_prefix_enum"])
     alfeltetel_prefix = set(s["alfeltetel_prefix_enum"])
+    alcel_prefix = set(s.get("alcel_prefix_enum", []))
     feltetel_ertek = s.get("feltetel_ertek_enum", {})   # típus -> megengedett értékek (csak fix készletűekre)
     kotelezo = {m for m, spec in s["rekord"].items() if spec.get("kötelező")}
     ismert = set(s["rekord"])
@@ -86,6 +87,11 @@ def validate():
                 _prefix_ok(h["cél"], cel_prefix, f"{c}.hatás.cél", hibak, prefix_kotelezo=False)
             if h.get("mód") not in mod_enum:
                 hibak.append(f"{c}.hatás.mód: érvénytelen {h.get('mód')!r} — megengedett: {sorted(mod_enum)}")
+            if "alcél" in h:
+                if not isinstance(h["alcél"], str):
+                    hibak.append(f"{c}.hatás.alcél: string kell ({h['alcél']!r})")
+                else:
+                    _prefix_ok(h["alcél"], alcel_prefix, f"{c}.hatás.alcél", hibak, prefix_kotelezo=True)
             if "feltétel" in h:
                 if not isinstance(h["feltétel"], str):
                     hibak.append(f"{c}.hatás.feltétel: string kell ({h['feltétel']!r})")

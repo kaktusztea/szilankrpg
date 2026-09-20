@@ -13,8 +13,9 @@
 #       típus: fortély | képzettség (érték=fok/szint≥) | státusz | harci_helyzet | cél_páncél
 #            | cél_felszereles | aktor | forgatás | manőver_állapot | ellenfél_fegyver_sebzésjelleg | narratív (KM)
 #   hatás[]    : a fortély `módosítók` STRINGES formátuma: {cél, mód, érték, feltétel?}
-#       cél: HARCÉRTÉK/esemény csupasz string (TÉ / VÉ / SP / SFÉ / pajzs-VÉ / vé_veszteség / manőver_ellenpróba / harckeret …)
+#       cél: HARCÉRTÉK/esemény csupasz string (TÉ / VÉ / SP / SFÉ / vé_veszteség / manőver_ellenpróba / harckeret …)
 #            VAGY entitás prefix-string ("fortély:<név>"). Manővernél: cél=manőver_ellenpróba + feltétel "manőver:<id>".
+#       alcél?: a cél al-scope-ja, "prefix:érték" (alcel_prefix_enum), pl. cél VÉ + alcél "fegyverfogás:fegyver_pajzs" = a pajzs VÉ-komponense
 #       feltétel?: al-feltétel prefix-string (pl. "manőver:precíz_támadás")
 #       mód: flat | override  (fortély-`módosító` mód) | szorzó  (hatás-operátor mód, hatas_operatorok.yaml: érték 0.5=felez, 2=dupláz)
 
@@ -69,7 +70,7 @@ extrak:
     feltétel:
       - {típus: cél_felszereles, érték: pajzs}
     hatás:
-      - {cél: pajzs-VÉ, mód: szorzó, érték: 0.5}
+      - {cél: VÉ, alcél: "fegyverfogás:fegyver_pajzs", mód: szorzó, érték: 0.5}
 
   - id: sfe_duplazodik
     név: "SFÉ dupla ellene"
