@@ -38,17 +38,17 @@ extrak:
       - {cél: TÉ, mód: override, érték: 0}
       - {cél: VÉ, mód: override, érték: 0}
 
-  - id: panceltalan_szuras
-    név: "Páncéltalan szúrás"
+  - id: panceltalan_roncsolasa
+    név: "Páncéltalant jobban roncsol"
     csoport: harci_helyzet
-    leírás: "Vértelen célon a hegy pontosabban talál."
+    leírás: "Vérttelen célon nagyobb sebet ejt. Példa: Meneth"
     feltétel:
       - {típus: cél_páncél, érték: vértelen}
     hatás:
       - {cél: SP, mód: flat, érték: 3}
 
   - id: belharc_sfe0
-    név: "Belharc réskeresés"
+    név: "Belharcban rések közt beszúr"
     csoport: harci_helyzet
     leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0."
     feltétel:
@@ -66,9 +66,9 @@ extrak:
       - {cél: "pajzs-VÉ", mód: szorzó, érték: 0.5}
 
   - id: sfe_duplazodik
-    név: "SFÉ duplán (íves penge)"
+    név: "SFÉ dupla ellene"
     csoport: harci_helyzet
-    leírás: "Íves rövid penge páncél ellen különösen rossz: a cél páncél SFÉ-je duplán számít."
+    leírás: "Íves rövid penge páncél ellen különösen rossz: a célpont páncél SFÉ-je duplán számít."
     feltétel:
       - {típus: cél_páncél, érték: páncélos}
     hatás:
@@ -76,13 +76,48 @@ extrak:
 
   # ── TULAJDONSÁG (építési/minőségi opció) ──
   - id: pontos
-    név: "Pontos (hegyre élezett)"
+    név: "Pontos"
     csoport: tulajdonság
     leírás: >
-      Precíziós szúróhegy: a Pontra támadás manőverre +2. Csak pengehegy aktor + egykezes
-      forgatás mellett értelmes; ára ~20×. Építési opció — jelenleg egy mainstream fegyver sem ilyen.
+      Precíziós szúróhegy: a Pontra támadás manőver Ellenpróbára +2.
+      Csak pengehegy aktor + egykezes forgatás mellett értelmes.
     feltétel:
       - {típus: aktor, érték: pengehegy}
       - {típus: forgatás, érték: egykezes}
     hatás:
       - {cél: "Pontra támadás manőver", mód: flat, érték: 2}
+
+  - id: lefegyverezhetobb
+    név: "Lefegyverezhetőbb"
+    csoport: tulajdonság
+    leírás: >
+      Az ilyen fegyvert az ellenfél könnyebben kiüti kezedből, könnyebben eltöri.
+    feltétel:
+      - {típus: forgatás, érték: egykezes}
+    hatás:
+      - cél: "manőver:lefegyverzés"
+        érték: -2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "manőver_állapot:passzív"
+      - cél: "manőver:fegyvertörés"
+        érték: -2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "manőver_állapot:passzív"
+
+
+  - id: zuzo_ellen_rosszabb
+    név: "Zúzó fegyver ellen rosszabb"
+    csoport: tulajdonság
+    leírás: >
+      Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
+      Elszenvedett VÉ csökkenésed duplázódik.
+    feltétel:
+      - "ellenfél_fegyver_sebzésjelleg:zúzó"
+    hatás:
+      - cél: "vé_veszteség"
+        érték: 2
+        mód: "szorzó"
