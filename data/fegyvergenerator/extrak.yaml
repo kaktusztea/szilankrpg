@@ -18,8 +18,8 @@ extrak:
     név: "Különleges felkészítés (KF)"
     csoport: felkészítés
     leírás: >
-      Megfelelő (gyakran titkos) iskola + Mesterfegyver-tudás kell. Enélkül a felkészítetlen
-      alapértékek érvényesek; felkészítve a Mesterfegyver e fegyverre adott bónusza megduplázódik.
+      Belső harci iskola + Mesterfegyver-tudás kell. Enélkül a felkészítetlen
+      alapértékek érvényesek; felkészítve a Mesterfegyver fortély e fegyverre adott bónusza megduplázódik.
     feltétel:
       - {típus: fortély, név: Mesterfegyver, érték: 1}   # az adott fegyverre, fok ≥ 1
       - {típus: narratív, név: iskola}                   # nem gépi: KM dönti el
@@ -31,7 +31,7 @@ extrak:
   - id: beszorithato
     név: "Beszorított"
     csoport: harci_helyzet
-    leírás: "Hosszú fegyver (kat. 7/9): ha az ellenfél bejut, nem forgatható rendesen."
+    leírás: "Hosszú fegyver (kat. 7/9): Beszorított(2) státuszban nem forgatható rendesen, TÉ/VÉ:0."
     feltétel:
       - {típus: státusz, név: Beszorított, érték: 2}      # (2) = súlyosság/tier
     hatás:
