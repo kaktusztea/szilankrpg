@@ -67,10 +67,9 @@ def sorok_kategoriankent():
         for i, m in enumerate(f.modok(ero=0)):
             n = nev if i == 0 else ""
             mm = megj if i == 0 else ""
-            el = ("—" if f.erőbónusz_limit >= 99 else str(f.erőbónusz_limit)) if i == 0 else ""
             rows.append([n, m["aktor"], m["tipus"], m["sebzestipus"],
                          str(m["TE"]), str(m["VE"]),
-                         f"{m['SP']:+d}", el, str(m["AT"]), str(m["SEB"]), forg(f),
+                         f"{m['SP']:+d}", str(f.erőbónusz_limit), str(m["AT"]), str(m["SEB"]), forg(f),
                          str(f.hossz), mm])
     return out
 
@@ -112,7 +111,7 @@ Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
 - **Több mód:** a többféle sebzésű fegyverek (pl. kard `V/S`) több sorban szerepelnek, Aktoronként.
 - **Jelleg / Sebzéstípus:** a `Jelleg` a sebzés jellege (szúró / vágó / zúzó); a `Sebzéstípus` a rang: `elsődleges` = alap sebzésmód (nincs büntetés), `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Az `alkalmatlan` nincs a táblában (KM: `Hátrány-2`). Éles: `064_02_05`.
 - **Fh** = Fegyverhossz kategória. **Seb.** = Sebesség (magasabb = lassabb).
-- **Erőlimit** = Erőbónusz limit: a sebzésbe (SP) fordítható Erő felső plafonja; `—` = nincs plafon (egyedi per-fegyver érték, `064_02_06`).
+- **Erőlimit** = Erőbónusz limit: a sebzésbe (SP) fordítható Erő felső plafonja; `99` = nincs plafon (egyedi per-fegyver érték, `064_02_06`).
 - **⚠️Beszorítható** = Beszorított(2) tag (kat. 7 és 9, hosszú fegyver): ha az ellenfél bejut, `TÉ:0` ÉS `VÉ:0` (szituációs harci helyzet, nem a bázisérték). Kat. 12 NEM.
 - **Extrák** (a Megj oszlopban, `extrak.yaml`): a bázisra jövő, feltételhez kötött hatások. `⚠️` = harci-helyzet (pl. Beszorított, Páncéltalan szúrás); a **Különleges felkészítés (KF)** kiképzés-függő bónusz. A tábla a **felkészítetlen** bázist mutatja; ezek szituációsan jönnek rá.
 - **(spec)** = egyedi mechanika, amit a generátor nem modellez (szöveges szabály az éles anyagban).
