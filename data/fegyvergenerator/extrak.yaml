@@ -49,7 +49,7 @@ extrak:
     csoport: harci_helyzet
     leírás: "Vérttelen célon nagyobb sebet ejt. Példa: Meneth"
     feltétel:
-      - {típus: cél_páncél, érték: vértelen}
+      - {típus: cél_páncél, érték: vérttelen}
     hatás:
       - {cél: SP, mód: flat, érték: 3}
 
