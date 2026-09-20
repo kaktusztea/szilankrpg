@@ -46,10 +46,10 @@ fokok:
     hatástext:
       - text: ""
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.
-      - cél: ""               # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / SFÉ / harckeret / manőver:név / MGT_TÉ_büntetés / sebzésdobás / ké_dobás / té_dobás / cé_dobás / képzettségpróba_dobás / tulajdonságpróba_dobás
+      - cél: ""               # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / SFÉ / harckeret / manőver:<id> (manoverek.yaml id) / MGT_TÉ_büntetés / sebzésdobás / ké_dobás / té_dobás / cé_dobás / képzettségpróba_dobás / tulajdonságpróba_dobás
         alcél: ""             # Opcionális: konkrét tulajdonság/képzettség neve (pl. "Edzettség", "Zárnyitás", "Látás")
         érték: 0              # Numerikus érték (flat/szorzó/scaled/max_limit/előny/hátrány/enyhít); előny/hátrány: ELŐJELES (előny +, hátrány −)
-        mód: "flat"           # egységes effekt-mód (engine_spec §42.2): flat=fix | szorzó=cél×érték | scaled=forrás×arány | override=felülír | max_limit=felső korlát | előny/hátrány=kocka-reroll, előjeles érték (mód-kategória: előny_hátrány) | enyhít=Hatás-fok csökkentés | letilt=cél semlegesítése | szöveges=informatív. (FIGYELEM: fortélynál a mód jelenleg NEM build-validált — l. Fázis-3.)
+        mód: "flat"           # egységes effekt-mód (engine_spec §42.2): flat=fix | szorzó=cél×érték | scaled=forrás×arány | override=felülír | max_limit=felső korlát | előny/hátrány=kocka-reroll, előjeles érték (mód-kategória: előny_hátrány) | enyhít=Hatás-fok csökkentés | letilt=cél semlegesítése | szöveges=informatív. (Build-validált: data/gen/fortelyok.py a konstansok.effekt_módok lista ellen.)
         forrás: ""            # Arányos módnál: melyik értékből (képzettség neve, stb.)
         arány: 0              # Arányos módnál: szorzó (pl. 0.5, 1)
         feltétel: ""          # Mikor aktív: "" = MINDIG. Egyébként "prefix:érték" formátum.

@@ -119,6 +119,18 @@
     "manőver_állapot",
     "ellenfél_fegyver_sebzésjelleg"
   ],
+  "effekt_módok": [
+    "flat",
+    "szorzó",
+    "scaled",
+    "override",
+    "max_limit",
+    "előny",
+    "hátrány",
+    "enyhít",
+    "letilt",
+    "szöveges"
+  ],
   "harcérték_alap": {
     "KÉ": 0,
     "TÉ": 10,

@@ -3900,3 +3900,7 @@ Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implement�
 - **Backward-compat**: nincs; a régi localStorage invalidálható.
 - **Migráció**: EGYLÉPÉSES (nem fokozatos) — a Fázis-2 egy menetben állítja át a fortély `módosítók` +
   `hatasok.yaml` teljes készletét.
+- **Fortély `mód` build-enforce (KÉSZ, 2026-09-20)**: `konstansok.yaml → effekt_módok` kanonikus lista +
+  `data/gen/fortelyok.py` validálja ellene (eddig csak a hatás-operátor `validate_hatasok` és a taktika
+  `validate_aktiv_ful` volt enforce-olva; a fortély `mód` nem). Az egységes mód-enum így a fortélynál is
+  „valódi" (ismeretlen mód → build hiba).

@@ -96,6 +96,7 @@ def generate_fortelyok():
     # Feltétel prefix validáció
     konstansok = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
     valid_prefixek = set(konstansok.get('feltétel_prefixek', []))
+    valid_módok = set(konstansok.get('effekt_módok', []))
     felt_errors = []
     for root, dirs, files in os.walk(fdir):
         for f in sorted(files):
@@ -108,6 +109,9 @@ def generate_fortelyok():
                 for mod in (fok.get('módosítók') or []):
                     if isinstance(mod, str) or not mod:
                         continue
+                    m = mod.get('mód')
+                    if m and m not in valid_módok:
+                        felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen módosító mód '{m}' (nincs a konstansok.effekt_módok listában)")
                     felt = mod.get('feltétel', '')
                     if not felt or not isinstance(felt, str):
                         continue
@@ -116,7 +120,7 @@ def generate_fortelyok():
                         if prefix and prefix not in valid_prefixek:
                             felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen feltétel prefix '{prefix}' (értéke: '{felt}')")
     if felt_errors:
-        print("  ❌ Fortély feltétel prefix hibák:")
+        print("  ❌ Fortély módosító validációs hibák (mód / feltétel prefix):")
         for e in felt_errors:
             print(f"     {e}")
         raise SystemExit(1)

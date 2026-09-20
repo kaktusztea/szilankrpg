@@ -219,11 +219,10 @@ export function collectCéDobásInfo(session: Session, karakter: Karakter, data:
 
 /** Sum the net Előny/Hátrány level for a given set of effects. */
 export function netElőnySzint(hatások: DobásHatás[]): number {
+  // ELŐJELES konvenció: előny +, hátrány −, enyhít + (lásd konstansok.effekt_módok / engine_spec §42).
   let szint = 0;
   for (const h of hatások) {
-    if (h.operátor === 'előny') szint += Math.abs(h.érték);
-    else if (h.operátor === 'hátrány') szint -= Math.abs(h.érték);
-    else if (h.operátor === 'enyhít') szint += Math.abs(h.érték);
+    if (h.operátor === 'előny' || h.operátor === 'hátrány' || h.operátor === 'enyhít') szint += h.érték;
   }
   return clampEHSzint(szint);
 }

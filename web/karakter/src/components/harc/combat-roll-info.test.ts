@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { collectDobásInfo, netElőnySzint } from './combat-roll-info';
+import { collectDobásInfo, netElőnySzint, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 
@@ -47,5 +47,25 @@ describe('collectDobásInfo — nem-fokozatos taktika strukturált hatás', () =
   it('a nettó előny/hátrány szint -2 (Hátrány-2)', () => {
     const info = collectDobásInfo(session, karakter, makeData());
     expect(netElőnySzint(info.sebzésHatások)).toBe(-2);
+  });
+});
+
+describe('netElőnySzint — előjeles összegzés (Math.abs nélkül)', () => {
+  it('előny (+), hátrány (−), enyhít (+) előjeles értékei nettósítva', () => {
+    const hatások: DobásHatás[] = [
+      { forrás: 'a', cél: 'té_dobás', operátor: 'előny', érték: 2 },
+      { forrás: 'b', cél: 'té_dobás', operátor: 'hátrány', érték: -1 },
+      { forrás: 'c', cél: 'té_dobás', operátor: 'enyhít', érték: 1 },
+    ];
+    expect(netElőnySzint(hatások)).toBe(2); // 2 + (−1) + 1 = 2
+  });
+
+  it('clamp [-2,+2]: három Hátrány−1 → −2', () => {
+    const hatások: DobásHatás[] = [
+      { forrás: 'a', cél: 'té_dobás', operátor: 'hátrány', érték: -1 },
+      { forrás: 'b', cél: 'té_dobás', operátor: 'hátrány', érték: -1 },
+      { forrás: 'c', cél: 'té_dobás', operátor: 'hátrány', érték: -1 },
+    ];
+    expect(netElőnySzint(hatások)).toBe(-2);
   });
 });

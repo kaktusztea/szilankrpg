@@ -83,7 +83,7 @@ módosító_célok:
   - SP
   - SFÉ
   - harckeret
-  - manőver              # "manőver:név" formátumban használandó, pl. "manőver:kibontakozás"
+  - manőver              # "manőver:<id>" formátum (a manoverek.yaml id-je), pl. "manőver:kibontakozás"
   - MGT_TÉ_büntetés      # merevvért TÉ büntetés csökkentése
 
 # Feltétel prefixek (módosítók feltétel mezőjében)
@@ -96,13 +96,27 @@ feltétel_prefixek:
   - "fegyver"             # pl. "fegyver:kard, hosszú" - konkrét fegyverre vonatkozik
   - "fegyver_kategória"   # pl. "fegyver_kategória:kardvívó"
   - "fegyverfogás"        # pl. "fegyverfogás:fegyver_hárító", "fegyverfogás:fegyver_pajzs"
-  - "manőver"             # pl. "manőver:kibontakozás"
+  - "manőver"             # pl. "manőver:kibontakozás" (a manoverek.yaml id-je)
   - "státusz"             # pl. "státusz:bénultság"
   - "páncél"              # pl. "páncél:viselt" - aktív páncél MGT > 0
   - "fortély"             # pl. "fortély:Mesterfegyver" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
   - "képzettség"          # pl. "képzettség:Harcmodor" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
   - "manőver_állapot"     # pl. "manőver_állapot:passzív" — egységes effekt-modell (engine_spec §42)
   - "ellenfél_fegyver_sebzésjelleg"  # pl. "ellenfél_fegyver_sebzésjelleg:zúzó" — egységes effekt-modell (engine_spec §42)
+
+# Egységes effekt-mód enum (engine_spec §42.2) — az effekt-adat `mód`/`operátor` értékei.
+# A `előny`/`hátrány` a `előny_hátrány` MÓD-KATEGÓRIA két operátor-neve (előjeles érték).
+effekt_módok:
+  - "flat"        # cél += érték
+  - "szorzó"      # cél ×= érték (0.5=felez, 2=dupláz)
+  - "scaled"      # cél += floor(forrás × arány)
+  - "override"    # cél = érték
+  - "max_limit"   # cél = min(cél, érték)
+  - "előny"       # kocka Előny (érték +1..+2; kategória: előny_hátrány)
+  - "hátrány"     # kocka Hátrány (érték -1..-2; kategória: előny_hátrány)
+  - "enyhít"      # Hatás-fok csökkentés
+  - "letilt"      # cél semlegesítése
+  - "szöveges"    # informatív (nem kumulálható)
 
 # ============================================================
 # Harcérték konstansok
