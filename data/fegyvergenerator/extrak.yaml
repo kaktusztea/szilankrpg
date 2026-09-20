@@ -11,11 +11,11 @@
 #   feltétel[] : előfeltételek — a manoverek.yaml `követelmények` STRUKTÚRÁJA:
 #       {típus, név | id, érték?}   (ÉS-kapcsolat)
 #       típus: fortély | képzettség (érték=fok/szint≥) | státusz | harci_helyzet | cél_páncél
-#            | cél_felszereles | aktor | forgatás | ellenfél_fegyver_sebzésjelleg | narratív (KM)
+#            | cél_felszereles | aktor | forgatás | manőver_állapot | ellenfél_fegyver_sebzésjelleg | narratív (KM)
 #   hatás[]    : a fortély `módosítók` STRINGES formátuma: {cél, mód, érték, feltétel?}
-#       cél: HARCÉRTÉK csupasz string (TÉ / VÉ / SP / SFÉ / pajzs-VÉ / vé_veszteség / harckeret …)
-#            VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>")
-#       feltétel?: al-feltétel prefix-string (pl. "manőver_állapot:passzív")
+#       cél: HARCÉRTÉK/esemény csupasz string (TÉ / VÉ / SP / SFÉ / pajzs-VÉ / vé_veszteség / manőver_ellenpróba / harckeret …)
+#            VAGY entitás prefix-string ("fortély:<név>"). Manővernél: cél=manőver_ellenpróba + feltétel "manőver:<id>".
+#       feltétel?: al-feltétel prefix-string (pl. "manőver:precíz_támadás")
 #       mód: flat | override  (fortély-`módosító` mód) | szorzó  (hatás-operátor mód, hatas_operatorok.yaml: érték 0.5=felez, 2=dupláz)
 
 extrak:
@@ -58,7 +58,7 @@ extrak:
     csoport: harci_helyzet
     leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0."
     feltétel:
-      - {típus: harci_helyzet, név: belharc}
+      - {típus: harci_helyzet, id: belharci_helyzet}
     hatás:
       - {cél: SFÉ, mód: override, érték: 0}
 
@@ -107,7 +107,7 @@ extrak:
       - {típus: aktor, érték: pengehegy}
       - {típus: forgatás, érték: egykezes}
     hatás:
-      - {cél: "manőver:precíz_támadás", mód: flat, érték: 2}
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:precíz_támadás"}
 
   - id: lefegyverezhetobb
     név: "Lefegyverezhetőbb"
@@ -116,9 +116,10 @@ extrak:
       Az ilyen fegyvert az ellenfél könnyebben kiüti kezedből, könnyebben eltöri.
     feltétel:
       - {típus: forgatás, érték: egykezes}
+      - {típus: manőver_állapot, érték: passzív}   # a manőver a fegyver ELLEN történik
     hatás:
-      - {cél: "manőver:lefegyverzés", mód: flat, érték: -2, feltétel: "manőver_állapot:passzív"}
-      - {cél: "manőver:fegyvertörés", mód: flat, érték: -2, feltétel: "manőver_állapot:passzív"}
+      - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:lefegyverzés"}
+      - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:fegyvertörés"}
 
   - id: zuzo_ellen_rosszabb
     név: "Zúzó fegyver ellen rosszabb"
@@ -127,6 +128,6 @@ extrak:
       Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
       Elszenvedett VÉ csökkenésed duplázódik.
     feltétel:
-      - {típus: ellenfél_fegyver_sebzésjelleg, érték: zúzó}
+      - {típus: ellenfél_fegyver_sebzésjelleg, érték: Z}   # Z = zúzó (kanonikus egybetűs sebzésjelleg)
     hatás:
       - {cél: vé_veszteség, mód: szorzó, érték: 2}

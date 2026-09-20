@@ -3853,8 +3853,9 @@ Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ ker
 
 ### 42.4 Cél-fajták (prefix-vokabulár)
 
-- **Csupasz** (harcérték / esemény-cél): `TÉ VÉ SP SFÉ CÉ KÉ harckeret pengehossz pajzs-VÉ vé_veszteség …`
-- **Entitás prefix**: `manőver:<id>` (id a `manoverek.yaml`-ból), `fortély:<név>`, `képzettség:<név>`.
+- **Csupasz** (harcérték / esemény-cél): `TÉ VÉ SP SFÉ CÉ KÉ harckeret pengehossz pajzs-VÉ vé_veszteség manőver_ellenpróba …` (esemény-célok: `esemenyek.yaml`)
+- **Entitás cél-prefix**: `fortély:<név>`, `képzettség:<név>`.
+- **Al-feltétel prefix** (per-hatás `feltétel`): `manőver:<id>` (a konkrét manőver, `manoverek.yaml` id) — a manőver-effektek célja `manőver_ellenpróba`, a KONKRÉT manővert al-feltétel adja.
 - A prefix-készletet a `konstansok.yaml → feltétel_prefixek`-kel kell összehangolni (közös vokabulár a
   cél- és a feltétel-oldalon).
 

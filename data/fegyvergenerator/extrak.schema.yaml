@@ -19,14 +19,15 @@ feltetel_tipus_enum:
   - cél_felszereles
   - aktor
   - forgatás
+  - manőver_állapot          # pl. érték: passzív (a manőver a fegyver ELLEN történik)
   - ellenfél_fegyver_sebzésjelleg
   - narratív
 
-# hatás.cél entitás-prefixek ("prefix:érték"). A csupasz harcérték-célok (TÉ/VÉ/SP/SFÉ/…) prefix NÉLKÜLIEK.
-cel_prefix_enum: [manőver, fortély, képzettség]
+# hatás.cél entitás-prefixek ("prefix:érték"). A csupasz harcérték/esemény-célok (TÉ/VÉ/SP/SFÉ/manőver_ellenpróba/…) prefix NÉLKÜLIEK.
+cel_prefix_enum: [fortély, képzettség]
 
 # hatás.feltétel (al-feltétel) prefixek ("prefix:érték")
-alfeltetel_prefix_enum: [manőver_állapot]
+alfeltetel_prefix_enum: [manőver]
 
 # ── Rekord-séma ──
 rekord:
