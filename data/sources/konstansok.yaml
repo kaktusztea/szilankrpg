@@ -101,6 +101,8 @@ feltétel_prefixek:
   - "páncél"              # pl. "páncél:viselt" - aktív páncél MGT > 0
   - "fortély"             # pl. "fortély:Mesterfegyver" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
   - "képzettség"          # pl. "képzettség:Harcmodor" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
+  - "manőver_állapot"     # pl. "manőver_állapot:passzív" — egységes effekt-modell (engine_spec §42)
+  - "ellenfél_fegyver_sebzésjelleg"  # pl. "ellenfél_fegyver_sebzésjelleg:zúzó" — egységes effekt-modell (engine_spec §42)
 
 # ============================================================
 # Harcérték konstansok

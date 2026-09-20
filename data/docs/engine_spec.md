@@ -3806,7 +3806,7 @@ effekt = {cél, mód, érték, feltétel?}
   cél    : HARCÉRTÉK csupasz string (TÉ/VÉ/SP/SFÉ/CÉ/KÉ/harckeret/pengehossz/pajzs-VÉ/VÉ-veszteség …)
            VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>", "képzettség:<név>")
   mód    : lásd 42.2
-  érték  : numerikus (flat/szorzó/scaled/override/max_limit/előny/hátrány/enyhít) — vagy nincs (letilt/szöveges)
+  érték  : numerikus (flat/szorzó/scaled/override/max_limit/előny_hátrány/enyhít) — vagy nincs (letilt/szöveges)
   feltétel? : opcionális "prefix:érték" string (mint §16/§24) — al-feltétel ERRE az effektre
 ```
 
@@ -3822,25 +3822,29 @@ REFERENCIA-listát használják (a `manoverek.yaml` `követelmények`-je; pilot:
 | `scaled` | érték-transzf. | cél += FLOOR(forrás × arány) | arány + `forrás` | fortély-módosító |
 | `override` | érték-transzf. | cél = érték | int | fortély-módosító |
 | `max_limit` | korlát | cél = MIN(cél, érték) | int | hatás-operátor |
-| `előny` | kocka | a cél-DOBÁSRA Előny+érték | 1..2 | mindkettő |
-| `hátrány` | kocka | a cél-DOBÁSRA Hátrány+érték | -2..-1 | mindkettő |
+| `előny_hátrány` | kocka | a cél DOBÁSÁRA Előny/Hátrány (az érték ELŐJELE dönt) | +1..+2 / -2..-1 (clamp) | egyesített |
 | `enyhít` | státusz | a cél negatív hatás-fokát csökkenti (§22.7) | int | mindkettő |
 | `letilt` | boolean | a cél letiltása (auto-kudarc / képesség-vesztés) | — | hatás-operátor |
 | `szöveges` | informatív | nem kumulálható, csak megjelenítés | — | mindkettő |
 
-### 42.3 Alkalmazási precedencia
+### 42.3 Alkalmazási precedencia (MEGERŐSÍTVE, 2026-09-20)
 
-Egy célra több effekt is hathat; a sorrend definiált (különben `szorzó`/`override`/`max_limit` ütközik):
+Egy célra több effekt is hathat; a sorrend definiált (különben `szorzó`/`override`/`max_limit` ütközik).
+Best practice (GURPS / Pathfinder / CRPG stat-pipeline): **additív előbb, multiplikatív utána**.
 
 ```
 1. flat + scaled   → additív réteg összegződik
-2. szorzó          → a szumma szorzása (több szorzó sorban)
-3. override        → felülír mindent (ha van, a fentiek erre nem hatnak)
+2. szorzó          → a szumma szorzása (több szorzó sorban; kerekítés: FLOOR)
+3. override        → felülír mindent (ha van, az 1–2 eldobódik)
 4. max_limit       → felső korlát
-5. előny / hátrány → a VÉGSŐ érték dobására (külön dimenzió, clamp [-2,+2])
+5. előny_hátrány   → a VÉGSŐ érték dobására (külön dimenzió, clamp [-2,+2])
 6. letilt          → ha aktív, a cél semmis / auto-kudarc
    szöveges        → nem számol, csak listáz
 ```
+
+Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ kerekül (`FLOOR`) — egyezik a webapp
+`scaled` (`Math.floor`) konvenciójával. Több szorzó: szekvenciális (a kis diszkrét készletre — Duplázás
+×2, Felezés ×0.5 — ez a legkiszámíthatóbb; sok szorzó találkozásakor revideálandó additív-százalék felé).
 
 ### 42.4 Cél-fajták (prefix-vokabulár)
 
@@ -3852,8 +3856,9 @@ Egy célra több effekt is hathat; a sorrend definiált (különben `szorzó`/`o
 ### 42.5 Fázisolt migrációs terv
 
 1. **Szabvány** (kész): ez a szekció + a pilot `extrak.yaml` (már megfelel az alaknak/mód-enumnak).
-2. **Adat-migráció** (opportunista, NEM big-bang): a fortély `módosítók` és a `hatasok.yaml` fokozatos
-   átállítása a közös alakra; a duplikált `előny/hátrány`/`szöveges`/`enyhít` egyetlen definícióra vonása.
+2. **Adat-migráció** (EGYLÉPÉSES — user döntése; nincs backward-compat, a localStorage invalidálható):
+   a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra; a `előny`+`hátrány` → egyetlen
+   `előny_hátrány` (előjeles érték); a `szöveges`/`enyhít` egyetlen definícióra vonása.
 3. **Kód** (a runtime effekt-fázisnál, §41): EGY kiértékelő a 42.3 precedenciával, a `calcFortelyMods` és
    a hatás-operátor-feldolgozás beolvasztásával. Előfeltétel: regressziós védőháló (meglévő fortély-mods
    tesztek + új precedencia-tesztek).
@@ -3875,3 +3880,14 @@ A módok jelenleg KÜLÖN kódutakon élnek — ez az egyesítés kiindulópontj
 | `max_limit` | — nincs TS-fogyasztó; csak `hatas_operatorok.yaml` adat | (TERV) |
 
 Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implementál; az `override`/`előny`/`hátrány`/`enyhít`/`letilt`/`szöveges` a fenti EGYÉB kódutakon kezelődik, a `szorzó`/`max_limit`-nak pedig még NINCS runtime-fogyasztója (csak adat/spec). A 3. FÁZIS (42.5) ezt a szórást vonja egyetlen kiértékelő alá a 42.3 precedenciával.
+
+### 42.7 Rögzített döntések (2026-09-20)
+
+- **Kanonikus kocka-mód**: `előny_hátrány` (a `előny`+`hátrány` KÉT mód összeolvad; az `érték` ELŐJELE
+  adja az irányt: `+1/+2` = Előny, `-1/-2` = Hátrány).
+- **Precedencia** (42.3): additív → szorzó → override → max_limit → előny_hátrány → letilt; kerekítés FLOOR.
+- **Prefix-vokabulár**: a `konstansok.yaml → feltétel_prefixek` tartalmazza a `fortély`, `képzettség`,
+  `manőver_állapot`, `ellenfél_fegyver_sebzésjelleg` prefixeket is.
+- **Backward-compat**: nincs; a régi localStorage invalidálható.
+- **Migráció**: EGYLÉPÉSES (nem fokozatos) — a Fázis-2 egy menetben állítja át a fortély `módosítók` +
+  `hatasok.yaml` teljes készletét.

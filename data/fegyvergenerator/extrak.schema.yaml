@@ -7,7 +7,7 @@
 csoport_enum: [felkészítés, harci_helyzet, tulajdonság]
 
 # hatás.mód — az egyesített mód-enum (§42.2)
-mod_enum: [flat, szorzó, scaled, override, max_limit, előny, hátrány, enyhít, letilt, szöveges]
+mod_enum: [flat, szorzó, scaled, override, max_limit, előny_hátrány, enyhít, letilt, szöveges]
 
 # feltétel.típus — előfeltétel REFERENCIA (a manoverek.yaml `követelmények` szerint)
 feltetel_tipus_enum:

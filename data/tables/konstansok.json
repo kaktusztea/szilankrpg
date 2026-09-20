@@ -115,7 +115,9 @@
     "státusz",
     "páncél",
     "fortély",
-    "képzettség"
+    "képzettség",
+    "manőver_állapot",
+    "ellenfél_fegyver_sebzésjelleg"
   ],
   "harcérték_alap": {
     "KÉ": 0,
