@@ -3806,7 +3806,7 @@ effekt = {cél, mód, érték, feltétel?}
   cél    : HARCÉRTÉK csupasz string (TÉ/VÉ/SP/SFÉ/CÉ/KÉ/harckeret/pengehossz/pajzs-VÉ/VÉ-veszteség …)
            VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>", "képzettség:<név>")
   mód    : lásd 42.2
-  érték  : numerikus (flat/szorzó/scaled/override/max_limit/előny_hátrány/enyhít) — vagy nincs (letilt/szöveges)
+  érték  : numerikus (flat/szorzó/scaled/override/max_limit/előny/hátrány/enyhít) — vagy nincs (letilt/szöveges)
   feltétel? : opcionális "prefix:érték" string (mint §16/§24) — al-feltétel ERRE az effektre
 ```
 
@@ -3822,10 +3822,15 @@ REFERENCIA-listát használják (a `manoverek.yaml` `követelmények`-je; pilot:
 | `scaled` | érték-transzf. | cél += FLOOR(forrás × arány) | arány + `forrás` | fortély-módosító |
 | `override` | érték-transzf. | cél = érték | int | fortély-módosító |
 | `max_limit` | korlát | cél = MIN(cél, érték) | int | hatás-operátor |
-| `előny_hátrány` | kocka | a cél DOBÁSÁRA Előny/Hátrány (az érték ELŐJELE dönt) | +1..+2 / -2..-1 (clamp) | egyesített |
+| `előny` | kocka | a cél dobására Előny (kategória: `előny_hátrány`) | +1..+2 | egyesített |
+| `hátrány` | kocka | a cél dobására Hátrány (kategória: `előny_hátrány`) | -2..-1 | egyesített |
 | `enyhít` | státusz | a cél negatív hatás-fokát csökkenti (§22.7) | int | mindkettő |
 | `letilt` | boolean | a cél letiltása (auto-kudarc / képesség-vesztés) | — | hatás-operátor |
 | `szöveges` | informatív | nem kumulálható, csak megjelenítés | — | mindkettő |
+
+**Két réteg (B döntés):** a fenti a `mód`/`operátor` érték az effekt-ADATBAN. A `előny`/`hátrány` a
+`előny_hátrány` MÓD-KATEGÓRIA (a `hatas_operatorok.yaml` `mód` mezője) két operátor-neve — az adat a
+`előny`/`hátrány` nevet írja előjeles értékkel, a `előny_hátrány` a mechanika-osztály.
 
 ### 42.3 Alkalmazási precedencia (MEGERŐSÍTVE, 2026-09-20)
 
@@ -3837,7 +3842,7 @@ Best practice (GURPS / Pathfinder / CRPG stat-pipeline): **additív előbb, mult
 2. szorzó          → a szumma szorzása (több szorzó sorban; kerekítés: FLOOR)
 3. override        → felülír mindent (ha van, az 1–2 eldobódik)
 4. max_limit       → felső korlát
-5. előny_hátrány   → a VÉGSŐ érték dobására (külön dimenzió, clamp [-2,+2])
+5. előny/hátrány   → a VÉGSŐ érték dobására (kocka-dimenzió, clamp [-2,+2]; mód-kategória: előny_hátrány)
 6. letilt          → ha aktív, a cél semmis / auto-kudarc
    szöveges        → nem számol, csak listáz
 ```
@@ -3857,8 +3862,9 @@ Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ ker
 
 1. **Szabvány** (kész): ez a szekció + a pilot `extrak.yaml` (már megfelel az alaknak/mód-enumnak).
 2. **Adat-migráció** (EGYLÉPÉSES — user döntése; nincs backward-compat, a localStorage invalidálható):
-   a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra; a `előny`+`hátrány` → egyetlen
-   `előny_hátrány` (előjeles érték); a `szöveges`/`enyhít` egyetlen definícióra vonása.
+   a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra. A `előny`/`hátrány` NEM lesz
+   átnevezve (B döntés): a `előny_hátrány` a mód-kategória, a data a `előny`/`hátrány` operátor-neveket
+   használja előjeles értékkel — ez már konzisztens. A `szöveges`/`enyhít` egyetlen definícióra vonása.
 3. **Kód** (a runtime effekt-fázisnál, §41): EGY kiértékelő a 42.3 precedenciával, a `calcFortelyMods` és
    a hatás-operátor-feldolgozás beolvasztásával. Előfeltétel: regressziós védőháló (meglévő fortély-mods
    tesztek + új precedencia-tesztek).
@@ -3883,8 +3889,11 @@ Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implement�
 
 ### 42.7 Rögzített döntések (2026-09-20)
 
-- **Kanonikus kocka-mód**: `előny_hátrány` (a `előny`+`hátrány` KÉT mód összeolvad; az `érték` ELŐJELE
-  adja az irányt: `+1/+2` = Előny, `-1/-2` = Hátrány).
+- **Kocka-mechanika (KÉT réteg — B döntés, 2026-09-20)**: a MÓD-KATEGÓRIA `előny_hátrány`
+  (`hatas_operatorok.yaml` osztályozás). Az effekt-ADAT a `előny`/`hátrány` operátor-neveket használja
+  ELŐJELES értékkel (`+1/+2` = Előny, `-1/-2` = Hátrány). NINCS tömeges átnevezés: a data/kód már
+  konzisztens (minden `hátrány` negatív, `előny` pozitív — auditálva). A `előny`/`hátrány` = a
+  `előny_hátrány` kategória két olvasható operátor-neve.
 - **Precedencia** (42.3): additív → szorzó → override → max_limit → előny_hátrány → letilt; kerekítés FLOOR.
 - **Prefix-vokabulár**: a `konstansok.yaml → feltétel_prefixek` tartalmazza a `fortély`, `képzettség`,
   `manőver_állapot`, `ellenfél_fegyver_sebzésjelleg` prefixeket is.
