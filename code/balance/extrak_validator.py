@@ -43,6 +43,7 @@ def validate():
     feltetel_tipus = set(s["feltetel_tipus_enum"])
     cel_prefix = set(s["cel_prefix_enum"])
     alfeltetel_prefix = set(s["alfeltetel_prefix_enum"])
+    feltetel_ertek = s.get("feltetel_ertek_enum", {})   # típus -> megengedett értékek (csak fix készletűekre)
     kotelezo = {m for m, spec in s["rekord"].items() if spec.get("kötelező")}
     ismert = set(s["rekord"])
 
@@ -72,6 +73,8 @@ def validate():
                 continue
             if f["típus"] not in feltetel_tipus:
                 hibak.append(f"{c}.feltétel.típus: érvénytelen {f['típus']!r} — megengedett: {sorted(feltetel_tipus)}")
+            elif f["típus"] in feltetel_ertek and f.get("érték") not in feltetel_ertek[f["típus"]]:
+                hibak.append(f"{c}.feltétel[{f['típus']}]: érvénytelen érték {f.get('érték')!r} — megengedett: {feltetel_ertek[f['típus']]}")
 
         for h in e.get("hatás", []) or []:
             if not isinstance(h, dict):

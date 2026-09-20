@@ -19,7 +19,7 @@ feltetel_tipus_enum:
   - cél_felszereles
   - aktor
   - forgatás
-  - manőver_állapot          # pl. érték: passzív (a manőver a fegyver ELLEN történik)
+  - manőver_állapot          # érték: aktív (én alkalmazom) | passzív (ellenem irányul) — vö. webapp Manőver dobás (manover-dobas-calc Mód)
   - ellenfél_fegyver_sebzésjelleg
   - narratív
 
@@ -28,6 +28,15 @@ cel_prefix_enum: [fortély, képzettség]
 
 # hatás.feltétel (al-feltétel) prefixek ("prefix:érték")
 alfeltetel_prefix_enum: [manőver]
+
+# feltétel ÉRTÉK-enumok — CSAK a fix értékkészletű típusokra. A katalógus-referencia típusoknál
+# (fortély/képzettség/státusz/harci_helyzet/aktor/narratív) NINCS enum — más katalógusra/entitásra mutatnak.
+feltetel_ertek_enum:
+  forgatás:                      [egykezes, másfélkezes, kétkezes]
+  manőver_állapot:               [aktív, passzív]
+  ellenfél_fegyver_sebzésjelleg: [S, V, Z]              # szúró / vágó / zúzó
+  cél_páncél:                    [vérttelen, páncélos]   # coarse; a finom páncélosztályok (csupasz/puha/bor/lanc/merev) a sebzesjelleg_pancel_matrix-ban
+  cél_felszereles:               [pajzs]
 
 # ── Rekord-séma ──
 rekord:

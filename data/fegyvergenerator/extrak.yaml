@@ -67,7 +67,7 @@ extrak:
     csoport: harci_helyzet
     leírás: "A láncos fej megkerüli a pajzsot — a pajzs adta VÉ feleződik."
     feltétel:
-      - {típus: cél_felszereles, név: pajzs}
+      - {típus: cél_felszereles, érték: pajzs}
     hatás:
       - {cél: pajzs-VÉ, mód: szorzó, érték: 0.5}
 
