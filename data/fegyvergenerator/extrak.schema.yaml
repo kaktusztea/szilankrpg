@@ -1,0 +1,52 @@
+---
+# Séma: extrak.yaml (Fegyvergenerátor extrák katalógus)
+# Az egységes effekt-modell (engine_spec.md §42) PILOTja.
+# A validátor (code/balance/extrak_validator.py) EBBŐL dolgozik — a szkriptben nincs beégetett vokabulár.
+
+# ── Vokabulárok (enumok) ──
+csoport_enum: [felkészítés, harci_helyzet, tulajdonság]
+
+# hatás.mód — az egyesített mód-enum (§42.2)
+mod_enum: [flat, szorzó, scaled, override, max_limit, előny, hátrány, enyhít, letilt, szöveges]
+
+# feltétel.típus — előfeltétel REFERENCIA (a manoverek.yaml `követelmények` szerint)
+feltetel_tipus_enum:
+  - fortély
+  - képzettség
+  - státusz
+  - harci_helyzet
+  - cél_páncél
+  - cél_felszereles
+  - aktor
+  - forgatás
+  - ellenfél_fegyver_sebzésjelleg
+  - narratív
+
+# hatás.cél entitás-prefixek ("prefix:érték"). A csupasz harcérték-célok (TÉ/VÉ/SP/SFÉ/…) prefix NÉLKÜLIEK.
+cel_prefix_enum: [manőver, fortély, képzettség]
+
+# hatás.feltétel (al-feltétel) prefixek ("prefix:érték")
+alfeltetel_prefix_enum: [manőver_állapot]
+
+# ── Rekord-séma ──
+rekord:
+  id:       {kötelező: true,  típus: str,  megjegyzés: "egyedi; fegyverek.yaml / konstansok.yaml hivatkozza"}
+  név:      {kötelező: true,  típus: str}
+  csoport:  {kötelező: true,  típus: str,  forrás: csoport_enum}
+  leírás:   {kötelező: false, típus: str}
+  feltétel: {kötelező: false, típus: list, elem: feltétel}
+  hatás:    {kötelező: true,  típus: list, elem: hatás}
+
+# feltétel-elem (REFERENCIA)
+feltétel:
+  típus: {kötelező: true,  típus: str, forrás: feltetel_tipus_enum}
+  név:   {kötelező: false, típus: str}
+  id:    {kötelező: false, típus: str}
+  érték: {kötelező: false}     # int vagy str
+
+# hatás-elem (a fortély `módosítók` STRINGES formátuma)
+hatás:
+  cél:      {kötelező: true,  típus: str, megjegyzés: "csupasz harcérték VAGY 'prefix:érték' (cel_prefix_enum)"}
+  mód:      {kötelező: true,  típus: str, forrás: mod_enum}
+  érték:    {kötelező: false}   # int vagy float
+  feltétel: {kötelező: false, típus: str, megjegyzés: "'prefix:érték' (alfeltetel_prefix_enum)"}

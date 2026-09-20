@@ -273,7 +273,9 @@ def teszt_dump(ero=0):
 
 
 if __name__ == "__main__":
-    import fegyverek_validator
+    import extrak_validator, fegyverek_validator
+    if not extrak_validator.run():
+        raise SystemExit("extrak.yaml séma-hiba — javítsd a fentieket (lásd fenn).")
     if not fegyverek_validator.run():
         raise SystemExit("fegyverek.yaml séma-hiba — javítsd a fentieket (lásd fenn).")
     print()

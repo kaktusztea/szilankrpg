@@ -30,7 +30,7 @@ fokok:
   módosítók:
   - cél: harckeret
     érték: 2
-    mód: flat
+    mód: "flat"
     forrás: ''
     arány: 0
     feltétel: fegyverfogás:kétkezes
@@ -45,7 +45,7 @@ fokok:
   módosítók:
   - cél: harckeret
     érték: 3
-    mód: flat
+    mód: "flat"
     forrás: ''
     arány: 0
     feltétel: fegyverfogás:kétkezes
@@ -60,7 +60,7 @@ fokok:
   módosítók:
   - cél: harckeret
     érték: 4
-    mód: flat
+    mód: "flat"
     forrás: ''
     arány: 0
     feltétel: fegyverfogás:kétkezes

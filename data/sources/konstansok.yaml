@@ -99,6 +99,8 @@ feltétel_prefixek:
   - "manőver"             # pl. "manőver:kibontakozás"
   - "státusz"             # pl. "státusz:bénultság"
   - "páncél"              # pl. "páncél:viselt" - aktív páncél MGT > 0
+  - "fortély"             # pl. "fortély:Mesterfegyver" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
+  - "képzettség"          # pl. "képzettség:Harcmodor" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
 
 # ============================================================
 # Harcérték konstansok

@@ -3857,3 +3857,21 @@ Egy célra több effekt is hathat; a sorrend definiált (különben `szorzó`/`o
 3. **Kód** (a runtime effekt-fázisnál, §41): EGY kiértékelő a 42.3 precedenciával, a `calcFortelyMods` és
    a hatás-operátor-feldolgozás beolvasztásával. Előfeltétel: regressziós védőháló (meglévő fortély-mods
    tesztek + új precedencia-tesztek).
+
+### 42.6 Jelenlegi kódutak (mód → hol kezelődik MA)
+
+A módok jelenleg KÜLÖN kódutakon élnek — ez az egyesítés kiindulópontja és egyben indoka:
+
+| mód | jelenlegi kezelő | § |
+|-----|------------------|---|
+| `flat` | `engine/fortely-mods.ts` (calcFortelyMods) + `harc/combat-roll-info.ts` (dobás-bónusz) | §16 |
+| `scaled` | `engine/fortely-mods.ts` (calcFortelyMods) | §16 |
+| `override` | `harc/fegyver-calc.ts` (per-fegyver harcérték) | §5–6 |
+| `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` / harc-popupok | §22 |
+| `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
+| `letilt` | `harc/taktika-calc.ts` (feltételes TÉ semlegesítés) | §21 |
+| `szöveges` | `formatters.tsx` / `harc/HatasokInfo.tsx` (megjelenítés) | §22 |
+| `szorzó` | — nincs TS-fogyasztó; csak `hatas_operatorok.yaml` adat | (TERV) |
+| `max_limit` | — nincs TS-fogyasztó; csak `hatas_operatorok.yaml` adat | (TERV) |
+
+Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implementál; az `override`/`előny`/`hátrány`/`enyhít`/`letilt`/`szöveges` a fenti EGYÉB kódutakon kezelődik, a `szorzó`/`max_limit`-nak pedig még NINCS runtime-fogyasztója (csak adat/spec). A 3. FÁZIS (42.5) ezt a szórást vonja egyetlen kiértékelő alá a 42.3 precedenciával.

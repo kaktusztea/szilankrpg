@@ -113,7 +113,9 @@
     "fegyverfogás",
     "manőver",
     "státusz",
-    "páncél"
+    "páncél",
+    "fortély",
+    "képzettség"
   ],
   "harcérték_alap": {
     "KÉ": 0,
