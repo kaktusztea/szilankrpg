@@ -2,7 +2,7 @@
 
 > Konvenciók, build, irányelvek → **AGENTS.md**
 > Kódtérkép, fájl-felelősségek → **MAP.md**
-> Engine formulák → **engine_spec.md** (§1-§41)
+> Engine formulák → **engine_spec.md** (§1-§42)
 > UI viselkedés → **gui_spec.md**
 
 ---
@@ -21,6 +21,7 @@
 | `k20T` forrás döntés | Sikertelen támadás VÉ csökkentése: a támadódobás k20-a, vagy külön dobás? Nincs kimondva | harcszimulacio.spec §13.1 |
 | Fárasztás érték data layerbe | A `3 VÉ` csak `megjegyzés` prózában él (`módosítók: {}`) — séma-bővítés kell | harcszimulacio.spec §16/2 |
 | MK párok ellenőrzése | `Kard, Slan` és `Mara-sequor` nem követi a `TÉ-2/VÉ-2 + Átütés megszűnik` MK szabályt. Szándékos? | harcszimulacio.spec §16/10 |
+| **Egységes effekt-modell** | A fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia). 1. fázis kész (szabvány + `extrak.yaml` pilot); 2. adat-migráció opportunista; 3. kód-összeolvasztás a reactive runtime effekt-fázisnál. | §42 |
 
 ---
 

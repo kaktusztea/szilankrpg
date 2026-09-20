@@ -7,10 +7,16 @@
 # A generátor a kettőt ÖSSZEFÉSÜLI (unió). A hatás SZITUÁCIÓS (nem a bázisérték);
 # a futásidejű kiértékelés a reactive engine későbbi feladata.
 #
-# Mezők (a fortély/módosító vokabulárt tükrözi):
-#   feltétel[] : ÉS-kapcsolat. {típus, név?, érték?}
-#       típus: fortély (érték=fok≥) | tulajdonság (érték=szint≥) | státusz | harci_helyzet | cél_páncél | narratív (KM)
-#   hatás[]    : {cél, mód, érték}. mód: flat | szorzó | override | ...
+# STRUKTÚRA (a webapp meglévő két formátumához igazítva):
+#   feltétel[] : előfeltételek — a manoverek.yaml `követelmények` STRUKTÚRÁJA:
+#       {típus, név | id, érték?}   (ÉS-kapcsolat)
+#       típus: fortély | képzettség (érték=fok/szint≥) | státusz | harci_helyzet | cél_páncél
+#            | cél_felszereles | aktor | forgatás | ellenfél_fegyver_sebzésjelleg | narratív (KM)
+#   hatás[]    : a fortély `módosítók` STRINGES formátuma: {cél, mód, érték, feltétel?}
+#       cél: HARCÉRTÉK csupasz string (TÉ / VÉ / SP / SFÉ / pajzs-VÉ / VÉ-veszteség / harckeret …)
+#            VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>")
+#       feltétel?: al-feltétel prefix-string (pl. "manőver_állapot:passzív")
+#       mód: flat | override  (fortély-`módosító` mód) | szorzó  (hatás-operátor mód, hatas_operatorok.yaml: érték 0.5=felez, 2=dupláz)
 
 extrak:
   # ── FELKÉSZÍTÉS (kiképzett, opt-in — a régi „extra"/KF) ──
@@ -25,7 +31,7 @@ extrak:
       - {típus: narratív, név: iskola}                   # nem gépi: KM dönti el
     hatás:
       # MÁSODRENDŰ: a Mesterfegyver e fegyverre vonatkozó bónuszát szorozza (×2).
-      - {cél: "Mesterfegyver-bónusz", mód: szorzó, érték: 2}
+      - {cél: "fortély:Mesterfegyver", mód: szorzó, érték: 2}
 
   # ── HARCI HELYZET (szituációs, automatikus) ──
   - id: beszorithato
@@ -63,7 +69,7 @@ extrak:
     feltétel:
       - {típus: cél_felszereles, név: pajzs}
     hatás:
-      - {cél: "pajzs-VÉ", mód: szorzó, érték: 0.5}
+      - {cél: pajzs-VÉ, mód: szorzó, érték: 0.5}
 
   - id: sfe_duplazodik
     név: "SFÉ dupla ellene"
@@ -79,13 +85,13 @@ extrak:
     név: "Pontos"
     csoport: tulajdonság
     leírás: >
-      Precíziós szúróhegy: a Pontra támadás manőver Ellenpróbára +2.
+      Precíziós szúróhegy: a Precíz támadás manőver Ellenpróbára +2.
       Csak pengehegy aktor + egykezes forgatás mellett értelmes.
     feltétel:
       - {típus: aktor, érték: pengehegy}
       - {típus: forgatás, érték: egykezes}
     hatás:
-      - {cél: "Pontra támadás manőver", mód: flat, érték: 2}
+      - {cél: "manőver:precíz_támadás", mód: flat, érték: 2}
 
   - id: lefegyverezhetobb
     név: "Lefegyverezhetőbb"
@@ -95,19 +101,8 @@ extrak:
     feltétel:
       - {típus: forgatás, érték: egykezes}
     hatás:
-      - cél: "manőver:lefegyverzés"
-        érték: -2
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "manőver_állapot:passzív"
-      - cél: "manőver:fegyvertörés"
-        érték: -2
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "manőver_állapot:passzív"
-
+      - {cél: "manőver:lefegyverzés", mód: flat, érték: -2, feltétel: "manőver_állapot:passzív"}
+      - {cél: "manőver:fegyvertörés", mód: flat, érték: -2, feltétel: "manőver_állapot:passzív"}
 
   - id: zuzo_ellen_rosszabb
     név: "Zúzó fegyver ellen rosszabb"
@@ -116,8 +111,6 @@ extrak:
       Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
       Elszenvedett VÉ csökkenésed duplázódik.
     feltétel:
-      - "ellenfél_fegyver_sebzésjelleg:zúzó"
+      - {típus: ellenfél_fegyver_sebzésjelleg, érték: zúzó}
     hatás:
-      - cél: "vé_veszteség"
-        érték: 2
-        mód: "szorzó"
+      - {cél: VÉ-veszteség, mód: szorzó, érték: 2}

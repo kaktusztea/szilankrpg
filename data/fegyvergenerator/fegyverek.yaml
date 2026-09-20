@@ -15,7 +15,7 @@
 - {nev: Kés, kat: Közelharci, megj: "", teszt_minta: true, fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid, pengehegy-apró], penges: 1, suly: könnyű}}
 - {nev: Tőr, kat: Közelharci, megj: "", teszt_minta: true, fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], penges: 1}}
 - {nev: Dzsambia, kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], penges: 1, suly: könnyű}}
-- {nev: Kriszkés, kat: Közelharci, megj: "", extrak: [panceltalan_szuras], fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
+- {nev: Kriszkés, kat: Közelharci, megj: "", extrak: [panceltalan_roncsolasa], fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
 - {nev: Levéltőr, kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1}}
 - {nev: Pugoss, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
 - {nev: Ramiera, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1}}
@@ -37,7 +37,7 @@
 - {nev: "Kard, predoci egyeneskard", kat: Kardvívó, megj: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1}}
 - {nev: "Kard, lovag", kat: Kardvívó, megj: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, suly: nehéz}}
 - {nev: "Kard, rapír", kat: Kardvívó, megj: "", teszt_minta: true, fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], penges: 1}}
-- {nev: Tőrkard, kat: Kardvívó, megj: "", fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], penges: 1}}
+- {nev: Tőrkard, kat: Kardvívó, megj: "", extrak: [pontos, lefegyverezhetobb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], penges: 1}}
 - {nev: "Kard, másfélkezes (2K)", kat: Kardvívó, megj: "", teszt_minta: true, fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1}}
 - {nev: "Kard, másfélkezes (1K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, egykezes_kenyszer: true}}
 - {nev: "Kard, mesterkard (2K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, suly: nehéz}}

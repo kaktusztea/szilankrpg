@@ -3777,3 +3777,83 @@ Végső kiértékelés: `new Function(...)` — biztonságos (nincs user input a
 2. Hívó komponens — `extras` vagy `arrayContext` bővítés a szükséges inputokkal
 3. Eredmény kiolvasás: `computed.get('rule_id')` → UI megjelenítés
 4. engine_spec frissítés — formula dokumentálás a releváns szekcióban
+
+
+---
+
+## §42 Egységes effekt-modell (TERV)
+
+Két effekt-rendszer él párhuzamosan, részben átfedő, részben szétosztott mód-készlettel:
+
+- **Fortély módosítók** (§16, `fortely-mods.ts`): a karakter build-jéből (fortélyok) folyamatosan
+  számított, additív harcérték-módosítók. Mód: `flat | scaled | override | előny | hátrány | enyhít`.
+- **Hatás-operátorok** (§22, `hatas_operatorok.yaml`): státuszok / harci helyzetek okozta, nevesített
+  szituációs hatások. Mód: `előny_hátrány | szorzó | letilt | max_limit | szöveges | enyhít`.
+
+**Átfedés**: az „előny/hátrány", `szöveges`, `enyhít` fogalom MINDKÉT rendszerben szerepel (duplikáció).
+**Szétosztás**: a `szorzó` csak a hatás-operátornál, a `flat`/`override`/`scaled` csak a fortély-módosítónál.
+Egy új effekt-forrás (pl. `data/fegyvergenerator/extrak.yaml`) emiatt kénytelen MINDKETTŐBŐL meríteni.
+
+**Cél**: EGY közös effekt-nyelvtan (alak + mód-enum + precedencia), amit minden forrás használ (fortély,
+státusz, harci helyzet, extra). A KÓD egyesítése (egyetlen kiértékelő) a reactive engine runtime
+effekt-fázisára halasztva (§41) — addig ez vokabulár-szabvány + fokozatos adat-migráció. (YAGNI: a
+`calcFortelyMods` működik és tesztelt, big-bang összeolvasztás most csak regressziós kockázat.)
+
+### 42.1 Közös effekt-alak
+
+```
+effekt = {cél, mód, érték, feltétel?}
+  cél    : HARCÉRTÉK csupasz string (TÉ/VÉ/SP/SFÉ/CÉ/KÉ/harckeret/pengehossz/pajzs-VÉ/VÉ-veszteség …)
+           VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>", "képzettség:<név>")
+  mód    : lásd 42.2
+  érték  : numerikus (flat/szorzó/scaled/override/max_limit/előny/hátrány/enyhít) — vagy nincs (letilt/szöveges)
+  feltétel? : opcionális "prefix:érték" string (mint §16/§24) — al-feltétel ERRE az effektre
+```
+
+Az ELŐFELTÉTELEK (a teljes effekt-blokk aktiválása) továbbra is a strukturált `{típus, név, érték}`
+REFERENCIA-listát használják (a `manoverek.yaml` `követelmények`-je; pilot: `extrak.yaml → feltétel`).
+
+### 42.2 Egyesített mód-enum
+
+| mód | kategória | szemantika | érték | eredet |
+|-----|-----------|-----------|-------|--------|
+| `flat` | érték-transzf. | cél += érték | int | fortély-módosító |
+| `szorzó` | érték-transzf. | cél ×= érték | 0.5=felez, 2=dupláz | hatás-operátor |
+| `scaled` | érték-transzf. | cél += FLOOR(forrás × arány) | arány + `forrás` | fortély-módosító |
+| `override` | érték-transzf. | cél = érték | int | fortély-módosító |
+| `max_limit` | korlát | cél = MIN(cél, érték) | int | hatás-operátor |
+| `előny` | kocka | a cél-DOBÁSRA Előny+érték | 1..2 | mindkettő |
+| `hátrány` | kocka | a cél-DOBÁSRA Hátrány+érték | -2..-1 | mindkettő |
+| `enyhít` | státusz | a cél negatív hatás-fokát csökkenti (§22.7) | int | mindkettő |
+| `letilt` | boolean | a cél letiltása (auto-kudarc / képesség-vesztés) | — | hatás-operátor |
+| `szöveges` | informatív | nem kumulálható, csak megjelenítés | — | mindkettő |
+
+### 42.3 Alkalmazási precedencia
+
+Egy célra több effekt is hathat; a sorrend definiált (különben `szorzó`/`override`/`max_limit` ütközik):
+
+```
+1. flat + scaled   → additív réteg összegződik
+2. szorzó          → a szumma szorzása (több szorzó sorban)
+3. override        → felülír mindent (ha van, a fentiek erre nem hatnak)
+4. max_limit       → felső korlát
+5. előny / hátrány → a VÉGSŐ érték dobására (külön dimenzió, clamp [-2,+2])
+6. letilt          → ha aktív, a cél semmis / auto-kudarc
+   szöveges        → nem számol, csak listáz
+```
+
+### 42.4 Cél-fajták (prefix-vokabulár)
+
+- **Csupasz** (harcérték): `TÉ VÉ SP SFÉ CÉ KÉ harckeret pengehossz pajzs-VÉ VÉ-veszteség …`
+- **Entitás prefix**: `manőver:<id>` (id a `manoverek.yaml`-ból), `fortély:<név>`, `képzettség:<név>`.
+- A prefix-készletet a `konstansok.yaml → feltétel_prefixek`-kel kell összehangolni (közös vokabulár a
+  cél- és a feltétel-oldalon).
+
+### 42.5 Fázisolt migrációs terv
+
+1. **Szabvány** (kész): ez a szekció + a pilot `extrak.yaml` (már megfelel az alaknak/mód-enumnak).
+2. **Adat-migráció** (opportunista, NEM big-bang): a fortély `módosítók` és a `hatasok.yaml` fokozatos
+   átállítása a közös alakra; a duplikált `előny/hátrány`/`szöveges`/`enyhít` egyetlen definícióra vonása.
+3. **Kód** (a runtime effekt-fázisnál, §41): EGY kiértékelő a 42.3 precedenciával, a `calcFortelyMods` és
+   a hatás-operátor-feldolgozás beolvasztásával. Előfeltétel: regressziós védőháló (meglévő fortély-mods
+   tesztek + új precedencia-tesztek).
