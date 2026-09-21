@@ -21,6 +21,7 @@ from gen.kepzettsegek import generate_kepzettsegek  # noqa: E402
 from gen.fortelyok import generate_fortelyok, generate_kiterjesztesek, generate_primer_fortelyok  # noqa: E402
 from gen.fajok import generate_fajok  # noqa: E402
 from gen.aktiv_ful import generate_aktiv_ful  # noqa: E402
+from gen.naming_lint import lint as lint_naming  # noqa: E402
 
 # Generálási sorrend: a későbbiek az előzők kimenetére építhetnek
 GENERATORS = [
@@ -59,8 +60,27 @@ def validate_fortely_manover_refs():
         raise SystemExit(1)
 
 
+def validate_naming_convention():
+    """Build-gate: egységes YAML naming-convention (nem-mozaikszó kulcs/érték = csupa kisbetű).
+
+    A data/sources (pipeline) ÉS a data/fegyvergenerator (tervezői adat) fájljait ellenőrzi.
+    """
+    data_dir = os.path.dirname(os.path.abspath(__file__))
+    dirs = [os.path.join(data_dir, 'sources'), os.path.join(data_dir, 'fegyvergenerator')]
+    errors = lint_naming(dirs)
+    if errors:
+        print("  ❌ YAML naming-convention hibák (nem-mozaikszó nagybetűs kulcs/érték):")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
+
+
 def main():
     force = '--force' in sys.argv
+
+    # Naming-convention build-gate: MINDIG fut (a freshness-skip előtt is)
+    validate_naming_convention()
+
     if not force and sources_unchanged():
         print("Tables up-to-date, skipping generation.")
         return

@@ -46,27 +46,27 @@ fejdarab:
 
 # súly: név -> SP, sebesség, erő-követelmény (erő)
 # DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva). nehéz/súlyos: SP VAGY átütés (a fegyver nehez_mod dönt).
-suly:
+súly:
   könnyű:  {SP: -1, sebesség: -1, erő: 0}
   átlagos: {SP: 0,  sebesség: 0,  erő: 0}
   nehéz:   {SP: 1,  sebesség: 1,  erő: 2}
   súlyos:  {SP: 2,  sebesség: 2,  erő: 3}
 
-# idea: szint -> TÉ, VÉ, SP, sebesség, súly-delta (suly)
+# idea: szint -> TÉ, VÉ, SP, sebesség, súly-delta (súly)
 idea:
-  -5: {TÉ: -3, VÉ: -3, SP: -5, sebesség: 2,  suly: 0}
-  -4: {TÉ: -2, VÉ: -2, SP: -4, sebesség: 1,  suly: 0}
-  -3: {TÉ: -1, VÉ: -1, SP: -3, sebesség: 1,  suly: 0}
-  -2: {TÉ: -1, VÉ: -1, SP: -2, sebesség: 0,  suly: 0}
-  -1: {TÉ: 0,  VÉ: 0,  SP: -1, sebesség: 0,  suly: 0}
-  0:  {TÉ: 0,  VÉ: 0,  SP: 0,  sebesség: 0,  suly: 0}
-  1:  {TÉ: 0,  VÉ: 0,  SP: 1,  sebesség: 0,  suly: 0}
-  2:  {TÉ: 1,  VÉ: 1,  SP: 2,  sebesség: 0,  suly: 0}
-  3:  {TÉ: 1,  VÉ: 1,  SP: 3,  sebesség: -1, suly: 0}
-  4:  {TÉ: 2,  VÉ: 2,  SP: 4,  sebesség: -1, suly: -1}
-  5:  {TÉ: 3,  VÉ: 3,  SP: 5,  sebesség: -2, suly: -2}
+  -5: {TÉ: -3, VÉ: -3, SP: -5, sebesség: 2,  súly: 0}
+  -4: {TÉ: -2, VÉ: -2, SP: -4, sebesség: 1,  súly: 0}
+  -3: {TÉ: -1, VÉ: -1, SP: -3, sebesség: 1,  súly: 0}
+  -2: {TÉ: -1, VÉ: -1, SP: -2, sebesség: 0,  súly: 0}
+  -1: {TÉ: 0,  VÉ: 0,  SP: -1, sebesség: 0,  súly: 0}
+  0:  {TÉ: 0,  VÉ: 0,  SP: 0,  sebesség: 0,  súly: 0}
+  1:  {TÉ: 0,  VÉ: 0,  SP: 1,  sebesség: 0,  súly: 0}
+  2:  {TÉ: 1,  VÉ: 1,  SP: 2,  sebesség: 0,  súly: 0}
+  3:  {TÉ: 1,  VÉ: 1,  SP: 3,  sebesség: -1, súly: 0}
+  4:  {TÉ: 2,  VÉ: 2,  SP: 4,  sebesség: -1, súly: -1}
+  5:  {TÉ: 3,  VÉ: 3,  SP: 5,  sebesség: -2, súly: -2}
 
-# alapanyag: név -> TÉ, VÉ, SP, opcionális súly-delta (suly) és átütés
+# alapanyag: név -> TÉ, VÉ, SP, opcionális súly-delta (súly) és átütés
 alapanyag:
   test:       {TÉ: -3, VÉ: -3, SP: -5}
   krumpli:    {TÉ: -3, VÉ: -3, SP: -5}
@@ -75,8 +75,8 @@ alapanyag:
   bronz:      {TÉ: 0,  VÉ: 0,  SP: -2}
   acél:       {TÉ: 0,  VÉ: 0,  SP: 0}
   abbitacél:  {TÉ: 1,  VÉ: 1,  SP: 1}
-  mithrill:   {TÉ: 1,  VÉ: 1,  SP: 2,  suly: -1}
-  lunír:      {TÉ: 1,  VÉ: 1,  SP: 0,  suly: -2}   # gyorsaság-fém
+  mithrill:   {TÉ: 1,  VÉ: 1,  SP: 2,  súly: -1}
+  lunír:      {TÉ: 1,  VÉ: 1,  SP: 0,  súly: -2}   # gyorsaság-fém
   feketeacél: {TÉ: 1,  VÉ: 1,  SP: 1}              # Mara-Sequor — Chi-harcban törhetetlen
   ősfém:      {TÉ: 2,  VÉ: 2,  SP: 2}              # 1-2. kori — szellem/élőholt sebez
   élőereklye: {TÉ: 2,  VÉ: 2,  SP: 3}              # törhetetlen, kötődik
@@ -94,10 +94,10 @@ tipus_tv:
 # szálfegyver nyél: típus -> SP (direkt), súly (kategória-eltolás, mint idea/alapanyag suly_delta)
 # A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika — bázis-hatásuk nincs.
 szalfegyver_nyel:
-  sima:        {SP: 0, suly: 0}   # alap (nincs speciális nyél)
-  fanyelű:     {SP: 0, suly: 0}   # csak Fegyvertörés ellenpróba +2 (runtime) — bázis-hatás nincs
-  vasaltszárú: {SP: 0, suly: 1}   # +1 súly kategória
-  tömörszárú:  {SP: 1, suly: 2}   # +1 SP, +2 súly kategória (+1 Felszerelés pont = logisztika)
+  sima:        {SP: 0, súly: 0}   # alap (nincs speciális nyél)
+  fanyelű:     {SP: 0, súly: 0}   # csak Fegyvertörés ellenpróba +2 (runtime) — bázis-hatás nincs
+  vasaltszárú: {SP: 0, súly: 1}   # +1 súly kategória
+  tömörszárú:  {SP: 1, súly: 2}   # +1 SP, +2 súly kategória (+1 Felszerelés pont = logisztika)
 
 # páncélok a balansz-teszthez: [név, SFÉ, fém?]
 pancel:

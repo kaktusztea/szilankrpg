@@ -10,7 +10,7 @@
 #   kötelező    : true/false
 #   típus       : str | int | bool | list | map
 #   enum        : fix megengedett értékek (itt soroljuk)
-#   forrás      : az érték a megadott katalógusban kell legyen (fegyverhossz|aktor|suly|idea|alapanyag|fejdarab|extrak)
+#   forrás      : az érték a megadott katalógusban kell legyen (fegyverhossz|aktor|súly|idea|alapanyag|fejdarab|extrak)
 #   elem_forrás : listánál MINDEN elem a katalógusban kell legyen
 #   min         : lista min. hossza
 #   default / példa / megjegyzés / almezok : csak dokumentáció
@@ -19,7 +19,7 @@ schema_version: 1
 
 # ── Top-level rekord mezők ──
 rekord:
-  nev:         {kötelező: true,  típus: str,  példa: "Kard, hosszú", megjegyzés: "lookup + megjelenített név"}
+  név:         {kötelező: true,  típus: str,  példa: "Kard, hosszú", megjegyzés: "lookup + megjelenített név"}
   kat:         {kötelező: false, típus: str,  enum: [Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc],
                 megjegyzés: "harcmodor; ha JELEN van → a fegyver megjelenik a fegyverlistában (enélkül csak teszt-minta)"}
   megj:        {kötelező: false, típus: str,  példa: "Z, kétkezes", megjegyzés: "szabad mechanika-jegyzet (a levezethetőt/strukturáltat NEM ide)"}
@@ -39,7 +39,7 @@ fegyver:
   penges:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "pengés? (+1 TÉ/VÉ, +1 fejdarab, +1 SP)"}
   lancos:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "láncos fej? (+1 SP, +1 Sebesség)"}
   hajlekony:         {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "hajlékony (ostor)? (-2 VÉ, +1 Sebesség)"}
-  suly:              {kötelező: false, típus: str,  forrás: suly, default: átlagos, megjegyzés: "konstansok.yaml suly: könnyű/átlagos/nehéz/súlyos"}
+  súly:              {kötelező: false, típus: str,  forrás: súly, default: átlagos, megjegyzés: "konstansok.yaml súly: könnyű/átlagos/nehéz/súlyos"}
   idea:              {kötelező: false, típus: int,  forrás: idea, default: 0, megjegyzés: "inherens minőség; konstansok.yaml idea (-5..5)"}
   alapanyag:         {kötelező: false, típus: str,  forrás: alapanyag, default: acél, megjegyzés: "konstansok.yaml alapanyag (acél, feketeacél, kő, mithrill, …)"}
   fejdarab_alap:     {kötelező: false, típus: int,  forrás: fejdarab, default: 0, megjegyzés: "fejdarab alap; konstansok.yaml fejdarab (0..3)"}

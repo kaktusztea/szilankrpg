@@ -13,7 +13,7 @@ data/
   rules.json                 Reactive engine: 53 deklaratív szabály
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
-                             fortelyok, fajok, aktiv_ful, validators
+                             fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate)
   patterns/                  md→json kinyerés konfig (kézzel szerkesztett, code/process_fegyverek.py olvassa)
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák

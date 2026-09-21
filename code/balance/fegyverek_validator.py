@@ -5,7 +5,7 @@ Ellenőriz:
   - kötelező mezők megléte, ismeretlen mezők tiltása (top-level ÉS a `fegyver` blokk)
   - típusok (str/int/bool/list/map)
   - fix enumok (kat, penges, nehez_mod, …)
-  - katalógus-alapú kereszthivatkozások: aktor/suly/idea/alapanyag/fejdarab/hossz a
+  - katalógus-alapú kereszthivatkozások: aktor/súly/idea/alapanyag/fejdarab/hossz a
     konstansok.yaml-ból, modosito-id-k a extrak.yaml-ból
   - elvart: az aktorok érvényesek és [TÉ, VÉ] két egész
 
@@ -33,7 +33,7 @@ def _forras_ertekek():
     return {
         "fegyverhossz": {int(x) for x in k["fegyverhossz"]},
         "aktor":        set(k["aktor"]),
-        "suly":         set(k["suly"]),
+        "súly":         set(k["súly"]),
         "idea":         {int(x) for x in k["idea"]},
         "alapanyag":    set(k["alapanyag"]),
         "fejdarab":     {int(x) for x in k["fejdarab"]},
@@ -91,7 +91,7 @@ def validate():
     if not isinstance(recs, list):
         return ["fegyverek.yaml: a gyökér nem lista"]
     for r in recs:
-        nev = r.get("nev", "???") if isinstance(r, dict) else "???"
+        nev = r.get("név", "???") if isinstance(r, dict) else "???"
         cimke = f"[{nev}]"
         _blokk(cimke, r, rekord_sema, forras, hibak)
         if isinstance(r, dict):

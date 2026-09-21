@@ -46,7 +46,7 @@ FEGYVERHOSSZ = {int(k): v for k, v in _K["fegyverhossz"].items()}
 FEJDARAB     = {int(k): v for k, v in _K["fejdarab"].items()}
 IDEA         = {int(k): v for k, v in _K["idea"].items()}
 AKTOR        = _K["aktor"]
-SULY         = _K["suly"]
+SULY         = _K["súly"]
 ALAPANYAG    = _K["alapanyag"]
 TIPUS_TV     = _K["tipus_tv"]
 SZALFEGYVER_NYEL = _K["szalfegyver_nyel"]
@@ -75,13 +75,13 @@ def tipusbonusz(tipus, sfe, fem):
 
 @dataclass
 class Fegyver:
-    nev: str
+    név: str
     hossz: int
     aktorok: list
     fejdarab_alap: int = 0
     penges: int = 0
     lancos: int = 0
-    suly: str = "átlagos"
+    súly: str = "átlagos"
     idea: int = 0
     alapanyag: str = "acél"
     hajlekony: int = 0
@@ -93,13 +93,13 @@ class Fegyver:
     def modok(self, ero=2):
         """Visszaadja fegyvermódonként (aktoronként) a végső harcértékeket."""
         h = FEGYVERHOSSZ[self.hossz]
-        s = dict(SULY[self.suly])
+        s = dict(SULY[self.súly])
         i = IDEA[self.idea]
         mat = ALAPANYAG[self.alapanyag]
         nyel = SZALFEGYVER_NYEL[self.szalfegyver_nyel]
 
         # idea, alapanyag és szálfegyver-nyél súly-delta → eltolja a súly kategóriát (Sebesség/SP-re hat)
-        suly_delta = i.get("suly", 0) + mat.get("suly", 0) + nyel.get("suly", 0)
+        suly_delta = i.get("súly", 0) + mat.get("súly", 0) + nyel.get("súly", 0)
 
         fejdarab = self.fejdarab_alap + (1 if self.penges else 0)
         fd = FEJDARAB[fejdarab]
@@ -170,7 +170,7 @@ class Fegyver:
 
 FEGYVER_RECORDS = _load("fegyverek.yaml")
 # A balansz self-testben részt vevő kiemelt fegyverek (teszt_minta: true).
-FEGYVEREK = {r["nev"]: Fegyver(nev=r["nev"], **r["fegyver"])
+FEGYVEREK = {r["név"]: Fegyver(név=r["név"], **r["fegyver"])
              for r in FEGYVER_RECORDS if r.get("teszt_minta")}
 
 
@@ -188,13 +188,13 @@ def teszt_regresszio():
     for r in FEGYVER_RECORDS:
         if "elvart" not in r:
             continue
-        f = FEGYVEREK[r["nev"]]
+        f = FEGYVEREK[r["név"]]
         for aktor, (vte, vve) in r["elvart"].items():
             m = next(x for x in f.modok(ero=0) if x["aktor"] == aktor)
             jel = "✅" if (m["TE"] == vte and m["VE"] == vve) else "❌"
             if jel == "❌":
                 ok = False
-            print(f"  {jel} {r['nev']:24s} {aktor:24s} TÉ {m['TE']:>3}(≈{vte}) VÉ {m['VE']:>3}(≈{vve})")
+            print(f"  {jel} {r['név']:24s} {aktor:24s} TÉ {m['TE']:>3}(≈{vte}) VÉ {m['VE']:>3}(≈{vve})")
     print(f"  → {'MIND OK' if ok else 'ELTÉRÉS!'}\n")
     return ok
 

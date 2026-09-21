@@ -48,7 +48,7 @@ def _megj(r):
     return m
 
 
-W = [(r["kat"], r["nev"], F(nev=r["nev"], **r["fegyver"]), _megj(r))
+W = [(r["kat"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r))
      for r in bal._load("fegyverek.yaml") if "kat" in r]
 
 
