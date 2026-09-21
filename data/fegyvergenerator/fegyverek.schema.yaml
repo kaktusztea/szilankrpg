@@ -47,17 +47,5 @@ fegyver:
   szálfegyver_nyélanyag:  {kötelező: false, típus: str,  forrás: szálfegyver_nyélanyag, default: sima, megjegyzés: "szálfegyver nyélanyag: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szálfegyver_nyélanyag"}
   erőbónusz_limit:   {kötelező: false, típus: int,  default: 99, megjegyzés: "az SP-re alkalmazható Erőbónusz felső plafonja; 99 = nincs plafon; EGYEDI per-fegyver érték (nem levezetett) — 1:1 áthalad a generált rekordba"}
 
-# ─────────────────────────────────────────────────────────────────────────────
-# SZÁNDÉKOSAN NEM séma-mező (a generátor csak a harcértékeket számolja):
-#   puha          → PER-AKTOR flag (konstansok.yaml aktor `puha: true`), NEM fegyver-szintű: az adott
-#                   ütőfelület FP-sebzést okoz ÉP helyett (pl. ököl). SFÉ az FP-t is csökkenti; a sebzésből
-#                   minden 5. pont ÉP, a többi FP (…FP FP FP FP ÉP…). Az SP (mennyiség) változatlan →
-#                   csak a sebzés-TRACK más (futásidejű, webapp). Az `alapanyag` továbbra is a minőség (SP/TÉ/VÉ).
-#   forgatás      → SZÁRMAZTATOTT a `hossz`-ból (fegyverhossz `forgatás`: egykezes/másfélkezes/kétkezes).
-#                   A másfélkezes fegyverhez a generátor AUTOMATIKUSAN emittál egy '1 kéz' (MK) sort is
-#                   (kontroll-levonás: konstansok.yaml `forgatás_levonás.másfélkezes_egykézzel`). A
-#                   kétkezes-fegyver-1-kézzel eset SZITUÁCIÓ (kiesett kéz/pajzs), nem fegyver-input.
-#                   Nem szabad input. (A régi MK/MK_pár + (1K)/(2K) duplikátumok megszűntek.)
-#   övön hordható → logisztika/Felszerelés (előrántás/cipelés), nem harcérték; levezethető
-#                   (hossz ≤ 3 és nem szálfegyver).
-#   pontos        → futásidejű manőver-bónusz (Pontra támadás +2); már EXTRA: `pontos` az extrak.yaml-ban.
+
+#   övön hordható → levezethető (hossz ≤ 3 és nem szálfegyver).
