@@ -107,7 +107,7 @@ class Fegyver:
         eredmeny = []
         for idx, aktor_nev in enumerate(self.aktorok):
             a = AKTOR[aktor_nev]
-            tt = TIPUS_TV[a["t"]]
+            tt = TIPUS_TV[a["sebzésjelleg"]]
             # Elsődleges aktor = a lista 1. eleme (alap sebzésmód, nincs büntetés).
             # Másodlagos aktor(ok) = a többi (lehet több is) → bejelentés után
             # használható, Hátrány-1 a Sebzésdobásra (064_02_05, státusz). Az
@@ -116,47 +116,47 @@ class Fegyver:
             sebzes_hatrany = 0 if idx == 0 else 1
 
             # ── TÉ ──
-            te = (h["tv"] + a["te"] + tt["te"] + fd["te"]
+            te = (h["TÉ"] + a["TÉ"] + tt["TÉ"] + fd["TÉ"]
                   + (1 if self.penges else 0)      # pengés TÉ/VÉ +1
-                  + i["tvc"] + mat["tvc"])
+                  + i["TÉ"] + mat["TÉ"])
             # ── VÉ ──
-            ve = (h["tv"] + a["ve"] + tt["ve"]
+            ve = (h["VÉ"] + a["VÉ"] + tt["VÉ"]
                   + (1 if self.penges else 0)
-                  + i["tvc"] + mat["tvc"]
+                  + i["VÉ"] + mat["VÉ"]
                   - 2 * self.hajlekony)            # hajlékony VÉ:-2
 
             # ── SP ──
-            szuro = a["t"] == "szúró"
-            sp = h["sp"] + a["sp"] + mat["sp"] + i["sp"] + ero + nyel.get("sp", 0)
+            szuro = a["sebzésjelleg"] == "szúró"
+            sp = h["SP"] + a["SP"] + mat["SP"] + i["SP"] + ero + nyel.get("SP", 0)
             if self.penges:
                 sp += 1
             if self.lancos:
                 sp += 1
             # súly SP: szúrásnál NEM számít
             if not szuro:
-                weff = s["sp"] + suly_delta  # súly-delta könnyíti → kevesebb súly-SP
+                weff = s["SP"] + suly_delta  # súly-delta könnyíti → kevesebb súly-SP
                 if self.nehez_mod == "sp":
                     sp += weff
                 # ha nehéz_mod == átütés, a súly SP-je átütésbe megy (lásd lent)
             # forgatás: egykezes kényszer
             if self.egykezes_kenyszer:
-                if h["forg"] == "másfélkezes":
+                if h["forgatás"] == "másfélkezes":
                     sp -= 2
-                elif h["forg"] == "kétkezes":
+                elif h["forgatás"] == "kétkezes":
                     sp -= 4
 
             # ── Átütés ──
-            at = a["at"] + mat.get("at", 0)
+            at = a["átütés"] + mat.get("átütés", 0)
             if self.nehez_mod == "átütés" and not szuro:
-                at += max(0, s["sp"])  # nehéz +1 / súlyos +2 átütésbe
+                at += max(0, s["SP"])  # nehéz +1 / súlyos +2 átütésbe
 
             # ── Sebesség ── (magasabb = lassabb)
-            seb = (h["seb"] + fd["seb"] + a["seb"] + s["seb"]
+            seb = (h["sebesség"] + fd["sebesség"] + a["sebesség"] + s["sebesség"]
                    + (1 if self.lancos else 0)
-                   + i["seb"] + suly_delta + self.hajlekony)
+                   + i["sebesség"] + suly_delta + self.hajlekony)
 
             eredmeny.append(dict(
-                aktor=aktor_nev, tipus=a["t"],
+                aktor=aktor_nev, tipus=a["sebzésjelleg"],
                 TE=te, VE=ve, SP=sp, AT=at, SEB=seb,
                 sebzestipus=sebzestipus, sebzes_hatrany=sebzes_hatrany,
             ))

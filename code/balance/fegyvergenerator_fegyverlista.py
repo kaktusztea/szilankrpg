@@ -53,7 +53,7 @@ W = [(r["kat"], r["nev"], F(nev=r["nev"], **r["fegyver"]), _megj(r))
 
 
 def forg(f):
-    base = FEGYVERHOSSZ[f.hossz]["forg"]
+    base = FEGYVERHOSSZ[f.hossz]["forgatás"]
     return base + (" (1 kézzel)" if f.egykezes_kenyszer else "")
 
 FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "Megj."]
