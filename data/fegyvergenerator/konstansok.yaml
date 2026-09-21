@@ -44,13 +44,13 @@ fejdarab:
   2: {sebesség: 2, TÉ: -2}
   3: {sebesség: 3, TÉ: -4}
 
-# súly: név -> SP, sebesség, erő-követelmény (erő)
-# DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva). nehéz/súlyos: SP VAGY átütés (a fegyver nehez_mod dönt).
+# súly: név -> SP, sebesség, erő_követelmény (a forgatáshoz szükséges minimális Erő; NEM azonos az erőbónusz_limittel)
+# DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva). nehéz/súlyos: SP VAGY átütés (a fegyver nehéz_módosító dönt).
 súly:
-  könnyű:  {SP: -1, sebesség: -1, erő: 0}
-  átlagos: {SP: 0,  sebesség: 0,  erő: 0}
-  nehéz:   {SP: 1,  sebesség: 1,  erő: 2}
-  súlyos:  {SP: 2,  sebesség: 2,  erő: 3}
+  könnyű:  {SP: -1, sebesség: -1, erő_követelmény: 0}
+  átlagos: {SP: 0,  sebesség: 0,  erő_követelmény: 0}
+  nehéz:   {SP: 1,  sebesség: 1,  erő_követelmény: 2}
+  súlyos:  {SP: 2,  sebesség: 2,  erő_követelmény: 3}
 
 # idea: szint -> TÉ, VÉ, SP, sebesség, súly-delta (súly)
 idea:
@@ -101,9 +101,9 @@ forgatás_levonás:
   másfélkezes_egykézzel: {TÉ: -2, VÉ: -2, átütés_max: 0, erőbónusz_limit_max: 2}
   kétkezes_egykézzel:    {TÉ: -4, VÉ: -4, átütés_max: 0, erőbónusz_limit_max: 0}
 
-# szálfegyver nyél: típus -> SP (direkt), súly (kategória-eltolás, mint idea/alapanyag suly_delta)
+# szálfegyver nyélanyag: típus -> SP (direkt), súly (kategória-eltolás, mint idea/alapanyag suly_delta)
 # A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika — bázis-hatásuk nincs.
-szalfegyver_nyel:
+szálfegyver_nyélanyag:
   sima:        {SP: 0, súly: 0}   # alap (nincs speciális nyél)
   fanyelű:     {SP: 0, súly: 0}   # csak Fegyvertörés ellenpróba +2 (runtime) — bázis-hatás nincs
   vasaltszárú: {SP: 0, súly: 1}   # +1 súly kategória

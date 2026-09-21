@@ -50,7 +50,7 @@ SULY         = _K["súly"]
 ALAPANYAG    = _K["alapanyag"]
 TIPUS_TV     = _K["tipus_tv"]
 FORGATAS_LEVONAS = _K["forgatás_levonás"]
-SZALFEGYVER_NYEL = _K["szalfegyver_nyel"]
+SZALFEGYVER_NYELANYAG = _K["szálfegyver_nyélanyag"]
 PANCEL       = [tuple(x) for x in _K["pancel"]]
 K20_ATLAG    = _K["k20_atlag"]
 EP_PER_KAT   = _K["ep_per_kat"]
@@ -80,14 +80,14 @@ class Fegyver:
     hossz: int
     aktorok: list
     fejdarab_alap: int = 0
-    penges: int = 0
-    lancos: int = 0
+    pengés: int = 0
+    láncos: int = 0
     súly: str = "átlagos"
     idea: int = 0
     alapanyag: str = "acél"
-    hajlekony: int = 0
-    nehez_mod: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát
-    szalfegyver_nyel: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú — súly/SP hatás
+    hajlékony: int = 0
+    nehéz_módosító: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát
+    szálfegyver_nyélanyag: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú — súly/SP hatás
     erőbónusz_limit: int = 99        # SP-re alkalmazható Erőbónusz plafonja (md/064_02_06); 99 = nincs plafon; passthrough (Erő=0 bázist nem érinti)
 
     def modok(self, ero=2):
@@ -102,12 +102,12 @@ class Fegyver:
         s = dict(SULY[self.súly])
         i = IDEA[self.idea]
         mat = ALAPANYAG[self.alapanyag]
-        nyel = SZALFEGYVER_NYEL[self.szalfegyver_nyel]
+        nyel = SZALFEGYVER_NYELANYAG[self.szálfegyver_nyélanyag]
 
         # idea, alapanyag és szálfegyver-nyél súly-delta → eltolja a súly kategóriát (Sebesség/SP-re hat)
         suly_delta = i.get("súly", 0) + mat.get("súly", 0) + nyel.get("súly", 0)
 
-        fejdarab = self.fejdarab_alap + (1 if self.penges else 0)
+        fejdarab = self.fejdarab_alap + (1 if self.pengés else 0)
         fd = FEJDARAB[fejdarab]
 
         # Fogás-variánsok: a másfélkezes fegyver 2 kézzel ÉS 1 kézzel (MK) is forgatható → 2 sor-készlet.
@@ -128,36 +128,36 @@ class Fegyver:
 
                 # ── TÉ ──
                 te = (h["TÉ"] + a["TÉ"] + tt["TÉ"] + fd["TÉ"]
-                      + (1 if self.penges else 0)      # pengés TÉ/VÉ +1
+                      + (1 if self.pengés else 0)      # pengés TÉ/VÉ +1
                       + i["TÉ"] + mat["TÉ"])
                 # ── VÉ ──
                 ve = (h["VÉ"] + a["VÉ"] + tt["VÉ"]
-                      + (1 if self.penges else 0)
+                      + (1 if self.pengés else 0)
                       + i["VÉ"] + mat["VÉ"]
-                      - 2 * self.hajlekony)            # hajlékony VÉ:-2
+                      - 2 * self.hajlékony)            # hajlékony VÉ:-2
 
                 # ── SP ── (a sebzést az MK NEM érinti)
                 szuro = a["sebzésjelleg"] == "szúró"
                 sp = h["SP"] + a["SP"] + mat["SP"] + i["SP"] + ero + nyel.get("SP", 0)
-                if self.penges:
+                if self.pengés:
                     sp += 1
-                if self.lancos:
+                if self.láncos:
                     sp += 1
                 # súly SP: szúrásnál NEM számít
                 if not szuro:
                     weff = s["SP"] + suly_delta  # súly-delta könnyíti → kevesebb súly-SP
-                    if self.nehez_mod == "sp":
+                    if self.nehéz_módosító == "sp":
                         sp += weff
 
                 # ── Átütés ──
                 at = a["átütés"] + mat.get("átütés", 0)
-                if self.nehez_mod == "átütés" and not szuro:
+                if self.nehéz_módosító == "átütés" and not szuro:
                     at += max(0, s["SP"])  # nehéz +1 / súlyos +2 átütésbe
 
                 # ── Sebesség ── (magasabb = lassabb)
                 seb = (h["sebesség"] + fd["sebesség"] + a["sebesség"] + s["sebesség"]
-                       + (1 if self.lancos else 0)
-                       + i["sebesség"] + suly_delta + self.hajlekony)
+                       + (1 if self.láncos else 0)
+                       + i["sebesség"] + suly_delta + self.hajlékony)
 
                 # ── Fogás-kényszer (MK): kontroll-levonás, a sebzést NEM érinti ──
                 ero_limit = self.erőbónusz_limit

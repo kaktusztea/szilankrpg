@@ -28,7 +28,7 @@ F = bal.Fegyver
 FEGYVERHOSSZ = bal.FEGYVERHOSSZ
 
 # (kategória, megjelenített név, Fegyver, megjegyzés)
-# WORK paraméterek: data/fegyvergenerator/fegyverek.yaml (a `kat` mezővel bíró rekordok)
+# WORK paraméterek: data/fegyvergenerator/fegyverek.yaml (a `kategória` mezővel bíró rekordok)
 _EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
 
 
@@ -38,7 +38,7 @@ def _extra_cimke(mid):
 
 def _megj(r):
     """Megj. cella: KIZÁRÓLAG a szabad szöveges megjegyzés (az extrák a külön 'Extrák' oszlopban)."""
-    return r.get("megj", "")
+    return r.get("megjegyzés", "")
 
 
 def _extrak(r):
@@ -47,8 +47,8 @@ def _extrak(r):
     return "; ".join(_extra_cimke(mid) for mid in ids)
 
 
-W = [(r["kat"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r), _extrak(r))
-     for r in bal._load("fegyverek.yaml") if "kat" in r]
+W = [(r["kategória"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r), _extrak(r))
+     for r in bal._load("fegyverek.yaml") if "kategória" in r]
 
 
 FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "Extrák", "Megj."]

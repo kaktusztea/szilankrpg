@@ -4,7 +4,7 @@
 Ellenőriz:
   - kötelező mezők megléte, ismeretlen mezők tiltása (top-level ÉS a `fegyver` blokk)
   - típusok (str/int/bool/list/map)
-  - fix enumok (kat, penges, nehez_mod, …)
+  - fix enumok (kategória, pengés, nehéz_módosító, …)
   - katalógus-alapú kereszthivatkozások: aktor/súly/idea/alapanyag/fejdarab/hossz a
     konstansok.yaml-ból, modosito-id-k a extrak.yaml-ból
   - elvart: az aktorok érvényesek és [TÉ, VÉ] két egész
@@ -37,7 +37,7 @@ def _forras_ertekek():
         "idea":         {int(x) for x in k["idea"]},
         "alapanyag":    set(k["alapanyag"]),
         "fejdarab":     {int(x) for x in k["fejdarab"]},
-        "szalfegyver_nyel": set(k["szalfegyver_nyel"]),
+        "szálfegyver_nyélanyag": set(k["szálfegyver_nyélanyag"]),
         "extrak":    {m["id"] for m in _load("extrak.yaml")["extrak"]},
     }
 

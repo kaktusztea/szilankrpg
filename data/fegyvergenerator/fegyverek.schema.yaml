@@ -20,9 +20,9 @@ schema_version: 1
 # ── Top-level rekord mezők ──
 rekord:
   név:         {kötelező: true,  típus: str,  példa: "Kard, hosszú", megjegyzés: "lookup + megjelenített név"}
-  kat:         {kötelező: false, típus: str,  enum: [Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc],
+  kategória:   {kötelező: false, típus: str,  enum: [Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc],
                 megjegyzés: "harcmodor; ha JELEN van → a fegyver megjelenik a fegyverlistában (enélkül csak teszt-minta)"}
-  megj:        {kötelező: false, típus: str,  példa: "Z, kétkezes", megjegyzés: "szabad mechanika-jegyzet (a levezethetőt/strukturáltat NEM ide)"}
+  megjegyzés:  {kötelező: false, típus: str,  példa: "Z, kétkezes", megjegyzés: "szabad mechanika-jegyzet (a levezethetőt/strukturáltat NEM ide)"}
   teszt_minta: {kötelező: false, típus: bool, példa: true, megjegyzés: "a balansz self-testben/elemzésben részt vevő kiemelt fegyver"}
   elvart:      {kötelező: false, típus: map,  példa: {vágóél-egyenes-átlagos: [6, 6]},
                 megjegyzés: "{aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték (Erő=0); az aktor a fegyver aktorai közül"}
@@ -36,15 +36,15 @@ fegyver:
                       megjegyzés: "fegyverhossz-kategória; konstansok.yaml fegyverhossz kulcsai: 0,1,2,3,5,7,9,12"}
   aktorok:           {kötelező: true,  típus: list, elem_forrás: aktor, min: 1, példa: [vágóél-egyenes-átlagos, pengehegy-kard],
                       megjegyzés: "sebzési felületek; ELSŐ = elsődleges, többi = másodlagos. Értékek: konstansok.yaml aktor"}
-  penges:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "pengés? (+1 TÉ/VÉ, +1 fejdarab, +1 SP)"}
-  lancos:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "láncos fej? (+1 SP, +1 Sebesség)"}
-  hajlekony:         {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "hajlékony (ostor)? (-2 VÉ, +1 Sebesség)"}
+  pengés:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "pengés? (+1 TÉ/VÉ, +1 fejdarab, +1 SP)"}
+  láncos:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "láncos fej? (+1 SP, +1 Sebesség)"}
+  hajlékony:         {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "hajlékony (ostor)? (-2 VÉ, +1 Sebesség)"}
   súly:              {kötelező: false, típus: str,  forrás: súly, default: átlagos, megjegyzés: "konstansok.yaml súly: könnyű/átlagos/nehéz/súlyos"}
   idea:              {kötelező: false, típus: int,  forrás: idea, default: 0, megjegyzés: "inherens minőség; konstansok.yaml idea (-5..5)"}
   alapanyag:         {kötelező: false, típus: str,  forrás: alapanyag, default: acél, megjegyzés: "konstansok.yaml alapanyag (acél, feketeacél, kő, mithrill, …)"}
   fejdarab_alap:     {kötelező: false, típus: int,  forrás: fejdarab, default: 0, megjegyzés: "fejdarab alap; konstansok.yaml fejdarab (0..3)"}
-  nehez_mod:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta SP-be VAGY Átütésbe menjen"}
-  szalfegyver_nyel:  {kötelező: false, típus: str,  forrás: szalfegyver_nyel, default: sima, megjegyzés: "szálfegyver nyél: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szalfegyver_nyel"}
+  nehéz_módosító:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta SP-be VAGY Átütésbe menjen"}
+  szálfegyver_nyélanyag:  {kötelező: false, típus: str,  forrás: szálfegyver_nyélanyag, default: sima, megjegyzés: "szálfegyver nyélanyag: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szálfegyver_nyélanyag"}
   erőbónusz_limit:   {kötelező: false, típus: int,  default: 99, megjegyzés: "az SP-re alkalmazható Erőbónusz felső plafonja; 99 = nincs plafon; EGYEDI per-fegyver érték (nem levezetett) — 1:1 áthalad a generált rekordba"}
 
 # ─────────────────────────────────────────────────────────────────────────────
