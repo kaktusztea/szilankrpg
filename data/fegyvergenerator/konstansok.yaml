@@ -116,6 +116,13 @@ hajlékony:
   0: {VÉ: 0,  sebesség: 0}
   1: {VÉ: -2, sebesség: 1, extrak: [pajzs_megkerules, fegyvertores_immunis]}
 
+# sebzésmód rangja (aktor-sorrend: 1. = elsődleges, a többi = másodlagos) → Sebzésdobás Előny/Hátrány szint.
+# Kanonikus effekt-alak: cél=sebzésdobás (esemenyek), mód=hátrány (→ előny_hátrány, clamp [-2,+2]).
+sebzéstípus_hátrány:
+  elsődleges:  {cél: sebzésdobás, mód: hátrány, érték: 0}
+  másodlagos:  {cél: sebzésdobás, mód: hátrány, érték: -1}
+  alkalmatlan: {cél: sebzésdobás, mód: hátrány, érték: -2}
+
 # balansz-teszt konstansok
 k20_atlag: 10.5     # k20 átlagdobás
 ep_per_kat: 9.0     # ~ÉP/4 tipikus kalandozónál (sebesülés-kategória)

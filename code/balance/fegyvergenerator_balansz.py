@@ -54,6 +54,7 @@ TIPUS_TV     = _K["tipus_tv"]
 FORGATAS_LEVONAS = _K["forgatás_levonás"]
 SZALFEGYVER_NYELANYAG = _K["szálfegyver_nyélanyag"]
 HAJLEKONY = _K["hajlékony"]
+SEBZESTIPUS_HATRANY = _K["sebzéstípus_hátrány"]   # sebzésmód rang → Sebzésdobás E/H szint (cél=sebzésdobás, mód=hátrány)
 K20_ATLAG    = _K["k20_atlag"]
 EP_PER_KAT   = _K["ep_per_kat"]
 
@@ -132,7 +133,7 @@ class Fegyver:
                 # Elsődleges aktor = a lista 1. eleme (alap sebzésmód, nincs büntetés).
                 # Másodlagos aktor(ok) = a többi → bejelentés után, Hátrány-1 a Sebzésdobásra (064_02_05).
                 sebzestipus = "elsődleges" if idx == 0 else "másodlagos"
-                sebzes_hatrany = 0 if idx == 0 else 1
+                sebzes_hatrany = SEBZESTIPUS_HATRANY[sebzestipus]["érték"]   # Sebzésdobás E/H szint (0 / -1)
 
                 # ── TÉ ──
                 te = (h["TÉ"] + a["TÉ"] + tt["TÉ"] + fd["TÉ"]
