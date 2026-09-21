@@ -51,23 +51,27 @@ ALAPANYAG    = _K["alapanyag"]
 TIPUS_TV     = _K["tipus_tv"]
 FORGATAS_LEVONAS = _K["forgatás_levonás"]
 SZALFEGYVER_NYELANYAG = _K["szálfegyver_nyélanyag"]
-HAJLEKONY_EXTRAK = _K["hajlékony_extrák"]
-PANCEL       = [tuple(x) for x in _K["pancel"]]
+HAJLEKONY = _K["hajlékony"]
 K20_ATLAG    = _K["k20_atlag"]
 EP_PER_KAT   = _K["ep_per_kat"]
 
 # sebzésjelleg × páncélosztály mátrix (flat SP delta) — a szituációs balansz motorja
-TIPUS_PANCEL = _load("sebzesjelleg_pancel_matrix.yaml")["matrix"]
+_MATRIX_YAML = _load("sebzesjelleg_pancel_matrix.yaml")
+TIPUS_PANCEL = _MATRIX_YAML["matrix"]
+_STRUKTURA_OSZTALY = _MATRIX_YAML["struktúra_osztály"]
+
+# Páncélok a balansz-teszthez az ELSŐDLEGES forrásból (data/sources/konstansok.yaml → páncél_struktúrák):
+# (név, fizikai SFÉ, páncélosztály). csupasz = nincs vért (nem struktúra). Fizikai SFÉ, mert a fegyver-balansz fizikai.
+with open(DATA_DIR.parent / "sources" / "konstansok.yaml", encoding="utf-8") as _fh:
+    _STRUKTURAK = yaml.safe_load(_fh)["páncél_struktúrák"]
+PANCEL = [("csupasz", 0, "csupasz")] + [
+    (s["struktúra"], s["sfé_fizikai"], _STRUKTURA_OSZTALY[s["struktúra"]]) for s in _STRUKTURAK
+]
 
 
-def tipusbonusz(tipus, sfe, fem):
+def tipusbonusz(tipus, osztaly):
     """Sebzéstípus SP-módosító páncélosztály ellen — bónusz ÉS büntetés (szituációs balansz).
-    Páncélosztály: csupasz | puha (posztó/kabát) | bőr | fém-hajlékony (lánc) | fém-merev (pikkely/lemez)."""
-    if sfe == 0:              osztaly = "csupasz"
-    elif not fem and sfe <= 3: osztaly = "puha"
-    elif not fem:            osztaly = "bor"
-    elif sfe <= 10:          osztaly = "lanc"
-    else:                    osztaly = "merev"
+    Az osztály a páncél-struktúrából jön (struktúra_osztály leképezés), NEM SFÉ-küszöbből származtatva."""
     return TIPUS_PANCEL[tipus][osztaly]
 
 
@@ -135,7 +139,7 @@ class Fegyver:
                 ve = (h["VÉ"] + a["VÉ"] + tt["VÉ"]
                       + (1 if self.pengés else 0)
                       + i["VÉ"] + mat["VÉ"]
-                      - 2 * self.hajlékony)            # hajlékony VÉ:-2
+                      + HAJLEKONY[self.hajlékony]["VÉ"])   # hajlékony VÉ (tábla)
 
                 # ── SP ── (a sebzést az MK NEM érinti)
                 szuro = a["sebzésjelleg"] == "szúró"
@@ -158,7 +162,7 @@ class Fegyver:
                 # ── Sebesség ── (magasabb = lassabb)
                 seb = (h["sebesség"] + fd["sebesség"] + a["sebesség"] + s["sebesség"]
                        + (1 if self.láncos else 0)
-                       + i["sebesség"] + suly_delta + self.hajlékony)
+                       + i["sebesség"] + suly_delta + HAJLEKONY[self.hajlékony]["sebesség"])
 
                 # ── Fogás-kényszer (MK): kontroll-levonás, a sebzést NEM érinti ──
                 ero_limit = self.erőbónusz_limit
@@ -221,8 +225,8 @@ def teszt_sebzes_matrix(ero=2):
     for fnev, f in FEGYVEREK.items():
         for m in f.modok(ero=ero):
             sor = f"{fnev} [{m['aktor'][:16]}]".ljust(38)
-            for pnev, sfe, fem in PANCEL:
-                bonus = tipusbonusz(m["tipus"], sfe, fem)
+            for pnev, sfe, oszt in PANCEL:
+                bonus = tipusbonusz(m["tipus"], oszt)
                 eff_sfe = max(0, sfe - m["AT"])
                 dmg = K20_ATLAG + m["SP"] + bonus - eff_sfe
                 kat = max(0.0, dmg) / EP_PER_KAT
@@ -247,10 +251,10 @@ def teszt_tempo(ero=2, csak_mundan=False):
             continue
         modok = f.modok(ero=ero)
         sor = fnev.ljust(24)
-        for pnev, sfe, fem in PANCEL:
+        for pnev, sfe, oszt in PANCEL:
             best = 0.0
             for m in modok:
-                bonus = tipusbonusz(m["tipus"], sfe, fem)
+                bonus = tipusbonusz(m["tipus"], oszt)
                 eff_sfe = max(0, sfe - m["AT"])
                 dmg = max(0.0, K20_ATLAG + m["SP"] + bonus - eff_sfe)
                 kat = dmg / EP_PER_KAT

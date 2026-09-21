@@ -51,8 +51,7 @@ def _extrak(r):
     ids = list(r.get("extrak", []))
     ids += list(bal.FEGYVERHOSSZ[fv["hossz"]].get("extrak", []))
     ids += list(bal.SZALFEGYVER_NYELANYAG[fv.get("szálfegyver_nyélanyag", "sima")].get("extrak", []))
-    if fv.get("hajlékony"):
-        ids += list(bal.HAJLEKONY_EXTRAK)
+    ids += list(bal.HAJLEKONY[fv.get("hajlékony", 0)].get("extrak", []))
     return "; ".join(_extra_cimke(mid) for mid in ids)
 
 

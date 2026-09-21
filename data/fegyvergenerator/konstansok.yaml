@@ -115,16 +115,6 @@ hajlékony:
   0: {VÉ: 0,  sebesség: 0}
   1: {VÉ: -2, sebesség: 1, extrak: [pajzs_megkerules, fegyvertores_immunis]}
 
-# páncélok a balansz-teszthez: [név, SFÉ, fém?]
-pancel:
-  - [csupasz,      0,  false]
-  - [posztó,       2,  false]
-  - [fegyverkabát, 3,  false]
-  - [bőr,          7,  false]
-  - [lánc,         10, true]
-  - [pikkely,      15, true]
-  - [lemez,        20, true]
-
 # balansz-teszt konstansok
 k20_atlag: 10.5     # k20 átlagdobás
 ep_per_kat: 9.0     # ~ÉP/4 tipikus kalandozónál (sebesülés-kategória)
