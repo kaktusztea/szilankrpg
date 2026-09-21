@@ -49,8 +49,10 @@ fegyver:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # SZÁNDÉKOSAN NEM séma-mező (a generátor csak a harcértékeket számolja):
-#   puha          → a soft-anyag TÉ/VÉ/SP hatását az `alapanyag` nyeli el (test/krumpli/csont);
-#                   saját hatása (FP-sebzés ÉP helyett) futásidejű sebzés-típus, nem bázisérték.
+#   puha          → PER-AKTOR flag (konstansok.yaml aktor `puha: true`), NEM fegyver-szintű: az adott
+#                   ütőfelület FP-sebzést okoz ÉP helyett (pl. ököl). SFÉ az FP-t is csökkenti; a sebzésből
+#                   minden 5. pont ÉP, a többi FP (…FP FP FP FP ÉP…). Az SP (mennyiség) változatlan →
+#                   csak a sebzés-TRACK más (futásidejű, webapp). Az `alapanyag` továbbra is a minőség (SP/TÉ/VÉ).
 #   forgatás      → SZÁRMAZTATOTT a `hossz`-ból (fegyverhossz `forgatás`: egykezes/másfélkezes/kétkezes).
 #                   A másfélkezes fegyverhez a generátor AUTOMATIKUSAN emittál egy '1 kéz' (MK) sort is
 #                   (kontroll-levonás: konstansok.yaml `forgatás_levonás.másfélkezes_egykézzel`). A

@@ -71,7 +71,7 @@ def sorok_kategoriankent():
             n = nev if i == 0 else ""
             mm = megj if i == 0 else ""
             ex = extrak if i == 0 else ""
-            rows.append([n, m["aktor"], m["tipus"], m["sebzestipus"],
+            rows.append([n, m["aktor"], (m["tipus"] + " · FP" if m.get("puha") else m["tipus"]), m["sebzestipus"],
                          str(m["TE"]), str(m["VE"]),
                          f"{m['SP']:+d}", str(m["erőbónusz_limit"]), str(m["AT"]), str(m["SEB"]), m["forgatás"],
                          str(f.hossz), ex, mm])
@@ -114,6 +114,7 @@ Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
 - **Harcmodoronként külön tábla:** Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc.
 - **Több mód:** a többféle sebzésű fegyverek (pl. kard `V/S`) több sorban szerepelnek, Aktoronként.
 - **Jelleg / Sebzéstípus:** a `Jelleg` a sebzés jellege (szúró / vágó / zúzó); a `Sebzéstípus` a rang: `elsődleges` = alap sebzésmód (nincs büntetés), `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Az `alkalmatlan` nincs a táblában (KM: `Hátrány-2`). Éles: `064_02_05`.
+- **· FP** (a `Jelleg` mellett): puha ütőfelület (pl. ököl) — FP-sebzést okoz ÉP helyett. SFÉ az FP-t is csökkenti; a sebzésből minden 5. pont ÉP, a többi FP.
 - **Fh** = Fegyverhossz kategória. **Seb.** = Sebesség (magasabb = lassabb).
 - **Erőlimit** = Erőbónusz limit: a sebzésbe (SP) fordítható Erő felső plafonja; `99` = nincs plafon (egyedi per-fegyver érték, `064_02_06`).
 - **Beszorítható** = Beszorított(2) tag (kat. 7 és 9, hosszú fegyver): ha az ellenfél bejut, `TÉ:0` ÉS `VÉ:0` (szituációs harci helyzet, nem a bázisérték). Kat. 12 NEM.
@@ -124,7 +125,7 @@ Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
 ## Scope
 
 Tartalmazza: közelharci (tőr-osztály), kardvívó, lándzsavívó, romboló, ostorharc mainstream fegyverek.
-Kihagyva (más alrendszer / egyedi mechanika): hárítófegyverek, Puszta kéz, Garott, Méregfog, Béltépő, Kopja (lovas), pajzsok, hajító- és lőfegyverek.
+Kihagyva (más alrendszer / egyedi mechanika): hárítófegyverek, Garott, Méregfog, Béltépő, Kopja (lovas), pajzsok, hajító- és lőfegyverek.
 
 ---"""
 

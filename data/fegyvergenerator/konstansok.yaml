@@ -36,6 +36,7 @@ aktor:
   lándzsahegy-rövidkardhossz:  {sebzésjelleg: szúró,        SP: 5, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   lándzsahegy-hosszúkardhossz: {sebzésjelleg: szúró,        SP: 6, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 1}
   kampós-vég:                  {sebzésjelleg: nincs,        SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
+  ököl:                        {sebzésjelleg: zúzó,         SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0, puha: true}   # puszta kéz — FP-sebzés (nem ÉP)
 
 # fejdarab: n -> sebesség, TÉ
 fejdarab:
@@ -69,11 +70,10 @@ idea:
 
 # alapanyag: név -> TÉ, VÉ, SP, opcionális súly-delta (súly) és átütés
 alapanyag:
-  test:       {TÉ: -3, VÉ: -3, SP: -5}
-  krumpli:    {TÉ: -3, VÉ: -3, SP: -5}
   csont:      {TÉ: 0,  VÉ: 0,  SP: -4}
   kő:         {TÉ: 0,  VÉ: 0,  SP: -3}
   bronz:      {TÉ: 0,  VÉ: 0,  SP: -2}
+  fa:         {TÉ: 0,  VÉ: 0,  SP: 0}               # semleges: a fa gyengesége a botvég aktorban, törhetősége a fanyelű nyélben
   acél:       {TÉ: 0,  VÉ: 0,  SP: 0}
   abbitacél:  {TÉ: 1,  VÉ: 1,  SP: 1}
   mithrill:   {TÉ: 1,  VÉ: 1,  SP: 2,  súly: -1}
