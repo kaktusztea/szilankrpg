@@ -72,6 +72,31 @@ extrak:
     hatás:
       - {cél: VÉ, alcél: "fegyverfogás:fegyver_pajzs", mód: szorzó, érték: 0.5}
 
+  - id: pajzs_megkerules
+    név: "Pajzs megkerülése"
+    csoport: harci_helyzet
+    leírás: "Hajlékony fegyver a pajzs mögé csap, a pajzs adta VÉ NEM számít ellene (teljes megkerülés)."
+    feltétel:
+      - {típus: cél_felszereles, érték: pajzs}
+    hatás:
+      - {cél: VÉ, alcél: "fegyverfogás:fegyver_pajzs", mód: szorzó, érték: 0}
+
+  - id: fegyvertores_immunis
+    név: "Fegyvertörés-immunis"
+    csoport: harci_helyzet
+    leírás: "Hajlékony (nem merev) fegyver, a Fegyvertörés manőver nem fog rajta."
+    hatás:
+      - {cél: manőver_ellenpróba, mód: letilt, feltétel: "manőver:fegyvertörés"}
+
+  - id: fanyel_fegyvertores_konnyebb
+    név: "Fanyél fegyvertörése könnyebb"
+    csoport: tulajdonság
+    leírás: "Fanyél, a Fegyvertörés manőver Ellenpróbánál -2 (könnyebb eltörni)."
+    feltétel:
+      - {típus: manőver_állapot, érték: passzív}   # a manőver a fegyver ELLEN történik
+    hatás:
+      - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:fegyvertörés"}
+
   - id: sfe_duplazodik
     név: "SFÉ dupla ellene"
     csoport: harci_helyzet
@@ -107,6 +132,7 @@ extrak:
     feltétel:
       - {típus: aktor, érték: pengehegy}
       - {típus: forgatás, érték: egykezes}
+      - {típus: manőver_állapot, érték: aktív}   # a manőver a fegyver ELLEN történik
     hatás:
       - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:precíz_támadás"}
 

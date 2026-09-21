@@ -105,9 +105,13 @@ forgatás_levonás:
 # A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika — bázis-hatásuk nincs.
 szálfegyver_nyélanyag:
   sima:        {SP: 0, súly: 0}   # alap (nincs speciális nyél)
-  fanyelű:     {SP: 0, súly: 0}   # csak Fegyvertörés ellenpróba +2 (runtime) — bázis-hatás nincs
+  fanyelű:     {SP: 0, súly: 0, extrak: [fanyel_fegyvertores_konnyebb]}   # bázis-hatás nincs; Fegyvertörés-büntetés (a fa nyél könnyebben törik)
   vasaltszárú: {SP: 0, súly: 1}   # +1 súly kategória
   tömörszárú:  {SP: 1, súly: 2}   # +1 SP, +2 súly kategória (+1 Felszerelés pont = logisztika)
+
+# hajlékony (ostor-jelleg) örökölt SZITUÁCIÓS extrái (a bázis -2 VÉ / +1 Sebesség a balanszban van).
+# A fegyverlista ezeket örökíti a hajlékony fegyverekhez (mint a fegyverhossz → beszorithato).
+hajlékony_extrák: [pajzs_megkerules, fegyvertores_immunis]
 
 # páncélok a balansz-teszthez: [név, SFÉ, fém?]
 pancel:

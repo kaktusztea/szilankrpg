@@ -48,23 +48,23 @@
 - {név: "Meneth", kategória: Kardvívó, megjegyzés: "", extrak: [sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], pengés: 1}}
 - {név: "Sequor", kategória: Kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], pengés: 1, erőbónusz_limit: 3}}
 - {név: "Tőrkard", kategória: Kardvívó, megjegyzés: "", extrak: [pontos, lefegyverezhetobb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], pengés: 1, erőbónusz_limit: 1}}
-- {név: "Vívóbot", kategória: Kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: csont, erőbónusz_limit: 1}}
+- {név: "Vívóbot", kategória: Kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: csont, erőbónusz_limit: 1, szálfegyver_nyélanyag: fanyelű}}
 
 # ── Lándzsavívó ──
 - {név: "Alabárd", kategória: Lándzsavívó, megjegyzés: "", teszt_minta: true, elvart: {vágóél-íves-nagy: [6, 10]}, fegyver: {hossz: 9, aktorok: [vágóél-íves-nagy, lándzsahegy-rövid-átlagos, buzogányfej-tompa], fejdarab_alap: 2, pengés: 1, súly: nehéz}}
-- {név: "Bot, hosszú", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 7, aktorok: [botvég], erőbónusz_limit: 2}}
-- {név: "Lándzsa, átlagos", kategória: Lándzsavívó, megjegyzés: "", teszt_minta: true, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], pengés: 1}}
-- {név: "Lándzsa, keskeny hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-keskeny], pengés: 1}}
-- {név: "Lándzsa, széles hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-széles], pengés: 1}}
-- {név: "Pika, keskeny hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], pengés: 1, erőbónusz_limit: 3}}
-- {név: "Pika, széles hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], pengés: 1, erőbónusz_limit: 3}}
-- {név: "Szigony, egykezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], erőbónusz_limit: 3}}
-- {név: "Szigony, kétkezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos]}}
+- {név: "Bot, hosszú", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 7, aktorok: [botvég], erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Lándzsa, átlagos", kategória: Lándzsavívó, megjegyzés: "", teszt_minta: true, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], pengés: 1, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Lándzsa, keskeny hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-keskeny], pengés: 1, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Lándzsa, széles hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-széles], pengés: 1, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Pika, keskeny hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Pika, széles hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Szigony, egykezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Szigony, kétkezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], szálfegyver_nyélanyag: fanyelű}}
 
 # ── Romboló ──
 - {név: "Balta", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab_alap: 1, súly: nehéz}}
-- {név: "Bot, furkós", kategória: Romboló, megjegyzés: "", teszt_minta: true, elvart: {botvég: [3, 3]}, fegyver: {hossz: 3, aktorok: [botvég], erőbónusz_limit: 2}}
-- {név: "Bot, rövid", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [botvég], súly: könnyű, erőbónusz_limit: 0}}
+- {név: "Bot, furkós", kategória: Romboló, megjegyzés: "", teszt_minta: true, elvart: {botvég: [3, 3]}, fegyver: {hossz: 3, aktorok: [botvég], erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Bot, rövid", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [botvég], súly: könnyű, erőbónusz_limit: 0, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Buzogány, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], súly: nehéz, erőbónusz_limit: 4}}
 - {név: "Buzogány, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], súly: súlyos}}
 - {név: "Buzogány, láncos", kategória: Romboló, megjegyzés: "", extrak: [pajzs_ve_felezes], fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], láncos: 1}}

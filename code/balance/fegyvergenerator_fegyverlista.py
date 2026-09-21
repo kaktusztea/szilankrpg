@@ -42,8 +42,17 @@ def _megj(r):
 
 
 def _extrak(r):
-    """Extrák cella: az extrák NEVE (saját + a fegyverhossz-kategória örökölt), ';' jellel elválasztva."""
-    ids = list(r.get("extrak", [])) + list(bal.FEGYVERHOSSZ[r["fegyver"]["hossz"]].get("extrak", []))
+    """Extrák cella: az extrák NEVE, ';' jellel elválasztva.
+
+    Saját (fegyverek.yaml) + ÖRÖKÖLT: fegyverhossz-kategória (Beszorítható),
+    szálfegyver-nyélanyag (pl. fanyelű → Fegyvertörés könnyebb), hajlékony (pajzs-megkerülés, fegyvertörés-immun).
+    """
+    fv = r["fegyver"]
+    ids = list(r.get("extrak", []))
+    ids += list(bal.FEGYVERHOSSZ[fv["hossz"]].get("extrak", []))
+    ids += list(bal.SZALFEGYVER_NYELANYAG[fv.get("szálfegyver_nyélanyag", "sima")].get("extrak", []))
+    if fv.get("hajlékony"):
+        ids += list(bal.HAJLEKONY_EXTRAK)
     return "; ".join(_extra_cimke(mid) for mid in ids)
 
 
