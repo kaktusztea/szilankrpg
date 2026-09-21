@@ -54,7 +54,7 @@ extrak:
     hatás:
       - {cél: SP, mód: flat, érték: 3}
 
-  - id: belharc_sfe0
+  - id: páncélszúrás_belharcban
     név: "Belharcban rések közt beszúr"
     csoport: harci_helyzet
     leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0."

@@ -20,7 +20,7 @@
 - {név: Pugoss, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, erőbónusz_limit: 3}}
 - {név: Ramiera, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, erőbónusz_limit: 3}}
 - {név: "Tőr, kígyó", kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1, erőbónusz_limit: 1}}
-- {név: "Tőr, páncélszúró", kat: Közelharci, megj: "", extrak: [belharc_sfe0], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], penges: 1, erőbónusz_limit: 5}}
+- {név: "Tőr, páncélszúró", kat: Közelharci, megj: "", extrak: [páncélszúrás_belharcban], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], penges: 1, erőbónusz_limit: 5}}
 - {név: "Tőr, Slan", kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, idea: 2, erőbónusz_limit: 2}}
 
 # ── Kardvívó ──
