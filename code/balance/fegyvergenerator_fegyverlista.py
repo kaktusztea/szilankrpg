@@ -33,44 +33,40 @@ _EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
 
 
 def _extra_cimke(mid):
-    m = _EXTRAK.get(mid, {})
-    nev = m.get("név", mid)
-    return ("⚠️" + nev) if m.get("csoport") == "harci_helyzet" else nev
+    return _EXTRAK.get(mid, {}).get("név", mid)
 
 
 def _megj(r):
-    """Megj. cella: a szöveges megj + az extrák (saját + a fegyverhossz-kategória örökölt)."""
-    m = r.get("megj", "")
+    """Megj. cella: KIZÁRÓLAG a szabad szöveges megjegyzés (az extrák a külön 'Extrák' oszlopban)."""
+    return r.get("megj", "")
+
+
+def _extrak(r):
+    """Extrák cella: az extrák NEVE (saját + a fegyverhossz-kategória örökölt), ';' jellel elválasztva."""
     ids = list(r.get("extrak", [])) + list(bal.FEGYVERHOSSZ[r["fegyver"]["hossz"]].get("extrak", []))
-    for mid in ids:
-        cimke = _extra_cimke(mid)
-        m = f"{m}; {cimke}" if m else cimke
-    return m
+    return "; ".join(_extra_cimke(mid) for mid in ids)
 
 
-W = [(r["kat"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r))
+W = [(r["kat"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r), _extrak(r))
      for r in bal._load("fegyverek.yaml") if "kat" in r]
 
 
-def forg(f):
-    base = FEGYVERHOSSZ[f.hossz]["forgatás"]
-    return base + (" (1 kézzel)" if f.egykezes_kenyszer else "")
-
-FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "Megj."]
+FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "Extrák", "Megj."]
 JOBBRA = {4, 5, 6, 7, 8, 9, 11}  # jobbra igazított (numerikus) oszlopok
 
 
 def sorok_kategoriankent():
     out = {}
-    for kat, nev, f, megj in W:
+    for kat, nev, f, megj, extrak in W:
         rows = out.setdefault(kat, [])
         for i, m in enumerate(f.modok(ero=0)):
             n = nev if i == 0 else ""
             mm = megj if i == 0 else ""
+            ex = extrak if i == 0 else ""
             rows.append([n, m["aktor"], m["tipus"], m["sebzestipus"],
                          str(m["TE"]), str(m["VE"]),
-                         f"{m['SP']:+d}", str(f.erőbónusz_limit), str(m["AT"]), str(m["SEB"]), forg(f),
-                         str(f.hossz), mm])
+                         f"{m['SP']:+d}", str(m["erőbónusz_limit"]), str(m["AT"]), str(m["SEB"]), m["forgatás"],
+                         str(f.hossz), ex, mm])
     return out
 
 
@@ -112,8 +108,9 @@ Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
 - **Jelleg / Sebzéstípus:** a `Jelleg` a sebzés jellege (szúró / vágó / zúzó); a `Sebzéstípus` a rang: `elsődleges` = alap sebzésmód (nincs büntetés), `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Az `alkalmatlan` nincs a táblában (KM: `Hátrány-2`). Éles: `064_02_05`.
 - **Fh** = Fegyverhossz kategória. **Seb.** = Sebesség (magasabb = lassabb).
 - **Erőlimit** = Erőbónusz limit: a sebzésbe (SP) fordítható Erő felső plafonja; `99` = nincs plafon (egyedi per-fegyver érték, `064_02_06`).
-- **⚠️Beszorítható** = Beszorított(2) tag (kat. 7 és 9, hosszú fegyver): ha az ellenfél bejut, `TÉ:0` ÉS `VÉ:0` (szituációs harci helyzet, nem a bázisérték). Kat. 12 NEM.
-- **Extrák** (a Megj oszlopban, `extrak.yaml`): a bázisra jövő, feltételhez kötött hatások. `⚠️` = harci-helyzet (pl. Beszorított, Páncéltalan szúrás); a **Különleges felkészítés (KF)** kiképzés-függő bónusz. A tábla a **felkészítetlen** bázist mutatja; ezek szituációsan jönnek rá.
+- **Beszorítható** = Beszorított(2) tag (kat. 7 és 9, hosszú fegyver): ha az ellenfél bejut, `TÉ:0` ÉS `VÉ:0` (szituációs harci helyzet, nem a bázisérték). Kat. 12 NEM.
+- **Extrák** (külön oszlop, `extrak.yaml`): a bázisra jövő, feltételhez kötött hatások NEVE, `;` jellel elválasztva (saját + a fegyverhossz-kategória örökölt); a **Különleges felkészítés** (KF) kiképzés-függő bónusz. A tábla a **felkészítetlen** bázist mutatja; ezek szituációsan jönnek rá.
+- **Megj.**: szabad szöveges mechanika-jegyzet (a strukturált hatások az Extrák oszlopban vannak).
 - **(spec)** = egyedi mechanika, amit a generátor nem modellez (szöveges szabály az éles anyagban).
 
 ## Scope

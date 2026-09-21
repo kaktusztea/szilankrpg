@@ -22,7 +22,7 @@
 extrak:
   # ── FELKÉSZÍTÉS (kiképzett, opt-in — a régi „extra"/KF) ──
   - id: kulonleges_felkeszites
-    név: "Különleges felkészítés (KF)"
+    név: "Különleges felkészítés"
     csoport: felkészítés
     leírás: >
       Belső harci iskola + Mesterfegyver-tudás kell. Enélkül a felkészítetlen
@@ -36,7 +36,7 @@ extrak:
 
   # ── HARCI HELYZET (szituációs, automatikus) ──
   - id: beszorithato
-    név: "Beszorított"
+    név: "Beszorítható"
     csoport: harci_helyzet
     leírás: "Hosszú fegyver (kat. 7/9): Beszorított(2) státuszban nem forgatható rendesen, TÉ/VÉ:0."
     feltétel:
@@ -54,7 +54,7 @@ extrak:
     hatás:
       - {cél: SP, mód: flat, érték: 3}
 
-  - id: páncélszúrás_belharcban
+  - id: pancelszuras_belharcban
     név: "Belharcban rések közt beszúr"
     csoport: harci_helyzet
     leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0."

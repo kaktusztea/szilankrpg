@@ -91,6 +91,16 @@ tipus_tv:
   vágó-íves:    {TÉ: 0, VÉ: 0}
   nincs:        {TÉ: 0, VÉ: 0}
 
+# forgatás-kényszer: a fegyvert NEM az alapfogásával forgatva (levonások).
+#   másfélkezes_egykézzel = STANDARD variáns: a másfélkezes fegyver 1 kézzel is forgatható (MK).
+#                           A generátor a másfélkezes fegyverekhez automatikusan emittál egy 1 kezes sort is.
+#   kétkezes_egykézzel     = SZITUÁCIÓ: kétkezes fegyver 1 kézzel (pl. kiesett kéz, pajzs) — nem emittált sor,
+#                           hanem futásidejű helyzet-módosító.
+# TÉ/VÉ: delta; átütés_max / erőbónusz_limit_max: felső korlát (override). A sebzést (SP) NEM érinti.
+forgatás_levonás:
+  másfélkezes_egykézzel: {TÉ: -2, VÉ: -2, átütés_max: 0, erőbónusz_limit_max: 2}
+  kétkezes_egykézzel:    {TÉ: -4, VÉ: -4, átütés_max: 0, erőbónusz_limit_max: 0}
+
 # szálfegyver nyél: típus -> SP (direkt), súly (kategória-eltolás, mint idea/alapanyag suly_delta)
 # A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika — bázis-hatásuk nincs.
 szalfegyver_nyel:

@@ -44,7 +44,6 @@ fegyver:
   alapanyag:         {kötelező: false, típus: str,  forrás: alapanyag, default: acél, megjegyzés: "konstansok.yaml alapanyag (acél, feketeacél, kő, mithrill, …)"}
   fejdarab_alap:     {kötelező: false, típus: int,  forrás: fejdarab, default: 0, megjegyzés: "fejdarab alap; konstansok.yaml fejdarab (0..3)"}
   nehez_mod:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta SP-be VAGY Átütésbe menjen"}
-  egykezes_kenyszer: {kötelező: false, típus: bool, default: false, megjegyzés: "pl. lándzsa pajzzsal: kétkezes/másfélkezes fegyver 1 kézzel (SP-büntetés)"}
   szalfegyver_nyel:  {kötelező: false, típus: str,  forrás: szalfegyver_nyel, default: sima, megjegyzés: "szálfegyver nyél: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szalfegyver_nyel"}
   erőbónusz_limit:   {kötelező: false, típus: int,  default: 99, megjegyzés: "az SP-re alkalmazható Erőbónusz felső plafonja; 99 = nincs plafon; EGYEDI per-fegyver érték (nem levezetett) — 1:1 áthalad a generált rekordba"}
 
@@ -52,8 +51,11 @@ fegyver:
 # SZÁNDÉKOSAN NEM séma-mező (a generátor csak a harcértékeket számolja):
 #   puha          → a soft-anyag TÉ/VÉ/SP hatását az `alapanyag` nyeli el (test/krumpli/csont);
 #                   saját hatása (FP-sebzés ÉP helyett) futásidejű sebzés-típus, nem bázisérték.
-#   forgatás      → SZÁRMAZTATOTT a `hossz`-ból (fegyverhossz `forg`); az 1-kezes SP-büntetést az
-#                   `egykezes_kenyszer` adja. Nem szabad input.
+#   forgatás      → SZÁRMAZTATOTT a `hossz`-ból (fegyverhossz `forgatás`: egykezes/másfélkezes/kétkezes).
+#                   A másfélkezes fegyverhez a generátor AUTOMATIKUSAN emittál egy '1 kéz' (MK) sort is
+#                   (kontroll-levonás: konstansok.yaml `forgatás_levonás.másfélkezes_egykézzel`). A
+#                   kétkezes-fegyver-1-kézzel eset SZITUÁCIÓ (kiesett kéz/pajzs), nem fegyver-input.
+#                   Nem szabad input. (A régi MK/MK_pár + (1K)/(2K) duplikátumok megszűntek.)
 #   övön hordható → logisztika/Felszerelés (előrántás/cipelés), nem harcérték; levezethető
 #                   (hossz ≤ 3 és nem szálfegyver).
 #   pontos        → futásidejű manőver-bónusz (Pontra támadás +2); már EXTRA: `pontos` az extrak.yaml-ban.

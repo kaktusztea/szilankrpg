@@ -20,7 +20,7 @@
 - {név: Pugoss, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, erőbónusz_limit: 3}}
 - {név: Ramiera, kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, erőbónusz_limit: 3}}
 - {név: "Tőr, kígyó", kat: Közelharci, megj: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], penges: 1, erőbónusz_limit: 1}}
-- {név: "Tőr, páncélszúró", kat: Közelharci, megj: "", extrak: [páncélszúrás_belharcban], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], penges: 1, erőbónusz_limit: 5}}
+- {név: "Tőr, páncélszúró", kat: Közelharci, megj: "", extrak: [pancelszuras_belharcban], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], penges: 1, erőbónusz_limit: 5}}
 - {név: "Tőr, Slan", kat: Közelharci, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], penges: 1, idea: 2, erőbónusz_limit: 2}}
 
 # ── Kardvívó ──
@@ -38,20 +38,16 @@
 - {név: "Kard, lovag", kat: Kardvívó, megj: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, súly: nehéz}}
 - {név: "Kard, rapír", kat: Kardvívó, megj: "", teszt_minta: true, fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], penges: 1, erőbónusz_limit: 3}}
 - {név: Tőrkard, kat: Kardvívó, megj: "", extrak: [pontos, lefegyverezhetobb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], penges: 1, erőbónusz_limit: 1}}
-- {név: "Kard, másfélkezes (2K)", kat: Kardvívó, megj: "", teszt_minta: true, fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1}}
-- {név: "Kard, másfélkezes (1K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, egykezes_kenyszer: true, erőbónusz_limit: 2}}
-- {név: "Kard, mesterkard (2K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, súly: nehéz}}
-- {név: "Kard, mesterkard (1K)", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, súly: nehéz, egykezes_kenyszer: true, erőbónusz_limit: 2}}
+- {név: "Kard, másfélkezes", kat: Kardvívó, megj: "", teszt_minta: true, fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1}}
+- {név: "Kard, mesterkard", kat: Kardvívó, megj: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], penges: 1, súly: nehéz}}
 - {név: "Kard, kétkezes", kat: Kardvívó, megj: "", teszt_minta: true, elvart: {vágóél-egyenes-nagy: [10, 10]}, fegyver: {hossz: 7, aktorok: [vágóél-egyenes-nagy, pengehegy-kard], penges: 1, súly: nehéz}}
 - {név: Meneth, kat: Kardvívó, megj: "", extrak: [sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], penges: 1}}
 - {név: Sequor, kat: Kardvívó, megj: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], penges: 1, erőbónusz_limit: 3}}
 - {név: Vívóbot, kat: Kardvívó, megj: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: csont, erőbónusz_limit: 1}}
 - {név: "Kard, Slan rövid", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], penges: 1, idea: 2, erőbónusz_limit: 3}}
-- {név: "Kard, Slan (1K)", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 3, egykezes_kenyszer: true, erőbónusz_limit: 3}}
-- {név: "Kard, Slan (2K)", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 3}}
+- {név: "Kard, Slan", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], penges: 1, idea: 3}}
 - {név: "Kard, Slan csatakard", kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 7, aktorok: [vágóél-íves-nagy, pengehegy-kard], penges: 1, idea: 4, súly: nehéz}}
-- {név: Mara-sequor (1K), kat: Kardvívó, megj: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], penges: 1, idea: 3, alapanyag: feketeacél, egykezes_kenyszer: true, erőbónusz_limit: 3}}
-- {név: Mara-sequor (2K), kat: Kardvívó, megj: "", teszt_minta: true, extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], penges: 1, idea: 3, alapanyag: feketeacél}}
+- {név: Mara-sequor, kat: Kardvívó, megj: "", teszt_minta: true, extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], penges: 1, idea: 3, alapanyag: feketeacél}}
 
 # ── Lándzsavívó ──
 - {név: "Lándzsa, átlagos", kat: Lándzsavívó, megj: "", teszt_minta: true, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], penges: 1}}
