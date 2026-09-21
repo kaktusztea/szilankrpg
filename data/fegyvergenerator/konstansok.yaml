@@ -109,9 +109,11 @@ szálfegyver_nyélanyag:
   vasaltszárú: {SP: 0, súly: 1}   # +1 súly kategória
   tömörszárú:  {SP: 1, súly: 2}   # +1 SP, +2 súly kategória (+1 Felszerelés pont = logisztika)
 
-# hajlékony (ostor-jelleg) örökölt SZITUÁCIÓS extrái (a bázis -2 VÉ / +1 Sebesség a balanszban van).
-# A fegyverlista ezeket örökíti a hajlékony fegyverekhez (mint a fegyverhossz → beszorithato).
-hajlékony_extrák: [pajzs_megkerules, fegyvertores_immunis]
+# hajlékony (ostor-jelleg): 0/1 param táblája — bázis (VÉ/Sebesség) + örökölt SZITUÁCIÓS extrák.
+# A fegyverlista az extrákat innen örökíti (mint a fegyverhossz → beszorithato, szálfegyver_nyélanyag → fanyelű).
+hajlékony:
+  0: {VÉ: 0,  sebesség: 0}
+  1: {VÉ: -2, sebesség: 1, extrak: [pajzs_megkerules, fegyvertores_immunis]}
 
 # páncélok a balansz-teszthez: [név, SFÉ, fém?]
 pancel:
