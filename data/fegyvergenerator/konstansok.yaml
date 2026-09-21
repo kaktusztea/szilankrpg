@@ -46,11 +46,12 @@ fejdarab:
 
 # súly: név -> SP, sebesség, erő_követelmény (a forgatáshoz szükséges minimális Erő; NEM azonos az erőbónusz_limittel)
 # DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva). nehéz/súlyos: SP VAGY átütés (a fegyver nehéz_módosító dönt).
+# id: rendezett súlykategória-index (a súly-delta EZT tolja, clamp-pel a szélső osztályokra)
 súly:
-  könnyű:  {SP: -1, sebesség: -1, erő_követelmény: 0}
-  átlagos: {SP: 0,  sebesség: 0,  erő_követelmény: 0}
-  nehéz:   {SP: 1,  sebesség: 1,  erő_követelmény: 2}
-  súlyos:  {SP: 2,  sebesség: 2,  erő_követelmény: 3}
+  könnyű:  {id: 1, SP: -1, sebesség: -1, erő_követelmény: 0}
+  átlagos: {id: 2, SP: 0,  sebesség: 0,  erő_követelmény: 0}
+  nehéz:   {id: 3, SP: 1,  sebesség: 1,  erő_követelmény: 2}
+  súlyos:  {id: 4, SP: 2,  sebesség: 2,  erő_követelmény: 3}
 
 # idea: szint -> TÉ, VÉ, SP, sebesség, súly-delta (súly)
 idea:

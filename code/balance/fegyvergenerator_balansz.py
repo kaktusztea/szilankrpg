@@ -47,6 +47,8 @@ FEJDARAB     = {int(k): v for k, v in _K["fejdarab"].items()}
 IDEA         = {int(k): v for k, v in _K["idea"].items()}
 AKTOR        = _K["aktor"]
 SULY         = _K["súly"]
+SULY_BY_ID   = {v["id"]: v for v in SULY.values()}   # súlykategória-index → kategória (súly-delta tolás)
+_SULY_MIN, _SULY_MAX = min(SULY_BY_ID), max(SULY_BY_ID)
 ALAPANYAG    = _K["alapanyag"]
 TIPUS_TV     = _K["tipus_tv"]
 FORGATAS_LEVONAS = _K["forgatás_levonás"]
@@ -104,13 +106,14 @@ class Fegyver:
         (A kétkezes-1-kézzel eset SZITUÁCIÓ, nem itt emittált sor — lásd forgatás_levonás['kétkezes_egykézzel'].)
         """
         h = FEGYVERHOSSZ[self.hossz]
-        s = dict(SULY[self.súly])
         i = IDEA[self.idea]
         mat = ALAPANYAG[self.alapanyag]
         nyel = SZALFEGYVER_NYELANYAG[self.szálfegyver_nyélanyag]
 
-        # idea, alapanyag és szálfegyver-nyél súly-delta → eltolja a súly kategóriát (Sebesség/SP-re hat)
-        suly_delta = i.get("súly", 0) + mat.get("súly", 0) + nyel.get("súly", 0)
+        # idea/alapanyag/szálfegyver-nyél súly-delta → a súly KATEGÓRIÁT tolja (clamp a szélső osztályokra);
+        # a cél-kategória TELJES sora (SP, Sebesség, erő_követelmény) érvényesül. Negatív delta = könnyebb.
+        suly_shift = i.get("súly", 0) + mat.get("súly", 0) + nyel.get("súly", 0)
+        s = SULY_BY_ID[max(_SULY_MIN, min(_SULY_MAX, SULY[self.súly]["id"] + suly_shift))]
 
         fejdarab = self.fejdarab_alap + (1 if self.pengés else 0)
         fd = FEJDARAB[fejdarab]
@@ -150,7 +153,7 @@ class Fegyver:
                     sp += 1
                 # súly SP: szúrásnál NEM számít
                 if not szuro:
-                    weff = s["SP"] + suly_delta  # súly-delta könnyíti → kevesebb súly-SP
+                    weff = s["SP"]  # az eff. (eltolt) súly-kategória SP-je
                     if self.nehéz_módosító == "sp":
                         sp += weff
 
@@ -162,7 +165,7 @@ class Fegyver:
                 # ── Sebesség ── (magasabb = lassabb)
                 seb = (h["sebesség"] + fd["sebesség"] + a["sebesség"] + s["sebesség"]
                        + (1 if self.láncos else 0)
-                       + i["sebesség"] + suly_delta + HAJLEKONY[self.hajlékony]["sebesség"])
+                       + i["sebesség"] + HAJLEKONY[self.hajlékony]["sebesség"])
 
                 # ── Fogás-kényszer (MK): kontroll-levonás, a sebzést NEM érinti ──
                 ero_limit = self.erőbónusz_limit
