@@ -47,6 +47,3 @@ fegyver:
   szálfegyver_nyélanyag:  {kötelező: false, típus: str,  forrás: szálfegyver_nyélanyag, default: sima, megjegyzés: "szálfegyver nyélanyag: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szálfegyver_nyélanyag"}
   erőbónusz_limit:   {kötelező: false, típus: int,  default: 99, megjegyzés: "az SP-re alkalmazható Erőbónusz felső plafonja; 99 = nincs plafon; EGYEDI per-fegyver érték (nem levezetett) — 1:1 áthalad a generált rekordba"}
   akadály:           {kötelező: false, típus: int,  enum: [0, 1, 2], default: 0, megjegyzés: "utazásnál mennyire akadályoz (0=nem, 1=lándzsa-kétfejű jellegű, 2=ostromfegyver/teljes vért/nagy pajzs, csak szekéren szállítható); NINCS harcérték-hatás, csak leíró/logisztikai — EGYEDI per-fegyver érték (nem levezetett)"}
-
-
-#   övön hordható → levezetett, konstansok.yaml → fegyverhossz[n].övön_hordható (hossz < 3).
