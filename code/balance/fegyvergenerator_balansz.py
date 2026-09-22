@@ -44,6 +44,7 @@ _K = _load("konstansok.yaml")
 # int kulcsok normalizálása (YAML-ban stringként is jöhetnének)
 FEGYVERHOSSZ = {int(k): v for k, v in _K["fegyverhossz"].items()}
 FEJDARAB     = {int(k): v for k, v in _K["fejdarab"].items()}
+PENGES       = {int(k): v for k, v in _K["pengés"].items()}
 IDEA         = {int(k): v for k, v in _K["idea"].items()}
 AKTOR        = _K["aktor"]
 SULY         = _K["súly"]
@@ -116,7 +117,8 @@ class Fegyver:
         suly_shift = i.get("súly", 0) + mat.get("súly", 0) + nyel.get("súly", 0)
         s = SULY_BY_ID[max(_SULY_MIN, min(_SULY_MAX, SULY[self.súly]["id"] + suly_shift))]
 
-        fejdarab_idx = self.fejdarab + (1 if self.pengés else 0)
+        pen = PENGES[self.pengés]
+        fejdarab_idx = self.fejdarab + pen["fejdarab"]
         fd = FEJDARAB[fejdarab_idx]
 
         # Fogás-variánsok: a másfélkezes fegyver 2 kézzel ÉS 1 kézzel (MK) is forgatható → 2 sor-készlet.
@@ -137,19 +139,18 @@ class Fegyver:
 
                 # ── TÉ ──
                 te = (h["TÉ"] + a["TÉ"] + tt["TÉ"] + fd["TÉ"]
-                      + (1 if self.pengés else 0)      # pengés TÉ/VÉ +1
+                      + pen["TÉ"]
                       + i["TÉ"] + mat["TÉ"])
                 # ── VÉ ──
                 ve = (h["VÉ"] + a["VÉ"] + tt["VÉ"]
-                      + (1 if self.pengés else 0)
+                      + pen["VÉ"]
                       + i["VÉ"] + mat["VÉ"]
                       + HAJLEKONY[self.hajlékony]["VÉ"])   # hajlékony VÉ (tábla)
 
                 # ── SP ── (a sebzést az MK NEM érinti)
                 szuro = a["sebzésjelleg"] == "szúró"
                 sp = h["SP"] + a["SP"] + mat["SP"] + i["SP"] + ero + nyel.get("SP", 0)
-                if self.pengés:
-                    sp += 1
+                sp += pen["SP"]
                 if self.láncos:
                     sp += 1
                 # súly SP: szúrásnál NEM számít

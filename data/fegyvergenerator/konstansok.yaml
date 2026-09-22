@@ -45,6 +45,11 @@ fejdarab:
   2: {sebesség: 2, TÉ: -2}
   3: {sebesség: 3, TÉ: -4}
 
+# pengés: 0/1 -> TÉ, VÉ, SP, fejdarab (a fegyver bemenő "pengés" flag teljes hatása)
+pengés:
+  0: {TÉ: 0, VÉ: 0, SP: 0, fejdarab: 0}
+  1: {TÉ: 1, VÉ: 1, SP: 1, fejdarab: 1}
+
 # súly: név -> SP, sebesség, erő_követelmény (a forgatáshoz szükséges minimális Erő; NEM azonos az erőbónusz_limittel)
 # DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva). nehéz/súlyos: SP VAGY átütés (a fegyver nehéz_módosító dönt).
 # id: rendezett súlykategória-index (a súly-delta EZT tolja, clamp-pel a szélső osztályokra)
