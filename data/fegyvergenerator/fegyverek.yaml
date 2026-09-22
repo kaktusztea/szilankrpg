@@ -14,7 +14,7 @@
 # ── Közelharci ──
 - {név: "Dzsambia", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], pengés: 1, súly: könnyű, erőbónusz_limit: 0}}
 - {név: "Kés", kategória: Közelharci, megjegyzés: "", teszt_minta: true, fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid, pengehegy-apró], pengés: 1, súly: könnyű, erőbónusz_limit: 2}}
-- {név: "Kő", kategória: Közelharci, megjegyzés: "", teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab_alap: 1, súly: könnyű, alapanyag: kő}}
+- {név: "Kő", kategória: Közelharci, megjegyzés: "", teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: könnyű, alapanyag: kő}}
 - {név: "Kriszkés", kategória: Közelharci, megjegyzés: "", extrak: [panceltalan_roncsolasa], fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 2}}
 - {név: "Levéltőr", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 2}}
 - {név: "Pugoss", kategória: Közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 3}}
@@ -52,34 +52,34 @@
 - {név: "Vívóbot", kategória: Kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 1, szálfegyver_nyélanyag: fanyelű}}
 
 # ── Lándzsavívó ──
-- {név: "Alabárd", kategória: Lándzsavívó, megjegyzés: "", teszt_minta: true, elvart: {vágóél-íves-nagy: [6, 10]}, fegyver: {hossz: 9, aktorok: [vágóél-íves-nagy, lándzsahegy-rövid-átlagos, buzogányfej-tompa], fejdarab_alap: 2, pengés: 1, súly: nehéz, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Alabárd", kategória: Lándzsavívó, megjegyzés: "", teszt_minta: true, elvart: {vágóél-íves-nagy: [6, 10]}, fegyver: {hossz: 9, aktorok: [vágóél-íves-nagy, lándzsahegy-rövid-átlagos, buzogányfej-tompa], fejdarab: 2, pengés: 1, súly: nehéz, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Bot, hosszú", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 7, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Lándzsa, átlagos", kategória: Lándzsavívó, megjegyzés: "", teszt_minta: true, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], pengés: 1, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Lándzsa, keskeny hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-keskeny], pengés: 1, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Lándzsa, széles hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-széles], pengés: 1, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Pika, keskeny hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Pika, széles hegyű", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
-- {név: "Szigony, egykezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
-- {név: "Szigony, kétkezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], szálfegyver_nyélanyag: fanyelű}}
+- {név: "Szigony, egykezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], fejdarab: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Szigony, kétkezes", kategória: Lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, szálfegyver_nyélanyag: fanyelű}}
 
 # ── Romboló ──
-- {név: "Balta", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab_alap: 1, súly: nehéz}}
+- {név: "Balta", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, súly: nehéz}}
 - {név: "Bot, furkós", kategória: Romboló, megjegyzés: "", teszt_minta: true, elvart: {botvég: [3, 3]}, fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Bot, rövid", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [botvég], alapanyag: fa, súly: könnyű, erőbónusz_limit: 0, szálfegyver_nyélanyag: fanyelű}}
-- {név: "Buzogány, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], súly: nehéz, erőbónusz_limit: 4}}
-- {név: "Buzogány, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], súly: súlyos}}
-- {név: "Buzogány, láncos", kategória: Romboló, megjegyzés: "", extrak: [pajzs_ve_felezes], fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], láncos: 1}}
-- {név: "Buzogány, shadleki", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-szöges], súly: nehéz}}
-- {név: "Buzogány, tollas", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [buzogányfej-szöges], erőbónusz_limit: 4}}
-- {név: "Csatabárd, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab_alap: 1, súly: nehéz, nehéz_módosító: átütés, erőbónusz_limit: 4}}
-- {név: "Csatabárd, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-nagy], fejdarab_alap: 1, súly: súlyos, nehéz_módosító: átütés}}
-- {név: "Csatacsákány", kategória: Romboló, megjegyzés: "", extrak: [beakadas_kockazat], fegyver: {hossz: 3, aktorok: [lándzsahegy-rövid-keskeny]}}
-- {név: "Harci kalapács", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], súly: súlyos}}
+- {név: "Buzogány, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: nehéz, erőbónusz_limit: 4}}
+- {név: "Buzogány, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos}}
+- {név: "Buzogány, láncos", kategória: Romboló, megjegyzés: "", extrak: [pajzs_ve_felezes], fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, láncos: 1}}
+- {név: "Buzogány, shadleki", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-szöges], fejdarab: 1, súly: nehéz}}
+- {név: "Buzogány, tollas", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [buzogányfej-szöges], fejdarab: 1, erőbónusz_limit: 4}}
+- {név: "Csatabárd, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab: 1, súly: nehéz, nehéz_módosító: átütés, erőbónusz_limit: 4}}
+- {név: "Csatabárd, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-nagy], fejdarab: 1, súly: súlyos, nehéz_módosító: átütés}}
+- {név: "Csatacsákány", kategória: Romboló, megjegyzés: "", extrak: [beakadas_kockazat], fegyver: {hossz: 3, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1}}
+- {név: "Harci kalapács", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos}}
 
 # ── Ostorharc ──
 - {név: "Korbács", kategória: Ostorharc, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], hajlékony: 1, erőbónusz_limit: 2}}
 - {név: "Ostor", kategória: Ostorharc, megjegyzés: "", fegyver: {hossz: 9, aktorok: [botvég], hajlékony: 1, erőbónusz_limit: 3}}
-- {név: "Ostorkard (Urumi)", kategória: Ostorharc, megjegyzés: "", extrak: [onsebzes_kockazat], fegyver: {hossz: 9, aktorok: [vágóél-íves-átlagos], hajlékony: 1}}
+- {név: "Ostorkard (Urumi)", kategória: Ostorharc, megjegyzés: "", extrak: [onsebzes_kockazat], fegyver: {hossz: 9, aktorok: [vágóél-íves-átlagos], fejdarab: 1, hajlékony: 1}}
 
 # ── — csak teszt-minta (nem mainstream) — ──
 - {név: "Naginata", teszt_minta: true, elvart: {vágóél-íves-nagy: [14, 14]}, fegyver: {hossz: 12, aktorok: [vágóél-íves-nagy], pengés: 1, idea: 2, szálfegyver_nyélanyag: fanyelű}}

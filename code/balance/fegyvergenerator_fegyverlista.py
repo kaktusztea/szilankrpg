@@ -96,8 +96,12 @@ GEN_CMD = "python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyver
 INTRO = """> ⚠️ **AUTOMATIKUSAN GENERÁLT OLDAL — kézzel NE szerkeszd.**
 >
 > Generálva: `{datum}` · Forrás: `data/fegyvergenerator/*.yaml`
->
-> Előállító parancs (a `szilank.code` repóból, a kimenetet ebbe a fájlba irányítva): `{cmd}`
+
+Előállító parancs (`szilank.code` repóból):
+
+```
+{cmd}
+```
 
 # Fegyvergenerátor → v2 mainstream fegyverlista
 

@@ -87,7 +87,7 @@ class Fegyver:
     név: str
     hossz: int
     aktorok: list
-    fejdarab_alap: int = 0
+    fejdarab: int = 0
     pengés: int = 0
     láncos: int = 0
     súly: str = "átlagos"
@@ -116,8 +116,8 @@ class Fegyver:
         suly_shift = i.get("súly", 0) + mat.get("súly", 0) + nyel.get("súly", 0)
         s = SULY_BY_ID[max(_SULY_MIN, min(_SULY_MAX, SULY[self.súly]["id"] + suly_shift))]
 
-        fejdarab = self.fejdarab_alap + (1 if self.pengés else 0)
-        fd = FEJDARAB[fejdarab]
+        fejdarab_idx = self.fejdarab + (1 if self.pengés else 0)
+        fd = FEJDARAB[fejdarab_idx]
 
         # Fogás-variánsok: a másfélkezes fegyver 2 kézzel ÉS 1 kézzel (MK) is forgatható → 2 sor-készlet.
         forg = h["forgatás"]
