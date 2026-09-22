@@ -97,14 +97,15 @@ def validate():
         if isinstance(r, dict):
             if isinstance(r.get("fegyver"), dict):
                 _blokk(f"{cimke}.fegyver", r["fegyver"], fegyver_sema, forras, hibak)
-            # elvart mélyebb ellenőrzés: aktor érvényes + [TÉ, VÉ] két egész
-            if isinstance(r.get("elvart"), dict):
-                for aktor, val in r["elvart"].items():
-                    if aktor not in forras["aktor"]:
-                        hibak.append(f"{cimke}.elvart: ismeretlen aktor {aktor!r}")
-                    if not (isinstance(val, list) and len(val) == 2
-                            and all(isinstance(x, int) and not isinstance(x, bool) for x in val)):
-                        hibak.append(f"{cimke}.elvart[{aktor}]: [TÉ, VÉ] két egész kell, kapott {val!r}")
+            # elvart / elvart_1kez_kétkezes mélyebb ellenőrzés: aktor érvényes + [TÉ, VÉ] két egész
+            for mezo in ("elvart", "elvart_1kez_kétkezes"):
+                if isinstance(r.get(mezo), dict):
+                    for aktor, val in r[mezo].items():
+                        if aktor not in forras["aktor"]:
+                            hibak.append(f"{cimke}.{mezo}: ismeretlen aktor {aktor!r}")
+                        if not (isinstance(val, list) and len(val) == 2
+                                and all(isinstance(x, int) and not isinstance(x, bool) for x in val)):
+                            hibak.append(f"{cimke}.{mezo}[{aktor}]: [TÉ, VÉ] két egész kell, kapott {val!r}")
     return hibak
 
 

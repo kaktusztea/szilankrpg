@@ -26,6 +26,8 @@ rekord:
   teszt_minta: {kötelező: false, típus: bool, példa: true, megjegyzés: "a balansz self-testben/elemzésben részt vevő kiemelt fegyver"}
   elvart:      {kötelező: false, típus: map,  példa: {vágóél-egyenes-átlagos: [6, 6]},
                 megjegyzés: "{aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték (Erő=0); az aktor a fegyver aktorai közül"}
+  elvart_1kez_kétkezes: {kötelező: false, típus: map, példa: {lándzsahegy-rövid-átlagos: [6, 6]},
+                megjegyzés: "{aktor: [TÉ, VÉ]} — a KÉTKEZES fegyver SZITUÁCIÓS 1-kezes (pajzs/kiesett kéz) elvárt bázisértéke (Erő=0), a konstansok.yaml → egykezes_forgatás.kétkezes levonással. CSAK kétkezes fegyverre értelmes — a modok() ezt nem emittálja automatikusan (mindig_emittált: false), ez a teszt validálja a doksiban kézzel leírt szituációs blokkokat."}
   extrak:   {kötelező: false, típus: list, elem_forrás: extrak, példa: [kulonleges_felkeszites],
                 megjegyzés: "id-k a extrak.yaml-ból (a Beszorítottat a fegyverhossz-kategória örökíti, NEM ide)"}
   fegyver:     {kötelező: true,  típus: map,  almezok: fegyver, megjegyzés: "a Fegyver modell WORK paraméterei — lásd a 'fegyver' szekciót lent"}
