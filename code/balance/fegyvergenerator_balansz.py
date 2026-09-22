@@ -53,7 +53,7 @@ SULY_BY_ID   = {v["id"]: v for v in SULY.values()}   # súlykategória-index →
 _SULY_MIN, _SULY_MAX = min(SULY_BY_ID), max(SULY_BY_ID)
 ALAPANYAG    = _K["alapanyag"]
 TIPUS_TV     = _K["tipus_tv"]
-FORGATAS_LEVONAS = _K["forgatás_levonás"]
+EGYKEZES_FORGATAS = _K["egykezes_forgatás"]
 SZALFEGYVER_NYELANYAG = _K["szálfegyver_nyélanyag"]
 HAJLEKONY = _K["hajlékony"]
 SEBZESTIPUS_HATRANY = _K["sebzéstípus_hátrány"]   # sebzésmód rang → Sebzésdobás E/H szint (cél=sebzésdobás, mód=hátrány)
@@ -107,7 +107,7 @@ class Fegyver:
         A másfélkezes fegyver KÉT fogás-variánst ad: '2 kéz' (teljes) és '1 kéz' (MK-levonás).
         Az MK a KONTROLLT bünteti (TÉ/VÉ/Átütés/erő-plafon), a sebzést (SP) NEM.
         A levonás-értékek: konstansok.yaml → forgatás_levonás['másfélkezes_egykézzel'].
-        (A kétkezes-1-kézzel eset SZITUÁCIÓ, nem itt emittált sor — lásd forgatás_levonás['kétkezes_egykézzel'].)
+        (A kétkezes-1-kézzel eset SZITUÁCIÓ, nem itt emittált sor — lásd konstansok.yaml → kétkezes_egykézzel.)
         """
         h = FEGYVERHOSSZ[self.hossz]
         i = IDEA[self.idea]
@@ -123,11 +123,14 @@ class Fegyver:
         fejdarab_idx = self.fejdarab + pen["fejdarab"]
         fd = FEJDARAB[fejdarab_idx]
 
-        # Fogás-variánsok: a másfélkezes fegyver 2 kézzel ÉS 1 kézzel (MK) is forgatható → 2 sor-készlet.
+        # Fogás-variánsok: ha a forgatásnak van "1 kézzel" MINDIG EMITTÁLT extra variánsa
+        # (jelenleg csak a másfélkezesnek — konstansok.yaml → egykezes_forgatás), a fegyver
+        # két sort ad ki. A kétkezes 1-kézzel eset SZITUÁCIÓ (mindig_emittált: false), nem itt jön.
         forg = h["forgatás"]
         grips = [(forg, None)]
-        if forg == "másfélkezes":
-            grips.append((forg + " · 1 kéz", FORGATAS_LEVONAS["másfélkezes_egykézzel"]))
+        egykezes_levonas = EGYKEZES_FORGATAS.get(forg)
+        if egykezes_levonas and egykezes_levonas.get("mindig_emittált"):
+            grips.append((forg + " · 1 kéz", egykezes_levonas))
 
         eredmeny = []
         for forg_cimke, mk in grips:
@@ -150,20 +153,20 @@ class Fegyver:
                       + HAJLEKONY[self.hajlékony]["VÉ"])   # hajlékony VÉ (tábla)
 
                 # ── SP ── (a sebzést az MK NEM érinti)
-                szuro = a["sebzésjelleg"] == "szúró"
+                suly_szamit = tt.get("súly_számít", True)
                 sp = h["SP"] + a["SP"] + mat["SP"] + i["SP"] + ero + nyel.get("SP", 0)
                 sp += pen["SP"]
                 lanc = LANCOS[self.láncos]
                 sp += lanc["SP"]
-                # súly SP: szúrásnál NEM számít
-                if not szuro:
+                # súly SP: ha a sebzésjelleg nem "számít" a súllyal (pl. szúrásnál nincs erőkar)
+                if suly_szamit:
                     weff = s["SP"]  # az eff. (eltolt) súly-kategória SP-je
                     if self.súly_delta_cél == "sp":
                         sp += weff
 
                 # ── Átütés ──
                 at = a["átütés"] + mat.get("átütés", 0)
-                if self.súly_delta_cél == "átütés" and not szuro:
+                if self.súly_delta_cél == "átütés" and suly_szamit:
                     at += max(0, s["SP"])  # nehéz +1 / súlyos +2 átütésbe
 
                 # ── Sebesség ── (magasabb = lassabb)

@@ -2,7 +2,6 @@
 # Ezt olvassa be a code/balance/fegyvergenerator_balansz.py. A szkriptekben NINCS adat.
 # FIGYELEM: tervezői eszköz adata, NEM a data/sources pipeline része (a generate_tables.py
 # csak a data/sources/ könyvtárat dolgozza fel — ez a mappa kimarad).
-# Kulcsnevek a data/sources standardhoz igazítva: TÉ, VÉ, SP, sebesség, átütés, sebzésjelleg, forgatás, erő.
 
 # fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható (Felszerelés-logisztika, ADR.felszereles)
 fegyverhossz:
@@ -62,9 +61,9 @@ súly:
   nehéz:   {id: 3, SP: 1,  sebesség: 1,  erő_követelmény: 2}
   súlyos:  {id: 4, SP: 2,  sebesség: 2,  erő_követelmény: 3}
 
-# súly_delta_cél: melyik harcérték-mezőbe menjen a nehéz/súlyos súly-delta (fegyver bemenő paraméter,
-# enum: fegyverek.schema.yaml). Metaadat-tábla - a kód a fegyver saját súly_delta_cél mezőjét hasonlítja
-# ehhez a két kanonikus kulcshoz (a tényleges delta-érték a fenti súly táblából jön).
+# súly_delta_cél: melyik harcérték-mezőbe menjen a nehéz/súlyos súly-delta (fegyver bemenő paraméter, enum: fegyverek.schema.yaml).
+# Metaadat-tábla - a kód a fegyver saját súly_delta_cél mezőjét hasonlítja ehhez a két kanonikus kulcshoz
+# (a tényleges delta-érték a fenti súly táblából jön).
 súly_delta_cél:
   sp:     {leírás: "a súly-delta az SP-be megy (alap eset)"}
   átütés: {leírás: "a súly-delta az Átütésbe megy az SP helyett (pl. Csatabárd)"}
@@ -101,20 +100,15 @@ alapanyag:
 # sebzésjelleg TÉ/VÉ módosító alkotáskor (jelleg-szint).
 tipus_tv:
   zúzó:         {TÉ: 0, VÉ: 0}
-  szúró:        {TÉ: 0, VÉ: 0}
+  szúró:        {TÉ: 0, VÉ: 0, súly_számít: false}   # a szúrásnál nem számít az erőkar → a súly SP/Átütés-deltája nem érvényes
   vágó-egyenes: {TÉ: 0, VÉ: 0}
   vágó-íves:    {TÉ: 0, VÉ: 0}
   nincs:        {TÉ: 0, VÉ: 0}
 
-# forgatás-kényszer: a fegyvert NEM az alapfogásával forgatva (levonások).
-#   másfélkezes_egykézzel = STANDARD variáns: a másfélkezes fegyver 1 kézzel is forgatható (MK).
-#                           A generátor a másfélkezes fegyverekhez automatikusan emittál egy 1 kezes sort is.
-#   kétkezes_egykézzel     = SZITUÁCIÓ: kétkezes fegyver 1 kézzel (pl. kiesett kéz, pajzs) — nem emittált sor,
-#                           hanem futásidejű helyzet-módosító.
-# TÉ/VÉ: delta; átütés_max / erőbónusz_limit_max: felső korlát (override). A sebzést (SP) NEM érinti.
-forgatás_levonás:
-  másfélkezes_egykézzel: {TÉ: -2, VÉ: -2, átütés_max: 0, erőbónusz_limit_max: 2}
-  kétkezes_egykézzel:    {TÉ: -4, VÉ: -4, átütés_max: 0, erőbónusz_limit_max: 0}
+
+egykezes_forgatás:
+  másfélkezes: {TÉ: -2, VÉ: -2, átütés_max: 0, erőbónusz_limit_max: 2, mindig_emittált: true}
+  kétkezes:    {TÉ: -4, VÉ: -4, átütés_max: 0, erőbónusz_limit_max: 0, mindig_emittált: false}
 
 # szálfegyver nyélanyag: típus -> SP (direkt), súly (kategória-eltolás, mint idea/alapanyag suly_delta)
 # A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika — bázis-hatásuk nincs.
