@@ -20,24 +20,22 @@ schema_version: 1
 # ── Top-level rekord mezők ──
 rekord:
   név:         {kötelező: true,  típus: str,  példa: "Kard, hosszú", megjegyzés: "lookup + megjelenített név"}
-  kategória:   {kötelező: false, típus: str,  enum: [Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc],
-                megjegyzés: "harcmodor; ha JELEN van → a fegyver megjelenik a fegyverlistában (enélkül csak teszt-minta)"}
+  kategória:   {kötelező: false, típus: str,  enum: [Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc], megjegyzés: "harcmodor; ha JELEN van → a fegyver megjelenik a fegyverlistában (enélkül csak teszt-minta)"}
   megjegyzés:  {kötelező: false, típus: str,  példa: "Z, kétkezes", megjegyzés: "szabad mechanika-jegyzet (a levezethetőt/strukturáltat NEM ide)"}
-  teszt_minta: {kötelező: false, típus: bool, példa: true, megjegyzés: "a balansz self-testben/elemzésben részt vevő kiemelt fegyver"}
-  elvart:      {kötelező: false, típus: map,  példa: {vágóél-egyenes-átlagos: [6, 6]},
-                megjegyzés: "{aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték (Erő=0); az aktor a fegyver aktorai közül"}
-  elvart_1kez_kétkezes: {kötelező: false, típus: map, példa: {lándzsahegy-rövid-átlagos: [6, 6]},
-                megjegyzés: "{aktor: [TÉ, VÉ]} — a KÉTKEZES fegyver SZITUÁCIÓS 1-kezes (pajzs/kiesett kéz) elvárt bázisértéke (Erő=0), a konstansok.yaml → egykezes_forgatás.kétkezes levonással. CSAK kétkezes fegyverre értelmes — a modok() ezt nem emittálja automatikusan (mindig_emittált: false), ez a teszt validálja a doksiban kézzel leírt szituációs blokkokat."}
-  extrak:   {kötelező: false, típus: list, elem_forrás: extrak, példa: [kulonleges_felkeszites],
-                megjegyzés: "id-k a extrak.yaml-ból (a Beszorítottat a fegyverhossz-kategória örökíti, NEM ide)"}
+  extrak:      {kötelező: false, típus: list, elem_forrás: extrak, példa: [kulonleges_felkeszites], megjegyzés: "id-k a extrak.yaml-ból (a Beszorítottat a fegyverhossz-kategória örökíti, NEM ide)"}
   fegyver:     {kötelező: true,  típus: map,  almezok: fegyver, megjegyzés: "a Fegyver modell WORK paraméterei — lásd a 'fegyver' szekciót lent"}
+  teszt:       {kötelező: false, típus: map,  almezok: teszt, megjegyzés: "balansz self-test mezők csoportja (teszt_minta/elvart/elvart_1kez_kétkezes) — lásd a 'teszt' szekciót lent. NEM része az éles fegyvernek."}
+
+# ── A `teszt:` blokk almezői (balansz self-test — NEM az éles fegyver része) ──
+teszt:
+  teszt_minta: {kötelező: false, típus: bool, példa: true, megjegyzés: "a balansz self-testben/elemzésben részt vevő kiemelt fegyver"}
+  elvart:      {kötelező: false, típus: map,  példa: {vágóél-egyenes-átlagos: [6, 6]}, megjegyzés: "{aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték (Erő=0); az aktor a fegyver aktorai közül"}
+  elvart_1kez_kétkezes: {kötelező: false, típus: map, példa: {lándzsahegy-rövid-átlagos: [6, 6]}, megjegyzés: "{aktor: [TÉ, VÉ]} — a KÉTKEZES fegyver SZITUÁCIÓS 1-kezes (pajzs/kiesett kéz) elvárt bázisértéke (Erő=0), a konstansok.yaml → egykezes_forgatás.kétkezes levonással. CSAK kétkezes fegyverre értelmes — a modok() ezt nem emittálja automatikusan (mindig_emittált: false), ez a teszt validálja a doksiban kézzel leírt szituációs blokkokat."}
 
 # ── A `fegyver:` blokk almezői (WORK paraméterek) ──
 fegyver:
-  hossz:             {kötelező: true,  típus: int,  forrás: fegyverhossz, példa: 3,
-                      megjegyzés: "fegyverhossz-kategória; konstansok.yaml fegyverhossz kulcsai: 0,1,2,3,5,7,9,12"}
-  aktorok:           {kötelező: true,  típus: list, elem_forrás: aktor, min: 1, példa: [vágóél-egyenes-átlagos, pengehegy-kard],
-                      megjegyzés: "sebzési felületek; ELSŐ = elsődleges, többi = másodlagos. Értékek: konstansok.yaml aktor"}
+  hossz:             {kötelező: true,  típus: int,  forrás: fegyverhossz, példa: 3, megjegyzés: "fegyverhossz-kategória; konstansok.yaml fegyverhossz kulcsai: 0,1,2,3,5,7,9,12"}
+  aktorok:           {kötelező: true,  típus: list, elem_forrás: aktor, min: 1, példa: [vágóél-egyenes-átlagos, pengehegy-kard], megjegyzés: "sebzési felületek; ELSŐ = elsődleges, többi = másodlagos. Értékek: konstansok.yaml aktor"}
   pengés:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "pengés? (+1 TÉ/VÉ, +1 fejdarab, +1 SP)"}
   láncos:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "láncos fej? (+1 SP, +1 Sebesség)"}
   hajlékony:         {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "hajlékony (ostor)? (-2 VÉ, +1 Sebesség)"}

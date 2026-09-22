@@ -193,13 +193,13 @@ class Fegyver:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # FEGYVER KATALÓGUS — WORK paraméterek a data/fegyvergenerator/fegyverek.yaml-ből.
-# FEGYVEREK = a `teszt_minta: true` rekordok (balansz self-test/elemzés).
+# FEGYVEREK = a `teszt.teszt_minta: true` rekordok (balansz self-test/elemzés).
 # ─────────────────────────────────────────────────────────────────────────────
 
 FEGYVER_RECORDS = _load("fegyverek.yaml")
-# A balansz self-testben részt vevő kiemelt fegyverek (teszt_minta: true).
+# A balansz self-testben részt vevő kiemelt fegyverek (teszt.teszt_minta: true).
 FEGYVEREK = {r["név"]: Fegyver(név=r["név"], **r["fegyver"])
-             for r in FEGYVER_RECORDS if r.get("teszt_minta")}
+             for r in FEGYVER_RECORDS if r.get("teszt", {}).get("teszt_minta")}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -208,28 +208,29 @@ FEGYVEREK = {r["név"]: Fegyver(név=r["név"], **r["fegyver"])
 
 def teszt_regresszio():
     """Ellenőrzi, hogy a modell reprodukálja az elvárt bázis TÉ/VÉ értékeket.
-    Az elvárt értékek a fegyverek.yaml `elvart` mezőiből jönnek (Erő-független).
+    Az elvárt értékek a fegyverek.yaml `teszt.elvart` mezőiből jönnek (Erő-független).
     FIGYELEM: csak vágó/zúzó módokat ellenőrzünk — a doksi thrust-módjai a régi
     (szúró TÉ/VÉ=0) szabállyal készültek, az új szúró szándékos eltérés lehet.
 
-    `elvart_1kez_kétkezes`: a KÉTKEZES fegyver szituációs 1-kezes (pajzs/kiesett kéz) TÉ/VÉ-je —
+    `teszt.elvart_1kez_kétkezes`: a KÉTKEZES fegyver szituációs 1-kezes (pajzs/kiesett kéz) TÉ/VÉ-je —
     ez a modok()-ban NEM emittált sor (mindig_emittált: false), itt manuálisan alkalmazzuk az
     egykezes_forgatás.kétkezes levonást, hogy a v2.md-ben kézzel leírt szituációs blokkok
     (pl. "Lándzsa pajzzsal") ne szakadjanak el csendben a data layertől."""
     print("=== REGRESSZIÓ (elvárt TÉ/VÉ, Erő-független) ===")
     ok = True
     for r in FEGYVER_RECORDS:
+        teszt = r.get("teszt", {})
         f = FEGYVEREK.get(r["név"])
-        if "elvart" in r:
-            for aktor, (vte, vve) in r["elvart"].items():
+        if "elvart" in teszt:
+            for aktor, (vte, vve) in teszt["elvart"].items():
                 m = next(x for x in f.modok(ero=0) if x["aktor"] == aktor)
                 jel = "✅" if (m["TE"] == vte and m["VE"] == vve) else "❌"
                 if jel == "❌":
                     ok = False
                 print(f"  {jel} {r['név']:24s} {aktor:24s} TÉ {m['TE']:>3}(≈{vte}) VÉ {m['VE']:>3}(≈{vve})")
-        if "elvart_1kez_kétkezes" in r:
+        if "elvart_1kez_kétkezes" in teszt:
             lev = EGYKEZES_FORGATAS["kétkezes"]
-            for aktor, (vte, vve) in r["elvart_1kez_kétkezes"].items():
+            for aktor, (vte, vve) in teszt["elvart_1kez_kétkezes"].items():
                 m = next(x for x in f.modok(ero=0) if x["aktor"] == aktor)
                 te1, ve1 = m["TE"] + lev["TÉ"], m["VE"] + lev["VÉ"]
                 jel = "✅" if (te1 == vte and ve1 == vve) else "❌"
