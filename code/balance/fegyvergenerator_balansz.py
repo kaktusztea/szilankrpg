@@ -99,6 +99,7 @@ class Fegyver:
     súly_delta_cél: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát (konstansok.yaml súly_delta_cél)
     szálfegyver_nyélanyag: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú — súly/SP hatás
     erőbónusz_limit: int = 99        # SP-re alkalmazható Erőbónusz plafonja (md/064_02_06); 99 = nincs plafon; passthrough (Erő=0 bázist nem érinti)
+    akadály: int = 0                  # 0/1/2 — utazásnál mennyire akadályoz; NINCS harcérték-hatás, csak leíró/logisztikai
 
     def modok(self, ero=2):
         """Fegyvermódonként (fogás × aktor) a végső harcértékek.

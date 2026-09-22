@@ -46,7 +46,7 @@ def _extrak(r):
 
     Saját (fegyverek.yaml) + ÖRÖKÖLT: fegyverhossz-kategória (Beszorítható),
     szálfegyver-nyélanyag (pl. fanyelű → Fegyvertörés könnyebb), hajlékony (pajzs-megkerülés, fegyvertörés-immun),
-    láncos (pajzs VÉ felezés).
+    láncos (pajzs VÉ felezés). Plusz az akadály mező szöveges jelölése (NEM extrak.yaml-id, nincs harcérték-hatása).
     """
     fv = r["fegyver"]
     ids = list(r.get("extrak", []))
@@ -54,7 +54,11 @@ def _extrak(r):
     ids += list(bal.SZALFEGYVER_NYELANYAG[fv.get("szálfegyver_nyélanyag", "sima")].get("extrak", []))
     ids += list(bal.HAJLEKONY[fv.get("hajlékony", 0)].get("extrak", []))
     ids += list(bal.LANCOS[fv.get("láncos", 0)].get("extrak", []))
-    return "; ".join(_extra_cimke(mid) for mid in ids)
+    cimkek = [_extra_cimke(mid) for mid in ids]
+    akadaly = fv.get("akadály", 0)
+    if akadaly:
+        cimkek.append(f"Akadály (utazásnál): {akadaly}")
+    return "; ".join(cimkek)
 
 
 W = [(r["kategória"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r), _extrak(r))
