@@ -68,11 +68,11 @@
 - {név: "Bot, rövid", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [botvég], alapanyag: fa, súly: könnyű, erőbónusz_limit: 0, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Buzogány, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: nehéz, erőbónusz_limit: 4}}
 - {név: "Buzogány, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos}}
-- {név: "Buzogány, láncos", kategória: Romboló, megjegyzés: "", extrak: [pajzs_ve_felezes], fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, láncos: 1}}
+- {név: "Buzogány, láncos", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, láncos: 1}}
 - {név: "Buzogány, shadleki", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-szöges], fejdarab: 1, súly: nehéz}}
 - {név: "Buzogány, tollas", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [buzogányfej-szöges], fejdarab: 1, erőbónusz_limit: 4}}
-- {név: "Csatabárd, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab: 1, súly: nehéz, nehéz_módosító: átütés, erőbónusz_limit: 4}}
-- {név: "Csatabárd, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-nagy], fejdarab: 1, súly: súlyos, nehéz_módosító: átütés}}
+- {név: "Csatabárd, egykezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab: 1, súly: nehéz, súly_delta_cél: átütés, erőbónusz_limit: 4}}
+- {név: "Csatabárd, kétkezes", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-nagy], fejdarab: 1, súly: súlyos, súly_delta_cél: átütés}}
 - {név: "Csatacsákány", kategória: Romboló, megjegyzés: "", extrak: [beakadas_kockazat], fegyver: {hossz: 3, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1}}
 - {név: "Harci kalapács", kategória: Romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos}}
 

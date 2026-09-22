@@ -50,14 +50,24 @@ pengés:
   0: {TÉ: 0, VÉ: 0, SP: 0, fejdarab: 0}
   1: {TÉ: 1, VÉ: 1, SP: 1, fejdarab: 1}
 
-# súly: név -> SP, sebesség, erő_követelmény (a forgatáshoz szükséges minimális Erő; NEM azonos az erőbónusz_limittel)
-# DÖNTÉS: könnyű = -1 SP (a vitatott kérdés lezárva). nehéz/súlyos: SP VAGY átütés (a fegyver nehéz_módosító dönt).
-# id: rendezett súlykategória-index (a súly-delta EZT tolja, clamp-pel a szélső osztályokra)
+# láncos: 0/1 -> SP, sebesség (láncos fej: nagyobb lendület, de lassabb lendítés)
+láncos:
+  0: {SP: 0, sebesség: 0}
+  1: {SP: 1, sebesség: 1, extrak: [pajzs_ve_felezes]}   # a láncos fej megkerüli a pajzsot
+
+# nehéz/súlyos: SP VAGY átütés (a fegyver súly_delta_cél dönt).
 súly:
   könnyű:  {id: 1, SP: -1, sebesség: -1, erő_követelmény: 0}
   átlagos: {id: 2, SP: 0,  sebesség: 0,  erő_követelmény: 0}
   nehéz:   {id: 3, SP: 1,  sebesség: 1,  erő_követelmény: 2}
   súlyos:  {id: 4, SP: 2,  sebesség: 2,  erő_követelmény: 3}
+
+# súly_delta_cél: melyik harcérték-mezőbe menjen a nehéz/súlyos súly-delta (fegyver bemenő paraméter,
+# enum: fegyverek.schema.yaml). Metaadat-tábla - a kód a fegyver saját súly_delta_cél mezőjét hasonlítja
+# ehhez a két kanonikus kulcshoz (a tényleges delta-érték a fenti súly táblából jön).
+súly_delta_cél:
+  sp:     {leírás: "a súly-delta az SP-be megy (alap eset)"}
+  átütés: {leírás: "a súly-delta az Átütésbe megy az SP helyett (pl. Csatabárd)"}
 
 # idea: szint -> TÉ, VÉ, SP, sebesség, súly-delta (súly)
 idea:
@@ -78,18 +88,17 @@ alapanyag:
   csont:      {TÉ: 0,  VÉ: 0,  SP: -4}
   kő:         {TÉ: 0,  VÉ: 0,  SP: -3}
   bronz:      {TÉ: 0,  VÉ: 0,  SP: -2}
-  fa:         {TÉ: 0,  VÉ: 0,  SP: 0}               # semleges: a fa gyengesége a botvég aktorban, törhetősége a fanyelű nyélben
+  fa:         {TÉ: 0,  VÉ: 0,  SP: 0}              # semleges: a fa gyengesége a botvég aktorban, törhetősége a fanyelű nyélben
   acél:       {TÉ: 0,  VÉ: 0,  SP: 0}
   abbitacél:  {TÉ: 1,  VÉ: 1,  SP: 1}
   mithrill:   {TÉ: 1,  VÉ: 1,  SP: 2,  súly: -1}
-  lunír:      {TÉ: 1,  VÉ: 1,  SP: 0,  súly: -2}   # gyorsaság-fém
-  feketeacél: {TÉ: 1,  VÉ: 1,  SP: 1}              # Mara-Sequor — Chi-harcban törhetetlen
-  ősfém:      {TÉ: 2,  VÉ: 2,  SP: 2}              # 1-2. kori — szellem/élőholt sebez
-  élőereklye: {TÉ: 2,  VÉ: 2,  SP: 3}              # törhetetlen, kötődik
-  álomfém:    {TÉ: 1,  VÉ: 1,  SP: 1,  átütés: 2}  # +2 átütés, mágiaűrben elveszik
+  lunír:      {TÉ: 1,  VÉ: 1,  SP: 0,  súly: -2}
+  feketeacél: {TÉ: 1,  VÉ: 1,  SP: 1}              # Mara-Sequor
+  ősfém:      {TÉ: 2,  VÉ: 2,  SP: 2}
+  élőereklye: {TÉ: 2,  VÉ: 2,  SP: 3}              # törhetetlen
+  álomfém:    {TÉ: 1,  VÉ: 1,  SP: 1,  átütés: 2}  # +2 átütés
 
-# sebzésjelleg TÉ/VÉ módosító alkotáskor (jelleg-szint). Jelenleg mind 0:
-# a vágó-egyenes +2-je az AKTOR szinten van elosztva; a szúró NEM kap flat TÉ-t (döntés).
+# sebzésjelleg TÉ/VÉ módosító alkotáskor (jelleg-szint).
 tipus_tv:
   zúzó:         {TÉ: 0, VÉ: 0}
   szúró:        {TÉ: 0, VÉ: 0}

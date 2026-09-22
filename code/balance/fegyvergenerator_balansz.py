@@ -45,6 +45,7 @@ _K = _load("konstansok.yaml")
 FEGYVERHOSSZ = {int(k): v for k, v in _K["fegyverhossz"].items()}
 FEJDARAB     = {int(k): v for k, v in _K["fejdarab"].items()}
 PENGES       = {int(k): v for k, v in _K["pengés"].items()}
+LANCOS       = {int(k): v for k, v in _K["láncos"].items()}
 IDEA         = {int(k): v for k, v in _K["idea"].items()}
 AKTOR        = _K["aktor"]
 SULY         = _K["súly"]
@@ -95,7 +96,7 @@ class Fegyver:
     idea: int = 0
     alapanyag: str = "acél"
     hajlékony: int = 0
-    nehéz_módosító: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát
+    súly_delta_cél: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát (konstansok.yaml súly_delta_cél)
     szálfegyver_nyélanyag: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú — súly/SP hatás
     erőbónusz_limit: int = 99        # SP-re alkalmazható Erőbónusz plafonja (md/064_02_06); 99 = nincs plafon; passthrough (Erő=0 bázist nem érinti)
 
@@ -151,22 +152,22 @@ class Fegyver:
                 szuro = a["sebzésjelleg"] == "szúró"
                 sp = h["SP"] + a["SP"] + mat["SP"] + i["SP"] + ero + nyel.get("SP", 0)
                 sp += pen["SP"]
-                if self.láncos:
-                    sp += 1
+                lanc = LANCOS[self.láncos]
+                sp += lanc["SP"]
                 # súly SP: szúrásnál NEM számít
                 if not szuro:
                     weff = s["SP"]  # az eff. (eltolt) súly-kategória SP-je
-                    if self.nehéz_módosító == "sp":
+                    if self.súly_delta_cél == "sp":
                         sp += weff
 
                 # ── Átütés ──
                 at = a["átütés"] + mat.get("átütés", 0)
-                if self.nehéz_módosító == "átütés" and not szuro:
+                if self.súly_delta_cél == "átütés" and not szuro:
                     at += max(0, s["SP"])  # nehéz +1 / súlyos +2 átütésbe
 
                 # ── Sebesség ── (magasabb = lassabb)
                 seb = (h["sebesség"] + fd["sebesség"] + a["sebesség"] + s["sebesség"]
-                       + (1 if self.láncos else 0)
+                       + lanc["sebesség"]
                        + i["sebesség"] + HAJLEKONY[self.hajlékony]["sebesség"])
 
                 # ── Fogás-kényszer (MK): kontroll-levonás, a sebzést NEM érinti ──

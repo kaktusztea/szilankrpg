@@ -4,7 +4,7 @@
 Ellenőriz:
   - kötelező mezők megléte, ismeretlen mezők tiltása (top-level ÉS a `fegyver` blokk)
   - típusok (str/int/bool/list/map)
-  - fix enumok (kategória, pengés, nehéz_módosító, …)
+  - fix enumok (kategória, pengés, súly_delta_cél, …)
   - katalógus-alapú kereszthivatkozások: aktor/súly/idea/alapanyag/fejdarab/hossz a
     konstansok.yaml-ból, modosito-id-k a extrak.yaml-ból
   - elvart: az aktorok érvényesek és [TÉ, VÉ] két egész

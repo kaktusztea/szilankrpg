@@ -43,7 +43,7 @@ fegyver:
   idea:              {kötelező: false, típus: int,  forrás: idea, default: 0, megjegyzés: "inherens minőség; konstansok.yaml idea (-5..5)"}
   alapanyag:         {kötelező: false, típus: str,  forrás: alapanyag, default: acél, megjegyzés: "konstansok.yaml alapanyag (acél, feketeacél, kő, mithrill, …)"}
   fejdarab:          {kötelező: false, típus: int,  forrás: fejdarab, default: 0, megjegyzés: "fejdarab (bemenő index); konstansok.yaml fejdarab (0..3) adja a Sebesség/TÉ hatást. INVARIÁNS: 0 csak botvég/ököl aktornál (nincs 'rátett fej'); minden más aktornál (buzogányfej-*, lándzsahegy-*, vágóél-*, pengehegy-*, …) minimum 1 — a pengés:1 önmagában is +1-et ad, tehát fejdarab+pengés végösszege legyen ≥1"}
-  nehéz_módosító:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta SP-be VAGY Átütésbe menjen"}
+  súly_delta_cél:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta melyik harcérték-mezőbe menjen (SP VAGY Átütés); konstansok.yaml súly_delta_cél (metaadat/leírás)"}
   szálfegyver_nyélanyag:  {kötelező: false, típus: str,  forrás: szálfegyver_nyélanyag, default: sima, megjegyzés: "szálfegyver nyélanyag: sima/fanyelű/vasaltszárú/tömörszárú (súly/SP hatás); konstansok.yaml szálfegyver_nyélanyag"}
   erőbónusz_limit:   {kötelező: false, típus: int,  default: 99, megjegyzés: "az SP-re alkalmazható Erőbónusz felső plafonja; 99 = nincs plafon; EGYEDI per-fegyver érték (nem levezetett) — 1:1 áthalad a generált rekordba"}
 
