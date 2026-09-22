@@ -97,14 +97,14 @@ alapanyag:
   élőereklye: {TÉ: 2,  VÉ: 2,  SP: 3}              # törhetetlen
   álomfém:    {TÉ: 1,  VÉ: 1,  SP: 1,  átütés: 2}  # +2 átütés
 
-# sebzésjelleg TÉ/VÉ módosító alkotáskor (jelleg-szint).
-tipus_tv:
+# Ez a fegyver saját, páncéltól FÜGGETLEN alapértékébe folyik be. Az "Aktor" paraméterből adódó bónuszokkal ADDITÍV.
+# Jelenleg nem toljuk el egyik sebzésjelleget sem, de később, a hangolás során lehet, hogy szükség lesz rá.
+sebzésjelleg_alapérték:
   zúzó:         {TÉ: 0, VÉ: 0}
   szúró:        {TÉ: 0, VÉ: 0, súly_számít: false}   # a szúrásnál nem számít az erőkar → a súly SP/Átütés-deltája nem érvényes
   vágó-egyenes: {TÉ: 0, VÉ: 0}
   vágó-íves:    {TÉ: 0, VÉ: 0}
   nincs:        {TÉ: 0, VÉ: 0}
-
 
 egykezes_forgatás:
   másfélkezes: {TÉ: -2, VÉ: -2, átütés_max: 0, erőbónusz_limit_max: 2, mindig_emittált: true}

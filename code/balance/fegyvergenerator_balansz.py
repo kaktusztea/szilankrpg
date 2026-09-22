@@ -52,7 +52,7 @@ SULY         = _K["súly"]
 SULY_BY_ID   = {v["id"]: v for v in SULY.values()}   # súlykategória-index → kategória (súly-delta tolás)
 _SULY_MIN, _SULY_MAX = min(SULY_BY_ID), max(SULY_BY_ID)
 ALAPANYAG    = _K["alapanyag"]
-TIPUS_TV     = _K["tipus_tv"]
+SEBZESJELLEG_ALAPERTEK = _K["sebzésjelleg_alapérték"]
 EGYKEZES_FORGATAS = _K["egykezes_forgatás"]
 SZALFEGYVER_NYELANYAG = _K["szálfegyver_nyélanyag"]
 HAJLEKONY = _K["hajlékony"]
@@ -136,7 +136,7 @@ class Fegyver:
         for forg_cimke, mk in grips:
             for idx, aktor_nev in enumerate(self.aktorok):
                 a = AKTOR[aktor_nev]
-                tt = TIPUS_TV[a["sebzésjelleg"]]
+                tt = SEBZESJELLEG_ALAPERTEK[a["sebzésjelleg"]]
                 # Elsődleges aktor = a lista 1. eleme (alap sebzésmód, nincs büntetés).
                 # Másodlagos aktor(ok) = a többi → bejelentés után, Hátrány-1 a Sebzésdobásra (064_02_05).
                 sebzestipus = "elsődleges" if idx == 0 else "másodlagos"
