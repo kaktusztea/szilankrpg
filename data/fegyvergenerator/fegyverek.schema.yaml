@@ -49,4 +49,4 @@ fegyver:
   akadály:           {kötelező: false, típus: int,  enum: [0, 1, 2], default: 0, megjegyzés: "utazásnál mennyire akadályoz (0=nem, 1=lándzsa-kétfejű jellegű, 2=ostromfegyver/teljes vért/nagy pajzs, csak szekéren szállítható); NINCS harcérték-hatás, csak leíró/logisztikai — EGYEDI per-fegyver érték (nem levezetett)"}
 
 
-#   övön hordható → levezethető (hossz ≤ 3 és nem szálfegyver).
+#   övön hordható → levezetett, konstansok.yaml → fegyverhossz[n].övön_hordható (hossz < 3).
