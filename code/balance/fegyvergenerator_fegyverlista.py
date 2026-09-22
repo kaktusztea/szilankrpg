@@ -44,7 +44,7 @@ def _megj(r):
 def _extrak(r):
     """Extrák cella: az extrák NEVE, ';' jellel elválasztva.
 
-    Saját (fegyverek.yaml) + ÖRÖKÖLT: fegyverhossz-kategória (Beszorítható),
+    Saját (fegyverek.yaml) + ÖRÖKÖLT: fegyverhossz-kategória (Beszorítható, övön hordható),
     szálfegyver-nyélanyag (pl. fanyelű → Fegyvertörés könnyebb), hajlékony (pajzs-megkerülés, fegyvertörés-immun),
     láncos (pajzs VÉ felezés). Plusz az akadály mező szöveges jelölése (NEM extrak.yaml-id, nincs harcérték-hatása).
     """
@@ -58,6 +58,8 @@ def _extrak(r):
     akadaly = fv.get("akadály", 0)
     if akadaly:
         cimkek.append(f"Akadály (utazásnál): {akadaly}")
+    if bal.FEGYVERHOSSZ[fv["hossz"]].get("övön_hordható"):
+        cimkek.append("Övön hordható")
     return "; ".join(cimkek)
 
 

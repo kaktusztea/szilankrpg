@@ -4,11 +4,11 @@
 # csak a data/sources/ könyvtárat dolgozza fel — ez a mappa kimarad).
 # Kulcsnevek a data/sources standardhoz igazítva: TÉ, VÉ, SP, sebesség, átütés, sebzésjelleg, forgatás, erő.
 
-# fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás
+# fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható (Felszerelés-logisztika, ADR.felszereles)
 fegyverhossz:
-  0:  {TÉ: 0,  VÉ: 0,  SP: 0, sebesség: 5, forgatás: egykezes}
-  1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes}
-  2:  {TÉ: 2,  VÉ: 2,  SP: 2, sebesség: 5, forgatás: egykezes}
+  0:  {TÉ: 0,  VÉ: 0,  SP: 0, sebesség: 5, forgatás: egykezes, övön_hordható: true}
+  1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes, övön_hordható: true}
+  2:  {TÉ: 2,  VÉ: 2,  SP: 2, sebesség: 5, forgatás: egykezes, övön_hordható: true}
   3:  {TÉ: 3,  VÉ: 3,  SP: 3, sebesség: 6, forgatás: egykezes}
   5:  {TÉ: 5,  VÉ: 5,  SP: 4, sebesség: 6, forgatás: másfélkezes}
   7:  {TÉ: 7,  VÉ: 7,  SP: 5, sebesség: 7, forgatás: kétkezes, extrak: [beszorithato]}
