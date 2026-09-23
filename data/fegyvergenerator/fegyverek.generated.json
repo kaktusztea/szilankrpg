@@ -1,7 +1,7 @@
 [
   {
     "név": "Dzsambia",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 1,
     "akadály": 0,
@@ -39,7 +39,7 @@
   },
   {
     "név": "Kés",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -77,7 +77,7 @@
   },
   {
     "név": "Kő",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -102,7 +102,7 @@
   },
   {
     "név": "Kriszkés",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 1,
     "akadály": 0,
@@ -140,7 +140,7 @@
   },
   {
     "név": "Béltépő",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 1,
     "akadály": 0,
@@ -178,7 +178,7 @@
   },
   {
     "név": "Levéltőr",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 1,
     "akadály": 0,
@@ -216,7 +216,7 @@
   },
   {
     "név": "Pugoss",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -259,7 +259,7 @@
   },
   {
     "név": "Puszta kéz",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -284,7 +284,7 @@
   },
   {
     "név": "Puszta kéz, belharcban",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "Belharci helyzet: a fegyvertelen büntetés nullázódik.",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -309,7 +309,7 @@
   },
   {
     "név": "Vasököl / páncélkesztyű",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -334,7 +334,7 @@
   },
   {
     "név": "Markolatgomb",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "A kard markolatgombjával ütés. Ugyanazok az értékei, mint a Vasökölnek.",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -359,7 +359,7 @@
   },
   {
     "név": "Ramiera",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -402,7 +402,7 @@
   },
   {
     "név": "Tőr",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 1,
     "akadály": 0,
@@ -440,7 +440,7 @@
   },
   {
     "név": "Méregfog",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "Sebzéskor a tárolt mérget befecskendezi. Ár: 5x szorzó (méreg-tartó mechanizmus).",
     "fegyverhossz": 1,
     "akadály": 0,
@@ -478,7 +478,7 @@
   },
   {
     "név": "Tőr, ököl",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "Tenyérbe rejtett ököltőr.",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -503,7 +503,7 @@
   },
   {
     "név": "Tőr, kígyó",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 1,
     "akadály": 0,
@@ -541,7 +541,7 @@
   },
   {
     "név": "Tőr, páncélszúró",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -571,7 +571,7 @@
   },
   {
     "név": "Tőr, Slan",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -614,7 +614,7 @@
   },
   {
     "név": "Kard, dzsenn szablya",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -652,7 +652,7 @@
   },
   {
     "név": "Kard, emrelin",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -690,7 +690,7 @@
   },
   {
     "név": "Kard, handzsár",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -715,7 +715,7 @@
   },
   {
     "név": "Kard, hiequar",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "elf",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -753,7 +753,7 @@
   },
   {
     "név": "Kard, hosszú",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -791,7 +791,7 @@
   },
   {
     "név": "Kard, jatagán",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -829,7 +829,7 @@
   },
   {
     "név": "Kard, kétkezes",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 7,
     "akadály": 2,
@@ -872,7 +872,7 @@
   },
   {
     "név": "Kard, khossas",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "elf",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -910,7 +910,7 @@
   },
   {
     "név": "Kard, kígyó",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -948,7 +948,7 @@
   },
   {
     "név": "Kard, lovag",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -986,7 +986,7 @@
   },
   {
     "név": "Kard, másfélkezes",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 5,
     "akadály": 0,
@@ -1050,7 +1050,7 @@
   },
   {
     "név": "Kard, mesterkard",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 5,
     "akadály": 0,
@@ -1114,7 +1114,7 @@
   },
   {
     "név": "Kard, predoci egyeneskard",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -1152,7 +1152,7 @@
   },
   {
     "név": "Kard, rapír",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -1190,7 +1190,7 @@
   },
   {
     "név": "Kard, rövid",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -1228,7 +1228,7 @@
   },
   {
     "név": "Kard, Slan",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 5,
     "akadály": 0,
@@ -1297,7 +1297,7 @@
   },
   {
     "név": "Kard, Slan csatakard",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 7,
     "akadály": 1,
@@ -1344,7 +1344,7 @@
   },
   {
     "név": "Kard, Slan rövid",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -1387,7 +1387,7 @@
   },
   {
     "név": "Kard, szablya",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -1425,7 +1425,7 @@
   },
   {
     "név": "Mara-sequor",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 5,
     "akadály": 0,
@@ -1468,7 +1468,7 @@
   },
   {
     "név": "Meneth",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -1502,7 +1502,7 @@
   },
   {
     "név": "Sequor",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -1540,7 +1540,7 @@
   },
   {
     "név": "Tőrkard",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -1591,7 +1591,7 @@
   },
   {
     "név": "Vívóbot",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -1621,7 +1621,7 @@
   },
   {
     "név": "Alabárd",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 9,
     "akadály": 2,
@@ -1681,7 +1681,7 @@
   },
   {
     "név": "Bot, hosszú",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 7,
     "akadály": 1,
@@ -1715,7 +1715,7 @@
   },
   {
     "név": "Lándzsa, átlagos",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 9,
     "akadály": 1,
@@ -1749,7 +1749,7 @@
   },
   {
     "név": "Lándzsa, keskeny hegyű",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 9,
     "akadály": 1,
@@ -1783,7 +1783,7 @@
   },
   {
     "név": "Lándzsa, széles hegyű",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 9,
     "akadály": 1,
@@ -1817,7 +1817,7 @@
   },
   {
     "név": "Pika, keskeny hegyű",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 12,
     "akadály": 2,
@@ -1847,7 +1847,7 @@
   },
   {
     "név": "Pika, széles hegyű",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 12,
     "akadály": 2,
@@ -1877,7 +1877,7 @@
   },
   {
     "név": "Szigony, egykezes",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 5,
     "akadály": 0,
@@ -1920,7 +1920,7 @@
   },
   {
     "név": "Szigony, kétkezes",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 9,
     "akadály": 1,
@@ -1954,7 +1954,7 @@
   },
   {
     "név": "Balta",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -1979,7 +1979,7 @@
   },
   {
     "név": "Bot, furkós",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -2009,7 +2009,7 @@
   },
   {
     "név": "Bot, rövid",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -2039,7 +2039,7 @@
   },
   {
     "név": "Buzogány, egykezes",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -2064,7 +2064,7 @@
   },
   {
     "név": "Buzogány, kétkezes",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 7,
     "akadály": 1,
@@ -2094,7 +2094,7 @@
   },
   {
     "név": "Buzogány, láncos",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -2124,7 +2124,7 @@
   },
   {
     "név": "Buzogány, shadleki",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -2149,7 +2149,7 @@
   },
   {
     "név": "Buzogány, tollas",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -2174,7 +2174,7 @@
   },
   {
     "név": "Csatabárd, egykezes",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 2,
     "akadály": 0,
@@ -2199,7 +2199,7 @@
   },
   {
     "név": "Csatabárd, kétkezes",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 5,
     "akadály": 2,
@@ -2237,7 +2237,7 @@
   },
   {
     "név": "Csatacsákány",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 1,
@@ -2267,7 +2267,7 @@
   },
   {
     "név": "Harci kalapács",
-    "kategória": "Romboló",
+    "kategória": "romboló",
     "megjegyzés": "",
     "fegyverhossz": 7,
     "akadály": 2,
@@ -2297,7 +2297,7 @@
   },
   {
     "név": "Korbács",
-    "kategória": "Ostorharc",
+    "kategória": "ostorharc",
     "megjegyzés": "",
     "fegyverhossz": 3,
     "akadály": 0,
@@ -2331,7 +2331,7 @@
   },
   {
     "név": "Ostor",
-    "kategória": "Ostorharc",
+    "kategória": "ostorharc",
     "megjegyzés": "",
     "fegyverhossz": 9,
     "akadály": 0,
@@ -2369,7 +2369,7 @@
   },
   {
     "név": "Ostorkard",
-    "kategória": "Ostorharc",
+    "kategória": "ostorharc",
     "megjegyzés": "Urumi néven is ismert.",
     "fegyverhossz": 9,
     "akadály": 0,

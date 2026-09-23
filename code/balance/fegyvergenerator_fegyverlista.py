@@ -149,5 +149,5 @@ def emit_intro():
 
 emit_intro()
 for kat, rows in sorok_kategoriankent().items():
-    print(f"\n### {kat}\n")
+    print(f"\n### {kat.capitalize()}\n")
     emit_tabla(rows)

@@ -20,7 +20,7 @@ schema_version: 1
 # ── Top-level rekord mezők ──
 rekord:
   név:         {kötelező: true,  típus: str,  példa: "Kard, hosszú", megjegyzés: "lookup + megjelenített név"}
-  kategória:   {kötelező: false, típus: str,  enum: [Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc], megjegyzés: "harcmodor; ha JELEN van → a fegyver megjelenik a fegyverlistában (enélkül csak teszt-minta)"}
+  kategória:   {kötelező: false, típus: str,  enum: [közelharci, kardvívó, lándzsavívó, romboló, ostorharc], megjegyzés: "harcmodor; ha JELEN van → a fegyver megjelenik a fegyverlistában (enélkül csak teszt-minta)"}
   megjegyzés:  {kötelező: false, típus: str,  példa: "Z, kétkezes", megjegyzés: "szabad mechanika-jegyzet (a levezethetőt/strukturáltat NEM ide)"}
   extrak:      {kötelező: false, típus: list, elem_forrás: extrak, példa: [kulonleges_felkeszites], megjegyzés: "id-k a extrak.yaml-ból (a Beszorítottat a fegyverhossz-kategória örökíti, NEM ide)"}
   fegyver:     {kötelező: true,  típus: map,  almezok: fegyver, megjegyzés: "a Fegyver modell WORK paraméterei — lásd a 'fegyver' szekciót lent"}

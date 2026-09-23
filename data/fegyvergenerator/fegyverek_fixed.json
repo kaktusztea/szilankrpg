@@ -1,7 +1,7 @@
 [
   {
     "név": "Garott",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "Sebzés: SP:+8 az 1. körben, +4 SP a további körökben (a fenti SP mező az 1. kör értékét adja). Siker esetén (Orvtámadás Harci helyzet követelmény) azonnal Belharci helyzet alakul ki, a hurok az áldozat nyakára feszül. Áldozat Leforgatás/Irányítás manőverrel terelhető. Szabadulás: Belharcból kibontakozás manőver, Nehézség:9 (magasabb, mint az alap). A Garott használója is kiszolgáltatott: Helyhez kötve módosítókat szenved el.",
     "fegyverhossz": -1,
     "akadály": 0,
@@ -26,7 +26,7 @@
   },
   {
     "név": "Hárító: Csatakesztyű",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Nem támadhat vele — a fenti mód csak a passzív VÉ-bónuszt jelzi. Ha mindkét kéz hárítófegyvert forgat, akkor is csak ennyi VÉ jár, további bónusz nem.",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -51,7 +51,7 @@
   },
   {
     "név": "Hárító: Alkarvédő",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 pengés fegyver ellen hárít. A fenti SP:-10 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -76,7 +76,7 @@
   },
   {
     "név": "Hárító: Tonfa",
-    "kategória": "Közelharci",
+    "kategória": "közelharci",
     "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 pengés fegyver ellen hárít. A fenti SP:-3 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -101,7 +101,7 @@
   },
   {
     "név": "Hárító: Köpeny",
-    "kategória": "Kardvívó",
+    "kategória": "kardvívó",
     "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 penge hosszú fegyver ellen hárít. A fenti SP:-20 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
     "fegyverhossz": 0,
     "akadály": 0,
@@ -126,7 +126,7 @@
   },
   {
     "név": "Kopja, harci",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "Csak lovon használható, Lándzsavívás harcmodorban forgatandó. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) — a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
     "fegyverhossz": 4,
     "akadály": 2,
@@ -151,7 +151,7 @@
   },
   {
     "név": "Kopja, torna",
-    "kategória": "Lándzsavívó",
+    "kategória": "lándzsavívó",
     "megjegyzés": "Puhafa, lovagi tornákra való. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) — a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
     "fegyverhossz": 4,
     "akadály": 2,
