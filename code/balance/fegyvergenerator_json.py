@@ -71,6 +71,7 @@ def _fegyver_json(r):
         "fegyverhossz": fv["hossz"],
         "akadály": akadály,
         "övön_hordható": bool(bal.FEGYVERHOSSZ[fv["hossz"]].get("övön_hordható", False)),
+        "ár": None,  # TODO: placeholder — kalkulált érték lesz (fegyverhossz/alapanyag/idea szorzókból), lásd v2.md "Ár"
         "extrák": [{"id": eid, "név": _EXTRAK.get(eid, {}).get("név", eid)} for eid in extra_ids],
         "módok": módok,
     }

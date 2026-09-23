@@ -6,6 +6,7 @@
     "fegyverhossz": 1,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -43,6 +44,7 @@
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -80,6 +82,7 @@
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -104,6 +107,7 @@
     "fegyverhossz": 1,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "panceltalan_roncsolasa",
@@ -146,6 +150,7 @@
     "fegyverhossz": 1,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -183,6 +188,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "kulonleges_felkeszites",
@@ -225,6 +231,7 @@
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -249,6 +256,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "kulonleges_felkeszites",
@@ -291,6 +299,7 @@
     "fegyverhossz": 1,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -328,6 +337,7 @@
     "fegyverhossz": 1,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -365,6 +375,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "pancelszuras_belharcban",
@@ -394,6 +405,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "kulonleges_felkeszites",
@@ -436,6 +448,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -473,6 +486,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -510,6 +524,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -534,6 +549,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -571,6 +587,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -608,6 +625,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -645,6 +663,7 @@
     "fegyverhossz": 7,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -687,6 +706,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -724,6 +744,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -761,6 +782,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -798,6 +820,7 @@
     "fegyverhossz": 5,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -861,6 +884,7 @@
     "fegyverhossz": 5,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -924,6 +948,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -961,6 +986,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -998,6 +1024,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1035,6 +1062,7 @@
     "fegyverhossz": 5,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "kulonleges_felkeszites",
@@ -1103,6 +1131,7 @@
     "fegyverhossz": 7,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "kulonleges_felkeszites",
@@ -1149,6 +1178,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "kulonleges_felkeszites",
@@ -1191,6 +1221,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1228,6 +1259,7 @@
     "fegyverhossz": 5,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "kulonleges_felkeszites",
@@ -1270,6 +1302,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "sfe_duplazodik",
@@ -1299,6 +1332,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1336,6 +1370,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "pontos",
@@ -1386,6 +1421,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1415,6 +1451,7 @@
     "fegyverhossz": 9,
     "akadály": 1,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -1474,6 +1511,7 @@
     "fegyverhossz": 7,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -1507,6 +1545,7 @@
     "fegyverhossz": 9,
     "akadály": 1,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -1540,6 +1579,7 @@
     "fegyverhossz": 9,
     "akadály": 1,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -1573,6 +1613,7 @@
     "fegyverhossz": 9,
     "akadály": 1,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -1606,6 +1647,7 @@
     "fegyverhossz": 12,
     "akadály": 2,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1635,6 +1677,7 @@
     "fegyverhossz": 12,
     "akadály": 2,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1664,6 +1707,7 @@
     "fegyverhossz": 5,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1706,6 +1750,7 @@
     "fegyverhossz": 9,
     "akadály": 1,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -1739,6 +1784,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1763,6 +1809,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1792,6 +1839,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1821,6 +1869,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1845,6 +1894,7 @@
     "fegyverhossz": 7,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -1874,6 +1924,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "pajzs_ve_felezes",
@@ -1903,6 +1954,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1927,6 +1979,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1951,6 +2004,7 @@
     "fegyverhossz": 2,
     "akadály": 0,
     "övön_hordható": true,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -1975,6 +2029,7 @@
     "fegyverhossz": 5,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [],
     "módok": [
       {
@@ -2012,6 +2067,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beakadas_kockazat",
@@ -2041,6 +2097,7 @@
     "fegyverhossz": 7,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -2070,6 +2127,7 @@
     "fegyverhossz": 3,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "pajzs_megkerules",
@@ -2103,6 +2161,7 @@
     "fegyverhossz": 9,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "beszorithato",
@@ -2140,6 +2199,7 @@
     "fegyverhossz": 9,
     "akadály": 0,
     "övön_hordható": false,
+    "ár": null,
     "extrák": [
       {
         "id": "onsebzes_kockazat",
