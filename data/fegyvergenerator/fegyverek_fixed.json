@@ -1,0 +1,27 @@
+[
+  {
+    "név": "Garott",
+    "kategória": "Közelharci",
+    "megjegyzés": "Sebzés: SP:+8 az 1. körben, +4 SP a további körökben (a fenti SP mező az 1. kör értékét adja). Siker esetén (Orvtámadás Harci helyzet követelmény) azonnal Belharci helyzet alakul ki, a hurok az áldozat nyakára feszül. Áldozat Leforgatás/Irányítás manőverrel terelhető. Szabadulás: Belharcból kibontakozás manőver, Nehézség:9 (magasabb, mint az alap). A Garott használója is kiszolgáltatott: Helyhez kötve módosítókat szenved el.",
+    "fegyverhossz": -1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "vágó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": 0,
+        "SP": 8,
+        "Átütés": 0,
+        "Sebesség": null,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 5,
+        "FP": false
+      }
+    ]
+  }
+]
