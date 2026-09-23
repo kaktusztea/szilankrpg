@@ -832,7 +832,7 @@
     "kategória": "Kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 7,
-    "akadály": 0,
+    "akadály": 2,
     "övön_hordható": false,
     "ár": null,
     "extrák": [
@@ -1300,7 +1300,7 @@
     "kategória": "Kardvívó",
     "megjegyzés": "",
     "fegyverhossz": 7,
-    "akadály": 0,
+    "akadály": 1,
     "övön_hordható": false,
     "ár": null,
     "extrák": [
@@ -1624,7 +1624,7 @@
     "kategória": "Lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 9,
-    "akadály": 1,
+    "akadály": 2,
     "övön_hordható": false,
     "ár": null,
     "extrák": [
@@ -1684,7 +1684,7 @@
     "kategória": "Lándzsavívó",
     "megjegyzés": "",
     "fegyverhossz": 7,
-    "akadály": 0,
+    "akadály": 1,
     "övön_hordható": false,
     "ár": null,
     "extrák": [
@@ -2067,7 +2067,7 @@
     "kategória": "Romboló",
     "megjegyzés": "",
     "fegyverhossz": 7,
-    "akadály": 0,
+    "akadály": 1,
     "övön_hordható": false,
     "ár": null,
     "extrák": [
@@ -2202,7 +2202,7 @@
     "kategória": "Romboló",
     "megjegyzés": "",
     "fegyverhossz": 5,
-    "akadály": 0,
+    "akadály": 2,
     "övön_hordható": false,
     "ár": null,
     "extrák": [],
@@ -2240,7 +2240,7 @@
     "kategória": "Romboló",
     "megjegyzés": "",
     "fegyverhossz": 3,
-    "akadály": 0,
+    "akadály": 1,
     "övön_hordható": false,
     "ár": null,
     "extrák": [
@@ -2270,7 +2270,7 @@
     "kategória": "Romboló",
     "megjegyzés": "",
     "fegyverhossz": 7,
-    "akadály": 0,
+    "akadály": 2,
     "övön_hordható": false,
     "ár": null,
     "extrák": [
@@ -2368,9 +2368,9 @@
     ]
   },
   {
-    "név": "Ostorkard (Urumi)",
+    "név": "Ostorkard",
     "kategória": "Ostorharc",
-    "megjegyzés": "",
+    "megjegyzés": "Urumi néven is ismert.",
     "fegyverhossz": 9,
     "akadály": 0,
     "övön_hordható": false,
