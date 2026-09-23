@@ -22,6 +22,8 @@
 - {név: "Pugoss", kategória: Közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 3}}
 - {név: "Puszta kéz", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [ököl]}}
 - {név: "Puszta kéz, belharcban", kategória: Közelharci, megjegyzés: "Belharci helyzet: a fegyvertelen büntetés nullázódik.", fegyver: {hossz: 0, aktorok: [ököl-belharc]}}
+- {név: "Vasököl / páncélkesztyű", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [vasököl], erőbónusz_limit: 5}}
+- {név: "Markolatgomb", kategória: Közelharci, megjegyzés: "A kard markolatgombjával ütés. Ugyanazok az értékei, mint a Vasökölnek.", fegyver: {hossz: 0, aktorok: [vasököl], erőbónusz_limit: 5}}
 - {név: "Ramiera", kategória: Közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 3}}
 - {név: "Tőr", kategória: Közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], pengés: 1}}
 - {név: "Méregfog", kategória: Közelharci, megjegyzés: "Sebzéskor a tárolt mérget befecskendezi. Ár: 5x szorzó (méreg-tartó mechanizmus).", fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], pengés: 1}}

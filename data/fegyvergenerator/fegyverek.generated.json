@@ -308,6 +308,56 @@
     ]
   },
   {
+    "név": "Vasököl / páncélkesztyű",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vasököl",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": -1,
+        "VÉ": -2,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 5,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Markolatgomb",
+    "kategória": "Közelharci",
+    "megjegyzés": "A kard markolatgombjával ütés. Ugyanazok az értékei, mint a Vasökölnek.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vasököl",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": -1,
+        "VÉ": -2,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 5,
+        "FP": false
+      }
+    ]
+  },
+  {
     "név": "Ramiera",
     "kategória": "Közelharci",
     "megjegyzés": "",

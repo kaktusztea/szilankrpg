@@ -37,6 +37,7 @@ aktor:
   kampós-vég:                  {sebzésjelleg: nincs,        SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   ököl:                        {sebzésjelleg: zúzó,         SP: -5, átütés: 0, TÉ: -3, VÉ: -3, sebesség: 0, puha: true}   # puszta kéz — FP-sebzés (nem ÉP); fegyvertelen büntetés (068_02)
   ököl-belharc:                {sebzésjelleg: zúzó,         SP: 0,  átütés: 0, TÉ: 0,  VÉ: 0,  sebesség: 0, puha: true}   # puszta kéz Belharcban — a fegyvertelen büntetés nullázódik (065_01_02)
+  vasököl:                     {sebzésjelleg: zúzó,         SP: 0,  átütés: 0, TÉ: -1, VÉ: -2, sebesség: 0}   # fém ütőfelület — ÉP-sebzés (nem puha), a Puszta kéznél kevésbé büntetett (068_02)
 
 # fejdarab: n -> sebesség, TÉ
 fejdarab:
