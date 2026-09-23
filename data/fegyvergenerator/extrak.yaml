@@ -45,14 +45,23 @@ extrak:
       - {cél: TÉ, mód: override, érték: 0}
       - {cél: VÉ, mód: override, érték: 0}
 
-  - id: panceltalan_roncsolasa
-    név: "Páncéltalant jobban roncsol"
+  - id: panceltalant_jobban_sebez
+    név: "Páncéltalant jobban sebez"
     csoport: harci_helyzet
-    leírás: "Vérttelen célon nagyobb sebet ejt. Példa: Meneth"
+    leírás: "Vérttelen célon nagyobb sebet ejt. Példa: Meneth, Béltépő"
     feltétel:
       - {típus: cél_páncél, érték: vérttelen}
     hatás:
       - {cél: SP, mód: flat, érték: 3}
+
+  - id: pocsek_vedekezo_pancelos_ellen
+    név: "Pocsék védekező (páncélos ellen)"
+    csoport: harci_helyzet
+    leírás: "Páncélos ellenfél ellen a hárítási hátrány kiütközik — VÉ:0. Páncéltalan ellen a kontakt-fenyegetés miatt a bázis VÉ marad."
+    feltétel:
+      - {típus: cél_páncél, érték: páncélos}
+    hatás:
+      - {cél: VÉ, mód: override, érték: 0}
 
   - id: pancelszuras_belharcban
     név: "Belharcban rések közt beszúr"

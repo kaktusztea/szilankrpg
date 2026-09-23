@@ -108,12 +108,7 @@
     "akadály": 0,
     "övön_hordható": true,
     "ár": null,
-    "extrák": [
-      {
-        "id": "panceltalan_roncsolasa",
-        "név": "Páncéltalant jobban roncsol"
-      }
-    ],
+    "extrák": [],
     "módok": [
       {
         "aktor": "pengehegy-apró",
@@ -139,6 +134,44 @@
         "Sebesség": 6,
         "Forgatás": "egykezes",
         "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Béltépő",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [
+      {
+        "id": "panceltalant_jobban_sebez",
+        "név": "Páncéltalant jobban sebez"
+      },
+      {
+        "id": "pocsek_vedekezo_pancelos_ellen",
+        "név": "Pocsék védekező (páncélos ellen)"
+      },
+      {
+        "id": "beakadas_kockazat",
+        "név": "Beakad (~50%)"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
         "FP": false
       }
     ]
@@ -1367,6 +1400,10 @@
     "övön_hordható": true,
     "ár": null,
     "extrák": [
+      {
+        "id": "panceltalant_jobban_sebez",
+        "név": "Páncéltalant jobban sebez"
+      },
       {
         "id": "sfe_duplazodik",
         "név": "SFÉ dupla ellene"

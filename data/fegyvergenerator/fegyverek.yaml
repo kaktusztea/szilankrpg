@@ -16,7 +16,8 @@
 - {név: "Dzsambia", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], pengés: 1, súly: könnyű, erőbónusz_limit: 0}}
 - {név: "Kés", kategória: Közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid, pengehegy-apró], pengés: 1, súly: könnyű, erőbónusz_limit: 2}}
 - {név: "Kő", kategória: Közelharci, megjegyzés: "", teszt: {teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: könnyű, alapanyag: kő}}
-- {név: "Kriszkés", kategória: Közelharci, megjegyzés: "", extrak: [panceltalan_roncsolasa], fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 2}}
+- {név: "Kriszkés", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 2}}
+- {név: "Béltépő", kategória: Közelharci, megjegyzés: "", extrak: [panceltalant_jobban_sebez, pocsek_vedekezo_pancelos_ellen, beakadas_kockazat], fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid], pengés: 1, erőbónusz_limit: 0}}
 - {név: "Levéltőr", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 2}}
 - {név: "Pugoss", kategória: Közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 3}}
 - {név: "Puszta kéz", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [ököl]}}
@@ -49,7 +50,7 @@
 - {név: "Kard, Slan rövid", kategória: Kardvívó, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], pengés: 1, idea: 2, erőbónusz_limit: 3}}
 - {név: "Kard, szablya", kategória: Kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos, pengehegy-kard], pengés: 1, erőbónusz_limit: 4}}
 - {név: "Mara-sequor", kategória: Kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], pengés: 1, idea: 3, alapanyag: feketeacél}}
-- {név: "Meneth", kategória: Kardvívó, megjegyzés: "", extrak: [sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], pengés: 1}}
+- {név: "Meneth", kategória: Kardvívó, megjegyzés: "", extrak: [panceltalant_jobban_sebez, sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], pengés: 1}}
 - {név: "Sequor", kategória: Kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], pengés: 1, erőbónusz_limit: 3}}
 - {név: "Tőrkard", kategória: Kardvívó, megjegyzés: "", extrak: [pontos, lefegyverezhetobb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], pengés: 1, erőbónusz_limit: 1}}
 - {név: "Vívóbot", kategória: Kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 1, szálfegyver_nyélanyag: fanyelű}}
