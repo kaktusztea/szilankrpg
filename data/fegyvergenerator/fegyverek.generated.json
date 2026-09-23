@@ -477,6 +477,31 @@
     ]
   },
   {
+    "név": "Tőr, ököl",
+    "kategória": "Közelharci",
+    "megjegyzés": "Tenyérbe rejtett ököltőr.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "pengehegy-rejtett",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": -3,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
     "név": "Tőr, kígyó",
     "kategória": "Közelharci",
     "megjegyzés": "",

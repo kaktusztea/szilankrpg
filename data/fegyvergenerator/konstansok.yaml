@@ -22,6 +22,7 @@ aktor:
   pengehegy-apró:              {sebzésjelleg: szúró,        SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   pengehegy-tőr:               {sebzésjelleg: szúró,        SP: 1, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   pengehegy-kard:              {sebzésjelleg: szúró,        SP: 2, átütés: 1, TÉ: 0, VÉ: 0,  sebesség: 0}
+  pengehegy-rejtett:           {sebzésjelleg: szúró,        SP: 0, átütés: 0, TÉ: 0, VÉ: -3, sebesség: 0}   # tenyérbe rejtett tüske — nincs védekező felület (068_02: Tőr, ököl)
   vágóél-egyenes-rövid:        {sebzésjelleg: vágó-egyenes, SP: 0, átütés: 0, TÉ: 1, VÉ: 1,  sebesség: 0}
   vágóél-egyenes-átlagos:      {sebzésjelleg: vágó-egyenes, SP: 1, átütés: 0, TÉ: 2, VÉ: 2,  sebesség: 0}
   vágóél-egyenes-nagy:         {sebzésjelleg: vágó-egyenes, SP: 2, átütés: 0, TÉ: 2, VÉ: 2,  sebesség: 0}
