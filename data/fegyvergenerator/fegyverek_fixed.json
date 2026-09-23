@@ -23,5 +23,155 @@
         "FP": false
       }
     ]
+  },
+  {
+    "név": "Hárító: Csatakesztyű",
+    "kategória": "Kardvívó",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Nem támadhat vele — a fenti mód csak a passzív VÉ-bónuszt jelzi. Ha mindkét kéz hárítófegyvert forgat, akkor is csak ennyi VÉ jár, további bónusz nem.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": 2,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 99,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Hárító: Alkarvédő",
+    "kategória": "Közelharci",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 pengés fegyver ellen hárít. A fenti SP:-10 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": 2,
+        "SP": -10,
+        "Átütés": 0,
+        "Sebesség": 99,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Hárító: Tonfa",
+    "kategória": "Közelharci",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 pengés fegyver ellen hárít. A fenti SP:-3 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": 2,
+        "SP": -3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Hárító: Köpeny",
+    "kategória": "Kardvívó",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 penge hosszú fegyver ellen hárít. A fenti SP:-20 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": 3,
+        "SP": -20,
+        "Átütés": 0,
+        "Sebesség": 99,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kopja, harci",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "Csak lovon használható, Lándzsavívás harcmodorban forgatandó. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) — a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
+    "fegyverhossz": 4,
+    "akadály": 2,
+    "övön_hordható": false,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 13,
+        "VÉ": 13,
+        "SP": 10,
+        "Átütés": 5,
+        "Sebesség": 99,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kopja, torna",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "Puhafa, lovagi tornákra való. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) — a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
+    "fegyverhossz": 4,
+    "akadály": 2,
+    "övön_hordható": false,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 13,
+        "VÉ": 13,
+        "SP": -3,
+        "Átütés": 0,
+        "Sebesség": 99,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
   }
 ]
