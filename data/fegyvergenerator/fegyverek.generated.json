@@ -238,6 +238,31 @@
         "aktor": "ököl",
         "jelleg": "zúzó",
         "sebzéstípus": "elsődleges",
+        "TÉ": -3,
+        "VÉ": -3,
+        "SP": -5,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": true
+      }
+    ]
+  },
+  {
+    "név": "Puszta kéz, belharcban",
+    "kategória": "Közelharci",
+    "megjegyzés": "Belharci helyzet: a fegyvertelen büntetés nullázódik.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "ököl-belharc",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
         "TÉ": 0,
         "VÉ": 0,
         "SP": 0,
@@ -296,6 +321,44 @@
     "név": "Tőr",
     "kategória": "Közelharci",
     "megjegyzés": "",
+    "fegyverhossz": 1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Méregfog",
+    "kategória": "Közelharci",
+    "megjegyzés": "Sebzéskor a tárolt mérget befecskendezi. Ár: 5x szorzó (méreg-tartó mechanizmus).",
     "fegyverhossz": 1,
     "akadály": 0,
     "övön_hordható": true,

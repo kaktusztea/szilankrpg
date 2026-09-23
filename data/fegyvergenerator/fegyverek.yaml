@@ -20,8 +20,10 @@
 - {név: "Levéltőr", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 2}}
 - {név: "Pugoss", kategória: Közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 3}}
 - {név: "Puszta kéz", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [ököl]}}
+- {név: "Puszta kéz, belharcban", kategória: Közelharci, megjegyzés: "Belharci helyzet: a fegyvertelen büntetés nullázódik.", fegyver: {hossz: 0, aktorok: [ököl-belharc]}}
 - {név: "Ramiera", kategória: Közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 3}}
 - {név: "Tőr", kategória: Közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], pengés: 1}}
+- {név: "Méregfog", kategória: Közelharci, megjegyzés: "Sebzéskor a tárolt mérget befecskendezi. Ár: 5x szorzó (méreg-tartó mechanizmus).", fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], pengés: 1}}
 - {név: "Tőr, kígyó", kategória: Közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], pengés: 1, erőbónusz_limit: 1}}
 - {név: "Tőr, páncélszúró", kategória: Közelharci, megjegyzés: "", extrak: [pancelszuras_belharcban], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], pengés: 1, erőbónusz_limit: 5}}
 - {név: "Tőr, Slan", kategória: Közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], pengés: 1, idea: 2, erőbónusz_limit: 2}}
