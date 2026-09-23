@@ -1,0 +1,2177 @@
+[
+  {
+    "név": "Dzsambia",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-apró",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kés",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 1,
+        "VÉ": 1,
+        "SP": 1,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-apró",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 1,
+        "VÉ": 1,
+        "SP": 1,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kő",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "buzogányfej-tompa",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": -2,
+        "SP": -2,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kriszkés",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "panceltalan_roncsolasa",
+        "név": "Páncéltalant jobban roncsol"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "pengehegy-apró",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Levéltőr",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "pengehegy-apró",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Pugoss",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "kulonleges_felkeszites",
+        "név": "Különleges felkészítés"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Puszta kéz",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "ököl",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 0,
+        "VÉ": 0,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": true
+      }
+    ]
+  },
+  {
+    "név": "Ramiera",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "kulonleges_felkeszites",
+        "név": "Különleges felkészítés"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Tőr",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Tőr, kígyó",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 1,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "pengehegy-apró",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 2,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Tőr, páncélszúró",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "pancelszuras_belharcban",
+        "név": "Belharcban rések közt beszúr"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 5,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Tőr, Slan",
+    "kategória": "Közelharci",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "kulonleges_felkeszites",
+        "név": "Különleges felkészítés"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 5,
+        "VÉ": 5,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, dzsenn szablya",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, emrelin",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, handzsár",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 7,
+        "Átütés": 0,
+        "Sebesség": 9,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, hiequar",
+    "kategória": "Kardvívó",
+    "megjegyzés": "elf",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, hosszú",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, jatagán",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, kétkezes",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 7,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-nagy",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 10,
+        "VÉ": 10,
+        "SP": 9,
+        "Átütés": 0,
+        "Sebesség": 9,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 8,
+        "VÉ": 8,
+        "SP": 8,
+        "Átütés": 1,
+        "Sebesség": 9,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, khossas",
+    "kategória": "Kardvívó",
+    "megjegyzés": "elf",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, kígyó",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, lovag",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, másfélkezes",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 5,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 8,
+        "VÉ": 8,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 7,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 7,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, mesterkard",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 5,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 8,
+        "VÉ": 8,
+        "SP": 7,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 7,
+        "Átütés": 1,
+        "Sebesség": 8,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 7,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 7,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, predoci egyeneskard",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, rapír",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, rövid",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-egyenes-rövid",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, Slan",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 5,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "kulonleges_felkeszites",
+        "név": "Különleges felkészítés"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 7,
+        "VÉ": 7,
+        "SP": 10,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 7,
+        "VÉ": 7,
+        "SP": 10,
+        "Átütés": 1,
+        "Sebesség": 6,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 5,
+        "VÉ": 5,
+        "SP": 10,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 5,
+        "VÉ": 5,
+        "SP": 10,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, Slan csatakard",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 7,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "kulonleges_felkeszites",
+        "név": "Különleges felkészítés"
+      },
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-nagy",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 10,
+        "VÉ": 10,
+        "SP": 13,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 10,
+        "VÉ": 10,
+        "SP": 12,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, Slan rövid",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "kulonleges_felkeszites",
+        "név": "Különleges felkészítés"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Kard, szablya",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 4,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 4,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Mara-sequor",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 5,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "kulonleges_felkeszites",
+        "név": "Különleges felkészítés"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 8,
+        "VÉ": 8,
+        "SP": 11,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 11,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Meneth",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "sfe_duplazodik",
+        "név": "SFÉ dupla ellene"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Sequor",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "pengehegy-tőr",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Tőrkard",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "pontos",
+        "név": "Pontos"
+      },
+      {
+        "id": "lefegyverezhetobb",
+        "név": "Lefegyverezhetőbb"
+      },
+      {
+        "id": "zuzo_ellen_rosszabb",
+        "név": "Zúzó fegyver ellen rosszabb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "pengehegy-kard",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 4,
+        "VÉ": 4,
+        "SP": 6,
+        "Átütés": 1,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-egyenes-átlagos",
+        "jelleg": "vágó-egyenes",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 6,
+        "VÉ": 6,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Vívóbot",
+    "kategória": "Kardvívó",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "botvég",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Alabárd",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 9,
+    "akadály": 1,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-nagy",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 6,
+        "VÉ": 10,
+        "SP": 10,
+        "Átütés": 0,
+        "Sebesség": 13,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "lándzsahegy-rövid-átlagos",
+        "jelleg": "szúró",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 6,
+        "VÉ": 10,
+        "SP": 9,
+        "Átütés": 2,
+        "Sebesség": 12,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "buzogányfej-tompa",
+        "jelleg": "zúzó",
+        "sebzéstípus": "másodlagos",
+        "TÉ": 6,
+        "VÉ": 8,
+        "SP": 9,
+        "Átütés": 0,
+        "Sebesség": 12,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Bot, hosszú",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 7,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "botvég",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 7,
+        "VÉ": 7,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Lándzsa, átlagos",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 9,
+    "akadály": 1,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-rövid-átlagos",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 10,
+        "VÉ": 10,
+        "SP": 9,
+        "Átütés": 2,
+        "Sebesség": 9,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Lándzsa, keskeny hegyű",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 9,
+    "akadály": 1,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-rövid-keskeny",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 10,
+        "VÉ": 10,
+        "SP": 8,
+        "Átütés": 4,
+        "Sebesség": 9,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Lándzsa, széles hegyű",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 9,
+    "akadály": 1,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-rövid-széles",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 10,
+        "VÉ": 10,
+        "SP": 10,
+        "Átütés": 0,
+        "Sebesség": 9,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Pika, keskeny hegyű",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 12,
+    "akadály": 2,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-rövid-keskeny",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 13,
+        "VÉ": 13,
+        "SP": 8,
+        "Átütés": 4,
+        "Sebesség": 10,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Pika, széles hegyű",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 12,
+    "akadály": 2,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-rövid-széles",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 13,
+        "VÉ": 13,
+        "SP": 10,
+        "Átütés": 0,
+        "Sebesség": 10,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Szigony, egykezes",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 5,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-tőrhossz",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 5,
+        "VÉ": 5,
+        "SP": 8,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 3,
+        "FP": false
+      },
+      {
+        "aktor": "lándzsahegy-tőrhossz",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 8,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Szigony, kétkezes",
+    "kategória": "Lándzsavívó",
+    "megjegyzés": "",
+    "fegyverhossz": 9,
+    "akadály": 1,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-rövid-átlagos",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 9,
+        "VÉ": 9,
+        "SP": 8,
+        "Átütés": 2,
+        "Sebesség": 9,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Balta",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 4,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Bot, furkós",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "botvég",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Bot, rövid",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [
+      {
+        "id": "fanyel_fegyvertores_konnyebb",
+        "név": "Fanyél fegyvertörése könnyebb"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "botvég",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 1,
+        "Átütés": 0,
+        "Sebesség": 4,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Buzogány, egykezes",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "buzogányfej-tompa",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 1,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 4,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Buzogány, kétkezes",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 7,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "buzogányfej-tompa",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 7,
+        "VÉ": 5,
+        "SP": 9,
+        "Átütés": 0,
+        "Sebesség": 10,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Buzogány, láncos",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "pajzs_ve_felezes",
+        "név": "Láncos: pajzs VÉ felezés"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "buzogányfej-tompa",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 1,
+        "SP": 6,
+        "Átütés": 0,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Buzogány, shadleki",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "buzogányfej-szöges",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 0,
+        "SP": 5,
+        "Átütés": 2,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Buzogány, tollas",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "buzogányfej-szöges",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": -1,
+        "SP": 3,
+        "Átütés": 2,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 4,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Csatabárd, egykezes",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 2,
+    "akadály": 0,
+    "övön_hordható": true,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 2,
+        "VÉ": 2,
+        "SP": 4,
+        "Átütés": 1,
+        "Sebesség": 8,
+        "Forgatás": "egykezes",
+        "Erőlimit": 4,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Csatabárd, kétkezes",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 5,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-nagy",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 5,
+        "VÉ": 5,
+        "SP": 7,
+        "Átütés": 2,
+        "Sebesség": 10,
+        "Forgatás": "másfélkezes",
+        "Erőlimit": 99,
+        "FP": false
+      },
+      {
+        "aktor": "vágóél-íves-nagy",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 7,
+        "Átütés": 0,
+        "Sebesség": 10,
+        "Forgatás": "másfélkezes · 1 kéz",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Csatacsákány",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beakadas_kockazat",
+        "név": "Beakad (~50%)"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "lándzsahegy-rövid-keskeny",
+        "jelleg": "szúró",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 3,
+        "SP": 5,
+        "Átütés": 4,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Harci kalapács",
+    "kategória": "Romboló",
+    "megjegyzés": "",
+    "fegyverhossz": 7,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "buzogányfej-tompa",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 7,
+        "VÉ": 5,
+        "SP": 9,
+        "Átütés": 0,
+        "Sebesség": 10,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Korbács",
+    "kategória": "Ostorharc",
+    "megjegyzés": "",
+    "fegyverhossz": 3,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "pajzs_megkerules",
+        "név": "Pajzs megkerülése"
+      },
+      {
+        "id": "fegyvertores_immunis",
+        "név": "Fegyvertörés-immunis"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "botvég",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 3,
+        "VÉ": 1,
+        "SP": 3,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Ostor",
+    "kategória": "Ostorharc",
+    "megjegyzés": "",
+    "fegyverhossz": 9,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "pajzs_megkerules",
+        "név": "Pajzs megkerülése"
+      },
+      {
+        "id": "fegyvertores_immunis",
+        "név": "Fegyvertörés-immunis"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "botvég",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 9,
+        "VÉ": 7,
+        "SP": 5,
+        "Átütés": 0,
+        "Sebesség": 9,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 3,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Ostorkard (Urumi)",
+    "kategória": "Ostorharc",
+    "megjegyzés": "",
+    "fegyverhossz": 9,
+    "akadály": 0,
+    "övön_hordható": false,
+    "extrák": [
+      {
+        "id": "onsebzes_kockazat",
+        "név": "Önsebzés-kockázat"
+      },
+      {
+        "id": "beszorithato",
+        "név": "Beszorítható"
+      },
+      {
+        "id": "pajzs_megkerules",
+        "név": "Pajzs megkerülése"
+      },
+      {
+        "id": "fegyvertores_immunis",
+        "név": "Fegyvertörés-immunis"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-átlagos",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 9,
+        "VÉ": 7,
+        "SP": 7,
+        "Átütés": 0,
+        "Sebesség": 11,
+        "Forgatás": "kétkezes",
+        "Erőlimit": 99,
+        "FP": false
+      }
+    ]
+  }
+]
