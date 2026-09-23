@@ -86,6 +86,9 @@ def tipusbonusz(tipus, osztaly):
 
 @dataclass
 class Fegyver:
+    """FIGYELEM: az alábbi mező-defaultok a fegyverek.schema.yaml `default:` értékeit tükrözik
+    (Python dataclass nem tud sémából generálni statikus mezőt) — séma-default módosításkor
+    ITT IS frissítendő, különben a kettő csendben elszakadhat."""
     név: str
     hossz: int
     aktorok: list
@@ -272,7 +275,7 @@ def teszt_tempo(ero=2, csak_mundan=False):
     # páncélonként gyűjtjük, melyik fegyver a legjobb
     legjobb = {p[0]: (None, -1) for p in PANCEL}
     for fnev, f in FEGYVEREK.items():
-        if csak_mundan and (f.idea != 0 or f.alapanyag not in ("acél", "kő", "bronz", "csont")):
+        if csak_mundan and (f.idea != 0 or ALAPANYAG[f.alapanyag].get("mágikus")):
             continue
         modok = f.modok(ero=ero)
         sor = fnev.ljust(24)

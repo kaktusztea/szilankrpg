@@ -82,18 +82,18 @@ idea:
   4:  {TÉ: 2,  VÉ: 2,  SP: 4,  sebesség: -1, súly: -1}
   5:  {TÉ: 3,  VÉ: 3,  SP: 5,  sebesség: -2, súly: -2}
 
-# alapanyag: név -> TÉ, VÉ, SP, opcionális súly-delta (súly) és átütés
+# alapanyag: név -> TÉ, VÉ, SP, opcionális súly-delta (súly) és átütés, mágikus (a "mundán" szűréshez, pl. teszt_tempo)
 alapanyag:
   csont:      {TÉ: 0,  VÉ: 0,  SP: -4}
   kő:         {TÉ: 0,  VÉ: 0,  SP: -3}
   bronz:      {TÉ: 0,  VÉ: 0,  SP: -2}
   fa:         {TÉ: 0,  VÉ: 0,  SP: 0}              # semleges: a fa gyengesége a botvég aktorban, törhetősége a fanyelű nyélben
   acél:       {TÉ: 0,  VÉ: 0,  SP: 0}
-  abbitacél:  {TÉ: 1,  VÉ: 1,  SP: 1}
-  mithrill:   {TÉ: 1,  VÉ: 1,  SP: 2,  súly: -1}
-  lunír:      {TÉ: 1,  VÉ: 1,  SP: 0,  súly: -2}
-  feketeacél: {TÉ: 1,  VÉ: 1,  SP: 1}              # Mara-Sequor
-  ősfém:      {TÉ: 2,  VÉ: 2,  SP: 2}
+  abbitacél:  {TÉ: 1,  VÉ: 1,  SP: 1,  mágikus: true}
+  mithrill:   {TÉ: 1,  VÉ: 1,  SP: 2,  súly: -1,  mágikus: true}
+  lunír:      {TÉ: 1,  VÉ: 1,  SP: 0,  súly: -2,  mágikus: true}
+  feketeacél: {TÉ: 1,  VÉ: 1,  SP: 1,  mágikus: true}              # Mara-Sequor
+  ősfém:      {TÉ: 2,  VÉ: 2,  SP: 2,  mágikus: true}
   élőereklye: {TÉ: 2,  VÉ: 2,  SP: 3}              # törhetetlen
   álomfém:    {TÉ: 1,  VÉ: 1,  SP: 1,  átütés: 2}  # +2 átütés
 

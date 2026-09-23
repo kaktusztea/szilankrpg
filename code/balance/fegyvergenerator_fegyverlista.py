@@ -68,7 +68,8 @@ W = [(r["kategória"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r), _
 
 
 FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "Extrák", "Megj."]
-JOBBRA = {4, 5, 6, 7, 8, 9, 11}  # jobbra igazított (numerikus) oszlopok
+JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Fh"}  # numerikus oszlopok (jobbra igazítva)
+JOBBRA = {FEJLEC.index(nev) for nev in JOBBRA_OSZLOPNEVEK}  # index-halmaz — NÉVBŐL, nem kézzel számolva
 
 
 def sorok_kategoriankent():
