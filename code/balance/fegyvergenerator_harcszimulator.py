@@ -246,43 +246,27 @@ def profil_szarmaztatott(p: Profil, mod: FegyverMod):
                 erobonusz_limit=erolimit)
 
 
-# ── Taktika / helyzet / manőver hatás-táblák (§7-§9, kézzel — l. modul docstring) ──
+# ── Taktika / helyzet — ADATVEZÉRELT (data/tables/taktikak.json, harci_helyzetek.json) ──
+# A korábbi, kézzel írt TAKTIKAK/HARCI_HELYZETEK dict-ek megszűntek — minden mező a valós
+# webapp forrásból jön (`fegyvergenerator_data_adapter.py`). Az id-k a JSON id-jei (ékezetes,
+# pl. "roham", "támadó", "belharci_helyzet"), NEM a korábbi ASCII-sított custom kulcsok.
 
-TAKTIKAK = {
-    "roham":            dict(te=4, ve=-8, sp=5, csak_elso_csere=True, ve_x2=True),
-    "öngyilkos_roham":  dict(te=5, ve=-10, sp=7, csak_elso_csere=True, ve_x2=True, sebz_te_bunt_kikapcsol=True),
-    "1_tamadas":        dict(te=3, min_tamadas=2),
-    "erintő":           dict(te=3, sp_nulla=True),
-    "tamado":           lambda fok: dict(te=fok, ve=-2 * fok),
-    "vedő":             lambda fok: dict(ve=fok, te=-2 * fok),
-    "tamadas_erobol":   lambda fok: dict(te=-fok, sp=fok),
-    "visszafogott":     dict(te=-10, sebzes_hatrany=-2),
-    "teljes_vedekezes": dict(ve=8, nem_tamad=True),
-    "fárasztás":        dict(nem_tamad=True, fárasztás=True),
-}
-
-HARCI_HELYZETEK = {
-    "nincs":       dict(),
-    "beszorított_ellenfél": dict(te_dobas_eh=1),
-    "hátulról":    dict(te_dobas_eh=1, ellenfel_pajzs_kiiktatva=True),
-    "meglepetés":  dict(te_dobas_eh=1, ve_csokk_bonus=2),
-    "takarásban":  dict(te_dobas_eh=-1, ve_bonus=5),
-    "földön_fekve": dict(te_dobas_eh=-2, ve_veszteseg_x2=True),
-    "belharc":     dict(),   # a fegyver_override-ot külön kezeljük (§8 táblázat)
-}
-
-STATUSZOK = {
-    "nincs": dict(),
-    "sérült_1": dict(),   # csak próbákra hat, harcértékre nem
-    "sérült_2": dict(),
-    "eszmelet_1": dict(te_dobas_eh=-1, tamadas_max=None, tamadas_delta=-1),
-    "eszmelet_2": dict(te_dobas_eh=-2, tamadas_max=1),
-}
+import fegyvergenerator_data_adapter as DA
 
 
 def netEH(*ertekek):
     """§5: nettó Előny/Hátrány összegzés, [-2,+2] clamp."""
     return CLAMP(sum(ertekek), -2, 2)
+
+
+# Taktikák, amiknek van "első csere után lejár, VÉ csökk ×2" szabálya (§13.5) — ez a
+# szabálykönyvben SZÖVEGES/megjegyzés-szintű infó (nem strukturált mező a taktikak.yaml-ban),
+# ezért itt egy explicit lista jelzi, melyik taktika-id-kra vonatkozik.
+CSAK_ELSO_CSERE_TAKTIKAK = {"roham", "öngyilkos_roham"}
+SEBZ_TE_BUNTETES_KIKAPCSOL_TAKTIKAK = {"öngyilkos_roham"}
+NEM_TAMAD_TAKTIKAK = {"teljes_védekezés", "fárasztás"}
+SP_NULLA_TAKTIKAK = {"érintő"}
+MIN_TAMADAS_TAKTIKAK = {"1_támadás": 2}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -295,10 +279,11 @@ class Harcos:
     oldal: int
     profil: Profil
     mod: FegyverMod
-    taktika: str = None
+    taktika: str = None       # a taktikak.json id-je (pl. "roham", "támadó"), None = nincs
     taktika_fok: int = 0
-    helyzet: str = "nincs"
-    statusz: str = "nincs"
+    helyzet: str = None       # a harci_helyzetek.json id-je (pl. "belharci_helyzet"), None = nincs
+    statusz: str = None       # a statuszok.json "név" mezője (pl. "Eszmélet"), None = nincs
+    statusz_fok: int = 0
 
     def __post_init__(self):
         sz = profil_szarmaztatott(self.profil, self.mod)
@@ -318,46 +303,66 @@ class Harcos:
         return s_kategoria(self.ep_hasznalt, self.szarmaztatott["oszlopmeret"])
 
     def taktika_mod(self):
-        t = TAKTIKAK.get(self.taktika)
-        if t is None:
+        """Numerikus TÉ/VÉ/SP módosítók (fokozatos taktikáknál a `taktika_fok` szerint)."""
+        if self.taktika is None:
             return dict(te=0, ve=0, sp=0)
-        if callable(t):
-            t = t(self.taktika_fok)
-        return dict(te=t.get("te", 0), ve=CLAMP(t.get("ve", 0), -10, 10), sp=t.get("sp", 0), **{
-            k: v for k, v in t.items() if k not in ("te", "ve", "sp")
-        })
+        t = DA.taktika_modositok(self.taktika, self.taktika_fok)
+        return dict(te=t.get("TÉ", 0), ve=CLAMP(t.get("VÉ", 0), -10, 10), sp=t.get("SP", 0))
 
-    def helyzet_mod(self):
-        return HARCI_HELYZETEK.get(self.helyzet, {})
+    def taktika_hatas(self, cel):
+        """A taktika strukturált `hatások[]` egy adott célra (pl. Visszafogott → sebzésdobás)."""
+        if self.taktika is None:
+            return dict(eh=0, szorzo=1.0, letiltott=False, max_limit=None, szoveges=[])
+        return DA.taktika_strukturalt_hatasok(self.taktika, cel=cel).get(
+            cel, dict(eh=0, szorzo=1.0, letiltott=False, max_limit=None, szoveges=[]))
 
-    def statusz_mod(self):
-        return STATUSZOK.get(self.statusz, {})
+    def helyzet_hatas(self, cel):
+        if self.helyzet is None:
+            return dict(eh=0, szorzo=1.0, letiltott=False, max_limit=None, szoveges=[])
+        return DA.helyzet_hatasa(self.helyzet, cel)
+
+    def statusz_hatas(self, cel):
+        if self.statusz is None:
+            return dict(eh=0, szorzo=1.0, letiltott=False, max_limit=None, szoveges=[])
+        return DA.statusz_hatasa(self.statusz, self.statusz_fok, cel)
 
     def te_aktualis(self, tobbszoros_tamadas):
         tm = self.taktika_mod()
         lev = sebesules_te_levonas(self.s_kat, self.szarmaztatott["ft_enyhites"])
-        if tm.get("sebz_te_bunt_kikapcsol"):
+        if self.taktika in SEBZ_TE_BUNTETES_KIKAPCSOL_TAKTIKAK:
             lev = 0
         te = self.szarmaztatott["TE"] + lev + tm.get("te", 0)
         if tobbszoros_tamadas:
             te -= 3
+        # §8: Belharci helyzet — hosszú fegyver (pengehossz > 0) TÉ override 0 (fegyver_override,
+        # a helyzet_fegyver_override() adatból); rövid/belharcos fegyver (pengehossz <= 0)
+        # Belharcos fortély 1.fok TÉ+2 (egyszerűsítés: a döntési AI-hoz kötött karakter
+        # feltételezetten birtokolja 1.fokon — a fortély-adat maga NINCS ide bekötve)
+        if self.helyzet == "belharci_helyzet":
+            if self.mod.pengehossz > 0:
+                te = 0
+            else:
+                te += 2
         return te
 
     def ve_aktualis(self):
         tm = self.taktika_mod()
-        hm = self.helyzet_mod()
-        ve = self.szarmaztatott["VE"] + tm.get("ve", 0) + hm.get("ve_bonus", 0)
+        hh = self.helyzet_hatas("vé")   # pl. Takarásban → VÉ Előny+5 (a séma "vé"-nek nevezi)
+        ve = self.szarmaztatott["VE"] + tm.get("ve", 0) + hh.get("eh", 0)
         ve -= self.ve_faradas + self.ve_seb
+        if self.helyzet == "belharci_helyzet":
+            if self.mod.pengehossz > 0:
+                ve = 0
+            else:
+                ve += 2
         return max(0, ve)
 
     def tamadasok_effektiv(self):
         n = self.szarmaztatott["tamadasok"]
-        sm = self.statusz_mod()
-        if sm.get("tamadas_max"):
-            n = min(n, sm["tamadas_max"])
-        if sm.get("tamadas_delta"):
-            n = max(1, n + sm["tamadas_delta"])
-        return n
+        sh = self.statusz_hatas("támadások_száma")
+        if sh.get("max_limit") is not None:
+            n = min(n, sh["max_limit"])
+        return max(1, n)
 
     def kor_eleji_regeneracio(self, regen=1):
         self.ve_faradas = max(0, self.ve_faradas - regen)
@@ -385,16 +390,18 @@ def sikertelen_tamadas_ve_csokkentes(tamado: Harcos, vedo: Harcos, te_k20):
         k20t_ertek = k20T(te_k20)
     alap = alap_tab[pv] + k20t_ertek
 
-    tm = tamado.taktika_mod()
-    hm = tamado.helyzet_mod()
-    alap += hm.get("ve_csokk_bonus", 0)
+    # Meglepetés: "VÉ csökkentés: +2" — ez a helyzet HATÁSA az áldozat (vedo) oldalán,
+    # a schema cél-neve "vé_csökkentés" (nem "vé"!)
+    hh = tamado.helyzet_hatas("vé_csökkentés")
+    alap += hh.get("eh", 0)
 
-    vhm = vedo.helyzet_mod()
-    if vhm.get("ve_veszteseg_x2") or tm.get("ve_x2"):
+    vhh = vedo.helyzet_hatas("vé_veszteség")
+    if vhh.get("szorzo", 1.0) != 1.0:
+        alap *= vhh["szorzo"]
+    if tamado.taktika in CSAK_ELSO_CSERE_TAKTIKAK:
         alap *= 2
-    if tm.get("csak_elso_csere") and not tamado.roham_elhasznalt:
-        alap *= 2
-        tamado.roham_elhasznalt = True
+        if not tamado.roham_elhasznalt:
+            tamado.roham_elhasznalt = True
 
     vedo.ve_faradas += alap
 
@@ -408,26 +415,22 @@ def jelleg_bonusz(mod: FegyverMod, pancel_oszaly):
 
 
 def akcio_feloldas(tamado: Harcos, vedo: Harcos, pancel_oszaly, tobbszoros_tamadas):
-    tm = tamado.taktika_mod()
-
-    if tm.get("fárasztás"):
+    if tamado.taktika == "fárasztás":
         v = 3
         vedo.ve_faradas += v
         return "fárasztás", 0
 
-    if tm.get("nem_tamad"):
+    if tamado.taktika in NEM_TAMAD_TAKTIKAK:
         return "passzív", 0
 
-    hm = tamado.helyzet_mod()
-    sm = tamado.statusz_mod()
-    te_dobas_eh = netEH(hm.get("te_dobas_eh", 0), sm.get("te_dobas_eh", 0))
+    te_dobas_eh = netEH(tamado.helyzet_hatas("té_dobás").get("eh", 0),
+                        tamado.statusz_hatas("té_dobás").get("eh", 0))
     k20 = elony_hatrany(te_dobas_eh, 20)
     ta = tamado.te_aktualis(tobbszoros_tamadas) + k20
     ve = vedo.ve_aktualis()
 
-    vhm = vedo.helyzet_mod()
-    if hm.get("ellenfel_pajzs_kiiktatva"):
-        pass   # a pajzs-VÉ modellezése jelen verzióban nincs (nincs pajzs a Profilban)
+    # Hátulról támadás: "Pajzs VÉ nem számít" — szöveges hatás, a jelen modellben nincs
+    # pajzs a Profilban, ezért ez jelenleg nem hat semmire (dokumentált egyszerűsítés).
 
     if ta < ve:
         sikertelen_tamadas_ve_csokkentes(tamado, vedo, k20)
@@ -439,9 +442,10 @@ def akcio_feloldas(tamado: Harcos, vedo: Harcos, pancel_oszaly, tobbszoros_tamad
     seb_eh = CLAMP(sebzes_elony(k20) + tamado.mod.sebzes_hatrany, -2, 2)
     seb_k20 = elony_hatrany(seb_eh, 20)
 
+    tm = tamado.taktika_mod()
     sp = seb_k20 + tamado.szarmaztatott["SP"] + tm.get("sp", 0) + tul_bonusz
     sp += jelleg_bonusz(tamado.mod, pancel_oszaly)
-    if tm.get("sp_nulla"):
+    if tamado.taktika in SP_NULLA_TAKTIKAK:
         sp = 0
 
     sfe = max(0, vedo.szarmaztatott["sfe"] - tamado.mod.atutes)
@@ -693,15 +697,15 @@ def scenario_szituaciok(fnev="Kard, hosszú", n=600, seed=400):
     random.seed(seed)
     mod = ALL_WEAPON_MODES[fnev][0]
     variansok = [
-        ("csupasz páncél, nincs helyzet/taktika",      "csupasz", "nincs", None, 0),
-        ("bőr páncél, nincs helyzet/taktika",          "bor",     "nincs", None, 0),
-        ("lánc páncél, nincs helyzet/taktika",         "lanc",    "nincs", None, 0),
-        ("merev páncél, nincs helyzet/taktika",        "merev",   "nincs", None, 0),
+        ("csupasz páncél, nincs helyzet/taktika",      "csupasz", None, None, 0),
+        ("bőr páncél, nincs helyzet/taktika",          "bor",     None, None, 0),
+        ("lánc páncél, nincs helyzet/taktika",         "lanc",    None, None, 0),
+        ("merev páncél, nincs helyzet/taktika",        "merev",   None, None, 0),
         ("lánc páncél, A-nak Hátulról támadás",        "lanc",    "hátulról", None, 0),
-        ("lánc páncél, A-nak Beszorított ellenfél",    "lanc",    "beszorított_ellenfél", None, 0),
-        ("lánc páncél, A Roham taktikával",            "lanc",    "nincs", "roham", 0),
-        ("lánc páncél, A Támadó(2) taktikával",        "lanc",    "nincs", "tamado", 2),
-        ("lánc páncél, A Teljes Védekezés taktikával", "lanc",    "nincs", "teljes_vedekezes", 0),
+        ("lánc páncél, A-nak Beszorított ellenfél",    "lanc",    "ellenfél_beszorított", None, 0),
+        ("lánc páncél, A Roham taktikával",            "lanc",    None, "roham", 0),
+        ("lánc páncél, A Támadó(2) taktikával",        "lanc",    None, "támadó", 2),
+        ("lánc páncél, A Teljes Védekezés taktikával", "lanc",    None, "teljes_védekezés", 0),
     ]
     sorok = []
     for cimke, panc, helyzet, taktika, fok in variansok:
@@ -710,7 +714,7 @@ def scenario_szituaciok(fnev="Kard, hosszú", n=600, seed=400):
         hosszak = []
         for _ in range(n):
             a = Harcos("A", 0, _profil_referencia("A", **pm), mod, taktika=taktika, taktika_fok=fok,
-                       helyzet=helyzet if helyzet != "nincs" else "nincs")
+                       helyzet=helyzet)
             b = Harcos("B", 1, _profil_referencia("B", **pm), mod)
             gy, kor = kuzdelem([a, b], pancel_oszaly=panc)
             wins += gy == 0
