@@ -158,19 +158,21 @@ Sikeres próba kell:
  Lopakodás/rejtőzés vs. Észlelés
 ```
 
-→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) - módosítók a leírásában
+→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) → módosítók a leírásában
 
 ```
-Áldozat
-  Közelharci VÉ (Puszta kézzel)
+Módosítók • csak az 1.támadásra!
 
-Bónuszok
-  Előny+2 TÉ dobásra
+ Áldozat
+   Közelharci VÉ (Puszta kézzel)
 
-  Orgyilkos fortély
-    1.fok: Előny+1 Sebzés dobásra, +1 SP
-    2.fok: Előny+1 Sebzés dobásra, +2 SP
-    3.fok: Előny+2 Sebzés dobásra, +3 SP
+ Támadó bónuszok
+   Előny+2 TÉ dobásra
+
+   Orgyilkos fortély
+     1.fok: Előny+1 Sebzés dobásra, +1 SP
+     2.fok: Előny+1 Sebzés dobásra, +2 SP
+     3.fok: Előny+2 Sebzés dobásra, +3 SP
 ```
 
 → ❌ Kizárja: Hátulról, Meglepetés, Lovas harc, Léglovas harc, Harci szekér
@@ -179,7 +181,7 @@ Bónuszok
 
 → Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅
 → Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
-→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak \
+→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak
 
 <br />
 
