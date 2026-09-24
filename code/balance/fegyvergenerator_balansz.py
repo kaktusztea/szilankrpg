@@ -123,8 +123,9 @@ class Fegyver:
         s = SULY_BY_ID[max(_SULY_MIN, min(_SULY_MAX, SULY[self.súly]["id"] + suly_shift))]
 
         pen = PENGES[self.pengés]
-        fejdarab_idx = self.fejdarab + pen["fejdarab"]
-        fd = FEJDARAB[fejdarab_idx]
+        # A fejdarab a fegyver EXPLICIT bemenő paramétere, FÜGGETLEN a pengés-től (a pengés
+        # csak a "van éle" harcérték-bónuszt adja, lásd konstansok.yaml → pengés).
+        fd = FEJDARAB[self.fejdarab]
 
         # Fogás-variánsok: ha a forgatásnak van "1 kézzel" MINDIG EMITTÁLT extra variánsa
         # (jelenleg csak a másfélkezesnek — konstansok.yaml → egykezes_forgatás), a fegyver

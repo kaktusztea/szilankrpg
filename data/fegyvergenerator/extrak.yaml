@@ -167,3 +167,15 @@ extrak:
       - {típus: ellenfél_fegyver_sebzésjelleg, érték: Z}   # Z = zúzó (kanonikus egybetűs sebzésjelleg)
     hatás:
       - {cél: vé_veszteség, mód: szorzó, érték: 2}
+
+  - id: kampos_veg_labkirantas
+    név: "Kampós vég — Lábkirántás"
+    csoport: tulajdonság
+    leírás: >
+      A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad.
+      Jelenleg nincs fegyver, ami használja.
+      pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veg_labkirantas]`).
+    feltétel:
+      - {típus: manőver_állapot, érték: aktív}   # a manőver a fegyver ELLEN történik
+    hatás:
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:lábkirántás"}
