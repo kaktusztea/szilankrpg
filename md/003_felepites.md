@@ -1,4 +1,4 @@
-## Bevezető
+## A szabályrendszer felépítése
 
 Mit is találsz ebben a szabályrendszerben? Ha az elejéről sorban haladsz - és ez az ajánlott -, akkor elsőnek segítünk megalkotni a játékban megszemélyesített szereplődet a [Karakteralkotás](010_00_karakteralkotas.md) fejezetben.
 

@@ -21,6 +21,6 @@ Mittelholcz Iván
 
 ---
 
-🔗 [Bevezető](003_bevezeto.md) →
+🔗 [A szabályrendszer felépítése](003_felepites.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md)

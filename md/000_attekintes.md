@@ -6,15 +6,15 @@ Mielőtt belevágunk a szabályok ismertetésébe, a karakteralkotás folyamatá
 
 Adunk pár hasznos tanácsot is a szerepjáték során gyakran előforduló klasszikus hibák elkerülésére.
 
-Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel zárjuk a fejezetet.
+Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel és hasznos dokumentumokkal zárjuk a fejezetet.
 
 A szabályrendszer eredeti, hiteles forrása ezen URL alatt található: https://github.com/kaktusztea/szilankrpg/
 
-### [Történet](001_tortenet.md)
+### [A fejlesztés története](001_tortenet.md)
 
 ### [Fejlesztők, Tesztelők](002_fejlesztok.md)
 
-### [Bevezető](003_bevezeto.md)
+### [A szabályrendszer felépítése](003_felepites.md)
 
 ### [Szilánk RPG alrendszerei](004_alrendszerek.md)
 
