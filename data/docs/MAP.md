@@ -19,8 +19,27 @@ web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (process_fegyverek.py + lib/)
   balance/                   Balansz / tesztharc tervezői eszközök (NEM pipeline):
-    fegyvergenerator_balansz.py       Fegyvergenerátor modell + balansz teszt
+    fegyvergenerator_balansz.py       Fegyvergenerátor modell + balansz teszt (tempó/sebzés, statikus)
     fegyvergenerator_fegyverlista.py  A generátorból md fegyvertábla emittálás (importálja a balanszt)
+    fegyvergenerator_data_adapter.py  Taktikák/Harci helyzetek/Manőverek/Státuszok generikus hatás-kiértékelője
+                                       (data/tables/*.json direkt betöltés — nincs kézzel duplikált adat)
+    fegyvergenerator_harcszimulator.py  Kör-alapú harci motor (statblokk, VÉ könyvelés, sebzés — spec §2-§9)
+                                       önteszt: `python3 code/balance/fegyvergenerator_harcszimulator.py`
+    fegyvergenerator_taktikai_ai.py   Kör-elejei döntési réteg a motor fölött: minden harcos minden körben
+                                       újraválaszt taktikát/manővert (ÖSSZES közelharci taktika + a helyzetre
+                                       leképezhető manőverek — l. modul-fej a korlátokért). `kuzdelem_ai()`.
+                                       önteszt: `python3 code/balance/fegyvergenerator_taktikai_ai.py`
+    fegyvergenerator_balansz_elemzes.py  Nagyszabású, MINDEN fegyverre kiterjedő mátrix-elemzés (páncélosztály
+                                       × AI be/ki × tükör-harc + 1:3 túlerő). Konklúziót ad: mely fegyverek
+                                       (túl) erősek/gyengék minden körülményben, kategória-átlagok,
+                                       páncélfüggő szélsőségek. Futtatás: `python3
+                                       code/balance/fegyvergenerator_balansz_elemzes.py [--n=250] [--gyors]`
+                                       — a kimenet NEM kerül a repóba (work file), a konklúziót olvasható
+                                       riportba kell átvezetni (l. wiki STUDY.* konvenció).
+    fegyverek_regi_uj_osszehasonlitas.py  A régi (`data/tables/fegyverek.json`) és a v2 fegyvergenerátor
+                                       (`data/fegyvergenerator/fegyverek.generated.json`) harcértékeinek
+                                       1:1 delta-összehasonlítása, kézi alias-táblával a névformátum-eltérésekhez.
+                                       Kimenet: konzol + markdown riport (wiki STUDY.* fájlba, NEM az éles repóba).
     harcszimulacio_selftest.py        harcszimulacio.spec.md §15 önteszt validálása (a data layerből olvas)
     elony_hatrany_eloszlasok.py       Előny/Hátrány kockaeloszlás analízis (matplotlib)
     sfe_hangolas.py                   Páncél SFÉ hangolási szimulátor (spec §3-§6 motor + MGT-ellensúly, jelleg-bónusz, harci helyzetek)

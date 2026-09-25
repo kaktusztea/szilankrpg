@@ -13,81 +13,81 @@
 
 
 # ── Közelharci ──
-- {név: "Dzsambia", kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 0}}
-- {név: "Kés", kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid, pengehegy-apró], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 2}}
-- {név: "Kő", kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: könnyű, alapanyag: kő}}
-- {név: "Kriszkés", kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 2}}
-- {név: "Béltépő", kategória: közelharci, megjegyzés: "", extrak: [panceltalant_jobban_sebez, pocsek_vedekezo_pancelos_ellen, beakadas_kockazat], fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 0}}
-- {név: "Levéltőr", kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 2}}
-- {név: "Pugoss", kategória: közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Puszta kéz", kategória: közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [ököl]}}
-- {név: "Puszta kéz, belharcban", kategória: közelharci, megjegyzés: "Belharci helyzet: a fegyvertelen büntetés nullázódik.", fegyver: {hossz: 0, aktorok: [ököl-belharc]}}
-- {név: "Vasököl / páncélkesztyű", kategória: közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [vasököl], erőbónusz_limit: 5}}
-- {név: "Markolatgomb", kategória: közelharci, megjegyzés: "A kard markolatgombjával ütés. Ugyanazok az értékei, mint a Vasökölnek.", fegyver: {hossz: 0, aktorok: [vasököl], erőbónusz_limit: 5}}
-- {név: "Ramiera", kategória: közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Tőr", kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1}}
-- {név: "Méregfog", kategória: közelharci, megjegyzés: "Sebzéskor a tárolt mérget befecskendezi. Ár: 5x szorzó (méreg-tartó mechanizmus).", fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1}}
-- {név: "Tőr, ököl", kategória: közelharci, megjegyzés: "Tenyérbe rejtett ököltőr.", fegyver: {hossz: 0, aktorok: [pengehegy-rejtett], erőbónusz_limit: 2}}
-- {név: "Tőr, kígyó", kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
-- {név: "Tőr, páncélszúró", kategória: közelharci, megjegyzés: "", extrak: [pancelszuras_belharcban], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 5}}
-- {név: "Tőr, Slan", kategória: közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, idea: 2, erőbónusz_limit: 2}}
+- {név: "Dzsambia", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 0}}
+- {név: "Kés", state: raw, kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid, pengehegy-apró], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 2}}
+- {név: "Kő", state: raw, kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: könnyű, alapanyag: kő}}
+- {név: "Kriszkés", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 2}}
+- {név: "Béltépő", state: raw, kategória: közelharci, megjegyzés: "", extrak: [panceltalant_jobban_sebez, pocsek_vedekezo_pancelos_ellen, beakadas_kockazat], fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 0}}
+- {név: "Levéltőr", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 2}}
+- {név: "Pugoss", state: raw, kategória: közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
+- {név: "Puszta kéz", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [ököl]}}
+- {név: "Puszta kéz, belharcban", state: raw, kategória: közelharci, megjegyzés: "Belharci helyzet: a fegyvertelen büntetés nullázódik.", fegyver: {hossz: 0, aktorok: [ököl-belharc]}}
+- {név: "Vasököl / páncélkesztyű", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 0, aktorok: [vasököl], erőbónusz_limit: 5}}
+- {név: "Markolatgomb", state: raw, kategória: közelharci, megjegyzés: "A kard markolatgombjával ütés. Ugyanazok az értékei, mint a Vasökölnek.", fegyver: {hossz: 0, aktorok: [vasököl], erőbónusz_limit: 5}}
+- {név: "Ramiera", state: raw, kategória: közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
+- {név: "Tőr", state: raw, kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1}}
+- {név: "Méregfog", state: raw, kategória: közelharci, megjegyzés: "Sebzéskor a tárolt mérget befecskendezi. Ár: 5x szorzó (méreg-tartó mechanizmus).", fegyver: {hossz: 1, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1}}
+- {név: "Tőr, ököl", state: raw, kategória: közelharci, megjegyzés: "Tenyérbe rejtett ököltőr.", fegyver: {hossz: 0, aktorok: [pengehegy-rejtett], erőbónusz_limit: 2}}
+- {név: "Tőr, kígyó", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
+- {név: "Tőr, páncélszúró", state: raw, kategória: közelharci, megjegyzés: "", extrak: [pancelszuras_belharcban], fegyver: {hossz: 2, aktorok: [pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 5}}
+- {név: "Tőr, Slan", state: raw, kategória: közelharci, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [pengehegy-tőr, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, idea: 2, erőbónusz_limit: 2}}
 
 # ── Kardvívó ──
-- {név: "Kard, dzsenn szablya", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
-- {név: "Kard, emrelin", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
-- {név: "Kard, handzsár", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos], fejdarab: 1, pengés: 1, súly: nehéz}}
-- {név: "Kard, hiequar", kategória: kardvívó, megjegyzés: "elf", fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Kard, hosszú", kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true, elvart: {vágóél-egyenes-átlagos: [6, 6]}}, fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
-- {név: "Kard, jatagán", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Kard, kétkezes", kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true, elvart: {vágóél-egyenes-nagy: [10, 10]}}, fegyver: {hossz: 7, aktorok: [vágóél-egyenes-nagy, pengehegy-kard], fejdarab: 1, pengés: 1, súly: nehéz, akadály: 2}}
-- {név: "Kard, khossas", kategória: kardvívó, megjegyzés: "elf", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Kard, kígyó", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
-- {név: "Kard, lovag", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, súly: nehéz}}
-- {név: "Kard, másfélkezes", kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
-- {név: "Kard, mesterkard", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, súly: nehéz}}
-- {név: "Kard, predoci egyeneskard", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
-- {név: "Kard, rapír", kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Kard, rövid", kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 2, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 2}}
-- {név: "Kard, Slan", kategória: kardvívó, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, idea: 3}}
-- {név: "Kard, Slan csatakard", kategória: kardvívó, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 7, aktorok: [vágóél-íves-nagy, pengehegy-kard], fejdarab: 1, pengés: 1, idea: 4, súly: nehéz, akadály: 1}}
-- {név: "Kard, Slan rövid", kategória: kardvívó, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, idea: 2, erőbónusz_limit: 3}}
-- {név: "Kard, szablya", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, erőbónusz_limit: 4}}
-- {név: "Mara-sequor", kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], fejdarab: 1, pengés: 1, idea: 3, alapanyag: feketeacél}}
-- {név: "Meneth", kategória: kardvívó, megjegyzés: "", extrak: [panceltalant_jobban_sebez, sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1}}
-- {név: "Sequor", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Tőrkard", kategória: kardvívó, megjegyzés: "", extrak: [pontos, lefegyverezhetobb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
-- {név: "Vívóbot", kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 1, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Kard, dzsenn szablya", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
+- {név: "Kard, emrelin", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
+- {név: "Kard, handzsár", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos], fejdarab: 1, pengés: 1, súly: nehéz}}
+- {név: "Kard, hiequar", state: raw, kategória: kardvívó, megjegyzés: "elf", fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
+- {név: "Kard, hosszú", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true, elvart: {vágóél-egyenes-átlagos: [6, 6]}}, fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
+- {név: "Kard, jatagán", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
+- {név: "Kard, kétkezes", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true, elvart: {vágóél-egyenes-nagy: [10, 10]}}, fegyver: {hossz: 7, aktorok: [vágóél-egyenes-nagy, pengehegy-kard], fejdarab: 1, pengés: 1, súly: nehéz, akadály: 2}}
+- {név: "Kard, khossas", state: raw, kategória: kardvívó, megjegyzés: "elf", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
+- {név: "Kard, kígyó", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
+- {név: "Kard, lovag", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, súly: nehéz}}
+- {név: "Kard, másfélkezes", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
+- {név: "Kard, mesterkard", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, súly: nehéz}}
+- {név: "Kard, predoci egyeneskard", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-egyenes-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1}}
+- {név: "Kard, rapír", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
+- {név: "Kard, rövid", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 2, aktorok: [vágóél-egyenes-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 2}}
+- {név: "Kard, Slan", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, idea: 3}}
+- {név: "Kard, Slan csatakard", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 7, aktorok: [vágóél-íves-nagy, pengehegy-kard], fejdarab: 1, pengés: 1, idea: 4, súly: nehéz, akadály: 1}}
+- {név: "Kard, Slan rövid", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [kulonleges_felkeszites], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, idea: 2, erőbónusz_limit: 3}}
+- {név: "Kard, szablya", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [vágóél-íves-átlagos, pengehegy-kard], fejdarab: 1, pengés: 1, erőbónusz_limit: 4}}
+- {név: "Mara-sequor", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, extrak: [kulonleges_felkeszites], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], fejdarab: 1, pengés: 1, idea: 3, alapanyag: feketeacél}}
+- {név: "Meneth", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [panceltalant_jobban_sebez, sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1}}
+- {név: "Sequor", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
+- {név: "Tőrkard", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [pontos, lefegyverezhetobb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
+- {név: "Vívóbot", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 1, szálfegyver_nyélanyag: fanyelű}}
 
 # ── Lándzsavívó ──
-- {név: "Alabárd", kategória: lándzsavívó, megjegyzés: "", teszt: {teszt_minta: true, elvart: {vágóél-íves-nagy: [8, 10]}}, fegyver: {hossz: 9, aktorok: [vágóél-íves-nagy, lándzsahegy-rövid-átlagos, buzogányfej-tompa], fejdarab: 2, pengés: 1, súly: nehéz, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
-- {név: "Bot, hosszú", kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 7, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
-- {név: "Lándzsa, átlagos", kategória: lándzsavívó, megjegyzés: "", teszt: {teszt_minta: true, elvart_1kez_kétkezes: {lándzsahegy-rövid-átlagos: [6, 6]}}, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
-- {név: "Lándzsa, keskeny hegyű", kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
-- {név: "Lándzsa, széles hegyű", kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
-- {név: "Pika, keskeny hegyű", kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
-- {név: "Pika, széles hegyű", kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
-- {név: "Szigony, egykezes", kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], fejdarab: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
-- {név: "Szigony, kétkezes", kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
+- {név: "Alabárd", state: raw, kategória: lándzsavívó, megjegyzés: "", teszt: {teszt_minta: true, elvart: {vágóél-íves-nagy: [8, 10]}}, fegyver: {hossz: 9, aktorok: [vágóél-íves-nagy, lándzsahegy-rövid-átlagos, buzogányfej-tompa], fejdarab: 2, pengés: 1, súly: nehéz, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
+- {név: "Bot, hosszú", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 7, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
+- {név: "Lándzsa, átlagos", state: raw, kategória: lándzsavívó, megjegyzés: "", teszt: {teszt_minta: true, elvart_1kez_kétkezes: {lándzsahegy-rövid-átlagos: [6, 6]}}, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
+- {név: "Lándzsa, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
+- {név: "Lándzsa, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
+- {név: "Pika, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
+- {név: "Pika, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
+- {név: "Szigony, egykezes", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], fejdarab: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Szigony, kétkezes", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 
 # ── Romboló ──
-- {név: "Balta", kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, súly: nehéz}}
-- {név: "Bot, furkós", kategória: romboló, megjegyzés: "", teszt: {teszt_minta: true, elvart: {botvég: [3, 3]}}, fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű}}
-- {név: "Bot, rövid", kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [botvég], alapanyag: fa, súly: könnyű, erőbónusz_limit: 0, szálfegyver_nyélanyag: fanyelű}}
-- {név: "Buzogány, egykezes", kategória: romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: nehéz, erőbónusz_limit: 4}}
-- {név: "Buzogány, kétkezes", kategória: romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos, akadály: 1}}
-- {név: "Buzogány, láncos", kategória: romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, láncos: 1}}
-- {név: "Buzogány, shadleki", kategória: romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-szöges], fejdarab: 1, súly: nehéz}}
-- {név: "Buzogány, tollas", kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [buzogányfej-szöges], fejdarab: 1, erőbónusz_limit: 4}}
-- {név: "Csatabárd, egykezes", kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab: 1, súly: nehéz, súly_delta_cél: átütés, erőbónusz_limit: 4}}
-- {név: "Csatabárd, kétkezes", kategória: romboló, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-nagy], fejdarab: 1, súly: súlyos, súly_delta_cél: átütés, akadály: 2}}
-- {név: "Csatacsákány", kategória: romboló, megjegyzés: "", extrak: [beakadas_kockazat], fegyver: {hossz: 3, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, akadály: 1}}
-- {név: "Harci kalapács", kategória: romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos, akadály: 2}}
+- {név: "Balta", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, súly: nehéz}}
+- {név: "Bot, furkós", state: raw, kategória: romboló, megjegyzés: "", teszt: {teszt_minta: true, elvart: {botvég: [3, 3]}}, fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 2, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Bot, rövid", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [botvég], alapanyag: fa, súly: könnyű, erőbónusz_limit: 0, szálfegyver_nyélanyag: fanyelű}}
+- {név: "Buzogány, egykezes", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: nehéz, erőbónusz_limit: 4}}
+- {név: "Buzogány, kétkezes", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos, akadály: 1}}
+- {név: "Buzogány, láncos", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-tompa], fejdarab: 1, láncos: 1}}
+- {név: "Buzogány, shadleki", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 3, aktorok: [buzogányfej-szöges], fejdarab: 1, súly: nehéz}}
+- {név: "Buzogány, tollas", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [buzogányfej-szöges], fejdarab: 1, erőbónusz_limit: 4}}
+- {név: "Csatabárd, egykezes", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-átlagos], fejdarab: 1, súly: nehéz, súly_delta_cél: átütés, erőbónusz_limit: 4}}
+- {név: "Csatabárd, kétkezes", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 5, aktorok: [vágóél-íves-nagy], fejdarab: 1, súly: súlyos, súly_delta_cél: átütés, akadály: 2}}
+- {név: "Csatacsákány", state: raw, kategória: romboló, megjegyzés: "", extrak: [beakadas_kockazat], fegyver: {hossz: 3, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, akadály: 1}}
+- {név: "Harci kalapács", state: raw, kategória: romboló, megjegyzés: "", fegyver: {hossz: 7, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: súlyos, akadály: 2}}
 
 # ── Ostorharc ──
-- {név: "Korbács", kategória: ostorharc, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], hajlékony: 1, erőbónusz_limit: 2}}
-- {név: "Ostor", kategória: ostorharc, megjegyzés: "", fegyver: {hossz: 9, aktorok: [botvég], hajlékony: 1, erőbónusz_limit: 3}}
-- {név: "Ostorkard", kategória: ostorharc, megjegyzés: "Urumi néven is ismert.", extrak: [onsebzes_kockazat], fegyver: {hossz: 9, aktorok: [vágóél-íves-átlagos], fejdarab: 1, hajlékony: 1}}
+- {név: "Korbács", state: raw, kategória: ostorharc, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], hajlékony: 1, erőbónusz_limit: 2}}
+- {név: "Ostor", state: raw, kategória: ostorharc, megjegyzés: "", fegyver: {hossz: 9, aktorok: [botvég], hajlékony: 1, erőbónusz_limit: 3}}
+- {név: "Ostorkard", state: raw, kategória: ostorharc, megjegyzés: "Urumi néven is ismert.", extrak: [onsebzes_kockazat], fegyver: {hossz: 9, aktorok: [vágóél-íves-átlagos], fejdarab: 1, hajlékony: 1}}
 
 # ── — csak teszt-minta (nem mainstream) — ──
-- {név: "Naginata", teszt: {teszt_minta: true, elvart: {vágóél-íves-nagy: [14, 14]}}, fegyver: {hossz: 12, aktorok: [vágóél-íves-nagy], fejdarab: 1, pengés: 1, idea: 2, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
-- {név: "Wakizashi", teszt: {teszt_minta: true}, fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1}}
+- {név: "Naginata", state: raw, teszt: {teszt_minta: true, elvart: {vágóél-íves-nagy: [14, 14]}}, fegyver: {hossz: 12, aktorok: [vágóél-íves-nagy], fejdarab: 1, pengés: 1, idea: 2, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
+- {név: "Wakizashi", state: raw, teszt: {teszt_minta: true}, fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1}}

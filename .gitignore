@@ -12,5 +12,6 @@ Excalidraw
 node_modules
 web/karakter/dist
 web/karakter/public/metadata.json
+code/balance/output
 web/karakter/.build_counter
 *.tsbuildinfo
