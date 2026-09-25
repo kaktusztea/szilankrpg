@@ -10,6 +10,7 @@ státuszok:
     fokok:                     # kötelező, lista (min 1 elem)
       - fok: 1                 # kötelező, number (1-N)
         alcím: ""              # kötelező, string (a fok elnevezése)
+        megjegyzések: []       # opcionális, lista ({ text: "" } elemek — a fokhoz tartozó hosszabb, narratív kontextus: mi okozza, ⚡ példák, kijövetel/megszűntetés szabályok, kapcsolódó fejezetek)
         hatások:               # kötelező, lista (strukturált hatások)
           - hatás: ""          # kötelező, hatás operátor id (hatas_operatorok.yaml)
             érték: 0           # opcionális, szám (operátor-függő)

@@ -136,6 +136,26 @@
       {
         "fok": 1,
         "alcím": "Hátrány-1",
+        "megjegyzések": [
+          {
+            "text": "Karma hátterek is okozhatnak Státusz változást."
+          },
+          {
+            "text": "Példa: Hiszékeny — Hátrány-1 Emberismeret próbára, átverős szituációkban (Befolyásolás+Hazudozás vs Emberismeret)."
+          },
+          {
+            "text": "Példa: Meggondolatlan — Hátrány-1 Önuralom próba; hajlamos vagy kockázatos döntéseket hozni, még akkor is, ha nincs rá szükség."
+          },
+          {
+            "text": "Példa: Paranoiás — folyamatosan gyanakszol másokra, és nehezen bízol meg bárkiben."
+          },
+          {
+            "text": "Példa: Irigy — nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni."
+          },
+          {
+            "text": "Átkozott (1) Érzékek esetén lásd az Érzékvesztés Státuszt."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -148,6 +168,11 @@
       {
         "fok": 2,
         "alcím": "Hátrány-2",
+        "megjegyzések": [
+          {
+            "text": "Átkozott (2) Érzékek esetén lásd az Érzékvesztés Státuszt."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -168,6 +193,11 @@
       {
         "fok": 1,
         "alcím": "Cselekvőképtelenség",
+        "megjegyzések": [
+          {
+            "text": "Beszélni még tudsz, és szellemi képességeket tudsz használni."
+          }
+        ],
         "hatások": [
           {
             "operátor": "letilt",
@@ -209,6 +239,11 @@
       {
         "fok": 1,
         "alcím": "Közepesen",
+        "megjegyzések": [
+          {
+            "text": "Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -249,6 +284,11 @@
       {
         "fok": 1,
         "alcím": "Bódultság",
+        "megjegyzések": [
+          {
+            "text": "Példa: sima részegség."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -297,6 +337,14 @@
       {
         "fok": 2,
         "alcím": "Kábultság",
+        "megjegyzések": [
+          {
+            "text": "Példa: pocsolya részegség."
+          },
+          {
+            "text": "A papok részegen is tudnak varázslást használni (at-will), más varázstudó nem."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -349,6 +397,11 @@
       {
         "fok": 3,
         "alcím": "Ájulás",
+        "megjegyzések": [
+          {
+            "text": "Az Antyssjárás ebben az állapotban is működik."
+          }
+        ],
         "hatások": [
           {
             "operátor": "letilt",
@@ -385,6 +438,14 @@
       {
         "fok": 4,
         "alcím": "Kóma",
+        "megjegyzések": [
+          {
+            "text": "Mint az Ájulásnál, továbbá automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy."
+          },
+          {
+            "text": "Az Antyss a valóságod; Antyssjárás képzettség nélkül haladni, cselekedni is alig tudsz."
+          }
+        ],
         "hatások": [
           {
             "operátor": "letilt",
@@ -438,6 +499,11 @@
       {
         "fok": 1,
         "alcím": "Zavart",
+        "megjegyzések": [
+          {
+            "text": "Alkategóriák: Látás, Hallás, Szaglás (a szabálykönyvben említett érzékek — a Tapintás/Ízlelés a webapp-kiterjesztés)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -479,6 +545,11 @@
       {
         "fok": 1,
         "alcím": "Szorongás",
+        "megjegyzések": [
+          {
+            "text": "Mi okozhatja? Nem bírja a stresszt; kezdő a harcban; meg lett félemlítve (pl. Befolyásolás+Félelemkeltés képzettség ellenpróbával, KM dönt)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "szöveges",
@@ -495,6 +566,11 @@
       {
         "fok": 2,
         "alcím": "Rettegés",
+        "megjegyzések": [
+          {
+            "text": "Csak mágia vagy démonok hatására érhető el."
+          }
+        ],
         "hatások": [
           {
             "operátor": "max_limit",
@@ -516,6 +592,11 @@
       {
         "fok": 3,
         "alcím": "Bénító félelem",
+        "megjegyzések": [
+          {
+            "text": "Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "letilt",
@@ -546,6 +627,11 @@
       {
         "fok": 1,
         "alcím": "Fáradtság",
+        "megjegyzések": [
+          {
+            "text": "Példák: napok óta nem aludtál; Edzettségedhez mérten elfáradtál hegymászás során; egy hete nem ettél."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -562,6 +648,14 @@
       {
         "fok": 2,
         "alcím": "Kimerültség",
+        "megjegyzések": [
+          {
+            "text": "Példák: már nem is emlékszel, mikor aludtál utoljára; összeverten menekülsz órák óta."
+          },
+          {
+            "text": "Kapcsolódik: Szívósság fortély."
+          }
+        ],
         "hatások": [
           {
             "operátor": "duplázás",
@@ -588,6 +682,14 @@
       {
         "fok": 3,
         "alcím": "Elcsigázottság",
+        "megjegyzések": [
+          {
+            "text": "Példa: éhhalál szélén tengődés."
+          },
+          {
+            "text": "Kapcsolódik: Szívósság fortély, Harci akrobatika fortély."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -633,6 +735,11 @@
       {
         "fok": 1,
         "alcím": "Fogékony",
+        "megjegyzések": [
+          {
+            "text": "A nem-mágikus érzékszervi, vagy érzelmi ingerek fokozottabban hatnak rád. Érzelmileg jobban megnyílsz — pozitív és negatív értelemben is."
+          }
+        ],
         "hatások": [
           {
             "operátor": "szöveges",
@@ -644,6 +751,11 @@
       {
         "fok": 2,
         "alcím": "Inspirált",
+        "megjegyzések": [
+          {
+            "text": "A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról."
+          }
+        ],
         "hatások": [
           {
             "operátor": "előny",
@@ -662,6 +774,11 @@
       {
         "fok": 3,
         "alcím": "Eufórikus",
+        "megjegyzések": [
+          {
+            "text": "A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására; ilyenkor túlzottan magabiztos, meggondolatlan döntéseket hozhat."
+          }
+        ],
         "hatások": [
           {
             "operátor": "előny",
@@ -680,6 +797,11 @@
       {
         "fok": 4,
         "alcím": "Obszesszív",
+        "megjegyzések": [
+          {
+            "text": "A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet."
+          }
+        ],
         "hatások": [
           {
             "operátor": "előny",
@@ -711,6 +833,14 @@
       {
         "fok": 1,
         "alcím": "Harag",
+        "megjegyzések": [
+          {
+            "text": "Aki Haragból harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör."
+          },
+          {
+            "text": "Ebben az állapotban a karakter használhatja a Kezdeményező Taktikát, de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb.)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "szöveges",
@@ -762,6 +892,17 @@
       {
         "fok": 1,
         "alcím": "Sugallat",
+        "megjegyzések": [
+          {
+            "text": "Akaraterő Tulajdonságpróbát kell dobni, hogy a karakter ellen tud-e állni a késztetésnek."
+          },
+          {
+            "text": "Példa: Kleptománia — \"El kéne lopni valamit...\""
+          },
+          {
+            "text": "Példa: Alkoholizmus (\"Igyak piát?\") — 1. fok: Akaraterő tulajdonságpróba (Nagyivó)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "szöveges",
@@ -773,6 +914,11 @@
       {
         "fok": 2,
         "alcím": "Vágy",
+        "megjegyzések": [
+          {
+            "text": "Példa: Alkoholizmus — 2. fok: Hátrány-1 (Alkoholista)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -785,6 +931,11 @@
       {
         "fok": 3,
         "alcím": "Kényszer",
+        "megjegyzések": [
+          {
+            "text": "Példa: Alkoholizmus — 3. fok: Hátrány-2 (Masszív alkoholista)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -860,6 +1011,11 @@
       {
         "fok": 1,
         "alcím": "S3",
+        "megjegyzések": [
+          {
+            "text": "Bővebben lásd a Sebesülés fejezetet (sérülés hatása Tulajdonság- és Képzettségpróbára)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -876,6 +1032,11 @@
       {
         "fok": 2,
         "alcím": "S4",
+        "megjegyzések": [
+          {
+            "text": "Bővebben lásd a Sebesülés fejezetet (sérülés hatása Tulajdonság- és Képzettségpróbára)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -892,6 +1053,11 @@
       {
         "fok": 3,
         "alcím": "Haldoklás",
+        "megjegyzések": [
+          {
+            "text": "Ha 0 ÉP értékre ér a karakter, haldoklani kezd — bővebben lásd a Haldoklás alfejezetet."
+          }
+        ],
         "hatások": [
           {
             "operátor": "letilt",
@@ -1005,6 +1171,11 @@
       {
         "fok": 1,
         "alcím": "Lélekrepedés",
+        "megjegyzések": [
+          {
+            "text": "Antyssjárás esetén a karakter \"rossz\" helyre kerül."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -1029,6 +1200,11 @@
       {
         "fok": 2,
         "alcím": "Lélektörés",
+        "megjegyzések": [
+          {
+            "text": "Antyssjárás esetén a karakter \"nagyon rossz\" helyre kerül."
+          }
+        ],
         "hatások": [
           {
             "operátor": "hátrány",
@@ -1061,6 +1237,14 @@
       {
         "fok": 1,
         "alcím": "Kizökkent",
+        "megjegyzések": [
+          {
+            "text": "A következő kör végéig tart."
+          },
+          {
+            "text": "Példa: ledöbbenés, stb."
+          }
+        ],
         "hatások": [
           {
             "operátor": "max_limit",
@@ -1093,6 +1277,14 @@
       {
         "fok": 2,
         "alcím": "Megrendült",
+        "megjegyzések": [
+          {
+            "text": "A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból ismert, \"stunned\"."
+          },
+          {
+            "text": "Példa: becsapó villámvarázs (ez okozhat más Státuszt is, mint például az Érzékvesztés, több érzékszervre is akár)."
+          }
+        ],
         "hatások": [
           {
             "operátor": "letilt",
@@ -1135,6 +1327,20 @@
       {
         "fok": 3,
         "alcím": "Sokk",
+        "megjegyzések": [
+          {
+            "text": "Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben a karakter nem képes részt venni."
+          },
+          {
+            "text": "Kijövetel: (20 - Önuralom) perc után enyhül 2. fokra."
+          },
+          {
+            "text": "Kihozni valakit: Emberismeret + Érzékenység Képzettségpróba, Célszám 12 (Nehéz) → siker enyhíti 2. fokra. Mágiával kihozva 1, 2 vagy 3 szintet enyhít."
+          },
+          {
+            "text": "Példák: természetes villám lecsap melléd; szakrális mágiák mellékhatása."
+          }
+        ],
         "hatások": [
           {
             "operátor": "letilt",
