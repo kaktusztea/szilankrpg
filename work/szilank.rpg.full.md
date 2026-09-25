@@ -14,7 +14,7 @@ Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepját�
 
 ## Filozófia
 
-A `Szilánk RPG` egy realitásra törekvő fantasy szerepjáték, amely mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk, a statisztikák kalkulálásában pedig egy fejlett [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) segít - így rendkívül egyedi, specializált végeredményt kaphatunk.
+A `Szilánk RPG` egy realitásra törekvő fantasy szerepjáték, amely mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk, a statisztikák kalkulálásában és a játék dobásaiban pedig egy fejlett [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) segít - így rendkívül egyedi, specializált végeredményt kaphatunk. A játék fejlesztésének hátteréről [itt találsz](md/000_attekintes.md) részleteket.
 
 Az első mindig a misztikus, kalandos történet hangulata és annak karakterei - a rendszer csak "másodhegedűs" - a mesélő keze alá dolgozik és fix kereteket biztosít. Az elképzelt közeg egy regényszerű, drámai szerepjátékot megvalósítható környezet, amit a háttérből erősen támogat a "szürke eminenciás" szabályrendszer. Ez a rendszer tág kereteket biztosít a kreativitásra, aztán viszont a háttérbe húzódik. A legjobb, ha a szabályok fonta "kerítés" olyan tág, hogy a játékos azt érzi, egy végtelen, rengeteg lehetőséget rejtő erdőben van, nem pedig egy kerítéssel bekerített fenyvesben. Az ilyen típusú rendszer veszélyesebb, mint egy narratív rendszer puhán körülölelő karjai, de talán magasabb szabadságérzetet is élhetünk át vele. Fontos, hogy ne kizárólag a kocka vezesse a kaland folyását - egy random rossz dobás ne okozza a karakter vesztét. A rendszer legyen a játékosokért és ne fordítva.
 
@@ -118,10 +118,10 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 
 ![](https://progress-bar.xyz/100/?title=Karakteralkotás%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/100/?title=K%C3%A9pzetts%C3%A9grendszer%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/98/?title=K%C3%A9pzetts%C3%A9gek%20%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/95/?title=Fort%C3%A9lyok%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/95/?title=H%C3%A1tterek%20%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/95/?title=Harcrendszer%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/95/?title=K%C3%A9pzetts%C3%A9gek%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/100/?title=Fort%C3%A9lyok%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/100/?title=H%C3%A1tterek%20%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/98/?title=Harcrendszer%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/85/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/90/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
@@ -509,15 +509,15 @@ Mielőtt belevágunk a szabályok ismertetésébe, a karakteralkotás folyamatá
 
 Adunk pár hasznos tanácsot is a szerepjáték során gyakran előforduló klasszikus hibák elkerülésére.
 
-Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel zárjuk a fejezetet.
+Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel és hasznos dokumentumokkal zárjuk a fejezetet.
 
 A szabályrendszer eredeti, hiteles forrása ezen URL alatt található: https://github.com/kaktusztea/szilankrpg/
 
-### [Történet](001_tortenet.md)
+### [A fejlesztés története](001_tortenet.md)
 
 ### [Fejlesztők, Tesztelők](002_fejlesztok.md)
 
-### [Bevezető](003_bevezeto.md)
+### [A szabályrendszer felépítése](003_felepites.md)
 
 ### [Szilánk RPG alrendszerei](004_alrendszerek.md)
 
@@ -704,16 +704,16 @@ Mittelholcz Iván
 
 ---
 
-🔗 [Bevezető](003_bevezeto.md) →
+🔗 [A szabályrendszer felépítése](003_felepites.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md)
 
 
 ---
 ---
-## File: md/003_bevezeto.md
+## File: md/003_felepites.md
 
-## Bevezető
+## A szabályrendszer felépítése
 
 Mit is találsz ebben a szabályrendszerben? Ha az elejéről sorban haladsz - és ez az ajánlott -, akkor elsőnek segítünk megalkotni a játékban megszemélyesített szereplődet a [Karakteralkotás](010_00_karakteralkotas.md) fejezetben.
 
@@ -22498,19 +22498,21 @@ Sikeres próba kell:
  Lopakodás/rejtőzés vs. Észlelés
 ```
 
-→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) - módosítók a leírásában
+→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) → módosítók a leírásában
 
 ```
-Áldozat
-  Közelharci VÉ (Puszta kézzel)
+Módosítók • csak az 1.támadásra!
 
-Bónuszok
-  Előny+2 TÉ dobásra
+ Áldozat
+   Közelharci VÉ (Puszta kézzel)
 
-  Orgyilkos fortély
-    1.fok: Előny+1 Sebzés dobásra, +1 SP
-    2.fok: Előny+1 Sebzés dobásra, +2 SP
-    3.fok: Előny+2 Sebzés dobásra, +3 SP
+ Támadó bónuszok
+   Előny+2 TÉ dobásra
+
+   Orgyilkos fortély
+     1.fok: Előny+1 Sebzés dobásra, +1 SP
+     2.fok: Előny+1 Sebzés dobásra, +2 SP
+     3.fok: Előny+2 Sebzés dobásra, +3 SP
 ```
 
 → ❌ Kizárja: Hátulról, Meglepetés, Lovas harc, Léglovas harc, Harci szekér
@@ -22519,7 +22521,7 @@ Bónuszok
 
 → Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅
 → Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
-→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak \
+→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak
 
 <br />
 
