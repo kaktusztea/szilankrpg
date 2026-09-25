@@ -7,6 +7,14 @@
 harci_helyzetek:
 - név: "Belharci helyzet"
   infó: "Közelharc harcmodor + max 0 pengehossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0."
+  megjegyzések:
+  - text: "Ha a képzett harcosnak sikerül ellenfele fegyvere mögé, testközelébe kerülni, ebből előnyt kovácsolhat."
+  - text: "A belharc magában foglalja a birkózást és a földharcot is."
+  - text: "Belharc 1.fok: KÉ+1, TÉ/VÉ+2. Belharc 2.fok: KÉ+2, TÉ/VÉ+4 (a Belharcos fortély bónuszai)."
+  - text: "Puszta kéz harcértékei belharcban 0-ra emelkednek (TÉ, VÉ, SP = 0), sebzés FP alapú, 1 ÉP / 5 FP."
+  - text: "Nem belharcos fegyverek TÉ/VÉ értéke 0-ra csökken, de a saját harcmodor értékei megmaradnak, és bármikor elejthetők."
+  - text: "Állatoknak általában van Belharcos fortélya."
+  - text: "Pajzsok belharcban minden pajzs TÉ/VÉ értéke Kis Pajzsnak számít."
   hatások: []
   id: "belharci_helyzet"
   csoport: "semleges"
@@ -21,6 +29,9 @@ harci_helyzetek:
       - { cél: "fegyver_VÉ", érték: 0, mód: "override" }
 - név: "Beszorított ellenfél"
   infó: "Előny+1 TÉ dobásra."
+  megjegyzések:
+  - text: "Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni."
+  - text: "Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt."
   hatások:
   - operátor: "előny"
     érték: 1
@@ -32,6 +43,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Csúszós talaj"
   infó: "Hátrány-1 Támadó dobásra."
+  megjegyzések:
+  - text: "Addig tart, amíg a csúszós felületen áll, mozog a karakter."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -46,6 +59,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Elvesztett egyensúly"
   infó: "Hátrány-1 Támadó dobásra, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja."
+  megjegyzések:
+  - text: "A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres Akrobatika képzettségpróbát dobsz Nehéz (12) célszám ellen."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -66,6 +81,15 @@ harci_helyzetek:
   kizár_helyzetek: ["magasabbról", "levegőből"]
 - név: "Fegyverrántás váratlanul"
   infó: "KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza."
+  megjegyzések:
+  - text: "Fegyvertelenül, harc közben, kör elején próbálod fegyvered előkapni, fegyveres ellenféllel szemben."
+  - text: "Kezdeményezésed fegyverméret módosítókkal (KM dönt): alapdobás Tőr méretű, Hátrány-1 Kard méretű, Hátrány-2 Csatabárd méretű."
+  - text: "Ha elveszíted a kezdeményezést: nem sikerül előrántanod fegyvered, Pusztakezes harcértékeddel küzdesz a kör végéig, visszatámadás helyett 1 támadás elhasználásával fegyvert húzhatsz próbadobás nélkül."
+  - text: "Ha megnyered a kezdeményezést: előrántottad fegyvered, teljes fegyveres harcértéked érvényesül, ellenfeled támad azonnal, utána visszatámadhatsz, nem veszítesz támadást."
+  - text: "Ha megnyered a kezdeményezést +3 túldobással: előrántottad fegyvered, teljes fegyveres harcértéked érvényesül, te támadsz azonnal."
+  - text: "Kör közben, Akció után: Harcmodor képzettségpróbát dobsz fegyverméret módosítókkal, célszám 12; sikeres esetén teljes harcértékeddel védekezhetsz, sikertelen esetén Pusztakezes harcértékeiddel a kör végéig."
+  - text: "Meglepetésből vagy észrevétlen fegyverrántásnál Előny+1 KÉ jár, és nyert kezdeményezés esetén a Meglepetés bónuszait is megkapod."
+  - text: "Nagy kétkezes fegyverek (szálfegyverek) esetén értelmetlen a fegyverrántás."
   hatások: []
   id: "fegyverrántás"
   csoport: "semleges"
@@ -74,6 +98,7 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Földön fekve"
   infó: "Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik."
+  megjegyzések: []
   hatások:
   - operátor: "hátrány"
     érték: -2
@@ -88,6 +113,9 @@ harci_helyzetek:
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "helyhez_kötve", "vé_kiterjesztés", "közrefogás"]
 - név: "Hajítás alkalmatlan fegyverrel"
   infó: "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli."
+  megjegyzések:
+  - text: "Példa: hosszú kard hajítása."
+  - text: "Mérsékelheti az Alkalmatlan fegyver hajítása fortély."
   hatások:
   - operátor: "hátrány"
     érték: -2
@@ -102,6 +130,10 @@ harci_helyzetek:
   kizár_helyzetek: ["hajítás_nem_dobásra_készített"]
 - név: "Hajítás nem dobásra készített tárgyakkal"
   infó: "Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli."
+  megjegyzések:
+  - text: "Példa: sámli hajítása."
+  - text: "Az SP a fegyver eredeti sebzése helyett -5+k20, ez FP vagy ÉP (KM dönt)."
+  - text: "Mérsékelheti az Alkalmatlan tárgyak hajítása fortély."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -116,6 +148,7 @@ harci_helyzetek:
   kizár_helyzetek: ["hajítás_alkalmatlan_fegyverrel"]
 - név: "Hátulról támadás"
   infó: "Előny+1 TÉ dobásra. Pajzs VÉ NEM számít."
+  megjegyzések: []
   hatások:
   - operátor: "előny"
     érték: 1
@@ -130,6 +163,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Helyhez kötve"
   infó: "Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik."
+  megjegyzések:
+  - text: "Enyhíti: Helyhez kötve fejlesztése fortély."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -144,6 +179,8 @@ harci_helyzetek:
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "levegőből"]
 - név: "Képzetlen fegyverhasználat"
   infó: "Harcmodor 3.szint alatti: lásd Harcmodor képzettség büntetések."
+  megjegyzések:
+  - text: "3.szint alatti kapcsolódó Harcmodor képzettségnél lép életbe."
   hatások: []
   id: "képzetlen_fegyverhasználat"
   csoport: "negatív"
@@ -153,6 +190,10 @@ harci_helyzetek:
 
 - név: "Közrefogás"
   infó: "Semlegesíti ellenfél Pengeelőnyét → Alappenge."
+  megjegyzések:
+  - text: "Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges Pengeelőny harci helyzetét."
+  - text: "Példa: két tőrös közrefog egy Hosszú kardost — a hosszú kardos Pengeelőny helyzetből Alappenge helyzetbe kerül."
+  - text: "Példa: két tőrös közrefog egy lándzsást — a lándzsás Pengeelőny helyzetből Alappenge helyzetbe kerül."
   hatások: []
   id: "közrefogás"
   csoport: "semleges"
@@ -161,6 +202,10 @@ harci_helyzetek:
   kizár_helyzetek: ["földön_fekve"]
 - név: "Láthatatlan - részlegesen"
   infó: "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott."
+  megjegyzések:
+  - text: "Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy."
+  - text: "Vakharc - félhomályban nullázza bónuszaidat, mert az ellenfél is rosszabbul lát."
+  - text: "Fárasztó Taktika NEM alkalmazható Láthatatlan ellenfél ellen."
   hatások:
   - operátor: "előny"
     érték: 1
@@ -178,6 +223,11 @@ harci_helyzetek:
   kizár_helyzetek: ["láthatatlan_teljesen"]
 - név: "Láthatatlan - teljesen"
   infó: "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott."
+  megjegyzések:
+  - text: "Látással, hallással nem vagy érzékelhető. Példa: teljes láthatatlanság és zajt sem keltesz."
+  - text: "Vakharc - sötétben nullázza bónuszaidat, mert te sem látsz."
+  - text: "Fárasztó Taktika NEM alkalmazható Láthatatlan ellenfél ellen."
+  - text: "Ha bármely érzékeléssel (Infra) meglátnak, elveszted előnyödet, vagy 1 fokot, vagy mind 2-t (helyzetfüggő)."
   hatások:
   - operátor: "előny"
     érték: 2
@@ -195,6 +245,9 @@ harci_helyzetek:
   kizár_helyzetek: ["láthatatlan_részlegesen"]
 - név: "Levegőből támadás"
   infó: "Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK."
+  megjegyzések:
+  - text: "Roham (zuhanás) külön, plusz számolandó."
+  - text: "Fárasztó taktika használható."
   hatások:
   - operátor: "előny"
     érték: 2
@@ -206,6 +259,11 @@ harci_helyzetek:
   kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "takarásban", "elvesztett_egyensúly"]
 - név: "Lények méret különbsége"
   infó: "Méretkülönbség [0-6] fokozat: +1 VÉ csökkentés / különbség."
+  megjegyzések:
+  - text: "Az egyes fajokat méret kategóriákba osztályozzuk: 1 Bögöly, 2 Erdőpille, 3 Goblin/Gnóm, 4 Ember/Törpe/Ork, 5 Ogár, 6 Wyvern, 7 Sárkány."
+  - text: "Minden egyes kategóriakülönbségnél a nagyobb lény +1 VÉ csökkentést okoz."
+  - text: "Példa: Goblin vs Ogár 2 kategória különbség — az Ogár +2 VÉ csökkentés bónuszt kap."
+  - text: "A Pengeméret-különbség és a lények méret különbsége két, egymás mellett működő szabály."
   hatások: []
   id: "méret_különbség"
   csoport: "negatív"
@@ -214,6 +272,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Magasabbról"
   infó: "Előny+1 TÉ dobásra."
+  megjegyzések:
+  - text: "Harc hátasról helyzetben NEM jár pluszban ez a módosító."
   hatások:
   - operátor: "előny"
     érték: 1
@@ -225,6 +285,12 @@ harci_helyzetek:
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "földön_fekve", "levegőből", "belharci_helyzet", "elvesztett_egyensúly", "harci_szekér"]
 - név: "Meglepetés"
   infó: "Előny+1 TÉ; VÉ csökkentés: +2"
+  megjegyzések:
+  - text: "Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor Meglepetésről beszélünk."
+  - text: "Pajzs VÉ csak akkor számít, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik."
+  - text: "Készületlen ellenfél = Meglepetés hatásai."
+  - text: "Alakzatot is meg lehet lepni: ilyen Észlelés szituációban az alakzat Csoportos szellemi Észlelés képzettségpróbát dob."
+  - text: "Ugyanez vonatkozik a Lopakodás/rejtőzés és észlelése szituációra is."
   hatások:
   - operátor: "előny"
     érték: 1
@@ -239,6 +305,18 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Orvtámadás"
   infó: "Előny+2 TÉ;  Áldozat VÉ: Közelharc Puszta kézzel"
+  megjegyzések:
+  - text: "Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás)."
+  - text: "Sikeres próba kell: Lopakodás/rejtőzés vs. Észlelés."
+  - text: "A módosítók csak az 1. támadásra vonatkoznak."
+  - text: "Áldozat oldalon: Közelharci VÉ (Puszta kézzel) számít."
+  - text: "Támadó bónuszok: Előny+2 TÉ dobásra."
+  - text: "Orgyilkos fortély 1.fok: Előny+1 Sebzés dobásra, +1 SP; 2.fok: Előny+1 Sebzés dobásra, +2 SP; 3.fok: Előny+2 Sebzés dobásra, +3 SP."
+  - text: "Egyéb TÉ bónusz nincs."
+  - text: "Harci taktikák NEM használhatóak."
+  - text: "Manőver: Precíz támadás használható (páncél megkerüléséhez)."
+  - text: "Manőver: Leütés hátulról, Rávetődés hátulról — követelményük az Orvtámadás helyzet."
+  - text: "Manőverek és Orvtámadás viszonya: Ellenpróba dobás csak."
   hatások:
   - operátor: "előny"
     érték: 2
@@ -250,6 +328,9 @@ harci_helyzetek:
   rejtett: false
 - név: "Pengeelőny"
   infó: "VÉ csökkentés: 2+k20T."
+  megjegyzések:
+  - text: "Fegyvered mérete legalább 1 pengével hosszabb ellenfeledénél."
+  - text: "Csak akkor kerül valaki Pengeelőnybe — és így a másik Pengehátrányba — ha ez a pengeméret különbség megvan."
   hatások: []
   id: "pengeelőny"
   csoport: "negatív"
@@ -258,6 +339,9 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Pengehátrány"
   infó: "VÉ csökkentés: k20T."
+  megjegyzések:
+  - text: "Fegyvered mérete legalább 1 pengével rövidebb ellenfeledénél."
+  - text: "A VÉ csökkentést tekintve hátrányban vagy az Alappengéhez képest, viszont vannak szituációk, mint a Fárasztó taktika, ahol korlátozó tényező lehet."
   hatások: []
   id: "pengehátrány"
   csoport: "negatív"
@@ -266,6 +350,10 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Pusztakezes harc"
   infó: "Negatív fegyver harcértékek. Természetes fegyver fortély segít."
+  megjegyzések:
+  - text: "Egy fegyvertelen harcos jelentős hátrányban van egy fegyveressel szemben, ezért negatívak a Puszta kéz harcértékei (KÉ: -3, TÉ: -3, VÉ: -3)."
+  - text: "Belharci helyzetben a Puszta kéz harcértékei 0-ra emelkednek, és járnak a Belharcból eredő esetleges módosítók is."
+  - text: "A Puszta kéz egykezes fegyvernek számít, tehát nem lehet vele Kétkezes harcot folytatni."
   hatások: []
   id: "pusztakezes_harc"
   csoport: "negatív"
@@ -274,6 +362,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Gyengébb kéz"
   infó: "Hátrány-1 Támadó dobásra. Kétkezesség fortély kioltja."
+  megjegyzések:
+  - text: "A Kétkezesség fortély megszünteti: bármelyik kezeddel levonás nélkül tudsz harcolni, de csak 1 fegyverrel."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -288,6 +378,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Vakharc - félhomályban"
   infó: "Hátrány-1 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli."
+  megjegyzések:
+  - text: "Mérsékli: Vakharc fejlesztése, Infralátás, Ultralátás fortélyok."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -299,6 +391,8 @@ harci_helyzetek:
   kizár_helyzetek: ["vakharc_sötétben"]
 - név: "Vakharc - sötétben"
   infó: "Hátrány-2 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli."
+  megjegyzések:
+  - text: "Mérsékli: Vakharc fejlesztése, Infralátás, Ultralátás fortélyok."
   hatások:
   - operátor: "hátrány"
     érték: -2
@@ -310,6 +404,9 @@ harci_helyzetek:
   kizár_helyzetek: ["vakharc_félhomály"]
 - név: "Tűz ruhán - ég"
   infó: "Hátrány-1 Támadó dobásra, (-5+k20) SP/kör. Eloltás: 1 kör."
+  megjegyzések:
+  - text: "Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet."
+  - text: "Megszűntetése (eloltás): harcban 1 kör, harcon kívül 1 kör."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -324,6 +421,9 @@ harci_helyzetek:
   kizár_helyzetek: ["tűz_ruhán_2"]
 - név: "Tűz ruhán - lángol"
   infó: "Hátrány-2 Támadó dobásra, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség."
+  megjegyzések:
+  - text: "Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér."
+  - text: "Megszűntetése (eloltás): harcban nem lehetséges, harcon kívül 2 kör, külső segítség szükséges."
   hatások:
   - operátor: "hátrány"
     érték: -2
@@ -338,6 +438,10 @@ harci_helyzetek:
   kizár_helyzetek: ["tűz_ruhán_1"]
 - név: "Vadállatok elleni harc"
   infó: "Informatív: Közelharc + Belharcos 2.fok bónuszai relevánsak."
+  megjegyzések:
+  - text: "Sokféle állat van, ezért nem lehet egységes szabályt alkotni."
+  - text: "Az állatok nagy része olyan harcmodort folytat, ami a Közelharc + Belharci helyzetnek felel meg leginkább."
+  - text: "Releváns: Harcmodor Közelharc, Manőver Belharcba kerülés, Belharcos fortély 2.fok bónuszai."
   hatások: []
   id: "vadállatok"
   csoport: "semleges"
@@ -346,6 +450,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Takarásban harcolás"
   infó: "Hátrány-1 TÉ, VÉ: +5."
+  megjegyzések:
+  - text: "Példa: kapu, belógó falrész mögül harcolsz."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -360,6 +466,9 @@ harci_helyzetek:
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "levegőből", "belharci_helyzet"]
 - név: "Védő Érték kiterjesztése másra"
   infó: "Többszörös támadás elvesztése, VÉ veszteség duplázódik. Testőr fortély mérsékli."
+  megjegyzések:
+  - text: "Ha társadat akarod védeni, kiterjesztheted rá Védő Értékedet."
+  - text: "A hátrányokat csökkentheted a Testőr fortély tanulásával."
   hatások:
   - operátor: "szöveges"
     cél: "támadások_száma"
@@ -374,6 +483,8 @@ harci_helyzetek:
   kizár_helyzetek: ["földön_fekve"]
 - név: "Vér elvakít"
   infó: "Hátrány-1 Támadó dobásra, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés."
+  megjegyzések:
+  - text: "Megszűntetése harcban: 1 támadás feláldozásáért kitörölheted szemedből a vért."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -392,6 +503,8 @@ harci_helyzetek:
 # --- Szituációk ---
 - név: "Lovas harc"
   infó: "Lóhátról harcolás. Lovas harc fortély bónuszok aktívak."
+  megjegyzések:
+  - text: "Lóhátról harcolás. A Lovas harc fortély bónuszai aktívak."
   hatások: []
   id: "lovas_harc"
   csoport: "pozitív"
@@ -401,6 +514,8 @@ harci_helyzetek:
   tiltott_fegyverfogások: ["fegyver_hárító", "kétkezes"]
 - név: "Léglovas harc"
   infó: "Repülő hátas hátáról harcolás. Léglovas harc fortély bónuszok aktívak."
+  megjegyzések:
+  - text: "Repülő hátas hátáról harcolás. A Léglovas harc fortély bónuszai aktívak."
   hatások: []
   id: "léglovas_harc"
   csoport: "pozitív"
@@ -410,6 +525,8 @@ harci_helyzetek:
   tiltott_fegyverfogások: ["fegyver_hárító", "kétkezes"]
 - név: "Harci szekér"
   infó: "Szekérről harcolás. Harci kocsihajtas fortély bónuszok aktívak."
+  megjegyzések:
+  - text: "Szekérről harcolás. A Harci kocsihajtás fortély bónuszai aktívak."
   hatások: []
   id: "harci_szekér"
   csoport: "pozitív"
@@ -418,6 +535,8 @@ harci_helyzetek:
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "magasabbról", "levegőből", "orvtámadás"]
 - név: "Páros harc"
   infó: "Koordinált 2 fős harc. Páros harc fortély bónuszok aktívak."
+  megjegyzések:
+  - text: "Koordinált 2 fős harc. A Páros harc fortély bónuszai aktívak."
   hatások: []
   id: "páros_harc"
   csoport: "pozitív"
@@ -426,6 +545,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Közönség előtt"
   infó: "Gladiátori harc közönség előtt. Gladiátor fortély bónuszok aktívak."
+  megjegyzések:
+  - text: "Gladiátori harc közönség előtt. A Gladiátor: Közönsége fortély bónuszai aktívak."
   hatások: []
   id: "közönség_előtt"
   csoport: "pozitív"
@@ -434,6 +555,8 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Szörnyeteg elleni harc"
   infó: "Bestia/szörny elleni küzdelem. Gladiátor fortély bónuszok aktívak."
+  megjegyzések:
+  - text: "Bestia/szörny elleni küzdelem. A Gladiátor: Bestiái fortély bónuszai aktívak."
   hatások: []
   id: "szörnyeteg_elleni_harc"
   csoport: "semleges"
@@ -443,6 +566,8 @@ harci_helyzetek:
 
 - név: "Lövés reflexből"
   infó: "Váratlan lövés/hajítás. Hátrány-1 CÉ dobásra. Lövés reflexből fejlesztése fortély kioltja."
+  megjegyzések:
+  - text: "Kioltja: Lövés reflexből fejlesztése fortély."
   hatások:
   - operátor: "hátrány"
     érték: -1
@@ -454,6 +579,7 @@ harci_helyzetek:
   kizár_helyzetek: []
 - név: "Nyílpuska újratöltés"
   infó: "Nyílpuskával csak minden 2. körben lehetséges lőni."
+  megjegyzések: []
   hatások:
   - operátor: "szöveges"
     cél: "támadások_száma"

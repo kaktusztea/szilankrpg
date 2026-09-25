@@ -126,6 +126,15 @@ def helyzet_fegyver_override(helyzet_id):
     return h.get("fegyver_override") if h else None
 
 
+def helyzet_megjegyzesek(helyzet_id):
+    """A helyzet `megjegyzések[]` narratív mezője — mondatok listája (str), a szabálykönyv
+    finomságaihoz (pl. 'csak az 1. támadásra'), amiket a strukturált `hatások[]` nem fed le."""
+    h = HARCI_HELYZETEK_RAW.get(helyzet_id)
+    if h is None:
+        return []
+    return [m["text"] for m in h.get("megjegyzések", [])]
+
+
 def manover_nehezseg(manover_id):
     m = MANOVEREK_RAW.get(manover_id)
     return m["nehézség"] if m else None
@@ -207,6 +216,12 @@ def selftest():
     t7 = n == 8 and "Túlerő" in hm
     print(f"  {'✔' if t7 else '✘ HIBA'}  T7  Mögékerülés nehézség={n}, 'Túlerő' kategória betöltve: {'Túlerő' in hm}")
     ok &= t7
+
+    # T8: Orvtámadás megjegyzések narratíva betöltve ("csak az 1. támadásra" finomítás)
+    mj = helyzet_megjegyzesek("orvtámadás")
+    t8 = any("1. támadásra" in txt for txt in mj)
+    print(f"  {'✔' if t8 else '✘ HIBA'}  T8  Orvtámadás megjegyzések ({len(mj)} sor), 'csak az 1. támadásra' megtalálva: {t8}")
+    ok &= t8
 
     print(f"\n{'MIND OK' if ok else 'HIBA VAN'}\n")
     return ok
