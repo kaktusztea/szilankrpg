@@ -6,9 +6,9 @@ Olyan fajú karakterrel játszol, amelynek bőre/héja páncélnak minősül.
 
 🔒 **Követelmény**:
 - [Faj Háttér](../021_faj_hatterek.md) ahol ajánlott fortély a **Természetes páncél** legalább `1.foka`
-- Példa: ⭕Faj Háttér: sáskaharcos
+- Példa: Faj Háttér: Sáskaharcos⭕
 
-🌟 `SFÉ: +3`⭕
+🌟 `SFÉ: +2`
 
 ---
 ### 2. fok
@@ -17,13 +17,13 @@ Olyan fajú karakterrel játszol, amelynek bőre/héja páncélnak minősül.
 - [Faj Háttér](../021_faj_hatterek.md) ahol ajánlott fortély a **Természetes páncél** legalább `2.foka`
 - Példa: ⭕Faj Háttér: xy
 
-🌟 `SFÉ: +6`⭕
+🌟 `SFÉ: +4`
 
 ---
 ### 3. fok
 
 🔒 **Követelmény**:
 - [Faj Háttér](../021_faj_hatterek.md) ahol ajánlott fortély a **Természetes páncél** legalább `3.foka`
-- Példa: ⭕Faj Háttér: gyíklény
+- Példa: Faj Háttér: Gyíklény⭕
 
-🌟 `SFÉ: +9`⭕
+🌟 `SFÉ: +6`
