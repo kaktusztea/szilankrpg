@@ -125,25 +125,9 @@ Visszahajló acélfalon felmászni.
 Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobást kell végezni (**Edzettség** Tulajdonsággal).
 
 ---
-### Rontott mászás próba után: Mentő képzettségpróba
+### Rontott mászás próba után
 
-Kiemelt szituáció a mászás próba rontása, hiszen itt sokszor élet-halál szituációban van a karakter - adnunk kell számára esélyt, hogy hibájából kikeveredjen. Ilyenkor azonnal egy új - soron kívüli - Mentő Mászás képzettségpróbát (sima, nem összetett) kell dobni **Edzettség** Tulajdonsággal:
-
-```
-Mentő dobás módosító: -3
-(rontás után)
-```
-
-#### Erő bevetése rontott mászás utáni mentő képzettségpróba dobásnál
-
-```
-+0 Erőig lehet lemenni
-   Mentő Mászás dobásnál
-```
-
-Az **Erő** Tulajdonság bevethető rontás utáni Mentő Mászás képzettségpróbánál. ilyenkor **Erő** Tulajdonságból pontokat tehetünk a próbába. Ennek hatására az **Erő** Tulajdonság - a költés mértékével - ideiglenesen lecsökken. Korlát: `+0` értékig csökkenthetjük így a Tulajdonságot.
-
-Az elköltött **Erő** pontok az aktuális mászó szituáció végéig nem térnek vissza. Pihenésben `1 pont / perc` tér vissza.
+Ha a rontott Mászás próba végzetes lenne, akkor természetesen [Mentődobásra](030_06_01_kepzettsegproba.md#mentődobás) vagy jogosult, aminek **Vállalás** dobását **Erő** Tulajdonsággal tudod megtámogatni.
 
 ---
 ### Megállás ÉS pihenés a falon rontás után

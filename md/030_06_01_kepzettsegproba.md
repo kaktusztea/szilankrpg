@@ -14,6 +14,7 @@ A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzón�
 - [Helyettesítés](#helyettesítés)
 - [Sérülés hatása képzettségpróbára](#sérülés-hatása-képzettségpróbára)
 - [Tulajdonság vs Képzettség ellenpróba](#tulajdonság-vs-képzettség-ellenpróba)
+- [Mentődobás](#mentődobás)
 - [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md)
 - [Csoportosan végezhető képzettségek listája](030_06_03_csoportosan_vegezheto_kepzettsegek.md)
 
@@ -313,6 +314,43 @@ Előfordulhat olyan furcsa helyzet, hogy a KM véleménye szerint egy szituáci�
 
 Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbálja vagy Tulajdonság ellenpróbába, vagy Képzettség ellenpróbába fordítani a szituációt. Ne bonyolítsunk feleslegesen.
 
+---
+## Mentődobás
+
+Ha egy olyan szituációban rontasz képzettségpróbát, ami végzetes hatású (**nem** Vállalás dobás hatására!), akkor jogosult vagy **Mentődobásra**.
+
+```
+Dobásmódosító: -3
+(az első rontás miatt)
+```
+
+### Vállalás dobásba forgatható Tulajdonság pontok
+
+Ha a Mentdobás során [Vállalást](#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba) is végzel, akkor annak választott értékébe (`1/2/3`) beforgatható egy konkrét **Tulajdonság** pontjaidnak `0` feletti része.
+
+- Minden beforgatott pont `1` vállalás-kritikus-rontás pontot semlegesít.
+- Az összes `0` feletti Tulajdonság pontod elhasználódik, akkor is, ha túcsordul a Vállalás értékén
+- KM mondja meg, melyik Tulajdonság használandó - lehet fizikai és szellemi is
+- Egy alapos pihenésig a "bevetett" Tulajdonság stabilan lecsökken `0` értékre (kimerülés)
+
+### Példa mentődobásra: Mászás képzettség
+
+Szituáció: Tetves rontott Mászás képzettségpróbát vét a szikla felénél - ez végzetes lenne. Ciki a helyzet, jön a Mentődobás.
+
+- Dobásmódosító: `-3` (az első próba rontása miatt)
+- Vállalás: a játékos bevállalja egészen a lehetséges Vállalás-maximumig: `+3`
+  - Ez "kinullázza" a `-3` alap büntetést, esélyei javulnak, talán megúszhatja
+  - ekkor `1,2,3` értékek okoznának végzetes hibát a Vállalás-dobáson
+- Erő: `+2`  → a játékos beveti `2` értékű Erő Tulajdonságát
+  - **Erő** értéke ez után `+0`-ra csökken - pihenésig
+- Mentő Képzettségdobás jön
+  - Siker: esetén jön a Vállalás dobás
+  - Sikertelen esetén: most már valóságos végzetes hiba történik
+- Vállalás dobás jön (`k6`)
+  - független a képzettség dobás eredményétől
+  - `1`: végzetes hiba
+  - `2,3`: a bevetett `2` Erő pont mérséklése miatt ezeknél nincs végzetes hiba (amúgy lenne)
+  - 
 ---
 
 🔗 [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) →
