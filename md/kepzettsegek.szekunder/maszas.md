@@ -127,7 +127,7 @@ Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#ö
 ---
 ### Rontott mászás próba után
 
-Ha a rontott Mászás próba végzetes lenne, akkor természetesen [Mentődobásra](030_06_01_kepzettsegproba.md#mentődobás) vagy jogosult, aminek **Vállalás** dobását **Erő** Tulajdonsággal tudod megtámogatni.
+Ha a rontott Mászás próba végzetes lenne, akkor természetesen [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás) vagy jogosult, aminek **Vállalás** dobását **Erő** Tulajdonsággal tudod megtámogatni.
 
 ---
 ### Megállás ÉS pihenés a falon rontás után

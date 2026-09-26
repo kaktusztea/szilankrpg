@@ -61,7 +61,7 @@ A zuhanás okozta sérüléseket a [Sebződés hatása](../064_02_08_sebzodes_ha
 ---
 ### ⚡Példa
 
-Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../kepzettsegek.szekunder/maszas.md#rontott-m%C3%A1sz%C3%A1s-pr%C3%B3ba-ut%C3%A1n-ment%C5%91-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) is, lehullik egy `4 méter` magas kiszögellésről. Szerencséjére egy füves susnyába érkezik (Nehézség módosító: `-3`).
+Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../030_06_01_kepzettsegproba.md#mentődobás) is, lehullik egy `4 méter` magas kiszögellésről. Szerencséjére egy füves susnyába érkezik (Nehézség módosító: `-3`).
 
 Tetves könnyű bőrvértet visel, ezért a KM `+2` büntetést ad az esés során dobott Akrobatika próbára.
 
