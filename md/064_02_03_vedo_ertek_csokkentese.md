@@ -15,17 +15,17 @@ Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegy
 ### ⚜️ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
 
 - Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20T`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20P`
 
 ### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 - A felek fegyverméreteinek különbsége kisebb `1 pengehossznál`
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20P`
 
 ### ⚜️ [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
 - Fegyverméret-különbség legalább `+1` pengehossz
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20P`
 - ⚡ Példa: **Hosszú kard**  vs. **Tőr**
 - ⚡ Példa: **Alabárd** vs **Hosszú kard**
 

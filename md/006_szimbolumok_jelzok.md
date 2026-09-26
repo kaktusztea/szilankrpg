@@ -24,7 +24,10 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🗡️ Harci taktika, Harci szituáció vagy Manőver
 
-`k20T`: `k20` dobás tízes része (`5 → 0,  16 → 1,  20 → 2`)
+`k20P`: `k20` páros/páratlan része
+- "egyes rész páratlan" → `0`
+- "egyes rész páros" → `1`
+- `10,20` dobott érték → `2`
 
 ✨ Mágia
 

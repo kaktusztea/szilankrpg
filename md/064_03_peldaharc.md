@@ -123,7 +123,7 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 ### 🔆Pengeméret
 
 - Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) harci helyzetben vannak.
-- Tehát sikertelen (nem sebző) támadások esetén `1 + k20T` értékkel csökkentik egymás **Védő Értékét**.
+- Tehát sikertelen (nem sebző) támadások esetén `1 + k20P` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
 

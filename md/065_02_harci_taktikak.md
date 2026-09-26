@@ -305,7 +305,7 @@ VÉ:+8, folyamatos hátrálás
 Nem támadhatsz, nem varázsolhatsz, VÉ csökkentés: 0
 
 Ellenfél VÉ csökkentése rajtad:
-  (1 + k20T)
+  (1 + k20P)
   + "Fárasztó taktika" bónusza
 ```
 
@@ -313,7 +313,7 @@ Ellenfél VÉ csökkentése rajtad:
 
 A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-🔆 A [lények méretkülönbségéből](065_01_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
+🔆 A [lények méretkülönbségéből](065_01_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20P` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 

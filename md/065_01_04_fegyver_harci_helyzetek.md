@@ -14,7 +14,7 @@ A `VÉ` csökkentést tekintve hátrányban vagy az **Alappengéhez** képest, v
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-k20T
+k20P
 ```
 
 ### Alappenge
@@ -24,7 +24,7 @@ Fegyvered azonos hosszú, vagy **nem** hosszabb legalább `1 pengével` ellenfel
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-1 + k20T
+1 + k20P
 ```
 
 ### Pengeelőny
@@ -34,7 +34,7 @@ Fegyvered mérete legalább `1 pengével` hosszabb ellenfeledénél. **Csak akko
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-2 + k20T
+2 + k20P
 ```
 
 <br />

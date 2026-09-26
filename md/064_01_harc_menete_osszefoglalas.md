@@ -91,33 +91,32 @@ Sebzés jellege
 ### 😵 VÉ csökkentés ( TÉ < VÉ )
 
 ```
-"k20T" rövidítés == k20 tízes része
+k20P == k20 egyes rész páratlan/páros
 
-Példák:
-   5  → 0
-  16  → 1
-  20  → 2
+0: 1,3,5,7,9,11,13,15,17,19
+1: 2,4,6,8,12,14,16,18
+2: 10,20
 ```
 
 #### [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
 
 ```
 VÉ csökkentés
-  k20T
+  k20P
 ```
 
 #### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 ```
 VÉ csökkentés
-  1 + k20T
+  1 + k20P
 ```
 
 #### [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
 ```
 VÉ csökkentés
-  2 + k20T
+  2 + k20P
 ```
 
 <br />
