@@ -200,7 +200,41 @@ MGT növekedés:
 
 ## Felszerelés MGT
 
-A páncél MGT mellett említsük meg a kapcsolódó [Felszerelés MGT](010_03_06_felszereles.md) fogalmát is, amely szintén harcot korlátozó tényező. Részleteit lásd az utóbbi linken.
+A páncél MGT mellett kapcsolódó érték a [Felszerelés MGT](010_03_06_felszereles.md), amely szintén harcot korlátozó tényező lehet.
+
+Az ott leírt **Felszerelés keretből** (`Erő+2`) levon pár pontot, ha páncélod legalább `50%`-ban fed - az alábbiak szerint:
+```
+1 pont: Könnyűvért 50%+ fedésben
+2 pont: Merevvért 50%+ fedésben
+        (pikkely, lemez)
+```
+
+A túlcsorduló Felszerelés pont további MGT hatást okozhat. Bővebben [lásd ott](010_03_06_felszereles.md).
+
+---
+## Hosszútávú viselet, barangolás páncélban
+
+Egy páncél viselete rövidtávon nem okoz problémát, de hosszútávú gyaloglás és viselet esetén már igen kimerítő és ez a csapat haladását is befolyásolhatja. Az ilyen felszerelés hosszútávú szállításához kíséret, fegyverhordozó, málhásállatok, szekér szükséges. A leírtak alacsony MGT értékkel kitűnő, magas minőségű vértekre is vonatkoznak!
+
+### `1.` Félvért, közepes pajzs tartós viselete, cipelése
+
+Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
+
+```
++ Státusz: Fizikai (1)
++ 1/2 távot tudsz megtenni naponta
+  Ez hátráltatja a csapatot.
+```
+
+### `2.` Teljes vért, Nagy pajzs
+
+```
++ Státusz: Fizikai (2)
++ 1/4 távot tudsz megtenni naponta.
+  Ez hátráltatja a csapatot.
+```
+
+Magasabb szinteken előfordulhatnak mágikus könnyítések, mint kisebb tárgyakká alakuló varázsfegyverek, páncélok.
 
 ---
 
