@@ -359,6 +359,13 @@
   opacity: 0.85;
 }
 
+.te-history-ve {
+  margin-left: 1px;
+  font-size: 10px;
+  opacity: 0.85;
+  color: #e08a8a;
+}
+
 /* Manőver trigger button (game mode, above weapon table) */
 .harc-manover-btn {
   display: block;
@@ -456,6 +463,34 @@
   font-size: 12px;
   font-weight: normal;
   color: var(--color-taktika);
+}
+
+.tamado-ve-csokkentes-btn {
+  padding: 10px 32px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.ve-csokkentes-btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.ve-csokkentes-fv-btn {
+  padding: 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
 }
 
 /* --- Sebzés bónusz section --- */

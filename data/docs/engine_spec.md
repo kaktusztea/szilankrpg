@@ -1166,8 +1166,8 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Megjegyzés |
 |---------|-----|------------|
-| Pengeelőny | pengeelőny | Fegyverméretből levezetett. VÉ csökk: 2+k20T. |
-| Pengehátrány | pengehátrány | Fegyverméretből levezetett. VÉ csökk: k20T. |
+| Pengeelőny | pengeelőny | Fegyverméretből levezetett. VÉ csökk: 2+k20P. |
+| Pengehátrány | pengehátrány | Fegyverméretből levezetett. VÉ csökk: k20P. |
 | Pusztakezes harc | pusztakezes_harc | Automatikus: fegyver=puszta kéz. KÉ/TÉ/VÉ: -3. |
 | Képzetlen fegyverhasználat | képzetlen_fegyverhasználat | Automatikus: harcmodor<3. |
 

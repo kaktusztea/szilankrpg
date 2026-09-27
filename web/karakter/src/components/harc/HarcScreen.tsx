@@ -87,7 +87,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     setShowTamadoDobas(true);
   }, []);
 
-  const handleTamadoClose = useCallback((eredmény: { té: number; sp?: number } | null) => {
+  const handleTamadoClose = useCallback((eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => {
     setShowTamadoDobas(false);
     if (eredmény !== null) {
       setSession(prev => ({
@@ -249,6 +249,8 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           sp={ctx?.result.SP ?? 0}
           átütés={ctx ? parseInt(lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.Átütés ?? '0') || 0 : 0}
           dobásInfo={collectDobásInfo(session, karakter, data)}
+          véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
+          onVéCsökkentés={(eredmény) => changeVé(Math.min(session.vé_csökkenés + eredmény.végső, hc.maxVéCsökk))}
           onClose={handleTamadoClose}
         />
       )}

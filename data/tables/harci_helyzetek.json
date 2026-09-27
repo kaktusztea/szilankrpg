@@ -657,7 +657,7 @@
   },
   {
     "név": "Pengeelőny",
-    "infó": "VÉ csökkentés: 2+k20T.",
+    "infó": "VÉ csökkentés: 2+k20P.",
     "megjegyzések": [
       {
         "text": "Fegyvered mérete legalább 1 pengével hosszabb ellenfeledénél."
@@ -676,7 +676,7 @@
   },
   {
     "név": "Pengehátrány",
-    "infó": "VÉ csökkentés: k20T.",
+    "infó": "VÉ csökkentés: k20P.",
     "megjegyzések": [
       {
         "text": "Fegyvered mérete legalább 1 pengével rövidebb ellenfeledénél."

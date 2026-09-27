@@ -28,4 +28,8 @@ describe('pushTéDobás', () => {
     const prev = [{ té: 65, sp: 9 }, { té: 58 }, { té: 67, sp: 12 }];
     expect(pushTéDobás(prev, { té: 70 })).toEqual([{ té: 70 }, { té: 65, sp: 9 }, { té: 58 }]);
   });
+
+  it('carries the veCsökkentés value when VÉ csökkentés lezárja a láncot (sebzés helyett)', () => {
+    expect(pushTéDobás([], { té: 47, veCsökkentés: 2 })).toEqual([{ té: 47, veCsökkentés: 2 }]);
+  });
 });

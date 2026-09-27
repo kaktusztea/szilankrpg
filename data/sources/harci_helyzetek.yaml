@@ -327,7 +327,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
 - név: "Pengeelőny"
-  infó: "VÉ csökkentés: 2+k20T."
+  infó: "VÉ csökkentés: 2+k20P."
   megjegyzések:
   - text: "Fegyvered mérete legalább 1 pengével hosszabb ellenfeledénél."
   - text: "Csak akkor kerül valaki Pengeelőnybe — és így a másik Pengehátrányba — ha ez a pengeméret különbség megvan."
@@ -338,7 +338,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Pengehátrány"
-  infó: "VÉ csökkentés: k20T."
+  infó: "VÉ csökkentés: k20P."
   megjegyzések:
   - text: "Fegyvered mérete legalább 1 pengével rövidebb ellenfeledénél."
   - text: "A VÉ csökkentést tekintve hátrányban vagy az Alappengéhez képest, viszont vannak szituációk, mint a Fárasztó taktika, ahol korlátozó tényező lehet."

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { rollDie, rollK20, rollK10, clampEHSzint } from './dice';
+import { rollDie, rollK20, rollK10, clampEHSzint, k20P } from './dice';
 
 describe('dice', () => {
   it('rollDie stays within [1, sides]', () => {
@@ -28,5 +28,14 @@ describe('dice', () => {
     expect(clampEHSzint(-2)).toBe(-2);
     expect(clampEHSzint(5)).toBe(2);
     expect(clampEHSzint(-7)).toBe(-2);
+  });
+
+  it('k20P: 10/20 → 2, páratlan → 0, páros → 1 (harcszimulacio.spec.md §4)', () => {
+    expect(k20P(10)).toBe(2);
+    expect(k20P(20)).toBe(2);
+    expect(k20P(5)).toBe(0);
+    expect(k20P(19)).toBe(0);
+    expect(k20P(16)).toBe(1);
+    expect(k20P(2)).toBe(1);
   });
 });

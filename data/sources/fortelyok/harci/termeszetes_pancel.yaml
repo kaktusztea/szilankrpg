@@ -29,10 +29,10 @@ fokok:
       - text: "Faj Háttér ahol ajánlott a Természetes páncél min. 1.fok."
     követelmények: ""
     hatástext:
-      - text: "SFÉ: +3"
+      - text: "SFÉ: +2"
     módosítók:
       - cél: "SFÉ"
-        érték: 3
+        érték: 2
         mód: "flat"
         forrás: ""
         arány: 0
@@ -42,10 +42,10 @@ fokok:
       - text: "Faj Háttér ahol ajánlott a Természetes páncél min. 2.fok."
     követelmények: ""
     hatástext:
-      - text: "SFÉ: +6"
+      - text: "SFÉ: +4"
     módosítók:
       - cél: "SFÉ"
-        érték: 6
+        érték: 4
         mód: "flat"
         forrás: ""
         arány: 0
@@ -55,10 +55,10 @@ fokok:
       - text: "Faj Háttér ahol ajánlott a Természetes páncél min. 3.fok."
     követelmények: ""
     hatástext:
-      - text: "SFÉ: +9"
+      - text: "SFÉ: +6"
     módosítók:
       - cél: "SFÉ"
-        érték: 9
+        érték: 6
         mód: "flat"
         forrás: ""
         arány: 0

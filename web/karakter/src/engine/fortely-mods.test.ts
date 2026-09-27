@@ -49,4 +49,23 @@ describe('calcFortelyMods', () => {
     const withoutAf = calcFortelyMods(karakter, session, data, new Set(), alwaysTrue);
     expect(withoutAf.SP).toBe(0);
   });
+
+  it('applies a flat SFÉ mod (Természetes páncél mintájára) — nincs kivétel-ág, generikus cél', () => {
+    const sfeData = {
+      fortelySummaries: [
+        { név: 'Természetes páncél', fokok: [
+          { fok: 1, módosítók: [{ cél: 'SFÉ', mód: 'flat', érték: 2, feltétel: '' }] },
+          { fok: 2, módosítók: [{ cél: 'SFÉ', mód: 'flat', érték: 4, feltétel: '' }] },
+          { fok: 3, módosítók: [{ cél: 'SFÉ', mód: 'flat', érték: 6, feltétel: '' }] },
+        ] },
+      ],
+    } as unknown as GameData;
+    const sfeKarakter = {
+      fortélyok: [{ név: 'Természetes páncél', fok: 2 }],
+      képzettségek: [],
+    } as unknown as Karakter;
+    const session = {} as unknown as Session;
+    const mods = calcFortelyMods(sfeKarakter, session, sfeData, new Set(), alwaysTrue);
+    expect(mods.SFÉ).toBe(4);   // csak a birtokolt fok (2) módosítója számít
+  });
 });

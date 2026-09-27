@@ -190,7 +190,7 @@ class Fegyver:
                     aktor=aktor_nev, tipus=a["sebzésjelleg"], forgatás=forg_cimke,
                     TE=te, VE=ve, SP=sp, AT=at, SEB=seb, erőbónusz_limit=ero_limit,
                     sebzestipus=sebzestipus, sebzes_hatrany=sebzes_hatrany,
-                    puha=a.get("puha", False),
+                    puha=a.get("puha", False), felszerelés_pont=h.get("felszerelés_pont", 0),
                 ))
         return eredmeny
 

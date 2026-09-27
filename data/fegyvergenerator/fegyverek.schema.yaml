@@ -35,7 +35,7 @@ teszt:
 
 # ── A `fegyver:` blokk almezői (WORK paraméterek) ──
 fegyver:
-  hossz:             {kötelező: true,  típus: int,  forrás: fegyverhossz, példa: 3, megjegyzés: "fegyverhossz-kategória; konstansok.yaml fegyverhossz kulcsai: 0,1,2,3,5,7,9,12"}
+  hossz:             {kötelező: true,  típus: int,  forrás: fegyverhossz, példa: 3, megjegyzés: "fegyverhossz-kategória; konstansok.yaml fegyverhossz kulcsai: 0,1,2,3,5,7,9,12. LEVEZETETT mezők a forgatásból: felszerelés_pont (0/1/2, md/068_01_13 — NEM önálló bemenő paraméter)"}
   aktorok:           {kötelező: true,  típus: list, elem_forrás: aktor, min: 1, példa: [vágóél-egyenes-átlagos, pengehegy-kard], megjegyzés: "sebzési felületek; ELSŐ = elsődleges, többi = másodlagos. Értékek: konstansok.yaml aktor"}
   pengés:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "pengés? (+1 TÉ/VÉ, +1 fejdarab, +1 SP)"}
   láncos:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "láncos fej? (+1 SP, +1 Sebesség)"}

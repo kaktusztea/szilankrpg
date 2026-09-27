@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { SebzesPopup } from './SebzesPopup';
+import { VeCsokkentesPopup } from './VeCsokkentesPopup';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from './combat-roll-info';
+import type { Fegyverviszony, VéCsökkentésEredmény } from './ve-csokkentes-calc';
 import { netElőnySzint } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 
@@ -27,7 +29,11 @@ interface Props {
   átütés?: number;
   /** Collected active effects on TÉ/Sebzés rolls */
   dobásInfo: DobásInfo;
-  onClose: (eredmény: { té: number; sp?: number } | null) => void;
+  /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázisértékek). */
+  véCsökkentésAlap: Record<Fegyverviszony, number>;
+  /** VÉ csökkentés eredmény alkalmazása (pl. `session.vé_csökkenés` növelése). */
+  onVéCsökkentés: (eredmény: VéCsökkentésEredmény) => void;
+  onClose: (eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => void;
 }
 
 interface TéEredmény {
@@ -41,10 +47,11 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
   const [téResult, setTéResult] = useState<TéEredmény | null>(null);
   const [showSebzés, setShowSebzés] = useState(false);
+  const [showVéCsökkentés, setShowVéCsökkentés] = useState(false);
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
@@ -70,6 +77,23 @@ export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, onClose }: Pr
         megjegyzések={dobásInfo.sebzésMegjegyzések}
         átütés={átütés}
         onClose={(spEredmény) => onClose(téResult ? { té: téResult.eredmény, sp: spEredmény } : null)}
+      />
+    );
+  }
+
+  if (showVéCsökkentés) {
+    return (
+      <VeCsokkentesPopup
+        k20={k20Érték}
+        alapTáblázat={véCsökkentésAlap}
+        onClose={(eredmény) => {
+          if (eredmény) {
+            onVéCsökkentés(eredmény);
+            onClose(téResult ? { té: téResult.eredmény, veCsökkentés: eredmény.végső } : null);
+          } else {
+            setShowVéCsökkentés(false);
+          }
+        }}
       />
     );
   }
@@ -112,6 +136,9 @@ export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, onClose }: Pr
             <button className="tamado-sebzes-btn" onClick={() => setShowSebzés(true)}>
               Sebzés
               {sebzésElőny > 0 && <span className="tamado-sebzes-btn-hint">Előny+{sebzésElőny}</span>}
+            </button>
+            <button className="tamado-ve-csokkentes-btn" onClick={() => setShowVéCsökkentés(true)}>
+              VÉ csökkentés
             </button>
           </>
         )}

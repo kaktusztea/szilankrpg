@@ -18,7 +18,6 @@
 | Ember (Szigetvilági) | Faj háttér hozzáadása (slan helyett) | — |
 | **Fegyver Idea implementáció** 🐞 | `fegyverek[].idea` `[-5;+5]` → TÉ/CÉ/VÉ/SP módosító (`md/068_01_14`). A mező létezik és szerializálódik, de EGYETLEN kalkuláció sem használja | harcszimulacio.spec §16/8 |
 | Akadályoztatás státuszok | `Fegyver/Pajzs akadályoztatása`, `Páncél akadályoztatása` — `md/082`-ben definiált, `statuszok.yaml`-ban nincs | harcszimulacio.spec §16/9 |
-| `k20T` forrás döntés | Sikertelen támadás VÉ csökkentése: a támadódobás k20-a, vagy külön dobás? Nincs kimondva | harcszimulacio.spec §13.1 |
 | Fárasztás érték data layerbe | A `3 VÉ` csak `megjegyzés` prózában él (`módosítók: {}`) — séma-bővítés kell | harcszimulacio.spec §16/2 |
 | MK párok ellenőrzése | `Kard, Slan` és `Mara-sequor` nem követi a `TÉ-2/VÉ-2 + Átütés megszűnik` MK szabályt. Szándékos? | harcszimulacio.spec §16/10 |
 | **Egységes effekt-modell** | A fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia). 1. fázis kész (szabvány + `extrak.yaml` pilot); 2. adat-migráció opportunista; 3. kód-összeolvasztás a reactive runtime effekt-fázisnál. | §42 |

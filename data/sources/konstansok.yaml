@@ -598,6 +598,13 @@ hm_aszimmetria_osztó: 2
 vé_csökkentés_gombok: [1, 2, 3]
 taktika_vé_eltolás_limit: 10
 
+# Sikertelen támadás VÉ csökkentésének bázisértéke Fegyverviszony szerint
+# (harcszimulacio.spec.md §5.3 — a k20P a kódban adódik hozzá, nem itt).
+vé_csökkentés_alap:
+  fegyverhátrány: 0
+  fegyverazonosság: 1
+  fegyverelőny: 2
+
 # ============================================================
 # Skálázható taktikák: Harcmodor szint → abszolút max fok korlát
 # A "skálázható: true" taktikáknál a felső korlát erre a fokra nő

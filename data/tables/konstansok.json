@@ -799,6 +799,11 @@
     3
   ],
   "taktika_vé_eltolás_limit": 10,
+  "vé_csökkentés_alap": {
+    "fegyverhátrány": 0,
+    "fegyverazonosság": 1,
+    "fegyverelőny": 2
+  },
   "skálázható_taktika_max_fok": [
     {
       "szint": 6,

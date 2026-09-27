@@ -222,7 +222,7 @@ taktikák:
   fokozatos: false
   módosítók:
     VÉ: 8
-  megjegyzés: "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20T."
+  megjegyzés: "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20P."
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null

@@ -63,3 +63,13 @@ export function rollElőnyHátrányK6(szint: number): ProbaDobás {
 export function rollElőnyHátrányK20(szint: number): ProbaDobás {
   return rollElőnyHátrányDie(szint, 20);
 }
+
+/**
+ * k20P: a k20 páros/páratlan része (harcszimulacio.spec.md §4, §13.1 — 2026-09-26 döntés).
+ * `10`/`20` → 2, egyébként páratlan → 0, páros → 1. A sikertelen támadás VÉ csökkentésének
+ * kockatagja — mindig a már eldobott támadó k20-ból jön (közös kocka), nincs külön dobás.
+ */
+export function k20P(r: number): number {
+  if (r === 10 || r === 20) return 2;
+  return r % 2 === 1 ? 0 : 1;
+}

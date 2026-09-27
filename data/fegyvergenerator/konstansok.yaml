@@ -3,16 +3,19 @@
 # FIGYELEM: tervezői eszköz adata, NEM a data/sources pipeline része (a generate_tables.py
 # csak a data/sources/ könyvtárat dolgozza fel — ez a mappa kimarad).
 
-# fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható (Felszerelés-logisztika, ADR.felszereles)
+# fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható, felszerelés_pont
+#   felszerelés_pont: a data/docs/010_03_06_felszereles.md Felszerelés-terhelése (0/1/2 pont);
+#   md/068_01_13_fegyver_mozgasgatlo_hatasa.md szerint KIZÁRÓLAG a forgatás-kategóriától függ
+#   (Másfélkezes kard → 1, Kétkezes kard → 2, egykezes → 0 — a "súly" tengely NEM számít bele).
 fegyverhossz:
-  0:  {TÉ: 0,  VÉ: 0,  SP: 0, sebesség: 5, forgatás: egykezes, övön_hordható: true}
-  1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes, övön_hordható: true}
-  2:  {TÉ: 2,  VÉ: 2,  SP: 2, sebesség: 5, forgatás: egykezes, övön_hordható: true}
-  3:  {TÉ: 3,  VÉ: 3,  SP: 3, sebesség: 6, forgatás: egykezes}
-  5:  {TÉ: 5,  VÉ: 5,  SP: 4, sebesség: 6, forgatás: másfélkezes}
-  7:  {TÉ: 7,  VÉ: 7,  SP: 5, sebesség: 7, forgatás: kétkezes, extrak: [beszorithato]}
-  9:  {TÉ: 9,  VÉ: 9,  SP: 5, sebesség: 8, forgatás: kétkezes, extrak: [beszorithato]}
-  12: {TÉ: 12, VÉ: 12, SP: 5, sebesség: 9, forgatás: kétkezes}
+  0:  {TÉ: 0,  VÉ: 0,  SP: 0, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
+  1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
+  2:  {TÉ: 2,  VÉ: 2,  SP: 2, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
+  3:  {TÉ: 3,  VÉ: 3,  SP: 3, sebesség: 6, forgatás: egykezes,    felszerelés_pont: 0}
+  5:  {TÉ: 5,  VÉ: 5,  SP: 4, sebesség: 6, forgatás: másfélkezes, felszerelés_pont: 1}
+  7:  {TÉ: 7,  VÉ: 7,  SP: 5, sebesség: 7, forgatás: kétkezes,    felszerelés_pont: 2, extrak: [beszorithato]}
+  9:  {TÉ: 9,  VÉ: 9,  SP: 5, sebesség: 8, forgatás: kétkezes,    felszerelés_pont: 2, extrak: [beszorithato]}
+  12: {TÉ: 12, VÉ: 12, SP: 5, sebesség: 9, forgatás: kétkezes,    felszerelés_pont: 2}
 
 # aktor: név -> sebzésjelleg, SP, átütés, TÉ, VÉ, sebesség
 aktor:

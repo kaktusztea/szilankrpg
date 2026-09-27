@@ -114,10 +114,11 @@ export interface Session {
   té_dobások: TéDobás[];
 }
 
-/** Egy Támadó dobás naplóbejegyzés: TÉ eredmény + opcionális Sebzés (SP) eredmény, ha sebzésdobás követte. */
+/** Egy Támadó dobás naplóbejegyzés: TÉ eredmény + opcionális Sebzés (SP) és/vagy VÉ csökkentés eredmény. */
 export interface TéDobás {
   té: number;
   sp?: number;
+  veCsökkentés?: number;
 }
 
 export interface NarratívMódosító {
