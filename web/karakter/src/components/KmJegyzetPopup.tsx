@@ -9,10 +9,12 @@ interface Props {
   jegyzet: string;
   onSave: (jegyzet: string) => void;
   onClose: () => void;
+  /** Ha adott, "Váltás a karakterre" gomb jelenik meg alul (nem az aktív NJK jegyzetéhez). */
+  onVáltás?: () => void;
 }
 
 /** KM harci jegyzet popup: kis textarea egy NJK jelöléséhez. Mentés bezáráskor. */
-export function KmJegyzetPopup({ betű, szín, név, jegyzet, onSave, onClose }: Props) {
+export function KmJegyzetPopup({ betű, szín, név, jegyzet, onSave, onClose, onVáltás }: Props) {
   const [szöveg, setSzöveg] = useState(jegyzet);
   const zár = () => { onSave(szöveg.trim()); onClose(); };
 
@@ -30,6 +32,11 @@ export function KmJegyzetPopup({ betű, szín, név, jegyzet, onSave, onClose }:
           autoFocus
           onChange={e => setSzöveg(e.target.value)}
         />
+        {onVáltás && (
+          <button className="km-jegyzet-váltás-btn" onClick={() => { zár(); onVáltás(); }}>
+            Váltás a karakterre
+          </button>
+        )}
       </div>
     </PopupOverlay>
   );

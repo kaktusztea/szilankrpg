@@ -123,6 +123,7 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
             writeKmJelölés(jegyzetNjk.uid, { betű: jegyzetJel.betű, szín: jegyzetJel.szín, jegyzet });
             rerender(n => n + 1);
           }}
+          onVáltás={jegyzetNjk.uid !== aktív.uid ? () => váltás(jegyzetNjk.uid) : undefined}
         />
       )}
     </div>
