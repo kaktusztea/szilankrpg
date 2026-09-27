@@ -195,9 +195,9 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 ### Alakzat VÉ csökkentése (fix értékek)
 
 ```
-3 VÉ: Alakzat Pengehátrányban
-3 VÉ: Alakzat Alappengénél
-4 VÉ: Alakzat Pengeelőnyben
+3 VÉ: Alakzat Fegyverhátrányban
+3 VÉ: Alakzat Fegyverazonosságnál
+4 VÉ: Alakzat Fegyverelőnyben
 ```
 
 ### Túlerő módosítója

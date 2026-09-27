@@ -139,7 +139,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 
 **🟥 Erős követelmény**
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
-- egyik ellenfeled sem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben
+- egyik ellenfeled sem lehet [Fegyverelőnyben](065_01_04_fegyver_harci_helyzetek.md#fegyverelőny) veled szemben
 
 ❌ VÉ csökkentést az így végrehajtott támadás **NEM** okoz.
 
@@ -156,7 +156,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
   - ± **Erő** különbség
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény: Aktuális harcmodor - `5.szint`
-- 🟥 Erős követelmény: Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben
+- 🟥 Erős követelmény: Ellenfeled nem lehet [Fegyverelőnyben](065_01_04_fegyver_harci_helyzetek.md#fegyverelőny) veled szemben
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
@@ -437,7 +437,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás* Ellenpróba`
 - 🟨 Normál követelmény: Harcmodor - `5.szint`
-- 🟥 Erős követelmény: [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
+- 🟥 Erős követelmény: [Fegyverelőny](065_01_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
 **Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 

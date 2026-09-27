@@ -98,21 +98,21 @@ k20P == k20 egyes része páratlan/páros/nullás
 2: 10,20
 ```
 
-#### [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
+#### [Fegyverhátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverhátrány)
 
 ```
 VÉ csökkentés
   k20P
 ```
 
-#### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
+#### [Fegyverazonosság](065_01_04_fegyver_harci_helyzetek.md#fegyverazonosság)
 
 ```
 VÉ csökkentés
   1 + k20P
 ```
 
-#### [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
+#### [Fegyverelőny](065_01_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
 ```
 VÉ csökkentés
@@ -167,7 +167,7 @@ Fárasztó taktika alkalmazásakor:
 • nincs támadó dobás, nincs Sebzés
 • 3 VÉ csökkentés
    +1: Fárasztás fortély
-   +1: Pengeelőnyben
+   +1: Fegyverelőnyben
 ```
 
 Lásd: [Sebzés](064_02_07_sebzes.md)

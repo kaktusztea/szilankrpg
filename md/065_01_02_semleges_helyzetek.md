@@ -136,21 +136,21 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás.
 ---
 ## Közrefogás
 
-Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Pengeelőny** harci helyzetét.
+Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Fegyverelőny** harci helyzetét.
 
 ❌ Kizárja: Földön fekve
 
 ### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
 
 A hosszú kardos
-- "Pengeelőny" helyzetből
-- "Alappenge" helyzetbe kerül
+- "Fegyverelőny" helyzetből
+- "Fegyverazonosság" helyzetbe kerül
 
 ### ⚡Példa: Két tőrös közrefog egy lándzsást
 
 A lándzsás
-- "Pengeelőny" helyzetből
-- "Alappenge" helyzetbe kerül
+- "Fegyverelőny" helyzetből
+- "Fegyverazonosság" helyzetbe kerül
 
 <br />
 
