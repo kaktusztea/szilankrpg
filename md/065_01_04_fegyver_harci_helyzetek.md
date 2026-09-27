@@ -2,9 +2,9 @@
 
 Fegyver-specifikus harci helyzetek (státuszok).
 
-## Fegyverméret
+## Fegyverviszony
 
-A felek által forgatott fegyverek méretének viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket.
+A felek által forgatott fegyverek hosszának egymáshoz mért viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket. Tehát a VÉ csökkentés esetén igaz a "*A hosszabb fegyver jobb*" mondás - de ne feledjük, más-más szituációkban előnybe kerülhetnek a rövidebb fegyverek is.
 
 ### Pengehátrány
 

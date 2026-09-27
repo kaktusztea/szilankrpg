@@ -91,7 +91,7 @@ Sebzés jellege
 ### 😵 VÉ csökkentés ( TÉ < VÉ )
 
 ```
-k20P == k20 egyes rész páratlan/páros
+k20P == k20 egyes része páratlan/páros/nullás
 
 0: 1,3,5,7,9,11,13,15,17,19
 1: 2,4,6,8,12,14,16,18
