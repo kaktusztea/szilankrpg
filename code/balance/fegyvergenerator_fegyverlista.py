@@ -28,7 +28,7 @@ F = bal.Fegyver
 FEGYVERHOSSZ = bal.FEGYVERHOSSZ
 
 # (kategória, megjelenített név, Fegyver, megjegyzés)
-# WORK paraméterek: data/fegyvergenerator/fegyverek.yaml (a `kategória` mezővel bíró rekordok)
+# WORK paraméterek: data/sources/fegyverek/fegyverek.yaml (a `kategória` mezővel bíró rekordok)
 _EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
 
 
@@ -108,7 +108,7 @@ GEN_CMD = "python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyver
 
 INTRO = """> ⚠️ **AUTOMATIKUSAN GENERÁLT OLDAL — kézzel NE szerkeszd.**
 >
-> Generálva: `{datum}` · Forrás: `data/fegyvergenerator/*.yaml`
+> Generálva: `{datum}` · Forrás: `data/sources/fegyverek/*.yaml`
 
 Előállító parancs (`szilank.code` repóból):
 

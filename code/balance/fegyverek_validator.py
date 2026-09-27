@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A data/fegyvergenerator/fegyverek.yaml validálása a fegyverek.schema.yaml alapján.
+"""A data/sources/fegyverek/fegyverek.yaml validálása a fegyverek.schema.yaml alapján.
 
 Ellenőriz:
   - kötelező mezők megléte, ismeretlen mezők tiltása (top-level ÉS a `fegyver` blokk)
@@ -19,7 +19,7 @@ import sys
 
 import yaml
 
-DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "fegyvergenerator"
+DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "sources" / "fegyverek"
 
 
 def _load(nev):

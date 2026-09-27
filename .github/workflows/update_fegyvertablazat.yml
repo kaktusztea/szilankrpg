@@ -1,12 +1,16 @@
-name: Update Fegyverek json
+name: Update Fegyvertáblázat (Fegyvergenerátor v2)
 
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - 'segedlet/*'
+    paths:
+      - 'data/sources/fegyverek/**.yaml'
+      - 'data/sources/fegyverek/fegyverek_fixed.json'
   pull_request:
     branches: [ master ]
+    paths:
+      - 'data/sources/fegyverek/**.yaml'
+      - 'data/sources/fegyverek/fegyverek_fixed.json'
 
 jobs:
   run-script:
@@ -24,12 +28,10 @@ jobs:
     - name: Install Python Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install natsort
-        # Install dependencies if requirements.txt exists
-        # if [ -f "requirements.txt" ]; then pip install -r requirements.txt; fi
+        pip install pyyaml
 
-    - name: Execute process_fegyverek.py
-      run: python code/process_fegyverek.py
+    - name: Execute sync_fegyvertablazat_kozelharci.py
+      run: python code/sync_fegyvertablazat_kozelharci.py
 
     - name: Check for Changes
       run: |
@@ -49,7 +51,7 @@ jobs:
       if: ${{ env.files_modified == 'true' }}
       run: |
         git add .
-        git commit -m "GitHub Action: process_fegyverek.py"
+        git commit -m "GitHub Action: sync_fegyvertablazat_kozelharci.py"
 
     - name: Push Changes
       if: ${{ env.files_modified == 'true' }}

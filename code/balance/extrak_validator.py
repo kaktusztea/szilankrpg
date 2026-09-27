@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A data/fegyvergenerator/extrak.yaml validálása az extrak.schema.yaml alapján.
+"""A data/sources/fegyverek/extrak.yaml validálása az extrak.schema.yaml alapján.
 
 Az egységes effekt-modell (engine_spec.md §42) vokabulárját ellenőrzi:
   - rekord: kötelező/ismeretlen mezők, csoport enum
@@ -17,7 +17,7 @@ import sys
 
 import yaml
 
-DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "fegyvergenerator"
+DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "sources" / "fegyverek"
 
 
 def _load(nev):

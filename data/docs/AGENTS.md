@@ -66,7 +66,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 ### YAML naming-convention (build-gate)
 - **Kulcsok és kanonikus azonosító-értékek**: minden betű-futam vagy csupa NAGY (mozaikszó: `TÉ`, `VÉ`, `SP`, `KÉ`, `SFÉ`, `MGT`, `HM`…) VAGY csupa kicsi. A nem-mozaikszó tokenek csupa kisbetűsek (`sebesség`, `átütés`, `sebzésjelleg`, `forgatás`). Mozaikszó+szó összetétel OK: `SP_override`, `TÉ_büntetés_csökkentés`, `HM_TÉ`.
 - **Proper entitás-nevek KIVÉTEL** (jogosan Nagy-kezdőbetűsek, mint a fegyver-/faj-nevek): a `név`/`kat`/`alapnév` értékek, a `prefix:Név` referenciák név-része (pl. `cél: "fortély:Mesterfegyver"`), és a név-kulcsú fájlok top-level kulcsai (`szituacio_mapping.yaml` → képzettség-nevek).
-- **Gépi ellenőrzés**: `data/gen/naming_lint.py` → a `generate_tables.py` build-gate-je, a `data/sources` ÉS `data/fegyvergenerator` yaml fájljaira. Sértés → build hiba. Önállóan: `python3 data/gen/naming_lint.py`. Új kivétel kell? → a `naming_lint.py` `NAME_KEYED_FILES` / `NAME_VALUE_KEYS` listái.
+- **Gépi ellenőrzés**: `data/gen/naming_lint.py` → a `generate_tables.py` build-gate-je, a `data/sources` yaml fájljaira (a fegyvergenerátor `data/sources/fegyverek/` almappáját is beleértve). Sértés → build hiba. Önállóan: `python3 data/gen/naming_lint.py`. Új kivétel kell? → a `naming_lint.py` `NAME_KEYED_FILES` / `NAME_VALUE_KEYS` listái.
 
 ### UI konvenciók
 - CSS class (prefix: `he-`, `aktiv-`, `naplo-`, stb.) — NEM inline style

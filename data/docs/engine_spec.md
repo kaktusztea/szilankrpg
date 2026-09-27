@@ -3792,7 +3792,7 @@ Két effekt-rendszer él párhuzamosan, részben átfedő, részben szétosztott
 
 **Átfedés**: az „előny/hátrány", `szöveges`, `enyhít` fogalom MINDKÉT rendszerben szerepel (duplikáció).
 **Szétosztás**: a `szorzó` csak a hatás-operátornál, a `flat`/`override`/`scaled` csak a fortély-módosítónál.
-Egy új effekt-forrás (pl. `data/fegyvergenerator/extrak.yaml`) emiatt kénytelen MINDKETTŐBŐL meríteni.
+Egy új effekt-forrás (pl. `data/sources/fegyverek/extrak.yaml`) emiatt kénytelen MINDKETTŐBŐL meríteni.
 
 **Cél**: EGY közös effekt-nyelvtan (alak + mód-enum + precedencia), amit minden forrás használ (fortély,
 státusz, harci helyzet, extra). A KÓD egyesítése (egyetlen kiértékelő) a reactive engine runtime

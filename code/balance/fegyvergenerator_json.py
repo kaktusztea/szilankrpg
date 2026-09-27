@@ -11,7 +11,7 @@ kompatibilitás.
 Kimenet: {fegyver mezők} + módok: [ {aktor, jelleg, sebzéstípus, TÉ, VÉ, SP, Átütés,
 Sebesség, Forgatás, Erőlimit, FP}, ... ]. Erő=0 bázisérték (mint a fegyverlista.py).
 
-Futtatás:  python3 code/balance/fegyvergenerator_json.py > data/fegyvergenerator/fegyverek.generated.json
+Futtatás:  python3 code/balance/fegyvergenerator_json.py > data/sources/fegyverek/fegyverek.generated.json
 
 FIGYELEM: tervezői eszköz, NEM a build pipeline (generate_tables.py) része — a webapp
 jelenleg nem olvassa ezt a fájlt. A bekötés (data-loader.ts, types.ts, fegyver-calc.ts

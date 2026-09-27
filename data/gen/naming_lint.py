@@ -77,10 +77,10 @@ if __name__ == "__main__":
     import sys
     _here = os.path.dirname(os.path.abspath(__file__))          # data/gen
     _data = os.path.dirname(_here)                              # data
-    errs = lint([os.path.join(_data, "sources"), os.path.join(_data, "fegyvergenerator")])
+    errs = lint([os.path.join(_data, "sources")])
     if errs:
         print(f"❌ {len(errs)} naming-convention hiba:")
         for e in errs:
             print(f"   {e}")
         sys.exit(1)
-    print("✅ naming-convention: OK (data/sources + data/fegyvergenerator)")
+    print("✅ naming-convention: OK (data/sources)")

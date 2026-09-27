@@ -29,10 +29,10 @@ import pathlib
 import yaml
 
 # ─────────────────────────────────────────────────────────────────────────────
-# ADAT BETÖLTÉS — minden paraméter a data/fegyvergenerator/ YAML-okból jön.
+# ADAT BETÖLTÉS — minden paraméter a data/sources/fegyverek/ YAML-okból jön.
 # A szkriptben NINCS beégetett adat, csak modell-logika.
 # ─────────────────────────────────────────────────────────────────────────────
-DATA_DIR = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "fegyvergenerator"
+DATA_DIR = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "sources" / "fegyverek"
 
 
 def _load(nev):
@@ -67,7 +67,7 @@ _STRUKTURA_OSZTALY = _MATRIX_YAML["struktúra_osztály"]
 
 # Páncélok a balansz-teszthez az ELSŐDLEGES forrásból (data/sources/konstansok.yaml → páncél_struktúrák):
 # (név, fizikai SFÉ, páncélosztály). csupasz = nincs vért (nem struktúra). Fizikai SFÉ, mert a fegyver-balansz fizikai.
-with open(DATA_DIR.parent / "sources" / "konstansok.yaml", encoding="utf-8") as _fh:
+with open(DATA_DIR.parent / "konstansok.yaml", encoding="utf-8") as _fh:
     _STRUKTURAK = yaml.safe_load(_fh)["páncél_struktúrák"]
 PANCEL = [("csupasz", 0, "csupasz")] + [
     (s["struktúra"], s["sfé_fizikai"], _STRUKTURA_OSZTALY[s["struktúra"]]) for s in _STRUKTURAK
@@ -196,7 +196,7 @@ class Fegyver:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FEGYVER KATALÓGUS — WORK paraméterek a data/fegyvergenerator/fegyverek.yaml-ből.
+# FEGYVER KATALÓGUS — WORK paraméterek a data/sources/fegyverek/fegyverek.yaml-ből.
 # FEGYVEREK = a `teszt.teszt_minta: true` rekordok (balansz self-test/elemzés).
 # ─────────────────────────────────────────────────────────────────────────────
 

@@ -37,7 +37,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
                                        — a kimenet NEM kerül a repóba (work file), a konklúziót olvasható
                                        riportba kell átvezetni (l. wiki STUDY.* konvenció).
     fegyverek_regi_uj_osszehasonlitas.py  A régi (`data/tables/fegyverek.json`) és a v2 fegyvergenerátor
-                                       (`data/fegyvergenerator/fegyverek.generated.json`) harcértékeinek
+                                       (`data/sources/fegyverek/fegyverek.generated.json`) harcértékeinek
                                        1:1 delta-összehasonlítása, kézi alias-táblával a névformátum-eltérésekhez.
                                        Kimenet: konzol + markdown riport (wiki STUDY.* fájlba, NEM az éles repóba).
     harcszimulacio_selftest.py        harcszimulacio.spec.md §15 önteszt validálása (a data layerből olvas)
@@ -222,6 +222,8 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
 | `hatterek.yaml` | Leíró + Karma hátterek | `hatterek.json` |
 | `szituacio_mapping.yaml` | Képzettség → Szituáció kapcsolatok | → `kepzettsegek.json` (`kapcsolódó_szituációk` mező) |
+
+**`fegyverek/` almappa** (`extrak.yaml`, `fegyverek.yaml`, `konstansok.yaml`, `sebzesjelleg_pancel_matrix.yaml` + séma/generált JSON) — a Fegyvergenerátor v2 saját forrásai, **NEM a `generate_tables.py` pipeline része** (a `code/balance/fegyvergenerator_json.py` tervezői eszköz olvassa be, l. `STUDY.fegyvergenerator_v2` a wikiben, "Migrációs terv"). Elhelyezésük a `data/sources/` alatt kényelmi/konvenció okból történt (naming-lint hatókör), nem jelenti a build-gate bekötését.
 
 ## Spec dokumentáció (`data/docs/`)
 
