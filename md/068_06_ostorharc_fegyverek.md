@@ -2,11 +2,11 @@
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver   |  TÉ  |  VÉ  |  SP  | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Pengehossz | Kategória | Speciális                                                            |
-| --------- |:----:|:----:|:----:|:--------:|:------------:|:--------------:|:---------------:|:------:|:----:|:---:|:---:|:----------:|:---------:| -------------------------------------------------------------------- |
-| Korbács   | `3`  | `0`  | `-1` |   `6`    |     `Z`      |    egykezes    |       `2`       |  `0`   | `1`  | `0` | `0` |    `1`     | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
-| Ostor     | `5`  | `2`  | `+1` |   `8`    |     `Z`      |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `0` |    `3`     | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
-| Ostorkard | `10` | `10` | `+3` |   `8`    |     `V`      |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0` |    `3`     | ostorharc | Minimum `Mf:1.fok` nélkül `30%` esély az önsebzésre                  |
+| Fegyver   | Mód (Aktor)         | Jelleg    | Sebzéstípus | TÉ | VÉ | SP | Erőlimit | Átütés | Seb. | Forgatás | Fh | FSZ | Extrák                                                                                   | Megj.                  |
+| --------- | ------------------- | --------- | ----------- | -: | -: | -: | -------: | -----: | ---: | -------- | -: | --: | ---------------------------------------------------------------------------------------- | ---------------------- |
+| Korbács   | botvég              | zúzó      | elsődleges  |  3 |  1 | +3 |        2 |      0 |    7 | egykezes |  3 |   0 | Pajzs megkerülése; Fegyvertörés-immunis                                                  |                        |
+| Ostor     | botvég              | zúzó      | elsődleges  |  9 |  7 | +5 |        3 |      0 |    9 | kétkezes |  9 |   2 | Beszorítható; Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2                    |                        |
+| Ostorkard | vágóél-íves-átlagos | vágó-íves | elsődleges  |  9 |  7 | +7 |       99 |      0 |   11 | kétkezes |  9 |   2 | Önsebzés-kockázat; Beszorítható; Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2 | Urumi néven is ismert. |
 
 <!-- tag: md_table_fegyver_end -->
 
