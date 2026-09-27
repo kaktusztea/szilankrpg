@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Régi (`data/tables/fegyverek.json`, webapp runtime) vs ÚJ (v2 fegyvergenerátor,
-`data/sources/fegyverek/fegyverek.generated.json`) harcérték-összehasonlítás.
+`data/tables/fegyverek_v2.json`) harcérték-összehasonlítás.
 
 A két forrás STRUKTÚRÁJA eltér:
   RÉGI: flat lista, egy fegyver = egy rekord, TÉ/VÉ/SP egyetlen szám (stringként).
@@ -22,7 +22,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 OLD_PATH = ROOT / "data" / "tables" / "fegyverek.json"
-NEW_PATH = ROOT / "data" / "sources" / "fegyverek" / "fegyverek.generated.json"
+NEW_PATH = ROOT / "data" / "tables" / "fegyverek_v2.json"
 
 NEM_FEGYVER_PREFIX = ("Hárító:", "Kis Pajzs", "Közepes Pajzs", "Nagy Pajzs")
 
@@ -138,7 +138,7 @@ def md_riport(sorok, nincs_uj_par, uj_csak_ujban):
     sorok_md.append("# Fegyverek — régi vs v2 generátor összehasonlítás\n")
     sorok_md.append(
         "Forrás: `data/tables/fegyverek.json` (régi, webapp runtime) vs "
-        "`data/sources/fegyverek/fegyverek.generated.json` (v2 generátor, elsődleges mód).\n"
+        "`data/tables/fegyverek_v2.json` (v2 generátor, elsődleges mód).\n"
     )
     sorok_md.append(
         "A Δ oszlopok az **új − régi** különbséget mutatják (pozitív = az új verzióban nagyobb).\n"

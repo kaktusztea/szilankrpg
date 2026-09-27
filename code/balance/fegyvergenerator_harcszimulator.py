@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fegyvergenerátor — kör-alapú harci szimulátor a fegyverek egymáshoz mérésére.
 
-Cél: a `data/sources/fegyverek/fegyverek.generated.json` FEGYVEREIT valódi, kör-alapú
+Cél: a fegyvergenerátor (`fegyvergenerator_balansz.FEGYVER_RECORDS`) fegyvereit valódi, kör-alapú
 harcban (§3-§6 `harcszimulacio.spec.md`) mérjük össze, nem csak statikus sebzés/tempó
 metrikával (az utóbbit a `fegyvergenerator_balansz.py` már adja).
 

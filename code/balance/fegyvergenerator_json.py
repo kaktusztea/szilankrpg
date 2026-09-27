@@ -11,11 +11,10 @@ kompatibilitás.
 Kimenet: {fegyver mezők} + módok: [ {aktor, jelleg, sebzéstípus, TÉ, VÉ, SP, Átütés,
 Sebesség, Forgatás, Erőlimit, FP}, ... ]. Erő=0 bázisérték (mint a fegyverlista.py).
 
-Futtatás:  python3 code/balance/fegyvergenerator_json.py > data/sources/fegyverek/fegyverek.generated.json
-
-FIGYELEM: tervezői eszköz, NEM a build pipeline (generate_tables.py) része — a webapp
-jelenleg nem olvassa ezt a fájlt. A bekötés (data-loader.ts, types.ts, fegyver-calc.ts
-átírása) külön lépés.
+A `build()` a build pipeline része: a `data/gen/fegyverek_v2.py::generate_fegyverek_v2()`
+adapter hívja, és a `generate_tables.py` a kimenetet `data/tables/fegyverek_v2.json`-ba írja
+(ezt olvassa a webapp runtime, `engine/data-loader.ts`). CLI-ből futtatva (`python3
+code/balance/fegyvergenerator_json.py`) a JSON a STDOUT-ra íródik — ad-hoc ellenőrzésre.
 """
 import json
 import sys
