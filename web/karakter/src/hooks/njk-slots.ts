@@ -3,6 +3,7 @@ import { readSlots, type SlotEntry } from './slot-utils';
 import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { evaluate, buildContext } from '../engine/reactive';
+import { readKmJelölések } from './km-jelolesek';
 
 /**
  * NJK (Nem Játékos Karakter) slot szabályok: tárolási limit + a switcher sáv adatai.
@@ -38,14 +39,24 @@ export interface NjkSlot {
 
 /**
  * NJK slotok a switcher sávhoz: becenév, ha van, különben név.
- * ABC sorrend, hogy a boxok pozíciója ne ugráljon autosave-kor.
+ * Rendezés: a KM-jelöléssel (betűazonosítóval) ellátott chip-ek elöl, betű szerint ABC
+ * sorrendben (csoportosítva); a jelöletlen chip-ek utánuk, név szerint ABC sorrendben.
+ * Ez így stabil, hogy a boxok pozíciója ne ugráljon autosave-kor.
  * A `MAX_NJK_DB` slice csak védőháló — a tárolási limit ezt már betartatja.
  */
 export function njkSlots(slots: SlotEntry[]): NjkSlot[] {
+  const jelölések = readKmJelölések();
   return slots
     .filter(s => s.jk === false)
     .map(s => ({ uid: s.uid, név: s.becenév || s.név || 'Névtelen' }))
-    .sort((a, b) => a.név.localeCompare(b.név, 'hu'))
+    .sort((a, b) => {
+      const betűA = jelölések[a.uid]?.betű || '';
+      const betűB = jelölések[b.uid]?.betű || '';
+      if (betűA && !betűB) return -1;
+      if (!betűA && betűB) return 1;
+      if (betűA && betűB) return betűA.localeCompare(betűB, 'hu') || a.név.localeCompare(b.név, 'hu');
+      return a.név.localeCompare(b.név, 'hu');
+    })
     .slice(0, MAX_NJK_DB);
 }
 

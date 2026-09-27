@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { njkSlots, njkLimitBlocked, njkCount } from './njk-slots';
 import { writeSlots, type SlotEntry } from './slot-utils';
+import { writeKmJelölés } from './km-jelolesek';
 import { MAX_NJK_DB } from '../ui-constants';
 import { installLocalStorage } from '../__tests__/localstorage-stub';
 
@@ -57,6 +58,33 @@ describe('njkSlots', () => {
     const out = njkSlots(many);
     expect(out).toHaveLength(MAX_NJK_DB);
     expect(out[0].név).toBe('NJK 00');
+  });
+
+  describe('KM-jelölt chipek csoportosítása elöl', () => {
+    beforeEach(() => installLocalStorage());
+
+    it('a betűvel jelölt chipek a jelöletlenek elé kerülnek, betű szerint ABC sorrendben', () => {
+      writeKmJelölés('c', { betű: 'C', szín: '#fff', jegyzet: '' });
+      writeKmJelölés('a', { betű: 'A', szín: '#fff', jegyzet: '' });
+      const out = njkSlots([
+        slot({ uid: 'z', név: 'Zorka', jk: false }),
+        slot({ uid: 'c', név: 'Csuklyás', jk: false }),
+        slot({ uid: 'a', név: 'Álmos', jk: false }),
+        slot({ uid: 'e', név: 'Elek', jk: false }),
+      ]);
+      // A és C jelölt → elöl, betű szerint (A előbb, mint C); a jelöletlenek (Elek, Zorka) utánuk, név szerint.
+      expect(out.map(s => s.uid)).toEqual(['a', 'c', 'e', 'z']);
+    });
+
+    it('jelöletlen chipek egymás között továbbra is név szerint ABC sorrendben', () => {
+      writeKmJelölés('m', { betű: 'M', szín: '#fff', jegyzet: '' });
+      const out = njkSlots([
+        slot({ uid: 'z', név: 'Zorka', jk: false }),
+        slot({ uid: 'm', név: 'Márton', jk: false }),
+        slot({ uid: 'a', név: 'Álmos', jk: false }),
+      ]);
+      expect(out.map(s => s.uid)).toEqual(['m', 'a', 'z']);
+    });
   });
 });
 
