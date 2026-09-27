@@ -16,8 +16,10 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
 
 ```
 -1 pont: közepes tárgy
+  → Könnyűvért 50%+ fedésben
   → rövidkard, Közepes pajzs, 20m kötél ..
 -2 pont: nagy tárgy
+  → Merevvért 50%+ fedésben (pikkely, lemez)
   → alabárd, Nagy pajzs ..
 ```
 

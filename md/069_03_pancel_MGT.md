@@ -1,4 +1,4 @@
-## Páncél MGT
+## Páncél MGT, Akadály
 
 Harc és mozgás során a páncélok korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a kimondottan a páncélok MGT értékeivel foglalkozik. Az általános MGT összefoglaló oldalt lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
 
@@ -200,23 +200,14 @@ MGT növekedés:
 
 ## Felszerelés MGT
 
-A páncél MGT mellett kapcsolódó érték a [Felszerelés MGT](010_03_06_felszereles.md), amely szintén harcot korlátozó tényező lehet.
-
-Az ott leírt **Felszerelés keretből** (`Erő+2`) levon pár pontot, ha páncélod legalább `50%`-ban fed - az alábbiak szerint:
-```
-1 pont: Könnyűvért 50%+ fedésben
-2 pont: Merevvért 50%+ fedésben
-        (pikkely, lemez)
-```
-
-A túlcsorduló Felszerelés pont további MGT hatást okozhat. Bővebben [lásd ott](010_03_06_felszereles.md).
+A páncél MGT mellett kapcsolódó érték a [Felszerelés MGT](010_03_06_felszereles.md), amely szintén harcot korlátozó tényező lehet és a Felszerelés keret túlcsordulásából születhet.
 
 ---
-## Hosszútávú viselet, barangolás páncélban
+## Akadály: hosszútávú viselet, barangolás páncélban
 
 Egy páncél viselete rövidtávon nem okoz problémát, de hosszútávú gyaloglás és viselet esetén már igen kimerítő és ez a csapat haladását is befolyásolhatja. Az ilyen felszerelés hosszútávú szállításához kíséret, fegyverhordozó, málhásállatok, szekér szükséges. A leírtak alacsony MGT értékkel kitűnő, magas minőségű vértekre is vonatkoznak!
 
-### `1.` Félvért, közepes pajzs tartós viselete, cipelése
+### `1.` Akadály: félvért, közepes pajzs tartós viselete, cipelése
 
 Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
 
@@ -226,7 +217,7 @@ Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
   Ez hátráltatja a csapatot.
 ```
 
-### `2.` Teljes vért, Nagy pajzs
+### `2.` Akadály: teljes vért, Nagy pajzs
 
 ```
 + Státusz: Fizikai (2)
@@ -235,6 +226,10 @@ Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
 ```
 
 Magasabb szinteken előfordulhatnak mágikus könnyítések, mint kisebb tárgyakká alakuló varázsfegyverek, páncélok.
+
+### Akadály `2` érték felett
+
+Ilyen helyzetben a karakter nem képes tartósan haladni, legfeljebb pár `10-100` métert.
 
 ---
 
