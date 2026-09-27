@@ -44,7 +44,6 @@ KATEGORIA_MD = {
 
 FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "FSZ", "Extrák", "Megj."]
 JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Fh", "FSZ"}
-JOBBRA = {FEJLEC.index(nev) for nev in JOBBRA_OSZLOPNEVEK}
 
 _EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
 
@@ -114,51 +113,82 @@ def sorok(kategoria):
     return rows
 
 
-def render_tabla(rows):
-    w = [len(h) for h in FEJLEC]
+def render_tabla(rows, fejlec, jobbra_oszlopnevek):
+    jobbra = {fejlec.index(nev) for nev in jobbra_oszlopnevek}
+    w = [len(h) for h in fejlec]
     for r in rows:
         for c, val in enumerate(r):
             w[c] = max(w[c], len(val))
-    cell = lambda val, c: (val.rjust(w[c]) if c in JOBBRA else val.ljust(w[c]))
-    sep = lambda c: (("-" * (w[c] - 1) + ":") if c in JOBBRA else "-" * w[c])
-    lines = ["| " + " | ".join(cell(FEJLEC[c], c) for c in range(len(FEJLEC))) + " |",
-             "| " + " | ".join(sep(c) for c in range(len(FEJLEC))) + " |"]
+    cell = lambda val, c: (val.rjust(w[c]) if c in jobbra else val.ljust(w[c]))
+    sep = lambda c: (("-" * (w[c] - 1) + ":") if c in jobbra else "-" * w[c])
+    lines = ["| " + " | ".join(cell(fejlec[c], c) for c in range(len(fejlec))) + " |",
+             "| " + " | ".join(sep(c) for c in range(len(fejlec))) + " |"]
     for r in rows:
-        lines.append("| " + " | ".join(cell(r[c], c) for c in range(len(FEJLEC))) + " |")
+        lines.append("| " + " | ".join(cell(r[c], c) for c in range(len(fejlec))) + " |")
     return "\n".join(lines)
 
 
-def sync_kategoria(kategoria):
-    md_path = KATEGORIA_MD[kategoria]
+def pajzs_sorok():
+    """A `fegyverek_fixed.json` `pajzs` kategóriájú rekordjai — egyszerűbb tábla, mint a
+    fegyvereké (egy pajzsnak nincs több módja, nincs Aktor/Jelleg/Sebzéstípus/Fh/FSZ/Extrák)."""
+    rows = []
+    data = json.loads(FIXED_PATH.read_text(encoding="utf-8"))
+    for r in data:
+        if r.get("kategória") != "pajzs":
+            continue
+        m = r["módok"][0]
+        speciális = r.get("megjegyzés", "") or "-"
+        rows.append([r["név"], str(m["TÉ"]), str(m["VÉ"]), str(m["Sebesség"]), f"{m['SP']:+d}",
+                     str(m["Erőlimit"]), speciális])
+    return rows
+
+
+PAJZS_MD = MD_DIR / "068_09_pajzs_fegyverek.md"
+PAJZS_TAG_START = "<!-- tag: md_table_pajzs_start -->"
+PAJZS_TAG_END = "<!-- tag: md_table_pajzs_end -->"
+PAJZS_FEJLEC = ["Pajzs", "TÉ", "VÉ", "Sebesség", "SP", "Erőbónusz limit", "Speciális"]
+PAJZS_JOBBRA = {"TÉ", "VÉ", "Sebesség", "SP", "Erőbónusz limit"}
+
+
+def sync_tag_block(md_path, tag_start, tag_end, rows, fejlec, jobbra_oszlopnevek, label):
     text = md_path.read_text(encoding="utf-8")
-    start = text.find(TAG_START)
-    end = text.find(TAG_END)
+    start = text.find(tag_start)
+    end = text.find(tag_end)
     if start == -1 or end == -1 or end < start:
         print(f"ERROR: tag pár nem található: {md_path}", file=sys.stderr)
         return 2
 
-    rows = sorok(kategoria)
-    table = render_tabla(rows)
-    new_text = text[:start + len(TAG_START)] + "\n\n" + table + "\n\n" + text[end:]
+    table = render_tabla(rows, fejlec, jobbra_oszlopnevek)
+    new_text = text[:start + len(tag_start)] + "\n\n" + table + "\n\n" + text[end:]
 
     if new_text == text:
-        print(f"{kategoria}: nincs változás — {md_path.name} érintetlen.")
+        print(f"{label}: nincs változás — {md_path.name} érintetlen.")
         return 0
 
     md_path.write_text(new_text, encoding="utf-8")
-    print(f"{kategoria}: frissítve — {md_path.name} ({len(rows)} sor)")
+    print(f"{label}: frissítve — {md_path.name} ({len(rows)} sor)")
     return 0
 
 
+def sync_kategoria(kategoria):
+    return sync_tag_block(KATEGORIA_MD[kategoria], TAG_START, TAG_END, sorok(kategoria), FEJLEC, JOBBRA_OSZLOPNEVEK, kategoria)
+
+
+def sync_pajzs():
+    return sync_tag_block(PAJZS_MD, PAJZS_TAG_START, PAJZS_TAG_END, pajzs_sorok(), PAJZS_FEJLEC, PAJZS_JOBBRA, "pajzs")
+
+
 def main():
-    kategoriak = sys.argv[1:] or list(KATEGORIA_MD)
+    kategoriak = sys.argv[1:] or list(KATEGORIA_MD) + ["pajzs"]
     rc = 0
     for k in kategoriak:
-        if k not in KATEGORIA_MD:
-            print(f"ERROR: ismeretlen kategória: {k} (választható: {', '.join(KATEGORIA_MD)})", file=sys.stderr)
+        if k == "pajzs":
+            rc = max(rc, sync_pajzs())
+        elif k not in KATEGORIA_MD:
+            print(f"ERROR: ismeretlen kategória: {k} (választható: {', '.join(list(KATEGORIA_MD) + ['pajzs'])})", file=sys.stderr)
             rc = 2
-            continue
-        rc = max(rc, sync_kategoria(k))
+        else:
+            rc = max(rc, sync_kategoria(k))
     return rc
 
 

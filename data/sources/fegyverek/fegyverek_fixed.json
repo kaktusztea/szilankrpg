@@ -173,5 +173,80 @@
         "FP": false
       }
     ]
+  },
+  {
+    "név": "Kis Pajzs",
+    "kategória": "pajzs",
+    "megjegyzés": "",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": false,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 1,
+        "VÉ": 3,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 6,
+        "Forgatás": "egykezes",
+        "Erőlimit": 0,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Közepes Pajzs",
+    "kategória": "pajzs",
+    "megjegyzés": "Erő követelmény: +1.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": false,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 1,
+        "VÉ": 10,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 7,
+        "Forgatás": "egykezes",
+        "Erőlimit": 2,
+        "FP": false
+      }
+    ]
+  },
+  {
+    "név": "Nagy Pajzs",
+    "kategória": "pajzs",
+    "megjegyzés": "Erő követelmény: +2. Legfeljebb 0.5 penge hosszú fegyver lehet a másik kézben. Minden plusz 0.5 penge TÉ:-3 büntetést ad.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": false,
+    "ár": null,
+    "extrák": [],
+    "módok": [
+      {
+        "aktor": "kivétel",
+        "jelleg": "zúzó",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 1,
+        "VÉ": 16,
+        "SP": 0,
+        "Átütés": 0,
+        "Sebesség": 9,
+        "Forgatás": "egykezes",
+        "Erőlimit": 4,
+        "FP": false
+      }
+    ]
   }
 ]
