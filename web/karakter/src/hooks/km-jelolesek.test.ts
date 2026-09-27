@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { readKmJelölések, getKmJelölés, writeKmJelölés, removeKmJelölés, választSzínt } from './km-jelolesek';
+import { readKmJelölések, getKmJelölés, writeKmJelölés, removeKmJelölés, választSzínt, kombináltBetűk } from './km-jelolesek';
 import { KM_JEL_SZÍNEK } from '../ui-constants';
 import { installLocalStorage } from '../__tests__/localstorage-stub';
 
@@ -70,5 +70,28 @@ describe('választSzínt — felvételkori színválasztás', () => {
     });
     // 13. eltérő betű → valamelyik meglévő színt kapja (mind egyszer használt → első).
     expect(választSzínt('M', tár, KM_JEL_SZÍNEK)).toBe(KM_JEL_SZÍNEK[0]);
+  });
+});
+
+describe('kombináltBetűk — korábban felvett 2+ karakteres betűk listája', () => {
+  it('csak a 2+ karakteres betűket adja, az egykarakteresek kimaradnak', () => {
+    const tár = {
+      u1: { betű: 'M', szín: '#fff', jegyzet: '' },
+      u2: { betű: 'MA', szín: '#fff', jegyzet: '' },
+    };
+    expect(kombináltBetűk(tár)).toEqual(['MA']);
+  });
+
+  it('duplikátum nélkül, ABC sorrendben', () => {
+    const tár = {
+      u1: { betű: 'MB', szín: '#fff', jegyzet: '' },
+      u2: { betű: 'MA', szín: '#fff', jegyzet: '' },
+      u3: { betű: 'MA', szín: '#fff', jegyzet: '' }, // két NJK is hordhatja ugyanazt
+    };
+    expect(kombináltBetűk(tár)).toEqual(['MA', 'MB']);
+  });
+
+  it('üres tár esetén üres lista', () => {
+    expect(kombináltBetűk({})).toEqual([]);
   });
 });

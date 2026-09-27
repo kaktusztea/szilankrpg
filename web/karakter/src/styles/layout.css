@@ -235,6 +235,20 @@
   box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--jel-szín);
 }
 
+/* Kombinált (2 karakteres, pl. "MA") betű-chip: kapszula, nem kör — elfér a 2 karakter. */
+.km-jel-chip-kombinalt {
+  width: auto;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border-radius: 17px;
+  font-size: 13px;
+}
+
+.km-jel-kombinalt-label {
+  margin-top: 4px;
+}
+
 .km-jel-clear {
   width: 100%;
 }

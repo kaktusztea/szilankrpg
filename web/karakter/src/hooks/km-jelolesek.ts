@@ -55,6 +55,16 @@ export function removeKmJelölés(uid: string): void {
 }
 
 /**
+ * Korábban létrehozott KOMBINÁLT betűk (2+ karakter, pl. "MA"), hogy a picker fel tudja
+ * sorolni újra választható chipként — azonos kezdőbetűjű NJK-k megkülönböztetéséhez
+ * (pl. két "M"-es játékos: "M" és "MA"). ABC sorrendben, duplikátum nélkül.
+ */
+export function kombináltBetűk(tár: KmJelölésTár = readKmJelölések()): string[] {
+  const halmaz = new Set(Object.values(tár).map(j => j.betű).filter(b => b.length > 1));
+  return Array.from(halmaz).sort((a, b) => a.localeCompare(b, 'hu'));
+}
+
+/**
  * Szín választása egy betűhöz FELVÉTELKOR, a már használt színek ismeretében.
  * Cél: minden eltérő betű eltérő szín.
  *

@@ -5,7 +5,7 @@ import type { SlotEntry } from '../hooks/slot-utils';
 import { readSlots, loadSlotKarakter } from '../hooks/slot-utils';
 import { njkSlots, életerőStat, type ÉleterőStat } from '../hooks/njk-slots';
 import { useLongPress } from '../hooks/useLongPress';
-import { getKmJelölés, writeKmJelölés, readKmJelölések, választSzínt } from '../hooks/km-jelolesek';
+import { getKmJelölés, writeKmJelölés, readKmJelölések, választSzínt, kombináltBetűk } from '../hooks/km-jelolesek';
 import { KM_JEL_SZÍNEK } from '../ui-constants';
 import { KmJelolesPicker } from './KmJelolesPicker';
 import { KmJegyzetPopup } from './KmJegyzetPopup';
@@ -92,6 +92,7 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
             delete tár[pickerNjk.uid];
             return választSzínt(betű, tár, KM_JEL_SZÍNEK);
           }}
+          kombináltBetűk={kombináltBetűk()}
           onClose={() => setPickerUid(null)}
           onPick={betű => {
             const jel = getKmJelölés(pickerNjk.uid);
