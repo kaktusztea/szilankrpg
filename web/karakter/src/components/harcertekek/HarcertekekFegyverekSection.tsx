@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Karakter, FegyverPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
+import { elsődlegesMód } from '../harc/fegyver-calc';
 import { FegyverChip } from './HarcertekekFegyverChip';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './helpers';
 import { SpecPicker, type PickerSource } from '../SpecPicker';
@@ -35,7 +36,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
   const pickerSource: PickerSource = {
     type: 'grouped',
     label: '+ Új fegyver:',
-    groups: buildFegyverGroups(data, f => f.Fegyver, felvettFegyverek),
+    groups: buildFegyverGroups(data, f => f.név, felvettFegyverek),
   };
 
   return (
@@ -93,7 +94,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
         <strong>{fegyver.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
         <button className="item-delete" onClick={() => onDeleteTarget(index)}>✕</button>
       </div>
-      {fd && <FegyverChip fd={fd} mfFok={mfFok} idea={fegyver.idea} konstansok={konstansok} />}
+      {fd && <FegyverChip fd={elsődlegesMód(fd)} mfFok={mfFok} idea={fegyver.idea} konstansok={konstansok} />}
       <div className="he-fegyver-fields">
         <button
           className={`he-field-btn he-field-fortely${hasError ? ' he-error' : ''}`}

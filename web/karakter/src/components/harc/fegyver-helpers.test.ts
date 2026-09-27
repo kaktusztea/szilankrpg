@@ -4,9 +4,9 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
 
 const FEGYVEREK = [
-  { Fegyver: 'Tőr', Pengehossz: '0', 'Forgatás módja': 'egykezes', Hárító: '0' },
-  { Fegyver: 'Pásztorbot', Pengehossz: '0', 'Forgatás módja': 'kétkezes', Hárító: '0' },
-  { Fegyver: 'Kardtörő', Pengehossz: '0', 'Forgatás módja': 'egykezes', Hárító: '1' },
+  { név: 'Tőr', fegyverhossz: 0, módok: [{ Forgatás: 'egykezes' }] },
+  { név: 'Pásztorbot', fegyverhossz: 0, módok: [{ Forgatás: 'kétkezes' }] },
+  { név: 'Hárító: Kardtörő', fegyverhossz: 0, módok: [{ Forgatás: 'egykezes' }] },
 ];
 const data = { fegyverek: FEGYVEREK } as unknown as GameData;
 
@@ -28,7 +28,7 @@ describe('kétkezesLehetséges', () => {
   });
 
   it('csak hárítófegyver → nincs nem-hárító fegyver → nem lehetséges', () => {
-    expect(kétkezesLehetséges(data, char('Kardtörő'), 0)).toBe(false);
+    expect(kétkezesLehetséges(data, char('Hárító: Kardtörő'), 0)).toBe(false);
   });
 
   it('érvénytelen jobb index → nem lehetséges', () => {

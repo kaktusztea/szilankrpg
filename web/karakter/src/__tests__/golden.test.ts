@@ -29,7 +29,7 @@ beforeAll(() => {
   karakter = loadJson('karakter/test_karakter2.json');
   rules = loadJson<{ rules: Rule[] }>('rules.json').rules;
   konstansok = loadJson('tables/konstansok.json');
-  fegyverek = loadJson('tables/fegyverek.json');
+  fegyverek = loadJson('tables/fegyverek_v2.json');
   const raw = loadJson<any[]>('tables/harcmodor_kepzettsegek_bonuszok.json');
   harcmodorBonusz = raw.map(e => ({
     szint: parseInt(e['Harcmodor Szint']),
@@ -104,7 +104,7 @@ describe('Golden #2 — fegyver kalkuláció', () => {
     data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] };
   });
 
-  it('Kard, lovag: TÉ=47, VÉ=61, SP=11, harckeret=0, támadások=1', () => {
+  it('Kard, lovag: TÉ=47, VÉ=62, SP=11, harckeret=0, támadások=1', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const rows = buildFegyverRows(karakter, data, null);
     const row = rows.find(r => r.név === 'Kard, lovag');
@@ -114,13 +114,13 @@ describe('Golden #2 — fegyver kalkuláció', () => {
       karakter, data, fortelyMods, 3, harcmodorÖsszeg, lookupArrays, stringCtx,
     );
     expect(res[0].TÉ).toBe(47);
-    expect(res[0].VÉ).toBe(60);
+    expect(res[0].VÉ).toBe(62);
     expect(res[0].SP).toBe(11);
     expect(res[0].harckeret).toBe(0);
     expect(res[0].támadások).toBe(1);
   });
 
-  it('Tőr: TÉ=40, VÉ=54, SP=5, harckeret=0, támadások=1', () => {
+  it('Tőr: TÉ=41, VÉ=56, SP=6, harckeret=0, támadások=1', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const rows = buildFegyverRows(karakter, data, null);
     const row = rows.find(r => r.név === 'Tőr');
@@ -129,16 +129,16 @@ describe('Golden #2 — fegyver kalkuláció', () => {
       [{ fDef: row!.fDef, mfFok: row!.mfFok }],
       karakter, data, fortelyMods, 3, harcmodorÖsszeg, lookupArrays, stringCtx,
     );
-    expect(res[0].TÉ).toBe(40);
-    expect(res[0].VÉ).toBe(54);
-    expect(res[0].SP).toBe(5);
+    expect(res[0].TÉ).toBe(41);
+    expect(res[0].VÉ).toBe(56);
+    expect(res[0].SP).toBe(6);
     expect(res[0].harckeret).toBe(0);
     expect(res[0].támadások).toBe(1);
   });
 });
 
 describe('Golden #2 — kétkezes harc', () => {
-  it('Kard, lovag + Tőr: TÉ=49, VÉ=61, SP=11, harckeret=0, támadások=1 (MGT=14)', () => {
+  it('Kard, lovag + Tőr: TÉ=50, VÉ=65, SP=11, harckeret=0, támadások=1 (MGT=14)', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const result = calcKétkezesHarc({
       jobbFp: karakter.fegyverek[0],
@@ -147,12 +147,12 @@ describe('Golden #2 — kétkezes harc', () => {
       páncélMGT: 14,
     });
     expect(result).not.toBeNull();
-    expect(result!.TÉ).toBe(49);
-    expect(result!.VÉ).toBe(61);
+    expect(result!.TÉ).toBe(50);
+    expect(result!.VÉ).toBe(65);
     expect(result!.SP).toBe(11);
     expect(result!.harckeret).toBe(0);
     expect(result!.támadások).toBe(1);
-    expect(result!.sumPengehossz).toBe(1);
+    expect(result!.sumFegyverhossz).toBe(4);
   });
 });
 

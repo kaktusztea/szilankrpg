@@ -67,7 +67,7 @@ export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: st
   if (!fokDef?.követelmények?.length) return false;
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
   const fegyverHarcmodor = fDef
-    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória]
+    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.kategória]
     : undefined;
   for (const kov of fokDef.követelmények) {
     if (kov.típus === 'képzettség') {
@@ -93,7 +93,7 @@ export function mfKövetelményText(data: GameData, k: Karakter, fegyverAlap: st
   if (!fokDef?.követelmények?.length) return '';
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
   const fegyverHarcmodor = fDef
-    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória]
+    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.kategória]
     : undefined;
   const kov = fokDef.követelmények[0];
   if (kov.típus === 'képzettség') {

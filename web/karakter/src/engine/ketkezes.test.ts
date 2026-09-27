@@ -4,14 +4,12 @@ import { calcKétkezesHarc } from './ketkezes';
 
 // Minimal weapon defs — only the fields calcKétkezesHarc reads.
 const kard = {
-  Fegyver: 'kard', Alapnév: 'Kard', Kategória: 'kardvívó',
-  Pengehossz: '1.0', TÉ: '3', VÉ: '2', SP: '2', Sebesség: '4',
-  'Erőbónusz limit': '', 'Sebzés módja': 'vágás',
+  név: 'Kard', kategória: 'kardvívó', fegyverhossz: 1.0,
+  módok: [{ aktor: 'kard', jelleg: 'vágás', sebzéstípus: 'elsődleges', TÉ: 3, VÉ: 2, SP: 2, Átütés: 0, Sebesség: 4, Forgatás: 'egykezes', Erőlimit: 99, FP: false }],
 } as unknown as FegyverAlap;
 const tőr = {
-  Fegyver: 'tőr', Alapnév: 'Tőr', Kategória: 'kardvívó',
-  Pengehossz: '0.5', TÉ: '1', VÉ: '1', SP: '1', Sebesség: '5',
-  'Erőbónusz limit': '', 'Sebzés módja': 'szúrás',
+  név: 'Tőr', kategória: 'kardvívó', fegyverhossz: 0.5,
+  módok: [{ aktor: 'tőr', jelleg: 'szúrás', sebzéstípus: 'elsődleges', TÉ: 1, VÉ: 1, SP: 1, Átütés: 0, Sebesség: 5, Forgatás: 'egykezes', Erőlimit: 99, FP: false }],
 } as unknown as FegyverAlap;
 
 const karakter = {
@@ -31,8 +29,8 @@ const konstansok = {
 };
 
 const baseInput = {
-  jobbFp: { alap: 'kard' },
-  balFp: { alap: 'tőr' },
+  jobbFp: { alap: 'Kard' },
+  balFp: { alap: 'Tőr' },
   fegyverek: [kard, tőr],
   karakter,
   konstansok,
@@ -54,9 +52,9 @@ describe('calcKétkezesHarc', () => {
     expect(r.harckeret).toBe(6);
     expect(r.támadások).toBe(2);
     expect(r.fegyver_név).toBe('Kard + Tőr');
-    expect(r.sumPengehossz).toBe(1.5);
-    expect(r.pengehossz).toBe(1.0);
-    expect(r.sebzésmód).toBe('vágás'); // jobb (kard) sebez
+    expect(r.sumFegyverhossz).toBe(1.5);
+    expect(r.fegyverhossz).toBe(1.0);
+    expect(r.jelleg).toBe('vágás'); // jobb (kard) sebez
   });
 
   it('returns null when a weapon is not found', () => {

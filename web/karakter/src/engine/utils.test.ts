@@ -4,12 +4,12 @@ import type { FegyverAlap, Session, Karakter } from './types';
 
 describe('lookupFegyver', () => {
   const fegyverek = [
-    { Fegyver: 'Hosszúkard (1K)' },
-    { Fegyver: 'Rövidkard' },
+    { név: 'Hosszúkard' },
+    { név: 'Rövidkard' },
   ] as FegyverAlap[];
 
   it('finds case-insensitive', () => {
-    expect(lookupFegyver(fegyverek, 'hosszúkard (1k)')?.Fegyver).toBe('Hosszúkard (1K)');
+    expect(lookupFegyver(fegyverek, 'hosszúkard')?.név).toBe('Hosszúkard');
   });
   it('returns undefined if not found', () => {
     expect(lookupFegyver(fegyverek, 'Nincs')).toBeUndefined();

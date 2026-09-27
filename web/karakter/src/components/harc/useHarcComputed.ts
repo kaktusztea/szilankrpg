@@ -37,16 +37,16 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     ? lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '')
     : aktívFegyverFp ? lookupFegyver(data.fegyverek, aktívFegyverFp.alap) : null;
 
-  const jobbPengehossz = aktívFegyverDef ? (parseFloat(aktívFegyverDef.Pengehossz) || 0) : 0;
+  const jobbPengehossz = aktívFegyverDef?.fegyverhossz ?? 0;
   let aktívFegyverPengehossz = jobbPengehossz;
 
   if ((session.kétkezes_harc || session.fegyverfogás === 'fegyver_hárító') && session.aktív_fegyver_bal_index >= 0) {
     const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
     const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
-    aktívFegyverPengehossz += balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
+    aktívFegyverPengehossz += balDef?.fegyverhossz ?? 0;
   }
 
-  const aktívFegyverKat = aktívFegyverDef?.Kategória ?? 'közelharci';
+  const aktívFegyverKat = aktívFegyverDef?.kategória ?? 'közelharci';
   const aktívFegyverHarcmodor = konstansok.fegyver_kategória_harcmodor[aktívFegyverKat] ?? 'Közelharc';
   stringCtx.set('aktív_fegyver_harcmodor', aktívFegyverHarcmodor);
   aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`);

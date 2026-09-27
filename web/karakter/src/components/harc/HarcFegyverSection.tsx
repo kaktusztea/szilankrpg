@@ -2,7 +2,7 @@ import type { HarcBaseProps } from './types';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
-import { buildFegyverOpciók, kétkezesLehetséges } from './fegyver-helpers';
+import { buildFegyverOpciók, kétkezesLehetséges, isHárító } from './fegyver-helpers';
 import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';
@@ -15,14 +15,14 @@ function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Ses
   if (!jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz') return false;
 
   const jobbDef = lookupFegyver(data.fegyverek, jobbFp.alap);
-  const kétkezes = jobbDef?.['Forgatás módja'] === 'kétkezes';
+  const kétkezes = jobbDef?.módok.some(m => m.Forgatás === 'kétkezes') ?? false;
 
   return opciók.some(opt => {
     if (opt.id === aktív) return false;
     if (kétkezes && opt.id !== 'egyfegyveres') return false;
     if (opt.id === 'fegyver_pajzs') return !!karakter.pajzs?.méret;
     if (opt.id === 'fegyver_hárító') {
-      return karakter.fegyverek.some(fp => lookupFegyver(data.fegyverek, fp.alap)?.['Hárító'] === '1')
+      return karakter.fegyverek.some(fp => isHárító(lookupFegyver(data.fegyverek, fp.alap)))
         && karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
     }
     if (opt.id === 'kétkezes') {

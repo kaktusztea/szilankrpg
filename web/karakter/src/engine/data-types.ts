@@ -296,7 +296,6 @@ export interface GameData {
   fegyverek: FegyverAlap[];
   tavfegyverek: TavfegyverAlap[];
   tavharcSzorzok: TavharcSzorzok;
-  pajzsok: { Pajzs: string; TÉ: string; VÉ: string; Sebesség: string }[];
   kepzettsegKp: { szint: number; kp: number }[];
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number; CÉ: number }[];
   kepzettsegDefs: KepzettsegDef[];

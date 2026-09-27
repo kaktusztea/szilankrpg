@@ -110,7 +110,7 @@ export function validateKarakterData(k: Karakter, data: GameData): string | null
       errors.push(`Ismeretlen fegyver anyag: "${f.anyag}"`);
     }
     if (f.alap) {
-      const found = data.fegyverek.some(fd => fd.Fegyver.toLowerCase() === f.alap.toLowerCase());
+      const found = data.fegyverek.some(fd => fd.név.toLowerCase() === f.alap.toLowerCase());
       if (!found) errors.push(`Ismeretlen fegyver alaptípus: "${f.alap}"`);
     }
   }

@@ -2,16 +2,18 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import type { UndoPatch } from '../../hooks/useUndo';
 
-export interface FegyverResult {
-  fegyver_név: string;
+/** Egy fegyver-mód (Aktor) kiszámított harcértékei. */
+export interface FegyverResultMód {
+  aktor: string;
+  jelleg: string;
+  sebzéstípus: 'elsődleges' | 'másodlagos';
   TÉ: number;
   VÉ: number;
   SP: number;
+  Átütés: number;
   támadások: number;
   harckeret: number;
   sebesség: number;
-  pengehossz: number;
-  sebzésmód: string;
   alap_TÉ: number;
   alap_VÉ: number;
   // Harckeret részletezés
@@ -20,6 +22,14 @@ export interface FegyverResult {
   hk_mgt: number;
   hk_felszerelés_mgt: number;
   hk_fortély: number;
+}
+
+/** Egy fegyver összesített eredménye: az elsődleges mód adatai a gyökéren (táblázat-nézet),
+ * PLUSZ az összes mód listája (`módok`) a Támadó dobás mód-választójához. */
+export interface FegyverResult extends FegyverResultMód {
+  fegyver_név: string;
+  fegyverhossz: number;
+  módok: FegyverResultMód[];
 }
 
 export interface HarcBaseProps {
@@ -46,7 +56,7 @@ export interface HarcComputed {
   taktikaMods: Record<string, number>;
   fortelyMods: Record<string, number>;
   fegyverResults: FegyverResult[];
-  kétkezesResult: (FegyverResult & { sumPengehossz: number }) | null;
+  kétkezesResult: (FegyverResult & { sumFegyverhossz: number }) | null;
   fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null;
   pajzsVÉ: number;
   véVeszSzorzó: number;

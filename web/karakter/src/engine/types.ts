@@ -262,29 +262,38 @@ export interface FortelyDef {
 }
 
 // ============================================================
-// Fegyver (alaptípus, fegyverek.json)
+// Fegyver (alaptípus, fegyverek_v2.json — Fegyvergenerátor v2)
 // ============================================================
 
+export interface FegyverMod {
+  aktor: string;
+  jelleg: string;
+  sebzéstípus: 'elsődleges' | 'másodlagos';
+  TÉ: number;
+  VÉ: number;
+  SP: number;
+  Átütés: number;
+  Sebesség: number | null;
+  Forgatás: 'egykezes' | 'másfélkezes' | 'kétkezes';
+  Erőlimit: number;
+  FP: boolean;
+}
+
+export interface FegyverExtra {
+  id: string;
+  név: string;
+}
+
 export interface FegyverAlap {
-  Fegyver: string;
-  TÉ: string;
-  VÉ: string;
-  SP: string;
-  Sebesség: string;
-  'Sebzés módja': string;
-  Pengehossz: string;
-  'Forgatás módja': string;
-  'Erőbónusz limit': string;
-  Átütés: string;
-  Íves: string;
-  MK: string;
-  KF: string;
-  Kategória: string;
-  Speciális?: string;
-  MK_pár: string;
-  Alapnév: string;
-  Hárító: string;
-  SP_override?: { fortély: string; SP: number } | null;
+  név: string;
+  kategória: string;
+  megjegyzés: string;
+  fegyverhossz: number;
+  akadály: number;
+  övön_hordható: boolean;
+  ár: number | null;
+  extrák: FegyverExtra[];
+  módok: FegyverMod[];
 }
 
 // ============================================================

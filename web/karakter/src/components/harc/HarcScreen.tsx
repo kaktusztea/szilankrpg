@@ -22,7 +22,6 @@ import { téBontásÖsszeg } from '../aktiv/manover-dobas-calc';
 import { ManoverPicker } from './ManoverPicker';
 import { computeTÉ, computeVÉ, coalesceVéHistory } from './shared';
 import { resolveAktívFegyverContext } from './aktiv-fegyver-ctx';
-import { lookupFegyver } from '../../engine/utils';
 import { rollK20 } from '../../engine/dice';
 import { VÉ_FLASH_MS, VÉ_COALESCE_MS } from '../../ui-constants';
 import './HarcScreen.css';
@@ -259,7 +258,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         <TamadoDobasPopup
           té={aktívTÉ}
           sp={ctx?.result.SP ?? 0}
-          átütés={ctx ? parseInt(lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.Átütés ?? '0') || 0 : 0}
+          átütés={ctx?.result.Átütés ?? 0}
           dobásInfo={collectDobásInfo(session, karakter, data)}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           onVéCsökkentés={(eredmény) => changeVé(eredmény.végső)}

@@ -43,7 +43,7 @@ export function makeAnyanyelvSetter(
 
 /** Fortélyok screen props builder. */
 export function buildFortelyokProps(karakter: Karakter, data: GameData) {
-  const fegyverNevek = [...new Set(data.fegyverek.map(f => f.Alapnév || f.Fegyver))];
+  const fegyverNevek = [...new Set(data.fegyverek.map(f => f.név))];
   const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
   return { fegyverNevek, nyelvtanulásSzint };
 }

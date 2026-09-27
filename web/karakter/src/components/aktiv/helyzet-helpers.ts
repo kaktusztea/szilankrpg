@@ -31,7 +31,7 @@ export function getMinPengeWarning(
         const aktívFd = session.aktív_fegyver_index === -2
           ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(karakter) ?? '')
           : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
-        const ph = aktívFd ? (parseFloat(aktívFd.Pengehossz) || 0) : 0;
+        const ph = aktívFd?.fegyverhossz ?? 0;
         if (ph < mod.érték) return `⚠ Min. pengehossz: ${mod.érték}!`;
       }
     }

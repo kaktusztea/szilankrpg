@@ -6,6 +6,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
 import { lookupFegyver } from '../../engine/utils';
+import { elsődlegesMód } from '../harc/fegyver-calc';
 
 /** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
 const MEGLEPETÉS = 'Meglepetés';
@@ -79,7 +80,7 @@ export function aktívFegyverInfo(karakter: Karakter, session: Session, data: Ga
   if (!fp) return null;
   const def = lookupFegyver(data.fegyverek, fp.alap);
   if (!def) return null;
-  return { kategória: def.Kategória, sebzésMódja: def['Sebzés módja'] };
+  return { kategória: def.kategória, sebzésMódja: elsődlegesMód(def).jelleg };
 }
 
 /**

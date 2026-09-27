@@ -28,7 +28,7 @@ beforeAll(() => {
   karakter = loadJson('karakter/test_karakter3.json');
   rules = loadJson<{ rules: Rule[] }>('rules.json').rules;
   konstansok = loadJson('tables/konstansok.json');
-  fegyverek = loadJson('tables/fegyverek.json');
+  fegyverek = loadJson('tables/fegyverek_v2.json');
   const raw = loadJson<any[]>('tables/harcmodor_kepzettsegek_bonuszok.json');
   harcmodorBonusz = raw.map(e => ({
     szint: parseInt(e['Harcmodor Szint']),
@@ -103,7 +103,7 @@ describe('Golden #3 — fegyver kalkuláció', () => {
     data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] };
   });
 
-  it('Meneth (abbitacél, MF 1.fok): TÉ=25, VÉ=42, SP=7, harckeret=6, támadások=1', () => {
+  it('Meneth (abbitacél, MF 1.fok): TÉ=25, VÉ=43, SP=7, harckeret=6, támadások=2', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const rows = buildFegyverRows(karakter, data, null);
     const row = rows.find(r => r.név === 'Meneth');
@@ -113,10 +113,10 @@ describe('Golden #3 — fegyver kalkuláció', () => {
       karakter, data, fortelyMods, 3, harcmodorÖsszeg, lookupArrays, stringCtx,
     );
     expect(res[0].TÉ).toBe(25);
-    expect(res[0].VÉ).toBe(42);
+    expect(res[0].VÉ).toBe(43);
     expect(res[0].SP).toBe(7);
     expect(res[0].harckeret).toBe(6);
-    expect(res[0].támadások).toBe(1);
+    expect(res[0].támadások).toBe(2);
   });
 
   it('Puszta kéz: TÉ=6, VÉ=24, SP=-3, harckeret=0, támadások=1', () => {

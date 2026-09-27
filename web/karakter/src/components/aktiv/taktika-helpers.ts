@@ -1,6 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
+import { elsődlegesMód } from '../harc/fegyver-calc';
 
 /** Extrapolált fokDef interpoláció: ha a keresett fok nincs a fokok listában de van fortély_bővítés. */
 export function interpolateFokDef<T extends { fok: number }>(fokok: T[], fok: number, hasBővítés: boolean): T | undefined {
@@ -43,14 +44,14 @@ export function isTaktikaAllowed(
         const fp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
         if (fp) {
           const fd = lookupFegyver(data.fegyverek, fp.alap);
-          if (fd && data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] === mk.érték) return false;
+          if (fd && data.konstansok.fegyver_kategória_harcmodor[fd.kategória] === mk.érték) return false;
         }
       }
       if (mk.típus === 'támadások' && mk.mód === 'min') {
         const fp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
         const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
-        const sebesség = fd ? parseInt(fd.Sebesség) || 6 : 6;
-        const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] ?? 'Közelharc') : 'Közelharc';
+        const sebesség = fd ? (elsődlegesMód(fd).Sebesség ?? 6) : 6;
+        const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'Közelharc') : 'Közelharc';
         const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
         const támadások = 1 + Math.floor((harcmodorSzint * 2) / sebesség);
         if (támadások < (mk.érték as number)) return false;
@@ -136,7 +137,7 @@ export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): an
       // Find the active weapon's harcmodor level
       const fp = karakter.fegyverek[karakter.session?.aktív_fegyver_index ?? -1];
       const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
-      const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] ?? 'Közelharc') : 'Közelharc';
+      const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'Közelharc') : 'Közelharc';
       const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
 
       // Find highest applicable absolute max_fok

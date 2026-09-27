@@ -9,7 +9,7 @@ interface HarcFegyverTableProps {
   session: Session;
   data: GameData;
   fegyverResults: FegyverResult[];
-  kétkezesResult: (FegyverResult & { sumPengehossz: number }) | null;
+  kétkezesResult: (FegyverResult & { sumFegyverhossz: number }) | null;
   fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null;
   pajzsVÉ: number;
   pajzsFegyverNév: string | null;
@@ -35,7 +35,7 @@ export function HarcFegyverTable({
   function getAktívFegyverNév(): string {
     if (session.aktív_fegyver_index === -2) return pajzsFegyverNév ?? '';
     const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
-    return jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? '') : 'Puszta kéz';
+    return jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.név ?? '') : 'Puszta kéz';
   }
 
   function renderRow(r: FegyverResult, opts: {
@@ -48,8 +48,8 @@ export function HarcFegyverTable({
     const spTotal = r.SP + taktikaMods['SP'];
     const spBónusz = (fortelyMods['SP'] ?? 0) + taktikaMods['SP'];
     const spBase = spTotal - spBónusz;
-    const ph = r.pengehossz + (fortelyMods['pengehossz'] ?? 0);
-    const pengeWarning = belharciAktív && r.pengehossz > 0;
+    const ph = r.fegyverhossz + (fortelyMods['pengehossz'] ?? 0);
+    const pengeWarning = belharciAktív && r.fegyverhossz > 0;
     const név = displayNév ?? r.fegyver_név;
 
     return (
@@ -61,7 +61,7 @@ export function HarcFegyverTable({
         <td className={véFlashClass}>{vé}</td>
         <td>{spBónusz !== 0
           ? <>{spBase}<span className={spBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{spBónusz > 0 ? '+' : ''}{spBónusz}</span></>
-          : spTotal} {r.sebzésmód}</td>
+          : spTotal} {r.jelleg}</td>
         <td className={phBonusClass}>{showPh2 != null ? `${ph}(${showPh2 + (fortelyMods['pengehossz'] ?? 0)})` : ph}</td>
       </tr>
     );
@@ -70,7 +70,7 @@ export function HarcFegyverTable({
   function renderOverlayRow() {
     if (kétkezesResult) {
       return renderRow(kétkezesResult, {
-        veBónusz: pajzsVÉ, téExtra: 0, isOverlay: true, showPh2: kétkezesResult.sumPengehossz,
+        veBónusz: pajzsVÉ, téExtra: 0, isOverlay: true, showPh2: kétkezesResult.sumFegyverhossz,
       });
     }
     if (fogásResult) {

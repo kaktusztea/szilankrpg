@@ -5,22 +5,22 @@ import type { GameData } from '../../engine/data-loader';
 
 const data = {
   fegyverek: [
-    { Fegyver: 'Hosszúkard (1K)', Alapnév: 'Hosszúkard' },
-    { Fegyver: 'Tőr', Alapnév: '' },
+    { név: 'Hosszúkard' },
+    { név: 'Tőr' },
   ],
 } as unknown as GameData;
 
-const karakter = { fegyverek: [{ alap: 'Hosszúkard (1K)' }, { alap: 'Tőr' }] } as unknown as Karakter;
+const karakter = { fegyverek: [{ alap: 'Hosszúkard' }, { alap: 'Tőr' }] } as unknown as Karakter;
 const sess = (idx: number) => ({ aktív_fegyver_index: idx } as unknown as Session);
 
-const kard = { fegyver_név: 'Hosszúkard (1K)', TÉ: 60, VÉ: 70, támadások: 2 };
+const kard = { fegyver_név: 'Hosszúkard', TÉ: 60, VÉ: 70, támadások: 2 };
 const tőr = { fegyver_név: 'Tőr', TÉ: 40, VÉ: 50, támadások: 2 };
 const pajzs = { fegyver_név: 'Közepes Pajzs', TÉ: 10, VÉ: 30, támadások: 1 };
 const base = { fegyverResults: [kard, tőr, pajzs], kétkezesResult: null, fogásResult: null, pajzsVÉ: 5, pajzsFegyverNév: 'Közepes Pajzs' };
 
 describe('aktívJobbFegyverNév', () => {
   it('a kiválasztott fegyver megjelenített neve', () => {
-    expect(aktívJobbFegyverNév(karakter, sess(0), data)).toBe('Hosszúkard (1K)');
+    expect(aktívJobbFegyverNév(karakter, sess(0), data)).toBe('Hosszúkard');
   });
   it('puszta kéz, ha nincs kiválasztva (negatív index)', () => {
     expect(aktívJobbFegyverNév(karakter, sess(-1), data)).toBe('Puszta kéz');

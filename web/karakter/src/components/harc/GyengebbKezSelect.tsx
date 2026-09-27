@@ -3,7 +3,7 @@ import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
-import { getPengehossz } from './fegyver-helpers';
+import { getFegyverhossz, isHárító } from './fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function getKétkezesBalOpciók(
@@ -12,17 +12,17 @@ function getKétkezesBalOpciók(
   data: GameData,
   jobbIdx: number,
 ): { név: string; idx: number }[] {
-  const jobbPenge = jobbIdx >= 0 ? getPengehossz(data, karakter.fegyverek[jobbIdx]?.alap ?? '') : 0;
+  const jobbFh = jobbIdx >= 0 ? getFegyverhossz(data, karakter.fegyverek[jobbIdx]?.alap ?? '') : 0;
   return fegyverOpciók.filter(f => {
     if (f.idx < 0) return false;
     const alap = karakter.fegyverek[f.idx]?.alap ?? '';
     if (alap.toLowerCase() === 'puszta kéz') return false;
     const fDef = lookupFegyver(data.fegyverek, alap);
-    if (fDef?.Hárító === '1') return false;
+    if (isHárító(fDef)) return false;
     if (jobbIdx < 0) return true;
-    const balPenge = parseFloat(fDef?.Pengehossz ?? '0') || 0;
-    if (balPenge > jobbPenge) return false;
-    return balPenge + jobbPenge <= data.konstansok.kétkezes_harc_max_pengeméret;
+    const balFh = fDef?.fegyverhossz ?? 0;
+    if (balFh > jobbFh) return false;
+    return balFh + jobbFh <= data.konstansok.kétkezes_harc_max_pengeméret;
   });
 }
 
@@ -48,7 +48,7 @@ export function GyengebbKezSelect({ data, karakter, session, setSession, fegyver
 function HáritóSelect({ data, karakter, session, setSession }: Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'>) {
   const háritók = karakter.fegyverek
     .map((fp, i) => ({ i, fp }))
-    .filter(({ fp }) => lookupFegyver(data.fegyverek, fp.alap)?.Hárító === '1');
+    .filter(({ fp }) => isHárító(lookupFegyver(data.fegyverek, fp.alap)));
 
   const validIdx = háritók.find(h => h.i === session.aktív_fegyver_bal_index) ? session.aktív_fegyver_bal_index : (háritók[0]?.i ?? -1);
 

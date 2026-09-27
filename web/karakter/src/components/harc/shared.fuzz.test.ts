@@ -48,17 +48,15 @@ describe('computeVÉ fuzz', () => {
 });
 
 describe('resolveNagyobbKisebb fuzz', () => {
-  it('nagyobb always has >= pengehossz than kisebb', () => {
+  it('nagyobb always has >= fegyverhossz than kisebb', () => {
     fc.assert(fc.property(
       fc.float({ min: 0, max: 3, noNaN: true }),
       fc.float({ min: 0, max: 3, noNaN: true }),
       (jp, bp) => {
-        const jobb = { Pengehossz: String(jp) };
-        const bal = { Pengehossz: String(bp) };
+        const jobb = { fegyverhossz: jp };
+        const bal = { fegyverhossz: bp };
         const result = resolveNagyobbKisebb(jobb, bal, { alap: 'J' }, { alap: 'B' });
-        const nagyobbPenge = parseFloat(result.nagyobb.Pengehossz) || 0;
-        const kisebbPenge = parseFloat(result.kisebb.Pengehossz) || 0;
-        expect(nagyobbPenge).toBeGreaterThanOrEqual(kisebbPenge);
+        expect(result.nagyobb.fegyverhossz).toBeGreaterThanOrEqual(result.kisebb.fegyverhossz);
       }
     ), { numRuns: 100 });
   });

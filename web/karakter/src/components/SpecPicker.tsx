@@ -88,12 +88,12 @@ export function buildFortelyPickerSource(
     };
   }
   if (def.többszörös_típus === 'fegyver') {
-    // Fortély spec_elem = Alapnév (case-insensitive összevetés a usedSubs-szal).
+    // Fortély spec_elem = fegyver neve (case-insensitive összevetés a usedSubs-szal).
     const felvett = new Set([...usedSubs].map(s => s.toLowerCase()));
     return {
       type: 'grouped',
       label: `${def.név} — fegyver:`,
-      groups: buildFegyverGroups(data, f => f.Alapnév || f.Fegyver, felvett),
+      groups: buildFegyverGroups(data, f => f.név, felvett),
     };
   }
   if (def.többszörös_típus === 'nyelv') {

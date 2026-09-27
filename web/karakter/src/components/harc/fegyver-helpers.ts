@@ -3,9 +3,14 @@ import type { Karakter } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
 import { buildPajzsFegyverNév } from './shared';
 
-/** Pengehossz lookup közös helper */
-export function getPengehossz(data: GameData, alap: string): number {
-  return parseFloat(lookupFegyver(data.fegyverek, alap)?.Pengehossz ?? '0') || 0;
+/** Fegyverhossz-kategória lookup közös helper */
+export function getFegyverhossz(data: GameData, alap: string): number {
+  return lookupFegyver(data.fegyverek, alap)?.fegyverhossz ?? 0;
+}
+
+/** Hárítófegyver-e (a `Hárító: ` névprefix jelöli, l. `fegyverek_fixed.json`). */
+export function isHárító(fDef: { név: string } | undefined): boolean {
+  return fDef?.név.startsWith('Hárító: ') ?? false;
 }
 
 /**
@@ -16,10 +21,11 @@ export function getPengehossz(data: GameData, alap: string): number {
 export function kétkezesLehetséges(data: GameData, karakter: Karakter, jobbIdx: number): boolean {
   const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
   if (!jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz') return false;
-  if (lookupFegyver(data.fegyverek, jobbFp.alap)?.['Forgatás módja'] === 'kétkezes') return false;
+  const jobbDef = lookupFegyver(data.fegyverek, jobbFp.alap);
+  if (jobbDef?.módok.some(m => m.Forgatás === 'kétkezes')) return false;
   return karakter.fegyverek.some(fp =>
     fp.alap.toLowerCase() !== 'puszta kéz' &&
-    lookupFegyver(data.fegyverek, fp.alap)?.Hárító !== '1');
+    !isHárító(lookupFegyver(data.fegyverek, fp.alap)));
 }
 
 /** Fegyver opciók listázása */
@@ -29,7 +35,7 @@ export function buildFegyverOpciók(karakter: Karakter, data: GameData) {
     { név: 'Puszta kéz', idx: -1 },
     ...karakter.fegyverek.map((f, i) => {
       const fd = lookupFegyver(data.fegyverek, f.alap);
-      return { név: fd?.Alapnév || f.alap, idx: i };
+      return { név: fd?.név || f.alap, idx: i };
     }),
     ...(pajzsNév ? [{ név: pajzsNév, idx: -2 }] : []),
   ];

@@ -43,8 +43,8 @@ export function FortelyCsoport({
             && !kiterjeszt.some(kn => képzettségek.some(k => k.név === kn && k.szint >= 1));
 
           const fegyverHarcmodorNév = slot.spec_elem ? (() => {
-            const fd = data.fegyverek.find(d => d.Alapnév?.toLowerCase() === slot.spec_elem!.toLowerCase() || d.Fegyver.toLowerCase() === slot.spec_elem!.toLowerCase());
-            return fd ? data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] : undefined;
+            const fd = data.fegyverek.find(d => d.név.toLowerCase() === slot.spec_elem!.toLowerCase());
+            return fd ? data.konstansok.fegyver_kategória_harcmodor[fd.kategória] : undefined;
           })() : undefined;
 
           return (
