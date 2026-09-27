@@ -901,7 +901,10 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🗡️ Harci taktika, Harci szituáció vagy Manőver
 
-`k20T`: `k20` dobás tízes része (`5 → 0,  16 → 1,  20 → 2`)
+`k20P`: `k20` páros/páratlan része
+- "egyes rész páratlan" → `0`
+- "egyes rész páros" → `1`
+- `10,20` dobott érték → `2`
 
 ✨ Mágia
 
@@ -10541,25 +10544,9 @@ Visszahajló acélfalon felmászni.
 Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobást kell végezni (**Edzettség** Tulajdonsággal).
 
 ---
-### Rontott mászás próba után: Mentő képzettségpróba
+### Rontott mászás próba után
 
-Kiemelt szituáció a mászás próba rontása, hiszen itt sokszor élet-halál szituációban van a karakter - adnunk kell számára esélyt, hogy hibájából kikeveredjen. Ilyenkor azonnal egy új - soron kívüli - Mentő Mászás képzettségpróbát (sima, nem összetett) kell dobni **Edzettség** Tulajdonsággal:
-
-```
-Mentő dobás módosító: -3
-(rontás után)
-```
-
-#### Erő bevetése rontott mászás utáni mentő képzettségpróba dobásnál
-
-```
-+0 Erőig lehet lemenni
-   Mentő Mászás dobásnál
-```
-
-Az **Erő** Tulajdonság bevethető rontás utáni Mentő Mászás képzettségpróbánál. ilyenkor **Erő** Tulajdonságból pontokat tehetünk a próbába. Ennek hatására az **Erő** Tulajdonság - a költés mértékével - ideiglenesen lecsökken. Korlát: `+0` értékig csökkenthetjük így a Tulajdonságot.
-
-Az elköltött **Erő** pontok az aktuális mászó szituáció végéig nem térnek vissza. Pihenésben `1 pont / perc` tér vissza.
+Ha a rontott Mászás próba végzetes lenne, akkor természetesen [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás) vagy jogosult, aminek **Vállalás** dobását **Erő** Tulajdonsággal tudod megtámogatni.
 
 ---
 ### Megállás ÉS pihenés a falon rontás után
@@ -11573,6 +11560,7 @@ A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzón�
 - [Helyettesítés](#helyettesítés)
 - [Sérülés hatása képzettségpróbára](#sérülés-hatása-képzettségpróbára)
 - [Tulajdonság vs Képzettség ellenpróba](#tulajdonság-vs-képzettség-ellenpróba)
+- [Mentődobás](#mentődobás)
 - [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md)
 - [Csoportosan végezhető képzettségek listája](030_06_03_csoportosan_vegezheto_kepzettsegek.md)
 
@@ -11872,6 +11860,43 @@ Előfordulhat olyan furcsa helyzet, hogy a KM véleménye szerint egy szituáci�
 
 Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbálja vagy Tulajdonság ellenpróbába, vagy Képzettség ellenpróbába fordítani a szituációt. Ne bonyolítsunk feleslegesen.
 
+---
+## Mentődobás
+
+Ha egy olyan szituációban rontasz képzettségpróbát, ami végzetes hatású (**nem** Vállalás dobás hatására!), akkor jogosult vagy **Mentődobásra**.
+
+```
+Dobásmódosító: -3
+(az első rontás miatt)
+```
+
+### Vállalás dobásba forgatható Tulajdonság pontok
+
+Ha a Mentdobás során [Vállalást](#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba) is végzel, akkor annak választott értékébe (`1/2/3`) beforgatható egy konkrét **Tulajdonság** pontjaidnak `0` feletti része.
+
+- Minden beforgatott pont `1` vállalás-kritikus-rontás pontot semlegesít.
+- Az összes `0` feletti Tulajdonság pontod elhasználódik, akkor is, ha túcsordul a Vállalás értékén
+- KM mondja meg, melyik Tulajdonság használandó - lehet fizikai és szellemi is
+- Egy alapos pihenésig a "bevetett" Tulajdonság stabilan lecsökken `0` értékre (kimerülés)
+
+### Példa mentődobásra: Mászás képzettség
+
+Szituáció: Tetves rontott Mászás képzettségpróbát vét a szikla felénél - ez végzetes lenne. Ciki a helyzet, jön a Mentődobás.
+
+- Dobásmódosító: `-3` (az első próba rontása miatt)
+- Vállalás: a játékos bevállalja egészen a lehetséges Vállalás-maximumig: `+3`
+  - Ez "kinullázza" a `-3` alap büntetést, esélyei javulnak, talán megúszhatja
+  - ekkor `1,2,3` értékek okoznának végzetes hibát a Vállalás-dobáson
+- Erő: `+2`  → a játékos beveti `2` értékű Erő Tulajdonságát
+  - **Erő** értéke ez után `+0`-ra csökken - pihenésig
+- Mentő Képzettségdobás jön
+  - Siker: esetén jön a Vállalás dobás
+  - Sikertelen esetén: most már valóságos végzetes hiba történik
+- Vállalás dobás jön (`k6`)
+  - független a képzettség dobás eredményétől
+  - `1`: végzetes hiba
+  - `2,3`: a bevetett `2` Erő pont mérséklése miatt ezeknél nincs végzetes hiba (amúgy lenne)
+  - 
 ---
 
 🔗 [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) →
@@ -12856,7 +12881,7 @@ Ritkán csúszik meg a kezed.
 
 🔒 [Mászás](../kepzettsegek.szekunder/maszas.md) - `6.szint`
 
-🌟 **Hatás**: A Mászás képzettségpróba rontása után a megkapaszkodás során kapott [Nehézség büntetés](../kepzettsegek.szekunder/maszas.md#rontott-m%C3%A1sz%C3%A1s-pr%C3%B3ba-ut%C3%A1n-ment%C5%91-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) rád nem vonatkozik.
+🌟 **Hatás**: A Mászás képzettségpróba végzetes rontása után a [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás) kapott Nehézség büntetés (`-3`) rád nem vonatkozik.
 
 ---
 
@@ -15785,9 +15810,9 @@ Olyan fajú karakterrel játszol, amelynek bőre/héja páncélnak minősül.
 
 🔒 **Követelmény**:
 - [Faj Háttér](../021_faj_hatterek.md) ahol ajánlott fortély a **Természetes páncél** legalább `1.foka`
-- Példa: ⭕Faj Háttér: sáskaharcos
+- Példa: Faj Háttér: Sáskaharcos⭕
 
-🌟 `SFÉ: +3`⭕
+🌟 `SFÉ: +2`
 
 ---
 ### 2. fok
@@ -15796,16 +15821,16 @@ Olyan fajú karakterrel játszol, amelynek bőre/héja páncélnak minősül.
 - [Faj Háttér](../021_faj_hatterek.md) ahol ajánlott fortély a **Természetes páncél** legalább `2.foka`
 - Példa: ⭕Faj Háttér: xy
 
-🌟 `SFÉ: +6`⭕
+🌟 `SFÉ: +4`
 
 ---
 ### 3. fok
 
 🔒 **Követelmény**:
 - [Faj Háttér](../021_faj_hatterek.md) ahol ajánlott fortély a **Természetes páncél** legalább `3.foka`
-- Példa: ⭕Faj Háttér: gyíklény
+- Példa: Faj Háttér: Gyíklény⭕
 
-🌟 `SFÉ: +9`⭕
+🌟 `SFÉ: +6`
 
 
 ---
@@ -20926,33 +20951,32 @@ Sebzés jellege
 ### 😵 VÉ csökkentés ( TÉ < VÉ )
 
 ```
-"k20T" rövidítés == k20 tízes része
+k20P == k20 egyes rész páratlan/páros
 
-Példák:
-   5  → 0
-  16  → 1
-  20  → 2
+0: 1,3,5,7,9,11,13,15,17,19
+1: 2,4,6,8,12,14,16,18
+2: 10,20
 ```
 
 #### [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
 
 ```
 VÉ csökkentés
-  k20T
+  k20P
 ```
 
 #### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 ```
 VÉ csökkentés
-  1 + k20T
+  1 + k20P
 ```
 
 #### [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
 ```
 VÉ csökkentés
-  2 + k20T
+  2 + k20P
 ```
 
 <br />
@@ -21209,17 +21233,17 @@ Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegy
 ### ⚜️ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
 
 - Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20T`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20P`
 
 ### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 - A felek fegyverméreteinek különbsége kisebb `1 pengehossznál`
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20P`
 
 ### ⚜️ [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
 - Fegyverméret-különbség legalább `+1` pengehossz
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20P`
 - ⚡ Példa: **Hosszú kard**  vs. **Tőr**
 - ⚡ Példa: **Alabárd** vs **Hosszú kard**
 
@@ -21979,7 +22003,7 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 ### 🔆Pengeméret
 
 - Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) harci helyzetben vannak.
-- Tehát sikertelen (nem sebző) támadások esetén `1 + k20T` értékkel csökkentik egymás **Védő Értékét**.
+- Tehát sikertelen (nem sebző) támadások esetén `1 + k20P` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
 
@@ -22963,7 +22987,7 @@ A `VÉ` csökkentést tekintve hátrányban vagy az **Alappengéhez** képest, v
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-k20T
+k20P
 ```
 
 ### Alappenge
@@ -22973,7 +22997,7 @@ Fegyvered azonos hosszú, vagy **nem** hosszabb legalább `1 pengével` ellenfel
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-1 + k20T
+1 + k20P
 ```
 
 ### Pengeelőny
@@ -22983,7 +23007,7 @@ Fegyvered mérete legalább `1 pengével` hosszabb ellenfeledénél. **Csak akko
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-2 + k20T
+2 + k20P
 ```
 
 <br />
@@ -23406,7 +23430,7 @@ VÉ:+8, folyamatos hátrálás
 Nem támadhatsz, nem varázsolhatsz, VÉ csökkentés: 0
 
 Ellenfél VÉ csökkentése rajtad:
-  (1 + k20T)
+  (1 + k20P)
   + "Fárasztó taktika" bónusza
 ```
 
@@ -23414,7 +23438,7 @@ Ellenfél VÉ csökkentése rajtad:
 
 A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-🔆 A [lények méretkülönbségéből](065_01_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
+🔆 A [lények méretkülönbségéből](065_01_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20P` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 
@@ -26873,7 +26897,41 @@ MGT növekedés:
 
 ## Felszerelés MGT
 
-A páncél MGT mellett említsük meg a kapcsolódó [Felszerelés MGT](010_03_06_felszereles.md) fogalmát is, amely szintén harcot korlátozó tényező. Részleteit lásd az utóbbi linken.
+A páncél MGT mellett kapcsolódó érték a [Felszerelés MGT](010_03_06_felszereles.md), amely szintén harcot korlátozó tényező lehet.
+
+Az ott leírt **Felszerelés keretből** (`Erő+2`) levon pár pontot, ha páncélod legalább `50%`-ban fed - az alábbiak szerint:
+```
+1 pont: Könnyűvért 50%+ fedésben
+2 pont: Merevvért 50%+ fedésben
+        (pikkely, lemez)
+```
+
+A túlcsorduló Felszerelés pont további MGT hatást okozhat. Bővebben [lásd ott](010_03_06_felszereles.md).
+
+---
+## Hosszútávú viselet, barangolás páncélban
+
+Egy páncél viselete rövidtávon nem okoz problémát, de hosszútávú gyaloglás és viselet esetén már igen kimerítő és ez a csapat haladását is befolyásolhatja. Az ilyen felszerelés hosszútávú szállításához kíséret, fegyverhordozó, málhásállatok, szekér szükséges. A leírtak alacsony MGT értékkel kitűnő, magas minőségű vértekre is vonatkoznak!
+
+### `1.` Félvért, közepes pajzs tartós viselete, cipelése
+
+Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
+
+```
++ Státusz: Fizikai (1)
++ 1/2 távot tudsz megtenni naponta
+  Ez hátráltatja a csapatot.
+```
+
+### `2.` Teljes vért, Nagy pajzs
+
+```
++ Státusz: Fizikai (2)
++ 1/4 távot tudsz megtenni naponta.
+  Ez hátráltatja a csapatot.
+```
+
+Magasabb szinteken előfordulhatnak mágikus könnyítések, mint kisebb tárgyakká alakuló varázsfegyverek, páncélok.
 
 ---
 
@@ -32576,7 +32634,7 @@ A zuhanás okozta sérüléseket a [Sebződés hatása](../064_02_08_sebzodes_ha
 ---
 ### ⚡Példa
 
-Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../kepzettsegek.szekunder/maszas.md#rontott-m%C3%A1sz%C3%A1s-pr%C3%B3ba-ut%C3%A1n-ment%C5%91-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) is, lehullik egy `4 méter` magas kiszögellésről. Szerencséjére egy füves susnyába érkezik (Nehézség módosító: `-3`).
+Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../030_06_01_kepzettsegproba.md#mentődobás) is, lehullik egy `4 méter` magas kiszögellésről. Szerencséjére egy füves susnyába érkezik (Nehézség módosító: `-3`).
 
 Tetves könnyű bőrvértet visel, ezért a KM `+2` büntetést ad az esés során dobott Akrobatika próbára.
 
@@ -33270,7 +33328,7 @@ A levonás a lőfegyver méretétől függ. Minél nagyobb, annál nagyobb a lev
 ---
 ## File: md/szituaciok/maszas_osszetett_pelda.md
 
-## Mászás képzettségpróbára összetett példa
+# Mászás képzettségpróbára összetett példa
 
 [Mászás képzettség](../kepzettsegek.szekunder/maszas.md)
 
@@ -33285,43 +33343,77 @@ Erő: +2
 Önuralom: +1
 ```
 
-### ⚙️ Kezdés
+---
+## ⚙️ [Mászás](../kepzettsegek.szekunder/maszas.md) összetett képzettségpróba
 
-A mászás elején Tetves [Mászás](../kepzettsegek.szekunder/maszas.md) képzettségpróbát dob. A terep **Nagyon nehéz** → Célszám: `15`
+A hosszabb táv miatt a KM [összetett képzettségpróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) ír elő, `2 db` próbával:
 
-A táv miatt a KM [összetett képzettségpróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) ír elő `+1 db` próbával, így Tetvesnek egy `15`-ös és egy `12`-es próbát kell dobnia.
+```
+k10 + 10 (+7 Mászás +3 Ügyesség)
+
+  vs
+
+15 Nehézség ellen (Nagyon nehéz)
+12 Nehézség ellen
+```
 
 🔆 "Az áthajláson kell  már csak átjutnom, ott akár félseggel ki is ülhetek arra a pici párkányra és az adna egy kis szuszt. Ááá, csak ez a buzi áthajlás... de itt már kurvára alig bírom... na csak odáig még, azt jó lesz... ehehhheee,  ott a kis lépésem is.. kicsit messze, de ez van. Na lássuk..."
 
-`Mászás(7)+Ügyesség(3) = 10 +k10`
+```
+🎲 Első dobás: 4 (+10)
+   → 14  vs  15 → az első próba sikertelen ⛔
 
-🎲 Első dobás: `4` → `14  vs  15` → az első próba sikertelen ⛔
+🎲 Második dobás: 3 (+10)
+   → 13  vs  12 → a második próba sikeres ✅
+```
 
-🎲 Második dobás: `3` → `13  vs  12` → a második próba sikeres ✅
-
-⚙️ A második - rontott - képzettségpróba hatása:\
+⚙️ Az első - rontott - képzettségpróba hatása:\
 A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a visszalépés pedig kifejezetten szuicid érzésnek tűnik.
 
 🔆 "...annnyád!!!!! ANYÁD!!!!! úúú, baszki, mostmiafaszlegyenmiafaszlegyen..."
 
 <br />
 
-### ⚙️ Rontott próba után
+---
+## ⚙️ Rontott próba után mentődobás
 
 🎲 Önuralom próba pánik ellen: `1+k6 vs 5 (Nehéz)   →` sikeres ✅
 
 🔆 "Ááá, nem bírom sokáig, gyerünk baszki!"
 
-⚙️ `+2`-es **Erő** bevetése: az aktuális mászás során a játékos elhasználhat pontokat karaktere `Erő` Tulajdonságából (maximum `0` értékre mehet le), amiből utána percenként `1` pont tér vissza (bővebben lásd a [Mászás képzettség leírását](../kepzettsegek.szekunder/maszas.md#erő-bevetése-rontott-mászás-utáni-mentő-képzettségpróba-dobásnál)). Tetves felhasználja mind a két **Erő** pontját.
+⚙️ A rontás **Végzetes hiba** volt (a zuhanás vége nagy placcs lenne)\
+→ így Tetves jogosult a képzettségpróba [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás), amire ugye `-3` büntetés jár.
 
-⚙️ Mászás képzettségpróba: fel tudja-e húzni magát a kitett helyzetből - erőtartalékai bevetésével?\
-⚙️ A Nehézség `+3` az eredetihez képest, így `15+3 = 18`, azaz Rendkívül nehéz próba
+⚙️ Tetves [Vállalást](../030_06_01_kepzettsegproba.md#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba) alkalmaz a maximálisan lehetséges `+3` értékkel - ezzel nullázza is a fenti `-3` büntetést.
 
-`Mászás(7)+Ügyesség(3)+Erő(2) = 12 + k10`
+```
+15 (Nehézség)
+vs
+9 + k10
+  +7 (Mászás)
+  +2 (Erő)
+  -3 Mentődobás büntetése
+  +3 Vállalás 🔆
+```
 
-🎲 `6` → `18  vs  18` → épphogy megvan ✅
+```
+Dobás
+🎲 5 → (15  vs  15)
+   → épphogy megvan ✅
+```
 
-⚙️ Tetves `Erő` Tulajdonsága az aktuális mászás idejére `0` értékre csökkent.
+### Vállalás dobás
+
+⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes pontot fel kell használnia).
+
+⚙️ Az `Erő` Tulajdonsága az aktuális jelenet idejére `0` értékre csökken.
+
+```
+k6
+ 1: Végzetes hiba
+ 2-3: nincs probléma (+2 Erő bevetése miatt)
+ 4-6: nincs probléma
+```
 
 🔆 "Áááá, kurvák vérit!!"
 
@@ -33329,27 +33421,44 @@ Tetves minden erejét bevetve felgyűrte magát a `11 cm` széles kiszögellésr
 
 <br />
 
-### ⚙️ [Megállás és pihenés a falon rontás után](../kepzettsegek.szekunder/maszas.md#megállás-és-pihenés-a-falon-rontás-után)
+---
+## ⚙️ [Megállás és pihenés a falon rontás után](../kepzettsegek.szekunder/maszas.md#megállás-és-pihenés-a-falon-rontás-után)
 
 Ez **2 biztos tudást** igényel, hogy meg tudja-e tartani magát tartósan. Ebben segíti a **perem** és az **ék**.
 
 1️⃣ **Edzettség** Tulajdonságpróba - Könnyű (`3`) → megvan biztos tudásból ✅
-- Ék: `-2` Nehézség
-- Perem: `-1` Nehézség
-- Nagyon Nehéz (`6`) helyett `3` lett a Nehézség
+
+```
+Nehézség módosítók
+-2: Ék
+-1: Perem
+
+→ (6) Nagyon Nehéz - 3
+  → (3) Könnyű
+```
 
 2️⃣ **Mászás** képzettségpróba - Átlagos (`9`) → megvan biztos tudásból ✅
-- Ék: `-6` Nehézség
-- Perem: `-3` Nehézség
-- Nagyon Nehéz (`18`) helyett `9` lett a Nehézség. Könnyebb biztosítás. Sokkal könnyebb lesz elrugaszkodni is.
 
-Az ék és a perem együtt ad annyit ami már rég biztos tudásból megvan, lehet pihenni, 2 perc múlva visszatér az eredeti **Erő** Tulajdonság értéke (`+2`).
+```
+Nehézség módosítók
+
+-6: Ék
+-3: Perem
+
+→ (18) Nagyon nehéz - 9
+  → (9) Átlagos
+```
+
+A biztosítás miatt megy a pihenés és sokkal könnyebb lesz elrugaszkodni is.
+
+Az ék és a perem együtt ad annyit ami már rég biztos tudásból megvan, lehet pihenni, pár perc múlva visszatér az eredeti **Erő** Tulajdonság értéke (`+2`) és utána sokkal könnyebb lesz elrugaszkodni is.
 
 ⚙️ Ha egy nem képzett mászót tesznek ugyanide, annak nem lesz meg a biztos tudása a pihenéshez, és azon túl, hogy nem tudja visszanyerni az **Erő** Tulajdonságát sem, jó eséllyel leesik.
 
 <br />
 
-### ⚙️ Leesés
+---
+## ⚙️ Leesés
 
 Lásd az [Esés magasból](eses_magasbol.md) szituáció leírását!
 
