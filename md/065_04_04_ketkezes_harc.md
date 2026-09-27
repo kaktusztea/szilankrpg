@@ -18,7 +18,7 @@ Nagyobb fegyver
 
 <br />
 
-## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret)
+## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony)
 
 A két fegyver pengeméreteinek összege.
 

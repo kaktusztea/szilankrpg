@@ -97,7 +97,7 @@ Ogár
 
 ### Pengeméret-különbség és lények mérete
 
-A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
+A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
 
 <br />
 

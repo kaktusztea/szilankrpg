@@ -44,7 +44,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
 
-- [Fegyverméret](065_01_04_fegyver_harci_helyzetek.md#fegyverméret)
+- [Fegyverviszony](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony)
 - [Képzetlen fegyverhasználat](065_01_04_fegyver_harci_helyzetek.md#képzetlen-fegyverhasználat)
 - [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc)
 - [Sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md#sebzéstípusok)
