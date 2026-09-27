@@ -44,6 +44,26 @@ export function computeVÉ(baseVÉ: number, bónusz: number, taktikaVÉ: number,
 }
 
 /**
+ * VÉ veszteség szorzó az aktív harci helyzetekből (pl. "Földön fekve", "Helyhez kötve",
+ * "VÉ kiterjesztés" → duplázás, l. hatas_operatorok.yaml "duplázás" mód, cél: vé_veszteség).
+ * Több aktív forrás esetén a legnagyobb szorzó számít (nem kumulálódik).
+ */
+export function véVesztésSzorzó(aktívHelyzetek: string[], harciHelyzetek: { név: string; hatások?: { operátor?: string; cél: string; érték?: number }[] }[]): { szorzó: number; forrás: string } {
+  let szorzó = 1;
+  let forrás = '';
+  for (const név of aktívHelyzetek) {
+    const def = harciHelyzetek.find(h => h.név === név);
+    for (const h of def?.hatások ?? []) {
+      if (h.operátor === 'duplázás' && h.cél === 'vé_veszteség' && (h.érték ?? 2) > szorzó) {
+        szorzó = h.érték ?? 2;
+        forrás = név;
+      }
+    }
+  }
+  return { szorzó, forrás };
+}
+
+/**
  * VÉ history bejegyzés felfűzése összevonással.
  * Ha az előző változás óta kevesebb mint `ablakMs` telt el ÉS az utolsó bejegyzés
  * azonos irányú (előjelű) mint az új delta, akkor összevonja őket (pl. -3, -1, -1 → -5).

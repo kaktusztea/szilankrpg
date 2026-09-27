@@ -20,7 +20,8 @@ interface HarcHeaderProps {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   konstansok: GameData['konstansok'];
-  onVéChange: (newVal: number) => void;
+  /** delta: nyers, nem szorzott csökkenés/(negatív) visszanyerés mennyisége. */
+  onVéChange: (delta: number) => void;
   onVéLabelTap: () => void;
   onVéResetClick: () => void;
   onKéClick: () => void;
@@ -100,10 +101,10 @@ export function HarcHeader({
         <div className="ve-btns">
           {(konstansok.vé_csökkentés_gombok as number[]).map(n => (
             <button key={n} disabled={!gameMode || session.vé_csökkenés >= maxVéCsökk}
-              onClick={() => onVéChange(Math.min(session.vé_csökkenés + n, maxVéCsökk))}>-{n}</button>
+              onClick={() => onVéChange(n)}>-{n}</button>
           ))}
           <button disabled={!gameMode || session.vé_csökkenés === 0}
-            onClick={() => onVéChange(Math.max(0, session.vé_csökkenés - 1))}>+1</button>
+            onClick={() => onVéChange(-1)}>+1</button>
         </div>
       </div>
 

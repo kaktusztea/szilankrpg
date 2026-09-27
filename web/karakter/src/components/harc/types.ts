@@ -49,6 +49,8 @@ export interface HarcComputed {
   kétkezesResult: (FegyverResult & { sumPengehossz: number }) | null;
   fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null;
   pajzsVÉ: number;
+  véVeszSzorzó: number;
+  véVeszSzorzóForrás: string;
   pajzsFegyverNév: string | null;
   belharciAktív: boolean;
   maxVéCsökk: number;

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildPajzsFegyverNév, resolveNagyobbKisebb, computeTÉ, computeVÉ, coalesceVéHistory } from './shared';
+import { buildPajzsFegyverNév, resolveNagyobbKisebb, computeTÉ, computeVÉ, coalesceVéHistory, véVesztésSzorzó } from './shared';
 import type { Karakter } from '../../engine/types';
 
 describe('buildPajzsFegyverNév', () => {
@@ -71,5 +71,21 @@ describe('coalesceVéHistory', () => {
   it('merges visszanyerés entries too', () => {
     const h = coalesceVéHistory([2], 1, 1000, W);
     expect(h).toEqual([3]);
+  });
+});
+
+describe('véVesztésSzorzó', () => {
+  const helyzetek = [
+    { név: 'Földön fekve', hatások: [{ operátor: 'duplázás', cél: 'vé_veszteség', érték: 2 }] },
+    { név: 'Csúszós talaj', hatások: [{ operátor: 'hátrány', cél: 'té_dobás', érték: -1 }] },
+  ];
+  it('returns 1x with no source when no active helyzet has the effect', () => {
+    expect(véVesztésSzorzó(['Csúszós talaj'], helyzetek)).toEqual({ szorzó: 1, forrás: '' });
+  });
+  it('returns 2x with the source name when a duplázás/vé_veszteség helyzet is active', () => {
+    expect(véVesztésSzorzó(['Földön fekve'], helyzetek)).toEqual({ szorzó: 2, forrás: 'Földön fekve' });
+  });
+  it('ignores unrelated active helyzet entries', () => {
+    expect(véVesztésSzorzó(['Nincs ilyen'], helyzetek)).toEqual({ szorzó: 1, forrás: '' });
   });
 });

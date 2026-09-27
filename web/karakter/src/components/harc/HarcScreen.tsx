@@ -14,6 +14,7 @@ import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás, pushTéDobás } from './DobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
+import { VeSzorzoInfoPopup } from './VeSzorzoInfoPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
@@ -32,6 +33,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const lastVéChangeRef = useRef<number>(0);
   const [showVéHistory, setShowVéHistory] = useState(false);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
+  const [véSzorzóInfo, setVéSzorzóInfo] = useState<number | null>(null);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_felszerelés_mgt: number; hk_fortély: number } | null>(null);
   const [sebCount, setSebCount] = useState(0);
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
@@ -53,21 +55,27 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     véFlashTimer.current = setTimeout(() => setVéFlash(''), VÉ_FLASH_MS);
   }, []);
 
-  const changeVé = useCallback((newVal: number) => {
+  /** delta: nyers változás (pozitív = csökkenés, negatív = visszanyerés); reset=true → teljes törlés. */
+  const changeVé = useCallback((delta: number, reset = false) => {
+    // Csökkenéskor (delta > 0) a "VÉ veszteség duplázódik" jellegű harci helyzetek szorzót adnak
+    // (Földön fekve, Helyhez kötve, VÉ kiterjesztés — l. harci_helyzetek.yaml "duplázás" operátor).
+    const scaledDelta = delta > 0 ? delta * hc.véVeszSzorzó : delta;
+    if (delta > 0 && hc.véVeszSzorzó !== 1) setVéSzorzóInfo(delta);
+    const newVal = reset ? 0 : Math.max(0, Math.min(session.vé_csökkenés + scaledDelta, hc.maxVéCsökk));
     const diff = newVal - session.vé_csökkenés;
     if (diff !== 0) pushUndo(`${diff > 0 ? 'VÉ csökkenés' : 'VÉ visszanyerés'}: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`, [{ field: 'session', prev: session }]);
     const now = Date.now();
     const elapsed = now - lastVéChangeRef.current;
     lastVéChangeRef.current = now;
     // history bejegyzés előjele: csökkenés → negatív, visszanyerés → pozitív
-    const delta = diff > 0 ? -diff : Math.abs(diff);
+    const historyDelta = diff > 0 ? -diff : Math.abs(diff);
     setSession(prev => ({
       ...prev,
       vé_csökkenés: newVal,
-      vé_history: newVal === 0 ? [] : coalesceVéHistory(prev.vé_history, delta, elapsed, VÉ_COALESCE_MS),
+      vé_history: newVal === 0 ? [] : coalesceVéHistory(prev.vé_history, historyDelta, elapsed, VÉ_COALESCE_MS),
     }));
     triggerVéFlash(diff > 0 ? 'down' : 'up');
-  }, [session.vé_csökkenés, pushUndo, setSession, triggerVéFlash]);
+  }, [session.vé_csökkenés, pushUndo, setSession, triggerVéFlash, hc.véVeszSzorzó, hc.maxVéCsökk]);
 
   // KÉ dobás handler
   const handleKéClick = useCallback(() => {
@@ -235,12 +243,16 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         showVéResetConfirm={showVéResetConfirm}
         showVéHistory={showVéHistory}
         támInfo={támInfo}
-        onVéReset={() => { changeVé(0); setShowVéResetConfirm(false); }}
+        onVéReset={() => { changeVé(0, true); setShowVéResetConfirm(false); }}
         onCloseAll={closePopups}
       />
 
       {kéDobásEredmény !== null && (
         <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
+      )}
+
+      {véSzorzóInfo !== null && (
+        <VeSzorzoInfoPopup alap={véSzorzóInfo} szorzó={hc.véVeszSzorzó} forrás={hc.véVeszSzorzóForrás} onClose={() => setVéSzorzóInfo(null)} />
       )}
 
       {showTamadoDobas && aktívTÉ != null && (
@@ -250,7 +262,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           átütés={ctx ? parseInt(lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.Átütés ?? '0') || 0 : 0}
           dobásInfo={collectDobásInfo(session, karakter, data)}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
-          onVéCsökkentés={(eredmény) => changeVé(Math.min(session.vé_csökkenés + eredmény.végső, hc.maxVéCsökk))}
+          onVéCsökkentés={(eredmény) => changeVé(eredmény.végső)}
           onClose={handleTamadoClose}
         />
       )}

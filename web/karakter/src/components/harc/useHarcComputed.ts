@@ -9,7 +9,7 @@ import { calcTaktikaMods } from './taktika-calc';
 import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
-import { buildPajzsFegyverNév } from './shared';
+import { buildPajzsFegyverNév, véVesztésSzorzó } from './shared';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
@@ -87,6 +87,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const { pajzsVÉ, fogásResult } = calcFogás(k, session, data, fortelyMods);
 
   const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');
+  const { szorzó: véVeszSzorzó, forrás: véVeszSzorzóForrás } = véVesztésSzorzó(session.aktív_helyzetek, data.harciHelyzetek);
 
   // Max VÉ csökkenés
   const maxVéCsökk = Math.max(0, ...(kétkezesResult
@@ -106,7 +107,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   return {
     ké, épValue, manöverPont, manőverAlap, sfé_fizikai, sfé_energia, páncélLefedettség, páncélMGT, merevvértBüntetés,
     taktikaMods, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
-    pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások,
+    pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások, véVeszSzorzó, véVeszSzorzóForrás,
     feltételTeljesül,
   };
 }
