@@ -78,7 +78,13 @@ def _fegyver_json(r):
 
 
 def build():
-    return [_fegyver_json(r) for r in bal._load("fegyverek.yaml") if "kategória" in r]
+    """A `fegyverek.yaml` (WORK-paraméterek, a generátor modellen át) + `fegyverek_fixed.json`
+    (Garott, hárítófegyverek, Kopják — már végleges módok[] JSON, nem megy át a modellen,
+    l. `sync_fegyvertablazatok.py` azonos logikája) mainstream fegyvereinek egyesített listája."""
+    generalt = [_fegyver_json(r) for r in bal._load("fegyverek.yaml") if "kategória" in r]
+    with open(bal.DATA_DIR / "fegyverek_fixed.json", encoding="utf-8") as fh:
+        fixed = json.load(fh)
+    return generalt + fixed
 
 
 def run():
