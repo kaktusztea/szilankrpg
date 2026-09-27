@@ -4,8 +4,8 @@ import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás, előnyHátrányLabel, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
-import { netElőnySzint, sebzésPáncélDelta } from './combat-roll-info';
-import type { Páncélosztály, SebzésjellegPáncélMátrix } from '../../engine/data-types';
+import { netElőnySzint, sebzésPáncélDelta, célPáncélSpDelta } from './combat-roll-info';
+import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import { HatasokInfo } from './HatasokInfo';
 
 /** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */
@@ -30,6 +30,10 @@ interface Props {
   jelleg?: string;
   /** Sebzésjelleg × páncélosztály mátrix. Jelenléte kapcsolja be az „Ellenfél páncél" választót. */
   páncélMátrix?: SebzésjellegPáncélMátrix;
+  /** Az aktív fegyver extráinak listája (`cél_páncél` SP-hatás kiértékeléséhez). */
+  fegyverExtrák?: { id: string }[];
+  /** Az összes fegyver-extra definíció (id → def). */
+  extraDefs?: Record<string, FegyverExtraDef>;
   /** Active Előny/Hátrány effects on Sebzésdobás (informational) */
   sebzésHatások: DobásHatás[];
   /** Active static SP bonuses from taktikák (informational) */
@@ -51,7 +55,7 @@ interface SebzésEredmény {
 }
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + ellenfél páncél + k20 roll + info. */
-export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, sebzésHatások, spBónuszok, megjegyzések, hideAutoBónusz, átütés, onClose }: Props) {
+export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, sebzésHatások, spBónuszok, megjegyzések, hideAutoBónusz, átütés, onClose }: Props) {
   // Raw (unclamped) combined value — includes TÉ k20 bonus + active effects.
   // A másodlagos sebzéstípus −1 E/H-ját a hívó (TamadoDobasPopup) már beépítette a defaultElőny-be.
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
@@ -62,8 +66,10 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
 
   const aktuális = clampEHSzint(rawSzint);
-  // Ellenfél-páncéltól függő SP-delta (data layer mátrix lookup).
-  const páncélDelta = páncél && páncélMátrix ? sebzésPáncélDelta(páncélMátrix, jelleg, páncél) : 0;
+  // Ellenfél-páncéltól függő SP-delta: (1) sebzésjelleg×páncél mátrix + (2) cél_páncél extrák (pl. „Páncéltalant jobban sebez").
+  const mátrixDelta = páncél && páncélMátrix ? sebzésPáncélDelta(páncélMátrix, jelleg, páncél) : 0;
+  const extraDelta = páncél && extraDefs ? célPáncélSpDelta(fegyverExtrák, extraDefs, páncél) : 0;
+  const páncélDelta = mátrixDelta + extraDelta;
   const effektívSp = sp + páncélDelta;
 
   function handleDobás() {
@@ -135,7 +141,6 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
             {páncélMátrix && (
               <PáncélVálasztóBtn páncél={páncél} delta={páncélDelta} onSelect={p => { setPáncél(p); setEredmény(null); }} />
             )}
-
             <div className="sebzes-summary">
               SP: {(() => {
                 const fortélySum = spBónuszok.reduce((s, b) => s + b.érték, 0);
@@ -181,10 +186,12 @@ function PáncélVálasztóBtn({ páncél, delta, onSelect }: {
   const [open, setOpen] = useState(false);
   const aktLabel = páncél ? PÁNCÉLOSZTÁLYOK.find(p => p.id === páncél)?.label : 'nincs';
   const colorClass = delta > 0 ? 'sebzes-stat-pos' : delta < 0 ? 'sebzes-stat-neg' : '';
+  // STUDY 3g: kötelező, kiemelt elem — amíg nincs választva, pulzáló figyelmeztető keret.
+  const kellClass = páncél === null ? ' pancel-valaszto-kell' : '';
 
   return (
     <>
-      <button className={`sebzes-stat-btn ${colorClass}`} onClick={() => setOpen(true)}>
+      <button className={`sebzes-stat-btn ${colorClass}${kellClass}`} onClick={() => setOpen(true)}>
         Ellenfél páncél: {aktLabel}{delta !== 0 ? ` (SP ${delta > 0 ? '+' : ''}${delta})` : ''}
       </button>
       {open && (

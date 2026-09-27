@@ -1,0 +1,321 @@
+{
+  "kulonleges_felkeszites": {
+    "id": "kulonleges_felkeszites",
+    "név": "Különleges felkészítés",
+    "csoport": "felkészítés",
+    "leírás": "Belső harci iskola + Mesterfegyver-tudás kell. Enélkül a felkészítetlen alapértékek érvényesek; felkészítve a Mesterfegyver fortély e fegyverre adott bónusza megduplázódik.\n",
+    "feltétel": [
+      {
+        "típus": "fortély",
+        "név": "Mesterfegyver",
+        "érték": 1
+      },
+      {
+        "típus": "narratív",
+        "név": "iskola"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "fortély:Mesterfegyver",
+        "mód": "szorzó",
+        "érték": 2
+      }
+    ]
+  },
+  "beszorithato": {
+    "id": "beszorithato",
+    "név": "Beszorítható",
+    "csoport": "harci_helyzet",
+    "leírás": "Hosszú fegyver (kat. 7/9): Beszorított(2) státuszban nem forgatható rendesen, TÉ/VÉ:0.",
+    "feltétel": [
+      {
+        "típus": "státusz",
+        "név": "Beszorított",
+        "érték": 2
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "TÉ",
+        "mód": "override",
+        "érték": 0
+      },
+      {
+        "cél": "VÉ",
+        "mód": "override",
+        "érték": 0
+      }
+    ]
+  },
+  "panceltalant_jobban_sebez": {
+    "id": "panceltalant_jobban_sebez",
+    "név": "Páncéltalant jobban sebez",
+    "csoport": "harci_helyzet",
+    "leírás": "Vérttelen célon nagyobb sebet ejt. Példa: Meneth, Béltépő",
+    "feltétel": [
+      {
+        "típus": "cél_páncél",
+        "érték": "vérttelen"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "SP",
+        "mód": "flat",
+        "érték": 3
+      }
+    ]
+  },
+  "pocsek_vedekezo_pancelos_ellen": {
+    "id": "pocsek_vedekezo_pancelos_ellen",
+    "név": "Pocsék védekező (páncélos ellen)",
+    "csoport": "harci_helyzet",
+    "leírás": "Páncélos ellenfél ellen a hárítási hátrány kiütközik — VÉ:0. Páncéltalan ellen a kontakt-fenyegetés miatt a bázis VÉ marad.",
+    "feltétel": [
+      {
+        "típus": "cél_páncél",
+        "érték": "páncélos"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "VÉ",
+        "mód": "override",
+        "érték": 0
+      }
+    ]
+  },
+  "pancelszuras_belharcban": {
+    "id": "pancelszuras_belharcban",
+    "név": "Belharcban rések közt beszúr",
+    "csoport": "harci_helyzet",
+    "leírás": "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0.",
+    "feltétel": [
+      {
+        "típus": "harci_helyzet",
+        "id": "belharci_helyzet"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "SFÉ",
+        "mód": "override",
+        "érték": 0
+      }
+    ]
+  },
+  "pajzs_ve_felezes": {
+    "id": "pajzs_ve_felezes",
+    "név": "Láncos: pajzs VÉ felezés",
+    "csoport": "harci_helyzet",
+    "leírás": "A láncos fej megkerüli a pajzsot — a pajzs adta VÉ feleződik.",
+    "feltétel": [
+      {
+        "típus": "cél_felszereles",
+        "érték": "pajzs"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "VÉ",
+        "alcél": "fegyverfogás:fegyver_pajzs",
+        "mód": "szorzó",
+        "érték": 0.5
+      }
+    ]
+  },
+  "pajzs_megkerules": {
+    "id": "pajzs_megkerules",
+    "név": "Pajzs megkerülése",
+    "csoport": "harci_helyzet",
+    "leírás": "Hajlékony fegyver a pajzs mögé csap, a pajzs adta VÉ NEM számít ellene (teljes megkerülés).",
+    "feltétel": [
+      {
+        "típus": "cél_felszereles",
+        "érték": "pajzs"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "VÉ",
+        "alcél": "fegyverfogás:fegyver_pajzs",
+        "mód": "szorzó",
+        "érték": 0
+      }
+    ]
+  },
+  "fegyvertores_immunis": {
+    "id": "fegyvertores_immunis",
+    "név": "Fegyvertörés-immunis",
+    "csoport": "harci_helyzet",
+    "leírás": "Hajlékony (nem merev) fegyver, a Fegyvertörés manőver nem fog rajta.",
+    "hatás": [
+      {
+        "cél": "manőver_ellenpróba",
+        "mód": "letilt",
+        "feltétel": "manőver:fegyvertörés"
+      }
+    ]
+  },
+  "fanyel_fegyvertores_konnyebb": {
+    "id": "fanyel_fegyvertores_konnyebb",
+    "név": "Fanyél fegyvertörése könnyebb",
+    "csoport": "tulajdonság",
+    "leírás": "Fanyél, a Fegyvertörés manőver Ellenpróbánál -2 (könnyebb eltörni).",
+    "feltétel": [
+      {
+        "típus": "manőver_állapot",
+        "érték": "passzív"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "manőver_ellenpróba",
+        "mód": "flat",
+        "érték": -2,
+        "feltétel": "manőver:fegyvertörés"
+      }
+    ]
+  },
+  "sfe_duplazodik": {
+    "id": "sfe_duplazodik",
+    "név": "SFÉ dupla ellene",
+    "csoport": "harci_helyzet",
+    "leírás": "Íves rövid penge páncél ellen különösen rossz: a célpont páncél SFÉ-je duplán számít.",
+    "feltétel": [
+      {
+        "típus": "cél_páncél",
+        "érték": "páncélos"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "SFÉ",
+        "mód": "szorzó",
+        "érték": 2
+      }
+    ]
+  },
+  "beakadas_kockazat": {
+    "id": "beakadas_kockazat",
+    "név": "Beakad (~50%)",
+    "csoport": "harci_helyzet",
+    "leírás": "Sebző találat után (tehát átment a páncélon) ~50% esély, hogy beakad és harc közben nem húzható ki (KM dönti el).",
+    "hatás": [
+      {
+        "cél": "beakadás",
+        "mód": "szöveges"
+      }
+    ]
+  },
+  "onsebzes_kockazat": {
+    "id": "onsebzes_kockazat",
+    "név": "Önsebzés-kockázat",
+    "csoport": "harci_helyzet",
+    "leírás": "Köz- és önveszélyes: a támadó k20 EGYBEN esélydobás — Mesterfegyver-foktól függő küszöb (Mf nélkül 1-10, Mf:1.fok 1-2, Mf:2-3.fok nincs) alá/rá dobva magadat sebzed (rendes sebzés önmagad ellen). Részletek: md/068_06.\n",
+    "hatás": [
+      {
+        "cél": "önsebzés",
+        "mód": "szöveges"
+      }
+    ]
+  },
+  "pontos": {
+    "id": "pontos",
+    "név": "Pontos",
+    "csoport": "tulajdonság",
+    "leírás": "Precíziós szúróhegy: a Precíz támadás manőver Ellenpróbára +2. Csak pengehegy aktor + egykezes forgatás mellett értelmes.\n",
+    "feltétel": [
+      {
+        "típus": "aktor",
+        "érték": "pengehegy"
+      },
+      {
+        "típus": "forgatás",
+        "érték": "egykezes"
+      },
+      {
+        "típus": "manőver_állapot",
+        "érték": "aktív"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "manőver_ellenpróba",
+        "mód": "flat",
+        "érték": 2,
+        "feltétel": "manőver:precíz_támadás"
+      }
+    ]
+  },
+  "lefegyverezhetobb": {
+    "id": "lefegyverezhetobb",
+    "név": "Lefegyverezhetőbb",
+    "csoport": "tulajdonság",
+    "leírás": "Az ilyen fegyvert az ellenfél könnyebben kiüti kezedből, könnyebben eltöri.\n",
+    "feltétel": [
+      {
+        "típus": "forgatás",
+        "érték": "egykezes"
+      },
+      {
+        "típus": "manőver_állapot",
+        "érték": "passzív"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "manőver_ellenpróba",
+        "mód": "flat",
+        "érték": -2,
+        "feltétel": "manőver:lefegyverzés"
+      },
+      {
+        "cél": "manőver_ellenpróba",
+        "mód": "flat",
+        "érték": -2,
+        "feltétel": "manőver:fegyvertörés"
+      }
+    ]
+  },
+  "zuzo_ellen_rosszabb": {
+    "id": "zuzo_ellen_rosszabb",
+    "név": "Zúzó fegyver ellen rosszabb",
+    "csoport": "tulajdonság",
+    "leírás": "Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására. Elszenvedett VÉ csökkenésed duplázódik.\n",
+    "feltétel": [
+      {
+        "típus": "ellenfél_fegyver_sebzésjelleg",
+        "érték": "Z"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "vé_veszteség",
+        "mód": "szorzó",
+        "érték": 2
+      }
+    ]
+  },
+  "kampos_veg_labkirantas": {
+    "id": "kampos_veg_labkirantas",
+    "név": "Kampós vég — Lábkirántás",
+    "csoport": "tulajdonság",
+    "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veg_labkirantas]`).\n",
+    "feltétel": [
+      {
+        "típus": "manőver_állapot",
+        "érték": "aktív"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "manőver_ellenpróba",
+        "mód": "flat",
+        "érték": 2,
+        "feltétel": "manőver:lábkirántás"
+      }
+    ]
+  }
+}

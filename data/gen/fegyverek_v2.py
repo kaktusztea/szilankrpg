@@ -31,6 +31,20 @@ def generate_sebzesjelleg_pancel_matrix():
     write_json('sebzesjelleg_pancel_matrix.json', data)
 
 
+def generate_fegyver_extrak():
+    """extrak.yaml → extrak.json (id → teljes extra-definíció).
+
+    A webapp a fegyver `extrák: [{id, név}]` listáján túl a feltétel+hatás definíciókat is
+    igényli a futásidejű kiértékeléshez (pl. `cél_páncél` extrák a Sebzés popupban). Az
+    `extrak.yaml` a data layer — a TS csak lookupol + kiértékel. Id szerint kulcsolva, hogy a
+    fegyver `extrák[].id` közvetlenül feloldható legyen.
+    """
+    src = os.path.join(DATA_DIR, 'sources', 'fegyverek', 'extrak.yaml')
+    raw = load_yaml(src)
+    by_id = {e['id']: e for e in raw['extrak']}
+    write_json('fegyver_extrak.json', by_id)
+
+
 def generate_fegyverek_v2():
     """fegyverek.yaml → fegyverek_v2.json (a fegyvergenerátor natural módok[] modellje).
 

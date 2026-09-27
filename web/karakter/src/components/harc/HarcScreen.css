@@ -624,6 +624,15 @@
 .mod-valaszto-tipus { font-size: 12px; color: var(--text-dim); }
 .mod-valaszto-ertekek { font-size: 12px; color: var(--text-dim); }
 
+/* STUDY 3g: kötelező „Ellenfél páncél" választó pulzáló figyelmeztetése, amíg nincs érték. */
+.pancel-valaszto-kell {
+  animation: pancel-kell-pulzal 1.2s ease-in-out infinite;
+}
+@keyframes pancel-kell-pulzal {
+  0%, 100% { border-color: var(--border-input); box-shadow: none; }
+  50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.5); }
+}
+
 .sebzes-summary {
   font-size: 13px;
   color: var(--text-dim);

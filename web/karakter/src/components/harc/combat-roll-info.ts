@@ -236,3 +236,37 @@ export function sebzésPáncélDelta(
   if (!jelleg) return 0;
   return mátrix.matrix[jelleg]?.[osztály] ?? 0;
 }
+
+/** A durva `cél_páncél` kategória a választott páncélosztályból: csupasz→vérttelen, egyéb→páncélos. */
+export function célPáncélKategória(
+  osztály: import('../../engine/data-types').Páncélosztály,
+): 'vérttelen' | 'páncélos' {
+  return osztály === 'csupasz' ? 'vérttelen' : 'páncélos';
+}
+
+/**
+ * Az aktív fegyver `cél_páncél` extráinak SP-hatása a választott páncélosztályra.
+ * CSAK az SP-t (`cél: SP`, `mód: flat`) módosító extrákat összegzi — a VÉ/SFÉ-hatásúak
+ * (sfe_duplazodik, pocsek_vedekezo) a védő-oldali statikus értékbe tartoznak (l. TODO / DEVSTATE).
+ */
+export function célPáncélSpDelta(
+  fegyverExtrák: { id: string }[] | undefined,
+  extraDefs: Record<string, import('../../engine/data-types').FegyverExtraDef>,
+  osztály: import('../../engine/data-types').Páncélosztály,
+): number {
+  if (!fegyverExtrák?.length) return 0;
+  const kategória = célPáncélKategória(osztály);
+  let delta = 0;
+  for (const { id } of fegyverExtrák) {
+    const def = extraDefs[id];
+    if (!def?.feltétel || !def.hatás) continue;
+    const illik = def.feltétel.every(f => f.típus === 'cél_páncél' && f.érték === kategória);
+    // Csak akkor alkalmazzuk, ha a feltétel(ek) KIZÁRÓLAG cél_páncél-re szólnak és illenek.
+    const csakCélPáncél = def.feltétel.every(f => f.típus === 'cél_páncél');
+    if (!csakCélPáncél || !illik) continue;
+    for (const h of def.hatás) {
+      if (h.cél === 'SP' && h.mód === 'flat' && typeof h.érték === 'number') delta += h.érték;
+    }
+  }
+  return delta;
+}

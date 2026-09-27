@@ -21,7 +21,7 @@ from gen.kepzettsegek import generate_kepzettsegek  # noqa: E402
 from gen.fortelyok import generate_fortelyok, generate_kiterjesztesek, generate_primer_fortelyok  # noqa: E402
 from gen.fajok import generate_fajok  # noqa: E402
 from gen.aktiv_ful import generate_aktiv_ful  # noqa: E402
-from gen.fegyverek_v2 import generate_fegyverek_v2, generate_sebzesjelleg_pancel_matrix  # noqa: E402
+from gen.fegyverek_v2 import generate_fegyverek_v2, generate_sebzesjelleg_pancel_matrix, generate_fegyver_extrak  # noqa: E402
 from gen.naming_lint import lint as lint_naming  # noqa: E402
 
 # Generálási sorrend: a későbbiek az előzők kimenetére építhetnek
@@ -35,6 +35,7 @@ GENERATORS = [
     generate_aktiv_ful,
     generate_fegyverek_v2,
     generate_sebzesjelleg_pancel_matrix,
+    generate_fegyver_extrak,
 ]
 
 

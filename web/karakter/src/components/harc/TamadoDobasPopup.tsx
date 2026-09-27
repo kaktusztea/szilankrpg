@@ -7,7 +7,7 @@ import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from './combat-roll-info';
 import type { FegyverResultMód } from './types';
-import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
+import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { Fegyverviszony, VéCsökkentésEredmény } from './ve-csokkentes-calc';
 import { netElőnySzint } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
@@ -34,6 +34,10 @@ interface Props {
   módok?: FegyverResultMód[];
   /** Sebzésjelleg × páncél mátrix — továbbadva a Sebzés popupnak az „Ellenfél páncél" választóhoz. */
   páncélMátrix?: SebzésjellegPáncélMátrix;
+  /** Az aktív fegyver extráinak listája (`cél_páncél` SP-hatás kiértékeléséhez). */
+  fegyverExtrák?: { id: string }[];
+  /** Az összes fegyver-extra definíció (id → def), a `cél_páncél` feltétel/hatás feloldásához. */
+  extraDefs?: Record<string, FegyverExtraDef>;
   /** Collected active effects on TÉ/Sebzés rolls */
   dobásInfo: DobásInfo;
   /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázisértékek). */
@@ -54,7 +58,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -103,6 +107,8 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
         átütés={aktívÁtütés}
         jelleg={aktívMód?.jelleg}
         páncélMátrix={páncélMátrix}
+        fegyverExtrák={fegyverExtrák}
+        extraDefs={extraDefs}
         onClose={(spEredmény) => onClose(téResult ? { té: téResult.eredmény, sp: spEredmény } : null)}
       />
     );

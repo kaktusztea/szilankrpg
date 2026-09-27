@@ -301,10 +301,21 @@ export interface SebzésjellegPáncélMátrix {
   struktúra_osztály: Record<string, Páncélosztály>;
 }
 
+/** Egy extra feltétele (ÉS-kapcsolat a tömbön belül). */
+export interface ExtraFeltétel { típus: string; érték?: string | number; név?: string; id?: string }
+/** Egy extra hatása (harcérték-módosító). */
+export interface ExtraHatás { cél: string; mód: string; érték?: number; alcél?: string; feltétel?: string }
+/** Teljes fegyver-extra definíció (id-kulcsolt, `fegyver_extrak.json`). */
+export interface FegyverExtraDef {
+  id: string; név: string; csoport?: string; leírás?: string;
+  feltétel?: ExtraFeltétel[]; hatás?: ExtraHatás[];
+}
+
 export interface GameData {
   konstansok: KonstansokRaw;
   fegyverek: FegyverAlap[];
   sebzésjellegPáncélMátrix: SebzésjellegPáncélMátrix;
+  fegyverExtrák: Record<string, FegyverExtraDef>;
   tavfegyverek: TavfegyverAlap[];
   tavharcSzorzok: TavharcSzorzok;
   kepzettsegKp: { szint: number; kp: number }[];

@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { collectDobásInfo, netElőnySzint, sebzésPáncélDelta, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, netElőnySzint, sebzésPáncélDelta, célPáncélSpDelta, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
+import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 
 // Minimal fixtures — only the fields collectDobásInfo touches for the taktika path.
 function makeData(): GameData {
@@ -87,5 +87,33 @@ describe('sebzésPáncélDelta', () => {
   it('ismeretlen jelleg vagy hiányzó jelleg → 0', () => {
     expect(sebzésPáncélDelta(mátrix, 'zúzó', 'merev')).toBe(0);
     expect(sebzésPáncélDelta(mátrix, undefined, 'merev')).toBe(0);
+  });
+});
+
+describe('célPáncélSpDelta', () => {
+  const defs: Record<string, FegyverExtraDef> = {
+    panceltalant_jobban_sebez: {
+      id: 'panceltalant_jobban_sebez', név: 'Páncéltalant jobban sebez',
+      feltétel: [{ típus: 'cél_páncél', érték: 'vérttelen' }],
+      hatás: [{ cél: 'SP', mód: 'flat', érték: 3 }],
+    },
+    // VÉ-hatású cél_páncél extra — NEM SP, tehát figyelmen kívül hagyandó.
+    pocsek_vedekezo: {
+      id: 'pocsek_vedekezo', név: 'Pocsék védekező',
+      feltétel: [{ típus: 'cél_páncél', érték: 'páncélos' }],
+      hatás: [{ cél: 'VÉ', mód: 'override', érték: 0 }],
+    },
+  };
+  const extrák = [{ id: 'panceltalant_jobban_sebez' }, { id: 'pocsek_vedekezo' }];
+
+  it('vérttelen (csupasz) cél → +3 SP', () => {
+    expect(célPáncélSpDelta(extrák, defs, 'csupasz')).toBe(3);
+  });
+  it('páncélos (nem csupasz) cél → 0 (a VÉ-hatás nem SP)', () => {
+    expect(célPáncélSpDelta(extrák, defs, 'lanc')).toBe(0);
+    expect(célPáncélSpDelta(extrák, defs, 'merev')).toBe(0);
+  });
+  it('nincs extra → 0', () => {
+    expect(célPáncélSpDelta(undefined, defs, 'csupasz')).toBe(0);
   });
 });
