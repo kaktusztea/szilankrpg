@@ -176,7 +176,7 @@ def helyzet_felmeres(harcos: "S.Harcos", csapatok):
     return dict(
         cel=cel,
         pengehossz_kulonbseg=(cel.mod.pengehossz - harcos.mod.pengehossz) if cel else 0,
-        pengeviszony=S.pengeviszony(harcos, cel) if cel else "alappenge",
+        fegyverviszony=S.fegyverviszony(harcos, cel) if cel else "alappenge",
         sajat_ep_arany=1 - harcos.ep_hasznalt / harcos.ep,
         cel_ep_arany=(1 - cel.ep_hasznalt / cel.ep) if cel else 1.0,
         tulero_ellene=len(ellenfelek) - len(sajatok),   # pozitív = a harcos van túlerőben ELLEN
@@ -262,7 +262,7 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
 
     A `taktika:<id>[:fok]` akciók az ÖSSZES taktikak.json közelharci taktikáját lefedik
     (a lovas/távharci taktikák kimaradnak, mert a modellnek nincs lovas/távharci ága).
-    A feltételek durva heurisztikák (ÉP/VÉ arány, pengeviszony, létszámarány), NEM
+    A feltételek durva heurisztikák (ÉP/VÉ arány, fegyverviszony, létszámarány), NEM
     a szabálykönyv KM-döntésű finomságai (azokhoz nincs adat a Harcos modellben)."""
     szabalyok = []
 
@@ -301,14 +301,14 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
         # Roham/Öngyilkos roham: agresszív nyitás, csak ha még nem használt roham ebben a harcban,
         # és NEM alappenge-hátrányban van (rohamot nem érdemes hosszabb fegyveres ellen indítani
         # túl korán, mert a VÉ ×2 büntetés a rohamozóra is vonatkozik).
-        if ctx["roham_meg_elerheto"] and ctx["pengeviszony"] != "pengehátrány":
+        if ctx["roham_meg_elerheto"] and ctx["fegyverviszony"] != "pengehátrány":
             szabalyok.append(("taktika:roham", 1.2))
         if (ctx["roham_meg_elerheto"] and ctx["sajat_ep_arany"] > 0.6
                 and ctx["cel_ep_arany"] < 0.35):
             szabalyok.append(("taktika:öngyilkos_roham", 1.8))   # a cél már majdnem elesett — érdemes végigrohamozni
 
         # Fárasztás: csak Pengehátrányból NEM alkalmazható (l. taktikak.json megkötés)
-        if ctx["pengeviszony"] != "pengehátrány":
+        if ctx["fegyverviszony"] != "pengehátrány":
             szabalyok.append(("taktika:fárasztás", 0.6))
 
         # Kezdeményező: ha a harcos fürgébb akar lenni, kis VÉ árat fizetve

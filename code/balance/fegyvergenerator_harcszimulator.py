@@ -111,9 +111,9 @@ def sebesules_te_levonas(kat, ft_enyhites):
 # Fegyvergenerátor-adapter: generátor módok[] → spec-kompatibilis "fegyver mód"
 # ─────────────────────────────────────────────────────────────────────────────
 
-# fegyverhossz kategória → durva "Pengehossz" (pengeviszony §5.2). A generátor
+# fegyverhossz kategória → durva "Pengehossz" (fegyverviszony §5.2). A generátor
 # fegyverhossz kat. (0..12) egy MÁS skála, mint a régi 0/0.5/1/1.5/2/3/4/5 pengehossz —
-# ez a leképezés BECSLÉS (nincs 1:1 kanonikus megfeleltetés), csak a pengeviszony
+# ez a leképezés BECSLÉS (nincs 1:1 kanonikus megfeleltetés), csak a fegyverviszony
 # elő/hátrány irányához kell, ne kezeld pontos fizikai mértékként.
 _FEGYVERHOSSZ_TO_PENGEHOSSZ = {
     0: 0, 1: 0, 2: 0.5, 3: 1, 4: 1, 5: 1.5, 6: 1.5, 7: 2, 8: 2, 9: 3, 10: 3, 11: 4, 12: 5,
@@ -370,7 +370,7 @@ class Harcos:
 # Egy akció feloldása (§6.5)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def pengeviszony(tamado: Harcos, vedo: Harcos):
+def fegyverviszony(tamado: Harcos, vedo: Harcos):
     d = tamado.mod.pengehossz - vedo.mod.pengehossz
     if d >= 1:
         return "pengeelőny"
@@ -381,7 +381,7 @@ def pengeviszony(tamado: Harcos, vedo: Harcos):
 
 def sikertelen_tamadas_ve_csokkentes(tamado: Harcos, vedo: Harcos, te_k20):
     alap_tab = {"pengehátrány": 0, "alappenge": 1, "pengeelőny": 2}
-    pv = pengeviszony(tamado, vedo)
+    pv = fegyverviszony(tamado, vedo)
     # §13.1 (LEZÁRVA): a k20P mindig a már eldobott támadó k20-ból jön (közös kocka).
     alap = alap_tab[pv] + k20P(te_k20)
 

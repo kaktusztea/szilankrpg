@@ -58,13 +58,13 @@ def tul_bonusz(t):
 
 
 class Harcos:
-    def __init__(s, oldal, TÉ, VÉ, SP, ÉP, SFÉ, KÉ, Átütés, jelleg, struktura, enyh, támadások=1, pengeviszony=0):
+    def __init__(s, oldal, TÉ, VÉ, SP, ÉP, SFÉ, KÉ, Átütés, jelleg, struktura, enyh, támadások=1, fegyverviszony=0):
         s.oldal, s.TÉ0, s.VÉ0, s.SP, s.ÉP, s.SFÉ = oldal, TÉ, VÉ, SP, ÉP, SFÉ
         s.KÉ, s.Átütés, s.jelleg, s.struktura, s.enyh = KÉ, Átütés, jelleg, struktura, enyh
         s.támadások = támadások
         s.oszl = max(1, ÉP // 4)
         s.used = 0; s.vf = 0; s.vs = 0; s.el = True
-        s.pengeviszony = pengeviszony  # +1 pengeelőny / -1 pengehátrány a másik oldalhoz képest
+        s.fegyverviszony = fegyverviszony  # +1 pengeelőny / -1 pengehátrány a másik oldalhoz képest
 
     @property
     def ve(s):
@@ -104,7 +104,7 @@ def kuzdelem(mk_a, mk_b, helyzet_a=0, helyzet_b=0, max_kor=60):
             if c.used >= c.ÉP:
                 c.el = False
         else:
-            c.vf += {1: 2, 0: 1, -1: 0}[h.pengeviszony] + k20P(r)
+            c.vf += {1: 2, 0: 1, -1: 0}[h.fegyverviszony] + k20P(r)
 
     for kor in range(1, max_kor + 1):
         for h in A_ + B_:
@@ -166,10 +166,10 @@ def stat_kozepes(struktura='bőr'):
                 SFÉ=st['sfé_fizikai'], struktura=struktura, támadások=tám, MGT=mgt)
 
 
-def factory(sb, pengeviszony=0):
+def factory(sb, fegyverviszony=0):
     return lambda oldal: Harcos(oldal, sb['TÉ'], sb['VÉ'], sb['SP'], sb['ÉP'], sb['SFÉ'],
                                 sb['KÉ'], sb['Átütés'], sb['jelleg'], sb['struktura'], sb['enyh'],
-                                sb.get('támadások', 1), pengeviszony)
+                                sb.get('támadások', 1), fegyverviszony)
 
 
 def futtat(sb_a, sb_b, N=6000, pv_a=0, pv_b=0, helyzet_a=0, helyzet_b=0):
