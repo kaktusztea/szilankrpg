@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { collectDobásInfo, netElőnySzint, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, netElőnySzint, sebzésPáncélDelta, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
 
 // Minimal fixtures — only the fields collectDobásInfo touches for the taktika path.
 function makeData(): GameData {
@@ -67,5 +68,24 @@ describe('netElőnySzint — előjeles összegzés (Math.abs nélkül)', () => {
       { forrás: 'c', cél: 'té_dobás', operátor: 'hátrány', érték: -1 },
     ];
     expect(netElőnySzint(hatások)).toBe(-2);
+  });
+});
+
+describe('sebzésPáncélDelta', () => {
+  const mátrix: SebzésjellegPáncélMátrix = {
+    matrix: {
+      'vágó-íves': { csupasz: 3, puha: 2, bor: 0, lanc: -2, merev: -4 },
+    },
+    struktúra_osztály: { lemez: 'merev' },
+  };
+
+  it('lookup: jelleg × osztály → SP delta', () => {
+    expect(sebzésPáncélDelta(mátrix, 'vágó-íves', 'merev')).toBe(-4);
+    expect(sebzésPáncélDelta(mátrix, 'vágó-íves', 'csupasz')).toBe(3);
+  });
+
+  it('ismeretlen jelleg vagy hiányzó jelleg → 0', () => {
+    expect(sebzésPáncélDelta(mátrix, 'zúzó', 'merev')).toBe(0);
+    expect(sebzésPáncélDelta(mátrix, undefined, 'merev')).toBe(0);
   });
 });

@@ -13,9 +13,22 @@ amíg az nem kész, a két fájl egymás mellett él, nincs felülírás/duplik�
 import os
 import sys
 
-from .common import DATA_DIR, write_json
+from .common import DATA_DIR, load_yaml, write_json
 
 _BALANCE_DIR = os.path.join(DATA_DIR, '..', 'code', 'balance')
+
+
+def generate_sebzesjelleg_pancel_matrix():
+    """sebzesjelleg_pancel_matrix.yaml → sebzesjelleg_pancel_matrix.json.
+
+    A mátrix a szituációs SP-balansz adatforrása (sebzésjelleg × páncélosztály → SP delta)
+    ÉS a `struktúra_osztály` leképezés (páncél_struktúra → 5 páncélosztály egyike). A webapp
+    Sebzés popup „Ellenfél páncél" választója ezt olvassa (l. STUDY.fegyvergenerator_v2 3g).
+    A YAML teljes egészében data layer marad — a TS csak a lookup-ot végzi.
+    """
+    src = os.path.join(DATA_DIR, 'sources', 'fegyverek', 'sebzesjelleg_pancel_matrix.yaml')
+    data = load_yaml(src)
+    write_json('sebzesjelleg_pancel_matrix.json', data)
 
 
 def generate_fegyverek_v2():

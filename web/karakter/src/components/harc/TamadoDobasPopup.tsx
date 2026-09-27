@@ -6,6 +6,8 @@ import { VeCsokkentesPopup } from './VeCsokkentesPopup';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from './combat-roll-info';
+import type { FegyverResultMód } from './types';
+import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
 import type { Fegyverviszony, VéCsökkentésEredmény } from './ve-csokkentes-calc';
 import { netElőnySzint } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
@@ -21,12 +23,17 @@ export function sebzésElőnyFromK20(k20: number): number {
 }
 
 interface Props {
-  /** Active weapon TÉ value */
+  /** Active weapon TÉ value (fallback: elsődleges mód, ha nincs módok lista) */
   té: number;
-  /** Active weapon SP value (from reactive engine) */
+  /** Active weapon SP value (from reactive engine; fallback az elsődleges mód) */
   sp: number;
   /** Fegyver Átütés értéke (informatív, ha > 0) */
   átütés?: number;
+  /** A fegyver összes kiszámított módja. >1 elem esetén mód-választó gomb jelenik meg.
+   * Üres/1 elem → egymódú fegyver, a té/sp/átütés propok érvényesek. */
+  módok?: FegyverResultMód[];
+  /** Sebzésjelleg × páncél mátrix — továbbadva a Sebzés popupnak az „Ellenfél páncél" választóhoz. */
+  páncélMátrix?: SebzésjellegPáncélMátrix;
   /** Collected active effects on TÉ/Sebzés rolls */
   dobásInfo: DobásInfo;
   /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázisértékek). */
@@ -47,35 +54,55 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
+  const többMódú = (módok?.length ?? 0) > 1;
+  const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
   const [téResult, setTéResult] = useState<TéEredmény | null>(null);
+  const [showMódVálasztó, setShowMódVálasztó] = useState(false);
   const [showSebzés, setShowSebzés] = useState(false);
   const [showVéCsökkentés, setShowVéCsökkentés] = useState(false);
 
+  // Aktív mód: a kiválasztott mód a listából (ha van), különben a prop-értékek.
+  // A `té`/`sp` propok az ELSŐDLEGES mód már-korrigált (taktika mods, levonás) értékei;
+  // más módra váltáskor a mód nyers-értékei közti DELTÁ-t adjuk hozzá, hogy a korrekciók
+  // (taktika/levonás) megmaradjanak.
+  const elsődleges = módok?.find(m => m.sebzéstípus === 'elsődleges') ?? módok?.[0];
+  const aktívMód = módok?.[módIndex];
+  const téDelta = aktívMód && elsődleges ? aktívMód.TÉ - elsődleges.TÉ : 0;
+  const spDelta = aktívMód && elsődleges ? aktívMód.SP - elsődleges.SP : 0;
+  const aktívTé = té + téDelta;
+  const aktívSp = sp + spDelta;
+  const aktívÁtütés = aktívMód?.Átütés ?? átütés;
+  const aktívSebzéstípus = aktívMód?.sebzéstípus ?? 'elsődleges';
+
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
-    setTéResult({ alap: té, dobás, eredmény: té + dobás.eredmény });
+    setTéResult({ alap: aktívTé, dobás, eredmény: aktívTé + dobás.eredmény });
   }
 
   function handleManualK20(value: number) {
     const dobás: ProbaDobás = { rolls: [value], eredmény: value };
-    setTéResult({ alap: té, dobás, eredmény: té + value });
+    setTéResult({ alap: aktívTé, dobás, eredmény: aktívTé + value });
   }
 
   const k20Érték = téResult?.dobás.eredmény ?? 0;
-  const sebzésElőny = sebzésElőnyFromK20(k20Érték);
+  // Másodlagos sebzéstípus → Hátrány−1 (a Sebzés popupba beépítve adjuk át).
+  const sebzésElőny = sebzésElőnyFromK20(k20Érték) + (aktívSebzéstípus === 'másodlagos' ? -1 : 0);
 
   if (showSebzés) {
     return (
       <SebzesPopup
-        sp={sp}
+        sp={aktívSp}
+        sebzéstípus={aktívSebzéstípus}
         defaultElőny={sebzésElőny}
         téK20={k20Érték}
         sebzésHatások={dobásInfo.sebzésHatások}
         spBónuszok={dobásInfo.spBónuszok}
         megjegyzések={dobásInfo.sebzésMegjegyzések}
-        átütés={átütés}
+        átütés={aktívÁtütés}
+        jelleg={aktívMód?.jelleg}
+        páncélMátrix={páncélMátrix}
         onClose={(spEredmény) => onClose(téResult ? { té: téResult.eredmény, sp: spEredmény } : null)}
       />
     );
@@ -98,6 +125,27 @@ export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, véCsökkent�
     );
   }
 
+  if (showMódVálasztó && módok) {
+    return (
+      <PopupOverlay onClose={() => setShowMódVálasztó(false)}>
+        <div className="tamado-dobas-popup">
+          <div className="ke-dobas-header">Fegyver mód</div>
+          <div className="mod-valaszto-list">
+            {módok.map((m, i) => (
+              <button key={i}
+                className={`mod-valaszto-item${i === módIndex ? ' active' : ''}`}
+                onClick={() => { setMódIndex(i); setTéResult(null); setShowMódVálasztó(false); }}>
+                <span className="mod-valaszto-jelleg">{m.jelleg}</span>
+                <span className="mod-valaszto-tipus">{m.sebzéstípus}</span>
+                <span className="mod-valaszto-ertekek">TÉ {m.TÉ} · VÉ {m.VÉ} · SP {m.SP}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </PopupOverlay>
+    );
+  }
+
   return (
     <PopupOverlay onClose={() => onClose(téResult ? { té: téResult.eredmény } : null)}>
       <div className="tamado-dobas-popup">
@@ -116,13 +164,18 @@ export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, véCsökkent�
                 ))}
               </div>
             )}
+            {többMódú && (
+              <button className="mod-valaszto-btn" onClick={() => setShowMódVálasztó(true)}>
+                Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' ? ' (másodlagos)' : ''}
+              </button>
+            )}
             <ElonyPicker szint={szint} onChange={setSzint} />
             {dobásInfo.téHatások.length > 0 && (
               <HatásokInfo hatások={dobásInfo.téHatások} />
             )}
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
-              <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={té} alapLabel="TÉ" />
+              <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={aktívTé} alapLabel="TÉ" />
             </div>
           </>
         ) : (

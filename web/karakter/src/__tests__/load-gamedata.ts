@@ -18,6 +18,7 @@ export function loadGameDataSync(): GameData {
   return {
     konstansok: j('tables/konstansok.json'),
     fegyverek: j('tables/fegyverek_v2.json'),
+    sebzésjellegPáncélMátrix: j('tables/sebzesjelleg_pancel_matrix.json'),
     tavfegyverek: j('tables/tavfegyverek.json'),
     tavharcSzorzok: j('tables/tavharc_szorzok.json'),
     kepzettsegKp: kepzettsegKpRaw.map(e => ({ szint: parseInt(e['Képzettség Szint']), kp: parseInt(e['KP igény']) })),

@@ -291,9 +291,20 @@ export interface KonstansokRaw {
 }
 
 // --- Betöltött adat ---
+
+/** Páncélosztály — a Sebzésjelleg × páncél mátrix 5 oszlopa (l. sebzesjelleg_pancel_matrix.yaml). */
+export type Páncélosztály = 'csupasz' | 'puha' | 'bor' | 'lanc' | 'merev';
+
+/** Sebzésjelleg × páncélosztály → SP delta lookup + struktúra→osztály leképezés. */
+export interface SebzésjellegPáncélMátrix {
+  matrix: Record<string, Record<Páncélosztály, number>>;
+  struktúra_osztály: Record<string, Páncélosztály>;
+}
+
 export interface GameData {
   konstansok: KonstansokRaw;
   fegyverek: FegyverAlap[];
+  sebzésjellegPáncélMátrix: SebzésjellegPáncélMátrix;
   tavfegyverek: TavfegyverAlap[];
   tavharcSzorzok: TavharcSzorzok;
   kepzettsegKp: { szint: number; kp: number }[];

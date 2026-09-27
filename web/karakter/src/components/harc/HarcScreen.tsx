@@ -259,6 +259,8 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           té={aktívTÉ}
           sp={ctx?.result.SP ?? 0}
           átütés={ctx?.result.Átütés ?? 0}
+          módok={ctx?.result.módok}
+          páncélMátrix={data.sebzésjellegPáncélMátrix}
           dobásInfo={collectDobásInfo(session, karakter, data)}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           onVéCsökkentés={(eredmény) => changeVé(eredmény.végső)}

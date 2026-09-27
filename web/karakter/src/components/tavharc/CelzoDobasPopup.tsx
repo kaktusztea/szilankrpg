@@ -77,7 +77,6 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
         sebzésHatások={sebzésHatások}
         spBónuszok={[]}
         megjegyzések={[]}
-        hideMásodlagos
         hideAutoBónusz
         átütés={átütés}
         onClose={onClose}

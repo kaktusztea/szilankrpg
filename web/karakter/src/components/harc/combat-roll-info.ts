@@ -226,3 +226,13 @@ export function netElőnySzint(hatások: DobásHatás[]): number {
   }
   return clampEHSzint(szint);
 }
+
+/** Sebzésjelleg × páncélosztály → SP delta (a data layer mátrixból). Ismeretlen jelleg/osztály → 0. */
+export function sebzésPáncélDelta(
+  mátrix: import('../../engine/data-types').SebzésjellegPáncélMátrix,
+  jelleg: string | undefined,
+  osztály: import('../../engine/data-types').Páncélosztály,
+): number {
+  if (!jelleg) return 0;
+  return mátrix.matrix[jelleg]?.[osztály] ?? 0;
+}
