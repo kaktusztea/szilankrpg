@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
-"""Fegyvergenerátor → éles md fegyvertáblázat-fejezet szinkronizálása.
+"""Fegyvergenerátor → éles md fegyvertáblázat-fejezetek szinkronizálása (mind az 5 kategória).
 
-A `data/sources/fegyverek/fegyverek.yaml` "közelharci" kategóriájú rekordjait a
-fegyvergenerátor (`code/balance/fegyvergenerator_balansz.py`) modelljével harcértékekre
-számolja, PLUSZ a `data/sources/fegyverek/fegyverek_fixed.json` "közelharci" rekordjait
-(Garott, Hárító: Alkarvédő, Hárító: Tonfa — már végleges módok[] JSON, nem WORK-paraméter,
-nem megy át a generátor modellen), és a kimenő markdown táblát beírja az éles
-`md/068_02_kozelharci_fegyverek.md` fájlba, a `<!-- tag: md_table_fegyver_start -->` /
-`_end -->` tag-pár közé — a fájl többi része (leíró szöveg, lábjegyzet-szekciók,
-footer-linkek) érintetlen marad.
+A `data/sources/fegyverek/fegyverek.yaml` kategóriánkénti rekordjait a fegyvergenerátor
+(`code/balance/fegyvergenerator_balansz.py`) modelljével harcértékekre számolja, PLUSZ a
+`data/sources/fegyverek/fegyverek_fixed.json` azonos kategóriájú rekordjait (Garott,
+hárítófegyverek, Kopják — már végleges módok[] JSON, nem WORK-paraméter, nem megy át a
+generátor modellen), és a kimenő markdown táblát beírja az éles `md/068_0N_*.md` fájlba,
+a `<!-- tag: md_table_fegyver_start -->` / `_end -->` tag-pár közé — a fájl többi része
+(leíró szöveg, lábjegyzet-szekciók, footer-linkek) érintetlen marad.
 
 A generátor **saját formátumát** használja (nincs backward compatibility a régi flat
 séma oszlopaival) — a régi `Pengehossz`/`MK`/`KF`/`Íves` oszlopok helyett a `módok[]`
 struktúra (Aktor, Jelleg, Sebzéstípus) jelenik meg, egy fegyver több sorban, módonként.
 
-Futtatás:  python3 code/sync_fegyvertablazat_kozelharci.py
-Csak akkor ír, ha a táblázat tartalma valóban változott (git diff-barát, "no-op ha nincs
-változás" elv, l. AGENTS.md).
+Futtatás:  python3 code/sync_fegyvertablazatok.py [kategória ...]
+  Argumentum nélkül mind az 5 kategóriát frissíti. Egy vagy több kategória-név megadható
+  (pl. `python3 code/sync_fegyvertablazatok.py kardvívó`), ha csak azokat kell frissíteni.
+Csak akkor ír egy fájlba, ha a táblázat tartalma valóban változott (git diff-barát,
+"no-op ha nincs változás" elv, l. AGENTS.md).
 """
 import json
 import sys
@@ -27,11 +28,19 @@ import fegyvergenerator_balansz as bal  # noqa: E402
 
 F = bal.Fegyver
 
-MD_PATH = Path(__file__).resolve().parent.parent / "md" / "068_02_kozelharci_fegyverek.md"
+MD_DIR = Path(__file__).resolve().parent.parent / "md"
 FIXED_PATH = Path(__file__).resolve().parent.parent / "data" / "sources" / "fegyverek" / "fegyverek_fixed.json"
 TAG_START = "<!-- tag: md_table_fegyver_start -->"
 TAG_END = "<!-- tag: md_table_fegyver_end -->"
-KATEGORIA = "közelharci"
+
+# kategória → cél md fájl (a `068_0x_*.md` fegyvertáblázat-fejezetek)
+KATEGORIA_MD = {
+    "közelharci": MD_DIR / "068_02_kozelharci_fegyverek.md",
+    "kardvívó": MD_DIR / "068_03_kardvivo_fegyverek.md",
+    "lándzsavívó": MD_DIR / "068_04_landzsavivo_fegyverek.md",
+    "romboló": MD_DIR / "068_05_rombolo_fegyverek.md",
+    "ostorharc": MD_DIR / "068_06_ostorharc_fegyverek.md",
+}
 
 FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "FSZ", "Extrák", "Megj."]
 JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Fh", "FSZ"}
@@ -67,13 +76,13 @@ def _extrak(r):
     return "; ".join(cimkek)
 
 
-def _fixed_sorok():
+def _fixed_sorok(kategoria):
     """`fegyverek_fixed.json` (Garott, hárítófegyverek, Kopják) — már végleges módok[] JSON,
     nem a fegyverek.yaml WORK-formátum, ezért nem megy át a F(...).modok(ero=0) hívásán."""
     rows = []
     data = json.loads(FIXED_PATH.read_text(encoding="utf-8"))
     for r in data:
-        if r.get("kategória") != KATEGORIA:
+        if r.get("kategória") != kategoria:
             continue
         megj = r.get("megjegyzés", "")
         for i, m in enumerate(r.get("módok", [])):
@@ -86,10 +95,10 @@ def _fixed_sorok():
     return rows
 
 
-def sorok():
+def sorok(kategoria):
     rows = []
     for r in bal._load("fegyverek.yaml"):
-        if r.get("kategória") != KATEGORIA:
+        if r.get("kategória") != kategoria:
             continue
         f = F(név=r["név"], **r["fegyver"])
         megj, extrak = _megj(r), _extrak(r)
@@ -101,7 +110,7 @@ def sorok():
                          str(m["TE"]), str(m["VE"]),
                          f"{m['SP']:+d}", str(m["erőbónusz_limit"]), str(m["AT"]), str(m["SEB"]), m["forgatás"],
                          str(f.hossz), str(m.get("felszerelés_pont", 0)), ex, mm])
-    rows += _fixed_sorok()
+    rows += _fixed_sorok(kategoria)
     return rows
 
 
@@ -119,24 +128,38 @@ def render_tabla(rows):
     return "\n".join(lines)
 
 
-def main():
-    text = MD_PATH.read_text(encoding="utf-8")
+def sync_kategoria(kategoria):
+    md_path = KATEGORIA_MD[kategoria]
+    text = md_path.read_text(encoding="utf-8")
     start = text.find(TAG_START)
     end = text.find(TAG_END)
     if start == -1 or end == -1 or end < start:
-        print(f"ERROR: tag pár nem található: {MD_PATH}", file=sys.stderr)
+        print(f"ERROR: tag pár nem található: {md_path}", file=sys.stderr)
         return 2
 
-    table = render_tabla(sorok())
+    rows = sorok(kategoria)
+    table = render_tabla(rows)
     new_text = text[:start + len(TAG_START)] + "\n\n" + table + "\n\n" + text[end:]
 
     if new_text == text:
-        print("Nincs változás — fájl érintetlen.")
+        print(f"{kategoria}: nincs változás — {md_path.name} érintetlen.")
         return 0
 
-    MD_PATH.write_text(new_text, encoding="utf-8")
-    print(f"Frissítve: {MD_PATH} ({len(sorok())} sor)")
+    md_path.write_text(new_text, encoding="utf-8")
+    print(f"{kategoria}: frissítve — {md_path.name} ({len(rows)} sor)")
     return 0
+
+
+def main():
+    kategoriak = sys.argv[1:] or list(KATEGORIA_MD)
+    rc = 0
+    for k in kategoriak:
+        if k not in KATEGORIA_MD:
+            print(f"ERROR: ismeretlen kategória: {k} (választható: {', '.join(KATEGORIA_MD)})", file=sys.stderr)
+            rc = 2
+            continue
+        rc = max(rc, sync_kategoria(k))
+    return rc
 
 
 if __name__ == "__main__":
