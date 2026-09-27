@@ -24,7 +24,7 @@ from statistics import mean
 REF_TE, REF_VE, REF_SP, REF_SFE, REF_EP, KE, OSZL, ENYH, REGEN = 47, 60, 11, 5, 40, 19, 10, 2, 1
 
 d20 = lambda: random.randint(1, 20)
-k20T = lambda r: r // 10
+k20P = lambda r: 2 if r in (10, 20) else (0 if r % 2 == 1 else 1)
 CLAMP = lambda v, lo, hi: max(lo, min(hi, v))
 
 
@@ -79,7 +79,7 @@ def kuzdelem(mk_lazas, max_kor=40):
                 if c.used >= c.ep:
                     c.el = False
             else:
-                c.vf += 1 + k20T(r)
+                c.vf += 1 + k20P(r)
         if not lazas.el:
             return 'REF', _kor, lazas
         if not ref.el:

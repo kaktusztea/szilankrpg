@@ -16,9 +16,10 @@ A harci motor a `harcszimulacio_selftest.py` REFERENCIA implementációjának b�
   - Manőver: OPT-IN (a spec §13.8 óva int a bevonásától hangolási tesztekben — a
     varianciája nagyobb, mint a mérendő különbség), csak explicit jelölt forgatókönyvben.
 
-NYITOTT DÖNTÉS ÁTVEZETVE (§13.1): k20T forrása a sikertelen támadás VÉ csökkentésénél
-  KÖZÖS KOCKA (a már eldobott támadó k20-ából) — a user 2026-09-24 döntése. Ha ennek
-  hatását vizsgálni kell, a `K20T_FUGGETLEN` konstanst állítsd True-ra.
+SZABÁLYDÖNTÉS ÁTVEZETVE (§13.1, LEZÁRVA 2026-09-26): a régi `k20T` (tízes-rész) helyett
+  `k20P` (páros/páratlan rész, `10`/`20`→2) — a sikertelen támadás VÉ csökkentése mindig a
+  már eldobott támadó k20 páros/páratlanságából jön (közös kocka, nincs "független kocka"
+  olvasat, a `K20T_FUGGETLEN` kapcsoló megszűnt).
 
 Célválasztás politika (mindenki, csak REF/N:N/N:1 nem): "legveszélyesebb gyenge" —
   az élő, még harcképes ellenfelek közül a legkisebb ÉP-hátralévővel/VÉ-vel rendelkezőt
@@ -37,9 +38,6 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import fegyvergenerator_balansz as FB   # AKTOR, TIPUS_PANCEL, PANCEL, Fegyver, FEGYVER_RECORDS
 
 DATA_TABLES = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "tables"
-
-# ── NYITOTT DÖNTÉS kapcsoló (§13.1) ──────────────────────────────────────────
-K20T_FUGGETLEN = False   # False = közös kocka (user döntés, 2026-09-24)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Adatbetöltés (data/tables/ — a webapp runtime JSON-jai, NEM a fegyvergenerátor)
@@ -74,7 +72,7 @@ def pancel_profil_mezok(pancel_oszaly):
     raise ValueError(f"Ismeretlen páncélosztály: {pancel_oszaly}")
 
 d20 = lambda: random.randint(1, 20)
-k20T = lambda r: r // 10
+k20P = lambda r: 2 if r in (10, 20) else (0 if r % 2 == 1 else 1)
 CLAMP = lambda v, lo, hi: max(lo, min(hi, v))
 
 
@@ -384,11 +382,8 @@ def pengeviszony(tamado: Harcos, vedo: Harcos):
 def sikertelen_tamadas_ve_csokkentes(tamado: Harcos, vedo: Harcos, te_k20):
     alap_tab = {"pengehátrány": 0, "alappenge": 1, "pengeelőny": 2}
     pv = pengeviszony(tamado, vedo)
-    if K20T_FUGGETLEN:
-        k20t_ertek = k20T(d20())
-    else:
-        k20t_ertek = k20T(te_k20)
-    alap = alap_tab[pv] + k20t_ertek
+    # §13.1 (LEZÁRVA): a k20P mindig a már eldobott támadó k20-ból jön (közös kocka).
+    alap = alap_tab[pv] + k20P(te_k20)
 
     # Meglepetés: "VÉ csökkentés: +2" — ez a helyzet HATÁSA az áldozat (vedo) oldalán,
     # a schema cél-neve "vé_csökkentés" (nem "vé"!)

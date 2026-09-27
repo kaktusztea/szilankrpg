@@ -7,7 +7,7 @@
 > **NEM cél**: a webapp UI-jának, a távharcnak, a mágiának, a manőverek ellenpróbáinak
 > és az alakzatharcnak a modellezése. Ezek a §14 "Kívül eső hatókör" alatt fel vannak sorolva.
 
-**Verzió**: 2026-09-10 · Forrásállapot: `konstansok.yaml` version + `golden.test.ts` (227 unit teszt zöld)
+**Verzió**: 2026-09-27 · Forrásállapot: `konstansok.yaml` version + `golden.test.ts` (15 unit teszt zöld)
 
 ---
 
@@ -29,7 +29,6 @@ Egy szimulátornak ezt a 6 lépést kell megvalósítania, ebben a sorrendben:
 | A `VÉ` csökkenést **két külön könyvelésben** tartsd: `vé_fáradás` és `vé_seb` | A regeneráció csak a fáradást adja vissza (§5.4). Egy összevont számláló CSENDBEN hibás eredményt ad. |
 | A `Pengeelőny/Pengehátrány` **páronkénti** állapot, nem harcosonkénti | 1:N felállásban minden támadó–védő párra külön kell számolni (§5.2) |
 | A `TÉ` levonás a sebesülésből **minden támadásra újraszámolandó** | A kategóriaváltás körön belül is megtörténhet |
-| A `k20T` forrásáról hozz explicit döntést (§13.1) | A szabály nem mondja meg; a két olvasat 2,4× különbséget ad a VÉ csökkentésben |
 | Minden dobás `k20`, kivéve a manőver ellenpróbát (`k10`) és a tulajdonságpróbát (`k6`) | §4 |
 
 ---
@@ -382,8 +381,9 @@ k20()            → egyenletes 1..20
 k10()            → egyenletes 1..10
 k6()             → egyenletes 1..6
 
-k20T(r)          → r // 10        # "k20 tízes része":  1-9→0,  10-19→1,  20→2
-                                  #  E[k20T] = 0.6  ha r egyenletes
+k20P(r)          → 2 ha r ∈ {10,20}, különben (0 ha r páratlan, 1 ha páros)
+                                  #  "k20 páros/páratlan része" (md/006)
+                                  #  E[k20P] = 0.6  ha r egyenletes
 ```
 
 ### Előny / Hátrány (§37, `engine/dice.ts`)
@@ -476,9 +476,9 @@ pengeviszony(támadó, védő):
 
 ```
 sikertelen_támadás_VÉ_csökkentés(támadó, védő):
-    alap = { pengehátrány: 0 + k20T,
-             alappenge:    1 + k20T,
-             pengeelőny:   2 + k20T }[pengeviszony(támadó, védő)]
+    alap = { pengehátrány: 0 + k20P,
+             alappenge:    1 + k20P,
+             pengeelőny:   2 + k20P }[pengeviszony(támadó, védő)]
 
     alap += méretkülönbség_bónusz(támadó, védő)       # +1 / lénykategória-különbség
     alap += helyzet_vé_csökkentés_bónusz(támadó)      # §8 tábla (Meglepetés +2, stb.)
@@ -507,7 +507,7 @@ találat_VÉ_csökkentés(védő):
 Kísértő megfigyelés: a `3` kisebb, mint amit egy Alakzat tévesztése ad (`3..5`), és épp
 annyi, mint az egyén Fárasztása (`3..5`). Ez **nem hiba**, két okból:
 
-1. **Egyénnél a `3` a sáv teteje, garantáltan.** Az Alappenge tévesztés `1 + k20T`, azaz
+1. **Egyénnél a `3` a sáv teteje, garantáltan.** Az Alappenge tévesztés `1 + k20P`, azaz
    `1` (45 %) / `2` (50 %) / `3` (5 %), átlag `1,6`. A találat tehát átlagban `1,9×` annyi
    eróziót ad, mint egy tévesztés — a magasabb tévesztési értékek a szerencsés farok, nem
    a tipikus eset. Fix számot NE hasonlíts sávmaximumhoz.
@@ -565,7 +565,7 @@ fordíthatja pozitívba.
 | Forrás | Hatás |
 |---|---|
 | `Plusz támadás` taktika | a választás pillanatában `vé_fáradás += 3` |
-| `Teljes Védekezés` taktikát alkalmazó **maga szenved el** | `1 + k20T` az ellenfelei minden támadásától, pengeméret-viszonytól **függetlenül** (a Fárasztó taktika bónuszuk megmarad) — §13.9 |
+| `Teljes Védekezés` taktikát alkalmazó **maga szenved el** | `1 + k20P` az ellenfelei minden támadásától, pengeméret-viszonytól **függetlenül** (a Fárasztó taktika bónuszuk megmarad) — §13.9 |
 | Sikertelen manőver | ugyanannyi, mint egy sima sikertelen támadás — **akkor is, ha a manővernek nincs Végrehajtás fázisa**, tehát nem volt támadódobás (§13.1) |
 | Sikertelen **Megakasztás** (M fázis, az ellenfél extra támadása) | ❗ **NEM** okoz VÉ csökkentést (explicit kivétel, `md/066_04`) |
 | `Precíz támadás` manőverrel végzett támadás | VÉ csökkentést **NEM** okoz |
@@ -784,7 +784,7 @@ Forrás: `data/tables/taktikak.json`. `📶` = skálázható (§6.4).
 | **Támadás erőből** 📶 | fok n: TÉ −n, SP +n | — | ✅ Kiváró, Plusz tám, 1 tám |
 | **Támadó** 📶 | fok n: TÉ +n, VÉ −2n | Orvtámadás helyzetben ❌ | ✅ Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám |
 | **Védő** 📶 | fok n: VÉ +n, TÉ −2n | Meglepetés/Orvtámadás helyzetben ❌ | ✅ Érintő, 1 tám |
-| **Teljes Védekezés** | VÉ **+8** | Nem támad, nem varázsol, folyamatosan hátrál. **Az ellenfelei által rajta okozott** VÉ csökkentés `1 + k20T` (a Fárasztó taktika bónuszuk megmarad) — lásd §13.9 az értelmezésről. Ha nem tud hátrálni, a KM `VÉ+3`-ig csökkentheti | ❌ minden más |
+| **Teljes Védekezés** | VÉ **+8** | Nem támad, nem varázsol, folyamatosan hátrál. **Az ellenfelei által rajta okozott** VÉ csökkentés `1 + k20P` (a Fárasztó taktika bónuszuk megmarad) — lásd §13.9 az értelmezésről. Ha nem tud hátrálni, a KM `VÉ+3`-ig csökkentheti | ❌ minden más |
 | **Visszafogott** | TÉ −10 | `Hátrány-2` a Sebzésdobásra | ✅ Kezdeményező, Kiváró, 1 tám, Tettetés |
 | **Tettetés** | — | Informatív. `Harcmodor + Ügyesség` próba `15` ellen | ✅ Kiváró, Visszafogott |
 | **(Lég)Lovas roham** | TÉ +6, SP +10 | 1 oda-vissza csapás. **VÉ büntetés NINCS.** `Lovaglás` próba `12`. Csak lovas/léglovas helyzetben | ❌ minden más |
@@ -1040,7 +1040,7 @@ Hangolási tesztekhez ez a javasolt neutrális beállítás:
 ```
 2 db REF-A klón, "Kard, lovag", egyfegyveres, páncél aktív, pajzs nélkül
 → mindkettő: TÉ 47, VÉ 60, SP+11, SFÉ 5, ÉP 40, KÉ 19, 1 támadás/kör
-→ Alappenge (azonos fegyver)  →  sikertelen támadás VÉ csökk = 1 + k20T
+→ Alappenge (azonos fegyver)  →  sikertelen támadás VÉ csökk = 1 + k20P
 → Harcos elme 1 aktív  →  kör elején +1 VÉ (csak fáradásból)
 → nincs taktika, nincs harci helyzet, nincs státusz
 ```
@@ -1098,7 +1098,7 @@ fortélyok: nincs
 **A kritikus tulajdonság**: `TÉ 27 + max k20 (20) = 47 < REF-A VÉ 60`.
 A pribék a harc elején **fizikailag nem tudja eltalálni** a hőst. A hős VÉ-jének 13 pontot
 kell esnie, hogy egyáltalán (csak 20-ason) találjon. Ezért a pribék támadásának teljes
-hozama `1 + k20T` VÉ csökkentés és **nulla sebzés**.
+hozama `1 + k20P` VÉ csökkentés és **nulla sebzés**.
 
 ---
 
@@ -1151,75 +1151,12 @@ teszt önmagában nem elégséges bizonyíték.
 Ezek a pontok a szabálykönyvből **nem** dönthetők el egyértelműen. Minden szimulációnak
 explicit döntést kell hoznia, és a döntést jelentenie kell az eredménnyel együtt.
 
-### 13.1 A `k20T` forrása sikertelen támadásnál ⚠ NYITOTT
+### 13.1 A sikertelen támadás VÉ csökkentésének kockaforrása ✅ LEZÁRVA 2026-09-26
 
-A `1 + k20T` VÉ csökkentésnél nincs kimondva, hogy a `k20T` **a már eldobott támadó
-dobás** k20-ából jön-e, vagy külön dobás.
-
-| Olvasat | E[VÉ csökk] Alappengén, 40 % találatnál | Megjegyzés |
-|---|---|---|
-| **közös kocka** (a támadódobás k20-a) | `1 + 0,25` = **1,25** | Asztalnál ez a természetes: már dobtál |
-| **független kocka** | `1 + 0,6` = **1,60** | A képlet szó szerinti olvasata |
-
-A webapp **nem** implementálja (a KM a `-1 / -2 / -3` gombokkal kézzel visz be), tehát
-nincs döntőbíró a kódban sem.
-
-#### A közös kocka olvasat szerkezeti következménye
-
-Közös kocka mellett a `k20T` a tévesztésre **feltételes**, azaz lefelé torzított, és a
-torzítás mértéke a találati eséllyel változik:
-
-```
-E[k20T | nem talált],  ha a találathoz k20 >= t kell:
-    t <= 10   →  0,000     # csak 1-9-re lehet téveszteni, annak tízes része 0
-    t = 13    →  0,250
-    t = 16    →  0,400
-    t = 20    →  0,526
-    t >= 21   →  0,600     # eltalálhatatlan cél: minden dobás tévesztés
-```
-
-Ebből következik: **ha a védő VÉ-je ≤ TÉ + 10, a `k20T` mindig pontosan 0.** Ekkor a
-sikertelen támadás VÉ csökkentése **teljesen deterministikus** lesz: Pengehátrány `0`,
-Alappenge `1`, Pengeelőny `2` — kivétel nélkül.
-
-Pontosítás: a pengeviszonyok közti **differenciálás megmarad** (a `0 / 1 / 2` eltolás
-sértetlen). Ami elhal, az a `k20T` kockatag, és ennek két következménye van:
-
-1. **A fáradásos erózió átlaga lecsökken** (Alappengén `1,60` → `1,00`), és épp ott,
-   ahol a legtöbbet érne — a harc második felében, összeomlott VÉ mellett.
-2. **A mechanika lassul, ahogy a harc előrehalad**, szemben a `md/064_02_03` kimondott
-   szándékával („a csökkenő VÉ rövidebb harcokat eredményez"). A két olvasat közti rés
-   a legnagyobb alacsony VÉ-nél: `+60 %` VÉ 54-nél, `+9 %` VÉ 66-nál.
-
-#### Érv a független kocka mellett: támadódobás nélküli VÉ csökkentés
-
-`md/066_04`: *„A sikertelen Manőver ugyanúgy és ugyanakkora VÉ csökkentést okoz, mintha
-egy sima sikertelen támadás történt volna."*
-
-38 manőverből **12-nek nincs Végrehajtás (V) fázisa** — tehát nincs benne k20 támadódobás.
-Tisztán Ellenpróba (`k10`) alapú: `Mögékerülés`, `Terelés`, `Lánccsapdából szabadítás`,
-`Rávetődés hátulról`. Ha ezek buknak, a szabály VÉ csökkentést ír elő, de **nincs k20**,
-amiből a `k20T`-t venni lehetne. Közös kocka olvasattal ez definiálatlan.
-
-Másodlagos érv: a `V,E` fázisú manővereknél (26 db) a Végrehajtás **sikerülhet**, miközben
-az Ellenpróba bukik. Ilyenkor a manőver sikertelen → VÉ csökkentést okoz, de a támadódobás
-k20-a **magasra** volt torzítva (elérte a célszámot), így közös kocka mellett a bukott
-manőver szisztematikusan **több** VÉ-t vonna le, mint egy sima tévesztés — ellentmondva az
-„ugyanakkora" kikötésnek.
-
-#### Amit NEM lehet érvként használni
-
-A `Teljes Védekezés` taktika `„Ellenfél VÉ csökkentés: (1 + k20T)"` sora **nem** bizonyíték.
-A `bónuszuk` birtokos alak alapján ez az **ellenfelek által a Teljes Védekezőn okozott**
-csökkentés, tehát ott van támadódobás. (Korábbi verzió ezt fordítva értelmezte.)
-
-#### Státusz
-
-**Nyitott.** A javasolt default a **független kocka** (a manőver-érv és a formula szó
-szerinti olvasata alapján), de ez nem lezárt szabálydöntés. Minden hangolási futáshoz
-jelentsd, melyik olvasattal ment, és nagy VÉ-érzékenységű vizsgálatnál futtasd mindkettőt.
-A teljes harcra vetített hatás kicsi: `0,03–0,12 kör` és `0,1–0,5 százalékpont` a REF-B
-felállásokban.
+A `1 + k20P` VÉ csökkentésnél a `k20P` mindig a már eldobott támadó dobás (a k20, ami a
+találat/tévesztést eldöntötte) páros/páratlan részéből jön — **közös kocka**, nincs külön
+dobás. Minden hangolási eszköz (`fegyvergenerator_harcszimulator.py`,
+`harcszimulacio_selftest.py`, `harci_laz_*.py`, `sfe_hangolas.py`) ezt implementálja.
 
 ### 13.2 Kezdeményezés holtversenye
 
@@ -1260,14 +1197,14 @@ Manőver Alap`), MP költséggel, max 1/kör. Egy hangolási szimulációban **h
 kivéve ha a manőver a vizsgálat tárgya — a variancia amit bevisz nagyobb, mint a
 legtöbb hangolási különbség.
 
-### 13.9 Teljes Védekezés: mit jelent az `1 + k20T`?
+### 13.9 Teljes Védekezés: mit jelent az `1 + k20P`? ⚠ NYITOTT
 
 `md/065_02` Teljes Védekezés:
 
 ```
 VÉ:+8, folyamatos hátrálás
 Nem támadhatsz, nem varázsolhatsz
-Ellenfél VÉ csökkentés: (1 + k20T)
+Ellenfél VÉ csökkentés: (1 + k20P)
   + "Fárasztó taktika" bónuszuk megmarad
 ```
 
@@ -1277,7 +1214,7 @@ Ellenfél VÉ csökkentés: (1 + k20T)
 **Ami nyitott**: miért van egyáltalán kimondva, ha ez amúgy is a normál Alappenge érték?
 A legvalószínűbb értelmezés: a Teljes Védekezés **normalizálja** a rajta okozott VÉ
 csökkentést Alappenge szintre, azaz **semlegesíti az ellenfél Pengeelőnyét** (a
-`2 + k20T`-t is `1 + k20T`-re fogja) — hasonlóan ahhoz, ahogy a `Közrefogás` helyzet teszi.
+`2 + k20P`-t is `1 + k20P`-re fogja) — hasonlóan ahhoz, ahogy a `Közrefogás` helyzet teszi.
 A méretkülönbség módosító a 317. sor szerint továbbra is hozzáadódik/levonódik.
 
 → **Javasolt szimulációs kezelés**: `pengeviszony` felülírása `alappenge`-re a Teljes
@@ -1324,7 +1261,7 @@ A4   sebesülés_TÉ_levonás(kat=3, FT_enyhítés=2)       == -4
 A5   REF-A "Kard, lovag": TÉ==47, VÉ==60, SP==11, támadások==1
 A6   REF-A "Tőr":         TÉ==40, VÉ==54, SP==5
 A7   REF-A páncél_MGT==14, SFÉ_fizikai==5, merevvért_TÉ_büntetés==0
-A8   k20T(5)==0 és k20T(16)==1 és k20T(20)==2
+A8   k20P(5)==0 és k20P(16)==1 és k20P(10)==2 és k20P(20)==2
 A9   sebzésElőny(15)==0, sebzésElőny(16)==1, sebzésElőny(20)==2
 A10  netÉH([előny+2, előny+2])                        == 2      # clamp!
 A11  túl_bónusz(túldobás=11)                          == 6      # 3 × FLOOR(11/5)
@@ -1362,13 +1299,11 @@ javítani kell, kérj rá külön döntést.
 
 | # | Hely | Probléma |
 |---|---|---|
-| 1 | ~~`data/sources/taktikak.yaml:37`~~ | ✅ **JAVÍTVA 2026-09-10.** A megjegyzés azt írta: *„Csak Pengeelőnyben lehet"* — de a `md/065_02` szerint Alappenge és Pengeelőny is jó, csak a Pengehátrány tiltott. Új szöveg: *„Pengehátrányból nem alkalmazható."* |
 | 2 | `data/sources/taktikak.yaml` — Fárasztás | ⚠ **NYITOTT.** A `3 VÉ` érték továbbra sem a data layerben van, csak a `megjegyzés` prózában (`módosítók: {}`). Sérti az AGENTS.md data-layer elsőbbségét. Megoldás: séma-bővítés (`vé_csökkentés` mező vagy strukturált `hatások`) + a webapp számolja. |
 | 3 | ~~`engine_spec.md §21.1` tábla~~ | ⚠ **RÉSZBEN.** A Fárasztás sora frissítve (3), de a `Teljes Védekezés VÉ:+6` továbbra is elavult — a `taktikak.yaml` és a `md/065_02` egyaránt **`+8`**. |
 | 4 | `engine_spec.md §13` | `pajzs_TÉ_büntetés` és `pajzs_TÉ_mérséklés` konstansokra hivatkozik, amelyek **nem léteznek** a `konstansok.json`-ban. A tényleges implementáció a `pajzs_hatások[méret][fok]` táblát használja (`pancel-calc.ts → calcFogas`). |
 | 5 | `golden.test.ts` | A "Kard, lovag" teszt **címe** `VÉ=61`, az `expect` viszont `60`. A cím elavult. |
-| 6 | Szabálykönyv-szintű | A `k20T` forrása sikertelen támadásnál nincs meghatározva (§13.1). |
-| 7 | Szabálykönyv-szintű | A Teljes Védekezés `1 + k20T` sorának jelentése nem egyértelmű (§13.9). |
+| 7 | Szabálykönyv-szintű | A Teljes Védekezés `1 + k20P` sorának jelentése nem egyértelmű (§13.9). |
 | 8 | **Webapp hiba** | **A fegyver Ideája (`fegyverek[].idea`, `[-5;+5]`) nincs implementálva.** A `md/068_01_14` szerint `TÉ/CÉ`, `VÉ`, `SP` módosítót ad (max `+3/+2/+5`), a mező a karakter sémában létezik és az `url-share.ts` szerializálja is — de sem a `rules.json`, sem a `fegyver-calc.ts` nem használja. A felhasználó beállíthatja, és semmi nem történik. A `golden.test.ts` nem fogja el, mert a teszt karakter fegyverei `idea: 0`. |
 | 9 | Data layer hiány | A `md/082_statuszok.md` két státuszt definiál, amik **nincsenek** a `statuszok.yaml`-ban: `Fegyver/Pajzs akadályoztatása (1,2)` (:255) és `Páncél akadályoztatása (1 MGT, ♾️ MGT)` (:532). A `062_03` és `068_01_13` hivatkozik rájuk. Közelharci szimulációt nem érint (próbákra hatnak), de a 4 rétegű státusz-modell (§22) inkomplett. |
 | 10 | Adat-inkonzisztencia | Az MK szabály (`md/068_01_06`: 1 kézzel `TÉ-2/VÉ-2`, Átütés megszűnik) a `fegyverek.json` `(1K)/(2K)` sorpárjaiba van beépítve. `Kard, másfélkezes` és `Kard, mesterkard` követi; `Kard, Slan` (ΔVÉ csak `-1`, Átütés `2` marad) és `Mara-sequor` (ΔTÉ/ΔVÉ csak `-1`) eltér. Lehet szándékos (legendás fegyverek), de nincs jelölve. |
@@ -1379,5 +1314,6 @@ javítani kell, kérj rá külön döntést.
 
 | Dátum | Változás |
 |---|---|
+| 2026-09-27 | **A sikertelen támadás VÉ csökkentése `k20P`-t használ** (k20 páros/páratlan része, `10`/`20`→2) — a 2026-09-26-i éles szabálydöntés (`md/006`, `md/064_01`, `md/064_02_03`, `md/064_03`, `md/065_01_04`, `md/065_02`) átvezetve. Érintett a jelen fájlban: §4 kockajelölés, §5.3 formula, §7 táblázat, §11 referencia statblokk, §13.1/§13.9, §16 A8 önteszt. Átvezetve a `code/balance/fegyvergenerator_harcszimulator.py`, `harcszimulacio_selftest.py`, `harci_laz_csapat.py`, `harci_laz_egyesitett.py`, `harci_laz_hangolas.py`, `sfe_hangolas.py` szkriptekbe is. |
 | 2026-09-10 | **Fárasztó taktika hangolás: `2 VÉ` → `3 VÉ`.** Indok: aszimmetrikus túlerőben (REF-A vezető + 2 REF-D pribék egy REF-A hős ellen) a `2`-es érték a pribéknek csak `+0,40 VÉ/kör`-t ad a hasztalan támadáshoz képest (`1,60`), a `3`-as `+1,40`-et. A hangolás után a taktika szimmetrikus felállásban továbbra is dominált (nincs degenerált dominancia), aszimmetrikus túlerőben viszont `+6,4` százalékponttal jobb a puszta támadásnál. Érintett: `md/065_02:175`, `md/064_01:169`, `md/065_03:266` (alakzat fix érték), `taktikak.yaml`, `engine_spec §21.1` + `§28.9`, jelen spec §6.5 + §7. |
 | 2026-09-10 | Első verzió. Forrás: `engine_spec.md §3–§27`, `md/060–069`, `md/081–082`, `data/tables/*.json`, `golden.test.ts`, `combat-roll-info.ts`, `fegyver-calc.ts`, `pancel-calc.ts`, `taktika-calc.ts`, `dice.ts`, `shared.ts`, `ep-logic.ts`. |

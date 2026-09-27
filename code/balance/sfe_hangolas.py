@@ -24,7 +24,7 @@ STRUKT = {s['struktúra']: s for s in K['páncél_struktúrák']}
 
 CLAMP = lambda v, lo, hi: max(lo, min(hi, v))
 d20 = lambda: random.randint(1, 20)
-k20T = lambda r: r // 10
+k20P = lambda r: 2 if r in (10, 20) else (0 if r % 2 == 1 else 1)
 
 FÉM_STRUKT = {'lánc/sodrony', 'pikkely', 'lemez'}
 KÖNNYŰ_VAGY_LÁNC = {'posztó', 'fegyverkabát', 'bőr', 'lánc/sodrony'}
@@ -104,7 +104,7 @@ def kuzdelem(mk_a, mk_b, helyzet_a=0, helyzet_b=0, max_kor=60):
             if c.used >= c.ÉP:
                 c.el = False
         else:
-            c.vf += {1: 2, 0: 1, -1: 0}[h.pengeviszony] + k20T(r)
+            c.vf += {1: 2, 0: 1, -1: 0}[h.pengeviszony] + k20P(r)
 
     for kor in range(1, max_kor + 1):
         for h in A_ + B_:

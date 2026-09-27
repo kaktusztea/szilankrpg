@@ -24,7 +24,7 @@ REF_TE, REF_VE, REF_SP, REF_SFE, REF_EP, KE, OSZL, ENYH, REGEN = 47, 60, 11, 5, 
 CÉLSZÁM_KÖR = 18
 
 d20 = lambda: random.randint(1, 20)
-k20T = lambda r: r // 10
+k20P = lambda r: 2 if r in (10, 20) else (0 if r % 2 == 1 else 1)
 CLAMP = lambda v, lo, hi: max(lo, min(hi, v))
 
 
@@ -91,7 +91,7 @@ def tamad(h, c):
         if c.used >= c.ep:
             c.el = False
     else:
-        c.vf += 1 + k20T(r)
+        c.vf += 1 + k20P(r)
 
 
 def kuzdelem(keszlet, fix, cél, max_kor=40):

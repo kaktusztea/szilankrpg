@@ -12,7 +12,7 @@ HB = {int(r['Harcmodor Szint']): int(r['TÉ']) for r in
 KAR = json.load(open(f'{DATA}/karakter/test_karakter2.json'))
 
 d20 = lambda: random.randint(1, 20)
-k20T = lambda r: r // 10
+k20P = lambda r: 2 if r in (10, 20) else (0 if r % 2 == 1 else 1)
 CLAMP = lambda v, lo, hi: max(lo, min(hi, v))
 
 
@@ -75,7 +75,7 @@ tests = [
                                              (T['TÉ'], T['VÉ'], T['SP'])),
     ('A7  MGT14/SFÉ5/mvbünt0',               (A['MGT'], A['SFÉ'], A['mv_bunt']) == (14, 5, 0),
                                              (A['MGT'], A['SFÉ'], A['mv_bunt'])),
-    ('A8  k20T 5/16/20 == 0/1/2',            (k20T(5), k20T(16), k20T(20)) == (0, 1, 2), None),
+    ('A8  k20P 5/16/10/20 == 0/1/2/2',       (k20P(5), k20P(16), k20P(10), k20P(20)) == (0, 1, 2, 2), None),
     ('A9  sebzésElőny 15/16/20 == 0/1/2',    (sebzes_elony(15), sebzes_elony(16), sebzes_elony(20)) == (0, 1, 2), None),
     ('A10 netÉH(előny+2,előny+2)==2',        net_eh([('előny', 2), ('előny', 2)]) == 2,
                                              net_eh([('előny', 2), ('előny', 2)])),
@@ -116,7 +116,7 @@ def kuzdelem(n_a, n_b, max_kor=40):
                 c.vs += 3
                 if c.used >= EP: c.el = False
             else:
-                c.vf += 1 + k20T(r)        # §13.1 közös kocka olvasat
+                c.vf += 1 + k20P(r)        # §13.1 LEZÁRVA: k20P, közös kocka olvasat
         if not any(x.el for x in A_): return 'B', kor
         if not any(x.el for x in B_): return 'A', kor
     return 'D', max_kor
