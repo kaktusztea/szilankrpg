@@ -95,9 +95,9 @@ Ogár
   +2 VÉ csökkentés bónusz
 ```
 
-### Pengeméret-különbség és lények mérete
+### Fegyverméret-különbség és lények mérete
 
-A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
+A [Fegyverméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
 
 <br />
 

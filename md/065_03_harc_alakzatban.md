@@ -175,7 +175,7 @@ Ennyi jön le VÉ csökkentésedből
 -3: az Alakzat Teljes Védekezésben
 ```
 
-Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, mint normál harc esetében - pengeméret különbségtől függően, viszont:
+Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, mint normál harc esetében - fegyverméret különbségtől függően, viszont:
 
 Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat által elszenvedett `VÉ` csökkenésből mindig `-2` levonandó, mivel egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb a "kifulladására" játszani.
 
@@ -186,9 +186,9 @@ Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-véde
 <br />
 
 ---
-## VÉ csökkentés alakzat által és pengeméret különbségek
+## VÉ csökkentés alakzat által és fegyverméret különbségek
 
-Az alakzat jellemző főfegyvere vs egyén **pengehosszának** különbsége adja a pengeméret különbség megállapítását.
+Az alakzat jellemző főfegyvere vs egyén **fegyverhosszának** különbsége adja a fegyverméret különbség megállapítását.
 
 Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix érték, amely az alábbiak szerint kerül kiszámításra.
 

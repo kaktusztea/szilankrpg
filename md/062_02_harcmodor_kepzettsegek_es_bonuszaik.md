@@ -32,7 +32,7 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 
 A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az alájuk tartozó fegyvercsoportokkal:
 
-- **Közelharc**: Rövid (`0`) pengehosszú fegyverek, puszta kéz
+- **Közelharc**: Rövid (`0`) fegyverhosszú fegyverek, puszta kéz
 - **Kardvívás**: minden további "pengés" fegyver (kétkezes kard is)
 - **Rombolás**: zúzófegyverek, csatabárdok, csákány
 - **Lándzsavívás**: Szálfegyverek

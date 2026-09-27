@@ -120,7 +120,7 @@ S4:  -7 TÉ
 
 Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
 
-### 🔆Pengeméret
+### 🔆Fegyverméret
 
 - Mivel kettőjük fegyverének mérete közt nincs meg a `2 fegyverhossz-kategória` méretkülönbség, ezért mindketten [Fegyverazonosság](065_01_04_fegyver_harci_helyzetek.md#fegyverazonosság) harci helyzetben vannak.
 - Tehát sikertelen (nem sebző) támadások esetén `1 + k20P` értékkel csökkentik egymás **Védő Értékét**.
