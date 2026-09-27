@@ -99,6 +99,7 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
             if (!betű) {
               // „Nincs jelölés" → betű törlése (jegyzet is elvész, a szín értelmét veszti).
               writeKmJelölés(pickerNjk.uid, { betű: '', szín: '', jegyzet: '' });
+              setPickerUid(null);
             } else {
               // A szín FELVÉTELKOR dől el a már használt színek alapján. A szerkesztett NJK
               // saját bejegyzését kizárjuk, hogy betűváltáskor újra szabadon választhasson.
@@ -106,8 +107,10 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
               delete tár[pickerNjk.uid];
               const szín = választSzínt(betű, tár, KM_JEL_SZÍNEK);
               writeKmJelölés(pickerNjk.uid, { betű, szín, jegyzet: jel?.jegyzet ?? '' });
+              // Sikeres betűválasztás (1 vagy 2 karakteres is) után rögtön a jegyzet ablak nyílik.
+              setPickerUid(null);
+              setJegyzetUid(pickerNjk.uid);
             }
-            setPickerUid(null);
             rerender(n => n + 1);
           }}
         />
@@ -131,10 +134,10 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
   );
 }
 
-/** Stat label: "maradék/max (Skat)"; sértetlen (S0) esetén csak "maradék/max". */
+/** Stat label: "maradék/max Skat"; sértetlen (S0) esetén csak "maradék/max". */
 function statLabel(stat: ÉleterőStat): string {
   const base = `${stat.maradék}/${stat.max}`;
-  return stat.sKategória > 0 ? `${base} (S${stat.sKategória})` : base;
+  return stat.sKategória > 0 ? `${base} S${stat.sKategória}` : base;
 }
 
 /** Fakó ÉP csík szín az arány szerint: zöld → sárga → vörös (alacsony telítettség). */
