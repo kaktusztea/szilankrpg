@@ -261,6 +261,11 @@
 .aktiv-picker-group-negatív { color: #f44336;
 }
 
+/* Picker-item szélső csík: ugyanaz a szín, mint a szekció label, fakóbb tónusban. */
+.aktiv-picker-item.aktiv-picker-group-pozitív { border-left: 3px solid color-mix(in srgb, #4caf50 45%, var(--border)); }
+.aktiv-picker-item.aktiv-picker-group-semleges { border-left: 3px solid color-mix(in srgb, #ff9800 45%, var(--border)); }
+.aktiv-picker-item.aktiv-picker-group-negatív { border-left: 3px solid color-mix(in srgb, #f44336 45%, var(--border)); }
+
 /* ===================
    Field-btn (label + érték oszlopos card-szerű)
    Használva: Aktív fül, Harc fül fegyver szekció, Manőver

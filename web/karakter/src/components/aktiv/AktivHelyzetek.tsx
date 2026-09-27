@@ -82,7 +82,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
           {groups.flatMap(g => g.items.length > 0 ? [
             <div key={g.label} className={`aktiv-picker-group-label ${g.cls}`}>{g.label}</div>,
             ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
-              <div key={h.név} className="aktiv-picker-item" onClick={() => addHelyzet(h)}>
+              <div key={h.név} className={`aktiv-picker-item ${g.cls}`} onClick={() => addHelyzet(h)}>
                 <span className="aktiv-picker-item-name">{h.név}</span>
                 <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
               </div>
