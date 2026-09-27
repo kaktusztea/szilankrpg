@@ -61,7 +61,7 @@ def _extrak(r):
         cimkek.append(f"Felszerelés: {felszerelés_pont}")
     akadaly = fv.get("akadály", 0)
     if akadaly:
-        cimkek.append(f"Utazásnál: {akadaly}")
+        cimkek.append(f"Akadály: {akadaly}")
     if bal.FEGYVERHOSSZ[fv["hossz"]].get("övön_hordható"):
         cimkek.append("Övön hordható")
     return "; ".join(cimkek)
