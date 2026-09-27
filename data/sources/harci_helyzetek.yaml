@@ -41,6 +41,20 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
+- név: "Beszorított ellenfél - hosszú fegyverrel"
+  infó: "Előny+2 TÉ dobásra."
+  megjegyzések:
+  - text: "Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben."
+  - text: "Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt."
+  hatások:
+  - operátor: "előny"
+    érték: 2
+    cél: "té_dobás"
+  id: "ellenfél_beszorított_hosszú_fegyverrel"
+  csoport: "pozitív"
+  rejtett: false
+  tiltja_taktikákat: false
+  kizár_helyzetek: []
 - név: "Csúszós talaj"
   infó: "Hátrány-1 Támadó dobásra."
   megjegyzések:
