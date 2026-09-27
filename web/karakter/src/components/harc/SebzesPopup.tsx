@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
-import { rollElőnyHátrányK20, type ProbaDobás, előnyHátrányLabel, clampEHSzint } from '../../engine/dice';
+import { rollElőnyHátrányK20, type ProbaDobás, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
 import { netElőnySzint, sebzésPáncélDelta, célPáncélSpDelta } from './combat-roll-info';
 import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
@@ -71,6 +71,9 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
   const extraDelta = páncél && extraDefs ? célPáncélSpDelta(fegyverExtrák, extraDefs, páncél) : 0;
   const páncélDelta = mátrixDelta + extraDelta;
   const effektívSp = sp + páncélDelta;
+  // A páncélválasztó kötelező (STUDY 3g): amíg jelen van a mátrix, de nincs választva
+  // páncélosztály, a dobás blokkolva (rossz SP-eredményt adna a mátrix-lookup nélkül).
+  const páncélKell = !!páncélMátrix && páncél === null;
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(aktuális);
@@ -127,7 +130,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
             {sebzéstípus === 'másodlagos' && (
               <div className="sebzes-masodlagos-info">
-                Sebzéstípus: másodlagos (Hátrány−1 beépítve)
+                Sebzéstípus: másodlagos (Hátrány−1)
               </div>
             )}
 
@@ -149,13 +152,12 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
                 if (totalBónusz !== 0) return <>{base}<span className={totalBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{totalBónusz > 0 ? '+' : ''}{totalBónusz}</span></>;
                 return effektívSp;
               })()} + k20
-              {aktuális !== 0 ? ` (${előnyHátrányLabel(aktuális)})` : ''}
               {(átütés ?? 0) > 0 && <span className="sebzes-atutes"> | Átütés: {átütés}</span>}
             </div>
 
             <div className="dobas-btn-row">
-              <button className="tamado-sebzes-btn" onClick={handleDobás}>Dobás</button>
-              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" />
+              <button className="tamado-sebzes-btn" onClick={handleDobás} disabled={páncélKell}>Dobás</button>
+              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
             </div>
           </>
         ) : (

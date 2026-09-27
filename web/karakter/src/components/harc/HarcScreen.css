@@ -458,6 +458,10 @@
   align-items: center;
   gap: 2px;
 }
+.tamado-sebzes-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
 
 .tamado-sebzes-btn-hint {
   font-size: 12px;
