@@ -373,15 +373,20 @@ class Harcos:
 def fegyverviszony(tamado: Harcos, vedo: Harcos):
     d = tamado.mod.pengehossz - vedo.mod.pengehossz
     if d >= 1:
-        return "pengeelőny"
+        return "fegyverelőny"
     if d <= -1:
-        return "pengehátrány"
-    return "alappenge"
+        return "fegyverhátrány"
+    return "fegyverazonosság"
 
 
 def sikertelen_tamadas_ve_csokkentes(tamado: Harcos, vedo: Harcos, te_k20):
-    alap_tab = {"pengehátrány": 0, "alappenge": 1, "pengeelőny": 2}
+    alap_tab = {"fegyverhátrány": 0, "fegyverazonosság": 1, "fegyverelőny": 2}
     pv = fegyverviszony(tamado, vedo)
+    # §13.9 (LEZÁRVA): Teljes Védekezés normalizálja a rá okozott VÉ csökkentést
+    # Fegyverazonosság szintre — semlegesíti a támadó Fegyverelőnyét (méretkülönbség/
+    # Fárasztás bónusz alább, a hh/vhh blokkokban, továbbra is hat).
+    if vedo.taktika == "teljes_védekezés":
+        pv = "fegyverazonosság"
     # §13.1 (LEZÁRVA): a k20P mindig a már eldobott támadó k20-ból jön (közös kocka).
     alap = alap_tab[pv] + k20P(te_k20)
 

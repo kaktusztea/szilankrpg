@@ -176,7 +176,7 @@ def helyzet_felmeres(harcos: "S.Harcos", csapatok):
     return dict(
         cel=cel,
         pengehossz_kulonbseg=(cel.mod.pengehossz - harcos.mod.pengehossz) if cel else 0,
-        fegyverviszony=S.fegyverviszony(harcos, cel) if cel else "alappenge",
+        fegyverviszony=S.fegyverviszony(harcos, cel) if cel else "fegyverazonosság",
         sajat_ep_arany=1 - harcos.ep_hasznalt / harcos.ep,
         cel_ep_arany=(1 - cel.ep_hasznalt / cel.ep) if cel else 1.0,
         tulero_ellene=len(ellenfelek) - len(sajatok),   # pozitív = a harcos van túlerőben ELLEN
@@ -299,16 +299,16 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
 
     if not ctx["mar_belharcban"]:
         # Roham/Öngyilkos roham: agresszív nyitás, csak ha még nem használt roham ebben a harcban,
-        # és NEM alappenge-hátrányban van (rohamot nem érdemes hosszabb fegyveres ellen indítani
+        # és NEM fegyverhátrányban van (rohamot nem érdemes hosszabb fegyveres ellen indítani
         # túl korán, mert a VÉ ×2 büntetés a rohamozóra is vonatkozik).
-        if ctx["roham_meg_elerheto"] and ctx["fegyverviszony"] != "pengehátrány":
+        if ctx["roham_meg_elerheto"] and ctx["fegyverviszony"] != "fegyverhátrány":
             szabalyok.append(("taktika:roham", 1.2))
         if (ctx["roham_meg_elerheto"] and ctx["sajat_ep_arany"] > 0.6
                 and ctx["cel_ep_arany"] < 0.35):
             szabalyok.append(("taktika:öngyilkos_roham", 1.8))   # a cél már majdnem elesett — érdemes végigrohamozni
 
-        # Fárasztás: csak Pengehátrányból NEM alkalmazható (l. taktikak.json megkötés)
-        if ctx["fegyverviszony"] != "pengehátrány":
+        # Fárasztás: csak Fegyverhátrányból NEM alkalmazható (l. taktikak.json megkötés)
+        if ctx["fegyverviszony"] != "fegyverhátrány":
             szabalyok.append(("taktika:fárasztás", 0.6))
 
         # Kezdeményező: ha a harcos fürgébb akar lenni, kis VÉ árat fizetve

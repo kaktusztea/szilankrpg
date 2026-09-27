@@ -27,7 +27,7 @@ Egy szimulátornak ezt a 6 lépést kell megvalósítania, ebben a sorrendben:
 | Szabály | Miért |
 |---|---|
 | A `VÉ` csökkenést **két külön könyvelésben** tartsd: `vé_fáradás` és `vé_seb` | A regeneráció csak a fáradást adja vissza (§5.4). Egy összevont számláló CSENDBEN hibás eredményt ad. |
-| A `Pengeelőny/Pengehátrány` **páronkénti** állapot, nem harcosonkénti | 1:N felállásban minden támadó–védő párra külön kell számolni (§5.2) |
+| A `Fegyverelőny/Fegyverhátrány` **páronkénti** állapot, nem harcosonkénti | 1:N felállásban minden támadó–védő párra külön kell számolni (§5.2) |
 | A `TÉ` levonás a sebesülésből **minden támadásra újraszámolandó** | A kategóriaváltás körön belül is megtörténhet |
 | Minden dobás `k20`, kivéve a manőver ellenpróbát (`k10`) és a tulajdonságpróbát (`k6`) | §4 |
 
@@ -459,16 +459,16 @@ ennél mélyebbre menni.
 ### 5.2 Pengeméret-viszony (páronkénti!)
 
 ```
-pengeviszony(támadó, védő):
+fegyverviszony(támadó, védő):
     d = támadó.fegyver.Pengehossz - védő.fegyver.Pengehossz
-    d >= 1   → "pengeelőny"        # a támadó előnyben
-    d <= -1  → "pengehátrány"
-    egyébként → "alappenge"
+    d >= 1   → "fegyverelőny"        # a támadó előnyben
+    d <= -1  → "fegyverhátrány"
+    egyébként → "fegyverazonosság"
 ```
 
 - A `Pengehossz` mező már "pengék" egységben van: `0, 0.5, 1, 1.5, 2, 3, 4, 5`
 - `< 0.5` hosszú fegyver 0-nak számít
-- `Közrefogás` helyzet a védőn: a támadó `pengeelőny`-e → `alappenge`-re csökken
+- `Közrefogás` helyzet a védőn: a támadó `fegyverelőny`-e → `fegyverazonosság`-re csökken
 - `Lovas harc` / `Léglovas harc` fortély 1+ fok: a saját fegyver `Pengehossz +1`
 - Kétkezesnél a **nagyobb** fegyver pengehossza számít
 
@@ -476,9 +476,9 @@ pengeviszony(támadó, védő):
 
 ```
 sikertelen_támadás_VÉ_csökkentés(támadó, védő):
-    alap = { pengehátrány: 0 + k20P,
-             alappenge:    1 + k20P,
-             pengeelőny:   2 + k20P }[pengeviszony(támadó, védő)]
+    alap = { fegyverhátrány:    0 + k20P,
+             fegyverazonosság:  1 + k20P,
+             fegyverelőny:      2 + k20P }[fegyverviszony(támadó, védő)]
 
     alap += méretkülönbség_bónusz(támadó, védő)       # +1 / lénykategória-különbség
     alap += helyzet_vé_csökkentés_bónusz(támadó)      # §8 tábla (Meglepetés +2, stb.)
@@ -507,7 +507,7 @@ találat_VÉ_csökkentés(védő):
 Kísértő megfigyelés: a `3` kisebb, mint amit egy Alakzat tévesztése ad (`3..5`), és épp
 annyi, mint az egyén Fárasztása (`3..5`). Ez **nem hiba**, két okból:
 
-1. **Egyénnél a `3` a sáv teteje, garantáltan.** Az Alappenge tévesztés `1 + k20P`, azaz
+1. **Egyénnél a `3` a sáv teteje, garantáltan.** A Fegyverazonosság tévesztés `1 + k20P`, azaz
    `1` (45 %) / `2` (50 %) / `3` (5 %), átlag `1,6`. A találat tehát átlagban `1,9×` annyi
    eróziót ad, mint egy tévesztés — a magasabb tévesztési értékek a szerencsés farok, nem
    a tipikus eset. Fix számot NE hasonlíts sávmaximumhoz.
@@ -652,7 +652,7 @@ akció_feloldás(támadó, védő, tám_index):
     HA "Fárasztás" aktív a támadón:
         v = 3                                          # a taktika alapértéke (2026-09-10: 2 → 3)
         HA támadónak van "Fárasztás" fortélya:  v += 1
-        HA pengeviszony(támadó, védő) == "pengeelőny":  v += 1
+        HA fegyverviszony(támadó, védő) == "fegyverelőny":  v += 1
         védő.állapot.vé_fáradás += v
         return                                         # NINCS támadódobás, NINCS sebzés
 
@@ -775,7 +775,7 @@ Forrás: `data/tables/taktikak.json`. `📶` = skálázható (§6.4).
 |---|---|---|---|
 | **1 támadás** | TÉ +3 | Csak ha ≥2 támadás van. A `-3` több-tám levonást gyakorlatilag kioltja | ❌ Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás, Tettetés |
 | **Érintő** | TÉ +3 | **Sebzés = 0** | ✅ Támadó, Védő, Kezdeményező, Kiváró, 1 tám, Plusz tám |
-| **Fárasztás** | — | Nincs támadódobás, nincs sebzés. `VÉ csökk = 3 (+1 fortély) (+1 pengeelőny)` | ❌ minden más |
+| **Fárasztás** | — | Nincs támadódobás, nincs sebzés. `VÉ csökk = 3 (+1 fortély) (+1 fegyverelőny)` | ❌ minden más |
 | **Kezdeményező** 📶 | fok n: KÉ +n, VÉ −n | — | ✅ Támadó, Érintő, Visszafogott, 1 tám |
 | **Kiváró** | TÉ +3 | Átengedett KÉ (utolsó helyre sorolódik). A TÉ+3 csak az **első visszatámadásra**, és csak ha nem kapott sebet. Több ellenfél ellen ❌ | ✅ Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám, Tettetés |
 | **Öngyilkos roham** | TÉ +5, VÉ −10, SP +7 | Max 1×/küzdelem. Csak az 1. oda-vissza csapás. **VÉ csökk ×2 mindkét félnek.** Sebesülés TÉ büntetés nem érvényesül. Ostorharcban ❌. Ha betalál: VÉ büntetése megszűnik és a visszatámadó nem kap +7 SP-t | ❌ minden más |
@@ -832,7 +832,7 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 | Helyzet | Hatás |
 |---|---|
 | Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 pengehosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
-| Közrefogás | Semlegesíti az ellenfél Pengeelőnyét → Alappenge |
+| Közrefogás | Semlegesíti az ellenfél Fegyverelőnyét → Fegyverazonosság |
 | Fegyverrántás váratlanul | `Fegyverrántás` fortély: KÉ+5 / +10 |
 | Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Pengehossz +1` |
 | Harci szekér | `Harci kocsihajtás`: TÉ/VÉ +8 / +12 |
@@ -841,7 +841,7 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 | Szörnyeteg elleni harc | `Gladiátor bestiái`: VÉ +3 |
 | Pusztakezes harc | *rejtett, automatikus*: puszta kéz harcértékei `KÉ/TÉ/VÉ: −3` (már a fegyvertáblában) |
 | Képzetlen fegyverhasználat | *rejtett, automatikus*: harcmodor < 3 (a büntetés a §3.9 táblában) |
-| Pengeelőny / Pengehátrány | *rejtett, levezetett*: §5.2 |
+| Fegyverelőny / Fegyverhátrány | *rejtett, levezetett*: §5.2 |
 
 **Kölcsönösen kizáró csoportok**: `Vakharc-*`, `Tűz ruhán-*`, `Láthatatlan-*`, `Hajítás-*`.
 `Földön fekve` kizárja: Lovas, Léglovas, Harci szekér, Magasabbról, Levegőből, Helyhez kötve,
@@ -1040,7 +1040,7 @@ Hangolási tesztekhez ez a javasolt neutrális beállítás:
 ```
 2 db REF-A klón, "Kard, lovag", egyfegyveres, páncél aktív, pajzs nélkül
 → mindkettő: TÉ 47, VÉ 60, SP+11, SFÉ 5, ÉP 40, KÉ 19, 1 támadás/kör
-→ Alappenge (azonos fegyver)  →  sikertelen támadás VÉ csökk = 1 + k20P
+→ Fegyverazonosság (azonos fegyver)  →  sikertelen támadás VÉ csökk = 1 + k20P
 → Harcos elme 1 aktív  →  kör elején +1 VÉ (csak fáradásból)
 → nincs taktika, nincs harci helyzet, nincs státusz
 ```
@@ -1197,7 +1197,7 @@ Manőver Alap`), MP költséggel, max 1/kör. Egy hangolási szimulációban **h
 kivéve ha a manőver a vizsgálat tárgya — a variancia amit bevisz nagyobb, mint a
 legtöbb hangolási különbség.
 
-### 13.9 Teljes Védekezés: mit jelent az `1 + k20P`? ⚠ NYITOTT
+### 13.9 Teljes Védekezés: mit jelent az `1 + k20P`? ✅ LEZÁRVA 2026-09-27
 
 `md/065_02` Teljes Védekezés:
 
@@ -1211,16 +1211,14 @@ Ellenfél VÉ csökkentés: (1 + k20P)
 **Az irány tisztázott**: a `bónuszuk` birtokos alak és a 317. sor jegyzete alapján ez az
 **ellenfelek által a Teljes Védekezőn okozott** VÉ csökkentés, nem fordítva.
 
-**Ami nyitott**: miért van egyáltalán kimondva, ha ez amúgy is a normál Alappenge érték?
-A legvalószínűbb értelmezés: a Teljes Védekezés **normalizálja** a rajta okozott VÉ
-csökkentést Alappenge szintre, azaz **semlegesíti az ellenfél Pengeelőnyét** (a
-`2 + k20P`-t is `1 + k20P`-re fogja) — hasonlóan ahhoz, ahogy a `Közrefogás` helyzet teszi.
+**Döntés**: az `1 + k20P` **fix** érték — a Teljes Védekezés normalizálja a rajta okozott
+VÉ csökkentést Fegyverazonosság szintre, azaz **semlegesíti az ellenfél Fegyverelőnyét** (a
+`2 + k20P`-t is `1 + k20P`-re fogja), hasonlóan ahhoz, ahogy a `Közrefogás` helyzet teszi.
 A méretkülönbség módosító a 317. sor szerint továbbra is hozzáadódik/levonódik.
 
-→ **Javasolt szimulációs kezelés**: `pengeviszony` felülírása `alappenge`-re a Teljes
+**Szimulációs kezelés**: `fegyverviszony` felülírása `fegyverazonosság`-ra a Teljes
 Védekezőt támadó minden ellenfélre; méretkülönbség és Fárasztás bónusz továbbra is hat.
-Ez nem lezárt szabálydöntés — ha a Teljes Védekezés nem semlegesíti a Pengeelőnyt, akkor
-a sor puszta emlékeztető, és el lehet hagyni.
+
 
 ---
 

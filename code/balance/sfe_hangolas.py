@@ -64,7 +64,7 @@ class Harcos:
         s.támadások = támadások
         s.oszl = max(1, ÉP // 4)
         s.used = 0; s.vf = 0; s.vs = 0; s.el = True
-        s.fegyverviszony = fegyverviszony  # +1 pengeelőny / -1 pengehátrány a másik oldalhoz képest
+        s.fegyverviszony = fegyverviszony  # +1 fegyverelőny / -1 fegyverhátrány a másik oldalhoz képest
 
     @property
     def ve(s):
