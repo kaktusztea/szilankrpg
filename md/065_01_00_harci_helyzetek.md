@@ -5,6 +5,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 ### [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
 
 - [Beszorított ellenfél](065_01_01_pozitiv_helyzetek.md#beszorított-ellenfél)
+- [Beszorított ellenfél - hosszú fegyverrel](065_01_01_pozitiv_helyzetek.md#beszor%C3%ADtott-ellenf%C3%A9l---hossz%C3%BA-fegyverrel)
 - [Harci szekér](065_01_01_pozitiv_helyzetek.md#harci-szekér)
 - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
 - [Közönség előtt](065_01_01_pozitiv_helyzetek.md#közönség-előtt)
