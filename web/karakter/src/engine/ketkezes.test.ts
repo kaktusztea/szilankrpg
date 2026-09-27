@@ -20,8 +20,8 @@ const karakter = {
 } as unknown as Karakter;
 
 const konstansok = {
-  kétkezes_harc_max_pengeméret: 2.0,
-  kétkezes_harc_pengelevonás_osztó: 1,
+  kétkezes_harc_max_fegyverméret: 2.0,
+  kétkezes_harc_fegyverlevonás_osztó: 1,
   kétkezes_harc_bónuszok: [{ fok: 0, harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: false, mf: 'nincs' }],
   mesterfegyver_bónuszok: [{ fok: 0, TÉ: 0, VÉ: 0, SP: 0 }],
   fegyver_kategória_harcmodor: { kardvívó: 'Kardvívás' },
@@ -48,7 +48,7 @@ describe('calcKétkezesHarc', () => {
     expect(r.VÉ).toBe(22);
     // SP = kard SP 2 + erőbónusz min(5,∞) 5 = 7
     expect(r.SP).toBe(7);
-    // harckeret = max(0, szint 4 + gyo 3 - pengelevonás floor(1.5/1)=1) = 6; sebesség 4 → 1 + floor(6/4) = 2
+    // harckeret = max(0, szint 4 + gyo 3 - fegyverlevonás floor(1.5/1)=1) = 6; sebesség 4 → 1 + floor(6/4) = 2
     expect(r.harckeret).toBe(6);
     expect(r.támadások).toBe(2);
     expect(r.fegyver_név).toBe('Kard + Tőr');
@@ -62,6 +62,6 @@ describe('calcKétkezesHarc', () => {
   });
 
   it('returns null when the summed blade length exceeds the limit', () => {
-    expect(calcKétkezesHarc({ ...baseInput, konstansok: { ...konstansok, kétkezes_harc_max_pengeméret: 1.0 } })).toBeNull();
+    expect(calcKétkezesHarc({ ...baseInput, konstansok: { ...konstansok, kétkezes_harc_max_fegyverméret: 1.0 } })).toBeNull();
   });
 });

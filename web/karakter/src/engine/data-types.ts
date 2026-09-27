@@ -240,11 +240,11 @@ export interface KonstansokRaw {
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;
-  kétkezes_harc_max_pengeméret: number;
+  kétkezes_harc_max_fegyverméret: number;
   kétkezes_harc_bónuszok: {
     fok: number; harckeret: number; TÉ: number; VÉ: number; mindkét_fegyver_értékei: boolean; mf: string;
   }[];
-  kétkezes_harc_pengelevonás_osztó: number;
+  kétkezes_harc_fegyverlevonás_osztó: number;
   fegyverfogás_opciók: { id: string; név: string }[];
   locked_fortélyok: string[];
   egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];

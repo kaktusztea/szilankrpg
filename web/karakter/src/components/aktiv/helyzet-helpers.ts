@@ -16,8 +16,8 @@ export function isHelyzetAvailable(
   return true;
 }
 
-/** Min pengehossz figyelmeztetés */
-export function getMinPengeWarning(
+/** Min fegyverhossz figyelmeztetés */
+export function getMinFegyverhosszWarning(
   helyzetFeltételKulcs: string, karakter: Karakter, session: Session, data: GameData,
 ): string {
   for (const kf of karakter.fortélyok) {
@@ -26,13 +26,13 @@ export function getMinPengeWarning(
     const fokDef = fd.fokok.find((f: any) => f.fok === kf.fok);
     if (!fokDef?.módosítók) continue;
     for (const mod of fokDef.módosítók) {
-      if (mod.cél === 'min_pengehossz' && mod.feltétel === helyzetFeltételKulcs) {
+      if (mod.cél === 'min_fegyverhossz' && mod.feltétel === helyzetFeltételKulcs) {
         const aktívFp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
         const aktívFd = session.aktív_fegyver_index === -2
           ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(karakter) ?? '')
           : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
         const ph = aktívFd?.fegyverhossz ?? 0;
-        if (ph < mod.érték) return `⚠ Min. pengehossz: ${mod.érték}!`;
+        if (ph < mod.érték) return `⚠ Min. fegyverhossz: ${mod.érték}!`;
       }
     }
   }

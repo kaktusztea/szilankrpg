@@ -428,7 +428,7 @@
     "Pajzshasználat",
     "Merevvértviselet"
   ],
-  "kétkezes_harc_max_pengeméret": 6,
+  "kétkezes_harc_max_fegyverméret": 6,
   "fegyverfogás_opciók": [
     {
       "id": "egyfegyveres",
@@ -481,7 +481,7 @@
       "mf": "mindkettő"
     }
   ],
-  "kétkezes_harc_pengelevonás_osztó": 2,
+  "kétkezes_harc_fegyverlevonás_osztó": 2,
   "merevvértviselet_bónuszok": [
     {
       "fok": 0,

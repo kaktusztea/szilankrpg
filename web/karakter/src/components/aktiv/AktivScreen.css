@@ -142,7 +142,7 @@
 .aktiv-helyzet-aktiv { color: var(--color-helyzet); }
 .aktiv-helyzet-inaktiv { color: #888; }
 .aktiv-helyzet-alapeset { color: var(--color-statusz); }
-.aktiv-min-penge-warning { color: #e53935; margin-left: 6px; }
+.aktiv-min-fegyverhossz-warning { color: #e53935; margin-left: 6px; }
 
 /* --- Státusz --- */
 .aktiv-statusz-name { color: var(--color-statusz); }

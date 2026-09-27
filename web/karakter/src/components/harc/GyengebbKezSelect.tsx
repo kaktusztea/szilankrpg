@@ -22,7 +22,7 @@ function getKétkezesBalOpciók(
     if (jobbIdx < 0) return true;
     const balFh = fDef?.fegyverhossz ?? 0;
     if (balFh > jobbFh) return false;
-    return balFh + jobbFh <= data.konstansok.kétkezes_harc_max_pengeméret;
+    return balFh + jobbFh <= data.konstansok.kétkezes_harc_max_fegyverméret;
   });
 }
 

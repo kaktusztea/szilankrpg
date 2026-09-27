@@ -114,7 +114,7 @@ manőverek:
     E: "Ez a támadás NEM okoz VÉ csökkentést. Körönként max 1x."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Csak közvetlenül ellened harcolók ellen" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Egyik ellenfél sincs Pengeelőnyben" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Egyik ellenfél sincs Fegyverelőnyben" }
 - név: "Földrevitel"
   típus: "általános"
   nehézség: 8
@@ -125,7 +125,7 @@ manőverek:
   id: "földrevitel"
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél nincs Pengeelőnyben veled szemben" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél nincs Fegyverelőnyben veled szemben" }
   helyzetfüggő_módosítók:
     - kategória: "Erő különbség"
       mód: "single"
@@ -172,7 +172,7 @@ manőverek:
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 1 }
     - { erősség: "erős", típus: "egyéb", leírás: "Láncos fegyver használata" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 0.5 penge" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 0.5 kategória" }
 - név: "Lánccsapdából szabadítás"
   típus: "általános"
   nehézség: 7
@@ -232,7 +232,7 @@ manőverek:
   id: "mesterjel"
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 2 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 1 penge hosszú hegyes szúrófegyver" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 1 kategória hosszú hegyes szúrófegyver" }
   helyzetfüggő_módosítók:
     - kategória: "Jel bonyolultsága"
       mód: "single"
@@ -349,7 +349,7 @@ manőverek:
     M: "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Fegyverelőny" }
   helyzetfüggő_módosítók:
     - kategória: "Harci alakzat"
       mód: "single"
@@ -627,7 +627,7 @@ manőverek:
   fázisok: "M,E"
   hatás:
     - "Feltétel: GYALOGOS végzi lovas ellen."
-    - "Feltétel: szúró szálfegyver + Pengeelőny szükséges."
+    - "Feltétel: szúró szálfegyver + Fegyverelőny szükséges."
     - "Sebző dobás a lovasra, aki elveszíti támadását."
   id: "lovas_megakasztása"
   fázis_cselekvő:
@@ -637,4 +637,4 @@ manőverek:
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Védekező gyalogos végzi (nem a lovas)" }
     - { erősség: "erős", típus: "egyéb", leírás: "Szúró szálfegyver használata" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny a lovashoz képest" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Fegyverelőny a lovashoz képest" }

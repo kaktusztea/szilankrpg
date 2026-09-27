@@ -28,8 +28,8 @@ export function helyzetKönnyítés(session: Session): { meglepetés: boolean; o
  * Egy 'egyéb' követelmény mely aktiválható harci helyzet(ek)re hivatkozik (adatvezérelt).
  * Az így felismert követelmény GÉPILEG kiértékelhető a session.aktív_helyzetek alapján.
  * A tagadó szövegeket ("nincs"/"sincs") KIZÁRJUK — azok nem "aktív helyzet kell" jellegűek
- * (pl. "Ellenfél nincs Pengeelőnyben", "Egyik ellenfél sincs Pengeelőnyben"), maradnak manuálisak.
- * A hosszabb neveket előbb illesztjük (Pengeelőny vs Pengehátrány szóhatár egyértelműsítése).
+ * (pl. "Ellenfél nincs Fegyverelőnyben", "Egyik ellenfél sincs Fegyverelőnyben"), maradnak manuálisak.
+ * A hosszabb neveket előbb illesztjük (Fegyverelőny vs Fegyverhátrány szóhatár egyértelműsítése).
  */
 function követelményHelyzetei(köv: ManoverKövetelmény, data: GameData): string[] {
   if (köv.típus !== 'egyéb') return [];

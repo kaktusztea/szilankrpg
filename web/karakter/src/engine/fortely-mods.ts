@@ -8,7 +8,7 @@ export function calcFortelyMods(
   aktívFeltételek: Set<string>,
   feltételTeljesül: (feltétel: unknown) => boolean,
 ): Record<string, number> {
-  const mods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0, pengehossz: 0, min_pengehossz: 0 };
+  const mods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0, fegyverhossz: 0, min_fegyverhossz: 0 };
   for (const kf of k.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
     if (!def) continue;

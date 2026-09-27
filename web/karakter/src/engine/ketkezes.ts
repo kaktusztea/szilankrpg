@@ -8,7 +8,7 @@ interface KétkezesInput {
   fegyverek: FegyverAlap[];
   karakter: Karakter;
   konstansok: Pick<KonstansokRaw,
-    'kétkezes_harc_max_pengeméret' | 'kétkezes_harc_pengelevonás_osztó' | 'kétkezes_harc_bónuszok'
+    'kétkezes_harc_max_fegyverméret' | 'kétkezes_harc_fegyverlevonás_osztó' | 'kétkezes_harc_bónuszok'
     | 'mesterfegyver_bónuszok' | 'fegyver_kategória_harcmodor' | 'harcérték_alap'>;
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number }[];
   fortelyMods: Record<string, number>;
@@ -32,7 +32,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   const jobbFh = jobbDef.fegyverhossz;
   const balFh = balDef.fegyverhossz;
   const sumFh = jobbFh + balFh;
-  if (sumFh > konstansok.kétkezes_harc_max_pengeméret) return null;
+  if (sumFh > konstansok.kétkezes_harc_max_fegyverméret) return null;
 
   const khFok = k.fortélyok.find(f => f.név === 'Kétkezes harc')?.fok ?? 0;
   const nagyobb = jobbFh >= balFh ? jobbDef : balDef;
@@ -83,7 +83,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   const SP = jobbElsődleges.SP + erőbónusz + mfSP + fortelyMods['SP'];
 
   // Harckeret
-  const fhLevonás = Math.floor(sumFh / konstansok.kétkezes_harc_pengelevonás_osztó);
+  const fhLevonás = Math.floor(sumFh / konstansok.kétkezes_harc_fegyverlevonás_osztó);
   const mgt = input.páncélMGT ?? 0;
   const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] + (khFok === 0 ? (khFokBónusz.harckeret ?? 0) : 0) - mgt - fhLevonás);
   const sebesség = nagyobbElsődleges.Sebesség ?? 6;

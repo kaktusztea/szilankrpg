@@ -29,7 +29,7 @@ export function HarcFegyverTable({
   const { konstansok } = data;
   const többTámTÉ = konstansok.több_támadás_TÉ_levonás;
   const véFlashClass = véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : '';
-  const phBonusClass = fortelyMods['pengehossz'] ? 'ph-bonus' : undefined;
+  const phBonusClass = fortelyMods['fegyverhossz'] ? 'ph-bonus' : undefined;
   const hasOverlayRow = !!(kétkezesResult || fogásResult);
 
   function getAktívFegyverNév(): string {
@@ -48,21 +48,21 @@ export function HarcFegyverTable({
     const spTotal = r.SP + taktikaMods['SP'];
     const spBónusz = (fortelyMods['SP'] ?? 0) + taktikaMods['SP'];
     const spBase = spTotal - spBónusz;
-    const ph = r.fegyverhossz + (fortelyMods['pengehossz'] ?? 0);
-    const pengeWarning = belharciAktív && r.fegyverhossz > 0;
+    const ph = r.fegyverhossz + (fortelyMods['fegyverhossz'] ?? 0);
+    const belharcWarning = belharciAktív && r.fegyverhossz > 0;
     const név = displayNév ?? r.fegyver_név;
 
     return (
       <tr key={név + (isOverlay ? '-overlay' : '')}
         className={isOverlay ? 'harc-fegyver-active-row' : dimmed ? 'harc-row-dimmed' : 'harc-fegyver-active-row'}>
-        <td className={pengeWarning ? 'harc-belharc-warn' : undefined}>{név}</td>
+        <td className={belharcWarning ? 'harc-belharc-warn' : undefined}>{név}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret, hk_harcmodor: r.hk_harcmodor, hk_gyorsaság: r.hk_gyorsaság, hk_mgt: r.hk_mgt, hk_felszerelés_mgt: r.hk_felszerelés_mgt, hk_fortély: r.hk_fortély })}>{r.támadások}</td>
         <td>{té}</td>
         <td className={véFlashClass}>{vé}</td>
         <td>{spBónusz !== 0
           ? <>{spBase}<span className={spBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{spBónusz > 0 ? '+' : ''}{spBónusz}</span></>
           : spTotal} {r.jelleg}</td>
-        <td className={phBonusClass}>{showPh2 != null ? `${ph}(${showPh2 + (fortelyMods['pengehossz'] ?? 0)})` : ph}</td>
+        <td className={phBonusClass}>{showPh2 != null ? `${ph}(${showPh2 + (fortelyMods['fegyverhossz'] ?? 0)})` : ph}</td>
       </tr>
     );
   }

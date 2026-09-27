@@ -255,7 +255,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Egyik ellenfél sincs Pengeelőnyben"
+        "leírás": "Egyik ellenfél sincs Fegyverelőnyben"
       }
     ],
     "helyzetfüggő_módosítók": [],
@@ -283,7 +283,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Ellenfél nincs Pengeelőnyben veled szemben"
+        "leírás": "Ellenfél nincs Fegyverelőnyben veled szemben"
       }
     ],
     "helyzetfüggő_módosítók": [
@@ -397,7 +397,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Ellenfél fegyvere minimum 0.5 penge"
+        "leírás": "Ellenfél fegyvere minimum 0.5 kategória"
       }
     ],
     "helyzetfüggő_módosítók": [],
@@ -550,7 +550,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Legfeljebb 1 penge hosszú hegyes szúrófegyver"
+        "leírás": "Legfeljebb 1 kategória hosszú hegyes szúrófegyver"
       }
     ],
     "helyzetfüggő_módosítók": [
@@ -855,7 +855,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Pengeelőny"
+        "leírás": "Fegyverelőny"
       }
     ],
     "helyzetfüggő_módosítók": [
@@ -1523,7 +1523,7 @@
     "fázisok": "M,E",
     "hatás": [
       "Feltétel: GYALOGOS végzi lovas ellen.",
-      "Feltétel: szúró szálfegyver + Pengeelőny szükséges.",
+      "Feltétel: szúró szálfegyver + Fegyverelőny szükséges.",
       "Sebző dobás a lovasra, aki elveszíti támadását."
     ],
     "id": "lovas_megakasztása",
@@ -1547,7 +1547,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Pengeelőny a lovashoz képest"
+        "leírás": "Fegyverelőny a lovashoz képest"
       }
     ],
     "helyzetfüggő_módosítók": [],

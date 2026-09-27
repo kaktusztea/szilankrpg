@@ -30,20 +30,20 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
   stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
 
-  // Aktív fegyver pengehossz
+  // Aktív fegyverhossz
   const aktívFegyverFp = session.aktív_fegyver_index >= 0 ? k.fegyverek[session.aktív_fegyver_index] : null;
   const pajzsFegyverNév = buildPajzsFegyverNév(k);
   const aktívFegyverDef = session.aktív_fegyver_index === -2
     ? lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '')
     : aktívFegyverFp ? lookupFegyver(data.fegyverek, aktívFegyverFp.alap) : null;
 
-  const jobbPengehossz = aktívFegyverDef?.fegyverhossz ?? 0;
-  let aktívFegyverPengehossz = jobbPengehossz;
+  const jobbFegyverhossz = aktívFegyverDef?.fegyverhossz ?? 0;
+  let aktívFegyverhossz = jobbFegyverhossz;
 
   if ((session.kétkezes_harc || session.fegyverfogás === 'fegyver_hárító') && session.aktív_fegyver_bal_index >= 0) {
     const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
     const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
-    aktívFegyverPengehossz += balDef?.fegyverhossz ?? 0;
+    aktívFegyverhossz += balDef?.fegyverhossz ?? 0;
   }
 
   const aktívFegyverKat = aktívFegyverDef?.kategória ?? 'közelharci';
@@ -60,7 +60,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     páncél_végtagvédettség: k.páncél.végtagvédettség,
     páncél_sisak: k.páncél.sisak ? 1 : 0,
     páncél_idea: k.páncél.idea, páncél_rongálódás: k.páncél.rongálódás,
-    aktív_fegyver_pengehossz: aktívFegyverPengehossz,
+    aktív_fegyver_fegyverhossz: aktívFegyverhossz,
   });
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 

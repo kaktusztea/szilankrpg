@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { AktivBaseProps } from './types';
 import { fmtCode } from '../formatters';
-import { isHelyzetAvailable, getMinPengeWarning, getHelyzetInfoText } from './AktivHelpers';
+import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText } from './AktivHelpers';
 import { PickerOverlay } from './PickerOverlay';
 
 interface Props extends AktivBaseProps {
@@ -53,13 +53,13 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
           if (!def) return null;
           const kötöttFortélyok = helyzetFortélyok.get(h) || [];
           const infóText = getHelyzetInfoText(h, data);
-          const minPengeWarning = getMinPengeWarning(def.feltétel_kulcs || '', karakter, session, data);
+          const minFegyverhosszWarning = getMinFegyverhosszWarning(def.feltétel_kulcs || '', karakter, session, data);
           return (
             <div key={i} className="aktiv-flex-col">
               <div className="item-row">
                 <span className="aktiv-flex-1">
                   <strong className="aktiv-strong-helyzet">{h}:</strong> {fmtCode(infóText)}
-                  {minPengeWarning && <span className="aktiv-min-penge-warning">{minPengeWarning}</span>}
+                  {minFegyverhosszWarning && <span className="aktiv-min-fegyverhossz-warning">{minFegyverhosszWarning}</span>}
                 </span>
                 <button className="item-delete" onClick={e => {
                   e.stopPropagation();

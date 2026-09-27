@@ -46,12 +46,12 @@
     "id": "fárasztás",
     "fokozatos": false,
     "módosítók": {},
-    "megjegyzés": "VÉ csökkentés: 3/kör fixen, nincs támadódobás. Pengehátrányból nem alkalmazható.",
+    "megjegyzés": "VÉ csökkentés: 3/kör fixen, nincs támadódobás. Fegyverhátrányból nem alkalmazható.",
     "megkötések": [
       {
         "típus": "harci_helyzet",
         "mód": "tiltott",
-        "érték": "Pengehátrány"
+        "érték": "Fegyverhátrány"
       },
       {
         "típus": "harci_helyzet",

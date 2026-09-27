@@ -14,8 +14,8 @@ leírások:
 - text: "Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket\
     \ - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen..."
 megjegyzések:
-- text: "Fegyverek: A forgatott fegyverek össz pengehossza nem lehet nagyobb,\
-    \ mint `1 penge` (Például 1db hosszú kard, vagy 2db rövidkard), továbbá súlyuk\
+- text: "Fegyverek: A forgatott fegyverek össz fegyverhossza nem lehet nagyobb,\
+    \ mint `1 kategória` (Például 1db hosszú kard, vagy 2db rövidkard), továbbá súlyuk\
     \ is fontos tényező (KM dönt)."
 - text: "Vértek: a fortély csak olyan hajlékony, könnyű, nem-fém vértben használható,\
     \ melynek nem nagyobb MGT-je X-nél."
