@@ -20,6 +20,6 @@ A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](
 
 ---
 
-🔗 [Másfélkezes fegyverek egy kézzel](068_01_06_masfelkezes_fegyverek_egy_kezzel.md) →
+🔗 [Másfélkezes fegyverek egy kézzel](068_01_04_masfelkezes_fegyverek_egy_kezzel.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

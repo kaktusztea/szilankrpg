@@ -19,6 +19,6 @@ Vágó+Íves: +2 SP páncél nélküli ellen
 
 ---
 
-🔗 [Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md) →
+🔗 [Különleges fegyver szabály](068_01_03_kulonleges_fegyver_szabaly.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -24,7 +24,7 @@ Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász löved
 ---
 ### Lövész lőfegyverek
 
-🔆Lásd: [Nyílpuskák](068_01_09_nyilpuskak.md) fejezetet.
+🔆Lásd: [Nyílpuskák](068_01_07_nyilpuskak.md) fejezetet.
 
 🔆 Az Erőbónusz **nem** adódik hozzá a Lövész lőfegyverek **SP** értékéhez.
 

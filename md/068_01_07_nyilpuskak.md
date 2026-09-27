@@ -11,6 +11,6 @@ Ugyan veszélyes fegyverek, de újratöltésük körülményes:
 
 ---
 
-🔗 [Érintő támadás](068_01_10_erinto_tamadas.md) →
+🔗 [Érintő támadás](068_01_08_erinto_tamadas.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

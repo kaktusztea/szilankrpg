@@ -11,7 +11,7 @@ Egy fegyver egy, vagy többféleképpen tud sebet ejteni jelleg szerint.
 
 Amiért ez fontos, az, hogy egyes Páncélok típusok ellen, más-más jellegű támadások nyújtanak bónuszokat - tehát egyes páncélok ellen a szúró, míg mások ellen mondjuk a zúzó fegyverek hatásosak. Sőt páncél nélküli ellenfélnél egyes vágó fegyverek kerülnek előnybe.
 
-Bővebben lásd a [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) oldalt.
+Bővebben lásd a [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md) oldalt.
 
 ### Fegyverek többféle sebzés jelleggel
 

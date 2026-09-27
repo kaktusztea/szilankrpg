@@ -9,6 +9,6 @@ Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellen
 
 ---
 
-🔗 [Puszta kéz](068_01_08_puszta_kez.md) →
+🔗 [Puszta kéz](068_01_06_puszta_kez.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
