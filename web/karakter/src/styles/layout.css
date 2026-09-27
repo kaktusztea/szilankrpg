@@ -247,7 +247,9 @@
   border: 1px solid var(--border-input);
   border-radius: 4px;
   color: var(--text);
-  font-size: 14px;
+  /* 16px, hogy mobil böngészők (iOS Safari) ne zoomoljanak rá fókuszáláskor —
+     l. .field-input (common.css) ugyanezen okból. */
+  font-size: 16px;
   padding: 6px 8px;
   box-sizing: border-box;
   margin-bottom: 10px;
