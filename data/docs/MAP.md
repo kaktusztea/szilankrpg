@@ -122,11 +122,12 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   manover-dobas-calc.ts    Manőver dobás pure logika (követelmény kiértékelés, fázisok, TÉ-bontás, fázis-feliratok, eredmény-hatás) - a popup számítási magja
   AktivStatuszok.tsx       Státusz picker
   AktivFegyverSection.tsx  Fegyver/fogás/páncél toggle szekció
+  SessionToggles.tsx       Session-toggle fortély gombok (Harci akrobatika: fok-függő fegyver v2 követelmény-tiltás + hint)
   AktivHatasPool.tsx       Hatás pool box
   aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
   taktika-helpers.ts       Taktika validáció, kombó, getTaktikaMods, getExtraFokok, formatFokMods
-  helyzet-helpers.ts       Helyzet elérhetőség, min penge, infó szöveg
+  helyzet-helpers.ts       Helyzet elérhetőség, min fegyverhossz, infó szöveg
   NaploTab.tsx             Verziók + Napló accordionok kompozíciója (CheckpointSection + NaploSection)
   CheckpointSection.tsx    Karakter verziók accordion (lista, létrehozás, törlés, megtekintés)
   NaploSection.tsx         Napló accordion (bejegyzések, szerkesztő form, opcionális checkpoint)
@@ -146,7 +147,7 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcFegyverTable.tsx     Fegyver harcértékek tábla
   HarcHeader.tsx           KÉ, SFÉ, VÉ csökk, MP boxok
   TamadoDobasPopup.tsx     Támadó dobás popup (manuális/auto k20, bónuszok)
-  SebzesPopup.tsx          Sebzésdobás popup (SP bontás, másodlagos sebzés, újradobás)
+  SebzesPopup.tsx          Sebzésdobás popup (SP bontás, mód-választó, kötelező "Ellenfél páncél" választó → sebzésjelleg×páncél mátrix + cél_páncél SP-delta, másodlagos passzív info-label, újradobás)
   PancelInfoPopup.tsx      SFÉ infó popup (páncél részletek)
   ElonyPicker.tsx          Előny/Hátrány kocka picker
   ManualDicePicker.tsx     Manuális kockadobás érték választó
@@ -222,8 +223,11 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
 | `hatterek.yaml` | Leíró + Karma hátterek | `hatterek.json` |
 | `szituacio_mapping.yaml` | Képzettség → Szituáció kapcsolatok | → `kepzettsegek.json` (`kapcsolódó_szituációk` mező) |
+| `fegyverek/fegyverek.yaml` (+ `fegyverek_fixed.json`) | Fegyver v2 definíciók (módok[], fegyverhossz, sebzésjelleg) | `fegyverek_v2.json` |
+| `fegyverek/sebzesjelleg_pancel_matrix.yaml` | Sebzésjelleg × páncélosztály SP-delta mátrix | `sebzesjelleg_pancel_matrix.json` |
+| `fegyverek/extrak.yaml` | Fegyver-extrák (pl. `cél_páncél` SP-hatások) | `fegyver_extrak.json` |
 
-**`fegyverek/` almappa** (`extrak.yaml`, `fegyverek.yaml`, `konstansok.yaml`, `sebzesjelleg_pancel_matrix.yaml` + séma/generált JSON) - a Fegyvergenerátor v2 saját forrásai, **NEM a `generate_tables.py` pipeline része** (a `code/balance/fegyvergenerator_json.py` tervezői eszköz olvassa be, l. `STUDY.fegyvergenerator_v2` a wikiben, "Migrációs terv"). Elhelyezésük a `data/sources/` alatt kényelmi/konvenció okból történt (naming-lint hatókör), nem jelenti a build-gate bekötését.
+**`fegyverek/` almappa** (`extrak.yaml`, `fegyverek.yaml`, `konstansok.yaml`, `sebzesjelleg_pancel_matrix.yaml` + séma/`fegyverek_fixed.json`) - a Fegyvergenerátor v2 forrásai. A `fegyverek_v2.json` + `sebzesjelleg_pancel_matrix.json` + `fegyver_extrak.json` a `generate_tables.py` build-gate-be van kötve (`data/gen/fegyverek_v2.py`), a webapp runtime ezeket olvassa. A séma-validáció a `fegyverek.schema.yaml` / `extrak.schema.yaml`-hoz mér, a naming-lint hatóköre kiterjed az almappára. (A migrációs napló: `STUDY.fegyvergenerator_v2` a wikiben.)
 
 ## Spec dokumentáció (`data/docs/`)
 

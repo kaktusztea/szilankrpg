@@ -92,9 +92,11 @@ harcos:
   fortélyok: [{ név, fok, spec_elem }]
 
   # --- felszerelés ---
-  fegyver:                                # az AKTÍV fegyver (fegyverek.json egy sora)
-    { Fegyver, TÉ, VÉ, SP, Sebesség, "Sebzés módja", Pengehossz,
+  fegyver:                                # az AKTÍV fegyver (fegyverek_v2.json egy sora)
+    { Fegyver, TÉ, VÉ, SP, Sebesség, "Sebzés módja", Fegyverhossz,
       "Erőbónusz limit", Átütés, Íves, Kategória }
+    # v2: a fegyver módok[] listát tartalmaz (aktor/jelleg/sebzéstípus S-V-Z/TÉ/VÉ/SP/Átütés/
+    #     Sebesség/Forgatás/Erőlimit/FP); az aktív mód adja a fenti TÉ/VÉ/SP/sebzésjelleg értékeket
   fegyver_idea: -5..+5                    # §3.10b - a webapp NEM számol vele!
   fegyverfogás: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes
   bal_fegyver: <fegyver vagy null>        # kétkezes / hárító fogáshoz
@@ -321,10 +323,11 @@ Adat-állapot (§16/10): `Kard, másfélkezes` és `Kard, mesterkard` követi a 
 ### 3.11 Kétkezes harc
 
 ```
-nagyobb = a nagyobb Pengehossz-ú fegyver (egyenlőségnél a jobb kéz)
+nagyobb = a nagyobb Fegyverhossz-ú fegyver (egyenlőségnél a jobb kéz)
 harcmodor = a NAGYOBB fegyver kategóriájából
-összpenge = jobb.Pengehossz + bal.Pengehossz
-HA összpenge > 2.0  →  a fegyverek harcértéke 0 (nem használható együtt)
+össz_fegyverhossz = jobb.Fegyverhossz + bal.Fegyverhossz
+HA valamelyik fegyver Fegyverhossza > kétkezes_harc_max_egy_fegyver (3)  →  a fegyverek harcértéke 0
+HA össz_fegyverhossz > kétkezes_harc_max_fegyverméret (6)  →  a fegyverek harcértéke 0 (nem használható együtt)
 
 fok = "Kétkezes harc" fortély foka (0 = nincs fortély)
 fok 0 → csak a nagyobb fegyver TÉ/VÉ, plusz TÉ:-3 / VÉ:-3, harckeret +1, MF: nincs
@@ -332,8 +335,8 @@ fok 1 → mindkét fegyver TÉ/VÉ összeadódik, TÉ/VÉ ±0, harckeret +2, MF:
 fok 2 → ua., harckeret +3, MF: a nagyobb fegyveré
 fok 3 → ua., harckeret +4, MF: mindkettőé összeadva
 
-pengelevonás = FLOOR(összpenge / 0.5)
-harckeret    = harcmodor_szint + gyorsaság + fortély_harckeret + fok0_bónusz - pengelevonás
+fegyverlevonás = FLOOR(össz_fegyverhossz / kétkezes_harc_fegyverlevonás_osztó)   # osztó = 2
+harckeret    = harcmodor_szint + gyorsaság + fortély_harckeret + fok0_bónusz - fegyverlevonás
 támadások    = 1 + FLOOR(harckeret / nagyobb.Sebesség)
 SP           = a JOBB kéz (ügyesebb) fegyveréből számolva
 ```
@@ -456,21 +459,20 @@ VÉ_aktuális(védő) =
 Ez azt jelenti: `Öngyilkos roham` (VÉ-10) egyedül a limitet éri el; kombinációk nem tudnak
 ennél mélyebbre menni.
 
-### 5.2 Pengeméret-viszony (páronkénti!)
+### 5.2 Fegyverhossz-viszony (páronkénti!)
 
 ```
 fegyverviszony(támadó, védő):
-    d = támadó.fegyver.Pengehossz - védő.fegyver.Pengehossz
-    d >= 1   → "fegyverelőny"        # a támadó előnyben
-    d <= -1  → "fegyverhátrány"
+    d = támadó.fegyver.Fegyverhossz - védő.fegyver.Fegyverhossz
+    d >= 2   → "fegyverelőny"        # a támadó előnyben (2 fegyverhossz-kategória különbség kell)
+    d <= -2  → "fegyverhátrány"
     egyébként → "fegyverazonosság"
 ```
 
-- A `Pengehossz` mező már "pengék" egységben van: `0, 0.5, 1, 1.5, 2, 3, 4, 5`
-- `< 0.5` hosszú fegyver 0-nak számít
+- A `Fegyverhossz` mező egész, fegyverhossz-kategória skálán (a régi 0.5-egységes "penge" modell kivezetve)
 - `Közrefogás` helyzet a védőn: a támadó `fegyverelőny`-e → `fegyverazonosság`-re csökken
-- `Lovas harc` / `Léglovas harc` fortély 1+ fok: a saját fegyver `Pengehossz +1`
-- Kétkezesnél a **nagyobb** fegyver pengehossza számít
+- `Lovas harc` / `Léglovas harc` fortély 1+ fok: a saját fegyver `Fegyverhossz +2` kategória
+- Kétkezesnél a **nagyobb** fegyver fegyverhossza számít
 
 ### 5.3 Sikertelen támadás → VÉ csökkentés
 
@@ -516,7 +518,7 @@ annyi, mint az egyén Fárasztása (`3..5`). Ez **nem hiba**, két okból:
    (`+3 SP / 5`, felső limit nélkül) → nagyobb sebzés. A `3` szándékosan hagy esélyt
    az áldozatnak: egy sebesülés ne legyen rögtön végzetes.
 
-Ebből következik, hogy az **Alakzat találata is `-3`**, nem a fix pengeméret-érték -
+Ebből következik, hogy az **Alakzat találata is `-3`**, nem a fix fegyverhossz-alapérték -
 noha így az Alakzat VÉ-eróziója lassul, ahogy elkezd betalálni (`5 → 3`). Ez a
 szándékolt fék, nem önfékezési hiba: közben a sebzés veszi át a hajtóerőt (a túldobás
 miatt meredeken), tehát a halálozási ütem gyorsul.
@@ -565,7 +567,7 @@ fordíthatja pozitívba.
 | Forrás | Hatás |
 |---|---|
 | `Plusz támadás` taktika | a választás pillanatában `vé_fáradás += 3` |
-| `Teljes Védekezés` taktikát alkalmazó **maga szenved el** | `1 + k20P` az ellenfelei minden támadásától, pengeméret-viszonytól **függetlenül** (a Fárasztó taktika bónuszuk megmarad) - §13.9 |
+| `Teljes Védekezés` taktikát alkalmazó **maga szenved el** | `1 + k20P` az ellenfelei minden támadásától, fegyverhossz-viszonytól **függetlenül** (a Fárasztó taktika bónuszuk megmarad) - §13.9 |
 | Sikertelen manőver | ugyanannyi, mint egy sima sikertelen támadás - **akkor is, ha a manővernek nincs Végrehajtás fázisa**, tehát nem volt támadódobás (§13.1) |
 | Sikertelen **Megakasztás** (M fázis, az ellenfél extra támadása) | ❗ **NEM** okoz VÉ csökkentést (explicit kivétel, `md/066_04`) |
 | `Precíz támadás` manőverrel végzett támadás | VÉ csökkentést **NEM** okoz |
@@ -720,10 +722,16 @@ jelleg_bónusz(fegyver, páncél):
 íves_bónusz: fegyver.Íves == 1 → +2 SP páncélozatlan ellenfél ellen
 ```
 
-Sebzéstípus választás (`V/S` fegyvernél):
-- **elsődleges** (az első betű): sima dobás
-- **másodlagos** (a második betű): `Hátrány-1` a Sebzésdobásra
-- **alkalmatlan** (a mezőben nem szereplő jelleg): `Hátrány-2`
+Sebzéstípus választás (több módú fegyvernél, l. §3.11 módok[]):
+- **elsődleges mód**: sima dobás
+- **másodlagos mód**: `Hátrány-1` a Sebzésdobásra
+- **alkalmatlan** (a fegyver egyik módja sem fedi): `Hátrány-2`
+
+A jelleg_bónusz a kanonikus `data/tables/sebzesjelleg_pancel_matrix.json` (source:
+`sebzesjelleg_pancel_matrix.yaml`) sebzésjelleg × páncélosztály SP-delta táblát tükrözi.
+Ezen felül a `cél_páncél` SP-hatású extrák adnak delta-t (pl. `panceltalant_jobban_sebez`
++3 SP vérttelen célon, `data/tables/fegyver_extrak.json`). A `cél_páncél` VÉ/SFÉ-hatású ága
+(Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) még nincs bekötve - l. §13.
 
 ### 6.6 Sebzés alkalmazása - rubrika könyvelés
 
@@ -831,10 +839,10 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 
 | Helyzet | Hatás |
 |---|---|
-| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 pengehosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
+| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 fegyverhosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
 | Közrefogás | Semlegesíti az ellenfél Fegyverelőnyét → Fegyverazonosság |
 | Fegyverrántás váratlanul | `Fegyverrántás` fortély: KÉ+5 / +10 |
-| Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Pengehossz +1` |
+| Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Fegyverhossz +2` kategória (min_fegyverméret 3 követelmény, warning-only) |
 | Harci szekér | `Harci kocsihajtás`: TÉ/VÉ +8 / +12 |
 | Páros harc | `Páros harc` fortély: TÉ/VÉ +2/+4/+6, KÉ +1 |
 | Közönség előtt | `Gladiátor közönsége`: TÉ +3 |
@@ -938,10 +946,10 @@ támadások_effektív(h):
 | Merevvértviselet | MGT_TÉ_büntetés −5/−10/−15 · 3.fok: VÉ +3 | merev páncél + lefedettség ≥ 70% |
 | Pajzshasználat | TÉ/VÉ/SP +1/+2/+3 a pajzsra mint fegyverre; **és** a §3.12 tábla foka | `fegyver_kategória: pajzs` |
 | Természetes páncél | SFÉ +3/+6/+9 | mindig (páncélviselettől független) |
-| Harci akrobatika | 3.fok: TÉ/VÉ +3 | MGT ≤ 5 |
-| Belharcos | KÉ/TÉ/VÉ +1/+2/+2 · +2/+4/+4 | belharci helyzet + Közelharc + penge ≤ 0 |
+| Harci akrobatika | 3.fok: TÉ/VÉ +3 | nem_merev páncél, effektív MGT ≤ 10, össz fegyverméret ≤ 3 |
+| Belharcos | KÉ/TÉ/VÉ +1/+2/+2 · +2/+4/+4 | belharci helyzet + Közelharc + fegyverhossz ≤ 0 |
 | Páros harc | TÉ/VÉ +2/+4/+6, KÉ +1 | `harci_helyzet: páros_harc` |
-| Lovas / Léglovas harc | **0.fok: TÉ/VÉ −9** · 1-3.fok: +3/+6/+9 és Pengehossz +1 | lovas/léglovas helyzet |
+| Lovas / Léglovas harc | **0.fok: TÉ/VÉ −9** · 1-3.fok: +3/+6/+9 és Fegyverhossz +2 kategória | lovas/léglovas helyzet |
 | Harci kocsihajtás | TÉ/VÉ +8/+12 | harci szekér |
 | Gladiátor bestiái / közönsége | VÉ +3 / TÉ +3 | szörny elleni / közönség előtt |
 | Fegyverrántás | KÉ +5/+10 | fegyverrántás helyzet |
@@ -1031,7 +1039,8 @@ pajzs: közepes
 | Kétkezes: Kard, lovag + Tőr (fortély nélkül, 0.fok) | **49** | **61** | 11 | 1 |
 
 *A kétkezes 0.fok: csak a nagyobb fegyver (kard) TÉ/VÉ + `−3/−3`, de a `mindkét_fegyver_értékei`
-false; a golden érték TÉ 49 / VÉ 61 (összpenge 1 → pengelevonás 2).*
+false; a golden érték TÉ 49 / VÉ 61 (össz fegyverhossz Kard 3 + Tőr 1 = 4 → fegyverlevonás FLOOR(4/2) = 2,
+a harckeret így is 0-ra clamp-el, támadások 1).*
 
 ### 11.2 REF-B - Szimmetrikus hangolási alapeset
 
@@ -1218,6 +1227,20 @@ A méretkülönbség módosító a 317. sor szerint továbbra is hozzáadódik/l
 
 **Szimulációs kezelés**: `fegyverviszony` felülírása `fegyverazonosság`-ra a Teljes
 Védekezőt támadó minden ellenfélre; méretkülönbség és Fárasztás bónusz továbbra is hat.
+
+### 13.10 `cél_páncél` extrák: SP-ág lezárva, VÉ/SFÉ-ág nyitott
+
+A `cél_páncél` fegyver-extrák a dobás pillanatában ismert ellenfél-páncélosztálytól függenek.
+
+**Lezárva (SP-ág)**: a sebzésjelleg × páncél mátrix és a `cél_páncél` SP-hatású extra
+(pl. `panceltalant_jobban_sebez` +3 SP vérttelen célon) a Sebzés dobásba van bekötve, a
+kötelező "Ellenfél páncél" választón keresztül (§6.5.1).
+
+**Nyitott (VÉ/SFÉ-ág)**: a `sfe_duplazodik` (Meneth) és `pocsek_vedekezo_pancelos_ellen`
+(Béltépő) VÉ/SFÉ-hatású extrák NINCSENEK bekötve. Koncepcionális kérdés: a statikus
+fegyver-VÉ/SFÉ nem függhet dobásonként változó ellenfél-páncéltól. Feloldás: külön
+"feltételezett ellenfél páncél" harc-szintű state, vagy `cél_páncélosztály` context a
+feltétel-dispatchbe. Döntést igényel (DEVSTATE TODO, STUDY 3g).
 
 
 ---

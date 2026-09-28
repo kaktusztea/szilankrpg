@@ -242,8 +242,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Elem | Típus | Leírás |
 |------|-------|--------|
 | Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" + Pajzs (ha van méret, idx:-2, zöld szín). Mindig látható. |
-| Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók+pajzs+puszta kéz kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
-| Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély VAGY feltétel nem teljesül. Pl. "H. akrobatika" (páncél: posztó/fegyverkabát/bőr, max MGT:5, Akrobatika képzettség követelmény) |
+| Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (fegyverhossz-limit szűrt: per-fegyver ≤ 3 és össz ≤ 6, hárítók+pajzs+puszta kéz kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
+| Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély VAGY a fortély AKTUÁLIS fokának követelménye nem teljesül (fok-függő), a hiányzó feltételeket hint-ben kiírja. Pl. "H. akrobatika" (fok-függő: páncél_hajlékonyság 1-2. fok nem_fém / 3. fok nem_merev, max effektív MGT 5 ill. 10, össz fegyverméret ≤ 3, Akrobatika képzettség) |
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Disabled logika: puszta kéz, kétkezes fegyver, nincs pajzs/hárító, + aktív helyzetek `tiltott_fegyverfogások` mezője (§38.4). Helyzet hozzáadáskor tiltott fogás → auto-reset Egyfegyveresre. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 | Hatás pool box | info szekció | Fortély bónuszok + Alapesetek (accordion) |
@@ -356,7 +356,7 @@ A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes ha
   - Egyfegyveres (alap)
   - Fegyver + pajzs (csak ha van pajzs a karakteren)
   - Fegyver + hárítófegyver (csak ha van hárítófegyver + fortély)
-  - Kétkezes harc (csak ha mindkét kézben fegyver ÉS összpenge ≤ limit)
+  - Kétkezes harc (csak ha mindkét kézben fegyver ÉS össz fegyverhossz ≤ limit ÉS egyik fegyver fegyverhossza sem > per-fegyver limit)
 - **Választás**: kattintás az opcióra → bezáródik, session frissül
 - **Aktuális megjelenítés**: a field-btn label mutatja az aktív fogást (pl. "Fegyverfogás: Kétkezes harc")
 - **Kiváltja**: a "2 kezes harc" és "Pajzs kézben" toggle gombok eltűnnek (beleolvadnak a Fegyverfogás választóba)
@@ -365,14 +365,14 @@ A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes ha
 - Egyfegyveres → `kétkezes_harc: false`, `aktív_pajzs: false`, Gyengébb kéz dropdown eltűnik
 - Fegyver + pajzs → `aktív_pajzs: true`, `kétkezes_harc: false`, Gyengébb kéz: disabled "Pajzs"
 - Fegyver + hárító → `aktív_pajzs: false`, `kétkezes_harc: false`, Gyengébb kéz: hárítófegyver választó (auto-select ha 1 db)
-- Kétkezes harc → `kétkezes_harc: true`, `aktív_pajzs: false`, Gyengébb kéz: fegyver választó (pengelimit szűrt, hárítók+pajzs+puszta kéz kiszűrve)
+- Kétkezes harc → `kétkezes_harc: true`, `aktív_pajzs: false`, Gyengébb kéz: fegyver választó (fegyverhossz-limit szűrt: per-fegyver ≤ 3 és össz ≤ 6, hárítók+pajzs+puszta kéz kiszűrve)
 
 **Inkompatibilitás (inaktív + szürke a popup-ban, nem elrejtve):**
 - Puszta kéz jobb kézben → Fegyverfogás választó disabled + szürke, fix "Egyfegyveres"
 - Kétkezes fegyver jobb kézben → csak "Egyfegyveres" aktív, többi szürke
 - Nincs pajzs a karakteren → "Fegyver + pajzs" szürke, disabled
 - Nincs hárítófegyver / nincs fortély → "Fegyver + hárítófegyver" szürke, disabled + hint szöveg alatta
-- Összpenge > limit vagy nincs nem-hárító fegyver bal kézhez → "Kétkezes harc" szürke, disabled
+- Össz fegyverhossz > limit, valamelyik fegyver fegyverhossza > per-fegyver limit, vagy nincs nem-hárító fegyver bal kézhez → "Kétkezes harc" szürke, disabled
 
 ---
 
@@ -403,7 +403,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - **Tap zóna**: a picker CSAK az elválasztótól jobbra (MP rész) nyílik → MP picker popup (0…max rács). Játék módon kívül a Szerk/Játék toggle villan.
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
-  - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
+  - Fegyver | Tám/kör | TÉ | VÉ | SP | Fegyverhossz
   - Fegyverfogás ≠ Egyfegyveres: összesítő sor felül (világoskék keret `#90caf9`), normál sorok halványítva (opacity: 0.4)
     - Kétkezes: összevont harcértékek (§26)
     - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő), név: "Fegyver + Pajzs". Csak a lila sorban (normálból kiszűrve).
@@ -413,9 +413,12 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Tám cella kattintható (Játék mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
   - **Támadó dobás** (Játék mód): a `TÉ` fejléc (kattintható gomb) ÉS az éppen aktív fegyver sorának TÉ cellája (pontozott aláhúzás) rányomásra **TamadoDobasPopup**-ot nyit. Kétfázisú:
-    - Fázis 1: aktív hatások infó (Előny/Hátrány lista forrással) + Előny/Hátrány picker + "Dobás" gomb + manuális dobás lehetőség (ManualDicePicker)
+    - Fázis 1: aktív hatások infó (Előny/Hátrány lista forrással) + Előny/Hátrány picker + "Dobás" gomb + manuális dobás lehetőség (ManualDicePicker). Több módú fegyvernél mód-választó gomb (a választott mód TÉ/SP-jét adja tovább a Sebzés popupnak).
     - Fázis 2: eredmény (TÉ + k20), részlet kiírás, "Sebzés" gomb (ha k20≥16: Előny+1, k20=20: Előny+2 jelzéssel)
-    - Sebzés gomb → **SebzesPopup** nyílik (SP bontás, statikus bónuszok, Előny/Hátrány picker, másodlagos sebzés toggle, újradobás gomb)
+    - Sebzés gomb → **SebzesPopup** nyílik (SP bontás, statikus bónuszok, Előny/Hátrány picker, újradobás gomb):
+      - **Mód-választó** (csak több módú fegyvernél): a fegyver módjai (§26 módok[]) közül vált, delta-alapú TÉ/SP (a taktika mods megőrzésével). A választott mód sebzésjellege (S/V/Z) számít.
+      - **"Ellenfél páncél" választó** (KÖTELEZŐ): csupasz / puha / bőr / lánc / merev. A sebzésjelleg × páncél mátrixból SP-deltát ad, plusz a `cél_páncél` SP-hatású extrák (pl. `panceltalant_jobban_sebez` +3 SP vérttelen célon). Amíg nincs választva: pulzáló jelzés + a Dobás gomb (és a kézi kocka) TILTVA.
+      - **Másodlagos sebzéstípus**: passzív info-label "(Hátrány-1)" (nincs toggle).
     - Mellé katt / Escape bezár → eredmény push a session `té_dobások` FIFO tömbbe (max 3, legújabb elöl).
     - Komponensek: `TamadoDobasPopup.tsx`, `SebzesPopup.tsx`, `ElonyPicker.tsx`, `ManualDicePicker.tsx`, `combat-roll-info.ts`
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
@@ -471,7 +474,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - TÉ: alap, erő, ügyesség, gyorsaság, HM, harcmodor, fegyver, MF, fortély, taktika, fogás, több tám, sérülés
   - VÉ: alap, gyorsaság, ügyesség, HM, harcmodor, fegyver, MF, fortély, fogás, pajzs, taktika, VÉ csökkenés
   - SP: fegyver alap, erőbónusz (limit), MF, fortély, taktika
-  - Pengehossz: alap, fortély bónusz, összpenge (kétkezesnél)
+  - Fegyverhossz: alap, fortély bónusz, össz fegyverhossz (kétkezesnél)
 
 ---
 

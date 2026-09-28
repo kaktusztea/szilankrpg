@@ -79,6 +79,14 @@ TODO:
 - Pattern fájlok: `data/patterns/*_pattern.json` (kézzel szerkesztett md→json konfig, NEM generált); Pajzs hozzáfűzve fegyverek.json-hoz
 - Részletek → engine_spec §5-§13, §26-§27
 
+### Fegyver v2 adatmodell
+- Runtime tábla: `data/tables/fegyverek_v2.json` (webapp ezt olvassa). Generátor: `data/gen/fegyverek_v2.py`, build-gate-be kötve. Mátrix + extrák: `data/tables/sebzesjelleg_pancel_matrix.json`, `data/tables/fegyver_extrak.json`.
+- Fegyver = `módok[]` (a régi flat `FegyverAlap` HELYETT). Egy `FegyverMod`: aktor, jelleg, sebzéstípus (S/V/Z), TÉ, VÉ, SP, Átütés, Sebesség, Forgatás, Erőlimit, FP. Van elsődleges és opcionális másodlagos mód.
+- Fegyverhossz-kategória skála: egész értékek (a jelenlegi táblában -1..12 tartomány). A régi "penge" (0.5 egységek) modell KIVEZETVE.
+- Kétkezes harc limitek (`konstansok.yaml`): `kétkezes_harc_max_egy_fegyver: 3` (per-fegyver fegyverhossz plafon) + `kétkezes_harc_max_fegyverméret: 6` (két fegyver össz fegyverhossza) + `kétkezes_harc_fegyverlevonás_osztó: 2` (harckeret-levonás = `floor(összFegyverhossz / 2)`). Motor: `engine/ketkezes.ts`.
+- Fegyverviszony küszöb: Fegyverelőny/Fegyverhátrány 2 fegyverhossz-kategória különbségnél áll be (Fegyverazonosság a semleges eset).
+- Részletek → engine_spec §5-§13, §26-§27
+
 ### Taktikák / Helyzetek
 - Kombó: `kombó_mód` + `kombó_lista`; Megkötés: `harci_helyzet/tiltott|szükséges`
 - Helyzet: `kizár_helyzetek` (id), `tiltott_fegyverfogások`, `tiltja_taktikákat`

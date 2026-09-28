@@ -252,10 +252,20 @@ formula:  // ismételve minden egyes fegyverre
   SP = fegyver.SP + erőbónusz + SP_mesterfegyver + SP_fortély
 
 output: SP (per fegyver)
-note: sebzésmód (S/V/Z) a fegyverből jön, nem számítás
+note: sebzésmód (S/V/Z) a fegyver aktív módjából jön (§26 módok[]), nem számítás
       SP override: ha egy fortély `mód: "override"` + `cél: "SP"` + `feltétel: "fegyver:X"` módosítót tartalmaz,
         az felülírja az adott fegyver alap SP-jét (pl. Természetes fegyver → puszta kéz SP override).
         Implementáció: `fegyver-calc.ts → calcFegyverResults()` - pre-loop SP felülírás a reactive rule input előtt.
+
+Sebzésjelleg × ellenfél páncél SP-delta (dobásonként, NEM statikus fegyver-SP):
+  A fenti SP a statikus, ellenfél-független érték. A tényleges sebzésnél (Sebzés popup, Játék mód)
+  az aktív mód sebzésjellege (S/V/Z) és a választott ellenfél páncélosztály
+  (csupasz/puha/bőr/lánc/merev) egy 2D mátrixból ad SP-deltát:
+    forrás: `data/tables/sebzesjelleg_pancel_matrix.json` (source: sebzesjelleg_pancel_matrix.yaml)
+  Ezen felül a `cél_páncél` extrák SP-hatású ága ad delta-t (pl. `panceltalant_jobban_sebez`
+  +3 SP vérttelen célon), forrás: `data/tables/fegyver_extrak.json`.
+  Az "Ellenfél páncél" választó a Sebzés popupban KÖTELEZŐ (l. gui_spec). A cél_páncél
+  VÉ/SFÉ-hatású ága (Meneth, Béltépő) még nincs bekötve (DEVSTATE TODO).
 ```
 
 ---
@@ -281,9 +291,9 @@ fortelyMods['harckeret'] összegzése (§16):
   Kétkezesség fortély: +1 (feltétel: session.kétkezes_harc == true → egyfegyveresnél NEM számít)
 
 formula (kétkezes harc):
-  harckeret = harcmodor_szint + gyorsaság + fortelyMods['harckeret'] + kh_alap - pengelevonás
+  harckeret = harcmodor_szint + gyorsaság + fortelyMods['harckeret'] + kh_alap - fegyverlevonás
   kh_alap = konstansok.kétkezes_harc_bónuszok[0].harckeret (+1) HA nincs Kétkezes harc fortély, egyébként 0
-  pengelevonás = FLOOR(sum_pengehossz / kétkezes_harc_pengelevonás_osztó)
+  fegyverlevonás = FLOOR(sum_fegyverhossz / kétkezes_harc_fegyverlevonás_osztó)
   Részletek: §26.5
 
 output: össz_támadás (támadások száma / kör)
@@ -548,7 +558,7 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
       A lookup tehát: fortély_def.fokok.find(f → f.fok == kf.fok), NEM fokok[kf.fok].
       Modul: `engine/fortely-mods.ts` → `calcFortelyMods()` (self-contained, engine-szintű).
         Input: karakter, session, gameData, aktívFeltételek Set, feltételTeljesül callback.
-        Output: Record<string, number> (célokra összegzett bónuszok: KÉ, TÉ, VÉ, SP, CÉ, harckeret, SFÉ, pengehossz, min_pengehossz).
+        Output: Record<string, number> (célokra összegzett bónuszok: KÉ, TÉ, VÉ, SP, CÉ, harckeret, SFÉ, fegyverhossz, min_fegyverhossz).
         Belsőleg meghívja: `evaluateAlapesetek()` (engine/alapeset.ts) a 0.fok módosítók beszámítására.
       Könyvtár struktúra: `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml`
       A `tavharc/` mappából jövők `alcsoport: "tavharc"` mezőt kapnak a JSON-ban (picker csoport: "🏹 Távharc").
@@ -1025,7 +1035,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 |---------|-----------|---------|---------|
 | 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás, Tettetés |
 | Érintő | TÉ:+3, sebzés:0 | Támadó, Védő, Kezdeményező, Kiváró, 1 tám, Plusz tám | más |
-| Fárasztás | VÉ csökk: 3/kör (+fortély+pengeelőny) | - | más |
+| Fárasztás | VÉ csökk: 3/kör (+fortély+fegyverelőny) | - | más |
 | Kezdeményező 📶 | KÉ:+1..+3, VÉ:-1..-3 (alap max 3) | Támadó, Érintő, Visszafogott, 1 tám | más |
 | Kiváró | KÉ:átengedett, TÉ:+3 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám, Tettetés | más |
 | Öngyilkos roham | TÉ:+5, VÉ:-10, SP:+7, VÉcsökk 2x | - | más (max 1x/küzdelem) |
@@ -1129,9 +1139,9 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Hatások |
 |---------|-----|---------|
-| Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 0 pengehossz feltétel. Belharcos fortély bónuszok. |
+| Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 0 fegyverhossz feltétel. Belharcos fortély bónuszok. |
 | Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fortély: Fegyverrántás skála. |
-| Közrefogás | közrefogás | Semlegesíti ellenfél Pengeelőnyét → Alappenge. |
+| Közrefogás | közrefogás | Semlegesíti ellenfél Fegyverelőnyét → Fegyverazonosság. |
 | Takarásban harcolás | takarásban | Hátrány-1 TÉ, VÉ: +5. |
 | Védő Érték kiterjesztése másra | vé_kiterjesztés | Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli. |
 | Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharcos 2.fok bónuszai relevánsak. |
@@ -1166,8 +1176,8 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Megjegyzés |
 |---------|-----|------------|
-| Pengeelőny | pengeelőny | Fegyverméretből levezetett. VÉ csökk: 2+k20P. |
-| Pengehátrány | pengehátrány | Fegyverméretből levezetett. VÉ csökk: k20P. |
+| Fegyverelőny | fegyverelőny | Fegyverhosszból levezetett. VÉ csökk: 2+k20P. |
+| Fegyverhátrány | fegyverhátrány | Fegyverhosszból levezetett. VÉ csökk: k20P. |
 | Pusztakezes harc | pusztakezes_harc | Automatikus: fegyver=puszta kéz. KÉ/TÉ/VÉ: -3. |
 | Képzetlen fegyverhasználat | képzetlen_fegyverhasználat | Automatikus: harcmodor<3. |
 
@@ -1180,7 +1190,7 @@ Data layer mezők:
     Implementált: Orvtámadás → ["hátulról", "meglepetés"]
     Többfokú helyzetek: kölcsönösen kizárják egymást (sötétben_1/2/3, tűz_ruhán_1/2, láthatatlanul_*/*, hajítás_*)
   Taktika megkötések (taktikak.yaml → megkötések[]):
-    Fárasztás: harci_helyzet/tiltott/Pengehátrány,
+    Fárasztás: harci_helyzet/tiltott/Fegyverhátrány,
               harci_helyzet/tiltott/Láthatatlanul harcolás - hallhatóan,
               harci_helyzet/tiltott/Láthatatlanul harcolás - csendesen
 
@@ -1281,7 +1291,7 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 | Ellenfél elfogása           | 10                              | V,E          | -                                                 | Kiszolgáltatott pozícióba kényszerítés     |
 | Felállás földről            | 6 (-akro/3)                     | M,E          | -                                                 | Felkelés földről                           |
 | Forgószél                   | 7+ellenfél                      | V,E          | -                                                 | Köríves támadás több ellenfélre            |
-| Kibontakozás                | 5 (±2/penge, +2/extra ellenfél) | E (M*)       | -                                                 | Kilépés a harcból                          |
+| Kibontakozás                | 5 (±2/kategória, +2/extra ellenfél) | E (M*)       | -                                                 | Kilépés a harcból                          |
 | Piszkos trükk               | 7                               | V,E          | Közelharc 4, MF 1                                 | Alattomos ütés (k20+0 SP)                  |
 | Lábkirántás szálfegyverrel  | 6                               | V,E          | Lándzsavívás 6, szálfegyver                       | Ellenfél földre kerül                      |
 | Földrevitel                 | 8 (±erő)                        | V,E          | Harcmodor 5                                       | Ellenfél földre kerül                      |
@@ -1296,7 +1306,7 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 | Pajzsrongálás               | 6                               | V,E          | Harcmodor 6, Erő+1, zúzó/kétkezes                 | Pajzs VÉ csökkentés (SP/2 zúzó, SP/4 vágó) |
 | Precíz támadás              | 1-12 (terület)                  | V,E          | Harcmodor 6                                       | Adott területre támadás                    |
 | Rávetődés hátulról          | 6                               | E (vagy V,E) | Orvtámadás+Hátulról                               | Rácsimpaszkodás → belharc                  |
-| Távoltartás                 | 5                               | M*,E         | Pengeelőny, Harcmodor 5                           | Ellenfél támadás elvesztése                |
+| Távoltartás                 | 5                               | M*,E         | Fegyverelőny, Harcmodor 5                         | Ellenfél támadás elvesztése                |
 | Terelés                     | 8                               | E            | Harcmodor 6                                       | Ellenfél terelése                          |
 
 #### Belharcos manőverek
@@ -1334,7 +1344,7 @@ Aktiváláskor:
 
   Belharcos (aki aktiválja):
     - Közelharc harcmodor kötelező (a fortély bónuszaihoz)
-    - Max 0 pengehosszú fegyver (tőr, puszta kéz)
+    - Max 0 fegyverhosszú fegyver (tőr, puszta kéz)
     - Puszta kéz harcértékei: TÉ=0, VÉ=0, SP=0, sebzés FP (1ÉP/5FP)
 
   Nem belharcos (aki belekényszerül):
@@ -1354,7 +1364,7 @@ Egyes harci helyzetek (`harci_helyzetek.yaml`) tartalmazhatnak `fegyver_override
   id: "belharci_helyzet"
   fegyver_override:
     feltétel:
-      - { forrás: "aktív_fegyver_pengehossz", operátor: ">", érték: 0 }
+      - { forrás: "aktív_fegyver_fegyverhossz", operátor: ">", érték: 0 }
     módosítók:
       - { cél: "fegyver_TÉ", érték: 0, mód: "override" }
       - { cél: "fegyver_VÉ", érték: 0, mód: "override" }
@@ -1622,7 +1632,7 @@ A manőver bónusz módosítók mindig aktívak (toggle-től független).
 Session kulcs: `fortély_név.toLowerCase().replace(/ /g, '_')` (pl. `harci_akrobatika`).
 
 Jelenlegi session_toggle fortélyok:
-- Harci akrobatika → `session.harci_akrobatika` (TÉ/VÉ: Akrobatika képzettség × arány)
+- Harci akrobatika → `session.harci_akrobatika` (TÉ/VÉ flat +1/+2/+3 fokonként). A toggle a fortély AKTUÁLIS fokának fegyver v2 követelményeiből (fok-függő) tilt: `páncél_hajlékonyság` (1-2. fok: nem_fém, 3. fok: nem_merev), `max_effektív_mgt` (1-2. fok: 5, 3. fok: 10, Erő-korrigált MGT-n), `max_össz_fegyverméret` (3). Hiányzó feltétel → hint (SessionToggles.tsx). Lásd §25.
 
 ### Feltétel kiértékelés implementáció (useHarcComputed)
 
@@ -1667,6 +1677,13 @@ Típusok:
 - `tulajdonság` - karakter tulajdonság ≥ érték
 - `háttér` - karakter leíró háttere tartalmazza (szöveges)
 - `szöveges` - nem gépileg ellenőrizhető (infó)
+
+Fegyver v2 követelmény-típusok (session-függő, harc-fül kontextus - nem a FortelyokScreen felvételi gate-je):
+- `min_fegyverméret` - az aktív fegyver fegyverhossza ≥ érték; `feltétel` mezővel harci helyzethez kötve (pl. `harci_helyzet:lovas_harc`). Webapp: **warning-only** (getMinFegyverhosszWarning), NEM blokkol - a KM/játékos döntése.
+- `max_össz_fegyverméret` - a forgatott fegyverek össz fegyverhossza (jobb+bal) ≤ érték.
+- `max_effektív_mgt` - az Erő-korrigált páncél MGT ≤ érték.
+- `páncél_hajlékonyság` - a viselt páncél struktúra-kategóriája: `nem_fém` (posztó/fegyverkabát/bőr) vagy `nem_merev` (bármely Hajlékony, azaz nem pikkely/lemez).
+  A `max_össz_fegyverméret` / `max_effektív_mgt` / `páncél_hajlékonyság` a Harci akrobatika session-toggle-nél **tiltó**: a fortély AKTUÁLIS fokának követelményeiből (fok-függő) letiltja a togglet, a hiányzó feltételeket hint-ben kiírja (SessionToggles.tsx).
 
 Ellenőrzés logika:
 - `képzettség`: `karakter.képzettségek.some(k => k.név == név && k.szint >= érték)` - lista típusnál bármelyik egyezés elég (OR)
@@ -1755,9 +1772,9 @@ Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista é
 | Gladiátor közönsége | 1 | háttér | Gladiátor | - | + Harcmodor ≥ 6 |
 | Harc helyhez kötve | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | |
 | Harc helyhez kötve | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Harci akrobatika | 1 | képzettség | Akrobatika | 6 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
-| Harci akrobatika | 2 | képzettség | Akrobatika | 9 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
-| Harci akrobatika | 3 | képzettség | Akrobatika | 12 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
+| Harci akrobatika | 1 | képzettség | Akrobatika | 6 | + nem_fém páncél, effektív MGT ≤ 5, össz fegyverméret ≤ 3 |
+| Harci akrobatika | 2 | képzettség | Akrobatika | 9 | + nem_fém páncél, effektív MGT ≤ 5, össz fegyverméret ≤ 3 |
+| Harci akrobatika | 3 | képzettség | Akrobatika | 12 | + nem_merev páncél, effektív MGT ≤ 10, össz fegyverméret ≤ 3 |
 | Manőverfókusz: Szike | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | + Élettan fortély ≥ 1 |
 | Harci kocsihajtás | 1 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 6 |
 | Harci kocsihajtás | 2 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 9 |
@@ -1835,7 +1852,7 @@ Forrás: md/065_04_04_ketkezes_harc.md, fortelyok.harci/ketkezes_harc.md, fortel
 ### 26.1 Alapfogalmak
 
 Kétkezes harc = mindkét kézben fegyver (session.kétkezes_harc = true).
-A "nagyobb fegyver" az, amelyiknek nagyobb a pengehossza. Egyenlő penge esetén bármelyik.
+A "nagyobb fegyver" az, amelyiknek nagyobb a fegyverhossza. Egyenlő fegyverhossz esetén bármelyik.
 
 ### 26.2 Használt harcmodor
 
@@ -1852,19 +1869,22 @@ A **nagyobb fegyver** harcmodora számít (képzettség szint lookup).
 
 + Kétkezesség fortély: +1 harckeret (feltételes, session.kétkezes_harc == true)
 
-### 26.4 Pengeméret korlát
+### 26.4 Fegyverhossz korlát
 
 ```
-A két fegyver összpengehossza: max konstansok.kétkezes_harc_max_pengeméret (jelenleg: 2.0).
-Ha SUM pengehossz > limit → fegyverek harcértéke: 0 (nem használható együtt kétkezes harcban).
-"Rövid" fegyverek (penge < 0.5): pengehossz 0-nak számít.
-Pengehossz értékek: fegyverek.json Pengehossz mező (0, 0.5, 1, 1.5, 2 egységekben).
+Két külön limit (mindkettőnek teljesülnie kell, egyébként a fegyverek harcértéke: 0 - nem foghatók párban):
+  (a) Per-fegyver: egyik fegyver fegyverhossza sem lehet nagyobb, mint
+      konstansok.kétkezes_harc_max_egy_fegyver (jelenleg: 3).
+      (A nagyobb, kétkezes fegyverek nem foghatók párban.)
+  (b) Össz:        a két fegyver össz fegyverhossza max
+      konstansok.kétkezes_harc_max_fegyverméret (jelenleg: 6).
+Fegyverhossz értékek: fegyverek_v2.json fegyverhossz mező (egész, fegyverhossz-kategória skálán).
 ```
 
 ### 26.5 Harckeret módosítás
 
 ```
-input: Kétkezes harc fok, Kétkezesség fortély, fegyverek pengehossza (0.5 egységben)
+input: Kétkezes harc fok, Kétkezesség fortély, fegyverek fegyverhossza (egész)
 formula:
   // Harckeret bónusz forrása:
   //   0. fok (nincs fortély): konstansok.kétkezes_harc_bónuszok[0].harckeret (= +1)
@@ -1876,16 +1896,16 @@ formula:
   else:
     kh_harckeret_bónusz = 0  // fortélyMods['harckeret']-ben már benne van
 
-  // Pengelevonás: a két fegyver tényleges pengehosszainak összege, osztva 0.5-tel
-  sum_pengehossz = fegyver_jobb.pengehossz + fegyver_bal.pengehossz
-  pengelevonás = FLOOR(sum_pengehossz / konstansok.kétkezes_harc_pengelevonás_osztó)
+  // Fegyverlevonás: a két fegyver fegyverhosszainak összege, osztva az osztóval (floor)
+  sum_fegyverhossz = fegyver_jobb.fegyverhossz + fegyver_bal.fegyverhossz
+  fegyverlevonás = FLOOR(sum_fegyverhossz / konstansok.kétkezes_harc_fegyverlevonás_osztó)
 
-  harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + kh_harckeret_bónusz - pengelevonás
+  harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + kh_harckeret_bónusz - fegyverlevonás
 
-note: A pengehossz a fegyverek.json-ból jön (0.5 egységekben, pl. tőr=0, rövidkard=0.5, szablya=1.5).
-      "Rövid" fegyverek (penge < 0.5): 0-nak számítanak a pengeméret kalkulációhoz.
-      A SUM Pengeméret (egész pengékben kerekítve) a Pengeelőny/hátrány rendszerhez kell - az más!
-      Max SUM = konstansok.kétkezes_harc_max_pengeméret (ha összpenge > limit → nem végezhető).
+note: A fegyverhossz a fegyverek_v2.json-ból jön (egész, fegyverhossz-kategória skálán).
+      Két limit vonatkozik a párban foghatóságra (§26.4): per-fegyver
+      konstansok.kétkezes_harc_max_egy_fegyver és össz konstansok.kétkezes_harc_max_fegyverméret.
+      A fegyverlevonás osztója: konstansok.kétkezes_harc_fegyverlevonás_osztó (jelenleg: 2).
 ```
 
 ### 26.6 Sebzés
@@ -1899,9 +1919,9 @@ Kivétel: ha szándékosan a rosszabbik kézben lévővel támad (Hátrány-1 T�
 - `session.fegyverfogás: "kétkezes"` - a Fegyverfogás explicit mező (§27)
 - `session.aktív_fegyver_index` - ügyesebb kéz fegyver
 - `session.aktív_fegyver_bal_index` - gyengébb kéz fegyver (csak kétkezes fogásnál)
-- Aktív fül: Fegyverfogás picker (§27), "Kétkezes harc" disabled ha összpenge > limit vagy nincs nem-hárító fegyver
+- Aktív fül: Fegyverfogás picker (§27), "Kétkezes harc" disabled ha össz fegyverhossz > limit, valamelyik fegyver fegyverhossza > per-fegyver limit, vagy nincs nem-hárító fegyver
 - Harc fül: kétkezes harc aktív → összevont harcértékek megjelenítése (lila keret, normál sorok halványítva)
-- Harc fül: Ph oszlop kétkezesnél: `x(y)` formátum (x=nagyobb fegyver penge, y=összpenge)
+- Harc fül: Fh oszlop kétkezesnél: `x(y)` formátum (x=nagyobb fegyver fegyverhossza, y=össz fegyverhossz)
 
 ### 26.8 Fortély feltételek
 
@@ -1925,7 +1945,7 @@ A `fegyverfogás:kétkezes` és `session.kétkezes_harc == true` mindketten azt 
 
 ```
 if session.kétkezes_harc:
-  nagyobb_fegyver = fegyver[jobb] if fegyver[jobb].pengehossz >= fegyver[bal].pengehossz else fegyver[bal]
+  nagyobb_fegyver = fegyver[jobb] if fegyver[jobb].fegyverhossz >= fegyver[bal].fegyverhossz else fegyver[bal]
   kisebb_fegyver = a másik
 
   harcmodor_szint = lookup(nagyobb_fegyver.kategória → harcmodor képzettség szint)
@@ -1948,8 +1968,8 @@ if session.kétkezes_harc:
 
   SP = fegyver_jobb.SP + erőbónusz + MF_bónusz.SP + fortelyMods['SP']
 
-  harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + khFokBónusz.harckeret - pengelevonás
-  pengelevonás = FLOOR(sum_pengehossz / konstansok.kétkezes_harc_pengelevonás_osztó)
+  harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + khFokBónusz.harckeret - fegyverlevonás
+  fegyverlevonás = FLOOR(sum_fegyverhossz / konstansok.kétkezes_harc_fegyverlevonás_osztó)
   támadások = 1 + FLOOR(harckeret / nagyobb_fegyver.sebesség)
 ```
 
@@ -1983,11 +2003,11 @@ Picker elérhetőség:
   - Kétkezes fegyver jobb kézben → csak "egyfegyveres" aktív, többi disabled
   - Nincs pajzs a karakteren → "fegyver_pajzs" disabled
   - Nincs hárítófegyver / nincs "Hárítófegyver használat" fortély → "fegyver_hárító" disabled
-  - Összpenge > konstansok.kétkezes_harc_max_pengeméret VAGY nincs nem-hárító fegyver bal kézhez → "kétkezes" disabled
+  - Össz fegyverhossz > konstansok.kétkezes_harc_max_fegyverméret, valamelyik fegyver fegyverhossza > konstansok.kétkezes_harc_max_egy_fegyver, VAGY nincs nem-hárító fegyver bal kézhez → "kétkezes" disabled
 
 Bal kéz dropdown:
   - Csak "kétkezes" és "fegyver_hárító" fogásnál jelenik meg
-  - "kétkezes": karakter fegyverek (pengelimit szűrt, hárítófegyverek kiszűrve, pajzs kiszűrve, puszta kéz kiszűrve)
+  - "kétkezes": karakter fegyverek (fegyverhossz-limit szűrt, hárítófegyverek kiszűrve, pajzs kiszűrve, puszta kéz kiszűrve)
   - "fegyver_hárító": hárítófegyverek listája
 ```
 
@@ -2093,8 +2113,8 @@ Az alakzat ellen elszenvedett VÉ csökkentésből levonás:
 ### 28.7 VÉ csökkentés alakzat által (fix értékek)
 
 ```
-3 VÉ: Alakzat Pengehátrányban vagy Alappengénél
-4 VÉ: Alakzat Pengeelőnyben
+3 VÉ: Alakzat Fegyverhátrányban vagy Fegyverazonosságnál
+4 VÉ: Alakzat Fegyverelőnyben
 
 Túlerő módosító:
   +0: 3 fő (legkisebb alakzat)
@@ -2117,7 +2137,7 @@ Engedélyezett taktikák (fix értékek):
   Támadó:   TÉ: +3, VÉ: -6
   Védő:     VÉ: +4, TÉ: -8
   Roham:    TÉ: +4, VÉ: -8
-  Fárasztó:  +1 VÉ EXTRA csökkentés (a §28.7 pengeméret-alapértékre adódik)
+  Fárasztó:  +1 VÉ EXTRA csökkentés (a §28.7 fegyverhossz-alapértékre adódik)
 
 Manőverek: NEM használhatók alakzatban.
 ```
@@ -2902,8 +2922,8 @@ Fortély nélkül (0.fok, Alapeset):
 Fortéllyal (1-3.fok):
   TÉ: +3 / +6 / +9 (Lovas harc fortély fokonként)
   VÉ: +3 / +6 / +9
-  Fegyverméret: +1 penge bónusz (hátas miatti magaslat)
-  Min pengeméret: 1
+  Fegyverhossz: +2 kategória bónusz (hátas miatti magaslat, fok-független)
+  Követelmény: min_fegyverméret 3 (a `követelmények` tömbben, feltétel: `harci_helyzet:(lég)lovas_harc`) - webapp warning-only, nem blokkol
 
 ❌ "Magasabbról" harci helyzet NEM aktiválható lovas/léglovas harc közben
 ```
@@ -2932,22 +2952,24 @@ note: A "Lövés hátasról" CÉ levonása függ a hátas tempójától (léptet
       A 0.fok (léptetésnél CÉ:-3) mindig aktív a `lovas_harc` helyzetnél (Alapeset mechanizmus, §16.1).
       A fokozatok a "legrosszabb aktív tempó" CÉ-jét adják meg narratívan.
 
-### 38.3 Fegyverméret +1 penge bónusz
+### 38.3 Fegyverhossz +2 kategória bónusz
 
 ```
 if "lovas_harc" ∈ aktív_helyzetek OR "léglovas_harc" ∈ aktív_helyzetek:
   AND karakter fortélyok tartalmaz Lovas harc (fok ≥ 1) VAGY Léglovas harc (fok ≥ 1):
-    effektív_pengeméret = fegyver.pengeméret + 1
-    min_pengeméret = 1
+    effektív_fegyverhossz = fegyver.fegyverhossz + 2
 
-Hatás: a Pengeelőny/Pengehátrány meghatározásnál az effektív pengével számol.
+Hatás: a Fegyverelőny/Fegyverhátrány meghatározásnál az effektív fegyverhosszal számol.
+Követelmény (nem hatás): min_fegyverméret 3 - a fortély `követelmények` tömbjében, típus
+"min_fegyverméret", feltétel `harci_helyzet:(lég)lovas_harc". Webapp: warning-only
+(getMinFegyverhosszWarning), nem blokkol.
 ```
 
 Implementáció:
-- A Pengeelőny/Pengehátrány jelenleg informatív (rejtett helyzetek, nem kalkulált a webapp-ban)
-- A +1 penge bónusz a Harc fül "Ph" oszlopában jelenik meg (effektív penge kijelzés, zöld szín)
-- Data-driven: fortély yaml `pengehossz` cél módosító (flat, feltétel: `harci_helyzet:X`), HarcScreen generikusan feldolgozza `fortelyMods['pengehossz']`-ból
-- Min pengehossz: fortély yaml `min_pengehossz` cél módosító, AktivScreen generikusan jeleníti meg figyelmeztetésként (piros `⚠`) a harci helyzet info sávban ha aktív fegyver nem éri el
+- A Fegyverelőny/Fegyverhátrány jelenleg informatív (rejtett helyzetek, nem kalkulált a webapp-ban)
+- A +2 kategória bónusz a Harc fül "Fh" oszlopában jelenik meg (effektív fegyverhossz kijelzés, zöld szín)
+- Data-driven: fortély yaml `fegyverhossz` cél módosító (flat, feltétel: `harci_helyzet:X`), HarcScreen generikusan feldolgozza `fortelyMods['fegyverhossz']`-ból
+- Min fegyverhossz: fortély yaml `min_fegyverméret` követelmény (a `követelmények` tömbben), AktivScreen figyelmeztetésként jeleníti meg (piros `⚠`) a harci helyzet info sávban ha aktív fegyver nem éri el (warning-only, nem blokkol)
 - ✅ IMPLEMENTÁLVA
 
 ### 38.4 Harci helyzet kizárások és fegyverfogás tiltás
@@ -3051,7 +3073,7 @@ Három meglévő manőver bővítés + 1 placeholder kiegészítés a `manoverek
   típus: "lovas"
   nehézség: 4
   fázisok: "M,E"
-  hatás: "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra."
+  hatás: "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Fegyverelőny szükséges. Sebző dobás a lovasra."
   id: "lovas_megakasztása"
 
 - név: "Lóhátról lerántás"
@@ -3112,7 +3134,7 @@ A webapp nem modellezi külön - informatív szöveg, KM kezeli.
 10. ✅ AktivScreen - Fegyverfogás picker: data-driven `tiltott_fegyverfogások` (hárító+kétkezes disabled)
 11. ✅ AktivScreen - Helyzet hozzáadás: fogás auto-reset ha tiltott
 12. ✅ data-types.ts: `HarciHelyzetEntry` interface bővítés (id, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek, tiltott_fegyverfogások)
-13. ⏳ HarcScreen - Ph oszlop: +1 penge kijelzés (opcionális, kozmetikai)
+13. ⏳ HarcScreen - Fh oszlop: +2 fegyverhossz-kategória kijelzés (opcionális, kozmetikai)
 
 #### III. Tesztelés
 
@@ -3803,7 +3825,7 @@ effekt-fázisára halasztva (§41) - addig ez vokabulár-szabvány + fokozatos a
 
 ```
 effekt = {cél, mód, érték, feltétel?}
-  cél    : HARCÉRTÉK csupasz string (TÉ/VÉ/SP/SFÉ/CÉ/KÉ/harckeret/pengehossz/pajzs-VÉ/vé_veszteség …)
+  cél    : HARCÉRTÉK csupasz string (TÉ/VÉ/SP/SFÉ/CÉ/KÉ/harckeret/fegyverhossz/pajzs-VÉ/vé_veszteség …)
            VAGY entitás prefix-string ("manőver:<id>", "fortély:<név>", "képzettség:<név>")
   mód    : lásd 42.2
   érték  : numerikus (flat/szorzó/scaled/override/max_limit/előny/hátrány/enyhít) - vagy nincs (letilt/szöveges)
@@ -3853,7 +3875,7 @@ Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ ker
 
 ### 42.4 Cél-fajták (prefix-vokabulár)
 
-- **Csupasz** (harcérték / esemény-cél): `TÉ VÉ SP SFÉ CÉ KÉ harckeret pengehossz pajzs-VÉ vé_veszteség manőver_ellenpróba …` (esemény-célok: `esemenyek.yaml`)
+- **Csupasz** (harcérték / esemény-cél): `TÉ VÉ SP SFÉ CÉ KÉ harckeret fegyverhossz pajzs-VÉ vé_veszteség manőver_ellenpróba …` (esemény-célok: `esemenyek.yaml`)
 - **Entitás cél-prefix**: `fortély:<név>`, `képzettség:<név>`.
 - **Al-feltétel prefix** (per-hatás `feltétel`): `manőver:<id>` (a konkrét manőver, `manoverek.yaml` id) - a manőver-effektek célja `manőver_ellenpróba`, a KONKRÉT manővert al-feltétel adja.
 - A prefix-készletet a `konstansok.yaml → feltétel_prefixek`-kel kell összehangolni (közös vokabulár a
