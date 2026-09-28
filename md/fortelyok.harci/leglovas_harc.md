@@ -13,37 +13,52 @@ Repülő hátason ülve sem esel kétségbe, ha harcolni kell.
 ### Alapeset (képzetlenül)
 
 ```
-TÉ/VÉ: -9
+→ TÉ/VÉ: -9
+→ Fegyverméretre +2 bónusz
+→ Minimum fegyverméret: 3
+  (követelmény)
 ```
 
 <br />
 
 ### 1. fok
 
-🔒 Léglovaglás - `3.szint`
+🔒 **Követelmény:**
+- Harcmodor - `3.szint`
+- Léglovaglás - `3.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
 ### 2. fok
 
-🔒 Léglovaglás - `6.szint`
+🔒 **Követelmény:**
+- Harcmodor - `6.szint`
+- Léglovaglás - `6.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+6, VÉ:+6` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
 ### 3. fok
 
-🔒 Léglovaglás - `9.szint`
+🔒  **Követelmény:**
+- Harcmodor - `9.szint`
+- Léglovaglás - `9.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+9, VÉ:+9` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+- Fegyverméretre: `+2` bónusz
 
 ---
