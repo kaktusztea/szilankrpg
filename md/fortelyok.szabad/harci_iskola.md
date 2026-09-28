@@ -7,6 +7,6 @@ Külön kell felvenni minden egyes harci iskolához, melyet vagy a világleírá
 ## Kapcsolódik
 
 - [Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md) képzettség
-- [Különleges fegyver szabály](../068_01_03_kulonleges_fegyver_szabaly.md) fejezet
+- [Fegyver extrák](../068_01_13_fegyver_extrak.md) fejezet (Különleges fegyver szabály)
 
 ---
