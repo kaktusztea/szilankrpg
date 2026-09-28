@@ -18,7 +18,8 @@ Kapcsolódó tervezési doksik (a WIKI-ben élnek, NEM éles anyag):
 
 FIGYELEM: ez egy TERVEZŐI eszköz, nem a data pipeline része. A generátor
 paraméterei (FEGYVERHOSSZ, AKTOR, SULY, IDEA, ALAPANYAG, TIPUS_PANCEL) NEM
-azonosak az éles `data/tables/fegyverek.json` értékeivel - a generátor egy
+azonosak az éles `data/tables/fegyverek_v2.json` (illetve a kivezetett v1
+`archive/data_fegyverek_v1/fegyverek.json`) értékeivel - a generátor egy
 javasolt modell, a fegyvertáblák kézzel hangolt élesek. A kettőt NE
 szinkronizáld automatikusan.
 ─────────────────────────────────────────────────────────────────────────────

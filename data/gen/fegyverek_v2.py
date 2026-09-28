@@ -3,11 +3,11 @@
 A Fegyvergenerátor v2 (`code/balance/fegyvergenerator_balansz.py`) modelljével leszármaztatott
 mainstream fegyverek JSON-exportja - build-gate-be kötve (l. STUDY.fegyvergenerator_v2 wiki,
 "Migrációs terv" 3a pont). A kimenet EGY fegyver = EGY elem, `módok` tömbbel (fegyvermódonként,
-aktoronként) - NEM a régi flat `data/tables/fegyverek.json` sémája.
+aktoronként) - NEM a régi flat v1 (`archive/data_fegyverek_v1/fegyverek.json`) sémája.
 
-Szándékosan ÚJ, KÜLÖN fájlba ír (`fegyverek_v2.json`) - a régi `data/tables/fegyverek.json`-t
-a webapp jelenleg is olvassa (`engine/data-loader.ts`), ennek átállítása külön lépés (3b),
-amíg az nem kész, a két fájl egymás mellett él, nincs felülírás/duplikáció a kimeneten.
+Szándékosan KÜLÖN fájlba ír (`fegyverek_v2.json`) - ezt olvassa a webapp runtime
+(`engine/data-loader.ts`). A régi v1 fegyvertábla ki lett vezetve a pipeline-ból,
+csak archív snapshotként maradt meg (`archive/data_fegyverek_v1/`, balansz-összehasonlításhoz).
 """
 
 import os

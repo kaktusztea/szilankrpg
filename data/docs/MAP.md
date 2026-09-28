@@ -36,8 +36,8 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
                                        code/balance/fegyvergenerator_balansz_elemzes.py [--n=250] [--gyors]`
                                        - a kimenet NEM kerül a repóba (work file), a konklúziót olvasható
                                        riportba kell átvezetni (l. wiki STUDY.* konvenció).
-    fegyverek_regi_uj_osszehasonlitas.py  A régi (`data/tables/fegyverek.json`) és a v2 fegyvergenerátor
-                                       (`data/sources/fegyverek/fegyverek.generated.json`) harcértékeinek
+    fegyverek_regi_uj_osszehasonlitas.py  A kivezetett v1 (`archive/data_fegyverek_v1/fegyverek.json`) és a v2 fegyvergenerátor
+                                       (`data/tables/fegyverek_v2.json`) harcértékeinek
                                        1:1 delta-összehasonlítása, kézi alias-táblával a névformátum-eltérésekhez.
                                        Kimenet: konzol + markdown riport (wiki STUDY.* fájlba, NEM az éles repóba).
     harcszimulacio_selftest.py        harcszimulacio.spec.md §15 önteszt validálása (a data layerből olvas)

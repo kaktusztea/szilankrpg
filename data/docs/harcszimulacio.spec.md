@@ -40,7 +40,7 @@ Ha a specben szereplő szám és a data layer ütközik, **a data layer nyer** -
 | Tartalom | Fájl |
 |---|---|
 | Konstansok (harcérték alap, MF bónusz, MGT táblák, FT enyhítés) | `data/tables/konstansok.json` |
-| Fegyverek (83 db) | `data/tables/fegyverek.json` |
+| Fegyverek (83 db) | `archive/data_fegyverek_v1/fegyverek.json` (kivezetett v1) |
 | Pajzsok | `data/tables/pajzsok.json` |
 | Harcmodor szint → TÉ/VÉ/CÉ bónusz | `data/tables/harcmodor_kepzettsegek_bonuszok.json` |
 | Taktikák (19 db) | `data/tables/taktikak.json` |

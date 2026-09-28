@@ -3,7 +3,7 @@
 
 A mainstream fegyverek (fegyverek.yaml, `kategória` mezővel bíró rekordok) a v2 (mátrix)
 modellel leszármaztatva, EGY fegyver = EGY JSON elem, benne egy `módok` tömb
-(fegyvermódonként - Aktoronként). NEM lapított/kompatibilis a régi `data/tables/fegyverek.json`
+(fegyvermódonként - Aktoronként). NEM lapított/kompatibilis a kivezetett v1 `archive/data_fegyverek_v1/fegyverek.json`
 formátumával (nincs MK_pár/Alapnév név-konkatenálás) - a régi rendszert várhatóan több szabály
 is felváltja majd a cserénél, a cél itt a generátor natural modellje, nem a visszafelé
 kompatibilitás.

@@ -1176,7 +1176,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 ### Runtime adatbetöltés (GameData)
 Minden adat `fetchJson`-nel:
 - `tables/konstansok.json` - központi konstansok
-- `tables/fegyverek.json` - fegyver adatok (MK_pár, Alapnév mezőkkel)
+- `tables/fegyverek_v2.json` - fegyver adatok (v2, `módok[]` szerkezet; a régi v1 kivezetve → `archive/data_fegyverek_v1/`)
 - `tables/tavfegyverek.json`, `tables/pajzsok.json` - távfegyver/pajzs adatok
 - `tables/kepzettseg_kp.json` - KP költség tábla szintenként
 - `tables/harcmodor_kepzettsegek_bonuszok.json` - harcmodor bónuszok szintenként
