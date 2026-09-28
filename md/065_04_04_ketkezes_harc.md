@@ -64,36 +64,36 @@ Kivéve ha direkt a [Gyengébb kézzel](065_01_04_fegyver_harci_helyzetek.md#gye
 ### ⚡Példa: Harc 2 db tőrrel
 
 ```
+SUM Fegyverhossz
+  2 = 1 + 1
+```
+
+```
 Kétkezes harc: 2.fok
 → Fegyver harcértékek összeadódnak
 → Mf: csak 1x számít Tőrre
 
-Harckeret: +3
+Harckeret: +2
  +3: Kétkezes harc (2.fok)
- -0 = 0 / 0.5 (pengehossz után)
+ -1 = 2 / 2 (fegyverhossz után)
 
-```
-
-```
-SUM Pengeméret
-  0 = 0 + 0
 ```
 
 ### ⚡Példa: Szablya + tőr
+
+```
+SUM Fegyverhossz
+  4 = 3 + 1
+```
 
 ```
 Kétkezes harc: 3.fok
 → Fegyver harcértékek összeadódnak
 → Mf: Szablya ÉS Tőr is számít
 
-Harckeret: +1
+Harckeret: +2
  +4: Kétkezes harc (3.fok)
- -3 = 1.5 / 0.5 (pengehossz után)
-```
-
-```
-SUM Pengeméret
-  1 = 1 + 0
+ -2 = 4 / 2 (fegyverhossz után)
 ```
 
 ---
