@@ -20,9 +20,9 @@ A harcérték kalkulációnál az [alapeset](062_01_ke_te_ve_ce.md) érvényesü
 A szabad kéz használható manőverekhez (Lefegyverzés, Lábkirántás segítés), de támadni vele nem tudsz (kivéve [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortéllyal).
 
 ---
-### [Kétkezes harc](065_04_04_ketkezes_harc.md)
+### [Kétkezes harc](065_05_ketkezes_harc.md)
 
-Mindkét kézben egy-egy fegyver. Bővebben lásd: [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md).
+Mindkét kézben egy-egy fegyver. Bővebben lásd: [Kétkezes harc szabályai](065_05_ketkezes_harc.md).
 
 ---
 ### Fegyver + pajzs

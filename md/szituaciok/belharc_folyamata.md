@@ -1,6 +1,6 @@
 ## Belharc folyamata
 
-A belharcos célja [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet) harci helyzet elérése, hogy bónuszait kamatoztathassa.
+A belharcos célja [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet) harci helyzet elérése, hogy bónuszait kamatoztathassa.
 
 <br />
 
@@ -20,7 +20,7 @@ Mindenki ezzel jöhet ki - harcmodortól függetlenül.
 
 ### ⚜️ Belharci helyzet módosítói
 
-→ Harci helyzet: [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet)
+→ Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
 ---
 

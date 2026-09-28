@@ -138,18 +138,18 @@
 
 ### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
-- [Fegyverfogás](065_04_00_fegyverfogas.md)
-  - [Egyfegyveres](065_04_00_fegyverfogas.md#egyfegyveres)
-  - [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md)
-  - [Fegyver + pajzs](065_04_00_fegyverfogas.md#fegyver--pajzs)
-  - [Fegyver + hárítófegyver](065_04_00_fegyverfogas.md#fegyver--hárítófegyver)
+- [Fegyverfogás](065_01_fegyverfogas.md)
+  - [Egyfegyveres](065_01_fegyverfogas.md#egyfegyveres)
+  - [Fegyver + pajzs](065_01_fegyverfogas.md#fegyver--pajzs)
+  - [Fegyver + hárítófegyver](065_01_fegyverfogas.md#fegyver--hárítófegyver)
+  - [Kétkezes harc](065_05_ketkezes_harc.md)
 - [Harci taktikák](065_02_harci_taktikak.md)
-- [Harci helyzetek](065_01_00_harci_helyzetek.md)
-  - [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
-  - [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
-  - [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
-  - [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
-- [Harc alakzatban](065_03_harc_alakzatban.md)
+- [Harci helyzetek](065_03_00_harci_helyzetek.md)
+  - [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
+  - [Semleges helyzetek](065_03_02_semleges_helyzetek.md)
+  - [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
+  - [Fegyverviszony és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
+- [Harc alakzatban](065_04_harc_alakzatban.md)
 
 ### 6.6 [Manőverek](066_00_manoverek.md) 🎲
 

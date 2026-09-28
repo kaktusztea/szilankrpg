@@ -17,7 +17,7 @@ Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és 
 ---
 ## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
-[Meglepett](065_01_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
+[Meglepett](065_03_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
 - Kimarad a **Megakasztás** (`M`) fázis a védő oldalán (ha van)
 - **Végrehajtás** dobásnál továbbra is `TÉ:+4` + `Előny+1` a dobásra
 - Támadó tehet bele `Manőver Pontot`
@@ -25,7 +25,7 @@ Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és 
 
 ## ⚜️ Harci helyzetek és Manőverek - Orvtámadás
 
-Vannak Manőverek, amelyek [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetet igényelnek.
+Vannak Manőverek, amelyek [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetet igényelnek.
 
 ```
 (E)llenpróba dobás van csak

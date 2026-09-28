@@ -98,21 +98,21 @@ k20P == k20 egyes része páratlan/páros/nullás
 2: 10,20
 ```
 
-#### [Fegyverhátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverhátrány)
+#### [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány)
 
 ```
 VÉ csökkentés
   k20P
 ```
 
-#### [Fegyverazonosság](065_01_04_fegyver_harci_helyzetek.md#fegyverazonosság)
+#### [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság)
 
 ```
 VÉ csökkentés
   1 + k20P
 ```
 
-#### [Fegyverelőny](065_01_04_fegyver_harci_helyzetek.md#fegyverelőny)
+#### [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
 ```
 VÉ csökkentés

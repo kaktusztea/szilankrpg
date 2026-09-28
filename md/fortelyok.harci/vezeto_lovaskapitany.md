@@ -18,7 +18,7 @@ Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos 
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó lovaskapitány képes koordinálásával megemelni.
+A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó lovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Lovaglás - `6.szint` (nehézlovaglásra alkalmas hátas fajra)

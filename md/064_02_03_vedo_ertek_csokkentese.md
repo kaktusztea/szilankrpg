@@ -10,19 +10,19 @@ Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyv
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
-Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
+Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_03_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
 
-### ⚜️ [Fegyverhátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverhátrány)
+### ⚜️ [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány)
 
 - Fegyvered mérete legalább `2 fegyverhossz-kategóriával` rövidebb ellenfeledénél
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20P`
 
-### ⚜️ [Fegyverazonosság](065_01_04_fegyver_harci_helyzetek.md#fegyverazonosság)
+### ⚜️ [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság)
 
 - A felek fegyverhossz-kategóriáinak különbsége kisebb `2 kategóriánál`
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20P`
 
-### ⚜️ [Fegyverelőny](065_01_04_fegyver_harci_helyzetek.md#fegyverelőny)
+### ⚜️ [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
 - Fegyverméret-különbség legalább `+2` fegyverhossz-kategória
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20P`

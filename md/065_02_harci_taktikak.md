@@ -15,7 +15,7 @@
 - [Tettetés](#tettetés)
 - [Visszafogott taktika](#visszafogott-taktika-)
 
-A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a **Harci taktikák** és a [Harci helyzetek](065_01_00_harci_helyzetek.md) (amelyeket harci **Státuszokként** értelmezünk).
+A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a **Harci taktikák** és a [Harci helyzetek](065_03_00_harci_helyzetek.md) (amelyeket harci **Státuszokként** értelmezünk).
 
 ### 🔆 Taktika bejelentése
 
@@ -74,9 +74,9 @@ TÉ:+3, VÉ:-6
 
 📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
-✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+✅ [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+❌ [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
 ✅ **Kezdeményező, Kiváró, Plusz támadás, 1 támadás taktikával** együtt
 
@@ -96,9 +96,9 @@ VÉ:+3, TÉ:-6
 
 📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
-❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+❌ [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+❌ [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
 ✅ **Érintő, 1 támadás taktikával** együtt
 
@@ -182,13 +182,13 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 
 ❌ Más taktikával együtt
 
-❌ [Láthatatlan](065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) ellenfél ellen
+❌ [Láthatatlan](065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) ellenfél ellen
 
-❌ [Fegyverhátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverhátrány) harci helyzetből **NEM** alkalmazható.
+❌ [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány) harci helyzetből **NEM** alkalmazható.
 
-✅ [Fegyverazonosság](065_01_04_fegyver_harci_helyzetek.md#fegyverazonosság) és [Fegyverelőny](065_01_04_fegyver_harci_helyzetek.md#fegyverelőny) harci helyzetben csak
+✅ [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság) és [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) harci helyzetben csak
 
-✅ [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás) harci helyzetben
+✅ [Levegőből támadás](065_03_01_pozitiv_helyzetek.md#levegőből-támadás) harci helyzetben
 
 🔗 Kapcsolódik: **[Fárasztás](fortelyok.harci/farasztas.md)** harci fortély
 
@@ -313,7 +313,7 @@ Ellenfél VÉ csökkentése rajtad:
 
 A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-🔆 A [lények méretkülönbségéből](065_01_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20P` dobáshoz/dobásból.
+🔆 A [lények méretkülönbségéből](065_03_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20P` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 
@@ -361,6 +361,6 @@ Szándékosan kisebb sebzést próbálsz okozni találatkor - általában mikor 
 
 ---
 
-🔗 [Harc alakzatban](065_03_harc_alakzatban.md) →
+🔗 [Harc alakzatban](065_04_harc_alakzatban.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

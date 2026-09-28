@@ -9,7 +9,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 
 🔒 Közelharc - `6.szint`
 
-🌟 Harci helyzet: [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet)
+🌟 Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
 ```
 KÉ: +1, TÉ/VÉ:+2
@@ -32,6 +32,6 @@ KÉ: +2, TÉ/VÉ:+4
 ---
 ###  Ellenfél módosítói
 
-→ Harci helyzet: [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet)
+→ Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
 ---

@@ -307,6 +307,6 @@ VÉ csökkentés/kör: 2
 
 ---
 
-🔗 [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md) →
+🔗 [Kétkezes harc szabályai](065_05_ketkezes_harc.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

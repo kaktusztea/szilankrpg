@@ -21,7 +21,7 @@ Lopakodás/rejtőzés + Ügyesség
   +3: Aktív Észlelés
 ```
 
-✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
+✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
 
 ❌ Lopakodás sikertelen: mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 
@@ -29,7 +29,7 @@ Lopakodás/rejtőzés + Ügyesség
 
 ## Megkötések
 
-🔆 Manőver: [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) után **NEM** lehet Orvtámadás, csak sima [Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet.
+🔆 Manőver: [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) után **NEM** lehet Orvtámadás, csak sima [Hátulról támadás](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet.
 
 🔆 Fortély: [Körkörös harc](../fortelyok.harci/korkoros_harc.md) meglétekor **harc közben NEM** alkalmazhatnak ellened Orvtámadást.
 

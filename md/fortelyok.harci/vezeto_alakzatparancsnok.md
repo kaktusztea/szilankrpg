@@ -19,7 +19,7 @@ Az **[Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md)** képzettséget
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
+A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Alakzatharc - `6.szint`

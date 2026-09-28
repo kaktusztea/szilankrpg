@@ -1,6 +1,6 @@
 ## 🟣 Orgyilkos (3)
 
-[Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetben (csak akkor) jobb eséllyel érsz el nagyobb sebzést.
+[Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetben (csak akkor) jobb eséllyel érsz el nagyobb sebzést.
 
 ---
 ### 1. fok

@@ -4,8 +4,8 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 ### Harci helyzetek
 
-- [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
-- [Vakharc - sötétben](../065_01_03_negativ_helyzetek.md#vakharc---sötétben)
+- [Vakharc - félhomályban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban)
+- [Vakharc - sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben)
 
 ---
 ### 1. fok
@@ -19,7 +19,7 @@ Vakharc harci helyzetben
   TÉ Hátrányodból
 ```
 
-→ [Láthatatlan ellenfél](../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
+→ [Láthatatlan ellenfél](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
 <br />
 

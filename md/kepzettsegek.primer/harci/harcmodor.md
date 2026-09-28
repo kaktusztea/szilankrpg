@@ -58,11 +58,11 @@ Skálázható Harci taktikák
 ```
 
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
-- A [Sebzéstípus másodlagos](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
+- A [Sebzéstípus másodlagos](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
 
 #### 🌟 `15.szint`
 
-- A [Sebzéstípus másodlagos](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
+- A [Sebzéstípus másodlagos](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
 
 ---

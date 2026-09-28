@@ -125,7 +125,7 @@ Beszélgetsz valakivel, váratlanul fegyvert rántasz és megszúrod.
 Előny+1 KÉ
 ```
 
-Nyert Kezdeményezés esetén [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) bónuszait kapod.
+Nyert Kezdeményezés esetén [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) bónuszait kapod.
 
 ### 🔆 Szálfegyverek
 
@@ -206,6 +206,6 @@ Sokféle állat van, ezért nem lehet egységes szabályt alkotni. Az állatok n
 
 ---
 
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

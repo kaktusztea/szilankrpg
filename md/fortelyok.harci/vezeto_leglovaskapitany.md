@@ -19,7 +19,7 @@ Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [cso
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
+A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Léglovaglás - `6.szint` (léglovaglásra alkalmas hátas fajra)

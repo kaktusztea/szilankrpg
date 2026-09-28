@@ -2,7 +2,7 @@
 
 [Harci taktikák](065_02_harci_taktikak.md)
 
-[Harci helyzetek](065_01_00_harci_helyzetek.md)
+[Harci helyzetek](065_03_00_harci_helyzetek.md)
 
 [Státuszok](082_statuszok.md)
 

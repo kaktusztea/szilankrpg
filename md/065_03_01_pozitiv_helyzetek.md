@@ -70,7 +70,7 @@ VÉ csökkentés: +1 bónusz
 VÉ: +5
 ```
 
-🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat, mert te is rosszabbul látsz
+🔆 [Vakharc - félhomályban](065_03_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat, mert te is rosszabbul látsz
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
@@ -87,7 +87,7 @@ VÉ csökkentés: +2 bónusz
 VÉ: +10
 ```
 
-🔆 [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat, mert te sem látsz
+🔆 [Vakharc - sötétben](065_03_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat, mert te sem látsz
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
@@ -161,7 +161,7 @@ VÉ csökkentés: +2
 
 ### Csoport meglepése
 
-🔆 [Alakzatot](065_03_harc_alakzatban.md) is meg lehet lepni. Ilyen [Észlelés szituációban](szituaciok/erzekeles_eszleles_aktiv_passziv.md) az alakzat [Csoportos szellemi Észlelés képzettségpróbát](030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) dob.
+🔆 [Alakzatot](065_04_harc_alakzatban.md) is meg lehet lepni. Ilyen [Észlelés szituációban](szituaciok/erzekeles_eszleles_aktiv_passziv.md) az alakzat [Csoportos szellemi Észlelés képzettségpróbát](030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) dob.
 
 🔆 Ugyanez vonatkozik a [Lopakodás/rejtőzés és észlelése szituációra](szituaciok/lopakodas_rejtozes_es_eszlelese.md) is.
 
@@ -214,6 +214,6 @@ Koordinált 2 fős harc. A [Páros harc](fortelyok.harci/paros_harc.md) fortély
 
 ---
 
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

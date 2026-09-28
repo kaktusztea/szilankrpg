@@ -76,7 +76,7 @@ Modern, nagy hatótávú fegyver
 
 Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezhető:
 
-→ [Hajítás alkalmatlan fegyverrel](065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet
+→ [Hajítás alkalmatlan fegyverrel](065_03_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet
 
 ⚜️ [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) 🔁 fortély tanulásával (fegyverenként) a büntetések mérsékelhetőek.
 

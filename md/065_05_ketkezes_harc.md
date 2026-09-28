@@ -56,7 +56,7 @@ SUM 6 hossz felett vagy Fegyverhossz > 6
 ## Sebzés
 
 Mindig az ügyesebb kézben levő fegyver sebez.\
-Kivéve ha direkt a [Gyengébb kézzel](065_01_04_fegyver_harci_helyzetek.md#gyengébb-kéz) akarsz támadni.
+Kivéve ha direkt a [Gyengébb kézzel](065_03_04_fegyver_harci_helyzetek.md#gyengébb-kéz) akarsz támadni.
 
 <br />
 

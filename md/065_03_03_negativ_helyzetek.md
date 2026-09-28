@@ -97,7 +97,7 @@ Ogár
 
 ### Fegyverméret-különbség és lények mérete
 
-A [Fegyverméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
+A [Fegyverméret-különbség](065_03_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
 
 <br />
 
@@ -178,6 +178,6 @@ Hátrány-1 Érzék (Látás)
 
 ---
 
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

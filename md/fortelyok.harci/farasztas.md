@@ -13,6 +13,6 @@ A fortély nagy ismerői a bajvívók és harcosok.
 ---
 ### Fegyverhátrányban nem alkalmazható
 
-🔆 Figyelj a [Fegyverhátrány](../065_01_04_fegyver_harci_helyzetek.md#fegyverhátrány) megkötésre a [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
+🔆 Figyelj a [Fegyverhátrány](../065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány) megkötésre a [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
 
 ---

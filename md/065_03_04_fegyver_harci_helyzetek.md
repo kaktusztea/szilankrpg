@@ -106,7 +106,7 @@ KÉ: -3, TÉ: -3, VÉ: -3
 🔆 Kapcsolódik:
 
 - [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortély
-- [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet), ahol a Puszta kéz harcértékei `0`-ra emelkednek és járnak a **Belharcból** eredő esetleges módosítók is.
+- [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet), ahol a Puszta kéz harcértékei `0`-ra emelkednek és járnak a **Belharcból** eredő esetleges módosítók is.
 
 🔆 A **Puszta kéz** "egykezes" fegyvernek számít, tehát **nem** lehet vele **Kétkezes harcot** folytatni
 
@@ -141,6 +141,6 @@ Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard
 
 ---
 
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
