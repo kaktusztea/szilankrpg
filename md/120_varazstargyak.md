@@ -19,7 +19,7 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
 
 ### Mágikus fegyverek
 
-- [Idea szabály-megkötés](068_01_12_fegyverek_minosege_ideaja.md#-mágikus-fegyverek-és-a-fegyver-ideája)
+- [Idea szabály-megkötés](068_01_10_fegyverek_minosege_ideaja.md#-mágikus-fegyverek-és-a-fegyver-ideája)
 - Fokozatosan kapja a fegyver az egyre erősebb hatásokat, ahogy egyre hatalmasabb mágia ruházza fel
   - `1.` Átütést adnak
   - `2.` `TÉ/VÉ/SP` értékek erősebb mágiánál

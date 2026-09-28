@@ -15,6 +15,6 @@ Hatásuk [Felszerelésre](010_03_06_felszereles.md):
 
 ---
 
-🔗 [Fegyverek minősége](068_01_12_fegyverek_minosege_ideaja.md) →
+🔗 [Fegyverek minősége](068_01_10_fegyverek_minosege_ideaja.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

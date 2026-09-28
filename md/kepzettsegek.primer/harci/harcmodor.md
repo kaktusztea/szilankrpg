@@ -48,7 +48,7 @@ Skálázható Harci taktikák
 +5: Maximális felső korlátjuk ennyire nő
 ```
 
-Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../../068_01_12_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
+Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../../068_01_10_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 #### 🌟 `12.szint`
 

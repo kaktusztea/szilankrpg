@@ -79,7 +79,7 @@ Lövés reflexből helyzet
 ### Kapcsolódik
 
 - [Távolsági fortélyok](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
-- [Fegyver minősége](068_01_12_fegyverek_minosege_ideaja.md)
+- [Fegyver minősége](068_01_10_fegyverek_minosege_ideaja.md)
 - [Távolsági Harcmodor képzettség](kepzettsegek.primer/harci/tavolsagi_harcmodor.md)
 
 ---

@@ -12,6 +12,6 @@ SP: -5 + k20
 
 ---
 
-🔗 [Nyílpuskák](068_01_07_nyilpuskak.md) →
+🔗 [Nyílpuskák](068_01_05_nyilpuskak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

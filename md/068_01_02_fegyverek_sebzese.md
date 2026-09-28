@@ -19,6 +19,6 @@ Vágó+Íves: +2 SP páncél nélküli ellen
 
 ---
 
-🔗 [Másfélkezes fegyverek egy kézzel forgatva](068_01_04_masfelkezes_fegyverek_egy_kezzel.md) →
+🔗 [Másfélkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_fegyverek_egy_kezzel.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

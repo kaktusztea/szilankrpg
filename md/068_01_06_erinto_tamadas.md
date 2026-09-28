@@ -4,6 +4,6 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 
 ---
 
-🔗 [Erőbónusz limit](068_01_09_erobonusz_limit.md) →
+🔗 [Erőbónusz limit](068_01_07_erobonusz_limit.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

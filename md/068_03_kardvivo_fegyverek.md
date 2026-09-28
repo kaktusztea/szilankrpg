@@ -64,7 +64,7 @@
 
 Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.
 
-Extrái (részletek a [Fegyver extrák](068_01_13_fegyver_extrak.md) fejezetben): Pontos, Lefegyverezhetőbb, Zúzó fegyver ellen rosszabb.
+Extrái (részletek a [Fegyver extrák](068_01_11_fegyver_extrak.md) fejezetben): Pontos, Lefegyverezhetőbb, Zúzó fegyver ellen rosszabb.
 
 ---
 ## Kardívó hárítófegyverek

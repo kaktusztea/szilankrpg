@@ -80,7 +80,7 @@ Hátrány-2: Csatabárd méretű
 #### Ha elveszíted a kezdeményezést
 
 - Nem sikerül előrántanod fegyvered
-- [Pusztakezes harcértékeddel](068_01_06_puszta_kez.md) küzdesz a kör végéig
+- [Pusztakezes harcértékeddel](068_01_04_puszta_kez.md) küzdesz a kör végéig
 - Visszatámadás helyett, `1 támadás` elhasználásával fegyvert húzhatsz - próbadobás nélkül
 
 #### Ha megnyered a kezdeményezést
@@ -109,7 +109,7 @@ Hátrány-2: Csatabárd méretű
 ```
 
 - Sikeres: előhúztad fegyvered, teljes harcértékeddel védekezhetsz
-- Sikertelen: [Pusztakezes harcértékeiddel](068_01_06_puszta_kez.md) védekezel a kör végéig
+- Sikertelen: [Pusztakezes harcértékeiddel](068_01_04_puszta_kez.md) védekezel a kör végéig
 
 🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
 
