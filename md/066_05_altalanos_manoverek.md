@@ -168,7 +168,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 ### Kibontakozás
 
 - Nehézség: `5`
-  - ± `2`  (`1` penge különbségenként) - több támadónál a legnagyobb fegyver számít
+  - ± `2`  (`2` fegyverhossz-kategória különbségenként) - több támadónál a legnagyobb fegyver számít
   - `+2` minden további ellenfél után
   - `-2` minden szövetséges után, aki ellenfeleddel harcol
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
@@ -211,7 +211,7 @@ Láncos fegyverekkel hajthatod végre.
 - 🟨 Normál követelmény: Használt láncos fegyverre [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) – `1.fok`
 - 🟥 Erős követelmény:
   - Láncos fegyver használata
-  - Minimum `0.5 penge` nagyságú fegyver ellen lehet csak használni
+  - Minimum `1` fegyverhossz-kategória nagyságú fegyver ellen lehet csak használni
 
 **Hatás**:
 - Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
@@ -295,7 +295,7 @@ Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 - Nehézség: `10-12` (A jel bonyolultságától függ)
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény: Mesterfegyver – `2.fok`
-- 🟥 Erős követelmény: legfeljebb `1` penge hosszú hegyes szúrófegyver
+- 🟥 Erős követelmény: legfeljebb `2` fegyverhossz-kategória hosszú hegyes szúrófegyver
 
 **Hatás**: Sikeres manőver esetén képes vagy mesterjeledet belekarcolni ellenfeled ruhájába vagy bőrébe (`1 ÉP`).
 
