@@ -28,7 +28,7 @@ Belharc: 2.fok
 
 ```
 Közelharc harcmodor kötelező
-Max 0 penge hosszú fegyver
+Max 1 fegyverhossz-kategória fegyver
 
 Puszta kéz harcértékei
   TÉ, VÉ, SP = 0

@@ -28,7 +28,6 @@ Cselekedetek
 
 🔆Ha a kört mozgással kezded, akkor utolsó helyre csúszol a [Kezdeményezésben](064_02_00_harc_menete_reszletes.md#kezdeményezés).
 
-
 ---
 ### `3.` Akció
 
