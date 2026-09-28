@@ -33,7 +33,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 🔒 **Követelmény**:
 - Akrobatika - `12.szint`
 - Csak Hajlékonyvértben
-- Maximum `MGT:10` értékű vértben
+- Maximum `MGT:10` értékű vértben (Erő módosítót is beleszámolva)
 - Maximum össz fegyverméret: 3
 
 🌟 **Hatás**: `TÉ:+3, VÉ:+3`
