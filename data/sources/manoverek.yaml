@@ -172,7 +172,7 @@ manőverek:
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 1 }
     - { erősség: "erős", típus: "egyéb", leírás: "Láncos fegyver használata" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 0.5 kategória" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 1 fegyverhossz-kategória" }
 - név: "Lánccsapdából szabadítás"
   típus: "általános"
   nehézség: 7
@@ -232,7 +232,7 @@ manőverek:
   id: "mesterjel"
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 2 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 1 kategória hosszú hegyes szúrófegyver" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 2 fegyverhossz-kategória hosszú hegyes szúrófegyver" }
   helyzetfüggő_módosítók:
     - kategória: "Jel bonyolultsága"
       mód: "single"

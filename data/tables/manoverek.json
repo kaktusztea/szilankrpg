@@ -397,7 +397,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Ellenfél fegyvere minimum 0.5 kategória"
+        "leírás": "Ellenfél fegyvere minimum 1 fegyverhossz-kategória"
       }
     ],
     "helyzetfüggő_módosítók": [],
@@ -550,7 +550,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Legfeljebb 1 kategória hosszú hegyes szúrófegyver"
+        "leírás": "Legfeljebb 2 fegyverhossz-kategória hosszú hegyes szúrófegyver"
       }
     ],
     "helyzetfüggő_módosítók": [
