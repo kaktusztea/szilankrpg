@@ -387,7 +387,7 @@ https://github.com/kaktusztea/szilankrpg/
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Páncél MGT](069_03_pancel_MGT.md)
+- [Páncél MGT, Akadály](069_03_pancel_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
@@ -1390,8 +1390,10 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
 
 ```
 -1 pont: közepes tárgy
+  → Könnyűvért 50%+ fedésben
   → rövidkard, Közepes pajzs, 20m kötél ..
 -2 pont: nagy tárgy
+  → Merevvért 50%+ fedésben (pikkely, lemez)
   → alabárd, Nagy pajzs ..
 ```
 
@@ -20951,7 +20953,7 @@ Sebzés jellege
 ### 😵 VÉ csökkentés ( TÉ < VÉ )
 
 ```
-k20P == k20 egyes rész páratlan/páros
+k20P == k20 egyes része páratlan/páros/nullás
 
 0: 1,3,5,7,9,11,13,15,17,19
 1: 2,4,6,8,12,14,16,18
@@ -22307,6 +22309,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 ### [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
 
 - [Beszorított ellenfél](065_01_01_pozitiv_helyzetek.md#beszorított-ellenfél)
+- [Beszorított ellenfél - hosszú fegyverrel](065_01_01_pozitiv_helyzetek.md#beszor%C3%ADtott-ellenf%C3%A9l---hossz%C3%BA-fegyverrel)
 - [Harci szekér](065_01_01_pozitiv_helyzetek.md#harci-szekér)
 - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
 - [Közönség előtt](065_01_01_pozitiv_helyzetek.md#közönség-előtt)
@@ -22346,7 +22349,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
 
-- [Fegyverméret](065_01_04_fegyver_harci_helyzetek.md#fegyverméret)
+- [Fegyverviszony](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony)
 - [Képzetlen fegyverhasználat](065_01_04_fegyver_harci_helyzetek.md#képzetlen-fegyverhasználat)
 - [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc)
 - [Sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md#sebzéstípusok)
@@ -22370,6 +22373,28 @@ Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul 
 
 ```
 Előny+1 TÉ dobásra
+```
+
+<br />
+
+---
+## Beszorított ellenfél - hosszú fegyverrel
+
+Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
+
+```
+Előny+2 TÉ dobásra
+```
+
+<br />
+
+---
+## Harci szekér## Beszorított ellenfél - hosszú fegyverrel
+
+Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
+
+```
+Előny+2 TÉ dobásra
 ```
 
 <br />
@@ -22881,7 +22906,7 @@ Ogár
 
 ### Pengeméret-különbség és lények mérete
 
-A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
+A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
 
 <br />
 
@@ -22975,9 +23000,9 @@ Hátrány-1 Érzék (Látás)
 
 Fegyver-specifikus harci helyzetek (státuszok).
 
-## Fegyverméret
+## Fegyverviszony
 
-A felek által forgatott fegyverek méretének viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket.
+A felek által forgatott fegyverek hosszának egymáshoz mért viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket. Tehát a VÉ csökkentés esetén igaz a "*A hosszabb fegyver jobb*" mondás - de ne feledjük, más-más szituációkban előnybe kerülhetnek a rövidebb fegyverek is.
 
 ### Pengehátrány
 
@@ -23883,7 +23908,7 @@ Nagyobb fegyver
 
 <br />
 
-## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret)
+## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony)
 
 A két fegyver pengeméreteinek összege.
 
@@ -26403,7 +26428,7 @@ Túlcsordulás esetén
 
 ### [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
 
-### [Páncél MGT](069_03_pancel_MGT.md)
+### [Páncél MGT, Akadály](069_03_pancel_MGT.md)
 
 ### [Védett terület](069_04_vedett_terulet.md)
 
@@ -26695,7 +26720,7 @@ A fém páncélok, ha felforrósodnak, folyamatos sebzést okozhatnak körönké
 ---
 ## File: md/069_03_pancel_MGT.md
 
-## Páncél MGT
+## Páncél MGT, Akadály
 
 Harc és mozgás során a páncélok korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a kimondottan a páncélok MGT értékeivel foglalkozik. Az általános MGT összefoglaló oldalt lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
 
@@ -26897,23 +26922,14 @@ MGT növekedés:
 
 ## Felszerelés MGT
 
-A páncél MGT mellett kapcsolódó érték a [Felszerelés MGT](010_03_06_felszereles.md), amely szintén harcot korlátozó tényező lehet.
-
-Az ott leírt **Felszerelés keretből** (`Erő+2`) levon pár pontot, ha páncélod legalább `50%`-ban fed - az alábbiak szerint:
-```
-1 pont: Könnyűvért 50%+ fedésben
-2 pont: Merevvért 50%+ fedésben
-        (pikkely, lemez)
-```
-
-A túlcsorduló Felszerelés pont további MGT hatást okozhat. Bővebben [lásd ott](010_03_06_felszereles.md).
+A páncél MGT mellett kapcsolódó érték a [Felszerelés MGT](010_03_06_felszereles.md), amely szintén harcot korlátozó tényező lehet és a Felszerelés keret túlcsordulásából születhet.
 
 ---
-## Hosszútávú viselet, barangolás páncélban
+## Akadály: hosszútávú viselet, barangolás páncélban
 
 Egy páncél viselete rövidtávon nem okoz problémát, de hosszútávú gyaloglás és viselet esetén már igen kimerítő és ez a csapat haladását is befolyásolhatja. Az ilyen felszerelés hosszútávú szállításához kíséret, fegyverhordozó, málhásállatok, szekér szükséges. A leírtak alacsony MGT értékkel kitűnő, magas minőségű vértekre is vonatkoznak!
 
-### `1.` Félvért, közepes pajzs tartós viselete, cipelése
+### `1.` Akadály: félvért, közepes pajzs tartós viselete, cipelése
 
 Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
 
@@ -26923,7 +26939,7 @@ Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
   Ez hátráltatja a csapatot.
 ```
 
-### `2.` Teljes vért, Nagy pajzs
+### `2.` Akadály: teljes vért, Nagy pajzs
 
 ```
 + Státusz: Fizikai (2)
@@ -26932,6 +26948,10 @@ Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
 ```
 
 Magasabb szinteken előfordulhatnak mágikus könnyítések, mint kisebb tárgyakká alakuló varázsfegyverek, páncélok.
+
+### Akadály `2` érték felett
+
+Ilyen helyzetben a karakter nem képes tartósan haladni, legfeljebb pár `10-100` métert.
 
 ---
 
