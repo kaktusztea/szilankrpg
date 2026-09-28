@@ -43,6 +43,8 @@ fokok:
         típus: "mesterfegyver"
       # típus: "tiltó_fortély" — a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok
       #   (pl. "Nem lehetsz Analfabéta"). érték: 1 = a fortély bármely foka tilt.
+      # típus: "min_fegyverméret" — harci-helyzet-kötött min fegyverhossz WARNING (nem blokkol):
+      #   { típus: "min_fegyverméret", érték: <min fegyverhossz>, feltétel: "harci_helyzet:<id>" }
     hatástext:
       - text: ""
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.

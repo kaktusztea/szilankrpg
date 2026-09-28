@@ -49,9 +49,13 @@ fokok:
       - név: "Léglovaglás"
         érték: 3
         típus: "képzettség"
+      - típus: "min_fegyverméret"
+        érték: 3
+        feltétel: "harci_helyzet:léglovas_harc"
     hatástext:
       - text: "Léglovas harc szituációban: TÉ:+3, VÉ:+3."
-      - text: "Fegyverméret: +1 kategória, min 1 kategória."
+      - text: "Fegyverméret: +2 kategória bónusz"
+      - text: "Forgatott fegyverméret-kategória minimum: 3"
       - text: "Léglovas Manővereket végezhetsz."
     módosítók:
       - cél: "TÉ"
@@ -67,13 +71,7 @@ fokok:
         arány: 0
         feltétel: "harci_helyzet:léglovas_harc"
       - cél: "fegyverhossz"
-        érték: 1
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "harci_helyzet:léglovas_harc"
-      - cél: "min_fegyverhossz"
-        érték: 1
+        érték: 2
         mód: "flat"
         forrás: ""
         arány: 0
@@ -85,9 +83,13 @@ fokok:
       - név: "Léglovaglás"
         érték: 6
         típus: "képzettség"
+      - típus: "min_fegyverméret"
+        érték: 3
+        feltétel: "harci_helyzet:léglovas_harc"
     hatástext:
       - text: "Léglovas harc szituációban: TÉ:+6, VÉ:+6."
-      - text: "Fegyverméret: +1 kategória, min 1 kategória."
+      - text: "Fegyverméret: +2 kategória bónusz"
+      - text: "Forgatott fegyverméret-kategória minimum: 3"
       - text: "Léglovas Manővereket végezhetsz."
     módosítók:
       - cél: "TÉ"
@@ -103,13 +105,7 @@ fokok:
         arány: 0
         feltétel: "harci_helyzet:léglovas_harc"
       - cél: "fegyverhossz"
-        érték: 1
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "harci_helyzet:léglovas_harc"
-      - cél: "min_fegyverhossz"
-        érték: 1
+        érték: 2
         mód: "flat"
         forrás: ""
         arány: 0
@@ -121,9 +117,13 @@ fokok:
       - név: "Léglovaglás"
         érték: 9
         típus: "képzettség"
+      - típus: "min_fegyverméret"
+        érték: 3
+        feltétel: "harci_helyzet:léglovas_harc"
     hatástext:
       - text: "TÉ:+9, VÉ:+9 léglovas bónusz."
-      - text: "Fegyverméret: +1 kategória, min 1 kategória."
+      - text: "Fegyverméret: +2 kategória bónusz"
+      - text: "Forgatott fegyverméret-kategória minimum: 3"
       - text: "Léglovas Manővereket végezhetsz."
     módosítók:
       - cél: "TÉ"
@@ -139,13 +139,7 @@ fokok:
         arány: 0
         feltétel: "harci_helyzet:léglovas_harc"
       - cél: "fegyverhossz"
-        érték: 1
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "harci_helyzet:léglovas_harc"
-      - cél: "min_fegyverhossz"
-        érték: 1
+        érték: 2
         mód: "flat"
         forrás: ""
         arány: 0

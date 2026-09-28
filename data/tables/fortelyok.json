@@ -4329,7 +4329,8 @@
         "fok": 1,
         "hatás": [
           "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
-          "Fegyverméret: +1 kategória, min 1 kategória.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4340,6 +4341,11 @@
             "név": "Léglovaglás",
             "érték": 3,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ],
         "módosítók": [
@@ -4361,15 +4367,7 @@
           },
           {
             "cél": "fegyverhossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:léglovas_harc"
-          },
-          {
-            "cél": "min_fegyverhossz",
-            "érték": 1,
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4382,7 +4380,8 @@
         "fok": 2,
         "hatás": [
           "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
-          "Fegyverméret: +1 kategória, min 1 kategória.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4393,6 +4392,11 @@
             "név": "Léglovaglás",
             "érték": 6,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ],
         "módosítók": [
@@ -4414,15 +4418,7 @@
           },
           {
             "cél": "fegyverhossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:léglovas_harc"
-          },
-          {
-            "cél": "min_fegyverhossz",
-            "érték": 1,
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4435,7 +4431,8 @@
         "fok": 3,
         "hatás": [
           "TÉ:+9, VÉ:+9 léglovas bónusz.",
-          "Fegyverméret: +1 kategória, min 1 kategória.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4446,6 +4443,11 @@
             "név": "Léglovaglás",
             "érték": 9,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ],
         "módosítók": [
@@ -4467,15 +4469,7 @@
           },
           {
             "cél": "fegyverhossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:léglovas_harc"
-          },
-          {
-            "cél": "min_fegyverhossz",
-            "érték": 1,
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4534,12 +4528,14 @@
         "fok": 1,
         "hatás": [
           "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
-          "Fegyverméret: +1 kategória, min 1 kategória.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint",
-          "Lovaglás - 6.szint"
+          "Lovaglás - 6.szint",
+          "Minimum fegyverméret: 3"
         ],
         "követelmények": [
           {
@@ -4557,6 +4553,11 @@
             "név": "Lovaglás",
             "érték": 6,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ],
         "módosítók": [
@@ -4578,15 +4579,7 @@
           },
           {
             "cél": "fegyverhossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:lovas_harc"
-          },
-          {
-            "cél": "min_fegyverhossz",
-            "érték": 1,
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4599,12 +4592,14 @@
         "fok": 2,
         "hatás": [
           "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
-          "Fegyverméret: +1 kategória, min 1 kategória.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
-          "Lovaglás - 9.szint"
+          "Lovaglás - 9.szint",
+          "Minimum fegyverméret: 3"
         ],
         "követelmények": [
           {
@@ -4622,6 +4617,11 @@
             "név": "Lovaglás",
             "érték": 9,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ],
         "módosítók": [
@@ -4643,15 +4643,7 @@
           },
           {
             "cél": "fegyverhossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:lovas_harc"
-          },
-          {
-            "cél": "min_fegyverhossz",
-            "érték": 1,
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4664,12 +4656,14 @@
         "fok": 3,
         "hatás": [
           "TÉ:+9, VÉ:+9 lovas bónusz.",
-          "Fegyverméret: +1 kategória, min 1 kategória.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 12.szint",
-          "Lovaglás - 12.szint"
+          "Lovaglás - 12.szint",
+          "Minimum fegyverméret: 3"
         ],
         "követelmények": [
           {
@@ -4687,6 +4681,11 @@
             "név": "Lovaglás",
             "érték": 12,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ],
         "módosítók": [
@@ -4708,15 +4707,7 @@
           },
           {
             "cél": "fegyverhossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:lovas_harc"
-          },
-          {
-            "cél": "min_fegyverhossz",
-            "érték": 1,
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
