@@ -309,6 +309,10 @@
       {
         "típus": "manőver_állapot",
         "érték": "passzív"
+      },
+      {
+        "típus": "narratív",
+        "név": "Ellenfél fegyvere fém"
       }
     ],
     "hatás": [
@@ -345,12 +349,16 @@
       }
     ]
   },
-  "kampos_veg_labkirantas": {
-    "id": "kampos_veg_labkirantas",
-    "név": "Kampós vég - Lábkirántás",
+  "kampos_veggel_labkirantas": {
+    "id": "kampos_veggel_labkirantas",
+    "név": "Kampós véggel lábkirántás",
     "csoport": "tulajdonság",
-    "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veg_labkirantas]`).\n",
+    "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).\n",
     "feltétel": [
+      {
+        "típus": "aktor",
+        "érték": "kampós"
+      },
       {
         "típus": "manőver_állapot",
         "érték": "aktív"
