@@ -173,6 +173,7 @@ extrak:
     feltétel:
       - {típus: forgatás, érték: egykezes}
       - {típus: manőver_állapot, érték: passzív}   # a manőver a fegyver ELLEN történik
+      - {típus: narratív, név: "Ellenfél fegyvere fém"}
     hatás:
       - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:lefegyverzés"}
       - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:fegyvertörés"}
@@ -188,14 +189,15 @@ extrak:
     hatás:
       - {cél: vé_veszteség, mód: szorzó, érték: 2}
 
-  - id: kampos_veg_labkirantas
-    név: "Kampós vég - Lábkirántás"
+  - id: kampos_veggel_labkirantas
+    név: "Kampós véggel lábkirántás"
     csoport: tulajdonság
     leírás: >
       A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad.
       Jelenleg nincs fegyver, ami használja.
       pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veg_labkirantas]`).
     feltétel:
+      - {típus: aktor, érték: kampós}
       - {típus: manőver_állapot, érték: aktív}   # a manőver a fegyver ELLEN történik
     hatás:
       - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:lábkirántás"}

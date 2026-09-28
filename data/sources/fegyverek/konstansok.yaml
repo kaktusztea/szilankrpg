@@ -22,6 +22,7 @@ aktor:
   botvég:                      {sebzésjelleg: zúzó,         SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   buzogányfej-tompa:           {sebzésjelleg: zúzó,         SP: 2, átütés: 0, TÉ: 0, VÉ: -2, sebesség: 0}
   buzogányfej-szöges:          {sebzésjelleg: zúzó,         SP: 1, átütés: 2, TÉ: 0, VÉ: -3, sebesség: 0}
+  kampós:                      {sebzésjelleg: zúzó,         SP: -5,átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   pengehegy-apró:              {sebzésjelleg: szúró,        SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   pengehegy-tőr:               {sebzésjelleg: szúró,        SP: 1, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   pengehegy-kard:              {sebzésjelleg: szúró,        SP: 2, átütés: 1, TÉ: 0, VÉ: 0,  sebesség: 0}
