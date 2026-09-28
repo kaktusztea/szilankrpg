@@ -19,9 +19,23 @@
 | **Fegyver Idea implementáció** 🐞 | `fegyverek[].idea` `[-5;+5]` → TÉ/CÉ/VÉ/SP módosító (`md/068_01_14`). A mező létezik és szerializálódik, de EGYETLEN kalkuláció sem használja | harcszimulacio.spec §16/8 |
 | Akadályoztatás státuszok | `Fegyver/Pajzs akadályoztatása`, `Páncél akadályoztatása` - `md/082`-ben definiált, `statuszok.yaml`-ban nincs | harcszimulacio.spec §16/9 |
 | Fárasztás érték data layerbe | A `3 VÉ` csak `megjegyzés` prózában él (`módosítók: {}`) - séma-bővítés kell | harcszimulacio.spec §16/2 |
-| MK párok ellenőrzése | `Kard, Slan` és `Mara-sequor` nem követi a `TÉ-2/VÉ-2 + Átütés megszűnik` MK szabályt. Szándékos? | harcszimulacio.spec §16/10 |
 | **`cél_páncél` VÉ/SFÉ extrák bekötése** | A `cél_páncél` extrák SP-hatású ága kész (Sebzés popup „Ellenfél páncél" választó → `panceltalant_jobban_sebez` +3 SP). A VÉ/SFÉ-hatásúak (`sfe_duplazodik` = Meneth, `pocsek_vedekezo_pancelos_ellen` = Béltépő) NINCSENEK bekötve: koncepcionális kérdés, mert a statikus fegyver-VÉ/SFÉ nem függhet dobásonként változó ellenfél-páncéltól (a Sebzés popup a támadó dobása). Feloldás: vagy egy külön „feltételezett ellenfél páncél" harc-szintű state a VÉ-táblához, vagy a reactive engine feltétel-dispatchbe kötött `cél_páncélosztály` context. Döntés kell. | STUDY.fegyvergenerator_v2 3g |
 | **Egységes effekt-modell** | A fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia). 1. fázis kész (szabvány + `extrak.yaml` pilot); 2. adat-migráció opportunista; 3. kód-összeolvasztás a reactive runtime effekt-fázisnál. | §42 |
+
+---
+
+## Fegyver v2 bevezetés - hátralévő tételek
+
+> Kanonikus migrációs dokumentum (részletek, döntések, állapot): **`STUDY.fegyvergenerator_v2.md`** (wiki). Itt CSAK a hátralévő tételek pointer-listája áll, hogy ne duplikálódjon. A v2 "mag" kész: a webapp runtime a `fegyverek_v2.json`-t olvassa (data layer csere 3a, típusok/kalkuláció 3b, reactive context 3e, Sebzés popup + Ellenfél páncél SP-ág 3g, kétkezes harc, lovas követelmények, szabálykönyv `md/` átvezetés - mind kész).
+
+Ami a v2 bevezetésből még hátravan (KIZÁRÓLAG ez a 4):
+
+1. **`cél_páncél` VÉ/SFÉ-hatású extrák** (Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) - az SP-ág kész, a VÉ/SFÉ-ág tervezési döntést kér. Részletek: a fenti backlog-sor + STUDY 3g.
+2. **Fegyver Idea implementáció** 🐞 - holt mező → `rules.json`. Részletek: a fenti backlog-sor.
+3. **Egységes effekt-modell (§42) 2-3. fázisa** - reactive runtime feltétel→hatás kiértékelés. Részletek: a fenti backlog-sor + STUDY.
+4. **Pajzs pipeline kivezetése** - a régi `process_fegyverek.py` kerülő-útról a `fegyverek_v2.json`-ra. Részletek: STUDY "Kezelendő következmények".
+
+NEM része a v2 bevezetésnek (külön backlog / más alrendszer): Erő-követelmény mechanika (generátor-balansz), Akadályoztatás státuszok (státusz data-layer), Fárasztás érték (taktika data-layer), balansz `raw`→`final` hangolás (külön backlog), opcionális KM-fejezet + custom fegyver mező (külön backlog).
 
 ---
 
