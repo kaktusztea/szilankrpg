@@ -17,9 +17,9 @@ interface Props {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   data: GameData;
-  /** Manőver Alap — kanonikus érték a reactive engine-ből (rules.json: manőver_alap). */
+  /** Manőver Alap - kanonikus érték a reactive engine-ből (rules.json: manőver_alap). */
   manőverAlap: number;
-  /** Aktív fegyver TÉ (from Harc fül computed — may be unavailable). */
+  /** Aktív fegyver TÉ (from Harc fül computed - may be unavailable). */
   aktívTÉ: number | null;
   /** Aktuális VÉ (base - csökkenés). */
   aktívVÉ: number | null;
@@ -34,7 +34,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
 
-  // Helyzetfüggő módosítók — CSAK aktív módban (mindig az alkalmazó módosítói).
+  // Helyzetfüggő módosítók - CSAK aktív módban (mindig az alkalmazó módosítói).
   const módosítóTáblák = mód === 'aktív' ? (manőver.helyzetfüggő_módosítók ?? []) : [];
   const [szitPickerNyitva, setSzitPickerNyitva] = useState(false);
   const [mpPickerNyitva, setMpPickerNyitva] = useState(false);
@@ -55,7 +55,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     : Math.min(aktMP, data.konstansok.manőver?.max_mp_védő ?? 2);
   const belharcSzorzó = data.konstansok.manőver?.belharc_fok_szorzó ?? 2;
 
-  // 0. lépés: követelmények (CSAK aktív módban — az alkalmazóra vonatkoznak).
+  // 0. lépés: követelmények (CSAK aktív módban - az alkalmazóra vonatkoznak).
   const követelmények = mód === 'aktív' ? (manőver.követelmények ?? []) : [];
   const vanKövetelmény = követelmények.length > 0;
   // Egy erősségre csak akkor kell "hiány" gomb, ha van HIÁNYOZHATÓ eleme:
@@ -132,7 +132,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
   function renderMegakasztás() {
     if (mód === 'aktív') {
-      // Ellenem támadnak — szükségem van a VÉ-mre.
+      // Ellenem támadnak - szükségem van a VÉ-mre.
       return (
         <div className="manover-fazis-info">
           <div className="manover-fazis-desc">Ellenfél támad a VÉ-d ellen</div>
@@ -140,7 +140,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         </div>
       );
     } else {
-      // Én támadok (megakasztás) — szükségem van a TÉ-mre.
+      // Én támadok (megakasztás) - szükségem van a TÉ-mre.
       return (
         <div className="manover-fazis-info">
           <div className="manover-fazis-desc">Megakasztás támadás</div>
@@ -270,7 +270,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
               })}
             </div>
             {gépiStátusz.erősHiány
-              ? <div className="manover-kov-auto-fail">Erős követelmény hiányzik — a manőver nem kísérelhető meg.</div>
+              ? <div className="manover-kov-auto-fail">Erős követelmény hiányzik - a manőver nem kísérelhető meg.</div>
               : !követelményKész && (
                 <div className="manover-fazis-chips">
                   <button className="manover-chip manover-chip-igen"
@@ -312,7 +312,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                       <div className="manover-fazis-magyarazat">ⓘ {manőver.fázis_info[f]}</div>
                     )}
                     {/* E és V: a dobás-UI mindig kell (E: módosítók/MP/célszám; V: TÉ chip a
-                        tényleges támadó dobás értékével — a magyarázat KIEGÉSZÍTI, nem helyettesíti).
+                        tényleges támadó dobás értékével - a magyarázat KIEGÉSZÍTI, nem helyettesíti).
                         M: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást). */}
                     {(f === 'E' || f === 'V' || !manőver.fázis_info?.[f]) && renderFázisInfo(f)}
                     <div className="manover-fazis-chips">
@@ -431,7 +431,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             </div>
           ) : (
             <div className="manover-te-none">
-              Ennél a manővernél <strong>nincs</strong> a szokásos <strong>+4 TÉ</strong> a Végrehajtásra — sima támadást dobsz.
+              Ennél a manővernél <strong>nincs</strong> a szokásos <strong>+4 TÉ</strong> a Végrehajtásra - sima támadást dobsz.
             </div>
           )}
         </div>

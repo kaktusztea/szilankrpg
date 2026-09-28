@@ -2437,7 +2437,7 @@
   {
     "név": "Hárító: Csatakesztyű",
     "kategória": "kardvívó",
-    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Nem támadhat vele — a fenti mód csak a passzív VÉ-bónuszt jelzi. Ha mindkét kéz hárítófegyvert forgat, akkor is csak ennyi VÉ jár, további bónusz nem.",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Nem támadhat vele - a fenti mód csak a passzív VÉ-bónuszt jelzi. Ha mindkét kéz hárítófegyvert forgat, akkor is csak ennyi VÉ jár, további bónusz nem.",
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": true,
@@ -2537,7 +2537,7 @@
   {
     "név": "Kopja, harci",
     "kategória": "lándzsavívó",
-    "megjegyzés": "Csak lovon használható, Lándzsavívás harcmodorban forgatandó. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) — a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
+    "megjegyzés": "Csak lovon használható, Lándzsavívás harcmodorban forgatandó. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
     "fegyverhossz": 4,
     "akadály": 2,
     "övön_hordható": false,
@@ -2562,7 +2562,7 @@
   {
     "név": "Kopja, torna",
     "kategória": "lándzsavívó",
-    "megjegyzés": "Puhafa, lovagi tornákra való. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) — a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
+    "megjegyzés": "Puhafa, lovagi tornákra való. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).",
     "fegyverhossz": 4,
     "akadály": 2,
     "övön_hordható": false,

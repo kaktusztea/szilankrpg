@@ -2,7 +2,7 @@
  * Sikertelen támadás VÉ csökkentésének kalkulációja (harcszimulacio.spec.md §5.3).
  *
  * VÉ csökkentés = Fegyverviszony bázisérték + k20P(a Támadó dobás k20-ja).
- * A k20P mindig a már eldobott támadó k20-ból jön (közös kocka, §13.1 — 2026-09-26 döntés),
+ * A k20P mindig a már eldobott támadó k20-ból jön (közös kocka, §13.1 - 2026-09-26 döntés),
  * nincs külön dobás.
  */
 import { k20P } from '../../engine/dice';

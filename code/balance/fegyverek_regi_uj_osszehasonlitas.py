@@ -5,14 +5,14 @@
 A két forrás STRUKTÚRÁJA eltér:
   RÉGI: flat lista, egy fegyver = egy rekord, TÉ/VÉ/SP egyetlen szám (stringként).
         (1K)/(2K) párok külön rekord (`Alapnév`/`MK_pár` mezővel összekapcsolva).
-        Van benne 4 "Hárító: ..." és 3 pajzs rekord, amik NEM fegyverek — kizárva.
+        Van benne 4 "Hárító: ..." és 3 pajzs rekord, amik NEM fegyverek - kizárva.
   ÚJ:   fegyverenkénti `módok[]` lista (elsődleges/másodlagos aktor-variánsok saját
         TÉ/VÉ/SP-vel). Az ELSŐDLEGES módot (`sebzéstípus: "elsődleges"`) vesszük az
         összevetéshez, mert ez felel meg a régi egyetlen flat sornak.
 
 Névpárosítás: NEM egyezik automatikusan minden esetben (pl. "Predoci egyeneskard" (régi)
 vs "Kard, predoci egyeneskard" (új), "Alabárd S+V"/"Alabárd Z" (régi, 2 sor) vs "Alabárd"
-(új, 1 sor)) — kézi alias-tábla + "nincs pár" listázás mindkét irányban.
+(új, 1 sor)) - kézi alias-tábla + "nincs pár" listázás mindkét irányban.
 
 Futtatás:  python3 code/balance/fegyverek_regi_uj_osszehasonlitas.py
 """
@@ -135,7 +135,7 @@ def md_riport(sorok, nincs_uj_par, uj_csak_ujban):
         return f"{v:+d}" if v != 0 else "±0"
 
     sorok_md = []
-    sorok_md.append("# Fegyverek — régi vs v2 generátor összehasonlítás\n")
+    sorok_md.append("# Fegyverek - régi vs v2 generátor összehasonlítás\n")
     sorok_md.append(
         "Forrás: `data/tables/fegyverek.json` (régi, webapp runtime) vs "
         "`data/tables/fegyverek_v2.json` (v2 generátor, elsődleges mód).\n"
@@ -195,7 +195,7 @@ if __name__ == "__main__":
               f"{s['te_delta']:>+6d} {s['ve_delta']:>+6d} {s['sp_delta']:>+6d} "
               f"{s['seb_delta']:>+6d} {s['at_delta']:>+9d}")
 
-    print(f"\n=== NAGY delta (|TÉ|+|VÉ|+|SP| > 5) — leginkább megváltozott fegyverek ===")
+    print(f"\n=== NAGY delta (|TÉ|+|VÉ|+|SP| > 5) - leginkább megváltozott fegyverek ===")
     for s in sorted(sorok, key=lambda x: -(abs(x["te_delta"]) + abs(x["ve_delta"]) + abs(x["sp_delta"]))):
         osszeg = abs(s["te_delta"]) + abs(s["ve_delta"]) + abs(s["sp_delta"])
         if osszeg > 5:

@@ -99,12 +99,12 @@ feltétel_prefixek:
   - "manőver"             # pl. "manőver:kibontakozás" (a manoverek.yaml id-je)
   - "státusz"             # pl. "státusz:bénultság"
   - "páncél"              # pl. "páncél:viselt" - aktív páncél MGT > 0
-  - "fortély"             # pl. "fortély:Mesterfegyver" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
-  - "képzettség"          # pl. "képzettség:Harcmodor" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
-  - "manőver_állapot"     # pl. "manőver_állapot:passzív" — egységes effekt-modell (engine_spec §42)
-  - "ellenfél_fegyver_sebzésjelleg"  # pl. "ellenfél_fegyver_sebzésjelleg:zúzó" — egységes effekt-modell (engine_spec §42)
+  - "fortély"             # pl. "fortély:Mesterfegyver" - entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
+  - "képzettség"          # pl. "képzettség:Harcmodor" - entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
+  - "manőver_állapot"     # pl. "manőver_állapot:passzív" - egységes effekt-modell (engine_spec §42)
+  - "ellenfél_fegyver_sebzésjelleg"  # pl. "ellenfél_fegyver_sebzésjelleg:zúzó" - egységes effekt-modell (engine_spec §42)
 
-# Egységes effekt-mód enum (engine_spec §42.2) — az effekt-adat `mód`/`operátor` értékei.
+# Egységes effekt-mód enum (engine_spec §42.2) - az effekt-adat `mód`/`operátor` értékei.
 # A `előny`/`hátrány` a `előny_hátrány` MÓD-KATEGÓRIA két operátor-neve (előjeles érték).
 effekt_módok:
   - "flat"        # cél += érték
@@ -396,7 +396,7 @@ locked_fortélyok:
 # ============================================================
 
 # mesterfegyver_bónuszok: DERIVÁLT a fortelyok/harci/mesterfegyver.yaml per-fok módosítóiból
-# (data/gen/konstansok.py → _derive_mf_bónuszok). NE írd ide kézzel — a fortély a mérvadó forrás.
+# (data/gen/konstansok.py → _derive_mf_bónuszok). NE írd ide kézzel - a fortély a mérvadó forrás.
 
 # ============================================================
 # Kétkezes harc bónuszai
@@ -603,7 +603,7 @@ vé_csökkentés_gombok: [1, 2, 3]
 taktika_vé_eltolás_limit: 10
 
 # Sikertelen támadás VÉ csökkentésének bázisértéke Fegyverviszony szerint
-# (harcszimulacio.spec.md §5.3 — a k20P a kódban adódik hozzá, nem itt).
+# (harcszimulacio.spec.md §5.3 - a k20P a kódban adódik hozzá, nem itt).
 vé_csökkentés_alap:
   fegyverhátrány: 0
   fegyverazonosság: 1

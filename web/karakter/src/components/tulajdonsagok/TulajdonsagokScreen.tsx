@@ -101,7 +101,7 @@ export function TulajdonsagokScreen({
     if (név.includes(':') && !név.startsWith('__') && !data.kepzettsegDefs.some(d => d.név === név)) {
       actualNév = név.split(':')[1];
     }
-    // Compute insert position without mutating — the képzettség is only added
+    // Compute insert position without mutating - the képzettség is only added
     // once the user picks a szint (cancel = no insert, no undo entry).
     const parentDef = data.kepzettsegDefs.find(d =>
       d.többszörös.length > 0 && d.többszörös[0] !== '*' && d.többszörös.includes(actualNév)

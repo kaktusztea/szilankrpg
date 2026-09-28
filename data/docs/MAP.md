@@ -1,4 +1,4 @@
-# Szilánk RPG — Kódtérkép
+# Szilánk RPG - Kódtérkép
 
 ## Repo gyökér (`/repo/github/szilank.code/`)
 
@@ -22,19 +22,19 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
     fegyvergenerator_balansz.py       Fegyvergenerátor modell + balansz teszt (tempó/sebzés, statikus)
     fegyvergenerator_fegyverlista.py  A generátorból md fegyvertábla emittálás (importálja a balanszt)
     fegyvergenerator_data_adapter.py  Taktikák/Harci helyzetek/Manőverek/Státuszok generikus hatás-kiértékelője
-                                       (data/tables/*.json direkt betöltés — nincs kézzel duplikált adat)
-    fegyvergenerator_harcszimulator.py  Kör-alapú harci motor (statblokk, VÉ könyvelés, sebzés — spec §2-§9)
+                                       (data/tables/*.json direkt betöltés - nincs kézzel duplikált adat)
+    fegyvergenerator_harcszimulator.py  Kör-alapú harci motor (statblokk, VÉ könyvelés, sebzés - spec §2-§9)
                                        önteszt: `python3 code/balance/fegyvergenerator_harcszimulator.py`
     fegyvergenerator_taktikai_ai.py   Kör-elejei döntési réteg a motor fölött: minden harcos minden körben
                                        újraválaszt taktikát/manővert (ÖSSZES közelharci taktika + a helyzetre
-                                       leképezhető manőverek — l. modul-fej a korlátokért). `kuzdelem_ai()`.
+                                       leképezhető manőverek - l. modul-fej a korlátokért). `kuzdelem_ai()`.
                                        önteszt: `python3 code/balance/fegyvergenerator_taktikai_ai.py`
     fegyvergenerator_balansz_elemzes.py  Nagyszabású, MINDEN fegyverre kiterjedő mátrix-elemzés (páncélosztály
                                        × AI be/ki × tükör-harc + 1:3 túlerő). Konklúziót ad: mely fegyverek
                                        (túl) erősek/gyengék minden körülményben, kategória-átlagok,
                                        páncélfüggő szélsőségek. Futtatás: `python3
                                        code/balance/fegyvergenerator_balansz_elemzes.py [--n=250] [--gyors]`
-                                       — a kimenet NEM kerül a repóba (work file), a konklúziót olvasható
+                                       - a kimenet NEM kerül a repóba (work file), a konklúziót olvasható
                                        riportba kell átvezetni (l. wiki STUDY.* konvenció).
     fegyverek_regi_uj_osszehasonlitas.py  A régi (`data/tables/fegyverek.json`) és a v2 fegyvergenerátor
                                        (`data/sources/fegyverek/fegyverek.generated.json`) harcértékeinek
@@ -55,7 +55,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `types.ts` | Karakter v2, Session, Fortely interface-ek |
 | `data-types.ts` | GameData, FortelySummary, TaktikaEntry, HarciHelyzetEntry stb. |
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
-| `fortely-mods.ts` | calcFortelyMods — feltételes fortély módosítók |
+| `fortely-mods.ts` | calcFortelyMods - feltételes fortély módosítók |
 | `mf-utils.ts` | `findMfFokByName` (egyetlen MF egyeztető) + `findMfFok` (fegyvertáblából) + `getMfBónusz` |
 | `alapeset.ts` | Fortély 0.fok (Alapeset) kiértékelés |
 | `ketkezes.ts` | Kétkezes harc összesítő kalkuláció |
@@ -63,7 +63,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `feltetel-eval.ts` | FeltételEvaluator factory (context-alapú feltétel kiértékelés) |
 | `url-share.ts` | Karakter URL export/import (deflate+base64url) + `extractHashFromText` |
 | `version-check.ts` | Elavult HTML felismerés → egyszeri cache-kerülő újratöltés (§30b) |
-| `checkpoint-utils.ts` | Karakter verziók (checkpoint): snapshot, create, restore (truncate/append), delete — §31b |
+| `checkpoint-utils.ts` | Karakter verziók (checkpoint): snapshot, create, restore (truncate/append), delete - §31b |
 | `dice.ts` | Kockadobás: rollDie(sides), rollK20/K10, `rollElőnyHátrányDie(szint, sides)` + k6/k10/k20 wrapperek, `előnyHátrányLabel`, `clampEHSzint` (E/H szint [-2,+2]) |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
@@ -100,7 +100,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 ```
 App.tsx                    Shell: tab navigáció, mód toggle, KP számítás
 Header.tsx                 Fejléc (cím, menü, mód toggle)
-NjkSwitcher.tsx            NJK switcher fix sáv (KM eszköz, Header alatt — csak NJK karakternél). Chipenként KM harci jelölés: long-press → betű-picker, betű-karika tap → jegyzet
+NjkSwitcher.tsx            NJK switcher fix sáv (KM eszköz, Header alatt - csak NJK karakternél). Chipenként KM harci jelölés: long-press → betű-picker, betű-karika tap → jegyzet
 KmJelolesPicker.tsx        KM harci jelölés betű-picker overlay (A–Z színes karika chipek)
 KmJegyzetPopup.tsx         KM harci jegyzet popup (textarea egy NJK jelöléséhez)
 TabBar.tsx                 Alsó tab bar (tükrözött, ikon-only)
@@ -119,7 +119,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
   AktivManover.tsx         Manőver picker
   ManoverDobasPopup.tsx    Manőver dobás popup (követelmény 0. lépés Normál/Erős, fázis lépegetés, Siker/Kudarc, helyzetfüggő módosítók, MP+TÉ popup)
-  manover-dobas-calc.ts    Manőver dobás pure logika (követelmény kiértékelés, fázisok, TÉ-bontás, fázis-feliratok, eredmény-hatás) — a popup számítási magja
+  manover-dobas-calc.ts    Manőver dobás pure logika (követelmény kiértékelés, fázisok, TÉ-bontás, fázis-feliratok, eredmény-hatás) - a popup számítási magja
   AktivStatuszok.tsx       Státusz picker
   AktivFegyverSection.tsx  Fegyver/fogás/páncél toggle szekció
   AktivHatasPool.tsx       Hatás pool box
@@ -217,13 +217,13 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `harci_helyzetek.yaml` | Harci helyzetek (32 db) | `harci_helyzetek.json` |
 | `manoverek.yaml` | Manőverek (38 db) | `manoverek.json` |
 | `statuszok.yaml` | Státuszok (19 db) | `statuszok.json` |
-| `hatasok.yaml` | Hatás mechanikák | — (csak validáció, az app nem tölti be) |
+| `hatasok.yaml` | Hatás mechanikák | - (csak validáció, az app nem tölti be) |
 | `hatas_operatorok.yaml` | Hatás operátorok (8 db) | `hatas_operatorok.json` |
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
 | `hatterek.yaml` | Leíró + Karma hátterek | `hatterek.json` |
 | `szituacio_mapping.yaml` | Képzettség → Szituáció kapcsolatok | → `kepzettsegek.json` (`kapcsolódó_szituációk` mező) |
 
-**`fegyverek/` almappa** (`extrak.yaml`, `fegyverek.yaml`, `konstansok.yaml`, `sebzesjelleg_pancel_matrix.yaml` + séma/generált JSON) — a Fegyvergenerátor v2 saját forrásai, **NEM a `generate_tables.py` pipeline része** (a `code/balance/fegyvergenerator_json.py` tervezői eszköz olvassa be, l. `STUDY.fegyvergenerator_v2` a wikiben, "Migrációs terv"). Elhelyezésük a `data/sources/` alatt kényelmi/konvenció okból történt (naming-lint hatókör), nem jelenti a build-gate bekötését.
+**`fegyverek/` almappa** (`extrak.yaml`, `fegyverek.yaml`, `konstansok.yaml`, `sebzesjelleg_pancel_matrix.yaml` + séma/generált JSON) - a Fegyvergenerátor v2 saját forrásai, **NEM a `generate_tables.py` pipeline része** (a `code/balance/fegyvergenerator_json.py` tervezői eszköz olvassa be, l. `STUDY.fegyvergenerator_v2` a wikiben, "Migrációs terv"). Elhelyezésük a `data/sources/` alatt kényelmi/konvenció okból történt (naming-lint hatókör), nem jelenti a build-gate bekötését.
 
 ## Spec dokumentáció (`data/docs/`)
 

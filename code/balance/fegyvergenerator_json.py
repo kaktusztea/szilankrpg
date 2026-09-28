@@ -3,8 +3,8 @@
 
 A mainstream fegyverek (fegyverek.yaml, `kategória` mezővel bíró rekordok) a v2 (mátrix)
 modellel leszármaztatva, EGY fegyver = EGY JSON elem, benne egy `módok` tömb
-(fegyvermódonként — Aktoronként). NEM lapított/kompatibilis a régi `data/tables/fegyverek.json`
-formátumával (nincs MK_pár/Alapnév név-konkatenálás) — a régi rendszert várhatóan több szabály
+(fegyvermódonként - Aktoronként). NEM lapított/kompatibilis a régi `data/tables/fegyverek.json`
+formátumával (nincs MK_pár/Alapnév név-konkatenálás) - a régi rendszert várhatóan több szabály
 is felváltja majd a cserénél, a cél itt a generátor natural modellje, nem a visszafelé
 kompatibilitás.
 
@@ -14,7 +14,7 @@ Sebesség, Forgatás, Erőlimit, FP}, ... ]. Erő=0 bázisérték (mint a fegyve
 A `build()` a build pipeline része: a `data/gen/fegyverek_v2.py::generate_fegyverek_v2()`
 adapter hívja, és a `generate_tables.py` a kimenetet `data/tables/fegyverek_v2.json`-ba írja
 (ezt olvassa a webapp runtime, `engine/data-loader.ts`). CLI-ből futtatva (`python3
-code/balance/fegyvergenerator_json.py`) a JSON a STDOUT-ra íródik — ad-hoc ellenőrzésre.
+code/balance/fegyvergenerator_json.py`) a JSON a STDOUT-ra íródik - ad-hoc ellenőrzésre.
 """
 import json
 import sys
@@ -28,7 +28,7 @@ _EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
 
 def _extra_id_lista(fv):
     """Az extra id-k listája: saját (fegyverek.yaml → extrak) + ÖRÖKÖLT (fegyverhossz-kategória,
-    szálfegyver_nyélanyag, hajlékony, láncos) — ugyanaz a leszármaztatás, mint a fegyverlista.py-ban,
+    szálfegyver_nyélanyag, hajlékony, láncos) - ugyanaz a leszármaztatás, mint a fegyverlista.py-ban,
     csak itt a nyers id-kat adjuk vissza (nem a megjelenítendő nevet)."""
     ids = []
     ids += list(fv.get("_saját_extrak", []))
@@ -70,7 +70,7 @@ def _fegyver_json(r):
         "fegyverhossz": fv["hossz"],
         "akadály": akadály,
         "övön_hordható": bool(bal.FEGYVERHOSSZ[fv["hossz"]].get("övön_hordható", False)),
-        "ár": None,  # TODO: placeholder — kalkulált érték lesz (fegyverhossz/alapanyag/idea szorzókból), lásd v2.md "Ár"
+        "ár": None,  # TODO: placeholder - kalkulált érték lesz (fegyverhossz/alapanyag/idea szorzókból), lásd v2.md "Ár"
         "extrák": [{"id": eid, "név": _EXTRAK.get(eid, {}).get("név", eid)} for eid in extra_ids],
         "módok": módok,
     }
@@ -78,7 +78,7 @@ def _fegyver_json(r):
 
 def build():
     """A `fegyverek.yaml` (WORK-paraméterek, a generátor modellen át) + `fegyverek_fixed.json`
-    (Garott, hárítófegyverek, Kopják — már végleges módok[] JSON, nem megy át a modellen,
+    (Garott, hárítófegyverek, Kopják - már végleges módok[] JSON, nem megy át a modellen,
     l. `sync_fegyvertablazatok.py` azonos logikája) mainstream fegyvereinek egyesített listája."""
     generalt = [_fegyver_json(r) for r in bal._load("fegyverek.yaml") if "kategória" in r]
     with open(bal.DATA_DIR / "fegyverek_fixed.json", encoding="utf-8") as fh:
@@ -87,7 +87,7 @@ def build():
 
 
 def run():
-    # A validátorok print()-je STDOUT-ra menne (elszennyezné a JSON-t) — ideiglenesen STDERR-re irányítjuk.
+    # A validátorok print()-je STDOUT-ra menne (elszennyezné a JSON-t) - ideiglenesen STDERR-re irányítjuk.
     _stdout = sys.stdout
     sys.stdout = sys.stderr
     try:
@@ -95,7 +95,7 @@ def run():
     finally:
         sys.stdout = _stdout
     if not ok:
-        raise SystemExit("séma-hiba — javítsd a fentieket (lásd fenn), a JSON export nem futott.")
+        raise SystemExit("séma-hiba - javítsd a fentieket (lásd fenn), a JSON export nem futott.")
 
     adat = build()
     json.dump(adat, sys.stdout, ensure_ascii=False, indent=2)

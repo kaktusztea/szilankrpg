@@ -238,7 +238,7 @@
 .manover-veg-sikertelen { background: rgba(244, 67, 54, 0.1); color: var(--error); }
 .manover-veg-buntetve { background: rgba(212, 160, 23, 0.14); color: #e0b84a; }
 
-/* Manőver picker kategóriák — vékony színes bal-sáv a navigációhoz */
+/* Manőver picker kategóriák - vékony színes bal-sáv a navigációhoz */
 .manover-cat { border-left: 3px solid transparent; padding-left: 8px; margin-bottom: 4px; }
 .manover-cat-általános { border-left-color: #6b9bd1; }   /* hideg kék */
 .manover-cat-belharcos { border-left-color: #c98b5e; }   /* meleg barna */

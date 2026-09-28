@@ -47,7 +47,7 @@ manőverek:
     - "Kéz: áldozat max ÉP/3↑, láb: max ÉP/2↑ sebzés szükséges a levágáshoz."
   id: "csonkolás"
   fázis_info:
-    V: "Nem kapod meg a +4 TÉ módosítót — sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+    V: "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
   végrehajtás_té_módosító: 0
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Kardvívás", érték: 6 }
@@ -143,7 +143,7 @@ manőverek:
     - "Utána Futás (Gyorsaság próba)."
   id: "kibontakozás"
   fázis_info:
-    E: "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás — Gyorsaság ellenpróba (Sprint fortély számít)."
+    E: "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
 - név: "Lábkirántás szálfegyverrel"
   típus: "általános"
   nehézség: 6
@@ -407,7 +407,7 @@ manőverek:
     - "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
   id: "belharcba_kerülés"
   fázis_info:
-    E: "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül — mindenképp dobj Ellenpróbát."
+    E: "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül - mindenképp dobj Ellenpróbát."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharcos fegyver és Közelharc harcmodor" }
   helyzetfüggő_módosítók:

@@ -47,7 +47,7 @@ for kdef in kepzettseg_defs.values():
             valid_kep_names.add(alnév)
 
 # Misztikus képzettségek (Tradíció, Faj misztérium, Arkánum) are stored with suffix
-# but have empty többszörös — treat them as wildcard prefix match
+# but have empty többszörös - treat them as wildcard prefix match
 for kdef in kepzettseg_defs.values():
     if kdef.get("csoport") == "misztikus":
         wildcard_kep_prefixes.add(kdef["név"])
@@ -354,7 +354,7 @@ def validate_karakter(karakter_path, leírás, expected):
 # ============================================================
 
 print("=" * 60)
-print("SZILÁNK RPG — Karakter adatkonzisztencia validáció")
+print("SZILÁNK RPG - Karakter adatkonzisztencia validáció")
 print("=" * 60)
 
 all_errors = []
@@ -388,7 +388,7 @@ if all_warnings:
         print(f"  {w}")
 
 if not all_errors:
-    print(f"\n✅ MINDEN VALIDÁCIÓ SIKERES — {len(TEST_KARAKTEREK)} karakter, 0 hiba")
+    print(f"\n✅ MINDEN VALIDÁCIÓ SIKERES - {len(TEST_KARAKTEREK)} karakter, 0 hiba")
     sys.exit(0)
 else:
     print(f"\n❌ {len(all_errors)} hiba található")

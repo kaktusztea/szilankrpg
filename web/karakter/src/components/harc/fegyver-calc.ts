@@ -93,7 +93,7 @@ function calcModResult(
   };
 }
 
-/** Fegyver harcértékek kiszámítása reactive engine-nel — minden módra (Aktoronként). */
+/** Fegyver harcértékek kiszámítása reactive engine-nel - minden módra (Aktoronként). */
 export function calcFegyverResults(
   fegyverRows: { fDef: FegyverAlap; mfFok: number }[],
   k: Karakter, data: GameData,

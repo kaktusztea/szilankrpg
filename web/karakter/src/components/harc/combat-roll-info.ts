@@ -43,7 +43,7 @@ function extractHatások(hatások: StatuszHatas[] | undefined, forrás: string, 
   const result: DobásHatás[] = [];
   for (const h of hatások) {
     if (!célFilter.has(h.cél)) continue;
-    // Státusz hatások 'operátor' kulcsot, taktika hatások 'hatás' kulcsot használnak — mindkettőt elfogadjuk.
+    // Státusz hatások 'operátor' kulcsot, taktika hatások 'hatás' kulcsot használnak - mindkettőt elfogadjuk.
     const op = h.operátor ?? (h as { hatás?: string }).hatás;
     if (op !== 'előny' && op !== 'hátrány' && op !== 'enyhít' && op !== 'szöveges') continue;
     result.push({
@@ -246,7 +246,7 @@ export function célPáncélKategória(
 
 /**
  * Az aktív fegyver `cél_páncél` extráinak SP-hatása a választott páncélosztályra.
- * CSAK az SP-t (`cél: SP`, `mód: flat`) módosító extrákat összegzi — a VÉ/SFÉ-hatásúak
+ * CSAK az SP-t (`cél: SP`, `mód: flat`) módosító extrákat összegzi - a VÉ/SFÉ-hatásúak
  * (sfe_duplazodik, pocsek_vedekezo) a védő-oldali statikus értékbe tartoznak (l. TODO / DEVSTATE).
  */
 export function célPáncélSpDelta(

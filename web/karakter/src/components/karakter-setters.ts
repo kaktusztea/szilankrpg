@@ -15,7 +15,7 @@ export function makeFieldSetter(
     undoLabel: (prev: Karakter[K], next: Karakter[K]) => string,
   ) {
     return (val: Karakter[K]) => {
-      // pushUndo must run OUTSIDE the setKarakter updater — StrictMode invokes
+      // pushUndo must run OUTSIDE the setKarakter updater - StrictMode invokes
       // updaters twice in dev, which would push the undo entry twice.
       pushUndo(undoLabel(karakter[field], val), [{ field: field as string, prev: karakter[field] }], val);
       setKarakter(prev => prev ? { ...prev, [field]: val } : prev);

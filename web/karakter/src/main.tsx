@@ -5,7 +5,7 @@ import { reloadIfStale } from './engine/version-check';
 
 /**
  * Indulás: előbb megnézzük, nem elavult HTML-t szolgált-e ki a böngésző cache-e.
- * Ha igen, újratöltés indul — ilyenkor nem mountolunk, hogy az URL-es karakter
+ * Ha igen, újratöltés indul - ilyenkor nem mountolunk, hogy az URL-es karakter
  * import ne fusson le kétszer (az két slotot hozna létre).
  */
 async function start() {

@@ -1,7 +1,7 @@
-# Sebzésjelleg × páncélosztály mátrix — flat SP delta (bónusz ÉS büntetés).
+# Sebzésjelleg × páncélosztály mátrix - flat SP delta (bónusz ÉS büntetés).
 # Ez a szituációs balansz LELKE: a támadó SP-oldalán módosít, a védő SFÉ-je marad egy szám.
 # Páncélosztály: csupasz | puha (posztó/kabát) | bőr | lánc (fém-hajlékony) | merev (pikkely/lemez).
-# Az osztályba sorolás EXPLICIT (struktúra_osztály, lentebb) — a SFÉ+fém a data/sources páncél_struktúrák-ból jön.
+# Az osztályba sorolás EXPLICIT (struktúra_osztály, lentebb) - a SFÉ+fém a data/sources páncél_struktúrák-ból jön.
 matrix:
   zúzó:         {csupasz: 0,  puha: 0,  bor: 1, lanc: 3,  merev: 3}   # páncéltörő, gyenge húson
   szúró:        {csupasz: 2,  puha: 3,  bor: 1, lanc: 0,  merev: -3}  # réseket talál, lemezről lecsúszik
@@ -10,7 +10,7 @@ matrix:
   nincs:        {csupasz: 0,  puha: 0,  bor: 0, lanc: 0,  merev: 0}
 
 # A data/sources/konstansok.yaml páncél_struktúra nevei → a fenti mátrix páncélosztálya.
-# (A csupasz = nincs vért, nem struktúra — a balansz külön kezeli.)
+# (A csupasz = nincs vért, nem struktúra - a balansz külön kezeli.)
 struktúra_osztály:
   posztó:       puha
   fegyverkabát: puha

@@ -7,7 +7,7 @@ import { upsertSlotEntry } from './slot-utils';
 /**
  * Persists karakter + undoStack to localStorage whenever they change.
  * Skips save if testMode, !isDirty, or viewingCheckpoint.
- * Visszaadja a sikertelen mentések számlálóját (kvóta tele) — a hívó ebből
+ * Visszaadja a sikertelen mentések számlálóját (kvóta tele) - a hívó ebből
  * tud figyelmeztetést megjeleníteni, hogy a hiba ne maradjon néma.
  */
 export function useAutoSave(

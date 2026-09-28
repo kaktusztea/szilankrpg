@@ -6,7 +6,7 @@ export function hatásBadgeLabel(h: DobásHatás): string {
   if (h.operátor === 'előny') return `Előny+${Math.abs(h.érték)}`;
   if (h.operátor === 'hátrány') return `Hátrány-${Math.abs(h.érték)}`;
   if (h.operátor === 'enyhít') return `Enyhít+${Math.abs(h.érték)}`;
-  return h.megjegyzés ?? '—';
+  return h.megjegyzés ?? '-';
 }
 
 /** Shared info display for active Előny/Hátrány effects on any roll. */

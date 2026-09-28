@@ -8,7 +8,7 @@ const DATA_ROOT = resolve(__dirname, '../../../../data');
 let karakter: Karakter;
 
 beforeAll(() => {
-  // encodeKarakterUrl reads window.location — stub it for the node test env.
+  // encodeKarakterUrl reads window.location - stub it for the node test env.
   (globalThis as { window?: unknown }).window = {
     location: { origin: 'https://example.test', pathname: '/app/' },
   };

@@ -1,5 +1,5 @@
 /**
- * Golden test #2 — test_karakter2.json (Teszt karakter, 10. TSz, Dzsenn, komplex session)
+ * Golden test #2 - test_karakter2.json (Teszt karakter, 10. TSz, Dzsenn, komplex session)
  * Cél: minél több picker / non-default érték lefedése.
  * Bronz lánc/sodrony, sisak, végtagvédettség=3, nem passzol, rongálódás=3,
  * kétkezes harc, Támadó taktika fok 3, Hátulról támadás helyzet, Félelem státusz.
@@ -39,7 +39,7 @@ beforeAll(() => {
   }));
 });
 
-describe('Golden #2 — rules.json alapszámítások (Teszt karakter, 10. TSz, Dzsenn)', () => {
+describe('Golden #2 - rules.json alapszámítások (Teszt karakter, 10. TSz, Dzsenn)', () => {
   let results: Map<string, number>;
 
   beforeAll(() => {
@@ -85,7 +85,7 @@ describe('Golden #2 — rules.json alapszámítások (Teszt karakter, 10. TSz, D
   it('merevvért_TÉ_büntetés = 0 (lánc/sodrony nem merev)', () => expect(results.get('merevvért_TÉ_büntetés')).toBe(0));
 });
 
-describe('Golden #2 — fegyver kalkuláció', () => {
+describe('Golden #2 - fegyver kalkuláció', () => {
   let harcmodorÖsszeg: number;
   let lookupArrays: any;
   let stringCtx: Map<string, string>;
@@ -137,7 +137,7 @@ describe('Golden #2 — fegyver kalkuláció', () => {
   });
 });
 
-describe('Golden #2 — kétkezes harc', () => {
+describe('Golden #2 - kétkezes harc', () => {
   it('Kard, lovag + Tőr: TÉ=50, VÉ=65, SP=11, harckeret=0, támadások=1 (MGT=14)', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const result = calcKétkezesHarc({
@@ -156,7 +156,7 @@ describe('Golden #2 — kétkezes harc', () => {
   });
 });
 
-describe('Golden #2 — Fájdalomtűrés enyhítés', () => {
+describe('Golden #2 - Fájdalomtűrés enyhítés', () => {
   it('7. szint → enyhítés = 2', () => {
     const enyhítés = calcFtEnyhites(karakter.képzettségek, konstansok.fájdalomtűrés_enyhítés);
     expect(enyhítés).toBe(2);

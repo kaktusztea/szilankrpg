@@ -147,7 +147,7 @@ export function TavharcLoveskiteres({ karakter, konstansok, tavfegyverek }: Prop
             </div>
             <div className="ke-dobas-detail">Akrobatika+Gyorsaság ({akrobatika}) + k10 ({dobás.k10})</div>
             <div className={dobás.siker ? 'th-lk-siker' : 'th-lk-sikertelen'}>
-              {dobás.siker ? 'Siker — kitértél!' : 'Sikertelen — a lövész jöhet'}
+              {dobás.siker ? 'Siker - kitértél!' : 'Sikertelen - a lövész jöhet'}
             </div>
           </div>
         </PopupOverlay>

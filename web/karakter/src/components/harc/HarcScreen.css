@@ -91,7 +91,7 @@
   text-transform: uppercase;
 }
 
-/* MA: statikus érték — halványabb, nem kattintható */
+/* MA: statikus érték - halványabb, nem kattintható */
 .harc-header-bottom .mp-box .ma-label {
   font-size: 18px;
   font-weight: normal;
@@ -352,7 +352,7 @@
 .ke-history-item:nth-child(2) { color: #888; }
 .ke-history-item:nth-child(3) { color: #555; }
 
-/* Sebzés (SP) érték a Támadó dobás mellett: TÉ(SP) — örökli a fakuló színt */
+/* Sebzés (SP) érték a Támadó dobás mellett: TÉ(SP) - örökli a fakuló színt */
 .te-history-sp {
   margin-left: 1px;
   font-size: 10px;

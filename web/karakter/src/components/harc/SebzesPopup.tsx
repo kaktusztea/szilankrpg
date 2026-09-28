@@ -56,7 +56,7 @@ interface SebzésEredmény {
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + ellenfél páncél + k20 roll + info. */
 export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, sebzésHatások, spBónuszok, megjegyzések, hideAutoBónusz, átütés, onClose }: Props) {
-  // Raw (unclamped) combined value — includes TÉ k20 bonus + active effects.
+  // Raw (unclamped) combined value - includes TÉ k20 bonus + active effects.
   // A másodlagos sebzéstípus −1 E/H-ját a hívó (TamadoDobasPopup) már beépítette a defaultElőny-be.
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
   const [rawSzint, setRawSzint] = useState(baseRaw);
@@ -188,7 +188,7 @@ function PáncélVálasztóBtn({ páncél, delta, onSelect }: {
   const [open, setOpen] = useState(false);
   const aktLabel = páncél ? PÁNCÉLOSZTÁLYOK.find(p => p.id === páncél)?.label : 'nincs';
   const colorClass = delta > 0 ? 'sebzes-stat-pos' : delta < 0 ? 'sebzes-stat-neg' : '';
-  // STUDY 3g: kötelező, kiemelt elem — amíg nincs választva, pulzáló figyelmeztető keret.
+  // STUDY 3g: kötelező, kiemelt elem - amíg nincs választva, pulzáló figyelmeztető keret.
   const kellClass = páncél === null ? ' pancel-valaszto-kell' : '';
 
   return (

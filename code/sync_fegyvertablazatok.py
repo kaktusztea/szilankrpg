@@ -4,13 +4,13 @@
 A `data/sources/fegyverek/fegyverek.yaml` kategóriánkénti rekordjait a fegyvergenerátor
 (`code/balance/fegyvergenerator_balansz.py`) modelljével harcértékekre számolja, PLUSZ a
 `data/sources/fegyverek/fegyverek_fixed.json` azonos kategóriájú rekordjait (Garott,
-hárítófegyverek, Kopják — már végleges módok[] JSON, nem WORK-paraméter, nem megy át a
+hárítófegyverek, Kopják - már végleges módok[] JSON, nem WORK-paraméter, nem megy át a
 generátor modellen), és a kimenő markdown táblát beírja az éles `md/068_0N_*.md` fájlba,
-a `<!-- tag: md_table_fegyver_start -->` / `_end -->` tag-pár közé — a fájl többi része
+a `<!-- tag: md_table_fegyver_start -->` / `_end -->` tag-pár közé - a fájl többi része
 (leíró szöveg, lábjegyzet-szekciók, footer-linkek) érintetlen marad.
 
 A generátor **saját formátumát** használja (nincs backward compatibility a régi flat
-séma oszlopaival) — a régi `Pengehossz`/`MK`/`KF`/`Íves` oszlopok helyett a `módok[]`
+séma oszlopaival) - a régi `Pengehossz`/`MK`/`KF`/`Íves` oszlopok helyett a `módok[]`
 struktúra (Aktor, Jelleg, Sebzéstípus) jelenik meg, egy fegyver több sorban, módonként.
 
 Futtatás:  python3 code/sync_fegyvertablazatok.py [kategória ...]
@@ -76,7 +76,7 @@ def _extrak(r):
 
 
 def _fixed_sorok(kategoria):
-    """`fegyverek_fixed.json` (Garott, hárítófegyverek, Kopják) — már végleges módok[] JSON,
+    """`fegyverek_fixed.json` (Garott, hárítófegyverek, Kopják) - már végleges módok[] JSON,
     nem a fegyverek.yaml WORK-formátum, ezért nem megy át a F(...).modok(ero=0) hívásán."""
     rows = []
     data = json.loads(FIXED_PATH.read_text(encoding="utf-8"))
@@ -129,7 +129,7 @@ def render_tabla(rows, fejlec, jobbra_oszlopnevek):
 
 
 def pajzs_sorok():
-    """A `fegyverek_fixed.json` `pajzs` kategóriájú rekordjai — egyszerűbb tábla, mint a
+    """A `fegyverek_fixed.json` `pajzs` kategóriájú rekordjai - egyszerűbb tábla, mint a
     fegyvereké (egy pajzsnak nincs több módja, nincs Aktor/Jelleg/Sebzéstípus/Fh/FSZ/Extrák)."""
     rows = []
     data = json.loads(FIXED_PATH.read_text(encoding="utf-8"))
@@ -162,11 +162,11 @@ def sync_tag_block(md_path, tag_start, tag_end, rows, fejlec, jobbra_oszlopnevek
     new_text = text[:start + len(tag_start)] + "\n\n" + table + "\n\n" + text[end:]
 
     if new_text == text:
-        print(f"{label}: nincs változás — {md_path.name} érintetlen.")
+        print(f"{label}: nincs változás - {md_path.name} érintetlen.")
         return 0
 
     md_path.write_text(new_text, encoding="utf-8")
-    print(f"{label}: frissítve — {md_path.name} ({len(rows)} sor)")
+    print(f"{label}: frissítve - {md_path.name} ({len(rows)} sor)")
     return 0
 
 

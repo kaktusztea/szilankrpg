@@ -63,7 +63,7 @@ export function TulajdonsagokPopups({
     {/* Szabad szöveges képzettség alnév */}
     {p.promptState && (
       <TextInputPopup
-        label={`${p.promptState.alapNév} — alnév:`}
+        label={`${p.promptState.alapNév} - alnév:`}
         value={p.promptValue}
         onChange={v => close({ promptValue: v })}
         onConfirm={onConfirmPrompt}
@@ -87,10 +87,10 @@ export function TulajdonsagokPopups({
     )}
 
     {/* Új képzettség szint választó */}
-    {/* Új képzettség szint választó — a képzettség csak szint választáskor kerül be */}
+    {/* Új képzettség szint választó - a képzettség csak szint választáskor kerül be */}
     {p.pendingNew && (
       <GridPickerPopup
-        label={`${getDisplayName(p.pendingNew.név, data.kepzettsegDefs)} — szint:`}
+        label={`${getDisplayName(p.pendingNew.név, data.kepzettsegDefs)} - szint:`}
         values={SZINT_VALUES}
         current={0}
         onSelect={n => {

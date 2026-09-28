@@ -7,7 +7,7 @@ interface Props {
   onClose: () => void;
 }
 
-/** Unified delete confirmation popup — label + red button, used across all screens. */
+/** Unified delete confirmation popup - label + red button, used across all screens. */
 export function DeleteConfirmPopup({ label, buttonText, onConfirm, onClose }: Props) {
   return (
     <PopupOverlay onClose={onClose} centerText>

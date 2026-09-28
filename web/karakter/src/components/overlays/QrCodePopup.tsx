@@ -80,11 +80,11 @@ function qrToPngBlob(data: string, size: number, label?: string): Promise<Blob> 
   });
 }
 
-/** QR kód popup — karakter URL megjelenítése beolvasható QR kódként. */
+/** QR kód popup - karakter URL megjelenítése beolvasható QR kódként. */
 export function QrCodePopup({ url, név, tsz, onClose }: Props) {
   const canShare = typeof navigator.share === 'function';
   const filename = `szilank_qr_${név.replace(/\s+/g, '_')}.png`;
-  const pngLabel = `${név} — ${tsz}. szint`;
+  const pngLabel = `${név} - ${tsz}. szint`;
   const [saving, setSaving] = useState(false);
   const [hint, setHint] = useState('');
 
@@ -145,7 +145,7 @@ export function QrCodePopup({ url, név, tsz, onClose }: Props) {
   async function handleDownload() {
     if (saving) return;
     setSaving(true);
-    // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking native file dialog
+    // WORKAROUND: double-rAF-paint - ensures spinner paints before blocking native file dialog
     requestAnimationFrame(() => requestAnimationFrame(async () => {
       try {
         const blob = await qrToPngBlob(url, PNG_SIZE, pngLabel);
@@ -160,19 +160,19 @@ export function QrCodePopup({ url, név, tsz, onClose }: Props) {
     try {
       const blob = await qrToPngBlob(url, PNG_SIZE, pngLabel);
       const file = new File([blob], filename, { type: 'image/png' });
-      await navigator.share({ title: `Szilánk — ${név}`, files: [file] });
+      await navigator.share({ title: `Szilánk - ${név}`, files: [file] });
     } catch (e: any) {
-      // User cancelled (iOS AbortError) — do NOT retry with URL fallback
+      // User cancelled (iOS AbortError) - do NOT retry with URL fallback
       if (e?.name === 'AbortError') return;
       // Fallback: share URL only (files not supported on this platform)
-      try { await navigator.share({ title: `Szilánk — ${név}`, url }); } catch { /* cancelled */ }
+      try { await navigator.share({ title: `Szilánk - ${név}`, url }); } catch { /* cancelled */ }
     }
   }
 
   return createPortal(
     <div className="kep-prompt-overlay" onClick={handleBackdrop}>
       <div className="kep-prompt overlay-menu qr-popup">
-        <label className="overlay-label-center">QR kód — {név}</label>
+        <label className="overlay-label-center">QR kód - {név}</label>
         {isCanvasPoisoned ? (
           <div className="qr-popup-svg qr-popup-svg-img" onContextMenu={e => e.stopPropagation()}>
             <img src={svgDataUrl} alt={`QR kód: ${név}`} width="260" height="260" />

@@ -44,7 +44,7 @@ describe('könnyítettFázisok', () => {
   });
 });
 
-describe('követelményTeljesül — helyzet auto-kiértékelés', () => {
+describe('követelményTeljesül - helyzet auto-kiértékelés', () => {
   const orvKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Orvtámadás harci helyzet' };
   const orvVagyKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Orvtámadás vagy Hátulról támadás harci helyzet' };
   const anatómiaKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Célpont elfszabású anatómiával' };
@@ -98,7 +98,7 @@ describe('követelményJelölés', () => {
   });
 });
 
-describe('követelményTeljesül — fegyver-alapú gépi típusok', () => {
+describe('követelményTeljesül - fegyver-alapú gépi típusok', () => {
   const katKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_kategória', érték: 'kardvívó' };
   const sebKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' };
   const kard: AktívFegyverInfo = { kategória: 'kardvívó', sebzésMódja: 'V/S' };

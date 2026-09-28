@@ -16,7 +16,7 @@ export function isHárító(fDef: { név: string } | undefined): boolean {
 /**
  * Kétkezes fogás elérhető-e az adott jobb kéz fegyverrel.
  * Egyazon fegyver mindkét kézben is megengedett (pl. 2 db tőr, §26), ezért
- * elég 1 nem-hárító fegyver — a jobb kéz fegyvere önmagával párosítható.
+ * elég 1 nem-hárító fegyver - a jobb kéz fegyvere önmagával párosítható.
  */
 export function kétkezesLehetséges(data: GameData, karakter: Karakter, jobbIdx: number): boolean {
   const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;

@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
-"""Fegyvergenerátor — nagyszabású balansz-elemzés, MINDEN fegyver × TÖBB körülmény.
+"""Fegyvergenerátor - nagyszabású balansz-elemzés, MINDEN fegyver × TÖBB körülmény.
 
 Cél: konklúziót levonni arról, mely fegyverek túl erősek / túl gyengék / jól hangoltak,
 minél szélesebb körülmény-mátrixban (páncélosztály × döntési AI be/ki × létszámarány).
 NEM egyetlen új mechanika validálása (ahhoz a `harcszimulacio_selftest.py` és a
-`fegyvergenerator_harcszimulator.py`/`_taktikai_ai.py` self-testjei valók) — ez itt egy
+`fegyvergenerator_harcszimulator.py`/`_taktikai_ai.py` self-testjei valók) - ez itt egy
 FELMÉRÉS, aggregált statisztikával.
 
-Metodológia (l. harcszimulacio.spec.md §12.1 — a klón-csapda):
+Metodológia (l. harcszimulacio.spec.md §12.1 - a klón-csapda):
   - Minden fegyvert egy FIX REFERENCIA fegyver ("Kard, hosszú") ellen mérünk 1:1-ben,
     5 páncélosztályban (csupasz/puha/bőr/lánc/merev), A/B teszttel: alap motor (AI nélkül)
-    VS döntési AI-val (kuzdelem_ai) — ez adja a "mennyit nyer/veszít a taktikai réteg" képet.
+    VS döntési AI-val (kuzdelem_ai) - ez adja a "mennyit nyer/veszít a taktikai réteg" képet.
   - Kiegészítő dimenzió: aszimmetrikus túlerő (1 hős a referenciafegyverrel vs 3 db azonos
-    fegyveres, gyengébb "pribék" profil) — a §12.1 csapda miatt KÖTELEZŐ, nem hagyható ki,
+    fegyveres, gyengébb "pribék" profil) - a §12.1 csapda miatt KÖTELEZŐ, nem hagyható ki,
     különben a tükör-teszt egyenletesen elfedi a találat-függő mechanikák hatását.
   - Minden mérési pont N=250 futás (a teljes mátrix 66 fegyver × 5 páncél × 2 AI-mód × 2
-    (tükör+túlerő) ≈ 1320 mérési pont × 250 futás — ez már ~15-20 perc, ezért a futásszámot
+    (tükör+túlerő) ≈ 1320 mérési pont × 250 futás - ez már ~15-20 perc, ezért a futásszámot
     a script paraméterben tartjuk, gyors smoke-teszthez csökkenthető).
 
-Kimenet: CSV (`code/balance/output/fegyverbalansz_matrix.csv`) + konzolos összesítő —
+Kimenet: CSV (`code/balance/output/fegyverbalansz_matrix.csv`) + konzolos összesítő -
 az összesítő a KONKLÚZIÓHOZ kell (túl erős / túl gyenge / jól hangolt lista), a CSV a
 nyers adat, amiből bármilyen további szűrés/pivot elvégezhető.
 
@@ -86,7 +86,7 @@ def meres_tulero(fnev, mod, pancel_oszaly, n, ai, seed, letszam=3):
 def fut_matrix(n=250, gyors=False):
     fegyverek = list(S.ALL_WEAPON_MODES.items())
     if gyors:
-        fegyverek = fegyverek[::4]   # minden 4. fegyver — smoke teszthez
+        fegyverek = fegyverek[::4]   # minden 4. fegyver - smoke teszthez
         n = min(n, 80)
 
     sorok = []
@@ -142,7 +142,7 @@ def konkluziok(sorok):
         ))
     agg.sort(key=lambda x: -x["tukor_atlag"])
 
-    print("\n=== KONKLÚZIÓ — fegyverek AI-val mért tükör-győzelmi átlaga (Kard, hosszú ellen, 5 páncélosztály) ===")
+    print("\n=== KONKLÚZIÓ - fegyverek AI-val mért tükör-győzelmi átlaga (Kard, hosszú ellen, 5 páncélosztály) ===")
     print(f"  {'fegyver':<28s} {'kat.':<12s} {'Ph':>4s} {'tükör átlag':>12s} {'  min':>6s} {'  max':>6s} {'1v3 átlag':>10s}")
     for r in agg:
         print(f"  {r['fegyver']:<28s} {r['kategoria']:<12s} {r['pengehossz']:>4} "
@@ -158,7 +158,7 @@ def konkluziok(sorok):
         if r["tukor_atlag"] < 0.35 and r["tukor_max"] < 0.45:
             print(f"  ⚠ {r['fegyver']:<28s} tükör átlag {r['tukor_atlag']:.1%} (max {r['tukor_max']:.1%})")
 
-    print("\n=== PÁNCÉLFÜGGŐ SZÉLSŐSÉG (max-min tükör szórás > 30pp — a fegyver páncélérzékeny) ===")
+    print("\n=== PÁNCÉLFÜGGŐ SZÉLSŐSÉG (max-min tükör szórás > 30pp - a fegyver páncélérzékeny) ===")
     for r in agg:
         if r["tukor_max"] - r["tukor_min"] > 0.30:
             print(f"  ⚠ {r['fegyver']:<28s} min {r['tukor_min']:.1%} → max {r['tukor_max']:.1%} (szórás {r['tukor_max']-r['tukor_min']:.1%})")

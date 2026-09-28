@@ -235,7 +235,7 @@
   box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--jel-szín);
 }
 
-/* Kombinált (2 karakteres, pl. "MA") betű-chip: kapszula, nem kör — elfér a 2 karakter. */
+/* Kombinált (2 karakteres, pl. "MA") betű-chip: kapszula, nem kör - elfér a 2 karakter. */
 .km-jel-chip-kombinalt {
   width: auto;
   min-width: 34px;
@@ -261,7 +261,7 @@
   border: 1px solid var(--border-input);
   border-radius: 4px;
   color: var(--text);
-  /* 16px, hogy mobil böngészők (iOS Safari) ne zoomoljanak rá fókuszáláskor —
+  /* 16px, hogy mobil böngészők (iOS Safari) ne zoomoljanak rá fókuszáláskor -
      l. .field-input (common.css) ugyanezen okból. */
   font-size: 16px;
   padding: 6px 8px;

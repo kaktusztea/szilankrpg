@@ -1,5 +1,5 @@
 /**
- * Reactive rule engine — evaluates declarative formulas from rules.json
+ * Reactive rule engine - evaluates declarative formulas from rules.json
  * against a context of named values (scalars and arrays).
  */
 import { evalFormula } from './reactive-parse';
@@ -83,7 +83,7 @@ export function buildContext(
     }
   }
 
-  // Top-level skalár konstansok (pl. konstansok.hm_aszimmetria_osztó) — így minden
+  // Top-level skalár konstansok (pl. konstansok.hm_aszimmetria_osztó) - így minden
   // egyszerű számkonstans használható formulában, hardcode nélkül.
   for (const [key, val] of Object.entries(konstansok)) {
     if (typeof val === 'number') ctx.set(`konstansok.${key}`, val);

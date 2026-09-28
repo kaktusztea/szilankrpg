@@ -1,5 +1,5 @@
 // ============================================================
-// Karakter (mentett példány — megfelel data/schemas/karakter.yaml v2)
+// Karakter (mentett példány - megfelel data/schemas/karakter.yaml v2)
 // ============================================================
 
 export interface Tulajdonsagok {
@@ -169,7 +169,7 @@ export interface Karakter {
    * Kiterjesztő fortélyok manuális teljesül/nem-teljesül felülbírálása képzettségenként.
    * Kulcs: `"${képzettségNév}|${fortélyNév}"`. A kulcs JELENLÉTE = az automatikus
    * kiértékelés (legalább 1× felvéve?) NEGÁLVA. Csak többszörösen felvehető fortélyokra
-   * (a KM dönti el, a *kapcsolódó* spec_elem van-e felvéve — gépileg nem tudható). Opcionális.
+   * (a KM dönti el, a *kapcsolódó* spec_elem van-e felvéve - gépileg nem tudható). Opcionális.
    */
   kiterjesztés_negálva?: string[];
 }
@@ -219,7 +219,7 @@ export const DEFAULT_SESSION: Session = {
 };
 
 // ============================================================
-// Fortély definíció (schema — yaml forrásból)
+// Fortély definíció (schema - yaml forrásból)
 // ============================================================
 
 export type ModMode = 'flat' | 'scaled' | 'override' | 'előny' | 'hátrány';
@@ -262,7 +262,7 @@ export interface FortelyDef {
 }
 
 // ============================================================
-// Fegyver (alaptípus, fegyverek_v2.json — Fegyvergenerátor v2)
+// Fegyver (alaptípus, fegyverek_v2.json - Fegyvergenerátor v2)
 // ============================================================
 
 export interface FegyverMod {

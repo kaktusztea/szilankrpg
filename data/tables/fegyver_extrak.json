@@ -71,7 +71,7 @@
     "id": "pocsek_vedekezo_pancelos_ellen",
     "név": "Pocsék védekező (páncélos ellen)",
     "csoport": "harci_helyzet",
-    "leírás": "Páncélos ellenfél ellen a hárítási hátrány kiütközik — VÉ:0. Páncéltalan ellen a kontakt-fenyegetés miatt a bázis VÉ marad.",
+    "leírás": "Páncélos ellenfél ellen a hárítási hátrány kiütközik - VÉ:0. Páncéltalan ellen a kontakt-fenyegetés miatt a bázis VÉ marad.",
     "feltétel": [
       {
         "típus": "cél_páncél",
@@ -90,7 +90,7 @@
     "id": "pancelszuras_belharcban",
     "név": "Belharcban rések közt beszúr",
     "csoport": "harci_helyzet",
-    "leírás": "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0.",
+    "leírás": "Belharcban, földön lévő ellenfélnél a rések közt szúr - a páncél SFÉ-je 0.",
     "feltétel": [
       {
         "típus": "harci_helyzet",
@@ -109,7 +109,7 @@
     "id": "pajzs_ve_felezes",
     "név": "Láncos: pajzs VÉ felezés",
     "csoport": "harci_helyzet",
-    "leírás": "A láncos fej megkerüli a pajzsot — a pajzs adta VÉ feleződik.",
+    "leírás": "A láncos fej megkerüli a pajzsot - a pajzs adta VÉ feleződik.",
     "feltétel": [
       {
         "típus": "cél_felszereles",
@@ -213,7 +213,7 @@
     "id": "onsebzes_kockazat",
     "név": "Önsebzés-kockázat",
     "csoport": "harci_helyzet",
-    "leírás": "Köz- és önveszélyes: a támadó k20 EGYBEN esélydobás — Mesterfegyver-foktól függő küszöb (Mf nélkül 1-10, Mf:1.fok 1-2, Mf:2-3.fok nincs) alá/rá dobva magadat sebzed (rendes sebzés önmagad ellen). Részletek: md/068_06.\n",
+    "leírás": "Köz- és önveszélyes: a támadó k20 EGYBEN esélydobás - Mesterfegyver-foktól függő küszöb (Mf nélkül 1-10, Mf:1.fok 1-2, Mf:2-3.fok nincs) alá/rá dobva magadat sebzed (rendes sebzés önmagad ellen). Részletek: md/068_06.\n",
     "hatás": [
       {
         "cél": "önsebzés",
@@ -300,7 +300,7 @@
   },
   "kampos_veg_labkirantas": {
     "id": "kampos_veg_labkirantas",
-    "név": "Kampós vég — Lábkirántás",
+    "név": "Kampós vég - Lábkirántás",
     "csoport": "tulajdonság",
     "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veg_labkirantas]`).\n",
     "feltétel": [

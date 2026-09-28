@@ -1,12 +1,12 @@
-# Fegyvergenerátor — konstans paramétertáblák (a modell bemenete).
+# Fegyvergenerátor - konstans paramétertáblák (a modell bemenete).
 # Ezt olvassa be a code/balance/fegyvergenerator_balansz.py. A szkriptekben NINCS adat.
 # FIGYELEM: tervezői eszköz adata, NEM a data/sources pipeline része (a generate_tables.py
-# csak a data/sources/ könyvtárat dolgozza fel — ez a mappa kimarad).
+# csak a data/sources/ könyvtárat dolgozza fel - ez a mappa kimarad).
 
 # fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható, felszerelés_pont
 #   felszerelés_pont: a data/docs/010_03_06_felszereles.md Felszerelés-terhelése (0/1/2 pont);
 #   md/068_01_13_fegyver_mozgasgatlo_hatasa.md szerint KIZÁRÓLAG a forgatás-kategóriától függ
-#   (Másfélkezes kard → 1, Kétkezes kard → 2, egykezes → 0 — a "súly" tengely NEM számít bele).
+#   (Másfélkezes kard → 1, Kétkezes kard → 2, egykezes → 0 - a "súly" tengely NEM számít bele).
 fegyverhossz:
   0:  {TÉ: 0,  VÉ: 0,  SP: 0, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
   1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
@@ -25,7 +25,7 @@ aktor:
   pengehegy-apró:              {sebzésjelleg: szúró,        SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   pengehegy-tőr:               {sebzésjelleg: szúró,        SP: 1, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   pengehegy-kard:              {sebzésjelleg: szúró,        SP: 2, átütés: 1, TÉ: 0, VÉ: 0,  sebesség: 0}
-  pengehegy-rejtett:           {sebzésjelleg: szúró,        SP: 0, átütés: 0, TÉ: 0, VÉ: -3, sebesség: 0}   # tenyérbe rejtett tüske — nincs védekező felület (068_02: Tőr, ököl)
+  pengehegy-rejtett:           {sebzésjelleg: szúró,        SP: 0, átütés: 0, TÉ: 0, VÉ: -3, sebesség: 0}   # tenyérbe rejtett tüske - nincs védekező felület (068_02: Tőr, ököl)
   vágóél-egyenes-rövid:        {sebzésjelleg: vágó-egyenes, SP: 0, átütés: 0, TÉ: 1, VÉ: 1,  sebesség: 0}
   vágóél-egyenes-átlagos:      {sebzésjelleg: vágó-egyenes, SP: 1, átütés: 0, TÉ: 2, VÉ: 2,  sebesség: 0}
   vágóél-egyenes-nagy:         {sebzésjelleg: vágó-egyenes, SP: 2, átütés: 0, TÉ: 2, VÉ: 2,  sebesség: 0}
@@ -38,9 +38,9 @@ aktor:
   lándzsahegy-tőrhossz:        {sebzésjelleg: szúró,        SP: 4, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   lándzsahegy-rövidkardhossz:  {sebzésjelleg: szúró,        SP: 5, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   lándzsahegy-hosszúkardhossz: {sebzésjelleg: szúró,        SP: 6, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 1}
-  ököl:                        {sebzésjelleg: zúzó,         SP: -5, átütés: 0, TÉ: -3, VÉ: -3, sebesség: 0, puha: true}   # puszta kéz — FP-sebzés (nem ÉP); fegyvertelen büntetés (068_02)
-  ököl-belharc:                {sebzésjelleg: zúzó,         SP: 0,  átütés: 0, TÉ: 0,  VÉ: 0,  sebesség: 0, puha: true}   # puszta kéz Belharcban — a fegyvertelen büntetés nullázódik (065_01_02)
-  vasököl:                     {sebzésjelleg: zúzó,         SP: 0,  átütés: 0, TÉ: -1, VÉ: -2, sebesség: 0}   # fém ütőfelület — ÉP-sebzés (nem puha), a Puszta kéznél kevésbé büntetett (068_02)
+  ököl:                        {sebzésjelleg: zúzó,         SP: -5, átütés: 0, TÉ: -3, VÉ: -3, sebesség: 0, puha: true}   # puszta kéz - FP-sebzés (nem ÉP); fegyvertelen büntetés (068_02)
+  ököl-belharc:                {sebzésjelleg: zúzó,         SP: 0,  átütés: 0, TÉ: 0,  VÉ: 0,  sebesség: 0, puha: true}   # puszta kéz Belharcban - a fegyvertelen büntetés nullázódik (065_01_02)
+  vasököl:                     {sebzésjelleg: zúzó,         SP: 0,  átütés: 0, TÉ: -1, VÉ: -2, sebesség: 0}   # fém ütőfelület - ÉP-sebzés (nem puha), a Puszta kéznél kevésbé büntetett (068_02)
 
 # fejdarab: n -> sebesség, TÉ
 fejdarab:
@@ -116,14 +116,14 @@ egykezes_forgatás:
   kétkezes:    {TÉ: -4, VÉ: -4, átütés_max: 0, erőbónusz_limit_max: 0, mindig_emittált: false}
 
 # szálfegyver nyélanyag: típus -> SP (direkt), súly (kategória-eltolás, mint idea/alapanyag suly_delta)
-# A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika — bázis-hatásuk nincs.
+# A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika - bázis-hatásuk nincs.
 szálfegyver_nyélanyag:
   sima:        {SP: 0, súly: 0}   # alap (nincs speciális nyél)
   fanyelű:     {SP: 0, súly: 0, extrak: [fanyel_fegyvertores_konnyebb]}   # bázis-hatás nincs; Fegyvertörés-büntetés (a fa nyél könnyebben törik)
   vasaltszárú: {SP: 0, súly: 1}   # +1 súly kategória
   tömörszárú:  {SP: 1, súly: 2}   # +1 SP, +2 súly kategória (+1 Felszerelés pont = logisztika)
 
-# hajlékony (ostor-jelleg): 0/1 param táblája — bázis (VÉ/Sebesség) + örökölt SZITUÁCIÓS extrák.
+# hajlékony (ostor-jelleg): 0/1 param táblája - bázis (VÉ/Sebesség) + örökölt SZITUÁCIÓS extrák.
 # A fegyverlista az extrákat innen örökíti (mint a fegyverhossz → beszorithato, szálfegyver_nyélanyag → fanyelű).
 hajlékony:
   0: {VÉ: 0,  sebesség: 0}

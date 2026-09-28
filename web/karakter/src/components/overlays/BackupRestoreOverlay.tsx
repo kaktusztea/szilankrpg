@@ -94,7 +94,7 @@ export function BackupRestoreOverlay({ karakterek, dátum, onRestore, onClose }:
           <div className="backup-restore-limit">Szabad hely: {freeSlots} / {MAX_KARAKTER_DB}</div>
         )}
         {njkTárolt >= MAX_NJK_DB && karakterek.some(e => e.karakter.jk === false && !existingUids.has(e.karakter.uid)) && (
-          <div className="backup-restore-limit">Tárolt NJK: {njkTárolt} / {MAX_NJK_DB} — új NJK kimarad</div>
+          <div className="backup-restore-limit">Tárolt NJK: {njkTárolt} / {MAX_NJK_DB} - új NJK kimarad</div>
         )}
         <div className="backup-restore-list">
           {karakterek.map((entry, i) => {

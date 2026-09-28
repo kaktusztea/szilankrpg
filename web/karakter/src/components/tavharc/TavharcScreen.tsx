@@ -43,7 +43,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const sebesség = parseInt(tfDef?.Sebesség ?? '-1') || -1;
   const újratöltésEnyhítés = calcÚjratöltésEnyhítés(session, k);
-  const támadásLabel = bontás.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
+  const támadásLabel = bontás.isMágikus ? '-' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
 
   // --- Távolság & VÉ ---
   const [távolság, setTávolság] = useState(10);
@@ -146,7 +146,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {kepzSzintTarget && (
         <PopupOverlay onClose={closeKepzPopup}>
           <SzintGrid
-            label={`Távolsági harcmodor: ${kepzSzintTarget} — szint:`}
+            label={`Távolsági harcmodor: ${kepzSzintTarget} - szint:`}
             maxSzint={data.konstansok.arányok.képzettség_max_szint}
             current={képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0}
             onSelect={n => {

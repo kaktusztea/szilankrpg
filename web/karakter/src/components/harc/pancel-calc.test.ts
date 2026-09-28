@@ -30,7 +30,7 @@ describe('calcFtEnyhites', () => {
   });
 });
 
-describe('calcFogas — belharc pajzs degradáció', () => {
+describe('calcFogas - belharc pajzs degradáció', () => {
   const konstansok = {
     belharc_pajzs_max_méret: 'kis',
     pajzs_hatások: {

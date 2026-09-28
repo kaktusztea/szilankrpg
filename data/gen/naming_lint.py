@@ -2,11 +2,11 @@
 
 SZABÁLY: minden mapping-KULCS és kanonikus azonosító-ÉRTÉK minden betű-futama
 vagy csupa NAGY (mozaikszó: TÉ, VÉ, SP, KÉ, HM, SFÉ, MGT…) VAGY csupa kicsi.
-Tiltott a "Nagybetűs-szó" futam (pl. `Sebesség`, `Átütés`, `Sp`) — a nem-mozaikszó
+Tiltott a "Nagybetűs-szó" futam (pl. `Sebesség`, `Átütés`, `Sp`) - a nem-mozaikszó
 tokenek csupa kisbetűsek. Mozaikszó+szó összetétel megengedett (pl. `SP_override`,
 `TÉ_büntetés_csökkentés`, `HM_TÉ`), mert minden futam külön csupa-nagy vagy csupa-kicsi.
 
-KIVÉTELEK (proper entitás-nevek — jogosan Nagy-kezdőbetűsek, mint a fegyver-/faj-nevek):
+KIVÉTELEK (proper entitás-nevek - jogosan Nagy-kezdőbetűsek, mint a fegyver-/faj-nevek):
   - NAME_KEYED_FILES : a TOP-LEVEL mapping-kulcsaik entitás-nevek (pl. szituacio_mapping.yaml
                        → képzettség-nevek). A gyökér szinten a kulcs-ellenőrzés kimarad.
   - NAME_VALUE_KEYS  : értékük entitás-név / megjelenítendő szöveg (kat, név…) → érték NEM ellenőrzött.
@@ -39,7 +39,7 @@ NAME_VALUE_KEYS = {"név", "nev", "alapnév", "kat", "fájl", "spec_elem", "spec
 ID_VALUE_KEYS = {"id", "cél", "mód", "típus", "forrás", "csoport",
                  "operátor", "prefix", "feltétel", "sebzésjelleg", "állapot", "aktor"}
 
-# 'prefix:név' alakú érték — csak a prefix-részt ellenőrizzük (a név entitásnév lehet)
+# 'prefix:név' alakú érték - csak a prefix-részt ellenőrizzük (a név entitásnév lehet)
 PREFIXED_VALUE_KEYS = {"cél", "feltétel"}
 
 
@@ -48,12 +48,12 @@ def _walk(node, fname, errors, name_keyed, top):
         for k, v in node.items():
             if isinstance(k, str):
                 if not (name_keyed and top) and not _runs_ok(k):
-                    errors.append(f"{fname}: KULCS {k!r} — nem-mozaikszó nagybetűs "
+                    errors.append(f"{fname}: KULCS {k!r} - nem-mozaikszó nagybetűs "
                                   f"(csak csupa-kicsi vagy teljes mozaikszó engedett)")
                 if k in ID_VALUE_KEYS and k not in NAME_VALUE_KEYS and isinstance(v, str):
                     token = v.split(":", 1)[0] if (k in PREFIXED_VALUE_KEYS and ":" in v) else v
                     if not _runs_ok(token):
-                        errors.append(f"{fname}: {k}: {v!r} — nem-mozaikszó nagybetűs azonosító-érték")
+                        errors.append(f"{fname}: {k}: {v!r} - nem-mozaikszó nagybetűs azonosító-érték")
             _walk(v, fname, errors, name_keyed, False)
     elif isinstance(node, list):
         for x in node:

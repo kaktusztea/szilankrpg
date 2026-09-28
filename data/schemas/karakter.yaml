@@ -1,5 +1,5 @@
 ---
-# Szilánk RPG — Karakter séma (mentett példány validációja)
+# Szilánk RPG - Karakter séma (mentett példány validációja)
 # A mentett .json fájlnak ehhez kell validálnia.
 # NEM tároljuk a származtatott/számított értékeket (ÉP, KÉ, TÉ, VÉ, SP, KP, SFÉ, MGT, stb.)
 schema_version: 2
@@ -105,31 +105,31 @@ checkpoints:                    # Kiemelt verziók (snapshot-alapú verzióköve
     dátum: ""                   # ISO timestamp
     snapshot: {}                # Full state snapshot (session, checkpoints, uid, id_leíró nélkül)
 
-kiterjesztés_negálva: []        # opcionális — kiterjesztő fortély manuális teljesül/nem felülbírálás; kulcs: "képzettségNév|fortélyNév"; jelenlét = auto-kiértékelés negálva (csak többszörös fortélyokra)
+kiterjesztés_negálva: []        # opcionális - kiterjesztő fortély manuális teljesül/nem felülbírálás; kulcs: "képzettségNév|fortélyNév"; jelenlét = auto-kiértékelés negálva (csak többszörös fortélyokra)
 
 # ============================================================
-# Session (runtime állapot — Game módban változó értékek)
+# Session (runtime állapot - Game módban változó értékek)
 # Ugyanabban a fájlban, szeparált szekcióban.
 # Mentéskor mindig belekerül, betöltéskor hiánya = default értékek.
 # ============================================================
 session:
   szilánk: 1                  # 0-3 (nem származtatott, kiosztott)
   vé_csökkenés: 0
-  vé_history: []              # number[] — VÉ csökkenés történet
+  vé_history: []              # number[] - VÉ csökkenés történet
   manőver_pont_használt: 0
-  sebzések: []                # { típus: "S"|"V"|"Z"|"FP", sorszám: number }[] — ÉP rubrikák állapota
+  sebzések: []                # { típus: "S"|"V"|"Z"|"FP", sorszám: number }[] - ÉP rubrikák állapota
   aktív_fegyver_index: 0      # Kiválasztott fegyver indexe a fegyverek[] tömbben (jobb kéz)
   aktív_fegyver_bal_index: -1 # Bal kéz fegyver indexe (-1 = nincs)
   kétkezes_harc: false        # Mindkét kézben fegyver + aktívan kétkezes harc
   aktív_pajzs: false
   aktív_páncél: true
-  aktív_taktikák: []          # { név: string, fok?: number }[] — aktívan alkalmazott taktikák
-  aktív_helyzetek: []         # string[] — aktív harci helyzetek nevei
+  aktív_taktikák: []          # { név: string, fok?: number }[] - aktívan alkalmazott taktikák
+  aktív_helyzetek: []         # string[] - aktív harci helyzetek nevei
   aktív_manőver: ""
   aktív_státuszok: []         # string[]
-  narratív_módosítók: []      # { szöveg: string, érték?: number }[] — KM által hozzáadott
+  narratív_módosítók: []      # { szöveg: string, érték?: number }[] - KM által hozzáadott
   harci_akrobatika: false     # session_toggle fortély runtime állapota
   fegyverfogás: "egyfegyveres"  # enum: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes
   aktív_távfegyver_index: -1  # Kiválasztott távfegyver indexe a távfegyverek[] tömbben (-1 = nincs)
-  ké_dobások: []              # number[] — KÉ dobás history (max 3, newest first)
-  té_dobások: []              # number[] — TÉ dobás history (max 3, newest first)
+  ké_dobások: []              # number[] - KÉ dobás history (max 3, newest first)
+  té_dobások: []              # number[] - TÉ dobás history (max 3, newest first)

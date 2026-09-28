@@ -89,7 +89,7 @@
     ],
     "id": "csonkolás",
     "fázis_info": {
-      "V": "Nem kapod meg a +4 TÉ módosítót — sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
     },
     "végrehajtás_té_módosító": 0,
     "követelmények": [
@@ -320,7 +320,7 @@
     ],
     "id": "kibontakozás",
     "fázis_info": {
-      "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás — Gyorsaság ellenpróba (Sprint fortély számít)."
+      "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
     },
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
@@ -999,7 +999,7 @@
     ],
     "id": "belharcba_kerülés",
     "fázis_info": {
-      "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül — mindenképp dobj Ellenpróbát."
+      "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül - mindenképp dobj Ellenpróbát."
     },
     "követelmények": [
       {

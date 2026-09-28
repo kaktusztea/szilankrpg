@@ -19,7 +19,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
   const eseményNév = (id: string) => data.esemenyek.find(e => e.id === id)?.név ?? id;
 
   return (
-    <PickerOverlay title={fokválasztó ? `${fokválasztó} — fok választó` : 'Státusz választó'} onClose={onClose}>
+    <PickerOverlay title={fokválasztó ? `${fokválasztó} - fok választó` : 'Státusz választó'} onClose={onClose}>
       {!fokválasztó && !érzékválasztó && ['fizikai', 'szellemi', 'mágikus'].map(kat => {
         const items = data.statuszok
           .filter(s => s.kategória === kat && (s.többszörös || !session.aktív_státuszok.some(st => st.startsWith(s.név + ' ('))))

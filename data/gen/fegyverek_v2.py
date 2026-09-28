@@ -1,11 +1,11 @@
 """data/sources/fegyverek/fegyverek.yaml (+ fegyverek_fixed.json) → tables/fegyverek_v2.json
 
 A Fegyvergenerátor v2 (`code/balance/fegyvergenerator_balansz.py`) modelljével leszármaztatott
-mainstream fegyverek JSON-exportja — build-gate-be kötve (l. STUDY.fegyvergenerator_v2 wiki,
+mainstream fegyverek JSON-exportja - build-gate-be kötve (l. STUDY.fegyvergenerator_v2 wiki,
 "Migrációs terv" 3a pont). A kimenet EGY fegyver = EGY elem, `módok` tömbbel (fegyvermódonként,
-aktoronként) — NEM a régi flat `data/tables/fegyverek.json` sémája.
+aktoronként) - NEM a régi flat `data/tables/fegyverek.json` sémája.
 
-Szándékosan ÚJ, KÜLÖN fájlba ír (`fegyverek_v2.json`) — a régi `data/tables/fegyverek.json`-t
+Szándékosan ÚJ, KÜLÖN fájlba ír (`fegyverek_v2.json`) - a régi `data/tables/fegyverek.json`-t
 a webapp jelenleg is olvassa (`engine/data-loader.ts`), ennek átállítása külön lépés (3b),
 amíg az nem kész, a két fájl egymás mellett él, nincs felülírás/duplikáció a kimeneten.
 """
@@ -24,7 +24,7 @@ def generate_sebzesjelleg_pancel_matrix():
     A mátrix a szituációs SP-balansz adatforrása (sebzésjelleg × páncélosztály → SP delta)
     ÉS a `struktúra_osztály` leképezés (páncél_struktúra → 5 páncélosztály egyike). A webapp
     Sebzés popup „Ellenfél páncél" választója ezt olvassa (l. STUDY.fegyvergenerator_v2 3g).
-    A YAML teljes egészében data layer marad — a TS csak a lookup-ot végzi.
+    A YAML teljes egészében data layer marad - a TS csak a lookup-ot végzi.
     """
     src = os.path.join(DATA_DIR, 'sources', 'fegyverek', 'sebzesjelleg_pancel_matrix.yaml')
     data = load_yaml(src)
@@ -36,7 +36,7 @@ def generate_fegyver_extrak():
 
     A webapp a fegyver `extrák: [{id, név}]` listáján túl a feltétel+hatás definíciókat is
     igényli a futásidejű kiértékeléshez (pl. `cél_páncél` extrák a Sebzés popupban). Az
-    `extrak.yaml` a data layer — a TS csak lookupol + kiértékel. Id szerint kulcsolva, hogy a
+    `extrak.yaml` a data layer - a TS csak lookupol + kiértékel. Id szerint kulcsolva, hogy a
     fegyver `extrák[].id` közvetlenül feloldható legyen.
     """
     src = os.path.join(DATA_DIR, 'sources', 'fegyverek', 'extrak.yaml')
@@ -48,7 +48,7 @@ def generate_fegyver_extrak():
 def generate_fegyverek_v2():
     """fegyverek.yaml → fegyverek_v2.json (a fegyvergenerátor natural módok[] modellje).
 
-    Séma-hiba esetén (extrak.yaml / fegyverek.yaml) a build-gate hibával áll — ugyanazt a
+    Séma-hiba esetén (extrak.yaml / fegyverek.yaml) a build-gate hibával áll - ugyanazt a
     validációt futtatja, amit a `code/balance/fegyvergenerator_json.py` CLI-módban is.
     """
     if _BALANCE_DIR not in sys.path:
@@ -57,7 +57,7 @@ def generate_fegyverek_v2():
     import fegyverek_validator  # noqa: E402
     import fegyvergenerator_json as fgj  # noqa: E402
 
-    # A validátorok print()-je STDOUT-ra menne (elszennyezné a build-log-ot) — STDERR-re irányítva.
+    # A validátorok print()-je STDOUT-ra menne (elszennyezné a build-log-ot) - STDERR-re irányítva.
     _stdout = sys.stdout
     sys.stdout = sys.stderr
     try:
@@ -65,6 +65,6 @@ def generate_fegyverek_v2():
     finally:
         sys.stdout = _stdout
     if not ok:
-        raise SystemExit("fegyvergenerátor séma-hiba — javítsd a fentieket, a fegyverek_v2.json nem generálódott.")
+        raise SystemExit("fegyvergenerátor séma-hiba - javítsd a fentieket, a fegyverek_v2.json nem generálódott.")
 
     write_json('fegyverek_v2.json', fgj.build())

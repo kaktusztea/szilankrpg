@@ -40,7 +40,7 @@ export function TulajdonsagokHeader({
       <div className="tul-header tul-header-col">
         {!gameMode && (
           <div className="tul-header-box tul-header-full tul-becenev-row" onClick={onEditBecenév}>
-            <span><span className="tul-header-label">Becenév:</span> <strong>{becenév || '—'}</strong></span>
+            <span><span className="tul-header-label">Becenév:</span> <strong>{becenév || '-'}</strong></span>
             <span className="tul-becenev-chips">
               <button
                 type="button"
@@ -99,7 +99,7 @@ export function TulajdonsagokHeader({
           </select>
         </div>
         <div className="tul-header-box" onClick={onEditJátékos}>
-          <span className="tul-header-label">Játékos:</span> <strong>{játékos || '—'}</strong>
+          <span className="tul-header-label">Játékos:</span> <strong>{játékos || '-'}</strong>
         </div>
       </>)}
 

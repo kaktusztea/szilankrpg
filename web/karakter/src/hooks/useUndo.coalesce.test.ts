@@ -10,7 +10,7 @@ const sessionOff = { aktív_páncél: false, aktív_pajzs: false } as const;
 const pancelPatch = (prev: unknown): UndoPatch[] =>
   [{ field: 'session', prev, ckey: 'aktív_páncél' }];
 
-describe('undo coalesce — session toggle', () => {
+describe('undo coalesce - session toggle', () => {
   it('páncél toggle egymást követő váltásai összeolvadnak (azonos ckey)', () => {
     const first = coalesceKey(pancelPatch(sessionOn));
     const second = coalesceKey(pancelPatch(sessionOff));

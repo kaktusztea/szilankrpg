@@ -1,4 +1,4 @@
-/** Dice rolling — single source of randomness for combat rolls. */
+/** Dice rolling - single source of randomness for combat rolls. */
 
 /** Roll a single die with `sides` faces → integer in [1, sides]. */
 export function rollDie(sides: number): number {
@@ -37,7 +37,7 @@ export function előnyHátrányLabel(szint: number): string {
 const EH_SZINT_MIN = -2;
 const EH_SZINT_MAX = 2;
 
-/** Előny/Hátrány szint a [-2, +2] tartományra szorítva — a kézi `Math.max(-2, Math.min(2, x))` helyett. */
+/** Előny/Hátrány szint a [-2, +2] tartományra szorítva - a kézi `Math.max(-2, Math.min(2, x))` helyett. */
 export function clampEHSzint(szint: number): number {
   return Math.max(EH_SZINT_MIN, Math.min(EH_SZINT_MAX, szint));
 }
@@ -65,9 +65,9 @@ export function rollElőnyHátrányK20(szint: number): ProbaDobás {
 }
 
 /**
- * k20P: a k20 páros/páratlan része (harcszimulacio.spec.md §4, §13.1 — 2026-09-26 döntés).
+ * k20P: a k20 páros/páratlan része (harcszimulacio.spec.md §4, §13.1 - 2026-09-26 döntés).
  * `10`/`20` → 2, egyébként páratlan → 0, páros → 1. A sikertelen támadás VÉ csökkentésének
- * kockatagja — mindig a már eldobott támadó k20-ból jön (közös kocka), nincs külön dobás.
+ * kockatagja - mindig a már eldobott támadó k20-ból jön (közös kocka), nincs külön dobás.
  */
 export function k20P(r: number): number {
   if (r === 10 || r === 20) return 2;

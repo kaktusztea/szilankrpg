@@ -6,12 +6,12 @@ harci_helyzetek:
   - név: ""                    # kötelező, string
     id: ""                     # kötelező, string (feltétel_kulcs generáláshoz)
     infó: ""                   # kötelező, string (rövid hatás leírás)
-    megjegyzések: []           # opcionális, lista ({ text: "" } elemek — hosszabb, narratív kontextus/szabály-finomítás)
+    megjegyzések: []           # opcionális, lista ({ text: "" } elemek - hosszabb, narratív kontextus/szabály-finomítás)
     hatások: []                # kötelező, lista (strukturált hatások, üres ha nem gépesített)
     tiltja_taktikákat: false   # opcionális, bool (ha true: összes taktika disabled amíg aktív)
     kizár_helyzetek: []        # opcionális, lista (ezen helyzetek nem adhatók hozzá amíg ez aktív)
     tiltott_fegyverfogások: [] # opcionális, lista (ezen fegyverfogások disabled amíg ez a helyzet aktív)
-    csoport: ""                # kötelező, "játékos" | "km" — picker csoportosítás
+    csoport: ""                # kötelező, "játékos" | "km" - picker csoportosítás
     rejtett: false             # opcionális, bool (ha true: nem jelenik meg a picker-ben, automatikus)
     # Fegyver-szintű override: adott feltétel esetén a fegyver harcértékeit felülírja
     fegyver_override:          # opcionális

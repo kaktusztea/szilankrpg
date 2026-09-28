@@ -3,7 +3,7 @@
 
 A harcszimulacio.spec.md §3-§6 motorját általánosítja tetszőleges statblokkra,
 és beépíti a §6.5.1 jelleg/íves SP bónuszt + a §8 harci helyzeteket, mert a
-Szilánk alapelve, hogy a szituáció dönt — és épp ez befolyásolja, hogy egy
+Szilánk alapelve, hogy a szituáció dönt - és épp ez befolyásolja, hogy egy
 SFÉ érték "jó"-e játékélmény szempontjából.
 
 Cél: megnézni, hogy a különböző páncélstruktúrák SFÉ értékei
@@ -42,7 +42,7 @@ def sebzes_elony(k):
 
 
 def jelleg_bonusz(jelleg, struktura):
-    """§6.5.1 — a fegyver elsődleges jellegére adódó SP bónusz."""
+    """§6.5.1 - a fegyver elsődleges jellegére adódó SP bónusz."""
     j = jelleg[0] if jelleg else ''
     if j == 'Z' and struktura in FÉM_STRUKT:
         return 3
@@ -188,7 +188,7 @@ def _demo():
         print(f"  {s:14} SFÉ_fiz={st['sfé_fizikai']:2}  SFÉ_ener={st['sfé_energia']:2}  MGT={st['mgt']}")
 
     print("\n" + "=" * 72)
-    print("1. TESZT — Hős vs Hős, azonos páncél (harc HOSSZA)")
+    print("1. TESZT - Hős vs Hős, azonos páncél (harc HOSSZA)")
     print("   Most az MGT→harckeret→támadásszám ellensúllyal: a nehéz páncél lassít.")
     print("=" * 72)
     print(f"  {'páncél':14} {'MGT':>4} {'tám/kör':>8} {'hossz (kör)':>12}  {'döntetlen%':>11}")
@@ -198,7 +198,7 @@ def _demo():
         print(f"  {s:14} {sb['MGT']:>4} {sb['támadások']:>8} {h:>12.2f}  {dw:>10.1%}")
 
     print("\n" + "=" * 72)
-    print("2. TESZT — Hős (páncél X) vs KÖZEPES harcos (bőr, TÉ38 — tud sebezni)")
+    print("2. TESZT - Hős (páncél X) vs KÖZEPES harcos (bőr, TÉ38 - tud sebezni)")
     print("   A páncél tényleg számít: túlél-e a hős, milyen gyorsan győz.")
     print("=" * 72)
     print(f"  {'hős páncél':14} {'hős győz%':>10} {'hossz':>8}")
@@ -207,7 +207,7 @@ def _demo():
         print(f"  {s:14} {aw:>9.1%} {h:>8.2f}")
 
     print("\n" + "=" * 72)
-    print("3. TESZT — Jelleg-bónusz: Vágó vs Zúzó támadó (harc HOSSZA a védő ellen)")
+    print("3. TESZT - Jelleg-bónusz: Vágó vs Zúzó támadó (harc HOSSZA a védő ellen)")
     print("   Elvárás: zúzó gyorsabb fém páncél ellen; vágó gyorsabb könnyű ellen.")
     print("=" * 72)
     print(f"  {'védő páncél':14} {'vágó hossz':>12} {'zúzó hossz':>12}")
@@ -220,7 +220,7 @@ def _demo():
         print(f"  {s:14} {hv:>12.2f} {hz:>12.2f}")
 
     print("\n" + "=" * 72)
-    print("4. TESZT — Szituáció dönt: Hátulról támadás (Előny+1) hatása páncélonként")
+    print("4. TESZT - Szituáció dönt: Hátulról támadás (Előny+1) hatása páncélonként")
     print("   Elvárás: az előny minden páncél ellen segít, de a nehéz páncél maradjon releváns.")
     print("=" * 72)
     print(f"  {'védő páncél':14} {'sima hossz':>11} {'hátulról hossz':>15}")

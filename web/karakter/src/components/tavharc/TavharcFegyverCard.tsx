@@ -26,7 +26,7 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
   const bontás = calcCÉBontás(k, data, session, def, idea, fortélyCÉ, tf.alap);
   const mf = getMfFok(k, tf.alap);
   const sebesség = parseInt(def?.Sebesség ?? '-1') || -1;
-  const tám = bontás.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
+  const tám = bontás.isMágikus ? '-' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
   const hasError = mfKövetelményHiba(k, data, tf.alap);
 
   return (

@@ -23,7 +23,7 @@ export function calcMaxHM(data: GameData, k: Karakter): number {
 
 /**
  * Max HM aszimmetria (§18): a formula a `rules.json`-ban él (`max_HM_aszimmetria`),
- * itt csak kiértékeljük — így az osztó (`konstansok.hm_aszimmetria_osztó`) egy helyen van.
+ * itt csak kiértékeljük - így az osztó (`konstansok.hm_aszimmetria_osztó`) egy helyen van.
  */
 export function calcMaxAszimmetria(data: GameData, tsz: number): number {
   const rules = data.rules.filter(r => r.id === 'max_HM_aszimmetria');

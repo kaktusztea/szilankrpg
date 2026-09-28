@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Fegyvergenerátor — Taktikai döntési AI (Harci taktikák / Harci helyzetek / Manőverek).
+"""Fegyvergenerátor - Taktikai döntési AI (Harci taktikák / Harci helyzetek / Manőverek).
 
 Cél: a `fegyvergenerator_harcszimulator.py` alap harci motorját bővíti egy körönkénti
-DÖNTÉSI RÉTEGGEL — minden harcos minden körben felméri a helyzetet (saját/ellenfél fegyver-
+DÖNTÉSI RÉTEGGEL - minden harcos minden körben felméri a helyzetet (saját/ellenfél fegyver-
 hossz, VÉ/ÉP állapot, létszámarány) és SÚLYOZOTT VÉLETLENNEL választ taktikát vagy próbál
 meg egy manővert. Ez válaszol arra a kérdésre, hogy a hosszú fegyverek (Pika/Lándzsa) 1:1
 nyílt-terepi dominanciáját (l. STUDY.fegyvergenerator_harcszimulacio.md) a rendszer más
 pillérei (Belharcba kerülés manőver, Mögékerülés, taktikaváltás) mennyire ellensúlyozzák.
 
-FONTOS: a nyílt-terepi dominancia NEM hiba — a Szilánk rendszer taktikai/szituációs, egy
+FONTOS: a nyílt-terepi dominancia NEM hiba - a Szilánk rendszer taktikai/szituációs, egy
 pikás szemtől szemben simán győz. A kérdés az, hogy egy rövidebb fegyveres, aki ÉL a
 taktikai eszközökkel (belharcba kerülés, mögékerülés), mennyire tudja megfordítani.
 
 Manőver-ellenpróba (EGYSZERŰSÍTETT, l. harcszimulacio.spec.md §3.13 + engine_spec §21.4):
   siker  ⟺  manőver_alap(támadó) + mp_fok + k10  >=  manőver_alap(ellenfél) + nehézség (+ helyzetfüggő_mód)
-  manőver_alap = CEIL((HM_TÉ + HM_VÉ) / 10)  — statikus, a Profilból számolható
+  manőver_alap = CEIL((HM_TÉ + HM_VÉ) / 10)  - statikus, a Profilból számolható
   mp_fok       = a harcos döntése, hány Manőver Pontot fektet be (0..4, a manőver_pont limitig)
   A §13.8 hangolási spec explicit óva int a manőverek bevonásától ALAP hangolási tesztekben
-  (nagy variancia) — ez a modul EZT a varianciát vizsgálja SZÁNDÉKOSAN, külön forgatókönyvben.
+  (nagy variancia) - ez a modul EZT a varianciát vizsgálja SZÁNDÉKOSAN, külön forgatókönyvben.
 
 Futtatás:  python3 code/balance/fegyvergenerator_taktikai_ai.py
 """
@@ -45,14 +45,14 @@ def _load_table(nev):
 _MANOVEREK_RAW = {m["id"]: m for m in _load_table("manoverek.json")}
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Manőver-katalógus — a modell korlátaihoz igazítva
+# Manőver-katalógus - a modell korlátaihoz igazítva
 # ─────────────────────────────────────────────────────────────────────────────
 # A Harcos/akcio_feloldas motor NEM ismer fegyver-elvesztés, végtagsérülés, azonnali
-# halál vagy "fenntartott fogás" (Feszítés/Leszorítás) állapotot — ezért csak azok a
+# halál vagy "fenntartott fogás" (Feszítés/Leszorítás) állapotot - ezért csak azok a
 # manőverek vannak bekötve, amiknek a KÖVETKEZMÉNYE leképezhető a meglévő `Harcos.helyzet`
 # mezőre (harci_helyzetek.json id-k). A kihagyott manőverek (Fegyvertörés, Lefegyverzés,
 # Csonkolás, Feszítés/Leszorítás, Lánccsapda, Nyaktörés, Kéztörés/Lábtörés, Pajzsrongálás,
-# stb.) NINCSENEK bekötve — mechanikai hatásuk (állapot-mutáció) kívül esik a modell
+# stb.) NINCSENEK bekötve - mechanikai hatásuk (állapot-mutáció) kívül esik a modell
 # hatókörén. Ha ezt bővíteni kell, a Harcos állapotot elsőre fegyver/végtag-állapotokkal
 # kellene kiegészíteni, ami a jelen motor scope-ján túlmutat.
 #
@@ -79,7 +79,7 @@ MANOVER_HELYZET_HATAS = {
     "felállás_földről": None,                 # kilép a földön fekve helyzetből
 }
 
-# Melyik manőver KIRE hat (a célra: "cél"), és melyikre a végrehajtóra ("én") — a
+# Melyik manőver KIRE hat (a célra: "cél"), és melyikre a végrehajtóra ("én") - a
 # földre-vitel jellegű manővereknél a CÉL kerül a helyzetbe, a kibontakozás/felállás
 # jellegűeknél a VÉGREHAJTÓ oldódik fel belőle.
 MANOVER_HATAS_IRANYA = {
@@ -96,7 +96,7 @@ MANOVER_HATAS_IRANYA = {
 }
 
 # Manőver → KÖVETELMÉNY leképezés a jelenlegi Harcos/FegyverMod modellből (a manoverek.json
-# `követelmények[]` szöveges/narratív sorai helyett — ahol a feltétel a modellből ELDÖNTHETŐ).
+# `követelmények[]` szöveges/narratív sorai helyett - ahol a feltétel a modellből ELDÖNTHETŐ).
 def manover_kovetelmeny_teljesul(mid, harcos: "S.Harcos", cel):
     if mid == "belharcba_kerülés":
         return belharcos_fegyver(harcos.mod) and not (harcos.helyzet == "belharci_helyzet")
@@ -123,7 +123,7 @@ def manover_kovetelmeny_teljesul(mid, harcos: "S.Harcos", cel):
 
 
 def manover_alap(profil: "S.Profil"):
-    """§3.13: statikus, a HM_TÉ/HM_VÉ-ből — a Profilnak nincs külön HM_TÉ/HM_VÉ mezője,
+    """§3.13: statikus, a HM_TÉ/HM_VÉ-ből - a Profilnak nincs külön HM_TÉ/HM_VÉ mezője,
     ezért a harcmodor-bónuszból közelítjük: manőver_alap ≈ CEIL((hm_te+hm_ve)/10)."""
     import math
     return math.ceil((profil.hm_te + profil.hm_ve) / 10)
@@ -132,7 +132,7 @@ def manover_alap(profil: "S.Profil"):
 def manover_pont(profil: "S.Profil", harcmodor_osszeg, limit=4):
     """§3.13 + md/066_02: CEIL(harcmodor_összeg × 2 / tsz), [0,10] clamp, a felhasználható
     mennyiség viszont Ellenpróbánként limitált: TÁMADÓ oldalon max 4 MP, VÉDEKEZŐ ("counter",
-    a Nehézséget növeli) oldalon max 2 MP — ez a `limit` paraméter."""
+    a Nehézséget növeli) oldalon max 2 MP - ez a `limit` paraméter."""
     import math
     mp = math.ceil(harcmodor_osszeg * 2 / max(1, profil.tsz))
     return min(limit, max(0, min(10, mp)))
@@ -144,8 +144,8 @@ def probal_manover(mid, harcos, ellenfel, mp_fok, helyzetfuggo_mod=0, mp_ellenfe
             >=
         Manőver Alap(ellenfél) + Nehézség + MP_ellenfél(≤2) (+ helyzetfüggő mód)
     A `mp_ellenfel_fok` a védekező fél opcionális "counter" MP-befektetése (max 2, a
-    Nehézséget növeli) — a döntést az ő oldalán a döntési AI hozza meg, ELŐRE, a dobás előtt.
-    Visszaad: (siker: bool, mértéke: int — a túldobás, nagy siker (+4) jelzéshez)."""
+    Nehézséget növeli) - a döntést az ő oldalán a döntési AI hozza meg, ELŐRE, a dobás előtt.
+    Visszaad: (siker: bool, mértéke: int - a túldobás, nagy siker (+4) jelzéshez)."""
     alap_tamado = manover_alap(harcos.profil)
     alap_ellenfel = manover_alap(ellenfel.profil) if ellenfel is not None else 0
     k10 = random.randint(1, 10)
@@ -155,7 +155,7 @@ def probal_manover(mid, harcos, ellenfel, mp_fok, helyzetfuggo_mod=0, mp_ellenfe
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Helyzet-felmérés — mit "lát" a harcos a döntéshez
+# Helyzet-felmérés - mit "lát" a harcos a döntéshez
 # ─────────────────────────────────────────────────────────────────────────────
 
 def fegyver_kategoria_hossz(mod: "S.FegyverMod"):
@@ -193,7 +193,7 @@ def helyzet_felmeres(harcos: "S.Harcos", csapatok):
 # Helyzetfüggő módosítók (manoverek.yaml → data/sources/manoverek.yaml)
 # ─────────────────────────────────────────────────────────────────────────────
 # A yaml "sorok[]" listáiból csak a szimulátorban ÉRTELMEZHETŐ (számszerűsíthető) kategóriák
-# vannak bekötve — a "KM dönt" jellegű, tisztán narratív sorok (pl. Ellenfél háttal áll,
+# vannak bekötve - a "KM dönt" jellegű, tisztán narratív sorok (pl. Ellenfél háttal áll,
 # Ellenfél pajzsa) kimaradnak, mert a Profil/Harcos modell nem tartalmaz pajzsot vagy
 # hátrafordultság-állapotot. A pozitív érték NEHEZEBB, a negatív KÖNNYEBB Célszámot jelent
 # (a Célszámhoz adódik hozzá, ahogy a manoverek.yaml/engine_spec §21.4 is leírja).
@@ -209,7 +209,7 @@ def belharcba_kerules_helyzetfuggo_mod(ctx):
 
 
 def mogekerules_helyzetfuggo_mod(ctx):
-    """'Túlerő' kategória (manoverek.yaml): 1:2 → 0, 1:3 → -2, 1:4+ → -4 — az "Egy" a manővert
+    """'Túlerő' kategória (manoverek.yaml): 1:2 → 0, 1:3 → -2, 1:4+ → -4 - az "Egy" a manővert
     próbáló, minél nagyobb a LÉTSZÁM-KÜLÖNBSÉG a helyszínen (akár ellene, akár mellette), annál
     könnyebb elvegyülni/hátba kerülni egy konkrét célnak. Közelítés: a harcos oldalán ÉS az
     ellenfél oldalán lévő összes fő aránya, tulero_ellene abszolút értékével."""
@@ -250,11 +250,11 @@ def ellenfel_mp_counter_dontes(cel: "S.Harcos", mid):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Döntési szabályok — súlyozott véletlen (NEM determinisztikus if-else)
+# Döntési szabályok - súlyozott véletlen (NEM determinisztikus if-else)
 # ─────────────────────────────────────────────────────────────────────────────
 # Minden szabály egy (feltétel, akció, súly) hármas. A feltétel eldönti, aktiválható-e;
 # a súly relatív eséllyel versenyez a többi aktiválható szabállyal (nem fix %, hanem
-# egymáshoz viszonyított arány) — így könnyen bővíthető/hangolható tábla, nem kódba
+# egymáshoz viszonyított arány) - így könnyen bővíthető/hangolható tábla, nem kódba
 # ágyazott elágazás-rengeteg.
 
 def dontesi_szabalyok(harcos: "S.Harcos", ctx):
@@ -280,7 +280,7 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
         szabalyok.append(("mögékerülés", 1.5))
 
     if harcos.helyzet == "földön_fekve" and manover_kovetelmeny_teljesul("felállás_földről", harcos, ctx["cel"]):
-        szabalyok.append(("felállás_földről", 5.0))   # sürgős — a földön fekve VÉ ×2 büntetés
+        szabalyok.append(("felállás_földről", 5.0))   # sürgős - a földön fekve VÉ ×2 büntetés
 
     if manover_kovetelmeny_teljesul("földrevitel", harcos, ctx["cel"]):
         szabalyok.append(("földrevitel", 1.0))
@@ -293,7 +293,7 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
     if manover_kovetelmeny_teljesul("rávetődés_hátulról", harcos, ctx["cel"]):
         szabalyok.append(("rávetődés_hátulról", 2.0))
 
-    # --- Taktikák — az ÖSSZES közelharci taktikák.json id (lovas/távharci taktikák kizárva) ---
+    # --- Taktikák - az ÖSSZES közelharci taktikák.json id (lovas/távharci taktikák kizárva) ---
     # Belharcban lévő taktikák nem érvényesek: a "tiltja_taktikákat" jellegű megkötéseket
     # (Orvtámadás) itt nem kezeljük, mert a modellben nincs orvtámadás-helyzet generálás.
 
@@ -305,7 +305,7 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
             szabalyok.append(("taktika:roham", 1.2))
         if (ctx["roham_meg_elerheto"] and ctx["sajat_ep_arany"] > 0.6
                 and ctx["cel_ep_arany"] < 0.35):
-            szabalyok.append(("taktika:öngyilkos_roham", 1.8))   # a cél már majdnem elesett — érdemes végigrohamozni
+            szabalyok.append(("taktika:öngyilkos_roham", 1.8))   # a cél már majdnem elesett - érdemes végigrohamozni
 
         # Fárasztás: csak Fegyverhátrányból NEM alkalmazható (l. taktikak.json megkötés)
         if ctx["fegyverviszony"] != "fegyverhátrány":
@@ -314,7 +314,7 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
         # Kezdeményező: ha a harcos fürgébb akar lenni, kis VÉ árat fizetve
         szabalyok.append(("taktika:kezdeményező:1", 0.8))
 
-        # Kiváró: passzív, TÉ+3 az első visszacsapásra — jó, ha még nem sebződött
+        # Kiváró: passzív, TÉ+3 az első visszacsapásra - jó, ha még nem sebződött
         if ctx["sajat_ep_arany"] > 0.8:
             szabalyok.append(("taktika:kiváró", 1.0))
 
@@ -337,10 +337,10 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
         if ctx["tobbszoros_tamadasa_van"]:
             szabalyok.append(("taktika:1_támadás", 0.6))
 
-        # Érintő: nem-sebző, informatív próba — ritkán racionális, kis súllyal jelen van
+        # Érintő: nem-sebző, informatív próba - ritkán racionális, kis súllyal jelen van
         szabalyok.append(("taktika:érintő", 0.2))
 
-    # Alap taktikai hajlandóság — állapotfüggő, mindig elérhető:
+    # Alap taktikai hajlandóság - állapotfüggő, mindig elérhető:
     if ctx["sajat_ep_arany"] < 0.3:
         szabalyok.append(("taktika:teljes_védekezés", 3.0))
     elif ctx["sajat_ep_arany"] > 0.7 and not ctx["mar_belharcban"]:
@@ -398,7 +398,7 @@ def alkalmaz_dontes(harcos: "S.Harcos", akcio, ctx):
             return cimke
 
         # --- Sikeres manőver: a MANOVER_HELYZET_HATAS/MANOVER_HATAS_IRANYA tábla szerinti
-        # helyzet-állítás (l. modul-fej — csak a helyzetre leképezhető manőverek vannak itt). ---
+        # helyzet-állítás (l. modul-fej - csak a helyzetre leképezhető manőverek vannak itt). ---
         irany = MANOVER_HATAS_IRANYA.get(akcio)
         uj_helyzet = MANOVER_HELYZET_HATAS.get(akcio, "__nincs__")
         if uj_helyzet != "__nincs__":
@@ -462,7 +462,7 @@ def kuzdelem_ai(csapatok, pancel_oszaly="csupasz", max_kor=40, regen=1, naplo=No
 # ─────────────────────────────────────────────────────────────────────────────
 
 def selftest():
-    print("=== SELF-TEST — Taktikai AI validáció ===")
+    print("=== SELF-TEST - Taktikai AI validáció ===")
     ok = True
     import random
 
@@ -488,18 +488,18 @@ def selftest():
         gy, kor = kuzdelem_ai([a, b], pancel_oszaly="lanc")
         wins_ai += gy == 0
 
-    t1 = wins_ai > wins_alap + N * 0.15   # jelentős, nem zaj-szintű javulás — a küszöb 2026-09-25-én
+    t1 = wins_ai > wins_alap + N * 0.15   # jelentős, nem zaj-szintű javulás - a küszöb 2026-09-25-én
                                            # csökkent 0.30→0.15: a Pikás oldal is a bővített döntési
                                            # táblát kapja (l. dontesi_szabalyok), és most már saját
                                            # ellentaktikával (Lábkirántás szálfegyverrel → földre viheti
                                            # a Tőröst) él, tehát a Tőrös javulása korlátosabb, mint egy
-                                           # egyoldalúan bővített AI mellett — ez helyes, nem regresszió.
+                                           # egyoldalúan bővített AI mellett - ez helyes, nem regresszió.
     print(f"  {'✔' if t1 else '✘ HIBA'}  T1  Tőr vs Pika: alap {wins_alap/N:.1%} → AI-val {wins_ai/N:.1%} (a Belharcba kerülés kompenzál, a Pikás Lábkirántással visszavág)")
     ok &= t1
 
     # T2: hosszú fegyveres (Pika), aki NEM tud belharcba kerülni (kategóriája nem
     # 'közelharci'), az AI se nem ront, se nem javít drasztikusan a saját eredményén,
-    # amikor ELLENFELE próbálkozik — csak a defenzívát méri, ez determinisztikusan a
+    # amikor ELLENFELE próbálkozik - csak a defenzívát méri, ez determinisztikusan a
     # T1-ben már bizonyított, itt csak azt ellenőrizzük, hogy AI nélkül/AI-val a tükör-harc
     # (két Pikás egymás ellen, senki se tud belharcba kerülni) nem torzul.
     random.seed(601)
@@ -518,7 +518,7 @@ def selftest():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FORGATÓKÖNYV — rövid/belharcos fegyverek a Pika ellen, AI-val vs AI nélkül
+# FORGATÓKÖNYV - rövid/belharcos fegyverek a Pika ellen, AI-val vs AI nélkül
 # ─────────────────────────────────────────────────────────────────────────────
 
 def scenario_belharc_ellensuly(ellenfel_fegyver="Pika, keskeny hegyű", pancel_oszaly="lanc", n=600, seed=700):

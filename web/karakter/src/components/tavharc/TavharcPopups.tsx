@@ -46,7 +46,7 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, idea, 
     <>
       {popup.mfTarget !== null && (
         <PopupOverlay onClose={() => closePopup('mfTarget')}>
-          <h4>Mesterfegyver fok — {k.távfegyverek[popup.mfTarget]?.alap}</h4>
+          <h4>Mesterfegyver fok - {k.távfegyverek[popup.mfTarget]?.alap}</h4>
           <div className="kep-prompt-flex-fok">
             {[0, 1, 2, 3].map(f => (
               <button key={f} className={`fort-fok-btn${getMfFok(k, k.távfegyverek[popup.mfTarget!]?.alap) === f ? ' active' : ''}`}

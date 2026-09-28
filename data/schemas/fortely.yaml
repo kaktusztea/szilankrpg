@@ -4,9 +4,9 @@ schema_version: 1           # a fortely séma verziója
 név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
 maxfok: 0                     # [0;3] Legfeljebb hány foka lehet a fortélynak
-session_toggle: false         # opcionális, boolean (default: false) — Aktív fülön toggle gomb, harcérték módosítók csak ha aktív
-emlékeztető: false            # kötelező, boolean — Aktív fül Hatás pool "Fortély emlékeztetők" szekcióban megjelenik-e
-kiérdemelhető: false          # kötelező, boolean — Felvételnél választható-e a "Kiérdemelt" opció
+session_toggle: false         # opcionális, boolean (default: false) - Aktív fülön toggle gomb, harcérték módosítók csak ha aktív
+emlékeztető: false            # kötelező, boolean - Aktív fül Hatás pool "Fortély emlékeztetők" szekcióban megjelenik-e
+kiérdemelhető: false          # kötelező, boolean - Felvételnél választható-e a "Kiérdemelt" opció
 többszörösség:
   spec_típus: ""              # Pl: "fegyver", "alakzat". Üres = nem többszörös.
   spec_lista: ""              # Megengedett értékek. Pl: ["lovas ék", "testudo"]
@@ -41,9 +41,9 @@ fokok:
       - név: "mesterfegyver"  # Opcionális; CSAK mesterfegyver fortélyra hivatkozhat
         érték: 0              # fok
         típus: "mesterfegyver"
-      # típus: "tiltó_fortély" — a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok
+      # típus: "tiltó_fortély" - a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok
       #   (pl. "Nem lehetsz Analfabéta"). érték: 1 = a fortély bármely foka tilt.
-      # típus: "min_fegyverméret" — harci-helyzet-kötött min fegyverhossz WARNING (nem blokkol):
+      # típus: "min_fegyverméret" - harci-helyzet-kötött min fegyverhossz WARNING (nem blokkol):
       #   { típus: "min_fegyverméret", érték: <min fegyverhossz>, feltétel: "harci_helyzet:<id>" }
     hatástext:
       - text: ""

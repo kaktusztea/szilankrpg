@@ -117,7 +117,7 @@ export function checkKövetelmények(
       const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
       if (megvan) hiányzó.push(`Nem lehet: ${név} fortély`);
     }
-    // típus 'min_fegyverméret': NEM felvételi feltétel — harci-helyzet-kötött, fegyverfüggő
+    // típus 'min_fegyverméret': NEM felvételi feltétel - harci-helyzet-kötött, fegyverfüggő
     // WARNING (l. getMinFegyverhosszWarning). Itt tudatosan kihagyjuk, nem blokkolja a felvételt.
   }
   return hiányzó;

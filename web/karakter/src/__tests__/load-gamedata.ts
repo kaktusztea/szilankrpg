@@ -1,5 +1,5 @@
 /**
- * Test-only GameData loader — mirrors engine/data-loader.ts::loadGameData but
+ * Test-only GameData loader - mirrors engine/data-loader.ts::loadGameData but
  * reads the generated table JSONs from disk (vitest runs in node, no fetch).
  * Keep the assembly in sync with loadGameData if the table set changes.
  */

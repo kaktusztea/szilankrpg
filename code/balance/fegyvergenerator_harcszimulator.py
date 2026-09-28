@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fegyvergenerátor — kör-alapú harci szimulátor a fegyverek egymáshoz mérésére.
+"""Fegyvergenerátor - kör-alapú harci szimulátor a fegyverek egymáshoz mérésére.
 
 Cél: a fegyvergenerátor (`fegyvergenerator_balansz.FEGYVER_RECORDS`) fegyvereit valódi, kör-alapú
 harcban (§3-§6 `harcszimulacio.spec.md`) mérjük össze, nem csak statikus sebzés/tempó
@@ -8,20 +8,20 @@ metrikával (az utóbbit a `fegyvergenerator_balansz.py` már adja).
 A harci motor a `harcszimulacio_selftest.py` REFERENCIA implementációjának bővítése:
   - Fegyver-adapter: a generátor `módok[]` (aktoronkénti elsődleges/másodlagos sor)
     → a spec §6.5.1 sebzésjelleg×páncél mátrixa (a generátor SAJÁT, finomabb mátrixa,
-    NEM a régi spec flat Z/S/V bónusza — a generátor fegyvereit a saját mátrixukkal kell
+    NEM a régi spec flat Z/S/V bónusza - a generátor fegyvereit a saját mátrixukkal kell
     mérni, különben a WORK-paraméterek elszakadnak a mért eredménytől).
   - Taktika / harci helyzet / státusz: a spec §7-§9 tábláinak Python leképezése (kézzel,
-    mint a `harci_laz_*` szkriptek — a teljes JSON-vezérelt kiértékelés túl nagy scope
+    mint a `harci_laz_*` szkriptek - a teljes JSON-vezérelt kiértékelés túl nagy scope
     egy hangolási eszközhöz).
-  - Manőver: OPT-IN (a spec §13.8 óva int a bevonásától hangolási tesztekben — a
+  - Manőver: OPT-IN (a spec §13.8 óva int a bevonásától hangolási tesztekben - a
     varianciája nagyobb, mint a mérendő különbség), csak explicit jelölt forgatókönyvben.
 
 SZABÁLYDÖNTÉS ÁTVEZETVE (§13.1, LEZÁRVA 2026-09-26): a régi `k20T` (tízes-rész) helyett
-  `k20P` (páros/páratlan rész, `10`/`20`→2) — a sikertelen támadás VÉ csökkentése mindig a
+  `k20P` (páros/páratlan rész, `10`/`20`→2) - a sikertelen támadás VÉ csökkentése mindig a
   már eldobott támadó k20 páros/páratlanságából jön (közös kocka, nincs "független kocka"
   olvasat, a `K20T_FUGGETLEN` kapcsoló megszűnt).
 
-Célválasztás politika (mindenki, csak REF/N:N/N:1 nem): "legveszélyesebb gyenge" —
+Célválasztás politika (mindenki, csak REF/N:N/N:1 nem): "legveszélyesebb gyenge" -
   az élő, még harcképes ellenfelek közül a legkisebb ÉP-hátralévővel/VÉ-vel rendelkezőt
   célozza (nem a legerősebbet, de nem is vaktában/randomul).
 
@@ -40,7 +40,7 @@ import fegyvergenerator_balansz as FB   # AKTOR, TIPUS_PANCEL, PANCEL, Fegyver, 
 DATA_TABLES = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "tables"
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Adatbetöltés (data/tables/ — a webapp runtime JSON-jai, NEM a fegyvergenerátor)
+# Adatbetöltés (data/tables/ - a webapp runtime JSON-jai, NEM a fegyvergenerátor)
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _load_table(nev):
@@ -55,7 +55,7 @@ _PANCEL_MEREV = {s["struktúra"]: s["merev"] for s in _load_table("konstansok.js
 _PANCEL_MEREV["csupasz"] = False
 
 # Mátrix-osztály (a `fegyvergenerator_balansz.PANCEL`-ből) → (struktúra, sfé_fizikai, mgt).
-# Az első struktúrát választjuk minden osztályból (pl. "merev" → pikkely, nem lemez) —
+# Az első struktúrát választjuk minden osztályból (pl. "merev" → pikkely, nem lemez) -
 # konzisztens, determinisztikus, és a Profil páncél-mezőit ÖSSZHANGBAN tartja a
 # sebzésjelleg×páncél mátrix-oldallal (l. §6.5.1 megjegyzés a modul docstringjében).
 # EGYSZERŰSÍTÉS: nincs fémalapanyag-módosítás (a nyers struktúra sfé_fizikai/mgt megy).
@@ -112,7 +112,7 @@ def sebesules_te_levonas(kat, ft_enyhites):
 # ─────────────────────────────────────────────────────────────────────────────
 
 # fegyverhossz kategória → durva "Pengehossz" (fegyverviszony §5.2). A generátor
-# fegyverhossz kat. (0..12) egy MÁS skála, mint a régi 0/0.5/1/1.5/2/3/4/5 pengehossz —
+# fegyverhossz kat. (0..12) egy MÁS skála, mint a régi 0/0.5/1/1.5/2/3/4/5 pengehossz -
 # ez a leképezés BECSLÉS (nincs 1:1 kanonikus megfeleltetés), csak a fegyverviszony
 # elő/hátrány irányához kell, ne kezeld pontos fizikai mértékként.
 _FEGYVERHOSSZ_TO_PENGEHOSSZ = {
@@ -123,11 +123,11 @@ KATEGORIA_TO_HARCMODOR = {
     "közelharci": "Közelharc", "kardvívó": "Kardvívás", "romboló": "Rombolás",
     "lándzsavívó": "Lándzsavívás", "ostorharc": "Ostorharc",
 }
-# ⚠ §3.8 referencia-tábla — jelenleg NEM automatizált levezetés. A `Profil.harcmodor_szint`
+# ⚠ §3.8 referencia-tábla - jelenleg NEM automatizált levezetés. A `Profil.harcmodor_szint`
 # mezőt a hívónak KÉZZEL kell a fegyver kategóriájának megfelelő harcmodor szintjére állítania
 # (a Harcos NEM ellenőrzi az összhangot). Ha a szkript több, eltérő kategóriájú fegyvert kap
 # ugyanazon Profillal, ezt a táblát kell(ene) a validáláshoz/automatikus szint-választáshoz
-# felhasználni — jelenlegi forgatókönyvekben minden teszt egy konzisztens profil+fegyver
+# felhasználni - jelenlegi forgatókönyvekben minden teszt egy konzisztens profil+fegyver
 # párost használ, ezért ez eddig nem okozott hibát, de a jövőbeli bővítésnél kötelező betartani.
 
 
@@ -182,7 +182,7 @@ ALL_WEAPON_MODES = generator_fegyverek(ero=2)
 
 @dataclass
 class Profil:
-    """Karakter-oldali bemenetek (a fegyver NÉLKÜL — azt a Harcos kapja meg)."""
+    """Karakter-oldali bemenetek (a fegyver NÉLKÜL - azt a Harcos kapja meg)."""
     nev: str
     tsz: int
     ero: int; edzettseg: int; ugyesseg: int; gyorsasag: int
@@ -192,7 +192,7 @@ class Profil:
     mesterfegyver_fok: int = 0    # a HASZNÁLT fegyverre
     merevvert_fok: int = 0
     harckeret_novles_fok: int = 0
-    # páncél (egyszerűsített — csak a szimulációhoz kell mezők)
+    # páncél (egyszerűsített - csak a szimulációhoz kell mezők)
     pancel_struktura: str = "csupasz"   # csupasz|posztó|fegyverkabát|bőr|lánc/sodrony|pikkely|lemez
     pancel_sfe: int = 0
     pancel_mgt: int = 0
@@ -244,8 +244,8 @@ def profil_szarmaztatott(p: Profil, mod: FegyverMod):
                 erobonusz_limit=erolimit)
 
 
-# ── Taktika / helyzet — ADATVEZÉRELT (data/tables/taktikak.json, harci_helyzetek.json) ──
-# A korábbi, kézzel írt TAKTIKAK/HARCI_HELYZETEK dict-ek megszűntek — minden mező a valós
+# ── Taktika / helyzet - ADATVEZÉRELT (data/tables/taktikak.json, harci_helyzetek.json) ──
+# A korábbi, kézzel írt TAKTIKAK/HARCI_HELYZETEK dict-ek megszűntek - minden mező a valós
 # webapp forrásból jön (`fegyvergenerator_data_adapter.py`). Az id-k a JSON id-jei (ékezetes,
 # pl. "roham", "támadó", "belharci_helyzet"), NEM a korábbi ASCII-sított custom kulcsok.
 
@@ -257,7 +257,7 @@ def netEH(*ertekek):
     return CLAMP(sum(ertekek), -2, 2)
 
 
-# Taktikák, amiknek van "első csere után lejár, VÉ csökk ×2" szabálya (§13.5) — ez a
+# Taktikák, amiknek van "első csere után lejár, VÉ csökk ×2" szabálya (§13.5) - ez a
 # szabálykönyvben SZÖVEGES/megjegyzés-szintű infó (nem strukturált mező a taktikak.yaml-ban),
 # ezért itt egy explicit lista jelzi, melyik taktika-id-kra vonatkozik.
 CSAK_ELSO_CSERE_TAKTIKAK = {"roham", "öngyilkos_roham"}
@@ -332,10 +332,10 @@ class Harcos:
         te = self.szarmaztatott["TE"] + lev + tm.get("te", 0)
         if tobbszoros_tamadas:
             te -= 3
-        # §8: Belharci helyzet — hosszú fegyver (pengehossz > 0) TÉ override 0 (fegyver_override,
+        # §8: Belharci helyzet - hosszú fegyver (pengehossz > 0) TÉ override 0 (fegyver_override,
         # a helyzet_fegyver_override() adatból); rövid/belharcos fegyver (pengehossz <= 0)
         # Belharcos fortély 1.fok TÉ+2 (egyszerűsítés: a döntési AI-hoz kötött karakter
-        # feltételezetten birtokolja 1.fokon — a fortély-adat maga NINCS ide bekötve)
+        # feltételezetten birtokolja 1.fokon - a fortély-adat maga NINCS ide bekötve)
         if self.helyzet == "belharci_helyzet":
             if self.mod.pengehossz > 0:
                 te = 0
@@ -383,14 +383,14 @@ def sikertelen_tamadas_ve_csokkentes(tamado: Harcos, vedo: Harcos, te_k20):
     alap_tab = {"fegyverhátrány": 0, "fegyverazonosság": 1, "fegyverelőny": 2}
     pv = fegyverviszony(tamado, vedo)
     # §13.9 (LEZÁRVA): Teljes Védekezés normalizálja a rá okozott VÉ csökkentést
-    # Fegyverazonosság szintre — semlegesíti a támadó Fegyverelőnyét (méretkülönbség/
+    # Fegyverazonosság szintre - semlegesíti a támadó Fegyverelőnyét (méretkülönbség/
     # Fárasztás bónusz alább, a hh/vhh blokkokban, továbbra is hat).
     if vedo.taktika == "teljes_védekezés":
         pv = "fegyverazonosság"
     # §13.1 (LEZÁRVA): a k20P mindig a már eldobott támadó k20-ból jön (közös kocka).
     alap = alap_tab[pv] + k20P(te_k20)
 
-    # Meglepetés: "VÉ csökkentés: +2" — ez a helyzet HATÁSA az áldozat (vedo) oldalán,
+    # Meglepetés: "VÉ csökkentés: +2" - ez a helyzet HATÁSA az áldozat (vedo) oldalán,
     # a schema cél-neve "vé_csökkentés" (nem "vé"!)
     hh = tamado.helyzet_hatas("vé_csökkentés")
     alap += hh.get("eh", 0)
@@ -429,7 +429,7 @@ def akcio_feloldas(tamado: Harcos, vedo: Harcos, pancel_oszaly, tobbszoros_tamad
     ta = tamado.te_aktualis(tobbszoros_tamadas) + k20
     ve = vedo.ve_aktualis()
 
-    # Hátulról támadás: "Pajzs VÉ nem számít" — szöveges hatás, a jelen modellben nincs
+    # Hátulról támadás: "Pajzs VÉ nem számít" - szöveges hatás, a jelen modellben nincs
     # pajzs a Profilban, ezért ez jelenleg nem hat semmire (dokumentált egyszerűsítés).
 
     if ta < ve:
@@ -457,7 +457,7 @@ def akcio_feloldas(tamado: Harcos, vedo: Harcos, pancel_oszaly, tobbszoros_tamad
 
     if tm.get("csak_elso_csere"):
         # §7: "Ha betalál: VÉ büntetése megszűnik és a visszatámadó nem kap +5/+7 SP-t"
-        # — a roham a TALÁLAT pillanatában lejár (nem csak a kör végén), hogy a
+        # - a roham a TALÁLAT pillanatában lejár (nem csak a kör végén), hogy a
         # rohamozó saját VÉ-je már a védő visszatámadásakor is büntetés nélküli legyen.
         tamado.roham_elhasznalt = True
         tamado.taktika = None
@@ -470,7 +470,7 @@ def akcio_feloldas(tamado: Harcos, vedo: Harcos, pancel_oszaly, tobbszoros_tamad
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Célválasztás — "legveszélyesebb gyenge": élő, harcképes ellenfelek közül a
+# Célválasztás - "legveszélyesebb gyenge": élő, harcképes ellenfelek közül a
 # legkisebb hátralévő ÉP-vel/VÉ-vel rendelkezőt célozza.
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -519,9 +519,9 @@ def kuzdelem(csapatok, pancel_oszaly="csupasz", max_kor=40, regen=1):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# SELF-TEST — a motor viselkedésének validálása a spec §15 elveivel (NEM a
+# SELF-TEST - a motor viselkedésének validálása a spec §15 elveivel (NEM a
 # hitelesített `harcszimulacio_selftest.py` értékeivel, mert MÁS fegyverkészletet
-# (fegyvergenerátor) és MÁS sebzésjelleg×páncél mátrixot használunk — a cél az,
+# (fegyvergenerátor) és MÁS sebzésjelleg×páncél mátrixot használunk - a cél az,
 # hogy a MOTOR (kör-feloldás, VÉ könyvelés, terminálás) helyesen működjön, nem
 # az, hogy szám szerint egyezzen a régi fegyvertáblás referenciával.
 # ─────────────────────────────────────────────────────────────────────────────
@@ -545,7 +545,7 @@ def _profil_pribek(nev):
 
 
 def selftest():
-    print("=== SELF-TEST — motor-validáció (fegyvergenerátor fegyverekkel) ===")
+    print("=== SELF-TEST - motor-validáció (fegyvergenerátor fegyverekkel) ===")
     ok = True
     mod = ALL_WEAPON_MODES["Kard, hosszú"][0]
 
@@ -627,7 +627,7 @@ def selftest():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FORGATÓKÖNYVEK — a fegyverek egymáshoz mérése
+# FORGATÓKÖNYVEK - a fegyverek egymáshoz mérése
 # ─────────────────────────────────────────────────────────────────────────────
 
 REFERENCIA_FEGYVER = "Kard, hosszú"   # a mátrix-összevetés fix ellenfele (mint a tempó-teszt)
@@ -655,7 +655,7 @@ def scenario_1v1_mind_a_referencia_ellen(pancel_oszaly="lanc", n=800, seed=100):
 
 
 def scenario_tulero(fnev="Kard, hosszú", pancel_oszaly="bor", letszamok=(1, 2, 3, 4, 5, 8), n=400, seed=200):
-    """Egy erős hős N gyengébb (pribék) ellen — a győzelmi arány letszám-görbéje."""
+    """Egy erős hős N gyengébb (pribék) ellen - a győzelmi arány letszám-görbéje."""
     random.seed(seed)
     pm = pancel_profil_mezok(pancel_oszaly)
     mod = ALL_WEAPON_MODES[fnev][0]
@@ -725,9 +725,9 @@ def scenario_szituaciok(fnev="Kard, hosszú", n=600, seed=400):
 
 if __name__ == "__main__":
     if not selftest():
-        raise SystemExit("Self-test hiba — a motor NEM megbízható, ne futtass forgatókönyveket.")
+        raise SystemExit("Self-test hiba - a motor NEM megbízható, ne futtass forgatókönyveket.")
 
-    print("=== 1:1 minden fegyver a referencia (%s) ellen — lánc páncél ===" % REFERENCIA_FEGYVER)
+    print("=== 1:1 minden fegyver a referencia (%s) ellen - lánc páncél ===" % REFERENCIA_FEGYVER)
     for fnev, arany, hossz in scenario_1v1_mind_a_referencia_ellen():
         print(f"  {fnev:28s} győz {arany:>6.1%}  hossz {hossz:>5.2f}")
 

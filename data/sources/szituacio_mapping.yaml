@@ -1,6 +1,6 @@
 # Képzettség → Szituáció mapping
 # Kulcs: képzettség neve (exact match a kepzettsegek.json-ból)
-# Érték: lista [{név, fájl}] — fájl = relatív útvonal a md/ könyvtárhoz képest
+# Érték: lista [{név, fájl}] - fájl = relatív útvonal a md/ könyvtárhoz képest
 
 Akrobatika:
   - név: "Elugrani lovaskocsi elől"

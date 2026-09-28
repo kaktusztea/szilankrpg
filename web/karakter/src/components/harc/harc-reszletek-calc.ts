@@ -106,7 +106,7 @@ export function calcReszletekData(
   if (!aktívResult) return null;
   const r = aktívResult;
 
-  // Fegyver def lookup — kétkezesnél a jobb kéz (ügyesebb) fegyverét használjuk
+  // Fegyver def lookup - kétkezesnél a jobb kéz (ügyesebb) fegyverét használjuk
   const fDefLookupNév = kétkezesResult
     ? (k.fegyverek[session.aktív_fegyver_index]?.alap ?? r.fegyver_név)
     : r.fegyver_név;

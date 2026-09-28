@@ -9,7 +9,7 @@ MARKER_FILE = os.path.join(TABLES_DIR, '.generated_marker')
 
 
 def _generator_files():
-    """A generátor összes forrásfájlja — ha bármelyik változik, újra kell generálni."""
+    """A generátor összes forrásfájlja - ha bármelyik változik, újra kell generálni."""
     files = [os.path.join(DATA_DIR, 'generate_tables.py')]
     files += [os.path.join(GEN_DIR, f) for f in sorted(os.listdir(GEN_DIR)) if f.endswith('.py')]
     return files

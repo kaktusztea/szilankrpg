@@ -1,4 +1,4 @@
-# Szilánk RPG — Fejlesztési állapot
+# Szilánk RPG - Fejlesztési állapot
 
 > Konvenciók, build, irányelvek → **AGENTS.md**
 > Kódtérkép, fájl-felelősségek → **MAP.md**
@@ -14,11 +14,11 @@
 | Harc alakzatban | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28 |
 | Méreggenerátor | KM eszköz: méreg paraméterek → komplexitás/Mk szint | §39 |
 | Belharc rendszer | Fegyver/harcmodor korlátozás jelzés + puszta kéz override | §21.4 |
-| Láthatatlan ellenfél | Taktika vs státusz döntés | — |
-| Ember (Szigetvilági) | Faj háttér hozzáadása (slan helyett) | — |
+| Láthatatlan ellenfél | Taktika vs státusz döntés | - |
+| Ember (Szigetvilági) | Faj háttér hozzáadása (slan helyett) | - |
 | **Fegyver Idea implementáció** 🐞 | `fegyverek[].idea` `[-5;+5]` → TÉ/CÉ/VÉ/SP módosító (`md/068_01_14`). A mező létezik és szerializálódik, de EGYETLEN kalkuláció sem használja | harcszimulacio.spec §16/8 |
-| Akadályoztatás státuszok | `Fegyver/Pajzs akadályoztatása`, `Páncél akadályoztatása` — `md/082`-ben definiált, `statuszok.yaml`-ban nincs | harcszimulacio.spec §16/9 |
-| Fárasztás érték data layerbe | A `3 VÉ` csak `megjegyzés` prózában él (`módosítók: {}`) — séma-bővítés kell | harcszimulacio.spec §16/2 |
+| Akadályoztatás státuszok | `Fegyver/Pajzs akadályoztatása`, `Páncél akadályoztatása` - `md/082`-ben definiált, `statuszok.yaml`-ban nincs | harcszimulacio.spec §16/9 |
+| Fárasztás érték data layerbe | A `3 VÉ` csak `megjegyzés` prózában él (`módosítók: {}`) - séma-bővítés kell | harcszimulacio.spec §16/2 |
 | MK párok ellenőrzése | `Kard, Slan` és `Mara-sequor` nem követi a `TÉ-2/VÉ-2 + Átütés megszűnik` MK szabályt. Szándékos? | harcszimulacio.spec §16/10 |
 | **`cél_páncél` VÉ/SFÉ extrák bekötése** | A `cél_páncél` extrák SP-hatású ága kész (Sebzés popup „Ellenfél páncél" választó → `panceltalant_jobban_sebez` +3 SP). A VÉ/SFÉ-hatásúak (`sfe_duplazodik` = Meneth, `pocsek_vedekezo_pancelos_ellen` = Béltépő) NINCSENEK bekötve: koncepcionális kérdés, mert a statikus fegyver-VÉ/SFÉ nem függhet dobásonként változó ellenfél-páncéltól (a Sebzés popup a támadó dobása). Feloldás: vagy egy külön „feltételezett ellenfél páncél" harc-szintű state a VÉ-táblához, vagy a reactive engine feltétel-dispatchbe kötött `cél_páncélosztály` context. Döntés kell. | STUDY.fegyvergenerator_v2 3g |
 | **Egységes effekt-modell** | A fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia). 1. fázis kész (szabvány + `extrak.yaml` pilot); 2. adat-migráció opportunista; 3. kód-összeolvasztás a reactive runtime effekt-fázisnál. | §42 |
@@ -59,7 +59,7 @@ TODO:
 ### Karakter séma (v2)
 - Egyetlen JSON (`karakter + session`), NEM tartalmaz számított értékeket
 - `session`: runtime harc state (vé_csökkenés, aktív_taktikák, fegyverfogás, stb.)
-- `előtörténet`: biográfiai mezők (`{ származás_helye, szociális_érzék, külső, előtörténet }`) — Előtörténet overlay (🪪)
+- `előtörténet`: biográfiai mezők (`{ származás_helye, szociális_érzék, külső, előtörténet }`) - Előtörténet overlay (🪪)
 - `checkpoints[]`: kiemelt karakter verziók (snapshot-alapú, → engine_spec §31b)
 - Multi-slot localStorage: `szilank_char_{uid}`, max 16 slot (ebből max 10 NJK)
 - Teszt karakter: `data/karakter/test_karakter2.json` (single source of truth)
@@ -69,7 +69,7 @@ TODO:
 - Harci → Harcértékek fül; Misztikus → Misztikus fül; többi → Tul/Képz
 
 ### Fortélyok
-- Tárolás: `{ név, fok, spec_típus, spec_elem, kiérdemelt? }` — név = alapnév
+- Tárolás: `{ név, fok, spec_típus, spec_elem, kiérdemelt? }` - név = alapnév
 - Locked: Mesterfegyver, Pajzshasználat, Merevvértviselet
 - Módok: flat, scaled, override, enyhít, előny, hátrány
 - Részletek → engine_spec §16, §16.1, §24, §25
@@ -94,11 +94,11 @@ TODO:
   - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful}.py` · `gen/validators.py` (referenciális ellenőrzések)
   - **Séma validáció**: minden source entitás kulcshalmazát a `schemas/*.yaml`-hoz méri (ismeretlen kulcs / hiányzó kötelező mező → build hiba). Kötelezőség a séma megjegyzéseiből: `# opcionális` → elhagyható, `# generált` → a generátor adja hozzá
   - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
-  - Marker fájl: `tables/.generated_marker` — Vite plugin ezt nézi freshness check-hez
+  - Marker fájl: `tables/.generated_marker` - Vite plugin ezt nézi freshness check-hez
   - `--force` flag: kényszerített újragenerálás (`python3 generate_tables.py --force`)
 - `vitest run`: 227 unit teszt (31 fájl); build előtt fut
 - Deploy: GitHub Pages, auto-deploy push master
-- Metadata: `ÉV.ÉVNAPJA.napibuild` — a `public/metadata.json` és a bundle `__APP_VERSION__` ugyanabból a fájlból jön (egy build = egy verzió)
+- Metadata: `ÉV.ÉVNAPJA.napibuild` - a `public/metadata.json` és a bundle `__APP_VERSION__` ugyanabból a fájlból jön (egy build = egy verzió)
 
 ### Cache / friss verzió (GitHub Pages)
 
@@ -106,7 +106,7 @@ A Pages `Cache-Control: max-age=600`-at ad az `index.html`-re, és **nem** enged
 1. **Adat cache-busting**: minden runtime JSON kérés `?v={APP_VERSION}`-nel megy (`data-loader.ts`) → deploy után sosem jön régi tábla új bundle-hez.
 2. **Verzió-ellenőrzés indításkor** (`engine/version-check.ts`, `main.tsx`): `metadata.json` `no-store` kéréssel; ha a szerver verziója ≠ a bundle verziója, a böngésző elavult HTML-t szolgált ki → egyszeri, `?v=`-vel cache-kerülő újratöltés, a `#hash` (megosztott karakter) megőrzésével. Loop védelem: sessionStorage (`szilank_reload_version`), 1s timeout, hibánál csendben tovább. A `?v=` utána `replaceState`-tel eltűnik a címsorból.
 
-Korlát: a 2. pont kódja az ÚJ bundle-ben él, tehát egy már beragadt (elavult HTML-t futtató) klienst nem gyógyít meg visszamenőleg — ott egyszeri hard refresh kell. A HTML cache teljes kikapcsolásához CDN kell a Pages előtt.
+Korlát: a 2. pont kódja az ÚJ bundle-ben él, tehát egy már beragadt (elavult HTML-t futtató) klienst nem gyógyít meg visszamenőleg - ott egyszeri hard refresh kell. A HTML cache teljes kikapcsolásához CDN kell a Pages előtt.
 
 ### Build scriptek
 
@@ -114,7 +114,7 @@ A natív Linux fájlrendszeren (`/repo/github/szilank.code/`) a teljes build ~18
 
 | Script | Mikor használd | Idő |
 |--------|---------------|-----|
-| `npm run build` | **Mindig ezt használd** — teljes: test + typecheck + bundle | ~18s |
+| `npm run build` | **Mindig ezt használd** - teljes: test + typecheck + bundle | ~18s |
 | `npm run build:fast` | Elérhető, de nem használjuk (tesztek nélkül) | ~8s |
 | `npm run build:changed` | Elérhető, de nem használjuk (git-based teszt szűrés) | ~10s |
 | `npm run test` | Csak tesztek futtatása (build nélkül) | ~5s |

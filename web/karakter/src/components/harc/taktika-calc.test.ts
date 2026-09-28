@@ -21,7 +21,7 @@ function makeData(): GameData {
 
 const session = { aktív_taktikák: [{ név: 'Visszafogott' }] } as unknown as Session;
 
-describe('calcTaktikaMods — letilt taktika-módosító semlegesítés', () => {
+describe('calcTaktikaMods - letilt taktika-módosító semlegesítés', () => {
   it('fortély nélkül a Visszafogott TÉ:-10 érvényesül', () => {
     const mods = calcTaktikaMods(session, makeData(), { fortélyok: [] } as unknown as Karakter);
     expect(mods['TÉ']).toBe(-10);
@@ -34,12 +34,12 @@ describe('calcTaktikaMods — letilt taktika-módosító semlegesítés', () => 
   });
 });
 
-describe('calcTaktikaMods — fokozatos ág + több cél halmozása', () => {
+describe('calcTaktikaMods - fokozatos ág + több cél halmozása', () => {
   function makeFokozatosData(): GameData {
     return {
       konstansok: { taktika_vé_eltolás_limit: 6 },
       taktikak: [
-        // Fokozatos taktika, 1. fok: KÉ+2, TÉ+5, VÉ-3, SP+1 — mind a négy célt érinti.
+        // Fokozatos taktika, 1. fok: KÉ+2, TÉ+5, VÉ-3, SP+1 - mind a négy célt érinti.
         { név: 'Támadó', feltétel_kulcs: 'taktika:támadó', fokozatos: true,
           fokok: [{ fok: 1, KÉ: 2, TÉ: 5, VÉ: -3, SP: 1 }] },
       ],

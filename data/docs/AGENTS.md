@@ -1,4 +1,4 @@
-# Szilánk RPG — AI fejlesztői irányelvek
+# Szilánk RPG - AI fejlesztői irányelvek
 
 ## Projekt
 
@@ -19,20 +19,20 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
 
 ## Munkafolyamat
 
-1. Tervet SOHA ne hajtsd végre automatikusan — mutasd be, kérj jóváhagyást
+1. Tervet SOHA ne hajtsd végre automatikusan - mutasd be, kérj jóváhagyást
 2. Nem egyértelmű kérésnél kérdezz vissza
 3. Backward compatibility: NEM szükséges (régi localStorage invalidálódhat)
 4. **Nagy refaktor / halott kód vadászat / data layer átalakítás**:
    - ELŐTTE olvasd be a `web/karakter/refactorlog/*.md` naplókat (csapdák, detektáló scriptek,
-     rögzített konvenciók — a legtöbb ott leírt hiba CSENDBEN hibázik)
+     rögzített konvenciók - a legtöbb ott leírt hiba CSENDBEN hibázik)
    - UTÁNA írj naplót: `web/karakter/refactorlog/ÉÉÉÉ-HH-NN.md` (mit, miért, milyen csapda derült ki)
 5. **Webapp kód VAGY data layer első érintése egy Kiro session-ben** → olvasd be a `data/sources/*.yaml`
-   fájlokat is: fontos STANDARDEK, SÉMÁK és ÉRTÉK-definíciók (kanonikus azonosítók, enumok) élnek bennük —
+   fájlokat is: fontos STANDARDEK, SÉMÁK és ÉRTÉK-definíciók (kanonikus azonosítók, enumok) élnek bennük -
    pl. `konstansok.yaml` (feltétel_prefixek, effekt_módok, harcérték-konstansok), `esemenyek.yaml` (cél/esemény id-k),
    `hatas_operatorok.yaml` (mód-operátorok), `manoverek.yaml` (manőver id-k), `statuszok.yaml`, `harci_helyzetek.yaml`,
-   sebzésjelleg (S/V/Z). NE találj ki új azonosítót/vokabulárt, ha már van kanonikus — AHHOZ igazodj.
+   sebzésjelleg (S/V/Z). NE találj ki új azonosítót/vokabulárt, ha már van kanonikus - AHHOZ igazodj.
 
-## Architektúra — 3 pillér
+## Architektúra - 3 pillér
 
 ### 1. Reactive Engine
 - `data/rules.json` (53 deklaratív szabály) + `engine/reactive.ts` (evaluate)
@@ -69,18 +69,18 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 - **Gépi ellenőrzés**: `data/gen/naming_lint.py` → a `generate_tables.py` build-gate-je, a `data/sources` yaml fájljaira (a fegyvergenerátor `data/sources/fegyverek/` almappáját is beleértve). Sértés → build hiba. Önállóan: `python3 data/gen/naming_lint.py`. Új kivétel kell? → a `naming_lint.py` `NAME_KEYED_FILES` / `NAME_VALUE_KEYS` listái.
 
 ### UI konvenciók
-- CSS class (prefix: `he-`, `aktiv-`, `naplo-`, stb.) — NEM inline style
+- CSS class (prefix: `he-`, `aktiv-`, `naplo-`, stb.) - NEM inline style
 - Popup: `createPortal(document.body)`, Escape bezár, mellé-katt bezár
 - Értékválasztó: kiválasztás = bezárás (nincs OK gomb)
 - Scrollozható overlay popup: `max-height: Xvh; overflow-y: auto` közvetlenül a popup div-en. NEM flex layout a szülőn! (A `.kep-prompt-overlay` flex center összenyomja a flex gyerekeket.)
 - Dark theme, mobil-first, LF sorvégek
 - Tab bar: tükrözött renderelés (reverse), swipe invertált
-- Workaround jelölés: `// WORKAROUND: <id> — <leírás>`. Regiszter: `gui_spec.md` → „Workaround regiszter"
+- Workaround jelölés: `// WORKAROUND: <id> - <leírás>`. Regiszter: `gui_spec.md` → „Workaround regiszter"
 
 ### Karakter adatmodell
 - Schema v2 (`data/schemas/karakter.yaml`)
 - `session` szekció = runtime harc state (NEM mentett állapot)
-- Fortélyok: `{ név, fok, spec_típus, spec_elem, kiérdemelt? }` — név = alapnév
+- Fortélyok: `{ név, fok, spec_típus, spec_elem, kiérdemelt? }` - név = alapnév
 - Multi-slot localStorage: `szilank_char_{uid}`, max 16 (ebből max 10 NJK)
 
 ### Feltétel rendszer
@@ -89,8 +89,8 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 - Prefixek: `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `fegyverfogás:`
 
 ## Szabályrendszer (md/)
-- Éles: `/repo/github/szilank.code/md/` — tartalomjegyzék: `szabalyrendszer.md`
-- Wiki (fejlesztő portál): `/repo/github/szilank.wiki/` — félkész, NE keverd az élessel
+- Éles: `/repo/github/szilank.code/md/` - tartalomjegyzék: `szabalyrendszer.md`
+- Wiki (fejlesztő portál): `/repo/github/szilank.wiki/` - félkész, NE keverd az élessel
 - Link audit: anchor módosításkor `grep -r` a teljes md/ könyvtáron
 - `.obsidian/` könyvtár: SOHA ne módosítsd
 
@@ -104,6 +104,6 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 | Séma változás | `data/schemas/*.yaml` + `engine/types.ts` |
 | Komponens | `gui_spec.md` + `components/{screen}/` |
 | Fortély/képzettség | `engine_spec.md §16/§25` + `data/sources/fortelyok/` |
-| **Szabály-hangolás / balance / tesztharc** | `harcszimulacio.spec.md` — önhordó harcrendszer spec (statblokk, körfeloldás, VÉ könyvelés, taktika/helyzet/státusz táblák, referencia statblokkok, ambiguitás-regiszter). Önteszt: `python3 code/balance/harcszimulacio_selftest.py` |
+| **Szabály-hangolás / balance / tesztharc** | `harcszimulacio.spec.md` - önhordó harcrendszer spec (statblokk, körfeloldás, VÉ könyvelés, taktika/helyzet/státusz táblák, referencia statblokkok, ambiguitás-regiszter). Önteszt: `python3 code/balance/harcszimulacio_selftest.py` |
 | Új feature | Releváns `features/*.md` ha létezik |
 | Refaktor / halott kód / duplikáció | `web/karakter/refactorlog/*.md` (korábbi refaktorok tanulságai + kipróbált detektáló scriptek) |

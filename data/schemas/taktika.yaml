@@ -5,9 +5,9 @@
 taktikák:
   - név: ""                    # kötelező, string
     id: ""                     # kötelező, egyedi azonosító (snake_case, ékezetes)
-    feltétel_kulcs: ""         # generált (id-ból), "taktika:xyz" formátum — a source yaml-ban NEM szerepel
+    feltétel_kulcs: ""         # generált (id-ból), "taktika:xyz" formátum - a source yaml-ban NEM szerepel
     fokozatos: false           # kötelező, boolean
-    skálázható: false          # opcionális, boolean — a fok a karakter szintjéhez skálázódik (konstansok.skálázható_taktika_max_fok)
+    skálázható: false          # opcionális, boolean - a fok a karakter szintjéhez skálázódik (konstansok.skálázható_taktika_max_fok)
     # Ha fokozatos: false → módosítók dict (opcionális, TÉ/VÉ/KÉ/SP kulcsok)
     módosítók:                 # opcionális (fokozatos: false esetén)
       TÉ: 0
@@ -36,4 +36,4 @@ taktikák:
       fortély: ""
       extra_fokok_per_fok: 0
     csoport: ""                # opcionális, string ("távharc" | "")
-    szűrő_harcmodorok: []     # opcionális, string lista — CÉ módosító csak ezekkel a harcmodorokkal érvényes
+    szűrő_harcmodorok: []     # opcionális, string lista - CÉ módosító csak ezekkel a harcmodorokkal érvényes

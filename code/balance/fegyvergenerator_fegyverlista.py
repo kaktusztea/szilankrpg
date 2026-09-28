@@ -12,12 +12,12 @@ súly az Erő-követelményből. Kihagyva: hárítófegyverek, puszta kéz, exot
 Futtatás:  python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md
 
 ─────────────────────────────────────────────────────────────────────────────
-Eredet: szilank.wiki/STUDY.fegyvergenerator_v2_fegyverlista.gen.py — migrálva 2026-09-10.
+Eredet: szilank.wiki/STUDY.fegyvergenerator_v2_fegyverlista.gen.py - migrálva 2026-09-10.
 A migrációnál a `STUDY.` prefixes fájlnév miatti importlib-hack helyére sima
 import került (a modulnév most már valid Python azonosító).
 
 FIGYELEM: tervezői eszköz, nem a data pipeline része. A kimenetét NE írd rá
-automatikusan az éles `md/068_0x_*.md` fegyvertáblákra — azok kézzel hangoltak.
+automatikusan az éles `md/068_0x_*.md` fegyvertáblákra - azok kézzel hangoltak.
 ─────────────────────────────────────────────────────────────────────────────
 """
 import datetime
@@ -47,7 +47,7 @@ def _extrak(r):
     Saját (fegyverek.yaml) + ÖRÖKÖLT: fegyverhossz-kategória (Beszorítható, övön hordható),
     szálfegyver-nyélanyag (pl. fanyelű → Fegyvertörés könnyebb), hajlékony (pajzs-megkerülés, fegyvertörés-immun),
     láncos (pajzs VÉ felezés). Plusz az akadály mező szöveges jelölése (NEM extrak.yaml-id, nincs harcérték-hatása)
-    és a fegyverhossz-ból levezetett Felszerelés pont (l. FSZ oszlop is — itt csak akkor jelenik meg, ha nem 0).
+    és a fegyverhossz-ból levezetett Felszerelés pont (l. FSZ oszlop is - itt csak akkor jelenik meg, ha nem 0).
     """
     fv = r["fegyver"]
     ids = list(r.get("extrak", []))
@@ -73,7 +73,7 @@ W = [(r["kategória"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r), _
 
 FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "FSZ", "Extrák", "Megj."]
 JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Fh", "FSZ"}  # numerikus oszlopok (jobbra igazítva)
-JOBBRA = {FEJLEC.index(nev) for nev in JOBBRA_OSZLOPNEVEK}  # index-halmaz — NÉVBŐL, nem kézzel számolva
+JOBBRA = {FEJLEC.index(nev) for nev in JOBBRA_OSZLOPNEVEK}  # index-halmaz - NÉVBŐL, nem kézzel számolva
 
 
 def sorok_kategoriankent():
@@ -106,7 +106,7 @@ def emit_tabla(rows):
 
 GEN_CMD = "python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md"
 
-INTRO = """> ⚠️ **AUTOMATIKUSAN GENERÁLT OLDAL — kézzel NE szerkeszd.**
+INTRO = """> ⚠️ **AUTOMATIKUSAN GENERÁLT OLDAL - kézzel NE szerkeszd.**
 >
 > Generálva: `{datum}` · Forrás: `data/sources/fegyverek/*.yaml`
 
@@ -131,9 +131,9 @@ Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
 - **Harcmodoronként külön tábla:** Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc.
 - **Több mód:** a többféle sebzésű fegyverek (pl. kard `V/S`) több sorban szerepelnek, Aktoronként.
 - **Jelleg / Sebzéstípus:** a `Jelleg` a sebzés jellege (szúró / vágó / zúzó); a `Sebzéstípus` a rang: `elsődleges` = alap sebzésmód (nincs büntetés), `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Az `alkalmatlan` nincs a táblában (KM: `Hátrány-2`). Éles: `064_02_05`.
-- **· FP** (a `Jelleg` mellett): puha ütőfelület (pl. ököl) — FP-sebzést okoz ÉP helyett. SFÉ az FP-t is csökkenti; a sebzésből minden 5. pont ÉP, a többi FP.
+- **· FP** (a `Jelleg` mellett): puha ütőfelület (pl. ököl) - FP-sebzést okoz ÉP helyett. SFÉ az FP-t is csökkenti; a sebzésből minden 5. pont ÉP, a többi FP.
 - **Fh** = Fegyverhossz kategória. **Seb.** = Sebesség (magasabb = lassabb).
-- **FSZ** = Felszerelés pont ([md/010_03_06](https://github.com/kaktusztea/szilankrpg/blob/master/md/010_03_06_felszereles.md), [md/068_01_13](https://github.com/kaktusztea/szilankrpg/blob/master/md/068_01_13_fegyver_mozgasgatlo_hatasa.md)): a fegyver forgatás-kategóriájából levezetett terhelés (`0` egykezes, `1` másfélkezes, `2` kétkezes) — a "súly" tengely NEM számít bele. A **Felszerelés keret** (`2 + Erő`) fölötti túlcsordulás pontonként `1 Felszerelés MGT` (`-1 TÉ`, `-1 Harckeret`).
+- **FSZ** = Felszerelés pont ([md/010_03_06](https://github.com/kaktusztea/szilankrpg/blob/master/md/010_03_06_felszereles.md), [md/068_01_13](https://github.com/kaktusztea/szilankrpg/blob/master/md/068_01_13_fegyver_mozgasgatlo_hatasa.md)): a fegyver forgatás-kategóriájából levezetett terhelés (`0` egykezes, `1` másfélkezes, `2` kétkezes) - a "súly" tengely NEM számít bele. A **Felszerelés keret** (`2 + Erő`) fölötti túlcsordulás pontonként `1 Felszerelés MGT` (`-1 TÉ`, `-1 Harckeret`).
 - **Erőlimit** = Erőbónusz limit: a sebzésbe (SP) fordítható Erő felső plafonja; `99` = nincs plafon (egyedi per-fegyver érték, `064_02_06`).
 - **Beszorítható** = Beszorított(2) tag (kat. 7 és 9, hosszú fegyver): ha az ellenfél bejut, `TÉ:0` ÉS `VÉ:0` (szituációs harci helyzet, nem a bázisérték). Kat. 12 NEM.
 - **Extrák** (külön oszlop, `extrak.yaml`): a bázisra jövő, feltételhez kötött hatások NEVE, `;` jellel elválasztva (saját + a fegyverhossz-kategória örökölt); a **Különleges felkészítés** (KF) kiképzés-függő bónusz. A tábla a **felkészítetlen** bázist mutatja; ezek szituációsan jönnek rá.

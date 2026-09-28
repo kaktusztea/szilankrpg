@@ -19,7 +19,7 @@ describe('calcLöveskitérésCélszám', () => {
     expect(calcLöveskitérésCélszám(íjak, 25)).toBe(9);
   });
 
-  it('clamps to the easiest (last) row beyond the table max — out-of-range is decided by Hatótáv, not here', () => {
+  it('clamps to the easiest (last) row beyond the table max - out-of-range is decided by Hatótáv, not here', () => {
     expect(calcLöveskitérésCélszám(íjak, 26)).toBe(9);
     expect(calcLöveskitérésCélszám(íjak, 999)).toBe(9);
   });

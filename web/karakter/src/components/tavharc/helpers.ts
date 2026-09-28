@@ -123,13 +123,13 @@ export function calcCÉ(p: { céAlap: number; önuralom: number; CM: number; har
   return p.céAlap + p.önuralom + p.CM + p.harcmodorCÉ + p.fegyverCÉ + p.mfCÉ + p.idea + p.fortélyCÉ;
 }
 
-/** Mágikus vs normál CÉ input — kategória alapján adaptálja az értékeket */
+/** Mágikus vs normál CÉ input - kategória alapján adaptálja az értékeket */
 function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number) {
   const isMágikus = def?.Kategória === 'mágikus';
   const mágikusTulajdonságCÉ = k.tsz + (k.tulajdonságok.gyorsaság ?? 0) + (k.tulajdonságok.intelligencia ?? 0);
   return {
     önuralom: isMágikus ? mágikusTulajdonságCÉ : (k.tulajdonságok.önuralom ?? 0),
-    // CM mindig számít — mágikus fegyvernél is (szabálykönyv 076: a mágikus
+    // CM mindig számít - mágikus fegyvernél is (szabálykönyv 076: a mágikus
     // CÉ formula tartalmaz + CM-et; csak az Önuralmat váltja TSz+Gyo+Int).
     CM: k.CM,
     idea: isMágikus ? 0 : idea,

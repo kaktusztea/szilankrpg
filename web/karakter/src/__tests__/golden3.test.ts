@@ -1,5 +1,5 @@
 /**
- * Golden test #3 — test_karakter3.json (pak-Teth, 11. TSz, Amund, misztikus mágus)
+ * Golden test #3 - test_karakter3.json (pak-Teth, 11. TSz, Amund, misztikus mágus)
  * Cél: misztikus/mágus karakter lefedése, kevés harci, sok képzettség/fortély.
  * Bőr páncél mestermunka, Meneth (abbitacél, MF 1.fok), Támadó taktika fok 3,
  * Meglepetés helyzet, Csonkolás manőver, Zavar státusz.
@@ -38,7 +38,7 @@ beforeAll(() => {
   }));
 });
 
-describe('Golden #3 — rules.json alapszámítások (pak-Teth, 11. TSz, Amund)', () => {
+describe('Golden #3 - rules.json alapszámítások (pak-Teth, 11. TSz, Amund)', () => {
   let results: Map<string, number>;
 
   beforeAll(() => {
@@ -84,7 +84,7 @@ describe('Golden #3 — rules.json alapszámítások (pak-Teth, 11. TSz, Amund)'
   it('merevvért_TÉ_büntetés = 0 (bőr nem merev)', () => expect(results.get('merevvért_TÉ_büntetés')).toBe(0));
 });
 
-describe('Golden #3 — fegyver kalkuláció', () => {
+describe('Golden #3 - fegyver kalkuláció', () => {
   let harcmodorÖsszeg: number;
   let lookupArrays: any;
   let stringCtx: Map<string, string>;
@@ -136,7 +136,7 @@ describe('Golden #3 — fegyver kalkuláció', () => {
   });
 });
 
-describe('Golden #3 — Fájdalomtűrés enyhítés', () => {
+describe('Golden #3 - Fájdalomtűrés enyhítés', () => {
   it('10. szint → enyhítés = 4', () => {
     const enyhítés = calcFtEnyhites(karakter.képzettségek, konstansok.fájdalomtűrés_enyhítés);
     expect(enyhítés).toBe(4);

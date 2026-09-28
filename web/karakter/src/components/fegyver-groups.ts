@@ -7,7 +7,7 @@ export const FEGYVER_KATEGORIAK = ['kardvívó', 'közelharci', 'romboló', 'lá
 /**
  * Fegyverek kategóriánként csoportosítva, a `getValue` a picker-érték előállítója:
  * - Harcértékek: teljes `név` (több variáns megkülönböztetéséhez)
- * - Fortély (Mesterfegyver): `név` (spec_elem szemantika — a generátor modellben nincs
+ * - Fortély (Mesterfegyver): `név` (spec_elem szemantika - a generátor modellben nincs
  *   külön 1K/2K rekord/Alapnév, egy fegyvernek egy neve van, a `módok[]` tartja a variánsokat)
  *
  * @param felvett  Kihagyandó értékek (getValue kimenete, lowercase-elve hasonlítva).

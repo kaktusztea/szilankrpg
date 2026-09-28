@@ -32,7 +32,7 @@ interface Props {
   /** A fegyver összes kiszámított módja. >1 elem esetén mód-választó gomb jelenik meg.
    * Üres/1 elem → egymódú fegyver, a té/sp/átütés propok érvényesek. */
   módok?: FegyverResultMód[];
-  /** Sebzésjelleg × páncél mátrix — továbbadva a Sebzés popupnak az „Ellenfél páncél" választóhoz. */
+  /** Sebzésjelleg × páncél mátrix - továbbadva a Sebzés popupnak az „Ellenfél páncél" választóhoz. */
   páncélMátrix?: SebzésjellegPáncélMátrix;
   /** Az aktív fegyver extráinak listája (`cél_páncél` SP-hatás kiértékeléséhez). */
   fegyverExtrák?: { id: string }[];
@@ -54,7 +54,7 @@ interface TéEredmény {
 }
 
 /**
- * Támadó dobás popup — two-phase:
+ * Támadó dobás popup - two-phase:
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */

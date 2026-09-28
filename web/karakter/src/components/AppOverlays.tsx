@@ -52,7 +52,7 @@ interface Props {
   saveSlotToFile: (uid: string, action: 'download' | 'share') => void;
   importKarakter: (k: Karakter, overwriteUid: string | false) => void;
   deleteSlot: (uid: string) => void;
-  /** Karakter aktívvá tétele (state + undo + teszt mód + dirty) — useKarakterActions */
+  /** Karakter aktívvá tétele (state + undo + teszt mód + dirty) - useKarakterActions */
   activateKarakter: (k: Karakter, undo?: any[]) => void;
   setUndoStack: React.Dispatch<React.SetStateAction<any[]>>;
   isDirty: boolean;

@@ -83,7 +83,7 @@ export function buildFortelyPickerSource(
   if (def.többszörös_lista.length > 0) {
     return {
       type: 'list',
-      label: `${def.név} — ${def.többszörös_típus}:`,
+      label: `${def.név} - ${def.többszörös_típus}:`,
       items: def.többszörös_lista.filter(s => !usedSubs.has(s)).map(s => ({ value: s, label: s })),
     };
   }
@@ -92,7 +92,7 @@ export function buildFortelyPickerSource(
     const felvett = new Set([...usedSubs].map(s => s.toLowerCase()));
     return {
       type: 'grouped',
-      label: `${def.név} — fegyver:`,
+      label: `${def.név} - fegyver:`,
       groups: buildFegyverGroups(data, f => f.név, felvett),
     };
   }
@@ -105,7 +105,7 @@ export function buildFortelyPickerSource(
     }
     return { type: 'grouped', label: def.név, groups: [...byGroup.entries()].map(([label, items]) => ({ label, items })) };
   }
-  return { type: 'freetext', label: `${def.név} — ${def.többszörös_típus}:` };
+  return { type: 'freetext', label: `${def.név} - ${def.többszörös_típus}:` };
 }
 
 /** Returns true if this fortély's többszörös picker is free text (no finite list). */

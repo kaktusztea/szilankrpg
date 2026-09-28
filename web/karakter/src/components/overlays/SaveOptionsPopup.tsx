@@ -42,7 +42,7 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
   function handleDesktopSave() {
     if (saving) return;
     setSaving(true);
-    // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking native file dialog
+    // WORKAROUND: double-rAF-paint - ensures spinner paints before blocking native file dialog
     requestAnimationFrame(() => requestAnimationFrame(() => onSaveFile()));
   }
 
@@ -56,7 +56,7 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
   return createPortal(
     <div className="kep-prompt-overlay" onClick={handleBackdrop}>
       <div className="kep-prompt overlay-menu">
-        <label className="overlay-label-center">Mentés — {név}</label>
+        <label className="overlay-label-center">Mentés - {név}</label>
 
         {canShare ? (
           <>
@@ -81,7 +81,7 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
 
         {showInfo && (
           <div className="save-info-panel" onClick={() => setShowInfo(false)}>
-            <b>URL link / QR kód — nem tartalmazza:</b>
+            <b>URL link / QR kód - nem tartalmazza:</b>
             <ul>
               <li>Előtörténet (szöveges mező)</li>
               <li>Karakter verziók (checkpoint-ok)</li>

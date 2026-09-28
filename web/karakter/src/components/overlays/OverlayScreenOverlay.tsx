@@ -21,7 +21,7 @@ export function OverlayScreenOverlay({ karakter, setKarakter, onClose, onViewChe
           {/* Karakter verziók + Napló (accordionok) */}
           <NaploTab karakter={karakter} setKarakter={setKarakter} onViewCheckpoint={id => { onViewCheckpoint?.(id); onClose(); }} />
 
-          {/* Jegyzetek — accordion, alapból nyitva */}
+          {/* Jegyzetek - accordion, alapból nyitva */}
           <details className="naplo-cp-section naplo-notes-section" open>
             <summary className="naplo-cp-summary naplo-notes-summary">Jegyzetek</summary>
             <textarea

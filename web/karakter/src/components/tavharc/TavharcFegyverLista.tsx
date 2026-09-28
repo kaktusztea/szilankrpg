@@ -19,7 +19,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
   const alkalmatlan = getAlkalmatlanInfo(k, data);
   const felvett = new Set(k.távfegyverek.map(tf => tf.alap.toLowerCase()));
   // Mágiatáv I–IV kölcsönösen kizáró: a felvett (aktív) verzió a `felvett` szűrő
-  // miatt nem jelenik meg, de a másik 3 igen — így lehet fokozatot váltani.
+  // miatt nem jelenik meg, de a másik 3 igen - így lehet fokozatot váltani.
   const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.Fegyver.toLowerCase()) && !d.Fegyver.startsWith('🔆'));
 
   const isMágikusDef = (alap: string) =>
@@ -28,7 +28,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
   function addTávfegyver(alap: string) {
     setKarakter(prev => {
       if (!prev) return prev;
-      // Mágiatáv: mindig csak 1 a 4-ből — ha már van mágikus, cseréljük (nem új példány).
+      // Mágiatáv: mindig csak 1 a 4-ből - ha már van mágikus, cseréljük (nem új példány).
       if (isMágikusDef(alap)) {
         const existingIdx = prev.távfegyverek.findIndex(tf => isMágikusDef(tf.alap));
         if (existingIdx >= 0) {

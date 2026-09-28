@@ -4,7 +4,7 @@ import { UNDO_MAX } from '../ui-constants';
 
 /**
  * Undo patch: a minimal inverse operation.
- * - For scalar fields: { field, prev } — restore field to prev value
+ * - For scalar fields: { field, prev } - restore field to prev value
  * - For array fields: { field, op, index?, item?, prev? }
  */
 export type UndoPatch =
@@ -97,7 +97,7 @@ export function coalesceKey(patches: UndoPatch[]): string | null {
       return `${p.field}:${item?.['név'] ?? ''}:${item?.['spec_elem'] ?? ''}`;
     }
   }
-  // Scalar field — include optional discriminator so edits to distinct
+  // Scalar field - include optional discriminator so edits to distinct
   // sub-fields (e.g. individual tulajdonságok) don't coalesce into one entry.
   return p.ckey ? `${p.field}:${p.ckey}` : p.field;
 }
@@ -116,7 +116,7 @@ export function isNoopAfterCoalesce(patches: UndoPatch[], nextValue: unknown): b
       if (!Array.isArray(nextArr) || p.index >= nextArr.length) return false;
       return JSON.stringify(p.prev) === JSON.stringify(nextArr[p.index]);
     }
-    // add/remove noop is complex — skip for now
+    // add/remove noop is complex - skip for now
     return false;
   }
   // Scalar: compare prev with nextValue directly

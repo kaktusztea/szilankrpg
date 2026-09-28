@@ -30,7 +30,7 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
   }, [onClose]);
 
   // Close popup when native file dialog steals focus (window blur), or fallback timeout.
-  // Only for JSON file load — QR image picker needs the popup alive for the onChange callback.
+  // Only for JSON file load - QR image picker needs the popup alive for the onChange callback.
   useEffect(() => {
     if (!loadingFile) return;
     const finish = () => onClose();
@@ -58,7 +58,7 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
   function handleFileLoad() {
     if (loadingFile) return;
     setLoadingFile(true);
-    // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking native file dialog
+    // WORKAROUND: double-rAF-paint - ensures spinner paints before blocking native file dialog
     requestAnimationFrame(() => requestAnimationFrame(() => onFileLoad()));
   }
 

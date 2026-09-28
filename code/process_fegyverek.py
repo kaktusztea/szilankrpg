@@ -41,7 +41,7 @@ if __name__ == "__main__":
         # Write output file
         path_json=os.path.join(dir_data, 'tables', d['output'])
 
-        # Post-process: tavfegyverek.json — Harcmodor és Kategória mező
+        # Post-process: tavfegyverek.json - Harcmodor és Kategória mező
         if d['output'] == 'tavfegyverek.json':
             # Mágiatáv I-IV hozzáfűzése (virtuális mágikus távfegyverek)
             for fokozat, (ce, oszto) in enumerate([('1','1'),('2','2'),('3','3'),('4','4')], start=1):

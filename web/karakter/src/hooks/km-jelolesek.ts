@@ -1,6 +1,6 @@
 /**
  * KM (Kalandmester) harci jelölések: az NJK switcher sáv chipjeihez rendelt
- * színes betű-jelölés + szabad szöveges jegyzet. Tisztán KM helyi eszköz —
+ * színes betű-jelölés + szabad szöveges jegyzet. Tisztán KM helyi eszköz -
  * NEM része a karakter sémájának, NEM utazik URL-megosztásban vagy checkpointban.
  *
  * Tárolás: külön localStorage kulcs, uid → { betű, szín, jegyzet }. A szín NEM a betűből
@@ -45,7 +45,7 @@ export function writeKmJelölés(uid: string, jel: KmJelölés): void {
   localStorage.setItem(KEY, JSON.stringify(tár));
 }
 
-/** Egy NJK jelölésének törlése (pl. a slot törlésekor — ne maradjon árva bejegyzés). */
+/** Egy NJK jelölésének törlése (pl. a slot törlésekor - ne maradjon árva bejegyzés). */
 export function removeKmJelölés(uid: string): void {
   const tár = readKmJelölések();
   if (uid in tár) {
@@ -56,7 +56,7 @@ export function removeKmJelölés(uid: string): void {
 
 /**
  * Korábban létrehozott KOMBINÁLT betűk (2+ karakter, pl. "MA"), hogy a picker fel tudja
- * sorolni újra választható chipként — azonos kezdőbetűjű NJK-k megkülönböztetéséhez
+ * sorolni újra választható chipként - azonos kezdőbetűjű NJK-k megkülönböztetéséhez
  * (pl. két "M"-es játékos: "M" és "MA"). ABC sorrendben, duplikátum nélkül.
  */
 export function kombináltBetűk(tár: KmJelölésTár = readKmJelölések()): string[] {
@@ -70,7 +70,7 @@ export function kombináltBetűk(tár: KmJelölésTár = readKmJelölések()): s
  *
  * 1. Ha ez a betű már szerepel valahol → ugyanazt a színt kapja (betű↔szín konzisztens).
  * 2. Különben a legkevésbé használt szabad színt választja (holtversenynél a paletta sorrendje dönt).
- *    ponytail: ha >12 eltérő betű van (paletta kimerül), a legritkábban használt szín ismétlődik —
+ *    ponytail: ha >12 eltérő betű van (paletta kimerül), a legritkábban használt szín ismétlődik -
  *    a KM-nek max 10 NJK-ja van, ez a gyakorlatban nem érhető el.
  *
  * @param betű a jelölő betű

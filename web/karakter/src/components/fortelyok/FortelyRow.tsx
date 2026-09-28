@@ -95,7 +95,7 @@ export function FortelyRow({
       {editing && (
         <PopupOverlay onClose={() => setEditing(false)}>
           <label className={isNyelv ? 'fort-label-centered' : undefined}>
-            {isNyelv ? label : `${label} — fok:`}
+            {isNyelv ? label : `${label} - fok:`}
           </label>
           <div className="fort-fok-radios">
             {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (

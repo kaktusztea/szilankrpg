@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import type { FegyverAlap, Karakter } from './types';
 import { calcKétkezesHarc } from './ketkezes';
 
-// Minimal weapon defs — only the fields calcKétkezesHarc reads.
-// Fegyverhossz: v2 skála (egész kategóriák, 0-12) — kard=3 (pl. Kard, lovag), tőr=1.
+// Minimal weapon defs - only the fields calcKétkezesHarc reads.
+// Fegyverhossz: v2 skála (egész kategóriák, 0-12) - kard=3 (pl. Kard, lovag), tőr=1.
 const kard = {
   név: 'Kard', kategória: 'kardvívó', fegyverhossz: 3,
   módok: [{ aktor: 'kard', jelleg: 'vágás', sebzéstípus: 'elsődleges', TÉ: 3, VÉ: 2, SP: 2, Átütés: 0, Sebesség: 4, Forgatás: 'egykezes', Erőlimit: 99, FP: false }],

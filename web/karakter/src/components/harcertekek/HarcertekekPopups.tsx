@@ -103,7 +103,7 @@ export function Popups({
             <ColumnPicker
               wide
               options={[
-                { value: '', label: '— nincs —' },
+                { value: '', label: '- nincs -' },
                 { value: 'kis', label: 'kis' },
                 { value: 'közepes', label: 'közepes' },
                 { value: 'nagy', label: 'nagy' },
@@ -147,7 +147,7 @@ export function Popups({
           onClose('kepzSzintTarget');
         }}>
           <SzintGrid
-            label={`${harciKepzDisplayName(data, kepzSzintTarget)} — szint:`}
+            label={`${harciKepzDisplayName(data, kepzSzintTarget)} - szint:`}
             maxSzint={data.konstansok.arányok.képzettség_max_szint}
             current={képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0}
             onSelect={n => {

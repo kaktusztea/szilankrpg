@@ -19,7 +19,7 @@ export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup }: Prop
     if (!pd) return null;
     const mód = elsődlegesMód(pd);
     const mf = data.konstansok.mesterfegyver_bónuszok?.find((b: { fok: number }) => b.fok === pajzsFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
-    // Inactive: pajzs not sole weapon — TÉ/SP/Sebesség struck through
+    // Inactive: pajzs not sole weapon - TÉ/SP/Sebesség struck through
     const inactive = !(k.session.fegyverfogás === 'egyfegyveres' && k.session.aktív_fegyver_index === -2);
     const cls = inactive ? ' he-strike' : '';
     const vé = mód.VÉ + mf.VÉ;
@@ -46,7 +46,7 @@ export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup }: Prop
       <h3>Pajzs</h3>
       {pajzsChip}
       <div className="he-fegyver-fields">
-        <button className="he-field-btn" onClick={() => onPajzsPopup('méret')}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
+        <button className="he-field-btn" onClick={() => onPajzsPopup('méret')}>Méret: <strong>{k.pajzs.méret || '- nincs -'}</strong></button>
         <button className="he-field-btn he-field-fortely" onClick={() => onPajzsPopup('pajzshasználat')}>Pajzshasználat fok: <strong>{pajzsFok}</strong></button>
       </div>
     </section>

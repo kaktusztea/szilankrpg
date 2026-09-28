@@ -1,4 +1,4 @@
-/** Radios row — compact numbered buttons (MF fok, végtagvédettség, rongálódás, stb.) */
+/** Radios row - compact numbered buttons (MF fok, végtagvédettség, rongálódás, stb.) */
 export function FokRadios({ values, current, onSelect }: {
   values: number[];
   current: number;
@@ -13,7 +13,7 @@ export function FokRadios({ values, current, onSelect }: {
   );
 }
 
-/** Column picker — vertical list of labeled options */
+/** Column picker - vertical list of labeled options */
 export function ColumnPicker<T extends string>({ options, current, onSelect, wide }: {
   options: { value: T; label: string }[];
   current: T;
@@ -30,7 +30,7 @@ export function ColumnPicker<T extends string>({ options, current, onSelect, wid
   );
 }
 
-/** Idea grid — 3-row grid (negatives / zero / positives) */
+/** Idea grid - 3-row grid (negatives / zero / positives) */
 export function IdeaGrid({ minIdea, maxIdea, current, onSelect }: {
   minIdea: number;
   maxIdea: number;
@@ -60,7 +60,7 @@ export function IdeaGrid({ minIdea, maxIdea, current, onSelect }: {
   );
 }
 
-/** Level grid — button grid for skill level selection */
+/** Level grid - button grid for skill level selection */
 export function SzintGrid({ current, maxSzint, onSelect, label }: {
   current: number;
   maxSzint: number;

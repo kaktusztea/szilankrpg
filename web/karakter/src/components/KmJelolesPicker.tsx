@@ -7,7 +7,7 @@ interface Props {
   /** Jelenleg kijelölt betű (üres = nincs). Lehet kombinált, pl. "MA". */
   aktuális: string;
   név: string;
-  /** Egy betűhöz megjelenítendő (felvételkor kapott) szín — a döntés a hívónál van. */
+  /** Egy betűhöz megjelenítendő (felvételkor kapott) szín - a döntés a hívónál van. */
   színÉrte: (betű: string) => string;
   /** Korábban már létrehozott kombinált betűk (pl. ["MA"]), hogy újra választhatók legyenek. */
   kombináltBetűk: string[];
@@ -19,7 +19,7 @@ interface Props {
 /**
  * KM harci jelölés betű-picker: A–Z színes karika chipek + „nincs jelölés".
  * A kiválasztás azonnal zár (UI-konvenció: nincs OK gomb). A chip színe a hívó
- * `színÉrte` előnézete — a tényleges színt a felvétel (`onPick`) rögzíti.
+ * `színÉrte` előnézete - a tényleges színt a felvétel (`onPick`) rögzíti.
  *
  * Long-press egy A-Z chipen → kiegészítő betű almenü (2. picker), hogy azonos
  * kezdőbetűjű NJK-k is megkülönböztethetők legyenek (pl. "M" + "A" → "MA").
@@ -34,7 +34,7 @@ export function KmJelolesPicker({ aktuális, név, színÉrte, kombináltBetűk,
     return (
       <PopupOverlay onClose={() => setKiegészítőAlap(null)}>
         <div className="kep-prompt km-jel-picker" onClick={e => e.stopPropagation()}>
-          <label className="kep-prompt-label-bold-mb">Kiegészítő betű — {kiegészítőAlap}+?</label>
+          <label className="kep-prompt-label-bold-mb">Kiegészítő betű - {kiegészítőAlap}+?</label>
           <div className="km-jel-grid">
             {KM_JEL_BETŰK.filter(b => b !== kiegészítőAlap).map(b => {
               const kombinált = kiegészítőAlap + b;
@@ -61,7 +61,7 @@ export function KmJelolesPicker({ aktuális, név, színÉrte, kombináltBetűk,
   return (
     <PopupOverlay onClose={onClose}>
       <div className="kep-prompt km-jel-picker" onClick={e => e.stopPropagation()}>
-        <label className="kep-prompt-label-bold-mb">Harci jelölés — {név}</label>
+        <label className="kep-prompt-label-bold-mb">Harci jelölés - {név}</label>
         <div className="km-jel-grid">
           {KM_JEL_BETŰK.map(b => (
             <button

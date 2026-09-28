@@ -21,7 +21,7 @@ const FEGYVERVISZONY_LABEL: Record<Fegyverviszony, string> = {
  * VÉ csökkentés popup: Fegyverviszony választó (3 gomb) → eredmény megjelenítése
  * (bázis + k20P bontással), harcszimulacio.spec.md §5.3. A választás UTÁN a felhasználó
  * látja a bontást, a bezárás (mellékatt/Escape) commitolja az eredményt a hívónál
- * (session.vé_csökkenés + TÉ history) — nincs újradobás, mert a k20P a már eldobott
+ * (session.vé_csökkenés + TÉ history) - nincs újradobás, mert a k20P a már eldobott
  * Támadó dobásból jön.
  */
 export function VeCsokkentesPopup({ k20, alapTáblázat, onClose }: Props) {

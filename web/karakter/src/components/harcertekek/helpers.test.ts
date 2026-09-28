@@ -42,7 +42,7 @@ describe('calcMaxHM', () => {
 
 describe('calcMaxAszimmetria', () => {
   // A formula a rules.json-ban él (`max_HM_aszimmetria`), az osztó a konstansokból jön:
-  // ezért itt VALÓDI gamedatát használunk — így a teszt a bekötést is védi.
+  // ezért itt VALÓDI gamedatát használunk - így a teszt a bekötést is védi.
   const real = loadGameDataSync();
   const osztó = real.konstansok.hm_aszimmetria_osztó;
 

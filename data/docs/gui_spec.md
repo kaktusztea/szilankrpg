@@ -1,4 +1,4 @@
-# GUI Spec — Szilánk RPG Karakteralkotó
+# GUI Spec - Szilánk RPG Karakteralkotó
 
 Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
@@ -11,7 +11,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - **Max szélesség**: 600px (centered)
 - **Font**: `'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
 - **Base font-size**: 16px
-- **Input min font-size**: 16px (iOS Safari auto-zoom prevention — 16px alatt a böngésző zoom-ol és nem áll vissza)
+- **Input min font-size**: 16px (iOS Safari auto-zoom prevention - 16px alatt a böngésző zoom-ol és nem áll vissza)
 - **Context menu**: disabled (`onContextMenu preventDefault`)
 - **User select**: disabled (`user-select: none`, `-webkit-touch-callout: none`)
 - **Body height**: `100dvh` (dynamic viewport height, iOS safe area aware)
@@ -21,10 +21,10 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
 iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (standalone mód) egy speciális WebView, ami agresszívebb compositing optimalizációt alkalmaz:
 
-- **Paint bug**: Ha egy scroll container (`overflow-y: auto`) tartalmának magassága csökken (DOM elemek törlése), a WebKit nem rajzolja újra a réteget — "eltűnik" a tartalom. Overlay/popup megnyitása kényszeríti a repaint-et.
+- **Paint bug**: Ha egy scroll container (`overflow-y: auto`) tartalmának magassága csökken (DOM elemek törlése), a WebKit nem rajzolja újra a réteget - "eltűnik" a tartalom. Overlay/popup megnyitása kényszeríti a repaint-et.
 - **Fix**: `.screen-slide`-on `transform: translateZ(0)` + `-webkit-overflow-scrolling: touch` → GPU layer promotion, ami kényszeríti a WebKit-et minden DOM mutációnál a réteg újrarajzolására.
 - **Nem elég**: `offsetHeight` olvasás (force reflow), üres `minHeight` spacer, láthatatlan DOM elem. Csak a `translateZ(0)` saját compositing layer oldja meg.
-- **Konvenció**: Inline `style={{}}` tilos — minden CSS-ből menjen (class-ok). A `translateZ(0)` nem hack, hanem a layout CSS állandó része.
+- **Konvenció**: Inline `style={{}}` tilos - minden CSS-ből menjen (class-ok). A `translateZ(0)` nem hack, hanem a layout CSS állandó része.
 
 ## CSS változók (dark theme)
 
@@ -79,7 +79,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 ### Közös CSS osztályok (`common.css`)
 | Osztály | Leírás |
 |---------|--------|
-| `.item-row` | Lista sor (fortély, képzettség, misztikus, harci helyzet, taktika, státusz stb.) — flex, align center, gap 8px |
+| `.item-row` | Lista sor (fortély, képzettség, misztikus, harci helyzet, taktika, státusz stb.) - flex, align center, gap 8px |
 | `.item-row-new` | Új elem hozzáadás sor (opacity: 0.7) |
 | `.item-delete` | Törlés gomb (✕) a sor végén (kék, 18px, border nélküli) |
 | `.csoport-label` | Összecsukható szekció fejléc (17px bold, border-bottom, pointer) |
@@ -130,7 +130,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - **Tap interakció**: minden szerkesztő interakció egyetlen koppintásra (tap/click) reagál (Tulajdonságok, Képzettségek, Fortélyok, Név, Szint, Kor)
 - **Popup overlay-ek**: `createPortal(document.body)`, `.kep-prompt-overlay` osztály, `position: fixed; inset: 0; z-index: 100`
 - **Escape**: minden popup overlay bezárható
-- **Overlay bezárás**: mellé kattintás (background click) + Escape. A kis megerősítő/érték-választó popupokon nincs ✕ gomb. Kivétel: az **Aktív fül picker overlay-jei** (Taktikák, Harci helyzetek, Manőver, Státuszok — közös `PickerOverlay`) jobb felső sarkában nagy ✕ bezáró gomb (`.aktiv-picker-close`, min. 44×44px tap-target) is van a mobil kényelemért; a háttér-katt/Escape továbbra is működik.
+- **Overlay bezárás**: mellé kattintás (background click) + Escape. A kis megerősítő/érték-választó popupokon nincs ✕ gomb. Kivétel: az **Aktív fül picker overlay-jei** (Taktikák, Harci helyzetek, Manőver, Státuszok - közös `PickerOverlay`) jobb felső sarkában nagy ✕ bezáró gomb (`.aktiv-picker-close`, min. 44×44px tap-target) is van a mobil kényelemért; a háttér-katt/Escape továbbra is működik.
 - **Accordion/collapse**: elemek lenyithatók koppintásra (Játék mód), másik koppintás becsukja
 - **Szín kód**: sárga (`--warning`) = módosítható/köztes érték, zöld (`--success`) = teljes/számított, piros (`--error`/`--accent`) = hiba/limit túllépés/kiemelt
 
@@ -139,12 +139,12 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 ## App fejléc (header)
 
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
-- Bal: "Szilánk" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
-- Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → Szilánk picker hub). A hub tartalma: (1) Szilánk értékválasztó 0/1/2/3, (2) elválasztókkal két külső link: "📖 Szabályrendszer" (`MD_BASE + szabalyrendszer.md`) és "📱 Webapp manuál" (`REPO_BASE + web/karakter/README.md`) — új tab, (3) két mindig nyitott próba blokk (nem összecsukható): Tulajdonságpróba (k6, célszám 3-8) és Képzettségpróba (k10, célszám 6-21) monospace. Dismissible (háttér-katt / Escape zár). Értékválasztás is zár.
+- Bal: "Szilánk" (`font-weight: bold, 16px, white-space: nowrap`) - double-tap → verzió info sáv (5s, sárga, 14px bold)
+- Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → Szilánk picker hub). A hub tartalma: (1) Szilánk értékválasztó 0/1/2/3, (2) elválasztókkal két külső link: "📖 Szabályrendszer" (`MD_BASE + szabalyrendszer.md`) és "📱 Webapp manuál" (`REPO_BASE + web/karakter/README.md`) - új tab, (3) két mindig nyitott próba blokk (nem összecsukható): Tulajdonságpróba (k6, célszám 3-8) és Képzettségpróba (k10, célszám 6-21) monospace. Dismissible (háttér-katt / Escape zár). Értékválasztás is zár.
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - ↩ Visszavonás gomb: undo overlay-t nyit (`↩ N` alakban, N = undo stack mérete; disabled + csak `↩` ha üres). Label szöveg nélkül.
-  - ✏️ Verziók, Napló, Jegyzetek overlay gomb (mindkét mód) — összevont overlay (lásd 6b)
-  - 🧑 Karakterek gomb (20% szélesebb padding): a Karakterek hub overlay-t nyitja (lásd lentebb) — ez az egyetlen karakter-kezelő menü
+  - ✏️ Verziók, Napló, Jegyzetek overlay gomb (mindkét mód) - összevont overlay (lásd 6b)
+  - 🧑 Karakterek gomb (20% szélesebb padding): a Karakterek hub overlay-t nyitja (lásd lentebb) - ez az egyetlen karakter-kezelő menü
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 2000ms fade
 - Megerősítő popup-ok (Új karakter): overlay, centered, label (bold) + dim szöveg + piros gomb
 - Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
@@ -169,17 +169,17 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - **Slot limit**: ha `MAX_KARAKTER_DB` (16) elérve → "Új karakter" / "Duplikál" / import / fájlból betöltés (új slot) helyett `SlotLimitOverlay` jelenik meg (`kind='total'`: "Karakter limit" felirat, piros, max szám kiírva, hint: töröld egy régit)
 - **NJK limit**: `MAX_NJK_DB` (10) tárolt NJK felett nem jöhet létre új NJK. Betartatási pontok:
   - Import (fájl/URL/vágólap), fájlból betöltés, duplikálás NJK-ra → `SlotLimitOverlay kind='njk'` ("NJK limit")
-  - Backup visszaállítás: a limit felett új NJK-k csendben kimaradnak (mint az összlimitnél); a `BackupRestoreOverlay` kiírja: „Tárolt NJK: X / 10 — új NJK kimarad"
+  - Backup visszaállítás: a limit felett új NJK-k csendben kimaradnak (mint az összlimitnél); a `BackupRestoreOverlay` kiírja: „Tárolt NJK: X / 10 - új NJK kimarad"
   - JK/NJK toggle chip (Tulajdonságok fejléc): JK → NJK váltás blokkolva, piros toast („Maximum 10 NJK tárolható"). Ez a limit legkönnyebben elérhető útja, ezért nem modális.
 - **Kvóta figyelmeztetés**: ha az autosave `setItem` kvótahibára fut, piros toast jelzi („A mentés nem sikerült: megtelt a böngésző tárhelye…"). A hiba korábban néma volt.
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
 - **Fájlnév**: `{becenév||név}__{játékos}_{tsz}tsz.json` (ékezet nélkül, szóköz→`_`, dupla `__` elválasztja a karakter és játékos nevet)
 - Karakterek hub overlay (🧑): az összes karakter-kezelés egy helyen. Felépítés fentről lefelé:
   - Fejléc: „Karakterek"
-  - **Felső akció sor** (`.slot-actions-top`, ikon-only, `title` tooltip): `📄` Új karakter (disabled ha `!isDirty`) · `📁` Betöltés fájlból (import: single + backup restore) · `📦` Backup (összes karakter mentése — disabled ha `!isDirty`)
+  - **Felső akció sor** (`.slot-actions-top`, ikon-only, `title` tooltip): `📄` Új karakter (disabled ha `!isDirty`) · `📁` Betöltés fájlból (import: single + backup restore) · `📦` Backup (összes karakter mentése - disabled ha `!isDirty`)
   - **Slot kártyák** (per karakter, 2-soros): a név több sorba tördelődik hosszú névnél (nincs csonkolás), a TSz suffix a név után folyik (lásd 1. sor).
-    - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés). A név több sorba tördelődik (`.slot-row-top` `overflow-wrap: break-word` — szóhatáron tör, túl hosszú szót szó közben vág), a TSz (`.slot-tsz`, `white-space: nowrap`) egyben marad, a név után folyik.
-    - **2. sor** (ikon-only chipek, 38×38px, 18px, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `💾` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix) · `✕` törlés (piros chip, `.slot-chip-del`)
+    - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés). A név több sorba tördelődik (`.slot-row-top` `overflow-wrap: break-word` - szóhatáron tör, túl hosszú szót szó közben vág), a TSz (`.slot-tsz`, `white-space: nowrap`) egyben marad, a név után folyik.
+    - **2. sor** (ikon-only chipek, 38×38px, 18px, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `💾` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share - **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix) · `✕` törlés (piros chip, `.slot-chip-del`)
   - **Footer** (`.menu-footer`): kis `T` chip (teszt karakter betöltése, halvány keret) a build verzió bal oldalán, `⛶` teljes képernyő ikon (label nélkül) a jobb oldalán. Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup.
 - **Fájlból betöltés**: single JSON és backup JSON egyaránt támogatott
   - Single: uid ütközés vizsgálat → ha létezik: importConfirm dialog (Felülírás / Új példány / Mégse)
@@ -193,8 +193,8 @@ Második fix sáv közvetlenül a Header alatt (`NjkSwitcher.tsx`, `.njk-bar`). 
 
 - **Megjelenés feltétele**: az aktív karakter `jk === false` (NJK) **és** nem verzió-megtekintés (`viewingCheckpoint`) van. Egyetlen NJK esetén is látszik (jelzi az NJK módot).
 - **Tartalom**: box (`.njk-box`) minden NJK slothoz (`jk === false`), feliratként `becenév`, ha üres akkor `név`, ha az is üres akkor „Névtelen". Nincs TSz suffix.
-- **Sorrend**: ABC a megjelenített név szerint (`localeCompare('hu')`) — NEM `mentés_dátum`, hogy a boxok pozíciója autosave-kor ne rendeződjön át.
-- **Tördelés**: a boxok tartalom szerinti szélességgel töltik a sávot; ha nem férnek bele, új sáv nyílik (`flex-wrap: wrap`). Nincs sáv-limit és nincs scroll — a sávok számát a tárolt NJK limit (`MAX_NJK_DB` = 10) tartja kordában. Nagyon hosszú neveknél a sáv tömöttebb lesz (`max-width: 100%` + ellipszis), ez elfogadott.
+- **Sorrend**: ABC a megjelenített név szerint (`localeCompare('hu')`) - NEM `mentés_dátum`, hogy a boxok pozíciója autosave-kor ne rendeződjön át.
+- **Tördelés**: a boxok tartalom szerinti szélességgel töltik a sávot; ha nem férnek bele, új sáv nyílik (`flex-wrap: wrap`). Nincs sáv-limit és nincs scroll - a sávok számát a tárolt NJK limit (`MAX_NJK_DB` = 10) tartja kordában. Nagyon hosszú neveknél a sáv tömöttebb lesz (`max-width: 100%` + ellipszis), ez elfogadott.
 - **Aktív box**: `.njk-box-active` (accent keret + accent szöveg + bold). Katt rá: no-op.
 - **Váltás**: `loadSlotKarakter(uid)` (ugyanaz a betöltő, amit a Karakterek hub slot kártyája használ) → `activateKarakter` (state + undo stack + testMode=false + isDirty=true; `useKarakterActions`). Az elhagyott karakter mentése az autosave-en keresztül már megtörtént (szinkron, minden `karakter` változásnál).
 - **Késés**: a becenév átírása 1 render késéssel jelenik meg a sávon, mert a slot entry csak autosave-kor frissül.
@@ -227,7 +227,7 @@ A KM harc közben megjelölheti, melyik NJK kivel harcol (pl. „A" = Attila ell
 
 ### Viselkedés
 - **Toggle gomb** a fejlécben (pl. 🔧/🎮 ikon): váltás a két mód között
-- **Játék módban**: a szerkesztő kontrollok (input mezők, szint-állítók, felvétel gombok) eltűnnek — csak az értékek látszanak
+- **Játék módban**: a szerkesztő kontrollok (input mezők, szint-állítók, felvétel gombok) eltűnnek - csak az értékek látszanak
 - **Játék módban elérhető**: Aktív fül teljes egészében, VÉ csökkenés +/- gombok, ÉP jelölés, Manőver Pont felhasználás, Harcértékek fül (read-only)
 
 ---
@@ -274,18 +274,18 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 3. **Manőver**: `<h3>` fejléc, field-btn. Manőver cím világos szürke (`#bbb`). Alatta: Nehézség+fázisok sor, hatás sor.
 
 #### Manőver dobás popup (`ManoverDobasPopup.tsx`)
-A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én hajtom végre / Passzív = ellenem), majd manőver választás (`ManoverPicker`, típus szerint csoportosítva — mindegyik kategória vékony színes bal-sávot + azonos színű fejlécet kap: kék/barna/zöld), végül a dobás popup.
-- **Header**: `Manőver név (fázisbetűk)` — pl. „Lánccsapda (V E)". A fázisokat a `parseFázisok` tiszta betűiből (M/V/E) képezi, szóközzel. Jobb oldalt Aktív/Passzív címke.
-- **0. lépés — Követelmények** (csak ha a manővernek van `követelmények`-e, és aktív módban): a M/V/E fázisok ELŐTT. Minden követelmény egymás alatt listázva (🟨 Normál / 🟥 Erős jelzéssel); a gépi (képzettség/fortély) követelményeknél auto-eredmény (✓ zöld / ✗ piros), az informatív (`egyéb`) követelménynél fehér `?`. Gombok: **Teljesül mind** (zöld, tiltva ha gépi Normál hiány) · **Normál hiány** (sárga `#e0b84a` → Ellenpróba `k10 (Hátrány-2)`) · **Erős hiány** (piros → auto-kudarc). Egy „hiány" gomb CSAK akkor jelenik meg, ha az adott erősségnek van hiányozható eleme (informatív VAGY gépi-és-nem-teljesül); ha egy erősség minden eleme gépi és mind ✓, a gombja elrejtve. Ha gépi Erős követelmény hiányzik: nincs döntés, „a manőver nem kísérelhető meg" üzenet + auto-kudarc.
+A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én hajtom végre / Passzív = ellenem), majd manőver választás (`ManoverPicker`, típus szerint csoportosítva - mindegyik kategória vékony színes bal-sávot + azonos színű fejlécet kap: kék/barna/zöld), végül a dobás popup.
+- **Header**: `Manőver név (fázisbetűk)` - pl. „Lánccsapda (V E)". A fázisokat a `parseFázisok` tiszta betűiből (M/V/E) képezi, szóközzel. Jobb oldalt Aktív/Passzív címke.
+- **0. lépés - Követelmények** (csak ha a manővernek van `követelmények`-e, és aktív módban): a M/V/E fázisok ELŐTT. Minden követelmény egymás alatt listázva (🟨 Normál / 🟥 Erős jelzéssel); a gépi (képzettség/fortély) követelményeknél auto-eredmény (✓ zöld / ✗ piros), az informatív (`egyéb`) követelménynél fehér `?`. Gombok: **Teljesül mind** (zöld, tiltva ha gépi Normál hiány) · **Normál hiány** (sárga `#e0b84a` → Ellenpróba `k10 (Hátrány-2)`) · **Erős hiány** (piros → auto-kudarc). Egy „hiány" gomb CSAK akkor jelenik meg, ha az adott erősségnek van hiányozható eleme (informatív VAGY gépi-és-nem-teljesül); ha egy erősség minden eleme gépi és mind ✓, a gombja elrejtve. Ha gépi Erős követelmény hiányzik: nincs döntés, „a manőver nem kísérelhető meg" üzenet + auto-kudarc.
 - **Fázisok lépegetése**: M/V/E fázisok egymás után; az aktív fázis diszkrét hideg-kék bal-keret + label. Fázisonként két gomb, középre igazítva. A szín az ALKALMAZÓ szempontját tükrözi: aktívban a manőver-siker felé vezető gomb zöld (nekem jó), a kudarc felé piros; PASSZÍVban fordul (ÉN védekezem → manőver-siker = piros). A végeredmény-sáv színe ugyanígy mód-függő. A FELIRATOK a KONKRÉT dobást írják le, a fázis CSELEKVŐJE (`fázis_cselekvő`, default M→ellenfél, V/E→én) + a mód alapján (`getFázisFelirat`): ha a megakasztó az ellenfél → „Elhibázta/Eltalált"; ha a cselekvő ÉN (támadás/megakasztás, pl. Távoltartás M) → „Talált/Nem talált"; Ellenpróbánál „Elértem/Nem értem el" (a nem-dobó félnél az „Elérte/…" alak). A belső siker-számítás cselekvő-alapú (`fázisSikeres`): én-cselekvőnél a találat, ellenfél-megakasztónál a hibázás a manőver-siker; a `handleSiker` ehhez igazítja a tárolt igen/nem-et.
-  - **`ellenpróba_bünteti` manőverek** (Átsiklás, Kibontakozás): az Ellenpróba NEM buktató — mindkét kimenet sikeres manőver (leléptél), a rontás csak büntetés. Gombok: aktív „Sikeres" (zöld) / „Rontott (megcsapkodnak)" (piros); passzív (én védekezem, az ellenfél siklik) „Átjutott" (piros) / „Megcsapkodod (1x)" (zöld). A rontott-de-sikeres kimenet SÁRGA átmeneti végeredmény-sávot kap (`.manover-veg-buntetve`): „⚠ Átjutott, de megcsaptad (1x)" / „⚠ Sikeres, de megcsaptak (1x)".
-  - Ha a manővernek van `fázis_info[fázis]` szövege (pl. speciális `M*` — az alkalmazó adja a Megakasztást), az aktív fázis tetején hideg-kék `ⓘ` magyarázó sor jelenik meg. `M`/`V` fázisnál a magyarázat HELYETTESÍTI a fix érték-kijelzést; `E` fázisnál KIEGÉSZÍTŐ (a dobás-UI mindig megmarad).
+  - **`ellenpróba_bünteti` manőverek** (Átsiklás, Kibontakozás): az Ellenpróba NEM buktató - mindkét kimenet sikeres manőver (leléptél), a rontás csak büntetés. Gombok: aktív „Sikeres" (zöld) / „Rontott (megcsapkodnak)" (piros); passzív (én védekezem, az ellenfél siklik) „Átjutott" (piros) / „Megcsapkodod (1x)" (zöld). A rontott-de-sikeres kimenet SÁRGA átmeneti végeredmény-sávot kap (`.manover-veg-buntetve`): „⚠ Átjutott, de megcsaptad (1x)" / „⚠ Sikeres, de megcsaptak (1x)".
+  - Ha a manővernek van `fázis_info[fázis]` szövege (pl. speciális `M*` - az alkalmazó adja a Megakasztást), az aktív fázis tetején hideg-kék `ⓘ` magyarázó sor jelenik meg. `M`/`V` fázisnál a magyarázat HELYETTESÍTI a fix érték-kijelzést; `E` fázisnál KIEGÉSZÍTŐ (a dobás-UI mindig megmarad).
 - **(V)égrehajtás**: TÉ chip (kerekített, kattintható, `ⓘ`), középre. Kattintásra popup a manőver TÉ-módosítójáról: `végrehajtás_té_módosító > 0` → „+X (standard)"; `0` → kiemelt jelzés, hogy nincs a szokásos +4 (sima támadás).
 - **(E)llenpróba**: a képlet és a gombok középre. Ezen a boxon belül:
   - **Helyzetfüggő módosítók** gomb (a „Helyzetfüggő módosítók" képzettségpróba mintájával azonos stílus), CSAK aktív módban. Overlay picker (kategóriánként single/multi). Az összeg a célszámba számít (`nehézség ± szitModÖsszeg`). Színkonvenció FORDÍTOTT: pozitív = piros (nehezebb), negatív = zöld (könnyebb). A Nehézség bontása nem jelenik meg a képletben, csak a végső célszám.
   - **MP használata** gomb (azonos stílus): overlay karikás fok-választó (`0`, `+1` … limitig, `fort-fok-btn`). Kiválasztáskor bezár, mellékattintás/Escape = cancel.
   - A dobás-képlet `k10`-je `k10 (Hátrány-2)`-re vált (sárga), ha a 0. lépésben „Normál hiány" a döntés.
-- **Végeredmény**: sikeres/sikertelen sáv; sikernél a `hatás` mondatonként külön sorban (yaml `hatás` lista), tördelve (popup `max-width`). A sikeres-box a `hatás`-ból KISZŰRI a `Sikertelen:` / `Kudarc:` (kudarc-eset) és a `Feltétel:` (követelmény/meta) előtagú sorokat — ezek a SIKERES kontextusban félrevezetők/feleslegesek (`eredményHatás` fn, prefix-alapú). A picker-leírás (`ManoverPicker`) a TELJES `hatás`-t mutatja, így a `Feltétel: ...` sorok ott informatívak.
+- **Végeredmény**: sikeres/sikertelen sáv; sikernél a `hatás` mondatonként külön sorban (yaml `hatás` lista), tördelve (popup `max-width`). A sikeres-box a `hatás`-ból KISZŰRI a `Sikertelen:` / `Kudarc:` (kudarc-eset) és a `Feltétel:` (követelmény/meta) előtagú sorokat - ezek a SIKERES kontextusban félrevezetők/feleslegesek (`eredményHatás` fn, prefix-alapú). A picker-leírás (`ManoverPicker`) a TELJES `hatás`-t mutatja, így a `Feltétel: ...` sorok ott informatívak.
 4. **Státuszok**: per-elem megjelenítés (nem aggregált). Státusz hatás: `Név (fok) alcím` gesztenye/bordó (`#cd7c6f`), félkövér, alatta soronként fehér hatás sorok. Szöveges operátor: csak `megjegyzés` szöveg (cél nem jelenik meg).
 5. **Narratív Előny/Hátrányok**: KM által hozzáadott szöveges + Előny/Hátrány értékek.
 
@@ -397,7 +397,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold). Kattintásra **PancelInfoPopup** nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT, csatolt tagok részletek).
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
   - **MA/MP box** (alsó sáv, a „⚔️ Manőver" gomb mellett, egysoros): `MA X · MP Y/Z` vízszintesen.
-    - `MA` (Manőver Alap, §14): statikus, HM-ből derivált érték — label + érték dim színnel. **Tap** → `Manőver Alap` infó popup: képletsor az eredménnyel (`X = (HM / 10) ↑`, egységes 16px monospace; X = MA érték zöld + bold), alatta egy sor: `HM (TÉ+VÉ) = Y` (középre, nem kifeszítve). Mindkét módban elérhető.
+    - `MA` (Manőver Alap, §14): statikus, HM-ből derivált érték - label + érték dim színnel. **Tap** → `Manőver Alap` infó popup: képletsor az eredménnyel (`X = (HM / 10) ↑`, egységes 16px monospace; X = MA érték zöld + bold), alatta egy sor: `HM (TÉ+VÉ) = Y` (középre, nem kifeszítve). Mindkét módban elérhető.
     - `·` elválasztó (success/zöld, bold)
     - `MP`: label (18px, uppercase) + érték `Y/Z` (20px, bold, success/zöld, monospace). Default: max.
     - **Tap zóna**: a picker CSAK az elválasztótól jobbra (MP rész) nyílik → MP picker popup (0…max rács). Játék módon kívül a Szerk/Játék toggle villan.
@@ -434,16 +434,16 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 - SFÉ értékek (`<strong>`): `font-family: monospace`
 - SFÉ lefedettség %: `font-family: monospace`
 - ÉP számok: `font-family: monospace`
-- Backtick formázás (`\`text\``): `<code>` elem, monospace, háttér `#333`, padding `0 3px`, border-radius `2px` — minden hatástext és infó megjelenítésnél (Aktív fül, Fortélyok fül)
+- Backtick formázás (`\`text\``): `<code>` elem, monospace, háttér `#333`, padding `0 3px`, border-radius `2px` - minden hatástext és infó megjelenítésnél (Aktív fül, Fortélyok fül)
   - Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát (Math.max(0,...) clamp).
 - **ÉP táblázat**:
   - **Fejléc sor** (4 oszlopos grid, S1-S4-hez igazítva):
-    - S1 pozíció: `ÉP: X(Y)` — X=max ÉP, Y=megmaradt ÉP
+    - S1 pozíció: `ÉP: X(Y)` - X=max ÉP, Y=megmaradt ÉP
     - S2 pozíció: `⟲ ÉP reset` gomb (centered, max-width 70%, disabled ha nincs seb, megerősítő popup: piros "ÉP Reset" gomb)
     - S3 pozíció: `⚔️ Seb` gomb (overlay popup, disabled ha minden rubrika ÉP sebekkel betelt)
     - S4 pozíció: `💚 Gyógy` gomb (overlay popup, disabled ha nincs seb)
   - 4 oszlop (S1-S4), mindegyikben ÉP/4 db rubrika
-  - Oszlop footer: TÉ levonás értékek — **Fájdalomtűrés képzettség szint alapján enyhítve** (konstansok.fájdalomtűrés_enyhítés táblából)
+  - Oszlop footer: TÉ levonás értékek - **Fájdalomtűrés képzettség szint alapján enyhítve** (konstansok.fájdalomtűrés_enyhítés táblából)
     - Dupla kopp a TÉ footer-en → navigál a Tul/Képz fülre, scroll a Fájdalomtűrés képzettséghez (ha felvéve)
   - Az aktuális sebesülés-kategória TÉ levonás footere invertált színnel kiemelve (0 sebnél is: S1 aktív)
   - Rubrikák fentről lefelé töltődnek S1→S2→S3→S4 sorrendben
@@ -454,7 +454,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Sorszám újrahasználat: ha egy seb összes rubrikája begyógyult, a száma felszabadul
   - TÉ levonás dinamikusan vonódik le a Teljes harcértékek TÉ oszlopából (sebesülés kategória alapján)
   - **⚔️ Sebesülés overlay popup**:
-    - Típus gombok: S, V, Z, FP (kerek, aktív=zöld) — kezdetben egyik sincs kiválasztva
+    - Típus gombok: S, V, Z, FP (kerek, aktív=zöld) - kezdetben egyik sincs kiválasztva
     - Érték gombok: 1-15 (alapból látható, 5 oszlop grid) + ▾ lenyitó → 16-40 (rejtett)
     - Mindkettő kiválasztva → azonnal bezárul és érvényre lép. Nincs OK/Mégse.
   - **💚 Gyógyulás overlay popup**:
@@ -477,7 +477,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 
 ## 2b. Távharc fül/screen (🏹)
 
-Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
+Távharc kalkulátor - CÉ és célpont VÉ számítás. Engine spec: §17.
 Fejléc: `<h2>🏹 Távharc</h2>`
 
 ### Szerkesztő mód
@@ -511,7 +511,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - **Célzó dobás** (Játék mód): a CÉ/VÉ box kattintható (cursor: pointer). Kattintásra `CélzóDobasPopup` nyílik (TamadoDobasPopup mintájára, két fázis):
   - **Fázis 1:** Megjegyzések (ha vannak) → ElőnyPicker (default: aktív hatásokból számolt nettó szint) → Hatások lista (aktív helyzetek/taktikák/fortélyok `cé_dobás` hatásai, badge + forrás) → Dobás gomb + ManualDicePicker (🎲)
   - **Fázis 2:** Eredmény vs VÉ kijelzés (két nagy szám „vs"-sel), alatta részlet: `CÉ (X) + k20 [rolls] → Y`, alatta Találat (zöld) / Nem talált (piros).
-  - Hatásforrások: harci helyzetek, taktikák (fokok), státuszok, fortélyok — mind aminek `cé_dobás` célú Előny/Hátrány hatása van.
+  - Hatásforrások: harci helyzetek, taktikák (fokok), státuszok, fortélyok - mind aminek `cé_dobás` célú Előny/Hátrány hatása van.
   - Mellé katt / Escape bezár.
 - Szorzó×Cella: szürke (`#999`), nem kattintható
 - Táv: zöld keret + zöld érték, kattintható → Távolság popup (−/+ gombok, cella kijelzés)
@@ -521,7 +521,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Aktív elem: zöld keret, default: alapeset (Álló 1×, Mozdulatlan 0×, Átlagos 0×, Jól kivehető 0×, Szélcsend 0×)
 - Formátum: `Nx: leírás`
 
-**Lövéskitérés box (Játék mód, MINDIG látszik):** önálló, **védekező** eszköz (md/073) — a karakter a CÉLPONT, saját Akrobatikájával tér ki egy BEJÖVŐ (támadó) fegyver lövése elől. Teljesen független a kimenő lövés-kalkulátortól; nincs szükség felvett távfegyverre. Ha van kiválasztott (kimenő) fegyver: a szorzó-grid Szél ereje melletti cellájában; ha nincs: standalone jelenik meg. Tartalma:
+**Lövéskitérés box (Játék mód, MINDIG látszik):** önálló, **védekező** eszköz (md/073) - a karakter a CÉLPONT, saját Akrobatikájával tér ki egy BEJÖVŐ (támadó) fegyver lövése elől. Teljesen független a kimenő lövés-kalkulátortól; nincs szükség felvett távfegyverre. Ha van kiválasztott (kimenő) fegyver: a szorzó-grid Szél ereje melletti cellájában; ha nincs: standalone jelenik meg. Tartalma:
 - Bejövő fegyver: field-gomb → popup lista (fegyver-picker stílus, `th-fegyver-picker`). Sorrend: Hajítótőr, Rövid íj, Hosszú íj, Nyílpuska felül; alattuk ABC a konkrét fegyverek; legalul két absztrakt opció: „Korlátosan alkalmas fegyver" és „🔆 Nem dobásra készített tárgy". Alapállapot: „Bejövő fegyver" placeholder (invalid, informatív; Kitérés tiltva).
 - Saját távolság léptető (− Xm +, hold-repeat)
 - Célszám: a fegyver **Osztójából** adódó kategória (md/078: Osztó 1=Nem alkalmas, 2=Korlátosan alkalmas, 3=Dobófegyver, 4=Íj, ≥5=Nyílpuska) + távolság a `konstansok.lövéskitérés` táblából. Közelebb = magasabb; a tábla maxán túl a legkönnyebb (9) marad.
@@ -550,20 +550,20 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
 ### Fejléc (legfelül)
-- **Becenév** sor (CSAK szerkesztő módban, full szélességű box): `Becenév: Agi` — tap a boxra → szerkesztő popup (max 12 karakter). Jobb oldalon két chip:
+- **Becenév** sor (CSAK szerkesztő módban, full szélességű box): `Becenév: Agi` - tap a boxra → szerkesztő popup (max 12 karakter). Jobb oldalon két chip:
   - 🪪 Előtörténet chip (`.tul-elotortenet-chip`) → Előtörténet overlay (lásd lentebb)
   - JK/NJK toggle chip (`.tul-jk-chip`) → `jk` mező váltás (Játékos Karakter / Nem Játékos Karakter)
 - **Név + Szint** sor (CSAK szerkesztő módban, két box egymás mellett):
-  - Név box (flex:1): `Név: von Agabor` — tap → szerkesztő popup (max 40 karakter)
-  - Szint box: `Szint: 8` — tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
+  - Név box (flex:1): `Név: von Agabor` - tap → szerkesztő popup (max 40 karakter)
+  - Szint box: `Szint: 8` - tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
 - **Játék módban**: `Név: "{név} ({faj}, {kor})"` full box + külön Szint box (Becenév + chipek rejtve)
 - **Böngésző tab title**: `document.title = karakter.becenév || 'Szilánk'`
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
-  - Kor box: `Kor: 32` — tap → +/− overlay (long press gyorsítás: 200ms→30ms, 7s után ×10 lépés, 1–2000)
+  - Kor box: `Kor: 32` - tap → +/− overlay (long press gyorsítás: 200ms→30ms, 7s után ×10 lépés, 1–2000)
 - **Anyanyelv** (CSAK szerkesztő módban): inline `<select>` dropdown (`tables/nyelvek.json`-ból)
   - Módosítás → szinkronizálja kiérdemelt Nyelvismeret fortélyokat (Közös Alap + anyanyelv Alap, `kiérdemelt: true`)
-- **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` — tap → szerkesztő popup (max 40 kar)
+- **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` - tap → szerkesztő popup (max 40 kar)
   - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)
 
 ### Előtörténet overlay (🪪)
@@ -575,7 +575,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 | Becenév | input | 12 | `karakter.becenév` |
 | Név | input | 40 | `karakter.név` |
 | Kor | picker gomb (`KorPicker`) | 5–500 | `karakter.kor` |
-| Vallás | picker gomb (`VallasPickerOverlay`) | — | `karakter.vallás` (üres = "Hitetlen") |
+| Vallás | picker gomb (`VallasPickerOverlay`) | - | `karakter.vallás` (üres = "Hitetlen") |
 | Származás helye | input | 40 | `karakter.előtörténet.származás_helye` |
 | Szociális érzék | textarea (2 sor) | 200 | `karakter.előtörténet.szociális_érzék` |
 | Külső | textarea (2 sor) | 200 | `karakter.előtörténet.külső` |
@@ -595,7 +595,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - Fejléc: "Tulajdonságpróba" (normál font-weight) + jobb felső sarokban ⟲ reset gomb (36px, disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
   - Alcím: `{Tulajdonság neve} ({érték})` (kék szín, bold)
   - Nehézség gomblista (inline, `kep-proba-neh-list`): 3 (Könnyű), 4 (Átlagos), 5 (Nehéz), 6 (Nagyon nehéz), 7 (Rendkívül nehéz), 8 (Emberfeletti). Aktív: `vallas-active` class.
-  - Előny/Hátrány picker gomb (field-btn → overlay popup): Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2. Placeholder: "→ Előny / Hátrány".
+  - Előny/Hátrány picker gomb (field-btn → overlay popup): Hátrány-2, Hátrány-1, - (default), Előny+1, Előny+2. Placeholder: "→ Előny / Hátrány".
   - Összesítő sor: `{tulajdonság érték} vs {célszám}` (monospace)
   - **Dobás gomb** (k6): disabled amíg nincs Nehézség kiválasztva. Előny/Hátrány címke alatta (Előny → zöld, Hátrány → sárga).
   - Ha lehetetlen (`tulajdonság + 6 < célszám`): piros "Lehetetlen" label a Dobás gomb helyén.
@@ -614,7 +614,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Játék módban: üres csoportok elrejtve
 - Minden képzettség: név + szint (0-15) + ✕ törlés gomb
 - Szint színkód: 0=piros, 1-8=fehér, 9+=zöld, >tsz limit=piros
-- Csoportonként 1 db "Új képzettség..." gomb (Szerkesztő módban): kattintásra overlay picker popup nyílik (azonos stílus mint a Fortély picker — `fort-picker-popup` CSS). Entry-k: képzettség név + 🔗 szabályrendszer link + ▾ lenyitó nyíl. Accordion tartalma: `KepzettsegDetails` közös komponens (Primer, Próba, Domináns, Kiterjesztő fortélyok, Szituáció linkek). Kiválasztás → azonnal felugrik a szint választó popup.
+- Csoportonként 1 db "Új képzettség..." gomb (Szerkesztő módban): kattintásra overlay picker popup nyílik (azonos stílus mint a Fortély picker - `fort-picker-popup` CSS). Entry-k: képzettség név + 🔗 szabályrendszer link + ▾ lenyitó nyíl. Accordion tartalma: `KepzettsegDetails` közös komponens (Primer, Próba, Domináns, Kiterjesztő fortélyok, Szituáció linkek). Kiválasztás → azonnal felugrik a szint választó popup.
 - Törlés (✕ gomb): szint=0 → azonnal töröl, szint>0 → piros "Törlés" gombot tartalmazó megerősítő dialógus
 - Többszörös képzettségek felvételkor csoportosítva a testvéreik mellé kerülnek
 
@@ -627,7 +627,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Belső tárolás: fix listánál alnév önmagában, szabad szövegesnél `"AlapNév: xyz"`
 
 #### Tradíció képzettség (speciális)
-- Nem a `többszörös` yaml mezőt használja — saját picker logika
+- Nem a `többszörös` yaml mezőt használja - saját picker logika
 - Felvételkor: kétlépéses tradíció picker popup (`tables/tradiciok.json`-ból)
   - Altípus nélküli tradíciók (pl. Magasmágia): közvetlenül választható → `"Tradíció: Magasmágia"`
   - Altípusos tradíciók (Bárdmágia, Sámánmágia, Szakrális): második lépés altípus picker
@@ -646,7 +646,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Escape: popup bezárás
 
 #### Viselkedés Játék módban
-- Koppintás: lenyílik accordion adatlap — `KepzettsegDetails` közös komponens:
+- Koppintás: lenyílik accordion adatlap - `KepzettsegDetails` közös komponens:
   - **Primer** jelölés (ha primer képzettség)
   - **Próba**: dobható / nem dobható / ellenpróba
   - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
@@ -654,18 +654,18 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - **Szituációk**: kapcsolódó szituáció linkek (🔗 prefix, kék, új tab). Forrás: `data/sources/szituacio_mapping.yaml` → `kepzettsegek.json` `kapcsolódó_szituációk` mező.
 - **Szabályrendszer link** (🔗): mindig látható a sor jobb oldalán (nem az accordion-ban), mindkét módban
 - **🎲 gomb**: csak Játék módban, csak accordion nyitva, a sor headerben jelenik meg
-- **Közös komponens**: `KepzettsegDetails.tsx` — a picker és a game-mode accordion azonos komponenst használja
+- **Közös komponens**: `KepzettsegDetails.tsx` - a picker és a game-mode accordion azonos komponenst használja
 - **🎲 Képzettségpróba popup** (csak Játék módban, accordion alján): kattintásra `PopupOverlay`
   - Fejléc: "Képzettségpróba" (normál font-weight) + jobb felső sarokban ⟲ reset gomb (36px, disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
   - Alcím: `{képzettség neve} ({szint})` (kék szín, bold)
   - Két oszlopos inline gomblista (`kep-proba-dual-list`): bal oszlop = **Tulajdonság** (mind a 8, érték kijelezve), jobb oszlop = **Nehézség** (célszámok 6–21, apró ▾ lenyitó alul a 21 feletti célszámokhoz: 24, 27, 30). Aktív: `vallas-active` class.
-  - **Kiterjesztő fortély picker** (alattuk, csak ha a képzettségnek van kiterjesztő fortélya — md/030_08_01): field-btn gomb → overlay popup picker. Placeholder: "→ Kiterjesztő fortély". Opciók: `nincs ❌` (default, törzstudás — sima dobás) + a kiterjesztő fortélyok, mindegyik mellett kis státusz pötty (mint a Szabad fortély pötty): zöld=felvéve, sárga=hiányzó Normál, piros=hiányzó Erős. A kiterjesztés a fortély **foka** szerint Előny/Hátrány dobást ad (`rollElőnyHátrány`, engine/dice.ts): Normál 0.fok (nincs felvéve) → Hátrány-2, 1.fok → sima, 2.fok → Előny+1, 3.fok → Előny+2. Erős 0.fok → a Dobás gomb helyett `Nem dobhatsz` piros felirat; 1-3.fok mint Normál. A Dobás gombban a „Dobás" felirat alatt megjelenik az aktuális `Előny+N`/`Hátrány-N` címke (Előny → zöld, Hátrány → sárga). Dobás után az eredmény szám és a Siker/Sikertelen alatt megjelenik a dobott k10 érték(ek) (`k10: X` vagy több érték Előny/Hátrány esetén, az Előny/Hátrány címkével).
+  - **Kiterjesztő fortély picker** (alattuk, csak ha a képzettségnek van kiterjesztő fortélya - md/030_08_01): field-btn gomb → overlay popup picker. Placeholder: "→ Kiterjesztő fortély". Opciók: `nincs ❌` (default, törzstudás - sima dobás) + a kiterjesztő fortélyok, mindegyik mellett kis státusz pötty (mint a Szabad fortély pötty): zöld=felvéve, sárga=hiányzó Normál, piros=hiányzó Erős. A kiterjesztés a fortély **foka** szerint Előny/Hátrány dobást ad (`rollElőnyHátrány`, engine/dice.ts): Normál 0.fok (nincs felvéve) → Hátrány-2, 1.fok → sima, 2.fok → Előny+1, 3.fok → Előny+2. Erős 0.fok → a Dobás gomb helyett `Nem dobhatsz` piros felirat; 1-3.fok mint Normál. A Dobás gombban a „Dobás" felirat alatt megjelenik az aktuális `Előny+N`/`Hátrány-N` címke (Előny → zöld, Hátrány → sárga). Dobás után az eredmény szám és a Siker/Sikertelen alatt megjelenik a dobott k10 érték(ek) (`k10: X` vagy több érték Előny/Hátrány esetén, az Előny/Hátrány címkével).
   - **Dobás gomb**: szürke/inaktív, amíg nincs Tulajdonság ÉS Nehézség is kiválasztva. Ha a próba lehetetlen (tulajdonság + képzettség szint + max k10 (10) < célszám), a Dobás gomb helyén `Lehetetlen` piros felirat. Ha biztos siker (tulajdonság + szint + 1 >= célszám), a Dobás gomb helyén `Biztos siker` zöld felirat.
   - Összesítő sor: `{tulajdonság érték} + {szint} vs {célszám}` (monospace)
-  - **Dobás gomb** → `Tulajdonság + Képzettség szint + k10` (rollK10). Eredmény inline a Lövéskitérés popup mintájára: két érték egy sorban — nagy eredményszám + kis „vs" + piros célszám —, alatta színes Siker / Sikertelen. Tulajdonság/nehézség váltás törli az eredményt (újbóli Dobás gomb jelenik meg).
+  - **Dobás gomb** → `Tulajdonság + Képzettség szint + k10` (rollK10). Eredmény inline a Lövéskitérés popup mintájára: két érték egy sorban - nagy eredményszám + kis „vs" + piros célszám -, alatta színes Siker / Sikertelen. Tulajdonság/nehézség váltás törli az eredményt (újbóli Dobás gomb jelenik meg).
   - Escape: ha belső picker (Kiterjesztő fortély) nyitva → azt zárja; egyébként teljes popup bezárás.
   - **Helyzetfüggő módosítók** picker (ha a képzettségnek van `helyzetfüggő_módosítók` tábla a yaml-ban): field-btn gomb → overlay popup. Kategóriánként lista (pl. "Fényviszonyok", "Zaj", "Anyag minősége"), soronként érték + leírás. Kiválasztott sor(ok) bónusza hozzáadódik a próba képlethez (`szitModÖsszeg`). Pozitív: zöld, negatív: piros megjelenítés. Dobás/eredmény resetelődik módosítóváltáskor.
-  - **Szerepjátékos módosító**: nincs külön UI — a képzettség yaml `helyzetfüggő_módosítók` közé felvett standard `single` tábla ("Szerepjátékos módosító" kategória, `-3; 0; +3` sorok). Ugyanúgy jelenik meg és számol, mint a többi helyzetfüggő módosító. (Jelenleg: Befolyásolás, Nyomozás.)
+  - **Szerepjátékos módosító**: nincs külön UI - a képzettség yaml `helyzetfüggő_módosítók` közé felvett standard `single` tábla ("Szerepjátékos módosító" kategória, `-3; 0; +3` sorok). Ugyanúgy jelenik meg és számol, mint a többi helyzetfüggő módosító. (Jelenleg: Befolyásolás, Nyomozás.)
   - **Aktív státuszok hatása** (automatikus): a session `aktív_státuszok`-ból kiszámolt Előny/Hátrány (`engine/statusz-proba.ts`). Ha a státusz `hatások[]`-ban van `képzettségpróba` célú `előny`/`hátrány`, az automatikusan bekalkulálódik a dobásba. E/H bontás accordion a Dobás gomb alatt.
   - **Próba enyhítések** (fortély yaml `próba_enyhítések[]`): ha a karakter rendelkezik a fortéllyal, az csökkenti/kioltja a helyzetfüggő módosítók negatív hatását (kategória + sor szintű illesztés).
   - **Módosító tábla módok** (`ModositoTabla.mód`): `'single'` (default, egy sor választható), `'multi'` (több sor összegződik).
@@ -673,8 +673,8 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 
 ### KP sáv (Szerkesztő módban, minden fülön)
 - Fix sáv a tab-bar felett, két szekció (bal/jobb, független háttérszín)
-- Bal: `Maradt KP: X` — zöld háttér (normál), piros ha X < 0
-- Jobb: `Primer keret: Y` — zöld háttér (normál), piros ha Y < 0 (primer túllépés)
+- Bal: `Maradt KP: X` - zöld háttér (normál), piros ha X < 0
+- Jobb: `Primer keret: Y` - zöld háttér (normál), piros ha Y < 0 (primer túllépés)
 - Primer keret = primer_limit - primer_költés
 - Primer költés = primer képzettségek KP + primer fortélyok KP + kp_hm + kp_cm
 - Primer limit = összes_kp + spec_kp
@@ -737,8 +737,8 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 - Szabad csoport: lista alján "⭐ Egyedi fortély" entry (saját, egyedi fortély létrehozása)
 
 **Stílus (FortelyokScreen.css):**
-- `.fort-picker-popup`: saját background/border/border-radius, `max-height: 80vh; overflow-y: auto` — NEM flex layout (lásd Overlay Layout Konvenció)
-- `.fort-picker-list`: flex column, padding, gap — NEM kap saját scroll (a szülő popup scrolloz)
+- `.fort-picker-popup`: saját background/border/border-radius, `max-height: 80vh; overflow-y: auto` - NEM flex layout (lásd Overlay Layout Konvenció)
+- `.fort-picker-list`: flex column, padding, gap - NEM kap saját scroll (a szülő popup scrolloz)
 - `.fort-picker-item-wrap`: kártya wrapper (input-bg, border, border-radius)
 - `.fort-picker-item-top`: flex row (tartalom + opcionális md link + nyíl)
 - `.fort-picker-dot`: 28×28 kerek gomb, ▾ nyíl (16px), katt → accordion toggle, nyitva: `rotate(180deg)` + `transition: 0.15s`
@@ -780,22 +780,22 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 ### Viselkedés Szerkesztő módban
 - Rövid koppintás: nem csinál semmit
 - Tap: fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
-  - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se tap-re) — ehelyett "1 fok a maximum" hint (2s)
+  - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se tap-re) - ehelyett "1 fok a maximum" hint (2s)
   - Mesterfegyver (locked): tap → "Ezt a fortélyt a Harcértékek/Távharc fülön kezeld!" hint (3s, távfegyver név alapján)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup (egyik sem pre-selected, fok: 0-val kerül be); többszörös → megfelelő picker popup
 - Locked fortélyok (konstansok.locked_fortélyok): NEM jelennek meg a dropdown-ban, nem szerkeszthetők/törölhetők, lista tetején
 - Mesterfegyver bejegyzések: szinkronizálva fegyver példányokból (Harcértékek fül)
-- ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb) — locked elemeknél nincs ✕
+- ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb) - locked elemeknél nincs ✕
 - Escape: popup bezárás
 
 ### Viselkedés Játék módban
-- Koppintás: lenyílik inline accordion info panel (`.info-panel`) — `FortelyDetails` közös komponens:
+- Koppintás: lenyílik inline accordion info panel (`.info-panel`) - `FortelyDetails` közös komponens:
   - Leírás (dőlt)
   - Hatás (aktuális fok hatás szövege)
   - Követelmény (ha van)
   - Kiterjeszti (normál + erős képzettség lista, zöld=felvett / szürke=hiányzó)
 - Szabályrendszer link (🔗): mindig látható a sor jobb oldalán (nem az accordion-ban)
-- **Közös komponens**: `FortelyDetails.tsx` — a picker és a game-mode accordion azonos komponenst használja
+- **Közös komponens**: `FortelyDetails.tsx` - a picker és a game-mode accordion azonos komponenst használja
 
 ### Követelmény ellenőrzés
 - Gépileg ellenőrizhető típusok: `képzettség` (szint), `fortély` (fok)
@@ -848,7 +848,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
 ### Páncél
 - Chip sor (ha van alap struktúra kiválasztva): `SFÉ: X/Y` | `MGT: Z` (kattintható → info hint: MGT bontás formula, zöld `.he-hint-info`, 2s) | `Rongálódás: N` (`.he-field-btn` stílus, kattintás → popup)
 - Mezők (`he-field-btn` stílus, tap → overlay popup):
-  - Struktúra: lista (konstansok.páncél_struktúrák) + "— nincs —"
+  - Struktúra: lista (konstansok.páncél_struktúrák) + "- nincs -"
   - Merevvértviselet fok: mindig megjelenik (lila keret, `.he-field-fortely`), popup 0–3
   - Fémalapanyag: csak fém struktúránál látszik
   - Kidolgozottság: pocsék / átlagos / mestermunka
@@ -863,7 +863,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
   - VÉ: soha nincs áthúzva (a pajzs VÉ-t mindig ad)
   - TÉ/SP/Sebesség: áthúzva (`line-through 2px`, opacity 0.5) ha NEM "csak pajzs harc" mód (egyfegyveres + pajzs az ügyesebb kézben)
 - Mezők (`he-field-btn` stílus, tap → overlay popup):
-  - Méret: — nincs — / kis / közepes / nagy
+  - Méret: - nincs - / kis / közepes / nagy
   - Pajzshasználat fok: kerek gombok 0-3 (szinkronizálja a Pajzshasználat fortélyt a Fortélyok fülön)
 - Pajzshasználat fortély szinkronizáció:
   - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
@@ -881,27 +881,27 @@ Misztikus képzettségek + Aura értékek. A misztikus csoport átkerült a Tul/
 
 ### Felső sor (értékek, boxok)
 - Mágiaellenállás: Aura + 10 (centered, 14px label, 20px érték)
-- Mágia akarata: "{Aura} + k20" (centered) — **kattintható kártya** (`.aura-card-clickable`) → Mágia akarata popup
+- Mágia akarata: "{Aura} + k20" (centered) - **kattintható kártya** (`.aura-card-clickable`) → Mágia akarata popup
 - Aura: reactive engine (centered)
 
 ### Mágia akarata popup (`MagiaAkarataPopup`)
 Referencia-táblák a mágia akarata próbához, négy fül (`.miszt-magia-tab`):
-1. **Aurakiterjesztés** — hatótáv → szellemkéz/zóna módosító tábla (Érintés 0/0 … Csatatér -9/-15)
-2. **Auraerősítés** — formula `Aurahangolás + Önuralom + k10` (behelyettesített értékekkel) + Komplexitás→Bónusz tábla (9→+1 … 30→+15) + sikertelenség szabályai (Aura -2, regeneráció 1/óra, nincs auto kudarc)
-3. **Összhang** — Előny-Hátrány eltolás (k10): Varázsló állapota + Áldozat állapota módosító listák
-4. **Képzettség+** — Szint→Bónusz tábla (Támadó oldal + / Védelem −), példákkal
+1. **Aurakiterjesztés** - hatótáv → szellemkéz/zóna módosító tábla (Érintés 0/0 … Csatatér -9/-15)
+2. **Auraerősítés** - formula `Aurahangolás + Önuralom + k10` (behelyettesített értékekkel) + Komplexitás→Bónusz tábla (9→+1 … 30→+15) + sikertelenség szabályai (Aura -2, regeneráció 1/óra, nincs auto kudarc)
+3. **Összhang** - Előny-Hátrány eltolás (k10): Varázsló állapota + Áldozat állapota módosító listák
+4. **Képzettség+** - Szint→Bónusz tábla (Támadó oldal + / Védelem −), példákkal
 - Dismissible (háttér-katt / Escape zár)
 
 ### Képzettség szekciók (elválasztó vonalakkal, kék `#42a5f5` h3 label, 17px)
-1. **Tradíció** — max 1 db, kétlépéses overlay picker (tradiciok.json → altípus ha van)
+1. **Tradíció** - max 1 db, kétlépéses overlay picker (tradiciok.json → altípus ha van)
    - Altípus kiválasztás → mindkét picker bezárul (tradíció + altípus)
    - Altípus picker bezárás (Escape / háttér-katt) → visszalép a tradíció picker-re
-   - Altípus picker címe: `{tradíció név} — Pantheon` (Szakrális) vagy `{tradíció név} — altípus` (többi)
+   - Altípus picker címe: `{tradíció név} - Pantheon` (Szakrális) vagy `{tradíció név} - altípus` (többi)
    - Felvétel után szint popup felugrik
-2. **Arkánumok** — több felvehető, select dropdown
+2. **Arkánumok** - több felvehető, select dropdown
    - Tradíció nélkül: picker disabled ("⚠ Tradíció szükséges"), felvett nevek piros
-3. **Faj misztérium** — 1 db, faj választóhoz kötve (nem picker, nem törölhető), min szint: 0
-4. **Ősi nyelv ismerete** — többször felvehető, free-text popup (név megadás)
+3. **Faj misztérium** - 1 db, faj választóhoz kötve (nem picker, nem törölhető), min szint: 0
+4. **Ősi nyelv ismerete** - többször felvehető, free-text popup (név megadás)
 
 ### Szint választó
 - Overlay popup (grid gombok), mint Tul/Képz fülön
@@ -930,8 +930,8 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ### Tartalom
 - **Faj háttér**: read-only chip (karakter.hátterek.faj), kattintásra navigál Tulajdonságok fülre
-- **Leíró hátterek**: kategóriánként (Származás, Jellem, Küllem, Fóbia) — szövegfelhő, tap toggle
-- **Karma hátterek**: egyetlen csoport — szövegfelhő, tap toggle
+- **Leíró hátterek**: kategóriánként (Származás, Jellem, Küllem, Fóbia) - szövegfelhő, tap toggle
+- **Karma hátterek**: egyetlen csoport - szövegfelhő, tap toggle
 
 ### Többszörös hátterek
 - Leíró és karma hátterek egyaránt lehetnek `többszörös: true` (hatter.yaml séma)
@@ -941,7 +941,7 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 - Nem többszörös elemek: normál toggle viselkedés (aktív/inaktív)
 
 ### Viselkedés
-- Tap: aktivál/deaktivál (toggle) — többszörösnél popup
+- Tap: aktivál/deaktivál (toggle) - többszörösnél popup
 - Aktív elemek: színes kijelölés (leíró = zöld, karma = narancs), sor elejére rendezés, ABC sorrend
 - Játék módban: nem szerkeszthető (tap nem reagál)
 - Kategória label: világoskék (#7eb8da), bold
@@ -949,7 +949,7 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ### Stílus
 - `.hatter-tag`: lekerekített pill (border-radius: 12px), sötét háttér, szürke
-- `.hatter-tag.active`: zöld háttér+keret (leíró) / narancs háttér+keret (karma) — egységes osztály, nincs `.karma` szeparáció
+- `.hatter-tag.active`: zöld háttér+keret (leíró) / narancs háttér+keret (karma) - egységes osztály, nincs `.karma` szeparáció
 
 ### Komponens struktúra (components/hatterek/)
 | Komponens | Felelősség |
@@ -972,11 +972,11 @@ Egyetlen görgethető nézetben, felülről lefelé. Mindhárom szekció összec
 - Kiemelt verziók (checkpoint) listája, dátum szerint (legújabb elöl)
 - Verzió sorra katt: checkpoint megtekintés (overlay bezár); ✕: törlés
 - "+ Új checkpoint" gomb (max `MAX_CHECKPOINTS`); inline név-form
-- Megtekintéskor a mód toggle disabled (`viewingCheckpoint`). Visszaállítás: `CheckpointRestoreOverlay` — két mód: "Töröljek minden ez utáni állapotot" (truncate) / "Új elemként fűzni a legutolsó után" (append). Logika → engine_spec §31b.
+- Megtekintéskor a mód toggle disabled (`viewingCheckpoint`). Visszaállítás: `CheckpointRestoreOverlay` - két mód: "Töröljek minden ez utáni állapotot" (truncate) / "Új elemként fűzni a legutolsó után" (append). Logika → engine_spec §31b.
 
 ### 2. Napló (accordion, alapból csukva)
 - `<details>` (`.naplo-cp-section .naplo-log-section`, summary `.naplo-log-summary`)
-- Summary: "Napló (N)" — N = bejegyzések száma
+- Summary: "Napló (N)" - N = bejegyzések száma
 - Játék session bejegyzések naplója (lásd viselkedés lentebb)
 
 ### 3. Jegyzetek (accordion, alapból NYITVA)
@@ -985,7 +985,7 @@ Egyetlen görgethető nézetben, felülről lefelé. Mindhárom szekció összec
 - Szabad szöveges `<textarea>` (`.app-jegyzetek-textarea`, `resize: vertical`)
 - Tartalom a karakter fájlba mentődik (`jegyzetek` mező); placeholder: "Szabad jegyzetek..."
 
-> A `.naplo-log-summary` és `.naplo-notes-summary` osztályoknak nincs saját színük — a közös `.naplo-cp-summary` kék színt öröklik (szemantikus jelölők).
+> A `.naplo-log-summary` és `.naplo-notes-summary` osztályoknak nincs saját színük - a közös `.naplo-cp-summary` kék színt öröklik (szemantikus jelölők).
 
 > A próba táblák (Tulajdonság-/Képzettségpróba célszámok) átkerültek a Szilánk picker hubba (lásd Header szekció).
 
@@ -1014,7 +1014,7 @@ Egyetlen görgethető nézetben, felülről lefelé. Mindhárom szekció összec
 
 Alul fix, horizontálisan scrollozható szalag.
 
-### Tab lista (sorrend — megjelenítés balról jobbra)
+### Tab lista (sorrend - megjelenítés balról jobbra)
 | ID | Label | editOnly |
 |----|-------|----------|
 | hatterek | 🟡 | false |
@@ -1029,9 +1029,9 @@ Alul fix, horizontálisan scrollozható szalag.
 Overlay screen-ek:
 | ID | Nyitás | Elérhetőség |
 |----|--------|-------------|
-| overlayScreen | ✏️ fejléc gomb | mindkét mód (Verziók, Napló, Jegyzetek — lásd 6b) |
+| overlayScreen | ✏️ fejléc gomb | mindkét mód (Verziók, Napló, Jegyzetek - lásd 6b) |
 
-- Jelenleg nincs `editOnly: true` tab — Játék módban minden fül elérhető
+- Jelenleg nincs `editOnly: true` tab - Játék módban minden fül elérhető
 - Default aktív tab induláskor: `tulajdonsagok` (index 5 az ALL_TABS-ban)
 - **Tükrözött sorrend**: reverse() renderelés → a tömb utolsó eleme jelenik meg balra
 - Screen slider is tükrözve: `translateX(-(TABS.length-1-activeTab)*100%)`, swipe irány invertált
@@ -1067,7 +1067,7 @@ Overlay screen-ek:
 - Tartalom: `background: --surface; border: 1px solid #555; border-radius: 8px; padding: 16px; min-width: 250px; touch-action: auto`
 - Gombok (`.kep-prompt-btns`): `background: --primary; border: 1px solid #555; border-radius: 4px; padding: 4px 12px; font-size: 13px`
 - Törlés gomb (`.btn-del-confirm`): `background: --error; color: #fff`
-- Input mezők: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; font-size: 16px` (min 16px — iOS Safari auto-zoom prevention)
+- Input mezők: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; font-size: 16px` (min 16px - iOS Safari auto-zoom prevention)
 - Slider (`<input type="range">`): `width: 100%; accent-color: --accent`
 - Szint grid gombok (`.fort-fok-btn`): `36px x 36px; border-radius: 50%; border: 2px solid #555; font-size: 16px; font-weight: bold`
   - Aktív: `border-color: --success; background: --success; color: #000`
@@ -1083,12 +1083,12 @@ A `.kep-prompt-overlay` (`display: flex; align-items: center; justify-content: c
 - ❌ **NEM MŰKÖDIK**: `display: flex; flex-direction: column` a popup-on + `flex: 1; min-height: 0` a listán. A flex parent (`kep-prompt-overlay`) összenyomja a gyerekeket.
 - ❌ **NEM MŰKÖDIK**: `max-height` a popup-on + `overflow: hidden` + flex list belül. A flex layout nem propagálja a height constraint-et.
 - ✅ **MŰKÖDIK**: `max-height: Xvh; overflow-y: auto` közvetlenül a popup div-en (NEM flex layout). A popup maga scrollozódik. A belső lista nem kap saját scroll-t.
-- ✅ **MŰKÖDIK (alternatív)**: Nyelv picker minta — `.kep-prompt` class + saját class-on `max-height: 70vh; overflow-y: auto`.
+- ✅ **MŰKÖDIK (alternatív)**: Nyelv picker minta - `.kep-prompt` class + saját class-on `max-height: 70vh; overflow-y: auto`.
 
 **Példák:**
 - `.nyelv-picker`: `max-height: 70vh; overflow-y: auto` (a teljes popup scrolloz)
 - `.fort-picker-popup`: `max-height: 80vh; overflow-y: auto` (a teljes popup scrolloz)
-- `.aktiv-picker`: `max-height: 80vh; display: flex; flex-direction: column` — működik mert az elemszám sosem lépi túl a viewport-ot
+- `.aktiv-picker`: `max-height: 80vh; display: flex; flex-direction: column` - működik mert az elemszám sosem lépi túl a viewport-ot
 
 ---
 
@@ -1111,10 +1111,10 @@ Deklaratív számítási szabályok dependency graph-ban:
 - **Skaláris képletek**: `+`, `-`, `*`, `/`, `floor()`, `ceil()`, `min()`, `max()`, `abs()`
 - **Aggregáló függvények**: `sum(tömb, mező)`, `sum_lookup(tömb, mező, tábla, kulcs, érték)`, `sum_where(tömb, összegMező, szűrőMező, szűrőÉrték)`, `count(tömb)`
 - **Lookup**: `lookup(tömb, kulcsMező, kulcsÉrték, értékMező)`
-- **Feltételes**: `if(feltétel, then, else)` — ternary kifejezés
+- **Feltételes**: `if(feltétel, then, else)` - ternary kifejezés
 - **Topológiai sorrend**: automatikus dependency resolution (inputs mező alapján)
-- **Context**: `buildContext()` — skaláris értékek (tulajdonságok, tsz, konstansok, HM, CM, páncél inputok, stb.)
-- **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla, harci_fortélyok, csatolt_mgt táblák)
+- **Context**: `buildContext()` - skaláris értékek (tulajdonságok, tsz, konstansok, HM, CM, páncél inputok, stb.)
+- **ArrayContext**: `buildArrayContext()` - tömbök (képzettségek, fortélyok, kp_tábla, harci_fortélyok, csatolt_mgt táblák)
 - **StringContext**: string-keyed lookup-okhoz (pl. páncél_kidolgozottság → csatolt_mgt tábla kulcs)
 
 #### Jelenlegi rules.json szabályok (54 db):
@@ -1172,30 +1172,30 @@ Deklaratív számítási szabályok dependency graph-ban:
 
 ### Runtime adatbetöltés (GameData)
 Minden adat `fetchJson`-nel:
-- `tables/konstansok.json` — központi konstansok
-- `tables/fegyverek.json` — fegyver adatok (MK_pár, Alapnév mezőkkel)
-- `tables/tavfegyverek.json`, `tables/pajzsok.json` — távfegyver/pajzs adatok
-- `tables/kepzettseg_kp.json` — KP költség tábla szintenként
-- `tables/harcmodor_kepzettsegek_bonuszok.json` — harcmodor bónuszok szintenként
-- `tables/kepzettsegek.json` — 81 képzettség definíció (+ helyzetfüggő_módosítók táblák)
-- `tables/kiterjesztesek.json` — képzettség→fortély inverz mapping
-- `tables/fajok.json` — 27 faj neve
-- `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
-- `tables/primer_fortelyok.json` — 62 primer fortély neve (harci + távharc + misztikus)
-- `tables/fortelyok.json` — 177 fortély összefoglaló
-- `tables/tradiciok.json` — tradíciók (altípusokkal, Szakrális istenekkel)
-- `tables/nyelvek.json` — 37 nyelv (csoportosítva)
-- `tables/taktikak.json` — 14 taktika (módosítók, fokok, kombó szabályok)
-- `tables/harci_helyzetek.json` — 32 harci helyzet (id, infó, hatások, csoport)
-- `tables/manoverek.json` — 38 manőver (id, típus, nehézség, fázisok, hatás lista, végrehajtás_té_módosító, követelmények, helyzetfüggő_módosítók)
-- `tables/statuszok.json` — 19 státusz (fokok, hatások)
-- `tables/hatas_operatorok.json` — 8 hatás mechanika típus
-- `tables/esemenyek.json` — 23 esemény/célpont
-- `tables/hatterek.json` — leíró + karma hátterek
-- `tables/tavharc_szorzok.json` — 5 szorzó kategória (célpont mozgás, lövész, méret, észlelhetőség, szél)
-- `data/rules.json` — reactive engine szabályok (54 db)
-- `data/karakter/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
-- `data/karakter/test_karakter.json` — teszt karakter (🧪 gomb, runtime fetch + validáció)
+- `tables/konstansok.json` - központi konstansok
+- `tables/fegyverek.json` - fegyver adatok (MK_pár, Alapnév mezőkkel)
+- `tables/tavfegyverek.json`, `tables/pajzsok.json` - távfegyver/pajzs adatok
+- `tables/kepzettseg_kp.json` - KP költség tábla szintenként
+- `tables/harcmodor_kepzettsegek_bonuszok.json` - harcmodor bónuszok szintenként
+- `tables/kepzettsegek.json` - 81 képzettség definíció (+ helyzetfüggő_módosítók táblák)
+- `tables/kiterjesztesek.json` - képzettség→fortély inverz mapping
+- `tables/fajok.json` - 27 faj neve
+- `tables/faj_tulajdonsag_keretek.json` - faj→tulajdonság min/max keretek
+- `tables/primer_fortelyok.json` - 62 primer fortély neve (harci + távharc + misztikus)
+- `tables/fortelyok.json` - 177 fortély összefoglaló
+- `tables/tradiciok.json` - tradíciók (altípusokkal, Szakrális istenekkel)
+- `tables/nyelvek.json` - 37 nyelv (csoportosítva)
+- `tables/taktikak.json` - 14 taktika (módosítók, fokok, kombó szabályok)
+- `tables/harci_helyzetek.json` - 32 harci helyzet (id, infó, hatások, csoport)
+- `tables/manoverek.json` - 38 manőver (id, típus, nehézség, fázisok, hatás lista, végrehajtás_té_módosító, követelmények, helyzetfüggő_módosítók)
+- `tables/statuszok.json` - 19 státusz (fokok, hatások)
+- `tables/hatas_operatorok.json` - 8 hatás mechanika típus
+- `tables/esemenyek.json` - 23 esemény/célpont
+- `tables/hatterek.json` - leíró + karma hátterek
+- `tables/tavharc_szorzok.json` - 5 szorzó kategória (célpont mozgás, lövész, méret, észlelhetőség, szél)
+- `data/rules.json` - reactive engine szabályok (54 db)
+- `data/karakter/empty_karakter.json` - üres karakter template (induláskor betöltődik, validálva)
+- `data/karakter/test_karakter.json` - teszt karakter (🧪 gomb, runtime fetch + validáció)
 
 ### Karakter state struktúra (Hook architektúra)
 - **`useKarakterState`** hook: localStorage multi-slot kezelés, karakter load/save, undo stack
@@ -1213,7 +1213,7 @@ Minden adat `fetchJson`-nel:
 - **`useTaktikaInvalidation`** hook: Taktika fok invalidáció fortély törléskor
 - **`useVersionHint`** hook: Verzió double-tap hint kezelés
 - **`useHoldRepeat`** hook: Hold-to-repeat gomb viselkedés (gyorsulás)
-- `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
+- `karakter: Karakter | null` - egyetlen unified state objektum (schema v2)
 - Top-level: `schema_version`, `uid`, `id_leíró`, `név`, `becenév`, `játékos`, `jk`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `előtörténet`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `checkpoints`, `session`
 - `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`, `aktív_távfegyver_index`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
@@ -1229,7 +1229,7 @@ A Jegyzetek fül mindkét módban írható.
 
 ## Szín nyelv
 
-Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem típusát/forrását.
+Egységes szín kódrendszer a webapp-ban - a szín vizuálisan jelzi az elem típusát/forrását.
 
 | Szín | Kód | Jelentés | Példa |
 |------|-----|----------|-------|
@@ -1239,7 +1239,7 @@ Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem 
 | Türkiz | `#4dd0e1` | Harci helyzet | helyzet chip nevek |
 | Narancs | `#ffa726` | Figyelmeztetés, VÉ normál | távharc VÉ szín |
 | Piros | `#e53935` | Hiba, lehetetlen, túllépés | VÉ-CÉ>20, MF követelmény hiba, HM overflow |
-| Arany | `#ffd54f` | — (felszabadult, volt: körülmény csoport) | — |
+| Arany | `#ffd54f` | - (felszabadult, volt: körülmény csoport) | - |
 | Szürke | `#888` / `#aaa` | Dimmed, read-only, infó | szekció fejléc, részletes értékek |
 | Kék | `#42a5f5` / `var(--color-kepzettseg)` | Képzettség csoport label | Tul/Képz, Misztikus, Harcértékek szekció címek |
 | Világos lila | `#ce93d8` / `var(--color-fortely)` | Fortély csoport label + Hatás pool fortély név | Fortélyok fül csoportok, fortély bónusz pool |
@@ -1292,27 +1292,27 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 - **Overlay hátter katt** → dispatch Escape
 
 ### Overlay komponensek (components/overlays/)
-- `OverlayPortal.tsx` — createPortal wrapper
-- `SzilankPickerOverlay.tsx` — Szilánk pont (0-3) + gyors-elérési hub (Szabályrendszer link, próba táblák)
+- `OverlayPortal.tsx` - createPortal wrapper
+- `SzilankPickerOverlay.tsx` - Szilánk pont (0-3) + gyors-elérési hub (Szabályrendszer link, próba táblák)
 
-- `NewCharConfirmOverlay.tsx` — Új karakter megerősítő
-- `SlotListOverlay.tsx` — Karaktertár (slot lista + 🧪 teszt + 📁 fájlból)
-- `SlotDeleteOverlay.tsx` — Slot törlés confirm
-- `SaveOverlay.tsx` — Mentés mód (single/backup)
-- `SaveFileOverlay.tsx` — Fájl kész (📤 Megosztás / 💾 Letöltés)
-- `UndoOverlay.tsx` — Visszavonás lista
-- `LoadErrorOverlay.tsx` — Betöltési hiba
-- `FullscreenHintOverlay.tsx` — Teljes képernyő tipp
-- `OverlayScreenOverlay.tsx` — Fullscreen overlay wrapper (Jegyzetek / Napló)
-- `SharePopupOverlay.tsx` — URL share eredmény
-- `ToastOverlay.tsx` — Toast üzenet
-- `ImportConfirmOverlay.tsx` — Import ütközés (Felülírás / Új példány / Mégse)
-- `SlotLimitOverlay.tsx` — Slot limit elérve (max karakter szám)
-- `BackupRestoreOverlay.tsx` — Backup fájl visszaállítás (multi-select, felülírás jelzés, megerősítés)
+- `NewCharConfirmOverlay.tsx` - Új karakter megerősítő
+- `SlotListOverlay.tsx` - Karaktertár (slot lista + 🧪 teszt + 📁 fájlból)
+- `SlotDeleteOverlay.tsx` - Slot törlés confirm
+- `SaveOverlay.tsx` - Mentés mód (single/backup)
+- `SaveFileOverlay.tsx` - Fájl kész (📤 Megosztás / 💾 Letöltés)
+- `UndoOverlay.tsx` - Visszavonás lista
+- `LoadErrorOverlay.tsx` - Betöltési hiba
+- `FullscreenHintOverlay.tsx` - Teljes képernyő tipp
+- `OverlayScreenOverlay.tsx` - Fullscreen overlay wrapper (Jegyzetek / Napló)
+- `SharePopupOverlay.tsx` - URL share eredmény
+- `ToastOverlay.tsx` - Toast üzenet
+- `ImportConfirmOverlay.tsx` - Import ütközés (Felülírás / Új példány / Mégse)
+- `SlotLimitOverlay.tsx` - Slot limit elérve (max karakter szám)
+- `BackupRestoreOverlay.tsx` - Backup fájl visszaállítás (multi-select, felülírás jelzés, megerősítés)
 
 ---
 
-## 7. Méreggenerátor overlay (TERV — NEM IMPLEMENTÁLT)
+## 7. Méreggenerátor overlay (TERV - NEM IMPLEMENTÁLT)
 
 KM eszköz overlay (hasonló a Jegyzetek overlay-hez). Méreg paraméterek beállítása → komplexitás és jellemzők kiszámítása.
 
@@ -1368,11 +1368,11 @@ Slot chip elrendezés:
 ### Mentés/Exportálás popup (SaveOptionsPopup)
 
 A 💾 chipre nyíló overlay (slot-specifikus). Opciók:
-- **🔗 Link másolása** — URL vágólapra (azonos a slot 🔗 chipjével)
-- **💾 Mentés fájlba** — JSON letöltés
-- **📤 Megosztás** — Web Share API (mobilon, ha elérhető)
-- **📱 QR kód** — QR kód popup (lásd alább)
-- **ℹ️ Infó gomb** — megosztási lehetőségek magyarázó szöveg (accordion)
+- **🔗 Link másolása** - URL vágólapra (azonos a slot 🔗 chipjével)
+- **💾 Mentés fájlba** - JSON letöltés
+- **📤 Megosztás** - Web Share API (mobilon, ha elérhető)
+- **📱 QR kód** - QR kód popup (lásd alább)
+- **ℹ️ Infó gomb** - megosztási lehetőségek magyarázó szöveg (accordion)
 
 ### QR kód export (QrCodePopup)
 
@@ -1380,7 +1380,7 @@ QR kód generálás a karakter URL-ből (engine_spec §40). Dependency: `uqr`.
 
 - SVG előnézet (inline renderelés, `renderSVG`)
 - **PNG mentés** gomb: 512px canvas-alapú generálás, karakter név footer sávban a QR alatt
-- **Canvas fingerprint védelem**: `detectCanvasPoison()` runtime check (Firefox `privacy.resistFingerprinting`) — ha aktív, warning jelenik meg
+- **Canvas fingerprint védelem**: `detectCanvasPoison()` runtime check (Firefox `privacy.resistFingerprinting`) - ha aktív, warning jelenik meg
 - Háttér-katt / Escape bezár
 
 ### Import (URL hash + fájl + vágólap + QR kép)
@@ -1399,9 +1399,9 @@ QR kód generálás a karakter URL-ből (engine_spec §40). Dependency: `uqr`.
 | Végül | hash törlése: `history.replaceState(null, '', window.location.pathname + window.location.search)` |
 
 **Import popup (ImportOptionsPopup)**: A 📁 gomb nyitja. Három import mód:
-- **JSON fájlból** — fájlválasztó (single + backup)
-- **Vágólapról** — clipboard text beolvasás (URL vagy JSON)
-- **QR kód képből** — képfájl kiválasztás → `jsQR` dekódolás → URL import. Dependency: `jsqr`.
+- **JSON fájlból** - fájlválasztó (single + backup)
+- **Vágólapról** - clipboard text beolvasás (URL vagy JSON)
+- **QR kód képből** - képfájl kiválasztás → `jsQR` dekódolás → URL import. Dependency: `jsqr`.
 
 Confirm dialog stílus: az app meglévő overlay/modal stílusát követi (sötét háttér, centered box, 3 gomb sor).
 

@@ -1,4 +1,4 @@
-// Manőver dobás popup — pure (render-mentes) logika.
+// Manőver dobás popup - pure (render-mentes) logika.
 // Kiemelve a ManoverDobasPopup.tsx-ből (2026-09-11 refaktor): a komponens csak a
 // dobás-folyamat state-jét és JSX-ét tartja, minden számítás/feltétel ide kerül.
 // Ezekre a fn-ekre írt tesztek: Manover{Kovetelmeny,TeBontas,FazisFelirat,EredmenyHatas}.test.ts
@@ -27,7 +27,7 @@ export function helyzetKönnyítés(session: Session): { meglepetés: boolean; o
 /**
  * Egy 'egyéb' követelmény mely aktiválható harci helyzet(ek)re hivatkozik (adatvezérelt).
  * Az így felismert követelmény GÉPILEG kiértékelhető a session.aktív_helyzetek alapján.
- * A tagadó szövegeket ("nincs"/"sincs") KIZÁRJUK — azok nem "aktív helyzet kell" jellegűek
+ * A tagadó szövegeket ("nincs"/"sincs") KIZÁRJUK - azok nem "aktív helyzet kell" jellegűek
  * (pl. "Ellenfél nincs Fegyverelőnyben", "Egyik ellenfél sincs Fegyverelőnyben"), maradnak manuálisak.
  * A hosszabb neveket előbb illesztjük (Fegyverelőny vs Fegyverhátrány szóhatár egyértelműsítése).
  */
@@ -71,7 +71,7 @@ export interface AktívFegyverInfo {
 /**
  * Az aktív jobb kéz fegyverének kategóriája + sebzésmódja a session alapján.
  * null, ha nincs kiválasztott fegyver (puszta kéz / index<0) → a fegyver-követelmények manuálisak.
- * ponytail: a jobb kéz fegyvere a mérvadó (kétkezes/pajzs finomságát nem bontjuk — a kézifegyveres
+ * ponytail: a jobb kéz fegyvere a mérvadó (kétkezes/pajzs finomságát nem bontjuk - a kézifegyveres
  * manőver-követelményekhez ez elég; upgrade: aktív-fegyver-ctx bevonása, ha később kell.)
  */
 export function aktívFegyverInfo(karakter: Karakter, session: Session, data: GameData): AktívFegyverInfo | null {
@@ -190,7 +190,7 @@ interface TéBontásSor { forrás: string; érték: number }
 
 /**
  * A Manőver popup közelítő TÉ-bontása (a HarcScreen `baseTÉ` képletének EGYETLEN forrása).
- * A HarcScreen ennek az összegét használja — így a bontás és az összeg sosem driftel szét.
+ * A HarcScreen ennek az összegét használja - így a bontás és az összeg sosem driftel szét.
  * ponytail: közelítő (per-fegyver módosítók nélkül), ahogy a `baseTÉ` komment is jelzi.
  */
 export function téBontás(karakter: Karakter, data: GameData): TéBontásSor[] {
@@ -242,7 +242,7 @@ export function getFázisFelirat(
   // A képernyő előtt ülő az adott fázisban maga dob-e?
   const énDobok = (cselekvő === 'én') === (mód === 'aktív');
   if (fázis === 'M' && cselekvő === 'ellenfél') {
-    // Megakasztó az ellenfél — a manőver-siker = a megakasztás NEM talál.
+    // Megakasztó az ellenfél - a manőver-siker = a megakasztás NEM talál.
     return énDobok
       ? { siker: 'Elhibáztam', kudarc: 'Eltaláltam' }
       : { siker: 'Elhibázta', kudarc: 'Eltalált' };
@@ -254,7 +254,7 @@ export function getFázisFelirat(
       ? { siker: 'Elértem', kudarc: 'Nem értem el' }
       : { siker: 'Elérte', kudarc: 'Nem érte el' };
   }
-  // M (én-cselekvő, pl. Távoltartás) vagy V — támadás/találat
+  // M (én-cselekvő, pl. Távoltartás) vagy V - támadás/találat
   return énDobok
     ? { siker: 'Talált', kudarc: 'Nem talált' }
     : { siker: 'Eltalált', kudarc: 'Nem talált' };
@@ -262,7 +262,7 @@ export function getFázisFelirat(
 
 /**
  * A "Manőver sikeres" boxban megjelenő hatás-sorok: a `hatás`-ból kiszűrjük a
- * kudarc-jellegű ("Sikertelen:" / "Kudarc:") és a feltétel/meta ("Feltétel:") sorokat —
+ * kudarc-jellegű ("Sikertelen:" / "Kudarc:") és a feltétel/meta ("Feltétel:") sorokat -
  * ezek a SIKERES kontextusban félrevezetők/feleslegesek (a teljes `hatás` a pickerben látszik).
  * C2 (ponytail: prefix-alapú szűrés).
  */

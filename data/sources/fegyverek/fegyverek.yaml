@@ -1,13 +1,13 @@
-# Fegyvergenerátor — EGYESÍTETT fegyver-katalógus (WORK paraméterek). Egy fegyver = egy rekord.
+# Fegyvergenerátor - EGYESÍTETT fegyver-katalógus (WORK paraméterek). Egy fegyver = egy rekord.
 # Betölti: code/balance/fegyvergenerator_balansz.py (FEGYVEREK) és fegyvergenerator_fegyverlista.py (W).
 #
 #   név         : lookup + megjelenített név
-#   kategória   : harcmodor — ha JELEN van, a fegyver MEGJELENIK a generált fegyverlistában (enélkül csak teszt-minta)
+#   kategória   : harcmodor - ha JELEN van, a fegyver MEGJELENIK a generált fegyverlistában (enélkül csak teszt-minta)
 #   megjegyzés  : csak a NEM levezethető, NEM strukturált info (mechanika-jegyzet)
-#   teszt       : {teszt_minta, elvart, elvart_1kez_kétkezes} — balansz self-test mezők csoportja,
+#   teszt       : {teszt_minta, elvart, elvart_1kez_kétkezes} - balansz self-test mezők csoportja,
 #                 NEM része az éles fegyvernek. teszt_minta:true → a balansz self-testben/elemzésben
-#                 részt vevő kiemelt fegyver; elvart: {aktor: [TÉ, VÉ]} — regressziós elvárt bázisérték.
-#   extrak   : [id, …] — hivatkozás a extrak.yaml katalógusra (KF, szituációs hatások). A Beszorítottat a
+#                 részt vevő kiemelt fegyver; elvart: {aktor: [TÉ, VÉ]} - regressziós elvárt bázisérték.
+#   extrak   : [id, …] - hivatkozás a extrak.yaml katalógusra (KF, szituációs hatások). A Beszorítottat a
 #                 fegyverhossz-kategória örökíti (konstansok.yaml), NEM itt kell felsorolni.
 #   fegyver     : a Fegyver modell WORK paraméterei (a defaultok elhagyhatók)
 
@@ -88,6 +88,6 @@
 - {név: "Ostor", state: raw, kategória: ostorharc, megjegyzés: "", fegyver: {hossz: 9, aktorok: [botvég], hajlékony: 1, erőbónusz_limit: 3}}
 - {név: "Ostorkard", state: raw, kategória: ostorharc, megjegyzés: "Urumi néven is ismert.", extrak: [onsebzes_kockazat], fegyver: {hossz: 9, aktorok: [vágóél-íves-átlagos], fejdarab: 1, hajlékony: 1}}
 
-# ── — csak teszt-minta (nem mainstream) — ──
+# ── - csak teszt-minta (nem mainstream) - ──
 - {név: "Naginata", state: raw, teszt: {teszt_minta: true, elvart: {vágóél-íves-nagy: [14, 14]}}, fegyver: {hossz: 12, aktorok: [vágóél-íves-nagy], fejdarab: 1, pengés: 1, idea: 2, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 - {név: "Wakizashi", state: raw, teszt: {teszt_minta: true}, fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1}}

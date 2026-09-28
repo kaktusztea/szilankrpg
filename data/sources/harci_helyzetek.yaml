@@ -206,8 +206,8 @@ harci_helyzetek:
   infó: "Semlegesíti ellenfél Fegyverelőnyét → Fegyverazonosság."
   megjegyzések:
   - text: "Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges Fegyverelőny harci helyzetét."
-  - text: "Példa: két tőrös közrefog egy Hosszú kardost — a hosszú kardos Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
-  - text: "Példa: két tőrös közrefog egy lándzsást — a lándzsás Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
+  - text: "Példa: két tőrös közrefog egy Hosszú kardost - a hosszú kardos Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
+  - text: "Példa: két tőrös közrefog egy lándzsást - a lándzsás Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
   hatások: []
   id: "közrefogás"
   csoport: "semleges"
@@ -276,7 +276,7 @@ harci_helyzetek:
   megjegyzések:
   - text: "Az egyes fajokat méret kategóriákba osztályozzuk: 1 Bögöly, 2 Erdőpille, 3 Goblin/Gnóm, 4 Ember/Törpe/Ork, 5 Ogár, 6 Wyvern, 7 Sárkány."
   - text: "Minden egyes kategóriakülönbségnél a nagyobb lény +1 VÉ csökkentést okoz."
-  - text: "Példa: Goblin vs Ogár 2 kategória különbség — az Ogár +2 VÉ csökkentés bónuszt kap."
+  - text: "Példa: Goblin vs Ogár 2 kategória különbség - az Ogár +2 VÉ csökkentés bónuszt kap."
   - text: "A Fegyverméret-különbség és a lények méret különbsége két, egymás mellett működő szabály."
   hatások: []
   id: "méret_különbség"
@@ -329,7 +329,7 @@ harci_helyzetek:
   - text: "Egyéb TÉ bónusz nincs."
   - text: "Harci taktikák NEM használhatóak."
   - text: "Manőver: Precíz támadás használható (páncél megkerüléséhez)."
-  - text: "Manőver: Leütés hátulról, Rávetődés hátulról — követelményük az Orvtámadás helyzet."
+  - text: "Manőver: Leütés hátulról, Rávetődés hátulról - követelményük az Orvtámadás helyzet."
   - text: "Manőverek és Orvtámadás viszonya: Ellenpróba dobás csak."
   hatások:
   - operátor: "előny"
@@ -344,7 +344,7 @@ harci_helyzetek:
   infó: "VÉ csökkentés: 2+k20P."
   megjegyzések:
   - text: "Fegyvered mérete legalább 2 kategóriával hosszabb ellenfeledénél."
-  - text: "Csak akkor kerül valaki Fegyverelőnybe — és így a másik Fegyverhátrányba — ha ez a fegyverméret különbség megvan."
+  - text: "Csak akkor kerül valaki Fegyverelőnybe - és így a másik Fegyverhátrányba - ha ez a fegyverméret különbség megvan."
   hatások: []
   id: "fegyverelőny"
   csoport: "negatív"

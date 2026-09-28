@@ -4,7 +4,7 @@ import type { KonstansokRaw } from './data-types';
 /**
  * Mesterfegyver fok keresés név alapján (case-insensitive).
  * A `Mesterfegyver` fortély `spec_elem`-je vagy a megjelenített névvel, vagy a
- * fegyver alapnevével egyezik — mindkettő elfogadott.
+ * fegyver alapnevével egyezik - mindkettő elfogadott.
  */
 export function findMfFokByName(karakter: Karakter, fegyverNév: string, alap: string): number {
   const entry = karakter.fortélyok.find(f => f.név === 'Mesterfegyver' && (
@@ -16,7 +16,7 @@ export function findMfFokByName(karakter: Karakter, fegyverNév: string, alap: s
 
 /**
  * Mesterfegyver fok keresés fegyver alapnévből: a fegyvertáblából a `név` mezőt oldja fel.
- * (A régi rendszerben az "Alapnév" a másfélkezes-pár közös megjelenítendő nevét adta —
+ * (A régi rendszerben az "Alapnév" a másfélkezes-pár közös megjelenítendő nevét adta -
  * az új generátor-modellben egy fegyvernek nincs külön 1K/2K rekordja, a `módok[]` tömb
  * tartja mindkét variánst egy `név` alatt, tehát a lookup mindig a fegyver saját nevét adja.)
  */

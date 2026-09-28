@@ -218,7 +218,7 @@ export interface HatterekData {
 }
 
 // --- Konstansok (belső, nem exportált a data-loader-ből) ---
-// A `konstansok.yaml` MINDEN top-level kulcsa deklarált — nincs `[key: string]` catch-all,
+// A `konstansok.yaml` MINDEN top-level kulcsa deklarált - nincs `[key: string]` catch-all,
 // hogy a yaml ↔ típus drift fordítási hibaként jelentkezzen.
 export interface KonstansokRaw {
   version: number;
@@ -278,7 +278,7 @@ export interface KonstansokRaw {
   páncél_méret_illeszkedés: { fokozat: string; mgt: number }[];
 
   // Referencia adat: a szabálykönyv szerkezetét dokumentálja, a kód nem olvassa.
-  // (Ha kód lesz rá, innen kell kiindulni — NE hardcode-old a listákat!)
+  // (Ha kód lesz rá, innen kell kiindulni - NE hardcode-old a listákat!)
   aura_bónusz: { nehézség: number; bónusz: number }[];
   feltétel_prefixek: string[];
   fortély_csoportok: string[];
@@ -293,7 +293,7 @@ export interface KonstansokRaw {
 
 // --- Betöltött adat ---
 
-/** Páncélosztály — a Sebzésjelleg × páncél mátrix 5 oszlopa (l. sebzesjelleg_pancel_matrix.yaml). */
+/** Páncélosztály - a Sebzésjelleg × páncél mátrix 5 oszlopa (l. sebzesjelleg_pancel_matrix.yaml). */
 export type Páncélosztály = 'csupasz' | 'puha' | 'bor' | 'lanc' | 'merev';
 
 /** Sebzésjelleg × páncélosztály → SP delta lookup + struktúra→osztály leképezés. */

@@ -1,4 +1,4 @@
-# Fegyvergenerátor — EXTRÁK katalógusa (egységes).
+# Fegyvergenerátor - EXTRÁK katalógusa (egységes).
 # Minden bejegyzés: {feltétel(ek) → hatás(ok)}. A `feltétel.típus` adja a jellegét,
 # a `csoport` az ember-olvasható / megjelenítési besorolást.
 # Hivatkozás id-vel, KÉT scope-on:
@@ -8,7 +8,7 @@
 # a futásidejű kiértékelés a reactive engine későbbi feladata.
 #
 # STRUKTÚRA (a webapp meglévő két formátumához igazítva):
-#   feltétel[] : előfeltételek — a manoverek.yaml `követelmények` STRUKTÚRÁJA:
+#   feltétel[] : előfeltételek - a manoverek.yaml `követelmények` STRUKTÚRÁJA:
 #       {típus, név | id, érték?}   (ÉS-kapcsolat)
 #       típus: fortély | képzettség (érték=fok/szint≥) | státusz | harci_helyzet | cél_páncél
 #            | cél_felszereles | aktor | forgatás | manőver_állapot | ellenfél_fegyver_sebzésjelleg | narratív (KM)
@@ -20,7 +20,7 @@
 #       mód: flat | override  (fortély-`módosító` mód) | szorzó  (hatás-operátor mód, hatas_operatorok.yaml: érték 0.5=felez, 2=dupláz)
 
 extrak:
-  # ── FELKÉSZÍTÉS (kiképzett, opt-in — a régi „extra"/KF) ──
+  # ── FELKÉSZÍTÉS (kiképzett, opt-in - a régi „extra"/KF) ──
   - id: kulonleges_felkeszites
     név: "Különleges felkészítés"
     csoport: felkészítés
@@ -57,7 +57,7 @@ extrak:
   - id: pocsek_vedekezo_pancelos_ellen
     név: "Pocsék védekező (páncélos ellen)"
     csoport: harci_helyzet
-    leírás: "Páncélos ellenfél ellen a hárítási hátrány kiütközik — VÉ:0. Páncéltalan ellen a kontakt-fenyegetés miatt a bázis VÉ marad."
+    leírás: "Páncélos ellenfél ellen a hárítási hátrány kiütközik - VÉ:0. Páncéltalan ellen a kontakt-fenyegetés miatt a bázis VÉ marad."
     feltétel:
       - {típus: cél_páncél, érték: páncélos}
     hatás:
@@ -66,7 +66,7 @@ extrak:
   - id: pancelszuras_belharcban
     név: "Belharcban rések közt beszúr"
     csoport: harci_helyzet
-    leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr — a páncél SFÉ-je 0."
+    leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr - a páncél SFÉ-je 0."
     feltétel:
       - {típus: harci_helyzet, id: belharci_helyzet}
     hatás:
@@ -75,7 +75,7 @@ extrak:
   - id: pajzs_ve_felezes
     név: "Láncos: pajzs VÉ felezés"
     csoport: harci_helyzet
-    leírás: "A láncos fej megkerüli a pajzsot — a pajzs adta VÉ feleződik."
+    leírás: "A láncos fej megkerüli a pajzsot - a pajzs adta VÉ feleződik."
     feltétel:
       - {típus: cél_felszereles, érték: pajzs}
     hatás:
@@ -126,7 +126,7 @@ extrak:
     név: "Önsebzés-kockázat"
     csoport: harci_helyzet
     leírás: >
-      Köz- és önveszélyes: a támadó k20 EGYBEN esélydobás — Mesterfegyver-foktól függő küszöb (Mf nélkül 1-10,
+      Köz- és önveszélyes: a támadó k20 EGYBEN esélydobás - Mesterfegyver-foktól függő küszöb (Mf nélkül 1-10,
       Mf:1.fok 1-2, Mf:2-3.fok nincs) alá/rá dobva magadat sebzed (rendes sebzés önmagad ellen). Részletek: md/068_06.
     hatás:
       - {cél: "önsebzés", mód: szöveges}
@@ -169,7 +169,7 @@ extrak:
       - {cél: vé_veszteség, mód: szorzó, érték: 2}
 
   - id: kampos_veg_labkirantas
-    név: "Kampós vég — Lábkirántás"
+    név: "Kampós vég - Lábkirántás"
     csoport: tulajdonság
     leírás: >
       A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad.

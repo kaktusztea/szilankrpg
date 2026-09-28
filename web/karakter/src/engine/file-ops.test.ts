@@ -48,7 +48,7 @@ describe('nextDuplicateName', () => {
   });
 });
 
-describe('nextDuplicateNamePair — név/becenév szinkron verziózás', () => {
+describe('nextDuplicateNamePair - név/becenév szinkron verziózás', () => {
   it('egyik sincs verziózva → mindkettő 2', () => {
     expect(nextDuplicateNamePair('Aldo', 'Ali', [], [])).toEqual({ név: 'Aldo 2', becenév: 'Ali 2' });
   });

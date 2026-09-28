@@ -32,7 +32,7 @@ export function calcTaktikaMods(session: Session, data: GameData, karakter?: Kar
     const def = data.taktikak.find(t => t.név === at.név);
     if (!def) continue;
     const tiltott = (cél: string) => letiltva.has(`${def.feltétel_kulcs}|${cél}`);
-    // Forrás fok-def (fokozatos) vagy statikus módosítók — mindkettő {KÉ,TÉ,VÉ,SP}? alakú.
+    // Forrás fok-def (fokozatos) vagy statikus módosítók - mindkettő {KÉ,TÉ,VÉ,SP}? alakú.
     let forrás: Partial<Record<typeof CÉLOK[number], number>> | undefined;
     if (def.fokozatos && def.fokok && at.fok != null) {
       forrás = interpolateFokDef(def.fokok, at.fok, !!def.fortély_bővítés || !!def.skálázható) as typeof forrás;

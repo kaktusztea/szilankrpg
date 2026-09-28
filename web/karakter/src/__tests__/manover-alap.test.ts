@@ -1,5 +1,5 @@
 /**
- * Manőver Alap (MA) — engine_spec §14: MA = CEIL((HM_TÉ + HM_VÉ) / 10)
+ * Manőver Alap (MA) - engine_spec §14: MA = CEIL((HM_TÉ + HM_VÉ) / 10)
  * A kanonikus képlet a rules.json-ben él; ez a check a valódi szabály ellen fut.
  */
 import { describe, it, expect, beforeAll } from 'vitest';

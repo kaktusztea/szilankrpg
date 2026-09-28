@@ -1,15 +1,15 @@
 ---
 # Séma: extrak.yaml (Fegyvergenerátor extrák katalógus)
 # Az egységes effekt-modell (engine_spec.md §42) PILOTja.
-# A validátor (code/balance/extrak_validator.py) EBBŐL dolgozik — a szkriptben nincs beégetett vokabulár.
+# A validátor (code/balance/extrak_validator.py) EBBŐL dolgozik - a szkriptben nincs beégetett vokabulár.
 
 # ── Vokabulárok (enumok) ──
 csoport_enum: [felkészítés, harci_helyzet, tulajdonság]
 
-# hatás.mód — az egyesített mód-enum (§42.2); a előny/hátrány a `előny_hátrány` kategória operátor-nevei
+# hatás.mód - az egyesített mód-enum (§42.2); a előny/hátrány a `előny_hátrány` kategória operátor-nevei
 mod_enum: [flat, szorzó, scaled, override, max_limit, előny, hátrány, enyhít, letilt, szöveges]
 
-# feltétel.típus — előfeltétel REFERENCIA (a manoverek.yaml `követelmények` szerint)
+# feltétel.típus - előfeltétel REFERENCIA (a manoverek.yaml `követelmények` szerint)
 feltetel_tipus_enum:
   - fortély
   - képzettség
@@ -19,7 +19,7 @@ feltetel_tipus_enum:
   - cél_felszereles
   - aktor
   - forgatás
-  - manőver_állapot          # érték: aktív (én alkalmazom) | passzív (ellenem irányul) — vö. webapp Manőver dobás (manover-dobas-calc Mód)
+  - manőver_állapot          # érték: aktív (én alkalmazom) | passzív (ellenem irányul) - vö. webapp Manőver dobás (manover-dobas-calc Mód)
   - ellenfél_fegyver_sebzésjelleg
   - narratív
 
@@ -29,11 +29,11 @@ cel_prefix_enum: [fortély, képzettség]
 # hatás.feltétel (al-feltétel) prefixek ("prefix:érték")
 alfeltetel_prefix_enum: [manőver]
 
-# hatás.alcél (a cél al-scope-ja) prefixek ("prefix:érték") — webapp-bound prefix
+# hatás.alcél (a cél al-scope-ja) prefixek ("prefix:érték") - webapp-bound prefix
 alcel_prefix_enum: [fegyverfogás]
 
-# feltétel ÉRTÉK-enumok — CSAK a fix értékkészletű típusokra. A katalógus-referencia típusoknál
-# (fortély/képzettség/státusz/harci_helyzet/aktor/narratív) NINCS enum — más katalógusra/entitásra mutatnak.
+# feltétel ÉRTÉK-enumok - CSAK a fix értékkészletű típusokra. A katalógus-referencia típusoknál
+# (fortély/képzettség/státusz/harci_helyzet/aktor/narratív) NINCS enum - más katalógusra/entitásra mutatnak.
 feltetel_ertek_enum:
   forgatás:                      [egykezes, másfélkezes, kétkezes]
   manőver_állapot:               [aktív, passzív]

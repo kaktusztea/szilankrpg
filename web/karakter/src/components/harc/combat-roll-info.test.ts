@@ -4,7 +4,7 @@ import type { Session, Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 
-// Minimal fixtures — only the fields collectDobásInfo touches for the taktika path.
+// Minimal fixtures - only the fields collectDobásInfo touches for the taktika path.
 function makeData(): GameData {
   return {
     harciHelyzetek: [],
@@ -35,7 +35,7 @@ const session = {
 
 const karakter = { fortélyok: [] } as unknown as Karakter;
 
-describe('collectDobásInfo — nem-fokozatos taktika strukturált hatás', () => {
+describe('collectDobásInfo - nem-fokozatos taktika strukturált hatás', () => {
   it('a Visszafogott Hátrány-2 eljut a sebzésHatások közé (hatás kulcs feldolgozás)', () => {
     const info = collectDobásInfo(session, karakter, makeData());
     const h = info.sebzésHatások.find(x => x.forrás === 'Visszafogott');
@@ -51,7 +51,7 @@ describe('collectDobásInfo — nem-fokozatos taktika strukturált hatás', () =
   });
 });
 
-describe('netElőnySzint — előjeles összegzés (Math.abs nélkül)', () => {
+describe('netElőnySzint - előjeles összegzés (Math.abs nélkül)', () => {
   it('előny (+), hátrány (−), enyhít (+) előjeles értékei nettósítva', () => {
     const hatások: DobásHatás[] = [
       { forrás: 'a', cél: 'té_dobás', operátor: 'előny', érték: 2 },
@@ -97,7 +97,7 @@ describe('célPáncélSpDelta', () => {
       feltétel: [{ típus: 'cél_páncél', érték: 'vérttelen' }],
       hatás: [{ cél: 'SP', mód: 'flat', érték: 3 }],
     },
-    // VÉ-hatású cél_páncél extra — NEM SP, tehát figyelmen kívül hagyandó.
+    // VÉ-hatású cél_páncél extra - NEM SP, tehát figyelmen kívül hagyandó.
     pocsek_vedekezo: {
       id: 'pocsek_vedekezo', név: 'Pocsék védekező',
       feltétel: [{ típus: 'cél_páncél', érték: 'páncélos' }],

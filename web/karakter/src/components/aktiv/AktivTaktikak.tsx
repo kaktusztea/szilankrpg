@@ -101,7 +101,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
       </div>
 
       {showPicker && (
-        <PickerOverlay title={fokválasztó ? `${fokválasztó} — fok választó` : 'Taktika választó'} onClose={() => { setShowPicker(false); setFokválasztó(null); }}>
+        <PickerOverlay title={fokválasztó ? `${fokválasztó} - fok választó` : 'Taktika választó'} onClose={() => { setShowPicker(false); setFokválasztó(null); }}>
           {fokválasztó
             ? <TaktikaFokPicker fokválasztó={fokválasztó} data={data} karakter={karakter} session={session} onSelect={handleFokSelect} />
             : <TaktikaPickerList data={data} karakter={karakter} session={session}

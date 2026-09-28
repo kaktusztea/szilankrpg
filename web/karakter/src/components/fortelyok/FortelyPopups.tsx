@@ -17,7 +17,7 @@ export function FokPickerPopup({ slot, maxfok, nyelvFokLabels, onSelect, onCance
   onCancel: () => void;
 }) {
   const isNyelv = slot.név === 'Nyelvismeret';
-  const label = isNyelv ? displayName(slot) : `${slot.név} — fok:`;
+  const label = isNyelv ? displayName(slot) : `${slot.név} - fok:`;
   return (
     <PopupOverlay onClose={onCancel}>
       <label>{label}</label>

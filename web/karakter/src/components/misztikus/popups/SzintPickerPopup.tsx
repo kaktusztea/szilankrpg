@@ -16,7 +16,7 @@ export function SzintPickerPopup({ target, currentSzint, onPick, onClose }: Prop
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-        <label>{displayName} — szint:</label>
+        <label>{displayName} - szint:</label>
         <div className="kep-szint-grid">
           {options.map(n => (
             <button key={n} className={`fort-fok-btn${currentSzint === n ? ' active' : ''}`}
