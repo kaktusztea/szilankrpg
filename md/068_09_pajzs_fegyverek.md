@@ -28,11 +28,11 @@ Túlcsordulás esetén
 
 <!-- tag: md_table_pajzs_start -->
 
-| Pajzs         | TÉ | VÉ | Sebesség | SP | Erőbónusz limit | Speciális                                                                                                                 |
-| ------------- | -: | -: | -------: | -: | --------------: | ------------------------------------------------------------------------------------------------------------------------- |
-| Kis Pajzs     |  1 |  3 |        6 | +0 |               0 | -                                                                                                                         |
-| Közepes Pajzs |  1 | 10 |        7 | +0 |               2 | Erő követelmény: +1.                                                                                                      |
-| Nagy Pajzs    |  1 | 16 |        9 | +0 |               4 | Erő követelmény: +2. Legfeljebb 0.5 penge hosszú fegyver lehet a másik kézben. Minden plusz 0.5 penge TÉ:-3 büntetést ad. |
+| Pajzs         |  TÉ |  VÉ | Sebesség |  SP | Erőbónusz limit | Speciális                                                                                                                                          |
+| ------------- | --: | --: | -------: | --: | --------------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kis Pajzs     |   1 |   3 |        6 |  +0 |               0 | -                                                                                                                                                  |
+| Közepes Pajzs |   1 |  10 |        7 |  +0 |               2 | Erő követelmény: +1.                                                                                                                               |
+| Nagy Pajzs    |   1 |  16 |        9 |  +0 |               4 | Erő követelmény: +2. Legfeljebb 2 fegyverhossz-kategóriájú fegyver lehet a másik kézben. Minden plusz 1 fegyverhossz-kategória TÉ:-3 büntetést ad. |
 
 <!-- tag: md_table_pajzs_end -->
 
