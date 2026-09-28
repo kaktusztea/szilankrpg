@@ -18,29 +18,26 @@ Nagyobb fegyver
 
 <br />
 
-## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony)
+## SUM [Fegyverhossz](068_01_01_fegyverhossz_kategoriak.md)
 
-A két fegyver pengeméreteinek összege.
+A két fegyver "hossz" paraméterének összege.
 
 ```
-Max: 2 x 1 penge
+Max: 2 x 3 hossz
 
-SUM 2 penge felett
+SUM 6 hossz felett vagy Fegyverhossz > 6
   fegyverek harcértéke: 0
-
-"rövid" fegyverek
-  0 pengének számítanak
 ```
 
 <br />
 
 ## Fegyverméretek hatása [Harckeretre](063_04_tamadasok_szama_fegyverrel.md#harckeret)
 
- A két fegyver összpengeméretét (SUM) elosztjuk `0.5`-tel és ennyi lejön a Harckeretből.
+ A két fegyver összesített "hossz" paraméterét (SUM) `2`-vel osztjuk ↓ és ennyi lejön a Harckeretből.
 
 ```
--1: minden 0.5 penge után
-    (SUM pengeméretek)
+-1: minden 2 hossz után ↓
+    (SUM fegyverhossz)
 ```
 
 ### Fortélyok hatása [Harckeretre](063_04_tamadasok_szama_fegyverrel.md#harckeret)
