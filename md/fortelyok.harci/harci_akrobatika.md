@@ -10,6 +10,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Akrobatika - `6.szint`
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
+- Maximum össz fegyverméret: 3
 
 🌟 **Hatás**: `TÉ:+1, VÉ:+1`
 
@@ -21,6 +22,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Akrobatika - `9.szint`
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
+- Maximum össz fegyverméret: 3
 
 🌟 **Hatás**: `TÉ:+2, VÉ:+2`
 
@@ -32,6 +34,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Akrobatika - `12.szint`
 - Csak Hajlékonyvértben
 - Maximum `MGT:10` értékű vértben
+- Maximum össz fegyverméret: 3
 
 🌟 **Hatás**: `TÉ:+3, VÉ:+3`
 
@@ -40,9 +43,9 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 
 #### Fegyverek
 
-A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például `1 db` hosszú kard, vagy `2 db` rövidkard), továbbá súlyuk is fontos tényező (KM dönt).
+A forgatott fegyverek össz fegyverhossza nem lehet nagyobb, mint `3` (Például `1 db` hosszú kard, vagy `1 db` rövidkard és `1 db` tőr), továbbá súlyuk is fontos tényező (KM dönt).
 
-Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs pengekorlát), de csak a könnyű, fából készültek, mint a hosszú bot, vagy fából készült lándzsa használható - ha van elég hely.
+Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs fegyverméret-korlát), de csak a könnyű, fából készültek, mint a hosszú bot, vagy fából készült lándzsa használható - ha van elég hely.
 
 #### Alkalmazás
 
