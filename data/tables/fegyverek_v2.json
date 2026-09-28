@@ -2462,7 +2462,7 @@
   {
     "név": "Hárító: Alkarvédő",
     "kategória": "közelharci",
-    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 pengés fegyver ellen hárít. A fenti SP:-10 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-10 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": true,
@@ -2487,7 +2487,7 @@
   {
     "név": "Hárító: Tonfa",
     "kategória": "közelharci",
-    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 pengés fegyver ellen hárít. A fenti SP:-3 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-3 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": true,
@@ -2512,7 +2512,7 @@
   {
     "név": "Hárító: Köpeny",
     "kategória": "kardvívó",
-    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 1 penge hosszú fegyver ellen hárít. A fenti SP:-20 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
+    "megjegyzés": "Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-20 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.",
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": true,
@@ -2637,7 +2637,7 @@
   {
     "név": "Nagy Pajzs",
     "kategória": "pajzs",
-    "megjegyzés": "Erő követelmény: +2. Legfeljebb 0.5 penge hosszú fegyver lehet a másik kézben. Minden plusz 0.5 penge TÉ:-3 büntetést ad.",
+    "megjegyzés": "Erő követelmény: +2. Legfeljebb 2 fegyverhossz-kategóriájú fegyver lehet a másik kézben. Minden plusz 1 fegyverhossz-kategória TÉ:-3 büntetést ad.",
     "fegyverhossz": 0,
     "akadály": 0,
     "övön_hordható": false,
