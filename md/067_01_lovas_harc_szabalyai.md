@@ -21,9 +21,9 @@ Harcértékek
   = gyalogos harcértékek
   + Lovas harc fortély bónuszai
 
-Fegyverméretre +1 penge bónusz
+Fegyverméretre +2 bónusz
 
-Minimum pengeméret: 1
+Minimum fegyverméret: 3
 ```
 
 A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel harcolnál.
