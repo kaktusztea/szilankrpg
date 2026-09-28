@@ -15,6 +15,7 @@ feltetel_tipus_enum:
   - képzettség
   - státusz
   - harci_helyzet
+  - taktika
   - cél_páncél
   - cél_felszereles
   - aktor

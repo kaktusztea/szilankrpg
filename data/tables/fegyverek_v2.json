@@ -1825,6 +1825,10 @@
     "ár": null,
     "extrák": [
       {
+        "id": "pikas_kozrefogasa",
+        "név": "Pikás közrefogása"
+      },
+      {
         "id": "fanyel_fegyvertores_konnyebb",
         "név": "Fanyél fegyvertörése könnyebb"
       }
@@ -1854,6 +1858,10 @@
     "övön_hordható": false,
     "ár": null,
     "extrák": [
+      {
+        "id": "pikas_kozrefogasa",
+        "név": "Pikás közrefogása"
+      },
       {
         "id": "fanyel_fegyvertores_konnyebb",
         "név": "Fanyél fegyvertörése könnyebb"
@@ -2542,7 +2550,12 @@
     "akadály": 2,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "kopjas_roham",
+        "név": "Kopja lovas rohamban"
+      }
+    ],
     "módok": [
       {
         "aktor": "kivétel",
@@ -2567,7 +2580,12 @@
     "akadály": 2,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "kopjas_roham",
+        "név": "Kopja lovas rohamban"
+      }
+    ],
     "módok": [
       {
         "aktor": "kivétel",

@@ -10,7 +10,7 @@
 # STRUKTÚRA (a webapp meglévő két formátumához igazítva):
 #   feltétel[] : előfeltételek - a manoverek.yaml `követelmények` STRUKTÚRÁJA:
 #       {típus, név | id, érték?}   (ÉS-kapcsolat)
-#       típus: fortély | képzettség (érték=fok/szint≥) | státusz | harci_helyzet | cél_páncél
+#       típus: fortély | képzettség (érték=fok/szint≥) | státusz | harci_helyzet | taktika | cél_páncél
 #            | cél_felszereles | aktor | forgatás | manőver_állapot | ellenfél_fegyver_sebzésjelleg | narratív (KM)
 #   hatás[]    : a fortély `módosítók` STRINGES formátuma: {cél, mód, érték, feltétel?}
 #       cél: HARCÉRTÉK/esemény csupasz string (TÉ / VÉ / SP / SFÉ / vé_veszteség / manőver_ellenpróba / harckeret …)
@@ -71,6 +71,26 @@ extrak:
       - {típus: harci_helyzet, id: belharci_helyzet}
     hatás:
       - {cél: SFÉ, mód: override, érték: 0}
+
+  - id: pikas_kozrefogasa
+    név: "Pikás közrefogása"
+    csoport: harci_helyzet
+    leírás: "Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó ellen 0 harcértékű."
+    feltétel:
+      - {típus: harci_helyzet, id: közrefogás}
+      - {típus: narratív, név: választott_támadó}   # KM/játékos választja, MELYIK támadó ellen
+    hatás:
+      - {cél: TÉ, mód: override, érték: 0}
+      - {cél: VÉ, mód: override, érték: 0}
+
+  - id: kopjas_roham
+    név: "Kopja lovas rohamban"
+    csoport: harci_helyzet
+    leírás: "Lovas roham taktikában a kopja alap Sebzéséhez +10 SP bónusz adódik (harci és tornakopja is)."
+    feltétel:
+      - {típus: taktika, id: lovas_roham}
+    hatás:
+      - {cél: SP, mód: flat, érték: 10}
 
   - id: pajzs_ve_felezes
     név: "Láncos: pajzs VÉ felezés"

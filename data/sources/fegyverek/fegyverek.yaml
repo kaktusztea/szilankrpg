@@ -64,8 +64,8 @@
 - {név: "Lándzsa, átlagos", state: raw, kategória: lándzsavívó, megjegyzés: "", teszt: {teszt_minta: true, elvart_1kez_kétkezes: {lándzsahegy-rövid-átlagos: [6, 6]}}, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 - {név: "Lándzsa, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 - {név: "Lándzsa, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
-- {név: "Pika, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
-- {név: "Pika, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
+- {név: "Pika, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", extrak: [pikas_kozrefogasa], fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
+- {név: "Pika, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", extrak: [pikas_kozrefogasa], fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
 - {név: "Szigony, egykezes", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], fejdarab: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Szigony, kétkezes", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 

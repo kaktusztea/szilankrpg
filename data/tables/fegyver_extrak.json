@@ -105,6 +105,53 @@
       }
     ]
   },
+  "pikas_kozrefogasa": {
+    "id": "pikas_kozrefogasa",
+    "név": "Pikás közrefogása",
+    "csoport": "harci_helyzet",
+    "leírás": "Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó ellen 0 harcértékű.",
+    "feltétel": [
+      {
+        "típus": "harci_helyzet",
+        "id": "közrefogás"
+      },
+      {
+        "típus": "narratív",
+        "név": "választott_támadó"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "TÉ",
+        "mód": "override",
+        "érték": 0
+      },
+      {
+        "cél": "VÉ",
+        "mód": "override",
+        "érték": 0
+      }
+    ]
+  },
+  "kopjas_roham": {
+    "id": "kopjas_roham",
+    "név": "Kopja lovas rohamban",
+    "csoport": "harci_helyzet",
+    "leírás": "Lovas roham taktikában a kopja alap Sebzéséhez +10 SP bónusz adódik (harci és tornakopja is).",
+    "feltétel": [
+      {
+        "típus": "taktika",
+        "id": "lovas_roham"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "SP",
+        "mód": "flat",
+        "érték": 10
+      }
+    ]
+  },
   "pajzs_ve_felezes": {
     "id": "pajzs_ve_felezes",
     "név": "Láncos: pajzs VÉ felezés",

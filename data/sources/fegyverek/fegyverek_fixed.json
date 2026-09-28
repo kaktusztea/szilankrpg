@@ -132,7 +132,7 @@
     "akadály": 2,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [{"id": "kopjas_roham", "név": "Kopja lovas rohamban"}],
     "módok": [
       {
         "aktor": "kivétel",
@@ -157,7 +157,7 @@
     "akadály": 2,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [{"id": "kopjas_roham", "név": "Kopja lovas rohamban"}],
     "módok": [
       {
         "aktor": "kivétel",
