@@ -228,7 +228,7 @@ export interface KonstansokRaw {
   arányok: { max_tsz: number; max_hm_diff_szintlépésenként: number; képzettség_nemprimer_max_szint_plusz: number; képzettség_max_szint: number; tulajdonság_pont_alap: number; tulajdonság_pont_tsz_bónusz: number; max_cm_perszint: number };
   tulajdonság_pontok: Record<string, number>;
   páncél_struktúrák: {
-    struktúra: string; leírás: string; fém: boolean; merev: boolean; harci_akrobatika: boolean;
+    struktúra: string; leírás: string; fém: boolean; merev: boolean;
     mgt: number; sfé_fizikai: number; sfé_energia: number; ár_szorzó: number; idea_plusz_minusz: number;
   }[];
   páncél_fémalapanyagok: { anyag: string; sfé_bónusz: number; mgt: number; ár_szorzó: number }[];
@@ -271,7 +271,6 @@ export interface KonstansokRaw {
     aurakiterjesztés_levonás: Record<string, number>;
     auraerősítés_tábla: { komplexitás: number; bónusz: number }[];
   };
-  harci_akrobatika: { max_mgt: number };
   manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number };
   pinned_taktikák: string[];
   fegyver_anyagok: string[];

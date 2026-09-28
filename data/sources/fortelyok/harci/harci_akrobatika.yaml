@@ -15,10 +15,10 @@ leírások:
     \ - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen..."
 megjegyzések:
 - text: "Fegyverek: A forgatott fegyverek össz fegyverhossza nem lehet nagyobb,\
-    \ mint `1 kategória` (Például 1db hosszú kard, vagy 2db rövidkard), továbbá súlyuk\
+    \ mint `3` (Például 1db hosszú kard, vagy 1db rövidkard és 1db tőr), továbbá súlyuk\
     \ is fontos tényező (KM dönt)."
-- text: "Vértek: a fortély csak olyan hajlékony, könnyű, nem-fém vértben használható,\
-    \ melynek nem nagyobb MGT-je X-nél."
+- text: "Vértek: 1-2. fok csak nem-fém hajlékony vértben (posztó / fegyverkabát / bőr),\
+    \ max effektív MGT:5; 3. fok bármely nem-merev (Hajlékony) vértben, max effektív MGT:10."
 - text: "**Alkalmazás**:  ha olyan a szituáció, hogy az alkalmazó nem képes, vagy\
     \ nem akarja alkalmazni harca közben ezt a stílust (pl. túl feltűnő lenne az ugrabugrálása),\
     \ akkor nem kapja meg a leírt bónuszokat."
@@ -33,57 +33,78 @@ fokok:
 - fok: 1
   követelménytext:
     - text: "Csak posztó, fegyverkabát, bőr páncél struktúrában"
-    - text: "Maximum MGT:5 értékű vértben"
+    - text: "Maximum MGT:5 értékű vértben (Erő módosítót is beleszámolva)"
+    - text: "Maximum össz fegyverméret: 3"
   követelmények:
   - név: "Akrobatika"
     érték: 6
     típus: "képzettség"
+  - típus: "páncél_hajlékonyság"
+    érték: "nem_fém"
+  - típus: "max_effektív_mgt"
+    érték: 5
+  - típus: "max_össz_fegyverméret"
+    érték: 3
   hatástext:
-  - text: "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
+  - text: "TÉ:+1, VÉ:+1."
   módosítók:
   - cél: "TÉ"
-    érték: 0
-    mód: "scaled"
-    forrás: "akrobatika"
-    arány: 0.5
+    érték: 1
+    mód: "flat"
+    forrás: ""
+    arány: 0
     feltétel: ""
   - cél: "VÉ"
-    érték: 0
-    mód: "scaled"
-    forrás: "akrobatika"
-    arány: 0.5
+    érték: 1
+    mód: "flat"
+    forrás: ""
+    arány: 0
     feltétel: ""
 - fok: 2
   követelménytext:
     - text: "Csak posztó, fegyverkabát, bőr páncél struktúrában"
-    - text: "Maximum MGT:5 értékű vértben"
+    - text: "Maximum MGT:5 értékű vértben (Erő módosítót is beleszámolva)"
+    - text: "Maximum össz fegyverméret: 3"
   követelmények:
   - név: "Akrobatika"
     érték: 9
     típus: "képzettség"
+  - típus: "páncél_hajlékonyság"
+    érték: "nem_fém"
+  - típus: "max_effektív_mgt"
+    érték: 5
+  - típus: "max_össz_fegyverméret"
+    érték: 3
   hatástext:
-  - text: "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez."
+  - text: "TÉ:+2, VÉ:+2."
   módosítók:
   - cél: "TÉ"
-    érték: 0
-    mód: "scaled"
-    forrás: "akrobatika"
-    arány: 1
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
     feltétel: ""
   - cél: "VÉ"
-    érték: 0
-    mód: "scaled"
-    forrás: "akrobatika"
-    arány: 1
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
     feltétel: ""
 - fok: 3
   követelménytext:
-    - text: "Csak posztó, fegyverkabát, bőr páncél struktúrában"
-    - text: "Maximum MGT:5 értékű vértben"
+    - text: "Csak Hajlékonyvértben (nem pikkely / lemez)"
+    - text: "Maximum MGT:10 értékű vértben (Erő módosítót is beleszámolva)"
+    - text: "Maximum össz fegyverméret: 3"
   követelmények:
   - név: "Akrobatika"
     érték: 12
     típus: "képzettség"
+  - típus: "páncél_hajlékonyság"
+    érték: "nem_merev"
+  - típus: "max_effektív_mgt"
+    érték: 10
+  - típus: "max_össz_fegyverméret"
+    érték: 3
   hatástext:
   - text: "TÉ:+3, VÉ:+3."
   módosítók:
