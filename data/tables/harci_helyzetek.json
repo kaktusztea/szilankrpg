@@ -685,7 +685,7 @@
     "infó": "VÉ csökkentés: 2+k20P.",
     "megjegyzések": [
       {
-        "text": "Fegyvered mérete legalább 1 kategóriával hosszabb ellenfeledénél."
+        "text": "Fegyvered mérete legalább 2 kategóriával hosszabb ellenfeledénél."
       },
       {
         "text": "Csak akkor kerül valaki Fegyverelőnybe — és így a másik Fegyverhátrányba — ha ez a fegyverméret különbség megvan."
@@ -704,7 +704,7 @@
     "infó": "VÉ csökkentés: k20P.",
     "megjegyzések": [
       {
-        "text": "Fegyvered mérete legalább 1 kategóriával rövidebb ellenfeledénél."
+        "text": "Fegyvered mérete legalább 2 kategóriával rövidebb ellenfeledénél."
       },
       {
         "text": "A VÉ csökkentést tekintve hátrányban vagy a Fegyverazonossághoz képest, viszont vannak szituációk, mint a Fárasztó taktika, ahol korlátozó tényező lehet."
