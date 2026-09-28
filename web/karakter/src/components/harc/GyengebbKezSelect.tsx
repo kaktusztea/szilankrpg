@@ -22,6 +22,8 @@ function getKétkezesBalOpciók(
     if (jobbIdx < 0) return true;
     const balFh = fDef?.fegyverhossz ?? 0;
     if (balFh > jobbFh) return false;
+    // Per-fegyver limit: egyik fegyver sem lehet nagyobb a kétkezes max-nál.
+    if (balFh > data.konstansok.kétkezes_harc_max_egy_fegyver || jobbFh > data.konstansok.kétkezes_harc_max_egy_fegyver) return false;
     return balFh + jobbFh <= data.konstansok.kétkezes_harc_max_fegyverméret;
   });
 }

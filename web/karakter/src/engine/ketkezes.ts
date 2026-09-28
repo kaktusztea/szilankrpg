@@ -8,7 +8,7 @@ interface KétkezesInput {
   fegyverek: FegyverAlap[];
   karakter: Karakter;
   konstansok: Pick<KonstansokRaw,
-    'kétkezes_harc_max_fegyverméret' | 'kétkezes_harc_fegyverlevonás_osztó' | 'kétkezes_harc_bónuszok'
+    'kétkezes_harc_max_fegyverméret' | 'kétkezes_harc_max_egy_fegyver' | 'kétkezes_harc_fegyverlevonás_osztó' | 'kétkezes_harc_bónuszok'
     | 'mesterfegyver_bónuszok' | 'fegyver_kategória_harcmodor' | 'harcérték_alap'>;
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number }[];
   fortelyMods: Record<string, number>;
@@ -32,6 +32,8 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   const jobbFh = jobbDef.fegyverhossz;
   const balFh = balDef.fegyverhossz;
   const sumFh = jobbFh + balFh;
+  // Kétkezes limit: (1) egyik fegyver sem lehet nagyobb a per-fegyver maxnál, (2) az összeg sem a max-nál.
+  if (jobbFh > konstansok.kétkezes_harc_max_egy_fegyver || balFh > konstansok.kétkezes_harc_max_egy_fegyver) return null;
   if (sumFh > konstansok.kétkezes_harc_max_fegyverméret) return null;
 
   const khFok = k.fortélyok.find(f => f.név === 'Kétkezes harc')?.fok ?? 0;

@@ -404,6 +404,10 @@ locked_fortélyok:
 
 kétkezes_harc_max_fegyverméret: 6
 
+# Kétkezes harcban egyetlen fegyver fegyverhossza sem lehet ennél nagyobb (a nagyobb, kétkezes
+# fegyverek nem foghatók párban). Az össz-limit (max_fegyverméret) ezen felül is érvényes.
+kétkezes_harc_max_egy_fegyver: 3
+
 # Fegyverfogás opciók
 fegyverfogás_opciók:
   - id: "egyfegyveres"

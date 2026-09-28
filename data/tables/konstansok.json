@@ -429,6 +429,7 @@
     "Merevvértviselet"
   ],
   "kétkezes_harc_max_fegyverméret": 6,
+  "kétkezes_harc_max_egy_fegyver": 3,
   "fegyverfogás_opciók": [
     {
       "id": "egyfegyveres",

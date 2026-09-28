@@ -241,6 +241,7 @@ export interface KonstansokRaw {
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;
   kétkezes_harc_max_fegyverméret: number;
+  kétkezes_harc_max_egy_fegyver: number;
   kétkezes_harc_bónuszok: {
     fok: number; harckeret: number; TÉ: number; VÉ: number; mindkét_fegyver_értékei: boolean; mf: string;
   }[];

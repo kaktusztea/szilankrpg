@@ -16,6 +16,7 @@ export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUnd
     if (session.aktív_fegyver_bal_index < 0) return true;
     const balFh = getFegyverhossz(data, karakter.fegyverek[session.aktív_fegyver_bal_index]?.alap ?? '');
     const fFh = getFegyverhossz(data, karakter.fegyverek[f.idx]?.alap ?? '');
+    if (fFh > data.konstansok.kétkezes_harc_max_egy_fegyver || balFh > data.konstansok.kétkezes_harc_max_egy_fegyver) return false;
     return fFh + balFh <= data.konstansok.kétkezes_harc_max_fegyverméret;
   });
 
@@ -34,7 +35,8 @@ export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUnd
           if (balIdx >= 0) {
             const jobbFh = getFegyverhossz(data, karakter.fegyverek[idx]?.alap ?? '');
             const balFh = getFegyverhossz(data, karakter.fegyverek[balIdx]?.alap ?? '');
-            if (balFh > jobbFh || balFh + jobbFh > data.konstansok.kétkezes_harc_max_fegyverméret) {
+            if (balFh > jobbFh || balFh + jobbFh > data.konstansok.kétkezes_harc_max_fegyverméret
+                || jobbFh > data.konstansok.kétkezes_harc_max_egy_fegyver || balFh > data.konstansok.kétkezes_harc_max_egy_fegyver) {
               balIdx = -1;
             }
           }
