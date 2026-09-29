@@ -33,7 +33,7 @@ Ami a v2 bevezetésből még hátravan (KIZÁRÓLAG ez a 4):
 1. **`cél_páncél` VÉ/SFÉ-hatású extrák** ✅ (Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) - az SP-ág és a VÉ/SFÉ jelölés-ág is kész (jelölés, nem numerikus levonás). Részletek: a fenti backlog-sor + STUDY 3g.
 2. **Fegyver Idea implementáció** 🐞 - holt mező → `rules.json`. Részletek: a fenti backlog-sor.
 3. **Egységes effekt-modell (§42) 2-3. fázisa** - reactive runtime feltétel→hatás kiértékelés. Részletek: a fenti backlog-sor + STUDY.
-4. **Pajzs pipeline kivezetése** - a régi `process_fegyverek.py` kerülő-útról a `fegyverek_v2.json`-ra. Részletek: STUDY "Kezelendő következmények".
+4. **Pajzs pipeline kivezetése** ✅ - a webapp már a `fegyverek_v2.json` (pajzs-entryk) + `konstansok.pajzs_hatások` alapon dolgozik (`pancel-calc.ts`, `buildPajzsFegyverNév`); a `pajzsok.json`-t NEM tölti be. A régi kerülő-utas ág (`pajzs_pattern.json` → `process_fegyverek.py` → `pajzsok.json`) NEM volt a build-láncban - archiválva: `archive/data_fegyverek_v1/{pajzsok.json,pajzs_pattern.json}`. A `process_fegyverek.py` maga marad (a `tavfegyver_pattern.json` → `tavfegyverek.json` ágat a webapp használja); a `sync_fegyvertablazatok.py sync_pajzs()` (fegyverek_fixed.json → 068_09.md szabálykönyv-szinkron) is marad, más cél.
 
 NEM része a v2 bevezetésnek (külön backlog / más alrendszer): Erő-követelmény mechanika (generátor-balansz), Akadályoztatás státuszok (státusz data-layer), Fárasztás érték (taktika data-layer), balansz `raw`→`final` hangolás (külön backlog), opcionális KM-fejezet + custom fegyver mező (külön backlog).
 
