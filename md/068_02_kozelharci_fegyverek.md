@@ -63,9 +63,8 @@ Alapesetben hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverfo
 
 Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) fortélyt, akkor az ott leírtak szerint a gyengébb kezedben forgathatsz hárítófegyvert - de továbbra sem támadhatsz vele.
 
-Ha mindkét karon/kézben az alábbi fegyverek vannak, akkor is **csak** a fenti harcértékek az irányadóak, további bónusz **nem** jár.
+Ha mindkét karon/kézben az alábbi fegyverek vannak, akkor is **csak** a fenti harcértékek az irányadóak, további bónusz **nem** jár:
 
-A fenti listában ez a két hárítófegyver szerepel:
 - Hárító: Alkarvédő
 - Hárító: Tonfa
 
