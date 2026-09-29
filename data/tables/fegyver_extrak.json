@@ -214,6 +214,10 @@
       {
         "típus": "manőver_állapot",
         "érték": "passzív"
+      },
+      {
+        "típus": "narratív",
+        "név": "Ellenfél fegyvere fém"
       }
     ],
     "hatás": [
@@ -309,10 +313,6 @@
       {
         "típus": "manőver_állapot",
         "érték": "passzív"
-      },
-      {
-        "típus": "narratív",
-        "név": "Ellenfél fegyvere fém"
       }
     ],
     "hatás": [
