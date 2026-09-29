@@ -4,6 +4,7 @@ import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
 import { getFegyverhossz, isHárító } from './fegyver-helpers';
+import { buildPajzsFegyverNév } from './shared';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function getKétkezesBalOpciók(
@@ -32,10 +33,11 @@ type Props = Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'>
 
 export function GyengebbKezSelect({ data, karakter, session, setSession, fegyverOpciók }: Props) {
   if (session.fegyverfogás === 'fegyver_pajzs') {
+    const pajzsNév = buildPajzsFegyverNév(karakter) ?? 'Pajzs';
     return (
       <div className="aktiv-field-btn">
         <span className="aktiv-field-label">Gyengébb kéz</span>
-        <select className="aktiv-field-select" disabled><option>Pajzs</option></select>
+        <select className="aktiv-field-select" disabled><option>{pajzsNév}</option></select>
       </div>
     );
   }
