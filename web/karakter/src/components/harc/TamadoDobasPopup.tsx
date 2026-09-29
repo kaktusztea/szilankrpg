@@ -132,6 +132,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
       <VeCsokkentesPopup
         k20={k20Érték}
         alapTáblázat={véCsökkentésAlap}
+        fegyverExtrák={fegyverExtrák}
+        extraDefs={extraDefs}
+        extraKontextus={aktívExtraKontextus}
         onClose={(eredmény) => {
           if (eredmény) {
             onVéCsökkentés(eredmény);

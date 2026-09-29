@@ -27,6 +27,16 @@ const defs: Record<string, FegyverExtraDef> = {
     ],
     hatás: [{ cél: 'manőver_ellenpróba', mód: 'flat', érték: 2, feltétel: 'manőver:precíz_támadás' }],
   },
+  kopjas_roham: {
+    id: 'kopjas_roham', név: 'Kopja lovas rohamban', leírás: '',
+    feltétel: [{ típus: 'taktika', id: 'lovas_roham' }],
+    hatás: [{ cél: 'SP', mód: 'flat', érték: 10 }],
+  },
+  pancelszuras_belharcban: {
+    id: 'pancelszuras_belharcban', név: 'Belharcban rések közt beszúr', leírás: '',
+    feltétel: [{ típus: 'harci_helyzet', id: 'belharci_helyzet' }],
+    hatás: [{ cél: 'SFÉ', mód: 'override', érték: 0 }],
+  },
 };
 
 function ctx(over: Partial<ExtraKontextus> = {}): ExtraKontextus {
@@ -71,6 +81,36 @@ describe('extrakInfoTételek - fegyver-extrák állapota', () => {
       aktorNév: 'vágóél-íves-rövid', forgatás: 'egykezes',
     }))[0];
     expect(t.státusz).toBe('inaktív');
+  });
+
+  it('manőver-kapcsolat: aktív manőver + illő aktor/forgatás → aktív', () => {
+    // pontos hatás-al-feltétele "manőver:precíz_támadás"; ha az az aktív manőver, a manőver_állapot
+    // teljesül, és az egész extra aktívvá válik.
+    const t = extrakInfoTételek([{ id: 'pontos' }], defs, ctx({
+      aktorNév: 'pengehegy-tőr', forgatás: 'egykezes', aktívManőver: 'precíz_támadás',
+    }))[0];
+    expect(t.státusz).toBe('aktív');
+  });
+
+  it('manőver-kapcsolat: MÁS manőver aktív → a manőver_állapot marad KM', () => {
+    const t = extrakInfoTételek([{ id: 'pontos' }], defs, ctx({
+      aktorNév: 'pengehegy-tőr', forgatás: 'egykezes', aktívManőver: 'lefegyverzés',
+    }))[0];
+    expect(t.státusz).toBe('km');
+  });
+
+  it('aktív harci taktika → a taktika-feltételes extra aktív', () => {
+    const t = extrakInfoTételek([{ id: 'kopjas_roham' }], defs, ctx({
+      aktívFeltételek: new Set(['taktika:lovas_roham']),
+    }))[0];
+    expect(t.státusz).toBe('aktív');
+  });
+
+  it('aktív harci helyzet → a helyzet-feltételes extra aktív', () => {
+    const t = extrakInfoTételek([{ id: 'pancelszuras_belharcban' }], defs, ctx({
+      aktívFeltételek: new Set(['harci_helyzet:belharci_helyzet']),
+    }))[0];
+    expect(t.státusz).toBe('aktív');
   });
 
   it('hatás-összefoglaló szövegek', () => {

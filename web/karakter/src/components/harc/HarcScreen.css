@@ -705,6 +705,18 @@
 .extrak-badge-inaktív { background: rgba(120, 120, 120, 0.2); color: var(--text-dim); }
 .extrak-badge-km { background: rgba(255, 179, 0, 0.18); color: var(--warning, #ffb300); }
 
+/* --- VÉ-csökkentés popup: ellenfél-infó nélküli VÉ-extra figyelmeztetés --- */
+.ve-csokkentes-warning {
+  padding: 8px 10px;
+  margin: 6px 0;
+  border: 1px solid var(--warning, #ffb300);
+  border-radius: 6px;
+  background: rgba(255, 179, 0, 0.1);
+  color: var(--warning, #ffb300);
+  font-size: 13px;
+  text-align: center;
+}
+
 .sebzes-summary {
   font-size: 13px;
   color: var(--text-dim);

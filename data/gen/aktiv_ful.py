@@ -21,6 +21,10 @@ def generate_aktiv_ful():
     statuszok = load_yaml(os.path.join(SOURCES_DIR, 'statuszok.yaml'))['státuszok']
     hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatások']
     hatterek = load_yaml(os.path.join(SOURCES_DIR, 'hatterek.yaml'))
+    # Fegyver-extrák a helyzetfüggő módosító `extra_ref` pointerek feloldásához (A/1: az extra az
+    # igazságforrás a fegyver-specifikus manőver-módosítóra, engine_spec §42).
+    extrak = load_yaml(os.path.join(SOURCES_DIR, 'fegyverek', 'extrak.yaml'))['extrak']
+    extrak_by_id = {e['id']: e for e in extrak}
 
     validate_schema('taktika', taktikak, 'taktikak.yaml', root_key='taktikák')
     validate_schema('harci_helyzet', helyzetek, 'harci_helyzetek.yaml', root_key='harci_helyzetek')
@@ -44,6 +48,7 @@ def generate_aktiv_ful():
     for m in manoverek:
         hm = m.get('helyzetfüggő_módosítók')
         m['helyzetfüggő_módosítók'] = hm if isinstance(hm, list) else []
+        _resolve_extra_ref_sorok(m, extrak_by_id)
         köv = m.get('követelmények')
         m['követelmények'] = köv if isinstance(köv, list) else []
         fi = m.get('fázis_info')
@@ -66,3 +71,37 @@ def generate_aktiv_ful():
 
     write_json('statuszok.json', statuszok)
     write_json('hatterek.json', hatterek)
+
+
+def _resolve_extra_ref_sorok(manőver, extrak_by_id):
+    """Helyzetfüggő módosító `extra_ref` pointerek feloldása az extrak.yaml-ből (A/1, §42).
+
+    A pointer-sor (`{extra_ref: "<id>"}`) helyére a generátor kitölti:
+      - `érték`   : az extra `manőver_ellenpróba`-hatásának értéke, amelynek al-feltétele
+                    a jelen manőverre (`manőver:<manőver_id>`) szól - a célszám-módosító (negatív = könnyebb),
+      - `leírás`  : "Fegyver extra: <extra név>",
+      - `feltétel`: `fegyver_extra:<id>` (auto-match: az aktív fegyver hordozza-e az extrát).
+    Így EGY igazságforrás (extra) adja az értéket + a leírást + a match-feltételt; a manőver-tábla
+    csak a pointert (helyet) tartja. Ismeretlen id / hiányzó manőver-hatás → build hiba.
+    """
+    mid = manőver.get('id')
+    for tab in manőver['helyzetfüggő_módosítók']:
+        for i, sor in enumerate(tab['sorok']):
+            ref = sor.get('extra_ref')
+            if not ref:
+                continue
+            extra = extrak_by_id.get(ref)
+            if extra is None:
+                raise ValueError(f"manoverek.yaml: '{manőver.get('név')}' extra_ref='{ref}' nincs az extrak.yaml-ban")
+            kulcs = f"manőver:{mid}"
+            hatás = next((h for h in (extra.get('hatás') or [])
+                          if h.get('cél') == 'manőver_ellenpróba' and h.get('feltétel') == kulcs), None)
+            if hatás is None:
+                raise ValueError(
+                    f"manoverek.yaml: '{manőver.get('név')}' extra_ref='{ref}' - az extrának nincs "
+                    f"manőver_ellenpróba hatása a(z) '{kulcs}' al-feltétellel")
+            tab['sorok'][i] = {
+                'érték': hatás['érték'],
+                'leírás': f"Fegyver extra: {extra['név']}",
+                'feltétel': f"fegyver_extra:{ref}",
+            }

@@ -117,6 +117,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
       aktívStátuszok: new Set(session.aktív_státuszok),
       aktorNév: aktívFegyverDef?.módok?.[0]?.aktor,
       forgatás: aktívFegyverDef?.módok?.[0]?.Forgatás,
+      aktívManőver: session.aktív_manőver || undefined,
     },
   };
 }

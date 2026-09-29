@@ -1,12 +1,21 @@
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { calcVéCsökkentés, type Fegyverviszony, type VéCsökkentésEredmény } from './ve-csokkentes-calc';
+import type { FegyverExtraDef } from '../../engine/data-types';
+import type { ExtraKontextus } from './extrak-info-calc';
+import { hiányzóInfósExtrák } from './extrak-effekt';
 
 interface Props {
   /** A Támadó dobás k20 eredménye (a sikertelen támadás VÉ csökkentésének kockatagja). */
   k20: number;
   /** `konstansok.yaml` → `vé_csökkentés_alap`. */
   alapTáblázat: Record<Fegyverviszony, number>;
+  /** Az aktív fegyver extrái - a VÉ-t érintő, ellenfél-infó nélküli extrák warning-jához. */
+  fegyverExtrák?: { id: string }[];
+  /** Az összes fegyver-extra definíció (id → def). */
+  extraDefs?: Record<string, FegyverExtraDef>;
+  /** Harci kontextus (a VÉ-warning feltétel-kiértékeléséhez). */
+  extraKontextus?: ExtraKontextus;
   /** Eredmény átadása a hívónak (pl. `session.vé_csökkenés` növelése + TÉ history), vagy `null` ha bezárás nélkül. */
   onClose: (eredmény: VéCsökkentésEredmény | null) => void;
 }
@@ -24,17 +33,29 @@ const FEGYVERVISZONY_LABEL: Record<Fegyverviszony, string> = {
  * (session.vé_csökkenés + TÉ history) - nincs újradobás, mert a k20P a már eldobott
  * Támadó dobásból jön.
  */
-export function VeCsokkentesPopup({ k20, alapTáblázat, onClose }: Props) {
+export function VeCsokkentesPopup({ k20, alapTáblázat, fegyverExtrák, extraDefs, extraKontextus, onClose }: Props) {
   const [eredmény, setEredmény] = useState<VéCsökkentésEredmény | null>(null);
 
   function handleVálasztás(fv: Fegyverviszony) {
     setEredmény(calcVéCsökkentés(fv, k20, alapTáblázat));
   }
 
+  // VÉ-t érintő, ellenfél-infó nélküli extrák (pl. Béltépő „Pocsék védekező" páncélos ellen): nem
+  // számoljuk (hiányos korreláció - a VÉ-csökkentésnél nincs ellenfél-páncél infó), csak WARNING.
+  const véWarningok = extraKontextus
+    ? hiányzóInfósExtrák(fegyverExtrák, extraDefs, extraKontextus, 'VÉ')
+    : [];
+
   return (
     <PopupOverlay onClose={() => onClose(eredmény)}>
       <div className="tamado-dobas-popup ve-csokkentes-popup">
         <div className="ke-dobas-header">Fegyverviszony</div>
+
+        {véWarningok.length > 0 && (
+          <div className="ve-csokkentes-warning">
+            ⚠ Ellenfél-páncéltól függő VÉ-extra: {véWarningok.join(', ')} - ellenőrizd az „Extrák" ablakban.
+          </div>
+        )}
 
         {!eredmény ? (
           <div className="ve-csokkentes-btn-row">

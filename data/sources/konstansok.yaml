@@ -94,6 +94,7 @@ feltétel_prefixek:
   - "harci_helyzet"       # pl. "harci_helyzet:meglepetés", "harci_helyzet:hátulról_támadás"
   - "taktika"             # pl. "taktika:fárasztás", "taktika:visszafogott"
   - "fegyver"             # pl. "fegyver:kard, hosszú" - konkrét fegyverre vonatkozik
+  - "fegyver_extra"       # pl. "fegyver_extra:pontos" - az aktív fegyver hordoz-e egy extra-id-t (extrak.yaml)
   - "fegyver_kategória"   # pl. "fegyver_kategória:kardvívó"
   - "fegyverfogás"        # pl. "fegyverfogás:fegyver_hárító", "fegyverfogás:fegyver_pajzs"
   - "manőver"             # pl. "manőver:kibontakozás" (a manoverek.yaml id-je)

@@ -12,7 +12,7 @@
       },
       {
         "típus": "narratív",
-        "név": "iskola"
+        "név": "Harci iskola"
       }
     ],
     "hatás": [
@@ -117,7 +117,7 @@
       },
       {
         "típus": "narratív",
-        "név": "választott_támadó"
+        "név": "Választott támadó ellen"
       }
     ],
     "hatás": [
@@ -209,7 +209,7 @@
     "id": "fanyel_fegyvertores_konnyebb",
     "név": "Fanyél fegyvertörése könnyebb",
     "csoport": "tulajdonság",
-    "leírás": "Fanyél, a Fegyvertörés manőver Ellenpróbánál -2 (könnyebb eltörni).",
+    "leírás": "Fanyelű fegyver, a Fegyvertörés manőver Ellenpróbánál: -2 (könnyebb eltörni).",
     "feltétel": [
       {
         "típus": "manőver_állapot",
@@ -233,7 +233,7 @@
     "id": "sfe_duplazodik",
     "név": "SFÉ dupla ellene",
     "csoport": "harci_helyzet",
-    "leírás": "Íves rövid penge páncél ellen különösen rossz: a célpont páncél SFÉ-je duplán számít.",
+    "leírás": "Páncél ellen különösen rossz, a célpont páncél SFÉ-je duplán számít.",
     "feltétel": [
       {
         "típus": "cél_páncél",
@@ -276,7 +276,7 @@
     "id": "pontos",
     "név": "Pontos",
     "csoport": "tulajdonság",
-    "leírás": "Precíziós szúróhegy: a Precíz támadás manőver Ellenpróbára +2. Csak pengehegy aktor + egykezes forgatás mellett értelmes.\n",
+    "leírás": "Precíziós szúróhegy: a Precíz támadás manőver Ellenpróba célszámát -2-vel könnyíti. Csak pengehegy aktor + egykezes forgatás mellett értelmes.\n",
     "feltétel": [
       {
         "típus": "aktor",
@@ -295,7 +295,7 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": 2,
+        "érték": -2,
         "feltétel": "manőver:precíz_támadás"
       }
     ]
@@ -353,7 +353,7 @@
     "id": "kampos_veggel_labkirantas",
     "név": "Kampós véggel lábkirántás",
     "csoport": "tulajdonság",
-    "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).\n",
+    "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróba célszámát -2-vel könnyíti. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).\n",
     "feltétel": [
       {
         "típus": "aktor",
@@ -368,8 +368,8 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": 2,
-        "feltétel": "manőver:lábkirántás"
+        "érték": -2,
+        "feltétel": "manőver:lábkirántás_szálfegyverrel"
       }
     ]
   }

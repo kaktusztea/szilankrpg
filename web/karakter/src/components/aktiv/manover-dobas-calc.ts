@@ -7,6 +7,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
 import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
+import { buildAktívFeltételek } from '../../engine/feltetelek';
 
 /** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
 const MEGLEPETÉS = 'Meglepetés';
@@ -81,6 +82,60 @@ export function aktívFegyverInfo(karakter: Karakter, session: Session, data: Ga
   const def = lookupFegyver(data.fegyverek, fp.alap);
   if (!def) return null;
   return { kategória: def.kategória, sebzésMódja: elsődlegesMód(def).jelleg };
+}
+
+/** Az aktív (jobb kéz) fegyver neve, vagy null ha nincs kiválasztva (puszta kéz / index<0). */
+export function aktívFegyverNév(karakter: Karakter, session: Session, data: GameData): string | null {
+  const idx = session.aktív_fegyver_index;
+  const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
+  return fp ? (lookupFegyver(data.fegyverek, fp.alap)?.név ?? null) : null;
+}
+
+/**
+ * Egy helyzetfüggő módosító sor `feltétel` STRING-je (`"prefix:érték"`) teljesül-e a jelen manőver-
+ * kontextusban. Támogatott prefixek: `fegyver_extra:<id>` (az aktív fegyver hordozza-e az extrát),
+ * `taktika:<id>` / `harci_helyzet:<id>` / `fegyverfogás:<id>` (aktív feltételek), `fegyver_kategória:<kat>`.
+ * Ismeretlen prefix / nincs feltétel → false (nem auto-matchel, marad kézi).
+ */
+export function szitFeltételTeljesül(feltétel: string | undefined, karakter: Karakter, session: Session, data: GameData): boolean {
+  if (!feltétel || !feltétel.includes(':')) return false;
+  const [prefix, ...rest] = feltétel.split(':');
+  const érték = rest.join(':');
+  if (prefix === 'fegyver_extra') {
+    const idx = session.aktív_fegyver_index;
+    const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
+    const fdef = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
+    return !!fdef?.extrák?.some(e => e.id === érték);
+  }
+  if (prefix === 'fegyver_kategória') {
+    const idx = session.aktív_fegyver_index;
+    const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
+    const fdef = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
+    return fdef?.kategória === érték;
+  }
+  // taktika / harci_helyzet / fegyverfogás → az aktív feltétel-kulcsok között.
+  return buildAktívFeltételek(session, data).has(feltétel);
+}
+
+/**
+ * A helyzetfüggő módosító táblák auto-match kezdőállapota: single táblánál a legelső teljesülő
+ * feltételes sor indexe (vagy -1 ha nincs), multi táblánál soronkénti teljesülés. A popup ezt
+ * használja kezdőértéknek - a felhasználó utána kézzel felülbírálhatja (ki/be).
+ */
+export function szitModKezdőÁllapot(
+  táblák: ModositoTabla[], karakter: Karakter, session: Session, data: GameData,
+): { single: Record<string, number>; multi: Record<string, boolean[]> } {
+  const single: Record<string, number> = {};
+  const multi: Record<string, boolean[]> = {};
+  for (const t of táblák) {
+    if (t.mód === 'multi') {
+      multi[t.kategória] = t.sorok.map(s => szitFeltételTeljesül(s.feltétel, karakter, session, data));
+    } else {
+      const idx = t.sorok.findIndex(s => szitFeltételTeljesül(s.feltétel, karakter, session, data));
+      single[t.kategória] = idx; // -1 ha nincs match
+    }
+  }
+  return { single, multi };
 }
 
 /**

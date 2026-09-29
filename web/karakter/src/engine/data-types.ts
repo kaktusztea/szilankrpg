@@ -5,6 +5,9 @@ import type { Rule } from './reactive';
 export interface ModositoSor {
   érték: number;
   leírás: string;
+  /** Opcionális "prefix:érték" feltétel (pl. "fegyver_extra:pontos", "taktika:roham"). Teljesülésekor
+   * a sor auto-bekapcsol a Manőver dobás popupban (kézi override marad). Üres/hiányzó = tisztán kézi. */
+  feltétel?: string;
 }
 
 export interface ModositoTabla {

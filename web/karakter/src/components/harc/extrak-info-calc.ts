@@ -40,43 +40,68 @@ export interface ExtraKontextus {
   forgatás?: string;
   /** A durva cél-páncél kategória, ha a hívó (Sebzés popup) már választott: "vérttelen"|"páncélos". */
   célPáncélKategória?: 'vérttelen' | 'páncélos';
+  /** Az aktív manőver id-je (`session.aktív_manőver`) - a hatás `feltétel: "manőver:<id>"` al-feltételéhez. */
+  aktívManőver?: string;
+  /** A Manőver ablak módja (aktív = én hajtom végre, passzív = ellenem irányul) - a `manőver_állapot` feltételhez. */
+  manőverÁllapot?: 'aktív' | 'passzív';
 }
 
-/** Egyetlen feltétel kiértékelése: teljesül / nem / KM-döntés (nem auto-eldönthető). */
-function feltételStátusz(f: ExtraFeltétel, ctx: ExtraKontextus): ExtraStátusz {
+/**
+ * Egyetlen feltétel logikai kiértékelése: teljesül (true) / nem (false) / nem auto-eldönthető
+ * (undefined = KM-döntés). A `manőverReleváns` a hatás-al-feltételbeli manőver aktív állapota.
+ */
+export function extraFeltételTeljesül(f: ExtraFeltétel, ctx: ExtraKontextus, manőverReleváns = false): boolean | undefined {
   switch (f.típus) {
     case 'harci_helyzet':
-      return ctx.aktívFeltételek.has(`harci_helyzet:${f.id ?? f.érték}`) ? 'aktív' : 'inaktív';
+      return ctx.aktívFeltételek.has(`harci_helyzet:${f.id ?? f.érték}`);
     case 'taktika':
-      return ctx.aktívFeltételek.has(`taktika:${f.id ?? f.érték}`) ? 'aktív' : 'inaktív';
+      return ctx.aktívFeltételek.has(`taktika:${f.id ?? f.érték}`);
     case 'fortély': {
       const fok = ctx.fortélyFokok.get(String(f.érték ?? f.név));
-      // A `név`/`érték` a fortély neve; küszöb-fok nélkül a puszta felvétel is "aktív".
-      return fok != null && fok > 0 ? 'aktív' : 'inaktív';
+      // A `név`/`érték` a fortély neve; küszöb-fok nélkül a puszta felvétel is teljesül.
+      return fok != null && fok > 0;
     }
     case 'státusz':
-      return ctx.aktívStátuszok.has(String(f.név ?? f.érték)) ? 'aktív' : 'inaktív';
+      return ctx.aktívStátuszok.has(String(f.név ?? f.érték));
     case 'aktor':
       // Részleges egyezés: az aktor-token szerepel-e az aktív mód aktor-nevében (pl. "pengehegy").
-      return ctx.aktorNév && ctx.aktorNév.includes(String(f.érték)) ? 'aktív' : 'inaktív';
+      return !!ctx.aktorNév && ctx.aktorNév.includes(String(f.érték));
     case 'forgatás':
-      return ctx.forgatás === String(f.érték) ? 'aktív' : 'inaktív';
+      return ctx.forgatás === String(f.érték);
     case 'cél_páncél':
-      if (!ctx.célPáncélKategória) return 'km'; // még nincs választva ellenfél-páncél
-      return ctx.célPáncélKategória === String(f.érték) ? 'aktív' : 'inaktív';
-    // Nem auto-eldönthető: narratív, manőver_állapot, cél_felszereles, ellenfél_fegyver_sebzésjelleg.
+      if (!ctx.célPáncélKategória) return undefined; // még nincs választva ellenfél-páncél
+      return ctx.célPáncélKategória === String(f.érték);
+    case 'manőver_állapot':
+      // A Manőver ablak módja adja (aktív = én hajtom végre, passzív = ellenem irányul). Ha nincs
+      // megadva (nem manőver-context, pl. Sebzés popup), a manőver-al-feltétel egyezése a fallback.
+      if (ctx.manőverÁllapot != null) return ctx.manőverÁllapot === String(f.érték);
+      return manőverReleváns ? true : undefined;
+    // Nem auto-eldönthető: narratív, cél_felszereles, ellenfél_fegyver_sebzésjelleg.
     default:
-      return 'km';
+      return undefined;
   }
 }
 
+/** Egyetlen feltétel kiértékelése státuszként (aktív/inaktív/KM). */
+function feltételStátusz(f: ExtraFeltétel, ctx: ExtraKontextus, manőverReleváns: boolean): ExtraStátusz {
+  const t = extraFeltételTeljesül(f, ctx, manőverReleváns);
+  return t === undefined ? 'km' : t ? 'aktív' : 'inaktív';
+}
+
 /** Több feltétel (ÉS-kapcsolat) aggregált státusza. */
-function feltételekStátusz(feltételek: ExtraFeltétel[] | undefined, ctx: ExtraKontextus): ExtraStátusz {
+function feltételekStátusz(feltételek: ExtraFeltétel[] | undefined, ctx: ExtraKontextus, manőverReleváns: boolean): ExtraStátusz {
   if (!feltételek?.length) return 'aktív'; // feltétel nélküli extra = mindig érvényes
-  const részek = feltételek.map(f => feltételStátusz(f, ctx));
+  const részek = feltételek.map(f => feltételStátusz(f, ctx, manőverReleváns));
   if (részek.some(r => r === 'inaktív')) return 'inaktív'; // egy hamis ÉS-tag → az egész inaktív
   if (részek.some(r => r === 'km')) return 'km';           // nincs hamis, de van bizonytalan → KM
   return 'aktív';
+}
+
+/** Van-e a hatások közt az aktív manőverre illeszkedő `feltétel: "manőver:<id>"` al-feltétel? */
+function manőverreIllik(def: FegyverExtraDef, aktívManőver: string | undefined): boolean {
+  if (!aktívManőver) return false;
+  const kulcs = `manőver:${aktívManőver}`;
+  return !!def.hatás?.some(h => h.feltétel === kulcs);
 }
 
 /** Egyetlen hatás olvasható összefoglalója (numerikus alkalmazás nélkül). */
@@ -116,7 +141,10 @@ export function extrakInfoTételek(
     if (!def) continue;
     // Tisztán `szöveges` hatású extra (pl. beakadas_kockazat, onsebzes_kockazat) → mindig KM-döntés.
     const csakSzöveges = !!def.hatás?.length && def.hatás.every(h => h.mód === 'szöveges');
-    const státusz: ExtraStátusz = csakSzöveges ? 'km' : feltételekStátusz(def.feltétel, ctx);
+    // Az aktív manőverhez kapcsolt extra (hatás-al-feltétel: "manőver:<aktív>") → a manőver-állapot
+    // teljesültnek vehető, az extra a manőver alatt aktív.
+    const manőverReleváns = manőverreIllik(def, ctx.aktívManőver);
+    const státusz: ExtraStátusz = csakSzöveges ? 'km' : feltételekStátusz(def.feltétel, ctx, manőverReleváns);
     ki.push({
       id: def.id,
       név: def.név,

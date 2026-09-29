@@ -29,7 +29,7 @@ extrak:
       alapértékek érvényesek; felkészítve a Mesterfegyver fortély e fegyverre adott bónusza megduplázódik.
     feltétel:
       - {típus: fortély, név: Mesterfegyver, érték: 1}   # az adott fegyverre, fok ≥ 1
-      - {típus: narratív, név: iskola}                   # nem gépi: KM dönti el
+      - {típus: narratív, név: "Harci iskola"}                   # nem gépi: KM dönti el
     hatás:
       # MÁSODRENDŰ: a Mesterfegyver e fegyverre vonatkozó bónuszát szorozza (×2).
       - {cél: "fortély:Mesterfegyver", mód: szorzó, érték: 2}
@@ -78,7 +78,7 @@ extrak:
     leírás: "Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó ellen 0 harcértékű."
     feltétel:
       - {típus: harci_helyzet, id: közrefogás}
-      - {típus: narratív, név: választott_támadó}   # KM/játékos választja, MELYIK támadó ellen
+      - {típus: narratív, név: "Választott támadó ellen"}   # KM/játékos választja, MELYIK támadó ellen
     hatás:
       - {cél: TÉ, mód: override, érték: 0}
       - {cél: VÉ, mód: override, érték: 0}
@@ -120,7 +120,7 @@ extrak:
   - id: fanyel_fegyvertores_konnyebb
     név: "Fanyél fegyvertörése könnyebb"
     csoport: tulajdonság
-    leírás: "Fanyél, a Fegyvertörés manőver Ellenpróbánál -2 (könnyebb eltörni)."
+    leírás: "Fanyelű fegyver, a Fegyvertörés manőver Ellenpróbánál: -2 (könnyebb eltörni)."
     feltétel:
       - {típus: manőver_állapot, érték: passzív}   # a manőver a fegyver ELLEN történik
       - {típus: narratív, név: "Ellenfél fegyvere fém"}
@@ -130,7 +130,7 @@ extrak:
   - id: sfe_duplazodik
     név: "SFÉ dupla ellene"
     csoport: harci_helyzet
-    leírás: "Íves rövid penge páncél ellen különösen rossz: a célpont páncél SFÉ-je duplán számít."
+    leírás: "Páncél ellen különösen rossz, a célpont páncél SFÉ-je duplán számít."
     feltétel:
       - {típus: cél_páncél, érték: páncélos}
     hatás:
@@ -157,14 +157,14 @@ extrak:
     név: "Pontos"
     csoport: tulajdonság
     leírás: >
-      Precíziós szúróhegy: a Precíz támadás manőver Ellenpróbára +2.
+      Precíziós szúróhegy: a Precíz támadás manőver Ellenpróba célszámát -2-vel könnyíti.
       Csak pengehegy aktor + egykezes forgatás mellett értelmes.
     feltétel:
       - {típus: aktor, érték: pengehegy}
       - {típus: forgatás, érték: egykezes}
-      - {típus: manőver_állapot, érték: aktív}   # a manőver a fegyver ELLEN történik
+      - {típus: manőver_állapot, érték: aktív}
     hatás:
-      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:precíz_támadás"}
+      - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:precíz_támadás"}
 
   - id: lefegyverezhetobb
     név: "Lefegyverezhetőbb"
@@ -193,11 +193,11 @@ extrak:
     név: "Kampós véggel lábkirántás"
     csoport: tulajdonság
     leírás: >
-      A fegyver kampós vége a Lábkirántás manőver Ellenpróbájára +2-t ad.
+      A fegyver kampós vége a Lábkirántás manőver Ellenpróba célszámát -2-vel könnyíti.
       Jelenleg nincs fegyver, ami használja.
       pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).
     feltétel:
       - {típus: aktor, érték: kampós}
-      - {típus: manőver_állapot, érték: aktív}   # a manőver a fegyver ELLEN történik
+      - {típus: manőver_állapot, érték: aktív}
     hatás:
-      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:lábkirántás"}
+      - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:lábkirántás_szálfegyverrel"}

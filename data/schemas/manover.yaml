@@ -28,4 +28,5 @@ manőverek:
       # - kategória: ""        # Kategória neve (pl. "Fegyver", "Ellenfél", "Körülmény")
       #   mód: "single"        # "single" (default): skála, 1 választható. "multi": független toggle-ök.
       #   sorok:
-      #     - { érték: 0, leírás: "" }
+      #     - { érték: 0, leírás: "", feltétel: "" }   # feltétel opcionális: "prefix:érték" (pl. "taktika:roham"). Teljesülésekor a sor AUTO-bekapcsol (kézi override marad). Üres/hiányzó = tisztán kézi.
+      #     - { extra_ref: "" }                          # VAGY pointer egy fegyver-extra id-re (extrak.yaml): a generátor feloldja → érték (manőver_ellenpróba célszám-mód) + leírás (extra név) + feltétel ("fegyver_extra:<id>"). EGY igazságforrás (A/1, §42).

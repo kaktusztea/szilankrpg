@@ -362,7 +362,8 @@
         "sorok": [
           {
             "érték": -2,
-            "leírás": "Kifejezetten lábkirántásra alkalmas fegyver"
+            "leírás": "Fegyver extra: Kampós véggel lábkirántás",
+            "feltétel": "fegyver_extra:kampos_veggel_labkirantas"
           }
         ]
       }
@@ -781,7 +782,8 @@
         "sorok": [
           {
             "érték": -2,
-            "leírás": "Tőrkard"
+            "leírás": "Fegyver extra: Pontos",
+            "feltétel": "fegyver_extra:pontos"
           },
           {
             "érték": 0,
@@ -799,7 +801,8 @@
         "sorok": [
           {
             "érték": 2,
-            "leírás": "Roham taktika alkalmazása"
+            "leírás": "Roham taktika alkalmazása",
+            "feltétel": "taktika:roham"
           }
         ]
       }

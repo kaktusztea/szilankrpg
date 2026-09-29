@@ -160,7 +160,7 @@ manőverek:
     - kategória: "Fegyver"
       mód: "single"
       sorok:
-        - { érték: -2, leírás: "Kifejezetten lábkirántásra alkalmas fegyver" }
+        - { extra_ref: "kampos_veggel_labkirantas" }
 - név: "Lánccsapda"
   típus: "általános"
   nehézség: 9
@@ -320,13 +320,13 @@ manőverek:
     - kategória: "Fegyver"
       mód: "single"
       sorok:
-        - { érték: -2, leírás: "Tőrkard" }
+        - { extra_ref: "pontos" }
         - { érték: 0, leírás: "Egykezes kardvívó fegyver / Puszta kéz" }
         - { érték: 2, leírás: "Zúzófegyver" }
     - kategória: "Taktika"
       mód: "single"
       sorok:
-        - { érték: 2, leírás: "Roham taktika alkalmazása" }
+        - { érték: 2, leírás: "Roham taktika alkalmazása", feltétel: "taktika:roham" }
 - név: "Rávetődés hátulról"
   típus: "általános"
   nehézség: 6

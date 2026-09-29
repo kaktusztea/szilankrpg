@@ -4,11 +4,12 @@ import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
-import { netElőnySzint, sebzésPáncélDelta, célPáncélSpDelta, célPáncélKategória } from './combat-roll-info';
+import { netElőnySzint, sebzésPáncélDelta, célPáncélKategória } from './combat-roll-info';
 import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import { HatasokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
 import type { ExtraKontextus } from './extrak-info-calc';
+import { aktívHatásokCélra, alkalmazEffektek } from './extrak-effekt';
 
 /** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */
 const PÁNCÉLOSZTÁLYOK: { id: Páncélosztály; label: string }[] = [
@@ -70,21 +71,26 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
 
   const aktuális = clampEHSzint(rawSzint);
-  // Ellenfél-páncéltól függő SP-delta: (1) sebzésjelleg×páncél mátrix + (2) cél_páncél extrák (pl. „Páncéltalant jobban sebez").
+
+  // Az „Extrák" gomb + effekt-motor kontextusa a választott ellenfél-páncél kategóriájával
+  // kiegészítve (a cél_páncél feltételes extrák - pl. panceltalant/kopjas_roham - így teljesülnek).
+  const extraKontextusPáncéllal: ExtraKontextus | undefined = extraKontextus && {
+    ...extraKontextus,
+    célPáncélKategória: páncél ? célPáncélKategória(páncél) : undefined,
+  };
+
+  // Ellenfél-páncéltól függő SP-delta: (1) sebzésjelleg×páncél mátrix + (2) az aktív SP-célú extrák
+  // (§42.3 additív rész) - a teljes korreláció (ellenfél páncél) ismeretében, l. extrak-effekt.ts.
   const mátrixDelta = páncél && páncélMátrix ? sebzésPáncélDelta(páncélMátrix, jelleg, páncél) : 0;
-  const extraDelta = páncél && extraDefs ? célPáncélSpDelta(fegyverExtrák, extraDefs, páncél) : 0;
+  const spHatások = extraKontextusPáncéllal
+    ? aktívHatásokCélra(fegyverExtrák, extraDefs, extraKontextusPáncéllal, 'SP')
+    : [];
+  const extraDelta = alkalmazEffektek(0, spHatások);
   const páncélDelta = mátrixDelta + extraDelta;
   const effektívSp = sp + páncélDelta;
   // A páncélválasztó kötelező (STUDY 3g): amíg jelen van a mátrix, de nincs választva
   // páncélosztály, a dobás blokkolva (rossz SP-eredményt adna a mátrix-lookup nélkül).
   const páncélKell = !!páncélMátrix && páncél === null;
-
-  // Az „Extrák" gomb kontextusa a választott ellenfél-páncél kategóriájával kiegészítve (a
-  // cél_páncél feltételes extrák - pl. panceltalant/sfe_duplazodik - így auto-státuszt kapnak).
-  const extraKontextusPáncéllal: ExtraKontextus | undefined = extraKontextus && {
-    ...extraKontextus,
-    célPáncélKategória: páncél ? célPáncélKategória(páncél) : undefined,
-  };
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(aktuális);

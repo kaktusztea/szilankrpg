@@ -8,6 +8,7 @@ import {
   követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, követelményJelölés, követelményCimke, aktívFegyverInfo,
   calcManőverPont, getBelharcFok,
   fázisCselekvő, fázisSikeres, getFázisFelirat, eredményHatás,
+  szitModKezdőÁllapot, aktívFegyverNév, szitFeltételTeljesül,
 } from './manover-dobas-calc';
 
 interface Props {
@@ -39,9 +40,11 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [szitPickerNyitva, setSzitPickerNyitva] = useState(false);
   const [mpPickerNyitva, setMpPickerNyitva] = useState(false);
   const [téPopupNyitva, setTéPopupNyitva] = useState(false);
-  const [szitMods, setSzitMods] = useState<Record<string, number>>({});
+  const [szitMods, setSzitMods] = useState<Record<string, number>>(
+    () => szitModKezdőÁllapot(módosítóTáblák, karakter, session, data).single,
+  );
   const [multiMods, setMultiMods] = useState<Record<string, boolean[]>>(
-    () => Object.fromEntries(módosítóTáblák.filter(t => t.mód === 'multi').map(t => [t.kategória, t.sorok.map(() => false)])),
+    () => szitModKezdőÁllapot(módosítóTáblák, karakter, session, data).multi,
   );
   // Manőverhez nincs próba-enyhítés → üres lista.
   const szitModÖsszeg = calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, []);
@@ -385,12 +388,18 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                     const handleClick = isMulti
                       ? () => setMultiMods(m => ({ ...m, [t.kategória]: m[t.kategória].map((v, j) => j === i ? !v : v) }))
                       : () => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }));
+                    // Fegyver-extrából feloldott sor: a fegyvernév CSAK akkor jelenik meg zárójelben,
+                    // ha az aktív fegyver ténylegesen hordozza az extrát (a feltétel teljesül) -
+                    // "Fegyver extra: Pontos (Tőrkard)". A build-idejű felirat fegyver-független.
+                    const extraMatch = s.feltétel?.startsWith('fegyver_extra:') && szitFeltételTeljesül(s.feltétel, karakter, session, data);
+                    const fegyverNév = extraMatch ? aktívFegyverNév(karakter, session, data) : null;
+                    const leírás = fegyverNév ? `${s.leírás} (${fegyverNév})` : s.leírás;
                     return (
                       <button key={i}
                         className={`kep-proba-szit-item${isActive ? ' kep-proba-szit-item-active' : ''}${s.érték > 0 ? ' kep-proba-szit-neg' : s.érték < 0 ? ' kep-proba-szit-pos' : ''}`}
                         onClick={handleClick}>
                         <span className="kep-proba-szit-val">{s.érték > 0 ? '+' : ''}{s.érték}</span>
-                        <span className="kep-proba-szit-desc">{s.leírás}</span>
+                        <span className="kep-proba-szit-desc">{leírás}</span>
                       </button>
                     );
                   })}
