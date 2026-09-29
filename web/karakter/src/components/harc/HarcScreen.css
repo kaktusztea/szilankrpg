@@ -658,21 +658,33 @@
   0%, 100% { border-color: var(--border-input); box-shadow: none; }
   50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.45); }
 }
+/* A popup GYÖKÉR (.kep-prompt) szélessége - a hosszú leírás ne nyújtsa túl (app 90%-a). */
+.extrak-prompt {
+  width: 90vw;
+  max-width: 560px;   /* asztali gépen ne legyen indokolatlanul széles */
+  box-sizing: border-box;
+}
 .extrak-popup {
   max-height: 70vh;
   overflow-y: auto;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 .extrak-lista {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: 8px;
+  width: 100%;
+  min-width: 0;
 }
 .extrak-tetel {
   padding: 8px 10px;
   border: 1px solid var(--border-input);
   border-radius: 6px;
   background: var(--input-bg);
+  min-width: 0;           /* engedi a flex-gyerekek zsugorodását, hogy a szöveg tördelhessen */
 }
 .extrak-tetel.extrak-inaktív { opacity: 0.55; }
 .extrak-tetel-fej {
@@ -681,18 +693,20 @@
   align-items: center;
   gap: 8px;
 }
-.extrak-tetel-nev { font-weight: 600; }
+.extrak-tetel-nev { font-weight: 600; overflow-wrap: anywhere; }
 .extrak-tetel-hatas {
   margin-top: 3px;
   font-family: monospace;
   font-size: 13px;
   color: var(--text-dim);
+  overflow-wrap: anywhere;
 }
 .extrak-tetel-leiras {
   margin-top: 4px;
   font-size: 12px;
   color: var(--text-dim);
   white-space: pre-wrap;
+  overflow-wrap: anywhere;   /* hosszú szó/összefüggő szöveg is tördelődik */
 }
 .extrak-badge {
   font-size: 11px;
