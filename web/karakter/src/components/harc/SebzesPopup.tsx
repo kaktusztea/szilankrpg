@@ -159,7 +159,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
             />
 
             {páncélMátrix && (
-              <PáncélVálasztóBtn páncél={páncél} delta={páncélDelta} onSelect={p => { setPáncél(p); setEredmény(null); }} />
+              <PáncélVálasztóBtn páncél={páncél} delta={páncélDelta} jelleg={jelleg} onSelect={p => { setPáncél(p); setEredmény(null); }} />
             )}
             {extraKontextusPáncéllal && (
               <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={extraKontextusPáncéllal} />
@@ -200,9 +200,10 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
 // ─── Ellenfél páncél választó gomb + popup ─────────────────────────────────
 
-function PáncélVálasztóBtn({ páncél, delta, onSelect }: {
+function PáncélVálasztóBtn({ páncél, delta, jelleg, onSelect }: {
   páncél: Páncélosztály | null;
   delta: number;
+  jelleg?: string;
   onSelect: (p: Páncélosztály) => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -213,8 +214,11 @@ function PáncélVálasztóBtn({ páncél, delta, onSelect }: {
 
   return (
     <>
-      <button className={`sebzes-stat-btn ${colorClass}${kellClass}`} onClick={() => setOpen(true)}>
-        Ellenfél páncél: {aktLabel}{delta !== 0 ? ` (SP ${delta > 0 ? '+' : ''}${delta})` : ''}
+      <button className={`sebzes-stat-btn pancel-valaszto-btn ${colorClass}${kellClass}`} onClick={() => setOpen(true)}>
+        <span className="pancel-valaszto-fej">Ellenfél: {aktLabel}</span>
+        {páncél !== null && delta !== 0 && (
+          <span className="pancel-valaszto-delta">({jelleg ?? 'sebzés'} ellene: {delta > 0 ? '+' : ''}{delta})</span>
+        )}
       </button>
       {open && (
         <PopupOverlay onClose={() => setOpen(false)}>

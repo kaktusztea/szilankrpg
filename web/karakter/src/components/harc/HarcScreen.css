@@ -515,6 +515,17 @@
 .sebzes-stat-pos { color: var(--success); }
 .sebzes-stat-neg { color: var(--error); }
 
+/* Ellenfél páncél választó: kétsoros tömör felirat (fej + jelleg-függő delta). */
+.pancel-valaszto-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  line-height: 1.3;
+}
+.pancel-valaszto-fej { font-weight: 600; }
+.pancel-valaszto-delta { font-size: 13px; opacity: 0.95; }
+
 .sebzes-stat-popup {
   display: flex;
   flex-direction: column;
