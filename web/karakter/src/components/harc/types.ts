@@ -67,4 +67,5 @@ export interface HarcComputed {
   oszlopMéret: number;
   téLevonások: number[];
   feltételTeljesül: (feltétel: unknown) => boolean;
+  extraKontextus: import('./extrak-info-calc').ExtraKontextus;
 }

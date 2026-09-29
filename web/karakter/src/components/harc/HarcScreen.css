@@ -637,6 +637,74 @@
   50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.5); }
 }
 
+/* --- „Extrák" gomb + popup (§42 fegyver-extrák info) --- */
+.extrak-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+.extrak-btn-pulse {
+  animation: extrak-pulzal 1.4s ease-in-out infinite;
+}
+@keyframes extrak-pulzal {
+  0%, 100% { border-color: var(--border-input); box-shadow: none; }
+  50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.45); }
+}
+.extrak-popup {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.extrak-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.extrak-tetel {
+  padding: 8px 10px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+}
+.extrak-tetel.extrak-inaktív { opacity: 0.55; }
+.extrak-tetel-fej {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.extrak-tetel-nev { font-weight: 600; }
+.extrak-tetel-hatas {
+  margin-top: 3px;
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.extrak-tetel-leiras {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: pre-wrap;
+}
+.extrak-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.extrak-badge-aktív { background: rgba(76, 175, 80, 0.2); color: var(--success); }
+.extrak-badge-inaktív { background: rgba(120, 120, 120, 0.2); color: var(--text-dim); }
+.extrak-badge-km { background: rgba(255, 179, 0, 0.18); color: var(--warning, #ffb300); }
+
 .sebzes-summary {
   font-size: 13px;
   color: var(--text-dim);

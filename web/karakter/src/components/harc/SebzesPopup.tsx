@@ -4,9 +4,11 @@ import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
-import { netElőnySzint, sebzésPáncélDelta, célPáncélSpDelta } from './combat-roll-info';
+import { netElőnySzint, sebzésPáncélDelta, célPáncélSpDelta, célPáncélKategória } from './combat-roll-info';
 import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import { HatasokInfo } from './HatasokInfo';
+import { ExtrakInfo } from './ExtrakInfo';
+import type { ExtraKontextus } from './extrak-info-calc';
 
 /** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */
 const PÁNCÉLOSZTÁLYOK: { id: Páncélosztály; label: string }[] = [
@@ -34,6 +36,8 @@ interface Props {
   fegyverExtrák?: { id: string }[];
   /** Az összes fegyver-extra definíció (id → def). */
   extraDefs?: Record<string, FegyverExtraDef>;
+  /** Harci kontextus az „Extrák" gomb auto-státuszához (a választott páncélosztály itt egészül ki). */
+  extraKontextus?: ExtraKontextus;
   /** Active Előny/Hátrány effects on Sebzésdobás (informational) */
   sebzésHatások: DobásHatás[];
   /** Active static SP bonuses from taktikák (informational) */
@@ -55,7 +59,7 @@ interface SebzésEredmény {
 }
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + ellenfél páncél + k20 roll + info. */
-export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, sebzésHatások, spBónuszok, megjegyzések, hideAutoBónusz, átütés, onClose }: Props) {
+export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok, megjegyzések, hideAutoBónusz, átütés, onClose }: Props) {
   // Raw (unclamped) combined value - includes TÉ k20 bonus + active effects.
   // A másodlagos sebzéstípus −1 E/H-ját a hívó (TamadoDobasPopup) már beépítette a defaultElőny-be.
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
@@ -74,6 +78,13 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
   // A páncélválasztó kötelező (STUDY 3g): amíg jelen van a mátrix, de nincs választva
   // páncélosztály, a dobás blokkolva (rossz SP-eredményt adna a mátrix-lookup nélkül).
   const páncélKell = !!páncélMátrix && páncél === null;
+
+  // Az „Extrák" gomb kontextusa a választott ellenfél-páncél kategóriájával kiegészítve (a
+  // cél_páncél feltételes extrák - pl. panceltalant/sfe_duplazodik - így auto-státuszt kapnak).
+  const extraKontextusPáncéllal: ExtraKontextus | undefined = extraKontextus && {
+    ...extraKontextus,
+    célPáncélKategória: páncél ? célPáncélKategória(páncél) : undefined,
+  };
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(aktuális);
@@ -143,6 +154,9 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
             {páncélMátrix && (
               <PáncélVálasztóBtn páncél={páncél} delta={páncélDelta} onSelect={p => { setPáncél(p); setEredmény(null); }} />
+            )}
+            {extraKontextusPáncéllal && (
+              <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={extraKontextusPáncéllal} />
             )}
             <div className="sebzes-summary">
               SP: {(() => {

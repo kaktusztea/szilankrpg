@@ -19,8 +19,8 @@
 | **Fegyver Idea implementáció** 🐞 | `fegyverek[].idea` `[-5;+5]` → TÉ/CÉ/VÉ/SP módosító (`md/068_01_14`). A mező létezik és szerializálódik, de EGYETLEN kalkuláció sem használja | harcszimulacio.spec §16/8 |
 | Akadályoztatás státuszok | `Fegyver/Pajzs akadályoztatása`, `Páncél akadályoztatása` - `md/082`-ben definiált, `statuszok.yaml`-ban nincs | harcszimulacio.spec §16/9 |
 | Fárasztás érték data layerbe | A `3 VÉ` csak `megjegyzés` prózában él (`módosítók: {}`) - séma-bővítés kell | harcszimulacio.spec §16/2 |
-| **`cél_páncél` VÉ/SFÉ extrák bekötése** | A `cél_páncél` extrák SP-hatású ága kész (Sebzés popup „Ellenfél páncél" választó → `panceltalant_jobban_sebez` +3 SP). A VÉ/SFÉ-hatásúak (`sfe_duplazodik` = Meneth, `pocsek_vedekezo_pancelos_ellen` = Béltépő) NINCSENEK bekötve: koncepcionális kérdés, mert a statikus fegyver-VÉ/SFÉ nem függhet dobásonként változó ellenfél-páncéltól (a Sebzés popup a támadó dobása). Feloldás: vagy egy külön „feltételezett ellenfél páncél" harc-szintű state a VÉ-táblához, vagy a reactive engine feltétel-dispatchbe kötött `cél_páncélosztály` context. Döntés kell. | STUDY.fegyvergenerator_v2 3g |
-| **Egységes effekt-modell** | A fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia). 1. fázis kész (szabvány + `extrak.yaml` pilot); 2. adat-migráció opportunista; 3. kód-összeolvasztás a reactive runtime effekt-fázisnál. | §42 |
+| **`cél_páncél` VÉ/SFÉ extrák bekötése** ✅ | Az SP-ág kész (Sebzés popup „Ellenfél páncél" választó → `panceltalant_jobban_sebez` +3 SP). A VÉ/SFÉ-hatásúak (`sfe_duplazodik` = Meneth, `pocsek_vedekezo_pancelos_ellen` = Béltépő) az egységes „Extrák" gombon át jelennek meg (§42 2. fázis): a választott ellenfél-páncél kategóriától függő aktív/inaktív státusz + hatás-összefoglaló (numerikus VÉ/SFÉ-alkalmazás nélkül - az a §42 3. fázis). A statikus fegyver-VÉ/SFÉ nem függhet a dobásonként változó ellenfél-páncéltól; a popup-szintű Extrák jelzés a helyes feloldás (korábbi ad-hoc jelölés kivezetve). | STUDY.fegyvergenerator_v2 3g |
+| **Egységes effekt-modell** | A fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia). 1. fázis kész (szabvány + `extrak.yaml` pilot); 2. fázis: az `extrak.yaml` feltétel→hatás MEGJELENÍTŐ szelete kész - „Extrák" gomb (💡) a Támadó/Sebzés dobás popupban, `extrakInfoTételek()` pure fn (`extrak-info-calc.ts`) aktív/inaktív/KM státuszt ad a jelen harci contextből (harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél kiértékelve; narratív/manőver_állapot/`szöveges` → KM). Hátra: a numerikus effekt-ALKALMAZÁS (3. fázis, §42.3 precedencia, reactive runtime, `calcFortelyMods` beolvasztás - regressziós védőháló kell). | §42 |
 
 ---
 
@@ -30,7 +30,7 @@
 
 Ami a v2 bevezetésből még hátravan (KIZÁRÓLAG ez a 4):
 
-1. **`cél_páncél` VÉ/SFÉ-hatású extrák** (Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) - az SP-ág kész, a VÉ/SFÉ-ág tervezési döntést kér. Részletek: a fenti backlog-sor + STUDY 3g.
+1. **`cél_páncél` VÉ/SFÉ-hatású extrák** ✅ (Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) - az SP-ág és a VÉ/SFÉ jelölés-ág is kész (jelölés, nem numerikus levonás). Részletek: a fenti backlog-sor + STUDY 3g.
 2. **Fegyver Idea implementáció** 🐞 - holt mező → `rules.json`. Részletek: a fenti backlog-sor.
 3. **Egységes effekt-modell (§42) 2-3. fázisa** - reactive runtime feltétel→hatás kiértékelés. Részletek: a fenti backlog-sor + STUDY.
 4. **Pajzs pipeline kivezetése** - a régi `process_fegyverek.py` kerülő-útról a `fegyverek_v2.json`-ra. Részletek: STUDY "Kezelendő következmények".

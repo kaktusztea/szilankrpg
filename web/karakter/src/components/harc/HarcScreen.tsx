@@ -263,6 +263,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           páncélMátrix={data.sebzésjellegPáncélMátrix}
           fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
           extraDefs={data.fegyverExtrák}
+          extraKontextus={hc.extraKontextus}
           dobásInfo={collectDobásInfo(session, karakter, data)}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           onVéCsökkentés={(eredmény) => changeVé(eredmény.végső)}

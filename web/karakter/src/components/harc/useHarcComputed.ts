@@ -109,5 +109,14 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     taktikaMods, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
     pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások, véVeszSzorzó, véVeszSzorzóForrás,
     feltételTeljesül,
+    // Extrák (§42 info): a fegyver-extrák auto-státuszához szükséges kontextus. A cél_páncél
+    // kategóriát a Sebzés popup állítja (ellenfél-páncél választó); itt undefined marad.
+    extraKontextus: {
+      aktívFeltételek,
+      fortélyFokok: new Map(k.fortélyok.map(f => [f.név, f.fok])),
+      aktívStátuszok: new Set(session.aktív_státuszok),
+      aktorNév: aktívFegyverDef?.módok?.[0]?.aktor,
+      forgatás: aktívFegyverDef?.módok?.[0]?.Forgatás,
+    },
   };
 }

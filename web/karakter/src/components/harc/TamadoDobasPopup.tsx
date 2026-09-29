@@ -11,6 +11,8 @@ import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine
 import type { Fegyverviszony, VéCsökkentésEredmény } from './ve-csokkentes-calc';
 import { netElőnySzint } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
+import { ExtrakInfo } from './ExtrakInfo';
+import type { ExtraKontextus } from './extrak-info-calc';
 
 /**
  * Derive Sebzés Előny from the TÉ k20 roll value:
@@ -38,6 +40,8 @@ interface Props {
   fegyverExtrák?: { id: string }[];
   /** Az összes fegyver-extra definíció (id → def), a `cél_páncél` feltétel/hatás feloldásához. */
   extraDefs?: Record<string, FegyverExtraDef>;
+  /** Harci kontextus az „Extrák" gomb auto-státuszához (aktív/inaktív/KM). */
+  extraKontextus?: ExtraKontextus;
   /** Collected active effects on TÉ/Sebzés rolls */
   dobásInfo: DobásInfo;
   /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázisértékek). */
@@ -58,7 +62,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -94,6 +98,14 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
   // Másodlagos sebzéstípus → Hátrány−1 (a Sebzés popupba beépítve adjuk át).
   const sebzésElőny = sebzésElőnyFromK20(k20Érték) + (aktívSebzéstípus === 'másodlagos' ? -1 : 0);
 
+  // Az aktuálisan választott mód aktorára igazított extra-kontextus (az `aktor`-feltételes extrák -
+  // pl. `pontos` - mód-váltásra reagáljanak). A forgatás a base kontextusból (elsődleges mód) jön,
+  // a cél_páncél-t a Sebzés popup adja.
+  const aktívExtraKontextus: ExtraKontextus | undefined = extraKontextus && {
+    ...extraKontextus,
+    aktorNév: aktívMód?.aktor ?? extraKontextus.aktorNév,
+  };
+
   if (showSebzés) {
     return (
       <SebzesPopup
@@ -109,6 +121,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
         páncélMátrix={páncélMátrix}
         fegyverExtrák={fegyverExtrák}
         extraDefs={extraDefs}
+        extraKontextus={aktívExtraKontextus}
         onClose={(spEredmény) => onClose(téResult ? { té: téResult.eredmény, sp: spEredmény } : null)}
       />
     );
@@ -178,6 +191,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
             <ElonyPicker szint={szint} onChange={setSzint} />
             {dobásInfo.téHatások.length > 0 && (
               <HatásokInfo hatások={dobásInfo.téHatások} />
+            )}
+            {aktívExtraKontextus && (
+              <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={aktívExtraKontextus} />
             )}
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>

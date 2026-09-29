@@ -142,6 +142,8 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   ep-logic.ts              ÉP sebesülés/gyógyulás pure logika
   harc-reszletek-calc.ts   Részletes értékek bontás
   combat-roll-info.ts      Támadó/Sebzés dobás bónusz kalkuláció (pure fn)
+  extrak-info-calc.ts      Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn)
+  ExtrakInfo.tsx           "Extrák" gomb (💡, pulzál ha van aktív) + popup: fegyver-extrák listája státusz-jelzéssel (Támadó + Sebzés popupban)
   EpTable.tsx              ÉP sebesülés tábla (S1-S4)
   EpDialogs.tsx            Seb/Gyógy dialógusok (explicit click handler)
   HarcFegyverTable.tsx     Fegyver harcértékek tábla
