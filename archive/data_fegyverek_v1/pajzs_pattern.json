@@ -1,8 +1,0 @@
-{
-    "id": "pajzsok",
-    "output": "pajzsok.json",
-    "file_pattern": "pajzs_fegyverek.md",
-    "table_pattern": "pajzs",
-    "sortkey": "",
-    "skip_columns": []
-}

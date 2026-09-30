@@ -14,10 +14,9 @@ data/
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
                              fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate)
-  patterns/                  (ÜRES - a md→json pattern-ág kivezetve: pajzs + távfegyver → `archive/data_fegyverek_v1/`. A `code/process_fegyverek.py` így elárvult.)
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
-code/                        Python scriptek (process_fegyverek.py + lib/)
+code/                        Python scriptek (generate.markdown.py + lib/JinjaHandler.py - md fejezet-generálás)
   balance/                   Balansz / tesztharc tervezői eszközök (NEM pipeline):
     fegyvergenerator_balansz.py       Fegyvergenerátor modell + balansz teszt (tempó/sebzés, statikus)
     fegyvergenerator_fegyverlista.py  A generátorból md fegyvertábla emittálás (importálja a balanszt)
