@@ -3,6 +3,7 @@ import type { Karakter, Session, TavfegyverAlap, TavharcSzorzok, TavharcSzorzoEn
 import type { AlkalmatlanInfo, CÉBontás } from './types';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { képzettségSzint } from '../../engine/utils';
+import { getMfFok } from './mesterfegyver-calc';
 
 // --- Alkalmatlan fegyver info ---
 
@@ -37,38 +38,7 @@ export function getAktívTfDef(
   return undefined;
 }
 
-// --- Mesterfegyver ---
-
-export function getMfFok(k: Karakter, alap: string): number {
-  return k.fortélyok.find(f => f.név === 'Mesterfegyver' && f.spec_elem === alap)?.fok ?? 0;
-}
-
-export function mfKövetelményHiba(k: Karakter, data: GameData, alap: string): boolean {
-  const fok = getMfFok(k, alap);
-  if (fok === 0) return false;
-  const fokDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver')?.fokok.find(f => f.fok === fok);
-  if (!fokDef?.követelmények?.length) return false;
-  const harcmodor = data.tavfegyverek.find(tf => tf.név.toLowerCase() === alap.toLowerCase())?.harcmodor;
-  for (const kov of fokDef.követelmények) {
-    if (kov.típus === 'képzettség') {
-      const nevek = harcmodor ? [harcmodor] : (Array.isArray(kov.név) ? kov.név : [kov.név]);
-      if (!nevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
-    }
-  }
-  return false;
-}
-
-export function mfKövetelményText(k: Karakter, data: GameData, alap: string): string {
-  const fok = getMfFok(k, alap);
-  if (fok === 0) return '';
-  const fokDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver')?.fokok.find(f => f.fok === fok);
-  if (!fokDef?.követelmények?.length) return '';
-  const harcmodor = data.tavfegyverek.find(tf => tf.név.toLowerCase() === alap.toLowerCase())?.harcmodor;
-  const kov = fokDef.követelmények[0];
-  if (kov.típus !== 'képzettség') return '';
-  const név = harcmodor ?? (Array.isArray(kov.név) ? kov.név.join(' / ') : kov.név);
-  return `⚠ ${név} ≥ ${kov.érték}`;
-}
+// --- Mesterfegyver: l. mesterfegyver-calc.ts ---
 
 // --- CÉ kalkuláció ---
 
@@ -205,18 +175,7 @@ export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState)
     + get(szorzok.szél, state.szélId);
 }
 
-// --- Lövéskitérés (védekező Akrobatika próba, md/073 + kategóriák md/078) ---
-
-/** Osztó → lövéskitérés célszám-kategória (md/078: a kategóriát az Osztó adja). */
-export function osztóToLöveskitérésKategória(osztó: number): string | null {
-  switch (osztó) {
-    case 1: return 'nem_alkalmas_tárgyak';   // Mágiatáv I
-    case 2: return 'korlátosan_alkalmas';    // Mágiatáv II
-    case 3: return 'dobófegyverek';          // Mágiatáv III (apró hajító/szálfegyver)
-    case 4: return 'íjak';                   // Mágiatáv IV
-    default: return osztó >= 5 ? 'nyílpuskák' : null;
-  }
-}
+// --- Lövéskitérés: l. loveskiteres-calc.ts ---
 
 /** Távfegyver SP a kalkulációhoz: a -99 sentinel (nincs/spec sebzés) → 0. */
 export function tavSP(def: TavfegyverAlap | undefined): number {
@@ -224,41 +183,3 @@ export function tavSP(def: TavfegyverAlap | undefined): number {
   return sp === -99 ? 0 : sp;
 }
 
-/** Bejövő távfegyver → célszám-kategória az Osztója alapján. */
-export function weaponToLöveskitérésKategória(def: TavfegyverAlap): string | null {
-  return osztóToLöveskitérésKategória(def.Osztó || 0);
-}
-
-/**
- * Hatótáv méterben a lövéskitérés range-gátjához. Fix hatótáv (erő_szorzó 0, bázis>0) → a bázis;
- * Erő-függő (erő_szorzó>0) → Infinity, mert a támadó Ereje ismeretlen (nem blokkolunk hamisan);
- * bázis 0 → Infinity (pl. Mágiatáv: nincs range-korlát).
- */
-export function tavHatótáv(def: TavfegyverAlap): number {
-  if (def.hatótáv_erő_szorzó > 0) return Infinity;
-  return def.hatótáv_bázis > 0 ? def.hatótáv_bázis : Infinity;
-}
-
-/**
- * Akrobatika próba célszáma: az első sor, ahol táv <= max_táv (közelebb = magasabb célszám).
- * A tábla maximumán túl a legkönnyebb (utolsó) sor érvényes; hiányzó tábla → null.
- * A tényleges „hatótávon kívül vagy" a fegyver Hatótávja alapján dől el (nem itt).
- */
-export function calcLöveskitérésCélszám(
-  sorok: { max_táv: number; célszám: number }[] | undefined,
-  távolság: number,
-): number | null {
-  if (!sorok || sorok.length === 0) return null;
-  for (const sor of sorok) {
-    if (távolság <= sor.max_táv) return sor.célszám;
-  }
-  return sorok[sorok.length - 1].célszám;
-}
-
-/** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */
-export function calcAkrobatikaÉrték(k: Karakter): number {
-  const akrobatika = képzettségSzint(k, 'Akrobatika');
-  const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
-  const fejlesztés = k.fortélyok.some(f => f.név === 'Lövéskitérés fejlesztése') ? 2 : 0;
-  return akrobatika + gyorsaság + fejlesztés;
-}

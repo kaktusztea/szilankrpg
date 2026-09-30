@@ -1,6 +1,7 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉBontás, calcTámadásLabel, getFortélyCÉ } from './helpers';
+import { calcCÉBontás, calcTámadásLabel, getFortélyCÉ } from './helpers';
+import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './mesterfegyver-calc';
 
 interface Props {
   index: number;

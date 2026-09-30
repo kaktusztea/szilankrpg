@@ -3,7 +3,7 @@ import type { TavharcPopupState } from './types';
 import { PopupOverlay } from '../PopupOverlay';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { TávolságPicker } from './TavolsagPicker';
-import { getMfFok } from './helpers';
+import { getMfFok } from './mesterfegyver-calc';
 
 interface Props {
   karakter: Karakter;

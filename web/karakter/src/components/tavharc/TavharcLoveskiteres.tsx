@@ -5,57 +5,12 @@ import { useHoldRepeat } from '../../hooks/useHoldRepeat';
 import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 import { PopupOverlay } from '../PopupOverlay';
 import { rollK10 } from '../../engine/dice';
-import { weaponToLöveskitérésKategória, tavHatótáv, calcLöveskitérésCélszám, calcAkrobatikaÉrték } from './helpers';
+import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, buildOpciók, type LKOpció } from './loveskiteres-calc';
 
 interface Props {
   karakter: Karakter;
   konstansok: KonstansokRaw;
   tavfegyverek: TavfegyverAlap[];
-}
-
-/** Egy választható bejövő fegyver / kategória a lövéskitéréshez. */
-interface LKOpció { név: string; kategória: string | null; hatótáv: number; separator?: boolean }
-
-// A lista tetején rögzített (gyakori) fegyverek ebben a sorrendben.
-const KIEMELT = ['Hajítótőr', 'Rövid íj', 'Hosszú íj', 'Nyílpuska'];
-
-function buildOpciók(tavfegyverek: TavfegyverAlap[]): LKOpció[] {
-  const all = tavfegyverek.filter(f => !f.név.startsWith('🔆'));
-  const mágikus = all.filter(f => f.kategória === 'mágikus')
-    .sort((a, b) => a.név.localeCompare(b.név, 'hu'))
-    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: tavHatótáv(f) }));
-
-  const nemMágikus = all.filter(f => f.kategória !== 'mágikus');
-  const kiemelt = nemMágikus
-    .filter(f => KIEMELT.includes(f.név))
-    .sort((a, b) => KIEMELT.indexOf(a.név) - KIEMELT.indexOf(b.név))
-    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: tavHatótáv(f) }));
-
-  const maradék = nemMágikus
-    .filter(f => !KIEMELT.includes(f.név))
-    .sort((a, b) => a.név.localeCompare(b.név, 'hu'))
-    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: tavHatótáv(f) }));
-
-  // Improvizált 🔆 tárgyak a data-ból (Erő-függő hatótáv → nincs range-gát).
-  const improv = tavfegyverek
-    .filter(f => f.név.startsWith('🔆'))
-    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: Infinity }));
-
-  // Separatorok a csoportok között.
-  const result: LKOpció[] = [...kiemelt];
-  if (mágikus.length > 0) {
-    result.push({ név: '__sep1__', kategória: null, hatótáv: 0, separator: true });
-    result.push(...mágikus);
-  }
-  if (maradék.length > 0) {
-    result.push({ név: '__sep2__', kategória: null, hatótáv: 0, separator: true });
-    result.push(...maradék);
-  }
-  result.push({ név: '__sep3__', kategória: null, hatótáv: 0, separator: true });
-  result.push({ név: '🔆 Korlátosan alkalmas fegyver', kategória: 'korlátosan_alkalmas', hatótáv: Infinity });
-  result.push(...improv);
-
-  return result;
 }
 
 /**

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { Karakter, TavfegyverAlap } from '../../engine/types';
-import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, weaponToLöveskitérésKategória, osztóToLöveskitérésKategória, tavHatótáv } from './helpers';
+import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, weaponToLöveskitérésKategória, osztóToLöveskitérésKategória, tavHatótáv, buildOpciók } from './loveskiteres-calc';
 
 // Íjak tábla (md/073): 5m→21, 10m→18, 15m→15, 20m→12, 25m→9
 const íjak = [
@@ -88,5 +88,39 @@ describe('calcAkrobatikaÉrték', () => {
   it('treats missing Akrobatika as 0', () => {
     const k = { képzettségek: [], tulajdonságok: { gyorsaság: 2 }, fortélyok: [] } as unknown as Karakter;
     expect(calcAkrobatikaÉrték(k)).toBe(2);
+  });
+});
+
+describe('buildOpciók', () => {
+  const tf = (p: Partial<TavfegyverAlap>) => p as TavfegyverAlap;
+  const tavfegyverek = [
+    tf({ név: 'Hosszú íj', Osztó: 4 }),
+    tf({ név: 'Hajítótőr', Osztó: 2 }),
+    tf({ név: 'Parittya', Osztó: 3 }),        // maradék (nem kiemelt, nem mágikus)
+    tf({ név: 'Mágiatáv I', Osztó: 1, kategória: 'mágikus' }),
+    tf({ név: '🔆 Kő', Osztó: 2 }),           // improvizált
+  ];
+
+  it('kiemelt fegyverek a KIEMELT sorrendben, elöl', () => {
+    const opciók = buildOpciók(tavfegyverek);
+    const nevek = opciók.filter(o => !o.separator).map(o => o.név);
+    // Hajítótőr a KIEMELT-ben Hosszú íj elé kerül (KIEMELT sorrend), nem ábécé szerint.
+    expect(nevek.indexOf('Hajítótőr')).toBeLessThan(nevek.indexOf('Hosszú íj'));
+    expect(nevek[0]).toBe('Hajítótőr');
+  });
+
+  it('kategóriát az Osztó adja (nem a harcmodor)', () => {
+    const hosszúÍj = buildOpciók(tavfegyverek).find(o => o.név === 'Hosszú íj');
+    expect(hosszúÍj?.kategória).toBe('íjak'); // Osztó 4
+  });
+
+  it('mágikus és maradék csoportok separatorral, improvizált a végén', () => {
+    const opciók = buildOpciók(tavfegyverek);
+    expect(opciók.some(o => o.separator)).toBe(true);
+    // Az improvizált 🔆 tárgy a lista végén, Infinity hatótávval (nincs range-gát).
+    const kő = opciók.find(o => o.név === '🔆 Kő');
+    expect(kő?.hatótáv).toBe(Infinity);
+    // A fix "🔆 Korlátosan alkalmas fegyver" gyűjtő-opció is jelen van.
+    expect(opciók.some(o => o.név === '🔆 Korlátosan alkalmas fegyver')).toBe(true);
   });
 });

@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
-import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, tavSP } from './helpers';
+import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, tavSP } from './helpers';
+import { getMfFok } from './mesterfegyver-calc';
 import { collectCéDobásInfo, netElőnySzint, collectDobásInfo } from '../harc/combat-roll-info';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
