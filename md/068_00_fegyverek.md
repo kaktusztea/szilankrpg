@@ -35,5 +35,8 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 ### [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
 
 ---
+### [Fegyvergenerátor](068_10_fegyvergenerator.md)
+
+---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

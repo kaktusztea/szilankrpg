@@ -38,6 +38,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
   - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
   - [Találat](064_02_04_talalat.md)
   - [Fegyverek sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md)
+  - [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md)
   - [Sebzés](064_02_07_sebzes.md)
   - [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
   - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
@@ -46,14 +47,18 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 ## 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
+- [Fegyverfogás](065_01_fegyverfogas.md)
+  - [Egyfegyveres](065_01_fegyverfogas.md#egyfegyveres)
+  - [Fegyver + pajzs](065_01_fegyverfogas.md#fegyver--pajzs)
+  - [Fegyver + hárítófegyver](065_01_fegyverfogas.md#fegyver--hárítófegyver)
+  - [Kétkezes harc](065_05_ketkezes_harc.md)
+- [Harci taktikák](065_02_harci_taktikak.md)
 - [Harci helyzetek](065_03_00_harci_helyzetek.md)
   - [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
   - [Semleges helyzetek](065_03_02_semleges_helyzetek.md)
   - [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
-  - [Fegyverméret és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
-- [Harci taktikák](065_02_harci_taktikak.md)
+  - [Fegyverviszony és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
 - [Harc alakzatban](065_04_harc_alakzatban.md)
-- [Kétkezes harc szabályai](065_05_ketkezes_harc.md)
 
 ## 6.6 [Manőverek](066_00_manoverek.md) 🎲
 
@@ -67,7 +72,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md)
 - [Példa Manőver alkalmazására: Földrevitel](066_08_02_pelda_manover_labsopres.md)
 
-## 6.7 [Harc lóhátról](067_00_harc_hatasrol.md)
+## 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
 
 - [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyai.md)
 - [Lovas, Léglovas fortélyok](067_02_lovas_leglovas_fortelyok.md)
@@ -92,15 +97,17 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
 - [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
 - [Romboló fegyverek](068_05_rombolo_fegyverek.md)
+- [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md)
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
 - [Lőfegyverek](068_08_lofegyverek.md)
-- [Pajzsok](068_09_pajzs_fegyverek.md)
+- [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
+- [Fegyvergenerátor](068_10_fegyvergenerator.md)
 
 ## 6.9 [Páncélok](069_00_vertek_pancelok.md)
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Páncél MGT](069_03_pancel_MGT.md)
+- [Páncél MGT, Akadály](069_03_pancel_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)

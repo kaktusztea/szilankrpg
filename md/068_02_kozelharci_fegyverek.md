@@ -1,5 +1,7 @@
 ## Közelharci fegyverek
 
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját Fegyvergenerátorrával.
+
 <!-- tag: md_table_fegyver_start -->
 
 | Fegyver                 | Mód (Aktor)          | Jelleg       | Sebzéstípus | TÉ | VÉ |  SP | Erőlimit | Átütés | Seb. | Forgatás | Fh | FSZ | Extrák                                                                                    | Megj.                                                                                                                                                                                                                                                                                                                                                                                                                                        |

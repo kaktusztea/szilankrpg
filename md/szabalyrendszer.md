@@ -192,6 +192,7 @@
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
 - [Lőfegyverek](068_08_lofegyverek.md)
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
+- [Fegyvergenerátor](068_10_fegyvergenerator.md)
 
 ### 6.9 [Páncélok](069_00_vertek_pancelok.md)
 
@@ -206,17 +207,22 @@
 ---
 ### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
 
-- [Célzó Érték számítása](071_tavharc_ce.md)
-- [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
-- [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
-- [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
-- [Távharci taktikák](073_tavharci_taktikak.md)
-- [Távharci helyzetek](074_tavharci_helyzetek.md)
-- [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
-- [Területlövés](077_teruletloves.md)
-- [Távolsági fegyverek](078_tavharc_fegyverek.md)
-- [Példalövészet](079_01_tavharc_peldak.md) ⚡
-- [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
+- **CÉ, VÉ számítása**
+  - [Célzó Érték számítása](071_tavharc_ce.md)
+  - [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
+  - [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
+  - [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
+
+- **Taktikák, mágikus lövedékek, fegyverek**
+  - [Távharci taktikák](073_tavharci_taktikak.md)
+  - [Távharci helyzetek](074_tavharci_helyzetek.md)
+  - [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
+  - [Területlövés](077_teruletloves.md)
+  - [Távolsági fegyverek](078_tavharc_fegyverek.md)
+
+- **Példák**
+  - [Példalövészet](079_01_tavharc_peldak.md) ⚡
+  - [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
 
 ---
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)

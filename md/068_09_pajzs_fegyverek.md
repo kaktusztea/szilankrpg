@@ -42,4 +42,6 @@ Túlcsordulás esetén
 
 ---
 
+🔗 [Fegyvergenerátor](068_10_fegyvergenerator.md)→
+
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
