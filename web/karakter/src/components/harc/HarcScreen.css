@@ -1036,3 +1036,106 @@
   min-width: 20px;
   text-align: center;
 }
+
+/* --- Fegyver infó popup (fegyvertábla névre kattintva) --- */
+.harc-fegyver-nev-clickable {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+
+.fi-popup {
+  min-width: 280px;
+  max-width: 92vw;
+  max-height: 82vh;
+  overflow-y: auto;
+}
+
+.fi-meta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fi-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.fi-meta-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.fi-meta-value {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text);
+  text-align: right;
+}
+
+.fi-modok-cim {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.fi-modok-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.fi-modok-table th {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: normal;
+  text-align: center;
+  padding: 2px 4px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.fi-modok-table td {
+  text-align: center;
+  padding: 6px 4px;
+  font-family: monospace;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.fi-mod-aktor {
+  text-align: left !important;
+  font-family: inherit !important;
+  line-height: 1.25;
+}
+
+.fi-mod-tipus {
+  display: block;
+  font-size: 10px;
+  color: var(--text-dim);
+  font-family: inherit;
+}
+
+.fi-mod-sp {
+  line-height: 1.25;
+}
+
+.fi-mod-jelleg {
+  display: block;
+  font-size: 10px;
+  color: var(--text-dim);
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.fi-mod-masodlagos {
+  opacity: 0.72;
+}
+

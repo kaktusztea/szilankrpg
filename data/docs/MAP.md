@@ -147,7 +147,9 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   ExtrakInfo.tsx           "Extrák" gomb (💡, pulzál ha van aktív) + popup: fegyver-extrák listája státusz-jelzéssel (Támadó + Sebzés popupban)
   EpTable.tsx              ÉP sebesülés tábla (S1-S4)
   EpDialogs.tsx            Seb/Gyógy dialógusok (explicit click handler)
-  HarcFegyverTable.tsx     Fegyver harcértékek tábla
+  HarcFegyverTable.tsx     Fegyver harcértékek tábla (a fegyver-név oszlop kattintható → FegyverInfoPopup)
+  FegyverInfoPopup.tsx     Fegyver infó overlay (harcértékek aktoronként elsődleges/másodlagos jelzéssel, extrák, anyag, Idea, harcmodor szint)
+  fegyver-info-calc.ts     A FegyverInfoPopup pure adat-összeállítója (buildFegyverInfó)
   HarcHeader.tsx           KÉ, SFÉ, VÉ csökk, MP boxok
   TamadoDobasPopup.tsx     Támadó dobás popup (manuális/auto k20, bónuszok)
   SebzesPopup.tsx          Sebzésdobás popup (SP bontás, mód-választó, kötelező "Ellenfél páncél" választó → sebzésjelleg×páncél mátrix + cél_páncél SP-delta, másodlagos passzív info-label, újradobás)

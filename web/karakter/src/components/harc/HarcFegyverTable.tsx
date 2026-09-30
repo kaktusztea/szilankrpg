@@ -19,12 +19,13 @@ interface HarcFegyverTableProps {
   belharciAktív: boolean;
   véFlash: '' | 'down' | 'up';
   onTámInfoClick: (info: { név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_felszerelés_mgt: number; hk_fortély: number }) => void;
+  onFegyverInfoClick: (result: FegyverResult) => void;
 }
 
 export function HarcFegyverTable({
   karakter, session, data, fegyverResults, kétkezesResult, fogásResult,
   pajzsVÉ, pajzsFegyverNév, taktikaMods, fortelyMods,
-  téLevonás, belharciAktív, véFlash, onTámInfoClick,
+  téLevonás, belharciAktív, véFlash, onTámInfoClick, onFegyverInfoClick,
 }: HarcFegyverTableProps) {
   const { konstansok } = data;
   const többTámTÉ = konstansok.több_támadás_TÉ_levonás;
@@ -55,7 +56,8 @@ export function HarcFegyverTable({
     return (
       <tr key={név + (isOverlay ? '-overlay' : '')}
         className={isOverlay ? 'harc-fegyver-active-row' : dimmed ? 'harc-row-dimmed' : 'harc-fegyver-active-row'}>
-        <td className={belharcWarning ? 'harc-belharc-warn' : undefined}>{név}</td>
+        <td className={`harc-fegyver-nev-clickable${belharcWarning ? ' harc-belharc-warn' : ''}`}
+          onClick={() => onFegyverInfoClick(r)}>{név}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret, hk_harcmodor: r.hk_harcmodor, hk_gyorsaság: r.hk_gyorsaság, hk_mgt: r.hk_mgt, hk_felszerelés_mgt: r.hk_felszerelés_mgt, hk_fortély: r.hk_fortély })}>{r.támadások}</td>
         <td>{té}</td>
         <td className={véFlashClass}>{vé}</td>

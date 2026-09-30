@@ -430,6 +430,11 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - ⟲: reset (disabled ha 0, megerősítő popup: piros "VÉ Reset" gomb)
   - VÉ oszlop flash: sárga animáció csökkenéskor, zöld animáció +1-nél (1s fade-out)
   - Koppintás a label-re vagy értékre: VÉ csökkenés történet popup (pl. "-3; -2; +1"), mellé kopp bezárja
+- **Fegyver infó popup**: a fegyvertábla ELSŐ oszlopa (fegyver név, pontozott aláhúzás) kattintható → **FegyverInfoPopup** overlay (`PopupOverlay`: portál + Escape + mellé-katt). Tartalom:
+  - Meta info-grid: `Harcmodor: <név>: <szint>. szint`, `Anyag` (a felvett példányé), `Idea` (példány; ha eltér a fegyver alap Ideájától: `<idea> (alap: <default>)`), `Extrák` (a fegyver v2 extráinak nevei, vesszővel).
+  - Harcértékek aktoronként (módonként) tábla: Aktor (+ elsődleges/másodlagos jelzés), TÉ, VÉ, SP (+jelleg), Át(ütés), Tám(adások). CSAK a fegyver-harcértékek (a `FegyverResult.módok`-ból), taktika/páncél/fogás módosító NÉLKÜL - statikus referencia.
+  - Puszta kéz / pajzs (nincs felvett példány): az Anyag/Idea sor elrejtve, a harcérték + harcmodor + extrák mennek.
+  - Komponensek: `FegyverInfoPopup.tsx`, `fegyver-info-calc.ts` (`buildFegyverInfó` pure adat).
 
 ### Formázás
 - Fegyver táblázat számok (nem első oszlop): `font-family: monospace`

@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { HarcBaseProps } from './types';
+import type { FegyverResult } from './types';
 import type { SebzésRubrika } from '../../engine/types';
 import { useHarcComputed } from './useHarcComputed';
 import { useHint } from '../harcertekek/hooks/useHint';
 import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
+import { FegyverInfoPopup } from './FegyverInfoPopup';
 import { HarcPopups } from './HarcPopups';
 import { EpTable } from './EpTable';
 import { HarcReszletek } from './HarcReszletek';
@@ -34,6 +36,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
   const [véSzorzóInfo, setVéSzorzóInfo] = useState<number | null>(null);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_felszerelés_mgt: number; hk_fortély: number } | null>(null);
+  const [fegyverInfo, setFegyverInfo] = useState<FegyverResult | null>(null);
   const [sebCount, setSebCount] = useState(0);
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
   const [showTamadoDobas, setShowTamadoDobas] = useState(false);
@@ -206,6 +209,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         belharciAktív={hc.belharciAktív}
         véFlash={véFlash}
         onTámInfoClick={setTámInfo}
+        onFegyverInfoClick={setFegyverInfo}
       />
 
       <div className="harc-section">
@@ -248,6 +252,10 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
       {kéDobásEredmény !== null && (
         <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
+      )}
+
+      {fegyverInfo !== null && (
+        <FegyverInfoPopup result={fegyverInfo} karakter={karakter} data={data} onClose={() => setFegyverInfo(null)} />
       )}
 
       {véSzorzóInfo !== null && (
