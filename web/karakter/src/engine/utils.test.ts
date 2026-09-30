@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { lookupFegyver, evaluateFeltétel, describeKepChange } from './utils';
+import { lookupFegyver, evaluateFeltétel, describeKepChange, képzettségSzint, fortélyFok, harcmodorÖsszeg, clamp } from './utils';
 import type { FegyverAlap, Session, Karakter } from './types';
 
 describe('lookupFegyver', () => {
@@ -60,5 +60,41 @@ describe('describeKepChange', () => {
     const prev = [{ név: 'A', szint: 2 }];
     const next = [{ név: 'A', szint: 4 }];
     expect(describeKepChange(prev, next)).toBe('Képzettség: A 2→4');
+  });
+});
+
+describe('képzettségSzint / fortélyFok / harcmodorÖsszeg', () => {
+  const karakter = {
+    képzettségek: [{ név: 'Kardvívás', szint: 5 }, { név: 'Akrobatika', szint: 2 }],
+    fortélyok: [{ név: 'Kétkezes harc', fok: 3 }],
+  } as unknown as Karakter;
+
+  it('képzettségSzint: felvett szint vagy 0', () => {
+    expect(képzettségSzint(karakter, 'Kardvívás')).toBe(5);
+    expect(képzettségSzint(karakter, 'Nincs ilyen')).toBe(0);
+  });
+  it('képzettségSzint case-sensitive (viselkedés-megőrző)', () => {
+    expect(képzettségSzint(karakter, 'kardvívás')).toBe(0);
+  });
+  it('fortélyFok: felvett fok vagy 0', () => {
+    expect(fortélyFok(karakter, 'Kétkezes harc')).toBe(3);
+    expect(fortélyFok(karakter, 'Nincs ilyen')).toBe(0);
+  });
+  it('harcmodorÖsszeg: több képzettség szintjének összege (hiányzó = 0)', () => {
+    expect(harcmodorÖsszeg(karakter, ['Kardvívás', 'Akrobatika'])).toBe(7);
+    expect(harcmodorÖsszeg(karakter, ['Kardvívás', 'Nincs'])).toBe(5);
+    expect(harcmodorÖsszeg(karakter, [])).toBe(0);
+  });
+});
+
+describe('clamp', () => {
+  it('szorít tartományba', () => {
+    expect(clamp(5, 0, 10)).toBe(5);
+    expect(clamp(-3, 0, 10)).toBe(0);
+    expect(clamp(15, 0, 10)).toBe(10);
+  });
+  it('határértékek benne vannak', () => {
+    expect(clamp(0, 0, 10)).toBe(0);
+    expect(clamp(10, 0, 10)).toBe(10);
   });
 });

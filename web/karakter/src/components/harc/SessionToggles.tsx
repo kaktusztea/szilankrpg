@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import type { HarcBaseProps } from './types';
 import { getFegyverhossz } from './fegyver-helpers';
+import { képzettségSzint } from '../../engine/utils';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> {
   páncélMGT: number;
@@ -20,7 +21,7 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
 
   // Akrobatika képzettség
   const akroKépz = harciAkroKövek.find(k => k.típus === 'képzettség' && (Array.isArray(k.név) ? k.név.includes('Akrobatika') : k.név === 'Akrobatika'));
-  const akroSzint = karakter.képzettségek.find(kp => kp.név === 'Akrobatika')?.szint ?? 0;
+  const akroSzint = képzettségSzint(karakter, 'Akrobatika');
   const akroKépzHiba = !!(akroKépz && akroSzint < akroKépz.érték);
 
   // Páncél hajlékonyság (nem_fém | nem_merev) — a struktúra fém/merev flagjéből (l. konstansok.páncél_struktúrák).

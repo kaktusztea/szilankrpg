@@ -1,5 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
+import { fortélyFok } from '../../engine/utils';
 import type { UndoPatch } from '../../hooks/useUndo';
 import { HmSection, HarciKepzettsegekSection, FegyverekSection, PancelSection, PajzsSection, Popups } from './index';
 import { useHint, usePopupState, useKarakterMutators } from './hooks';
@@ -31,8 +32,8 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
 
   const mutators = useKarakterMutators(data, undoSetKarakter);
 
-  const merevvertFok = karakter.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
-  const pajzsFok = karakter.fortélyok.find(f => f.név === 'Pajzshasználat')?.fok ?? 0;
+  const merevvertFok = fortélyFok(karakter, 'Merevvértviselet');
+  const pajzsFok = fortélyFok(karakter, 'Pajzshasználat');
 
   return (
     <div className="screen harcertekek-screen">

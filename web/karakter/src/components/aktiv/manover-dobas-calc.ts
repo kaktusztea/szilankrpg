@@ -5,6 +5,7 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
+import { képzettségSzint, fortélyFok, harcmodorÖsszeg } from '../../engine/utils';
 import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
@@ -175,7 +176,7 @@ export function követelményTeljesül(
   if (köv.típus === 'képzettség') {
     const szint = köv.név === 'Harcmodor'
       ? harcmodorMaxSzint(karakter, data)
-      : (karakter.képzettségek.find(k => k.név === köv.név)?.szint ?? 0);
+      : képzettségSzint(karakter, köv.név ?? '');
     return szint >= küszöb;
   }
   // fortély: a felvett (max) fok
@@ -230,15 +231,14 @@ export function könnyítettFázisok(fázisok: ('M' | 'V' | 'E')[], mód: Mód, 
 }
 
 export function calcManőverPont(karakter: Karakter, data: GameData): number {
-  const { képzettségek, tsz } = karakter;
+  const { tsz } = karakter;
   const harcmodorNevek = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
-  const összeg = harcmodorNevek.reduce((s, n) => s + (képzettségek.find(k => k.név === n)?.szint ?? 0), 0);
+  const összeg = harcmodorÖsszeg(karakter, harcmodorNevek);
   return Math.ceil(összeg * 2 / (tsz || 1));
 }
 
 export function getBelharcFok(karakter: Karakter): number {
-  const f = karakter.fortélyok.find(f => f.név === 'Belharc');
-  return f?.fok ?? 0;
+  return fortélyFok(karakter, 'Belharc');
 }
 
 interface TéBontásSor { forrás: string; érték: number }

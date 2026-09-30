@@ -1,6 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, képzettségSzint, fortélyFok } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
 
 /** Extrapolált fokDef interpoláció: ha a keresett fok nincs a fokok listában de van fortély_bővítés. */
@@ -52,7 +52,7 @@ export function isTaktikaAllowed(
         const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
         const sebesség = fd ? (elsődlegesMód(fd).Sebesség ?? 6) : 6;
         const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'Közelharc') : 'Közelharc';
-        const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+        const harcmodorSzint = képzettségSzint(karakter, harcmodorNév);
         const támadások = 1 + Math.floor((harcmodorSzint * 2) / sebesség);
         if (támadások < (mk.érték as number)) return false;
       }
@@ -115,8 +115,8 @@ export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): an
   // Fortély-based expansion (e.g. Támadás erőből)
   if (def.fortély_bővítés) {
     const fb = def.fortély_bővítés;
-    const fortélyFok = karakter.fortélyok.find(f => f.név === fb.fortély)?.fok ?? 0;
-    const extraCount = fortélyFok * fb.extra_fokok_per_fok;
+    const fbFok = fortélyFok(karakter, fb.fortély);
+    const extraCount = fbFok * fb.extra_fokok_per_fok;
     const utolsó = def.fokok[def.fokok.length - 1];
     const perFok: Record<string, number> = {};
     for (const [k, v] of Object.entries(utolsó)) {
@@ -138,7 +138,7 @@ export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): an
       const fp = karakter.fegyverek[karakter.session?.aktív_fegyver_index ?? -1];
       const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
       const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'Közelharc') : 'Közelharc';
-      const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+      const harcmodorSzint = képzettségSzint(karakter, harcmodorNév);
 
       // Find highest applicable absolute max_fok
       let maxFok = 0;

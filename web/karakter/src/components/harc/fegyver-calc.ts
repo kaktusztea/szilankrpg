@@ -1,7 +1,7 @@
 import type { Karakter, Session, FegyverAlap, FegyverMod } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { evaluate, buildContext, filterFegyverRules, type Rule } from '../../engine/reactive';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, képzettségSzint } from '../../engine/utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
 import { ideaDelta } from './shared';
 import type { FegyverResult, FegyverResultMód } from './types';
@@ -61,7 +61,7 @@ function calcModResult(
 ): FegyverResultMód {
   const { konstansok, harcmodorBonusz } = data;
   const harcmodorNév = konstansok.fegyver_kategória_harcmodor[fDef.kategória] ?? 'Közelharc';
-  const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
   const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
   const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
 

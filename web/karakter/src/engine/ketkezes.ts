@@ -2,6 +2,7 @@ import type { FegyverAlap, Karakter } from './types';
 import type { KonstansokRaw, GameData } from './data-types';
 import type { FegyverResultMód } from '../components/harc/types';
 import { ideaDelta } from '../components/harc/shared';
+import { képzettségSzint, fortélyFok } from './utils';
 
 interface KétkezesInput {
   jobbFp: { alap: string; idea: number };
@@ -39,7 +40,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   if (jobbFh > konstansok.kétkezes_harc_max_egy_fegyver || balFh > konstansok.kétkezes_harc_max_egy_fegyver) return null;
   if (sumFh > konstansok.kétkezes_harc_max_fegyverméret) return null;
 
-  const khFok = k.fortélyok.find(f => f.név === 'Kétkezes harc')?.fok ?? 0;
+  const khFok = fortélyFok(k, 'Kétkezes harc');
   const nagyobb = jobbFh >= balFh ? jobbDef : balDef;
   const kisebb = jobbFh >= balFh ? balDef : jobbDef;
   const nagyobbFp = jobbFh >= balFh ? jobbFp : balFp;
@@ -51,7 +52,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
 
   // Harcmodor: nagyobb fegyveré
   const harcmodorNév = konstansok.fegyver_kategória_harcmodor[nagyobb.kategória] ?? 'Közelharc';
-  const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
   const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
 
   // MF

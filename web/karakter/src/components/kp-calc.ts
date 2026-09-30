@@ -1,6 +1,7 @@
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 import { evaluate, buildContext, buildArrayContext } from '../engine/reactive';
+import { képzettségSzint, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../engine/utils';
 
 export interface KpDetails {
   maradékKp: number;
@@ -24,9 +25,9 @@ export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
   const spec = karakter.fortélyok_speciális;
   const tsz = karakter.tsz;
 
-  const harcmodorÖsszeg = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])]
-    .reduce((s, n) => s + (képzettségek.find(k => k.név === n)?.szint ?? 0), 0);
-  const alakzatharcSzint = képzettségek.find(k => k.név === 'Alakzatharc')?.szint ?? 0;
+  const harcmodorÖsszeg = calcHarcmodorÖsszeg(karakter,
+    [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])]);
+  const alakzatharcSzint = képzettségSzint(karakter, 'Alakzatharc');
 
   const ctx = buildContext(tulajdonságok, tsz, data.konstansok, {
     spec_tartós_sérülés_fok: spec.tartós_sérülés_fok,

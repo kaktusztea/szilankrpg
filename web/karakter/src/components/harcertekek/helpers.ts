@@ -1,6 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, képzettségSzint, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../../engine/utils';
 import { findMfFok as findMfFokCanonical } from '../../engine/mf-utils';
 import { evaluate, buildContext } from '../../engine/reactive';
 
@@ -14,10 +14,8 @@ export function calcMaxHM(data: GameData, k: Karakter): number {
   const harciFokok = k.fortélyok
     .filter(f => harciFortelyNevek.has(f.név) && f.név !== 'Mesterfegyver')
     .reduce((s, f) => s + f.fok, 0);
-  const harcmodorÖsszeg = harcmodorok.reduce(
-    (s, n) => s + (k.képzettségek.find(kp => kp.név === n)?.szint ?? 0), 0
-  );
-  const alakzatharcSzint = k.képzettségek.find(kp => kp.név === 'Alakzatharc')?.szint ?? 0;
+  const harcmodorÖsszeg = calcHarcmodorÖsszeg(k, harcmodorok);
+  const alakzatharcSzint = képzettségSzint(k, 'Alakzatharc');
   return harciFokok + harcmodorÖsszeg + alakzatharcSzint;
 }
 

@@ -2,7 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import type { HarcComputed } from './types';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, harcmodorÖsszeg as calcHarcmodorÖsszeg, fortélyFok } from '../../engine/utils';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { createFeltételEvaluator } from '../../engine/feltetel-eval';
 import { calcTaktikaMods } from './taktika-calc';
@@ -18,10 +18,10 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const aktívFeltételek = buildAktívFeltételek(session, data);
   const taktikaMods = calcTaktikaMods(session, data, k);
 
-  const harcmodorÖsszeg = [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]
-    .reduce((s: number, név: string) => s + (k.képzettségek.find(kp => kp.név === név)?.szint ?? 0), 0);
+  const harcmodorÖsszeg = calcHarcmodorÖsszeg(k,
+    [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]);
 
-  const merevvértFok = k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
+  const merevvértFok = fortélyFok(k, 'Merevvértviselet');
   const lookupArrays = buildPancelLookups(konstansok);
 
   const stringCtx = new Map<string, string>();

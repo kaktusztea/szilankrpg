@@ -1,7 +1,7 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { KonstansokRaw } from '../../engine/data-types';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, fortélyFok } from '../../engine/utils';
 import { isHárító } from './fegyver-helpers';
 import { elsődlegesMód } from './fegyver-calc';
 
@@ -34,7 +34,7 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
   const { konstansok } = data;
 
   // Pajzs VÉ és TÉ büntetés: egyetlen lookup a pajzs_hatások táblából (méret × Pajzshasználat fok)
-  const pajzsFok = k.fortélyok.find(f => f.név === 'Pajzshasználat')?.fok ?? 0;
+  const pajzsFok = fortélyFok(k, 'Pajzshasználat');
   const hasPajzs = (session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs') && k.pajzs.méret;
   let pajzsVÉ = 0;
   let pajzsTÉBüntetés = 0;

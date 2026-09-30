@@ -2,6 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, TavfegyverAlap, TavharcSzorzok, TavharcSzorzoEntry } from '../../engine/types';
 import type { AlkalmatlanInfo, CÉBontás } from './types';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
+import { képzettségSzint } from '../../engine/utils';
 
 // --- Alkalmatlan fegyver info ---
 
@@ -143,7 +144,7 @@ export function calcCÉBontás(k: Karakter, data: GameData, session: Session, de
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
   const harcmodorNév = def?.harcmodor ?? 'Hajítás';
-  const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
   const harcmodorCÉ = data.harcmodorBonusz.find(b => b.szint === harcmodorSzint)?.CÉ ?? -9;
   const fegyverCÉ = def?.CÉ ?? 0;
   const mfAlap = fegyverAlap ?? k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '';
@@ -256,7 +257,7 @@ export function calcLöveskitérésCélszám(
 
 /** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */
 export function calcAkrobatikaÉrték(k: Karakter): number {
-  const akrobatika = k.képzettségek.find(kp => kp.név === 'Akrobatika')?.szint ?? 0;
+  const akrobatika = képzettségSzint(k, 'Akrobatika');
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const fejlesztés = k.fortélyok.some(f => f.név === 'Lövéskitérés fejlesztése') ? 2 : 0;
   return akrobatika + gyorsaság + fejlesztés;

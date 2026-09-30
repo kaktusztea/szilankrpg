@@ -6,6 +6,26 @@ export function lookupFegyver(fegyverek: FegyverAlap[], alap: string): FegyverAl
   return fegyverek.find(d => d.név.toLowerCase() === lower);
 }
 
+/** Képzettség szintje név alapján, vagy 0 ha nincs felvéve. */
+export function képzettségSzint(karakter: Karakter, név: string): number {
+  return karakter.képzettségek.find(k => k.név === név)?.szint ?? 0;
+}
+
+/** Fortély foka név alapján, vagy 0 ha nincs felvéve. */
+export function fortélyFok(karakter: Karakter, név: string): number {
+  return karakter.fortélyok.find(f => f.név === név)?.fok ?? 0;
+}
+
+/** Több harcmodor-képzettség szintjének összege (pl. Manőver Pont / harckeret). */
+export function harcmodorÖsszeg(karakter: Karakter, nevek: string[]): number {
+  return nevek.reduce((s, n) => s + képzettségSzint(karakter, n), 0);
+}
+
+/** Érték szorítása [min, max] tartományba. */
+export function clamp(x: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, x));
+}
+
 /**
  * String feltétel kiértékelése prefix:érték formátumban.
  * Használható: alapeset.ts, aktiv-calc, AktivScreen - mindenhol ahol
