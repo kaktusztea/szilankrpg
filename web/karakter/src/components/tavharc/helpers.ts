@@ -9,12 +9,12 @@ export function getAlkalmatlanInfo(k: Karakter, data: GameData): AlkalmatlanInfo
   const nevek = k.fortélyok
     .filter(f => f.név === 'Alkalmatlan fegyver hajítása' && f.spec_elem)
     .map(f => f.spec_elem);
-  const def = data.tavfegyverek.find(d => d.Fegyver.startsWith('🔆'));
+  const def = data.tavfegyverek.find(d => d.név.startsWith('🔆'));
 
   const alkalmiTárgyFortély = k.fortélyok.find(f => f.név === 'Alkalmatlan tárgyak hajítása');
   const alkalmiTárgyNév = alkalmiTárgyFortély ? 'Alkalmi tárgy' : null;
   const alkalmiTárgyDef = def && alkalmiTárgyFortély
-    ? { ...def, Osztó: alkalmiTárgyFortély.fok >= 2 ? '2' : '1' }
+    ? { ...def, Osztó: alkalmiTárgyFortély.fok >= 2 ? 2 : 1 }
     : undefined;
 
   return { nevek, def, alkalmiTárgyNév, alkalmiTárgyDef };
@@ -27,7 +27,7 @@ export function getAktívTfDef(
 ): TavfegyverAlap | undefined {
   const idx = session.aktív_távfegyver_index;
   const peldany = k.távfegyverek[idx];
-  if (peldany) return data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === peldany.alap.toLowerCase());
+  if (peldany) return data.tavfegyverek.find(d => d.név.toLowerCase() === peldany.alap.toLowerCase());
 
   const alkStartIdx = k.távfegyverek.length;
   const alkEndIdx = alkStartIdx + alkalmatlan.nevek.length;
@@ -47,7 +47,7 @@ export function mfKövetelményHiba(k: Karakter, data: GameData, alap: string): 
   if (fok === 0) return false;
   const fokDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver')?.fokok.find(f => f.fok === fok);
   if (!fokDef?.követelmények?.length) return false;
-  const harcmodor = data.tavfegyverek.find(tf => tf.Fegyver.toLowerCase() === alap.toLowerCase())?.Harcmodor;
+  const harcmodor = data.tavfegyverek.find(tf => tf.név.toLowerCase() === alap.toLowerCase())?.harcmodor;
   for (const kov of fokDef.követelmények) {
     if (kov.típus === 'képzettség') {
       const nevek = harcmodor ? [harcmodor] : (Array.isArray(kov.név) ? kov.név : [kov.név]);
@@ -62,7 +62,7 @@ export function mfKövetelményText(k: Karakter, data: GameData, alap: string): 
   if (fok === 0) return '';
   const fokDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver')?.fokok.find(f => f.fok === fok);
   if (!fokDef?.követelmények?.length) return '';
-  const harcmodor = data.tavfegyverek.find(tf => tf.Fegyver.toLowerCase() === alap.toLowerCase())?.Harcmodor;
+  const harcmodor = data.tavfegyverek.find(tf => tf.név.toLowerCase() === alap.toLowerCase())?.harcmodor;
   const kov = fokDef.követelmények[0];
   if (kov.típus !== 'képzettség') return '';
   const név = harcmodor ?? (Array.isArray(kov.név) ? kov.név.join(' / ') : kov.név);
@@ -79,7 +79,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
     ? { alap: fegyverAlap }
     : k.távfegyverek[session.aktív_távfegyver_index];
   const tfDefR = tfPeldanyR
-    ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldanyR.alap.toLowerCase())
+    ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldanyR.alap.toLowerCase())
     : undefined;
   // Helyzet hatások: CÉ flat bónuszok aktív helyzetekből
   for (const hNév of session.aktív_helyzetek) {
@@ -95,7 +95,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
     if (!def?.módosítók?.CÉ) continue;
     // szűrő_harcmodorok: bónusz csak akkor jár ha az aktív távfegyver harcmodora egyezik
     if (def.szűrő_harcmodorok?.length) {
-      if (!tfDefR || !def.szűrő_harcmodorok.includes(tfDefR.Harcmodor ?? '')) continue;
+      if (!tfDefR || !def.szűrő_harcmodorok.includes(tfDefR.harcmodor ?? '')) continue;
     }
     total += def.módosítók.CÉ;
   }
@@ -110,7 +110,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
       if (mod.feltétel.startsWith('taktika:')) {
         const tDef = data.taktikak.find(t => t.feltétel_kulcs === mod.feltétel);
         if (tDef?.szűrő_harcmodorok?.length) {
-          if (!tfDefR || !tDef.szűrő_harcmodorok.includes(tfDefR.Harcmodor ?? '')) continue;
+          if (!tfDefR || !tDef.szűrő_harcmodorok.includes(tfDefR.harcmodor ?? '')) continue;
         }
       }
       total += mod.érték;
@@ -125,7 +125,7 @@ export function calcCÉ(p: { céAlap: number; önuralom: number; CM: number; har
 
 /** Mágikus vs normál CÉ input - kategória alapján adaptálja az értékeket */
 function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number) {
-  const isMágikus = def?.Kategória === 'mágikus';
+  const isMágikus = def?.kategória === 'mágikus';
   const mágikusTulajdonságCÉ = k.tsz + (k.tulajdonságok.gyorsaság ?? 0) + (k.tulajdonságok.intelligencia ?? 0);
   return {
     önuralom: isMágikus ? mágikusTulajdonságCÉ : (k.tulajdonságok.önuralom ?? 0),
@@ -142,15 +142,15 @@ function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number
 export function calcCÉBontás(k: Karakter, data: GameData, session: Session, def: TavfegyverAlap | undefined, idea: number, fortélyCÉ: number, fegyverAlap?: string): CÉBontás {
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
-  const harcmodorNév = def?.Harcmodor ?? 'Hajítás';
+  const harcmodorNév = def?.harcmodor ?? 'Hajítás';
   const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
   const harcmodorCÉ = data.harcmodorBonusz.find(b => b.szint === harcmodorSzint)?.CÉ ?? -9;
-  const fegyverCÉ = parseInt(def?.CÉ ?? '0') || 0;
+  const fegyverCÉ = def?.CÉ ?? 0;
   const mfAlap = fegyverAlap ?? k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '';
   const mfFok = def ? getMfFok(k, mfAlap) : 0;
   const mfCÉ = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok)?.CÉ ?? 0;
   const inp = getCÉInputs(k, def, idea);
-  const osztó = parseInt(def?.Osztó ?? '1') || 1;
+  const osztó = def?.Osztó ?? 1;
   const cé = calcCÉ({ céAlap, önuralom: inp.önuralom, CM: inp.CM, harcmodorCÉ, fegyverCÉ, mfCÉ, idea: inp.idea, fortélyCÉ });
 
   return { céAlap, önuralom: inp.önuralom, CM: inp.CM, harcmodorCÉ, harcmodorNév, harcmodorSzint, fegyverCÉ, mfCÉ, idea: inp.idea, fortélyCÉ, cé, osztó, isMágikus: inp.isMágikus, mágikusTulajdonságCÉ: inp.mágikusTulajdonságCÉ };
@@ -217,21 +217,25 @@ export function osztóToLöveskitérésKategória(osztó: number): string | null
   }
 }
 
+/** Távfegyver SP a kalkulációhoz: a -99 sentinel (nincs/spec sebzés) → 0. */
+export function tavSP(def: TavfegyverAlap | undefined): number {
+  const sp = def?.SP ?? 0;
+  return sp === -99 ? 0 : sp;
+}
+
 /** Bejövő távfegyver → célszám-kategória az Osztója alapján. */
 export function weaponToLöveskitérésKategória(def: TavfegyverAlap): string | null {
-  return osztóToLöveskitérésKategória(parseInt(def.Osztó) || 0);
+  return osztóToLöveskitérésKategória(def.Osztó || 0);
 }
 
 /**
- * Hatótáv méterben. Fix szám ("50m") → az érték; Erő-függő képlet ("20m + (Erő x 5)")
- * → Infinity, mert a támadó Ereje ismeretlen, így nincs range-gát (nem blokkolunk hamisan).
- * "0" vagy üres → Infinity (pl. Mágiatáv: nincs hatótáv korlát a lövéskitérés szempontjából).
+ * Hatótáv méterben a lövéskitérés range-gátjához. Fix hatótáv (erő_szorzó 0, bázis>0) → a bázis;
+ * Erő-függő (erő_szorzó>0) → Infinity, mert a támadó Ereje ismeretlen (nem blokkolunk hamisan);
+ * bázis 0 → Infinity (pl. Mágiatáv: nincs range-korlát).
  */
-export function parseHatótáv(hatótáv: string): number {
-  const m = /^\s*(\d+)\s*m?\s*$/.exec(hatótáv ?? '');
-  if (!m) return Infinity;
-  const v = parseInt(m[1]);
-  return v > 0 ? v : Infinity;
+export function tavHatótáv(def: TavfegyverAlap): number {
+  if (def.hatótáv_erő_szorzó > 0) return Infinity;
+  return def.hatótáv_bázis > 0 ? def.hatótáv_bázis : Infinity;
 }
 
 /**

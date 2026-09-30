@@ -14,7 +14,7 @@ data/
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
                              fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate)
-  patterns/                  md→json kinyerés konfig (kézzel szerkesztett, code/process_fegyverek.py olvassa). Jelenleg csak `tavfegyver_pattern.json` (→ tavfegyverek.json). A pajzs-ág kivezetve → `archive/data_fegyverek_v1/` (a webapp a pajzsokhoz a fegyverek_v2.json + konstansok.pajzs_hatások-ot használja)
+  patterns/                  (ÜRES - a md→json pattern-ág kivezetve: pajzs + távfegyver → `archive/data_fegyverek_v1/`. A `code/process_fegyverek.py` így elárvult.)
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (process_fegyverek.py + lib/)

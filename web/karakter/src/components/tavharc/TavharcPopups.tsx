@@ -10,14 +10,12 @@ interface Props {
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   popup: TavharcPopupState;
   closePopup: (key: keyof TavharcPopupState) => void;
-  idea: number;
-  setIdea: (v: number) => void;
   távolság: number;
   setTávolság: (v: number) => void;
   osztó: number;
 }
 
-export function TavharcPopups({ karakter, setKarakter, popup, closePopup, idea, setIdea, távolság, setTávolság, osztó }: Props) {
+export function TavharcPopups({ karakter, setKarakter, popup, closePopup, távolság, setTávolság, osztó }: Props) {
   const k = karakter;
 
   function setMfFok(alap: string, fok: number) {
@@ -65,15 +63,19 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, idea, 
         />
       )}
 
-      {popup.ideaPopup && (
+      {popup.ideaPopup !== null && (
         <PopupOverlay onClose={() => closePopup('ideaPopup')}>
           <label>Idea érték</label>
           <div className="he-idea-grid">
             {[[-5, -4, -3, -2, -1], [0], [1, 2, 3, 4, 5]].map((row, ri) => (
               <div key={ri} className="th-idea-row">
                 {row.map(n => (
-                  <button key={n} className={`fort-fok-btn th-idea-cell${idea === n ? ' active' : ''}`}
-                    onClick={() => { setIdea(n); closePopup('ideaPopup'); }}>
+                  <button key={n} className={`fort-fok-btn th-idea-cell${(k.távfegyverek[popup.ideaPopup!]?.idea ?? 0) === n ? ' active' : ''}`}
+                    onClick={() => {
+                      const idx = popup.ideaPopup!;
+                      setKarakter(prev => prev ? { ...prev, távfegyverek: prev.távfegyverek.map((tf, i) => i === idx ? { ...tf, idea: n } : tf) } : prev);
+                      closePopup('ideaPopup');
+                    }}>
                     {n > 0 ? `+${n}` : n}
                   </button>
                 ))}

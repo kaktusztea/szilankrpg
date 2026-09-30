@@ -44,6 +44,7 @@ export interface FegyverPeldany {
 
 export interface TavfegyverPeldany {
   alap: string;
+  idea: number;
 }
 
 export interface PancelPeldany {
@@ -316,22 +317,24 @@ export interface TavharcSzorzok {
 }
 
 // ============================================================
-// Távfegyver (alaptípus, tavfegyverek.json)
+// Távfegyver (alaptípus, tavfegyverek_v2.json)
 // ============================================================
 
 export interface TavfegyverAlap {
-  Fegyver: string;
-  CÉ: string;
-  Osztó: string;
-  SP: string;
-  Sebesség: string;
-  'Sebzés módja': string;
-  'Forgatás módja': string;
-  Erőbónusz: string;
-  'Erőbónusz limit'?: string;
-  Átütés: string;
-  Hatótáv: string;
-  Kategória?: string;
-  Harcmodor?: string;
-  'Speciális / Megjegyzés'?: string;
+  név: string;
+  kategória: string;
+  harcmodor: string;
+  CÉ: number;
+  Osztó: number;
+  SP: number;                 // -99 sentinel = nincs / spec sebzés
+  Sebesség: number;           // -1 = nincs sebesség (nyílpuskák)
+  sebzésjelleg: 'S' | 'V' | 'Z' | 'spec';
+  Átütés: number;
+  forgatás: string;
+  erőbónusz_limit: number;
+  hatótáv_bázis: number;      // méter, fix rész
+  hatótáv_erő_szorzó: number; // tényleges hatótáv = bázis + Erő × szorzó
+  idea_default: number;
+  extrák: string[];
+  megjegyzés: string;
 }

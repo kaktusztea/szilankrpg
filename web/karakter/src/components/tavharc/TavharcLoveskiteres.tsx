@@ -5,7 +5,7 @@ import { useHoldRepeat } from '../../hooks/useHoldRepeat';
 import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 import { PopupOverlay } from '../PopupOverlay';
 import { rollK10 } from '../../engine/dice';
-import { weaponToLöveskitérésKategória, parseHatótáv, calcLöveskitérésCélszám, calcAkrobatikaÉrték } from './helpers';
+import { weaponToLöveskitérésKategória, tavHatótáv, calcLöveskitérésCélszám, calcAkrobatikaÉrték } from './helpers';
 
 interface Props {
   karakter: Karakter;
@@ -20,26 +20,26 @@ interface LKOpció { név: string; kategória: string | null; hatótáv: number;
 const KIEMELT = ['Hajítótőr', 'Rövid íj', 'Hosszú íj', 'Nyílpuska'];
 
 function buildOpciók(tavfegyverek: TavfegyverAlap[]): LKOpció[] {
-  const all = tavfegyverek.filter(f => !f.Fegyver.startsWith('🔆'));
-  const mágikus = all.filter(f => f.Kategória === 'mágikus')
-    .sort((a, b) => a.Fegyver.localeCompare(b.Fegyver, 'hu'))
-    .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: parseHatótáv(f.Hatótáv) }));
+  const all = tavfegyverek.filter(f => !f.név.startsWith('🔆'));
+  const mágikus = all.filter(f => f.kategória === 'mágikus')
+    .sort((a, b) => a.név.localeCompare(b.név, 'hu'))
+    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: tavHatótáv(f) }));
 
-  const nemMágikus = all.filter(f => f.Kategória !== 'mágikus');
+  const nemMágikus = all.filter(f => f.kategória !== 'mágikus');
   const kiemelt = nemMágikus
-    .filter(f => KIEMELT.includes(f.Fegyver))
-    .sort((a, b) => KIEMELT.indexOf(a.Fegyver) - KIEMELT.indexOf(b.Fegyver))
-    .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: parseHatótáv(f.Hatótáv) }));
+    .filter(f => KIEMELT.includes(f.név))
+    .sort((a, b) => KIEMELT.indexOf(a.név) - KIEMELT.indexOf(b.név))
+    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: tavHatótáv(f) }));
 
   const maradék = nemMágikus
-    .filter(f => !KIEMELT.includes(f.Fegyver))
-    .sort((a, b) => a.Fegyver.localeCompare(b.Fegyver, 'hu'))
-    .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: parseHatótáv(f.Hatótáv) }));
+    .filter(f => !KIEMELT.includes(f.név))
+    .sort((a, b) => a.név.localeCompare(b.név, 'hu'))
+    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: tavHatótáv(f) }));
 
   // Improvizált 🔆 tárgyak a data-ból (Erő-függő hatótáv → nincs range-gát).
   const improv = tavfegyverek
-    .filter(f => f.Fegyver.startsWith('🔆'))
-    .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: Infinity }));
+    .filter(f => f.név.startsWith('🔆'))
+    .map(f => ({ név: f.név, kategória: weaponToLöveskitérésKategória(f), hatótáv: Infinity }));
 
   // Separatorok a csoportok között.
   const result: LKOpció[] = [...kiemelt];

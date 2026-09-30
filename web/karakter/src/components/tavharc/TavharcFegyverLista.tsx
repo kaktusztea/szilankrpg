@@ -4,13 +4,12 @@ import { TavharcFegyverCard } from './TavharcFegyverCard';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 
 interface Props extends TavharcProps {
-  idea: number;
   onMfTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
-  onIdeaPopup: () => void;
+  onIdeaPopup: (idx: number) => void;
 }
 
-export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, idea, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
+export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const k = karakter;
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const újratöltésEnyhítés = calcÚjratöltésEnyhítés(session, k);
@@ -20,23 +19,24 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
   const felvett = new Set(k.távfegyverek.map(tf => tf.alap.toLowerCase()));
   // Mágiatáv I–IV kölcsönösen kizáró: a felvett (aktív) verzió a `felvett` szűrő
   // miatt nem jelenik meg, de a másik 3 igen - így lehet fokozatot váltani.
-  const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.Fegyver.toLowerCase()) && !d.Fegyver.startsWith('🔆'));
+  const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.név.toLowerCase()) && !d.név.startsWith('🔆'));
 
   const isMágikusDef = (alap: string) =>
-    data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === alap.toLowerCase())?.Kategória === 'mágikus';
+    data.tavfegyverek.find(d => d.név.toLowerCase() === alap.toLowerCase())?.kategória === 'mágikus';
 
   function addTávfegyver(alap: string) {
+    const ideaDefault = data.tavfegyverek.find(d => d.név.toLowerCase() === alap.toLowerCase())?.idea_default ?? 0;
     setKarakter(prev => {
       if (!prev) return prev;
       // Mágiatáv: mindig csak 1 a 4-ből - ha már van mágikus, cseréljük (nem új példány).
       if (isMágikusDef(alap)) {
         const existingIdx = prev.távfegyverek.findIndex(tf => isMágikusDef(tf.alap));
         if (existingIdx >= 0) {
-          const távfegyverek = prev.távfegyverek.map((tf, i) => i === existingIdx ? { alap } : tf);
+          const távfegyverek = prev.távfegyverek.map((tf, i) => i === existingIdx ? { alap, idea: ideaDefault } : tf);
           return { ...prev, távfegyverek, session: { ...prev.session, aktív_távfegyver_index: existingIdx } };
         }
       }
-      const távfegyverek = [...prev.távfegyverek, { alap }];
+      const távfegyverek = [...prev.távfegyverek, { alap, idea: ideaDefault }];
       return { ...prev, távfegyverek, session: { ...prev.session, aktív_távfegyver_index: távfegyverek.length - 1 } };
     });
   }
@@ -51,20 +51,19 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
           karakter={k}
           session={session}
           data={data}
-          idea={idea}
           gyorsaság={gyorsaság}
           újratöltésEnyhítés={újratöltésEnyhítés}
           onSelect={() => setSession(s => ({ ...s, aktív_távfegyver_index: i }))}
           onMfTarget={() => onMfTarget(i)}
           onDeleteTarget={() => onDeleteTarget(i)}
-          onIdeaPopup={onIdeaPopup}
+          onIdeaPopup={() => onIdeaPopup(i)}
         />
       ))}
 
       {k.távfegyverek.length < MAX_FEGYVER_DARAB && (
       <select className="he-add-select" value="" onChange={e => { if (e.target.value) addTávfegyver(e.target.value); }}>
         <option value="">+ Új távfegyver...</option>
-        {felvehető.map(f => <option key={f.Fegyver} value={f.Fegyver}>{f.Fegyver}</option>)}
+        {felvehető.map(f => <option key={f.név} value={f.név}>{f.név}</option>)}
       </select>
       )}
 

@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
-import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
+import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, tavSP } from './helpers';
 import { collectCéDobásInfo, netElőnySzint, collectDobásInfo } from '../harc/combat-roll-info';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
@@ -26,22 +26,22 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const tfIdx = session.aktív_távfegyver_index;
   const tfPeldany = k.távfegyverek[tfIdx];
 
-  // --- Idea (local state, not persisted) ---
-  const [idea, setIdea] = useState(0);
-
   // --- Célzó dobás popup ---
   const [showCéDobás, setShowCéDobás] = useState(false);
 
   // --- CÉ bontás ---
+  // Per-fegyver CÉ-Idea delta (Modell 2, spec §17): az aktív példány Ideája a idea_default-tól eltérve
+  // módosít 1:1 a CÉ-hez. A v2 CÉ a idea_default-ot MÁR tartalmazza.
+  const ideaDelta = (tfPeldany?.idea ?? 0) - (tfDef?.idea_default ?? 0);
   const fortélyCÉ = getFortélyCÉ(k, data, session, tfPeldany?.alap);
-  const bontás = calcCÉBontás(k, data, session, tfDef, idea, fortélyCÉ);
+  const bontás = calcCÉBontás(k, data, session, tfDef, ideaDelta, fortélyCÉ);
 
   // --- MF ---
   const mfFok = tfPeldany ? getMfFok(k, tfPeldany.alap) : 0;
 
   // --- Támadás ---
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
-  const sebesség = parseInt(tfDef?.Sebesség ?? '-1') || -1;
+  const sebesség = tfDef?.Sebesség ?? -1;
   const újratöltésEnyhítés = calcÚjratöltésEnyhítés(session, k);
   const támadásLabel = bontás.isMágikus ? '-' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
 
@@ -73,9 +73,9 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   ];
 
   // --- Popup state (grouped) ---
-  const [popup, setPopup] = useState<TavharcPopupState>({ mfTarget: null, deleteTarget: null, ideaPopup: false, távolságPopup: false });
+  const [popup, setPopup] = useState<TavharcPopupState>({ mfTarget: null, deleteTarget: null, ideaPopup: null, távolságPopup: false });
   const closePopup = useCallback((key: keyof TavharcPopupState) => {
-    setPopup(s => ({ ...s, [key]: key === 'mfTarget' || key === 'deleteTarget' ? null : false }));
+    setPopup(s => ({ ...s, [key]: key === 'mfTarget' || key === 'deleteTarget' || key === 'ideaPopup' ? null : false }));
   }, []);
 
   // --- Képzettség popup state ---
@@ -104,15 +104,14 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {!gameMode && (
         <TavharcFegyverLista
           data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} képzettségek={képzettségek} setKépzettségek={setKépzettségek} gameMode={gameMode}
-          idea={idea}
           onMfTarget={i => setPopup(s => ({ ...s, mfTarget: i }))}
           onDeleteTarget={i => setPopup(s => ({ ...s, deleteTarget: i }))}
-          onIdeaPopup={() => setPopup(s => ({ ...s, ideaPopup: true }))}
+          onIdeaPopup={i => setPopup(s => ({ ...s, ideaPopup: i }))}
         />
       )}
 
       {gameMode && (
-        <TavharcGameSelector összesFegyver={összesFegyver} tfIdx={tfIdx} setSession={setSession} mfFok={mfFok} idea={idea} isMágikus={bontás.isMágikus} />
+        <TavharcGameSelector összesFegyver={összesFegyver} tfIdx={tfIdx} setSession={setSession} mfFok={mfFok} idea={tfPeldany?.idea ?? 0} isMágikus={bontás.isMágikus} />
       )}
 
       {tfDef && gameMode && (
@@ -138,7 +137,6 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       <TavharcPopups
         karakter={karakter} setKarakter={setKarakter}
         popup={popup} closePopup={closePopup}
-        idea={idea} setIdea={setIdea}
         távolság={távolság} setTávolság={setTávolság}
         osztó={bontás.osztó}
       />
@@ -169,8 +167,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {showCéDobás && (() => {
         const céInfo = collectCéDobásInfo(session, k, data);
         const dobásInfo = collectDobásInfo(session, k, data);
-        const fegyverSP = parseInt(tfDef?.SP ?? '0') || 0;
-        const fegyverÁtütés = parseInt(tfDef?.Átütés ?? '0') || 0;
+        const fegyverSP = tavSP(tfDef);
+        const fegyverÁtütés = tfDef?.Átütés ?? 0;
         return (
           <CélzóDobasPopup
             cé={bontás.cé}

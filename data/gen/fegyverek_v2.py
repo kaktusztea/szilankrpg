@@ -12,6 +12,7 @@ csak archív snapshotként maradt meg (`archive/data_fegyverek_v1/`, balansz-ös
 
 import os
 import sys
+import json
 
 from .common import DATA_DIR, load_yaml, write_json
 
@@ -81,3 +82,18 @@ def generate_fegyverek_v2():
         raise SystemExit("fegyvergenerátor séma-hiba - javítsd a fentieket, a fegyverek_v2.json nem generálódott.")
 
     write_json('fegyverek_v2.json', fgj.build())
+
+
+def generate_tavfegyverek_v2():
+    """tavfegyverek_fixed.json (tipizált, kézi v2 forrás) → tavfegyverek_v2.json.
+
+    A távfegyverek NEM generáltak (egyedi CÉ/Osztó, nincs paraméter-mátrix) - a source egy kézzel
+    karbantartott, TIPIZÁLT JSON (a régi md→json `process_fegyverek.py` pipeline kiváltása). A
+    generátor itt csak validál + átemel a runtime táblába. A nem-numerikus hatások (halál, spec,
+    pajzs-VÉ) az `extrak.yaml`-ban élnek (közös extra-rendszer, `fegyver_extrak.json`).
+    A `SP: -99` sentinel = "nincs / spec sebzés" (ejtő/gúzsba kötő fegyver vagy KM-döntéses).
+    """
+    src = os.path.join(DATA_DIR, 'sources', 'fegyverek', 'tavfegyverek_fixed.json')
+    with open(src, encoding='utf-8') as fh:
+        data = json.load(fh)
+    write_json('tavfegyverek_v2.json', data)

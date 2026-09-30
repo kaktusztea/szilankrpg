@@ -51,7 +51,7 @@ interface CompactKarakter {
   fs?: Record<string, boolean | number>;
   ht: (string | string[])[];
   fg: (string | number)[][];
-  tf: string[];
+  tf: (string | [string, number])[];
   pa?: Record<string, string | number | boolean>;
   pj?: string;
   fl?: { nt: [string, number][] };
@@ -83,7 +83,7 @@ function compactEncode(k: Karakter): CompactKarakter {
       if (f.idea !== 0) e.push(f.idea);
       return e;
     }),
-    tf: k.távfegyverek.map(t => t.alap),
+    tf: k.távfegyverek.map(t => t.idea !== 0 ? [t.alap, t.idea] as [string, number] : t.alap),
   };
 
   if (k.becenév) c.bn = k.becenév;
@@ -203,7 +203,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     },
     hátterek,
     fegyverek,
-    távfegyverek: c.tf.map(alap => ({ alap })),
+    távfegyverek: c.tf.map(t => Array.isArray(t) ? { alap: t[0], idea: t[1] } : { alap: t, idea: 0 }),
     páncél,
     pajzs: { méret: c.pj || '' },
     felszerelés: { nagy_tárgyak: c.fl?.nt?.map(([név, MGT]) => ({ név, MGT })) || [] },

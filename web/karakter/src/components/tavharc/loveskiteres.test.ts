@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { Karakter, TavfegyverAlap } from '../../engine/types';
-import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, weaponToLöveskitérésKategória, osztóToLöveskitérésKategória, parseHatótáv } from './helpers';
+import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, weaponToLöveskitérésKategória, osztóToLöveskitérésKategória, tavHatótáv } from './helpers';
 
 // Íjak tábla (md/073): 5m→21, 10m→18, 15m→15, 20m→12, 25m→9
 const íjak = [
@@ -45,25 +45,28 @@ describe('osztóToLöveskitérésKategória', () => {
 describe('weaponToLöveskitérésKategória', () => {
   const def = (p: Partial<TavfegyverAlap>) => p as TavfegyverAlap;
   it('maps by Osztó, not harcmodor (e.g. Kharei nyílpuska Osztó 4 → íjak)', () => {
-    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Kharei nyílpuska', Osztó: '4', Harcmodor: 'Lövészet' }))).toBe('íjak');
-    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Tőr', Osztó: '2', Harcmodor: 'Hajítás' }))).toBe('korlátosan_alkalmas');
-    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Nyílpuska', Osztó: '5', Harcmodor: 'Lövészet' }))).toBe('nyílpuskák');
+    expect(weaponToLöveskitérésKategória(def({ név: 'Kharei nyílpuska', Osztó: 4, harcmodor: 'Lövészet' }))).toBe('íjak');
+    expect(weaponToLöveskitérésKategória(def({ név: 'Tőr', Osztó: 2, harcmodor: 'Hajítás' }))).toBe('korlátosan_alkalmas');
+    expect(weaponToLöveskitérésKategória(def({ név: 'Nyílpuska', Osztó: 5, harcmodor: 'Lövészet' }))).toBe('nyílpuskák');
   });
   it('maps mágikus by Osztó (Mágiatáv I Osztó 1 → nem_alkalmas_tárgyak)', () => {
-    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Mágiatáv I', Osztó: '1', Kategória: 'mágikus' }))).toBe('nem_alkalmas_tárgyak');
-    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Mágiatáv IV', Osztó: '4', Kategória: 'mágikus' }))).toBe('íjak');
+    expect(weaponToLöveskitérésKategória(def({ név: 'Mágiatáv I', Osztó: 1, kategória: 'mágikus' }))).toBe('nem_alkalmas_tárgyak');
+    expect(weaponToLöveskitérésKategória(def({ név: 'Mágiatáv IV', Osztó: 4, kategória: 'mágikus' }))).toBe('íjak');
   });
 });
 
-describe('parseHatótáv', () => {
-  it('parses a plain "Nm" range', () => {
-    expect(parseHatótáv('50m')).toBe(50);
-    expect(parseHatótáv('120m')).toBe(120);
-    expect(parseHatótáv('10')).toBe(10);
+describe('tavHatótáv', () => {
+  const def = (p: Partial<TavfegyverAlap>) => p as TavfegyverAlap;
+  it('fix hatótáv (erő_szorzó 0) → a bázis', () => {
+    expect(tavHatótáv(def({ hatótáv_bázis: 50, hatótáv_erő_szorzó: 0 }))).toBe(50);
+    expect(tavHatótáv(def({ hatótáv_bázis: 120, hatótáv_erő_szorzó: 0 }))).toBe(120);
   });
-  it('returns Infinity for Erő-based formulas (attacker Erő unknown → no range gate)', () => {
-    expect(parseHatótáv('20m + (Erő x 5)')).toBe(Infinity);
-    expect(parseHatótáv('5-10m + Erő')).toBe(Infinity);
+  it('Erő-függő (erő_szorzó > 0) → Infinity (támadó Ereje ismeretlen → nincs range-gát)', () => {
+    expect(tavHatótáv(def({ hatótáv_bázis: 20, hatótáv_erő_szorzó: 5 }))).toBe(Infinity);
+    expect(tavHatótáv(def({ hatótáv_bázis: 5, hatótáv_erő_szorzó: 1 }))).toBe(Infinity);
+  });
+  it('bázis 0 → Infinity (pl. Mágiatáv: nincs range-korlát)', () => {
+    expect(tavHatótáv(def({ hatótáv_bázis: 0, hatótáv_erő_szorzó: 0 }))).toBe(Infinity);
   });
 });
 

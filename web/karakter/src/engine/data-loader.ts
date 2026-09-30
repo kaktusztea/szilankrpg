@@ -22,7 +22,7 @@ export async function loadGameData(): Promise<GameData> {
   const [konstansok, fegyverek, tavfegyverek, tavharcSzorzok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, hatasOperatorok, esemenyek, hatterek, sebzésjellegPáncélMátrix, fegyverExtrák, fegyverIdeaTabla, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek_v2.json'),
-    fetchJson<TavfegyverAlap[]>('tables/tavfegyverek.json'),
+    fetchJson<TavfegyverAlap[]>('tables/tavfegyverek_v2.json'),
     fetchJson<TavharcSzorzok>('tables/tavharc_szorzok.json'),
     fetchJson<KepzettsegKpEntry[]>('tables/kepzettseg_kp.json'),
     fetchJson<HarcmodorBonuszEntry[]>('tables/harcmodor_kepzettsegek_bonuszok.json'),

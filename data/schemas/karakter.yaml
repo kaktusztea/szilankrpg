@@ -64,7 +64,8 @@ fegyverek:
     idea: 0                   # -5..+5
 
 távfegyverek:
-  - alap: ""                  # Alaptípus neve (lookup kulcs → tavfegyverek.json)
+  - alap: ""                  # Alaptípus neve (lookup kulcs → tavfegyverek_v2.json)
+    idea: 0                   # -5..+5 - a példány Ideája; a felvett példány idea_default-ról indul, hangolható
 
 páncél:
   alap: ""                    # Alaptípus neve (lookup kulcs → konstansok.yaml páncél_struktúrák)

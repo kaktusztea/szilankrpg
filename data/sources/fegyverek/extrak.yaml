@@ -201,3 +201,67 @@ extrak:
       - {típus: manőver_állapot, érték: aktív}
     hatás:
       - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:lábkirántás_szálfegyverrel"}
+
+  # ── TÁVHARC extrák (tavfegyverek_fixed.json hivatkozza) ──
+  - id: tavharc_sfe_duplan
+    név: "SFÉ duplán számít ellene"
+    csoport: harci_helyzet
+    leírás: "A célpont páncél SFÉ-je duplán számít e lövedék ellen (pl. Dobócsillag, Parittya)."
+    hatás:
+      - {cél: SFÉ, mód: szorzó, érték: 2}
+
+  - id: tavharc_pajzs_ve_csokkentes
+    név: "Pajzsba dobva csökkenti a VÉ-t"
+    csoport: harci_helyzet
+    leírás: "Pajzsba dobva a dobott SP értékével csökkenti a pajzs adta Védő Értéket (KM könyveli)."
+    hatás:
+      - {cél: pajzs-VÉ, mód: szöveges}
+
+  - id: tavharc_ij_erobonusz_tervezett
+    név: "Erőbónusz csak tervezett Erőnél"
+    csoport: tulajdonság
+    leírás: "Az íj Erőbónusza csak akkor számít, ha az íj erre az Erő értékre lett tervezve (KM)."
+    hatás:
+      - {cél: SP, mód: szöveges}
+
+  - id: tavharc_hajitotor_kozeli_loves
+    név: "Közeli lövés automatikus bónusza"
+    csoport: harci_helyzet
+    leírás: "Ha a célpont az 1. Cellában van, automatikusan jár a Közeli lövés fortély CÉ:+10 bónusza."
+    hatás:
+      - {cél: CÉ, mód: szöveges}
+
+  - id: tavharc_elf_ij_keszito
+    név: "Csak a készítő kezében"
+    csoport: tulajdonság
+    leírás: "Az értékek csak a készítő-birtokos kezében érvényesek; másnak hagyományos íjként (Osztó 4, nincs Erőbónusz)."
+    hatás:
+      - {cél: CÉ, mód: szöveges}
+
+  - id: tavharc_ujratoltes_kharei
+    név: "Tár + újratöltés (Kharei)"
+    csoport: tulajdonság
+    leírás: "Míg ki nem fogy a tár, sebesség-büntetés nélkül lő; utána újratöltés 1 kör (KM)."
+    hatás:
+      - {cél: sebesség, mód: szöveges}
+
+  - id: tavharc_ujratoltes_shad0ni
+    név: "Újratöltés (Shad0ni)"
+    csoport: tulajdonság
+    leírás: "Újratöltés: 1 emberrel 3 kör, 2 emberrel 1 kör (KM)."
+    hatás:
+      - {cél: sebesség, mód: szöveges}
+
+  - id: tavharc_aquir_azonnali_halal
+    név: "Aquir kézben azonnali halál"
+    csoport: tulajdonság
+    leírás: "Aquir kézben találatkor azonnali halált okoz; az Átütés is csak aquir kézben érvényes (KM)."
+    hatás:
+      - {cél: halál, mód: szöveges}
+
+  - id: tavharc_fuvocso_kicsi_kabitas
+    név: "Fúvócső (kicsi) esélydobás"
+    csoport: tulajdonság
+    leírás: "k20 Sebzésdobásnál: 20 → 1 ÉP, egyébként 0 ÉP (a méreg/altató a lényeg, KM)."
+    hatás:
+      - {cél: SP, mód: szöveges}
