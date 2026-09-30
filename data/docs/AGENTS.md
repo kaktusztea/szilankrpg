@@ -93,6 +93,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 - Wiki (fejlesztő portál): `/repo/github/szilank.wiki/` - félkész, NE keverd az élessel
 - Link audit: anchor módosításkor `grep -r` a teljes md/ könyvtáron
 - `.obsidian/` könyvtár: SOHA ne módosítsd
+- `archive/` könyvtár: SOHA ne módosítsd/töröld/mozgasd - kivezetett, de megőrzött anyag (pl. v1 fegyver-adat + a hozzá tartozó kivezetett pipeline). Refaktornál/halott-kód vadászatnál hagyd békén akkor is, ha "elárvultnak" tűnik.
 
 ## Dokumentáció navigáció
 

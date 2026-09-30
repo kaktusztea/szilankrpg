@@ -1,0 +1,8 @@
+{
+    "id":"tavfegyverek",
+    "output":"tavfegyverek.json",
+    "file_pattern": "fegyverek.md",
+    "table_pattern": "tavfegyver",
+    "sortkey": "Fegyver",
+    "skip_columns": []
+}
