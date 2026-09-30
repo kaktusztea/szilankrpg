@@ -159,7 +159,7 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
 
 tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
   TavharcScreen.tsx        Fő screen (szerkesztő + game mód)
-  helpers.ts               CÉ/harckeret/szorzó/VÉ/újratöltés/tavSP számítás (a CÉ-mag)
+  helpers.ts               CÉ/harckeret/szorzó/VÉ/újratöltés számítás (a CÉ-mag)
   mesterfegyver-calc.ts    Távharc Mesterfegyver fok + követelmény-ellenőrzés/-szöveg (getMfFok, mfKövetelményHiba/Text)
   loveskiteres-calc.ts     Lövéskitérés pure logika (Osztó→kategória, hatótáv-gát, célszám, Akrobatika-érték, buildOpciók picker-lista)
 

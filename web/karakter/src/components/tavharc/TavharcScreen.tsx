@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
-import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, tavSP } from './helpers';
+import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
 import { getMfFok } from './mesterfegyver-calc';
 import { collectCéDobásInfo, netElőnySzint, collectDobásInfo } from '../harc/combat-roll-info';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
@@ -168,7 +168,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {showCéDobás && (() => {
         const céInfo = collectCéDobásInfo(session, k, data);
         const dobásInfo = collectDobásInfo(session, k, data);
-        const fegyverSP = tavSP(tfDef);
+        // Raw SP (nem tavSP): a SebzesPopup maga ismeri fel az SP_NINCS (-99) sentinelt → "nem sebez".
+        const fegyverSP = tfDef?.SP ?? 0;
         const fegyverÁtütés = tfDef?.Átütés ?? 0;
         return (
           <CélzóDobasPopup

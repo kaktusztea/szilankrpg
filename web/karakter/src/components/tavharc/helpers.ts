@@ -177,9 +177,3 @@ export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState)
 
 // --- Lövéskitérés: l. loveskiteres-calc.ts ---
 
-/** Távfegyver SP a kalkulációhoz: a -99 sentinel (nincs/spec sebzés) → 0. */
-export function tavSP(def: TavfegyverAlap | undefined): number {
-  const sp = def?.SP ?? 0;
-  return sp === -99 ? 0 : sp;
-}
-

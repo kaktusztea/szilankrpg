@@ -320,6 +320,9 @@ export interface TavharcSzorzok {
 // Távfegyver (alaptípus, tavfegyverek_v2.json)
 // ============================================================
 
+/** SP sentinel: a fegyver nem sebez (nincs / speciális sebzés). L. TavfegyverAlap.SP. */
+export const SP_NINCS = -99;
+
 export interface TavfegyverAlap {
   név: string;
   kategória: string;

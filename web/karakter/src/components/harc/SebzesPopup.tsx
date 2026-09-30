@@ -10,6 +10,7 @@ import { HatasokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
 import type { ExtraKontextus } from './extrak-info-calc';
 import { aktívHatásokCélra, alkalmazEffektek } from './extrak-effekt';
+import { SP_NINCS } from '../../engine/types';
 
 /** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */
 const PÁNCÉLOSZTÁLYOK: { id: Páncélosztály; label: string }[] = [
@@ -69,6 +70,19 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
   // Ellenfél páncélosztálya (a mátrix SP-delta lookup kulcsa). null = még nincs választva.
   const [páncél, setPáncél] = useState<Páncélosztály | null>(null);
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
+
+  // SP_NINCS (-99) sentinel: a fegyver nem sebez (pl. Bola, Dobóháló, Lasszó, Fúvócső).
+  // Korai kilépés (a hook-ok UTÁN, Rules of Hooks): a -99 SOHA nem kerül a delta/roll számításba.
+  if (sp === SP_NINCS) {
+    return (
+      <PopupOverlay onClose={() => onClose()}>
+        <div className="tamado-dobas-popup">
+          <div className="ke-dobas-header">Sebzés</div>
+          <div className="sebzes-nincs">Ez a fegyver nem sebez</div>
+        </div>
+      </PopupOverlay>
+    );
+  }
 
   const aktuális = clampEHSzint(rawSzint);
 
