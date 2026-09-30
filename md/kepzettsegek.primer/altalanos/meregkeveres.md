@@ -64,7 +64,7 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 +3: Jól felszerelt labor
 ```
 
-#### ⚜️ Körülmény 1️⃣
+#### ⚜️ Komponensek 1️⃣
 
 ```
 -3: Hiányzó, de helyettesíthető komponensek
