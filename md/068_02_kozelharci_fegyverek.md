@@ -1,6 +1,6 @@
 ## Közelharci fegyverek
 
-A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját Fegyvergenerátorrával.
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
 
 <!-- tag: md_table_fegyver_start -->
 

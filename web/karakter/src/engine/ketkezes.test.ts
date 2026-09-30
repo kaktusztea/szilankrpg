@@ -79,4 +79,35 @@ describe('calcKétkezesHarc', () => {
     };
     expect(calcKétkezesHarc(input)).toBeNull(); // a 4-es fegyver a per-fegyver limit miatt tiltott
   });
+
+  it('idea-delta: CSAK a beszámító fegyver Ideája hat (Modell 2)', () => {
+    const tábla = { '0': { TÉ: 0, VÉ: 0, SP: 0, sebesség: 0, súly: 0 }, '2': { TÉ: 1, VÉ: 1, SP: 2, sebesség: 0, súly: 0 } };
+    const kardI = { ...kard, idea_default: 0 } as unknown as FegyverAlap;
+    const tőrI = { ...tőr, idea_default: 0 } as unknown as FegyverAlap;
+    const input = {
+      ...baseInput,
+      jobbFp: { alap: 'Kard', idea: 2 }, balFp: { alap: 'Tőr', idea: 2 },
+      fegyverek: [kardI, tőrI], fegyverIdeaTabla: tábla,
+    };
+    // khFok 0 (mindkét_fegyver_értékei=false): csak a NAGYOBB (Kard=jobb) TÉ/VÉ idea-ja számít; SP a jobb kézből.
+    const r0 = calcKétkezesHarc(input)!;
+    const b0 = calcKétkezesHarc({ ...input, jobbFp: { alap: 'Kard', idea: 0 }, balFp: { alap: 'Tőr', idea: 0 } })!;
+    expect(r0.TÉ - b0.TÉ).toBe(1);
+    expect(r0.VÉ - b0.VÉ).toBe(1);
+    expect(r0.SP - b0.SP).toBe(2);
+    // khFok 1 (mindkét_fegyver_értékei=true): a kisebb (Tőr) TÉ/VÉ idea-ja IS számít.
+    const kh1 = {
+      ...input,
+      karakter: { ...karakter, fortélyok: [{ név: 'Kétkezes harc', fok: 1 }] } as unknown as Karakter,
+      konstansok: { ...konstansok, kétkezes_harc_bónuszok: [
+        { fok: 0, harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: false, mf: 'nincs' },
+        { fok: 1, harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: true, mf: 'nincs' },
+      ] },
+    };
+    const r1 = calcKétkezesHarc(kh1)!;
+    const b1 = calcKétkezesHarc({ ...kh1, jobbFp: { alap: 'Kard', idea: 0 }, balFp: { alap: 'Tőr', idea: 0 } })!;
+    expect(r1.TÉ - b1.TÉ).toBe(2);
+    expect(r1.VÉ - b1.VÉ).toBe(2);
+    expect(r1.SP - b1.SP).toBe(2);
+  });
 });

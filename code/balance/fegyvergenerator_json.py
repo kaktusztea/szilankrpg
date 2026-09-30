@@ -71,6 +71,7 @@ def _fegyver_json(r):
         "akadály": akadály,
         "övön_hordható": bool(bal.FEGYVERHOSSZ[fv["hossz"]].get("övön_hordható", False)),
         "ár": None,  # TODO: placeholder - kalkulált érték lesz (fegyverhossz/alapanyag/idea szorzókból), lásd v2.md "Ár"
+        "idea_default": f.idea_default,  # a standard példány kezdő-Ideája; a fenti harcértékek EZT MÁR tartalmazzák (Modell 2). A webapp a felvett példány idea-ját erről indítja.
         "extrák": [{"id": eid, "név": _EXTRAK.get(eid, {}).get("név", eid)} for eid in extra_ids],
         "módok": módok,
     }
@@ -83,6 +84,9 @@ def build():
     generalt = [_fegyver_json(r) for r in bal._load("fegyverek.yaml") if "kategória" in r]
     with open(bal.DATA_DIR / "fegyverek_fixed.json", encoding="utf-8") as fh:
         fixed = json.load(fh)
+    # A fixed fegyverek (Garott, hárítók, Kopják) gyári Ideája 0 - egységes v2 séma (idea_default mindenütt).
+    for r in fixed:
+        r.setdefault("idea_default", 0)
     return generalt + fixed
 
 

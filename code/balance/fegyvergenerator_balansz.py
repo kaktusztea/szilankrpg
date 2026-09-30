@@ -97,7 +97,7 @@ class Fegyver:
     pengés: int = 0
     láncos: int = 0
     súly: str = "átlagos"
-    idea: int = 0
+    idea_default: int = 0
     alapanyag: str = "acél"
     hajlékony: int = 0
     súly_delta_cél: str = "sp"        # "sp" vagy "átütés" - mire fordítjuk a nehéz/súlyos deltát (konstansok.yaml súly_delta_cél)
@@ -114,7 +114,7 @@ class Fegyver:
         (A kétkezes-1-kézzel eset SZITUÁCIÓ, nem itt emittált sor - lásd konstansok.yaml → kétkezes_egykézzel.)
         """
         h = FEGYVERHOSSZ[self.hossz]
-        i = IDEA[self.idea]
+        i = IDEA[self.idea_default]
         mat = ALAPANYAG[self.alapanyag]
         nyel = SZALFEGYVER_NYELANYAG[self.szálfegyver_nyélanyag]
 
@@ -277,7 +277,7 @@ def teszt_tempo(ero=2, csak_mundan=False):
     # páncélonként gyűjtjük, melyik fegyver a legjobb
     legjobb = {p[0]: (None, -1) for p in PANCEL}
     for fnev, f in FEGYVEREK.items():
-        if csak_mundan and (f.idea != 0 or ALAPANYAG[f.alapanyag].get("mágikus")):
+        if csak_mundan and (f.idea_default != 0 or ALAPANYAG[f.alapanyag].get("mágikus")):
             continue
         modok = f.modok(ero=ero)
         sor = fnev.ljust(24)

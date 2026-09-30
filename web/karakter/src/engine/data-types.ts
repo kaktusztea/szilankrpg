@@ -319,6 +319,8 @@ export interface GameData {
   fegyverek: FegyverAlap[];
   sebzésjellegPáncélMátrix: SebzésjellegPáncélMátrix;
   fegyverExtrák: Record<string, FegyverExtraDef>;
+  /** Idea szint (-5..5, string kulcs) → harcérték-hatás. A példány-Idea delta futásidejű számításához. */
+  fegyverIdeaTabla: Record<string, { TÉ: number; VÉ: number; SP: number; sebesség: number; súly: number }>;
   tavfegyverek: TavfegyverAlap[];
   tavharcSzorzok: TavharcSzorzok;
   kepzettsegKp: { szint: number; kp: number }[];

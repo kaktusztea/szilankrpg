@@ -16,7 +16,7 @@
 | Belharc rendszer | Fegyver/harcmodor korlátozás jelzés + puszta kéz override | §21.4 |
 | Láthatatlan ellenfél | Taktika vs státusz döntés | - |
 | Ember (Szigetvilági) | Faj háttér hozzáadása (slan helyett) | - |
-| **Fegyver Idea implementáció** 🐞 | `fegyverek[].idea` `[-5;+5]` → TÉ/CÉ/VÉ/SP módosító (`md/068_01_14`). A mező létezik és szerializálódik, de EGYETLEN kalkuláció sem használja | harcszimulacio.spec §16/8 |
+| **Fegyver Idea implementáció** ✅ | `idea_default` modell (Modell 2): a fegyver-definíció `idea_default` a standard példány kezdő-Ideája; a v2 harcértékek EZT MÁR tartalmazzák. A felvett példány `idea_default`-ról indul, hangolható (sérülés le / áldás fel). A kalkuláció a `IDEA[példány] − IDEA[idea_default]` DELTÁT alkalmazza (TÉ/VÉ/SP) - `ideaDelta()` pure fn (`harc/shared.ts`), a `fegyver_idea_tabla.json` adja a szint-táblát. Bekötve: Harcértékek fül chip + Harc fül (`buildFegyverRows`/`calcFegyverResults`) + kétkezes harc (`ketkezes.ts`, csak a beszámító fegyver Ideája hat: nagyobb + feltételes kisebb TÉ/VÉ, jobb kéz SP). **Hátra**: CÉ (távharc) idea-tag (spec §17). | harcszimulacio.spec §16/8 |
 | Akadályoztatás státuszok | `Fegyver/Pajzs akadályoztatása`, `Páncél akadályoztatása` - `md/082`-ben definiált, `statuszok.yaml`-ban nincs | harcszimulacio.spec §16/9 |
 | Fárasztás érték data layerbe | A `3 VÉ` csak `megjegyzés` prózában él (`módosítók: {}`) - séma-bővítés kell | harcszimulacio.spec §16/2 |
 | **`cél_páncél` VÉ/SFÉ extrák bekötése** ✅ | Az SP-ág kész (Sebzés popup „Ellenfél páncél" választó → `panceltalant_jobban_sebez` +3 SP). A VÉ/SFÉ-hatásúak (`sfe_duplazodik` = Meneth, `pocsek_vedekezo_pancelos_ellen` = Béltépő) az egységes „Extrák" gombon át jelennek meg (§42 2. fázis): a választott ellenfél-páncél kategóriától függő aktív/inaktív státusz + hatás-összefoglaló (numerikus VÉ/SFÉ-alkalmazás nélkül - az a §42 3. fázis). A statikus fegyver-VÉ/SFÉ nem függhet a dobásonként változó ellenfél-páncéltól; a popup-szintű Extrák jelzés a helyes feloldás (korábbi ad-hoc jelölés kivezetve). | STUDY.fegyvergenerator_v2 3g |
@@ -31,7 +31,7 @@
 Ami a v2 bevezetésből még hátravan (KIZÁRÓLAG ez a 4):
 
 1. **`cél_páncél` VÉ/SFÉ-hatású extrák** ✅ (Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) - az SP-ág és a VÉ/SFÉ jelölés-ág is kész (jelölés, nem numerikus levonás). Részletek: a fenti backlog-sor + STUDY 3g.
-2. **Fegyver Idea implementáció** 🐞 - holt mező → `rules.json`. Részletek: a fenti backlog-sor.
+2. **Fegyver Idea implementáció** ✅ - `idea_default` modell (Modell 2): a példány `idea_default`-ról indul, a delta hat a TÉ/VÉ/SP-re (közelharc + kétkezes kész). Hátra: CÉ/távharc. Részletek: a fenti backlog-sor.
 3. **Egységes effekt-modell (§42) 2-3. fázisa** - reactive runtime feltétel→hatás kiértékelés. Részletek: a fenti backlog-sor + STUDY.
 4. **Pajzs pipeline kivezetése** ✅ - a webapp már a `fegyverek_v2.json` (pajzs-entryk) + `konstansok.pajzs_hatások` alapon dolgozik (`pancel-calc.ts`, `buildPajzsFegyverNév`); a `pajzsok.json`-t NEM tölti be. A régi kerülő-utas ág (`pajzs_pattern.json` → `process_fegyverek.py` → `pajzsok.json`) NEM volt a build-láncban - archiválva: `archive/data_fegyverek_v1/{pajzsok.json,pajzs_pattern.json}`. A `process_fegyverek.py` maga marad (a `tavfegyver_pattern.json` → `tavfegyverek.json` ágat a webapp használja); a `sync_fegyvertablazatok.py sync_pajzs()` (fegyverek_fixed.json → 068_09.md szabálykönyv-szinkron) is marad, más cél.
 

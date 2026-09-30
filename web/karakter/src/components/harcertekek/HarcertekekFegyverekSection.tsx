@@ -3,6 +3,7 @@ import type { Karakter, FegyverPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
+import { ideaDelta } from '../harc/shared';
 import { FegyverChip } from './HarcertekekFegyverChip';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './helpers';
 import { SpecPicker, type PickerSource } from '../SpecPicker';
@@ -28,7 +29,8 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
     setKarakter(prev => {
       if (!prev) return prev;
       const defaultAnyag = (konstansok.fegyver_anyagok as string[])[0] ?? '';
-      return { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: defaultAnyag, idea: 0 }] };
+      const ideaDefault = lookupFegyver(data.fegyverek, alap)?.idea_default ?? 0;
+      return { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: defaultAnyag, idea: ideaDefault }] };
     });
   }
 
@@ -94,7 +96,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
         <strong>{fegyver.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
         <button className="item-delete" onClick={() => onDeleteTarget(index)}>✕</button>
       </div>
-      {fd && <FegyverChip fd={elsődlegesMód(fd)} mfFok={mfFok} idea={fegyver.idea} konstansok={konstansok} />}
+      {fd && <FegyverChip fd={elsődlegesMód(fd)} mfFok={mfFok} ideaHatás={ideaDelta(fegyver.idea, fd.idea_default, data.fegyverIdeaTabla)} konstansok={konstansok} />}
       <div className="he-fegyver-fields">
         <button
           className={`he-field-btn he-field-fortely${hasError ? ' he-error' : ''}`}

@@ -1,5 +1,7 @@
 ## Lándzsavívó fegyverek
 
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
+
 ❕A lándzsavívó harcmodorban forgatott szálfegyverek használatához jelentős helyre van szükség. Amint beszűkült téren kell forgatni őket, az ellenfél megkapja a [Beszorított ellenfél - hosszú fegyverrel](065_03_01_pozitiv_helyzetek.md#beszor%C3%ADtott-ellenf%C3%A9l---hossz%C3%BA-fegyverrel) Harci helyzetet. A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve végzi a harcot (folyosón előre/hátra küzdeni).
 
 A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md).

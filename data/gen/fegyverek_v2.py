@@ -31,6 +31,19 @@ def generate_sebzesjelleg_pancel_matrix():
     write_json('sebzesjelleg_pancel_matrix.json', data)
 
 
+def generate_fegyver_idea_tabla():
+    """A fegyver-Idea szint→harcérték tábla (konstansok.yaml `idea`) exportja a webappnak.
+
+    A v2 fegyver-harcértékek a `idea_default`-ot MÁR tartalmazzák (Modell 2). A felvett példány
+    Ideája a `idea_default`-tól hangolható; a Harc/Harcértékek kalkuláció a
+    `IDEA[példány] − IDEA[idea_default]` DELTÁT alkalmazza (TÉ/VÉ/SP). Ehhez kell a webappnak a
+    teljes szint-tábla. Kulcsok string-ként (JSON), érték: {TÉ, VÉ, SP, sebesség, súly}.
+    """
+    src = os.path.join(DATA_DIR, 'sources', 'fegyverek', 'konstansok.yaml')
+    idea = load_yaml(src)['idea']
+    write_json('fegyver_idea_tabla.json', {str(k): v for k, v in idea.items()})
+
+
 def generate_fegyver_extrak():
     """extrak.yaml → extrak.json (id → teljes extra-definíció).
 

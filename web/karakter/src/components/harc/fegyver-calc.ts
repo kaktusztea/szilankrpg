@@ -3,6 +3,7 @@ import type { GameData } from '../../engine/data-loader';
 import { evaluate, buildContext, filterFegyverRules, type Rule } from '../../engine/reactive';
 import { lookupFegyver } from '../../engine/utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
+import { ideaDelta } from './shared';
 import type { FegyverResult, FegyverResultMód } from './types';
 
 /** Cached filtered fegyver rules (keyed by rules array reference). */
@@ -28,19 +29,22 @@ function calcSpOverride(fegyverNév: string, karakter: Karakter): number | null 
 }
 
 /** Fegyver sorok felépítése (karakter fegyverek + puszta kéz + pajzs) */
-export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: string | null): { név: string; fDef: FegyverAlap; mfFok: number }[] {
-  const rows: { név: string; fDef: FegyverAlap; mfFok: number }[] = [];
+export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: string | null): { név: string; fDef: FegyverAlap; mfFok: number; ideaHatás: { TÉ: number; VÉ: number; SP: number } }[] {
+  const NULLA = { TÉ: 0, VÉ: 0, SP: 0 };
+  const rows: { név: string; fDef: FegyverAlap; mfFok: number; ideaHatás: { TÉ: number; VÉ: number; SP: number } }[] = [];
   const pusztaKez = lookupFegyver(data.fegyverek, 'puszta kéz');
-  if (pusztaKez) rows.push({ név: pusztaKez.név, fDef: pusztaKez, mfFok: 0 });
+  if (pusztaKez) rows.push({ név: pusztaKez.név, fDef: pusztaKez, mfFok: 0, ideaHatás: NULLA });
   for (const fp of k.fegyverek) {
     const fDef = lookupFegyver(data.fegyverek, fp.alap);
     if (!fDef) continue;
     const mfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === fDef.név || f.spec_elem === fp.alap));
-    rows.push({ név: fDef.név, fDef, mfFok: mfEntry?.fok ?? 0 });
+    // Példány-Idea delta a idea_default-hoz képest (Modell 2, §16); a v2 harcérték a default-ot már tartalmazza.
+    const ideaHatás = ideaDelta(fp.idea, fDef.idea_default, data.fegyverIdeaTabla);
+    rows.push({ név: fDef.név, fDef, mfFok: mfEntry?.fok ?? 0, ideaHatás });
   }
   if (pajzsFegyverNév) {
     const pajzsDef = lookupFegyver(data.fegyverek, pajzsFegyverNév);
-    if (pajzsDef) rows.push({ név: pajzsDef.név, fDef: pajzsDef, mfFok: 0 });
+    if (pajzsDef) rows.push({ név: pajzsDef.név, fDef: pajzsDef, mfFok: 0, ideaHatás: NULLA });
   }
   return rows;
 }
@@ -95,7 +99,7 @@ function calcModResult(
 
 /** Fegyver harcértékek kiszámítása reactive engine-nel - minden módra (Aktoronként). */
 export function calcFegyverResults(
-  fegyverRows: { fDef: FegyverAlap; mfFok: number }[],
+  fegyverRows: { fDef: FegyverAlap; mfFok: number; ideaHatás?: { TÉ: number; VÉ: number; SP: number } }[],
   k: Karakter, data: GameData,
   fortelyMods: Record<string, number>,
   merevvértFok: number,
@@ -129,9 +133,14 @@ export function calcFegyverResults(
     baseCtx.set('merevvért_TÉ_büntetés', fullComp.get('merevvért_TÉ_büntetés') ?? 0);
   }
 
-  return fegyverRows.map(({ fDef, mfFok }) => {
+  return fegyverRows.map(({ fDef, mfFok, ideaHatás }) => {
     const módok = fDef.módok.map(m => calcModResult(m, fDef, k, data, baseCtx, fegyverRules, mfFok));
-    for (const m of módok) m.hk_fortély = fortelyMods['harckeret'] ?? 0;
+    const ih = ideaHatás ?? { TÉ: 0, VÉ: 0, SP: 0 };
+    for (const m of módok) {
+      m.hk_fortély = fortelyMods['harckeret'] ?? 0;
+      // Példány-Idea delta (Modell 2): a idea_default-tól való eltérés TÉ/VÉ/SP-hatása. Default példány → 0.
+      m.TÉ += ih.TÉ; m.VÉ += ih.VÉ; m.SP += ih.SP;
+    }
     const elsődleges = módok.find(m => m.sebzéstípus === 'elsődleges') ?? módok[0];
     return { fegyver_név: fDef.név, fegyverhossz: fDef.fegyverhossz, módok, ...elsődleges };
   });
@@ -174,6 +183,7 @@ export function calcKetkezes(
   const result = calcKétkezesHarc({
     jobbFp, balFp, fegyverek: data.fegyverek, karakter: k,
     konstansok: data.konstansok, harcmodorBonusz: data.harcmodorBonusz, fortelyMods,
+    fegyverIdeaTabla: data.fegyverIdeaTabla,
     páncélMGT, merevvértBüntetés,
   });
   if (!result) return null;

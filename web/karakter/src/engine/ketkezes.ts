@@ -1,10 +1,11 @@
 import type { FegyverAlap, Karakter } from './types';
-import type { KonstansokRaw } from './data-types';
+import type { KonstansokRaw, GameData } from './data-types';
 import type { FegyverResultMód } from '../components/harc/types';
+import { ideaDelta } from '../components/harc/shared';
 
 interface KétkezesInput {
-  jobbFp: { alap: string };
-  balFp: { alap: string };
+  jobbFp: { alap: string; idea: number };
+  balFp: { alap: string; idea: number };
   fegyverek: FegyverAlap[];
   karakter: Karakter;
   konstansok: Pick<KonstansokRaw,
@@ -12,6 +13,8 @@ interface KétkezesInput {
     | 'mesterfegyver_bónuszok' | 'fegyver_kategória_harcmodor' | 'harcérték_alap'>;
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number }[];
   fortelyMods: Record<string, number>;
+  /** Idea szint→hatás tábla a példány-Idea delta számításához (Modell 2). */
+  fegyverIdeaTabla: GameData['fegyverIdeaTabla'];
   páncélMGT?: number;
   merevvértBüntetés?: number;
 }
@@ -75,14 +78,25 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   // Harcértékek
   const alapTÉ = nagyobbElsődleges.TÉ + (khFokBónusz.mindkét_fegyver_értékei ? kisebbElsődleges.TÉ : 0);
   const alapVÉ = nagyobbElsődleges.VÉ + (khFokBónusz.mindkét_fegyver_értékei ? kisebbElsődleges.VÉ : 0);
+
+  // Példány-Idea delta (Modell 2): CSAK a beszámító fegyver Ideája hat. A nagyobb TÉ/VÉ mindig
+  // számít; a kisebbé csak `mindkét_fegyver_értékei` mellett; az SP-t kizárólag a jobb kéz sebzi.
+  const tábla = input.fegyverIdeaTabla;
+  const nagyobbIdea = ideaDelta(nagyobbFp.idea, nagyobb.idea_default, tábla);
+  const kisebbIdea = ideaDelta(kisebbFp.idea, kisebb.idea_default, tábla);
+  const jobbIdea = ideaDelta(jobbFp.idea, jobbDef.idea_default, tábla);
+  const ideaTÉ = nagyobbIdea.TÉ + (khFokBónusz.mindkét_fegyver_értékei ? kisebbIdea.TÉ : 0);
+  const ideaVÉ = nagyobbIdea.VÉ + (khFokBónusz.mindkét_fegyver_értékei ? kisebbIdea.VÉ : 0);
+  const ideaSP = jobbIdea.SP;
+
   const TÉ = konstansok.harcérték_alap.TÉ + k.tulajdonságok.erő + k.tulajdonságok.ügyesség + k.tulajdonságok.gyorsaság
-    + k.HM_TÉ + (hb?.TÉ ?? 0) + alapTÉ + mfTÉ + fortelyMods['TÉ'] + khFokBónusz.TÉ - (input.merevvértBüntetés ?? 0);
+    + k.HM_TÉ + (hb?.TÉ ?? 0) + alapTÉ + mfTÉ + fortelyMods['TÉ'] + khFokBónusz.TÉ + ideaTÉ - (input.merevvértBüntetés ?? 0);
   const VÉ = konstansok.harcérték_alap.VÉ + k.tulajdonságok.gyorsaság + k.tulajdonságok.ügyesség
-    + k.HM_VÉ + (hb?.VÉ ?? 0) + alapVÉ + mfVÉ + fortelyMods['VÉ'] + khFokBónusz.VÉ;
+    + k.HM_VÉ + (hb?.VÉ ?? 0) + alapVÉ + mfVÉ + fortelyMods['VÉ'] + khFokBónusz.VÉ + ideaVÉ;
 
   // SP: jobb kéz sebez (elsődleges módja)
   const erőbónusz = Math.min(k.tulajdonságok.erő, jobbElsődleges.Erőlimit);
-  const SP = jobbElsődleges.SP + erőbónusz + mfSP + fortelyMods['SP'];
+  const SP = jobbElsődleges.SP + erőbónusz + mfSP + fortelyMods['SP'] + ideaSP;
 
   // Harckeret
   const fhLevonás = Math.floor(sumFh / konstansok.kétkezes_harc_fegyverlevonás_osztó);

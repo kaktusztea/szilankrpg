@@ -41,7 +41,7 @@ fegyver:
   láncos:            {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "láncos fej? (+1 SP, +1 Sebesség)"}
   hajlékony:         {kötelező: false, típus: int,  enum: [0, 1], default: 0, megjegyzés: "hajlékony (ostor)? (-2 VÉ, +1 Sebesség)"}
   súly:              {kötelező: false, típus: str,  forrás: súly, default: átlagos, megjegyzés: "konstansok.yaml súly: könnyű/átlagos/nehéz/súlyos"}
-  idea:              {kötelező: false, típus: int,  forrás: idea, default: 0, megjegyzés: "inherens minőség; konstansok.yaml idea (-5..5)"}
+  idea_default:      {kötelező: false, típus: int,  forrás: idea, default: 0, megjegyzés: "a fegyver standard (gyári) példányának kezdő-Ideája; a v2 harcértékek EZT MÁR tartalmazzák. A felvett példány ezzel az értékkel indul, de hangolható (sérülés lejjebb, áldás feljebb). konstansok.yaml idea (-5..5)"}
   alapanyag:         {kötelező: false, típus: str,  forrás: alapanyag, default: acél, megjegyzés: "konstansok.yaml alapanyag (acél, feketeacél, kő, mithrill, …)"}
   fejdarab:          {kötelező: false, típus: int,  forrás: fejdarab, default: 0, megjegyzés: "fejdarab (bemenő index); konstansok.yaml fejdarab (0..3) adja a Sebesség/TÉ hatást. INVARIÁNS: 0 csak botvég/ököl aktornál (nincs 'rátett fej'); minden más aktornál (buzogányfej-*, lándzsahegy-*, vágóél-*, pengehegy-*, …) minimum 1 - a pengés:1 önmagában is +1-et ad, tehát fejdarab+pengés végösszege legyen ≥1"}
   súly_delta_cél:         {kötelező: false, típus: str,  enum: [sp, átütés], default: sp, megjegyzés: "a nehéz/súlyos súly-delta melyik harcérték-mezőbe menjen (SP VAGY Átütés); konstansok.yaml súly_delta_cél (metaadat/leírás)"}
