@@ -221,7 +221,7 @@ function PáncélVálasztóBtn({ páncél, delta, jelleg, onSelect }: {
   onSelect: (p: Páncélosztály) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const aktLabel = páncél ? PÁNCÉLOSZTÁLYOK.find(p => p.id === páncél)?.label : 'nincs';
+  const aktLabel = páncél ? PÁNCÉLOSZTÁLYOK.find(p => p.id === páncél)?.label : null;
   const colorClass = delta > 0 ? 'sebzes-stat-pos' : delta < 0 ? 'sebzes-stat-neg' : '';
   // STUDY 3g: kötelező, kiemelt elem - amíg nincs választva, pulzáló figyelmeztető keret.
   const kellClass = páncél === null ? ' pancel-valaszto-kell' : '';
@@ -229,7 +229,9 @@ function PáncélVálasztóBtn({ páncél, delta, jelleg, onSelect }: {
   return (
     <>
       <button className={`sebzes-stat-btn pancel-valaszto-btn ${colorClass}${kellClass}`} onClick={() => setOpen(true)}>
-        <span className="pancel-valaszto-fej">Ellenfél: {aktLabel}</span>
+        <span className="pancel-valaszto-fej">
+          {aktLabel === null ? 'Ellenfél páncél →' : `Ellenfél páncél: ${aktLabel}`}
+        </span>
         {páncél !== null && delta !== 0 && (
           <span className="pancel-valaszto-delta">({jelleg ?? 'sebzés'} ellene: {delta > 0 ? '+' : ''}{delta})</span>
         )}
