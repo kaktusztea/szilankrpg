@@ -86,7 +86,7 @@ Aurabontásnál
 
 ⭕Aurabontás⭕ formula, vagy más mágikus/környezeti hatás előidézhet olyan szituációt, hogy Aura értéked `0`-ra zuhan. Ekkor az alábbi állapotba kerülsz:
 
-- [Zavar (1) Kizökkent](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-zavar-1-kiz%C3%B6kkent) Státusz - ✅ Agóra
+- [Zavar (1) Kizökkent](082_statuszok.md#%EF%B8%8F-zavar-1-kiz%C3%B6kkent) Státusz - ✅ Agóra
 - magabiztosságod elszáll, zavarodottság vesz úrrá rajtad
 - Emberismeret képzettségpróbádra: `Hátrány-2` (Befolyásolások ellen)
 

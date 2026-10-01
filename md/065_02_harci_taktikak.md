@@ -335,7 +335,7 @@ Harcmodor képzettség + Ügyesség
 
 🔆 KM tanács: ilyenkor nem tudod bemondani a kidobott Támadó Értéket, mert akkor lebuknál a megtámadott játékosnál. Ilyenkor inkább kérdezz rá a játékos `Védő Értékére`, majd jelezd, hogy "csak VÉ csökkentés".
 
-Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci jártasság felmérését](https://github.com/kaktusztea/szilankrpg/blob/master/md/szituaciok/harci_jartassag_felmerese.md) végezhet, amely nem vesz el Akciót, nem jár semmilyen hátránnyal.
+Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci jártasság felmérését](szituaciok/harci_jartassag_felmerese.md) végezhet, amely nem vesz el Akciót, nem jár semmilyen hátránnyal.
 
 ✅ **Kiváró, Visszafogott, 1 támadás taktikával** együtt
 
