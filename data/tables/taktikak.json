@@ -151,6 +151,15 @@
       "VÉ": -10,
       "SP": 7
     },
+    "hatások": [
+      {
+        "hatás": "szorzó",
+        "érték": 2,
+        "cél": "vé_csökkentés",
+        "megjegyzés": "VÉ csökkentés dupla",
+        "feltétel": ""
+      }
+    ],
     "megjegyzés": "Max 1x/küzdelem. Első oda-vissza csapás. VÉ csökk 2x.",
     "megkötések": [],
     "kombó_mód": "whitelist",
@@ -185,6 +194,15 @@
       "VÉ": -8,
       "SP": 5
     },
+    "hatások": [
+      {
+        "hatás": "szorzó",
+        "érték": 2,
+        "cél": "vé_csökkentés",
+        "megjegyzés": "VÉ csökkentés dupla",
+        "feltétel": ""
+      }
+    ],
     "megjegyzés": "Első oda-vissza csapás. VÉ csökk 2x.",
     "megkötések": [],
     "kombó_mód": "whitelist",
@@ -302,7 +320,7 @@
     "módosítók": {
       "VÉ": 8
     },
-    "megjegyzés": "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20P.",
+    "megjegyzés": "Nem támadsz, hátrálsz. Ellenfeled VÉ csökkentése: 1+k20P.",
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,

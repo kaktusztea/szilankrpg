@@ -14,6 +14,8 @@ export interface VéCsökkentésEredmény {
   bázis: number;
   k20: number;
   k20p: number;
+  /** Taktika-eredetű szorzó (pl. Roham/Öngyilkos roham: 2x) - 1, ha nincs ilyen hatás. */
+  szorzó: number;
   végső: number;
 }
 
@@ -21,15 +23,17 @@ export interface VéCsökkentésEredmény {
  * @param fegyverviszony a választott Fegyverviszony (Fegyverhátrány/Fegyverazonosság/Fegyverelőny)
  * @param k20 a Támadó dobás k20 eredménye (1-20), amiből a k20P adódik
  * @param alapTáblázat a konstansok.yaml `vé_csökkentés_alap` táblája
+ * @param szorzó taktika-eredetű szorzó (pl. Roham/Öngyilkos roham: 2) - alapértelmezetten 1
  */
 export function calcVéCsökkentés(
   fegyverviszony: Fegyverviszony,
   k20: number,
   alapTáblázat: Record<Fegyverviszony, number>,
+  szorzó = 1,
 ): VéCsökkentésEredmény {
   const bázis = alapTáblázat[fegyverviszony];
   const k20p = k20P(k20);
-  return { fegyverviszony, bázis, k20, k20p, végső: bázis + k20p };
+  return { fegyverviszony, bázis, k20, k20p, szorzó, végső: (bázis + k20p) * szorzó };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -44,6 +48,20 @@ export interface TaktikaHatás {
   cél: string;
   megjegyzés?: string;
   feltétel?: string;
+}
+
+/**
+ * Egy taktika `hatások` tömbjéből a `vé_csökkentés` célú "szorzó" hatás kinyerése (pl. Roham/Öngyilkos
+ * roham: VÉ csökkentés duplán) - a Fegyverviszony-alapú (bázis+k20P) eredményre alkalmazandó.
+ * Több `szorzó` elem esetén összeszorzódnak; nincs ilyen hatás → 1.
+ */
+export function calcVéCsökkentésSzorzó(hatások: TaktikaHatás[] | undefined): number {
+  let szorzó = 1;
+  for (const h of hatások ?? []) {
+    if (h.cél !== 'vé_csökkentés' || h.hatás !== 'szorzó') continue;
+    szorzó *= h.érték ?? 1;
+  }
+  return szorzó;
 }
 
 export interface FortélyMódosítóBontás {

@@ -16,6 +16,8 @@ interface Props {
   extraDefs?: Record<string, FegyverExtraDef>;
   /** Harci kontextus (a VÉ-warning feltétel-kiértékeléséhez). */
   extraKontextus?: ExtraKontextus;
+  /** Taktika-eredetű szorzó a Fegyverviszony-alapú VÉ csökkentésre (pl. Roham/Öngyilkos roham: 2). */
+  véCsökkentésSzorzó?: number;
   /**
    * Ha megvan (pl. Fárasztás taktika aktív, md/065_02): nincs Fegyverviszony-választó/k20P,
    * az eredmény azonnal, bontással jelenik meg (taktika override+flat + fortély flat bővítések).
@@ -45,12 +47,12 @@ const FEGYVERVISZONY_LABEL: Record<Fegyverviszony, string> = {
  * `.végső`-t használja, l. HarcScreen.tsx `changeVé`).
  */
 export function VeCsokkentesPopup({
-  k20, alapTáblázat, fegyverExtrák, extraDefs, extraKontextus, taktikaVéCsökkentés, taktikaCím, onClose,
+  k20, alapTáblázat, fegyverExtrák, extraDefs, extraKontextus, véCsökkentésSzorzó, taktikaVéCsökkentés, taktikaCím, onClose,
 }: Props) {
   const [eredmény, setEredmény] = useState<VéCsökkentésEredmény | null>(null);
 
   function handleVálasztás(fv: Fegyverviszony) {
-    setEredmény(calcVéCsökkentés(fv, k20, alapTáblázat));
+    setEredmény(calcVéCsökkentés(fv, k20, alapTáblázat, véCsökkentésSzorzó ?? 1));
   }
 
   // VÉ-t érintő, ellenfél-infó nélküli extrák (pl. Béltépő „Pocsék védekező" páncélos ellen): nem
@@ -62,7 +64,7 @@ export function VeCsokkentesPopup({
   if (taktikaVéCsökkentés) {
     const t = taktikaVéCsökkentés;
     return (
-      <PopupOverlay onClose={() => onClose({ fegyverviszony: 'fegyverazonosság', bázis: t.taktikaBázis, k20: 0, k20p: 0, végső: t.végső })}>
+      <PopupOverlay onClose={() => onClose({ fegyverviszony: 'fegyverazonosság', bázis: t.taktikaBázis, k20: 0, k20p: 0, szorzó: 1, végső: t.végső })}>
         <div className="tamado-dobas-popup ve-csokkentes-popup">
           <div className="ke-dobas-header">{taktikaCím ?? 'VÉ csökkentés'}</div>
           <div className="ke-dobas-result">{t.végső}</div>
@@ -100,6 +102,7 @@ export function VeCsokkentesPopup({
             <div className="ke-dobas-detail">
               {FEGYVERVISZONY_LABEL[eredmény.fegyverviszony]} ({eredmény.bázis})
               {' + '}k20P ({eredmény.k20} → {eredmény.k20p})
+              {eredmény.szorzó !== 1 && <>{' × '}{eredmény.szorzó}</>}
             </div>
           </>
         )}

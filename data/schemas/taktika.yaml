@@ -16,13 +16,14 @@ taktikák:
       SP: 0
     # Nem-fokozatos taktika strukturált hatása egy dobáscélra/numerikus célra.
     # Pl. Visszafogott: Hátrány-2 a sebzésdobásra (a módosítók.TÉ mellett).
-    # hatás enum: "előny" | "hátrány" | "enyhít" | "szöveges" | "flat" | "override" (konstansok.yaml effekt_módok).
+    # hatás enum: "előny" | "hátrány" | "enyhít" | "szöveges" | "flat" | "override" | "szorzó" (konstansok.yaml effekt_módok).
     # feltétel: opcionális, string ("harci_helyzet:xyz" / "taktika:xyz" prefix) - csak akkor aktív, ha teljesül.
     # KONVENCIÓ (ha egy cél-ra TÖBB elem van, pl. "vé_csökkentés"): a lista BALRÓL JOBBRA, SORRENDBEN,
     # akkumulálva értelmezendő (NEM a §42.3 mód-kategória szerinti precedencia-motor) - "override" a
-    # addig felhalmozott értéket felülírja, "flat" hozzáadódik. Az override-ot ezért előre kell tenni,
-    # ha utána flat-tal bővítendő az érték. Pl. Fárasztás: [override 3, flat +1 (feltétel: Fegyverelőny)]
-    # → 3, vagy Fegyverelőnyben 4 - NEM 3 (ha a flat előbb lenne, az override törölné).
+    # addig felhalmozott értéket felülírja, "flat" hozzáadódik, "szorzó" megszorozza az addigi értéket.
+    # Az override-ot ezért előre kell tenni, ha utána flat/szorzó-val bővítendő az érték.
+    # Pl. Fárasztás: [override 3, flat +1 (feltétel: Fegyverelőny)] → 3, vagy Fegyverelőnyben 4.
+    # Pl. Roham: [szorzó 2] a Fegyverviszony-alapú VÉ csökkentésre (bázis+k20P) × 2.
     hatások:                   # opcionális (fokozatos: false esetén)
       - { hatás: "", érték: 0, cél: "", megjegyzés: "", feltétel: "" }
     # Ha fokozatos: true → fokok lista (mindegyik fok+módosítók)

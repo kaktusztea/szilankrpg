@@ -1,22 +1,27 @@
 import { describe, it, expect } from 'vitest';
-import { calcVéCsökkentés, calcTaktikaVéCsökkentésBázis, calcTaktikaVéCsökkentés } from './ve-csokkentes-calc';
+import { calcVéCsökkentés, calcTaktikaVéCsökkentésBázis, calcTaktikaVéCsökkentés, calcVéCsökkentésSzorzó } from './ve-csokkentes-calc';
 
 const alapTáblázat = { fegyverhátrány: 0, fegyverazonosság: 1, fegyverelőny: 2 };
 
 describe('calcVéCsökkentés', () => {
   it('fegyverhátrány + páratlan k20 → bázis 0 + k20P 0', () => {
     const r = calcVéCsökkentés('fegyverhátrány', 5, alapTáblázat);
-    expect(r).toEqual({ fegyverviszony: 'fegyverhátrány', bázis: 0, k20: 5, k20p: 0, végső: 0 });
+    expect(r).toEqual({ fegyverviszony: 'fegyverhátrány', bázis: 0, k20: 5, k20p: 0, szorzó: 1, végső: 0 });
   });
 
   it('fegyverazonosság + páros k20 → bázis 1 + k20P 1', () => {
     const r = calcVéCsökkentés('fegyverazonosság', 16, alapTáblázat);
-    expect(r).toEqual({ fegyverviszony: 'fegyverazonosság', bázis: 1, k20: 16, k20p: 1, végső: 2 });
+    expect(r).toEqual({ fegyverviszony: 'fegyverazonosság', bázis: 1, k20: 16, k20p: 1, szorzó: 1, végső: 2 });
   });
 
   it('fegyverelőny + k20=20 → bázis 2 + k20P 2 (maximum)', () => {
     const r = calcVéCsökkentés('fegyverelőny', 20, alapTáblázat);
-    expect(r).toEqual({ fegyverviszony: 'fegyverelőny', bázis: 2, k20: 20, k20p: 2, végső: 4 });
+    expect(r).toEqual({ fegyverviszony: 'fegyverelőny', bázis: 2, k20: 20, k20p: 2, szorzó: 1, végső: 4 });
+  });
+
+  it('Roham/Öngyilkos roham: szorzó=2 duplázza a végső értéket', () => {
+    const r = calcVéCsökkentés('fegyverazonosság', 16, alapTáblázat, 2);
+    expect(r).toEqual({ fegyverviszony: 'fegyverazonosság', bázis: 1, k20: 16, k20p: 1, szorzó: 2, végső: 4 });
   });
 
   it('fegyverelőny + k20=10 → k20P is 2 (a speciális eset, nem csak a 20-as)', () => {
@@ -104,5 +109,22 @@ describe('calcTaktikaVéCsökkentés - taktika + fortély bővítés', () => {
     const r = calcTaktikaVéCsökkentés(farasztásHatások, farasztásFortély, () => false);
     expect(r.fortélyBővítések).toEqual([]);
     expect(r.végső).toBe(3);
+  });
+});
+
+describe('calcVéCsökkentésSzorzó - Roham/Öngyilkos roham duplázás', () => {
+  it('Roham hatás ([szorzó 2, cél vé_csökkentés]) → 2', () => {
+    const hatások = [{ hatás: 'szorzó', érték: 2, cél: 'vé_csökkentés' }];
+    expect(calcVéCsökkentésSzorzó(hatások)).toBe(2);
+  });
+
+  it('nincs szorzó hatás → 1', () => {
+    expect(calcVéCsökkentésSzorzó(undefined)).toBe(1);
+    expect(calcVéCsökkentésSzorzó([])).toBe(1);
+    expect(calcVéCsökkentésSzorzó([{ hatás: 'override', érték: 3, cél: 'vé_csökkentés' }])).toBe(1);
+  });
+
+  it('más célú szorzó nem számít bele', () => {
+    expect(calcVéCsökkentésSzorzó([{ hatás: 'szorzó', érték: 2, cél: 'sebzésdobás' }])).toBe(1);
   });
 });
