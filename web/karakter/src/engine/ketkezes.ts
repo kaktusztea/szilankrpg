@@ -107,7 +107,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   const támadások = 1 + Math.floor(hk / sebesség);
 
   const módEredmény: FegyverResultMód = {
-    aktor: jobbElsődleges.aktor, jelleg: jobbElsődleges.jelleg, sebzéstípus: 'elsődleges',
+    aktor: jobbElsődleges.aktor, jelleg: jobbElsődleges.jelleg, sebzéstípus: 'elsődleges', Forgatás: jobbElsődleges.Forgatás,
     TÉ, VÉ, SP, Átütés: jobbElsődleges.Átütés, támadások, harckeret: hk, sebesség,
     alap_TÉ: alapTÉ, alap_VÉ: alapVÉ,
     hk_harcmodor: harcmodorSzint, hk_gyorsaság: k.tulajdonságok.gyorsaság,

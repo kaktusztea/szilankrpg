@@ -84,7 +84,7 @@ function calcModResult(
 
   const fComp = evaluate(fegyverRules, fCtx);
   return {
-    aktor: mód.aktor, jelleg: mód.jelleg, sebzéstípus: mód.sebzéstípus,
+    aktor: mód.aktor, jelleg: mód.jelleg, sebzéstípus: mód.sebzéstípus, Forgatás: mód.Forgatás,
     TÉ: fComp.get('fegyver_TÉ') ?? 0, VÉ: fComp.get('fegyver_VÉ') ?? 0, SP: fComp.get('fegyver_SP') ?? 0,
     Átütés: mód.Átütés,
     támadások: fComp.get('fegyver_támadások') ?? 1, harckeret: fComp.get('fegyver_harckeret') ?? 0,

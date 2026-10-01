@@ -1087,7 +1087,7 @@
         "SP": 6,
         "Átütés": 0,
         "Sebesség": 7,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       },
@@ -1100,7 +1100,7 @@
         "SP": 7,
         "Átütés": 0,
         "Sebesség": 7,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       }
@@ -1153,7 +1153,7 @@
         "SP": 7,
         "Átütés": 0,
         "Sebesség": 8,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       },
@@ -1166,7 +1166,7 @@
         "SP": 7,
         "Átütés": 0,
         "Sebesség": 8,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       }
@@ -1344,7 +1344,7 @@
         "SP": 10,
         "Átütés": 0,
         "Sebesség": 7,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       },
@@ -1357,7 +1357,7 @@
         "SP": 10,
         "Átütés": 0,
         "Sebesség": 6,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       }
@@ -1536,7 +1536,7 @@
         "SP": 11,
         "Átütés": 0,
         "Sebesség": 7,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       }
@@ -2020,7 +2020,7 @@
         "SP": 8,
         "Átütés": 0,
         "Sebesség": 7,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       }
@@ -2359,7 +2359,7 @@
         "SP": 7,
         "Átütés": 0,
         "Sebesség": 10,
-        "Forgatás": "másfélkezes · 1 kéz",
+        "Forgatás": "másfélkezes · 1 kézzel",
         "Erőlimit": 2,
         "FP": false
       }

@@ -31,3 +31,72 @@ export function calcVéCsökkentés(
   const k20p = k20P(k20);
   return { fegyverviszony, bázis, k20, k20p, végső: bázis + k20p };
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Taktika-alapú (nem Fegyverviszony-alapú) VÉ csökkentés - pl. Fárasztás (md/065_02).
+// Nincs Támadó dobás/k20P: a taktika `hatások` tömbje adja a fix bázist, amit a karakter
+// aktív fortélyainak feltételes `vé_csökkentés` cél-ú módosítói bővíthetnek.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface TaktikaHatás {
+  hatás?: string;
+  érték?: number;
+  cél: string;
+  megjegyzés?: string;
+  feltétel?: string;
+}
+
+export interface FortélyMódosítóBontás {
+  forrás: string;
+  érték: number;
+  megjegyzés?: string;
+}
+
+export interface TaktikaVéCsökkentésEredmény {
+  /** A taktika `hatások` tömbjéből, SORRENDBEN akkumulálva (override felülír, flat hozzáad) - l. schemas/taktika.yaml. */
+  taktikaBázis: number;
+  /** Fortély-eredetű flat bővítések (feltételesen aktívak), forrás-bontással. */
+  fortélyBővítések: FortélyMódosítóBontás[];
+  végső: number;
+}
+
+/**
+ * Egy taktika `hatások` tömbjének `vé_csökkentés` célú elemeit SORRENDBEN (balról jobbra)
+ * akkumulálja: "override" felülírja az addig összegyűjtött értéket, "flat" hozzáadja.
+ * (KONVENCIÓ: ez NEM a §42.3 mód-kategória precedencia-motor - l. schemas/taktika.yaml komment.)
+ */
+export function calcTaktikaVéCsökkentésBázis(
+  hatások: TaktikaHatás[] | undefined,
+  feltételTeljesül: (feltétel: string) => boolean,
+): number {
+  let érték = 0;
+  for (const h of hatások ?? []) {
+    if (h.cél !== 'vé_csökkentés') continue;
+    if (h.feltétel && !feltételTeljesül(h.feltétel)) continue;
+    if (h.hatás === 'override') érték = h.érték ?? 0;
+    else if (h.hatás === 'flat') érték += h.érték ?? 0;
+  }
+  return érték;
+}
+
+/**
+ * Teljes Fárasztás-jellegű VÉ csökkentés: taktika bázis (override+flat sorrendben) + a karakter
+ * aktív fortélyainak feltételes `vé_csökkentés` cél-ú flat módosítói (pl. Fárasztás fortély +1).
+ */
+export function calcTaktikaVéCsökkentés(
+  taktikaHatások: TaktikaHatás[] | undefined,
+  fortélyModosítók: { forrás: string; módosítók: { cél: string; érték: number; mód: string; feltétel?: string }[] }[],
+  feltételTeljesül: (feltétel: string) => boolean,
+): TaktikaVéCsökkentésEredmény {
+  const taktikaBázis = calcTaktikaVéCsökkentésBázis(taktikaHatások, feltételTeljesül);
+  const fortélyBővítések: FortélyMódosítóBontás[] = [];
+  for (const { forrás, módosítók } of fortélyModosítók) {
+    for (const mod of módosítók) {
+      if (mod.cél !== 'vé_csökkentés' || mod.mód !== 'flat') continue;
+      if (mod.feltétel && !feltételTeljesül(mod.feltétel)) continue;
+      fortélyBővítések.push({ forrás, érték: mod.érték });
+    }
+  }
+  const végső = taktikaBázis + fortélyBővítések.reduce((sum, f) => sum + f.érték, 0);
+  return { taktikaBázis, fortélyBővítések, végső };
+}

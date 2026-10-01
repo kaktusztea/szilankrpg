@@ -159,7 +159,7 @@ def generator_fegyverek(ero=2):
         f = FB.Fegyver(név=rec["név"], **rec["fegyver"])
         modok = []
         for m in f.modok(ero=ero):
-            if m["forgatás"].endswith("· 1 kéz"):
+            if m["forgatás"].endswith("· 1 kézzel"):
                 continue   # szituációs variáns, a mátrixba nem vesszük be alapból
             modok.append(FegyverMod(
                 nev=rec["név"], kategoria=rec["kategória"],

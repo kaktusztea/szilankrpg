@@ -8,7 +8,7 @@ import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from './combat-roll-info';
 import type { FegyverResultMód } from './types';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
-import type { Fegyverviszony, VéCsökkentésEredmény } from './ve-csokkentes-calc';
+import type { Fegyverviszony } from './ve-csokkentes-calc';
 import { netElőnySzint } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
@@ -46,8 +46,6 @@ interface Props {
   dobásInfo: DobásInfo;
   /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázisértékek). */
   véCsökkentésAlap: Record<Fegyverviszony, number>;
-  /** VÉ csökkentés eredmény alkalmazása (pl. `session.vé_csökkenés` növelése). */
-  onVéCsökkentés: (eredmény: VéCsökkentésEredmény) => void;
   onClose: (eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => void;
 }
 
@@ -62,7 +60,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, onVéCsökkentés, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -137,7 +135,6 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
         extraKontextus={aktívExtraKontextus}
         onClose={(eredmény) => {
           if (eredmény) {
-            onVéCsökkentés(eredmény);
             onClose(téResult ? { té: téResult.eredmény, veCsökkentés: eredmény.végső } : null);
           } else {
             setShowVéCsökkentés(false);
@@ -158,7 +155,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
                 className={`mod-valaszto-item${i === módIndex ? ' active' : ''}`}
                 onClick={() => { setMódIndex(i); setTéResult(null); setShowMódVálasztó(false); }}>
                 <span className="mod-valaszto-jelleg">{m.jelleg}</span>
-                <span className="mod-valaszto-tipus">{m.sebzéstípus}</span>
+                <span className="mod-valaszto-tipus">{m.sebzéstípus} · {m.Forgatás}</span>
                 <span className="mod-valaszto-ertekek">TÉ {m.TÉ} · VÉ {m.VÉ} · SP {m.SP}</span>
               </button>
             ))}

@@ -14,10 +14,17 @@ taktikák:
       VÉ: 0
       KÉ: 0
       SP: 0
-    # Nem-fokozatos taktika strukturált hatása (előny/hátrány/enyhít/szöveges) egy dobáscélra.
+    # Nem-fokozatos taktika strukturált hatása egy dobáscélra/numerikus célra.
     # Pl. Visszafogott: Hátrány-2 a sebzésdobásra (a módosítók.TÉ mellett).
+    # hatás enum: "előny" | "hátrány" | "enyhít" | "szöveges" | "flat" | "override" (konstansok.yaml effekt_módok).
+    # feltétel: opcionális, string ("harci_helyzet:xyz" / "taktika:xyz" prefix) - csak akkor aktív, ha teljesül.
+    # KONVENCIÓ (ha egy cél-ra TÖBB elem van, pl. "vé_csökkentés"): a lista BALRÓL JOBBRA, SORRENDBEN,
+    # akkumulálva értelmezendő (NEM a §42.3 mód-kategória szerinti precedencia-motor) - "override" a
+    # addig felhalmozott értéket felülírja, "flat" hozzáadódik. Az override-ot ezért előre kell tenni,
+    # ha utána flat-tal bővítendő az érték. Pl. Fárasztás: [override 3, flat +1 (feltétel: Fegyverelőny)]
+    # → 3, vagy Fegyverelőnyben 4 - NEM 3 (ha a flat előbb lenne, az override törölné).
     hatások:                   # opcionális (fokozatos: false esetén)
-      - { hatás: "", érték: 0, cél: "", megjegyzés: "" }
+      - { hatás: "", érték: 0, cél: "", megjegyzés: "", feltétel: "" }
     # Ha fokozatos: true → fokok lista (mindegyik fok+módosítók)
     fokok:                     # opcionális (fokozatos: true esetén)
       - { fok: 1, TÉ: 0, VÉ: 0, KÉ: 0, SP: 0 }

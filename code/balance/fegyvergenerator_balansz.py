@@ -108,7 +108,7 @@ class Fegyver:
     def modok(self, ero=2):
         """Fegyvermódonként (fogás × aktor) a végső harcértékek.
 
-        A másfélkezes fegyver KÉT fogás-variánst ad: '2 kéz' (teljes) és '1 kéz' (MK-levonás).
+        A másfélkezes fegyver KÉT fogás-variánst ad: '2 kézzel' (teljes) és '1 kézzel' (MK-levonás).
         Az MK a KONTROLLT bünteti (TÉ/VÉ/Átütés/erő-plafon), a sebzést (SP) NEM.
         A levonás-értékek: konstansok.yaml → forgatás_levonás['másfélkezes_egykézzel'].
         (A kétkezes-1-kézzel eset SZITUÁCIÓ, nem itt emittált sor - lásd konstansok.yaml → kétkezes_egykézzel.)
@@ -135,7 +135,7 @@ class Fegyver:
         grips = [(forg, None)]
         egykezes_levonas = EGYKEZES_FORGATAS.get(forg)
         if egykezes_levonas and egykezes_levonas.get("mindig_emittált"):
-            grips.append((forg + " · 1 kéz", egykezes_levonas))
+            grips.append((forg + " · 1 kézzel", egykezes_levonas))
 
         eredmeny = []
         for forg_cimke, mk in grips:
@@ -242,7 +242,7 @@ def teszt_regresszio():
                 jel = "✅" if (te1 == vte and ve1 == vve) else "❌"
                 if jel == "❌":
                     ok = False
-                print(f"  {jel} {r['név']:24s} {aktor:24s} · 1 kéz (szituáció) TÉ {te1:>3}(≈{vte}) VÉ {ve1:>3}(≈{vve})")
+                print(f"  {jel} {r['név']:24s} {aktor:24s} · 1 kézzel (szituáció) TÉ {te1:>3}(≈{vte}) VÉ {ve1:>3}(≈{vve})")
     print(f"  → {'MIND OK' if ok else 'ELTÉRÉS!'}\n")
     return ok
 

@@ -34,17 +34,20 @@ taktikák:
   id: "fárasztás"
   fokozatos: false
   módosítók: {}
-  megjegyzés: "VÉ csökkentés: 3/kör fixen, nincs támadódobás. Fegyverhátrányból nem alkalmazható."
+  hatások:
+  - { hatás: "override", érték: 3, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés: 3 fixen", feltétel: "" }
+  - { hatás: "flat", érték: 1, cél: "vé_csökkentés", megjegyzés: "Fegyverelőnyben: +1 VÉ csökkentés", feltétel: "harci_helyzet:fegyverelőny" }
+  megjegyzés: "Nincs támadódobás."
   megkötések:
   - típus: "harci_helyzet"
     mód: "tiltott"
     érték: "Fegyverhátrány"
   - típus: "harci_helyzet"
     mód: "tiltott"
-    érték: "Láthatatlanul harcolás - hallhatóan"
+    érték: "Láthatatlan - részlegesen"
   - típus: "harci_helyzet"
     mód: "tiltott"
-    érték: "Láthatatlanul harcolás - csendesen"
+    érték: "Láthatatlan - teljesen"
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null

@@ -7,6 +7,7 @@ export interface FegyverResultMód {
   aktor: string;
   jelleg: string;
   sebzéstípus: 'elsődleges' | 'másodlagos';
+  Forgatás: string;
   TÉ: number;
   VÉ: number;
   SP: number;

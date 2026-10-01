@@ -176,6 +176,7 @@ export interface StatuszHatas {
   cél: string;
   alcél?: string;
   megjegyzés?: string;
+  feltétel?: string;
 }
 
 export interface StatuszFok {

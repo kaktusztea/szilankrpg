@@ -3107,7 +3107,14 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": [],
+        "módosítók": [
+          {
+            "cél": "vé_csökkentés",
+            "érték": 1,
+            "mód": "flat",
+            "feltétel": "taktika:fárasztás"
+          }
+        ],
         "próba_enyhítések": []
       }
     ],
