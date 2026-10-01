@@ -1,4 +1,5 @@
 import type { Karakter, Fortely } from '../engine/types';
+import { képzettségSzint } from '../engine/utils';
 import type { GameData } from '../engine/data-loader';
 import type { UndoPatch } from '../hooks/useUndo';
 import { njkLimitBlocked } from '../hooks/njk-slots';
@@ -15,7 +16,7 @@ export function makeFieldSetter(
     undoLabel: (prev: Karakter[K], next: Karakter[K]) => string,
   ) {
     return (val: Karakter[K]) => {
-      // pushUndo must run OUTSIDE the setKarakter updater — StrictMode invokes
+      // pushUndo must run OUTSIDE the setKarakter updater - StrictMode invokes
       // updaters twice in dev, which would push the undo entry twice.
       pushUndo(undoLabel(karakter[field], val), [{ field: field as string, prev: karakter[field] }], val);
       setKarakter(prev => prev ? { ...prev, [field]: val } : prev);
@@ -43,8 +44,8 @@ export function makeAnyanyelvSetter(
 
 /** Fortélyok screen props builder. */
 export function buildFortelyokProps(karakter: Karakter, data: GameData) {
-  const fegyverNevek = [...new Set(data.fegyverek.map(f => f.Alapnév || f.Fegyver))];
-  const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
+  const fegyverNevek = [...new Set(data.fegyverek.map(f => f.név))];
+  const nyelvtanulásSzint = képzettségSzint(karakter, 'Nyelvtanulás');
   return { fegyverNevek, nyelvtanulásSzint };
 }
 

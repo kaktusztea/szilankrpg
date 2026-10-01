@@ -23,7 +23,7 @@ export function useGameDataLoader() {
       if (!isValidKarakter(d.emptyKarakter)) {
         const v = validateKarakter(d.emptyKarakter);
         const details = !v.valid ? v.missing.join(', ') : '';
-        setError(`Az empty_karakter.json érvénytelen — hiányzó mezők: ${details}`);
+        setError(`Az empty_karakter.json érvénytelen - hiányzó mezők: ${details}`);
         return;
       }
       const refErr = validateKarakterData(d.emptyKarakter, d);
@@ -38,7 +38,7 @@ export function useGameDataLoader() {
         try {
           const parsed = JSON.parse(saved);
           if (isValidKarakter(parsed)) {
-            // `id`: legacy (v1) mező — a régi mentések uid helyett ezt tartalmazták
+            // `id`: legacy (v1) mező - a régi mentések uid helyett ezt tartalmazták
             const uid = parsed.uid || (parsed as Karakter & { id?: string }).id || generateUid();
             const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [], kiterjesztés_negálva: parsed.kiterjesztés_negálva ?? [] };
             localStorage.setItem(`szilank_char_${uid}`, JSON.stringify(migrated));
@@ -66,7 +66,7 @@ export function useGameDataLoader() {
               setInitialDirty(true);
               return;
             } else {
-              setError(`Karakter betöltési hiba — hiányzó mezők: ${v.missing.join(', ')}`);
+              setError(`Karakter betöltési hiba - hiányzó mezők: ${v.missing.join(', ')}`);
               return;
             }
           } catch { /* fall through */ }

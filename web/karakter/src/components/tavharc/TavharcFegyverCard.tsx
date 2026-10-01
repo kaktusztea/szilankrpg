@@ -1,6 +1,7 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉBontás, calcTámadásLabel, getFortélyCÉ } from './helpers';
+import { calcCÉBontás, calcTámadásLabel, getFortélyCÉ } from './helpers';
+import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './mesterfegyver-calc';
 
 interface Props {
   index: number;
@@ -8,7 +9,6 @@ interface Props {
   karakter: Karakter;
   session: Session;
   data: GameData;
-  idea: number;
   gyorsaság: number;
   újratöltésEnyhítés: number;
   onSelect: () => void;
@@ -17,16 +17,19 @@ interface Props {
   onIdeaPopup: () => void;
 }
 
-export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, idea, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
+export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const tf = k.távfegyverek[index];
   const konstansok = data.konstansok;
-  const def = data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tf.alap.toLowerCase());
+  const def = data.tavfegyverek.find(d => d.név.toLowerCase() === tf.alap.toLowerCase());
 
+  // Per-fegyver CÉ-Idea delta (Modell 2, spec §17: az Idea 1:1 a CÉ-hez). A v2 CÉ a idea_default-ot
+  // MÁR tartalmazza, ezért a példány Ideájának a default-tól való ELTÉRÉSE módosít.
+  const ideaDelta = tf.idea - (def?.idea_default ?? 0);
   const fortélyCÉ = getFortélyCÉ(k, data, session, tf.alap);
-  const bontás = calcCÉBontás(k, data, session, def, idea, fortélyCÉ, tf.alap);
+  const bontás = calcCÉBontás(k, data, session, def, ideaDelta, fortélyCÉ, tf.alap);
   const mf = getMfFok(k, tf.alap);
-  const sebesség = parseInt(def?.Sebesség ?? '-1') || -1;
-  const tám = bontás.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
+  const sebesség = def?.Sebesség ?? -1;
+  const tám = bontás.isMágikus ? '-' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
   const hasError = mfKövetelményHiba(k, data, tf.alap);
 
   return (
@@ -50,7 +53,7 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
         </button>
         {!bontás.isMágikus && (
           <button className="he-field-btn" onClick={e => { e.stopPropagation(); onIdeaPopup(); }}>
-            Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong>
+            Idea: <strong>{tf.idea >= 0 ? '+' : ''}{tf.idea}</strong>
           </button>
         )}
       </div>

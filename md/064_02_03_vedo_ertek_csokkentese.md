@@ -6,25 +6,25 @@ Ebben az esetben viszont ideiglenesen **csökkented ellenfeled Védő Értékét
 
 Egy tapasztalt harcos magasabb `Védő Értékkel` indul, így ő tovább képes magas szinten teljesíteni, de például több ellenfél ellen ő is hamar kifulladhat - mindenki folyamatosan csökkent rajta Védő Értéket - és váratlan vereséget szenvedhet.
 
-Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező előnyben van. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
+Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek fegyverhossz-kategória-különbségétől függ. Értelemszerűen a nagyobb fegyverhossz-kategóriával rendelkező előnyben van. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
-Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
+Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_03_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
 
-### ⚜️ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
+### ⚜️ [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány)
 
-- Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél
+- Fegyvered mérete legalább `2 fegyverhossz-kategóriával` rövidebb ellenfeledénél
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20P`
 
-### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
+### ⚜️ [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság)
 
-- A felek fegyverméreteinek különbsége kisebb `1 pengehossznál`
+- A felek fegyverhossz-kategóriáinak különbsége kisebb `2 kategóriánál`
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20P`
 
-### ⚜️ [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
+### ⚜️ [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
-- Fegyverméret-különbség legalább `+1` pengehossz
+- Fegyverméret-különbség legalább `+2` fegyverhossz-kategória
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20P`
 - ⚡ Példa: **Hosszú kard**  vs. **Tőr**
 - ⚡ Példa: **Alabárd** vs **Hosszú kard**

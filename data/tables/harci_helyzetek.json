@@ -1,7 +1,7 @@
 [
   {
     "név": "Belharci helyzet",
-    "infó": "Közelharc harcmodor + max 0 pengehossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0.",
+    "infó": "Közelharc harcmodor + max 0 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0.",
     "megjegyzések": [
       {
         "text": "Ha a képzett harcosnak sikerül ellenfele fegyvere mögé, testközelébe kerülni, ebből előnyt kovácsolhat."
@@ -41,7 +41,7 @@
     "fegyver_override": {
       "feltétel": [
         {
-          "forrás": "aktív_fegyver_pengehossz",
+          "forrás": "aktív_fegyver_fegyverhossz",
           "operátor": ">",
           "érték": 0
         }
@@ -389,16 +389,16 @@
   },
   {
     "név": "Közrefogás",
-    "infó": "Semlegesíti ellenfél Pengeelőnyét → Alappenge.",
+    "infó": "Semlegesíti ellenfél Fegyverelőnyét → Fegyverazonosság.",
     "megjegyzések": [
       {
-        "text": "Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges Pengeelőny harci helyzetét."
+        "text": "Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges Fegyverelőny harci helyzetét."
       },
       {
-        "text": "Példa: két tőrös közrefog egy Hosszú kardost — a hosszú kardos Pengeelőny helyzetből Alappenge helyzetbe kerül."
+        "text": "Példa: két tőrös közrefog egy Hosszú kardost - a hosszú kardos Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
       },
       {
-        "text": "Példa: két tőrös közrefog egy lándzsást — a lándzsás Pengeelőny helyzetből Alappenge helyzetbe kerül."
+        "text": "Példa: két tőrös közrefog egy lándzsást - a lándzsás Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
       }
     ],
     "hatások": [],
@@ -539,10 +539,10 @@
         "text": "Minden egyes kategóriakülönbségnél a nagyobb lény +1 VÉ csökkentést okoz."
       },
       {
-        "text": "Példa: Goblin vs Ogár 2 kategória különbség — az Ogár +2 VÉ csökkentés bónuszt kap."
+        "text": "Példa: Goblin vs Ogár 2 kategória különbség - az Ogár +2 VÉ csökkentés bónuszt kap."
       },
       {
-        "text": "A Pengeméret-különbség és a lények méret különbsége két, egymás mellett működő szabály."
+        "text": "A Fegyverméret-különbség és a lények méret különbsége két, egymás mellett működő szabály."
       }
     ],
     "hatások": [],
@@ -654,7 +654,7 @@
         "text": "Manőver: Precíz támadás használható (páncél megkerüléséhez)."
       },
       {
-        "text": "Manőver: Leütés hátulról, Rávetődés hátulról — követelményük az Orvtámadás helyzet."
+        "text": "Manőver: Leütés hátulról, Rávetődés hátulról - követelményük az Orvtámadás helyzet."
       },
       {
         "text": "Manőverek és Orvtámadás viszonya: Ellenpróba dobás csak."
@@ -681,42 +681,42 @@
     "feltétel_kulcs": "harci_helyzet:orvtámadás"
   },
   {
-    "név": "Pengeelőny",
+    "név": "Fegyverelőny",
     "infó": "VÉ csökkentés: 2+k20P.",
     "megjegyzések": [
       {
-        "text": "Fegyvered mérete legalább 1 pengével hosszabb ellenfeledénél."
+        "text": "Fegyvered mérete legalább 2 kategóriával hosszabb ellenfeledénél."
       },
       {
-        "text": "Csak akkor kerül valaki Pengeelőnybe — és így a másik Pengehátrányba — ha ez a pengeméret különbség megvan."
+        "text": "Csak akkor kerül valaki Fegyverelőnybe - és így a másik Fegyverhátrányba - ha ez a fegyverméret különbség megvan."
       }
     ],
     "hatások": [],
-    "id": "pengeelőny",
+    "id": "fegyverelőny",
     "csoport": "negatív",
     "rejtett": true,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [],
-    "feltétel_kulcs": "harci_helyzet:pengeelőny"
+    "feltétel_kulcs": "harci_helyzet:fegyverelőny"
   },
   {
-    "név": "Pengehátrány",
+    "név": "Fegyverhátrány",
     "infó": "VÉ csökkentés: k20P.",
     "megjegyzések": [
       {
-        "text": "Fegyvered mérete legalább 1 pengével rövidebb ellenfeledénél."
+        "text": "Fegyvered mérete legalább 2 kategóriával rövidebb ellenfeledénél."
       },
       {
-        "text": "A VÉ csökkentést tekintve hátrányban vagy az Alappengéhez képest, viszont vannak szituációk, mint a Fárasztó taktika, ahol korlátozó tényező lehet."
+        "text": "A VÉ csökkentést tekintve hátrányban vagy a Fegyverazonossághoz képest, viszont vannak szituációk, mint a Fárasztó taktika, ahol korlátozó tényező lehet."
       }
     ],
     "hatások": [],
-    "id": "pengehátrány",
+    "id": "fegyverhátrány",
     "csoport": "negatív",
     "rejtett": true,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [],
-    "feltétel_kulcs": "harci_helyzet:pengehátrány"
+    "feltétel_kulcs": "harci_helyzet:fegyverhátrány"
   },
   {
     "név": "Pusztakezes harc",

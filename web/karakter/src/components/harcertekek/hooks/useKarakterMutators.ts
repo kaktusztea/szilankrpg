@@ -19,7 +19,7 @@ export function useKarakterMutators(data: GameData, setKarakter: SetKarakter) {
       const removed = prev.fegyverek[idx];
       const fegyverek = prev.fegyverek.filter((_, i) => i !== idx);
       const fDef = lookupFegyver(data.fegyverek, removed.alap);
-      const displayName = fDef?.Alapnév || removed.alap;
+      const displayName = fDef?.név || removed.alap;
       const fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === removed.alap)));
       const session = { ...prev.session };
       if (session.aktív_fegyver_index >= fegyverek.length) { session.aktív_fegyver_index = 0; session.kétkezes_harc = false; }
@@ -39,7 +39,7 @@ export function useKarakterMutators(data: GameData, setKarakter: SetKarakter) {
 
   const setMfFok = useCallback((fegyverAlap: string, fok: number) => {
     const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
-    const displayName = fDef?.Alapnév || fegyverAlap;
+    const displayName = fDef?.név || fegyverAlap;
     setKarakter(prev => {
       if (!prev) return prev;
       let fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fegyverAlap)));

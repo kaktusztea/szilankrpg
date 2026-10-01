@@ -12,7 +12,7 @@ interface Deps {
 // --- Patch builders ---
 
 function buildTulajdonságPatch(prev: Tulajdonsagok, next: Tulajdonsagok): UndoPatch[] {
-  // Tulajdonságok is a flat object — store as scalar overwrite, tagged with the
+  // Tulajdonságok is a flat object - store as scalar overwrite, tagged with the
   // changed key so edits to different properties don't coalesce into one entry.
   const prevR = prev as unknown as Record<string, number>;
   const nextR = next as unknown as Record<string, number>;
@@ -43,16 +43,16 @@ function buildKépzettségPatch(prev: Kepzettseg[], next: Kepzettseg[]): UndoPat
 
 function buildFortélyPatch(prev: Fortely[], next: Fortely[]): UndoPatch[] {
   if (next.length > prev.length) {
-    // Added — find the new one
+    // Added - find the new one
     const added = next.find(n => !prev.some(p => p.név === n.név && p.spec_elem === n.spec_elem));
     if (added) return [{ field: 'fortélyok', op: 'add', item: added }];
   }
   if (next.length < prev.length) {
-    // Removed — find which was removed
+    // Removed - find which was removed
     const removedIdx = prev.findIndex(p => !next.some(n => n.név === p.név && n.spec_elem === p.spec_elem));
     if (removedIdx >= 0) return [{ field: 'fortélyok', op: 'remove', index: removedIdx, item: prev[removedIdx] }];
   }
-  // Updated (fok change) — same length
+  // Updated (fok change) - same length
   for (let i = 0; i < prev.length; i++) {
     if (i < next.length && (prev[i].fok !== next[i].fok || prev[i].név !== next[i].név || prev[i].spec_elem !== next[i].spec_elem)) {
       return [{ field: 'fortélyok', op: 'update', index: i, prev: prev[i] }];

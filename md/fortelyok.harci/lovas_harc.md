@@ -13,7 +13,10 @@ Hátason ülve sem esel kétségbe, ha harcolni kell.
 ### Alapeset (képzetlenül)
 
 ```
-TÉ/VÉ: -9
+→ TÉ/VÉ: -9
+→ Fegyverméretre +2 bónusz
+→ Minimum fegyverméret: 3
+  (követelmény)
 ````
 
 <br />
@@ -23,10 +26,12 @@ TÉ/VÉ: -9
 🔒 **Követelmény**:
 - Harcmodor - `6.szint`
 - Lovaglás - `6.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3` lovas bónusz
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
@@ -35,10 +40,12 @@ TÉ/VÉ: -9
 🔒 **Követelmény**:
 - Harcmodor - `9.szint`
 - Lovaglás - `9.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+6, VÉ:+6` lovas bónusz
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
@@ -47,10 +54,12 @@ TÉ/VÉ: -9
 🔒 **Követelmény**:
 - Harcmodor - `12.szint`
 - Lovaglás - `12.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+9, VÉ:+9` lovas bónusz
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+- Fegyverméretre: `+2` bónusz
 
 ---
 ### Speciális

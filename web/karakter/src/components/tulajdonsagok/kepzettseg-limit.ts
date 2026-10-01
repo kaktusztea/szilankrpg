@@ -1,7 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import { evaluate, buildContext } from '../../engine/reactive';
 
-/** Képzettség szint limitek (engine_spec §19) — a rules.json-ból, NEM újraszámolva. */
+/** Képzettség szint limitek (engine_spec §19) - a rules.json-ból, NEM újraszámolva. */
 export interface KépzettségLimitek {
   primer: number;
   szekunder: number;
@@ -12,7 +12,7 @@ const LIMIT_RULE_IDS = new Set(['képzettség_max_szint_primer', 'képzettség_m
 /**
  * A primer/szekunder képzettségek max szintje a karakter TSz-e alapján.
  * A formula a `rules.json`-ban él (`képzettség_max_szint_primer|szekunder`), itt csak
- * kiértékeljük — így a plafon (`konstansok.arányok.képzettség_max_szint`) és a
+ * kiértékeljük - így a plafon (`konstansok.arányok.képzettség_max_szint`) és a
  * szekunder ráhagyás (`képzettség_nemprimer_max_szint_plusz`) egy helyen van definiálva.
  */
 export function képzettségLimitek(data: GameData, tsz: number): KépzettségLimitek {

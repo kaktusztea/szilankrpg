@@ -5,26 +5,26 @@ maxfok: 3
 session_toggle: false
 emlékeztető: true
 kiérdemelhető: false
-többszörösség: 
+többszörösség:
   spec_típus: ""
   spec_lista: []
 csoport: "harci"
-leírások: 
+leírások:
 - text: "Hátason ülve harcolsz."
-megjegyzések: 
+megjegyzések:
 - text: ""
-kiterjeszti: 
+kiterjeszti:
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok: 
+fokok:
 - fok: 0
   követelménytext: []
   követelmények: ""
-  hatástext: 
+  hatástext:
   - text: "Lovas harc fortély nélkül: TÉ:-9, VÉ:-9. Lenti bónuszok NEM járnak."
-  módosítók: 
+  módosítók:
   - cél: "TÉ"
     érték: -9
     mód: "flat"
@@ -41,18 +41,23 @@ fokok:
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
     - text: "Lovaglás - 6.szint"
-  követelmények: 
+    - text: "Minimum fegyverméret: 3"
+  követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
     típus: "képzettség"
   - név: "Lovaglás"
     érték: 6
     típus: "képzettség"
-  hatástext: 
+  - típus: "min_fegyverméret"
+    érték: 3
+    feltétel: "harci_helyzet:lovas_harc"
+  hatástext:
   - text: "Lovas harc szituációban: TÉ:+3, VÉ:+3."
-  - text: "Fegyverméret: +1 penge, min 1 penge."
+  - text: "Fegyverméret: +2 kategória bónusz"
+  - text: "Forgatott fegyverméret-kategória minimum: 3"
   - text: "Lovas Manővereket végezhetsz."
-  módosítók: 
+  módosítók:
   - cél: "TÉ"
     érték: 3
     mód: "flat"
@@ -65,14 +70,8 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: "harci_helyzet:lovas_harc"
-  - cél: "pengehossz"
-    érték: 1
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:lovas_harc"
-  - cél: "min_pengehossz"
-    érték: 1
+  - cél: "fegyverhossz"
+    érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
@@ -81,18 +80,23 @@ fokok:
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
     - text: "Lovaglás - 9.szint"
-  követelmények: 
+    - text: "Minimum fegyverméret: 3"
+  követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
     típus: "képzettség"
   - név: "Lovaglás"
     érték: 9
     típus: "képzettség"
-  hatástext: 
+  - típus: "min_fegyverméret"
+    érték: 3
+    feltétel: "harci_helyzet:lovas_harc"
+  hatástext:
   - text: "Lovas harc szituációban: TÉ:+6, VÉ:+6."
-  - text: "Fegyverméret: +1 penge, min 1 penge."
+  - text: "Fegyverméret: +2 kategória bónusz"
+  - text: "Forgatott fegyverméret-kategória minimum: 3"
   - text: "Lovas Manővereket végezhetsz."
-  módosítók: 
+  módosítók:
   - cél: "TÉ"
     érték: 6
     mód: "flat"
@@ -105,14 +109,8 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: "harci_helyzet:lovas_harc"
-  - cél: "pengehossz"
-    érték: 1
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:lovas_harc"
-  - cél: "min_pengehossz"
-    érték: 1
+  - cél: "fegyverhossz"
+    érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
@@ -121,18 +119,23 @@ fokok:
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 12.szint"
     - text: "Lovaglás - 12.szint"
-  követelmények: 
+    - text: "Minimum fegyverméret: 3"
+  követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 12
     típus: "képzettség"
   - név: "Lovaglás"
     érték: 12
     típus: "képzettség"
-  hatástext: 
+  - típus: "min_fegyverméret"
+    érték: 3
+    feltétel: "harci_helyzet:lovas_harc"
+  hatástext:
   - text: "TÉ:+9, VÉ:+9 lovas bónusz."
-  - text: "Fegyverméret: +1 penge, min 1 penge."
+  - text: "Fegyverméret: +2 kategória bónusz"
+  - text: "Forgatott fegyverméret-kategória minimum: 3"
   - text: "Lovas Manővereket végezhetsz."
-  módosítók: 
+  módosítók:
   - cél: "TÉ"
     érték: 9
     mód: "flat"
@@ -145,14 +148,8 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: "harci_helyzet:lovas_harc"
-  - cél: "pengehossz"
-    érték: 1
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:lovas_harc"
-  - cél: "min_pengehossz"
-    érték: 1
+  - cél: "fegyverhossz"
+    érték: 2
     mód: "flat"
     forrás: ""
     arány: 0

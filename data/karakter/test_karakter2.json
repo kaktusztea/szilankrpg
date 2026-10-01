@@ -460,7 +460,8 @@
   ],
   "távfegyverek": [
     {
-      "alap": "Rövid íj"
+      "alap": "Rövid íj",
+      "idea": 0
     }
   ],
   "páncél": {

@@ -72,7 +72,7 @@ function maxExistingVersion(base: string, names: string[]): number {
   return maxV;
 }
 
-// Builds "<base> N" (no "v" prefix — the number alone marks the version).
+// Builds "<base> N" (no "v" prefix - the number alone marks the version).
 // If maxLen is given and it would exceed it, the base is truncated (trimming trailing
 // whitespace) so that " N" still fits.
 function buildVersionedName(base: string, ver: number, maxLen?: number): string {
@@ -80,7 +80,7 @@ function buildVersionedName(base: string, ver: number, maxLen?: number): string 
   let trimmedBase = base;
   if (maxLen !== undefined && trimmedBase.length + suffix.length > maxLen) {
     // ponytail: truncation may collide with an existing truncated name at the same version
-    // (extreme edge — needs two ~40-char names sharing a prefix). Ceiling: rare with a
+    // (extreme edge - needs two ~40-char names sharing a prefix). Ceiling: rare with a
     // 16-slot cap; upgrade path = re-scan uniqueness against the truncated base if it bites.
     trimmedBase = trimmedBase.slice(0, maxLen - suffix.length).trimEnd();
   }
@@ -151,7 +151,7 @@ function isBackupFile(obj: unknown): obj is { szilánk_backup: true; karakterek:
 
 function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter; undo: any[] } | { error: string } {
   const validation = validateKarakter(obj);
-  if (!validation.valid) return { error: `Érvénytelen karakter — hiányzó mezők: ${validation.missing.join(', ')}` };
+  if (!validation.valid) return { error: `Érvénytelen karakter - hiányzó mezők: ${validation.missing.join(', ')}` };
   const raw = obj as Record<string, any>;
   const refErr = validateKarakterData(raw as Karakter, data);
   if (refErr) return { error: `Referencia hiba: ${refErr}` };

@@ -12,7 +12,7 @@ export function FokPickerPopup({ név, maxfok, currentFok, onPick, onClose }: Pr
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-        <label>{név} — fok:</label>
+        <label>{név} - fok:</label>
         <div className="kep-prompt-flex-fok">
           {Array.from({ length: maxfok }, (_, i) => i + 1).map(n => (
             <button key={n} className={`fort-fok-btn${currentFok === n ? ' active' : ''}`}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Harci láz — a FOKOZATLÉPKEDÉS mechanikájának modellje.
+"""Harci láz - a FOKOZATLÉPKEDÉS mechanikájának modellje.
 
 A hangolás lényege nem a nyers bónusz, hanem hogy a fokozatok közti lépkedést JÓL kell
 taktikázni. Ez a modul azt méri, hogy egy adott képességű karakter egy adott stratégiával
@@ -41,7 +41,7 @@ def valassz_mod(fok, cél):
     - fok < cél  → feljebb: Előny (mennél nagyobb a hézag, annál mohóbb, de a +2 kockázatos).
     - fok > cél  → lejjebb: Hátrány (a −2 gyors, de 'mégis siker → 4.fok' csapda).
     - fok == cél → tartani próbál: óvatos +1 (inkább feljebb egyet, mint véletlen elszabadulás
-                    Hátrány−2-vel). Ez tudatos stratégiai döntés — modellezhető másképp is.
+                    Hátrány−2-vel). Ez tudatos stratégiai döntés - modellezhető másképp is.
     """
     if fok < cél:
         return 2 if (cél - fok) >= 2 else 1     # nagy hézag → Előny+2 (mohó), kis hézag → +1

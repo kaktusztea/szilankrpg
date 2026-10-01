@@ -1,4 +1,4 @@
-# Harcszimuláció Spec — AI tesztharc futtatáshoz
+# Harcszimuláció Spec - AI tesztharc futtatáshoz
 
 > **Cél**: egyetlen önhordó dokumentum, amiből egy AI **külső forrás olvasása nélkül**
 > futtatható, hiteles közelharci szimulátort tud írni a Szilánk RPG szabályaihoz.
@@ -15,7 +15,7 @@
 
 Egy szimulátornak ezt a 6 lépést kell megvalósítania, ebben a sorrendben:
 
-1. **Statblokk felépítése** (§2) — minden harcosra egyszer, harc előtt. Statikus.
+1. **Statblokk felépítése** (§2) - minden harcosra egyszer, harc előtt. Statikus.
 2. **Kör eleji regeneráció** (§6.1)
 3. **Kezdeményezés** (§6.2)
 4. **Akciók feloldása sorrendben** (§6.3–§6.5)
@@ -35,12 +35,12 @@ Egy szimulátornak ezt a 6 lépést kell megvalósítania, ebben a sorrendben:
 
 ## §1 Adatforrások (single source of truth)
 
-Ha a specben szereplő szám és a data layer ütközik, **a data layer nyer** — és a spec hibás, jelezd.
+Ha a specben szereplő szám és a data layer ütközik, **a data layer nyer** - és a spec hibás, jelezd.
 
 | Tartalom | Fájl |
 |---|---|
 | Konstansok (harcérték alap, MF bónusz, MGT táblák, FT enyhítés) | `data/tables/konstansok.json` |
-| Fegyverek (83 db) | `data/tables/fegyverek.json` |
+| Fegyverek (83 db) | `archive/data_fegyverek_v1/fegyverek.json` (kivezetett v1) |
 | Pajzsok | `data/tables/pajzsok.json` |
 | Harcmodor szint → TÉ/VÉ/CÉ bónusz | `data/tables/harcmodor_kepzettsegek_bonuszok.json` |
 | Taktikák (19 db) | `data/tables/taktikak.json` |
@@ -92,10 +92,12 @@ harcos:
   fortélyok: [{ név, fok, spec_elem }]
 
   # --- felszerelés ---
-  fegyver:                                # az AKTÍV fegyver (fegyverek.json egy sora)
-    { Fegyver, TÉ, VÉ, SP, Sebesség, "Sebzés módja", Pengehossz,
+  fegyver:                                # az AKTÍV fegyver (fegyverek_v2.json egy sora)
+    { Fegyver, TÉ, VÉ, SP, Sebesség, "Sebzés módja", Fegyverhossz,
       "Erőbónusz limit", Átütés, Íves, Kategória }
-  fegyver_idea: -5..+5                    # §3.10b — a webapp NEM számol vele!
+    # v2: a fegyver módok[] listát tartalmaz (aktor/jelleg/sebzéstípus S-V-Z/TÉ/VÉ/SP/Átütés/
+    #     Sebesség/Forgatás/Erőlimit/FP); az aktív mód adja a fenti TÉ/VÉ/SP/sebzésjelleg értékeket
+  fegyver_idea: -5..+5                    # §3.10b - a webapp NEM számol vele!
   fegyverfogás: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes
   bal_fegyver: <fegyver vagy null>        # kétkezes / hárító fogáshoz
   pajzs_méret: "" | kis | közepes | nagy
@@ -140,7 +142,7 @@ harcos:
 
 ---
 
-## §3 Származtatott értékek — formulák
+## §3 Származtatott értékek - formulák
 
 Sorrend kötött: a `páncél_MGT` kell a `harckeret`hez, a `harckeret` a `támadások`hoz.
 
@@ -161,7 +163,7 @@ KÉ = 0 + gyorsaság + intelligencia + tsz + fortély_KÉ + taktika_KÉ
 ```
 
 ⚠ **Csapda**: a `rules.json` KÉ szabálya körkörös függőség miatt **NEM** tartalmazza a
-fortély módosítókat — azokat a `HarcScreen` utólag adja hozzá. A `golden.test.ts`
+fortély módosítókat - azokat a `HarcScreen` utólag adja hozzá. A `golden.test.ts`
 `KÉ = 14` állítása a fortély-mentes köztes érték. A tényleges KÉ a referencia
 karakternél **19** (14 + Gyors kezdeményezés 2.fok +4 + Harckeret növelés 1.fok +1).
 
@@ -185,7 +187,7 @@ VÉ            = VÉ_alap + harcmodor_bónusz[szint].VÉ + fegyver.VÉ
                 + mesterfegyver[fok].VÉ + fortély_VÉ
 ```
 
-A pajzs/hárító bónusz **nem** része — az a harc közben adódik hozzá (§3.7).
+A pajzs/hárító bónusz **nem** része - az a harc közben adódik hozzá (§3.7).
 
 ### 3.5 SP (a k20 nélküli fix rész)
 
@@ -228,7 +230,7 @@ felszerelés_mgt   = MAX(0, felszerelés_terhelés - felszerelés_keret)
 2 pont:  nagy tárgy · kétkezes kard · nagy pajzs
 ```
 
-Fegyverekre **nem** a páncél MGT pontrendszere érvényes — a fegyver kizárólag ezen a
+Fegyverekre **nem** a páncél MGT pontrendszere érvényes - a fegyver kizárólag ezen a
 felszerelés-terhelésen keresztül hat (ami `-1 TÉ` és `-1 harckeret` pontonként, ha
 túllépi a keretet).
 
@@ -283,7 +285,7 @@ Merevvértviselet fortély TÉ-büntetés csökkentés: fok 1 → 5, fok 2 → 1
 
 Mesterfegyver bónusz: fok 1 → TÉ/VÉ/CÉ/SP +1 · fok 2 → +2 · fok 3 → +3
 
-### 3.10b Fegyver Idea (minőség) — `[-5; +5]`
+### 3.10b Fegyver Idea (minőség) - `[-5; +5]`
 
 Forrás: `md/068_01_14`. A karakter séma tartalmazza: `fegyverek[].idea`.
 
@@ -294,7 +296,7 @@ Forrás: `md/068_01_14`. A karakter séma tartalmazza: `fegyverek[].idea`.
 | -3 | -2 | -1 | -3 |
 | -2 | -1 | -1 | -2 |
 | -1 | -1 | 0 | -1 |
-| **0** | — | — | — |
+| **0** | - | - | - |
 | +1 | +1 | 0 | +1 |
 | +2 | +1 | +1 | +2 |
 | +3 | +2 | +1 | +3 |
@@ -306,12 +308,12 @@ de sem a `rules.json`, sem a `fegyver-calc.ts` nem használja. A `golden.test.ts
 `idea: 0`-s fegyverekkel készültek, tehát az egyezés nem bizonyítja a hiányt.
 Szimulátorban **implementálni kell**, ha nem-0 Ideájú fegyverrel tesztelsz.
 
-### 3.10c Másfélkezes fegyver egy kézzel (MK) — NE alkalmazd kétszer
+### 3.10c Másfélkezes fegyver egy kézzel (MK) - NE alkalmazd kétszer
 
 `md/068_01_06`: MK fegyver 1 kézzel forgatva `TÉ-2, VÉ-2`, Átütés megszűnik,
 Erőbónusz limit ~2-re csökken.
 
-⚠ Ez a büntetés **már be van építve** a `fegyverek.json` `(1K)` sorába — a `(1K)` és `(2K)`
+⚠ Ez a büntetés **már be van építve** a `fegyverek.json` `(1K)` sorába - a `(1K)` és `(2K)`
 két külön entry, az `MK_pár` mező kapcsolja őket. Használd a megfelelő sort, és NE vonj le
 újra semmit.
 
@@ -321,10 +323,11 @@ Adat-állapot (§16/10): `Kard, másfélkezes` és `Kard, mesterkard` követi a 
 ### 3.11 Kétkezes harc
 
 ```
-nagyobb = a nagyobb Pengehossz-ú fegyver (egyenlőségnél a jobb kéz)
+nagyobb = a nagyobb Fegyverhossz-ú fegyver (egyenlőségnél a jobb kéz)
 harcmodor = a NAGYOBB fegyver kategóriájából
-összpenge = jobb.Pengehossz + bal.Pengehossz
-HA összpenge > 2.0  →  a fegyverek harcértéke 0 (nem használható együtt)
+össz_fegyverhossz = jobb.Fegyverhossz + bal.Fegyverhossz
+HA valamelyik fegyver Fegyverhossza > kétkezes_harc_max_egy_fegyver (3)  →  a fegyverek harcértéke 0
+HA össz_fegyverhossz > kétkezes_harc_max_fegyverméret (6)  →  a fegyverek harcértéke 0 (nem használható együtt)
 
 fok = "Kétkezes harc" fortély foka (0 = nincs fortély)
 fok 0 → csak a nagyobb fegyver TÉ/VÉ, plusz TÉ:-3 / VÉ:-3, harckeret +1, MF: nincs
@@ -332,8 +335,8 @@ fok 1 → mindkét fegyver TÉ/VÉ összeadódik, TÉ/VÉ ±0, harckeret +2, MF:
 fok 2 → ua., harckeret +3, MF: a nagyobb fegyveré
 fok 3 → ua., harckeret +4, MF: mindkettőé összeadva
 
-pengelevonás = FLOOR(összpenge / 0.5)
-harckeret    = harcmodor_szint + gyorsaság + fortély_harckeret + fok0_bónusz - pengelevonás
+fegyverlevonás = FLOOR(össz_fegyverhossz / kétkezes_harc_fegyverlevonás_osztó)   # osztó = 2
+harckeret    = harcmodor_szint + gyorsaság + fortély_harckeret + fok0_bónusz - fegyverlevonás
 támadások    = 1 + FLOOR(harckeret / nagyobb.Sebesség)
 SP           = a JOBB kéz (ügyesebb) fegyveréből számolva
 ```
@@ -411,7 +414,7 @@ netÉH(hatások):
 ```
 
 ⚠ A clamp `[-2, +2]` a webapp `netElőnySzint()`-jének viselkedése. Az `enyhít` operátor
-ugyanúgy **pozitív** irányba tol, mint az `előny` — ez a fortélyok hatásmérséklése.
+ugyanúgy **pozitív** irányba tol, mint az `előny` - ez a fortélyok hatásmérséklése.
 
 ### Származtatott előny: a Támadó dobás k20-a a Sebzésdobásra
 
@@ -427,7 +430,7 @@ kap clampet `[-2, +2]`.
 
 ---
 
-## §5 A VÉ csökkentés rendszere — a harcrendszer motorja
+## §5 A VÉ csökkentés rendszere - a harcrendszer motorja
 
 Ez a legfontosabb és leggyakrabban félreértett alrendszer. A harc **nem** attól dől el,
 hogy elfogy az ÉP, hanem attól, hogy összeomlik a VÉ, és a túldobás miatt a sebzés
@@ -456,21 +459,20 @@ VÉ_aktuális(védő) =
 Ez azt jelenti: `Öngyilkos roham` (VÉ-10) egyedül a limitet éri el; kombinációk nem tudnak
 ennél mélyebbre menni.
 
-### 5.2 Pengeméret-viszony (páronkénti!)
+### 5.2 Fegyverhossz-viszony (páronkénti!)
 
 ```
 fegyverviszony(támadó, védő):
-    d = támadó.fegyver.Pengehossz - védő.fegyver.Pengehossz
-    d >= 1   → "fegyverelőny"        # a támadó előnyben
-    d <= -1  → "fegyverhátrány"
+    d = támadó.fegyver.Fegyverhossz - védő.fegyver.Fegyverhossz
+    d >= 2   → "fegyverelőny"        # a támadó előnyben (2 fegyverhossz-kategória különbség kell)
+    d <= -2  → "fegyverhátrány"
     egyébként → "fegyverazonosság"
 ```
 
-- A `Pengehossz` mező már "pengék" egységben van: `0, 0.5, 1, 1.5, 2, 3, 4, 5`
-- `< 0.5` hosszú fegyver 0-nak számít
+- A `Fegyverhossz` mező egész, fegyverhossz-kategória skálán (a régi 0.5-egységes "penge" modell kivezetve)
 - `Közrefogás` helyzet a védőn: a támadó `fegyverelőny`-e → `fegyverazonosság`-re csökken
-- `Lovas harc` / `Léglovas harc` fortély 1+ fok: a saját fegyver `Pengehossz +1`
-- Kétkezesnél a **nagyobb** fegyver pengehossza számít
+- `Lovas harc` / `Léglovas harc` fortély 1+ fok: a saját fegyver `Fegyverhossz +2` kategória
+- Kétkezesnél a **nagyobb** fegyver fegyverhossza számít
 
 ### 5.3 Sikertelen támadás → VÉ csökkentés
 
@@ -502,27 +504,27 @@ találat_VÉ_csökkentés(védő):
     védő.állapot.vé_seb += 3        # ← SEB könyvelés, akkor is ha az SFÉ mindent felfogott
 ```
 
-#### ⚠ NE „javítsd" a 3-at — szándékosan konzervatív
+#### ⚠ NE „javítsd" a 3-at - szándékosan konzervatív
 
 Kísértő megfigyelés: a `3` kisebb, mint amit egy Alakzat tévesztése ad (`3..5`), és épp
 annyi, mint az egyén Fárasztása (`3..5`). Ez **nem hiba**, két okból:
 
 1. **Egyénnél a `3` a sáv teteje, garantáltan.** A Fegyverazonosság tévesztés `1 + k20P`, azaz
    `1` (45 %) / `2` (50 %) / `3` (5 %), átlag `1,6`. A találat tehát átlagban `1,9×` annyi
-   eróziót ad, mint egy tévesztés — a magasabb tévesztési értékek a szerencsés farok, nem
+   eróziót ad, mint egy tévesztés - a magasabb tévesztési értékek a szerencsés farok, nem
    a tipikus eset. Fix számot NE hasonlíts sávmaximumhoz.
 2. **A találat már hordozza a sebzést.** Ha maximális eróziót IS adna, végzetes spirál
    indulna: találat → nagy VÉ-esés → könnyebb következő találat → nagyobb túldobás
    (`+3 SP / 5`, felső limit nélkül) → nagyobb sebzés. A `3` szándékosan hagy esélyt
    az áldozatnak: egy sebesülés ne legyen rögtön végzetes.
 
-Ebből következik, hogy az **Alakzat találata is `-3`**, nem a fix pengeméret-érték —
+Ebből következik, hogy az **Alakzat találata is `-3`**, nem a fix fegyverhossz-alapérték -
 noha így az Alakzat VÉ-eróziója lassul, ahogy elkezd betalálni (`5 → 3`). Ez a
 szándékolt fék, nem önfékezési hiba: közben a sebzés veszi át a hajtóerőt (a túldobás
 miatt meredeken), tehát a halálozási ütem gyorsul.
 
 (KM döntés, 2026-09-10. Korábbi verzió ezt hibaként azonosította és a fix érték
-átvezetését javasolta — az elemzés téves volt, lásd az 1. pontot.)
+átvezetését javasolta - az elemzés téves volt, lásd az 1. pontot.)
 
 ```
 kör_eleji_regeneráció(harcos):
@@ -565,8 +567,8 @@ fordíthatja pozitívba.
 | Forrás | Hatás |
 |---|---|
 | `Plusz támadás` taktika | a választás pillanatában `vé_fáradás += 3` |
-| `Teljes Védekezés` taktikát alkalmazó **maga szenved el** | `1 + k20P` az ellenfelei minden támadásától, pengeméret-viszonytól **függetlenül** (a Fárasztó taktika bónuszuk megmarad) — §13.9 |
-| Sikertelen manőver | ugyanannyi, mint egy sima sikertelen támadás — **akkor is, ha a manővernek nincs Végrehajtás fázisa**, tehát nem volt támadódobás (§13.1) |
+| `Teljes Védekezés` taktikát alkalmazó **maga szenved el** | `1 + k20P` az ellenfelei minden támadásától, fegyverhossz-viszonytól **függetlenül** (a Fárasztó taktika bónuszuk megmarad) - §13.9 |
+| Sikertelen manőver | ugyanannyi, mint egy sima sikertelen támadás - **akkor is, ha a manővernek nincs Végrehajtás fázisa**, tehát nem volt támadódobás (§13.1) |
 | Sikertelen **Megakasztás** (M fázis, az ellenfél extra támadása) | ❗ **NEM** okoz VÉ csökkentést (explicit kivétel, `md/066_04`) |
 | `Precíz támadás` manőverrel végzett támadás | VÉ csökkentést **NEM** okoz |
 
@@ -590,7 +592,7 @@ harc(csapatok, max_kör = 40):
         sorrend = élők rendezve csökkenő  (KÉ_aktuális(h) + KÉ_dobás(h))  szerint
             KÉ_dobás(h) = előnyHátrányDobás(netÉH(h ké_dobás hatásai), 20)
             KÉ_aktuális(h) = származtatott.KÉ + taktika_KÉ(h)
-            # holtverseny: egyidejű csapás — mindkettő végrehajtódik,
+            # holtverseny: egyidejű csapás - mindkettő végrehajtódik,
             #              a halál NEM akadályozza meg a másik csapását
 
         # --- 3. támadási körök (támadásindex szerint, NEM harcosonként egyben) ---
@@ -614,7 +616,7 @@ harc(csapatok, max_kör = 40):
     return döntetlen
 ```
 
-### 6.4 Taktikaválasztás — érvényességi szabályok
+### 6.4 Taktikaválasztás - érvényességi szabályok
 
 Egy körben több taktika is aktív lehet, ha a kombó szabályok engedik:
 
@@ -720,12 +722,18 @@ jelleg_bónusz(fegyver, páncél):
 íves_bónusz: fegyver.Íves == 1 → +2 SP páncélozatlan ellenfél ellen
 ```
 
-Sebzéstípus választás (`V/S` fegyvernél):
-- **elsődleges** (az első betű): sima dobás
-- **másodlagos** (a második betű): `Hátrány-1` a Sebzésdobásra
-- **alkalmatlan** (a mezőben nem szereplő jelleg): `Hátrány-2`
+Sebzéstípus választás (több módú fegyvernél, l. §3.11 módok[]):
+- **elsődleges mód**: sima dobás
+- **másodlagos mód**: `Hátrány-1` a Sebzésdobásra
+- **alkalmatlan** (a fegyver egyik módja sem fedi): `Hátrány-2`
 
-### 6.6 Sebzés alkalmazása — rubrika könyvelés
+A jelleg_bónusz a kanonikus `data/tables/sebzesjelleg_pancel_matrix.json` (source:
+`sebzesjelleg_pancel_matrix.yaml`) sebzésjelleg × páncélosztály SP-delta táblát tükrözi.
+Ezen felül a `cél_páncél` SP-hatású extrák adnak delta-t (pl. `panceltalant_jobban_sebez`
++3 SP vérttelen célon, `data/tables/fegyver_extrak.json`). A `cél_páncél` VÉ/SFÉ-hatású ága
+(Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) még nincs bekötve - l. §13.
+
+### 6.6 Sebzés alkalmazása - rubrika könyvelés
 
 Az ÉP tábla egy `ÉP` hosszú rubrikasor, 4 egyenlő oszlopban (`S1..S4`).
 Sebesülés balról jobbra tölt.
@@ -750,11 +758,11 @@ sebzés_alkalmazása(védő, sp, típus):     # típus: S | V | Z | FP
 
 **FP-specifikus szabályok**:
 - Puszta kéz sebzése alapból `FP` (kivéve egyes harcművész stílusok)
-- Bunyóban: minden `5. FP` okoz `1 ÉP` valós sebet — **sebzésenként** számolva,
+- Bunyóban: minden `5. FP` okoz `1 ÉP` valós sebet - **sebzésenként** számolva,
   azaz `9 FP` → `8 FP + 1 ÉP` (9 rubrika)
 - `Elpusztíthatatlan` fortély: 1.fok → 1 ÉP, 2.fok → 2 ÉP fordítható FP-vé sebesüléskor
 
-**Haldoklás**: `ÉP == 0` → `Sérült (3) — Haldoklás` státusz, harcképtelen. 2 percenként
+**Haldoklás**: `ÉP == 0` → `Sérült (3) - Haldoklás` státusz, harcképtelen. 2 percenként
 `Edzettség` tulajdonságpróba `Átlagos (5)` ellen; kudarc → halál. Stabilizálás:
 `Sebgyógyítás`/`Gyógyítás` képzettségpróba `9` ellen. Stabilizált karaktert bármely
 további sebzés azonnal megöl.
@@ -765,7 +773,7 @@ ellen; kudarc → elájul (`Eszmélet (3)`). Sikernél csak a következő sebes�
 
 ---
 
-## §7 Taktikák — gépi tábla
+## §7 Taktikák - gépi tábla
 
 Forrás: `data/tables/taktikak.json`. `📶` = skálázható (§6.4).
 
@@ -775,18 +783,18 @@ Forrás: `data/tables/taktikak.json`. `📶` = skálázható (§6.4).
 |---|---|---|---|
 | **1 támadás** | TÉ +3 | Csak ha ≥2 támadás van. A `-3` több-tám levonást gyakorlatilag kioltja | ❌ Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás, Tettetés |
 | **Érintő** | TÉ +3 | **Sebzés = 0** | ✅ Támadó, Védő, Kezdeményező, Kiváró, 1 tám, Plusz tám |
-| **Fárasztás** | — | Nincs támadódobás, nincs sebzés. `VÉ csökk = 3 (+1 fortély) (+1 fegyverelőny)` | ❌ minden más |
-| **Kezdeményező** 📶 | fok n: KÉ +n, VÉ −n | — | ✅ Támadó, Érintő, Visszafogott, 1 tám |
+| **Fárasztás** | - | Nincs támadódobás, nincs sebzés. `VÉ csökk = 3 (+1 fortély) (+1 fegyverelőny)` | ❌ minden más |
+| **Kezdeményező** 📶 | fok n: KÉ +n, VÉ −n | - | ✅ Támadó, Érintő, Visszafogott, 1 tám |
 | **Kiváró** | TÉ +3 | Átengedett KÉ (utolsó helyre sorolódik). A TÉ+3 csak az **első visszatámadásra**, és csak ha nem kapott sebet. Több ellenfél ellen ❌ | ✅ Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám, Tettetés |
 | **Öngyilkos roham** | TÉ +5, VÉ −10, SP +7 | Max 1×/küzdelem. Csak az 1. oda-vissza csapás. **VÉ csökk ×2 mindkét félnek.** Sebesülés TÉ büntetés nem érvényesül. Ostorharcban ❌. Ha betalál: VÉ büntetése megszűnik és a visszatámadó nem kap +7 SP-t | ❌ minden más |
-| **Plusz támadás** | — | `+1` támadás a körben, **azonnal `VÉ −3` csökkenés** | ✅ Támadó, Érintő, Tám.erőből |
+| **Plusz támadás** | - | `+1` támadás a körben, **azonnal `VÉ −3` csökkenés** | ✅ Támadó, Érintő, Tám.erőből |
 | **Roham** | TÉ +4, VÉ −8, SP +5 | Csak az 1. oda-vissza csapás. **VÉ csökk ×2 mindkét félnek.** Min 5–10 m nekifutás. Ostorharcban ❌. Ha betalál: VÉ büntetése megszűnik, visszatámadó nem kap +5 SP-t. A körön belüli további támadások normál értékkel | ❌ minden más |
-| **Támadás erőből** 📶 | fok n: TÉ −n, SP +n | — | ✅ Kiváró, Plusz tám, 1 tám |
+| **Támadás erőből** 📶 | fok n: TÉ −n, SP +n | - | ✅ Kiváró, Plusz tám, 1 tám |
 | **Támadó** 📶 | fok n: TÉ +n, VÉ −2n | Orvtámadás helyzetben ❌ | ✅ Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám |
 | **Védő** 📶 | fok n: VÉ +n, TÉ −2n | Meglepetés/Orvtámadás helyzetben ❌ | ✅ Érintő, 1 tám |
-| **Teljes Védekezés** | VÉ **+8** | Nem támad, nem varázsol, folyamatosan hátrál. **Az ellenfelei által rajta okozott** VÉ csökkentés `1 + k20P` (a Fárasztó taktika bónuszuk megmarad) — lásd §13.9 az értelmezésről. Ha nem tud hátrálni, a KM `VÉ+3`-ig csökkentheti | ❌ minden más |
+| **Teljes Védekezés** | VÉ **+8** | Nem támad, nem varázsol, folyamatosan hátrál. **Az ellenfelei által rajta okozott** VÉ csökkentés `1 + k20P` (a Fárasztó taktika bónuszuk megmarad) - lásd §13.9 az értelmezésről. Ha nem tud hátrálni, a KM `VÉ+3`-ig csökkentheti | ❌ minden más |
 | **Visszafogott** | TÉ −10 | `Hátrány-2` a Sebzésdobásra | ✅ Kezdeményező, Kiváró, 1 tám, Tettetés |
-| **Tettetés** | — | Informatív. `Harcmodor + Ügyesség` próba `15` ellen | ✅ Kiváró, Visszafogott |
+| **Tettetés** | - | Informatív. `Harcmodor + Ügyesség` próba `15` ellen | ✅ Kiváró, Visszafogott |
 | **(Lég)Lovas roham** | TÉ +6, SP +10 | 1 oda-vissza csapás. **VÉ büntetés NINCS.** `Lovaglás` próba `12`. Csak lovas/léglovas helyzetben | ❌ minden más |
 | **(Lég)Lovas támadás galoppból** | TÉ +3, SP +5 | 1 oda-vissza csapás. VÉ büntetés NINCS. `Lovaglás` próba `9`. Csak lovas/léglovas helyzetben | ❌ minden más |
 
@@ -797,7 +805,7 @@ Távharci taktikák (a közelharci szimulációban nem használatosak):
 
 ---
 
-## §8 Harci helyzetek — gépi tábla
+## §8 Harci helyzetek - gépi tábla
 
 Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 
@@ -831,10 +839,10 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 
 | Helyzet | Hatás |
 |---|---|
-| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 pengehosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
+| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 fegyverhosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
 | Közrefogás | Semlegesíti az ellenfél Fegyverelőnyét → Fegyverazonosság |
 | Fegyverrántás váratlanul | `Fegyverrántás` fortély: KÉ+5 / +10 |
-| Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Pengehossz +1` |
+| Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Fegyverhossz +2` kategória (min_fegyverméret 3 követelmény, warning-only) |
 | Harci szekér | `Harci kocsihajtás`: TÉ/VÉ +8 / +12 |
 | Páros harc | `Páros harc` fortély: TÉ/VÉ +2/+4/+6, KÉ +1 |
 | Közönség előtt | `Gladiátor közönsége`: TÉ +3 |
@@ -849,7 +857,7 @@ VÉ kiterjesztés, Közrefogás.
 
 ---
 
-## §9 Státuszok — a közelharcra hatók
+## §9 Státuszok - a közelharcra hatók
 
 Forrás: `data/tables/statuszok.json`. Formátum: `"Név (fok)"`.
 
@@ -880,7 +888,7 @@ Forrás: `data/tables/statuszok.json`. Formátum: `"Név (fok)"`.
 | Zavar (3) | Sokk | ❌ harci_képesség, ❌ mozgás |
 
 A többi státusz (Áldott/Átkozott *, Érzékvesztés, Hangulat, Késztetés, Szellemi, Trauma)
-csak próbákra hat — a közelharci szimulációban elhagyható.
+csak próbákra hat - a közelharci szimulációban elhagyható.
 
 ### 9.1 Hatás operátorok szemantikája
 
@@ -891,7 +899,7 @@ csak próbákra hat — a közelharci szimulációban elhagyható.
 | `duplázás` | Szorzó 2 |
 | `letilt` | Boolean képességvesztés / automatikus kudarc |
 | `max_limit` | Felső korlát (pl. max 1 támadás/kör) |
-| `szöveges` | Nem kumulálható, informatív — a KM/szimulátor ítéli meg |
+| `szöveges` | Nem kumulálható, informatív - a KM/szimulátor ítéli meg |
 | `enyhít` | Csökkenti egy másik hatás fokát (csak fortélyokból) |
 
 ### 9.2 Harcképtelenség kiértékelése
@@ -924,7 +932,7 @@ támadások_effektív(h):
 
 ---
 
-## §10 Fortélyok — mi gépi és mi nem
+## §10 Fortélyok - mi gépi és mi nem
 
 ### 10.1 Gépi (numerikus módosító, a data layerben)
 
@@ -938,10 +946,10 @@ támadások_effektív(h):
 | Merevvértviselet | MGT_TÉ_büntetés −5/−10/−15 · 3.fok: VÉ +3 | merev páncél + lefedettség ≥ 70% |
 | Pajzshasználat | TÉ/VÉ/SP +1/+2/+3 a pajzsra mint fegyverre; **és** a §3.12 tábla foka | `fegyver_kategória: pajzs` |
 | Természetes páncél | SFÉ +3/+6/+9 | mindig (páncélviselettől független) |
-| Harci akrobatika | 3.fok: TÉ/VÉ +3 | MGT ≤ 5 |
-| Belharcos | KÉ/TÉ/VÉ +1/+2/+2 · +2/+4/+4 | belharci helyzet + Közelharc + penge ≤ 0 |
+| Harci akrobatika | 3.fok: TÉ/VÉ +3 | nem_merev páncél, effektív MGT ≤ 10, össz fegyverméret ≤ 3 |
+| Belharcos | KÉ/TÉ/VÉ +1/+2/+2 · +2/+4/+4 | belharci helyzet + Közelharc + fegyverhossz ≤ 0 |
 | Páros harc | TÉ/VÉ +2/+4/+6, KÉ +1 | `harci_helyzet: páros_harc` |
-| Lovas / Léglovas harc | **0.fok: TÉ/VÉ −9** · 1-3.fok: +3/+6/+9 és Pengehossz +1 | lovas/léglovas helyzet |
+| Lovas / Léglovas harc | **0.fok: TÉ/VÉ −9** · 1-3.fok: +3/+6/+9 és Fegyverhossz +2 kategória | lovas/léglovas helyzet |
 | Harci kocsihajtás | TÉ/VÉ +8/+12 | harci szekér |
 | Gladiátor bestiái / közönsége | VÉ +3 / TÉ +3 | szörny elleni / közönség előtt |
 | Fegyverrántás | KÉ +5/+10 | fegyverrántás helyzet |
@@ -955,9 +963,9 @@ támadások_effektív(h):
 ⚠ **0. fok = "Alapeset"**: néhány fortélynak van `fok: 0` bejegyzése, ami a **fortély
 NEM birtoklásának** büntetését írja le (pl. `Lovas harc 0.fok: TÉ/VÉ −9`). Ezt akkor kell
 alkalmazni, ha a harcosnak **nincs** meg a fortély, de a helyzet aktív. Ez a legkönnyebben
-kihagyható szabály — ellenőrizd.
+kihagyható szabály - ellenőrizd.
 
-### 10.2 NEM gépi (kézi/narratív, nincs `módosítók` blokkja) — de a szimulációhoz kell
+### 10.2 NEM gépi (kézi/narratív, nincs `módosítók` blokkja) - de a szimulációhoz kell
 
 | Fortély | Hatás | Szimulációs teendő |
 |---|---|---|
@@ -971,7 +979,7 @@ kihagyható szabály — ellenőrizd.
 
 ## §11 Referencia statblokkok (hitelesített)
 
-### 11.1 REF-A — "Teszt karakter", 10. TSz (`test_karakter2.json`)
+### 11.1 REF-A - "Teszt karakter", 10. TSz (`test_karakter2.json`)
 
 Ez a projekt egyetlen hitelesített teszt karaktere. A számok a `golden.test.ts`-ből
 származnak, és a §3 formuláival kézzel visszaellenőrizve.
@@ -1026,14 +1034,15 @@ pajzs: közepes
 
 | Felállás | TÉ | VÉ | SP | támadások |
 |---|---|---|---|---|
-| Kard, lovag — egyfegyveres | 47 | 60 | 11 | 1 |
+| Kard, lovag - egyfegyveres | 47 | 60 | 11 | 1 |
 | Kard, lovag + közepes pajzs (Pajzshaszn. 2 → VÉ+10 / TÉ 0) | 47 | **70** | 11 | 1 |
 | Kétkezes: Kard, lovag + Tőr (fortély nélkül, 0.fok) | **49** | **61** | 11 | 1 |
 
 *A kétkezes 0.fok: csak a nagyobb fegyver (kard) TÉ/VÉ + `−3/−3`, de a `mindkét_fegyver_értékei`
-false; a golden érték TÉ 49 / VÉ 61 (összpenge 1 → pengelevonás 2).*
+false; a golden érték TÉ 49 / VÉ 61 (össz fegyverhossz Kard 3 + Tőr 1 = 4 → fegyverlevonás FLOOR(4/2) = 2,
+a harckeret így is 0-ra clamp-el, támadások 1).*
 
-### 11.2 REF-B — Szimmetrikus hangolási alapeset
+### 11.2 REF-B - Szimmetrikus hangolási alapeset
 
 Hangolási tesztekhez ez a javasolt neutrális beállítás:
 
@@ -1053,10 +1062,10 @@ Ellenőrző jellemzők ehhez a felálláshoz (20 000 futás, ±0,5 % tolerancia)
 | Átlagos sebzés találatonként (SFÉ 5, túldobás nélkül) | 10,5 + 11 − 5 ≈ **16,5 ÉP** |
 | 1:1 harc hossza | **≈ 3,9 kör** |
 | 1:1 győzelmi arány | **50 / 50 %** |
-| 1:2 — a magányos győzelmi aránya | **≈ 2 %**, ≈ 2,7 kör |
-| 1:3 — a magányos győzelmi aránya | **≈ 0 %**, ≈ 1,8 kör |
+| 1:2 - a magányos győzelmi aránya | **≈ 2 %**, ≈ 2,7 kör |
+| 1:3 - a magányos győzelmi aránya | **≈ 0 %**, ≈ 1,8 kör |
 
-### 11.3 REF-C — "Tank" (hosszú harc kikényszerítése)
+### 11.3 REF-C - "Tank" (hosszú harc kikényszerítése)
 
 ```
 REF-A alap, de: páncél = lemez / acél / mestermunka, idea 0, rongálódás 0,
@@ -1070,7 +1079,7 @@ REF-A alap, de: páncél = lemez / acél / mestermunka, idea 0, rongálódás 0,
 
 Ez a felállás 8–10 körös harcokat ad, ahol a VÉ-csökkentő mechanikák tényleges súlyt kapnak.
 
-### 11.4 REF-D — "Pribék" (~5. TSz zsoldos), aszimmetrikus teszthez
+### 11.4 REF-D - "Pribék" (~5. TSz zsoldos), aszimmetrikus teszthez
 
 Túlerő-forgatókönyvekhez kell egy olyan harcos, aki a REF-A hőst **nem tudja eltalálni**.
 Ez a szabály által leírt eset („a pribékek kifáraszthatják a vadat, míg vezetőjük felkészül").
@@ -1119,10 +1128,10 @@ célválasztás(támadó):
 Bármely más politika **rövidíti** a harcot, tehát a modellek közti különbséget csökkenti.
 
 **Túlerő-kezelés**: a szabályrendszer 1:N esetén **nem** ad külön büntetést a bekerítettnek.
-A túlerő hatása pontosan az, hogy több támadás csökkenti a VÉ-t körönként — ez a rendszer
+A túlerő hatása pontosan az, hogy több támadás csökkenti a VÉ-t körönként - ez a rendszer
 szándékolt terve (`md/064_02_03`). Ne adj hozzá kitalált bekerítési büntetést.
 Ami legitim: `Hátulról támadás` / `Mögékerülés` manőver / `Közrefogás` a túlerőben lévő
-oldalnak, ha a narratíva indokolja — de ezt jelöld a teszt paramétereként.
+oldalnak, ha a narratíva indokolja - de ezt jelöld a teszt paramétereként.
 
 ### 12.1 ⚠ MÓDSZERTANI CSAPDA: azonos klónok félrevezetnek
 
@@ -1133,12 +1142,12 @@ Konkrét eset (Fárasztás taktika, 2026-09-10):
 
 | Felállás | Fárasztás a puszta támadáshoz képest |
 |---|---|
-| 1:3, három azonos REF-A klón | **dominált** — a fárasztó csapat rosszabbul jár (97,7 % vs 100 %) |
-| 1:3, REF-A vezető + 2 REF-D pribék | **jobb** — a fárasztó csapat jobban jár (88,9 % vs 82,6 %) |
+| 1:3, három azonos REF-A klón | **dominált** - a fárasztó csapat rosszabbul jár (97,7 % vs 100 %) |
+| 1:3, REF-A vezető + 2 REF-D pribék | **jobb** - a fárasztó csapat jobban jár (88,9 % vs 82,6 %) |
 
 Az ok: a REF-A klón támadása `1,95–2,16` VÉ-t **és** ~8 ÉP-t hoz, tehát a Fárasztásra
 váltás nagy sebzésveszteség. A REF-D pribék viszont **nem tudja eltalálni** a hőst, tehát
-a támadása `1,6` VÉ-t és `0` ÉP-t hoz — nincs mit feláldozni.
+a támadása `1,6` VÉ-t és `0` ÉP-t hoz - nincs mit feláldozni.
 
 **Szabály**: ha egy taktika/fortély értéke azon fordul, hogy a használó tud-e sebezni,
 a hangolási tesztnek **tartalmaznia kell aszimmetrikus felállást is**. Az azonos klónos
@@ -1146,7 +1155,7 @@ teszt önmagában nem elégséges bizonyíték.
 
 ---
 
-## §13 Ambiguitás-regiszter — ahol a szabály nem dönt
+## §13 Ambiguitás-regiszter - ahol a szabály nem dönt
 
 Ezek a pontok a szabálykönyvből **nem** dönthetők el egyértelműen. Minden szimulációnak
 explicit döntést kell hoznia, és a döntést jelentenie kell az eredménnyel együtt.
@@ -1154,7 +1163,7 @@ explicit döntést kell hoznia, és a döntést jelentenie kell az eredménnyel 
 ### 13.1 A sikertelen támadás VÉ csökkentésének kockaforrása ✅ LEZÁRVA 2026-09-26
 
 A `1 + k20P` VÉ csökkentésnél a `k20P` mindig a már eldobott támadó dobás (a k20, ami a
-találat/tévesztést eldöntötte) páros/páratlan részéből jön — **közös kocka**, nincs külön
+találat/tévesztést eldöntötte) páros/páratlan részéből jön - **közös kocka**, nincs külön
 dobás. Minden hangolási eszköz (`fegyvergenerator_harcszimulator.py`,
 `harcszimulacio_selftest.py`, `harci_laz_*.py`, `sfe_hangolas.py`) ezt implementálja.
 
@@ -1194,7 +1203,7 @@ gyenge 1 ÉP/10 perc, közepes 1 ÉP/2 kör, erős 1 ÉP/kör.
 
 A manőverek ellenpróba-alapúak (`Manőver Alap + MP + k10` vs `Nehézség + ellenfél
 Manőver Alap`), MP költséggel, max 1/kör. Egy hangolási szimulációban **hagyd ki**,
-kivéve ha a manőver a vizsgálat tárgya — a variancia amit bevisz nagyobb, mint a
+kivéve ha a manőver a vizsgálat tárgya - a variancia amit bevisz nagyobb, mint a
 legtöbb hangolási különbség.
 
 ### 13.9 Teljes Védekezés: mit jelent az `1 + k20P`? ✅ LEZÁRVA 2026-09-27
@@ -1211,13 +1220,27 @@ Ellenfél VÉ csökkentés: (1 + k20P)
 **Az irány tisztázott**: a `bónuszuk` birtokos alak és a 317. sor jegyzete alapján ez az
 **ellenfelek által a Teljes Védekezőn okozott** VÉ csökkentés, nem fordítva.
 
-**Döntés**: az `1 + k20P` **fix** érték — a Teljes Védekezés normalizálja a rajta okozott
+**Döntés**: az `1 + k20P` **fix** érték - a Teljes Védekezés normalizálja a rajta okozott
 VÉ csökkentést Fegyverazonosság szintre, azaz **semlegesíti az ellenfél Fegyverelőnyét** (a
 `2 + k20P`-t is `1 + k20P`-re fogja), hasonlóan ahhoz, ahogy a `Közrefogás` helyzet teszi.
 A méretkülönbség módosító a 317. sor szerint továbbra is hozzáadódik/levonódik.
 
 **Szimulációs kezelés**: `fegyverviszony` felülírása `fegyverazonosság`-ra a Teljes
 Védekezőt támadó minden ellenfélre; méretkülönbség és Fárasztás bónusz továbbra is hat.
+
+### 13.10 `cél_páncél` extrák: SP-ág lezárva, VÉ/SFÉ-ág nyitott
+
+A `cél_páncél` fegyver-extrák a dobás pillanatában ismert ellenfél-páncélosztálytól függenek.
+
+**Lezárva (SP-ág)**: a sebzésjelleg × páncél mátrix és a `cél_páncél` SP-hatású extra
+(pl. `panceltalant_jobban_sebez` +3 SP vérttelen célon) a Sebzés dobásba van bekötve, a
+kötelező "Ellenfél páncél" választón keresztül (§6.5.1).
+
+**Nyitott (VÉ/SFÉ-ág)**: a `sfe_duplazodik` (Meneth) és `pocsek_vedekezo_pancelos_ellen`
+(Béltépő) VÉ/SFÉ-hatású extrák NINCSENEK bekötve. Koncepcionális kérdés: a statikus
+fegyver-VÉ/SFÉ nem függhet dobásonként változó ellenfél-páncéltól. Feloldás: külön
+"feltételezett ellenfél páncél" harc-szintű state, vagy `cél_páncélosztály` context a
+feltétel-dispatchbe. Döntést igényel (DEVSTATE TODO, STUDY 3g).
 
 
 ---
@@ -1237,13 +1260,13 @@ Ez a spec **nem** modellezi (tudatosan):
 
 ---
 
-## §15 Önteszt — futtatható állítások
+## §15 Önteszt - futtatható állítások
 
 Egy szimulátor akkor tekinthető hitelesnek, ha **mind a 16 állítás** teljesül.
 Ezek a `golden.test.ts` értékeivel és a §3 formuláival vannak összehangolva.
 
 **Futtatható referencia-implementáció**: `code/balance/harcszimulacio_selftest.py`
-(a data layerből olvassa a táblákat, nem hardcode-olja — ha egy YAML változik, a teszt bukik).
+(a data layerből olvassa a táblákat, nem hardcode-olja - ha egy YAML változik, a teszt bukik).
 
 ```bash
 cd /repo/github/szilank.code && python3 code/balance/harcszimulacio_selftest.py
@@ -1275,7 +1298,7 @@ B3   E[sebzés | találat, SFÉ 5, túldobás 0]            ≈ 16,5
 B4   P(találat | VÉ 60, TÉ 47, éh 0)                   == 0,40 pontosan
 ```
 
-### Regressziós csapdák — amit ezek fognak el
+### Regressziós csapdák - amit ezek fognak el
 
 | Állítás | Amit elkap |
 |---|---|
@@ -1292,17 +1315,17 @@ B4   P(találat | VÉ 60, TÉ 47, éh 0)                   == 0,40 pontosan
 
 ## §16 A szabályrendszerben talált következetlenségek
 
-Ezeket a spec írása közben találtam. **Nem javítottam** semmit — ha valamelyiket
+Ezeket a spec írása közben találtam. **Nem javítottam** semmit - ha valamelyiket
 javítani kell, kérj rá külön döntést.
 
 | # | Hely | Probléma |
 |---|---|---|
-| 2 | `data/sources/taktikak.yaml` — Fárasztás | ⚠ **NYITOTT.** A `3 VÉ` érték továbbra sem a data layerben van, csak a `megjegyzés` prózában (`módosítók: {}`). Sérti az AGENTS.md data-layer elsőbbségét. Megoldás: séma-bővítés (`vé_csökkentés` mező vagy strukturált `hatások`) + a webapp számolja. |
-| 3 | ~~`engine_spec.md §21.1` tábla~~ | ⚠ **RÉSZBEN.** A Fárasztás sora frissítve (3), de a `Teljes Védekezés VÉ:+6` továbbra is elavult — a `taktikak.yaml` és a `md/065_02` egyaránt **`+8`**. |
+| 2 | `data/sources/taktikak.yaml` - Fárasztás | ⚠ **NYITOTT.** A `3 VÉ` érték továbbra sem a data layerben van, csak a `megjegyzés` prózában (`módosítók: {}`). Sérti az AGENTS.md data-layer elsőbbségét. Megoldás: séma-bővítés (`vé_csökkentés` mező vagy strukturált `hatások`) + a webapp számolja. |
+| 3 | ~~`engine_spec.md §21.1` tábla~~ | ⚠ **RÉSZBEN.** A Fárasztás sora frissítve (3), de a `Teljes Védekezés VÉ:+6` továbbra is elavult - a `taktikak.yaml` és a `md/065_02` egyaránt **`+8`**. |
 | 4 | `engine_spec.md §13` | `pajzs_TÉ_büntetés` és `pajzs_TÉ_mérséklés` konstansokra hivatkozik, amelyek **nem léteznek** a `konstansok.json`-ban. A tényleges implementáció a `pajzs_hatások[méret][fok]` táblát használja (`pancel-calc.ts → calcFogas`). |
 | 5 | `golden.test.ts` | A "Kard, lovag" teszt **címe** `VÉ=61`, az `expect` viszont `60`. A cím elavult. |
 | 7 | Szabálykönyv-szintű | A Teljes Védekezés `1 + k20P` sorának jelentése nem egyértelmű (§13.9). |
-| 8 | **Webapp hiba** | **A fegyver Ideája (`fegyverek[].idea`, `[-5;+5]`) nincs implementálva.** A `md/068_01_14` szerint `TÉ/CÉ`, `VÉ`, `SP` módosítót ad (max `+3/+2/+5`), a mező a karakter sémában létezik és az `url-share.ts` szerializálja is — de sem a `rules.json`, sem a `fegyver-calc.ts` nem használja. A felhasználó beállíthatja, és semmi nem történik. A `golden.test.ts` nem fogja el, mert a teszt karakter fegyverei `idea: 0`. |
+| 8 | **Webapp hiba** | **A fegyver Ideája (`fegyverek[].idea`, `[-5;+5]`) nincs implementálva.** A `md/068_01_14` szerint `TÉ/CÉ`, `VÉ`, `SP` módosítót ad (max `+3/+2/+5`), a mező a karakter sémában létezik és az `url-share.ts` szerializálja is - de sem a `rules.json`, sem a `fegyver-calc.ts` nem használja. A felhasználó beállíthatja, és semmi nem történik. A `golden.test.ts` nem fogja el, mert a teszt karakter fegyverei `idea: 0`. |
 | 9 | Data layer hiány | A `md/082_statuszok.md` két státuszt definiál, amik **nincsenek** a `statuszok.yaml`-ban: `Fegyver/Pajzs akadályoztatása (1,2)` (:255) és `Páncél akadályoztatása (1 MGT, ♾️ MGT)` (:532). A `062_03` és `068_01_13` hivatkozik rájuk. Közelharci szimulációt nem érint (próbákra hatnak), de a 4 rétegű státusz-modell (§22) inkomplett. |
 | 10 | Adat-inkonzisztencia | Az MK szabály (`md/068_01_06`: 1 kézzel `TÉ-2/VÉ-2`, Átütés megszűnik) a `fegyverek.json` `(1K)/(2K)` sorpárjaiba van beépítve. `Kard, másfélkezes` és `Kard, mesterkard` követi; `Kard, Slan` (ΔVÉ csak `-1`, Átütés `2` marad) és `Mara-sequor` (ΔTÉ/ΔVÉ csak `-1`) eltér. Lehet szándékos (legendás fegyverek), de nincs jelölve. |
 
@@ -1312,6 +1335,6 @@ javítani kell, kérj rá külön döntést.
 
 | Dátum | Változás |
 |---|---|
-| 2026-09-27 | **A sikertelen támadás VÉ csökkentése `k20P`-t használ** (k20 páros/páratlan része, `10`/`20`→2) — a 2026-09-26-i éles szabálydöntés (`md/006`, `md/064_01`, `md/064_02_03`, `md/064_03`, `md/065_01_04`, `md/065_02`) átvezetve. Érintett a jelen fájlban: §4 kockajelölés, §5.3 formula, §7 táblázat, §11 referencia statblokk, §13.1/§13.9, §16 A8 önteszt. Átvezetve a `code/balance/fegyvergenerator_harcszimulator.py`, `harcszimulacio_selftest.py`, `harci_laz_csapat.py`, `harci_laz_egyesitett.py`, `harci_laz_hangolas.py`, `sfe_hangolas.py` szkriptekbe is. |
+| 2026-09-27 | **A sikertelen támadás VÉ csökkentése `k20P`-t használ** (k20 páros/páratlan része, `10`/`20`→2) - a 2026-09-26-i éles szabálydöntés (`md/006`, `md/064_01`, `md/064_02_03`, `md/064_03`, `md/065_01_04`, `md/065_02`) átvezetve. Érintett a jelen fájlban: §4 kockajelölés, §5.3 formula, §7 táblázat, §11 referencia statblokk, §13.1/§13.9, §16 A8 önteszt. Átvezetve a `code/balance/fegyvergenerator_harcszimulator.py`, `harcszimulacio_selftest.py`, `harci_laz_csapat.py`, `harci_laz_egyesitett.py`, `harci_laz_hangolas.py`, `sfe_hangolas.py` szkriptekbe is. |
 | 2026-09-10 | **Fárasztó taktika hangolás: `2 VÉ` → `3 VÉ`.** Indok: aszimmetrikus túlerőben (REF-A vezető + 2 REF-D pribék egy REF-A hős ellen) a `2`-es érték a pribéknek csak `+0,40 VÉ/kör`-t ad a hasztalan támadáshoz képest (`1,60`), a `3`-as `+1,40`-et. A hangolás után a taktika szimmetrikus felállásban továbbra is dominált (nincs degenerált dominancia), aszimmetrikus túlerőben viszont `+6,4` százalékponttal jobb a puszta támadásnál. Érintett: `md/065_02:175`, `md/064_01:169`, `md/065_03:266` (alakzat fix érték), `taktikak.yaml`, `engine_spec §21.1` + `§28.9`, jelen spec §6.5 + §7. |
 | 2026-09-10 | Első verzió. Forrás: `engine_spec.md §3–§27`, `md/060–069`, `md/081–082`, `data/tables/*.json`, `golden.test.ts`, `combat-roll-info.ts`, `fegyver-calc.ts`, `pancel-calc.ts`, `taktika-calc.ts`, `dice.ts`, `shared.ts`, `ep-logic.ts`. |

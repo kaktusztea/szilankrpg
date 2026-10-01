@@ -21,7 +21,7 @@ function mentés(uid: string, név: string, becenév: string, jk: boolean) {
 describe('NJK switcher adatút', () => {
   beforeEach(() => installLocalStorage());
 
-  it('csak NJK-kat sorol fel, becenévvel, ABC-ben — és a boxra kattintva visszatölthető', () => {
+  it('csak NJK-kat sorol fel, becenévvel, ABC-ben - és a boxra kattintva visszatölthető', () => {
     mentés('u1', 'von Agabor', 'Agi', true);      // JK → nem kerül a sávba
     mentés('u2', 'Zord Zoltán', 'Zordi', false);
     mentés('u3', 'Bandita Béla', '', false);      // becenév üres → név
@@ -57,7 +57,7 @@ describe('NJK switcher adatút', () => {
   });
 });
 
-describe('mergeAktív — friss JK/NJK állapot a persistált slot előtt', () => {
+describe('mergeAktív - friss JK/NJK állapot a persistált slot előtt', () => {
   beforeEach(() => installLocalStorage());
 
   it('JK→NJK váltás azonnal megjelenik a sávban, még ha a slot-metaadat JK-t mutat is', () => {
@@ -83,7 +83,7 @@ describe('mergeAktív — friss JK/NJK állapot a persistált slot előtt', () =
   });
 });
 
-describe('életerőStat — ÉP csík + stat a switcher sávhoz', () => {
+describe('életerőStat - ÉP csík + stat a switcher sávhoz', () => {
   const data = loadGameDataSync();
   // ÉP formula: 28 + edzettség*4. edzettség=3 → ÉP 40, kategóriák=4 → oszlopméret 10.
   const alap = () => validKarakter({ jk: false, tulajdonságok: { ...validKarakter().tulajdonságok, edzettség: 3 } });

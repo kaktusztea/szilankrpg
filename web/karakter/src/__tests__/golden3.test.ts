@@ -1,5 +1,5 @@
 /**
- * Golden test #3 — test_karakter3.json (pak-Teth, 11. TSz, Amund, misztikus mágus)
+ * Golden test #3 - test_karakter3.json (pak-Teth, 11. TSz, Amund, misztikus mágus)
  * Cél: misztikus/mágus karakter lefedése, kevés harci, sok képzettség/fortély.
  * Bőr páncél mestermunka, Meneth (abbitacél, MF 1.fok), Támadó taktika fok 3,
  * Meglepetés helyzet, Csonkolás manőver, Zavar státusz.
@@ -28,7 +28,7 @@ beforeAll(() => {
   karakter = loadJson('karakter/test_karakter3.json');
   rules = loadJson<{ rules: Rule[] }>('rules.json').rules;
   konstansok = loadJson('tables/konstansok.json');
-  fegyverek = loadJson('tables/fegyverek.json');
+  fegyverek = loadJson('tables/fegyverek_v2.json');
   const raw = loadJson<any[]>('tables/harcmodor_kepzettsegek_bonuszok.json');
   harcmodorBonusz = raw.map(e => ({
     szint: parseInt(e['Harcmodor Szint']),
@@ -38,7 +38,7 @@ beforeAll(() => {
   }));
 });
 
-describe('Golden #3 — rules.json alapszámítások (pak-Teth, 11. TSz, Amund)', () => {
+describe('Golden #3 - rules.json alapszámítások (pak-Teth, 11. TSz, Amund)', () => {
   let results: Map<string, number>;
 
   beforeAll(() => {
@@ -84,7 +84,7 @@ describe('Golden #3 — rules.json alapszámítások (pak-Teth, 11. TSz, Amund)'
   it('merevvért_TÉ_büntetés = 0 (bőr nem merev)', () => expect(results.get('merevvért_TÉ_büntetés')).toBe(0));
 });
 
-describe('Golden #3 — fegyver kalkuláció', () => {
+describe('Golden #3 - fegyver kalkuláció', () => {
   let harcmodorÖsszeg: number;
   let lookupArrays: any;
   let stringCtx: Map<string, string>;
@@ -103,7 +103,7 @@ describe('Golden #3 — fegyver kalkuláció', () => {
     data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] };
   });
 
-  it('Meneth (abbitacél, MF 1.fok): TÉ=25, VÉ=42, SP=7, harckeret=6, támadások=1', () => {
+  it('Meneth (abbitacél, MF 1.fok): TÉ=25, VÉ=43, SP=7, harckeret=6, támadások=2', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const rows = buildFegyverRows(karakter, data, null);
     const row = rows.find(r => r.név === 'Meneth');
@@ -113,10 +113,10 @@ describe('Golden #3 — fegyver kalkuláció', () => {
       karakter, data, fortelyMods, 3, harcmodorÖsszeg, lookupArrays, stringCtx,
     );
     expect(res[0].TÉ).toBe(25);
-    expect(res[0].VÉ).toBe(42);
+    expect(res[0].VÉ).toBe(43);
     expect(res[0].SP).toBe(7);
     expect(res[0].harckeret).toBe(6);
-    expect(res[0].támadások).toBe(1);
+    expect(res[0].támadások).toBe(2);
   });
 
   it('Puszta kéz: TÉ=6, VÉ=24, SP=-3, harckeret=0, támadások=1', () => {
@@ -136,7 +136,7 @@ describe('Golden #3 — fegyver kalkuláció', () => {
   });
 });
 
-describe('Golden #3 — Fájdalomtűrés enyhítés', () => {
+describe('Golden #3 - Fájdalomtűrés enyhítés', () => {
   it('10. szint → enyhítés = 4', () => {
     const enyhítés = calcFtEnyhites(karakter.képzettségek, konstansok.fájdalomtűrés_enyhítés);
     expect(enyhítés).toBe(4);

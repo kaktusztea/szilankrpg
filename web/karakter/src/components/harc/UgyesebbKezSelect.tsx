@@ -1,6 +1,6 @@
 import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
-import { getPengehossz } from './fegyver-helpers';
+import { getFegyverhossz } from './fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function isSpeciális(karakter: Karakter, idx: number): boolean {
@@ -14,9 +14,10 @@ export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUnd
   const options = fegyverOpciók.filter(f => {
     if (f.idx < 0) return true;
     if (session.aktív_fegyver_bal_index < 0) return true;
-    const balPenge = getPengehossz(data, karakter.fegyverek[session.aktív_fegyver_bal_index]?.alap ?? '');
-    const fPenge = getPengehossz(data, karakter.fegyverek[f.idx]?.alap ?? '');
-    return fPenge + balPenge <= data.konstansok.kétkezes_harc_max_pengeméret;
+    const balFh = getFegyverhossz(data, karakter.fegyverek[session.aktív_fegyver_bal_index]?.alap ?? '');
+    const fFh = getFegyverhossz(data, karakter.fegyverek[f.idx]?.alap ?? '');
+    if (fFh > data.konstansok.kétkezes_harc_max_egy_fegyver || balFh > data.konstansok.kétkezes_harc_max_egy_fegyver) return false;
+    return fFh + balFh <= data.konstansok.kétkezes_harc_max_fegyverméret;
   });
 
   return (
@@ -32,9 +33,10 @@ export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUnd
           }
           let balIdx = s.aktív_fegyver_bal_index;
           if (balIdx >= 0) {
-            const jobbPenge = getPengehossz(data, karakter.fegyverek[idx]?.alap ?? '');
-            const balPenge = getPengehossz(data, karakter.fegyverek[balIdx]?.alap ?? '');
-            if (balPenge > jobbPenge || balPenge + jobbPenge > data.konstansok.kétkezes_harc_max_pengeméret) {
+            const jobbFh = getFegyverhossz(data, karakter.fegyverek[idx]?.alap ?? '');
+            const balFh = getFegyverhossz(data, karakter.fegyverek[balIdx]?.alap ?? '');
+            if (balFh > jobbFh || balFh + jobbFh > data.konstansok.kétkezes_harc_max_fegyverméret
+                || jobbFh > data.konstansok.kétkezes_harc_max_egy_fegyver || balFh > data.konstansok.kétkezes_harc_max_egy_fegyver) {
               balIdx = -1;
             }
           }

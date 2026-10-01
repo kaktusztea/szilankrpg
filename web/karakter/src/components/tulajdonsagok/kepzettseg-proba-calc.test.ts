@@ -9,7 +9,7 @@ import {
 import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
 import { rollElőnyHátrány } from '../../engine/dice';
 
-// A 8 séma-kulcs (Tulajdonsagok) — a display→kulcs mapping-nek ezekre kell esnie.
+// A 8 séma-kulcs (Tulajdonsagok) - a display→kulcs mapping-nek ezekre kell esnie.
 const KULCSOK: (keyof Tulajdonsagok)[] = [
   'erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység',
 ];
@@ -59,7 +59,7 @@ describe('buildFortélyFokok', () => {
   });
 });
 
-describe('effektívKiterjesztésFok — manuális negálás', () => {
+describe('effektívKiterjesztésFok - manuális negálás', () => {
   const fokok = { Kultúrkör: 1 }; // felvéve (auto: teljesül)
   it('nincs negálás → auto (felvett) fok', () => {
     expect(effektívKiterjesztésFok(fokok, 'Etikett', 'Kultúrkör', new Set())).toBe(1);
@@ -78,7 +78,7 @@ describe('effektívKiterjesztésFok — manuális negálás', () => {
   });
 });
 
-describe('effektívFortélyFokok — a map csak a képzettség kiterjesztéseit igazítja', () => {
+describe('effektívFortélyFokok - a map csak a képzettség kiterjesztéseit igazítja', () => {
   it('a negált kiterjesztő fortély fokát felülírja, a többit érintetlenül hagyja', () => {
     const fokok = { Kultúrkör: 1, Nyelvismeret: 2 };
     const kitek = [{ fortély: 'Kultúrkör', típus: 'normál', maxfok: 1 }] as never[];
@@ -175,7 +175,7 @@ describe('Vállalás + Képzettségpróba együttes eredmény', () => {
     const kritikusHiba = vállalásK6 <= vállalásÉrték;
     expect(kritikusHiba).toBe(true);
 
-    // Mindkettő igaz egyszerre — a szabályrendszer engedi ezt az esetet.
+    // Mindkettő igaz egyszerre - a szabályrendszer engedi ezt az esetet.
   });
 
   it('képzettségpróba siker + vállalás OK: nincs kritikus hiba', () => {

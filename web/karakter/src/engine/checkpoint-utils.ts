@@ -2,7 +2,7 @@ import type { Karakter, Checkpoint } from './types';
 import { DEFAULT_SESSION } from './types';
 import { MAX_CHECKPOINTS } from '../ui-constants';
 
-/** Fields excluded from snapshot — these are runtime/meta, not character state. */
+/** Fields excluded from snapshot - these are runtime/meta, not character state. */
 const EXCLUDED_KEYS: (keyof Karakter)[] = ['uid', 'id_leíró', 'session', 'checkpoints', 'mentés_dátum', 'schema_version'];
 
 /** Generate 8-char random id. */
@@ -35,7 +35,7 @@ export function createCheckpoint(karakter: Karakter, név: string): Checkpoint[]
   return updated;
 }
 
-/** Restore a checkpoint — returns the new karakter state with session reset.
+/** Restore a checkpoint - returns the new karakter state with session reset.
  *  Checkpoints array is preserved (caller decides what to do with it). */
 export function restoreFromCheckpoint(karakter: Karakter, checkpointId: string, newCheckpoints: Checkpoint[]): Karakter {
   const cp = karakter.checkpoints.find(c => c.id === checkpointId);
@@ -52,7 +52,7 @@ export function restoreFromCheckpoint(karakter: Karakter, checkpointId: string, 
   };
 }
 
-/** Restore mode: truncate — remove all checkpoints after the selected one. */
+/** Restore mode: truncate - remove all checkpoints after the selected one. */
 export function restoreTruncate(karakter: Karakter, checkpointId: string): Karakter {
   const idx = karakter.checkpoints.findIndex(c => c.id === checkpointId);
   if (idx < 0) return karakter;
@@ -61,7 +61,7 @@ export function restoreTruncate(karakter: Karakter, checkpointId: string): Karak
   return restoreFromCheckpoint(karakter, checkpointId, newCheckpoints);
 }
 
-/** Restore mode: append — duplicate the checkpoint snapshot as a new latest entry. */
+/** Restore mode: append - duplicate the checkpoint snapshot as a new latest entry. */
 export function restoreAppend(karakter: Karakter, checkpointId: string): Karakter {
   const cp = karakter.checkpoints.find(c => c.id === checkpointId);
   if (!cp) return karakter;

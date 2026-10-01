@@ -177,7 +177,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
                     <button key={e.szint}
                       className={`kep-proba-extras-btn${ehSzint === e.szint ? ' kep-proba-extras-btn-active' : ''}`}
                       onClick={() => { setEhSzint(e.szint); resetDobás(); }}>
-                      {e.szint === 0 ? '—' : e.szint > 0 ? `+${e.szint}` : `${e.szint}`}
+                      {e.szint === 0 ? '-' : e.szint > 0 ? `+${e.szint}` : `${e.szint}`}
                     </button>
                   ))}
                 </div>

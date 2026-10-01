@@ -132,10 +132,10 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
             if (newDisabled || isSaving) return;
             if (isDesktop) {
               setSavingBackup(true);
-              // WORKAROUND: double-rAF-paint — ensures spinner paints before blocking save dialog
+              // WORKAROUND: double-rAF-paint - ensures spinner paints before blocking save dialog
               requestAnimationFrame(() => requestAnimationFrame(() => onSave()));
             } else {
-              // Mobile: no spinner needed — handleGenerateSave opens an overlay immediately
+              // Mobile: no spinner needed - handleGenerateSave opens an overlay immediately
               onSave();
             }
           }}>

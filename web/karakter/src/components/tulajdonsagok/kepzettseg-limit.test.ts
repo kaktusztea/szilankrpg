@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { képzettségLimitek } from './kepzettseg-limit';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 
-// Valódi rules.json + konstansok.json — így a teszt a szabály LÉTÉT és a bekötést is védi.
+// Valódi rules.json + konstansok.json - így a teszt a szabály LÉTÉT és a bekötést is védi.
 const data = loadGameDataSync();
 const plafon = data.konstansok.arányok.képzettség_max_szint;
 const ráhagyás = data.konstansok.arányok.képzettség_nemprimer_max_szint_plusz;

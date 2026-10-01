@@ -10,7 +10,7 @@ const makeStr = (entries: Record<string, string> = {}): StringContext => new Map
 describe('evalFormula fuzz', () => {
   it('never throws on arbitrary arithmetic strings', () => {
     fc.assert(fc.property(fc.string(), (formula) => {
-      // Should never throw — may return 0 or any number for invalid input
+      // Should never throw - may return 0 or any number for invalid input
       expect(() => evalFormula(formula, makeCtx(), new Map(), makeArrays(), makeStr())).not.toThrow();
     }), { numRuns: 200 });
   });

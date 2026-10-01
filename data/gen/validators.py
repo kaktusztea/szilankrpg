@@ -16,9 +16,11 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
         if not isinstance(t.get('kombó_lista'), list): errors.append(f"{ctx}: 'kombó_lista' nem lista")
         if t.get('fokozatos') and not t.get('fokok'): errors.append(f"{ctx}: fokozatos de nincs 'fokok'")
         if not t.get('fokozatos') and not isinstance(t.get('módosítók', {}), dict): errors.append(f"{ctx}: 'módosítók' nem dict")
-        # Nem-fokozatos taktika opcionális strukturált hatások (előny/hátrány/enyhít/szöveges egy dobáscélra)
-        valid_hatas_operator = {'előny', 'hátrány', 'enyhít', 'szöveges'}
-        valid_hatas_cel = {'té_dobás', 'sebzésdobás', 'cé_dobás'}
+        # Nem-fokozatos taktika opcionális strukturált hatások egy dobáscélra/numerikus célra.
+        # "override"/"flat" (pl. vé_csökkentés) a LISTA SORRENDJÉBEN, akkumulálva értelmezendő
+        # (nem a §42.3 mód-kategória precedencia) - l. schemas/taktika.yaml komment.
+        valid_hatas_operator = {'előny', 'hátrány', 'enyhít', 'szöveges', 'flat', 'override', 'szorzó'}
+        valid_hatas_cel = {'té_dobás', 'sebzésdobás', 'cé_dobás', 'vé_csökkentés'}
         if not t.get('fokozatos'):
             for j, h in enumerate(t.get('hatások') or []):
                 hctx = f"{ctx} hatások[{j}]"
@@ -105,7 +107,7 @@ def validate_esemenyek(esemenyek):
 
 
 def validate_statuszok(statuszok, hatasok, esemenyek):
-    """Validate statuszok.yaml — struktúra + referenciális integritás."""
+    """Validate statuszok.yaml - struktúra + referenciális integritás."""
     errors = []
     valid_kategoria = {'fizikai', 'szellemi', 'harci', 'mágikus'}
     valid_hatas_ids = {h['id'] for h in hatasok}
@@ -137,7 +139,7 @@ def validate_statuszok(statuszok, hatasok, esemenyek):
 
 
 def validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek):
-    """Validate hatasok.yaml — id egyediség + mechanika referenciális integritás."""
+    """Validate hatasok.yaml - id egyediség + mechanika referenciális integritás."""
     errors = []
     valid_op_ids = {h['id'] for h in hatas_operatorok}
     valid_cel_ids = {e['id'] for e in esemenyek}

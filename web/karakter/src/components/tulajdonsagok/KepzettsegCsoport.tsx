@@ -85,7 +85,7 @@ export function KepzettsegCsoport({
           );
         })}
         {/* Misztikus képzettségek felvétele a Misztikus fülön történik (faj/tradíció
-            megkötések miatt) — itt csak megjelenítés + szint/törlés. */}
+            megkötések miatt) - itt csak megjelenítés + szint/törlés. */}
         {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
           <NewKepzettsegButton available={available} kepzettsegDefs={kepzettsegDefs} kiterjesztesek={kiterjesztesek} onAdd={v => onAddKepzettseg(csoport, v)} />
         )}

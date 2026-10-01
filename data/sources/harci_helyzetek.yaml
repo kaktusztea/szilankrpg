@@ -6,7 +6,7 @@
 
 harci_helyzetek:
 - név: "Belharci helyzet"
-  infó: "Közelharc harcmodor + max 0 pengehossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0."
+  infó: "Közelharc harcmodor + max 0 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0."
   megjegyzések:
   - text: "Ha a képzett harcosnak sikerül ellenfele fegyvere mögé, testközelébe kerülni, ebből előnyt kovácsolhat."
   - text: "A belharc magában foglalja a birkózást és a földharcot is."
@@ -23,7 +23,7 @@ harci_helyzetek:
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "takarásban"]
   fegyver_override:
     feltétel:
-      - { forrás: "aktív_fegyver_pengehossz", operátor: ">", érték: 0 }
+      - { forrás: "aktív_fegyver_fegyverhossz", operátor: ">", érték: 0 }
     módosítók:
       - { cél: "fegyver_TÉ", érték: 0, mód: "override" }
       - { cél: "fegyver_VÉ", érték: 0, mód: "override" }
@@ -203,11 +203,11 @@ harci_helyzetek:
   kizár_helyzetek: []
 
 - név: "Közrefogás"
-  infó: "Semlegesíti ellenfél Pengeelőnyét → Alappenge."
+  infó: "Semlegesíti ellenfél Fegyverelőnyét → Fegyverazonosság."
   megjegyzések:
-  - text: "Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges Pengeelőny harci helyzetét."
-  - text: "Példa: két tőrös közrefog egy Hosszú kardost — a hosszú kardos Pengeelőny helyzetből Alappenge helyzetbe kerül."
-  - text: "Példa: két tőrös közrefog egy lándzsást — a lándzsás Pengeelőny helyzetből Alappenge helyzetbe kerül."
+  - text: "Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges Fegyverelőny harci helyzetét."
+  - text: "Példa: két tőrös közrefog egy Hosszú kardost - a hosszú kardos Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
+  - text: "Példa: két tőrös közrefog egy lándzsást - a lándzsás Fegyverelőny helyzetből Fegyverazonosság helyzetbe kerül."
   hatások: []
   id: "közrefogás"
   csoport: "semleges"
@@ -276,8 +276,8 @@ harci_helyzetek:
   megjegyzések:
   - text: "Az egyes fajokat méret kategóriákba osztályozzuk: 1 Bögöly, 2 Erdőpille, 3 Goblin/Gnóm, 4 Ember/Törpe/Ork, 5 Ogár, 6 Wyvern, 7 Sárkány."
   - text: "Minden egyes kategóriakülönbségnél a nagyobb lény +1 VÉ csökkentést okoz."
-  - text: "Példa: Goblin vs Ogár 2 kategória különbség — az Ogár +2 VÉ csökkentés bónuszt kap."
-  - text: "A Pengeméret-különbség és a lények méret különbsége két, egymás mellett működő szabály."
+  - text: "Példa: Goblin vs Ogár 2 kategória különbség - az Ogár +2 VÉ csökkentés bónuszt kap."
+  - text: "A Fegyverméret-különbség és a lények méret különbsége két, egymás mellett működő szabály."
   hatások: []
   id: "méret_különbség"
   csoport: "negatív"
@@ -329,7 +329,7 @@ harci_helyzetek:
   - text: "Egyéb TÉ bónusz nincs."
   - text: "Harci taktikák NEM használhatóak."
   - text: "Manőver: Precíz támadás használható (páncél megkerüléséhez)."
-  - text: "Manőver: Leütés hátulról, Rávetődés hátulról — követelményük az Orvtámadás helyzet."
+  - text: "Manőver: Leütés hátulról, Rávetődés hátulról - követelményük az Orvtámadás helyzet."
   - text: "Manőverek és Orvtámadás viszonya: Ellenpróba dobás csak."
   hatások:
   - operátor: "előny"
@@ -340,24 +340,24 @@ harci_helyzetek:
   id: "orvtámadás"
   csoport: "pozitív"
   rejtett: false
-- név: "Pengeelőny"
+- név: "Fegyverelőny"
   infó: "VÉ csökkentés: 2+k20P."
   megjegyzések:
-  - text: "Fegyvered mérete legalább 1 pengével hosszabb ellenfeledénél."
-  - text: "Csak akkor kerül valaki Pengeelőnybe — és így a másik Pengehátrányba — ha ez a pengeméret különbség megvan."
+  - text: "Fegyvered mérete legalább 2 kategóriával hosszabb ellenfeledénél."
+  - text: "Csak akkor kerül valaki Fegyverelőnybe - és így a másik Fegyverhátrányba - ha ez a fegyverméret különbség megvan."
   hatások: []
-  id: "pengeelőny"
+  id: "fegyverelőny"
   csoport: "negatív"
   rejtett: true
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Pengehátrány"
+- név: "Fegyverhátrány"
   infó: "VÉ csökkentés: k20P."
   megjegyzések:
-  - text: "Fegyvered mérete legalább 1 pengével rövidebb ellenfeledénél."
-  - text: "A VÉ csökkentést tekintve hátrányban vagy az Alappengéhez képest, viszont vannak szituációk, mint a Fárasztó taktika, ahol korlátozó tényező lehet."
+  - text: "Fegyvered mérete legalább 2 kategóriával rövidebb ellenfeledénél."
+  - text: "A VÉ csökkentést tekintve hátrányban vagy a Fegyverazonossághoz képest, viszont vannak szituációk, mint a Fárasztó taktika, ahol korlátozó tényező lehet."
   hatások: []
-  id: "pengehátrány"
+  id: "fegyverhátrány"
   csoport: "negatív"
   rejtett: true
   tiltja_taktikákat: false

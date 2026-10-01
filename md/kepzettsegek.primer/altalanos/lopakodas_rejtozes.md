@@ -103,7 +103,7 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 +6: Láthatatlan vagy
 ```
 
-Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
+Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
 #### ⚜️ Látótér (lopakodó) 1️⃣
 

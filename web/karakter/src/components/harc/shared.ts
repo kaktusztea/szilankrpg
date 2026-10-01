@@ -1,6 +1,22 @@
 import type { Karakter } from '../../engine/types';
-import type { GameData } from '../../engine/data-loader';
 export { getMfBónusz, findMfFokByName } from '../../engine/mf-utils';
+
+/** Idea-szint harcérték-hatása (a fegyver_idea_tabla egy sora). */
+type IdeaHatás = { TÉ: number; VÉ: number; SP: number };
+type IdeaTabla = Record<string, { TÉ: number; VÉ: number; SP: number; sebesség: number; súly: number }>;
+
+/**
+ * A felvett fegyverpéldány Idea-hatásának DELTÁJA a `idea_default`-hoz képest (Modell 2, §16).
+ * A v2 harcértékek a `idea_default` hatását MÁR tartalmazzák, ezért csak a példány-Idea ettől való
+ * ELTÉRÉSÉT adjuk hozzá: `IDEA[példány] − IDEA[default]` (TÉ/VÉ/SP). Default példánynál (idea =
+ * idea_default) a delta 0. Ismeretlen szint → 0-hatás (a tábla tartományán kívül nincs módosító).
+ */
+export function ideaDelta(példányIdea: number, ideaDefault: number, tábla: IdeaTabla | undefined): IdeaHatás {
+  if (!tábla) return { TÉ: 0, VÉ: 0, SP: 0 };
+  const p = tábla[String(példányIdea)] ?? { TÉ: 0, VÉ: 0, SP: 0 };
+  const d = tábla[String(ideaDefault)] ?? { TÉ: 0, VÉ: 0, SP: 0 };
+  return { TÉ: p.TÉ - d.TÉ, VÉ: p.VÉ - d.VÉ, SP: p.SP - d.SP };
+}
 
 /** Pajzs fegyver név összerakása a karakter pajzs méretéből. */
 export function buildPajzsFegyverNév(karakter: Karakter): string | null {
@@ -8,28 +24,19 @@ export function buildPajzsFegyverNév(karakter: Karakter): string | null {
   return karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs';
 }
 
-/** SP override keresés fegyver definícióból (pl. Természetes fegyver → puszta kéz SP). */
-export function calcSpOverride(fegyverNév: string, karakter: Karakter, data: GameData): number | null {
-  const fDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === fegyverNév.toLowerCase());
-  if (!fDef?.SP_override) return null;
-  const ovr = fDef.SP_override as { fortély: string; SP: number };
-  if (karakter.fortélyok.some(kf => kf.név === ovr.fortély)) return ovr.SP;
-  return null;
-}
-
-/** Nagyobb/kisebb fegyver meghatározása pengehossz szerint. */
-export function resolveNagyobbKisebb<T extends { Pengehossz: string }>(
+/** Nagyobb/kisebb fegyver meghatározása fegyverhossz-kategória szerint. */
+export function resolveNagyobbKisebb<T extends { fegyverhossz: number }>(
   jobbDef: T, balDef: T, jobbFp: { alap: string }, balFp: { alap: string },
-): { nagyobb: T; kisebb: T; nagyobbFp: { alap: string }; kisebbFp: { alap: string }; jobbPenge: number; balPenge: number } {
-  const jobbPenge = parseFloat(jobbDef.Pengehossz) || 0;
-  const balPenge = parseFloat(balDef.Pengehossz) || 0;
-  const jobbNagyobb = jobbPenge >= balPenge;
+): { nagyobb: T; kisebb: T; nagyobbFp: { alap: string }; kisebbFp: { alap: string }; jobbFh: number; balFh: number } {
+  const jobbFh = jobbDef.fegyverhossz;
+  const balFh = balDef.fegyverhossz;
+  const jobbNagyobb = jobbFh >= balFh;
   return {
     nagyobb: jobbNagyobb ? jobbDef : balDef,
     kisebb: jobbNagyobb ? balDef : jobbDef,
     nagyobbFp: jobbNagyobb ? jobbFp : balFp,
     kisebbFp: jobbNagyobb ? balFp : jobbFp,
-    jobbPenge, balPenge,
+    jobbFh, balFh,
   };
 }
 

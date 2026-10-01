@@ -10,7 +10,7 @@ interface Props {
 
 const EMPTY_FORM = { dátum: '', km: '', kaland: '', események: '' };
 
-/** Napló accordion — bejegyzések listája, szerkesztő/új form, opcionális checkpoint létrehozás. */
+/** Napló accordion - bejegyzések listája, szerkesztő/új form, opcionális checkpoint létrehozás. */
 export function NaploSection({ karakter, setKarakter }: Props) {
   const [open, setOpen] = useState(false);
   const [openIdx, setOpenIdx] = useState<number | null>(null);

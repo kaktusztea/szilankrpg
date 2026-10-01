@@ -50,7 +50,7 @@ describe('calcFortelyMods', () => {
     expect(withoutAf.SP).toBe(0);
   });
 
-  it('applies a flat SFÉ mod (Természetes páncél mintájára) — nincs kivétel-ág, generikus cél', () => {
+  it('applies a flat SFÉ mod (Természetes páncél mintájára) - nincs kivétel-ág, generikus cél', () => {
     const sfeData = {
       fortelySummaries: [
         { név: 'Természetes páncél', fokok: [

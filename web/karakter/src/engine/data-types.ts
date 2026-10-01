@@ -5,6 +5,9 @@ import type { Rule } from './reactive';
 export interface ModositoSor {
   érték: number;
   leírás: string;
+  /** Opcionális "prefix:érték" feltétel (pl. "fegyver_extra:pontos", "taktika:roham"). Teljesülésekor
+   * a sor auto-bekapcsol a Manőver dobás popupban (kézi override marad). Üres/hiányzó = tisztán kézi. */
+  feltétel?: string;
 }
 
 export interface ModositoTabla {
@@ -55,7 +58,7 @@ export interface FortelyFokSummary {
   fok: number;
   hatás: string[];
   követelmény: string[];
-  követelmények: { név: string | string[]; érték: number; típus: string }[];
+  követelmények: { név: string | string[]; érték: number; típus: string; feltétel?: string }[];
   módosítók: FortelyModosito[];
   próba_enyhítések: PróbaEnyhítés[];
 }
@@ -173,6 +176,7 @@ export interface StatuszHatas {
   cél: string;
   alcél?: string;
   megjegyzés?: string;
+  feltétel?: string;
 }
 
 export interface StatuszFok {
@@ -218,7 +222,7 @@ export interface HatterekData {
 }
 
 // --- Konstansok (belső, nem exportált a data-loader-ből) ---
-// A `konstansok.yaml` MINDEN top-level kulcsa deklarált — nincs `[key: string]` catch-all,
+// A `konstansok.yaml` MINDEN top-level kulcsa deklarált - nincs `[key: string]` catch-all,
 // hogy a yaml ↔ típus drift fordítási hibaként jelentkezzen.
 export interface KonstansokRaw {
   version: number;
@@ -228,7 +232,7 @@ export interface KonstansokRaw {
   arányok: { max_tsz: number; max_hm_diff_szintlépésenként: number; képzettség_nemprimer_max_szint_plusz: number; képzettség_max_szint: number; tulajdonság_pont_alap: number; tulajdonság_pont_tsz_bónusz: number; max_cm_perszint: number };
   tulajdonság_pontok: Record<string, number>;
   páncél_struktúrák: {
-    struktúra: string; leírás: string; fém: boolean; merev: boolean; harci_akrobatika: boolean;
+    struktúra: string; leírás: string; fém: boolean; merev: boolean;
     mgt: number; sfé_fizikai: number; sfé_energia: number; ár_szorzó: number; idea_plusz_minusz: number;
   }[];
   páncél_fémalapanyagok: { anyag: string; sfé_bónusz: number; mgt: number; ár_szorzó: number }[];
@@ -240,11 +244,12 @@ export interface KonstansokRaw {
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;
-  kétkezes_harc_max_pengeméret: number;
+  kétkezes_harc_max_fegyverméret: number;
+  kétkezes_harc_max_egy_fegyver: number;
   kétkezes_harc_bónuszok: {
     fok: number; harckeret: number; TÉ: number; VÉ: number; mindkét_fegyver_értékei: boolean; mf: string;
   }[];
-  kétkezes_harc_pengelevonás_osztó: number;
+  kétkezes_harc_fegyverlevonás_osztó: number;
   fegyverfogás_opciók: { id: string; név: string }[];
   locked_fortélyok: string[];
   egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
@@ -255,6 +260,7 @@ export interface KonstansokRaw {
   vé_csökkentés_gombok: number[];
   taktika_vé_eltolás_limit: number;
   vé_csökkentés_alap: { fegyverhátrány: number; fegyverazonosság: number; fegyverelőny: number };
+  fegyver_erő_követelmény_hátrány: number;
   skálázható_taktika_max_fok: { szint: number; max_fok: number }[];
   max_manőver_per_kör: number;
   nyílpuska_alap_támadás: string;
@@ -270,14 +276,13 @@ export interface KonstansokRaw {
     aurakiterjesztés_levonás: Record<string, number>;
     auraerősítés_tábla: { komplexitás: number; bónusz: number }[];
   };
-  harci_akrobatika: { max_mgt: number };
   manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number };
   pinned_taktikák: string[];
   fegyver_anyagok: string[];
   páncél_méret_illeszkedés: { fokozat: string; mgt: number }[];
 
   // Referencia adat: a szabálykönyv szerkezetét dokumentálja, a kód nem olvassa.
-  // (Ha kód lesz rá, innen kell kiindulni — NE hardcode-old a listákat!)
+  // (Ha kód lesz rá, innen kell kiindulni - NE hardcode-old a listákat!)
   aura_bónusz: { nehézség: number; bónusz: number }[];
   feltétel_prefixek: string[];
   fortély_csoportok: string[];
@@ -291,12 +296,35 @@ export interface KonstansokRaw {
 }
 
 // --- Betöltött adat ---
+
+/** Páncélosztály - a Sebzésjelleg × páncél mátrix 5 oszlopa (l. sebzesjelleg_pancel_matrix.yaml). */
+export type Páncélosztály = 'csupasz' | 'puha' | 'bor' | 'lanc' | 'merev';
+
+/** Sebzésjelleg × páncélosztály → SP delta lookup + struktúra→osztály leképezés. */
+export interface SebzésjellegPáncélMátrix {
+  matrix: Record<string, Record<Páncélosztály, number>>;
+  struktúra_osztály: Record<string, Páncélosztály>;
+}
+
+/** Egy extra feltétele (ÉS-kapcsolat a tömbön belül). */
+export interface ExtraFeltétel { típus: string; érték?: string | number; név?: string; id?: string }
+/** Egy extra hatása (harcérték-módosító). */
+export interface ExtraHatás { cél: string; mód: string; érték?: number; alcél?: string; feltétel?: string }
+/** Teljes fegyver-extra definíció (id-kulcsolt, `fegyver_extrak.json`). */
+export interface FegyverExtraDef {
+  id: string; név: string; csoport?: string; leírás?: string;
+  feltétel?: ExtraFeltétel[]; hatás?: ExtraHatás[];
+}
+
 export interface GameData {
   konstansok: KonstansokRaw;
   fegyverek: FegyverAlap[];
+  sebzésjellegPáncélMátrix: SebzésjellegPáncélMátrix;
+  fegyverExtrák: Record<string, FegyverExtraDef>;
+  /** Idea szint (-5..5, string kulcs) → harcérték-hatás. A példány-Idea delta futásidejű számításához. */
+  fegyverIdeaTabla: Record<string, { TÉ: number; VÉ: number; SP: number; sebesség: number; súly: number }>;
   tavfegyverek: TavfegyverAlap[];
   tavharcSzorzok: TavharcSzorzok;
-  pajzsok: { Pajzs: string; TÉ: string; VÉ: string; Sebesség: string }[];
   kepzettsegKp: { szint: number; kp: number }[];
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number; CÉ: number }[];
   kepzettsegDefs: KepzettsegDef[];

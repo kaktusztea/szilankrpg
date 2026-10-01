@@ -1,7 +1,7 @@
 """konstansok.yaml → konstansok.json
 
 A `mesterfegyver_bónuszok` fok→{TÉ,VÉ,CÉ,SP} táblát NEM kézzel tároljuk, hanem a Mesterfegyver
-fortély (fortelyok/harci/mesterfegyver.yaml) per-fok `módosítóiból` DERIVÁLJUK — egyetlen forrás,
+fortély (fortelyok/harci/mesterfegyver.yaml) per-fok `módosítóiból` DERIVÁLJUK - egyetlen forrás,
 nincs duplikáció (a fortély a mérvadó).
 """
 

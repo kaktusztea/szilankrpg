@@ -14,18 +14,18 @@ describe('buildPajzsFegyverNév', () => {
 });
 
 describe('resolveNagyobbKisebb', () => {
-  it('picks larger by Pengehossz', () => {
-    const jobb = { Pengehossz: '0.8' };
-    const bal = { Pengehossz: '0.4' };
+  it('picks larger by fegyverhossz', () => {
+    const jobb = { fegyverhossz: 0.8 };
+    const bal = { fegyverhossz: 0.4 };
     const result = resolveNagyobbKisebb(jobb, bal, { alap: 'J' }, { alap: 'B' });
     expect(result.nagyobb).toBe(jobb);
     expect(result.kisebb).toBe(bal);
-    expect(result.jobbPenge).toBe(0.8);
-    expect(result.balPenge).toBe(0.4);
+    expect(result.jobbFh).toBe(0.8);
+    expect(result.balFh).toBe(0.4);
   });
   it('jobb wins on tie', () => {
-    const jobb = { Pengehossz: '0.5' };
-    const bal = { Pengehossz: '0.5' };
+    const jobb = { fegyverhossz: 0.5 };
+    const bal = { fegyverhossz: 0.5 };
     const result = resolveNagyobbKisebb(jobb, bal, { alap: 'J' }, { alap: 'B' });
     expect(result.nagyobb).toBe(jobb);
   });

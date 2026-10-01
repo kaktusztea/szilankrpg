@@ -8,7 +8,7 @@ interface FeltételEvaluator {
 
 /**
  * Creates a reusable feltétel evaluator from the given context components.
- * Pure factory — no side effects, no hooks.
+ * Pure factory - no side effects, no hooks.
  */
 export function createFeltételEvaluator(
   aktívFeltételek: Set<string>,

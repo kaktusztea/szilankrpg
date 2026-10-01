@@ -42,7 +42,7 @@ export interface NjkSlot {
  * Rendezés: a KM-jelöléssel (betűazonosítóval) ellátott chip-ek elöl, betű szerint ABC
  * sorrendben (csoportosítva); a jelöletlen chip-ek utánuk, név szerint ABC sorrendben.
  * Ez így stabil, hogy a boxok pozíciója ne ugráljon autosave-kor.
- * A `MAX_NJK_DB` slice csak védőháló — a tárolási limit ezt már betartatja.
+ * A `MAX_NJK_DB` slice csak védőháló - a tárolási limit ezt már betartatja.
  */
 export function njkSlots(slots: SlotEntry[]): NjkSlot[] {
   const jelölések = readKmJelölések();
@@ -70,7 +70,7 @@ export interface ÉleterőStat {
 
 /**
  * Egy karakter Életerő statja a switcher sávhoz. Az ÉP-t a reactive engine adja
- * (nem hardcode-oljuk a formulát — data-layer elsőbbség), a betöltött sebrubrikák
+ * (nem hardcode-oljuk a formulát - data-layer elsőbbség), a betöltött sebrubrikák
  * száma a `session.sebzések` (FP = fájdalompont NEM ÉP-vesztés → kihagyva).
  *
  * @param karakter a betöltött NJK
@@ -79,7 +79,7 @@ export interface ÉleterőStat {
 export function életerőStat(karakter: Karakter, data: GameData): ÉleterőStat {
   const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, data.konstansok);
   const max = evaluate(data.rules, ctx).get('ÉP') ?? 0;
-  // Minden kitöltött rubrika beleszámít (FP is) — az EpTable is így számol (ÉP({ÉP - kitöltött})).
+  // Minden kitöltött rubrika beleszámít (FP is) - az EpTable is így számol (ÉP({ÉP - kitöltött})).
   const kitöltött = karakter.session.sebzések.length;
   const maradék = Math.max(0, max - kitöltött);
   const kategóriák = data.konstansok.sebesülés_kategóriák_száma;

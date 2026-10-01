@@ -1,7 +1,9 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { KonstansokRaw } from '../../engine/data-types';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, fortélyFok } from '../../engine/utils';
+import { isHárító } from './fegyver-helpers';
+import { elsődlegesMód } from './fegyver-calc';
 
 /** Páncél lookup táblák építése */
 export function buildPancelLookups(
@@ -32,7 +34,7 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
   const { konstansok } = data;
 
   // Pajzs VÉ és TÉ büntetés: egyetlen lookup a pajzs_hatások táblából (méret × Pajzshasználat fok)
-  const pajzsFok = k.fortélyok.find(f => f.név === 'Pajzshasználat')?.fok ?? 0;
+  const pajzsFok = fortélyFok(k, 'Pajzshasználat');
   const hasPajzs = (session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs') && k.pajzs.méret;
   let pajzsVÉ = 0;
   let pajzsTÉBüntetés = 0;
@@ -58,11 +60,10 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
     const hFp = k.fegyverek[session.aktív_fegyver_bal_index];
     if (hFp) {
       const hDef = lookupFegyver(data.fegyverek, hFp.alap);
-      if (hDef?.Hárító === '1') {
-        hárítóVÉ = parseInt(hDef.VÉ) || 0;
+      if (isHárító(hDef)) {
+        hárítóVÉ = elsődlegesMód(hDef!).VÉ;
         hárítóNév = hFp.alap;
-        const hDisplayName = hDef.Alapnév || hDef.Fegyver;
-        const hMfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === hDisplayName || f.spec_elem === hFp.alap));
+        const hMfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === hDef!.név || f.spec_elem === hFp.alap));
         if (hMfEntry) {
           const hMf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === hMfEntry.fok);
           if (hMf) hárítóVÉ += hMf.VÉ;

@@ -1,0 +1,208 @@
+# Pozitív helyzetek
+
+## Beszorított ellenfél
+
+Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
+
+```
+Előny+1 TÉ dobásra
+```
+
+<br />
+
+---
+## Beszorított ellenfél - hosszú fegyverrel
+
+Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
+
+```
+Előny+2 TÉ dobásra
+```
+
+<br />
+
+---
+## Harci szekér
+
+Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Lovas harc, Léglovas harc, Belharci helyzet, Földön fekve, Helyhez kötve, Magasabbról, Levegőből támadás, Orvtámadás
+
+<br />
+
+---
+## Hátulról támadás
+
+```
+Előny+1 TÉ dobásra
+```
+
+🔆 Védekező pajzs `VÉ` értéke **NEM** számít
+
+<br />
+
+---
+## Közönség előtt
+
+Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harci/gladiator.kozonsege.md) fortély bónuszai aktívak.
+
+<br />
+
+---
+## Láthatatlan - részlegesen
+
+Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy.
+
+```
+Előny+1 TÉ dobásra
+VÉ csökkentés: +1 bónusz
+VÉ: +5
+```
+
+🔆 [Vakharc - félhomályban](065_03_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat, mert te is rosszabbul látsz
+
+🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
+
+🔆 Áldozat oldalon:
+
+---
+## Láthatatlan - teljesen
+
+Látással, hallással nem vagy érzékelhető. Példa: teljes láthatatlanság és zajt sem keltesz.
+
+```
+Előny+2 TÉ dobásra
+VÉ csökkentés: +2 bónusz
+VÉ: +10
+```
+
+🔆 [Vakharc - sötétben](065_03_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat, mert te sem látsz
+
+🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
+
+🔆 Ha bármely érzékeléssel (Infra) meglátnak, elveszted előnyödet, vagy 1 fokot, vagy mind 2-t (helyzetfüggő)
+
+<br />
+
+---
+## Levegőből támadás
+
+```
+Előny+2 TÉ Dobásra
+```
+
+🔆 Roham (zuhanás) külön, plusz számolandó
+
+🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
+
+❌ Kizárja: Lovas harc, Harci szekér, Magasabbról, Belharci helyzet, Földön fekve, Helyhez kötve, Takarásban
+
+<br />
+
+---
+## Lovas harc
+
+Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Magasabbról, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Levegőből támadás, Orvtámadás, Takarásban
+
+<br />
+
+---
+## Léglovas harc
+
+Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Magasabbról, Lovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Csúszós talaj, Orvtámadás, Takarásban
+
+<br />
+
+---
+## Magasabbról
+
+```
+Előny+1 TÉ dobásra
+```
+
+🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
+
+❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás, Belharci helyzet, Elvesztett egyensúly, Harci szekér
+
+<br />
+
+---
+## Meglepetés
+
+Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
+
+```
+Előny+1 TÉ dobásra
+VÉ csökkentés: +2
+```
+
+🔆 [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---meglepetés)
+
+🔆 [Támadó taktikával](065_02_harci_taktikak.md#támadó-taktika) használható
+
+🔆 Pajzs `VÉ` csak akkor számít, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
+
+🔆 Készületlen ellenfél = Meglepetés hatásai.
+
+### Csoport meglepése
+
+🔆 [Alakzatot](065_04_harc_alakzatban.md) is meg lehet lepni. Ilyen [Észlelés szituációban](szituaciok/erzekeles_eszleles_aktiv_passziv.md) az alakzat [Csoportos szellemi Észlelés képzettségpróbát](030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) dob.
+
+🔆 Ugyanez vonatkozik a [Lopakodás/rejtőzés és észlelése szituációra](szituaciok/lopakodas_rejtozes_es_eszlelese.md) is.
+
+<br />
+
+---
+## Orvtámadás
+
+Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás).
+
+→ Szituáció: [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md)\
+→ Szituáció: [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md)\
+
+```
+Sikeres próba kell:
+ Lopakodás/rejtőzés vs. Észlelés
+```
+
+→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) → módosítók a leírásában
+
+```
+Módosítók • csak az 1.támadásra!
+
+ Áldozat
+   Közelharci VÉ (Puszta kézzel)
+
+ Támadó bónuszok
+   Előny+2 TÉ dobásra
+
+   Orgyilkos fortély
+     1.fok: Előny+1 Sebzés dobásra, +1 SP
+     2.fok: Előny+1 Sebzés dobásra, +2 SP
+     3.fok: Előny+2 Sebzés dobásra, +3 SP
+```
+
+→ ❌ Kizárja: Hátulról, Meglepetés, Lovas harc, Léglovas harc, Harci szekér
+→ ❌ Egyéb `TÉ` bónusz nincs\
+→ ❌ Harci taktikák NEM használhatóak
+
+→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅
+→ Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
+→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak
+
+<br />
+
+---
+## Páros harc
+
+Koordinált 2 fős harc. A [Páros harc](fortelyok.harci/paros_harc.md) fortély bónuszai aktívak.
+
+---
+
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

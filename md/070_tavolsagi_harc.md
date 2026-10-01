@@ -34,7 +34,7 @@ CÉ + k20   vs   távolsági VÉ
 
 A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekre az alábbi fejezetekben fejtjük ki.
 
-### [Célzó Érték (CÉ) számítása](071_tavharc_ce.md)
+### [Célzó Érték számítása](071_tavharc_ce.md)
 
 ### [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
 
@@ -46,7 +46,9 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 ---
 ## Taktikák, mágikus lövedékek, fegyverek
 
-### [Távolsági Harc Taktikák](073_tavharci_taktikak.md)
+### [Távharci taktikák](073_tavharci_taktikak.md)
+
+### [Távharci helyzetek](074_tavharci_helyzetek.md)
 
 ### [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
 

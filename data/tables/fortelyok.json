@@ -2864,7 +2864,7 @@
                 "érték": "Közelharc"
               },
               {
-                "forrás": "aktív_fegyver_pengehossz",
+                "forrás": "aktív_fegyver_fegyverhossz",
                 "operátor": "<=",
                 "érték": 0
               }
@@ -2888,7 +2888,7 @@
                 "érték": "Közelharc"
               },
               {
-                "forrás": "aktív_fegyver_pengehossz",
+                "forrás": "aktív_fegyver_fegyverhossz",
                 "operátor": "<=",
                 "érték": 0
               }
@@ -2912,7 +2912,7 @@
                 "érték": "Közelharc"
               },
               {
-                "forrás": "aktív_fegyver_pengehossz",
+                "forrás": "aktív_fegyver_fegyverhossz",
                 "operátor": "<=",
                 "érték": 0
               }
@@ -2955,7 +2955,7 @@
                 "érték": "Közelharc"
               },
               {
-                "forrás": "aktív_fegyver_pengehossz",
+                "forrás": "aktív_fegyver_fegyverhossz",
                 "operátor": "<=",
                 "érték": 0
               }
@@ -2979,7 +2979,7 @@
                 "érték": "Közelharc"
               },
               {
-                "forrás": "aktív_fegyver_pengehossz",
+                "forrás": "aktív_fegyver_fegyverhossz",
                 "operátor": "<=",
                 "érték": 0
               }
@@ -3003,7 +3003,7 @@
                 "érték": "Közelharc"
               },
               {
-                "forrás": "aktív_fegyver_pengehossz",
+                "forrás": "aktív_fegyver_fegyverhossz",
                 "operátor": "<=",
                 "érték": 0
               }
@@ -3107,7 +3107,14 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": [],
+        "módosítók": [
+          {
+            "cél": "vé_csökkentés",
+            "érték": 1,
+            "mód": "flat",
+            "feltétel": "taktika:fárasztás"
+          }
+        ],
         "próba_enyhítések": []
       }
     ],
@@ -3393,34 +3400,47 @@
       {
         "fok": 1,
         "hatás": [
-          "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
+          "TÉ:+1, VÉ:+1."
         ],
         "követelmény": [
           "Csak posztó, fegyverkabát, bőr páncél struktúrában",
-          "Maximum MGT:5 értékű vértben"
+          "Maximum MGT:5 értékű vértben (Erő módosítót is beleszámolva)",
+          "Maximum össz fegyverméret: 3"
         ],
         "követelmények": [
           {
             "név": "Akrobatika",
             "érték": 6,
             "típus": "képzettség"
+          },
+          {
+            "típus": "páncél_hajlékonyság",
+            "érték": "nem_fém"
+          },
+          {
+            "típus": "max_effektív_mgt",
+            "érték": 5
+          },
+          {
+            "típus": "max_össz_fegyverméret",
+            "érték": 3
           }
         ],
         "módosítók": [
           {
             "cél": "TÉ",
-            "érték": 0,
-            "mód": "scaled",
-            "forrás": "akrobatika",
-            "arány": 0.5,
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
             "feltétel": ""
           },
           {
             "cél": "VÉ",
-            "érték": 0,
-            "mód": "scaled",
-            "forrás": "akrobatika",
-            "arány": 0.5,
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
             "feltétel": ""
           }
         ],
@@ -3429,34 +3449,47 @@
       {
         "fok": 2,
         "hatás": [
-          "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez."
+          "TÉ:+2, VÉ:+2."
         ],
         "követelmény": [
           "Csak posztó, fegyverkabát, bőr páncél struktúrában",
-          "Maximum MGT:5 értékű vértben"
+          "Maximum MGT:5 értékű vértben (Erő módosítót is beleszámolva)",
+          "Maximum össz fegyverméret: 3"
         ],
         "követelmények": [
           {
             "név": "Akrobatika",
             "érték": 9,
             "típus": "képzettség"
+          },
+          {
+            "típus": "páncél_hajlékonyság",
+            "érték": "nem_fém"
+          },
+          {
+            "típus": "max_effektív_mgt",
+            "érték": 5
+          },
+          {
+            "típus": "max_össz_fegyverméret",
+            "érték": 3
           }
         ],
         "módosítók": [
           {
             "cél": "TÉ",
-            "érték": 0,
-            "mód": "scaled",
-            "forrás": "akrobatika",
-            "arány": 1,
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
             "feltétel": ""
           },
           {
             "cél": "VÉ",
-            "érték": 0,
-            "mód": "scaled",
-            "forrás": "akrobatika",
-            "arány": 1,
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
             "feltétel": ""
           }
         ],
@@ -3468,14 +3501,27 @@
           "TÉ:+3, VÉ:+3."
         ],
         "követelmény": [
-          "Csak posztó, fegyverkabát, bőr páncél struktúrában",
-          "Maximum MGT:5 értékű vértben"
+          "Csak Hajlékonyvértben (nem pikkely / lemez)",
+          "Maximum MGT:10 értékű vértben (Erő módosítót is beleszámolva)",
+          "Maximum össz fegyverméret: 3"
         ],
         "követelmények": [
           {
             "név": "Akrobatika",
             "érték": 12,
             "típus": "képzettség"
+          },
+          {
+            "típus": "páncél_hajlékonyság",
+            "érték": "nem_merev"
+          },
+          {
+            "típus": "max_effektív_mgt",
+            "érték": 10
+          },
+          {
+            "típus": "max_össz_fegyverméret",
+            "érték": 3
           }
         ],
         "módosítók": [
@@ -4329,7 +4375,8 @@
         "fok": 1,
         "hatás": [
           "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
-          "Fegyverméret: +1 penge, min 1 penge.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4340,6 +4387,11 @@
             "név": "Léglovaglás",
             "érték": 3,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ],
         "módosítók": [
@@ -4360,16 +4412,8 @@
             "feltétel": "harci_helyzet:léglovas_harc"
           },
           {
-            "cél": "pengehossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:léglovas_harc"
-          },
-          {
-            "cél": "min_pengehossz",
-            "érték": 1,
+            "cél": "fegyverhossz",
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4382,7 +4426,8 @@
         "fok": 2,
         "hatás": [
           "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
-          "Fegyverméret: +1 penge, min 1 penge.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4393,6 +4438,11 @@
             "név": "Léglovaglás",
             "érték": 6,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ],
         "módosítók": [
@@ -4413,16 +4463,8 @@
             "feltétel": "harci_helyzet:léglovas_harc"
           },
           {
-            "cél": "pengehossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:léglovas_harc"
-          },
-          {
-            "cél": "min_pengehossz",
-            "érték": 1,
+            "cél": "fegyverhossz",
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4435,7 +4477,8 @@
         "fok": 3,
         "hatás": [
           "TÉ:+9, VÉ:+9 léglovas bónusz.",
-          "Fegyverméret: +1 penge, min 1 penge.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4446,6 +4489,11 @@
             "név": "Léglovaglás",
             "érték": 9,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ],
         "módosítók": [
@@ -4466,16 +4514,8 @@
             "feltétel": "harci_helyzet:léglovas_harc"
           },
           {
-            "cél": "pengehossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:léglovas_harc"
-          },
-          {
-            "cél": "min_pengehossz",
-            "érték": 1,
+            "cél": "fegyverhossz",
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4534,12 +4574,14 @@
         "fok": 1,
         "hatás": [
           "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
-          "Fegyverméret: +1 penge, min 1 penge.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint",
-          "Lovaglás - 6.szint"
+          "Lovaglás - 6.szint",
+          "Minimum fegyverméret: 3"
         ],
         "követelmények": [
           {
@@ -4557,6 +4599,11 @@
             "név": "Lovaglás",
             "érték": 6,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ],
         "módosítók": [
@@ -4577,16 +4624,8 @@
             "feltétel": "harci_helyzet:lovas_harc"
           },
           {
-            "cél": "pengehossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:lovas_harc"
-          },
-          {
-            "cél": "min_pengehossz",
-            "érték": 1,
+            "cél": "fegyverhossz",
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4599,12 +4638,14 @@
         "fok": 2,
         "hatás": [
           "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
-          "Fegyverméret: +1 penge, min 1 penge.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
-          "Lovaglás - 9.szint"
+          "Lovaglás - 9.szint",
+          "Minimum fegyverméret: 3"
         ],
         "követelmények": [
           {
@@ -4622,6 +4663,11 @@
             "név": "Lovaglás",
             "érték": 9,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ],
         "módosítók": [
@@ -4642,16 +4688,8 @@
             "feltétel": "harci_helyzet:lovas_harc"
           },
           {
-            "cél": "pengehossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:lovas_harc"
-          },
-          {
-            "cél": "min_pengehossz",
-            "érték": 1,
+            "cél": "fegyverhossz",
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4664,12 +4702,14 @@
         "fok": 3,
         "hatás": [
           "TÉ:+9, VÉ:+9 lovas bónusz.",
-          "Fegyverméret: +1 penge, min 1 penge.",
+          "Fegyverméret: +2 kategória bónusz",
+          "Forgatott fegyverméret-kategória minimum: 3",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 12.szint",
-          "Lovaglás - 12.szint"
+          "Lovaglás - 12.szint",
+          "Minimum fegyverméret: 3"
         ],
         "követelmények": [
           {
@@ -4687,6 +4727,11 @@
             "név": "Lovaglás",
             "érték": 12,
             "típus": "képzettség"
+          },
+          {
+            "típus": "min_fegyverméret",
+            "érték": 3,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ],
         "módosítók": [
@@ -4707,16 +4752,8 @@
             "feltétel": "harci_helyzet:lovas_harc"
           },
           {
-            "cél": "pengehossz",
-            "érték": 1,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:lovas_harc"
-          },
-          {
-            "cél": "min_pengehossz",
-            "érték": 1,
+            "cél": "fegyverhossz",
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,

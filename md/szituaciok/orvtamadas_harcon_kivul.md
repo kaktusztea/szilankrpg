@@ -16,9 +16,9 @@ Lopakodás/rejtőzés + Ügyesség
   +0: Passzív Észlelés
 ```
 
-✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
+✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
 
-❌ Lopakodás sikertelen testközelben → Harci helyzet: [Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait kapod csak meg
+❌ Lopakodás sikertelen testközelben → Harci helyzet: [Hátulról támadás](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait kapod csak meg
 
 ❌ Lopakodás sikertelen távolabb → Mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 

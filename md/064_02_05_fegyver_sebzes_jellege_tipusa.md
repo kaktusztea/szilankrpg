@@ -11,7 +11,7 @@ Egy fegyver egy, vagy többféleképpen tud sebet ejteni jelleg szerint.
 
 Amiért ez fontos, az, hogy egyes Páncélok típusok ellen, más-más jellegű támadások nyújtanak bónuszokat - tehát egyes páncélok ellen a szúró, míg mások ellen mondjuk a zúzó fegyverek hatásosak. Sőt páncél nélküli ellenfélnél egyes vágó fegyverek kerülnek előnybe.
 
-Bővebben lásd a [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) oldalt.
+Bővebben lásd a [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md) oldalt.
 
 ### Fegyverek többféle sebzés jelleggel
 
@@ -41,7 +41,7 @@ Különbséget teszünk az alábbi fegyver **sebzés típusok** szerint:
 → alkalmatlan
 ```
 
-### [Sebzéstípus: elsődleges](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-elsődleges)
+### [Sebzéstípus: elsődleges](065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-elsődleges)
 
 Ez egy **Harci helyzet** (státusz).
 
@@ -58,7 +58,7 @@ vágás/szúrás (V/S)
 ```
 
 ---
-### [Sebzéstípus: másodlagos](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos)
+### [Sebzéstípus: másodlagos](065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos)
 
 ```
 Hátrány-1 Sebzésdobásra
@@ -73,7 +73,7 @@ A karakter **még támadó dobás előtt** bejelenti, hogy fegyverének másodla
 A karakter bejelenti, hogy Hosszú kardjával **Szúrni** szeretne. Ez fegyverének **másodlagos sebzési típusa**, így a Sebzésdobást `Hátrány-1` büntető módosítóval teheti csak meg.
 
 ---
-### [Sebzéstípus: alkalmatlan](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan)
+### [Sebzéstípus: alkalmatlan](065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan)
 
 ```
 Hátrány-2 Sebzésdobásra

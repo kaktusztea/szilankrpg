@@ -44,7 +44,7 @@ interface CéEredmény {
 }
 
 /**
- * Célzó dobás popup — three phases:
+ * Célzó dobás popup - three phases:
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat → Sebzés button
  *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
@@ -77,7 +77,6 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
         sebzésHatások={sebzésHatások}
         spBónuszok={[]}
         megjegyzések={[]}
-        hideMásodlagos
         hideAutoBónusz
         átütés={átütés}
         onClose={onClose}

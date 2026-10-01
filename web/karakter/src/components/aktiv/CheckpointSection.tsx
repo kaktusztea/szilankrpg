@@ -9,7 +9,7 @@ interface Props {
   onViewCheckpoint?: (id: string) => void;
 }
 
-/** Karakter verziók (checkpoint) accordion — lista, létrehozás, törlés, megtekintés. */
+/** Karakter verziók (checkpoint) accordion - lista, létrehozás, törlés, megtekintés. */
 export function CheckpointSection({ karakter, setKarakter, onViewCheckpoint }: Props) {
   const [open, setOpen] = useState(false);
   const [adding, setAdding] = useState(false);

@@ -2,10 +2,24 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
-import { rollElőnyHátrányK20, type ProbaDobás, előnyHátrányLabel, clampEHSzint } from '../../engine/dice';
+import { rollElőnyHátrányK20, type ProbaDobás, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
-import { netElőnySzint } from './combat-roll-info';
+import { netElőnySzint, sebzésPáncélDelta, célPáncélKategória } from './combat-roll-info';
+import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import { HatasokInfo } from './HatasokInfo';
+import { ExtrakInfo } from './ExtrakInfo';
+import type { ExtraKontextus } from './extrak-info-calc';
+import { aktívHatásokCélra, alkalmazEffektek } from './extrak-effekt';
+import { SP_NINCS } from '../../engine/types';
+
+/** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */
+const PÁNCÉLOSZTÁLYOK: { id: Páncélosztály; label: string }[] = [
+  { id: 'csupasz', label: 'csupasz' },
+  { id: 'puha', label: 'puha' },
+  { id: 'bor', label: 'bőr' },
+  { id: 'lanc', label: 'lánc' },
+  { id: 'merev', label: 'pikkely/lemez' },
+];
 
 interface Props {
   /** Weapon SP from reactive engine */
@@ -14,14 +28,24 @@ interface Props {
   defaultElőny: number;
   /** The actual TÉ/CÉ k20 roll value (for display) */
   téK20: number;
+  /** Az aktív fegyvermód sebzéstípusa. `másodlagos` → passzív info-label + a hívó már −1 E/H-t adott. */
+  sebzéstípus?: 'elsődleges' | 'másodlagos';
+  /** Az aktív fegyvermód sebzésjellege (a páncélmátrix lookup kulcsa). */
+  jelleg?: string;
+  /** Sebzésjelleg × páncélosztály mátrix. Jelenléte kapcsolja be az „Ellenfél páncél" választót. */
+  páncélMátrix?: SebzésjellegPáncélMátrix;
+  /** Az aktív fegyver extráinak listája (`cél_páncél` SP-hatás kiértékeléséhez). */
+  fegyverExtrák?: { id: string }[];
+  /** Az összes fegyver-extra definíció (id → def). */
+  extraDefs?: Record<string, FegyverExtraDef>;
+  /** Harci kontextus az „Extrák" gomb auto-státuszához (a választott páncélosztály itt egészül ki). */
+  extraKontextus?: ExtraKontextus;
   /** Active Előny/Hátrány effects on Sebzésdobás (informational) */
   sebzésHatások: DobásHatás[];
   /** Active static SP bonuses from taktikák (informational) */
   spBónuszok: SpBónusz[];
   /** Taktika notes relevant to sebzés (e.g. "Sebzés: 0") */
   megjegyzések: { forrás: string; szöveg: string }[];
-  /** Hide the másodlagos sebzéstípus button (e.g. távharc) */
-  hideMásodlagos?: boolean;
   /** Hide the automatic SP bonuses list inside StatikusBonuszBtn (e.g. távharc) */
   hideAutoBónusz?: boolean;
   /** Fegyver Átütés értéke (informatív kijelzés, ha > 0) */
@@ -36,28 +60,60 @@ interface SebzésEredmény {
   végső: number;
 }
 
-/** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + k20 roll + info. */
-export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBónuszok, megjegyzések, hideMásodlagos, hideAutoBónusz, átütés, onClose }: Props) {
-  // Raw (unclamped) combined value — includes TÉ k20 bonus + active effects
+/** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + ellenfél páncél + k20 roll + info. */
+export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok, megjegyzések, hideAutoBónusz, átütés, onClose }: Props) {
+  // Raw (unclamped) combined value - includes TÉ k20 bonus + active effects.
+  // A másodlagos sebzéstípus −1 E/H-ját a hívó (TamadoDobasPopup) már beépítette a defaultElőny-be.
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
   const [rawSzint, setRawSzint] = useState(baseRaw);
   const [bónusz, setBónusz] = useState(0);
-  const [másodlagos, setMásodlagos] = useState(false);
+  // Ellenfél páncélosztálya (a mátrix SP-delta lookup kulcsa). null = még nincs választva.
+  const [páncél, setPáncél] = useState<Páncélosztály | null>(null);
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
 
-  // Computed value includes másodlagos — this is the "calculated" level
-  const számított = clampEHSzint(baseRaw + (másodlagos ? -1 : 0));
-  // Actual value shown on chips and used for dice roll
+  // SP_NINCS (-99) sentinel: a fegyver nem sebez (pl. Bola, Dobóháló, Lasszó, Fúvócső).
+  // Korai kilépés (a hook-ok UTÁN, Rules of Hooks): a -99 SOHA nem kerül a delta/roll számításba.
+  if (sp === SP_NINCS) {
+    return (
+      <PopupOverlay onClose={() => onClose()}>
+        <div className="tamado-dobas-popup">
+          <div className="ke-dobas-header">Sebzés</div>
+          <div className="sebzes-nincs">Ez a fegyver nem sebez</div>
+        </div>
+      </PopupOverlay>
+    );
+  }
+
   const aktuális = clampEHSzint(rawSzint);
+
+  // Az „Extrák" gomb + effekt-motor kontextusa a választott ellenfél-páncél kategóriájával
+  // kiegészítve (a cél_páncél feltételes extrák - pl. panceltalant/kopjas_roham - így teljesülnek).
+  const extraKontextusPáncéllal: ExtraKontextus | undefined = extraKontextus && {
+    ...extraKontextus,
+    célPáncélKategória: páncél ? célPáncélKategória(páncél) : undefined,
+  };
+
+  // Ellenfél-páncéltól függő SP-delta: (1) sebzésjelleg×páncél mátrix + (2) az aktív SP-célú extrák
+  // (§42.3 additív rész) - a teljes korreláció (ellenfél páncél) ismeretében, l. extrak-effekt.ts.
+  const mátrixDelta = páncél && páncélMátrix ? sebzésPáncélDelta(páncélMátrix, jelleg, páncél) : 0;
+  const spHatások = extraKontextusPáncéllal
+    ? aktívHatásokCélra(fegyverExtrák, extraDefs, extraKontextusPáncéllal, 'SP')
+    : [];
+  const extraDelta = alkalmazEffektek(0, spHatások);
+  const páncélDelta = mátrixDelta + extraDelta;
+  const effektívSp = sp + páncélDelta;
+  // A páncélválasztó kötelező (STUDY 3g): amíg jelen van a mátrix, de nincs választva
+  // páncélosztály, a dobás blokkolva (rossz SP-eredményt adna a mátrix-lookup nélkül).
+  const páncélKell = !!páncélMátrix && páncél === null;
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(aktuális);
-    setEredmény({ dobás, sp, bónusz, végső: dobás.eredmény + sp + bónusz });
+    setEredmény({ dobás, sp: effektívSp, bónusz, végső: dobás.eredmény + effektívSp + bónusz });
   }
 
   function handleManualK20(value: number) {
     const dobás: ProbaDobás = { rolls: [value], eredmény: value };
-    setEredmény({ dobás, sp, bónusz, végső: value + sp + bónusz });
+    setEredmény({ dobás, sp: effektívSp, bónusz, végső: value + effektívSp + bónusz });
   }
 
   function handleBónuszClick(val: number) {
@@ -68,13 +124,6 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
   function handleSzintChange(newSzint: number) {
     // Manual chip click: set raw to the clicked value
     setRawSzint(newSzint);
-    setEredmény(null);
-  }
-
-  function toggleMásodlagos() {
-    const next = !másodlagos;
-    setMásodlagos(next);
-    setRawSzint(s => s + (next ? -1 : 1));
     setEredmény(null);
   }
 
@@ -97,7 +146,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
               </div>
             )}
 
-            <ElonyPicker szint={aktuális} eredeti={aktuális !== számított ? számított : undefined} onChange={handleSzintChange} />
+            <ElonyPicker szint={aktuális} onChange={handleSzintChange} />
 
             {(sebzésHatások.length > 0 || defaultElőny > 0) && (
               <HatasokInfo hatások={sebzésHatások}>
@@ -110,6 +159,12 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
               </HatasokInfo>
             )}
 
+            {sebzéstípus === 'másodlagos' && (
+              <div className="sebzes-masodlagos-info">
+                Sebzéstípus: másodlagos (Hátrány−1)
+              </div>
+            )}
+
             <StatikusBonuszBtn
               bónusz={bónusz}
               spBónuszok={spBónuszok}
@@ -117,29 +172,26 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
               onBónuszClick={handleBónuszClick}
             />
 
-            {!hideMásodlagos && (
-              <button
-                className={`sebzes-masodlagos-btn${másodlagos ? ' active' : ''}`}
-                onClick={toggleMásodlagos}>
-                Sebzéstípus másodlagos: {másodlagos ? 'igen' : 'nem'}
-              </button>
+            {páncélMátrix && (
+              <PáncélVálasztóBtn páncél={páncél} delta={páncélDelta} jelleg={jelleg} onSelect={p => { setPáncél(p); setEredmény(null); }} />
             )}
-
+            {extraKontextusPáncéllal && (
+              <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={extraKontextusPáncéllal} />
+            )}
             <div className="sebzes-summary">
               SP: {(() => {
                 const fortélySum = spBónuszok.reduce((s, b) => s + b.érték, 0);
-                const totalBónusz = fortélySum + bónusz;
+                const totalBónusz = fortélySum + bónusz + páncélDelta;
                 const base = sp - fortélySum;
                 if (totalBónusz !== 0) return <>{base}<span className={totalBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{totalBónusz > 0 ? '+' : ''}{totalBónusz}</span></>;
-                return sp;
+                return effektívSp;
               })()} + k20
-              {aktuális !== 0 ? ` (${előnyHátrányLabel(aktuális)})` : ''}
               {(átütés ?? 0) > 0 && <span className="sebzes-atutes"> | Átütés: {átütés}</span>}
             </div>
 
             <div className="dobas-btn-row">
-              <button className="tamado-sebzes-btn" onClick={handleDobás}>Dobás</button>
-              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={sp + bónusz} alapLabel="SP" />
+              <button className="tamado-sebzes-btn" onClick={handleDobás} disabled={páncélKell}>Dobás</button>
+              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
             </div>
           </>
         ) : (
@@ -157,6 +209,50 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
         )}
       </div>
     </PopupOverlay>
+  );
+}
+
+// ─── Ellenfél páncél választó gomb + popup ─────────────────────────────────
+
+function PáncélVálasztóBtn({ páncél, delta, jelleg, onSelect }: {
+  páncél: Páncélosztály | null;
+  delta: number;
+  jelleg?: string;
+  onSelect: (p: Páncélosztály) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const aktLabel = páncél ? PÁNCÉLOSZTÁLYOK.find(p => p.id === páncél)?.label : null;
+  const colorClass = delta > 0 ? 'sebzes-stat-pos' : delta < 0 ? 'sebzes-stat-neg' : '';
+  // STUDY 3g: kötelező, kiemelt elem - amíg nincs választva, pulzáló figyelmeztető keret.
+  const kellClass = páncél === null ? ' pancel-valaszto-kell' : '';
+
+  return (
+    <>
+      <button className={`sebzes-stat-btn pancel-valaszto-btn ${colorClass}${kellClass}`} onClick={() => setOpen(true)}>
+        <span className="pancel-valaszto-fej">
+          {aktLabel === null ? 'Ellenfél páncél →' : `Ellenfél páncél: ${aktLabel}`}
+        </span>
+        {páncél !== null && delta !== 0 && (
+          <span className="pancel-valaszto-delta">({jelleg ?? 'sebzés'} ellene: {delta > 0 ? '+' : ''}{delta})</span>
+        )}
+      </button>
+      {open && (
+        <PopupOverlay onClose={() => setOpen(false)}>
+          <div className="sebzes-stat-popup">
+            <label className="harc-popup-label">Ellenfél páncélja</label>
+            <div className="pancel-valaszto-list">
+              {PÁNCÉLOSZTÁLYOK.map(p => (
+                <button key={p.id}
+                  className={`pancel-valaszto-item${páncél === p.id ? ' active' : ''}`}
+                  onClick={() => { onSelect(p.id); setOpen(false); }}>
+                  {p.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </PopupOverlay>
+      )}
+    </>
   );
 }
 

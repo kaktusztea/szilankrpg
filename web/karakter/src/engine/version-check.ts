@@ -5,7 +5,7 @@ import { APP_VERSION } from '../version';
  *
  * A GitHub Pages `Cache-Control: max-age=600`-at ad az `index.html`-re, és ez nem
  * konfigurálható. Ha a böngésző cache-elt HTML-t szolgál ki, az a RÉGI (hash-elt nevű)
- * JS bundle-t tölti be — az app régi verziója fut, holott új van kint. Ezt úgy vesszük
+ * JS bundle-t tölti be - az app régi verziója fut, holott új van kint. Ezt úgy vesszük
  * észre, hogy a szerver `metadata.json`-jának verzióját (no-store kéréssel) a bundle-be
  * sütött verzióhoz mérjük, és eltérés esetén egyszeri, cache-kerülő újratöltést kérünk.
  */
@@ -48,7 +48,7 @@ function cleanVersionParam(): void {
 }
 
 /**
- * Verzió-ellenőrzés indításkor. `true`, ha újratöltés indult — ilyenkor a hívó NE
+ * Verzió-ellenőrzés indításkor. `true`, ha újratöltés indult - ilyenkor a hívó NE
  * mountolja az appot (különben az URL-es karakter import kétszer futna le).
  * Hálózati hiba, timeout vagy tiltott sessionStorage esetén csendben `false`.
  */

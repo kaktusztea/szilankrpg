@@ -1,4 +1,4 @@
-/** UI layout constants (not game-rule values — those live in konstansok.yaml) */
+/** UI layout constants (not game-rule values - those live in konstansok.yaml) */
 
 export const MAX_FORTÉLY_FOK = 3;
 // ponytail: a konstansok.arányok.képzettség_max_szint (=15) UI-oldali másolata. A picker
@@ -9,7 +9,7 @@ export const SZINT_VALUES = Array.from({ length: MAX_KÉPZETTSÉG_SZINT }, (_, i
 export const MAX_KARAKTER_DB = 16;
 export const MAX_NÉV = 40;
 export const MAX_BECENÉV = 12;
-/** Max tárolt NJK (jk === false) karakter — az NJK switcher sáv is ennyit mutat. */
+/** Max tárolt NJK (jk === false) karakter - az NJK switcher sáv is ennyit mutat. */
 export const MAX_NJK_DB = 10;
 /** KM harci jelölés (NJK chip): választható betűk. */
 export const KM_JEL_BETŰK = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));

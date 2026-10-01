@@ -18,7 +18,7 @@ interface Props {
   setSelKits: React.Dispatch<React.SetStateAction<Set<number>>>;
   kitDotClass: (k: KiterjesztesEntry) => string;
   kitDots: (k: KiterjesztesEntry) => string;
-  /** Többszörösen felvehető fortélyok nevei — csak ezek negálhatók long-press-szel. */
+  /** Többszörösen felvehető fortélyok nevei - csak ezek negálhatók long-press-szel. */
   többszörösNevek: ReadonlySet<string>;
   /** Egy többszörös kiterjesztő fortély teljesül/nem állapotának billentése (long-press). */
   onToggleNegál: (fortélyNév: string) => void;
@@ -50,7 +50,7 @@ export function KepzettsegProbaPickers({
   képzettségNév, dobásKomment,
 }: Props) {
   // Kiterjesztő fortély gomb: rövid tap = kijelölés a próbához; long-press = teljesül/nem
-  // negálás (csak többszörösen felvehető fortélynél — a KM dönti el a kapcsolódó spec_elem-et).
+  // negálás (csak többszörösen felvehető fortélynél - a KM dönti el a kapcsolódó spec_elem-et).
   const toggleSelect = (i: number) => {
     setSelKits(prev => { const next = new Set(prev); if (next.has(i)) next.delete(i); else next.add(i); return next; });
     resetDobás();
@@ -131,7 +131,7 @@ export function KepzettsegProbaPickers({
       )}
       {openPicker === 'info' && (
         <PopupOverlay className="kep-prompt kep-proba-info-popup" onClose={() => setOpenPicker(null)}>
-          <label className="kep-prompt-label-bold-mb">{képzettségNév} — próbadobás</label>
+          <label className="kep-prompt-label-bold-mb">{képzettségNév} - próbadobás</label>
           <div className="kep-proba-info-body">
             {dobásKomment.map((k, i) => (
               <p key={i} className="kep-proba-info-line">{k.line}</p>

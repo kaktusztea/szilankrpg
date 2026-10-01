@@ -91,7 +91,7 @@
   text-transform: uppercase;
 }
 
-/* MA: statikus érték — halványabb, nem kattintható */
+/* MA: statikus érték - halványabb, nem kattintható */
 .harc-header-bottom .mp-box .ma-label {
   font-size: 18px;
   font-weight: normal;
@@ -352,7 +352,7 @@
 .ke-history-item:nth-child(2) { color: #888; }
 .ke-history-item:nth-child(3) { color: #555; }
 
-/* Sebzés (SP) érték a Támadó dobás mellett: TÉ(SP) — örökli a fakuló színt */
+/* Sebzés (SP) érték a Támadó dobás mellett: TÉ(SP) - örökli a fakuló színt */
 .te-history-sp {
   margin-left: 1px;
   font-size: 10px;
@@ -458,6 +458,10 @@
   align-items: center;
   gap: 2px;
 }
+.tamado-sebzes-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
 
 .tamado-sebzes-btn-hint {
   font-size: 12px;
@@ -510,6 +514,17 @@
 }
 .sebzes-stat-pos { color: var(--success); }
 .sebzes-stat-neg { color: var(--error); }
+
+/* Ellenfél páncél választó: kétsoros tömör felirat (fej + jelleg-függő delta). */
+.pancel-valaszto-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  line-height: 1.3;
+}
+.pancel-valaszto-fej { font-weight: 600; }
+.pancel-valaszto-delta { font-size: 13px; opacity: 0.95; }
 
 .sebzes-stat-popup {
   display: flex;
@@ -568,22 +583,175 @@
 .sebzes-stat-circle.active.sebzes-stat-neg { border-color: var(--error); background: rgba(244, 67, 54, 0.2); }
 
 /* Másodlagos sebzés toggle */
-.sebzes-masodlagos-btn {
+.sebzes-nincs {
   width: 100%;
-  padding: 10px;
+  padding: 14px 10px;
+  margin-top: 10px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted, #9e9e9e);
+  font-size: 14px;
+  text-align: center;
+}
+
+.sebzes-masodlagos-info {
+  width: 100%;
+  padding: 8px 10px;
   margin-top: 6px;
   border: 1px solid var(--border-input);
   border-radius: 6px;
+  background: rgba(244, 67, 54, 0.08);
+  color: #e57373;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* --- Mód-választó + Ellenfél páncél választó (lista popupok) --- */
+.mod-valaszto-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
   background: var(--input-bg);
-  color: var(--text-dim);
-  font-size: 14px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   text-align: center;
 }
-.sebzes-masodlagos-btn.active {
-  border-color: var(--error);
-  background: rgba(244, 67, 54, 0.1);
-  color: #e57373;
+.mod-valaszto-list,
+.pancel-valaszto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 240px;
+}
+.mod-valaszto-item,
+.pancel-valaszto-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+.mod-valaszto-item.active,
+.pancel-valaszto-item.active {
+  border-color: var(--accent, var(--success));
+  background: rgba(76, 175, 80, 0.12);
+}
+.mod-valaszto-jelleg { font-weight: 600; }
+.mod-valaszto-tipus { font-size: 12px; color: var(--text-dim); }
+.mod-valaszto-ertekek { font-size: 12px; color: var(--text-dim); }
+
+/* STUDY 3g: kötelező „Ellenfél páncél" választó pulzáló figyelmeztetése, amíg nincs érték. */
+.pancel-valaszto-kell {
+  animation: pancel-kell-pulzal 1.2s ease-in-out infinite;
+}
+@keyframes pancel-kell-pulzal {
+  0%, 100% { border-color: var(--border-input); box-shadow: none; }
+  50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.5); }
+}
+
+/* --- „Extrák" gomb + popup (§42 fegyver-extrák info) --- */
+.extrak-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+.extrak-btn-pulse {
+  animation: extrak-pulzal 1.4s ease-in-out infinite;
+}
+@keyframes extrak-pulzal {
+  0%, 100% { border-color: var(--border-input); box-shadow: none; }
+  50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.45); }
+}
+/* A popup GYÖKÉR (.kep-prompt) szélessége - a hosszú leírás ne nyújtsa túl (app 90%-a). */
+.extrak-prompt {
+  width: 90vw;
+  max-width: 560px;   /* asztali gépen ne legyen indokolatlanul széles */
+  box-sizing: border-box;
+}
+.extrak-popup {
+  max-height: 70vh;
+  overflow-y: auto;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.extrak-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+  min-width: 0;
+}
+.extrak-tetel {
+  padding: 8px 10px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  min-width: 0;           /* engedi a flex-gyerekek zsugorodását, hogy a szöveg tördelhessen */
+}
+.extrak-tetel.extrak-inaktív { opacity: 0.55; }
+.extrak-tetel-fej {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.extrak-tetel-nev { font-weight: 600; overflow-wrap: anywhere; }
+.extrak-tetel-hatas {
+  margin-top: 3px;
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--text-dim);
+  overflow-wrap: anywhere;
+}
+.extrak-tetel-leiras {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;   /* hosszú szó/összefüggő szöveg is tördelődik */
+}
+.extrak-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.extrak-badge-aktív { background: rgba(76, 175, 80, 0.2); color: var(--success); }
+.extrak-badge-inaktív { background: rgba(120, 120, 120, 0.2); color: var(--text-dim); }
+.extrak-badge-km { background: rgba(255, 179, 0, 0.18); color: var(--warning, #ffb300); }
+
+/* --- VÉ-csökkentés popup: ellenfél-infó nélküli VÉ-extra figyelmeztetés --- */
+.ve-csokkentes-warning {
+  padding: 8px 10px;
+  margin: 6px 0;
+  border: 1px solid var(--warning, #ffb300);
+  border-radius: 6px;
+  background: rgba(255, 179, 0, 0.1);
+  color: var(--warning, #ffb300);
+  font-size: 13px;
+  text-align: center;
 }
 
 .sebzes-summary {
@@ -618,7 +786,7 @@
 
 .dobas-info-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 12px;
 }
@@ -663,6 +831,7 @@
 .dobas-info-source {
   color: var(--text-dim);
   font-size: 11px;
+  white-space: pre-line;
 }
 
 .dobas-sp-info {
@@ -868,3 +1037,106 @@
   min-width: 20px;
   text-align: center;
 }
+
+/* --- Fegyver infó popup (fegyvertábla névre kattintva) --- */
+.harc-fegyver-nev-clickable {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+
+.fi-popup {
+  min-width: 280px;
+  max-width: 92vw;
+  max-height: 82vh;
+  overflow-y: auto;
+}
+
+.fi-meta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fi-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.fi-meta-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.fi-meta-value {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text);
+  text-align: right;
+}
+
+.fi-modok-cim {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.fi-modok-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.fi-modok-table th {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: normal;
+  text-align: center;
+  padding: 2px 4px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.fi-modok-table td {
+  text-align: center;
+  padding: 6px 4px;
+  font-family: monospace;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.fi-mod-aktor {
+  text-align: left !important;
+  font-family: inherit !important;
+  line-height: 1.25;
+}
+
+.fi-mod-tipus {
+  display: block;
+  font-size: 10px;
+  color: var(--text-dim);
+  font-family: inherit;
+}
+
+.fi-mod-sp {
+  line-height: 1.25;
+}
+
+.fi-mod-jelleg {
+  display: block;
+  font-size: 10px;
+  color: var(--text-dim);
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.fi-mod-masodlagos {
+  opacity: 0.72;
+}
+

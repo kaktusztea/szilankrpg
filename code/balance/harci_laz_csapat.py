@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Harci láz — CSAPATKONTEXTUS: a 4.fok berserk önveszélye mint valós balansz-ár.
+"""Harci láz - CSAPATKONTEXTUS: a 4.fok berserk önveszélye mint valós balansz-ár.
 
 Az 1v1 modell (harci_laz_egyesitett.py) felülbecsüli a túlképzett (elszabaduló) karaktert,
-mert a 4.fok önveszélye — "bárkit, barátot is megtámadsz, aki legközelebb van" — csak
+mert a 4.fok önveszélye - "bárkit, barátot is megtámadsz, aki legközelebb van" - csak
 CSAPATBAN büntet. Ez a modul azt méri ki.
 
 Csapatfelállás: a lázas + (N-1) sima szövetséges  vs  M sima ellenség (mind referencia-statú).
 A lázas cselekvése fokozatfüggő:
-  fok 1-2: normál — ellenséget támad
-  fok 3:   "bárki ELLENFELET" — random ellenséget támad (nem célozhat, de nem bánt barátot)
-  fok 4:   BERSERK — a legközelebbi ÉLŐT támadja: barát VAGY ellenség (modell: random bárki).
+  fok 1-2: normál - ellenséget támad
+  fok 3:   "bárki ELLENFELET" - random ellenséget támad (nem célozhat, de nem bánt barátot)
+  fok 4:   BERSERK - a legközelebbi ÉLŐT támadja: barát VAGY ellenség (modell: random bárki).
 
 Mérőszámok: a lázas CSAPATÁNAK győzelmi aránya + a baráti tűz (saját oldalra osztott sebzés).
 Harc-motor: spec §3-§6 (selftest-validált). Lépkedés: harci_laz_lepkedes.py logika.
@@ -138,7 +138,7 @@ TANK   = dict(te=42, ve=62, sp=11, sfe=17, ep=48) # lemez+abbitacél: magas SFÉ
 
 
 def forgatokonyv(cim, keszlet, sajat_prof, ellen_prof, n_sajat, n_ellen, fixek=(10, 12, 14, 16)):
-    print(f'=== {cim} — {n_sajat}v{n_ellen} ===')
+    print(f'=== {cim} - {n_sajat}v{n_ellen} ===')
     # baseline: a lázas is sima harcos (a saját társak profiljával)
     base = meres({}, 1, sajat_prof, ellen_prof, n_sajat=n_sajat, n_ellen=n_ellen)
     print(f"  baseline (lázas is sima {sajat_prof and 'társ' or 'ref'}): csapat győz {base['win']:.1%}")
@@ -149,14 +149,14 @@ def forgatokonyv(cim, keszlet, sajat_prof, ellen_prof, n_sajat, n_ellen, fixek=(
     print()
 
 
-# ELFOGADOTT készlet (E) — átvezetve a md/kepzettsegek.primer/harci/harci_laz.md-be (2026-09-13).
+# ELFOGADOTT készlet (E) - átvezetve a md/kepzettsegek.primer/harci/harci_laz.md-be (2026-09-13).
 # fok: (+TÉ, +SP, sebzés-Előny, virtuális ÉP). A lázas társai referencia-statúak (kaland-csapat).
 # FIGYELEM: az SP értékek (+1/+3/+5/+7) a JELENLEGI fegyver-SP skálához igazodnak. A folyamatban
 # lévő Fegyvergenerátor megváltoztathatja a fegyver-SP tartományt → akkor ezeket újra kell hangolni.
 B = {1: (2, 1, 0, 4), 2: (5, 3, 0, 6), 3: (7, 5, 1, 9), 4: (10, 7, 1, 12)}
 
 if __name__ == '__main__':
-    print('### ELFOGADOTT (E) KÉSZLET — több ellenfél-típus ellen ###')
+    print('### ELFOGADOTT (E) KÉSZLET - több ellenfél-típus ellen ###')
     print('  (lázas + 2 referencia-társ; a "fix" = a lázas Önuralom+szint; sweet spot ~12-14)\n')
 
     forgatokonyv('TÜKÖR (referencia ellenfél)', B, REF, REF, 3, 3)

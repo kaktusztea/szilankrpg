@@ -5,7 +5,7 @@
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
 
 - [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
-- [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md)
+- [Szilánk webapp](010_02_szilank_webapp.md)
 - [A karakter jellemzői](010_03_00_karakter_jellemzoi.md)
   - [Kalandozók](010_03_01_kalandozok.md)
   - [Őrszemek](010_03_02_orszem_karakterek.md)
@@ -138,18 +138,18 @@
 
 ### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
-- [Fegyverfogás](065_04_00_fegyverfogas.md)
-  - [Egyfegyveres](065_04_00_fegyverfogas.md#egyfegyveres)
-  - [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md)
-  - [Fegyver + pajzs](065_04_00_fegyverfogas.md#fegyver--pajzs)
-  - [Fegyver + hárítófegyver](065_04_00_fegyverfogas.md#fegyver--hárítófegyver)
+- [Fegyverfogás](065_01_fegyverfogas.md)
+  - [Egyfegyveres](065_01_fegyverfogas.md#egyfegyveres)
+  - [Fegyver + pajzs](065_01_fegyverfogas.md#fegyver--pajzs)
+  - [Fegyver + hárítófegyver](065_01_fegyverfogas.md#fegyver--hárítófegyver)
+  - [Kétkezes harc](065_05_ketkezes_harc.md)
 - [Harci taktikák](065_02_harci_taktikak.md)
-- [Harci helyzetek](065_01_00_harci_helyzetek.md)
-  - [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
-  - [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
-  - [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
-  - [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
-- [Harc alakzatban](065_03_harc_alakzatban.md)
+- [Harci helyzetek](065_03_00_harci_helyzetek.md)
+  - [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
+  - [Semleges helyzetek](065_03_02_semleges_helyzetek.md)
+  - [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
+  - [Fegyverviszony és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
+- [Harc alakzatban](065_04_harc_alakzatban.md)
 
 ### 6.6 [Manőverek](066_00_manoverek.md) 🎲
 
@@ -173,20 +173,17 @@
 ### 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
 
 - [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
-  - [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
-  - [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
-  - [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
-  - [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md)
-  - [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
-  - [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
-  - [Íves fegyver](068_01_07_ives_fegyver.md)
-  - [Puszta kéz](068_01_08_puszta_kez.md)
-  - [Nyílpuskák](068_01_09_nyilpuskak.md)
-  - [Érintő támadás](068_01_10_erinto_tamadas.md)
-  - [Erőbónusz limit](068_01_11_erobonusz_limit.md)
-  - [Átütés](068_01_12_atutes.md)
-  - [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md)
-  - [Fegyverek minősége (Ideája)](068_01_14_fegyverek_minosege_ideaja.md)
+  - [Fegyverhossz kategóriák](068_01_01_fegyverhossz_kategoriak.md)
+  - [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md)
+  - [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md)
+  - [Puszta kéz](068_01_04_puszta_kez.md)
+  - [Nyílpuskák](068_01_05_nyilpuskak.md)
+  - [Érintő támadás](068_01_06_erinto_tamadas.md)
+  - [Erőbónusz limit](068_01_07_erobonusz_limit.md)
+  - [Átütés](068_01_08_atutes.md)
+  - [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md)
+  - [Fegyverek minősége (Ideája)](068_01_10_fegyverek_minosege_ideaja.md)
+  - [Fegyver extrák](068_01_11_fegyver_extrak.md)
 - [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
 - [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
 - [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
@@ -195,6 +192,7 @@
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
 - [Lőfegyverek](068_08_lofegyverek.md)
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
+- [Fegyvergenerátor](068_10_fegyvergenerator.md)
 
 ### 6.9 [Páncélok](069_00_vertek_pancelok.md)
 
@@ -209,17 +207,22 @@
 ---
 ### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
 
-- [Célzó Érték számítása](071_tavharc_ce.md)
-- [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
-- [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
-- [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
-- [Távharci taktikák](073_tavharci_taktikak.md)
-- [Távharci helyzetek](074_tavharci_helyzetek.md)
-- [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
-- [Területlövés](077_teruletloves.md)
-- [Távolsági fegyverek](078_tavharc_fegyverek.md)
-- [Példalövészet](079_01_tavharc_peldak.md) ⚡
-- [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
+- **CÉ, VÉ számítása**
+  - [Célzó Érték számítása](071_tavharc_ce.md)
+  - [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
+  - [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
+  - [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
+
+- **Taktikák, mágikus lövedékek, fegyverek**
+  - [Távharci taktikák](073_tavharci_taktikak.md)
+  - [Távharci helyzetek](074_tavharci_helyzetek.md)
+  - [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
+  - [Területlövés](077_teruletloves.md)
+  - [Távolsági fegyverek](078_tavharc_fegyverek.md)
+
+- **Példák**
+  - [Példalövészet](079_01_tavharc_peldak.md) ⚡
+  - [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
 
 ---
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)

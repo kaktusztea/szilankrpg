@@ -1,11 +1,14 @@
-// Manőver dobás popup — pure (render-mentes) logika.
+// Manőver dobás popup - pure (render-mentes) logika.
 // Kiemelve a ManoverDobasPopup.tsx-ből (2026-09-11 refaktor): a komponens csak a
 // dobás-folyamat state-jét és JSX-ét tartja, minden számítás/feltétel ide kerül.
 // Ezekre a fn-ekre írt tesztek: Manover{Kovetelmeny,TeBontas,FazisFelirat,EredmenyHatas}.test.ts
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
+import { képzettségSzint, fortélyFok, harcmodorÖsszeg } from '../../engine/utils';
 import { lookupFegyver } from '../../engine/utils';
+import { elsődlegesMód } from '../harc/fegyver-calc';
+import { buildAktívFeltételek } from '../../engine/feltetelek';
 
 /** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
 const MEGLEPETÉS = 'Meglepetés';
@@ -26,9 +29,9 @@ export function helyzetKönnyítés(session: Session): { meglepetés: boolean; o
 /**
  * Egy 'egyéb' követelmény mely aktiválható harci helyzet(ek)re hivatkozik (adatvezérelt).
  * Az így felismert követelmény GÉPILEG kiértékelhető a session.aktív_helyzetek alapján.
- * A tagadó szövegeket ("nincs"/"sincs") KIZÁRJUK — azok nem "aktív helyzet kell" jellegűek
- * (pl. "Ellenfél nincs Pengeelőnyben", "Egyik ellenfél sincs Pengeelőnyben"), maradnak manuálisak.
- * A hosszabb neveket előbb illesztjük (Pengeelőny vs Pengehátrány szóhatár egyértelműsítése).
+ * A tagadó szövegeket ("nincs"/"sincs") KIZÁRJUK - azok nem "aktív helyzet kell" jellegűek
+ * (pl. "Ellenfél nincs Fegyverelőnyben", "Egyik ellenfél sincs Fegyverelőnyben"), maradnak manuálisak.
+ * A hosszabb neveket előbb illesztjük (Fegyverelőny vs Fegyverhátrány szóhatár egyértelműsítése).
  */
 function követelményHelyzetei(köv: ManoverKövetelmény, data: GameData): string[] {
   if (köv.típus !== 'egyéb') return [];
@@ -70,7 +73,7 @@ export interface AktívFegyverInfo {
 /**
  * Az aktív jobb kéz fegyverének kategóriája + sebzésmódja a session alapján.
  * null, ha nincs kiválasztott fegyver (puszta kéz / index<0) → a fegyver-követelmények manuálisak.
- * ponytail: a jobb kéz fegyvere a mérvadó (kétkezes/pajzs finomságát nem bontjuk — a kézifegyveres
+ * ponytail: a jobb kéz fegyvere a mérvadó (kétkezes/pajzs finomságát nem bontjuk - a kézifegyveres
  * manőver-követelményekhez ez elég; upgrade: aktív-fegyver-ctx bevonása, ha később kell.)
  */
 export function aktívFegyverInfo(karakter: Karakter, session: Session, data: GameData): AktívFegyverInfo | null {
@@ -79,7 +82,61 @@ export function aktívFegyverInfo(karakter: Karakter, session: Session, data: Ga
   if (!fp) return null;
   const def = lookupFegyver(data.fegyverek, fp.alap);
   if (!def) return null;
-  return { kategória: def.Kategória, sebzésMódja: def['Sebzés módja'] };
+  return { kategória: def.kategória, sebzésMódja: elsődlegesMód(def).jelleg };
+}
+
+/** Az aktív (jobb kéz) fegyver neve, vagy null ha nincs kiválasztva (puszta kéz / index<0). */
+export function aktívFegyverNév(karakter: Karakter, session: Session, data: GameData): string | null {
+  const idx = session.aktív_fegyver_index;
+  const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
+  return fp ? (lookupFegyver(data.fegyverek, fp.alap)?.név ?? null) : null;
+}
+
+/**
+ * Egy helyzetfüggő módosító sor `feltétel` STRING-je (`"prefix:érték"`) teljesül-e a jelen manőver-
+ * kontextusban. Támogatott prefixek: `fegyver_extra:<id>` (az aktív fegyver hordozza-e az extrát),
+ * `taktika:<id>` / `harci_helyzet:<id>` / `fegyverfogás:<id>` (aktív feltételek), `fegyver_kategória:<kat>`.
+ * Ismeretlen prefix / nincs feltétel → false (nem auto-matchel, marad kézi).
+ */
+export function szitFeltételTeljesül(feltétel: string | undefined, karakter: Karakter, session: Session, data: GameData): boolean {
+  if (!feltétel || !feltétel.includes(':')) return false;
+  const [prefix, ...rest] = feltétel.split(':');
+  const érték = rest.join(':');
+  if (prefix === 'fegyver_extra') {
+    const idx = session.aktív_fegyver_index;
+    const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
+    const fdef = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
+    return !!fdef?.extrák?.some(e => e.id === érték);
+  }
+  if (prefix === 'fegyver_kategória') {
+    const idx = session.aktív_fegyver_index;
+    const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
+    const fdef = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
+    return fdef?.kategória === érték;
+  }
+  // taktika / harci_helyzet / fegyverfogás → az aktív feltétel-kulcsok között.
+  return buildAktívFeltételek(session, data).has(feltétel);
+}
+
+/**
+ * A helyzetfüggő módosító táblák auto-match kezdőállapota: single táblánál a legelső teljesülő
+ * feltételes sor indexe (vagy -1 ha nincs), multi táblánál soronkénti teljesülés. A popup ezt
+ * használja kezdőértéknek - a felhasználó utána kézzel felülbírálhatja (ki/be).
+ */
+export function szitModKezdőÁllapot(
+  táblák: ModositoTabla[], karakter: Karakter, session: Session, data: GameData,
+): { single: Record<string, number>; multi: Record<string, boolean[]> } {
+  const single: Record<string, number> = {};
+  const multi: Record<string, boolean[]> = {};
+  for (const t of táblák) {
+    if (t.mód === 'multi') {
+      multi[t.kategória] = t.sorok.map(s => szitFeltételTeljesül(s.feltétel, karakter, session, data));
+    } else {
+      const idx = t.sorok.findIndex(s => szitFeltételTeljesül(s.feltétel, karakter, session, data));
+      single[t.kategória] = idx; // -1 ha nincs match
+    }
+  }
+  return { single, multi };
 }
 
 /**
@@ -119,7 +176,7 @@ export function követelményTeljesül(
   if (köv.típus === 'képzettség') {
     const szint = köv.név === 'Harcmodor'
       ? harcmodorMaxSzint(karakter, data)
-      : (karakter.képzettségek.find(k => k.név === köv.név)?.szint ?? 0);
+      : képzettségSzint(karakter, köv.név ?? '');
     return szint >= küszöb;
   }
   // fortély: a felvett (max) fok
@@ -174,22 +231,21 @@ export function könnyítettFázisok(fázisok: ('M' | 'V' | 'E')[], mód: Mód, 
 }
 
 export function calcManőverPont(karakter: Karakter, data: GameData): number {
-  const { képzettségek, tsz } = karakter;
+  const { tsz } = karakter;
   const harcmodorNevek = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
-  const összeg = harcmodorNevek.reduce((s, n) => s + (képzettségek.find(k => k.név === n)?.szint ?? 0), 0);
+  const összeg = harcmodorÖsszeg(karakter, harcmodorNevek);
   return Math.ceil(összeg * 2 / (tsz || 1));
 }
 
 export function getBelharcFok(karakter: Karakter): number {
-  const f = karakter.fortélyok.find(f => f.név === 'Belharc');
-  return f?.fok ?? 0;
+  return fortélyFok(karakter, 'Belharc');
 }
 
 interface TéBontásSor { forrás: string; érték: number }
 
 /**
  * A Manőver popup közelítő TÉ-bontása (a HarcScreen `baseTÉ` képletének EGYETLEN forrása).
- * A HarcScreen ennek az összegét használja — így a bontás és az összeg sosem driftel szét.
+ * A HarcScreen ennek az összegét használja - így a bontás és az összeg sosem driftel szét.
  * ponytail: közelítő (per-fegyver módosítók nélkül), ahogy a `baseTÉ` komment is jelzi.
  */
 export function téBontás(karakter: Karakter, data: GameData): TéBontásSor[] {
@@ -241,7 +297,7 @@ export function getFázisFelirat(
   // A képernyő előtt ülő az adott fázisban maga dob-e?
   const énDobok = (cselekvő === 'én') === (mód === 'aktív');
   if (fázis === 'M' && cselekvő === 'ellenfél') {
-    // Megakasztó az ellenfél — a manőver-siker = a megakasztás NEM talál.
+    // Megakasztó az ellenfél - a manőver-siker = a megakasztás NEM talál.
     return énDobok
       ? { siker: 'Elhibáztam', kudarc: 'Eltaláltam' }
       : { siker: 'Elhibázta', kudarc: 'Eltalált' };
@@ -253,7 +309,7 @@ export function getFázisFelirat(
       ? { siker: 'Elértem', kudarc: 'Nem értem el' }
       : { siker: 'Elérte', kudarc: 'Nem érte el' };
   }
-  // M (én-cselekvő, pl. Távoltartás) vagy V — támadás/találat
+  // M (én-cselekvő, pl. Távoltartás) vagy V - támadás/találat
   return énDobok
     ? { siker: 'Talált', kudarc: 'Nem talált' }
     : { siker: 'Eltalált', kudarc: 'Nem talált' };
@@ -261,7 +317,7 @@ export function getFázisFelirat(
 
 /**
  * A "Manőver sikeres" boxban megjelenő hatás-sorok: a `hatás`-ból kiszűrjük a
- * kudarc-jellegű ("Sikertelen:" / "Kudarc:") és a feltétel/meta ("Feltétel:") sorokat —
+ * kudarc-jellegű ("Sikertelen:" / "Kudarc:") és a feltétel/meta ("Feltétel:") sorokat -
  * ezek a SIKERES kontextusban félrevezetők/feleslegesek (a teljes `hatás` a pickerben látszik).
  * C2 (ponytail: prefix-alapú szűrés).
  */

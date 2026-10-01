@@ -94,17 +94,18 @@ feltétel_prefixek:
   - "harci_helyzet"       # pl. "harci_helyzet:meglepetés", "harci_helyzet:hátulról_támadás"
   - "taktika"             # pl. "taktika:fárasztás", "taktika:visszafogott"
   - "fegyver"             # pl. "fegyver:kard, hosszú" - konkrét fegyverre vonatkozik
+  - "fegyver_extra"       # pl. "fegyver_extra:pontos" - az aktív fegyver hordoz-e egy extra-id-t (extrak.yaml)
   - "fegyver_kategória"   # pl. "fegyver_kategória:kardvívó"
   - "fegyverfogás"        # pl. "fegyverfogás:fegyver_hárító", "fegyverfogás:fegyver_pajzs"
   - "manőver"             # pl. "manőver:kibontakozás" (a manoverek.yaml id-je)
   - "státusz"             # pl. "státusz:bénultság"
   - "páncél"              # pl. "páncél:viselt" - aktív páncél MGT > 0
-  - "fortély"             # pl. "fortély:Mesterfegyver" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
-  - "képzettség"          # pl. "képzettség:Harcmodor" — entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
-  - "manőver_állapot"     # pl. "manőver_állapot:passzív" — egységes effekt-modell (engine_spec §42)
-  - "ellenfél_fegyver_sebzésjelleg"  # pl. "ellenfél_fegyver_sebzésjelleg:zúzó" — egységes effekt-modell (engine_spec §42)
+  - "fortély"             # pl. "fortély:Mesterfegyver" - entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
+  - "képzettség"          # pl. "képzettség:Harcmodor" - entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
+  - "manőver_állapot"     # pl. "manőver_állapot:passzív" - egységes effekt-modell (engine_spec §42)
+  - "ellenfél_fegyver_sebzésjelleg"  # pl. "ellenfél_fegyver_sebzésjelleg:zúzó" - egységes effekt-modell (engine_spec §42)
 
-# Egységes effekt-mód enum (engine_spec §42.2) — az effekt-adat `mód`/`operátor` értékei.
+# Egységes effekt-mód enum (engine_spec §42.2) - az effekt-adat `mód`/`operátor` értékei.
 # A `előny`/`hátrány` a `előny_hátrány` MÓD-KATEGÓRIA két operátor-neve (előjeles érték).
 effekt_módok:
   - "flat"        # cél += érték
@@ -201,7 +202,6 @@ páncél_struktúrák:
     leírás: "Posztó vagy bunda"
     fém: false
     merev: false
-    harci_akrobatika: true
     mgt: 2
     sfé_fizikai: 4
     sfé_energia: 4
@@ -211,7 +211,6 @@ páncél_struktúrák:
     leírás: "Fegyverkabát"
     fém: false
     merev: false
-    harci_akrobatika: true
     mgt: 3
     sfé_fizikai: 6
     sfé_energia: 8
@@ -221,7 +220,6 @@ páncél_struktúrák:
     leírás: "Bőrpáncél"
     fém: false
     merev: false
-    harci_akrobatika: true
     mgt: 5
     sfé_fizikai: 8
     sfé_energia: 14
@@ -231,7 +229,6 @@ páncél_struktúrák:
     leírás: "Láncing / sodronying"
     fém: true
     merev: false
-    harci_akrobatika: false
     mgt: 8
     sfé_fizikai: 10
     sfé_energia: 10
@@ -241,7 +238,6 @@ páncél_struktúrák:
     leírás: "Pikkely fémpáncél"
     fém: true
     merev: true
-    harci_akrobatika: false
     mgt: 8
     sfé_fizikai: 15
     sfé_energia: 10
@@ -251,7 +247,6 @@ páncél_struktúrák:
     leírás: "Lemezpáncél"
     fém: true
     merev: true
-    harci_akrobatika: false
     mgt: 10
     sfé_fizikai: 20
     sfé_energia: 8
@@ -396,13 +391,17 @@ locked_fortélyok:
 # ============================================================
 
 # mesterfegyver_bónuszok: DERIVÁLT a fortelyok/harci/mesterfegyver.yaml per-fok módosítóiból
-# (data/gen/konstansok.py → _derive_mf_bónuszok). NE írd ide kézzel — a fortély a mérvadó forrás.
+# (data/gen/konstansok.py → _derive_mf_bónuszok). NE írd ide kézzel - a fortély a mérvadó forrás.
 
 # ============================================================
 # Kétkezes harc bónuszai
 # ============================================================
 
-kétkezes_harc_max_pengeméret: 2.0
+kétkezes_harc_max_fegyverméret: 6
+
+# Kétkezes harcban egyetlen fegyver fegyverhossza sem lehet ennél nagyobb (a nagyobb, kétkezes
+# fegyverek nem foghatók párban). Az össz-limit (max_fegyverméret) ezen felül is érvényes.
+kétkezes_harc_max_egy_fegyver: 3
 
 # Fegyverfogás opciók
 fegyverfogás_opciók:
@@ -441,7 +440,7 @@ kétkezes_harc_bónuszok:
     mindkét_fegyver_értékei: true
     mf: "mindkettő"
 
-kétkezes_harc_pengelevonás_osztó: 0.5
+kétkezes_harc_fegyverlevonás_osztó: 2
 
 # ============================================================
 # Merevvértviselet fortély bónuszai
@@ -590,20 +589,22 @@ lövéskitérés:
 # Harci akrobatika páncél korlátok
 # ============================================================
 
-harci_akrobatika:
-  max_mgt: 5
-
 sebesülés_kategóriák_száma: 4
 hm_aszimmetria_osztó: 2
 vé_csökkentés_gombok: [1, 2, 3]
 taktika_vé_eltolás_limit: 10
 
 # Sikertelen támadás VÉ csökkentésének bázisértéke Fegyverviszony szerint
-# (harcszimulacio.spec.md §5.3 — a k20P a kódban adódik hozzá, nem itt).
+# (harcszimulacio.spec.md §5.3 - a k20P a kódban adódik hozzá, nem itt).
 vé_csökkentés_alap:
   fegyverhátrány: 0
   fegyverazonosság: 1
   fegyverelőny: 2
+
+# md/064_02_06_erobonusz_erolimit.md "Fegyverek Erő követelménye": ha a karakter Ereje
+# a fegyver (súly-kategóriájának) erő_követelmény mezője alatt van, Hátrány-N a Támadó dobásra.
+# (fegyverek_v2.json → fegyver.erő_követelmény, l. STUDY.fegyvergenerator_v2 "Erő-követelmény mechanika")
+fegyver_erő_követelmény_hátrány: -1
 
 # ============================================================
 # Skálázható taktikák: Harcmodor szint → abszolút max fok korlát

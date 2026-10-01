@@ -1,6 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, képzettségSzint, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../../engine/utils';
 import { findMfFok as findMfFokCanonical } from '../../engine/mf-utils';
 import { evaluate, buildContext } from '../../engine/reactive';
 
@@ -14,16 +14,14 @@ export function calcMaxHM(data: GameData, k: Karakter): number {
   const harciFokok = k.fortélyok
     .filter(f => harciFortelyNevek.has(f.név) && f.név !== 'Mesterfegyver')
     .reduce((s, f) => s + f.fok, 0);
-  const harcmodorÖsszeg = harcmodorok.reduce(
-    (s, n) => s + (k.képzettségek.find(kp => kp.név === n)?.szint ?? 0), 0
-  );
-  const alakzatharcSzint = k.képzettségek.find(kp => kp.név === 'Alakzatharc')?.szint ?? 0;
+  const harcmodorÖsszeg = calcHarcmodorÖsszeg(k, harcmodorok);
+  const alakzatharcSzint = képzettségSzint(k, 'Alakzatharc');
   return harciFokok + harcmodorÖsszeg + alakzatharcSzint;
 }
 
 /**
  * Max HM aszimmetria (§18): a formula a `rules.json`-ban él (`max_HM_aszimmetria`),
- * itt csak kiértékeljük — így az osztó (`konstansok.hm_aszimmetria_osztó`) egy helyen van.
+ * itt csak kiértékeljük - így az osztó (`konstansok.hm_aszimmetria_osztó`) egy helyen van.
  */
 export function calcMaxAszimmetria(data: GameData, tsz: number): number {
   const rules = data.rules.filter(r => r.id === 'max_HM_aszimmetria');
@@ -67,7 +65,7 @@ export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: st
   if (!fokDef?.követelmények?.length) return false;
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
   const fegyverHarcmodor = fDef
-    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória]
+    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.kategória]
     : undefined;
   for (const kov of fokDef.követelmények) {
     if (kov.típus === 'képzettség') {
@@ -93,7 +91,7 @@ export function mfKövetelményText(data: GameData, k: Karakter, fegyverAlap: st
   if (!fokDef?.követelmények?.length) return '';
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
   const fegyverHarcmodor = fDef
-    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória]
+    ? (data.konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.kategória]
     : undefined;
   const kov = fokDef.követelmények[0];
   if (kov.típus === 'képzettség') {

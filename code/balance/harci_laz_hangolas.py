@@ -127,14 +127,14 @@ def blokk(cim, jeloltek):
 
 
 # A) A JELENLEGI ad-hoc értékek (md): +5/+10/+15/+20 TÉ ÉS SP, 3-4. fok sebzés Előny+1
-blokk('A) JELENLEGI ad-hoc (md) — várhatóan OP', [
+blokk('A) JELENLEGI ad-hoc (md) - várhatóan OP', [
     ('1.fok +5TÉ +5SP',        dict(te=5,  sp=5,  sebz_elony=0, virt_ep=5)),
     ('2.fok +10TÉ +10SP',      dict(te=10, sp=10, sebz_elony=0, virt_ep=10)),
     ('3.fok +15TÉ +15SP EÜ+1', dict(te=15, sp=15, sebz_elony=1, virt_ep=15)),
     ('4.fok +20TÉ +20SP EÜ+1', dict(te=20, sp=20, sebz_elony=1, virt_ep=20)),
 ])
 
-# B) JAVASLAT — TÉ a rendszer taktika/fortély skáláján (Roham+4, Öngyilkos+5, max fortély ~+9..12),
+# B) JAVASLAT - TÉ a rendszer taktika/fortély skáláján (Roham+4, Öngyilkos+5, max fortély ~+9..12),
 #    SP mérsékelt (fegyver SP ~ -3..+4 → a láz ne adjon egy plusz fegyvernyinél többet),
 #    sebzés-Előny csak a felső fokokon, virtuális ÉP fokozatosan ~fél..egy oszlopnyi.
 blokk('B) JAVASLAT v1', [
@@ -144,7 +144,7 @@ blokk('B) JAVASLAT v1', [
     ('4.fok +12TÉ +6SP EÜ+2 +20vÉP', dict(te=12, sp=6, sebz_elony=2, virt_ep=20)),
 ])
 
-# C) JAVASLAT v2 — kicsit visszafogottabb felső vég (ha B4 túl erős)
+# C) JAVASLAT v2 - kicsit visszafogottabb felső vég (ha B4 túl erős)
 blokk('C) JAVASLAT v2 (visszafogottabb csúcs)', [
     ('1.fok +2TÉ +0SP  +4vÉP',       dict(te=2,  sp=0, sebz_elony=0, virt_ep=4)),
     ('2.fok +5TÉ +2SP  +8vÉP',       dict(te=5,  sp=2, sebz_elony=0, virt_ep=8)),
@@ -152,7 +152,7 @@ blokk('C) JAVASLAT v2 (visszafogottabb csúcs)', [
     ('4.fok +10TÉ +5SP EÜ+1 +16vÉP', dict(te=10, sp=5, sebz_elony=1, virt_ep=16)),
 ])
 
-# D) VÉGLEGES javaslat — 3.fok az "optimális" (erős, de nem biztos ~75%), 4.fok kockázatos
+# D) VÉGLEGES javaslat - 3.fok az "optimális" (erős, de nem biztos ~75%), 4.fok kockázatos
 #    csúcs (~88%) magas virtuális-ÉP kockázattal. SP a fegyverskálán belül (max +5),
 #    sebzés-Előny csak 3-4. fokon (a berserk "vakon csapkod, de erősen" jellege).
 blokk('D) VÉGLEGES javaslat', [

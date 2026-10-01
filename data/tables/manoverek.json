@@ -79,17 +79,17 @@
     "végrehajtás_té_módosító": 4
   },
   {
-    "név": "Csonkolás",
+    "név": "Csonkolás (kéz)",
     "típus": "általános",
     "nehézség": 8,
     "fázisok": "V,E",
     "hatás": [
-      "Levágtad ellenfeled választott végtagját (kéz vagy láb).",
-      "Kéz: áldozat max ÉP/3↑, láb: max ÉP/2↑ sebzés szükséges a levágáshoz."
+      "Levágtad ellenfeled kezét.",
+      "Kéz: áldozat max ÉP/3↑ sebzés szükséges a levágáshoz."
     ],
-    "id": "csonkolás",
+    "id": "csonkolás_kéz",
     "fázis_info": {
-      "V": "Nem kapod meg a +4 TÉ módosítót — sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
     },
     "végrehajtás_té_módosító": 0,
     "követelmények": [
@@ -115,22 +115,48 @@
         "leírás": "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)"
       }
     ],
-    "helyzetfüggő_módosítók": [
+    "helyzetfüggő_módosítók": [],
+    "fázis_cselekvő": {},
+    "ellenpróba_bünteti": false
+  },
+  {
+    "név": "Csonkolás (láb)",
+    "típus": "általános",
+    "nehézség": 10,
+    "fázisok": "V,E",
+    "hatás": [
+      "Levágtad ellenfeled lábát.",
+      "Láb: áldozat max ÉP/2↑ sebzés szükséges a levágáshoz."
+    ],
+    "id": "csonkolás_láb",
+    "fázis_info": {
+      "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+    },
+    "végrehajtás_té_módosító": 0,
+    "követelmények": [
       {
-        "kategória": "Célzott végtag",
-        "mód": "single",
-        "sorok": [
-          {
-            "érték": 0,
-            "leírás": "Kéz"
-          },
-          {
-            "érték": 2,
-            "leírás": "Láb"
-          }
-        ]
+        "erősség": "normál",
+        "típus": "képzettség",
+        "név": "Kardvívás",
+        "érték": 6
+      },
+      {
+        "erősség": "erős",
+        "típus": "fegyver_sebzéstípus",
+        "érték": "V"
+      },
+      {
+        "erősség": "erős",
+        "típus": "fegyver_kategória",
+        "érték": "kardvívó"
+      },
+      {
+        "erősség": "erős",
+        "típus": "egyéb",
+        "leírás": "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)"
       }
     ],
+    "helyzetfüggő_módosítók": [],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false
   },
@@ -255,7 +281,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Egyik ellenfél sincs Pengeelőnyben"
+        "leírás": "Egyik ellenfél sincs Fegyverelőnyben"
       }
     ],
     "helyzetfüggő_módosítók": [],
@@ -283,7 +309,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Ellenfél nincs Pengeelőnyben veled szemben"
+        "leírás": "Ellenfél nincs Fegyverelőnyben veled szemben"
       }
     ],
     "helyzetfüggő_módosítók": [
@@ -320,7 +346,7 @@
     ],
     "id": "kibontakozás",
     "fázis_info": {
-      "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás — Gyorsaság ellenpróba (Sprint fortély számít)."
+      "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
     },
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
@@ -362,7 +388,8 @@
         "sorok": [
           {
             "érték": -2,
-            "leírás": "Kifejezetten lábkirántásra alkalmas fegyver"
+            "leírás": "Fegyver extra: Kampós véggel lábkirántás",
+            "feltétel": "fegyver_extra:kampos_veggel_labkirantas"
           }
         ]
       }
@@ -397,7 +424,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Ellenfél fegyvere minimum 0.5 penge"
+        "leírás": "Ellenfél fegyvere minimum 1 fegyverhossz-kategória"
       }
     ],
     "helyzetfüggő_módosítók": [],
@@ -550,7 +577,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Legfeljebb 1 penge hosszú hegyes szúrófegyver"
+        "leírás": "Legfeljebb 2 fegyverhossz-kategória hosszú hegyes szúrófegyver"
       }
     ],
     "helyzetfüggő_módosítók": [
@@ -781,7 +808,8 @@
         "sorok": [
           {
             "érték": -2,
-            "leírás": "Tőrkard"
+            "leírás": "Fegyver extra: Pontos",
+            "feltétel": "fegyver_extra:pontos"
           },
           {
             "érték": 0,
@@ -799,7 +827,8 @@
         "sorok": [
           {
             "érték": 2,
-            "leírás": "Roham taktika alkalmazása"
+            "leírás": "Roham taktika alkalmazása",
+            "feltétel": "taktika:roham"
           }
         ]
       }
@@ -855,7 +884,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Pengeelőny"
+        "leírás": "Fegyverelőny"
       }
     ],
     "helyzetfüggő_módosítók": [
@@ -999,7 +1028,7 @@
     ],
     "id": "belharcba_kerülés",
     "fázis_info": {
-      "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül — mindenképp dobj Ellenpróbát."
+      "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül - mindenképp dobj Ellenpróbát."
     },
     "követelmények": [
       {
@@ -1523,7 +1552,7 @@
     "fázisok": "M,E",
     "hatás": [
       "Feltétel: GYALOGOS végzi lovas ellen.",
-      "Feltétel: szúró szálfegyver + Pengeelőny szükséges.",
+      "Feltétel: szúró szálfegyver + Fegyverelőny szükséges.",
       "Sebző dobás a lovasra, aki elveszíti támadását."
     ],
     "id": "lovas_megakasztása",
@@ -1547,7 +1576,7 @@
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Pengeelőny a lovashoz képest"
+        "leírás": "Fegyverelőny a lovashoz képest"
       }
     ],
     "helyzetfüggő_módosítók": [],

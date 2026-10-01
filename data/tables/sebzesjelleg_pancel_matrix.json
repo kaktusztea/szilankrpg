@@ -1,0 +1,47 @@
+{
+  "matrix": {
+    "zúzó": {
+      "csupasz": 0,
+      "puha": 0,
+      "bor": 1,
+      "lanc": 3,
+      "merev": 3
+    },
+    "szúró": {
+      "csupasz": 2,
+      "puha": 3,
+      "bor": 1,
+      "lanc": 0,
+      "merev": -3
+    },
+    "vágó-egyenes": {
+      "csupasz": 1,
+      "puha": 1,
+      "bor": 0,
+      "lanc": -2,
+      "merev": -4
+    },
+    "vágó-íves": {
+      "csupasz": 3,
+      "puha": 2,
+      "bor": 0,
+      "lanc": -2,
+      "merev": -4
+    },
+    "nincs": {
+      "csupasz": 0,
+      "puha": 0,
+      "bor": 0,
+      "lanc": 0,
+      "merev": 0
+    }
+  },
+  "struktúra_osztály": {
+    "posztó": "puha",
+    "fegyverkabát": "puha",
+    "bőr": "bor",
+    "lánc/sodrony": "lanc",
+    "pikkely": "merev",
+    "lemez": "merev"
+  }
+}

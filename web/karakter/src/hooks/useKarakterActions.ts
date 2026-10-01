@@ -66,7 +66,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     } catch { setOverlay('toast', { msg: 'Hiba az URL generálásakor.', type: 'error' }); }
   }
 
-  // Save a single stored slot to a file (download or share) — operates on the given slot, not the active character
+  // Save a single stored slot to a file (download or share) - operates on the given slot, not the active character
   async function saveSlotToFile(slotUid: string, action: 'download' | 'share') {
     const charData = localStorage.getItem(`szilank_char_${slotUid}`);
     if (!charData) return;
@@ -88,14 +88,14 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     if (njkLimitBlocked(parsed.jk)) { setOverlay('slotLimit', 'njk'); return; }
     const dup = dupKarakter(parsed);
     activateKarakter(dup);
-    // WORKAROUND: state-settle-delay — 100ms delay lets React re-render with new karakter before opening overlay
+    // WORKAROUND: state-settle-delay - 100ms delay lets React re-render with new karakter before opening overlay
     setTimeout(() => setOverlay('showSlotList', true), 100);
   }
 
   function handleGenerateSave(mode: 'single' | 'backup') {
     if (!karakter) return;
     const { blob, filename } = generateSaveFile(karakter, undoStack, mode);
-    // Desktop (no Web Share API): only "Helyi mentés" would show — skip the
+    // Desktop (no Web Share API): only "Helyi mentés" would show - skip the
     // overlay and download directly. Mobile keeps the share/download choice.
     if (typeof navigator.share !== 'function') { downloadFile(blob, filename); return; }
     setOverlay('saveFile', { blob, filename });
@@ -124,12 +124,12 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     if ('error' in result) { setOverlay('loadError', result.error); return; }
 
     if (result.type === 'backup') {
-      // Open backup restore overlay — let user pick which characters to restore
+      // Open backup restore overlay - let user pick which characters to restore
       setOverlay('backupRestore', { karakterek: result.karakterek, dátum: result.dátum });
       return;
     }
 
-    // Single character load — check uid collision
+    // Single character load - check uid collision
     const slots = readSlots();
     const match = slots.find(s => s.uid === result.karakter.uid);
     if (match) {

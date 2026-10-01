@@ -8,7 +8,7 @@ interface Props {
   session: Session;
   data: GameData;
   fegyverResults: FegyverResult[];
-  kétkezesResult: (FegyverResult & { sumPengehossz: number }) | null;
+  kétkezesResult: (FegyverResult & { sumFegyverhossz: number }) | null;
   fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null;
   taktikaMods: Record<string, number>;
   fortelyMods: Record<string, number>;
@@ -59,7 +59,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
         Harckeret: {r.harckeret} ({d.harcmodorNév} {d.harcmodorSzint} + Gyor {k.tulajdonságok.gyorsaság}
         {d.páncélMGT > 0 ? ` − MGT ${d.páncélMGT}` : ''}
         {fortelyMods['harckeret'] ? ` + Fortély ${fmtMod(fortelyMods['harckeret'])}` : ''}
-        {d.sumPengehossz != null ? (() => { const pl = Math.floor(d.sumPengehossz / konstansok.kétkezes_harc_pengelevonás_osztó); return pl > 0 ? ` − Penge ${pl}` : ''; })() : ''}) ÷ Sebesség: {r.sebesség}
+        {d.sumFegyverhossz != null ? (() => { const pl = Math.floor(d.sumFegyverhossz / konstansok.kétkezes_harc_fegyverlevonás_osztó); return pl > 0 ? ` − Fegyver ${pl}` : ''; })() : ''}) ÷ Sebesség: {r.sebesség}
       </Section>
 
       <Section label={`TÉ: ${d.finalTÉ}`}>
@@ -93,7 +93,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
         ]} />
       </Section>
 
-      <Section label={`SP: ${d.finalSP} ${r.sebzésmód}`}>
+      <Section label={`SP: ${d.finalSP} ${r.jelleg}`}>
         Fegyver: {d.fegyverAlapSP} · Erőbónusz: {d.erőBónusz}{d.erőBónuszLimit < 99 && ` (limit: ${d.erőBónuszLimit})`}
         {d.kétkezes
           ? <DetailParts parts={[
@@ -104,10 +104,10 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
         <DetailParts parts={[['Fortély', fortelyMods['SP']], ['Taktika', taktikaMods['SP']]]} />
       </Section>
 
-      <Section label={`Pengehossz: ${r.pengehossz + (fortelyMods['pengehossz'] ?? 0)}`}>
-        Alap: {r.pengehossz}
-        <DetailParts parts={[['Fortély', fortelyMods['pengehossz'] ?? 0]]} />
-        {d.sumPengehossz !== null && ` · Összpenge: ${d.sumPengehossz + (fortelyMods['pengehossz'] ?? 0)}`}
+      <Section label={`Fegyverhossz: ${r.fegyverhossz + (fortelyMods['fegyverhossz'] ?? 0)}`}>
+        Alap: {r.fegyverhossz}
+        <DetailParts parts={[['Fortély', fortelyMods['fegyverhossz'] ?? 0]]} />
+        {d.sumFegyverhossz !== null && ` · Összhossz: ${d.sumFegyverhossz + (fortelyMods['fegyverhossz'] ?? 0)}`}
       </Section>
     </div>
   );

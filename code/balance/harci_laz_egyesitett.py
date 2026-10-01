@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Harci láz — EGYESÍTETT modell: fokozatlépkedés + harc, súlyozott balansz.
+"""Harci láz - EGYESÍTETT modell: fokozatlépkedés + harc, súlyozott balansz.
 
 A bónusz-hangolás mércéje NEM az idealizált "mindig 3.fokon" eset, hanem a TÉNYLEGES
 harci kimenet: minden körben a pillanatnyi fokozat bónuszai hatnak, a fokozat pedig
@@ -162,7 +162,7 @@ print(f"  győzelem {r['win']:.1%} (elvárt ~50%, mert a lázas ref-azonos ha ni
 D = {1: (3, 0, 0, 5), 2: (6, 2, 0, 8), 3: (8, 3, 1, 12), 4: (11, 5, 2, 18)}
 blokk('A) régi D javaslat', D)
 
-# B) visszafogott — a súlyozott (tényleges eloszlású) győzelmet nézzük, nem az idealizáltat
+# B) visszafogott - a súlyozott (tényleges eloszlású) győzelmet nézzük, nem az idealizáltat
 B = {1: (2, 0, 0, 4), 2: (4, 1, 0, 6), 3: (6, 2, 1, 9), 4: (8, 3, 1, 12)}
 blokk('B) visszafogott javaslat', B)
 

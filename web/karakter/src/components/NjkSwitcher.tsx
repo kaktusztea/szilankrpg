@@ -11,7 +11,7 @@ import { KmJelolesPicker } from './KmJelolesPicker';
 import { KmJegyzetPopup } from './KmJegyzetPopup';
 
 interface Props {
-  /** Az aktív karakter — a persistált slot-metaadat frissítése (autosave) előtt is
+  /** Az aktív karakter - a persistált slot-metaadat frissítése (autosave) előtt is
    *  ez az autoritatív állapota (jk, becenév, név, sebzések), hogy a sáv azonnal helyes legyen. */
   aktív: Karakter;
   data: GameData;
@@ -20,7 +20,7 @@ interface Props {
 
 /**
  * KM eszköz: fix sáv a Header alatt NJK karakter aktív állapotában.
- * Boxok (becenév vagy név) — katt = váltás arra az NJK-ra.
+ * Boxok (becenév vagy név) - katt = váltás arra az NJK-ra.
  * Minden box háttere egy fakó Életerő csík (arány + szín), a név után stat:
  * "maradék/max (Skat)". Ha nem férnek egy sorba, új sáv nyílik.
  */
@@ -155,7 +155,7 @@ export function mergeAktív(slots: SlotEntry[], aktív: Karakter): SlotEntry[] {
     copy[idx] = { ...copy[idx], jk: aktív.jk, becenév: aktív.becenév, név: aktív.név };
     return copy;
   }
-  // Ritka: a slot még nem létezik (autosave nem futott) — az aktív karakterből építjük.
+  // Ritka: a slot még nem létezik (autosave nem futott) - az aktív karakterből építjük.
   return [...slots, {
     uid: aktív.uid, id_leíró: aktív.id_leíró, név: aktív.név, becenév: aktív.becenév,
     tsz: aktív.tsz, mentés_dátum: aktív.mentés_dátum, jk: aktív.jk,

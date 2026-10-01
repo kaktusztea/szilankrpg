@@ -13,7 +13,7 @@ interface HarcHeaderProps {
   páncélLefedettség: number;
   manöverPont: number;
   manőverAlap: number;
-  /** MA bontáshoz: HM összeg (TÉ+VÉ) — MA = ceil(HM / 10). */
+  /** MA bontáshoz: HM összeg (TÉ+VÉ) - MA = ceil(HM / 10). */
   hm: number;
   maxVéCsökk: number;
   session: Session;
@@ -40,7 +40,7 @@ export function HarcHeader({
   const [showMaInfo, setShowMaInfo] = useState(false);
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
-  /** Dupla villanás a Szerk/Játék gombon — jelzi hogy csak Játék módban elérhető */
+  /** Dupla villanás a Szerk/Játék gombon - jelzi hogy csak Játék módban elérhető */
   function flashModeToggle() {
     const btn = document.querySelector('.mode-toggle');
     if (!btn) return;
@@ -68,7 +68,7 @@ export function HarcHeader({
       <div className="te-box" onClick={gameMode && aktívTÉ != null ? onTéClick : !gameMode ? flashModeToggle : undefined}
         style={gameMode && aktívTÉ != null ? undefined : { cursor: 'default' }}>
         <span className="label">TÉ</span>
-        <span className="value">{aktívTÉ ?? '—'}</span>
+        <span className="value">{aktívTÉ ?? '-'}</span>
         {(session.té_dobások ?? []).length > 0 && (
           <div className="ke-history">
             {(session.té_dobások ?? []).map((d, i) => (
@@ -95,7 +95,7 @@ export function HarcHeader({
         <span className="label" onClick={gameMode ? onVéLabelTap : undefined}>VÉ</span>
         <button className="ve-reset-btn" disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
         <div className="ve-value-row" onClick={gameMode ? onVéLabelTap : undefined}>
-          <span className="value">{aktívVÉ ?? '—'}</span>
+          <span className="value">{aktívVÉ ?? '-'}</span>
           {session.vé_csökkenés > 0 && <span className="ve-csokk-badge">(-{session.vé_csökkenés})</span>}
         </div>
         <div className="ve-btns">
@@ -115,7 +115,7 @@ export function HarcHeader({
         <div className="mp-box">
           {/* MA: statikus érték → tap = képlet-bontás infó popup (mindkét módban) */}
           <span className="ma-tap" role="button" tabIndex={0}
-            aria-label={`Manőver Alap: ${manőverAlap} — képlet részletei`}
+            aria-label={`Manőver Alap: ${manőverAlap} - képlet részletei`}
             onClick={() => setShowMaInfo(true)}
             onKeyDown={e => {
               if (e.key !== 'Enter' && e.key !== ' ') return;

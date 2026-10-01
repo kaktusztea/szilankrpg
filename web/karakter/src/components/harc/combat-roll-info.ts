@@ -43,7 +43,7 @@ function extractHatások(hatások: StatuszHatas[] | undefined, forrás: string, 
   const result: DobásHatás[] = [];
   for (const h of hatások) {
     if (!célFilter.has(h.cél)) continue;
-    // Státusz hatások 'operátor' kulcsot, taktika hatások 'hatás' kulcsot használnak — mindkettőt elfogadjuk.
+    // Státusz hatások 'operátor' kulcsot, taktika hatások 'hatás' kulcsot használnak - mindkettőt elfogadjuk.
     const op = h.operátor ?? (h as { hatás?: string }).hatás;
     if (op !== 'előny' && op !== 'hátrány' && op !== 'enyhít' && op !== 'szöveges') continue;
     result.push({
@@ -100,8 +100,14 @@ function collectFortélyHatások(
 
 /**
  * Collect effects for TÉ dobás + Sebzésdobás (Harc fül).
+ *
+ * `aktívFegyver` opcionális: ha megadva és a karakter Ereje nem éri el a fegyver
+ * `erő_követelmény`-ét (md/064_02_06 "Fegyverek Erő követelménye"), Hátrány-1 kerül
+ * a Támadó (TÉ) dobásra.
  */
-export function collectDobásInfo(session: Session, karakter: Karakter, data: GameData): DobásInfo {
+export function collectDobásInfo(
+  session: Session, karakter: Karakter, data: GameData, aktívFegyver?: { erő_követelmény: number; név: string },
+): DobásInfo {
   const célFilter = new Set(['té_dobás', 'sebzésdobás']);
   const téHatások: DobásHatás[] = [];
   const sebzésHatások: DobásHatás[] = [];
@@ -162,6 +168,16 @@ export function collectDobásInfo(session: Session, karakter: Karakter, data: Ga
   const fort = collectFortélyHatások(karakter, data, aktívFeltételek, célFilter);
   for (const e of fort.hatások) (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
   spBónuszok.push(...fort.spBónuszok);
+
+  // 5. Fegyver Erő-követelmény (md/064_02_06 "Fegyverek Erő követelménye"):
+  // ha a karakter Ereje nem éri el a fegyver súly-kategóriájának követelményét, Hátrány a Támadó dobásra
+  // (a hátrány mértéke data layer - konstansok.yaml → fegyver_erő_követelmény_hátrány).
+  if (aktívFegyver && karakter.tulajdonságok.erő < aktívFegyver.erő_követelmény) {
+    téHatások.push({
+      forrás: `${aktívFegyver.név}\n(Erő hiány)`, cél: 'té_dobás', operátor: 'hátrány',
+      érték: data.konstansok.fegyver_erő_követelmény_hátrány,
+    });
+  }
 
   return { téHatások, sebzésHatások, spBónuszok, téMegjegyzések, sebzésMegjegyzések };
 }
@@ -226,3 +242,21 @@ export function netElőnySzint(hatások: DobásHatás[]): number {
   }
   return clampEHSzint(szint);
 }
+
+/** Sebzésjelleg × páncélosztály → SP delta (a data layer mátrixból). Ismeretlen jelleg/osztály → 0. */
+export function sebzésPáncélDelta(
+  mátrix: import('../../engine/data-types').SebzésjellegPáncélMátrix,
+  jelleg: string | undefined,
+  osztály: import('../../engine/data-types').Páncélosztály,
+): number {
+  if (!jelleg) return 0;
+  return mátrix.matrix[jelleg]?.[osztály] ?? 0;
+}
+
+/** A durva `cél_páncél` kategória a választott páncélosztályból: csupasz→vérttelen, egyéb→páncélos. */
+export function célPáncélKategória(
+  osztály: import('../../engine/data-types').Páncélosztály,
+): 'vérttelen' | 'páncélos' {
+  return osztály === 'csupasz' ? 'vérttelen' : 'páncélos';
+}
+

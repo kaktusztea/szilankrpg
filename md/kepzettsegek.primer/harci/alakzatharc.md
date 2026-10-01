@@ -2,7 +2,7 @@
 
 Ez egy [Primer (harci) képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
 
-###  [Harc alakzatban](../../065_03_harc_alakzatban.md) fejezet
+###  [Harc alakzatban](../../065_04_harc_alakzatban.md) fejezet
 
 Ez írja le a képzettség használatát.
 

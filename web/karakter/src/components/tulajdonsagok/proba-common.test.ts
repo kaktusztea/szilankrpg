@@ -13,7 +13,7 @@ describe('előnyHátrányLabel', () => {
 describe('ELŐNY_HÁTRÁNY_SZINTEK', () => {
   it('-2..+2, a 0 semleges jellel', () => {
     expect(ELŐNY_HÁTRÁNY_SZINTEK.map(e => e.szint)).toEqual([-2, -1, 0, 1, 2]);
-    expect(ELŐNY_HÁTRÁNY_SZINTEK.map(e => e.label)).toEqual(['Hátrány-2', 'Hátrány-1', '—', 'Előny+1', 'Előny+2']);
+    expect(ELŐNY_HÁTRÁNY_SZINTEK.map(e => e.label)).toEqual(['Hátrány-2', 'Hátrány-1', '-', 'Előny+1', 'Előny+2']);
   });
 });
 

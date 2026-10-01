@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { HarcBaseProps } from './types';
+import type { FegyverResult } from './types';
 import type { SebzésRubrika } from '../../engine/types';
 import { useHarcComputed } from './useHarcComputed';
 import { useHint } from '../harcertekek/hooks/useHint';
 import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
+import { FegyverInfoPopup } from './FegyverInfoPopup';
 import { HarcPopups } from './HarcPopups';
 import { EpTable } from './EpTable';
 import { HarcReszletek } from './HarcReszletek';
@@ -14,6 +16,9 @@ import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás, pushTéDobás } from './DobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
+import { VeCsokkentesPopup } from './VeCsokkentesPopup';
+import { TaktikaTiltvaInfoPopup } from './TaktikaTiltvaInfoPopup';
+import { calcTaktikaVéCsökkentés, calcVéCsökkentésSzorzó } from './ve-csokkentes-calc';
 import { VeSzorzoInfoPopup } from './VeSzorzoInfoPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
@@ -22,7 +27,6 @@ import { téBontásÖsszeg } from '../aktiv/manover-dobas-calc';
 import { ManoverPicker } from './ManoverPicker';
 import { computeTÉ, computeVÉ, coalesceVéHistory } from './shared';
 import { resolveAktívFegyverContext } from './aktiv-fegyver-ctx';
-import { lookupFegyver } from '../../engine/utils';
 import { rollK20 } from '../../engine/dice';
 import { VÉ_FLASH_MS, VÉ_COALESCE_MS } from '../../ui-constants';
 import './HarcScreen.css';
@@ -35,9 +39,12 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
   const [véSzorzóInfo, setVéSzorzóInfo] = useState<number | null>(null);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_felszerelés_mgt: number; hk_fortély: number } | null>(null);
+  const [fegyverInfo, setFegyverInfo] = useState<FegyverResult | null>(null);
   const [sebCount, setSebCount] = useState(0);
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
   const [showTamadoDobas, setShowTamadoDobas] = useState(false);
+  const [showFárasztásVéCsökkentés, setShowFárasztásVéCsökkentés] = useState(false);
+  const [showTeljesVédekezésInfo, setShowTeljesVédekezésInfo] = useState(false);
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
   const [showPancelInfo, setShowPancelInfo] = useState(false);
   // Manőver state
@@ -58,7 +65,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   /** delta: nyers változás (pozitív = csökkenés, negatív = visszanyerés); reset=true → teljes törlés. */
   const changeVé = useCallback((delta: number, reset = false) => {
     // Csökkenéskor (delta > 0) a "VÉ veszteség duplázódik" jellegű harci helyzetek szorzót adnak
-    // (Földön fekve, Helyhez kötve, VÉ kiterjesztés — l. harci_helyzetek.yaml "duplázás" operátor).
+    // (Földön fekve, Helyhez kötve, VÉ kiterjesztés - l. harci_helyzetek.yaml "duplázás" operátor).
     const scaledDelta = delta > 0 ? delta * hc.véVeszSzorzó : delta;
     if (delta > 0 && hc.véVeszSzorzó !== 1) setVéSzorzóInfo(delta);
     const newVal = reset ? 0 : Math.max(0, Math.min(session.vé_csökkenés + scaledDelta, hc.maxVéCsökk));
@@ -138,6 +145,32 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const aktívTÉ = ctx ? computeTÉ(ctx.result.TÉ, téLevonás, hc.taktikaMods['TÉ'], ctx.téExtra, ctx.result.támadások, többTámTÉ) : null;
   const aktívVÉ = ctx ? computeVÉ(ctx.result.VÉ, ctx.veBónusz, hc.taktikaMods['VÉ'], session.vé_csökkenés) : null;
 
+  // Fárasztás taktika (md/065_02): aktív esetén a TÉ chip NEM Támadó dobást nyit, hanem direktben
+  // a VÉ csökkentés popup-ot (nincs támadódobás) - fix taktika-override + feltételes fortély-bővítés.
+  const fárasztásAktív = session.aktív_taktikák.some(t => t.név === 'Fárasztás');
+  const fárasztásDef = fárasztásAktív ? data.taktikak.find(t => t.név === 'Fárasztás') : undefined;
+  const fárasztásFortélyModosítók = karakter.fortélyok
+    .map(kf => {
+      const def = data.fortelySummaries.find(d => d.név === kf.név);
+      const fokDef = def?.fokok.find(f => f.fok === kf.fok);
+      return fokDef?.módosítók?.length ? { forrás: kf.név, módosítók: fokDef.módosítók } : null;
+    })
+    .filter((x): x is { forrás: string; módosítók: NonNullable<typeof x>['módosítók'] } => x !== null);
+  const fárasztásEredmény = fárasztásDef
+    ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fárasztásFortélyModosítók, hc.feltételTeljesül)
+    : null;
+
+  // Roham / Öngyilkos roham (md/065_02): "VÉ csökk 2x" - a Fegyverviszony-alapú VÉ csökkentés
+  // (bázis+k20P) szorzója, a taktika `hatások` tömbjéből (nem akkumulálva, csak kinyerve).
+  const véCsökkentésSzorzó = session.aktív_taktikák.reduce((szorzó, t) => {
+    const def = data.taktikak.find(d => d.név === t.név);
+    return szorzó * calcVéCsökkentésSzorzó(def?.hatások);
+  }, 1);
+
+  // Teljes Védekezés (md/065_02): nem támad - a TÉ chip info popup-ot nyit a dobás helyett.
+  const teljesVédekezésAktív = session.aktív_taktikák.some(t => t.név === 'Teljes Védekezés');
+  const teljesVédekezésDef = teljesVédekezésAktív ? data.taktikak.find(t => t.név === 'Teljes Védekezés') : undefined;
+
   const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[], leírás: string) => {
     pushUndo(leírás, [{ field: 'session', prev: session }]);
     setSession(prev => ({ ...prev, sebzések }));
@@ -145,7 +178,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
   const handleNavigateToFt = useCallback(() => {
     onNavigate?.('tulajdonsagok');
-    // WORKAROUND: tab-render-delay — 200ms wait for tab transition to complete before scrolling
+    // WORKAROUND: tab-render-delay - 200ms wait for tab transition to complete before scrolling
     setTimeout(() => {
       document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
     }, 200);
@@ -186,7 +219,12 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
-        onTéClick={() => { if (aktívTÉ != null) handleTéDobás(); }}
+        onTéClick={() => {
+          if (aktívTÉ == null) return;
+          if (teljesVédekezésAktív) setShowTeljesVédekezésInfo(true);
+          else if (fárasztásAktív) setShowFárasztásVéCsökkentés(true);
+          else handleTéDobás();
+        }}
         onSféClick={() => setShowPancelInfo(true)}
         onManőverClick={() => setManoverPicker('mód')}
         gameMode={gameMode}
@@ -207,6 +245,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         belharciAktív={hc.belharciAktív}
         véFlash={véFlash}
         onTámInfoClick={setTámInfo}
+        onFegyverInfoClick={setFegyverInfo}
       />
 
       <div className="harc-section">
@@ -251,6 +290,10 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
       )}
 
+      {fegyverInfo !== null && (
+        <FegyverInfoPopup result={fegyverInfo} karakter={karakter} data={data} onClose={() => setFegyverInfo(null)} />
+      )}
+
       {véSzorzóInfo !== null && (
         <VeSzorzoInfoPopup alap={véSzorzóInfo} szorzó={hc.véVeszSzorzó} forrás={hc.véVeszSzorzóForrás} onClose={() => setVéSzorzóInfo(null)} />
       )}
@@ -259,11 +302,34 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         <TamadoDobasPopup
           té={aktívTÉ}
           sp={ctx?.result.SP ?? 0}
-          átütés={ctx ? parseInt(lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.Átütés ?? '0') || 0 : 0}
-          dobásInfo={collectDobásInfo(session, karakter, data)}
+          átütés={ctx?.result.Átütés ?? 0}
+          módok={ctx?.result.módok}
+          páncélMátrix={data.sebzésjellegPáncélMátrix}
+          fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
+          extraDefs={data.fegyverExtrák}
+          extraKontextus={hc.extraKontextus}
+          dobásInfo={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név))}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
-          onVéCsökkentés={(eredmény) => changeVé(eredmény.végső)}
+          véCsökkentésSzorzó={véCsökkentésSzorzó}
           onClose={handleTamadoClose}
+        />
+      )}
+
+      {showFárasztásVéCsökkentés && fárasztásEredmény && (
+        <VeCsokkentesPopup
+          k20={0}
+          alapTáblázat={data.konstansok.vé_csökkentés_alap}
+          taktikaVéCsökkentés={fárasztásEredmény}
+          taktikaCím="Fárasztás taktika"
+          onClose={() => setShowFárasztásVéCsökkentés(false)}
+        />
+      )}
+
+      {showTeljesVédekezésInfo && teljesVédekezésDef && (
+        <TaktikaTiltvaInfoPopup
+          cím="Teljes védekezés taktika"
+          szöveg={teljesVédekezésDef.megjegyzés ?? ''}
+          onClose={() => setShowTeljesVédekezésInfo(false)}
         />
       )}
 

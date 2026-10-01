@@ -18,7 +18,7 @@ export function TavharcGameSelector({ összesFegyver, tfIdx, setSession, mfFok, 
   if (összesFegyver.length === 0) return null;
 
   const aktív = összesFegyver[tfIdx];
-  const aktívNév = aktív ? `${aktív.locked ? '🔆 ' : ''}${aktív.alap}` : '—';
+  const aktívNév = aktív ? `${aktív.locked ? '🔆 ' : ''}${aktív.alap}` : '-';
 
   return (
     <div className="th-row th-controls">

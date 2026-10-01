@@ -10,15 +10,15 @@ const karakter = {
 } as unknown as Karakter;
 
 const fegyverek: FegyverAlap[] = [
-  { Fegyver: 'Hosszúkard (1K)', Alapnév: 'Hosszúkard' } as unknown as FegyverAlap,
-  { Fegyver: 'Rövidkard', Alapnév: '' } as unknown as FegyverAlap,
+  { név: 'Hosszúkard' } as unknown as FegyverAlap,
+  { név: 'Rövidkard' } as unknown as FegyverAlap,
 ];
 
 describe('findMfFok', () => {
-  it('finds by Alapnév', () => {
-    expect(findMfFok(karakter, fegyverek, 'Hosszúkard (1K)')).toBe(2);
+  it('finds by fegyver name', () => {
+    expect(findMfFok(karakter, fegyverek, 'Hosszúkard')).toBe(2);
   });
-  it('finds by Fegyver name directly', () => {
+  it('finds by second fegyver name', () => {
     expect(findMfFok(karakter, fegyverek, 'Rövidkard')).toBe(1);
   });
   it('returns 0 if not found', () => {
@@ -28,7 +28,7 @@ describe('findMfFok', () => {
 
 describe('findMfFokByName', () => {
   it('egyezik a megjelenített névvel', () => {
-    expect(findMfFokByName(karakter, 'Hosszúkard', 'hosszúkard (2k)')).toBe(2);
+    expect(findMfFokByName(karakter, 'Hosszúkard', 'hosszúkard')).toBe(2);
   });
   it('egyezik az alapnévvel is (case-insensitive)', () => {
     expect(findMfFokByName(karakter, 'Bármi más', 'RÖVIDKARD')).toBe(1);

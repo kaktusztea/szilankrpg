@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A data/fegyvergenerator/fegyverek.yaml validálása a fegyverek.schema.yaml alapján.
+"""A data/sources/fegyverek/fegyverek.yaml validálása a fegyverek.schema.yaml alapján.
 
 Ellenőriz:
   - kötelező mezők megléte, ismeretlen mezők tiltása (top-level ÉS a `fegyver` blokk)
@@ -9,7 +9,7 @@ Ellenőriz:
     konstansok.yaml-ból, modosito-id-k a extrak.yaml-ból
   - elvart: az aktorok érvényesek és [TÉ, VÉ] két egész
 
-A szabályok a sémából és a katalógusokból jönnek — a szkriptben NINCS beégetett adat.
+A szabályok a sémából és a katalógusokból jönnek - a szkriptben NINCS beégetett adat.
 
 Futtatás:  python3 code/balance/fegyverek_validator.py     (0 = OK, 1 = hiba)
 Bekötve:   a fegyvergenerator_balansz.py a tesztek ELŐTT lefuttatja.
@@ -19,7 +19,7 @@ import sys
 
 import yaml
 
-DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "fegyvergenerator"
+DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "sources" / "fegyverek"
 
 
 def _load(nev):
@@ -54,10 +54,10 @@ _TIPUS = {
 def _mezo(cimke, ertek, spec, forras, hibak):
     t = spec.get("típus")
     if t and not _TIPUS[t](ertek):
-        hibak.append(f"{cimke}: típushiba — várt {t}, kapott {type(ertek).__name__} ({ertek!r})")
+        hibak.append(f"{cimke}: típushiba - várt {t}, kapott {type(ertek).__name__} ({ertek!r})")
         return
     if "enum" in spec and ertek not in spec["enum"]:
-        hibak.append(f"{cimke}: érvénytelen érték {ertek!r} — megengedett: {spec['enum']}")
+        hibak.append(f"{cimke}: érvénytelen érték {ertek!r} - megengedett: {spec['enum']}")
     if "forrás" in spec and ertek not in forras[spec["forrás"]]:
         hibak.append(f"{cimke}: ismeretlen {spec['forrás']} {ertek!r} (nincs a katalógusban)")
     if "elem_forrás" in spec and isinstance(ertek, list):

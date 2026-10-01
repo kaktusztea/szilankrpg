@@ -20,7 +20,7 @@ export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, ki
         <ColumnPicker
           wide
           options={[
-            { value: '', label: '— nincs —' },
+            { value: '', label: '- nincs -' },
             ...struktúrák.map(s => ({ value: s.struktúra, label: s.struktúra })),
           ]}
           current={páncél.alap}

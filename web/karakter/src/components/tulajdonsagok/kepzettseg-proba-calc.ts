@@ -8,11 +8,11 @@ import {
 } from './proba-common';
 
 /**
- * Képzettségpróba tiszta kalkulációs logika (§37.2) — a popup UI nélkül,
+ * Képzettségpróba tiszta kalkulációs logika (§37.2) - a popup UI nélkül,
  * hogy tesztelhető és a Misztikus/Tulajdonságok screen-ekből is használható legyen.
  */
 
-// Képzettségpróba célszámok (engine_spec §37.2, md/030_06_01) — elnevezés csak 21-ig.
+// Képzettségpróba célszámok (engine_spec §37.2, md/030_06_01) - elnevezés csak 21-ig.
 export const NEHÉZSÉGEK: { érték: number; label: string }[] = [
   { érték: 6, label: 'Könnyű' },
   { érték: 9, label: 'Átlagos' },

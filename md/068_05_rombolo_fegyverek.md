@@ -1,21 +1,24 @@
 ## Romboló fegyverek
 
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
+
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver             | TÉ  | VÉ  |  SP  | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Pengehossz | Kategória | Speciális                                                                         |
-| ------------------- | :-: | :-: | :--: | :------: | :----------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :--------: | :-------: | --------------------------------------------------------------------------------- |
-| Balta               | `2` | `0` | `+2` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0` |    `0`     |  romboló   |                                                                                   |
-| Bot, rövid          | `3` | `2` | `-3` |   `6`    |     `Z`      |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` |   `0.5`    |  romboló   |                                                                                   |
-| Bot, furkós         | `3` | `2` | `-1` |   `7`    |     `Z`      |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0` |    `1`     |  romboló   |                                                                                   |
-| Buzogány, egykezes  | `4` | `2` | `+4` |   `7`    |     `Z`      |    egykezes    |       `4`       |  `0`   | `0`  | `0` | `0` |    `1`     |  romboló   |                                                                                   |
-| Buzogány, kétkezes  | `7` | `2` | `+8` |   `9`    |     `Z`      |    kétkezes    |      `99`       |  `5`   | `0`  | `0` | `0` |   `1.5`    |  romboló   | **Erő** követelmény:`+2`                                                          |
-| Buzogány, láncos    | `6` | `2` | `+4` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0` |    `1`     |  romboló   | Ellene az ellenfél Pajzs VÉ fele számít csak!                                     |
-| Buzogány, shadleki  | `6` | `3` | `+5` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `3`   | `0`  | `0` | `0` |    `1`     |  romboló   |                                                                                   |
-| Buzogány, tollas    | `3` | `1` | `+4` |   `6`    |     `Z`      |    egykezes    |       `4`       |  `2`   | `0`  | `0` | `0` |   `0.5`    |  romboló   |                                                                                   |
-| Csatabárd, egykezes | `4` | `2` | `+4` |   `7`    |     `V`      |    egykezes    |       `4`       |  `2`   | `0`  | `0` | `0` |   `0.5`    |  romboló   |                                                                                   |
-| Csatabárd, kétkezes | `6` | `3` | `+8` |   `9`    |     `V`      |    kétkezes    |      `99`       |  `4`   | `0`  | `0` | `0` |   `1.5`    |  romboló   |                                                                                   |
-| Csatacsákány        | `5` | `2` | `+5` |   `8`    |     `S`      |    egykezes    |      `99`       |  `10`  | `0`  | `0` | `0` |    `1`     |  romboló   | Nagyon vérzik.<br />`50%` az esély, hogy beragad és nem lehet kihúzni harc közben |
-| Harci kalapács      | `7` | `2` | `+7` |   `9`    |     `Z`      |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` |   `1.5`    |  romboló   | **Erő** követelmény:`+2`                                                          |
+| Fegyver             | Mód (Aktor)               | Jelleg    | Sebzéstípus | TÉ | VÉ | SP | Erőlimit | Átütés | Seb. | Forgatás            | Fh | FSZ | Extrák                                       | Megj. |
+| ------------------- | ------------------------- | --------- | ----------- | -: | -: | -: | -------: | -----: | ---: | ------------------- | -: | --: | -------------------------------------------- | ----- |
+| Balta               | vágóél-íves-rövid         | vágó-íves | elsődleges  |  2 |  2 | +4 |       99 |      0 |    7 | egykezes            |  2 |   0 | Övön hordható                                |       |
+| Bot, furkós         | botvég                    | zúzó      | elsődleges  |  3 |  3 | +3 |        2 |      0 |    6 | egykezes            |  3 |   0 | Fanyél fegyvertörése könnyebb                |       |
+| Bot, rövid          | botvég                    | zúzó      | elsődleges  |  2 |  2 | +1 |        0 |      0 |    4 | egykezes            |  2 |   0 | Fanyél fegyvertörése könnyebb; Övön hordható |       |
+| Buzogány, egykezes  | buzogányfej-tompa         | zúzó      | elsődleges  |  3 |  1 | +6 |        4 |      0 |    8 | egykezes            |  3 |   0 |                                              |       |
+| Buzogány, kétkezes  | buzogányfej-tompa         | zúzó      | elsődleges  |  7 |  5 | +9 |       99 |      0 |   10 | kétkezes            |  7 |   2 | Beszorítható; Felszerelés: 2; Akadály: 1     |       |
+| Buzogány, láncos    | buzogányfej-tompa         | zúzó      | elsődleges  |  3 |  1 | +6 |       99 |      0 |    8 | egykezes            |  3 |   0 | Láncos: pajzs VÉ felezés                     |       |
+| Buzogány, shadleki  | buzogányfej-szöges        | zúzó      | elsődleges  |  3 |  0 | +5 |       99 |      2 |    8 | egykezes            |  3 |   0 |                                              |       |
+| Buzogány, tollas    | buzogányfej-szöges        | zúzó      | elsődleges  |  2 | -1 | +3 |        4 |      2 |    6 | egykezes            |  2 |   0 | Övön hordható                                |       |
+| Csatabárd, egykezes | vágóél-íves-átlagos       | vágó-íves | elsődleges  |  2 |  2 | +4 |        4 |      1 |    8 | egykezes            |  2 |   0 | Övön hordható                                |       |
+| Csatabárd, kétkezes | vágóél-íves-nagy          | vágó-íves | elsődleges  |  5 |  5 | +7 |       99 |      2 |   10 | másfélkezes         |  5 |   1 | Felszerelés: 1; Akadály: 2                   |       |
+|                     | vágóél-íves-nagy          | vágó-íves | elsődleges  |  3 |  3 | +7 |        2 |      0 |   10 | másfélkezes · 1 kéz |  5 |   1 |                                              |       |
+| Csatacsákány        | lándzsahegy-rövid-keskeny | szúró     | elsődleges  |  3 |  3 | +5 |       99 |      4 |    7 | egykezes            |  3 |   0 | Beakad (~50%); Akadály: 1                    |       |
+| Harci kalapács      | buzogányfej-tompa         | zúzó      | elsődleges  |  7 |  5 | +9 |       99 |      0 |   10 | kétkezes            |  7 |   2 | Beszorítható; Felszerelés: 2; Akadály: 2     |       |
 
 <!-- tag: md_table_fegyver_end -->
 

@@ -21,6 +21,7 @@ from gen.kepzettsegek import generate_kepzettsegek  # noqa: E402
 from gen.fortelyok import generate_fortelyok, generate_kiterjesztesek, generate_primer_fortelyok  # noqa: E402
 from gen.fajok import generate_fajok  # noqa: E402
 from gen.aktiv_ful import generate_aktiv_ful  # noqa: E402
+from gen.fegyverek_v2 import generate_fegyverek_v2, generate_sebzesjelleg_pancel_matrix, generate_fegyver_extrak, generate_fegyver_idea_tabla, generate_tavfegyverek_v2  # noqa: E402
 from gen.naming_lint import lint as lint_naming  # noqa: E402
 
 # Generálási sorrend: a későbbiek az előzők kimenetére építhetnek
@@ -32,6 +33,11 @@ GENERATORS = [
     generate_primer_fortelyok,
     generate_fajok,
     generate_aktiv_ful,
+    generate_fegyverek_v2,
+    generate_sebzesjelleg_pancel_matrix,
+    generate_fegyver_extrak,
+    generate_fegyver_idea_tabla,
+    generate_tavfegyverek_v2,
 ]
 
 
@@ -63,10 +69,10 @@ def validate_fortely_manover_refs():
 def validate_naming_convention():
     """Build-gate: egységes YAML naming-convention (nem-mozaikszó kulcs/érték = csupa kisbetű).
 
-    A data/sources (pipeline) ÉS a data/fegyvergenerator (tervezői adat) fájljait ellenőrzi.
+    A data/sources (pipeline, a fegyvergenerátor `fegyverek/` almappáját is beleértve) fájljait ellenőrzi.
     """
     data_dir = os.path.dirname(os.path.abspath(__file__))
-    dirs = [os.path.join(data_dir, 'sources'), os.path.join(data_dir, 'fegyvergenerator')]
+    dirs = [os.path.join(data_dir, 'sources')]
     errors = lint_naming(dirs)
     if errors:
         print("  ❌ YAML naming-convention hibák (nem-mozaikszó nagybetűs kulcs/érték):")

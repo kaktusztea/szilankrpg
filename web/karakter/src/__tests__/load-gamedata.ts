@@ -1,5 +1,5 @@
 /**
- * Test-only GameData loader — mirrors engine/data-loader.ts::loadGameData but
+ * Test-only GameData loader - mirrors engine/data-loader.ts::loadGameData but
  * reads the generated table JSONs from disk (vitest runs in node, no fetch).
  * Keep the assembly in sync with loadGameData if the table set changes.
  */
@@ -17,10 +17,11 @@ export function loadGameDataSync(): GameData {
 
   return {
     konstansok: j('tables/konstansok.json'),
-    fegyverek: j('tables/fegyverek.json'),
-    tavfegyverek: j('tables/tavfegyverek.json'),
+    fegyverek: j('tables/fegyverek_v2.json'),
+    sebzésjellegPáncélMátrix: j('tables/sebzesjelleg_pancel_matrix.json'),
+    fegyverExtrák: j('tables/fegyver_extrak.json'),
+    tavfegyverek: j('tables/tavfegyverek_v2.json'),
     tavharcSzorzok: j('tables/tavharc_szorzok.json'),
-    pajzsok: j('tables/pajzsok.json'),
     kepzettsegKp: kepzettsegKpRaw.map(e => ({ szint: parseInt(e['Képzettség Szint']), kp: parseInt(e['KP igény']) })),
     harcmodorBonusz: harcmodorRaw.map(e => ({ szint: parseInt(e['Harcmodor Szint']), TÉ: parseInt(e['TÉ']), VÉ: parseInt(e['VÉ']), CÉ: parseInt(e['CÉ']) })),
     kepzettsegDefs: j('tables/kepzettsegek.json'),

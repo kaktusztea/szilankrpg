@@ -94,7 +94,7 @@ export function FortélyFelvétel({ def, kiérdemeltOpció, felvettSpecElemek, o
       )}
       {step === 'fok' && (
         <>
-          <label>{def.név}{specElem ? ` - ${specElem}` : ''} — fok:</label>
+          <label>{def.név}{specElem ? ` - ${specElem}` : ''} - fok:</label>
           <div className="kep-prompt-flex-fok">
             {Array.from({ length: def.maxfok }, (_, i) => i + 1).map(n => (
               <button key={n} className="fort-fok-btn" onClick={() => finish(n)}>{n}</button>

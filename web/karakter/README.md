@@ -57,19 +57,21 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Aktív fül**: fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes), taktikák kombó-szabályokkal, harci helyzetek, manőverek, státuszok - minden választás azonnal hat a Harc fülre
 - **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, TÉ, SFÉ, VÉ csökkenés, MP boxok a fejlécben, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
   - **Kezdeményezés dobás**: a KÉ boxra koppintva `KÉ + k20` dobás nagy számmal; az utolsó 3 dobás a KÉ boxban látszik
-  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva — első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Manuális dobás is lehetséges (saját kocka értékkel).
-  - **Sebzésdobás**: a Támadó dobás eredménye után a „Sebzés" gombbal indítható — SP bontás (alap, erő, MF, taktika, fortély), statikus bónuszok, Előny/Hátrány kocka picker, másodlagos sebzés toggle és újradobás gomb. Az Átütés értéke is kijelzésre kerül (ha > 0).
+  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Manuális dobás is lehetséges (saját kocka értékkel).
+  - **Sebzésdobás**: a Támadó dobás eredménye után a „Sebzés" gombbal indítható - SP bontás (alap, erő, MF, taktika, fortély), statikus bónuszok, Előny/Hátrány kocka picker és újradobás gomb. Az Átütés értéke is kijelzésre kerül (ha > 0).
+    - **Ellenfél páncél**: kötelező választó (csupasz / puha / bőr / lánc / pikkely-lemez) - a sebzésjelleg (szúró/vágó/zúzó) és a páncél alapján módosítja az SP-t. Amíg nincs páncél választva, a dobás nem indítható.
+    - Ha a fegyver az adott móddal nem sebez (pl. bola, háló, lasszó), „Ez a fegyver nem sebez" jelzés jelenik meg.
   - **SFÉ infó**: az SFÉ boxra koppintva részletes páncél infó popup nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT bontás).
   - **VÉ csökkentés**: a VÉ csökkenés boxban a `-N` gombokkal csökkentheted a védőértéket (támadásonként), `+1` gombbal visszaállíthatsz egyet, `⟲` nullázza. A label/érték koppintással a csökkentések története is látszik.
   - **Manőver pont (MP)**: az MP box mutatja az aktuális/max manőver pontot; `-1` gombbal csökkentheted, `⟲` visszaállítja a maximumra.
-  - **Manőver végrehajtása** (⚔️ gomb): az Aktív fülön indítható manőver dobás. Először mód választó (Aktív = én hajtom végre / Passzív = ellenem hajtják végre), majd a kiválasztott manőver popup-ban fázisonkénti (M/V/E) eredmény rögzítés, MP felhasználás, belharcos bónusz — a végeredmény Sikeres/Sikertelen.
+  - **Manőver végrehajtása** (⚔️ gomb): az Aktív fülön indítható manőver dobás. Először mód választó (Aktív = én hajtom végre / Passzív = ellenem hajtják végre), majd a kiválasztott manőver popup-ban fázisonkénti (M/V/E) eredmény rögzítés, MP felhasználás, belharcos bónusz - a végeredmény Sikeres/Sikertelen.
   - **Harci akrobatika ki/be**: session kapcsoló (Igen/Nem) - letiltva ha hiányzik a fortély, nem megfelelő a páncél (struktúra vagy túl magas MGT), vagy kevés az Akrobatika képzettség szint (koppintásra megjelenik a hiányzó feltétel)
   - **Páncél viselve ki/be**: session kapcsoló (Igen/Nem) - viseled-e épp a páncélt (hat az SFÉ-re, MGT-re és a Harci akrobatika elérhetőségére)
 - **ÉP táblázat / Sebesülés**: S1-S4 rubrikák, TÉ levonás automatika
   - **Sebesülés rögzítése**: típus (S/V/Z/FP) + érték választás (1-15, bővíthető ▾ nagyobb értékekre)
   - **Gyógyulás**: ÉP vagy FP + érték választás (csak a meglévő sebekre)
 - **Távharc**: CÉ + célpont VÉ kalkulátor szorzó-pickerekkel (mozgás, méret, szél stb.)
-  - **Célzó dobás**: a CÉ/VÉ box-ra koppintva — első fázisban aktív hatások, Előny/Hátrány picker és forrásaik (harci helyzetek, taktikák, státuszok, fortélyok), második fázisban `CÉ + k20` dobás a kiszámolt VÉ-vel összevetve → Találat / Nem talált jelzés. Találat után SP dobás is indítható. Manuális dobás is lehetséges.
+  - **Célzó dobás**: a CÉ/VÉ box-ra koppintva - első fázisban aktív hatások, Előny/Hátrány picker és forrásaik (harci helyzetek, taktikák, státuszok, fortélyok), második fázisban `CÉ + k20` dobás a kiszámolt VÉ-vel összevetve → Találat / Nem talált jelzés. Találat után SP dobás is indítható. Manuális dobás is lehetséges.
   - **Lövéskitérés**: védekező eszköz - válaszd ki a bejövő fegyvert és a távolságot, az app kiszámolja a célszámot (fegyver kategória + távolság). "Kitérés" gombbal `Akrobatika+Gyorsaság + k10` dobás a célszám ellen → siker (kitértél) / sikertelen (a lövész jöhet)
 
 ### Aktív fül
@@ -99,7 +101,7 @@ A Tulajdonságok fül fejlécében a 🪪 gombbal nyíló ablak a karakter biogr
 ### Karakter megosztás és QR kód
 A Karakterek ablakban (🧑) a slot sorában 💾 → megnyíló popup-ból érhető el:
 - **🔗 URL link**: egyetlen URL-be tömöríti a karaktert és vágólapra másolja. Az URL megnyitásakor az app automatikusan importálja.
-- **▣ QR kód**: PNG képet generál a karakter URL-jéből, a karakter nevével a kód alatt. A kép letölthető vagy megosztható. Import: 📥 → „QR kód képfájlból" vagy „Vágólapról" (beillesztett QR kép) — az app beolvassa és importálja a karaktert.
+- **▣ QR kód**: PNG képet generál a karakter URL-jéből, a karakter nevével a kód alatt. A kép letölthető vagy megosztható. Import: 📥 → „QR kód képfájlból" vagy „Vágólapról" (beillesztett QR kép) - az app beolvassa és importálja a karaktert.
 
 ### VÉ csökkenés történet
 
@@ -113,14 +115,14 @@ A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék m�
 
 A Tulajdonságok+Képzettségek fülön játék módban bármelyik Tulajdonság boxra koppintva megnyílik a Tulajdonságpróba ablak (`Tulajdonság + k6 vs Célszám`):
 
-- **Nehézség** gomblista (inline): 3 (Könnyű) … 8 (Emberfeletti) — koppintással választható, aktív kiemelten jelölt
-- **Előny/Hátrány** választó: Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
+- **Nehézség** gomblista (inline): 3 (Könnyű) … 8 (Emberfeletti) - koppintással választható, aktív kiemelten jelölt
+- **Előny/Hátrány** választó: Hátrány-2, Hátrány-1, - (default), Előny+1, Előny+2
 - **Dobás**: az eredmény (legjobb/legrosszabb k6 az Előny/Hátrány szerint) a célszámhoz mérve → **Siker** (zöld) / **Sikertelen** (piros). Manuális dobás is lehetséges (saját kocka értékkel).
 - **Kiemelt siker/kudarc**: ha az eredmény és a célszám különbsége ≥ 6, ⚜️ Kiemelt siker / ⚜️ Kiemelt kudarc jelenik meg
 - Ha a célszám a max dobással (6) sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén
 - **Extrák** (lenyitható szekció):
   - **Összetett próba**: 1 elsődleges + 1-3 másodlagos dobás (egyre könnyebb célszámmal); összesített Siker/Sikertelen
-  - **Ellenpróba**: célszám nélkül dobsz — az eredményt az ellenfél dobásával kell összevetni
+  - **Ellenpróba**: célszám nélkül dobsz - az eredményt az ellenfél dobásával kell összevetni
 - ⟲ gombbal újradobhatod (eredmény törlése, nehézség marad)
 - Escape / ✕: popup bezárása
 
@@ -136,8 +138,8 @@ A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képz
 - Ha a célszám a max dobással sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén.
 - **Extrák** (lenyitható szekció):
   - **Összetett próba**: 1 elsődleges + 1-3 másodlagos dobás (könnyebb célszámmal); összesített Siker/Sikertelen
-  - **Vállalás** (1-3): bónuszként hozzáadódik a próbához, de a dobás után k6 kritikus hiba ellenőrzés — ha k6 ≤ vállalás értéke, Kritikus Hiba
-  - **Ellenpróba**: célszám nélkül dobsz — az eredményt az ellenfél dobásával kell összevetni
+  - **Vállalás** (1-3): bónuszként hozzáadódik a próbához, de a dobás után k6 kritikus hiba ellenőrzés - ha k6 ≤ vállalás értéke, Kritikus Hiba
+  - **Ellenpróba**: célszám nélkül dobsz - az eredményt az ellenfél dobásával kell összevetni
   - **Helyettesítés**: másik képzettséggel dobsz a próba eredeti képzettsége helyett (az eredeti szint helyett `floor(helyettesítő szint / 3)`, max 5 értékkel)
 - ⟲ gombbal újradobhatod (eredmény törlése, beállítások maradnak)
 - Escape / ✕: popup bezárása
@@ -150,7 +152,7 @@ Egy karakter a Tulajdonságok fül fejlécében a **JK / NJK chip**-pel tehető 
 
 Az NJK boxokon jelölhető, melyik NJK kivel harcol (pl. „A" = Attila ellenfele):
 
-- **Betű felvétele**: az NJK boxot **hosszan lenyomva** (long-press) felugrik egy betű-picker — A–Z színes karika chipek. A választott betű egy színes karikában a box legelején, a név előtt jelenik meg. „Nincs jelölés ❌" törli a betűt.
+- **Betű felvétele**: az NJK boxot **hosszan lenyomva** (long-press) felugrik egy betű-picker - A–Z színes karika chipek. A választott betű egy színes karikában a box legelején, a név előtt jelenik meg. „Nincs jelölés ❌" törli a betűt.
 - **Szín**: a betű színe automatikusan, felvételkor dől el úgy, hogy minden eltérő betű eltérő színt kapjon (ugyanaz a betű mindig ugyanazt a színt). Egy betűt több NJK is hordhat.
 - **Jegyzet**: a box elején lévő betű-karikára **koppintva** felugrik egy kis jegyzet ablak, ahova a KM szabadon írhat (pl. „félkezű, akit Attila már hátbaszúrt egyszer"). Mellé koppintás / Escape ment és bezár.
 
@@ -161,6 +163,14 @@ Fortélyoknál és képzettségeknél megjelenik egy 🔗 ikon, ami a GitHub-on 
 ### Támadás szám info panel
 
 A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára koppintva egy info popup ugrik fel: fegyver neve, Sebesség értéke, és a számított Harckeret bontása (harcmodor, gyorsaság, MGT, fortély).
+
+### Fegyver infó popup
+
+A Harc fül fegyver táblázatában a fegyver **nevére** koppintva részletes infó popup nyílik: harcmodor szint, anyag, Idea, extrák, és a fegyver harcértékei aktoronként (TÉ/VÉ/SP/Átütés/Tám), elsődleges/másodlagos jelzéssel.
+
+### Fegyver Extrák (💡)
+
+A Támadó és Sebzés dobás ablakban (ha a fegyvernek van extrája) megjelenik egy **💡 Extrák** gomb. Rákoppintva listázza a fegyver extráit státusz-jelzéssel: aktív / inaktív / KM dönt. A gomb pulzál és mutatja az aktív extrák számát, ha a pillanatnyi harci helyzetben valamelyik extra épp hat.
 
 ### Mágia akarata segédlet
 

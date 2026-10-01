@@ -48,6 +48,6 @@ export interface CÉBontás {
 export interface TavharcPopupState {
   mfTarget: number | null;
   deleteTarget: number | null;
-  ideaPopup: boolean;
+  ideaPopup: number | null;
   távolságPopup: boolean;
 }

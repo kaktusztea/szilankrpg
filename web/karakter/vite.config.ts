@@ -48,7 +48,7 @@ function serveDataPlugin(): Plugin {
   return {
     name: 'serve-data',
     config() {
-      // Generate tables + metadata BEFORE define is resolved — skip if already fresh
+      // Generate tables + metadata BEFORE define is resolved - skip if already fresh
       if (existsSync(generateScript)) {
         if (tablesAreFresh(dataDir)) {
           console.log('[serve-data] Tables are fresh, skipping generation.');

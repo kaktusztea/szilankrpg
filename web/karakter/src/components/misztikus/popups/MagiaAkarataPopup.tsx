@@ -113,12 +113,12 @@ function OsszehangTab() {
   const áldozatRows: { érték: number; leírás: string }[] = [
     { érték: -2, leírás: 'Papi védő áldás II. (adott arkánum ellen)' },
     { érték: -2, leírás: 'Isteni kegy' },
-    { érték: -1, leírás: 'Friss szerelmes érzelmét elorozni — nehezebb (Asztrálmágia ellen)' },
+    { érték: -1, leírás: 'Friss szerelmes érzelmét elorozni - nehezebb (Asztrálmágia ellen)' },
     { érték: -1, leírás: 'Áldozat kiégett érzelmileg (Asztrálmágia ellen)' },
     { érték: -1, leírás: 'Harci láz (Asztrál/Mentálmágia ellen)' },
     { érték: -1, leírás: 'Papi védő áldás I. (adott arkánum ellen)' },
     { érték: -1, leírás: 'Védőszellem' },
-    { érték: +1, leírás: 'Frissen összetört szívű fiatal ficsúrt asztrálmágiával elbájolni — könnyebb' },
+    { érték: +1, leírás: 'Frissen összetört szívű fiatal ficsúrt asztrálmágiával elbájolni - könnyebb' },
     { érték: +2, leírás: 'Áldozat érzelmi sokkban' },
   ];
 

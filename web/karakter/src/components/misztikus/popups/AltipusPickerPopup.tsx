@@ -17,7 +17,7 @@ export function AltípusPickerPopup({ tradícióNév, opciók, onPick, onClose }
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-        <label className="kep-prompt-label-bold-mb">{tradícióNév} — {hasPantheon ? 'Pantheon' : 'altípus'}</label>
+        <label className="kep-prompt-label-bold-mb">{tradícióNév} - {hasPantheon ? 'Pantheon' : 'altípus'}</label>
         <div className="kep-prompt-flex-col-list">
           {!hasPantheon
             ? trad.altípusok.map(a => (
@@ -49,7 +49,7 @@ function PantheonLista({ altípusok, onPick }: {
           <div className="miszt-section-label">{pantheon}</div>
           {items.map(item => (
             <button key={item.név} className="he-field-btn" onClick={() => onPick(item.név)}>
-              {item.név} {item.leírás && <span className="kep-prompt-text-dim-sm">— {item.leírás}</span>}
+              {item.név} {item.leírás && <span className="kep-prompt-text-dim-sm">- {item.leírás}</span>}
             </button>
           ))}
         </div>

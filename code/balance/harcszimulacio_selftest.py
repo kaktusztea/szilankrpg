@@ -5,8 +5,10 @@ import random, json
 from statistics import mean
 
 DATA = '/repo/github/szilank.code/data'
+# Régi (v1) fegyvertábla: kivezetve a pipeline-ból, csak archív snapshot maradt.
+FEGYVEREK_V1 = '/repo/github/szilank.code/archive/data_fegyverek_v1/fegyverek.json'
 K = json.load(open(f'{DATA}/tables/konstansok.json'))
-FEGY = {f['Fegyver']: f for f in json.load(open(f'{DATA}/tables/fegyverek.json'))}
+FEGY = {f['Fegyver']: f for f in json.load(open(FEGYVEREK_V1))}
 HB = {int(r['Harcmodor Szint']): int(r['TÉ']) for r in
       json.load(open(f'{DATA}/tables/harcmodor_kepzettsegek_bonuszok.json'))}
 KAR = json.load(open(f'{DATA}/karakter/test_karakter2.json'))

@@ -7,7 +7,7 @@ Forrás:
   - md:   md/fortelyok.harci/*.md              (### N. fok / 🔒 Követelmény listák)
 
 A "Harcmodor" (Közelharc/Kardvívás/Rombolás/Lándzsavívás/Ostorharc, illetve a
-md-ben az általános "Harcmodor" szó) NEM számít egyéb követelménynek — ezt
+md-ben az általános "Harcmodor" szó) NEM számít egyéb követelménynek - ezt
 kiszűrjük, és csak a fennmaradó (nem-harcmodor) követelményt listázzuk.
 
 ponytail: a md-parse szándékosan a bevált '### N. fok' + '- Név - `N.szint`'
@@ -172,7 +172,7 @@ def main():
     md = {n: v for n, v in md_all.items() if n in harci}
 
     print("=" * 70)
-    print("GENERÁLT TÁBLÁZAT — Harci fortélyok, Harcmodoron kívüli követelménnyel")
+    print("GENERÁLT TÁBLÁZAT - Harci fortélyok, Harcmodoron kívüli követelménnyel")
     print("(forrás: data/sources/fortelyok/harci/*.yaml)")
     print("=" * 70)
     print(f"\n| {'Fortély':<38} | {'Egyéb képzettség/fortély követelmény':<45} |")
@@ -186,7 +186,7 @@ def main():
 
     def canon(nev):
         """A követelmény-név kanonizálása összevetéshez: VAGY-listát '/'-rel
-        (szóköz nélkül) fűz össze, és kisbetűsít — így a puszta írásmód-
+        (szóköz nélkül) fűz össze, és kisbetűsít - így a puszta írásmód-
         (kis/nagybetű) és tagolás-különbség nem számít eltérésnek."""
         if isinstance(nev, list):
             txt = "/".join(str(x) for x in nev)
@@ -206,7 +206,7 @@ def main():
 
     def fmt_items(items):
         if not items:
-            return "—"
+            return "-"
         return "; ".join(f"{n} {sz}.szint (fok {f})" for f, n, sz in sorted(items))
 
     rows = []
@@ -222,7 +222,7 @@ def main():
         rows.append((nev, fmt_items(yaml_hiany), fmt_items(md_hiany)))
 
     if not rows:
-        print("\n  ✔ Nincs inkonzisztencia — yaml és md minden harci fortélyra egyezik.")
+        print("\n  ✔ Nincs inkonzisztencia - yaml és md minden harci fortélyra egyezik.")
         return 0
 
     w0 = max(len("Fortély"), max(len(r[0]) for r in rows))

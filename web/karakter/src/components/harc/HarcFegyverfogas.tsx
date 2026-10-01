@@ -2,7 +2,7 @@ import type { HarcBaseProps } from './types';
 import type { Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
 import { PickerOverlay } from '../aktiv/PickerOverlay';
-import { kétkezesLehetséges } from './fegyver-helpers';
+import { kétkezesLehetséges, isHárító } from './fegyver-helpers';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session'> {
   onSelect: (patch: Partial<Session>) => void;
@@ -13,13 +13,13 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
   const jobbIdx = session.aktív_fegyver_index;
   const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
   const jobbDef = jobbFp ? lookupFegyver(data.fegyverek, jobbFp.alap) : null;
-  const kétkezesFegyver = jobbDef?.['Forgatás módja'] === 'kétkezes';
+  const kétkezesFegyver = jobbDef?.módok.some(m => m.Forgatás === 'kétkezes') ?? false;
 
   function isDisabled(id: string): boolean {
     if (kétkezesFegyver && id !== 'egyfegyveres') return true;
     if (id === 'fegyver_pajzs' && !karakter.pajzs?.méret) return true;
     if (id === 'fegyver_hárító') {
-      const hasHáritó = karakter.fegyverek.some(fp => lookupFegyver(data.fegyverek, fp.alap)?.['Hárító'] === '1');
+      const hasHáritó = karakter.fegyverek.some(fp => isHárító(lookupFegyver(data.fegyverek, fp.alap)));
       const hasFortély = karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
       if (!hasHáritó || !hasFortély) return true;
     }
@@ -42,9 +42,9 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
       patch.kétkezes_harc = true; patch.aktív_pajzs = false;
       if (session.aktív_fegyver_bal_index === -1) {
         const cand = karakter.fegyverek
-          .map((fp, i) => ({ i, alap: fp.alap, penge: parseFloat(lookupFegyver(data.fegyverek, fp.alap)?.Pengehossz ?? '99') || 99 }))
-          .filter(e => e.alap.toLowerCase() !== 'puszta kéz' && lookupFegyver(data.fegyverek, e.alap)?.Hárító !== '1')
-          .sort((a, b) => a.penge - b.penge);
+          .map((fp, i) => ({ i, alap: fp.alap, fh: lookupFegyver(data.fegyverek, fp.alap)?.fegyverhossz ?? 99 }))
+          .filter(e => e.alap.toLowerCase() !== 'puszta kéz' && !isHárító(lookupFegyver(data.fegyverek, e.alap)))
+          .sort((a, b) => a.fh - b.fh);
         // Lehetőleg másik fegyver a gyengébb kézbe; ha nincs, ugyanaz (pl. 2 db tőr).
         const pick = cand.find(e => e.i !== session.aktív_fegyver_index) ?? cand[0];
         if (pick) patch.aktív_fegyver_bal_index = pick.i;

@@ -2,6 +2,8 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, TavfegyverAlap, TavharcSzorzok, TavharcSzorzoEntry } from '../../engine/types';
 import type { AlkalmatlanInfo, CÉBontás } from './types';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
+import { képzettségSzint } from '../../engine/utils';
+import { getMfFok } from './mesterfegyver-calc';
 
 // --- Alkalmatlan fegyver info ---
 
@@ -9,12 +11,12 @@ export function getAlkalmatlanInfo(k: Karakter, data: GameData): AlkalmatlanInfo
   const nevek = k.fortélyok
     .filter(f => f.név === 'Alkalmatlan fegyver hajítása' && f.spec_elem)
     .map(f => f.spec_elem);
-  const def = data.tavfegyverek.find(d => d.Fegyver.startsWith('🔆'));
+  const def = data.tavfegyverek.find(d => d.név.startsWith('🔆'));
 
   const alkalmiTárgyFortély = k.fortélyok.find(f => f.név === 'Alkalmatlan tárgyak hajítása');
   const alkalmiTárgyNév = alkalmiTárgyFortély ? 'Alkalmi tárgy' : null;
   const alkalmiTárgyDef = def && alkalmiTárgyFortély
-    ? { ...def, Osztó: alkalmiTárgyFortély.fok >= 2 ? '2' : '1' }
+    ? { ...def, Osztó: alkalmiTárgyFortély.fok >= 2 ? 2 : 1 }
     : undefined;
 
   return { nevek, def, alkalmiTárgyNév, alkalmiTárgyDef };
@@ -27,7 +29,7 @@ export function getAktívTfDef(
 ): TavfegyverAlap | undefined {
   const idx = session.aktív_távfegyver_index;
   const peldany = k.távfegyverek[idx];
-  if (peldany) return data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === peldany.alap.toLowerCase());
+  if (peldany) return data.tavfegyverek.find(d => d.név.toLowerCase() === peldany.alap.toLowerCase());
 
   const alkStartIdx = k.távfegyverek.length;
   const alkEndIdx = alkStartIdx + alkalmatlan.nevek.length;
@@ -36,38 +38,7 @@ export function getAktívTfDef(
   return undefined;
 }
 
-// --- Mesterfegyver ---
-
-export function getMfFok(k: Karakter, alap: string): number {
-  return k.fortélyok.find(f => f.név === 'Mesterfegyver' && f.spec_elem === alap)?.fok ?? 0;
-}
-
-export function mfKövetelményHiba(k: Karakter, data: GameData, alap: string): boolean {
-  const fok = getMfFok(k, alap);
-  if (fok === 0) return false;
-  const fokDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver')?.fokok.find(f => f.fok === fok);
-  if (!fokDef?.követelmények?.length) return false;
-  const harcmodor = data.tavfegyverek.find(tf => tf.Fegyver.toLowerCase() === alap.toLowerCase())?.Harcmodor;
-  for (const kov of fokDef.követelmények) {
-    if (kov.típus === 'képzettség') {
-      const nevek = harcmodor ? [harcmodor] : (Array.isArray(kov.név) ? kov.név : [kov.név]);
-      if (!nevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
-    }
-  }
-  return false;
-}
-
-export function mfKövetelményText(k: Karakter, data: GameData, alap: string): string {
-  const fok = getMfFok(k, alap);
-  if (fok === 0) return '';
-  const fokDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver')?.fokok.find(f => f.fok === fok);
-  if (!fokDef?.követelmények?.length) return '';
-  const harcmodor = data.tavfegyverek.find(tf => tf.Fegyver.toLowerCase() === alap.toLowerCase())?.Harcmodor;
-  const kov = fokDef.követelmények[0];
-  if (kov.típus !== 'képzettség') return '';
-  const név = harcmodor ?? (Array.isArray(kov.név) ? kov.név.join(' / ') : kov.név);
-  return `⚠ ${név} ≥ ${kov.érték}`;
-}
+// --- Mesterfegyver: l. mesterfegyver-calc.ts ---
 
 // --- CÉ kalkuláció ---
 
@@ -79,7 +50,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
     ? { alap: fegyverAlap }
     : k.távfegyverek[session.aktív_távfegyver_index];
   const tfDefR = tfPeldanyR
-    ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldanyR.alap.toLowerCase())
+    ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldanyR.alap.toLowerCase())
     : undefined;
   // Helyzet hatások: CÉ flat bónuszok aktív helyzetekből
   for (const hNév of session.aktív_helyzetek) {
@@ -95,7 +66,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
     if (!def?.módosítók?.CÉ) continue;
     // szűrő_harcmodorok: bónusz csak akkor jár ha az aktív távfegyver harcmodora egyezik
     if (def.szűrő_harcmodorok?.length) {
-      if (!tfDefR || !def.szűrő_harcmodorok.includes(tfDefR.Harcmodor ?? '')) continue;
+      if (!tfDefR || !def.szűrő_harcmodorok.includes(tfDefR.harcmodor ?? '')) continue;
     }
     total += def.módosítók.CÉ;
   }
@@ -110,7 +81,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
       if (mod.feltétel.startsWith('taktika:')) {
         const tDef = data.taktikak.find(t => t.feltétel_kulcs === mod.feltétel);
         if (tDef?.szűrő_harcmodorok?.length) {
-          if (!tfDefR || !tDef.szűrő_harcmodorok.includes(tfDefR.Harcmodor ?? '')) continue;
+          if (!tfDefR || !tDef.szűrő_harcmodorok.includes(tfDefR.harcmodor ?? '')) continue;
         }
       }
       total += mod.érték;
@@ -123,13 +94,13 @@ export function calcCÉ(p: { céAlap: number; önuralom: number; CM: number; har
   return p.céAlap + p.önuralom + p.CM + p.harcmodorCÉ + p.fegyverCÉ + p.mfCÉ + p.idea + p.fortélyCÉ;
 }
 
-/** Mágikus vs normál CÉ input — kategória alapján adaptálja az értékeket */
+/** Mágikus vs normál CÉ input - kategória alapján adaptálja az értékeket */
 function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number) {
-  const isMágikus = def?.Kategória === 'mágikus';
+  const isMágikus = def?.kategória === 'mágikus';
   const mágikusTulajdonságCÉ = k.tsz + (k.tulajdonságok.gyorsaság ?? 0) + (k.tulajdonságok.intelligencia ?? 0);
   return {
     önuralom: isMágikus ? mágikusTulajdonságCÉ : (k.tulajdonságok.önuralom ?? 0),
-    // CM mindig számít — mágikus fegyvernél is (szabálykönyv 076: a mágikus
+    // CM mindig számít - mágikus fegyvernél is (szabálykönyv 076: a mágikus
     // CÉ formula tartalmaz + CM-et; csak az Önuralmat váltja TSz+Gyo+Int).
     CM: k.CM,
     idea: isMágikus ? 0 : idea,
@@ -142,15 +113,15 @@ function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number
 export function calcCÉBontás(k: Karakter, data: GameData, session: Session, def: TavfegyverAlap | undefined, idea: number, fortélyCÉ: number, fegyverAlap?: string): CÉBontás {
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
-  const harcmodorNév = def?.Harcmodor ?? 'Hajítás';
-  const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+  const harcmodorNév = def?.harcmodor ?? 'Hajítás';
+  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
   const harcmodorCÉ = data.harcmodorBonusz.find(b => b.szint === harcmodorSzint)?.CÉ ?? -9;
-  const fegyverCÉ = parseInt(def?.CÉ ?? '0') || 0;
+  const fegyverCÉ = def?.CÉ ?? 0;
   const mfAlap = fegyverAlap ?? k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '';
   const mfFok = def ? getMfFok(k, mfAlap) : 0;
   const mfCÉ = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok)?.CÉ ?? 0;
   const inp = getCÉInputs(k, def, idea);
-  const osztó = parseInt(def?.Osztó ?? '1') || 1;
+  const osztó = def?.Osztó ?? 1;
   const cé = calcCÉ({ céAlap, önuralom: inp.önuralom, CM: inp.CM, harcmodorCÉ, fegyverCÉ, mfCÉ, idea: inp.idea, fortélyCÉ });
 
   return { céAlap, önuralom: inp.önuralom, CM: inp.CM, harcmodorCÉ, harcmodorNév, harcmodorSzint, fegyverCÉ, mfCÉ, idea: inp.idea, fortélyCÉ, cé, osztó, isMágikus: inp.isMágikus, mágikusTulajdonságCÉ: inp.mágikusTulajdonságCÉ };
@@ -204,56 +175,5 @@ export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState)
     + get(szorzok.szél, state.szélId);
 }
 
-// --- Lövéskitérés (védekező Akrobatika próba, md/073 + kategóriák md/078) ---
+// --- Lövéskitérés: l. loveskiteres-calc.ts ---
 
-/** Osztó → lövéskitérés célszám-kategória (md/078: a kategóriát az Osztó adja). */
-export function osztóToLöveskitérésKategória(osztó: number): string | null {
-  switch (osztó) {
-    case 1: return 'nem_alkalmas_tárgyak';   // Mágiatáv I
-    case 2: return 'korlátosan_alkalmas';    // Mágiatáv II
-    case 3: return 'dobófegyverek';          // Mágiatáv III (apró hajító/szálfegyver)
-    case 4: return 'íjak';                   // Mágiatáv IV
-    default: return osztó >= 5 ? 'nyílpuskák' : null;
-  }
-}
-
-/** Bejövő távfegyver → célszám-kategória az Osztója alapján. */
-export function weaponToLöveskitérésKategória(def: TavfegyverAlap): string | null {
-  return osztóToLöveskitérésKategória(parseInt(def.Osztó) || 0);
-}
-
-/**
- * Hatótáv méterben. Fix szám ("50m") → az érték; Erő-függő képlet ("20m + (Erő x 5)")
- * → Infinity, mert a támadó Ereje ismeretlen, így nincs range-gát (nem blokkolunk hamisan).
- * "0" vagy üres → Infinity (pl. Mágiatáv: nincs hatótáv korlát a lövéskitérés szempontjából).
- */
-export function parseHatótáv(hatótáv: string): number {
-  const m = /^\s*(\d+)\s*m?\s*$/.exec(hatótáv ?? '');
-  if (!m) return Infinity;
-  const v = parseInt(m[1]);
-  return v > 0 ? v : Infinity;
-}
-
-/**
- * Akrobatika próba célszáma: az első sor, ahol táv <= max_táv (közelebb = magasabb célszám).
- * A tábla maximumán túl a legkönnyebb (utolsó) sor érvényes; hiányzó tábla → null.
- * A tényleges „hatótávon kívül vagy" a fegyver Hatótávja alapján dől el (nem itt).
- */
-export function calcLöveskitérésCélszám(
-  sorok: { max_táv: number; célszám: number }[] | undefined,
-  távolság: number,
-): number | null {
-  if (!sorok || sorok.length === 0) return null;
-  for (const sor of sorok) {
-    if (távolság <= sor.max_táv) return sor.célszám;
-  }
-  return sorok[sorok.length - 1].célszám;
-}
-
-/** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */
-export function calcAkrobatikaÉrték(k: Karakter): number {
-  const akrobatika = k.képzettségek.find(kp => kp.név === 'Akrobatika')?.szint ?? 0;
-  const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
-  const fejlesztés = k.fortélyok.some(f => f.név === 'Lövéskitérés fejlesztése') ? 2 : 0;
-  return akrobatika + gyorsaság + fejlesztés;
-}

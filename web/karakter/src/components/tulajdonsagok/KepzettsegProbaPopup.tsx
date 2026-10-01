@@ -223,7 +223,7 @@ export function KepzettsegProbaPopup({
   const renderVállalásEredmény = () => vállalásEredmény && (
     <div className={`kep-proba-vallalás-result${vállalásEredmény.kritikusHiba ? ' kep-proba-vallalás-krit' : ''}`}>
       Vállalás (k6): {vállalásEredmény.k6} vs {vállalásEredmény.vállalásÉrték}
-      {vállalásEredmény.kritikusHiba ? ' — 🔆 Kritikus hiba!' : ' — OK'}
+      {vállalásEredmény.kritikusHiba ? ' - 🔆 Kritikus hiba!' : ' - OK'}
     </div>
   );
 

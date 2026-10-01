@@ -24,7 +24,7 @@ export function aktívJobbFegyverNév(karakter: Karakter, session: Session, data
   const idx = session.aktív_fegyver_index;
   const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
   if (!fp) return 'Puszta kéz';
-  return lookupFegyver(data.fegyverek, fp.alap)?.Fegyver ?? 'Puszta kéz';
+  return lookupFegyver(data.fegyverek, fp.alap)?.név ?? 'Puszta kéz';
 }
 
 /**

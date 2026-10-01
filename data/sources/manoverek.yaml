@@ -38,28 +38,38 @@ manőverek:
       sorok:
         - { érték: 1, leírás: "Közepes pajzs" }
         - { érték: 2, leírás: "Nagy pajzs" }
-- név: "Csonkolás"
+- név: "Csonkolás (kéz)"
   típus: "általános"
   nehézség: 8
   fázisok: "V,E"
   hatás:
-    - "Levágtad ellenfeled választott végtagját (kéz vagy láb)."
-    - "Kéz: áldozat max ÉP/3↑, láb: max ÉP/2↑ sebzés szükséges a levágáshoz."
-  id: "csonkolás"
+    - "Levágtad ellenfeled kezét."
+    - "Kéz: áldozat max ÉP/3↑ sebzés szükséges a levágáshoz."
+  id: "csonkolás_kéz"
   fázis_info:
-    V: "Nem kapod meg a +4 TÉ módosítót — sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+    V: "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
   végrehajtás_té_módosító: 0
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Kardvívás", érték: 6 }
     - { erősség: "erős", típus: "fegyver_sebzéstípus", érték: "V" }
     - { erősség: "erős", típus: "fegyver_kategória", érték: "kardvívó" }
     - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)" }
-  helyzetfüggő_módosítók:
-    - kategória: "Célzott végtag"
-      mód: "single"
-      sorok:
-        - { érték: 0, leírás: "Kéz" }
-        - { érték: 2, leírás: "Láb" }
+- név: "Csonkolás (láb)"
+  típus: "általános"
+  nehézség: 10
+  fázisok: "V,E"
+  hatás:
+    - "Levágtad ellenfeled lábát."
+    - "Láb: áldozat max ÉP/2↑ sebzés szükséges a levágáshoz."
+  id: "csonkolás_láb"
+  fázis_info:
+    V: "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+  végrehajtás_té_módosító: 0
+  követelmények:
+    - { erősség: "normál", típus: "képzettség", név: "Kardvívás", érték: 6 }
+    - { erősség: "erős", típus: "fegyver_sebzéstípus", érték: "V" }
+    - { erősség: "erős", típus: "fegyver_kategória", érték: "kardvívó" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)" }
 - név: "Ellenfél elfogása"
   típus: "általános"
   nehézség: 10
@@ -114,7 +124,7 @@ manőverek:
     E: "Ez a támadás NEM okoz VÉ csökkentést. Körönként max 1x."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Csak közvetlenül ellened harcolók ellen" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Egyik ellenfél sincs Pengeelőnyben" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Egyik ellenfél sincs Fegyverelőnyben" }
 - név: "Földrevitel"
   típus: "általános"
   nehézség: 8
@@ -125,7 +135,7 @@ manőverek:
   id: "földrevitel"
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél nincs Pengeelőnyben veled szemben" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél nincs Fegyverelőnyben veled szemben" }
   helyzetfüggő_módosítók:
     - kategória: "Erő különbség"
       mód: "single"
@@ -143,7 +153,7 @@ manőverek:
     - "Utána Futás (Gyorsaság próba)."
   id: "kibontakozás"
   fázis_info:
-    E: "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás — Gyorsaság ellenpróba (Sprint fortély számít)."
+    E: "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
 - név: "Lábkirántás szálfegyverrel"
   típus: "általános"
   nehézség: 6
@@ -160,7 +170,7 @@ manőverek:
     - kategória: "Fegyver"
       mód: "single"
       sorok:
-        - { érték: -2, leírás: "Kifejezetten lábkirántásra alkalmas fegyver" }
+        - { extra_ref: "kampos_veggel_labkirantas" }
 - név: "Lánccsapda"
   típus: "általános"
   nehézség: 9
@@ -172,7 +182,7 @@ manőverek:
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 1 }
     - { erősség: "erős", típus: "egyéb", leírás: "Láncos fegyver használata" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 0.5 penge" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 1 fegyverhossz-kategória" }
 - név: "Lánccsapdából szabadítás"
   típus: "általános"
   nehézség: 7
@@ -232,7 +242,7 @@ manőverek:
   id: "mesterjel"
   követelmények:
     - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 2 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 1 penge hosszú hegyes szúrófegyver" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 2 fegyverhossz-kategória hosszú hegyes szúrófegyver" }
   helyzetfüggő_módosítók:
     - kategória: "Jel bonyolultsága"
       mód: "single"
@@ -320,13 +330,13 @@ manőverek:
     - kategória: "Fegyver"
       mód: "single"
       sorok:
-        - { érték: -2, leírás: "Tőrkard" }
+        - { extra_ref: "pontos" }
         - { érték: 0, leírás: "Egykezes kardvívó fegyver / Puszta kéz" }
         - { érték: 2, leírás: "Zúzófegyver" }
     - kategória: "Taktika"
       mód: "single"
       sorok:
-        - { érték: 2, leírás: "Roham taktika alkalmazása" }
+        - { érték: 2, leírás: "Roham taktika alkalmazása", feltétel: "taktika:roham" }
 - név: "Rávetődés hátulról"
   típus: "általános"
   nehézség: 6
@@ -349,7 +359,7 @@ manőverek:
     M: "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
   követelmények:
     - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Fegyverelőny" }
   helyzetfüggő_módosítók:
     - kategória: "Harci alakzat"
       mód: "single"
@@ -407,7 +417,7 @@ manőverek:
     - "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
   id: "belharcba_kerülés"
   fázis_info:
-    E: "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül — mindenképp dobj Ellenpróbát."
+    E: "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül - mindenképp dobj Ellenpróbát."
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Belharcos fegyver és Közelharc harcmodor" }
   helyzetfüggő_módosítók:
@@ -627,7 +637,7 @@ manőverek:
   fázisok: "M,E"
   hatás:
     - "Feltétel: GYALOGOS végzi lovas ellen."
-    - "Feltétel: szúró szálfegyver + Pengeelőny szükséges."
+    - "Feltétel: szúró szálfegyver + Fegyverelőny szükséges."
     - "Sebző dobás a lovasra, aki elveszíti támadását."
   id: "lovas_megakasztása"
   fázis_cselekvő:
@@ -637,4 +647,4 @@ manőverek:
   követelmények:
     - { erősség: "erős", típus: "egyéb", leírás: "Védekező gyalogos végzi (nem a lovas)" }
     - { erősség: "erős", típus: "egyéb", leírás: "Szúró szálfegyver használata" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Pengeelőny a lovashoz képest" }
+    - { erősség: "erős", típus: "egyéb", leírás: "Fegyverelőny a lovashoz képest" }

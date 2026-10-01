@@ -10,7 +10,7 @@ export { előnyHátrányLabel };
 
 /** Előny/Hátrány választható szintek (mindkét próbatípusnál azonos skála). */
 export const ELŐNY_HÁTRÁNY_SZINTEK: { szint: number; label: string }[] =
-  [-2, -1, 0, 1, 2].map(szint => ({ szint, label: előnyHátrányLabel(szint) || '—' }));
+  [-2, -1, 0, 1, 2].map(szint => ({ szint, label: előnyHátrányLabel(szint) || '-' }));
 
 /** Lehetetlen a próba: a bázis + a kocka MAXIMUMA sem éri el a célszámot. */
 export function probaLehetetlen(bázis: number, maxDobás: number, célszám: number): boolean {

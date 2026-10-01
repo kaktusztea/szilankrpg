@@ -99,10 +99,10 @@ Meddig áll el?
 0: Pár másodperc
 1: 1 perc
 2: 10 perc
-3: 1 óra, Méregkeverés 3.szint
-4: 1 nap, Mk 6.szint
+3: 1 óra,   Mk 3.szint
+4: 1 nap,   Mk 6.szint
 5: 1 hónap, Mk 9.szint
-6: Örökké, Mk 12.szint
+6: Örökké,  Mk 12.szint
 ```
 
 #### (3b) Kiürülés
@@ -125,15 +125,15 @@ Mennyi idő alatt ürül ki?
 Milyen gyorsan hat?
 
 +0: (30 perc - 3 óra múlva)
-+1: (4 - 23 óra múlva), Mk 3. szint
-+1: (2 - 20 perc múlva), Mk 3. szint
-+2: (1 - 10 nap múlva), Mk 5. szint
-+2: (2 - 6 kör múlva), Mk 5. szint
-+3: (2 - 4 hét múlva), Mk 7. szint
++1: (4 - 23 óra múlva),   Mk 3. szint
++1: (2 - 20 perc múlva),  Mk 3. szint
++2: (1 - 10 nap múlva),   Mk 5. szint
++2: (2 - 6 kör múlva),    Mk 5. szint
++3: (2 - 4 hét múlva),    Mk 7. szint
 +4: Gyorsan (10 szegmens), Mk 7. szint
-+4: Hónapok múlva, Mk 9. szint
++4: Hónapok múlva,        Mk 9. szint
 +5: Azonnal (1 szegmens), Mk 9. szint
-+5: Évek múlva, Mk 12. szint
++5: Évek múlva,           Mk 12. szint
 ```
 
 <br />
@@ -144,20 +144,21 @@ Milyen gyorsan hat?
 ```
 +2: Plusz 1 komponens
 +3: Plusz 1 hordozó közeg
-    (étel/ital, légnemű, véráram),
+    (étel/ital, légnemű, véráram)
 +3: Több hordozó közegből
     csak 1 a méreg hatóanyag,
     a többi természetes alapanyag
-+2: Sűrű: kis mennyiség is
-    elég 1 adaghoz
++2: Sűrű: kis mennyiség is elég 1 adaghoz
 +3: Színtelen
 +3: Szagtalan/ízetlen (egyben értendő)
-+3/+6: Félrevezető tünetek I, II.
++3: Félrevezető tünetek 3
+    (ennyivel nő az azonosítás nehézsége)
++6: Félrevezető tünetek 6
     (ennyivel nő az azonosítás nehézsége)
 +0: Szabadban sem eloszló légméreg:
     nem nehezebb, de speciális fizikai
     közvetítő kell (füstöt okádó labdacs),
-    folyamatos utánpótlással)
+    folyamatos utánpótlással
 ```
 
 <br />

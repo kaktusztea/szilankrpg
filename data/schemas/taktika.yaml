@@ -5,19 +5,27 @@
 taktikák:
   - név: ""                    # kötelező, string
     id: ""                     # kötelező, egyedi azonosító (snake_case, ékezetes)
-    feltétel_kulcs: ""         # generált (id-ból), "taktika:xyz" formátum — a source yaml-ban NEM szerepel
+    feltétel_kulcs: ""         # generált (id-ból), "taktika:xyz" formátum - a source yaml-ban NEM szerepel
     fokozatos: false           # kötelező, boolean
-    skálázható: false          # opcionális, boolean — a fok a karakter szintjéhez skálázódik (konstansok.skálázható_taktika_max_fok)
+    skálázható: false          # opcionális, boolean - a fok a karakter szintjéhez skálázódik (konstansok.skálázható_taktika_max_fok)
     # Ha fokozatos: false → módosítók dict (opcionális, TÉ/VÉ/KÉ/SP kulcsok)
     módosítók:                 # opcionális (fokozatos: false esetén)
       TÉ: 0
       VÉ: 0
       KÉ: 0
       SP: 0
-    # Nem-fokozatos taktika strukturált hatása (előny/hátrány/enyhít/szöveges) egy dobáscélra.
+    # Nem-fokozatos taktika strukturált hatása egy dobáscélra/numerikus célra.
     # Pl. Visszafogott: Hátrány-2 a sebzésdobásra (a módosítók.TÉ mellett).
+    # hatás enum: "előny" | "hátrány" | "enyhít" | "szöveges" | "flat" | "override" | "szorzó" (konstansok.yaml effekt_módok).
+    # feltétel: opcionális, string ("harci_helyzet:xyz" / "taktika:xyz" prefix) - csak akkor aktív, ha teljesül.
+    # KONVENCIÓ (ha egy cél-ra TÖBB elem van, pl. "vé_csökkentés"): a lista BALRÓL JOBBRA, SORRENDBEN,
+    # akkumulálva értelmezendő (NEM a §42.3 mód-kategória szerinti precedencia-motor) - "override" a
+    # addig felhalmozott értéket felülírja, "flat" hozzáadódik, "szorzó" megszorozza az addigi értéket.
+    # Az override-ot ezért előre kell tenni, ha utána flat/szorzó-val bővítendő az érték.
+    # Pl. Fárasztás: [override 3, flat +1 (feltétel: Fegyverelőny)] → 3, vagy Fegyverelőnyben 4.
+    # Pl. Roham: [szorzó 2] a Fegyverviszony-alapú VÉ csökkentésre (bázis+k20P) × 2.
     hatások:                   # opcionális (fokozatos: false esetén)
-      - { hatás: "", érték: 0, cél: "", megjegyzés: "" }
+      - { hatás: "", érték: 0, cél: "", megjegyzés: "", feltétel: "" }
     # Ha fokozatos: true → fokok lista (mindegyik fok+módosítók)
     fokok:                     # opcionális (fokozatos: true esetén)
       - { fok: 1, TÉ: 0, VÉ: 0, KÉ: 0, SP: 0 }
@@ -36,4 +44,4 @@ taktikák:
       fortély: ""
       extra_fokok_per_fok: 0
     csoport: ""                # opcionális, string ("távharc" | "")
-    szűrő_harcmodorok: []     # opcionális, string lista — CÉ módosító csak ezekkel a harcmodorokkal érvényes
+    szűrő_harcmodorok: []     # opcionális, string lista - CÉ módosító csak ezekkel a harcmodorokkal érvényes

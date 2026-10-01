@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fegyvergenerátor — determinisztikus harcérték-számoló + balansz teszt.
+"""Fegyvergenerátor - determinisztikus harcérték-számoló + balansz teszt.
 
 Cél:
   1) Reprodukálja a STUDY.fegyvergenerator.md meglévő GAME értékeit (regresszió).
@@ -11,14 +11,15 @@ Konvenció: magasabb Sebesség szám = LASSABB fegyver.
 Futtatás:  python3 code/fegyvergenerator_balansz.py
 
 ─────────────────────────────────────────────────────────────────────────────
-Eredet: szilank.wiki/STUDY.fegyvergenerator.balance.py — migrálva 2026-09-10.
+Eredet: szilank.wiki/STUDY.fegyvergenerator.balance.py - migrálva 2026-09-10.
 Kapcsolódó tervezési doksik (a WIKI-ben élnek, NEM éles anyag):
   STUDY.fegyvergenerator.md · STUDY.fegyvergenerator_v2_balanced.md
   STUDY.fegyvergenerator_v2_fegyverlista.md
 
 FIGYELEM: ez egy TERVEZŐI eszköz, nem a data pipeline része. A generátor
 paraméterei (FEGYVERHOSSZ, AKTOR, SULY, IDEA, ALAPANYAG, TIPUS_PANCEL) NEM
-azonosak az éles `data/tables/fegyverek.json` értékeivel — a generátor egy
+azonosak az éles `data/tables/fegyverek_v2.json` (illetve a kivezetett v1
+`archive/data_fegyverek_v1/fegyverek.json`) értékeivel - a generátor egy
 javasolt modell, a fegyvertáblák kézzel hangolt élesek. A kettőt NE
 szinkronizáld automatikusan.
 ─────────────────────────────────────────────────────────────────────────────
@@ -29,10 +30,10 @@ import pathlib
 import yaml
 
 # ─────────────────────────────────────────────────────────────────────────────
-# ADAT BETÖLTÉS — minden paraméter a data/fegyvergenerator/ YAML-okból jön.
+# ADAT BETÖLTÉS - minden paraméter a data/sources/fegyverek/ YAML-okból jön.
 # A szkriptben NINCS beégetett adat, csak modell-logika.
 # ─────────────────────────────────────────────────────────────────────────────
-DATA_DIR = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "fegyvergenerator"
+DATA_DIR = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "sources" / "fegyverek"
 
 
 def _load(nev):
@@ -60,14 +61,14 @@ SEBZESTIPUS_HATRANY = _K["sebzéstípus_hátrány"]   # sebzésmód rang → Seb
 K20_ATLAG    = _K["k20_atlag"]
 EP_PER_KAT   = _K["ep_per_kat"]
 
-# sebzésjelleg × páncélosztály mátrix (flat SP delta) — a szituációs balansz motorja
+# sebzésjelleg × páncélosztály mátrix (flat SP delta) - a szituációs balansz motorja
 _MATRIX_YAML = _load("sebzesjelleg_pancel_matrix.yaml")
 TIPUS_PANCEL = _MATRIX_YAML["matrix"]
 _STRUKTURA_OSZTALY = _MATRIX_YAML["struktúra_osztály"]
 
 # Páncélok a balansz-teszthez az ELSŐDLEGES forrásból (data/sources/konstansok.yaml → páncél_struktúrák):
 # (név, fizikai SFÉ, páncélosztály). csupasz = nincs vért (nem struktúra). Fizikai SFÉ, mert a fegyver-balansz fizikai.
-with open(DATA_DIR.parent / "sources" / "konstansok.yaml", encoding="utf-8") as _fh:
+with open(DATA_DIR.parent / "konstansok.yaml", encoding="utf-8") as _fh:
     _STRUKTURAK = yaml.safe_load(_fh)["páncél_struktúrák"]
 PANCEL = [("csupasz", 0, "csupasz")] + [
     (s["struktúra"], s["sfé_fizikai"], _STRUKTURA_OSZTALY[s["struktúra"]]) for s in _STRUKTURAK
@@ -75,7 +76,7 @@ PANCEL = [("csupasz", 0, "csupasz")] + [
 
 
 def tipusbonusz(tipus, osztaly):
-    """Sebzéstípus SP-módosító páncélosztály ellen — bónusz ÉS büntetés (szituációs balansz).
+    """Sebzéstípus SP-módosító páncélosztály ellen - bónusz ÉS büntetés (szituációs balansz).
     Az osztály a páncél-struktúrából jön (struktúra_osztály leképezés), NEM SFÉ-küszöbből származtatva."""
     return TIPUS_PANCEL[tipus][osztaly]
 
@@ -87,7 +88,7 @@ def tipusbonusz(tipus, osztaly):
 @dataclass
 class Fegyver:
     """FIGYELEM: az alábbi mező-defaultok a fegyverek.schema.yaml `default:` értékeit tükrözik
-    (Python dataclass nem tud sémából generálni statikus mezőt) — séma-default módosításkor
+    (Python dataclass nem tud sémából generálni statikus mezőt) - séma-default módosításkor
     ITT IS frissítendő, különben a kettő csendben elszakadhat."""
     név: str
     hossz: int
@@ -96,24 +97,24 @@ class Fegyver:
     pengés: int = 0
     láncos: int = 0
     súly: str = "átlagos"
-    idea: int = 0
+    idea_default: int = 0
     alapanyag: str = "acél"
     hajlékony: int = 0
-    súly_delta_cél: str = "sp"        # "sp" vagy "átütés" — mire fordítjuk a nehéz/súlyos deltát (konstansok.yaml súly_delta_cél)
-    szálfegyver_nyélanyag: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú — súly/SP hatás
+    súly_delta_cél: str = "sp"        # "sp" vagy "átütés" - mire fordítjuk a nehéz/súlyos deltát (konstansok.yaml súly_delta_cél)
+    szálfegyver_nyélanyag: str = "sima"   # sima/fanyelű/vasaltszárú/tömörszárú - súly/SP hatás
     erőbónusz_limit: int = 99        # SP-re alkalmazható Erőbónusz plafonja (md/064_02_06); 99 = nincs plafon; passthrough (Erő=0 bázist nem érinti)
-    akadály: int = 0                  # 0/1/2 — utazásnál mennyire akadályoz; NINCS harcérték-hatás, csak leíró/logisztikai
+    akadály: int = 0                  # 0/1/2 - utazásnál mennyire akadályoz; NINCS harcérték-hatás, csak leíró/logisztikai
 
     def modok(self, ero=2):
         """Fegyvermódonként (fogás × aktor) a végső harcértékek.
 
-        A másfélkezes fegyver KÉT fogás-variánst ad: '2 kéz' (teljes) és '1 kéz' (MK-levonás).
+        A másfélkezes fegyver KÉT fogás-variánst ad: '2 kézzel' (teljes) és '1 kézzel' (MK-levonás).
         Az MK a KONTROLLT bünteti (TÉ/VÉ/Átütés/erő-plafon), a sebzést (SP) NEM.
         A levonás-értékek: konstansok.yaml → forgatás_levonás['másfélkezes_egykézzel'].
-        (A kétkezes-1-kézzel eset SZITUÁCIÓ, nem itt emittált sor — lásd konstansok.yaml → kétkezes_egykézzel.)
+        (A kétkezes-1-kézzel eset SZITUÁCIÓ, nem itt emittált sor - lásd konstansok.yaml → kétkezes_egykézzel.)
         """
         h = FEGYVERHOSSZ[self.hossz]
-        i = IDEA[self.idea]
+        i = IDEA[self.idea_default]
         mat = ALAPANYAG[self.alapanyag]
         nyel = SZALFEGYVER_NYELANYAG[self.szálfegyver_nyélanyag]
 
@@ -128,13 +129,13 @@ class Fegyver:
         fd = FEJDARAB[self.fejdarab]
 
         # Fogás-variánsok: ha a forgatásnak van "1 kézzel" MINDIG EMITTÁLT extra variánsa
-        # (jelenleg csak a másfélkezesnek — konstansok.yaml → egykezes_forgatás), a fegyver
+        # (jelenleg csak a másfélkezesnek - konstansok.yaml → egykezes_forgatás), a fegyver
         # két sort ad ki. A kétkezes 1-kézzel eset SZITUÁCIÓ (mindig_emittált: false), nem itt jön.
         forg = h["forgatás"]
         grips = [(forg, None)]
         egykezes_levonas = EGYKEZES_FORGATAS.get(forg)
         if egykezes_levonas and egykezes_levonas.get("mindig_emittált"):
-            grips.append((forg + " · 1 kéz", egykezes_levonas))
+            grips.append((forg + " · 1 kézzel", egykezes_levonas))
 
         eredmeny = []
         for forg_cimke, mk in grips:
@@ -191,12 +192,13 @@ class Fegyver:
                     TE=te, VE=ve, SP=sp, AT=at, SEB=seb, erőbónusz_limit=ero_limit,
                     sebzestipus=sebzestipus, sebzes_hatrany=sebzes_hatrany,
                     puha=a.get("puha", False), felszerelés_pont=h.get("felszerelés_pont", 0),
+                    erő_követelmény=s.get("erő_követelmény", 0),
                 ))
         return eredmeny
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FEGYVER KATALÓGUS — WORK paraméterek a data/fegyvergenerator/fegyverek.yaml-ből.
+# FEGYVER KATALÓGUS - WORK paraméterek a data/sources/fegyverek/fegyverek.yaml-ből.
 # FEGYVEREK = a `teszt.teszt_minta: true` rekordok (balansz self-test/elemzés).
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -213,10 +215,10 @@ FEGYVEREK = {r["név"]: Fegyver(név=r["név"], **r["fegyver"])
 def teszt_regresszio():
     """Ellenőrzi, hogy a modell reprodukálja az elvárt bázis TÉ/VÉ értékeket.
     Az elvárt értékek a fegyverek.yaml `teszt.elvart` mezőiből jönnek (Erő-független).
-    FIGYELEM: csak vágó/zúzó módokat ellenőrzünk — a doksi thrust-módjai a régi
+    FIGYELEM: csak vágó/zúzó módokat ellenőrzünk - a doksi thrust-módjai a régi
     (szúró TÉ/VÉ=0) szabállyal készültek, az új szúró szándékos eltérés lehet.
 
-    `teszt.elvart_1kez_kétkezes`: a KÉTKEZES fegyver szituációs 1-kezes (pajzs/kiesett kéz) TÉ/VÉ-je —
+    `teszt.elvart_1kez_kétkezes`: a KÉTKEZES fegyver szituációs 1-kezes (pajzs/kiesett kéz) TÉ/VÉ-je -
     ez a modok()-ban NEM emittált sor (mindig_emittált: false), itt manuálisan alkalmazzuk az
     egykezes_forgatás.kétkezes levonást, hogy a v2.md-ben kézzel leírt szituációs blokkok
     (pl. "Lándzsa pajzzsal") ne szakadjanak el csendben a data layertől."""
@@ -240,7 +242,7 @@ def teszt_regresszio():
                 jel = "✅" if (te1 == vte and ve1 == vve) else "❌"
                 if jel == "❌":
                     ok = False
-                print(f"  {jel} {r['név']:24s} {aktor:24s} · 1 kéz (szituáció) TÉ {te1:>3}(≈{vte}) VÉ {ve1:>3}(≈{vve})")
+                print(f"  {jel} {r['név']:24s} {aktor:24s} · 1 kézzel (szituáció) TÉ {te1:>3}(≈{vte}) VÉ {ve1:>3}(≈{vve})")
     print(f"  → {'MIND OK' if ok else 'ELTÉRÉS!'}\n")
     return ok
 
@@ -268,7 +270,7 @@ def teszt_tempo(ero=2, csak_mundan=False):
     """Tempóval súlyozott sebzés: (sebzés/kör) ~ effektív_kat / Sebesség.
     Ha egy fegyver MINDEN páncél ellen a legjobb tempó-sebzésű → mindent vivő (rossz)."""
     cimke = " [CSAK MUNDÁN: Idea 0, acél]" if csak_mundan else ""
-    print(f"=== TEMPÓ-SÚLYOZOTT SEBZÉS (Erő={ero}){cimke} — kat/Sebesség × 10 ===")
+    print(f"=== TEMPÓ-SÚLYOZOTT SEBZÉS (Erő={ero}){cimke} - kat/Sebesség × 10 ===")
     print("(csak az elsődleges/legjobb mód páncélonként; magasabb = jobb throughput)")
     fejlec = "fegyver".ljust(24) + "".join(p[0][:6].rjust(8) for p in PANCEL)
     print(fejlec)
@@ -276,7 +278,7 @@ def teszt_tempo(ero=2, csak_mundan=False):
     # páncélonként gyűjtjük, melyik fegyver a legjobb
     legjobb = {p[0]: (None, -1) for p in PANCEL}
     for fnev, f in FEGYVEREK.items():
-        if csak_mundan and (f.idea != 0 or ALAPANYAG[f.alapanyag].get("mágikus")):
+        if csak_mundan and (f.idea_default != 0 or ALAPANYAG[f.alapanyag].get("mágikus")):
             continue
         modok = f.modok(ero=ero)
         sor = fnev.ljust(24)
@@ -306,9 +308,9 @@ def teszt_tempo(ero=2, csak_mundan=False):
 
 
 def teszt_dump(ero=0):
-    """Teljes GAME dump — az új szabályokkal (szúró TÉ+1/VÉ-1) regenerált értékek.
+    """Teljes GAME dump - az új szabályokkal (szúró TÉ+1/VÉ-1) regenerált értékek.
     Erő=0: a doksi GAME blokkjai Erő nélkül adják a TÉ/VÉ-t; az SP a példákban Erővel."""
-    print(f"=== GAME DUMP (Erő={ero}) — regenerált értékek ===")
+    print(f"=== GAME DUMP (Erő={ero}) - regenerált értékek ===")
     for fnev, f in FEGYVEREK.items():
         besz = " [Beszorítható]" if "beszorithato" in FEGYVERHOSSZ[f.hossz].get("extrak", []) else ""
         print(f"\n### {fnev}{besz}")
@@ -322,9 +324,9 @@ def teszt_dump(ero=0):
 if __name__ == "__main__":
     import extrak_validator, fegyverek_validator
     if not extrak_validator.run():
-        raise SystemExit("extrak.yaml séma-hiba — javítsd a fentieket (lásd fenn).")
+        raise SystemExit("extrak.yaml séma-hiba - javítsd a fentieket (lásd fenn).")
     if not fegyverek_validator.run():
-        raise SystemExit("fegyverek.yaml séma-hiba — javítsd a fentieket (lásd fenn).")
+        raise SystemExit("fegyverek.yaml séma-hiba - javítsd a fentieket (lásd fenn).")
     print()
     teszt_regresszio()
     teszt_dump(ero=0)

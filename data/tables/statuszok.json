@@ -141,16 +141,16 @@
             "text": "Karma hátterek is okozhatnak Státusz változást."
           },
           {
-            "text": "Példa: Hiszékeny — Hátrány-1 Emberismeret próbára, átverős szituációkban (Befolyásolás+Hazudozás vs Emberismeret)."
+            "text": "Példa: Hiszékeny - Hátrány-1 Emberismeret próbára, átverős szituációkban (Befolyásolás+Hazudozás vs Emberismeret)."
           },
           {
-            "text": "Példa: Meggondolatlan — Hátrány-1 Önuralom próba; hajlamos vagy kockázatos döntéseket hozni, még akkor is, ha nincs rá szükség."
+            "text": "Példa: Meggondolatlan - Hátrány-1 Önuralom próba; hajlamos vagy kockázatos döntéseket hozni, még akkor is, ha nincs rá szükség."
           },
           {
-            "text": "Példa: Paranoiás — folyamatosan gyanakszol másokra, és nehezen bízol meg bárkiben."
+            "text": "Példa: Paranoiás - folyamatosan gyanakszol másokra, és nehezen bízol meg bárkiben."
           },
           {
-            "text": "Példa: Irigy — nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni."
+            "text": "Példa: Irigy - nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni."
           },
           {
             "text": "Átkozott (1) Érzékek esetén lásd az Érzékvesztés Státuszt."
@@ -501,7 +501,7 @@
         "alcím": "Zavart",
         "megjegyzések": [
           {
-            "text": "Alkategóriák: Látás, Hallás, Szaglás (a szabálykönyvben említett érzékek — a Tapintás/Ízlelés a webapp-kiterjesztés)."
+            "text": "Alkategóriák: Látás, Hallás, Szaglás (a szabálykönyvben említett érzékek - a Tapintás/Ízlelés a webapp-kiterjesztés)."
           }
         ],
         "hatások": [
@@ -737,7 +737,7 @@
         "alcím": "Fogékony",
         "megjegyzések": [
           {
-            "text": "A nem-mágikus érzékszervi, vagy érzelmi ingerek fokozottabban hatnak rád. Érzelmileg jobban megnyílsz — pozitív és negatív értelemben is."
+            "text": "A nem-mágikus érzékszervi, vagy érzelmi ingerek fokozottabban hatnak rád. Érzelmileg jobban megnyílsz - pozitív és negatív értelemben is."
           }
         ],
         "hatások": [
@@ -897,10 +897,10 @@
             "text": "Akaraterő Tulajdonságpróbát kell dobni, hogy a karakter ellen tud-e állni a késztetésnek."
           },
           {
-            "text": "Példa: Kleptománia — \"El kéne lopni valamit...\""
+            "text": "Példa: Kleptománia - \"El kéne lopni valamit...\""
           },
           {
-            "text": "Példa: Alkoholizmus (\"Igyak piát?\") — 1. fok: Akaraterő tulajdonságpróba (Nagyivó)."
+            "text": "Példa: Alkoholizmus (\"Igyak piát?\") - 1. fok: Akaraterő tulajdonságpróba (Nagyivó)."
           }
         ],
         "hatások": [
@@ -916,7 +916,7 @@
         "alcím": "Vágy",
         "megjegyzések": [
           {
-            "text": "Példa: Alkoholizmus — 2. fok: Hátrány-1 (Alkoholista)."
+            "text": "Példa: Alkoholizmus - 2. fok: Hátrány-1 (Alkoholista)."
           }
         ],
         "hatások": [
@@ -933,7 +933,7 @@
         "alcím": "Kényszer",
         "megjegyzések": [
           {
-            "text": "Példa: Alkoholizmus — 3. fok: Hátrány-2 (Masszív alkoholista)."
+            "text": "Példa: Alkoholizmus - 3. fok: Hátrány-2 (Masszív alkoholista)."
           }
         ],
         "hatások": [
@@ -1055,7 +1055,7 @@
         "alcím": "Haldoklás",
         "megjegyzések": [
           {
-            "text": "Ha 0 ÉP értékre ér a karakter, haldoklani kezd — bővebben lásd a Haldoklás alfejezetet."
+            "text": "Ha 0 ÉP értékre ér a karakter, haldoklani kezd - bővebben lásd a Haldoklás alfejezetet."
           }
         ],
         "hatások": [

@@ -6,7 +6,7 @@ import type { GameData } from '../../engine/data-loader';
 /**
  * A HarcScreen `baseTÉ`-ként a téBontásÖsszeg-et használja, a popup pedig a
  * téBontás sorait mutatja. Ez az önteszt rögzíti, hogy a bontás sorainak összege
- * MINDIG egyenlő az összeggel — így a megjelenített részletek és az érték nem driftel szét.
+ * MINDIG egyenlő az összeggel - így a megjelenített részletek és az érték nem driftel szét.
  */
 describe('téBontás konzisztencia', () => {
   const karakter = {

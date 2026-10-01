@@ -2,7 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import type { HarcComputed } from './types';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, harcmodorÖsszeg as calcHarcmodorÖsszeg, fortélyFok } from '../../engine/utils';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { createFeltételEvaluator } from '../../engine/feltetel-eval';
 import { calcTaktikaMods } from './taktika-calc';
@@ -18,10 +18,10 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const aktívFeltételek = buildAktívFeltételek(session, data);
   const taktikaMods = calcTaktikaMods(session, data, k);
 
-  const harcmodorÖsszeg = [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]
-    .reduce((s: number, név: string) => s + (k.képzettségek.find(kp => kp.név === név)?.szint ?? 0), 0);
+  const harcmodorÖsszeg = calcHarcmodorÖsszeg(k,
+    [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]);
 
-  const merevvértFok = k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
+  const merevvértFok = fortélyFok(k, 'Merevvértviselet');
   const lookupArrays = buildPancelLookups(konstansok);
 
   const stringCtx = new Map<string, string>();
@@ -30,23 +30,23 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
   stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
 
-  // Aktív fegyver pengehossz
+  // Aktív fegyverhossz
   const aktívFegyverFp = session.aktív_fegyver_index >= 0 ? k.fegyverek[session.aktív_fegyver_index] : null;
   const pajzsFegyverNév = buildPajzsFegyverNév(k);
   const aktívFegyverDef = session.aktív_fegyver_index === -2
     ? lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '')
     : aktívFegyverFp ? lookupFegyver(data.fegyverek, aktívFegyverFp.alap) : null;
 
-  const jobbPengehossz = aktívFegyverDef ? (parseFloat(aktívFegyverDef.Pengehossz) || 0) : 0;
-  let aktívFegyverPengehossz = jobbPengehossz;
+  const jobbFegyverhossz = aktívFegyverDef?.fegyverhossz ?? 0;
+  let aktívFegyverhossz = jobbFegyverhossz;
 
   if ((session.kétkezes_harc || session.fegyverfogás === 'fegyver_hárító') && session.aktív_fegyver_bal_index >= 0) {
     const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
     const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
-    aktívFegyverPengehossz += balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
+    aktívFegyverhossz += balDef?.fegyverhossz ?? 0;
   }
 
-  const aktívFegyverKat = aktívFegyverDef?.Kategória ?? 'közelharci';
+  const aktívFegyverKat = aktívFegyverDef?.kategória ?? 'közelharci';
   const aktívFegyverHarcmodor = konstansok.fegyver_kategória_harcmodor[aktívFegyverKat] ?? 'Közelharc';
   stringCtx.set('aktív_fegyver_harcmodor', aktívFegyverHarcmodor);
   aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`);
@@ -60,7 +60,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     páncél_végtagvédettség: k.páncél.végtagvédettség,
     páncél_sisak: k.páncél.sisak ? 1 : 0,
     páncél_idea: k.páncél.idea, páncél_rongálódás: k.páncél.rongálódás,
-    aktív_fegyver_pengehossz: aktívFegyverPengehossz,
+    aktív_fegyver_fegyverhossz: aktívFegyverhossz,
   });
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 
@@ -109,5 +109,15 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     taktikaMods, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
     pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások, véVeszSzorzó, véVeszSzorzóForrás,
     feltételTeljesül,
+    // Extrák (§42 info): a fegyver-extrák auto-státuszához szükséges kontextus. A cél_páncél
+    // kategóriát a Sebzés popup állítja (ellenfél-páncél választó); itt undefined marad.
+    extraKontextus: {
+      aktívFeltételek,
+      fortélyFokok: new Map(k.fortélyok.map(f => [f.név, f.fok])),
+      aktívStátuszok: new Set(session.aktív_státuszok),
+      aktorNév: aktívFegyverDef?.módok?.[0]?.aktor,
+      forgatás: aktívFegyverDef?.módok?.[0]?.Forgatás,
+      aktívManőver: session.aktív_manőver || undefined,
+    },
   };
 }

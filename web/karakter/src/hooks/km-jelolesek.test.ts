@@ -39,7 +39,7 @@ describe('KM jelölések I/O', () => {
   });
 });
 
-describe('választSzínt — felvételkori színválasztás', () => {
+describe('választSzínt - felvételkori színválasztás', () => {
   it('üres tár: első betű a paletta első színét kapja', () => {
     expect(választSzínt('A', {}, KM_JEL_SZÍNEK)).toBe(KM_JEL_SZÍNEK[0]);
   });
@@ -73,7 +73,7 @@ describe('választSzínt — felvételkori színválasztás', () => {
   });
 });
 
-describe('kombináltBetűk — korábban felvett 2+ karakteres betűk listája', () => {
+describe('kombináltBetűk - korábban felvett 2+ karakteres betűk listája', () => {
   it('csak a 2+ karakteres betűket adja, az egykarakteresek kimaradnak', () => {
     const tár = {
       u1: { betű: 'M', szín: '#fff', jegyzet: '' },

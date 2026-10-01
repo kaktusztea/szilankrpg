@@ -35,7 +35,7 @@ describe('követelményTeljesül', () => {
     expect(követelményTeljesül(köv, karakter, data)).toBe(false);
   });
   it('informatív (egyéb) → null (nem gépi)', () => {
-    const köv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Pengeelőny' };
+    const köv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Fegyverelőny' };
     expect(követelményTeljesül(köv, karakter, data)).toBeNull();
   });
 });
@@ -54,7 +54,7 @@ describe('gépiKövetelményStátusz', () => {
     expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: true, normálHiány: false });
   });
   it('informatív követelmény nem befolyásol (null)', () => {
-    const k: ManoverKövetelmény[] = [{ erősség: 'erős', típus: 'egyéb', leírás: 'Pengeelőny' }];
+    const k: ManoverKövetelmény[] = [{ erősség: 'erős', típus: 'egyéb', leírás: 'Fegyverelőny' }];
     expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: false, normálHiány: false });
   });
 });

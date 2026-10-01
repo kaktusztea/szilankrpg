@@ -6,7 +6,7 @@ interface Props {
 }
 
 // Backdrop/Escape dismiss is handled centrally by useOverlays (closeTopmost),
-// so this stacked confirm does not self-dismiss — that would race with the
+// so this stacked confirm does not self-dismiss - that would race with the
 // global handler and also close the SlotList behind it.
 export function SlotDeleteOverlay({ név, onConfirm }: Props) {
   return (

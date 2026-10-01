@@ -5,15 +5,15 @@
 státuszok:
   - név: ""                    # kötelező, string
     kategória: ""              # kötelező, enum: "fizikai" | "szellemi" | "harci" | "mágikus"
-    többszörös: false          # opcionális, boolean (default: false) — többször felvehető alkategóriánként
-    alkategóriák: []           # opcionális, string lista — ha többszörös, az almenü opciói
+    többszörös: false          # opcionális, boolean (default: false) - többször felvehető alkategóriánként
+    alkategóriák: []           # opcionális, string lista - ha többszörös, az almenü opciói
     fokok:                     # kötelező, lista (min 1 elem)
       - fok: 1                 # kötelező, number (1-N)
         alcím: ""              # kötelező, string (a fok elnevezése)
-        megjegyzések: []       # opcionális, lista ({ text: "" } elemek — a fokhoz tartozó hosszabb, narratív kontextus: mi okozza, ⚡ példák, kijövetel/megszűntetés szabályok, kapcsolódó fejezetek)
+        megjegyzések: []       # opcionális, lista ({ text: "" } elemek - a fokhoz tartozó hosszabb, narratív kontextus: mi okozza, ⚡ példák, kijövetel/megszűntetés szabályok, kapcsolódó fejezetek)
         hatások:               # kötelező, lista (strukturált hatások)
           - hatás: ""          # kötelező, hatás operátor id (hatas_operatorok.yaml)
             érték: 0           # opcionális, szám (operátor-függő)
             cél: ""            # kötelező, esemény id (esemenyek.yaml)
-            alcél: ""          # opcionális, string — specifikus képzettség/tulajdonság neve (üres = minden)
+            alcél: ""          # opcionális, string - specifikus képzettség/tulajdonság neve (üres = minden)
             megjegyzés: ""     # opcionális, string (kontextuális kiegészítés)

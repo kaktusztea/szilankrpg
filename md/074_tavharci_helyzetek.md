@@ -1,6 +1,6 @@
 ## Távharci helyzetek
 
-A [Harci helyzetek](065_01_04_fegyver_harci_helyzetek.md) távolsági harcra vonatkozó változatai.
+A [Harci helyzetek](065_03_04_fegyver_harci_helyzetek.md) távolsági harcra vonatkozó változatai.
 
 - [Hajítás alkalmatlan fegyverrel](#hajítás-alkalmatlan-fegyverrel)
 - [Hajítás nem dobásra készített tárgyakkal](#hajítás-nem-dobásra-készített-tárgyakkal)

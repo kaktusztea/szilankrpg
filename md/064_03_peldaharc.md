@@ -13,7 +13,7 @@ Manőver Alap: 3
 ```
 
 ```
-Fegyver: Hosszú kard  (1 penge)
+Fegyver: Hosszú kard  (fegyverhossz: 3)
 Sebzés: k20+5 (V/S)  (Erőbónusszal)
 
 Fájdalomtűrés (8)
@@ -35,18 +35,20 @@ MGT: 8 = 8 + (3 x 1) -3
 
 #### Életerő Pontok (Lord Gustav: 40)
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+```
 
 #### Harcérték levonások `S` kategóriákban (Lord Gustav)
 
@@ -71,7 +73,7 @@ Manőver Alap: 3
 ```
 
 ```
-Fegyver: Rövidkard (0.5 penge)
+Fegyver: Rövidkard (fegyverhossz: 2)
 Sebzés: k20+2 (V/S)
 
 Fájdalomtűrés (6)
@@ -89,16 +91,18 @@ SFÉ: -
 
 #### Életerő Pontok (Tetves: 32)
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+```
 
 #### Harcérték levonások `S` kategóriákban (Tetves)
 
@@ -118,11 +122,11 @@ S4:  -7 TÉ
 ---
 ## Lord Gustav és Tetves részletes összecsapása
 
-Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
+Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
 
-### 🔆Pengeméret
+### 🔆Fegyverméret
 
-- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) harci helyzetben vannak.
+- Mivel kettőjük fegyverének mérete közt nincs meg a `2 fegyverhossz-kategória` méretkülönbség, ezért mindketten [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság) harci helyzetben vannak.
 - Tehát sikertelen (nem sebző) támadások esetén `1 + k20P` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
@@ -168,18 +172,20 @@ Gustav láncinge `SFÉ: 10` értékkel védi.
   → -3 VÉ
 ```
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+```
 
 A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, így `TÉ` büntetést egyelőre nem kap. Ugyanennek a sebnek a hatására egy sokkal gyengébb fizikumú (`ÉP: 28`) ember már majdnem átcsúszna az `S2` kategóriába.
 
@@ -252,18 +258,20 @@ SFÉ nem érvényesül (fedetlen terület)!
 
 Ez brutális! A láncinget megkerülő szúrás a lovag fedetlen lábszárába hatol. Gustav egyből az `S3` egészség-kategóriába zuhan (összesen `27 ÉP`-t vesztett)!
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | .              | .              |
-| `2S`           | `2S`           | .              | .              |
-| `2S`           | `2S`           | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |      |      |
+|  2S  |  2S  |      |      |
+|  2S  |  2S  |      |      |
+```
 
 Magas Fájdalomtűrésének köszönhetően a `TÉ` büntetése "csak" `-3`.
 
@@ -300,18 +308,20 @@ Hatás:
 Gustavnak `8 ÉP`-je marad és `S4`-es kategóriába zuhan, ahol már `-6 TÉ` büntetés jár!\
 Eddig összesen `32 ÉP`-t vesztett!
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1S`           | `2S`           | `2S`           | `3V`           |
-| `1S`           | `2S`           | `2S`           | `3V`           |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `3V`           | .              |
-| `2S`           | `2S`           | `3V`           | .              |
-| `2S`           | `2S`           | `3V`           | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1S  |  2S  |  2S  |  3V  |
+|  1S  |  2S  |  2S  |  3V  |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  3V  |      |
+|  2S  |  2S  |  3V  |      |
+|  2S  |  2S  |  3V  |      |
+```
 
 Mivel `S4` kategóriába került, azonnal jön az automatikus **Fájdalomtűrés** próba `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Gustav `11`-et dob – magas Edzettségével (`+3`) ez `14`: sikerült! A lovag talpon marad puszta akaraterejéből.
 
@@ -375,16 +385,18 @@ Gustav sebzése:
 Tetvesnek nincs vértje, ezért a `32 SP` teljesen beszámít → `32 ÉP` és `-3 VÉ`.\
 A gyilkos összesen `40 ÉP`-t vesztett (a korábbi `8 ÉP`-vel együtt) – túl a `32 ÉP` maximumán, tehát `0` alá zuhant!
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `2V`           | `2V`           | `2V`           | `2V`           |
-| `2V`           | `2V`           | `2V`           | `2V`           |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  2V  |  2V  |  2V  |  2V  |
+|  2V  |  2V  |  2V  |  2V  |
+```
 
 Míg Gustav `3 db` sebet (`32 ÉP`) és egy utolsó karcolást (`1 ÉP`) is elviselt és talpon maradt `7 ÉP`-vel, addig a gyengébb fizikumú Tetves ennyitől elvesztette minden `ÉP`-jét. Eszméletlenül rogy össze, miután értetlenül bámul a hasából kimeredő kardra. Ha nem látják el, szép lassan elvérzik.
 

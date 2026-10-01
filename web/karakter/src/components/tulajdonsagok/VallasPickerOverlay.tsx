@@ -48,7 +48,7 @@ export function VallasPickerOverlay({ data, current, onPick, onClose }: Props) {
                   onClick={() => onPick(item.név)}
                 >
                   {item.név}
-                  {item.leírás && <span className="kep-prompt-text-dim-sm"> — {item.leírás}</span>}
+                  {item.leírás && <span className="kep-prompt-text-dim-sm"> - {item.leírás}</span>}
                 </button>
               ))}
             </div>

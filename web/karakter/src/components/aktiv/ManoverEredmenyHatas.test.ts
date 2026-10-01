@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { eredményHatás } from './manover-dobas-calc';
 
-describe('eredményHatás (C2 — sikeres-box szűrés)', () => {
+describe('eredményHatás (C2 - sikeres-box szűrés)', () => {
   it('kiszűri a "Sikertelen:" kezdetű sort', () => {
     expect(eredményHatás(['Kilépés a harcból.', 'Sikertelen: ellenfelek Megakasztás támadást kapnak.']))
       .toEqual(['Kilépés a harcból.']);

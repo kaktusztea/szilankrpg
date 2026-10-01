@@ -13,7 +13,7 @@ const INITIAL_OVERLAYS: OverlayState = {
 
 export function useOverlays() {
   const [overlays, setOverlays] = useState<OverlayState>(INITIAL_OVERLAYS);
-  // Timestamp of the last backdrop dismiss — used to swallow the synthesized
+  // Timestamp of the last backdrop dismiss - used to swallow the synthesized
   // "ghost" click-through iOS Safari fires on the element exposed beneath a
   // just-closed overlay (closes a stacked confirm, then the SlotList behind it).
   const lastBackdropDismiss = useRef(0);
@@ -58,9 +58,9 @@ export function useOverlays() {
     function handler(e: MouseEvent) {
       const el = e.target as HTMLElement;
       if (el.classList.contains('kep-prompt-overlay')) {
-        // WORKAROUND: iOS-ghost-click — 400ms guard prevents iOS ghost click-through
+        // WORKAROUND: iOS-ghost-click - 400ms guard prevents iOS ghost click-through
         // onto the newly exposed backdrop after overlay dismiss. Ceiling: two deliberate
-        // backdrop taps <400ms apart register as one — acceptable for modal overlays.
+        // backdrop taps <400ms apart register as one - acceptable for modal overlays.
         const now = Date.now();
         if (now - lastBackdropDismiss.current < 400) return;
         lastBackdropDismiss.current = now;

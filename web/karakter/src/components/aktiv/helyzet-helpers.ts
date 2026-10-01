@@ -16,25 +16,22 @@ export function isHelyzetAvailable(
   return true;
 }
 
-/** Min pengehossz figyelmeztetés */
-export function getMinPengeWarning(
+/** Min fegyverhossz figyelmeztetés */
+export function getMinFegyverhosszWarning(
   helyzetFeltételKulcs: string, karakter: Karakter, session: Session, data: GameData,
 ): string {
   for (const kf of karakter.fortélyok) {
     const fd = data.fortelySummaries.find(d => d.név === kf.név);
     if (!fd) continue;
     const fokDef = fd.fokok.find((f: any) => f.fok === kf.fok);
-    if (!fokDef?.módosítók) continue;
-    for (const mod of fokDef.módosítók) {
-      if (mod.cél === 'min_pengehossz' && mod.feltétel === helyzetFeltételKulcs) {
-        const aktívFp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
-        const aktívFd = session.aktív_fegyver_index === -2
-          ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(karakter) ?? '')
-          : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
-        const ph = aktívFd ? (parseFloat(aktívFd.Pengehossz) || 0) : 0;
-        if (ph < mod.érték) return `⚠ Min. pengehossz: ${mod.érték}!`;
-      }
-    }
+    const köv = fokDef?.követelmények?.find((k: any) => k.típus === 'min_fegyverméret' && k.feltétel === helyzetFeltételKulcs);
+    if (!köv) continue;
+    const aktívFp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
+    const aktívFd = session.aktív_fegyver_index === -2
+      ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(karakter) ?? '')
+      : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
+    const ph = aktívFd?.fegyverhossz ?? 0;
+    if (ph < köv.érték) return `⚠ Min. fegyverhossz: ${köv.érték}!`;
   }
   return '';
 }

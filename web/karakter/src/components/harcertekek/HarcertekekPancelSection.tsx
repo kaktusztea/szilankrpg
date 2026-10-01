@@ -72,7 +72,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
         </div>
       )}
       <div className="he-fegyver-fields">
-        <button className="he-field-btn" onClick={() => onPopup('struktúra')}>Struktúra: <strong>{k.páncél.alap || '—'}</strong></button>
+        <button className="he-field-btn" onClick={() => onPopup('struktúra')}>Struktúra: <strong>{k.páncél.alap || '-'}</strong></button>
         <button className="he-field-btn he-field-fortely" onClick={() => onPopup('merevvért')}>Merevvért fok: <strong>{merevvertFok}</strong></button>
         <button className={`he-field-btn${!hasAlap || !aktStruktúra?.idea_plusz_minusz ? ' he-field-disabled' : ''}`} disabled={!hasAlap || !aktStruktúra?.idea_plusz_minusz} onClick={onIdeaTarget}>Idea: <strong>{k.páncél.idea}</strong></button>
         <button className={`he-field-btn${!hasAlap ? ' he-field-disabled' : ''}`} disabled={!hasAlap} onClick={() => onPopup('kidolgozottság')}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>

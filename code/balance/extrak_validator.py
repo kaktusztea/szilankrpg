@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A data/fegyvergenerator/extrak.yaml validálása az extrak.schema.yaml alapján.
+"""A data/sources/fegyverek/extrak.yaml validálása az extrak.schema.yaml alapján.
 
 Az egységes effekt-modell (engine_spec.md §42) vokabulárját ellenőrzi:
   - rekord: kötelező/ismeretlen mezők, csoport enum
@@ -7,7 +7,7 @@ Az egységes effekt-modell (engine_spec.md §42) vokabulárját ellenőrzi:
   - hatás[]: mód a mod_enum-ból; cél string; entitás-cél ("prefix:érték") prefixe a cel_prefix_enum-ból;
     al-feltétel ("prefix:érték") prefixe az alfeltetel_prefix_enum-ból
 
-A vokabulár a SÉMÁBÓL jön — a szkriptben NINCS beégetett adat.
+A vokabulár a SÉMÁBÓL jön - a szkriptben NINCS beégetett adat.
 
 Futtatás:  python3 code/balance/extrak_validator.py     (0 = OK, 1 = hiba)
 Bekötve:   a fegyvergenerator_balansz.py a tesztek ELŐTT lefuttatja.
@@ -17,7 +17,7 @@ import sys
 
 import yaml
 
-DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "fegyvergenerator"
+DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "sources" / "fegyverek"
 
 
 def _load(nev):
@@ -29,11 +29,11 @@ def _prefix_ok(ertek, enum, cimke, hibak, prefix_kotelezo):
     """'prefix:érték' string prefix-ellenőrzés. Ha nincs ':' és nem kötelező a prefix → OK (csupasz érték)."""
     if ":" not in ertek:
         if prefix_kotelezo:
-            hibak.append(f"{cimke}: hiányzó prefix ({ertek!r}) — várt egy: {sorted(enum)}")
+            hibak.append(f"{cimke}: hiányzó prefix ({ertek!r}) - várt egy: {sorted(enum)}")
         return
     prefix = ertek.split(":", 1)[0]
     if prefix not in enum:
-        hibak.append(f"{cimke}: ismeretlen prefix {prefix!r} ({ertek!r}) — megengedett: {sorted(enum)}")
+        hibak.append(f"{cimke}: ismeretlen prefix {prefix!r} ({ertek!r}) - megengedett: {sorted(enum)}")
 
 
 def validate():
@@ -66,16 +66,16 @@ def validate():
             if k not in e:
                 hibak.append(f"{c}: hiányzó kötelező mező {k!r}")
         if "csoport" in e and e["csoport"] not in csoport_enum:
-            hibak.append(f"{c}.csoport: érvénytelen {e['csoport']!r} — megengedett: {sorted(csoport_enum)}")
+            hibak.append(f"{c}.csoport: érvénytelen {e['csoport']!r} - megengedett: {sorted(csoport_enum)}")
 
         for f in e.get("feltétel", []) or []:
             if not isinstance(f, dict) or "típus" not in f:
                 hibak.append(f"{c}.feltétel: elem nem {{típus, ...}} REFERENCIA ({f!r})")
                 continue
             if f["típus"] not in feltetel_tipus:
-                hibak.append(f"{c}.feltétel.típus: érvénytelen {f['típus']!r} — megengedett: {sorted(feltetel_tipus)}")
+                hibak.append(f"{c}.feltétel.típus: érvénytelen {f['típus']!r} - megengedett: {sorted(feltetel_tipus)}")
             elif f["típus"] in feltetel_ertek and f.get("érték") not in feltetel_ertek[f["típus"]]:
-                hibak.append(f"{c}.feltétel[{f['típus']}]: érvénytelen érték {f.get('érték')!r} — megengedett: {feltetel_ertek[f['típus']]}")
+                hibak.append(f"{c}.feltétel[{f['típus']}]: érvénytelen érték {f.get('érték')!r} - megengedett: {feltetel_ertek[f['típus']]}")
 
         for h in e.get("hatás", []) or []:
             if not isinstance(h, dict):
@@ -86,7 +86,7 @@ def validate():
             else:
                 _prefix_ok(h["cél"], cel_prefix, f"{c}.hatás.cél", hibak, prefix_kotelezo=False)
             if h.get("mód") not in mod_enum:
-                hibak.append(f"{c}.hatás.mód: érvénytelen {h.get('mód')!r} — megengedett: {sorted(mod_enum)}")
+                hibak.append(f"{c}.hatás.mód: érvénytelen {h.get('mód')!r} - megengedett: {sorted(mod_enum)}")
             if "alcél" in h:
                 if not isinstance(h["alcél"], str):
                     hibak.append(f"{c}.hatás.alcél: string kell ({h['alcél']!r})")
