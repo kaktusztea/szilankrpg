@@ -15,6 +15,28 @@ Továbbá számos fegyver van, melynek forgatása bizonyos **Erő** követelmén
 <br />
 
 ---
+## Fegyverek Erő követelménye
+
+```
+Fegyver
+ Súly kategória → Erő-követelmény
+
+  könnyű   → nincs
+  átlagos  → nincs
+  nehéz    → Erő: 2
+  súlyos   → Erő: 3
+```
+
+```
+Követelmény nem teljesül:
+  Hátrány-1 Támadó dobásra
+```
+
+Ha a forgatott fegyver "súly" kategóriája által megkövetelt Erő Tulajdonság értékét nem éred el, a fenti büntetés súlyt.
+
+<br />
+
+---
 ## Erőbónusz limit
 
 Egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat velük a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Szilánk webapp](https://kaktusztea.github.io/szilankrpg/) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
