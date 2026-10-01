@@ -330,6 +330,26 @@
       }
     ]
   },
+  "lefegyverzese_nehezebb": {
+    "id": "lefegyverzese_nehezebb",
+    "név": "Lefegyverzése nehezebb",
+    "csoport": "tulajdonság",
+    "leírás": "A fegyvert az ellenfél nehezebben üti ki a kezedből. Lefegyverzés manőver passzív esetében Ellenpróbánál +2 bónusszal dobsz.\n",
+    "feltétel": [
+      {
+        "típus": "manőver_állapot",
+        "érték": "passzív"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "manőver_ellenpróba",
+        "mód": "flat",
+        "érték": 2,
+        "feltétel": "manőver:lefegyverzés"
+      }
+    ]
+  },
   "zuzo_ellen_rosszabb": {
     "id": "zuzo_ellen_rosszabb",
     "név": "Zúzó fegyver ellen rosszabb",

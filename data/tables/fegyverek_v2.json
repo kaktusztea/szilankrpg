@@ -78,6 +78,41 @@
     ]
   },
   {
+    "név": "Karambit",
+    "kategória": "közelharci",
+    "megjegyzés": "Gyűrűs markolatú, görbe tépőpenge. Vágásra jó, szúrásra nem.",
+    "fegyverhossz": 0,
+    "akadály": 0,
+    "övön_hordható": true,
+    "ár": null,
+    "idea_default": 0,
+    "extrák": [
+      {
+        "id": "lefegyverzese_nehezebb",
+        "név": "Lefegyverzése nehezebb"
+      },
+      {
+        "id": "panceltalant_jobban_sebez",
+        "név": "Páncéltalant jobban sebez"
+      }
+    ],
+    "módok": [
+      {
+        "aktor": "vágóél-íves-rövid",
+        "jelleg": "vágó-íves",
+        "sebzéstípus": "elsődleges",
+        "TÉ": 1,
+        "VÉ": 1,
+        "SP": 1,
+        "Átütés": 0,
+        "Sebesség": 5,
+        "Forgatás": "egykezes",
+        "Erőlimit": 1,
+        "FP": false
+      }
+    ]
+  },
+  {
     "név": "Kő",
     "kategória": "közelharci",
     "megjegyzés": "",
@@ -99,45 +134,6 @@
         "Sebesség": 5,
         "Forgatás": "egykezes",
         "Erőlimit": 99,
-        "FP": false
-      }
-    ]
-  },
-  {
-    "név": "Kriszkés",
-    "kategória": "közelharci",
-    "megjegyzés": "",
-    "fegyverhossz": 1,
-    "akadály": 0,
-    "övön_hordható": true,
-    "ár": null,
-    "idea_default": 0,
-    "extrák": [],
-    "módok": [
-      {
-        "aktor": "pengehegy-apró",
-        "jelleg": "szúró",
-        "sebzéstípus": "elsődleges",
-        "TÉ": 2,
-        "VÉ": 2,
-        "SP": 2,
-        "Átütés": 0,
-        "Sebesség": 6,
-        "Forgatás": "egykezes",
-        "Erőlimit": 2,
-        "FP": false
-      },
-      {
-        "aktor": "vágóél-egyenes-rövid",
-        "jelleg": "vágó-egyenes",
-        "sebzéstípus": "másodlagos",
-        "TÉ": 3,
-        "VÉ": 3,
-        "SP": 2,
-        "Átütés": 0,
-        "Sebesség": 6,
-        "Forgatás": "egykezes",
-        "Erőlimit": 2,
         "FP": false
       }
     ]
@@ -568,6 +564,10 @@
       {
         "id": "pancelszuras_belharcban",
         "név": "Belharcban rések közt beszúr"
+      },
+      {
+        "id": "beakadas_kockazat",
+        "név": "Beakad (~50%)"
       }
     ],
     "módok": [
