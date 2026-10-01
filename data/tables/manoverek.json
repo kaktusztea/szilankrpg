@@ -79,15 +79,15 @@
     "végrehajtás_té_módosító": 4
   },
   {
-    "név": "Csonkolás",
+    "név": "Csonkolás (kéz)",
     "típus": "általános",
     "nehézség": 8,
     "fázisok": "V,E",
     "hatás": [
-      "Levágtad ellenfeled választott végtagját (kéz vagy láb).",
-      "Kéz: áldozat max ÉP/3↑, láb: max ÉP/2↑ sebzés szükséges a levágáshoz."
+      "Levágtad ellenfeled kezét.",
+      "Kéz: áldozat max ÉP/3↑ sebzés szükséges a levágáshoz."
     ],
-    "id": "csonkolás",
+    "id": "csonkolás_kéz",
     "fázis_info": {
       "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
     },
@@ -115,22 +115,48 @@
         "leírás": "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)"
       }
     ],
-    "helyzetfüggő_módosítók": [
+    "helyzetfüggő_módosítók": [],
+    "fázis_cselekvő": {},
+    "ellenpróba_bünteti": false
+  },
+  {
+    "név": "Csonkolás (láb)",
+    "típus": "általános",
+    "nehézség": 10,
+    "fázisok": "V,E",
+    "hatás": [
+      "Levágtad ellenfeled lábát.",
+      "Láb: áldozat max ÉP/2↑ sebzés szükséges a levágáshoz."
+    ],
+    "id": "csonkolás_láb",
+    "fázis_info": {
+      "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+    },
+    "végrehajtás_té_módosító": 0,
+    "követelmények": [
       {
-        "kategória": "Célzott végtag",
-        "mód": "single",
-        "sorok": [
-          {
-            "érték": 0,
-            "leírás": "Kéz"
-          },
-          {
-            "érték": 2,
-            "leírás": "Láb"
-          }
-        ]
+        "erősség": "normál",
+        "típus": "képzettség",
+        "név": "Kardvívás",
+        "érték": 6
+      },
+      {
+        "erősség": "erős",
+        "típus": "fegyver_sebzéstípus",
+        "érték": "V"
+      },
+      {
+        "erősség": "erős",
+        "típus": "fegyver_kategória",
+        "érték": "kardvívó"
+      },
+      {
+        "erősség": "erős",
+        "típus": "egyéb",
+        "leírás": "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)"
       }
     ],
+    "helyzetfüggő_módosítók": [],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false
   },
