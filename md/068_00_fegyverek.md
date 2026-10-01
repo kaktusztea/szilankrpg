@@ -6,7 +6,7 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 - [Fegyverhossz kategóriák](068_01_01_fegyverhossz_kategoriak.md)
 - [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md)
-- [Másfélkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_fegyverek_egy_kezzel.md)
+- [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md)
 - [Puszta kéz](068_01_04_puszta_kez.md)
 - [Nyílpuskák](068_01_05_nyilpuskak.md)
 - [Érintő támadás](068_01_06_erinto_tamadas.md)
