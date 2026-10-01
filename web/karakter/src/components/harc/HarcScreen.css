@@ -786,7 +786,7 @@
 
 .dobas-info-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 12px;
 }
@@ -831,6 +831,7 @@
 .dobas-info-source {
   color: var(--text-dim);
   font-size: 11px;
+  white-space: pre-line;
 }
 
 .dobas-sp-info {

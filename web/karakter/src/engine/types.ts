@@ -294,6 +294,7 @@ export interface FegyverAlap {
   övön_hordható: boolean;
   ár: number | null;
   idea_default: number;
+  erő_követelmény: number;
   extrák: FegyverExtra[];
   módok: FegyverMod[];
 }

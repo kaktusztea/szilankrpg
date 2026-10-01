@@ -601,6 +601,11 @@ vé_csökkentés_alap:
   fegyverazonosság: 1
   fegyverelőny: 2
 
+# md/064_02_06_erobonusz_erolimit.md "Fegyverek Erő követelménye": ha a karakter Ereje
+# a fegyver (súly-kategóriájának) erő_követelmény mezője alatt van, Hátrány-N a Támadó dobásra.
+# (fegyverek_v2.json → fegyver.erő_követelmény, l. STUDY.fegyvergenerator_v2 "Erő-követelmény mechanika")
+fegyver_erő_követelmény_hátrány: -1
+
 # ============================================================
 # Skálázható taktikák: Harcmodor szint → abszolút max fok korlát
 # A "skálázható: true" taktikáknál a felső korlát erre a fokra nő

@@ -259,6 +259,7 @@ export interface KonstansokRaw {
   vé_csökkentés_gombok: number[];
   taktika_vé_eltolás_limit: number;
   vé_csökkentés_alap: { fegyverhátrány: number; fegyverazonosság: number; fegyverelőny: number };
+  fegyver_erő_követelmény_hátrány: number;
   skálázható_taktika_max_fok: { szint: number; max_fok: number }[];
   max_manőver_per_kör: number;
   nyílpuska_alap_támadás: string;

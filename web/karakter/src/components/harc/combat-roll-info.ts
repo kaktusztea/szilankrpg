@@ -100,8 +100,14 @@ function collectFortélyHatások(
 
 /**
  * Collect effects for TÉ dobás + Sebzésdobás (Harc fül).
+ *
+ * `aktívFegyver` opcionális: ha megadva és a karakter Ereje nem éri el a fegyver
+ * `erő_követelmény`-ét (md/064_02_06 "Fegyverek Erő követelménye"), Hátrány-1 kerül
+ * a Támadó (TÉ) dobásra.
  */
-export function collectDobásInfo(session: Session, karakter: Karakter, data: GameData): DobásInfo {
+export function collectDobásInfo(
+  session: Session, karakter: Karakter, data: GameData, aktívFegyver?: { erő_követelmény: number; név: string },
+): DobásInfo {
   const célFilter = new Set(['té_dobás', 'sebzésdobás']);
   const téHatások: DobásHatás[] = [];
   const sebzésHatások: DobásHatás[] = [];
@@ -162,6 +168,16 @@ export function collectDobásInfo(session: Session, karakter: Karakter, data: Ga
   const fort = collectFortélyHatások(karakter, data, aktívFeltételek, célFilter);
   for (const e of fort.hatások) (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
   spBónuszok.push(...fort.spBónuszok);
+
+  // 5. Fegyver Erő-követelmény (md/064_02_06 "Fegyverek Erő követelménye"):
+  // ha a karakter Ereje nem éri el a fegyver súly-kategóriájának követelményét, Hátrány a Támadó dobásra
+  // (a hátrány mértéke data layer - konstansok.yaml → fegyver_erő_követelmény_hátrány).
+  if (aktívFegyver && karakter.tulajdonságok.erő < aktívFegyver.erő_követelmény) {
+    téHatások.push({
+      forrás: `${aktívFegyver.név}\n(Erő hiány)`, cél: 'té_dobás', operátor: 'hátrány',
+      érték: data.konstansok.fegyver_erő_követelmény_hátrány,
+    });
+  }
 
   return { téHatások, sebzésHatások, spBónuszok, téMegjegyzések, sebzésMegjegyzések };
 }

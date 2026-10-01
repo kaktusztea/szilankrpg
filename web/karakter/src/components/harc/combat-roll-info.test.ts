@@ -10,6 +10,7 @@ function makeData(): GameData {
     harciHelyzetek: [],
     statuszok: [],
     fortelySummaries: [],
+    konstansok: { fegyver_erő_követelmény_hátrány: -1 },
     taktikak: [
       {
         // Non-fokozatos taktika with structured Hátrány-2 on sebzésdobás (Visszafogott shape).
@@ -48,6 +49,32 @@ describe('collectDobásInfo - nem-fokozatos taktika strukturált hatás', () => 
   it('a nettó előny/hátrány szint -2 (Hátrány-2)', () => {
     const info = collectDobásInfo(session, karakter, makeData());
     expect(netElőnySzint(info.sebzésHatások)).toBe(-2);
+  });
+});
+
+describe('collectDobásInfo - Erő-követelmény (md/064_02_06)', () => {
+  const karakterGyenge = { fortélyok: [], tulajdonságok: { erő: 1 } } as unknown as Karakter;
+  const karakterErős = { fortélyok: [], tulajdonságok: { erő: 3 } } as unknown as Karakter;
+  const nehézFegyver = { név: 'Alabárd', erő_követelmény: 2 };
+  const sessionNincsTaktika = { aktív_helyzetek: [], aktív_taktikák: [], aktív_státuszok: [], fegyverfogás: 'egykezes' } as unknown as Session;
+
+  it('Hátrány-1 a Támadó dobásra, ha a karakter Ereje a követelmény alatt van', () => {
+    const info = collectDobásInfo(sessionNincsTaktika, karakterGyenge, makeData(), nehézFegyver);
+    const h = info.téHatások.find(x => x.forrás.includes('Erő hiány'));
+    expect(h).toBeDefined();
+    expect(h!.forrás).toBe('Alabárd\n(Erő hiány)');
+    expect(h!.operátor).toBe('hátrány');
+    expect(h!.érték).toBe(-1);
+  });
+
+  it('nincs büntetés, ha a karakter Ereje eléri a követelményt', () => {
+    const info = collectDobásInfo(sessionNincsTaktika, karakterErős, makeData(), nehézFegyver);
+    expect(info.téHatások.find(x => x.forrás.includes('Erő hiány'))).toBeUndefined();
+  });
+
+  it('nincs büntetés, ha nincs átadva aktív fegyver', () => {
+    const info = collectDobásInfo(sessionNincsTaktika, karakterGyenge, makeData());
+    expect(info.téHatások.find(x => x.forrás.includes('Erő hiány'))).toBeUndefined();
   });
 });
 

@@ -192,6 +192,7 @@ class Fegyver:
                     TE=te, VE=ve, SP=sp, AT=at, SEB=seb, erőbónusz_limit=ero_limit,
                     sebzestipus=sebzestipus, sebzes_hatrany=sebzes_hatrany,
                     puha=a.get("puha", False), felszerelés_pont=h.get("felszerelés_pont", 0),
+                    erő_követelmény=s.get("erő_követelmény", 0),
                 ))
         return eredmeny
 
