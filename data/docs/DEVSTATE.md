@@ -90,8 +90,8 @@ TODO:
 - Részletek → engine_spec §16, §16.1, §24, §25
 
 ### Fegyverek / Páncél
-- MK fegyverek: 2 entry (1K/2K), 1 kártya Harcértékek fülön
-- Pattern fájlok: `data/patterns/*_pattern.json` (kézzel szerkesztett md→json konfig, NEM generált); Pajzs hozzáfűzve fegyverek.json-hoz
+- Egy fegyvernek EGY rekordja van (nincs külön 1K/2K entry); a variánsokat a `módok[]` tartja. Mesterfegyver fok a példányon.
+- Fegyver v2 pipeline (lásd a következő szekciót); a régi v1 (`data/patterns/*_pattern.json`, `fegyverek.json`, pajzs-hozzáfűzés) KIVEZETVE, archiválva (`archive/data_fegyverek_v1/`).
 - Részletek → engine_spec §5-§13, §26-§27
 
 ### Fegyver v2 adatmodell

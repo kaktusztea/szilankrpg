@@ -265,7 +265,8 @@ Sebzésjelleg × ellenfél páncél SP-delta (dobásonként, NEM statikus fegyve
   Ezen felül a `cél_páncél` extrák SP-hatású ága ad delta-t (pl. `panceltalant_jobban_sebez`
   +3 SP vérttelen célon), forrás: `data/tables/fegyver_extrak.json`.
   Az "Ellenfél páncél" választó a Sebzés popupban KÖTELEZŐ (l. gui_spec). A cél_páncél
-  VÉ/SFÉ-hatású ága (Meneth, Béltépő) még nincs bekötve (DEVSTATE TODO).
+  VÉ/SFÉ-hatású ága (Meneth, Béltépő) az egységes "Extrák" gombon át jelenik meg
+  (aktív/inaktív/KM státusz + hatás-összefoglaló, numerikus VÉ/SFÉ-alkalmazás nélkül - l. DEVSTATE §42).
 ```
 
 ---
