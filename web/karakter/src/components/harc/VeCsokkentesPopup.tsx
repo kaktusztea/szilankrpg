@@ -78,7 +78,7 @@ export function VeCsokkentesPopup({
   return (
     <PopupOverlay onClose={() => onClose(eredmény)}>
       <div className="tamado-dobas-popup ve-csokkentes-popup">
-        <div className="ke-dobas-header">Fegyverviszony</div>
+        <div className="ke-dobas-header">VÉ csökkentés</div>
 
         {véWarningok.length > 0 && (
           <div className="ve-csokkentes-warning">
