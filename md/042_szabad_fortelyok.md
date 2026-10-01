@@ -17,17 +17,17 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 
 #### ⚜️ `1 db / Tsz`
 
-A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásodból elköltesz egyet a felvételére. A Karakteralkotóban a "Speciális" fülön ilyenkor `1` értéket írj a "**Költve**" mezőbe értékként.
+A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásodból elköltesz egyet a felvételére.
 
 #### ⚜️ `KP` költésével felvett
 
-`KP`-t költesz rá (Sima, vagy Szekunder). Ezt a lehetőség akkor jön be, ha már elköltötted a fent említett ingyenes fortély keretedet, de te szeretnél még továbbiakat felvenni. A Karakteralkotóban a "Speciális" fülön ilyenkor is `1` értéket írj a "**Költve**" mezőbe értékként - az automatikus ellenőrzés kezeli, ha túllépted az ingyenes keretedet és levonja a `KP` költséget.
+`KP`-t költesz rá (Sima, vagy Szekunder). Ezt a lehetőség akkor jön be, ha már elköltötted a fent említett ingyenes fortély keretedet, de te szeretnél még továbbiakat felvenni.
 
 🔆Szekunder KP keretből költhető ebben az esetben.
 
 #### ⚜️ Kiérdemelt
 
-KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Hátas - Wyvern](fortelyok.szabad/hatas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást. A Karakteralkotóban a "Speciális" fülön ilyenkor `0` értéket írj a fortély mellett a "**Költve**" mezőbe értékként.
+KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Hátas - Wyvern](fortelyok.szabad/hatas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást.
 
 ---
 ### Általános szabályok
