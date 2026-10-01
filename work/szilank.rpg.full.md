@@ -192,7 +192,7 @@ https://github.com/kaktusztea/szilankrpg/
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
 
 - [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
-- [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md)
+- [Szilánk webapp](010_02_szilank_webapp.md)
 - [A karakter jellemzői](010_03_00_karakter_jellemzoi.md)
   - [Kalandozók](010_03_01_kalandozok.md)
   - [Őrszemek](010_03_02_orszem_karakterek.md)
@@ -325,18 +325,18 @@ https://github.com/kaktusztea/szilankrpg/
 
 ### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
-- [Fegyverfogás](065_04_00_fegyverfogas.md)
-  - [Egyfegyveres](065_04_00_fegyverfogas.md#egyfegyveres)
-  - [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md)
-  - [Fegyver + pajzs](065_04_00_fegyverfogas.md#fegyver--pajzs)
-  - [Fegyver + hárítófegyver](065_04_00_fegyverfogas.md#fegyver--hárítófegyver)
+- [Fegyverfogás](065_01_fegyverfogas.md)
+  - [Egyfegyveres](065_01_fegyverfogas.md#egyfegyveres)
+  - [Fegyver + pajzs](065_01_fegyverfogas.md#fegyver--pajzs)
+  - [Fegyver + hárítófegyver](065_01_fegyverfogas.md#fegyver--hárítófegyver)
+  - [Kétkezes harc](065_05_ketkezes_harc.md)
 - [Harci taktikák](065_02_harci_taktikak.md)
-- [Harci helyzetek](065_01_00_harci_helyzetek.md)
-  - [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
-  - [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
-  - [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
-  - [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
-- [Harc alakzatban](065_03_harc_alakzatban.md)
+- [Harci helyzetek](065_03_00_harci_helyzetek.md)
+  - [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
+  - [Semleges helyzetek](065_03_02_semleges_helyzetek.md)
+  - [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
+  - [Fegyverviszony és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
+- [Harc alakzatban](065_04_harc_alakzatban.md)
 
 ### 6.6 [Manőverek](066_00_manoverek.md) 🎲
 
@@ -360,20 +360,17 @@ https://github.com/kaktusztea/szilankrpg/
 ### 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
 
 - [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
-  - [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
-  - [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
-  - [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
-  - [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md)
-  - [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
-  - [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
-  - [Íves fegyver](068_01_07_ives_fegyver.md)
-  - [Puszta kéz](068_01_08_puszta_kez.md)
-  - [Nyílpuskák](068_01_09_nyilpuskak.md)
-  - [Érintő támadás](068_01_10_erinto_tamadas.md)
-  - [Erőbónusz limit](068_01_11_erobonusz_limit.md)
-  - [Átütés](068_01_12_atutes.md)
-  - [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md)
-  - [Fegyverek minősége (Ideája)](068_01_14_fegyverek_minosege_ideaja.md)
+  - [Fegyverhossz kategóriák](068_01_01_fegyverhossz_kategoriak.md)
+  - [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md)
+  - [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md)
+  - [Puszta kéz](068_01_04_puszta_kez.md)
+  - [Nyílpuskák](068_01_05_nyilpuskak.md)
+  - [Érintő támadás](068_01_06_erinto_tamadas.md)
+  - [Erőbónusz limit](068_01_07_erobonusz_limit.md)
+  - [Átütés](068_01_08_atutes.md)
+  - [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md)
+  - [Fegyverek minősége (Ideája)](068_01_10_fegyverek_minosege_ideaja.md)
+  - [Fegyver extrák](068_01_11_fegyver_extrak.md)
 - [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
 - [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
 - [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
@@ -382,6 +379,7 @@ https://github.com/kaktusztea/szilankrpg/
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
 - [Lőfegyverek](068_08_lofegyverek.md)
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
+- [Fegyvergenerátor](068_10_fegyvergenerator.md)
 
 ### 6.9 [Páncélok](069_00_vertek_pancelok.md)
 
@@ -396,17 +394,22 @@ https://github.com/kaktusztea/szilankrpg/
 ---
 ### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
 
-- [Célzó Érték számítása](071_tavharc_ce.md)
-- [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
-- [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
-- [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
-- [Távharci taktikák](073_tavharci_taktikak.md)
-- [Távharci helyzetek](074_tavharci_helyzetek.md)
-- [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
-- [Területlövés](077_teruletloves.md)
-- [Távolsági fegyverek](078_tavharc_fegyverek.md)
-- [Példalövészet](079_01_tavharc_peldak.md) ⚡
-- [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
+- **CÉ, VÉ számítása**
+  - [Célzó Érték számítása](071_tavharc_ce.md)
+  - [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
+  - [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
+  - [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
+
+- **Taktikák, mágikus lövedékek, fegyverek**
+  - [Távharci taktikák](073_tavharci_taktikak.md)
+  - [Távharci helyzetek](074_tavharci_helyzetek.md)
+  - [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
+  - [Területlövés](077_teruletloves.md)
+  - [Távolsági fegyverek](078_tavharc_fegyverek.md)
+
+- **Példák**
+  - [Példalövészet](079_01_tavharc_peldak.md) ⚡
+  - [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
 
 ---
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)
@@ -767,8 +770,8 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Harcérték/Célzóérték Módosító (`HM, CM`)
 - (`Harckeret / Fegyver Sebesség) + 1` → Támadások száma körönként
 - Kétkezes harc
-- Fegyverméret kategóriák, Pengeelőny
-- Védő Érték csökkentése (pengeelőny/hátrány függő)
+- Fegyverméret kategóriák, Fegyverelőny
+- Védő Érték csökkentése (fegyverelőny/hátrány függő)
 - Páncélmodell
   - páncél generátor: `Fizikai SFÉ`, `Energia SFÉ`; `MGT`; Ár
   - **Merevvértviselet** fortély kapcsolat
@@ -950,7 +953,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 [Harci taktikák](065_02_harci_taktikak.md)
 
-[Harci helyzetek](065_01_00_harci_helyzetek.md)
+[Harci helyzetek](065_03_00_harci_helyzetek.md)
 
 [Státuszok](082_statuszok.md)
 
@@ -1027,7 +1030,7 @@ Itt nyomtatható segédlet dokumentumokat találsz, amelyek a kaland során jól
 Eljött az ideje, hogy karaktert alkossunk.
 
 - [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
-- [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md)
+- [Szilánk webapp](010_02_szilank_webapp.md)
 - [A karakter jellemzői](010_03_00_karakter_jellemzoi.md)
   - [Kalandozók](010_03_01_kalandozok.md)
   - [Őrszemek](010_03_02_orszem_karakterek.md)
@@ -1080,7 +1083,7 @@ Eljött az ideje, hogy karaktert alkossunk.
 
 Milyen jellegűek a Szilánk karakterei?
 
-Fontos különbség más, hagyományos rendszerekhez képest, hogy a Szilánk karaktereinek **nincs kasztja**, sem alap tudáskészlete, így minden jellemzőjét neked kell meghatároznod nulláról - viszont ez sokkal nagyobb szabadságot is ad, még ha több számolással is jár. Ez utóbbiban nyújt hatalmas segítséget az automatizált [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md).
+Fontos különbség más, hagyományos rendszerekhez képest, hogy a Szilánk karaktereinek **nincs kasztja**, sem alap tudáskészlete, így minden jellemzőjét neked kell meghatároznod nulláról - viszont ez sokkal nagyobb szabadságot is ad, még ha több számolással is jár. Ez utóbbiban nyújt hatalmas segítséget az automatizált [Szilánk webapp](010_02_szilank_webapp.md).
 
 Mikor karaktert alkotsz, először fejben elképzeled a küllemét, a jellemét, a származását, hogy mihez ért, miben jó, milyen ismereteket tanult eddigi pályafutása során, majd jöhetnek a számokkal ennek megfeleltetett, modellezett jellemzői.
 
@@ -1213,24 +1216,32 @@ Az elvont és színesítő ismeretek felől haladunk a "tápos" irányba. A harc
 
 ---
 
-🔗 [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md) →
+🔗 [Szilánk webapp](010_02_szilank_webapp.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)
 
 
 ---
 ---
-## File: md/010_02_karakteralkoto_webapp.md
+## File: md/010_02_szilank_webapp.md
 
-## Karakteralkotó webapp
+# Szilánk webapp
 
-Egy `Szilánk` karakter megalkotása nagyságrendekkel meggyorsítható a **Karakteralkotó** használatával, amely egy client-only webalkalmazás.
+Egy `Szilánk` karakter megalkotása nagyságrendekkel meggyorsítható a **Szilánk webapp** használatával, amely egy client-only webalkalmazás.
 
-### Ellenőrző funkciók, automatizmusok
+## Ellenőrző funkciók, automatizmusok
 
-A képzettségek és fortélyok követelményeit ellenőrzi a Karakteralkotó.
+A képzettségek és fortélyok követelményeit ellenőrzi az alkalmazás.
 
-A `KP` költések, `HM/CM` limit, Harcmodorok, Kétkezes Harc, Mesterfegyver bónuszai, Páncélok értékei, `ÉP` táblázat számai, stb. mind automatikusan kerülnek kiszámításra.
+A `KP` költések, `HM/CM` limit, Harcmodorok, Kétkezes Harc, Mesterfegyver bónuszai, Páncélok értékei, `ÉP` táblázat számai, képzettségek, fortélyok, stb. mind automatikusan kerülnek kiszámításra.
+
+## Játék az alkalmazással
+
+A harc, Tulajdonságpróba, Képzettségpróba, Harci taktikák, Haarci helzetek, Manőverek, Státuszok mind elvégezhetőek.
+
+## Dokumentáció
+
+A webapp funkciót bővebben [lásd itt](../web/karakter/README.md).
 
 ---
 
@@ -1344,7 +1355,7 @@ Mennyire kommunikatív, introvertált, extrovertált, milyen hangulatot áraszt,
 
 Mennyire gazdag érzelmileg? Az **Önuralom**, **Érzékenység** **Tulajdonságok** ehhez csak támpontot, vázat adnak.
 
-Az imént felsorolt jellemzők egy részét csokorba szedtük és "ingyenes", úgynevezett [Leíró Hátterekként](022_leiro_hatterek.md) felvehetőek (a [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) "Hátterek(🟡)" fülén is), hogy tovább színesítsék a karaktert. Ezek a KM és a játékos egyeztetése után (részben) szabadon bővíthetőek.
+Az imént felsorolt jellemzők egy részét csokorba szedtük és "ingyenes", úgynevezett [Leíró Hátterekként](022_leiro_hatterek.md) felvehetőek (a [Szilánk webapp](https://kaktusztea.github.io/szilankrpg/) "Hátterek(🟡)" fülén is), hogy tovább színesítsék a karaktert. Ezek a KM és a játékos egyeztetése után (részben) szabadon bővíthetőek.
 
 ---
 🔗 [Külső](010_03_05_kulso.md) →
@@ -5039,7 +5050,7 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
  0: Normál talaj
 ```
 
-Kapcsolódhat: [Csúszós talaj](../../065_01_03_negativ_helyzetek.md#cs%C3%BAsz%C3%B3s-talaj) harci helyzet (küzdelem esetén)
+Kapcsolódhat: [Csúszós talaj](../../065_03_03_negativ_helyzetek.md#csúszós-talaj) harci helyzet (küzdelem esetén)
 
 
 ---
@@ -5697,7 +5708,7 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 +6: Láthatatlan vagy
 ```
 
-Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
+Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
 #### ⚜️ Látótér (lopakodó) 1️⃣
 
@@ -5818,7 +5829,7 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 +3: Jól felszerelt labor
 ```
 
-#### ⚜️ Körülmény 1️⃣
+#### ⚜️ Komponensek 1️⃣
 
 ```
 -3: Hiányzó, de helyettesíthető komponensek
@@ -8366,7 +8377,7 @@ Nagymester (12) 📖
 
 Ez egy [Primer (harci) képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
 
-###  [Harc alakzatban](../../065_03_harc_alakzatban.md) fejezet
+###  [Harc alakzatban](../../065_04_harc_alakzatban.md) fejezet
 
 Ez írja le a képzettség használatát.
 
@@ -8547,7 +8558,7 @@ Skálázható Harci taktikák
 +5: Maximális felső korlátjuk ennyire nő
 ```
 
-Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
+Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../../068_01_10_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 #### 🌟 `12.szint`
 
@@ -8557,11 +8568,11 @@ Skálázható Harci taktikák
 ```
 
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
-- A [Sebzéstípus másodlagos](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
+- A [Sebzéstípus másodlagos](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
 
 #### 🌟 `15.szint`
 
-- A [Sebzéstípus másodlagos](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
+- A [Sebzéstípus másodlagos](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
 
 ---
@@ -8646,7 +8657,7 @@ Alább összesen 4 különálló ilyen harcmodor képzettség általános leír�
 
 #### 🌟 `9.szint`
 
-Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
+Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../../068_01_10_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 #### 🌟 `12.szint`
 
@@ -12532,17 +12543,17 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 
 #### ⚜️ `1 db / Tsz`
 
-A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásodból elköltesz egyet a felvételére. A Karakteralkotóban a "Speciális" fülön ilyenkor `1` értéket írj a "**Költve**" mezőbe értékként.
+A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásodból elköltesz egyet a felvételére.
 
 #### ⚜️ `KP` költésével felvett
 
-`KP`-t költesz rá (Sima, vagy Szekunder). Ezt a lehetőség akkor jön be, ha már elköltötted a fent említett ingyenes fortély keretedet, de te szeretnél még továbbiakat felvenni. A Karakteralkotóban a "Speciális" fülön ilyenkor is `1` értéket írj a "**Költve**" mezőbe értékként - az automatikus ellenőrzés kezeli, ha túllépted az ingyenes keretedet és levonja a `KP` költséget.
+`KP`-t költesz rá (Sima, vagy Szekunder). Ezt a lehetőség akkor jön be, ha már elköltötted a fent említett ingyenes fortély keretedet, de te szeretnél még továbbiakat felvenni.
 
 🔆Szekunder KP keretből költhető ebben az esetben.
 
 #### ⚜️ Kiérdemelt
 
-KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Hátas - Wyvern](fortelyok.szabad/hatas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást. A Karakteralkotóban a "Speciális" fülön ilyenkor `0` értéket írj a fortély mellett a "**Költve**" mezőbe értékként.
+KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Hátas - Wyvern](fortelyok.szabad/hatas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást.
 
 ---
 ### Általános szabályok
@@ -14236,7 +14247,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 Vaksötétben: mintha félhomályban tájékozódnál. [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival harcolsz.
+🌟 Vaksötétben: mintha félhomályban tájékozódnál. [Vakharc - félhomályban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival harcolsz.
 
 <br />
 
@@ -14244,7 +14255,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 2.fok**, mint felvehető Érzék-fortély
 
-🌟 Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amennyiben ez teljesül, [Vakharcban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás.
+🌟 Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amennyiben ez teljesül, [Vakharcban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás.
 
 ---
 ### Egyedi jellemzők
@@ -14312,7 +14323,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🌟**Hatás**:
 - Vaksötétben: mintha telihold fényénél tájékozódnál
-- A harc a [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival folyik számodra.
+- A harc a [Vakharc - félhomályban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival folyik számodra.
 
 <br />
 
@@ -14320,7 +14331,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 2.fok**, mint felvehető Érzék-fortély
 
-🌟 [Vakharcban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás. Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték.
+🌟 [Vakharcban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás. Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték.
 
 <br />
 
@@ -14328,7 +14339,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 3.fok**, mint felvehető Érzék-fortély
 
-🌟 [Vakharcban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás. Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál.
+🌟 [Vakharcban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás. Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál.
 
 ---
 ### Egyedi jellemzők
@@ -14354,11 +14365,11 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 ## 🟣 Alakzat: támadó (2)
 
-Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a támadó jelleget erősíti.
+Sok féle [alakzat](../065_04_harc_alakzatban.md) létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a támadó jelleget erősíti.
 
 ### Kapcsolódik
 
-- **[Harc alakzatban](../065_03_harc_alakzatban.md)** fejezet
+- **[Harc alakzatban](../065_04_harc_alakzatban.md)** fejezet
 - [Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md) képzettség
 - [Alakzat: védekező](alakzat_vedekezo.md) fortély
 - [Taktika: Alakzatparancsnok](vezeto_alakzatparancsnok.md) fortély
@@ -14367,7 +14378,7 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 
 🔒 Harcmodor - `6.szint`
 
-🌟 Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 Lásd a [Harc alakzatban](../065_04_harc_alakzatban.md) fejezetet.
 
 <br />
 
@@ -14375,7 +14386,7 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 
 🔒 Harcmodor - `9.szint`
 
-🌟 Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 Lásd a [Harc alakzatban](../065_04_harc_alakzatban.md) fejezetet.
 
 ---
 
@@ -14386,11 +14397,11 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 
 ## 🟣 Alakzat: védekező (2)
 
-Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a védekező jelleget erősíti.
+Sok féle [alakzat](../065_04_harc_alakzatban.md) létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a védekező jelleget erősíti.
 
 ### Kapcsolódik
 
-- **[Harc alakzatban](../065_03_harc_alakzatban.md)** fejezet
+- **[Harc alakzatban](../065_04_harc_alakzatban.md)** fejezet
 - [Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md) képzettség
 - [Alakzat: támadó](alakzat_tamado.md) fortély
 - [Vezető: Alakzatparancsnok](vezeto_alakzatparancsnok.md) fortély
@@ -14399,7 +14410,7 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 
 🔒 Harcmodor - `6.szint`
 
-🌟 Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 Lásd a [Harc alakzatban](../065_04_harc_alakzatban.md) fejezetet.
 
 <br />
 
@@ -14407,7 +14418,7 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 
 🔒 Harcmodor - `9.szint`
 
-🌟 Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 Lásd a [Harc alakzatban](../065_04_harc_alakzatban.md) fejezetet.
 
 ---
 
@@ -14427,7 +14438,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 
 🔒 Közelharc - `6.szint`
 
-🌟 Harci helyzet: [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet)
+🌟 Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
 ```
 KÉ: +1, TÉ/VÉ:+2
@@ -14450,7 +14461,7 @@ KÉ: +2, TÉ/VÉ:+4
 ---
 ###  Ellenfél módosítói
 
-→ Harci helyzet: [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet)
+→ Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
 ---
 
@@ -14517,9 +14528,9 @@ A fortély nagy ismerői a bajvívók és harcosok.
 🌟 **Hatás**: [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) alkalmazása esetén extra `+1 VÉ` csökkentés bónuszt kapsz
 
 ---
-### Pengehátrányban nem alkalmazható
+### Fegyverhátrányban nem alkalmazható
 
-🔆 Figyelj a [Pengehátrány](../065_01_04_fegyver_harci_helyzetek.md#pengehátrány) megkötésre a [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
+🔆 Figyelj a [Fegyverhátrány](../065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány) megkötésre a [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
 
 ---
 
@@ -14532,7 +14543,7 @@ A fortély nagy ismerői a bajvívók és harcosok.
 
 Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél.
 
-Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_02_semleges_helyzetek.md#fegyverrántás-váratlanul) harci helyzetben (az alkalmazó karakter oldalán):
+Bónuszok 🗡️[Fegyverrántás váratlanul](../065_03_02_semleges_helyzetek.md#fegyverrántás-váratlanul) harci helyzetben (az alkalmazó karakter oldalán):
 ### 1. fok
 
 🔒 Harcmodor: `4.szint`
@@ -14647,6 +14658,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Akrobatika - `6.szint`
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
+- Maximum össz fegyverméret: 3
 
 🌟 **Hatás**: `TÉ:+1, VÉ:+1`
 
@@ -14658,6 +14670,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Akrobatika - `9.szint`
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
+- Maximum össz fegyverméret: 3
 
 🌟 **Hatás**: `TÉ:+2, VÉ:+2`
 
@@ -14668,7 +14681,8 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 🔒 **Követelmény**:
 - Akrobatika - `12.szint`
 - Csak Hajlékonyvértben
-- Maximum `MGT:10` értékű vértben
+- Maximum `MGT:10` értékű vértben (Erő módosítót is beleszámolva)
+- Maximum össz fegyverméret: 3
 
 🌟 **Hatás**: `TÉ:+3, VÉ:+3`
 
@@ -14677,9 +14691,9 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 
 #### Fegyverek
 
-A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például `1 db` hosszú kard, vagy `2 db` rövidkard), továbbá súlyuk is fontos tényező (KM dönt).
+A forgatott fegyverek össz fegyverhossza nem lehet nagyobb, mint `3` (Például `1 db` hosszú kard, vagy `1 db` rövidkard és `1 db` tőr), továbbá súlyuk is fontos tényező (KM dönt).
 
-Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs pengekorlát), de csak a könnyű, fából készültek, mint a hosszú bot, vagy fából készült lándzsa használható - ha van elég hely.
+Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs fegyverméret-korlát), de csak a könnyű, fából készültek, mint a hosszú bot, vagy fából készült lándzsa használható - ha van elég hely.
 
 #### Alkalmazás
 
@@ -14869,7 +14883,7 @@ Nem esel kétségbe akkor sem, ha nagyon kis helyen, vagy kimozgás lehetősége
 
 ### Alapeset
 
-[Helyhez kötve](../065_01_03_negativ_helyzetek.md#helyhez-kötve) szituáció Hatásai sújtanak.
+[Helyhez kötve](../065_03_03_negativ_helyzetek.md#helyhez-kötve) szituáció Hatásai sújtanak.
 
 ---
 ### 1. fok
@@ -14928,7 +14942,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 
 Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
-### [Kétkezes harc szabályai](../065_04_04_ketkezes_harc.md)
+### [Kétkezes harc szabályai](../065_05_ketkezes_harc.md)
 
 - [Mesterfegyver](mesterfegyver.md) fortély
 - [Kétkezesség](ketkezesseg.md) fortély
@@ -15036,7 +15050,7 @@ Kétkezes vagy születésed óta, vagy később szorgalmasan begyakoroltak.
 ### Alapeset
 
 Ha nem vagy kétkezes és a gyengébb kezedben tartod a fegyvered, levonások sújtanak:\
-[Gyengébb kéz](../065_01_04_fegyver_harci_helyzetek.md#gyengébb-kéz) harci helyzet
+[Gyengébb kéz](../065_03_04_fegyver_harci_helyzetek.md#gyengébb-kéz) harci helyzet
 
 ---
 ### 1. fok
@@ -15113,8 +15127,8 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 
 🌟 **Hatás**:
 - Nem alkalmazhatnak ellened [Orvtámadást harc közben](../szituaciok/orvtamadas_harcolo_ellenfelre.md)
-- Nem kapják meg a 🗡️[Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
-- Nem kapják meg a 🗡️[Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóit
+- Nem kapják meg a 🗡️[Hátulról támadás](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás)
+- Nem kapják meg a 🗡️[Hátulról támadás](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóit
 
 ---
 
@@ -15138,38 +15152,53 @@ Repülő hátason ülve sem esel kétségbe, ha harcolni kell.
 ### Alapeset (képzetlenül)
 
 ```
-TÉ/VÉ: -9
+→ TÉ/VÉ: -9
+→ Fegyverméretre +2 bónusz
+→ Minimum fegyverméret: 3
+  (követelmény)
 ```
 
 <br />
 
 ### 1. fok
 
-🔒 Léglovaglás - `3.szint`
+🔒 **Követelmény:**
+- Harcmodor - `3.szint`
+- Léglovaglás - `3.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
 ### 2. fok
 
-🔒 Léglovaglás - `6.szint`
+🔒 **Követelmény:**
+- Harcmodor - `6.szint`
+- Léglovaglás - `6.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+6, VÉ:+6` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
 ### 3. fok
 
-🔒 Léglovaglás - `9.szint`
+🔒  **Követelmény:**
+- Harcmodor - `9.szint`
+- Léglovaglás - `9.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+9, VÉ:+9` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+- Fegyverméretre: `+2` bónusz
 
 ---
 
@@ -15193,7 +15222,10 @@ Hátason ülve sem esel kétségbe, ha harcolni kell.
 ### Alapeset (képzetlenül)
 
 ```
-TÉ/VÉ: -9
+→ TÉ/VÉ: -9
+→ Fegyverméretre +2 bónusz
+→ Minimum fegyverméret: 3
+  (követelmény)
 ````
 
 <br />
@@ -15203,10 +15235,12 @@ TÉ/VÉ: -9
 🔒 **Követelmény**:
 - Harcmodor - `6.szint`
 - Lovaglás - `6.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3` lovas bónusz
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
@@ -15215,10 +15249,12 @@ TÉ/VÉ: -9
 🔒 **Követelmény**:
 - Harcmodor - `9.szint`
 - Lovaglás - `9.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+6, VÉ:+6` lovas bónusz
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+- Fegyverméretre: `+2` bónusz
 
 <br />
 
@@ -15227,10 +15263,12 @@ TÉ/VÉ: -9
 🔒 **Követelmény**:
 - Harcmodor - `12.szint`
 - Lovaglás - `12.szint`
+- Minimum fegyverméret: `3`
 
 🌟 **Hatás**:
 - `TÉ:+9, VÉ:+9` lovas bónusz
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+- Fegyverméretre: `+2` bónusz
 
 ---
 ### Speciális
@@ -15512,7 +15550,7 @@ Bizonyos [manőverek](../066_00_manoverek.md) végbevitelének követelménye le
 
 ## 🟣 Orgyilkos (3)
 
-[Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetben (csak akkor) jobb eséllyel érsz el nagyobb sebzést.
+[Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetben (csak akkor) jobb eséllyel érsz el nagyobb sebzést.
 
 ---
 ### 1. fok
@@ -15845,7 +15883,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - szem
 
 ### Alapeset
 
-Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
+Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_03_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
 
 ---
 ### 1. fok
@@ -15884,8 +15922,8 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 ### Harci helyzetek
 
-- [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
-- [Vakharc - sötétben](../065_01_03_negativ_helyzetek.md#vakharc---sötétben)
+- [Vakharc - félhomályban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban)
+- [Vakharc - sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben)
 
 ---
 ### 1. fok
@@ -15899,7 +15937,7 @@ Vakharc harci helyzetben
   TÉ Hátrányodból
 ```
 
-→ [Láthatatlan ellenfél](../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
+→ [Láthatatlan ellenfél](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
 <br />
 
@@ -15964,7 +16002,7 @@ Az **[Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md)** képzettséget
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
+A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Alakzatharc - `6.szint`
@@ -16066,7 +16104,7 @@ Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer/harci/tavols
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Távolsági harcmodor** értéket egy jó parancsnok képes koordinálásával megemelni.
+A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Távolsági harcmodor** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Íjászat/Lövészet/Ostromlövészet - `6.szint`
@@ -16121,7 +16159,7 @@ Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [cso
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
+A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Léglovaglás - `6.szint` (léglovaglásra alkalmas hátas fajra)
@@ -16173,7 +16211,7 @@ Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos 
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó lovaskapitány képes koordinálásával megemelni.
+A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó lovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Lovaglás - `6.szint` (nehézlovaglásra alkalmas hátas fajra)
@@ -17310,7 +17348,7 @@ Külön kell felvenni minden egyes harci iskolához, melyet vagy a világleírá
 ## Kapcsolódik
 
 - [Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md) képzettség
-- [Különleges fegyver szabály](../068_01_05_kulonleges_fegyver_szabaly.md) fejezet
+- [Fegyver extrák](../068_01_11_fegyver_extrak.md) fejezet (Különleges fegyver szabály)
 
 ---
 
@@ -18419,7 +18457,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 
 ### Alapeset
 
-- [Hajítás nem dobásra készített tárgyakkal - harci helyzet levonásai](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
+- [Hajítás nem dobásra készített tárgyakkal - harci helyzet levonásai](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
 - [Nem dobásra készített tárgyak harcértékei](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
 
 ---
@@ -18428,7 +18466,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 🔒 [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
-- Már nem sújtanak az Alapesetnél leírt [levonások](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
+- Már nem sújtanak az Alapesetnél leírt [levonások](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
 - A tárgy [harcértéke](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy) nem változik!
 
 <br />
@@ -18438,7 +18476,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 🔒 [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 
 🌟 **Hatás**:
-- Már nem sújtanak az Alapesetnél leírt [levonások](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
+- Már nem sújtanak az Alapesetnél leírt [levonások](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
 - Alkalmi fegyvereid [Osztó értéke](../072_01_tavharc_ve_oszto_cella.md) `2`-re emelkedik.
 
 ---
@@ -18592,7 +18630,7 @@ Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt löv
 ### Követelmények
 
 - észleled, hogy rád lőnek
-- nem számítasz 🗡️[Meglepettnek](../065_01_01_pozitiv_helyzetek.md#meglepetés)
+- nem számítasz 🗡️[Meglepettnek](../065_03_01_pozitiv_helyzetek.md#meglepetés)
 - kizárólag arra figyelsz, hogy elkerüld a lövedéket
 
 ### 1. fok
@@ -19737,6 +19775,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
   - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
   - [Találat](064_02_04_talalat.md)
   - [Fegyverek sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md)
+  - [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md)
   - [Sebzés](064_02_07_sebzes.md)
   - [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
   - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
@@ -19745,14 +19784,18 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 ## 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
-- [Harci helyzetek](065_01_00_harci_helyzetek.md)
-  - [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
-  - [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
-  - [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
-  - [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
+- [Fegyverfogás](065_01_fegyverfogas.md)
+  - [Egyfegyveres](065_01_fegyverfogas.md#egyfegyveres)
+  - [Fegyver + pajzs](065_01_fegyverfogas.md#fegyver--pajzs)
+  - [Fegyver + hárítófegyver](065_01_fegyverfogas.md#fegyver--hárítófegyver)
+  - [Kétkezes harc](065_05_ketkezes_harc.md)
 - [Harci taktikák](065_02_harci_taktikak.md)
-- [Harc alakzatban](065_03_harc_alakzatban.md)
-- [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md)
+- [Harci helyzetek](065_03_00_harci_helyzetek.md)
+  - [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
+  - [Semleges helyzetek](065_03_02_semleges_helyzetek.md)
+  - [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
+  - [Fegyverviszony és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
+- [Harc alakzatban](065_04_harc_alakzatban.md)
 
 ## 6.6 [Manőverek](066_00_manoverek.md) 🎲
 
@@ -19766,7 +19809,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md)
 - [Példa Manőver alkalmazására: Földrevitel](066_08_02_pelda_manover_labsopres.md)
 
-## 6.7 [Harc lóhátról](067_00_harc_hatasrol.md)
+## 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
 
 - [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyai.md)
 - [Lovas, Léglovas fortélyok](067_02_lovas_leglovas_fortelyok.md)
@@ -19776,33 +19819,32 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 ## 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
 
 - [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
-  - [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
-  - [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
-  - [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
-  - [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md)
-  - [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
-  - [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
-  - [Íves fegyver](068_01_07_ives_fegyver.md)
-  - [Puszta kéz](068_01_08_puszta_kez.md)
-  - [Nyílpuskák](068_01_09_nyilpuskak.md)
-  - [Érintő támadás](068_01_10_erinto_tamadas.md)
-  - [Erőbónusz limit](068_01_11_erobonusz_limit.md)
-  - [Átütés](068_01_12_atutes.md)
-  - [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md)
-  - [Fegyverek minősége (Ideája)](068_01_14_fegyverek_minosege_ideaja.md)
+  - [Fegyverhossz kategóriák](068_01_01_fegyverhossz_kategoriak.md)
+  - [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md)
+  - [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md)
+  - [Puszta kéz](068_01_04_puszta_kez.md)
+  - [Nyílpuskák](068_01_05_nyilpuskak.md)
+  - [Érintő támadás](068_01_06_erinto_tamadas.md)
+  - [Erőbónusz limit](068_01_07_erobonusz_limit.md)
+  - [Átütés](068_01_08_atutes.md)
+  - [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md)
+  - [Fegyverek minősége (Ideája)](068_01_10_fegyverek_minosege_ideaja.md)
+  - [Fegyver extrák](068_01_11_fegyver_extrak.md)
 - [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
 - [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
 - [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
 - [Romboló fegyverek](068_05_rombolo_fegyverek.md)
+- [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md)
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
 - [Lőfegyverek](068_08_lofegyverek.md)
-- [Pajzsok](068_09_pajzs_fegyverek.md)
+- [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
+- [Fegyvergenerátor](068_10_fegyvergenerator.md)
 
 ## 6.9 [Páncélok](069_00_vertek_pancelok.md)
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Páncél MGT](069_03_pancel_MGT.md)
+- [Páncél MGT, Akadály](069_03_pancel_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
@@ -20466,7 +20508,7 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 
 A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az alájuk tartozó fegyvercsoportokkal:
 
-- **Közelharc**: Rövid (`0`) pengehosszú fegyverek, puszta kéz
+- **Közelharc**: Rövid (`0`) fegyverhosszú fegyverek, puszta kéz
 - **Kardvívás**: minden további "pengés" fegyver (kétkezes kard is)
 - **Rombolás**: zúzófegyverek, csatabárdok, csákány
 - **Lándzsavívás**: Szálfegyverek
@@ -20639,7 +20681,6 @@ Cselekedetek
 ```
 
 🔆Ha a kört mozgással kezded, akkor utolsó helyre csúszol a [Kezdeményezésben](064_02_00_harc_menete_reszletes.md#kezdeményezés).
-
 
 ---
 ### `3.` Akció
@@ -20960,21 +21001,21 @@ k20P == k20 egyes része páratlan/páros/nullás
 2: 10,20
 ```
 
-#### [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
+#### [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány)
 
 ```
 VÉ csökkentés
   k20P
 ```
 
-#### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
+#### [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság)
 
 ```
 VÉ csökkentés
   1 + k20P
 ```
 
-#### [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
+#### [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
 ```
 VÉ csökkentés
@@ -21029,7 +21070,7 @@ Fárasztó taktika alkalmazásakor:
 • nincs támadó dobás, nincs Sebzés
 • 3 VÉ csökkentés
    +1: Fárasztás fortély
-   +1: Pengeelőnyben
+   +1: Fegyverelőnyben
 ```
 
 Lásd: [Sebzés](064_02_07_sebzes.md)
@@ -21226,25 +21267,25 @@ Ebben az esetben viszont ideiglenesen **csökkented ellenfeled Védő Értékét
 
 Egy tapasztalt harcos magasabb `Védő Értékkel` indul, így ő tovább képes magas szinten teljesíteni, de például több ellenfél ellen ő is hamar kifulladhat - mindenki folyamatosan csökkent rajta Védő Értéket - és váratlan vereséget szenvedhet.
 
-Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező előnyben van. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
+Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek fegyverhossz-kategória-különbségétől függ. Értelemszerűen a nagyobb fegyverhossz-kategóriával rendelkező előnyben van. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
-Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
+Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_03_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
 
-### ⚜️ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
+### ⚜️ [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány)
 
-- Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél
+- Fegyvered mérete legalább `2 fegyverhossz-kategóriával` rövidebb ellenfeledénél
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20P`
 
-### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
+### ⚜️ [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság)
 
-- A felek fegyverméreteinek különbsége kisebb `1 pengehossznál`
+- A felek fegyverhossz-kategóriáinak különbsége kisebb `2 kategóriánál`
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20P`
 
-### ⚜️ [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
+### ⚜️ [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
-- Fegyverméret-különbség legalább `+1` pengehossz
+- Fegyverméret-különbség legalább `+2` fegyverhossz-kategória
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20P`
 - ⚡ Példa: **Hosszú kard**  vs. **Tőr**
 - ⚡ Példa: **Alabárd** vs **Hosszú kard**
@@ -21343,7 +21384,7 @@ Egy fegyver egy, vagy többféleképpen tud sebet ejteni jelleg szerint.
 
 Amiért ez fontos, az, hogy egyes Páncélok típusok ellen, más-más jellegű támadások nyújtanak bónuszokat - tehát egyes páncélok ellen a szúró, míg mások ellen mondjuk a zúzó fegyverek hatásosak. Sőt páncél nélküli ellenfélnél egyes vágó fegyverek kerülnek előnybe.
 
-Bővebben lásd a [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) oldalt.
+Bővebben lásd a [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md) oldalt.
 
 ### Fegyverek többféle sebzés jelleggel
 
@@ -21373,7 +21414,7 @@ Különbséget teszünk az alábbi fegyver **sebzés típusok** szerint:
 → alkalmatlan
 ```
 
-### [Sebzéstípus: elsődleges](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-elsődleges)
+### [Sebzéstípus: elsődleges](065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-elsődleges)
 
 Ez egy **Harci helyzet** (státusz).
 
@@ -21390,7 +21431,7 @@ vágás/szúrás (V/S)
 ```
 
 ---
-### [Sebzéstípus: másodlagos](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos)
+### [Sebzéstípus: másodlagos](065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos)
 
 ```
 Hátrány-1 Sebzésdobásra
@@ -21405,7 +21446,7 @@ A karakter **még támadó dobás előtt** bejelenti, hogy fegyverének másodla
 A karakter bejelenti, hogy Hosszú kardjával **Szúrni** szeretne. Ez fegyverének **másodlagos sebzési típusa**, így a Sebzésdobást `Hátrány-1` büntető módosítóval teheti csak meg.
 
 ---
-### [Sebzéstípus: alkalmatlan](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan)
+### [Sebzéstípus: alkalmatlan](065_03_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan)
 
 ```
 Hátrány-2 Sebzésdobásra
@@ -21464,11 +21505,31 @@ Továbbá számos fegyver van, melynek forgatása bizonyos **Erő** követelmén
 <br />
 
 ---
+## Fegyverek Erő követelménye
+
+```
+Fegyver
+ Súly kategória → Erő-követelmény
+
+  könnyű   → nincs
+  átlagos  → nincs
+  nehéz    → Erő: 2
+  súlyos   → Erő: 3
+```
+
+```
+Követelmény nem teljesül:
+  Hátrány-1 Támadó dobásra
+```
+
+Ha a forgatott fegyver "súly" kategóriája által megkövetelt Erő Tulajdonság értékét nem éred el, a fenti büntetés súlyt.
+
+<br />
+
+---
 ## Erőbónusz limit
 
-Egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat velük a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
-
-A számérték a felső maximumot jelzi, a `99`-es érték azt jelzi, hogy az **Erőbónusznak** nincs felső limitje.
+Egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat velük a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Szilánk webapp](https://kaktusztea.github.io/szilankrpg/) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
 
 ### ⚡Példa
 
@@ -21530,7 +21591,7 @@ A végeredményül kapott **Sebzés Pont** (`SP`) értéket a támadó bemondja 
 
 A fegyver támadási típusa `SP` bónuszt adhat az ellenfél vértjének típusától függően:
 
-Bővebben a [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) oldalon.
+Bővebben a [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md) oldalon.
 
 ---
 ### Támadó dobás bónusza Sebzésdobásra
@@ -21842,7 +21903,7 @@ Lásd: [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 ---
 ### Pajzs Harci helyzetekben
 
-Ha a karakter 🗡️[Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) támadás áldozata, akkor a `pajzs VÉ` csak akkor adódik hozzá az aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
+Ha a karakter 🗡️[Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) támadás áldozata, akkor a `pajzs VÉ` csak akkor adódik hozzá az aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
 
 <br />
 
@@ -21895,7 +21956,7 @@ Manőver Alap: 3
 ```
 
 ```
-Fegyver: Hosszú kard  (1 penge)
+Fegyver: Hosszú kard  (fegyverhossz: 3)
 Sebzés: k20+5 (V/S)  (Erőbónusszal)
 
 Fájdalomtűrés (8)
@@ -21917,18 +21978,20 @@ MGT: 8 = 8 + (3 x 1) -3
 
 #### Életerő Pontok (Lord Gustav: 40)
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+```
 
 #### Harcérték levonások `S` kategóriákban (Lord Gustav)
 
@@ -21953,7 +22016,7 @@ Manőver Alap: 3
 ```
 
 ```
-Fegyver: Rövidkard (0.5 penge)
+Fegyver: Rövidkard (fegyverhossz: 2)
 Sebzés: k20+2 (V/S)
 
 Fájdalomtűrés (6)
@@ -21971,16 +22034,18 @@ SFÉ: -
 
 #### Életerő Pontok (Tetves: 32)
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+```
 
 #### Harcérték levonások `S` kategóriákban (Tetves)
 
@@ -22000,11 +22065,11 @@ S4:  -7 TÉ
 ---
 ## Lord Gustav és Tetves részletes összecsapása
 
-Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
+Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
 
-### 🔆Pengeméret
+### 🔆Fegyverméret
 
-- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) harci helyzetben vannak.
+- Mivel kettőjük fegyverének mérete közt nincs meg a `2 fegyverhossz-kategória` méretkülönbség, ezért mindketten [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság) harci helyzetben vannak.
 - Tehát sikertelen (nem sebző) támadások esetén `1 + k20P` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
@@ -22050,18 +22115,20 @@ Gustav láncinge `SFÉ: 10` értékkel védi.
   → -3 VÉ
 ```
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| `1S`           | .              | .              | .              |
-| .              | .              | .              | .              |
-| .              | .              | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|  1S  |      |      |      |
+|      |      |      |      |
+|      |      |      |      |
+```
 
 A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, így `TÉ` büntetést egyelőre nem kap. Ugyanennek a sebnek a hatására egy sokkal gyengébb fizikumú (`ÉP: 28`) ember már majdnem átcsúszna az `S2` kategóriába.
 
@@ -22134,18 +22201,20 @@ SFÉ nem érvényesül (fedetlen terület)!
 
 Ez brutális! A láncinget megkerülő szúrás a lovag fedetlen lábszárába hatol. Gustav egyből az `S3` egészség-kategóriába zuhan (összesen `27 ÉP`-t vesztett)!
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | .              | .              |
-| `2S`           | `2S`           | .              | .              |
-| `2S`           | `2S`           | .              | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |      |      |
+|  2S  |  2S  |      |      |
+|  2S  |  2S  |      |      |
+```
 
 Magas Fájdalomtűrésének köszönhetően a `TÉ` büntetése "csak" `-3`.
 
@@ -22182,18 +22251,20 @@ Hatás:
 Gustavnak `8 ÉP`-je marad és `S4`-es kategóriába zuhan, ahol már `-6 TÉ` büntetés jár!\
 Eddig összesen `32 ÉP`-t vesztett!
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1S`           | `2S`           | `2S`           | `3V`           |
-| `1S`           | `2S`           | `2S`           | `3V`           |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `2S`           | .              |
-| `1S`           | `2S`           | `3V`           | .              |
-| `2S`           | `2S`           | `3V`           | .              |
-| `2S`           | `2S`           | `3V`           | .              |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1S  |  2S  |  2S  |  3V  |
+|  1S  |  2S  |  2S  |  3V  |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  2S  |      |
+|  1S  |  2S  |  3V  |      |
+|  2S  |  2S  |  3V  |      |
+|  2S  |  2S  |  3V  |      |
+```
 
 Mivel `S4` kategóriába került, azonnal jön az automatikus **Fájdalomtűrés** próba `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Gustav `11`-et dob – magas Edzettségével (`+3`) ez `14`: sikerült! A lovag talpon marad puszta akaraterejéből.
 
@@ -22257,16 +22328,18 @@ Gustav sebzése:
 Tetvesnek nincs vértje, ezért a `32 SP` teljesen beszámít → `32 ÉP` és `-3 VÉ`.\
 A gyilkos összesen `40 ÉP`-t vesztett (a korábbi `8 ÉP`-vel együtt) – túl a `32 ÉP` maximumán, tehát `0` alá zuhant!
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| -------------- | -------------- | -------------- | -------------- |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `1V`           | `2V`           | `2V`           | `2V`           |
-| `2V`           | `2V`           | `2V`           | `2V`           |
-| `2V`           | `2V`           | `2V`           | `2V`           |
+```
+|  S1  |  S2  |  S3  |  S4  |
+| ---- | ---- | ---- | ---- |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  1V  |  2V  |  2V  |  2V  |
+|  2V  |  2V  |  2V  |  2V  |
+|  2V  |  2V  |  2V  |  2V  |
+```
 
 Míg Gustav `3 db` sebet (`32 ÉP`) és egy utolsó karcolást (`1 ÉP`) is elviselt és talpon maradt `7 ÉP`-vel, addig a gyengébb fizikumú Tetves ennyitől elvesztette minden `ÉP`-jét. Eszméletlenül rogy össze, miután értetlenül bámul a hasából kimeredő kardra. Ha nem látják el, szép lassan elvérzik.
 
@@ -22283,15 +22356,23 @@ A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmen
 
 ## Harcot módosító tényezők
 
-### [Fegyverfogás](065_04_00_fegyverfogas.md)
+### [Fegyverfogás](065_01_fegyverfogas.md)
+
+- [Egyfegyveres](065_01_fegyverfogas.md#egyfegyveres)
+- [Fegyver + pajzs](065_01_fegyverfogas.md#fegyver--pajzs)
+- [Fegyver + hárítófegyver](065_01_fegyverfogas.md#fegyver--hárítófegyver)
+- [Kétkezes harc](065_05_ketkezes_harc.md)
 
 ### [Harci taktikák](065_02_harci_taktikak.md)
 
-### [Harci helyzetek](065_01_00_harci_helyzetek.md)
+### [Harci helyzetek](065_03_00_harci_helyzetek.md)
 
-### [Harc alakzatban](065_03_harc_alakzatban.md)
+- [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
+- [Semleges helyzetek](065_03_02_semleges_helyzetek.md)
+- [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
+- [Fegyverviszony és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
 
-### [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
+### [Harc alakzatban](065_04_harc_alakzatban.md)
 
 ---
 
@@ -22300,846 +22381,50 @@ A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmen
 
 ---
 ---
-## File: md/065_01_00_harci_helyzetek.md
+## File: md/065_01_fegyverfogas.md
 
-## Harci helyzetek ✴️🗡️
+## Fegyverfogás
 
-A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek szintén [Hatásokat](081_hatasok.md) okoznak.
+A harci konfiguráció meghatározza, hogyan használod a fegyveredet (kezeidet) a küzdelemben. A konfiguráció a harc előtt vagy közben is változtatható (fegyverváltás, pajzs eldobása, stb.), de egy adott pillanatban mindig kizárólag egy konfiguráció érvényes.
 
-### [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
-
-- [Beszorított ellenfél](065_01_01_pozitiv_helyzetek.md#beszorított-ellenfél)
-- [Beszorított ellenfél - hosszú fegyverrel](065_01_01_pozitiv_helyzetek.md#beszor%C3%ADtott-ellenf%C3%A9l---hossz%C3%BA-fegyverrel)
-- [Harci szekér](065_01_01_pozitiv_helyzetek.md#harci-szekér)
-- [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
-- [Közönség előtt](065_01_01_pozitiv_helyzetek.md#közönség-előtt)
-- [Láthatatlan - részlegesen](065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
-- [Láthatatlan - teljesen](065_01_01_pozitiv_helyzetek.md#láthatatlan---teljesen)
-- [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
-- [Lovas harc](065_01_01_pozitiv_helyzetek.md#lovas-harc)
-- [Léglovas harc](065_01_01_pozitiv_helyzetek.md#léglovas-harc)
-- [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
-- [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés)
-- [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás)
-- [Páros harc](065_01_01_pozitiv_helyzetek.md#páros-harc)
-
-### [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
-
-- [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet)
-- [Fegyverrántás váratlanul](065_01_02_semleges_helyzetek.md#fegyverrántás-váratlanul)
-- [Közrefogás](065_01_02_semleges_helyzetek.md#közrefogás)
-- [Szörnyeteg elleni harc](065_01_02_semleges_helyzetek.md#szörnyeteg-elleni-harc)
-- [Takarásban harcolás](065_01_02_semleges_helyzetek.md#takarásban-harcolás)
-- [Vadállatok elleni harc](065_01_02_semleges_helyzetek.md#vadállatok-elleni-harc)
-- [Védő Érték kiterjesztése másra](065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra)
-
-### [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
-
-- [Csúszós talaj](065_01_03_negativ_helyzetek.md#csúszós-talaj)
-- [Elvesztett egyensúly](065_01_03_negativ_helyzetek.md#elvesztett-egyensúly)
-- [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve)
-- [Gyengébb kéz](065_01_03_negativ_helyzetek.md#gyengébb-kéz)
-- [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
-- [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
-- [Tűz ruhán - ég](065_01_03_negativ_helyzetek.md#tűz-ruhán---ég)
-- [Tűz ruhán - lángol](065_01_03_negativ_helyzetek.md#tűz-ruhán---lángol)
-- [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
-- [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben)
-- [Vér elvakít](065_01_03_negativ_helyzetek.md#vér-elvakít)
-
-### [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
-
-- [Fegyverviszony](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony)
-- [Képzetlen fegyverhasználat](065_01_04_fegyver_harci_helyzetek.md#képzetlen-fegyverhasználat)
-- [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc)
-- [Sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md#sebzéstípusok)
+A lovas/léglovas harc nem ide tartozik, az egy harcpozíció (lásd [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)). A harcpozíció bármely itt leírt konfigurációval kombinálható.
 
 ---
+### Egyfegyveres
 
-🔗 [Harci taktikák](065_02_harci_taktikak.md) →
+Ez az alapértelmezett harci konfiguráció: egyetlen fegyvert forgatsz - mindegy, hogy egy, vagy két kézzel.
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+**Ide tartoznak:**
+- Egykezes fegyverek (kard, tőr, buzogány, stb.)
+- Kétkezes fegyverek (kétkezes kard, lándzsa, alabárd)
+- Másfélkezes fegyverek két kézzel forgatva
+- Másfélkezes fegyverek egy kézzel forgatva
 
+A harcérték kalkulációnál az [alapeset](062_01_ke_te_ve_ce.md) érvényesül.
 
----
----
-## File: md/065_01_01_pozitiv_helyzetek.md
-
-# Pozitív helyzetek
-
-## Beszorított ellenfél
-
-Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
-
-```
-Előny+1 TÉ dobásra
-```
-
-<br />
+A szabad kéz használható manőverekhez (Lefegyverzés, Lábkirántás segítés), de támadni vele nem tudsz (kivéve [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortéllyal).
 
 ---
-## Beszorított ellenfél - hosszú fegyverrel
+### [Kétkezes harc](065_05_ketkezes_harc.md)
 
-Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
-
-```
-Előny+2 TÉ dobásra
-```
-
-<br />
+Mindkét kézben egy-egy fegyver. Bővebben lásd: [Kétkezes harc szabályai](065_05_ketkezes_harc.md).
 
 ---
-## Beszorított ellenfél - hosszú fegyverrel
+### Fegyver + pajzs
 
-Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
-
-```
-Előny+2 TÉ dobásra
-```
-
-<br />
+Egyik kezedben fegyver, a másikban pajzs. Bővebben lásd: [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
 
 ---
-## Harci szekér
+### Fegyver + hárítófegyver
 
-Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.
+Jobbik kezedben a fő fegyvered, a gyengébbikben egy hárítófegyver. Ez utóbbi kizárólag védekezésre szolgál, nem támadhatsz vele.
 
-❌ Kizárja: Lovas harc, Léglovas harc, Belharci helyzet, Földön fekve, Helyhez kötve, Magasabbról, Levegőből támadás, Orvtámadás
+Bővebben lásd: [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md).
 
-<br />
-
----
-## Hátulról támadás
-
-```
-Előny+1 TÉ dobásra
-```
-
-🔆 Védekező pajzs `VÉ` értéke **NEM** számít
-
-<br />
+→ [Közelharci hárítófegyverek](068_02_kozelharci_fegyverek.md#közelharci-hárítófegyverek)\
+→ [Kardvívó hárítófegyverek](068_03_kardvivo_fegyverek.md#kardívó-hárítófegyverek)
 
 ---
-## Közönség előtt
-
-Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harci/gladiator.kozonsege.md) fortély bónuszai aktívak.
-
-<br />
-
----
-## Láthatatlan - részlegesen
-
-Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy.
-
-```
-Előny+1 TÉ dobásra
-VÉ csökkentés: +1 bónusz
-VÉ: +5
-```
-
-🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat, mert te is rosszabbul látsz
-
-🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
-
-🔆 Áldozat oldalon:
-
----
-## Láthatatlan - teljesen
-
-Látással, hallással nem vagy érzékelhető. Példa: teljes láthatatlanság és zajt sem keltesz.
-
-```
-Előny+2 TÉ dobásra
-VÉ csökkentés: +2 bónusz
-VÉ: +10
-```
-
-🔆 [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat, mert te sem látsz
-
-🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
-
-🔆 Ha bármely érzékeléssel (Infra) meglátnak, elveszted előnyödet, vagy 1 fokot, vagy mind 2-t (helyzetfüggő)
-
-<br />
-
----
-## Levegőből támadás
-
-```
-Előny+2 TÉ Dobásra
-```
-
-🔆 Roham (zuhanás) külön, plusz számolandó
-
-🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
-
-❌ Kizárja: Lovas harc, Harci szekér, Magasabbról, Belharci helyzet, Földön fekve, Helyhez kötve, Takarásban
-
-<br />
-
----
-## Lovas harc
-
-Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély bónuszai aktívak.
-
-❌ Kizárja: Magasabbról, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Levegőből támadás, Orvtámadás, Takarásban
-
-<br />
-
----
-## Léglovas harc
-
-Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély bónuszai aktívak.
-
-❌ Kizárja: Magasabbról, Lovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Csúszós talaj, Orvtámadás, Takarásban
-
-<br />
-
----
-## Magasabbról
-
-```
-Előny+1 TÉ dobásra
-```
-
-🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
-
-❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás, Belharci helyzet, Elvesztett egyensúly, Harci szekér
-
-<br />
-
----
-## Meglepetés
-
-Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
-
-```
-Előny+1 TÉ dobásra
-VÉ csökkentés: +2
-```
-
-🔆 [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---meglepetés)
-
-🔆 [Támadó taktikával](065_02_harci_taktikak.md#támadó-taktika) használható
-
-🔆 Pajzs `VÉ` csak akkor számít, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
-
-🔆 Készületlen ellenfél = Meglepetés hatásai.
-
-### Csoport meglepése
-
-🔆 [Alakzatot](065_03_harc_alakzatban.md) is meg lehet lepni. Ilyen [Észlelés szituációban](szituaciok/erzekeles_eszleles_aktiv_passziv.md) az alakzat [Csoportos szellemi Észlelés képzettségpróbát](030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) dob.
-
-🔆 Ugyanez vonatkozik a [Lopakodás/rejtőzés és észlelése szituációra](szituaciok/lopakodas_rejtozes_es_eszlelese.md) is.
-
-<br />
-
----
-## Orvtámadás
-
-Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás).
-
-→ Szituáció: [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md)\
-→ Szituáció: [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md)\
-
-```
-Sikeres próba kell:
- Lopakodás/rejtőzés vs. Észlelés
-```
-
-→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) → módosítók a leírásában
-
-```
-Módosítók • csak az 1.támadásra!
-
- Áldozat
-   Közelharci VÉ (Puszta kézzel)
-
- Támadó bónuszok
-   Előny+2 TÉ dobásra
-
-   Orgyilkos fortély
-     1.fok: Előny+1 Sebzés dobásra, +1 SP
-     2.fok: Előny+1 Sebzés dobásra, +2 SP
-     3.fok: Előny+2 Sebzés dobásra, +3 SP
-```
-
-→ ❌ Kizárja: Hátulról, Meglepetés, Lovas harc, Léglovas harc, Harci szekér
-→ ❌ Egyéb `TÉ` bónusz nincs\
-→ ❌ Harci taktikák NEM használhatóak
-
-→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅
-→ Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
-→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak
-
-<br />
-
----
-## Páros harc
-
-Koordinált 2 fős harc. A [Páros harc](fortelyok.harci/paros_harc.md) fortély bónuszai aktívak.
-
----
-
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
-
----
----
-## File: md/065_01_02_semleges_helyzetek.md
-
-# Semleges helyzetek
-
-## Belharci helyzet
-
-Ha a képzett harcosnak sikerül ellenfele fegyvere "mögé", testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
-
-Szituáció:  [Belharc folyamata](szituaciok/belharc_folyamata.md) - bekerülés, kikerülés
-
-❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Takarásban
-
-<br />
-
-### Bónuszok
-
-→ [Belharcos fortély](fortelyok.harci/belharcos.md) bónuszai
-→ [Belharcos manőverek](066_06_belharcos_manoverek.md)
-
-```
-Belharc: 1.fok
-  KÉ: +1, TÉ/VÉ:+2
-  Belharcos manőverek innen
-
-Belharc: 2.fok
-  KÉ: +2, TÉ/VÉ:+4
-```
-
-### Követelmények, harcértékek
-
-```
-Közelharc harcmodor kötelező
-Max 0 penge hosszú fegyver
-
-Puszta kéz harcértékei
-  TÉ, VÉ, SP = 0
-  Sebzés: FP
-  1 ÉP / 5 FP
-```
-
-```
-Nem belharcos fegyverek
-  TÉ: 0
-  VÉ: 0
-  Saját harcmodor értékei
-  Bármikor elejthető
-
-Állatoknak általában van Belharcos fortélya
-```
-
-```
-Pajzsok belharcban
-
-Minden pajzs TÉ,VÉ értéke
-  Kis Pajzsnak számít
-```
-
-<br />
-
----
-## Fegyverrántás váratlanul
-
-→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély\
-→ Kapcsolódik: [Fegyverrántás szituációi](szituaciok/fegyverrantas.md) (ennek a fejezetnek a gyorslinkjei)
-
-### ⚜️ `1.`Harci kör elején
-
-Fegyvertelenül, harc közben, kör elején próbálod fegyvered előkapni, fegyveres ellenféllel szemben.
-
-**Kezdeményezésed** fegyverméret módosítókkal (KM dönt):
-
-```
-KÉ dobás
-
-alapdobás: Tőr méretű
-Hátrány-1: Kard méretű
-Hátrány-2: Csatabárd méretű
-```
-
-🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
-
-#### Ha elveszíted a kezdeményezést
-
-- Nem sikerül előrántanod fegyvered
-- [Pusztakezes harcértékeddel](068_01_08_puszta_kez.md) küzdesz a kör végéig
-- Visszatámadás helyett, `1 támadás` elhasználásával fegyvert húzhatsz - próbadobás nélkül
-
-#### Ha megnyered a kezdeményezést
-
-- Előrántottad fegyvered, teljes, fegyveres harcértéked érvényesül
-- Ellenfeled támad azonnal
-- Utána visszatámadhatsz, nem veszítesz támadást
-
-#### Ha megnyered a kezdeményezést `+3` túldobással
-
-- Előrántottad fegyvered, teljes, fegyveres harcértéked érvényesül
-- TE támadsz azonnal
-
-### ⚜️ `2.` Kör közben, Akció után
-
-[Akciód](063_01_harci_kor.md#3-akci%C3%B3) után rögtön fegyvert húznál.\
-**Harcmodor képzettségpróbát** dobsz fegyverméret módosítókkal (KM dönt).
-
-```
-Harcmodor képzettségpróba
- Célszám: 12
-
-alapdobás: Tőr méretű
-Hátrány-1: Kard méretű
-Hátrány-2: Csatabárd méretű
-```
-
-- Sikeres: előhúztad fegyvered, teljes harcértékeddel védekezhetsz
-- Sikertelen: [Pusztakezes harcértékeiddel](068_01_08_puszta_kez.md) védekezel a kör végéig
-
-🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
-
-### ⚜️ `3.`Mindkét fél fegyverrántást alkalmaz
-
-Kezdeményezés, mindkét félre érvényesek az `1.` pontnál leírt módosítók.
-
-### ⚜️ `4.`Meglepetésből, vagy észrevétlen fegyverrántás
-
-Beszélgetsz valakivel, váratlanul fegyvert rántasz és megszúrod.
-
-```
-Előny+1 KÉ
-```
-
-Nyert Kezdeményezés esetén [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) bónuszait kapod.
-
-### 🔆 Szálfegyverek
-
-Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás.
-
-<br />
-
----
-## Közrefogás
-
-Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Pengeelőny** harci helyzetét.
-
-❌ Kizárja: Földön fekve
-
-### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
-
-A hosszú kardos
-- "Pengeelőny" helyzetből
-- "Alappenge" helyzetbe kerül
-
-### ⚡Példa: Két tőrös közrefog egy lándzsást
-
-A lándzsás
-- "Pengeelőny" helyzetből
-- "Alappenge" helyzetbe kerül
-
-<br />
-
----
-## Szörnyeteg elleni harc
-
-Bestia/szörny elleni küzdelem. A [Gladiátor: Bestiái](fortelyok.harci/gladiator.bestiai.md) fortély bónuszai aktívak.
-
-<br />
-
----
-## Takarásban harcolás
-
-```
-Hátrány-1 TÉ dobásra
-VÉ: +5
-```
-
-🔆 Példa: kapu, belógó falrész mögül harcolsz.
-
-❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás, Belharci helyzet
-
-<br />
-
----
-## Védő Érték kiterjesztése másra
-
-```
-Többszörös támadás elvesztése
-VÉ veszteség duplázódik
-```
-
-Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
-
-🔆 A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
-
-❌ Kizárja: Földön fekve
-
-<br />
-
----
-## Vadállatok elleni harc
-
-```
-Harcmodor: Közelharc
-Manőver: Belharcba kerülés
-
-+ Belharcos fortély - 2.fok
-  bónuszai
-```
-
-Sokféle állat van, ezért nem lehet egységes szabályt alkotni. Az állatok nagy része olyan harcmodort folytat, ami a **Közelharc** + **Belharci helyzet**nek felel meg leginkább.
-
----
-
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
-
----
----
-## File: md/065_01_03_negativ_helyzetek.md
-
-# Negatív helyzetek
-
-## Csúszós talaj
-
-```
-Hátrány-1 Támadó dobásra
-```
-
-Addig tart, amíg a csúszós felületen áll, mozog a karakter.
-
-<br />
-
----
-## Elvesztett egyensúly
-
-```
-Hátrány-1 Támadó dobásra
-Többszörös támadás elvesztése
-Mozgás - feleződik
-```
-
-A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
-
-❌ Kizárja: Magasabbról, Levegőből támadás
-
-<br />
-
----
-## Földön fekve
-
-```
-Hátrány-2 TÉ dobásra
-VÉ veszteség duplázódik
-```
-
-❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Helyhez kötve, VÉ kiterjesztés, Közrefogás
-
-<br />
-
----
-## Gyengébb kéz
-
-```
-Hátrány-1 Támadó dobásra
-
-Megszűnteti: Kétkezesség fortély
-```
-
-🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
-
-<br />
-
----
-## Helyhez kötve
-
-```
-Hátrány-1 TÉ dobásra
-VÉ veszteség duplázódik
-```
-
-Enyhíti: [Helyhez kötve fejlesztése](fortelyok.harci/helyhez_kotve_fejlesztese.md) fortély
-
-❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
-
-<br />
-
----
-## Lények méret különbsége
-
-Az egyes fajokat méret kategóriákba osztályozzuk.
-
-```
-1: Bögöly
-2: Erdőpille
-3: Goblin, Gnóm
-4: Ember, Törpe, Ork
-5: Ogár
-6: Wyvern
-7: Sárkány
-```
-
-```
-Minden egyes kategória
-  különbségnél a nagyobb
-  lény +1 VÉ csökkentést okoz
-```
-
-### ⚡ Példa
-
-```
-Goblin vs Ogár
-  2 kategória különbség
-
-Ogár
-  +2 VÉ csökkentés bónusz
-```
-
-### Pengeméret-különbség és lények mérete
-
-A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
-
-<br />
-
----
-## Vakharc - félhomályban
-
-```
-Hátrány-1 TÉ dobásra
-```
-
-🔆 Mérsékli: [Vakharc fejlesztése](fortelyok.harci/vakharc_fejlesztese.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
-
-<br />
-
----
-## Vakharc - sötétben
-
-```
-Hátrány-2 TÉ dobásra
-```
-
-🔆 Mérsékli: [Vakharc fejlesztése](fortelyok.harci/vakharc_fejlesztese.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
-
-<br />
-
----
-## Tűz ruhán - ég
-
-Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
-
-```
-Hátrány-1 Támadó dobásra
-
--5 + k20 SP / kör
-```
-
-#### ✖️ Megszűntetése (eloltás)
-
-```
-Harcban: 1 kör
-Harcon kívül: 1 kör
-```
-
-<br />
-
----
-## Tűz ruhán - lángol
-
-Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
-
-```
-Hátrány-2 Támadó dobásra
-
-0 + k20 SP / kör
-```
-
-#### ✖️ Megszűntetése (eloltás)
-
-```
-Harcban: Nem lehetséges
-Harcon kívül: 2 kör,
-  külső segítség szükséges
-```
-
-<br />
-
----
-## Vér elvakít
-
-```
-Hátrány-1 Támadó dobásra
-Hátrány-1 Érzék (Látás)
-```
-
-### ✖️ Megszűntetése harcban
-
-1` támadás feláldozásáért kitörölheted szemedből a vért.
-
----
-
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
-
----
----
-## File: md/065_01_04_fegyver_harci_helyzetek.md
-
-# Fegyverrel kapcsolatos helyzetek
-
-Fegyver-specifikus harci helyzetek (státuszok).
-
-## Fegyverviszony
-
-A felek által forgatott fegyverek hosszának egymáshoz mért viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket. Tehát a VÉ csökkentés esetén igaz a "*A hosszabb fegyver jobb*" mondás - de ne feledjük, más-más szituációkban előnybe kerülhetnek a rövidebb fegyverek is.
-
-### Pengehátrány
-
-Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél.
-A `VÉ` csökkentést tekintve hátrányban vagy az **Alappengéhez** képest, viszont vannak szituációk, mint például a [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-), ahol korlátozó tényező lehet.
-
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
-
-```
-k20P
-```
-
-### Alappenge
-
-Fegyvered azonos hosszú, vagy **nem** hosszabb legalább `1 pengével` ellenfeledénél. Ha egy karakter Alappenge helyzetben van, akkor nyilván ellenfele is csak abban lehet.
-
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
-
-```
-1 + k20P
-```
-
-### Pengeelőny
-
-Fegyvered mérete legalább `1 pengével` hosszabb ellenfeledénél. **Csak akkor** kerül valaki Pengeelőnybe - és így a másik Pengehátrányba - ha ez a pengeméret különbség megvan.
-
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
-
-```
-2 + k20P
-```
-
-<br />
-
----
-## Gyengébb kéz
-
-```
-Hátrány-1 TÉ dobásra
-```
-
-🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
-
-<br />
-
----
-## Hajítás alkalmatlan fegyverrel
-
-```
-Hátrány-2 Sebzésdobásra
-Hátrány-2 CÉ dobásra
-Fegyver CÉ = 0
-SP: fegyver eredeti sebzése - 5
-```
-
-⚡ Példa: hosszú kard hajítása
-
-🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély
-
----
-## Hajítás nem dobásra készített tárgyakkal
-
-```
-Hátrány-1 CÉ dobásra
-Hátrány-1 Sebzésdobásra
-
-Fegyver CÉ = 0
-SP: -5 + k20 (FP vagy ÉP: KM dönt)
-```
-
-⚡ Példa: sámli hajítása
-
-🔆 Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
-
-🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) fortély
-
-<br />
-
----
-## Képzetlen fegyverhasználat
-
-→ [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-
-🔆 `3.szint` alatti kapcsolódó [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) képzettségnél
-
-<br />
-
----
-## Pusztakezes harc
-
-Egy fegyvertelen harcos jelentős hátrányban van egy fegyveressel szemben, ezért negatívak a [Puszta kéz](068_02_kozelharci_fegyverek.md) harcértékei.
-
-```
-Puszta kéz harcértékei
-
-KÉ: -3, TÉ: -3, VÉ: -3
-```
-
-🔆 Kapcsolódik:
-
-- [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortély
-- [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet), ahol a Puszta kéz harcértékei `0`-ra emelkednek és járnak a **Belharcból** eredő esetleges módosítók is.
-
-🔆 A **Puszta kéz** "egykezes" fegyvernek számít, tehát **nem** lehet vele **Kétkezes harcot** folytatni
-
-<br />
-
----
-## Sebzéstípusok
-
-### Sebzéstípus: elsődleges
-
-```
-Sima Sebzésdobás
-```
-
-Fegyvered elsődleges sebzési típusával támadsz. Például "Hosszú kard: Vágás".
-
-### Sebzéstípus: másodlagos
-
-Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Szúrás".
-
-```
-Hátrány-1 Sebzésdobásra
-```
-
-### Sebzéstípus: alkalmatlan
-
-```
-Hátrány-2 Sebzésdobásra
-```
-
-Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard: Zúzás".
-
----
-
-🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
@@ -23165,7 +22450,7 @@ Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard
 - [Tettetés](#tettetés)
 - [Visszafogott taktika](#visszafogott-taktika-)
 
-A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a **Harci taktikák** és a [Harci helyzetek](065_01_00_harci_helyzetek.md) (amelyeket harci **Státuszokként** értelmezünk).
+A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a **Harci taktikák** és a [Harci helyzetek](065_03_00_harci_helyzetek.md) (amelyeket harci **Státuszokként** értelmezünk).
 
 ### 🔆 Taktika bejelentése
 
@@ -23224,9 +22509,9 @@ TÉ:+3, VÉ:-6
 
 📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
-✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+✅ [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+❌ [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
 ✅ **Kezdeményező, Kiváró, Plusz támadás, 1 támadás taktikával** együtt
 
@@ -23246,9 +22531,9 @@ VÉ:+3, TÉ:-6
 
 📶 Skálázható: [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) szinttől függően a felső korlát nőhet.
 
-❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
+❌ [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
-❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
+❌ [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
 ✅ **Érintő, 1 támadás taktikával** együtt
 
@@ -23325,20 +22610,20 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 ```
 3 VÉ: Fárasztás taktika
   +1: Fárasztás fortély
-  +1: Pengeelőnyben
+  +1: Fegyverelőnyben
 ```
 
 ❌ Nem kell támadást dobni
 
 ❌ Más taktikával együtt
 
-❌ [Láthatatlan](065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) ellenfél ellen
+❌ [Láthatatlan](065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) ellenfél ellen
 
-❌ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány) harci helyzetből **NEM** alkalmazható.
+❌ [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#fegyverhátrány) harci helyzetből **NEM** alkalmazható.
 
-✅ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) és [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) harci helyzetben csak
+✅ [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#fegyverazonosság) és [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) harci helyzetben csak
 
-✅ [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás) harci helyzetben
+✅ [Levegőből támadás](065_03_01_pozitiv_helyzetek.md#levegőből-támadás) harci helyzetben
 
 🔗 Kapcsolódik: **[Fárasztás](fortelyok.harci/farasztas.md)** harci fortély
 
@@ -23463,7 +22748,7 @@ Ellenfél VÉ csökkentése rajtad:
 
 A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-🔆 A [lények méretkülönbségéből](065_01_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20P` dobáshoz/dobásból.
+🔆 A [lények méretkülönbségéből](065_03_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20P` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 
@@ -23485,7 +22770,7 @@ Harcmodor képzettség + Ügyesség
 
 🔆 KM tanács: ilyenkor nem tudod bemondani a kidobott Támadó Értéket, mert akkor lebuknál a megtámadott játékosnál. Ilyenkor inkább kérdezz rá a játékos `Védő Értékére`, majd jelezd, hogy "csak VÉ csökkentés".
 
-Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci jártasság felmérését](https://github.com/kaktusztea/szilankrpg/blob/master/md/szituaciok/harci_jartassag_felmerese.md) végezhet, amely nem vesz el Akciót, nem jár semmilyen hátránnyal.
+Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci jártasság felmérését](szituaciok/harci_jartassag_felmerese.md) végezhet, amely nem vesz el Akciót, nem jár semmilyen hátránnyal.
 
 ✅ **Kiváró, Visszafogott, 1 támadás taktikával** együtt
 
@@ -23511,14 +22796,849 @@ Szándékosan kisebb sebzést próbálsz okozni találatkor - általában mikor 
 
 ---
 
-🔗 [Harc alakzatban](065_03_harc_alakzatban.md) →
+🔗 [Harc alakzatban](065_04_harc_alakzatban.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 
 ---
 ---
-## File: md/065_03_harc_alakzatban.md
+## File: md/065_03_00_harci_helyzetek.md
+
+## Harci helyzetek ✴️🗡️
+
+A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek szintén [Hatásokat](081_hatasok.md) okoznak.
+
+### [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
+
+- [Beszorított ellenfél](065_03_01_pozitiv_helyzetek.md#beszorított-ellenfél)
+- [Beszorított ellenfél - hosszú fegyverrel](065_03_01_pozitiv_helyzetek.md#beszorított-ellenfél---hosszú-fegyverrel)
+- [Harci szekér](065_03_01_pozitiv_helyzetek.md#harci-szekér)
+- [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás)
+- [Közönség előtt](065_03_01_pozitiv_helyzetek.md#közönség-előtt)
+- [Láthatatlan - részlegesen](065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
+- [Láthatatlan - teljesen](065_03_01_pozitiv_helyzetek.md#láthatatlan---teljesen)
+- [Levegőből támadás](065_03_01_pozitiv_helyzetek.md#levegőből-támadás)
+- [Lovas harc](065_03_01_pozitiv_helyzetek.md#lovas-harc)
+- [Léglovas harc](065_03_01_pozitiv_helyzetek.md#léglovas-harc)
+- [Magasabbról](065_03_01_pozitiv_helyzetek.md#magasabbról)
+- [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés)
+- [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás)
+- [Páros harc](065_03_01_pozitiv_helyzetek.md#páros-harc)
+
+### [Semleges helyzetek](065_03_02_semleges_helyzetek.md)
+
+- [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
+- [Fegyverrántás váratlanul](065_03_02_semleges_helyzetek.md#fegyverrántás-váratlanul)
+- [Közrefogás](065_03_02_semleges_helyzetek.md#közrefogás)
+- [Szörnyeteg elleni harc](065_03_02_semleges_helyzetek.md#szörnyeteg-elleni-harc)
+- [Takarásban harcolás](065_03_02_semleges_helyzetek.md#takarásban-harcolás)
+- [Vadállatok elleni harc](065_03_02_semleges_helyzetek.md#vadállatok-elleni-harc)
+- [Védő Érték kiterjesztése másra](065_03_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra)
+
+### [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
+
+- [Csúszós talaj](065_03_03_negativ_helyzetek.md#csúszós-talaj)
+- [Elvesztett egyensúly](065_03_03_negativ_helyzetek.md#elvesztett-egyensúly)
+- [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve)
+- [Gyengébb kéz](065_03_03_negativ_helyzetek.md#gyengébb-kéz)
+- [Helyhez kötve](065_03_03_negativ_helyzetek.md#helyhez-kötve)
+- [Lények méret különbsége](065_03_03_negativ_helyzetek.md#lények-méret-különbsége)
+- [Tűz ruhán - ég](065_03_03_negativ_helyzetek.md#tűz-ruhán---ég)
+- [Tűz ruhán - lángol](065_03_03_negativ_helyzetek.md#tűz-ruhán---lángol)
+- [Vakharc - félhomályban](065_03_03_negativ_helyzetek.md#vakharc---félhomályban)
+- [Vakharc - sötétben](065_03_03_negativ_helyzetek.md#vakharc---sötétben)
+- [Vér elvakít](065_03_03_negativ_helyzetek.md#vér-elvakít)
+
+### [Fegyverviszony és sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md)
+
+- [Fegyverviszony](065_03_04_fegyver_harci_helyzetek.md#fegyverviszony)
+- [Képzetlen fegyverhasználat](065_03_04_fegyver_harci_helyzetek.md#képzetlen-fegyverhasználat)
+- [Pusztakezes harc](065_03_04_fegyver_harci_helyzetek.md#pusztakezes-harc)
+- [Sebzéstípusok](065_03_04_fegyver_harci_helyzetek.md#sebzéstípusok)
+
+---
+
+🔗 [Harci taktikák](065_02_harci_taktikak.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
+## File: md/065_03_01_pozitiv_helyzetek.md
+
+# Pozitív helyzetek
+
+## Beszorított ellenfél
+
+Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
+
+```
+Előny+1 TÉ dobásra
+```
+
+<br />
+
+---
+## Beszorított ellenfél - hosszú fegyverrel
+
+Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
+
+```
+Előny+2 TÉ dobásra
+```
+
+<br />
+
+---
+## Harci szekér
+
+Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Lovas harc, Léglovas harc, Belharci helyzet, Földön fekve, Helyhez kötve, Magasabbról, Levegőből támadás, Orvtámadás
+
+<br />
+
+---
+## Hátulról támadás
+
+```
+Előny+1 TÉ dobásra
+```
+
+🔆 Védekező pajzs `VÉ` értéke **NEM** számít
+
+<br />
+
+---
+## Közönség előtt
+
+Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harci/gladiator.kozonsege.md) fortély bónuszai aktívak.
+
+<br />
+
+---
+## Láthatatlan - részlegesen
+
+Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy.
+
+```
+Előny+1 TÉ dobásra
+VÉ csökkentés: +1 bónusz
+VÉ: +5
+```
+
+🔆 [Vakharc - félhomályban](065_03_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat, mert te is rosszabbul látsz
+
+🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
+
+🔆 Áldozat oldalon:
+
+---
+## Láthatatlan - teljesen
+
+Látással, hallással nem vagy érzékelhető. Példa: teljes láthatatlanság és zajt sem keltesz.
+
+```
+Előny+2 TÉ dobásra
+VÉ csökkentés: +2 bónusz
+VÉ: +10
+```
+
+🔆 [Vakharc - sötétben](065_03_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat, mert te sem látsz
+
+🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
+
+🔆 Ha bármely érzékeléssel (Infra) meglátnak, elveszted előnyödet, vagy 1 fokot, vagy mind 2-t (helyzetfüggő)
+
+<br />
+
+---
+## Levegőből támadás
+
+```
+Előny+2 TÉ Dobásra
+```
+
+🔆 Roham (zuhanás) külön, plusz számolandó
+
+🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
+
+❌ Kizárja: Lovas harc, Harci szekér, Magasabbról, Belharci helyzet, Földön fekve, Helyhez kötve, Takarásban
+
+<br />
+
+---
+## Lovas harc
+
+Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Magasabbról, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Levegőből támadás, Orvtámadás, Takarásban
+
+<br />
+
+---
+## Léglovas harc
+
+Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Magasabbról, Lovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Csúszós talaj, Orvtámadás, Takarásban
+
+<br />
+
+---
+## Magasabbról
+
+```
+Előny+1 TÉ dobásra
+```
+
+🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
+
+❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás, Belharci helyzet, Elvesztett egyensúly, Harci szekér
+
+<br />
+
+---
+## Meglepetés
+
+Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
+
+```
+Előny+1 TÉ dobásra
+VÉ csökkentés: +2
+```
+
+🔆 [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---meglepetés)
+
+🔆 [Támadó taktikával](065_02_harci_taktikak.md#támadó-taktika) használható
+
+🔆 Pajzs `VÉ` csak akkor számít, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
+
+🔆 Készületlen ellenfél = Meglepetés hatásai.
+
+### Csoport meglepése
+
+🔆 [Alakzatot](065_04_harc_alakzatban.md) is meg lehet lepni. Ilyen [Észlelés szituációban](szituaciok/erzekeles_eszleles_aktiv_passziv.md) az alakzat [Csoportos szellemi Észlelés képzettségpróbát](030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) dob.
+
+🔆 Ugyanez vonatkozik a [Lopakodás/rejtőzés és észlelése szituációra](szituaciok/lopakodas_rejtozes_es_eszlelese.md) is.
+
+<br />
+
+---
+## Orvtámadás
+
+Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás).
+
+→ Szituáció: [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md)\
+→ Szituáció: [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md)\
+
+```
+Sikeres próba kell:
+ Lopakodás/rejtőzés vs. Észlelés
+```
+
+→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) → módosítók a leírásában
+
+```
+Módosítók • csak az 1.támadásra!
+
+ Áldozat
+   Közelharci VÉ (Puszta kézzel)
+
+ Támadó bónuszok
+   Előny+2 TÉ dobásra
+
+   Orgyilkos fortély
+     1.fok: Előny+1 Sebzés dobásra, +1 SP
+     2.fok: Előny+1 Sebzés dobásra, +2 SP
+     3.fok: Előny+2 Sebzés dobásra, +3 SP
+```
+
+→ ❌ Kizárja: Hátulról, Meglepetés, Lovas harc, Léglovas harc, Harci szekér
+→ ❌ Egyéb `TÉ` bónusz nincs\
+→ ❌ Harci taktikák NEM használhatóak
+
+→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅
+→ Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
+→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak
+
+<br />
+
+---
+## Páros harc
+
+Koordinált 2 fős harc. A [Páros harc](fortelyok.harci/paros_harc.md) fortély bónuszai aktívak.
+
+---
+
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
+## File: md/065_03_02_semleges_helyzetek.md
+
+# Semleges helyzetek
+
+## Belharci helyzet
+
+Ha a képzett harcosnak sikerül ellenfele fegyvere "mögé", testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
+
+Szituáció:  [Belharc folyamata](szituaciok/belharc_folyamata.md) - bekerülés, kikerülés
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Takarásban
+
+<br />
+
+### Bónuszok
+
+→ [Belharcos fortély](fortelyok.harci/belharcos.md) bónuszai
+→ [Belharcos manőverek](066_06_belharcos_manoverek.md)
+
+```
+Belharc: 1.fok
+  KÉ: +1, TÉ/VÉ:+2
+  Belharcos manőverek innen
+
+Belharc: 2.fok
+  KÉ: +2, TÉ/VÉ:+4
+```
+
+### Követelmények, harcértékek
+
+```
+Közelharc harcmodor kötelező
+Max 1 fegyverhossz-kategória fegyver
+
+Puszta kéz harcértékei
+  TÉ, VÉ, SP = 0
+  Sebzés: FP
+  1 ÉP / 5 FP
+```
+
+```
+Nem belharcos fegyverek
+  TÉ: 0
+  VÉ: 0
+  Saját harcmodor értékei
+  Bármikor elejthető
+
+Állatoknak általában van Belharcos fortélya
+```
+
+```
+Pajzsok belharcban
+
+Minden pajzs TÉ,VÉ értéke
+  Kis Pajzsnak számít
+```
+
+<br />
+
+---
+## Fegyverrántás váratlanul
+
+→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély\
+→ Kapcsolódik: [Fegyverrántás szituációi](szituaciok/fegyverrantas.md) (ennek a fejezetnek a gyorslinkjei)
+
+### ⚜️ `1.`Harci kör elején
+
+Fegyvertelenül, harc közben, kör elején próbálod fegyvered előkapni, fegyveres ellenféllel szemben.
+
+**Kezdeményezésed** fegyverméret módosítókkal (KM dönt):
+
+```
+KÉ dobás
+
+alapdobás: Tőr méretű
+Hátrány-1: Kard méretű
+Hátrány-2: Csatabárd méretű
+```
+
+🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
+
+#### Ha elveszíted a kezdeményezést
+
+- Nem sikerül előrántanod fegyvered
+- [Pusztakezes harcértékeddel](068_01_04_puszta_kez.md) küzdesz a kör végéig
+- Visszatámadás helyett, `1 támadás` elhasználásával fegyvert húzhatsz - próbadobás nélkül
+
+#### Ha megnyered a kezdeményezést
+
+- Előrántottad fegyvered, teljes, fegyveres harcértéked érvényesül
+- Ellenfeled támad azonnal
+- Utána visszatámadhatsz, nem veszítesz támadást
+
+#### Ha megnyered a kezdeményezést `+3` túldobással
+
+- Előrántottad fegyvered, teljes, fegyveres harcértéked érvényesül
+- TE támadsz azonnal
+
+### ⚜️ `2.` Kör közben, Akció után
+
+[Akciód](063_01_harci_kor.md#3-akci%C3%B3) után rögtön fegyvert húznál.\
+**Harcmodor képzettségpróbát** dobsz fegyverméret módosítókkal (KM dönt).
+
+```
+Harcmodor képzettségpróba
+ Célszám: 12
+
+alapdobás: Tőr méretű
+Hátrány-1: Kard méretű
+Hátrány-2: Csatabárd méretű
+```
+
+- Sikeres: előhúztad fegyvered, teljes harcértékeddel védekezhetsz
+- Sikertelen: [Pusztakezes harcértékeiddel](068_01_04_puszta_kez.md) védekezel a kör végéig
+
+🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
+
+### ⚜️ `3.`Mindkét fél fegyverrántást alkalmaz
+
+Kezdeményezés, mindkét félre érvényesek az `1.` pontnál leírt módosítók.
+
+### ⚜️ `4.`Meglepetésből, vagy észrevétlen fegyverrántás
+
+Beszélgetsz valakivel, váratlanul fegyvert rántasz és megszúrod.
+
+```
+Előny+1 KÉ
+```
+
+Nyert Kezdeményezés esetén [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) bónuszait kapod.
+
+### 🔆 Szálfegyverek
+
+Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás.
+
+<br />
+
+---
+## Közrefogás
+
+Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Fegyverelőny** harci helyzetét.
+
+❌ Kizárja: Földön fekve
+
+### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
+
+A hosszú kardos
+- "Fegyverelőny" helyzetből
+- "Fegyverazonosság" helyzetbe kerül
+
+### ⚡Példa: Két tőrös közrefog egy lándzsást
+
+A lándzsás
+- "Fegyverelőny" helyzetből
+- "Fegyverazonosság" helyzetbe kerül
+
+<br />
+
+---
+## Szörnyeteg elleni harc
+
+Bestia/szörny elleni küzdelem. A [Gladiátor: Bestiái](fortelyok.harci/gladiator.bestiai.md) fortély bónuszai aktívak.
+
+<br />
+
+---
+## Takarásban harcolás
+
+```
+Hátrány-1 TÉ dobásra
+VÉ: +5
+```
+
+🔆 Példa: kapu, belógó falrész mögül harcolsz.
+
+❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás, Belharci helyzet
+
+<br />
+
+---
+## Védő Érték kiterjesztése másra
+
+```
+Többszörös támadás elvesztése
+VÉ veszteség duplázódik
+```
+
+Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
+
+🔆 A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
+
+❌ Kizárja: Földön fekve
+
+<br />
+
+---
+## Vadállatok elleni harc
+
+```
+Harcmodor: Közelharc
+Manőver: Belharcba kerülés
+
++ Belharcos fortély - 2.fok
+  bónuszai
+```
+
+Sokféle állat van, ezért nem lehet egységes szabályt alkotni. Az állatok nagy része olyan harcmodort folytat, ami a **Közelharc** + **Belharci helyzet**nek felel meg leginkább.
+
+---
+
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
+## File: md/065_03_03_negativ_helyzetek.md
+
+# Negatív helyzetek
+
+## Csúszós talaj
+
+```
+Hátrány-1 Támadó dobásra
+```
+
+Addig tart, amíg a csúszós felületen áll, mozog a karakter.
+
+<br />
+
+---
+## Elvesztett egyensúly
+
+```
+Hátrány-1 Támadó dobásra
+Többszörös támadás elvesztése
+Mozgás - feleződik
+```
+
+A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
+
+❌ Kizárja: Magasabbról, Levegőből támadás
+
+<br />
+
+---
+## Földön fekve
+
+```
+Hátrány-2 TÉ dobásra
+VÉ veszteség duplázódik
+```
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Helyhez kötve, VÉ kiterjesztés, Közrefogás
+
+<br />
+
+---
+## Gyengébb kéz
+
+```
+Hátrány-1 Támadó dobásra
+
+Megszűnteti: Kétkezesség fortély
+```
+
+🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
+
+<br />
+
+---
+## Helyhez kötve
+
+```
+Hátrány-1 TÉ dobásra
+VÉ veszteség duplázódik
+```
+
+Enyhíti: [Helyhez kötve fejlesztése](fortelyok.harci/helyhez_kotve_fejlesztese.md) fortély
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
+
+<br />
+
+---
+## Lények méret különbsége
+
+Az egyes fajokat méret kategóriákba osztályozzuk.
+
+```
+1: Bögöly
+2: Erdőpille
+3: Goblin, Gnóm
+4: Ember, Törpe, Ork
+5: Ogár
+6: Wyvern
+7: Sárkány
+```
+
+```
+Minden egyes kategória
+  különbségnél a nagyobb
+  lény +1 VÉ csökkentést okoz
+```
+
+### ⚡ Példa
+
+```
+Goblin vs Ogár
+  2 kategória különbség
+
+Ogár
+  +2 VÉ csökkentés bónusz
+```
+
+### Fegyverméret-különbség és lények mérete
+
+A [Fegyverméret-különbség](065_03_04_fegyver_harci_helyzetek.md#fegyverviszony) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
+
+<br />
+
+---
+## Vakharc - félhomályban
+
+```
+Hátrány-1 TÉ dobásra
+```
+
+🔆 Mérsékli: [Vakharc fejlesztése](fortelyok.harci/vakharc_fejlesztese.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
+
+<br />
+
+---
+## Vakharc - sötétben
+
+```
+Hátrány-2 TÉ dobásra
+```
+
+🔆 Mérsékli: [Vakharc fejlesztése](fortelyok.harci/vakharc_fejlesztese.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
+
+<br />
+
+---
+## Tűz ruhán - ég
+
+Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
+
+```
+Hátrány-1 Támadó dobásra
+
+-5 + k20 SP / kör
+```
+
+#### ✖️ Megszűntetése (eloltás)
+
+```
+Harcban: 1 kör
+Harcon kívül: 1 kör
+```
+
+<br />
+
+---
+## Tűz ruhán - lángol
+
+Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
+
+```
+Hátrány-2 Támadó dobásra
+
+0 + k20 SP / kör
+```
+
+#### ✖️ Megszűntetése (eloltás)
+
+```
+Harcban: Nem lehetséges
+Harcon kívül: 2 kör,
+  külső segítség szükséges
+```
+
+<br />
+
+---
+## Vér elvakít
+
+```
+Hátrány-1 Támadó dobásra
+Hátrány-1 Érzék (Látás)
+```
+
+### ✖️ Megszűntetése harcban
+
+1` támadás feláldozásáért kitörölheted szemedből a vért.
+
+---
+
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
+## File: md/065_03_04_fegyver_harci_helyzetek.md
+
+# Fegyverrel kapcsolatos helyzetek
+
+Fegyver-specifikus harci helyzetek (státuszok).
+
+## Fegyverviszony
+
+A felek által forgatott fegyverek hosszának egymáshoz mért viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket. Tehát a VÉ csökkentés esetén igaz a "*A hosszabb fegyver jobb*" mondás - de ne feledjük, más-más szituációkban előnybe kerülhetnek a rövidebb fegyverek is.
+
+### Fegyverhátrány
+
+Fegyvered mérete legalább `2 fegyverhossz-kategóriával` rövidebb ellenfeledénél.
+A `VÉ` csökkentést tekintve hátrányban vagy a **Fegyverazonossághoz** képest, viszont vannak szituációk, mint például a [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-), ahol korlátozó tényező lehet.
+
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
+
+```
+k20P
+```
+
+### Fegyverazonosság
+
+Fegyvered azonos hosszú, vagy a különbség kevesebb, mint `2 fegyverhossz-kategória` ellenfeledénél. Ha egy karakter Fegyverazonosság helyzetben van, akkor nyilván ellenfele is csak abban lehet.
+
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
+
+```
+1 + k20P
+```
+
+### Fegyverelőny
+
+Fegyvered mérete legalább `2 fegyverhossz-kategóriával` hosszabb ellenfeledénél. **Csak akkor** kerül valaki Fegyverelőnybe - és így a másik Fegyverhátrányba - ha ez a fegyverhossz-kategória különbség megvan.
+
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
+
+```
+2 + k20P
+```
+
+<br />
+
+---
+## Gyengébb kéz
+
+```
+Hátrány-1 TÉ dobásra
+```
+
+🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
+
+<br />
+
+---
+## Hajítás alkalmatlan fegyverrel
+
+```
+Hátrány-2 Sebzésdobásra
+Hátrány-2 CÉ dobásra
+Fegyver CÉ = 0
+SP: fegyver eredeti sebzése - 5
+```
+
+⚡ Példa: hosszú kard hajítása
+
+🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély
+
+---
+## Hajítás nem dobásra készített tárgyakkal
+
+```
+Hátrány-1 CÉ dobásra
+Hátrány-1 Sebzésdobásra
+
+Fegyver CÉ = 0
+SP: -5 + k20 (FP vagy ÉP: KM dönt)
+```
+
+⚡ Példa: sámli hajítása
+
+🔆 Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
+
+🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) fortély
+
+<br />
+
+---
+## Képzetlen fegyverhasználat
+
+→ [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+
+🔆 `3.szint` alatti kapcsolódó [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) képzettségnél
+
+<br />
+
+---
+## Pusztakezes harc
+
+Egy fegyvertelen harcos jelentős hátrányban van egy fegyveressel szemben, ezért negatívak a [Puszta kéz](068_02_kozelharci_fegyverek.md) harcértékei.
+
+```
+Puszta kéz harcértékei
+
+KÉ: -3, TÉ: -3, VÉ: -3
+```
+
+🔆 Kapcsolódik:
+
+- [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortély
+- [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet), ahol a Puszta kéz harcértékei `0`-ra emelkednek és járnak a **Belharcból** eredő esetleges módosítók is.
+
+🔆 A **Puszta kéz** "egykezes" fegyvernek számít, tehát **nem** lehet vele **Kétkezes harcot** folytatni
+
+<br />
+
+---
+## Sebzéstípusok
+
+### Sebzéstípus: elsődleges
+
+```
+Sima Sebzésdobás
+```
+
+Fegyvered elsődleges sebzési típusával támadsz. Például "Hosszú kard: Vágás".
+
+### Sebzéstípus: másodlagos
+
+Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Szúrás".
+
+```
+Hátrány-1 Sebzésdobásra
+```
+
+### Sebzéstípus: alkalmatlan
+
+```
+Hátrány-2 Sebzésdobásra
+```
+
+Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard: Zúzás".
+
+---
+
+🔗 [Harci helyzetek](065_03_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
+## File: md/065_04_harc_alakzatban.md
 
 ## Harc alakzatban
 
@@ -23697,7 +23817,7 @@ Ennyi jön le VÉ csökkentésedből
 -3: az Alakzat Teljes Védekezésben
 ```
 
-Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, mint normál harc esetében - pengeméret különbségtől függően, viszont:
+Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, mint normál harc esetében - fegyverméret különbségtől függően, viszont:
 
 Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat által elszenvedett `VÉ` csökkenésből mindig `-2` levonandó, mivel egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb a "kifulladására" játszani.
 
@@ -23708,18 +23828,18 @@ Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-véde
 <br />
 
 ---
-## VÉ csökkentés alakzat által és pengeméret különbségek
+## VÉ csökkentés alakzat által és fegyverméret különbségek
 
-Az alakzat jellemző főfegyvere vs egyén **pengehosszának** különbsége adja a pengeméret különbség megállapítását.
+Az alakzat jellemző főfegyvere vs egyén **fegyverhosszának** különbsége adja a fegyverméret különbség megállapítását.
 
 Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix érték, amely az alábbiak szerint kerül kiszámításra.
 
 ### Alakzat VÉ csökkentése (fix értékek)
 
 ```
-3 VÉ: Alakzat Pengehátrányban
-3 VÉ: Alakzat Alappengénél
-4 VÉ: Alakzat Pengeelőnyben
+3 VÉ: Alakzat Fegyverhátrányban
+3 VÉ: Alakzat Fegyverazonosságnál
+4 VÉ: Alakzat Fegyverelőnyben
 ```
 
 ### Túlerő módosítója
@@ -23829,64 +23949,14 @@ VÉ csökkentés/kör: 2
 
 ---
 
-🔗 [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md) →
+🔗 [Kétkezes harc szabályai](065_05_ketkezes_harc.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 
 ---
 ---
-## File: md/065_04_00_fegyverfogas.md
-
-## Fegyverfogás
-
-A harci konfiguráció meghatározza, hogyan használod a fegyveredet (kezeidet) a küzdelemben. A konfiguráció a harc előtt vagy közben is változtatható (fegyverváltás, pajzs eldobása, stb.), de egy adott pillanatban mindig kizárólag egy konfiguráció érvényes.
-
-A lovas/léglovas harc nem ide tartozik, az egy harcpozíció (lásd [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)). A harcpozíció bármely itt leírt konfigurációval kombinálható.
-
----
-### Egyfegyveres
-
-Ez az alapértelmezett harci konfiguráció: egyetlen fegyvert forgatsz - mindegy, hogy egy, vagy két kézzel.
-
-**Ide tartoznak:**
-- Egykezes fegyverek (kard, tőr, buzogány, stb.)
-- Kétkezes fegyverek (kétkezes kard, lándzsa, alabárd)
-- Másfélkezes fegyverek két kézzel forgatva
-- Másfélkezes fegyverek egy kézzel forgatva
-
-A harcérték kalkulációnál az [alapeset](062_01_ke_te_ve_ce.md) érvényesül.
-
-A szabad kéz használható manőverekhez (Lefegyverzés, Lábkirántás segítés), de támadni vele nem tudsz (kivéve [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortéllyal).
-
----
-### [Kétkezes harc](065_04_04_ketkezes_harc.md)
-
-Mindkét kézben egy-egy fegyver. Bővebben lásd: [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md).
-
----
-### Fegyver + pajzs
-
-Egyik kezedben fegyver, a másikban pajzs. Bővebben lásd: [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
-
----
-### Fegyver + hárítófegyver
-
-Jobbik kezedben a fő fegyvered, a gyengébbikben egy hárítófegyver. Ez utóbbi kizárólag védekezésre szolgál, nem támadhatsz vele.
-
-Bővebben lásd: [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md).
-
-→ [Közelharci hárítófegyverek](068_02_kozelharci_fegyverek.md#közelharci-hárítófegyverek)\
-→ [Kardvívó hárítófegyverek](068_03_kardvivo_fegyverek.md#kardívó-hárítófegyverek)
-
----
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
-
----
----
-## File: md/065_04_04_ketkezes_harc.md
+## File: md/065_05_ketkezes_harc.md
 
 # Kétkezes harc szabályai
 
@@ -23908,29 +23978,26 @@ Nagyobb fegyver
 
 <br />
 
-## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverviszony)
+## SUM [Fegyverhossz](068_01_01_fegyverhossz_kategoriak.md)
 
-A két fegyver pengeméreteinek összege.
+A két fegyver "hossz" paraméterének összege.
 
 ```
-Max: 2 x 1 penge
+Max: 2 x 3 hossz
 
-SUM 2 penge felett
+SUM 6 hossz felett vagy Fegyverhossz > 6
   fegyverek harcértéke: 0
-
-"rövid" fegyverek
-  0 pengének számítanak
 ```
 
 <br />
 
 ## Fegyverméretek hatása [Harckeretre](063_04_tamadasok_szama_fegyverrel.md#harckeret)
 
- A két fegyver összpengeméretét (SUM) elosztjuk `0.5`-tel és ennyi lejön a Harckeretből.
+ A két fegyver összesített "hossz" paraméterét (SUM) `2`-vel osztjuk ↓ és ennyi lejön a Harckeretből.
 
 ```
--1: minden 0.5 penge után
-    (SUM pengeméretek)
+-1: minden 2 hossz után ↓
+    (SUM fegyverhossz)
 ```
 
 ### Fortélyok hatása [Harckeretre](063_04_tamadasok_szama_fegyverrel.md#harckeret)
@@ -23949,7 +24016,7 @@ SUM 2 penge felett
 ## Sebzés
 
 Mindig az ügyesebb kézben levő fegyver sebez.\
-Kivéve ha direkt a [Gyengébb kézzel](065_01_04_fegyver_harci_helyzetek.md#gyengébb-kéz) akarsz támadni.
+Kivéve ha direkt a [Gyengébb kézzel](065_03_04_fegyver_harci_helyzetek.md#gyengébb-kéz) akarsz támadni.
 
 <br />
 
@@ -23957,36 +24024,36 @@ Kivéve ha direkt a [Gyengébb kézzel](065_01_04_fegyver_harci_helyzetek.md#gye
 ### ⚡Példa: Harc 2 db tőrrel
 
 ```
+SUM Fegyverhossz
+  2 = 1 + 1
+```
+
+```
 Kétkezes harc: 2.fok
 → Fegyver harcértékek összeadódnak
 → Mf: csak 1x számít Tőrre
 
-Harckeret: +3
+Harckeret: +2
  +3: Kétkezes harc (2.fok)
- -0 = 0 / 0.5 (pengehossz után)
+ -1 = 2 / 2 (fegyverhossz után)
 
-```
-
-```
-SUM Pengeméret
-  0 = 0 + 0
 ```
 
 ### ⚡Példa: Szablya + tőr
+
+```
+SUM Fegyverhossz
+  4 = 3 + 1
+```
 
 ```
 Kétkezes harc: 3.fok
 → Fegyver harcértékek összeadódnak
 → Mf: Szablya ÉS Tőr is számít
 
-Harckeret: +1
+Harckeret: +2
  +4: Kétkezes harc (3.fok)
- -3 = 1.5 / 0.5 (pengehossz után)
-```
-
-```
-SUM Pengeméret
-  1 = 1 + 0
+ -2 = 4 / 2 (fegyverhossz után)
 ```
 
 ---
@@ -24153,7 +24220,7 @@ Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és 
 ---
 ## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
-[Meglepett](065_01_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
+[Meglepett](065_03_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
 - Kimarad a **Megakasztás** (`M`) fázis a védő oldalán (ha van)
 - **Végrehajtás** dobásnál továbbra is `TÉ:+4` + `Előny+1` a dobásra
 - Támadó tehet bele `Manőver Pontot`
@@ -24161,7 +24228,7 @@ Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és 
 
 ## ⚜️ Harci helyzetek és Manőverek - Orvtámadás
 
-Vannak Manőverek, amelyek [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetet igényelnek.
+Vannak Manőverek, amelyek [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetet igényelnek.
 
 ```
 (E)llenpróba dobás van csak
@@ -24432,7 +24499,7 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
 	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 
-**Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróbát dobtok. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóival.
+**Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróbát dobtok. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóival.
 
 **Kapcsolódik**: [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md) fortély
 
@@ -24533,7 +24600,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 
 **🟥 Erős követelmény**
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
-- egyik ellenfeled sem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben
+- egyik ellenfeled sem lehet [Fegyverelőnyben](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) veled szemben
 
 ❌ VÉ csökkentést az így végrehajtott támadás **NEM** okoz.
 
@@ -24550,9 +24617,9 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
   - ± **Erő** különbség
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény: Aktuális harcmodor - `5.szint`
-- 🟥 Erős követelmény: Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben
+- 🟥 Erős követelmény: Ellenfeled nem lehet [Fegyverelőnyben](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) veled szemben
 
-**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 **Kapcsolódik**: [Manőverfókusz: Földrevitel](fortelyok.harci/manoverfokusz_foldrevitel.md) fortély
 
@@ -24562,7 +24629,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 ### Kibontakozás
 
 - Nehézség: `5`
-  - ± `2`  (`1` penge különbségenként) - több támadónál a legnagyobb fegyver számít
+  - ± `2`  (`2` fegyverhossz-kategória különbségenként) - több támadónál a legnagyobb fegyver számít
   - `+2` minden további ellenfél után
   - `-2` minden szövetséges után, aki ellenfeleddel harcol
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
@@ -24591,7 +24658,7 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 	- Csak kétlábú ellenfelek ellen (több lábbal rendelkezőnél [Földrevitel](#földrevitel))
 - Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 
-**Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+**Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 <br />
 
@@ -24605,14 +24672,14 @@ Láncos fegyverekkel hajthatod végre.
 - 🟨 Normál követelmény: Használt láncos fegyverre [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) – `1.fok`
 - 🟥 Erős követelmény:
   - Láncos fegyver használata
-  - Minimum `0.5 penge` nagyságú fegyver ellen lehet csak használni
+  - Minimum `1` fegyverhossz-kategória nagyságú fegyver ellen lehet csak használni
 
 **Hatás**:
 - Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
 - Ha ellenfeled elengedi fegyverét, akkor gyakorlatilag sikeres [Lefegyverzéssé](#lefegyverz%C3%A9s) változik a Manőver
 - Ha továbbra is kezében tartja:
-  - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve) módosítói sújtják
-  - Ha másik keze üres, akkor [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc) harcértékekkel harcol
+  - [Helyhez kötve](065_03_03_negativ_helyzetek.md#helyhez-kötve) módosítói sújtják
+  - Ha másik keze üres, akkor [Pusztakezes harc](065_03_04_fegyver_harci_helyzetek.md#pusztakezes-harc) harcértékekkel harcol
   - Kétkezes harc esetén a továbbiakban a másik kezében tartott fegyver harcértékeivel küzd.
 - a foglyul ejtett fegyverre a [Lefegyverezés](#lefegyverz%C3%A9s) Manőver csak `5`-ös Nehézségű
 - A fegyvert kiszabadítani [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s) Manőverrel lehet.
@@ -24659,9 +24726,9 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
     - `+0`: Sisak nélküli célpont
     - `+3`: Sisakos célpont, ha tarkón ütés lehetséges
 - Fázisok: `Végrehajtás, Ellenpróba`
-    - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás))
+    - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás))
 - 🟥 Erős követelmény:
-  - [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet
+  - [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet
   - Célpont elfszabású anatómiával
   - Zúzófegyver (akár fegyver markolat), vagy Puszta kéz mint támadó fegyver
 
@@ -24689,7 +24756,7 @@ Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 - Nehézség: `10-12` (A jel bonyolultságától függ)
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény: Mesterfegyver – `2.fok`
-- 🟥 Erős követelmény: legfeljebb `1` penge hosszú hegyes szúrófegyver
+- 🟥 Erős követelmény: legfeljebb `2` fegyverhossz-kategória hosszú hegyes szúrófegyver
 
 **Hatás**: Sikeres manőver esetén képes vagy mesterjeledet belekarcolni ellenfeled ruhájába vagy bőrébe (`1 ÉP`).
 
@@ -24707,7 +24774,7 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 - Fázisok: `E`
 
 - **🟥 Erős követelmény**: a környezetnek, harctérnek alkalmasnak kell lennie a hátbakerülésre. Ha nincs elég hely, a KM megtagadhatja a Manőver használatát.
-- **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról** bónuszait - attól függően, hogy milyen pozícióban van.
+- **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról** bónuszait - attól függően, hogy milyen pozícióban van.
 
 **Kapcsolódik**: [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md) fortély
 
@@ -24755,7 +24822,7 @@ Anyagok erőssége
   - Pajzshasználat – `2.fok`
 - 🟥 Erős követelmény: Nagy és Közepes pajzzsal lehetséges csak
 
-**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
+**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
 
 <br />
 
@@ -24813,25 +24880,25 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés + Ügyess
 - Fázisok:
   - Orvtámadás esetén: `Ellenpróba`
   - Nincs Orvtámadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
-- 🟥 Erős követelmény: [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás), VAGY [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet
+- 🟥 Erős követelmény: [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás), VAGY [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet
 
 **Hatás**:
 - Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
-- [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet)
-- [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
+- [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
+- [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
 
 <br />
 
 ---
 ### Távoltartás
 
-Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezében, akkor megpróbálhatod távoltartani őt, így nem tudja leadni támadását.
+Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, mint Ellenfeled kezében, akkor megpróbálhatod távoltartani őt, így nem tudja leadni támadását.
 
 - Nehézség: `5`
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás* Ellenpróba`
 - 🟨 Normál követelmény: Harcmodor - `5.szint`
-- 🟥 Erős követelmény: [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
+- 🟥 Erős követelmény: [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 
 **Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 
@@ -24886,7 +24953,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 <br />
 
 ---
-## [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet) mint követelmény
+## [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet) mint követelmény
 
 🟥 **Erős követelmény** mindegyik Belharcos Manővernek - kivéve a **Belharcba kerülést**. Enélkül a manőver nem kísérelhető meg.
 
@@ -24904,7 +24971,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
   említett körülmények összegzett értékére
 ```
 
-## [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
+## [Lények méret különbsége](065_03_03_negativ_helyzetek.md#lények-méret-különbsége)
 
 Amennyiben a lények között akár csak `1` kategória méret különbség is van, akkor ha...
 
@@ -24930,7 +24997,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 - Fázisok: `Megakasztás, Ellenpróba`
 - 🟥 Erős követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
 
-**Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci helyzetnél](065_01_02_semleges_helyzetek.md#belharci-helyzet)** leírt módosítók érvényesülnek.
+**Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci helyzetnél](065_03_02_semleges_helyzetek.md#belharci-helyzet)** leírt módosítók érvényesülnek.
 
 🔆 **Nagy siker**: `4`-gyel túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharci szituációba, szóval mindenképp dobjatok Ellenpróbát.
 
@@ -24963,7 +25030,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 **Hatás**:
 - Belharc közben fogást találsz ellenfeleden és átdobod a vállad felett, aki ezáltal földre kerül.
-- Innentől ellenfeled a [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói szerint harcol.
+- Innentől ellenfeled a [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói szerint harcol.
 
 <br />
 
@@ -24991,7 +25058,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
     - Fájdalomtűrés + Önuralom. Célszám: `15`
     - Körönként dobandó. Kudarc esetén képtelen vagy visszatámadni és mágiát, pszít használni, vagy bármilyen manővert alkalmazni.
 
-**Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet) megmarad.
+**Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet) megmarad.
 
 <br />
 
@@ -25003,7 +25070,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 - 🟨 Normál követelmény: Közelharc - `5.szint`
 
 **Hatás**: Sikeresen kigáncsoltad ellenfeled lábát, aki a földre zuhan.
-- [Harc földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+- [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 - [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver sikeres alkalmazásával kelhet fel
 
 Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_05_altalanos_manoverek.md#földrevitel) kell próbálkoznod.
@@ -25281,16 +25348,16 @@ Harcértékek
   = gyalogos harcértékek
   + Lovas harc fortély bónuszai
 
-Fegyverméretre +1 penge bónusz
+Fegyverméretre +2 bónusz
 
-Minimum pengeméret: 1
+Minimum fegyverméret: 3
 ```
 
 A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel harcolnál.
 
 🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély határozza meg a bónuszokat
 
-❌ [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról) harci helyzet NEM jár!
+❌ [Magasabbról](065_03_01_pozitiv_helyzetek.md#magasabbról) harci helyzet NEM jár!
 
 <br />
 
@@ -25311,7 +25378,7 @@ Lásd a [szituáció leírását](szituaciok/hatasrol_leeses.md)!
 ---
 ## Hátulról jövő támadások
 
-Itt a [Harci helyzetek](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) fejezetben leírt módosítók érvényesek.
+Itt a [Harci helyzetek](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) fejezetben leírt módosítók érvényesek.
 
 <br />
 
@@ -25471,7 +25538,7 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 - 🟥 Erős követelmény:
   - A **védekező gyalogos** végezheti (nem a lovas)
   - Szúró szálfegyver használata
-  - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) a lovashoz képest
+  - [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) a lovashoz képest
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed effektív sebzésétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba). Sikertelen manőver esetén a lovas zavartalanul leadhatja rád rohamozó támadását.
 
 <br />
@@ -25514,20 +25581,17 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 ### [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
 
-- [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
-- [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
-- [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
-- [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md)
-- [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
-- [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
-- [Íves fegyver](068_01_07_ives_fegyver.md)
-- [Puszta kéz](068_01_08_puszta_kez.md)
-- [Nyílpuskák](068_01_09_nyilpuskak.md)
-- [Érintő támadás](068_01_10_erinto_tamadas.md)
-- [Erőbónusz limit](068_01_11_erobonusz_limit.md)
-- [Átütés](068_01_12_atutes.md)
-- [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md)
-- [Fegyverek minősége (Ideája)](068_01_14_fegyverek_minosege_ideaja.md)
+- [Fegyverhossz kategóriák](068_01_01_fegyverhossz_kategoriak.md)
+- [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md)
+- [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md)
+- [Puszta kéz](068_01_04_puszta_kez.md)
+- [Nyílpuskák](068_01_05_nyilpuskak.md)
+- [Érintő támadás](068_01_06_erinto_tamadas.md)
+- [Erőbónusz limit](068_01_07_erobonusz_limit.md)
+- [Átütés](068_01_08_atutes.md)
+- [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md)
+- [Fegyverek minősége (Ideája)](068_01_10_fegyverek_minosege_ideaja.md)
+- [Fegyver extrák](068_01_11_fegyver_extrak.md)
 
 ---
 ### [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
@@ -25548,6 +25612,9 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 ### [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
 
 ---
+### [Fegyvergenerátor](068_10_fegyvergenerator.md)
+
+---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
@@ -25558,144 +25625,87 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 ## Fegyverek általános szabályai
 
-- [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
-- [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
-- [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
-- [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md)
-- [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
-- [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
-- [Íves fegyver](068_01_07_ives_fegyver.md)
-- [Puszta kéz](068_01_08_puszta_kez.md)
-- [Nyílpuskák](068_01_09_nyilpuskak.md)
-- [Érintő támadás](068_01_10_erinto_tamadas.md)
-- [Erőbónusz limit](068_01_11_erobonusz_limit.md)
-- [Átütés](068_01_12_atutes.md)
-- [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md)
-- [Fegyverek minősége (Ideája)](068_01_14_fegyverek_minosege_ideaja.md)
+- [Fegyverhossz kategóriák](068_01_01_fegyverhossz_kategoriak.md)
+- [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md)
+- [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md)
+- [Puszta kéz](068_01_04_puszta_kez.md)
+- [Nyílpuskák](068_01_05_nyilpuskak.md)
+- [Érintő támadás](068_01_06_erinto_tamadas.md)
+- [Erőbónusz limit](068_01_07_erobonusz_limit.md)
+- [Átütés](068_01_08_atutes.md)
+- [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md)
+- [Fegyverek minősége (Ideája)](068_01_10_fegyverek_minosege_ideaja.md)
+- [Fegyver extrák](068_01_11_fegyver_extrak.md)
 
 ---
 
-🔗 [Közelharci fegyverek](068_02_kozelharci_fegyverek.md) →
+🔗 [Fegyverhossz kategóriák](068_01_01_fegyverhossz_kategoriak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
----
----
-## File: md/068_01_01_fegyvermeretek_altalanos_harcertekek.md
 
-## Fegyverméretek, általános fegyver-harcértékek
-
-Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – méret szerint. A lentiek irányadó értékek, az egyes konkrét fegyverek számai ettől eltérnek, viszont új fegyver beillesztése a rendszerbe így gyerekjáték.
-
-```
-1 penge különbség
-(2 egység ugrás)
-
-TÉ: 3, VÉ: 3
-```
-
-<br />
-
-```
-rövid (0)
-  Tőr
-  TÉ: 2, VÉ: 1
-
-0.5 penge (1)
-  Rövid kard
-  TÉ: 3, VÉ: 2
-
-1 penge (2)
-  Hosszú kard
-  TÉ: 4, VÉ: 4
-
-1,5 penge (3)
-  Másfélkezes kard
-  TÉ: 6, VÉ: 5
-
-2 penge (4)
-  Kétkezes kard
-  TÉ: 7, VÉ: 7
-
-3 penge (6)
-  Alabárd
-  TÉ: 10, VÉ: 10
-
-4 penge (8)
-  Lándzsa, kopja
-  TÉ: 13, VÉ: 13
-
-5 penge (10)
-  Pika
-  TÉ: 16, VÉ: 16
-```
 
 ---
+---
+## File: md/068_01_01_fegyverhossz_kategoriak.md
 
-🔗 [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md) →
+## Fegyverhossz kategóriák
+
+A fegyverek mérete **fegyverhossz-kategóriákba** sorolható (`0`-`12`, a kategóriaszám nő a fegyver méretével). Ez a kategória-szám (nem fizikai hosszmérték) adja meg a [Fegyverviszony](064_02_03_vedo_ertek_csokkentese.md) (Fegyverelőny/Fegyverhátrány/Fegyverazonosság) kiszámításának alapját.
+
+```
+0. kategória
+- Kemény, tompa tárgy (Kő)
+- Kés
+
+1. kategória
+- Tőr
+- Furkósbot
+
+2. kategória
+- Romboló fegyverek
+- Rövid kard
+- Buzogány
+- Csatabárd
+- Csatacsákány
+
+3. kategória
+- Hosszú kard
+- Rapír
+- Fokos
+- Bot, közepes
+
+5. kategória
+- Másfélkezes kard
+
+7. kategória
+- Kétkezes kard
+
+9. kategória
+- Lándzsa (kétkezes)
+- Alabárd (kétkezes)
+
+12. kategória
+- Lándzsa-hosszú / Pika (kétkezes)
+- Hosszú bot
+```
+
+### Speciális kategória
+
+- Puszta kéz
+- Kopja
+- Ostromfegyverek (pika, stb.)
+
+---
+
+🔗 [Fegyverek sebzése](068_01_02_fegyverek_sebzese.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
----
----
-## File: md/068_01_02_fegyvermeret_elnevezesek.md
-
-## Fegyverméret elnevezések
-
-```
-rövid:     0,3 méterig
-0.5 penge: 0,4 - 0,7 méterig
-1 penge:   0,8 méter
-2 penge:   1,6 méter
-```
-
----
-
-🔗 [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md) →
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_03_jellemzo_pengehosszok.md
-
-## Jellemző pengehosszok
-
-```
-kard
-  méret: 0,75 - 0,9 méter
-  átlag: 0,8 méter
-  jellemzően: 1 penge
-  maximum: 1 penge
-
-alabárd
-  méret: 1,8 - 2,5 méter
-  átlag: 2,1 méter
-  jellemzően: 3 penge
-  maximum: 3 penge
-
-lándzsa
-  méret: 1,8 - 3,5 méter
-  átlag: 2,6 méter
-  jellemzően: 3 penge
-  maximum: 4 penge
-
-pika
-  méret: 4 - 7,0 méter
-  átlag: 5 méter
-  jellemzően: 5 penge
-  maximum: 6 penge
-```
-
----
-
-🔗 [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) →
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
----
----
-## File: md/068_01_04_fegyverek_sebzese.md
+## File: md/068_01_02_fegyverek_sebzese.md
 
 ## Fegyverek sebzése
 
@@ -25718,87 +25728,49 @@ Vágó+Íves: +2 SP páncél nélküli ellen
 
 ---
 
-🔗 [Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md) →
+🔗 [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_05_kulonleges_fegyver_szabaly.md
+## File: md/068_01_03_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md
 
-## KF: Különleges fegyver szabály
+## Másfélkezes és kétkezes fegyverek egy kézzel forgatva
 
-```
-Jelölése: KF
-
-Tradíció követelmény
-  S: Slan
-  O: Orgyilkos
-
-Követelmény: Mf - 2.fok
-```
-
-Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait.
-
-Ez részben előtörténet követelmény és kapcsolódó [Harci iskola](fortelyok.szabad/harci_iskola.md) 🔁 fortély felvételét követeli meg, amelyet fel kell tüntetni a karakterlapon, másrészt a fegyver Megjegyzés mezőjében szerepel, milyen más, számszerű követelménye van.
-
-Bánjunk a fenti követelményekkel szigorúan! Ha ezek nincsenek meg, a KM dönt, hogy milyen – alacsonyabb – harcértékekkel forgathatja a karakter a fegyvert – már ha egyáltalán...
-
-A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) `2.foka` az adott fegyverre. Ezen speciális fogásokat fortélyok formájában tanulhatja meg a harcos. Leírásukat lásd a [harci fortélyoknál](044_harci_fortelyok.md). Azok a fegyverek számítanak "Speciálisnak", amelyek komment mezőjében szerepel a `KF` jelölés.
-
----
-
-🔗 [Másfélkezes fegyverek egy kézzel](068_01_06_masfelkezes_fegyverek_egy_kezzel.md) →
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
----
----
-## File: md/068_01_06_masfelkezes_fegyverek_egy_kezzel.md
-
-## MK: Másfélkezes fegyverek egy kézzel forgatva
-
-Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyveredet, akkor az alábbi levonásokat kapod harcértékeidre:
+### Másfélkezes fegyverek egy kézzel forgatva
 
 ```
-Jelölése: MK
-
 → TÉ:-2,  VÉ:-2
-→ Átütés megszűnik (ha volt)
-→ Erőbónusz limit csökken
-  (általában 2-re)
-→ Sebesség marad
+→ Átütés: 0
+→ Erőbónusz limit: 2
+```
+
+#### Példa: Kard, másfélkezes
+
+```
+kétkezes:  TÉ:8, VÉ:8, SP:+6, Erőlimit:99, Átütés:0
+egykezes:  TÉ:6, VÉ:6, SP:+6, Erőlimit:2,  Átütés:0
+```
+
+### Kétkezes fegyverek egy kézzel forgatva
+
+```
+→ TÉ:-4,  VÉ:-4
+→ Átütés: 0
+→ Erőbónusz limit: 0
 ```
 
 ---
 
-🔗 [Íves fegyver](068_01_07_ives_fegyver.md) →
+🔗 [Puszta kéz](068_01_04_puszta_kez.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 
 ---
 ---
-## File: md/068_01_07_ives_fegyver.md
-
-## Íves fegyver
-
-```
-+2 SP páncélozatlan
-   ellenfél ellen
-```
-
-Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
-
----
-
-🔗 [Puszta kéz](068_01_08_puszta_kez.md) →
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
----
----
-## File: md/068_01_08_puszta_kez.md
+## File: md/068_01_04_puszta_kez.md
 
 ## Puszta kéz
 
@@ -25814,13 +25786,13 @@ SP: -5 + k20
 
 ---
 
-🔗 [Nyílpuskák](068_01_09_nyilpuskak.md) →
+🔗 [Nyílpuskák](068_01_05_nyilpuskak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_09_nyilpuskak.md
+## File: md/068_01_05_nyilpuskak.md
 
 ## Nyílpuskák
 
@@ -25835,13 +25807,13 @@ Ugyan veszélyes fegyverek, de újratöltésük körülményes:
 
 ---
 
-🔗 [Érintő támadás](068_01_10_erinto_tamadas.md) →
+🔗 [Érintő támadás](068_01_06_erinto_tamadas.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_10_erinto_tamadas.md
+## File: md/068_01_06_erinto_tamadas.md
 
 ## Érintő támadás
 
@@ -25849,13 +25821,13 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 
 ---
 
-🔗 [Erőbónusz limit](068_01_11_erobonusz_limit.md) →
+🔗 [Erőbónusz limit](068_01_07_erobonusz_limit.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_11_erobonusz_limit.md
+## File: md/068_01_07_erobonusz_limit.md
 
 ## Erőbónusz limit
 
@@ -25863,13 +25835,13 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 
 ---
 
-🔗 [Átütés](068_01_12_atutes.md) →
+🔗 [Átütés](068_01_08_atutes.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_12_atutes.md
+## File: md/068_01_08_atutes.md
 
 ## Átütés
 
@@ -25877,13 +25849,13 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 
 ---
 
-🔗 [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md) →
+🔗 [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_13_fegyver_mozgasgatlo_hatasa.md
+## File: md/068_01_09_fegyver_mozgasgatlo_hatasa.md
 
 ## Fegyver mozgásgátló hatása
 
@@ -25902,13 +25874,13 @@ Hatásuk [Felszerelésre](010_03_06_felszereles.md):
 
 ---
 
-🔗 [Fegyverek minősége](068_01_14_fegyverek_minosege_ideaja.md) →
+🔗 [Fegyverek minősége](068_01_10_fegyverek_minosege_ideaja.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
 ---
-## File: md/068_01_14_fegyverek_minosege_ideaja.md
+## File: md/068_01_10_fegyverek_minosege_ideaja.md
 
 ## Fegyverek minősége (Ideája)
 
@@ -25957,51 +25929,238 @@ Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet b
 
 ---
 ---
+## File: md/068_01_11_fegyver_extrak.md
+
+## Fegyver extrák
+
+Egyes fegyverek egyedi, szituációs hatásokat hordoznak - ezeket **extráknak** nevezzük. A fegyvertáblák "Extrák" oszlopa hivatkozik rájuk névvel - a hatás mindig szituációs (nem a alapértékeket módosít), és csak akkor lép életbe, ha a feltétele teljesül.
+
+## Felkészítés
+
+### Különleges felkészítés
+
+```
+Feltétel: Mesterfegyver fortély 1.fok az adott fegyverre
+        + harci iskola (KM dönti el, narratív)
+Hatás:    Mesterfegyver e fegyverre adott bónuszai megduplázódnak
+```
+
+A feltételek nélkül nem jár a bónusz. Lásd még: [Harci iskola](fortelyok.szabad/harci_iskola.md) 🔁 fortély.
+
+<br />
+
+---
+## Harci helyzet (szituációs, automatikus)
+
+### Beszorítható
+
+```
+Feltétel: Beszorított (2) státusz
+Hatás:    TÉ:0, VÉ:0 (nem forgatható rendesen)
+```
+
+Hosszú fegyver (`7/9 kategória`): beszorított helyzetben nem forgatható rendesen.
+
+### Páncéltalant jobban sebez
+
+```
+Feltétel: cél vérttelen
+Hatás:    SP:+3
+```
+
+Vérttelen célon nagyobb sebet ejt. Példa: Meneth, Béltépő.
+
+### Pocsék védekező (páncélos ellen)
+
+```
+Feltétel: cél páncélos
+Hatás:    VÉ:0
+```
+
+Páncélos ellenfél ellen a hárítási hátrány kiütközik.
+
+### Belharcban rések közt beszúr
+
+```
+Feltétel: Belharci helyzet
+Hatás:    célpont páncél SFÉ: 0
+```
+
+Belharcban, földön lévő ellenfélnél a rések közt szúr.
+
+### Pikás közrefogása
+
+```
+Feltétel: Közrefogás helyzet + választott támadó (KM/játékos)
+Hatás:    TÉ:0, VÉ:0 az egyik (választott) támadó ellen
+```
+
+Ha pikával harcolsz és közrefognak, a fegyver az egyik támadó ellen `TÉ/VÉ:0` harcértékű.
+
+### Kopja lovas rohamban
+
+```
+Feltétel: Lovas roham taktika
+Hatás:    SP:+10 (kopja alap Sebzéséhez)
+```
+
+Harci- és tornakopja is. A táblák `SP` mezője ezt NEM tartalmazza.
+
+### Láncos: pajzs VÉ felezés
+
+```
+Feltétel: cél pajzsot használ
+Hatás:    pajzs adta VÉ feleződik
+```
+
+A láncos fej megkerüli a pajzsot.
+
+### Pajzs megkerülése
+
+```
+Feltétel: cél pajzsot használ
+Hatás:    pajzs adta VÉ NEM számít ellene
+         (teljes megkerülés)
+```
+
+Hajlékony fegyver a pajzs mögé csap.
+
+### Fegyvertörés-immunis
+
+```
+Hatás: a Fegyvertörés manőver nem fog rajta
+```
+
+Hajlékony (nem merev) fegyver.
+
+### SFÉ dupla ellene
+
+```
+Feltétel: cél páncélos
+Hatás:    célpont páncél SFÉ: duplán számít
+```
+
+Íves rövid penge páncél ellen különösen rossz.
+
+### Beakad (~50%)
+
+```
+Hatás: sebző találat után ~50% esély, hogy beakad és
+       harc közben nem húzható ki (KM dönti el)
+```
+
+### Önsebzés-kockázat
+
+```
+Hatás: a támadó k20 egyben esélydobás:
+       Küszöb alá dobva magadat sebzed
+   Mf nélkül: 1-10
+   Mf 1.fok: 1-2
+   Mf 2-3.fok: nincs
+```
+
+Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md).
+
+<br />
+
+---
+## Tulajdonság (építési / minőségi opció)
+
+### Pontos
+
+```
+Feltétel: 'pengehegy' aktor + egykezes forgatás
+Hatás:    Precíz támadás manőver Ellenpróbájára +2
+```
+
+Precíziós szúróhegy.
+
+### Lefegyverezhetőbb
+
+```
+Feltétel: egykezes forgatás, passzív fél
+Hatás:    Lefegyverzés Ellenpróba -2
+          Fegyvertörés Ellenpróba -2
+```
+
+Az ilyen fegyvert az ellenfél könnyebben kiüti a kezedből, könnyebben eltöri.
+
+### Fanyél fegyvertörése könnyebb
+
+```
+Feltétel: passzív fél, ellenfél fegyvere fém
+Hatás:    Fegyvertörés Ellenpróba -2 (könnyebb eltörni)
+```
+
+Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
+
+### Zúzó fegyver ellen rosszabb
+
+```
+Feltétel: az ellenfél fegyverének sebzésjellege Zúzó
+Hatás:    az elszenvedett VÉ csökkenésed duplázódik
+```
+
+Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
+
+### Kampós véggel lábkirántás
+
+```
+Feltétel: 'kampós' aktor
+Hatás:    Lábkirántás manőver Ellenpróbájára +2
+```
+
+A fegyver kampós vége (pl. glaive-szerű penge).
+
+---
+
+🔗 [Közelharci fegyverek](068_02_kozelharci_fegyverek.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
 ## File: md/068_02_kozelharci_fegyverek.md
 
 ## Közelharci fegyverek
 
-```
-Közelharci fegyvernek számít:
- 0.5 pengehossznál rövidebb
-
-Lehetnek kivételek
-```
-
-```
-MK: Másfélkezes fegyver
-KF: Különleges fegyver
-```
-
-```
--1 pengehossz == speciális
-```
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver                 |  TÉ  |  VÉ  |     SP      | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  |  KF  | Kategória  | Speciális                                                                                                                                                                                                                                   |
-| :---------------------- | :--: | :--: | :---------: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :--: | :--------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Puszta kéz              | `-3` | `-3` |    `-5`     |   `6`    |     `Z`      |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | közelharci | `FP` sebesülést okoz. Minden `5.FP` `1 ÉP`.                                                                                                                                                                                                 |
-| Puszta kéz Belharcban   | `0`  | `0`  |     `0`     |   `6`    |     `Z`      |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | közelharci | `FP` sebesülést okoz. Minden `5.FP` `1 ÉP`.                                                                                                                                                                                                 |
-| Tőr                     | `2`  | `1`  |    `+1`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
-| Béltépő                 | `2`  | `0`  |    `+1`     |   `6`    |     `S`      |    `0`     |    egykezes    |       `2`       |  `0`   | `2`  | `0` | `0`  | közelharci | Ha minimum `11` SP sebzést elérsz, akkor további `+5 SP` jár.<br />Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />Páncéltalan esetén `K6` dobás:  `1` és `2` esetén a fegyver elakad a testben, ha volt sebzés. |
-| Dzsambia                | `2`  | `2`  |    `+0`     |   `6`    |   `V`/`S`    |    `0`     |    egykezes    |       `0`       |  `0`   | `1`  | `0` | `0`  | közelharci |                                                                                                                                                                                                                                             |
-| Garott                  | `0`  | `0`  | `+8` / `+4` |    -     |     `V`      |    `-1`    |    kétkezes    |       `5`       |  `0`   | `0`  | `0` | `0`  | közelharci | Lásd lenn a leírást.                                                                                                                                                                                                                        |
-| Hárító: Alkarvédő       | `0`  | `2`  |    `-10`    |   `99`   |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Csak ≤1 pengés fegyver ellen                                                                                                                                                                                                                |
-| Hárító: Tonfa           | `0`  | `2`  |    `-3`     |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Csak ≤1 pengés fegyver ellen                                                                                                                                                                                                                |
-| Kés                     | `1`  | `1`  |    `+0`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
-| Kriszkés                | `2`  | `1`  |  `+3`/`0`   |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | Páncél nélküli ellenfélnél, szúrás esetén `SP:+3`.<br />Páncélszúrásra nem használható.                                                                                                                                                     |
-| Levéltőr                | `2`  | `3`  |    `+1`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
-| Markolatgomb            | `-1` | `-2` |    `+0`     |   `6`    |     `Z`      |    `0`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | közelharci | Ugyanazok az értékei, mint a Vasökölnek.                                                                                                                                                                                                    |
-| Méregfog                | `1`  | `1`  |    `+0`     |   `6`    |     `S`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Ha sebzést okoz, befecskendezi a benne tárolt mérget.                                                                                                                                                                                       |
-| Pugoss                  | `3`  | `2`  |    `+1`     |   `6`    |   `S`/`V`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `F6` | közelharci | Ha a karakter nem ismeri a fegyver különleges fogásait akkor harcértékei sima tőré lesznek.                                                                                                                                                 |
-| Ramiera                 | `3`  | `3`  |    `+2`     |   `6`    |   `S`/`V`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `F6` | közelharci | G0rv1ki klán, vagy mester.<br />Tőrnél nehezebb elrejteni.<br />Ha a karakter nem ismeri a fegyver különleges fogásait akkor harcértékei sima tőré lesznek.                                                                                 |
-| Tőr, hárító             | `1`  | `3`  |    `+0`     |   `6`    |     `S`      |   `0.5`    |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Nagyon drága!                                                                                                                                                                                                                               |
-| Tőr, kígyó              | `2`  | `2`  |    `+2`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | közelharci | Áldozótőr. Vágásnál `SP:+0`                                                                                                                                                                                                                 |
-| Tőr, ököl               | `0`  | `-3` |    `+0`     |   `6`    |     `S`      |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci |                                                                                                                                                                                                                                             |
-| Tőr, páncélszúró        | `3`  | `0`  |    `+1`     |   `7`    |     `S`      |   `0.5`    |    egykezes    |       `5`       |  `0`   | `0`  | `0` | `0`  | közelharci | Áldozat földön van, Belharci szituáció, akkor automatikus "Precíz támadás" Manőver **Ellenpróba** siker. Ilyenkor az SFÉ ellene `0`, mert beszúr a rések közt.                                                                              |
-| Tőr, Slan               | `2`  | `1`  |    `+2`     |   `6`    |   `S`/`V`    |   `0.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci |                                                                                                                                                                                                                                             |
-| Vasököl / páncélkesztyű | `-1` | `-2` |    `+0`     |   `6`    |     `Z`      |    `0`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | közelharci |                                                                                                                                                                                                                                             |
+| Fegyver                 | Mód (Aktor)          | Jelleg       | Sebzéstípus | TÉ | VÉ |  SP | Erőlimit | Átütés | Seb. | Forgatás | Fh | FSZ | Extrák                                                                                    | Megj.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----------------------- | -------------------- | ------------ | ----------- | -: | -: | --: | -------: | -----: | ---: | -------- | -: | --: | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dzsambia                | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  2 |  2 |  +2 |        0 |      0 |    5 | egykezes |  1 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | pengehegy-apró       | szúró        | másodlagos  |  2 |  2 |  +2 |        0 |      0 |    5 | egykezes |  1 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Kés                     | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  1 |  1 |  +1 |        2 |      0 |    5 | egykezes |  0 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | pengehegy-apró       | szúró        | másodlagos  |  1 |  1 |  +1 |        2 |      0 |    5 | egykezes |  0 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Karambit                | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  1 |  1 |  +1 |        1 |      0 |    5 | egykezes |  0 |   0 | Lefegyverzése nehezebb; Páncéltalant jobban sebez; Övön hordható                          | Gyűrűs markolatú, görbe tépőpenge. Vágásra jó, szúrásra nem.                                                                                                                                                                                                                                                                                                                                                                                 |
+| Kő                      | buzogányfej-tompa    | zúzó         | elsődleges  |  0 | -2 |  -2 |       99 |      0 |    5 | egykezes |  0 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Béltépő                 | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  2 |  2 |  +3 |        0 |      0 |    6 | egykezes |  1 |   0 | Páncéltalant jobban sebez; Pocsék védekező (páncélos ellen); Beakad (~50%); Övön hordható |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Levéltőr                | pengehegy-apró       | szúró        | elsődleges  |  2 |  2 |  +2 |        2 |      0 |    6 | egykezes |  1 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | vágóél-egyenes-rövid | vágó-egyenes | másodlagos  |  3 |  3 |  +2 |        2 |      0 |    6 | egykezes |  1 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Pugoss                  | pengehegy-tőr        | szúró        | elsődleges  |  3 |  3 |  +4 |        3 |      0 |    6 | egykezes |  2 |   0 | Különleges felkészítés; Övön hordható                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | vágóél-egyenes-rövid | vágó-egyenes | másodlagos  |  4 |  4 |  +3 |        3 |      0 |    6 | egykezes |  2 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Puszta kéz              | ököl                 | zúzó · FP    | elsődleges  | -3 | -3 |  -5 |       99 |      0 |    5 | egykezes |  0 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Puszta kéz, belharcban  | ököl-belharc         | zúzó · FP    | elsődleges  |  0 |  0 |  +0 |       99 |      0 |    5 | egykezes |  0 |   0 | Övön hordható                                                                             | Belharci helyzet: a fegyvertelen büntetés nullázódik.                                                                                                                                                                                                                                                                                                                                                                                        |
+| Vasököl / páncélkesztyű | vasököl              | zúzó         | elsődleges  | -1 | -2 |  +0 |        5 |      0 |    5 | egykezes |  0 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Markolatgomb            | vasököl              | zúzó         | elsődleges  | -1 | -2 |  +0 |        5 |      0 |    5 | egykezes |  0 |   0 | Övön hordható                                                                             | A kard markolatgombjával ütés. Ugyanazok az értékei, mint a Vasökölnek.                                                                                                                                                                                                                                                                                                                                                                      |
+| Ramiera                 | pengehegy-tőr        | szúró        | elsődleges  |  3 |  3 |  +4 |        3 |      0 |    6 | egykezes |  2 |   0 | Különleges felkészítés; Övön hordható                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | vágóél-egyenes-rövid | vágó-egyenes | másodlagos  |  4 |  4 |  +3 |        3 |      0 |    6 | egykezes |  2 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Tőr                     | vágóél-egyenes-rövid | vágó-egyenes | elsődleges  |  3 |  3 |  +2 |       99 |      0 |    6 | egykezes |  1 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | pengehegy-tőr        | szúró        | másodlagos  |  2 |  2 |  +3 |       99 |      0 |    6 | egykezes |  1 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Méregfog                | vágóél-egyenes-rövid | vágó-egyenes | elsődleges  |  3 |  3 |  +2 |       99 |      0 |    6 | egykezes |  1 |   0 | Övön hordható                                                                             | Sebzéskor a tárolt mérget befecskendezi. Ár: 5x szorzó (méreg-tartó mechanizmus).                                                                                                                                                                                                                                                                                                                                                            |
+|                         | pengehegy-tőr        | szúró        | másodlagos  |  2 |  2 |  +3 |       99 |      0 |    6 | egykezes |  1 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Tőr, ököl               | pengehegy-rejtett    | szúró        | elsődleges  |  0 | -3 |  +0 |        2 |      0 |    5 | egykezes |  0 |   0 | Övön hordható                                                                             | Tenyérbe rejtett ököltőr.                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Tőr, kígyó              | pengehegy-apró       | szúró        | elsődleges  |  2 |  2 |  +2 |        1 |      0 |    6 | egykezes |  1 |   0 | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | vágóél-egyenes-rövid | vágó-egyenes | másodlagos  |  3 |  3 |  +2 |        1 |      0 |    6 | egykezes |  1 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Tőr, páncélszúró        | pengehegy-tőr        | szúró        | elsődleges  |  3 |  3 |  +4 |        5 |      0 |    6 | egykezes |  2 |   0 | Belharcban rések közt beszúr; Beakad (~50%); Övön hordható                                |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Tőr, Slan               | pengehegy-tőr        | szúró        | elsődleges  |  4 |  4 |  +6 |        2 |      0 |    6 | egykezes |  2 |   0 | Különleges felkészítés; Övön hordható                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                         | vágóél-egyenes-rövid | vágó-egyenes | másodlagos  |  5 |  5 |  +5 |        2 |      0 |    6 | egykezes |  2 |   0 |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Garott                  | kivétel              | vágó         | elsődleges  |  0 |  0 |  +8 |        5 |      0 |    - | kétkezes | -1 |   0 |                                                                                           | Sebzés: SP:+8 az 1. körben, +4 SP a további körökben (a fenti SP mező az 1. kör értékét adja). Siker esetén (Orvtámadás Harci helyzet követelmény) azonnal Belharci helyzet alakul ki, a hurok az áldozat nyakára feszül. Áldozat Leforgatás/Irányítás manőverrel terelhető. Szabadulás: Belharcból kibontakozás manőver, Nehézség:9 (magasabb, mint az alap). A Garott használója is kiszolgáltatott: Helyhez kötve módosítókat szenved el. |
+| Hárító: Alkarvédő       | kivétel              | zúzó         | elsődleges  |  0 |  2 | -10 |        0 |      0 |   99 | egykezes |  0 |   0 |                                                                                           | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-10 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.                                                                                                                                                                                         |
+| Hárító: Tonfa           | kivétel              | zúzó         | elsődleges  |  0 |  2 |  -3 |        0 |      0 |    6 | egykezes |  0 |   0 |                                                                                           | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-3 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni.                                                                                                                                                                                          |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26009,8 +26168,8 @@ KF: Különleges fegyver
 
 ### Garottos támadás
 
-- Követelmény: [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) Harci helyzet
-- Siker esetén azonnal [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
+- Követelmény: [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) Harci helyzet
+- Siker esetén azonnal [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
   - `+8 SP` az `1.körben`
   - `+4 SP`: további körökben
 - Áldozat [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgat%C3%A1sir%C3%A1ny%C3%ADt%C3%A1s) manőverrel terelhető, forgatható
@@ -26019,7 +26178,7 @@ Szabadulás a hurokból:
   - [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
   - Nehézség: `9` (magasabb)
 
-A Garott használója is kiszolgáltatott külső támadó ellen: [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve) módosítókat szenved el.
+A Garott használója is kiszolgáltatott külső támadó ellen: [Helyhez kötve](065_03_03_negativ_helyzetek.md#helyhez-kötve) módosítókat szenved el.
 
 <br />
 
@@ -26030,9 +26189,8 @@ Alapesetben hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverfo
 
 Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) fortélyt, akkor az ott leírtak szerint a gyengébb kezedben forgathatsz hárítófegyvert - de továbbra sem támadhatsz vele.
 
-Ha mindkét karon/kézben az alábbi fegyverek vannak, akkor is **csak** a fenti harcértékek az irányadóak, további bónusz **nem** jár.
+Ha mindkét karon/kézben az alábbi fegyverek vannak, akkor is **csak** a fenti harcértékek az irányadóak, további bónusz **nem** jár:
 
-A fenti listában ez a két hárítófegyver szerepel:
 - Hárító: Alkarvédő
 - Hárító: Tonfa
 
@@ -26049,51 +26207,65 @@ A fenti listában ez a két hárítófegyver szerepel:
 
 ## Kardvívó fegyverek
 
-```
-MK: Másfélkezes fegyver
-
-Íves fegyver: [0;1]
-
-KF: Különleges fegyver
-```
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver                | TÉ  | VÉ  |  SP   | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  |  KF  | Kategória | Speciális                                                                                                                                                                                                                                                                               |
-| ---------------------- | :-: | :-: | :---: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :--: | :-------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kard, dzsenn szablya   | `5` | `5` | `+4`  |   `6`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, emrelin          | `5` | `4` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, fejvadász        | `3` | `4` | `+3`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `O6` | kardvívó  | G0rv1ki klánnal, vagy mesterrel.<br />Egyébként rövidkard harcértékek.<br />Hárítófegyverként is használható.                                                                                                                                                                           |
-| Kard, handzsár         | `5` | `3` | `+4`  |   `7`    |     `V`      |    `1`     |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, hiequar          | `4` | `3` | `+4`  |   `7`    |   `S`/`V`    |    `1`     |    egykezes    |       `3`       |  `2`   | `0`  | `0` |      | kardvívó  | Elfek használják. Előtörténet!                                                                                                                                                                                                                                                          |
-| Kard, hosszú           | `4` | `4` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | A legelterjedtebb kard                                                                                                                                                                                                                                                                  |
-| Kard, jatagán          | `3` | `2` | `+1`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, kétkezes         | `7` | `5` | `+8`  |   `9`    |   `V`/`S`    |    `2`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Ha közrefogják a forgatót, fegyverének VÉ-je `0`-ra zuhan.<br />Erő követelmény: `+2`.<br />Edzettség követelmény: `+1`                                                                                                                                                                 |
-| Kard, khossas          | `4` | `3` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Elfek használják. Előtörténet!                                                                                                                                                                                                                                                          |
-| Kard, kígyó            | `3` | `4` | `+3`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `1`       |  `0`   | `1`  | `0` | `0`  | kardvívó  | Szúró sebzés: `+5` SP; `IV`: ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái.                                                                                                                                                                                   |
-| Kard, Lagoss           | `6` | `5` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `F9` | kardvívó  | KF nélkül: Kard, Hosszú értékei                                                                                                                                                                                                                                                         |
-| Kard, lovag            | `6` | `4` | `+6`  |   `8`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `1`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, másfélkezes (2K) | `6` | `5` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, másfélkezes (1K) | `4` | `3` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `1` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, mesterkard (2K)  | `7` | `4` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, mesterkard (1K)  | `5` | `2` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `1` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, Pugoss           | `4` | `4` | `+3`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `F6` | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, rapír            | `4` | `4` | `+3`  |   `7`    |   `S`/`V`    |    `1`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Nemesemberek jellemző fegyvere valós harci körülmények között. Nem összetévesztendő a tőrkarddal.                                                                                                                                                                                       |
-| Kard, rövid            | `3` | `2` | `+2`  |   `7`    |   `S`/`V`    |   `0.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | -                                                                                                                                                                                                                                                                                       |
-| Kard, Slan 2K          | `7` | `4` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `S6` | kardvívó  | Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.<br />[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban további `KÉ:+5` bónuszt kap (csak kétkezes forgatási módban). |
-| Kard, Slan 1K          | `5` | `3` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `3`       |  `2`   | `0`  | `1` | `S6` | kardvívó  | Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.                                                                                                                                                                            |
-| Kard, Slan rövid       | `3` | `2` | `+4`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `S6` | kardvívó  | Lásd Slan kard.                                                                                                                                                                                                                                                                         |
-| Kard, Slan csatakard   | `8` | `7` | `+9`  |   `9`    |   `V`/`S`    |    `2`     |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `S9` | kardvívó  | Hihetetlen drága és ritka.<br />Csak két kézzel forgatható.                                                                                                                                                                                                                             |
-| Kard, szablya          | `4` | `4` | `+3`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `4`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Mara-sequor 1K         | `6` | `4` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `1` | `F9` | kardvívó  | Mágikus fém jellege már benne van a harcértékekben.                                                                                                                                                                                                                                     |
-| Mara-sequor 2K         | `7` | `5` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `F9` | kardvívó  | Mágikus fém jellege már benne van a harcértékekben.                                                                                                                                                                                                                                     |
-| Meneth                 | `3` | `2` | `+4`  |   `7`    |     `V`      |   `0.5`    |    egykezes    |     `99/0`      |  `0`   | `1`  | `0` | `0`  | kardvívó  | Ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái. `SFÉ` duplán számít ellene                                                                                                                                                                                     |
-| Predoci egyeneskard    | `5` | `4` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | -                                                                                                                                                                                                                                                                                       |
-| Sequor                 | `4` | `3` | `+4`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `F9` | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Vívóbot                | `4` | `4` | `-5`  |   `7`    |     `Z`      |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Fából készült gyakorlófegyver.                                                                                                                                                                                                                                                          |
-| Tőrkard                | `4` | `4` | `+2`  |   `6`    |   `S`/`V`    |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Lásd a leírást.                                                                                                                                                                                                                                                                         |
-| Hárító: Csatakesztyű   | `0` | `2` |  `0`  |   `99`   |     `Z`      |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Hárító: Köpeny         | `0` | `3` | `-20` |   `99`   |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Legfeljebb 1 penge hosszú fegyverek ellen                                                                                                                                                                                                                                               |
+| Fegyver                   | Mód (Aktor)            | Jelleg       | Sebzéstípus | TÉ | VÉ |  SP | Erőlimit | Átütés | Seb. | Forgatás               | Fh | FSZ | Extrák                                                           | Megj.                                                                                                                                                                                                                                                |
+| ------------------------- | ---------------------- | ------------ | ----------- | -: | -: | --: | -------: | -----: | ---: | ---------------------- | -: | --: | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kard, dzsenn szablya      | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  4 |  4 |  +6 |       99 |      0 |    8 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |       99 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, emrelin             | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  6 |  6 |  +5 |       99 |      0 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |       99 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, handzsár            | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  4 |  4 |  +7 |       99 |      0 |    9 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, hiequar             | pengehegy-kard         | szúró        | elsődleges  |  4 |  4 |  +6 |        3 |      1 |    7 | egykezes               |  3 |   0 |                                                                  | elf                                                                                                                                                                                                                                                  |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  6 |  6 |  +5 |        3 |      0 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, hosszú              | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  6 |  6 |  +5 |       99 |      0 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |       99 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, jatagán             | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  3 |  3 |  +4 |        3 |      0 |    6 | egykezes               |  2 |   0 | Övön hordható                                                    |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  3 |  3 |  +4 |        3 |      0 |    6 | egykezes               |  2 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, kétkezes            | vágóél-egyenes-nagy    | vágó-egyenes | elsődleges  | 10 | 10 |  +9 |       99 |      0 |    9 | kétkezes               |  7 |   2 | Beszorítható; Felszerelés: 2; Akadály: 2                         |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  8 |  8 |  +8 |       99 |      1 |    9 | kétkezes               |  7 |   2 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, khossas             | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  6 |  6 |  +5 |        3 |      0 |    7 | egykezes               |  3 |   0 |                                                                  | elf                                                                                                                                                                                                                                                  |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |        3 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, kígyó               | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  4 |  4 |  +6 |        1 |      0 |    8 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |        1 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, lovag               | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  6 |  6 |  +6 |       99 |      0 |    8 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |       99 |      1 |    8 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, másfélkezes         | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  8 |  8 |  +6 |       99 |      0 |    7 | másfélkezes            |  5 |   1 | Felszerelés: 1                                                   |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  6 |  6 |  +7 |       99 |      1 |    7 | másfélkezes            |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  6 |  6 |  +6 |        2 |      0 |    7 | másfélkezes · 1 kézzel |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +7 |        2 |      0 |    7 | másfélkezes · 1 kézzel |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, mesterkard          | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  8 |  8 |  +7 |       99 |      0 |    8 | másfélkezes            |  5 |   1 | Felszerelés: 1                                                   |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  6 |  6 |  +7 |       99 |      1 |    8 | másfélkezes            |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  6 |  6 |  +7 |        2 |      0 |    8 | másfélkezes · 1 kézzel |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +7 |        2 |      0 |    8 | másfélkezes · 1 kézzel |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, predoci egyeneskard | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  6 |  6 |  +5 |       99 |      0 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |       99 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, rapír               | pengehegy-kard         | szúró        | elsődleges  |  4 |  4 |  +6 |        3 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  6 |  6 |  +5 |        3 |      0 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, rövid               | vágóél-egyenes-rövid   | vágó-egyenes | elsődleges  |  4 |  4 |  +3 |        2 |      0 |    6 | egykezes               |  2 |   0 | Övön hordható                                                    |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  3 |  3 |  +4 |        2 |      0 |    6 | egykezes               |  2 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, Slan                | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  7 |  7 | +10 |       99 |      0 |    7 | másfélkezes            |  5 |   1 | Különleges felkészítés; Felszerelés: 1                           |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  7 |  7 | +10 |       99 |      1 |    6 | másfélkezes            |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  5 |  5 | +10 |        2 |      0 |    7 | másfélkezes · 1 kézzel |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  5 |  5 | +10 |        2 |      0 |    6 | másfélkezes · 1 kézzel |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, Slan csatakard      | vágóél-íves-nagy       | vágó-íves    | elsődleges  | 10 | 10 | +13 |       99 |      0 |    8 | kétkezes               |  7 |   2 | Különleges felkészítés; Beszorítható; Felszerelés: 2; Akadály: 1 |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  | 10 | 10 | +12 |       99 |      1 |    7 | kétkezes               |  7 |   2 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, Slan rövid          | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  4 |  4 |  +6 |        3 |      0 |    6 | egykezes               |  2 |   0 | Különleges felkészítés; Övön hordható                            |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  4 |  4 |  +6 |        3 |      0 |    6 | egykezes               |  2 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Kard, szablya             | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  4 |  4 |  +6 |        4 |      0 |    8 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  4 |  4 |  +6 |        4 |      1 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Mara-sequor               | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  8 |  8 | +11 |       99 |      0 |    7 | másfélkezes            |  5 |   1 | Különleges felkészítés; Felszerelés: 1                           |                                                                                                                                                                                                                                                      |
+|                           | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  6 |  6 | +11 |        2 |      0 |    7 | másfélkezes · 1 kézzel |  5 |   1 |                                                                  |                                                                                                                                                                                                                                                      |
+| Meneth                    | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  3 |  3 |  +4 |       99 |      0 |    6 | egykezes               |  2 |   0 | Páncéltalant jobban sebez; SFÉ dupla ellene; Övön hordható       |                                                                                                                                                                                                                                                      |
+| Sequor                    | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  3 |  3 |  +4 |        3 |      0 |    6 | egykezes               |  2 |   0 | Övön hordható                                                    |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  3 |  3 |  +4 |        3 |      0 |    6 | egykezes               |  2 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Tőrkard                   | pengehegy-kard         | szúró        | elsődleges  |  4 |  4 |  +6 |        1 |      1 |    7 | egykezes               |  3 |   0 | Pontos; Lefegyverezhetőbb; Zúzó fegyver ellen rosszabb           |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  6 |  6 |  +5 |        1 |      0 |    7 | egykezes               |  3 |   0 |                                                                  |                                                                                                                                                                                                                                                      |
+| Vívóbot                   | botvég                 | zúzó         | elsődleges  |  3 |  3 |  +3 |        1 |      0 |    6 | egykezes               |  3 |   0 | Fanyél fegyvertörése könnyebb                                    |                                                                                                                                                                                                                                                      |
+| Hárító: Csatakesztyű      | kivétel                | zúzó         | elsődleges  |  0 |  2 |  +0 |       99 |      0 |   99 | egykezes               |  0 |   0 |                                                                  | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Nem támadhat vele - a fenti mód csak a passzív VÉ-bónuszt jelzi. Ha mindkét kéz hárítófegyvert forgat, akkor is csak ennyi VÉ jár, további bónusz nem.       |
+| Hárító: Köpeny            | kivétel                | zúzó         | elsődleges  |  0 |  3 | -20 |        0 |      0 |   99 | egykezes               |  0 |   0 |                                                                  | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-20 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni. |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26101,9 +26273,7 @@ KF: Különleges fegyver
 
 Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.
 
-- [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőver → Nehézség: `-2`
-- Könnyebb **ellene** a [Lefegyverzés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s) és [Fegyvertörés](066_05_altalanos_manoverek.md#fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
-- Zúzó fegyverek ellen: `VÉ` veszteség duplázódik a tőrkardos oldalán
+Extrái (részletek a [Fegyver extrák](068_01_11_fegyver_extrak.md) fejezetben): Pontos, Lefegyverezhetőbb, Zúzó fegyver ellen rosszabb.
 
 ---
 ## Kardívó hárítófegyverek
@@ -26127,25 +26297,30 @@ A fenti listában ez a két hárítófegyver szerepel:
 
 ## Lándzsavívó fegyverek
 
-❕A lándzsavívó harcmodorban forgatott szálfegyverek használatához jelentős helyre van szükség. Amint beszűkült téren kell forgatni őket, harcértékük `0`-ra zuhan! A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve végzi a harcot (folyosón előre/hátra küzdeni).
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
 
-A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md).
+❕A lándzsavívó harcmodorban forgatott szálfegyverek használatához jelentős helyre van szükség. Amint beszűkült téren kell forgatni őket, az ellenfél megkapja a [Beszorított ellenfél - hosszú fegyverrel](065_03_01_pozitiv_helyzetek.md#beszor%C3%ADtott-ellenf%C3%A9l---hossz%C3%BA-fegyverrel) Harci helyzetet. A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve végzi a harcot (folyosón előre/hátra küzdeni).
+
+A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md).
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver                |  TÉ  |  VÉ  |  SP   | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  |  Kategória  | Speciális                                                        |
-| ---------------------- | :--: | :--: | :---: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :---------: | ---------------------------------------------------------------- |
-| Alabárd S+V            | `10` | `10` | `+4`  |   `9`    |    `V/S`     |    `3`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Szúró és Vágó módban                                             |
-| Alabárd Z              | `7`  | `10` | `+4`  |   `9`    |     `Z`      |    `3`     |    kétkezes    |      `99`       |  `5`   | `0`  | `0` | `0` | lándzsavívó | Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel.      |
-| Bot, hosszú            | `6`  | `8`  | `+1`  |   `7`    |     `Z`      |    `2`     |    kétkezes    |       `2`       |  `0`   | `0`  | `0` | `0` | lándzsavívó |                                                                  |
-| Kopja, harci           | `13` | `13` | `+10` |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `+5`  | `0`  | `0` | `0` | lándzsavívó | Csak lovon használható.<br>Lándzsavívás harcmodorban forgatandó. |
-| Kopja, torna           | `13` | `13` | `-3`  |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Puhafa, lovagi tornákra való                                     |
-| Lándzsa, keskeny hegyű | `12` | `13` | `+2`  |   `7`    |     `S`      |    `4`     |    kétkezes    |      `99`       |  `4`   | `0`  | `0` | `0` | lándzsavívó | Kis területet roncsol, de páncélokat jól üti át                  |
-| Lándzsa, széles hegyű  | `12` | `13` | `+4`  |   `7`    |     `S`      |    `4`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Nagy területet roncsol, de nehezebben megy át a páncélokon       |
-| Pika, keskeny hegyű    | `16` | `16` | `+2`  |   `10`   |     `S`      |    `5`     |    kétkezes    |       `3`       |  `4`   | `0`  | `0` | `0` | lándzsavívó | Kis területet roncsol, de páncélokat jól üti át                  |
-| Pika, széles hegyű     | `16` | `16` | `+4`  |   `10`   |     `S`      |    `5`     |    kétkezes    |       `3`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Nagy területet roncsol, de nehezebben megy át a páncélokon       |
-| Szigony, egykezes      | `4`  | `5`  | `+2`  |   `8`    |     `S`      |    `2`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | `+5 SP` ha `SFÉ` után legalább `11 SP` lett a sebzés.            |
-| Szigony, kétkezes      | `7`  | `9`  | `+4`  |   `9`    |     `S`      |    `3`     |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `0` | lándzsavívó |                                                                  |
+| Fegyver                | Mód (Aktor)               | Jelleg    | Sebzéstípus | TÉ | VÉ |  SP | Erőlimit | Átütés | Seb. | Forgatás            | Fh | FSZ | Extrák                                                                  | Megj.                                                                                                                                                                                                                                                                                                  |
+| ---------------------- | ------------------------- | --------- | ----------- | -: | -: | --: | -------: | -----: | ---: | ------------------- | -: | --: | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Alabárd                | vágóél-íves-nagy          | vágó-íves | elsődleges  |  8 | 10 | +10 |       99 |      0 |   12 | kétkezes            |  9 |   2 | Beszorítható; Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 2 |                                                                                                                                                                                                                                                                                                        |
+|                        | lándzsahegy-rövid-átlagos | szúró     | másodlagos  |  8 | 10 |  +9 |       99 |      2 |   11 | kétkezes            |  9 |   2 |                                                                         |                                                                                                                                                                                                                                                                                                        |
+|                        | buzogányfej-tompa         | zúzó      | másodlagos  |  8 |  8 |  +9 |       99 |      0 |   11 | kétkezes            |  9 |   2 |                                                                         |                                                                                                                                                                                                                                                                                                        |
+| Bot, hosszú            | botvég                    | zúzó      | elsődleges  |  7 |  7 |  +5 |        2 |      0 |    7 | kétkezes            |  7 |   2 | Beszorítható; Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1 |                                                                                                                                                                                                                                                                                                        |
+| Lándzsa, átlagos       | lándzsahegy-rövid-átlagos | szúró     | elsődleges  | 10 | 10 |  +9 |       99 |      2 |    9 | kétkezes            |  9 |   2 | Beszorítható; Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1 |                                                                                                                                                                                                                                                                                                        |
+| Lándzsa, keskeny hegyű | lándzsahegy-rövid-keskeny | szúró     | elsődleges  | 10 | 10 |  +8 |       99 |      4 |    9 | kétkezes            |  9 |   2 | Beszorítható; Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1 |                                                                                                                                                                                                                                                                                                        |
+| Lándzsa, széles hegyű  | lándzsahegy-rövid-széles  | szúró     | elsődleges  | 10 | 10 | +10 |       99 |      0 |    9 | kétkezes            |  9 |   2 | Beszorítható; Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1 |                                                                                                                                                                                                                                                                                                        |
+| Pika, keskeny hegyű    | lándzsahegy-rövid-keskeny | szúró     | elsődleges  | 13 | 13 |  +8 |        3 |      4 |   10 | kétkezes            | 12 |   2 | Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 2               |                                                                                                                                                                                                                                                                                                        |
+| Pika, széles hegyű     | lándzsahegy-rövid-széles  | szúró     | elsődleges  | 13 | 13 | +10 |        3 |      0 |   10 | kétkezes            | 12 |   2 | Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 2               |                                                                                                                                                                                                                                                                                                        |
+| Szigony, egykezes      | lándzsahegy-tőrhossz      | szúró     | elsődleges  |  5 |  5 |  +8 |        3 |      0 |    7 | másfélkezes         |  5 |   1 | Fanyél fegyvertörése könnyebb; Felszerelés: 1                           |                                                                                                                                                                                                                                                                                                        |
+|                        | lándzsahegy-tőrhossz      | szúró     | elsődleges  |  3 |  3 |  +8 |        2 |      0 |    7 | másfélkezes · 1 kéz |  5 |   1 |                                                                         |                                                                                                                                                                                                                                                                                                        |
+| Szigony, kétkezes      | lándzsahegy-rövid-átlagos | szúró     | elsődleges  |  9 |  9 |  +8 |       99 |      2 |    9 | kétkezes            |  9 |   2 | Beszorítható; Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1 |                                                                                                                                                                                                                                                                                                        |
+| Kopja, harci           | kivétel                   | szúró     | elsődleges  | 13 | 13 | +10 |        0 |      5 |   99 | kétkezes            |  4 |   0 |                                                                         | Csak lovon használható, Lándzsavívás harcmodorban forgatandó. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza). |
+| Kopja, torna           | kivétel                   | szúró     | elsődleges  | 13 | 13 |  -3 |        0 |      0 |   99 | kétkezes            |  4 |   0 |                                                                         | Puhafa, lovagi tornákra való. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).                                 |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26172,22 +26347,25 @@ Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó
 
 ## Romboló fegyverek
 
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
+
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver             | TÉ  | VÉ  |  SP  | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Pengehossz | Kategória | Speciális                                                                         |
-| ------------------- | :-: | :-: | :--: | :------: | :----------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :--------: | :-------: | --------------------------------------------------------------------------------- |
-| Balta               | `2` | `0` | `+2` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0` |    `0`     |  romboló   |                                                                                   |
-| Bot, rövid          | `3` | `2` | `-3` |   `6`    |     `Z`      |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` |   `0.5`    |  romboló   |                                                                                   |
-| Bot, furkós         | `3` | `2` | `-1` |   `7`    |     `Z`      |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0` |    `1`     |  romboló   |                                                                                   |
-| Buzogány, egykezes  | `4` | `2` | `+4` |   `7`    |     `Z`      |    egykezes    |       `4`       |  `0`   | `0`  | `0` | `0` |    `1`     |  romboló   |                                                                                   |
-| Buzogány, kétkezes  | `7` | `2` | `+8` |   `9`    |     `Z`      |    kétkezes    |      `99`       |  `5`   | `0`  | `0` | `0` |   `1.5`    |  romboló   | **Erő** követelmény:`+2`                                                          |
-| Buzogány, láncos    | `6` | `2` | `+4` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0` |    `1`     |  romboló   | Ellene az ellenfél Pajzs VÉ fele számít csak!                                     |
-| Buzogány, shadleki  | `6` | `3` | `+5` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `3`   | `0`  | `0` | `0` |    `1`     |  romboló   |                                                                                   |
-| Buzogány, tollas    | `3` | `1` | `+4` |   `6`    |     `Z`      |    egykezes    |       `4`       |  `2`   | `0`  | `0` | `0` |   `0.5`    |  romboló   |                                                                                   |
-| Csatabárd, egykezes | `4` | `2` | `+4` |   `7`    |     `V`      |    egykezes    |       `4`       |  `2`   | `0`  | `0` | `0` |   `0.5`    |  romboló   |                                                                                   |
-| Csatabárd, kétkezes | `6` | `3` | `+8` |   `9`    |     `V`      |    kétkezes    |      `99`       |  `4`   | `0`  | `0` | `0` |   `1.5`    |  romboló   |                                                                                   |
-| Csatacsákány        | `5` | `2` | `+5` |   `8`    |     `S`      |    egykezes    |      `99`       |  `10`  | `0`  | `0` | `0` |    `1`     |  romboló   | Nagyon vérzik.<br />`50%` az esély, hogy beragad és nem lehet kihúzni harc közben |
-| Harci kalapács      | `7` | `2` | `+7` |   `9`    |     `Z`      |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` |   `1.5`    |  romboló   | **Erő** követelmény:`+2`                                                          |
+| Fegyver             | Mód (Aktor)               | Jelleg    | Sebzéstípus | TÉ | VÉ | SP | Erőlimit | Átütés | Seb. | Forgatás            | Fh | FSZ | Extrák                                       | Megj. |
+| ------------------- | ------------------------- | --------- | ----------- | -: | -: | -: | -------: | -----: | ---: | ------------------- | -: | --: | -------------------------------------------- | ----- |
+| Balta               | vágóél-íves-rövid         | vágó-íves | elsődleges  |  2 |  2 | +4 |       99 |      0 |    7 | egykezes            |  2 |   0 | Övön hordható                                |       |
+| Bot, furkós         | botvég                    | zúzó      | elsődleges  |  3 |  3 | +3 |        2 |      0 |    6 | egykezes            |  3 |   0 | Fanyél fegyvertörése könnyebb                |       |
+| Bot, rövid          | botvég                    | zúzó      | elsődleges  |  2 |  2 | +1 |        0 |      0 |    4 | egykezes            |  2 |   0 | Fanyél fegyvertörése könnyebb; Övön hordható |       |
+| Buzogány, egykezes  | buzogányfej-tompa         | zúzó      | elsődleges  |  3 |  1 | +6 |        4 |      0 |    8 | egykezes            |  3 |   0 |                                              |       |
+| Buzogány, kétkezes  | buzogányfej-tompa         | zúzó      | elsődleges  |  7 |  5 | +9 |       99 |      0 |   10 | kétkezes            |  7 |   2 | Beszorítható; Felszerelés: 2; Akadály: 1     |       |
+| Buzogány, láncos    | buzogányfej-tompa         | zúzó      | elsődleges  |  3 |  1 | +6 |       99 |      0 |    8 | egykezes            |  3 |   0 | Láncos: pajzs VÉ felezés                     |       |
+| Buzogány, shadleki  | buzogányfej-szöges        | zúzó      | elsődleges  |  3 |  0 | +5 |       99 |      2 |    8 | egykezes            |  3 |   0 |                                              |       |
+| Buzogány, tollas    | buzogányfej-szöges        | zúzó      | elsődleges  |  2 | -1 | +3 |        4 |      2 |    6 | egykezes            |  2 |   0 | Övön hordható                                |       |
+| Csatabárd, egykezes | vágóél-íves-átlagos       | vágó-íves | elsődleges  |  2 |  2 | +4 |        4 |      1 |    8 | egykezes            |  2 |   0 | Övön hordható                                |       |
+| Csatabárd, kétkezes | vágóél-íves-nagy          | vágó-íves | elsődleges  |  5 |  5 | +7 |       99 |      2 |   10 | másfélkezes         |  5 |   1 | Felszerelés: 1; Akadály: 2                   |       |
+|                     | vágóél-íves-nagy          | vágó-íves | elsődleges  |  3 |  3 | +7 |        2 |      0 |   10 | másfélkezes · 1 kéz |  5 |   1 |                                              |       |
+| Csatacsákány        | lándzsahegy-rövid-keskeny | szúró     | elsődleges  |  3 |  3 | +5 |       99 |      4 |    7 | egykezes            |  3 |   0 | Beakad (~50%); Akadály: 1                    |       |
+| Harci kalapács      | buzogányfej-tompa         | zúzó      | elsődleges  |  7 |  5 | +9 |       99 |      0 |   10 | kétkezes            |  7 |   2 | Beszorítható; Felszerelés: 2; Akadály: 2     |       |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26204,13 +26382,15 @@ Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó
 
 ## Ostorharc fegyverek
 
+A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyvergenerátorrával](068_10_fegyvergenerator.md).
+
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver   |  TÉ  |  VÉ  |  SP  | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Pengehossz | Kategória | Speciális                                                            |
-| --------- |:----:|:----:|:----:|:--------:|:------------:|:--------------:|:---------------:|:------:|:----:|:---:|:---:|:----------:|:---------:| -------------------------------------------------------------------- |
-| Korbács   | `3`  | `0`  | `-1` |   `6`    |     `Z`      |    egykezes    |       `2`       |  `0`   | `1`  | `0` | `0` |    `1`     | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
-| Ostor     | `5`  | `2`  | `+1` |   `8`    |     `Z`      |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `0` |    `3`     | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
-| Ostorkard | `10` | `10` | `+3` |   `8`    |     `V`      |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0` |    `3`     | ostorharc | Minimum `Mf:1.fok` nélkül `30%` esély az önsebzésre                  |
+| Fegyver   | Mód (Aktor)         | Jelleg    | Sebzéstípus | TÉ | VÉ | SP | Erőlimit | Átütés | Seb. | Forgatás | Fh | FSZ | Extrák                                                                                   | Megj.                  |
+| --------- | ------------------- | --------- | ----------- | -: | -: | -: | -------: | -----: | ---: | -------- | -: | --: | ---------------------------------------------------------------------------------------- | ---------------------- |
+| Korbács   | botvég              | zúzó      | elsődleges  |  3 |  1 | +3 |        2 |      0 |    7 | egykezes |  3 |   0 | Pajzs megkerülése; Fegyvertörés-immunis                                                  |                        |
+| Ostor     | botvég              | zúzó      | elsődleges  |  9 |  7 | +5 |        3 |      0 |    9 | kétkezes |  9 |   2 | Beszorítható; Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2                    |                        |
+| Ostorkard | vágóél-íves-átlagos | vágó-íves | elsődleges  |  9 |  7 | +7 |       99 |      0 |   11 | kétkezes |  9 |   2 | Önsebzés-kockázat; Beszorítható; Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2 | Urumi néven is ismert. |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26325,7 +26505,7 @@ Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász löved
 ---
 ### Lövész lőfegyverek
 
-🔆Lásd: [Nyílpuskák](068_01_09_nyilpuskak.md) fejezetet.
+🔆Lásd: [Nyílpuskák](068_01_05_nyilpuskak.md) fejezetet.
 
 🔆 Az Erőbónusz **nem** adódik hozzá a Lövész lőfegyverek **SP** értékéhez.
 
@@ -26401,17 +26581,39 @@ Túlcsordulás esetén
 
 <!-- tag: md_table_pajzs_start -->
 
-| Pajzs         | TÉ  |  VÉ  | Sebesség |  SP  | Erőbónusz limit | Speciális                                                                                                                          |
-| ------------- | :-: | :--: | :------: | :--: | :-------------: | :--------------------------------------------------------------------------------------------------------------------------------- |
-| Kis Pajzs     | `1` | `3`  |   `6`    | `+0` |       `0`       | -                                                                                                                                  |
-| Közepes Pajzs | `1` | `10` |   `7`    | `+0` |       `2`       | `Erő követelmény: +1`                                                                                                              |
-| Nagy Pajzs    | `1` | `16` |   `9`    | `+0` |       `4`       | `Erő követelmény: +2`<br>Legfeljebb `0.5 penge` hosszú fegyver lehet a másik kézben. Minden plusz `0.5 penge` `TÉ:-3` büntetést ad |
+| Pajzs         |  TÉ |  VÉ | Sebesség |  SP | Erőbónusz limit | Speciális                                                                                                                                          |
+| ------------- | --: | --: | -------: | --: | --------------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kis Pajzs     |   1 |   3 |        6 |  +0 |               0 | -                                                                                                                                                  |
+| Közepes Pajzs |   1 |  10 |        7 |  +0 |               2 | Erő követelmény: +1.                                                                                                                               |
+| Nagy Pajzs    |   1 |  16 |        9 |  +0 |               4 | Erő követelmény: +2. Legfeljebb 2 fegyverhossz-kategóriájú fegyver lehet a másik kézben. Minden plusz 1 fegyverhossz-kategória TÉ:-3 büntetést ad. |
 
 <!-- tag: md_table_pajzs_end -->
 
 🔆 A pajzs `TÉ` értéke kizárólag akkor használatos, ha kifejezetten a pajzzsal akarunk harcolni, mert mondjuk nincs főfegyver a másik kezünkben.
 
 🔆 Nagy pajzs: emberméretű tárgy, nem kalandozófelszerelés, lovon sem szállítható, legfeljebb szekéren. Sűrű erdőben radikálisan lelassítja a haladást.
+
+---
+
+🔗 [Fegyvergenerátor](068_10_fegyvergenerator.md)→
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
+## File: md/068_10_fegyvergenerator.md
+
+# Fegyvergenerátor
+
+⭕ **TODO**: ide kerül majd a Fegyver v2  rendszer alapja, a Fegyvergenerátor leírása.
+
+⭕ WORK dokumentum: [v2](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.fegyvergenerator_v2)
+
+⭕ Fontos kiemelni, hogy ez NEM szükséges a játékhoz.
+
+- Megérthetőek a fegyverek értékei
+- Lehet használni egyedi fegyverek létrehozásához
 
 ---
 
@@ -26667,7 +26869,7 @@ Lemezpáncél SFÉ
 → idea: ±3
 ```
 
-A "fém", "hajlékonyvért", "merevvért" jellegek a [fegyverek sebzés típusa](068_01_04_fegyverek_sebzese.md#jelleg-szerint) kapcsán, a sebzésbónuszok megállapításánál érdekesek.
+A "fém", "hajlékonyvért", "merevvért" jellegek a [fegyverek sebzés típusa](068_01_02_fegyverek_sebzese.md#jelleg-szerint) kapcsán, a sebzésbónuszok megállapításánál érdekesek.
 
 ---
 ### 2. Idea SFÉ bónuszok
@@ -27310,7 +27512,7 @@ CÉ + k20   vs   távolsági VÉ
 
 A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekre az alábbi fejezetekben fejtjük ki.
 
-### [Célzó Érték (CÉ) számítása](071_tavharc_ce.md)
+### [Célzó Érték számítása](071_tavharc_ce.md)
 
 ### [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
 
@@ -27322,7 +27524,9 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 ---
 ## Taktikák, mágikus lövedékek, fegyverek
 
-### [Távolsági Harc Taktikák](073_tavharci_taktikak.md)
+### [Távharci taktikák](073_tavharci_taktikak.md)
+
+### [Távharci helyzetek](074_tavharci_helyzetek.md)
 
 ### [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
 
@@ -27427,7 +27631,7 @@ Lövés reflexből helyzet
 ### Kapcsolódik
 
 - [Távolsági fortélyok](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
-- [Fegyver minősége](068_01_14_fegyverek_minosege_ideaja.md)
+- [Fegyver minősége](068_01_10_fegyverek_minosege_ideaja.md)
 - [Távolsági Harcmodor képzettség](kepzettsegek.primer/harci/tavolsagi_harcmodor.md)
 
 ---
@@ -27843,6 +28047,10 @@ Leggyorsabb mozgatás (EM)
 ---
 ### Páros, kétkezes hajítás
 
+```
+Hátrány-1 CÉ dobásra
+```
+
 Egyszerre két kézzel `1-1 db` fegyvert elhajítani. Ebben a szituációban `2 db` (!) Célzó dobást tesz a karakter, mindkettőt `Hátrány-1` büntetéssel. Természetesen minden találat külön-külön sebez (ha betalál).
 
 → `1 db` támadásnak számít.\
@@ -27862,7 +28070,7 @@ Egyszerre két kézzel `1-1 db` fegyvert elhajítani. Ebben a szituációban `2 
 
 ## Távharci helyzetek
 
-A [Harci helyzetek](065_01_04_fegyver_harci_helyzetek.md) távolsági harcra vonatkozó változatai.
+A [Harci helyzetek](065_03_04_fegyver_harci_helyzetek.md) távolsági harcra vonatkozó változatai.
 
 - [Hajítás alkalmatlan fegyverrel](#hajítás-alkalmatlan-fegyverrel)
 - [Hajítás nem dobásra készített tárgyakkal](#hajítás-nem-dobásra-készített-tárgyakkal)
@@ -27982,7 +28190,7 @@ Mágiatáv IV
  Osztó: 4
 ```
 
-A **Mágiatáv `I-IV`** valójában `1-1` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) fegyverválasztójában a fortély fokának megfelelő verzióját használd.
+A **Mágiatáv `I-IV`** valójában `1-1` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Szilánk webapp](https://kaktusztea.github.io/szilankrpg/) fegyverválasztójában a fortély fokának megfelelő verzióját használd.
 
 A **Mágiatáv** szimulálja a (mágikus) távolsági "fegyver" kategóriákat ("tárgy, hajító, nyíl, nyílpuska").
 
@@ -28258,7 +28466,7 @@ Modern, nagy hatótávú fegyver
 
 Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezhető:
 
-→ [Hajítás alkalmatlan fegyverrel](065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet
+→ [Hajítás alkalmatlan fegyverrel](065_03_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet
 
 ⚜️ [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) 🔁 fortély tanulásával (fegyverenként) a büntetések mérsékelhetőek.
 
@@ -28269,7 +28477,7 @@ Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezh
 
 Például sámli hajítása. Alapesetben büntetésekkel végezhető:
 
-→ [Hajítás nem dobásra készített tárgyakkal](https://github.com/kaktusztea/szilankrpg/blob/master/md/065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal) harci helyzet
+→ [Hajítás nem dobásra készített tárgyakkal](065_03_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal) harci helyzet
 
 ⚜️ [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély tanulásával a büntetések mérsékelhetőek.
 
@@ -28293,7 +28501,7 @@ Harckeret =
 
 ✅ [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk
 
-❌ [Nyílpuskáknak](068_01_09_nyilpuskak.md) nincs **Sebesség** értéke. Ezt mérsékelheti a [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md) harci fortély.
+❌ [Nyílpuskáknak](068_01_05_nyilpuskak.md) nincs **Sebesség** értéke. Ezt mérsékelheti a [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md) harci fortély.
 
 → Távolsági fegyverek **Sebesség** értékeit lásd itt: [Hajítófegyverek táblázata](068_07_hajitofegyverek.md), [Lőfegyverek táblázata](068_08_lofegyverek.md)
 
@@ -28784,7 +28992,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
-- `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_01_01_pozitiv_helyzetek.md#orvtámadás))
+- `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_03_01_pozitiv_helyzetek.md#orvtámadás))
 
 ---
 ### 🔥 Mozgás - feleződik
@@ -28800,7 +29008,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Mozgás - képtelen
 
-- VÉ csak a test mozgásának jellegétől függ (lásd a [táblázatot](065_01_01_pozitiv_helyzetek.md#orvtámadás))
+- VÉ csak a test mozgásának jellegétől függ (lásd a [táblázatot](065_03_01_pozitiv_helyzetek.md#orvtámadás))
 - mozdulni se bírsz nyaktól lefelé
 - szemmozgás, légzés működik
 - csak fizikai hatás, mentális hatása nincs
@@ -29181,7 +29389,7 @@ Nagy pajzs
 
 #### Kapcsolódik
 
-- [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md) fejezet
+- [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md) fejezet
 - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md#pajzs-mozgásgátló-hatása) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
@@ -29705,7 +29913,7 @@ Szakrális mágiák mellékhatása
 Minden Harci helyzet egy speciális Státusz, de "térbeli relációkat" szimulál, ezért hívjuk máshogy.\
 A Státusz ezzel szemben egy ideiglenes, vagy tartós hatás, amiből előbb-utóbb "kigyógyul" a karakter.
 
-Leírásukat lásd a Harcrendszer **[Harci helyzetek](065_01_00_harci_helyzetek.md)** fejezetében.
+Leírásukat lásd a Harcrendszer **[Harci helyzetek](065_03_00_harci_helyzetek.md)** fejezetében.
 
 ---
 
@@ -30482,7 +30690,7 @@ Aurabontásnál
 
 ⭕Aurabontás⭕ formula, vagy más mágikus/környezeti hatás előidézhet olyan szituációt, hogy Aura értéked `0`-ra zuhan. Ekkor az alábbi állapotba kerülsz:
 
-- [Zavar (1) Kizökkent](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-zavar-1-kiz%C3%B6kkent) Státusz - ✅ Agóra
+- [Zavar (1) Kizökkent](082_statuszok.md#%EF%B8%8F-zavar-1-kiz%C3%B6kkent) Státusz - ✅ Agóra
 - magabiztosságod elszáll, zavarodottság vesz úrrá rajtad
 - Emberismeret képzettségpróbádra: `Hátrány-2` (Befolyásolások ellen)
 
@@ -31647,7 +31855,7 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
 
 ### Mágikus fegyverek
 
-- [Idea szabály-megkötés](068_01_14_fegyverek_minosege_ideaja.md#-mágikus-fegyverek-és-a-fegyver-ideája)
+- [Idea szabály-megkötés](068_01_10_fegyverek_minosege_ideaja.md#-mágikus-fegyverek-és-a-fegyver-ideája)
 - Fokozatosan kapja a fegyver az egyre erősebb hatásokat, ahogy egyre hatalmasabb mágia ruházza fel
   - `1.` Átütést adnak
   - `2.` `TÉ/VÉ/SP` értékek erősebb mágiánál
@@ -31860,10 +32068,10 @@ Meddig áll el?
 0: Pár másodperc
 1: 1 perc
 2: 10 perc
-3: 1 óra, Méregkeverés 3.szint
-4: 1 nap, Mk 6.szint
+3: 1 óra,   Mk 3.szint
+4: 1 nap,   Mk 6.szint
 5: 1 hónap, Mk 9.szint
-6: Örökké, Mk 12.szint
+6: Örökké,  Mk 12.szint
 ```
 
 #### (3b) Kiürülés
@@ -31886,15 +32094,15 @@ Mennyi idő alatt ürül ki?
 Milyen gyorsan hat?
 
 +0: (30 perc - 3 óra múlva)
-+1: (4 - 23 óra múlva), Mk 3. szint
-+1: (2 - 20 perc múlva), Mk 3. szint
-+2: (1 - 10 nap múlva), Mk 5. szint
-+2: (2 - 6 kör múlva), Mk 5. szint
-+3: (2 - 4 hét múlva), Mk 7. szint
++1: (4 - 23 óra múlva),   Mk 3. szint
++1: (2 - 20 perc múlva),  Mk 3. szint
++2: (1 - 10 nap múlva),   Mk 5. szint
++2: (2 - 6 kör múlva),    Mk 5. szint
++3: (2 - 4 hét múlva),    Mk 7. szint
 +4: Gyorsan (10 szegmens), Mk 7. szint
-+4: Hónapok múlva, Mk 9. szint
++4: Hónapok múlva,        Mk 9. szint
 +5: Azonnal (1 szegmens), Mk 9. szint
-+5: Évek múlva, Mk 12. szint
++5: Évek múlva,           Mk 12. szint
 ```
 
 <br />
@@ -31905,20 +32113,21 @@ Milyen gyorsan hat?
 ```
 +2: Plusz 1 komponens
 +3: Plusz 1 hordozó közeg
-    (étel/ital, légnemű, véráram),
+    (étel/ital, légnemű, véráram)
 +3: Több hordozó közegből
     csak 1 a méreg hatóanyag,
     a többi természetes alapanyag
-+2: Sűrű: kis mennyiség is
-    elég 1 adaghoz
++2: Sűrű: kis mennyiség is elég 1 adaghoz
 +3: Színtelen
 +3: Szagtalan/ízetlen (egyben értendő)
-+3/+6: Félrevezető tünetek I, II.
++3: Félrevezető tünetek 3
+    (ennyivel nő az azonosítás nehézsége)
++6: Félrevezető tünetek 6
     (ennyivel nő az azonosítás nehézsége)
 +0: Szabadban sem eloszló légméreg:
     nem nehezebb, de speciális fizikai
     közvetítő kell (füstöt okádó labdacs),
-    folyamatos utánpótlással)
+    folyamatos utánpótlással
 ```
 
 <br />
@@ -31948,7 +32157,7 @@ Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges
 
 ## Méregellenállás
 
-A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsagproba.md), melynél a karakter `Edzettség` Tulajdonsága számít.
+A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsagproba.md):
 
 ```
 (Edzettség + k6)  vs  Méreg Erőssége
@@ -32185,7 +32394,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ## Ajtóstul nekirontani az túloldalról benyitó ellenfélnek
 
-Ez egy harci szituáció, amiben mindkét fél a fegyvertelen harcértékével vesz részt, de a támadó megkapja a [Meglepetés](../065_01_01_pozitiv_helyzetek.md#meglepetés) bónuszát az első támadására.
+Ez egy harci szituáció, amiben mindkét fél a fegyvertelen harcértékével vesz részt, de a támadó megkapja a [Meglepetés](../065_03_01_pozitiv_helyzetek.md#meglepetés) bónuszát az első támadására.
 
 ```
 Fegyvertelen TÉ + Meglepetés
@@ -32353,7 +32562,7 @@ Véres karddal, félmeztelenül hadonászás: a felek ⚪ **Erő** Tulajdonság�
 
 ## Belharc folyamata
 
-A belharcos célja [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet) harci helyzet elérése, hogy bónuszait kamatoztathassa.
+A belharcos célja [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet) harci helyzet elérése, hogy bónuszait kamatoztathassa.
 
 <br />
 
@@ -32373,7 +32582,7 @@ Mindenki ezzel jöhet ki - harcmodortól függetlenül.
 
 ### ⚜️ Belharci helyzet módosítói
 
-→ Harci helyzet: [Belharci helyzet](../065_01_02_semleges_helyzetek.md#belharci-helyzet)
+→ Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
 ---
 
@@ -32678,13 +32887,13 @@ Célszám: 8
 
 ## Fegyverrántás szituációi
 
-⚜️ [Harci kör elején](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-1harci-k%C3%B6r-elej%C3%A9n)
+⚜️ [Harci kör elején](../065_03_02_semleges_helyzetek.md#️-1harci-kör-elején)
 
-⚜️ [Kör közben, Akció után](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-2-k%C3%B6r-k%C3%B6zben-akci%C3%B3-ut%C3%A1n)
+⚜️ [Kör közben, Akció után](../065_03_02_semleges_helyzetek.md#️-2-kör-közben-akció-után)
 
-⚜️ [Mindkét fél fegyverrántást alkalmaz](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-3mindk%C3%A9t-f%C3%A9l-fegyverr%C3%A1nt%C3%A1st-alkalmaz)
+⚜️ [Mindkét fél fegyverrántást alkalmaz](../065_03_02_semleges_helyzetek.md#️-3mindkét-fél-fegyverrántást-alkalmaz)
 
-⚜️ [Meglepetésből, vagy észrevétlen fegyverrántás](../065_01_02_semleges_helyzetek.md#%EF%B8%8F-4meglepet%C3%A9sb%C5%91l-vagy-%C3%A9szrev%C3%A9tlen-fegyverr%C3%A1nt%C3%A1s)
+⚜️ [Meglepetésből, vagy észrevétlen fegyverrántás](../065_03_02_semleges_helyzetek.md#️-4meglepetésből-vagy-észrevétlen-fegyverrántás)
 
 → Kapcsolódik: [Fegyverrántás](../fortelyok.harci/fegyverrantas.md) harci fortély
 
@@ -32721,7 +32930,7 @@ A fenti büntetéseket mérséklik:\
 ## Hajítás nem dobásra készített tárgyakkal
 
 Ilyen szituációban a `Célzó dobásodra` az alábbi **Harci helyzet** módosító érvényesek:\
-→ [Hajítás nem dobásra készített tárgyakkal](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
+→ [Hajítás nem dobásra készített tárgyakkal](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
 
 A fenti büntetéseket mérséklik:\
 → [Alkalmatlan tárgyak hajítása](../fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) (`2`) fortély fokai
@@ -33495,7 +33704,7 @@ Lásd az [Esés magasból](eses_magasbol.md) szituáció leírását!
 
 ## Meglepetésből, Precíz támadás max TÉ taktikával
 
-[Meglepetésből](../065_01_01_pozitiv_helyzetek.md#meglepetés) támadsz (harci helyzet) és maximális [Támadó taktikát](../065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) bevetve (`TÉ:+3, VÉ:-6`) megpróbálkozol egy [Precíz támadás manőverrel](../066_05_altalanos_manoverek.md#precíz-támadás).
+[Meglepetésből](../065_03_01_pozitiv_helyzetek.md#meglepetés) támadsz (harci helyzet) és maximális [Támadó taktikát](../065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) bevetve (`TÉ:+3, VÉ:-6`) megpróbálkozol egy [Precíz támadás manőverrel](../066_05_altalanos_manoverek.md#precíz-támadás).
 
 A fenti Manővernek [**Végrehajtás** és **Ellenpróba**](../066_04_manover_vegbevitele.md) fázisai vannak. A **Meglepetés** harci helyzet bónusza és a **Támadó taktika** bónusza hogyan érvényesülnek?
 
@@ -33537,7 +33746,7 @@ A Manőver után jön a **Futás ellenpróba** (lásd lejjebb) - amennyiben elle
 
 Ha elveszíti az ellenpróbát, dönthet VAGY-VAGY:
 - `1.` visszafordul, újra felveszi a harcot aktuális, fegyveres harcértékével
-- `2.`egy újabb támadást adhat le rá ellenfele - [Hátulról](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) módosítókkal
+- `2.`egy újabb támadást adhat le rá ellenfele - [Hátulról](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) módosítókkal
 
 Ha megnyerted a Futás ellenpróbát, sikerült lehagynod üldöződet.
 
@@ -33748,7 +33957,7 @@ Lopakodás/rejtőzés + Ügyesség
   +3: Aktív Észlelés
 ```
 
-✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
+✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
 
 ❌ Lopakodás sikertelen: mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 
@@ -33756,7 +33965,7 @@ Lopakodás/rejtőzés + Ügyesség
 
 ## Megkötések
 
-🔆 Manőver: [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) után **NEM** lehet Orvtámadás, csak sima [Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet.
+🔆 Manőver: [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) után **NEM** lehet Orvtámadás, csak sima [Hátulról támadás](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet.
 
 🔆 Fortély: [Körkörös harc](../fortelyok.harci/korkoros_harc.md) meglétekor **harc közben NEM** alkalmazhatnak ellened Orvtámadást.
 
@@ -33789,9 +33998,9 @@ Lopakodás/rejtőzés + Ügyesség
   +0: Passzív Észlelés
 ```
 
-✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
+✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
 
-❌ Lopakodás sikertelen testközelben → Harci helyzet: [Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait kapod csak meg
+❌ Lopakodás sikertelen testközelben → Harci helyzet: [Hátulról támadás](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait kapod csak meg
 
 ❌ Lopakodás sikertelen távolabb → Mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 
@@ -33916,7 +34125,7 @@ Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesszük
 ### ⚜️ Nappali fényben: Érzékelhetetlen harcoló  vs. másik harcos
 
 - sikeres  [Lopakodás/rejtőzés és észlelése](lopakodas_rejtozes_es_eszlelese.md)
-- Érzékelhetetlen harcoló: [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvt%C3%A1mad%C3%A1s) bónuszait kapja
+- Érzékelhetetlen harcoló: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszait kapja
 - Másik harcos: alap harcértékeivel harcol
 
 <br />
@@ -33925,8 +34134,8 @@ Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesszük
 ### ⚜️ Nappali fényben: Láthatatlan harcoló  vs. másik harcos
 
 Láthatatlan harcoló bónuszai:
-- [Láthatatlan - részlegesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---r%C3%A9szlegesen)  vagy
-- [Láthatatlan - teljesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---teljesen)
+- [Láthatatlan - részlegesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)  vagy
+- [Láthatatlan - teljesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---teljesen)
 
 Másik harcos
 - alap harcértékeivel harcol
@@ -33939,16 +34148,16 @@ Másik harcos
 Ez egy speciális eset, a Láthatatlanság bónuszai megszűnnek. 
 Mindketten a látási viszonyok
 
-[Láthatatlan - részlegesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---r%C3%A9szlegesen)  harcoló
+[Láthatatlan - részlegesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)  harcoló
 - bónuszait elveszíti
-- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
+- [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
-[Láthatatlan - teljesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---teljesen) harcoló
-- bónuszai lecsökkennek [Láthatatlan - részlegesen](../065_01_01_pozitiv_helyzetek.md#l%C3%A1thatatlan---r%C3%A9szlegesen) bónuszaira
-- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
+[Láthatatlan - teljesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---teljesen) harcoló
+- bónuszai lecsökkennek [Láthatatlan - részlegesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) bónuszaira
+- [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
 Másik harcos
-- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben) büntetéseit megkapja
+- [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
 <br />
 
@@ -33957,12 +34166,12 @@ Másik harcos
 
 Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol.
 
-- [Vakharc félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---f%C3%A9lhom%C3%A1lyban)
-- [Vakharc sötétben](../065_01_03_negativ_helyzetek.md#vakharc---s%C3%B6t%C3%A9tben)
+- [Vakharc félhomályban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban)
+- [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben)
 
 🔆 A sötét a [Lopakodás/rejtőzés vs Észlelés](lopakodas_rejtozes_es_eszlelese.md) szituációban bónuszt ad
 
-🔆 Hallás: nem vesszük külön a csendes és zajos helyzeteket, CSAK akkor ha érzékelhetetlen [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvt%C3%A1mad%C3%A1s) harci helyzetbe akar kerülni az egyik fél.
+🔆 Hallás: nem vesszük külön a csendes és zajos helyzeteket, CSAK akkor ha érzékelhetetlen [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetbe akar kerülni az egyik fél.
 
 ---
 
