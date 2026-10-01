@@ -109,6 +109,10 @@ Leggyorsabb mozgatás (EM)
 ---
 ### Páros, kétkezes hajítás
 
+```
+Hátrány-1 CÉ dobásra
+```
+
 Egyszerre két kézzel `1-1 db` fegyvert elhajítani. Ebben a szituációban `2 db` (!) Célzó dobást tesz a karakter, mindkettőt `Hátrány-1` büntetéssel. Természetesen minden találat külön-külön sebez (ha betalál).
 
 → `1 db` támadásnak számít.\

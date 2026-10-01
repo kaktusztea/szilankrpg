@@ -22,17 +22,6 @@ Előny+2 TÉ dobásra
 <br />
 
 ---
-## Beszorított ellenfél - hosszú fegyverrel
-
-Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
-
-```
-Előny+2 TÉ dobásra
-```
-
-<br />
-
----
 ## Harci szekér
 
 Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.
