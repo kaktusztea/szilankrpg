@@ -58,7 +58,9 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, TÉ, SFÉ, VÉ csökkenés, MP boxok a fejlécben, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
   - **Kezdeményezés dobás**: a KÉ boxra koppintva `KÉ + k20` dobás nagy számmal; az utolsó 3 dobás a KÉ boxban látszik
   - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Manuális dobás is lehetséges (saját kocka értékkel).
-  - **Sebzésdobás**: a Támadó dobás eredménye után a „Sebzés" gombbal indítható - SP bontás (alap, erő, MF, taktika, fortély), statikus bónuszok, Előny/Hátrány kocka picker, másodlagos sebzés toggle és újradobás gomb. Az Átütés értéke is kijelzésre kerül (ha > 0).
+  - **Sebzésdobás**: a Támadó dobás eredménye után a „Sebzés" gombbal indítható - SP bontás (alap, erő, MF, taktika, fortély), statikus bónuszok, Előny/Hátrány kocka picker és újradobás gomb. Az Átütés értéke is kijelzésre kerül (ha > 0).
+    - **Ellenfél páncél**: kötelező választó (csupasz / puha / bőr / lánc / pikkely-lemez) - a sebzésjelleg (szúró/vágó/zúzó) és a páncél alapján módosítja az SP-t. Amíg nincs páncél választva, a dobás nem indítható.
+    - Ha a fegyver az adott móddal nem sebez (pl. bola, háló, lasszó), „Ez a fegyver nem sebez" jelzés jelenik meg.
   - **SFÉ infó**: az SFÉ boxra koppintva részletes páncél infó popup nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT bontás).
   - **VÉ csökkentés**: a VÉ csökkenés boxban a `-N` gombokkal csökkentheted a védőértéket (támadásonként), `+1` gombbal visszaállíthatsz egyet, `⟲` nullázza. A label/érték koppintással a csökkentések története is látszik.
   - **Manőver pont (MP)**: az MP box mutatja az aktuális/max manőver pontot; `-1` gombbal csökkentheted, `⟲` visszaállítja a maximumra.
@@ -161,6 +163,14 @@ Fortélyoknál és képzettségeknél megjelenik egy 🔗 ikon, ami a GitHub-on 
 ### Támadás szám info panel
 
 A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára koppintva egy info popup ugrik fel: fegyver neve, Sebesség értéke, és a számított Harckeret bontása (harcmodor, gyorsaság, MGT, fortély).
+
+### Fegyver infó popup
+
+A Harc fül fegyver táblázatában a fegyver **nevére** koppintva részletes infó popup nyílik: harcmodor szint, anyag, Idea, extrák, és a fegyver harcértékei aktoronként (TÉ/VÉ/SP/Átütés/Tám), elsődleges/másodlagos jelzéssel.
+
+### Fegyver Extrák (💡)
+
+A Támadó és Sebzés dobás ablakban (ha a fegyvernek van extrája) megjelenik egy **💡 Extrák** gomb. Rákoppintva listázza a fegyver extráit státusz-jelzéssel: aktív / inaktív / KM dönt. A gomb pulzál és mutatja az aktív extrák számát, ha a pillanatnyi harci helyzetben valamelyik extra épp hat.
 
 ### Mágia akarata segédlet
 
