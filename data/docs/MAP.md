@@ -9,7 +9,7 @@ data/
   sources/                   YAML forrásadatok (→ generate_tables.py → tables/)
   schemas/                   YAML sémák (karakter, fortely, kepzettseg, fegyver, stb.)
   tables/                    Generált JSON (runtime adat, NE kézzel szerkeszd)
-  karakter/                  Template-ek (empty_karakter.json, test_karakter.json)
+  karakter/                  Template-ek (empty_karakter.json, test_karakter2.json, test_karakter3.json)
   rules.json                 Reactive engine: 53 deklaratív szabály
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
@@ -85,6 +85,9 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `useHoldRepeat` | Hold-to-repeat gomb gyorsulás |
 | `useEscapeClose` | Escape billentyű popup bezárás |
 | `usePopupState` | Generikus popup/overlay state kezelő |
+| `useLongPress` | Long-press vs short-tap megkülönböztető (NJK chip betű-picker) |
+| `useTaktikaInvalidation` | Aktív taktikák érvénytelenítése fegyver/session változáskor (useEffect) |
+| `useGameModeTabSync` | Mód-váltáskor az aktív tab megtartása (editOnly tabok ki/be) |
 
 ### Slot (karaktertár) modulok (`hooks/`)
 | Fájl | Felelősség |
@@ -111,14 +114,26 @@ FortelyDetails.tsx         Közös fortély info panel (picker + game-mode accor
 KepzettsegDetails.tsx      Közös képzettség info panel (picker + game-mode accordion)
 AppOverlays.tsx            Globális overlay-ek összefogó
 ScreenErrorBoundary.tsx    Per-tab error boundary
+KpBar.tsx / KpInfoPopup.tsx  KP sáv + KP bontás infó popup
+SlotList.tsx / SlotRow.tsx   Karaktertár lista + egy slot sor
+CheckpointBanner.tsx       Aktív checkpoint (verzió-nézet) jelző sáv
+DeleteConfirmPopup.tsx     Általános törlés-megerősítő popup
+MdLink.tsx                 🔗 GitHub szabályrendszer link (REPO_BASE + md anchor)
+kp-calc.ts                 KP bontás kalkuláció (calcKpDetails - reactive engine wrapper, §1)
+karakter-setters.ts        Karakter mező-setter factory-k (undo-wrapped)
+fegyver-groups.ts          Fegyver kategória-csoportosítás (dropdown rendezés)
+formatters.tsx             Szöveg-formázók (fmtCode, md-inline → ReactNode)
 
 aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fegyverválasztás)
   AktivScreen.tsx          Fő layout
   AktivTaktikak.tsx        Taktika picker + chip-ek
+  TaktikaPickerList.tsx    Taktika választó lista (pinned + többi)
+  TaktikaFokPicker.tsx     Fokozatos taktika fok-választó
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
   ManoverDobasPopup.tsx    Manőver dobás popup (követelmény 0. lépés Normál/Erős, fázis lépegetés, Siker/Kudarc, helyzetfüggő módosítók, MP+TÉ popup)
   manover-dobas-calc.ts    Manőver dobás pure logika (követelmény kiértékelés, fázisok, TÉ-bontás, fázis-feliratok, eredmény-hatás) - a popup számítási magja. `szitFeltételTeljesül`/`szitModKezdőÁllapot`: a helyzetfüggő módosító sorok `feltétel` ("fegyver_extra:<id>"/"taktika:<id>"/…) auto-matchje → az illő sor alapból bekapcsolva (kézi override marad). A `manoverek.yaml` `extra_ref` pointer-sorai build-időben feloldódnak az extrák `manőver_ellenpróba` hatásából (érték+leírás+feltétel), l. `data/gen/aktiv_ful.py` - EGY igazságforrás (A/1, §42)
   AktivStatuszok.tsx       Státusz picker
+  StatuszPickerOverlay.tsx Státusz választó overlay (kategóriák + fok)
   AktivHatasPool.tsx       Hatás pool box
   aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
@@ -138,7 +153,12 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   shared.ts                Közös utils: findMfFok, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév
   ep-logic.ts              ÉP sebesülés/gyógyulás pure logika
   harc-reszletek-calc.ts   Részletes értékek bontás
+  HarcReszletek.tsx        Részletes értékek box (aktív fegyver harcérték bontás megjelenítés)
+  ve-csokkentes-calc.ts    Sikertelen támadás VÉ csökkentése (Fegyverviszony bázis + k20P; taktika override/flat; fortély flat) - §5.3/§13.1
+  VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P)
+  VeSzorzoInfoPopup.tsx    VÉ csökkentés szorzó/bázis infó popup
   combat-roll-info.ts      Támadó/Sebzés dobás bónusz kalkuláció (pure fn)
+  HatasokInfo.tsx          Dobás-hatás badge feliratok (Előny/Hátrány/Enyhít formázás, pure fn)
   extrak-info-calc.ts      Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn). Aktív-jelzés: harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél feltételek + aktív manőverhez kapcsolt hatás-al-feltétel ("manőver:<id>")
   extrak-effekt.ts         Egységes effekt-precedencia (§42.3: additív→szorzó→override→max_limit, FLOOR) pure motor + aktívHatásokCélra (csak teljesült feltételű hatások) + hiányzóInfósExtrák (KM-warning, hiányos korreláció). Bekötve: Sebzés popup SP-delta, VÉ-csökkentés warning
   ExtrakInfo.tsx           "Extrák" gomb (💡, pulzál ha van aktív) + popup: fegyver-extrák listája státusz-jelzéssel (Támadó + Sebzés popupban)
@@ -159,16 +179,36 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcFegyverfogas.tsx     Fegyverfogás picker (egyfegyveres/kétkezes/fegyver_pajzs/fegyver_hárító)
   UgyesebbKezSelect.tsx / GyengebbKezSelect.tsx / FegyverSelectField.tsx  Fegyver dropdown-ok + közös select-field
   SessionToggles.tsx       Session-toggle fortély gombok (Harci akrobatika: fok-függő fegyver v2 követelmény-tiltás + hint)
+  HarcPopups.tsx           Harc fül popup-dispatcher (session-alapú popupok összefogása)
+  TaktikaTiltvaInfoPopup.tsx  Taktika-tiltás indok infó popup
+  DialogPortal.tsx         createPortal dialógus-wrapper (Seb/Gyógy dialógusokhoz)
+  fegyver-helpers.ts       Fegyver segéd (pajzs-fegyvernév, lookup wrapperek)
 
 tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
   TavharcScreen.tsx        Fő screen (szerkesztő + game mód)
+  TavharcKalkulator.tsx    CÉ/VÉ kalkulátor fő panel (távolság/szorzó/fegyver → találati esély)
+  TavharcFegyverLista.tsx  Távfegyver lista (kártyák összefogása)
+  TavharcFegyverCard.tsx   Egy távfegyver kártya (CÉ bontás, támadás-label, Idea)
+  TavharcKepzettsegekSection.tsx  Távolsági harcmodor képzettségek szekció
+  TavharcReszletek.tsx     Részletes értékek (CM +/- , bontás)
+  TavharcLoveskiteres.tsx  Lövéskitérés panel (opció-picker)
+  TavharcGameSelector.tsx  Játék módú fegyver/virtuális fegyver választó
+  CelzoDobasPopup.tsx      Célzó dobás popup (CÉ + k20, Előny/Hátrány)
+  SzorzoPicker.tsx         Szorzó-összetevő picker (mozgás/méret/észlelhetőség/szél)
+  TavolsagPicker.tsx       Távolság (méter) picker (hold-repeat)
+  TavharcPopups.tsx        Távharc fül popup-dispatcher
   helpers.ts               CÉ/harckeret/szorzó/VÉ/újratöltés számítás (a CÉ-mag)
   mesterfegyver-calc.ts    Távharc Mesterfegyver fok + követelmény-ellenőrzés/-szöveg (getMfFok, mfKövetelményHiba/Text)
   loveskiteres-calc.ts     Lövéskitérés pure logika (Osztó→kategória, hatótáv-gát, célszám, Akrobatika-érték, buildOpciók picker-lista)
+  types.ts                 Távharc fül prop/state típusok
 
 tulajdonsagok/             Tulajdonságok + Képzettségek fül
   TulajdonsagokScreen.tsx  Fő screen (név, faj, kor, tulajdonságok, képzettségek)
+  TulajdonsagokHeader.tsx  Fejléc (név, faj, kor, előtörténet trigger)
+  TulajdonsagCell.tsx      Egy tulajdonság cella (érték +/- , próba trigger Játék módban)
+  TulajdonsagokPopups.tsx  Tulajdonságok fül popup-dispatcher (TSz/próba/grid pickerek)
   KepzettsegCsoport.tsx    Képzettség csoport (csukható, game/edit mód)
+  KepzettsegRow.tsx        Képzettség sor (szint +/- , limit jelzés, ▾ accordion → KepzettsegDetails)
   KepzettsegPickerOverlay.tsx  Képzettség picker overlay popup (név + md link + ▾ accordion → KepzettsegDetails)
   TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
   proba-common.ts          Próba közös logika (Előny/Hátrány szintek, lehetetlen/biztos siker, összetett próba típusok)
@@ -176,9 +216,15 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
   KepzettsegProbaPickers.tsx Képzettségpróba alpickerei (kiterjesztés, helyzetfüggő módosítók, infó)
   kepzettseg-limit.ts      Képzettség max szint a rules.json-ból (§19)
   KepzettsegProbaPopup.tsx   Képzettségpróba dobás popup (Játék mód, k10)
+  PrimerKpBox.tsx          Primer KP bontás doboz (fül alja)
+  primerKpCalc.ts          Primer KP bontás kalkuláció (calcPrimerKp, KpDetail)
   ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
   KorPicker.tsx            Kor +/- picker overlay
   VallasPickerOverlay.tsx  Vallás választó overlay
+  helpers.ts               Tul/Képz fül segédek
+  types.ts                 Tul/Képz fül prop/slot típusok
+  useEscapeClose.ts        Re-export (hooks/useEscapeClose)
+  popups/GridPickerPopup.tsx / popups/TextInputPopup.tsx  Közös grid-/szöveg-input popupok
 
 fortelyok/                 Fortélyok fül
   FortelyokScreen.tsx      Fő screen (csoportok, felvétel, fok kezelés)
@@ -186,32 +232,76 @@ fortelyok/                 Fortélyok fül
   FortelyPickerOverlay.tsx Fortély picker overlay popup (név + md link + ▾ accordion → FortelyDetails)
   NewFortelySelect.tsx     "+ Új fortély" gomb (picker overlay trigger)
   FortelyRow.tsx           Fortély sor (pöttyök, követelmény jelzés)
+  FortelyCsoport.tsx       Fortély csoport (csukható, ingyenes-keret jelzés)
+  FortelyPopups.tsx        Fortélyok fül popup-dispatcher (felvétel wizard, fok, törlés)
+  useFortelyActions.ts     Fortély felvétel/törlés/fok akció-logika (picker, kiérdemelt, Mesterfegyver→fegyver auto)
+  helpers.ts               Fortély segédek (nyelv-pont keret/túllépés, ingyenes-slot)
+  types.ts                 Fortélyok fül prop/slot típusok
 
 harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
   HarcertekekScreen.tsx    Fő screen
+  HarcertekekHmSection.tsx HM (TÉ/VÉ) szekció - felvett HM elosztása, aszimmetria-limit
+  HarcertekekHarciKepzettsegekSection.tsx  Harci képzettségek (szerkeszthető harcmodor szintek)
   HarcertekekFegyverekSection.tsx  Fegyver kártyák
+  HarcertekekFegyverChip.tsx  Egy fegyver chip/kártya (anyag, Idea, MF)
   HarcertekekPancelSection.tsx     Páncél mezők
+  HarcertekekPancelPopup.tsx       Páncél szerkesztő popup (struktúra/alapanyag/kidolgozottság/tagok/idea)
+  HarcertekekPajzsSection.tsx      Pajzs szekció (méret, pajzshasználat)
+  HarcertekekPopups.tsx    Harcértékek fül popup-dispatcher
+  PickerComponents.tsx     Közös picker elemek (FokRadios, ColumnPicker)
+  PopupOverlay.tsx         Harcértékek fül-lokális popup shell
+  helpers.ts               Harcértékek segédek (közelharci/távharci név-listák, MF fok, display-nevek)
+  hooks/                   Harcértékek fül-lokális hookok
 
 misztikus/                 Misztikus fül (Aura, Tradíció, Arkánumok)
   MisztikusScreen.tsx      Fő screen
   AuraPanel.tsx            Aura értékek (Mágiaellenállás, Mágia akarata kattintható kártya)
+  TradicioSection.tsx      Tradíció szekció (SectionRow alapú)
+  ArkanumokSection.tsx     Arkánumok szekció
+  FajMiszteriumSection.tsx Faj misztérium képzettség szekció
+  OsiNyelvSection.tsx      Ősi nyelv szekció
+  MisztikusFortelyokSection.tsx  Misztikus fortélyok szekció (legalul)
+  SectionRow.tsx           Közös misztikus sor-renderelő (szint +/- , accordion)
+  MisztikusRow.tsx         Misztikus képzettség sor
   MisztikusPopups.tsx      Popup dispatcher (tradíció, szint, fok, felvétel, mágia akarata)
   useMisztikusPopups.ts    Popup state hook (tradíció/altípus picker állapotkezelés)
+  types.ts                 Misztikus fül prop/section típusok
   popups/MagiaAkarataPopup.tsx  Mágia akarata 4-füles referencia popup
   popups/AltipusPickerPopup.tsx  Tradíció altípus/Pantheon picker popup
   popups/TradicioPickerPopup.tsx  Tradíció lista picker popup
+  popups/SzintPickerPopup.tsx    Szint választó popup
+  popups/FokPickerPopup.tsx      Fok választó popup
+  popups/TextPromptPopup.tsx     Szöveg-input popup
 
 hatterek/                  Hátterek fül (szövegfelhő)
   HatterekScreen.tsx       Fő screen (leíró + karma)
+  TagCloud.tsx             Leíró háttér tag-felhő (hozzáad/töröl)
+  KarmaCloud.tsx           Karma háttér tag-felhő
+  FreeTextPopup.tsx        Szabad szöveges háttér-bevitel popup (SpecPicker alapú)
+  types.ts                 Hátterek fül mező-típusok
 
 overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb.)
-  AppOverlays.tsx-ben összefogva
+  AppOverlays.tsx-ben összefogva (components/AppOverlays.tsx)
+  OverlayPortal.tsx        createPortal overlay-wrapper
   OverlayScreenOverlay.tsx Verziók/Napló/Jegyzetek összevont overlay (NaploTab + jegyzetek + próba)
   SzilankPickerOverlay.tsx Szilánk pont (0-3) + gyors-elérési hub (Szabályrendszer link, próba táblák)
   SlotListOverlay.tsx      Karakterek hub (slot lista → SlotList.tsx)
+  SlotDeleteOverlay.tsx    Slot törlés megerősítő
+  SlotLimitOverlay.tsx     Slot/NJK limit elérve figyelmeztetés
   SaveOptionsPopup.tsx     Mentés/Exportálás popup (link, fájl, share, QR)
+  SaveFileOverlay.tsx      Fájl kész (📤 Megosztás / 💾 Letöltés)
+  SharePopupOverlay.tsx    Megosztás link popup
   ImportOptionsPopup.tsx   Import popup (fájl, vágólap, QR képből)
+  ImportConfirmOverlay.tsx Import ütközés megerősítő (felülírás/új példány)
   QrCodePopup.tsx          QR kód generálás + PNG mentés (uqr lib)
+  BackupRestoreOverlay.tsx Backup visszaállítás overlay (össz- + NJK limit)
+  CheckpointRestoreOverlay.tsx  Karakter verzió visszaállítás megerősítő
+  NewCharConfirmOverlay.tsx  Új karakter megerősítő
+  TestConfirmOverlay.tsx   Teszt karakter betöltés megerősítő
+  LoadErrorOverlay.tsx     Betöltési hiba overlay
+  UndoOverlay.tsx          Undo lépés-lista overlay
+  ToastOverlay.tsx         Toast üzenet (success/error, auto-dismiss)
+  FullscreenHintOverlay.tsx  iOS főképernyőhöz-adás hint
 ```
 
 ## Data Sources (`data/sources/`)
