@@ -56,7 +56,8 @@ export function TulajdonsagokPopups({
   const close = (fields: Partial<PopupState>) => setPopup(prev => ({ ...prev, ...fields }));
 
   const tszValues = Array.from(
-    { length: data.konstansok.arányok.max_tsz - 2 }, (_, i) => i + 3
+    { length: data.konstansok.arányok.max_tsz - data.konstansok.arányok.min_tsz + 1 },
+    (_, i) => i + data.konstansok.arányok.min_tsz
   );
 
   return (<>

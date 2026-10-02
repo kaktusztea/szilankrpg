@@ -98,6 +98,8 @@ formula:
 
 output: tulajdonság_pont_keret, elköltött_tulajdonság_pont, maradék_tulajdonság_pont
 note: 6 (26 pont) és 7 (33 pont) értékek csak faji/mágikus módosítóval érhetőek el
+note: Tapasztalati szint tartomány: [arányok.min_tsz, arányok.max_tsz] = [3, 21].
+      A kalandozás a 3. szinten kezdődik (1-2. szint = előtörténet). Forrás: konstansok.yaml → arányok.min_tsz / arányok.max_tsz.
 ```
 
 ---
@@ -205,7 +207,8 @@ formula:  // ismételve minden egyes fegyverre
 
 output: VÉ (per fegyver)
 note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha session.aktív_pajzs = true.
-      Pajzs VÉ: lookup(pajzs.méret → tables/pajzsok.json).VÉ (kis:3, közepes:10, nagy:16).
+      Pajzs VÉ: a konstansok.pajzs_hatások 2D táblából (méret × Pajzshasználat fok), lásd §13.
+      Alap (fok 0) VÉ: kis 3, közepes 10, nagy 16.
       A Teljes harcértékek táblázatban a VÉ = fegyver VÉ + pajzs VÉ (ha aktív).
 ```
 
@@ -267,6 +270,28 @@ Sebzésjelleg × ellenfél páncél SP-delta (dobásonként, NEM statikus fegyve
   Az "Ellenfél páncél" választó a Sebzés popupban KÖTELEZŐ (l. gui_spec). A cél_páncél
   VÉ/SFÉ-hatású ága (Meneth, Béltépő) az egységes "Extrák" gombon át jelenik meg
   (aktív/inaktív/KM státusz + hatás-összefoglaló, numerikus VÉ/SFÉ-alkalmazás nélkül - l. DEVSTATE §42).
+
+Szabálykönyvi sebzés-mechanikák (md/064_02_07_sebzes.md):
+  // Ezek a szabálykönyvben rögzített sebzés-kiegészítések. A statikus SP (fenti képlet) ezektől független.
+
+  (a) Támadó dobás k20 → Sebzésdobás Előny:
+        TÉ-dobás k20 értéke     Hatás a Sebzésdobásra
+        1-15                    nincs extra
+        16-19                   Előny+1
+        20                      Előny+2
+      A kimagasló Támadó dobás tehát a RÁKÖVETKEZŐ Sebzésdobásnak ad kocka-Előnyt.
+      Engine-állapot: a `combat-roll-info.ts` jelenleg a helyzet/taktika/státusz/fortély eredetű
+      Előny/Hátrányt gyűjti; a TÉ-dobás k20 → Sebzés Előny láncot a Sebzés popup kezeli manuális/auto
+      k20 átvételekor (l. gui_spec Sebzés popup).
+
+  (b) Sebzés bónuszok:
+        Többszörös találat: +5 túldobás (a TÉ túllépi a VÉ-t ennyivel) → +3 SP
+        Roham: +5 SP
+
+  (c) Fegyver Erő-követelmény (md/064_02_06): ha a karakter Ereje < fegyver súly-kategóriájának
+      erő_követelménye, Hátrány-N a Támadó (TÉ) dobásra. N = konstansok.yaml → fegyver_erő_követelmény_hátrány (= -1).
+      Súlykategória → erő_követelmény: könnyű/átlagos → nincs; nehéz → Erő 2; súlyos → Erő 3.
+      Impl: combat-roll-info.ts → collectDobásInfo (aktívFegyver.erő_követelmény ellenőrzés).
 ```
 
 ---
@@ -411,32 +436,38 @@ impl: páncél_merev (0/1) és merevvért_csökkentés lookup szabályokból jö
 
 ```
 input:  karakter.pajzs.méret (kis/közepes/nagy/""),
-        session.fegyverfogás (fegyver_pajzs mód aktiválja),
-        fortélyok: Pajzshasználat fok (0-3)
-source: konstansok.yaml → pajzs_TÉ_büntetés, tables/pajzsok.json,
-        fortelyok/harci/pajzshasznalat.yaml → módosítók (pajzs_TÉ_mérséklés, VÉ)
+        session.fegyverfogás (fegyver_pajzs mód) VAGY session.aktív_pajzs,
+        fortélyok: Pajzshasználat fok (0-3),
+        session.aktív_helyzetek (Belharci helyzet → méret-degradáció)
+source: konstansok.yaml → pajzs_hatások (2D: méret × Pajzshasználat_fok → {VÉ, TÉ}),
+        konstansok.yaml → belharc_pajzs_max_méret
 
 formula:
-  if fegyverfogás ≠ "fegyver_pajzs" VAGY pajzs.méret == "": → VÉ_pajzs = 0, TÉ_büntetés_pajzs = 0
+  hasPajzs = (session.aktív_pajzs VAGY fegyverfogás == "fegyver_pajzs") ÉS pajzs.méret ≠ ""
+  if NOT hasPajzs: → VÉ_pajzs = 0, TÉ_büntetés_pajzs = 0
 
-  pajzs_data = lookup(pajzs.méret → pajzsok.json)  // "kis" → "Kis Pajzs", stb.
-  VÉ_pajzs = pajzs_data.VÉ
+  pajzs_fok = fortély_fok("Pajzshasználat")   // 0 ha nincs felvéve
 
-  // TÉ büntetés: egydimenziós konstans + fortély mérséklés
-  alap_büntetés = lookup(konstansok.pajzs_TÉ_büntetés, méret, pajzs.méret, büntetés)
-    // kis: -3, közepes: -6, nagy: -9
-  mérséklés = fortelyMods['pajzs_TÉ_mérséklés']
-    // Pajzshasználat fok 1: +3, fok 2: +6, fok 3: +9 (fortély yaml módosító, feltétel: fegyverfogás==fegyver_pajzs)
-  TÉ_büntetés_pajzs = MIN(0, alap_büntetés + mérséklés)
+  // Belharc degradáció (§13.2): belharcban a pajzs legfeljebb belharc_pajzs_max_méret (= "kis")
+  méret = pajzs.méret
+  if "Belharci helyzet" in session.aktív_helyzetek ÉS méretRang(méret) > méretRang(belharc_pajzs_max_méret):
+    méret = belharc_pajzs_max_méret
 
-  // VÉ bónusz: 3. fok +2 (fortély yaml módosító, feltétel: fegyverfogás==fegyver_pajzs)
-  // Ez a fortelyMods['VÉ']-be kerül → fegyver_fortély_VÉ → reactive engine fegyver_VÉ
+  // EGYETLEN 2D lookup: méret × Pajzshasználat fok → {VÉ, TÉ}
+  entry = lookup(pajzs_hatások[méret], fok == pajzs_fok)   // fallback: [0]. elem
+  VÉ_pajzs = entry.VÉ
+  TÉ_büntetés_pajzs = MIN(0, entry.TÉ)
 
 output: VÉ_pajzs (fogásResult lila sorban), TÉ_büntetés_pajzs (fogásResult lila sorban)
 note: Fegyver+pajzs mód automatikusan aktív_pajzs = true.
       Pajzs csak fegyver_pajzs fegyverfogásban használható (nem kétkezes, nem hárító).
-      Pajzshasználat fok 0: nincs mérséklés → teljes büntetés érvényesül.
-      Pajzshasználat fok 3: VÉ+2 extra + teljes büntetés mérsékelve (TÉ: 0 minden pajzshoz).
+      A VÉ és a TÉ büntetés EGYETLEN pajzs_hatások lookupból jön (méret × fok), NEM külön
+      konstans + fortély-mérséklés. A Pajzshasználat fok a táblán belül csökkenti a TÉ büntetést
+      és magasabb fokon (3) emeli a VÉ-t. Impl: pancel-calc.ts → calcFogas.
+      pajzs_hatások tábla (konstansok.yaml):
+        kis:     fok0 {VÉ 3, TÉ -3}  fok1 {3, 0}   fok2 {3, 0}   fok3 {VÉ 5, TÉ 0}
+        közepes: fok0 {VÉ 10, TÉ -6} fok1 {10, -3} fok2 {10, 0}  fok3 {VÉ 12, TÉ 0}
+        nagy:    fok0 {VÉ 16, TÉ -9} fok1 {16, -6} fok2 {16, -3} fok3 {VÉ 18, TÉ 0}
 ```
 
 ### 13.2 Belharc pajzs degradáció
@@ -761,6 +792,9 @@ Három forrásból:
    - szűrő_harcmodorok figyelembe vétele: bónusz csak akkor jár, ha az aktív
      távfegyver harcmodora szerepel a taktika szűrő_harcmodorok[] tömbjében.
    Pl. Kitartott célzás: +3 CÉ (csak Íjászat/Lövészet)
+   // Íjnál a Kitartott célzás csak 1 körig tartható: 1 kör után nincs bónusz, sőt
+   // körönként CÉ:-3 büntetés jár (md/071_tavharc_ce.md). KM/runtime-oldali korlát,
+   // az app a statikus +3/+7 bónuszt számolja (a kör-számlálást nem).
 
 3. Fortély módosítók: feltételes CÉ bónuszok (feltétel aktívFeltételek-ben)
    - Ha a feltétel taktika: prefixű, és az adott taktikának van szűrő_harcmodorok
@@ -787,6 +821,9 @@ source: tables/tavharc_szorzok.json
 formula:
   // 1. Cella kiszámítása (felfelé kerekítés)
   cella = CEIL(távolság / távfegyver.Osztó)
+  // Osztó: fegyverenként egyedi, [1; 6] tartomány, méterben. A nagyobb jobb (lassabban nő
+  // a távval a célpont VÉ-je). Mágikus/minőségi bónusznál az Osztót NE módosítsd, a fegyver
+  // CÉ-jét igen (md/072_01).
 
   // 2. Szorzó kiszámítása (összetevők összege)
   szorzó = célpont_mozgás.szorzó
@@ -912,7 +949,12 @@ formula:
     max_szint = MIN(arányok.képzettség_max_szint, tsz + arányok.képzettség_nemprimer_max_szint_plusz)
 
 output: max_képzettség_szint
-note: Abszolút maximum: 15.szint. Szintlépésenként max 2 szinttel növelhető egy képzettség.
+note: Skála: [0, 15]. A 3. szint a "nullpont" (innen tűnnek el a súlyos levonások).
+      Abszolút maximum: 15.szint.
+      Hagyományos tanulással legfeljebb 13.szintig lehet fejlődni; a 14-15.szint csak speciális módon
+      (nagyon ritka, titkos tudás megszerzésével) érhető el.
+      Szintlépésenként max 2 szinttel növelhető egy képzettség - KIVÉVE 0-ról tanuláskor:
+      ekkor egy lépésben max 3.szintre ugorhat.
 ```
 
 ### 19b. Nyelvismeret pont keret (UI validáció, nem rules.json)

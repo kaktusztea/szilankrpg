@@ -159,6 +159,7 @@
     "tartós_sérülés_per_fok": 6
   },
   "arányok": {
+    "min_tsz": 3,
     "max_tsz": 21,
     "max_hm_diff_szintlépésenként": 0.5,
     "képzettség_nemprimer_max_szint_plusz": 3,

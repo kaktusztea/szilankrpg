@@ -165,6 +165,7 @@ kp_bónusz:                    # Kiemelt Fortélyok után járó extra KP
 # ============================================================
 
 arányok:
+  min_tsz: 3                                # kalandozás a 3. szinten kezdődik (1-2. szint = előtörténet)
   max_tsz: 21
   max_hm_diff_szintlépésenként: 0.5       # kerekítés: lefelé
   képzettség_nemprimer_max_szint_plusz: 3
