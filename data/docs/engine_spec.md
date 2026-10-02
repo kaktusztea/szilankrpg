@@ -162,10 +162,10 @@ note: A rules.json KÉ képlete NEM tartalmazza a fortély módosítókat (körk
 ## 5. Támadó Érték (TÉ) - fegyverenként
 
 ```
-note: Másfélkezes (MK) fegyverek: a fegyverek.json-ban két entry van (1K és 2K variáns,
-      eltérő harcértékekkel). A karakter példányban 1 fegyver példány (az 1K nevet tárolja),
-      de a Harc fülön mindkét variáns megjelenik. Az MK_pár mező azonosítja a párt.
-      Az Alapnév mező a suffix nélküli display név (pl. "Kard, másfélkezes").
+note: Másfélkezes (MK) fegyverek: a fegyverek_v2.json-ban egy fegyveren belül több mód van (1K és 2K
+      variáns, eltérő harcértékekkel). A karakter példányban 1 fegyver példány, a Harc fülön a módok
+      jelennek meg. Az MK szabály (1 kézzel TÉ-2/VÉ-2, Átütés megszűnik) a v2 mód-értékekbe beépítve.
+      Az Alapnév a suffix nélküli display név (pl. "Kard, másfélkezes").
 
       Fegyver kategória → harcmodor képzettség mapping:
         source: konstansok.yaml → fegyver_kategória_harcmodor
@@ -497,7 +497,7 @@ nehézségét a védekező pajzsmérete növeli - Kis +2, Közepes +4, Nagy +6. 
 
 Ha a karakter kizárólag a pajzzsal harcol (fegyver nélkül):
 - Aktív fül: Ügyesebb kéz = pajzs (idx: -2), Fegyverfogás: Egyfegyveres
-- Fegyvertáblában a pajzs fegyver harcértékei jelennek meg (`fegyverek.json`, kategória: "pajzs")
+- Fegyvertáblában a pajzs fegyver harcértékei jelennek meg (`fegyverek_v2.json`, kategória: "pajzs")
 - Harcmodor: Közelharc (`konstansok.fegyver_kategória_harcmodor.pajzs: "Közelharc"`)
 
 Bónuszok: a Pajzshasználat fortély `fegyver_kategória:pajzs` feltételes módosítói (§16):
@@ -507,7 +507,8 @@ Bónuszok: a Pajzshasználat fortély `fegyver_kategória:pajzs` feltételes mó
 
 Data layer: `pajzshasznalat.yaml` módosítók (feltétel: `"fegyver_kategória:pajzs"`, mód: flat).
 HarcScreen: `aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`)` → fortély módosítók automatikusan aktiválódnak.
-Pajzs adatok: `process_fegyverek.py` hozzáfűzi a `pajzsok.json` tartalmát `fegyverek.json`-hoz (kategória: "pajzs").
+Pajzs adatok: a pajzs-entryk a `fegyverek_v2.json`-ban (kategória: "pajzs") + a `konstansok.pajzs_hatások`
+2D tábla (méret × Pajzshasználat fok, §13). A régi `process_fegyverek.py` + `pajzsok.json` v1-pipeline archiválva.
 Harcértékek fül: "pajzs" kategória kiszűrve a fegyver felvétel dropdown-ból.
 
 ---
@@ -740,7 +741,7 @@ input:  karakter.tulajdonságok.Önuralom, karakter.CM,
         harcmodor_CÉ_bónusz, távfegyver.CÉ, mesterfegyver_fok
 source: konstansok.yaml → mesterfegyver_bónuszok
         tables/harcmodor_kepzettsegek_bonuszok.json
-        tables/tavfegyverek.json (Harcmodor mező: "Hajítás"/"Íjászat"/"Lövészet"/"Mágikus célzás")
+        tables/tavfegyverek_v2.json (Harcmodor mező: "Hajítás"/"Íjászat"/"Lövészet"/"Mágikus célzás")
 
 formula:
   CÉ_alap = konstansok.harcérték_alap.CÉ   // -15
@@ -776,7 +777,7 @@ A "Mágiatáv növelés" fortély foka határozza meg, melyik fokozat használha
   2.fok: Mágiatáv III
   3.fok: Mágiatáv IV
 
-Adatok (tavfegyverek.json):
+Adatok (tavfegyverek_v2.json):
   Kategória: "mágikus"
   Harcmodor: "Mágikus célzás"
   CÉ: fokozat (1-4)
@@ -788,7 +789,7 @@ Felvétel: kézi (karakter.távfegyverek[]-be, mint bármely távfegyver).
 Mesterfegyver: felvehető (spec_elem: "Mágiatáv X").
 Támadások/kör: nem kalkulálható (varázslás/kör szabály dönti el).
 
-Generálás: `process_fegyverek.py` - Mágiatáv I-IV automatikusan hozzáfűződik a tavfegyverek.json-hoz.
+Generálás: `data/gen/fegyverek_v2.py → generate_tavfegyverek_v2` - a Mágiatáv I-IV a `tavfegyverek_fixed.json`-ban, a v2 táblába (`tavfegyverek_v2.json`) kerül.
 ```
 
 ### 17.2 CÉ módosítók (taktikák, helyzetek, fortélyok)
@@ -887,7 +888,7 @@ Többszörös találat sebzésbónusz: NINCS távharcban
 
 ```
 Karakter séma:
-  karakter.távfegyverek: { alap: string }[]   // távfegyver nevei (lookup kulcs → tavfegyverek.json)
+  karakter.távfegyverek: { alap: string; idea: number }[]   // távfegyver példányok (lookup kulcs → tavfegyverek_v2.json)
   session.aktív_távfegyver_index: number      // kiválasztott távfegyver indexe (-1 = nincs)
 
 CÉ formula:
@@ -908,7 +909,7 @@ Virtuális fegyverek (nem a távfegyverek[] tömben, fortélyból származtatott
 CM szerkesztő: a Távharc fülön (szerkesztő módban), max = tsz × arányok.max_cm_perszint
 
 Adatforrások:
-  - tables/tavfegyverek.json (Fegyver, CÉ, Osztó, SP, Sebesség, Hatótáv, Kategória, Erőbónusz, Harcmodor)
+  - tables/tavfegyverek_v2.json (név, CÉ, Osztó, SP [-99=nincs], Sebesség, hatótáv_bázis + hatótáv_erő_szorzó, Kategória, sebzésjelleg, Harcmodor)
   - tables/tavharc_szorzok.json (5 kategória: célpont_mozgás, lövész_mozgás, célpont_méret, észlelhetőség, szél)
   - tables/harcmodor_kepzettsegek_bonuszok.json (CÉ oszlop)
   - konstansok.yaml → mesterfegyver_bónuszok (CÉ mező)
@@ -2131,7 +2132,7 @@ Fegyver + pajzs:
   A pajzsVÉ és TÉ büntetés CSAK a lila összesítő sorban jelenik meg (normál sorokból kiszűrve).
 
 Fegyver + hárítófegyver (IMPLEMENTÁLVA):
-  hárítóVÉ = hárítófegyver.VÉ (fegyverek.json Hárító flag, ha van "Hárítófegyver használat" fortély, else 0)
+  hárítóVÉ = hárítófegyver.VÉ (fegyverek_v2.json hárító mód, ha van "Hárítófegyver használat" fortély, else 0)
   hárítóMF_VÉ = MF_bónusz VÉ a hárítófegyverre (ha van MF a hárítóra → mesterfegyver_bónuszok lookup)
   Fegyver VÉ += hárítóVÉ + hárítóMF_VÉ
   TÉ büntetés: nincs (a hárítófegyver nem TÉ büntetést ad, mint a pajzs)
@@ -2161,7 +2162,7 @@ Kétkezes fegyver (lándzsa, stb.) → kizárólag "Egyfegyveres" fogás.
 2. ✅ AktivScreen: Fegyverfogás picker (overlay popup, 4 opció, disabled logika)
 3. ✅ AktivScreen: Bal kéz dropdown feltételes megjelenítés (kétkezes + hárító fogásnál)
 4. ✅ AktivScreen: "2 kezes harc" és "Pajzs kézben" toggle gombok eltávolítás (beolvad a picker-be)
-5. ✅ Fegyverek.json: `Hárító` flag hárítófegyverekre (process_fegyverek.py, beolvasztva)
+5. ✅ fegyverek_v2.json: `hárító` mód a hárítófegyvereken (a v1 process_fegyverek.py-pipeline archiválva)
 6. ✅ HarcScreen: Hárítófegyver VÉ bekötés (ha fegyverfogás == "fegyver_hárító") + lila sor
 7. ✅ karakter.yaml séma: `session.fegyverfogás` mező
 8. ✅ validate_karakter.py: fegyverfogás enum validáció
