@@ -1099,7 +1099,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 | Támadás erőből 📶 | TÉ:-1..-3, SP:+1..+3 (alap max 3) | Kiváró, Plusz tám, 1 tám | más |
 | Támadó 📶 | TÉ:+1..+3, VÉ:-2..-6 (alap max 3) | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
 | Védő 📶 | VÉ:+1..+3, TÉ:-2..-6 (alap max 3) | Érintő, 1 tám | más |
-| Teljes Védekezés | VÉ:+6, nem támad, hátrál | - | más |
+| Teljes Védekezés | VÉ:+8, nem támad, hátrál | - | más |
 | Visszafogott | TÉ:-10, Hátrány-2 sebzésdobás | Kezdeményező, Kiváró, 1 tám, Tettetés | más |
 | Tettetés | - (informatív) | Kiváró, Visszafogott | más |
 
@@ -1630,7 +1630,10 @@ A fortély `mód: "enyhít"` az egyetlen pont ahol a két rendszer találkozik:
 Cél referencia konvenció:
 - Harcértékek (nagybetűs): `TÉ`, `VÉ`, `KÉ`, `CÉ`, `SP`, `SFÉ` → fortély flat/scaled módosítók céljai
 - Dobások/képességek (snake_case): `té_dobás`, `vé_veszteség`, `mozgás` → esemenyek.yaml id-k (Hatás mechanika + enyhít)
-- Speciális engine változók: `harckeret`, `pajzs_TÉ_mérséklés`, `MGT_TÉ_büntetés` → csak fortély flat
+- Speciális engine változók: `harckeret`, `fegyverhossz`, `MGT_TÉ_büntetés` → csak fortély flat
+  (a `fegyverhossz` a Lovas/Léglovas harc fortély "Fegyverméretre +2" bónusza, l. lovas_harc.md;
+  az `MGT_TÉ_büntetés` a Merevvértviselet merevvért-TÉ-büntetés csökkentése).
+  A pajzs TÉ büntetés NEM fortély-cél, hanem a pajzs_hatások 2D tábla (§13).
 - Manőver célok: `manőver:{id}` → fortély bónuszok manőverekhez
 
 
@@ -2110,8 +2113,9 @@ Egyfegyveres:
 
 Fegyver + pajzs:
   Implementálva (§13): pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő).
-  TÉ büntetés = konstansok.pajzs_TÉ_büntetés[méret] + fortelyMods['pajzs_TÉ_mérséklés'] (min 0).
-  VÉ +2 (3. fok): fortély yaml módosító → fortelyMods['VÉ'] → fegyver_fortély_VÉ.
+  VÉ és TÉ büntetés EGYETLEN pajzs_hatások[méret][fok] lookupból (konstansok.yaml, §13) - NEM külön
+  konstans + fortély-mérséklés. A Pajzshasználat fok a táblán belül csökkenti a TÉ büntetést és
+  3. fokon emeli a VÉ-t (szabálykönyv: pajzshasznalat.md mátrix).
   A pajzsVÉ és TÉ büntetés CSAK a lila összesítő sorban jelenik meg (normál sorokból kiszűrve).
 
 Fegyver + hárítófegyver (IMPLEMENTÁLVA):
@@ -2723,6 +2727,35 @@ side effect (HarcScreen useEffect):
 UI (AktivScreen):
   - "Sérült" státusz chip: locked (nincs ✕ gomb, fok nem kattintható)
   - Státusz picker: "Sérült (auto)" névvel jelenik meg, szürkítve, nem kattintható
+```
+
+### §33.1 TODO - MGT → Fizikai próba Hátrány (computed automatizmus)
+
+```
+STÁTUSZ: TERV (nem implementált). Backlog: DEVSTATE.md "MGT → próba-Hátrány automatizmus".
+Forrás: md/082 (Páncél akadályoztatása, Fegyver/Pajzs akadályoztatása).
+
+Probléma:
+  A páncél/fegyver/pajzs MGT HARCÉRTÉK-hatása kész (MGT→harckeret §9, merevvért→TÉ §12,
+  felszerelés §15), de a PRÓBA-oldali hatás NINCS: a páncél MGT-je sávosan Hátrányt adna a
+  Fizikai Tulajdonság- és Képzettségpróbákra. Jelenleg a próba-EH csak session.aktív_státuszok-ból
+  számol (statusz-proba.ts), az MGT-t nem veszi figyelembe.
+
+Szabály (md/082 Páncél akadályoztatása - KM-mérlegelős default sávok):
+  páncél MGT:  0-7  → nincs büntetés
+               8-10 → Hátrány-1 Fizikai próbákra
+               11-13→ Hátrány-2 Fizikai próbákra
+               14+  → Automatikus kudarc
+  A Merevvértviselet fortély MGT-csökkentő hatása a próbákra IS hat (= a már számolt effektív MGT-t használd).
+  Fegyver/Pajzs akadályoztatása: Hátrány-1/-2 Fizikai próbákra (fegyver/pajzs-viselet alapján).
+
+Javasolt irány: COMPUTED hatás (NEM kézi statuszok.yaml entry - az duplikálná a karakterből
+  ismert MGT-t). Minta: §33 Sérült auto-státusz. A már kiszámolt páncél_MGT (reactive) → sáv-lookup
+  → Előny/Hátrány szint injektálása a Fizikai próba-EH-ba (statusz-proba.ts / kepzettseg-proba-calc.ts).
+  A sávhatárok data layerbe (konstansok.yaml), ne hardcode. KM felülírhatja (a szabály így jelzi).
+
+Nyitott döntés: a Fegyver/Pajzs akadályoztatás próba-hatása külön sávon vagy a páncél-MGT-vel
+  összevonva számoljon-e (a kettő eltérő forrás: viselt páncél vs kézben tartott fegyver/pajzs).
 ```
 
 ---
@@ -3411,6 +3444,10 @@ Kihagyott (nem kerül bele az URL payload-ba):
   - jegyzetek             (szabad szöveg, lehet nagy)
   - napló[]               (kaland bejegyzések, lehet nagy)
   - session               (teljes session objektum - runtime állapot)
+
+Részlegesen szerializált:
+  - előtörténet           CSAK a származás_helye mező megy át (sh kulcs, §40.2); a többi
+                          (szociális_érzék, külső, előtörténet szöveg) kimarad, importkor üres (default).
 ```
 
 ### 40.2 Kompakt JSON formátum
@@ -3424,6 +3461,7 @@ A cél: minimalizálni a JSON méretet tömörítés előtt.
   "n":  név,                                // string
   "bn": becenév,                            // string (kihagyható ha üres)
   "j":  játékos,                            // string (kihagyható ha üres)
+  "jk": JK-e,                               // boolean (csak ha false = NJK; default true → kihagyva)
   "t":  tsz,                                // number
   "l":  leírás,                             // string (kihagyható ha üres)
   "k":  kor,                                // number
@@ -3439,7 +3477,8 @@ A cél: minimalizálni a JSON méretet tömörítés előtt.
   "tf": távfegyverek (lásd 40.6),          // string[]
   "pa": páncél (csak non-default mezők),   // object (kihagyható ha üres)
   "pj": pajzs méret,                       // string (kihagyható ha üres)
-  "fl": felszerelés (lásd 40.7)            // object (kihagyható ha üres)
+  "fl": felszerelés (lásd 40.7),           // object (kihagyható ha üres)
+  "sh": előtörténet.származás_helye        // string (kihagyható ha üres)
 }
 ```
 
