@@ -299,7 +299,7 @@
     },
     {
       "id": "páncél_struktúra_sfé_fizikai",
-      "formula": "lookup(struktúrák, név, páncél_alap, sfé_fizikai)",
+      "formula": "lookup(struktúrák, név, páncél_alap, struktúra_sfé_fizikai)",
       "inputs": [
         "struktúrák",
         "páncél_alap"
@@ -307,7 +307,7 @@
     },
     {
       "id": "páncél_struktúra_sfé_energia",
-      "formula": "lookup(struktúrák, név, páncél_alap, sfé_energia)",
+      "formula": "lookup(struktúrák, név, páncél_alap, struktúra_sfé_energia)",
       "inputs": [
         "struktúrák",
         "páncél_alap"

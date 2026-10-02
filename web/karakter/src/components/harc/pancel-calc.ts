@@ -17,8 +17,8 @@ export function buildPancelLookups(
   lookupArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([n, v]) => ({ név: n, érték: v })));
   lookupArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([n, v]) => ({ név: n, érték: v })));
   lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map(s => ({
-    név: s.struktúra, mgt: s.mgt, sfé_fizikai: s.sfé_fizikai,
-    sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0
+    név: s.struktúra, mgt: s.mgt, struktúra_sfé_fizikai: s.sfé_fizikai,
+    struktúra_sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0
   })));
   lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map(a => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
   lookupArrays.set('méret_tábla', konstansok.páncél_méret_illeszkedés.map(m => ({ név: m.fokozat, érték: m.mgt })));
