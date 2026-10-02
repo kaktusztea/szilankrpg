@@ -707,7 +707,7 @@ SWITCH feltétel.típus:
 - Hívás helye:
   - `AktivScreen.tsx` - Hatás pool szekció (fortélyEmlékeztetők után), aktívFeltételek nélkül
   - `HarcScreen.tsx` - fortélyMods számítás (aktívFeltételek Set-tel): alapeset flat módosítók beszámítása harcértékekbe (pl. Lovas/Léglovas harc 0.fok TÉ:-9 VÉ:-9)
-  - `HatasPoolCalc.ts` - Hatás pool kalkuláció (aktívFeltételek Set-tel)
+  - `aktiv-calc.ts` - Hatás pool kalkuláció (calcAktivData → alapesetek, aktívFeltételek Set-tel)
 - HarcScreen: `hasHárítóFortély` check - ha nincs "Hárítófegyver használat" fortély → hárítóVÉ = 0
 - Validáció: `generate_tables.py` - feltétel prefix ellenőrzés `konstansok.yaml → feltétel_prefixek` alapján
 
@@ -1917,7 +1917,7 @@ Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista é
 
 ## §26 Kétkezes harc
 
-Forrás: md/065_04_04_ketkezes_harc.md, fortelyok.harci/ketkezes_harc.md, fortelyok.harci/ketkezesseg.md
+Forrás: md/065_05_ketkezes_harc.md, fortelyok.harci/ketkezes_harc.md, fortelyok.harci/ketkezesseg.md
 
 ### 26.1 Alapfogalmak
 
@@ -2081,7 +2081,7 @@ if session.kétkezes_harc:
 
 ## §27 Fegyverfogás
 
-Forrás: md/065_04_00_fegyverfogas.md
+Forrás: md/065_01_fegyverfogas.md
 
 ### 27.1 Koncepció
 
@@ -2171,7 +2171,7 @@ Kétkezes fegyver (lándzsa, stb.) → kizárólag "Egyfegyveres" fogás.
 
 ## §28 Harc alakzatban (TERV - NEM IMPLEMENTÁLT)
 
-Forrás: md/065_03_harc_alakzatban.md
+Forrás: md/065_04_harc_alakzatban.md
 
 ### 28.1 Alapfogalmak
 
@@ -2498,7 +2498,7 @@ Minden karakter két azonosítót kap:
 
 - `uid`: "Új karakter" indításkor generálódik, soha nem módosul
 - `id_leíró`: automatikusan frissül név/TSz változáskor (slug: kisbetű, szóköz→kötőjel, ékezet marad)
-- A `test_karakter.json`-ban fix uid (pl. `"test-von-agabor-001"`)
+- A `test_karakter2.json`-ban fix uid (UUID formátum)
 - Betöltéskor: ha hiányzik a `uid`, generálódik (backwards compatibility)
 - Schema: `karakter.uid: string`, `karakter.id_leíró: string` (kötelező, top-level mezők)
 
