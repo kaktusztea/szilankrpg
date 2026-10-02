@@ -1472,7 +1472,7 @@ A lánc: **Státusz/Harci helyzet** → okoz **Hatás(oka)t** → minden Hatás 
 |---------|----------------------|-----------------|
 | Hatás mechanika típusok | "hatás operátorok" (hatas_operatorok.yaml) | Alacsonyszintű operátorok: hogyan hat (kocka reroll, szorzó, letilt, max korlát) |
 | Célpontok | "események" (esemenyek.yaml) | Mire vonatkozik a mechanika (TÉ dobás, Mozgás, Varázslás képesség) |
-| **Hatások** | - (eddig nem volt yaml) | Magas szintű, elnevezett hatáscsomagok a szabályrendszerből (081_hatasok.md). Pl. "Harcképtelenség" = letilt(harci_képesség) + speciális VÉ. |
+| **Hatások** | `hatasok.yaml` (build-validációs katalógus) | Magas szintű, elnevezett hatáscsomagok a szabályrendszerből (081_hatasok.md). Pl. "Harcképtelenség" = letilt(harci_képesség) + speciális VÉ. CSAK build-validáció olvassa, a runtime nem (l. §22.4). |
 | Státuszok | statuszok.yaml | Állapotok, amelyek Hatásokat okoznak (082_statuszok.md) |
 | Harci helyzetek | harci_helyzetek.yaml | Harci státuszok, amelyek Hatásokat okoznak (065_01_*.md) |
 
@@ -1517,7 +1517,19 @@ célpontok:  # (yaml-ban: események - legacy elnevezés)
 ### 22.4 Hatások (hatasok.yaml)
 
 Elnevezett, magas szintű hatáscsomagok (081_hatasok.md). Forrás: `data/sources/hatasok.yaml`.
-Státuszok és Harci helyzetek ezeket okozzák. Minden Hatás leírható mechanika+cél párokkal.
+Minden Hatás leírható mechanika+cél párokkal.
+
+STÁTUSZ (fontos): a `hatasok.yaml` jelenleg CSAK build-validációs/dokumentációs réteg.
+  - NEM generál JSON-t és a webapp NEM tölti be (`aktiv_ful.py` - csak a `validate_hatasok_katalogus`
+    olvassa build-időben: minden hatás `mechanika`-ja érvényes `hatas_operatorok` + `esemenyek` id-re mutat).
+  - A RUNTIME lánc NEM ezen megy át: a `statuszok.yaml`/`harci_helyzetek.yaml` KÖZVETLENÜL a
+    `hatas_operatorok` (operátor: előny/hátrány/…) + `esemenyek` (cél: té_dobás/…) id-ket hivatkozza,
+    NEM a `hatasok.yaml` nevesített id-ket (előny_1, mozgás_feleződik, …). A köztes "nevesített hatás"
+    réteg jelenleg nincs bekötve a futó rendszerbe.
+  - A katalógus tartalma UP-TO-DATE a szabálykönyvvel (081_hatasok.md): 1:1 lefedés (29 hatás),
+    nevek + mechanika-leírások egyeznek. A build-validáció tartja szinkronban.
+  - Jövő: a nevesített hatás-réteg a §42 egységes effekt-modell runtime fogyasztójának van előkészítve
+    (akkor válik a statusz→hatasok.yaml→mechanika lánc élővé).
 
 | id | Hatás neve | Mechanika | Cél | Leírás |
 |----|-----------|-----------|-----|--------|
