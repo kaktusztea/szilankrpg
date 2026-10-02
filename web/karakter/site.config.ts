@@ -1,18 +1,31 @@
 // ============================================================
-// Szilánk webapp telepítési konfiguráció - FORK ESETÉN EZT ÍRD ÁT.
+// Szilánk webapp telepítési konfiguráció.
 //
-// Ha a repót forkolod és a SAJÁT GitHub Pages oldaladon hostolod,
-// elég ezt az egy fájlt módosítanod. A share URL és a QR kód futásidőben
-// a böngésző window.location-jéből épül, azokat nem kell állítani.
+// GitHub Actions deploy esetén a user + repo nevet a futtatókörnyezet
+// AUTOMATIKUSAN adja (GITHUB_REPOSITORY env) - fork esetén ehhez NEM kell
+// semmit átírni. Az alábbi literálok a FALLBACK-ek lokális dev / kézi
+// buildhez, ahol nincs env. A branch mindig innen jön (nem env-ből), mert a
+// repo-linkeknek a md fájlok tartós ágára kell mutatniuk.
+//
+// A share URL és a QR kód futásidőben a böngésző window.location-jéből épül,
+// azokat nem kell állítani.
 // ============================================================
 
-/** GitHub felhasználónév (a fork tulajdonosa). */
-export const GITHUB_USER = 'kaktusztea';
+// GITHUB_REPOSITORY = "user/repo" (csak GitHub Actions build-időben; böngészőben
+// nincs process, ezért a typeof guard). Ha hiányzik → literál fallback.
+const envRepo =
+  typeof process !== 'undefined' ? process.env?.GITHUB_REPOSITORY : undefined;
+const [envUser, envName] = envRepo ? envRepo.split('/') : [];
 
-/** Repo neve - EGYBEN a GitHub Pages base path is (https://<user>.github.io/<REPO_NAME>/). */
-export const REPO_NAME = 'szilankrpg';
+/** GitHub felhasználónév (a fork tulajdonosa). Fallback, ha nincs GITHUB_REPOSITORY env. */
+export const GITHUB_USER = envUser || 'kaktusztea';
 
-/** Az az ág, amelyről a GitHub a md fájlokat / segédletet szolgálja ki. */
+/** Repo neve - EGYBEN a GitHub Pages base path is (https://<user>.github.io/<REPO_NAME>/).
+ *  Fallback, ha nincs GITHUB_REPOSITORY env. */
+export const REPO_NAME = envName || 'szilankrpg';
+
+/** Az az ág, amelyről a GitHub a md fájlokat / segédletet szolgálja ki.
+ *  Mindig innen (nem env-ből) - a repo-linkeknek a tartós ágra kell mutatniuk. */
 export const REPO_BRANCH = 'master';
 
 // --- Származtatott értékek (ne ezeket írd át) ---
