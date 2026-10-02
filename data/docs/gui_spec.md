@@ -297,7 +297,7 @@ A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én haj
 - `.aktiv-field-btn`: keretezett label+érték (he-field-btn stílus)
 - `.aktiv-hatas-pool`: sötét háttér (`#1a1a2e`), keretes box. Tartalom: Fortély bónuszok (felül) + Alapesetek accordion (alul, ha van).
 - `.hatas-pool-item .fortely-nev`: lila (#ce93d8)
-- `.taktika-chip-name`: halvány kék (`#90caf9`)
+- `.aktiv-taktika-name`: halvány kék (`#90caf9`)
 - Overlay picker: `.aktiv-picker` (görgethető, 80vh max), `.aktiv-picker-item` kártyák
 - `.manover-category-label`: narancssárga kategória fejléc
 - Szekció fejlécek: `<h3>` elem (Taktikák, Harci helyzetek, Státuszok, Manőver, Narratív)
@@ -361,7 +361,7 @@ A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes ha
 
 **GUI terv:**
 - **Fegyverfogás field-btn**: kattintásra overlay popup nyílik (szokásos `.kep-prompt-overlay` + `.aktiv-picker` stílus)
-- **Popup tartalma**: egymás alatt a választható opciók (`.manover-card` stílus):
+- **Popup tartalma**: egymás alatt a választható opciók (`.aktiv-picker-item` stílus):
   - Egyfegyveres (alap)
   - Fegyver + pajzs (csak ha van pajzs a karakteren)
   - Fegyver + hárítófegyver (csak ha van hárítófegyver + fortély)
@@ -503,7 +503,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Fegyver kártyák (hasonló a Harcértékek fül fegyver szekciójához)
 - Aktív fegyver: zöld keret (kattintásra váltható)
 - Kártyán: MF gomb (popup: 0–3) | Idea gomb (popup: -5..+5) | CÉ: X (Yx) badge
-- "Új távfegyver..." dropdown (`tavfegyverek.json`-ból, 🔆 kiszűrve)
+- "Új távfegyver..." dropdown (`tavfegyverek_v2.json`-ból, 🔆 kiszűrve)
 - Törlés: ✕ gomb → megerősítő popup
 
 **Hajítható fegyverek (fortélyból) szekció:**
@@ -557,7 +557,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Törlés megerősítő
 
 ### Adatforrások
-- `tables/tavfegyverek.json` (Fegyver, CÉ, Osztó, Sebesség, Harcmodor, Hatótáv, Kategória)
+- `tables/tavfegyverek_v2.json` (név, CÉ, Osztó, Sebesség, Harcmodor, hatótáv_bázis/erő_szorzó, Kategória, sebzésjelleg)
 - `tables/tavharc_szorzok.json` (5 kategória: célpont_mozgás, lövész_mozgás, célpont_méret, észlelhetőség, szél)
 - `tables/harcmodor_kepzettsegek_bonuszok.json` (CÉ oszlop)
 - `konstansok.mesterfegyver_bónuszok` (CÉ mező)
@@ -768,7 +768,7 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 - `spec_típus: ""` → normál, egyszer felvehető
 - `spec_típus` nem üres + `spec_lista: [...]` → fix lista dropdown (pl. Kultúrkör: 29 elem). Már felvett elemek kiszűrődnek.
 - `spec_típus: "fegyver"` + `spec_lista: []` → dropdown a karakter fegyvereiből (Harcértékek fülről). Disabled ha nincs fegyver / mindhez felvéve.
-- `spec_típus: "nyelv"` + `spec_lista: []` → custom styled gomb-lista overlay (`.nyelv-picker`, csoportonként narancssárga fejléc + `.nyelv-btn` gombok, `tables/nyelvek.json`-ból, max 70vh scrollozható). Mellé katt/Escape cancel. Már felvett nyelvek kiszűrődnek.
+- `spec_típus: "nyelv"` + `spec_lista: []` → custom styled gomb-lista overlay (`SpecPicker` csoportos ág: `.spec-picker` + `.spec-picker-csoport` narancssárga fejléccel + `.spec-picker-btn` gombok, `tables/nyelvek.json`-ból, max 70vh scrollozható). Mellé katt/Escape cancel. Már felvett nyelvek kiszűrődnek.
 - `spec_típus` egyéb + `spec_lista: []` → freetext popup (max 20 karakter) (pl. Helyismeret, Páros harc)
 - Felvett példányok neve: `"AlapNév - alnév"` formátum (pl. `"Kultúrkör - erv"`, `"Helyismeret - Erion"`)
 
@@ -798,11 +798,10 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 - Rövid koppintás: nem csinál semmit
 - Tap: fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
   - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se tap-re) - ehelyett "1 fok a maximum" hint (2s)
-  - Mesterfegyver (locked): tap → "Ezt a fortélyt a Harcértékek/Távharc fülön kezeld!" hint (3s, távfegyver név alapján)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup (egyik sem pre-selected, fok: 0-val kerül be); többszörös → megfelelő picker popup
-- Locked fortélyok (konstansok.locked_fortélyok): NEM jelennek meg a dropdown-ban, nem szerkeszthetők/törölhetők, lista tetején
-- Mesterfegyver bejegyzések: szinkronizálva fegyver példányokból (Harcértékek fül)
-- ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb) - locked elemeknél nincs ✕
+- Mesterfegyver bejegyzések: szinkronizálva fegyver példányokból (Harcértékek fül). A Mesterfegyver
+  `többszörös_típus: "fegyver"` - a picker a karakter fegyvereihez köti; felvétel a Fortélyok fülön is lehet.
+- ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
 - Escape: popup bezárás
 
 ### Viselkedés Játék módban
@@ -821,7 +820,7 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 - Harcmodor összevonás: ha a követelmény lista összes eleme harcmodor → "Harcmodor ≥ X" (rövidített). Mesterfegyvernél fegyver-specifikus: "Harcmodor - Kardvívás ≥ X" (fegyver kategória → harcmodor lookup)
 - Többszörös fortély követelmény (pl. Nyelvismeret): bármelyik példány teljesítheti
 - Case-insensitive összehasonlítás mindkét típusnál
-- Rendezés: locked fortélyok előre → azonos nevűek együtt (ABC) → azon belül fok desc
+- Rendezés: azonos nevűek együtt (ABC) → azon belül fok desc
 
 ### Mód váltás
 - Game → Szerkesztő váltáskor: info accordion resetelődik (nyitott panel bezáródik)
@@ -883,10 +882,8 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
   - Méret: - nincs - / kis / közepes / nagy
   - Pajzshasználat fok: kerek gombok 0-3 (szinkronizálja a Pajzshasználat fortélyt a Fortélyok fülön)
 - Pajzshasználat fortély szinkronizáció:
-  - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
-  - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
-  - Tap locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
-  - Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
+  - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt (a `fortélyok[]` elejére)
+  - A Fortélyok fülön normál fortélyként jelenik meg (szerkeszthető/felvehető ott is - a locked mechanizmus megszűnt)
 - Pajzs fegyverként: ha van méret → Aktív fül Ügyesebb kéz dropdown-ban megjelenik (idx: -2, zöld szín)
   - Fegyverek dropdown-ban (Harcértékek fül): "pajzs" kategória kiszűrve (nem vehető fel külön)
 
@@ -1088,7 +1085,6 @@ Overlay screen-ek:
 - Slider (`<input type="range">`): `width: 100%; accent-color: --accent`
 - Szint grid gombok (`.fort-fok-btn`): `36px x 36px; border-radius: 50%; border: 2px solid #555; font-size: 16px; font-weight: bold`
   - Aktív: `border-color: --success; background: --success; color: #000`
-  - Törlő (`.fort-fok-del`): `border-color: --error; color: --error`
 - Szint grid (képzettségek): `grid-template-columns: repeat(5, 36px); gap: 6px`
 - Fok radios (fortélyok): `flex; gap: 8px; justify-content: center`
 - Értékválasztás azonnal bezárja a popup-ot (nincs OK/Mégse gomb)
@@ -1100,10 +1096,10 @@ A `.kep-prompt-overlay` (`display: flex; align-items: center; justify-content: c
 - ❌ **NEM MŰKÖDIK**: `display: flex; flex-direction: column` a popup-on + `flex: 1; min-height: 0` a listán. A flex parent (`kep-prompt-overlay`) összenyomja a gyerekeket.
 - ❌ **NEM MŰKÖDIK**: `max-height` a popup-on + `overflow: hidden` + flex list belül. A flex layout nem propagálja a height constraint-et.
 - ✅ **MŰKÖDIK**: `max-height: Xvh; overflow-y: auto` közvetlenül a popup div-en (NEM flex layout). A popup maga scrollozódik. A belső lista nem kap saját scroll-t.
-- ✅ **MŰKÖDIK (alternatív)**: Nyelv picker minta - `.kep-prompt` class + saját class-on `max-height: 70vh; overflow-y: auto`.
+- ✅ **MŰKÖDIK (alternatív)**: Nyelv picker minta - `.kep-prompt spec-picker` class + `max-height: 70vh; overflow-y: auto`.
 
 **Példák:**
-- `.nyelv-picker`: `max-height: 70vh; overflow-y: auto` (a teljes popup scrolloz)
+- `.spec-picker`: `max-height: 70vh; overflow-y: auto` (a teljes popup scrolloz; nyelv/spec picker)
 - `.fort-picker-popup`: `max-height: 80vh; overflow-y: auto` (a teljes popup scrolloz)
 - `.aktiv-picker`: `max-height: 80vh; display: flex; flex-direction: column` - működik mert az elemszám sosem lépi túl a viewport-ot
 
@@ -1191,7 +1187,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 Minden adat `fetchJson`-nel:
 - `tables/konstansok.json` - központi konstansok
 - `tables/fegyverek_v2.json` - fegyver adatok (v2, `módok[]` szerkezet; a régi v1 kivezetve → `archive/data_fegyverek_v1/`)
-- `tables/tavfegyverek.json`, `tables/pajzsok.json` - távfegyver/pajzs adatok
+- `tables/tavfegyverek_v2.json` - távfegyver adatok (a pajzs-adatok a `fegyverek_v2.json` pajzs-entryjeiben + `konstansok.pajzs_hatások`; a régi `pajzsok.json` archiválva)
 - `tables/kepzettseg_kp.json` - KP költség tábla szintenként
 - `tables/harcmodor_kepzettsegek_bonuszok.json` - harcmodor bónuszok szintenként
 - `tables/kepzettsegek.json` - 81 képzettség definíció (+ helyzetfüggő_módosítók táblák)
@@ -1212,7 +1208,7 @@ Minden adat `fetchJson`-nel:
 - `tables/tavharc_szorzok.json` - 5 szorzó kategória (célpont mozgás, lövész, méret, észlelhetőség, szél)
 - `data/rules.json` - reactive engine szabályok (54 db)
 - `data/karakter/empty_karakter.json` - üres karakter template (induláskor betöltődik, validálva)
-- `data/karakter/test_karakter.json` - teszt karakter (🧪 gomb, runtime fetch + validáció)
+- `data/karakter/test_karakter2.json` - teszt karakter (🧪 gomb, runtime fetch + validáció)
 
 ### Karakter state struktúra (Hook architektúra)
 - **`useKarakterState`** hook: localStorage multi-slot kezelés, karakter load/save, undo stack
@@ -1251,7 +1247,7 @@ Egységes szín kódrendszer a webapp-ban - a szín vizuálisan jelzi az elem t�
 | Szín | Kód | Jelentés | Példa |
 |------|-----|----------|-------|
 | Zöld | `#4caf50` / `var(--success)` | Aktív elem kiemelés, értékek | aktív fegyver keret, szorzó picker kijelölés |
-| Lila | `#ab47bc` | Fortélyhoz kötött elem | MF fok gomb, Merevvértviselet gomb keret |
+| Lila | `--color-fortely` (`#ce93d8`) | Fortélyhoz kötött elem | MF fok gomb, Merevvértviselet gomb keret |
 | Világoskék | `#90caf9` | Összevont/kombinált harcérték | Kétkezes harc összesítő sor, fegyverfogás sor, taktika chip név |
 | Türkiz | `#4dd0e1` | Harci helyzet | helyzet chip nevek |
 | Narancs | `#ffa726` | Figyelmeztetés, VÉ normál | távharc VÉ szín |
