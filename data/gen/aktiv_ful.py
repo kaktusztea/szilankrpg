@@ -32,6 +32,9 @@ def generate_aktiv_ful():
     validate_schema('statusz', statuszok, 'statuszok.yaml', root_key='státuszok')
     validate_schema('esemeny', esemenyek, 'esemenyek.yaml', root_key='események')
     validate_schema('hatas', hatas_operatorok, 'hatas_operatorok.yaml', root_key='hatás_operátorok')
+    # Hátterek: két külön lista (leíró + karma), eltérő mezőkkel - külön-külön a hatter sémához mérve.
+    validate_schema('hatter', hatterek.get('leíró_hátterek', []), 'hatterek.yaml[leíró]', root_key='leíró_hátterek', name_key='kategória')
+    validate_schema('hatter', hatterek.get('karma_hátterek', []), 'hatterek.yaml[karma]', root_key='karma_hátterek')
     validate_aktiv_ful(taktikak, helyzetek, [], manoverek)
     validate_hatasok(hatas_operatorok)
     validate_esemenyek(esemenyek)

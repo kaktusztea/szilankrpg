@@ -2609,212 +2609,6 @@
     "md_fájl": "fortelyok.harci/alakzat_vedekezo.md"
   },
   {
-    "név": "Alkalmatlan fegyver hajítása",
-    "csoport": "harci",
-    "alcsoport": "harci",
-    "maxfok": 2,
-    "session_toggle": false,
-    "emlékeztető": true,
-    "kiérdemelhető": false,
-    "kp_perfok": 6,
-    "ingyenes_perszint": 0,
-    "többszörös_típus": "fegyver",
-    "többszörös_lista": [],
-    "leírás": "Nem hajításra alkalmas fegyver dobásának gyakorlása.",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
-    "fokok": [
-      {
-        "fok": 1,
-        "hatás": [
-          "Hajítás alkalmatlan fegyverrel harci helyzet büntetései csökkennek: Hátrány-1 Sebzésdobásra és CÉ dobásra.",
-          "A fegyver harcértéke nem változik (CÉ=0)."
-        ],
-        "követelmény": [
-          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint",
-          "Hajítás - 3.szint"
-        ],
-        "követelmények": [
-          {
-            "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
-            ],
-            "érték": 6,
-            "típus": "képzettség"
-          },
-          {
-            "név": "Hajítás",
-            "érték": 3,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": [
-          {
-            "cél": "sebzésdobás",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
-          },
-          {
-            "cél": "cé_dobás",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
-          }
-        ],
-        "próba_enyhítések": []
-      },
-      {
-        "fok": 2,
-        "hatás": [
-          "Hajítás alkalmatlan fegyverrel harci helyzet büntetései nem sújtanak.",
-          "A fegyver harcértéke nem változik (CÉ=0)."
-        ],
-        "követelmény": [
-          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
-          "Hajítás - 6.szint"
-        ],
-        "követelmények": [
-          {
-            "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
-            ],
-            "érték": 9,
-            "típus": "képzettség"
-          },
-          {
-            "név": "Hajítás",
-            "érték": 6,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": [
-          {
-            "cél": "sebzésdobás",
-            "érték": 2,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
-          },
-          {
-            "cél": "cé_dobás",
-            "érték": 2,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
-          }
-        ],
-        "próba_enyhítések": []
-      }
-    ],
-    "md_fájl": "fortelyok.harci/alkalmatlan_fegyver_hajitasa.md"
-  },
-  {
-    "név": "Alkalmatlan tárgyak hajítása",
-    "csoport": "harci",
-    "alcsoport": "harci",
-    "maxfok": 2,
-    "session_toggle": false,
-    "emlékeztető": true,
-    "kiérdemelhető": false,
-    "kp_perfok": 6,
-    "ingyenes_perszint": 0,
-    "többszörös_típus": "",
-    "többszörös_lista": [],
-    "leírás": "Nem dobásra készített tárgyak hajigálása (sámli, palack, stb.).",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
-    "fokok": [
-      {
-        "fok": 1,
-        "hatás": [
-          "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
-          "A tárgy harcértéke nem változik."
-        ],
-        "követelmény": [
-          "Hajítás - 6.szint"
-        ],
-        "követelmények": [
-          {
-            "név": "Hajítás",
-            "érték": 6,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": [
-          {
-            "cél": "sebzésdobás",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
-          },
-          {
-            "cél": "cé_dobás",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
-          }
-        ],
-        "próba_enyhítések": []
-      },
-      {
-        "fok": 2,
-        "hatás": [
-          "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
-          "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
-        ],
-        "követelmény": [
-          "Hajítás - 9.szint"
-        ],
-        "követelmények": [
-          {
-            "név": "Hajítás",
-            "érték": 9,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": [
-          {
-            "cél": "sebzésdobás",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
-          },
-          {
-            "cél": "cé_dobás",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
-          }
-        ],
-        "próba_enyhítések": []
-      }
-    ],
-    "md_fájl": "fortelyok.harci/alkalmatlan_targyak_hajitasa.md"
-  },
-  {
     "név": "Belharcos",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -9486,6 +9280,212 @@
       }
     ],
     "md_fájl": "fortelyok.szabad/zsonglorkodes.md"
+  },
+  {
+    "név": "Alkalmatlan fegyver hajítása",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "fegyver",
+    "többszörös_lista": [],
+    "leírás": "Nem hajításra alkalmas fegyver dobásának gyakorlása.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Hajítás alkalmatlan fegyverrel harci helyzet büntetései csökkennek: Hátrány-1 Sebzésdobásra és CÉ dobásra.",
+          "A fegyver harcértéke nem változik (CÉ=0)."
+        ],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint",
+          "Hajítás - 3.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Hajítás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          }
+        ],
+        "próba_enyhítések": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Hajítás alkalmatlan fegyverrel harci helyzet büntetései nem sújtanak.",
+          "A fegyver harcértéke nem változik (CÉ=0)."
+        ],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
+          "Hajítás - 6.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Hajítás",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 2,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 2,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          }
+        ],
+        "próba_enyhítések": []
+      }
+    ],
+    "md_fájl": "fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md"
+  },
+  {
+    "név": "Alkalmatlan tárgyak hajítása",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nem dobásra készített tárgyak hajigálása (sámli, palack, stb.).",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
+          "A tárgy harcértéke nem változik."
+        ],
+        "követelmény": [
+          "Hajítás - 6.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Hajítás",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          }
+        ],
+        "próba_enyhítések": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
+          "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
+        ],
+        "követelmény": [
+          "Hajítás - 9.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Hajítás",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          }
+        ],
+        "próba_enyhítések": []
+      }
+    ],
+    "md_fájl": "fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md"
   },
   {
     "név": "Gyors hajítás",
