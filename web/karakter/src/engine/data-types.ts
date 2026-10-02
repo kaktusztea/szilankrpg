@@ -140,12 +140,6 @@ export interface HarciHelyzetEntry {
   };
 }
 
-export interface SzituacioEntry {
-  név: string;
-  feltétel_kulcs: string;
-  infó: string;
-}
-
 export interface ManoverKövetelmény {
   erősség: 'normál' | 'erős';
   típus: 'képzettség' | 'fortély' | 'fegyver_kategória' | 'fegyver_sebzéstípus' | 'egyéb';
