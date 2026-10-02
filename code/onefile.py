@@ -1,146 +1,224 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-## Usage: python3 onefile.py <szilank repo-path> <export-dir>
+## Usage: python3 onefile.py <szilank repo-path> [<output-file>]
+##        python3 onefile.py --selftest
+
+"""
+Egyesiti az `md/` konyvtar markdown tartalmat egyetlen nagy fajlba.
+
+Felepites:
+  1. Gerinc: a repo-gyoker PREPEND_FILES fajljai (README, LICENSE), majd a
+     tartalomjegyzek (TOC_FILE), vegul az md/ osszes top-level .md fajlja
+     ABC-sorrendben.
+  2. Horgonyok: egyes gerinc-fajlok utan beszurodik egy vagy tobb alkonyvtar
+     rekurziv markdown tartalma (INJECT_POINTS).
+  3. BLACKLIST_DIRS: szandekosan kihagyott alkonyvtarak.
+
+TELJESSEGI GARANCIA
+  Minden top-level alkonyvtarnak PONTOSAN egy helyre kell tartoznia: vagy a
+  BLACKLIST_DIRS-be, vagy egy INJECT_POINTS mintara illeszkednie. Ha egy
+  alkonyvtar egyikbe sem tartozik (vagy tobbe), a script HIBAVAL leall - igy
+  soha nem veszhet el neman tartalom (ez volt a regi, substring-alapu valtozat
+  csendes hibaja: pl. a magia.faj.arkanumok eltunt a kimenetbol).
+"""
 
 import os
 import sys
-import shutil
-import tempfile
+import fnmatch
 from pathlib import Path
 
 
-def get_directories(path, blacklist=None):
-    """Return alphabetically sorted list of full paths to all directories in the given path."""
-    return sorted([str(d.resolve()) for d in Path(path).iterdir()
-                   if d.is_dir() and (blacklist is None or d.name not in blacklist)])
+# ---------------------------------------------------------------------------
+# Konfiguracio
+# ---------------------------------------------------------------------------
+
+# Alkonyvtar-horgonyok: <md/ gerinc-fajl neve> -> alkonyvtar-mintak listaja.
+# A minta pontos nev ('hatterek.faji') vagy glob ('fortelyok.*') lehet.
+# A mintakra illeszkedo (nem-blacklistelt) alkonyvtarak rekurziv tartalma a
+# horgony-fajl UTAN kerul be, ABC-sorrendben.
+INJECT_POINTS = {
+    '021_faj_hatterek.md':              ['hatterek.faji'],
+    '030_01_kepzettseglista.md':        ['kepzettsegek.*'],
+    '045_misztikus_magia_fortelyok.md': ['fortelyok.*'],
+    '150_szituaciok.md':                ['szituaciok'],
+}
+
+# Szandekosan kihagyott alkonyvtarak (nem kerulnek a kombinalt fajlba).
+BLACKLIST_DIRS = [
+    'views', 'template', 'images', '.obsidian',
+    'diszciplinak.pszi',
+    'fortelyok.misztikus',       # WIP misztikus fortelyek
+    'magia.papi.varazslatok',    # WIP papi varazslatok
+    'magia.faj.arkanumok',       # WIP faji arkanum-stubok (TODO)
+]
+
+# A gerinc elejere kerulo, md/ konyvtaron KIVULi fajlok (repo-gyoker).
+PREPEND_FILES = ['README.md', 'LICENSE']
+
+# A gerinc elso md/ fajlja (tartalomjegyzek); a tobbi gyoker-md ABC-ben koveti.
+TOC_FILE = 'szabalyrendszer.md'
+
+# Fajlok kozti elvalaszto a kimenetben.
+FILE_SEP = '\n\n---\n---\n'
 
 
-def get_md_files(directory, recursive=False):
+# ---------------------------------------------------------------------------
+# Segedfuggvenyek
+# ---------------------------------------------------------------------------
+
+def read_text(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+
+def md_files(directory, recursive):
+    """Alkonyvtar .md fajljai teljes utvonallal, ABC-sorrendben."""
+    pattern = '**/*.md' if recursive else '*.md'
+    return sorted(str(p.resolve()) for p in Path(directory).glob(pattern))
+
+
+def top_level_dirs(root):
+    return sorted(p.name for p in Path(root).iterdir() if p.is_dir())
+
+
+def classify(all_dirs):
     """
-    Returns list: Alphabetically sorted list of full paths to .md files
+    Tiszta (lemez-fuggetlen) besorolas.
+    Visszaad: ({anchor_fajl: [dirnev, ...]}, [hiba_szoveg, ...]).
+    Hiba, ha egy nem-blacklistelt alkonyvtart nulla vagy tobb horgony fed.
     """
-    path = Path(directory)
-    if recursive:
-        md_files = sorted([str(f.resolve()) for f in path.rglob('*.md')])
-    else:
-        md_files = sorted([str(f.resolve()) for f in path.glob('*.md')])
-    return md_files
+    anchor_to_dirs = {}
+    for anchor, patterns in INJECT_POINTS.items():
+        matched = []
+        for pat in patterns:
+            matched += [d for d in all_dirs
+                        if d not in BLACKLIST_DIRS and fnmatch.fnmatch(d, pat)]
+        anchor_to_dirs[anchor] = sorted(set(matched))
+
+    errors = []
+    for d in all_dirs:
+        if d in BLACKLIST_DIRS:
+            continue
+        hits = [a for a, ds in anchor_to_dirs.items() if d in ds]
+        if not hits:
+            errors.append(f"'{d}': nincs besorolva - add a BLACKLIST_DIRS-hez "
+                          f"VAGY egy INJECT_POINTS mintahoz")
+        elif len(hits) > 1:
+            errors.append(f"'{d}': tobb horgony is fedi {hits} - nem egyertelmu")
+    return anchor_to_dirs, errors
 
 
-def concat_md_files_in_dir(dir_path):
-    dirname = os.path.basename(dir_path)
-    dir_combined = os.path.join(tmp_dir, f"__szilank.{dirname}.md")
-
-    md_files_abc = get_md_files(dir_path, recursive=True)
-    with open(dir_combined, 'w', encoding='utf-8') as outfile:
-        for md_file in md_files_abc:
-            with open(md_file, 'r', encoding='utf-8') as infile:
-                cleaned_path = md_file.replace(repo_path + os.sep, '')
-                outfile.write('## File: ' + cleaned_path + '\n\n')
-                outfile.write(infile.read())
-                outfile.write('\n\n---\n---\n')
-    print(f"Created combined file for directory '{dirname}': {dir_combined}")
-    return dir_combined
-
+def validate_and_map(all_dirs, root):
+    """classify + lemez-ellenorzesek; hiba eseten SystemExit (fail-fast)."""
+    anchor_to_dirs, errors = classify(all_dirs)
+    for anchor, patterns in INJECT_POINTS.items():
+        if not os.path.isfile(os.path.join(root, anchor)):
+            errors.append(f"horgony-fajl hianyzik: md/{anchor}")
+        if not anchor_to_dirs[anchor]:
+            errors.append(f"'{anchor}' mintai egyetlen alkonyvtarra sem "
+                          f"illeszkednek: {patterns}")
+    if errors:
+        raise SystemExit("HIBA - md/ alkonyvtarak besorolasa nem teljes:\n  - "
+                         + "\n  - ".join(errors))
+    return anchor_to_dirs
 
 
-########## CHECKS and INIT ##########
-
-# Check input arguments and directories
-if len(sys.argv) < 2:
-    print(f"Usage: {sys.argv[0]} <szilank repo-path>")
-    sys.exit(1)
-
-repo_path = os.path.abspath(sys.argv[1])
-path_rootdir = os.path.join(repo_path, 'md')
-if not os.path.isdir(path_rootdir):
-    print("Error: repo dir does not exist")
-    sys.exit(1)
-
-tmp_dir = tempfile.mkdtemp()
-script_dir = os.path.dirname(os.path.abspath(__file__))
-# Exported combined file path in szilank repo
-combined_file = os.path.join(script_dir, '..', 'work', 'szilank.rpg.full.md')
+def emit_file(out, abs_path, repo_path):
+    """Egy fajl kiirasa a kimenetbe (## File: fejlec + tartalom + elvalaszto)."""
+    rel_path = abs_path.replace(repo_path + os.sep, '')
+    out.write('## File: ' + rel_path + '\n\n')
+    out.write(read_text(abs_path))
+    out.write(FILE_SEP)
+    return rel_path
 
 
-if not os.path.isdir(path_rootdir):
-    print("Error: 'md' directory is missing")
-    sys.exit(1)
+# ---------------------------------------------------------------------------
+# Onteszt
+# ---------------------------------------------------------------------------
 
-inject_points = {
-    '021_faj_hatterek.md': 'hatterek.faji',
-    '030_01_kepzettseglista.md': 'kepzettsegek',
-    '045_misztikus_magia_fortelyok.md': 'fortelyok',
-    '150_szituaciok.md': 'szituaciok'
-    }
+def selftest():
+    """A besorolasi logika ellenorzese (happy path, blacklist, hiany)."""
+    dirs = ['fortelyok.harci', 'fortelyok.misztikus', 'kepzettsegek.primer',
+            'kepzettsegek.szekunder', 'hatterek.faji', 'szituaciok',
+            'magia.faj.arkanumok', 'template']
 
-blacklist=['views', 'template', 'images', '.obsidian', 'diszciplinak.pszi', 'fortelyok.misztikus', 'magia.papi.varazslatok']
-combined_dir_files = []
+    mapping, errors = classify(dirs)
+    assert not errors, f"vart hibamentes besorolas, kaptunk: {errors}"
+    assert mapping['150_szituaciok.md'] == ['szituaciok'], mapping
+    assert 'fortelyok.harci' in mapping['045_misztikus_magia_fortelyok.md'], mapping
+    # blacklist-precedencia: fortelyok.misztikus illeszkedne a 'fortelyok.*'-ra,
+    # de blacklistelt -> nem kerul be
+    assert 'fortelyok.misztikus' not in mapping['045_misztikus_magia_fortelyok.md'], mapping
+    assert set(mapping['030_01_kepzettseglista.md']) == {
+        'kepzettsegek.primer', 'kepzettsegek.szekunder'}, mapping
 
+    # hiany: besoroltalan konyvtar -> hiba keletkezik
+    _, errors = classify(dirs + ['uj_besorolatlan_konyvtar'])
+    assert any('uj_besorolatlan_konyvtar' in e for e in errors), \
+        "a besorolatlan konyvtart hibaval kell jelezni"
 
-
-
-######### START PROCESSING ##########
-
-# Get all .md files in root dir (non-recursive) in alphabetical order. Full paths.
-list_rootdir_files = [str(Path(path_rootdir).parent / 'README.md')]
-list_rootdir_files.append(str(Path(path_rootdir).parent / 'LICENSE'))
-list_rootdir_files.append(os.path.join(path_rootdir, 'szabalyrendszer.md'))
-list_rootdir_files.extend(get_md_files(path_rootdir, recursive=False))
-
-# Remove duplicate szabalyrendszer.md if exists at the end
-if list_rootdir_files and list_rootdir_files[-1].endswith('szabalyrendszer.md'):
-    list_rootdir_files.pop()
+    print("selftest OK")
 
 
-# Combine all subdir's .md files into separate combined files
-list_dirs = get_directories(path=path_rootdir, blacklist=blacklist)
-for dir_path in list_dirs:
-    combined_file_path = concat_md_files_in_dir(dir_path)
-    combined_dir_files.append(combined_file_path)
+# ---------------------------------------------------------------------------
+# Fo
+# ---------------------------------------------------------------------------
 
-# DEBUG: list tmp dir files
-print("Combined temporary subdir markdown files:")
-for f in os.listdir(tmp_dir):
-    print(f" - {f}")
+def main(argv):
+    if '--selftest' in argv:
+        selftest()
+        return
+
+    if len(argv) < 1:
+        raise SystemExit("Usage: onefile.py <szilank repo-path> [<output-file>]")
+
+    repo_path = os.path.abspath(argv[0])
+    root = os.path.join(repo_path, 'md')
+    if not os.path.isdir(root):
+        raise SystemExit("HIBA: a(z) 'md' konyvtar nem letezik a megadott repo-ban")
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    out_path = (os.path.abspath(argv[1]) if len(argv) > 1
+                else os.path.join(script_dir, '..', 'work', 'szilank.rpg.full.md'))
+
+    all_dirs = top_level_dirs(root)
+    anchor_to_dirs = validate_and_map(all_dirs, root)
+
+    # Gerinc: PREPEND_FILES (repo-gyoker) + TOC + tobbi md/ gyoker-fajl ABC-ben.
+    spine = [os.path.join(repo_path, f) for f in PREPEND_FILES]
+    spine.append(os.path.join(root, TOC_FILE))
+    spine += [f for f in md_files(root, recursive=False)
+              if os.path.basename(f) != TOC_FILE]
+
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    if os.path.exists(out_path):
+        os.remove(out_path)
+
+    emitted_dirs = set()
+    with open(out_path, 'w', encoding='utf-8') as out:
+        for md_file in spine:
+            rel_path = emit_file(out, md_file, repo_path)
+            print(f"Hozzaadva: {rel_path}")
+
+            anchor = os.path.basename(md_file)
+            for dirname in anchor_to_dirs.get(anchor, []):
+                subs = md_files(os.path.join(root, dirname), recursive=True)
+                for sub in subs:
+                    emit_file(out, sub, repo_path)
+                emitted_dirs.add(dirname)
+                print(f"  + alkonyvtar beszurva: md/{dirname} ({len(subs)} fajl)")
+
+    # Zaro biztonsagi halo: minden besorolt alkonyvtar tenyleg kiirodott-e.
+    expected = {d for ds in anchor_to_dirs.values() for d in ds}
+    missing = expected - emitted_dirs
+    if missing:
+        raise SystemExit(f"HIBA: besorolt, de ki nem irt alkonyvtarak: "
+                         f"{sorted(missing)}")
+
+    print(f"\nKesz: {out_path}")
+    print(f"Gerinc-fajlok: {len(spine)} | beszurt alkonyvtarak: {len(emitted_dirs)}")
 
 
-
-
-## GENERATING STARTS: Combine all files into one big file #################
-if os.path.exists(combined_file):
-    os.remove(combined_file)
-    print(f"Deleted existing combined file: {combined_file}")
-
-print(f"Creating combined markdown file: {combined_file}")
-with open(combined_file, 'w', encoding='utf-8') as outfile:
-    # First add the root dir files
-    for md_file in list_rootdir_files:
-        with open(md_file, 'r', encoding='utf-8') as infile:
-            cleaned_path = md_file.replace(repo_path + os.sep, '')
-            print(f"Adding file: {cleaned_path}")
-            outfile.write('## File: ' + cleaned_path + '\n\n')
-            outfile.write(infile.read())
-            outfile.write('\n\n---\n---\n')
-
-        ## If infile is identical with a key from inject_points, inject all
-        ### matching combined dir file here: "__szilank.<inject_point>*.md"
-        basename = os.path.basename(md_file)
-        if basename in inject_points:
-            inject_point = inject_points[basename]
-            for combined_dir_file in combined_dir_files:
-                if f"__szilank.{inject_point}" in os.path.basename(combined_dir_file):
-                    with open(combined_dir_file, 'r', encoding='utf-8') as injectfile:
-                        cleaned_dpath = combined_dir_file.replace(tmp_dir + os.sep, '')
-                        print(f"Adding combined dirfile: {cleaned_dpath} at inject point: {inject_point}")
-                        outfile.write('## File: ' + cleaned_dpath + '\n\n')
-                        outfile.write(injectfile.read())
-                        outfile.write('\n\n---\n\n')
-
-# Clean up temp dir
-if os.path.exists(tmp_dir):
-    shutil.rmtree(tmp_dir)
-    print(f"Deleted temp directory: {tmp_dir}")
-
-print("END")
+if __name__ == '__main__':
+    main(sys.argv[1:])

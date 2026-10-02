@@ -3029,8 +3029,6 @@ Nem kötelező, de az adott fajnál jellemzően gyakran előforduló képzettsé
 
 ---
 ---
-## File: __szilank.hatterek.faji.md
-
 ## File: md/hatterek.faji/amund.md
 
 ## Amund
@@ -4264,10 +4262,6 @@ TODO ⭕
 
 ---
 ---
-
-
----
-
 ## File: md/022_leiro_hatterek.md
 
 ## Leíró Hátterek
@@ -4959,8 +4953,6 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 ---
 ---
-## File: __szilank.kepzettsegek.primer.md
-
 ## File: md/kepzettsegek.primer/altalanos/akrobatika.md
 
 ## 🔵 Akrobatika
@@ -8794,12 +8786,6 @@ Tradíciótól függ.
 
 ---
 ---
-
-
----
-
-## File: __szilank.kepzettsegek.szekunder.md
-
 ## File: md/kepzettsegek.szekunder/alcazas_alruha.md
 
 ## 🔵 Álcázás/álruha
@@ -11412,10 +11398,6 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 
 ---
 ---
-
-
----
-
 ## File: md/030_02_primer_szekunder_kepzettsegek.md
 
 ## Primer és Szekunder képzettségek
@@ -12867,8 +12849,6 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 
 ---
 ---
-## File: __szilank.fortelyok.altalanos.md
-
 ## File: md/fortelyok.altalanos/barati_allatok.md
 
 ## 🟣 Baráti állatok (1)
@@ -14102,12 +14082,6 @@ Alapesetben ha gyorsabban akarsz kinyitni egy zárat, akkor [büntetés jár a p
 
 ---
 ---
-
-
----
-
-## File: __szilank.fortelyok.erzekek.md
-
 ## File: md/fortelyok.erzekek/emberentuli_hallas.md
 
 ## 🟣 Emberentúli hallás (1)
@@ -14355,12 +14329,6 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 ---
 ---
-
-
----
-
-## File: __szilank.fortelyok.harci.md
-
 ## File: md/fortelyok.harci/alakzat_tamado.md
 
 ## 🟣 Alakzat: támadó (2)
@@ -16294,12 +16262,6 @@ Jellemzően NJK ismeret
 
 ---
 ---
-
-
----
-
-## File: __szilank.fortelyok.kiemelt.md
-
 ## File: md/fortelyok.kiemelt/analfabeta.md
 
 ## 🟣 Analfabéta (1)
@@ -16794,12 +16756,6 @@ Vak karakter indítása esetén a karakter **látás** érzékére permanens [É
 
 ---
 ---
-
-
----
-
-## File: __szilank.fortelyok.magia.metodusok.md
-
 ## File: md/fortelyok.magia.metodusok/aldas.md
 
 ## 🟣 💫 Mágia metódus: Áldás (3)
@@ -17202,12 +17158,6 @@ xyz
 
 ---
 ---
-
-
----
-
-## File: __szilank.fortelyok.szabad.md
-
 ## File: md/fortelyok.szabad/alkudozas.md
 
 ## 🟣 Alkudozás
@@ -18393,12 +18343,6 @@ Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is.
 
 ---
 ---
-
-
----
-
-## File: __szilank.fortelyok.tavharc.md
-
 ## File: md/fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md
 
 ## 🟣 Alkalmatlan fegyver hajítása (2) 🔁
@@ -18747,10 +18691,6 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót 
 
 ---
 ---
-
-
----
-
 ## File: md/050_tradiciok.md
 
 ## Tradíciók
@@ -32388,8 +32328,6 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ---
 ---
-## File: __szilank.szituaciok.md
-
 ## File: md/szituaciok/ajtostul_tamadni.md
 
 ## Ajtóstul nekirontani az túloldalról benyitó ellenfélnek
@@ -34199,10 +34137,6 @@ Ez a [Gyöngyhalász](../fortelyok.altalanos/gyongyhalasz.md) fortéllyal fejles
 
 ---
 ---
-
-
----
-
 ## File: md/160_pelda_karakterek.md
 
 # Példa karakterek
