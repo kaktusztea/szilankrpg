@@ -94,11 +94,7 @@ function compactEncode(k: Karakter): CompactKarakter {
 
   // fortélyok_speciális: csak non-default
   const fs: Record<string, boolean | number> = {};
-  if (k.fortélyok_speciális.analfabéta) fs.analfabéta = true;
-  if (k.fortélyok_speciális.apró_méretű_lény) fs.apró_méretű_lény = true;
   if (k.fortélyok_speciális.tartós_sérülés_fok) fs.tartós_sérülés_fok = k.fortélyok_speciális.tartós_sérülés_fok;
-  if (k.fortélyok_speciális.vakság) fs.vakság = true;
-  if (k.fortélyok_speciális.süketség) fs.süketség = true;
   if (Object.keys(fs).length) c.fs = fs;
 
   // hátterek: leíró és karma
@@ -195,11 +191,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     képzettségek: c.kp.map(([név, szint]) => ({ név, szint })),
     fortélyok,
     fortélyok_speciális: {
-      analfabéta: !!(c.fs?.analfabéta),
-      apró_méretű_lény: !!(c.fs?.apró_méretű_lény),
       tartós_sérülés_fok: (c.fs?.tartós_sérülés_fok as number) || 0,
-      vakság: !!(c.fs?.vakság),
-      süketség: !!(c.fs?.süketség),
     },
     hátterek,
     fegyverek,

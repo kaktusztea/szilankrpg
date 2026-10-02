@@ -387,11 +387,7 @@
     }
   ],
   "fortélyok_speciális": {
-    "analfabéta": false,
-    "apró_méretű_lény": false,
-    "tartós_sérülés_fok": 0,
-    "vakság": false,
-    "süketség": false
+    "tartós_sérülés_fok": 0
   },
   "hátterek": {
     "faj": "Amund",

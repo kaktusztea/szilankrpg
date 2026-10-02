@@ -42,7 +42,8 @@ formula:
                     // szabad fortélyok keret feletti KP: szekunder KP-ból fizetendő (nem primer)
   kp_hm           = (HM_TÉ + HM_VÉ) x kp.hm
   kp_cm           = CM x kp.cm
-  elköltött_kp    = kp_képzettségek + kp_fortélyok + kp_hm + kp_cm
+  kiemelt_kp      = SUM( ingyenes keret FELETTI kiemelt fortélyok fizetős KP-ja )   // §41, l. lentebb
+  elköltött_kp    = kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp
 
   // Szekunder ismeretekre költött KP (szekunder képzettségek + nem-harci/nem-misztikus fortélyok)
   kp_szekunder_költött = SUM( szekunder képzettségek KP-ja )
@@ -69,18 +70,28 @@ UI kijelzés (KP sáv, szerkesztő módban):
 ### 1.4 Speciális KP bónusz
 
 ```
-input:  karakter.fortélyok_speciális
-source: konstansok.yaml → kp_bónusz
+input:  karakter.fortélyok[] (kiemelt fortélyok, negatív kp_perfok-kal),
+        karakter.fortélyok_speciális.tartós_sérülés_fok
+source: fortelyok.json (fortély kp_perfok mező), konstansok.yaml → kp_bónusz
 
 formula:
-  spec_kp = 0
-  if analfabéta:       spec_kp += kp_bónusz.analfabéta
-  if apró_méretű_lény: spec_kp += kp_bónusz.apró_méretű_lény
-  if süketség:         spec_kp += kp_bónusz.süketség
-  if vakság:           spec_kp += kp_bónusz.vakság
-  spec_kp += tartós_sérülés_fok x kp_bónusz.tartós_sérülés_per_fok
+  // ADATVEZÉRELT: a KP-t ADÓ fortélyok azok, amelyeknek kp_perfok < 0 (negatív).
+  // A bónusz nagysága magából a fortély-adatból jön, NEM hardcode névlistából.
+  kp_bónusz_fortélyok = [ f IN karakter.fortélyok WHERE kp_perfok(f.név) < 0 ]
+  spec_kp = SUM( f.fok x ABS(kp_perfok(f.név)) )  FOR f IN kp_bónusz_fortélyok
+          + tartós_sérülés_fok x kp_bónusz.tartós_sérülés_per_fok
 
-output: spec_kp (hozzáadódik az összes_kp-hoz)
+output: spec_kp (primer célra is fordítható, hozzáadódik az összes_kp-hoz)
+note: Jelenleg negatív kp_perfok-ú (KP-adó) kiemelt fortélyok: Analfabéta (-6), Süketség (-12),
+      Vakság (-18), Apró méretű lény (-18) - ezek a karakter.fortélyok[] tömbből, a kp_bónusz_fortélyok
+      aggregátumon át számolnak. ÚJ ilyen fortély felvételekor a spec_kp automatikusan számol vele
+      (nincs kód/spec módosítás). A Tartós sérültség KÜLÖN ágon: a fortélyok_speciális.tartós_sérülés_fok
+      mezőből × kp_bónusz.tartós_sérülés_per_fok (= 6), NEM a fortélyok[] tömbből (így nincs dupla számolás).
+      Adatduplikáció-megjegyzés: a konstansok.kp_bónusz.{analfabéta,süketség,vakság,apró_méretű_lény}
+      értékek jelenleg NEM a spec_kp forrásai (azt a fortély kp_perfok adja) - a formula csak a
+      tartós_sérülés_per_fok mezőt olvassa a kp_bónusz blokkból.
+impl: reactive.ts → buildArrayContext 'kp_bónusz_fortélyok' (perFok < 0 szűrés),
+      rules.json → spec_kp formula.
 ```
 
 ---
@@ -120,11 +131,13 @@ formula:
   S1_max = ÉP / 4
   S2_max = ÉP / 2
   S3_max = ÉP x 3 / 4
-  S4_max = ÉP
+  S4_max = ÉP        // triviális: maga az ÉP, NINCS rá külön reactive szabály
 
-output: [S1_max, S2_max, S3_max, S4_max]
+output: [S1_max, S2_max, S3_max]   // + S4_max = ÉP (nem számított szabály)
 note: JK-nál ÉP mindig 4-gyel osztható. NJK-nál maradék balról jobbra osztandó.
       TÉ levonások → konstansok.yaml → egészség_kategória_levonás
+      Reactive: rules.json CSAK S1_max, S2_max, S3_max szabályt tartalmaz. Az S4 felső határa = ÉP,
+      ezért nincs külön szabály. A Sérült fok automatika (§33) oszlopMéret = ÉP/4 alapon dolgozik.
 ```
 
 ---
@@ -1956,17 +1969,53 @@ note: A fegyverhossz a fegyverek_v2.json-ból jön (egész, fegyverhossz-kategó
 Mindig az ügyesebb kézben levő fegyver sebez (= jobb kéz fegyver, session.aktív_fegyver_index).
 Kivétel: ha szándékosan a rosszabbik kézben lévővel támad (Hátrány-1 TÉ dobás Kétkezesség nélkül).
 
+```
+formula (ketkezes.ts):
+  jobbElsődleges = jobb kéz fegyver elsődleges módja (vagy módok[0])
+  erőbónusz = MIN(tulajdonságok.erő, jobbElsődleges.Erőlimit)   // a JOBB kéz fegyverének erőbónusz-limitje
+  SP = jobbElsődleges.SP + erőbónusz + mf_SP + fortelyMods['SP'] + idea_SP
+
+note: Az SP KIZÁRÓLAG a jobb (ügyesebb) kéz fegyveréből jön - a bal kéz fegyvere SP-t nem ad,
+      még `mindkét_fegyver_értékei` fok esetén sem (az csak TÉ/VÉ-re vonatkozik, l. 26.3 és 26.8).
+      A mesterfegyver-SP (mf_SP) a 26.3 mf-ága szerint: 0.fok "nincs", 2.fok "nagyobb" (nagyobb fegyveré),
+      3.fok "mindkettő" (mindkét fegyver MF-SP-je összeadódik).
+```
+
 ### 26.7 Session és UI
 
 - `session.kétkezes_harc: boolean` - a Fegyverfogás picker állítja be ("Kétkezes harc" opció)
 - `session.fegyverfogás: "kétkezes"` - a Fegyverfogás explicit mező (§27)
 - `session.aktív_fegyver_index` - ügyesebb kéz fegyver
 - `session.aktív_fegyver_bal_index` - gyengébb kéz fegyver (csak kétkezes fogásnál)
+
+### 26.8 Példány-Idea delta (Modell 2)
+
+A fegyverpéldányok egyedi Ideája (fegyverpéldány.idea) TÉ/VÉ/SP deltát ad a fegyver alap-Ideájához
+(idea_default) képest. Forrás: fegyver_idea_tabla.json (idea szint → {TÉ, VÉ, SP} delta).
+
+```
+formula (ketkezes.ts, ideaDelta):
+  nagyobbIdea = ideaDelta(nagyobbFp.idea, nagyobb.idea_default, tábla)
+  kisebbIdea  = ideaDelta(kisebbFp.idea,  kisebb.idea_default,  tábla)
+  jobbIdea    = ideaDelta(jobbFp.idea,    jobbDef.idea_default,  tábla)
+
+  idea_TÉ = nagyobbIdea.TÉ + (mindkét_fegyver_értékei ? kisebbIdea.TÉ : 0)
+  idea_VÉ = nagyobbIdea.VÉ + (mindkét_fegyver_értékei ? kisebbIdea.VÉ : 0)
+  idea_SP = jobbIdea.SP     // SP mindig a JOBB (sebző) kéz fegyveréből
+
+note: Idea-delta szimmetria a 26.3 TÉ/VÉ-logikával:
+      - TÉ/VÉ Idea-delta: a NAGYOBB fegyveré mindig számít; a kisebbé CSAK `mindkét_fegyver_értékei`
+        fok esetén (1-3. fok). 0. fok (alapeset): csak a nagyobb fegyver Idea-TÉ/VÉ-je.
+      - SP Idea-delta: KIZÁRÓLAG a jobb kéz fegyveréből (összhangban a 26.6 sebzés-logikával).
+      Fontos: a "nagyobb/kisebb" fegyvermegkülönböztetés fegyverhossz szerinti, a "jobb/bal" pedig
+      kéz (aktív_fegyver_index / aktív_fegyver_bal_index) szerinti - a kettő nem feltétlenül esik egybe,
+      ezért a jobbIdea külön számítódik a nagyobbIdea/kisebbIdea mellett.
+```
 - Aktív fül: Fegyverfogás picker (§27), "Kétkezes harc" disabled ha össz fegyverhossz > limit, valamelyik fegyver fegyverhossza > per-fegyver limit, vagy nincs nem-hárító fegyver
 - Harc fül: kétkezes harc aktív → összevont harcértékek megjelenítése (lila keret, normál sorok halványítva)
 - Harc fül: Fh oszlop kétkezesnél: `x(y)` formátum (x=nagyobb fegyver fegyverhossza, y=össz fegyverhossz)
 
-### 26.8 Fortély feltételek
+### 26.9 Fortély feltételek
 
 A harckeret bónuszok forrásai kétkezes fogásnál:
 
@@ -1984,7 +2033,7 @@ A `fegyverfogás:kétkezes` és `session.kétkezes_harc == true` mindketten azt 
 - `kétkezes_harc == true`: kalkulált feltétel → `session.kétkezes_harc === true`
 - A két feltétel ekvivalens (mindkettő csak kétkezes fogásnál igaz).
 
-### 26.9 Kalkuláció összefoglalás
+### 26.10 Kalkuláció összefoglalás
 
 ```
 if session.kétkezes_harc:
@@ -3720,7 +3769,7 @@ Automatikusan bejárja:
 - `konstansok.harcérték_alap.*` → `"konstansok.harcérték_alap.KÉ"`, stb.
 - `konstansok.kp.*` → `"konstansok.kp.perszint"`, stb.
 - `konstansok.arányok.*` → `"konstansok.arányok.max_cm_perszint"`, stb.
-- `konstansok.kp_bónusz.*` → `"konstansok.kp_bónusz.analfabéta"`, stb.
+- `konstansok.kp_bónusz.*` → `"konstansok.kp_bónusz.tartós_sérülés_per_fok"` (a KP-adó kiemelt fortélyok a fortély kp_perfok-jából számolnak, nem innen - l. §1.4)
 - **top-level skalár konstansok** → `"konstansok.hm_aszimmetria_osztó"`, `"konstansok.több_támadás_TÉ_levonás"`, stb. (minden szám típusú konstans elérhető formulában, hardcode nélkül)
 - `tsz` → egyetlen érték
 - `extras` → tetszőleges kulcs-érték párok (HM_TÉ, HM_VÉ, CM, páncél mezők, fegyver mezők, stb.)

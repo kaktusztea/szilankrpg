@@ -43,12 +43,8 @@ fortélyok:                    # Egységes lista (harci, általános, érzék, s
     kiérdemelt: false         # Opcionális. true ha kiérdemelt fortély (nem KP-ból vásárolt).
     # kiterjeszti: []         # Opcionális. Csak egyedi fortélyoknál: kiterjesztett képzettségek listája.
 
-fortélyok_speciális:          # KP bónuszt adó speciális jellemzők (nem normál fortélyok)
-  analfabéta: false
-  apró_méretű_lény: false
-  tartós_sérülés_fok: 0       # 0-3
-  vakság: false
-  süketség: false
+fortélyok_speciális:          # KP bónuszt adó speciális jellemző (fok-alapú)
+  tartós_sérülés_fok: 0       # 0-3 (a többi kiemelt KP-adó fortély a fortélyok[] tömbben van, l. engine_spec §1.4)
 
 hátterek:
   faj: ""                     # Faj neve (lookup kulcs → fajok.json)
