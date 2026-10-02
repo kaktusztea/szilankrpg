@@ -331,6 +331,10 @@ export interface GameData {
   harciHelyzetek: HarciHelyzetEntry[];
   manoverek: ManoverEntry[];
   statuszok: StatuszEntry[];
+  // Betöltve, de a runtime JELENLEG nem olvassa (a statuszok/helyzetek közvetlenül az operátor-neveket
+  // hordozzák stringként). A hatas_operatorok a mechanika-definíciós réteg - build-validáció használja
+  // (validate_statuszok / validate_hatasok_katalogus), runtime fogyasztója a §42 egységes effekt-modell
+  // kiértékelője lesz (engine_spec §22.4 + §42). Szándékos előkészítés, NEM halott betöltés.
   hatasOperatorok: HatasOperator[];
   esemenyek: EsemenyEntry[];
   hatterek: HatterekData;
