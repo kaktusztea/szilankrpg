@@ -106,11 +106,15 @@ def validate_esemenyek(esemenyek):
         raise SystemExit(1)
 
 
-def validate_statuszok(statuszok, hatasok, esemenyek):
-    """Validate statuszok.yaml - struktúra + referenciális integritás."""
+def validate_statuszok(statuszok, hatas_operatorok, esemenyek):
+    """Validate statuszok.yaml - struktúra + referenciális integritás.
+
+    A státusz hatások `operátor` mezője a hatas_operatorok.yaml id-jeire hivatkozik
+    (előny/hátrány/arányos/…), NEM a hatasok.yaml katalógus-id-kre.
+    """
     errors = []
     valid_kategoria = {'fizikai', 'szellemi', 'harci', 'mágikus'}
-    valid_hatas_ids = {h['id'] for h in hatasok}
+    valid_operator_ids = {h['id'] for h in hatas_operatorok}
     valid_esemeny_ids = {e['id'] for e in esemenyek}
     for i, s in enumerate(statuszok):
         ctx = f"státuszok[{i}] ({s.get('név', '?')})"
@@ -129,7 +133,7 @@ def validate_statuszok(statuszok, hatasok, esemenyek):
                     for k, h in enumerate(hatasok_lista):
                         hctx = f"{fctx} hatások[{k}]"
                         if not isinstance(h, dict): errors.append(f"{hctx}: nem objektum"); continue
-                        if h.get('operátor') not in valid_hatas_ids: errors.append(f"{hctx}: ismeretlen operátor: '{h.get('operátor')}'")
+                        if h.get('operátor') not in valid_operator_ids: errors.append(f"{hctx}: ismeretlen operátor: '{h.get('operátor')}'")
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
     if errors:
         print("  ❌ Státusz validációs hibák:")
