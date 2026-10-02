@@ -374,12 +374,6 @@ fegyver_kategória_harcmodor:
 # Távharc harcmodor: tavfegyverek.json-ban per-fegyver "Harcmodor" mező
 # (Hajítás / Íjászat / Lövészet / Ostromlövészet / Mágikus célzás)
 
-# Fortélyok amelyeket a Harcértékek fül kezel (Fortélyok fülön locked)
-locked_fortélyok:
-  - "Mesterfegyver"
-  - "Pajzshasználat"
-  - "Merevvértviselet"
-
 # ============================================================
 # Mesterfegyver fortély bónuszai
 # ============================================================
@@ -617,6 +611,8 @@ skálázható_taktika_max_fok:
 # Manőver korlát
 # ============================================================
 
+# REFERENCIA: a kód még nem olvassa. Élő szabály (md/066_03: "körönként max 1 db manőver"),
+# de a webapp jelenleg nem gépesíti a kör/manőver-számot (csak az MP-limiteket). Ha gépesül, INNEN olvasd.
 max_manőver_per_kör: 1
 
 # Távharc: nyílpuska alapeset (Sebesség = -1)

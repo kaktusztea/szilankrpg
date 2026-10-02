@@ -250,7 +250,6 @@ export interface KonstansokRaw {
   }[];
   kétkezes_harc_fegyverlevonás_osztó: number;
   fegyverfogás_opciók: { id: string; név: string }[];
-  locked_fortélyok: string[];
   egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
   lövéskitérés: Record<string, { max_táv: number; célszám: number }[]>;
