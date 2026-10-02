@@ -227,7 +227,7 @@ export interface HatterekData {
 export interface KonstansokRaw {
   version: number;
   harcérték_alap: { KÉ: number; TÉ: number; VÉ: number; CÉ: number };
-  kp: { perszint: number; szekunder_perszint: number; fortályfok: number; hm: number; cm: number; max_cm_perszint: number };
+  kp: { perszint: number; szekunder_perszint: number; fortélyfok: number; hm: number; cm: number };
   arányok: { min_tsz: number; max_tsz: number; max_hm_diff_szintlépésenként: number; képzettség_nemprimer_max_szint_plusz: number; képzettség_max_szint: number; tulajdonság_pont_alap: number; tulajdonság_pont_tsz_bónusz: number; max_cm_perszint: number };
   tulajdonság_pontok: Record<string, number>;
   páncél_struktúrák: {
