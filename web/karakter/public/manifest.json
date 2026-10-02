@@ -1,7 +1,7 @@
 {
   "name": "Szilánk RPG Karakteralkotó",
   "short_name": "Szilánk",
-  "start_url": "/szilankrpg/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#1a1a2e",
   "theme_color": "#0f3460",

@@ -1,5 +1,5 @@
 import { OverlayPortal } from './OverlayPortal';
-import { MD_BASE, REPO_BASE } from '../MdLink';
+import { MD_BASE, REPO_BASE, REPO_RAW_BASE } from '../MdLink';
 
 interface Props {
   current: number;
@@ -31,7 +31,7 @@ export function SzilankPickerOverlay({ current, onPick, onClose }: Props) {
 
         <hr className="szilank-divider" />
 
-        <a className="szilank-hub-link" href="https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true"
+        <a className="szilank-hub-link" href={REPO_RAW_BASE + 'segedlet/szilank_segedlet_ingame.pdf?raw=true'}
           target="_blank" rel="noopener noreferrer">📋 Segédlet pdf</a>
 
 

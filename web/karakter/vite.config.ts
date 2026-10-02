@@ -4,6 +4,7 @@ import path from 'path';
 import { createReadStream, existsSync, readFileSync, statSync, readdirSync } from 'fs';
 import { execSync } from 'child_process';
 import type { Plugin } from 'vite';
+import { BASE_PATH, REPO_BLOB_BASE, REPO_RAW_BASE } from './site.config';
 
 /** Check if generated tables are newer than all inputs (YAML sources + generator code) */
 function tablesAreFresh(dataDir: string): boolean {
@@ -73,11 +74,13 @@ function serveDataPlugin(): Plugin {
       return {
         define: {
           __APP_VERSION__: JSON.stringify(version),
+          __REPO_BLOB_BASE__: JSON.stringify(REPO_BLOB_BASE),
+          __REPO_RAW_BASE__: JSON.stringify(REPO_RAW_BASE),
         },
       };
     },
     configureServer(server) {
-      server.middlewares.use('/szilankrpg/data', (req, res, next) => {
+      server.middlewares.use(`${BASE_PATH}data`, (req, res, next) => {
         // A query stringet (pl. a cache-busting `?v=`) le kell vágni a fájl feloldás előtt
         const urlPath = (req.url ?? '').split('?')[0];
         const filePath = path.join(dataDir, urlPath);
@@ -96,7 +99,7 @@ function serveDataPlugin(): Plugin {
 
 export default defineConfig({
   plugins: [react(), serveDataPlugin()],
-  base: '/szilankrpg/',
+  base: BASE_PATH,
   server: {
     host: true,
     watch: { usePolling: true, interval: 500 },
