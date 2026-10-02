@@ -310,24 +310,29 @@ A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én haj
 
 | Komponens | Felelősség |
 |-----------|------------|
-| `AktivScreen.tsx` | Fő layout, szekciók összerakása |
-| `AktivFegyverSection.tsx` | Fegyver választás szekció (Ügyesebb + Gyengébb kéz + Fogás + Páncél + Session toggles) |
-| `UgyesebbKezSelect.tsx` | Ügyesebb kéz fegyver dropdown |
-| `GyengebbKezSelect.tsx` | Gyengébb kéz fegyver dropdown (feltételes megjelenítés) |
-| `AktivFegyverfogas.tsx` | Fegyverfogás picker overlay |
-| `SessionToggles.tsx` | Session toggle fortély gombok (pl. Harci akrobatika) |
+| `AktivScreen.tsx` | Fő layout, szekciók összerakása (Taktikák + Helyzetek + Manőver + Státuszok + Hatás pool) |
 | `AktivTaktikak.tsx` | Taktika picker + chip-ek + fok kezelés |
 | `AktivHelyzetek.tsx` | Harci helyzet picker + chip-ek (3 csoport: pozitív/semleges/negatív) |
-| `AktivManover.tsx` | Manőver picker + info box |
 | `AktivStatuszok.tsx` | Státusz picker + chip-ek |
+| `AktivHatasPool.tsx` | Hatás pool box (fortély bónuszok + alapesetek + státusz/taktika hatások) |
+| `PickerOverlay.tsx` | Generikus picker overlay wrapper |
 | `StatuszPickerOverlay.tsx` | Státusz választó overlay (kategóriák + fok) |
-| `AktivNarrativ.tsx` | Narratív előny/hátrány kezelés |
-| `AktivHatasPool.tsx` | Hatás pool box (fortély bónuszok + alapesetek accordion) |
-| `aktiv-calc.ts` | Aktív fül kalkuláció logika (státusz/taktika hatások, fortély emlékeztetők, helyzet kötések, manőver bónuszok, alapesetek) |
-| `AktivHelpers.ts` | Segédfüggvények (kombó szűrés, megkötés ellenőrzés) |
-| `PickerOverlay.tsx` | Generikus picker overlay wrapper (taktika, helyzet, manőver) |
-| `FegyverSelectField.tsx` | Fegyver select field-btn komponens (közös Ügyesebb/Gyengébb kéz) |
-| `NaploTab.tsx` | Verziók + Napló accordionok (overlay tartalom) |
+| `TaktikaPickerList.tsx` | Taktika választó lista (pinned + többi) |
+| `TaktikaFokPicker.tsx` | Fokozatos taktika fok-választó |
+| `ManoverDobasPopup.tsx` | Manőver dobás popup (követelmény 0. lépés, fázisok, Siker/Kudarc, MP+TÉ) |
+| `manover-dobas-calc.ts` | Manőver dobás pure logika (követelmény, fázisok, TÉ-bontás, eredmény-hatás) |
+| `aktiv-calc.ts` | Aktív fül kalkuláció (státusz/taktika hatások, fortély emlékeztetők, helyzet/taktika kötések, manőver bónuszok, alapesetek) |
+| `AktivHelpers.ts` | Barrel re-export (taktika-megkotes + helyzet-helpers) |
+| `taktika-megkotes.ts` | Taktika megkötés-kiértékelés (isTaktikaAllowed) |
+| `taktika-helpers.ts` | Taktika módosító-formázás + fok-interpoláció |
+| `helyzet-helpers.ts` | Helyzet elérhetőség, min fegyverhossz, infó |
+| `NaploTab.tsx` + `CheckpointSection.tsx` + `NaploSection.tsx` | Verziók + Napló accordionok (overlay tartalom) |
+
+Megjegyzés: a Manőver VÁLASZTÓ (`ManoverPicker.tsx`) és a teljes FEGYVER/FOGÁS szekció
+(`HarcFegyverSection.tsx`, `HarcFegyverfogas.tsx`, `UgyesebbKezSelect.tsx`, `GyengebbKezSelect.tsx`,
+`FegyverSelectField.tsx`, `aktiv-fegyver-ctx.ts`) a `components/harc/` mappában él (nem az `aktiv/`-ban),
+mert a Harc fül is használja. A korábbi `AktivFegyverSection`/`AktivFegyverfogas`/`AktivManover`/
+`AktivNarrativ`/`UgyesebbKezSelect(aktiv)` komponensek megszűntek/átszerveződtek.
 
 ### Harc fül komponens struktúra (components/harc/)
 
@@ -344,7 +349,11 @@ A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én haj
 | `HarcPopups.tsx` | Harc fül popup-ok (Tám info, VÉ history) |
 | `HarcReszletek.tsx` | Részletes értékek box (aktív fegyver harcérték bontás) |
 | `harc-reszletek-calc.ts` | Részletes értékek kalkuláció (aktív fegyver meghatározás, bontás adatok) |
-| `HarcCalc.ts` | Re-export barrel (backward compat) |
+| `HarcFegyverSection.tsx` | Fegyver/fogás szekció (Ügyesebb + Gyengébb kéz + Fogás + páncél/pajzs toggle) - Aktív ÉS Harc fül közös |
+| `HarcFegyverfogas.tsx` | Fegyverfogás picker (egyfegyveres/kétkezes/fegyver_pajzs/fegyver_hárító) |
+| `UgyesebbKezSelect.tsx` / `GyengebbKezSelect.tsx` / `FegyverSelectField.tsx` | Fegyver dropdown-ok + közös select-field |
+| `aktiv-fegyver-ctx.ts` | Aktív fegyver kontextus feloldás (kétkezes > fogás > pajzs > jobb kéz) |
+| `ManoverPicker.tsx` | Manőver választó (mód + lista, 2 lépés) |
 
 ### Fegyverfogás választó
 
@@ -1306,7 +1315,7 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 - `NewCharConfirmOverlay.tsx` - Új karakter megerősítő
 - `SlotListOverlay.tsx` - Karaktertár (slot lista + 🧪 teszt + 📁 fájlból)
 - `SlotDeleteOverlay.tsx` - Slot törlés confirm
-- `SaveOverlay.tsx` - Mentés mód (single/backup)
+- `SaveOptionsPopup.tsx` - Mentés/Exportálás mód (link/fájl/share/QR, l. §1385)
 - `SaveFileOverlay.tsx` - Fájl kész (📤 Megosztás / 💾 Letöltés)
 - `UndoOverlay.tsx` - Visszavonás lista
 - `LoadErrorOverlay.tsx` - Betöltési hiba

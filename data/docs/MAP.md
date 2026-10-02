@@ -116,12 +116,9 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivScreen.tsx          Fő layout
   AktivTaktikak.tsx        Taktika picker + chip-ek
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
-  AktivManover.tsx         Manőver picker
   ManoverDobasPopup.tsx    Manőver dobás popup (követelmény 0. lépés Normál/Erős, fázis lépegetés, Siker/Kudarc, helyzetfüggő módosítók, MP+TÉ popup)
   manover-dobas-calc.ts    Manőver dobás pure logika (követelmény kiértékelés, fázisok, TÉ-bontás, fázis-feliratok, eredmény-hatás) - a popup számítási magja. `szitFeltételTeljesül`/`szitModKezdőÁllapot`: a helyzetfüggő módosító sorok `feltétel` ("fegyver_extra:<id>"/"taktika:<id>"/…) auto-matchje → az illő sor alapból bekapcsolva (kézi override marad). A `manoverek.yaml` `extra_ref` pointer-sorai build-időben feloldódnak az extrák `manőver_ellenpróba` hatásából (érték+leírás+feltétel), l. `data/gen/aktiv_ful.py` - EGY igazságforrás (A/1, §42)
   AktivStatuszok.tsx       Státusz picker
-  AktivFegyverSection.tsx  Fegyver/fogás/páncél toggle szekció
-  SessionToggles.tsx       Session-toggle fortély gombok (Harci akrobatika: fok-függő fegyver v2 követelmény-tiltás + hint)
   AktivHatasPool.tsx       Hatás pool box
   aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
@@ -158,6 +155,10 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   ManualDicePicker.tsx     Manuális kockadobás érték választó
   ManoverPicker.tsx        Manőver választó (mód + lista, 2 lépés)
   aktiv-fegyver-ctx.ts     Aktív fegyver kontextus feloldás (kétkezes > fogás > pajzs > jobb kéz)
+  HarcFegyverSection.tsx   Fegyver/fogás szekció (Ügyesebb + Gyengébb kéz + Fogás + páncél/pajzs toggle) - Aktív ÉS Harc fül közös
+  HarcFegyverfogas.tsx     Fegyverfogás picker (egyfegyveres/kétkezes/fegyver_pajzs/fegyver_hárító)
+  UgyesebbKezSelect.tsx / GyengebbKezSelect.tsx / FegyverSelectField.tsx  Fegyver dropdown-ok + közös select-field
+  SessionToggles.tsx       Session-toggle fortély gombok (Harci akrobatika: fok-függő fegyver v2 követelmény-tiltás + hint)
 
 tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
   TavharcScreen.tsx        Fő screen (szerkesztő + game mód)
@@ -278,7 +279,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | 22 | Státuszok, Hatások | `statuszok.yaml`, `AktivStatuszok.tsx` |
 | 24 | Kalkulált feltételek | `useHarcComputed.ts` |
 | 26 | Kétkezes harc | `ketkezes.ts` |
-| 27 | Fegyverfogás | `AktivFegyverfogas.tsx`, `pancel-calc.ts` |
+| 27 | Fegyverfogás | `HarcFegyverfogas.tsx`, `pancel-calc.ts` |
 | 29 | Undo | `useKarakterState.ts`, `useUndo.ts` |
 | 30-31 | Local Storage, Multi-karakter | `useKarakterState.ts`, `useAutoSave.ts` |
 | 31b | Karakter verziók (checkpoint) | `checkpoint-utils.ts`, `CheckpointSection.tsx` |
