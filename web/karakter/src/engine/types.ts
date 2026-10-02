@@ -27,13 +27,6 @@ export interface Fortely {
   kiterjeszti?: string[];
 }
 
-export interface FortelyokSpecialis {
-  // A KP-adó kiemelt fortélyok (Analfabéta, Vakság, Süketség, Apró méretű lény) NEM itt élnek,
-  // hanem a karakter.fortélyok[] tömbben (negatív kp_perfok → spec_kp, l. engine_spec §1.4).
-  // A Tartós sérültség viszont fok-alapú, ezért külön mezőként marad (0-3).
-  tartós_sérülés_fok: number;
-}
-
 export interface FegyverPeldany {
   alap: string;
   név: string;
@@ -153,7 +146,6 @@ export interface Karakter {
   CM: number;
   képzettségek: Kepzettseg[];
   fortélyok: Fortely[];
-  fortélyok_speciális: FortelyokSpecialis;
   hátterek: { faj: string; leíró: string[]; karma: string[] };
   fegyverek: FegyverPeldany[];
   távfegyverek: TavfegyverPeldany[];

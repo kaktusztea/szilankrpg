@@ -70,28 +70,27 @@ UI kijelzés (KP sáv, szerkesztő módban):
 ### 1.4 Speciális KP bónusz
 
 ```
-input:  karakter.fortélyok[] (kiemelt fortélyok, negatív kp_perfok-kal),
-        karakter.fortélyok_speciális.tartós_sérülés_fok
-source: fortelyok.json (fortély kp_perfok mező), konstansok.yaml → kp_bónusz
+input:  karakter.fortélyok[] (kiemelt, KP-adó fortélyok, negatív kp_perfok-kal)
+source: fortelyok.json (fortély kp_perfok mező)
 
 formula:
-  // ADATVEZÉRELT: a KP-t ADÓ fortélyok azok, amelyeknek kp_perfok < 0 (negatív).
-  // A bónusz nagysága magából a fortély-adatból jön, NEM hardcode névlistából.
+  // TELJESEN ADATVEZÉRELT: a KP-t ADÓ fortélyok azok, amelyeknek kp_perfok < 0 (negatív).
+  // A bónusz nagysága magából a fortély-adatból jön, NEM hardcode névlistából és NEM külön konstansból.
   kp_bónusz_fortélyok = [ f IN karakter.fortélyok WHERE kp_perfok(f.név) < 0 ]
   spec_kp = SUM( f.fok x ABS(kp_perfok(f.név)) )  FOR f IN kp_bónusz_fortélyok
-          + tartós_sérülés_fok x kp_bónusz.tartós_sérülés_per_fok
 
 output: spec_kp (primer célra is fordítható, hozzáadódik az összes_kp-hoz)
-note: Jelenleg negatív kp_perfok-ú (KP-adó) kiemelt fortélyok: Analfabéta (-6), Süketség (-12),
-      Vakság (-18), Apró méretű lény (-18) - ezek a karakter.fortélyok[] tömbből, a kp_bónusz_fortélyok
-      aggregátumon át számolnak. ÚJ ilyen fortély felvételekor a spec_kp automatikusan számol vele
-      (nincs kód/spec módosítás). A Tartós sérültség KÜLÖN ágon: a fortélyok_speciális.tartós_sérülés_fok
-      mezőből × kp_bónusz.tartós_sérülés_per_fok (= 6), NEM a fortélyok[] tömbből (így nincs dupla számolás).
-      Adatduplikáció-megjegyzés: a konstansok.kp_bónusz.{analfabéta,süketség,vakság,apró_méretű_lény}
-      értékek jelenleg NEM a spec_kp forrásai (azt a fortély kp_perfok adja) - a formula csak a
-      tartós_sérülés_per_fok mezőt olvassa a kp_bónusz blokkból.
+note: Negatív kp_perfok-ú (KP-adó) kiemelt fortélyok: Analfabéta (-6), Süketség (-12),
+      Vakság (-18), Apró méretű lény (-18), Tartós sérültség (-6, maxfok 3 → fokonként +6).
+      MIND a karakter.fortélyok[] tömbből, a kp_bónusz_fortélyok aggregátumon át számol
+      (a Tartós sérültség is: a fortély foka adja a fok×6 bónuszt). ÚJ ilyen fortély felvételekor
+      a spec_kp automatikusan számol vele - nincs kód/spec módosítás.
+      KIVEZETVE (holtkód-tisztítás, l. refactorlog 2026-10-02):
+        - a konstansok.kp_bónusz blokk (redundáns volt a fortély |kp_perfok|-kal);
+        - a karakter.fortélyok_speciális mező (a tartós_sérülés_fok-ra sosem volt UI-setter,
+          a Tartós sérültség KP-ja mindig a fortélyok[] ágon jött).
 impl: reactive.ts → buildArrayContext 'kp_bónusz_fortélyok' (perFok < 0 szűrés),
-      rules.json → spec_kp formula.
+      rules.json → spec_kp = sum(kp_bónusz_fortélyok, bónusz_kp).
 ```
 
 ---
@@ -1013,7 +1012,7 @@ validáció:
 
   // Kötelező fortélyok: a karakter MUST HAVE mindegyiket
   FOR EACH kf in faj_def.kötelező_fortélyok:
-    kf MUST BE IN karakter.fortélyok[].név OR karakter.fortélyok_speciális
+    kf MUST BE IN karakter.fortélyok[].név
 
   // Tiltások
   FOR EACH tk in faj_def.tiltott_képzettségek:
@@ -3435,7 +3434,6 @@ A cél: minimalizálni a JSON méretet tömörítés előtt.
   "cm": CM,                                 // number
   "kp": [[név, szint], ...],               // képzettségek - [string, number][]
   "fo": fortélyok tömörítve (lásd 40.3),   // mixed[][]
-  "fs": fortélyok_speciális (csak non-default),  // object (kihagyható ha üres)
   "ht": hátterek tömörítve (lásd 40.4),    // array
   "fg": fegyverek tömörítve (lásd 40.5),   // array
   "tf": távfegyverek (lásd 40.6),          // string[]
@@ -3852,7 +3850,7 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 | kp_fortélyok | sum | fortélyok fok |
 | kp_hm | képlet | HM_TÉ, HM_VÉ |
 | kp_cm | képlet | CM |
-| spec_kp | sum + képlet | kp_bónusz_fortélyok, tartós_sérülés |
+| spec_kp | sum | kp_bónusz_fortélyok (negatív kp_perfok, Tartós sérültség is) |
 | kiemelt_kp | sum | kiemelt_fortélyok |
 | kp_primer_képzettségek | sum_lookup | primer_képzettségek, kp_tábla |
 | kp_primer_fortélyok | sum | primer_fortélyok |

@@ -63,7 +63,6 @@ describe('Golden #3 - rules.json alapszámítások (pak-Teth, 11. TSz, Amund)', 
       páncél_sisak: karakter.páncél.sisak ? 1 : 0,
       páncél_idea: karakter.páncél.idea,
       páncél_rongálódás: karakter.páncél.rongálódás,
-      spec_tartós_sérülés_fok: karakter.fortélyok_speciális.tartós_sérülés_fok,
     });
 
     results = evaluate(rules, ctx, lookupArrays, stringCtx);

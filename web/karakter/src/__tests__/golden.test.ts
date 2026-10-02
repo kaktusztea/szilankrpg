@@ -64,7 +64,6 @@ describe('Golden #2 - rules.json alapszámítások (Teszt karakter, 10. TSz, Dzs
       páncél_sisak: karakter.páncél.sisak ? 1 : 0,
       páncél_idea: karakter.páncél.idea,
       páncél_rongálódás: karakter.páncél.rongálódás,
-      spec_tartós_sérülés_fok: karakter.fortélyok_speciális.tartós_sérülés_fok,
     });
 
     results = evaluate(rules, ctx, lookupArrays, stringCtx);

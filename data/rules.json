@@ -178,11 +178,9 @@
     },
     {
       "id": "spec_kp",
-      "formula": "sum(kp_bónusz_fortélyok, bónusz_kp) + spec_tartós_sérülés_fok * konstansok.kp_bónusz.tartós_sérülés_per_fok",
+      "formula": "sum(kp_bónusz_fortélyok, bónusz_kp)",
       "inputs": [
-        "kp_bónusz_fortélyok",
-        "spec_tartós_sérülés_fok",
-        "konstansok.kp_bónusz.tartós_sérülés_per_fok"
+        "kp_bónusz_fortélyok"
       ]
     },
     {

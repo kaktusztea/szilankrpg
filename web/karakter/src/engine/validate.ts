@@ -5,7 +5,7 @@ import type { GameData } from './data-loader';
 const REQUIRED_TOP_FIELDS = [
   'schema_version', 'uid', 'id_leíró', 'név', 'becenév', 'jk', 'játékos', 'mentés_dátum',
   'tsz', 'leírás', 'kor', 'anyanyelv', 'vallás', 'tulajdonságok',
-  'HM_TÉ', 'HM_VÉ', 'CM', 'képzettségek', 'fortélyok', 'fortélyok_speciális',
+  'HM_TÉ', 'HM_VÉ', 'CM', 'képzettségek', 'fortélyok',
   'hátterek', 'fegyverek', 'távfegyverek', 'páncél', 'pajzs', 'felszerelés',
   'előtörténet', 'jegyzetek', 'napló', 'checkpoints', 'session',
 ] as const;

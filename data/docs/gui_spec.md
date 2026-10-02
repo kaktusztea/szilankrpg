@@ -1160,7 +1160,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 | fegyver_SP | képlet | fegyver + min(erő, limit) + MF + fortély |
 | fegyver_harckeret | képlet | max(0, harcmodor + gyor - MGT - felszMGT + fortély) |
 | fegyver_támadások | képlet | 1 + floor(harckeret / sebesség) |
-| spec_kp | sum + képlet | KP bónusz fortélyok (negatív kp_perfok) + tartós_sérülés |
+| spec_kp | sum | KP bónusz fortélyok (negatív kp_perfok, Tartós sérültség is) |
 | kiemelt_kp | sum | ingyenes keret feletti kiemelt fortélyok KP-ja |
 | kp_primer_képzettségek | sum_lookup | primer képzettség szintek → KP tábla |
 | kp_primer_fortélyok | sum | primer fortélyok fok x kp_perfok |
@@ -1222,7 +1222,7 @@ Minden adat `fetchJson`-nel:
 - **`useVersionHint`** hook: Verzió double-tap hint kezelés
 - **`useHoldRepeat`** hook: Hold-to-repeat gomb viselkedés (gyorsulás)
 - `karakter: Karakter | null` - egyetlen unified state objektum (schema v2)
-- Top-level: `schema_version`, `uid`, `id_leíró`, `név`, `becenév`, `játékos`, `jk`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `előtörténet`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `checkpoints`, `session`
+- Top-level: `schema_version`, `uid`, `id_leíró`, `név`, `becenév`, `játékos`, `jk`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `előtörténet`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `checkpoints`, `session`
 - `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`, `aktív_távfegyver_index`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Inicializálás: `data.emptyKarakter` betöltéskor (validated)

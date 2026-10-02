@@ -48,7 +48,6 @@ interface CompactKarakter {
   cm: number;
   kp: [string, number][];
   fo: (string | number)[][];
-  fs?: Record<string, boolean | number>;
   ht: (string | string[])[];
   fg: (string | number)[][];
   tf: (string | [string, number])[];
@@ -91,11 +90,6 @@ function compactEncode(k: Karakter): CompactKarakter {
   if (k.játékos) c.j = k.játékos;
   if (k.leírás) c.l = k.leírás;
   if (k.vallás) c.v = k.vallás;
-
-  // fortélyok_speciális: csak non-default
-  const fs: Record<string, boolean | number> = {};
-  if (k.fortélyok_speciális.tartós_sérülés_fok) fs.tartós_sérülés_fok = k.fortélyok_speciális.tartós_sérülés_fok;
-  if (Object.keys(fs).length) c.fs = fs;
 
   // hátterek: leíró és karma
   if (k.hátterek.leíró.length) c.ht.push(k.hátterek.leíró);
@@ -190,9 +184,6 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     CM: c.cm,
     képzettségek: c.kp.map(([név, szint]) => ({ név, szint })),
     fortélyok,
-    fortélyok_speciális: {
-      tartós_sérülés_fok: (c.fs?.tartós_sérülés_fok as number) || 0,
-    },
     hátterek,
     fegyverek,
     távfegyverek: c.tf.map(t => Array.isArray(t) ? { alap: t[0], idea: t[1] } : { alap: t, idea: 0 }),

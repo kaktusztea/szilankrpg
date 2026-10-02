@@ -25,7 +25,6 @@ export function validKarakter(overrides: Partial<Karakter> = {}): Karakter {
     CM: 0,
     képzettségek: [],
     fortélyok: [],
-    fortélyok_speciális: {},
     hátterek: {},
     fegyverek: [],
     távfegyverek: [],

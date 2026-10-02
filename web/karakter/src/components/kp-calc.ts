@@ -22,7 +22,6 @@ export interface KpDetails {
 /** Compute all KP breakdown values from karakter + gameData. */
 export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
   const { tulajdonságok, képzettségek, fortélyok } = karakter;
-  const spec = karakter.fortélyok_speciális;
   const tsz = karakter.tsz;
 
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(karakter,
@@ -30,7 +29,6 @@ export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
   const alakzatharcSzint = képzettségSzint(karakter, 'Alakzatharc');
 
   const ctx = buildContext(tulajdonságok, tsz, data.konstansok, {
-    spec_tartós_sérülés_fok: spec.tartós_sérülés_fok,
     HM_TÉ: karakter.HM_TÉ, HM_VÉ: karakter.HM_VÉ, CM: karakter.CM,
     harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: alakzatharcSzint,
     felszerelés_terhelés: 0, páncél_van: 0, páncél_végtagvédettség: 0,

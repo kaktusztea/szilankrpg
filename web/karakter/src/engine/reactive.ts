@@ -77,12 +77,6 @@ export function buildContext(
   for (const [key, val] of Object.entries(konstansok.arányok)) {
     ctx.set(`konstansok.arányok.${key}`, val as number);
   }
-  if (konstansok.kp_bónusz) {
-    for (const [key, val] of Object.entries(konstansok.kp_bónusz)) {
-      ctx.set(`konstansok.kp_bónusz.${key}`, val as number);
-    }
-  }
-
   // Top-level skalár konstansok (pl. konstansok.hm_aszimmetria_osztó) - így minden
   // egyszerű számkonstans használható formulában, hardcode nélkül.
   for (const [key, val] of Object.entries(konstansok)) {
@@ -103,7 +97,7 @@ export function buildContext(
  * hogy a yaml ↔ típus drift itt is fordítási hiba legyen). `Pick`, hogy a tesztek
  * részleges konstansok objektumot adhassanak.
  */
-export type KontextusKonstansok = Pick<KonstansokRaw, 'harcérték_alap' | 'kp' | 'arányok' | 'kp_bónusz'>;
+export type KontextusKonstansok = Pick<KonstansokRaw, 'harcérték_alap' | 'kp' | 'arányok'>;
 
 /**
  * Build array context from character data (képzettségek, fortélyok, etc.)

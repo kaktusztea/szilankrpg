@@ -25,7 +25,6 @@ function makeKarakter(overrides: Partial<Karakter> = {}): Karakter {
     CM: 0,
     képzettségek: [{ név: 'Kardvívás', szint: 3 }],
     fortélyok: [],
-    fortélyok_speciális: { tartós_sérülés_fok: 0 },
     hátterek: { faj: 'Ember', leíró: [], karma: [] },
     fegyverek: [],
     távfegyverek: [],
