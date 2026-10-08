@@ -69,7 +69,7 @@ Zúzó:    +0 SP
 Vágó:   -10 SP
 Szúró:  -20 SP 
 
-Tűz: +4 SP
+Tűz: x2 SP
 ```
 
 ---
