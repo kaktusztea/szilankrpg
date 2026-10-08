@@ -15,7 +15,6 @@ Merevvértek
 
 TÉ büntetést csökkenti
   Merevvértviselet fortély
-  Erő Tulajdonság 1:1
 ```
 
 🔆 [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) **Státusz**: az `MGT` ennek formájában fejti ki hatását

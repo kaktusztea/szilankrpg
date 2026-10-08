@@ -16,7 +16,7 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
 
 ```
 -1 pont: közepes tárgy
-  → Könnyűvért 50%+ fedésben
+  → Hajlékonyvért 50%+ fedésben
   → rövidkard, Közepes pajzs, 20m kötél ..
 -2 pont: nagy tárgy
   → Merevvért 50%+ fedésben (pikkely, lemez)
@@ -33,7 +33,7 @@ Túlcsorduló pont == 1 Felszerelés MGT
   → -1 Harckeret
 ```
 
-🔆 A viselt vértezet NEM számít be a fenti felszerelési tárgyak levonásai alá - arra a páncélok MGT értékét használjuk.
+🔆 A viselt vértezet csak mint tárgy számít be a fenti felszerelések levonásai alá. A páncél MGT értékét külön használjuk.
 
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
