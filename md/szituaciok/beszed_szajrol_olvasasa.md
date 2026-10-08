@@ -5,20 +5,27 @@ Ha nem hallod a beszédet, csak a beszélő szájmozgását látod, úgy is megp
 ### Érzékenység Tulajdonságpróba
 
 ```
-Alap Célszám: 7
-   → átlagos táv
-   → jó látási viszonyok
+Célszám: 7
+ → átlagos táv
+ → jó látási viszonyok
    (célpont szájára)
 ```
 
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
+
+Érzékenység Tulajdonságpróba dobás módosítói.
 
 ```
--3: Szájról olvasás fortéllyal
-+1: nagyobb távolság
-+2: nehezen kivehető szájmozgás //
++3: Szájról olvasás fortéllyal
+```
+
+```
+Láthatóság
+
+-1: nagyobb távolság
+-2: nehezen kivehető szájmozgás //
     enyhe köd
-+3: még éppen kivehető szájmozgás //
+-3: még éppen kivehető szájmozgás //
     rossz látási viszonyok
 E fölött lehetetlen.
 ```

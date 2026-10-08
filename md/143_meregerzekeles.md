@@ -23,20 +23,21 @@ Alap célszám: `xy` ⭕TODO⭕
 ---
 ### 2. Érzékenység tulajdonságpróba
 
-
 ```
-Alap célszám: 4 (átlagos)
-
-Kis (fél) mennyiség: +1
-Dupla mennyiség: -1
-
-Sűrű: +1
-(azonos hatás, fele adagnál)
-
-Színtelen: +1
-Szagtalan: +1
+Célszám: 4 (Átlagos)
 ```
 
+#### Helyzetfüggő módosítók
+
+```
+-1: Kis (fél) mennyiség
++1: Dupla mennyiség
+
+-1: Sűrű (azonos hatás, fele adag)
+
+-1: Színtelen
+-1: Szagtalan
+```
 
 ---
 

@@ -30,6 +30,14 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 
 <br />
 
+---
+## Helyzetfüggő módosítók
+
+Ezek a Tulajdonságpróba dobás módosítói, amelyek adott szituációkban jelenhetnek meg.
+
+Példa: ["Beszéd szájról olvasása" szituációban](szituaciok/beszed_szajrol_olvasasa.md) ha nagyobb távolságról próbálkozol, a dobásra `-1` módosítót kapsz.
+
+<br />
 
 ---
 ## Előny-Hátrány dobások
@@ -41,7 +49,7 @@ Min: Hátrány-2
 Max: Előny+2
 ```
 
-Természetesen a Tulajdonságpróbára is járhat Előny, vagy Hátrány - hogy mekkora, azt a Státuszok leírásánál részletezzük.
+Természetesen a Tulajdonságpróba dobásokra is járhat **Előny**, vagy **Hátrány** - hogy mekkora, azt a [Státuszok](080_hatasok_es_statuszok.md) leírásánál részletezzük.
 
 <br />
 
@@ -119,6 +127,8 @@ Ezzel kb. 33% esélye van a sikerre
 1x "Nehéz"        (5)
 ```
 
+<br />
+
 ---
 ### Kombinált próbák
 
@@ -144,6 +154,8 @@ Erőpróba: Nagyon nehéz (6)
 🔆Megjegyzés:\
 Ha a KM szerint ebben az esetben az Ügyességpróba csak "apró kiegészítő", akkor az arra dobandó próba lehet "Átlagos" (`4`), vagy "Könnyű" (`3`) is.
 
+<br />
+
 ---
 ### Tulajdonság ellenpróba
 
@@ -158,6 +170,8 @@ Ha két karakternek össze kell mérnie tudását egy konkrét Tulajdonsággal k
 Mindkét játékos dob (NJK esetén természetesen a KM) `k6`-tal, és az eredményt hozzáadja az adott Tulajdonságának értékéhez. Aki nagyobb számot kap eredményül, az nyer.
 
 Ha az eredmények azonosak, akkor patthelyzet alakul ki, a KM belátása szerint (esetleg némi idő elteltével) új ellenpróba dobható. Ha az adott szituációban nem lehetséges patthelyzet, akkor újra kell dobni `k6`-tal (ekkor már nem kell hozzáadni a Tulajdonság értékét) és a nagyobb szám nyer.
+
+<br />
 
 ---
 ### Sérülés hatása tulajdonságpróbára

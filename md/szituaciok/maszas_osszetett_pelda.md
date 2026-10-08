@@ -7,10 +7,10 @@
 ```
 Mászás: 7.szint
 
-Ügyesség: +3
+Ügyesség:  +3
 Edzettség: +3
-Erő: +2
-Önuralom: +1
+Erő:       +2
+Önuralom:  +1
 ```
 
 ---
@@ -40,7 +40,7 @@ k10 + 10 (+7 Mászás +3 Ügyesség)
 ⚙️ Az első - rontott - képzettségpróba hatása:\
 A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a visszalépés pedig kifejezetten szuicid érzésnek tűnik.
 
-🔆 "...annnyád!!!!! ANYÁD!!!!! úúú, baszki, mostmiafaszlegyenmiafaszlegyen..."
+🔆 "...annnyád!!!!! ANYÁD!!!!! úúú, baszki, mostmiaf.szlegyenmiaf.szlegyen...?"
 
 <br />
 
@@ -52,7 +52,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 🔆 "Ááá, nem bírom sokáig, gyerünk baszki!"
 
 ⚙️ A rontás **Végzetes hiba** volt (a zuhanás vége nagy placcs lenne)\
-→ így Tetves jogosult a képzettségpróba [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás), amire ugye `-3` büntetés jár.
+→ így Tetves jogosult a képzettségpróba [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás), amire ugye alapból `-3` büntetés jár.
 
 ⚙️ Tetves [Vállalást](../030_06_01_kepzettsegproba.md#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba) alkalmaz a maximálisan lehetséges `+3` értékkel - ezzel nullázza is a fenti `-3` büntetést.
 
@@ -67,14 +67,14 @@ vs
 ```
 
 ```
-Dobás
-🎲 5 → (15  vs  15)
+k10 dobás
+🎲 6 → (15  vs  15)
    → épphogy megvan ✅
 ```
 
 ### Vállalás dobás
 
-⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes pontot fel kell használnia).
+⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes `` pontot fel kell használnia).
 
 ⚙️ Az `Erő` Tulajdonsága az aktuális jelenet idejére `0` értékre csökken.
 
@@ -96,27 +96,36 @@ Tetves minden erejét bevetve felgyűrte magát a `11 cm` széles kiszögellésr
 
 Ez **2 biztos tudást** igényel, hogy meg tudja-e tartani magát tartósan. Ebben segíti a **perem** és az **ék**.
 
-1️⃣ **Edzettség** Tulajdonságpróba - Könnyű (`3`) → megvan biztos tudásból ✅
+### 1️⃣ **Edzettség** Tulajdonságpróba: Nagyon nehéz (`6`)
 
 ```
-Nehézség módosítók
--2: Ék
--1: Perem
++3: Edzettség
 
-→ (6) Nagyon Nehéz - 3
-  → (3) Könnyű
+Helyzetfüggő módosítók
++2: Ék
++1: Perem
 ```
 
-2️⃣ **Mászás** képzettségpróba - Átlagos (`9`) → megvan biztos tudásból ✅
+```
+
+(6 + k6)  vs  6
+→ megvan biztos tudásból ✅
+```
+
+### 2️⃣ **Mászás** képzettségpróba : Nagyon nehéz (`18`)
 
 ```
-Nehézség módosítók
+ 7: Mászás szint
++3: Ügyesség
 
--6: Ék
--3: Perem
+Helyzetfüggő módosítók
++6: Ék
++3: Perem
+```
 
-→ (18) Nagyon nehéz - 9
-  → (9) Átlagos
+```
+(19 k k10)  vs  18
+ → megvan biztos tudásból ✅
 ```
 
 A biztosítás miatt megy a pihenés és sokkal könnyebb lesz elrugaszkodni is.

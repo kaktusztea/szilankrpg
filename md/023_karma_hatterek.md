@@ -100,7 +100,9 @@ No comment 🙂
 
 #### Hatás
 
-Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociális életedre is hatással van. Az ital nélkül már képtelen vagy működni, mindent megteszel annak megszerzéséért. Elvonás esetén `Hátrány-1,2` büntetéseket kaphatsz Tulajdonságpróbákra, Képzettségpróbákra.
+Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociális életedre is hatással van. Az ital nélkül már képtelen vagy működni, mindent megteszel annak megszerzéséért.
+
+Elvonás esetén `Hátrány-1,2` büntetéseket kaphatsz Tulajdonságpróbákra, Képzettségpróbákra.
 
 <br />
 

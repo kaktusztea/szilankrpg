@@ -103,13 +103,11 @@ Visszahajló acélfalon felmászni.
  Infó: Erőpróba kellhet
 ```
 
-#### ⚜️ Erő Tulajdonság bevetése mentő dobásnál 🔀
+#### ⚜️ Erő Tulajdonság bevetése [mentődobásnál](../030_06_01_kepzettsegproba.md#mentődobás) 🔀
+
+Az Erő `0` feletti részét vetheted be.
 
 ```
-1 ... +X
-
-→ X = Erő Tulajdonság, felhasználása levon Erőből
-→ Erő +0 értékig lehet lemenni
 → Pihenésben 1 pont / perc tér vissza
 ```
 
