@@ -1143,8 +1143,6 @@ Deklaratív számítási szabályok dependency graph-ban:
 | összes_szekunder_kp | képlet | tsz x (szekunder_perszint + emlékezet) |
 | tulajdonság_pont_keret | képlet | alap + floor(tsz/2) |
 | manőver_pont | képlet | ceil(harcmodor_összeg x 2 / tsz) |
-| felszerelés_keret | képlet | 2 + erő |
-| felszerelés_mgt | képlet | max(0, terhelés - keret) |
 | max_CM | képlet | tsz x max_cm_perszint |
 | max_HM | sum_where | harci fortélyok (MF nélkül) + harcmodorok + alakzatharc |
 | max_HM_aszimmetria | képlet | floor(tsz / 2) |
@@ -1163,7 +1161,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 | fegyver_TÉ | képlet | alap + erő + ügy + gyor + HM + harcmodor + fegyver + MF + fortély |
 | fegyver_VÉ | képlet | alap + gyor + ügy + HM + harcmodor + fegyver + MF + fortély |
 | fegyver_SP | képlet | fegyver + min(erő, limit) + MF + fortély |
-| fegyver_harckeret | képlet | max(0, harcmodor + gyor - MGT - felszMGT + fortély) |
+| fegyver_harckeret | képlet | max(0, harcmodor + gyor - MGT + fortély) |
 | fegyver_támadások | képlet | 1 + floor(harckeret / sebesség) |
 | spec_kp | sum | KP bónusz fortélyok (negatív kp_perfok, Tartós sérültség is) |
 | kiemelt_kp | sum | ingyenes keret feletti kiemelt fortélyok KP-ja |

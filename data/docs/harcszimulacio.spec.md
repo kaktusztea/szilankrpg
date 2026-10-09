@@ -103,7 +103,6 @@ harcos:
   pajzs_méret: "" | kis | közepes | nagy
   páncél: { alap, fémalapanyag, kidolgozottság, idea, rongálódás,
             sisak: bool, végtagvédettség: 0..4, méret_illeszkedés }
-  felszerelés_terhelés: int               # nagy tárgyak + FEGYVER + PAJZS (§3.6)
 
   # --- származtatott (§3) ---
   származtatott:
@@ -218,27 +217,18 @@ páncél_MGT  = MAX(0, str.mgt + alp.mgt + csatolt_db × tag_mgt + méret_mgt - 
 merevvért_TÉ_büntetés = str.merev
     ? MAX(0, páncél_MGT - merevvértviselet_bónuszok[fok].TÉ_büntetés_csökkentés)
     : 0
-felszerelés_keret = 2 + erő
-felszerelés_mgt   = MAX(0, felszerelés_terhelés - felszerelés_keret)
 ```
 
-⚠ A `felszerelés_terhelés`-be **a kézben tartott fegyver és pajzs is beleszámít**
-(`md/068_01_13`, `md/082_statuszok.md` → „Fegyver/Pajzs akadályoztatása"):
-
-```
-1 pont:  közepes tárgy · másfélkezes kard · közepes pajzs
-2 pont:  nagy tárgy · kétkezes kard · nagy pajzs
-```
-
-Fegyverekre **nem** a páncél MGT pontrendszere érvényes - a fegyver kizárólag ezen a
-felszerelés-terhelésen keresztül hat (ami `-1 TÉ` és `-1 harckeret` pontonként, ha
-túllépi a keretet).
+⚠ A felszerelés/pajzs/fegyver KM-mérlegeléses Felszerelés-keret hatása (md/010_03_06)
+a próbadobásokra vonatkozik, NEM a harcértékekre - a tesztharc-motor nem modellezi.
+A korábbi `felszerelés_mgt` → harckeret út kivezetve (szabály-összevonás, 2026-10).
+Fegyverekre továbbra sem a páncél MGT pontrendszere érvényes.
 
 ### 3.7 Harckeret és támadások száma
 
 ```
 # egyfegyveres / fegyver_pajzs / fegyver_hárító:
-harckeret  = MAX(0, harcmodor_szint + gyorsaság - páncél_MGT - felszerelés_mgt + fortély_harckeret)
+harckeret  = MAX(0, harcmodor_szint + gyorsaság - páncél_MGT + fortély_harckeret)
 támadások  = 1 + FLOOR(harckeret / fegyver.Sebesség)
 
 # kétkezes: §3.11

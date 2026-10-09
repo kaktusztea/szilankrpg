@@ -112,21 +112,6 @@
       ]
     },
     {
-      "id": "felszerelés_keret",
-      "formula": "2 + tulajdonságok.erő",
-      "inputs": [
-        "tulajdonságok.erő"
-      ]
-    },
-    {
-      "id": "felszerelés_mgt",
-      "formula": "max(0, felszerelés_terhelés - felszerelés_keret)",
-      "inputs": [
-        "felszerelés_terhelés",
-        "felszerelés_keret"
-      ]
-    },
-    {
       "id": "max_CM",
       "formula": "tsz * konstansok.arányok.max_cm_perszint",
       "inputs": [
@@ -447,12 +432,11 @@
     },
     {
       "id": "fegyver_harckeret",
-      "formula": "max(0, fegyver_harcmodor_szint + tulajdonságok.gyorsaság - páncél_MGT - felszerelés_mgt + fegyver_fortély_harckeret)",
+      "formula": "max(0, fegyver_harcmodor_szint + tulajdonságok.gyorsaság - páncél_MGT + fegyver_fortély_harckeret)",
       "inputs": [
         "fegyver_harcmodor_szint",
         "tulajdonságok.gyorsaság",
         "páncél_MGT",
-        "felszerelés_mgt",
         "fegyver_fortély_harckeret"
       ]
     },

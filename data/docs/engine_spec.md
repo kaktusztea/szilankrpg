@@ -317,7 +317,7 @@ input:  fegyver.sebesség, harcmodor_szint (a fegyver kategóriájához tartozó
 source: rules.json (fegyver_harckeret, fegyver_támadások)
 
 formula (egyfegyveres):
-  harckeret = harcmodor_szint + gyorsaság - páncél_MGT - felszerelés_mgt + fortelyMods['harckeret']
+  harckeret = harcmodor_szint + gyorsaság - páncél_MGT + fortelyMods['harckeret']
   harckeret = MAX(0, harckeret)
 
   plusz_támadások = FLOOR(harckeret / fegyver.sebesség)
@@ -541,19 +541,25 @@ note: Értéke [0; 10] tartományban mozog. Egy harci jelenet alatt használhat�
 
 ---
 
-## 15. Felszerelés MGT
+## 15. Felszerelés (KM-mérlegeléses, nem számolt)
 
 ```
-input:  karakter.felszerelés.nagy_tárgyak[].MGT, karakter.tulajdonságok.erő
+Felszerelés keret = 2 + Erő
 
-formula:
-  felszerelés_keret = 2 + erő
-  felszerelés_terhelés = SUM(nagy_tárgyak[].MGT)     // közepes=1, nagy=2 pontonként
-  felszerelés_mgt = MAX(0, felszerelés_terhelés - felszerelés_keret)
-
-output: felszerelés_mgt
-note: Hatása pontonként: -1 TÉ, -1 Harckeret. A viselt páncél NEM számít bele.
+A cipelt közepes (-1) és nagy (-2) tárgyak, a Közepes/Nagy pajzs
+és a Másfélkezes/Kétkezes (vagy nehéz/súlyos) fegyver csökkentik a keretet.
+Ha a keret negatívba csúszik:
+  -1 → Hátrány-1 a Fizikai Tulajdonság-/Képzettségpróbákra
+  -2 → Hátrány-2
+  -2 alatt → nem tud harcolni, a próbadobások automatikus kudarcok.
 ```
+
+note:
+  Szabálykönyv: md/010_03_06_felszereles.md. KM-mérlegeléses, a webapp NEM számolja
+  (nincs terhelés-bevitel UI, a hatás a KM kezében marad). A korábbi
+  `felszerelés_mgt` → harckeret reactive út KIVEZETVE (a szabály a felszerelést már
+  nem a harckerethez, hanem a próbadobásokhoz köti). A hosszútávú viselet akadályát
+  külön az Akadály fejezet írja le (md/010_03_07_akadaly.md).
 
 ---
 
@@ -2742,33 +2748,23 @@ UI (AktivScreen):
   - Státusz picker: "Sérült (auto)" névvel jelenik meg, szürkítve, nem kattintható
 ```
 
-### §33.1 TODO - MGT → Fizikai próba Hátrány (computed automatizmus)
+### §33.1 MGT → Fizikai próba Hátrány - KIVEZETVE
 
 ```
-STÁTUSZ: TERV (nem implementált). Backlog: DEVSTATE.md "MGT → próba-Hátrány automatizmus".
-Forrás: md/082 (Páncél akadályoztatása, Fegyver/Pajzs akadályoztatása).
+STÁTUSZ: KIVEZETVE (2026-10). A terv a `Páncél akadályoztatása` és a
+`Fegyver/Pajzs akadályoztatása` státuszokra épült - ezeket a szabálykönyv
+megszüntette (md/082, "Egyszerűsítések, összevonások gátló tényezők kapcsán").
 
-Probléma:
-  A páncél/fegyver/pajzs MGT HARCÉRTÉK-hatása kész (MGT→harckeret §9, merevvért→TÉ §12,
-  felszerelés §15), de a PRÓBA-oldali hatás NINCS: a páncél MGT-je sávosan Hátrányt adna a
-  Fizikai Tulajdonság- és Képzettségpróbákra. Jelenleg a próba-EH csak session.aktív_státuszok-ból
-  számol (statusz-proba.ts), az MGT-t nem veszi figyelembe.
+Az új szabály:
+  - Páncél MGT: KIZÁRÓLAG harcértékekre hat (harckeret §9, merevvért→TÉ §12).
+    A próbadobásokra gyakorolt hatást a Felszerelés fejezet (md/010_03_06) írja le,
+    KM-mérlegeléses módon (Felszerelés keret → Hátrány), NEM a páncél MGT sávosan.
+  - Hosszútávú viselet akadálya: külön Akadály fejezet (md/010_03_07), szintén
+    KM-mérlegeléses (nap/táv), nem próba-EH automatizmus.
 
-Szabály (md/082 Páncél akadályoztatása - KM-mérlegelős default sávok):
-  páncél MGT:  0-7  → nincs büntetés
-               8-10 → Hátrány-1 Fizikai próbákra
-               11-13→ Hátrány-2 Fizikai próbákra
-               14+  → Automatikus kudarc
-  A Merevvértviselet fortély MGT-csökkentő hatása a próbákra IS hat (= a már számolt effektív MGT-t használd).
-  Fegyver/Pajzs akadályoztatása: Hátrány-1/-2 Fizikai próbákra (fegyver/pajzs-viselet alapján).
-
-Javasolt irány: COMPUTED hatás (NEM kézi statuszok.yaml entry - az duplikálná a karakterből
-  ismert MGT-t). Minta: §33 Sérült auto-státusz. A már kiszámolt páncél_MGT (reactive) → sáv-lookup
-  → Előny/Hátrány szint injektálása a Fizikai próba-EH-ba (statusz-proba.ts / kepzettseg-proba-calc.ts).
-  A sávhatárok data layerbe (konstansok.yaml), ne hardcode. KM felülírhatja (a szabály így jelzi).
-
-Nyitott döntés: a Fegyver/Pajzs akadályoztatás próba-hatása külön sávon vagy a páncél-MGT-vel
-  összevonva számoljon-e (a kettő eltérő forrás: viselt páncél vs kézben tartott fegyver/pajzs).
+Döntés: NINCS computed MGT→próba-Hátrány automatizmus. A próba-EH továbbra is
+  CSAK a session.aktív_státuszok-ból jön (statusz-proba.ts). A felszerelés/akadály
+  próba-hatása a KM kezében marad.
 ```
 
 ---
@@ -3893,8 +3889,6 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 | összes_szekunder_kp | képlet | tsz, emlékezet |
 | tulajdonság_pont_keret | képlet | tsz |
 | manőver_pont | képlet | harcmodor_összeg, tsz |
-| felszerelés_keret | képlet | erő |
-| felszerelés_mgt | képlet | terhelés, keret |
 | max_CM | képlet | tsz |
 | max_HM | sum_where | harci_fortélyok, harcmodor_összeg, alakzatharc |
 | max_HM_aszimmetria | képlet | tsz, konstansok.hm_aszimmetria_osztó |
@@ -3930,7 +3924,7 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 | fegyver_TÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély |
 | fegyver_VÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély |
 | fegyver_SP | képlet | fegyver + min(erő, limit) + MF + fortély |
-| fegyver_harckeret | képlet | harcmodor + gyorsaság - MGT - felszMGT + fortély |
+| fegyver_harckeret | képlet | harcmodor + gyorsaság - MGT + fortély |
 | fegyver_támadások | képlet | 1 + floor(harckeret / sebesség) |
 | Aura | képlet | tsz, önuralom |
 
