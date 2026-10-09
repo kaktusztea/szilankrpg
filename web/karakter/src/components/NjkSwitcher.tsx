@@ -3,7 +3,7 @@ import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { SlotEntry } from '../hooks/slot-utils';
 import { readSlots, loadSlotKarakter } from '../hooks/slot-utils';
-import { njkSlots, életerőStat, type ÉleterőStat } from '../hooks/njk-slots';
+import { njkSlots, életerőStat, njkHarcértékStat, type ÉleterőStat, type HarcértékStat } from '../hooks/njk-slots';
 import { useLongPress } from '../hooks/useLongPress';
 import { getKmJelölés, writeKmJelölés, readKmJelölések, választSzínt, kombináltBetűk } from '../hooks/km-jelolesek';
 import { KM_JEL_SZÍNEK } from '../ui-constants';
@@ -49,12 +49,19 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
   const jegyzetNjk = njkok.find(s => s.uid === jegyzetUid);
   const jegyzetJel = jegyzetUid ? getKmJelölés(jegyzetUid) : null;
 
+  // Fix fejléc: az aktív NJK aktuális harcértékei (KÉ/TÉ/VÉ) gyors áttekintéshez.
+  const aktívHarcérték = njkHarcértékStat(aktív, data);
+
   return (
     <div className="njk-bar">
+      <div className="njk-harcertek-fejlec" title="Az aktív NJK harcértékei">
+        {harcértékLabel(aktívHarcérték)}
+      </div>
       {njkok.map(s => {
         // Az aktív NJK-nál a LIVE karaktert használjuk (friss ÉP/sebzések), a többinél a tárolt.
         const kar = s.uid === aktív.uid ? aktív : loadSlotKarakter(s.uid)?.karakter ?? null;
         const stat = kar ? életerőStat(kar, data) : null;
+        const harcérték = kar ? njkHarcértékStat(kar, data) : null;
         const jel = getKmJelölés(s.uid);
         return (
           <button
@@ -79,6 +86,13 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
             )}
             <span className="njk-box-név">{s.név}</span>
             {stat && <span className="njk-box-stat">{statLabel(stat)}</span>}
+            {harcérték && (
+              <span className="njk-harcertek-tooltip" role="tooltip">
+                <span>KÉ: {harcérték.KÉ}</span>
+                <span>TÉ: {harcérték.TÉ ?? '-'}</span>
+                <span>VÉ: {harcérték.VÉ ?? '-'}</span>
+              </span>
+            )}
           </button>
         );
       })}
@@ -138,6 +152,11 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
 function statLabel(stat: ÉleterőStat): string {
   const base = `${stat.maradék}/${stat.max}`;
   return stat.sKategória > 0 ? `${base} S${stat.sKategória}` : base;
+}
+
+/** Harcérték label a fix fejléchez: "KÉ x · TÉ y · VÉ z" (hiányzó TÉ/VÉ → "-"). */
+function harcértékLabel(h: HarcértékStat): string {
+  return `KÉ ${h.KÉ} · TÉ ${h.TÉ ?? '-'} · VÉ ${h.VÉ ?? '-'}`;
 }
 
 /** Fakó ÉP csík szín az arány szerint: zöld → sárga → vörös (alacsony telítettség). */

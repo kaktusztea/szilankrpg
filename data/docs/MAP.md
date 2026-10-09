@@ -93,7 +93,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | Fájl | Felelősség |
 |------|-----------|
 | `slot-utils.ts` | Slot metaadat I/O: readSlots, writeSlots, `upsertSlotEntry`, `isUidTaken`, `isSlotFull`, `loadSlotKarakter` |
-| `njk-slots.ts` | NJK szabályok: `njkCount`, `njkLimitBlocked` (tárolási limit egyetlen döntési helye), `njkSlots` (switcher sáv adatai) |
+| `njk-slots.ts` | NJK szabályok: `njkCount`, `njkLimitBlocked` (tárolási limit egyetlen döntési helye), `njkSlots` (switcher sáv adatai), `életerőStat` (ÉP csík), `njkHarcértékStat` (KÉ/TÉ/VÉ gyors stat - a HarcScreen pure building blockjaiból) |
 | `backup-restore.ts` | Backup visszaállítás (össz- + NJK limit betartatással) |
 | `km-jelolesek.ts` | KM harci jelölés I/O: NJK chip betű + szín + jegyzet (localStorage `szilank_km_jelolesek`, `választSzínt` felvételkori színválasztás) |
 

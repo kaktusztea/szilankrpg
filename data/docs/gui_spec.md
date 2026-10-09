@@ -199,6 +199,15 @@ Második fix sáv közvetlenül a Header alatt (`NjkSwitcher.tsx`, `.njk-bar`). 
 - **Váltás**: `loadSlotKarakter(uid)` (ugyanaz a betöltő, amit a Karakterek hub slot kártyája használ) → `activateKarakter` (state + undo stack + testMode=false + isDirty=true; `useKarakterActions`). Az elhagyott karakter mentése az autosave-en keresztül már megtörtént (szinkron, minden `karakter` változásnál).
 - **Késés**: a becenév átírása 1 render késéssel jelenik meg a sávon, mert a slot entry csak autosave-kor frissül.
 
+### NJK harcértékek gyors megtekintése (KÉ/TÉ/VÉ)
+
+A KM harc közben az NJK aktuális harcértékeit gyorsan, a Harc fülre váltás nélkül látja (`njkHarcértékStat`, `hooks/njk-slots.ts`). Az érték a HarcScreen-nel AZONOS pure building blockokból jön (`buildFegyverRows` + `calcFegyverResults` + `resolveAktívFegyverContext`), nincs duplikált kalkuláció.
+
+- **Mit mutat**: `KÉ` (reactive, tulajdonság+tsz; taktika/fortély KÉ-mod nélkül - gyors nyugalmi becslés), `TÉ`/`VÉ` a karakter saját session-je szerinti **aktív fegyver** harcértéke (fegyverfogás/pajzs VÉ-bónusszal). Fegyver nélkül a puszta kéz az aktív; ha nincs értelmezhető fegyver, `TÉ/VÉ` helyén `-`.
+- **Fix fejléc** (`.njk-harcertek-fejlec`): a sáv elején, az **aktív** NJK harcértékei egy sorban: `KÉ x · TÉ y · VÉ z` (monospace, dim). Mindig látszik (hover-független).
+- **Chip hover tooltip** (`.njk-harcertek-tooltip`): bármely NJK chip fölé húzva egér egy lebegő ablak nyílik a chip felett, KÉ/TÉ/VÉ egymás alatt. CSS-only (`:hover`), `@media (hover: hover)` - csak egérrel jelenik meg; érintőn a chip tap marad az NJK-váltáshoz (nincs ütközés). Hover-kor a `.njk-box overflow: visible`, hogy a kilógó tooltip ne vágódjon le.
+- **ponytail**: a stat chipenként újraszámol minden rendernél (a `MAX_NJK_DB` = 10 plafon és az `életerőStat` már amúgy is így fut); nincs memoizálás. Upgrade, ha lassú: a tooltip-adat lazy számítása hover-kor.
+
 ### KM harci jelölés (NJK chip)
 
 A KM harc közben megjelölheti, melyik NJK kivel harcol (pl. „A" = Attila ellenfele). A jelölés tisztán KM helyi eszköz: külön localStorage kulcsban (`szilank_km_jelolesek`, uid → `{ betű, szín, jegyzet }`, `hooks/km-jelolesek.ts`), NEM része a karakter sémának, NEM utazik URL-megosztásban vagy checkpointban. Slot törlésekor takarítódik (`deleteSlot` → `removeKmJelölés`).

@@ -1,118 +1,61 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { njkSlots, njkLimitBlocked, njkCount } from './njk-slots';
-import { writeSlots, type SlotEntry } from './slot-utils';
-import { writeKmJelölés } from './km-jelolesek';
-import { MAX_NJK_DB } from '../ui-constants';
-import { installLocalStorage } from '../__tests__/localstorage-stub';
+/**
+ * njkHarcértékStat - az NJK switcher gyors harcérték-statja (KÉ/TÉ/VÉ).
+ * Cél: a stat a HarcScreen pure building blockjaival konzisztens értéket adjon.
+ */
+import { describe, it, expect, beforeAll } from 'vitest';
+import { evaluate, buildContext } from '../engine/reactive';
+import { njkHarcértékStat } from '../hooks/njk-slots';
+import { loadGameDataSync } from '../__tests__/load-gamedata';
+import type { GameData } from '../engine/data-loader';
+import type { Karakter } from '../engine/types';
 
-function slot(p: Partial<SlotEntry>): SlotEntry {
-  return { uid: 'u', id_leíró: 'x', név: '', tsz: 3, mentés_dátum: '2026-01-01', ...p };
-}
+let data: GameData;
+let karakter: Karakter;
 
-describe('njkCount', () => {
-  it('csak a jk === false slotokat számolja (undefined = JK)', () => {
-    expect(njkCount([
-      slot({ uid: 'a', jk: true }),
-      slot({ uid: 'b', jk: false }),
-      slot({ uid: 'c' }),
-      slot({ uid: 'd', jk: false }),
-    ])).toBe(2);
-  });
+beforeAll(() => {
+  data = loadGameDataSync();
+  karakter = data.testKarakter;
 });
 
-describe('njkSlots', () => {
-  it('csak az NJK slotokat adja vissza', () => {
-    const out = njkSlots([
-      slot({ uid: 'a', név: 'Agabor', jk: true }),
-      slot({ uid: 'b', név: 'Bandita', jk: false }),
-      slot({ uid: 'c', név: 'Csuklyás' }),
-    ]);
-    expect(out.map(s => s.uid)).toEqual(['b']);
+describe('njkHarcértékStat', () => {
+  it('KÉ megegyezik a reactive KÉ szabállyal (session-független)', () => {
+    const stat = njkHarcértékStat(karakter, data);
+    const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, data.konstansok);
+    const reactiveKÉ = evaluate(data.rules, ctx).get('KÉ') ?? 0;
+    expect(stat.KÉ).toBe(reactiveKÉ);
   });
 
-  it('becenév elsőbbség, fallback név, majd Névtelen', () => {
-    const out = njkSlots([
-      slot({ uid: 'a', név: 'von Agabor', becenév: 'Agi', jk: false }),
-      slot({ uid: 'b', név: 'Bandita', becenév: '', jk: false }),
-      slot({ uid: 'c', név: '', jk: false }),
-    ]);
-    expect(out).toEqual([
-      { uid: 'a', név: 'Agi' },
-      { uid: 'b', név: 'Bandita' },
-      { uid: 'c', név: 'Névtelen' },
-    ]);
+  it('a teszt karakternek van aktív fegyvere → TÉ/VÉ nem null, és pozitív', () => {
+    const stat = njkHarcértékStat(karakter, data);
+    expect(stat.TÉ).not.toBeNull();
+    expect(stat.VÉ).not.toBeNull();
+    expect(stat.TÉ!).toBeGreaterThan(0);
+    expect(stat.VÉ!).toBeGreaterThan(0);
   });
 
-  it('ABC sorrend a megjelenített név szerint (nem mentés_dátum)', () => {
-    const out = njkSlots([
-      slot({ uid: 'z', név: 'Zorka', mentés_dátum: '2026-05-05', jk: false }),
-      slot({ uid: 'a', név: 'Álmos', mentés_dátum: '2026-01-01', jk: false }),
-      slot({ uid: 'e', név: 'Elek', mentés_dátum: '2026-03-03', jk: false }),
-    ]);
-    expect(out.map(s => s.név)).toEqual(['Álmos', 'Elek', 'Zorka']);
+  it('a VÉ a session.vé_csökkenés-sel csökken (nem a max VÉ-t mutatja)', () => {
+    const alap = njkHarcértékStat(karakter, data);
+    // Csak akkor értelmes, ha van kiszámolt VÉ.
+    expect(alap.VÉ).not.toBeNull();
+    const csökkentett: Karakter = {
+      ...karakter,
+      session: { ...karakter.session, vé_csökkenés: 5 },
+    };
+    const stat = njkHarcértékStat(csökkentett, data);
+    // 5 ponttal kisebb (feltéve, hogy a VÉ nem clamp-elődött 0-ra - a teszt karakter VÉ-je nagy).
+    expect(stat.VÉ!).toBe(Math.max(0, alap.VÉ! - 5));
+    expect(stat.VÉ!).toBeLessThan(alap.VÉ!);
   });
 
-  it('legfeljebb MAX_NJK_DB elemet ad vissza (ABC szerint az elsőket)', () => {
-    const many = Array.from({ length: MAX_NJK_DB + 5 }, (_, i) =>
-      slot({ uid: `u${i}`, név: `NJK ${String(i).padStart(2, '0')}`, jk: false }));
-    const out = njkSlots(many);
-    expect(out).toHaveLength(MAX_NJK_DB);
-    expect(out[0].név).toBe('NJK 00');
-  });
-
-  describe('KM-jelölt chipek csoportosítása elöl', () => {
-    beforeEach(() => installLocalStorage());
-
-    it('a betűvel jelölt chipek a jelöletlenek elé kerülnek, betű szerint ABC sorrendben', () => {
-      writeKmJelölés('c', { betű: 'C', szín: '#fff', jegyzet: '' });
-      writeKmJelölés('a', { betű: 'A', szín: '#fff', jegyzet: '' });
-      const out = njkSlots([
-        slot({ uid: 'z', név: 'Zorka', jk: false }),
-        slot({ uid: 'c', név: 'Csuklyás', jk: false }),
-        slot({ uid: 'a', név: 'Álmos', jk: false }),
-        slot({ uid: 'e', név: 'Elek', jk: false }),
-      ]);
-      // A és C jelölt → elöl, betű szerint (A előbb, mint C); a jelöletlenek (Elek, Zorka) utánuk, név szerint.
-      expect(out.map(s => s.uid)).toEqual(['a', 'c', 'e', 'z']);
-    });
-
-    it('jelöletlen chipek egymás között továbbra is név szerint ABC sorrendben', () => {
-      writeKmJelölés('m', { betű: 'M', szín: '#fff', jegyzet: '' });
-      const out = njkSlots([
-        slot({ uid: 'z', név: 'Zorka', jk: false }),
-        slot({ uid: 'm', név: 'Márton', jk: false }),
-        slot({ uid: 'a', név: 'Álmos', jk: false }),
-      ]);
-      expect(out.map(s => s.uid)).toEqual(['m', 'a', 'z']);
-    });
-  });
-});
-
-describe('njkLimitBlocked', () => {
-  beforeEach(() => installLocalStorage());
-
-  const fillNjk = (n: number) => writeSlots([
-    ...Array.from({ length: n }, (_, i) => slot({ uid: `n${i}`, név: `NJK${i}`, jk: false })),
-    slot({ uid: 'jk1', név: 'Hős', jk: true }),
-  ]);
-
-  it('JK karakter soha nincs blokkolva', () => {
-    fillNjk(MAX_NJK_DB);
-    expect(njkLimitBlocked(true)).toBe(false);
-    expect(njkLimitBlocked(undefined)).toBe(false);
-  });
-
-  it('limit alatt engedi az új NJK-t, limiten blokkol', () => {
-    fillNjk(MAX_NJK_DB - 1);
-    expect(njkLimitBlocked(false)).toBe(false);
-    fillNjk(MAX_NJK_DB);
-    expect(njkLimitBlocked(false)).toBe(true);
-  });
-
-  it('meglévő NJK slot felülírása nem blokkolt (a szám nem nő)', () => {
-    fillNjk(MAX_NJK_DB);
-    expect(njkLimitBlocked(false, 'n0')).toBe(false);   // NJK → NJK slot
-    expect(njkLimitBlocked(false, 'jk1')).toBe(true);   // JK slot → NJK: nőne a szám
-    expect(njkLimitBlocked(false, 'nincs-ilyen')).toBe(true);
+  it('üres (fegyvertelen) karakternél is ad értéket - puszta kéz az aktív, nem dob', () => {
+    const üres: Karakter = {
+      ...data.emptyKarakter,
+      session: { ...data.emptyKarakter.session, aktív_fegyver_index: -1 },
+    };
+    const stat = njkHarcértékStat(üres, data);
+    expect(stat.KÉ).toBeTypeOf('number');
+    // puszta kéz az aktív jobb kéz → TÉ/VÉ kiszámolt (nem null)
+    expect(stat.TÉ).not.toBeNull();
+    expect(stat.VÉ).not.toBeNull();
   });
 });

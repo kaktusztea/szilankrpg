@@ -156,6 +156,13 @@
   flex-shrink: 0;
 }
 
+/* Hover-kor a kilógó harcérték-tooltip ne vágódjon le */
+@media (hover: hover) {
+  .njk-box:hover {
+    overflow: visible;
+  }
+}
+
 /* Fakó Életerő csík háttér: balról töltődik az --ep-arány szerint, --ep-szín színnel. */
 .njk-box::before {
   content: '';
@@ -186,6 +193,49 @@
   border-color: var(--success);
   color: var(--success);
   font-weight: bold;
+}
+
+/* Fix fejléc: az aktív NJK aktuális harcértékei (KÉ/TÉ/VÉ) - gyors áttekintés */
+.njk-harcertek-fejlec {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--text-dim);
+  padding: 2px 8px;
+  margin-right: 4px;
+  border-right: 1px solid var(--border-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Chip hover: lebegő harcérték-ablak (KÉ/TÉ/VÉ egymás alatt) */
+.njk-harcertek-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  gap: 1px;
+  padding: 5px 9px;
+  background: var(--surface);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  color: var(--text);
+  font-size: 12px;
+  font-family: monospace;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Csak egérrel (hover-képes eszköz) jelenjen meg - érintőn a chip tap váltásra való. */
+@media (hover: hover) {
+  .njk-box:hover .njk-harcertek-tooltip {
+    display: flex;
+  }
 }
 
 /* KM harci jelölés karika (chip elején, a név előtt) */
