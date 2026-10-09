@@ -11,6 +11,7 @@ Eljött az ideje, hogy karaktert alkossunk.
   - [Személyiségek](010_03_04_szemelyisegek.md)
   - [Külső](010_03_05_kulso.md)
   - [Felszerelés](010_03_06_felszereles.md)
+  - [Akadály](010_03_07_akadaly.md)
 - [Tapasztalati Szint](010_04_tsz_szintlepes.md)
 - [Tulajdonságok](010_05_00_tulajdonsagok.md)
   - [Tulajdonságok listája](010_05_01_00_tulajdonsagok_listaja.md)

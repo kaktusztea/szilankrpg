@@ -4,13 +4,12 @@ A merevvértek helyes viselése is ismereteket igényel, különben csak csetles
 
 **Merevvértek**: Pikkely fémpáncél, Lemezvért
 
-Merevvért büntetés Hatásairól a [Páncél MGT](../069_03_pancel_MGT.md) oldalon olvashatsz.
+Merevvért büntetés Hatásairól az [MGT](../069_03_MGT.md) oldalon olvashatsz.
 
 ### Kapcsolódik
 
 - [Páncélok](../069_00_vertek_pancelok.md) fejezet
-- [Páncél MGT](../069_03_pancel_MGT.md) fejezet
-- [Páncél akadályoztatása](../082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) Státusz
+- [MGT](../069_03_MGT.md) fejezet
 
 ---
 ### Alapeset

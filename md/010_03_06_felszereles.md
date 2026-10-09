@@ -1,39 +1,35 @@
-## Felszerelés, Felszerelés MGT
+## Felszerelés
 
 ```
-Felszerelés keret:
+Felszerelés keret
   2 + Erő
 
-Közepes tárgy: 1 pont
-Nagy tárgy: 2 pont
+-1 pont
+  • Tárgy: közepes (20m kötél)
+  • Fegyver: Másfélkezes VAGY súly:nehéz
+  • Pajzs: Közepes
+  • Páncél: Hajlékonyvért 50%+ fedésben
+-2 pont
+  • Tárgy: nagy
+  • Fegyver: Kétkezes VAGY súly:súlyos
+  • Pajzs: Nagy
+  • Páncél: Merevvért 50%+ fedésben
 ```
 
 Apró, vagy kis tárgyból ésszerű keretek között "bármennyi" lehet a karakternél - ezeket nem tartjuk számon.
 
-Hogy hány **közepes** és **nagy** tárgyat vagy képes hordozni anélkül, hogy súlyuk akadályozna, azt a **Felszerelés keret** határozza meg, ami `Erő` Tulajdonságod, melyhez `+2`-t adsz hozzá.
-
-Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az alábbiak szerint:
+A fenti Felszerelés keret értékéből vonnak le az egyes tárgyak `1` vagy `2` pontot. Ha a **Felszerelés keret** negatívba csúszik, az alábbi büntetések járnak:
 
 ```
--1 pont: közepes tárgy
-  → Hajlékonyvért 50%+ fedésben
-  → rövidkard, Közepes pajzs, 20m kötél ..
--2 pont: nagy tárgy
-  → Merevvért 50%+ fedésben (pikkely, lemez)
-  → alabárd, Nagy pajzs ..
+Fizikai Tulajdonságpróbákra
+Fizikai Képzettségpróbákra
+
+ -1: Hátrány-1 
+ -2: Hátrány-2
+
+-2 érték alatt nem tudsz harcolni, a
+próbadobások pedig automatikus kudarcok.
 ```
-
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `1 Felszerelés MGT` hatást okoz az alábbiak szerint:
-
-```
-Túlcsorduló pont == 1 Felszerelés MGT
-
-1 Felszerelés MGT
-  → -1 TÉ
-  → -1 Harckeret
-```
-
-🔆 A viselt vértezet csak mint tárgy számít be a fenti felszerelések levonásai alá. A páncél MGT értékét külön használjuk.
 
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑

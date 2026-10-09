@@ -54,11 +54,11 @@ Természetesen a Tulajdonságpróba dobásokra is járhat **Előny**, vagy **Há
 <br />
 
 ---
-### MGT hatása fizikai Tulajdonságpróbára
+### Felszerelés hatása fizikai Tulajdonságpróbára
 
-Páncélod akadályozhat a fizikai **Tulajdonságpróbák** végrehajtásában.
+Túl sok cipelt tárgy  fizikai **Tulajdonságpróbák** végrehajtásában.
 
-Ezt a [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) **Státusz** írja le.
+Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 
 <br />
 

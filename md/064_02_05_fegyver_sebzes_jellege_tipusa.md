@@ -83,22 +83,6 @@ Ez egy Harci helyzet (státusz).
 
 Ha a karakter olyan sebzési típussal szeretne betalálni, amire fegyvere nem lett kialakítva (nem elsődleges, nem másodlagos) akkor, ha a KM is engedi – a sebzésdobást további büntető módosítóval teheti csak meg.
 
-<br />
-
----
-## Átütés
-
-```
-Aktuális SFÉ =
-  Páncél SFÉ - Átütés
-```
-
-Sokszor fontos szerep jut azoknak a fegyvereknek is, amelyek rendelkeznek **Átütés** értékkel, mivel a támadott páncél megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a páncél végleges aktuális `SFÉ`-jét.
-
-A legtöbb fegyver **Átütés** értéke: `0`
-
-Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak páncélok átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt. ⚡Példa: Csákány
-
 ---
 ## Mágikus fegyverek sebzése
 

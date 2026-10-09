@@ -6,6 +6,7 @@
 - [Személyiségek](010_03_04_szemelyisegek.md)
 - [Külső](010_03_05_kulso.md)
 - [Felszerelés](010_03_06_felszereles.md)
+- [Akadály](010_03_07_akadaly.md)
 
 ---
 

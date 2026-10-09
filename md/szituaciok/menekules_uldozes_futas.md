@@ -21,7 +21,7 @@ Ha megnyerted a Futás ellenpróbát, sikerült lehagynod üldöződet.
 
 → **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba)\
 → Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
-→ [MGT hatása a próbára](../069_03_pancel_MGT.md): KM dönt a helyzet ismeretében
+→ [MGT hatása a próbára](../069_03_MGT.md): KM dönt a helyzet ismeretében
 
 Aki győz, az ér oda előbb a célhoz.
 

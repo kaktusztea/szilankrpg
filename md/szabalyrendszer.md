@@ -13,6 +13,7 @@
   - [Személyiségek](010_03_04_szemelyisegek.md)
   - [Külső](010_03_05_kulso.md)
   - [Felszerelés](010_03_06_felszereles.md)
+  - [Akadály](010_03_07_akadaly.md)
 - [Tapasztalati Szint](010_04_tsz_szintlepes.md)
 - [Tulajdonságok](010_05_00_tulajdonsagok.md)
   - [Tulajdonságok listája](010_05_01_00_tulajdonsagok_listaja.md)
@@ -198,7 +199,7 @@
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Páncél MGT, Akadály](069_03_pancel_MGT.md)
+- [MGT](069_03_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)

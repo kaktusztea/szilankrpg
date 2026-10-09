@@ -11,14 +11,12 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 - [Blokkolt (2)](#%EF%B8%8F-blokkolt-1-k%C3%B6zepesen)
 - [Eszmélet (4)](#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g)
 - [Érzékvesztés (3)](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart)
-- [Fegyver/Pajzs akadályoztatása (1,2)](#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
 - [Félelem (3)](#%EF%B8%8F-f%C3%A9lelem-1-szorong%C3%A1s)
 - [Fizikai (3)](#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g-fejf%C3%A1j%C3%A1s)
 - [Hangulat (4)](#%EF%B8%8F-hangulat-1-fog%C3%A9kony)
 - [Indulat (3)](#%EF%B8%8F-indulat-1-harag)
 - [Késztetés (3)](#%EF%B8%8F-k%C3%A9sztet%C3%A9s-1-sugallat)
 - [Mérgezés\*](#%EF%B8%8F-m%C3%A9rgez%C3%A9s)
-- [Páncél akadályoztatása (1, ♾️)](#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt)
 - [Rosszullét (2)](#%EF%B8%8F--rosszull%C3%A9t-1-k%C3%B6zepes)
 - [Sérült (2)](#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3)
 - [Szellemi (3)](#%EF%B8%8F-szellemi-1-kialvatlans%C3%A1g)
@@ -248,40 +246,6 @@ Hátrány-2
 Automatikus kudarc
   Érzék(x) Tulajdonságpróbákra
 ```
-
-<br />
-
----
-### ✴️ Fegyver/Pajzs akadályoztatása (1, 2)
-
-Egyes fegyverek, pajzsok viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.\
-A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
-
-```
-Hátrány-1;2
-  Fizikai Tulajdonságpróbákra
-  Fizikai Képzettségpróbákra
-```
-
-#### Hatása [Felszerelésre](010_03_06_felszereles.md)
-
-```
-Másfélkezes kard
-  Közepes tárgy (1 pont)
-
-Közepes pajzs
-  Közepes tárgy (1 pont)
-
-Nagy pajzs
-  Nagy tárgy (2 pont)
-```
-
-#### Kapcsolódik
-
-- [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md) fejezet
-- [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md#pajzs-mozgásgátló-hatása) fejezet
-- [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
-- [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
 <br />
 
@@ -525,46 +489,6 @@ Alkoholizmus (1,2,3) ("Igyak piát?")
 ### ✴️ Mérgezés
 
 Lásd a [Méregrendszer](140_meregrendszer.md) fejezetben a mérgek **hatásait**.
-
-<br />
-
----
-### ✴️ Páncél akadályoztatása (1 MGT, ♾️ MGT)
-
-A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**. A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
-
-```
-MGT hatása
-
-Hajlékonyvértek
- 1 MGT == -1 Harckeret
-
-Merevvértek
- 1 MGT == -1 Harckeret
-          -1 TÉ
-
-TÉ büntetést csökkenti
-  Merevvértviselet fortély
-  Erő Tulajdonság 1:1
-```
-
-```
-MGT hatása Fizikai
- Tulajdonságpróbákra és Képzettségpróbákra
-
- 0-7  MGT: nincs büntetés
- 8-10 MGT: Hátrány-1 próbákra
-11-13 MGT: Hátrány-2 próbákra
-  14+ MGT: Automatikus kudarc
-
-Merevvértviselet fortély MGT csökkentő
- hatása a próbákra is hatással van!
-```
-
-#### Kapcsolódik
-
-- [Páncél MGT](069_03_pancel_MGT.md) fejezet
-- [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély
 
 <br />
 

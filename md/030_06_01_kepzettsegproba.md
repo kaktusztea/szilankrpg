@@ -3,8 +3,10 @@
 A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzónán (biztos tudás) kívüli mértékben is. Ilyenkor képzettségdobást teszünk.
 
 - [Próbadobás](#próbadobás)
+- [Képzettségpróba Célszámok](#képzettségpróba-célszámok)
 - [Tulajdonság választás (opcionális)](#tulajdonság-választás-opcionális)
-- [Páncél MGT hatása fizikai Képzettségpróbákra](#páncél-mgt-hatása-fizikai-képzettségpróbákra)
+- [Előny-Hátrány dobások](#előny-hátrány-dobások)
+- [Felszerelés hatása fizikai Képzettségpróbákra](#felszerelés-hatása-fizikai-képzettségpróbákra)
 - [Vállalás és Kritikus hiba](#vállalás-és-kritikus-hiba)
 - [Próba biztos tudásból](#próba-biztos-tudásból)
 - [Siker/Kudarc mértéke](#sikerkudarc-mértéke)
@@ -15,8 +17,6 @@ A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzón�
 - [Sérülés hatása képzettségpróbára](#sérülés-hatása-képzettségpróbára)
 - [Tulajdonság vs Képzettség ellenpróba](#tulajdonság-vs-képzettség-ellenpróba)
 - [Mentődobás](#mentődobás)
-- [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md)
-- [Csoportosan végezhető képzettségek listája](030_06_03_csoportosan_vegezheto_kepzettsegek.md)
 
 ---
 ## Próbadobás
@@ -76,11 +76,11 @@ A Tulajdonságpróbánál már említett [Státusz rendszer](080_hatasok_es_stat
 <br />
 
 ---
-## Páncél MGT hatása fizikai Képzettségpróbákra
+## Felszerelés hatása fizikai Képzettségpróbákra
 
-Páncélod akadályozhat a fizikai Képzettségpróbák végrehajtásában.
+Túl sok cipelt tárgy  fizikai **Képzettségpróbák** végrehajtásában.
 
-Ezt a [Páncél akadályoztatása](082_statuszok.md#️-páncél-akadályoztatása-1-mgt-️-mgt) Státusz írja le.
+Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 
 <br />
 
@@ -350,7 +350,7 @@ Szituáció: Tetves rontott Mászás képzettségpróbát vét a szikla feléné
   - független a képzettség dobás eredményétől
   - `1`: végzetes hiba
   - `2,3`: a bevetett `2` Erő pont mérséklése miatt ezeknél nincs végzetes hiba (amúgy lenne)
-  - 
+
 ---
 
 🔗 [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) →

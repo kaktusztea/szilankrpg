@@ -17,7 +17,6 @@ Mikor a játékos megalkotja karakterét, amellyel Yn3v világán kalandozni fog
 - [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
 - [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md)
 
-
 ---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

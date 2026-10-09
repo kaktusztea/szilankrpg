@@ -35,16 +35,18 @@ Ha a karakter 🗡️[Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) t
 <br />
 
 ---
-### Pajzs mozgásgátló hatása
+### Pajzs mozgást gátló hatása
 
-A pajzsokra nem vonatkozik az [MGT](069_03_pancel_MGT.md) pontrendszer, amelyet páncélokra alkalmazunk.
+A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet kizárólag páncélokra alkalmazunk.
 
-[Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott pajzs.
+A hatása a [Felszerelés kereten](010_03_06_felszereles.md) keresztül mutatkozik meg - harcon kívüli próbadobásokra.
 
-Hatása [Felszerelésre](010_03_06_felszereles.md):
+```
+Felszerelés keretben
 
-- Közepes pajzs: Közepes tárgy (1 pont)
-- Nagy pajzs: Nagy tárgy (2 pont)
+-1: Közepes pajzs
+-2: Nagy pajzs
+```
 
 <br />
 

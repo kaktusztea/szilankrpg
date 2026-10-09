@@ -23,12 +23,10 @@ Automatikus kudarc
 ### Fizikai képzettségpróba hátrányok
 
 `Hátrány-1`
-- Fegyver/Pajzs akadályoztatása (`1`)
-- Páncél akadályoztatása (`1`)
+- Felszerelés kéret aktuális értéke: `-1`
 
 `Hátrány-2`
-- Fegyver/Pajzs akadályoztatása (`2`)
-- Páncél akadályoztatása (`2`) .. ?
+- Felszerelés kéret aktuális értéke: `-2`
 - Rosszullét (`2`) Erős
 
 ---

@@ -107,7 +107,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Páncél MGT, Akadály](069_03_pancel_MGT.md)
+- [MGT](069_03_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)

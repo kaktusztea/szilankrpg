@@ -6,33 +6,24 @@ Kapcsolódik:
 
 ### Pajzsok Felszerelés pontjai
 
-- Bővebben: [Felszerelés fejezetet](010_03_06_felszereles.md)
-- Státusz: [Fegyver / Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
+Bővebben: [Felszerelés fejezet](010_03_06_felszereles.md)
 
 ```
-Felszerelés pont
+Felszerelés keretben
 
-1: Közepes pajzs
-2: Nagy pajzs
-```
-
-```
-Túlcsordulás esetén
-(Felszerelés szabály)
-
--1 TÉ / MGT
--1 Harckeret / MGT
+-1: Közepes pajzs
+-2: Nagy pajzs
 ```
 
 <br />
 
 <!-- tag: md_table_pajzs_start -->
 
-| Pajzs         |  TÉ |  VÉ | Sebesség |  SP | Erőbónusz limit | Speciális                                                                                                                                          |
-| ------------- | --: | --: | -------: | --: | --------------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kis Pajzs     |   1 |   3 |        6 |  +0 |               0 | -                                                                                                                                                  |
-| Közepes Pajzs |   1 |  10 |        7 |  +0 |               2 | Erő követelmény: +1.                                                                                                                               |
-| Nagy Pajzs    |   1 |  16 |        9 |  +0 |               4 | Erő követelmény: +2. Legfeljebb 2 fegyverhossz-kategóriájú fegyver lehet a másik kézben. Minden plusz 1 fegyverhossz-kategória TÉ:-3 büntetést ad. |
+| Pajzs         | TÉ  |  VÉ  | Sebesség |  SP  | Erőbónusz limit | Speciális                                                                                                                                          |
+| ------------- |:---:|:----:|:--------:|:----:|:---------------:| -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kis Pajzs     | `1` | `3`  |   `6`    | `+0` |       `0`       | -                                                                                                                                                  |
+| Közepes Pajzs | `1` | `10` |   `7`    | `+0` |       `2`       | Erő követelmény: +1.                                                                                                                               |
+| Nagy Pajzs    | `1` | `16` |   `9`    | `+0` |       `4`       | Erő követelmény: +2. Legfeljebb 2 fegyverhossz-kategóriájú fegyver lehet a másik kézben. Minden plusz 1 fegyverhossz-kategória TÉ:-3 büntetést ad. |
 
 <!-- tag: md_table_pajzs_end -->
 

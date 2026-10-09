@@ -39,9 +39,9 @@ Játék előtt konzultálj a KM-eddel és sorold el, milyen kidolgozott archetí
 ```
 1 archetípus felszerelés
 
- = közepes felszerelés tárgy
+ = közepes felszerelés tárgy (-1)
    VAGY
- = nagy felszerelés tárgy
+ = nagy felszerelés tárgy (-2)
 ```
 
 ## Archetípus és kultúrkörök

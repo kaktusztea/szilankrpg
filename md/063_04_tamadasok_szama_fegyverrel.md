@@ -15,7 +15,7 @@ Néhány kivételnél ez kevesebb. Lásd a [Fegyver](068_00_fegyverek.md) tábl�
 Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
-  - Páncél MGT
+  - MGT (Páncél)
 ```
 
 Egy karakter plusz támadásainak száma attól függ, hogy mennyire képzett az adott fegyver harcmodorában, mennyire fürge (`Gyorsaság` tulajdonság) és milyen páncélt visel.
