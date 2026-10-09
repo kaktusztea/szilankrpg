@@ -18,7 +18,7 @@ export function OverlayScreenOverlay({ karakter, setKarakter, data, onClose, onV
       <div className="fullscreen-overlay">
         <div className="fullscreen-overlay-header">
           <button className="fullscreen-overlay-close" onClick={onClose}>✕</button>
-          <span className="fullscreen-overlay-title">✏️ Verziók, Napló, Jegyzetek</span>
+          <span className="fullscreen-overlay-title">✏️ Felszerelés, Verziók, Napló, Jegyzetek</span>
         </div>
         <div className="fullscreen-overlay-body">
           {/* Felszerelés - legfelső accordion */}

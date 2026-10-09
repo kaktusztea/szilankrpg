@@ -4,7 +4,8 @@ import type { Karakter } from '../engine/types';
 /**
  * Ha egy épp AKTÍV fegyvert „Felszerelésben: nem"-re állítanak (nincs a karakternél), a Harc fül
  * essen vissza Puszta kézre: a hivatkozó session-index(ek) reset (-1), kétkezes/fogás alaphelyzet.
- * (A `removeFegyver` session-takarítás mintájára - l. useKarakterMutators.ts.)
+ * Hasonlóan: ha a pajzsot „nincs"-re állítják (kizárt_auto) és épp `fegyver_pajzs` fogás aktív,
+ * váltson `egyfegyveres`-re. (A `removeFegyver` session-takarítás mintájára - useKarakterMutators.ts.)
  */
 export function useFegyverInvalidation(
   karakter: Karakter | null,
@@ -37,4 +38,15 @@ export function useFegyverInvalidation(
       return { ...prev, session: next };
     });
   }, [karakter?.fegyverek, setKarakter]);
+
+  // Pajzs „nincs"-re állítva (kizárt_auto) + fegyver_pajzs fogás aktív → egyfegyveres.
+  useEffect(() => {
+    if (!karakter) return;
+    const pajzsKizárt = karakter.felszerelés?.kizárt_auto?.includes('pajzs') ?? false;
+    if (!pajzsKizárt || karakter.session.fegyverfogás !== 'fegyver_pajzs') return;
+    setKarakter(prev => {
+      if (!prev) return prev;
+      return { ...prev, session: { ...prev.session, fegyverfogás: 'egyfegyveres', aktív_pajzs: false, aktív_fegyver_bal_index: -1 } };
+    });
+  }, [karakter?.felszerelés?.kizárt_auto, karakter?.session.fegyverfogás, setKarakter]);
 }

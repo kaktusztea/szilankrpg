@@ -74,11 +74,13 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
         const fegyverek = prev.fegyverek.map((f, i) => i === idx ? { ...f, felszerelésben: !nincs } : f);
         return { ...prev, fegyverek };
       }
-      const id = sor.típus as 'pajzs' | 'páncél';
+      if (sor.típus === 'páncél') {
+        // A páncél "viselve/nincs" egyetlen igazságforrása a session.aktív_páncél (Harc fül "Páncél viselve").
+        return { ...prev, session: { ...prev.session, aktív_páncél: !nincs } };
+      }
+      // Pajzs: kizárt_auto lista (nincs session-toggle-je).
       const jelenlegi = prev.felszerelés?.kizárt_auto ?? [];
-      const kizárt = nincs
-        ? [...jelenlegi, id]
-        : jelenlegi.filter(x => x !== id);
+      const kizárt = nincs ? [...jelenlegi, 'pajzs'] : jelenlegi.filter(x => x !== 'pajzs');
       return { ...prev, felszerelés: { tárgyak: prev.felszerelés?.tárgyak ?? [], kizárt_auto: [...new Set(kizárt)] as ('pajzs' | 'páncél')[] } };
     });
   }
@@ -92,7 +94,15 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
   return (
     <details className="naplo-cp-section" open={open} onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
       <summary className="naplo-cp-summary">
-        Felszerelés <span className={`felsz-keret${túlterhelt ? ' felsz-tul' : ''}`}>Max: {max} / Aktuális: {terhelés}</span>
+        Felszerelés
+        <span className="felsz-dots" title={`Max: ${max} / Aktuális: ${terhelés}`}>
+          {Array.from({ length: max }, (_, i) => (
+            <span key={`k-${i}`} className={`felsz-dot${i < terhelés ? ' filled' : ''}`} />
+          ))}
+          {túlterhelt && Array.from({ length: terhelés - max }, (_, i) => (
+            <span key={`t-${i}`} className="felsz-dot filled over" />
+          ))}
+        </span>
       </summary>
 
       {túlterhelt && (

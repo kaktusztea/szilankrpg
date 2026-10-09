@@ -18,6 +18,8 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
   function isDisabled(id: string): boolean {
     if (kétkezesFegyver && id !== 'egyfegyveres') return true;
     if (id === 'fegyver_pajzs' && !karakter.pajzs?.méret) return true;
+    // A pajzs "nincs"-re állítva a Felszerelésben (kizárt_auto) → nem használható fegyverfogásként.
+    if (id === 'fegyver_pajzs' && karakter.felszerelés?.kizárt_auto?.includes('pajzs')) return true;
     if (id === 'fegyver_hárító') {
       const hasHáritó = karakter.fegyverek.some(fp => isHárító(lookupFegyver(data.fegyverek, fp.alap)));
       const hasFortély = karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);

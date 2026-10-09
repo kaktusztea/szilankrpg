@@ -91,7 +91,8 @@ export function felszerelésSorok(karakter: Karakter, data: GameData): Felszerel
     });
   }
 
-  // Páncél (auto): kizárt_auto + legalább páncél_fedés_min lefedettség
+  // Páncél (auto): a "Páncél viselve" (session.aktív_páncél) + legalább páncél_fedés_min lefedettség.
+  // A session.aktív_páncél az EGYETLEN igazságforrás (összekötve a Harc fül "Páncél viselve" toggle-jével).
   if (karakter.páncél.alap) {
     const struktúra = data.konstansok.páncél_struktúrák.find(s => s.struktúra === karakter.páncél.alap);
     const merev = struktúra?.merev ?? false;
@@ -101,7 +102,7 @@ export function felszerelésSorok(karakter: Karakter, data: GameData): Felszerel
       pont: merev ? fp.páncél_pont.merev : fp.páncél_pont.hajlékony,
       típus: 'páncél',
       autoId: 'páncél',
-      számít: fedésOk && !kizártAuto.includes('páncél'),
+      számít: fedésOk && karakter.session?.aktív_páncél === true,
     });
   }
 

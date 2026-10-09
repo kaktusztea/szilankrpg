@@ -186,16 +186,22 @@
 }
 
 /* --- Felszerelés section (FelszerelesSection) --- */
-.felsz-keret {
-  font-size: 12px;
-  font-family: monospace;
-  color: var(--text-dim);
-  margin-left: 6px;
+.felsz-dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  margin-left: 8px;
+  vertical-align: middle;
 }
-.felsz-keret.felsz-tul {
-  color: var(--warning, #ffb300);
-  font-weight: bold;
+.felsz-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  background: transparent;
 }
+.felsz-dot.filled { background: #fff; border-color: #fff; }
+.felsz-dot.filled.over { background: #e06a6a; border-color: #e06a6a; }
 .felsz-warning {
   margin: 6px 0;
   padding: 6px 10px;

@@ -143,7 +143,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → Szilánk picker hub). A hub tartalma: (1) Szilánk értékválasztó 0/1/2/3, (2) elválasztókkal két külső link: "📖 Szabályrendszer" (`MD_BASE + szabalyrendszer.md`) és "📱 Webapp manuál" (`REPO_BASE + web/karakter/README.md`) - új tab, (3) két mindig nyitott próba blokk (nem összecsukható): Tulajdonságpróba (k6, célszám 3-8) és Képzettségpróba (k10, célszám 6-21) monospace. Dismissible (háttér-katt / Escape zár). Értékválasztás is zár.
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - ↩ Visszavonás gomb: undo overlay-t nyit (`↩ N` alakban, N = undo stack mérete; disabled + csak `↩` ha üres). Label szöveg nélkül.
-  - ✏️ Verziók, Napló, Jegyzetek overlay gomb (mindkét mód) - összevont overlay (lásd 6b)
+  - ✏️ Felszerelés, Verziók, Napló, Jegyzetek overlay gomb (mindkét mód) - összevont overlay (lásd 6b)
   - 🧑 Karakterek gomb (20% szélesebb padding): a Karakterek hub overlay-t nyitja (lásd lentebb) - ez az egyetlen karakter-kezelő menü
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 2000ms fade
 - Megerősítő popup-ok (Új karakter): overlay, centered, label (bold) + dim szöveg + piros gomb
@@ -985,9 +985,9 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ---
 
-## 6b. Verziók, Napló, Jegyzetek overlay (✏️)
+## 6b. Felszerelés, Verziók, Napló, Jegyzetek overlay (✏️)
 
-Fejléc ✏️ gombbal nyitható fullscreen overlay (nem tab). Mindkét módban (szerkesztő + game) elérhető. ✕ gomb vagy Escape bezárja. Cím: "✏️ Verziók, Napló, Jegyzetek".
+Fejléc ✏️ gombbal nyitható fullscreen overlay (nem tab). Mindkét módban (szerkesztő + game) elérhető. ✕ gomb vagy Escape bezárja. Cím: "✏️ Felszerelés, Verziók, Napló, Jegyzetek".
 
 Egyetlen görgethető nézetben, felülről lefelé. A szekciók összecsukható `<details>` accordionok, azonos summary formázással (`.naplo-cp-summary`, bold 15px, kék `--color-taktika`):
 
@@ -1063,7 +1063,7 @@ Alul fix, horizontálisan scrollozható szalag.
 Overlay screen-ek:
 | ID | Nyitás | Elérhetőség |
 |----|--------|-------------|
-| overlayScreen | ✏️ fejléc gomb | mindkét mód (Verziók, Napló, Jegyzetek - lásd 6b) |
+| overlayScreen | ✏️ fejléc gomb | mindkét mód (Felszerelés, Verziók, Napló, Jegyzetek - lásd 6b) |
 
 - Jelenleg nincs `editOnly: true` tab - Játék módban minden fül elérhető
 - Default aktív tab induláskor: `tulajdonsagok` (index 5 az ALL_TABS-ban)
