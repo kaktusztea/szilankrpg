@@ -478,6 +478,24 @@
   font-size: 15px;
   cursor: pointer;
   margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.ve-csokkentes-szorzo-info {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--success, #6ab04c);
+  text-align: center;
+}
+
+.ve-csokkentes-detail-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
 }
 
 .ve-csokkentes-btn-row {

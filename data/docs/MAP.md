@@ -155,7 +155,7 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   harc-reszletek-calc.ts   Részletes értékek bontás
   HarcReszletek.tsx        Részletes értékek box (aktív fegyver harcérték bontás megjelenítés)
   ve-csokkentes-calc.ts    Sikertelen támadás VÉ csökkentése (Fegyverviszony bázis + k20P; taktika override/flat; fortély flat) - §5.3/§13.1
-  VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P)
+  VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P; a Roham/Öngyilkos roham ×2 szorzó forrás-taktikája kiírva a gombon és a bontásban)
   VeSzorzoInfoPopup.tsx    VÉ csökkentés szorzó/bázis infó popup
   combat-roll-info.ts      Támadó/Sebzés dobás bónusz kalkuláció (pure fn)
   HatasokInfo.tsx          Dobás-hatás badge feliratok (Előny/Hátrány/Enyhít formázás, pure fn)

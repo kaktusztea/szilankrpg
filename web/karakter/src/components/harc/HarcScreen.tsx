@@ -162,10 +162,15 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
   // Roham / Öngyilkos roham (md/065_02): "VÉ csökk 2x" - a Fegyverviszony-alapú VÉ csökkentés
   // (bázis+k20P) szorzója, a taktika `hatások` tömbjéből (nem akkumulálva, csak kinyerve).
+  // A szorzót adó taktikák nevét is gyűjtjük, hogy a VÉ-csökkentés bontásban kiírható legyen.
+  const véCsökkentésSzorzóForrások: string[] = [];
   const véCsökkentésSzorzó = session.aktív_taktikák.reduce((szorzó, t) => {
     const def = data.taktikak.find(d => d.név === t.név);
-    return szorzó * calcVéCsökkentésSzorzó(def?.hatások);
+    const taktikaSzorzó = calcVéCsökkentésSzorzó(def?.hatások);
+    if (taktikaSzorzó !== 1) véCsökkentésSzorzóForrások.push(t.név);
+    return szorzó * taktikaSzorzó;
   }, 1);
+  const véCsökkentésSzorzóForrás = véCsökkentésSzorzóForrások.join(', ') || undefined;
 
   // Teljes Védekezés (md/065_02): nem támad - a TÉ chip info popup-ot nyit a dobás helyett.
   const teljesVédekezésAktív = session.aktív_taktikák.some(t => t.név === 'Teljes Védekezés');
@@ -311,6 +316,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           dobásInfo={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név))}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
+          véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
           onClose={handleTamadoClose}
         />
       )}

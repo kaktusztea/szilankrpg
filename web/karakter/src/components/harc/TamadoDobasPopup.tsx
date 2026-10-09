@@ -48,6 +48,8 @@ interface Props {
   véCsökkentésAlap: Record<Fegyverviszony, number>;
   /** Taktika-eredetű szorzó a Fegyverviszony-alapú VÉ csökkentésre (pl. Roham/Öngyilkos roham: 2). */
   véCsökkentésSzorzó?: number;
+  /** A szorzót adó taktika(k) neve (pl. "Roham") - a VÉ-csökkentés bontásban jelenik meg. */
+  véCsökkentésSzorzóForrás?: string;
   onClose: (eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => void;
 }
 
@@ -62,7 +64,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -133,6 +135,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
         k20={k20Érték}
         alapTáblázat={véCsökkentésAlap}
         véCsökkentésSzorzó={véCsökkentésSzorzó}
+        véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
         fegyverExtrák={fegyverExtrák}
         extraDefs={extraDefs}
         extraKontextus={aktívExtraKontextus}
@@ -217,6 +220,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
             </button>
             <button className="tamado-ve-csokkentes-btn" onClick={() => setShowVéCsökkentés(true)}>
               VÉ csökkentés
+              {véCsökkentésSzorzó && véCsökkentésSzorzó !== 1 && (
+                <span className="tamado-sebzes-btn-hint">× {véCsökkentésSzorzó}{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}</span>
+              )}
             </button>
           </>
         )}

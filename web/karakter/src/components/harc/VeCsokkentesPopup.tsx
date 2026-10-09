@@ -18,6 +18,8 @@ interface Props {
   extraKontextus?: ExtraKontextus;
   /** Taktika-eredetű szorzó a Fegyverviszony-alapú VÉ csökkentésre (pl. Roham/Öngyilkos roham: 2). */
   véCsökkentésSzorzó?: number;
+  /** A szorzót adó taktika(k) neve (pl. "Roham") - a bontásban a szorzó mellett jelenik meg. */
+  véCsökkentésSzorzóForrás?: string;
   /**
    * Ha megvan (pl. Fárasztás taktika aktív, md/065_02): nincs Fegyverviszony-választó/k20P,
    * az eredmény azonnal, bontással jelenik meg (taktika override+flat + fortély flat bővítések).
@@ -47,7 +49,7 @@ const FEGYVERVISZONY_LABEL: Record<Fegyverviszony, string> = {
  * `.végső`-t használja, l. HarcScreen.tsx `changeVé`).
  */
 export function VeCsokkentesPopup({
-  k20, alapTáblázat, fegyverExtrák, extraDefs, extraKontextus, véCsökkentésSzorzó, taktikaVéCsökkentés, taktikaCím, onClose,
+  k20, alapTáblázat, fegyverExtrák, extraDefs, extraKontextus, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, taktikaVéCsökkentés, taktikaCím, onClose,
 }: Props) {
   const [eredmény, setEredmény] = useState<VéCsökkentésEredmény | null>(null);
 
@@ -89,20 +91,29 @@ export function VeCsokkentesPopup({
         )}
 
         {!eredmény ? (
-          <div className="ve-csokkentes-btn-row">
-            {(Object.keys(FEGYVERVISZONY_LABEL) as Fegyverviszony[]).map(fv => (
-              <button key={fv} className="ve-csokkentes-fv-btn" onClick={() => handleVálasztás(fv)}>
-                {FEGYVERVISZONY_LABEL[fv]}
-              </button>
-            ))}
-          </div>
+          <>
+            {véCsökkentésSzorzó && véCsökkentésSzorzó !== 1 && (
+              <div className="ve-csokkentes-szorzo-info">
+                × {véCsökkentésSzorzó} VÉ csökkentés{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}
+              </div>
+            )}
+            <div className="ve-csokkentes-btn-row">
+              {(Object.keys(FEGYVERVISZONY_LABEL) as Fegyverviszony[]).map(fv => (
+                <button key={fv} className="ve-csokkentes-fv-btn" onClick={() => handleVálasztás(fv)}>
+                  {FEGYVERVISZONY_LABEL[fv]}
+                </button>
+              ))}
+            </div>
+          </>
         ) : (
           <>
             <div className="ke-dobas-result">{eredmény.végső}</div>
-            <div className="ke-dobas-detail">
-              {FEGYVERVISZONY_LABEL[eredmény.fegyverviszony]} ({eredmény.bázis})
-              {' + '}k20P ({eredmény.k20} → {eredmény.k20p})
-              {eredmény.szorzó !== 1 && <>{' × '}{eredmény.szorzó}</>}
+            <div className="ke-dobas-detail ve-csokkentes-detail-col">
+              <span>{FEGYVERVISZONY_LABEL[eredmény.fegyverviszony]} ({eredmény.bázis})</span>
+              <span>+ k20P ({eredmény.k20} → {eredmény.k20p})</span>
+              {eredmény.szorzó !== 1 && (
+                <span>× {eredmény.szorzó}{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}</span>
+              )}
             </div>
           </>
         )}
