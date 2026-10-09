@@ -1,6 +1,6 @@
 ## 🟣 Merevvértviselet (3)
 
-A merevvértek helyes viselése is ismereteket igényel, különben csak csetlesz-botlasz bennük.
+A merevvértek helyes viselése is tanulást igényel, különben csak csetlesz-botlasz bennük.
 
 **Merevvértek**: Pikkely fémpáncél, Lemezvért
 
@@ -20,7 +20,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 1. fok
 
-🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-5`
 
@@ -28,7 +28,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 2. fok
 
-🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-10`
 
@@ -36,7 +36,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 3. fok
 
-🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 **Hatás**:
 - Merevvérted `TÉ` büntetése ennyivel enyhül: `-15`
