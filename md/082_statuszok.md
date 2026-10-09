@@ -2,7 +2,7 @@
 
 A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulnia".
 
-A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, aki láthatatlan, akinek levágták a karját).
+A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, akinek levágták a karját).
 
 Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
 
