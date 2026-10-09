@@ -1401,7 +1401,7 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
 
 ```
 -1 pont: közepes tárgy
-  → Könnyűvért 50%+ fedésben
+  → Hajlékonyvért 50%+ fedésben
   → rövidkard, Közepes pajzs, 20m kötél ..
 -2 pont: nagy tárgy
   → Merevvért 50%+ fedésben (pikkely, lemez)
@@ -1418,7 +1418,7 @@ Túlcsorduló pont == 1 Felszerelés MGT
   → -1 Harckeret
 ```
 
-🔆 A viselt vértezet NEM számít be a fenti felszerelési tárgyak levonásai alá - arra a páncélok MGT értékét használjuk.
+🔆 A viselt vértezet csak mint tárgy számít be a fenti felszerelések levonásai alá. A páncél MGT értékét külön használjuk.
 
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
@@ -2263,6 +2263,14 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 
 <br />
 
+---
+## Helyzetfüggő módosítók
+
+Ezek a Tulajdonságpróba dobás módosítói, amelyek adott szituációkban jelenhetnek meg.
+
+Példa: ["Beszéd szájról olvasása" szituációban](szituaciok/beszed_szajrol_olvasasa.md) ha nagyobb távolságról próbálkozol, a dobásra `-1` módosítót kapsz.
+
+<br />
 
 ---
 ## Előny-Hátrány dobások
@@ -2274,7 +2282,7 @@ Min: Hátrány-2
 Max: Előny+2
 ```
 
-Természetesen a Tulajdonságpróbára is járhat Előny, vagy Hátrány - hogy mekkora, azt a Státuszok leírásánál részletezzük.
+Természetesen a Tulajdonságpróba dobásokra is járhat **Előny**, vagy **Hátrány** - hogy mekkora, azt a [Státuszok](080_hatasok_es_statuszok.md) leírásánál részletezzük.
 
 <br />
 
@@ -2352,6 +2360,8 @@ Ezzel kb. 33% esélye van a sikerre
 1x "Nehéz"        (5)
 ```
 
+<br />
+
 ---
 ### Kombinált próbák
 
@@ -2377,6 +2387,8 @@ Erőpróba: Nagyon nehéz (6)
 🔆Megjegyzés:\
 Ha a KM szerint ebben az esetben az Ügyességpróba csak "apró kiegészítő", akkor az arra dobandó próba lehet "Átlagos" (`4`), vagy "Könnyű" (`3`) is.
 
+<br />
+
 ---
 ### Tulajdonság ellenpróba
 
@@ -2391,6 +2403,8 @@ Ha két karakternek össze kell mérnie tudását egy konkrét Tulajdonsággal k
 Mindkét játékos dob (NJK esetén természetesen a KM) `k6`-tal, és az eredményt hozzáadja az adott Tulajdonságának értékéhez. Aki nagyobb számot kap eredményül, az nyer.
 
 Ha az eredmények azonosak, akkor patthelyzet alakul ki, a KM belátása szerint (esetleg némi idő elteltével) új ellenpróba dobható. Ha az adott szituációban nem lehetséges patthelyzet, akkor újra kell dobni `k6`-tal (ekkor már nem kell hozzáadni a Tulajdonság értékét) és a nagyobb szám nyer.
+
+<br />
 
 ---
 ### Sérülés hatása tulajdonságpróbára
@@ -2586,6 +2600,7 @@ A játékosnak a fenti **Karakteralkotó Pontjaiból** kell felvennie a követke
 Az alábbi [Kiemelt fortélyok](041_kiemelt_fortelyok.md) után további `KP` javadalmazást kaphatsz (kizárólag) karakteralkotáskor.
 
 - [Analfabéta](fortelyok.kiemelt/analfabeta.md)
+- [Családos](fortelyok.kiemelt/csalados.md)
 - [Süketség](fortelyok.kiemelt/suketseg.md)
 - [Tartós sérültség](fortelyok.kiemelt/tartos_serultseg.md)
 - [Vakság](fortelyok.kiemelt/vaksag.md)
@@ -4474,7 +4489,9 @@ No comment 🙂
 
 #### Hatás
 
-Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociális életedre is hatással van. Az ital nélkül már képtelen vagy működni, mindent megteszel annak megszerzéséért. Elvonás esetén `Hátrány-1,2` büntetéseket kaphatsz Tulajdonságpróbákra, Képzettségpróbákra.
+Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociális életedre is hatással van. Az ital nélkül már képtelen vagy működni, mindent megteszel annak megszerzéséért.
+
+Elvonás esetén `Hátrány-1,2` büntetéseket kaphatsz Tulajdonságpróbákra, Képzettségpróbákra.
 
 <br />
 
@@ -10521,13 +10538,11 @@ Visszahajló acélfalon felmászni.
  Infó: Erőpróba kellhet
 ```
 
-#### ⚜️ Erő Tulajdonság bevetése mentő dobásnál 🔀
+#### ⚜️ Erő Tulajdonság bevetése [mentődobásnál](../030_06_01_kepzettsegproba.md#mentődobás) 🔀
+
+Az Erő `0` feletti részét vetheted be.
 
 ```
-1 ... +X
-
-→ X = Erő Tulajdonság, felhasználása levon Erőből
-→ Erő +0 értékig lehet lemenni
 → Pihenésben 1 pont / perc tér vissza
 ```
 
@@ -12484,6 +12499,8 @@ A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhat�
 #### [Analfabéta](fortelyok.kiemelt/analfabeta.md)
 
 #### [Apró méretű lény](fortelyok.kiemelt/apro_meretu_leny.md)
+
+#### [Családos](fortelyok.kiemelt/csalados.md)
 
 #### [Nagy méretű lény](fortelyok.kiemelt/nagy_meretu_leny.md)
 
@@ -16325,6 +16342,27 @@ Edzettség: +3
 
 ÉP = 14 (28-20 + 3x2)
 ```
+
+---
+
+
+---
+---
+## File: md/fortelyok.kiemelt/csalados.md
+
+## 🟣 Családos (1)
+
+Nem vagy árva, van családod. Furcsa lehet egy ilyen fortély, de így szeretnénk a karakterek színesebb előtörténeteit támogatni, amiben kell, hogy legyen legalább pár kidolgozottabb mondat minden szülőjéről. Nem megyünk további szabály részletekbe, a KM döntsön, hogy kellően kidolgozott-e az előtörténet ennek a fortélynak a felvételéhez.
+
+### KP bónusz
+
+```
++6 KP bónusz
+```
+
+Ez a fortély speciális, mert nincs `KP` költsége, sőt, felvételéért cserébe **kapsz** `6 KP` bónuszt!
+
+🔆 Az így kapott KP [primer ismeretekre](../010_09_primer_szekunder_ismeretek.md) is fordítható.
 
 ---
 
@@ -21734,7 +21772,7 @@ Zúzó:    +0 SP
 Vágó:   -10 SP
 Szúró:  -20 SP 
 
-Tűz: +4 SP
+Tűz: x2 SP
 ```
 
 ---
@@ -26879,7 +26917,6 @@ Merevvértek
 
 TÉ büntetést csökkenti
   Merevvértviselet fortély
-  Erő Tulajdonság 1:1
 ```
 
 🔆 [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) **Státusz**: az `MGT` ennek formájában fejti ki hatását
@@ -32143,20 +32180,21 @@ Alap célszám: `xy` ⭕TODO⭕
 ---
 ### 2. Érzékenység tulajdonságpróba
 
-
 ```
-Alap célszám: 4 (átlagos)
-
-Kis (fél) mennyiség: +1
-Dupla mennyiség: -1
-
-Sűrű: +1
-(azonos hatás, fele adagnál)
-
-Színtelen: +1
-Szagtalan: +1
+Célszám: 4 (Átlagos)
 ```
 
+#### Helyzetfüggő módosítók
+
+```
+-1: Kis (fél) mennyiség
++1: Dupla mennyiség
+
+-1: Sűrű (azonos hatás, fele adag)
+
+-1: Színtelen
+-1: Szagtalan
+```
 
 ---
 
@@ -32540,20 +32578,27 @@ Ha nem hallod a beszédet, csak a beszélő szájmozgását látod, úgy is megp
 ### Érzékenység Tulajdonságpróba
 
 ```
-Alap Célszám: 7
-   → átlagos táv
-   → jó látási viszonyok
+Célszám: 7
+ → átlagos táv
+ → jó látási viszonyok
    (célpont szájára)
 ```
 
-### Célszám módosító körülmények
+### Helyzetfüggő módosítók
+
+Érzékenység Tulajdonságpróba dobás módosítói.
 
 ```
--3: Szájról olvasás fortéllyal
-+1: nagyobb távolság
-+2: nehezen kivehető szájmozgás //
++3: Szájról olvasás fortéllyal
+```
+
+```
+Láthatóság
+
+-1: nagyobb távolság
+-2: nehezen kivehető szájmozgás //
     enyhe köd
-+3: még éppen kivehető szájmozgás //
+-3: még éppen kivehető szájmozgás //
     rossz látási viszonyok
 E fölött lehetetlen.
 ```
@@ -33504,10 +33549,10 @@ A levonás a lőfegyver méretétől függ. Minél nagyobb, annál nagyobb a lev
 ```
 Mászás: 7.szint
 
-Ügyesség: +3
+Ügyesség:  +3
 Edzettség: +3
-Erő: +2
-Önuralom: +1
+Erő:       +2
+Önuralom:  +1
 ```
 
 ---
@@ -33537,7 +33582,7 @@ k10 + 10 (+7 Mászás +3 Ügyesség)
 ⚙️ Az első - rontott - képzettségpróba hatása:\
 A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a visszalépés pedig kifejezetten szuicid érzésnek tűnik.
 
-🔆 "...annnyád!!!!! ANYÁD!!!!! úúú, baszki, mostmiafaszlegyenmiafaszlegyen..."
+🔆 "...annnyád!!!!! ANYÁD!!!!! úúú, baszki, mostmiaf.szlegyenmiaf.szlegyen...?"
 
 <br />
 
@@ -33549,7 +33594,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 🔆 "Ááá, nem bírom sokáig, gyerünk baszki!"
 
 ⚙️ A rontás **Végzetes hiba** volt (a zuhanás vége nagy placcs lenne)\
-→ így Tetves jogosult a képzettségpróba [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás), amire ugye `-3` büntetés jár.
+→ így Tetves jogosult a képzettségpróba [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás), amire ugye alapból `-3` büntetés jár.
 
 ⚙️ Tetves [Vállalást](../030_06_01_kepzettsegproba.md#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba) alkalmaz a maximálisan lehetséges `+3` értékkel - ezzel nullázza is a fenti `-3` büntetést.
 
@@ -33564,14 +33609,14 @@ vs
 ```
 
 ```
-Dobás
-🎲 5 → (15  vs  15)
+k10 dobás
+🎲 6 → (15  vs  15)
    → épphogy megvan ✅
 ```
 
 ### Vállalás dobás
 
-⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes pontot fel kell használnia).
+⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes `` pontot fel kell használnia).
 
 ⚙️ Az `Erő` Tulajdonsága az aktuális jelenet idejére `0` értékre csökken.
 
@@ -33593,27 +33638,36 @@ Tetves minden erejét bevetve felgyűrte magát a `11 cm` széles kiszögellésr
 
 Ez **2 biztos tudást** igényel, hogy meg tudja-e tartani magát tartósan. Ebben segíti a **perem** és az **ék**.
 
-1️⃣ **Edzettség** Tulajdonságpróba - Könnyű (`3`) → megvan biztos tudásból ✅
+### 1️⃣ **Edzettség** Tulajdonságpróba: Nagyon nehéz (`6`)
 
 ```
-Nehézség módosítók
--2: Ék
--1: Perem
++3: Edzettség
 
-→ (6) Nagyon Nehéz - 3
-  → (3) Könnyű
+Helyzetfüggő módosítók
++2: Ék
++1: Perem
 ```
 
-2️⃣ **Mászás** képzettségpróba - Átlagos (`9`) → megvan biztos tudásból ✅
+```
+
+(6 + k6)  vs  6
+→ megvan biztos tudásból ✅
+```
+
+### 2️⃣ **Mászás** képzettségpróba : Nagyon nehéz (`18`)
 
 ```
-Nehézség módosítók
+ 7: Mászás szint
++3: Ügyesség
 
--6: Ék
--3: Perem
+Helyzetfüggő módosítók
++6: Ék
++3: Perem
+```
 
-→ (18) Nagyon nehéz - 9
-  → (9) Átlagos
+```
+(19 k k10)  vs  18
+ → megvan biztos tudásból ✅
 ```
 
 A biztosítás miatt megy a pihenés és sokkal könnyebb lesz elrugaszkodni is.
