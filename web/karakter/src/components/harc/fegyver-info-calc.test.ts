@@ -7,7 +7,7 @@ import type { GameData } from '../../engine/data-loader';
 const mód = (p: Partial<FegyverResultMód>): FegyverResultMód => ({
   aktor: 'vágóél', jelleg: 'V', sebzéstípus: 'elsődleges',
   TÉ: 5, VÉ: 4, SP: 3, Átütés: 0, támadások: 1, harckeret: 6, sebesség: 6,
-  alap_TÉ: 5, alap_VÉ: 4, hk_harcmodor: 0, hk_gyorsaság: 0, hk_mgt: 0, hk_felszerelés_mgt: 0, hk_fortély: 0,
+  alap_TÉ: 5, alap_VÉ: 4, hk_harcmodor: 0, hk_gyorsaság: 0, hk_mgt: 0, hk_fortély: 0,
   ...p,
 });
 

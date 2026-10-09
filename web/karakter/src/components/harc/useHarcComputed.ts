@@ -54,7 +54,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
     harcmodor_összeg: harcmodorÖsszeg,
     HM_TÉ: k.HM_TÉ, HM_VÉ: k.HM_VÉ, CM: k.CM,
-    felszerelés_terhelés: 0, alakzatharc_szint: 0,
+    alakzatharc_szint: 0,
     merevvért_fok: merevvértFok,
     páncél_van: k.páncél.alap ? 1 : 0,
     páncél_végtagvédettség: k.páncél.végtagvédettség,

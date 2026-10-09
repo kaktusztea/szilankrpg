@@ -57,7 +57,6 @@ describe('Golden #2 - rules.json alapszámítások (Teszt karakter, 10. TSz, Dzs
     const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, konstansok, {
       HM_TÉ: karakter.HM_TÉ, HM_VÉ: karakter.HM_VÉ, CM: karakter.CM,
       harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: 0,
-      felszerelés_terhelés: 0,
       merevvért_fok: karakter.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0,
       páncél_van: karakter.páncél.alap ? 1 : 0,
       páncél_végtagvédettség: karakter.páncél.végtagvédettség,

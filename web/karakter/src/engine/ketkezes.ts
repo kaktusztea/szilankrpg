@@ -111,7 +111,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
     TÉ, VÉ, SP, Átütés: jobbElsődleges.Átütés, támadások, harckeret: hk, sebesség,
     alap_TÉ: alapTÉ, alap_VÉ: alapVÉ,
     hk_harcmodor: harcmodorSzint, hk_gyorsaság: k.tulajdonságok.gyorsaság,
-    hk_mgt: mgt, hk_felszerelés_mgt: 0, hk_fortély: fortelyMods['harckeret'] ?? 0,
+    hk_mgt: mgt, hk_fortély: fortelyMods['harckeret'] ?? 0,
   };
 
   return {

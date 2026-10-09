@@ -21,7 +21,6 @@ export interface FegyverResultMód {
   hk_harcmodor: number;
   hk_gyorsaság: number;
   hk_mgt: number;
-  hk_felszerelés_mgt: number;
   hk_fortély: number;
 }
 

@@ -6675,6 +6675,36 @@
     "md_fájl": "fortelyok.kiemelt/apro_meretu_leny.md"
   },
   {
+    "név": "Családos",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": true,
+    "kp_perfok": -6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nem vagy árva, van családod. Speciális: +6 KP bónusz jár érte.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Van kidolgozott családod (előtörténet).",
+          "+6 KP bónusz (primer ismeretekre is fordítható)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [],
+        "próba_enyhítések": []
+      }
+    ],
+    "md_fájl": "fortelyok.kiemelt/csalados.md"
+  },
+  {
     "név": "Helyismeret",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",

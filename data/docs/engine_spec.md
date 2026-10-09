@@ -541,7 +541,7 @@ note: Értéke [0; 10] tartományban mozog. Egy harci jelenet alatt használhat�
 
 ---
 
-## 15. Felszerelés (KM-mérlegeléses, nem számolt)
+## 15. Felszerelés (próba-Hátrány - TODO)
 
 ```
 Felszerelés keret = 2 + Erő
@@ -555,11 +555,12 @@ Ha a keret negatívba csúszik:
 ```
 
 note:
-  Szabálykönyv: md/010_03_06_felszereles.md. KM-mérlegeléses, a webapp NEM számolja
-  (nincs terhelés-bevitel UI, a hatás a KM kezében marad). A korábbi
-  `felszerelés_mgt` → harckeret reactive út KIVEZETVE (a szabály a felszerelést már
-  nem a harckerethez, hanem a próbadobásokhoz köti). A hosszútávú viselet akadályát
-  külön az Akadály fejezet írja le (md/010_03_07_akadaly.md).
+  Szabálykönyv: md/010_03_06_felszereles.md. STÁTUSZ: implementáció TODO (§33.1) -
+  később kerül be, a próba-EH ágba (NEM a harckeretbe). A korábbi `felszerelés_mgt` →
+  harckeret reactive út KIVEZETVE (más mechanika volt: a felszerelés most a
+  próbadobásokat érinti, nem a harckeretet; a régi utat NEM kell visszatenni).
+  Addig KM-mérlegeléses. A hosszútávú viselet akadályát külön az Akadály fejezet
+  írja le (md/010_03_07_akadaly.md).
 
 ---
 
@@ -2748,23 +2749,38 @@ UI (AktivScreen):
   - Státusz picker: "Sérült (auto)" névvel jelenik meg, szürkítve, nem kattintható
 ```
 
-### §33.1 MGT → Fizikai próba Hátrány - KIVEZETVE
+### §33.1 TODO - Felszerelés → Fizikai próba Hátrány
 
 ```
-STÁTUSZ: KIVEZETVE (2026-10). A terv a `Páncél akadályoztatása` és a
-`Fegyver/Pajzs akadályoztatása` státuszokra épült - ezeket a szabálykönyv
-megszüntette (md/082, "Egyszerűsítések, összevonások gátló tényezők kapcsán").
+STÁTUSZ: TERV (nem implementált). Később kerül be. Backlog: DEVSTATE.md "Felszerelés → próba-Hátrány".
 
-Az új szabály:
-  - Páncél MGT: KIZÁRÓLAG harcértékekre hat (harckeret §9, merevvért→TÉ §12).
-    A próbadobásokra gyakorolt hatást a Felszerelés fejezet (md/010_03_06) írja le,
-    KM-mérlegeléses módon (Felszerelés keret → Hátrány), NEM a páncél MGT sávosan.
-  - Hosszútávú viselet akadálya: külön Akadály fejezet (md/010_03_07), szintén
-    KM-mérlegeléses (nap/táv), nem próba-EH automatizmus.
+Háttér (2026-10 szabály-összevonás):
+  A `Páncél akadályoztatása` és `Fegyver/Pajzs akadályoztatása` státuszok MEGSZŰNTEK.
+  Az új, egységes modell NEM a páncél MGT-ből, hanem a Felszerelés keretből számol,
+  és a hatás a PRÓBÁKRA megy (NEM a harckeretre). A régi `felszerelés_mgt`→harckeret
+  reactive út ezért kivezetve (lásd §15, refactorlog/2026-10-09.md); azt NEM kell
+  visszatenni - más mechanika.
 
-Döntés: NINCS computed MGT→próba-Hátrány automatizmus. A próba-EH továbbra is
-  CSAK a session.aktív_státuszok-ból jön (statusz-proba.ts). A felszerelés/akadály
-  próba-hatása a KM kezében marad.
+Új szabály (md/010_03_06_felszereles.md - KM-mérlegeléses, a sávok default-ok):
+  Felszerelés keret = 2 + Erő
+  terhelés = cipelt közepes (-1) / nagy (-2) tárgyak + Közepes/Nagy pajzs
+             + Másfélkezes/Kétkezes (vagy nehéz/súlyos) fegyver
+  maradék = keret - terhelés
+    maradék >= 0  → nincs hatás
+    maradék == -1 → Hátrány-1 a Fizikai Tulajdonság-/Képzettségpróbákra
+    maradék == -2 → Hátrány-2
+    maradék <  -2 → nem tud harcolni, a próbadobások automatikus kudarcok
+
+Javasolt implementáció (amikor sorra kerül):
+  - Terhelés-bevitel: a karakter cipelt tárgyai + a kézben tartott fegyver/pajzs
+    súly/méret-kategóriájából származtatva (NEM kézi szám - a fegyver/pajzs már
+    ismert a karakterből). Új input kell: egyéb cipelt közepes/nagy tárgyak száma.
+  - A hatás a PRÓBA-EH ágba megy: `statusz-proba.ts` (`calcStátuszPróbaEH` mellé egy
+    felszerelés-forrás, `fizikai_próba` célra) + a Tulajdonságpróba EH-ja. NEM a
+    reactive `fegyver_harckeret`-be.
+  - Sávhatárok data layerbe (konstansok.yaml), ne hardcode. KM felülírhatja.
+  - A hosszútávú viselet Akadály-fejezete (md/010_03_07) külön, szintén KM-mérlegeléses
+    (nap/táv), nem próba-EH - azt ez a TODO NEM fedi.
 ```
 
 ---

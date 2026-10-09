@@ -1,0 +1,33 @@
+---
+schema_version: 1
+
+név: "Családos"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: true
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "kiemelt"
+leírások:
+  - text: "Nem vagy árva, van családod. Speciális: +6 KP bónusz jár érte."
+megjegyzések:
+  - text: "A KM dönt, hogy kellően kidolgozott-e az előtörténet a felvételhez."
+
+kiterjeszti:
+  normál: []
+  erős: []
+
+kp_perfok: -6
+ingyenes_perszint: 0
+
+fokok:
+  - fok: 1
+    követelménytext: []
+    követelmények: ""
+    hatástext:
+      - text: "Van kidolgozott családod (előtörténet)."
+      - text: "+6 KP bónusz (primer ismeretekre is fordítható)."
+    módosítók: ""

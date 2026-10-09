@@ -31,7 +31,7 @@ export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
   const ctx = buildContext(tulajdonságok, tsz, data.konstansok, {
     HM_TÉ: karakter.HM_TÉ, HM_VÉ: karakter.HM_VÉ, CM: karakter.CM,
     harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: alakzatharcSzint,
-    felszerelés_terhelés: 0, páncél_van: 0, páncél_végtagvédettség: 0,
+    páncél_van: 0, páncél_végtagvédettség: 0,
     páncél_sisak: 0, páncél_idea: 0, páncél_rongálódás: 0, merevvért_fok: 0,
   });
 

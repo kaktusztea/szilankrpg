@@ -92,7 +92,6 @@ function calcModResult(
     hk_harcmodor: harcmodorSzint,
     hk_gyorsaság: fCtx.get('tulajdonságok.gyorsaság') ?? 0,
     hk_mgt: fCtx.get('páncél_MGT') ?? 0,
-    hk_felszerelés_mgt: fCtx.get('felszerelés_mgt') ?? 0,
     hk_fortély: 0,  // pótolva a hívó oldalon (harckeret fortély-mod nem mód-specifikus)
   };
 }
@@ -124,12 +123,10 @@ export function calcFegyverResults(
 
   if (precomputedPáncélMGT !== undefined) {
     baseCtx.set('páncél_MGT', precomputedPáncélMGT);
-    baseCtx.set('felszerelés_mgt', 0);
     baseCtx.set('merevvért_TÉ_büntetés', precomputedMerevvértBüntetés ?? 0);
   } else {
     const fullComp = evaluate(data.rules, new Map(baseCtx), lookupArrays, stringCtx);
     baseCtx.set('páncél_MGT', fullComp.get('páncél_MGT') ?? 0);
-    baseCtx.set('felszerelés_mgt', fullComp.get('felszerelés_mgt') ?? 0);
     baseCtx.set('merevvért_TÉ_büntetés', fullComp.get('merevvért_TÉ_büntetés') ?? 0);
   }
 

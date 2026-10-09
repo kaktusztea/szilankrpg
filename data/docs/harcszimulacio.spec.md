@@ -220,8 +220,9 @@ merevvért_TÉ_büntetés = str.merev
 ```
 
 ⚠ A felszerelés/pajzs/fegyver KM-mérlegeléses Felszerelés-keret hatása (md/010_03_06)
-a próbadobásokra vonatkozik, NEM a harcértékekre - a tesztharc-motor nem modellezi.
-A korábbi `felszerelés_mgt` → harckeret út kivezetve (szabály-összevonás, 2026-10).
+a PRÓBADOBÁSOKRA vonatkozik, NEM a harcértékekre - a tesztharc-motor jelenleg nem
+modellezi. Implementáció TODO (engine_spec §15/§33.1). A korábbi `felszerelés_mgt` →
+harckeret út kivezetve (szabály-összevonás, 2026-10) - NEM visszateendő, más mechanika.
 Fegyverekre továbbra sem a páncél MGT pontrendszere érvényes.
 
 ### 3.7 Harckeret és támadások száma
