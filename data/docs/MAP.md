@@ -67,6 +67,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
 | `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció |
+| `felszereles.ts` | Felszerelés keret/terhelés/Hátrány (§15/§33.1): `felszerelésMax`, `felszerelésTerhelés`, `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság` - a fegyver pont VAGY-VAGY `max(hossz,súly)` |
 | `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange |
 
 ### Hooks (`hooks/`)
@@ -87,6 +88,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `usePopupState` | Generikus popup/overlay state kezelő |
 | `useLongPress` | Long-press vs short-tap megkülönböztető (NJK chip betű-picker) |
 | `useTaktikaInvalidation` | Aktív taktikák érvénytelenítése fegyver/session változáskor (useEffect) |
+| `useFegyverInvalidation` | Aktív fegyver Puszta kéz fallback, ha `felszerelésben=false` lesz (useEffect) |
 | `useGameModeTabSync` | Mód-váltáskor az aktív tab megtartása (editOnly tabok ki/be) |
 
 ### Slot (karaktertár) modulok (`hooks/`)
@@ -143,6 +145,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   NaploTab.tsx             Verziók + Napló accordionok kompozíciója (CheckpointSection + NaploSection)
   CheckpointSection.tsx    Karakter verziók accordion (lista, létrehozás, törlés, megtekintés)
   NaploSection.tsx         Napló accordion (bejegyzések, szerkesztő form, opcionális checkpoint)
+  FelszerelesSection.tsx   Felszerelés accordion (keret Max/Aktuális, tárgy-táblázat; fegyver/pajzs/páncél auto + kézi tárgyak; §15/§33.1)
 
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcScreen.tsx           Fő screen
@@ -283,7 +286,7 @@ hatterek/                  Hátterek fül (szövegfelhő)
 overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb.)
   AppOverlays.tsx-ben összefogva (components/AppOverlays.tsx)
   OverlayPortal.tsx        createPortal overlay-wrapper
-  OverlayScreenOverlay.tsx Verziók/Napló/Jegyzetek összevont overlay (NaploTab + jegyzetek + próba)
+  OverlayScreenOverlay.tsx Verziók/Napló/Jegyzetek összevont overlay (FelszerelesSection + NaploTab + jegyzetek + próba)
   SzilankPickerOverlay.tsx Szilánk pont (0-3) + gyors-elérési hub (Szabályrendszer link, próba táblák)
   SlotListOverlay.tsx      Karakterek hub (slot lista → SlotList.tsx)
   SlotDeleteOverlay.tsx    Slot törlés megerősítő
@@ -359,7 +362,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | 12 | Merevvért TÉ büntetés | `rules.json` |
 | 13 | Pajzs | `pancel-calc.ts` |
 | 14 | Manőver Pont | `rules.json` |
-| 15 | Felszerelés MGT | `rules.json` |
+| 15 | Felszerelés (keret/terhelés → próba-Hátrány) | `felszereles.ts`, `konstansok.yaml` |
 | 16 | Fortély módosítók | `fortely-mods.ts`, `alapeset.ts` |
 | 17 | Távharc | `tavharc/helpers.ts` |
 | 18 | HM/CM limitek | `rules.json` |

@@ -66,6 +66,7 @@ def _fegyver_json(r):
 
     extra_ids = _extra_id_lista(fv)
     akadály = fv.get("akadály", 0)
+    súly = fv.get("súly", "átlagos")
 
     return {
         "név": r["név"],
@@ -73,6 +74,7 @@ def _fegyver_json(r):
         "megjegyzés": r.get("megjegyzés", ""),
         "fegyverhossz": fv["hossz"],
         "akadály": akadály,
+        "súly": súly,  # könnyű/átlagos/nehéz/súlyos - a Felszerelés-pont forrása (md/010_03_06, VAGY-VAGY a fegyverhosszal)
         "övön_hordható": bool(bal.FEGYVERHOSSZ[fv["hossz"]].get("övön_hordható", False)),
         "ár": None,  # TODO: placeholder - kalkulált érték lesz (fegyverhossz/alapanyag/idea szorzókból), lásd v2.md "Ár"
         "idea_default": f.idea_default,  # a standard példány kezdő-Ideája; a fenti harcértékek EZT MÁR tartalmazzák (Modell 2). A webapp a felvett példány idea-ját erről indítja.
@@ -94,6 +96,7 @@ def build():
     for r in fixed:
         r.setdefault("idea_default", 0)
         r.setdefault("erő_követelmény", 0)
+        r.setdefault("súly", "átlagos")
     return generalt + fixed
 
 

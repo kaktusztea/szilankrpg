@@ -27,7 +27,7 @@ const data = {
 
 const karakter = {
   képzettségek: [{ név: 'Kardvívás', szint: 6 }],
-  fegyverek: [{ alap: 'Hosszúkard', név: 'Sajátom', anyag: 'acél', idea: 4 }],
+  fegyverek: [{ alap: 'Hosszúkard', név: 'Sajátom', anyag: 'acél', idea: 4, felszerelésben: true }],
 } as unknown as Karakter;
 
 describe('buildFegyverInfó', () => {

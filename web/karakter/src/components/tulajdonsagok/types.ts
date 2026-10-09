@@ -56,4 +56,7 @@ export interface KepzettsegRowProps {
   aktívStátuszok: string[];
   statuszDefs: StatuszEntry[];
   próbaEnyhítések: PróbaEnyhítés[];
+  /** Felszerelés-túlterhelés Hátrány (Fizikai csoportnál), különben 0/false. */
+  felszEH?: number;
+  felszNemHarcol?: boolean;
 }

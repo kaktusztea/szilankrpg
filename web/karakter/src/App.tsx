@@ -6,6 +6,7 @@ import { useUrlImport } from './hooks/useUrlImport';
 import { useKarakterActions } from './hooks/useKarakterActions';
 import { useGameModeTabSync } from './hooks/useGameModeTabSync';
 import { useTaktikaInvalidation } from './hooks/useTaktikaInvalidation';
+import { useFegyverInvalidation } from './hooks/useFegyverInvalidation';
 import { Header } from './components/Header';
 import { NjkSwitcher } from './components/NjkSwitcher';
 import { TabBar } from './components/TabBar';
@@ -46,6 +47,7 @@ function App() {
 
   useGameModeTabSync(gameMode, activeTab, setActiveTab);
   useTaktikaInvalidation(karakter, data, setKarakter);
+  useFegyverInvalidation(karakter, setKarakter);
 
   // Autosave kvótahiba → figyelmeztetés (ne maradjon néma adatvesztés)
   useEffect(() => {

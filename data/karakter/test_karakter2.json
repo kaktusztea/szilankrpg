@@ -442,13 +442,15 @@
       "alap": "kard, lovag",
       "név": "",
       "anyag": "acél",
-      "idea": 0
+      "idea": 0,
+      "felszerelésben": true
     },
     {
       "alap": "tőr",
       "név": "",
       "anyag": "acél",
-      "idea": 0
+      "idea": 0,
+      "felszerelésben": true
     }
   ],
   "távfegyverek": [
@@ -472,7 +474,8 @@
     "méret": "közepes"
   },
   "felszerelés": {
-    "nagy_tárgyak": []
+    "tárgyak": [],
+    "kizárt_auto": []
   },
   "jegyzetek": "Első jegyzet\nMásodik jegyzet",
   "előtörténet": {

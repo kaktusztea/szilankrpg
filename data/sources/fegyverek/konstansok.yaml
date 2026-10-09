@@ -4,9 +4,11 @@
 # csak a data/sources/ könyvtárat dolgozza fel - ez a mappa kimarad).
 
 # fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható, felszerelés_pont
-#   felszerelés_pont: a data/docs/010_03_06_felszereles.md Felszerelés-terhelése (0/1/2 pont);
-#   md/068_01_13_fegyver_mozgasgatlo_hatasa.md szerint KIZÁRÓLAG a forgatás-kategóriától függ
-#   (Másfélkezes kard → 1, Kétkezes kard → 2, egykezes → 0 - a "súly" tengely NEM számít bele).
+#   felszerelés_pont: a fegyver forgatás-kategóriájából levezetett HOSSZ-ág (0/1/2); a tervezői
+#   eszköz (fegyvergenerator_fegyverlista) ezt használja becslésnek. A hatályos szabály
+#   (md/010_03_06_felszereles.md) VAGY-VAGY: a fegyver végső Felszerelés-pontja
+#   MAX(hossz_pont, súly_pont). A kanonikus runtime leképezés a data/sources/konstansok.yaml
+#   `felszerelés` szekciójában van (a webapp azt olvassa); itt csak a hossz-ág szerepel.
 fegyverhossz:
   0:  {TÉ: 0,  VÉ: 0,  SP: 0, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
   1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
@@ -122,7 +124,7 @@ szálfegyver_nyélanyag:
   sima:        {SP: 0, súly: 0}   # alap (nincs speciális nyél)
   fanyelű:     {SP: 0, súly: 0, extrak: [fanyel_fegyvertores_konnyebb]}   # bázis-hatás nincs; Fegyvertörés-büntetés (a fa nyél könnyebben törik)
   vasaltszárú: {SP: 0, súly: 1}   # +1 súly kategória
-  tömörszárú:  {SP: 1, súly: 2}   # +1 SP, +2 súly kategória (+1 Felszerelés pont = logisztika)
+  tömörszárú:  {SP: 1, súly: 2}   # +1 SP, +2 súly kategória (a nehezebb súly a Felszerelés súly_pont-ba számít, md/010_03_06)
 
 # hajlékony (ostor-jelleg): 0/1 param táblája - bázis (VÉ/Sebesség) + örökölt SZITUÁCIÓS extrák.
 # A fegyverlista az extrákat innen örökíti (mint a fegyverhossz → beszorithato, szálfegyver_nyélanyag → fanyelű).

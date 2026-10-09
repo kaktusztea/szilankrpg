@@ -94,7 +94,7 @@ export function useFortelyActions({ data, setFortélyok, karakter, setKarakter }
     setKarakter(prev => {
       if (!prev) return prev;
       if (prev.fegyverek.some(f => f.alap.toLowerCase() === fegyverNév.toLowerCase())) return prev;
-      return { ...prev, fegyverek: [...prev.fegyverek, { alap: fegyverNév, név: '', anyag: defaultAnyag, idea: 0 }] };
+      return { ...prev, fegyverek: [...prev.fegyverek, { alap: fegyverNév, név: '', anyag: defaultAnyag, idea: 0, felszerelésben: true }] };
     });
   }
 

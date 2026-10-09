@@ -32,6 +32,9 @@ function tulProbaBiztosSiker(tulÉrték: number, célszám: number): boolean {
 interface Props {
   tulajdonságNév: string;
   érték: number;
+  /** Felszerelés-túlterhelés Hátrány (Fizikai tulajdonságnál) - a dobás alap EH-ja. */
+  felszEH?: number;
+  felszNemHarcol?: boolean;
   onClose: () => void;
 }
 
@@ -39,13 +42,14 @@ interface Props {
  * Tulajdonságpróba dobás popup (Játék mód): Tulajdonság + k6 vs célszám.
  * Extrák szekció: Előny/Hátrány, Összetett próba, Ellenpróba.
  */
-export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Props) {
+export function TulajdonsagProbaPopup({ tulajdonságNév, érték, felszEH = 0, felszNemHarcol = false, onClose }: Props) {
   const [nehézség, setNehézség] = useState<number | null>(null);
   const [dobás, setDobás] = useState<ProbaDobás | null>(null);
 
   // Extrák state
   const [extrákNyitva, setExtrákNyitva] = useState(false);
-  const [ehSzint, setEhSzint] = useState(0);
+  // A felszerelés-túlterhelés Hátránya a dobás alap EH-ja (a KM felülírhatja a picker-rel).
+  const [ehSzint, setEhSzint] = useState(felszEH);
   const [összetettDb, setÖsszetettDb] = useState(0); // 0=ki, 1-3
   const [ellenpróba, setEllenpróba] = useState(false);
 
@@ -146,6 +150,13 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
         </div>
         <div className="kep-proba-subtitle">{label} ({érték})</div>
 
+        {(felszEH < 0 || felszNemHarcol) && (
+          <div className="kep-proba-felsz-warn">
+            ⚠ Felszerelés túlterhelés: Hátrány{felszEH} (Fizikai próba)
+            {felszNemHarcol && ' - automatikus kudarc / nem tud harcolni'}
+          </div>
+        )}
+
         {!ellenpróba && (
           <div className="kep-proba-neh-list">
             <button className={`he-field-btn${nehézség === -1 ? ' vallas-active' : ''}`}
@@ -241,7 +252,14 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
               <div className="dobas-btn-row">
                 <button className="kep-proba-roll-btn" disabled={!kész} onClick={handleDobás}>
                   Dobás
-                  {ehCímke && <span className={`kep-proba-roll-eh${ehSzint > 0 ? ' kep-proba-eh-előny' : ''}`}>{ehCímke}</span>}
+                  {ehCímke && (
+                    <span className={`kep-proba-roll-eh${ehSzint > 0 ? ' kep-proba-eh-előny' : ''}`}>
+                      {ehCímke}
+                      {felszEH !== 0 && (
+                        <button type="button" className="kep-proba-eh-info" onClick={e => e.stopPropagation()} title={`Felszerelés túlterhelés: ${előnyHátrányLabel(felszEH)}${felszNemHarcol ? ' (nem tud harcolni)' : ''}`}>i</button>
+                      )}
+                    </span>
+                  )}
                 </button>
                 <ManualDicePicker sides={6} szint={ehSzint} onSelect={handleManualK6} disabled={!kész} alapÉrték={érték} alapLabel={összetettManualLabel ?? label} forceOpen={összetettManual.length > 0} />
               </div>

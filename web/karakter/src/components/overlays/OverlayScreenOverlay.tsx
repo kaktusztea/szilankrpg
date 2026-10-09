@@ -1,15 +1,18 @@
 import { OverlayPortal } from './OverlayPortal';
 import { NaploTab } from '../aktiv/NaploTab';
+import { FelszerelesSection } from '../aktiv/FelszerelesSection';
 import type { Karakter } from '../../engine/types';
+import type { GameData } from '../../engine/data-loader';
 
 interface Props {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  data: GameData;
   onClose: () => void;
   onViewCheckpoint?: (id: string) => void;
 }
 
-export function OverlayScreenOverlay({ karakter, setKarakter, onClose, onViewCheckpoint }: Props) {
+export function OverlayScreenOverlay({ karakter, setKarakter, data, onClose, onViewCheckpoint }: Props) {
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="fullscreen-overlay">
@@ -18,6 +21,9 @@ export function OverlayScreenOverlay({ karakter, setKarakter, onClose, onViewChe
           <span className="fullscreen-overlay-title">✏️ Verziók, Napló, Jegyzetek</span>
         </div>
         <div className="fullscreen-overlay-body">
+          {/* Felszerelés - legfelső accordion */}
+          <FelszerelesSection karakter={karakter} setKarakter={setKarakter} data={data} />
+
           {/* Karakter verziók + Napló (accordionok) */}
           <NaploTab karakter={karakter} setKarakter={setKarakter} onViewCheckpoint={id => { onViewCheckpoint?.(id); onClose(); }} />
 

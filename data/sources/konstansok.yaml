@@ -31,6 +31,45 @@ tulajdonság_sorrend:
   - "önuralom"
   - "érzékenység"
 
+# Felszerelés keret és terhelés (md/010_03_06_felszereles.md).
+# A keret = 2 + Erő; a cipelt tárgyak/fegyver/pajzs/páncél pontot vonnak le. Ha a terhelés
+# meghaladja a keretet, a túllépés Hátrányt ad a Fizikai próbadobásokra (NEM a harckeretre).
+felszerelés:
+  keret_bázis: 2                 # keret = keret_bázis + Erő
+  páncél_fedés_min: 50           # a páncél csak ekkora (vagy nagyobb) lefedettségnél számít
+  # méret-kategória -> felszerelés pont (kézi tárgyak + a tárgyra/pajzsra leképezett érték)
+  méret_pont:
+    nincs: 0
+    kicsi: 0
+    közepes: 1
+    nagy: 2
+  # fegyver súly-kategória -> pont (a fegyver végső pontja: MAX(súly_pont, hossz_pont) - VAGY-VAGY)
+  súly_pont:
+    könnyű: 0
+    átlagos: 0
+    nehéz: 1
+    súlyos: 2
+  # fegyver forgatás-kategória -> pont (a fegyverhossz-tábla forgatás mezője alapján)
+  forgatás_pont:
+    egykezes: 0
+    másfélkezes: 1
+    kétkezes: 2
+  # pajzs méret -> pont
+  pajzs_pont:
+    kis: 0
+    közepes: 1
+    nagy: 2
+  # páncél merevség -> pont (hajlékonyvért vs merevvért, ha a fedés eléri a páncél_fedés_min-t)
+  páncél_pont:
+    hajlékony: 1
+    merev: 2
+  # a túllépés (terhelés - keret) -> próba Hátrány szint (abszolút érték; a felette lévő auto-kudarc)
+  hátrány_sáv:
+    1: -1
+    2: -2
+  # mely tulajdonságok Fizikai Tulajdonságpróbáira hat a felszerelés-Hátrány
+  hátrány_tulajdonságok: ["erő", "edzettség", "ügyesség", "gyorsaság", "érzékenység"]
+
 képzettség_csoport_sorrend:
   - id: "harci"
     label: "Harci"

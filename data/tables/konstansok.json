@@ -29,6 +29,47 @@
     "önuralom",
     "érzékenység"
   ],
+  "felszerelés": {
+    "keret_bázis": 2,
+    "páncél_fedés_min": 50,
+    "méret_pont": {
+      "nincs": 0,
+      "kicsi": 0,
+      "közepes": 1,
+      "nagy": 2
+    },
+    "súly_pont": {
+      "könnyű": 0,
+      "átlagos": 0,
+      "nehéz": 1,
+      "súlyos": 2
+    },
+    "forgatás_pont": {
+      "egykezes": 0,
+      "másfélkezes": 1,
+      "kétkezes": 2
+    },
+    "pajzs_pont": {
+      "kis": 0,
+      "közepes": 1,
+      "nagy": 2
+    },
+    "páncél_pont": {
+      "hajlékony": 1,
+      "merev": 2
+    },
+    "hátrány_sáv": {
+      "1": -1,
+      "2": -2
+    },
+    "hátrány_tulajdonságok": [
+      "erő",
+      "edzettség",
+      "ügyesség",
+      "gyorsaság",
+      "érzékenység"
+    ]
+  },
   "képzettség_csoport_sorrend": [
     {
       "id": "harci",

@@ -224,6 +224,17 @@ export interface KonstansokRaw {
   kp: { perszint: number; szekunder_perszint: number; fortélyfok: number; hm: number; cm: number };
   arányok: { min_tsz: number; max_tsz: number; max_hm_diff_szintlépésenként: number; képzettség_nemprimer_max_szint_plusz: number; képzettség_max_szint: number; tulajdonság_pont_alap: number; tulajdonság_pont_tsz_bónusz: number; max_cm_perszint: number };
   tulajdonság_pontok: Record<string, number>;
+  felszerelés: {
+    keret_bázis: number;
+    páncél_fedés_min: number;
+    méret_pont: Record<string, number>;
+    súly_pont: Record<string, number>;
+    forgatás_pont: Record<string, number>;
+    pajzs_pont: Record<string, number>;
+    páncél_pont: { hajlékony: number; merev: number };
+    hátrány_sáv: Record<string, number>;
+    hátrány_tulajdonságok: string[];
+  };
   páncél_struktúrák: {
     struktúra: string; leírás: string; fém: boolean; merev: boolean;
     mgt: number; sfé_fizikai: number; sfé_energia: number; ár_szorzó: number; idea_plusz_minusz: number;

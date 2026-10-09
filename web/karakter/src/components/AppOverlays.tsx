@@ -144,6 +144,7 @@ export function AppOverlays({
         <OverlayScreenOverlay
           karakter={karakter}
           setKarakter={setKarakter}
+          data={data}
           onClose={() => set('overlayScreen', false)}
           onViewCheckpoint={onViewCheckpoint}
         />

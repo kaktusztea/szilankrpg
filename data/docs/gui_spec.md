@@ -866,6 +866,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
   - MF fok: kerek gombok 0-3. Piros szöveg ha a Mesterfegyver követelménye nem teljesül. Hiba esetén alatta kis betűs piros sor: `⚠ Harcmodor - Kardvívás ≥ X` (a fegyverhez tartozó konkrét harcmodor).
   - Idea: 3 soros popup (-5..-1 / 0 / +1..+5)
   - Anyag: 1 oszlopos popup (acél, bronz, abbitacél, mithrill, lunír)
+  - Felszerelésben: igen/nem toggle (kattintásra negál, `FegyverPeldany.felszerelésben`). „nem" → a fegyver kikerül a Felszerelés keretből (§15) ÉS a Harc fül fegyverválasztóiban kiszürkül („… (nincs nálad)"); ha épp aktív, a Harc fül Puszta kézre esik vissza (`useFegyverInvalidation`). Jelzés: `.he-field-off`.
 - \+ Új fegyver dropdown: kategóriánként csoportosítva (MK 2K variáns kiszűrve)
 - MK (másfélkezes) fegyverek: 1 kártya a Harcértékek fülön, 2 sor a Harc fülön (1K + 2K)
 - Mesterfegyver szinkron: MF fok módosítás → `syncMfFortelyok` frissíti a fortélyok tömböt
@@ -988,7 +989,17 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 Fejléc ✏️ gombbal nyitható fullscreen overlay (nem tab). Mindkét módban (szerkesztő + game) elérhető. ✕ gomb vagy Escape bezárja. Cím: "✏️ Verziók, Napló, Jegyzetek".
 
-Egyetlen görgethető nézetben, felülről lefelé. Mindhárom szekció összecsukható `<details>` accordion, azonos summary formázással (`.naplo-cp-summary`, bold 15px, kék `--color-taktika`):
+Egyetlen görgethető nézetben, felülről lefelé. A szekciók összecsukható `<details>` accordionok, azonos summary formázással (`.naplo-cp-summary`, bold 15px, kék `--color-taktika`):
+
+### 0. Felszerelés (accordion, alapból csukva) - legfelső elem
+- `<details>` (`.naplo-cp-section`), komponens: `FelszerelesSection.tsx`. Pure: `engine/felszereles.ts` (§15/§33.1).
+- Summary: `Felszerelés  Max: X / Aktuális: Y` (X = `2 + Erő`, Y = terhelés). Túlterhelt (`Y > X`) esetén `.felsz-tul` (sárga) + figyelmeztető sor (Hátrány-N a Fizikai próbákra; nemHarcol esetén „nem tud harcolni").
+- Táblázat (`.felsz-table`): **Név** | **Méret** oszlopok.
+  - AUTO sorok: a felvett fegyverek + pajzs + páncél (read-only név). A méret-chip picker 2 opciós: `nincs` ↔ a tárgy FIX értéke. „nincs" → fegyvernél `FegyverPeldany.felszerelésben=false`, pajzs/páncélnál `felszerelés.kizárt_auto`. A nem-számító sor halvány (`.felsz-row-off`).
+  - Kézi sorok: szabad `név` input + méret-chip picker 4 opciós (`nincs`=törlés, `kicsi/közepes/nagy`). Tárolás: `felszerelés.tárgyak[]`.
+  - Mindig 1 üres sor alul; a `név`-be írva új tárgy jön létre (default közepes) → új üres sor nyílik.
+- Pont: kicsi:0, közepes:1, nagy:2; fegyver `max(hossz_pont, súly_pont)` (VAGY-VAGY); páncél csak ≥ `páncél_fedés_min` lefedettségnél. Konstans: `konstansok.yaml` `felszerelés`.
+- Picker: `OverlayPortal` (createPortal, Escape zár, backdrop zár), kiválasztás = bezárás.
 
 ### 1. Karakter verziók (accordion, alapból csukva)
 - `<details>` (`.naplo-cp-section`, summary `.naplo-cp-summary`)

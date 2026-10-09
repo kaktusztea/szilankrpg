@@ -1,12 +1,14 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
 import { TulajdonsagCell } from './TulajdonsagCell';
+import { fizikaiTulajdonság, type FelszerelésHátrány } from '../../engine/felszereles';
 
 interface Props {
   data: GameData;
   gameMode: boolean;
   tulajdonságok: Tulajdonsagok;
   setTul: (key: keyof Tulajdonsagok, val: number) => void;
+  felszHátrány: FelszerelésHátrány;
   név: string;
   becenév: string;
   játékos: string;
@@ -27,7 +29,7 @@ interface Props {
 }
 
 export function TulajdonsagokHeader({
-  data, gameMode, tulajdonságok, setTul,
+  data, gameMode, tulajdonságok, setTul, felszHátrány,
   név, becenév, játékos, tsz, kor, faj, anyanyelv,
   onEditNév, onEditBecenév, onEditTsz, onEditKor, onEditJátékos,
   setFaj, setAnyanyelv, jk, setJk, onOpenElotortenet
@@ -127,6 +129,8 @@ export function TulajdonsagokHeader({
             onChange={v => setTul(key, v)}
             fajMax={data.fajKeretek[faj]?.[key]?.[1]}
             fajMin={data.fajKeretek[faj]?.[key]?.[0]}
+            felszEH={fizikaiTulajdonság(key, data) ? felszHátrány.ehSzint : 0}
+            felszNemHarcol={fizikaiTulajdonság(key, data) ? felszHátrány.nemHarcol : false}
           />
         ))}
       </div>

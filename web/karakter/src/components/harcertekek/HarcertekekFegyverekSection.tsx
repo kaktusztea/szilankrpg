@@ -30,8 +30,15 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
       if (!prev) return prev;
       const defaultAnyag = (konstansok.fegyver_anyagok as string[])[0] ?? '';
       const ideaDefault = lookupFegyver(data.fegyverek, alap)?.idea_default ?? 0;
-      return { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: defaultAnyag, idea: ideaDefault }] };
+      return { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: defaultAnyag, idea: ideaDefault, felszerelésben: true }] };
     });
+  }
+
+  function toggleFelszerelésben(idx: number) {
+    setKarakter(prev => prev ? {
+      ...prev,
+      fegyverek: prev.fegyverek.map((f, i) => i === idx ? { ...f, felszerelésben: f.felszerelésben === false } : f),
+    } : prev);
   }
 
   const felvettFegyverek = new Set(k.fegyverek.map(fp => fp.alap.toLowerCase()));
@@ -56,6 +63,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
           onMfTarget={onMfTarget}
           onAnyagTarget={onAnyagTarget}
           onDeleteTarget={onDeleteTarget}
+          onToggleFelszerelésben={toggleFelszerelésben}
         />
       ))}
       {!gameMode && k.fegyverek.length < MAX_FEGYVER_DARAB && (
@@ -74,7 +82,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
 
 // --- FegyverCard ---
 
-function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget, onMfTarget, onAnyagTarget, onDeleteTarget }: {
+function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget, onMfTarget, onAnyagTarget, onDeleteTarget, onToggleFelszerelésben }: {
   index: number;
   fegyver: FegyverPeldany;
   data: GameData;
@@ -84,6 +92,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
   onMfTarget: (idx: number) => void;
   onAnyagTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
+  onToggleFelszerelésben: (idx: number) => void;
 }) {
   const fd = lookupFegyver(data.fegyverek, fegyver.alap);
   const mfFok = getMfFok(data, karakter, fegyver.alap);
@@ -107,6 +116,12 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
         </button>
         <button className="he-field-btn" onClick={() => onIdeaTarget(index)}>Idea: <strong>{fegyver.idea}</strong></button>
         <button className="he-field-btn" onClick={() => onAnyagTarget(index)}>Anyag: <strong>{fegyver.anyag}</strong></button>
+        <button
+          className={`he-field-btn${fegyver.felszerelésben === false ? ' he-field-off' : ''}`}
+          onClick={() => onToggleFelszerelésben(index)}
+        >
+          Felszerelésben: <strong>{fegyver.felszerelésben === false ? 'nem' : 'igen'}</strong>
+        </button>
       </div>
     </div>
   );

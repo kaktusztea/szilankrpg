@@ -11,6 +11,7 @@ import { PrimerKpBox } from './PrimerKpBox';
 import { ElotortenetOverlay } from './ElotortenetOverlay';
 import { useEscapeClose } from './useEscapeClose';
 import { képzettségLimitek } from './kepzettseg-limit';
+import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../../engine/felszereles';
 import './TulajdonsagokScreen.css';
 
 export function TulajdonsagokScreen({
@@ -20,6 +21,11 @@ export function TulajdonsagokScreen({
   jk, setJk, onTestReset
 }: Props) {
   const fortélyFokok = buildFortélyFokok(karakter.fortélyok);
+
+  // Felszerelés túlterhelés → Fizikai próba Hátrány (karakter-szintű, l. engine_spec §15/§33.1).
+  const felszHátrány = felszerelésHátrány(
+    felszerelésTerhelés(karakter, data), felszerelésMax(karakter, data), data,
+  );
 
   // Többszörösen felvehető fortélyok nevei (csak ezek kiterjesztés-teljesülése billenthető).
   const többszörösNevek = useMemo(
@@ -145,6 +151,7 @@ export function TulajdonsagokScreen({
       <TulajdonsagokHeader
         data={data} gameMode={gameMode}
         tulajdonságok={tulajdonságok} setTul={setTul}
+        felszHátrány={felszHátrány}
         név={név} becenév={becenév} játékos={játékos} tsz={tsz} kor={kor} faj={faj} anyanyelv={anyanyelv}
         jk={jk} setJk={setJk}
         onEditNév={() => setPopup(p => ({ ...p, editingNév: true, tempNév: név }))}
@@ -182,6 +189,7 @@ export function TulajdonsagokScreen({
             onRemove={handleRemove}
             aktívStátuszok={karakter.session.aktív_státuszok}
             statuszDefs={data.statuszok}
+            felszHátrány={felszHátrány}
             próbaEnyhítésekByKép={próbaEnyhítésekByKép}
           />
         ))}

@@ -39,6 +39,8 @@ interface Props {
   módosítóTáblák: ModositoTabla[];
   próbaEnyhítések: PróbaEnyhítés[];
   dobásKomment: { line: string }[];
+  felszEH?: number;
+  felszNemHarcol?: boolean;
   onClose: () => void;
 }
 
@@ -47,7 +49,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, onClose,
+  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -101,9 +103,11 @@ export function KepzettsegProbaPopup({
   const ehAlap = calcMultiKiterjesztésEH(selectedKits, effFortélyFokok);
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt)
   const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségNév, képzettségCsoport);
-  const ehSzintRaw = ehAlap.szint + státuszEH.szint;
-  const eh = { szint: clampEHSzint(ehSzintRaw), tiltott: ehAlap.tiltott || státuszEH.tiltott };
+  const ehSzintRaw = ehAlap.szint + státuszEH.szint + felszEH;
+  const eh = { szint: clampEHSzint(ehSzintRaw), tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };
   const erősTiltott = eh.tiltott;
+  // Van-e Előny/Hátrány forrás (a 🛈 info + bontás accordion megjelenítéséhez).
+  const vanEhForrás = ehAlap.szint !== 0 || státuszEH.források.length > 0 || felszEH !== 0;
 
   // Pötty szín az EFFEKTÍV fok szerint (a negálás már bele van számolva): felvéve → zöld,
   // hiányzó Erős → piros, hiányzó Normál → sárga. Így a negálás mindkét irányban látható
@@ -420,24 +424,30 @@ export function KepzettsegProbaPopup({
                   {ehCímke && (
                     <span className={`kep-proba-roll-eh${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}>
                       {ehCímke}
+                      {vanEhForrás && (
+                        <button
+                          type="button"
+                          className="kep-proba-eh-info"
+                          title="Mi adja a módosítót?"
+                          onClick={e => { e.stopPropagation(); setEhBontásNyitva(v => { if (!v) setTimeout(() => ehAccordionRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50); return !v; }); }}
+                        >i</button>
+                      )}
                     </span>
                   )}
                 </button>
                 <ManualDicePicker sides={10} szint={eh.szint} onSelect={handleManualK10} disabled={!kész} alapÉrték={tulÉrték + effSzint} alapLabel={összetettManualLabel ?? 'Alap'} forceOpen={összetettManual.length > 0} />
               </div>
-              {(ehAlap.szint !== 0 || státuszEH.források.length > 0) && (
+              {vanEhForrás && ehBontásNyitva && (
                 <div className="kep-proba-eh-accordion" ref={ehAccordionRef}>
-                  <button className="kep-proba-eh-accordion-toggle" data-open={ehBontásNyitva} onClick={() => { setEhBontásNyitva(v => { if (!v) setTimeout(() => ehAccordionRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50); return !v; }); }}>
-                    {ehBontásNyitva ? '▴' : '▾'}
-                  </button>
-                  {ehBontásNyitva && (
-                    <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
-                      {ehAlap.szint !== 0 && (
-                        <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({selectedKits.map(k => k.fortély).join(', ') || '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
-                      )}
-                      {státuszEH.források.map((f, i) => <div key={i} className="kep-proba-eh-bontas-sor">{f}</div>)}
-                    </div>
-                  )}
+                  <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
+                    {ehAlap.szint !== 0 && (
+                      <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({selectedKits.map(k => k.fortély).join(', ') || '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
+                    )}
+                    {státuszEH.források.map((f, i) => <div key={i} className="kep-proba-eh-bontas-sor">{f}</div>)}
+                    {felszEH !== 0 && (
+                      <div className="kep-proba-eh-bontas-sor">Felszerelés túlterhelés: {előnyHátrányLabel(felszEH)}</div>
+                    )}
+                  </div>
                 </div>
               )}
               </>

@@ -35,7 +35,8 @@ export function buildFegyverOpciók(karakter: Karakter, data: GameData) {
     { név: 'Puszta kéz', idx: -1 },
     ...karakter.fegyverek.map((f, i) => {
       const fd = lookupFegyver(data.fegyverek, f.alap);
-      return { név: fd?.név || f.alap, idx: i };
+      // felszerelésben=false → nincs a karakternél → harcban nem választható (kiszürkül)
+      return { név: fd?.név || f.alap, idx: i, disabled: f.felszerelésben === false };
     }),
     ...(pajzsNév ? [{ név: pajzsNév, idx: -2 }] : []),
   ];

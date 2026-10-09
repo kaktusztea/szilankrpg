@@ -30,7 +30,7 @@ function makeKarakter(overrides: Partial<Karakter> = {}): Karakter {
     távfegyverek: [],
     páncél: { alap: '', név: '', fémalapanyag: '', idea: 0, kidolgozottság: 'átlagos', sisak: false, végtagvédettség: 0, méret_illeszkedés: 'passzol', rongálódás: 0 },
     pajzs: { méret: '' },
-    felszerelés: { nagy_tárgyak: [] },
+    felszerelés: { tárgyak: [], kizárt_auto: [] },
     előtörténet: { származás_helye: '', szociális_érzék: '', külső: '', előtörténet: '' },
     jegyzetek: '',
     napló: [],

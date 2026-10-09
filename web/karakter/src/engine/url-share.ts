@@ -53,7 +53,7 @@ interface CompactKarakter {
   tf: (string | [string, number])[];
   pa?: Record<string, string | number | boolean>;
   pj?: string;
-  fl?: { nt: [string, number][] };
+  fl?: { t?: [string, string][]; kiz?: string[]; fkiz?: number[] };
   sh?: string;
 }
 
@@ -113,9 +113,14 @@ function compactEncode(k: Karakter): CompactKarakter {
   // pajzs
   if (k.pajzs.méret) c.pj = k.pajzs.méret;
 
-  // felszerelés
-  if (k.felszerelés.nagy_tárgyak.length) {
-    c.fl = { nt: k.felszerelés.nagy_tárgyak.map(t => [t.név, t.MGT]) };
+  // felszerelés (tárgyak méret-tömb + pajzs/páncél kizárás + "felszerelésben=false" fegyver-indexek)
+  {
+    const fl: { t?: [string, string][]; kiz?: string[]; fkiz?: number[] } = {};
+    if (k.felszerelés.tárgyak.length) fl.t = k.felszerelés.tárgyak.map(t => [t.név, t.méret]);
+    if (k.felszerelés.kizárt_auto.length) fl.kiz = k.felszerelés.kizárt_auto;
+    const fkiz = k.fegyverek.map((f, i) => (f.felszerelésben === false ? i : -1)).filter(i => i >= 0);
+    if (fkiz.length) fl.fkiz = fkiz;
+    if (fl.t || fl.kiz || fl.fkiz) c.fl = fl;
   }
 
   // előtörténet (csak származás_helye)
@@ -142,11 +147,13 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     return entry;
   });
 
-  const fegyverek: FegyverPeldany[] = c.fg.map(f => ({
+  const fegyverKizártSet = new Set(c.fl?.fkiz ?? []);
+  const fegyverek: FegyverPeldany[] = c.fg.map((f, i) => ({
     alap: f[0] as string,
     név: (f[1] as string) ?? '',
     anyag: (f[2] as string) ?? 'acél',
     idea: (f[3] as number) ?? 0,
+    felszerelésben: !fegyverKizártSet.has(i),
   }));
 
   const hátterek = {
@@ -189,7 +196,10 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     távfegyverek: c.tf.map(t => Array.isArray(t) ? { alap: t[0], idea: t[1] } : { alap: t, idea: 0 }),
     páncél,
     pajzs: { méret: c.pj || '' },
-    felszerelés: { nagy_tárgyak: c.fl?.nt?.map(([név, MGT]) => ({ név, MGT })) || [] },
+    felszerelés: {
+      tárgyak: c.fl?.t?.map(([név, méret]) => ({ név, méret: méret as 'kicsi' | 'közepes' | 'nagy' })) || [],
+      kizárt_auto: (c.fl?.kiz as ('pajzs' | 'páncél')[] | undefined) || [],
+    },
     előtörténet: { ...DEFAULT_ELOTORTENET, ...(c.sh ? { származás_helye: c.sh } : {}) },
   };
 }

@@ -408,7 +408,8 @@
       "alap": "Meneth",
       "név": "",
       "anyag": "abbitacél",
-      "idea": 0
+      "idea": 0,
+      "felszerelésben": true
     }
   ],
   "távfegyverek": [
@@ -431,7 +432,8 @@
     "méret": ""
   },
   "felszerelés": {
-    "nagy_tárgyak": []
+    "tárgyak": [],
+    "kizárt_auto": []
   },
   "jegyzetek": "",
   "napló": [],

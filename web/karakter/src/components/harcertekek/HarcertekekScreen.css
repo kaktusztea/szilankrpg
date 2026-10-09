@@ -75,6 +75,7 @@
 .he-field-fortely { border-color: var(--color-fortely); }
 .he-field-indicator { cursor: default; opacity: 0.7; }
 .he-field-disabled { opacity: 0.4; pointer-events: none; }
+.he-field-off { opacity: 0.55; text-decoration: line-through; }
 
 /* --- Add select --- */
 .he-add-select {

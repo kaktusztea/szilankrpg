@@ -555,12 +555,17 @@ Ha a keret negatívba csúszik:
 ```
 
 note:
-  Szabálykönyv: md/010_03_06_felszereles.md. STÁTUSZ: implementáció TODO (§33.1) -
-  később kerül be, a próba-EH ágba (NEM a harckeretbe). A korábbi `felszerelés_mgt` →
-  harckeret reactive út KIVEZETVE (más mechanika volt: a felszerelés most a
-  próbadobásokat érinti, nem a harckeretet; a régi utat NEM kell visszatenni).
-  Addig KM-mérlegeléses. A hosszútávú viselet akadályát külön az Akadály fejezet
-  írja le (md/010_03_07_akadaly.md).
+  Szabálykönyv: md/010_03_06_felszereles.md. STÁTUSZ: IMPLEMENTÁLVA (2026-10).
+  Pure logika: `engine/felszereles.ts` (`felszerelésMax`, `felszerelésTerhelés`,
+  `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság`), konstans:
+  `konstansok.yaml` → `felszerelés` (méret/súly/forgatás/pajzs/páncél pont-táblák,
+  `páncél_fedés_min`, `hátrány_sáv`, `hátrány_tulajdonságok`). A fegyver pontja
+  VAGY-VAGY: `max(hossz_pont, súly_pont)`. A hatás a próba-EH ágba megy (§33.1), NEM a
+  harckeretbe - a régi `felszerelés_mgt` → harckeret reactive út KIVEZETVE.
+  Fegyverenkénti „számít-e": `FegyverPeldany.felszerelésben` flag (Harcértékek fül chip);
+  pajzs/páncél: `felszerelés.kizárt_auto`. UI: Felszerelés accordion (Verziók/Napló
+  overlay). A hosszútávú viselet akadályát külön az Akadály fejezet írja le
+  (md/010_03_07_akadaly.md).
 
 ---
 
@@ -2749,38 +2754,41 @@ UI (AktivScreen):
   - Státusz picker: "Sérült (auto)" névvel jelenik meg, szürkítve, nem kattintható
 ```
 
-### §33.1 TODO - Felszerelés → Fizikai próba Hátrány
+### §33.1 Felszerelés → Fizikai próba Hátrány
 
 ```
-STÁTUSZ: TERV (nem implementált). Később kerül be. Backlog: DEVSTATE.md "Felszerelés → próba-Hátrány".
+STÁTUSZ: IMPLEMENTÁLVA (2026-10). Pure: engine/felszereles.ts; konstans: konstansok.yaml `felszerelés`.
 
-Háttér (2026-10 szabály-összevonás):
-  A `Páncél akadályoztatása` és `Fegyver/Pajzs akadályoztatása` státuszok MEGSZŰNTEK.
-  Az új, egységes modell NEM a páncél MGT-ből, hanem a Felszerelés keretből számol,
-  és a hatás a PRÓBÁKRA megy (NEM a harckeretre). A régi `felszerelés_mgt`→harckeret
-  reactive út ezért kivezetve (lásd §15, refactorlog/2026-10-09.md); azt NEM kell
-  visszatenni - más mechanika.
+Háttér: a `Páncél akadályoztatása` / `Fegyver/Pajzs akadályoztatása` státuszok MEGSZŰNTEK.
+  Az egységes modell a Felszerelés keretből számol, a hatás a PRÓBÁKRA megy (NEM harckeret).
+  A régi `felszerelés_mgt`→harckeret reactive út kivezetve (§15, refactorlog/2026-10-09.md).
 
-Új szabály (md/010_03_06_felszereles.md - KM-mérlegeléses, a sávok default-ok):
-  Felszerelés keret = 2 + Erő
-  terhelés = cipelt közepes (-1) / nagy (-2) tárgyak + Közepes/Nagy pajzs
-             + Másfélkezes/Kétkezes (vagy nehéz/súlyos) fegyver
-  maradék = keret - terhelés
-    maradék >= 0  → nincs hatás
-    maradék == -1 → Hátrány-1 a Fizikai Tulajdonság-/Képzettségpróbákra
-    maradék == -2 → Hátrány-2
-    maradék <  -2 → nem tud harcolni, a próbadobások automatikus kudarcok
+Számítás (md/010_03_06_felszereles.md):
+  keret     = 2 + Erő                                         [felszerelésMax]
+  terhelés  = Σ (a "számító" források pontja)                 [felszerelésTerhelés]
+    fegyver: max(hossz_pont, súly_pont), ha felszerelésben=true
+    pajzs:   méret→pont, ha nincs kizárt_auto-ban
+    páncél:  struktúra (hajlékony:1/merev:2), ha aktív és lefedettség ≥ páncél_fedés_min, nincs kizárva
+    kézi:    tárgy méret→pont
+  túllépés  = terhelés - keret                                [felszerelésHátrány]
+    ≤0 → nincs; 1 → Hátrány-1; 2 → Hátrány-2; >2 → auto kudarc + nem harcol
 
-Javasolt implementáció (amikor sorra kerül):
-  - Terhelés-bevitel: a karakter cipelt tárgyai + a kézben tartott fegyver/pajzs
-    súly/méret-kategóriájából származtatva (NEM kézi szám - a fegyver/pajzs már
-    ismert a karakterből). Új input kell: egyéb cipelt közepes/nagy tárgyak száma.
-  - A hatás a PRÓBA-EH ágba megy: `statusz-proba.ts` (`calcStátuszPróbaEH` mellé egy
-    felszerelés-forrás, `fizikai_próba` célra) + a Tulajdonságpróba EH-ja. NEM a
-    reactive `fegyver_harckeret`-be.
-  - Sávhatárok data layerbe (konstansok.yaml), ne hardcode. KM felülírhatja.
-  - A hosszútávú viselet Akadály-fejezete (md/010_03_07) külön, szintén KM-mérlegeléses
-    (nap/táv), nem próba-EH - azt ez a TODO NEM fedi.
+Integráció:
+  - Képzettségpróba (fizikai csoport): KepzettsegProbaPopup EH-jába (`felszEH` prop,
+    a KepzettsegCsoport `csoport === 'fizikai'` ágán). nemHarcol → tiltott (auto kudarc).
+  - Tulajdonságpróba: TulajdonsagProbaPopup `ehSzint` kezdőérték (`felszEH`), a Fizikai
+    tulajdonságoknál (`konstansok.felszerelés.hátrány_tulajdonságok`:
+    erő/edzettség/ügyesség/gyorsaság/érzékenység). A KM a pickerrel felülírhatja.
+  - KM-mérlegeléses: a jelzés figyelmeztet (warning + alap-EH), nem blokkol harci akciót.
+
+Adatmodell:
+  - FegyverPeldany.felszerelésben (bool) - Harcértékek fül „Felszerelésben" chip (5b),
+    a Harc fül fegyverválasztóiban kiszürkül ha false; aktív fegyver → Puszta kéz fallback
+    (useFegyverInvalidation).
+  - felszerelés.tárgyak[] (kézi), felszerelés.kizárt_auto ("pajzs"/"páncél").
+  - UI: FelszerelesSection accordion (Verziók/Napló/Jegyzetek overlay legfelső eleme).
+
+A hosszútávú viselet Akadály-fejezete (md/010_03_07) külön, KM-mérlegeléses, nem próba-EH.
 ```
 
 ---
