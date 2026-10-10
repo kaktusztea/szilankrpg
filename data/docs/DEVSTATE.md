@@ -66,6 +66,86 @@ TODO:
 
 ---
 
+## Manőver helyzetfüggő módosítók: Nehézség → Dobásmódosító 🚧 (terv)
+
+**Cél**: a manőverenkénti `helyzetfüggő_módosítók` jelenleg a Nehézséget (Célszám) módosítják. Váljanak **dobás-oldali módosító pontokká** (mint a Képzettségpróba helyzetfüggő módosítói: a dobó-oldali értékhez adódnak, `+` könnyít / `-` nehezít), hogy a két rendszer előjel-konvenciója és fogalomhasználata egységes legyen. Mechanikailag ekvivalens (ugyanaz könnyít/nehezít ugyanannyival), csak az előjel és a megjelenítés egységesül.
+
+**Jelenlegi vs cél mechanika (Ellenpróba, E fázis):**
+- Most: `dobás (MA + MP + belharc) + k10 ≥ Nehézség + szitMod` (szitMod a célszám-oldalon; `+` nehezít)
+- Cél: `dobás (MA + MP + belharc + szitMod) + k10 ≥ Nehézség` (szitMod a dobó-oldalon; `+` könnyít)
+
+### Eldöntött döntések
+- **Előjelfordítás**: minden konvertált érték `× -1`, KIVÉVE a `99` sentinel.
+- **`99` sentinel**: marad `99` (nem előjelezzük); jelentése „nem alkalmas → a Manőver nem kísérelhető meg". ⚠️ KRITIKUS a kódban: a `calcSzitModÖsszeg` jelenleg VAKON összead (`sum + sor.érték`), így a `99` ma `+99` a CÉLSZÁM-oldalon = gyakorlatilag lehetetlen (helyes). A konverzió után a szitMod a DOBÓ-oldalra kerül → ha a `99`-et vakon odaadnánk, az `+99` dobásbónusz = BIZTOS SIKER lenne (az ellenkezője!). Ezért a feldolgozásnak a `99`-et KI kell venni az összegből és külön „lehetetlen / nem dobható" ágat adni (az `erősHiány` auto-kudarc mintájára). Ez a próba-rendszer `probaLehetetlen` szemléletével konzisztens.
+- **md-forma**: (A) teljes 3-szintű bullet, HEADER NÉLKÜL (nem `####` tördelés):
+  ```
+  - Helyzetfüggő módosítók:
+      - <kategória>:
+          - `+N`: leírás
+  ```
+  A `- Helyzetfüggő módosítók:` fő-bullet a Nehézség alól KIEMELVE külön ágba. A `<kategória>` = yaml `kategória` érték. A sorok = yaml `sorok` (dobás-oldali előjellel). Egységes a Képzettség-md mintával (referencia: `kepzettsegek.szekunder/szerencsejatek.md` → `### Helyzetfüggő módosítók`; itt bullet-formában).
+- **„(Nehézség: X)" zárójeles abszolút-utalások** átírva/törölve (fix Nehézség + dobásmódosító ekvivalens, pl. Lefegyverzés [Cél] `-5 (Nehézség: 5)` → `+5` dobásmódosító).
+- **KM `[-5;+5]` globális** (066_04 Célszám-tábla): célszám-oldali MARAD (a KM nehézség-hangolása). Csak a manőver-specifikus `helyzetfüggő_módosítók` + az ún. „KM körülmény" al-kategóriák (Alakzatban, Belharc körülmények, Ellenfél mérete) konvertálódnak dobás-oldalra.
+
+### Érintett fájlok
+1. `md/066_05_altalanos_manoverek.md` - 13 manőver: Átsiklás, Áttörés, Fegyvertörés, Földrevitel, Lábkirántás szálfegyverrel (csak `extra_ref` - a sorai az extrából jönnek, l. 6.), Lefegyverzés, Leütés hátulról, Mesterjel, Mögékerülés, Pajzzsal felöklelés, Precíz támadás, Távoltartás, Terelés.
+2. `md/066_06_belharcos_manoverek.md` - 11 belharcos manőver. ⚠️ A md itt MÁS szerkezetű, mint a 066_05: a „Belharc körülmények" `[-3;+3]` tábla a fájl ELEJÉN, EGYSZER, GLOBÁLISAN szerepel (nem manőverenként) → ott kell `∓3`-ra fordítani (+ a 41. sor már most „Ellenpróba bónusz" nyelvezetű, részben célállapot). A manőver-adatlapokon csak a manőver-SPECIFIKUS eltérések vannak: Belharcba kerülés [Ellenfél pajzsa `+2/+4/+6` / helyzete `-4`], Leforgatás [Ellenfél helyzete `-4`]. (A data layer viszont minden belharcos manővernél KÜLÖN tárolja a `-3/+3` táblát - mind a 11 yaml-sort fordítani kell.)
+3. `md/066_04_manover_vegbevitele.md` - mechanika-szöveg: a manőver „Helyzetfüggő módosítók" a Dobás extra módosítói közé tartoznak (nem a Célszámba). A képlet (55-67. sor) változatlan; a Dobás-tábla (69. sor) már most dobás-oldali (Testméret/Páncél `[-2;+2]`) - ez megerősíti az irányt.
+4. `md/066_03_manover_szabalyok.md` - 52. sor Nehézség-definíció pontosítása (a manőver-módosítók nem a Nehézséget állítják).
+5. `data/sources/manoverek.yaml` - 24 manőver `helyzetfüggő_módosítók` értékeinek előjelfordítása + `99` sentinel + „(Nehézség: X)" leírás-átírás. (Ebből 2 vegyes/extra_ref: Lábkirántás szálfegyverrel = CSAK extra_ref; Precíz támadás = extra_ref + saját sorok.)
+6. `data/sources/fegyverek/extrak.yaml` - 5 `manőver_ellenpróba` `flat` érték előjelfordítása: `fanyel_fegyvertores_konnyebb` (-2→+2), `pontos` (-2→+2, extra_ref: Precíz támadás), `lefegyverezhetobb` (-2/-2→+2/+2), `lefegyverzese_nehezebb` (+2→-2), `kampos_veggel_labkirantas` (-2→+2, extra_ref: Lábkirántás). A `letilt` mód (`fegyvertores_immunis`) NEM érték-alapú → változatlan.
+7. Kód (külön lépés): `components/aktiv/manover-dobas-calc.ts` + `ManoverDobasPopup.tsx` - a `szitModÖsszeg` a dobó-oldalra (`dobásÉrték + szitMod`), a célszám fix `nehézség`; a `99` sentinel külön „lehetetlen / nem dobható" ág. Tesztek frissítése. **Ellenpróba (E) fázis illesztése** (`renderEllenpróba`, aktív ág, `manover-ep-vs-row`): (a) a bal oldali `dobásÉrték` képletbe bekerül a `+ szitModÖsszeg`; (b) a jobb oldali `célszám` képletből KIKERÜL a `szitModÖsszeg` → `célszám = manőver.nehézség`; (c) a `manover-szit-sum` chip szín-logikája (`manover-szit-neg`/`-pos`) MEGFORDUL (pozitív összeg = könnyít = pozitív/zöld jelzés, mint a Képzettségpróbánál). A passzív ág (`célszámAlap`) és a `szitFeltételTeljesül` auto-match változatlan (passzív módban nincs szitMod).
+8. Spec: `engine_spec.md §21` + `gui_spec.md` manőver-szekció.
+
+**NEM érintett**: `md/066_07_lovas_manoverek.md` (nincs helyzetfüggő módosító, sem md-ben, sem data-ban). Nehézség-DEFINÍCIÓS sorok (Csonkolás `8/10` kéz/láb, Tömegoszlató túlerő `8/6/4`, Precíz támadás célpont `1-9/8/10/12`) - ezek a Nehézséget definiálják, NEM módosítók → maradnak.
+
+### Teljes konvertálandó lista (data layer, régi → új)
+- Átsiklás [Körülmény] `-2/+2` → `+2/-2`
+- Áttörés [Erő különbség] `-2/+2` → `+2/-2`; [Pajzsos ellenfél] `+1/+2` → `-1/-2`
+- Fegyvertörés [Ellenfél fegyvere] `-4` → `+4`; [Saját fegyver] `-2/+2` → `+2/-2`, `99` → `99`
+- Földrevitel [Erő különbség] `-2/+2` → `+2/-2`
+- Lábkirántás szálfegyverrel [Fegyver] `extra_ref: kampos_veggel_labkirantas` → az érték az extrából (`-2 → +2`, l. 6.); nincs saját érték-sor
+- Lefegyverzés [Saját fegyver] `-2/+2` → `+2/-2`, `99` → `99`; [Cél] `-5` → `+5`
+- Leütés hátulról [Célpont] `0/+3` → `0/-3`
+- Mesterjel [Jel bonyolultsága] `0/+1/+2` → `0/-1/-2`
+- Mögékerülés [Túlerő] `0/-2/-4` → `0/+2/+4`
+- Pajzzsal felöklelés [Erő különbség] `-2/+2` → `+2/-2`; [Ellenfél Pajzshasználata] `+2/+4/+6` → `-2/-4/-6`
+- Precíz támadás [Fegyver] `0/+2` → `0/-2` (+ extra_ref `pontos`); [Taktika] Roham `+2` → `-2`
+- Távoltartás [Harci alakzat] `-3/-2/-1` → `+3/+2/+1`; [Ismétlés] `+2` → `-2`
+- Terelés [Harci alakzat] `-3/-2/-1` → `+3/+2/+1`; [Ellenfél mérete] `+1/+2/+4` → `-1/-2/-4`
+- Belharcos ×11 [Belharc körülmények (KM)] `-3/+3` → `+3/-3`: Átdobás, Belharcba kerülés, Belharcból kibontakozás, Feszítés/Leszorítás, Feszítésből kijövetel, Gáncsolás, Kéztörés, Lábtörés, Lefejelés, Leforgatás/Irányítás, Nyaktörés
+- Belharcba kerülés [Ellenfél pajzsa] `+2/+4/+6` → `-2/-4/-6`; [Ellenfél helyzete] `-4` → `+4`
+- Leforgatás/Irányítás [Ellenfél helyzete] `-4` → `+4`
+
+### Végrehajtási sorrend
+1. md (`066_05`, `066_06`, `066_04`, `066_03`) - a szabálykönyv a kanonikus forrás.
+2. data (`manoverek.yaml`, `extrak.yaml`) + regenerálás: `python3 data/generate_tables.py --force` + `python3 data/gen/naming_lint.py`.
+3. kód (`manover-dobas-calc.ts` + `ManoverDobasPopup.tsx`) + tesztek.
+4. spec (`engine_spec §21`, `gui_spec` manőver) + link-audit (`grep -r` a módosított anchorökre).
+5. `npm run build` zöld + `refactorlog/ÉÉÉÉ-HH-NN.md` bejegyzés.
+
+### Konkrét példa (Lefegyverzés) - előtte / utána
+Előtte (md):
+```
+- Nehézség: `10`
+    - `-2`: fegyvered kimondottan alkalmas ...
+    - `+2`: fegyvered nem kimondottan alkalmas ...
+    - `+99`: a használt fegyver nem alkalmas lefegyverzésre. KM dönt.
+```
+Utána (md):
+```
+- Nehézség: `10`
+- Helyzetfüggő módosítók:
+    - Saját fegyver alkalmassága:
+        - `+2`: Kimondottan alkalmas lefegyverzésre
+        - `-2`: Nem kimondottan alkalmas
+        - `99`: Nem alkalmas → a Manőver nem kísérelhető meg (KM)
+    - Cél:
+        - `+5`: Lánccsapdában foglyul ejtett fegyver
+```
+
+---
+
 ## Felszerelés funkció ✅ (kész, 2026-10)
 
 Forrás: `md/010_03_06_felszereles.md`. Engine spec: §15 / §33.1 (IMPLEMENTÁLVA). Pure: `engine/felszereles.ts` (+ `felszereles.test.ts`). UI: `FelszerelesSection.tsx` (Verziók/Napló overlay) + Harcértékek fül „Felszerelésben" chip + Harc fül fegyver-kiszürkítés (`useFegyverInvalidation`). A régi `felszerelés_mgt`→harckeret út KIVEZETVE (más mechanika, l. refactorlog/2026-10-09.md) - NEM visszateendő. Az alábbi lépés-leírás a megvalósított terv (referencia).
