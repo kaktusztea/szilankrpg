@@ -1112,7 +1112,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 | Támadás erőből 📶 | TÉ:-1..-3, SP:+1..+3 (alap max 3) | Kiváró, Plusz tám, 1 tám | más |
 | Támadó 📶 | TÉ:+1..+3, VÉ:-2..-6 (alap max 3) | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
 | Védő 📶 | VÉ:+1..+3, TÉ:-2..-6 (alap max 3) | Érintő, 1 tám | más |
-| Teljes Védekezés | VÉ:+8, nem támad, hátrál | - | más |
+| Teljes Védekezés | VÉ:+8, nem támad/varázsol, hátrál; saját VÉcsökk: 0; ellene fix 1+k20P (+Fárasztó bónusz) | - | más |
 | Visszafogott | TÉ:-10, Hátrány-2 sebzésdobás | Kezdeményező, Kiváró, 1 tám, Tettetés | más |
 | Tettetés | - (informatív) | Kiváró, Visszafogott | más |
 
@@ -1121,6 +1121,10 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
       A "Támadás erőből" fortély megszűnt - a skálázható rendszer váltja ki.
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
       Fárasztás: nem támadás, nem kombinálható mással.
+      Teljes Védekezés (md/065_02): a karakter maga NEM okoz VÉ-csökkentést (saját VÉcsökk: 0). Az ellene irányuló
+        VÉ-csökkentés fix `1 + k20P` (NEM a fegyverviszony-tábla k20P/1+k20P/2+k20P), kiegészülve a Fárasztó taktika
+        bónuszával. A lények méretkülönbség-módosítója továbbra is hozzáadódik/levonódik. (A webapp a data `megjegyzés`-ében
+        hordozza + a TÉ-chip info popup jelzi; a saját-VÉcsökk tiltás és az 1+k20P nem kalkulált, informatív.)
       Körönként maximum 1 manőver alkalmazható.
       Visszafogott: nem-skálázható taktika. A `-10 TÉ` a `módosítók.TÉ`-ben, a Hátrány-2 sebzésdobás strukturált
       `hatások` listában (`hatás: hátrány, cél: sebzésdobás`). Nem-fokozatos taktika is hordozhat strukturált
