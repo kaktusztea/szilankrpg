@@ -436,12 +436,13 @@
         "cél": "té_dobás"
       },
       {
-        "operátor": "előny",
+        "operátor": "flat",
         "érték": 1,
-        "cél": "vé_csökkentés"
+        "cél": "vé_csökkentés",
+        "megjegyzés": "VÉ csökkentés: +1 bónusz"
       },
       {
-        "operátor": "előny",
+        "operátor": "flat",
         "érték": 5,
         "cél": "vé"
       }
@@ -479,12 +480,13 @@
         "cél": "té_dobás"
       },
       {
-        "operátor": "előny",
+        "operátor": "flat",
         "érték": 2,
-        "cél": "vé_csökkentés"
+        "cél": "vé_csökkentés",
+        "megjegyzés": "VÉ csökkentés: +2 bónusz"
       },
       {
-        "operátor": "előny",
+        "operátor": "flat",
         "érték": 10,
         "cél": "vé"
       }
@@ -614,9 +616,10 @@
         "cél": "té_dobás"
       },
       {
-        "operátor": "előny",
+        "operátor": "flat",
         "érték": 2,
-        "cél": "vé_csökkentés"
+        "cél": "vé_csökkentés",
+        "megjegyzés": "VÉ csökkentés: +2"
       }
     ],
     "id": "meglepetés",

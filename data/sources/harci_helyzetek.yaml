@@ -224,10 +224,11 @@ harci_helyzetek:
   - operátor: "előny"
     érték: 1
     cél: "té_dobás"
-  - operátor: "előny"
+  - operátor: "flat"
     érték: 1
     cél: "vé_csökkentés"
-  - operátor: "előny"
+    megjegyzés: "VÉ csökkentés: +1 bónusz"
+  - operátor: "flat"
     érték: 5
     cél: "vé"
   id: "láthatatlan_részlegesen"
@@ -246,10 +247,11 @@ harci_helyzetek:
   - operátor: "előny"
     érték: 2
     cél: "té_dobás"
-  - operátor: "előny"
+  - operátor: "flat"
     érték: 2
     cél: "vé_csökkentés"
-  - operátor: "előny"
+    megjegyzés: "VÉ csökkentés: +2 bónusz"
+  - operátor: "flat"
     érték: 10
     cél: "vé"
   id: "láthatatlan_teljesen"
@@ -309,9 +311,10 @@ harci_helyzetek:
   - operátor: "előny"
     érték: 1
     cél: "té_dobás"
-  - operátor: "előny"
+  - operátor: "flat"
     érték: 2
     cél: "vé_csökkentés"
+    megjegyzés: "VÉ csökkentés: +2"
   id: "meglepetés"
   csoport: "pozitív"
   rejtett: false
