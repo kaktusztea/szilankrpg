@@ -108,12 +108,12 @@ TODO:
 - Lefegyverzés [Saját fegyver] `-2/+2` → `+2/-2`, `99` → `99`; [Cél] `-5` → `+5`
 - Leütés hátulról [Célpont] `0/+3` → `0/-3`
 - Mesterjel [Jel bonyolultsága] `0/+1/+2` → `0/-1/-2`
-- Mögékerülés [Túlerő] `0/-2/-4` → `0/+2/+4`
+- Mögékerülés [Túlerő→„Túlerőben vagytok"] `0/-2/-4` → `0/+2/+4` (⚠️ a md-ben a kategória neve „Túlerőben vagytok"-ra pontosítva - a yaml `kategória` mezőt is erre kell állítani a tükrözéshez)
 - Pajzzsal felöklelés [Erő különbség] `-2/+2` → `+2/-2`; [Ellenfél Pajzshasználata] `+2/+4/+6` → `-2/-4/-6`
 - Precíz támadás [Fegyver] `0/+2` → `0/-2` (+ extra_ref `pontos`); [Taktika] Roham `+2` → `-2`
 - Távoltartás [Harci alakzat] `-3/-2/-1` → `+3/+2/+1`; [Ismétlés] `+2` → `-2`
 - Terelés [Harci alakzat] `-3/-2/-1` → `+3/+2/+1`; [Ellenfél mérete] `+1/+2/+4` → `-1/-2/-4`
-- Belharcos ×11 [Belharc körülmények (KM)] `-3/+3` → `+3/-3`: Átdobás, Belharcba kerülés, Belharcból kibontakozás, Feszítés/Leszorítás, Feszítésből kijövetel, Gáncsolás, Kéztörés, Lábtörés, Lefejelés, Leforgatás/Irányítás, Nyaktörés
+- Belharcos ×11 [Belharc körülmények (KM)] `-3/+3` → **`+6/-6`** (⚠️ a md-ben a felhasználó NEM csak előjelet fordított, hanem a hatást MEGDUPLÁZTA balansz-okból `±3`→`±6`; a yaml-ban mind a 11 manővernél az ÉRTÉKET is `±6`-ra kell állítani, nem csak az előjelet): Átdobás, Belharcba kerülés, Belharcból kibontakozás, Feszítés/Leszorítás, Feszítésből kijövetel, Gáncsolás, Kéztörés, Lábtörés, Lefejelés, Leforgatás/Irányítás, Nyaktörés. (A md-ből a külön „Lények méret különbsége" `+3/kategória` blokk TÖRÖLVE, beolvadt a KM-módosítóba.)
 - Belharcba kerülés [Ellenfél pajzsa] `+2/+4/+6` → `-2/-4/-6`; [Ellenfél helyzete] `-4` → `+4`
 - Leforgatás/Irányítás [Ellenfél helyzete] `-4` → `+4`
 
