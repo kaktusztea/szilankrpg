@@ -26,23 +26,14 @@
 ```
 +2 / Belharc fortély foka
   Támadó és Védekező számára
-
-[-3; +3]
-  Testméret, páncél és Erő különbség
-  KM adhat szubjektív módosítót az
-  említett körülmények összegzett értékére
 ```
 
-## [Lények méret különbsége](065_03_03_negativ_helyzetek.md#lények-méret-különbsége)
+- Helyzetfüggő módosítók:
+    - Belharc körülmények (KM):
+        - `+6`: Testméret / páncél / Erő előny
+        - `-6`: Testméret / páncél / Erő hátrány
 
-Amennyiben a lények között akár csak `1` kategória méret különbség is van, akkor ha...
-
-- Támadó kisebb: belharcos manővere automatikusan sikertelen (🟥 Erős: nem is dobható)
-- Támadó nagyobb: `+3` Ellenpróba bónusz / méret kategória
-
-⚡ Példa
-- goblin vs ember (kicsi, normál)
-- ember vs Ogár
+A "**Belharc körülmények**" nevű Helyzetfüggő módosító az **Ellenpróba** dobásához adódik hozzá és mindegyik belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 adottságának ismeretében.
 
 <br />
 
@@ -52,12 +43,16 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 Átjutva a nagyobb fegyverek fenyegetésén testközelbe lavírozod magad.
 
-- Nehézség: `9` (ellenfél háttal áll: `5`)
-  - Ellenfélnél kis pajzs: `+2`
-  - Ellenfélnél közepes pajzs: `+4`
-  - Ellenfélnél nagy pajzs: `+6`
+- Nehézség: `9`
 - Fázisok: `Megakasztás, Ellenpróba`
 - 🟥 Erős követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
+- Helyzetfüggő módosítók:
+    - Ellenfél helyzete:
+        - `+4`: Ellenfél háttal áll
+    - Ellenfél pajzsa:
+        - `-2`: Kis pajzs
+        - `-4`: Közepes pajzs
+        - `-6`: Nagy pajzs
 
 **Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci helyzetnél](065_03_02_semleges_helyzetek.md#belharci-helyzet)** leírt módosítók érvényesülnek.
 
@@ -172,8 +167,11 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_0
 ---
 ### Leforgatás/Irányítás
 
-- Nehézség: `10` (Lefeszített ellenfélnél:`6`)
+- Nehézség: `10`
 - Fázisok: `Végrehajtás, Ellenpróba`
+- Helyzetfüggő módosítók:
+    - Ellenfél helyzete:
+        - `+4`: Lefeszített ellenfél
 
 **Hatás**:
 - Képes vagy ellenfeledet a számodra kedvező irányba forgatni/terelni miközben összeakaszkodtok.
