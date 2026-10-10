@@ -40,7 +40,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["ellenfél_beszorított_hosszú_fegyverrel"]
 - név: "Beszorított ellenfél - hosszú fegyverrel"
   infó: "Előny+2 TÉ dobásra."
   megjegyzések:
@@ -54,7 +54,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["ellenfél_beszorított"]
 - név: "Csúszós talaj"
   infó: "Hátrány-1 Támadó dobásra."
   megjegyzések:

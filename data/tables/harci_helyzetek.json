@@ -83,7 +83,9 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "ellenfél_beszorított_hosszú_fegyverrel"
+    ],
     "feltétel_kulcs": "harci_helyzet:ellenfél_beszorított"
   },
   {
@@ -108,7 +110,9 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "ellenfél_beszorított"
+    ],
     "feltétel_kulcs": "harci_helyzet:ellenfél_beszorított_hosszú_fegyverrel"
   },
   {

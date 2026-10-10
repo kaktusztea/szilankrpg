@@ -8,6 +8,8 @@ Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul 
 Előny+1 TÉ dobásra
 ```
 
+❌ Kizárja: Beszorított ellenfél - hosszú fegyverrel
+
 <br />
 
 ---
@@ -18,6 +20,8 @@ Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz 
 ```
 Előny+2 TÉ dobásra
 ```
+
+❌ Kizárja: Beszorított ellenfél
 
 <br />
 
