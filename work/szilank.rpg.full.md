@@ -200,6 +200,7 @@ https://github.com/kaktusztea/szilankrpg/
   - [Személyiségek](010_03_04_szemelyisegek.md)
   - [Külső](010_03_05_kulso.md)
   - [Felszerelés](010_03_06_felszereles.md)
+  - [Akadály](010_03_07_akadaly.md)
 - [Tapasztalati Szint](010_04_tsz_szintlepes.md)
 - [Tulajdonságok](010_05_00_tulajdonsagok.md)
   - [Tulajdonságok listája](010_05_01_00_tulajdonsagok_listaja.md)
@@ -385,7 +386,7 @@ https://github.com/kaktusztea/szilankrpg/
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Páncél MGT, Akadály](069_03_pancel_MGT.md)
+- [MGT](069_03_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
@@ -1038,6 +1039,7 @@ Eljött az ideje, hogy karaktert alkossunk.
   - [Személyiségek](010_03_04_szemelyisegek.md)
   - [Külső](010_03_05_kulso.md)
   - [Felszerelés](010_03_06_felszereles.md)
+  - [Akadály](010_03_07_akadaly.md)
 - [Tapasztalati Szint](010_04_tsz_szintlepes.md)
 - [Tulajdonságok](010_05_00_tulajdonsagok.md)
   - [Tulajdonságok listája](010_05_01_00_tulajdonsagok_listaja.md)
@@ -1262,6 +1264,7 @@ A webapp funkciót bővebben [lásd itt](../web/karakter/README.md).
 - [Személyiségek](010_03_04_szemelyisegek.md)
 - [Külső](010_03_05_kulso.md)
 - [Felszerelés](010_03_06_felszereles.md)
+- [Akadály](010_03_07_akadaly.md)
 
 ---
 
@@ -1383,42 +1386,81 @@ Különböző fajokat a [Faj Hátterek](021_faj_hatterek.md) szekcióban válasz
 ---
 ## File: md/010_03_06_felszereles.md
 
-## Felszerelés, Felszerelés MGT
+## Felszerelés
 
 ```
-Felszerelés keret:
+Felszerelés keret
   2 + Erő
 
-Közepes tárgy: 1 pont
-Nagy tárgy: 2 pont
+-1 pont
+  • Tárgy: közepes (20m kötél)
+  • Fegyver: Másfélkezes VAGY súly:nehéz
+  • Pajzs: Közepes
+  • Páncél: Hajlékonyvért 50%+ fedésben
+-2 pont
+  • Tárgy: nagy
+  • Fegyver: Kétkezes VAGY súly:súlyos
+  • Pajzs: Nagy
+  • Páncél: Merevvért 50%+ fedésben
 ```
 
 Apró, vagy kis tárgyból ésszerű keretek között "bármennyi" lehet a karakternél - ezeket nem tartjuk számon.
 
-Hogy hány **közepes** és **nagy** tárgyat vagy képes hordozni anélkül, hogy súlyuk akadályozna, azt a **Felszerelés keret** határozza meg, ami `Erő` Tulajdonságod, melyhez `+2`-t adsz hozzá.
-
-Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az alábbiak szerint:
+A fenti Felszerelés keret értékéből vonnak le az egyes tárgyak `1` vagy `2` pontot. Ha a **Felszerelés keret** negatívba csúszik, az alábbi büntetések járnak:
 
 ```
--1 pont: közepes tárgy
-  → Hajlékonyvért 50%+ fedésben
-  → rövidkard, Közepes pajzs, 20m kötél ..
--2 pont: nagy tárgy
-  → Merevvért 50%+ fedésben (pikkely, lemez)
-  → alabárd, Nagy pajzs ..
+Fizikai Tulajdonságpróbákra
+Fizikai Képzettségpróbákra
+
+ -1: Hátrány-1 
+ -2: Hátrány-2
+
+-2 érték alatt nem tudsz harcolni, a
+próbadobások pedig automatikus kudarcok.
 ```
 
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `1 Felszerelés MGT` hatást okoz az alábbiak szerint:
+---
+🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)
+
+
+---
+---
+## File: md/010_03_07_akadaly.md
+
+## Akadály: hosszútávú viselet, barangolás
+
+Különbséget teszünk a [Felszerelés fejezetben](010_03_06_felszereles.md) leírt hatásoktól. Itt a hosszútávú viseletet, jellemzően erdőben, sűrűben való barangolást akadályozó jellemzőket próbáljuk megjeleníteni olyan tárgyak esetén, amelyek tartós viselete, cipelése hosszútávon problémát okoz - immár a csapatnak is.
+
+Például egy páncél viselete rövidtávon nem okoz problémát, de hosszútávú gyaloglás és viselet esetén már igen kimerítő és ez a csapat haladását is befolyásolhatja. Az ilyen felszerelés szállításához kíséret, fegyverhordozó, málhásállatok, szekér szükséges. A leírtak alacsony `MGT` értékkel kitűnő, magas minőségű vértekre is vonatkoznak!
+
+### `1.` Akadály: félvért, közepes pajzs tartós viselete, cipelése
+
+Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
 
 ```
-Túlcsorduló pont == 1 Felszerelés MGT
-
-1 Felszerelés MGT
-  → -1 TÉ
-  → -1 Harckeret
++ Státusz: Fizikai (1)
++ 1/2 távot tudsz megtenni naponta
+  Ez hátráltatja a csapatot.
 ```
 
-🔆 A viselt vértezet csak mint tárgy számít be a fenti felszerelések levonásai alá. A páncél MGT értékét külön használjuk.
+### `2.` Akadály: teljes vért, Nagy pajzs
+
+Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
+
+```
++ Státusz: Fizikai (2)
++ 1/4 távot tudsz megtenni naponta.
+  Ez hátráltatja a csapatot.
+```
+
+Magasabb szinteken előfordulhatnak mágikus könnyítések, mint kisebb tárgyakká alakuló varázsfegyverek, páncélok.
+
+### Akadály `2` érték felett
+
+Ilyen helyzetben a karakter nem képes tartósan haladni, legfeljebb pár `10-100` métert.
+
 
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
@@ -2287,11 +2329,11 @@ Természetesen a Tulajdonságpróba dobásokra is járhat **Előny**, vagy **Há
 <br />
 
 ---
-### MGT hatása fizikai Tulajdonságpróbára
+### Felszerelés hatása fizikai Tulajdonságpróbára
 
-Páncélod akadályozhat a fizikai **Tulajdonságpróbák** végrehajtásában.
+Túl sok cipelt tárgy  fizikai **Tulajdonságpróbák** végrehajtásában.
 
-Ezt a [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) **Státusz** írja le.
+Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 
 <br />
 
@@ -2800,7 +2842,7 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 ### [SFÉ](069_02_SFE.md)
 
-### [MGT](069_03_pancel_MGT.md)
+### [MGT](069_03_MGT.md)
 
 ---
 
@@ -4700,7 +4742,6 @@ Mikor a játékos megalkotja karakterét, amellyel Yn3v világán kalandozni fog
 - [Harci fortélyok kiterjesztéslistája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
 - [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md)
-
 
 ---
 
@@ -8846,9 +8887,9 @@ Játék előtt konzultálj a KM-eddel és sorold el, milyen kidolgozott archetí
 ```
 1 archetípus felszerelés
 
- = közepes felszerelés tárgy
+ = közepes felszerelés tárgy (-1)
    VAGY
- = nagy felszerelés tárgy
+ = nagy felszerelés tárgy (-2)
 ```
 
 ## Archetípus és kultúrkörök
@@ -11559,8 +11600,10 @@ Az egyes képzettségszintek `KP` igénye az alábbi táblázatban található:
 A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzónán (biztos tudás) kívüli mértékben is. Ilyenkor képzettségdobást teszünk.
 
 - [Próbadobás](#próbadobás)
+- [Képzettségpróba Célszámok](#képzettségpróba-célszámok)
 - [Tulajdonság választás (opcionális)](#tulajdonság-választás-opcionális)
-- [Páncél MGT hatása fizikai Képzettségpróbákra](#páncél-mgt-hatása-fizikai-képzettségpróbákra)
+- [Előny-Hátrány dobások](#előny-hátrány-dobások)
+- [Felszerelés hatása fizikai Képzettségpróbákra](#felszerelés-hatása-fizikai-képzettségpróbákra)
 - [Vállalás és Kritikus hiba](#vállalás-és-kritikus-hiba)
 - [Próba biztos tudásból](#próba-biztos-tudásból)
 - [Siker/Kudarc mértéke](#sikerkudarc-mértéke)
@@ -11571,8 +11614,6 @@ A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzón�
 - [Sérülés hatása képzettségpróbára](#sérülés-hatása-képzettségpróbára)
 - [Tulajdonság vs Képzettség ellenpróba](#tulajdonság-vs-képzettség-ellenpróba)
 - [Mentődobás](#mentődobás)
-- [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md)
-- [Csoportosan végezhető képzettségek listája](030_06_03_csoportosan_vegezheto_kepzettsegek.md)
 
 ---
 ## Próbadobás
@@ -11632,11 +11673,11 @@ A Tulajdonságpróbánál már említett [Státusz rendszer](080_hatasok_es_stat
 <br />
 
 ---
-## Páncél MGT hatása fizikai Képzettségpróbákra
+## Felszerelés hatása fizikai Képzettségpróbákra
 
-Páncélod akadályozhat a fizikai Képzettségpróbák végrehajtásában.
+Túl sok cipelt tárgy  fizikai **Képzettségpróbák** végrehajtásában.
 
-Ezt a [Páncél akadályoztatása](082_statuszok.md#️-páncél-akadályoztatása-1-mgt-️-mgt) Státusz írja le.
+Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 
 <br />
 
@@ -11906,7 +11947,7 @@ Szituáció: Tetves rontott Mászás képzettségpróbát vét a szikla feléné
   - független a képzettség dobás eredményétől
   - `1`: végzetes hiba
   - `2,3`: a bevetett `2` Erő pont mérséklése miatt ezeknél nincs végzetes hiba (amúgy lenne)
-  - 
+
 ---
 
 🔗 [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) →
@@ -12065,12 +12106,10 @@ Automatikus kudarc
 ### Fizikai képzettségpróba hátrányok
 
 `Hátrány-1`
-- Fegyver/Pajzs akadályoztatása (`1`)
-- Páncél akadályoztatása (`1`)
+- Felszerelés kéret aktuális értéke: `-1`
 
 `Hátrány-2`
-- Fegyver/Pajzs akadályoztatása (`2`)
-- Páncél akadályoztatása (`2`) .. ?
+- Felszerelés kéret aktuális értéke: `-2`
 - Rosszullét (`2`) Erős
 
 ---
@@ -15431,17 +15470,16 @@ Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különös
 
 ## 🟣 Merevvértviselet (3)
 
-A merevvértek helyes viselése is ismereteket igényel, különben csak csetlesz-botlasz bennük.
+A merevvértek helyes viselése is tanulást igényel, különben csak csetlesz-botlasz bennük.
 
 **Merevvértek**: Pikkely fémpáncél, Lemezvért
 
-Merevvért büntetés Hatásairól a [Páncél MGT](../069_03_pancel_MGT.md) oldalon olvashatsz.
+Merevvért büntetés Hatásairól az [MGT](../069_03_MGT.md) oldalon olvashatsz.
 
 ### Kapcsolódik
 
 - [Páncélok](../069_00_vertek_pancelok.md) fejezet
-- [Páncél MGT](../069_03_pancel_MGT.md) fejezet
-- [Páncél akadályoztatása](../082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) Státusz
+- [MGT](../069_03_MGT.md) fejezet
 
 ---
 ### Alapeset
@@ -15452,7 +15490,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 1. fok
 
-🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-5`
 
@@ -15460,7 +15498,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 2. fok
 
-🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-10`
 
@@ -15468,7 +15506,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 3. fok
 
-🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 **Hatás**:
 - Merevvérted `TÉ` büntetése ennyivel enyhül: `-15`
@@ -19822,7 +19860,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Páncél MGT, Akadály](069_03_pancel_MGT.md)
+- [MGT](069_03_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
@@ -20517,17 +20555,7 @@ A Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc Harcmodorok szi
 
 ## Mozgásgátló Tényező (MGT )
 
-Harc és mozgás során a páncélok, Pajzsok és a Felszerelés különböző mértékben korlátozhatják a karaktereket. Ennek szimulálására van a **Mozgásgátló Tényező** – röviden **MGT**.
-
-### Páncélok MGT értéke
-
-- Bővebben: [Harcrendszer: Páncél MGT](069_03_pancel_MGT.md)
-- Státusz: [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt)
-
-### Felszerelés, Pajzsok okozta MGT
-
-- Bővebben: [Felszerelés fejezetet](010_03_06_felszereles.md)
-- Státusz: [Fegyver / Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
+Harc és mozgás során a páncélok különböző mértékben korlátozhatják harcban a karaktereket. Ennek szimulálására van a [**Mozgásgátló Tényező**](069_03_MGT.md) – röviden **MGT**.
 
 ---
 
@@ -20718,7 +20746,7 @@ Néhány kivételnél ez kevesebb. Lásd a [Fegyver](068_00_fegyverek.md) tábl�
 Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
-  - Páncél MGT
+  - MGT (Páncél)
 ```
 
 Egy karakter plusz támadásainak száma attól függ, hogy mennyire képzett az adott fegyver harcmodorában, mennyire fürge (`Gyorsaság` tulajdonság) és milyen páncélt visel.
@@ -21091,7 +21119,7 @@ Lásd: [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyvere
 ---
 ### 🚷 Mozgásgátló Tényező (MGT)
 
-Lásd a [Páncél MGT fejezetét](069_03_pancel_MGT.md).
+Lásd az [MGT fejezetet](069_03_MGT.md).
 
 <br />
 
@@ -21433,22 +21461,6 @@ Hátrány-2 Sebzésdobásra
 Ez egy Harci helyzet (státusz).
 
 Ha a karakter olyan sebzési típussal szeretne betalálni, amire fegyvere nem lett kialakítva (nem elsődleges, nem másodlagos) akkor, ha a KM is engedi – a sebzésdobást további büntető módosítóval teheti csak meg.
-
-<br />
-
----
-## Átütés
-
-```
-Aktuális SFÉ =
-  Páncél SFÉ - Átütés
-```
-
-Sokszor fontos szerep jut azoknak a fegyvereknek is, amelyek rendelkeznek **Átütés** értékkel, mivel a támadott páncél megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a páncél végleges aktuális `SFÉ`-jét.
-
-A legtöbb fegyver **Átütés** értéke: `0`
-
-Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak páncélok átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt. ⚡Példa: Csákány
 
 ---
 ## Mágikus fegyverek sebzése
@@ -21886,16 +21898,18 @@ Ha a karakter 🗡️[Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) t
 <br />
 
 ---
-### Pajzs mozgásgátló hatása
+### Pajzs mozgást gátló hatása
 
-A pajzsokra nem vonatkozik az [MGT](069_03_pancel_MGT.md) pontrendszer, amelyet páncélokra alkalmazunk.
+A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet kizárólag páncélokra alkalmazunk.
 
-[Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott pajzs.
+A hatása a [Felszerelés kereten](010_03_06_felszereles.md) keresztül mutatkozik meg - harcon kívüli próbadobásokra.
 
-Hatása [Felszerelésre](010_03_06_felszereles.md):
+```
+Felszerelés keretben
 
-- Közepes pajzs: Közepes tárgy (1 pont)
-- Nagy pajzs: Nagy tárgy (2 pont)
+-1: Közepes pajzs
+-2: Nagy pajzs
+```
 
 <br />
 
@@ -25823,7 +25837,16 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 
 ## Átütés
 
-→ Lásd a [Fegyver sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md#átütés) fejezetet.
+```
+Aktuális SFÉ =
+  Páncél SFÉ - Átütés
+```
+
+Sokszor fontos szerep jut azoknak a fegyvereknek is, amelyek rendelkeznek **Átütés** értékkel, mivel a támadott páncél megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a páncél végleges aktuális `SFÉ`-jét.
+
+A legtöbb fegyver **Átütés** értéke: `0`
+
+Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak páncélok átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt. ⚡Példa: Csákány
 
 ---
 
@@ -25837,18 +25860,9 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 
 ## Fegyver mozgásgátló hatása
 
-❌ Fegyverekre **nem** a páncélokra alkalmazott [MGT](069_03_pancel_MGT.md) pontrendszert használjuk.
+❌ Fegyverekre **nem** a páncélokra alkalmazott [MGT](069_03_MGT.md) pontrendszert használjuk.
 
-Kézben tartott fegyverek a [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejtik ki hatásukat.
-
-Hatásuk [Felszerelésre](010_03_06_felszereles.md):
-
-```
-1 pont: Közepes tárgy
-        Másfélkezes kard
-2 pont: Nagy tárgy
-        Kétkezes kard
-```
+✅ Egyes fegyverek a [Felszerelés keretet](010_03_06_felszereles.md) csökkentik.
 
 ---
 
@@ -26537,33 +26551,24 @@ Kapcsolódik:
 
 ### Pajzsok Felszerelés pontjai
 
-- Bővebben: [Felszerelés fejezetet](010_03_06_felszereles.md)
-- Státusz: [Fegyver / Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
+Bővebben: [Felszerelés fejezet](010_03_06_felszereles.md)
 
 ```
-Felszerelés pont
+Felszerelés keretben
 
-1: Közepes pajzs
-2: Nagy pajzs
-```
-
-```
-Túlcsordulás esetén
-(Felszerelés szabály)
-
--1 TÉ / MGT
--1 Harckeret / MGT
+-1: Közepes pajzs
+-2: Nagy pajzs
 ```
 
 <br />
 
 <!-- tag: md_table_pajzs_start -->
 
-| Pajzs         |  TÉ |  VÉ | Sebesség |  SP | Erőbónusz limit | Speciális                                                                                                                                          |
-| ------------- | --: | --: | -------: | --: | --------------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kis Pajzs     |   1 |   3 |        6 |  +0 |               0 | -                                                                                                                                                  |
-| Közepes Pajzs |   1 |  10 |        7 |  +0 |               2 | Erő követelmény: +1.                                                                                                                               |
-| Nagy Pajzs    |   1 |  16 |        9 |  +0 |               4 | Erő követelmény: +2. Legfeljebb 2 fegyverhossz-kategóriájú fegyver lehet a másik kézben. Minden plusz 1 fegyverhossz-kategória TÉ:-3 büntetést ad. |
+| Pajzs         | TÉ  |  VÉ  | Sebesség |  SP  | Erőbónusz limit | Speciális                                                                                                                                          |
+| ------------- |:---:|:----:|:--------:|:----:|:---------------:| -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kis Pajzs     | `1` | `3`  |   `6`    | `+0` |       `0`       | -                                                                                                                                                  |
+| Közepes Pajzs | `1` | `10` |   `7`    | `+0` |       `2`       | Erő követelmény: +1.                                                                                                                               |
+| Nagy Pajzs    | `1` | `16` |   `9`    | `+0` |       `4`       | Erő követelmény: +2. Legfeljebb 2 fegyverhossz-kategóriájú fegyver lehet a másik kézben. Minden plusz 1 fegyverhossz-kategória TÉ:-3 büntetést ad. |
 
 <!-- tag: md_table_pajzs_end -->
 
@@ -26608,7 +26613,7 @@ Túlcsordulás esetén
 
 ### [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
 
-### [Páncél MGT, Akadály](069_03_pancel_MGT.md)
+### [MGT](069_03_MGT.md)
 
 ### [Védett terület](069_04_vedett_terulet.md)
 
@@ -26891,21 +26896,21 @@ A fém páncélok, ha felforrósodnak, folyamatos sebzést okozhatnak körönké
 
 ---
 
-🔗 [Páncél MGT](069_03_pancel_MGT.md) →
+🔗 [MGT](069_03_MGT.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 
 ---
 ---
-## File: md/069_03_pancel_MGT.md
+## File: md/069_03_MGT.md
 
-## Páncél MGT, Akadály
+## Mozgásgátló Tényező (MGT)
 
-Harc és mozgás során a páncélok korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a kimondottan a páncélok MGT értékeivel foglalkozik. Az általános MGT összefoglaló oldalt lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
+Harc és mozgás során a páncélok korlátozhatják a karakterek mozgását - ennek szimulálására használjuk a **Mozgásgátló Tényezőt**.
 
 ---
-## Páncél MGT hatása
+## Páncélok MGT hatása
 
 ```
 Hajlékonyvértek
@@ -26919,14 +26924,12 @@ TÉ büntetést csökkenti
   Merevvértviselet fortély
 ```
 
-🔆 [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) **Státusz**: az `MGT` ennek formájában fejti ki hatását
-
 🔆 [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély: a **merevvértek** `TÉ-büntetés` hatását csökkenti
 
 <br />
 
 ---
-## Páncél MGT számítása
+## MGT számítása
 
 ```
 Σ MGT =
@@ -27057,7 +27060,7 @@ Aki erősebb, azt kevésbé korlátozza egy nehezebb páncél.
 <br />
 
 ---
-## ⚡ Példa Páncél MGT
+## ⚡ Példa MGT
 
 ```
 Lord Gustav full páncél MGT: 12
@@ -27099,38 +27102,16 @@ MGT növekedés:
   amennyi a 'Páncél sérülés' jellemzője ↓
 ```
 
-## Felszerelés MGT
-
-A páncél MGT mellett kapcsolódó érték a [Felszerelés MGT](010_03_06_felszereles.md), amely szintén harcot korlátozó tényező lehet és a Felszerelés keret túlcsordulásából születhet.
+<br />
 
 ---
-## Akadály: hosszútávú viselet, barangolás páncélban
+## Felszerelés keret és páncélok
 
-Egy páncél viselete rövidtávon nem okoz problémát, de hosszútávú gyaloglás és viselet esetén már igen kimerítő és ez a csapat haladását is befolyásolhatja. Az ilyen felszerelés hosszútávú szállításához kíséret, fegyverhordozó, málhásállatok, szekér szükséges. A leírtak alacsony MGT értékkel kitűnő, magas minőségű vértekre is vonatkoznak!
+A páncél - mint zavaró tényező - nem csak a harcban, hanem mint felszerelési tárgy is akadályozhat az egyes küzdelmen kívüli próbadobásokban. Bővebben lásd a [Felszerelés](010_03_06_felszereles.md) fejezetet.
 
-### `1.` Akadály: félvért, közepes pajzs tartós viselete, cipelése
+## Akadály és páncélok
 
-Testen, kézben, háton hordva `1 nap` után az alábbi hatások érnek.
-
-```
-+ Státusz: Fizikai (1)
-+ 1/2 távot tudsz megtenni naponta
-  Ez hátráltatja a csapatot.
-```
-
-### `2.` Akadály: teljes vért, Nagy pajzs
-
-```
-+ Státusz: Fizikai (2)
-+ 1/4 távot tudsz megtenni naponta.
-  Ez hátráltatja a csapatot.
-```
-
-Magasabb szinteken előfordulhatnak mágikus könnyítések, mint kisebb tárgyakká alakuló varázsfegyverek, páncélok.
-
-### Akadály `2` érték felett
-
-Ilyen helyzetben a karakter nem képes tartósan haladni, legfeljebb pár `10-100` métert.
+Hosszú barangolások során a komplexebb páncélok problémát okozhatnak. Lásd az [Akadály](010_03_07_akadaly.md) fejezetet.
 
 ---
 
@@ -29090,7 +29071,7 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 
 A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulnia".
 
-A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, aki láthatatlan, akinek levágták a karját).
+A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, akinek levágták a karját).
 
 Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
 
@@ -29099,14 +29080,12 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 - [Blokkolt (2)](#%EF%B8%8F-blokkolt-1-k%C3%B6zepesen)
 - [Eszmélet (4)](#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g)
 - [Érzékvesztés (3)](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart)
-- [Fegyver/Pajzs akadályoztatása (1,2)](#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
 - [Félelem (3)](#%EF%B8%8F-f%C3%A9lelem-1-szorong%C3%A1s)
 - [Fizikai (3)](#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g-fejf%C3%A1j%C3%A1s)
 - [Hangulat (4)](#%EF%B8%8F-hangulat-1-fog%C3%A9kony)
 - [Indulat (3)](#%EF%B8%8F-indulat-1-harag)
 - [Késztetés (3)](#%EF%B8%8F-k%C3%A9sztet%C3%A9s-1-sugallat)
 - [Mérgezés\*](#%EF%B8%8F-m%C3%A9rgez%C3%A9s)
-- [Páncél akadályoztatása (1, ♾️)](#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt)
 - [Rosszullét (2)](#%EF%B8%8F--rosszull%C3%A9t-1-k%C3%B6zepes)
 - [Sérült (2)](#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3)
 - [Szellemi (3)](#%EF%B8%8F-szellemi-1-kialvatlans%C3%A1g)
@@ -29336,40 +29315,6 @@ Hátrány-2
 Automatikus kudarc
   Érzék(x) Tulajdonságpróbákra
 ```
-
-<br />
-
----
-### ✴️ Fegyver/Pajzs akadályoztatása (1, 2)
-
-Egyes fegyverek, pajzsok viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.\
-A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
-
-```
-Hátrány-1;2
-  Fizikai Tulajdonságpróbákra
-  Fizikai Képzettségpróbákra
-```
-
-#### Hatása [Felszerelésre](010_03_06_felszereles.md)
-
-```
-Másfélkezes kard
-  Közepes tárgy (1 pont)
-
-Közepes pajzs
-  Közepes tárgy (1 pont)
-
-Nagy pajzs
-  Nagy tárgy (2 pont)
-```
-
-#### Kapcsolódik
-
-- [Fegyver mozgásgátló hatása](068_01_09_fegyver_mozgasgatlo_hatasa.md) fejezet
-- [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md#pajzs-mozgásgátló-hatása) fejezet
-- [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
-- [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
 <br />
 
@@ -29613,46 +29558,6 @@ Alkoholizmus (1,2,3) ("Igyak piát?")
 ### ✴️ Mérgezés
 
 Lásd a [Méregrendszer](140_meregrendszer.md) fejezetben a mérgek **hatásait**.
-
-<br />
-
----
-### ✴️ Páncél akadályoztatása (1 MGT, ♾️ MGT)
-
-A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**. A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
-
-```
-MGT hatása
-
-Hajlékonyvértek
- 1 MGT == -1 Harckeret
-
-Merevvértek
- 1 MGT == -1 Harckeret
-          -1 TÉ
-
-TÉ büntetést csökkenti
-  Merevvértviselet fortély
-  Erő Tulajdonság 1:1
-```
-
-```
-MGT hatása Fizikai
- Tulajdonságpróbákra és Képzettségpróbákra
-
- 0-7  MGT: nincs büntetés
- 8-10 MGT: Hátrány-1 próbákra
-11-13 MGT: Hátrány-2 próbákra
-  14+ MGT: Automatikus kudarc
-
-Merevvértviselet fortély MGT csökkentő
- hatása a próbákra is hatással van!
-```
-
-#### Kapcsolódik
-
-- [Páncél MGT](069_03_pancel_MGT.md) fejezet
-- [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély
 
 <br />
 
@@ -33749,7 +33654,7 @@ Ha megnyerted a Futás ellenpróbát, sikerült lehagynod üldöződet.
 
 → **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba)\
 → Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
-→ [MGT hatása a próbára](../069_03_pancel_MGT.md): KM dönt a helyzet ismeretében
+→ [MGT hatása a próbára](../069_03_MGT.md): KM dönt a helyzet ismeretében
 
 Aki győz, az ér oda előbb a célhoz.
 
