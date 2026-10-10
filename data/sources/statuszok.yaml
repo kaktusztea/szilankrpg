@@ -303,7 +303,7 @@ státuszok:
     hatások:
     - operátor: szöveges
       cél: harci_képesség
-      megjegyzés: Max Védő taktika (VÉ:+15, TÉ:-30)
+      megjegyzés: Max Védő taktika (VÉ:+3(..6), TÉ:-6(..12))
     - operátor: hátrány
       érték: -1
       cél: szociális_próba
@@ -317,7 +317,7 @@ státuszok:
       cél: támadások_száma
     - operátor: szöveges
       cél: harci_képesség
-      megjegyzés: Csak Teljes Védekezés (VÉ:+30)
+      megjegyzés: Csak Teljes Védekezés (VÉ:+8)
     - operátor: letilt
       cél: szociális_próba
       megjegyzés: automatikus kudarc
@@ -428,6 +428,9 @@ státuszok:
       érték: 1
       cél: képzettségpróba
       megjegyzés: kreatív tevékenységekre
+    - operátor: szöveges
+      cél: varázslás
+      megjegyzés: "Ellenséges varázstudó Asztrálmágia Komplexitás-próbájára Hátrány-1 (az asztrális befolyásolásnak jobban ellenáll az eufórikus személy)"
     - operátor: hátrány
       érték: -2
       cél: képzettségpróba
