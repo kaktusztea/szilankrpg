@@ -228,6 +228,8 @@ Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra ninc
 
 Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged duplázódik.
 
+Nem halmozható.
+
 <br />
 
 ---

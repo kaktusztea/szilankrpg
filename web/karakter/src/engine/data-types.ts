@@ -191,6 +191,8 @@ export interface HatasOperator {
   id: string;
   név: string;
   mód: string;
+  /** Több aktív forrás halmozási szabálya (opcionális). "legnagyobb" = a legnagyobb érték dominál, nem kumulál. */
+  halmozás?: string;
 }
 
 export interface EsemenyEntry {

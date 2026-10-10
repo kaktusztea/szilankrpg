@@ -51,20 +51,52 @@ export function computeVÉ(baseVÉ: number, bónusz: number, taktikaVÉ: number,
 }
 
 /**
- * VÉ veszteség szorzó az aktív harci helyzetekből (pl. "Földön fekve", "Helyhez kötve",
- * "VÉ kiterjesztés" → duplázás, l. hatas_operatorok.yaml "duplázás" mód, cél: vé_veszteség).
- * Több aktív forrás esetén a legnagyobb szorzó számít (nem kumulálódik).
+ * VÉ veszteség szorzó az aktív harci helyzetekből ÉS státuszokból (pl. "Földön fekve",
+ * "Helyhez kötve", "VÉ kiterjesztés", Fizikai státusz → duplázás, cél: vé_veszteség).
+ * A halmozási szabály DATA-VEZÉRELT: a `hatas_operatorok.yaml` → `duplázás.halmozás` mezője dönt.
+ * "legnagyobb" (md/081 "Nem halmozható") → a legnagyobb szorzó dominál; egyébként kumulál (szorzat).
  */
-export function véVesztésSzorzó(aktívHelyzetek: string[], harciHelyzetek: { név: string; hatások?: { operátor?: string; cél: string; érték?: number }[] }[]): { szorzó: number; forrás: string } {
+type DuplázásForrás = { név: string; hatások?: { operátor?: string; cél: string; érték?: number }[] };
+type StatuszForrás = { név: string; fokok: { fok: number; hatások?: { operátor?: string; cél: string; érték?: number }[] }[] };
+
+export function véVesztésSzorzó(
+  aktívHelyzetek: string[],
+  harciHelyzetek: DuplázásForrás[],
+  aktívStátuszok: string[] = [],
+  statuszok: StatuszForrás[] = [],
+  hatasOperatorok: { id: string; halmozás?: string }[] = [],
+): { szorzó: number; forrás: string } {
+  // A halmozási szabály a data-ból: "legnagyobb" = nem kumulál, a max dominál.
+  const halmozás = hatasOperatorok.find(o => o.id === 'duplázás')?.halmozás ?? 'legnagyobb';
+  const kumulál = halmozás !== 'legnagyobb';
+
   let szorzó = 1;
   let forrás = '';
+  const alkalmaz = (érték: number, név: string) => {
+    if (kumulál) {
+      szorzó *= érték;
+      forrás = forrás ? `${forrás}, ${név}` : név;
+    } else if (érték > szorzó) {
+      szorzó = érték;
+      forrás = név;
+    }
+  };
+
+  // 1. Harci helyzetek
   for (const név of aktívHelyzetek) {
     const def = harciHelyzetek.find(h => h.név === név);
     for (const h of def?.hatások ?? []) {
-      if (h.operátor === 'duplázás' && h.cél === 'vé_veszteség' && (h.érték ?? 2) > szorzó) {
-        szorzó = h.érték ?? 2;
-        forrás = név;
-      }
+      if (h.operátor === 'duplázás' && h.cél === 'vé_veszteség') alkalmaz(h.érték ?? 2, név);
+    }
+  }
+  // 2. Státuszok ("Név (fok)")
+  for (const entry of aktívStátuszok) {
+    const match = entry.match(/^(.+?)\s*\((\d+)\)$/);
+    if (!match) continue;
+    const def = statuszok.find(s => s.név === match[1]);
+    const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
+    for (const h of fokDef?.hatások ?? []) {
+      if (h.operátor === 'duplázás' && h.cél === 'vé_veszteség') alkalmaz(h.érték ?? 2, entry);
     }
   }
   return { szorzó, forrás };

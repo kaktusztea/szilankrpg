@@ -20,6 +20,7 @@ hatás_operátorok:
   - id: "duplázás"
     név: "Duplázás"
     mód: "szorzó"
+    halmozás: "legnagyobb"   # több aktív forrás: a legnagyobb szorzó dominál, NEM kumulál (md/081: "Nem halmozható")
   - id: "letilt"
     név: "Kioltás"
     mód: "letilt"
