@@ -19,11 +19,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Fegyverméretek / harcolók száma (KM)"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Fegyverméretek / harcolók száma (KM)"
           }
         ]
@@ -48,11 +48,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Erősebb vagy nála"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Gyengébb vagy nála"
           }
         ]
@@ -62,11 +62,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 1,
+            "érték": -1,
             "leírás": "Közepes pajzs"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Nagy pajzs"
           }
         ]
@@ -212,7 +212,7 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -4,
+            "érték": 4,
             "leírás": "Fából készült szálfegyver"
           }
         ]
@@ -222,11 +222,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Nagyobb / alkalmasabb törésre"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Kisebb / alkalmatlanabb törésre"
           },
           {
@@ -318,11 +318,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Erősebb vagy nála"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Gyengébb vagy nála"
           }
         ]
@@ -348,7 +348,36 @@
     "fázis_info": {
       "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
     },
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Fegyverhossz különbség",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Saját fegyvered rövidebb (/ 2 kategória)"
+          },
+          {
+            "érték": -2,
+            "leírás": "Saját fegyvered hosszabb (/ 2 kategória)"
+          }
+        ]
+      },
+      {
+        "kategória": "Körülöttem állók",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -2,
+            "leírás": "Minden további ellenfél után"
+          },
+          {
+            "érték": 2,
+            "leírás": "Minden szövetséges után (ellenfeleddel harcol)"
+          }
+        ]
+      }
+    ],
     "követelmények": [],
     "fázis_cselekvő": {},
     "végrehajtás_té_módosító": 4
@@ -387,7 +416,7 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Fegyver extra: Kampós véggel lábkirántás",
             "feltétel": "fegyver_extra:kampos_veggel_labkirantas"
           }
@@ -477,11 +506,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Kimondottan alkalmas lefegyverzésre"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Nem kimondottan alkalmas"
           },
           {
@@ -491,12 +520,12 @@
         ]
       },
       {
-        "kategória": "Cél",
+        "kategória": "Ellenfél fegyvere",
         "mód": "single",
         "sorok": [
           {
-            "érték": -5,
-            "leírás": "Lánccsapdában foglyul ejtett fegyver (Nehézség: 5)"
+            "érték": 5,
+            "leírás": "Lánccsapdában foglyul ejtett fegyver"
           }
         ]
       }
@@ -548,7 +577,7 @@
             "leírás": "Sisak nélküli célpont"
           },
           {
-            "érték": 3,
+            "érték": -3,
             "leírás": "Sisakos célpont (tarkón ütés)"
           }
         ]
@@ -590,11 +619,11 @@
             "leírás": "Egyszerű jel"
           },
           {
-            "érték": 1,
+            "érték": -1,
             "leírás": "Közepes jel"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Bonyolult jel"
           }
         ]
@@ -624,7 +653,7 @@
     ],
     "helyzetfüggő_módosítók": [
       {
-        "kategória": "Túlerő",
+        "kategória": "Túlerőben vagytok",
         "mód": "single",
         "sorok": [
           {
@@ -632,11 +661,11 @@
             "leírás": "Egy:kettő túlerő"
           },
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Egy:három túlerő"
           },
           {
-            "érték": -4,
+            "érték": 4,
             "leírás": "Egy:négy+ túlerő"
           }
         ]
@@ -715,11 +744,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Erősebb vagy nála"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Gyengébb vagy nála"
           }
         ]
@@ -729,15 +758,15 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "1. fok (pajzzsal)"
           },
           {
-            "érték": 4,
+            "érték": -4,
             "leírás": "2. fok (pajzzsal)"
           },
           {
-            "érték": 6,
+            "érték": -6,
             "leírás": "3. fok (pajzzsal)"
           }
         ]
@@ -807,7 +836,7 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Fegyver extra: Pontos",
             "feltétel": "fegyver_extra:pontos"
           },
@@ -816,7 +845,7 @@
             "leírás": "Egykezes kardvívó fegyver / Puszta kéz"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Zúzófegyver"
           }
         ]
@@ -826,7 +855,7 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Roham taktika alkalmazása",
             "feltétel": "taktika:roham"
           }
@@ -893,15 +922,15 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 3,
             "leírás": "Alakzatban (nagy előny, KM)"
           },
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Alakzatban (KM)"
           },
           {
-            "érték": -1,
+            "érték": 1,
             "leírás": "Alakzatban (kis előny, KM)"
           }
         ]
@@ -911,7 +940,7 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Ismételt alkalmazás egy harcon belül"
           }
         ]
@@ -943,15 +972,15 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 3,
             "leírás": "Alakzatban (nagy előny, KM)"
           },
           {
-            "érték": -2,
+            "érték": 2,
             "leírás": "Alakzatban (KM)"
           },
           {
-            "érték": -1,
+            "érték": 1,
             "leírás": "Alakzatban (kis előny, KM)"
           }
         ]
@@ -961,15 +990,15 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 1,
+            "érték": -1,
             "leírás": "Kissé nagyobb (KM)"
           },
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Nagyobb (KM)"
           },
           {
-            "érték": 4,
+            "érték": -4,
             "leírás": "Jelentősen nagyobb (KM)"
           }
         ]
@@ -1002,11 +1031,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1043,8 +1072,8 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -4,
-            "leírás": "Ellenfél háttal áll (Nehézség: 5)"
+            "érték": 4,
+            "leírás": "Ellenfél háttal áll"
           }
         ]
       },
@@ -1053,15 +1082,15 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 2,
+            "érték": -2,
             "leírás": "Kis pajzs"
           },
           {
-            "érték": 4,
+            "érték": -4,
             "leírás": "Közepes pajzs"
           },
           {
-            "érték": 6,
+            "érték": -6,
             "leírás": "Nagy pajzs"
           }
         ]
@@ -1071,11 +1100,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1111,11 +1140,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1152,11 +1181,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1192,11 +1221,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1234,11 +1263,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1271,11 +1300,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1308,11 +1337,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1345,11 +1374,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1383,8 +1412,8 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -4,
-            "leírás": "Lefeszített ellenfél (Nehézség: 6)"
+            "érték": 4,
+            "leírás": "Lefeszített ellenfél"
           }
         ]
       },
@@ -1393,11 +1422,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]
@@ -1441,11 +1470,11 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -3,
+            "érték": 6,
             "leírás": "Testméret / páncél / Erő előny"
           },
           {
-            "érték": 3,
+            "érték": -6,
             "leírás": "Testméret / páncél / Erő hátrány"
           }
         ]

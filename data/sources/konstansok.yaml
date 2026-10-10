@@ -178,6 +178,9 @@ manőver:
   max_mp_támadó: 4
   max_mp_védő: 2
   belharc_fok_szorzó: 2
+  # Helyzetfüggő módosító sentinel: ha egy KIVÁLASZTOTT sor értéke ez, a Manőver az adott
+  # körülmények közt NEM kísérelhető meg (nem dobás-módosító, hanem jelző). L. md/066_04.
+  sentinel_nem_kísérelhető: 99
 
 # ============================================================
 # KP költségek és javadalmazások

@@ -66,7 +66,12 @@ TODO:
 
 ---
 
-## Manőver helyzetfüggő módosítók: Nehézség → Dobásmódosító 🚧 (terv)
+## Manőver helyzetfüggő módosítók: Nehézség → Dobásmódosító ✅ (kész, 2026-10)
+
+> Implementálva (md → data → kód → spec). Refaktorlog: `web/karakter/refactorlog/2026-10-10.md`.
+> A webapp a dobó-oldalon számol, a `99` sentinel „letilt" (data-driven: `konstansok.yaml` →
+> `manőver.sentinel_nem_kísérelhető`). Az alábbi az eredeti terv (referencia).
+
 
 **Cél**: a manőverenkénti `helyzetfüggő_módosítók` jelenleg a Nehézséget (Célszám) módosítják. Váljanak **dobás-oldali módosító pontokká** (mint a Képzettségpróba helyzetfüggő módosítói: a dobó-oldali értékhez adódnak, `+` könnyít / `-` nehezít), hogy a két rendszer előjel-konvenciója és fogalomhasználata egységes legyen. Mechanikailag ekvivalens (ugyanaz könnyít/nehezít ugyanannyival), csak az előjel és a megjelenítés egységesül.
 
@@ -84,7 +89,7 @@ TODO:
           - `+N`: leírás
   ```
   A `- Helyzetfüggő módosítók:` fő-bullet a Nehézség alól KIEMELVE külön ágba. A `<kategória>` = yaml `kategória` érték. A sorok = yaml `sorok` (dobás-oldali előjellel). Egységes a Képzettség-md mintával (referencia: `kepzettsegek.szekunder/szerencsejatek.md` → `### Helyzetfüggő módosítók`; itt bullet-formában).
-- **„(Nehézség: X)" zárójeles abszolút-utalások** átírva/törölve (fix Nehézség + dobásmódosító ekvivalens, pl. Lefegyverzés [Cél] `-5 (Nehézség: 5)` → `+5` dobásmódosító).
+- **„(Nehézség: X)" zárójeles abszolút-utalások** átírva/törölve (fix Nehézség + dobásmódosító ekvivalens, pl. Lefegyverzés [Ellenfél fegyvere] `-5 (Nehézség: 5)` → `+5` dobásmódosító).
 - **KM `[-5;+5]` globális** (066_04 Célszám-tábla): célszám-oldali MARAD (a KM nehézség-hangolása). Csak a manőver-specifikus `helyzetfüggő_módosítók` + az ún. „KM körülmény" al-kategóriák (Alakzatban, Belharc körülmények, Ellenfél mérete) konvertálódnak dobás-oldalra.
 
 ### Érintett fájlok
@@ -105,7 +110,7 @@ TODO:
 - Fegyvertörés [Ellenfél fegyvere] `-4` → `+4`; [Saját fegyver] `-2/+2` → `+2/-2`, `99` → `99`
 - Földrevitel [Erő különbség] `-2/+2` → `+2/-2`
 - Lábkirántás szálfegyverrel [Fegyver] `extra_ref: kampos_veggel_labkirantas` → az érték az extrából (`-2 → +2`, l. 6.); nincs saját érték-sor
-- Lefegyverzés [Saját fegyver] `-2/+2` → `+2/-2`, `99` → `99`; [Cél] `-5` → `+5`
+- Lefegyverzés [Saját fegyver] `-2/+2` → `+2/-2`, `99` → `99`; [Ellenfél fegyvere] `-5` → `+5`
 - Leütés hátulról [Célpont] `0/+3` → `0/-3`
 - Mesterjel [Jel bonyolultsága] `0/+1/+2` → `0/-1/-2`
 - Mögékerülés [Túlerő→„Túlerőben vagytok"] `0/-2/-4` → `0/+2/+4` (⚠️ a md-ben a kategória neve „Túlerőben vagytok"-ra pontosítva - a yaml `kategória` mezőt is erre kell állítani a tükrözéshez)

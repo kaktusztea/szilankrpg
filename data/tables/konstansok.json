@@ -183,7 +183,8 @@
   "manőver": {
     "max_mp_támadó": 4,
     "max_mp_védő": 2,
-    "belharc_fok_szorzó": 2
+    "belharc_fok_szorzó": 2,
+    "sentinel_nem_kísérelhető": 99
   },
   "kp": {
     "perszint": 50,

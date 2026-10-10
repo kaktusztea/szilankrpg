@@ -279,7 +279,7 @@ export interface KonstansokRaw {
     aurakiterjesztés_levonás: Record<string, number>;
     auraerősítés_tábla: { komplexitás: number; bónusz: number }[];
   };
-  manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number };
+  manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number; sentinel_nem_kísérelhető: number };
   pinned_taktikák: string[];
   fegyver_anyagok: string[];
   páncél_méret_illeszkedés: { fokozat: string; mgt: number }[];

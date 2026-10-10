@@ -224,7 +224,7 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": -2,
+        "érték": 2,
         "feltétel": "manőver:fegyvertörés"
       }
     ]
@@ -295,7 +295,7 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": -2,
+        "érték": 2,
         "feltétel": "manőver:precíz_támadás"
       }
     ]
@@ -319,13 +319,13 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": -2,
+        "érték": 2,
         "feltétel": "manőver:lefegyverzés"
       },
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": -2,
+        "érték": 2,
         "feltétel": "manőver:fegyvertörés"
       }
     ]
@@ -334,7 +334,7 @@
     "id": "lefegyverzese_nehezebb",
     "név": "Lefegyverzése nehezebb",
     "csoport": "tulajdonság",
-    "leírás": "A fegyvert az ellenfél nehezebben üti ki a kezedből. Lefegyverzés manőver passzív esetében Ellenpróbánál +2 bónusszal dobsz.\n",
+    "leírás": "A fegyvert az ellenfél nehezebben üti ki a kezedből. Lefegyverzés manőver passzív esetében az Ellenpróba dobásod -2 Helyzetfüggő módosítót kap (nehezebb lefegyverezni).\n",
     "feltétel": [
       {
         "típus": "manőver_állapot",
@@ -345,7 +345,7 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": 2,
+        "érték": -2,
         "feltétel": "manőver:lefegyverzés"
       }
     ]
@@ -373,7 +373,7 @@
     "id": "kampos_veggel_labkirantas",
     "név": "Kampós véggel lábkirántás",
     "csoport": "tulajdonság",
-    "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróba célszámát -2-vel könnyíti. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).\n",
+    "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróba dobásához +2 Helyzetfüggő módosítót ad. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).\n",
     "feltétel": [
       {
         "típus": "aktor",
@@ -388,7 +388,7 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": -2,
+        "érték": 2,
         "feltétel": "manőver:lábkirántás_szálfegyverrel"
       }
     ]

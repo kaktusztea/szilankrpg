@@ -140,6 +140,28 @@ export function szitModKezdőÁllapot(
 }
 
 /**
+ * A Helyzetfüggő módosítók „nem kísérelhető meg" sentinel-értéke (§066_04). A dobó-oldalra áttért
+ * modellben ez NEM aritmetikai módosító (különben +99 dobásbónusz biztos sikert adna), hanem jelző:
+ * ha a KIVÁLASZTOTT módosító-sor értéke ez, a Manőver az adott körülmények közt nem dobható.
+ * Az érték data-driven: `konstansok.yaml` → `manőver.sentinel_nem_kísérelhető` (a hívó adja át).
+ */
+export function szitModSentinelLehetetlen(
+  táblák: ModositoTabla[], szitMods: Record<string, number>, multiMods: Record<string, boolean[]>,
+  sentinel: number,
+): boolean {
+  for (const t of táblák) {
+    if (t.mód === 'multi') {
+      const flags = multiMods[t.kategória];
+      if (flags && t.sorok.some((s, i) => flags[i] && s.érték === sentinel)) return true;
+    } else {
+      const idx = szitMods[t.kategória];
+      if (idx != null && idx >= 0 && t.sorok[idx]?.érték === sentinel) return true;
+    }
+  }
+  return false;
+}
+
+/**
  * Gépi (auto-kiértékelt) követelmény teljesül-e a karakter alapján.
  * Informatív ('egyéb') követelményt alapból NEM lehet gépileg értékelni → null (a játékos dönt).
  * KIVÉTEL: ha az 'egyéb' követelmény aktiválható harci helyzet(ek)re hivatkozik (session megadva):
