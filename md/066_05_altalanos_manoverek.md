@@ -271,7 +271,7 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
         - `+2`: Kimondottan alkalmas lefegyverzésre
         - `-2`: Nem kimondottan alkalmas
         - `99`: Nem alkalmas lefegyverzésre → a Manőver nem kísérelhető meg (KM)
-    - Cél:
+    - Ellenfél fegyvere:
         - `+5`: Lánccsapdában foglyul ejtett fegyver
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
