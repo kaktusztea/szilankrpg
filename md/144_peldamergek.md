@@ -28,7 +28,7 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 → Erősség: 6
 → Hatás max súlyossága: 5 (halál)
 → Meddig áll el: +2 (10 percig a pengére locsolva)
-→ Hatóidő: +4 (gyors (10 szegmens)
+→ Hatóidő: +4 (gyors (1 kör múlva)
 → 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
 ```
 

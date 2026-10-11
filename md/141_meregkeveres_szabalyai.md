@@ -130,10 +130,10 @@ Milyen gyorsan hat?
 +2: (1 - 10 nap múlva),   Mk 5. szint
 +2: (2 - 6 kör múlva),    Mk 5. szint
 +3: (2 - 4 hét múlva),    Mk 7. szint
-+4: Gyorsan (10 szegmens), Mk 7. szint
-+4: Hónapok múlva,        Mk 9. szint
-+5: Azonnal (1 szegmens), Mk 9. szint
-+5: Évek múlva,           Mk 12. szint
++4: Gyorsan (1 kör múlva),    Mk 7. szint
++4: Hónapok múlva,            Mk 9. szint
++5: Azonnal (1 szívdobbanás), Mk 9. szint
++5: Évek múlva,               Mk 12. szint
 ```
 
 <br />
