@@ -184,7 +184,33 @@
     "max_mp_támadó": 4,
     "max_mp_védő": 2,
     "belharc_fok_szorzó": 2,
-    "sentinel_nem_kísérelhető": 99
+    "sentinel_nem_kísérelhető": 99,
+    "globális_módosítók": [
+      {
+        "kategória": "Újrapróbálkozás",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -2,
+            "leírás": "Ismételt alkalmazás - nem halmozódik (KM)"
+          }
+        ]
+      },
+      {
+        "kategória": "Körülmények",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "Kedvező körülmény (KM)"
+          },
+          {
+            "érték": -3,
+            "leírás": "Kedvezőtlen körülmény (KM)"
+          }
+        ]
+      }
+    ]
   },
   "kp": {
     "perszint": 50,

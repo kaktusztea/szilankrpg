@@ -90,7 +90,7 @@ TODO:
   ```
   A `- Helyzetfüggő módosítók:` fő-bullet a Nehézség alól KIEMELVE külön ágba. A `<kategória>` = yaml `kategória` érték. A sorok = yaml `sorok` (dobás-oldali előjellel). Egységes a Képzettség-md mintával (referencia: `kepzettsegek.szekunder/szerencsejatek.md` → `### Helyzetfüggő módosítók`; itt bullet-formában).
 - **„(Nehézség: X)" zárójeles abszolút-utalások** átírva/törölve (fix Nehézség + dobásmódosító ekvivalens, pl. Lefegyverzés [Ellenfél fegyvere] `-5 (Nehézség: 5)` → `+5` dobásmódosító).
-- **KM `[-5;+5]` globális** (066_04 Célszám-tábla): célszám-oldali MARAD (a KM nehézség-hangolása). Csak a manőver-specifikus `helyzetfüggő_módosítók` + az ún. „KM körülmény" al-kategóriák (Alakzatban, Belharc körülmények, Ellenfél mérete) konvertálódnak dobás-oldalra.
+- **KM Körülmények globális** (066_04): dobó-oldali Helyzetfüggő módosítóként `konstansok.yaml` → `manőver.globális_módosítók` (`Körülmények -3/+3` + `Újrapróbálkozás -2`), MINDEGYIK manőverre a popup fűzi. (A korábbi terv célszám-oldali `[-5;+5]`-öt szánt ide; 2026-10 átállás dobó-oldalra, két külön `-3/+3` értékre.)
 
 ### Érintett fájlok
 1. `md/066_05_altalanos_manoverek.md` - 13 manőver: Átsiklás, Áttörés, Fegyvertörés, Földrevitel, Lábkirántás szálfegyverrel (csak `extra_ref` - a sorai az extrából jönnek, l. 6.), Lefegyverzés, Leütés hátulról, Mesterjel, Mögékerülés, Pajzzsal felöklelés, Precíz támadás, Távoltartás, Terelés.

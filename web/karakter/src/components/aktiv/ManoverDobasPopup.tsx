@@ -36,7 +36,11 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [költöttMP, setKöltöttMP] = useState(0);
 
   // Helyzetfüggő módosítók - CSAK aktív módban (mindig az alkalmazó módosítói).
-  const módosítóTáblák = mód === 'aktív' ? (manőver.helyzetfüggő_módosítók ?? []) : [];
+  // A manőver-specifikus Helyzetfüggő módosítók mögé a GLOBÁLIS (mindegyik manőverre érvényes)
+  // módosítók fűződnek - egy helyen definiálva: konstansok.yaml → manőver.globális_módosítók (§066_04).
+  const módosítóTáblák = mód === 'aktív'
+    ? [...(manőver.helyzetfüggő_módosítók ?? []), ...(data.konstansok.manőver.globális_módosítók ?? [])]
+    : [];
   const [szitPickerNyitva, setSzitPickerNyitva] = useState(false);
   const [mpPickerNyitva, setMpPickerNyitva] = useState(false);
   const [téPopupNyitva, setTéPopupNyitva] = useState(false);

@@ -181,6 +181,18 @@ manőver:
   # Helyzetfüggő módosító sentinel: ha egy KIVÁLASZTOTT sor értéke ez, a Manőver az adott
   # körülmények közt NEM kísérelhető meg (nem dobás-módosító, hanem jelző). L. md/066_04.
   sentinel_nem_kísérelhető: 99
+  # Globális Helyzetfüggő módosítók: MINDEGYIK manőverre érvényesek (a popup a manőver-specifikus
+  # táblák mellé fűzi, aktív módban). Dobó-oldali módosítók. L. md/066_04.
+  globális_módosítók:
+    - kategória: "Újrapróbálkozás"
+      mód: "single"
+      sorok:
+        - { érték: -2, leírás: "Ismételt alkalmazás - nem halmozódik (KM)" }
+    - kategória: "Körülmények"
+      mód: "single"
+      sorok:
+        - { érték: 3, leírás: "Kedvező körülmény (KM)" }
+        - { érték: -3, leírás: "Kedvezőtlen körülmény (KM)" }
 
 # ============================================================
 # KP költségek és javadalmazások
