@@ -137,13 +137,14 @@ Ezek lehetnek fizikai / eszköz / szituációs előfeltételek - például megfe
 
 ### Újrapróbálkozás
 
-A Manőver ha sikeres volt, ha nem – az Ellenfél legközelebb már számít az ilyen jellegű támadásra, ezért amennyiben ismét ezt a Manővert kísérli meg az alkalmazó, akkor az **Ellenpróba** során a célszám már `+2`-vel nőni fog. Ez a büntetés **nem** halmozódik.
+A Manőver ha sikeres volt, ha nem – az Ellenfél legközelebb már számít az ilyen jellegű támadásra, ezért amennyiben ismét ezt a Manővert kísérli meg az alkalmazó, akkor az **Ellenpróba** során `-2` Helyzetfüggő módosítót kapsz dobásodra. Ez a büntetés **nem** halmozódik.
 
 A fenti módosító akkor is megjelenhet, ha az Ellenfél az alkalmazót már látta korábban küzdeni és egy konkrét Manővert gyakran alkalmazni. KM dönt.
 
 ### Körülmények
 
-A KM a körülményektől és szituációtól függően adhat pozitív/negatív célszám módosítót `[+5;-5]` értékhatáron belül. Sőt, a KM dönthet úgy, hogy a feltételei adottak, nincs szükség Ellenpróbára. További módosítókkal lásd a fenti táblázatokban.
+A KM a körülményektől és szituációtól függően adhat pozitív/negatív célszám módosítót:`-3`, `+3`.\
+Sőt, a KM dönthet úgy, hogy a feltételei adottak, nincs szükség Ellenpróbára.
 
 ### Sikertelen Manőver és VÉ csökkentés
 
