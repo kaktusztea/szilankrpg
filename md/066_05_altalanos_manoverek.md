@@ -55,8 +55,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 - Fázisok: `Megakasztás, Végrehajtás, Ellenpróba`
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erő Tulajdonságod legalább `2` ponttal magasabb ellenfelednél
-        - `-2`: Erő Tulajdonságod legalább `2` ponttal alacsonyabb ellenfelednél
+        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
     - Pajzsos ellenfél:
         - `-1`: Közepes pajzs
         - `-2`: Nagy pajzs
@@ -169,8 +169,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - 🟥 Erős követelmény: Ellenfeled nem lehet [Fegyverelőnyben](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) veled szemben
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erő Tulajdonságod legalább `2` ponttal magasabb ellenfelednél
-        - `-2`: Erő Tulajdonságod legalább `2` ponttal alacsonyabb ellenfelednél
+        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
@@ -393,8 +393,8 @@ Anyagok erőssége
 - 🟥 Erős követelmény: Nagy és Közepes pajzzsal lehetséges csak
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erő Tulajdonságod magasabb ellenfelednél
-        - `-2`: Erő Tulajdonságod alacsonyabb ellenfelednél
+        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
     - Pajzsos ellenfél:
         - `-2`: Ellenfél Pajzshasználat fortély foka nagyobb
         - `+2`: Te Pajzshasználat fortély fokod nagyobb

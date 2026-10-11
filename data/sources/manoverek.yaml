@@ -31,8 +31,8 @@ manőverek:
     - kategória: "Erő különbség"
       mód: "single"
       sorok:
-        - { érték: 2, leírás: "Erősebb vagy nála" }
-        - { érték: -2, leírás: "Gyengébb vagy nála" }
+        - { érték: 2, leírás: "Erő Tulajdonság min 2 ponttal magasabb" }
+        - { érték: -2, leírás: "Erő Tulajdonság min 2 ponttal alacsonyabb" }
     - kategória: "Pajzsos ellenfél"
       mód: "single"
       sorok:
@@ -140,8 +140,8 @@ manőverek:
     - kategória: "Erő különbség"
       mód: "single"
       sorok:
-        - { érték: 2, leírás: "Erősebb vagy nála" }
-        - { érték: -2, leírás: "Gyengébb vagy nála" }
+        - { érték: 2, leírás: "Erő Tulajdonság min 2 ponttal magasabb" }
+        - { érték: -2, leírás: "Erő Tulajdonság min 2 ponttal alacsonyabb" }
 - név: "Kibontakozás"
   típus: "általános"
   nehézség: 5
@@ -158,8 +158,8 @@ manőverek:
     - kategória: "Fegyverhossz különbség"
       mód: "single"
       sorok:
-        - { érték: 2, leírás: "Saját fegyvered rövidebb (/ 2 kategória)" }
-        - { érték: -2, leírás: "Saját fegyvered hosszabb (/ 2 kategória)" }
+        - { érték: -2, leírás: "Saját fegyvered rövidebb - több ellenfélnél a legnagyobb fegyver számít" }
+        - { érték: 2, leírás: "Saját fegyvered hosszabb" }
     - kategória: "Körülöttem állók"
       mód: "single"
       sorok:
@@ -305,14 +305,13 @@ manőverek:
     - kategória: "Erő különbség"
       mód: "single"
       sorok:
-        - { érték: 2, leírás: "Erősebb vagy nála" }
-        - { érték: -2, leírás: "Gyengébb vagy nála" }
-    - kategória: "Ellenfél Pajzshasználata"
+        - { érték: 2, leírás: "Erő Tulajdonság min 2 ponttal magasabb" }
+        - { érték: -2, leírás: "Erő Tulajdonság min 2 ponttal alacsonyabb" }
+    - kategória: "Pajzsos ellenfél"
       mód: "single"
       sorok:
-        - { érték: -2, leírás: "1. fok (pajzzsal)" }
-        - { érték: -4, leírás: "2. fok (pajzzsal)" }
-        - { érték: -6, leírás: "3. fok (pajzzsal)" }
+        - { érték: -2, leírás: "Ellenfél Pajzshasználat fortély foka nagyobb" }
+        - { érték: 2, leírás: "Te Pajzshasználat fortély fokod nagyobb" }
 - név: "Piszkos trükk"
   típus: "általános"
   nehézség: 7
@@ -338,7 +337,7 @@ manőverek:
     - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok)" }
   végrehajtás_té_módosító: 0
   helyzetfüggő_módosítók:
-    - kategória: "Fegyver"
+    - kategória: "Fegyvered"
       mód: "single"
       sorok:
         - { extra_ref: "pontos" }
@@ -347,7 +346,8 @@ manőverek:
     - kategória: "Taktika"
       mód: "single"
       sorok:
-        - { érték: -2, leírás: "Roham taktika alkalmazása", feltétel: "taktika:roham" }
+        - { érték: 99, leírás: "Roham taktika alkalmazása", feltétel: "taktika:roham" }
+        - { érték: 99, leírás: "Öngyilkos roham taktika alkalmazása", feltétel: "taktika:öngyilkos_roham" }
 - név: "Rávetődés hátulról"
   típus: "általános"
   nehézség: 6
@@ -375,13 +375,8 @@ manőverek:
     - kategória: "Harci alakzat"
       mód: "single"
       sorok:
-        - { érték: 3, leírás: "Alakzatban (nagy előny, KM)" }
-        - { érték: 2, leírás: "Alakzatban (KM)" }
-        - { érték: 1, leírás: "Alakzatban (kis előny, KM)" }
-    - kategória: "Ismétlés"
-      mód: "single"
-      sorok:
-        - { érték: -2, leírás: "Ismételt alkalmazás egy harcon belül" }
+        - { érték: 4, leírás: "Alakzatban (nagy előny, KM)" }
+        - { érték: 2, leírás: "Alakzatban (kis előny, KM)" }
 - név: "Terelés"
   típus: "általános"
   nehézség: 8
@@ -418,6 +413,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Belharcba kerülés"
   típus: "belharcos"
@@ -446,6 +443,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Belharcból kibontakozás"
   típus: "belharcos"
@@ -464,6 +463,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Feszítés, Leszorítás"
   típus: "belharcos"
@@ -483,6 +484,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Feszítésből kijövetel"
   típus: "belharcos"
@@ -501,6 +504,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Gáncsolás"
   típus: "belharcos"
@@ -517,6 +522,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Kéztörés"
   típus: "belharcos"
@@ -532,6 +539,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Lábtörés"
   típus: "belharcos"
@@ -547,6 +556,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Lefejelés"
   típus: "belharcos"
@@ -562,6 +573,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Leforgatás/Irányítás"
   típus: "belharcos"
@@ -582,6 +595,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Nyaktörés"
   típus: "belharcos"
@@ -600,6 +615,8 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Hátas táncoltatása"
   típus: "lovas"
