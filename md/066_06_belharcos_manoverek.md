@@ -31,9 +31,11 @@
 - Helyzetfüggő módosítók:
     - Belharc körülmények (KM):
         - `+6`: Testméret / páncél / Erő előny
+        - `+3`: Testméret / páncél / Erő előny
+        - `-3`: Testméret / páncél / Erő előny
         - `-6`: Testméret / páncél / Erő hátrány
 
-A "**Belharc körülmények**" nevű Helyzetfüggő módosító az **Ellenpróba** dobásához adódik hozzá és mindegyik belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 adottságának ismeretében.
+A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 felsorolt adottságának ismeretében.
 
 <br />
 

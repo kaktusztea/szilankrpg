@@ -55,8 +55,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 - Fázisok: `Megakasztás, Végrehajtás, Ellenpróba`
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erősebb vagy nála
-        - `-2`: Gyengébb vagy nála
+        - `+2`: Erő Tulajdonságod legalább `2` ponttal magasabb ellenfelednél
+        - `-2`: Erő Tulajdonságod legalább `2` ponttal alacsonyabb ellenfelednél
     - Pajzsos ellenfél:
         - `-1`: Közepes pajzs
         - `-2`: Nagy pajzs
@@ -169,8 +169,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - 🟥 Erős követelmény: Ellenfeled nem lehet [Fegyverelőnyben](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) veled szemben
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erősebb vagy nála
-        - `-2`: Gyengébb vagy nála
+        - `+2`: Erő Tulajdonságod legalább `2` ponttal magasabb ellenfelednél
+        - `-2`: Erő Tulajdonságod legalább `2` ponttal alacsonyabb ellenfelednél
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
@@ -189,8 +189,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető Kibontakozás.
 - Helyzetfüggő módosítók:
     - Fegyverhossz különbség:
-        - `+2` / `2` kategória: saját fegyvered rövidebb (könnyebb kibontakozni) - több támadónál a legnagyobb fegyver számít
-        - `-2` / `2` kategória: saját fegyvered hosszabb
+        - `-2`: saját fegyvered rövidebb - több ellenfélnél a legnagyobb fegyver számít
+        - `+2`: saját fegyvered hosszabb
     - Körülöttem állók:
         - `-2`: minden további ellenfél után
         - `+2`: minden szövetséges után, aki ellenfeleddel harcol
@@ -393,12 +393,11 @@ Anyagok erőssége
 - 🟥 Erős követelmény: Nagy és Közepes pajzzsal lehetséges csak
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erősebb vagy nála
-        - `-2`: Gyengébb vagy nála
-    - Ellenfél Pajzshasználata:
-        - `-2`: 1. fok (pajzzsal)
-        - `-4`: 2. fok (pajzzsal)
-        - `-6`: 3. fok (pajzzsal)
+        - `+2`: Erő Tulajdonságod magasabb ellenfelednél
+        - `-2`: Erő Tulajdonságod alacsonyabb ellenfelednél
+    - Pajzsos ellenfél:
+        - `-2`: Ellenfél Pajzshasználat fortély foka nagyobb
+        - `+2`: Te Pajzshasználat fortély fokod nagyobb
 
 **Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
 
@@ -413,9 +412,11 @@ Anyagok erőssége
 	- Közelharc – `4.szint`
 	- Forgatott fegyverre: Mesterfegyver – `1.fok`
 
-**Hatás**: Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
+**Hatás**:
+- Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
+- Ha a bement sebzés (SFÉ után) legalább `5 ÉP`, akkor ellenfeled elveszíti következő támadását is.
 
-Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a bement sebzés legalább `5 ÉP`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
+Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. 
 
 <br />
 
@@ -436,12 +437,12 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 - 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
-    - Fegyver:
+    - Fegyvered:
         - `+2`: Pontos aktorral (pl. Tőrkard pengehegye, egykezes)
         - `0`: Egykezes kardvívó fegyver / Puszta kéz
         - `-2`: Zúzófegyver
     - Taktika:
-        - `-2`: [Roham](065_02_harci_taktikak.md#roham-taktika) taktika alkalmazása
+        - `-99`: [Roham](065_02_harci_taktikak.md#roham-taktika)é s [Öngyilkos roham](065_02_harci_taktikak.md#öngyilkos-roham-taktika) taktia alkalmazása
 
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
 
@@ -480,11 +481,8 @@ Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, min
 - 🟥 Erős követelmény: [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 - Helyzetfüggő módosítók:
     - Harci alakzat:
-        - `+3`: Alakzatban (nagy előny, KM)
-        - `+2`: Alakzatban (KM)
-        - `+1`: Alakzatban (kis előny, KM)
-    - Ismétlés:
-        - `-2`: Ismételt alkalmazás egy harcon belül
+        - `+4`: Alakzatban (nagy előny, KM)
+        - `+2`: Alakzatban (kis előny, KM)
 
 **Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 

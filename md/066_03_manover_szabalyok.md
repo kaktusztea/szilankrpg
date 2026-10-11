@@ -1,16 +1,12 @@
 ## ⚜️ Általános szabályok manőverekre
 
-Egy Manőver végrehajtása `1 támadást` emészt fel, nem szükséges hozzá nyert kezdeményezés.
-
-Körönként maximum `1 db` manőver alkalmazható.
-
-Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
-
-Egy Manőver `3` opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
-
-Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
-
-🟥 Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható. Ez **Erős követelmény** (lásd [Manőver-követelmények](066_04_manover_vegbevitele.md#-normál-manőver-követelmények)): enélkül a Manőver nem kísérelhető meg.
+- Egy Manőver végrehajtása `1 támadást` emészt fel
+- Nem szükséges hozzá nyert kezdeményezés.
+- Körönként maximum `1 db` manőver alkalmazható.
+- Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
+- Egy Manőver `3` opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
+- Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
+- 🟥 Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható. Ez **Erős követelmény** (lásd [Manőver-követelmények](066_04_manover_vegbevitele.md#-normál-manőver-követelmények)): enélkül a Manőver nem kísérelhető meg.
 
 <br />
 
