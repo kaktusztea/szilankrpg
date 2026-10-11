@@ -19,7 +19,6 @@ Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
 KÉ dobás
 TÉ dobás
 CÉ dobás
-Manőver Ellenpróba dobás
 Tulajdonságpróba
 Érzék Tulajdonságpróba
 Képzettségpróba (mágia is)
@@ -160,7 +159,9 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
-- `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_03_01_pozitiv_helyzetek.md#orvtámadás))
+- minden támadás ellened automatikusan sebző
+
+<br />
 
 ---
 ### 🔥 Mozgás - feleződik
@@ -176,7 +177,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Mozgás - képtelen
 
-- VÉ csak a test mozgásának jellegétől függ (lásd a [táblázatot](065_03_01_pozitiv_helyzetek.md#orvtámadás))
+- minden támadás ellened automatikusan sebző
 - mozdulni se bírsz nyaktól lefelé
 - szemmozgás, légzés működik
 - csak fizikai hatás, mentális hatása nincs
@@ -186,7 +187,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Pszi használat elvesztése
 
-Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádra nincs hatással.
+Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással.
 
 <br />
 
@@ -204,7 +205,7 @@ Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádr
 
 ```
 -1 támadás a körben
-(min 1)
+(minimum 1)
 ```
 
 <br />
@@ -237,6 +238,8 @@ Nem halmozható.
 
 Védő Érték csökkentésedhez `1`-től `2`-ig terjedő bónuszt kapsz.
 
+Additív, de maximális értéke összesen: `+2`.
+
 <br />
 
 ---
@@ -250,22 +253,22 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 ### 🔥 Vérzés - gyenge
 
 ```
-- 1 ÉP / 10 perc
-- harcban nem számít
+-1 ÉP / 10 perc
+(harcban nem számít)
 ```
 
 ---
 ### 🔥 Vérzés - közepes
 
 ```
-1 ÉP / 2 kör
+-1 ÉP / 2 kör
 ```
 
 ---
 ### 🔥 Vérzés - erős
 
 ```
-1 ÉP / kör
+-1 ÉP / kör
 ```
 
 ---

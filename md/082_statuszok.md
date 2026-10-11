@@ -29,7 +29,7 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 
 ```
 Előny+1,2  //  Hátrány-1,2
-  adott Tulajdonságpróbájára
+  adott Tulajdonságpróbára
   (valamilyen feltétel esetén)
 ```
 
@@ -37,7 +37,7 @@ Előny+1,2  //  Hátrány-1,2
 
 ```
 Előny+1,2  //  Hátrány-1,2
-  adott Képzettségpróbájára
+  adott Képzettségpróbára
 ```
 
 ####  ⚡ Példa képzettség Átokra: Alulművelt Bölcsész 🤓
@@ -52,6 +52,7 @@ Hátrány-1
 [Karma hátterek](023_karma_hatterek.md) is okozhatnak **Státusz** változást.
 
 #### ⚡ Példa: Hiszékeny
+
 ```
 Hátrány-1,2: Emberismeret próbára
 
@@ -60,12 +61,13 @@ Hátrány-1,2: Emberismeret próbára
 ```
 
 #### ⚡ Példa: Meggondolatlan
+
 ```
 Hátrány-1,2: Önuralom próba
 
 Hajlamos vagy kockázatos
-döntéseket hozni, még akkor is,
-ha nincs rá szükség
+ döntéseket hozni, még akkor is,
+ ha nincs rá szükség
 ```
 
 #### ⚡ Példa: Paranoiás
@@ -76,6 +78,7 @@ Folyamatosan gyanakszol másokra,
 ```
 
 #### ⚡ Példa: Irigy
+
 ```
 Nehezen tűröd, ha másnak több
 van, és hajlamos vagy emiatt
@@ -85,8 +88,7 @@ rossz döntéseket hozni
 ### ✴️ Átkozott (1,2,3) Érzékek
 
 ```
-Lásd Érzékvesztés (1,2,3)
-  Státuszt lenn
+Lásd Érzékvesztés (1,2,3) Státuszt lenn
 ```
 
 ### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
@@ -135,7 +137,7 @@ Beszéd - némult
 ---
 ### ✴️ Blokkolt (1) Közepesen
 
-Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
+**Harci lassulást** értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
 
 ```
 Hátrány-1 TÉ dobásra
@@ -160,15 +162,12 @@ Mozgás - feleződik
 Hátrány-1
   KÉ dobásra
   TÉ dobásra
-  Manőver Ellenpróba dobás
   Képzettségpróbákra
   Tulajdonságpróbákra
 
-Hátrány-2
-  Szociális képzettségpróbákra
-  1 támadás elvesztése
-  ⭕nincs (at-will) varázslás
-  kivéve papok: részegen is tudnak⭕
+1 támadás elvesztése
+⭕Nincs (at-will) varázslás
+  kivéve papok, ők részegen is tudnak⭕
 
 Előny+1 Fájdalomtűrés dobásra
   Áfiumok, kábítószerek, fejbekólintás hatására
@@ -179,13 +178,9 @@ Előny+1 Fájdalomtűrés dobásra
 ⚡Példa: pocsolya részegség
 
 ```
-Automatikus kudarc:
-  szociális képzettségpróbákra
-
 Hátrány-2
   KÉ dobásra
   TÉ dobásra
-  Manőver Ellenpróba dobásra
   Képzettségpróbákra
   Tulajdonságpróbákra
 
@@ -211,7 +206,7 @@ Mozgás - képtelen
 Pszi használat elvesztése
 Varázslás képesség elvesztése
 
-Az Antyssjárás viszont ebben
+⭕Antyssjárás⭕ viszont ebben
   az állapotban is működik
 ```
 
@@ -219,7 +214,7 @@ Az Antyssjárás viszont ebben
 
 Mint az Ájulásnál, továbbá:
 - Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy.
-- Az Antyss a valóságod. Ha nincs Antyssjárás ⭕TODO⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
+- Az Antyss a valóságod. Ha nincs ⭕Antyssjárás⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
 
 <br />
 
@@ -253,8 +248,8 @@ Automatikus kudarc
 ### ✴️ Félelem (1) Szorongás
 
 ```
-Max Védő taktikában harcol
-  VÉ:+3(..6); TÉ:-6(..12)
+Védő taktikában harcol
+  VÉ:+3; TÉ:-6
 
 Hátrány-1
   Szociális képzettségpróbákra
@@ -262,11 +257,10 @@ Hátrány-1
 
 Mi okozhatja?
 
-
 ```
-→ Nem bírja a stresszt
+→ Nem bírod a stresszt
 → Kezdő a harcban
-→ Meg lett félemlítve pl.
+→ Meg lettél félemlítve pl.
   "Befolyásolás + Félelemkeltés"
   képzettség ellenpróbával (KM dönt)
 ```
@@ -277,27 +271,26 @@ Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 
 ```
 Többszörös támadás elvesztése
-Csak Teljes Védekezés taktikát
-  használhat: VÉ:+8
+Teljes Védekezés taktika kötelező
 
 Automatikus kudarc
   Szociális képzettségpróbákra
-
-Csak mágia vagy démonok hatására
-  kerülhet ebbe az állapotba
 ```
 
 Lásd: [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktika
 
 ### ✴️ Félelem (3) Bénító félelem
 
-Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
+Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (kalandozók).
 
 ```
 Mozgás - képtelen
 Harcképtelenség
 Varázslás képesség elvesztése
 Pszi használat elvesztése
+
+Csak mágia vagy démonok hatására
+  kerülhetsz ebbe az állapotba
 ```
 
 <br />
@@ -312,7 +305,6 @@ Hátrány-1
 ```
 
 ⚡ Példa
-
 - napok óta napja nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete nem ettél
@@ -351,7 +343,7 @@ Automatikus kudarc
 
 Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
 
-⚡ Példa: éhhalál szélén tengődés
+⚡ Példa: éhhalál szélén tengődsz
 
 <br />
 
@@ -364,7 +356,7 @@ A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az 
 
 ### ✴️ Hangulat (2) Inspirált
 
-A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
+Inspirál egy műalkotás, egy táj, egy beszélgetés. Ez kreatív energiákat szabadíthat fel, de akár a figyelmed is elvonhatja a fontos dolgokról.
 
 ```
 Előny+1
@@ -376,7 +368,7 @@ Hátrány-1
 
 ### ✴️ Hangulat (3) Eufórikus
 
-A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
+Euforikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására.
 
 ```
 Előny+1
@@ -391,23 +383,23 @@ Hátrány-1
 Hátrány-2
   Koncentrációt igénylő feladatokra
 
-Ilyenkor túlzottan magabiztos,
-  meggondolatlan döntéseket hozhat
+Ilyenkor túlzottan magabiztos vagy,
+  meggondolatlan döntéseket hozhatsz
 ```
 
 ### ✴️ Hangulat (4) Obszesszív
 
-A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
+Megszállottá válsz egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthat és rossz döntésekhez vezethet.
 
 ```
 Automatikus kudarc
-  KM mondja meg, mire
-  követelje ki a játékoson.
+  KM mondja meg, mit
+  követeljen a játékoson
 
 Előny+1
   Mindenre, ami az obszesszió
   tárgyához kötődik
-  (nem harci/misztikus képzettségpróbákra)
+  (nem harci/misztikus dobásokra)
 
 Hátrány-1
   Minden más Képzettségpróbára
@@ -420,15 +412,16 @@ Hátrány-1
 
 Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör.
 
-Az ilyen karakter kötelezően
-- maximális, `TÉ:+3` [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcol (így `VÉ:-6` sújtja).
-- ebben az állapotban használhatja a [Kezdeményező Taktikát](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika), de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb).
+Ilyenkor
+- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
 
 ### ✴️ Indulat (2) Gyűlölet
 
-- mint az `Indulat (1) Harag`, plusz:
-- kötelező [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika egyszer
-- utána sima [Roham](065_02_harci_taktikak.md#roham-taktika) taktika - ha van hely
+- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
+- [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika kötelező egyszer
+- [Roham](065_02_harci_taktikak.md#roham-taktika) taktika kötelező utána - ha van hely
 
 ### ✴️ Indulat (3) Őrjöngés
 
@@ -601,9 +594,10 @@ Hátrány-1
   Önuralom Tulajdonságpróbára
   Érzékenység Tulajdonságpróbára
   Szociális képzettségpróbákra,
-    mikor ezt a 2 Tulajdonságot használja
+    mikor Önuralom/Érzékenység
+    Tulajdonságok egyikét használod
 
-Antyssjárás esetén "rossz" helyre kerül
+Antyssjárás esetén "rossz" helyre kerülsz
 ```
 
 ### ✴️ Trauma (2) Lélektörés
@@ -613,9 +607,9 @@ Hátrány-2
   Önuralom Tulajdonságpróba
   Érzékenység Tulajdonságpróba
   Szociális képzettségpróbákra,
-    mikor a fenti 2 Tulajdonságot használja
+    mikor a fenti 2 Tulajdonságot használod
 
-Antyssjárás esetén "nagyon rossz" helyre kerül
+Antyssjárás esetén "nagyon rossz" helyre kerülsz
 ```
 
 <br />
@@ -681,14 +675,14 @@ Beszéd (zavart, vagy némult)
   (szituáció függő)
 ```
 
-#### Kijövetel sokkból
+#### Kijövetel sokkból automatikusan
 
 ```
 (20 - Önuralom) perc után
   enyhül 2.fokra
 ```
 
-#### Kihozni valakit sokkból
+#### Kihozni valakit sokkból hamarabb
 
 ```
 Emberismeret + Érzékenység
@@ -700,7 +694,7 @@ Célszám: 12 (Nehéz)
 
 ```
 Mágiával kihozni
-(1, 2, 3 szintet enyhít)
+(1, 2, 3 szintet enyhíthet)
 ```
 
 #### ⚡ Példák
