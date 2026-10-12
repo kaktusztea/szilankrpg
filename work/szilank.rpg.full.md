@@ -24199,17 +24199,13 @@ A komolyabb, kidolgozottabb Nem Játékos Karakter ellenfelek viszont egy külö
 
 ## ⚜️ Általános szabályok manőverekre
 
-Egy Manőver végrehajtása `1 támadást` emészt fel, nem szükséges hozzá nyert kezdeményezés.
-
-Körönként maximum `1 db` manőver alkalmazható.
-
-Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
-
-Egy Manőver `3` opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
-
-Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
-
-🟥 Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható. Ez **Erős követelmény** (lásd [Manőver-követelmények](066_04_manover_vegbevitele.md#-normál-manőver-követelmények)): enélkül a Manőver nem kísérelhető meg.
+- Egy Manőver végrehajtása `1 támadást` emészt fel
+- Nem szükséges hozzá nyert kezdeményezés.
+- Körönként maximum `1 db` manőver alkalmazható.
+- Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
+- Egy Manőver `3` opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
+- Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
+- 🟥 Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható. Ez **Erős követelmény** (lásd [Manőver-követelmények](066_04_manover_vegbevitele.md#-normál-manőver-követelmények)): enélkül a Manőver nem kísérelhető meg.
 
 <br />
 
@@ -24436,13 +24432,14 @@ Ezek lehetnek fizikai / eszköz / szituációs előfeltételek - például megfe
 
 ### Újrapróbálkozás
 
-A Manőver ha sikeres volt, ha nem – az Ellenfél legközelebb már számít az ilyen jellegű támadásra, ezért amennyiben ismét ezt a Manővert kísérli meg az alkalmazó, akkor az **Ellenpróba** során a célszám már `+2`-vel nőni fog. Ez a büntetés **nem** halmozódik.
+A Manőver ha sikeres volt, ha nem – az Ellenfél legközelebb már számít az ilyen jellegű támadásra, ezért amennyiben ismét ezt a Manővert kísérli meg az alkalmazó, akkor az **Ellenpróba** során `-2` Helyzetfüggő módosítót kapsz dobásodra. Ez a büntetés **nem** halmozódik.
 
 A fenti módosító akkor is megjelenhet, ha az Ellenfél az alkalmazót már látta korábban küzdeni és egy konkrét Manővert gyakran alkalmazni. KM dönt.
 
 ### Körülmények
 
-A KM a körülményektől és szituációtól függően adhat pozitív/negatív célszám módosítót `[+5;-5]` értékhatáron belül. Sőt, a KM dönthet úgy, hogy a feltételei adottak, nincs szükség Ellenpróbára. További módosítókkal lásd a fenti táblázatokban.
+A KM a körülményektől és szituációtól függően adhat pozitív/negatív célszám módosítót:`-3`, `+3`.\
+Sőt, a KM dönthet úgy, hogy a feltételei adottak, nincs szükség Ellenpróbára.
 
 ### Sikertelen Manőver és VÉ csökkentés
 
@@ -24516,8 +24513,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 - Fázisok: `Megakasztás, Végrehajtás, Ellenpróba`
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erősebb vagy nála
-        - `-2`: Gyengébb vagy nála
+        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
     - Pajzsos ellenfél:
         - `-1`: Közepes pajzs
         - `-2`: Nagy pajzs
@@ -24630,8 +24627,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - 🟥 Erős követelmény: Ellenfeled nem lehet [Fegyverelőnyben](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny) veled szemben
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erősebb vagy nála
-        - `-2`: Gyengébb vagy nála
+        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
@@ -24650,8 +24647,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető Kibontakozás.
 - Helyzetfüggő módosítók:
     - Fegyverhossz különbség:
-        - `+2` / `2` kategória: saját fegyvered rövidebb (könnyebb kibontakozni) - több támadónál a legnagyobb fegyver számít
-        - `-2` / `2` kategória: saját fegyvered hosszabb
+        - `-2`: saját fegyvered rövidebb - több ellenfélnél a legnagyobb fegyver számít
+        - `+2`: saját fegyvered hosszabb
     - Körülöttem állók:
         - `-2`: minden további ellenfél után
         - `+2`: minden szövetséges után, aki ellenfeleddel harcol
@@ -24854,12 +24851,11 @@ Anyagok erőssége
 - 🟥 Erős követelmény: Nagy és Közepes pajzzsal lehetséges csak
 - Helyzetfüggő módosítók:
     - Erő különbség:
-        - `+2`: Erősebb vagy nála
-        - `-2`: Gyengébb vagy nála
-    - Ellenfél Pajzshasználata:
-        - `-2`: 1. fok (pajzzsal)
-        - `-4`: 2. fok (pajzzsal)
-        - `-6`: 3. fok (pajzzsal)
+        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
+    - Pajzsos ellenfél:
+        - `-2`: Ellenfél Pajzshasználat fortély foka nagyobb
+        - `+2`: Te Pajzshasználat fortély fokod nagyobb
 
 **Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
 
@@ -24874,9 +24870,11 @@ Anyagok erőssége
 	- Közelharc – `4.szint`
 	- Forgatott fegyverre: Mesterfegyver – `1.fok`
 
-**Hatás**: Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
+**Hatás**:
+- Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
+- Ha a bement sebzés (SFÉ után) legalább `5 ÉP`, akkor ellenfeled elveszíti következő támadását is.
 
-Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a bement sebzés legalább `5 ÉP`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
+Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. 
 
 <br />
 
@@ -24897,12 +24895,12 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 - 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
-    - Fegyver:
+    - Fegyvered:
         - `+2`: Pontos aktorral (pl. Tőrkard pengehegye, egykezes)
         - `0`: Egykezes kardvívó fegyver / Puszta kéz
         - `-2`: Zúzófegyver
     - Taktika:
-        - `-2`: [Roham](065_02_harci_taktikak.md#roham-taktika) taktika alkalmazása
+        - `-99`: [Roham](065_02_harci_taktikak.md#roham-taktika)é s [Öngyilkos roham](065_02_harci_taktikak.md#öngyilkos-roham-taktika) taktia alkalmazása
 
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
 
@@ -24941,11 +24939,8 @@ Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, min
 - 🟥 Erős követelmény: [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#fegyverelőny)
 - Helyzetfüggő módosítók:
     - Harci alakzat:
-        - `+3`: Alakzatban (nagy előny, KM)
-        - `+2`: Alakzatban (KM)
-        - `+1`: Alakzatban (kis előny, KM)
-    - Ismétlés:
-        - `-2`: Ismételt alkalmazás egy harcon belül
+        - `+4`: Alakzatban (nagy előny, KM)
+        - `+2`: Alakzatban (kis előny, KM)
 
 **Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 
@@ -25021,9 +25016,11 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 - Helyzetfüggő módosítók:
     - Belharc körülmények (KM):
         - `+6`: Testméret / páncél / Erő előny
+        - `+3`: Testméret / páncél / Erő előny
+        - `-3`: Testméret / páncél / Erő előny
         - `-6`: Testméret / páncél / Erő hátrány
 
-A "**Belharc körülmények**" nevű Helyzetfüggő módosító az **Ellenpróba** dobásához adódik hozzá és mindegyik belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 adottságának ismeretében.
+A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 felsorolt adottságának ismeretében.
 
 <br />
 
@@ -28867,7 +28864,6 @@ Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
 KÉ dobás
 TÉ dobás
 CÉ dobás
-Manőver Ellenpróba dobás
 Tulajdonságpróba
 Érzék Tulajdonságpróba
 Képzettségpróba (mágia is)
@@ -29008,7 +29004,9 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
-- `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_03_01_pozitiv_helyzetek.md#orvtámadás))
+- minden támadás ellened automatikusan sebző
+
+<br />
 
 ---
 ### 🔥 Mozgás - feleződik
@@ -29024,7 +29022,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Mozgás - képtelen
 
-- VÉ csak a test mozgásának jellegétől függ (lásd a [táblázatot](065_03_01_pozitiv_helyzetek.md#orvtámadás))
+- minden támadás ellened automatikusan sebző
 - mozdulni se bírsz nyaktól lefelé
 - szemmozgás, légzés működik
 - csak fizikai hatás, mentális hatása nincs
@@ -29034,7 +29032,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Pszi használat elvesztése
 
-Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádra nincs hatással.
+Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással.
 
 <br />
 
@@ -29052,7 +29050,7 @@ Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádr
 
 ```
 -1 támadás a körben
-(min 1)
+(minimum 1)
 ```
 
 <br />
@@ -29085,6 +29083,8 @@ Nem halmozható.
 
 Védő Érték csökkentésedhez `1`-től `2`-ig terjedő bónuszt kapsz.
 
+Additív, de maximális értéke összesen: `+2`.
+
 <br />
 
 ---
@@ -29098,22 +29098,22 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 ### 🔥 Vérzés - gyenge
 
 ```
-- 1 ÉP / 10 perc
-- harcban nem számít
+-1 ÉP / 10 perc
+(harcban nem számít)
 ```
 
 ---
 ### 🔥 Vérzés - közepes
 
 ```
-1 ÉP / 2 kör
+-1 ÉP / 2 kör
 ```
 
 ---
 ### 🔥 Vérzés - erős
 
 ```
-1 ÉP / kör
+-1 ÉP / kör
 ```
 
 ---
@@ -29158,7 +29158,7 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 
 ```
 Előny+1,2  //  Hátrány-1,2
-  adott Tulajdonságpróbájára
+  adott Tulajdonságpróbára
   (valamilyen feltétel esetén)
 ```
 
@@ -29166,7 +29166,7 @@ Előny+1,2  //  Hátrány-1,2
 
 ```
 Előny+1,2  //  Hátrány-1,2
-  adott Képzettségpróbájára
+  adott Képzettségpróbára
 ```
 
 ####  ⚡ Példa képzettség Átokra: Alulművelt Bölcsész 🤓
@@ -29181,6 +29181,7 @@ Hátrány-1
 [Karma hátterek](023_karma_hatterek.md) is okozhatnak **Státusz** változást.
 
 #### ⚡ Példa: Hiszékeny
+
 ```
 Hátrány-1,2: Emberismeret próbára
 
@@ -29189,12 +29190,13 @@ Hátrány-1,2: Emberismeret próbára
 ```
 
 #### ⚡ Példa: Meggondolatlan
+
 ```
 Hátrány-1,2: Önuralom próba
 
 Hajlamos vagy kockázatos
-döntéseket hozni, még akkor is,
-ha nincs rá szükség
+ döntéseket hozni, még akkor is,
+ ha nincs rá szükség
 ```
 
 #### ⚡ Példa: Paranoiás
@@ -29205,6 +29207,7 @@ Folyamatosan gyanakszol másokra,
 ```
 
 #### ⚡ Példa: Irigy
+
 ```
 Nehezen tűröd, ha másnak több
 van, és hajlamos vagy emiatt
@@ -29214,8 +29217,7 @@ rossz döntéseket hozni
 ### ✴️ Átkozott (1,2,3) Érzékek
 
 ```
-Lásd Érzékvesztés (1,2,3)
-  Státuszt lenn
+Lásd Érzékvesztés (1,2,3) Státuszt lenn
 ```
 
 ### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
@@ -29264,7 +29266,7 @@ Beszéd - némult
 ---
 ### ✴️ Blokkolt (1) Közepesen
 
-Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
+**Harci lassulást** értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
 
 ```
 Hátrány-1 TÉ dobásra
@@ -29289,15 +29291,12 @@ Mozgás - feleződik
 Hátrány-1
   KÉ dobásra
   TÉ dobásra
-  Manőver Ellenpróba dobás
   Képzettségpróbákra
   Tulajdonságpróbákra
 
-Hátrány-2
-  Szociális képzettségpróbákra
-  1 támadás elvesztése
-  ⭕nincs (at-will) varázslás
-  kivéve papok: részegen is tudnak⭕
+1 támadás elvesztése
+⭕Nincs (at-will) varázslás
+  kivéve papok, ők részegen is tudnak⭕
 
 Előny+1 Fájdalomtűrés dobásra
   Áfiumok, kábítószerek, fejbekólintás hatására
@@ -29308,13 +29307,9 @@ Előny+1 Fájdalomtűrés dobásra
 ⚡Példa: pocsolya részegség
 
 ```
-Automatikus kudarc:
-  szociális képzettségpróbákra
-
 Hátrány-2
   KÉ dobásra
   TÉ dobásra
-  Manőver Ellenpróba dobásra
   Képzettségpróbákra
   Tulajdonságpróbákra
 
@@ -29340,7 +29335,7 @@ Mozgás - képtelen
 Pszi használat elvesztése
 Varázslás képesség elvesztése
 
-Az Antyssjárás viszont ebben
+⭕Antyssjárás⭕ viszont ebben
   az állapotban is működik
 ```
 
@@ -29348,7 +29343,7 @@ Az Antyssjárás viszont ebben
 
 Mint az Ájulásnál, továbbá:
 - Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy.
-- Az Antyss a valóságod. Ha nincs Antyssjárás ⭕TODO⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
+- Az Antyss a valóságod. Ha nincs ⭕Antyssjárás⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
 
 <br />
 
@@ -29382,8 +29377,8 @@ Automatikus kudarc
 ### ✴️ Félelem (1) Szorongás
 
 ```
-Max Védő taktikában harcol
-  VÉ:+3(..6); TÉ:-6(..12)
+Védő taktikában harcol
+  VÉ:+3; TÉ:-6
 
 Hátrány-1
   Szociális képzettségpróbákra
@@ -29391,11 +29386,10 @@ Hátrány-1
 
 Mi okozhatja?
 
-
 ```
-→ Nem bírja a stresszt
+→ Nem bírod a stresszt
 → Kezdő a harcban
-→ Meg lett félemlítve pl.
+→ Meg lettél félemlítve pl.
   "Befolyásolás + Félelemkeltés"
   képzettség ellenpróbával (KM dönt)
 ```
@@ -29406,27 +29400,26 @@ Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 
 ```
 Többszörös támadás elvesztése
-Csak Teljes Védekezés taktikát
-  használhat: VÉ:+8
+Teljes Védekezés taktika kötelező
 
 Automatikus kudarc
   Szociális képzettségpróbákra
-
-Csak mágia vagy démonok hatására
-  kerülhet ebbe az állapotba
 ```
 
 Lásd: [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktika
 
 ### ✴️ Félelem (3) Bénító félelem
 
-Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
+Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (kalandozók).
 
 ```
 Mozgás - képtelen
 Harcképtelenség
 Varázslás képesség elvesztése
 Pszi használat elvesztése
+
+Csak mágia vagy démonok hatására
+  kerülhetsz ebbe az állapotba
 ```
 
 <br />
@@ -29441,7 +29434,6 @@ Hátrány-1
 ```
 
 ⚡ Példa
-
 - napok óta napja nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete nem ettél
@@ -29480,7 +29472,7 @@ Automatikus kudarc
 
 Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
 
-⚡ Példa: éhhalál szélén tengődés
+⚡ Példa: éhhalál szélén tengődsz
 
 <br />
 
@@ -29493,7 +29485,7 @@ A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az 
 
 ### ✴️ Hangulat (2) Inspirált
 
-A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
+Inspirál egy műalkotás, egy táj, egy beszélgetés. Ez kreatív energiákat szabadíthat fel, de akár a figyelmed is elvonhatja a fontos dolgokról.
 
 ```
 Előny+1
@@ -29505,7 +29497,7 @@ Hátrány-1
 
 ### ✴️ Hangulat (3) Eufórikus
 
-A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
+Euforikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására.
 
 ```
 Előny+1
@@ -29520,23 +29512,23 @@ Hátrány-1
 Hátrány-2
   Koncentrációt igénylő feladatokra
 
-Ilyenkor túlzottan magabiztos,
-  meggondolatlan döntéseket hozhat
+Ilyenkor túlzottan magabiztos vagy,
+  meggondolatlan döntéseket hozhatsz
 ```
 
 ### ✴️ Hangulat (4) Obszesszív
 
-A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
+Megszállottá válsz egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthat és rossz döntésekhez vezethet.
 
 ```
 Automatikus kudarc
-  KM mondja meg, mire
-  követelje ki a játékoson.
+  KM mondja meg, mit
+  követeljen a játékoson
 
 Előny+1
   Mindenre, ami az obszesszió
   tárgyához kötődik
-  (nem harci/misztikus képzettségpróbákra)
+  (nem harci/misztikus dobásokra)
 
 Hátrány-1
   Minden más Képzettségpróbára
@@ -29549,15 +29541,16 @@ Hátrány-1
 
 Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör.
 
-Az ilyen karakter kötelezően
-- maximális, `TÉ:+3` [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcol (így `VÉ:-6` sújtja).
-- ebben az állapotban használhatja a [Kezdeményező Taktikát](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika), de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb).
+Ilyenkor
+- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
 
 ### ✴️ Indulat (2) Gyűlölet
 
-- mint az `Indulat (1) Harag`, plusz:
-- kötelező [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika egyszer
-- utána sima [Roham](065_02_harci_taktikak.md#roham-taktika) taktika - ha van hely
+- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
+- [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika kötelező egyszer
+- [Roham](065_02_harci_taktikak.md#roham-taktika) taktika kötelező utána - ha van hely
 
 ### ✴️ Indulat (3) Őrjöngés
 
@@ -29730,9 +29723,10 @@ Hátrány-1
   Önuralom Tulajdonságpróbára
   Érzékenység Tulajdonságpróbára
   Szociális képzettségpróbákra,
-    mikor ezt a 2 Tulajdonságot használja
+    mikor Önuralom/Érzékenység
+    Tulajdonságok egyikét használod
 
-Antyssjárás esetén "rossz" helyre kerül
+Antyssjárás esetén "rossz" helyre kerülsz
 ```
 
 ### ✴️ Trauma (2) Lélektörés
@@ -29742,9 +29736,9 @@ Hátrány-2
   Önuralom Tulajdonságpróba
   Érzékenység Tulajdonságpróba
   Szociális képzettségpróbákra,
-    mikor a fenti 2 Tulajdonságot használja
+    mikor a fenti 2 Tulajdonságot használod
 
-Antyssjárás esetén "nagyon rossz" helyre kerül
+Antyssjárás esetén "nagyon rossz" helyre kerülsz
 ```
 
 <br />
@@ -29810,14 +29804,14 @@ Beszéd (zavart, vagy némult)
   (szituáció függő)
 ```
 
-#### Kijövetel sokkból
+#### Kijövetel sokkból automatikusan
 
 ```
 (20 - Önuralom) perc után
   enyhül 2.fokra
 ```
 
-#### Kihozni valakit sokkból
+#### Kihozni valakit sokkból hamarabb
 
 ```
 Emberismeret + Érzékenység
@@ -29829,7 +29823,7 @@ Célszám: 12 (Nehéz)
 
 ```
 Mágiával kihozni
-(1, 2, 3 szintet enyhít)
+(1, 2, 3 szintet enyhíthet)
 ```
 
 #### ⚡ Példák
@@ -32041,10 +32035,10 @@ Milyen gyorsan hat?
 +2: (1 - 10 nap múlva),   Mk 5. szint
 +2: (2 - 6 kör múlva),    Mk 5. szint
 +3: (2 - 4 hét múlva),    Mk 7. szint
-+4: Gyorsan (10 szegmens), Mk 7. szint
-+4: Hónapok múlva,        Mk 9. szint
-+5: Azonnal (1 szegmens), Mk 9. szint
-+5: Évek múlva,           Mk 12. szint
++4: Gyorsan (1 kör múlva),    Mk 7. szint
++4: Hónapok múlva,            Mk 9. szint
++5: Azonnal (1 szívdobbanás), Mk 9. szint
++5: Évek múlva,               Mk 12. szint
 ```
 
 <br />
@@ -32202,7 +32196,7 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 → Erősség: 6
 → Hatás max súlyossága: 5 (halál)
 → Meddig áll el: +2 (10 percig a pengére locsolva)
-→ Hatóidő: +4 (gyors (10 szegmens)
+→ Hatóidő: +4 (gyors (1 kör múlva)
 → 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
 ```
 
