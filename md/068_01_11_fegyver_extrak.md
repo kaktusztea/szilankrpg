@@ -110,25 +110,6 @@ Hatás:    célpont páncél SFÉ: duplán számít
 
 Íves rövid penge páncél ellen különösen rossz.
 
-### Beakad (~50%)
-
-```
-Hatás: sebző találat után ~50% esély, hogy beakad és
-       harc közben nem húzható ki (KM dönti el)
-```
-
-### Önsebzés-kockázat
-
-```
-Hatás: a támadó k20 egyben esélydobás:
-       Küszöb alá dobva magadat sebzed
-   Mf nélkül: 1-10
-   Mf 1.fok: 1-2
-   Mf 2-3.fok: nincs
-```
-
-Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md).
-
 <br />
 
 ---
@@ -188,6 +169,25 @@ Hatás:    az aktív fél dobása +2 (Lábkirántás manőver)
 ```
 
 A fegyver kampós vége (pl. glaive-szerű penge).
+
+### Beakad (~50%)
+
+```
+Hatás: sebző találat után ~50% esély, hogy beakad és
+       harc közben nem húzható ki (KM dönti el)
+```
+
+### Önsebzés-kockázat
+
+```
+Hatás: a támadó k20 egyben esélydobás:
+       Küszöb alá dobva magadat sebzed
+   Mf nélkül: 1-10
+   Mf 1.fok: 1-2
+   Mf 2-3.fok: nincs
+```
+
+Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md).
 
 ---
 
