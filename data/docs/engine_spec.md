@@ -1489,7 +1489,7 @@ A lánc: **Státusz/Harci helyzet** → okoz **Hatás(oka)t** → minden Hatás 
 |---------|----------------------|-----------------|
 | Hatás mechanika típusok | "hatás operátorok" (hatas_operatorok.yaml) | Alacsonyszintű operátorok: hogyan hat (kocka reroll, szorzó, letilt, max korlát) |
 | Célpontok | "események" (esemenyek.yaml) | Mire vonatkozik a mechanika (TÉ dobás, Mozgás, Varázslás képesség) |
-| **Hatások** | `hatasok.yaml` (build-validációs katalógus) | Magas szintű, elnevezett hatáscsomagok a szabályrendszerből (081_hatasok.md). Pl. "Harcképtelenség" = letilt(harci_képesség) + speciális VÉ. CSAK build-validáció olvassa, a runtime nem (l. §22.4). |
+| **Hatások** | `hatasok.yaml` (build-validációs katalógus) | Magas szintű, elnevezett hatáscsomagok a szabályrendszerből (081_hatasok.md). Pl. "Harcképtelenség" = letilt(harci_képesség) + minden támadás ellened automatikusan sebző. CSAK build-validáció olvassa, a runtime nem (l. §22.4). |
 | Státuszok | statuszok.yaml | Állapotok, amelyek Hatásokat okoznak (082_statuszok.md) |
 | Harci helyzetek | harci_helyzetek.yaml | Harci státuszok, amelyek Hatásokat okoznak (065_01_*.md) |
 

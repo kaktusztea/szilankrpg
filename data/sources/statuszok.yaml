@@ -170,16 +170,10 @@ státuszok:
       cél: té_dobás
     - operátor: hátrány
       érték: -1
-      cél: manőver_ellenpróba
-    - operátor: hátrány
-      érték: -1
       cél: képzettségpróba
     - operátor: hátrány
       érték: -1
       cél: tulajdonságpróba
-    - operátor: hátrány
-      érték: -2
-      cél: szociális_próba
     - operátor: szöveges
       cél: támadások_száma
       megjegyzés: -1 támadás
@@ -202,16 +196,10 @@ státuszok:
       cél: té_dobás
     - operátor: hátrány
       érték: -2
-      cél: manőver_ellenpróba
-    - operátor: hátrány
-      érték: -2
       cél: képzettségpróba
     - operátor: hátrány
       érték: -2
       cél: tulajdonságpróba
-    - operátor: letilt
-      cél: szociális_próba
-      megjegyzés: automatikus kudarc
     - operátor: max_limit
       érték: 1
       cél: támadások_száma
@@ -303,7 +291,7 @@ státuszok:
     hatások:
     - operátor: szöveges
       cél: harci_képesség
-      megjegyzés: Max Védő taktika (VÉ:+3(..6), TÉ:-6(..12))
+      megjegyzés: Védő taktika (VÉ:+3, TÉ:-6)
     - operátor: hátrány
       érték: -1
       cél: szociális_próba
@@ -317,7 +305,7 @@ státuszok:
       cél: támadások_száma
     - operátor: szöveges
       cél: harci_képesség
-      megjegyzés: Csak Teljes Védekezés (VÉ:+8)
+      megjegyzés: Teljes Védekezés taktika kötelező
     - operátor: letilt
       cél: szociális_próba
       megjegyzés: automatikus kudarc
@@ -464,13 +452,13 @@ státuszok:
     hatások:
     - operátor: szöveges
       cél: harci_képesség
-      megjegyzés: Kötelező max Támadó taktika (TÉ:+3, VÉ:-6); csak Kezdeményezővel kombinálható
+      megjegyzés: Kötelező max Támadó taktika; Kezdeményező használható, más defenzív taktika nem
   - fok: 2
     alcím: Gyűlölet
     hatások:
     - operátor: szöveges
       cél: harci_képesség
-      megjegyzés: Kötelező Öngyilkos roham (1×), utána Roham; max Támadó taktika
+      megjegyzés: Kötelező max Támadó taktika (Kezdeményező használható); Öngyilkos roham kötelező egyszer, utána Roham kötelező (ha van hely)
   - fok: 3
     alcím: Őrjöngés
     hatások:

@@ -303,22 +303,12 @@
           {
             "operátor": "hátrány",
             "érték": -1,
-            "cél": "manőver_ellenpróba"
-          },
-          {
-            "operátor": "hátrány",
-            "érték": -1,
             "cél": "képzettségpróba"
           },
           {
             "operátor": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba"
-          },
-          {
-            "operátor": "hátrány",
-            "érték": -2,
-            "cél": "szociális_próba"
           },
           {
             "operátor": "szöveges",
@@ -359,22 +349,12 @@
           {
             "operátor": "hátrány",
             "érték": -2,
-            "cél": "manőver_ellenpróba"
-          },
-          {
-            "operátor": "hátrány",
-            "érték": -2,
             "cél": "képzettségpróba"
           },
           {
             "operátor": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba"
-          },
-          {
-            "operátor": "letilt",
-            "cél": "szociális_próba",
-            "megjegyzés": "automatikus kudarc"
           },
           {
             "operátor": "max_limit",
@@ -554,7 +534,7 @@
           {
             "operátor": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Max Védő taktika (VÉ:+3(..6), TÉ:-6(..12))"
+            "megjegyzés": "Védő taktika (VÉ:+3, TÉ:-6)"
           },
           {
             "operátor": "hátrány",
@@ -580,7 +560,7 @@
           {
             "operátor": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Csak Teljes Védekezés (VÉ:+8)"
+            "megjegyzés": "Teljes Védekezés taktika kötelező"
           },
           {
             "operátor": "letilt",
@@ -850,7 +830,7 @@
           {
             "operátor": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Kötelező max Támadó taktika (TÉ:+3, VÉ:-6); csak Kezdeményezővel kombinálható"
+            "megjegyzés": "Kötelező max Támadó taktika; Kezdeményező használható, más defenzív taktika nem"
           }
         ]
       },
@@ -861,7 +841,7 @@
           {
             "operátor": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Kötelező Öngyilkos roham (1×), utána Roham; max Támadó taktika"
+            "megjegyzés": "Kötelező max Támadó taktika (Kezdeményező használható); Öngyilkos roham kötelező egyszer, utána Roham kötelező (ha van hely)"
           }
         ]
       },

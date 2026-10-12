@@ -83,7 +83,7 @@ hatások:
 # --- Harci képesség ---
 - id: "harcképtelenség"
   név: "Harcképtelenség"
-  leírás: "Mozogni tudsz, harcolni nem. VÉ a mozgás jellegétől függ."
+  leírás: "Mozogni tudsz, harcolni nem. Minden támadás ellened automatikusan sebző."
   mechanika: [{operátor: "letilt", cél: "harci_képesség"}]
 
 # --- Mozgás ---
@@ -99,13 +99,13 @@ hatások:
 
 - id: "mozgás_képtelen"
   név: "Mozgás - képtelen"
-  leírás: "Mozdulni se bírsz nyaktól lefelé. Szemmozgás, légzés működik."
+  leírás: "Mozdulni se bírsz nyaktól lefelé. Szemmozgás, légzés működik. Minden támadás ellened automatikusan sebző."
   mechanika: [{operátor: "letilt", cél: "mozgás"}, {operátor: "letilt", cél: "harci_képesség"}]
 
 # --- Pszi ---
 - id: "pszi_elvesztése"
   név: "Pszi használat elvesztése"
-  leírás: "Képtelen vagy bármilyen diszciplína végzésére, fenntartására."
+  leírás: "Képtelen vagy Pszí alkalmazására. Az Aurádra nincs hatással."
   mechanika: [{operátor: "letilt", cél: "pszi"}]
 
 # --- Sebzés ---
@@ -139,8 +139,8 @@ hatások:
 
 - id: "vé_csökkentés_bónusz"
   név: "VÉ csökkentés bónusz"
-  leírás: "VÉ csökkentésedhez +1 vagy +2 bónusz."
-  mechanika: [{operátor: "szöveges", cél: "vé_csökkentés", megjegyzés: "+1..+2 VÉ csökkentés bónusz"}]
+  leírás: "VÉ csökkentésedhez +1 vagy +2 bónusz. Additív, de maximális értéke összesen +2."
+  mechanika: [{operátor: "szöveges", cél: "vé_csökkentés", megjegyzés: "+1..+2 VÉ csökkentés bónusz (additív, max +2)"}]
 
 - id: "vé_csökkentés_fix"
   név: "VÉ csökkentés: X"
