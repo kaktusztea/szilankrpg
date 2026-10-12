@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
-import { szitModSentinelLehetetlen } from './manover-dobas-calc';
+import { szitModSentinelLehetetlen, szitModSentinelExtraId } from './manover-dobas-calc';
 import type { ModositoTabla } from '../../engine/data-types';
 
 // A sentinel data-driven (konstansok.yaml → manőver.sentinel_nem_kísérelhető = 99); a tesztben literál.
@@ -73,5 +73,44 @@ describe('szitModSentinelLehetetlen (99 sentinel)', () => {
     // A popup: szitLehetetlen ? 0 : calcSzitModÖsszeg(...). Itt csak azt rögzítjük, hogy a sentinel
     // detektálható - a popup ennek alapján NEM dob (nem +99 bónuszt ad).
     expect(szitModSentinelLehetetlen(táblák, { 'Saját fegyver alkalmassága': 2 }, {}, SENTINEL)).toBe(true);
+  });
+});
+
+/**
+ * Passzív letilt (immunis) sentinel (konstansok.yaml → manőver.sentinel_immunis = -99):
+ * a fegyver a manőverre immunis (pl. Fegyvertörés-immunis) → a passzív félnek automatikus siker.
+ * Ugyanazzal a detektorral fogható, mint a 99, csak a passzív táblákra és fordított kimenettel
+ * (a popup a `szitImmunis` ágon a manőver-siker gombot rejti el, nem dob +érték bónuszt).
+ */
+describe('szitModSentinelLehetetlen (immunis -99 sentinel)', () => {
+  const IMMUNIS = -99;
+  const passzívTábla: ModositoTabla[] = [
+    { kategória: 'A te fegyvered (törés ellen)', mód_oldal: 'passzív', mód: 'single', sorok: [
+      { érték: IMMUNIS, leírás: 'Fegyver extra: Fegyvertörés-immunis', feltétel: 'fegyver_extra:fegyvertores_immunis' },
+      { érték: -2, leírás: 'Fegyver extra: Lefegyverezhetőbb', feltétel: 'fegyver_extra:lefegyverezhetobb' },
+    ] },
+  ];
+
+  it('az immunis sor kiválasztva → true (biztos védés a passzív félnek)', () => {
+    expect(szitModSentinelLehetetlen(passzívTábla, { 'A te fegyvered (törés ellen)': 0 }, {}, IMMUNIS)).toBe(true);
+  });
+
+  it('a sima -2 sor kiválasztva → false (az dobásmódosító, nem sentinel)', () => {
+    expect(szitModSentinelLehetetlen(passzívTábla, { 'A te fegyvered (törés ellen)': 1 }, {}, IMMUNIS)).toBe(false);
+  });
+
+  it('a -2 dobásmódosító NEM keverhető az immunis detektálással (külön sentinel-érték)', () => {
+    // A -2-es sor valós dobásmódosító, az immunis sentinel -99 - a kettő nem ütközik.
+    expect(calcSzitModÖsszeg(passzívTábla, { 'A te fegyvered (törés ellen)': 1 }, {}, [])).toBe(-2);
+  });
+
+  it('szitModSentinelExtraId: a kiválasztott immunis sor extra-id-je', () => {
+    expect(szitModSentinelExtraId(passzívTábla, { 'A te fegyvered (törés ellen)': 0 }, {}, IMMUNIS))
+      .toBe('fegyvertores_immunis');
+  });
+
+  it('szitModSentinelExtraId: nem-immunis sor kiválasztva → null', () => {
+    expect(szitModSentinelExtraId(passzívTábla, { 'A te fegyvered (törés ellen)': 1 }, {}, IMMUNIS))
+      .toBeNull();
   });
 });

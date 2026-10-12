@@ -8,7 +8,7 @@ import {
   követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, követelményJelölés, követelményCimke, aktívFegyverInfo,
   calcManőverPont, getBelharcFok,
   fázisCselekvő, fázisSikeres, getFázisFelirat, eredményHatás,
-  szitModKezdőÁllapot, aktívFegyverNév, szitFeltételTeljesül, szitModSentinelLehetetlen,
+  szitModKezdőÁllapot, aktívFegyverNév, szitFeltételTeljesül, szitModSentinelLehetetlen, szitModSentinelExtraId,
 } from './manover-dobas-calc';
 
 interface Props {
@@ -35,12 +35,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
 
-  // Helyzetfüggő módosítók - CSAK aktív módban (mindig az alkalmazó módosítói).
-  // A manőver-specifikus Helyzetfüggő módosítók mögé a GLOBÁLIS (mindegyik manőverre érvényes)
-  // módosítók fűződnek - egy helyen definiálva: konstansok.yaml → manőver.globális_módosítók (§066_04).
+  // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák. Aktív módban az aktív-oldali táblák
+  // (mód_oldal != 'passzív') + a GLOBÁLIS módosítók (konstansok.yaml → manőver.globális_módosítók,
+  // §066_04). Passzív módban a passzív-oldali táblák (mód_oldal === 'passzív') - pl. a fegyver-extrák
+  // (Lefegyverezhetőbb, Fegyvertörés-immunis), amelyek a fegyver birtokosát (passzív fél) érintik.
+  const összesTábla = manőver.helyzetfüggő_módosítók ?? [];
   const módosítóTáblák = mód === 'aktív'
-    ? [...(manőver.helyzetfüggő_módosítók ?? []), ...(data.konstansok.manőver.globális_módosítók ?? [])]
-    : [];
+    ? [...összesTábla.filter(t => t.mód_oldal !== 'passzív'), ...(data.konstansok.manőver.globális_módosítók ?? [])]
+    : összesTábla.filter(t => t.mód_oldal === 'passzív');
   const [szitPickerNyitva, setSzitPickerNyitva] = useState(false);
   const [mpPickerNyitva, setMpPickerNyitva] = useState(false);
   const [téPopupNyitva, setTéPopupNyitva] = useState(false);
@@ -55,7 +57,13 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // A 99 KÜLÖNLEGES sentinel: "a Manőver nem kísérelhető meg" - NEM adódik az összeghez (vakon +99
   // dobásbónusz biztos sikert adna, az ellenkezőjét a szándéknak), hanem a `szitLehetetlen` ágat váltja.
   const szitLehetetlen = szitModSentinelLehetetlen(módosítóTáblák, szitMods, multiMods, data.konstansok.manőver.sentinel_nem_kísérelhető);
-  const szitModÖsszeg = szitLehetetlen ? 0 : calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, []);
+  // Passzív letilt (immunis) sentinel: a fegyver a manőverre immunis (pl. Fegyvertörés-immunis)
+  // → a passzív félnek automatikus SIKER. Mint a 99, NEM adódik az összeghez, külön ágat vált.
+  const szitImmunis = szitModSentinelLehetetlen(módosítóTáblák, szitMods, multiMods, data.konstansok.manőver.sentinel_immunis);
+  // Az immunis extra teljes leírása (miért sikertelen a manőver), a katalógusból feloldva.
+  const immunisExtraId = szitImmunis ? szitModSentinelExtraId(módosítóTáblák, szitMods, multiMods, data.konstansok.manőver.sentinel_immunis) : null;
+  const immunisLeírás = immunisExtraId ? (data.fegyverExtrák?.[immunisExtraId]?.leírás ?? '') : '';
+  const szitModÖsszeg = (szitLehetetlen || szitImmunis) ? 0 : calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, []);
 
   const manőverPont = calcManőverPont(karakter, data);
   const aktMP = Math.max(0, manőverPont - session.manőver_pont_használt);
@@ -98,10 +106,11 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
   // Find current active phase (first pending), but stop if manőver already failed.
   const manőverMárSikertelen = eredmények.some((e, i) => e !== 'pending' && !fázisSikeresM(i, e));
-  const aktívFázisIdx = (!követelményKész || követelményKudarc || manőverMárSikertelen)
+  const aktívFázisIdx = (!követelményKész || követelményKudarc || manőverMárSikertelen || szitImmunis)
     ? -1 : eredmények.findIndex(e => e === 'pending');
   const végeredmény: 'folyamatban' | 'sikeres' | 'sikertelen' =
-    követelményKudarc ? 'sikertelen'
+    szitImmunis ? 'sikertelen'   // a fegyver immunis → a manőver sikertelen (a passzív félnek siker), azonnal
+    : követelményKudarc ? 'sikertelen'
     : !követelményKész ? 'folyamatban'
     : manőverMárSikertelen ? 'sikertelen'
     : eredmények.includes('pending') ? 'folyamatban'
@@ -208,6 +217,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
               Helyzetfüggő módosítók
               {szitLehetetlen
                 ? <span className="manover-szit-sum manover-szit-neg">letilt</span>
+                : szitImmunis
+                ? <span className="manover-szit-sum manover-szit-pos">immunis</span>
                 : szitModÖsszeg !== 0 && (
                   <span className={`manover-szit-sum${szitModÖsszeg > 0 ? ' manover-szit-pos' : ' manover-szit-neg'}`}>
                     {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
@@ -216,7 +227,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             </button>
           )}
           {renderMpGomb()}
-          {!szitLehetetlen && (
+          {!szitLehetetlen && !szitImmunis && (
             <div className="manover-ep-vs-row">
               <span className="manover-ep-side"><strong>{dobásÉrték}</strong> + {ellenpróbaHátrány2 ? <span className="manover-hatrany2">k10 (Hátrány-2)</span> : 'k10'}</span>
               <span className="manover-ep-vs">vs</span>
@@ -339,6 +350,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                         // Biztos rontás (99 sentinel, aktív E fázis): a siker (zöld) gomb eltűnik,
                         // csak a rontott marad - a Manőver ezekkel a körülményekkel nem sikerülhet.
                         const biztosRontás = szitLehetetlen && f === 'E' && mód === 'aktív';
+                        // (Immunis/passzív letilt → azonnali végeredmény, nincs aktív fázis, ide nem jut el.)
                         // ellenpróba_bünteti + E: a rontott dobás is sikeres manőver (csak büntetés).
                         // A feliratok és a szín az ALKALMAZÓ/VÉDŐ szemszögéből mód-függők.
                         const bünt = manőver.ellenpróba_bünteti && f === 'E';
@@ -379,6 +391,11 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
               : végeredmény === 'sikeres'
               ? (mód === 'passzív' ? '✓ Manőver sikeres ellened' : '✓ Manőver sikeres')
               : (mód === 'passzív' ? '✗ Manőver sikertelen ellened' : '✗ Manőver sikertelen')}
+            {szitImmunis && immunisLeírás && (
+              <div className="manover-dobas-hatas">
+                <div className="manover-dobas-hatas-mondat">{immunisLeírás}</div>
+              </div>
+            )}
             {végeredmény === 'sikeres' && (
               <div className="manover-dobas-hatas">
                 {eredményHatás(manőver.hatás).map((mondat, i) => (

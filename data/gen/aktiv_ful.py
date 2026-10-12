@@ -25,6 +25,8 @@ def generate_aktiv_ful():
     # igazságforrás a fegyver-specifikus manőver-módosítóra, engine_spec §42).
     extrak = load_yaml(os.path.join(SOURCES_DIR, 'fegyverek', 'extrak.yaml'))['extrak']
     extrak_by_id = {e['id']: e for e in extrak}
+    _manover_konst = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml')).get('manőver', {})
+    _immunis_sentinel = _manover_konst.get('sentinel_immunis', -99)
 
     validate_schema('taktika', taktikak, 'taktikak.yaml', root_key='taktikák')
     validate_schema('harci_helyzet', helyzetek, 'harci_helyzetek.yaml', root_key='harci_helyzetek')
@@ -51,7 +53,7 @@ def generate_aktiv_ful():
     for m in manoverek:
         hm = m.get('helyzetfüggő_módosítók')
         m['helyzetfüggő_módosítók'] = hm if isinstance(hm, list) else []
-        _resolve_extra_ref_sorok(m, extrak_by_id)
+        _resolve_extra_ref_sorok(m, extrak_by_id, _immunis_sentinel)
         köv = m.get('követelmények')
         m['követelmények'] = köv if isinstance(köv, list) else []
         fi = m.get('fázis_info')
@@ -76,20 +78,24 @@ def generate_aktiv_ful():
     write_json('hatterek.json', hatterek)
 
 
-def _resolve_extra_ref_sorok(manőver, extrak_by_id):
+def _resolve_extra_ref_sorok(manőver, extrak_by_id, immunis_sentinel):
     """Helyzetfüggő módosító `extra_ref` pointerek feloldása az extrak.yaml-ből (A/1, §42).
 
     A pointer-sor (`{extra_ref: "<id>"}`) helyére a generátor kitölti:
       - `érték`   : az extra `manőver_ellenpróba`-hatásának értéke, amelynek al-feltétele
                     a jelen manőverre (`manőver:<manőver_id>`) szól - dobásmódosító a dobó
-                    (a `manőver_állapot` szerinti) fél szemszögéből (pozitív = a dobónak kedvez),
+                    (a `manőver_állapot` szerinti) fél szemszögéből (pozitív = a dobónak kedvez).
+                    `letilt` módú hatásnál az érték az `immunis_sentinel` (passzív automatikus siker),
       - `leírás`  : "Fegyver extra: <extra név>",
       - `feltétel`: `fegyver_extra:<id>` (auto-match: az aktív fegyver hordozza-e az extrát).
+    A tábla `mód_oldal` mezőjének (default "aktív") EGYEZNIE kell az extra `manőver_állapot`-ával
+    (ha az extra megadja), különben build hiba - így a passzív extra csak passzív-oldali táblába kerülhet.
     Így EGY igazságforrás (extra) adja az értéket + a leírást + a match-feltételt; a manőver-tábla
     csak a pointert (helyet) tartja. Ismeretlen id / hiányzó manőver-hatás → build hiba.
     """
     mid = manőver.get('id')
     for tab in manőver['helyzetfüggő_módosítók']:
+        tab_oldal = tab.get('mód_oldal', 'aktív')
         for i, sor in enumerate(tab['sorok']):
             ref = sor.get('extra_ref')
             if not ref:
@@ -97,6 +103,13 @@ def _resolve_extra_ref_sorok(manőver, extrak_by_id):
             extra = extrak_by_id.get(ref)
             if extra is None:
                 raise ValueError(f"manoverek.yaml: '{manőver.get('név')}' extra_ref='{ref}' nincs az extrak.yaml-ban")
+            # Az extra manőver_állapota (ha van) egyezzen a tábla oldalával.
+            extra_oldal = next((f.get('érték') for f in (extra.get('feltétel') or [])
+                                if f.get('típus') == 'manőver_állapot'), None)
+            if extra_oldal is not None and extra_oldal != tab_oldal:
+                raise ValueError(
+                    f"manoverek.yaml: '{manőver.get('név')}' extra_ref='{ref}' - az extra "
+                    f"manőver_állapot='{extra_oldal}', de a tábla mód_oldal='{tab_oldal}'")
             kulcs = f"manőver:{mid}"
             hatás = next((h for h in (extra.get('hatás') or [])
                           if h.get('cél') == 'manőver_ellenpróba' and h.get('feltétel') == kulcs), None)
@@ -104,8 +117,10 @@ def _resolve_extra_ref_sorok(manőver, extrak_by_id):
                 raise ValueError(
                     f"manoverek.yaml: '{manőver.get('név')}' extra_ref='{ref}' - az extrának nincs "
                     f"manőver_ellenpróba hatása a(z) '{kulcs}' al-feltétellel")
+            # letilt mód → sentinel-érték (a popup külön ágon kezeli); egyébként a flat érték.
+            érték = immunis_sentinel if hatás.get('mód') == 'letilt' else hatás['érték']
             tab['sorok'][i] = {
-                'érték': hatás['érték'],
+                'érték': érték,
                 'leírás': f"Fegyver extra: {extra['név']}",
                 'feltétel': f"fegyver_extra:{ref}",
             }

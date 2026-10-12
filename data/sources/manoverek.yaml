@@ -103,6 +103,13 @@ manőverek:
         - { érték: 2, leírás: "Nagyobb / alkalmasabb törésre" }
         - { érték: -2, leírás: "Kisebb / alkalmatlanabb törésre" }
         - { érték: 99, leírás: "Nem alkalmas fegyvertörésre (KM)" }
+    - kategória: "A te fegyvered (törés ellen)"
+      mód_oldal: "passzív"
+      mód: "single"
+      sorok:
+        - { extra_ref: "fegyvertores_immunis" }
+        - { extra_ref: "lefegyverezhetobb" }
+        - { extra_ref: "fanyel_fegyvertores_konnyebb" }
 - név: "Felállás földről"
   típus: "általános"
   nehézség: 6
@@ -222,6 +229,12 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 5, leírás: "Lánccsapdában foglyul ejtett fegyver" }
+    - kategória: "A te fegyvered (lefegyverzés ellen)"
+      mód_oldal: "passzív"
+      mód: "single"
+      sorok:
+        - { extra_ref: "lefegyverzese_nehezebb" }
+        - { extra_ref: "lefegyverezhetobb" }
 - név: "Leütés hátulról"
   típus: "általános"
   nehézség: 6

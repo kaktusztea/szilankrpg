@@ -234,6 +234,28 @@
             "leírás": "Nem alkalmas fegyvertörésre (KM)"
           }
         ]
+      },
+      {
+        "kategória": "A te fegyvered (törés ellen)",
+        "mód_oldal": "passzív",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -99,
+            "leírás": "Fegyver extra: Fegyvertörés-immunis",
+            "feltétel": "fegyver_extra:fegyvertores_immunis"
+          },
+          {
+            "érték": -2,
+            "leírás": "Fegyver extra: Lefegyverezhetőbb",
+            "feltétel": "fegyver_extra:lefegyverezhetobb"
+          },
+          {
+            "érték": -2,
+            "leírás": "Fegyver extra: Fanyél fegyvertörése könnyebb",
+            "feltétel": "fegyver_extra:fanyel_fegyvertores_konnyebb"
+          }
+        ]
       }
     ],
     "fázis_info": {},
@@ -526,6 +548,23 @@
           {
             "érték": 5,
             "leírás": "Lánccsapdában foglyul ejtett fegyver"
+          }
+        ]
+      },
+      {
+        "kategória": "A te fegyvered (lefegyverzés ellen)",
+        "mód_oldal": "passzív",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Fegyver extra: Lefegyverzése nehezebb",
+            "feltétel": "fegyver_extra:lefegyverzese_nehezebb"
+          },
+          {
+            "érték": -2,
+            "leírás": "Fegyver extra: Lefegyverezhetőbb",
+            "feltétel": "fegyver_extra:lefegyverezhetobb"
           }
         ]
       }

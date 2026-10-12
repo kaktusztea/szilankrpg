@@ -162,6 +162,29 @@ export function szitModSentinelLehetetlen(
 }
 
 /**
+ * A KIVÁLASZTOTT sentinel-értékű sor `feltétel`-éből kinyert fegyver-extra id (`fegyver_extra:<id>`),
+ * vagy null ha nincs ilyen. A popup ebből oldja fel az extra teljes leírását (miért immunis/letilt).
+ */
+export function szitModSentinelExtraId(
+  táblák: ModositoTabla[], szitMods: Record<string, number>, multiMods: Record<string, boolean[]>,
+  sentinel: number,
+): string | null {
+  const idBőlFeltétel = (f: string | undefined): string | null =>
+    f?.startsWith('fegyver_extra:') ? f.slice('fegyver_extra:'.length) : null;
+  for (const t of táblák) {
+    if (t.mód === 'multi') {
+      const flags = multiMods[t.kategória];
+      const sor = flags && t.sorok.find((s, i) => flags[i] && s.érték === sentinel);
+      if (sor) return idBőlFeltétel(sor.feltétel);
+    } else {
+      const idx = szitMods[t.kategória];
+      if (idx != null && idx >= 0 && t.sorok[idx]?.érték === sentinel) return idBőlFeltétel(t.sorok[idx].feltétel);
+    }
+  }
+  return null;
+}
+
+/**
  * Gépi (auto-kiértékelt) követelmény teljesül-e a karakter alapján.
  * Informatív ('egyéb') követelményt alapból NEM lehet gépileg értékelni → null (a játékos dönt).
  * KIVÉTEL: ha az 'egyéb' követelmény aktiválható harci helyzet(ek)re hivatkozik (session megadva):

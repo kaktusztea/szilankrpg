@@ -185,6 +185,7 @@
     "max_mp_védő": 2,
     "belharc_fok_szorzó": 2,
     "sentinel_nem_kísérelhető": 99,
+    "sentinel_immunis": -99,
     "globális_módosítók": [
       {
         "kategória": "Újrapróbálkozás",

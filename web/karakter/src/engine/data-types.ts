@@ -13,6 +13,8 @@ export interface ModositoSor {
 export interface ModositoTabla {
   kategória: string;
   mód?: 'single' | 'multi';  // default: 'single'
+  /** Melyik dobó-oldalhoz tartozik: 'aktív' (default, az alkalmazó) vagy 'passzív' (ellene irányul). */
+  mód_oldal?: 'aktív' | 'passzív';
   sorok: ModositoSor[];
 }
 
@@ -281,7 +283,7 @@ export interface KonstansokRaw {
     aurakiterjesztés_levonás: Record<string, number>;
     auraerősítés_tábla: { komplexitás: number; bónusz: number }[];
   };
-  manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number; sentinel_nem_kísérelhető: number; globális_módosítók: ModositoTabla[] };
+  manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number; sentinel_nem_kísérelhető: number; sentinel_immunis: number; globális_módosítók: ModositoTabla[] };
   pinned_taktikák: string[];
   fegyver_anyagok: string[];
   páncél_méret_illeszkedés: { fokozat: string; mgt: number }[];
