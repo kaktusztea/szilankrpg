@@ -398,7 +398,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             )}
             {végeredmény === 'sikeres' && (
               <div className="manover-dobas-hatas">
-                {eredményHatás(manőver.hatás).map((mondat, i) => (
+                {eredményHatás(mód === 'passzív' ? manőver.hatás.passzív : manőver.hatás.aktív).map((mondat, i) => (
                   <div key={i} className="manover-dobas-hatas-mondat">{mondat}</div>
                 ))}
               </div>

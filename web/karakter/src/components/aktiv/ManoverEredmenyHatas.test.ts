@@ -18,3 +18,24 @@ describe('eredményHatás (C2 - sikeres-box szűrés)', () => {
       .toEqual(['Sikernél a lovas földre kerül.']);
   });
 });
+
+/**
+ * A popup a mód szerinti hatás-nézőpontot jeleníti: `mód === 'passzív' ? hatás.passzív : hatás.aktív`,
+ * majd a sikeres-box szűrés (`eredményHatás`). Regresszió: passzív módban NE az aktív ("Ellenfél
+ * fegyvere kiesik") szöveg jelenjen meg, hanem a passzív ("A fegyvered kiesik a kezedből").
+ */
+describe('mód szerinti hatás-nézőpont', () => {
+  const hatás = {
+    aktív: ['Ellenfél fegyvere kiesik a kezéből.'],
+    passzív: ['A fegyvered kiesik a kezedből.'],
+  };
+  const megjelenített = (mód: 'aktív' | 'passzív') =>
+    eredményHatás(mód === 'passzív' ? hatás.passzív : hatás.aktív);
+
+  it('aktív mód → az alkalmazó szemszöge', () => {
+    expect(megjelenített('aktív')).toEqual(['Ellenfél fegyvere kiesik a kezéből.']);
+  });
+  it('passzív mód → az elszenvedő szemszöge (nem az aktív szöveg)', () => {
+    expect(megjelenített('passzív')).toEqual(['A fegyvered kiesik a kezedből.']);
+  });
+});

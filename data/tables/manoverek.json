@@ -5,10 +5,16 @@
     "nehézség": 6,
     "fázisok": "E",
     "ellenpróba_bünteti": true,
-    "hatás": [
-      "Átsiklás harcolók között.",
-      "Sikertelen: átsiklottál, DE minden köztes ellenfél leadhat rád egy Megakasztó támadást."
-    ],
+    "hatás": {
+      "aktív": [
+        "Átsiklás harcolók között.",
+        "Sikertelen: átsiklottál, DE minden köztes ellenfél leadhat rád egy Megakasztó támadást."
+      ],
+      "passzív": [
+        "Ellenfeled átsiklik a harcolók között.",
+        "Sikertelen: átsiklott, DE minden köztes szövetségesed leadhat rá egy Megakasztó támadást."
+      ]
+    },
     "id": "átsiklás",
     "fázis_info": {
       "E": "Nem buktató: rontott dobásnál is átsiklasz, de minden köztes ellenfél leadhat rád egy Megakasztó támadást."
@@ -38,9 +44,14 @@
     "típus": "általános",
     "nehézség": 5,
     "fázisok": "M,V,E",
-    "hatás": [
-      "Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már."
-    ],
+    "hatás": {
+      "aktív": [
+        "Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már."
+      ],
+      "passzív": [
+        "Ellenfeled áttört rajtad, félrelökött. A mögötted állókat is eléri már."
+      ]
+    },
     "id": "áttörés",
     "helyzetfüggő_módosítók": [
       {
@@ -83,10 +94,16 @@
     "típus": "általános",
     "nehézség": 8,
     "fázisok": "V,E",
-    "hatás": [
-      "Levágtad ellenfeled kezét.",
-      "Kéz: áldozat max ÉP/3↑ sebzés szükséges a levágáshoz."
-    ],
+    "hatás": {
+      "aktív": [
+        "Levágtad ellenfeled kezét.",
+        "Kéz: áldozat max ÉP/3↑ sebzés szükséges a levágáshoz."
+      ],
+      "passzív": [
+        "Ellenfeled levágta a kezedet.",
+        "Kéz: max ÉP/3↑ sebzés szükséges a levágáshoz."
+      ]
+    },
     "id": "csonkolás_kéz",
     "fázis_info": {
       "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
@@ -124,10 +141,16 @@
     "típus": "általános",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": [
-      "Levágtad ellenfeled lábát.",
-      "Láb: áldozat max ÉP/2↑ sebzés szükséges a levágáshoz."
-    ],
+    "hatás": {
+      "aktív": [
+        "Levágtad ellenfeled lábát.",
+        "Láb: áldozat max ÉP/2↑ sebzés szükséges a levágáshoz."
+      ],
+      "passzív": [
+        "Ellenfeled levágta a lábadat.",
+        "Láb: max ÉP/2↑ sebzés szükséges a levágáshoz."
+      ]
+    },
     "id": "csonkolás_láb",
     "fázis_info": {
       "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
@@ -165,10 +188,16 @@
     "típus": "általános",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": [
-      "Kiszolgáltatott pozíció (fegyver a nyakánál).",
-      "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
-    ],
+    "hatás": {
+      "aktív": [
+        "Kiszolgáltatott pozíció (fegyver a nyakánál).",
+        "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
+      ],
+      "passzív": [
+        "Kiszolgáltatott pozícióba kerültél (fegyver a nyakadnál).",
+        "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kapsz."
+      ]
+    },
     "id": "ellenfél_elfogása",
     "fázis_info": {
       "E": "Kijövetel a helyzetből: Kibontakozás Nehézség 10; ellenfeled megelőző Megakasztására TÉ:+4 jár."
@@ -184,9 +213,14 @@
     "típus": "általános",
     "nehézség": 12,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfeled fegyvere eltörik."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfeled fegyvere eltörik."
+      ],
+      "passzív": [
+        "A fegyvered eltörik."
+      ]
+    },
     "id": "fegyvertörés",
     "követelmények": [
       {
@@ -268,9 +302,14 @@
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "M,E",
-    "hatás": [
-      "Felálltál a földről, harc folytatása levonások nélkül."
-    ],
+    "hatás": {
+      "aktív": [
+        "Felálltál a földről, harc folytatása levonások nélkül."
+      ],
+      "passzív": [
+        "Ellenfeled feláll a földről, harcát levonások nélkül folytatja."
+      ]
+    },
     "id": "felállás_földről",
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
@@ -284,11 +323,18 @@
     "típus": "általános",
     "nehézség": 7,
     "fázisok": "V,E",
-    "hatás": [
-      "Köríves támadás több ellenfélre egyszerre.",
-      "Külön sebzés mindegyikre.",
-      "Nem okoz VÉ csökkentést."
-    ],
+    "hatás": {
+      "aktív": [
+        "Köríves támadás több ellenfélre egyszerre.",
+        "Külön sebzés mindegyikre.",
+        "Nem okoz VÉ csökkentést."
+      ],
+      "passzív": [
+        "Ellenfeled köríves támadást mér több célpontra, rád is.",
+        "Külön sebzés mindegyikre.",
+        "Nem okoz VÉ csökkentést."
+      ]
+    },
     "id": "forgószél",
     "fázis_info": {
       "V": "Egy köríves támadás egyszerre több ellenfélre; ha talált, dobj sebzést mindegyikre külön.",
@@ -316,10 +362,16 @@
     "típus": "általános",
     "nehézség": 8,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfél földre kerül (Földön fekve módosítók).",
-      "Felállás: Felállás földről manőver."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfél földre kerül (Földön fekve módosítók).",
+        "Felállás: Felállás földről manőver."
+      ],
+      "passzív": [
+        "Földre kerültél (Földön fekve módosítók).",
+        "Felállás: Felállás földről manőver."
+      ]
+    },
     "id": "földrevitel",
     "követelmények": [
       {
@@ -361,11 +413,18 @@
     "nehézség": 5,
     "fázisok": "E",
     "ellenpróba_bünteti": true,
-    "hatás": [
-      "Kilépés a harcból.",
-      "Sikertelen: kibontakoztál, DE minden köztes ellenfél leadhat rád egy Megakasztó támadást.",
-      "Utána Futás (Gyorsaság próba)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Kilépés a harcból.",
+        "Sikertelen: kibontakoztál, DE minden köztes ellenfél leadhat rád egy Megakasztó támadást.",
+        "Utána Futás (Gyorsaság próba)."
+      ],
+      "passzív": [
+        "Ellenfeled kilép a harcból.",
+        "Sikertelen: kibontakozott, DE minden köztes szövetségesed leadhat rá egy Megakasztó támadást.",
+        "Utána Futás (Gyorsaság próba)."
+      ]
+    },
     "id": "kibontakozás",
     "fázis_info": {
       "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
@@ -409,10 +468,16 @@
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfél földre kerül (Földön fekve módosítók).",
-      "Felállás: Felállás földről manőver."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfél földre kerül (Földön fekve módosítók).",
+        "Felállás: Felállás földről manőver."
+      ],
+      "passzív": [
+        "Földre kerültél (Földön fekve módosítók).",
+        "Felállás: Felállás földről manőver."
+      ]
+    },
     "id": "lábkirántás_szálfegyverrel",
     "követelmények": [
       {
@@ -455,10 +520,16 @@
     "típus": "általános",
     "nehézség": 9,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfél fegyvere foglyul ejtve - nem használhatja.",
-      "Helyhez kötve harci helyzet módosítóit kapja ha nem ejti el."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfél fegyvere foglyul ejtve - nem használhatja.",
+        "Helyhez kötve harci helyzet módosítóit kapja ha nem ejti el."
+      ],
+      "passzív": [
+        "A fegyvered foglyul ejtve - nem használhatod.",
+        "Helyhez kötve harci helyzet módosítóit kapod ha nem ejted el."
+      ]
+    },
     "id": "lánccsapda",
     "követelmények": [
       {
@@ -489,9 +560,14 @@
     "típus": "általános",
     "nehézség": 7,
     "fázisok": "E",
-    "hatás": [
-      "Fegyver kiszabadult a lánccsapdából."
-    ],
+    "hatás": {
+      "aktív": [
+        "Fegyver kiszabadult a lánccsapdából."
+      ],
+      "passzív": [
+        "Ellenfeled fegyvere kiszabadult a lánccsapdából."
+      ]
+    },
     "id": "lánccsapdából_szabadítás",
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
@@ -505,9 +581,14 @@
     "típus": "általános",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfél fegyvere kiesik a kezéből."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfél fegyvere kiesik a kezéből."
+      ],
+      "passzív": [
+        "A fegyvered kiesik a kezedből."
+      ]
+    },
     "id": "lefegyverzés",
     "követelmények": [
       {
@@ -579,11 +660,18 @@
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "V,E",
-    "hatás": [
-      "Ájulás ha sebzés ≥ ÉP/4↓.",
-      "Egyébként Bódultság státusz.",
-      "Sebzés FP-ként jelenik meg."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ájulás ha sebzés ≥ ÉP/4↓.",
+        "Egyébként Bódultság státusz.",
+        "Sebzés FP-ként jelenik meg."
+      ],
+      "passzív": [
+        "Elájulsz ha a sebzés ≥ ÉP/4↓.",
+        "Egyébként Bódultság státusz.",
+        "Sebzés FP-ként jelenik meg."
+      ]
+    },
     "id": "leütés_hátulról",
     "fázis_info": {
       "V": "Célpont VÉ = a mozgás jellegétől függő érték (lásd Orvtámadás). Fegyver markolat sebzése: k20+0 SP + Erőbónusz (Zúzó).",
@@ -631,9 +719,14 @@
     "típus": "általános",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": [
-      "Mesterjel belekarcolva az ellenfél ruhájába/bőrébe (1 ÉP)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Mesterjel belekarcolva az ellenfél ruhájába/bőrébe (1 ÉP)."
+      ],
+      "passzív": [
+        "Ellenfeled mesterjelet karcol a ruhádba/bőrödbe (1 ÉP)."
+      ]
+    },
     "id": "mesterjel",
     "követelmények": [
       {
@@ -678,10 +771,16 @@
     "típus": "általános",
     "nehézség": 8,
     "fázisok": "E",
-    "hatás": [
-      "Hátulról támadás pozíció elérése.",
-      "Ellenfél dönthet: átvált rád → szövetségesed kap hátulról bónuszt."
-    ],
+    "hatás": {
+      "aktív": [
+        "Hátulról támadás pozíció elérése.",
+        "Ellenfél dönthet: átvált rád → szövetségesed kap hátulról bónuszt."
+      ],
+      "passzív": [
+        "Ellenfeled hátulról támadás pozíciót ér el ellened.",
+        "Dönthetsz: átváltasz rá → ő kap hátulról bónuszt a szövetségesétől."
+      ]
+    },
     "id": "mögékerülés",
     "követelmények": [
       {
@@ -720,10 +819,16 @@
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "V,E",
-    "hatás": [
-      "Pajzs VÉ végleges csökkentése.",
-      "Zúzó: SP/2, Vágó: SP/4."
-    ],
+    "hatás": {
+      "aktív": [
+        "Pajzs VÉ végleges csökkentése.",
+        "Zúzó: SP/2, Vágó: SP/4."
+      ],
+      "passzív": [
+        "A pajzsod VÉ-je véglegesen csökken.",
+        "Zúzó: SP/2, Vágó: SP/4."
+      ]
+    },
     "id": "pajzsrongálás",
     "követelmények": [
       {
@@ -754,9 +859,14 @@
     "típus": "általános",
     "nehézség": 7,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfél földre kerül (Földön fekve módosítók)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfél földre kerül (Földön fekve módosítók)."
+      ],
+      "passzív": [
+        "Földre kerültél (Földön fekve módosítók)."
+      ]
+    },
     "id": "pajzzsal_felöklelés",
     "követelmények": [
       {
@@ -817,10 +927,16 @@
     "típus": "általános",
     "nehézség": 7,
     "fázisok": "V,E",
-    "hatás": [
-      "Alattomos ütés (k20+0 SP).",
-      "Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását."
-    ],
+    "hatás": {
+      "aktív": [
+        "Alattomos ütés (k20+0 SP).",
+        "Ha ≥5 ÉP sebzés: ellenfél elveszíti következő támadását."
+      ],
+      "passzív": [
+        "Ellenfeled alattomos ütést mér rád (k20+0 SP).",
+        "Ha ≥5 ÉP sebzés: elveszíted a következő támadásodat."
+      ]
+    },
     "id": "piszkos_trükk",
     "fázis_info": {
       "V": "Alattomos ütés sebzése: k20+0 SP (+ vaskesztyű/szegecs/Erőbónusz beleszámít)."
@@ -848,9 +964,14 @@
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "V,E",
-    "hatás": [
-      "Adott területre támadás."
-    ],
+    "hatás": {
+      "aktív": [
+        "Adott területre támadás."
+      ],
+      "passzív": [
+        "Ellenfeled célzott támadást mér egy adott testtájadra."
+      ]
+    },
     "id": "precíz_támadás",
     "követelmények": [
       {
@@ -911,9 +1032,14 @@
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "E",
-    "hatás": [
-      "Rácsimpaszkodtál ellenfeled hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
-    ],
+    "hatás": {
+      "aktív": [
+        "Rácsimpaszkodtál ellenfeled hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
+      ],
+      "passzív": [
+        "Ellenfeled a hátadra csimpaszkodott → Belharci szituáció + folyamatos Hátulról támadás bónusz ellened."
+      ]
+    },
     "id": "rávetődés_hátulról",
     "követelmények": [
       {
@@ -933,9 +1059,14 @@
     "típus": "általános",
     "nehézség": 5,
     "fázisok": "M,E",
-    "hatás": [
-      "Ellenfeled elveszíti következő támadását (nem okozol sebzést)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfeled elveszíti következő támadását (nem okozol sebzést)."
+      ],
+      "passzív": [
+        "Elveszíted a következő támadásodat (ellenfeled nem okoz sebzést)."
+      ]
+    },
     "id": "távoltartás",
     "fázis_cselekvő": {
       "M": "én"
@@ -980,9 +1111,14 @@
     "típus": "általános",
     "nehézség": 8,
     "fázisok": "E",
-    "hatás": [
-      "Ellenféledet a kívánt irányba terelted."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenféledet a kívánt irányba terelted."
+      ],
+      "passzív": [
+        "Ellenfeled a kívánt irányba terelt téged."
+      ]
+    },
     "id": "terelés",
     "követelmények": [
       {
@@ -1040,9 +1176,14 @@
     "típus": "belharcos",
     "nehézség": 7,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfeled a földre került (Földön fekve módosítók)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfeled a földre került (Földön fekve módosítók)."
+      ],
+      "passzív": [
+        "A földre kerültél (Földön fekve módosítók)."
+      ]
+    },
     "id": "átdobás",
     "követelmények": [
       {
@@ -1085,10 +1226,16 @@
     "típus": "belharcos",
     "nehézség": 9,
     "fázisok": "M,E",
-    "hatás": [
-      "Belharci szituáció létrejött.",
-      "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
-    ],
+    "hatás": {
+      "aktív": [
+        "Belharci szituáció létrejött.",
+        "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül."
+      ],
+      "passzív": [
+        "Belharci szituációba kerültél.",
+        "Nagy siker (+4 túldobás): a sebző Megakasztásod ellenére is sikerül neki."
+      ]
+    },
     "id": "belharcba_kerülés",
     "fázis_info": {
       "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül - mindenképp dobj Ellenpróbát."
@@ -1161,10 +1308,16 @@
     "típus": "belharcos",
     "nehézség": 5,
     "fázisok": "M,E",
-    "hatás": [
-      "Kilépés belharcból, sima harci szituáció.",
-      "Sebzés esetén automatikus kibontakozás."
-    ],
+    "hatás": {
+      "aktív": [
+        "Kilépés belharcból, sima harci szituáció.",
+        "Sebzés esetén automatikus kibontakozás."
+      ],
+      "passzív": [
+        "Ellenfeled kilép a belharcból, sima harci szituáció.",
+        "Sebzés esetén automatikus kibontakozás."
+      ]
+    },
     "id": "belharcból_kibontakozás",
     "fázis_info": {
       "E": "Ha belharcban sebzel, bármilyen dobás nélkül automatikusan kibontakozol."
@@ -1209,11 +1362,18 @@
     "típus": "belharcos",
     "nehézség": 8,
     "fázisok": "V,E",
-    "hatás": [
-      "TÉ/VÉ:-7, KÉ elvesztés.",
-      "Csak puszta kézzel harcol.",
-      "Körönként Fájdalomtűrés próba (15)."
-    ],
+    "hatás": {
+      "aktív": [
+        "TÉ/VÉ:-7, KÉ elvesztés.",
+        "Csak puszta kézzel harcol.",
+        "Körönként Fájdalomtűrés próba (15)."
+      ],
+      "passzív": [
+        "TÉ/VÉ:-7, KÉ elvesztés (rajtad).",
+        "Csak puszta kézzel harcolhatsz.",
+        "Körönként Fájdalomtűrés próba (15)."
+      ]
+    },
     "id": "feszítés_leszorítás",
     "fázis_info": {
       "E": "Fenntartás: az áldozat körönként Fájdalomtűrés + Önuralom próbát dob (célszám 15). Kudarcnál nem tud visszatámadni, mágiát/pszít/manővert használni."
@@ -1258,10 +1418,16 @@
     "típus": "belharcos",
     "nehézség": 8,
     "fázisok": "V,E",
-    "hatás": [
-      "Kilépés feszítésből.",
-      "Belharci szituáció megmarad."
-    ],
+    "hatás": {
+      "aktív": [
+        "Kilépés feszítésből.",
+        "Belharci szituáció megmarad."
+      ],
+      "passzív": [
+        "Ellenfeled kilép a feszítésből.",
+        "Belharci szituáció megmarad."
+      ]
+    },
     "id": "feszítésből_kijövetel",
     "fázis_info": {
       "E": "Körönként Fájdalomtűrés + Önuralom próba (célszám 15). Kudarcnál nem tudsz visszatámadni, mágiát/pszít/manővert használni."
@@ -1306,9 +1472,14 @@
     "típus": "belharcos",
     "nehézség": 7,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfél földre kerül (Földön fekve módosítók)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfél földre kerül (Földön fekve módosítók)."
+      ],
+      "passzív": [
+        "Földre kerültél (Földön fekve módosítók)."
+      ]
+    },
     "id": "gáncsolás",
     "követelmények": [
       {
@@ -1357,9 +1528,14 @@
     "típus": "belharcos",
     "nehézség": 9,
     "fázisok": "V,E",
-    "hatás": [
-      "7 ÉP sebzés, kéz használhatatlan."
-    ],
+    "hatás": {
+      "aktív": [
+        "7 ÉP sebzés, kéz használhatatlan."
+      ],
+      "passzív": [
+        "7 ÉP sebzés, a kezed használhatatlan."
+      ]
+    },
     "id": "kéztörés",
     "követelmények": [
       {
@@ -1402,9 +1578,14 @@
     "típus": "belharcos",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": [
-      "9 ÉP sebzés, láb használhatatlan."
-    ],
+    "hatás": {
+      "aktív": [
+        "9 ÉP sebzés, láb használhatatlan."
+      ],
+      "passzív": [
+        "9 ÉP sebzés, a lábad használhatatlan."
+      ]
+    },
     "id": "lábtörés",
     "követelmények": [
       {
@@ -1447,9 +1628,14 @@
     "típus": "belharcos",
     "nehézség": 7,
     "fázisok": "V,E",
-    "hatás": [
-      "5 ÉP sebzés."
-    ],
+    "hatás": {
+      "aktív": [
+        "5 ÉP sebzés."
+      ],
+      "passzív": [
+        "5 ÉP sebzés (téged ér)."
+      ]
+    },
     "id": "lefejelés",
     "követelmények": [
       {
@@ -1492,10 +1678,16 @@
     "típus": "belharcos",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": [
-      "Ellenfél terelése kívánt irányba (max 5m).",
-      "Feltétel: Lefeszített ellenfélnél Nehézség 6."
-    ],
+    "hatás": {
+      "aktív": [
+        "Ellenfél terelése kívánt irányba (max 5m).",
+        "Feltétel: Lefeszített ellenfélnél Nehézség 6."
+      ],
+      "passzív": [
+        "Ellenfeled a kívánt irányba terel (max 5m).",
+        "Feltétel: Lefeszített állapotban Nehézség 6."
+      ]
+    },
     "id": "leforgatás_irányítás",
     "követelmények": [
       {
@@ -1548,10 +1740,16 @@
     "típus": "belharcos",
     "nehézség": 12,
     "fázisok": "V,E",
-    "hatás": [
-      "Azonnali halál (elfszabású anatómia).",
-      "Feltétel: megelőző sikeres Feszítés szükséges."
-    ],
+    "hatás": {
+      "aktív": [
+        "Azonnali halál (elfszabású anatómia).",
+        "Feltétel: megelőző sikeres Feszítés szükséges."
+      ],
+      "passzív": [
+        "Azonnali halál (elfszabású anatómia).",
+        "Feltétel: ellenfeled megelőző sikeres Feszítése szükséges."
+      ]
+    },
     "id": "nyaktörés",
     "követelmények": [
       {
@@ -1604,12 +1802,20 @@
     "típus": "lovas",
     "nehézség": 0,
     "fázisok": "M",
-    "hatás": [
-      "Feltétel: Lovas végzi.",
-      "Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen.",
-      "Távharc VÉ: Kiszámíthatatlan (6x).",
-      "Feltétel: Lovas harc 2.fok."
-    ],
+    "hatás": {
+      "aktív": [
+        "Feltétel: Lovas végzi.",
+        "Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen.",
+        "Távharc VÉ: Kiszámíthatatlan (6x).",
+        "Feltétel: Lovas harc 2.fok."
+      ],
+      "passzív": [
+        "Feltétel: lovas ellenfeled végzi.",
+        "Soron kívüli Megakasztást kapsz, ha harcérintkezésben vagy vele.",
+        "Távharc VÉ: Kiszámíthatatlan (6x).",
+        "Feltétel: Lovas harc 2.fok (nála)."
+      ]
+    },
     "id": "hátas_táncoltatása",
     "fázis_cselekvő": {
       "M": "én"
@@ -1639,12 +1845,20 @@
     "típus": "lovas",
     "nehézség": 6,
     "fázisok": "M,V,E",
-    "hatás": [
-      "Feltétel: GYALOGOS végzi lovas ellen.",
-      "Feltétel: közvetlen harcérintkezés szükséges.",
-      "Sikernél a lovas földre kerül.",
-      "Feltétel: Nehézség 6-12 (hátas mozgása, lovas figyelme függvénye)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Feltétel: GYALOGOS végzi lovas ellen.",
+        "Feltétel: közvetlen harcérintkezés szükséges.",
+        "Sikernél a lovas földre kerül.",
+        "Feltétel: Nehézség 6-12 (hátas mozgása, lovas figyelme függvénye)."
+      ],
+      "passzív": [
+        "Feltétel: gyalogos ellenfeled végzi ellened (lovas vagy).",
+        "Feltétel: közvetlen harcérintkezés szükséges.",
+        "Sikernél a földre kerülsz a hátasról.",
+        "Feltétel: Nehézség 6-12 (hátasod mozgása, figyelmed függvénye)."
+      ]
+    },
     "id": "lóhátról_lerántás",
     "követelmények": [
       {
@@ -1669,11 +1883,18 @@
     "típus": "lovas",
     "nehézség": 4,
     "fázisok": "V,E",
-    "hatás": [
-      "Feltétel: galopp/roham tempó, áttörés az ellenfél sorain.",
-      "Sikernél ellenfelek szétszóródnak, hátrány a következő körben.",
-      "Feltétel: Nehézség 4-10 (ellenfelek száma és fegyverzete függvénye)."
-    ],
+    "hatás": {
+      "aktív": [
+        "Feltétel: galopp/roham tempó, áttörés az ellenfél sorain.",
+        "Sikernél ellenfelek szétszóródnak, hátrány a következő körben.",
+        "Feltétel: Nehézség 4-10 (ellenfelek száma és fegyverzete függvénye)."
+      ],
+      "passzív": [
+        "Feltétel: lovas ellenfeled galopp/roham tempóban áttör a sorotokon.",
+        "Sikernél szétszóródtok, hátrány a következő körben.",
+        "Feltétel: Nehézség 4-10 (létszámotok és fegyverzetetek függvénye)."
+      ]
+    },
     "id": "lovas_áttörés",
     "követelmények": [
       {
@@ -1693,11 +1914,18 @@
     "típus": "lovas",
     "nehézség": 4,
     "fázisok": "M,E",
-    "hatás": [
-      "Feltétel: GYALOGOS végzi lovas ellen.",
-      "Feltétel: szúró szálfegyver + Fegyverelőny szükséges.",
-      "Sebző dobás a lovasra, aki elveszíti támadását."
-    ],
+    "hatás": {
+      "aktív": [
+        "Feltétel: GYALOGOS végzi lovas ellen.",
+        "Feltétel: szúró szálfegyver + Fegyverelőny szükséges.",
+        "Sebző dobás a lovasra, aki elveszíti támadását."
+      ],
+      "passzív": [
+        "Feltétel: gyalogos ellenfeled végzi ellened (lovas vagy).",
+        "Feltétel: szúró szálfegyver + Fegyverelőny szükséges (nála).",
+        "Sebző dobást kapsz, és elveszíted a támadásodat."
+      ]
+    },
     "id": "lovas_megakasztása",
     "fázis_cselekvő": {
       "M": "én"

@@ -52,7 +52,7 @@ export interface ManőverDef {
   fázis_cselekvő: Record<string, 'én' | 'ellenfél'>;
   ellenpróba_bünteti: boolean;
   típus: string;
-  hatás: string[];
+  hatás: { aktív: string[]; passzív: string[] };
   végrehajtás_té_módosító: number;
   követelmények: ManoverKövetelmény[];
   helyzetfüggő_módosítók: ModositoTabla[];
