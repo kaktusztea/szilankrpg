@@ -42,16 +42,20 @@ export function FegyverInfoPopup({ result, karakter, data, onClose }: Props) {
             <span className="fi-meta-value">{ideaSzöveg}</span>
           </div>
         )}
-        {info.extrák.length > 0 && (
-          <div className="fi-meta-row">
-            <span className="fi-meta-label">Extrák</span>
-            <span className="fi-meta-value">{info.extrák.join(', ')}</span>
-          </div>
-        )}
       </div>
 
-      <div className="fi-modok-cim">Harcértékek aktoronként</div>
-      <table className="fi-modok-table">
+      {info.extrák.length > 0 && (
+        <ul className="fi-extrak-lista fi-szekcio">
+          {info.extrák.map((e, i) => (
+            <li key={e.név + i} className="fi-extra-tetel">
+              <span className="fi-extra-nev">{e.név}</span>
+              {e.leírás && <span className="fi-extra-leiras">{e.leírás}</span>}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <table className="fi-modok-table fi-szekcio">
         <thead>
           <tr>
             <th>Aktor</th>

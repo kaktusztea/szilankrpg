@@ -1087,6 +1087,10 @@
   border-bottom: 1px solid var(--border-light);
 }
 
+.fi-meta-row:last-child {
+  border-bottom: none;
+}
+
 .fi-meta-label {
   font-size: 13px;
   color: var(--text-dim);
@@ -1100,10 +1104,10 @@
   text-align: right;
 }
 
-.fi-modok-cim {
-  font-size: 13px;
-  color: var(--text-dim);
-  margin-top: 2px;
+.fi-szekcio {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
 }
 
 .fi-modok-table {
@@ -1156,5 +1160,33 @@
 
 .fi-mod-masodlagos {
   opacity: 0.72;
+}
+
+.fi-extrak-lista {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+}
+
+.fi-extra-tetel {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.fi-extra-tetel:last-child {
+  border-bottom: none;
+}
+
+.fi-extra-nev {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.fi-extra-leiras {
+  display: block;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 1px;
 }
 

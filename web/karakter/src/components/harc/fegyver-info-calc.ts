@@ -21,8 +21,8 @@ export interface FegyverInfoAdat {
   /** Harcmodor képzettség neve + a karakter szintje benne. */
   harcmodorNév: string;
   harcmodorSzint: number;
-  /** Extrák nevei (a fegyver v2 definícióból). */
-  extrák: string[];
+  /** Extrák (a fegyver v2 definícióból) név + a katalógus leírásával. */
+  extrák: { név: string; leírás: string }[];
   /** A felvett példány anyaga (null ha nincs példány - pl. puszta kéz / pajzs). */
   anyag: string | null;
   /** A felvett példány Ideája (null ha nincs példány). */
@@ -65,7 +65,10 @@ export function buildFegyverInfó(
     név: result.fegyver_név,
     harcmodorNév,
     harcmodorSzint: képzettségSzint(karakter, harcmodorNév),
-    extrák: (fDef?.extrák ?? []).map(e => e.név),
+    extrák: (fDef?.extrák ?? []).map(e => ({
+      név: e.név,
+      leírás: data.fegyverExtrák?.[e.id]?.leírás ?? '',
+    })),
     anyag: peldány?.anyag ?? null,
     idea: peldány?.idea ?? null,
     ideaDefault: fDef?.idea_default ?? 0,

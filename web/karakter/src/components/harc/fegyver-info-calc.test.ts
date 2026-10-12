@@ -23,6 +23,7 @@ const result: FegyverResult = {
 const data = {
   fegyverek: [{ név: 'Hosszúkard', kategória: 'kardvívó', idea_default: 2, extrák: [{ id: 'x', név: 'Pontos' }], módok: [] }],
   konstansok: { fegyver_kategória_harcmodor: { kardvívó: 'Kardvívás' } },
+  fegyverExtrák: { x: { id: 'x', név: 'Pontos', leírás: 'Precíziós szúróhegy.' } },
 } as unknown as GameData;
 
 const karakter = {
@@ -44,8 +45,17 @@ describe('buildFegyverInfó', () => {
     expect(info.ideaDefault).toBe(2);
   });
 
-  it('extrák nevei a v2 definícióból', () => {
-    expect(buildFegyverInfó(result, karakter, data).extrák).toEqual(['Pontos']);
+  it('extrák név + leírás a v2 definícióból + katalógusból', () => {
+    expect(buildFegyverInfó(result, karakter, data).extrák).toEqual([
+      { név: 'Pontos', leírás: 'Precíziós szúróhegy.' },
+    ]);
+  });
+
+  it('extra leírás üres, ha a katalógusban nincs meg az id', () => {
+    const data2 = { ...data, fegyverExtrák: {} } as unknown as GameData;
+    expect(buildFegyverInfó(result, karakter, data2).extrák).toEqual([
+      { név: 'Pontos', leírás: '' },
+    ]);
   });
 
   it('módok: elsődleges elöl, a harcértékek a FegyverResult-ból', () => {
