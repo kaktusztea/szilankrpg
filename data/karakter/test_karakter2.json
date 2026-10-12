@@ -128,13 +128,13 @@
       "név": "Mesterfegyver",
       "fok": 1,
       "spec_típus": "fegyver",
-      "spec_elem": "tőr"
+      "spec_elem": "Tőr"
     },
     {
       "név": "Mesterfegyver",
       "fok": 2,
       "spec_típus": "fegyver",
-      "spec_elem": "kard, lovag"
+      "spec_elem": "Kard, lovag"
     },
     {
       "név": "Merevvértviselet",
@@ -439,14 +439,14 @@
   },
   "fegyverek": [
     {
-      "alap": "kard, lovag",
+      "alap": "Kard, lovag",
       "név": "",
       "anyag": "acél",
       "idea": 0,
       "felszerelésben": true
     },
     {
-      "alap": "tőr",
+      "alap": "Tőr",
       "név": "",
       "anyag": "acél",
       "idea": 0,

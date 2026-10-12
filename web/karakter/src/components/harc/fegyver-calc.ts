@@ -2,6 +2,7 @@ import type { Karakter, Session, FegyverAlap, FegyverMod } from '../../engine/ty
 import type { GameData } from '../../engine/data-loader';
 import { evaluate, buildContext, filterFegyverRules, type Rule } from '../../engine/reactive';
 import { lookupFegyver, képzettségSzint } from '../../engine/utils';
+import { findMfFok } from '../../engine/mf-utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
 import { ideaDelta } from './shared';
 import type { FegyverResult, FegyverResultMód } from './types';
@@ -37,10 +38,12 @@ export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: 
   for (const fp of k.fegyverek) {
     const fDef = lookupFegyver(data.fegyverek, fp.alap);
     if (!fDef) continue;
-    const mfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === fDef.név || f.spec_elem === fp.alap));
+    // Mesterfegyver fok: kis/nagybetű-FÜGGETLEN egyeztetés (findMfFok → toLowerCase), hogy a karakter
+    // `alap` és a fortély `spec_elem` eltérő betűzése se veszítse el a bónuszt.
+    const mfFok = findMfFok(k, data.fegyverek, fp.alap);
     // Példány-Idea delta a idea_default-hoz képest (Modell 2, §16); a v2 harcérték a default-ot már tartalmazza.
     const ideaHatás = ideaDelta(fp.idea, fDef.idea_default, data.fegyverIdeaTabla);
-    rows.push({ név: fDef.név, fDef, mfFok: mfEntry?.fok ?? 0, ideaHatás });
+    rows.push({ név: fDef.név, fDef, mfFok, ideaHatás });
   }
   if (pajzsFegyverNév) {
     const pajzsDef = lookupFegyver(data.fegyverek, pajzsFegyverNév);
