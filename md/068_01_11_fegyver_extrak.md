@@ -95,7 +95,8 @@ Hajlékony fegyver a pajzs mögé csap.
 ### Fegyvertörés-immunis
 
 ```
-Hatás: a Fegyvertörés manőver nem fog rajta
+Feltétel: passzív fél
+Hatás:    a Fegyvertörés manőver nem fog rajta
 ```
 
 Hajlékony (nem merev) fegyver.
@@ -136,8 +137,8 @@ Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorh
 ### Pontos
 
 ```
-Feltétel: 'pengehegy' aktor + egykezes forgatás
-Hatás:    Precíz támadás manőver Ellenpróbájára +2
+Feltétel: 'pengehegy' aktor + egykezes forgatás + aktív fél
+Hatás:    az aktív fél dobása +2 (Precíz támadás manőver)
 ```
 
 Precíziós szúróhegy.
@@ -146,17 +147,26 @@ Precíziós szúróhegy.
 
 ```
 Feltétel: egykezes forgatás, passzív fél
-Hatás:    Lefegyverzés Ellenpróba -2
-          Fegyvertörés Ellenpróba -2
+Hatás:    a passzív fél (akié a fegyver) dobása -2
+          (Lefegyverzés és Fegyvertörés manővernél is)
 ```
 
 Az ilyen fegyvert az ellenfél könnyebben kiüti a kezedből, könnyebben eltöri.
+
+### Lefegyverzése nehezebb
+
+```
+Feltétel: passzív fél
+Hatás:    a passzív fél (akié a fegyver) dobása +2 (nehezebb lefegyverezni)
+```
+
+Az ilyen fegyvert nehezebben ütik ki a kezedből.
 
 ### Fanyél fegyvertörése könnyebb
 
 ```
 Feltétel: passzív fél, ellenfél fegyvere fém
-Hatás:    Fegyvertörés Ellenpróba -2 (könnyebb eltörni)
+Hatás:    a passzív fél (akié a fegyver) dobása -2 (könnyebb eltörni)
 ```
 
 Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
@@ -173,8 +183,8 @@ Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
 ### Kampós véggel lábkirántás
 
 ```
-Feltétel: 'kampós' aktor
-Hatás:    Lábkirántás manőver Ellenpróbájára +2
+Feltétel: 'kampós' aktor + aktív fél
+Hatás:    az aktív fél dobása +2 (Lábkirántás manőver)
 ```
 
 A fegyver kampós vége (pl. glaive-szerű penge).

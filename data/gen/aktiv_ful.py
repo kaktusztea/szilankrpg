@@ -81,7 +81,8 @@ def _resolve_extra_ref_sorok(manőver, extrak_by_id):
 
     A pointer-sor (`{extra_ref: "<id>"}`) helyére a generátor kitölti:
       - `érték`   : az extra `manőver_ellenpróba`-hatásának értéke, amelynek al-feltétele
-                    a jelen manőverre (`manőver:<manőver_id>`) szól - a célszám-módosító (negatív = könnyebb),
+                    a jelen manőverre (`manőver:<manőver_id>`) szól - dobásmódosító a dobó
+                    (a `manőver_állapot` szerinti) fél szemszögéből (pozitív = a dobónak kedvez),
       - `leírás`  : "Fegyver extra: <extra név>",
       - `feltétel`: `fegyver_extra:<id>` (auto-match: az aktív fegyver hordozza-e az extrát).
     Így EGY igazságforrás (extra) adja az értéket + a leírást + a match-feltételt; a manőver-tábla

@@ -197,6 +197,12 @@
     "név": "Fegyvertörés-immunis",
     "csoport": "harci_helyzet",
     "leírás": "Hajlékony (nem merev) fegyver, a Fegyvertörés manőver nem fog rajta.",
+    "feltétel": [
+      {
+        "típus": "manőver_állapot",
+        "érték": "passzív"
+      }
+    ],
     "hatás": [
       {
         "cél": "manőver_ellenpróba",
@@ -209,7 +215,7 @@
     "id": "fanyel_fegyvertores_konnyebb",
     "név": "Fanyél fegyvertörése könnyebb",
     "csoport": "tulajdonság",
-    "leírás": "Fanyelű fegyver, a Fegyvertörés manőver Ellenpróbánál: -2 (könnyebb eltörni).",
+    "leírás": "Fanyelű fegyver: Fegyvertörés manővernél a passzív fél (akié a fegyver) dobása -2 (az ő fegyverét könnyebb eltörni).",
     "feltétel": [
       {
         "típus": "manőver_állapot",
@@ -224,7 +230,7 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": 2,
+        "érték": -2,
         "feltétel": "manőver:fegyvertörés"
       }
     ]
@@ -304,7 +310,7 @@
     "id": "lefegyverezhetobb",
     "név": "Lefegyverezhetőbb",
     "csoport": "tulajdonság",
-    "leírás": "Az ilyen fegyvert az ellenfél könnyebben kiüti kezedből, könnyebben eltöri.\n",
+    "leírás": "Az ilyen fegyvert az ellenfél könnyebben kiüti kezedből, könnyebben eltöri. Lefegyverzés / Fegyvertörés manővernél a passzív fél (akié a fegyver) dobása -2.\n",
     "feltétel": [
       {
         "típus": "forgatás",
@@ -319,13 +325,13 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": 2,
+        "érték": -2,
         "feltétel": "manőver:lefegyverzés"
       },
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": 2,
+        "érték": -2,
         "feltétel": "manőver:fegyvertörés"
       }
     ]
@@ -334,7 +340,7 @@
     "id": "lefegyverzese_nehezebb",
     "név": "Lefegyverzése nehezebb",
     "csoport": "tulajdonság",
-    "leírás": "A fegyvert az ellenfél nehezebben üti ki a kezedből. Lefegyverzés manőver passzív esetében az Ellenpróba dobásod -2 Helyzetfüggő módosítót kap (nehezebb lefegyverezni).\n",
+    "leírás": "A fegyvert az ellenfél nehezebben üti ki a kezedből. Lefegyverzés manővernél a passzív fél (akié a fegyver) dobása +2 (nehezebb lefegyverezni).\n",
     "feltétel": [
       {
         "típus": "manőver_állapot",
@@ -345,7 +351,7 @@
       {
         "cél": "manőver_ellenpróba",
         "mód": "flat",
-        "érték": -2,
+        "érték": 2,
         "feltétel": "manőver:lefegyverzés"
       }
     ]
