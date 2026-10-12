@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
-import { szitModSentinelLehetetlen, szitModSentinelExtraId } from './manover-dobas-calc';
-import type { ModositoTabla } from '../../engine/data-types';
+import { szitModSentinelLehetetlen, szitModSentinelExtraId, szitModÁllapot, szitTáblákMódszerint } from './manover-dobas-calc';
+import type { ModositoTabla, GameData } from '../../engine/data-types';
 
 // A sentinel data-driven (konstansok.yaml → manőver.sentinel_nem_kísérelhető = 99); a tesztben literál.
 const SENTINEL = 99;
@@ -112,5 +112,59 @@ describe('szitModSentinelLehetetlen (immunis -99 sentinel)', () => {
   it('szitModSentinelExtraId: nem-immunis sor kiválasztva → null', () => {
     expect(szitModSentinelExtraId(passzívTábla, { 'A te fegyvered (törés ellen)': 1 }, {}, IMMUNIS))
       .toBeNull();
+  });
+});
+
+/**
+ * szitTáblákMódszerint: a mód szerint szűri a táblákat (aktív = aktív-oldali + globális;
+ * passzív = passzív-oldali). Regresszió: passzív extrák csak passzív módban, globálisok csak aktívban.
+ */
+describe('szitTáblákMódszerint', () => {
+  const aktívTábla: ModositoTabla = { kategória: 'Fegyver', mód: 'single', sorok: [{ érték: 2, leírás: 'A' }] };
+  const passzívTábla: ModositoTabla = { kategória: 'Törés ellen', mód_oldal: 'passzív', mód: 'single', sorok: [{ érték: -2, leírás: 'B' }] };
+  const globális: ModositoTabla = { kategória: 'Körülmények', mód: 'single', sorok: [{ érték: 3, leírás: 'KM' }] };
+  const data = { konstansok: { manőver: { globális_módosítók: [globális] } } } as unknown as GameData;
+
+  it('aktív mód → aktív-oldali táblák + globálisok', () => {
+    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'aktív', data);
+    expect(r.map(t => t.kategória)).toEqual(['Fegyver', 'Körülmények']);
+  });
+  it('passzív mód → csak a passzív-oldali táblák (globális nélkül)', () => {
+    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'passzív', data);
+    expect(r.map(t => t.kategória)).toEqual(['Törés ellen']);
+  });
+  it('nincs helyzetfüggő módosító → aktívban csak a globálisok', () => {
+    expect(szitTáblákMódszerint(undefined, 'aktív', data).map(t => t.kategória)).toEqual(['Körülmények']);
+  });
+});
+
+/**
+ * szitModÁllapot: egy helyen számol összeget + a két sentinel-ágat + az immunis-leírást.
+ * A sentinelek data-driven (konstansok.yaml); a teszt-mock a kanonikus 99 / -99.
+ */
+describe('szitModÁllapot (orchestrator)', () => {
+  const data = {
+    konstansok: { manőver: { sentinel_nem_kísérelhető: 99, sentinel_immunis: -99 } },
+    fegyverExtrák: { fegyvertores_immunis: { id: 'fegyvertores_immunis', név: 'Fegyvertörés-immunis', leírás: 'Hajlékony fegyver.' } },
+  } as unknown as GameData;
+
+  it('sima módosító → összeg, nincs sentinel', () => {
+    const t: ModositoTabla[] = [{ kategória: 'X', mód: 'single', sorok: [{ érték: -2, leírás: 'a' }] }];
+    expect(szitModÁllapot(t, { X: 0 }, {}, data)).toEqual({ összeg: -2, lehetetlen: false, immunis: false, immunisLeírás: '' });
+  });
+  it('99 sentinel → lehetetlen, összeg 0', () => {
+    const t: ModositoTabla[] = [{ kategória: 'X', mód: 'single', sorok: [{ érték: 99, leírás: 'tilt' }] }];
+    const r = szitModÁllapot(t, { X: 0 }, {}, data);
+    expect(r.lehetetlen).toBe(true);
+    expect(r.összeg).toBe(0);
+  });
+  it('-99 immunis sentinel → immunis + a katalógus-leírás feloldva', () => {
+    const t: ModositoTabla[] = [{ kategória: 'X', mód_oldal: 'passzív', mód: 'single', sorok: [
+      { érték: -99, leírás: 'Fegyver extra: Fegyvertörés-immunis', feltétel: 'fegyver_extra:fegyvertores_immunis' },
+    ] }];
+    const r = szitModÁllapot(t, { X: 0 }, {}, data);
+    expect(r.immunis).toBe(true);
+    expect(r.összeg).toBe(0);
+    expect(r.immunisLeírás).toBe('Hajlékony fegyver.');
   });
 });

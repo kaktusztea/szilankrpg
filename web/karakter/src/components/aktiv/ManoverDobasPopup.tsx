@@ -2,13 +2,12 @@ import { useState } from 'react';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
-import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
 import {
   type Mód, type FázisEredmény, type ManőverDef,
   követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, követelményJelölés, követelményCimke, aktívFegyverInfo,
   calcManőverPont, getBelharcFok,
   fázisCselekvő, fázisSikeres, getFázisFelirat, eredményHatás,
-  szitModKezdőÁllapot, aktívFegyverNév, szitFeltételTeljesül, szitModSentinelLehetetlen, szitModSentinelExtraId,
+  szitModKezdőÁllapot, aktívFegyverNév, szitFeltételTeljesül, szitTáblákMódszerint, szitModÁllapot,
 } from './manover-dobas-calc';
 
 interface Props {
@@ -35,14 +34,9 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
 
-  // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák. Aktív módban az aktív-oldali táblák
-  // (mód_oldal != 'passzív') + a GLOBÁLIS módosítók (konstansok.yaml → manőver.globális_módosítók,
-  // §066_04). Passzív módban a passzív-oldali táblák (mód_oldal === 'passzív') - pl. a fegyver-extrák
-  // (Lefegyverezhetőbb, Fegyvertörés-immunis), amelyek a fegyver birtokosát (passzív fél) érintik.
-  const összesTábla = manőver.helyzetfüggő_módosítók ?? [];
-  const módosítóTáblák = mód === 'aktív'
-    ? [...összesTábla.filter(t => t.mód_oldal !== 'passzív'), ...(data.konstansok.manőver.globális_módosítók ?? [])]
-    : összesTábla.filter(t => t.mód_oldal === 'passzív');
+  // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák (mód_oldal szerint, §066_04). Aktív: aktív-
+  // oldali táblák + globális módosítók; passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
+  const módosítóTáblák = szitTáblákMódszerint(manőver.helyzetfüggő_módosítók, mód, data);
   const [szitPickerNyitva, setSzitPickerNyitva] = useState(false);
   const [mpPickerNyitva, setMpPickerNyitva] = useState(false);
   const [téPopupNyitva, setTéPopupNyitva] = useState(false);
@@ -52,18 +46,11 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [multiMods, setMultiMods] = useState<Record<string, boolean[]>>(
     () => szitModKezdőÁllapot(módosítóTáblák, karakter, session, data).multi,
   );
-  // Manőverhez nincs próba-enyhítés → üres lista.
-  // A szitMod a DOBÓ-oldalhoz adódik (§066_04: Helyzetfüggő módosítók = Ellenpróba dobás-módosítók).
-  // A 99 KÜLÖNLEGES sentinel: "a Manőver nem kísérelhető meg" - NEM adódik az összeghez (vakon +99
-  // dobásbónusz biztos sikert adna, az ellenkezőjét a szándéknak), hanem a `szitLehetetlen` ágat váltja.
-  const szitLehetetlen = szitModSentinelLehetetlen(módosítóTáblák, szitMods, multiMods, data.konstansok.manőver.sentinel_nem_kísérelhető);
-  // Passzív letilt (immunis) sentinel: a fegyver a manőverre immunis (pl. Fegyvertörés-immunis)
-  // → a passzív félnek automatikus SIKER. Mint a 99, NEM adódik az összeghez, külön ágat vált.
-  const szitImmunis = szitModSentinelLehetetlen(módosítóTáblák, szitMods, multiMods, data.konstansok.manőver.sentinel_immunis);
-  // Az immunis extra teljes leírása (miért sikertelen a manőver), a katalógusból feloldva.
-  const immunisExtraId = szitImmunis ? szitModSentinelExtraId(módosítóTáblák, szitMods, multiMods, data.konstansok.manőver.sentinel_immunis) : null;
-  const immunisLeírás = immunisExtraId ? (data.fegyverExtrák?.[immunisExtraId]?.leírás ?? '') : '';
-  const szitModÖsszeg = (szitLehetetlen || szitImmunis) ? 0 : calcSzitModÖsszeg(módosítóTáblák, szitMods, multiMods, []);
+  // A kiválasztott módosítók aggregált állapota: összeg + a két sentinel-ág (99 = nem kísérelhető meg,
+  // -99 = immunis) + az immunis extra leírása - egy helyen (manover-dobas-calc). Manőverhez nincs
+  // próba-enyhítés. A sentinelek NEM adódnak az összeghez (vakon +99 bónusz biztos sikert adna).
+  const { összeg: szitModÖsszeg, lehetetlen: szitLehetetlen, immunis: szitImmunis, immunisLeírás } =
+    szitModÁllapot(módosítóTáblák, szitMods, multiMods, data);
 
   const manőverPont = calcManőverPont(karakter, data);
   const aktMP = Math.max(0, manőverPont - session.manőver_pont_használt);

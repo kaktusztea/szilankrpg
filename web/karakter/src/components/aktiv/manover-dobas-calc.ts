@@ -8,6 +8,7 @@ import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-type
 import { képzettségSzint, fortélyFok, harcmodorÖsszeg } from '../../engine/utils';
 import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
+import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 
 /** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
@@ -182,6 +183,54 @@ export function szitModSentinelExtraId(
     }
   }
   return null;
+}
+
+/**
+ * A dobó-oldalhoz illő Helyzetfüggő módosító táblák a mód szerint:
+ *   - aktív: a manőver aktív-oldali táblái (mód_oldal != 'passzív') + a globális módosítók
+ *     (konstansok.yaml → manőver.globális_módosítók, §066_04),
+ *   - passzív: a manőver passzív-oldali táblái (mód_oldal === 'passzív') - pl. fegyver-extrák
+ *     a fegyver birtokosát érintik (Lefegyverezhetőbb, Fegyvertörés-immunis).
+ */
+export function szitTáblákMódszerint(
+  helyzetfüggőMódosítók: ModositoTabla[] | undefined, mód: Mód, data: GameData,
+): ModositoTabla[] {
+  const táblák = helyzetfüggőMódosítók ?? [];
+  return mód === 'aktív'
+    ? [...táblák.filter(t => t.mód_oldal !== 'passzív'), ...(data.konstansok.manőver.globális_módosítók ?? [])]
+    : táblák.filter(t => t.mód_oldal === 'passzív');
+}
+
+/** A Helyzetfüggő módosítók aggregált állapota (összeg + sentinel-ágak), egy helyen kiszámolva. */
+export interface SzitModÁllapot {
+  /** A dobáshoz adódó módosító-összeg (a sentinelek NEM adódnak hozzá). */
+  összeg: number;
+  /** 99 sentinel aktív: a Manőver nem kísérelhető meg (aktív E → biztos rontás). */
+  lehetetlen: boolean;
+  /** -99 sentinel aktív: a fegyver immunis (passzív E → biztos siker a védőnek). */
+  immunis: boolean;
+  /** Az immunis extra teljes leírása a katalógusból (miért sikertelen), vagy ''. */
+  immunisLeírás: string;
+}
+
+/**
+ * A kiválasztott Helyzetfüggő módosítók aggregált állapota - a két sentinel detektálása, az
+ * összeg (sentinel nélkül) és az immunis-leírás feloldása EGY helyen (a popup korábban 5 inline
+ * sorban szórta szét, ismételt argumentumokkal). A sentinel-értékek data-driven (konstansok.yaml).
+ */
+export function szitModÁllapot(
+  táblák: ModositoTabla[], szitMods: Record<string, number>, multiMods: Record<string, boolean[]>, data: GameData,
+): SzitModÁllapot {
+  const konst = data.konstansok.manőver;
+  const lehetetlen = szitModSentinelLehetetlen(táblák, szitMods, multiMods, konst.sentinel_nem_kísérelhető);
+  const immunis = szitModSentinelLehetetlen(táblák, szitMods, multiMods, konst.sentinel_immunis);
+  const immunisId = immunis ? szitModSentinelExtraId(táblák, szitMods, multiMods, konst.sentinel_immunis) : null;
+  return {
+    összeg: (lehetetlen || immunis) ? 0 : calcSzitModÖsszeg(táblák, szitMods, multiMods, []),
+    lehetetlen,
+    immunis,
+    immunisLeírás: immunisId ? (data.fegyverExtrák?.[immunisId]?.leírás ?? '') : '',
+  };
 }
 
 /**
