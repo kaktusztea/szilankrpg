@@ -20,7 +20,7 @@ A fejléc bal oldalán a **Szilánk pont** (keretes szám) látható, jobb oldal
 | Gomb | Funkció |
 | ---- | ------- |
 | ↩    | Visszavonás (undo) - a szám a visszavonható lépéseket mutatja |
-| ✏️   | Verziók, Napló, Jegyzetek ablak |
+| ✏️   | Felszerelés, Verziók, Napló, Jegyzetek ablak |
 | 🧑   | Karakterek (karaktertár, mentés/betöltés) |
 | 🔧/🎮 | Szerkesztő ⇄ Játék mód váltás |
 
@@ -57,14 +57,14 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Aktív fül**: fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes), taktikák kombó-szabályokkal, harci helyzetek, manőverek, státuszok - minden választás azonnal hat a Harc fülre
 - **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, TÉ, SFÉ, VÉ csökkenés, MP boxok a fejlécben, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
   - **Kezdeményezés dobás**: a KÉ boxra koppintva `KÉ + k20` dobás nagy számmal; az utolsó 3 dobás a KÉ boxban látszik
-  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Manuális dobás is lehetséges (saját kocka értékkel).
+  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Ha a fegyver Erő-követelményét (nehéz: Erő 2, súlyos: Erő 3) nem éred el, Hátrány jelenik meg a dobáson. Manuális dobás is lehetséges (saját kocka értékkel).
   - **Sebzésdobás**: a Támadó dobás eredménye után a „Sebzés" gombbal indítható - SP bontás (alap, erő, MF, taktika, fortély), statikus bónuszok, Előny/Hátrány kocka picker és újradobás gomb. Az Átütés értéke is kijelzésre kerül (ha > 0).
     - **Ellenfél páncél**: kötelező választó (csupasz / puha / bőr / lánc / pikkely-lemez) - a sebzésjelleg (szúró/vágó/zúzó) és a páncél alapján módosítja az SP-t. Amíg nincs páncél választva, a dobás nem indítható.
     - Ha a fegyver az adott móddal nem sebez (pl. bola, háló, lasszó), „Ez a fegyver nem sebez" jelzés jelenik meg.
   - **SFÉ infó**: az SFÉ boxra koppintva részletes páncél infó popup nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT bontás).
-  - **VÉ csökkentés**: a VÉ csökkenés boxban a `-N` gombokkal csökkentheted a védőértéket (támadásonként), `+1` gombbal visszaállíthatsz egyet, `⟲` nullázza. A label/érték koppintással a csökkentések története is látszik.
+  - **VÉ csökkentés**: a VÉ csökkenés boxban a `-N` gombokkal csökkentheted a védőértéket (támadásonként), `+1` gombbal visszaállíthatsz egyet, `⟲` nullázza. A label/érték koppintással a csökkentések története is látszik. Ha aktív taktika szorzót ad a VÉ-csökkentésre (pl. Roham / Öngyilkos roham ×2), a VÉ-csökkentés ablakban megjelenik a szorzó és a forrás-taktika.
   - **Manőver pont (MP)**: az MP box mutatja az aktuális/max manőver pontot; `-1` gombbal csökkentheted, `⟲` visszaállítja a maximumra.
-  - **Manőver végrehajtása** (⚔️ gomb): az Aktív fülön indítható manőver dobás. Először mód választó (Aktív = én hajtom végre / Passzív = ellenem hajtják végre), majd a kiválasztott manőver popup-ban fázisonkénti (M/V/E) eredmény rögzítés, MP felhasználás, belharcos bónusz - a végeredmény Sikeres/Sikertelen.
+  - **Manőver végrehajtása** (⚔️ gomb): az Aktív fülön indítható manőver dobás. Először mód választó (Aktív = én hajtom végre / Passzív = ellenem hajtják végre). Ha a manővernek van követelménye, egy 0. lépés jelzi, teljesülnek-e (Normál hiány → Hátrány a dobásra, Erős hiány → nem végezhető). Aktív módban a popup tartalmaz egy **Helyzetfüggő módosítók** gombot (dobás-oldali módosítók: pl. Erő-különbség, fegyverhossz, pajzs, körülmények - minden manőverhez a globális „Újrapróbálkozás" és „Körülmények" is), és egy **MP** gombot a Manőver Pont felhasználásához. Zöld = könnyít, piros = nehezít; egyes körülmények „letilt" jelzése azt jelenti, hogy a manőver az adott helyzetben nem kísérelhető meg. Az Ellenpróba `dobás vs célszám` kijelzés után fázisonként (M/V/E) rögzíted az eredményt - a végeredmény Sikeres/Sikertelen.
   - **Harci akrobatika ki/be**: session kapcsoló (Igen/Nem) - letiltva ha hiányzik a fortély, nem megfelelő a páncél (struktúra vagy túl magas MGT), vagy kevés az Akrobatika képzettség szint (koppintásra megjelenik a hiányzó feltétel)
   - **Páncél viselve ki/be**: session kapcsoló (Igen/Nem) - viseled-e épp a páncélt (hat az SFÉ-re, MGT-re és a Harci akrobatika elérhetőségére)
 - **ÉP táblázat / Sebesülés**: S1-S4 rubrikák, TÉ levonás automatika
@@ -83,10 +83,11 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Státuszok**: fokozatonkénti hatások (Előny/Hátrány, letilt, szorzó stb.)
 
 ---
-## Verziók, Napló, Jegyzetek (✏️)
+## Felszerelés, Verziók, Napló, Jegyzetek (✏️)
 
-A fejléc ✏️ gombjával nyíló ablak három részből áll:
+A fejléc ✏️ gombjával nyíló ablak négy részből áll:
 
+- **Felszerelés**: a cipelt tárgyak keretét kezeli. Fent a keret-kijelzés pöttyökkel (Max / Aktuális - a túlcsordulás piros pöttyel). A táblázat automatikusan tartalmazza a felvett fegyvereket, a pajzsot és a páncélt (ezek a saját adataikból számolódnak, „nincs" ↔ visel állapot kapcsolható), alattuk szabadon felvehető kézi tárgyak (név + méret). A pajzs/páncél „visel" állapota ugyanaz az igazságforrás, mint a Harc fül „Páncél viselve" kapcsolója és a Fegyver+pajzs fegyverfogás. A keret túllépése Hátrányt ad a Fizikai próbákra (§15/§33.1).
 - **Karakter verziók**: kiemelt pillanatképek (checkpoint) a karakterről. Bármikor létrehozhatsz egyet, megtekintheted vagy visszaállhatsz rá. Visszaállításnál választhatsz: az utána lévő verziók törlése, vagy új verzióként hozzáfűzés. Napló bejegyzés írásakor opcionálisan automatikusan is készül verzió.
 - **Napló**: játék session bejegyzések (dátum, KM, kaland neve, események). Összecsukható lista, szerkeszthető.
 - **Jegyzetek**: szabad szöveges jegyzetmező (mindig nyitva).
@@ -146,7 +147,7 @@ A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képz
 
 ### NJK switcher sáv és harci jelölés (KM eszköz)
 
-Ha **NJK** (Nem Játékos Karakter) van kijelölve, a fejléc alatt megjelenik egy fix sáv az összes tárolt NJK-val (egy-egy box: becenév vagy név + Életerő állapot). A Kalandmester harc közben egyetlen koppintással válthat az NJK-k között, anélkül hogy a Karakterek ablakot megnyitná.
+Ha **NJK** (Nem Játékos Karakter) van kijelölve, a fejléc alatt megjelenik egy fix sáv az összes tárolt NJK-val (egy-egy box: becenév vagy név + Életerő állapot). A Kalandmester harc közben egyetlen koppintással válthat az NJK-k között, anélkül hogy a Karakterek ablakot megnyitná. A sáv tetején az aktív NJK gyors harcértékei (KÉ/TÉ/VÉ) láthatók; az egyes NJK boxokra mutatva (hover) azok harcértékei is felugranak egy kis lebegő ablakban.
 
 Egy karakter a Tulajdonságok fül fejlécében a **JK / NJK chip**-pel tehető Nem Játékos Karakterré (a chip koppintással vált JK ⇄ NJK között).
 
