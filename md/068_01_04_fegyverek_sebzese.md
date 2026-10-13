@@ -1,21 +1,30 @@
-## Fegyverek sebzése
+# Fegyverek sebzése
 
-### Típus szerint
+## ⚜️ Típus szerint
 
 - [Elsődleges](064_02_05_fegyver_sebzes_jellege_tipusa.md#sebzéstípus-elsődleges)
 - [Másodlagos](064_02_05_fegyver_sebzes_jellege_tipusa.md#sebzéstípus-másodlagos)
 - [Alkalmatlan](064_02_05_fegyver_sebzes_jellege_tipusa.md#sebzéstípus-alkalmatlan)
 
-### Jelleg szerint
+## ⚜️ Jelleg szerint
 
-Zúzó, Szúró, Vágó, Vágó+Íves. Az egyes [páncél típusok](069_02_SFE.md) ellen különböző bónuszokat nyújtanak ezek a támadás típusok.
+A sebzésjelleg (Zúzó, Szúró, Vágó-egyenes, Vágó-íves) a megtámadott [páncél típusától](069_02_SFE.md) függően módosítja a Sebzést (`SP`) a támadó oldalán.
 
 ```
-Zúzó:      +3 SP fém páncélok ellen
-Szúró:     +3 SP láncing és alatta
-Vágó:      +1 SP páncél nélkül és bőrvért alatt
-Vágó+Íves: +2 SP páncél nélküli ellen
+              csupasz  puha  bőr  lánc  pikkely/lemez
+Zúzó                0     0   +1    +3    +3
+Szúró              +2    +3   +1     0    -3
+Vágó-egyenes       +1    +1    0    -2    -4
+Vágó-íves          +3    +2    0    -2    -4
 ```
+
+🔆 Zúzó: fémen erős
+
+🔆 Szúró fedetlen ellen kiváló, lemez ellen nem ideális
+
+🔆 Vágó-egyenes: fedetlen ellen jó, fémen rossz
+
+🔆 Vágó-íves: fedetlen ellen legjobb, fémen a legrosszabb
 
 ---
 
