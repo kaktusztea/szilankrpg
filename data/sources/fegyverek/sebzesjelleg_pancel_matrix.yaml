@@ -4,7 +4,8 @@
 # Az osztályba sorolás EXPLICIT (struktúra_osztály, lentebb) - a SFÉ+fém a data/sources páncél_struktúrák-ból jön.
 #
 # ponytail: ha ez a mátrix (érték vagy jelleg/osztály) változik, frissítsd az éles szabálykönyv
-# md/068_01_04_fegyverek_sebzese.md "Jelleg szerint" code-block tábláját is (kézi duplikáció,
+# md/068_01_04_fegyverek_sebzese.md "Jelleg szerint" és md/068_10_fegyvergenerator.md
+# "Sebzésjelleg × páncél" code-block tábláját is (kézi duplikáció,
 # nem generált - a próza-oldal nem olvassa ezt a yaml-t).
 matrix:
   zúzó:         {csupasz: 0,  puha: 0,  bor: 1, lanc: 3,  merev: 3}   # páncéltörő, gyenge húson

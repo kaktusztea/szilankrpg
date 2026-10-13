@@ -2,6 +2,11 @@
 # Ezt olvassa be a code/balance/fegyvergenerator_balansz.py. A szkriptekben NINCS adat.
 # FIGYELEM: tervezői eszköz adata, NEM a data/sources pipeline része (a generate_tables.py
 # csak a data/sources/ könyvtárat dolgozza fel - ez a mappa kimarad).
+#
+# ponytail: az md/068_10_fegyvergenerator.md (KM-manuál) a fegyverhossz, aktor, fejdarab, pengés,
+# láncos, hajlékony, súly, alapanyag, idea, szálfegyver_nyélanyag, egykezes_forgatás táblák
+# MINDEN értékét kézzel duplikálja (+ a képleteket a balansz.py modok()-ból). Bármelyik tábla
+# változásakor azt is frissítsd.
 
 # fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható, felszerelés_pont
 #   felszerelés_pont: a fegyver forgatás-kategóriájából levezetett HOSSZ-ág (0/1/2); a tervezői
