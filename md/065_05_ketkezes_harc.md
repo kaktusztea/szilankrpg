@@ -18,7 +18,7 @@ Nagyobb fegyver
 
 <br />
 
-## SUM [Fegyverhossz](068_01_01_fegyverstatisztikak.md#fegyverhossz-kategóriák)
+## SUM [Fegyverhossz](068_01_01_fegyverstatisztikak.md#️-fegyverhossz-kategóriák)
 
 A két fegyver "hossz" paraméterének összege.
 
