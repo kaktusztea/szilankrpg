@@ -1,4 +1,4 @@
-## Fegyver extrák
+## Fegyver Extrák
 
 Egyes fegyverek egyedi, szituációs hatásokat hordoznak - ezeket **extráknak** nevezzük. A fegyvertáblák "Extrák" oszlopa hivatkozik rájuk névvel - a hatás mindig szituációs (nem a alapértékeket módosít), és csak akkor lép életbe, ha a feltétele teljesül.
 

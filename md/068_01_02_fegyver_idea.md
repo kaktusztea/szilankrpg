@@ -39,6 +39,6 @@ Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet b
 
 ---
 
-🔗 [Fegyver extrák](068_01_03_fegyver_extrak.md) →
+🔗 [Fegyver Extrák](068_01_03_fegyver_extrak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

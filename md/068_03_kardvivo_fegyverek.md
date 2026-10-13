@@ -66,7 +66,7 @@ A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyve
 
 Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.
 
-Extrái (részletek a [Fegyver extrák](068_01_03_fegyver_extrak.md) fejezetben): Pontos, Lefegyverezhetőbb, Zúzó fegyver ellen rosszabb.
+Extrái (részletek a [Fegyver Extrák](068_01_03_fegyver_extrak.md) fejezetben): Pontos, Lefegyverezhetőbb, Zúzó fegyver ellen rosszabb.
 
 ---
 ## Kardívó hárítófegyverek

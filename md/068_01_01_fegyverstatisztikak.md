@@ -15,7 +15,7 @@ A **Fegyverstatisztika** egy fegyver kiszámolt, végleges harcértéke a fegyve
 - **Forgatás**: a fegyver forgatás-kategóriája (egykezes / másfélkezes / kétkezes).
 - **Hossz**: a fegyver [fegyverhossz-kategóriája](#fegyverhossz-kategóriák) (lásd lentebb).
 - **Felsz.pont** (Felszerelés pont): a fegyver [Felszerelés keretet](010_03_06_felszereles.md) terhelő pontja. Fegyverekre **nem** a páncélok [MGT](069_03_MGT.md) pontrendszere vonatkozik - egyes fegyverek a Felszerelés keretet csökkentik.
-- **Extrák**: a bázisra jövő, feltételhez kötött hatások (saját + a fegyverhossz-kategóriától örökölt). A táblázat a felkészítetlen bázist mutatja; ezek szituációsan jönnek rá. Lásd: [Fegyver extrák](068_01_03_fegyver_extrak.md).
+- **Extrák**: a bázisra jövő, feltételhez kötött hatások (saját + a fegyverhossz-kategóriától örökölt). A táblázat a felkészítetlen bázist mutatja; ezek szituációsan jönnek rá. Lásd: [Fegyver Extrák](068_01_03_fegyver_extrak.md).
 
 ---
 
@@ -68,6 +68,6 @@ A fegyverek mérete **fegyverhossz-kategóriákba** sorolható (`0`-`12`, a kate
 
 ---
 
-🔗 [Fegyverek minősége (Ideája)](068_01_02_fegyver_idea.md) →
+🔗 [Fegyver Idea](068_01_02_fegyver_idea.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
