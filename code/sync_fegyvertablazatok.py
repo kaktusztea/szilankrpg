@@ -11,7 +11,7 @@ a `<!-- tag: md_table_fegyver_start -->` / `_end -->` tag-pár közé - a fájl 
 
 A generátor **saját formátumát** használja (nincs backward compatibility a régi flat
 séma oszlopaival) - a régi `Pengehossz`/`MK`/`KF`/`Íves` oszlopok helyett a `módok[]`
-struktúra (Aktor, Jelleg, Sebzéstípus) jelenik meg, egy fegyver több sorban, módonként.
+struktúra (Aktorok, Sebzésjelleg, Sebzéstípus) jelenik meg, egy fegyver több sorban, módonként.
 
 Futtatás:  python3 code/sync_fegyvertablazatok.py [kategória ...]
   Argumentum nélkül mind az 5 kategóriát frissíti. Egy vagy több kategória-név megadható
@@ -42,8 +42,8 @@ KATEGORIA_MD = {
     "ostorharc": MD_DIR / "068_06_ostorharc_fegyverek.md",
 }
 
-FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "FSZ", "Extrák", "Megj."]
-JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Fh", "FSZ"}
+FEJLEC = ["Fegyver", "Aktorok", "Sebzésjelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Sebesség", "Forgatás", "Hossz", "Felsz.pont", "Extrák", "Megj."]
+JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Sebesség", "Hossz", "Felsz.pont"}
 
 _EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
 
@@ -84,13 +84,15 @@ def _fixed_sorok(kategoria):
         if r.get("kategória") != kategoria:
             continue
         megj = r.get("megjegyzés", "")
+        # Az `extrák` lehet string-lista VAGY {id, név} dict-lista (pl. Kopják) - a nevet jelenítjük.
+        extrak_cimkek = [e["név"] if isinstance(e, dict) else e for e in r.get("extrák", [])]
         for i, m in enumerate(r.get("módok", [])):
             n = r["név"] if i == 0 else ""
             mm = megj if i == 0 else ""
             rows.append([n, m["aktor"], (m["jelleg"] + " · FP" if m.get("FP") else m["jelleg"]), m["sebzéstípus"],
                          str(m["TÉ"]), str(m["VÉ"]), f"{m['SP']:+d}", str(m["Erőlimit"]), str(m["Átütés"]),
                          str(m["Sebesség"]) if m["Sebesség"] is not None else "-", m["Forgatás"],
-                         str(r["fegyverhossz"]), str(0), "; ".join(r.get("extrák", [])), mm])
+                         str(r["fegyverhossz"]), str(0), "; ".join(extrak_cimkek), mm])
     return rows
 
 
@@ -113,8 +115,16 @@ def sorok(kategoria):
     return rows
 
 
+def _wrap_numerikus(rows, fejlec, jobbra):
+    """A numerikus (jobbra igazított) oszlopok NEMÜRES, nem '-' adatcelláit `code` formázza
+    (pl. `3`, `+4`). Üres cella és '-' placeholder érintetlen. A fejlécre NEM vonatkozik."""
+    return [[(f"`{val}`" if c in jobbra and val not in ("", "-") else val)
+             for c, val in enumerate(r)] for r in rows]
+
+
 def render_tabla(rows, fejlec, jobbra_oszlopnevek):
     jobbra = {fejlec.index(nev) for nev in jobbra_oszlopnevek}
+    rows = _wrap_numerikus(rows, fejlec, jobbra)
     w = [len(h) for h in fejlec]
     for r in rows:
         for c, val in enumerate(r):
@@ -130,7 +140,7 @@ def render_tabla(rows, fejlec, jobbra_oszlopnevek):
 
 def pajzs_sorok():
     """A `fegyverek_fixed.json` `pajzs` kategóriájú rekordjai - egyszerűbb tábla, mint a
-    fegyvereké (egy pajzsnak nincs több módja, nincs Aktor/Jelleg/Sebzéstípus/Fh/FSZ/Extrák)."""
+    fegyvereké (egy pajzsnak nincs több módja, nincs Aktorok/Sebzésjelleg/Sebzéstípus/Hossz/Felsz.pont/Extrák)."""
     rows = []
     data = json.loads(FIXED_PATH.read_text(encoding="utf-8"))
     for r in data:

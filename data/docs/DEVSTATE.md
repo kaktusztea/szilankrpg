@@ -66,6 +66,46 @@ TODO:
 
 ---
 
+## Szorzók kezelése 🚧 (megbeszélés alatt)
+
+Egyetlen VÉ-levonási tengelyen (`vé_csökkentés` = aktív/támadó oldal, `vé_veszteség` = passzív/védekező oldal - ugyanaz az érték, két nézőpont) több ×2-es duplázó egyszerre fennállhat. Eldöntendő, hogyan halmozódnak:
+
+- **a.) Szorzók egymást szorozzák** (×2 · ×2 = ×4)
+- **b.) Szorzók összeadódnak** (×2 + ×2 → ×3, azaz `1 + Σ(szorzó-1)`)
+- **c.) Legnagyobb szorzó számít** (×2)
+
+### Jelenlegi kód-állapot
+
+`components/harc/ve-csokkentes-calc.ts` → `calcVéCsökkentésSzorzó` MA az **a.) szorzás**-t csinálja, de KIZÁRÓLAG a taktika `hatások` (`cél: vé_csökkentés`, `hatás: szorzó`) forráson belül. A passzív `vé_veszteség` + `operátor: duplázás` (helyzet/státusz) duplázók NINCSENEK bekötve ebbe a szorzat-láncba. Ha a döntés az a.) marad, a passzív oldalt is ugyanabba a láncba kell húzni (egységes effekt-modell, §42 kapcsolat).
+
+### Halmozódás-források (data layer, Távharc nélkül)
+
+| Forrás | Elem | Cél |
+|--------|------|-----|
+| Taktika (`taktikak.yaml`) | Roham, Öngyilkos roham | `vé_csökkentés` ×2 |
+| Harci helyzet (`harci_helyzetek.yaml`) | Földön fekve, Helyhez kötve, VÉ kiterjesztése másra | `vé_veszteség` ×2 |
+| Státusz (`statuszok.yaml`) | Kimerültség fok 2 (Kimerültség), fok 3 (Elcsigázottság) | `vé_veszteség` ×2 |
+
+### Kizárási korlátok (mi állhat EGYSZERRE)
+
+- **Taktika-oldal: mindig csak 1 ×2.** Roham és Öngyilkos roham is "❌ Más taktikával együtt" (md/065_02) - egymást és minden más taktikát kizárnak.
+- **Helyzet-oldal: max 2 ×2.** Földön fekve kölcsönösen kizárja Helyhez kötve + VÉ kiterjesztése; Helyhez kötve + VÉ kiterjesztése viszont NEM zárja egymást (md/065_03_02, md/065_03_03). Marad: Helyhez kötve + VÉ kiterjesztése.
+- **Státusz-oldal: max 1 ×2.** A Kimerültség egyetlen `többszörös: false` státusz-sor, egyszerre egy fok.
+- **Gyakorlati maximum: 4 db ×2 egyszerre** (1 taktika + 2 helyzet + 1 státusz-fok).
+
+### Igazolt példák (a 3 szabály eltérő eredménye)
+
+| Eset | a.) szoroz | b.) összead | c.) legnagyobb |
+|------|-----------|-------------|----------------|
+| Roham + Helyhez kötve | ×4 | ×3 | ×2 |
+| Öngyilkos roham + Elcsigázottság | ×4 | ×3 | ×2 |
+| Roham + Helyhez kötve + VÉ kiterjesztése | ×8 | ×4 | ×2 |
+| Roham + Elcsigázottság + Helyhez kötve + VÉ kiterjesztése | ×16 | ×5 | ×2 |
+
+A tét: a.) a szélső esetben ×16 (brutális), b.) ott is kezelhető (×5), c.) mindig fix ×2.
+
+---
+
 ## Manőver helyzetfüggő módosítók: Nehézség → Dobásmódosító ✅ (kész, 2026-10)
 
 > Implementálva (md → data → kód → spec). Refaktorlog: `web/karakter/refactorlog/2026-10-10.md`.

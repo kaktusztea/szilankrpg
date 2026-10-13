@@ -47,7 +47,7 @@ def _extrak(r):
     Saját (fegyverek.yaml) + ÖRÖKÖLT: fegyverhossz-kategória (Beszorítható, övön hordható),
     szálfegyver-nyélanyag (pl. fanyelű → Fegyvertörés könnyebb), hajlékony (pajzs-megkerülés, fegyvertörés-immun),
     láncos (pajzs VÉ felezés). Plusz az akadály mező szöveges jelölése (NEM extrak.yaml-id, nincs harcérték-hatása)
-    és a fegyverhossz-ból levezetett Felszerelés pont (l. FSZ oszlop is - itt csak akkor jelenik meg, ha nem 0).
+    és a fegyverhossz-ból levezetett Felszerelés pont (l. Felsz.pont oszlop is - itt csak akkor jelenik meg, ha nem 0).
     """
     fv = r["fegyver"]
     ids = list(r.get("extrak", []))
@@ -71,8 +71,8 @@ W = [(r["kategória"], r["név"], F(név=r["név"], **r["fegyver"]), _megj(r), _
      for r in bal._load("fegyverek.yaml") if "kategória" in r]
 
 
-FEJLEC = ["Fegyver", "Mód (Aktor)", "Jelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Forgatás", "Fh", "FSZ", "Extrák", "Megj."]
-JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Seb.", "Fh", "FSZ"}  # numerikus oszlopok (jobbra igazítva)
+FEJLEC = ["Fegyver", "Aktorok", "Sebzésjelleg", "Sebzéstípus", "TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Sebesség", "Forgatás", "Hossz", "Felsz.pont", "Extrák", "Megj."]
+JOBBRA_OSZLOPNEVEK = {"TÉ", "VÉ", "SP", "Erőlimit", "Átütés", "Sebesség", "Hossz", "Felsz.pont"}  # numerikus oszlopok (jobbra igazítva)
 JOBBRA = {FEJLEC.index(nev) for nev in JOBBRA_OSZLOPNEVEK}  # index-halmaz - NÉVBŐL, nem kézzel számolva
 
 
@@ -92,6 +92,10 @@ def sorok_kategoriankent():
 
 
 def emit_tabla(rows):
+    # A numerikus (jobbra igazított) oszlopok NEMÜRES, nem '-' adatcelláit `code` formázza
+    # (pl. `3`, `+4`). A fejlécre NEM vonatkozik.
+    rows = [[(f"`{val}`" if c in JOBBRA and val not in ("", "-") else val)
+             for c, val in enumerate(r)] for r in rows]
     w = [len(h) for h in FEJLEC]
     for r in rows:
         for c, val in enumerate(r):
@@ -130,20 +134,18 @@ Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
 
 - **Harcmodoronként külön tábla:** Közelharci, Kardvívó, Lándzsavívó, Romboló, Ostorharc.
 - **Több mód:** a többféle sebzésű fegyverek (pl. kard `V/S`) több sorban szerepelnek, Aktoronként.
-- **Jelleg / Sebzéstípus:** a `Jelleg` a sebzés jellege (szúró / vágó / zúzó); a `Sebzéstípus` a rang: `elsődleges` = alap sebzésmód (nincs büntetés), `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Az `alkalmatlan` nincs a táblában (KM: `Hátrány-2`). Éles: `064_02_05`.
-- **· FP** (a `Jelleg` mellett): puha ütőfelület (pl. ököl) - FP-sebzést okoz ÉP helyett. SFÉ az FP-t is csökkenti; a sebzésből minden 5. pont ÉP, a többi FP.
-- **Fh** = Fegyverhossz kategória. **Seb.** = Sebesség (magasabb = lassabb).
-- **FSZ** = Felszerelés pont ([md/010_03_06](https://github.com/kaktusztea/szilankrpg/blob/master/md/010_03_06_felszereles.md)): itt a fegyver forgatás-kategóriájából levezetett HOSSZ-ág (`0` egykezes, `1` másfélkezes, `2` kétkezes). A hatályos szabály VAGY-VAGY: a fegyver végső Felszerelés-pontja `MAX(hossz_pont, súly_pont)` (súly: nehéz→1, súlyos→2). A **Felszerelés keret** (`2 + Erő`) túllépése Hátrányt ad a Fizikai Tulajdonság-/Képzettségpróbákra (NEM harckeret/TÉ - az a modell kivezetve).
+- **Sebzésjelleg / Sebzéstípus:** a `Sebzésjelleg` a sebzés jellege (szúró / vágó / zúzó); a `Sebzéstípus` a rang: `elsődleges` = alap sebzésmód (nincs büntetés), `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Az `alkalmatlan` nincs a táblában (KM: `Hátrány-2`). Éles: `064_02_05`.
+- **· FP** (a `Sebzésjelleg` mellett): puha ütőfelület (pl. ököl) - FP-sebzést okoz ÉP helyett. SFÉ az FP-t is csökkenti; a sebzésből minden 5. pont ÉP, a többi FP.
+- **Hossz** = Fegyverhossz kategória. **Sebesség** = magasabb = lassabb.
+- **Felsz.pont** = Felszerelés pont ([md/010_03_06](https://github.com/kaktusztea/szilankrpg/blob/master/md/010_03_06_felszereles.md)): itt a fegyver forgatás-kategóriájából levezetett HOSSZ-ág (`0` egykezes, `1` másfélkezes, `2` kétkezes). A hatályos szabály VAGY-VAGY: a fegyver végső Felszerelés-pontja `MAX(hossz_pont, súly_pont)` (súly: nehéz→1, súlyos→2). A **Felszerelés keret** (`2 + Erő`) túllépése Hátrányt ad a Fizikai Tulajdonság-/Képzettségpróbákra (NEM harckeret/TÉ - az a modell kivezetve).
 - **Erőlimit** = Erőbónusz limit: a sebzésbe (SP) fordítható Erő felső plafonja; `99` = nincs plafon (egyedi per-fegyver érték, `064_02_06`).
-- **Beszorítható** = Beszorított(2) tag (kat. 7 és 9, hosszú fegyver): ha az ellenfél bejut, `TÉ:0` ÉS `VÉ:0` (szituációs harci helyzet, nem a bázisérték). Kat. 12 NEM.
-- **Extrák** (külön oszlop, `extrak.yaml`): a bázisra jövő, feltételhez kötött hatások NEVE, `;` jellel elválasztva (saját + a fegyverhossz-kategória örökölt); a **Különleges felkészítés** (KF) kiképzés-függő bónusz. A tábla a **felkészítetlen** bázist mutatja; ezek szituációsan jönnek rá.
+- **Extrák** (külön oszlop, `extrak.yaml`): a bázisra jövő, feltételhez kötött hatások NEVE, `;` jellel elválasztva (saját + a fegyverhossz-kategória örökölt). A tábla a **felkészítetlen** bázist mutatja; ezek szituációsan jönnek rá.
 - **Megj.**: szabad szöveges mechanika-jegyzet (a strukturált hatások az Extrák oszlopban vannak).
-- **(spec)** = egyedi mechanika, amit a generátor nem modellez (szöveges szabály az éles anyagban).
 
 ## Scope
 
 Tartalmazza: közelharci (tőr-osztály), kardvívó, lándzsavívó, romboló, ostorharc mainstream fegyverek.
-Kihagyva (más alrendszer / egyedi mechanika): hárítófegyverek, Garott, Méregfog, Béltépő, Kopja (lovas), pajzsok, hajító- és lőfegyverek.
+Kihagyva (más alrendszer / egyedi mechanika): hárítófegyverek, Garott, Kopja (lovas), pajzsok, hajító- és lőfegyverek.
 
 ---"""
 
