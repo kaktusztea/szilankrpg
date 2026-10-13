@@ -112,7 +112,7 @@ FP (speciális)
 → másodlagos (Hátrány-1 Sebzésdobásra)
 ```
 
-A sebzésmód rangja. `elsődleges` = alap mód (nincs büntetés); `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Lásd: [Fegyver sebzésének jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md).
+A sebzésmód rangja. `elsődleges` = alap mód (nincs büntetés); `másodlagos` = bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is). Lásd: [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md#️-sebzéstípusok).
 
 ## ⚜️ TÉ / VÉ
 
