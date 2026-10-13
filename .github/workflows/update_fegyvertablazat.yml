@@ -6,11 +6,15 @@ on:
     paths:
       - 'data/sources/fegyverek/**.yaml'
       - 'data/sources/fegyverek/fegyverek_fixed.json'
+      - 'code/sync_fegyvertablazatok.py'
+      - 'code/balance/fegyvergenerator_balansz.py'
   pull_request:
     branches: [ master ]
     paths:
       - 'data/sources/fegyverek/**.yaml'
       - 'data/sources/fegyverek/fegyverek_fixed.json'
+      - 'code/sync_fegyvertablazatok.py'
+      - 'code/balance/fegyvergenerator_balansz.py'
 
 jobs:
   run-script:
@@ -30,8 +34,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyyaml
 
-    - name: Execute sync_fegyvertablazat_kozelharci.py
-      run: python code/sync_fegyvertablazat_kozelharci.py
+    - name: Execute sync_fegyvertablazatok.py
+      run: python code/sync_fegyvertablazatok.py
 
     - name: Check for Changes
       run: |
@@ -51,7 +55,7 @@ jobs:
       if: ${{ env.files_modified == 'true' }}
       run: |
         git add .
-        git commit -m "GitHub Action: sync_fegyvertablazat_kozelharci.py"
+        git commit -m "GitHub Action: sync_fegyvertablazatok.py"
 
     - name: Push Changes
       if: ${{ env.files_modified == 'true' }}
