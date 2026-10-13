@@ -16,7 +16,7 @@ Minden fegyver egy botból indul (zúzó, TÉ = VÉ),
 Minden paraméternek legyen fonákja is.
 ```
 
-Ami valamiben erősít, máshol gyengít: a nehéz fegyver nagyobbat üt, de lassabb; az íves penge vért nélküli ellenfélen pusztít, fémvérten lecsúszik. Így nincs "mindent vivő" fegyver.
+Ami valamiben erősít, máshol gyengít: a nehéz fegyver nagyobbat üt, de lassabb; az íves penge páncéltalan ellenfélen pusztít, fémvérten lecsúszik. Így nincs "mindent vivő" fegyver.
 
 ---
 ## A folyamat
@@ -295,7 +295,7 @@ Részletek: [Másfél- és kétkezes fegyverek egy kézzel](068_01_06_masfelkeze
 ---
 ## Sebzésjelleg × páncél
 
-Sebzésdobáskor a fegyvermód jellege a cél vértjének fajtája szerint `SP`-bónuszt vagy -büntetést kap (az SFÉ-levonás mellett). Ez teszi szituáció-függővé a fegyvereket.
+Sebzésdobáskor a fegyvermód jellege a cél vértjének fajtája szerint `SP`-bónuszt vagy -büntetést kap (az `SFÉ`-levonás mellett). Ez teszi szituáció-függővé a fegyvereket.
 
 ```
 jelleg        csupasz  puha  bőr  lánc  merev
@@ -307,7 +307,7 @@ vágó-íves       +3      +2     0   -2    -4
 merev = pikkely, lemez
 ```
 
-A zúzó a páncélos ellenfél válasza, a vágó-íves a páncéltalané, a szúró a rugalmas középút. Merev vért ellen az Átütés segít (csökkenti az effektív SFÉ-t). Részletek: [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md).
+A zúzó a páncélos ellenfél válasza, a vágó-íves a páncéltalané, a szúró a rugalmas középút. Merev vért ellen az **Átütés** segít (csökkenti az effektív `SFÉ`-t). Részletek: [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md).
 
 <br />
 
