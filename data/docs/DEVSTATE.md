@@ -339,3 +339,22 @@ Inkrementális működés:
 - **generate_tables.py**: MD5 hash az összes YAML source + a teljes generátor kód (`generate_tables.py` + `gen/*.py`) alapján
 - **Vite plugin**: `tables/.generated_marker` mtime vs a source YAML-ok ÉS a generátor `.py` fájlok mtime-ja
 - **vitest --changed**: git diff-ből határozza meg az érintett teszteket
+
+---
+
+## Szabálykönyv (md/) konvenciók, tanulságok
+
+### Emoji headingek és anchor-linkek (⚠️ fontos buktató)
+
+A szabálykönyv headingjei dekoratív emojikat használnak (pl. `⚜️`, `🗡️`, `🅿️`, `✴️`). Ezek anchor-képzése trükkös:
+
+- **A `⚜️` (és sok más dísz-emoji) két kódpont**: a glyph (pl. `⚜` U+269C) + egy variation selector (U+FE0F). A FE0F adja az **emoji-megjelenést**; nélküle a glyph text-stílusú ("csúnya", fekete-fehér, néha dobozos) lesz az editorban.
+- **A github-slugger a FE0F-et BENNHAGYJA a slugban** → az `## ⚜️ Valami` heading anchorja `#️-valami` (van egy LÁTHATATLAN U+FE0F a `#` és a `-` között), NEM a sima `#-valami`.
+- **Következmény**: a rá mutató linknek is a FE0F-es anchort kell használnia (`...md#️-valami`). A sima `#-valami` **404** a linkspectorban. Ezek a linkek vizuálisan nem gépelhetők - másolni kell őket (a láthatatlan karakter miatt).
+- **A repo konvenciója: FE0F-es (szép emoji) headingek + `#️-...` anchorok.** NE "egyszerűsítsd" sima `#-`-re a FE0F eltávolításával: a `⚜` text-stílusú (csúnya) lesz. (2026-10: egy teljes-repo FE0F-törlő kísérlet pont emiatt lett visszavonva.)
+- **Keycap emojik** (`1️⃣`/`2️⃣` = szám + U+FE0F + U+20E3) külön óvatosságot kérnek: a FE0F önmagában való törlése szétzilálja a keycap-et (marad a csonka U+20E3).
+
+**Gyakorlat emoji-heading felvételekor / anchor-link írásakor:**
+1. Új emoji-heading után a rá mutató link anchorját a tényleges slug alapján add meg (github-slugger: a FE0F-es emojiknál `#️-...`).
+2. Anchor-ellenőrzés mindig `npx @umbrelladocs/linkspector check -c .linkspector.yml` a módosítás végén (a 404 a FE0F-eltérést is kiszűri).
+3. Variation-selector nélküli, egykódpontos emojik (pl. `🟡`, `🔆`) tiszta `#-...` slugot adnak - ha egyszerű anchor kell, azok jobbak.
