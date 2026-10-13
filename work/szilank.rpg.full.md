@@ -26075,7 +26075,8 @@ Hajlékony fegyver a pajzs mögé csap.
 ### Fegyvertörés-immunis
 
 ```
-Hatás: a Fegyvertörés manőver nem fog rajta
+Feltétel: passzív fél
+Hatás:    a Fegyvertörés manőver nem fog rajta
 ```
 
 Hajlékony (nem merev) fegyver.
@@ -26088,6 +26089,66 @@ Hatás:    célpont páncél SFÉ: duplán számít
 ```
 
 Íves rövid penge páncél ellen különösen rossz.
+
+<br />
+
+---
+## Tulajdonság (építési / minőségi opció)
+
+### Pontos
+
+```
+Feltétel: 'pengehegy' aktor + egykezes forgatás + aktív fél
+Hatás:    az aktív fél dobása +2 (Precíz támadás manőver)
+```
+
+Precíziós szúróhegy.
+
+### Lefegyverezhetőbb
+
+```
+Feltétel: egykezes forgatás, passzív fél
+Hatás:    a passzív fél (akié a fegyver) dobása -2
+          (Lefegyverzés és Fegyvertörés manővernél is)
+```
+
+Az ilyen fegyvert az ellenfél könnyebben kiüti a kezedből, könnyebben eltöri.
+
+### Lefegyverzése nehezebb
+
+```
+Feltétel: passzív fél
+Hatás:    a passzív fél (akié a fegyver) dobása +2 (nehezebb lefegyverezni)
+```
+
+Az ilyen fegyvert nehezebben ütik ki a kezedből.
+
+### Fanyél fegyvertörése könnyebb
+
+```
+Feltétel: passzív fél, ellenfél fegyvere fém
+Hatás:    a passzív fél (akié a fegyver) dobása -2 (könnyebb eltörni)
+```
+
+Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
+
+### Zúzó fegyver ellen rosszabb
+
+```
+Feltétel: az ellenfél fegyverének sebzésjellege Zúzó
+Hatás:    az elszenvedett VÉ csökkenésed duplázódik
+```
+
+Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
+
+### Kampós véggel lábkirántás
+
+```
+Feltétel: 'kampós' aktor + aktív fél
+Hatás:    az aktív fél dobása +2 (Lábkirántás manőver)
+```
+
+A fegyver kampós vége (pl. glaive-szerű penge).
 
 ### Beakad (~50%)
 
@@ -26107,57 +26168,6 @@ Hatás: a támadó k20 egyben esélydobás:
 ```
 
 Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md).
-
-<br />
-
----
-## Tulajdonság (építési / minőségi opció)
-
-### Pontos
-
-```
-Feltétel: 'pengehegy' aktor + egykezes forgatás
-Hatás:    Precíz támadás manőver Ellenpróbájára +2
-```
-
-Precíziós szúróhegy.
-
-### Lefegyverezhetőbb
-
-```
-Feltétel: egykezes forgatás, passzív fél
-Hatás:    Lefegyverzés Ellenpróba -2
-          Fegyvertörés Ellenpróba -2
-```
-
-Az ilyen fegyvert az ellenfél könnyebben kiüti a kezedből, könnyebben eltöri.
-
-### Fanyél fegyvertörése könnyebb
-
-```
-Feltétel: passzív fél, ellenfél fegyvere fém
-Hatás:    Fegyvertörés Ellenpróba -2 (könnyebb eltörni)
-```
-
-Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
-
-### Zúzó fegyver ellen rosszabb
-
-```
-Feltétel: az ellenfél fegyverének sebzésjellege Zúzó
-Hatás:    az elszenvedett VÉ csökkenésed duplázódik
-```
-
-Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
-
-### Kampós véggel lábkirántás
-
-```
-Feltétel: 'kampós' aktor
-Hatás:    Lábkirántás manőver Ellenpróbájára +2
-```
-
-A fegyver kampós vége (pl. glaive-szerű penge).
 
 ---
 
