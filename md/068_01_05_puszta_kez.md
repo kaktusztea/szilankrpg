@@ -12,6 +12,6 @@ SP: -5 + k20
 
 ---
 
-🔗 [Nyílpuskák](068_01_05_nyilpuskak.md) →
+🔗 [Másfélkezes és Kétkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -191,6 +191,6 @@ Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorh
 
 ---
 
-🔗 [Közelharci fegyverek](068_02_kozelharci_fegyverek.md) →
+🔗 [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

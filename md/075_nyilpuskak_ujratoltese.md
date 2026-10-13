@@ -1,4 +1,4 @@
-## Nyílpuskák
+## Nyílpuskák újratöltése
 
 Ugyan veszélyes fegyverek, de újratöltésük körülményes:
 
@@ -11,6 +11,6 @@ Ugyan veszélyes fegyverek, de újratöltésük körülményes:
 
 ---
 
-🔗 [Érintő támadás](068_01_06_erinto_tamadas.md) →
+🔗 [Távolsági harc csatamagia esetén](076_tavharc_csatamagia_eseten.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

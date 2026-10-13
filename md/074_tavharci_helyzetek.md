@@ -67,4 +67,6 @@ Nyílpuskával csak minden `2.` körben lehetséges lőni. Ilyenkor a lövés ut
 
 ---
 
+🔗 [Nyílpuskák újratöltése](075_nyilpuskak_ujratoltese.md) →
+
 ⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

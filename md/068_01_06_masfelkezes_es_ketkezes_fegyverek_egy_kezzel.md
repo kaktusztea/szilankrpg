@@ -25,6 +25,6 @@ egykezes:  TÉ:6, VÉ:6, SP:+6, Erőlimit:2,  Átütés:0
 
 ---
 
-🔗 [Puszta kéz](068_01_04_puszta_kez.md) →
+🔗 [Közelharci fegyverek](068_02_kozelharci_fegyverek.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

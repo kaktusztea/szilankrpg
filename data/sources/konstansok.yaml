@@ -182,7 +182,7 @@ manőver:
   # körülmények közt NEM kísérelhető meg (nem dobás-módosító, hanem jelző). L. md/066_04.
   sentinel_nem_kísérelhető: 99
   # Passzív-oldali letilt sentinel: ha egy KIVÁLASZTOTT sor értéke ez (passzív módban), a manőver
-  # a fegyveren NEM fog (pl. Fegyvertörés-immunis) → a passzív félnek automatikus SIKER. L. md/068_01_11.
+  # a fegyveren NEM fog (pl. Fegyvertörés-immunis) → a passzív félnek automatikus SIKER. L. md/068_01_03.
   sentinel_immunis: -99
   # Globális Helyzetfüggő módosítók: MINDEGYIK manőverre érvényesek (a popup a manőver-specifikus
   # táblák mellé fűzi, aktív módban). Dobó-oldali módosítók. L. md/066_04.
