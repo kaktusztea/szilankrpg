@@ -39,17 +39,7 @@ Ha a forgatott fegyver "súly" kategóriája által megkövetelt Erő Tulajdons�
 ---
 ## Erőbónusz limit
 
-Egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat velük a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Szilánk webapp](https://kaktusztea.github.io/szilankrpg/) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
-
-### ⚡Példa
-
-```
-→ Erő: +5
-→ Fegyver Erőbónusz limit: +3
-
-SP bónusz: csak +3
-(erre a fegyverre)
-```
+Lásd a [Fegyverstatisztikák](068_01_01_fegyverstatisztikak.md#️-erőbónusz-limit) oldalon.
 
 ---
 

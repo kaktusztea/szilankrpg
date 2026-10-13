@@ -124,9 +124,23 @@ A fegyver Sebzése (`k20 + X`).
 
 ## ⚜️ Erőbónusz limit
 
-A sebzésbe (`SP`) extrán fordítható Erő felső plafonja. Lásd: [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md#er%C5%91b%C3%B3nusz-limit).
+A sebzésbe (`SP`) extrán fordítható **Erő** Tulajdonság felső plafonja.\
+Egyes fegyvereknél hiába magas az Erő értéke, egy bizonyos értéknél több **Erőbónuszt** nem kaphat velük a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Szilánk webapp](https://kaktusztea.github.io/szilankrpg/) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
 
- `99 = nincs plafon`
+```
+"Nincs limit" jelölése:
+→ Fegyver Erőbónusz limit: 99
+```
+
+### ⚡Példa Erőbónusz limitre
+
+```
+→ Erő: +5
+→ Fegyver Erőbónusz limit: +3
+
+SP bónusz: csak +3
+(erre a fegyverre)
+```
 
 ## ⚜️ Átütés
 
