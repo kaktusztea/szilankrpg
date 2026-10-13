@@ -9,6 +9,9 @@
 #   (md/010_03_06_felszereles.md) VAGY-VAGY: a fegyver végső Felszerelés-pontja
 #   MAX(hossz_pont, súly_pont). A kanonikus runtime leképezés a data/sources/konstansok.yaml
 #   `felszerelés` szekciójában van (a webapp azt olvassa); itt csak a hossz-ág szerepel.
+# ponytail: ha itt új fegyverhossz-kategória kerül be, frissítsd az éles szabálykönyv
+# md/068_01_01_fegyverstatisztikak.md "Fegyverhossz kategóriák" listáját is (kézi duplikáció,
+# nem generált - a próza-oldal nem olvassa ezt a katalógust).
 fegyverhossz:
   0:  {TÉ: 0,  VÉ: 0,  SP: 0, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
   1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
@@ -20,6 +23,9 @@ fegyverhossz:
   12: {TÉ: 12, VÉ: 12, SP: 5, sebesség: 9, forgatás: kétkezes,    felszerelés_pont: 2}
 
 # aktor: név -> sebzésjelleg, SP, átütés, TÉ, VÉ, sebesség
+# ponytail: ha itt új aktor kerül be, frissítsd az éles szabálykönyv
+# md/068_01_01_fegyverstatisztikak.md "Aktorok" listáját is (kézi duplikáció,
+# nem generált - a próza-oldal nem olvassa ezt a katalógust).
 aktor:
   botvég:                      {sebzésjelleg: zúzó,         SP: 0, átütés: 0, TÉ: 0, VÉ: 0,  sebesség: 0}
   buzogányfej-tompa:           {sebzésjelleg: zúzó,         SP: 2, átütés: 0, TÉ: 0, VÉ: -2, sebesség: 0}
