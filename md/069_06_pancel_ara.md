@@ -16,10 +16,10 @@ Ez a mellvért tag ára egyedül.
 ```
   0.1x: Posztó/Bunda
   0.5x: Fegyverkabát
-  1x  : Bőrpáncél
- 10x  : Lánc/Sodrony
- 50x  : Pikkely fémpáncél
-100x  : Lemezpáncél
+    1x: Bőrpáncél
+   10x: Lánc/Sodrony
+   50x: Pikkely fémpáncél
+  100x: Lemezpáncél
 ```
 
 ---
@@ -44,8 +44,8 @@ Csatolt tagok (max 5 db)
 ```
 Kidolgozottság
    0.5: Pocsék
-   1: Átlagos
- 100: Mestermunka
+   1:   Átlagos
+ 100:   Mestermunka
 ```
 
 ---
@@ -54,10 +54,10 @@ Kidolgozottság
 A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 
 ```
-  1x  : Acél
+    1x: Acél
   0,5x: Bronz
- 10x  : Abbitacél
-100x  : Mithrill
+   10x: Abbitacél
+  100x: Mithrill
  *    : Lunír
 
 * a csillagos ég
