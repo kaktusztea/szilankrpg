@@ -8,6 +8,17 @@ on:
       - 'data/sources/fegyverek/fegyverek_fixed.json'
       - 'code/sync_fegyvertablazatok.py'
       - 'code/balance/fegyvergenerator_balansz.py'
+      - 'code/balance/fegyvergenerator_harcszimulator.py'
+      - 'code/balance/fegyvergenerator_taktikai_ai.py'
+      - 'code/balance/fegyvergenerator_data_adapter.py'
+      - 'code/balance/extrak_validator.py'
+      - 'code/balance/fegyverek_validator.py'
+      - 'data/tables/taktikak.json'
+      - 'data/tables/harci_helyzetek.json'
+      - 'data/tables/manoverek.json'
+      - 'data/tables/statuszok.json'
+      - 'data/sources/konstansok.yaml'
+      - '.github/workflows/update_fegyvertablazat.yml'
   pull_request:
     branches: [ master ]
     paths:
@@ -15,6 +26,17 @@ on:
       - 'data/sources/fegyverek/fegyverek_fixed.json'
       - 'code/sync_fegyvertablazatok.py'
       - 'code/balance/fegyvergenerator_balansz.py'
+      - 'code/balance/fegyvergenerator_harcszimulator.py'
+      - 'code/balance/fegyvergenerator_taktikai_ai.py'
+      - 'code/balance/fegyvergenerator_data_adapter.py'
+      - 'code/balance/extrak_validator.py'
+      - 'code/balance/fegyverek_validator.py'
+      - 'data/tables/taktikak.json'
+      - 'data/tables/harci_helyzetek.json'
+      - 'data/tables/manoverek.json'
+      - 'data/tables/statuszok.json'
+      - 'data/sources/konstansok.yaml'
+      - '.github/workflows/update_fegyvertablazat.yml'
 
 jobs:
   run-script:
@@ -33,6 +55,16 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyyaml
+
+    # Self-test kapu: hibás modellből ne generálódjon/commitolódjon tábla.
+    - name: Self-test - fegyvergenerátor (séma + regresszió)
+      run: python code/balance/fegyvergenerator_balansz.py > /dev/null
+
+    - name: Self-test - harcszimulátor
+      run: python code/balance/fegyvergenerator_harcszimulator.py > /dev/null
+
+    - name: Self-test - taktikai AI
+      run: python code/balance/fegyvergenerator_taktikai_ai.py > /dev/null
 
     - name: Execute sync_fegyvertablazatok.py
       run: python code/sync_fegyvertablazatok.py

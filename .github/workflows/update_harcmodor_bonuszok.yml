@@ -3,10 +3,16 @@ name: Update Harcmodor bónuszok json
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - 'segedlet/*'
+    paths:
+      - 'md/062_02_harcmodor_kepzettsegek_es_bonuszaik.md'
+      - 'code/process_harcmodor_kepzettseg_bonuszok.py'
+      - '.github/workflows/update_harcmodor_bonuszok.yml'
   pull_request:
     branches: [ master ]
+    paths:
+      - 'md/062_02_harcmodor_kepzettsegek_es_bonuszaik.md'
+      - 'code/process_harcmodor_kepzettseg_bonuszok.py'
+      - '.github/workflows/update_harcmodor_bonuszok.yml'
 
 jobs:
   run-script:

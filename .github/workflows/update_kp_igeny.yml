@@ -3,10 +3,16 @@ name: Update KP igény json
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - 'segedlet/*'
+    paths:
+      - 'md/030_05_kepzettsegszintek_kp_igenye.md'
+      - 'code/process_kp_igeny.py'
+      - '.github/workflows/update_kp_igeny.yml'
   pull_request:
     branches: [ master ]
+    paths:
+      - 'md/030_05_kepzettsegszintek_kp_igenye.md'
+      - 'code/process_kp_igeny.py'
+      - '.github/workflows/update_kp_igeny.yml'
 
 jobs:
   run-script:

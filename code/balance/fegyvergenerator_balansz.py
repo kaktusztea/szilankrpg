@@ -328,7 +328,8 @@ if __name__ == "__main__":
     if not fegyverek_validator.run():
         raise SystemExit("fegyverek.yaml séma-hiba - javítsd a fentieket (lásd fenn).")
     print()
-    teszt_regresszio()
+    if not teszt_regresszio():
+        raise SystemExit("Regressziós eltérés - a modell nem adja az elvárt TÉ/VÉ értékeket (lásd fenn).")
     teszt_dump(ero=0)
     teszt_sebzes_matrix(ero=2)
     teszt_tempo(ero=2)
