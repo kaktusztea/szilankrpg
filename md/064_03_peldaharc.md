@@ -126,7 +126,7 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 
 ### 🔆Fegyverméret
 
-- Mivel kettőjük fegyverének mérete közt nincs meg a `2 fegyverhossz-kategória` méretkülönbség, ezért mindketten [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#-fegyverazonosság) harci helyzetben vannak.
+- Mivel kettőjük fegyverének mérete közt nincs meg a `2 fegyverhossz-kategória` méretkülönbség, ezért mindketten [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#️-fegyverazonosság) harci helyzetben vannak.
 - Tehát sikertelen (nem sebző) támadások esetén `1 + k20P` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />

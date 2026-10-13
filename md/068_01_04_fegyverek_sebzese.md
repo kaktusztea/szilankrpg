@@ -36,9 +36,9 @@ Vágó-íves          +3    +2    0    -2    -4
 ---
 ## ⚜️ Sebzéstípusok
 
-- [Elsődleges](065_03_04_fegyver_harci_helyzetek.md#-sebzéstípus-elsődleges): a fegyver alap sebzésjellege, nincs büntetés.
-- [Másodlagos](065_03_04_fegyver_harci_helyzetek.md#-sebzéstípus-másodlagos): bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is).
-- [Alkalmatlan](065_03_04_fegyver_harci_helyzetek.md#-sebzéstípus-alkalmatlan): a fegyver nem erre lett kialakítva; ha a KM engedi, `Hátrány-2 Sebzésdobásra`.
+- [Elsődleges](065_03_04_fegyver_harci_helyzetek.md#️-sebzéstípus-elsődleges): a fegyver alap sebzésjellege, nincs büntetés.
+- [Másodlagos](065_03_04_fegyver_harci_helyzetek.md#️-sebzéstípus-másodlagos): bejelentés után `Hátrány-1 Sebzésdobásra` (lehet több is).
+- [Alkalmatlan](065_03_04_fegyver_harci_helyzetek.md#️-sebzéstípus-alkalmatlan): a fegyver nem erre lett kialakítva; ha a KM engedi, `Hátrány-2 Sebzésdobásra`.
 
 Ha egy fegyver többféle Sebzésjelleggel bír, akkor azok között rangsor van: `1 db` Elsődleges, a többi Másodlagos. Ha ez utóbbival támadsz, `Hátrány-1` jár Sebzésdobásodra.
 

@@ -184,9 +184,9 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 
 ❌ [Láthatatlan](065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) ellenfél ellen
 
-❌ [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#-fegyverhátrány) harci helyzetből **NEM** alkalmazható.
+❌ [Fegyverhátrány](065_03_04_fegyver_harci_helyzetek.md#️-fegyverhátrány) harci helyzetből **NEM** alkalmazható.
 
-✅ [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#-fegyverazonosság) és [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#-fegyverelőny) harci helyzetben csak
+✅ [Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md#️-fegyverazonosság) és [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny) harci helyzetben csak
 
 ✅ [Levegőből támadás](065_03_01_pozitiv_helyzetek.md#levegőből-támadás) harci helyzetben
 

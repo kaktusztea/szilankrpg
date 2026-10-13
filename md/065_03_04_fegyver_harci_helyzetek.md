@@ -6,7 +6,7 @@ Fegyver-specifikus harci helyzetek (státuszok).
 
 A felek által forgatott fegyverek hosszának egymáshoz mért viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket. Tehát a VÉ csökkentés esetén igaz a "*A hosszabb fegyver jobb*" mondás - de ne feledjük, más-más szituációkban előnybe kerülhetnek a rövidebb fegyverek is.
 
-### ⚜ Fegyverhátrány
+### ⚜️ Fegyverhátrány
 
 Fegyvered mérete legalább `2 fegyverhossz-kategóriával` rövidebb ellenfeledénél.
 A `VÉ` csökkentést tekintve hátrányban vagy a **Fegyverazonossághoz** képest, viszont vannak szituációk, mint például a [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-), ahol korlátozó tényező lehet.
@@ -17,7 +17,7 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 k20P
 ```
 
-### ⚜ Fegyverazonosság
+### ⚜️ Fegyverazonosság
 
 Fegyvered azonos hosszú, vagy a különbség kevesebb, mint `2 fegyverhossz-kategória` ellenfeledénél. Ha egy karakter Fegyverazonosság helyzetben van, akkor nyilván ellenfele is csak abban lehet.
 
@@ -27,7 +27,7 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 1 + k20P
 ```
 
-### ⚜ Fegyverelőny
+### ⚜️ Fegyverelőny
 
 Fegyvered mérete legalább `2 fegyverhossz-kategóriával` hosszabb ellenfeledénél. **Csak akkor** kerül valaki Fegyverelőnybe - és így a másik Fegyverhátrányba - ha ez a fegyverhossz-kategória különbség megvan.
 
@@ -115,7 +115,7 @@ KÉ: -3, TÉ: -3, VÉ: -3
 ---
 ## Sebzéstípusok
 
-### ⚜ Sebzéstípus: elsődleges
+### ⚜️ Sebzéstípus: elsődleges
 
 ```
 Sima Sebzésdobás
@@ -127,7 +127,7 @@ Fegyvered elsődleges [sebzési jellegével](068_01_04_fegyverek_sebzese.md) tá
 Elsődleges sebzéstípus == vágó-egyenes jelleg
 ```
 
-### ⚜ Sebzéstípus: másodlagos
+### ⚜️ Sebzéstípus: másodlagos
 
 ```
 Hátrány-1 Sebzésdobásra
@@ -139,7 +139,7 @@ Fegyvered másodlagos sebzési jellegével támadsz. Például a **Hosszú kard*
 Másodlagos sebzéstípus == szúrás jelleg
 ```
 
-### ⚜ Sebzéstípus: alkalmatlan
+### ⚜️ Sebzéstípus: alkalmatlan
 
 ```
 Hátrány-2 Sebzésdobásra
