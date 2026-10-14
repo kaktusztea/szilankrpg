@@ -68,7 +68,7 @@ function harcmodorMaxSzint(karakter: Karakter, data: GameData): number {
 /** Az aktív (támadó) fegyver a manőver-követelmény gépi kiértékeléséhez. */
 export interface AktívFegyverInfo {
   kategória: string;   // pl. "kardvívó", "romboló" (fegyverek.json Kategória)
-  sebzésMódja: string; // pl. "V", "V/S", "Z" (fegyverek.json "Sebzés módja")
+  sebzésMódja: string; // a jelleg teljes szava, pl. "vágó-egyenes", "szúró", "zúzó" (fegyverek_v2.json jelleg)
 }
 
 /**
@@ -240,7 +240,7 @@ export function szitModÁllapot(
  *   - bármely hivatkozott helyzet aktív → true; egyik sem → false; nem helyzet-alapú → null.
  * Fegyver-alapú gépi típusok (aktívFegyver megadva):
  *   - "fegyver_kategória": az aktív fegyver Kategóriája == érték → true, egyébként false;
- *   - "fegyver_sebzéstípus": az aktív fegyver "Sebzés módja" tartalmazza az érték-betűt (V/S/Z) → true.
+ *   - "fegyver_sebzéstípus": az aktív fegyver jelleg-szavának kezdőbetűje == érték-betű (V/S/Z) → true.
  *   aktívFegyver hiányában (nincs aktív fegyver kiválasztva) e típusok → null (manuális).
  */
 export function követelményTeljesül(
@@ -262,9 +262,10 @@ export function követelményTeljesül(
   }
   if (köv.típus === 'fegyver_sebzéstípus') {
     if (!aktívFegyver) return null;
-    // "Sebzés módja" pl. "V/S" → a keresett betű (V/S/Z) szerepel-e a komponensek közt.
+    // A fegyver elsődleges módjának `jelleg`-je teljes szó (szúró / vágó-egyenes / vágó-íves / zúzó);
+    // a kanonikus S/V/Z kód a jelleg KEZDŐBETŰJE (data layer vokabulár, fegyverek_v2.json).
     const betű = String(köv.érték ?? '').toUpperCase();
-    return aktívFegyver.sebzésMódja.toUpperCase().split(/[^A-ZÁÉÍÓÖŐÚÜŰ]+/).includes(betű);
+    return aktívFegyver.sebzésMódja.toUpperCase().startsWith(betű);
   }
   const küszöb = typeof köv.érték === 'number' ? köv.érték : 0;
   if (köv.típus === 'képzettség') {

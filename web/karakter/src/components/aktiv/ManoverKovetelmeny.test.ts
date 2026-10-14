@@ -38,6 +38,35 @@ describe('követelményTeljesül', () => {
     const köv: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Fegyverelőny' };
     expect(követelményTeljesül(köv, karakter, data)).toBeNull();
   });
+
+  describe('fegyver_sebzéstípus (jelleg kezdőbetű → S/V/Z)', () => {
+    const kövV: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' };
+    it('vágó-egyenes jelleg teljesíti a V követelményt (bug: korábban false volt)', () => {
+      const af = { kategória: 'kardvívó', sebzésMódja: 'vágó-egyenes' };
+      expect(követelményTeljesül(kövV, karakter, data, undefined, af)).toBe(true);
+    });
+    it('vágó-íves jelleg is V', () => {
+      const af = { kategória: 'kardvívó', sebzésMódja: 'vágó-íves' };
+      expect(követelményTeljesül(kövV, karakter, data, undefined, af)).toBe(true);
+    });
+    it('szúró jelleg NEM V', () => {
+      const af = { kategória: 'kardvívó', sebzésMódja: 'szúró' };
+      expect(követelményTeljesül(kövV, karakter, data, undefined, af)).toBe(false);
+    });
+    it('szúró jelleg teljesíti az S követelményt', () => {
+      const kövS: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'S' };
+      const af = { kategória: 'tőrvívó', sebzésMódja: 'szúró' };
+      expect(követelményTeljesül(kövS, karakter, data, undefined, af)).toBe(true);
+    });
+    it('zúzó jelleg teljesíti a Z követelményt', () => {
+      const kövZ: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'Z' };
+      const af = { kategória: 'romboló', sebzésMódja: 'zúzó' };
+      expect(követelményTeljesül(kövZ, karakter, data, undefined, af)).toBe(true);
+    });
+    it('nincs aktív fegyver → null (manuális)', () => {
+      expect(követelményTeljesül(kövV, karakter, data, undefined, null)).toBeNull();
+    });
+  });
 });
 
 describe('gépiKövetelményStátusz', () => {
