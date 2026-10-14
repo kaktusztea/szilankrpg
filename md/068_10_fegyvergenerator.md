@@ -1,22 +1,26 @@
 # Fegyvergenerátor
 
-Ez a fejezet **nem szükséges a játékhoz** - a fegyverek harcértékei készen állnak a [fegyvertáblázatokban](068_00_fegyverek.md). Két dologra jó:
+Fontos: ez a fejezet **nem szükséges a játékhoz** - a fegyverek harcértékei már készen vannak a [fegyvertáblázatokban](068_00_fegyverek.md).\
+Az alábbiakra használható:
 
-- **Megérteni**, honnan jönnek a fegyverek értékei.
-- **Saját fegyvert alkotni**, ha a kész táblázatok nem fednek le egy ötletet. Elsősorban KM-eknek és vállalkozó kedvű csapatoknak.
+- **Megérteni**, hogyan lettek a fegyverek értékei legenerálva.
+- **Saját fegyvert alkotni**, ha a meglevő fegyverekkel elégedetlen vagy és szeretnél nulláról újat alkotni. Elsősorban KM-eknek és vállalkozó kedvű csapatoknak ajánlott.
 
-A generátor determinisztikus: a fegyver néhány paraméteréből (hossz, sebzőfelület, súly, anyag, stb.) egyszerű összeadással jönnek ki a harcértékek. Minden táblázatbeli fegyver is így készült, ezért egy saját alkotás konzisztens marad velük.
+A generátor determinisztikus: a fegyver néhány paraméteréből (hossz, sebzőfelület, súly, anyag, stb.) egyszerű összeadással jönnek ki a harcértékek. Majdnem minden táblázatokban található fegyver így készült - ám van pár speciális kivétel.
 
 ---
 ## Az alapelv
 
 ```
-Minden fegyver egy botból indul (zúzó, TÉ = VÉ),
-  erre rakjuk rá a paramétereket.
-Minden paraméternek legyen fonákja is.
+Minden fegyver egy fa bot alapból indul
+ (zúzó, TÉ = VÉ).
+ Erre "aggatjuk rá" a paramétereket.
+ 
+Minden előnyt egyensúlyozzunk ki
+ valamilyen hátránnyal is.
 ```
 
-Ami valamiben erősít, máshol gyengít: a nehéz fegyver nagyobbat üt, de lassabb; az íves penge páncéltalan ellenfélen pusztít, fémvérten lecsúszik. Így nincs "mindent vivő" fegyver.
+Ami valamiben erősít, máshol gyengít: a nehéz fegyver nagyobbat üt, de lassabb; az íves penge páncéltalan ellenfélen hatékonyabb, de fémvérten könnyebben lecsúszik. Így nincs "mindent vivő" fegyver.
 
 ---
 ## A folyamat
@@ -31,7 +35,7 @@ Ami valamiben erősít, máshol gyengít: a nehéz fegyver nagyobbat üt, de las
 5. Súly               könnyű / átlagos /
                       nehéz / súlyos
 6. Alapanyag, Idea    anyag és minőség
-7. Erőbónusz-limit    kell-e plafon (finom pengék)
+7. Erőbónusz-limit    kell-e plafon (kisebb fegyverek)
 8. Számolás           képletekkel, aktoronként
                       egy fegyvermód
 9. Ellenőrzés         hasonló táblázatbeli
@@ -75,26 +79,31 @@ Magasabb Sebesség = lassabb fegyver
 ### ⚜️ Fegyverhossz
 
 ```
-hossz  TÉ/VÉ  SP  Sebesség  forgatás
-  0      0    +0     5      egykezes
-  1      1    +1     5      egykezes
-  2      2    +2     5      egykezes
-  3      3    +3     6      egykezes
-  5      5    +4     6      másfélkezes
-  7      7    +5     7      kétkezes
-  9      9    +5     8      kétkezes
- 12     12    +5     9      kétkezes
+hossz  TÉ/VÉ  SP  Sebesség  forgatás     Felsz.
+  0      0    +0     5      egykezes       0
+  1      1    +1     5      egykezes       0
+  2      2    +2     5      egykezes       0
+  3      3    +3     6      egykezes       0
+  5      5    +4     6      másfélkezes    1
+  7      7    +5     7      kétkezes       2
+  9      9    +5     8      kétkezes       2
+ 12     12    +5     9      kétkezes       2
 
 övön hordható:  0, 1, 2
 Beszorítható:   7, 9
+másfélkezes:    külön "1 kézzel" fegyvermód is
+Felsz.:         Felszerelés pont; a végső érték
+                a hossz és a súly szerinti
+                pont közül a nagyobb
 ```
 
-A két fegyver hossz-különbsége adja a [Fegyverelőny, Fegyverhátrány, Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md) viszonyt (`VÉ` csökkentés). A Beszorítható extráról: [Fegyver extrák](068_01_03_fegyver_extrak.md).
+A két fegyver hossz-különbsége adja a [Fegyverelőny, Fegyverhátrány, Fegyverazonosság](065_03_04_fegyver_harci_helyzetek.md) viszonyt (`VÉ` csökkentés). A Beszorítható extráról: [Fegyver extrák](068_01_03_fegyver_extrak.md). Felszerelés pont: [Felszerelés](010_03_06_felszereles.md).
 
 ### ⚜️ Aktorok
 
 ```
-(csak a nem-nulla delták, a többi 0)
+(csak a nem-nulla deltákat írjuk ki;
+ "nincs" = minden delta 0)
 
 Zúzó
   botvég                      nincs (referencia)
@@ -104,6 +113,7 @@ Szúró
   pengehegy-apró              nincs
   pengehegy-tőr               SP:+1
   pengehegy-kard              SP:+2, Átütés:1
+  (egykezes pengehegynél: "Pontos" extra)
 Vágó-egyenes
   vágóél-egyenes-rövid        TÉ:+1, VÉ:+1
   vágóél-egyenes-átlagos      SP:+1, TÉ:+2, VÉ:+2
@@ -121,23 +131,30 @@ Szúró (lándzsahegyek)
   lándzsahegy-hosszúkardhossz SP:+6, Sebesség:+1
 ```
 
-Speciális aktorok (egy-egy egyedi fegyverhez):
+Speciális aktorok (kevés, egyedi fegyverhez):
 
 ```
 Zúzó
   kampós             SP:-5
+                     másodlagos aktornak, extra:
+                     Kampós véggel lábkirántás
   vasököl            TÉ:-1, VÉ:-2
                      fém ütőfelület
+                     (Vasököl, Markolatgomb)
   ököl               SP:-5, TÉ:-3, VÉ:-3
                      puha: FP-sebzés (Puszta kéz)
   ököl-belharc       nincs
-                     puha: FP-sebzés (Belharcban)
+                     puha: FP-sebzés (Puszta kéz
+                     Belharcban)
 Szúró
   pengehegy-rejtett  VÉ:-3
                      tenyérbe rejtett tüske
+                     (Tőr, ököl)
 ```
 
-A szúró aktorok `SP`-je azért magasabb, mert szúrásnál a súly nem számít. Az egyenes él `TÉ`/`VÉ`-t ad (jobb hárítás), az íves több `SP`-t, cserébe pontatlanabb és nagyobb méretben lassabb.
+- Szúró aktorok: szúrásnál a súly nem számít - nehéz fegyvernél ez `SP`-veszteség, könnyűnél nyereség.
+- Egyenes él: `TÉ`/`VÉ` bónusz (jobb hárítás)
+- Íves: több `SP`, cserébe pontatlanabb és nagyobb méretben lassabb.
 
 ### ⚜️ Fejdarab, pengés, láncos, hajlékony
 
