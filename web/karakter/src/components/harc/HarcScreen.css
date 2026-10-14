@@ -639,6 +639,23 @@
   cursor: pointer;
   text-align: center;
 }
+/* Gyengébb kéz toggle: diszkrét kapcsoló (nem teli szélesség, halk) - Hátrány-1 harci helyzet.
+   A hangsúlyos hatást a megszokott HatasokInfo badge-sor adja; ez csak a gyors kapcsoló. */
+.gyengebb-kez-toggle {
+  align-self: center;
+  padding: 4px 12px;
+  border: 1px dashed var(--border-input);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 13px;
+  cursor: pointer;
+}
+.gyengebb-kez-toggle.on {
+  border-style: solid;
+  border-color: var(--warning);
+  color: var(--warning);
+}
 .mod-valaszto-list,
 .pancel-valaszto-list {
   display: flex;

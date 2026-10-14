@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { SebzesPopup } from './SebzesPopup';
@@ -50,6 +50,11 @@ interface Props {
   véCsökkentésSzorzó?: number;
   /** A szorzót adó taktika(k) neve (pl. "Roham") - a VÉ-csökkentés bontásban jelenik meg. */
   véCsökkentésSzorzóForrás?: string;
+  /** „Gyengébb kéz" harci helyzet aktuális állapota. Csak akkor adott, ha a toggle gomb kell
+   * (a hívó dönti el: kizárólag Kétkezes harc fegyverfogásnál). */
+  gyengébbKézAktív?: boolean;
+  /** A „Gyengébb kéz" helyzet be/ki kapcsolója (a session.aktív_helyzetek-et írja). */
+  onGyengébbKézToggle?: () => void;
   onClose: (eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => void;
 }
 
@@ -64,7 +69,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, gyengébbKézAktív, onGyengébbKézToggle, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -72,6 +77,14 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
   const [showMódVálasztó, setShowMódVálasztó] = useState(false);
   const [showSebzés, setShowSebzés] = useState(false);
   const [showVéCsökkentés, setShowVéCsökkentés] = useState(false);
+
+  // A dobás ELŐTT (nincs eredmény) a megjelenített Előny/Hátrány szint követi az aktív hatásokat,
+  // hogy a Gyengébb kéz toggle (ami a session-t írja → új dobásInfo prop) azonnal tükröződjön az
+  // ElonyPicker kijelölésében. Dobás után (téResult) a felhasználó választását nem írjuk felül.
+  const téHatásSzint = netElőnySzint(dobásInfo.téHatások);
+  useEffect(() => {
+    if (!téResult) setSzint(téHatásSzint);
+  }, [téHatásSzint, téResult]);
 
   // Aktív mód: a kiválasztott mód a listából (ha van), különben a prop-értékek.
   // A `té`/`sp` propok az ELSŐDLEGES mód már-korrigált (taktika mods, levonás) értékei;
@@ -192,6 +205,13 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
             {többMódú && (
               <button className="mod-valaszto-btn" onClick={() => setShowMódVálasztó(true)}>
                 Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' ? ' (másodlagos)' : ''}
+              </button>
+            )}
+            {onGyengébbKézToggle && (
+              <button
+                className={`gyengebb-kez-toggle${gyengébbKézAktív ? ' on' : ''}`}
+                onClick={onGyengébbKézToggle}>
+                Gyengébb kéz: {gyengébbKézAktív ? 'Be' : 'Ki'}
               </button>
             )}
             <ElonyPicker szint={szint} onChange={setSzint} />
