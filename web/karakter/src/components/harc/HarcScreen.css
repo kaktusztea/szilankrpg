@@ -633,11 +633,15 @@
   border: 1px solid var(--border-input);
   border-radius: 6px;
   background: var(--input-bg);
-  color: var(--text);
+  color: var(--color-taktika);
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   text-align: center;
+}
+/* A (másodlagos) jelző külön sorban a Mód gombon belül (mobil: ne lógjon ki) */
+.mod-valaszto-masodlagos {
+  display: block;
 }
 /* Gyengébb kéz toggle: diszkrét kapcsoló (nem teli szélesség, halk) - Hátrány-1 harci helyzet.
    A hangsúlyos hatást a megszokott HatasokInfo badge-sor adja; ez csak a gyors kapcsoló. */

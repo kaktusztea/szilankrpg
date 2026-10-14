@@ -204,7 +204,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
             )}
             {többMódú && (
               <button className="mod-valaszto-btn" onClick={() => setShowMódVálasztó(true)}>
-                Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' ? ' (másodlagos)' : ''}
+                Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && <span className="mod-valaszto-masodlagos">(másodlagos)</span>}
               </button>
             )}
             {onGyengébbKézToggle && (
