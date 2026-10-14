@@ -3787,7 +3787,7 @@ Forrás: `web/karakter/src/engine/reactive.ts`, `data/rules.json`
 
 ### 41.1 Architektúra
 
-A webapp **minden numerikus kalkulációja** deklaratív szabályokból áll (`rules.json`, 53 szabály).
+A webapp **minden numerikus kalkulációja** deklaratív szabályokból áll (`rules.json`, 51 szabály).
 Nincs hardcoded TS kalkuláció - a TypeScript kód csak context-et épít és `evaluate()`-ot hív.
 
 Kivétel (maradék TS inline logika):

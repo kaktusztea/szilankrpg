@@ -10,7 +10,7 @@ data/
   schemas/                   YAML sémák (karakter, fortely, kepzettseg, fegyver, stb.)
   tables/                    Generált JSON (runtime adat, NE kézzel szerkeszd)
   karakter/                  Template-ek (empty_karakter.json, test_karakter2.json, test_karakter3.json)
-  rules.json                 Reactive engine: 53 deklaratív szabály
+  rules.json                 Reactive engine: 51 deklaratív szabály
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
                              fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate)
