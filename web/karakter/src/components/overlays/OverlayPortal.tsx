@@ -17,7 +17,13 @@ export function OverlayPortal({ children, dismissible, onClose, onEscape }: Prop
   useEscapeClose(!!escapeHandler, escapeHandler ?? (() => {}));
 
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (dismissible && onClose && (e.target as HTMLElement).classList.contains('kep-prompt-overlay')) {
+    // Csak a SAJÁT backdrop közvetlen kattintására zárunk. A `e.target === e.currentTarget`
+    // kizárja, hogy egy beágyazott portál (pl. a Felszerelés picker, ami szintén
+    // `.kep-prompt-overlay`) kattintása a React-fa szerint FELbuborékoljon ebbe a szülő
+    // kezelőbe és bezárja az egész overlay-láncot (a React a portált a komponensfa, nem a
+    // DOM-fa szerint buborékoltatja).
+    if (dismissible && onClose && e.target === e.currentTarget) {
+      e.stopPropagation();
       onClose();
     }
   };

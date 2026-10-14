@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { OverlayState } from '../components/AppOverlays';
 import { TOAST_DURATION_MS } from '../ui-constants';
+import { nestedEscapeActive } from './useEscapeClose';
 
 const INITIAL_OVERLAYS: OverlayState = {
   showSzilánkPicker: false, showSlotList: false,
@@ -36,11 +37,12 @@ export function useOverlays() {
       : { ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm, backupRestore: prev.backupRestore });
   }, []);
 
-  // ESC closes overlays
+  // ESC closes overlays - DE ha egymásba ágyazott lokális popup van nyitva (pl. Felszerelés overlay →
+  // méret-picker, useEscapeClose stack ≥ 2), az ESC-et a legfelső popup kezeli, mi nem zárunk.
   useEffect(() => {
     if (!anyOverlayOpen) return;
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') closeTopmost();
+      if (e.key === 'Escape' && !nestedEscapeActive()) closeTopmost();
     }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);

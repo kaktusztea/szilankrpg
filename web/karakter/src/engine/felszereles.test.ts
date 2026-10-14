@@ -60,7 +60,7 @@ describe('felszerelésTerhelés / sorok', () => {
   it('kézi tárgy mérete pontozódik (nagy=2), kicsi=0', () => {
     const k: Karakter = {
       ...base,
-      felszerelés: { tárgyak: [{ név: 'Láda', méret: 'nagy' }, { név: 'Kötél', méret: 'kicsi' }], kizárt_auto: [] },
+      felszerelés: { tárgyak: [{ név: 'Láda', méret: 'nagy' }, { név: 'Kötél', méret: 'kicsi' }], kizárt_auto: [], külső: [] },
     };
     expect(felszerelésTerhelés(k, data)).toBe(2);
   });
@@ -69,9 +69,40 @@ describe('felszerelésTerhelés / sorok', () => {
     const k: Karakter = {
       ...base,
       pajzs: { méret: 'nagy' },
-      felszerelés: { tárgyak: [], kizárt_auto: ['pajzs'] },
+      felszerelés: { tárgyak: [], kizárt_auto: ['pajzs'], külső: [] },
     };
     expect(felszerelésTerhelés(k, data)).toBe(0);
+  });
+
+  it('"külső" kézi tárgy NEM számít a terhelésbe, de a sor külső=true', () => {
+    const k: Karakter = {
+      ...base,
+      felszerelés: { tárgyak: [{ név: 'Láda', méret: 'nagy', hely: 'külső' }], kizárt_auto: [], külső: [] },
+    };
+    expect(felszerelésTerhelés(k, data)).toBe(0);
+    const sor = felszerelésSorok(k, data).find(s => s.típus === 'kézi');
+    expect(sor).toMatchObject({ külső: true, számít: false, kulcs: 'Láda' });
+  });
+
+  it('"nincs nálad" kézi tárgy NEM számít (hely: nincs), a sor külső=false', () => {
+    const k: Karakter = {
+      ...base,
+      felszerelés: { tárgyak: [{ név: 'Láda', méret: 'nagy', hely: 'nincs' }], kizárt_auto: [], külső: [] },
+    };
+    expect(felszerelésTerhelés(k, data)).toBe(0);
+    const sor = felszerelésSorok(k, data).find(s => s.típus === 'kézi');
+    expect(sor).toMatchObject({ külső: false, számít: false });
+  });
+
+  it('"külső" fegyver NEM számít (kulcs: fegyver:<idx>)', () => {
+    const k: Karakter = {
+      ...base,
+      fegyverek: [{ alap: 'Balta', név: '', anyag: 'acél', idea: 0, felszerelésben: true }],
+      felszerelés: { tárgyak: [], kizárt_auto: [], külső: ['fegyver:0'] },
+    };
+    expect(felszerelésTerhelés(k, data)).toBe(0);
+    const sor = felszerelésSorok(k, data).find(s => s.típus === 'fegyver');
+    expect(sor).toMatchObject({ külső: true, számít: false });
   });
 
   it('hiányzó felszerelés mező (régi/sérült karakter) nem dob, 0 terhelés', () => {

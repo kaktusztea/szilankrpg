@@ -53,7 +53,7 @@ interface CompactKarakter {
   tf: (string | [string, number])[];
   pa?: Record<string, string | number | boolean>;
   pj?: string;
-  fl?: { t?: [string, string][]; kiz?: string[]; fkiz?: number[] };
+  fl?: { t?: [string, string, string?][]; kiz?: string[]; fkiz?: number[]; kul?: string[] };
   sh?: string;
 }
 
@@ -113,14 +113,15 @@ function compactEncode(k: Karakter): CompactKarakter {
   // pajzs
   if (k.pajzs.méret) c.pj = k.pajzs.méret;
 
-  // felszerelés (tárgyak méret-tömb + pajzs/páncél kizárás + "felszerelésben=false" fegyver-indexek)
+  // felszerelés (tárgyak [név, méret, hely?] + pajzs/páncél kizárás + "felszerelésben=false" fegyver-indexek + AUTO külső-jelzők)
   {
-    const fl: { t?: [string, string][]; kiz?: string[]; fkiz?: number[] } = {};
-    if (k.felszerelés.tárgyak.length) fl.t = k.felszerelés.tárgyak.map(t => [t.név, t.méret]);
+    const fl: { t?: [string, string, string?][]; kiz?: string[]; fkiz?: number[]; kul?: string[] } = {};
+    if (k.felszerelés.tárgyak.length) fl.t = k.felszerelés.tárgyak.map(t => t.hely ? [t.név, t.méret, t.hely] : [t.név, t.méret]);
     if (k.felszerelés.kizárt_auto.length) fl.kiz = k.felszerelés.kizárt_auto;
     const fkiz = k.fegyverek.map((f, i) => (f.felszerelésben === false ? i : -1)).filter(i => i >= 0);
     if (fkiz.length) fl.fkiz = fkiz;
-    if (fl.t || fl.kiz || fl.fkiz) c.fl = fl;
+    if (k.felszerelés.külső?.length) fl.kul = k.felszerelés.külső;
+    if (fl.t || fl.kiz || fl.fkiz || fl.kul) c.fl = fl;
   }
 
   // előtörténet (csak származás_helye)
@@ -197,8 +198,13 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     páncél,
     pajzs: { méret: c.pj || '' },
     felszerelés: {
-      tárgyak: c.fl?.t?.map(([név, méret]) => ({ név, méret: méret as 'kicsi' | 'közepes' | 'nagy' })) || [],
+      tárgyak: c.fl?.t?.map(([név, méret, hely]) => ({
+        név,
+        méret: méret as 'kicsi' | 'közepes' | 'nagy',
+        ...(hely === 'nincs' || hely === 'külső' ? { hely } : {}),
+      })) || [],
       kizárt_auto: (c.fl?.kiz as ('pajzs' | 'páncél')[] | undefined) || [],
+      külső: c.fl?.kul || [],
     },
     előtörténet: { ...DEFAULT_ELOTORTENET, ...(c.sh ? { származás_helye: c.sh } : {}) },
   };

@@ -60,6 +60,9 @@ export interface PajzsPeldany {
 export interface FelszerelésTárgy {
   név: string;
   méret: 'kicsi' | 'közepes' | 'nagy';
+  /** Hol van a tárgy: default (hiányzó) = nálad; 'nincs' = nincs nálad; 'külső' = külső tárolóban
+   * (lovon/szekéren). A 'nincs' és 'külső' egyaránt kiveszi a terhelésből (0 pont, kiszürkítve). */
+  hely?: 'nincs' | 'külső';
 }
 
 export interface Előtörténet {
@@ -153,7 +156,7 @@ export interface Karakter {
   távfegyverek: TavfegyverPeldany[];
   páncél: PancelPeldany;
   pajzs: PajzsPeldany;
-  felszerelés: { tárgyak: FelszerelésTárgy[]; kizárt_auto: ('pajzs' | 'páncél')[] };
+  felszerelés: { tárgyak: FelszerelésTárgy[]; kizárt_auto: ('pajzs' | 'páncél')[]; külső: string[] };
   előtörténet: Előtörténet;
   jegyzetek: string;
   napló: NaploBejegyzes[];

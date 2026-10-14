@@ -433,7 +433,8 @@
   },
   "felszerelés": {
     "tárgyak": [],
-    "kizárt_auto": []
+    "kizárt_auto": [],
+    "külső": []
   },
   "jegyzetek": "",
   "napló": [],

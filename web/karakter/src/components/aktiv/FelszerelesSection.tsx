@@ -14,6 +14,8 @@ interface Props {
 
 type Méret = 'kicsi' | 'közepes' | 'nagy';
 const MÉRET_LABEL: Record<Méret, string> = { kicsi: 'kicsi', közepes: 'közepes', nagy: 'nagy' };
+const NINCS_LABEL = 'nincs nálad';
+const KÜLSŐ_LABEL = 'külső tárolóban';
 
 /** Melyik sor pickerje nyílt: auto (fix-érték méret-neve) vagy kézi (index). */
 type PickerTarget =
@@ -22,8 +24,12 @@ type PickerTarget =
 
 /**
  * Felszerelés accordion (Verziók/Napló/Jegyzetek overlay legfelső eleme).
- * Fejléc: Max/Aktuális. Táblázat: fegyver/pajzs/páncél AUTO (read-only név, nincs↔fix),
- * kézi tárgyak (szabad név + méret), mindig 1 üres sor alul.
+ * Fejléc: Max/Aktuális. Táblázat: fegyver/pajzs/páncél AUTO (read-only név), kézi tárgyak
+ * (szabad név + méret), mindig 1 üres sor alul. Minden sor háromállapotú:
+ * nálad (pont számít) / "nincs nálad" / "külső tárolóban" - utóbbi kettő 0 pont + kiszürkítve.
+ * Az AUTO "nálad↔nincs" a Harc fülhöz kötött (felszerelésben / kizárt_auto / aktív_páncél);
+ * a "külső" egy párhuzamos megjelenítési jelző (felszerelés.külső halmaz, kulcs-alapú).
+ * A kézi tárgy háromállapota a tárgy `hely` mezőjében (nincs/külső/∅=nálad).
  */
 export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
   const [open, setOpen] = useState(false);
@@ -41,12 +47,19 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
   const kézi = karakter.felszerelés?.tárgyak ?? [];
 
   function setKézi(tárgyak: FelszerelésTárgy[]) {
-    setKarakter(prev => prev ? { ...prev, felszerelés: { tárgyak, kizárt_auto: prev.felszerelés?.kizárt_auto ?? [] } } : prev);
+    setKarakter(prev => prev ? {
+      ...prev,
+      felszerelés: {
+        tárgyak,
+        kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
+        külső: prev.felszerelés?.külső ?? [],
+      },
+    } : prev);
   }
 
   function setKéziNév(idx: number, név: string) {
     if (idx === kézi.length) {
-      // Üres sorba írtak → új tárgy (default közepes), ami után megjelenik a következő üres sor.
+      // Üres sorba írtak → új tárgy (default közepes, nálad), ami után megjelenik a következő üres sor.
       if (név.trim()) setKézi([...kézi, { név, méret: 'közepes' }]);
     } else {
       const next = kézi.slice();
@@ -57,7 +70,16 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
 
   function setKéziMéret(idx: number, méret: Méret) {
     const next = kézi.slice();
-    next[idx] = { ...next[idx], méret };
+    // Méret választása visszahelyezi a tárgyat „nálad" állapotba (a hely jelzőt töröljük).
+    const { hely: _elhagyott, ...többi } = next[idx];
+    void _elhagyott;
+    next[idx] = { ...többi, méret };
+    setKézi(next);
+  }
+
+  function setKéziHely(idx: number, hely: 'nincs' | 'külső') {
+    const next = kézi.slice();
+    next[idx] = { ...next[idx], hely };
     setKézi(next);
   }
 
@@ -65,8 +87,27 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
     setKézi(kézi.filter((_, i) => i !== idx));
   }
 
-  /** Auto-sor „nincs" ↔ fix váltás: fegyver → felszerelésben flag, pajzs/páncél → kizárt_auto. */
-  function toggleAuto(sor: FelszerelésSor, nincs: boolean) {
+  /** AUTO-sor „külső" jelző be/ki a felszerelés.külső halmazban (kulcs-alapú). */
+  function setAutoKülső(kulcs: string, be: boolean) {
+    setKarakter(prev => {
+      if (!prev) return prev;
+      const jelenlegi = prev.felszerelés?.külső ?? [];
+      const külső = be ? [...jelenlegi, kulcs] : jelenlegi.filter(x => x !== kulcs);
+      return {
+        ...prev,
+        felszerelés: {
+          tárgyak: prev.felszerelés?.tárgyak ?? [],
+          kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
+          külső: [...new Set(külső)],
+        },
+      };
+    });
+  }
+
+  /** AUTO-sor „nálad ↔ nincs nálad" váltás: fegyver → felszerelésben, pajzs/páncél → kizárt_auto/aktív_páncél.
+   * A „külső" jelzőt is töröljük (a nincs/nálad kölcsönösen kizárja a külső-t). */
+  function setAutoNincs(sor: FelszerelésSor, nincs: boolean) {
+    setAutoKülső(sor.kulcs, false);
     setKarakter(prev => {
       if (!prev) return prev;
       if (sor.típus === 'fegyver') {
@@ -81,13 +122,29 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
       // Pajzs: kizárt_auto lista (nincs session-toggle-je).
       const jelenlegi = prev.felszerelés?.kizárt_auto ?? [];
       const kizárt = nincs ? [...jelenlegi, 'pajzs'] : jelenlegi.filter(x => x !== 'pajzs');
-      return { ...prev, felszerelés: { tárgyak: prev.felszerelés?.tárgyak ?? [], kizárt_auto: [...new Set(kizárt)] as ('pajzs' | 'páncél')[] } };
+      return {
+        ...prev,
+        felszerelés: {
+          tárgyak: prev.felszerelés?.tárgyak ?? [],
+          kizárt_auto: [...new Set(kizárt)] as ('pajzs' | 'páncél')[],
+          külső: prev.felszerelés?.külső ?? [],
+        },
+      };
     });
   }
 
-  /** A sor méret-chip felirata. */
+  /** AUTO-sor „külső tárolóban"-ra állítása: bekapcsolja a külső jelzőt ÉS visszaállítja „nálad"-ra
+   * (különben a nincs-flag maradna, és a sor Harc-oldalon nem elérhető lenne - a külső is nem-elérhető,
+   * de a jelzőt egyértelműen a külső adja). */
+  function setAutoKülsőTároló(sor: FelszerelésSor) {
+    setAutoNincs(sor, false);
+    setAutoKülső(sor.kulcs, true);
+  }
+
+  /** A sor méret-chip felirata (háromállapot). */
   function chipLabel(sor: FelszerelésSor): string {
-    if (!sor.számít) return 'nincs';
+    if (sor.külső) return KÜLSŐ_LABEL;
+    if (!sor.számít) return NINCS_LABEL;
     return `${sor.pont}`;
   }
 
@@ -117,7 +174,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
           <tr><th>Név</th><th>Méret</th><th aria-label="törlés"></th></tr>
         </thead>
         <tbody>
-          {/* AUTO sorok (fegyver/pajzs/páncél) - read-only név, nincs ↔ fix chip */}
+          {/* AUTO sorok (fegyver/pajzs/páncél) - read-only név, háromállapotú chip */}
           {autoSorok.map((sor, i) => {
             const fixMéret: Méret = sor.pont >= 2 ? 'nagy' : sor.pont === 1 ? 'közepes' : 'kicsi';
             return (
@@ -133,7 +190,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
                 </td>
                 <td>
                   {sor.számít && (
-                    <button className="felsz-torol" title="Nincs a karakternél" onClick={() => toggleAuto(sor, true)}>✕</button>
+                    <button className="felsz-torol" title="Nincs a karakternél" onClick={() => setAutoNincs(sor, true)}>✕</button>
                   )}
                 </td>
               </tr>
@@ -141,10 +198,14 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
           })}
 
           {/* Kézi tárgyak + 1 üres sor a végén */}
-          {[...kézi, { név: '', méret: 'közepes' as Méret }].map((t, idx) => {
+          {[...kézi, { név: '', méret: 'közepes' as Méret } as FelszerelésTárgy].map((t, idx) => {
             const üres = idx === kézi.length;
+            const külső = t.hely === 'külső';
+            const nincs = t.hely === 'nincs';
+            const kiszürke = külső || nincs;
+            const chip = külső ? KÜLSŐ_LABEL : nincs ? NINCS_LABEL : `${data.konstansok.felszerelés.méret_pont[t.méret]}`;
             return (
-              <tr key={`kézi-${idx}`}>
+              <tr key={`kézi-${idx}`} className={!üres && kiszürke ? 'felsz-row-off' : ''}>
                 <td>
                   <input
                     className="felsz-nev-input"
@@ -156,7 +217,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
                 <td>
                   {!üres && (
                     <button className="felsz-chip he-field-btn" onClick={() => setPicker({ fajta: 'kézi', idx })}>
-                      {data.konstansok.felszerelés.méret_pont[t.méret]}
+                      {chip}
                     </button>
                   )}
                 </td>
@@ -176,19 +237,21 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
           <div className="kep-prompt-box felsz-picker">
             {picker.fajta === 'auto' ? (
               <>
-                <button className="felsz-picker-opt" onClick={() => { toggleAuto(picker.sor, true); setPicker(null); }}>nincs</button>
-                <button className="felsz-picker-opt" onClick={() => { toggleAuto(picker.sor, false); setPicker(null); }}>
+                <button className="felsz-picker-opt" onClick={() => { setAutoNincs(picker.sor, false); setPicker(null); }}>
                   {MÉRET_LABEL[picker.fixMéret]} ({picker.sor.pont})
                 </button>
+                <button className="felsz-picker-opt" onClick={() => { setAutoNincs(picker.sor, true); setPicker(null); }}>{NINCS_LABEL}</button>
+                <button className="felsz-picker-opt" onClick={() => { setAutoKülsőTároló(picker.sor); setPicker(null); }}>{KÜLSŐ_LABEL}</button>
               </>
             ) : (
               <>
-                <button className="felsz-picker-opt" onClick={() => { törölKézi(picker.idx); setPicker(null); }}>nincs (törlés)</button>
                 {(['kicsi', 'közepes', 'nagy'] as Méret[]).map(m => (
                   <button key={m} className="felsz-picker-opt" onClick={() => { setKéziMéret(picker.idx, m); setPicker(null); }}>
                     {MÉRET_LABEL[m]} ({data.konstansok.felszerelés.méret_pont[m]})
                   </button>
                 ))}
+                <button className="felsz-picker-opt" onClick={() => { setKéziHely(picker.idx, 'nincs'); setPicker(null); }}>{NINCS_LABEL}</button>
+                <button className="felsz-picker-opt" onClick={() => { setKéziHely(picker.idx, 'külső'); setPicker(null); }}>{KÜLSŐ_LABEL}</button>
               </>
             )}
           </div>

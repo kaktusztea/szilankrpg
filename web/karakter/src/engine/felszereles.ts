@@ -22,8 +22,14 @@ export interface FelszerelésSor {
   típus: 'fegyver' | 'pajzs' | 'páncél' | 'kézi';
   /** Auto-sor azonosítója (fegyvernél index-alapú kulcs, pajzs/páncél fix). Kézinél undefined. */
   autoId?: string;
-  /** Számít-e a terhelésbe (fegyver: felszerelésben; pajzs/páncél: nincs kizárva; páncél: fedés is). */
+  /** Számít-e a terhelésbe (fegyver: felszerelésben; pajzs/páncél: nincs kizárva; páncél: fedés is).
+   * A "külső" (lásd lentebb) és a "nincs nálad" egyaránt false-ra állítja. */
   számít: boolean;
+  /** A sor "külső tárolóban" (lovon/szekéren) jelzővel van-e ellátva. Tisztán megjelenítési
+   * (🟤 helyett szöveg); terhelésbe nem számít - a `számít` már false ilyenkor. */
+  külső: boolean;
+  /** A sor stabil kulcsa a felszerelés.külső halmazhoz (fegyver:<idx> / pajzs / páncél / kézi név). */
+  kulcs: string;
 }
 
 export interface FelszerelésHátrány {
@@ -67,27 +73,35 @@ export function felszerelésSorok(karakter: Karakter, data: GameData): Felszerel
   // A karakter localStorage-ból/URL-ből jön (trust boundary): a felszerelés almezők hiányozhatnak.
   const kizártAuto = karakter.felszerelés?.kizárt_auto ?? [];
   const kéziTárgyak = karakter.felszerelés?.tárgyak ?? [];
+  const külsőSet = new Set(karakter.felszerelés?.külső ?? []);
 
   // Fegyverek (auto): a felszerelésben flag dönt
   karakter.fegyverek.forEach((f, i) => {
     const def = lookupFegyver(data.fegyverek, f.alap);
+    const kulcs = `fegyver:${i}`;
+    const külső = külsőSet.has(kulcs);
     sorok.push({
       név: f.név || def?.név || f.alap,
       pont: fegyverPont(f.alap, data),
       típus: 'fegyver',
-      autoId: `fegyver:${i}`,
-      számít: f.felszerelésben !== false,
+      autoId: kulcs,
+      kulcs,
+      külső,
+      számít: f.felszerelésben !== false && !külső,
     });
   });
 
   // Pajzs (auto): a kizárt_auto dönt
   if (karakter.pajzs.méret) {
+    const külső = külsőSet.has('pajzs');
     sorok.push({
       név: `Pajzs (${karakter.pajzs.méret})`,
       pont: fp.pajzs_pont[karakter.pajzs.méret] ?? 0,
       típus: 'pajzs',
       autoId: 'pajzs',
-      számít: !kizártAuto.includes('pajzs'),
+      kulcs: 'pajzs',
+      külső,
+      számít: !kizártAuto.includes('pajzs') && !külső,
     });
   }
 
@@ -97,22 +111,29 @@ export function felszerelésSorok(karakter: Karakter, data: GameData): Felszerel
     const struktúra = data.konstansok.páncél_struktúrák.find(s => s.struktúra === karakter.páncél.alap);
     const merev = struktúra?.merev ?? false;
     const fedésOk = páncélLefedettség(karakter) >= fp.páncél_fedés_min;
+    const külső = külsőSet.has('páncél');
     sorok.push({
       név: `Páncél (${karakter.páncél.alap})`,
       pont: merev ? fp.páncél_pont.merev : fp.páncél_pont.hajlékony,
       típus: 'páncél',
       autoId: 'páncél',
-      számít: fedésOk && karakter.session?.aktív_páncél === true,
+      kulcs: 'páncél',
+      külső,
+      számít: fedésOk && karakter.session?.aktív_páncél === true && !külső,
     });
   }
 
-  // Kézi tárgyak
+  // Kézi tárgyak (a háromállapot a tárgy `hely` mezőjéből: nálad / nincs / külső)
   for (const t of kéziTárgyak) {
+    const külső = t.hely === 'külső';
+    const nálad = t.hely == null;
     sorok.push({
       név: t.név,
       pont: fp.méret_pont[t.méret] ?? 0,
       típus: 'kézi',
-      számít: true,
+      kulcs: t.név,
+      külső,
+      számít: nálad,
     });
   }
 
