@@ -92,7 +92,10 @@ Engine spec: §21.4 ("Belharc rendszer összefoglaló"). Kész: a Belharci helyz
 
 TODO:
 - [ ] Puszta kéz belharcban: a v2 adatban külön rekord él (`Puszta kéz, belharcban`, `TÉ`/`VÉ`/`SP` = 0), de a webapp nem cseréli rá a Puszta kezet Belharci helyzetben (a `fegyver_override` feltétele `fegyverhossz > 0`, a Puszta kéz hossza 0 → marad `TÉ`:-3, `VÉ`:-3, `SP`:-5)
-- [ ] Korlátozás-jelzés: a belharcos oldal feltételeinek (Közelharc harcmodor, max 0 fegyverhossz) UI-jelzése
+- [ ] Korlátozás-jelzés: a belharcos oldal feltételeinek (Közelharc harcmodor, max fegyverhossz) UI-jelzése (javaslat: a `helyzet-helpers.ts` `getMinFegyverhosszWarning` mintájára, az aktív Belharci helyzet chipjén)
+- [ ] Fegyverhossz-limit ellentmondás (DÖNTÉS KELL): az éles md (`065_03_02_semleges_helyzetek.md`) "Max 1 fegyverhossz-kategória", az engine_spec §21.4 + ez a fájl "max 0", az adat feltétele `fegyverhossz > 0`. Következmény: a hossz-1 fegyverek (Tőr, Dzsambia, Levéltőr, Béltépő, Méregfog, Tőr, kígyó) belharcban `TÉ`/`VÉ` = 0-t kapnak. Ha az md az irányadó → feltétel `> 1`, majd engine_spec §21.4 igazítás
+- [ ] Override hatókör hiba (`fegyver-calc.ts` `applyFegyverOverrides` + `calcKetkezes`): a feltétel az AKTÍV fegyver hosszát nézi (`aktív_fegyver_fegyverhossz`), de MINDEN fegyversorra alkalmazódik (aktív kard → a tőr sora is nullázódik; aktív tőr → a kard sora nem). Kétkezes / fegyver+hárító esetén a két hossz ÖSSZEADÓDIK (két tőr = 2 → nullázódik). Helyes: soronkénti (kétkezesnél kezenkénti) hossz-vizsgálat
+- [ ] Tőr, páncélszúró (DÖNTÉS KELL): `pancelszuras_belharcban` extrája van, de `hossz: 2` → belharcban `> 0` és `> 1` feltétellel is nullázódik. Opciók: hossz 1, kivétel a szabály alól, vagy marad
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧
