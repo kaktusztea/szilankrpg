@@ -94,7 +94,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
       </Section>
 
       <Section label={`SP: ${d.finalSP} ${r.jelleg}`}>
-        Fegyver: {d.fegyverAlapSP} · Erőbónusz: {d.erőBónusz}{d.erőBónuszLimit < 99 && ` (limit: ${d.erőBónuszLimit})`}
+        Fegyver: {d.fegyverAlapSP} · Erőbónusz: {Math.floor(d.erőBónusz * (1 + (fortelyMods['SP_erőbónusz_arány'] ?? 0)))}{d.erőBónuszLimit < 99 && ` (limit: ${d.erőBónuszLimit})`}{(fortelyMods['SP_erőbónusz_arány'] ?? 0) > 0 && ` (×${1 + fortelyMods['SP_erőbónusz_arány']})`}
         {d.kétkezes
           ? <DetailParts parts={[
               [`MF(${d.kétkezes.nagyobb.név})`, d.kétkezes.nagyobb.mfSP],

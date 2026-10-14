@@ -31,7 +31,7 @@
 ---
 ## Egységes effekt-modell 🚧
 
-Engine spec: §42 (TERV), fázisterv: §42.5. Cél: a fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia).
+Engine spec: §42 (részben implementált), fázisterv: §42.5. Cél: a fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia).
 
 Állapot:
 - **1. fázis - Szabvány** ✅: §42 + a pilot `extrak.yaml`.

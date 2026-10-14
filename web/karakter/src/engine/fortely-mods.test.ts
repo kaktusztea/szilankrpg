@@ -41,6 +41,18 @@ describe('calcFortelyMods', () => {
     expect(mods.TÉ).toBe(5);             // A blocked, C stays
   });
 
+  it('collects a scaled "erőbónusz" SP mod as an arány (weapon-dependent, applied by fegyver_SP)', () => {
+    const d = { fortelySummaries: [
+      { név: 'R', fokok: [{ fok: 1, módosítók: [{ cél: 'SP', mód: 'scaled', forrás: 'erőbónusz', arány: 1, feltétel: 'taktika:roham' }] }] },
+    ] } as unknown as GameData;
+    const k = { fortélyok: [{ név: 'R', fok: 1 }], képzettségek: [] } as unknown as Karakter;
+    const on = calcFortelyMods(k, {} as Session, d, new Set(), f => f === 'taktika:roham');
+    expect(on.SP_erőbónusz_arány).toBe(1);
+    expect(on.SP).toBe(0);                // nem flat SP - a képzettség-lookup ág nem fut rá
+    const off = calcFortelyMods(k, {} as Session, d, new Set(), () => false);
+    expect(off.SP_erőbónusz_arány).toBe(0);
+  });
+
   it('merges alapeset flat mods for non-owned fortélyok when the feltétel is active', () => {
     const session = {} as unknown as Session;
     const withAf = calcFortelyMods(karakter, session, data, new Set(['af']), alwaysTrue);

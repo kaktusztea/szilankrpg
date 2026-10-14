@@ -42,12 +42,8 @@ formula:
                     // szabad fortélyok keret feletti KP: szekunder KP-ból fizetendő (nem primer)
   kp_hm           = (HM_TÉ + HM_VÉ) x kp.hm
   kp_cm           = CM x kp.cm
-  kiemelt_kp      = SUM( ingyenes keret FELETTI kiemelt fortélyok fizetős KP-ja )   // §41, l. lentebb
+  kiemelt_kp      = SUM( ingyenes keret FELETTI kiemelt fortélyok fizetős KP-ja )   // impl: §41
   elköltött_kp    = kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp
-
-  // Szekunder ismeretekre költött KP (szekunder képzettségek + nem-harci/nem-misztikus fortélyok)
-  kp_szekunder_költött = SUM( szekunder képzettségek KP-ja )
-                       + SUM( szekunder fortélyok fok x kp.fortélyfok )
 
   maradék_kp = (összes_kp + spec_kp + összes_szekunder_kp) - elköltött_kp
 
@@ -99,7 +95,7 @@ impl: reactive.ts → buildArrayContext 'kp_bónusz_fortélyok' (perFok < 0 szű
 
 ```
 input:  karakter.tulajdonságok (mind a 8), karakter.tsz
-source: konstansok.yaml → tulajdonság_pontok, arányok.tulajdonság_pont_alap, arányok.tulajdonság_pont_tsz_bónusz
+source: konstansok.yaml → tulajdonság_pontok, arányok.tulajdonság_pont_alap
 
 formula:
   keret = tulajdonság_pont_alap + FLOOR(tsz / 2)
@@ -108,6 +104,8 @@ formula:
 
 output: tulajdonság_pont_keret, elköltött_tulajdonság_pont, maradék_tulajdonság_pont
 note: 6 (26 pont) és 7 (33 pont) értékek csak faji/mágikus módosítóval érhetőek el
+note: A FLOOR(tsz / 2) a rules.json-ban rögzített; a konstansok.yaml → arányok.tulajdonság_pont_tsz_bónusz (0.5)
+      dokumentációs érték, a szabály NEM olvassa.
 note: Tapasztalati szint tartomány: [arányok.min_tsz, arányok.max_tsz] = [3, 21].
       A kalandozás a 3. szinten kezdődik (1-2. szint = előtörténet). Forrás: konstansok.yaml → arányok.min_tsz / arányok.max_tsz.
 ```
@@ -153,7 +151,7 @@ formula:
 
 output: KÉ
 note: A rules.json KÉ képlete NEM tartalmazza a fortély módosítókat (körkörös függőség miatt).
-      A HarcScreen utólag adja hozzá: computed.KÉ + taktikaMods.KÉ + fortelyMods.KÉ.
+      A useHarcComputed.ts utólag adja hozzá: computed.KÉ + taktikaMods.KÉ + fortelyMods.KÉ.
       A fortelyMods tartalmazza az alapeset (0.fok) módosítókat is (evaluateAlapesetek → flat mód, aktív feltétel).
 ```
 
@@ -162,10 +160,11 @@ note: A rules.json KÉ képlete NEM tartalmazza a fortély módosítókat (körk
 ## 5. Támadó Érték (TÉ) - fegyverenként
 
 ```
-note: Másfélkezes (MK) fegyverek: a fegyverek_v2.json-ban egy fegyveren belül több mód van (1K és 2K
-      variáns, eltérő harcértékekkel). A karakter példányban 1 fegyver példány, a Harc fülön a módok
-      jelennek meg. Az MK szabály (1 kézzel TÉ-2/VÉ-2, Átütés megszűnik) a v2 mód-értékekbe beépítve.
-      Az Alapnév a suffix nélküli display név (pl. "Kard, másfélkezes").
+note: Fegyver = EGY rekord a fegyverek_v2.json-ban, `módok[]` listával (aktoronként egy mód; a
+      másfélkezes fegyvernél aktoronként egy "másfélkezes · 1 kézzel" mód is). A karakter példányban
+      1 fegyver példány, a Harc fülön a módok jelennek meg. Az 1 kezes szabály (TÉ-2/VÉ-2, Átütés 0,
+      Erőlimit max 2) a v2 mód-értékekbe beépítve (generátor: konstansok.yaml → egykezes_forgatás).
+      A per-fegyver kalkuláció minden módra külön fut (fegyver-calc.ts → calcFegyverResults).
 
       Fegyver kategória → harcmodor képzettség mapping:
         source: konstansok.yaml → fegyver_kategória_harcmodor
@@ -189,9 +188,24 @@ formula:  // ismételve minden egyes fegyverre
   TÉ_fortély = SUM( fortély_módosítók(cél="TÉ", feltétel="") )
               + SUM( alapeset_módosítók(cél="TÉ", aktív feltétel) )   // §16.1, pl. Lovas harc 0.fok: -9
 
-  TÉ = TÉ_alap + TÉ_harcmodor + TÉ_fegyver + TÉ_mesterfegyver + TÉ_fortély
+  TÉ_idea = ideaDelta(példány.idea, fegyver.idea_default).TÉ   // §5.1; default példány → 0
 
-output: TÉ (per fegyver)
+  TÉ = TÉ_alap + TÉ_harcmodor + TÉ_fegyver + TÉ_mesterfegyver + TÉ_fortély - merevvért_TÉ_büntetés (§12) + TÉ_idea
+
+output: TÉ (per fegyver, per mód)
+impl: rules.json → fegyver_TÉ (a TÉ_idea-t a calcFegyverResults adja hozzá utólag)
+```
+
+### 5.1 Fegyver Idea (Modell 2)
+
+```
+source: tables/fegyver_idea_tabla.json (Idea szint → TÉ/VÉ/SP; generátor-forrás: fegyverek/konstansok.yaml → idea)
+formula:
+  ideaDelta(példány_idea, idea_default) = IDEA[példány_idea] - IDEA[idea_default]   // TÉ, VÉ, SP külön
+note: A v2 harcértékek a fegyver idea_default-ját (gyári példány) MÁR tartalmazzák; a felvett példány
+      idea_default-ról indul, és csak az ettől való eltérés hat (sérülés lefelé, áldás felfelé).
+impl: harc/shared.ts → ideaDelta(); bekötve: calcFegyverResults (§5-§8), ketkezes.ts (§26.8),
+      távharc CÉ (§17).
 ```
 
 ---
@@ -215,9 +229,11 @@ formula:  // ismételve minden egyes fegyverre
   VÉ_fortély = SUM( fortély_módosítók(cél="VÉ", feltétel="") )
               + SUM( alapeset_módosítók(cél="VÉ", aktív feltétel) )   // §16.1, pl. Lovas harc 0.fok: -9
 
-  VÉ = VÉ_alap + VÉ_harcmodor + VÉ_fegyver + VÉ_mesterfegyver + VÉ_fortély
+  VÉ_idea = ideaDelta(példány.idea, fegyver.idea_default).VÉ
 
-output: VÉ (per fegyver)
+  VÉ = VÉ_alap + VÉ_harcmodor + VÉ_fegyver + VÉ_mesterfegyver + VÉ_fortély + VÉ_idea
+
+output: VÉ (per fegyver, per mód)
 note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha session.aktív_pajzs = true.
       Pajzs VÉ: a konstansok.pajzs_hatások 2D táblából (méret × Pajzshasználat fok), lásd §13.
       Alap (fok 0) VÉ: kis 3, közepes 10, nagy 16.
@@ -248,6 +264,7 @@ formula:
 
 output: CÉ (per távfegyver)
 note: Mágikus kategóriájú fegyverekre (Mágiatáv I–IV) eltérő formula - lásd §17.1.
+      Távfegyver Idea: a per-fegyver karakter.távfegyverek[].idea delta a CÉ-be (§17).
 ```
 
 ---
@@ -260,21 +277,26 @@ input:  fegyver.SP, mesterfegyver_fok (adott fegyverre),
 source: konstansok.yaml → mesterfegyver_bónuszok
 
 formula:  // ismételve minden egyes fegyverre
-  erőbónusz = MIN(erő, fegyver.erőbónusz_limit)  // limit=0 → nincs erőbónusz; üres/"" → limit=99 (korlátlan)
+  erőbónusz = FLOOR( MIN(erő, fegyver.erőbónusz_limit) × (1 + fortelyMods.SP_erőbónusz_arány) )
+              // limit=0 → nincs erőbónusz; 99 = korlátlan; az arány a `scaled` + `forrás: erőbónusz`
+              // fortély-módosítókból (§16), pl. Taktikafókusz: Roham → ×2
   SP_mesterfegyver = lookup(mesterfegyver_fok → mesterfegyver_bónuszok).SP
   SP_fortély = SUM( fortély_módosítók(cél="SP", feltétel="") )
 
-  SP = fegyver.SP + erőbónusz + SP_mesterfegyver + SP_fortély
+  SP_idea = ideaDelta(példány.idea, fegyver.idea_default).SP
 
-output: SP (per fegyver)
-note: sebzésmód (S/V/Z) a fegyver aktív módjából jön (§26 módok[]), nem számítás
+  SP = fegyver.SP + erőbónusz + SP_mesterfegyver + SP_fortély + SP_idea
+
+output: SP (per fegyver, per mód)
+note: fegyver.SP és fegyver.erőbónusz_limit a mód `SP` / `Erőlimit` mezője (§5 módok[]).
+      A sebzésjelleg (zúzó / szúró / vágó-egyenes / vágó-íves) a mód `jelleg` mezője, nem számítás.
       SP override: ha egy fortély `mód: "override"` + `cél: "SP"` + `feltétel: "fegyver:X"` módosítót tartalmaz,
         az felülírja az adott fegyver alap SP-jét (pl. Természetes fegyver → puszta kéz SP override).
         Implementáció: `fegyver-calc.ts → calcFegyverResults()` - pre-loop SP felülírás a reactive rule input előtt.
 
 Sebzésjelleg × ellenfél páncél SP-delta (dobásonként, NEM statikus fegyver-SP):
   A fenti SP a statikus, ellenfél-független érték. A tényleges sebzésnél (Sebzés popup, Játék mód)
-  az aktív mód sebzésjellege (S/V/Z) és a választott ellenfél páncélosztály
+  az aktív mód sebzésjellege (`jelleg`) és a választott ellenfél páncélosztály
   (csupasz/puha/bőr/lánc/merev) egy 2D mátrixból ad SP-deltát:
     forrás: `data/tables/sebzesjelleg_pancel_matrix.json` (source: sebzesjelleg_pancel_matrix.yaml)
   Ezen felül a `cél_páncél` extrák SP-hatású ága ad delta-t (pl. `panceltalant_jobban_sebez`
@@ -312,7 +334,7 @@ Szabálykönyvi sebzés-mechanikák (md/064_02_07_sebzes.md):
 
 ```
 input:  fegyver.sebesség, harcmodor_szint (a fegyver kategóriájához tartozó),
-        karakter.tulajdonságok.gyorsaság, MGT (páncél + felszerelés),
+        karakter.tulajdonságok.gyorsaság, páncél_MGT (§11; a Felszerelés NEM MGT, l. §15),
         fortély módosítók (cél: "harckeret")
 source: rules.json (fegyver_harckeret, fegyver_támadások)
 
@@ -341,7 +363,6 @@ impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
       Kétkezes harc: saját kalkuláció (`engine/ketkezes.ts`, §26).
       Harc fül Tám cella: kattintásra info popup (fegyver név, sebesség, harckeret).
       Moduláris harc kalkuláció:
-        - `harc/HarcCalc.ts` - re-export barrel (backward compat)
         - `harc/fegyver-calc.ts` - buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes
         - `harc/taktika-calc.ts` - calcTaktikaMods
         - `harc/pancel-calc.ts` - buildPancelLookups, calcFogas, calcFtEnyhites
@@ -372,9 +393,9 @@ reactive rules.json:
   sfé_energia: páncél_struktúra_sfé_energia + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás
 
 impl: A struktúra és alapanyag értékek string-keyed lookup szabályokból jönnek (rules.json).
-      A HarcScreen közvetlenül a karakter adatokból építi a context-et + lookup táblákat.
+      A useHarcComputed.ts (+ pancel-calc.ts → buildPancelLookups) a karakter adatokból építi a context-et + lookup táblákat.
       Ha nincs struktúra kiválasztva → minden 0, lefedettség = 0%.
-      Végleges SFÉ a Harc fülön: (session.aktív_páncél ? computed.sfé : 0) + fortelyMods['SFÉ']
+      Végleges SFÉ a Harc fülön (useHarcComputed.ts): (session.aktív_páncél ? computed.sfé : 0) + fortelyMods['SFÉ']
       A fortély SFÉ (pl. Természetes páncél) mindig aktív, független a páncél viseléstől.
 ```
 
@@ -482,17 +503,6 @@ note: Fegyver+pajzs mód automatikusan aktív_pajzs = true.
         nagy:    fok0 {VÉ 16, TÉ -9} fok1 {16, -6} fok2 {16, -3} fok3 {VÉ 18, TÉ 0}
 ```
 
-### 13.2 Belharc pajzs degradáció
-
-Belharci helyzetben (`session.aktív_helyzetek` tartalmazza a "Belharci helyzet"-et) a pajzs mérete a
-`konstansok.belharc_pajzs_max_méret` (= "kis") maximumra degradálódik a `pajzs_hatások` lookup ELŐTT.
-Testközelben a nagy/közepes pajzs használhatatlan, ezért belharcban minden pajzs legfeljebb Kis pajzsként
-véd (VÉ:3, Pajzshasználat 3.fok esetén 5). Kód: `pancel-calc.ts` → `calcFogas` (méretRang klamp).
-
-Szabály (md, KM-oldali kiegészítés a védekező ellenfélre): a Belharcba kerülés manőver Ellenpróbájának
-nehézségét a védekező pajzsmérete növeli - Kis +2, Közepes +4, Nagy +6. Ezt az app nem automatizálja
-(az ellenfél KM-oldali), csak a saját karakter pajzs-VÉ degradációja számítódik.
-
 ### 13.1 Pajzs fegyverként (csak pajzs harc)
 
 Ha a karakter kizárólag a pajzzsal harcol (fegyver nélkül):
@@ -506,10 +516,21 @@ Bónuszok: a Pajzshasználat fortély `fegyver_kategória:pajzs` feltételes mó
 - 3.fok: TÉ:+3, VÉ:+3, SP:+3
 
 Data layer: `pajzshasznalat.yaml` módosítók (feltétel: `"fegyver_kategória:pajzs"`, mód: flat).
-HarcScreen: `aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`)` → fortély módosítók automatikusan aktiválódnak.
+useHarcComputed.ts: `aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`)` → fortély módosítók automatikusan aktiválódnak.
 Pajzs adatok: a pajzs-entryk a `fegyverek_v2.json`-ban (kategória: "pajzs") + a `konstansok.pajzs_hatások`
-2D tábla (méret × Pajzshasználat fok, §13). A régi `process_fegyverek.py` + `pajzsok.json` v1-pipeline archiválva.
+2D tábla (méret × Pajzshasználat fok, §13). A régi v1 pajzs-pipeline (`pajzsok.json`) archiválva (`archive/data_fegyverek_v1/`).
 Harcértékek fül: "pajzs" kategória kiszűrve a fegyver felvétel dropdown-ból.
+
+### 13.2 Belharc pajzs degradáció
+
+Belharci helyzetben (`session.aktív_helyzetek` tartalmazza a "Belharci helyzet"-et) a pajzs mérete a
+`konstansok.belharc_pajzs_max_méret` (= "kis") maximumra degradálódik a `pajzs_hatások` lookup ELŐTT.
+Testközelben a nagy/közepes pajzs használhatatlan, ezért belharcban minden pajzs legfeljebb Kis pajzsként
+véd (VÉ:3, Pajzshasználat 3.fok esetén 5). Kód: `pancel-calc.ts` → `calcFogas` (méretRang klamp).
+
+Szabály (md, KM-oldali kiegészítés a védekező ellenfélre): a Belharcba kerülés manőver Ellenpróbájának
+nehézségét a védekező pajzsmérete növeli - Kis +2, Közepes +4, Nagy +6. Ezt az app nem automatizálja
+(az ellenfél KM-oldali), csak a saját karakter pajzs-VÉ degradációja számítódik.
 
 ---
 
@@ -541,7 +562,7 @@ note: Értéke [0; 10] tartományban mozog. Egy harci jelenet alatt használhat�
 
 ---
 
-## 15. Felszerelés (próba-Hátrány - TODO)
+## 15. Felszerelés (próba-Hátrány)
 
 ```
 Felszerelés keret = 2 + Erő
@@ -555,7 +576,7 @@ Ha a keret negatívba csúszik:
 ```
 
 note:
-  Szabálykönyv: md/010_03_06_felszereles.md. STÁTUSZ: IMPLEMENTÁLVA (2026-10).
+  Szabálykönyv: md/010_03_06_felszereles.md.
   Pure logika: `engine/felszereles.ts` (`felszerelésMax`, `felszerelésTerhelés`,
   `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság`), konstans:
   `konstansok.yaml` → `felszerelés` (méret/súly/forgatás/pajzs/páncél pont-táblák,
@@ -579,28 +600,35 @@ logic:
     aktív_fok = fortély_def.fokok[kf.fok]
 
     FOR EACH aktív_fok.módosítók as mod:
-      if mod.feltétel == "":  // MINDIG aktív
-        if mod.mód == "flat":
-          harcérték[mod.cél] += mod.érték
-        elif mod.mód == "scaled":
-          forrás_érték = lookup(mod.forrás → képzettség szint vagy egyéb)
-          harcérték[mod.cél] += FLOOR(forrás_érték x mod.arány)
-        elif mod.mód == "override":
-          harcérték[mod.cél] = mod.érték      // felülírja az alapértéket
+      if NOT feltételTeljesül(mod.feltétel): continue     // "" = mindig aktív
+      if fortély_def.session_toggle ÉS mod.cél IN (TÉ, VÉ) ÉS session[<fortély_név>] kikapcsolt: continue
+      if mod.mód == "flat":
+        mods[mod.cél] += mod.érték
+      elif mod.mód == "scaled" ÉS mod.forrás == "erőbónusz" ÉS mod.cél == "SP":
+        mods.SP_erőbónusz_arány += mod.arány          // a szorzás a fegyver_SP-ben (§8)
+      elif mod.mód == "scaled":
+        forrás_érték = karakter képzettség szintje (név == mod.forrás, kisbetűs)
+        mods[mod.cél] += FLOOR(forrás_érték x mod.arány)
+      // minden más mód (override, előny/hátrány, enyhít, szorzó, …) NEM itt kezelődik, l. lent
 
-output: módosított harcértékek
+  + a 0.fok (Alapeset) flat módosítói (§16.1)
+
+output: mods = { KÉ, TÉ, VÉ, SP, CÉ, harckeret, SFÉ, fegyverhossz, SP_erőbónusz_arány } (célokra összegzett bónuszok)
 note: feltétel == "" → mindig aktív (karakterlap számolja).
       feltétel == "prefix:érték" → feltételesen aktív (UI toggle / automatikus).
       feltétel == [{forrás, operátor, érték}] → kalkulált feltétel (lásd §24).
       Prefixek (lásd konstansok.yaml → feltétel_prefixek):
         harci_helyzet, taktika, fegyver, fegyver_kategória, fegyverfogás, manőver, státusz, páncél
-      Módok: flat, scaled, override, enyhít, előny, hátrány
-        - "flat": fix numerikus bónusz a célra
-        - "scaled": forrás_érték × arány hozzáadás
-        - "override": cél értékének felülírása
+      Módok (konstansok.yaml → effekt_módok, build-validált; teljes nyelvtan: §42):
+        flat, szorzó, scaled, override, max_limit, előny, hátrány, enyhít, letilt, szöveges
+      Hol kezelődik:
+        - "flat", "scaled": calcFortelyMods (fent)
+        - "override": CSAK cél: "SP" + feltétel: "fegyver:X" → fegyver-calc.ts (§8 SP override)
         - "enyhít": Hatás pool-ban csökkenti a célra vonatkozó negatív hatás fokát (§22.7)
-        - "előny": kocka-reroll bónusz (Előny+érték a cél dobásra). Célok: sebzésdobás, ké_dobás, té_dobás, cé_dobás, képzettségpróba_dobás, tulajdonságpróba_dobás
-        - "hátrány": kocka-reroll büntetés (Hátrány+érték). Ugyanazok a célok.
+        - "előny" / "hátrány": kocka-reroll (combat-roll-info.ts, próba-calc). Célok: sebzésdobás,
+          ké_dobás, té_dobás, cé_dobás, képzettségpróba_dobás, tulajdonságpróba_dobás
+        - "szorzó": vé_csökkentés / vé_veszteség (ve-csokkentes-calc.ts, §21)
+        - "szöveges": csak megjelenítés
       Terminológia:
         - "Támadó dobás" (szabálykönyvben) = té_dobás + cé_dobás (mindkét célra hat).
           Ha egy helyzet "Hátrány-X Támadó dobásra" ír, a YAML-ben mindkét cél külön szerepel.
@@ -615,14 +643,18 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
       A lookup tehát: fortély_def.fokok.find(f → f.fok == kf.fok), NEM fokok[kf.fok].
       Modul: `engine/fortely-mods.ts` → `calcFortelyMods()` (self-contained, engine-szintű).
         Input: karakter, session, gameData, aktívFeltételek Set, feltételTeljesül callback.
-        Output: Record<string, number> (célokra összegzett bónuszok: KÉ, TÉ, VÉ, SP, CÉ, harckeret, SFÉ, fegyverhossz, min_fegyverhossz).
+        Output: Record<string, number> (célokra összegzett bónuszok: KÉ, TÉ, VÉ, SP, CÉ, harckeret, SFÉ, fegyverhossz,
+        + SP_erőbónusz_arány).
+        Hívó: harc/useHarcComputed.ts.
         Belsőleg meghívja: `evaluateAlapesetek()` (engine/alapeset.ts) a 0.fok módosítók beszámítására.
       Könyvtár struktúra: `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml`
       A `tavharc/` mappából jövők `alcsoport: "tavharc"` mezőt kapnak a JSON-ban (picker csoport: "🏹 Távharc").
       Scaled mód - `forrás` lehetséges értékei:
         - Képzettség név (kisbetű): pl. "akrobatika" → a karakter képzettség szintje
-        - Számított érték: pl. "erőbónusz" → min(erő, fegyver.erőbónusz_limit)
         - A forrás-értéket `floor(érték x arány)` adja a bónuszt.
+        - `forrás: "erőbónusz"` (csak cél: SP): az erőbónusz fegyverfüggő (min(erő, mód Erőlimit)), ezért a
+          calcFortelyMods csak az arányt gyűjti `mods.SP_erőbónusz_arány`-ba; a szorzást a fegyver_SP szabály
+          végzi (§8). Pl. Taktikafókusz: Roham → Roham taktikánál "erőbónusz duplázódik" (arány 1).
       Követelmények logika (részletes tábla: §25):
         - A követelmények lista elemei ÉS kapcsolatban vannak (mindegyiknek teljesülnie kell).
         - Ha egy elem "név" mezője lista (pl. ["Közelharc", "Kardvívás"]), az VAGY kapcsolat: bármelyik teljesíti.
@@ -641,66 +673,39 @@ A fortély yaml `fokok[]` tartalmazhat `fok: 0` entry-t (Alapeset). Ez **akkor a
 
 #### Séma
 
+A 0.fok ugyanolyan `fokok[]` elem, mint a többi; a feltétel MÓDOSÍTÓNKÉNT, a szokásos
+`"prefix:érték"` stringként szerepel (§16, `konstansok.yaml → feltétel_prefixek`).
+Lehet csak `hatástext` is (módosító nélkül) - ilyenkor emlékeztetőként mindig megjelenik.
+
 ```yaml
 fokok:
   - fok: 0
-    feltétel:
-      típus: "fegyverfogás"     # session/karakter mező neve
-      érték: "fegyver_hárító"   # egyezés vizsgálat
-    hatástext: "Hárítófegyver VÉ = 0"
+    hatástext:
+      - text: "Lovas harc fortély nélkül: TÉ:-9, VÉ:-9."
     módosítók:
-      - cél: "vé_hárító"
-        típus: "override"
-        érték: 0
+      - cél: "TÉ"
+        érték: -9
+        mód: "flat"
+        feltétel: "harci_helyzet:lovas_harc"
   - fok: 1
-    hatástext: "Hárítófegyver VÉ aktív"
-    módosítók: [...]
-```
-
-#### Feltétel típusok
-
-```
-típus                  forrás                          érték (példák)
-─────────────────────────────────────────────────────────────────────
-fegyverfogás           session.fegyverfogás            "fegyver_hárító", "fegyver_pajzs", "kétkezes"
-aktív_fegyver          karakter.fegyverek[session      "Puszta kéz", kategória név
-                         .aktív_fegyver_index]
-páncél_viselés         session.aktív_páncél            true (+ karakter.páncél.MGT > 0)
-harci_helyzet          session.aktív_helyzetek[]       helyzet id (pl. "helyhez_kötve")
-mindig                 -                               - (feltétel nélkül aktív)
+    ...
 ```
 
 #### Kiértékelés logika
 
 ```
-FOR EACH fortély_def in data.fortelyok:
-  IF karakter NEM rendelkezik a fortéllyal (nincs felvéve VAGY fok == 0):
+FOR EACH fortély_def in data.fortelySummaries:
+  IF a karakter NEM vette fel a fortélyt:
     fok0 = fortély_def.fokok.find(f → f.fok == 0)
-    IF fok0 létezik:
-      IF fok0.feltétel:
-        aktív = evaluate_feltétel(fok0.feltétel, session, karakter)
-      ELSE:
-        aktív = true  // "mindig" típus
-      IF aktív:
-        - módosítók[] alkalmazása (ugyanaz mint §16 fő logika)
-        - hatástext megjelenítése a Hatás pool-ban (negatív/figyelmeztetés színnel)
-```
-
-#### evaluate_feltétel(feltétel, session, karakter)
-
-```
-SWITCH feltétel.típus:
-  "fegyverfogás":
-    RETURN session.fegyverfogás == feltétel.érték
-  "aktív_fegyver":
-    RETURN aktív_fegyver.név == feltétel.érték
-           OR aktív_fegyver.kategória == feltétel.érték
-  "páncél_viselés":
-    RETURN session.aktív_páncél AND karakter.páncél.MGT > 0
-  "harci_helyzet":
-    RETURN session.aktív_helyzetek.includes(feltétel.érték)
-  "mindig":
-    RETURN true
+    IF fok0 nincs, VAGY se hatástext, se módosító: skip
+    IF nincs módosító: → aktív (csak hatástext)
+    ELSE:
+      aktív_módosítók = fok0.módosítók WHERE
+        feltétel == ""                                  → aktív
+        aktívFeltételek megadva → aktívFeltételek.has(feltétel)
+        egyébként              → utils.evaluateFeltétel(feltétel, session, karakter)
+      IF aktív_módosítók nem üres: → aktív
+  aktív → hatástext a Hatás poolba; a FLAT módosítók a calcFortelyMods-ba (§16)
 ```
 
 #### GUI megjelenítés
@@ -714,31 +719,30 @@ SWITCH feltétel.típus:
 
 - Modul: `web/karakter/src/engine/alapeset.ts`
   - `evaluateAlapesetek(fortelyDefs, karakter, session, aktívFeltételek?)` → `AktívAlapeset[]`
-  - `evaluateFeltétel(feltétel, session, karakter)` → boolean (prefix:érték kiértékelés)
-  - Ha `aktívFeltételek` Set megadva → azzal ellenőrzi a feltételeket (hash lookup, konzisztens a HarcScreen aktívFeltételek Set-jével)
-  - Ha nincs megadva → fallback az `evaluateFeltétel()` hívásra (AktivScreen Hatás pool használja)
+  - Ha `aktívFeltételek` Set megadva → azzal ellenőrzi a feltételeket (hash lookup)
+  - Ha nincs megadva → fallback: `engine/utils.ts → evaluateFeltétel()` (prefix:érték kiértékelés)
 - Hívás helye:
-  - `AktivScreen.tsx` - Hatás pool szekció (fortélyEmlékeztetők után), aktívFeltételek nélkül
-  - `HarcScreen.tsx` - fortélyMods számítás (aktívFeltételek Set-tel): alapeset flat módosítók beszámítása harcértékekbe (pl. Lovas/Léglovas harc 0.fok TÉ:-9 VÉ:-9)
-  - `aktiv-calc.ts` - Hatás pool kalkuláció (calcAktivData → alapesetek, aktívFeltételek Set-tel)
-- HarcScreen: `hasHárítóFortély` check - ha nincs "Hárítófegyver használat" fortély → hárítóVÉ = 0
-- Validáció: `generate_tables.py` - feltétel prefix ellenőrzés `konstansok.yaml → feltétel_prefixek` alapján
+  - `engine/fortely-mods.ts` → `calcFortelyMods` (useHarcComputed.ts-ből): a 0.fok flat módosítói a harcértékekbe (pl. Lovas/Léglovas harc 0.fok TÉ:-9 VÉ:-9)
+  - `components/aktiv/aktiv-calc.ts` - Hatás pool kalkuláció (alapesetek, aktívFeltételek Set-tel)
+- Hárítófegyver: a pancel-calc.ts → calcFogas `hasHárítóFortély` check - ha nincs "Hárítófegyver használat" fortély → hárítóVÉ = 0 (a 0.fok módosítója csak jelzés)
+- Validáció: minden módosítónak kötelező a `mód` (hiányzó → build hiba), és a `konstansok.effekt_módok` eleme kell legyen
+- Validáció: `data/gen/fortelyok.py` - feltétel prefix ellenőrzés `konstansok.yaml → feltétel_prefixek` alapján
 
-#### Érintett fortélyok (kezdeti batch)
+#### Érintett fortélyok
 
 ```
-Fortély                         feltétel.típus      feltétel.érték
-──────────────────────────────────────────────────────────────────
-Hárítófegyver használat         fegyverfogás        "fegyver_hárító"
-Pajzshasználat                  fegyverfogás        "fegyver_pajzs"
-Merevvértviselet                páncél_viselés      true
-Kétkezesség                     mindig              -
-Természetes fegyver             aktív_fegyver       "Puszta kéz"
-Vakharc                         harci_helyzet       "sötétben_teljes_csendben"
-Harc helyhez kötve              harci_helyzet       "helyhez_kötve"
-Testőr                          harci_helyzet       "vé_kiterjesztés"
-Úszás                           mindig              -
-Infralátás                      harci_helyzet       "sötétben_félhomály"
+Fortély                            0.fok módosító (feltétel)
+────────────────────────────────────────────────────────────────────────────
+Lovas harc                         TÉ:-9, VÉ:-9 (harci_helyzet:lovas_harc)
+Léglovas harc                      TÉ:-9, VÉ:-9 (harci_helyzet:léglovas_harc)
+Lövés hátasról                     CÉ:-3 (harci_helyzet:lovas_harc)
+Lövés reflexből fejlesztése        CÉ:-7 (harci_helyzet:lövés_reflexből)
+Testőr                             jelzés (harci_helyzet:vé_kiterjesztés) - a ×2-t maga a helyzet adja (harc/shared.ts)
+Hárítófegyver használat            jelzés (fegyverfogás:fegyver_hárító) - hatás: calcFogas
+Csak hatástext (emlékeztető):      Gyöngyhalász, Úszás, Infralátás, Helyhez kötve fejlesztése,
+                                   Kétkezesség, Vakharc fejlesztése, Mozgó cél könnyítése
+                                   (fegyveres / mágia), Lövés futás közben,
+                                   Nyílpuska újratöltés fejlesztése, Taktikafókusz: Kitartott célzás
 ```
 
 ---
@@ -753,12 +757,14 @@ input:  karakter.tulajdonságok.Önuralom, karakter.CM,
         harcmodor_CÉ_bónusz, távfegyver.CÉ, mesterfegyver_fok
 source: konstansok.yaml → mesterfegyver_bónuszok
         tables/harcmodor_kepzettsegek_bonuszok.json
-        tables/tavfegyverek_v2.json (Harcmodor mező: "Hajítás"/"Íjászat"/"Lövészet"/"Mágikus célzás")
+        tables/tavfegyverek_v2.json (harcmodor mező: "Hajítás"/"Íjászat"/"Lövészet"/"Mágikus célzás")
 
 formula:
   CÉ_alap = konstansok.harcérték_alap.CÉ   // -15
 
-  if távfegyver.Kategória == "mágikus":
+  idea_delta = példány.idea - távfegyver.idea_default   // §5.1 Modell 2 (CÉ-be 1:1)
+
+  if távfegyver.kategória == "mágikus":
     // Mágiatáv egyedi CÉ formula (076_tavharc_csatamagia_eseten.md)
     CÉ = CÉ_alap
        + TSz + Gyorsaság + Intelligencia    // Önuralom helyett
@@ -766,7 +772,7 @@ formula:
        + harcmodor_CÉ_bónusz(harcmodor_szint)   // Mágikus célzás
        + távfegyver.CÉ                          // Mágiatáv I:+1, II:+2, III:+3, IV:+4
        + mesterfegyver_CÉ_bónusz(fok)
-       + Idea
+       // Idea NEM számít
   else:
     CÉ = CÉ_alap
        + Önuralom
@@ -774,9 +780,11 @@ formula:
        + harcmodor_CÉ_bónusz(harcmodor_szint)
        + távfegyver.CÉ
        + mesterfegyver_CÉ_bónusz(fok)
-       + Idea
+       + idea_delta
 
 output: CÉ (karakter összesített Célzó Értéke az adott fegyverrel)
+impl: tavharc/helpers.ts → calcCÉBontás / calcCÉ (+ fortélyCÉ, §17.2); az idea_delta-t a hívó
+      (TavharcFegyverCard / TavharcScreen) számolja.
 ```
 
 ### 17.1b Mágiatáv fegyverek
@@ -790,8 +798,8 @@ A "Mágiatáv növelés" fortély foka határozza meg, melyik fokozat használha
   3.fok: Mágiatáv IV
 
 Adatok (tavfegyverek_v2.json):
-  Kategória: "mágikus"
-  Harcmodor: "Mágikus célzás"
+  kategória: "mágikus"
+  harcmodor: "Mágikus célzás"
   CÉ: fokozat (1-4)
   Osztó: fokozat (1-4)
   SP/Sebesség/Hatótáv: varázslat-specifikus (webapp: nem kalkulált, "-" kijelzés)
@@ -874,15 +882,16 @@ note: Találati esély = CÉ + k20 >= cél_VÉ
 harckeret = harcmodor_szint(távfegyver.Harcmodor) + Gyorsaság
 támadások_száma = 1 + FLOOR(harckeret / fegyver_sebesség)
 
-Sebesség = -1 (nyílpuskák): támadások_száma = "1/2 kör" (alapeset)
-  "Nyílpuska újratöltés fejlesztése" fortély ≥1.fok: támadások_száma = 1 (minden kör)
-Sebesség = tartomány (pl. "6-9"): alsó határt használjuk
+Sebesség ≤ 0 (nyílpuskák: -1): támadások_száma = a fegyver alap címkéje (pl. "1/2 kör")
+  "Nyílpuska újratöltés" helyzet aktív + "Nyílpuska újratöltés fejlesztése" fortély ≥1.fok: 1x
+harckeret ≤ 0: 1x
+impl: tavharc/helpers.ts → calcTámadásLabel, calcÚjratöltésEnyhítés
 ```
 
 ### 17.5 Hatótáv
 
 ```
-max_hatótáv = távfegyver.hatótáv
+max_hatótáv = távfegyver.hatótáv_bázis + Erő × távfegyver.hatótáv_erő_szorzó   (méter)
 // "Nem hajításra alkalmas" tárgyak: hatótáv = Erő × Osztó (m)
 // Hatótávon túl: lövés/hajítás lehetetlen
 ```
@@ -904,9 +913,9 @@ Karakter séma:
   session.aktív_távfegyver_index: number      // kiválasztott távfegyver indexe (-1 = nincs)
 
 CÉ formula:
-  CÉ = konstansok.harcérték_alap.CÉ + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea + fortélyCÉ
+  CÉ = konstansok.harcérték_alap.CÉ + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + idea_delta + fortélyCÉ
 
-  if távfegyver.Kategória == "mágikus":
+  if távfegyver.kategória == "mágikus":
     CÉ = konstansok.harcérték_alap.CÉ + (TSz + Gyorsaság + Intelligencia) + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + fortélyCÉ
     // Önuralom NEM számít, helyette TSz + Gyo + Int. CM viszont igen (rulebook 076). Idea nem.
 
@@ -921,7 +930,8 @@ Virtuális fegyverek (nem a távfegyverek[] tömben, fortélyból származtatott
 CM szerkesztő: a Távharc fülön (szerkesztő módban), max = tsz × arányok.max_cm_perszint
 
 Adatforrások:
-  - tables/tavfegyverek_v2.json (név, CÉ, Osztó, SP [-99=nincs], Sebesség, hatótáv_bázis + hatótáv_erő_szorzó, Kategória, sebzésjelleg, Harcmodor)
+  - tables/tavfegyverek_v2.json (név, kategória, harcmodor, CÉ, Osztó, SP [-99=nincs], Sebesség, sebzésjelleg, Átütés,
+    forgatás, erőbónusz_limit, hatótáv_bázis + hatótáv_erő_szorzó, idea_default, extrák, megjegyzés)
   - tables/tavharc_szorzok.json (5 kategória: célpont_mozgás, lövész_mozgás, célpont_méret, észlelhetőség, szél)
   - tables/harcmodor_kepzettsegek_bonuszok.json (CÉ oszlop)
   - konstansok.yaml → mesterfegyver_bónuszok (CÉ mező)
@@ -950,11 +960,13 @@ output: max_HM, max_CM, max_HM_aszimmetria
 
 reactive rules.json:
   max_HM: sum_where(harci_fortélyok, fok, is_mesterfegyver, 0) + harcmodor_összeg + alakzatharc_szint
-  max_HM_aszimmetria: floor(tsz / konstansok.hm_aszimmetria_osztó)   → TS: helpers.calcMaxAszimmetria
+  max_HM_aszimmetria: floor(tsz / konstansok.hm_aszimmetria_osztó)   → TS: harcertekek/helpers.ts calcMaxAszimmetria
   max_CM: tsz * konstansok.arányok.max_cm_perszint
 
 note: A Mesterfegyver fortély fokai NEM számítanak a max_HM-be.
       A harci_fortélyok ArrayContext-ben {fok, is_mesterfegyver} record-ok vannak.
+      alakzatharc_szint: a KP/HM számításban (kp-calc.ts) a valós szint; a per-fegyver
+      kalkulációban (fegyver-calc.ts) 0 - ott a max_HM nem kell.
       HM szerkesztés: Harcértékek fülön (enforce: HM_TÉ+HM_VÉ ≤ max_HM).
       CM szerkesztés: Távharc fülön (enforce: CM ≤ max_CM).
 ```
@@ -994,7 +1006,7 @@ formula:
 
 validate: nyelv_összfok ≤ nyelv_pont_keret
 UI: túllépés > 0 → utolsó N fizetős Nyelvismeret sor pirosra vált (incl. kiérdemelt ha fok>1), dropdown disabled
-note: Nem rules.json szabály - inline számítás a FortelyokScreen-ben.
+note: Nem rules.json szabály - fortelyok/helpers.ts → calcNyelvPontKeret, calcNyelvTúllépés.
       Nyelvismeret kp_perfok: 0 (nem KP-ból, hanem Nyelvtanulás pontokból vehető fel).
       Kiérdemelt Nyelvismeret: anyanyelv választásból szinkronizálva (Közös Alap + anyanyelv Alap).
       Fok emelhető (Alap→Udvari), az extra fok fizetős pontból.
@@ -1035,6 +1047,9 @@ validáció:
 
 output: validációs eredmény (pass/fail + hibák listája)
 note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget veheti fel a karakter.
+impl: CSAK a tulajdonság keretek: tables/faj_tulajdonsag_keretek.json → GameData.fajKeretek
+      (TulajdonsagokHeader → TulajdonsagCell fajMin/fajMax). Az érzék-fortély, kötelező és tiltott
+      ellenőrzések a webappban NEM implementáltak (a fajok.json csak a fajneveket adja).
 ```
 
 
@@ -1049,15 +1064,14 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 ### Implementációs illeszkedés
 
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
-- `data/sources/taktikak.yaml` → `tables/taktikak.json` (14+3 taktika: módosítók, fokok, kombó szabályok, skálázható flag)
-- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
-- `data/sources/szituaciok.yaml` TÖRÖLVE - 7 elem beolvadt `harci_helyzetek.yaml`-ba (pozitív/semleges csoportba)
-- `data/sources/manoverek.yaml` → `tables/manoverek.json` (38 manőver: id, típus, nehézség, fázisok, `fázis_info` [opcionális map: fázis-betű → magyarázó szöveg], `fázis_cselekvő` [opcionális map: fázis-betű → "én"|"ellenfél"; default M→ellenfél, V/E→én - pl. Távoltartás/Hátas táncoltatása/Lovas megakasztása M→én], `ellenpróba_bünteti` [opcionális bool: az Ellenpróba nem buktató, rontásnál is sikeres a manőver, csak büntetés - Átsiklás, Kibontakozás], `hatás` [mondatonkénti lista; a `Sikertelen:` / `Kudarc:` / `Feltétel:` előtagú sorokat a sikeres-box kiszűri, a picker mind mutatja], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `követelmények` [opcionális, Normál/Erős - lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
+- `data/sources/taktikak.yaml` → `tables/taktikak.json` (19 taktika: 16 közelharci + 3 távharci; módosítók, hatások, fokok, kombó szabályok, megkötések, skálázható flag)
+- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (40 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek, tiltott_fegyverfogások, fegyver_override)
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (39 manőver: id, típus, nehézség, fázisok, `fázis_info` [opcionális map: fázis-betű → magyarázó szöveg], `fázis_cselekvő` [opcionális map: fázis-betű → "én"|"ellenfél"; default M→ellenfél, V/E→én - pl. Távoltartás/Hátas táncoltatása/Lovas megakasztása M→én], `ellenpróba_bünteti` [opcionális bool: az Ellenpróba nem buktató, rontásnál is sikeres a manőver, csak büntetés - Átsiklás, Kibontakozás], `hatás` [mondatonkénti lista; a `Sikertelen:` / `Kudarc:` / `Feltétel:` előtagú sorokat a sikeres-box kiszűri, a picker mind mutatja], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `követelmények` [opcionális, Normál/Erős - lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
 - JSON-ban: `id` + `feltétel_kulcs` (generált: `"{prefix}:{id}"`)
-- Prefixek: taktika → `"taktika:{id}"`, harci_helyzet → `"harci_helyzet:{id}"`. `szituáció:` prefix backward-compat.
+- Prefixek: taktika → `"taktika:{id}"`, harci_helyzet → `"harci_helyzet:{id}"`.
 - Manőverek: `id` mező (referencia fortély módosítók `manőver:{id}` céljához)
 - Validáció: id egyediség + fortély `manőver:X` → manőver id referenciális ellenőrzés (build-time)
 
@@ -1069,16 +1083,15 @@ Fokozatos taktikák: `fokozatos: true` → `fokok[]` tömb (pl. Támadó fok:1..
 
 Session state bővítés (types.ts Session interface):
 - `aktív_taktikák: { név: string, fok?: number }[]` (több kombó, fokozatos taktikáknál fok)
-- `aktív_helyzetek: string[]` (több helyzet egyszerre)
-- `aktív_szituációk` mező TÖRÖLVE - helyzetek az `aktív_helyzetek[]`-ben
+- `aktív_helyzetek: string[]` (több helyzet egyszerre; a helyzet NEVÉT tárolja)
 - `aktív_manőver: string` (max 1, marad)
 
 Kalkuláció két rétege:
 1. **Taktika módosítók** - direkt numerikus: TÉ/VÉ/KÉ/SP módosítók a Harc fülön számolva
    (hasonlóan a fortélyMod_* context mezőkhöz, pl. `taktikaMod_TÉ`, `taktikaMod_VÉ`)
    VÉ eltolás ökölszabály: `taktikaMods['VÉ']` clamp `[-limit, +limit]` ahol limit = `konstansok.taktika_vé_eltolás_limit` (10)
-2. **§16 feltételes fortély módosítók** - a HarcScreen fortély loop-jában a `mod.feltétel` check:
-   `feltétel.split(':')` → prefix (taktika/harci_helyzet/fegyverfogás/fegyver) → aktívFeltételek Set keresés
+2. **§16 feltételes fortély módosítók** - a calcFortelyMods `feltételTeljesül` callbackje (useHarcComputed.ts):
+   string feltétel → aktívFeltételek Set keresés; strukturált feltétel → §24 kiértékelés
 
 Harci helyzetek: NEM kalkuláltak (komplex hatások) - Hatás pool-ban az `infó` mező jelenik meg + §16 feltétel dispatch.
   Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva megjelenik: `→ Fortély (fok): hatástext ✔`
@@ -1103,22 +1116,25 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 
 | Taktika | Módosítók | Kombó ✅ | Kombó ❌ |
 |---------|-----------|---------|---------|
-| 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás, Tettetés |
-| Érintő | TÉ:+3, sebzés:0 | Támadó, Védő, Kezdeményező, Kiváró, 1 tám, Plusz tám | más |
+| 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás, (Lég)Lovas roham |
+| Érintő | TÉ:+3, sebzés:0 | Védő, Kezdeményező, 1 tám, Plusz tám | más |
 | Fárasztás | VÉ csökk: 3/kör (+fortély+fegyverelőny) | - | más |
 | Kezdeményező 📶 | KÉ:+1..+3, VÉ:-1..-3 (alap max 3) | Támadó, Érintő, Visszafogott, 1 tám | más |
-| Kiváró | KÉ:átengedett, TÉ:+3 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám, Tettetés | más |
+| Kiváró | KÉ:átengedett, TÉ:+3 (visszacsapás) | Támadó, Visszafogott, Tám.erőből, 1 tám, Tettetés | más |
 | Öngyilkos roham | TÉ:+5, VÉ:-10, SP:+7, VÉcsökk 2x | - | más (max 1x/küzdelem) |
 | Plusz támadás | +1 támadás, VÉ:-3 azonnal | Támadó, Érintő, Tám.erőből | más |
 | Roham | TÉ:+4, VÉ:-8, SP:+5, VÉcsökk 2x | - | más |
 | Támadás erőből 📶 | TÉ:-1..-3, SP:+1..+3 (alap max 3) | Kiváró, Plusz tám, 1 tám | más |
-| Támadó 📶 | TÉ:+1..+3, VÉ:-2..-6 (alap max 3) | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
+| Támadó 📶 | TÉ:+1..+3, VÉ:-2..-6 (alap max 3) | Kezdeményező, Kiváró, Plusz tám, 1 tám | más |
 | Védő 📶 | VÉ:+1..+3, TÉ:-2..-6 (alap max 3) | Érintő, 1 tám | más |
 | Teljes Védekezés | VÉ:+8, nem támad/varázsol, hátrál; saját VÉcsökk: 0; ellene fix 1+k20P (+Fárasztó bónusz) | - | más |
 | Visszafogott | TÉ:-10, Hátrány-2 sebzésdobás | Kezdeményező, Kiváró, 1 tám, Tettetés | más |
-| Tettetés | - (informatív) | Kiváró, Visszafogott | más |
+| Tettetés | - (informatív) | Kiváró, Visszafogott, 1 tám | más |
+| (Lég)Lovas roham | TÉ:+6, SP:+10 (szükséges: lovas_harc / léglovas_harc, §38) | - | más |
+| (Lég)Lovas támadás galoppból | TÉ:+3, SP:+5 (szükséges: lovas_harc / léglovas_harc, §38) | 1 tám | más |
 
-note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
+note: Forrás: tables/taktikak.json (kombó: `kombó_mód` + `kombó_lista`). A tábla a data layer kivonata.
+      "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
       📶 Skálázható taktikák: Harcmodor szinttől függően a felső korlát nőhet (6.sz→max4, 9.sz→max5, 12.sz→max6).
       A "Támadás erőből" fortély megszűnt - a skálázható rendszer váltja ki.
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
@@ -1143,8 +1159,8 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
 | Taktika | Módosítók | Megjegyzés |
 |---------|-----------|------------|
 | Kitartott célzás | CÉ:+3 | 1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. szűrő_harcmodorok: [Íjászat, Lövészet] |
-| Lövéskitérés | - | Akrobatika próba lövedék elkerülésére. Fortéllyal +2. |
-| Páros kétkezes hajítás | - | 2 db Célzó dobás Hátrány-1 büntetéssel. |
+| Lövéskitérés | - | Akrobatika próba lövedék elkerülésére. Fortéllyal +2. Nem kombinálható: Kitartott célzás |
+| Páros kétkezes hajítás | - | 2 db Célzó dobás Hátrány-1 büntetéssel. Nem kombinálható: Kitartott célzás, Lövéskitérés |
 
 #### Taktika mezők (data layer)
 
@@ -1190,70 +1206,77 @@ Implementáció:
 Harci helyzetek speciális Státuszok, amelyek Hatásokat okoznak (080_hatasok_es_statuszok.md).
 Feltétel kulcs: `harci_helyzet:id`. Az Aktív fülön kiválaszthatók (picker overlay, csoportosítva).
 
-Data layer: `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json`
-Schema mezők: név, id, infó, hatások[], csoport, rejtett, tiltja_taktikákat, kizár_helyzetek[]
+Data layer: `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (40 helyzet)
+Schema mezők: név, id, infó, hatások[], csoport, rejtett, tiltja_taktikákat, kizár_helyzetek[], tiltott_fegyverfogások[], fegyver_override (opcionális)
 
-Picker csoportok (csoport mező): "pozitív" (zöld), "semleges" (narancs), "negatív" (piros), "távharc"
+Picker csoportok (csoport mező): "pozitív" (zöld `#4caf50`), "semleges" (narancs `#ff9800`), "negatív" (piros `#f44336`), "távharc"
 Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levezetett).
+A táblák a `harci_helyzetek.json` kivonatai (a hatás-szöveg az `infó` mező); a gépi hatások a `hatások[]`-ban.
 
 #### Pozitív helyzetek (065_01_01)
 
-| Helyzet | id | Hatások |
+| Helyzet | id | Infó (data: `infó`) |
 |---------|-----|---------|
-| Meglepetés | meglepetés | Előny+1 TÉ, VÉ csökkentés: +2. Készületlenség = Meglepetés. |
-| Orvtámadás | orvtámadás | Előny+2 TÉ dobásra. Áldozat VÉ: Közelharc Puszta kézzel. Tiltja: taktikák, Hátulról, Meglepetés. |
-| Hátulról támadás | hátulról | Előny+1 TÉ dobásra. Pajzs VÉ NEM számít. |
-| Magasabbról | magasabbról | Előny+1 TÉ dobásra. Lovas harcban NEM jár. |
-| Levegőből támadás | levegőből | Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK. |
 | Beszorított ellenfél | ellenfél_beszorított | Előny+1 TÉ dobásra. |
-| Láthatatlanul harcolás - hallhatóan | láthatatlanul_hallhatóan | Előny+1 TÉ, VÉ csökk:+1, VÉ:+5. Fárasztó tiltott. |
-| Láthatatlanul harcolás - csendesen | láthatatlanul_csendesen | Előny+2 TÉ, VÉ csökk:+2, VÉ:+10. Fárasztó tiltott. |
+| Beszorított ellenfél - hosszú fegyverrel | ellenfél_beszorított_hosszú_fegyverrel | Előny+2 TÉ dobásra. |
+| Hátulról támadás | hátulról | Előny+1 TÉ dobásra. Pajzs VÉ NEM számít. |
+| Láthatatlan - részlegesen | láthatatlan_részlegesen | Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott. |
+| Láthatatlan - teljesen | láthatatlan_teljesen | Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott. |
+| Levegőből támadás | levegőből | Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK. |
+| Magasabbról | magasabbról | Előny+1 TÉ dobásra. |
+| Meglepetés | meglepetés | Előny+1 TÉ; VÉ csökkentés: +2 |
+| Orvtámadás | orvtámadás | Előny+2 TÉ;  Áldozat VÉ: Közelharc Puszta kézzel |
+| Lovas harc | lovas_harc | Lóhátról harcolás. Lovas harc fortély bónuszok aktívak. |
+| Léglovas harc | léglovas_harc | Repülő hátas hátáról harcolás. Léglovas harc fortély bónuszok aktívak. |
+| Harci szekér | harci_szekér | Szekérről harcolás. Harci kocsihajtas fortély bónuszok aktívak. |
+| Páros harc | páros_harc | Koordinált 2 fős harc. Páros harc fortély bónuszok aktívak. |
+| Közönség előtt | közönség_előtt | Gladiátori harc közönség előtt. Gladiátor fortély bónuszok aktívak. |
 
 #### Semleges helyzetek (065_01_02)
 
-| Helyzet | id | Hatások |
+| Helyzet | id | Infó (data: `infó`) |
 |---------|-----|---------|
-| Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 0 fegyverhossz feltétel. Belharcos fortély bónuszok. |
-| Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fortély: Fegyverrántás skála. |
+| Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 0 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0. |
+| Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza. |
 | Közrefogás | közrefogás | Semlegesíti ellenfél Fegyverelőnyét → Fegyverazonosság. |
-| Takarásban harcolás | takarásban | Hátrány-1 TÉ, VÉ: +5. |
-| Védő Érték kiterjesztése másra | vé_kiterjesztés | Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli. |
 | Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharcos 2.fok bónuszai relevánsak. |
+| Takarásban harcolás | takarásban | Hátrány-1 TÉ, VÉ: +5. |
+| Védő Érték kiterjesztése másra | vé_kiterjesztés | Többszörös támadás elvesztése, VÉ veszteség duplázódik. Testőr fortély mérsékli. |
+| Szörnyeteg elleni harc | szörnyeteg_elleni_harc | Bestia/szörny elleni küzdelem. Gladiátor fortély bónuszok aktívak. |
 
 #### Negatív helyzetek (065_01_03)
 
-| Helyzet | id | Hatások |
+| Helyzet | id | Infó (data: `infó`) |
 |---------|-----|---------|
 | Csúszós talaj | csúszós_talaj | Hátrány-1 Támadó dobásra. |
 | Elvesztett egyensúly | elvesztett_egyensúly | Hátrány-1 Támadó dobásra, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja. |
 | Földön fekve | földön_fekve | Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik. |
 | Helyhez kötve | helyhez_kötve | Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik. |
-| Lények méret különbsége | méret_különbség | Nagyobb lény: +1 VÉ csökkentés bónusz / kategória különbség. Skála: 1-7. |
-| Rosszabbik kézben tartott fegyver | rosszabbik_kéz | Hátrány-1 Támadó dobásra. Kétkezesség fortély kioltja. |
-| Sötétben - félhomály | sötétben_1 | Hátrány-1 TÉ. Vakharc/Infra/Ultra mérsékli. |
-| Sötétben - teljes, zajokkal | sötétben_2 | Hátrány-1 TÉ. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli. |
-| Sötétben - teljes, csendben | sötétben_3 | Hátrány-2 TÉ. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli. |
-| Tűz ruhán - ég | tűz_ruhán_1 | Hátrány-1 Támadó dobásra, (-5+k20)SP/kör. Eloltás: 1 kör. |
-| Tűz ruhán - lángol | tűz_ruhán_2 | Hátrány-2 Támadó dobásra, (0+k20)SP/kör. Harcban elolthatatlan. |
+| Lények méret különbsége | méret_különbség | Méretkülönbség [0-6] fokozat: +1 VÉ csökkentés / különbség. |
+| Gyengébb kéz | gyengébb_kéz | Hátrány-1 Támadó dobásra. Kétkezesség fortély kioltja. |
+| Vakharc - félhomályban | vakharc_félhomály | Hátrány-1 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli. |
+| Vakharc - sötétben | vakharc_sötétben | Hátrány-2 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli. |
+| Tűz ruhán - ég | tűz_ruhán_1 | Hátrány-1 Támadó dobásra, (-5+k20) SP/kör. Eloltás: 1 kör. |
+| Tűz ruhán - lángol | tűz_ruhán_2 | Hátrány-2 Támadó dobásra, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség. |
 | Vér elvakít | vér_elvakít | Hátrány-1 Támadó dobásra, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés. |
 
 #### Távharci helyzetek
 
-| Helyzet | id | Hatások |
+| Helyzet | id | Infó (data: `infó`) |
 |---------|-----|---------|
 | Hajítás alkalmatlan fegyverrel | hajítás_alkalmatlan_fegyverrel | Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli. |
-| Hajítás nem dobásra készített | hajítás_nem_dobásra_készített | Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli. |
-| Lövés reflexből | lövés_reflexből | Hátrány-1 CÉ dobásra. Fortély kioltja. |
-| Nyílpuska újratöltés | nyílpuska_újratöltés | Csak 2 körönként lőhet. Fortéllyal 1/kör. |
+| Hajítás nem dobásra készített tárgyakkal | hajítás_nem_dobásra_készített | Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli. |
+| Lövés reflexből | lövés_reflexből | Váratlan lövés/hajítás. Hátrány-1 CÉ dobásra. Lövés reflexből fejlesztése fortély kioltja. |
+| Nyílpuska újratöltés | nyílpuska_újratöltés | Nyílpuskával csak minden 2. körben lehetséges lőni. |
 
 #### Rejtett (automatikus, nem picker-ben)
 
-| Helyzet | id | Megjegyzés |
-|---------|-----|------------|
-| Fegyverelőny | fegyverelőny | Fegyverhosszból levezetett. VÉ csökk: 2+k20P. |
-| Fegyverhátrány | fegyverhátrány | Fegyverhosszból levezetett. VÉ csökk: k20P. |
-| Pusztakezes harc | pusztakezes_harc | Automatikus: fegyver=puszta kéz. KÉ/TÉ/VÉ: -3. |
-| Képzetlen fegyverhasználat | képzetlen_fegyverhasználat | Automatikus: harcmodor<3. |
+| Helyzet | id | Infó (data: `infó`) |
+|---------|-----|---------|
+| Képzetlen fegyverhasználat | képzetlen_fegyverhasználat | Harcmodor 3.szint alatti: lásd Harcmodor képzettség büntetések. |
+| Fegyverelőny | fegyverelőny | VÉ csökkentés: 2+k20P. |
+| Fegyverhátrány | fegyverhátrány | VÉ csökkentés: k20P. |
+| Pusztakezes harc | pusztakezes_harc | Negatív fegyver harcértékek. Természetes fegyver fortély segít. |
 
 #### Kombinálási/tiltási szabályok
 
@@ -1261,149 +1284,90 @@ Data layer mezők:
   tiltja_taktikákat: bool - ha true, ÖSSZES taktika disabled amíg ez a helyzet aktív.
     Implementált: Orvtámadás (true). Hozzáadáskor aktív taktikák automatikusan törlődnek.
   kizár_helyzetek: string[] - id-kat tartalmaz. Ezen helyzetek nem adhatók hozzá / eltávolítódnak hozzáadáskor.
-    Implementált: Orvtámadás → ["hátulról", "meglepetés"]
-    Többfokú helyzetek: kölcsönösen kizárják egymást (sötétben_1/2/3, tűz_ruhán_1/2, láthatatlanul_*/*, hajítás_*)
+    Pl. Orvtámadás → ["hátulról", "meglepetés", "lovas_harc", "léglovas_harc", "harci_szekér"]
+    Többfokú helyzetek: kölcsönösen kizárják egymást (vakharc_félhomály/sötétben, tűz_ruhán_1/2,
+    láthatatlan_részlegesen/teljesen, hajítás_*, ellenfél_beszorított / _hosszú_fegyverrel)
   Taktika megkötések (taktikak.yaml → megkötések[]):
     Fárasztás: harci_helyzet/tiltott/Fegyverhátrány,
-              harci_helyzet/tiltott/Láthatatlanul harcolás - hallhatóan,
-              harci_helyzet/tiltott/Láthatatlanul harcolás - csendesen
-
-### 21.3 Körülmények (korábban: Szituációk)
-
-Ezek az elemek a harci helyzetek pozitív/semleges csoportjába tartoznak (a "körülmény" alcsoport megszűnt).
-A picker 4 csoporttal jeleníti meg: Pozitív (`#4caf50`) / Semleges (`#ff9800`) / Negatív (`#f44336`) / Távharci.
-
-| Helyzet                | feltétel kulcs                         | Csoport    |
-| ---------------------- | -------------------------------------- | ---------- |
-| Lovas harc             | `harci_helyzet:lovas_harc`             | pozitív    |
-| Léglovas harc          | `harci_helyzet:léglovas_harc`          | pozitív    |
-| Harci szekér           | `harci_helyzet:harci_szekér`           | pozitív    |
-| Páros harc             | `harci_helyzet:páros_harc`             | pozitív    |
-| Közönség előtt         | `harci_helyzet:közönség_előtt`         | pozitív    |
-| Szörnyeteg elleni harc | `harci_helyzet:szörnyeteg_elleni_harc` | semleges   |
-
-note: `szituaciok.yaml` törölve, minden elem a `harci_helyzetek.yaml`-ban él.
-      `session.aktív_szituációk` mező törölve - helyzetek az `aktív_helyzetek[]`-ben.
-      Fortély feltételek: `harci_helyzet:X` prefix (backward-compat: `szituáció:X` is működik az `alapeset.ts`-ben).
-
----
-
-### 21.3b Szituáció → Harci helyzet beolvasztás - IMPLEMENTÁLT
-
-A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté válik.
-A "körülmény" alcsoport is megszűnt (2026-06-21): elemei beolvadtak pozitív/semleges csoportba.
-
-#### Motiváció
-
-- Egy egységes picker + egy `session.aktív_helyzetek[]` tömb (nincs külön szituáció state)
-- A Hatás pool "Harci helyzetek" szekciójában automatikusan megjelennek (infó mezővel)
-- A fortély bónuszok a szokásos feltétel-rendszeren keresztül aktiválódnak - láthatóan
-
-#### Érintett elemek végleges csoportja
-
-| Helyzet                | id                       | Csoport    |
-| ---------------------- | ----------------------   | ---------- |
-| Lovas harc             | `lovas_harc`             | pozitív    |
-| Léglovas harc          | `léglovas_harc`          | pozitív    |
-| Harci szekér           | `harci_szekér`           | pozitív    |
-| Páros harc             | `páros_harc`             | pozitív    |
-| Közönség előtt         | `közönség_előtt`         | pozitív    |
-| Szörnyeteg elleni harc | `szörnyeteg_elleni_harc` | semleges   |
-
-#### Lépések
-
-**1. Data layer (harci_helyzetek.yaml):**
-- 7 entry (pozitív/semleges csoportban)
-- Mezők: `név, id, infó, hatások: [], csoport, rejtett: false, tiltja_taktikákat: false, kizár_helyzetek: []`
-- `infó`: rövid szöveg ami a Hatás pool-ban megjelenik (pl. "Lovas harc fortély bónuszok aktívak")
-- `szituaciok.yaml` fájl törlése
-
-**2. Fortély feltételek migrálás:**
-- Minden fortély yaml-ban `feltétel: "szituáció:X"` → `feltétel: "harci_helyzet:X"`
-- `konstansok.yaml → feltétel_prefixek`: `szituáció` marad (backward-compat)
-
-**3. Session state + engine (types.ts, alapeset.ts):**
-- `aktív_szituációk: string[]` törlése a `Session` interface-ből + `DEFAULT_SESSION`-ből
-- Minden `session.aktív_szituációk` hivatkozás → `session.aktív_helyzetek`
-- `alapeset.ts → evaluateFeltétel`: `szituáció:` case = `session.aktív_helyzetek.includes(érték)` (backward-compat, azonos logika mint `harci_helyzet:`)
-
-**4. generate_tables.py + data-loader.ts:**
-- `generate_szituaciok()` törlése, `szituaciok.json` nem generálódik
-- `validate_aktiv_ful()`: szituáció validáció beolvad harci_helyzet validációba
-- `feltétel_kulcs` generálás: szituáció entries → `harci_helyzet:{id}`
-- `data-loader.ts`: `szituaciok` mező törlése `GameData`-ból, fetch eltávolítása
-
-**5. AktivScreen.tsx:**
-- Szituáció picker szekció + chip szekció törlése
-- Helyzet picker: 3 csoport (Pozitív `#4caf50` / Semleges `#ff9800` / Negatív `#f44336`)
-- ABC rendezés csoporton belül
-- Hatás pool "Harci helyzetek" szekció: szituáció-helyzetek `infó`-ja is megjelenik (azonos logika, szín: `#42a5f5`)
-
-**6. Szabályrendszer (md/):**
-- `md/150_szituaciok.md` tartalom beolvasztása harci helyzetek fejezetbe
-- `szabalyrendszer.md` ToC frissítés
-- Link audit: `grep -rn "150_szituaciok\|szituáció" md/` → javítás
-- Linkspector futtatás
-
-**7. Spec fájlok frissítés:**
-- engine_spec §21 cím → "Taktikák, Manőverek, Helyzetek", §21.3 beolvasztás §21.2-be
-- gui_spec: szituáció szekció → helyzet picker 3 csoport (pozitív/semleges/negatív)
-- DEVSTATE: migrálás bejegyzés
+              harci_helyzet/tiltott/Láthatatlan - részlegesen,
+              harci_helyzet/tiltott/Láthatatlan - teljesen
+    (Lég)Lovas roham, (Lég)Lovas támadás galoppból: harci_helyzet/szükséges/[lovas_harc, léglovas_harc]
+    Roham, Öngyilkos roham: harcmodor/tiltott/Ostorharc + harci_helyzet/tiltott/Lovas harc, Léglovas harc
+    Támadó: harci_helyzet/tiltott/Orvtámadás · Védő: …/Meglepetés, Orvtámadás · Támadás erőből: harcmodor/tiltott/Ostorharc
+    1 támadás: támadások/min/2
+    Kiértékelt típusok (taktika-megkotes.ts): harci_helyzet (tiltott/szükséges), harcmodor (tiltott), támadások (min),
+    távfegyver_kategória (szükséges). Informatív (nem kiértékelt): többes_harc (Kiváró), per_küzdelem (Öngyilkos roham max 1).
 
 ### 21.4 Manőverek
 
 Egy körben max 1 aktív manőver. MP költséggel hajtható végre. Nehézség [2;12].
 Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 
-#### Általános manőverek
+#### Általános manőverek (066_05)
 
-| Manőver                     | Nehézség                        | Fázisok      | Követelmények                                     | Hatás                                      |
-| --------------------------- | ------------------------------- | ------------ | ------------------------------------------------- | ------------------------------------------ |
-| Átsiklás                    | 6 (±2)                          | E (M*)       | -                                                 | Átsiklás harcolók között                   |
-| Áttörés                     | 5 (±erő)                        | M,V,E        | -                                                 | Átlökés egy ellenfélen                     |
-| Csonkolás                   | 8(kéz)/10(láb)                  | V,E          | Precíz támadás                                    | Végtaglevágás (ÉP/3↑ ill. ÉP/2↑ sebzés)    |
-| Ellenfél elfogása           | 10                              | V,E          | -                                                 | Kiszolgáltatott pozícióba kényszerítés     |
-| Felállás földről            | 6 (-akro/3)                     | M,E          | -                                                 | Felkelés földről                           |
-| Forgószél                   | 7+ellenfél                      | V,E          | -                                                 | Köríves támadás több ellenfélre            |
-| Kibontakozás                | 5 (±2/kategória, +2/extra ellenfél) | E (M*)       | -                                                 | Kilépés a harcból                          |
-| Piszkos trükk               | 7                               | V,E          | Közelharc 4, MF 1                                 | Alattomos ütés (k20+0 SP)                  |
-| Lábkirántás szálfegyverrel  | 6                               | V,E          | Lándzsavívás 6, szálfegyver                       | Ellenfél földre kerül                      |
-| Földrevitel                 | 8 (±erő)                        | V,E          | Harcmodor 5                                       | Ellenfél földre kerül                      |
-| Lánccsapda                  | 9                               | V,E          | MF 1, láncos fegyver                              | Ellenfél fegyverének foglyul ejtése        |
-| Lánccsapdából szabadítás    | 7                               | E            | -                                                 | Fegyver kiszabadítás                       |
-| Lefegyverzés / Fegyvertörés | 10 (±2)                         | V,E          | Harcmodor 5                                       | Fegyver kiesik/eltörik                     |
-| Leütés hátulról             | 6 (-2/Harci anat. fok)          | V,E          | Orvtámadás+Hátulról, zúzó/puszta kéz              | Ájulás (ÉP/4↓ sebzésnél)                   |
-| Lovas megakasztása          | -                               | -            | Lásd lovas manőverek                              | -                                          |
-| Mesterjel                   | 10-12                           | V,E          | MF 2, hegyes szúrófegyver                         | Jel belekarcolása (1 ÉP)                   |
-| Mögékerülés                 | 8/6/4 (túlerő)                  | E            | -                                                 | Hátulról támadás pozíció                   |
-| Pajzzsal felöklelés         | 7 (±erő)                        | V,E          | Harcmodor 5, Pajzshasználat 2, közepes/nagy pajzs | Ellenfél földre kerül                      |
-| Pajzsrongálás               | 6                               | V,E          | Harcmodor 6, Erő+1, zúzó/kétkezes                 | Pajzs VÉ csökkentés (SP/2 zúzó, SP/4 vágó) |
-| Precíz támadás              | 1-12 (terület)                  | V,E          | Harcmodor 6                                       | Adott területre támadás                    |
-| Rávetődés hátulról          | 6                               | E (vagy V,E) | Orvtámadás+Hátulról                               | Rácsimpaszkodás → belharc                  |
-| Távoltartás                 | 5                               | M*,E         | Fegyverelőny, Harcmodor 5                         | Ellenfél támadás elvesztése                |
-| Terelés                     | 8                               | E            | Harcmodor 6                                       | Ellenfél terelése                          |
+| Manőver | id | Nehézség | Fázisok |
+|---------|-----|---------|---------|
+| Átsiklás | átsiklás | 6 | E |
+| Áttörés | áttörés | 5 | M,V,E |
+| Csonkolás (kéz) | csonkolás_kéz | 8 | V,E |
+| Csonkolás (láb) | csonkolás_láb | 10 | V,E |
+| Ellenfél elfogása | ellenfél_elfogása | 10 | V,E |
+| Fegyvertörés | fegyvertörés | 12 | V,E |
+| Felállás földről | felállás_földről | 6 | M,E |
+| Forgószél | forgószél | 7 | V,E |
+| Földrevitel | földrevitel | 8 | V,E |
+| Kibontakozás | kibontakozás | 5 | E |
+| Lábkirántás szálfegyverrel | lábkirántás_szálfegyverrel | 6 | V,E |
+| Lánccsapda | lánccsapda | 9 | V,E |
+| Lánccsapdából szabadítás | lánccsapdából_szabadítás | 7 | E |
+| Lefegyverzés | lefegyverzés | 10 | V,E |
+| Leütés hátulról | leütés_hátulról | 6 | V,E |
+| Mesterjel | mesterjel | 10 | V,E |
+| Mögékerülés | mögékerülés | 8 | E |
+| Pajzsrongálás | pajzsrongálás | 6 | V,E |
+| Pajzzsal felöklelés | pajzzsal_felöklelés | 7 | V,E |
+| Piszkos trükk | piszkos_trükk | 7 | V,E |
+| Precíz támadás | precíz_támadás | 6 | V,E |
+| Rávetődés hátulról | rávetődés_hátulról | 6 | E |
+| Távoltartás | távoltartás | 5 | M,E |
+| Terelés | terelés | 8 | E |
 
-#### Belharcos manőverek
+#### Belharcos manőverek (066_06)
 
-| Manőver                 | Nehézség        | Fázisok | Követelmények                | Hatás                      |
-| ----------------------- | --------------- | ------- | ---------------------------- | -------------------------- |
-| Belharcba kerülés       | 9 (háttal:5)    | M,E     | Közelharc, belharcos fegyver | Belharci helyzet           |
-| Belharcból kibontakozás | 5               | M,E     | -                            | Kilépés belharcból         |
-| Átdobás                 | 7               | V,E     | -                            | Ellenfél földre kerül      |
-| Feszítés, Leszorítás    | 8               | V,E     | -                            | TÉ/VÉ:-7, KÉ elvesztés     |
-| Feszítésből kijövetel   | 8               | V,E     | -                            | Kilépés feszítésből        |
-| Gáncsolás               | 7               | V,E     | Közelharc 5                  | Ellenfél földre kerül      |
-| Kéztörés                | 9               | V,E     | -                            | 7 ÉP sebzés                |
-| Lábtörés                | 10              | V,E     | -                            | 9 ÉP sebzés                |
-| Lefejelés               | 7               | V,E     | -                            | 5 ÉP sebzés                |
-| Leforgatás/Irányítás    | 10 (feszítve:6) | V,E     | -                            | Ellenfél terelése (max 5m) |
-| Nyaktörés               | 12              | V,E     | Megelőző Feszítés            | Azonnali halál             |
+| Manőver | id | Nehézség | Fázisok |
+|---------|-----|---------|---------|
+| Átdobás | átdobás | 7 | V,E |
+| Belharcba kerülés | belharcba_kerülés | 9 | M,E |
+| Belharcból kibontakozás | belharcból_kibontakozás | 5 | M,E |
+| Feszítés, Leszorítás | feszítés_leszorítás | 8 | V,E |
+| Feszítésből kijövetel | feszítésből_kijövetel | 8 | V,E |
+| Gáncsolás | gáncsolás | 7 | V,E |
+| Kéztörés | kéztörés | 9 | V,E |
+| Lábtörés | lábtörés | 10 | V,E |
+| Lefejelés | lefejelés | 7 | V,E |
+| Leforgatás/Irányítás | leforgatás_irányítás | 10 | V,E |
+| Nyaktörés | nyaktörés | 12 | V,E |
+
+#### Lovas manőverek (066_07, §38)
+
+| Manőver | id | Nehézség | Fázisok |
+|---------|-----|---------|---------|
+| Hátas táncoltatása | hátas_táncoltatása | 0 | M |
+| Lóhátról lerántás | lóhátról_lerántás | 6 | M,V,E |
+| Lovas áttörés | lovas_áttörés | 4 | V,E |
+| Lovas megakasztása | lovas_megakasztása | 4 | M,E |
+
+A táblák a `manoverek.json` kivonatai (alap Nehézség). A követelmények (Normál/Erős), a helyzetfüggő
+módosítók és a hatások a `manoverek.yaml`-ban és a szabálykönyvben (md/066_05 - 066_07) élnek.
 
 note: A manőverek nem adnak statikus harcérték módosítókat - ellenpróba alapúak (Manőver Alap + MP + k10 vs Nehézség + ellenfél Manőver Alap).
-      Kivétel: fortélyok amik manőver Ellenpróba bónuszt adnak (cél: `manőver:név`, mód: flat):
-        - Harci akrobatika → `manőver:kibontakozás` +1/+3
-        - Manőverfókusz: Szike → `manőver:leütés_hátulról` +2, `manőver:precíz_támadás` +2
-        - Lefegyverzés mestere → `manőver:lefegyverzés_fegyvertörés` +2/+4, `manőver:lánccsapda` +2 (2.fok)
+      Kivétel: fortélyok amik manőver Ellenpróba bónuszt adnak (cél: `manőver:<id>`, mód: flat, +2):
+        - Manőverfókusz: Fegyvertörés / Földrevitel / Lefegyverzés → az azonos nevű manőver
+        - Manőverfókusz: Szike → leütés_hátulról, precíz_támadás
+        - Manőverfókuszok: Belharcmozgás (belharcba_kerülés, belharcból_kibontakozás),
+          Helyezkedések (mögékerülés, terelés), Kitörés (áttörés, felállás_földről),
+          Nyúlcipő (átsiklás, kibontakozás)
+        (Build-validált: a `manőver:X` cél X-e létező manőver id.)
       UI: AktivScreen Hatás pool "Manőver bónuszok" szekció gyűjti ezeket.
       Belharcos manőverek: Belharci helyzet szükséges (kivéve Belharcba kerülés).
 
@@ -1420,6 +1384,9 @@ Aktiváláskor:
     - Közelharc harcmodor kötelező (a fortély bónuszaihoz)
     - Max 0 fegyverhosszú fegyver (tőr, puszta kéz)
     - Puszta kéz harcértékei: TÉ=0, VÉ=0, SP=0, sebzés FP (1ÉP/5FP)
+      (v2 adat: külön rekord `Puszta kéz, belharcban`. NYITOTT: a webapp NEM cseréli rá a Puszta kezet
+      Belharci helyzetben - a fegyver_override feltétele fegyverhossz > 0, a Puszta kéz hossza 0;
+      l. DEVSTATE "Belharc rendszer")
 
   Nem belharcos (aki belekényszerül):
     - Saját harcmodor értékei maradnak (harcmodor bónusz jár)
@@ -1451,10 +1418,11 @@ FOR EACH aktív_helyzet in session.aktív_helyzetek:
   IF hDef.fegyver_override:
     IF feltételTeljesül(hDef.fegyver_override.feltétel):
       FOR EACH mod in hDef.fegyver_override.módosítók:
-        IF mod.cél == "fegyver_TÉ" AND mod.mód == "override":
-          result.TÉ -= result.alap_TÉ   // fegyver saját TÉ eltávolítása
-        IF mod.cél == "fegyver_VÉ" AND mod.mód == "override":
-          result.VÉ -= result.alap_VÉ   // fegyver saját VÉ eltávolítása
+        FOR EACH result (fegyver) ÉS annak MINDEN módja (módok[]):
+          IF mod.cél == "fegyver_TÉ" AND mod.mód == "override":
+            TÉ -= alap_TÉ   // fegyver saját TÉ eltávolítása
+          IF mod.cél == "fegyver_VÉ" AND mod.mód == "override":
+            VÉ -= alap_VÉ   // fegyver saját VÉ eltávolítása
 ```
 
 Data layer (`data-types.ts → HarciHelyzetEntry`):
@@ -1479,9 +1447,9 @@ Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 |-------|------|--------|
 | **Hatás mechanika** | `hatas_operatorok.yaml` | Hatás típusok/operátorok (8 db): előny, hátrány, arányos, letilt, stb. |
 | **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (23 db): dobások, képességek, fizikai |
-| **Hatások** | `081_hatasok.md` (TODO: yaml) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
-| **Státuszok** | `statuszok.yaml` | Állapotok fokozatokkal, amelyek Hatás(oka)t okoznak. |
-| **Harci helyzetek** | `harci_helyzetek.yaml` | Speciális harci státuszok, amelyek szintén Hatás(oka)t okoznak. |
+| **Hatások** | `hatasok.yaml` (29 db, csak build-validáció, §22.4) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
+| **Státuszok** | `statuszok.yaml` (19 db) | Állapotok fokozatokkal, amelyek Hatás(oka)t okoznak. |
+| **Harci helyzetek** | `harci_helyzetek.yaml` (40 db) | Speciális harci státuszok, amelyek szintén Hatás(oka)t okoznak. |
 
 A lánc: **Státusz/Harci helyzet** → okoz **Hatás(oka)t** → minden Hatás leírható **mechanika+cél** párral.
 
@@ -1527,10 +1495,11 @@ hatás_mechanika:  # (yaml-ban: hatás_operátorok - legacy elnevezés)
 
 ```yaml
 célpontok:  # (yaml-ban: események - legacy elnevezés)
-  # harci: ké_dobás, té_dobás, cé_dobás, manőver_ellenpróba, sebzésdobás, támadások_száma, vé_veszteség
+  # harci: ké_dobás, té_dobás, cé_dobás, manőver_ellenpróba, sebzésdobás, támadások_száma, vé_veszteség, vé_csökkentés
   # próba: tulajdonságpróba, képzettségpróba, szociális_próba, szellemi_próba, fizikai_próba, érzék_próba, mágiaellenállás, mágia_akarata
   # fizikai: mozgás, beszéd
   # képesség: harci_képesség, varázslás, pszi, antyssjárás
+  # egyéb: általános
 ```
 
 ### 22.4 Hatások (hatasok.yaml)
@@ -1588,6 +1557,8 @@ STÁTUSZ (fontos): a `hatasok.yaml` jelenleg CSAK build-validációs/dokumentác
 státuszok:
   - név: "Blokkolt"
     kategória: "mágikus"          # fizikai | szellemi | mágikus
+    többszörös: false             # true = több példány egyszerre
+    alkategóriák: []              # pl. Érzékvesztés: érzékenként
     fokok:
       - fok: 1
         alcím: "Közepesen"
@@ -1641,7 +1612,10 @@ note: A pool informatív - a KM alkalmazza. Nincs aggregáció (minden státusz/
 - `validate_esemenyek()`: célpont id egyediség, kötelező mezők, csoport enum
 - `validate_statuszok()`: referenciális integritás (hatás → mechanika id, cél → célpont id)
 
-note: `státusz:` feltétel prefix → §16 feltételes fortély módosítók aktiválása (jövőbeli).
+- `validate_hatasok_katalogus()`: a hatasok.yaml mechanikái érvényes operátor + célpont id-re mutatnak
+
+note: `státusz:` feltétel prefix: a konstansok.feltétel_prefixek része, de a harc-oldali aktívFeltételek Set
+      NEM tölti fel (a státuszok a próba-EH ágon és a vé_veszteség szorzóban hatnak) - jövőbeli.
 
 ### 22.10 Fortély módosítók és Hatás mechanika kapcsolata
 
@@ -1678,7 +1652,8 @@ Ha egy fegyverrel >1 támadás lehetséges (harckeret/sebesség alapján), minde
 konstansok.több_támadás_TÉ_levonás: -3
 ```
 
-Alkalmazás: `fegyver_támadások > 1` → TÉ + több_támadás_TÉ_levonás.
+Alkalmazás: `fegyver_támadások > 1` → TÉ + több_támadás_TÉ_levonás (megjelenítési rétegben: HarcFegyverTable
+→ computeTÉ, HarcScreen, harc-reszletek-calc; NEM a fegyver_TÉ reactive szabályban).
 Az "1 támadás" taktika `TÉ: +3` módosítója generikusan kioltja (taktikaMods-on keresztül).
 
 ---
@@ -1707,10 +1682,11 @@ Lista elemek ÉS kapcsolatban. Forrás lookup sorrend:
 Operátorok: `==`, `!=`, `>=`, `<=`, `>`, `<`
 Boolean↔number normalizálás: `true` = 1, `false` = 0 (reactive engine number-ként számol).
 
-Érintett fortélyok:
-- Merevvértviselet fok 3: `páncél_merev == true` ÉS `páncél_lefedettség >= 70`
-- Kétkezes harc 1-3: `kétkezes_harc == true`
-- Kétkezesség 1: `kétkezes_harc == true`
+Érintett fortélyok (fortelyok.json, strukturált feltételű módosítók):
+- Merevvértviselet fok 3 (VÉ): `páncél_merev == true` ÉS `páncél_lefedettség >= 70`
+- Kétkezesség fok 1 (harckeret): `kétkezes_harc == true`
+- Belharcos fok 1-2 (KÉ/TÉ/VÉ): `harci_helyzet:belharci_helyzet == true` ÉS `aktív_fegyver_harcmodor == "Közelharc"`
+  ÉS `aktív_fegyver_fegyverhossz <= 0` (a prefix:érték forrás az aktívFeltételek Set-ből jön)
 
 ### Session toggle fortélyok
 
@@ -1723,9 +1699,10 @@ Session kulcs: `fortély_név.toLowerCase().replace(/ /g, '_')` (pl. `harci_akro
 Jelenlegi session_toggle fortélyok:
 - Harci akrobatika → `session.harci_akrobatika` (TÉ/VÉ flat +1/+2/+3 fokonként). A toggle a fortély AKTUÁLIS fokának fegyver v2 követelményeiből (fok-függő) tilt: `páncél_hajlékonyság` (1-2. fok: nem_fém, 3. fok: nem_merev), `max_effektív_mgt` (1-2. fok: 5, 3. fok: 10, Erő-korrigált MGT-n), `max_össz_fegyverméret` (3). Hiányzó feltétel → hint (SessionToggles.tsx). Lásd §25.
 
-### Feltétel kiértékelés implementáció (useHarcComputed)
+### Feltétel kiértékelés implementáció (engine/feltetel-eval.ts)
 
-A `harc/useHarcComputed.ts` hook tartalmazza a centralizált feltétel-kiértékelést:
+A centralizált feltétel-kiértékelő: `engine/feltetel-eval.ts → createFeltételEvaluator(aktívFeltételek, session,
+computed, ctx, stringCtx)`, hívója a `harc/useHarcComputed.ts`:
 
 ```typescript
 // getFeltételÉrték: érték lookup sorrend
@@ -1757,15 +1734,13 @@ Az `aktívFeltételek` Set tartalma (`engine/feltetelek.ts → buildAktívFelté
 Source of truth a fortélyok yaml `követelmények` mezőjéhez.
 
 Generálás: `generate_tables.py` → `fortelyok.json` (fokok[].követelmények lista átpasszolva).
-UI validáció: `FortelyokScreen.tsx` → `FortelyRow` komponens (runtime ellenőrzés karakter adatok ellen).
+UI validáció: `fortelyok/helpers.ts → checkKövetelmények` (FortelyRow; runtime ellenőrzés karakter adatok ellen).
+A nem gépi feltételek (faj háttér, leíró háttér, társ) a `követelménytext`-ben élnek, nem a `követelmények`-ben.
 
-Típusok:
-- `képzettség` - karakter képzettség szintje ≥ érték
+Típusok (felvételi gate):
+- `képzettség` - karakter képzettség szintje ≥ érték (név lista → VAGY)
 - `fortély` - karakter felvett fortély fokszáma ≥ érték (többszörös fortélynál bármely példány teljesítheti, pl. Nyelvismeret)
-- `faj_háttér` - karakter faj háttere engedélyezi (szöveges, nem gépi)
-- `tulajdonság` - karakter tulajdonság ≥ érték
-- `háttér` - karakter leíró háttere tartalmazza (szöveges)
-- `szöveges` - nem gépileg ellenőrizhető (infó)
+- `tiltó_fortély` - a megnevezett fortély megléte (fok ≥ érték) KIZÁRÓ ok
 
 Fegyver v2 követelmény-típusok (session-függő, harc-fül kontextus - nem a FortelyokScreen felvételi gate-je):
 - `min_fegyverméret` - az aktív fegyver fegyverhossza ≥ érték; `feltétel` mezővel harci helyzethez kötve (pl. `harci_helyzet:lovas_harc`). Webapp: **warning-only** (getMinFegyverhosszWarning), NEM blokkol - a KM/játékos döntése.
@@ -1781,156 +1756,155 @@ Ellenőrzés logika:
 **Mesterfegyver követelmény - fegyver-specifikus harcmodor szűkítés:**
 
 A Mesterfegyver fortély yaml-ban a követelmény OR listában az összes közelharci harcmodor szerepel.
-Az UI ellenőrzés (`HarcertekekScreen`, `TavharcScreen`) azonban **nem az egész OR listát** vizsgálja,
-hanem **kizárólag az adott fegyverhez tartozó harcmodort**:
-- Közelharci fegyver: `fegyver.Kategória` → `konstansok.fegyver_kategória_harcmodor[kategória]` lookup
-- Távfegyver: `távfegyver.Harcmodor` mező közvetlenül (pl. Íjászat, Hajítás, Lövészet)
+A fegyverenkénti ellenőrzés (`harcertekek/helpers.ts → mfKövetelményHiba`, `tavharc/mesterfegyver-calc.ts →
+mfKövetelményHiba/Text`) azonban **nem az egész OR listát** vizsgálja, hanem **kizárólag az adott fegyverhez
+tartozó harcmodort** (a Fortélyok fül FortelyRow-ja csak a hiány-címkében nevezi meg a fegyver harcmodorát):
+- Közelharci fegyver: `fegyver.kategória` → `konstansok.fegyver_kategória_harcmodor[kategória]` lookup
+- Távfegyver: `távfegyver.harcmodor` mező közvetlenül (pl. Íjászat, Hajítás, Lövészet)
 
 Tehát: "Kard, hosszú" (kardvívó kategória) MF → csak Kardvívás ≥ X vizsgálat;
 "Hosszú íj" (Harcmodor: Íjászat) MF → csak Íjászat ≥ X vizsgálat.
 Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista érvényes.
 
-### Általános fortélyok
+### Követelmények fortélyonként
 
-| Fortély | Fok | Típus | Név | Érték |
-|---------|-----|-------|-----|-------|
-| Biztos kezű mászó | 1 | képzettség | Mászás | 6 |
-| Gyöngyhalász | 0 | fortély | Úszás | 1 |
-| Gyöngyhalász | 1 | fortély | Úszás | 2 |
-| Hangutánzás | 2 | fortély | Nyelvismeret | 1 |
-| Keresés/rejtés | 1 | képzettség | Észlelés | 3 |
-| Keresés/rejtés | 2 | képzettség | Észlelés | 3 |
-| Kocsihajtás | 1 | képzettség | Lovaglás/Léglovaglás | 3 |
-| Műhelymester | 1 | képzettség | Kézművesség | 9 |
-| Pók | 1 | képzettség | Mászás | 6 |
-| Suhanó árnyék | 1 | képzettség | Lopakodás/rejtőzés | 6 |
-| Szájról olvasás | 1 | fortély | Nyelvismeret | 2 |
-| Százarcú | 1 | képzettség | Álcázás/Álruha | 4 |
-| Százarcú | 2 | képzettség | Álcázás/Álruha | 8 |
-| Vezető: Bölcsészprofesszor | 1 | képzettség | Lexikum | 6 |
-| Vezető: Bölcsészprofesszor | 2 | képzettség | Lexikum | 9 |
-| Vezető: Hajóskapitány | 1 | képzettség | Hajózás | 6 |
-| Vezető: Hajóskapitány | 2 | képzettség | Hajózás | 9 |
-| Vezető: Nyomozó | 1 | képzettség | Nyomozás | 6 |
-| Vezető: Nyomozó | 2 | képzettség | Nyomozás | 9 |
-| Vezető: Orvosprofesszor | 1 | képzettség | Orvoslás | 6 |
-| Vezető: Orvosprofesszor | 2 | képzettség | Orvoslás | 9 |
-| Vezető: Rendező | 1 | képzettség | Előadóművészet | 6 |
-| Vezető: Rendező | 2 | képzettség | Előadóművészet | 9 |
-| Vezető: Tudósprofesszor | 1 | képzettség | Kvantikum | 6 |
-| Vezető: Tudósprofesszor | 2 | képzettség | Kvantikum | 9 |
-| Villámgyors keresés/rejtés | 1 | képzettség | Észlelés | 3 |
-| Villámgyors keresés/rejtés | 1 | fortély | Keresés/rejtés | 1 |
-| Zártörő | 1 | képzettség | Zárnyitás | 6 |
+A `fortelyok.json` kivonata (csak a gépi `követelmények`; "Harcmodor" = bármely közelharci harcmodor:
+Közelharc/Kardvívás/Rombolás/Lándzsavívás/Ostorharc, Mesterfegyvernél a fegyver saját harcmodora).
 
-### Érzék fortélyok
+#### Általános fortélyok
 
-| Fortély | Fok | Típus | Név | Érték |
-|---------|-----|-------|-----|-------|
-| Emberentúli hallás | 1 | faj_háttér | - | - |
-| Emberentúli látás | 1 | faj_háttér | - | - |
-| Emberentúli szaglás | 1 | faj_háttér | - | - |
-| Infralátás | 1 | faj_háttér | - | - |
-| Infralátás | 2 | faj_háttér | - | - |
-| Irányérzék | 1 | faj_háttér | - | - |
-| Ultralátás | 1 | faj_háttér | - | - |
-| Ultralátás | 2 | faj_háttér | - | - |
-| Ultralátás | 3 | faj_háttér | - | - |
+| Fortély | Fok | Követelmények |
+|---------|-----|---------------|
+| Biztos kezű mászó | 1 | Mászás ≥ 6 |
+| Gyöngyhalász | 0 | Úszás fortély ≥ 1 |
+| Gyöngyhalász | 1 | Úszás fortély ≥ 2 |
+| Keresés/rejtés | 1 | Észlelés ≥ 3 |
+| Keresés/rejtés | 2 | Észlelés ≥ 3 |
+| Kocsihajtás | 1 | Lovaglás/Léglovaglás ≥ 3 |
+| Kézműves: Fegyverkovács | 1 | Kovács fortély ≥ 1 |
+| Kézműves: Fegyverkovács | 2 | Kovács fortély ≥ 1 |
+| Kézműves: Páncélkovács | 1 | Kovács fortély ≥ 1 |
+| Kézműves: Páncélkovács | 2 | Kovács fortély ≥ 1 |
+| Műhelymester | 1 | Kézművesség ≥ 9 |
+| Pók | 1 | Mászás ≥ 6 |
+| Suhanó árnyék | 1 | Lopakodás/rejtőzés ≥ 6 |
+| Szájról olvasás | 1 | Nyelvismeret fortély ≥ 2 |
+| Százarcú | 1 | Álcázás/Álruha ≥ 4 |
+| Százarcú | 2 | Álcázás/Álruha ≥ 8 |
+| Vezető: Bölcsészprofesszor | 1 | Lexikum ≥ 6 |
+| Vezető: Bölcsészprofesszor | 2 | Lexikum ≥ 9 |
+| Vezető: Hajóskapitány | 1 | Hajózás ≥ 6 |
+| Vezető: Hajóskapitány | 2 | Hajózás ≥ 9 |
+| Vezető: Nyomozó | 1 | Nyomozás ≥ 6 |
+| Vezető: Nyomozó | 2 | Nyomozás ≥ 9 |
+| Vezető: Orvosprofesszor | 1 | Orvoslás ≥ 6 |
+| Vezető: Orvosprofesszor | 2 | Orvoslás ≥ 9 |
+| Vezető: Rendező | 1 | Előadóművészet ≥ 6 |
+| Vezető: Rendező | 2 | Előadóművészet ≥ 9 |
+| Vezető: Tudósprofesszor | 1 | Kvantikum ≥ 6 |
+| Vezető: Tudósprofesszor | 2 | Kvantikum ≥ 9 |
+| Villámgyors keresés/rejtés | 1 | Észlelés ≥ 3; Keresés/rejtés fortély ≥ 1 |
+| Zártörő | 1 | Zárnyitás ≥ 6 |
 
-### Harci fortélyok
+#### Szabad fortélyok
 
-| Fortély | Fok | Típus | Név | Érték | Megjegyzés |
-|---------|-----|-------|-----|-------|------------|
-| Alakzat: támadó | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Alakzat: támadó | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
-| Alakzat: védekező | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Alakzat: védekező | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
-| Alkalmatlan fegyver hajítása | 1 | képzettség | [adott fegyver harcmodora] | 6 | + Hajítás ≥ 3 |
-| Alkalmatlan fegyver hajítása | 2 | képzettség | [adott fegyver harcmodora] | 9 | + Hajítás ≥ 6 |
-| Alkalmatlan tárgyak hajítása | 1 | képzettség | Hajítás | 6 | |
-| Alkalmatlan tárgyak hajítása | 2 | képzettség | Hajítás | 9 | |
-| Belharc | 1 | képzettség | Közelharc | 6 | |
-| Belharc | 2 | képzettség | Közelharc | 9 | |
-| Elpusztíthatatlan | 1 | képzettség | Fájdalomtűrés | 7 | |
-| Elpusztíthatatlan | 2 | képzettség | Fájdalomtűrés | 10 | |
-| Elsöprő roham | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás] | 4 | + Roham taktika |
-| Fárasztás | 1 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 6 | |
-| Fegyverrántás | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 4 | |
-| Fegyverrántás | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
-| Gladiátor bestiái | 1 | háttér | Gladiátor | - | + Harcmodor ≥ 6 |
-| Gladiátor közönsége | 1 | háttér | Gladiátor | - | + Harcmodor ≥ 6 |
-| Harc helyhez kötve | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | |
-| Harc helyhez kötve | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Harci akrobatika | 1 | képzettség | Akrobatika | 6 | + nem_fém páncél, effektív MGT ≤ 5, össz fegyverméret ≤ 3 |
-| Harci akrobatika | 2 | képzettség | Akrobatika | 9 | + nem_fém páncél, effektív MGT ≤ 5, össz fegyverméret ≤ 3 |
-| Harci akrobatika | 3 | képzettség | Akrobatika | 12 | + nem_merev páncél, effektív MGT ≤ 10, össz fegyverméret ≤ 3 |
-| Manőverfókusz: Szike | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | + Élettan fortély ≥ 1 |
-| Harci kocsihajtás | 1 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 6 |
-| Harci kocsihajtás | 2 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 9 |
-| Harckeret növelés | 1 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 6 | |
-| Harckeret növelés | 2 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 9 | |
-| Harckeret növelés | 3 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 12 | |
-| Harcos elme | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Harcos elme | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
-| Harcos elme | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | + Teljes Védekezés taktika |
-| Kaszabolás | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
-| Kétkezes harc | 1 | képzettség | [nagyobb fegyver harcmodora] | 6 | + kisebb fegyver harcmodora ≥ 3 |
-| Kétkezes harc | 2 | képzettség | [nagyobb fegyver harcmodora] | 9 | + kisebb fegyver harcmodora ≥ 6 |
-| Kétkezes harc | 3 | képzettség | [nagyobb fegyver harcmodora] | 9 | + kisebb fegyver harcmodora ≥ 9 |
-| Léglovas harc | 1 | képzettség | Léglovaglás | 3 | |
-| Léglovas harc | 2 | képzettség | Léglovaglás | 6 | |
-| Léglovas harc | 3 | képzettség | Léglovaglás | 9 | |
-| Lovas harc | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | + Lovaglás ≥ 6 |
-| Lovas harc | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | + Lovaglás ≥ 9 |
-| Lovas harc | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | + Lovaglás ≥ 12 |
-| Merevvértviselet | 1 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
-| Merevvértviselet | 2 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
-| Merevvértviselet | 3 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
-| Mesterfegyver | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 4 | Fegyver-specifikus: csak az adott fegyver harcmodorát vizsgálja (→ §25 szűkítés) |
-| Mesterfegyver | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | Fegyver-specifikus: csak az adott fegyver harcmodorát vizsgálja (→ §25 szűkítés) |
-| Mesterfegyver | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | Fegyver-specifikus: csak az adott fegyver harcmodorát vizsgálja (→ §25 szűkítés) |
-| Orgyilkos | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Orgyilkos | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
-| Pajzshasználat | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | |
-| Pajzshasználat | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 5 | |
-| Pajzshasználat | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
-| Páros harc | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | Összeszokott társ |
-| Páros harc | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | Összeszokott társ |
-| Páros harc | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | Egypetéjű ikrek |
-| Támadás erőből | 1 | képzettség | [Kardvívás, Lándzsavívás, Rombolás] | 3 | |
-| Támadás erőből | 2 | képzettség | [Kardvívás, Lándzsavívás, Rombolás] | 6 | |
-| Természetes fegyver | 1 | faj_háttér | - | - | |
-| Természetes páncél | 1 | faj_háttér | - | - | |
-| Természetes páncél | 2 | faj_háttér | - | - | |
-| Természetes páncél | 3 | faj_háttér | - | - | |
-| Testőr | 1 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 6 | |
-| Testőr | 2 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 9 | |
-| Vezető: Alakzatparancsnok | 1 | képzettség | Alakzatharc | 6 | + Befolyásolás ≥ 3 |
-| Vezető: Alakzatparancsnok | 2 | képzettség | Alakzatharc | 9 | + Befolyásolás ≥ 3 |
-| Vezető: Fejvadász strategis | 1 | képzettség | Lopakodás/rejtőzés | 6 | + Fejvadász háttér |
-| Vezető: Fejvadász strategis | 2 | képzettség | Lopakodás/rejtőzés | 9 | + Fejvadász háttér |
-| Vezető: Íjászparancsnok | 1 | képzettség | [Íjászat, Lövészet] | 6 | |
-| Vezető: Íjászparancsnok | 2 | képzettség | [Íjászat, Lövészet] | 9 | |
-| Vezető: Léglovaskapitány | 1 | képzettség | Léglovaglás | 6 | + Befolyásolás ≥ 3 |
-| Vezető: Léglovaskapitány | 2 | képzettség | Léglovaglás | 9 | + Befolyásolás ≥ 3 |
-| Vezető: Lovaskapitány | 1 | képzettség | Lovaglás | 6 | + Befolyásolás ≥ 3 |
-| Vezető: Lovaskapitány | 2 | képzettség | Lovaglás | 9 | + Befolyásolás ≥ 3 |
+| Fortély | Fok | Követelmények |
+|---------|-----|---------------|
+| Irodalom | 1 | Kultúrkör fortély ≥ 1; Nyelvismeret fortély ≥ 2 |
+| Jogismeret | 1 | NEM: Analfabéta fortély |
+| Kalligráfia | 1 | NEM: Analfabéta fortély |
+| Különleges faj boncolása | 1 | Élettan fortély ≥ 1 |
+| Tánc: speciális/belső stílus | 1 | Etikett ≥ 9; Előadóművészet ≥ 6; Kultúrkör fortély ≥ 1; Tánc fortély ≥ 1 |
 
-### Távharc fortélyok
+#### Harci fortélyok (benne a távharci alcsoport)
 
-| Fortély | Fok | Típus | Név | Érték | Megjegyzés |
-|---------|-----|-------|-----|-------|------------|
-| Gyors hajítás | 1 | képzettség | Hajítás | 5 | Csak hajítófegyverekkel |
-| Gyors lövés | 1 | képzettség | Íjászat | 5 | Csak íjjal |
-| Nyílpuska újratöltés fejlesztése | 1 | képzettség | Lövészet | 6 | |
-| Nyílpuska újratöltés fejlesztése | 2 | képzettség | Lövészet | 9 | |
-| Kitartott célzás fejlesztése | 1 | képzettség | [Íjászat, Lövészet] | 5 | |
-| Lövés futás közben | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
-| Lövés hátasról | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | + Lovaglás ≥ 6, Mesterfegyver ≥ 1, Lovas harc ≥ 2 |
-| Lövés hátasról | 2 | képzettség | [Íjászat, Lövészet, Hajítás] | 9 | + Lovaglás ≥ 9, Mesterfegyver ≥ 2, Lovas harc ≥ 3 |
-| Lövés reflexből fejlesztése | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
-| Mesterlövész | 1 | képzettség | Lövészet | 5 | |
-| Mozgó cél mestere fegyverrel | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
+| Fortély | Fok | Követelmények |
+|---------|-----|---------------|
+| Alakzat: támadó | 1 | Harcmodor ≥ 6 |
+| Alakzat: támadó | 2 | Harcmodor ≥ 9 |
+| Alakzat: védekező | 1 | Harcmodor ≥ 6 |
+| Alakzat: védekező | 2 | Harcmodor ≥ 9 |
+| Alkalmatlan fegyver hajítása | 1 | Harcmodor ≥ 6; Hajítás ≥ 3 |
+| Alkalmatlan fegyver hajítása | 2 | Harcmodor ≥ 9; Hajítás ≥ 6 |
+| Alkalmatlan tárgyak hajítása | 1 | Hajítás ≥ 6 |
+| Alkalmatlan tárgyak hajítása | 2 | Hajítás ≥ 9 |
+| Belharcos | 1 | Közelharc ≥ 6 |
+| Belharcos | 2 | Közelharc ≥ 9 |
+| Elpusztíthatatlan | 1 | Fájdalomtűrés ≥ 7 |
+| Elpusztíthatatlan | 2 | Fájdalomtűrés ≥ 10 |
+| Fegyverrántás | 1 | Harcmodor ≥ 4 |
+| Fegyverrántás | 2 | Harcmodor ≥ 8 |
+| Fárasztás | 1 | Harcmodor ≥ 6 |
+| Gladiátor bestiái | 1 | Harcmodor ≥ 6 |
+| Gladiátor közönsége | 1 | Harcmodor ≥ 6 |
+| Gyors hajítás | 1 | Hajítás ≥ 5 |
+| Gyors lövés | 1 | Íjászat ≥ 5 |
+| Harci akrobatika | 1 | Akrobatika ≥ 6; páncél: nem_fém; effektív MGT ≤ 5; össz fegyverhossz ≤ 3 |
+| Harci akrobatika | 2 | Akrobatika ≥ 9; páncél: nem_fém; effektív MGT ≤ 5; össz fegyverhossz ≤ 3 |
+| Harci akrobatika | 3 | Akrobatika ≥ 12; páncél: nem_merev; effektív MGT ≤ 10; össz fegyverhossz ≤ 3 |
+| Harci kocsihajtás | 1 | Kocsihajtás fortély ≥ 1; Lovaglás/Léglovaglás ≥ 6 |
+| Harci kocsihajtás | 2 | Kocsihajtás fortély ≥ 1; Lovaglás/Léglovaglás ≥ 9 |
+| Harckeret növelés | 1 | Harcmodor ≥ 6 |
+| Harckeret növelés | 2 | Harcmodor ≥ 9 |
+| Harckeret növelés | 3 | Harcmodor ≥ 12 |
+| Harcos elme | 1 | Harcmodor ≥ 6 |
+| Harcos elme | 2 | Harcmodor ≥ 9 |
+| Harcos elme | 3 | Harcmodor ≥ 12 |
+| Helyhez kötve fejlesztése | 1 | Harcmodor ≥ 3 |
+| Helyhez kötve fejlesztése | 2 | Harcmodor ≥ 6 |
+| Kaszabolás | 1 | közelharc/kardvívás/rombolás/lándzsavívás/ostorharc ≥ 4 |
+| Kaszabolás | 2 | Harcmodor ≥ 8 |
+| Lovas harc | 1 | Harcmodor ≥ 6; Lovaglás ≥ 6; fegyverhossz ≥ 3 (harci_helyzet:lovas_harc) |
+| Lovas harc | 2 | Harcmodor ≥ 9; Lovaglás ≥ 9; fegyverhossz ≥ 3 (harci_helyzet:lovas_harc) |
+| Lovas harc | 3 | Harcmodor ≥ 12; Lovaglás ≥ 12; fegyverhossz ≥ 3 (harci_helyzet:lovas_harc) |
+| Léglovas harc | 1 | Léglovaglás ≥ 3; fegyverhossz ≥ 3 (harci_helyzet:léglovas_harc) |
+| Léglovas harc | 2 | Léglovaglás ≥ 6; fegyverhossz ≥ 3 (harci_helyzet:léglovas_harc) |
+| Léglovas harc | 3 | Léglovaglás ≥ 9; fegyverhossz ≥ 3 (harci_helyzet:léglovas_harc) |
+| Lövés futás közben | 1 | Íjászat/Lövészet/Hajítás ≥ 5 |
+| Lövés hátasról | 1 | Lovaglás/Léglovaglás ≥ 6; Íjászat/Lövészet/Hajítás ≥ 6 |
+| Lövés hátasról | 2 | Lovaglás/Léglovaglás ≥ 9; Íjászat/Lövészet/Hajítás ≥ 9 |
+| Lövés reflexből fejlesztése | 1 | Íjászat/Lövészet/Hajítás ≥ 5 |
+| Manőverfókusz: Fegyvertörés | 1 | Közelharc/Kardvívás/Rombolás/Lándzsavívás ≥ 9; Mesterfegyver fortély ≥ 1 |
+| Manőverfókusz: Földrevitel | 1 | Harcmodor ≥ 6 |
+| Manőverfókusz: Lefegyverzés | 1 | Kardvívás/Lándzsavívás/Ostorharc ≥ 9; Mesterfegyver fortély ≥ 1 |
+| Manőverfókusz: Szike | 1 | Harcmodor ≥ 6; Élettan fortély ≥ 1 |
+| Manőverfókuszok: Belharcmozgás | 1 | Harcmodor ≥ 6 |
+| Merevvértviselet | 1 | Kardvívás/Rombolás/Lándzsavívás ≥ 3 |
+| Merevvértviselet | 2 | Kardvívás/Rombolás/Lándzsavívás ≥ 3 |
+| Merevvértviselet | 3 | Kardvívás/Rombolás/Lándzsavívás ≥ 3 |
+| Mesterfegyver | 1 | Harcmodor ≥ 4 |
+| Mesterfegyver | 2 | Harcmodor ≥ 8 |
+| Mesterfegyver | 3 | Harcmodor ≥ 12 |
+| Mesterlövész | 1 | Lövészet ≥ 5 |
+| Mozgó cél könnyítése (fegyveres) | 1 | Íjászat/Lövészet/Hajítás ≥ 5 |
+| Nyílpuska újratöltés fejlesztése | 1 | Lövészet ≥ 6 |
+| Nyílpuska újratöltés fejlesztése | 2 | Lövészet ≥ 9 |
+| Orgyilkos | 1 | Harcmodor ≥ 6 |
+| Orgyilkos | 2 | Harcmodor ≥ 9 |
+| Orgyilkos | 3 | Harcmodor ≥ 9 |
+| Pajzshasználat | 1 | Harcmodor ≥ 3 |
+| Pajzshasználat | 2 | Harcmodor ≥ 5 |
+| Pajzshasználat | 3 | Harcmodor ≥ 8 |
+| Páros harc | 1 | Harcmodor ≥ 3 |
+| Páros harc | 2 | Harcmodor ≥ 6 |
+| Páros harc | 3 | Harcmodor ≥ 9 |
+| Taktikafókusz: Kitartott célzás | 1 | Íjászat/Lövészet ≥ 5 |
+| Taktikafókusz: Roham | 1 | Közelharc/Kardvívás/Rombolás/Lándzsavívás ≥ 4 |
+| Taktikafókusz: Visszafogott | 1 | Közelharc/Kardvívás/Rombolás/Lándzsavívás ≥ 6 |
+| Testőr | 1 | Harcmodor ≥ 6 |
+| Testőr | 2 | Harcmodor ≥ 9 |
+| Vezető: Alakzatparancsnok | 1 | Alakzatharc ≥ 6; Befolyásolás ≥ 3 |
+| Vezető: Alakzatparancsnok | 2 | Alakzatharc ≥ 9; Befolyásolás ≥ 3 |
+| Vezető: Fejvadász strategis | 1 | Lopakodás/rejtőzés ≥ 6 |
+| Vezető: Fejvadász strategis | 2 | Lopakodás/rejtőzés ≥ 9 |
+| Vezető: Lovaskapitány | 1 | Lovaglás ≥ 6; Befolyásolás ≥ 3 |
+| Vezető: Lovaskapitány | 2 | Lovaglás ≥ 9; Befolyásolás ≥ 3 |
+| Vezető: Léglovaskapitány | 1 | Léglovaglás ≥ 6; Befolyásolás ≥ 3 |
+| Vezető: Léglovaskapitány | 2 | Léglovaglás ≥ 9; Befolyásolás ≥ 3 |
+| Vezető: Testőrparancsnok | 1 | közelharc/kardvívás/rombolás/lándzsavívás/ostorharc ≥ 6; Észlelés ≥ 6 |
+| Vezető: Testőrparancsnok | 2 | közelharc/kardvívás/rombolás/lándzsavívás/ostorharc ≥ 6; Észlelés ≥ 9 |
+| Vezető: Íjászparancsnok | 1 | Íjászat/Lövészet/Ostromlövészet ≥ 6 |
+| Vezető: Íjászparancsnok | 2 | Íjászat/Lövészet/Ostromlövészet ≥ 9 |
 
 ---
 
@@ -1961,7 +1935,8 @@ A **nagyobb fegyver** harcmodora számít (képzettség szint lookup).
 ### 26.4 Fegyverhossz korlát
 
 ```
-Két külön limit (mindkettőnek teljesülnie kell, egyébként a fegyverek harcértéke: 0 - nem foghatók párban):
+Két külön limit (mindkettőnek teljesülnie kell, egyébként a fegyverek nem foghatók párban - a
+calcKétkezesHarc null-t ad, a Fegyverfogás pickerben a "Kétkezes harc" disabled):
   (a) Per-fegyver: egyik fegyver fegyverhossza sem lehet nagyobb, mint
       konstansok.kétkezes_harc_max_egy_fegyver (jelenleg: 3).
       (A nagyobb, kétkezes fegyverek nem foghatók párban.)
@@ -2005,7 +1980,7 @@ Kivétel: ha szándékosan a rosszabbik kézben lévővel támad (Hátrány-1 T�
 ```
 formula (ketkezes.ts):
   jobbElsődleges = jobb kéz fegyver elsődleges módja (vagy módok[0])
-  erőbónusz = MIN(tulajdonságok.erő, jobbElsődleges.Erőlimit)   // a JOBB kéz fegyverének erőbónusz-limitje
+  erőbónusz = FLOOR(MIN(tulajdonságok.erő, jobbElsődleges.Erőlimit) × (1 + fortelyMods.SP_erőbónusz_arány))   // a JOBB kéz fegyverének erőbónusz-limitje
   SP = jobbElsődleges.SP + erőbónusz + mf_SP + fortelyMods['SP'] + idea_SP
 
 note: Az SP KIZÁRÓLAG a jobb (ügyesebb) kéz fegyveréből jön - a bal kéz fegyvere SP-t nem ad,
@@ -2091,11 +2066,14 @@ if session.kétkezes_harc:
     if mf == "nagyobb": lookup(MF_fok_nagyobb → mesterfegyver_bónuszok)
     if mf == "mindkettő": lookup(MF_fok_nagyobb) + lookup(MF_fok_kisebb)
 
-  SP = fegyver_jobb.SP + erőbónusz + MF_bónusz.SP + fortelyMods['SP']
+  SP = fegyver_jobb.SP + erőbónusz + MF_bónusz.SP + fortelyMods['SP'] + idea_SP   // §26.6, §26.8
+  // TÉ/VÉ-hez + idea_TÉ / idea_VÉ (§26.8) és - merevvért_TÉ_büntetés (TÉ)
 
   harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + khFokBónusz.harckeret - fegyverlevonás
   fegyverlevonás = FLOOR(sum_fegyverhossz / konstansok.kétkezes_harc_fegyverlevonás_osztó)
   támadások = 1 + FLOOR(harckeret / nagyobb_fegyver.sebesség)
+
+impl: engine/ketkezes.ts → calcKétkezesHarc (hívó: harc/fegyver-calc.ts → calcKetkezes, + fegyver_override).
 ```
 
 ## §27 Fegyverfogás
@@ -2110,10 +2088,10 @@ A Fegyverfogás meghatározza a karakter kéz-konfigurációját a harcban. Nég
 - **Fegyver + hárítófegyver** - fő fegyver + hárítófegyver a gyengébb kézben
 - **Kétkezes harc** - két külön fegyver (§26)
 
-### 27.2 Data layer terv
+### 27.2 Data layer
 
 ```
-Új session mező:
+Session mező:
   session.fegyverfogás: "egyfegyveres" | "fegyver_pajzs" | "fegyver_hárító" | "kétkezes"
 
 A fegyverfogás EXPLICIT session mező - a felhasználó a Fegyverfogás picker-rel választja.
@@ -2150,7 +2128,8 @@ Fegyver + pajzs:
   A pajzsVÉ és TÉ büntetés CSAK a lila összesítő sorban jelenik meg (normál sorokból kiszűrve).
 
 Fegyver + hárítófegyver (IMPLEMENTÁLVA):
-  hárítóVÉ = hárítófegyver.VÉ (fegyverek_v2.json hárító mód, ha van "Hárítófegyver használat" fortély, else 0)
+  hárítóVÉ = hárítófegyver elsődleges módjának VÉ-je (fegyverek_v2.json, `Hárító: …` rekordok a
+             fegyverek_fixed.json-ból, aktor: "kivétel"), ha van "Hárítófegyver használat" fortély, else 0
   hárítóMF_VÉ = MF_bónusz VÉ a hárítófegyverre (ha van MF a hárítóra → mesterfegyver_bónuszok lookup)
   Fegyver VÉ += hárítóVÉ + hárítóMF_VÉ
   TÉ büntetés: nincs (a hárítófegyver nem TÉ büntetést ad, mint a pajzs)
@@ -2180,11 +2159,10 @@ Kétkezes fegyver (lándzsa, stb.) → kizárólag "Egyfegyveres" fogás.
 2. ✅ AktivScreen: Fegyverfogás picker (overlay popup, 4 opció, disabled logika)
 3. ✅ AktivScreen: Bal kéz dropdown feltételes megjelenítés (kétkezes + hárító fogásnál)
 4. ✅ AktivScreen: "2 kezes harc" és "Pajzs kézben" toggle gombok eltávolítás (beolvad a picker-be)
-5. ✅ fegyverek_v2.json: `hárító` mód a hárítófegyvereken (a v1 process_fegyverek.py-pipeline archiválva)
-6. ✅ HarcScreen: Hárítófegyver VÉ bekötés (ha fegyverfogás == "fegyver_hárító") + lila sor
-7. ✅ karakter.yaml séma: `session.fegyverfogás` mező
-8. ✅ validate_karakter.py: fegyverfogás enum validáció
-9. ✅ Hárítófegyver MF VÉ bónusz (ha van Mesterfegyver a hárítóra)
+5. ✅ fegyverek_v2.json: hárítófegyver rekordok (`Hárító: …`, fegyverek_fixed.json)
+6. ✅ Harc fül: Hárítófegyver VÉ bekötés (ha fegyverfogás == "fegyver_hárító") + lila sor (pancel-calc.ts → calcFogas)
+7. ✅ karakter.yaml séma: `session.fegyverfogás` mező (enum a séma kommentjében)
+8. ✅ Hárítófegyver MF VÉ bónusz (ha van Mesterfegyver a hárítóra)
 
 ---
 
@@ -2309,11 +2287,15 @@ Session állapot visszavonás mechanizmus.
 ### 29.1 Modell
 
 - Stack mélység: **6 művelet** (ha betelt, a legrégebbi kiesik)
-- Minden `setSession()` és `setKarakter()` hívás egy tranzakció:
-  - `{ timestamp, leírás, előző_állapot }` push a stack-re
+- Minden undo-wrapped setter hívás egy tranzakció (`hooks/useUndo.ts`, `useUndoWrappedSetters`):
+  - `UndoEntry = { timestamp, leírás, patches: UndoPatch[] }` push a stack-re
   - A `leírás` automatikusan generált (pl. "Taktika hozzáadva: Támadó (2)", "VÉ csökkenés: -3", "Fegyver váltás: Tőr")
-- Snapshot típus: session + karakter teljes objektum másolat (deep clone)
-- Visszaállítás: a kiválasztott pontig az összes későbbi tranzakció törlődik és az állapot visszaáll
+- Patch-alapú (NEM teljes snapshot): minimális inverz műveletek a karakter mezőire
+  (skalár: `{field, prev}`; tömb: `{field, op: add|remove|update, index?, item?, prev?}`). A session a
+  karakter `session` mezőjeként patch-elődik.
+- Összevonás (coalesce): egymást követő, azonos mezőre irányuló léptetések (pl. +/- gombok) egy bejegyzésbe
+  olvadnak; session-re csak explicit `ckey`-jel (pl. toggle-ök). Noop (visszaléptetett) bejegyzés eldobódik.
+- Visszaállítás: a kiválasztott pontig az összes későbbi tranzakció inverz patch-ei visszafelé alkalmazódnak
 
 ### 29.2 UI
 
@@ -2390,7 +2372,6 @@ Session állapot visszavonás mechanizmus.
 | Taktika hozzáadás/törlés | "Taktika: {név} ({fok})" |
 | Helyzet hozzáadás/törlés | "Helyzet: {név}" |
 | Státusz hozzáadás/törlés | "Státusz: {név} ({fok})" |
-| Szituáció hozzáadás/törlés | "Szituáció: {név}" |
 | Manőver váltás | "Manőver: {név}" |
 | Fegyver váltás | "Fegyver: {név}" |
 | Fegyverfogás | "Fogás: {fogás}" |
@@ -2417,11 +2398,11 @@ Implementáció: az `undoTo()` visszaállításnál a `jegyzetek` és `napló` m
 
 ### 29.5 Megjegyzések
 
-- A stack localStorage-ban perzisztens (`szilank_undo` key) - page reload után megmarad
+- A stack localStorage-ban perzisztens (a `szilank_char_{uid}` karakter JSON `_undo` mezőjében) - page reload után megmarad
 - Játék módban és Szerkesztő módban egyaránt működik
 - A `pushUndo()` hívást minden session/karakter módosító függvénybe be kell kötni
   - KIVÉVE: `jegyzetek` és `napló` módosítások (ezek nem generálnak undo entry-t)
-- Teljesítmény: 6× deep clone max ~50KB adat (karakter+session) - elhanyagolható
+- Teljesítmény: patch-alapú, a bejegyzések kicsik (nem teljes karakter-másolatok)
 - A `pushUndo()` a módosítás ELŐTT hívandó (az aktuális állapotot menti, nem az újat)
 - `pushUndo()` mellékhatásai: `isDirty=true` + `testMode=false` (ha teszt módban módosítás történik → kilép teszt módból, karakter mentődik)
 - "Új karakter" és "Karakter betöltés" reseteli a stack-et + törli localStorage-ból
@@ -2437,11 +2418,11 @@ Az aktuális karakter állapot és undo stack automatikusan localStorage-ba ment
 
 | Key | Tartalom |
 |-----|----------|
-| `szilank_slots` | Slot lista: `{ uid, id_leíró, név, tsz, mentés_dátum }[]` (max 16, ebből max 10 NJK) |
+| `szilank_slots` | Slot lista: `{ uid, id_leíró, név, becenév?, tsz, mentés_dátum, jk? }[]` (max 16, ebből max 10 NJK) |
 | `szilank_char_{uid}` | Karakter JSON + `_undo` mező (undo stack integrálva) |
 | `szilank_active` | Aktív karakter uid-ja |
 
-Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba, régi kulcsok törlődnek.
+Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba, a régi `szilank_karakter` / `szilank_undo` kulcsok törlődnek (`useGameDataLoader.ts`).
 
 ### 30.2 Mentés
 
@@ -2461,7 +2442,7 @@ Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik
 ### 30.4 Törlés / Reset
 
 - "Új karakter": új uid, új slot (régi megmarad a listában)
-- Slot törlés: `szilank_char_{uid}` eltávolítás + slots frissítés (TODO: UI)
+- Slot törlés: `szilank_char_{uid}` eltávolítás + slots frissítés (UI: SlotDeleteOverlay, §31.6)
 - Fájlba exportálás: `_undo` is belekerül a JSON-ba
 
 ### 30.5 Böngésző cache - friss app verzió kikényszerítése
@@ -2493,13 +2474,14 @@ A karakter JSON `schema_version` mezője határozza meg a struktúra verzióját
 
 - A validáció **strict**: minden mező kötelező (top-level + session). Hiányzó mező = invalid karakter, betöltés megtagadva, hibaüzenet a hiányzó mezők listájával.
 - **Régi (v2 előtti) karakterek** érvénytelenek - nincs backward compatibility migráció.
-- **Jövőbeli verzióváltás** (v2→v3, stb.): új mezők hozzáadásakor a `schema_version` emelkedik, és egy kontrollált migrációs lépés (`migrate_v2_to_v3`) fut betöltéskor, amely kipótolja az új mezőket default értékekkel.
+- **Jövőbeli verzióváltás** (TERV, v2→v3, stb.): új mezők hozzáadásakor a `schema_version` emelkedik, és egy kontrollált migrációs lépés fut betöltéskor, amely kipótolja az új mezőket default értékekkel. Jelenleg nincs migrációs kód (a projekt elve: backward compatibility nem szükséges).
 
 ### Validáció (`engine/validate.ts`)
 
 - `validateKarakter(obj)` → `{ valid: true }` vagy `{ valid: false, missing: string[] }`
 - `isValidKarakter(obj)` → type guard (boolean)
 - Ellenőrzött mezők: `REQUIRED_TOP_FIELDS` + `REQUIRED_SESSION_FIELDS`
+- `validateKarakterData(k, data)` → referenciális integritás a betöltött táblák ellen (ismeretlen faj, anyanyelv, fortély, képzettség, …) → hibaüzenet vagy null
 - Fájl betöltés és localStorage betöltés egyaránt strict validációt futtat.
 
 ---
@@ -2525,7 +2507,7 @@ Minden karakter két azonosítót kap:
 
 | Key | Tartalom |
 |-----|----------|
-| `szilank_slots` | JSON tömb: `{ uid, id_leíró, név, mentés_dátum }[]` - max 16 entry (max 10 NJK), rendezve utolsó módosítás szerint |
+| `szilank_slots` | JSON tömb: `SlotEntry` (`hooks/slot-utils.ts`: uid, id_leíró, név, becenév?, tsz, mentés_dátum, jk?) - max 16 entry (max 10 NJK), rendezve utolsó módosítás szerint |
 | `szilank_char_{uid}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
 | `szilank_active` | Az aktív karakter `uid`-ja (amelyik épp szerkesztés alatt van) |
 
@@ -2534,11 +2516,11 @@ Slot lista megjelenítés: `{név} ({tsz}sz)` + relatív idő. Hosszú név töb
 Az undo stack a karakter JSON részévé válik:
 ```json
 {
-  "id": "abc-123",
+  "uid": "a1b2c3d4-...",
   "név": "von Agabor",
   "session": { ... },
   "_undo": [
-    { "timestamp": 1719000000, "leírás": "erő: 3 → 2", "session": {...}, "karakter": {...} },
+    { "timestamp": 1719000000, "leírás": "erő: 3 → 2", "patches": [ { "field": "tulajdonságok", "prev": {...} } ] },
     ...
   ],
   ...
@@ -2589,22 +2571,19 @@ Beállítások menü → "📋 Duplikál":
 │                                 │
 │  [+ Új karakter]                │
 │  [📁 Fájlból betöltés...]      │
-├─────────────────────────────────┤
-│  Törlés: hosszú nyomás a sorra │
 └─────────────────────────────────┘
 ```
 
 - Rendezés: utolsó módosítás szerint (legfrissebb felül)
 - Aktív karakter jelölve (●), többi (○)
-- Megjelenítés: `{név} ({tsz}sz)` + relatív idő + piros ✕ törlés gomb
+- Megjelenítés: `{név} ({tsz}sz)` + relatív idő + akció chipek: 💾 mentés, ⧉ duplikálás, ✕ törlés (`SlotRow.tsx`)
 - Tap: betöltés (aktív karakter váltás)
-- Long press: törlés megerősítéssel
 - "Fájlból betöltés": a jelenlegi fájl-import működés (JSON fájl kiválasztás)
 - Relatív idő kijelzés ("2 perce", "3 napja", "1 hete")
 
 ### 31.6 Karakter törlés
 
-- Long press → megerősítő popup: "Törlöd: {név}?"
+- ✕ chip → megerősítő popup: "Törlöd: {név}?" (SlotDeleteOverlay)
 - `szilank_char_{uid}` eltávolítás
 - `szilank_slots` frissítés
 - Ha az aktív karakter törlődik: automatikusan a legfrissebb másik lesz aktív
@@ -2668,9 +2647,10 @@ Automatikus felismerés a JSON tartalma alapján:
 #### Egyedi karakter import
 
 1. Validáció (`validateKarakter`)
-2. Ha az `uid` már létezik a slot listában → megerősítő popup: "Felülírod: {név}({tsz})?"
-   - Igen → felülírás
-   - Nem → kihagyás (nem importál)
+2. Ha az `uid` már létezik a slot listában → ImportConfirmOverlay:
+   - Felülírás → a meglévő slot felülírása
+   - Új példány → importálás új uid-dal
+   - Mégse → nem importál
 3. Ha nem létezik → új slot hozzáadás
 4. Betöltés aktív karakterként
 
@@ -2725,6 +2705,8 @@ Snapshot-alapú verziókövetés a karakteren belül. UI: Szilánk picker → Na
 
 ---
 
+## §32 Screen hibahatár (ScreenErrorBoundary)
+
 ```
 Minden tab screen renderelést `ScreenErrorBoundary` React class component burkolja.
 Ha egy screen renderelés közben runtime hiba keletkezik (pl. hiányzó karakter mező):
@@ -2733,7 +2715,7 @@ Ha egy screen renderelés közben runtime hiba keletkezik (pl. hiányzó karakte
 - A többi tab és a fejléc továbbra is működik
 - Console-ba kerül a részletes stack trace
 
-Implementáció: App.tsx - `<ScreenErrorBoundary>` wrapper a `<TabContent />` körül.
+Implementáció: `components/ScreenErrorBoundary.tsx`; App.tsx - `<ScreenErrorBoundary>` wrapper a `<TabContent />` körül.
 ```
 
 ---
@@ -2750,7 +2732,8 @@ formula:
   inS4 = sebCount > 3 × oszlopMéret
   targetFok = inS4 ? 2 : inS3 ? 1 : 0
 
-side effect (HarcScreen useEffect):
+impl: harc/ep-logic.ts → calcSérültFok (pure)
+side effect (HarcScreen.tsx useEffect):
   Ha targetFok változik → session.aktív_státuszok frissítés:
     targetFok = 0: "Sérült (X)" eltávolítása
     targetFok > 0: "Sérült ({targetFok})" hozzáadása/frissítése
@@ -2763,7 +2746,7 @@ UI (AktivScreen):
 ### §33.1 Felszerelés → Fizikai próba Hátrány
 
 ```
-STÁTUSZ: IMPLEMENTÁLVA (2026-10). Pure: engine/felszereles.ts; konstans: konstansok.yaml `felszerelés`.
+Pure: engine/felszereles.ts; konstans: konstansok.yaml `felszerelés`.
 
 Háttér: a `Páncél akadályoztatása` / `Fegyver/Pajzs akadályoztatása` státuszok MEGSZŰNTEK.
   Az egységes modell a Felszerelés keretből számol, a hatás a PRÓBÁKRA megy (NEM harckeret).
@@ -2910,7 +2893,7 @@ Játék módban: csak azok a szekciók látszanak amikben van felvett elem (szin
 
 ```
 Fortély yaml séma (data/schemas/fortely.yaml) - releváns generált mezők a fortelyok.json-ban:
-  név, csoport, maxfok, session_toggle, emlékeztető, kiérdemelhető,
+  név, csoport, alcsoport, maxfok, session_toggle, emlékeztető, kiérdemelhető,
   kp_perfok, ingyenes_perszint, többszörös_típus, többszörös_lista,
   leírás, kiterjeszti_normál, kiterjeszti_erős, fokok[], md_fájl
 
@@ -2962,7 +2945,7 @@ Célszámok:
   8: Emberfeletti
 
 Siker/Kudarc mérték: ±3 különbség = kiemelt eredmény
-Előny/Hátrány: [-2; +2] skála (Státuszokból)
+Előny/Hátrány: [-2; +2] skála (Státuszok + Felszerelés §33.1; clampEHSzint)
 Lehetetlen: tulajdonság + 6 < célszám → nem dobható
 Biztos siker: tulajdonság + 1 >= célszám → dobás nélkül sikeres
 
@@ -2973,7 +2956,8 @@ Előny/Hátrány dobás (k6):
 ```
 
 Webapp implementáció: `TulajdonsagProbaPopup.tsx` (Játék mód, Tulajdonság box kattintás).
-Pure helperek: `tulProbaLehetetlen(tulÉrték, célszám)`, `tulProbaBiztosSiker(tulÉrték, célszám)`.
+Helperek: `tulProbaLehetetlen` / `tulProbaBiztosSiker` (a popupban, a közös `proba-common.ts →
+probaLehetetlen / probaBiztosSiker` köré).
 Dice: `engine/dice.ts → rollElőnyHátrányK6(szint)`.
 
 ### 37.2 Képzettségpróba
@@ -2992,13 +2976,15 @@ Célszámok:
 
 Lépésköz: 3 (fokozatonként)
 Siker/Kudarc mérték: ±6 különbség (2 fokozat) = kiemelt eredmény
-Előny/Hátrány: [-2; +2] skála (Státuszokból)
+Előny/Hátrány: [-2; +2] skála (Státuszok `statusz-proba.ts → calcStátuszPróbaEH` + kiterjesztés §37.7
+  + Felszerelés §33.1 fizikai csoportnál; clampEHSzint)
+Helyzetfüggő módosítók: a képzettség yaml táblái (dobó-oldali pontok, enyhítéssel - kepzettseg-proba-calc.ts)
 Lehetetlen: tulajdonság + szint + 10 < célszám → nem dobható
 Biztos siker: tulajdonság + szint + 1 >= célszám → dobás nélkül sikeres
 ```
 
 Webapp: `KepzettsegProbaPopup.tsx`.
-Pure helperek: `probaLehetetlen(tulÉrték, szint, célszám)`, `probaBiztosSiker(tulÉrték, szint, célszám)`.
+Pure helperek (`tulajdonsagok/kepzettseg-proba-calc.ts`): `probaLehetetlen(tulÉrték, szint, célszám)`, `probaBiztosSiker(tulÉrték, szint, célszám)`.
 
 ### 37.3 Próba képzetlenül
 
@@ -3063,7 +3049,7 @@ Előny/Hátrány dobás (webapp): `engine/dice.ts → rollElőnyHátrány(szint)
 - `szint == 0`: egyetlen k10
 
 Implementáció: `KepzettsegProbaPopup.tsx` (Játék mód, képzettség accordion 🎲).
-Pure helperek (teszteltek): `kiterjesztésElőnyHátrány(típus, fok)`, `buildFortélyFokok(fortélyok)`, `előnyHátrányLabel(szint)`, `probaSiker(tul, szint, k10, célszám)`.
+Pure helperek (teszteltek, `kepzettseg-proba-calc.ts`; `előnyHátrányLabel` a `dice.ts`-ben): `kiterjesztésElőnyHátrány(típus, fok)`, `buildFortélyFokok(fortélyok)`, `előnyHátrányLabel(szint)`, `probaSiker(tul, szint, k10, célszám)`.
 A UI egy kiterjesztést kezel egyszerre (picker); a több-fortélyes eset (md/030_08_01 speciális szakasz) a KM döntése.
 
 ---
@@ -3106,9 +3092,9 @@ Fortéllyal (1-3.fok):
 | Harci kocsihajtás | 0 | - | `harci_helyzet:harci_szekér` | - (nincs Alapeset büntetés) |
 | Harci kocsihajtás | 1 | +8/+8 | `harci_helyzet:harci_szekér` | ✅ yaml kész |
 | Harci kocsihajtás | 2 | +12/+12 | `harci_helyzet:harci_szekér` | ✅ yaml kész |
-| Lövés hátasról | 0 (alapeset) | CÉ:-3 (léptetés) | `harci_helyzet:lovas_harc` | ✅ yaml kész |
-| Lövés hátasról | 1 | CÉ:-3 (ügetés) | `harci_helyzet:lovas_harc` | ✅ yaml kész |
-| Lövés hátasról | 2 | CÉ:-3 (vágta) | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Lövés hátasról | 0 (alapeset) | CÉ:-3 (léptetés; ügetés -7, vágta -13 csak szöveg) | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Lövés hátasról | 1 | CÉ:-3 ügetés / -7 vágta | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Lövés hátasról | 2 | CÉ:-3 vágta | `harci_helyzet:lovas_harc` | ✅ yaml kész |
 
 note: A "Lövés hátasról" CÉ levonása függ a hátas tempójától (léptetés/ügetés/vágta).
       A webapp nem modellezi a tempót automatikusan - a KM/játékos választja a megfelelő fokot.
@@ -3129,9 +3115,9 @@ Követelmény (nem hatás): min_fegyverméret 3 - a fortély `követelmények` t
 ```
 
 Implementáció:
-- A Fegyverelőny/Fegyverhátrány jelenleg informatív (rejtett helyzetek, nem kalkulált a webapp-ban)
-- A +2 kategória bónusz a Harc fül "Fh" oszlopában jelenik meg (effektív fegyverhossz kijelzés, zöld szín)
-- Data-driven: fortély yaml `fegyverhossz` cél módosító (flat, feltétel: `harci_helyzet:X`), HarcScreen generikusan feldolgozza `fortelyMods['fegyverhossz']`-ból
+- A Fegyverelőny/Fegyverhátrány rejtett helyzetek; a Fegyverviszonyt a játékos a VÉ csökkentés popupban választja (ve-csokkentes-calc.ts), az effektív fegyverhosszt a webapp nem veti össze automatikusan az ellenféllel
+- A +2 kategória bónusz a Harc fül "Fh" oszlopában (HarcFegyverTable, `ph-bonus` szín) és a Részletes értékekben (HarcReszletek) jelenik meg
+- Data-driven: fortély yaml `fegyverhossz` cél módosító (flat, feltétel: `harci_helyzet:X`), a calcFortelyMods generikusan gyűjti `fortelyMods['fegyverhossz']`-ba
 - Min fegyverhossz: fortély yaml `min_fegyverméret` követelmény (a `követelmények` tömbben), AktivScreen figyelmeztetésként jeleníti meg (piros `⚠`) a harci helyzet info sávban ha aktív fegyver nem éri el (warning-only, nem blokkol)
 - ✅ IMPLEMENTÁLVA
 
@@ -3145,7 +3131,7 @@ A Lovas/Léglovas harc helyzet aktiválásakor a kizárt helyzetek automatikusan
 |---------|----------------|
 | Lovas harc | magasabbról, léglovas_harc, harci_szekér, belharci_helyzet, földön_fekve, helyhez_kötve, levegőből, orvtámadás, takarásban |
 | Léglovas harc | magasabbról, lovas_harc, harci_szekér, belharci_helyzet, földön_fekve, helyhez_kötve, csúszós_talaj, orvtámadás, takarásban |
-| Magasabbról | lovas_harc, léglovas_harc, földön_fekve, levegőből |
+| Magasabbról | lovas_harc, léglovas_harc, földön_fekve, levegőből, belharci_helyzet, elvesztett_egyensúly, harci_szekér |
 
 #### Fegyverfogás tiltás (harci_helyzetek.yaml `tiltott_fegyverfogások`)
 
@@ -3210,7 +3196,7 @@ if (mk.típus === 'harci_helyzet' && mk.mód === 'szükséges') {
 note: `aktív_helyzetek` neveket tárol, `szükséges` értékek id-k → lookup szükséges.
 
 A gyalogos "Roham" / "Öngyilkos roham" vs Lovas taktikák viszonya:
-- Ha lovas_harc/léglovas_harc aktív: "Roham" és "Öngyilkos roham" disabled
+- Szabály: ha lovas_harc/léglovas_harc aktív, "Roham" és "Öngyilkos roham" disabled
 - Implementáció: "Roham" + "Öngyilkos roham" → megkötés: `harci_helyzet/tiltott/"Lovas harc"` és `"Léglovas harc"` (helyzet névvel, mint a többi tiltott megkötés)
 
 ### 38.6 Lovas manőverek (data layer)
@@ -3297,7 +3283,7 @@ A webapp nem modellezi külön - informatív szöveg, KM kezeli.
 10. ✅ AktivScreen - Fegyverfogás picker: data-driven `tiltott_fegyverfogások` (hárító+kétkezes disabled)
 11. ✅ AktivScreen - Helyzet hozzáadás: fogás auto-reset ha tiltott
 12. ✅ data-types.ts: `HarciHelyzetEntry` interface bővítés (id, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek, tiltott_fegyverfogások)
-13. ⏳ HarcScreen - Fh oszlop: +2 fegyverhossz-kategória kijelzés (opcionális, kozmetikai)
+13. ✅ Harc fül - Fh oszlop: +2 fegyverhossz-kategória kijelzés (HarcFegyverTable `ph-bonus`)
 
 #### III. Tesztelés
 
@@ -3483,6 +3469,9 @@ Kihagyott (nem kerül bele az URL payload-ba):
   - jegyzetek             (szabad szöveg, lehet nagy)
   - napló[]               (kaland bejegyzések, lehet nagy)
   - session               (teljes session objektum - runtime állapot)
+  - checkpoints[]         (verziók, §31b - importkor üres)
+  - _undo                 (undo stack, §29)
+  - kiterjesztés_negálva  (képzettség-kiterjesztés kézi felülbírálás, importkor üres)
 
 Részlegesen szerializált:
   - előtörténet           CSAK a származás_helye mező megy át (sh kulcs, §40.2); a többi
@@ -3513,7 +3502,7 @@ A cél: minimalizálni a JSON méretet tömörítés előtt.
   "fo": fortélyok tömörítve (lásd 40.3),   // mixed[][]
   "ht": hátterek tömörítve (lásd 40.4),    // array
   "fg": fegyverek tömörítve (lásd 40.5),   // array
-  "tf": távfegyverek (lásd 40.6),          // string[]
+  "tf": távfegyverek (lásd 40.6),          // (string | [string, number])[]
   "pa": páncél (csak non-default mezők),   // object (kihagyható ha üres)
   "pj": pajzs méret,                       // string (kihagyható ha üres)
   "fl": felszerelés (lásd 40.7),           // object (kihagyható ha üres)
@@ -3577,17 +3566,20 @@ Példák:
 ### 40.6 Távfegyverek tömörítése
 
 ```
-Egyszerű string tömb (csak az alap név):
-  ["Rövid íj", "Könnyű nyílpuska"]
+String (idea 0) vagy [alap, idea] pár:
+  ["Rövid íj", ["Könnyű nyílpuska", 2]]
 ```
 
 ### 40.7 Felszerelés tömörítése
 
 ```
-Ha nincs nagy_tárgy: kihagyható.
-Ha van: {"nt": [[név, MGT], ...]}
+Ha üres (nincs kézi tárgy, kizárás, felszerelésben=false fegyver): kihagyható.
+Különben "fl": { t?: [[név, méret], ...], kiz?: ["pajzs"|"páncél", ...], fkiz?: [fegyver index, ...] }
+  t    = felszerelés.tárgyak (méret: kicsi/közepes/nagy)
+  kiz  = felszerelés.kizárt_auto
+  fkiz = azon fegyverek indexei, ahol felszerelésben === false (default true, nem kerül át)
 
-Példa: {"nt": [["Hátizsák", 1], ["Pajzs tok", 2]]}
+Példa: {"fl": {"t": [["Hátizsák", "közepes"]], "fkiz": [2]}}
 ```
 
 ### 40.8 Páncél tömörítése
@@ -3621,13 +3613,13 @@ Példa (teljes láncing):
 ```
 input:  karakter objektum (teljes, app state-ből)
 
-1. Kihagyás:  uid, id_leíró, mentés_dátum, jegyzetek, napló, session törlése
+1. Kihagyás:  uid, id_leíró, mentés_dátum, jegyzetek, napló, session, checkpoints, _undo törlése
 2. Kompaktálás: kulcsok rövidítése, tömbösítés, default-ok elhagyása (40.2–40.8 szerint)
 3. Szerializálás: JSON.stringify(compact, null, 0)   // minified, separators: (',',':')
 4. Tömörítés: pako.deflate(jsonString, {level: 9})   // Uint8Array
 5. Kódolás: base64url encode (RFC 4648 §5, padding nélkül)
               A-Z a-z 0-9 - _ karakterek (URL-safe, nem kell urlencode)
-6. URL összeállítás: `${baseUrl}/k#${base64urlString}`
+6. URL összeállítás: `${location.origin}${location.pathname}#${base64urlString}`   (engine/url-share.ts)
 
 output: URL string (~1000-1700 karakter egy átlagos karakterre)
 ```
@@ -3648,17 +3640,18 @@ input:  URL hash fragment (a '#' utáni rész)
    - "fo" → fortélyok[{név, fok, spec_típus, spec_elem, kiérdemelt?}]
    - "ht" → hátterek{faj, leíró[], karma[]}
    - "fg" → fegyverek[{alap, név, anyag, idea}]  (default-ok visszaállítása)
-   - "tf" → távfegyverek[{alap}]
+   - "tf" → távfegyverek[{alap, idea}]  (string = idea 0, [alap, idea] egyébként)
    - "pa" → páncél (default-ok visszaállítása)
    - "pj" → pajzs{méret}
-   - "fl" → felszerelés{nagy_tárgyak[]}
+   - "fl" → felszerelés{tárgyak[] (t), kizárt_auto (kiz)} + fegyverek[i].felszerelésben=false (fkiz indexek)
+   - "sh" → előtörténet.származás_helye
    - Hiányzó opcionális kulcsok → schema default-ok
 5. Kiegészítés runtime mezőkkel:
    - uid: új UUID generálás
    - id_leíró: név + tsz-ből generálás
    - mentés_dátum: aktuális időpont
    - jegyzetek: ""
-   - napló: []
+   - napló: [], checkpoints: []
    - session: empty_karakter.json session default-jai
 6. Schema version ellenőrzés: compact.sv === CURRENT_SCHEMA_VERSION
    Ha nem egyezik → hibaüzenet ("Elavult karakter link, nem importálható")
@@ -3673,7 +3666,7 @@ package: pako (^2.1.0)
   - pako.deflate(input, {level: 9}) → Uint8Array
   - pako.inflate(input) → Uint8Array
   - ~26 KB gzipped, zero dependency, jól karbantartott
-  - https://github.com/nickel-bianchi/pako (zlib JS port)
+  - https://github.com/nodeca/pako (zlib JS port)
 
 base64url: saját utility (nem kell külső lib)
   function toBase64Url(bytes: Uint8Array): string
@@ -3683,8 +3676,8 @@ base64url: saját utility (nem kell külső lib)
 ### 40.12 URL formátum
 
 ```
-Fragment-based (javasolt):
-  https://szilank.app/k#eNqNVM1O4zAQfp...
+Fragment-based (implementált):
+  https://kaktusztea.github.io/szilankrpg/#eNqNVM1O4zAQfp...
 
 Előnyök:
   - Fragment nem küldődik a szervernek → privacy, statikus hosting kompatibilis
@@ -3845,7 +3838,6 @@ Automatikusan bejárja:
 - `konstansok.harcérték_alap.*` → `"konstansok.harcérték_alap.KÉ"`, stb.
 - `konstansok.kp.*` → `"konstansok.kp.perszint"`, stb.
 - `konstansok.arányok.*` → `"konstansok.arányok.max_cm_perszint"`, stb.
-- `konstansok.kp_bónusz.*` → `"konstansok.kp_bónusz.tartós_sérülés_per_fok"` (a KP-adó kiemelt fortélyok a fortély kp_perfok-jából számolnak, nem innen - l. §1.4)
 - **top-level skalár konstansok** → `"konstansok.hm_aszimmetria_osztó"`, `"konstansok.több_támadás_TÉ_levonás"`, stb. (minden szám típusú konstans elérhető formulában, hardcode nélkül)
 - `tsz` → egyetlen érték
 - `extras` → tetszőleges kulcs-érték párok (HM_TÉ, HM_VÉ, CM, páncél mezők, fegyver mezők, stb.)
@@ -3899,13 +3891,18 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 
 | Hívó | Mit épít | Mire használja |
 |------|----------|---------------|
-| `App.tsx` (KP számítás) | Teljes buildContext + buildArrayContext (összes tömb) | KP, primer keret, tulajdonság pont keret, max_HM, max_CM, ÉP |
-| `useHarcComputed.ts` | buildContext + páncél lookupArrays + stringCtx | Páncél SFÉ/MGT, merevvért, lefedettség, KÉ, manőver pont |
-| `fegyver-calc.ts` | Per-fegyver buildContext (fegyver-specifikus extras) | TÉ, VÉ, SP, harckeret, támadások - fegyverenként ismételve |
-| `TavharcScreen.tsx` | Távharc context (távolság, osztó, szorzó) | Cella, cél_VÉ |
-| `MisztikusScreen.tsx` | Alap context | Aura |
+| `components/kp-calc.ts` (calcKpDetails, App.tsx-ből) | Teljes buildContext + buildArrayContext (összes tömb) | KP, primer keret, tulajdonság pont keret, max_HM, max_CM, ÉP |
+| `harc/useHarcComputed.ts` | buildContext + páncél lookupArrays + stringCtx | Páncél SFÉ/MGT, merevvért, lefedettség, KÉ, manőver alap/pont |
+| `harc/fegyver-calc.ts` | Per-fegyver × per-mód buildContext (fegyver-specifikus extras) | TÉ, VÉ, SP, harckeret, támadások |
+| `harcertekek/helpers.ts` (calcMaxAszimmetria) | Alap context (tsz) | max_HM_aszimmetria |
+| `harcertekek/HarcertekekPancelSection.tsx` | Páncél context + lookupArrays + stringCtx | páncél SFÉ/MGT kijelzés |
+| `tulajdonsagok/kepzettseg-limit.ts` | Alap context | képzettség max szint (§19) |
+| `hooks/njk-slots.ts` | Alap context (NJK switcher stat) | ÉP, KÉ |
+| `misztikus/MisztikusScreen.tsx` | Alap context | Aura |
 
-### 41.9 Teljes szabálylista (54 db)
+note: A távharc cella / cél_VÉ NEM reactive szabály - tavharc/helpers.ts (calcVÉ, calcSzorzóÖsszeg).
+
+### 41.9 Teljes szabálylista (51 db)
 
 | ID | Típus | Bemenet összefoglaló |
 |----|-------|---------------------|
@@ -3918,6 +3915,7 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 | összes_kp | képlet | tsz, intelligencia |
 | összes_szekunder_kp | képlet | tsz, emlékezet |
 | tulajdonság_pont_keret | képlet | tsz |
+| manőver_alap | képlet | HM_TÉ, HM_VÉ |
 | manőver_pont | képlet | harcmodor_összeg, tsz |
 | max_CM | képlet | tsz |
 | max_HM | sum_where | harci_fortélyok, harcmodor_összeg, alakzatharc |
@@ -3951,9 +3949,9 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 | merevvért_TÉ_büntetés | if | páncél_merev, MGT, csökkentés |
 | képzettség_max_szint_primer | képlet | max_szint, tsz |
 | képzettség_max_szint_szekunder | képlet | max_szint, tsz + plusz |
-| fegyver_TÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély |
+| fegyver_TÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély - merevvért_TÉ_büntetés |
 | fegyver_VÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély |
-| fegyver_SP | képlet | fegyver + min(erő, limit) + MF + fortély |
+| fegyver_SP | képlet | fegyver + floor(min(erő, limit) × (1 + erőbónusz-arány)) + MF + fortély |
 | fegyver_harckeret | képlet | harcmodor + gyorsaság - MGT + fortély |
 | fegyver_támadások | képlet | 1 + floor(harckeret / sebesség) |
 | Aura | képlet | tsz, önuralom |
@@ -3969,7 +3967,7 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 
 ---
 
-## §42 Egységes effekt-modell (TERV)
+## §42 Egységes effekt-modell (részben implementált)
 
 Két effekt-rendszer él párhuzamosan, részben átfedő, részben szétosztott mód-készlettel:
 
@@ -4050,7 +4048,9 @@ Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ ker
 ### 42.5 Fázisolt migrációs terv
 
 1. **Szabvány** (kész): ez a szekció + a pilot `extrak.yaml` (már megfelel az alaknak/mód-enumnak).
-2. **Adat-migráció** (EGYLÉPÉSES - user döntése; nincs backward-compat, a localStorage invalidálható):
+2. **Adat-migráció** (RÉSZBEN: az `extrak.yaml`-re kész - "Extrák" gomb `extrak-info-calc.ts` + a 42.3
+   precedencia-motor `harc/extrak-effekt.ts → alkalmazEffektek / aktívHatásokCélra`; numerikusan csak teljes
+   korrelációnál, pl. Sebzés popup SP-delta. HÁTRA: fortély `módosítók` + `hatasok.yaml`) (EGYLÉPÉSES - user döntése; nincs backward-compat, a localStorage invalidálható):
    a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra. A `előny`/`hátrány` NEM lesz
    átnevezve (B döntés): a `előny_hátrány` a mód-kategória, a data a `előny`/`hátrány` operátor-neveket
    használja előjeles értékkel - ez már konzisztens. A `szöveges`/`enyhít` egyetlen definícióra vonása.
@@ -4066,15 +4066,15 @@ A módok jelenleg KÜLÖN kódutakon élnek - ez az egyesítés kiindulópontja 
 |-----|------------------|---|
 | `flat` | `engine/fortely-mods.ts` (calcFortelyMods) + `harc/combat-roll-info.ts` (dobás-bónusz) | §16 |
 | `scaled` | `engine/fortely-mods.ts` (calcFortelyMods) | §16 |
-| `override` | `harc/fegyver-calc.ts` (per-fegyver harcérték) | §5–6 |
+| `override` | `harc/fegyver-calc.ts` (SP override, fegyver_override) + `harc/extrak-effekt.ts` (extrák) | §5–8, §21 |
 | `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` / harc-popupok | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
 | `letilt` | `harc/taktika-calc.ts` (feltételes TÉ semlegesítés) | §21 |
 | `szöveges` | `formatters.tsx` / `harc/HatasokInfo.tsx` (megjelenítés) | §22 |
-| `szorzó` | - nincs TS-fogyasztó; csak `hatas_operatorok.yaml` adat | (TERV) |
-| `max_limit` | - nincs TS-fogyasztó; csak `hatas_operatorok.yaml` adat | (TERV) |
+| `szorzó` | `harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `harc/shared.ts` (vé_veszteség duplázás helyzet/státusz) + `harc/extrak-effekt.ts` | §21, §22 |
+| `max_limit` | `harc/extrak-effekt.ts` (csak extrák) | §42.3 |
 
-Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implementál; az `override`/`előny`/`hátrány`/`enyhít`/`letilt`/`szöveges` a fenti EGYÉB kódutakon kezelődik, a `szorzó`/`max_limit`-nak pedig még NINCS runtime-fogyasztója (csak adat/spec). A 3. FÁZIS (42.5) ezt a szórást vonja egyetlen kiértékelő alá a 42.3 precedenciával.
+Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implementál; a többi mód a fenti EGYÉB kódutakon kezelődik. A `harc/extrak-effekt.ts` a 42.3 precedenciát már implementálja, de csak az extrákra. A 3. FÁZIS (42.5) ezt a szórást vonja egyetlen kiértékelő alá a 42.3 precedenciával.
 
 ### 42.7 Rögzített döntések (2026-09-20)
 

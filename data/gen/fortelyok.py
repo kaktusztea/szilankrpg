@@ -110,7 +110,9 @@ def generate_fortelyok():
                     if isinstance(mod, str) or not mod:
                         continue
                     m = mod.get('mód')
-                    if m and m not in valid_módok:
+                    if not m:
+                        felt_errors.append(f"{ctx} fok {fok.get('fok')}: hiányzó módosító mód (cél: '{mod.get('cél')}')")
+                    elif m not in valid_módok:
                         felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen módosító mód '{m}' (nincs a konstansok.effekt_módok listában)")
                     felt = mod.get('feltétel', '')
                     if not felt or not isinstance(felt, str):

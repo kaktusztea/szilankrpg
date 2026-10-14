@@ -26,6 +26,26 @@ def write_json(filename, data):
     print(f"  ✓ {filename}")
 
 
+class _StrictLoader(yaml.SafeLoader):
+    """SafeLoader, ami duplikált mapping-kulcsnál hibát dob.
+    A PyYAML alapból CSENDBEN felülírja a korábbi értéket (pl. egy második `megkötések: []`
+    eltüntette a taktikák valódi megkötéseit) - ez build-gate, nem warning."""
+
+
+def _no_dup_mapping(loader, node, deep=False):
+    seen = set()
+    for key_node, _ in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in seen:
+            raise yaml.constructor.ConstructorError(
+                None, None, f"duplikált kulcs: {key!r}", key_node.start_mark)
+        seen.add(key)
+    return yaml.SafeLoader.construct_mapping(loader, node, deep)
+
+
+_StrictLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _no_dup_mapping)
+
+
 def load_yaml(path):
     with open(path, encoding='utf-8') as f:
-        return yaml.safe_load(f)
+        return yaml.load(f, Loader=_StrictLoader)

@@ -109,8 +109,13 @@ fortély_csoport_sorrend:
 # Követelmény típusok (fortélyoknál)
 # REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 fortély_követelmény_típusok:
-  - képzettség           # harcmodor képzettségek is ide tartoznak
-  - mesterfegyver        # egyetlen megengedett fortély-követelmény
+  - képzettség             # képzettség szint ≥ érték (név lista → VAGY; harcmodorok is)
+  - fortély                # felvett fortély fok ≥ érték (többszörösnél bármely példány)
+  - tiltó_fortély          # a megnevezett fortély megléte KIZÁRÓ ok
+  - min_fegyverméret       # harci-helyzet-kötött min fegyverhossz - WARNING, nem felvételi gate
+  - max_össz_fegyverméret  # forgatott fegyverek össz fegyverhossza ≤ érték (session-toggle tiltás)
+  - max_effektív_mgt       # Erő-korrigált páncél MGT ≤ érték (session-toggle tiltás)
+  - páncél_hajlékonyság    # nem_fém / nem_merev (session-toggle tiltás)
 
 # Módosító célok (fortély hatásoknál, egészség levonásoknál, stb.)
 # REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
@@ -129,7 +134,6 @@ módosító_célok:
 # "" = mindig aktív. Egyébként "prefix:érték" formátum.
 # REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 feltétel_prefixek:
-  - "szituáció"           # pl. "szituáció:belharc", "szituáció:roham"
   - "harci_helyzet"       # pl. "harci_helyzet:meglepetés", "harci_helyzet:hátulról_támadás"
   - "taktika"             # pl. "taktika:fárasztás", "taktika:visszafogott"
   - "fegyver"             # pl. "fegyver:kard, hosszú" - konkrét fegyverre vonatkozik

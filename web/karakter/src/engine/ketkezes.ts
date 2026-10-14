@@ -96,7 +96,8 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
     + k.HM_VÉ + (hb?.VÉ ?? 0) + alapVÉ + mfVÉ + fortelyMods['VÉ'] + khFokBónusz.VÉ + ideaVÉ;
 
   // SP: jobb kéz sebez (elsődleges módja)
-  const erőbónusz = Math.min(k.tulajdonságok.erő, jobbElsődleges.Erőlimit);
+  // Erőbónusz × (1 + fortély erőbónusz-arány), pl. Taktikafókusz: Roham "erőbónusz duplázódik" (§8, §16)
+  const erőbónusz = Math.floor(Math.min(k.tulajdonságok.erő, jobbElsődleges.Erőlimit) * (1 + (fortelyMods['SP_erőbónusz_arány'] ?? 0)));
   const SP = jobbElsődleges.SP + erőbónusz + mfSP + fortelyMods['SP'] + ideaSP;
 
   // Harckeret

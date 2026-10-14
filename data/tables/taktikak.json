@@ -7,7 +7,13 @@
       "TÉ": 3
     },
     "megjegyzés": "Több-támadás TÉ levonás nem érvényesül. Csak ha ≥2 támadás van.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "támadások",
+        "mód": "min",
+        "érték": 2
+      }
+    ],
     "kombó_mód": "blacklist",
     "kombó_lista": [
       "Roham",
@@ -129,7 +135,12 @@
       "TÉ": 3
     },
     "megjegyzés": "KÉ átengedett. TÉ:+3 visszacsapásra, ha nem kap sebet.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "többes_harc",
+        "mód": "tiltott"
+      }
+    ],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Támadó",
@@ -161,7 +172,28 @@
       }
     ],
     "megjegyzés": "Max 1x/küzdelem. Első oda-vissza csapás. VÉ csökk 2x.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "harcmodor",
+        "mód": "tiltott",
+        "érték": "Ostorharc"
+      },
+      {
+        "típus": "per_küzdelem",
+        "mód": "max",
+        "érték": 1
+      },
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Lovas harc"
+      },
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Léglovas harc"
+      }
+    ],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,
@@ -204,7 +236,23 @@
       }
     ],
     "megjegyzés": "Első oda-vissza csapás. VÉ csökk 2x.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "harcmodor",
+        "mód": "tiltott",
+        "érték": "Ostorharc"
+      },
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Lovas harc"
+      },
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Léglovas harc"
+      }
+    ],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,
@@ -234,7 +282,13 @@
       }
     ],
     "megjegyzés": "Skálázható. Harcmodor szinttel nő a max fok.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "harcmodor",
+        "mód": "tiltott",
+        "érték": "Ostorharc"
+      }
+    ],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Kiváró",
@@ -268,7 +322,13 @@
       }
     ],
     "megjegyzés": "Skálázható. Harcmodor szinttel nő a max fok.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Orvtámadás"
+      }
+    ],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Kezdeményező",
@@ -303,7 +363,18 @@
       }
     ],
     "megjegyzés": "Skálázható. Harcmodor szinttel nő a max fok.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Meglepetés"
+      },
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Orvtámadás"
+      }
+    ],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Érintő",

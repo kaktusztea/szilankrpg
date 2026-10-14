@@ -17,7 +17,6 @@ taktikák:
   kombó_mód: "blacklist"
   kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás", "(Lég)Lovas roham"]
   fortély_bővítés: null
-  megkötések: []
   szűrő_harcmodorok: []
 - név: "Érintő"
   id: "érintő"
@@ -84,7 +83,6 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: ["Támadó", "Visszafogott", "Támadás erőből", "1 támadás", "Tettetés"]
   fortély_bővítés: null
-  megkötések: []
   szűrő_harcmodorok: []
 - név: "Öngyilkos roham"
   id: "öngyilkos_roham"
@@ -112,7 +110,6 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null
-  megkötések: []
   szűrő_harcmodorok: []
 - név: "Plusz támadás"
   id: "plusz_támadás"
@@ -147,7 +144,6 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null
-  megkötések: []
   szűrő_harcmodorok: []
 - név: "Támadás erőből"
   id: "támadás_erőből"
@@ -171,7 +167,6 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: ["Kiváró", "Plusz támadás", "1 támadás"]
   fortély_bővítés: null
-  megkötések: []
   szűrő_harcmodorok: []
 - név: "Támadó"
   id: "támadó"
@@ -195,7 +190,6 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: ["Kezdeményező", "Kiváró", "Plusz támadás", "1 támadás"]
   fortély_bővítés: null
-  megkötések: []
   szűrő_harcmodorok: []
 - név: "Védő"
   id: "védő"
@@ -222,7 +216,6 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: ["Érintő", "1 támadás"]
   fortély_bővítés: null
-  megkötések: []
   szűrő_harcmodorok: []
 - név: "Teljes Védekezés"
   id: "teljes_védekezés"

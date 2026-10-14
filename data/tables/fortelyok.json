@@ -3711,9 +3711,11 @@
         "követelmények": [],
         "módosítók": [
           {
-            "cél": "vé",
-            "típus": "flat",
+            "cél": "VÉ",
             "érték": 0,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
             "feltétel": "fegyverfogás:fegyver_hárító",
             "megjegyzés": "Alapeset: hárítófegyver VÉ nem aktív"
           }

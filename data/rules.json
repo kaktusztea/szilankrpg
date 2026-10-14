@@ -421,11 +421,12 @@
     },
     {
       "id": "fegyver_SP",
-      "formula": "fegyver_alap_SP + min(tulajdonságok.erő, fegyver_erőbónusz_limit) + fegyver_mf_SP + fegyver_fortély_SP",
+      "formula": "fegyver_alap_SP + floor(min(tulajdonságok.erő, fegyver_erőbónusz_limit) * (1 + fegyver_fortély_SP_erőbónusz_arány)) + fegyver_mf_SP + fegyver_fortély_SP",
       "inputs": [
         "fegyver_alap_SP",
         "tulajdonságok.erő",
         "fegyver_erőbónusz_limit",
+        "fegyver_fortély_SP_erőbónusz_arány",
         "fegyver_mf_SP",
         "fegyver_fortély_SP"
       ]

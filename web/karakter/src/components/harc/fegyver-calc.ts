@@ -120,6 +120,7 @@ export function calcFegyverResults(
     páncél_van: k.páncél.alap ? 1 : 0, páncél_végtagvédettség: k.páncél.végtagvédettség,
     páncél_sisak: k.páncél.sisak ? 1 : 0, páncél_idea: k.páncél.idea, páncél_rongálódás: k.páncél.rongálódás,
     fegyver_fortély_TÉ: fortelyMods['TÉ'], fegyver_fortély_VÉ: fortelyMods['VÉ'], fegyver_fortély_SP: fortelyMods['SP'],
+    fegyver_fortély_SP_erőbónusz_arány: fortelyMods['SP_erőbónusz_arány'] ?? 0,
     fegyver_fortély_harckeret: fortelyMods['harckeret'],
     harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: 0,
   });

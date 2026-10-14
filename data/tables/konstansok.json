@@ -132,7 +132,12 @@
   ],
   "fortély_követelmény_típusok": [
     "képzettség",
-    "mesterfegyver"
+    "fortély",
+    "tiltó_fortély",
+    "min_fegyverméret",
+    "max_össz_fegyverméret",
+    "max_effektív_mgt",
+    "páncél_hajlékonyság"
   ],
   "módosító_célok": [
     "KÉ",
@@ -146,7 +151,6 @@
     "MGT_TÉ_büntetés"
   ],
   "feltétel_prefixek": [
-    "szituáció",
     "harci_helyzet",
     "taktika",
     "fegyver",
