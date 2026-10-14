@@ -5,6 +5,20 @@
 > Engine formulák → **engine_spec.md** (§1-§42)
 > UI viselkedés → **gui_spec.md**
 
+## Tartalom
+
+- [TODO Backlog](#todo-backlog)
+- [Fegyver v2 bevezetés (lezárva)](#fegyver-v2-bevezetés--lezárva) ✅
+- [Egységes effekt-modell](#egységes-effekt-modell-) 🚧
+- [Harc alakzatban](#harc-alakzatban-) 🚧
+- [Méreggenerátor](#méreggenerátor-) 🚧
+- [Szorzók kezelése (megbeszélés alatt)](#szorzók-kezelése--megbeszélés-alatt) 🚧
+- [Fegyverek bemenő paramétereinek hangolása (javaslat, jóváhagyásra vár)](#fegyverek-bemenő-paramétereinek-hangolása--javaslat-jóváhagyásra-vár) 🚧
+- [Manőver helyzetfüggő módosítók: Nehézség → Dobásmódosító (kész, 2026-10)](#manőver-helyzetfüggő-módosítók-nehézség--dobásmódosító--kész-2026-10) ✅
+- [Felszerelés funkció (kész, 2026-10)](#felszerelés-funkció--kész-2026-10) ✅
+- [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
+- [Szabálykönyv (md/) konvenciók, tanulságok](#szabálykönyv-md-konvenciók-tanulságok)
+
 ---
 
 ## TODO Backlog
@@ -17,23 +31,42 @@
 | **Fegyver Idea implementáció** ✅ | `idea_default` modell (Modell 2): a fegyver-definíció `idea_default` a standard példány kezdő-Ideája; a v2 harcértékek EZT MÁR tartalmazzák. A felvett példány `idea_default`-ról indul, hangolható (sérülés le / áldás fel). A kalkuláció a `IDEA[példány] − IDEA[idea_default]` DELTÁT alkalmazza (TÉ/VÉ/SP) - `ideaDelta()` pure fn (`harc/shared.ts`), a `fegyver_idea_tabla.json` adja a szint-táblát. Bekötve: Harcértékek fül chip + Harc fül (`buildFegyverRows`/`calcFegyverResults`) + kétkezes harc (`ketkezes.ts`) + **távharc CÉ** (per-fegyver `karakter.távfegyverek[].idea`, a CÉ-be 1:1 delta a `idea_default`-hoz képest, spec §17). Teljes (közelharc + kétkezes + távharc). | harcszimulacio.spec §16/8 |
 | Felszerelés → próba-Hátrány | ✅ KÉSZ (2026-10) - l. „Felszerelés funkció" szekció lentebb + engine_spec §15/§33.1. | engine_spec §15/§33.1 |
 | **`cél_páncél` VÉ/SFÉ extrák bekötése** ✅ | Az SP-ág kész (Sebzés popup „Ellenfél páncél" választó → `panceltalant_jobban_sebez` +3 SP). A VÉ/SFÉ-hatásúak (`sfe_duplazodik` = Meneth, `pocsek_vedekezo_pancelos_ellen` = Béltépő) az egységes „Extrák" gombon át jelennek meg (§42 2. fázis): a választott ellenfél-páncél kategóriától függő aktív/inaktív státusz + hatás-összefoglaló (numerikus VÉ/SFÉ-alkalmazás nélkül - az a §42 3. fázis). A statikus fegyver-VÉ/SFÉ nem függhet a dobásonként változó ellenfél-páncéltól; a popup-szintű Extrák jelzés a helyes feloldás (korábbi ad-hoc jelölés kivezetve). | STUDY.fegyvergenerator_v2 3g |
-| **Egységes effekt-modell** | A fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia). 1. fázis kész (szabvány + `extrak.yaml` pilot). 2. fázis kész az `extrak.yaml`-re: „Extrák" gomb (aktív/inaktív/KM, `extrak-info-calc.ts`) + §42.3 precedencia-motor (`extrak-effekt.ts`: `alkalmazEffektek`, `aktívHatásokCélra`). Numerikus alkalmazás CSAK teljes korrelációnál: Sebzés popup SP-delta (ellenfél-páncél ismert); hiányos infónál warning (VÉ-csökkentés popup, VÉ-t érintő cél_páncél-extra) + Extrák jelzés. Hátra: a teljes 3. fázis - `calcFortelyMods` + `applyFegyverOverrides` + hatás-operátorok beolvasztása EGY runtime kiértékelőbe (regressziós védőháló kell), és a statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben. | §42 |
+| **Egységes effekt-modell** | 1. fázis kész, 2. fázis részben (csak `extrak.yaml`), 3. fázis hátra - l. „Egységes effekt-modell" szekció lentebb. | §42 |
 
 ---
 
-## Fegyver v2 bevezetés - hátralévő tételek
+## Fegyver v2 bevezetés ✅ (lezárva)
 
-> Kanonikus migrációs dokumentum (részletek, döntések, állapot): **`STUDY.fegyvergenerator_v2.md`** (wiki). Itt CSAK a hátralévő tételek pointer-listája áll, hogy ne duplikálódjon. A v2 "mag" kész: a webapp runtime a `fegyverek_v2.json`-t olvassa (data layer csere 3a, típusok/kalkuláció 3b, reactive context 3e, Sebzés popup + Ellenfél páncél SP-ág 3g, kétkezes harc, lovas követelmények, szabálykönyv `md/` átvezetés - mind kész).
+> Kanonikus migrációs dokumentum (részletek, döntések, állapot): **`STUDY.fegyvergenerator_v2.md`** (wiki). Itt CSAK a bevezetés tételeinek pointer-listája áll, hogy ne duplikálódjon. A v2 "mag" kész: a webapp runtime a `fegyverek_v2.json`-t olvassa (data layer csere 3a, típusok/kalkuláció 3b, reactive context 3e, Sebzés popup + Ellenfél páncél SP-ág 3g, kétkezes harc, lovas követelmények, szabálykönyv `md/` átvezetés - mind kész).
 
-Ami a v2 bevezetésből még hátravan (KIZÁRÓLAG ez a 4):
+A v2 bevezetés tételei (mind kész; az egyetlen nyitott, nem v2-specifikus tétel külön szekcióba került):
 
 1. **`cél_páncél` VÉ/SFÉ-hatású extrák** ✅ (Meneth `sfe_duplazodik`, Béltépő `pocsek_vedekezo_pancelos_ellen`) - az SP-ág és a VÉ/SFÉ jelölés-ág is kész (jelölés, nem numerikus levonás). Részletek: a fenti backlog-sor + STUDY 3g.
 2. **Fegyver Idea implementáció** ✅ - `idea_default` modell (Modell 2): a példány `idea_default`-ról indul, a delta hat a harcértékre. Teljes: közelharc (TÉ/VÉ/SP) + kétkezes + távharc CÉ (per-fegyver). Részletek: a fenti backlog-sor.
-3. **Egységes effekt-modell (§42) 2-3. fázisa** - reactive runtime feltétel→hatás kiértékelés. Részletek: a fenti backlog-sor + STUDY.
+3. **Egységes effekt-modell (§42)** → kiemelve önálló szekcióba (nem v2-specifikus): l. „Egységes effekt-modell" lentebb.
 4. **Pajzs pipeline kivezetése** ✅ - a webapp már a `fegyverek_v2.json` (pajzs-entryk) + `konstansok.pajzs_hatások` alapon dolgozik (`pancel-calc.ts`, `buildPajzsFegyverNév`); a `pajzsok.json`-t NEM tölti be. Archiválva: `archive/data_fegyverek_v1/{pajzsok.json,pajzs_pattern.json}`. A `sync_fegyvertablazatok.py sync_pajzs()` (fegyverek_fixed.json → 068_09.md szabálykönyv-szinkron) marad, más cél.
-5. **Távharc fegyverek v2 adatmodellre** ✅ - a távfegyverek tipizált, kézi v2 JSON-on (`data/sources/fegyverek/tavfegyverek_fixed.json` → `data/gen/fegyverek_v2.py::generate_tavfegyverek_v2` → `data/tables/tavfegyverek_v2.json`). Minden mező numerikus (`SP: -99` sentinel = nincs/spec sebzés; `Hatótáv` → `hatótáv_bázis` + `hatótáv_erő_szorzó`; `sebzésjelleg` enum S/V/Z/spec). A nem-numerikus hatások (halál, spec, SFÉ-dupla, pajzs-VÉ, újratöltés, stb.) a közös `extrak.yaml`-ban (`fegyver_extrak.json`), egységes `tavharc_` prefixű id-kkel. A webapp a v2 táblát tölti, `név`-alapú lookup, nincs `parseInt`. A régi `tavfegyver_pattern.json` + `tavfegyverek.json` archiválva. Idea: a per-fegyver `karakter.távfegyverek[].idea` bekötve a CÉ-be (Modell 2 delta, spec §17) - a korábbi közös UI-only idea-state (ami mindkét fegyver CÉ-jét torzította) kivezetve. **Hátra**: a `process_fegyverek.py` teljes kivezetése (a `data/patterns/` üres, de a `code/lib/`-nek van másik fogyasztója: `generate.markdown.py`). | STUDY.tavharc_v2 |
+5. **Távharc fegyverek v2 adatmodellre** ✅ - a távfegyverek tipizált, kézi v2 JSON-on (`data/sources/fegyverek/tavfegyverek_fixed.json` → `data/gen/fegyverek_v2.py::generate_tavfegyverek_v2` → `data/tables/tavfegyverek_v2.json`). Minden mező numerikus (`SP: -99` sentinel = nincs/spec sebzés; `Hatótáv` → `hatótáv_bázis` + `hatótáv_erő_szorzó`; `sebzésjelleg` enum S/V/Z/spec). A nem-numerikus hatások (halál, spec, SFÉ-dupla, pajzs-VÉ, újratöltés, stb.) a közös `extrak.yaml`-ban (`fegyver_extrak.json`), egységes `tavharc_` prefixű id-kkel. A webapp a v2 táblát tölti, `név`-alapú lookup, nincs `parseInt`. A régi `tavfegyver_pattern.json` + `tavfegyverek.json` archiválva. Idea: a per-fegyver `karakter.távfegyverek[].idea` bekötve a CÉ-be (Modell 2 delta, spec §17) - a korábbi közös UI-only idea-state (ami mindkét fegyver CÉ-jét torzította) kivezetve. A régi md→json fegyver-pipeline (`process_fegyverek.py` + `lib/MdToJsonConverter.py`) kivezetve, archiválva: `archive/data_fegyverek_v1/` (`c9bbc579`). Részletek: STUDY.tavharc_v2.
 
 NEM része a v2 bevezetésnek (külön backlog / más alrendszer): Erő-követelmény mechanika (generátor-balansz), Akadályoztatás státuszok (státusz data-layer), Fárasztás érték (taktika data-layer), balansz `raw`→`final` hangolás (külön backlog), opcionális KM-fejezet + custom fegyver mező (külön backlog).
+
+---
+
+## Egységes effekt-modell 🚧
+
+Engine spec: §42 (TERV), fázisterv: §42.5. Cél: a fortély `módosítók` (`flat/scaled/override`) és a hatás-operátorok (`szorzó/max_limit/…`) egyesítése EGY effekt-nyelvtanra (alak + mód-enum + precedencia).
+
+Állapot:
+- **1. fázis - Szabvány** ✅: §42 + a pilot `extrak.yaml`.
+- **2. fázis - Adat-migráció** (részben): az `extrak.yaml`-re kész - „Extrák" gomb (aktív/inaktív/KM, `extrak-info-calc.ts`) + §42.3 precedencia-motor (`extrak-effekt.ts`: `alkalmazEffektek`, `aktívHatásokCélra`). Numerikus alkalmazás CSAK teljes korrelációnál: Sebzés popup SP-delta (ellenfél-páncél ismert); hiányos infónál warning (VÉ-csökkentés popup, VÉ-t érintő cél_páncél-extra) + Extrák jelzés.
+- **3. fázis - Kód**: hátra.
+
+TODO:
+- [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat)
+- [ ] 3. fázis: `calcFortelyMods` + `applyFegyverOverrides` + hatás-operátorok beolvasztása EGY runtime kiértékelőbe (§42.3 precedencia)
+- [ ] Előfeltétel a 3. fázishoz: regressziós védőháló (meglévő fortély-mods tesztek + új precedencia-tesztek)
+- [ ] Statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben
+
+Kapcsolódik: „Szorzók kezelése" (a passzív `vé_veszteség` duplázók bekötése ugyanebbe a láncba).
 
 ---
 
@@ -103,6 +136,71 @@ Egyetlen VÉ-levonási tengelyen (`vé_csökkentés` = aktív/támadó oldal, `v
 | Roham + Elcsigázottság + Helyhez kötve + VÉ kiterjesztése | ×16 | ×5 | ×2 |
 
 A tét: a.) a szélső esetben ×16 (brutális), b.) ott is kezelhető (×5), c.) mindig fix ×2.
+
+---
+
+## Fegyverek bemenő paramétereinek hangolása 🚧 (javaslat, jóváhagyásra vár)
+
+Forrás: `data/sources/fegyverek/fegyverek.yaml` (WORK paraméterek). Szempontok: középkori fegyverismeret + más fantasy RPG-k konvenciói, a Szilánk Fegyvergenerátor modelljén belül (`code/balance/fegyvergenerator_balansz.py` `modok()`), a Fegyver extrák (`extrak.yaml`) és a Felszerelés pont (`max(hossz-pont, súly-pont)`, `md/010_03_06`) figyelembevételével.
+
+Az értékek Erő=0 bázisértékek, a generátorral kiszámolva (előtte → utána).
+
+### A) Ellentmondások (javítás javasolt)
+
+1. **Szigony, egykezes: `hossz` 5 → 3.** A neve egykezes, de a hossz 5 másfélkezes forgatást ad (+ fölösleges "1 kézzel" mód).
+```
+előtte  másfélkezes  TÉ5 VÉ5 SP+8 Seb7 (+ 1 kézzel)
+utána   egykezes     TÉ3 VÉ3 SP+7 Seb7
+```
+2. **Csatabárd, kétkezes: `hossz` 5 → 7, `akadály` 2 → 1.** Most másfélkezes, "1 kézzel" móddal. A dán bárd / bárdis 1,5 m fölötti, kétkezes kategória (a hossz 7 a Beszorítható extrát is hozza).
+```
+előtte  másfélkezes  TÉ5 VÉ5 SP+7 Át2 Seb10 (+ 1 kézzel)
+utána   kétkezes     TÉ7 VÉ7 SP+8 Át2 Seb11
+```
+3. **Harci kalapács: ma azonos a Buzogány, kétkezes-sel.** A harci kalapácsnak (bec de corbin, lucerni kalapács) tüskés hátoldala is van: második aktor `lándzsahegy-rövid-keskeny`, `akadály` 2 → 1.
+```
+utána  zúzó   TÉ7 VÉ5 SP+9 Át0 Seb10  (elsődleges, változatlan)
+       szúró  TÉ7 VÉ7 SP+7 Át4 Seb10  (másodlagos, páncéltörő)
+```
+4. **Tőr, páncélszúró: Átütés 0.** A rondel / misericorde a páncél réseinek áttörésére készült: aktor `pengehegy-tőr` → `pengehegy-kard`. Opcionálisan + `pontos` extra (Precíz támadás).
+```
+előtte  TÉ3 VÉ3 SP+4 Át0  →  utána  TÉ3 VÉ3 SP+5 Át1
+```
+5. **Akadály egységesítése.** A hossz 7 körül vegyesen 1 és 2 szerepel. A 2 ("csak szekéren szállítható") az alabárdra / pikára illik, a kétkezes kardot vállon hordták: Kard, kétkezes 2 → 1 (Csatabárd, kétkezes és Harci kalapács: fent). Alabárd, Pika marad 2.
+
+### B) Realisztikusabbá tétel
+
+6. **Csatacsákány: `súly` nehéz, `akadály` 1 → 0, második aktor `buzogányfej-tompa`.** Az egykezes harci csákány nehéz fejű, jellemzően kalapácshátú; az akadály 1 a schema szerint a lándzsa jellegűeké.
+```
+utána  szúró  TÉ3 VÉ3 SP+5 Át4 Seb8  (elsődleges)
+       zúzó   TÉ3 VÉ1 SP+6 Át0 Seb8
+       Felsz. 0→1, Erő-követelmény 2
+```
+7. **Buzogány, láncos: `súly` átlagos → nehéz.** Ugyanaz a buzogányfej láncon - nem lehet könnyebb az egykezes (nehéz) buzogánynál.
+```
+előtte  SP+6 Seb8, Felsz. 0  →  utána  SP+7 Seb9, Felsz. 1, Erő-köv. 2
+```
+8. **Kard, rapír: második aktor `vágóél-egyenes-átlagos` → `-rövid`, + `pontos`, + `zuzo_ellen_rosszabb`.** A rapír éle gyenge, ma mégis a vágómód adja a jobb `TÉ`/`VÉ`-t; precíziós szúrófegyver (mint a Tőrkard), a vékony penge rossz nehéz ütés hárítására.
+```
+vágómód  előtte TÉ6 VÉ6 SP+5  →  utána TÉ5 VÉ5 SP+4
+```
+9. **Szigony (egykezes, kétkezes): + `beakadas_kockazat`.** A szakállas hegy pontosan erre való.
+
+### C) Döntésre vár (nem módosítandó jóváhagyás nélkül)
+
+10. **Ostor, Ostorkard: `hossz` 9 → kétkezes forgatás, Felsz. 2.** Mindkettő egykezes fegyver. Modell-korlát: a forgatás a hosszból jön, nincs "hosszú, de egykezes" kategória. A hossz 5 `TÉ`:-4 veszteség + fölösleges "1 kézzel" mód. Lehetőségek: marad / hossz 5 / felülírható `forgatás` mező (`konstansok.yaml` + séma bővítés).
+11. **Erőbónusz-limit 0: Dzsambia, Rövid bot.** Hasonló fegyvereknél 2 (Kés, Furkós bot); bunkónál, ívelt tőrnél az erőnek számítania kell → mindkettő 2. A Béltépő 0-ja marad (a Pocsék védekező extrával tudatos csomag).
+12. **Gyanús limitek (csak jelezve):** Kard, kígyó: 1; Kard, szablya: 4; Buzogány, egykezes és tollas: 4. A régi táblából jönnek; ha nincs mögöttük setting-indok, inkább 99 vagy 3.
+
+### Szándékosan érintetlen
+
+Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Meneth), a teszt-minták (Naginata, Wakizashi), a `state` mező (marad `raw`).
+
+### Végrehajtáskor
+
+- `fegyverek.yaml` módosítás → az `update_fegyvertablazat.yml` workflow (önteszt-kapu + `sync_fegyvertablazatok.py`) újragenerálja a `md/068_0x` táblákat; lokálisan is futtatható.
+- Változik a `data/tables/fegyverek_v2.json` → `npm run build` (vitest is); az érintett fegyverekre épülő golden tesztek frissítendők.
+- A balansz-önteszt regressziós elvárásait (`teszt.elvart`) egyik javaslat sem érinti.
 
 ---
 
