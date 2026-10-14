@@ -8,6 +8,16 @@ Az alábbiakra használható:
 
 A generátor determinisztikus: a fegyver néhány paraméteréből (hossz, sebzőfelület, súly, anyag, stb.) egyszerű összeadással jönnek ki a harcértékek. Majdnem minden táblázatokban található fegyver így készült - ám van pár speciális kivétel.
 
+<br />
+
+---
+## Adat és kód
+
+- [Adatállományok](../data/sources/fegyverek/)
+- [Scriptek](../code/balance/)
+
+<br />
+
 ---
 ## Az alapelv
 
@@ -441,6 +451,20 @@ Kész fegyvernél vesd össze az értékeit egy hasonló táblázatbeli fegyverr
 
 - Ha mindenben jobb egy meglévőnél, akkor hiányzik a fonákja.
 - Ha a többlet csak Ideából vagy legendás anyagból jön, az OK - ilyenkor az Ár és a ritkaság adja a fonákot.
+
+<br />
+
+---
+## Speciális fegyverek
+
+Léteznek nagyon speciális fegyverek, amelyek modellezésére ez a Fegyvergenerátor csak hatalmas módosításokkal lenne lehetséges, így ezek esetében az értékek és Extrák meghatározását manuálisan végeztük. Ezek az alábbi csoportok:
+
+- Hárítófegyverek
+- Garott
+- Kopják
+- Pajzsok
+
+[Adattábla](../data/sources/fegyverek/fegyverek_fixed.json)
 
 ---
 
