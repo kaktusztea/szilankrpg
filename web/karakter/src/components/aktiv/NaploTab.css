@@ -234,6 +234,9 @@
 .felsz-table th:not(:first-child),
 .felsz-table td:not(:first-child) { width: 1%; white-space: nowrap; }
 .felsz-table td:not(:first-child) { padding-left: 2px; padding-right: 2px; }
+/* Méret oszlop (fejléc + chip) középre igazítva */
+.felsz-table th:nth-child(2),
+.felsz-table td:nth-child(2) { text-align: center; }
 .felsz-row-off td {
   opacity: 0.5;
 }
