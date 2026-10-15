@@ -16,7 +16,7 @@ Méregkeverés + Érzékenység
           vs
        Célszám
 
-Alap célszám: `xy` ⭕TODO⭕
+Alap célszám: `xy`  ⭕TODO⭕
 ⭕TODO: egyéb módosítók⭕
 ```
 
