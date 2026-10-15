@@ -1,4 +1,4 @@
-## 🟣 Manőverfókusz: Szike (1)
+## 🟣 Manőverfókuszok: Szike (1)
 
 A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső szervek elhelyezkedésével.
 
