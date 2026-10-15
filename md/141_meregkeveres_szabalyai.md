@@ -177,6 +177,6 @@ Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges
 
 ---
 
-🔗 [Méregellenállás próba](142_meregellenallas.md) →
+🔗 [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)→
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)

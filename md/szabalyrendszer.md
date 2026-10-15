@@ -294,9 +294,10 @@
 ### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
 
 - [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
-- [Méregellenállás próba](142_meregellenallas.md)
-- [Méregérzékelés](143_meregerzekeles.md)
-- [Példamérgek](144_peldamergek.md) ⚡
+- [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
+- [Méregellenállás próba](143_meregellenallas.md)
+- [Méregérzékelés](144_meregerzekeles.md)
+- [Példamérgek](145_peldamergek.md) ⚡
 
 ---
 ### 15. [Szituációk](150_szituaciok.md)

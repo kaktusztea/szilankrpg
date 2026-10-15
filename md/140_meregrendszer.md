@@ -2,11 +2,13 @@
 
 ### [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
 
-### [Méregellenállás próba](142_meregellenallas.md)
+### [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
 
-### [Méregérzékelés](143_meregerzekeles.md)
+### [Méregellenállás próba](143_meregellenallas.md)
 
-### [Példamérgek](144_peldamergek.md) ⚡
+### [Méregérzékelés](144_meregerzekeles.md)
+
+### [Példamérgek](145_peldamergek.md) ⚡
 
 ---
 
