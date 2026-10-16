@@ -4,6 +4,11 @@ A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy
 
 Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod. Mágikus tárgyak, fegyverek is képesek lehetnek **Hatások** okozására.
 
+### Szorzó hatások ökölszabály ❗
+
+Egy karakterre ható több szorzó kombinációja esetén CSAK a legnagyobb számít.\
+Természetesen ez a másik karakter oldalán is igaz, így szélsőséges esetben lehetséges, hogy a támadó és védő szorzói erősítik egymás hatását (összeszorzódnak).
+
 <br />
 
 ## ⚜️ Előny+1,2 és Hátrány-1,2 Hatások
@@ -229,7 +234,7 @@ Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra ninc
 
 Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged duplázódik.
 
-Nem halmozható.
+🔆 Nem halmozható. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
 
 <br />
 

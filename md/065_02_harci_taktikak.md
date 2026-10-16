@@ -240,6 +240,8 @@ Első oda-vissza csapásnál:
 
 ❌ Ostorharc harcmodorban
 
+🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
+
 A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy hatalmas sebzést érjen el. Súlyosan sérült harcosok utolsó mentsvára lehet.
 
 🔆 Ha a rohamozó betalál (nem muszáj sebzőnek lennie):
@@ -286,6 +288,8 @@ Első oda-vissza csapásnál:
 ❌ Más taktikával együtt
 
 ❌ Ostorharc harcmodorban
+
+🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
 
 🔆 Ha a rohamozó betalál (nem muszáj sebzőnek lennie):
 
