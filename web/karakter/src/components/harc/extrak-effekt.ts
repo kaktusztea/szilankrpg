@@ -1,7 +1,7 @@
 /**
  * Egységes effekt-precedencia (engine_spec §42.3) - egyetlen harcérték-célra.
  *
- * A §42.3 sorrend: additív (flat+scaled) → szorzó → override → max_limit → (kocka: előny/hátrány,
+ * A §42.3 sorrend: override (bázis-csere) → additív (flat+scaled) → szorzó → max_limit → (kocka: előny/hátrány,
  * itt nem numerikus) → letilt/szöveges (nem számol). Kerekítés: FLOOR minden nem-egész köztesnél.
  *
  * Ez a §42 3. fázisának izolált, tesztelhető magja. JELENLEG csak ott hívjuk, ahol a teljes
@@ -39,7 +39,8 @@ export function alkalmazEffektek(bázis: number, hatások: ExtraHatás[]): numbe
     }
   }
 
-  let érték = override !== null ? override : Math.floor((bázis + additív) * nagyító * kicsinyítő);
+  // §42.3 (2026-10-16): az override a BÁZIST cseréli (több override: az utolsó), az additív/szorzó utána rárakódik.
+  let érték = Math.floor(((override ?? bázis) + additív) * nagyító * kicsinyítő);
   if (maxLimit !== null) érték = Math.min(érték, maxLimit);
   return érték;
 }

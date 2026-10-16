@@ -39,12 +39,13 @@ Engine spec: §42 (részben implementált), fázisterv: §42.5. Cél: a fortély
 TODO:
 - [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat). Felmérés (2026-10-16), nyitott döntések:
   - ~~Mód-kulcs 4 dialektusban~~ ✅ (2026-10-16, A döntés): mindenhol `mód`, a `hatas_operatorok.yaml` réteg törölve (`duplázás`/`arányos` → `szorzó`), a mód-katalógus a `konstansok.effekt_módok`. Maradt: a `konstansok` egészség-levonás mód nélküli sorai (implicit `flat`).
-  - Taktika sorrendfüggő akkumulációja (Fárasztás: `override 3` + fegyverelőnyben `flat +1` = 4) ütközik a §42.3-mal (override eldobja a flat-et → 3). Kivétel vagy adat-átírás?
+  - ~~Taktika sorrendfüggő akkumulációja~~ ✅ (2026-10-16): a §42.3 override = bázis-csere (override → additív → szorzó), így a Fárasztás 4 kivétel nélkül; a `calcTaktikaVéCsökkentésBázis` a közös `alkalmazEffektek` motort hívja.
   - Cél-vokabulár: harcérték (`TÉ`/`VÉ`) vs esemény (`té_dobás`, `vé_csökkentés`) jogos kettősség; de rendezetlen a helyzetek kisbetűs `vé` célja (Láthatatlan +5/+10) és a `fegyver_TÉ`/`fegyver_VÉ` alak.
   - ~~Validációs lyuk~~ ✅ (2026-10-16): a `harci_helyzetek.yaml` `hatások` build-gate alatt (`validate_harci_helyzet_hatasok`: operátor a katalógusból, cél esemény-id vagy `konstansok.harcérték_célok`). Javítva: Láthatatlan/Takarásban `VÉ` cél (Takarásban `előny 5` → `flat 5`), Vér elvakít → `érzék_próba`; új `flat` operátor. A szimulátor most a `flat` értékeket is alkalmazza (Meglepetés/Láthatatlan `vé_csökkentés`, `VÉ`).
 - [ ] Helyzet `flat` hatások webapp-fogyasztója: Láthatatlan/Takarásban `VÉ` +5/+10 a harcértékbe, Meglepetés/Láthatatlan `vé_csökkentés` +1/+2 a VÉ-csökkentés popupba (ma egyiket sem alkalmazza az app)
 - [ ] 3. fázis: `calcFortelyMods` + `applyFegyverOverrides` + hatás-operátorok beolvasztása EGY runtime kiértékelőbe (§42.3 precedencia)
 - [ ] Előfeltétel a 3. fázishoz: regressziós védőháló (meglévő fortély-mods tesztek + új precedencia-tesztek) - a `fortely-mods.test.ts` és az `extrak-effekt.test.ts` már megvan
+- [ ] Harcszimulátor eltérések a §42.3-tól: Fárasztás fix `v = 3` (hiányzik a fegyverelőnyös +1), Belharc `te = 0` végső nullázás (a webapp és a §42.3 szerint a harcmodor/MF/fortély megmarad) - `code/balance/fegyvergenerator_harcszimulator.py`
 - [ ] `zuzo_ellen_rosszabb` extra (`vé_veszteség` ×2) bekötése a `véVesztésSzorzó`-ba (ma csak az Extrák gombon jelenik meg)
 - [ ] Statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben
 

@@ -14,9 +14,12 @@ describe('alkalmazEffektek - §42.3 precedencia', () => {
     expect(alkalmazEffektek(10, h)).toBe(6);
   });
 
-  it('override felülír mindent (additív/szorzó eldobódik)', () => {
-    const h: ExtraHatás[] = [{ cél: 'VÉ', mód: 'flat', érték: 5 }, { cél: 'VÉ', mód: 'override', érték: 0 }];
-    expect(alkalmazEffektek(9, h)).toBe(0);
+  it('override a bázist cseréli, az additív és a szorzó utána rárakódik (sorrend-független)', () => {
+    // bázis 9 → override 0, majd +5 → 5
+    expect(alkalmazEffektek(9, [{ cél: 'VÉ', mód: 'flat', érték: 5 }, { cél: 'VÉ', mód: 'override', érték: 0 }])).toBe(5);
+    // Fárasztás-minta: override 3 + flat 1 → 4; szorzóval (3+1)×2 = 8
+    expect(alkalmazEffektek(0, [{ cél: 'x', mód: 'override', érték: 3 }, { cél: 'x', mód: 'flat', érték: 1 }])).toBe(4);
+    expect(alkalmazEffektek(0, [{ cél: 'x', mód: 'override', érték: 3 }, { cél: 'x', mód: 'flat', érték: 1 }, { cél: 'x', mód: 'szorzó', érték: 2 }])).toBe(8);
   });
 
   it('max_limit felső korlát az override után is', () => {

@@ -4010,15 +4010,16 @@ REFERENCIA-listát használják (a `manoverek.yaml` `követelmények`-je; pilot:
 `előny_hátrány` MÓD-KATEGÓRIA két operátor-neve (a 2026-10-16-ig élt `hatas_operatorok.yaml` osztályozása) - az adat a
 `előny`/`hátrány` nevet írja előjeles értékkel, a `előny_hátrány` a mechanika-osztály.
 
-### 42.3 Alkalmazási precedencia (MEGERŐSÍTVE, 2026-09-20)
+### 42.3 Alkalmazási precedencia (MEGERŐSÍTVE, 2026-09-20; override: 2026-10-16)
 
 Egy célra több effekt is hathat; a sorrend definiált (különben `szorzó`/`override`/`max_limit` ütközik).
 Best practice (GURPS / Pathfinder / CRPG stat-pipeline): **additív előbb, multiplikatív utána**.
+A sorrendet a MÓD adja, nem az elem helye a listában.
 
 ```
-1. flat + scaled   → additív réteg összegződik
-2. szorzó          → a szumma szorzása (több szorzó sorban; kerekítés: FLOOR)
-3. override        → felülír mindent (ha van, az 1–2 eldobódik)
+1. override        → a BÁZIST cseréli (több override: az utolsó); a többi réteg erre rakódik
+2. flat + scaled   → additív réteg összegződik
+3. szorzó          → a szumma szorzása (egy félen belül a legnagyobb, l. lent; kerekítés: FLOOR)
 4. max_limit       → felső korlát
 5. előny/hátrány   → a VÉGSŐ érték dobására (kocka-dimenzió, clamp [-2,+2]; mód-kategória: előny_hátrány)
 6. letilt          → ha aktív, a cél semmis / auto-kudarc
@@ -4087,7 +4088,11 @@ Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implement�
   ELŐJELES értékkel (`+1/+2` = Előny, `-1/-2` = Hátrány). NINCS tömeges átnevezés: a data/kód már
   konzisztens (minden `hátrány` negatív, `előny` pozitív - auditálva). A `előny`/`hátrány` = a
   `előny_hátrány` kategória két olvasható operátor-neve.
-- **Precedencia** (42.3): additív → szorzó → override → max_limit → előny_hátrány → letilt; kerekítés FLOOR.
+- **Precedencia** (42.3): override (bázis-csere) → additív → szorzó → max_limit → előny_hátrány → letilt; kerekítés FLOOR.
+  Az override 2026-10-16-ig „mindent felülír" volt; a futó adat (Fárasztás `override 3` + `flat +1` = 4, Belharc
+  `fegyver_override`: a fegyver alap TÉ/VÉ 0, a harcmodor/MF/fortély megmarad) bázis-cserét használt, ezért a szabály
+  ehhez igazodott. Az override-extrák (`beszorithato`, `pikas_kozrefogasa`, `pocsek_vedekezo`) szintén bázis-csere:
+  a fegyver alapértéke nullázódik, a harcos képzettsége marad. Végső nullázásra: `letilt` vagy `max_limit 0`.
 - **Prefix-vokabulár**: a `konstansok.yaml → feltétel_prefixek` tartalmazza a `fortély`, `képzettség`,
   `manőver_állapot`, `ellenfél_fegyver_sebzésjelleg` prefixeket is.
 - **Backward-compat**: nincs; a régi localStorage invalidálható.

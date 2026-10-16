@@ -51,12 +51,12 @@ describe('calcTaktikaVéCsökkentésBázis - sorrend-alapú akkumulálás (schem
     expect(calcTaktikaVéCsökkentésBázis(hatások, mindigTeljesül)).toBe(4);
   });
 
-  it('ha a flat ELŐBB jönne mint az override, az override törli (sorrend számít)', () => {
+  it('a lista-sorrend nem számít: flat előbb, override utána is 4 (§42.3 - override = bázis)', () => {
     const hatások = [
       { mód: 'flat', érték: 1, cél: 'vé_csökkentés' },
       { mód: 'override', érték: 3, cél: 'vé_csökkentés' },
     ];
-    expect(calcTaktikaVéCsökkentésBázis(hatások, mindigTeljesül)).toBe(3);
+    expect(calcTaktikaVéCsökkentésBázis(hatások, mindigTeljesül)).toBe(4);
   });
 
   it('más célú hatások (pl. té_dobás) nem számítanak bele', () => {

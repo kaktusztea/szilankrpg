@@ -6,6 +6,7 @@
  * nincs külön dobás.
  */
 import { k20P } from '../../engine/dice';
+import { alkalmazEffektek } from './extrak-effekt';
 
 export type Fegyverviszony = 'fegyverhátrány' | 'fegyverazonosság' | 'fegyverelőny';
 
@@ -71,7 +72,7 @@ export interface FortélyMódosítóBontás {
 }
 
 export interface TaktikaVéCsökkentésEredmény {
-  /** A taktika `hatások` tömbjéből, SORRENDBEN akkumulálva (override felülír, flat hozzáad) - l. schemas/taktika.yaml. */
+  /** A taktika `hatások` tömbjéből, a §42.3 motorral (override = bázis, flat hozzáad). */
   taktikaBázis: number;
   /** Fortély-eredetű flat bővítések (feltételesen aktívak), forrás-bontással. */
   fortélyBővítések: FortélyMódosítóBontás[];
@@ -79,22 +80,17 @@ export interface TaktikaVéCsökkentésEredmény {
 }
 
 /**
- * Egy taktika `hatások` tömbjének `vé_csökkentés` célú elemeit SORRENDBEN (balról jobbra)
- * akkumulálja: "override" felülírja az addig összegyűjtött értéket, "flat" hozzáadja.
- * (KONVENCIÓ: ez NEM a §42.3 mód-kategória precedencia-motor - l. schemas/taktika.yaml komment.)
+ * Egy taktika `hatások` tömbjének (teljesült feltételű) `vé_csökkentés` célú elemei a közös §42.3 motorral
+ * (override = bázis-csere, utána flat): pl. Fárasztás [override 3, flat +1 fegyverelőnyben] → 3 / 4.
+ * A szorzó (Roham) NEM ide tartozik: az a Fegyverviszony-ágon hat (calcVéCsökkentésSzorzó).
  */
 export function calcTaktikaVéCsökkentésBázis(
   hatások: TaktikaHatás[] | undefined,
   feltételTeljesül: (feltétel: string) => boolean,
 ): number {
-  let érték = 0;
-  for (const h of hatások ?? []) {
-    if (h.cél !== 'vé_csökkentés') continue;
-    if (h.feltétel && !feltételTeljesül(h.feltétel)) continue;
-    if (h.mód === 'override') érték = h.érték ?? 0;
-    else if (h.mód === 'flat') érték += h.érték ?? 0;
-  }
-  return érték;
+  const aktív = (hatások ?? []).filter(h =>
+    h.cél === 'vé_csökkentés' && (h.mód === 'override' || h.mód === 'flat') && (!h.feltétel || feltételTeljesül(h.feltétel)));
+  return alkalmazEffektek(0, aktív.map(h => ({ cél: h.cél, mód: h.mód!, érték: h.érték ?? 0 })));
 }
 
 /**
