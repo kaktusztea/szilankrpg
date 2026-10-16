@@ -33,7 +33,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Edzettség próba hosszútávfutáskor"
-    alcél: "Edzettség"
+    alcél: "tulajdonság:edzettség"
   - cél: "tulajdonságpróba"
     érték: 1
     mód: "flat"
@@ -41,7 +41,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Gyorsaság próba rövidtávfutáskor"
-    alcél: "Gyorsaság"
+    alcél: "tulajdonság:gyorsaság"
 - fok: 2
   követelménytext: []
   követelmények: ""
@@ -56,7 +56,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Edzettség próba hosszútávfutáskor"
-    alcél: "Edzettség"
+    alcél: "tulajdonság:edzettség"
   - cél: "tulajdonságpróba"
     érték: 2
     mód: "flat"
@@ -64,4 +64,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Gyorsaság próba rövidtávfutáskor"
-    alcél: "Gyorsaság"
+    alcél: "tulajdonság:gyorsaság"

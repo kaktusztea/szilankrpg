@@ -36,7 +36,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Nyomozás értékre"
-    alcél: "Nyomozás"
+    alcél: "képzettség:Nyomozás"
 - fok: 2
   követelménytext:
     - text: "Nyomozás - 9.szint"
@@ -54,4 +54,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Nyomozás értékre"
-    alcél: "Nyomozás"
+    alcél: "képzettség:Nyomozás"

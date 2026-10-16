@@ -32,4 +32,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Gyorsaság próba rövid távú futásnál"
-    alcél: "Gyorsaság"
+    alcél: "tulajdonság:gyorsaság"

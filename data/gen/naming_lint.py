@@ -36,11 +36,11 @@ NAME_KEYED_FILES = {"szituacio_mapping.yaml"}
 NAME_VALUE_KEYS = {"név", "nev", "alapnév", "kat", "fájl", "spec_elem", "spec_típus"}
 
 # Értékük kanonikus azonosító-token → ellenőrzött (a NAME_VALUE_KEYS kivételével)
-ID_VALUE_KEYS = {"id", "cél", "mód", "típus", "forrás", "csoport",
+ID_VALUE_KEYS = {"id", "cél", "alcél", "mód", "típus", "forrás", "csoport",
                  "operátor", "prefix", "feltétel", "sebzésjelleg", "állapot", "aktor"}
 
 # 'prefix:név' alakú érték - csak a prefix-részt ellenőrizzük (a név entitásnév lehet)
-PREFIXED_VALUE_KEYS = {"cél", "feltétel"}
+PREFIXED_VALUE_KEYS = {"cél", "alcél", "feltétel"}
 
 
 def _walk(node, fname, errors, name_keyed, top):

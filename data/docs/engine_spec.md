@@ -4078,8 +4078,11 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
   hivatkozás létező célra mutat (`validate_effekt_hivatkozasok`, `fortelyok.py`). Kód: `engine/effekt.ts`.
 - **Ellenfél-al-feltétel** (`feltétel: "ellenfél_harci_helyzet:<id>"`): a hatás csak az ELLENFÉL adott helyzetében él;
   az app nem tudja eldönteni → KM (az Extrák felirat megnevezi), numerikusan nem alkalmazódik.
-- Megjegyzés: a fortély/státusz `alcél` ma még prefix nélküli képzettség-/tulajdonságnév (pl. `"Edzettség"`) - a
-  próba-scope szűkítése, más jelentés; egységesítése (`képzettség:<név>`) nyitott (DEVSTATE).
+- **Alcél - próba-scope** (2026-10-16): fortély-módosító / státusz-hatás próba-célja szűkítve, ugyanúgy `prefix:név`
+  alakban: `képzettségpróba` → `képzettség:<képzettség név>`, `tulajdonságpróba` → `tulajdonság:<karakter-séma kulcs>`
+  (kisbetűs, pl. `tulajdonság:edzettség`), `érzék_próba` → `érzék:<Érzék-státusz alkategória>` (pl. `érzék:Látás`).
+  Build-gate (`validators.proba_alcel_hibak`, fortély + státusz): a prefix illik a célhoz, a név létezik. Fogyasztó:
+  `engine/statusz-proba.ts` (képzettség-egyezés). Így az alcél MINDEN forrásban `prefix:érték` (felszerelés / próba-scope).
 
 ### 42.5 Fázisolt migrációs terv
 

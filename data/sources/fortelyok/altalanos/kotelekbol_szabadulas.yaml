@@ -32,7 +32,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Ügyesség ellenpróba (szabadulás)"
-    alcél: "Ügyesség"
+    alcél: "tulajdonság:ügyesség"
 - fok: 2
   követelménytext: []
   követelmények: ""
@@ -46,4 +46,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Ügyesség ellenpróba (szabadulás)"
-    alcél: "Ügyesség"
+    alcél: "tulajdonság:ügyesség"

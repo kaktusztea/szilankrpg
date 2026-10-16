@@ -9,6 +9,31 @@ def tiltas_ids_of(helyzetek):
     return {t.get('id') for h in helyzetek for t in (h.get('tiltások') or [])}
 
 
+# Próba-alcél (§42.4): a cél határozza meg a kötelező prefixet.
+ALCEL_PROBA_PREFIX = {'képzettségpróba': 'képzettség', 'tulajdonságpróba': 'tulajdonság', 'érzék_próba': 'érzék'}
+
+
+def proba_alcel_hibak(cel, alcel, ctx, refs):
+    """Egy fortély-/státusz-hatás alcéljának ellenőrzése: `prefix:név`, a prefix a célhoz illik, a név létezik
+    (refs: {'képzettség': nevek, 'tulajdonság': karakter-séma kulcsok, 'érzék': Érzék-státusz alkategóriák})."""
+    if not alcel: return []
+    pre, _, nev = alcel.partition(':')
+    if not nev: return [f"{ctx}: alcél '{alcel}' - 'prefix:név' alak kell"]
+    want = ALCEL_PROBA_PREFIX.get(cel)
+    if want != pre: return [f"{ctx}: alcél prefix '{pre}' nem illik a célhoz '{cel}' (várt: '{want}')"]
+    if nev not in refs.get(pre, set()): return [f"{ctx}: ismeretlen {pre} '{nev}'"]
+    return []
+
+
+def proba_alcel_refs(sources_dir, statuszok):
+    import glob, os, yaml
+    kepz = {yaml.safe_load(open(f, encoding='utf-8'))['név'] for f in glob.glob(os.path.join(sources_dir, 'kepzettsegek', '**', '*.yaml'), recursive=True)}
+    with open(os.path.join(sources_dir, '..', 'schemas', 'karakter.yaml'), encoding='utf-8') as fh:
+        tul = set(yaml.safe_load(fh)['tulajdonságok'])
+    erz = {a for s in statuszok for a in (s.get('alkategóriák') or [])}
+    return {'képzettség': kepz, 'tulajdonság': tul, 'érzék': erz}
+
+
 def validate_effekt_hivatkozasok(helyzetek, extrak):
     """`tiltás:<id>` és `ellenfél_harci_helyzet:<id>` hivatkozások létező célra mutassanak
     (fegyver_override feltétel + extra hatás cél / al-feltétel). Különben a hatás CSENDBEN nem élne."""
@@ -145,6 +170,8 @@ def validate_statuszok(statuszok, effekt_modok, esemenyek):
     errors = []
     valid_kategoria = {'fizikai', 'szellemi', 'harci', 'mágikus'}
     valid_esemeny_ids = {e['id'] for e in esemenyek}
+    from .common import SOURCES_DIR
+    alcel_refs = proba_alcel_refs(SOURCES_DIR, statuszok)
     for i, s in enumerate(statuszok):
         ctx = f"státuszok[{i}] ({s.get('név', '?')})"
         if not s.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
@@ -164,6 +191,7 @@ def validate_statuszok(statuszok, effekt_modok, esemenyek):
                         if not isinstance(h, dict): errors.append(f"{hctx}: nem objektum"); continue
                         if h.get('mód') not in effekt_modok: errors.append(f"{hctx}: ismeretlen mód: '{h.get('mód')}'")
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
+                        errors.extend(proba_alcel_hibak(h.get('cél'), h.get('alcél'), hctx, alcel_refs))
     if errors:
         print("  ❌ Státusz validációs hibák:")
         for e in errors:

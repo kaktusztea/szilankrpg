@@ -36,7 +36,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Kvantikum értékre"
-    alcél: "Kvantikum"
+    alcél: "képzettség:Kvantikum"
 - fok: 2
   követelménytext:
     - text: "Kvantikum - 9.szint"
@@ -54,4 +54,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Kvantikum értékre"
-    alcél: "Kvantikum"
+    alcél: "képzettség:Kvantikum"

@@ -4,7 +4,7 @@ import os
 
 from .common import SOURCES_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
-from .validators import tiltas_ids_of
+from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs
 
 
 def generate_fortelyok():
@@ -99,6 +99,7 @@ def generate_fortelyok():
     valid_prefixek = set(konstansok.get('feltétel_prefixek', []))
     valid_módok = set(konstansok.get('effekt_módok', []))
     tiltas_ids = tiltas_ids_of(load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek'])
+    alcel_refs = proba_alcel_refs(SOURCES_DIR, load_yaml(os.path.join(SOURCES_DIR, 'statuszok.yaml'))['státuszok'])
     felt_errors = []
     for root, dirs, files in os.walk(fdir):
         for f in sorted(files):
@@ -116,6 +117,7 @@ def generate_fortelyok():
                         felt_errors.append(f"{ctx} fok {fok.get('fok')}: hiányzó módosító mód (cél: '{mod.get('cél')}')")
                     elif m not in valid_módok:
                         felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen módosító mód '{m}' (nincs a konstansok.effekt_módok listában)")
+                    felt_errors.extend(proba_alcel_hibak(mod.get('cél'), mod.get('alcél'), f"{ctx} fok {fok.get('fok')}", alcel_refs))
                     felt = mod.get('feltétel', '')
                     if isinstance(felt, list):
                         # Strukturált feltétel: a prefixes forrás (pl. "tiltás:<id>") is a kanonikus prefix-listából.

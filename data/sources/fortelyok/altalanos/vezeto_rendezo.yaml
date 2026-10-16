@@ -36,7 +36,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Előadóművészet értékre"
-    alcél: "Előadóművészet"
+    alcél: "képzettség:Előadóművészet"
 - fok: 2
   követelménytext:
     - text: "Előadóművészet - 9.szint"
@@ -54,4 +54,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Előadóművészet értékre"
-    alcél: "Előadóművészet"
+    alcél: "képzettség:Előadóművészet"

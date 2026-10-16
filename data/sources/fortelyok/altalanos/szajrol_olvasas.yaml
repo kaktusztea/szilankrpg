@@ -37,4 +37,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Érzékenység próba célszám csökkentés (szájról olvasás)"
-    alcél: "Érzékenység"
+    alcél: "tulajdonság:érzékenység"

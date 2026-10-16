@@ -36,7 +36,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Orvoslás értékre"
-    alcél: "Orvoslás"
+    alcél: "képzettség:Orvoslás"
 - fok: 2
   követelménytext:
     - text: "Orvoslás - 9.szint"
@@ -54,4 +54,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Orvoslás értékre"
-    alcél: "Orvoslás"
+    alcél: "képzettség:Orvoslás"

@@ -85,9 +85,9 @@ function hatásVonatkozik(h: StatuszHatas, képzettségNév: string, képzettsé
   // Nem próba-jellegű cél
   if (!(cél in CÉL_CSOPORT_MAP)) return false;
 
-  // Specifikus alcél: csak arra az egy képzettségre hat
+  // Specifikus alcél ("képzettség:<név>", §42.4): csak arra az egy képzettségre hat
   if (h.alcél) {
-    return képzettségNév === h.alcél;
+    return h.alcél === `képzettség:${képzettségNév}`;
   }
 
   // Generikus cél-ek

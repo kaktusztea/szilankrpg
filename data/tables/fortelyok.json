@@ -140,7 +140,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Ügyesség ellenpróba (csomózás)",
-            "alcél": "Ügyesség"
+            "alcél": "tulajdonság:ügyesség"
           }
         ],
         "próba_enyhítések": []
@@ -162,7 +162,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Ügyesség ellenpróba (csomózás)",
-            "alcél": "Ügyesség"
+            "alcél": "tulajdonság:ügyesség"
           }
         ],
         "próba_enyhítések": []
@@ -202,7 +202,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Észlelés próba alvás közben",
-            "alcél": "Észlelés"
+            "alcél": "képzettség:Észlelés"
           }
         ],
         "próba_enyhítések": []
@@ -246,7 +246,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Méregkeverés képzettségre",
-            "alcél": "Méregkeverés"
+            "alcél": "képzettség:Méregkeverés"
           }
         ],
         "próba_enyhítések": []
@@ -330,7 +330,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Fájdalomtűrés próba",
-            "alcél": "Fájdalomtűrés"
+            "alcél": "képzettség:Fájdalomtűrés"
           }
         ],
         "próba_enyhítések": []
@@ -351,7 +351,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Fájdalomtűrés próba",
-            "alcél": "Fájdalomtűrés"
+            "alcél": "képzettség:Fájdalomtűrés"
           }
         ],
         "próba_enyhítések": []
@@ -392,7 +392,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Edzettség próba hosszútávfutáskor",
-            "alcél": "Edzettség"
+            "alcél": "tulajdonság:edzettség"
           },
           {
             "cél": "tulajdonságpróba",
@@ -402,7 +402,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Gyorsaság próba rövidtávfutáskor",
-            "alcél": "Gyorsaság"
+            "alcél": "tulajdonság:gyorsaság"
           }
         ],
         "próba_enyhítések": []
@@ -424,7 +424,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Edzettség próba hosszútávfutáskor",
-            "alcél": "Edzettség"
+            "alcél": "tulajdonság:edzettség"
           },
           {
             "cél": "tulajdonságpróba",
@@ -434,7 +434,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Gyorsaság próba rövidtávfutáskor",
-            "alcél": "Gyorsaság"
+            "alcél": "tulajdonság:gyorsaság"
           }
         ],
         "próba_enyhítések": []
@@ -721,7 +721,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Kézművesség (fegyver kovácsolás)",
-            "alcél": "Kézművesség"
+            "alcél": "képzettség:Kézművesség"
           }
         ],
         "próba_enyhítések": []
@@ -789,7 +789,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Kézművesség (páncél kovácsolás)",
-            "alcél": "Kézművesség"
+            "alcél": "képzettség:Kézművesség"
           }
         ],
         "próba_enyhítések": []
@@ -829,7 +829,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Edzettség próba tartós igénybevételnél",
-            "alcél": "Edzettség"
+            "alcél": "tulajdonság:edzettség"
           }
         ],
         "próba_enyhítések": []
@@ -909,7 +909,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Ügyesség ellenpróba (szabadulás)",
-            "alcél": "Ügyesség"
+            "alcél": "tulajdonság:ügyesség"
           }
         ],
         "próba_enyhítések": []
@@ -930,7 +930,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Ügyesség ellenpróba (szabadulás)",
-            "alcél": "Ügyesség"
+            "alcél": "tulajdonság:ügyesség"
           }
         ],
         "próba_enyhítések": []
@@ -976,7 +976,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Zárnyitás képzettségre",
-            "alcél": "Zárnyitás"
+            "alcél": "képzettség:Zárnyitás"
           }
         ],
         "próba_enyhítések": []
@@ -998,7 +998,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Zárnyitás képzettségre",
-            "alcél": "Zárnyitás"
+            "alcél": "képzettség:Zárnyitás"
           }
         ],
         "próba_enyhítések": []
@@ -1070,7 +1070,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Edzettség (méregellenállás)",
-            "alcél": "Edzettség"
+            "alcél": "tulajdonság:edzettség"
           }
         ],
         "próba_enyhítések": []
@@ -1091,7 +1091,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Edzettség (méregellenállás)",
-            "alcél": "Edzettség"
+            "alcél": "tulajdonság:edzettség"
           }
         ],
         "próba_enyhítések": []
@@ -1112,7 +1112,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Edzettség (méregellenállás)",
-            "alcél": "Edzettség"
+            "alcél": "tulajdonság:edzettség"
           }
         ],
         "próba_enyhítések": []
@@ -1311,7 +1311,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Gyorsaság próba rövid távú futásnál",
-            "alcél": "Gyorsaság"
+            "alcél": "tulajdonság:gyorsaság"
           }
         ],
         "próba_enyhítések": []
@@ -1403,7 +1403,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Érzékenység próba célszám csökkentés (szájról olvasás)",
-            "alcél": "Érzékenység"
+            "alcél": "tulajdonság:érzékenység"
           }
         ],
         "próba_enyhítések": []
@@ -1570,7 +1570,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Lexikum próba történelmi témában",
-            "alcél": "Lexikum"
+            "alcél": "képzettség:Lexikum"
           }
         ],
         "próba_enyhítések": []
@@ -1631,7 +1631,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Edzettség próba hosszú távú úszásnál",
-            "alcél": "Edzettség"
+            "alcél": "tulajdonság:edzettség"
           }
         ],
         "próba_enyhítések": []
@@ -1679,7 +1679,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Lexikum értékre",
-            "alcél": "Lexikum"
+            "alcél": "képzettség:Lexikum"
           }
         ],
         "próba_enyhítések": []
@@ -1708,7 +1708,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Lexikum értékre",
-            "alcél": "Lexikum"
+            "alcél": "képzettség:Lexikum"
           }
         ],
         "próba_enyhítések": []
@@ -1756,7 +1756,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Hajózás értékre",
-            "alcél": "Hajózás"
+            "alcél": "képzettség:Hajózás"
           }
         ],
         "próba_enyhítések": []
@@ -1785,7 +1785,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Hajózás értékre",
-            "alcél": "Hajózás"
+            "alcél": "képzettség:Hajózás"
           }
         ],
         "próba_enyhítések": []
@@ -1833,7 +1833,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Nyomozás értékre",
-            "alcél": "Nyomozás"
+            "alcél": "képzettség:Nyomozás"
           }
         ],
         "próba_enyhítések": []
@@ -1862,7 +1862,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Nyomozás értékre",
-            "alcél": "Nyomozás"
+            "alcél": "képzettség:Nyomozás"
           }
         ],
         "próba_enyhítések": []
@@ -1910,7 +1910,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Orvoslás értékre",
-            "alcél": "Orvoslás"
+            "alcél": "képzettség:Orvoslás"
           }
         ],
         "próba_enyhítések": []
@@ -1939,7 +1939,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Orvoslás értékre",
-            "alcél": "Orvoslás"
+            "alcél": "képzettség:Orvoslás"
           }
         ],
         "próba_enyhítések": []
@@ -1987,7 +1987,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Előadóművészet értékre",
-            "alcél": "Előadóművészet"
+            "alcél": "képzettség:Előadóművészet"
           }
         ],
         "próba_enyhítések": []
@@ -2016,7 +2016,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Előadóművészet értékre",
-            "alcél": "Előadóművészet"
+            "alcél": "képzettség:Előadóművészet"
           }
         ],
         "próba_enyhítések": []
@@ -2064,7 +2064,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Kvantikum értékre",
-            "alcél": "Kvantikum"
+            "alcél": "képzettség:Kvantikum"
           }
         ],
         "próba_enyhítések": []
@@ -2093,7 +2093,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Kvantikum értékre",
-            "alcél": "Kvantikum"
+            "alcél": "képzettség:Kvantikum"
           }
         ],
         "próba_enyhítések": []
@@ -2234,7 +2234,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Hallás Tulajdonságpróba",
-            "alcél": "Hallás"
+            "alcél": "érzék:Hallás"
           }
         ],
         "próba_enyhítések": []
@@ -2278,7 +2278,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Látás Tulajdonságpróba",
-            "alcél": "Látás"
+            "alcél": "érzék:Látás"
           }
         ],
         "próba_enyhítések": []
@@ -2323,7 +2323,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Szaglás Tulajdonságpróba",
-            "alcél": "Szaglás"
+            "alcél": "érzék:Szaglás"
           }
         ],
         "próba_enyhítések": []

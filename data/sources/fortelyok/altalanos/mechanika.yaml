@@ -34,7 +34,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Zárnyitás képzettségre"
-    alcél: "Zárnyitás"
+    alcél: "képzettség:Zárnyitás"
 - fok: 2
   követelménytext: []
   követelmények: ""
@@ -49,4 +49,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "Zárnyitás képzettségre"
-    alcél: "Zárnyitás"
+    alcél: "képzettség:Zárnyitás"

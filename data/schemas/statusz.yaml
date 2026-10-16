@@ -15,5 +15,5 @@ státuszok:
           - mód: ""            # kötelező, effekt-mód (konstansok.yaml → effekt_módok, engine_spec §42.2)
             érték: 0           # opcionális, szám (mód-függő)
             cél: ""            # kötelező, esemény id (esemenyek.yaml)
-            alcél: ""          # opcionális, string - specifikus képzettség/tulajdonság neve (üres = minden)
+            alcél: ""          # opcionális, "prefix:név" - a próba-cél szűkítése (képzettség:<név> / tulajdonság:<kulcs> / érzék:<név>; üres = minden), engine_spec §42.4
             megjegyzés: ""     # opcionális, string (kontextuális kiegészítés)

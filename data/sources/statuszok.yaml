@@ -180,7 +180,7 @@ státuszok:
     - mód: előny
       érték: 1
       cél: képzettségpróba
-      alcél: "Fájdalomtűrés"
+      alcél: "képzettség:Fájdalomtűrés"
       megjegyzés: áfiumok, kábítószerek, fejbekólintás hatására
   - fok: 2
     alcím: Kábultság
@@ -208,7 +208,7 @@ státuszok:
     - mód: előny
       érték: 2
       cél: képzettségpróba
-      alcél: "Fájdalomtűrés"
+      alcél: "képzettség:Fájdalomtűrés"
       megjegyzés: áfiumok, kábítószerek, fejbekólintás hatására
   - fok: 3
     alcím: Ájulás

@@ -36,7 +36,7 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Hajózás értékre"
-    alcél: "Hajózás"
+    alcél: "képzettség:Hajózás"
 - fok: 2
   követelménytext:
     - text: "Hajózás - 9.szint"
@@ -54,4 +54,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Hajózás értékre"
-    alcél: "Hajózás"
+    alcél: "képzettség:Hajózás"
