@@ -21,8 +21,9 @@ function getFegyverRules(allRules: Rule[]): Rule[] {
 
 /**
  * SP override fortély-alapú felülírás (Természetes fegyver → Puszta kéz sebzése, l.
- * `md/fortelyok.harci/termeszetes_fegyver.md`). Ad-hoc speciális eset, mert a generátor
- * `ököl`/`ököl-belharc` aktora a bázisértéket adja, ezt a fortély módosítja tovább.
+ * `md/fortelyok.harci/termeszetes_fegyver.md`). Ad-hoc speciális eset, mert a generátor `ököl` aktora a
+ * bázisértéket adja, ezt a fortély módosítja tovább. Elsőbbsége van a helyzet/extra alap-override-dal szemben
+ * (Belharc: SP 0, de Természetes fegyverrel 1 - 2026-10-16 döntés).
  */
 function calcSpOverride(fegyverNév: string, karakter: Karakter): number | null {
   if (fegyverNév.toLowerCase() !== 'puszta kéz') return null;
@@ -62,6 +63,7 @@ export function elsődlegesMód(fDef: FegyverAlap): FegyverMod {
 function calcModResult(
   mód: FegyverMod, fDef: FegyverAlap, k: Karakter, data: GameData,
   baseCtx: Map<string, number>, fegyverRules: Rule[], mfFok: number,
+  alapOvr?: Map<string, number>,
 ): FegyverResultMód {
   const { konstansok, harcmodorBonusz } = data;
   const harcmodorNév = konstansok.fegyver_kategória_harcmodor[fDef.kategória] ?? 'Közelharc';
@@ -69,7 +71,10 @@ function calcModResult(
   const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
   const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
 
-  let alapSP = mód.SP;
+  // §42.3 bázis-csere (helyzet / extra, alcél felszerelés:fegyver), a fortély SP-override utána felülírhatja.
+  const alapTÉ = alapOvr?.get('TÉ') ?? mód.TÉ;
+  const alapVÉ = alapOvr?.get('VÉ') ?? mód.VÉ;
+  let alapSP = alapOvr?.get('SP') ?? mód.SP;
   const spOvr = calcSpOverride(fDef.név, k);
   if (spOvr !== null) alapSP = spOvr;
 
@@ -77,8 +82,8 @@ function calcModResult(
   fCtx.set('fegyver_harcmodor_TÉ', hb?.TÉ ?? 0);
   fCtx.set('fegyver_harcmodor_VÉ', hb?.VÉ ?? 0);
   fCtx.set('fegyver_harcmodor_szint', harcmodorSzint);
-  fCtx.set('fegyver_alap_TÉ', mód.TÉ);
-  fCtx.set('fegyver_alap_VÉ', mód.VÉ);
+  fCtx.set('fegyver_alap_TÉ', alapTÉ);
+  fCtx.set('fegyver_alap_VÉ', alapVÉ);
   fCtx.set('fegyver_alap_SP', alapSP);
   fCtx.set('fegyver_erőbónusz_limit', mód.Erőlimit);
   fCtx.set('fegyver_sebesség', mód.Sebesség ?? 6);
@@ -92,7 +97,7 @@ function calcModResult(
     TÉ: fComp.get('fegyver_TÉ') ?? 0, VÉ: fComp.get('fegyver_VÉ') ?? 0, SP: fComp.get('fegyver_SP') ?? 0,
     Átütés: mód.Átütés,
     támadások: fComp.get('fegyver_támadások') ?? 1, harckeret: fComp.get('fegyver_harckeret') ?? 0,
-    sebesség: mód.Sebesség ?? 6, alap_TÉ: mód.TÉ, alap_VÉ: mód.VÉ,
+    sebesség: mód.Sebesség ?? 6, alap_TÉ: alapTÉ, alap_VÉ: alapVÉ,
     hk_harcmodor: harcmodorSzint,
     hk_gyorsaság: fCtx.get('tulajdonságok.gyorsaság') ?? 0,
     hk_mgt: fCtx.get('páncél_MGT') ?? 0,
@@ -111,6 +116,8 @@ export function calcFegyverResults(
   stringCtx: Map<string, string>,
   precomputedPáncélMGT?: number,
   precomputedMerevvértBüntetés?: number,
+  /** Fegyverenkénti alapérték-csere (helyzet fegyver_override + extrák, §42.3/§42.4) - pl. fegyverOverrideÉrtékek. */
+  alapOverride?: (fDef: FegyverAlap) => Map<string, number>,
 ): FegyverResult[] {
   const { konstansok } = data;
   const fegyverRules = getFegyverRules(data.rules);
@@ -136,7 +143,8 @@ export function calcFegyverResults(
   }
 
   return fegyverRows.map(({ fDef, mfFok, ideaHatás }) => {
-    const módok = fDef.módok.map(m => calcModResult(m, fDef, k, data, baseCtx, fegyverRules, mfFok));
+    const ovr = alapOverride?.(fDef);
+    const módok = fDef.módok.map(m => calcModResult(m, fDef, k, data, baseCtx, fegyverRules, mfFok, ovr));
     const ih = ideaHatás ?? { TÉ: 0, VÉ: 0, SP: 0 };
     for (const m of módok) {
       m.hk_fortély = fortelyMods['harckeret'] ?? 0;
@@ -149,23 +157,15 @@ export function calcFegyverResults(
 }
 
 /**
- * Fegyver override a helyzetek alapján, SORONKÉNT (§42.3 bázis-csere, §42.4 tiltás-keret): minden fegyversor
- * a saját hossza / harcmodora / extrái szerint kapja meg (pl. Belharc: a túl hosszú fegyver alap TÉ/VÉ-je 0,
- * a tőr marad; a pancelszuras_belharcban extra feloldja a hossz-tiltást). A sor aktív tiltásai a `tiltások` mezőbe.
+ * Fegyversoronkénti aktív tiltások jelölése (§42.4; pl. Belharc: túl hosszú / nem Közelharc) - a fegyvertábla ⚠
+ * jelzéséhez. Az ÉRTÉKEK alapérték-cseréje a calcFegyverResults `alapOverride`-jában történik (fegyverOverrideÉrtékek).
  */
-export function applyFegyverOverrides(
+export function jelölFegyverTiltások(
   results: FegyverResult[], session: Session, data: GameData, aktívFeltételek: Set<string>,
 ) {
   for (const r of results) {
     const fDef = lookupFegyver(data.fegyverek, r.fegyver_név);
-    if (!fDef) continue;
-    r.tiltások = tiltásokFegyverre(fDef, session, data, aktívFeltételek).map(t => t.id);
-    const ovr = fegyverOverrideÉrtékek(fDef, session, data, aktívFeltételek);
-    if (!ovr.size) continue;
-    for (const m of [...r.módok, r]) {
-      if (ovr.has('TÉ')) m.TÉ += ovr.get('TÉ')! - m.alap_TÉ;
-      if (ovr.has('VÉ')) m.VÉ += ovr.get('VÉ')! - m.alap_VÉ;
-    }
+    r.tiltások = fDef ? tiltásokFegyverre(fDef, session, data, aktívFeltételek).map(t => t.id) : [];
   }
 }
 

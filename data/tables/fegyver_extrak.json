@@ -114,6 +114,38 @@
       }
     ]
   },
+  "puszta_kez_belharcban": {
+    "id": "puszta_kez_belharcban",
+    "név": "Belharcban nincs fegyvertelen büntetés",
+    "csoport": "harci_helyzet",
+    "leírás": "Puszta kéz Belharci helyzetben: TÉ, VÉ, SP = 0 (a fegyvertelen büntetés megszűnik). Természetes fegyver fortéllyal az SP 1 marad.",
+    "feltétel": [
+      {
+        "típus": "harci_helyzet",
+        "id": "belharci_helyzet"
+      }
+    ],
+    "hatás": [
+      {
+        "cél": "TÉ",
+        "alcél": "felszerelés:fegyver",
+        "mód": "override",
+        "érték": 0
+      },
+      {
+        "cél": "VÉ",
+        "alcél": "felszerelés:fegyver",
+        "mód": "override",
+        "érték": 0
+      },
+      {
+        "cél": "SP",
+        "alcél": "felszerelés:fegyver",
+        "mód": "override",
+        "érték": 0
+      }
+    ]
+  },
   "pikas_kozrefogasa": {
     "id": "pikas_kozrefogasa",
     "név": "Pikás közrefogása",

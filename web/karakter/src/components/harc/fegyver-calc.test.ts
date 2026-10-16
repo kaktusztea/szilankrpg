@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { buildFegyverRows, applyFegyverOverrides, calcKetkezes } from './fegyver-calc';
+import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetkezes } from './fegyver-calc';
+import { buildPancelLookups } from './pancel-calc';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { tiltásokFegyverre, fegyverOverrideÉrtékek } from '../../engine/effekt';
@@ -65,24 +66,19 @@ describe('Belharc - soronkénti override + tiltás-keret (§42.3 / §42.4), val�
     expect(tiltásokFegyverre(def('Kard, hosszú'), nincs, data, new Set())).toEqual([]);
   });
 
-  it('applyFegyverOverrides: csak a túl hosszú fegyver sora nullázódik (az aktív fegyvertől függetlenül)', () => {
+  it('jelölFegyverTiltások: soronként a saját tiltások (a bemenet globális tiltás-kulcsa nem számít)', () => {
     const r = ['Tőr', 'Kard, hosszú', 'Tőr, páncélszúró'].map(sor);
-    // a globális (aktív fegyveres) tiltás-kulcs a bemenetben NEM számít - soronként újraértékelődik
-    applyFegyverOverrides(r, belharc, data, new Set([...af, 'tiltás:belharc_fegyverhossz']));
-    expect(r.map(x => [x.TÉ, x.VÉ])).toEqual([[35, 60], [30, 53], [35, 60]]);
-    expect(r[1].módok[0].TÉ).toBe(30);
+    jelölFegyverTiltások(r, belharc, data, new Set([...af, 'tiltás:belharc_fegyverhossz']));
     expect(r.map(x => x.tiltások)).toEqual([[], ['belharc_fegyverhossz', 'belharc_harcmodor'], []]);
+    jelölFegyverTiltások(r, nincs, data, new Set());
+    expect(r.map(x => x.tiltások)).toEqual([[], [], []]);
   });
 
-  it('Belharc nélkül nincs override és nincs tiltás', () => {
-    const r = [sor('Kard, hosszú')];
-    applyFegyverOverrides(r, nincs, data, new Set());
-    expect([r[0].TÉ, r[0].VÉ, r[0].tiltások]).toEqual([35, 60, []]);
-  });
-
-  it('fegyverOverrideÉrtékek: kezenként - két Tőr (össz hossz 2) NEM nullázódik, Kard igen', () => {
+  it('fegyverOverrideÉrtékek: Tőr nincs, Kard TÉ/VÉ 0 (helyzet), Puszta kéz TÉ/VÉ/SP 0 (extra)', () => {
     expect(fegyverOverrideÉrtékek(def('Tőr'), belharc, data, af).size).toBe(0);
     expect([...fegyverOverrideÉrtékek(def('Kard, hosszú'), belharc, data, af)]).toEqual([['TÉ', 0], ['VÉ', 0]]);
+    expect([...fegyverOverrideÉrtékek(def('Puszta kéz'), belharc, data, af)]).toEqual([['TÉ', 0], ['VÉ', 0], ['SP', 0]]);
+    expect(fegyverOverrideÉrtékek(def('Puszta kéz'), nincs, data, new Set()).size).toBe(0);
   });
 });
 
@@ -106,5 +102,37 @@ describe('calcKetkezes - Belharc kezenként (a hosszak NEM adódnak össze)', ()
     const ki = tév('Kard, hosszú', 'Tőr', [])!, be = tév('Kard, hosszú', 'Tőr', ['Belharci helyzet'])!;
     const kard = lookupFegyver(data.fegyverek, 'Kard, hosszú')!.módok.find(m => m.sebzéstípus === 'elsődleges')!;
     expect([ki[0] - be[0], ki[1] - be[1]]).toEqual([kard.TÉ, kard.VÉ]);
+  });
+});
+
+describe('calcFegyverResults - alapOverride (Belharc: helyzet + Puszta kéz extra), e2e valós adat', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const belharc = { ...alap.session, aktív_helyzetek: ['Belharci helyzet'] } as Session;
+  const af = new Set(['harci_helyzet:belharci_helyzet']);
+  const mods = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0, fegyverhossz: 0, SP_erőbónusz_arány: 0 };
+  const futtat = (k: Karakter, ovr: boolean) => {
+    const rows = buildFegyverRows(k, data, null);
+    const res = calcFegyverResults(rows, k, data, mods, 0, 0, buildPancelLookups(data.konstansok), new Map(), 0, 0,
+      ovr ? fDef => fegyverOverrideÉrtékek(fDef, belharc, data, af) : undefined);
+    return Object.fromEntries(res.map(r => [r.fegyver_név, [r.TÉ, r.VÉ, r.SP]]));
+  };
+  const kar = (fortélyok: Karakter['fortélyok']) => ({ ...alap, fortélyok,
+    fegyverek: ['Tőr', 'Kard, hosszú'].map(a => ({ alap: a, név: '', anyag: 'acél', idea: 0, felszerelésben: true })) } as Karakter);
+  const elsőd = (n: string) => lookupFegyver(data.fegyverek, n)!.módok.find(m => m.sebzéstípus === 'elsődleges')!;
+
+  it('Puszta kéz: a fegyvertelen büntetés (-3/-3/-5) eltűnik; Tőr változatlan; Kard alapja kiesik', () => {
+    const ki = futtat(kar([]), false), be = futtat(kar([]), true);
+    const pk = elsőd('Puszta kéz'), kard = elsőd('Kard, hosszú');
+    expect(be['Puszta kéz']).toEqual([ki['Puszta kéz'][0] - pk.TÉ, ki['Puszta kéz'][1] - pk.VÉ, ki['Puszta kéz'][2] - pk.SP]);
+    expect(be['Tőr']).toEqual(ki['Tőr']);
+    expect(be['Kard, hosszú']).toEqual([ki['Kard, hosszú'][0] - kard.TÉ, ki['Kard, hosszú'][1] - kard.VÉ, ki['Kard, hosszú'][2]]);
+  });
+
+  it('Természetes fegyver: belharcban is SP 1 alap marad (a fortély elsőbbsége), TÉ/VÉ büntetés eltűnik', () => {
+    const tf = kar([{ név: 'Természetes fegyver', fok: 1, spec_típus: '', spec_elem: '' }]);
+    const ki = futtat(tf, false), be = futtat(tf, true);
+    expect(be['Puszta kéz'][2]).toBe(ki['Puszta kéz'][2]);
+    expect(be['Puszta kéz'][0]).toBe(ki['Puszta kéz'][0] - elsőd('Puszta kéz').TÉ);
   });
 });

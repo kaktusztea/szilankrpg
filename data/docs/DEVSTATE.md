@@ -34,7 +34,7 @@ Engine spec: §42 (részben implementált), fázisterv: §42.5. Cél: a fortély
 Állapot:
 - **1. fázis - Szabvány** ✅: §42 + a pilot `extrak.yaml`.
 - **2. fázis - Adat-migráció** (részben): az `extrak.yaml`-re kész - „Extrák" gomb (aktív/inaktív/KM, `extrak-info-calc.ts`) + §42.3 precedencia-motor (`extrak-effekt.ts`: `alkalmazEffektek`, `aktívHatásokCélra`). Numerikus alkalmazás CSAK teljes korrelációnál: Sebzés popup SP-delta (ellenfél-páncél ismert); hiányos infónál warning (VÉ-csökkentés popup, VÉ-t érintő cél_páncél-extra) + Extrák jelzés.
-- **3. fázis - Kód** (folyamatban, szeletenként): 1. szelet kész - `engine/effekt.ts` (gyűjtő: fortély + alapeset + taktika; `értékCélra` / `arányÖsszeg` a §42.3 motoron) + `effekt.parity.test.ts` paritás-háló a régi `calcFortelyMods` / `calcTaktikaMods`-hoz (valós adat, 2 teszt-karakter + "minden fortély" szintetikus, ~90 session-variáns/karakter). 2. szelet kész - tiltás-keret (§42.4) + Belharc `fegyver_override` soronként/kezenként. Következő: 3. Puszta kéz effektként; 4. további fogyasztók, végül a két régi fn törlése.
+- **3. fázis - Kód** (folyamatban, szeletenként): 1. szelet kész - `engine/effekt.ts` (gyűjtő: fortély + alapeset + taktika; `értékCélra` / `arányÖsszeg` a §42.3 motoron) + `effekt.parity.test.ts` paritás-háló a régi `calcFortelyMods` / `calcTaktikaMods`-hoz (valós adat, 2 teszt-karakter + "minden fortély" szintetikus, ~90 session-variáns/karakter). 2. szelet kész - tiltás-keret (§42.4) + Belharc `fegyver_override` soronként/kezenként. 3. szelet kész - a fegyver alapérték-override-jai (helyzet + extrák) a `calcFegyverResults` `alapOverride`-jában; Puszta kéz belharcban extraként. Következő: 4. további fogyasztók, végül a két régi fn törlése.
 
 TODO:
 - [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat). Felmérés (2026-10-16), nyitott döntések:
@@ -49,6 +49,7 @@ TODO:
 - [ ] Előfeltétel a 3. fázishoz: regressziós védőháló (meglévő fortély-mods tesztek + új precedencia-tesztek) - a `fortely-mods.test.ts` és az `extrak-effekt.test.ts` már megvan
 - [ ] Harcszimulátor Belharc: még `pengehossz > 0` (max 0) és nem ismeri a tiltás-keretet / a páncélszúró kivételt - `fegyvergenerator_harcszimulator.py` `te_aktualis`
 - [ ] Harcszimulátor eltérések a §42.3-tól: Fárasztás fix `v = 3` (hiányzik a fegyverelőnyös +1), Belharc `te = 0` végső nullázás (a webapp és a §42.3 szerint a harcmodor/MF/fortély megmarad) - `code/balance/fegyvergenerator_harcszimulator.py`
+- [ ] `beszorithato` extra halott hivatkozás: `státusz: Beszorított (2)`, de ilyen státusz nincs a `statuszok.yaml`-ban → soha nem teljesül. Döntés: új státusz, vagy a `Beszorított ellenfél` helyzetre mutasson? Utána: build-gate az extrák státusz/helyzet-hivatkozásaira (`validate_effekt_hivatkozasok`).
 - [ ] `zuzo_ellen_rosszabb` extra (`vé_veszteség` ×2) bekötése a `véVesztésSzorzó`-ba (ma csak az Extrák gombon jelenik meg)
 - [ ] Statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben
 
@@ -58,7 +59,7 @@ TODO:
 Engine spec: §21.4 ("Belharc rendszer összefoglaló"). Kész: a Belharci helyzet (Aktív fül), a nem belharcos fegyverek `TÉ`/`VÉ` = 0 nullázása (`harci_helyzetek.yaml` → `fegyver_override`, `fegyver-calc.ts`), a Belharcos fortély feltételes bónuszai, a belharcos manőverek előfeltétele.
 
 TODO:
-- [ ] Puszta kéz belharcban: a v2 adatban külön rekord él (`Puszta kéz, belharcban`, `TÉ`/`VÉ`/`SP` = 0), de a webapp nem cseréli rá a Puszta kezet Belharci helyzetben (a `fegyver_override` feltétele `fegyverhossz > 0`, a Puszta kéz hossza 0 → marad `TÉ`:-3, `VÉ`:-3, `SP`:-5)
+- [x] Puszta kéz belharcban (2026-10-16): `puszta_kez_belharcban` fegyver-extra (TÉ/VÉ/SP override 0, alcél felszerelés:fegyver); a duplikált `Puszta kéz, belharcban` rekord és az `ököl-belharc` aktor törölve. Természetes fegyverrel az SP 1 marad.
 - [x] Korlátozás-jelzés (2026-10-16): Aktív fül helyzet-chip ⚠ (`getTiltásWarnings`) + fegyvertábla sor ⚠ (`FegyverResult.tiltások`) - mindkettő a tiltás-keretből.
 - [x] Fegyverhossz-limit **max 1** (2026-10-16): tiltás-keret (`belharc_fegyverhossz`, §42.4), feltétel `fegyver.fegyverhossz > 1`.
 - [x] Override hatókör hiba (2026-10-16): soronkénti (kétkezesnél kezenkénti) kiértékelés - `engine/effekt.ts` `fegyverOverrideÉrtékek`, `applyFegyverOverrides`, `calcKétkezesHarc({alapOverride})`; a hosszak nem adódnak össze. A Belharcos fortély bónusza a kézben lévő fegyver(ek) tiltásaitól függ (a fortély-módosítók még nem soronkéntiek - §42 4. szelet).
@@ -68,7 +69,7 @@ TODO:
 ## Fegyverek: hangolás és utómunka 🚧
 
 Utómunka (a v2 bevezetés lezárult, l. "Elkészült"):
-- [ ] Balansz `raw` → `final`: mind a 68 fegyver `state: raw` (a `fegyverek.yaml` `state` mezője a mérőszám). Eszközök: `code/balance/` szimulátor + taktikai AI, l. wiki `STUDY.fegyvergenerator_harcszimulacio`.
+- [ ] Balansz `raw` → `final`: mind a 67 fegyver `state: raw` (a `fegyverek.yaml` `state` mezője a mérőszám). Eszközök: `code/balance/` szimulátor + taktikai AI, l. wiki `STUDY.fegyvergenerator_harcszimulacio`.
 - [ ] Custom (egyedi, generált) fegyver a karakterben: `fegyverek[].custom` séma-mező + build-time vagy runtime kiértékelés (nyitott döntés) - wiki `STUDY.fegyvergenerator_v2` 4a.
 - [ ] Ár-modell: paraméter-alapú alapár (fegyverhossz / anyag / Idea szorzókból) - a JSON `ár` mező ma placeholder (`null`).
 
@@ -186,7 +187,7 @@ TODO:
 - Részletek → engine_spec §16, §16.1, §24, §25, §42
 
 ### Fegyver v2 adatmodell
-- Runtime táblák (a webapp ezeket olvassa): `data/tables/fegyverek_v2.json` (76 közelharci fegyver + pajzsok), `data/tables/tavfegyverek_v2.json` (28 távfegyver), `sebzesjelleg_pancel_matrix.json`, `fegyver_extrak.json`. Generátor: `data/gen/fegyverek_v2.py` (build-gate).
+- Runtime táblák (a webapp ezeket olvassa): `data/tables/fegyverek_v2.json` (72 közelharci fegyver + 3 pajzs), `data/tables/tavfegyverek_v2.json` (28 távfegyver), `sebzesjelleg_pancel_matrix.json`, `fegyver_extrak.json`. Generátor: `data/gen/fegyverek_v2.py` (build-gate).
 - Források: `data/sources/fegyverek/` - `fegyverek.yaml` (WORK paraméterek, a generátor modellen át), `fegyverek_fixed.json` (kézzel írt kivételek: Garott, hárítók, Kopják, pajzsok - `aktor: "kivétel"`), `tavfegyverek_fixed.json`, `extrak.yaml`, `konstansok.yaml`, mátrix.
 - Egy fegyvernek EGY rekordja van (nincs külön 1K/2K entry). `FegyverAlap`: név, kategória, fegyverhossz, akadály, súly, övön_hordható, ár (ma `null`), idea_default, erő_követelmény, extrák, `módok[]`. Mesterfegyver fok és Idea a karakter-példányon.
 - `FegyverMod` (aktoronként egy): aktor, jelleg (`zúzó` / `szúró` / `vágó-egyenes` / `vágó-íves`), sebzéstípus (`elsődleges` = 1. aktor / `másodlagos` = a többi), TÉ, VÉ, SP, Átütés, Sebesség, Forgatás, Erőlimit, FP. A másfélkezes fegyver minden aktorához egy `másfélkezes · 1 kézzel` mód is tartozik (max 4 mód / fegyver).

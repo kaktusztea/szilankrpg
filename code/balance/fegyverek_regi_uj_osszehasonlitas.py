@@ -30,7 +30,6 @@ NEM_FEGYVER_PREFIX = ("Hárító:", "Kis Pajzs", "Közepes Pajzs", "Nagy Pajzs")
 ALIAS_REGI_UJ = {
     "Predoci egyeneskard": "Kard, predoci egyeneskard",
     "Kard, Pugoss": "Pugoss",
-    "Puszta kéz Belharcban": "Puszta kéz, belharcban",
     "Alabárd S+V": "Alabárd",
     "Alabárd Z": "Alabárd",   # a régiben 2 sor (S+V és Z mód), az újban 1 (a módok[] fedi le mindkettőt)
     "Kard, másfélkezes (1K)": "Kard, másfélkezes",

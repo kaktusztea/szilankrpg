@@ -7,10 +7,10 @@ import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { createFeltételEvaluator } from '../../engine/feltetel-eval';
 import { calcTaktikaMods } from './taktika-calc';
 import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
-import { buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes as calcKétkezes } from './fegyver-calc';
+import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
 import { buildPajzsFegyverNév, véVesztésSzorzó } from './shared';
-import { aktívTiltások } from '../../engine/effekt';
+import { aktívTiltások, fegyverOverrideÉrtékek } from '../../engine/effekt';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
@@ -71,8 +71,9 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const fegyverRows = buildFegyverRows(k, data, pajzsFegyverNév);
   const páncélMGT = session.aktív_páncél ? (computed.get('páncél_MGT') ?? 0) : 0;
   const merevvértBüntetés = session.aktív_páncél ? (computed.get('merevvért_TÉ_büntetés') ?? 0) : 0;
-  const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT, merevvértBüntetés);
-  applyFegyverOverrides(fegyverResults, session, data, aktívFeltételek);
+  const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT, merevvértBüntetés,
+    fDef => fegyverOverrideÉrtékek(fDef, session, data, aktívFeltételek));
+  jelölFegyverTiltások(fegyverResults, session, data, aktívFeltételek);
 
   const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, aktívFeltételek, páncélMGT, merevvértBüntetés);
   const { pajzsVÉ, fogásResult } = calcFogás(k, session, data, fortelyMods);

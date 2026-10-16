@@ -285,7 +285,12 @@
     "ár": null,
     "idea_default": 0,
     "erő_követelmény": 0,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "puszta_kez_belharcban",
+        "név": "Belharcban nincs fegyvertelen büntetés"
+      }
+    ],
     "módok": [
       {
         "aktor": "ököl",
@@ -294,34 +299,6 @@
         "TÉ": -3,
         "VÉ": -3,
         "SP": -5,
-        "Átütés": 0,
-        "Sebesség": 5,
-        "Forgatás": "egykezes",
-        "Erőlimit": 99,
-        "FP": true
-      }
-    ]
-  },
-  {
-    "név": "Puszta kéz, belharcban",
-    "kategória": "közelharci",
-    "megjegyzés": "Belharci helyzet: a fegyvertelen büntetés nullázódik.",
-    "fegyverhossz": 0,
-    "akadály": 0,
-    "súly": "átlagos",
-    "övön_hordható": true,
-    "ár": null,
-    "idea_default": 0,
-    "erő_követelmény": 0,
-    "extrák": [],
-    "módok": [
-      {
-        "aktor": "ököl-belharc",
-        "jelleg": "zúzó",
-        "sebzéstípus": "elsődleges",
-        "TÉ": 0,
-        "VÉ": 0,
-        "SP": 0,
         "Átütés": 0,
         "Sebesség": 5,
         "Forgatás": "egykezes",

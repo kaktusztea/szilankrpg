@@ -74,6 +74,17 @@ extrak:
       - {cél: "tiltás:belharc_fegyverhossz", mód: letilt}   # a Belharc hossz-tiltása erre a fegyverre nem él
       - {cél: SFÉ, alcél: "felszerelés:páncél", mód: override, érték: 0, feltétel: "ellenfél_harci_helyzet:földön_fekve"}   # KM: az ellenfél állapota
 
+  - id: puszta_kez_belharcban
+    név: "Belharcban nincs fegyvertelen büntetés"
+    csoport: harci_helyzet
+    leírás: "Puszta kéz Belharci helyzetben: TÉ, VÉ, SP = 0 (a fegyvertelen büntetés megszűnik). Természetes fegyver fortéllyal az SP 1 marad."
+    feltétel:
+      - {típus: harci_helyzet, id: belharci_helyzet}
+    hatás:
+      - {cél: TÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
+      - {cél: VÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
+      - {cél: SP, alcél: "felszerelés:fegyver", mód: override, érték: 0}
+
   - id: pikas_kozrefogasa
     név: "Pikás közrefogása"
     csoport: harci_helyzet

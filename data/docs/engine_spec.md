@@ -1385,9 +1385,9 @@ Aktiváláskor:
     - Max 1 fegyverhosszú fegyver (tőr, kés, puszta kéz) - tiltás `belharc_fegyverhossz`
       Kivétel: a `pancelszuras_belharcban` extrás fegyver (Tőr, páncélszúró) - az extra feloldja a tiltást
     - Közelharc harcmodor - tiltás `belharc_harcmodor`
-    - Puszta kéz harcértékei: TÉ=0, VÉ=0, SP=0, sebzés FP (1ÉP/5FP)
-      (v2 adat: külön rekord `Puszta kéz, belharcban`. NYITOTT: a webapp NEM cseréli rá a Puszta kezet
-      Belharci helyzetben - §42 3. fázis 3. szelete; l. DEVSTATE "Belharc rendszer")
+    - Puszta kéz harcértékei: TÉ=0, VÉ=0, SP=0, sebzés FP (1ÉP/5FP) - a Puszta kéz `puszta_kez_belharcban`
+      extrája (feltétel: Belharci helyzet, hatás: TÉ/VÉ/SP override 0, alcél felszerelés:fegyver).
+      Természetes fegyver fortéllyal az SP alap 1 marad (a fortély-SP override elsőbbsége, `calcSpOverride`).
 
   Nem belharcos (aki belekényszerül):
     - Saját harcmodor értékei maradnak (harcmodor bónusz jár)
@@ -1417,8 +1417,9 @@ Egyes harci helyzetek (`harci_helyzetek.yaml`) tartalmazhatnak `fegyver_override
       - { cél: "VÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
 ```
 
-Kiértékelés (`engine/effekt.ts → tiltásokFegyverre / fegyverOverrideÉrtékek`, fogyasztók: `fegyver-calc.ts →
-applyFegyverOverrides` soronként, `calcKetkezes` → `calcKétkezesHarc({alapOverride})` kezenként):
+Kiértékelés (`engine/effekt.ts → tiltásokFegyverre / fegyverOverrideÉrtékek`; fogyasztók: `calcFegyverResults(…,
+alapOverride)` soronként - az alapérték a reactive számítás ELŐTT cserélődik, utána a fortély-SP override -,
+`calcKétkezesHarc({alapOverride})` kezenként; a sor tiltásait a `jelölFegyverTiltások` írja a `FegyverResult.tiltások`-ba):
 ```
 FOR EACH fegyver (sor / kéz):
   tiltások = a helyzetek tiltásai, amelyek feltétele erre a fegyverre teljesül
@@ -1426,7 +1427,10 @@ FOR EACH fegyver (sor / kéz):
   feltétel-halmaz = aktívFeltételek (globális tiltás-kulcsok nélkül) + "tiltás:<id>" a fegyver saját tiltásaira
   FOR EACH aktív helyzet, ahol feltételTeljesül(fegyver_override.feltétel):
     FOR EACH mod (mód override, alcél felszerelés:fegyver):   // §42.3 bázis-csere
-      alap_<cél> → mod.érték   (TÉ += érték - alap_TÉ; VÉ ugyanígy)
+      alap_<cél> → mod.érték
+  FOR EACH a fegyver BIZTOSAN aktív extrájának hatása (mód override, alcél felszerelés:fegyver, al-feltétel nélkül):
+      alap_<cél> → hatás.érték   // pl. Puszta kéz belharcban: TÉ/VÉ/SP 0 (több override: az utolsó)
+  fegyver_alap_TÉ/VÉ/SP = a csere utáni alap → reactive fegyver_TÉ/VÉ/SP; Puszta kéz SP: Természetes fegyver felülír
   sor.tiltások = a fegyver aktív tiltás-id-i (fegyvertábla ⚠ jelzés)
 ```
 

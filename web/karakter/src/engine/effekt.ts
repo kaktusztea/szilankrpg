@@ -11,7 +11,7 @@
  * A fájl végén: a tiltás-keret (§42.4) és a fegyver_override soronkénti kiértékelése (2. szelet).
  */
 import type { Karakter, Session, FegyverAlap } from './types';
-import type { GameData } from './data-loader';
+import type { GameData, ExtraHatás } from './data-loader';
 import { evaluateAlapesetek } from './alapeset';
 import { alkalmazEffektek } from '../components/harc/extrak-effekt';
 import { interpolateFokDef } from '../components/aktiv/taktika-helpers';
@@ -148,18 +148,30 @@ export function aktívFegyverDefek(k: Karakter, session: Session, data: GameData
   return ki;
 }
 
-/** A fegyver extrái által feloldott tiltás-id-k (az extra top-level feltételének BIZTOSAN teljesülnie kell). */
-function feloldottTiltások(fDef: FegyverAlap, data: GameData, aktívFeltételek: Set<string>): Set<string> {
-  // ponytail: a kontextus csak a feltétel-kulcsokat ismeri (harci_helyzet/taktika); fortély-/státusz-feltételű
-  // feloldó extra itt nem teljesülne - ma nincs ilyen. Ha lesz: a teljes ExtraKontextust kell átadni.
+/**
+ * A fegyver extrái közül azok hatásai, amelyek top-level feltétele BIZTOSAN teljesül (KM / bizonytalan → kimarad),
+ * és amelyeknek nincs saját al-feltétele.
+ */
+function biztosExtraHatások(fDef: FegyverAlap, data: GameData, aktívFeltételek: Set<string>): ExtraHatás[] {
+  // ponytail: a kontextus csak a feltétel-kulcsokat ismeri (harci_helyzet/taktika); fortély-/státusz-/aktor-feltételű
+  // extra itt nem teljesül - ma egyetlen numerikus fegyver-extra sem ilyen. Ha lesz: a teljes ExtraKontextust kell átadni.
   const ctx = { aktívFeltételek, fortélyFokok: new Map<string, number>(), aktívStátuszok: new Set<string>() };
-  const ki = new Set<string>();
+  const ki: ExtraHatás[] = [];
   for (const { id } of fDef.extrák ?? []) {
     const def = data.fegyverExtrák?.[id];
     if (!def?.hatás?.length) continue;
     if (!(def.feltétel ?? []).every(f => extraFeltételTeljesül(f, ctx) === true)) continue;
-    for (const h of def.hatás) {
-      if (h.mód === 'letilt' && !h.feltétel && h.cél.startsWith('tiltás:')) ki.add(h.cél.slice('tiltás:'.length));
+    ki.push(...def.hatás.filter(h => !h.feltétel));
+  }
+  return ki;
+}
+
+/** A fegyver extrái által feloldott tiltás-id-k. */
+function feloldottTiltások(fDef: FegyverAlap, data: GameData, aktívFeltételek: Set<string>): Set<string> {
+  const ki = new Set<string>();
+  for (const h of biztosExtraHatások(fDef, data, aktívFeltételek)) {
+    {
+      if (h.mód === 'letilt' && h.cél.startsWith('tiltás:')) ki.add(h.cél.slice('tiltás:'.length));
     }
   }
   return ki;
@@ -196,14 +208,14 @@ export function aktívTiltások(k: Karakter, session: Session, data: GameData, a
 const FEGYVER_KOMPONENS = 'felszerelés:fegyver';
 
 /**
- * A helyzetek `fegyver_override`-jából EGY fegyverre ható alapérték-cserék (§42.3 bázis-csere, alcél
- * felszerelés:fegyver): cél → új alapérték. A feltétel a fegyver SAJÁT tiltásaival értékelődik ki
+ * EGY fegyverre ható alapérték-cserék (§42.3 bázis-csere, alcél felszerelés:fegyver): cél → új alapérték.
+ * Források sorrendben (több override: az utolsó): a helyzetek `fegyver_override`-ja, majd a fegyver biztosan aktív
+ * extrái (pl. Puszta kéz: puszta_kez_belharcban). A helyzet-feltétel a fegyver SAJÁT tiltásaival értékelődik ki
  * (a bemenet esetleges globális `tiltás:` kulcsait eldobja) - így soronként / kezenként helyes.
  */
 export function fegyverOverrideÉrtékek(fDef: FegyverAlap, session: Session, data: GameData, aktívFeltételek: Set<string>): Map<string, number> {
   const ki = new Map<string, number>();
   const helyzetek = session.aktív_helyzetek.map(n => data.harciHelyzetek.find(d => d.név === n)).filter(h => h?.fegyver_override);
-  if (!helyzetek.length) return ki;
   const sor = new Set([...aktívFeltételek].filter(f => !f.startsWith('tiltás:')));
   for (const t of tiltásokFegyverre(fDef, session, data, aktívFeltételek)) sor.add(`tiltás:${t.id}`);
   const { feltételTeljesül } = createFeltételEvaluator(sor, session, new Map(), new Map(), new Map());
@@ -212,6 +224,9 @@ export function fegyverOverrideÉrtékek(fDef: FegyverAlap, session: Session, da
     for (const m of h!.fegyver_override!.módosítók) {
       if (m.mód === 'override' && m.alcél === FEGYVER_KOMPONENS) ki.set(m.cél, m.érték);
     }
+  }
+  for (const h of biztosExtraHatások(fDef, data, aktívFeltételek)) {
+    if (h.mód === 'override' && h.alcél === FEGYVER_KOMPONENS && typeof h.érték === 'number') ki.set(h.cél, h.érték);
   }
   return ki;
 }
