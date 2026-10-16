@@ -7,7 +7,7 @@ import { interpolateFokDef } from '../aktiv/taktika-helpers';
  * Returns a Set of `"${taktika_feltétel_kulcs}|${cél}"` keys (e.g. "taktika:visszafogott|TÉ").
  * Number-independent: the taktika's contribution to that cél is dropped entirely.
  */
-function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
+export function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
   const letiltva = new Set<string>();
   for (const kf of k.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);

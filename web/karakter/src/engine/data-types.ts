@@ -41,6 +41,7 @@ export interface KiterjesztesEntry {
 // --- Fortély összefoglaló (UI-hoz) ---
 export interface FortelyModosito {
   cél: string;
+  alcél?: string;
   érték: number;
   mód: string;
   forrás: string;
@@ -252,7 +253,7 @@ export interface KonstansokRaw {
   }[];
   kétkezes_harc_fegyverlevonás_osztó: number;
   fegyverfogás_opciók: { id: string; név: string }[];
-  egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
+  egészség_kategória_levonás: { szint: string; módosítók: { cél: string; mód: string; érték: number }[] }[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
   lövéskitérés: Record<string, { max_táv: number; célszám: number }[]>;
   sebesülés_kategóriák_száma: number;

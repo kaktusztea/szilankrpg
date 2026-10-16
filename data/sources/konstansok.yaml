@@ -242,14 +242,17 @@ egészség_kategória_levonás:
   - szint: S2
     módosítók:
       - cél: "TÉ"
+        mód: "flat"
         érték: -3
   - szint: S3
     módosítók:
       - cél: "TÉ"
+        mód: "flat"
         érték: -6
   - szint: S4
     módosítók:
       - cél: "TÉ"
+        mód: "flat"
         érték: -9
 
 # ============================================================

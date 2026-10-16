@@ -34,7 +34,7 @@ Engine spec: §42 (részben implementált), fázisterv: §42.5. Cél: a fortély
 Állapot:
 - **1. fázis - Szabvány** ✅: §42 + a pilot `extrak.yaml`.
 - **2. fázis - Adat-migráció** (részben): az `extrak.yaml`-re kész - „Extrák" gomb (aktív/inaktív/KM, `extrak-info-calc.ts`) + §42.3 precedencia-motor (`extrak-effekt.ts`: `alkalmazEffektek`, `aktívHatásokCélra`). Numerikus alkalmazás CSAK teljes korrelációnál: Sebzés popup SP-delta (ellenfél-páncél ismert); hiányos infónál warning (VÉ-csökkentés popup, VÉ-t érintő cél_páncél-extra) + Extrák jelzés.
-- **3. fázis - Kód**: hátra.
+- **3. fázis - Kód** (folyamatban, szeletenként): 1. szelet kész - `engine/effekt.ts` (gyűjtő: fortély + alapeset + taktika; `értékCélra` / `arányÖsszeg` a §42.3 motoron) + `effekt.parity.test.ts` paritás-háló a régi `calcFortelyMods` / `calcTaktikaMods`-hoz (valós adat, 2 teszt-karakter + "minden fortély" szintetikus, ~90 session-variáns/karakter). Következő: 2. szelet - Belharc `fegyver_override` soronkénti kiértékeléssel; 3. Puszta kéz effektként; 4. további fogyasztók, végül a két régi fn törlése.
 
 TODO:
 - [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat). Felmérés (2026-10-16), nyitott döntések:
@@ -59,7 +59,7 @@ Engine spec: §21.4 ("Belharc rendszer összefoglaló"). Kész: a Belharci helyz
 TODO:
 - [ ] Puszta kéz belharcban: a v2 adatban külön rekord él (`Puszta kéz, belharcban`, `TÉ`/`VÉ`/`SP` = 0), de a webapp nem cseréli rá a Puszta kezet Belharci helyzetben (a `fegyver_override` feltétele `fegyverhossz > 0`, a Puszta kéz hossza 0 → marad `TÉ`:-3, `VÉ`:-3, `SP`:-5)
 - [ ] Korlátozás-jelzés: a belharcos oldal feltételeinek (Közelharc harcmodor, max fegyverhossz) UI-jelzése (javaslat: a `helyzet-helpers.ts` `getMinFegyverhosszWarning` mintájára, az aktív Belharci helyzet chipjén)
-- [ ] Fegyverhossz-limit ellentmondás (DÖNTÉS KELL): az éles md (`065_03_02_semleges_helyzetek.md`) "Max 1 fegyverhossz-kategória", az engine_spec §21.4 + ez a fájl "max 0", az adat feltétele `fegyverhossz > 0`. Következmény: a hossz-1 fegyverek (Tőr, Dzsambia, Levéltőr, Béltépő, Méregfog, Tőr, kígyó) belharcban `TÉ`/`VÉ` = 0-t kapnak. Ha az md az irányadó → feltétel `> 1`, majd engine_spec §21.4 igazítás
+- [ ] Fegyverhossz-limit: ✅ DÖNTÉS (2026-10-16) - **max 1** (az éles md az irányadó); végrehajtás a §42 3. fázis 2. szeletében (feltétel `> 1` + engine_spec §21.4 / helyzet `infó`). Eredeti leírás: az éles md (`065_03_02_semleges_helyzetek.md`) "Max 1 fegyverhossz-kategória", az engine_spec §21.4 + ez a fájl "max 0", az adat feltétele `fegyverhossz > 0`. Következmény: a hossz-1 fegyverek (Tőr, Dzsambia, Levéltőr, Béltépő, Méregfog, Tőr, kígyó) belharcban `TÉ`/`VÉ` = 0-t kapnak. Ha az md az irányadó → feltétel `> 1`, majd engine_spec §21.4 igazítás
 - [ ] Override hatókör hiba (`fegyver-calc.ts` `applyFegyverOverrides` + `calcKetkezes`): a feltétel az AKTÍV fegyver hosszát nézi (`aktív_fegyver_fegyverhossz`), de MINDEN fegyversorra alkalmazódik (aktív kard → a tőr sora is nullázódik; aktív tőr → a kard sora nem). Kétkezes / fegyver+hárító esetén a két hossz ÖSSZEADÓDIK (két tőr = 2 → nullázódik). Helyes: soronkénti (kétkezesnél kezenkénti) hossz-vizsgálat
 - [ ] Tőr, páncélszúró (DÖNTÉS KELL): `pancelszuras_belharcban` extrája van, de `hossz: 2` → belharcban `> 0` és `> 1` feltétellel is nullázódik. Opciók: hossz 1, kivétel a szabály alól, vagy marad
 

@@ -100,7 +100,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const oszlopMéret = épValue / konstansok.sebesülés_kategóriák_száma;
   const téLevonások = konstansok.egészség_kategória_levonás
     .map(ek => {
-      const téMod = ek.módosítók.find(m => m.cél === 'TÉ');
+      const téMod = ek.módosítók.find(m => m.cél === 'TÉ' && m.mód === 'flat');
       return téMod?.érték ?? 0;
     });
 
