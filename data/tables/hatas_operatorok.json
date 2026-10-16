@@ -39,5 +39,10 @@
     "id": "enyhít",
     "név": "Enyhít",
     "mód": "enyhít"
+  },
+  {
+    "id": "flat",
+    "név": "Fix módosító",
+    "mód": "flat"
   }
 ]

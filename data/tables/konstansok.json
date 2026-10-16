@@ -177,6 +177,14 @@
     "letilt",
     "szöveges"
   ],
+  "harcérték_célok": [
+    "TÉ",
+    "VÉ",
+    "KÉ",
+    "CÉ",
+    "SP",
+    "SFÉ"
+  ],
   "harcérték_alap": {
     "KÉ": 0,
     "TÉ": 10,

@@ -345,8 +345,8 @@ class Harcos:
 
     def ve_aktualis(self):
         tm = self.taktika_mod()
-        hh = self.helyzet_hatas("vé")   # pl. Takarásban → VÉ Előny+5 (a séma "vé"-nek nevezi)
-        ve = self.szarmaztatott["VE"] + tm.get("ve", 0) + hh.get("eh", 0)
+        hh = self.helyzet_hatas("VÉ")   # pl. Takarásban → VÉ +5, Láthatatlan → VÉ +5/+10 (flat)
+        ve = self.szarmaztatott["VE"] + tm.get("ve", 0) + hh.get("flat", 0)
         ve -= self.ve_faradas + self.ve_seb
         if self.helyzet == "belharci_helyzet":
             if self.mod.pengehossz > 0:
@@ -393,7 +393,7 @@ def sikertelen_tamadas_ve_csokkentes(tamado: Harcos, vedo: Harcos, te_k20):
     # Meglepetés: "VÉ csökkentés: +2" - ez a helyzet HATÁSA az áldozat (vedo) oldalán,
     # a schema cél-neve "vé_csökkentés" (nem "vé"!)
     hh = tamado.helyzet_hatas("vé_csökkentés")
-    alap += hh.get("eh", 0)
+    alap += hh.get("flat", 0)
 
     vhh = vedo.helyzet_hatas("vé_veszteség")
     if vhh.get("szorzo", 1.0) != 1.0:

@@ -1220,8 +1220,8 @@ A táblák a `harci_helyzetek.json` kivonatai (a hatás-szöveg az `infó` mező
 | Beszorított ellenfél | ellenfél_beszorított | Előny+1 TÉ dobásra. |
 | Beszorított ellenfél - hosszú fegyverrel | ellenfél_beszorított_hosszú_fegyverrel | Előny+2 TÉ dobásra. |
 | Hátulról támadás | hátulról | Előny+1 TÉ dobásra. Pajzs VÉ NEM számít. |
-| Láthatatlan - részlegesen | láthatatlan_részlegesen | Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott. |
-| Láthatatlan - teljesen | láthatatlan_teljesen | Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott. |
+| Láthatatlan - részlegesen | láthatatlan_részlegesen | Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Ellened Fárasztó nem alkalmazható. |
+| Láthatatlan - teljesen | láthatatlan_teljesen | Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Ellened Fárasztó nem alkalmazható. |
 | Levegőből támadás | levegőből | Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK. |
 | Magasabbról | magasabbról | Előny+1 TÉ dobásra. |
 | Meglepetés | meglepetés | Előny+1 TÉ; VÉ csökkentés: +2 |

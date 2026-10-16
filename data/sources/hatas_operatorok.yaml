@@ -33,3 +33,6 @@ hatás_operátorok:
   - id: "enyhít"
     név: "Enyhít"
     mód: "enyhít"
+  - id: "flat"
+    név: "Fix módosító"
+    mód: "flat"   # cél += érték (pl. Takarásban: VÉ +5; Meglepetés: vé_csökkentés +2)

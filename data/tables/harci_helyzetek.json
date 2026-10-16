@@ -417,7 +417,7 @@
   },
   {
     "név": "Láthatatlan - részlegesen",
-    "infó": "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott.",
+    "infó": "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Ellened Fárasztó nem alkalmazható.",
     "megjegyzések": [
       {
         "text": "Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy."
@@ -444,7 +444,7 @@
       {
         "operátor": "flat",
         "érték": 5,
-        "cél": "vé"
+        "cél": "VÉ"
       }
     ],
     "id": "láthatatlan_részlegesen",
@@ -458,7 +458,7 @@
   },
   {
     "név": "Láthatatlan - teljesen",
-    "infó": "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott.",
+    "infó": "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Ellened Fárasztó nem alkalmazható.",
     "megjegyzések": [
       {
         "text": "Látással, hallással nem vagy érzékelhető. Példa: teljes láthatatlanság és zajt sem keltesz."
@@ -488,7 +488,7 @@
       {
         "operátor": "flat",
         "érték": 10,
-        "cél": "vé"
+        "cél": "VÉ"
       }
     ],
     "id": "láthatatlan_teljesen",
@@ -923,9 +923,9 @@
         "cél": "té_dobás"
       },
       {
-        "operátor": "előny",
+        "operátor": "flat",
         "érték": 5,
-        "cél": "vé"
+        "cél": "VÉ"
       }
     ],
     "id": "takarásban",
@@ -994,7 +994,8 @@
       {
         "operátor": "hátrány",
         "érték": -1,
-        "cél": "érzék_látás"
+        "cél": "érzék_próba",
+        "megjegyzés": "Látás"
       }
     ],
     "id": "vér_elvakít",

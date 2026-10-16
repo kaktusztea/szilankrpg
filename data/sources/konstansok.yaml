@@ -162,6 +162,10 @@ effekt_módok:
   - "letilt"      # cél semlegesítése
   - "szöveges"    # informatív (nem kumulálható)
 
+# Csupasz harcérték-célok (engine_spec §42.4): a hatás `cél` mezője ezek egyike VAGY esemény-id
+# (esemenyek.yaml). A helyzet-hatások build-gate-je ehhez mér (validators.validate_harci_helyzet_hatasok).
+harcérték_célok: ["TÉ", "VÉ", "KÉ", "CÉ", "SP", "SFÉ"]
+
 # ============================================================
 # Harcérték konstansok
 # ============================================================

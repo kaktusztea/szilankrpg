@@ -215,7 +215,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: ["földön_fekve"]
 - név: "Láthatatlan - részlegesen"
-  infó: "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott."
+  infó: "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Ellened Fárasztó nem alkalmazható."
   megjegyzések:
   - text: "Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy."
   - text: "Vakharc - félhomályban nullázza bónuszaidat, mert az ellenfél is rosszabbul lát."
@@ -230,14 +230,14 @@ harci_helyzetek:
     megjegyzés: "VÉ csökkentés: +1 bónusz"
   - operátor: "flat"
     érték: 5
-    cél: "vé"
+    cél: "VÉ"
   id: "láthatatlan_részlegesen"
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["láthatatlan_teljesen"]
 - név: "Láthatatlan - teljesen"
-  infó: "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott."
+  infó: "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Ellened Fárasztó nem alkalmazható."
   megjegyzések:
   - text: "Látással, hallással nem vagy érzékelhető. Példa: teljes láthatatlanság és zajt sem keltesz."
   - text: "Vakharc - sötétben nullázza bónuszaidat, mert te sem látsz."
@@ -253,7 +253,7 @@ harci_helyzetek:
     megjegyzés: "VÉ csökkentés: +2 bónusz"
   - operátor: "flat"
     érték: 10
-    cél: "vé"
+    cél: "VÉ"
   id: "láthatatlan_teljesen"
   csoport: "pozitív"
   rejtett: false
@@ -473,9 +473,9 @@ harci_helyzetek:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "előny"
+  - operátor: "flat"
     érték: 5
-    cél: "vé"
+    cél: "VÉ"
   id: "takarásban"
   csoport: "semleges"
   rejtett: false
@@ -511,7 +511,8 @@ harci_helyzetek:
     cél: "cé_dobás"
   - operátor: "hátrány"
     érték: -1
-    cél: "érzék_látás"
+    cél: "érzék_próba"
+    megjegyzés: "Látás"
   id: "vér_elvakít"
   csoport: "negatív"
   rejtett: false

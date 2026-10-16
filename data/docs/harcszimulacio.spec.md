@@ -812,8 +812,8 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 | Levegőből támadás | pozitív | Előny+2 té_dobás; Roham pluszban; Fárasztó OK |
 | Meglepetés | pozitív | Előny+1 té_dobás; **VÉ csökkentés +2**; automatikusan nyert kezdeményezés |
 | Orvtámadás | pozitív | Előny+2 té_dobás; áldozat VÉ-je = puszta kezes Közelharc érték; **tiltja minden taktikát**; kizárja: Hátulról, Meglepetés |
-| Láthatatlan – részlegesen | pozitív | Előny+1 té_dobás; VÉ csökk +1; VÉ +5; **Fárasztás tiltott** |
-| Láthatatlan – teljesen | pozitív | Előny+2 té_dobás; VÉ csökk +2; VÉ +10; **Fárasztás tiltott** |
+| Láthatatlan – részlegesen | pozitív | Előny+1 té_dobás; VÉ csökk +1; VÉ +5; ellene Fárasztás nem alkalmazható |
+| Láthatatlan – teljesen | pozitív | Előny+2 té_dobás; VÉ csökk +2; VÉ +10; ellene Fárasztás nem alkalmazható |
 | Takarásban harcolás | semleges | Hátrány-1 té_dobás; **VÉ +5** |
 | Csúszós talaj | negatív | Hátrány-1 té_dobás |
 | Elvesztett egyensúly | negatív | Hátrány-1 té_dobás; többszörös támadás elvesztése; mozgás feleződik. `Akrobatika` próba `12` megoldja |

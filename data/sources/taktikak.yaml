@@ -41,12 +41,6 @@ taktikák:
   - típus: "harci_helyzet"
     mód: "tiltott"
     érték: "Fegyverhátrány"
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Láthatatlan - részlegesen"
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Láthatatlan - teljesen"
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null

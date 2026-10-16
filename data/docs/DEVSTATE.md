@@ -41,7 +41,8 @@ TODO:
   - Mód-kulcs 4 dialektusban: `mód` (extrák, fortélyok, `fegyver_override`), `hatás` (taktikák), `operátor` (helyzetek, státuszok, `hatasok.yaml`), nincs (`konstansok` egészség-levonás). Az operátor-réteg (`duplázás`/`arányos` → `szorzó` + `halmozás`) megmarad-e a mód fölött?
   - Taktika sorrendfüggő akkumulációja (Fárasztás: `override 3` + fegyverelőnyben `flat +1` = 4) ütközik a §42.3-mal (override eldobja a flat-et → 3). Kivétel vagy adat-átírás?
   - Cél-vokabulár: harcérték (`TÉ`/`VÉ`) vs esemény (`té_dobás`, `vé_csökkentés`) jogos kettősség; de rendezetlen a helyzetek kisbetűs `vé` célja (Láthatatlan +5/+10) és a `fegyver_TÉ`/`fegyver_VÉ` alak.
-  - Validációs lyuk: a `harci_helyzetek.yaml` `hatások` operátorát nem validálja a build (5 sor `operátor: "flat"`, ami nem operátor-id). Ezeknek numerikus fogyasztója sincs (grep alapján).
+  - ~~Validációs lyuk~~ ✅ (2026-10-16): a `harci_helyzetek.yaml` `hatások` build-gate alatt (`validate_harci_helyzet_hatasok`: operátor a katalógusból, cél esemény-id vagy `konstansok.harcérték_célok`). Javítva: Láthatatlan/Takarásban `VÉ` cél (Takarásban `előny 5` → `flat 5`), Vér elvakít → `érzék_próba`; új `flat` operátor. A szimulátor most a `flat` értékeket is alkalmazza (Meglepetés/Láthatatlan `vé_csökkentés`, `VÉ`).
+- [ ] Helyzet `flat` hatások webapp-fogyasztója: Láthatatlan/Takarásban `VÉ` +5/+10 a harcértékbe, Meglepetés/Láthatatlan `vé_csökkentés` +1/+2 a VÉ-csökkentés popupba (ma egyiket sem alkalmazza az app)
 - [ ] 3. fázis: `calcFortelyMods` + `applyFegyverOverrides` + hatás-operátorok beolvasztása EGY runtime kiértékelőbe (§42.3 precedencia)
 - [ ] Előfeltétel a 3. fázishoz: regressziós védőháló (meglévő fortély-mods tesztek + új precedencia-tesztek) - a `fortely-mods.test.ts` és az `extrak-effekt.test.ts` már megvan
 - [ ] `zuzo_ellen_rosszabb` extra (`vé_veszteség` ×2) bekötése a `véVesztésSzorzó`-ba (ma csak az Extrák gombon jelenik meg)

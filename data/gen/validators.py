@@ -71,7 +71,7 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
 def validate_hatasok(hatasok):
     """Validate hatas_operatorok.yaml hatás_operátorok."""
     errors = []
-    valid_mod = {'előny_hátrány', 'szorzó', 'letilt', 'max_limit', 'szöveges', 'enyhít'}
+    valid_mod = {'előny_hátrány', 'szorzó', 'letilt', 'max_limit', 'szöveges', 'enyhít', 'flat'}
     ids_seen = set()
     for i, h in enumerate(hatasok):
         ctx = f"hatás_operátorok[{i}] ({h.get('id', '?')})"
@@ -137,6 +137,25 @@ def validate_statuszok(statuszok, hatas_operatorok, esemenyek):
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
     if errors:
         print("  ❌ Státusz validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
+
+
+def validate_harci_helyzet_hatasok(helyzetek, hatas_operatorok, esemenyek, harcertek_celok):
+    """Validate harci_helyzetek.yaml `hatások[]` - operátor a katalógusból, cél esemény-id VAGY
+    csupasz harcérték-cél (konstansok.yaml → harcérték_célok, engine_spec §42.4)."""
+    errors = []
+    valid_op_ids = {h['id'] for h in hatas_operatorok}
+    valid_cel = {e['id'] for e in esemenyek} | set(harcertek_celok)
+    for h in helyzetek:
+        for k, x in enumerate(h.get('hatások') or []):
+            hctx = f"harci_helyzetek ({h.get('név', '?')}) hatások[{k}]"
+            if not isinstance(x, dict): errors.append(f"{hctx}: nem objektum"); continue
+            if x.get('operátor') not in valid_op_ids: errors.append(f"{hctx}: ismeretlen operátor: '{x.get('operátor')}'")
+            if x.get('cél') not in valid_cel: errors.append(f"{hctx}: ismeretlen cél: '{x.get('cél')}'")
+    if errors:
+        print("  ❌ Harci helyzet hatás validációs hibák:")
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)

@@ -54,6 +54,8 @@ def hatasok_kiertekelese(hatasok, cel_szuro=None):
             eredmeny[cel] = dict(eh=0, szorzo=1.0, letiltott=False, max_limit=None, szoveges=[])
         if op in ("előny", "hátrány"):
             eredmeny[cel]["eh"] += h.get("érték", 0)
+        elif op == "flat":   # fix additív módosító (pl. Takarásban VÉ +5, Meglepetés vé_csökkentés +2)
+            eredmeny[cel]["flat"] = eredmeny[cel].get("flat", 0) + h.get("érték", 0)
         elif op in ("arányos", "duplázás"):
             # ponytail: egy forrás (egy helyzet/státusz/taktika) listáján belül szoroz; a szimulátor harcosonként
             # 1 helyzetet kezel, így oldalon belüli halmozás (§42.3: legnagyobb számít) itt nem áll elő.
