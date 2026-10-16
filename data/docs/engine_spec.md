@@ -1363,7 +1363,7 @@ módosítók és a hatások a `manoverek.yaml`-ban és a szabálykönyvben (md/0
 note: A manőverek nem adnak statikus harcérték módosítókat - ellenpróba alapúak (Manőver Alap + MP + k10 vs Nehézség + ellenfél Manőver Alap).
       Kivétel: fortélyok amik manőver Ellenpróba bónuszt adnak (cél: `manőver:<id>`, mód: flat, +2):
         - Manőverfókusz: Fegyvertörés / Földrevitel / Lefegyverzés → az azonos nevű manőver
-        - Manőverfókusz: Szike → leütés_hátulról, precíz_támadás
+        - Manőverfókuszok: Szike → leütés_hátulról, precíz_támadás
         - Manőverfókuszok: Belharcmozgás (belharcba_kerülés, belharcból_kibontakozás),
           Helyezkedések (mögékerülés, terelés), Kitörés (áttörés, felállás_földről),
           Nyúlcipő (átsiklás, kibontakozás)
@@ -1871,7 +1871,7 @@ Közelharc/Kardvívás/Rombolás/Lándzsavívás/Ostorharc, Mesterfegyvernél a 
 | Manőverfókusz: Fegyvertörés | 1 | Közelharc/Kardvívás/Rombolás/Lándzsavívás ≥ 9; Mesterfegyver fortély ≥ 1 |
 | Manőverfókusz: Földrevitel | 1 | Harcmodor ≥ 6 |
 | Manőverfókusz: Lefegyverzés | 1 | Kardvívás/Lándzsavívás/Ostorharc ≥ 9; Mesterfegyver fortély ≥ 1 |
-| Manőverfókusz: Szike | 1 | Harcmodor ≥ 6; Élettan fortély ≥ 1 |
+| Manőverfókuszok: Szike | 1 | Harcmodor ≥ 6; Élettan fortély ≥ 1 |
 | Manőverfókuszok: Belharcmozgás | 1 | Harcmodor ≥ 6 |
 | Merevvértviselet | 1 | Kardvívás/Rombolás/Lándzsavívás ≥ 3 |
 | Merevvértviselet | 2 | Kardvívás/Rombolás/Lándzsavívás ≥ 3 |
