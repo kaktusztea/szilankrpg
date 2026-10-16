@@ -55,6 +55,9 @@ def hatasok_kiertekelese(hatasok, cel_szuro=None):
         if op in ("előny", "hátrány"):
             eredmeny[cel]["eh"] += h.get("érték", 0)
         elif op in ("arányos", "duplázás"):
+            # ponytail: egy forrás (egy helyzet/státusz/taktika) listáján belül szoroz; a szimulátor harcosonként
+            # 1 helyzetet kezel, így oldalon belüli halmozás (§42.3: legnagyobb számít) itt nem áll elő.
+            # Több forrás egy oldalon → a `max`-szabályt a hívóban kell alkalmazni.
             eredmeny[cel]["szorzo"] *= h.get("érték", 1)
         elif op == "letilt":
             eredmeny[cel]["letiltott"] = True

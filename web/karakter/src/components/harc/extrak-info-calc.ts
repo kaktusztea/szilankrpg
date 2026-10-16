@@ -104,9 +104,14 @@ function manőverreIllik(def: FegyverExtraDef, aktívManőver: string | undefine
   return !!def.hatás?.some(h => h.feltétel === kulcs);
 }
 
+/** Alcél → felirat-előtag (a cél al-komponense, pl. a pajzs VÉ-része). Ismeretlen alcél: zárójelben a nyers érték. */
+// ponytail: egyetlen alcél létezik (extrak.yaml); újnál ide kell felvenni, vagy a data layerbe vinni a feliratot.
+const ALCÉL_ELŐTAG: Record<string, string> = { 'fegyverfogás:fegyver_pajzs': 'Pajzs-' };
+
 /** Egyetlen hatás olvasható összefoglalója (numerikus alkalmazás nélkül). */
 function hatásSzöveg(h: ExtraHatás): string {
-  const cél = h.cél;
+  const cél = !h.alcél ? h.cél
+    : ALCÉL_ELŐTAG[h.alcél] ? `${ALCÉL_ELŐTAG[h.alcél]}${h.cél}` : `${h.cél} (${h.alcél})`;
   switch (h.mód) {
     case 'flat': return `${cél} ${(h.érték ?? 0) >= 0 ? '+' : ''}${h.érték}`;
     case 'szorzó': return `${cél} ×${h.érték}`;

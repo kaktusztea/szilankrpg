@@ -53,13 +53,13 @@ export interface TaktikaHatás {
 /**
  * Egy taktika `hatások` tömbjéből a `vé_csökkentés` célú "szorzó" hatás kinyerése (pl. Roham/Öngyilkos
  * roham: VÉ csökkentés duplán) - a Fegyverviszony-alapú (bázis+k20P) eredményre alkalmazandó.
- * Több `szorzó` elem esetén összeszorzódnak; nincs ilyen hatás → 1.
+ * Több `szorzó` elem esetén a legnagyobb számít (§42.3: oldalon belül nem kumulál); nincs ilyen hatás → 1.
  */
 export function calcVéCsökkentésSzorzó(hatások: TaktikaHatás[] | undefined): number {
   let szorzó = 1;
   for (const h of hatások ?? []) {
     if (h.cél !== 'vé_csökkentés' || h.hatás !== 'szorzó') continue;
-    szorzó *= h.érték ?? 1;
+    szorzó = Math.max(szorzó, h.érték ?? 1);
   }
   return szorzó;
 }

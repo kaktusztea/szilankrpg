@@ -177,7 +177,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     const def = data.taktikak.find(d => d.név === t.név);
     const taktikaSzorzó = calcVéCsökkentésSzorzó(def?.hatások);
     if (taktikaSzorzó !== 1) véCsökkentésSzorzóForrások.push(t.név);
-    return szorzó * taktikaSzorzó;
+    return Math.max(szorzó, taktikaSzorzó); // §42.3: oldalon belül a legnagyobb szorzó számít
   }, 1);
   const véCsökkentésSzorzóForrás = véCsökkentésSzorzóForrások.join(', ') || undefined;
 

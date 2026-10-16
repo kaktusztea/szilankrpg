@@ -24,10 +24,16 @@ describe('alkalmazEffektek - §42.3 precedencia', () => {
     expect(alkalmazEffektek(3, h)).toBe(12);
   });
 
-  it('több szorzó szekvenciális', () => {
-    // (8) * 2 * 0.5 = 8
-    const h: ExtraHatás[] = [{ cél: 'SFÉ', mód: 'szorzó', érték: 2 }, { cél: 'SFÉ', mód: 'szorzó', érték: 0.5 }];
-    expect(alkalmazEffektek(8, h)).toBe(8);
+  it('több szorzó: oldalon belül a legnagyobb nagyító számít (nem kumulál)', () => {
+    // 8 * max(2, 2) = 16 (nem 32)
+    const h: ExtraHatás[] = [{ cél: 'SFÉ', mód: 'szorzó', érték: 2 }, { cél: 'SFÉ', mód: 'szorzó', érték: 2 }];
+    expect(alkalmazEffektek(8, h)).toBe(16);
+  });
+
+  it('nagyító és kicsinyítő szorzó: a legnagyobb ×2 és a legkisebb ×0.5 szorzódik', () => {
+    // 8 * 2 * 0.5 = 8; a ×0 a legkisebb kicsinyítő → 0
+    expect(alkalmazEffektek(8, [{ cél: 'VÉ', mód: 'szorzó', érték: 2 }, { cél: 'VÉ', mód: 'szorzó', érték: 0.5 }])).toBe(8);
+    expect(alkalmazEffektek(8, [{ cél: 'VÉ', mód: 'szorzó', érték: 0.5 }, { cél: 'VÉ', mód: 'szorzó', érték: 0 }])).toBe(0);
   });
 
   it('nem-numerikus (letilt/szöveges) kihagyva', () => {
@@ -89,5 +95,28 @@ describe('hiányzóInfósExtrák - VÉ warning (hiányos korreláció)', () => {
 
   it('nem-VÉ célú extra nem ad VÉ-warningot', () => {
     expect(hiányzóInfósExtrák([{ id: 'kopjas_roham' }], defs, ctx(), 'VÉ')).toEqual([]);
+  });
+});
+
+describe('alcél - a pajzs ×0 csak a pajzs VÉ-komponensre hat', () => {
+  const PAJZS = 'fegyverfogás:fegyver_pajzs';
+  const pajzsDefs: Record<string, FegyverExtraDef> = {
+    pajzs_megkerules: {
+      id: 'pajzs_megkerules', név: 'Pajzs megkerülése',
+      feltétel: [],
+      hatás: [{ cél: 'VÉ', alcél: PAJZS, mód: 'szorzó', érték: 0 }],
+    },
+  };
+  const extrák = [{ id: 'pajzs_megkerules' }];
+
+  it('sima VÉ lekérés nem kapja meg az alcélos szorzót (teljes VÉ érintetlen)', () => {
+    expect(aktívHatásokCélra(extrák, pajzsDefs, ctx(), 'VÉ')).toEqual([]);
+    expect(hiányzóInfósExtrák(extrák, pajzsDefs, ctx(), 'VÉ')).toEqual([]);
+  });
+
+  it('pajzs-alcél lekérés megkapja, és nullázza a pajzs VÉ-t', () => {
+    const h = aktívHatásokCélra(extrák, pajzsDefs, ctx(), 'VÉ', PAJZS);
+    expect(h).toHaveLength(1);
+    expect(alkalmazEffektek(5, h)).toBe(0);
   });
 });

@@ -127,4 +127,9 @@ describe('calcVéCsökkentésSzorzó - Roham/Öngyilkos roham duplázás', () =>
   it('más célú szorzó nem számít bele', () => {
     expect(calcVéCsökkentésSzorzó([{ hatás: 'szorzó', érték: 2, cél: 'sebzésdobás' }])).toBe(1);
   });
+
+  it('több szorzó: a legnagyobb számít (§42.3, nem kumulál)', () => {
+    const hatások = [{ hatás: 'szorzó', érték: 2, cél: 'vé_csökkentés' }, { hatás: 'szorzó', érték: 2, cél: 'vé_csökkentés' }];
+    expect(calcVéCsökkentésSzorzó(hatások)).toBe(2);
+  });
 });

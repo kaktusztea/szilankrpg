@@ -17,7 +17,10 @@ import { extraFeltételTeljesül } from './extrak-info-calc';
 /** Egy célra ható effektek a §42.3 precedencia szerint alkalmazva a bázisértékre. */
 export function alkalmazEffektek(bázis: number, hatások: ExtraHatás[]): number {
   let additív = 0;
-  let szorzó = 1;
+  // §42.3 halmozás (oldalon belül): a legnagyobb nagyító és a legkisebb kicsinyítő szorzó számít, a kettő szorzódik.
+  // ponytail: a nagyító/kicsinyítő keverék ma nem fordul elő az adatban; ha előfordul, a szabályt felülvizsgálni.
+  let nagyító = 1;
+  let kicsinyítő = 1;
   let override: number | null = null;
   let maxLimit: number | null = null;
 
@@ -27,13 +30,16 @@ export function alkalmazEffektek(bázis: number, hatások: ExtraHatás[]): numbe
       case 'flat':
       case 'scaled': // scaled forrás-arány már feloldva a hívónál; itt additív számként érkezik
         additív += h.érték; break;
-      case 'szorzó': szorzó *= h.érték; break;
+      case 'szorzó':
+        if (h.érték > 1) nagyító = Math.max(nagyító, h.érték);
+        else kicsinyítő = Math.min(kicsinyítő, h.érték);
+        break;
       case 'override': override = h.érték; break;
       case 'max_limit': maxLimit = maxLimit === null ? h.érték : Math.min(maxLimit, h.érték); break;
     }
   }
 
-  let érték = override !== null ? override : Math.floor((bázis + additív) * szorzó);
+  let érték = override !== null ? override : Math.floor((bázis + additív) * nagyító * kicsinyítő);
   if (maxLimit !== null) érték = Math.min(érték, maxLimit);
   return érték;
 }
@@ -41,12 +47,15 @@ export function alkalmazEffektek(bázis: number, hatások: ExtraHatás[]): numbe
 /**
  * Az aktív fegyver extrái közül azok hatásai egy adott CÉLRA, amelyek feltételei a jelen
  * kontextusban TELJESÜLNEK (nem `km`, nem `inaktív`). A hatás-al-feltételt (`feltétel`) is nézi.
+ * `alcél`: a cél al-komponense (pl. "fegyverfogás:fegyver_pajzs" = a pajzs VÉ-része). Pontos egyezés:
+ * alcél nélküli lekérés NEM kapja meg az alcélos hatást (különben pl. a pajzs ×0 a teljes VÉ-t nullázná).
  */
 export function aktívHatásokCélra(
   fegyverExtrák: { id: string }[] | undefined,
   extraDefs: Record<string, FegyverExtraDef> | undefined,
   ctx: ExtraKontextus,
   cél: string,
+  alcél?: string,
 ): ExtraHatás[] {
   if (!fegyverExtrák?.length || !extraDefs) return [];
   const ki: ExtraHatás[] = [];
@@ -57,13 +66,18 @@ export function aktívHatásokCélra(
     // A top-level feltételeknek maradéktalanul teljesülniük kell (KM/inaktív → nem alkalmazzuk).
     if (!feltételekBiztosanTeljesülnek(def.feltétel, ctx, manőverReleváns)) continue;
     for (const h of def.hatás) {
-      if (h.cél !== cél) continue;
+      if (!célIllik(h, cél, alcél)) continue;
       // Hatás-al-feltétel (pl. "manőver:<id>"): csak ha az aktív manőverre illik.
       if (h.feltétel && h.feltétel !== `manőver:${ctx.aktívManőver ?? ''}`) continue;
       ki.push(h);
     }
   }
   return ki;
+}
+
+/** Hatás cél + alcél pontos egyezése (alcél nélküli lekérés csak alcél nélküli hatást kap). */
+function célIllik(h: ExtraHatás, cél: string, alcél?: string): boolean {
+  return h.cél === cél && (h.alcél ?? '') === (alcél ?? '');
 }
 
 /** Minden top-level feltétel BIZTOSAN teljesül (nincs hamis és nincs bizonytalan/KM tag). */
@@ -82,12 +96,13 @@ export function hiányzóInfósExtrák(
   extraDefs: Record<string, FegyverExtraDef> | undefined,
   ctx: ExtraKontextus,
   cél: string,
+  alcél?: string,
 ): string[] {
   if (!fegyverExtrák?.length || !extraDefs) return [];
   const nevek: string[] = [];
   for (const { id } of fegyverExtrák) {
     const def = extraDefs[id];
-    if (!def?.hatás?.some(h => h.cél === cél)) continue;
+    if (!def?.hatás?.some(h => célIllik(h, cél, alcél))) continue;
     if (!def.feltétel?.length) continue;
     const manőverReleváns = !!ctx.aktívManőver && def.hatás.some(h => h.feltétel === `manőver:${ctx.aktívManőver}`);
     const részek = def.feltétel.map(f => extraFeltételTeljesül(f, ctx, manőverReleváns));
