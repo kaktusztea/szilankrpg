@@ -4,6 +4,7 @@ import os
 
 from .common import SOURCES_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
+from .validators import tiltas_ids_of
 
 
 def generate_fortelyok():
@@ -97,6 +98,7 @@ def generate_fortelyok():
     konstansok = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
     valid_prefixek = set(konstansok.get('feltétel_prefixek', []))
     valid_módok = set(konstansok.get('effekt_módok', []))
+    tiltas_ids = tiltas_ids_of(load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek'])
     felt_errors = []
     for root, dirs, files in os.walk(fdir):
         for f in sorted(files):
@@ -115,6 +117,16 @@ def generate_fortelyok():
                     elif m not in valid_módok:
                         felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen módosító mód '{m}' (nincs a konstansok.effekt_módok listában)")
                     felt = mod.get('feltétel', '')
+                    if isinstance(felt, list):
+                        # Strukturált feltétel: a prefixes forrás (pl. "tiltás:<id>") is a kanonikus prefix-listából.
+                        for p in felt:
+                            src = p.get('forrás', '') if isinstance(p, dict) else ''
+                            pre, _, val = src.partition(':')
+                            if val and pre not in valid_prefixek:
+                                felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen feltétel prefix '{pre}' (forrás: '{src}')")
+                            if pre == 'tiltás' and val not in tiltas_ids:
+                                felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen tiltás '{val}' (harci_helyzetek.yaml tiltások[])")
+                        continue
                     if not felt or not isinstance(felt, str):
                         continue
                     if ':' in felt:

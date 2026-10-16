@@ -6,7 +6,7 @@ from .common import SOURCES_DIR, load_yaml, write_json
 from .schema import validate_schema
 from .validators import (
     validate_aktiv_ful, validate_esemenyek,
-    validate_statuszok, validate_hatasok_katalogus, validate_harci_helyzet_hatasok,
+    validate_statuszok, validate_hatasok_katalogus, validate_harci_helyzet_hatasok, validate_effekt_hivatkozasok,
 )
 
 
@@ -43,6 +43,7 @@ def generate_aktiv_ful():
     validate_statuszok(statuszok, effekt_modok, esemenyek)
     validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, _konstansok.get('harcérték_célok', []))
     validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek)
+    validate_effekt_hivatkozasok(helyzetek, extrak)
 
     # feltétel_kulcs generálás id-ból (yaml-ban nincs, JSON-ban kell)
     for t in taktikak:

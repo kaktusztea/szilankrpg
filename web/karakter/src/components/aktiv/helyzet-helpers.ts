@@ -2,6 +2,8 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
 import { buildPajzsFegyverNév } from '../harc/shared';
+import { buildAktívFeltételek } from '../../engine/feltetelek';
+import { aktívTiltások } from '../../engine/effekt';
 
 /** Helyzet elérhető-e a pickerben */
 export function isHelyzetAvailable(
@@ -34,6 +36,12 @@ export function getMinFegyverhosszWarning(
     if (ph < köv.érték) return `⚠ Min. fegyverhossz: ${köv.érték}!`;
   }
   return '';
+}
+
+/** Egy aktív helyzet tiltásai, amelyeket a kézben lévő fegyver(ek) megsértenek (pl. Belharc: ⚠ túl hosszú) - §42.4. */
+export function getTiltásWarnings(helyzetNév: string, karakter: Karakter, session: Session, data: GameData): string[] {
+  return aktívTiltások(karakter, session, data, buildAktívFeltételek(session, data))
+    .filter(t => t.helyzet === helyzetNév).map(t => `⚠ ${t.leírás}`);
 }
 
 /** Helyzet infó szöveg összeállítása (alapesettel) */

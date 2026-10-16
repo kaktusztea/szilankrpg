@@ -147,6 +147,8 @@ feltétel_prefixek:
   - "képzettség"          # pl. "képzettség:Harcmodor" - entitás-hivatkozás (egységes effekt-modell, engine_spec §42)
   - "manőver_állapot"     # pl. "manőver_állapot:passzív" - egységes effekt-modell (engine_spec §42)
   - "ellenfél_fegyver_sebzésjelleg"  # pl. "ellenfél_fegyver_sebzésjelleg:zúzó" - egységes effekt-modell (engine_spec §42)
+  - "ellenfél_harci_helyzet"  # pl. "ellenfél_harci_helyzet:földön_fekve" - az ELLENFÉL helyzete (KM; engine_spec §42)
+  - "tiltás"              # pl. "tiltás:belharc_fegyverhossz" - aktív nevesített tiltás (harci_helyzetek.yaml tiltások[], engine_spec §42.4)
 
 # Egységes effekt-mód enum (engine_spec §42.2) - az effekt-adat `mód`/`operátor` értékei.
 # A `előny`/`hátrány` a `előny_hátrány` MÓD-KATEGÓRIA két operátor-neve (előjeles érték).

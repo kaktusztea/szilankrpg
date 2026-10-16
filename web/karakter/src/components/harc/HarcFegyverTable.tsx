@@ -50,7 +50,7 @@ export function HarcFegyverTable({
     const spBónusz = (fortelyMods['SP'] ?? 0) + taktikaMods['SP'];
     const spBase = spTotal - spBónusz;
     const ph = r.fegyverhossz + (fortelyMods['fegyverhossz'] ?? 0);
-    const belharcWarning = belharciAktív && r.fegyverhossz > 0;
+    const belharcWarning = !!r.tiltások?.length; // §42.4: a sor saját aktív tiltásai (pl. túl hosszú / nem Közelharc)
     const név = displayNév ?? r.fegyver_név;
 
     return (

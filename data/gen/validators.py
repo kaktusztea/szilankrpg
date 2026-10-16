@@ -1,5 +1,40 @@
 """Referenciális és tartalmi validátorok az Aktív fül adataihoz (taktikák, helyzetek, hatások)."""
 
+# A tiltás-feltételek fegyverenként kiértékelt forrásai (web: engine/effekt.ts → tiltásokFegyverre).
+TILTAS_FORRASOK = {'fegyver.fegyverhossz', 'fegyver.harcmodor'}
+
+
+def tiltas_ids_of(helyzetek):
+    """Minden harci helyzet `tiltások[].id`-je (a `tiltás:<id>` hivatkozások célkészlete)."""
+    return {t.get('id') for h in helyzetek for t in (h.get('tiltások') or [])}
+
+
+def validate_effekt_hivatkozasok(helyzetek, extrak):
+    """`tiltás:<id>` és `ellenfél_harci_helyzet:<id>` hivatkozások létező célra mutassanak
+    (fegyver_override feltétel + extra hatás cél / al-feltétel). Különben a hatás CSENDBEN nem élne."""
+    errors = []
+    tiltasok = tiltas_ids_of(helyzetek)
+    helyzet_ids = {h.get('id') for h in helyzetek}
+    def ref(s, hely):
+        if not isinstance(s, str) or ':' not in s: return
+        pre, _, val = s.partition(':')
+        if pre == 'tiltás' and val not in tiltasok: errors.append(f"{hely}: ismeretlen tiltás '{val}'")
+        if pre == 'ellenfél_harci_helyzet' and val not in helyzet_ids: errors.append(f"{hely}: ismeretlen harci helyzet '{val}'")
+    for h in helyzetek:
+        for p in (h.get('fegyver_override') or {}).get('feltétel') or []:
+            ref(p.get('forrás'), f"harci_helyzetek ({h.get('név')}) fegyver_override")
+    for e in extrak:
+        for x in e.get('hatás') or []:
+            ref(x.get('cél'), f"extrak [{e.get('id')}] hatás.cél")
+            ref(x.get('feltétel'), f"extrak [{e.get('id')}] hatás.feltétel")
+            if isinstance(x.get('cél'), str) and x['cél'].startswith('tiltás:') and x.get('mód') != 'letilt':
+                errors.append(f"extrak [{e.get('id')}]: tiltás-cél csak mód 'letilt' lehet (kapott '{x.get('mód')}')")
+    if errors:
+        print("  ❌ Effekt-hivatkozás hibák (tiltás / ellenfél_harci_helyzet):")
+        for e in errors: print(f"     {e}")
+        raise SystemExit(1)
+
+
 def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok):
     """Validate aktív fül YAML sources against schemas."""
     errors = []
@@ -37,11 +72,23 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok
             if mk.get('típus') != 'többes_harc' and 'érték' not in mk:
                 errors.append(f"{mctx}: hiányzó 'érték' (típus: {mk.get('típus')})")
     # Harci helyzetek
+    tiltas_ids = set()
     for i, h in enumerate(helyzetek):
         ctx = f"harci_helyzetek[{i}] ({h.get('név', '?')})"
         if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
         if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if not h.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
+        # Nevesített tiltások (§42.4): {id, leírás, feltétel[]}, a feltétel forrása fegyverenként kiértékelhető érték
+        for j, t in enumerate(h.get('tiltások') or []):
+            tctx = f"{ctx} tiltások[{j}]"
+            if not t.get('id') or not t.get('leírás'): errors.append(f"{tctx}: hiányzó 'id' / 'leírás'")
+            if t.get('id') in tiltas_ids: errors.append(f"{tctx}: duplikált tiltás id '{t.get('id')}'")
+            tiltas_ids.add(t.get('id'))
+            felt = t.get('feltétel')
+            if not isinstance(felt, list) or not felt: errors.append(f"{tctx}: 'feltétel' nem üres lista kell")
+            for p in felt or []:
+                if p.get('forrás') not in TILTAS_FORRASOK:
+                    errors.append(f"{tctx}: ismeretlen forrás '{p.get('forrás')}' (engedett: {sorted(TILTAS_FORRASOK)})")
         # fegyver_override: a fegyver-komponens bázis-cseréje (§42.4) - cél harcérték, alcél felszerelés:fegyver
         for j, m in enumerate((h.get('fegyver_override') or {}).get('módosítók') or []):
             if m.get('cél') not in ('TÉ', 'VÉ', 'SP') or m.get('alcél') != 'felszerelés:fegyver':

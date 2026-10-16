@@ -110,6 +110,14 @@ const ALCÉL_ELŐTAG: Record<string, string> = { 'felszerelés:fegyver': 'Fegyve
 
 /** Egyetlen hatás olvasható összefoglalója (numerikus alkalmazás nélkül). */
 function hatásSzöveg(h: ExtraHatás): string {
+  // Al-feltétel az ellenfél helyzetére (KM-döntés): a felirat megnevezi, mikor él a hatás.
+  const ellenfél = h.feltétel?.startsWith('ellenfél_harci_helyzet:')
+    ? ` (ha az ellenfél: ${h.feltétel.split(':')[1].replace(/_/g, ' ')})` : '';
+  return hatásAlapSzöveg(h) + ellenfél;
+}
+
+function hatásAlapSzöveg(h: ExtraHatás): string {
+  if (h.mód === 'letilt' && h.cél.startsWith('tiltás:')) return `Feloldva: ${h.cél.slice('tiltás:'.length).replace(/_/g, ' ')}`;
   const cél = !h.alcél ? h.cél
     : ALCÉL_ELŐTAG[h.alcél] ? `${ALCÉL_ELŐTAG[h.alcél]}${h.cél}` : `${h.cél} (${h.alcél})`;
   switch (h.mód) {

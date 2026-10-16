@@ -18,6 +18,8 @@ interface KétkezesInput {
   fegyverIdeaTabla: GameData['fegyverIdeaTabla'];
   páncélMGT?: number;
   merevvértBüntetés?: number;
+  /** Fegyverenkénti alapérték-csere (cél → érték, pl. Belharc: TÉ/VÉ 0 a túl hosszú fegyverre) - §42.3/§42.4. */
+  alapOverride?: (fDef: FegyverAlap) => Map<string, number>;
 }
 
 export interface KétkezesResult extends FegyverResultMód {
@@ -77,8 +79,9 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   }
 
   // Harcértékek
-  const alapTÉ = nagyobbElsődleges.TÉ + (khFokBónusz.mindkét_fegyver_értékei ? kisebbElsődleges.TÉ : 0);
-  const alapVÉ = nagyobbElsődleges.VÉ + (khFokBónusz.mindkét_fegyver_értékei ? kisebbElsődleges.VÉ : 0);
+  const ovrN = input.alapOverride?.(nagyobb), ovrK = input.alapOverride?.(kisebb);
+  const alapTÉ = (ovrN?.get('TÉ') ?? nagyobbElsődleges.TÉ) + (khFokBónusz.mindkét_fegyver_értékei ? (ovrK?.get('TÉ') ?? kisebbElsődleges.TÉ) : 0);
+  const alapVÉ = (ovrN?.get('VÉ') ?? nagyobbElsődleges.VÉ) + (khFokBónusz.mindkét_fegyver_értékei ? (ovrK?.get('VÉ') ?? kisebbElsődleges.VÉ) : 0);
 
   // Példány-Idea delta (Modell 2): CSAK a beszámító fegyver Ideája hat. A nagyobb TÉ/VÉ mindig
   // számít; a kisebbé csak `mindkét_fegyver_értékei` mellett; az SP-t kizárólag a jobb kéz sebzi.

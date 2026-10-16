@@ -13,6 +13,10 @@ harci_helyzetek:
     tiltott_fegyverfogások: [] # opcionális, lista (ezen fegyverfogások disabled amíg ez a helyzet aktív)
     csoport: ""                # kötelező, "játékos" | "km" - picker csoportosítás
     rejtett: false             # opcionális, bool (ha true: nem jelenik meg a picker-ben, automatikus)
+    # Nevesített tiltások (engine_spec §42.4): fegyverenként kiértékelt korlátozások; `tiltás:<id>` hivatkozás,
+    # feloldás effekttel ({cél: "tiltás:<id>", mód: letilt}). feltétel forrás: fegyver.fegyverhossz | fegyver.harcmodor
+    tiltások:                  # opcionális
+      - { id: "", leírás: "", feltétel: [] }
     # Fegyver-szintű override: adott feltétel esetén a fegyver harcértékeit felülírja
     fegyver_override:          # opcionális
       feltétel:

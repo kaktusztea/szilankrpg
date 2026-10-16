@@ -10,12 +10,15 @@ import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
 import { buildPajzsFegyverNév, véVesztésSzorzó } from './shared';
+import { aktívTiltások } from '../../engine/effekt';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
   const { konstansok } = data;
 
   const aktívFeltételek = buildAktívFeltételek(session, data);
+  // Nevesített tiltások (§42.4) a kézben lévő fegyver(ek)re - a nem soronkénti feltételekhez (pl. Belharcos fortély).
+  for (const t of aktívTiltások(k, session, data, aktívFeltételek)) aktívFeltételek.add(`tiltás:${t.id}`);
   const taktikaMods = calcTaktikaMods(session, data, k);
 
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(k,
@@ -37,18 +40,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     ? lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '')
     : aktívFegyverFp ? lookupFegyver(data.fegyverek, aktívFegyverFp.alap) : null;
 
-  const jobbFegyverhossz = aktívFegyverDef?.fegyverhossz ?? 0;
-  let aktívFegyverhossz = jobbFegyverhossz;
-
-  if ((session.kétkezes_harc || session.fegyverfogás === 'fegyver_hárító') && session.aktív_fegyver_bal_index >= 0) {
-    const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
-    const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
-    aktívFegyverhossz += balDef?.fegyverhossz ?? 0;
-  }
-
   const aktívFegyverKat = aktívFegyverDef?.kategória ?? 'közelharci';
-  const aktívFegyverHarcmodor = konstansok.fegyver_kategória_harcmodor[aktívFegyverKat] ?? 'Közelharc';
-  stringCtx.set('aktív_fegyver_harcmodor', aktívFegyverHarcmodor);
   aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`);
 
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
@@ -60,7 +52,6 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     páncél_végtagvédettség: k.páncél.végtagvédettség,
     páncél_sisak: k.páncél.sisak ? 1 : 0,
     páncél_idea: k.páncél.idea, páncél_rongálódás: k.páncél.rongálódás,
-    aktív_fegyver_fegyverhossz: aktívFegyverhossz,
   });
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 
@@ -81,9 +72,9 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const páncélMGT = session.aktív_páncél ? (computed.get('páncél_MGT') ?? 0) : 0;
   const merevvértBüntetés = session.aktív_páncél ? (computed.get('merevvért_TÉ_büntetés') ?? 0) : 0;
   const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT, merevvértBüntetés);
-  applyFegyverOverrides(fegyverResults, session, data, feltételTeljesül);
+  applyFegyverOverrides(fegyverResults, session, data, aktívFeltételek);
 
-  const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, feltételTeljesül, páncélMGT, merevvértBüntetés);
+  const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, aktívFeltételek, páncélMGT, merevvértBüntetés);
   const { pajzsVÉ, fogásResult } = calcFogás(k, session, data, fortelyMods);
 
   const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');

@@ -137,6 +137,8 @@ export interface HarciHelyzetEntry {
   tiltott_fegyverfogások?: string[];
   kizár_helyzetek?: string[];
   hatások?: StatuszHatas[];
+  /** Nevesített tiltások (§42.4): fegyverenként kiértékelve, `tiltás:<id>`-ként hivatkozható. */
+  tiltások?: { id: string; leírás: string; feltétel: { forrás: string; operátor: string; érték: unknown }[] }[];
   fegyver_override?: {
     feltétel: { forrás: string; operátor: string; érték: unknown }[];
     módosítók: { cél: string; alcél?: string; érték: number; mód: string }[];

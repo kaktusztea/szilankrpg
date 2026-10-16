@@ -67,11 +67,12 @@ extrak:
   - id: pancelszuras_belharcban
     név: "Belharcban rések közt beszúr"
     csoport: harci_helyzet
-    leírás: "Belharcban, földön lévő ellenfélnél a rések közt szúr - a páncél SFÉ-je 0."
+    leírás: "Belharcban a fegyverhossz-korlát rá nem vonatkozik; földön lévő ellenfélnél a rések közt szúr - a páncél SFÉ-je 0."
     feltétel:
       - {típus: harci_helyzet, id: belharci_helyzet}
     hatás:
-      - {cél: SFÉ, alcél: "felszerelés:páncél", mód: override, érték: 0}
+      - {cél: "tiltás:belharc_fegyverhossz", mód: letilt}   # a Belharc hossz-tiltása erre a fegyverre nem él
+      - {cél: SFÉ, alcél: "felszerelés:páncél", mód: override, érték: 0, feltétel: "ellenfél_harci_helyzet:földön_fekve"}   # KM: az ellenfél állapota
 
   - id: pikas_kozrefogasa
     név: "Pikás közrefogása"

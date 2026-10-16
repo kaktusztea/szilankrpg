@@ -832,7 +832,7 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 
 | Helyzet | Hatás |
 |---|---|
-| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 0 fegyverhosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
+| Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 1 fegyverhosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
 | Közrefogás | Semlegesíti az ellenfél Fegyverelőnyét → Fegyverazonosság |
 | Fegyverrántás váratlanul | `Fegyverrántás` fortély: KÉ+5 / +10 |
 | Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Fegyverhossz +2` kategória (min_fegyverméret 3 követelmény, warning-only) |

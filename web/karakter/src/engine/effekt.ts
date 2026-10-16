@@ -8,13 +8,18 @@
  * Átmeneti állapot (3. fázis, 1. szelet): a régi `calcFortelyMods` / `calcTaktikaMods` még él, az
  * `effekt.parity.test.ts` méri hozzájuk ezt a modult. A fogyasztók szeletenként állnak át, a végén a két régi
  * függvény törlődik. A helyzet / státusz / extra forrás a saját szeletében kerül be (YAGNI: amíg nincs fogyasztója).
+ * A fájl végén: a tiltás-keret (§42.4) és a fegyver_override soronkénti kiértékelése (2. szelet).
  */
-import type { Karakter, Session } from './types';
+import type { Karakter, Session, FegyverAlap } from './types';
 import type { GameData } from './data-loader';
 import { evaluateAlapesetek } from './alapeset';
 import { alkalmazEffektek } from '../components/harc/extrak-effekt';
 import { interpolateFokDef } from '../components/aktiv/taktika-helpers';
 import { collectTaktikaLetiltások } from '../components/harc/taktika-calc';
+import { createFeltételEvaluator } from './feltetel-eval';
+import { lookupFegyver } from './utils';
+import { buildPajzsFegyverNév } from '../components/harc/shared';
+import { extraFeltételTeljesül } from '../components/harc/extrak-info-calc';
 
 export type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika';
 
@@ -120,4 +125,93 @@ export function értékCélra(effektek: Effekt[], cél: string, bázis = 0, alc�
 /** Fegyverfüggő `scaled` arányok összege (pl. SP + "erőbónusz": a fegyver Erőlimitje szerint szorzódik). */
 export function arányÖsszeg(effektek: Effekt[], cél: string, arányForrás: string): number {
   return effektek.reduce((s, e) => (e.cél === cél && e.arányForrás === arányForrás ? s + (e.arány ?? 0) : s), 0);
+}
+
+// ─── Tiltás-keret (engine_spec §42.4) ───────────────────────────────────────────────────────────
+// Egy harci helyzet nevesített `tiltások[]`-a fegyverenként értékelődik ki (forrás: fegyver.fegyverhossz /
+// fegyver.harcmodor). Feltételben `tiltás:<id>`-ként hivatkozható; a fegyver egy extrája
+// `{cél: "tiltás:<id>", mód: letilt}` hatással feloldja (pl. Tőr, páncélszúró: pancelszuras_belharcban).
+
+export interface AktívTiltás { id: string; leírás: string; helyzet: string }
+
+/** A kézben lévő fegyverek: jobb kéz (vagy pajzs, index -2) + bal kéz kétkezes / hárító fogásnál. Üres = puszta kéz. */
+export function aktívFegyverDefek(k: Karakter, session: Session, data: GameData): FegyverAlap[] {
+  const ki: FegyverAlap[] = [];
+  const jobb = session.aktív_fegyver_index === -2
+    ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(k) ?? '')
+    : session.aktív_fegyver_index >= 0 ? lookupFegyver(data.fegyverek, k.fegyverek[session.aktív_fegyver_index]?.alap ?? '') : undefined;
+  if (jobb) ki.push(jobb);
+  if ((session.kétkezes_harc || session.fegyverfogás === 'fegyver_hárító') && session.aktív_fegyver_bal_index >= 0) {
+    const bal = lookupFegyver(data.fegyverek, k.fegyverek[session.aktív_fegyver_bal_index]?.alap ?? '');
+    if (bal) ki.push(bal);
+  }
+  return ki;
+}
+
+/** A fegyver extrái által feloldott tiltás-id-k (az extra top-level feltételének BIZTOSAN teljesülnie kell). */
+function feloldottTiltások(fDef: FegyverAlap, data: GameData, aktívFeltételek: Set<string>): Set<string> {
+  // ponytail: a kontextus csak a feltétel-kulcsokat ismeri (harci_helyzet/taktika); fortély-/státusz-feltételű
+  // feloldó extra itt nem teljesülne - ma nincs ilyen. Ha lesz: a teljes ExtraKontextust kell átadni.
+  const ctx = { aktívFeltételek, fortélyFokok: new Map<string, number>(), aktívStátuszok: new Set<string>() };
+  const ki = new Set<string>();
+  for (const { id } of fDef.extrák ?? []) {
+    const def = data.fegyverExtrák?.[id];
+    if (!def?.hatás?.length) continue;
+    if (!(def.feltétel ?? []).every(f => extraFeltételTeljesül(f, ctx) === true)) continue;
+    for (const h of def.hatás) {
+      if (h.mód === 'letilt' && !h.feltétel && h.cél.startsWith('tiltás:')) ki.add(h.cél.slice('tiltás:'.length));
+    }
+  }
+  return ki;
+}
+
+/** Egy fegyverre ható aktív (nem feloldott) tiltások az aktív harci helyzetekből. */
+export function tiltásokFegyverre(fDef: FegyverAlap, session: Session, data: GameData, aktívFeltételek: Set<string>): AktívTiltás[] {
+  const helyzetek = session.aktív_helyzetek
+    .map(n => data.harciHelyzetek.find(d => d.név === n))
+    .filter(h => h?.tiltások?.length);
+  if (!helyzetek.length) return [];
+  const ctx = new Map([['fegyver.fegyverhossz', fDef.fegyverhossz]]);
+  const sctx = new Map([['fegyver.harcmodor', data.konstansok.fegyver_kategória_harcmodor[fDef.kategória] ?? 'Közelharc']]);
+  const { feltételTeljesül } = createFeltételEvaluator(new Set(), session, new Map(), ctx, sctx);
+  const feloldott = feloldottTiltások(fDef, data, aktívFeltételek);
+  const ki: AktívTiltás[] = [];
+  for (const h of helyzetek) {
+    for (const t of h!.tiltások!) {
+      if (!feloldott.has(t.id) && feltételTeljesül(t.feltétel)) ki.push({ id: t.id, leírás: t.leírás, helyzet: h!.név });
+    }
+  }
+  return ki;
+}
+
+/** A kézben lévő fegyverek tiltásainak uniója (id szerint egyedi) - a nem fegyversor-szintű feltételekhez (pl. fortély). */
+export function aktívTiltások(k: Karakter, session: Session, data: GameData, aktívFeltételek: Set<string>): AktívTiltás[] {
+  const ki = new Map<string, AktívTiltás>();
+  for (const fDef of aktívFegyverDefek(k, session, data)) {
+    for (const t of tiltásokFegyverre(fDef, session, data, aktívFeltételek)) ki.set(t.id, t);
+  }
+  return [...ki.values()];
+}
+
+const FEGYVER_KOMPONENS = 'felszerelés:fegyver';
+
+/**
+ * A helyzetek `fegyver_override`-jából EGY fegyverre ható alapérték-cserék (§42.3 bázis-csere, alcél
+ * felszerelés:fegyver): cél → új alapérték. A feltétel a fegyver SAJÁT tiltásaival értékelődik ki
+ * (a bemenet esetleges globális `tiltás:` kulcsait eldobja) - így soronként / kezenként helyes.
+ */
+export function fegyverOverrideÉrtékek(fDef: FegyverAlap, session: Session, data: GameData, aktívFeltételek: Set<string>): Map<string, number> {
+  const ki = new Map<string, number>();
+  const helyzetek = session.aktív_helyzetek.map(n => data.harciHelyzetek.find(d => d.név === n)).filter(h => h?.fegyver_override);
+  if (!helyzetek.length) return ki;
+  const sor = new Set([...aktívFeltételek].filter(f => !f.startsWith('tiltás:')));
+  for (const t of tiltásokFegyverre(fDef, session, data, aktívFeltételek)) sor.add(`tiltás:${t.id}`);
+  const { feltételTeljesül } = createFeltételEvaluator(sor, session, new Map(), new Map(), new Map());
+  for (const h of helyzetek) {
+    if (!feltételTeljesül(h!.fegyver_override!.feltétel)) continue;
+    for (const m of h!.fegyver_override!.módosítók) {
+      if (m.mód === 'override' && m.alcél === FEGYVER_KOMPONENS) ki.set(m.cél, m.érték);
+    }
+  }
+  return ki;
 }

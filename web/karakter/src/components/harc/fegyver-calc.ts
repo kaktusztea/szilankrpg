@@ -5,6 +5,7 @@ import { lookupFegyver, képzettségSzint } from '../../engine/utils';
 import { findMfFok } from '../../engine/mf-utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
 import { ideaDelta } from './shared';
+import { tiltásokFegyverre, fegyverOverrideÉrtékek } from '../../engine/effekt';
 import type { FegyverResult, FegyverResultMód } from './types';
 
 /** Cached filtered fegyver rules (keyed by rules array reference). */
@@ -147,28 +148,23 @@ export function calcFegyverResults(
   });
 }
 
-/** Felszerelés-komponens alcél: a fegyver alap-értéke (engine_spec §42.4). */
-const FEGYVER_KOMPONENS = 'felszerelés:fegyver';
-
-/** Fegyver override helyzetek alapján (pl. Belharc: fegyver alap TÉ/VÉ=0 ha fegyverhossz>0; override = bázis-csere, §42.3) */
+/**
+ * Fegyver override a helyzetek alapján, SORONKÉNT (§42.3 bázis-csere, §42.4 tiltás-keret): minden fegyversor
+ * a saját hossza / harcmodora / extrái szerint kapja meg (pl. Belharc: a túl hosszú fegyver alap TÉ/VÉ-je 0,
+ * a tőr marad; a pancelszuras_belharcban extra feloldja a hossz-tiltást). A sor aktív tiltásai a `tiltások` mezőbe.
+ */
 export function applyFegyverOverrides(
-  results: FegyverResult[], session: Session, data: GameData,
-  feltételTeljesül: (feltétel: unknown) => boolean,
+  results: FegyverResult[], session: Session, data: GameData, aktívFeltételek: Set<string>,
 ) {
-  for (const helyzetNév of session.aktív_helyzetek) {
-    const hDef = data.harciHelyzetek.find(h => h.név === helyzetNév);
-    if (!hDef?.fegyver_override) continue;
-    if (!feltételTeljesül(hDef.fegyver_override.feltétel)) continue;
-    for (const mod of hDef.fegyver_override.módosítók) {
-      if (mod.mód !== 'override' || mod.alcél !== FEGYVER_KOMPONENS) continue;
-      for (const r of results) {
-        for (const m of r.módok) {
-          if (mod.cél === 'TÉ') m.TÉ -= m.alap_TÉ;
-          if (mod.cél === 'VÉ') m.VÉ -= m.alap_VÉ;
-        }
-        if (mod.cél === 'TÉ') r.TÉ -= r.alap_TÉ;
-        if (mod.cél === 'VÉ') r.VÉ -= r.alap_VÉ;
-      }
+  for (const r of results) {
+    const fDef = lookupFegyver(data.fegyverek, r.fegyver_név);
+    if (!fDef) continue;
+    r.tiltások = tiltásokFegyverre(fDef, session, data, aktívFeltételek).map(t => t.id);
+    const ovr = fegyverOverrideÉrtékek(fDef, session, data, aktívFeltételek);
+    if (!ovr.size) continue;
+    for (const m of [...r.módok, r]) {
+      if (ovr.has('TÉ')) m.TÉ += ovr.get('TÉ')! - m.alap_TÉ;
+      if (ovr.has('VÉ')) m.VÉ += ovr.get('VÉ')! - m.alap_VÉ;
     }
   }
 }
@@ -177,7 +173,7 @@ export function applyFegyverOverrides(
 export function calcKetkezes(
   k: Karakter, session: Session, data: GameData,
   fortelyMods: Record<string, number>,
-  feltételTeljesül: (feltétel: unknown) => boolean,
+  aktívFeltételek: Set<string>,
   páncélMGT?: number,
   merevvértBüntetés?: number,
 ): (FegyverResult & { sumFegyverhossz: number }) | null {
@@ -190,17 +186,9 @@ export function calcKetkezes(
     konstansok: data.konstansok, harcmodorBonusz: data.harcmodorBonusz, fortelyMods,
     fegyverIdeaTabla: data.fegyverIdeaTabla,
     páncélMGT, merevvértBüntetés,
+    // Kezenkénti override (pl. Belharc): mindkét fegyver a SAJÁT hossza / extrái szerint (§42.4).
+    alapOverride: fDef => fegyverOverrideÉrtékek(fDef, session, data, aktívFeltételek),
   });
   if (!result) return null;
-  for (const helyzetNév of session.aktív_helyzetek) {
-    const hDef = data.harciHelyzetek.find(h => h.név === helyzetNév);
-    if (!hDef?.fegyver_override) continue;
-    if (!feltételTeljesül(hDef.fegyver_override.feltétel)) continue;
-    for (const mod of hDef.fegyver_override.módosítók) {
-      if (mod.mód !== 'override' || mod.alcél !== FEGYVER_KOMPONENS) continue;
-      if (mod.cél === 'TÉ') result.TÉ -= result.alap_TÉ;
-      if (mod.cél === 'VÉ') result.VÉ -= result.alap_VÉ;
-    }
-  }
   return result;
 }

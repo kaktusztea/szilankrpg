@@ -163,7 +163,9 @@
     "fortély",
     "képzettség",
     "manőver_állapot",
-    "ellenfél_fegyver_sebzésjelleg"
+    "ellenfél_fegyver_sebzésjelleg",
+    "ellenfél_harci_helyzet",
+    "tiltás"
   ],
   "effekt_módok": [
     "flat",

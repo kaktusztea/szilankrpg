@@ -34,7 +34,7 @@ Engine spec: §42 (részben implementált), fázisterv: §42.5. Cél: a fortély
 Állapot:
 - **1. fázis - Szabvány** ✅: §42 + a pilot `extrak.yaml`.
 - **2. fázis - Adat-migráció** (részben): az `extrak.yaml`-re kész - „Extrák" gomb (aktív/inaktív/KM, `extrak-info-calc.ts`) + §42.3 precedencia-motor (`extrak-effekt.ts`: `alkalmazEffektek`, `aktívHatásokCélra`). Numerikus alkalmazás CSAK teljes korrelációnál: Sebzés popup SP-delta (ellenfél-páncél ismert); hiányos infónál warning (VÉ-csökkentés popup, VÉ-t érintő cél_páncél-extra) + Extrák jelzés.
-- **3. fázis - Kód** (folyamatban, szeletenként): 1. szelet kész - `engine/effekt.ts` (gyűjtő: fortély + alapeset + taktika; `értékCélra` / `arányÖsszeg` a §42.3 motoron) + `effekt.parity.test.ts` paritás-háló a régi `calcFortelyMods` / `calcTaktikaMods`-hoz (valós adat, 2 teszt-karakter + "minden fortély" szintetikus, ~90 session-variáns/karakter). Következő: 2. szelet - Belharc `fegyver_override` soronkénti kiértékeléssel; 3. Puszta kéz effektként; 4. további fogyasztók, végül a két régi fn törlése.
+- **3. fázis - Kód** (folyamatban, szeletenként): 1. szelet kész - `engine/effekt.ts` (gyűjtő: fortély + alapeset + taktika; `értékCélra` / `arányÖsszeg` a §42.3 motoron) + `effekt.parity.test.ts` paritás-háló a régi `calcFortelyMods` / `calcTaktikaMods`-hoz (valós adat, 2 teszt-karakter + "minden fortély" szintetikus, ~90 session-variáns/karakter). 2. szelet kész - tiltás-keret (§42.4) + Belharc `fegyver_override` soronként/kezenként. Következő: 3. Puszta kéz effektként; 4. további fogyasztók, végül a két régi fn törlése.
 
 TODO:
 - [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat). Felmérés (2026-10-16), nyitott döntések:
@@ -47,6 +47,7 @@ TODO:
   - ~~Forrás-specifikus korlátok~~ ✅ (2026-10-16, B): csak a taktika VÉ ±10; nevesített taktika-ág a gyűjtőben, nincs általános struktúra (§42.7).
 - [ ] 3. fázis: `calcFortelyMods` + `applyFegyverOverrides` + hatás-operátorok beolvasztása EGY runtime kiértékelőbe (§42.3 precedencia)
 - [ ] Előfeltétel a 3. fázishoz: regressziós védőháló (meglévő fortély-mods tesztek + új precedencia-tesztek) - a `fortely-mods.test.ts` és az `extrak-effekt.test.ts` már megvan
+- [ ] Harcszimulátor Belharc: még `pengehossz > 0` (max 0) és nem ismeri a tiltás-keretet / a páncélszúró kivételt - `fegyvergenerator_harcszimulator.py` `te_aktualis`
 - [ ] Harcszimulátor eltérések a §42.3-tól: Fárasztás fix `v = 3` (hiányzik a fegyverelőnyös +1), Belharc `te = 0` végső nullázás (a webapp és a §42.3 szerint a harcmodor/MF/fortély megmarad) - `code/balance/fegyvergenerator_harcszimulator.py`
 - [ ] `zuzo_ellen_rosszabb` extra (`vé_veszteség` ×2) bekötése a `véVesztésSzorzó`-ba (ma csak az Extrák gombon jelenik meg)
 - [ ] Statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben
@@ -58,10 +59,10 @@ Engine spec: §21.4 ("Belharc rendszer összefoglaló"). Kész: a Belharci helyz
 
 TODO:
 - [ ] Puszta kéz belharcban: a v2 adatban külön rekord él (`Puszta kéz, belharcban`, `TÉ`/`VÉ`/`SP` = 0), de a webapp nem cseréli rá a Puszta kezet Belharci helyzetben (a `fegyver_override` feltétele `fegyverhossz > 0`, a Puszta kéz hossza 0 → marad `TÉ`:-3, `VÉ`:-3, `SP`:-5)
-- [ ] Korlátozás-jelzés: a belharcos oldal feltételeinek (Közelharc harcmodor, max fegyverhossz) UI-jelzése (javaslat: a `helyzet-helpers.ts` `getMinFegyverhosszWarning` mintájára, az aktív Belharci helyzet chipjén)
-- [ ] Fegyverhossz-limit: ✅ DÖNTÉS (2026-10-16) - **max 1** (az éles md az irányadó); végrehajtás a §42 3. fázis 2. szeletében (feltétel `> 1` + engine_spec §21.4 / helyzet `infó`). Eredeti leírás: az éles md (`065_03_02_semleges_helyzetek.md`) "Max 1 fegyverhossz-kategória", az engine_spec §21.4 + ez a fájl "max 0", az adat feltétele `fegyverhossz > 0`. Következmény: a hossz-1 fegyverek (Tőr, Dzsambia, Levéltőr, Béltépő, Méregfog, Tőr, kígyó) belharcban `TÉ`/`VÉ` = 0-t kapnak. Ha az md az irányadó → feltétel `> 1`, majd engine_spec §21.4 igazítás
-- [ ] Override hatókör hiba (`fegyver-calc.ts` `applyFegyverOverrides` + `calcKetkezes`): a feltétel az AKTÍV fegyver hosszát nézi (`aktív_fegyver_fegyverhossz`), de MINDEN fegyversorra alkalmazódik (aktív kard → a tőr sora is nullázódik; aktív tőr → a kard sora nem). Kétkezes / fegyver+hárító esetén a két hossz ÖSSZEADÓDIK (két tőr = 2 → nullázódik). Helyes: soronkénti (kétkezesnél kezenkénti) hossz-vizsgálat
-- [ ] Tőr, páncélszúró (DÖNTÉS KELL): `pancelszuras_belharcban` extrája van, de `hossz: 2` → belharcban `> 0` és `> 1` feltétellel is nullázódik. Opciók: hossz 1, kivétel a szabály alól, vagy marad
+- [x] Korlátozás-jelzés (2026-10-16): Aktív fül helyzet-chip ⚠ (`getTiltásWarnings`) + fegyvertábla sor ⚠ (`FegyverResult.tiltások`) - mindkettő a tiltás-keretből.
+- [x] Fegyverhossz-limit **max 1** (2026-10-16): tiltás-keret (`belharc_fegyverhossz`, §42.4), feltétel `fegyver.fegyverhossz > 1`.
+- [x] Override hatókör hiba (2026-10-16): soronkénti (kétkezesnél kezenkénti) kiértékelés - `engine/effekt.ts` `fegyverOverrideÉrtékek`, `applyFegyverOverrides`, `calcKétkezesHarc({alapOverride})`; a hosszak nem adódnak össze. A Belharcos fortély bónusza a kézben lévő fegyver(ek) tiltásaitól függ (a fortély-módosítók még nem soronkéntiek - §42 4. szelet).
+- [x] Tőr, páncélszúró (2026-10-16): a `pancelszuras_belharcban` extra feloldja a `belharc_fegyverhossz` tiltást; az SFÉ 0 hatás al-feltétele `ellenfél_harci_helyzet:földön_fekve` (KM).
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧

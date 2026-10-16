@@ -1236,7 +1236,7 @@ A táblák a `harci_helyzetek.json` kivonatai (a hatás-szöveg az `infó` mező
 
 | Helyzet | id | Infó (data: `infó`) |
 |---------|-----|---------|
-| Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 0 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0. |
+| Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 1 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0. |
 | Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza. |
 | Közrefogás | közrefogás | Semlegesíti ellenfél Fegyverelőnyét → Fegyverazonosság. |
 | Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharcos 2.fok bónuszai relevánsak. |
@@ -1382,11 +1382,12 @@ Aktiváláskor:
 
   Belharcos (aki aktiválja):
     - Közelharc harcmodor kötelező (a fortély bónuszaihoz)
-    - Max 0 fegyverhosszú fegyver (tőr, puszta kéz)
+    - Max 1 fegyverhosszú fegyver (tőr, kés, puszta kéz) - tiltás `belharc_fegyverhossz`
+      Kivétel: a `pancelszuras_belharcban` extrás fegyver (Tőr, páncélszúró) - az extra feloldja a tiltást
+    - Közelharc harcmodor - tiltás `belharc_harcmodor`
     - Puszta kéz harcértékei: TÉ=0, VÉ=0, SP=0, sebzés FP (1ÉP/5FP)
       (v2 adat: külön rekord `Puszta kéz, belharcban`. NYITOTT: a webapp NEM cseréli rá a Puszta kezet
-      Belharci helyzetben - a fegyver_override feltétele fegyverhossz > 0, a Puszta kéz hossza 0;
-      l. DEVSTATE "Belharc rendszer")
+      Belharci helyzetben - §42 3. fázis 3. szelete; l. DEVSTATE "Belharc rendszer")
 
   Nem belharcos (aki belekényszerül):
     - Saját harcmodor értékei maradnak (harcmodor bónusz jár)
@@ -1397,33 +1398,36 @@ Aktiváláskor:
 
 #### Fegyver override mechanizmus (harci helyzet → fegyver harcértékek nullázás)
 
-Egyes harci helyzetek (`harci_helyzetek.yaml`) tartalmazhatnak `fegyver_override` mezőt, ami aktív fegyverek harcértékeit felülírja (pl. Belharc: nagy fegyverek TÉ/VÉ = 0).
+Egyes harci helyzetek (`harci_helyzetek.yaml`) tartalmazhatnak `fegyver_override` mezőt, ami a fegyverek alapértékét cseréli (pl. Belharc: a túl hosszú fegyver TÉ/VÉ = 0). A kiértékelés **soronként** (kétkezesnél **kezenként**) történik: minden fegyver a SAJÁT hossza / harcmodora / extrái szerint - a feltétel a helyzet nevesített tiltására hivatkozik (§42.4 tiltás-keret).
 
 ```yaml
 # harci_helyzetek.yaml példa:
 - név: "Belharci helyzet"
   id: "belharci_helyzet"
+  tiltások:
+    - { id: "belharc_fegyverhossz", leírás: "Max 1 fegyverhossz-kategória",
+        feltétel: [{ forrás: "fegyver.fegyverhossz", operátor: ">", érték: 1 }] }
+    - { id: "belharc_harcmodor", leírás: "Közelharc harcmodor kötelező",
+        feltétel: [{ forrás: "fegyver.harcmodor", operátor: "!=", érték: "Közelharc" }] }
   fegyver_override:
     feltétel:
-      - { forrás: "aktív_fegyver_fegyverhossz", operátor: ">", érték: 0 }
+      - { forrás: "tiltás:belharc_fegyverhossz", operátor: "==", érték: true }
     módosítók:
       - { cél: "TÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
       - { cél: "VÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
 ```
 
-Kiértékelés (`fegyver-calc.ts → applyFegyverOverrides`):
+Kiértékelés (`engine/effekt.ts → tiltásokFegyverre / fegyverOverrideÉrtékek`, fogyasztók: `fegyver-calc.ts →
+applyFegyverOverrides` soronként, `calcKetkezes` → `calcKétkezesHarc({alapOverride})` kezenként):
 ```
-FOR EACH aktív_helyzet in session.aktív_helyzetek:
-  hDef = lookup(helyzet_név → harci_helyzetek)
-  IF hDef.fegyver_override:
-    IF feltételTeljesül(hDef.fegyver_override.feltétel):
-      FOR EACH mod in hDef.fegyver_override.módosítók:
-        FOR EACH result (fegyver) ÉS annak MINDEN módja (módok[]):
-          IF mod.mód == "override" AND mod.alcél == "felszerelés:fegyver":   // §42.3/§42.4 bázis-csere
-          IF mod.cél == "TÉ":
-            TÉ -= alap_TÉ   // fegyver saját TÉ eltávolítása
-          IF mod.cél == "VÉ":
-            VÉ -= alap_VÉ   // fegyver saját VÉ eltávolítása
+FOR EACH fegyver (sor / kéz):
+  tiltások = a helyzetek tiltásai, amelyek feltétele erre a fegyverre teljesül
+             MÍNUSZ amit a fegyver extrája feloldott ({cél: "tiltás:<id>", mód: letilt}, teljesült extra-feltétellel)
+  feltétel-halmaz = aktívFeltételek (globális tiltás-kulcsok nélkül) + "tiltás:<id>" a fegyver saját tiltásaira
+  FOR EACH aktív helyzet, ahol feltételTeljesül(fegyver_override.feltétel):
+    FOR EACH mod (mód override, alcél felszerelés:fegyver):   // §42.3 bázis-csere
+      alap_<cél> → mod.érték   (TÉ += érték - alap_TÉ; VÉ ugyanígy)
+  sor.tiltások = a fegyver aktív tiltás-id-i (fegyvertábla ⚠ jelzés)
 ```
 
 Data layer (`data-types.ts → HarciHelyzetEntry`):
@@ -1678,8 +1682,9 @@ Boolean↔number normalizálás: `true` = 1, `false` = 0 (reactive engine number
 Érintett fortélyok (fortelyok.json, strukturált feltételű módosítók):
 - Merevvértviselet fok 3 (VÉ): `páncél_merev == true` ÉS `páncél_lefedettség >= 70`
 - Kétkezesség fok 1 (harckeret): `kétkezes_harc == true`
-- Belharcos fok 1-2 (KÉ/TÉ/VÉ): `harci_helyzet:belharci_helyzet == true` ÉS `aktív_fegyver_harcmodor == "Közelharc"`
-  ÉS `aktív_fegyver_fegyverhossz <= 0` (a prefix:érték forrás az aktívFeltételek Set-ből jön)
+- Belharcos fok 1-2 (KÉ/TÉ/VÉ): `harci_helyzet:belharci_helyzet == true` ÉS `tiltás:belharc_harcmodor == false`
+  ÉS `tiltás:belharc_fegyverhossz == false` (a prefix:érték forrás az aktívFeltételek Set-ből jön; a `tiltás:<id>`
+  kulcsot a kézben lévő fegyver(ek) aktív tiltásai adják - kétkezesnél bármelyik kéz tiltása elég, §42.4)
 
 ### Session toggle fortélyok
 
@@ -4058,6 +4063,15 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
   MF, fortély, taktika, helyzet) additív hozzájárulásként marad. Alcél nélküli harcérték-override nem megengedett.
   Példa: Belharc `{cél: TÉ, alcél: felszerelés:fegyver, mód: override, érték: 0}`; Láncos `{cél: VÉ, alcél:
   felszerelés:pajzs, mód: szorzó, érték: 0.5}`.
+- **Tiltás-keret** (`tiltás:<id>`, 2026-10-16): egy harci helyzet nevesített `tiltások[]`-a `{id, leírás, feltétel[]}`;
+  a feltétel FEGYVERENKÉNT értékelődik ki (forrás: `fegyver.fegyverhossz`, `fegyver.harcmodor`). Hivatkozás: feltételben
+  `{forrás: "tiltás:<id>", operátor: "==", érték: true|false}` (pl. Belharc `fegyver_override`, Belharcos fortély).
+  Feloldás: a fegyver extrája `{cél: "tiltás:<id>", mód: letilt}` hatással (pl. `pancelszuras_belharcban`). UI: a fegyver
+  aktív tiltásai a fegyvertábla ⚠ jelzése, a kézben lévőké az Aktív fül helyzet-chipjén (`getTiltásWarnings`).
+  Build-gate: tiltás-szerkezet + engedett forrás (`validate_aktiv_ful`), minden `tiltás:`/`ellenfél_harci_helyzet:`
+  hivatkozás létező célra mutat (`validate_effekt_hivatkozasok`, `fortelyok.py`). Kód: `engine/effekt.ts`.
+- **Ellenfél-al-feltétel** (`feltétel: "ellenfél_harci_helyzet:<id>"`): a hatás csak az ELLENFÉL adott helyzetében él;
+  az app nem tudja eldönteni → KM (az Extrák felirat megnevezi), numerikusan nem alkalmazódik.
 - Megjegyzés: a fortély/státusz `alcél` ma még prefix nélküli képzettség-/tulajdonságnév (pl. `"Edzettség"`) - a
   próba-scope szűkítése, más jelentés; egységesítése (`képzettség:<név>`) nyitott (DEVSTATE).
 

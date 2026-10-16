@@ -6,7 +6,7 @@
 
 harci_helyzetek:
 - név: "Belharci helyzet"
-  infó: "Közelharc harcmodor + max 0 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0."
+  infó: "Közelharc harcmodor + max 1 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0."
   megjegyzések:
   - text: "Ha a képzett harcosnak sikerül ellenfele fegyvere mögé, testközelébe kerülni, ebből előnyt kovácsolhat."
   - text: "A belharc magában foglalja a birkózást és a földharcot is."
@@ -21,9 +21,20 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "takarásban"]
+  # Nevesített tiltások (engine_spec §42.4 tiltás-keret): fegyverenként kiértékelve; feltételben
+  # `tiltás:<id>`-ként hivatkozható, egy effekt `{cél: "tiltás:<id>", mód: letilt}` feloldja (pl. extra).
+  tiltások:
+    - id: "belharc_fegyverhossz"
+      leírás: "Max 1 fegyverhossz-kategória"
+      feltétel:
+        - { forrás: "fegyver.fegyverhossz", operátor: ">", érték: 1 }
+    - id: "belharc_harcmodor"
+      leírás: "Közelharc harcmodor kötelező"
+      feltétel:
+        - { forrás: "fegyver.harcmodor", operátor: "!=", érték: "Közelharc" }
   fegyver_override:
     feltétel:
-      - { forrás: "aktív_fegyver_fegyverhossz", operátor: ">", érték: 0 }
+      - { forrás: "tiltás:belharc_fegyverhossz", operátor: "==", érték: true }
     módosítók:
       - { cél: "TÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
       - { cél: "VÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }

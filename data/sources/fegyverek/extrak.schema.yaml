@@ -25,10 +25,10 @@ feltetel_tipus_enum:
   - narratív
 
 # hatás.cél entitás-prefixek ("prefix:érték"). A csupasz harcérték/esemény-célok (TÉ/VÉ/SP/SFÉ/manőver_ellenpróba/…) prefix NÉLKÜLIEK.
-cel_prefix_enum: [fortély, képzettség]
+cel_prefix_enum: [fortély, képzettség, tiltás]   # tiltás:<id> = harci_helyzetek.yaml tiltások[] (feloldás: mód letilt)
 
 # hatás.feltétel (al-feltétel) prefixek ("prefix:érték")
-alfeltetel_prefix_enum: [manőver]
+alfeltetel_prefix_enum: [manőver, ellenfél_harci_helyzet]   # ellenfél_harci_helyzet:<helyzet id> = az ELLENFÉL helyzete (KM)
 
 # hatás.alcél (a cél al-scope-ja) prefixek ("prefix:érték") - webapp-bound prefix
 alcel_prefix_enum: [felszerelés]

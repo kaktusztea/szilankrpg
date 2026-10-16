@@ -1,7 +1,7 @@
 [
   {
     "név": "Belharci helyzet",
-    "infó": "Közelharc harcmodor + max 0 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0.",
+    "infó": "Közelharc harcmodor + max 1 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0.",
     "megjegyzések": [
       {
         "text": "Ha a képzett harcosnak sikerül ellenfele fegyvere mögé, testközelébe kerülni, ebből előnyt kovácsolhat."
@@ -38,12 +38,36 @@
       "levegőből",
       "takarásban"
     ],
+    "tiltások": [
+      {
+        "id": "belharc_fegyverhossz",
+        "leírás": "Max 1 fegyverhossz-kategória",
+        "feltétel": [
+          {
+            "forrás": "fegyver.fegyverhossz",
+            "operátor": ">",
+            "érték": 1
+          }
+        ]
+      },
+      {
+        "id": "belharc_harcmodor",
+        "leírás": "Közelharc harcmodor kötelező",
+        "feltétel": [
+          {
+            "forrás": "fegyver.harcmodor",
+            "operátor": "!=",
+            "érték": "Közelharc"
+          }
+        ]
+      }
+    ],
     "fegyver_override": {
       "feltétel": [
         {
-          "forrás": "aktív_fegyver_fegyverhossz",
-          "operátor": ">",
-          "érték": 0
+          "forrás": "tiltás:belharc_fegyverhossz",
+          "operátor": "==",
+          "érték": true
         }
       ],
       "módosítók": [

@@ -50,10 +50,11 @@ Páncélos ellenfél ellen a hárítási hátrány kiütközik.
 
 ```
 Feltétel: Belharci helyzet
-Hatás:    célpont páncél SFÉ: 0
+Hatás:    Belharc fegyverhossz-korlát nem vonatkozik rá
+          + földön fekvő ellenfélnél: célpont páncél SFÉ: 0
 ```
 
-Belharcban, földön lévő ellenfélnél a rések közt szúr.
+Belharcban a fegyverhossza ellenére is használható, földön lévő ellenfélnél a rések közt szúr.
 
 ### Pikás közrefogása
 

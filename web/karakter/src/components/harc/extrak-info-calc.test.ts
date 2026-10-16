@@ -127,6 +127,15 @@ describe('extrakInfoTételek - fegyver-extrák állapota', () => {
     expect(extrakInfoTételek([{ id: 'pajzs_megkerules' }], d, ctx())[0].hatásSzöveg).toBe('Pajzs-VÉ ×0');
   });
 
+  it('tiltás-feloldás és ellenfél-al-feltétel felirata', () => {
+    const d = { p: { id: 'p', név: 'P', leírás: '', feltétel: [], hatás: [
+      { cél: 'tiltás:belharc_fegyverhossz', mód: 'letilt' },
+      { cél: 'SFÉ', alcél: 'felszerelés:páncél', mód: 'override', érték: 0, feltétel: 'ellenfél_harci_helyzet:földön_fekve' },
+    ] } } as unknown as Record<string, FegyverExtraDef>;
+    expect(extrakInfoTételek([{ id: 'p' }], d, ctx())[0].hatásSzöveg)
+      .toBe('Feloldva: belharc fegyverhossz, Páncél-SFÉ:0 (ha az ellenfél: földön fekve)');
+  });
+
   it('nincs extra / nincs def → üres', () => {
     expect(extrakInfoTételek(undefined, defs, ctx())).toEqual([]);
     expect(extrakInfoTételek([{ id: 'x' }], undefined, ctx())).toEqual([]);
