@@ -481,9 +481,10 @@ https://github.com/kaktusztea/szilankrpg/
 ### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
 
 - [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
-- [Méregellenállás próba](142_meregellenallas.md)
-- [Méregérzékelés](143_meregerzekeles.md)
-- [Példamérgek](144_peldamergek.md) ⚡
+- [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
+- [Méregellenállás próba](143_meregellenallas.md)
+- [Méregérzékelés](144_meregerzekeles.md)
+- [Példamérgek](145_peldamergek.md) ⚡
 
 ---
 ### 15. [Szituációk](150_szituaciok.md)
@@ -2891,7 +2892,7 @@ Lásd a [Mágiarendszer](100_magiarendszer.md) fejezetet!
 
 ## Méregellenállás
 
-Lásd [Méregrendszer - Méregellenállás próba](142_meregellenallas.md).
+Lásd [Méregrendszer - Méregellenállás próba](143_meregellenallas.md).
 
 Bővebben lásd a [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md) képzettség és a [Méregrendszer](140_meregrendszer.md) leírását.
 
@@ -12785,11 +12786,11 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Manőverfókusz: Fegyvertörés](fortelyok.harci/manoverfokusz_fegyvertores.md)
 - [Manőverfókusz: Földrevitel](fortelyok.harci/manoverfokusz_foldrevitel.md)
 - [Manőverfókusz: Lefegyverzés](fortelyok.harci/manoverfokusz_lefegyverzes.md)
-- [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md)
 - [Manőverfókuszok: Belharcmozgás](fortelyok.harci/manoverfokuszok_belharcmozgas.md)
 - [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md)
 - [Manőverfókuszok: Kitörés](fortelyok.harci/manoverfokuszok_kitores.md)
 - [Manőverfókuszok: Nyúlcipő](fortelyok.harci/manoverfokuszok_nyulcipo.md)
+- [Manőverfókuszok: Szike](fortelyok.harci/manoverfokuszok_szike.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)
@@ -13040,7 +13041,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 
 ### Kapcsolódik
 
-- [Manőverfókusz: Szike](../fortelyok.harci/manoverfokusz_szike.md)
+- [Manőverfókusz: Szike](../fortelyok.harci/manoverfokuszok_szike.md)
 - [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
 
 ### Bónuszt ad erre
@@ -13502,19 +13503,19 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 
 ### 1. fok
 
-🌟 [Méregellenállás dobásakor](../142_meregellenallas.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../143_meregellenallas.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 <br />
 
 ### 2. fok
 
-🌟 [Méregellenállás dobásakor](../142_meregellenallas.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../143_meregellenallas.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 <br />
 
 ### 3. fok
 
-🌟 [Méregellenállás dobásakor](../142_meregellenallas.md) kapsz `+3` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../143_meregellenallas.md) kapsz `+3` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 ---
 
@@ -15359,31 +15360,6 @@ Engedélyezett Harcmodorok: Kardvívás, Lándzsavívás, Ostorharc
 
 ---
 ---
-## File: md/fortelyok.harci/manoverfokusz_szike.md
-
-## 🟣 Manőverfókusz: Szike (1)
-
-A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső szervek elhelyezkedésével.
-
----
-### 1. fok
-
-🔒 **Követelmény**:
-- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
-- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
-
-🌟 **Hatás**:
-- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
-- Extra:
-  - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
-  - Szemgolyót szedhet ki harc közben Puszta kézzel.
-
----
-
-
----
----
 ## File: md/fortelyok.harci/manoverfokuszok_belharcmozgas.md
 
 ## 🟣 Manőverfókuszok: Belharcmozgás (1)
@@ -15456,6 +15432,31 @@ Szégyen a futás, de hasznos. Az ezt támogató két lenti Manővert különös
 🌟 **Hatás**:
 - [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
 - [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre `+2 MP` bónusz **Ellenpróbánál**  (`E`)
+
+---
+
+
+---
+---
+## File: md/fortelyok.harci/manoverfokuszok_szike.md
+
+## 🟣 Manőverfókuszok: Szike (1)
+
+A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső szervek elhelyezkedésével.
+
+---
+### 1. fok
+
+🔒 **Követelmény**:
+- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+
+🌟 **Hatás**:
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
+- Extra:
+  - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
+  - Szemgolyót szedhet ki harc közben Puszta kézzel.
 
 ---
 
@@ -24669,7 +24670,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 
 **Megjegyezés**: a **Fegyver markolat** sebzése: `k20 + 0 SP + Erőbónusz` (Zúzó)
 
-**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) fortély
+**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
 
 <br />
 
@@ -24813,7 +24814,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély
 
-**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokusz_szike.md) fortély
+**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
 
 <br />
 
@@ -32371,11 +32372,13 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 
 ### [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
 
-### [Méregellenállás próba](142_meregellenallas.md)
+### [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
 
-### [Méregérzékelés](143_meregerzekeles.md)
+### [Méregellenállás próba](143_meregellenallas.md)
 
-### [Példamérgek](144_peldamergek.md) ⚡
+### [Méregérzékelés](144_meregerzekeles.md)
+
+### [Példamérgek](145_peldamergek.md) ⚡
 
 ---
 
@@ -32565,14 +32568,36 @@ Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges
 
 ---
 
-🔗 [Méregellenállás próba](142_meregellenallas.md) →
+🔗 [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)→
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
 
 
 ---
 ---
-## File: md/142_meregellenallas.md
+## File: md/142_mereg_tulajdonsagai.md
+
+# Méreg tulajdonságai
+
+Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [Méregkeverés szabályai](141_meregkeveres_szabalyai.md) oldalon olvasható.
+
+```
+→ Erősség
+→ Elállás/Kiürülés
+→ Hatás
+→ Másodlagos hatás
+```
+
+---
+
+🔗 [Méregellenállás próba](143_meregellenallas.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+
+
+---
+---
+## File: md/143_meregellenallas.md
 
 ## Méregellenállás
 
@@ -32588,14 +32613,14 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 ---
 
-🔗 [Méregérzékelés](143_meregerzekeles.md) →
+🔗 [Méregérzékelés](144_meregerzekeles.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
 
 
 ---
 ---
-## File: md/143_meregerzekeles.md
+## File: md/144_meregerzekeles.md
 
 ## Méregérzékelés
 
@@ -32615,7 +32640,7 @@ Méregkeverés + Érzékenység
           vs
        Célszám
 
-Alap célszám: `xy` ⭕TODO⭕
+Alap célszám: `xy`    ⭕TODO⭕
 ⭕TODO: egyéb módosítók⭕
 ```
 
@@ -32640,14 +32665,14 @@ Célszám: 4 (Átlagos)
 
 ---
 
-🔗 [Példamérgek](144_peldamergek.md) →
+🔗 [Példamérgek](145_peldamergek.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
 
 
 ---
 ---
-## File: md/144_peldamergek.md
+## File: md/145_peldamergek.md
 
 ## Példamérgek
 
