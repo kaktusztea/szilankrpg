@@ -10,7 +10,8 @@ import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
 import { buildPajzsFegyverNév, véVesztésSzorzó } from './shared';
-import { aktívTiltások, fegyverOverrideÉrtékek, gyűjtHelyzetEffektek, értékCélra, flatBontás } from '../../engine/effekt';
+import { aktívTiltások, tiltásokFegyverre, fegyverOverrideÉrtékek, gyűjtHelyzetEffektek, gyűjtStátuszEffektek, értékCélra, flatBontás } from '../../engine/effekt';
+import { alkalmazEffektek } from './extrak-effekt';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
@@ -22,6 +23,11 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const taktikaMods = calcTaktikaMods(session, data, k);
   // Harci helyzetek saját oldali effektjei (§42): VÉ a harcértékbe, vé_csökkentés a VÉ-csökkentés popupba.
   const helyzetEffektek = gyűjtHelyzetEffektek(session, data);
+  const státuszEffektek = gyűjtStátuszEffektek(session, data);
+  // Saját oldali korlát a támadások számára (pl. Félelem (2), Zavar: max 1 támadás) - §42.3 max_limit.
+  const támadásKorlát = [...helyzetEffektek, ...státuszEffektek]
+    .filter(e => e.cél === 'támadások_száma' && e.mód === 'max_limit' && typeof e.érték === 'number')
+    .map(e => ({ cél: e.cél, mód: e.mód, érték: e.érték }));
   const helyzetMods = { VÉ: értékCélra(helyzetEffektek, 'VÉ') };
   const helyzetVéCsökkentés = flatBontás(helyzetEffektek, 'vé_csökkentés');
 
@@ -76,14 +82,24 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const páncélMGT = session.aktív_páncél ? (computed.get('páncél_MGT') ?? 0) : 0;
   const merevvértBüntetés = session.aktív_páncél ? (computed.get('merevvért_TÉ_büntetés') ?? 0) : 0;
   const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT, merevvértBüntetés,
-    fDef => fegyverOverrideÉrtékek(fDef, session, data, aktívFeltételek));
+    fDef => fegyverOverrideÉrtékek(fDef, session, data, aktívFeltételek),
+    fDef => {
+      // Soronkénti fortély-feltételek (§42 4b-3): a fegyver_kategória: / tiltás: kulcsok a SOR fegyverére vonatkoznak
+      // (pl. Belharcos csak a nem tiltott soron, Pajzshasználat csak a pajzs során). A KÉ/kétkezes a globálisat használja.
+      const sor = new Set([...aktívFeltételek].filter(f => !f.startsWith('fegyver_kategória:') && !f.startsWith('tiltás:')));
+      sor.add(`fegyver_kategória:${fDef.kategória}`);
+      for (const t of tiltásokFegyverre(fDef, session, data, aktívFeltételek)) sor.add(`tiltás:${t.id}`);
+      return calcFortelyMods(k, session, data, sor, createFeltételEvaluator(sor, session, computed, ctx, stringCtx).feltételTeljesül);
+    });
   jelölFegyverTiltások(fegyverResults, session, data, aktívFeltételek);
+  if (támadásKorlát.length) for (const r of fegyverResults) for (const m of [r, ...r.módok]) m.támadások = alkalmazEffektek(m.támadások, támadásKorlát);
 
   const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, aktívFeltételek, páncélMGT, merevvértBüntetés);
+  if (kétkezesResult && támadásKorlát.length) kétkezesResult.támadások = alkalmazEffektek(kétkezesResult.támadások, támadásKorlát);
   const { pajzsVÉ, fogásResult } = calcFogás(k, session, data, fortelyMods);
 
   const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');
-  const { szorzó: véVeszSzorzó, forrás: véVeszSzorzóForrás } = véVesztésSzorzó(session.aktív_helyzetek, data.harciHelyzetek, session.aktív_státuszok, data.statuszok);
+  const { szorzó: véVeszSzorzó, forrás: véVeszSzorzóForrás } = véVesztésSzorzó([...helyzetEffektek, ...státuszEffektek]);
 
   // Max VÉ csökkenés
   const maxVéCsökk = Math.max(0, ...(kétkezesResult

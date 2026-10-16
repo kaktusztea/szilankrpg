@@ -1,3 +1,4 @@
+import type { Effekt } from '../../engine/effekt';
 import type { Karakter } from '../../engine/types';
 export { getMfBónusz, findMfFokByName } from '../../engine/mf-utils';
 
@@ -54,43 +55,14 @@ export function computeVÉ(baseVÉ: number, bónusz: number, taktikaVÉ: number,
  * VÉ veszteség szorzó az aktív harci helyzetekből ÉS státuszokból (pl. "Földön fekve",
  * "Helyhez kötve", "VÉ kiterjesztés", Fizikai státusz → duplázás, cél: vé_veszteség).
  * Halmozás: egy félen belül a legnagyobb szorzó számít (engine_spec §42.3).
- * "legnagyobb" (md/081 "Nem halmozható") → a legnagyobb szorzó dominál; egyébként kumulál (szorzat).
+ * Bemenet: a helyzet- és státusz-gyűjtő effektjei (engine/effekt.ts).
  */
-type DuplázásForrás = { név: string; hatások?: { mód: string; cél: string; érték?: number }[] };
-type StatuszForrás = { név: string; fokok: { fok: number; hatások?: { mód: string; cél: string; érték?: number }[] }[] };
-
-export function véVesztésSzorzó(
-  aktívHelyzetek: string[],
-  harciHelyzetek: DuplázásForrás[],
-  aktívStátuszok: string[] = [],
-  statuszok: StatuszForrás[] = [],
-): { szorzó: number; forrás: string } {
-  // §42.3: egy félen belül a legnagyobb szorzó számít (nem kumulál).
+export function véVesztésSzorzó(effektek: Effekt[]): { szorzó: number; forrás: string } {
+  // §42.3: egy félen belül a legnagyobb szorzó számít (nem kumulál) - a forrás a nyertes neve.
   let szorzó = 1;
   let forrás = '';
-  const alkalmaz = (érték: number, név: string) => {
-    if (érték > szorzó) {
-      szorzó = érték;
-      forrás = név;
-    }
-  };
-
-  // 1. Harci helyzetek
-  for (const név of aktívHelyzetek) {
-    const def = harciHelyzetek.find(h => h.név === név);
-    for (const h of def?.hatások ?? []) {
-      if (h.mód === 'szorzó' && h.cél === 'vé_veszteség') alkalmaz(h.érték ?? 1, név);
-    }
-  }
-  // 2. Státuszok ("Név (fok)")
-  for (const entry of aktívStátuszok) {
-    const match = entry.match(/^(.+?)\s*\((\d+)\)$/);
-    if (!match) continue;
-    const def = statuszok.find(s => s.név === match[1]);
-    const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
-    for (const h of fokDef?.hatások ?? []) {
-      if (h.mód === 'szorzó' && h.cél === 'vé_veszteség') alkalmaz(h.érték ?? 1, entry);
-    }
+  for (const e of effektek) {
+    if (e.cél === 'vé_veszteség' && e.mód === 'szorzó' && (e.érték ?? 1) > szorzó) { szorzó = e.érték!; forrás = e.forrás.név; }
   }
   return { szorzó, forrás };
 }

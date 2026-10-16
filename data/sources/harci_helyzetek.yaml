@@ -93,7 +93,8 @@ harci_helyzetek:
   - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
-  - mód: "szöveges"
+  - mód: "max_limit"
+    érték: 1
     cél: "támadások_száma"
     megjegyzés: "Többszörös támadás elvesztés"
   - mód: "szorzó"
@@ -498,7 +499,8 @@ harci_helyzetek:
   - text: "Ha társadat akarod védeni, kiterjesztheted rá Védő Értékedet."
   - text: "A hátrányokat csökkentheted a Testőr fortély tanulásával."
   hatások:
-  - mód: "szöveges"
+  - mód: "max_limit"
+    érték: 1
     cél: "támadások_száma"
     megjegyzés: "Többszörös támadás elvesztés"
   - mód: "szorzó"

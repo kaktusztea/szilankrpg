@@ -32,6 +32,8 @@ export interface FegyverResult extends FegyverResultMód {
   módok: FegyverResultMód[];
   /** Erre a fegyverre ható aktív tiltás-id-k (pl. "belharc_fegyverhossz") - figyelmeztetéshez (§42.4). */
   tiltások?: string[];
+  /** A sorra ható fortély-módosítók (soronként kiértékelt feltételekkel, pl. Belharcos, Pajzshasználat) - bontáshoz. */
+  fortély?: Record<string, number>;
 }
 
 export interface HarcBaseProps {

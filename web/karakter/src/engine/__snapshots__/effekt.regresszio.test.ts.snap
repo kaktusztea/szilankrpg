@@ -1,0 +1,2886 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fortély- és taktika-módosítók regressziós snapshot > minden fortély 0 1`] = `
+{
+  "alap": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "helyzet Belharci helyzet": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Csúszós talaj": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Elvesztett egyensúly": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverelőny": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverhátrány": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverrántás váratlanul": {
+    "f": {
+      "KÉ": 8,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Földön fekve": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Gyengébb kéz": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Harci szekér": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "TÉ": 8,
+      "VÉ": 8,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Helyhez kötve": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Hátulról támadás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Képzetlen fegyverhasználat": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Közrefogás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Közönség előtt": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "TÉ": 3,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Levegőből támadás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Lovas harc": {
+    "f": {
+      "CÉ": -3,
+      "KÉ": 3,
+      "SFÉ": 2,
+      "TÉ": 3,
+      "VÉ": 3,
+      "fegyverhossz": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Léglovas harc": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "TÉ": 3,
+      "VÉ": 3,
+      "fegyverhossz": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Lények méret különbsége": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Lövés reflexből": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Magasabbról": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Meglepetés": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Nyílpuska újratöltés": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Orvtámadás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "SP": 1,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Pusztakezes harc": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Páros harc": {
+    "f": {
+      "KÉ": 4,
+      "SFÉ": 2,
+      "TÉ": 2,
+      "VÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Szörnyeteg elleni harc": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "VÉ": 3,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Takarásban harcolás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - ég": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vadállatok elleni harc": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - félhomályban": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - sötétben": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Védő Érték kiterjesztése másra": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vér elvakít": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika (Lég)Lovas roham": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 10,
+      "TÉ": 6,
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 3,
+    },
+  },
+  "taktika 1 támadás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Fárasztás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Kezdeményező 1": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 1,
+      "VÉ": -1,
+    },
+  },
+  "taktika Kezdeményező 2": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 2,
+      "VÉ": -2,
+    },
+  },
+  "taktika Kezdeményező 3": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 3,
+      "VÉ": -3,
+    },
+  },
+  "taktika Kezdeményező 5": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 5,
+      "VÉ": -5,
+    },
+  },
+  "taktika Kitartott célzás": {
+    "f": {
+      "CÉ": 4,
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Kiváró": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Lövéskitérés": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Plusz támadás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Páros kétkezes hajítás": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Roham": {
+    "f": {
+      "KÉ": 8,
+      "SFÉ": 2,
+      "SP_erőbónusz_arány": 1,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 4,
+      "VÉ": -8,
+    },
+  },
+  "taktika Teljes Védekezés": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "VÉ": 8,
+    },
+  },
+  "taktika Tettetés": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Támadás erőből 1": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 1,
+      "TÉ": -1,
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 2,
+      "TÉ": -2,
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 3,
+      "TÉ": -3,
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": -5,
+    },
+  },
+  "taktika Támadó 1": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 1,
+      "VÉ": -2,
+    },
+  },
+  "taktika Támadó 2": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 2,
+      "VÉ": -4,
+    },
+  },
+  "taktika Támadó 3": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "taktika Támadó 5": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "taktika Visszafogott": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Védő 1": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -2,
+      "VÉ": 1,
+    },
+  },
+  "taktika Védő 2": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -4,
+      "VÉ": 2,
+    },
+  },
+  "taktika Védő 3": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 3,
+    },
+  },
+  "taktika Védő 5": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -10,
+      "VÉ": 5,
+    },
+  },
+  "taktika Érintő": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 7,
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "±10 plafon": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 10,
+    },
+  },
+  "üres": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+}
+`;
+
+exports[`fortély- és taktika-módosítók regressziós snapshot > minden fortély 1 1`] = `
+{
+  "alap": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "helyzet Belharci helyzet": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Csúszós talaj": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Elvesztett egyensúly": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverelőny": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverhátrány": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverrántás váratlanul": {
+    "f": {
+      "KÉ": 16,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Földön fekve": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Gyengébb kéz": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Harci szekér": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "TÉ": 12,
+      "VÉ": 12,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Helyhez kötve": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Hátulról támadás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Képzetlen fegyverhasználat": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Közrefogás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Közönség előtt": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "TÉ": 3,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Levegőből támadás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Lovas harc": {
+    "f": {
+      "CÉ": -3,
+      "KÉ": 6,
+      "SFÉ": 4,
+      "TÉ": 6,
+      "VÉ": 6,
+      "fegyverhossz": 2,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Léglovas harc": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "TÉ": 6,
+      "VÉ": 6,
+      "fegyverhossz": 2,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Lények méret különbsége": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Lövés reflexből": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Magasabbról": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Meglepetés": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Nyílpuska újratöltés": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Orvtámadás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "SP": 2,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Pusztakezes harc": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Páros harc": {
+    "f": {
+      "KÉ": 7,
+      "SFÉ": 4,
+      "TÉ": 4,
+      "VÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Szörnyeteg elleni harc": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "VÉ": 3,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Takarásban harcolás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - ég": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Vadállatok elleni harc": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - félhomályban": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - sötétben": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Védő Érték kiterjesztése másra": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Vér elvakít": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika (Lég)Lovas roham": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 10,
+      "TÉ": 6,
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 3,
+    },
+  },
+  "taktika 1 támadás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Fárasztás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika Kezdeményező 1": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "KÉ": 1,
+      "VÉ": -1,
+    },
+  },
+  "taktika Kezdeményező 2": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "KÉ": 2,
+      "VÉ": -2,
+    },
+  },
+  "taktika Kezdeményező 3": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "KÉ": 3,
+      "VÉ": -3,
+    },
+  },
+  "taktika Kezdeményező 5": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "KÉ": 5,
+      "VÉ": -5,
+    },
+  },
+  "taktika Kitartott célzás": {
+    "f": {
+      "CÉ": 4,
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika Kiváró": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Lövéskitérés": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika Plusz támadás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika Páros kétkezes hajítás": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika Roham": {
+    "f": {
+      "KÉ": 11,
+      "SFÉ": 4,
+      "SP_erőbónusz_arány": 1,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 4,
+      "VÉ": -8,
+    },
+  },
+  "taktika Teljes Védekezés": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "VÉ": 8,
+    },
+  },
+  "taktika Tettetés": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika Támadás erőből 1": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 1,
+      "TÉ": -1,
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 2,
+      "TÉ": -2,
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 3,
+      "TÉ": -3,
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": -5,
+    },
+  },
+  "taktika Támadó 1": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 1,
+      "VÉ": -2,
+    },
+  },
+  "taktika Támadó 2": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 2,
+      "VÉ": -4,
+    },
+  },
+  "taktika Támadó 3": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "taktika Támadó 5": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "taktika Visszafogott": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "taktika Védő 1": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": -2,
+      "VÉ": 1,
+    },
+  },
+  "taktika Védő 2": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": -4,
+      "VÉ": 2,
+    },
+  },
+  "taktika Védő 3": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 3,
+    },
+  },
+  "taktika Védő 5": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": -10,
+      "VÉ": 5,
+    },
+  },
+  "taktika Érintő": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "SP": 7,
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "±10 plafon": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 10,
+    },
+  },
+  "üres": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+}
+`;
+
+exports[`fortély- és taktika-módosítók regressziós snapshot > minden fortély 2 1`] = `
+{
+  "alap": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "helyzet Belharci helyzet": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Csúszós talaj": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Elvesztett egyensúly": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverelőny": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverhátrány": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverrántás váratlanul": {
+    "f": {
+      "KÉ": 19,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Földön fekve": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Gyengébb kéz": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Harci szekér": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "TÉ": 12,
+      "VÉ": 12,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Helyhez kötve": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Hátulról támadás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Képzetlen fegyverhasználat": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Közrefogás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Közönség előtt": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "TÉ": 3,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Levegőből támadás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Lovas harc": {
+    "f": {
+      "CÉ": -3,
+      "KÉ": 9,
+      "SFÉ": 6,
+      "TÉ": 9,
+      "VÉ": 9,
+      "fegyverhossz": 2,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Léglovas harc": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "TÉ": 9,
+      "VÉ": 9,
+      "fegyverhossz": 2,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Lények méret különbsége": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Lövés reflexből": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Magasabbról": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Meglepetés": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Nyílpuska újratöltés": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Orvtámadás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "SP": 3,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Pusztakezes harc": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Páros harc": {
+    "f": {
+      "KÉ": 10,
+      "SFÉ": 6,
+      "TÉ": 6,
+      "VÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Szörnyeteg elleni harc": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "VÉ": 3,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Takarásban harcolás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - ég": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Vadállatok elleni harc": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - félhomályban": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - sötétben": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Védő Érték kiterjesztése másra": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "helyzet Vér elvakít": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika (Lég)Lovas roham": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 10,
+      "TÉ": 6,
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 3,
+    },
+  },
+  "taktika 1 támadás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Fárasztás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika Kezdeményező 1": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "KÉ": 1,
+      "VÉ": -1,
+    },
+  },
+  "taktika Kezdeményező 2": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "KÉ": 2,
+      "VÉ": -2,
+    },
+  },
+  "taktika Kezdeményező 3": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "KÉ": 3,
+      "VÉ": -3,
+    },
+  },
+  "taktika Kezdeményező 5": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "KÉ": 5,
+      "VÉ": -5,
+    },
+  },
+  "taktika Kitartott célzás": {
+    "f": {
+      "CÉ": 4,
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika Kiváró": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Lövéskitérés": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika Plusz támadás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika Páros kétkezes hajítás": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika Roham": {
+    "f": {
+      "KÉ": 14,
+      "SFÉ": 6,
+      "SP_erőbónusz_arány": 1,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 4,
+      "VÉ": -8,
+    },
+  },
+  "taktika Teljes Védekezés": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "VÉ": 8,
+    },
+  },
+  "taktika Tettetés": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika Támadás erőből 1": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 1,
+      "TÉ": -1,
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 2,
+      "TÉ": -2,
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 3,
+      "TÉ": -3,
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": -5,
+    },
+  },
+  "taktika Támadó 1": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 1,
+      "VÉ": -2,
+    },
+  },
+  "taktika Támadó 2": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 2,
+      "VÉ": -4,
+    },
+  },
+  "taktika Támadó 3": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "taktika Támadó 5": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "taktika Visszafogott": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+  "taktika Védő 1": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": -2,
+      "VÉ": 1,
+    },
+  },
+  "taktika Védő 2": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": -4,
+      "VÉ": 2,
+    },
+  },
+  "taktika Védő 3": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 3,
+    },
+  },
+  "taktika Védő 5": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": -10,
+      "VÉ": 5,
+    },
+  },
+  "taktika Érintő": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "SP": 7,
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "±10 plafon": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 10,
+    },
+  },
+  "üres": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
+}
+`;
+
+exports[`fortély- és taktika-módosítók regressziós snapshot > teszt2 1`] = `
+{
+  "alap": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "helyzet Belharci helyzet": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Csúszós talaj": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Elvesztett egyensúly": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverelőny": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverhátrány": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverrántás váratlanul": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Földön fekve": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Gyengébb kéz": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Harci szekér": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Helyhez kötve": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Hátulról támadás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Képzetlen fegyverhasználat": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Közrefogás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Közönség előtt": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Levegőből támadás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Lovas harc": {
+    "f": {
+      "CÉ": -3,
+      "KÉ": 5,
+      "TÉ": -9,
+      "VÉ": -9,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Léglovas harc": {
+    "f": {
+      "KÉ": 5,
+      "TÉ": -9,
+      "VÉ": -9,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Lények méret különbsége": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Lövés reflexből": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Magasabbról": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Meglepetés": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Nyílpuska újratöltés": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Orvtámadás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Pusztakezes harc": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Páros harc": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Szörnyeteg elleni harc": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Takarásban harcolás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Tűz ruhán - ég": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vadállatok elleni harc": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - félhomályban": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vakharc - sötétben": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Védő Érték kiterjesztése másra": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Vér elvakít": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika (Lég)Lovas roham": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 10,
+      "TÉ": 6,
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 3,
+    },
+  },
+  "taktika 1 támadás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Fárasztás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Kezdeményező 1": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 1,
+      "VÉ": -1,
+    },
+  },
+  "taktika Kezdeményező 2": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 2,
+      "VÉ": -2,
+    },
+  },
+  "taktika Kezdeményező 3": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 3,
+      "VÉ": -3,
+    },
+  },
+  "taktika Kezdeményező 5": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "KÉ": 5,
+      "VÉ": -5,
+    },
+  },
+  "taktika Kitartott célzás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Kiváró": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Lövéskitérés": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Plusz támadás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Páros kétkezes hajítás": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Roham": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": 4,
+      "VÉ": -8,
+    },
+  },
+  "taktika Teljes Védekezés": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "VÉ": 8,
+    },
+  },
+  "taktika Tettetés": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "taktika Támadás erőből 1": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 1,
+      "TÉ": -1,
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 2,
+      "TÉ": -2,
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 3,
+      "TÉ": -3,
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 5,
+      "TÉ": -5,
+    },
+  },
+  "taktika Támadó 1": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 1,
+      "VÉ": -2,
+    },
+  },
+  "taktika Támadó 2": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 2,
+      "VÉ": -4,
+    },
+  },
+  "taktika Támadó 3": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "taktika Támadó 5": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "taktika Visszafogott": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -10,
+    },
+  },
+  "taktika Védő 1": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -2,
+      "VÉ": 1,
+    },
+  },
+  "taktika Védő 2": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -4,
+      "VÉ": 2,
+    },
+  },
+  "taktika Védő 3": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 3,
+    },
+  },
+  "taktika Védő 5": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -10,
+      "VÉ": 5,
+    },
+  },
+  "taktika Érintő": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "SP": 7,
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "±10 plafon": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {
+      "TÉ": -6,
+      "VÉ": 10,
+    },
+  },
+  "üres": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+}
+`;
+
+exports[`fortély- és taktika-módosítók regressziós snapshot > teszt3 1`] = `
+{
+  "alap": {
+    "f": {},
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "helyzet Lovas harc": {
+    "f": {
+      "CÉ": -3,
+      "TÉ": -9,
+      "VÉ": -9,
+    },
+    "t": {},
+  },
+  "helyzet Léglovas harc": {
+    "f": {
+      "TÉ": -9,
+      "VÉ": -9,
+    },
+    "t": {},
+  },
+  "helyzet Lövés reflexből": {
+    "f": {
+      "CÉ": -7,
+    },
+    "t": {},
+  },
+  "taktika (Lég)Lovas roham": {
+    "f": {},
+    "t": {
+      "SP": 10,
+      "TÉ": 6,
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "f": {},
+    "t": {
+      "SP": 5,
+      "TÉ": 3,
+    },
+  },
+  "taktika 1 támadás": {
+    "f": {},
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Kezdeményező 1": {
+    "f": {},
+    "t": {
+      "KÉ": 1,
+      "VÉ": -1,
+    },
+  },
+  "taktika Kezdeményező 2": {
+    "f": {},
+    "t": {
+      "KÉ": 2,
+      "VÉ": -2,
+    },
+  },
+  "taktika Kezdeményező 3": {
+    "f": {},
+    "t": {
+      "KÉ": 3,
+      "VÉ": -3,
+    },
+  },
+  "taktika Kezdeményező 5": {
+    "f": {},
+    "t": {
+      "KÉ": 5,
+      "VÉ": -5,
+    },
+  },
+  "taktika Kiváró": {
+    "f": {},
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Roham": {
+    "f": {},
+    "t": {
+      "SP": 5,
+      "TÉ": 4,
+      "VÉ": -8,
+    },
+  },
+  "taktika Teljes Védekezés": {
+    "f": {},
+    "t": {
+      "VÉ": 8,
+    },
+  },
+  "taktika Támadás erőből 1": {
+    "f": {},
+    "t": {
+      "SP": 1,
+      "TÉ": -1,
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "f": {},
+    "t": {
+      "SP": 2,
+      "TÉ": -2,
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "f": {},
+    "t": {
+      "SP": 3,
+      "TÉ": -3,
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "f": {},
+    "t": {
+      "SP": 5,
+      "TÉ": -5,
+    },
+  },
+  "taktika Támadó 1": {
+    "f": {},
+    "t": {
+      "TÉ": 1,
+      "VÉ": -2,
+    },
+  },
+  "taktika Támadó 2": {
+    "f": {},
+    "t": {
+      "TÉ": 2,
+      "VÉ": -4,
+    },
+  },
+  "taktika Támadó 3": {
+    "f": {},
+    "t": {
+      "TÉ": 3,
+      "VÉ": -6,
+    },
+  },
+  "taktika Támadó 5": {
+    "f": {},
+    "t": {
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "taktika Visszafogott": {
+    "f": {},
+    "t": {
+      "TÉ": -10,
+    },
+  },
+  "taktika Védő 1": {
+    "f": {},
+    "t": {
+      "TÉ": -2,
+      "VÉ": 1,
+    },
+  },
+  "taktika Védő 2": {
+    "f": {},
+    "t": {
+      "TÉ": -4,
+      "VÉ": 2,
+    },
+  },
+  "taktika Védő 3": {
+    "f": {},
+    "t": {
+      "TÉ": -6,
+      "VÉ": 3,
+    },
+  },
+  "taktika Védő 5": {
+    "f": {},
+    "t": {
+      "TÉ": -10,
+      "VÉ": 5,
+    },
+  },
+  "taktika Érintő": {
+    "f": {},
+    "t": {
+      "TÉ": 3,
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "f": {},
+    "t": {
+      "SP": 7,
+      "TÉ": 5,
+      "VÉ": -10,
+    },
+  },
+  "±10 plafon": {
+    "f": {},
+    "t": {
+      "TÉ": -6,
+      "VÉ": 10,
+    },
+  },
+}
+`;

@@ -54,8 +54,8 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `types.ts` | Karakter v2, Session, Fortely interface-ek |
 | `data-types.ts` | GameData, FortelySummary, TaktikaEntry, HarciHelyzetEntry stb. |
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
-| `fortely-mods.ts` | calcFortelyMods - feltételes fortély módosítók (kiváltás alatt → `effekt.ts`) |
-| `effekt.ts` | Egységes effekt-modell (§42 3. fázis): `gyűjtFortélyEffektek`, `gyűjtTaktikaEffektek`, `értékCélra`, `arányÖsszeg`; paritás-háló: `effekt.parity.test.ts` |
+| `fortely-mods.ts` | calcFortelyMods - burkoló az `effekt.ts` gyűjtő fölött (fortély + alapeset → célonkénti Record) |
+| `effekt.ts` | Egységes effekt-modell (§42 3. fázis): `gyűjtFortélyEffektek`, `gyűjtTaktikaEffektek`, `értékCélra`, `arányÖsszeg`; regressziós snapshot: `effekt.regresszio.test.ts`; a `calcFortelyMods` / `calcTaktikaMods` ennek burkolói |
 | `mf-utils.ts` | `findMfFokByName` (egyetlen MF egyeztető) + `findMfFok` (fegyvertáblából) + `getMfBónusz` |
 | `alapeset.ts` | Fortély 0.fok (Alapeset) kiértékelés |
 | `ketkezes.ts` | Kétkezes harc összesítő kalkuláció |

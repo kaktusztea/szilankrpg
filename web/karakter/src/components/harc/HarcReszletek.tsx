@@ -47,6 +47,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
   const { konstansok } = data;
   const k = karakter;
   const r = d.result;
+  const fm = r.fortély ?? fortelyMods; // a sor saját (soronként kiértékelt) fortély-módosítói
 
   return (
     <div className="debug-box harc-reszletek">
@@ -59,7 +60,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
       <Section label={`Támadás/kör: ${r.támadások}`}>
         Harckeret: {r.harckeret} ({d.harcmodorNév} {d.harcmodorSzint} + Gyor {k.tulajdonságok.gyorsaság}
         {d.páncélMGT > 0 ? ` − MGT ${d.páncélMGT}` : ''}
-        {fortelyMods['harckeret'] ? ` + Fortély ${fmtMod(fortelyMods['harckeret'])}` : ''}
+        {fm['harckeret'] ? ` + Fortély ${fmtMod(fm['harckeret'])}` : ''}
         {d.sumFegyverhossz != null ? (() => { const pl = Math.floor(d.sumFegyverhossz / konstansok.kétkezes_harc_fegyverlevonás_osztó); return pl > 0 ? ` − Fegyver ${pl}` : ''; })() : ''}) ÷ Sebesség: {r.sebesség}
       </Section>
 
@@ -70,7 +71,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
           ? <KétkezesFegyverMf kh={d.kétkezes} mező="TÉ" />
           : <DetailParts parts={[['Fegyver', r.alap_TÉ], ['MF', d.mfTÉ]]} />}
         <DetailParts parts={[
-          ['Fortély', fortelyMods['TÉ']],
+          ['Fortély', fm['TÉ']],
           ['Merevvért', d.merevvértBüntetés ? -d.merevvértBüntetés : 0],
           ['Taktika', taktikaMods['TÉ']],
           ['Fogás', d.téFogásBüntetés],
@@ -86,7 +87,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
           ? <KétkezesFegyverMf kh={d.kétkezes} mező="VÉ" />
           : <DetailParts parts={[['Fegyver', r.alap_VÉ], ['MF', d.mfVÉ]]} />}
         <DetailParts parts={[
-          ['Fortély', fortelyMods['VÉ']],
+          ['Fortély', fm['VÉ']],
           ['Fogás', d.véFogásBónusz],
           ...(!fogásResult && pajzsVÉ ? [['Pajzs', pajzsVÉ] as [string, number]] : []),
           ['Taktika', taktikaMods['VÉ']],
@@ -96,14 +97,14 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
       </Section>
 
       <Section label={`SP: ${d.finalSP} ${r.jelleg}`}>
-        Fegyver: {d.fegyverAlapSP} · Erőbónusz: {Math.floor(d.erőBónusz * (1 + (fortelyMods['SP_erőbónusz_arány'] ?? 0)))}{d.erőBónuszLimit < 99 && ` (limit: ${d.erőBónuszLimit})`}{(fortelyMods['SP_erőbónusz_arány'] ?? 0) > 0 && ` (×${1 + fortelyMods['SP_erőbónusz_arány']})`}
+        Fegyver: {d.fegyverAlapSP} · Erőbónusz: {Math.floor(d.erőBónusz * (1 + (fm['SP_erőbónusz_arány'] ?? 0)))}{d.erőBónuszLimit < 99 && ` (limit: ${d.erőBónuszLimit})`}{(fm['SP_erőbónusz_arány'] ?? 0) > 0 && ` (×${1 + fm['SP_erőbónusz_arány']})`}
         {d.kétkezes
           ? <DetailParts parts={[
               [`MF(${d.kétkezes.nagyobb.név})`, d.kétkezes.nagyobb.mfSP],
               [`MF(${d.kétkezes.kisebb.név})`, d.kétkezes.kisebb.mfSP],
             ]} />
           : <DetailParts parts={[['MF', d.mfSP]]} />}
-        <DetailParts parts={[['Fortély', fortelyMods['SP']], ['Taktika', taktikaMods['SP']]]} />
+        <DetailParts parts={[['Fortély', fm['SP']], ['Taktika', taktikaMods['SP']]]} />
       </Section>
 
       <Section label={`Fegyverhossz: ${r.fegyverhossz + (fortelyMods['fegyverhossz'] ?? 0)}`}>

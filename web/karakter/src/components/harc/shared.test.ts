@@ -74,31 +74,17 @@ describe('coalesceVéHistory', () => {
   });
 });
 
-describe('véVesztésSzorzó', () => {
-  const helyzetek = [
-    { név: 'Földön fekve', hatások: [{ mód: 'szorzó', cél: 'vé_veszteség', érték: 2 }] },
-    { név: 'Csúszós talaj', hatások: [{ mód: 'hátrány', cél: 'té_dobás', érték: -1 }] },
-  ];
-  it('returns 1x with no source when no active helyzet has the effect', () => {
-    expect(véVesztésSzorzó(['Csúszós talaj'], helyzetek)).toEqual({ szorzó: 1, forrás: '' });
+describe('véVesztésSzorzó (helyzet + státusz effektek)', () => {
+  const e = (cél: string, mód: string, érték: number, név: string, típus: 'helyzet' | 'státusz' = 'helyzet') =>
+    ({ cél, mód, érték, forrás: { típus, név } });
+  it('nincs vé_veszteség szorzó → 1x, forrás nélkül', () => {
+    expect(véVesztésSzorzó([e('té_dobás', 'hátrány', -1, 'Csúszós talaj')])).toEqual({ szorzó: 1, forrás: '' });
   });
-  it('returns 2x with the source name when a szorzó/vé_veszteség helyzet is active', () => {
-    expect(véVesztésSzorzó(['Földön fekve'], helyzetek)).toEqual({ szorzó: 2, forrás: 'Földön fekve' });
+  it('helyzet ×2 → 2x a forrás nevével', () => {
+    expect(véVesztésSzorzó([e('vé_veszteség', 'szorzó', 2, 'Földön fekve')])).toEqual({ szorzó: 2, forrás: 'Földön fekve' });
   });
-  it('ignores unrelated active helyzet entries', () => {
-    expect(véVesztésSzorzó(['Nincs ilyen'], helyzetek)).toEqual({ szorzó: 1, forrás: '' });
-  });
-
-  // Státusz-forrás bevonása + halmozás (md/081 ökölszabály → legnagyobb dominál).
-  const statuszok = [
-    { név: 'Fizikai', fokok: [{ fok: 2, hatások: [{ mód: 'szorzó', cél: 'vé_veszteség', érték: 2 }] }] },
-  ];
-  it('szorzó status source counts (Fizikai (2))', () => {
-    expect(véVesztésSzorzó([], helyzetek, ['Fizikai (2)'], statuszok))
-      .toEqual({ szorzó: 2, forrás: 'Fizikai (2)' });
-  });
-  it('helyzet + státusz cross-layer does NOT stack - legnagyobb dominál (×2, not ×4, §42.3)', () => {
-    expect(véVesztésSzorzó(['Földön fekve'], helyzetek, ['Fizikai (2)'], statuszok))
+  it('helyzet + státusz nem halmozódik - a legnagyobb dominál (×2, nem ×4, §42.3)', () => {
+    expect(véVesztésSzorzó([e('vé_veszteség', 'szorzó', 2, 'Földön fekve'), e('vé_veszteség', 'szorzó', 2, 'Fizikai (2)', 'státusz')]))
       .toEqual({ szorzó: 2, forrás: 'Földön fekve' });
   });
 });

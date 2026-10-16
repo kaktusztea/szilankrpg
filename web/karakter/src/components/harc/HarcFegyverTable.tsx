@@ -49,7 +49,7 @@ export function HarcFegyverTable({
     const té = computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], téExtra, r.támadások, többTámTÉ);
     const vé = computeVÉ(r.VÉ, veBónusz, taktikaMods['VÉ'] + (helyzetMods?.VÉ ?? 0), session.vé_csökkenés);
     const spTotal = r.SP + taktikaMods['SP'];
-    const spBónusz = (fortelyMods['SP'] ?? 0) + taktikaMods['SP'];
+    const spBónusz = ((r.fortély ?? fortelyMods)['SP'] ?? 0) + taktikaMods['SP'];
     const spBase = spTotal - spBónusz;
     const ph = r.fegyverhossz + (fortelyMods['fegyverhossz'] ?? 0);
     const belharcWarning = !!r.tiltások?.length; // §42.4: a sor saját aktív tiltásai (pl. túl hosszú / nem Közelharc)

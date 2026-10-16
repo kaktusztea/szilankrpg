@@ -5,9 +5,8 @@
  * alakban ({cél, alcél?, mód, érték}); a feltételeket a gyűjtés során értékeli ki (a lista csak aktív
  * effekteket tartalmaz). A kiértékelő a §42.3 precedenciát a meglévő `alkalmazEffektek` motorral adja.
  *
- * Átmeneti állapot (3. fázis, 1. szelet): a régi `calcFortelyMods` / `calcTaktikaMods` még él, az
- * `effekt.parity.test.ts` méri hozzájuk ezt a modult. A fogyasztók szeletenként állnak át, a végén a két régi
- * függvény törlődik. A helyzet / státusz / extra forrás a saját szeletében kerül be (YAGNI: amíg nincs fogyasztója).
+ * A `calcFortelyMods` / `calcTaktikaMods` vékony burkolók e modul fölött (2026-10-16, 4b-1); regressziós háló:
+ * `effekt.regresszio.test.ts` (a régi kézi implementációval rögzített snapshot).
  * A fájl végén: a tiltás-keret (§42.4) és a fegyver_override soronkénti kiértékelése (2. szelet).
  */
 import type { Karakter, Session, FegyverAlap } from './types';
@@ -15,13 +14,12 @@ import type { GameData, ExtraHatás } from './data-loader';
 import { evaluateAlapesetek } from './alapeset';
 import { alkalmazEffektek } from '../components/harc/extrak-effekt';
 import { interpolateFokDef } from '../components/aktiv/taktika-helpers';
-import { collectTaktikaLetiltások } from '../components/harc/taktika-calc';
 import { createFeltételEvaluator } from './feltetel-eval';
 import { lookupFegyver } from './utils';
 import { buildPajzsFegyverNév } from '../components/harc/shared';
 import { extraFeltételTeljesül } from '../components/harc/extrak-info-calc';
 
-export type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet';
+export type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';
 
 export interface Effekt {
   cél: string;
@@ -70,6 +68,27 @@ export function gyűjtFortélyEffektek(
     }
   }
   return ki;
+}
+
+/**
+ * Collect "letilt" fortély modifiers that neutralize a specific taktika modifier.
+ * Returns a Set of `"${taktika_feltétel_kulcs}|${cél}"` keys (e.g. "taktika:visszafogott|TÉ").
+ * Number-independent: the taktika's contribution to that cél is dropped entirely.
+ */
+export function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
+  const letiltva = new Set<string>();
+  for (const kf of k.fortélyok) {
+    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    if (!def) continue;
+    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
+    if (!fokDef?.módosítók) continue;
+    for (const mod of fokDef.módosítók) {
+      if (mod.mód === 'letilt' && typeof mod.feltétel === 'string' && mod.feltétel.startsWith('taktika:')) {
+        letiltva.add(`${mod.feltétel}|${mod.cél}`);
+      }
+    }
+  }
+  return letiltva;
 }
 
 const TAKTIKA_CÉLOK = ['KÉ', 'TÉ', 'VÉ', 'SP'] as const;
@@ -121,6 +140,25 @@ export function gyűjtHelyzetEffektek(session: Session, data: GameData): Effekt[
     const def = data.harciHelyzetek.find(h => h.név === név);
     for (const h of def?.hatások ?? []) {
       ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), mód: h.mód, érték: h.érték, forrás: { típus: 'helyzet', név } });
+    }
+  }
+  return ki;
+}
+
+/**
+ * Az aktív státuszok (`"Név (fok)"` vagy `"Név: alkategória (fok)"`) adott fokának `hatások[]`-a közös alakban.
+ * Alkategóriás státusznál a cél kiegészül (pl. `érzék_próba (látás)`), mint az Aktív fül Hatás-poolban.
+ */
+export function gyűjtStátuszEffektek(session: Session, data: GameData): Effekt[] {
+  const ki: Effekt[] = [];
+  for (const st of session.aktív_státuszok) {
+    const m = st.match(/^(.+) \((\d+)\)$/);
+    if (!m) continue;
+    const [alapNév, al] = m[1].split(': ');
+    const fokDef = data.statuszok.find(s => s.név === alapNév)?.fokok.find(f => f.fok === parseInt(m[2]));
+    for (const h of fokDef?.hatások ?? []) {
+      ki.push({ cél: al ? `${h.cél} (${al.toLowerCase()})` : h.cél, ...(h.alcél ? { alcél: h.alcél } : {}),
+        mód: h.mód, érték: h.érték, forrás: { típus: 'státusz', név: st } });
     }
   }
   return ki;

@@ -118,6 +118,8 @@ export function calcFegyverResults(
   precomputedMerevvértBüntetés?: number,
   /** Fegyverenkénti alapérték-csere (helyzet fegyver_override + extrák, §42.3/§42.4) - pl. fegyverOverrideÉrtékek. */
   alapOverride?: (fDef: FegyverAlap) => Map<string, number>,
+  /** Fegyverenkénti fortély-módosítók (a sor saját fegyver-feltételeivel); hiányában a globális `fortelyMods`. */
+  fortélyModsSorra?: (fDef: FegyverAlap) => Record<string, number>,
 ): FegyverResult[] {
   const { konstansok } = data;
   const fegyverRules = getFegyverRules(data.rules);
@@ -144,15 +146,20 @@ export function calcFegyverResults(
 
   return fegyverRows.map(({ fDef, mfFok, ideaHatás }) => {
     const ovr = alapOverride?.(fDef);
-    const módok = fDef.módok.map(m => calcModResult(m, fDef, k, data, baseCtx, fegyverRules, mfFok, ovr));
+    const fm = fortélyModsSorra?.(fDef) ?? fortelyMods;
+    const sorCtx = new Map(baseCtx);
+    sorCtx.set('fegyver_fortély_TÉ', fm['TÉ'] ?? 0); sorCtx.set('fegyver_fortély_VÉ', fm['VÉ'] ?? 0); sorCtx.set('fegyver_fortély_SP', fm['SP'] ?? 0);
+    sorCtx.set('fegyver_fortély_SP_erőbónusz_arány', fm['SP_erőbónusz_arány'] ?? 0);
+    sorCtx.set('fegyver_fortély_harckeret', fm['harckeret'] ?? 0);
+    const módok = fDef.módok.map(m => calcModResult(m, fDef, k, data, sorCtx, fegyverRules, mfFok, ovr));
     const ih = ideaHatás ?? { TÉ: 0, VÉ: 0, SP: 0 };
     for (const m of módok) {
-      m.hk_fortély = fortelyMods['harckeret'] ?? 0;
+      m.hk_fortély = fm['harckeret'] ?? 0;
       // Példány-Idea delta (Modell 2): a idea_default-tól való eltérés TÉ/VÉ/SP-hatása. Default példány → 0.
       m.TÉ += ih.TÉ; m.VÉ += ih.VÉ; m.SP += ih.SP;
     }
     const elsődleges = módok.find(m => m.sebzéstípus === 'elsődleges') ?? módok[0];
-    return { fegyver_név: fDef.név, fegyverhossz: fDef.fegyverhossz, módok, ...elsődleges };
+    return { fegyver_név: fDef.név, fegyverhossz: fDef.fegyverhossz, módok, ...elsődleges, fortély: fm };
   });
 }
 

@@ -188,7 +188,8 @@
         "cél": "cé_dobás"
       },
       {
-        "mód": "szöveges",
+        "mód": "max_limit",
+        "érték": 1,
         "cél": "támadások_száma",
         "megjegyzés": "Többszörös támadás elvesztés"
       },
@@ -979,7 +980,8 @@
     ],
     "hatások": [
       {
-        "mód": "szöveges",
+        "mód": "max_limit",
+        "érték": 1,
         "cél": "támadások_száma",
         "megjegyzés": "Többszörös támadás elvesztés"
       },

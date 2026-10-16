@@ -1687,8 +1687,10 @@ Boolean↔number normalizálás: `true` = 1, `false` = 0 (reactive engine number
 - Merevvértviselet fok 3 (VÉ): `páncél_merev == true` ÉS `páncél_lefedettség >= 70`
 - Kétkezesség fok 1 (harckeret): `kétkezes_harc == true`
 - Belharcos fok 1-2 (KÉ/TÉ/VÉ): `harci_helyzet:belharci_helyzet == true` ÉS `tiltás:belharc_harcmodor == false`
-  ÉS `tiltás:belharc_fegyverhossz == false` (a prefix:érték forrás az aktívFeltételek Set-ből jön; a `tiltás:<id>`
-  kulcsot a kézben lévő fegyver(ek) aktív tiltásai adják - kétkezesnél bármelyik kéz tiltása elég, §42.4)
+  ÉS `tiltás:belharc_fegyverhossz == false`. A TÉ/VÉ/SP/harckeret fortély-módosítók SORONKÉNT értékelődnek ki
+  (`useHarcComputed` → `calcFegyverResults(…, fortélyModsSorra)`): a `fegyver_kategória:` és `tiltás:` kulcsok a sor
+  fegyverére vonatkoznak (Belharcos: csak a nem tiltott sor; Pajzshasználat `fegyver_kategória:pajzs`: csak a pajzs sora).
+  A KÉ és a kétkezes eredmény a kézben lévő fegyver(ek) kulcsaival (kétkezesnél bármelyik kéz tiltása elég, §42.4)
 
 ### Session toggle fortélyok
 
@@ -4098,15 +4100,15 @@ A módok jelenleg KÜLÖN kódutakon élnek - ez az egyesítés kiindulópontja 
 
 | mód | jelenlegi kezelő | § |
 |-----|------------------|---|
-| `flat` | `engine/fortely-mods.ts` (calcFortelyMods) + `harc/combat-roll-info.ts` (dobás-bónusz) + `engine/effekt.ts` `gyűjtHelyzetEffektek` (helyzet: `VÉ` → `helyzetMods`, `vé_csökkentés` → VÉ-csökkentés popup, `(bázis + k20P + flat) × szorzó`; a Fárasztás override-jára is ráadódik - általános szabály, 2026-10-16) | §16, §21 |
-| `scaled` | `engine/fortely-mods.ts` (calcFortelyMods) | §16 |
+| `flat` | `engine/effekt.ts` gyűjtő (fortély/alapeset/taktika; `calcFortelyMods` / `calcTaktikaMods` burkolók) + `harc/combat-roll-info.ts` (dobás-bónusz) + `engine/effekt.ts` `gyűjtHelyzetEffektek` (helyzet: `VÉ` → `helyzetMods`, `vé_csökkentés` → VÉ-csökkentés popup, `(bázis + k20P + flat) × szorzó`; a Fárasztás override-jára is ráadódik - általános szabály, 2026-10-16) | §16, §21 |
+| `scaled` | `engine/effekt.ts` `gyűjtFortélyEffektek` (képzettség-forrás FLOOR; `erőbónusz` → arány) | §16 |
 | `override` | `harc/fegyver-calc.ts` (SP override, fegyver_override) + `harc/extrak-effekt.ts` (extrák) | §5–8, §21 |
 | `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` / harc-popupok | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
 | `letilt` | `harc/taktika-calc.ts` (feltételes TÉ semlegesítés) | §21 |
 | `szöveges` | `formatters.tsx` / `harc/HatasokInfo.tsx` (megjelenítés) | §22 |
-| `szorzó` | `harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `harc/shared.ts` (vé_veszteség duplázás helyzet/státusz) + `harc/extrak-effekt.ts` | §21, §22 |
-| `max_limit` | `harc/extrak-effekt.ts` (csak extrák) | §42.3 |
+| `szorzó` | `harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `harc/shared.ts` `véVesztésSzorzó` (vé_veszteség - a `gyűjtHelyzetEffektek` + `gyűjtStátuszEffektek` effektjeiből) + `harc/extrak-effekt.ts` | §21, §22 |
+| `max_limit` | `harc/extrak-effekt.ts` motor; `useHarcComputed`: helyzet/státusz `támadások_száma` (pl. Félelem (2): max 1) a fegyversorok + kétkezes `támadások`-ára (2026-10-16) | §42.3 |
 
 Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implementál; a többi mód a fenti EGYÉB kódutakon kezelődik. A `harc/extrak-effekt.ts` a 42.3 precedenciát már implementálja, de csak az extrákra. A 3. FÁZIS (42.5) ezt a szórást vonja egyetlen kiértékelő alá a 42.3 precedenciával.
 
