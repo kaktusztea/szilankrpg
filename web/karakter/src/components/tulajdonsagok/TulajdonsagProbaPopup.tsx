@@ -35,6 +35,8 @@ interface Props {
   /** Felszerelés-túlterhelés Hátrány (Fizikai tulajdonságnál) - a dobás alap EH-ja. */
   felszEH?: number;
   felszNemHarcol?: boolean;
+  /** Fortély szituációs bónuszai (kapcsolható, alapból ki - a helyzetet a játékos/KM dönti el). */
+  fortélyBónuszok?: { érték: number; leírás: string }[];
   onClose: () => void;
 }
 
@@ -42,7 +44,11 @@ interface Props {
  * Tulajdonságpróba dobás popup (Játék mód): Tulajdonság + k6 vs célszám.
  * Extrák szekció: Előny/Hátrány, Összetett próba, Ellenpróba.
  */
-export function TulajdonsagProbaPopup({ tulajdonságNév, érték, felszEH = 0, felszNemHarcol = false, onClose }: Props) {
+export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, felszEH = 0, felszNemHarcol = false, fortélyBónuszok = [], onClose }: Props) {
+  // Bekapcsolt fortély-bónuszok: a dobás alapértékéhez adódnak (a lenti számítás mindenhol az `érték`-et használja).
+  const [bónuszBe, setBónuszBe] = useState<boolean[]>(() => fortélyBónuszok.map(() => false));
+  const bónusz = fortélyBónuszok.reduce((s, b, i) => s + (bónuszBe[i] ? b.érték : 0), 0);
+  const érték = tulÉrték + bónusz;
   const [nehézség, setNehézség] = useState<number | null>(null);
   const [dobás, setDobás] = useState<ProbaDobás | null>(null);
 
@@ -148,7 +154,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, felszEH = 0, 
             title="Újradobás"
           >⟲</button>
         </div>
-        <div className="kep-proba-subtitle">{label} ({érték})</div>
+        <div className="kep-proba-subtitle">{label} ({tulÉrték}){bónusz ? ` + ${bónusz} fortély` : ''}</div>
 
         {(felszEH < 0 || felszNemHarcol) && (
           <div className="kep-proba-felsz-warn">
@@ -208,6 +214,22 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, felszEH = 0, 
                   ))}
                 </div>
               </div>
+              {/* Fortély szituációs bónuszai */}
+              {fortélyBónuszok.length > 0 && (
+                <div className="kep-proba-extras-row">
+                  <span className="kep-proba-extras-label">Fortélyok:</span>
+                  <div className="kep-proba-extras-btns">
+                    {fortélyBónuszok.map((b, i) => (
+                      <button key={i}
+                        className={`kep-proba-extras-btn${bónuszBe[i] ? ' kep-proba-extras-btn-active' : ''}`}
+                        aria-pressed={bónuszBe[i]}
+                        onClick={() => { setBónuszBe(v => v.map((x, j) => (j === i ? !x : x))); resetDobás(); }}>
+                        +{b.érték} {b.leírás}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               {/* Ellenpróba */}
               <div className="kep-proba-extras-row">
                 <span className="kep-proba-extras-label">Ellenpróba:</span>

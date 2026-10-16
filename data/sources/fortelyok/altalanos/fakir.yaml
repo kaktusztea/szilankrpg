@@ -31,7 +31,7 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: ""
-    megjegyzés: "Fájdalomtűrés próba"
+    megjegyzés: "Fájdalomtűrés próba kínzás esetén"
     alcél: "képzettség:Fájdalomtűrés"
 - fok: 2
   követelménytext: []
@@ -45,5 +45,5 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: ""
-    megjegyzés: "Fájdalomtűrés próba"
+    megjegyzés: "Fájdalomtűrés próba kínzás esetén"
     alcél: "képzettség:Fájdalomtűrés"

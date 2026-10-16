@@ -13,10 +13,11 @@ interface Props {
   fajMax?: number;
   /** Felszerelés-túlterhelés Hátrány (ha ez Fizikai tulajdonság), különben 0. */
   felszEH?: number;
+  fortélyBónuszok?: { érték: number; leírás: string }[];
   felszNemHarcol?: boolean;
 }
 
-export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax, felszEH = 0, felszNemHarcol = false }: Props) {
+export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax, felszEH = 0, felszNemHarcol = false, fortélyBónuszok }: Props) {
   const [editing, setEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
 
@@ -60,6 +61,7 @@ export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, faj
           tulajdonságNév={név}
           érték={érték}
           felszEH={felszEH}
+          fortélyBónuszok={fortélyBónuszok}
           felszNemHarcol={felszNemHarcol}
           onClose={() => setShowProba(false)}
         />

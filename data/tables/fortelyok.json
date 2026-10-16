@@ -329,7 +329,7 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "",
-            "megjegyzés": "Fájdalomtűrés próba",
+            "megjegyzés": "Fájdalomtűrés próba kínzás esetén",
             "alcél": "képzettség:Fájdalomtűrés"
           }
         ],
@@ -350,7 +350,7 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "",
-            "megjegyzés": "Fájdalomtűrés próba",
+            "megjegyzés": "Fájdalomtűrés próba kínzás esetén",
             "alcél": "képzettség:Fájdalomtűrés"
           }
         ],
@@ -962,45 +962,21 @@
       {
         "fok": 1,
         "hatás": [
-          "Zárnyitás képzettségre: +2.",
           "A kapcsolódó, kiterjesztett képzettségek követelményeként megszünteti a kiterjesztés-büntetést."
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "képzettségpróba",
-            "érték": 2,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "",
-            "megjegyzés": "Zárnyitás képzettségre",
-            "alcél": "képzettség:Zárnyitás"
-          }
-        ],
+        "módosítók": [],
         "próba_enyhítések": []
       },
       {
         "fok": 2,
         "hatás": [
-          "Zárnyitás képzettségre: +4.",
           "A kapcsolódó képzettségek kiterjesztésekor már Előny+1 bónuszt is ad."
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "képzettségpróba",
-            "érték": 4,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "",
-            "megjegyzés": "Zárnyitás képzettségre",
-            "alcél": "képzettség:Zárnyitás"
-          }
-        ],
+        "módosítók": [],
         "próba_enyhítések": []
       }
     ],
@@ -1571,6 +1547,16 @@
             "feltétel": "",
             "megjegyzés": "Lexikum próba történelmi témában",
             "alcél": "képzettség:Lexikum"
+          },
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Hadászat próba történelmi témában",
+            "alcél": "képzettség:Hadászat"
           }
         ],
         "próba_enyhítések": []
@@ -1674,7 +1660,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 2,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1703,7 +1689,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 4,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1751,7 +1737,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 2,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1780,7 +1766,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 4,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1828,7 +1814,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 2,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1857,7 +1843,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 4,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1905,7 +1891,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 2,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1934,7 +1920,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 4,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -1982,7 +1968,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 2,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -2011,7 +1997,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 4,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -2059,7 +2045,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 2,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",
@@ -2088,7 +2074,7 @@
           {
             "cél": "képzettségpróba",
             "érték": 4,
-            "mód": "flat",
+            "mód": "szöveges",
             "forrás": "",
             "arány": 0,
             "feltétel": "",

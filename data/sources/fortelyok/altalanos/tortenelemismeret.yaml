@@ -42,3 +42,11 @@ fokok:
     feltétel: ""
     megjegyzés: "Lexikum próba történelmi témában"
     alcél: "képzettség:Lexikum"
+  - cél: "képzettségpróba"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+    megjegyzés: "Hadászat próba történelmi témában"
+    alcél: "képzettség:Hadászat"

@@ -23,30 +23,12 @@ fokok:
   követelménytext: []
   követelmények: ""
   hatástext: 
-  - text: "Zárnyitás képzettségre: +2."
   - text: "A kapcsolódó, kiterjesztett képzettségek követelményeként megszünteti\
       \ a kiterjesztés-büntetést."
-  módosítók: 
-  - cél: "képzettségpróba"
-    érték: 2
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: ""
-    megjegyzés: "Zárnyitás képzettségre"
-    alcél: "képzettség:Zárnyitás"
+  módosítók: []
 - fok: 2
   követelménytext: []
   követelmények: ""
   hatástext: 
-  - text: "Zárnyitás képzettségre: +4."
   - text: "A kapcsolódó képzettségek kiterjesztésekor már Előny+1 bónuszt is ad."
-  módosítók: 
-  - cél: "képzettségpróba"
-    érték: 4
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: ""
-    megjegyzés: "Zárnyitás képzettségre"
-    alcél: "képzettség:Zárnyitás"
+  módosítók: []

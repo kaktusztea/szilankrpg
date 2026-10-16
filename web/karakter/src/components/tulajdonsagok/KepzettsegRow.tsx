@@ -9,7 +9,7 @@ import { DELETE_BTN_TAP_ZONE_PX, SZINT_VALUES } from '../../ui-constants';
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
   kiterjesztesek, infoOpen, onInfoToggle,
-  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések, felszEH = 0, felszNemHarcol = false
+  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések, fortélyBónuszok, felszEH = 0, felszNemHarcol = false
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
@@ -65,7 +65,8 @@ export function KepzettsegRow({
           képzettségek={képzettségek}
           aktívStátuszok={aktívStátuszok}
           statuszDefs={statuszDefs}
-          módosítóTáblák={def.helyzetfüggő_módosítók || []}
+          módosítóTáblák={[...(def.helyzetfüggő_módosítók || []),
+            ...(fortélyBónuszok?.length ? [{ kategória: 'Fortélyok', mód: 'multi' as const, sorok: fortélyBónuszok }] : [])]}
           próbaEnyhítések={próbaEnyhítések}
           dobásKomment={def.dobás_komment || []}
           felszEH={felszEH}

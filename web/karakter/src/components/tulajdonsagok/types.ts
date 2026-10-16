@@ -56,6 +56,8 @@ export interface KepzettsegRowProps {
   aktívStátuszok: string[];
   statuszDefs: StatuszEntry[];
   próbaEnyhítések: PróbaEnyhítés[];
+  /** Fortély szituációs próba-bónuszai erre a képzettségre (kapcsolható „Fortélyok" tábla a popupban). */
+  fortélyBónuszok?: { érték: number; leírás: string }[];
   /** Felszerelés-túlterhelés Hátrány (Fizikai csoportnál), különben 0/false. */
   felszEH?: number;
   felszNemHarcol?: boolean;

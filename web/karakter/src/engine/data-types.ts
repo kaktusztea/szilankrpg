@@ -47,6 +47,7 @@ export interface FortelyModosito {
   forrás: string;
   arány: number;
   feltétel: string;
+  megjegyzés?: string;
 }
 
 export interface PróbaEnyhítés {

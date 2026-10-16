@@ -35,13 +35,15 @@ interface Props {
   statuszDefs: StatuszEntry[];
   felszHátrány: FelszerelésHátrány;
   próbaEnyhítésekByKép: Record<string, PróbaEnyhítés[]>;
+  /** Fortély szituációs próba-bónuszai képzettségenként (a próba popup „Fortélyok" táblájához). */
+  fortélyBónuszByKép?: Record<string, { érték: number; leírás: string }[]>;
 }
 
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, szintLimitek, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
   fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál,
-  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, felszHátrány, próbaEnyhítésekByKép
+  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, felszHátrány, próbaEnyhítésekByKép, fortélyBónuszByKép
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -85,6 +87,7 @@ export function KepzettsegCsoport({
               felszEH={csoport === 'fizikai' ? felszHátrány.ehSzint : 0}
               felszNemHarcol={csoport === 'fizikai' ? felszHátrány.nemHarcol : false}
               próbaEnyhítések={próbaEnyhítésekByKép[slot.név] || []}
+              fortélyBónuszok={fortélyBónuszByKép?.[slot.név]}
             />
           );
         })}

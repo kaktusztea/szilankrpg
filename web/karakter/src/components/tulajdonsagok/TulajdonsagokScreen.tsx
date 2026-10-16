@@ -13,6 +13,7 @@ import { useEscapeClose } from './useEscapeClose';
 import { képzettségLimitek } from './kepzettseg-limit';
 import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../../engine/felszereles';
 import './TulajdonsagokScreen.css';
+import { fortélyPróbaBónuszok } from '../../engine/effekt';
 
 export function TulajdonsagokScreen({
   data, gameMode, karakter, setKarakter, tulajdonságok, setTulajdonságok,
@@ -45,6 +46,28 @@ export function TulajdonsagokScreen({
       return { ...prev, kiterjesztés_negálva: van ? lista.filter(x => x !== kulcs) : [...lista, kulcs] };
     });
   }, [setKarakter]);
+
+  // Fortélyok szituációs próba-bónuszai képzettségenként (pl. Fakír: Fájdalomtűrés kínzáskor +2) - §42
+  const fortélyBónuszByKép = useMemo(() => {
+    const result: Record<string, { érték: number; leírás: string }[]> = {};
+    for (const kp of karakter.képzettségek) {
+      const b = fortélyPróbaBónuszok(karakter, data, ['képzettségpróba'], a => a === `képzettség:${kp.név}`);
+      if (b.length) result[kp.név] = b;
+    }
+    return result;
+  }, [karakter, data]);
+
+  // ...és tulajdonságonként (érzékenységnél az érzék-próbák is: Emberentúli látás/hallás/szaglás)
+  const fortélyBónuszByTul = useMemo(() => {
+    const result: Record<string, { érték: number; leírás: string }[]> = {};
+    for (const kulcs of Object.keys(karakter.tulajdonságok)) {
+      const érzék = kulcs === 'érzékenység';
+      const b = fortélyPróbaBónuszok(karakter, data, érzék ? ['tulajdonságpróba', 'érzék_próba'] : ['tulajdonságpróba'],
+        a => a === `tulajdonság:${kulcs}` || (érzék && a.startsWith('érzék:')));
+      if (b.length) result[kulcs] = b;
+    }
+    return result;
+  }, [karakter, data]);
 
   // Fortélyok próba-enyhítő hatásainak összegyűjtése képzettségenként
   const próbaEnyhítésekByKép = useMemo(() => {
@@ -152,6 +175,7 @@ export function TulajdonsagokScreen({
         data={data} gameMode={gameMode}
         tulajdonságok={tulajdonságok} setTul={setTul}
         felszHátrány={felszHátrány}
+        fortélyBónuszByTul={fortélyBónuszByTul}
         név={név} becenév={becenév} játékos={játékos} tsz={tsz} kor={kor} faj={faj} anyanyelv={anyanyelv}
         jk={jk} setJk={setJk}
         onEditNév={() => setPopup(p => ({ ...p, editingNév: true, tempNév: név }))}
@@ -191,6 +215,7 @@ export function TulajdonsagokScreen({
             statuszDefs={data.statuszok}
             felszHátrány={felszHátrány}
             próbaEnyhítésekByKép={próbaEnyhítésekByKép}
+            fortélyBónuszByKép={fortélyBónuszByKép}
           />
         ))}
       </div>

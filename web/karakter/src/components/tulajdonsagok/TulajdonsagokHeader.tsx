@@ -9,6 +9,8 @@ interface Props {
   tulajdonságok: Tulajdonsagok;
   setTul: (key: keyof Tulajdonsagok, val: number) => void;
   felszHátrány: FelszerelésHátrány;
+  /** Fortély szituációs tulajdonságpróba-bónuszai tulajdonság-kulcsonként (pl. Futás: Edzettség hosszútávon +1). */
+  fortélyBónuszByTul?: Record<string, { érték: number; leírás: string }[]>;
   név: string;
   becenév: string;
   játékos: string;
@@ -32,7 +34,8 @@ export function TulajdonsagokHeader({
   data, gameMode, tulajdonságok, setTul, felszHátrány,
   név, becenév, játékos, tsz, kor, faj, anyanyelv,
   onEditNév, onEditBecenév, onEditTsz, onEditKor, onEditJátékos,
-  setFaj, setAnyanyelv, jk, setJk, onOpenElotortenet
+  setFaj, setAnyanyelv, jk, setJk, onOpenElotortenet,
+  fortélyBónuszByTul,
 }: Props) {
   const TULAJDONSAG_NEVEK = data.konstansok.tulajdonság_sorrend as (keyof Tulajdonsagok)[];
 
@@ -131,6 +134,7 @@ export function TulajdonsagokHeader({
             fajMin={data.fajKeretek[faj]?.[key]?.[0]}
             felszEH={fizikaiTulajdonság(key, data) ? felszHátrány.ehSzint : 0}
             felszNemHarcol={fizikaiTulajdonság(key, data) ? felszHátrány.nemHarcol : false}
+            fortélyBónuszok={fortélyBónuszByTul?.[key]}
           />
         ))}
       </div>

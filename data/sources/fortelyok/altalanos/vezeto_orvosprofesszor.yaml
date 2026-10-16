@@ -31,7 +31,7 @@ fokok:
   módosítók: 
   - cél: "képzettségpróba"
     érték: 2
-    mód: "flat"
+    mód: "szöveges"
     forrás: ""
     arány: 0
     feltétel: ""
@@ -49,7 +49,7 @@ fokok:
   módosítók: 
   - cél: "képzettségpróba"
     érték: 4
-    mód: "flat"
+    mód: "szöveges"
     forrás: ""
     arány: 0
     feltétel: ""

@@ -29,6 +29,8 @@ export interface Effekt {
   /** `scaled` + fegyverfüggő forrás (pl. "erőbónusz"): az arány itt marad, a fegyver-szabály szoroz vele (§8, §16). */
   arányForrás?: string;
   arány?: number;
+  /** A forrás-sor szöveges kontextusa (pl. „Fájdalomtűrés próba kínzás esetén") - szituációs megjelenítéshez. */
+  megjegyzés?: string;
   forrás: { típus: EffektForrásTípus; név: string };
 }
 
@@ -49,7 +51,7 @@ export function gyűjtFortélyEffektek(
       // Session-toggle fortély (pl. Harci akrobatika): a TÉ/VÉ hatás csak bekapcsolt állapotban él.
       if (def.session_toggle && (mod.cél === 'TÉ' || mod.cél === 'VÉ')
         && !(session as unknown as Record<string, unknown>)[kf.név.toLowerCase().replace(/ /g, '_')]) continue;
-      const alap = { cél: mod.cél, ...(mod.alcél ? { alcél: mod.alcél } : {}), forrás };
+      const alap = { cél: mod.cél, ...(mod.alcél ? { alcél: mod.alcél } : {}), ...(mod.megjegyzés ? { megjegyzés: mod.megjegyzés } : {}), forrás };
       if (mod.mód === 'scaled' && mod.forrás === 'erőbónusz') {
         ki.push({ ...alap, mód: 'scaled', arányForrás: 'erőbónusz', arány: mod.arány });
       } else if (mod.mód === 'scaled' && mod.forrás) {
@@ -162,6 +164,23 @@ export function gyűjtStátuszEffektek(session: Session, data: GameData): Effekt
     }
   }
   return ki;
+}
+
+/**
+ * A karakter fortélyainak próba-bónuszai (`flat`, a megadott próba-célra, illeszkedő alcéllal) SZITUÁCIÓS
+ * módosító-sorokként: a bónuszok a szabálykönyv szerint helyzethez kötöttek (pl. Fakír: kínzás), ezért a próba
+ * popupban kapcsolhatók, nem automatikusak (2026-10-16). Felirat: „Fortély (fok): megjegyzés".
+ */
+export function fortélyPróbaBónuszok(
+  k: Karakter, data: GameData, célok: string[], alcélIllik: (alcél: string) => boolean,
+): { érték: number; leírás: string }[] {
+  return gyűjtFortélyEffektek(k, k.session, data, new Set(), f => !f)
+    .filter(e => e.forrás.típus === 'fortély' && e.mód === 'flat' && célok.includes(e.cél) && !!e.alcél && alcélIllik(e.alcél)
+      && typeof e.érték === 'number')
+    .map(e => {
+      const fok = k.fortélyok.find(f => f.név === e.forrás.név)?.fok;
+      return { érték: e.érték!, leírás: `${e.forrás.név} (${fok}): ${e.megjegyzés ?? ''}`.replace(/: $/, '') };
+    });
 }
 
 /** Egy cél additív (`flat`) effektjei forrás-bontással - a popupok bontás-sorához. */
