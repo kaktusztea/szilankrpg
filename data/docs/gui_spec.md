@@ -495,7 +495,8 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Név: fegyver név + [kategória]
   - Támadás/kör: harcmodor szint (név), gyorsaság, sebesség, fortély harckeret, végső harckeret
   - TÉ: alap, erő, ügyesség, gyorsaság, HM, harcmodor, fegyver, MF, fortély, taktika, fogás, több tám, sérülés
-  - VÉ: alap, gyorsaság, ügyesség, HM, harcmodor, fegyver, MF, fortély, fogás, pajzs, taktika, VÉ csökkenés
+  - VÉ: alap, gyorsaság, ügyesség, HM, harcmodor, fegyver, MF, fortély, fogás, pajzs, taktika, helyzet (pl. Láthatatlan +10), VÉ csökkenés
+  - VÉ-csökkentés popup bontása: Fegyverviszony + k20P + helyzet-bővítés (pl. „+ Meglepetés (+2)") × szorzó; Fárasztás-ágon is listázva
   - SP: fegyver alap, erőbónusz (limit), MF, fortély, taktika
   - Fegyverhossz: alap, fortély bónusz, össz fegyverhossz (kétkezesnél)
 

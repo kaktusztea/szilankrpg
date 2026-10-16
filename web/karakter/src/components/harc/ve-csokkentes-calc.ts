@@ -17,6 +17,8 @@ export interface VéCsökkentésEredmény {
   k20p: number;
   /** Taktika-eredetű szorzó (pl. Roham/Öngyilkos roham: 2x) - 1, ha nincs ilyen hatás. */
   szorzó: number;
+  /** Helyzet-eredetű additív bővítés (pl. Meglepetés +2) - a szorzó ELŐTT adódik hozzá (§42.3). */
+  flat: number;
   végső: number;
 }
 
@@ -25,16 +27,19 @@ export interface VéCsökkentésEredmény {
  * @param k20 a Támadó dobás k20 eredménye (1-20), amiből a k20P adódik
  * @param alapTáblázat a konstansok.yaml `vé_csökkentés_alap` táblája
  * @param szorzó taktika-eredetű szorzó (pl. Roham/Öngyilkos roham: 2) - alapértelmezetten 1
+ * @param flat helyzet-eredetű additív bővítés (pl. Meglepetés +2) - (bázis + k20P + flat) × szorzó, §42.3
  */
 export function calcVéCsökkentés(
   fegyverviszony: Fegyverviszony,
   k20: number,
   alapTáblázat: Record<Fegyverviszony, number>,
   szorzó = 1,
+  flat = 0,
 ): VéCsökkentésEredmény {
   const bázis = alapTáblázat[fegyverviszony];
   const k20p = k20P(k20);
-  return { fegyverviszony, bázis, k20, k20p, szorzó, végső: (bázis + k20p) * szorzó };
+  const végső = alkalmazEffektek(bázis + k20p, [{ cél: 'vé_csökkentés', mód: 'flat', érték: flat }, { cél: 'vé_csökkentés', mód: 'szorzó', érték: szorzó }]);
+  return { fegyverviszony, bázis, k20, k20p, szorzó, flat, végső };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -76,6 +81,8 @@ export interface TaktikaVéCsökkentésEredmény {
   taktikaBázis: number;
   /** Fortély-eredetű flat bővítések (feltételesen aktívak), forrás-bontással. */
   fortélyBővítések: FortélyMódosítóBontás[];
+  /** Harci helyzet-eredetű flat bővítések (pl. Meglepetés +2), forrás-bontással. */
+  helyzetBővítések: FortélyMódosítóBontás[];
   végső: number;
 }
 
@@ -101,6 +108,7 @@ export function calcTaktikaVéCsökkentés(
   taktikaHatások: TaktikaHatás[] | undefined,
   fortélyModosítók: { forrás: string; módosítók: { cél: string; érték: number; mód: string; feltétel?: string }[] }[],
   feltételTeljesül: (feltétel: string) => boolean,
+  helyzetBővítések: FortélyMódosítóBontás[] = [],
 ): TaktikaVéCsökkentésEredmény {
   const taktikaBázis = calcTaktikaVéCsökkentésBázis(taktikaHatások, feltételTeljesül);
   const fortélyBővítések: FortélyMódosítóBontás[] = [];
@@ -111,6 +119,6 @@ export function calcTaktikaVéCsökkentés(
       fortélyBővítések.push({ forrás, érték: mod.érték });
     }
   }
-  const végső = taktikaBázis + fortélyBővítések.reduce((sum, f) => sum + f.érték, 0);
-  return { taktikaBázis, fortélyBővítések, végső };
+  const végső = taktikaBázis + [...fortélyBővítések, ...helyzetBővítések].reduce((sum, f) => sum + f.érték, 0);
+  return { taktikaBázis, fortélyBővítések, helyzetBővítések, végső };
 }

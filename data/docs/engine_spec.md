@@ -4098,7 +4098,7 @@ A módok jelenleg KÜLÖN kódutakon élnek - ez az egyesítés kiindulópontja 
 
 | mód | jelenlegi kezelő | § |
 |-----|------------------|---|
-| `flat` | `engine/fortely-mods.ts` (calcFortelyMods) + `harc/combat-roll-info.ts` (dobás-bónusz) | §16 |
+| `flat` | `engine/fortely-mods.ts` (calcFortelyMods) + `harc/combat-roll-info.ts` (dobás-bónusz) + `engine/effekt.ts` `gyűjtHelyzetEffektek` (helyzet: `VÉ` → `helyzetMods`, `vé_csökkentés` → VÉ-csökkentés popup, `(bázis + k20P + flat) × szorzó`; a Fárasztás override-jára is ráadódik - általános szabály, 2026-10-16) | §16, §21 |
 | `scaled` | `engine/fortely-mods.ts` (calcFortelyMods) | §16 |
 | `override` | `harc/fegyver-calc.ts` (SP override, fegyver_override) + `harc/extrak-effekt.ts` (extrák) | §5–8, §21 |
 | `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` / harc-popupok | §22 |

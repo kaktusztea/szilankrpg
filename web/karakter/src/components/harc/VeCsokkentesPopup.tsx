@@ -20,6 +20,8 @@ interface Props {
   véCsökkentésSzorzó?: number;
   /** A szorzót adó taktika(k) neve (pl. "Roham") - a bontásban a szorzó mellett jelenik meg. */
   véCsökkentésSzorzóForrás?: string;
+  /** Harci helyzet-eredetű flat bővítések (pl. Meglepetés +2) - (bázis + k20P + flat) × szorzó. */
+  helyzetVéCsökkentés?: { forrás: string; érték: number }[];
   /**
    * Ha megvan (pl. Fárasztás taktika aktív, md/065_02): nincs Fegyverviszony-választó/k20P,
    * az eredmény azonnal, bontással jelenik meg (taktika override+flat + fortély flat bővítések).
@@ -49,12 +51,13 @@ const FEGYVERVISZONY_LABEL: Record<Fegyverviszony, string> = {
  * `.végső`-t használja, l. HarcScreen.tsx `changeVé`).
  */
 export function VeCsokkentesPopup({
-  k20, alapTáblázat, fegyverExtrák, extraDefs, extraKontextus, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, taktikaVéCsökkentés, taktikaCím, onClose,
+  k20, alapTáblázat, fegyverExtrák, extraDefs, extraKontextus, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], taktikaVéCsökkentés, taktikaCím, onClose,
 }: Props) {
   const [eredmény, setEredmény] = useState<VéCsökkentésEredmény | null>(null);
 
   function handleVálasztás(fv: Fegyverviszony) {
-    setEredmény(calcVéCsökkentés(fv, k20, alapTáblázat, véCsökkentésSzorzó ?? 1));
+    const flat = helyzetVéCsökkentés.reduce((s, h) => s + h.érték, 0);
+    setEredmény(calcVéCsökkentés(fv, k20, alapTáblázat, véCsökkentésSzorzó ?? 1, flat));
   }
 
   // VÉ-t érintő, ellenfél-infó nélküli extrák (pl. Béltépő „Pocsék védekező" páncélos ellen): nem
@@ -66,13 +69,13 @@ export function VeCsokkentesPopup({
   if (taktikaVéCsökkentés) {
     const t = taktikaVéCsökkentés;
     return (
-      <PopupOverlay onClose={() => onClose({ fegyverviszony: 'fegyverazonosság', bázis: t.taktikaBázis, k20: 0, k20p: 0, szorzó: 1, végső: t.végső })}>
+      <PopupOverlay onClose={() => onClose({ fegyverviszony: 'fegyverazonosság', bázis: t.taktikaBázis, k20: 0, k20p: 0, szorzó: 1, flat: 0, végső: t.végső })}>
         <div className="tamado-dobas-popup ve-csokkentes-popup">
           <div className="ke-dobas-header">{taktikaCím ?? 'VÉ csökkentés'}</div>
           <div className="ke-dobas-result">{t.végső}</div>
           <div className="ke-dobas-detail">
             {taktikaCím ?? 'Taktika'} ({t.taktikaBázis})
-            {t.fortélyBővítések.map((f, i) => <span key={i}>{' + '}{f.forrás} (+{f.érték})</span>)}
+            {[...t.fortélyBővítések, ...t.helyzetBővítések].map((f, i) => <span key={i}>{' + '}{f.forrás} (+{f.érték})</span>)}
           </div>
         </div>
       </PopupOverlay>
@@ -111,6 +114,7 @@ export function VeCsokkentesPopup({
             <div className="ke-dobas-detail ve-csokkentes-detail-col">
               <span>{FEGYVERVISZONY_LABEL[eredmény.fegyverviszony]} ({eredmény.bázis})</span>
               <span>+ k20P ({eredmény.k20} → {eredmény.k20p})</span>
+              {helyzetVéCsökkentés.map((h, i) => <span key={i}>+ {h.forrás} ({h.érték > 0 ? '+' : ''}{h.érték})</span>)}
               {eredmény.szorzó !== 1 && (
                 <span>× {eredmény.szorzó}{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}</span>
               )}

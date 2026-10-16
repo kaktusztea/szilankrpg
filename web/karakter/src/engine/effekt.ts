@@ -21,7 +21,7 @@ import { lookupFegyver } from './utils';
 import { buildPajzsFegyverNév } from '../components/harc/shared';
 import { extraFeltételTeljesül } from '../components/harc/extrak-info-calc';
 
-export type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika';
+export type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet';
 
 export interface Effekt {
   cél: string;
@@ -112,6 +112,25 @@ export function gyűjtTaktikaEffektek(
   const forrás = { típus: 'taktika' as const, név: nevek.join(', ') };
   for (const cél of TAKTIKA_CÉLOK) if (összeg[cél]) ki.push({ cél, mód: 'flat', érték: összeg[cél], forrás });
   return ki;
+}
+
+/** Az aktív harci helyzetek `hatások[]`-a közös alakban (saját oldali hatások: pl. Takarásban VÉ +5, Meglepetés vé_csökkentés +2). */
+export function gyűjtHelyzetEffektek(session: Session, data: GameData): Effekt[] {
+  const ki: Effekt[] = [];
+  for (const név of session.aktív_helyzetek) {
+    const def = data.harciHelyzetek.find(h => h.név === név);
+    for (const h of def?.hatások ?? []) {
+      ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), mód: h.mód, érték: h.érték, forrás: { típus: 'helyzet', név } });
+    }
+  }
+  return ki;
+}
+
+/** Egy cél additív (`flat`) effektjei forrás-bontással - a popupok bontás-sorához. */
+export function flatBontás(effektek: Effekt[], cél: string): { forrás: string; érték: number }[] {
+  return effektek
+    .filter(e => e.cél === cél && !e.alcél && e.mód === 'flat' && typeof e.érték === 'number' && e.érték !== 0)
+    .map(e => ({ forrás: e.forrás.név, érték: e.érték! }));
 }
 
 /** Egy cél (+ opcionális alcél, pontos egyezés) értéke a §42.3 precedenciával. Nem-numerikus effekt kimarad. */

@@ -85,6 +85,7 @@ export function calcReszletekData(
   pajzsVÉ: number,
   páncélMGT: number,
   merevvértBüntetés: number,
+  helyzetVÉ = 0,
 ): ReszletekData | null {
   const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
@@ -167,7 +168,7 @@ export function calcReszletekData(
   const téFogásBüntetés = fogásResult ? fogásResult.TÉ_büntetés : 0;
   const többTám = r.támadások > 1 ? többTámTÉ : 0;
   const finalTÉ = r.TÉ + téLevonás + taktikaMods['TÉ'] + téFogásBüntetés + többTám;
-  const finalVÉ = Math.max(0, r.VÉ + (kétkezesResult ? pajzsVÉ : fogásResult ? fogásResult.VÉ_bónusz : pajzsVÉ) + taktikaMods['VÉ'] - session.vé_csökkenés);
+  const finalVÉ = Math.max(0, r.VÉ + (kétkezesResult ? pajzsVÉ : fogásResult ? fogásResult.VÉ_bónusz : pajzsVÉ) + taktikaMods['VÉ'] + helyzetVÉ - session.vé_csökkenés);
   const finalSP = r.SP + taktikaMods['SP'];
 
   return {

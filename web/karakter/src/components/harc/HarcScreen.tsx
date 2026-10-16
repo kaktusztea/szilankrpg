@@ -152,7 +152,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const ctx = resolveAktívFegyverContext(hc, karakter, session, data);
   const többTámTÉ = data.konstansok.több_támadás_TÉ_levonás;
   const aktívTÉ = ctx ? computeTÉ(ctx.result.TÉ, téLevonás, hc.taktikaMods['TÉ'], ctx.téExtra, ctx.result.támadások, többTámTÉ) : null;
-  const aktívVÉ = ctx ? computeVÉ(ctx.result.VÉ, ctx.veBónusz, hc.taktikaMods['VÉ'], session.vé_csökkenés) : null;
+  const aktívVÉ = ctx ? computeVÉ(ctx.result.VÉ, ctx.veBónusz, hc.taktikaMods['VÉ'] + hc.helyzetMods.VÉ, session.vé_csökkenés) : null;
 
   // Fárasztás taktika (md/065_02): aktív esetén a TÉ chip NEM Támadó dobást nyit, hanem direktben
   // a VÉ csökkentés popup-ot (nincs támadódobás) - fix taktika-override + feltételes fortély-bővítés.
@@ -166,7 +166,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     })
     .filter((x): x is { forrás: string; módosítók: NonNullable<typeof x>['módosítók'] } => x !== null);
   const fárasztásEredmény = fárasztásDef
-    ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fárasztásFortélyModosítók, hc.feltételTeljesül)
+    ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fárasztásFortélyModosítók, hc.feltételTeljesül, hc.helyzetVéCsökkentés)
     : null;
 
   // Roham / Öngyilkos roham (md/065_02): "VÉ csökk 2x" - a Fegyverviszony-alapú VÉ csökkentés
@@ -254,6 +254,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         pajzsVÉ={hc.pajzsVÉ}
         pajzsFegyverNév={hc.pajzsFegyverNév}
         taktikaMods={hc.taktikaMods}
+        helyzetMods={hc.helyzetMods}
         fortelyMods={hc.fortelyMods}
         téLevonás={téLevonás}
         belharciAktív={hc.belharciAktív}
@@ -284,6 +285,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         kétkezesResult={hc.kétkezesResult}
         fogásResult={hc.fogásResult}
         taktikaMods={hc.taktikaMods}
+        helyzetMods={hc.helyzetMods}
         fortelyMods={hc.fortelyMods}
         téLevonás={téLevonás}
         pajzsVÉ={hc.pajzsVÉ}
@@ -326,6 +328,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
+          helyzetVéCsökkentés={hc.helyzetVéCsökkentés}
           gyengébbKézAktív={session.fegyverfogás === 'kétkezes' ? session.aktív_helyzetek.includes(GYENGÉBB_KÉZ) : undefined}
           onGyengébbKézToggle={session.fegyverfogás === 'kétkezes' ? handleGyengébbKézToggle : undefined}
           onClose={handleTamadoClose}

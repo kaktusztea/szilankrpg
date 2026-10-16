@@ -50,6 +50,8 @@ interface Props {
   véCsökkentésSzorzó?: number;
   /** A szorzót adó taktika(k) neve (pl. "Roham") - a VÉ-csökkentés bontásban jelenik meg. */
   véCsökkentésSzorzóForrás?: string;
+  /** Harci helyzetek vé_csökkentés flat bővítései (pl. Meglepetés +2) - a VÉ-csökkentés popupnak továbbadva. */
+  helyzetVéCsökkentés?: { forrás: string; érték: number }[];
   /** „Gyengébb kéz" harci helyzet aktuális állapota. Csak akkor adott, ha a toggle gomb kell
    * (a hívó dönti el: kizárólag Kétkezes harc fegyverfogásnál). */
   gyengébbKézAktív?: boolean;
@@ -69,7 +71,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, gyengébbKézAktív, onGyengébbKézToggle, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, gyengébbKézAktív, onGyengébbKézToggle, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -149,6 +151,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
         alapTáblázat={véCsökkentésAlap}
         véCsökkentésSzorzó={véCsökkentésSzorzó}
         véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
+        helyzetVéCsökkentés={helyzetVéCsökkentés}
         fegyverExtrák={fegyverExtrák}
         extraDefs={extraDefs}
         extraKontextus={aktívExtraKontextus}

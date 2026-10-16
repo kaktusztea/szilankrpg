@@ -14,6 +14,8 @@ interface HarcFegyverTableProps {
   pajzsVÉ: number;
   pajzsFegyverNév: string | null;
   taktikaMods: Record<string, number>;
+  /** Harci helyzetek VÉ-módosítója (pl. Láthatatlan +10) - §42. */
+  helyzetMods?: Record<string, number>;
   fortelyMods: Record<string, number>;
   téLevonás: number;
   belharciAktív: boolean;
@@ -24,7 +26,7 @@ interface HarcFegyverTableProps {
 
 export function HarcFegyverTable({
   karakter, session, data, fegyverResults, kétkezesResult, fogásResult,
-  pajzsVÉ, pajzsFegyverNév, taktikaMods, fortelyMods,
+  pajzsVÉ, pajzsFegyverNév, taktikaMods, helyzetMods, fortelyMods,
   téLevonás, belharciAktív, véFlash, onTámInfoClick, onFegyverInfoClick,
 }: HarcFegyverTableProps) {
   const { konstansok } = data;
@@ -45,7 +47,7 @@ export function HarcFegyverTable({
   }) {
     const { veBónusz, téExtra, isOverlay, dimmed, displayNév, showPh2 } = opts;
     const té = computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], téExtra, r.támadások, többTámTÉ);
-    const vé = computeVÉ(r.VÉ, veBónusz, taktikaMods['VÉ'], session.vé_csökkenés);
+    const vé = computeVÉ(r.VÉ, veBónusz, taktikaMods['VÉ'] + (helyzetMods?.VÉ ?? 0), session.vé_csökkenés);
     const spTotal = r.SP + taktikaMods['SP'];
     const spBónusz = (fortelyMods['SP'] ?? 0) + taktikaMods['SP'];
     const spBase = spTotal - spBónusz;

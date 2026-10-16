@@ -10,7 +10,7 @@ import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
 import { buildPajzsFegyverNév, véVesztésSzorzó } from './shared';
-import { aktívTiltások, fegyverOverrideÉrtékek } from '../../engine/effekt';
+import { aktívTiltások, fegyverOverrideÉrtékek, gyűjtHelyzetEffektek, értékCélra, flatBontás } from '../../engine/effekt';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
@@ -20,6 +20,10 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   // Nevesített tiltások (§42.4) a kézben lévő fegyver(ek)re - a nem soronkénti feltételekhez (pl. Belharcos fortély).
   for (const t of aktívTiltások(k, session, data, aktívFeltételek)) aktívFeltételek.add(`tiltás:${t.id}`);
   const taktikaMods = calcTaktikaMods(session, data, k);
+  // Harci helyzetek saját oldali effektjei (§42): VÉ a harcértékbe, vé_csökkentés a VÉ-csökkentés popupba.
+  const helyzetEffektek = gyűjtHelyzetEffektek(session, data);
+  const helyzetMods = { VÉ: értékCélra(helyzetEffektek, 'VÉ') };
+  const helyzetVéCsökkentés = flatBontás(helyzetEffektek, 'vé_csökkentés');
 
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(k,
     [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]);
@@ -83,10 +87,10 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
 
   // Max VÉ csökkenés
   const maxVéCsökk = Math.max(0, ...(kétkezesResult
-    ? [kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ']]
+    ? [kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ'] + helyzetMods.VÉ]
     : fogásResult
-      ? fegyverResults.map(r => r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ'])
-      : fegyverResults.map(r => r.VÉ + pajzsVÉ + taktikaMods['VÉ'])));
+      ? fegyverResults.map(r => r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ'] + helyzetMods.VÉ)
+      : fegyverResults.map(r => r.VÉ + pajzsVÉ + taktikaMods['VÉ'] + helyzetMods.VÉ)));
 
   // ÉP sáv
   const oszlopMéret = épValue / konstansok.sebesülés_kategóriák_száma;
@@ -98,7 +102,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
 
   return {
     ké, épValue, manöverPont, manőverAlap, sfé_fizikai, sfé_energia, páncélLefedettség, páncélMGT, merevvértBüntetés,
-    taktikaMods, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
+    taktikaMods, helyzetMods, helyzetVéCsökkentés, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
     pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások, véVeszSzorzó, véVeszSzorzóForrás,
     feltételTeljesül,
     // Extrák (§42 info): a fegyver-extrák auto-státuszához szükséges kontextus. A cél_páncél

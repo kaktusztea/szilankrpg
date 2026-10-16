@@ -56,6 +56,10 @@ export interface HarcComputed {
   páncélMGT: number;
   merevvértBüntetés: number;
   taktikaMods: Record<string, number>;
+  /** Harci helyzetek saját oldali harcérték-módosítói (pl. Láthatatlan VÉ +10) - §42 effekt-gyűjtő. */
+  helyzetMods: Record<string, number>;
+  /** Harci helyzetek `vé_csökkentés` flat bővítései forrás-bontással (pl. Meglepetés +2). */
+  helyzetVéCsökkentés: { forrás: string; érték: number }[];
   fortelyMods: Record<string, number>;
   fegyverResults: FegyverResult[];
   kétkezesResult: (FegyverResult & { sumFegyverhossz: number }) | null;

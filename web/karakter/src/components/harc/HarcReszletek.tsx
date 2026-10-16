@@ -11,6 +11,7 @@ interface Props {
   kétkezesResult: (FegyverResult & { sumFegyverhossz: number }) | null;
   fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null;
   taktikaMods: Record<string, number>;
+  helyzetMods?: Record<string, number>;
   fortelyMods: Record<string, number>;
   téLevonás: number;
   pajzsVÉ: number;
@@ -39,8 +40,8 @@ function KétkezesFegyverMf({ kh, mező }: { kh: KétkezesBontás; mező: 'TÉ' 
   return <DetailParts parts={parts} />;
 }
 
-export function HarcReszletek({ karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, fortelyMods, téLevonás, pajzsVÉ, páncélMGT, merevvértBüntetés }: Props) {
-  const d = calcReszletekData(karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, téLevonás, pajzsVÉ, páncélMGT, merevvértBüntetés);
+export function HarcReszletek({ karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, helyzetMods, fortelyMods, téLevonás, pajzsVÉ, páncélMGT, merevvértBüntetés }: Props) {
+  const d = calcReszletekData(karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, téLevonás, pajzsVÉ, páncélMGT, merevvértBüntetés, helyzetMods?.VÉ ?? 0);
   if (!d) return null;
 
   const { konstansok } = data;
@@ -89,6 +90,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
           ['Fogás', d.véFogásBónusz],
           ...(!fogásResult && pajzsVÉ ? [['Pajzs', pajzsVÉ] as [string, number]] : []),
           ['Taktika', taktikaMods['VÉ']],
+          ['Helyzet', helyzetMods?.VÉ ?? 0],
           ['Csökkenés', session.vé_csökkenés ? -session.vé_csökkenés : 0],
         ]} />
       </Section>

@@ -6,22 +6,22 @@ const alapTáblázat = { fegyverhátrány: 0, fegyverazonosság: 1, fegyverelőn
 describe('calcVéCsökkentés', () => {
   it('fegyverhátrány + páratlan k20 → bázis 0 + k20P 0', () => {
     const r = calcVéCsökkentés('fegyverhátrány', 5, alapTáblázat);
-    expect(r).toEqual({ fegyverviszony: 'fegyverhátrány', bázis: 0, k20: 5, k20p: 0, szorzó: 1, végső: 0 });
+    expect(r).toEqual({ fegyverviszony: 'fegyverhátrány', bázis: 0, k20: 5, k20p: 0, szorzó: 1, flat: 0, végső: 0 });
   });
 
   it('fegyverazonosság + páros k20 → bázis 1 + k20P 1', () => {
     const r = calcVéCsökkentés('fegyverazonosság', 16, alapTáblázat);
-    expect(r).toEqual({ fegyverviszony: 'fegyverazonosság', bázis: 1, k20: 16, k20p: 1, szorzó: 1, végső: 2 });
+    expect(r).toEqual({ fegyverviszony: 'fegyverazonosság', bázis: 1, k20: 16, k20p: 1, szorzó: 1, flat: 0, végső: 2 });
   });
 
   it('fegyverelőny + k20=20 → bázis 2 + k20P 2 (maximum)', () => {
     const r = calcVéCsökkentés('fegyverelőny', 20, alapTáblázat);
-    expect(r).toEqual({ fegyverviszony: 'fegyverelőny', bázis: 2, k20: 20, k20p: 2, szorzó: 1, végső: 4 });
+    expect(r).toEqual({ fegyverviszony: 'fegyverelőny', bázis: 2, k20: 20, k20p: 2, szorzó: 1, flat: 0, végső: 4 });
   });
 
   it('Roham/Öngyilkos roham: szorzó=2 duplázza a végső értéket', () => {
     const r = calcVéCsökkentés('fegyverazonosság', 16, alapTáblázat, 2);
-    expect(r).toEqual({ fegyverviszony: 'fegyverazonosság', bázis: 1, k20: 16, k20p: 1, szorzó: 2, végső: 4 });
+    expect(r).toEqual({ fegyverviszony: 'fegyverazonosság', bázis: 1, k20: 16, k20p: 1, szorzó: 2, flat: 0, végső: 4 });
   });
 
   it('fegyverelőny + k20=10 → k20P is 2 (a speciális eset, nem csak a 20-as)', () => {
@@ -109,6 +109,16 @@ describe('calcTaktikaVéCsökkentés - taktika + fortély bővítés', () => {
     const r = calcTaktikaVéCsökkentés(farasztásHatások, farasztásFortély, () => false);
     expect(r.fortélyBővítések).toEqual([]);
     expect(r.végső).toBe(3);
+  });
+});
+
+describe('helyzet-eredetű flat bővítés (§42.3: additív a szorzó előtt)', () => {
+  it('Meglepetés +2 Roham ×2 mellett: (1 + 1 + 2) × 2 = 8', () => {
+    expect(calcVéCsökkentés('fegyverazonosság', 16, alapTáblázat, 2, 2).végső).toBe(8);
+  });
+  it('Fárasztás + Meglepetés: 3 + 2 = 5 (általános szabály, nincs külön eset)', () => {
+    const r = calcTaktikaVéCsökkentés([{ mód: 'override', érték: 3, cél: 'vé_csökkentés' }], [], () => true, [{ forrás: 'Meglepetés', érték: 2 }]);
+    expect([r.végső, r.helyzetBővítések]).toEqual([5, [{ forrás: 'Meglepetés', érték: 2 }]]);
   });
 });
 
