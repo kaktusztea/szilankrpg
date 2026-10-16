@@ -38,11 +38,13 @@
     "hatás": [
       {
         "cél": "TÉ",
+        "alcél": "felszerelés:fegyver",
         "mód": "override",
         "érték": 0
       },
       {
         "cél": "VÉ",
+        "alcél": "felszerelés:fegyver",
         "mód": "override",
         "érték": 0
       }
@@ -81,6 +83,7 @@
     "hatás": [
       {
         "cél": "VÉ",
+        "alcél": "felszerelés:fegyver",
         "mód": "override",
         "érték": 0
       }
@@ -100,6 +103,7 @@
     "hatás": [
       {
         "cél": "SFÉ",
+        "alcél": "felszerelés:páncél",
         "mód": "override",
         "érték": 0
       }
@@ -123,11 +127,13 @@
     "hatás": [
       {
         "cél": "TÉ",
+        "alcél": "felszerelés:fegyver",
         "mód": "override",
         "érték": 0
       },
       {
         "cél": "VÉ",
+        "alcél": "felszerelés:fegyver",
         "mód": "override",
         "érték": 0
       }
@@ -166,7 +172,7 @@
     "hatás": [
       {
         "cél": "VÉ",
-        "alcél": "fegyverfogás:fegyver_pajzs",
+        "alcél": "felszerelés:pajzs",
         "mód": "szorzó",
         "érték": 0.5
       }
@@ -186,7 +192,7 @@
     "hatás": [
       {
         "cél": "VÉ",
-        "alcél": "fegyverfogás:fegyver_pajzs",
+        "alcél": "felszerelés:pajzs",
         "mód": "szorzó",
         "érték": 0
       }

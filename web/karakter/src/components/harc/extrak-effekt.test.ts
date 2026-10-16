@@ -102,7 +102,7 @@ describe('hiányzóInfósExtrák - VÉ warning (hiányos korreláció)', () => {
 });
 
 describe('alcél - a pajzs ×0 csak a pajzs VÉ-komponensre hat', () => {
-  const PAJZS = 'fegyverfogás:fegyver_pajzs';
+  const PAJZS = 'felszerelés:pajzs';
   const pajzsDefs: Record<string, FegyverExtraDef> = {
     pajzs_megkerules: {
       id: 'pajzs_megkerules', név: 'Pajzs megkerülése',

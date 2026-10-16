@@ -105,8 +105,8 @@ function manőverreIllik(def: FegyverExtraDef, aktívManőver: string | undefine
 }
 
 /** Alcél → felirat-előtag (a cél al-komponense, pl. a pajzs VÉ-része). Ismeretlen alcél: zárójelben a nyers érték. */
-// ponytail: egyetlen alcél létezik (extrak.yaml); újnál ide kell felvenni, vagy a data layerbe vinni a feliratot.
-const ALCÉL_ELŐTAG: Record<string, string> = { 'fegyverfogás:fegyver_pajzs': 'Pajzs-' };
+// ponytail: a felszerelés-komponensek fix készlete (extrak.schema.yaml alcel_felszereles_enum); újnál ide is felveendő.
+const ALCÉL_ELŐTAG: Record<string, string> = { 'felszerelés:fegyver': 'Fegyver-', 'felszerelés:pajzs': 'Pajzs-', 'felszerelés:páncél': 'Páncél-' };
 
 /** Egyetlen hatás olvasható összefoglalója (numerikus alkalmazás nélkül). */
 function hatásSzöveg(h: ExtraHatás): string {

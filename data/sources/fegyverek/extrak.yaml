@@ -15,7 +15,8 @@
 #   hatás[]    : a fortély `módosítók` STRINGES formátuma: {cél, mód, érték, feltétel?}
 #       cél: HARCÉRTÉK/esemény csupasz string (TÉ / VÉ / SP / SFÉ / vé_veszteség / manőver_ellenpróba / harckeret …)
 #            VAGY entitás prefix-string ("fortély:<név>"). Manővernél: cél=manőver_ellenpróba + feltétel "manőver:<id>".
-#       alcél?: a cél al-scope-ja, "prefix:érték" (alcel_prefix_enum), pl. cél VÉ + alcél "fegyverfogás:fegyver_pajzs" = a pajzs VÉ-komponense
+#       alcél?: a cél al-scope-ja, "prefix:érték" (alcel_prefix_enum), pl. cél VÉ + alcél "felszerelés:pajzs" = a pajzs VÉ-komponense;
+#              harcérték-cél override-hoz KÖTELEZŐ (felszerelés:fegyver / :pajzs / :páncél)
 #       feltétel?: al-feltétel prefix-string (pl. "manőver:precíz_támadás")
 #       mód: flat | override  (fortély-`módosító` mód) | szorzó  (érték 0.5=felez, 2=dupláz; konstansok.yaml → effekt_módok)
 
@@ -42,8 +43,8 @@ extrak:
     feltétel:
       - {típus: státusz, név: Beszorított, érték: 2}      # (2) = súlyosság/tier
     hatás:
-      - {cél: TÉ, mód: override, érték: 0}
-      - {cél: VÉ, mód: override, érték: 0}
+      - {cél: TÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
+      - {cél: VÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
 
   - id: panceltalant_jobban_sebez
     név: "Páncéltalant jobban sebez"
@@ -61,7 +62,7 @@ extrak:
     feltétel:
       - {típus: cél_páncél, érték: páncélos}
     hatás:
-      - {cél: VÉ, mód: override, érték: 0}
+      - {cél: VÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
 
   - id: pancelszuras_belharcban
     név: "Belharcban rések közt beszúr"
@@ -70,7 +71,7 @@ extrak:
     feltétel:
       - {típus: harci_helyzet, id: belharci_helyzet}
     hatás:
-      - {cél: SFÉ, mód: override, érték: 0}
+      - {cél: SFÉ, alcél: "felszerelés:páncél", mód: override, érték: 0}
 
   - id: pikas_kozrefogasa
     név: "Pikás közrefogása"
@@ -80,8 +81,8 @@ extrak:
       - {típus: harci_helyzet, id: közrefogás}
       - {típus: narratív, név: "Választott támadó ellen"}   # KM/játékos választja, MELYIK támadó ellen
     hatás:
-      - {cél: TÉ, mód: override, érték: 0}
-      - {cél: VÉ, mód: override, érték: 0}
+      - {cél: TÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
+      - {cél: VÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
 
   - id: kopjas_roham
     név: "Kopja lovas rohamban"
@@ -99,7 +100,7 @@ extrak:
     feltétel:
       - {típus: cél_felszereles, érték: pajzs}
     hatás:
-      - {cél: VÉ, alcél: "fegyverfogás:fegyver_pajzs", mód: szorzó, érték: 0.5}
+      - {cél: VÉ, alcél: "felszerelés:pajzs", mód: szorzó, érték: 0.5}
 
   - id: pajzs_megkerules
     név: "Pajzs megkerülése"
@@ -108,7 +109,7 @@ extrak:
     feltétel:
       - {típus: cél_felszereles, érték: pajzs}
     hatás:
-      - {cél: VÉ, alcél: "fegyverfogás:fegyver_pajzs", mód: szorzó, érték: 0}
+      - {cél: VÉ, alcél: "felszerelés:pajzs", mód: szorzó, érték: 0}
 
   - id: fegyvertores_immunis
     név: "Fegyvertörés-immunis"

@@ -25,8 +25,8 @@ harci_helyzetek:
     feltétel:
       - { forrás: "aktív_fegyver_fegyverhossz", operátor: ">", érték: 0 }
     módosítók:
-      - { cél: "fegyver_TÉ", érték: 0, mód: "override" }
-      - { cél: "fegyver_VÉ", érték: 0, mód: "override" }
+      - { cél: "TÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
+      - { cél: "VÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
 - név: "Beszorított ellenfél"
   infó: "Előny+1 TÉ dobásra."
   megjegyzések:

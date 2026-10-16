@@ -31,7 +31,9 @@ cel_prefix_enum: [fortély, képzettség]
 alfeltetel_prefix_enum: [manőver]
 
 # hatás.alcél (a cél al-scope-ja) prefixek ("prefix:érték") - webapp-bound prefix
-alcel_prefix_enum: [fegyverfogás]
+alcel_prefix_enum: [felszerelés]
+# felszerelés-komponens értékek (a cél melyik felszerelés-részére hat)
+alcel_felszereles_enum: [fegyver, pajzs, páncél]
 
 # feltétel ÉRTÉK-enumok - CSAK a fix értékkészletű típusokra. A katalógus-referencia típusoknál
 # (fortély/képzettség/státusz/harci_helyzet/aktor/narratív) NINCS enum - más katalógusra/entitásra mutatnak.
@@ -61,7 +63,7 @@ feltétel:
 # hatás-elem (a fortély `módosítók` STRINGES formátuma)
 hatás:
   cél:      {kötelező: true,  típus: str, megjegyzés: "csupasz harcérték/esemény VAGY 'prefix:érték' (cel_prefix_enum)"}
-  alcél:    {kötelező: false, típus: str, megjegyzés: "a cél al-scope-ja 'prefix:érték' (alcel_prefix_enum), pl. VÉ + 'fegyverfogás:fegyver_pajzs' = a pajzs VÉ-komponense"}
+  alcél:    {kötelező: false, típus: str, megjegyzés: "a cél al-scope-ja 'prefix:érték' (alcel_prefix_enum), pl. VÉ + 'felszerelés:pajzs' = a pajzs VÉ-komponense; harcérték-cél override-hoz kötelező"}
   mód:      {kötelező: true,  típus: str, forrás: mod_enum}
   érték:    {kötelező: false}   # int vagy float
   feltétel: {kötelező: false, típus: str, megjegyzés: "'prefix:érték' (alfeltetel_prefix_enum)"}

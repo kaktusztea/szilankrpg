@@ -44,6 +44,9 @@ def validate():
     cel_prefix = set(s["cel_prefix_enum"])
     alfeltetel_prefix = set(s["alfeltetel_prefix_enum"])
     alcel_prefix = set(s.get("alcel_prefix_enum", []))
+    alcel_felszereles = set(s.get("alcel_felszereles_enum", []))
+    with open(DATA.parent / "konstansok.yaml", encoding="utf-8") as fh:
+        harcertek_celok = set(yaml.safe_load(fh).get("harcérték_célok", []))
     feltetel_ertek = s.get("feltetel_ertek_enum", {})   # típus -> megengedett értékek (csak fix készletűekre)
     kotelezo = {m for m, spec in s["rekord"].items() if spec.get("kötelező")}
     ismert = set(s["rekord"])
@@ -92,6 +95,12 @@ def validate():
                     hibak.append(f"{c}.hatás.alcél: string kell ({h['alcél']!r})")
                 else:
                     _prefix_ok(h["alcél"], alcel_prefix, f"{c}.hatás.alcél", hibak, prefix_kotelezo=True)
+                    pre, _, ert = h["alcél"].partition(":")
+                    if pre == "felszerelés" and ert not in alcel_felszereles:
+                        hibak.append(f"{c}.hatás.alcél: ismeretlen felszerelés-komponens {ert!r} - megengedett: {sorted(alcel_felszereles)}")
+            # §42.4: harcérték-cél override a felszerelés-komponens bázisát cseréli - az alcél kötelező
+            if h.get("mód") == "override" and h.get("cél") in harcertek_celok and not h.get("alcél"):
+                hibak.append(f"{c}.hatás: {h.get('cél')} override alcél nélkül - adj meg 'felszerelés:<komponens>' alcélt")
             if "feltétel" in h:
                 if not isinstance(h["feltétel"], str):
                     hibak.append(f"{c}.hatás.feltétel: string kell ({h['feltétel']!r})")

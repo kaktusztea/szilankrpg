@@ -122,7 +122,7 @@ describe('extrakInfoTételek - fegyver-extrák állapota', () => {
   it('alcélos hatás: a felirat a komponenst nevezi meg (nem a teljes VÉ-t)', () => {
     const d: Record<string, FegyverExtraDef> = {
       pajzs_megkerules: { id: 'pajzs_megkerules', név: 'Pajzs megkerülése', leírás: '', feltétel: [{ típus: 'cél_felszereles', érték: 'pajzs' }],
-        hatás: [{ cél: 'VÉ', alcél: 'fegyverfogás:fegyver_pajzs', mód: 'szorzó', érték: 0 }] },
+        hatás: [{ cél: 'VÉ', alcél: 'felszerelés:pajzs', mód: 'szorzó', érték: 0 }] },
     } as unknown as Record<string, FegyverExtraDef>;
     expect(extrakInfoTételek([{ id: 'pajzs_megkerules' }], d, ctx())[0].hatásSzöveg).toBe('Pajzs-VÉ ×0');
   });

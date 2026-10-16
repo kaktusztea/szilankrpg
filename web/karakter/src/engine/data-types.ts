@@ -138,7 +138,7 @@ export interface HarciHelyzetEntry {
   hatások?: StatuszHatas[];
   fegyver_override?: {
     feltétel: { forrás: string; operátor: string; érték: unknown }[];
-    módosítók: { cél: string; érték: number; mód: string }[];
+    módosítók: { cél: string; alcél?: string; érték: number; mód: string }[];
   };
 }
 

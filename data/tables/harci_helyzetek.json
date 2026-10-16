@@ -48,12 +48,14 @@
       ],
       "módosítók": [
         {
-          "cél": "fegyver_TÉ",
+          "cél": "TÉ",
+          "alcél": "felszerelés:fegyver",
           "érték": 0,
           "mód": "override"
         },
         {
-          "cél": "fegyver_VÉ",
+          "cél": "VÉ",
+          "alcél": "felszerelés:fegyver",
           "érték": 0,
           "mód": "override"
         }

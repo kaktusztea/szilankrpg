@@ -48,7 +48,7 @@ export function alkalmazEffektek(bázis: number, hatások: ExtraHatás[]): numbe
 /**
  * Az aktív fegyver extrái közül azok hatásai egy adott CÉLRA, amelyek feltételei a jelen
  * kontextusban TELJESÜLNEK (nem `km`, nem `inaktív`). A hatás-al-feltételt (`feltétel`) is nézi.
- * `alcél`: a cél al-komponense (pl. "fegyverfogás:fegyver_pajzs" = a pajzs VÉ-része). Pontos egyezés:
+ * `alcél`: a cél al-komponense (pl. "felszerelés:pajzs" = a pajzs VÉ-része). Pontos egyezés:
  * alcél nélküli lekérés NEM kapja meg az alcélos hatást (különben pl. a pajzs ×0 a teljes VÉ-t nullázná).
  */
 export function aktívHatásokCélra(

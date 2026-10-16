@@ -1407,8 +1407,8 @@ Egyes harci helyzetek (`harci_helyzetek.yaml`) tartalmazhatnak `fegyver_override
     feltétel:
       - { forrás: "aktív_fegyver_fegyverhossz", operátor: ">", érték: 0 }
     módosítók:
-      - { cél: "fegyver_TÉ", érték: 0, mód: "override" }
-      - { cél: "fegyver_VÉ", érték: 0, mód: "override" }
+      - { cél: "TÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
+      - { cél: "VÉ", alcél: "felszerelés:fegyver", érték: 0, mód: "override" }
 ```
 
 Kiértékelés (`fegyver-calc.ts → applyFegyverOverrides`):
@@ -1419,9 +1419,10 @@ FOR EACH aktív_helyzet in session.aktív_helyzetek:
     IF feltételTeljesül(hDef.fegyver_override.feltétel):
       FOR EACH mod in hDef.fegyver_override.módosítók:
         FOR EACH result (fegyver) ÉS annak MINDEN módja (módok[]):
-          IF mod.cél == "fegyver_TÉ" AND mod.mód == "override":
+          IF mod.mód == "override" AND mod.alcél == "felszerelés:fegyver":   // §42.3/§42.4 bázis-csere
+          IF mod.cél == "TÉ":
             TÉ -= alap_TÉ   // fegyver saját TÉ eltávolítása
-          IF mod.cél == "fegyver_VÉ" AND mod.mód == "override":
+          IF mod.cél == "VÉ":
             VÉ -= alap_VÉ   // fegyver saját VÉ eltávolítása
 ```
 
@@ -4039,7 +4040,7 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
   A két fél appja egymástól függetlenül alkalmazza a saját oldali szorzót (a támadó popup a duplázott értéket adja,
   a védő `changeVé` a sajátjával szoroz) - külön koordináció nem kell.
 - **Alcél**: az `alcél`-os szorzó CSAK a cél adott komponensére hat (pl. `pajzs_megkerules` ×0 →
-  `alcél: fegyverfogás:fegyver_pajzs` = a túloldal pajzs-VÉ-je nullázódik, a VÉ többi része nem).
+  `alcél: felszerelés:pajzs` = a túloldal pajzs-VÉ-je nullázódik, a VÉ többi része nem).
   A motor (`extrak-effekt.ts`) cél+alcél pontos egyezéssel szűr.
 
 ### 42.4 Cél-fajták (prefix-vokabulár)
@@ -4049,6 +4050,16 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
 - **Al-feltétel prefix** (per-hatás `feltétel`): `manőver:<id>` (a konkrét manőver, `manoverek.yaml` id) - a manőver-effektek célja `manőver_ellenpróba`, a KONKRÉT manővert al-feltétel adja.
 - A prefix-készletet a `konstansok.yaml → feltétel_prefixek`-kel kell összehangolni (közös vokabulár a
   cél- és a feltétel-oldalon).
+- **Alcél - felszerelés-komponens** (`alcél: "felszerelés:<komponens>"`, 2026-10-16): a harcérték melyik
+  felszerelés-részére hat a hatás. Komponensek (`extrak.schema.yaml → alcel_felszereles_enum`): `fegyver` (a fegyver
+  alap TÉ/VÉ/SP-je), `pajzs` (a pajzs VÉ-komponense), `páncél` (a páncél SFÉ-je). Harcérték-célú (`harcérték_célok`)
+  **override-hoz kötelező** (build-gate: `extrak_validator.py`, `validate_aktiv_ful` a `fegyver_override`-ra): az
+  override a megnevezett komponens bázisát cseréli (§42.3), a többi tag (harcérték-alap, tulajdonság, HM, harcmodor,
+  MF, fortély, taktika, helyzet) additív hozzájárulásként marad. Alcél nélküli harcérték-override nem megengedett.
+  Példa: Belharc `{cél: TÉ, alcél: felszerelés:fegyver, mód: override, érték: 0}`; Láncos `{cél: VÉ, alcél:
+  felszerelés:pajzs, mód: szorzó, érték: 0.5}`.
+- Megjegyzés: a fortély/státusz `alcél` ma még prefix nélküli képzettség-/tulajdonságnév (pl. `"Edzettség"`) - a
+  próba-scope szűkítése, más jelentés; egységesítése (`képzettség:<név>`) nyitott (DEVSTATE).
 
 ### 42.5 Fázisolt migrációs terv
 
@@ -4093,6 +4104,15 @@ Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implement�
   `fegyver_override`: a fegyver alap TÉ/VÉ 0, a harcmodor/MF/fortély megmarad) bázis-cserét használt, ezért a szabály
   ehhez igazodott. Az override-extrák (`beszorithato`, `pikas_kozrefogasa`, `pocsek_vedekezo`) szintén bázis-csere:
   a fegyver alapértéke nullázódik, a harcos képzettsége marad. Végső nullázásra: `letilt` vagy `max_limit 0`.
+- **Cél-vokabulár: explicit alcél (2026-10-16)**: a `fegyver_TÉ`/`fegyver_VÉ` effekt-cél megszűnt → `TÉ`/`VÉ` +
+  `alcél: felszerelés:fegyver`. A pajzs-komponens `fegyverfogás:fegyver_pajzs` → `felszerelés:pajzs`. Az alcél a
+  rejtett bázis-szabály helyett az adatban nevezi meg a komponenst (§42.4). A `rules.json` `fegyver_TÉ` stb.
+  azonosítói a fegyversor KIMENET-nevei, nem effekt-célok - érintetlenek.
+- **Forrás-specifikus korlát (B döntés, 2026-10-16)**: egyetlen ilyen van, a taktika VÉ-eltolás ±10
+  (`konstansok.taktika_vé_eltolás_limit`, md/065_02 ökölszabály). A taktika-forrás additív VÉ-összegét szorítja,
+  NEM a végső VÉ-t - ezért nem `max_limit` effekt. A gyűjtőben nevesített taktika-ág kezeli (nincs általános
+  `forrás_korlát` struktúra - YAGNI; második ilyen esetnél általánosítandó). A taktika-feltételes fortély-módosító
+  a fortély-csoportba tartozik, a plafonon kívül.
 - **Prefix-vokabulár**: a `konstansok.yaml → feltétel_prefixek` tartalmazza a `fortély`, `képzettség`,
   `manőver_állapot`, `ellenfél_fegyver_sebzésjelleg` prefixeket is.
 - **Backward-compat**: nincs; a régi localStorage invalidálható.

@@ -42,6 +42,10 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok
         if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
         if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if not h.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
+        # fegyver_override: a fegyver-komponens bázis-cseréje (§42.4) - cél harcérték, alcél felszerelés:fegyver
+        for j, m in enumerate((h.get('fegyver_override') or {}).get('módosítók') or []):
+            if m.get('cél') not in ('TÉ', 'VÉ', 'SP') or m.get('alcél') != 'felszerelés:fegyver':
+                errors.append(f"{ctx} fegyver_override.módosítók[{j}]: cél TÉ/VÉ/SP + alcél 'felszerelés:fegyver' kell (kapott {m.get('cél')!r}, {m.get('alcél')!r})")
     # Manőverek
     valid_tipus = {'általános', 'belharcos', 'lovas'}
     for i, m in enumerate(manoverek):

@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { buildFegyverRows } from './fegyver-calc';
-import type { Karakter } from '../../engine/types';
+import { buildFegyverRows, applyFegyverOverrides } from './fegyver-calc';
+import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { FegyverResult } from './types';
 
 /**
  * Regresszió: a Mesterfegyver-fok egyeztetés legyen kis/nagybetű-FÜGGETLEN.
@@ -36,5 +37,31 @@ describe('buildFegyverRows - Mesterfegyver fok (case-insensitive)', () => {
   it('no MF fok for an unrelated weapon spec', () => {
     const rows = buildFegyverRows(karakterWith('Kard, lovag', 'Tőr'), data, null);
     expect(rows.find(r => r.név === 'Kard, lovag')?.mfFok).toBe(0);
+  });
+});
+
+describe('applyFegyverOverrides - alcél: felszerelés:fegyver (bázis-csere, §42.3/§42.4)', () => {
+  const ovr = (alcél?: string) => ({
+    harciHelyzetek: [{ név: 'Belharci helyzet', fegyver_override: { feltétel: [], módosítók: [
+      { cél: 'TÉ', alcél, érték: 0, mód: 'override' },
+      { cél: 'VÉ', alcél, érték: 0, mód: 'override' },
+    ] } }],
+  } as unknown as GameData);
+  const sor = () => {
+    const m = { TÉ: 35, VÉ: 60, alap_TÉ: 5, alap_VÉ: 7 };
+    return [{ ...m, módok: [{ ...m }] }] as unknown as FegyverResult[];
+  };
+  const session = { aktív_helyzetek: ['Belharci helyzet'] } as unknown as Session;
+
+  it('a fegyver alap TÉ/VÉ-je kivonódik, a többi hozzájárulás marad', () => {
+    const r = sor();
+    applyFegyverOverrides(r, session, ovr('felszerelés:fegyver'), () => true);
+    expect([r[0].TÉ, r[0].VÉ, r[0].módok[0].TÉ, r[0].módok[0].VÉ]).toEqual([30, 53, 30, 53]);
+  });
+
+  it('alcél nélküli override nem hat (a build-gate amúgy is tiltja)', () => {
+    const r = sor();
+    applyFegyverOverrides(r, session, ovr(undefined), () => true);
+    expect([r[0].TÉ, r[0].VÉ]).toEqual([35, 60]);
   });
 });

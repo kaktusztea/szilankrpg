@@ -18,4 +18,4 @@ harci_helyzetek:
       feltétel:
         - { forrás: "", operátor: "", érték: 0 }
       módosítók:
-        - { cél: "", érték: 0, mód: "override" }
+        - { cél: "", alcél: "", érték: 0, mód: "override" }   # alcél: "felszerelés:fegyver" (kötelező, engine_spec §42.4)

@@ -147,7 +147,10 @@ export function calcFegyverResults(
   });
 }
 
-/** Fegyver override helyzetek alapján (pl. Belharc: fegyver TÉ/VÉ=0 ha fegyverhossz>0) */
+/** Felszerelés-komponens alcél: a fegyver alap-értéke (engine_spec §42.4). */
+const FEGYVER_KOMPONENS = 'felszerelés:fegyver';
+
+/** Fegyver override helyzetek alapján (pl. Belharc: fegyver alap TÉ/VÉ=0 ha fegyverhossz>0; override = bázis-csere, §42.3) */
 export function applyFegyverOverrides(
   results: FegyverResult[], session: Session, data: GameData,
   feltételTeljesül: (feltétel: unknown) => boolean,
@@ -157,13 +160,14 @@ export function applyFegyverOverrides(
     if (!hDef?.fegyver_override) continue;
     if (!feltételTeljesül(hDef.fegyver_override.feltétel)) continue;
     for (const mod of hDef.fegyver_override.módosítók) {
+      if (mod.mód !== 'override' || mod.alcél !== FEGYVER_KOMPONENS) continue;
       for (const r of results) {
         for (const m of r.módok) {
-          if (mod.cél === 'fegyver_TÉ' && mod.mód === 'override') m.TÉ -= m.alap_TÉ;
-          if (mod.cél === 'fegyver_VÉ' && mod.mód === 'override') m.VÉ -= m.alap_VÉ;
+          if (mod.cél === 'TÉ') m.TÉ -= m.alap_TÉ;
+          if (mod.cél === 'VÉ') m.VÉ -= m.alap_VÉ;
         }
-        if (mod.cél === 'fegyver_TÉ' && mod.mód === 'override') r.TÉ -= r.alap_TÉ;
-        if (mod.cél === 'fegyver_VÉ' && mod.mód === 'override') r.VÉ -= r.alap_VÉ;
+        if (mod.cél === 'TÉ') r.TÉ -= r.alap_TÉ;
+        if (mod.cél === 'VÉ') r.VÉ -= r.alap_VÉ;
       }
     }
   }
@@ -193,8 +197,9 @@ export function calcKetkezes(
     if (!hDef?.fegyver_override) continue;
     if (!feltételTeljesül(hDef.fegyver_override.feltétel)) continue;
     for (const mod of hDef.fegyver_override.módosítók) {
-      if (mod.cél === 'fegyver_TÉ' && mod.mód === 'override') result.TÉ -= result.alap_TÉ;
-      if (mod.cél === 'fegyver_VÉ' && mod.mód === 'override') result.VÉ -= result.alap_VÉ;
+      if (mod.mód !== 'override' || mod.alcél !== FEGYVER_KOMPONENS) continue;
+      if (mod.cél === 'TÉ') result.TÉ -= result.alap_TÉ;
+      if (mod.cél === 'VÉ') result.VÉ -= result.alap_VÉ;
     }
   }
   return result;
