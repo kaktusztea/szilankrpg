@@ -4034,8 +4034,20 @@ Best practice (GURPS / Pathfinder / CRPG stat-pipeline): **additív előbb, mult
 ```
 
 Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ kerekül (`FLOOR`) - egyezik a webapp
-`scaled` (`Math.floor`) konvenciójával. Több szorzó: szekvenciális (a kis diszkrét készletre - Duplázás
-×2, Felezés ×0.5 - ez a legkiszámíthatóbb; sok szorzó találkozásakor revideálandó additív-százalék felé).
+`scaled` (`Math.floor`) konvenciójával.
+
+Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatások ökölszabály"). A tengely a FORRÁS
+(melyik félnél keletkezik a szorzó), NEM a cél (kinek az értékére hat):
+- **Egy félen belül** (egy fél forrásai - helyzet, státusz, taktika, fegyver-extra - egy célra): a LEGNAGYOBB
+  szorzó számít, nem kumulál (`hatas_operatorok.yaml` `duplázás.halmozás: legnagyobb`). Kicsinyítő szorzóknál
+  (<1) a legkisebb számít; ha nagyító és kicsinyítő is van, a kettő szorzódik (ma nincs ilyen ütközés az adatban).
+- **A két fél között**: a szorzók összeszorzódnak - pl. A Roham ×2 · B Helyhez kötve ×2 = ×4 B VÉ-veszteségére.
+  Gyakorlati plafon: ×4. A támadó fegyver-extrái (pl. `pajzs_ve_felezes` ×0.5 B pajzs-VÉ-jére) A-oldali szorzók.
+  A két fél appja egymástól függetlenül alkalmazza a saját oldali szorzót (a támadó popup a duplázott értéket adja,
+  a védő `changeVé` a sajátjával szoroz) - külön koordináció nem kell.
+- **Alcél**: az `alcél`-os szorzó CSAK a cél adott komponensére hat (pl. `pajzs_megkerules` ×0 →
+  `alcél: fegyverfogás:fegyver_pajzs` = a túloldal pajzs-VÉ-je nullázódik, a VÉ többi része nem).
+  A motor (`extrak-effekt.ts`) cél+alcél pontos egyezéssel szűr.
 
 ### 42.4 Cél-fajták (prefix-vokabulár)
 

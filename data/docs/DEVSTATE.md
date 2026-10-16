@@ -9,7 +9,6 @@
 
 - [Nyitott tételek (áttekintés)](#nyitott-tételek-áttekintés)
 - [Egységes effekt-modell](#egységes-effekt-modell-) 🚧
-- [Szorzók kezelése (megbeszélés alatt)](#szorzók-kezelése--megbeszélés-alatt) 🚧
 - [Belharc rendszer](#belharc-rendszer-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
 - [Harc alakzatban](#harc-alakzatban-) 🚧
@@ -22,7 +21,6 @@
 ## Nyitott tételek (áttekintés)
 
 - **Egységes effekt-modell** (§42) - 2. fázis befejezése, 3. fázis (egy runtime kiértékelő)
-- **Szorzók kezelése** - a ×2 duplázók halmozódási szabályának eldöntése (megbeszélés alatt)
 - **Belharc rendszer** (§21.4) - Puszta kéz belharci értékei + korlátozás-jelzés
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver, ár-modell
 - **Harc alakzatban** (§28) - NJK kalkulátor, "Alakzat ellen" helyzet, taktika tiltások
@@ -39,51 +37,15 @@ Engine spec: §42 (részben implementált), fázisterv: §42.5. Cél: a fortély
 - **3. fázis - Kód**: hátra.
 
 TODO:
-- [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat)
+- [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat). Felmérés (2026-10-16), nyitott döntések:
+  - Mód-kulcs 4 dialektusban: `mód` (extrák, fortélyok, `fegyver_override`), `hatás` (taktikák), `operátor` (helyzetek, státuszok, `hatasok.yaml`), nincs (`konstansok` egészség-levonás). Az operátor-réteg (`duplázás`/`arányos` → `szorzó` + `halmozás`) megmarad-e a mód fölött?
+  - Taktika sorrendfüggő akkumulációja (Fárasztás: `override 3` + fegyverelőnyben `flat +1` = 4) ütközik a §42.3-mal (override eldobja a flat-et → 3). Kivétel vagy adat-átírás?
+  - Cél-vokabulár: harcérték (`TÉ`/`VÉ`) vs esemény (`té_dobás`, `vé_csökkentés`) jogos kettősség; de rendezetlen a helyzetek kisbetűs `vé` célja (Láthatatlan +5/+10) és a `fegyver_TÉ`/`fegyver_VÉ` alak.
+  - Validációs lyuk: a `harci_helyzetek.yaml` `hatások` operátorát nem validálja a build (5 sor `operátor: "flat"`, ami nem operátor-id). Ezeknek numerikus fogyasztója sincs (grep alapján).
 - [ ] 3. fázis: `calcFortelyMods` + `applyFegyverOverrides` + hatás-operátorok beolvasztása EGY runtime kiértékelőbe (§42.3 precedencia)
-- [ ] Előfeltétel a 3. fázishoz: regressziós védőháló (meglévő fortély-mods tesztek + új precedencia-tesztek)
+- [ ] Előfeltétel a 3. fázishoz: regressziós védőháló (meglévő fortély-mods tesztek + új precedencia-tesztek) - a `fortely-mods.test.ts` és az `extrak-effekt.test.ts` már megvan
+- [ ] `zuzo_ellen_rosszabb` extra (`vé_veszteség` ×2) bekötése a `véVesztésSzorzó`-ba (ma csak az Extrák gombon jelenik meg)
 - [ ] Statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben
-
-Kapcsolódik: „Szorzók kezelése" (a passzív `vé_veszteség` duplázók bekötése ugyanebbe a láncba).
-
----
-## Szorzók kezelése 🚧 (megbeszélés alatt)
-
-Egyetlen VÉ-levonási tengelyen (`vé_csökkentés` = aktív/támadó oldal, `vé_veszteség` = passzív/védekező oldal - ugyanaz az érték, két nézőpont) több ×2-es duplázó egyszerre fennállhat. Eldöntendő, hogyan halmozódnak:
-
-- **a.) Szorzók egymást szorozzák** (×2 · ×2 = ×4)
-- **b.) Szorzók összeadódnak** (×2 + ×2 → ×3, azaz `1 + Σ(szorzó-1)`)
-- **c.) Legnagyobb szorzó számít** (×2)
-
-### Jelenlegi kód-állapot
-
-`components/harc/ve-csokkentes-calc.ts` → `calcVéCsökkentésSzorzó` MA az **a.) szorzás**-t csinálja, de KIZÁRÓLAG a taktika `hatások` (`cél: vé_csökkentés`, `hatás: szorzó`) forráson belül. A passzív `vé_veszteség` + `operátor: duplázás` (helyzet/státusz) duplázók NINCSENEK bekötve ebbe a szorzat-láncba. Ha a döntés az a.) marad, a passzív oldalt is ugyanabba a láncba kell húzni (egységes effekt-modell, §42 kapcsolat).
-
-### Halmozódás-források (data layer, Távharc nélkül)
-
-| Forrás | Elem | Cél |
-|--------|------|-----|
-| Taktika (`taktikak.yaml`) | Roham, Öngyilkos roham | `vé_csökkentés` ×2 |
-| Harci helyzet (`harci_helyzetek.yaml`) | Földön fekve, Helyhez kötve, VÉ kiterjesztése másra | `vé_veszteség` ×2 |
-| Státusz (`statuszok.yaml`) | Kimerültség fok 2 (Kimerültség), fok 3 (Elcsigázottság) | `vé_veszteség` ×2 |
-
-### Kizárási korlátok (mi állhat EGYSZERRE)
-
-- **Taktika-oldal: mindig csak 1 ×2.** Roham és Öngyilkos roham is "❌ Más taktikával együtt" (md/065_02) - egymást és minden más taktikát kizárnak.
-- **Helyzet-oldal: max 2 ×2.** Földön fekve kölcsönösen kizárja Helyhez kötve + VÉ kiterjesztése; Helyhez kötve + VÉ kiterjesztése viszont NEM zárja egymást (md/065_03_02, md/065_03_03). Marad: Helyhez kötve + VÉ kiterjesztése.
-- **Státusz-oldal: max 1 ×2.** A Kimerültség egyetlen `többszörös: false` státusz-sor, egyszerre egy fok.
-- **Gyakorlati maximum: 4 db ×2 egyszerre** (1 taktika + 2 helyzet + 1 státusz-fok).
-
-### Igazolt példák (a 3 szabály eltérő eredménye)
-
-| Eset | a.) szoroz | b.) összead | c.) legnagyobb |
-|------|-----------|-------------|----------------|
-| Roham + Helyhez kötve | ×4 | ×3 | ×2 |
-| Öngyilkos roham + Elcsigázottság | ×4 | ×3 | ×2 |
-| Roham + Helyhez kötve + VÉ kiterjesztése | ×8 | ×4 | ×2 |
-| Roham + Elcsigázottság + Helyhez kötve + VÉ kiterjesztése | ×16 | ×5 | ×2 |
-
-A tét: a.) a szélső esetben ×16 (brutális), b.) ott is kezelhető (×5), c.) mindig fix ×2.
 
 ---
 ## Belharc rendszer 🚧
@@ -298,6 +260,7 @@ A szabálykönyv headingjei dekoratív emojikat használnak (pl. `⚜️`, `🗡
 ---
 ## Elkészült ✅
 
+- **Szorzók halmozása** (2026-10-16) - "keverék" szabály: egy fél forrásaiból (helyzet/státusz/taktika/fegyver-extra) a legnagyobb szorzó számít, a két fél szorzói összeszorzódnak → plafon ×4. Spec §42.3, md/081 "Szorzó hatások ökölszabály" (065_02 Roham/Öngyilkos roham erre hivatkozik). Kód: `alkalmazEffektek` + `calcVéCsökkentésSzorzó` + `HarcScreen` taktika-reduce max-ra; a passzív oldal (`véVesztésSzorzó`) már a `halmozás: legnagyobb`-ot követte.
 - **Fegyver v2 bevezetés** - a webapp a `fegyverek_v2.json`-t olvassa (`módok[]` modell), a régi md→json pipeline archiválva (`archive/data_fegyverek_v1/`), a szabálykönyv táblái generáltak (`sync_fegyvertablazatok.py`). Napló: wiki `STUDY.fegyvergenerator_v2`.
 - **Fegyver Idea** - `idea_default` modell: a példány Ideájának deltája hat (közelharc `TÉ`/`VÉ`/`SP`, kétkezes, távharc CÉ). `harc/shared.ts` `ideaDelta()`, spec §17.
 - **`cél_páncél` extrák** - Sebzés popup "Ellenfél páncél" választó: mátrix + `SP`-hatású extra numerikusan, a `VÉ`/SFÉ-hatásúak az "Extrák" gombon jelölve. STUDY 3g.

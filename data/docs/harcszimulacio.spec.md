@@ -480,6 +480,8 @@ sikertelen_támadás_VÉ_csökkentés(támadó, védő):
         alap × 2
     HA védőn "VÉ veszteség duplázódik" hatás aktív:  # Földön fekve, Helyhez kötve,
         alap × 2                                     # VÉ kiterjesztés, Fizikai(2)/(3) státusz
+    # Halmozás (2026-10-16): oldalon belül a LEGNAGYOBB szorzó számít (több védő oldali
+    # duplázó együtt is csak ×2); a támadó és a védő oldal szorzódik → plafon ×4 (engine_spec §42.3).
 
     védő.állapot.vé_fáradás += alap                   # ← FÁRADÁS könyvelés
 ```
