@@ -1,9 +1,0 @@
----
-# Schema: hatas_operatorok.yaml
-# Gyökér: hatás_operátorok (lista)
-
-hatás_operátorok:
-  - id: ""                     # kötelező, egyedi string
-    név: ""                    # kötelező, string (megjelenítési név)
-    mód: ""                    # kötelező, egységes effekt-mód (engine_spec §42.2). Enforce: data/gen/validators.py → validate_hatasok. Enum: "előny_hátrány" | "szorzó" | "letilt" | "max_limit" | "szöveges" | "enyhít" | "flat"
-    halmozás: ""               # opcionális, több aktív forrás halmozási szabálya. Enum: "legnagyobb" (a legnagyobb dominál, nem kumulál). Hiány = kumulál (alapértelmezett szorzó/additív).

@@ -36,7 +36,6 @@ export function loadGameDataSync(): GameData {
     harciHelyzetek: j('tables/harci_helyzetek.json'),
     manoverek: j('tables/manoverek.json'),
     statuszok: j('tables/statuszok.json'),
-    hatasOperatorok: j('tables/hatas_operatorok.json'),
     esemenyek: j('tables/esemenyek.json'),
     hatterek: j('tables/hatterek.json'),
     rules: j<{ rules: GameData['rules'] }>('rules.json').rules,

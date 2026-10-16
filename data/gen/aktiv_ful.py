@@ -1,22 +1,21 @@
-"""Aktív fül adatai: taktikák, harci helyzetek, manőverek, státuszok, események, operátorok, hátterek."""
+"""Aktív fül adatai: taktikák, harci helyzetek, manőverek, státuszok, események, hátterek."""
 
 import os
 
 from .common import SOURCES_DIR, load_yaml, write_json
 from .schema import validate_schema
 from .validators import (
-    validate_aktiv_ful, validate_hatasok, validate_esemenyek,
+    validate_aktiv_ful, validate_esemenyek,
     validate_statuszok, validate_hatasok_katalogus, validate_harci_helyzet_hatasok,
 )
 
 
 def generate_aktiv_ful():
-    """taktikak.yaml, harci_helyzetek.yaml, manoverek.yaml, statuszok.yaml, hatas_operatorok.yaml, esemenyek.yaml → JSON
+    """taktikak.yaml, harci_helyzetek.yaml, manoverek.yaml, statuszok.yaml, esemenyek.yaml → JSON
     (hatasok.yaml csak validációhoz töltődik be, nincs JSON kimenete)"""
     taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))['taktikák']
     helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek']
     manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))['manőverek']
-    hatas_operatorok = load_yaml(os.path.join(SOURCES_DIR, 'hatas_operatorok.yaml'))['hatás_operátorok']
     esemenyek = load_yaml(os.path.join(SOURCES_DIR, 'esemenyek.yaml'))['események']
     statuszok = load_yaml(os.path.join(SOURCES_DIR, 'statuszok.yaml'))['státuszok']
     hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatások']
@@ -25,7 +24,10 @@ def generate_aktiv_ful():
     # igazságforrás a fegyver-specifikus manőver-módosítóra, engine_spec §42).
     extrak = load_yaml(os.path.join(SOURCES_DIR, 'fegyverek', 'extrak.yaml'))['extrak']
     extrak_by_id = {e['id']: e for e in extrak}
-    _manover_konst = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml')).get('manőver', {})
+    _konstansok = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
+    _manover_konst = _konstansok.get('manőver', {})
+    # Egységes effekt-mód enum (engine_spec §42.2) - minden hatás `mód` mezője ehhez mér.
+    effekt_modok = set(_konstansok.get('effekt_módok', []))
     _immunis_sentinel = _manover_konst.get('sentinel_immunis', -99)
 
     validate_schema('taktika', taktikak, 'taktikak.yaml', root_key='taktikák')
@@ -33,17 +35,14 @@ def generate_aktiv_ful():
     validate_schema('manover', manoverek, 'manoverek.yaml', root_key='manőverek')
     validate_schema('statusz', statuszok, 'statuszok.yaml', root_key='státuszok')
     validate_schema('esemeny', esemenyek, 'esemenyek.yaml', root_key='események')
-    validate_schema('hatas', hatas_operatorok, 'hatas_operatorok.yaml', root_key='hatás_operátorok')
     # Hátterek: két külön lista (leíró + karma), eltérő mezőkkel - külön-külön a hatter sémához mérve.
     validate_schema('hatter', hatterek.get('leíró_hátterek', []), 'hatterek.yaml[leíró]', root_key='leíró_hátterek', name_key='kategória')
     validate_schema('hatter', hatterek.get('karma_hátterek', []), 'hatterek.yaml[karma]', root_key='karma_hátterek')
-    validate_aktiv_ful(taktikak, helyzetek, [], manoverek)
-    validate_hatasok(hatas_operatorok)
+    validate_aktiv_ful(taktikak, helyzetek, [], manoverek, effekt_modok)
     validate_esemenyek(esemenyek)
-    validate_statuszok(statuszok, hatas_operatorok, esemenyek)
-    validate_harci_helyzet_hatasok(helyzetek, hatas_operatorok, esemenyek,
-                                   load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml')).get('harcérték_célok', []))
-    validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek)
+    validate_statuszok(statuszok, effekt_modok, esemenyek)
+    validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, _konstansok.get('harcérték_célok', []))
+    validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek)
 
     # feltétel_kulcs generálás id-ból (yaml-ban nincs, JSON-ban kell)
     for t in taktikak:
@@ -68,7 +67,6 @@ def generate_aktiv_ful():
     write_json('taktikak.json', taktikak)
     write_json('harci_helyzetek.json', helyzetek)
     write_json('manoverek.json', manoverek)
-    write_json('hatas_operatorok.json', hatas_operatorok)
     write_json('esemenyek.json', esemenyek)
     # hatasok.json NEM generálódik: az app nem tölti be, csak a validáció használja
     # Statuszok: default mezők biztosítása

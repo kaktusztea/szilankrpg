@@ -22,7 +22,7 @@ const ÉRZÉK_NEVEK = new Set(['Észlelés']);
 interface PróbaEHEredmény {
   /** Összesített EH szint (clamp [-2, +2]) */
   szint: number;
-  /** Automatikus kudarc (letilt operátor) */
+  /** Automatikus kudarc (letilt mód) */
   tiltott: boolean;
   /** Debug: mely státuszok hatnak */
   források: string[];
@@ -61,10 +61,10 @@ export function calcStátuszPróbaEH(
     for (const h of fokDef.hatások) {
       if (!hatásVonatkozik(h, képzettségNév, képzettségCsoport)) continue;
 
-      if (h.operátor === 'letilt') {
+      if (h.mód === 'letilt') {
         tiltott = true;
         források.push(`${név} (${fokDef.alcím}): kudarc`);
-      } else if (h.operátor === 'előny' || h.operátor === 'hátrány') {
+      } else if (h.mód === 'előny' || h.mód === 'hátrány') {
         ehSzint += h.érték ?? 0;
         források.push(`${név} (${fokDef.alcím}): ${h.érték! > 0 ? '+' : ''}${h.érték}`);
       }

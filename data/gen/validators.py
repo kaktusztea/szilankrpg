@@ -1,6 +1,6 @@
 """Referenciális és tartalmi validátorok az Aktív fül adataihoz (taktikák, helyzetek, hatások)."""
 
-def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
+def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok):
     """Validate aktív fül YAML sources against schemas."""
     errors = []
     # Taktikák
@@ -19,13 +19,12 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
         # Nem-fokozatos taktika opcionális strukturált hatások egy dobáscélra/numerikus célra.
         # "override"/"flat" (pl. vé_csökkentés) a LISTA SORRENDJÉBEN, akkumulálva értelmezendő
         # (nem a §42.3 mód-kategória precedencia) - l. schemas/taktika.yaml komment.
-        valid_hatas_operator = {'előny', 'hátrány', 'enyhít', 'szöveges', 'flat', 'override', 'szorzó'}
         valid_hatas_cel = {'té_dobás', 'sebzésdobás', 'cé_dobás', 'vé_csökkentés'}
         if not t.get('fokozatos'):
             for j, h in enumerate(t.get('hatások') or []):
                 hctx = f"{ctx} hatások[{j}]"
-                if h.get('hatás') not in valid_hatas_operator:
-                    errors.append(f"{hctx}: 'hatás' invalid: '{h.get('hatás')}' (érvényes: {valid_hatas_operator})")
+                if h.get('mód') not in effekt_modok:
+                    errors.append(f"{hctx}: 'mód' invalid: '{h.get('mód')}' (konstansok.effekt_módok)")
                 if h.get('cél') not in valid_hatas_cel:
                     errors.append(f"{hctx}: 'cél' invalid: '{h.get('cél')}' (érvényes: {valid_hatas_cel})")
         # Megkötések validáció
@@ -68,25 +67,6 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
         raise SystemExit(1)
 
 
-def validate_hatasok(hatasok):
-    """Validate hatas_operatorok.yaml hatás_operátorok."""
-    errors = []
-    valid_mod = {'előny_hátrány', 'szorzó', 'letilt', 'max_limit', 'szöveges', 'enyhít', 'flat'}
-    ids_seen = set()
-    for i, h in enumerate(hatasok):
-        ctx = f"hatás_operátorok[{i}] ({h.get('id', '?')})"
-        if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
-        if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
-        if h.get('mód') not in valid_mod: errors.append(f"{ctx}: 'mód' invalid: '{h.get('mód')}'")
-        if h.get('id') in ids_seen: errors.append(f"{ctx}: duplikált id!")
-        ids_seen.add(h.get('id'))
-    if errors:
-        print("  ❌ Hatás validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
-
-
 def validate_esemenyek(esemenyek):
     """Validate esemenyek.yaml."""
     errors = []
@@ -106,15 +86,14 @@ def validate_esemenyek(esemenyek):
         raise SystemExit(1)
 
 
-def validate_statuszok(statuszok, hatas_operatorok, esemenyek):
+def validate_statuszok(statuszok, effekt_modok, esemenyek):
     """Validate statuszok.yaml - struktúra + referenciális integritás.
 
-    A státusz hatások `operátor` mezője a hatas_operatorok.yaml id-jeire hivatkozik
-    (előny/hátrány/arányos/…), NEM a hatasok.yaml katalógus-id-kre.
+    A státusz hatások `mód` mezője a konstansok.yaml → effekt_módok egyike (engine_spec §42.2),
+    NEM a hatasok.yaml katalógus-id-kre hivatkozik.
     """
     errors = []
     valid_kategoria = {'fizikai', 'szellemi', 'harci', 'mágikus'}
-    valid_operator_ids = {h['id'] for h in hatas_operatorok}
     valid_esemeny_ids = {e['id'] for e in esemenyek}
     for i, s in enumerate(statuszok):
         ctx = f"státuszok[{i}] ({s.get('név', '?')})"
@@ -133,7 +112,7 @@ def validate_statuszok(statuszok, hatas_operatorok, esemenyek):
                     for k, h in enumerate(hatasok_lista):
                         hctx = f"{fctx} hatások[{k}]"
                         if not isinstance(h, dict): errors.append(f"{hctx}: nem objektum"); continue
-                        if h.get('operátor') not in valid_operator_ids: errors.append(f"{hctx}: ismeretlen operátor: '{h.get('operátor')}'")
+                        if h.get('mód') not in effekt_modok: errors.append(f"{hctx}: ismeretlen mód: '{h.get('mód')}'")
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
     if errors:
         print("  ❌ Státusz validációs hibák:")
@@ -142,17 +121,16 @@ def validate_statuszok(statuszok, hatas_operatorok, esemenyek):
         raise SystemExit(1)
 
 
-def validate_harci_helyzet_hatasok(helyzetek, hatas_operatorok, esemenyek, harcertek_celok):
-    """Validate harci_helyzetek.yaml `hatások[]` - operátor a katalógusból, cél esemény-id VAGY
+def validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, harcertek_celok):
+    """Validate harci_helyzetek.yaml `hatások[]` - mód a konstansok.effekt_módok-ból, cél esemény-id VAGY
     csupasz harcérték-cél (konstansok.yaml → harcérték_célok, engine_spec §42.4)."""
     errors = []
-    valid_op_ids = {h['id'] for h in hatas_operatorok}
     valid_cel = {e['id'] for e in esemenyek} | set(harcertek_celok)
     for h in helyzetek:
         for k, x in enumerate(h.get('hatások') or []):
             hctx = f"harci_helyzetek ({h.get('név', '?')}) hatások[{k}]"
             if not isinstance(x, dict): errors.append(f"{hctx}: nem objektum"); continue
-            if x.get('operátor') not in valid_op_ids: errors.append(f"{hctx}: ismeretlen operátor: '{x.get('operátor')}'")
+            if x.get('mód') not in effekt_modok: errors.append(f"{hctx}: ismeretlen mód: '{x.get('mód')}'")
             if x.get('cél') not in valid_cel: errors.append(f"{hctx}: ismeretlen cél: '{x.get('cél')}'")
     if errors:
         print("  ❌ Harci helyzet hatás validációs hibák:")
@@ -161,10 +139,9 @@ def validate_harci_helyzet_hatasok(helyzetek, hatas_operatorok, esemenyek, harce
         raise SystemExit(1)
 
 
-def validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek):
+def validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek):
     """Validate hatasok.yaml - id egyediség + mechanika referenciális integritás."""
     errors = []
-    valid_op_ids = {h['id'] for h in hatas_operatorok}
     valid_cel_ids = {e['id'] for e in esemenyek}
     ids_seen = set()
     for i, h in enumerate(hatasok):
@@ -178,7 +155,7 @@ def validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek):
         else:
             for j, m in enumerate(mechanika):
                 mctx = f"{ctx} mechanika[{j}]"
-                if m.get('operátor') not in valid_op_ids: errors.append(f"{mctx}: ismeretlen operátor: '{m.get('operátor')}'")
+                if m.get('mód') not in effekt_modok: errors.append(f"{mctx}: ismeretlen mód: '{m.get('mód')}'")
                 if m.get('cél') and m['cél'] not in valid_cel_ids: errors.append(f"{mctx}: ismeretlen cél: '{m.get('cél')}'")
     if errors:
         print("  ❌ Hatás katalógus validációs hibák:")

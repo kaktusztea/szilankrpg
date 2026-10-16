@@ -8,10 +8,11 @@ valós adatból (hiányzott pl. Csúszós talaj, Elvesztett egyensúly, Közrefo
 Kezdeményező, Kiváró, Plusz támadás, Tettetés, a `megkötések[]`/`kombó_mód` validáció).
 
 Ez a modul KÖZVETLENÜL a webapp JSON forrásait tölti be és egy GENERIKUS hatás-kiértékelőt
-ad - nincs több kézzel duplikált adat. A hatás-mechanika szemantikája `hatas_operatorok.yaml`
-+ `engine_spec.md §22.2` szerint:
+ad - nincs több kézzel duplikált adat. A hatás-mechanika szemantikája a `mód` mező
+(`konstansok.yaml → effekt_módok`, `engine_spec.md §42.2`) szerint:
     előny/hátrány → kocka reroll szint (netÉH taghoz, [-2,+2] clamp)
-    arányos/duplázás → szorzó (0.5 = felez, 2 = duplázódik)
+    szorzó → szorzó (0.5 = felez, 2 = duplázódik)
+    flat → additív
     letilt → boolean (képesség/próba elvesztése)
     max_limit → felső korlát
     szöveges → nem kumulálható, informatív (a szimulátor kihagyja, csak logolja)
@@ -37,16 +38,16 @@ STATUSZOK_RAW = {s["név"]: s for s in _load("statuszok.json")}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Generikus hatás-kiértékelő (hatas_operatorok.yaml szemantikája)
+# Generikus hatás-kiértékelő (egységes effekt-mód: konstansok.yaml → effekt_módok, engine_spec §42.2)
 # ─────────────────────────────────────────────────────────────────────────────
 
 def hatasok_kiertekelese(hatasok, cel_szuro=None):
-    """A `hatások[]` (vagy taktika `hatások[]`, ott a kulcs `hatás` nem `operátor`) listát
+    """A `hatások[]` (helyzet / státusz / taktika - mind `mód` kulcsú) listát
     egy összesített dict-té bontja: {cél: {'eh': összesített_szint, 'szorzo': szorzó, ...}}.
     `cel_szuro`: ha adott, csak az adott célra vonatkozó hatásokat gyűjti (pl. "té_dobás")."""
     eredmeny = {}
     for h in hatasok or []:
-        op = h.get("operátor") or h.get("hatás")   # taktikák "hatás" kulcsot használnak
+        op = h.get("mód")
         cel = h.get("cél")
         if cel_szuro is not None and cel != cel_szuro:
             continue
@@ -56,7 +57,7 @@ def hatasok_kiertekelese(hatasok, cel_szuro=None):
             eredmeny[cel]["eh"] += h.get("érték", 0)
         elif op == "flat":   # fix additív módosító (pl. Takarásban VÉ +5, Meglepetés vé_csökkentés +2)
             eredmeny[cel]["flat"] = eredmeny[cel].get("flat", 0) + h.get("érték", 0)
-        elif op in ("arányos", "duplázás"):
+        elif op == "szorzó":
             # ponytail: egy forrás (egy helyzet/státusz/taktika) listáján belül szoroz; a szimulátor harcosonként
             # 1 helyzetet kezel, így oldalon belüli halmozás (§42.3: legnagyobb számít) itt nem áll elő.
             # Több forrás egy oldalon → a `max`-szabályt a hívóban kell alkalmazni.

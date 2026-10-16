@@ -17,7 +17,7 @@
 #            VAGY entitás prefix-string ("fortély:<név>"). Manővernél: cél=manőver_ellenpróba + feltétel "manőver:<id>".
 #       alcél?: a cél al-scope-ja, "prefix:érték" (alcel_prefix_enum), pl. cél VÉ + alcél "fegyverfogás:fegyver_pajzs" = a pajzs VÉ-komponense
 #       feltétel?: al-feltétel prefix-string (pl. "manőver:precíz_támadás")
-#       mód: flat | override  (fortély-`módosító` mód) | szorzó  (hatás-operátor mód, hatas_operatorok.yaml: érték 0.5=felez, 2=dupláz)
+#       mód: flat | override  (fortély-`módosító` mód) | szorzó  (érték 0.5=felez, 2=dupláz; konstansok.yaml → effekt_módok)
 
 extrak:
   # ── FELKÉSZÍTÉS (kiképzett, opt-in - a régi „extra"/KF) ──

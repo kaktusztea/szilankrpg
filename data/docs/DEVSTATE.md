@@ -38,7 +38,7 @@ Engine spec: §42 (részben implementált), fázisterv: §42.5. Cél: a fortély
 
 TODO:
 - [ ] 2. fázis befejezése: a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra (egylépéses, nincs backward-compat). Felmérés (2026-10-16), nyitott döntések:
-  - Mód-kulcs 4 dialektusban: `mód` (extrák, fortélyok, `fegyver_override`), `hatás` (taktikák), `operátor` (helyzetek, státuszok, `hatasok.yaml`), nincs (`konstansok` egészség-levonás). Az operátor-réteg (`duplázás`/`arányos` → `szorzó` + `halmozás`) megmarad-e a mód fölött?
+  - ~~Mód-kulcs 4 dialektusban~~ ✅ (2026-10-16, A döntés): mindenhol `mód`, a `hatas_operatorok.yaml` réteg törölve (`duplázás`/`arányos` → `szorzó`), a mód-katalógus a `konstansok.effekt_módok`. Maradt: a `konstansok` egészség-levonás mód nélküli sorai (implicit `flat`).
   - Taktika sorrendfüggő akkumulációja (Fárasztás: `override 3` + fegyverelőnyben `flat +1` = 4) ütközik a §42.3-mal (override eldobja a flat-et → 3). Kivétel vagy adat-átírás?
   - Cél-vokabulár: harcérték (`TÉ`/`VÉ`) vs esemény (`té_dobás`, `vé_csökkentés`) jogos kettősség; de rendezetlen a helyzetek kisbetűs `vé` célja (Láthatatlan +5/+10) és a `fegyver_TÉ`/`fegyver_VÉ` alak.
   - ~~Validációs lyuk~~ ✅ (2026-10-16): a `harci_helyzetek.yaml` `hatások` build-gate alatt (`validate_harci_helyzet_hatasok`: operátor a katalógusból, cél esemény-id vagy `konstansok.harcérték_célok`). Javítva: Láthatatlan/Takarásban `VÉ` cél (Takarásban `előny 5` → `flat 5`), Vér elvakít → `érzék_próba`; új `flat` operátor. A szimulátor most a `flat` értékeket is alkalmazza (Meglepetés/Láthatatlan `vé_csökkentés`, `VÉ`).

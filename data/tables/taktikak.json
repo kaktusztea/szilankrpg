@@ -54,14 +54,14 @@
     "módosítók": {},
     "hatások": [
       {
-        "hatás": "override",
+        "mód": "override",
         "érték": 3,
         "cél": "vé_csökkentés",
         "megjegyzés": "VÉ csökkentés: 3 fixen",
         "feltétel": ""
       },
       {
-        "hatás": "flat",
+        "mód": "flat",
         "érték": 1,
         "cél": "vé_csökkentés",
         "megjegyzés": "Fegyverelőnyben: +1 VÉ csökkentés",
@@ -154,7 +154,7 @@
     },
     "hatások": [
       {
-        "hatás": "szorzó",
+        "mód": "szorzó",
         "érték": 2,
         "cél": "vé_csökkentés",
         "megjegyzés": "VÉ csökkentés dupla",
@@ -218,7 +218,7 @@
     },
     "hatások": [
       {
-        "hatás": "szorzó",
+        "mód": "szorzó",
         "érték": 2,
         "cél": "vé_csökkentés",
         "megjegyzés": "VÉ csökkentés dupla",
@@ -398,7 +398,7 @@
     },
     "hatások": [
       {
-        "hatás": "hátrány",
+        "mód": "hátrány",
         "érték": -2,
         "cél": "sebzésdobás",
         "megjegyzés": "Sebzésdobás: Hátrány-2"

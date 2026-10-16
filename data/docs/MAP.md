@@ -320,7 +320,6 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `manoverek.yaml` | Manőverek (38 db) | `manoverek.json` |
 | `statuszok.yaml` | Státuszok (19 db) | `statuszok.json` |
 | `hatasok.yaml` | Hatás mechanikák | - (csak validáció, az app nem tölti be) |
-| `hatas_operatorok.yaml` | Hatás operátorok (8 db) | `hatas_operatorok.json` |
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
 | `hatterek.yaml` | Leíró + Karma hátterek | `hatterek.json` |
 | `szituacio_mapping.yaml` | Képzettség → Szituáció kapcsolatok | → `kepzettsegek.json` (`kapcsolódó_szituációk` mező) |

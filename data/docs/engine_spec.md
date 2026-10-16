@@ -1445,7 +1445,7 @@ Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 
 | Réteg | Fájl / Forrás | Leírás |
 |-------|------|--------|
-| **Hatás mechanika** | `hatas_operatorok.yaml` | Hatás típusok/operátorok (8 db): előny, hátrány, arányos, letilt, stb. |
+| **Hatás mechanika** | `konstansok.yaml → effekt_módok` | Egységes effekt-módok (§42.2): flat, szorzó, override, max_limit, előny, hátrány, enyhít, letilt, szöveges, scaled |
 | **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (23 db): dobások, képességek, fizikai |
 | **Hatások** | `hatasok.yaml` (29 db, csak build-validáció, §22.4) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
 | **Státuszok** | `statuszok.yaml` (19 db) | Állapotok fokozatokkal, amelyek Hatás(oka)t okoznak. |
@@ -1457,7 +1457,7 @@ A lánc: **Státusz/Harci helyzet** → okoz **Hatás(oka)t** → minden Hatás 
 
 | Fogalom | Régi elnevezés (data) | Helyes jelentés |
 |---------|----------------------|-----------------|
-| Hatás mechanika típusok | "hatás operátorok" (hatas_operatorok.yaml) | Alacsonyszintű operátorok: hogyan hat (kocka reroll, szorzó, letilt, max korlát) |
+| Hatás mechanika típusok | `mód` (konstansok.yaml → effekt_módok) | Hogyan hat (kocka reroll, szorzó, letilt, max korlát) - a 2026-10-16 előtti `hatas_operatorok.yaml` réteg megszűnt (§42.7) |
 | Célpontok | "események" (esemenyek.yaml) | Mire vonatkozik a mechanika (TÉ dobás, Mozgás, Varázslás képesség) |
 | **Hatások** | `hatasok.yaml` (build-validációs katalógus) | Magas szintű, elnevezett hatáscsomagok a szabályrendszerből (081_hatasok.md). Pl. "Harcképtelenség" = letilt(harci_képesség) + minden támadás ellened automatikusan sebző. CSAK build-validáció olvassa, a runtime nem (l. §22.4). |
 | Státuszok | statuszok.yaml | Állapotok, amelyek Hatásokat okoznak (082_statuszok.md) |
@@ -1475,21 +1475,13 @@ Ez a §16 feltételes fortély módosítók `enyhít` operátorával (már léte
 A fortély yaml `módosítók` listájában `mód: "enyhít"` + `cél` + `érték` határozza meg,
 melyik hatás mechanikát/célt csökkenti.
 
-### 22.2 Hatás mechanika típusok (hatas_operatorok.yaml)
+### 22.2 Hatás mechanika típusok (`mód`)
 
-(Fájlnév megtartva kompatibilitás miatt, de a fogalom: "hatás mechanika típusok")
-
-```yaml
-hatás_mechanika:  # (yaml-ban: hatás_operátorok - legacy elnevezés)
-  - id: "előny"         # mód: előny_hátrány - kocka reroll (2x/3x dob, jobb számít)
-  - id: "hátrány"       # mód: előny_hátrány - kocka reroll (2x/3x dob, rosszabb számít)
-  - id: "arányos"       # mód: szorzó - pl. 0.5 = feleződik
-  - id: "duplázás"      # mód: szorzó - pl. 2 = duplázódik
-  - id: "letilt"        # mód: letilt - boolean (képesség elvesztés, aut. kudarc)
-  - id: "max_limit"     # mód: max_limit - felső korlát (pl. max 1 támadás)
-  - id: "szöveges"      # mód: szöveges - nem kumulálható, csak informatív
-  - id: "enyhít"        # mód: enyhít - csökkenti másik hatás fokát (fortélyokból)
-```
+Minden hatás-forrás (helyzet, státusz, taktika, `hatasok.yaml`, fortély, extra) ugyanazt a `mód` kulcsot
+használja, a `konstansok.yaml → effekt_módok` enumból (§42.2). A korábbi `hatas_operatorok.yaml` operátor-réteg
+(`duplázás`/`arányos` → `szorzó`, `halmozás: legnagyobb`) 2026-10-16-án megszűnt: a duplázás `{mód: szorzó, érték: 2}`,
+a felezés `{mód: szorzó, érték: 0.5}`; a halmozás globális szabály (§42.3). A megjelenítési név (Duplázás/Felezés)
+a mód + érték párosból adódik.
 
 ### 22.3 Célpontok (esemenyek.yaml)
 
@@ -1509,9 +1501,9 @@ Minden Hatás leírható mechanika+cél párokkal.
 
 STÁTUSZ (fontos): a `hatasok.yaml` jelenleg CSAK build-validációs/dokumentációs réteg.
   - NEM generál JSON-t és a webapp NEM tölti be (`aktiv_ful.py` - csak a `validate_hatasok_katalogus`
-    olvassa build-időben: minden hatás `mechanika`-ja érvényes `hatas_operatorok` + `esemenyek` id-re mutat).
+    olvassa build-időben: minden hatás `mechanika`-ja érvényes `mód` (effekt_módok) + `esemenyek` id-re mutat).
   - A RUNTIME lánc NEM ezen megy át: a `statuszok.yaml`/`harci_helyzetek.yaml` KÖZVETLENÜL a
-    `hatas_operatorok` (operátor: előny/hátrány/…) + `esemenyek` (cél: té_dobás/…) id-ket hivatkozza,
+    `mód` (előny/hátrány/szorzó/…) + `esemenyek` (cél: té_dobás/…) értékeket hivatkozza,
     NEM a `hatasok.yaml` nevesített id-ket (előny_1, mozgás_feleződik, …). A köztes "nevesített hatás"
     réteg jelenleg nincs bekötve a futó rendszerbe.
   - A katalógus tartalma UP-TO-DATE a szabálykönyvvel (081_hatasok.md): 1:1 lefedés (29 hatás),
@@ -1568,14 +1560,14 @@ státuszok:
       - fok: 2
         alcím: "Erősen"
         hatások:
-          - { hatás: "hátrány", érték: -2, cél: "té_dobás" }
-          - { hatás: "arányos", érték: 0.5, cél: "mozgás" }
+          - { mód: "hátrány", érték: -2, cél: "té_dobás" }
+          - { mód: "szorzó", érték: 0.5, cél: "mozgás" }
 ```
 
 Hatás objektum mezői:
-- `hatás`: mechanika típus id (kötelező, hatas_operatorok.yaml-ból)
-- `érték`: szám (opcionális, mechanika-függő)
-- `cél`: célpont id (kötelező, esemenyek.yaml-ból)
+- `mód`: effekt-mód (kötelező, konstansok.yaml → effekt_módok)
+- `érték`: szám (opcionális, mód-függő)
+- `cél`: célpont id (kötelező, esemenyek.yaml-ból VAGY csupasz harcérték-cél: konstansok.yaml → harcérték_célok)
 - `megjegyzés`: string (opcionális, kontextuális kiegészítés)
 
 ### 22.6 Session
@@ -1625,7 +1617,7 @@ Két párhuzamos rendszer - szándékosan elkülönített:
 |----------|---------------------|-------------|-------|
 | Fortély `módosítók` (flat/scaled/előny) | Harcértékek: `TÉ`, `VÉ`, `KÉ`, `SP`, `harckeret`, képzettségnevek | Fix numerikus módosítók, reactive engine számol | Mesterfegyver: TÉ:+3 |
 | Fortély `módosítók` (enyhít) | `esemenyek.yaml` id-k | Státusz/Helyzet Hatásainak csökkentése | Testőr: vé_veszteség enyhít |
-| Státusz/Helyzet `hatások[]` | `esemenyek.yaml` id + `hatas_operatorok.yaml` operátor | Előny/Hátrány kocka-reroll + letilt/szorzó | Félelem(2): hátrány -2 té_dobás |
+| Státusz/Helyzet `hatások[]` | `esemenyek.yaml` id + `mód` (effekt_módok) | Előny/Hátrány kocka-reroll + letilt/szorzó | Félelem(2): hátrány -2 té_dobás |
 
 A fortély `mód: "enyhít"` az egyetlen pont ahol a két rendszer találkozik:
 - A fortély az `esemenyek.yaml` id-jével hivatkozik a célpontra
@@ -3973,7 +3965,7 @@ Két effekt-rendszer él párhuzamosan, részben átfedő, részben szétosztott
 
 - **Fortély módosítók** (§16, `fortely-mods.ts`): a karakter build-jéből (fortélyok) folyamatosan
   számított, additív harcérték-módosítók. Mód: `flat | scaled | override | előny | hátrány | enyhít`.
-- **Hatás-operátorok** (§22, `hatas_operatorok.yaml`): státuszok / harci helyzetek okozta, nevesített
+- **Hatás-operátorok** (§22, a 2026-10-16-ig élt `hatas_operatorok.yaml`; azóta `mód`): státuszok / harci helyzetek okozta, nevesített
   szituációs hatások. Mód: `előny_hátrány | szorzó | letilt | max_limit | szöveges | enyhít`.
 
 **Átfedés**: az „előny/hátrány", `szöveges`, `enyhít` fogalom MINDKÉT rendszerben szerepel (duplikáció).
@@ -4015,7 +4007,7 @@ REFERENCIA-listát használják (a `manoverek.yaml` `követelmények`-je; pilot:
 | `szöveges` | informatív | nem kumulálható, csak megjelenítés | - | mindkettő |
 
 **Két réteg (B döntés):** a fenti a `mód`/`operátor` érték az effekt-ADATBAN. A `előny`/`hátrány` a
-`előny_hátrány` MÓD-KATEGÓRIA (a `hatas_operatorok.yaml` `mód` mezője) két operátor-neve - az adat a
+`előny_hátrány` MÓD-KATEGÓRIA két operátor-neve (a 2026-10-16-ig élt `hatas_operatorok.yaml` osztályozása) - az adat a
 `előny`/`hátrány` nevet írja előjeles értékkel, a `előny_hátrány` a mechanika-osztály.
 
 ### 42.3 Alkalmazási precedencia (MEGERŐSÍTVE, 2026-09-20)
@@ -4039,7 +4031,7 @@ Kerekítés: minden nem-egész köztes érték (pl. `szorzó` ×0.5) LEFELÉ ker
 Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatások ökölszabály"). A tengely a FORRÁS
 (melyik félnél keletkezik a szorzó), NEM a cél (kinek az értékére hat):
 - **Egy félen belül** (egy fél forrásai - helyzet, státusz, taktika, fegyver-extra - egy célra): a LEGNAGYOBB
-  szorzó számít, nem kumulál (`hatas_operatorok.yaml` `duplázás.halmozás: legnagyobb`). Kicsinyítő szorzóknál
+  szorzó számít, nem kumulál (globális szabály; a korábbi `duplázás.halmozás: legnagyobb` operátor-mező megszűnt). Kicsinyítő szorzóknál
   (<1) a legkisebb számít; ha nagyító és kicsinyítő is van, a kettő szorzódik (ma nincs ilyen ütközés az adatban).
 - **A két fél között**: a szorzók összeszorzódnak - pl. A Roham ×2 · B Helyhez kötve ×2 = ×4 B VÉ-veszteségére.
   Gyakorlati plafon: ×4. A támadó fegyver-extrái (pl. `pajzs_ve_felezes` ×0.5 B pajzs-VÉ-jére) A-oldali szorzók.
@@ -4091,7 +4083,7 @@ Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implement�
 ### 42.7 Rögzített döntések (2026-09-20)
 
 - **Kocka-mechanika (KÉT réteg - B döntés, 2026-09-20)**: a MÓD-KATEGÓRIA `előny_hátrány`
-  (`hatas_operatorok.yaml` osztályozás). Az effekt-ADAT a `előny`/`hátrány` operátor-neveket használja
+  (osztályozás). Az effekt-ADAT a `előny`/`hátrány` mód-neveket használja
   ELŐJELES értékkel (`+1/+2` = Előny, `-1/-2` = Hátrány). NINCS tömeges átnevezés: a data/kód már
   konzisztens (minden `hátrány` negatív, `előny` pozitív - auditálva). A `előny`/`hátrány` = a
   `előny_hátrány` kategória két olvasható operátor-neve.
@@ -4105,3 +4097,9 @@ Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implement�
   `data/gen/fortelyok.py` validálja ellene (eddig csak a hatás-operátor `validate_hatasok` és a taktika
   `validate_aktiv_ful` volt enforce-olva; a fortély `mód` nem). Az egységes mód-enum így a fortélynál is
   „valódi" (ismeretlen mód → build hiba).
+- **Operátor-réteg megszűnt, mindenhol `mód` (A döntés, 2026-10-16)**: a helyzet / státusz / `hatasok.yaml`
+  `operátor:` és a taktika `hatás:` kulcsa → `mód:`; `duplázás` → `{mód: szorzó, érték: 2}`, `arányos` →
+  `{mód: szorzó, érték: 0.5}`. A `hatas_operatorok.yaml` (+ séma + JSON) törölve: a mód-katalógus egyetlen
+  forrása a `konstansok.yaml → effekt_módok`; a `halmozás` mező a globális §42.3 szabályba olvadt. Build-gate:
+  `validate_statuszok` / `validate_harci_helyzet_hatasok` / `validate_hatasok_katalogus` / taktika → effekt_módok.
+  (A feltétel-predikátumok `{forrás, operátor: ">", érték}` operátora összehasonlító reláció, NEM effekt - marad.)

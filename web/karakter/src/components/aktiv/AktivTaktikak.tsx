@@ -82,7 +82,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                   {hatásEntry && (
                     <div className="aktiv-taktika-hatas">
                       {hatásEntry.hatások.map((h: any, j: number) => {
-                        const txt = fmtHatás({ operátor: h.hatás ?? h.operátor, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
+                        const txt = fmtHatás({ mód: h.mód, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
                         return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
                       })}
                     </div>

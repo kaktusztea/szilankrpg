@@ -33,7 +33,7 @@ harci_helyzetek:
   - text: "Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni."
   - text: "Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 1
     cél: "té_dobás"
   id: "ellenfél_beszorított"
@@ -47,7 +47,7 @@ harci_helyzetek:
   - text: "Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben."
   - text: "Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 2
     cél: "té_dobás"
   id: "ellenfél_beszorított_hosszú_fegyverrel"
@@ -60,10 +60,10 @@ harci_helyzetek:
   megjegyzések:
   - text: "Addig tart, amíg a csúszós felületen áll, mozog a karakter."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
   id: "csúszós_talaj"
@@ -76,16 +76,16 @@ harci_helyzetek:
   megjegyzések:
   - text: "A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres Akrobatika képzettségpróbát dobsz Nehéz (12) célszám ellen."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
-  - operátor: "szöveges"
+  - mód: "szöveges"
     cél: "támadások_száma"
     megjegyzés: "Többszörös támadás elvesztés"
-  - operátor: "arányos"
+  - mód: "szorzó"
     érték: 0.5
     cél: "mozgás"
   id: "elvesztett_egyensúly"
@@ -114,10 +114,10 @@ harci_helyzetek:
   infó: "Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik."
   megjegyzések: []
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -2
     cél: "té_dobás"
-  - operátor: "duplázás"
+  - mód: "szorzó"
     érték: 2
     cél: "vé_veszteség"
   id: "földön_fekve"
@@ -131,10 +131,10 @@ harci_helyzetek:
   - text: "Példa: hosszú kard hajítása."
   - text: "Mérsékelheti az Alkalmatlan fegyver hajítása fortély."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -2
     cél: "sebzésdobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -2
     cél: "cé_dobás"
   id: "hajítás_alkalmatlan_fegyverrel"
@@ -149,10 +149,10 @@ harci_helyzetek:
   - text: "Az SP a fegyver eredeti sebzése helyett -5+k20, ez FP vagy ÉP (KM dönt)."
   - text: "Mérsékelheti az Alkalmatlan tárgyak hajítása fortély."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "sebzésdobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
   id: "hajítás_nem_dobásra_készített"
@@ -164,10 +164,10 @@ harci_helyzetek:
   infó: "Előny+1 TÉ dobásra. Pajzs VÉ NEM számít."
   megjegyzések: []
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 1
     cél: "té_dobás"
-  - operátor: "szöveges"
+  - mód: "szöveges"
     cél: "vé_veszteség"
     megjegyzés: "Pajzs VÉ nem számít"
   id: "hátulról"
@@ -180,10 +180,10 @@ harci_helyzetek:
   megjegyzések:
   - text: "Enyhíti: Helyhez kötve fejlesztése fortély."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "duplázás"
+  - mód: "szorzó"
     érték: 2
     cél: "vé_veszteség"
   id: "helyhez_kötve"
@@ -221,14 +221,14 @@ harci_helyzetek:
   - text: "Vakharc - félhomályban nullázza bónuszaidat, mert az ellenfél is rosszabbul lát."
   - text: "Fárasztó Taktika NEM alkalmazható Láthatatlan ellenfél ellen."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 1
     cél: "té_dobás"
-  - operátor: "flat"
+  - mód: "flat"
     érték: 1
     cél: "vé_csökkentés"
     megjegyzés: "VÉ csökkentés: +1 bónusz"
-  - operátor: "flat"
+  - mód: "flat"
     érték: 5
     cél: "VÉ"
   id: "láthatatlan_részlegesen"
@@ -244,14 +244,14 @@ harci_helyzetek:
   - text: "Fárasztó Taktika NEM alkalmazható Láthatatlan ellenfél ellen."
   - text: "Ha bármely érzékeléssel (Infra) meglátnak, elveszted előnyödet, vagy 1 fokot, vagy mind 2-t (helyzetfüggő)."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 2
     cél: "té_dobás"
-  - operátor: "flat"
+  - mód: "flat"
     érték: 2
     cél: "vé_csökkentés"
     megjegyzés: "VÉ csökkentés: +2 bónusz"
-  - operátor: "flat"
+  - mód: "flat"
     érték: 10
     cél: "VÉ"
   id: "láthatatlan_teljesen"
@@ -265,7 +265,7 @@ harci_helyzetek:
   - text: "Roham (zuhanás) külön, plusz számolandó."
   - text: "Fárasztó taktika használható."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 2
     cél: "té_dobás"
   id: "levegőből"
@@ -291,7 +291,7 @@ harci_helyzetek:
   megjegyzések:
   - text: "Harc hátasról helyzetben NEM jár pluszban ez a módosító."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 1
     cél: "té_dobás"
   id: "magasabbról"
@@ -308,10 +308,10 @@ harci_helyzetek:
   - text: "Alakzatot is meg lehet lepni: ilyen Észlelés szituációban az alakzat Csoportos szellemi Észlelés képzettségpróbát dob."
   - text: "Ugyanez vonatkozik a Lopakodás/rejtőzés és észlelése szituációra is."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 1
     cél: "té_dobás"
-  - operátor: "flat"
+  - mód: "flat"
     érték: 2
     cél: "vé_csökkentés"
     megjegyzés: "VÉ csökkentés: +2"
@@ -335,7 +335,7 @@ harci_helyzetek:
   - text: "Manőver: Leütés hátulról, Rávetődés hátulról - követelményük az Orvtámadás helyzet."
   - text: "Manőverek és Orvtámadás viszonya: Ellenpróba dobás csak."
   hatások:
-  - operátor: "előny"
+  - mód: "előny"
     érték: 2
     cél: "té_dobás"
   tiltja_taktikákat: true
@@ -382,10 +382,10 @@ harci_helyzetek:
   megjegyzések:
   - text: "A Kétkezesség fortély megszünteti: bármelyik kezeddel levonás nélkül tudsz harcolni, de csak 1 fegyverrel."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
   id: "gyengébb_kéz"
@@ -398,7 +398,7 @@ harci_helyzetek:
   megjegyzések:
   - text: "Mérsékli: Vakharc fejlesztése, Infralátás, Ultralátás fortélyok."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
   id: "vakharc_félhomály"
@@ -411,7 +411,7 @@ harci_helyzetek:
   megjegyzések:
   - text: "Mérsékli: Vakharc fejlesztése, Infralátás, Ultralátás fortélyok."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -2
     cél: "té_dobás"
   id: "vakharc_sötétben"
@@ -425,10 +425,10 @@ harci_helyzetek:
   - text: "Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet."
   - text: "Megszűntetése (eloltás): harcban 1 kör, harcon kívül 1 kör."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
   id: "tűz_ruhán_1"
@@ -442,10 +442,10 @@ harci_helyzetek:
   - text: "Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér."
   - text: "Megszűntetése (eloltás): harcban nem lehetséges, harcon kívül 2 kör, külső segítség szükséges."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -2
     cél: "té_dobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -2
     cél: "cé_dobás"
   id: "tűz_ruhán_2"
@@ -470,10 +470,10 @@ harci_helyzetek:
   megjegyzések:
   - text: "Példa: kapu, belógó falrész mögül harcolsz."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "flat"
+  - mód: "flat"
     érték: 5
     cél: "VÉ"
   id: "takarásban"
@@ -487,10 +487,10 @@ harci_helyzetek:
   - text: "Ha társadat akarod védeni, kiterjesztheted rá Védő Értékedet."
   - text: "A hátrányokat csökkentheted a Testőr fortély tanulásával."
   hatások:
-  - operátor: "szöveges"
+  - mód: "szöveges"
     cél: "támadások_száma"
     megjegyzés: "Többszörös támadás elvesztés"
-  - operátor: "duplázás"
+  - mód: "szorzó"
     érték: 2
     cél: "vé_veszteség"
   id: "vé_kiterjesztés"
@@ -503,13 +503,13 @@ harci_helyzetek:
   megjegyzések:
   - text: "Megszűntetése harcban: 1 támadás feláldozásáért kitörölheted szemedből a vért."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "té_dobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "érzék_próba"
     megjegyzés: "Látás"
@@ -587,7 +587,7 @@ harci_helyzetek:
   megjegyzések:
   - text: "Kioltja: Lövés reflexből fejlesztése fortély."
   hatások:
-  - operátor: "hátrány"
+  - mód: "hátrány"
     érték: -1
     cél: "cé_dobás"
   id: "lövés_reflexből"
@@ -599,7 +599,7 @@ harci_helyzetek:
   infó: "Nyílpuskával csak minden 2. körben lehetséges lőni."
   megjegyzések: []
   hatások:
-  - operátor: "szöveges"
+  - mód: "szöveges"
     cél: "támadások_száma"
     megjegyzés: "1/2 kör"
   id: "nyílpuska_újratöltés"

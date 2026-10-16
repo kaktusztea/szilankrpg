@@ -34,8 +34,8 @@ taktikák:
   fokozatos: false
   módosítók: {}
   hatások:
-  - { hatás: "override", érték: 3, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés: 3 fixen", feltétel: "" }
-  - { hatás: "flat", érték: 1, cél: "vé_csökkentés", megjegyzés: "Fegyverelőnyben: +1 VÉ csökkentés", feltétel: "harci_helyzet:fegyverelőny" }
+  - { mód: "override", érték: 3, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés: 3 fixen", feltétel: "" }
+  - { mód: "flat", érték: 1, cél: "vé_csökkentés", megjegyzés: "Fegyverelőnyben: +1 VÉ csökkentés", feltétel: "harci_helyzet:fegyverelőny" }
   megjegyzés: "Nincs támadódobás."
   megkötések:
   - típus: "harci_helyzet"
@@ -86,7 +86,7 @@ taktikák:
     VÉ: -10
     SP: 7
   hatások:
-  - { hatás: "szorzó", érték: 2, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés dupla", feltétel: "" }
+  - { mód: "szorzó", érték: 2, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés dupla", feltétel: "" }
   megjegyzés: "Max 1x/küzdelem. Első oda-vissza csapás. VÉ csökk 2x."
   megkötések:
   - típus: "harcmodor"
@@ -123,7 +123,7 @@ taktikák:
     VÉ: -8
     SP: 5
   hatások:
-  - { hatás: "szorzó", érték: 2, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés dupla", feltétel: "" }
+  - { mód: "szorzó", érték: 2, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés dupla", feltétel: "" }
   megjegyzés: "Első oda-vissza csapás. VÉ csökk 2x."
   megkötések:
   - típus: "harcmodor"
@@ -228,7 +228,7 @@ taktikák:
   módosítók:
     TÉ: -10
   hatások:
-  - hatás: "hátrány"
+  - mód: "hátrány"
     érték: -2
     cél: "sebzésdobás"
     megjegyzés: "Sebzésdobás: Hátrány-2"

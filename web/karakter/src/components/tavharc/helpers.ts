@@ -57,7 +57,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
     const def = data.harciHelyzetek.find(d => d.név === hNév);
     if (!def?.hatások) continue;
     for (const h of def.hatások) {
-      if (h.cél === 'CÉ' && h.operátor === 'flat' && h.érték) total += h.érték;
+      if (h.cél === 'CÉ' && h.mód === 'flat' && h.érték) total += h.érték;
     }
   }
   // Taktika módosítók: CÉ bónuszok aktív taktikákból

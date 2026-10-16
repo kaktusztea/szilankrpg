@@ -43,7 +43,7 @@ export function calcVéCsökkentés(
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface TaktikaHatás {
-  hatás?: string;
+  mód?: string;
   érték?: number;
   cél: string;
   megjegyzés?: string;
@@ -58,7 +58,7 @@ export interface TaktikaHatás {
 export function calcVéCsökkentésSzorzó(hatások: TaktikaHatás[] | undefined): number {
   let szorzó = 1;
   for (const h of hatások ?? []) {
-    if (h.cél !== 'vé_csökkentés' || h.hatás !== 'szorzó') continue;
+    if (h.cél !== 'vé_csökkentés' || h.mód !== 'szorzó') continue;
     szorzó = Math.max(szorzó, h.érték ?? 1);
   }
   return szorzó;
@@ -91,8 +91,8 @@ export function calcTaktikaVéCsökkentésBázis(
   for (const h of hatások ?? []) {
     if (h.cél !== 'vé_csökkentés') continue;
     if (h.feltétel && !feltételTeljesül(h.feltétel)) continue;
-    if (h.hatás === 'override') érték = h.érték ?? 0;
-    else if (h.hatás === 'flat') érték += h.érték ?? 0;
+    if (h.mód === 'override') érték = h.érték ?? 0;
+    else if (h.mód === 'flat') érték += h.érték ?? 0;
   }
   return érték;
 }

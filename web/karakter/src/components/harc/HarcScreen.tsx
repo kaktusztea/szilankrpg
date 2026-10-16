@@ -66,7 +66,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   /** delta: nyers változás (pozitív = csökkenés, negatív = visszanyerés); reset=true → teljes törlés. */
   const changeVé = useCallback((delta: number, reset = false) => {
     // Csökkenéskor (delta > 0) a "VÉ veszteség duplázódik" jellegű harci helyzetek szorzót adnak
-    // (Földön fekve, Helyhez kötve, VÉ kiterjesztés - l. harci_helyzetek.yaml "duplázás" operátor).
+    // (Földön fekve, Helyhez kötve, VÉ kiterjesztés - l. harci_helyzetek.yaml `mód: szorzó`, cél: vé_veszteség).
     const scaledDelta = delta > 0 ? delta * hc.véVeszSzorzó : delta;
     if (delta > 0 && hc.véVeszSzorzó !== 1) setVéSzorzóInfo(delta);
     const newVal = reset ? 0 : Math.max(0, Math.min(session.vé_csökkenés + scaledDelta, hc.maxVéCsökk));

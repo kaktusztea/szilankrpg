@@ -74,7 +74,7 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 1,
         "cél": "té_dobás"
       }
@@ -101,7 +101,7 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 2,
         "cél": "té_dobás"
       }
@@ -125,12 +125,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       }
@@ -152,22 +152,22 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       },
       {
-        "operátor": "szöveges",
+        "mód": "szöveges",
         "cél": "támadások_száma",
         "megjegyzés": "Többszörös támadás elvesztés"
       },
       {
-        "operátor": "arányos",
+        "mód": "szorzó",
         "érték": 0.5,
         "cél": "mozgás"
       }
@@ -225,12 +225,12 @@
     "megjegyzések": [],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -2,
         "cél": "té_dobás"
       },
       {
-        "operátor": "duplázás",
+        "mód": "szorzó",
         "érték": 2,
         "cél": "vé_veszteség"
       }
@@ -264,12 +264,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -2,
         "cél": "sebzésdobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -2,
         "cél": "cé_dobás"
       }
@@ -299,12 +299,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "sebzésdobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       }
@@ -324,12 +324,12 @@
     "megjegyzések": [],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "szöveges",
+        "mód": "szöveges",
         "cél": "vé_veszteség",
         "megjegyzés": "Pajzs VÉ nem számít"
       }
@@ -351,12 +351,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "duplázás",
+        "mód": "szorzó",
         "érték": 2,
         "cél": "vé_veszteség"
       }
@@ -431,18 +431,18 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "flat",
+        "mód": "flat",
         "érték": 1,
         "cél": "vé_csökkentés",
         "megjegyzés": "VÉ csökkentés: +1 bónusz"
       },
       {
-        "operátor": "flat",
+        "mód": "flat",
         "érték": 5,
         "cél": "VÉ"
       }
@@ -475,18 +475,18 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 2,
         "cél": "té_dobás"
       },
       {
-        "operátor": "flat",
+        "mód": "flat",
         "érték": 2,
         "cél": "vé_csökkentés",
         "megjegyzés": "VÉ csökkentés: +2 bónusz"
       },
       {
-        "operátor": "flat",
+        "mód": "flat",
         "érték": 10,
         "cél": "VÉ"
       }
@@ -513,7 +513,7 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 2,
         "cél": "té_dobás"
       }
@@ -569,7 +569,7 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 1,
         "cél": "té_dobás"
       }
@@ -611,12 +611,12 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "flat",
+        "mód": "flat",
         "érték": 2,
         "cél": "vé_csökkentés",
         "megjegyzés": "VÉ csökkentés: +2"
@@ -669,7 +669,7 @@
     ],
     "hatások": [
       {
-        "operátor": "előny",
+        "mód": "előny",
         "érték": 2,
         "cél": "té_dobás"
       }
@@ -757,12 +757,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       }
@@ -784,7 +784,7 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       }
@@ -808,7 +808,7 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -2,
         "cél": "té_dobás"
       }
@@ -835,12 +835,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       }
@@ -867,12 +867,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -2,
         "cél": "té_dobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -2,
         "cél": "cé_dobás"
       }
@@ -918,12 +918,12 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "flat",
+        "mód": "flat",
         "érték": 5,
         "cél": "VÉ"
       }
@@ -953,12 +953,12 @@
     ],
     "hatások": [
       {
-        "operátor": "szöveges",
+        "mód": "szöveges",
         "cél": "támadások_száma",
         "megjegyzés": "Többszörös támadás elvesztés"
       },
       {
-        "operátor": "duplázás",
+        "mód": "szorzó",
         "érték": 2,
         "cél": "vé_veszteség"
       }
@@ -982,17 +982,17 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       },
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "érzék_próba",
         "megjegyzés": "Látás"
@@ -1148,7 +1148,7 @@
     ],
     "hatások": [
       {
-        "operátor": "hátrány",
+        "mód": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       }
@@ -1166,7 +1166,7 @@
     "megjegyzések": [],
     "hatások": [
       {
-        "operátor": "szöveges",
+        "mód": "szöveges",
         "cél": "támadások_száma",
         "megjegyzés": "1/2 kör"
       }

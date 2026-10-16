@@ -43,8 +43,7 @@ function extractHatások(hatások: StatuszHatas[] | undefined, forrás: string, 
   const result: DobásHatás[] = [];
   for (const h of hatások) {
     if (!célFilter.has(h.cél)) continue;
-    // Státusz hatások 'operátor' kulcsot, taktika hatások 'hatás' kulcsot használnak - mindkettőt elfogadjuk.
-    const op = h.operátor ?? (h as { hatás?: string }).hatás;
+    const op = h.mód;
     if (op !== 'előny' && op !== 'hátrány' && op !== 'enyhít' && op !== 'szöveges') continue;
     result.push({
       forrás,

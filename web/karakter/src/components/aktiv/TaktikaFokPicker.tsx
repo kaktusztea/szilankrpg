@@ -24,7 +24,7 @@ export function TaktikaFokPicker({ fokválasztó, data, karakter, session, onSel
         onClick={() => onSelect(f.fok, existing < 0)}>
         <span className="aktiv-picker-item-name">{f.fok}. fok{f.fok > maxBaseFok && <span className="aktiv-extra-fok-dot">●</span>}</span>
         <span className="aktiv-picker-item-details">{formatFokMods(f)}</span>
-        {f.hatások?.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map((h: any) => h.megjegyzés || `${h.operátor} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
+        {f.hatások?.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map((h: any) => h.megjegyzés || `${h.mód} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
       </div>
     ))}
   </>;

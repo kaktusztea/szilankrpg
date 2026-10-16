@@ -10,7 +10,7 @@
         "alcím": "Előny+1",
         "hatások": [
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 1,
             "cél": "tulajdonságpróba",
             "megjegyzés": "adott Tulajdonságra, feltétel esetén"
@@ -22,7 +22,7 @@
         "alcím": "Előny+2",
         "hatások": [
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 2,
             "cél": "tulajdonságpróba",
             "megjegyzés": "adott Tulajdonságra, feltétel esetén"
@@ -42,7 +42,7 @@
         "alcím": "Hátrány-1",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "megjegyzés": "adott Tulajdonságra"
@@ -54,7 +54,7 @@
         "alcím": "Hátrány-2",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "megjegyzés": "adott Tulajdonságra"
@@ -74,7 +74,7 @@
         "alcím": "Előny+1",
         "hatások": [
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
             "megjegyzés": "adott Képzettségre"
@@ -86,7 +86,7 @@
         "alcím": "Előny+2",
         "hatások": [
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 2,
             "cél": "képzettségpróba",
             "megjegyzés": "adott Képzettségre"
@@ -106,7 +106,7 @@
         "alcím": "Hátrány-1",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
             "megjegyzés": "adott Képzettségre"
@@ -118,7 +118,7 @@
         "alcím": "Hátrány-2",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
             "megjegyzés": "adott Képzettségre"
@@ -158,7 +158,7 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
             "megjegyzés": "KM határozza meg"
@@ -175,7 +175,7 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
             "megjegyzés": "KM határozza meg"
@@ -200,11 +200,11 @@
         ],
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "harci_képesség"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás",
             "megjegyzés": "nyaktól lefelé"
           }
@@ -215,15 +215,15 @@
         "alcím": "Paralízis",
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "harci_képesség"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "beszéd"
           }
         ]
@@ -246,12 +246,12 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "té_dobás"
           },
           {
-            "operátor": "arányos",
+            "mód": "szorzó",
             "érték": 0.5,
             "cél": "mozgás"
           }
@@ -262,12 +262,12 @@
         "alcím": "Erősen",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "té_dobás"
           },
           {
-            "operátor": "arányos",
+            "mód": "szorzó",
             "érték": 0.5,
             "cél": "mozgás"
           }
@@ -291,32 +291,32 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "té_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "támadások_száma",
             "megjegyzés": "-1 támadás"
           },
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
             "alcél": "Fájdalomtűrés",
@@ -337,36 +337,36 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "té_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba"
           },
           {
-            "operátor": "max_limit",
+            "mód": "max_limit",
             "érték": 1,
             "cél": "támadások_száma"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "varázslás"
           },
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 2,
             "cél": "képzettségpróba",
             "alcél": "Fájdalomtűrés",
@@ -384,33 +384,33 @@
         ],
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "harci_képesség"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "képzettségpróba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "tulajdonságpróba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "beszéd"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "pszi"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "varázslás"
           }
         ]
@@ -428,35 +428,35 @@
         ],
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "harci_képesség"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "képzettségpróba"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "tulajdonságpróba"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "beszéd"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "pszi"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "varázslás"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "antyssjárás",
             "megjegyzés": "Antysson ragadsz"
           }
@@ -486,7 +486,7 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "érzék_próba"
           }
@@ -497,7 +497,7 @@
         "alcím": "Részleges",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "érzék_próba"
           }
@@ -508,7 +508,7 @@
         "alcím": "Teljes",
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "érzék_próba",
             "megjegyzés": "automatikus kudarc"
           }
@@ -532,12 +532,12 @@
         ],
         "hatások": [
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "harci_képesség",
             "megjegyzés": "Védő taktika (VÉ:+3, TÉ:-6)"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba"
           }
@@ -553,17 +553,17 @@
         ],
         "hatások": [
           {
-            "operátor": "max_limit",
+            "mód": "max_limit",
             "érték": 1,
             "cél": "támadások_száma"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "harci_képesség",
             "megjegyzés": "Teljes Védekezés taktika kötelező"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "szociális_próba",
             "megjegyzés": "automatikus kudarc"
           }
@@ -579,19 +579,19 @@
         ],
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "harci_képesség"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "varázslás"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "pszi"
           }
         ]
@@ -614,12 +614,12 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "szellemi_próba"
           }
@@ -638,22 +638,22 @@
         ],
         "hatások": [
           {
-            "operátor": "duplázás",
+            "mód": "szorzó",
             "érték": 2,
             "cél": "vé_veszteség"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "szellemi_próba"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "általános",
             "megjegyzés": "FP S1 feltöltődik"
           }
@@ -672,33 +672,33 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
             "megjegyzés": "nem-harci"
           },
           {
-            "operátor": "max_limit",
+            "mód": "max_limit",
             "érték": 1,
             "cél": "támadások_száma"
           },
           {
-            "operátor": "duplázás",
+            "mód": "szorzó",
             "érték": 2,
             "cél": "vé_veszteség"
           },
           {
-            "operátor": "arányos",
+            "mód": "szorzó",
             "érték": 0.5,
             "cél": "mozgás"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "képzettségpróba",
             "megjegyzés": "FP S2; Automatikus kudarc Harci akrobatika"
           }
@@ -722,7 +722,7 @@
         ],
         "hatások": [
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "képzettségpróba",
             "megjegyzés": "KM adhat Előny+1 vagy Hátrány-1 szituáció függően"
           }
@@ -738,13 +738,13 @@
         ],
         "hatások": [
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
             "megjegyzés": "kreatív tevékenységekre"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
             "megjegyzés": "koncentrációt igénylő feladatokra"
@@ -761,18 +761,18 @@
         ],
         "hatások": [
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
             "megjegyzés": "kreatív tevékenységekre"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "varázslás",
             "megjegyzés": "Ellenséges varázstudó Asztrálmágia Komplexitás-próbájára Hátrány-1 (az asztrális befolyásolásnak jobban ellenáll az eufórikus személy)"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
             "megjegyzés": "koncentrációt igénylő feladatokra"
@@ -789,19 +789,19 @@
         ],
         "hatások": [
           {
-            "operátor": "előny",
+            "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
             "megjegyzés": "obszesszió tárgyához kötődő"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
             "megjegyzés": "minden más"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "képzettségpróba",
             "megjegyzés": "Automatikus kudarc (KM mondja meg mire)"
           }
@@ -828,7 +828,7 @@
         ],
         "hatások": [
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "harci_képesség",
             "megjegyzés": "Kötelező max Támadó taktika; Kezdeményező használható, más defenzív taktika nem"
           }
@@ -839,7 +839,7 @@
         "alcím": "Gyűlölet",
         "hatások": [
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "harci_képesség",
             "megjegyzés": "Kötelező max Támadó taktika (Kezdeményező használható); Öngyilkos roham kötelező egyszer, utána Roham kötelező (ha van hely)"
           }
@@ -850,17 +850,17 @@
         "alcím": "Őrjöngés",
         "hatások": [
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "harci_képesség",
             "megjegyzés": "Mint Gyűlölet + mindenkit megtámad"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "szociális_próba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "szellemi_próba",
             "megjegyzés": "automatikus kudarc"
           }
@@ -890,7 +890,7 @@
         ],
         "hatások": [
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "tulajdonságpróba",
             "megjegyzés": "Automatikus Akaraterő próba (12)"
           }
@@ -906,7 +906,7 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Akaraterő próbára"
@@ -923,7 +923,7 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Akaraterő próbára"
@@ -943,17 +943,17 @@
         "alcím": "Közepes",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "té_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "fizikai_próba"
           }
@@ -964,22 +964,22 @@
         "alcím": "Erős",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "té_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "fizikai_próba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba"
           }
@@ -1003,12 +1003,12 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba"
           }
@@ -1024,12 +1024,12 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba"
           }
@@ -1045,30 +1045,30 @@
         ],
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "képzettségpróba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "tulajdonságpróba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "harci_képesség"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás",
             "megjegyzés": "lecövekelt"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "pszi"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "varázslás"
           }
         ]
@@ -1086,7 +1086,7 @@
         "alcím": "Kialvatlanság",
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "érzék_próba",
             "megjegyzés": "Észlelés"
@@ -1098,21 +1098,21 @@
         "alcím": "Eltompultság",
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "pszi"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "szellemi_próba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "varázslás",
             "megjegyzés": "random hatás esélye ↑"
@@ -1124,22 +1124,22 @@
         "alcím": "Delírium",
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "pszi"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "varázslás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "szellemi_próba",
             "megjegyzés": "nem-mágikus"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "szociális_próba"
           }
@@ -1163,19 +1163,19 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Önuralom"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Érzékenység"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba",
             "megjegyzés": "Önuralom/Érzékenység használatakor"
@@ -1192,19 +1192,19 @@
         ],
         "hatások": [
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Önuralom"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Érzékenység"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "szociális_próba",
             "megjegyzés": "Önuralom/Érzékenység használatakor"
@@ -1232,28 +1232,28 @@
         ],
         "hatások": [
           {
-            "operátor": "max_limit",
+            "mód": "max_limit",
             "érték": 1,
             "cél": "támadások_száma"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Gyorsaság, Ügyesség"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "szellemi_próba"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "szociális_próba"
           }
@@ -1272,38 +1272,38 @@
         ],
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "szellemi_próba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "szociális_próba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "ké_dobás"
           },
           {
-            "operátor": "hátrány",
+            "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "megjegyzés": "Gyorsaság, Ügyesség"
           },
           {
-            "operátor": "max_limit",
+            "mód": "max_limit",
             "érték": 1,
             "cél": "támadások_száma"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás",
             "megjegyzés": "lecövekelt"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "beszéd",
             "megjegyzés": "zavart"
           }
@@ -1328,34 +1328,34 @@
         ],
         "hatások": [
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "tulajdonságpróba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "képzettségpróba",
             "megjegyzés": "automatikus kudarc"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "harci_képesség"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "mozgás",
             "megjegyzés": "lecövekelt"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "pszi"
           },
           {
-            "operátor": "letilt",
+            "mód": "letilt",
             "cél": "varázslás"
           },
           {
-            "operátor": "szöveges",
+            "mód": "szöveges",
             "cél": "beszéd",
             "megjegyzés": "zavart vagy némult"
           }

@@ -19,7 +19,7 @@ function makeData(): GameData {
         feltétel_kulcs: 'taktika:visszafogott',
         fokozatos: false,
         módosítók: { TÉ: -10 },
-        hatások: [{ hatás: 'hátrány', érték: -2, cél: 'sebzésdobás', megjegyzés: 'Sebzésdobás: Hátrány-2' }],
+        hatások: [{ mód: 'hátrány', érték: -2, cél: 'sebzésdobás', megjegyzés: 'Sebzésdobás: Hátrány-2' }],
         kombó_mód: 'whitelist',
         kombó_lista: [],
       },

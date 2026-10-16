@@ -37,32 +37,32 @@ describe('calcTaktikaVéCsökkentésBázis - sorrend-alapú akkumulálás (schem
 
   it('Fárasztás: override 3, Fegyverelőny feltétel nem teljesül → 3', () => {
     const hatások = [
-      { hatás: 'override', érték: 3, cél: 'vé_csökkentés' },
-      { hatás: 'flat', érték: 1, cél: 'vé_csökkentés', feltétel: 'harci_helyzet:fegyverelőny' },
+      { mód: 'override', érték: 3, cél: 'vé_csökkentés' },
+      { mód: 'flat', érték: 1, cél: 'vé_csökkentés', feltétel: 'harci_helyzet:fegyverelőny' },
     ];
     expect(calcTaktikaVéCsökkentésBázis(hatások, nincsFeltétel)).toBe(3);
   });
 
   it('Fárasztás: override 3 + flat 1 (feltétel teljesül) → 4', () => {
     const hatások = [
-      { hatás: 'override', érték: 3, cél: 'vé_csökkentés' },
-      { hatás: 'flat', érték: 1, cél: 'vé_csökkentés', feltétel: 'harci_helyzet:fegyverelőny' },
+      { mód: 'override', érték: 3, cél: 'vé_csökkentés' },
+      { mód: 'flat', érték: 1, cél: 'vé_csökkentés', feltétel: 'harci_helyzet:fegyverelőny' },
     ];
     expect(calcTaktikaVéCsökkentésBázis(hatások, mindigTeljesül)).toBe(4);
   });
 
   it('ha a flat ELŐBB jönne mint az override, az override törli (sorrend számít)', () => {
     const hatások = [
-      { hatás: 'flat', érték: 1, cél: 'vé_csökkentés' },
-      { hatás: 'override', érték: 3, cél: 'vé_csökkentés' },
+      { mód: 'flat', érték: 1, cél: 'vé_csökkentés' },
+      { mód: 'override', érték: 3, cél: 'vé_csökkentés' },
     ];
     expect(calcTaktikaVéCsökkentésBázis(hatások, mindigTeljesül)).toBe(3);
   });
 
   it('más célú hatások (pl. té_dobás) nem számítanak bele', () => {
     const hatások = [
-      { hatás: 'hátrány', érték: -2, cél: 'sebzésdobás' },
-      { hatás: 'override', érték: 3, cél: 'vé_csökkentés' },
+      { mód: 'hátrány', érték: -2, cél: 'sebzésdobás' },
+      { mód: 'override', érték: 3, cél: 'vé_csökkentés' },
     ];
     expect(calcTaktikaVéCsökkentésBázis(hatások, mindigTeljesül)).toBe(3);
   });
@@ -75,8 +75,8 @@ describe('calcTaktikaVéCsökkentésBázis - sorrend-alapú akkumulálás (schem
 
 describe('calcTaktikaVéCsökkentés - taktika + fortély bővítés', () => {
   const farasztásHatások = [
-    { hatás: 'override', érték: 3, cél: 'vé_csökkentés', megjegyzés: 'VÉ csökkentés: 3 fixen' },
-    { hatás: 'flat', érték: 1, cél: 'vé_csökkentés', feltétel: 'harci_helyzet:fegyverelőny' },
+    { mód: 'override', érték: 3, cél: 'vé_csökkentés', megjegyzés: 'VÉ csökkentés: 3 fixen' },
+    { mód: 'flat', érték: 1, cél: 'vé_csökkentés', feltétel: 'harci_helyzet:fegyverelőny' },
   ];
   const farasztásFortély = [
     { forrás: 'Fárasztás', módosítók: [{ cél: 'vé_csökkentés', érték: 1, mód: 'flat', feltétel: 'taktika:fárasztás' }] },
@@ -114,22 +114,22 @@ describe('calcTaktikaVéCsökkentés - taktika + fortély bővítés', () => {
 
 describe('calcVéCsökkentésSzorzó - Roham/Öngyilkos roham duplázás', () => {
   it('Roham hatás ([szorzó 2, cél vé_csökkentés]) → 2', () => {
-    const hatások = [{ hatás: 'szorzó', érték: 2, cél: 'vé_csökkentés' }];
+    const hatások = [{ mód: 'szorzó', érték: 2, cél: 'vé_csökkentés' }];
     expect(calcVéCsökkentésSzorzó(hatások)).toBe(2);
   });
 
   it('nincs szorzó hatás → 1', () => {
     expect(calcVéCsökkentésSzorzó(undefined)).toBe(1);
     expect(calcVéCsökkentésSzorzó([])).toBe(1);
-    expect(calcVéCsökkentésSzorzó([{ hatás: 'override', érték: 3, cél: 'vé_csökkentés' }])).toBe(1);
+    expect(calcVéCsökkentésSzorzó([{ mód: 'override', érték: 3, cél: 'vé_csökkentés' }])).toBe(1);
   });
 
   it('más célú szorzó nem számít bele', () => {
-    expect(calcVéCsökkentésSzorzó([{ hatás: 'szorzó', érték: 2, cél: 'sebzésdobás' }])).toBe(1);
+    expect(calcVéCsökkentésSzorzó([{ mód: 'szorzó', érték: 2, cél: 'sebzésdobás' }])).toBe(1);
   });
 
   it('több szorzó: a legnagyobb számít (§42.3, nem kumulál)', () => {
-    const hatások = [{ hatás: 'szorzó', érték: 2, cél: 'vé_csökkentés' }, { hatás: 'szorzó', érték: 2, cél: 'vé_csökkentés' }];
+    const hatások = [{ mód: 'szorzó', érték: 2, cél: 'vé_csökkentés' }, { mód: 'szorzó', érték: 2, cél: 'vé_csökkentés' }];
     expect(calcVéCsökkentésSzorzó(hatások)).toBe(2);
   });
 });

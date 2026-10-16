@@ -87,7 +87,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const { pajzsVÉ, fogásResult } = calcFogás(k, session, data, fortelyMods);
 
   const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');
-  const { szorzó: véVeszSzorzó, forrás: véVeszSzorzóForrás } = véVesztésSzorzó(session.aktív_helyzetek, data.harciHelyzetek, session.aktív_státuszok, data.statuszok, data.hatasOperatorok);
+  const { szorzó: véVeszSzorzó, forrás: véVeszSzorzóForrás } = véVesztésSzorzó(session.aktív_helyzetek, data.harciHelyzetek, session.aktív_státuszok, data.statuszok);
 
   // Max VÉ csökkenés
   const maxVéCsökk = Math.max(0, ...(kétkezesResult

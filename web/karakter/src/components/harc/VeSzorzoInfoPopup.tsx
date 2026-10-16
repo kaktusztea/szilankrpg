@@ -11,7 +11,7 @@ interface Props {
 
 /**
  * Info popup: ha egy VÉ csökkentés gomb a nominálistól eltérő (szorzott) értéket von le
- * (l. harci_helyzetek.yaml "duplázás" operátor, cél: vé_veszteség), ez a popup tömören
+ * (l. harci_helyzetek.yaml `mód: szorzó`, cél: vé_veszteség), ez a popup tömören
  * levezeti a valós levonást és az okát. Mellékatt/Escape bezár, nincs interakció.
  */
 export function VeSzorzoInfoPopup({ alap, szorzó, forrás, onClose }: Props) {

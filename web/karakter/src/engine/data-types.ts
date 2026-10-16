@@ -167,8 +167,8 @@ export interface ManoverEntry {
 }
 
 export interface StatuszHatas {
-  operátor?: string;
-  hatás?: string;
+  /** Egységes effekt-mód (konstansok.yaml → effekt_módok, engine_spec §42.2). */
+  mód: string;
   érték?: number;
   cél: string;
   alcél?: string;
@@ -188,14 +188,6 @@ export interface StatuszEntry {
   többszörös?: boolean;
   alkategóriák?: string[];
   fokok: StatuszFok[];
-}
-
-export interface HatasOperator {
-  id: string;
-  név: string;
-  mód: string;
-  /** Több aktív forrás halmozási szabálya (opcionális). "legnagyobb" = a legnagyobb érték dominál, nem kumulál. */
-  halmozás?: string;
 }
 
 export interface EsemenyEntry {
@@ -347,11 +339,6 @@ export interface GameData {
   harciHelyzetek: HarciHelyzetEntry[];
   manoverek: ManoverEntry[];
   statuszok: StatuszEntry[];
-  // Betöltve, de a runtime JELENLEG nem olvassa (a statuszok/helyzetek közvetlenül az operátor-neveket
-  // hordozzák stringként). A hatas_operatorok a mechanika-definíciós réteg - build-validáció használja
-  // (validate_statuszok / validate_hatasok_katalogus), runtime fogyasztója a §42 egységes effekt-modell
-  // kiértékelője lesz (engine_spec §22.4 + §42). Szándékos előkészítés, NEM halott betöltés.
-  hatasOperatorok: HatasOperator[];
   esemenyek: EsemenyEntry[];
   hatterek: HatterekData;
   rules: Rule[];

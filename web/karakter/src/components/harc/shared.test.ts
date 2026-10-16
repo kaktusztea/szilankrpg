@@ -76,35 +76,29 @@ describe('coalesceVéHistory', () => {
 
 describe('véVesztésSzorzó', () => {
   const helyzetek = [
-    { név: 'Földön fekve', hatások: [{ operátor: 'duplázás', cél: 'vé_veszteség', érték: 2 }] },
-    { név: 'Csúszós talaj', hatások: [{ operátor: 'hátrány', cél: 'té_dobás', érték: -1 }] },
+    { név: 'Földön fekve', hatások: [{ mód: 'szorzó', cél: 'vé_veszteség', érték: 2 }] },
+    { név: 'Csúszós talaj', hatások: [{ mód: 'hátrány', cél: 'té_dobás', érték: -1 }] },
   ];
   it('returns 1x with no source when no active helyzet has the effect', () => {
     expect(véVesztésSzorzó(['Csúszós talaj'], helyzetek)).toEqual({ szorzó: 1, forrás: '' });
   });
-  it('returns 2x with the source name when a duplázás/vé_veszteség helyzet is active', () => {
+  it('returns 2x with the source name when a szorzó/vé_veszteség helyzet is active', () => {
     expect(véVesztésSzorzó(['Földön fekve'], helyzetek)).toEqual({ szorzó: 2, forrás: 'Földön fekve' });
   });
   it('ignores unrelated active helyzet entries', () => {
     expect(véVesztésSzorzó(['Nincs ilyen'], helyzetek)).toEqual({ szorzó: 1, forrás: '' });
   });
 
-  // Státusz-forrás bevonása + data-vezérelt halmozás (md/081 "Nem halmozható" → legnagyobb dominál).
+  // Státusz-forrás bevonása + halmozás (md/081 ökölszabály → legnagyobb dominál).
   const statuszok = [
-    { név: 'Fizikai', fokok: [{ fok: 2, hatások: [{ operátor: 'duplázás', cél: 'vé_veszteség', érték: 2 }] }] },
+    { név: 'Fizikai', fokok: [{ fok: 2, hatások: [{ mód: 'szorzó', cél: 'vé_veszteség', érték: 2 }] }] },
   ];
-  const opsLegnagyobb = [{ id: 'duplázás', halmozás: 'legnagyobb' }];
-  it('duplázás status source counts (Fizikai (2))', () => {
-    expect(véVesztésSzorzó([], helyzetek, ['Fizikai (2)'], statuszok, opsLegnagyobb))
+  it('szorzó status source counts (Fizikai (2))', () => {
+    expect(véVesztésSzorzó([], helyzetek, ['Fizikai (2)'], statuszok))
       .toEqual({ szorzó: 2, forrás: 'Fizikai (2)' });
   });
-  it('helyzet + státusz cross-layer does NOT stack - legnagyobb dominál (×2, not ×4)', () => {
-    expect(véVesztésSzorzó(['Földön fekve'], helyzetek, ['Fizikai (2)'], statuszok, opsLegnagyobb))
+  it('helyzet + státusz cross-layer does NOT stack - legnagyobb dominál (×2, not ×4, §42.3)', () => {
+    expect(véVesztésSzorzó(['Földön fekve'], helyzetek, ['Fizikai (2)'], statuszok))
       .toEqual({ szorzó: 2, forrás: 'Földön fekve' });
-  });
-  it('kumulál mode (no legnagyobb rule) multiplies sources', () => {
-    const opsKumulál = [{ id: 'duplázás', halmozás: 'kumulál' }];
-    expect(véVesztésSzorzó(['Földön fekve'], helyzetek, ['Fizikai (2)'], statuszok, opsKumulál).szorzó)
-      .toBe(4);
   });
 });

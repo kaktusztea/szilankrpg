@@ -1220,7 +1220,6 @@ Minden adat `fetchJson`-nel:
 - `tables/harci_helyzetek.json` - 32 harci helyzet (id, infó, hatások, csoport)
 - `tables/manoverek.json` - 38 manőver (id, típus, nehézség, fázisok, hatás lista, végrehajtás_té_módosító, követelmények, helyzetfüggő_módosítók)
 - `tables/statuszok.json` - 19 státusz (fokok, hatások)
-- `tables/hatas_operatorok.json` - 8 hatás mechanika típus
 - `tables/esemenyek.json` - 23 esemény/célpont
 - `tables/hatterek.json` - leíró + karma hátterek
 - `tables/tavharc_szorzok.json` - 5 szorzó kategória (célpont mozgás, lövész, méret, észlelhetőség, szél)

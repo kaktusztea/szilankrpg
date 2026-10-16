@@ -6,7 +6,7 @@ import { buildAktívFeltételek } from '../../engine/feltetelek';
 
 // --- Types ---
 
-interface HatásEntry { cél: string; operátor?: string; hatás?: string; érték?: number; megjegyzés?: string }
+interface HatásEntry { cél: string; mód: string; érték?: number; megjegyzés?: string }
 interface StátuszPerElem { név: string; alcím?: string; hatások: HatásEntry[] }
 interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
 interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
