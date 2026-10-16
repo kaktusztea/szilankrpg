@@ -153,9 +153,7 @@ Zúzó
                      (Vasököl, Markolatgomb)
   ököl               SP:-5, TÉ:-3, VÉ:-3
                      puha: FP-sebzés (Puszta kéz)
-  ököl-belharc       nincs
-                     puha: FP-sebzés (Puszta kéz
-                     Belharcban)
+                     Belharcban: TÉ/VÉ/SP 0 (Extra)
 Szúró
   pengehegy-rejtett  VÉ:-3
                      tenyérbe rejtett tüske

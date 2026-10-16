@@ -46,6 +46,15 @@ Hatás:    VÉ:0
 
 Páncélos ellenfél ellen a hárítási hátrány kiütközik.
 
+### Puszta kéz belharcban
+
+```
+Feltétel: Belharci helyzet
+Hatás:    TÉ:0, VÉ:0, SP:0
+```
+
+Puszta kéz belharcban: a fegyvertelen büntetés megszűnik. Természetes fegyver fortéllyal az SP 1 marad.
+
 ### Belharcban rések közt beszúr
 
 ```

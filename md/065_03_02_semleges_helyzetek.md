@@ -34,6 +34,7 @@ Max 1 fegyverhossz-kategória fegyver
 
 Puszta kéz harcértékei
   TÉ, VÉ, SP = 0
+  (Természetes fegyver: SP 1)
   Sebzés: FP
   1 ÉP / 5 FP
 ```

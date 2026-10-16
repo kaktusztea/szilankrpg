@@ -57,7 +57,6 @@ Zúzó felületek
   → buzogányfej-tompa
   → buzogányfej-szöges
   → ököl
-  → ököl-belharc
   → vasököl
 
 Szúró felületek
