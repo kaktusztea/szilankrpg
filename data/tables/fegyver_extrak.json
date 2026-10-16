@@ -116,7 +116,7 @@
   },
   "puszta_kez_belharcban": {
     "id": "puszta_kez_belharcban",
-    "név": "Belharcban nincs fegyvertelen büntetés",
+    "név": "Puszta kéz belharcban",
     "csoport": "harci_helyzet",
     "leírás": "Puszta kéz Belharci helyzetben: TÉ, VÉ, SP = 0 (a fegyvertelen büntetés megszűnik). Természetes fegyver fortéllyal az SP 1 marad.",
     "feltétel": [
