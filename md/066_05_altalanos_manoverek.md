@@ -304,7 +304,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 
 **Megjegyezés**: a **Fegyver markolat** sebzése: `k20 + 0 SP + Erőbónusz` (Zúzó)
 
-**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
+**Kapcsolódik**: [Manőverfókuszok: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
 
 <br />
 
@@ -448,7 +448,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély
 
-**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
+**Kapcsolódik**: [Manőverfókuszok: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
 
 <br />
 
