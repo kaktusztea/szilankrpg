@@ -22,7 +22,7 @@ export function KmJegyzetPopup({ betű, szín, név, jegyzet, onSave, onClose, o
     <PopupOverlay onClose={zár}>
       <div className="kep-prompt km-jegyzet-popup" onClick={e => e.stopPropagation()}>
         <label className="kep-prompt-label-bold-mb">
-          {név} (<span className="km-jel-betű" style={{ color: szín }}>{betű}</span>)
+          {név}{betű && <> (<span className="km-jel-betű" style={{ color: szín }}>{betű}</span>)</>}
         </label>
         <textarea
           className="km-jegyzet-input"

@@ -44,7 +44,7 @@ export function NjkSwitcher({ aktív, data, onLoad, onLoadError }: Props) {
     if (loaded && 'error' in loaded) onLoadError?.(loaded.error);
     else if (loaded) onLoad(loaded.karakter, loaded.undo);
   };
-  const { pressProps } = useLongPress<string>(setPickerUid, váltás);
+  const { pressProps } = useLongPress<string>(setPickerUid, váltás, 500, setJegyzetUid);
 
   if (njkok.length === 0) return null;
 
@@ -66,10 +66,11 @@ export function NjkSwitcher({ aktív, data, onLoad, onLoadError }: Props) {
         const stat = kar ? életerőStat(kar, data) : null;
         const harcérték = kar ? njkHarcértékStat(kar, data) : null;
         const jel = getKmJelölés(s.uid);
+        const halott = !!stat && stat.maradék === 0;
         return (
           <button
             key={s.uid}
-            className={`njk-box${s.uid === aktív.uid ? ' njk-box-active' : ''}`}
+            className={`njk-box${s.uid === aktív.uid ? ' njk-box-active' : ''}${halott ? ' njk-box-halott' : ''}`}
             style={stat ? { '--ep-arány': stat.arány, '--ep-szín': epSzín(stat.arány) } as React.CSSProperties : undefined}
             {...pressProps(s.uid)}
           >
@@ -88,7 +89,10 @@ export function NjkSwitcher({ aktív, data, onLoad, onLoadError }: Props) {
               </span>
             )}
             <span className="njk-box-név">{s.név}</span>
-            {stat && <span className="njk-box-stat">{statLabel(stat)}</span>}
+            {/* Halott NJK (ÉP 0): a stat helyett 💀 (helyspórolás). Élőnél marad a maradék/max Skat. */}
+            {halott
+              ? <span className="njk-box-halott-ikon" title="Halott (ÉP 0)">💀</span>
+              : stat && <span className="njk-box-stat">{statLabel(stat)}</span>}
             {harcérték && (
               <span className="njk-harcertek-tooltip" role="tooltip">
                 <span>KÉ: {harcérték.KÉ}</span>
@@ -133,15 +137,16 @@ export function NjkSwitcher({ aktív, data, onLoad, onLoadError }: Props) {
         />
       )}
 
-      {jegyzetNjk && jegyzetJel?.betű && (
+      {jegyzetNjk && (
         <KmJegyzetPopup
-          betű={jegyzetJel.betű}
-          szín={jegyzetJel.szín}
+          betű={jegyzetJel?.betű ?? ''}
+          szín={jegyzetJel?.szín ?? ''}
           név={jegyzetNjk.név}
-          jegyzet={jegyzetJel.jegyzet}
+          jegyzet={jegyzetJel?.jegyzet ?? ''}
           onClose={() => setJegyzetUid(null)}
           onSave={jegyzet => {
-            writeKmJelölés(jegyzetNjk.uid, { betű: jegyzetJel.betű, szín: jegyzetJel.szín, jegyzet });
+            // A meglévő betű/szín-jelölést megőrizzük (betű nélküli NJK-nál üres marad).
+            writeKmJelölés(jegyzetNjk.uid, { betű: jegyzetJel?.betű ?? '', szín: jegyzetJel?.szín ?? '', jegyzet });
             rerender(n => n + 1);
           }}
           onVáltás={jegyzetNjk.uid !== aktív.uid ? () => váltás(jegyzetNjk.uid) : undefined}

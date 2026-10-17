@@ -37,7 +37,8 @@ export function TavharcKalkulator({ cé, vé, sp, támadásLabel, szorzóÖsszeg
     <>
       <div className="th-main-row">
         <div className="th-value-main th-ce-ve-box th-ce-ve-clickable" onClick={onCéDobás}>
-          <span>CÉ: {cé}  ({támadásLabel})<span className="th-ce-sp-sep">•</span>SP: {sp === SP_NINCS ? '–' : sp}</span>
+          <span>CÉ: {cé}  ({támadásLabel})</span>
+          <span>SP: {sp === SP_NINCS ? '–' : `${sp >= 0 ? '+' : ''}${sp}`}</span>
           <span className={véClass}>VÉ: {vé}</span>
         </div>
         <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span className="th-szc-value">{szorzóÖsszeg} × {cella}</span></span>

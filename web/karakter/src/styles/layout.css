@@ -195,6 +195,21 @@
   font-weight: bold;
 }
 
+/* Halott NJK (ÉP 0): kiszürkített chip, nincs Életerő csík, 💀 a stat helyén. */
+.njk-box-halott {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+.njk-box-halott::before {
+  display: none;
+}
+.njk-box-halott-ikon {
+  position: relative;
+  z-index: 1;
+  margin-left: 6px;
+  font-size: 13px;
+}
+
 /* Fix fejléc: az aktív NJK aktuális harcértékei (KÉ/TÉ/VÉ) - gyors áttekintés */
 .njk-harcertek-fejlec {
   position: relative;
