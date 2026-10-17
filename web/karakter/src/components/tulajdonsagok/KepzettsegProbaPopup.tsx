@@ -257,7 +257,15 @@ export function KepzettsegProbaPopup({
           </div>
         )}
 
-        {/* --- Extrák (accordion nélkül, közvetlenül): Vállalás + Összetett sorok + Helyettesítés chip --- */}
+        {!vanEredmény && képzettségek.length > 1 && (
+          <div className="kep-proba-row">
+            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('hely')}>
+              Helyettesítés{helyettesítés ? `: ${képzettségNévId(helyettesítés, { kepzettsegDefs })}` : ' →'}
+            </button>
+          </div>
+        )}
+
+        {/* --- Extrák (accordion nélkül, közvetlenül): Vállalás + Összetett sorok --- */}
         {!vanEredmény && (
         <div className="kep-proba-extras-flat">
           <div className="kep-proba-osszetett-row">
@@ -272,11 +280,6 @@ export function KepzettsegProbaPopup({
                 onClick={() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); resetDobás(); }}>+{n}M</ExtraGomb>
             ))}
           </div>
-          {képzettségek.length > 1 && (
-            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('hely')}>
-              Helyettesítés{helyettesítés ? `: ${képzettségNévId(helyettesítés, { kepzettsegDefs })}` : ' →'}
-            </button>
-          )}
         </div>
         )}
 
