@@ -17,6 +17,16 @@ export function isTaktikaAllowed(
   const def = data.taktikak.find(t => t.név === név);
   if (!def) return false;
 
+  // szűrő_harcmodorok: a taktika CSAK akkor engedélyezett, ha az aktív távfegyver harcmodora
+  // szerepel a szűrőben (pl. Kitartott célzás → Íjászat/Lövészet). Enélkül a taktika bekapcsolható
+  // lenne hajító fegyverrel is, ahol a CÉ-bónusz (getFortélyCÉ) jogosan 0 - félrevezető megjegyzéssel.
+  // Egy igazságforrás: ugyanaz a `szűrő_harcmodorok`, amit a getFortélyCÉ a bónuszhoz használ.
+  if (def.szűrő_harcmodorok?.length) {
+    const tfPeldany = karakter.távfegyverek[session.aktív_távfegyver_index];
+    const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+    if (!tfDef || !def.szűrő_harcmodorok.includes((tfDef.harcmodor ?? '').toLowerCase())) return false;
+  }
+
   if (def.megkötések) {
     for (const mk of def.megkötések) {
       if (mk.típus === 'harci_helyzet' && mk.mód === 'tiltott') {
@@ -51,22 +61,25 @@ export function isTaktikaAllowed(
     }
   }
 
-  // Kombó validáció
-  if (session.aktív_taktikák.length === 0) return true;
-  for (const aktív of session.aktív_taktikák) {
+  // Kombó validáció. A `név` taktikát a már aktív TÖBBI taktikához mérjük - önmagát kizárjuk,
+  // mert az isTaktikaAllowed-ot a már bekapcsolt taktikára is hívjuk (useTaktikaInvalidation).
+  // Felvételkor a `név` úgysincs a session-ben, ott a kizárás no-op.
+  const mások = session.aktív_taktikák.filter(a => a.név !== név);
+  if (mások.length === 0) return true;
+  for (const aktív of mások) {
     const aktívDef = data.taktikak.find(t => t.név === aktív.név);
     if (!aktívDef) continue;
     if (aktívDef.kombó_mód === 'whitelist' && !aktívDef.kombó_lista.includes(név)) return false;
     if (aktívDef.kombó_mód === 'blacklist' && aktívDef.kombó_lista.includes(név)) return false;
   }
-  if (def.kombó_mód === 'whitelist' && def.kombó_lista.length === 0 && session.aktív_taktikák.length > 0) return false;
+  if (def.kombó_mód === 'whitelist' && def.kombó_lista.length === 0 && mások.length > 0) return false;
   if (def.kombó_mód === 'whitelist') {
-    for (const aktív of session.aktív_taktikák) {
+    for (const aktív of mások) {
       if (!def.kombó_lista.includes(aktív.név)) return false;
     }
   }
   if (def.kombó_mód === 'blacklist') {
-    for (const aktív of session.aktív_taktikák) {
+    for (const aktív of mások) {
       if (def.kombó_lista.includes(aktív.név)) return false;
     }
   }

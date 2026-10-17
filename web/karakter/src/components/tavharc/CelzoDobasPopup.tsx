@@ -105,7 +105,7 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
     <PopupOverlay onClose={onClose}>
       <div className="tamado-dobas-popup">
         {result && <button className="sebzes-reset-btn" onClick={() => setResult(null)}>⟲</button>}
-        <div className="ke-dobas-header">Célzó dobás</div>
+        <div className="ke-dobas-header">Célzó dobás ({cé})</div>
 
         {!result ? (
           <>

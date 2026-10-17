@@ -176,7 +176,19 @@ export function collectDobásInfo(
 /** Collect effects for CÉ dobás (Távharc fül). */
 export function collectCéDobásInfo(session: Session, karakter: Karakter, data: GameData): CéDobásInfo {
   const { hatások, taktikaMegjegyzések } = collectSessionHatások(session, karakter, data, new Set(['cé_dobás']));
-  return { céHatások: hatások, céMegjegyzések: taktikaMegjegyzések.filter(m => /cé|célz/i.test(m.szöveg)) };
+  // Az aktív távfegyver harcmodora (kisbetűsítve) - a szűrő_harcmodoros taktikák megjegyzés-szűréséhez.
+  const tfPeldany = karakter.távfegyverek[session.aktív_távfegyver_index];
+  const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+  const aktívHarcmodor = (tfDef?.harcmodor ?? '').toLowerCase();
+  const céMegjegyzések = taktikaMegjegyzések.filter(m => {
+    if (!/cé|célz/i.test(m.szöveg)) return false;
+    // Ha a forrás-taktikának van szűrő_harcmodorok-ja és az aktív távfegyver NEM egyezik, a megjegyzés
+    // félrevezető (a CÉ-bónusz úgysem érvényesül, l. getFortélyCÉ) → kihagyjuk.
+    const tDef = data.taktikak.find(t => t.név === m.forrás);
+    if (tDef?.szűrő_harcmodorok?.length && !tDef.szűrő_harcmodorok.includes(aktívHarcmodor)) return false;
+    return true;
+  });
+  return { céHatások: hatások, céMegjegyzések };
 }
 
 /** Sum the net Előny/Hátrány level for a given set of effects. */
