@@ -351,6 +351,12 @@
   gap: 4px;
 }
 .kep-proba-dual-col .he-field-btn { white-space: nowrap; }
+/* Tiltott célszám-chip (pl. Ellenpróba, amíg Másodlagos próba aktív): szürke + nem kattintható. */
+.kep-proba-neh-list .he-field-btn:disabled,
+.kep-proba-dual-col .he-field-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
 
 /* Kiterjesztés státusz pötty (kicsi, mint a Szabad fortély pötty) */
 .kep-proba-dot-green, .kep-proba-dot-yellow, .kep-proba-dot-red {
@@ -489,6 +495,11 @@
   gap: 6px;
 }
 .kep-proba-eh-row .kep-proba-extras-btn { flex: 1 1 0; width: auto; }
+.kep-proba-osszetett-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
 
 .kep-proba-extras-row {
   display: flex;

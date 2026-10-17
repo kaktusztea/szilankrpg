@@ -4,7 +4,7 @@ import { ManualDicePicker } from '../harc/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
 import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from './proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraSor, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -95,12 +95,12 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
                 </ExtraGomb>
               ))}
             </div>
-            <ExtraSor label="🔗">
+            <div className="kep-proba-osszetett-row">
               {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
-                <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title={`${n}db Másodlagos dobás (-${p.másodlagos_levonás})`}
+                <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
                   onClick={() => { setÖsszetettDb(összetettDb === n ? 0 : n); d.reset(); }}>+{n}M</ExtraGomb>
               ))}
-            </ExtraSor>
+            </div>
           </div>
         )}
 
