@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isTaktikaAllowed } from './taktika-megkotes';
+import { isTaktikaAllowed, taktikaTiltásOka } from './taktika-megkotes';
 import { harcFejlécÉrtékek } from '../harc/harc-fejlec-calc';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 
@@ -54,5 +54,36 @@ describe('taktika megkötés: szűrő_harcmodorok (Kitartott célzás)', () => {
     const kk = karakterFegyverrel(íj!.név);
     const session = { ...k.session, aktív_taktikák: [{ név: 'Kitartott célzás' }], aktív_helyzetek: [], aktív_távfegyver_index: 0 };
     expect(isTaktikaAllowed('Kitartott célzás', session as typeof k.session, kk as typeof k, data)).toBe(true);
+  });
+});
+
+/** taktikaTiltásOka: a toggle-picker letiltott soraihoz - ha tiltott, legyen ok; ha engedélyezett, null.
+ * Konzisztens az isTaktikaAllowed-dal (ugyanazok az ágak). */
+describe('taktikaTiltásOka', () => {
+  const data = loadGameDataSync();
+  const k = data.testKarakter;
+  const üresSession = { ...k.session, aktív_taktikák: [], aktív_helyzetek: [] };
+
+  it('helyzet-szükséges taktika ok-ot ad üres helyzetnél, de engedélyezve null', () => {
+    const tiltott = !isTaktikaAllowed('(Lég)Lovas roham', üresSession as typeof k.session, k, data);
+    const ok = taktikaTiltásOka('(Lég)Lovas roham', üresSession as typeof k.session, k, data);
+    // Ha a testKarakter-nél tiltott (nincs lovas helyzet), legyen értelmes ok; különben null.
+    expect(tiltott ? (ok && ok.includes('helyzet')) : ok === null).toBeTruthy();
+  });
+
+  it('engedélyezett taktikára null az ok', () => {
+    // A "Támadó" alap taktika megkötés nélkül - üres session-ben engedélyezett.
+    if (isTaktikaAllowed('Támadó', üresSession as typeof k.session, k, data)) {
+      expect(taktikaTiltásOka('Támadó', üresSession as typeof k.session, k, data)).toBeNull();
+    }
+  });
+
+  it('az ok megléte ⇔ a taktika tiltott (allow-fn-nel konzisztens)', () => {
+    for (const név of ['(Lég)Lovas roham', '(Lég)Lovas támadás galoppból', '1 támadás', 'Támadó', 'Védő']) {
+      if (!data.taktikak.some(t => t.név === név)) continue;
+      const engedélyezett = isTaktikaAllowed(név, üresSession as typeof k.session, k, data);
+      const ok = taktikaTiltásOka(név, üresSession as typeof k.session, k, data);
+      expect(engedélyezett).toBe(ok === null);
+    }
   });
 });

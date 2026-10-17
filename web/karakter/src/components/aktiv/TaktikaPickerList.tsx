@@ -1,6 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
-import { isTaktikaAllowed, formatFokMods } from './AktivHelpers';
+import { isTaktikaAllowed, taktikaTiltásOka, formatFokMods } from './AktivHelpers';
 
 interface Props {
   data: GameData;
@@ -40,6 +40,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
       const aktív = session.aktív_taktikák.some(a => a.név === t.név);
       // Toggle-módban a nem-aktív, de nem-engedélyezett taktikák halványan/letiltva (okkal: kizárás/megkötés).
       const tiltott = toggle && !aktív && !isTaktikaAllowed(t.név, session, karakter, data);
+      const tiltásOk = tiltott ? taktikaTiltásOka(t.név, session, karakter, data) : null;
       return <div key={t.név}>
         {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header">🏹 Távharci taktikák</div>}
         <button type="button"
@@ -55,6 +56,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
               ? t.fokok.map((f: any) => `${f.fok}: ${formatFokMods(f)}`).join(' | ')
               : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ') : ''}
           </span>
+          {tiltásOk && <span className="aktiv-picker-item-tiltas">🔒 {tiltásOk}</span>}
           {t.megjegyzés && <span className="aktiv-picker-item-hatas">{t.megjegyzés}</span>}
         </button>
       </div>;
