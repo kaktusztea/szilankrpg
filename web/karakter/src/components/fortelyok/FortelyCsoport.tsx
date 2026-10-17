@@ -6,7 +6,7 @@ import { calcNyelvPontKeret, calcNyelvTúllépés, isSlotIngyenes } from './help
 export function FortelyCsoport({
   csoport, csoportLabel, csoportDefs, slotok, collapsed, gameMode, tsz,
   többszörösNevek, fortélyok, fegyverNevek,
-  nyelvtanulásSzint, nyelvFokLabels, képzettségek, harcmodorNevek, data,
+  nyelvtanulásSzint, nyelvFokLabels, képzettségek, harcmodorNevek, fajFortélyok, data,
   onToggleCollapse, onAddFortely, onToggleInfo, onFokChange, onRemove, onHint, infoTarget
 }: FortelyCsoportProps) {
   if (gameMode && slotok.length === 0) return null;
@@ -63,6 +63,7 @@ export function FortelyCsoport({
               képzettségek={képzettségek}
               fortélyok={fortélyok}
               harcmodorNevek={harcmodorNevek}
+              fajFortélyok={fajFortélyok}
               fegyverHarcmodorNév={fegyverHarcmodorNév}
               onToggleInfo={() => onToggleInfo(globalIdx)}
               onFokChange={fok => onFokChange(globalIdx, fok)}

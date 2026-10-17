@@ -18,7 +18,9 @@ tulajdonság_keretek:
 faj_misztérium: "Kyr"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Kultúrkör"]
+ajánlott_fortélyok:
+  - név: "Kultúrkör"
+    max_fok: 1
 ajánlott_képzettségek: ["Etikett", "Ősi nyelv ismerete"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

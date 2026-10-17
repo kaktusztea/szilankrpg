@@ -16,7 +16,9 @@ tulajdonság_keretek:
 faj_misztérium: "Sáskaharcos"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: []
+ajánlott_fortélyok:
+  - név: "Természetes páncél"
+    max_fok: 3
 ajánlott_képzettségek: []
 tiltott_képzettségek: []
 tiltott_fortélyok: []

@@ -27,7 +27,10 @@ fokok:
   - fok: 1
     követelménytext:
       - text: "Kapcsolódó Faj Háttér szükséges."
-    követelmények: ""
+    követelmények:
+      - név: "faj"
+        érték: 1
+        típus: "faj"
     hatástext:
       - text: "Mintha telihold fényénél tájékozódnál vaksötétben."
       - text: "Sötét: Félhomály módosítóival harcolhatsz."
@@ -35,7 +38,10 @@ fokok:
   - fok: 2
     követelménytext:
       - text: "Kapcsolódó Faj Háttér szükséges."
-    követelmények: ""
+    követelmények:
+      - név: "faj"
+        érték: 2
+        típus: "faj"
     hatástext:
       - text: "Harcban nem jár levonás. Mintha szürkületkor tájékozódnál."
       - text: "Vaksötétben tudsz olvasni, de lassan."
@@ -43,7 +49,10 @@ fokok:
   - fok: 3
     követelménytext:
       - text: "Kapcsolódó Faj Háttér szükséges."
-    követelmények: ""
+    követelmények:
+      - név: "faj"
+        érték: 3
+        típus: "faj"
     hatástext:
       - text: "Tökéletesen látsz, mintha nappal lenne."
       - text: "Úgy tudsz olvasni, mint napvilágnál."

@@ -13,7 +13,7 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok: []
-faj_misztérium: "Északi Ember"
+faj_misztérium: "Ember (Északi)"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok: []

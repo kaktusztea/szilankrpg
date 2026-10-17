@@ -20,7 +20,9 @@ tulajdonság_keretek:
 faj_misztérium: "Ork"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Kitartás"]
+ajánlott_fortélyok:
+  - név: "Kitartás"
+    max_fok: 1
 ajánlott_képzettségek: ["Természetjárás"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

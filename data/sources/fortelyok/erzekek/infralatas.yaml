@@ -33,14 +33,20 @@ fokok:
   - fok: 1
     követelménytext:
       - text: "Kapcsolódó Faj Háttér szükséges."
-    követelmények: ""
+    követelmények:
+      - név: "faj"
+        érték: 1
+        típus: "faj"
     hatástext:
       - text: "Mintha félhomályban tájékozódnál. Sötét: Félhomály módosítóival harcolsz."
     módosítók: ""
   - fok: 2
     követelménytext:
       - text: "Kapcsolódó Faj Háttér szükséges."
-    követelmények: ""
+    követelmények:
+      - név: "faj"
+        érték: 2
+        típus: "faj"
     hatástext:
       - text: "Ha van hőkép-eltérés, látod a sötétben. Harcban nem jár levonás."
     módosítók: ""

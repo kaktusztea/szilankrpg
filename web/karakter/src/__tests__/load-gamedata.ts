@@ -29,6 +29,7 @@ export function loadGameDataSync(): GameData {
     fajNevek: j('tables/fajok.json'),
     primerFortelyok: j('tables/primer_fortelyok.json'),
     fajKeretek: j('tables/faj_tulajdonsag_keretek.json'),
+    fajFortélyok: j('tables/faj_fortelyok.json'),
     fortelySummaries: j('tables/fortelyok.json'),
     tradiciok: j('tables/tradiciok.json'),
     nyelvek: j('tables/nyelvek.json'),

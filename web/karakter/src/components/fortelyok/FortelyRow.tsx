@@ -9,7 +9,7 @@ import { MAX_FORTÉLY_FOK, DELETE_BTN_TAP_ZONE_PX } from '../../ui-constants';
 export function FortelyRow({
   slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,
   isIngyenes, onHint, overLimit, nyelvPontKeret, nyelvFokLabels,
-  képzettségek, fortélyok, harcmodorNevek, fegyverHarcmodorNév, kiterjesztHiányos
+  képzettségek, fortélyok, harcmodorNevek, fajFortélyok, fegyverHarcmodorNév, kiterjesztHiányos
 }: FortelyRowProps) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
@@ -32,7 +32,7 @@ export function FortelyRow({
   const fokDef = def?.fokok.find(f => f.fok === slot.fok);
   const label = displayName(slot);
   const giftBadge = def && def.kp_perfok < 0 ? ` 🎁${Math.abs(def.kp_perfok * slot.fok)}KP` : '';
-  const hiányzóKöv = checkKövetelmények(fokDef, képzettségek, fortélyok, harcmodorNevek, fegyverHarcmodorNév);
+  const hiányzóKöv = checkKövetelmények(fokDef, képzettségek, fortélyok, harcmodorNevek, fegyverHarcmodorNév, fajFortélyok, slot.név);
   const követelményHiba = hiányzóKöv.length > 0;
   const isNyelv = slot.név === 'Nyelvismeret';
 

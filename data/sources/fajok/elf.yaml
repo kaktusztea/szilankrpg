@@ -20,7 +20,11 @@ tulajdonság_keretek:
 faj_misztérium: "Elf"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Baráti állatok", "Kitartás"]
+ajánlott_fortélyok:
+  - név: "Baráti állatok"
+    max_fok: 1
+  - név: "Kitartás"
+    max_fok: 1
 ajánlott_képzettségek: ["Természetjárás", "Lovaglás"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

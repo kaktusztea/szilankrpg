@@ -22,7 +22,11 @@ tulajdonság_keretek:
 faj_misztérium: "Goblin"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Hazudozás", "Suhanó árnyék"]
-ajánlott_képzettségek: ["alvilági képzettségek"]
+ajánlott_fortélyok:
+  - név: "Hazudozás"
+    max_fok: 1
+  - név: "Suhanó árnyék"
+    max_fok: 1
+ajánlott_képzettségek: ["Álcázás/Álruha", "Csapdaállítás", "Lopakodás/rejtőzés", "Lopás", "Szerencsejáték", "Zárnyitás"]  # md: "alvilági képzettségek" csoport
 tiltott_képzettségek: []
 tiltott_fortélyok: []

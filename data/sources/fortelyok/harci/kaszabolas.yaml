@@ -23,7 +23,7 @@ fokok:
   követelménytext:
     - text: "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 4.szint"
   követelmények:
-  - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 4
     típus: "képzettség"
   hatástext:

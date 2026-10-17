@@ -29,7 +29,7 @@ TODO ⭕
 
 ### Ajánlott fortélyok
 
-- xyz
+- [Természetes páncél](../fortelyok.harci/termeszetes_pancel.md) - 3. fok
 
 ### Ajánlott képzettségek
 

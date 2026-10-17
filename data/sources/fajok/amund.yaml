@@ -20,7 +20,11 @@ tulajdonság_keretek:
 faj_misztérium: "Amund"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Kínokozás"]
-ajánlott_képzettségek: ["Ősi nyelv ismerete", "Természetjárás", "Tájtípus: sivatagi"]
+ajánlott_fortélyok:
+  - név: "Kínokozás"
+    max_fok: 2
+  - név: "Tájtípus - sivatagi"
+    max_fok: 1
+ajánlott_képzettségek: ["Ősi nyelv ismerete", "Természetjárás"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

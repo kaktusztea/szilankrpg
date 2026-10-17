@@ -22,7 +22,10 @@ fokok:
 - fok: 1
   követelménytext:
     - text: "Kapcsolódó Faj Háttér szükséges."
-  követelmények: ""
+  követelmények:
+    - név: "faj"
+      érték: 1
+      típus: "faj"
   hatástext: 
   - text: "+2 Hallás Tulajdonságpróbákra."
   - text: "2x messzebbről meghallasz bármit, mint egy átlagos ember."

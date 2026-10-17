@@ -95,7 +95,10 @@ export function checkKövetelmények(
   képzettségek: { név: string; szint: number }[],
   fortélyok: { név: string; fok: number }[],
   harcmodorNevek: string[],
-  fegyverHarcmodorNév?: string
+  fegyverHarcmodorNév?: string,
+  /** A karakter fajának ajánlott fortélyai max fokkal (data.fajFortélyok[faj]) - a `faj` típushoz. */
+  fajFortélyok: Record<string, number> = {},
+  fortélyNév = '',
 ): string[] {
   if (!fokDef?.követelmények?.length) return [];
   const hiányzó: string[] = [];
@@ -116,6 +119,9 @@ export function checkKövetelmények(
       const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
       const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
       if (megvan) hiányzó.push(`Nem lehet: ${név} fortély`);
+    } else if (kov.típus === 'faj') {
+      // A faj ajánlja-e ezt a fortélyt legalább `érték` fokig (érzék / ajánlott fortélyok, md: hatterek.faji).
+      if ((fajFortélyok[fortélyNév] ?? 0) < kov.érték) hiányzó.push(`Faj Háttér (${fortélyNév} ≥ ${kov.érték}. fok)`);
     }
     // típus 'min_fegyverméret': NEM felvételi feltétel - harci-helyzet-kötött, fegyverfüggő
     // WARNING (l. getMinFegyverhosszWarning). Itt tudatosan kihagyjuk, nem blokkolja a felvételt.

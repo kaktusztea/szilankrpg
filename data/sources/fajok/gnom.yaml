@@ -22,7 +22,15 @@ tulajdonság_keretek:
 faj_misztérium: "Gnóm"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Építészet", "Mechanika", "Zártörő"]
-ajánlott_képzettségek: ["Kvantikum", "Térképészet"]
+ajánlott_fortélyok:
+  - név: "Építészet"
+    max_fok: 2
+  - név: "Mechanika"
+    max_fok: 2
+  - név: "Zártörő"
+    max_fok: 1
+  - név: "Térképészet"
+    max_fok: 1
+ajánlott_képzettségek: ["Kvantikum"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

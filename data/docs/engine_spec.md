@@ -1035,6 +1035,11 @@ validáció:
     éf.név MUST BE IN faj_def.érzék_fortélyok[].név
     éf.fok ≤ faj_def.érzék_fortélyok[].max_fok
 
+  // Faj-kötött fortélyok (`faj` követelmény-típus): a faj érzék- VAGY ajánlott fortélya, max fokig.
+  // Adat: faj `ajánlott_fortélyok: [{név, max_fok}]` (md fok-jelölés, ennek hiányában a fortély maxfoka)
+  // → generált `faj_fortelyok.json` (faj → {fortély: max_fok}, érzék + ajánlott összefésülve).
+  // Webapp: `checkKövetelmények` (fortelyok/helpers.ts) - nem blokkol, hiány-jelzés a fortély-soron.
+
   // Kötelező fortélyok: a karakter MUST HAVE mindegyiket
   FOR EACH kf in faj_def.kötelező_fortélyok:
     kf MUST BE IN karakter.fortélyok[].név
@@ -1745,6 +1750,9 @@ Típusok (felvételi gate):
 - `képzettség` - karakter képzettség szintje ≥ érték (név lista → VAGY)
 - `fortély` - karakter felvett fortély fokszáma ≥ érték (többszörös fortélynál bármely példány teljesítheti, pl. Nyelvismeret)
 - `tiltó_fortély` - a megnevezett fortély megléte (fok ≥ érték) KIZÁRÓ ok
+- `faj` - a karakter faja ajánlja a fortélyt legalább `érték` fokig (`{név: "faj", érték: <fok>, típus: "faj"}`, §20)
+
+Név-hivatkozás build-gate (`generate_tables.py → validate_nev_hivatkozasok`): a követelmények és a faj-listák nevei PONTOSAN egy létező fortély / képzettség `név`-ére mutatnak (harcmodor: a `konstansok.harcmodorok` nagy kezdőbetűvel).
 
 Fegyver v2 követelmény-típusok (session-függő, harc-fül kontextus - nem a FortelyokScreen felvételi gate-je):
 - `min_fegyverméret` - az aktív fegyver fegyverhossza ≥ érték; `feltétel` mezővel harci helyzethez kötve (pl. `harci_helyzet:lovas_harc`). Webapp: **warning-only** (getMinFegyverhosszWarning), NEM blokkol - a KM/játékos döntése.

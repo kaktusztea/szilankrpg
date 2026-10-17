@@ -22,7 +22,13 @@ tulajdonság_keretek:
 faj_misztérium: "Khál"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Természetes fegyver", "Kétkezes Harc", "Kitartás"]
+ajánlott_fortélyok:
+  - név: "Természetes fegyver"
+    max_fok: 1
+  - név: "Kétkezes harc"
+    max_fok: 3
+  - név: "Kitartás"
+    max_fok: 1
 ajánlott_képzettségek: ["Mászás", "Akrobatika"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

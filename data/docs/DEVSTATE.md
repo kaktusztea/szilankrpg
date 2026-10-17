@@ -40,6 +40,18 @@ napló: `refactorlog/2026-10-16.md`. Nyitott:
 - [ ] Statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben.
 
 ---
+## Fortély-követelmények gépesítése 🚧
+
+20 fortély-foknál csak szöveges követelmény volt (`követelménytext`), gépi (`követelmények`) nem. Kész (2026-10-17):
+`faj` típus (13 fok: érzék-fortélyok, Természetes fegyver/páncél), faj `ajánlott_fortélyok: [{név, max_fok}]`,
+Sáskaharcos → Természetes páncél 3. fok, név-hivatkozás build-gate. Nyitott:
+
+- [ ] Kétkezes harc (1-3): „nagyobb fegyver harcmodora N, kisebb M" - új `kétkezes_harcmodor` típus (felvételkor: van-e N és M szintű harcmodor; Harc fül kétkezes fogásnál ⚠ a kézben lévő fegyverek szerint, a `min_fegyverméret` mintájára).
+- [ ] Szöveges maradók (Kínokozás: használati feltétel; Körkörös harc: körönkénti próba; Éneklés: KM-mérlegelés) - jelölés (pl. `csak_szöveges`) + build-gate: szöveges követelmény gépi pár vagy jelölés nélkül → hiba.
+- [ ] `szituacio_mapping.yaml` → `Úszás` kulcs: az Úszás fortély, nem képzettség → a mapping csak képzettségre generál, a bejegyzés halott. Döntés: fortély-kulcs támogatása, vagy törlés. Utána a kulcsok is a név-gate alá.
+- [ ] Fortély / képzettség stabil `id` (név helyett hivatkozás; átnevezés-biztos mentett karakter és data-referencia). Saját terv + refaktor-napló kell: séma (177 + 81 yaml), `karakter.yaml` (fortélyok/képzettségek név → id, a többszörös „AlapNév: AlNév" alak), ~26 prefixes forrás-hivatkozás, `szituacio_mapping`, `kiterjeszti`, `követelmények`, faj-listák, `rules.json`, ~30 TS név-literál, GUI id → név feloldás. A slug (fájlnév) NEM jó id (átnevezéskor változik).
+
+---
 ## Fegyverek: hangolás és utómunka 🚧
 
 Utómunka (a v2 bevezetés lezárult, l. "Elkészült"):

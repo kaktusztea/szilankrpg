@@ -335,6 +335,8 @@ export interface GameData {
   kiterjesztesek: Record<string, KiterjesztesEntry[]>;
   fajNevek: string[];
   fajKeretek: Record<string, Record<string, [number, number]>>;
+  /** faj → {fortély név: max fok} (érzék + ajánlott fortélyok) - a `faj` követelmény-típushoz. */
+  fajFortélyok: Record<string, Record<string, number>>;
   primerFortelyok: string[];
   fortelySummaries: FortelySummary[];
   tradiciok: TradicioEntry[];

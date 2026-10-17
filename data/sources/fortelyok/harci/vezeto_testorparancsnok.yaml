@@ -29,7 +29,7 @@ fokok:
       - text: "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 6.szint"
       - text: "Észlelés - 6.szint"
     követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+      - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
         érték: 6
         típus: "képzettség"
       - név: "Észlelés"
@@ -43,7 +43,7 @@ fokok:
       - text: "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 6.szint"
       - text: "Észlelés - 9.szint"
     követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+      - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
         érték: 6
         típus: "képzettség"
       - név: "Észlelés"

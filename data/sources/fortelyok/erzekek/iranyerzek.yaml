@@ -27,7 +27,10 @@ fokok:
   - fok: 1
     követelménytext:
       - text: "Kapcsolódó Faj Háttér szükséges."
-    követelmények: ""
+    követelmények:
+      - név: "faj"
+        érték: 1
+        típus: "faj"
     hatástext:
       - text: "Mindig tudod, érzed, merre van észak."
       - text: "Magassági tájékozódásra nem alkalmas (fel/le)."

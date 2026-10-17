@@ -22,7 +22,17 @@ tulajdonság_keretek:
 faj_misztérium: "Törpe"
 kötelező_fortélyok: []
 faji_fortélyok: []
-ajánlott_fortélyok: ["Építészet", "Kitartás", "Keresés/rejtés", "Nyomolvasás/eltűntetés", "Villámgyors keresés/rejtés"]
+ajánlott_fortélyok:
+  - név: "Építészet"
+    max_fok: 2
+  - név: "Kitartás"
+    max_fok: 1
+  - név: "Keresés/rejtés"
+    max_fok: 2
+  - név: "Nyomolvasás/eltűntetés"
+    max_fok: 2
+  - név: "Villámgyors keresés/rejtés"
+    max_fok: 1
 ajánlott_képzettségek: []
 tiltott_képzettségek: []
 tiltott_fortélyok: []

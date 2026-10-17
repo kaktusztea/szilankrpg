@@ -19,7 +19,7 @@ async function fetchJson<T>(path: string): Promise<T> {
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, tavharcSzorzok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, esemenyek, hatterek, sebzésjellegPáncélMátrix, fegyverExtrák, fegyverIdeaTabla, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, tavharcSzorzok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fajFortélyok, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, esemenyek, hatterek, sebzésjellegPáncélMátrix, fegyverExtrák, fegyverIdeaTabla, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek_v2.json'),
     fetchJson<TavfegyverAlap[]>('tables/tavfegyverek_v2.json'),
@@ -31,6 +31,7 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<string[]>('tables/fajok.json'),
     fetchJson<string[]>('tables/primer_fortelyok.json'),
     fetchJson<Record<string, Record<string, [number, number]>>>('tables/faj_tulajdonsag_keretek.json'),
+    fetchJson<Record<string, Record<string, number>>>('tables/faj_fortelyok.json'),
     fetchJson<FortelySummary[]>('tables/fortelyok.json'),
     fetchJson<TradicioEntry[]>('tables/tradiciok.json'),
     fetchJson<NyelvEntry[]>('tables/nyelvek.json'),
@@ -60,5 +61,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, tavharcSzorzok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, esemenyek, hatterek, sebzésjellegPáncélMátrix, fegyverExtrák, fegyverIdeaTabla, rules: rulesFile.rules, emptyKarakter, testKarakter };
+  return { konstansok, fegyverek, tavfegyverek, tavharcSzorzok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fajFortélyok, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, esemenyek, hatterek, sebzésjellegPáncélMátrix, fegyverExtrák, fegyverIdeaTabla, rules: rulesFile.rules, emptyKarakter, testKarakter };
 }

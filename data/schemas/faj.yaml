@@ -18,7 +18,9 @@ tulajdonság_keretek:
 faj_misztérium: ""              # kapcsolódó faj misztérium képzettség neve
 kötelező_fortélyok: []          # pl: ["Apró méretű lény"]
 faji_fortélyok: []              # fajhoz kötött egyedi fortélyok
-ajánlott_fortélyok: []          # pl: ["Baráti állatok", "Kitartás"]
+ajánlott_fortélyok:             # ajánlott fortélyok és meddig ajánlottak (md: hatterek.faji "Ajánlott fortélyok")
+  - név: ""                     # fortély `név` (pontos egyezés, build-gate)
+    max_fok: 0                  # md fok-jelölés, ennek hiányában a fortély maxfoka. A `faj` követelmény ehhez mér.
 ajánlott_képzettségek: []       # pl: ["Természetjárás", "Lovaglás"]
 tiltott_képzettségek: []        # Pl. "lovaglás"
 tiltott_fortélyok: []           # Pl. "úszás"

@@ -26,6 +26,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
   const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(fortCsoportSorrend.map(c => [c.id, c.label]));
   const NYELV_FOK_LABELS: Record<number, string> = data.konstansok.nyelv_fok_nevek;
   const többszörösNevek = useMemo(() => new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név)), [data]);
+  const fajFortélyok = data.fajFortélyok[karakter.hátterek.faj] ?? {};
   const harcmodorNevek = useMemo(() => [...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági], [data]);
   const defsByGroup = useMemo(() => buildDefsByGroup(data.fortelySummaries), [data]);
 
@@ -52,6 +53,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
             nyelvFokLabels={NYELV_FOK_LABELS}
             képzettségek={képzettségek}
             harcmodorNevek={harcmodorNevek}
+            fajFortélyok={fajFortélyok}
             data={data}
             onToggleCollapse={() => setCollapsedGroups(prev => { const n = new Set(prev); if (n.has(csoport)) n.delete(csoport); else n.add(csoport); return n; })}
             onAddFortely={addFortely}

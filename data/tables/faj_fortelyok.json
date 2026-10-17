@@ -1,0 +1,80 @@
+{
+  "Amund": {
+    "Ultralátás": 3,
+    "Kínokozás": 2,
+    "Tájtípus - sivatagi": 1
+  },
+  "Anatyda": {},
+  "Buzzgoblin": {},
+  "Dzsenn": {},
+  "Elar": {},
+  "Elf": {
+    "Emberentúli látás": 1,
+    "Infralátás": 2,
+    "Baráti állatok": 1,
+    "Kitartás": 1
+  },
+  "Ember (Déli)": {},
+  "Ember (Északi)": {},
+  "Ember (korg)": {},
+  "Ember (Slan)": {},
+  "Erdőpille": {},
+  "Feenhar": {},
+  "Gnóm": {
+    "Ultralátás": 3,
+    "Infralátás": 2,
+    "Irányérzék": 1,
+    "Építészet": 2,
+    "Mechanika": 2,
+    "Zártörő": 1,
+    "Térképészet": 1
+  },
+  "Goblin": {
+    "Emberentúli szaglás": 1,
+    "Infralátás": 1,
+    "Irányérzék": 1,
+    "Hazudozás": 1,
+    "Suhanó árnyék": 1
+  },
+  "Gyíklény (snil)": {},
+  "Hómanó": {},
+  "Homoki elf": {},
+  "Kevert fajú": {},
+  "Khál": {
+    "Emberentúli látás": 1,
+    "Emberentúli hallás": 1,
+    "Emberentúli szaglás": 1,
+    "Természetes fegyver": 1,
+    "Kétkezes harc": 3,
+    "Kitartás": 1
+  },
+  "Kineta": {},
+  "Kobold": {},
+  "Kyr": {
+    "Ultralátás": 1,
+    "Kultúrkör": 1
+  },
+  "Ork": {
+    "Infralátás": 2,
+    "Emberentúli szaglás": 1,
+    "Kitartás": 1
+  },
+  "Sáskaharcos": {
+    "Természetes páncél": 3
+  },
+  "Törpe": {
+    "Ultralátás": 3,
+    "Infralátás": 2,
+    "Irányérzék": 1,
+    "Építészet": 2,
+    "Kitartás": 1,
+    "Keresés/rejtés": 2,
+    "Nyomolvasás/eltűntetés": 2,
+    "Villámgyors keresés/rejtés": 1
+  },
+  "Tűzkobold": {},
+  "Udvari ork": {
+    "Infralátás": 1,
+    "Emberentúli szaglás": 1
+  }
+}

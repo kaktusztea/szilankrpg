@@ -23,7 +23,7 @@ fokok:
   követelménytext:
     - text: "Kovács szabad fortély"
   követelmények:
-    - név: "Kovács"
+    - név: "Kézműves: Kovács"
       érték: 1
       típus: "fortély"
   hatástext: 
@@ -33,7 +33,7 @@ fokok:
   követelménytext:
     - text: "Kovács szabad fortély"
   követelmények:
-    - név: "Kovács"
+    - név: "Kézműves: Kovács"
       érték: 1
       típus: "fortély"
   hatástext: 

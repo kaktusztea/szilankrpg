@@ -29,6 +29,8 @@ export interface FortelyCsoportProps {
   nyelvFokLabels: Record<number, string>;
   képzettségek: { név: string; szint: number }[];
   harcmodorNevek: string[];
+  /** A karakter fajának ajánlott fortélyai (max fok) - `faj` követelmény. */
+  fajFortélyok: Record<string, number>;
   data: GameData;
   onToggleCollapse: () => void;
   onAddFortely: (név: string) => void;
@@ -53,6 +55,8 @@ export interface FortelyRowProps {
   képzettségek: { név: string; szint: number }[];
   fortélyok: Fortely[];
   harcmodorNevek: string[];
+  /** A karakter fajának ajánlott fortélyai (max fok) - `faj` követelmény. */
+  fajFortélyok: Record<string, number>;
   fegyverHarcmodorNév?: string;
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
