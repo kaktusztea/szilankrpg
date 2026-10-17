@@ -96,7 +96,7 @@ export function HarcFegyverTable({
           <th>{belharciAktív ? <span className="harc-belharc-label">BELHARC</span> : 'Fegyver'}</th>
           <th>Tám</th>
           <th className="te-col">TÉ</th>
-          <th className="ve-col">VÉ</th><th>SP</th><th>Ph</th>
+          <th className="ve-col">VÉ</th><th>SP</th><th>Hossz</th>
         </tr>
       </thead>
       <tbody>
