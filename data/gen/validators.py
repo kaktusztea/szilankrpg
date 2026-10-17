@@ -16,7 +16,7 @@ ALCEL_PROBA_PREFIX = {'képzettségpróba': 'képzettség', 'tulajdonságpróba'
 
 def proba_alcel_hibak(cel, alcel, ctx, refs):
     """Egy fortély-/státusz-hatás alcéljának ellenőrzése: `prefix:név`, a prefix a célhoz illik, a név létezik
-    (refs: {'képzettség': nevek, 'tulajdonság': karakter-séma kulcsok, 'érzék': Érzék-státusz alkategóriák})."""
+    (refs: {'képzettség': id-k (2026-10-17), 'tulajdonság': karakter-séma kulcsok, 'érzék': Érzék-státusz alkategóriák})."""
     if not alcel: return []
     pre, _, nev = alcel.partition(':')
     if not nev: return [f"{ctx}: alcél '{alcel}' - 'prefix:név' alak kell"]
@@ -28,7 +28,7 @@ def proba_alcel_hibak(cel, alcel, ctx, refs):
 
 def proba_alcel_refs(sources_dir, statuszok):
     import glob, os, yaml
-    kepz = {yaml.safe_load(open(f, encoding='utf-8'))['név'] for f in glob.glob(os.path.join(sources_dir, 'kepzettsegek', '**', '*.yaml'), recursive=True)}
+    kepz = {yaml.safe_load(open(f, encoding='utf-8'))['id'] for f in glob.glob(os.path.join(sources_dir, 'kepzettsegek', '**', '*.yaml'), recursive=True)}
     with open(os.path.join(sources_dir, '..', 'schemas', 'karakter.yaml'), encoding='utf-8') as fh:
         tul = set(yaml.safe_load(fh)['tulajdonságok'])
     erz = {a for s in statuszok for a in (s.get('alkategóriák') or [])}

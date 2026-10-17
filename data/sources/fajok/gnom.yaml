@@ -13,24 +13,24 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok:
-  - név: "Ultralátás"
+  - név: "ultralátás"
     max_fok: 3
-  - név: "Infralátás"
+  - név: "infralátás"
     max_fok: 2
-  - név: "Irányérzék"
+  - név: "irányérzék"
     max_fok: 1
-faj_misztérium: "Gnóm"
+faj_misztérium: "faj_misztérium_gnóm"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok:
-  - név: "Építészet"
+  - név: "építészet"
     max_fok: 2
-  - név: "Mechanika"
+  - név: "mechanika"
     max_fok: 2
-  - név: "Zártörő"
+  - név: "zártörő"
     max_fok: 1
-  - név: "Térképészet"
+  - név: "térképészet"
     max_fok: 1
-ajánlott_képzettségek: ["Kvantikum"]
+ajánlott_képzettségek: ["kvantikum"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

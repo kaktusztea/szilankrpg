@@ -29,14 +29,14 @@ fokok:
     követelménytext:
       - text: "Mászás - 6.szint"
     követelmények:
-      - név: "Mászás"
+      - név: "mászás"
         érték: 6
         típus: "képzettség"
     hatástext:
       - text: 'A "Gyorsan mászni" helyzetfüggő módosító büntetése rád nem vonatkozik.'
     módosítók: ""
     próba_enyhítések:
-      - képzettség: "Mászás"
+      - képzettség: "mászás"
         kategória: "Körülmény"
         sorok: ["Gyorsan mászni"]
         érték: 999

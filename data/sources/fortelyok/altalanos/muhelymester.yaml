@@ -29,7 +29,7 @@ fokok:
     követelménytext:
       - text: "Kézművesség - 9.szint"
     követelmények:
-      - név: "Kézművesség"
+      - név: "kézművesség"
         érték: 9
         típus: "képzettség"
     hatástext:

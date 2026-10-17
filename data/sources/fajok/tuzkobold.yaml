@@ -13,7 +13,7 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok: []
-faj_misztérium: "Tűzkobold"
+faj_misztérium: "faj_misztérium_tűzkobold"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok: []

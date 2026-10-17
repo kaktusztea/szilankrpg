@@ -29,14 +29,14 @@ fokok:
     követelménytext:
       - text: "Mászás - 6.szint"
     követelmények:
-      - név: "Mászás"
+      - név: "mászás"
         érték: 6
         típus: "képzettség"
     hatástext:
       - text: "A Mászás képzettségpróba rontása után a megkapaszkodás Nehézség büntetése rád nem vonatkozik."
     módosítók: ""
     próba_enyhítések:
-      - képzettség: "Mászás"
+      - képzettség: "mászás"
         kategória: "Körülmény"
         sorok: ["Mentő próba (rontás után)"]
         érték: 999

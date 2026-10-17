@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Hadászat", "Lexikum"]
+  normál: ["hadászat", "lexikum"]
   erős: []
 
 kp_perfok: 6

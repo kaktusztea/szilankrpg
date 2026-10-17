@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Lexikum", "Természetjárás", "Vajákosság"]
+  normál: ["lexikum", "természetjárás", "vajákosság"]
   erős: []
 
 kp_perfok: 6

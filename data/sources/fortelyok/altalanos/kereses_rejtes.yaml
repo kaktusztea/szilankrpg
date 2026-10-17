@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Észlelés", "Természetjárás"]
+  normál: ["észlelés", "természetjárás"]
   erős: []
 
 kp_perfok: 6
@@ -29,7 +29,7 @@ fokok:
     követelménytext:
       - text: "Észlelés - 3.szint"
     követelmények:
-      - név: "Észlelés"
+      - név: "észlelés"
         érték: 3
         típus: "képzettség"
     hatástext:
@@ -39,7 +39,7 @@ fokok:
     követelménytext:
       - text: "Észlelés - 3.szint"
     követelmények:
-      - név: "Észlelés"
+      - név: "észlelés"
         érték: 3
         típus: "képzettség"
     hatástext:

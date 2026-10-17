@@ -25,10 +25,10 @@ fokok:
     - text: "Harcmodor - 6.szint"
     - text: "Élettan - 1.fok"
   követelmények: 
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 6
     típus: "képzettség"
-  - név: "Élettan"
+  - név: "élettan"
     érték: 1
     típus: "fortély"
   hatástext: 

@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Előadóművészet - 6.szint"
   követelmények: 
-  - név: "Előadóművészet"
+  - név: "előadóművészet"
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -37,12 +37,12 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Előadóművészet értékre"
-    alcél: "képzettség:Előadóművészet"
+    alcél: "képzettség:előadóművészet"
 - fok: 2
   követelménytext:
     - text: "Előadóművészet - 9.szint"
   követelmények: 
-  - név: "Előadóművészet"
+  - név: "előadóművészet"
     érték: 9
     típus: "képzettség"
   hatástext: 
@@ -55,4 +55,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Előadóművészet értékre"
-    alcél: "képzettség:Előadóművészet"
+    alcél: "képzettség:előadóművészet"

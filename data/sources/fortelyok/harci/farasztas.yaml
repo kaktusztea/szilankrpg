@@ -25,7 +25,7 @@ fokok:
   követelménytext:
     - text: "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Lándzsavívás", "Rombolás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/lándzsavívás", "harcmodor/rombolás", "harcmodor/ostorharc"]
     érték: 6
     típus: "képzettség"
   hatástext:

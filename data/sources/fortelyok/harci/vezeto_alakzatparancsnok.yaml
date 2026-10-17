@@ -30,10 +30,10 @@ fokok:
       - text: "Alakzatharc - 6.szint"
       - text: "Befolyásolás - 3.szint"
     követelmények:
-      - név: "Alakzatharc"
+      - név: "alakzatharc"
         érték: 6
         típus: "képzettség"
-      - név: "Befolyásolás"
+      - név: "befolyásolás"
         érték: 3
         típus: "képzettség"
     hatástext:
@@ -44,10 +44,10 @@ fokok:
       - text: "Alakzatharc - 9.szint"
       - text: "Befolyásolás - 3.szint"
     követelmények:
-      - név: "Alakzatharc"
+      - név: "alakzatharc"
         érték: 9
         típus: "képzettség"
-      - név: "Befolyásolás"
+      - név: "befolyásolás"
         érték: 3
         típus: "képzettség"
     hatástext:

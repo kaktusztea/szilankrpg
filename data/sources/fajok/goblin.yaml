@@ -13,20 +13,20 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok:
-  - név: "Emberentúli szaglás"
+  - név: "emberentúli_szaglás"
     max_fok: 1
-  - név: "Infralátás"
+  - név: "infralátás"
     max_fok: 1
-  - név: "Irányérzék"
+  - név: "irányérzék"
     max_fok: 1
-faj_misztérium: "Goblin"
+faj_misztérium: "faj_misztérium_goblin"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok:
-  - név: "Hazudozás"
+  - név: "hazudozás"
     max_fok: 1
-  - név: "Suhanó árnyék"
+  - név: "suhanó_árnyék"
     max_fok: 1
-ajánlott_képzettségek: ["Álcázás/Álruha", "Csapdaállítás", "Lopakodás/rejtőzés", "Lopás", "Szerencsejáték", "Zárnyitás"]  # md: "alvilági képzettségek" csoport
+ajánlott_képzettségek: ["álcázás_álruha", "csapdaállítás", "lopakodás_rejtőzés", "lopás", "szerencsejáték", "zárnyitás"]  # md: "alvilági képzettségek" csoport
 tiltott_képzettségek: []
 tiltott_fortélyok: []

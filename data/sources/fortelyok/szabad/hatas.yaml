@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Lovaglás", "Léglovaglás"]
+  normál: ["lovaglás", "léglovaglás"]
   erős: []
 
 kp_perfok: 6

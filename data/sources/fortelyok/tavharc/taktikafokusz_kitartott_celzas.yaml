@@ -39,7 +39,7 @@ fokok:
       - text: "Íj max `1` körig tartható ki"
       - text: "`1 kör` után rosszabb: minden plusz kör `CÉ:-3` büntetés (körönként)"
     követelmények:
-      - név: ["Íjászat", "Lövészet"]
+      - név: ["távolsági_harcmodor/íjászat", "távolsági_harcmodor/lövészet"]
         érték: 5
         típus: "képzettség"
     hatástext:

@@ -29,7 +29,7 @@ fokok:
     követelménytext:
       - text: "Úszás 1.fok"
     követelmények:
-      - név: "Úszás"
+      - név: "úszás"
         érték: 1
         típus: "fortély"
     hatástext:
@@ -39,7 +39,7 @@ fokok:
     követelménytext:
       - text: "Úszás 2.fok"
     követelmények:
-      - név: "Úszás"
+      - név: "úszás"
         érték: 2
         típus: "fortély"
     hatástext:

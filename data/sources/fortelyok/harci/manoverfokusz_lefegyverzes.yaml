@@ -27,10 +27,10 @@ fokok:
     - text: "Kardvívás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
     - text: "Mesterfegyver - 1.fok"
   követelmények:
-  - név: ["Kardvívás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/kardvívás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 9
     típus: "képzettség"
-  - név: "Mesterfegyver"
+  - név: "mesterfegyver"
     érték: 1
     típus: "fortély"
   hatástext:

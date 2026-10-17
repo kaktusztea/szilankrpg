@@ -29,7 +29,7 @@ fokok:
     követelménytext:
       - text: "Legalább egy nap időtartam, míg a boncolás folyik"
     követelmények:
-      - név: "Élettan"
+      - név: "élettan"
         érték: 1
         típus: "fortély"
     hatástext:

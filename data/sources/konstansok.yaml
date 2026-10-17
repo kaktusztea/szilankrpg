@@ -434,12 +434,12 @@ harcmodorok:
   távolsági: ["hajítás", "íjászat", "lövészet", "ostromlövészet", "mágikus célzás"]
 
 fegyver_kategória_harcmodor:
-  közelharci: "Közelharc"
-  kardvívó: "Kardvívás"
-  romboló: "Rombolás"
-  lándzsavívó: "Lándzsavívás"
-  ostorharc: "Ostorharc"
-  pajzs: "Közelharc"
+  közelharci: "közelharc"
+  kardvívó: "kardvívás"
+  romboló: "rombolás"
+  lándzsavívó: "lándzsavívás"
+  ostorharc: "ostorharc"
+  pajzs: "közelharc"
 
 # Távharc harcmodor: tavfegyverek.json-ban per-fegyver "Harcmodor" mező
 # (Hajítás / Íjászat / Lövészet / Ostromlövészet / Mágikus célzás)

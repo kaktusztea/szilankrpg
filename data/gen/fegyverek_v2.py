@@ -55,6 +55,12 @@ def generate_fegyver_extrak():
     """
     src = os.path.join(DATA_DIR, 'sources', 'fegyverek', 'extrak.yaml')
     raw = load_yaml(src)
+    from .hivatkozas import kovetelmeny_vissza, prefixes_vissza  # ÁTMENETI (F2-F3)
+    for e in raw['extrak']:
+        if e.get('feltétel') is not None: e['feltétel'] = [kovetelmeny_vissza(k) for k in e['feltétel']]
+        for hh in e.get('hatás') or []:
+            for k in ('cél', 'alcél', 'feltétel'):
+                if k in hh: hh[k] = prefixes_vissza(hh[k])
     by_id = {e['id']: e for e in raw['extrak']}
     write_json('fegyver_extrak.json', by_id)
 

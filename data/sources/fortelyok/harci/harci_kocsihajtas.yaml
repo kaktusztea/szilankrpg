@@ -25,10 +25,10 @@ fokok:
     - text: "Kocsihajtás - 1.fok"
     - text: "Lovaglás VAGY Léglovaglás - 6.szint"
   követelmények: 
-  - név: "Kocsihajtás"
+  - név: "kocsihajtás"
     érték: 1
     típus: "fortély"
-  - név: ["Lovaglás", "Léglovaglás"]
+  - név: ["lovaglás", "léglovaglás"]
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -52,10 +52,10 @@ fokok:
     - text: "Kocsihajtás - 1.fok"
     - text: "Lovaglás VAGY Léglovaglás - 9.szint"
   követelmények: 
-  - név: "Kocsihajtás"
+  - név: "kocsihajtás"
     érték: 1
     típus: "fortély"
-  - név: ["Lovaglás", "Léglovaglás"]
+  - név: ["lovaglás", "léglovaglás"]
     érték: 9
     típus: "képzettség"
   hatástext: 

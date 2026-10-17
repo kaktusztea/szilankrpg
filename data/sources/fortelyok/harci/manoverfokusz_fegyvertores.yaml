@@ -25,10 +25,10 @@ fokok:
     - text: "Harcmodor - 9.szint"
     - text: "Mesterfegyver - 1.fok"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás"]
     érték: 9
     típus: "képzettség"
-  - név: "Mesterfegyver"
+  - név: "mesterfegyver"
     érték: 1
     típus: "fortély"
   hatástext:

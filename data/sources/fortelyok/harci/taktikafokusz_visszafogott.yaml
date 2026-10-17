@@ -27,7 +27,7 @@ fokok:
     - text: "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás - 6.szint"
     - text: "Visszafogott taktika használata"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás"]
     érték: 6
     típus: "képzettség"
   hatástext:

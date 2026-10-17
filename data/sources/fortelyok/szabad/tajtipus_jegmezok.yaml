@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Alkímia", "Lexikum", "Lopakodás/rejtőzés", "Természetjárás", "Vajákosság"]
+  normál: ["alkímia", "lexikum", "lopakodás_rejtőzés", "természetjárás", "vajákosság"]
   erős: []
 
 kp_perfok: 6

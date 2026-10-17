@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Hadászat"]
+  normál: ["hadászat"]
   erős: []
 
 kp_perfok: 6
@@ -31,7 +31,7 @@ fokok:
       - text: "Összeszokott tagokat igényel"
       - text: "\"Fejvadász\" Leíró Háttér"
     követelmények:
-      - név: "Lopakodás/rejtőzés"
+      - név: "lopakodás_rejtőzés"
         érték: 6
         típus: "képzettség"
     hatástext:
@@ -43,7 +43,7 @@ fokok:
       - text: "Összeszokott tagokat igényel"
       - text: "\"Fejvadász\" Leíró Háttér"
     követelmények:
-      - név: "Lopakodás/rejtőzés"
+      - név: "lopakodás_rejtőzés"
         érték: 9
         típus: "képzettség"
     hatástext:

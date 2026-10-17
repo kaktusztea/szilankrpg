@@ -25,7 +25,7 @@ fokok:
     - text: "Két jól összeszokott társ"
     - text: "A konkrét partnert nevesíteni kell"
   követelmények: 
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 3
     típus: "képzettség"
   hatástext: 
@@ -54,7 +54,7 @@ fokok:
   követelménytext:
     - text: "Két jól összeszokott társ"
   követelmények: 
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -83,7 +83,7 @@ fokok:
   követelménytext:
     - text: "Egypetéjű ikrek, harmonikus kapcsolat a felek között"
   követelmények: 
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 9
     típus: "képzettség"
   hatástext: 

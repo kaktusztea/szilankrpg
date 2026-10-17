@@ -36,6 +36,10 @@ def _load_harcmodorok():
     return hm
 
 
+import sys  # noqa: E402
+sys.path.insert(0, os.path.join(REPO, 'data'))
+from gen.hivatkozas import kovetelmeny_vissza  # noqa: E402
+
 HARCMODOROK = _load_harcmodorok()
 
 
@@ -68,7 +72,7 @@ def yaml_kovetelmenyek():
                     for e in req:
                         if not isinstance(e, dict):
                             continue
-                        nev = e.get("név")
+                        nev = kovetelmeny_vissza(e).get("név")   # forrás id → név (gen/hivatkozas, 2026-10-17)
                         if is_harcmodor(nev):
                             continue
                         egyeb.append((nev, e.get("érték")))

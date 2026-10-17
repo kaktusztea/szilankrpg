@@ -19,7 +19,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Előadóművészet", "Művészetismeret"]
+  normál: ["előadóművészet", "művészetismeret"]
   erős: []
 
 kp_perfok: 6
@@ -29,10 +29,10 @@ fokok:
   - fok: 1
     követelménytext: []
     követelmények:
-      - név: "Kultúrkör"
+      - név: "kultúrkör"
         érték: 1
         típus: "fortély"
-      - név: "Nyelvismeret"
+      - név: "nyelvismeret"
         érték: 2
         típus: "fortély"
     hatástext:

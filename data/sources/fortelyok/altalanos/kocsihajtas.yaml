@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Lovaglás VAGY Léglovaglás - 3.szint"
   követelmények: 
-  - név: ["Lovaglás", "Léglovaglás"]
+  - név: ["lovaglás", "léglovaglás"]
     érték: 3
     típus: "képzettség"
   hatástext: 

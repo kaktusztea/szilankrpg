@@ -31,7 +31,7 @@ harci_helyzetek:
     - id: "belharc_harcmodor"
       leírás: "Közelharc harcmodor kötelező"
       feltétel:
-        - { forrás: "fegyver.harcmodor", operátor: "!=", érték: "Közelharc" }
+        - { forrás: "fegyver.harcmodor", operátor: "!=", érték: "közelharc" }
   fegyver_override:
     feltétel:
       - { forrás: "tiltás:belharc_fegyverhossz", operátor: "==", érték: true }

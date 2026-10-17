@@ -61,7 +61,7 @@ manőverek:
     V: "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
   végrehajtás_té_módosító: 0
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Kardvívás", érték: 6 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor/kardvívás", érték: 6 }
     - { erősség: "erős", típus: "fegyver_sebzéstípus", érték: "V" }
     - { erősség: "erős", típus: "fegyver_kategória", érték: "kardvívó" }
     - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)" }
@@ -81,7 +81,7 @@ manőverek:
     V: "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
   végrehajtás_té_módosító: 0
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Kardvívás", érték: 6 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor/kardvívás", érték: 6 }
     - { erősség: "erős", típus: "fegyver_sebzéstípus", érték: "V" }
     - { erősség: "erős", típus: "fegyver_kategória", érték: "kardvívó" }
     - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)" }
@@ -111,7 +111,7 @@ manőverek:
       - "A fegyvered eltörik."
   id: "fegyvertörés"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 5 }
     - { erősség: "erős", típus: "egyéb", leírás: "A használt fegyver Harcmodor-követelménye teljesül" }
     - { erősség: "erős", típus: "egyéb", leírás: "Nem karom/szarv ellen (ott Csonkolás)" }
   helyzetfüggő_módosítók:
@@ -175,7 +175,7 @@ manőverek:
       - "Felállás: Felállás földről manőver."
   id: "földrevitel"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 5 }
     - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél nincs Fegyverelőnyben veled szemben" }
   helyzetfüggő_módosítók:
     - kategória: "Erő különbség"
@@ -224,7 +224,7 @@ manőverek:
       - "Felállás: Felállás földről manőver."
   id: "lábkirántás_szálfegyverrel"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Lándzsavívás", érték: 6 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor/lándzsavívás", érték: 6 }
     - { erősség: "erős", típus: "egyéb", leírás: "Szálfegyver használata" }
     - { erősség: "erős", típus: "egyéb", leírás: "Csak kétlábú ellenfél ellen" }
   helyzetfüggő_módosítók:
@@ -245,7 +245,7 @@ manőverek:
       - "Helyhez kötve harci helyzet módosítóit kapod ha nem ejted el."
   id: "lánccsapda"
   követelmények:
-    - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 1 }
+    - { erősség: "normál", típus: "fortély", név: "mesterfegyver", érték: 1 }
     - { erősség: "erős", típus: "egyéb", leírás: "Láncos fegyver használata" }
     - { erősség: "erős", típus: "egyéb", leírás: "Ellenfél fegyvere minimum 1 fegyverhossz-kategória" }
 - név: "Lánccsapdából szabadítás"
@@ -269,7 +269,7 @@ manőverek:
       - "A fegyvered kiesik a kezedből."
   id: "lefegyverzés"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 5 }
     - { erősség: "erős", típus: "egyéb", leírás: "Kardvívás / Lándzsavívás / Ostorharc harcmodor" }
   helyzetfüggő_módosítók:
     - kategória: "Saját fegyver alkalmassága"
@@ -326,7 +326,7 @@ manőverek:
       - "Ellenfeled mesterjelet karcol a ruhádba/bőrödbe (1 ÉP)."
   id: "mesterjel"
   követelmények:
-    - { erősség: "normál", típus: "fortély", név: "Mesterfegyver", érték: 2 }
+    - { erősség: "normál", típus: "fortély", név: "mesterfegyver", érték: 2 }
     - { erősség: "erős", típus: "egyéb", leírás: "Legfeljebb 2 fegyverhossz-kategória hosszú hegyes szúrófegyver" }
   helyzetfüggő_módosítók:
     - kategória: "Jel bonyolultsága"
@@ -369,7 +369,7 @@ manőverek:
       - "Zúzó: SP/2, Vágó: SP/4."
   id: "pajzsrongálás"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 6 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 6 }
     - { erősség: "erős", típus: "egyéb", leírás: "Erő: +1" }
     - { erősség: "erős", típus: "egyéb", leírás: "Zúzó- vagy kétkezes fegyver" }
 - név: "Pajzzsal felöklelés"
@@ -383,8 +383,8 @@ manőverek:
       - "Földre kerültél (Földön fekve módosítók)."
   id: "pajzzsal_felöklelés"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
-    - { erősség: "normál", típus: "fortély", név: "Pajzshasználat", érték: 2 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 5 }
+    - { erősség: "normál", típus: "fortély", név: "pajzshasználat", érték: 2 }
     - { erősség: "erős", típus: "egyéb", leírás: "Nagy vagy Közepes pajzs" }
   helyzetfüggő_módosítók:
     - kategória: "Erő különbség"
@@ -412,7 +412,7 @@ manőverek:
   fázis_info:
     V: "Alattomos ütés sebzése: k20+0 SP (+ vaskesztyű/szegecs/Erőbónusz beleszámít)."
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Közelharc", érték: 4 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor/közelharc", érték: 4 }
     - { erősség: "normál", típus: "egyéb", leírás: "Forgatott fegyverre: Mesterfegyver 1.fok" }
 - név: "Precíz támadás"
   típus: "általános"
@@ -467,7 +467,7 @@ manőverek:
   fázis_info:
     M: "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 5 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 5 }
     - { erősség: "erős", típus: "egyéb", leírás: "Fegyverelőny" }
   helyzetfüggő_módosítók:
     - kategória: "Harci alakzat"
@@ -486,7 +486,7 @@ manőverek:
       - "Ellenfeled a kívánt irányba terelt téged."
   id: "terelés"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Harcmodor", érték: 6 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 6 }
   helyzetfüggő_módosítók:
     - kategória: "Harci alakzat"
       mód: "single"
@@ -639,7 +639,7 @@ manőverek:
       - "Földre kerültél (Földön fekve módosítók)."
   id: "gáncsolás"
   követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "Közelharc", érték: 5 }
+    - { erősség: "normál", típus: "képzettség", név: "harcmodor/közelharc", érték: 5 }
     - { erősség: "erős", típus: "egyéb", leírás: "Belharci helyzet" }
   helyzetfüggő_módosítók:
     - kategória: "Belharc körülmények (KM)"
@@ -780,7 +780,7 @@ manőverek:
   fázis_info:
     M: "TE (lovas) adod le a soron kívüli Megakasztást minden harcérintkezésben lévő ellenfélre. Nincs Ellenpróba, nincs Nehézség."
   követelmények:
-    - { erősség: "normál", típus: "fortély", név: "Lovas harc", érték: 2 }
+    - { erősség: "normál", típus: "fortély", név: "lovas_harc", érték: 2 }
     - { erősség: "erős", típus: "egyéb", leírás: "Lovas (hátason ülő) hajtja végre" }
 - név: "Lóhátról lerántás"
   típus: "lovas"

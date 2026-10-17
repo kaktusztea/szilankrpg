@@ -19,7 +19,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Etikett", "Előadóművészet", "Művészetismeret"]
+  normál: ["etikett", "előadóművészet", "művészetismeret"]
   erős: []
 
 kp_perfok: 6
@@ -30,16 +30,16 @@ fokok:
     követelménytext:
       - text: "Előtörténet"
     követelmények:
-      - név: "Etikett"
+      - név: "etikett"
         érték: 9
         típus: "képzettség"
-      - név: "Előadóművészet"
+      - név: "előadóművészet"
         érték: 6
         típus: "képzettség"
-      - név: "Kultúrkör"
+      - név: "kultúrkör"
         érték: 1
         típus: "fortély"
-      - név: "Tánc"
+      - név: "tánc"
         érték: 1
         típus: "fortély"
     hatástext:

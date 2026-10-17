@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Lexikum", "Nyomozás"]
+  normál: ["lexikum", "nyomozás"]
   erős: []
 
 kp_perfok: 6
@@ -28,7 +28,7 @@ fokok:
   - fok: 1
     követelménytext: []
     követelmények:
-      - név: "Analfabéta"
+      - név: "analfabéta"
         érték: 1
         típus: "tiltó_fortély"
     hatástext:

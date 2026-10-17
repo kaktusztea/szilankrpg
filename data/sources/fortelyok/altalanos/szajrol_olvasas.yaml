@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája."
   követelmények: 
-  - név: "Nyelvismeret"
+  - név: "nyelvismeret"
     érték: 2
     típus: "fortély"
   hatástext: 

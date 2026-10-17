@@ -4,6 +4,7 @@ import os
 
 from .common import SOURCES_DIR, load_yaml, write_json
 from .schema import validate_schema
+from .hivatkozas import hm_nev, kovetelmeny_vissza, prefixes_vissza  # ÁTMENETI (F2-F3)
 from .validators import (
     validate_aktiv_ful, validate_esemenyek,
     validate_statuszok, validate_hatasok_katalogus, validate_harci_helyzet_hatasok, validate_effekt_hivatkozasok,
@@ -44,6 +45,31 @@ def generate_aktiv_ful():
     validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, _konstansok.get('harcérték_célok', []))
     validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek)
     validate_effekt_hivatkozasok(helyzetek, extrak)
+    # ÁTMENETI (F2-F3): a forrás fortély/képzettség/harcmodor-id-jei vissza névre a webapp tábláihoz
+    for t in taktikak:
+        for mk in t.get('megkötések') or []:
+            if mk.get('típus') == 'harcmodor': mk['érték'] = hm_nev(mk['érték'])
+        if t.get('szűrő_harcmodorok'): t['szűrő_harcmodorok'] = [hm_nev(x) for x in t['szűrő_harcmodorok']]
+    for h in helyzetek:
+        for ti in h.get('tiltások') or []:
+            for fe in ti.get('feltétel') or []:
+                if fe.get('forrás') == 'fegyver.harcmodor': fe['érték'] = hm_nev(fe['érték'])
+    for m in manoverek:
+        if m.get('követelmények'): m['követelmények'] = [kovetelmeny_vissza(k) for k in m['követelmények']]
+    for s in statuszok:
+        for fok in s.get('fokok') or []:
+            for hh in fok.get('hatások') or []:
+                if 'alcél' in hh: hh['alcél'] = prefixes_vissza(hh['alcél'])
+    for e in extrak:
+        e['feltétel'] = [kovetelmeny_vissza(k) for k in (e.get('feltétel') or [])] if e.get('feltétel') is not None else e.get('feltétel')
+        for hh in e.get('hatás') or []:
+            for k in ('cél', 'alcél', 'feltétel'):
+                if k in hh: hh[k] = prefixes_vissza(hh[k])
+    _manover_konst = _konstansok.get('manőver', {})
+    # Egységes effekt-mód enum (engine_spec §42.2) - minden hatás `mód` mezője ehhez mér.
+    effekt_modok = set(_konstansok.get('effekt_módok', []))
+    _immunis_sentinel = _manover_konst.get('sentinel_immunis', -99)
+
 
     # feltétel_kulcs generálás id-ból (yaml-ban nincs, JSON-ban kell)
     for t in taktikak:

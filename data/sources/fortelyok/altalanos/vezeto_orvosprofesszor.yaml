@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Orvoslás - 6.szint"
   követelmények: 
-  - név: "Orvoslás"
+  - név: "orvoslás"
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -37,12 +37,12 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Orvoslás értékre"
-    alcél: "képzettség:Orvoslás"
+    alcél: "képzettség:orvoslás"
 - fok: 2
   követelménytext:
     - text: "Orvoslás - 9.szint"
   követelmények: 
-  - név: "Orvoslás"
+  - név: "orvoslás"
     érték: 9
     típus: "képzettség"
   hatástext: 
@@ -55,4 +55,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Orvoslás értékre"
-    alcél: "képzettség:Orvoslás"
+    alcél: "képzettség:orvoslás"

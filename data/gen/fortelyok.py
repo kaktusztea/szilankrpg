@@ -5,6 +5,7 @@ import os
 from .common import SOURCES_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
 from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs, id_hibak
+from .hivatkozas import kepz_nev, kovetelmeny_vissza, prefixes_vissza  # ÁTMENETI (F2-F3): forrás id → tábla név
 
 
 def generate_fortelyok():
@@ -37,16 +38,19 @@ def generate_fortelyok():
                 mods = fok.get('módosítók') or []
                 if mods == '':
                     mods = []
+                mods = [{**m, **{k: prefixes_vissza(m[k]) for k in ('cél', 'alcél', 'feltétel') if k in m}} for m in mods]
                 követelmények = fok.get('követelmények') or []
                 if követelmények == '': követelmények = []
+                követelmények = [kovetelmeny_vissza(k) for k in követelmények]
                 próba_e = fok.get('próba_enyhítések') or []
                 if próba_e == '': próba_e = []
+                próba_e = [{**p, 'képzettség': kepz_nev(p['képzettség'])} for p in próba_e]
                 fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv, 'követelmények': követelmények, 'módosítók': mods, 'próba_enyhítések': próba_e})
             leírás = ' '.join([l['text'] for l in (data.get('leírások') or []) if l.get('text')])
             leírás = leírás.replace('**', '').replace('`', '')
             kiterjeszti = data.get('kiterjeszti', {})
-            kit_norm = kiterjeszti.get('normál', []) if kiterjeszti else []
-            kit_eros = kiterjeszti.get('erős', []) if kiterjeszti else []
+            kit_norm = [kepz_nev(k) for k in (kiterjeszti.get('normál') or [])] if kiterjeszti else []
+            kit_eros = [kepz_nev(k) for k in (kiterjeszti.get('erős') or [])] if kiterjeszti else []
             tobbszorosseg = data.get('többszörösség', {})
             # md_fájl: fortelyok.{alcsoport}/{fájlnév}.md
             alcsoport = os.path.relpath(root, fdir).replace(os.sep, '/')
@@ -162,9 +166,9 @@ def generate_kiterjesztesek():
             if not kit:
                 continue
             for kep in (kit.get('normál') or []):
-                mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'normál', 'maxfok': maxfok})
+                mapping.setdefault(kepz_nev(kep), []).append({'fortély': nev, 'típus': 'normál', 'maxfok': maxfok})
             for kep in (kit.get('erős') or []):
-                mapping.setdefault(kep, []).append({'fortély': nev, 'típus': 'erős', 'maxfok': maxfok})
+                mapping.setdefault(kepz_nev(kep), []).append({'fortély': nev, 'típus': 'erős', 'maxfok': maxfok})
     # Sort keys and value lists for deterministic output
     sorted_mapping = {}
     for key in sorted(mapping.keys()):

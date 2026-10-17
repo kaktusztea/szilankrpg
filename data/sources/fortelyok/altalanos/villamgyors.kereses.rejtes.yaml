@@ -25,17 +25,17 @@ fokok:
     - text: "Észlelés - 3.szint"
     - text: "Keresés/rejtés - 1.fok"
   követelmények: 
-  - név: "Észlelés"
+  - név: "észlelés"
     érték: 3
     típus: "képzettség"
-  - név: "Keresés/rejtés"
+  - név: "keresés_rejtés"
     érték: 1
     típus: "fortély"
   hatástext: 
   - text: "Villámgyors keresés kapkodós helyzetekben nullázza az alapeset -3 büntetését."
   módosítók: ""
   próba_enyhítések:
-    - képzettség: "Észlelés"
+    - képzettség: "észlelés"
       kategória: "Körülmény"
       sorok: ["Gyorsan, nyomás alatt keresni"]
       érték: 999

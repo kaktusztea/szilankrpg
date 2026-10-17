@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Hajózás - 6.szint"
   követelmények: 
-  - név: "Hajózás"
+  - név: "hajózás"
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -37,12 +37,12 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Hajózás értékre"
-    alcél: "képzettség:Hajózás"
+    alcél: "képzettség:hajózás"
 - fok: 2
   követelménytext:
     - text: "Hajózás - 9.szint"
   követelmények: 
-  - név: "Hajózás"
+  - név: "hajózás"
     érték: 9
     típus: "képzettség"
   hatástext: 
@@ -55,4 +55,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Hajózás értékre"
-    alcél: "képzettség:Hajózás"
+    alcél: "képzettség:hajózás"

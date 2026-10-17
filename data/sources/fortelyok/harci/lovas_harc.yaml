@@ -44,10 +44,10 @@ fokok:
     - text: "Lovaglás - 6.szint"
     - text: "Minimum fegyverméret: 3"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 6
     típus: "képzettség"
-  - név: "Lovaglás"
+  - név: "lovaglás"
     érték: 6
     típus: "képzettség"
   - típus: "min_fegyverméret"
@@ -83,10 +83,10 @@ fokok:
     - text: "Lovaglás - 9.szint"
     - text: "Minimum fegyverméret: 3"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 9
     típus: "képzettség"
-  - név: "Lovaglás"
+  - név: "lovaglás"
     érték: 9
     típus: "képzettség"
   - típus: "min_fegyverméret"
@@ -122,10 +122,10 @@ fokok:
     - text: "Lovaglás - 12.szint"
     - text: "Minimum fegyverméret: 3"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 12
     típus: "képzettség"
-  - név: "Lovaglás"
+  - név: "lovaglás"
     érték: 12
     típus: "képzettség"
   - típus: "min_fegyverméret"

@@ -37,7 +37,7 @@ fokok:
     - text: "Maximum MGT:5 értékű vértben (Erő módosítót is beleszámolva)"
     - text: "Maximum össz fegyverméret: 3"
   követelmények:
-  - név: "Akrobatika"
+  - név: "akrobatika"
     érték: 6
     típus: "képzettség"
   - típus: "páncél_hajlékonyság"
@@ -67,7 +67,7 @@ fokok:
     - text: "Maximum MGT:5 értékű vértben (Erő módosítót is beleszámolva)"
     - text: "Maximum össz fegyverméret: 3"
   követelmények:
-  - név: "Akrobatika"
+  - név: "akrobatika"
     érték: 9
     típus: "képzettség"
   - típus: "páncél_hajlékonyság"
@@ -97,7 +97,7 @@ fokok:
     - text: "Maximum MGT:10 értékű vértben (Erő módosítót is beleszámolva)"
     - text: "Maximum össz fegyverméret: 3"
   követelmények:
-  - név: "Akrobatika"
+  - név: "akrobatika"
     érték: 12
     típus: "képzettség"
   - típus: "páncél_hajlékonyság"

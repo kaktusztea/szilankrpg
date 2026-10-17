@@ -91,7 +91,7 @@ taktikák:
   megkötések:
   - típus: "harcmodor"
     mód: "tiltott"
-    érték: "Ostorharc"
+    érték: "ostorharc"
   - típus: "per_küzdelem"
     mód: "max"
     érték: 1
@@ -128,7 +128,7 @@ taktikák:
   megkötések:
   - típus: "harcmodor"
     mód: "tiltott"
-    érték: "Ostorharc"
+    érték: "ostorharc"
   - típus: "harci_helyzet"
     mód: "tiltott"
     érték: "Lovas harc"
@@ -157,7 +157,7 @@ taktikák:
   megkötések:
   - típus: "harcmodor"
     mód: "tiltott"
-    érték: "Ostorharc"
+    érték: "ostorharc"
   kombó_mód: "whitelist"
   kombó_lista: ["Kiváró", "Plusz támadás", "1 támadás"]
   fortély_bővítés: null
@@ -292,7 +292,7 @@ taktikák:
   kombó_lista: []
   fortély_bővítés: null
   csoport: "távharc"
-  szűrő_harcmodorok: ["Íjászat", "Lövészet"]
+  szűrő_harcmodorok: ["íjászat", "lövészet"]
 - név: "Lövéskitérés"
   id: "lövéskitérés"
   fokozatos: false

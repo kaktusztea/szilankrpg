@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
   követelmények: 
-  - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
+  - név: ["harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás"]
     érték: 3
     típus: "képzettség"
   hatástext: 
@@ -40,7 +40,7 @@ fokok:
   követelménytext:
     - text: "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
   követelmények: 
-  - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
+  - név: ["harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás"]
     érték: 3
     típus: "képzettség"
   hatástext: 
@@ -56,7 +56,7 @@ fokok:
   követelménytext:
     - text: "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
   követelmények: 
-  - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
+  - név: ["harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás"]
     érték: 3
     típus: "képzettség"
   hatástext: 

@@ -13,7 +13,7 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok: []
-faj_misztérium: "Feenhar"
+faj_misztérium: "faj_misztérium_feenhar"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok: []

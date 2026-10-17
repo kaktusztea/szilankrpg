@@ -15,7 +15,7 @@ leírások:
 megjegyzések: 
 - text: ""
 kiterjeszti: 
-  normál: ["Hadászat"]
+  normál: ["hadászat"]
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Összeszokott tagokat igényel"
   követelmények: 
-  - név: ["Íjászat", "Lövészet", "Ostromlövészet"]
+  - név: ["távolsági_harcmodor/íjászat", "távolsági_harcmodor/lövészet", "távolsági_harcmodor/ostromlövészet"]
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -34,7 +34,7 @@ fokok:
   követelménytext:
     - text: "Összeszokott tagokat igényel"
   követelmények: 
-  - név: ["Íjászat", "Lövészet", "Ostromlövészet"]
+  - név: ["távolsági_harcmodor/íjászat", "távolsági_harcmodor/lövészet", "távolsági_harcmodor/ostromlövészet"]
     érték: 9
     típus: "képzettség"
   hatástext: 

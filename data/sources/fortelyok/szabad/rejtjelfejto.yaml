@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Kvantikum", "Nyomozás"]
+  normál: ["kvantikum", "nyomozás"]
   erős: []
 
 kp_perfok: 6

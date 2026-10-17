@@ -29,11 +29,11 @@ extrak:
       Belső harci iskola + Mesterfegyver-tudás kell. Enélkül a felkészítetlen
       alapértékek érvényesek; felkészítve a Mesterfegyver fortély e fegyverre adott bónusza megduplázódik.
     feltétel:
-      - {típus: fortély, név: Mesterfegyver, érték: 1}   # az adott fegyverre, fok ≥ 1
+      - {típus: fortély, név: mesterfegyver, érték: 1}   # az adott fegyverre, fok ≥ 1
       - {típus: narratív, név: "Harci iskola"}                   # nem gépi: KM dönti el
     hatás:
       # MÁSODRENDŰ: a Mesterfegyver e fegyverre vonatkozó bónuszát szorozza (×2).
-      - {cél: "fortély:Mesterfegyver", mód: szorzó, érték: 2}
+      - {cél: "fortély:mesterfegyver", mód: szorzó, érték: 2}
 
   # ── HARCI HELYZET (szituációs, automatikus) ──
   - id: beszorithato

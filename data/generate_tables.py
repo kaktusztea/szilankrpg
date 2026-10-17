@@ -66,41 +66,74 @@ def validate_fortely_manover_refs():
         raise SystemExit(1)
 
 
-def validate_nev_hivatkozasok():
-    """Post-hoc build-gate: a név szerinti hivatkozások létező fortély / képzettség `név` mezőjére mutatnak
-    (PONTOS egyezés). Hatókör: fortély `követelmények` (képzettség / fortély / tiltó_fortély), faj-listák
-    (érzék / kötelező / faji / ajánlott / tiltott fortélyok, ajánlott / tiltott képzettségek, faj misztérium).
-    A harcmodorok a `Harcmodor` többszörös képzettség elemei → a `konstansok.harcmodorok` nagy kezdőbetűvel.
+def validate_id_hivatkozasok():
+    """Build-gate (2026-10-17, id-átállás F2): a FORRÁS-YAML-ok fortély / képzettség / harcmodor-hivatkozásai
+    létező id-re mutatnak (gen/hivatkozas.py formátum). Hatókör: fortély követelmények / kiterjeszti /
+    próba_enyhítések / módosító-prefixek, faj-listák + faj misztérium, manőver-követelmények, extrák
+    (feltétel, `fortély:` cél), szituáció-mapping kulcsok, harcmodor-elemek (konstansok fegyver-kategória,
+    taktika-megkötés / szűrő, helyzet-tiltás).
     """
-    def load(n):
-        with open(os.path.join(TABLES_DIR, n), encoding='utf-8') as f:
-            return json.load(f)
-    fortely = {f['név'] for f in load('fortelyok.json')}
-    hm = load('konstansok.json')['harcmodorok']
-    kepz = {k['név'] for k in load('kepzettsegek.json')} | {h[:1].upper() + h[1:] for h in hm['közelharci'] + hm['távolsági']}
+    from gen.hivatkozas import fortely_ids, kepz_ref_hiba, harcmodor_elemek
+    src = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sources')
+    F, HM = fortely_ids(), harcmodor_elemek()
     errors = []
-    def check(ctx, nev, halmaz, mi):
-        for n in (nev if isinstance(nev, list) else [nev]):
-            if n not in halmaz: errors.append(f"{ctx}: ismeretlen {mi}: '{n}'")
-    for fort in load('fortelyok.json'):
-        for fok in fort.get('fokok', []):
-            for k in fok.get('követelmények') or []:
-                ctx = f"fortély {fort['név']} fok {fok['fok']} követelmény"
-                if k.get('típus') == 'képzettség': check(ctx, k['név'], kepz, 'képzettség')
-                elif k.get('típus') in ('fortély', 'tiltó_fortély'): check(ctx, k['név'], fortely, 'fortély')
-    fdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sources', 'fajok')
+    def fort(ctx, n):
+        for x in (n if isinstance(n, list) else [n]):
+            if x not in F: errors.append(f"{ctx}: ismeretlen fortély-id: '{x}'")
+    def kepz(ctx, n):
+        for x in (n if isinstance(n, list) else [n]):
+            h = kepz_ref_hiba(x)
+            if h: errors.append(f"{ctx}: {h}")
+    def hm(ctx, x):
+        if x not in HM: errors.append(f"{ctx}: ismeretlen harcmodor: '{x}'")
+    def prefix(ctx, v):
+        if isinstance(v, str) and v.startswith('képzettség:'): kepz(ctx, v.split(':', 1)[1])
+        if isinstance(v, str) and v.startswith('fortély:'): fort(ctx, v.split(':', 1)[1])
+    def kov(ctx, k):
+        if 'név' not in k: return
+        if k.get('típus') == 'képzettség': kepz(ctx, k['név'])
+        elif k.get('típus') in ('fortély', 'tiltó_fortély'): fort(ctx, k['név'])
+    lst = lambda v: v if isinstance(v, list) else []
+    for root, _, files in os.walk(os.path.join(src, 'fortelyok')):
+        for fn in files:
+            if not fn.endswith('.yaml'): continue
+            d = load_yaml(os.path.join(root, fn)); c = f"fortelyok/{fn}"
+            kit = d.get('kiterjeszti') or {}
+            kepz(f"{c} kiterjeszti", lst(kit.get('normál')) + lst(kit.get('erős')))
+            for fok in d.get('fokok') or []:
+                cf = f"{c} fok {fok['fok']}"
+                for k in lst(fok.get('követelmények')): kov(f"{cf} követelmény", k)
+                for m in lst(fok.get('módosítók')):
+                    for kk in ('cél', 'alcél', 'feltétel'): prefix(f"{cf} módosító {kk}", m.get(kk))
+                for pe in lst(fok.get('próba_enyhítések')): kepz(f"{cf} próba_enyhítés", pe['képzettség'])
+    fdir = os.path.join(src, 'fajok')
     for fn in sorted(os.listdir(fdir)):
         if not fn.endswith('.yaml'): continue
-        d = load_yaml(os.path.join(fdir, fn)); ctx = f"fajok/{fn}"
+        d = load_yaml(os.path.join(fdir, fn)); c = f"fajok/{fn}"
         for key in ('érzék_fortélyok', 'ajánlott_fortélyok'):
-            for e in d.get(key) or []: check(f"{ctx} {key}", e.get('név', ''), fortely, 'fortély')
-        for key in ('kötelező_fortélyok', 'faji_fortélyok', 'tiltott_fortélyok'):
-            for n in d.get(key) or []: check(f"{ctx} {key}", n, fortely, 'fortély')
-        for key in ('ajánlott_képzettségek', 'tiltott_képzettségek'):
-            for n in d.get(key) or []: check(f"{ctx} {key}", n, kepz, 'képzettség')
-        if d.get('faj_misztérium'): check(f"{ctx} faj_misztérium", f"Faj misztérium: {d['faj_misztérium']}", kepz, 'képzettség')
+            for e in lst(d.get(key)): fort(f"{c} {key}", e.get('név', ''))
+        for key in ('kötelező_fortélyok', 'faji_fortélyok', 'tiltott_fortélyok'): fort(f"{c} {key}", lst(d.get(key)))
+        for key in ('ajánlott_képzettségek', 'tiltott_képzettségek'): kepz(f"{c} {key}", lst(d.get(key)))
+        if d.get('faj_misztérium'): kepz(f"{c} faj_misztérium", d['faj_misztérium'])
+    for m in load_yaml(os.path.join(src, 'manoverek.yaml'))['manőverek']:
+        for k in lst(m.get('követelmények')): kov(f"manőver {m['id']} követelmény", k)
+    for e in load_yaml(os.path.join(src, 'fegyverek', 'extrak.yaml'))['extrak']:
+        for k in lst(e.get('feltétel')): kov(f"extra {e['id']} feltétel", k)
+        for h in lst(e.get('hatás')):
+            for kk in ('cél', 'alcél', 'feltétel'): prefix(f"extra {e['id']} hatás {kk}", h.get(kk))
+    for k in load_yaml(os.path.join(src, 'szituacio_mapping.yaml')) or {}: kepz("szituacio_mapping kulcs", k)
+    for k, v in load_yaml(os.path.join(src, 'konstansok.yaml'))['fegyver_kategória_harcmodor'].items():
+        hm(f"konstansok fegyver_kategória_harcmodor.{k}", v)
+    for t in load_yaml(os.path.join(src, 'taktikak.yaml'))['taktikák']:
+        for mk in lst(t.get('megkötések')):
+            if mk.get('típus') == 'harcmodor': hm(f"taktika {t['név']} megkötés", mk['érték'])
+        for x in lst(t.get('szűrő_harcmodorok')): hm(f"taktika {t['név']} szűrő_harcmodorok", x)
+    for h in load_yaml(os.path.join(src, 'harci_helyzetek.yaml'))['harci_helyzetek']:
+        for ti in lst(h.get('tiltások')):
+            for fe in lst(ti.get('feltétel')):
+                if fe.get('forrás') == 'fegyver.harcmodor': hm(f"helyzet {h['név']} tiltás {ti['id']}", fe['érték'])
     if errors:
-        print("  ❌ Név-hivatkozási hibák (pontos `név` egyezés kell):")
+        print("  ❌ Fortély / képzettség id-hivatkozási hibák:")
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)
@@ -136,7 +169,7 @@ def main():
         generate()
 
     validate_fortely_manover_refs()
-    validate_nev_hivatkozasok()
+    validate_id_hivatkozasok()
     write_marker()   # Vite plugin freshness detection
     write_hash()     # a következő futás skip-ellenőrzéséhez
     print("Done.")

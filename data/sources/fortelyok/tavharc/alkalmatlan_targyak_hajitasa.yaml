@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Hajítás - 6.szint"
   követelmények:
-  - név: "Hajítás"
+  - név: "távolsági_harcmodor/hajítás"
     érték: 6
     típus: "képzettség"
   hatástext:
@@ -47,7 +47,7 @@ fokok:
   követelménytext:
     - text: "Hajítás - 9.szint"
   követelmények:
-  - név: "Hajítás"
+  - név: "távolsági_harcmodor/hajítás"
     érték: 9
     típus: "képzettség"
   hatástext:

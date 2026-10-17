@@ -42,10 +42,10 @@ fokok:
     követelménytext:
       - text: "Lovaglás 6.szint, Távolsági harcmodor 6.szint"
     követelmények:
-      - név: ["Lovaglás", "Léglovaglás"]
+      - név: ["lovaglás", "léglovaglás"]
         érték: 6
         típus: "képzettség"
-      - név: ["Íjászat", "Lövészet", "Hajítás"]
+      - név: ["távolsági_harcmodor/íjászat", "távolsági_harcmodor/lövészet", "távolsági_harcmodor/hajítás"]
         érték: 6
         típus: "képzettség"
     hatástext:
@@ -61,10 +61,10 @@ fokok:
     követelménytext:
       - text: "Lovaglás 9.szint, Távolsági harcmodor 9.szint"
     követelmények:
-      - név: ["Lovaglás", "Léglovaglás"]
+      - név: ["lovaglás", "léglovaglás"]
         érték: 9
         típus: "képzettség"
-      - név: ["Íjászat", "Lövészet", "Hajítás"]
+      - név: ["távolsági_harcmodor/íjászat", "távolsági_harcmodor/lövészet", "távolsági_harcmodor/hajítás"]
         érték: 9
         típus: "képzettség"
     hatástext:

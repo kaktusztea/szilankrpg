@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Gladiátor Leíró Háttér"
   követelmények: 
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 6
     típus: "képzettség"
   hatástext: 

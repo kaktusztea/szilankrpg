@@ -28,7 +28,7 @@ fokok:
   követelménytext:
     - text: "Közelharc - 6.szint"
   követelmények:
-  - név: "Közelharc"
+  - név: "harcmodor/közelharc"
     érték: 6
     típus: "képzettség"
   hatástext:
@@ -65,7 +65,7 @@ fokok:
   követelménytext:
     - text: "Közelharc - 9.szint"
   követelmények:
-  - név: "Közelharc"
+  - név: "harcmodor/közelharc"
     érték: 9
     típus: "képzettség"
   hatástext:

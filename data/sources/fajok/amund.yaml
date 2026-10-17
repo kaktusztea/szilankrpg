@@ -13,18 +13,18 @@ tulajdonság_keretek:
   önuralom: [-5, 3]
   érzékenység: [-5, 5]
 érzék_fortélyok:
-  - név: "Ultralátás"
+  - név: "ultralátás"
     max_fok: 2
-  - név: "Ultralátás"
+  - név: "ultralátás"
     max_fok: 3
-faj_misztérium: "Amund"
+faj_misztérium: "faj_misztérium_amund"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok:
-  - név: "Kínokozás"
+  - név: "kínokozás"
     max_fok: 2
-  - név: "Tájtípus - sivatagi"
+  - név: "tájtípus_sivatagi"
     max_fok: 1
-ajánlott_képzettségek: ["Ősi nyelv ismerete", "Természetjárás"]
+ajánlott_képzettségek: ["ősi_nyelv_ismerete", "természetjárás"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

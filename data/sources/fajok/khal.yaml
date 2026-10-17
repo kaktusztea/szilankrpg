@@ -13,22 +13,22 @@ tulajdonság_keretek:
   önuralom: [-5, 2]
   érzékenység: [-5, 5]
 érzék_fortélyok:
-  - név: "Emberentúli látás"
+  - név: "emberentúli_látás"
     max_fok: 1
-  - név: "Emberentúli hallás"
+  - név: "emberentúli_hallás"
     max_fok: 1
-  - név: "Emberentúli szaglás"
+  - név: "emberentúli_szaglás"
     max_fok: 1
-faj_misztérium: "Khál"
+faj_misztérium: "faj_misztérium_khál"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok:
-  - név: "Természetes fegyver"
+  - név: "természetes_fegyver"
     max_fok: 1
-  - név: "Kétkezes harc"
+  - név: "kétkezes_harc"
     max_fok: 3
-  - név: "Kitartás"
+  - név: "kitartás"
     max_fok: 1
-ajánlott_képzettségek: ["Mászás", "Akrobatika"]
+ajánlott_képzettségek: ["mászás", "akrobatika"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

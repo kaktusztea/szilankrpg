@@ -35,7 +35,7 @@ fokok:
     követelménytext:
       - text: "Távolsági harcmodor 5.szint"
     követelmények:
-      - név: ["Íjászat", "Lövészet", "Hajítás"]
+      - név: ["távolsági_harcmodor/íjászat", "távolsági_harcmodor/lövészet", "távolsági_harcmodor/hajítás"]
         érték: 5
         típus: "képzettség"
     hatástext:

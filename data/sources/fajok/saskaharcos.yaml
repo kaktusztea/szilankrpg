@@ -13,11 +13,11 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok: []
-faj_misztérium: "Sáskaharcos"
+faj_misztérium: "faj_misztérium_sáskaharcos"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok:
-  - név: "Természetes páncél"
+  - név: "természetes_páncél"
     max_fok: 3
 ajánlott_képzettségek: []
 tiltott_képzettségek: []

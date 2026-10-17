@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Hadászat"]
+  normál: ["hadászat"]
   erős: []
 
 kp_perfok: 6
@@ -30,10 +30,10 @@ fokok:
       - text: "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 6.szint"
       - text: "Észlelés - 6.szint"
     követelmények:
-      - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+      - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
         érték: 6
         típus: "képzettség"
-      - név: "Észlelés"
+      - név: "észlelés"
         érték: 6
         típus: "képzettség"
     hatástext:
@@ -44,10 +44,10 @@ fokok:
       - text: "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 6.szint"
       - text: "Észlelés - 9.szint"
     követelmények:
-      - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+      - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
         érték: 6
         típus: "képzettség"
-      - név: "Észlelés"
+      - név: "észlelés"
         érték: 9
         típus: "képzettség"
     hatástext:

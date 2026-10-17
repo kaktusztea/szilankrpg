@@ -29,7 +29,7 @@ fokok:
     követelménytext:
       - text: "Lövészet 5.szint"
     követelmények:
-      - név: "Lövészet"
+      - név: "távolsági_harcmodor/lövészet"
         érték: 5
         típus: "képzettség"
     hatástext:

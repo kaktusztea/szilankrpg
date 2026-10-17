@@ -13,14 +13,14 @@ tulajdonság_keretek:
   önuralom: [-3, 6]
   érzékenység: [-5, 5]
 érzék_fortélyok:
-  - név: "Ultralátás"
+  - név: "ultralátás"
     max_fok: 1
-faj_misztérium: "Kyr"
+faj_misztérium: "faj_misztérium_kyr"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok:
-  - név: "Kultúrkör"
+  - név: "kultúrkör"
     max_fok: 1
-ajánlott_képzettségek: ["Etikett", "Ősi nyelv ismerete"]
+ajánlott_képzettségek: ["etikett", "ősi_nyelv_ismerete"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

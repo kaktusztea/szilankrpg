@@ -13,14 +13,14 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok:
-  - név: "Infralátás"
+  - név: "infralátás"
     max_fok: 1
-  - név: "Emberentúli szaglás"
+  - név: "emberentúli_szaglás"
     max_fok: 1
-faj_misztérium: "Udvari ork"
+faj_misztérium: "faj_misztérium_udvari_ork"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok: []
-ajánlott_képzettségek: ["Etikett"]
+ajánlott_képzettségek: ["etikett"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

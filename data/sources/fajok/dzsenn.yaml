@@ -13,10 +13,10 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok: []
-faj_misztérium: "Dzsenn"
+faj_misztérium: "faj_misztérium_dzsenn"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok: []
-ajánlott_képzettségek: ["Ősi nyelv ismerete", "Befolyásolás"]
+ajánlott_képzettségek: ["ősi_nyelv_ismerete", "befolyásolás"]
 tiltott_képzettségek: []
 tiltott_fortélyok: []

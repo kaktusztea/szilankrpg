@@ -29,14 +29,14 @@ fokok:
     követelménytext:
       - text: "Lopakodás/rejtőzés - 6.szint"
     követelmények:
-      - név: "Lopakodás/rejtőzés"
+      - név: "lopakodás_rejtőzés"
         érték: 6
         típus: "képzettség"
     hatástext:
       - text: "A \"Mozgás\" helyzetfüggő módosító büntetése rád nem vonatkozik."
     módosítók: ""
     próba_enyhítések:
-      - képzettség: "Lopakodás/rejtőzés"
+      - képzettség: "lopakodás_rejtőzés"
         kategória: "Mozgás"
         sorok: []
         érték: 999

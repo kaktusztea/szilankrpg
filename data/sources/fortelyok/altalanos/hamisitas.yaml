@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Értékbecslés", "Képzőművészet", "Művészetismeret", "Kézművesség"]
+  normál: ["értékbecslés", "képzőművészet", "művészetismeret", "kézművesség"]
   erős: []
 
 kp_perfok: 6

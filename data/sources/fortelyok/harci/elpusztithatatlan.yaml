@@ -29,7 +29,7 @@ fokok:
     követelménytext:
       - text: "Fájdalomtűrés - 7.szint"
     követelmények:
-      - név: "Fájdalomtűrés"
+      - név: "fájdalomtűrés"
         érték: 7
         típus: "képzettség"
     hatástext:
@@ -39,7 +39,7 @@ fokok:
     követelménytext:
       - text: "Fájdalomtűrés - 10.szint"
     követelmények:
-      - név: "Fájdalomtűrés"
+      - név: "fájdalomtűrés"
         érték: 10
         típus: "képzettség"
     hatástext:

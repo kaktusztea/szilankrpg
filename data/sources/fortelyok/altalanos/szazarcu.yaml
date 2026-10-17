@@ -29,18 +29,18 @@ fokok:
     követelménytext:
       - text: "Álcázás/Álruha - 4.szint"
     követelmények:
-      - név: "Álcázás/Álruha"
+      - név: "álcázás_álruha"
         érték: 4
         típus: "képzettség"
     hatástext:
       - text: "Gyors átöltözés és szegényes felszerelés büntetéseit 3-mal csökkentheted."
     módosítók: ""
     próba_enyhítések:
-      - képzettség: "Álcázás/Álruha"
+      - képzettség: "álcázás_álruha"
         kategória: "Idő"
         sorok: []
         érték: 3
-      - képzettség: "Álcázás/Álruha"
+      - képzettség: "álcázás_álruha"
         kategória: "Felszerelés"
         sorok: []
         érték: 3
@@ -48,18 +48,18 @@ fokok:
     követelménytext:
       - text: "Álcázás/Álruha - 8.szint"
     követelmények:
-      - név: "Álcázás/Álruha"
+      - név: "álcázás_álruha"
         érték: 8
         típus: "képzettség"
     hatástext:
       - text: "Gyors átöltözés és szegényes felszerelés büntetéseit 6-tal csökkentheted."
     módosítók: ""
     próba_enyhítések:
-      - képzettség: "Álcázás/Álruha"
+      - képzettség: "álcázás_álruha"
         kategória: "Idő"
         sorok: []
         érték: 6
-      - képzettség: "Álcázás/Álruha"
+      - képzettség: "álcázás_álruha"
         kategória: "Felszerelés"
         sorok: []
         érték: 6

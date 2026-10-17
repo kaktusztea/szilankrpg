@@ -25,7 +25,7 @@ fokok:
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 4.szint"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 4
     típus: "képzettség"
   hatástext: ""
@@ -40,7 +40,7 @@ fokok:
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
   követelmények:
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 8
     típus: "képzettség"
   hatástext: ""

@@ -25,7 +25,7 @@ fokok:
     - text: "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás"
     - text: "Roham taktika"
   követelmények: 
-  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás"]
+  - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás"]
     érték: 4
     típus: "képzettség"
   hatástext: 

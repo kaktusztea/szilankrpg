@@ -24,7 +24,7 @@ fokok:
   követelménytext:
     - text: "Kvantikum - 6.szint"
   követelmények: 
-  - név: "Kvantikum"
+  - név: "kvantikum"
     érték: 6
     típus: "képzettség"
   hatástext: 
@@ -37,12 +37,12 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Kvantikum értékre"
-    alcél: "képzettség:Kvantikum"
+    alcél: "képzettség:kvantikum"
 - fok: 2
   követelménytext:
     - text: "Kvantikum - 9.szint"
   követelmények: 
-  - név: "Kvantikum"
+  - név: "kvantikum"
     érték: 9
     típus: "képzettség"
   hatástext: 
@@ -55,4 +55,4 @@ fokok:
     arány: 0
     feltétel: ""
     megjegyzés: "csoportos Kvantikum értékre"
-    alcél: "képzettség:Kvantikum"
+    alcél: "képzettség:kvantikum"

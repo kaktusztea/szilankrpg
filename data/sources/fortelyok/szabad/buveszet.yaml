@@ -18,7 +18,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Befolyásolás", "Előadóművészet", "Lopás"]
+  normál: ["befolyásolás", "előadóművészet", "lopás"]
   erős: []
 
 kp_perfok: 6
