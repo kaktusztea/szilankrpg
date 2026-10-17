@@ -268,13 +268,12 @@ export function KepzettsegProbaPopup({
         {/* --- Extrák (accordion nélkül, közvetlenül): Vállalás + Összetett sorok --- */}
         {!vanEredmény && (
         <div className="kep-proba-extras-flat">
-          <div className="kep-proba-osszetett-row">
+          <div className="kep-proba-osszetett-row kep-proba-vm-row">
             {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
               <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás} title="Vállalás mértéke"
                 onClick={() => { setVállalás(vállalás === n ? 0 : n); resetDobás(); }}>V{n}</ExtraGomb>
             ))}
-          </div>
-          <div className="kep-proba-osszetett-row">
+            <span className="kep-proba-extras-sep">•</span>
             {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
               <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
                 onClick={() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); resetDobás(); }}>+{n}M</ExtraGomb>

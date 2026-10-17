@@ -500,6 +500,16 @@
   justify-content: center;
   gap: 6px;
 }
+.kep-proba-extras-sep {
+  align-self: center;
+  color: var(--text-dim);
+  font-size: 14px;
+  padding: 0 2px;
+}
+/* A Vállalás + Összetett egyesített sor töltse ki a szélességet (mint a felette lévő chipek). */
+.kep-proba-vm-row { width: 100%; }
+.kep-proba-vm-row .kep-proba-extras-btn { flex: 1 1 0; width: auto; }
+.kep-proba-vm-row .kep-proba-extras-sep { flex: 0 0 auto; }
 
 .kep-proba-extras-row {
   display: flex;
