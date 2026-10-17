@@ -20,9 +20,11 @@ interface Props {
 }
 
 export function ElonyPicker({ szint, eredeti, onChange, rövid, kompakt }: Props) {
+  // Kompakt (vízszintes) módban fordított sorrend: H-2 H-1 - E+1 E+2 (balról hátrány, jobbra előny).
+  const opciók = kompakt ? [...ELŐNY_OPCIÓK].reverse() : ELŐNY_OPCIÓK;
   return (
     <div className={`tamado-elony-list${kompakt ? ' tamado-elony-kompakt' : ''}`}>
-      {ELŐNY_OPCIÓK.map(opt => (
+      {opciók.map(opt => (
         <button
           key={opt.szint}
           className={`tamado-elony-chip${opt.szint === 0 ? ' tamado-elony-alap' : ''}${szint === opt.szint ? ' active' : ''}${eredeti !== undefined && eredeti !== szint && opt.szint === eredeti ? ' eredeti' : ''}`}
