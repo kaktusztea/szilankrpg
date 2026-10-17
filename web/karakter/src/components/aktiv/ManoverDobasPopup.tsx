@@ -332,15 +332,21 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                   )}
                   {FÁZIS_FELIRAT[f]}
                 </div>
-                {isAktív && (
+                {isAktív && (() => {
+                  // A fázis_info szövegek az ALKALMAZÓ (aktív) nézőpontját írják le ("Nem kapod meg
+                  // a +4 TÉ...", "TE adod le a Megakasztást") → passzív módban félrevezetők, ott a
+                  // renderFázisInfo passzív ága adja a helyes, mód-tudatos szöveget. Ezért a magyarázatot
+                  // CSAK aktív módban mutatjuk.
+                  const magyarázat = mód === 'aktív' ? manőver.fázis_info?.[f] : undefined;
+                  return (
                   <>
-                    {manőver.fázis_info?.[f] && (
-                      <div className="manover-fazis-magyarazat">ⓘ {manőver.fázis_info[f]}</div>
+                    {magyarázat && (
+                      <div className="manover-fazis-magyarazat">ⓘ {magyarázat}</div>
                     )}
                     {/* E és V: a dobás-UI mindig kell (E: módosítók/MP/célszám; V: TÉ chip a
                         tényleges támadó dobás értékével - a magyarázat KIEGÉSZÍTI, nem helyettesíti).
                         M: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást). */}
-                    {(f === 'E' || f === 'V' || !manőver.fázis_info?.[f]) && renderFázisInfo(f)}
+                    {(f === 'E' || f === 'V' || !magyarázat) && renderFázisInfo(f)}
                     {/* Biztos rontás: 99 sentinel aktív E fázisban. (Immunis / passzív letilt → azonnali végeredmény, nincs aktív fázis.) */}
                     {/* A siker/kudarc gombok csak a Dobás UTÁN aktívak (aktív mód, V/E fázis): a dobás
                         adja az eredményt, előtte nincs mit elkönyvelni. Passzív módban nincs dobás-sor
@@ -350,7 +356,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                       letiltva={mód === 'aktív' && ((f === 'V' && !vDobás) || (f === 'E' && !eDobás))}
                       onSiker={handleSiker} />
                   </>
-                )}
+                  );
+                })()}
               </div>
             );
           })}
