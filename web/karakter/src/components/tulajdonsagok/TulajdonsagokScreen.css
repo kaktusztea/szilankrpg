@@ -477,6 +477,19 @@
   gap: 8px;
   margin-top: 8px;
 }
+/* Tulajdonságpróba Extrák (accordion nélkül, közvetlenül): E/H sor + összetett sor. */
+.kep-proba-extras-flat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.kep-proba-eh-row {
+  display: flex;
+  gap: 6px;
+}
+.kep-proba-eh-row .kep-proba-extras-btn { flex: 1 1 0; width: auto; }
+
 .kep-proba-extras-row {
   display: flex;
   align-items: center;

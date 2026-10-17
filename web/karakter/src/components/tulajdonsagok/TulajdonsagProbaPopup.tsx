@@ -4,7 +4,7 @@ import { ManualDicePicker } from '../harc/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
 import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from './proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraSor, ExtraGomb, OsszetettValaszto, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraSor, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -30,7 +30,6 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const bónusz = fortélyBónuszok.reduce((s, b, i) => s + (bónuszBe[i] ? b.érték : 0), 0);
   const érték = tulÉrték + bónusz;
   const [nehézség, setNehézség] = useState<number | null>(null);
-  const [extrákNyitva, setExtrákNyitva] = useState(false);
   // Helyzetfüggő módosítók (fortély-bónuszok) külön picker popupban - a képzettségpróba mintájára.
   const [szitNyitva, setSzitNyitva] = useState(false);
   // A felszerelés-túlterhelés Hátránya a dobás alap EH-ja (a KM felülírhatja).
@@ -88,23 +87,20 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
         )}
 
         {!d.vanEredmény && (
-          <div className="kep-proba-extras-box">
-            <button type="button" className="kep-proba-extras-toggle" aria-expanded={extrákNyitva} onClick={() => setExtrákNyitva(v => !v)}>
-              Extrák {extrákNyitva ? '▴' : '▾'}
-            </button>
-            {extrákNyitva && (
-              <div className="kep-proba-extras-body">
-                <ExtraSor label="Előny/Hátrány:">
-                  {ELŐNY_HÁTRÁNY_SZINTEK.map(e => (
-                    <ExtraGomb key={e.szint} aktív={ehSzint === e.szint} onClick={váltás(() => setEhSzint(e.szint))}>
-                      {e.szint === 0 ? '-' : e.szint > 0 ? `+${e.szint}` : `${e.szint}`}
-                    </ExtraGomb>
-                  ))}
-                </ExtraSor>
-                <OsszetettValaszto db={összetettDb} max={próba.összetett_max_másodlagos} levonás={p.másodlagos_levonás}
-                  disabled={ellenpróba} onChange={n => { setÖsszetettDb(n); d.reset(); }} />
-              </div>
-            )}
+          <div className="kep-proba-extras-flat">
+            <div className="kep-proba-eh-row">
+              {ELŐNY_HÁTRÁNY_SZINTEK.map(e => (
+                <ExtraGomb key={e.szint} aktív={ehSzint === e.szint} onClick={váltás(() => setEhSzint(e.szint))}>
+                  {e.szint === 0 ? '-' : e.szint > 0 ? `E+${e.szint}` : `H${e.szint}`}
+                </ExtraGomb>
+              ))}
+            </div>
+            <ExtraSor label="🔗">
+              {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
+                <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title={`${n}db Másodlagos dobás (-${p.másodlagos_levonás})`}
+                  onClick={() => { setÖsszetettDb(összetettDb === n ? 0 : n); d.reset(); }}>+{n}M</ExtraGomb>
+              ))}
+            </ExtraSor>
           </div>
         )}
 
