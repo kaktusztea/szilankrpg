@@ -4,9 +4,14 @@ import { ElonyPicker } from './ElonyPicker';
 import { SebzesPopup } from './SebzesPopup';
 import { VeCsokkentesPopup } from './VeCsokkentesPopup';
 import { ManualDicePicker } from './ManualDicePicker';
+import { TaktikaPickerPopup } from '../aktiv/TaktikaPickerPopup';
+import { HelyzetPickerPopup } from '../aktiv/HelyzetPickerPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from './combat-roll-info';
 import type { FegyverResultMód } from './types';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter, Session } from '../../engine/types';
+import type { UndoPatch } from '../../hooks/useUndo';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { Fegyverviszony } from './ve-csokkentes-calc';
 import { netElőnySzint } from './combat-roll-info';
@@ -52,11 +57,12 @@ interface Props {
   véCsökkentésSzorzóForrás?: string;
   /** Harci helyzetek vé_csökkentés flat bővítései (pl. Meglepetés +2) - a VÉ-csökkentés popupnak továbbadva. */
   helyzetVéCsökkentés?: { forrás: string; érték: number }[];
-  /** „Gyengébb kéz" harci helyzet aktuális állapota. Csak akkor adott, ha a toggle gomb kell
-   * (a hívó dönti el: kizárólag Kétkezes harc fegyverfogásnál). */
-  gyengébbKézAktív?: boolean;
-  /** A „Gyengébb kéz" helyzet be/ki kapcsolója (a session.aktív_helyzetek-et írja). */
-  onGyengébbKézToggle?: () => void;
+  /** A Taktika / Harci helyzet kapcsoló chipekhez (ugyanaz a picker-ablak, mint az Aktív fülön). */
+  data: GameData;
+  karakter: Karakter;
+  session: Session;
+  setSession: React.Dispatch<React.SetStateAction<Session>>;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onClose: (eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => void;
 }
 
@@ -71,7 +77,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, gyengébbKézAktív, onGyengébbKézToggle, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, data, karakter, session, setSession, pushUndo, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -79,6 +85,8 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
   const [showMódVálasztó, setShowMódVálasztó] = useState(false);
   const [showSebzés, setShowSebzés] = useState(false);
   const [showVéCsökkentés, setShowVéCsökkentés] = useState(false);
+  const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
+  const [showHelyzetPicker, setShowHelyzetPicker] = useState(false);
 
   // A dobás ELŐTT (nincs eredmény) a megjelenített Előny/Hátrány szint követi az aktív hatásokat,
   // hogy a Gyengébb kéz toggle (ami a session-t írja → új dobásInfo prop) azonnal tükröződjön az
@@ -166,6 +174,20 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
     );
   }
 
+  if (showTaktikaPicker) {
+    return (
+      <TaktikaPickerPopup data={data} karakter={karakter} session={session}
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowTaktikaPicker(false)} />
+    );
+  }
+
+  if (showHelyzetPicker) {
+    return (
+      <HelyzetPickerPopup data={data} karakter={karakter} session={session}
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowHelyzetPicker(false)} />
+    );
+  }
+
   if (showMódVálasztó && módok) {
     return (
       <PopupOverlay onClose={() => setShowMódVálasztó(false)}>
@@ -210,13 +232,14 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
                 Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && <span className="mod-valaszto-masodlagos">(másodlagos)</span>}
               </button>
             )}
-            {onGyengébbKézToggle && (
-              <button
-                className={`gyengebb-kez-toggle${gyengébbKézAktív ? ' on' : ''}`}
-                onClick={onGyengébbKézToggle}>
-                Gyengébb kéz: {gyengébbKézAktív ? 'Be' : 'Ki'}
+            <div className="tamado-aktiv-chips">
+              <button className="tamado-aktiv-chip" onClick={() => setShowTaktikaPicker(true)}>
+                Taktika{session.aktív_taktikák.length > 0 ? ` (${session.aktív_taktikák.length})` : ''}
               </button>
-            )}
+              <button className="tamado-aktiv-chip" onClick={() => setShowHelyzetPicker(true)}>
+                Harci helyzet{session.aktív_helyzetek.length > 0 ? ` (${session.aktív_helyzetek.length})` : ''}
+              </button>
+            </div>
             <ElonyPicker szint={szint} onChange={setSzint} />
             {dobásInfo.téHatások.length > 0 && (
               <HatásokInfo hatások={dobásInfo.téHatások} />

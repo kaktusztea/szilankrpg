@@ -25,7 +25,6 @@ import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { ManoverPicker } from './ManoverPicker';
-import { toggleHelyzet, GYENGÉBB_KÉZ } from './helyzet-toggle';
 import { rollK20 } from '../../engine/dice';
 import './HarcScreen.css';
 
@@ -86,11 +85,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   // „Gyengébb kéz" harci helyzet be/ki a Támadó dobás ablakból (csak Kétkezes harcnál jelenik meg).
   // Ugyanazt a session.aktív_helyzetek tömböt írja, mint az Aktív fül picker-e → egy igazságforrás,
   // a hatás a megszokott HatasokInfo badge-sorban (Hátrány-1 Gyengébb kéz) jelenik meg.
-  const handleGyengébbKézToggle = useCallback(() => {
-    pushUndo(`Gyengébb kéz: ${session.aktív_helyzetek.includes(GYENGÉBB_KÉZ) ? 'Ki' : 'Be'}`, [{ field: 'session', prev: session }]);
-    setSession(s => ({ ...s, aktív_helyzetek: toggleHelyzet(s.aktív_helyzetek, GYENGÉBB_KÉZ) }));
-  }, [pushUndo, setSession, session]);
-
   // Popup close handler
   function closePopups() {
     setShowVéResetConfirm(false);
@@ -244,8 +238,11 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
           helyzetVéCsökkentés={hc.helyzetVéCsökkentés}
-          gyengébbKézAktív={session.fegyverfogás === 'kétkezes' ? session.aktív_helyzetek.includes(GYENGÉBB_KÉZ) : undefined}
-          onGyengébbKézToggle={session.fegyverfogás === 'kétkezes' ? handleGyengébbKézToggle : undefined}
+          data={data}
+          karakter={karakter}
+          session={session}
+          setSession={setSession}
+          pushUndo={pushUndo}
           onClose={handleTamadoClose}
         />
       )}

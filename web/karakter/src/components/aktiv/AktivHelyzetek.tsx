@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { AktivBaseProps } from './types';
 import { fmtCode } from '../formatters';
 import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText, getTiltásWarnings } from './AktivHelpers';
-import { PickerOverlay } from './PickerOverlay';
+import { HelyzetPickerPopup } from './HelyzetPickerPopup';
 
 interface Props extends AktivBaseProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
@@ -11,41 +11,14 @@ interface Props extends AktivBaseProps {
 export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, helyzetFortélyok }: Props) {
   const [showPicker, setShowPicker] = useState(false);
 
-  function addHelyzet(h: typeof data.harciHelyzetek[0]) {
-    pushUndo(`Helyzet: ${h.név}`, [{ field: 'session', prev: session }]);
-    const hDef = data.harciHelyzetek.find(d => d.név === h.név);
-    setSession(s => {
-      let helyzetek = [...s.aktív_helyzetek, h.név];
-      let taktikák = s.aktív_taktikák;
-      const kizár = hDef?.kizár_helyzetek ?? [];
-      if (kizár.length) {
-        const kizártNevek = kizár.map((kid: string) => data.harciHelyzetek.find(d => d.id === kid)?.név).filter(Boolean);
-        helyzetek = helyzetek.filter(hh => !kizártNevek.includes(hh));
-      }
-      if (hDef?.tiltja_taktikákat) taktikák = [];
-      const patch: Partial<typeof s> = {};
-      if (hDef?.tiltott_fegyverfogások?.includes(s.fegyverfogás)) {
-        patch.fegyverfogás = 'egyfegyveres'; patch.kétkezes_harc = false;
-        patch.aktív_pajzs = false; patch.aktív_fegyver_bal_index = -1;
-      }
-      return { ...s, ...patch, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
-    });
-    setShowPicker(false);
-  }
-
-  const groups = [
-    { label: 'Pozitív helyzet', cls: 'aktiv-picker-group-pozitív', items: data.harciHelyzetek.filter(h => h.csoport === 'pozitív' && isHelyzetAvailable(h, session, data)) },
-    { label: 'Semleges helyzet', cls: 'aktiv-picker-group-semleges', items: data.harciHelyzetek.filter(h => h.csoport === 'semleges' && isHelyzetAvailable(h, session, data)) },
-    { label: 'Negatív helyzet', cls: 'aktiv-picker-group-negatív', items: data.harciHelyzetek.filter(h => h.csoport === 'negatív' && isHelyzetAvailable(h, session, data)) },
-    { label: 'Távharci helyzet', cls: 'aktiv-picker-group-távharc', items: data.harciHelyzetek.filter(h => h.csoport === 'távharc' && isHelyzetAvailable(h, session, data)) },
-  ];
+  const bármiElérhető = data.harciHelyzetek.some(h => isHelyzetAvailable(h, session, data));
 
   return (
     <>
       <div className="aktiv-section aktiv-section-noborder">
         <h3>Harci helyzetek
           <button className="aktiv-add-btn aktiv-add-btn-sm"
-            disabled={groups.every(g => g.items.length === 0)}
+            disabled={!bármiElérhető}
             onClick={() => setShowPicker(true)}>+</button>
         </h3>
         {session.aktív_helyzetek.map((h, i) => {
@@ -80,17 +53,8 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
       </div>
 
       {showPicker && (
-        <PickerOverlay title="Harci helyzet választó" onClose={() => setShowPicker(false)}>
-          {groups.flatMap(g => g.items.length > 0 ? [
-            <div key={g.label} className={`aktiv-picker-group-label ${g.cls}`}>{g.label}</div>,
-            ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
-              <button type="button" key={h.név} className={`aktiv-picker-item ${g.cls}`} onClick={() => addHelyzet(h)}>
-                <span className="aktiv-picker-item-name">{h.név}</span>
-                <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
-              </button>
-            ))
-          ] : [])}
-        </PickerOverlay>
+        <HelyzetPickerPopup data={data} karakter={karakter} session={session}
+          setSession={setSession} pushUndo={pushUndo} onClose={() => setShowPicker(false)} />
       )}
     </>
   );

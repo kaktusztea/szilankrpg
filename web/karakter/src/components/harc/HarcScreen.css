@@ -661,6 +661,25 @@
   border-color: var(--warning);
   color: var(--warning);
 }
+/* Taktika / Harci helyzet kapcsoló chipek a Támadó dobás popupban (az Előny/Hátrány picker felett).
+   Ugyanazt a picker-ablakot nyitják, mint az Aktív fül. A label counter = aktív elemek száma. */
+.tamado-aktiv-chips {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.tamado-aktiv-chip {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
 .mod-valaszto-list,
 .pancel-valaszto-list {
   display: flex;

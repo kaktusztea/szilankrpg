@@ -8,12 +8,17 @@ interface Props {
   session: Session;
   onAddSimple: (név: string) => void;
   onFokválasztó: (név: string) => void;
+  /** Toggle-mód: ha adott, az aktív taktikák is megjelennek (kattintásra kikapcsolás).
+   * Ha nincs, az add-only viselkedés marad (az aktívak kiszűrve). */
+  onRemove?: (név: string) => void;
 }
 
-export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokválasztó }: Props) {
+export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokválasztó, onRemove }: Props) {
+  const toggle = !!onRemove;
   const pinned = (data.konstansok.pinned_taktikák ?? []) as string[];
   const items = data.taktikak
-    .filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név, session, karakter, data))
+    // Add-only módban az aktívak kiszűrve; toggle-módban mind látszik (aktív/felvehető/tiltott).
+    .filter(t => toggle || !session.aktív_taktikák.some(a => a.név === t.név))
     .sort((a, b) => {
       // Távharci taktikák mindig a végére kerülnek
       const aRemote = a.csoport === 'távharc' ? 1 : 0;
@@ -32,13 +37,19 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
     {items.map(t => {
       const showHeader = t.csoport === 'távharc' && !tavharcHeaderShown;
       if (showHeader) tavharcHeaderShown = true;
+      const aktív = session.aktív_taktikák.some(a => a.név === t.név);
+      // Toggle-módban a nem-aktív, de nem-engedélyezett taktikák halványan/letiltva (okkal: kizárás/megkötés).
+      const tiltott = toggle && !aktív && !isTaktikaAllowed(t.név, session, karakter, data);
       return <div key={t.név}>
         {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header">🏹 Távharci taktikák</div>}
-        <button type="button" className="aktiv-picker-item" onClick={() => {
-          if (t.fokozatos) onFokválasztó(t.név);
-          else onAddSimple(t.név);
-        }}>
-          <span className="aktiv-picker-item-name">{t.név}{t.fokozatos ? ' 📶' : ''}</span>
+        <button type="button"
+          className={`aktiv-picker-item${aktív ? ' aktiv-picker-item-active-accent' : ''}${tiltott ? ' aktiv-picker-item-disabled-inline' : ''}`}
+          onClick={() => {
+            if (aktív) { onRemove?.(t.név); return; }
+            if (t.fokozatos) onFokválasztó(t.név);
+            else onAddSimple(t.név);
+          }}>
+          <span className="aktiv-picker-item-name">{aktív ? '✔ ' : ''}{t.név}{t.fokozatos ? ' 📶' : ''}</span>
           <span className="aktiv-picker-item-details">
             {t.fokozatos && t.fokok
               ? t.fokok.map((f: any) => `${f.fok}: ${formatFokMods(f)}`).join(' | ')
