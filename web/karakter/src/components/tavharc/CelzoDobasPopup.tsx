@@ -5,6 +5,8 @@ import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { SebzesPopup } from '../harc/SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásHatás } from '../harc/combat-roll-info';
+import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
+import type { ExtraKontextus } from '../harc/extrak-info-calc';
 import { HatasokInfo } from '../harc/HatasokInfo';
 
 /**
@@ -34,6 +36,16 @@ interface Props {
   sebzésHatások: DobásHatás[];
   /** Default Előny/Hátrány szint (from active effects) */
   defaultSzint: number;
+  /** Sebzésjelleg × páncél mátrix - az „Ellenfél páncél" választóhoz (SebzesPopup). */
+  páncélMátrix?: SebzésjellegPáncélMátrix;
+  /** Az aktív távfegyver sebzésjellege a mátrix teljes-szavas kulcsaként (pl. "szúró"). */
+  jelleg?: string;
+  /** Az aktív távfegyver extráinak listája (`cél_páncél` SP-hatás kiértékeléséhez). */
+  fegyverExtrák?: { id: string }[];
+  /** Az összes fegyver-extra definíció (id → def). */
+  extraDefs?: Record<string, FegyverExtraDef>;
+  /** Harci kontextus az „Extrák" gomb + effekt-motor cél_páncél feltételeihez. */
+  extraKontextus?: ExtraKontextus;
   onClose: () => void;
 }
 
@@ -49,7 +61,7 @@ interface CéEredmény {
  *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat → Sebzés button
  *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
  */
-export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, onClose }: Props) {
+export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, onClose }: Props) {
   const [szint, setSzint] = useState(defaultSzint);
   const [result, setResult] = useState<CéEredmény | null>(null);
   const [showSebzés, setShowSebzés] = useState(false);
@@ -79,6 +91,11 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
         megjegyzések={[]}
         hideAutoBónusz
         átütés={átütés}
+        jelleg={jelleg}
+        páncélMátrix={páncélMátrix}
+        fegyverExtrák={fegyverExtrák}
+        extraDefs={extraDefs}
+        extraKontextus={extraKontextus}
         onClose={onClose}
       />
     );

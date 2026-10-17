@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { collectDobásInfo, netElőnySzint, sebzésPáncélDelta, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
@@ -114,5 +114,33 @@ describe('sebzésPáncélDelta', () => {
   it('ismeretlen jelleg vagy hiányzó jelleg → 0', () => {
     expect(sebzésPáncélDelta(mátrix, 'zúzó', 'merev')).toBe(0);
     expect(sebzésPáncélDelta(mátrix, undefined, 'merev')).toBe(0);
+  });
+});
+
+describe('távjellegMátrixKulcs', () => {
+  const m: SebzésjellegPáncélMátrix = {
+    matrix: {
+      'szúró': { csupasz: 2, puha: 3, bor: 1, lanc: 0, merev: -3 },
+      'vágó-egyenes': { csupasz: 1, puha: 1, bor: 0, lanc: -2, merev: -4 },
+      'zúzó': { csupasz: 0, puha: 0, bor: 1, lanc: 3, merev: 3 },
+    },
+    struktúra_osztály: { lemez: 'merev' },
+  };
+
+  it('kanonikus betűk (extrak.schema.yaml S/V/Z) → mátrix teljes-szavas kulcs', () => {
+    expect(távjellegMátrixKulcs('S')).toBe('szúró');
+    expect(távjellegMátrixKulcs('V')).toBe('vágó-egyenes');
+    expect(távjellegMátrixKulcs('Z')).toBe('zúzó');
+  });
+
+  it('a kulcsok ténylegesen léteznek a mátrixban (lookup nem 0-ra esik vissza)', () => {
+    // szúró a merev páncélon −3 (a mátrix szúró sora) - bizonyítja, hogy a kulcs stimmel
+    expect(sebzésPáncélDelta(m, távjellegMátrixKulcs('S'), 'merev')).toBe(-3);
+    expect(sebzésPáncélDelta(m, távjellegMátrixKulcs('Z'), 'lanc')).toBe(3);
+  });
+
+  it('spec vagy ismeretlen → undefined (nincs páncélmátrix-interakció → nincs választó)', () => {
+    expect(távjellegMátrixKulcs('spec')).toBeUndefined();
+    expect(távjellegMátrixKulcs('')).toBeUndefined();
   });
 });

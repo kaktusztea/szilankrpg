@@ -206,3 +206,21 @@ export function célPáncélKategória(
   return osztály === 'csupasz' ? 'vérttelen' : 'páncélos';
 }
 
+/**
+ * Távfegyver `sebzésjelleg` betű → a Sebzésjelleg×páncél mátrix teljes-szavas kulcsa.
+ * Kanonikus betűk (extrak.schema.yaml `ellenfél_fegyver_sebzésjelleg`): S=szúró, V=vágó, Z=zúzó.
+ * A közelharci fegyver v2 `jelleg` MÁR teljes szó - ott nincs szükség konverzióra.
+ * `spec` → undefined (speciális sebzés, nincs páncélmátrix-interakció → nincs páncélválasztó).
+ * ponytail: a `V` a `vágó-egyenes` sorra képződik (semlegesebb vágó). A táv-fegyveradat nem bontja
+ *   egyenes/íves-re, és jelenleg EGYETLEN V-s távfegyver sincs - ha lenne, külön adatmező kéne.
+ */
+export function távjellegMátrixKulcs(sebzésjelleg: string): string | undefined {
+  switch (sebzésjelleg) {
+    case 'S': return 'szúró';
+    case 'V': return 'vágó-egyenes';
+    case 'Z': return 'zúzó';
+    default: return undefined; // 'spec' vagy ismeretlen
+  }
+}
+
+

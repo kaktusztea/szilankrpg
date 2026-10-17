@@ -4,7 +4,8 @@ import { képzKulcs } from '../../engine/azonosito';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
 import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
 import { getMfFok } from './mesterfegyver-calc';
-import { collectCéDobásInfo, netElőnySzint, collectDobásInfo } from '../harc/combat-roll-info';
+import { collectCéDobásInfo, netElőnySzint, collectDobásInfo, távjellegMátrixKulcs } from '../harc/combat-roll-info';
+import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
 import { TavharcGameSelector } from './TavharcGameSelector';
@@ -173,6 +174,15 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         // Raw SP (nem tavSP): a SebzesPopup maga ismeri fel az SP_NINCS (-99) sentinelt → "nem sebez".
         const fegyverSP = tfDef?.SP ?? 0;
         const fegyverÁtütés = tfDef?.Átütés ?? 0;
+        // Ellenfél-páncél választó (ugyanaz, mint a közelharci Sebzésnél): a sebzésjelleg betűjét
+        // (S/V/Z) a mátrix teljes-szavas kulcsára képezzük. `spec` → nincs mátrix-interakció.
+        const jelleg = tfDef ? távjellegMátrixKulcs(tfDef.sebzésjelleg) : undefined;
+        const extraKontextus = {
+          aktívFeltételek: buildAktívFeltételek(session, data),
+          fortélyFokok: new Map(k.fortélyok.map(f => [f.id, f.fok])),
+          aktívStátuszok: new Set(session.aktív_státuszok),
+          aktívManőver: session.aktív_manőver || undefined,
+        };
         return (
           <CélzóDobasPopup
             cé={bontás.cé}
@@ -183,6 +193,11 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             céMegjegyzések={céInfo.céMegjegyzések}
             sebzésHatások={dobásInfo.sebzésHatások}
             defaultSzint={netElőnySzint(céInfo.céHatások)}
+            jelleg={jelleg}
+            páncélMátrix={jelleg ? data.sebzésjellegPáncélMátrix : undefined}
+            fegyverExtrák={(tfDef?.extrák ?? []).map(id => ({ id }))}
+            extraDefs={data.fegyverExtrák}
+            extraKontextus={extraKontextus}
             onClose={() => setShowCéDobás(false)}
           />
         );
