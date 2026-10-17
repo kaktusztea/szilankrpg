@@ -45,16 +45,6 @@ export function OsszetettValaszto({ db, max, levonás, disabled, onChange }: { d
   );
 }
 
-/** Ellenpróba Igen / Nem. */
-export function EllenprobaValaszto({ ellenpróba, disabled, onChange }: { ellenpróba: boolean; disabled: boolean; onChange: (v: boolean) => void }) {
-  return (
-    <ExtraSor label="Ellenpróba:">
-      <ExtraGomb aktív={ellenpróba} disabled={disabled} onClick={() => onChange(true)}>Igen</ExtraGomb>
-      <ExtraGomb aktív={!ellenpróba} disabled={disabled} onClick={() => onChange(false)}>Nem</ExtraGomb>
-    </ExtraSor>
-  );
-}
-
 /** A dobott kockák sora (E/H címke + az összes kocka, a választott kiemelve). */
 function DobasKockak({ dobás, kocka, ehSzint }: { dobás: ProbaDobás; kocka: number; ehSzint: number }) {
   const ehCímke = előnyHátrányLabel(ehSzint);
@@ -129,9 +119,9 @@ export function ProbaEredmeny({ bázis, nehézség, csakÖsszeg, dobás, összet
 }
 
 /** Célszám-választó gomb (aktív kiemeléssel). */
-export function CelszamGomb({ aktív, onClick, children, className = '' }: { aktív: boolean; onClick: () => void; children: ReactNode; className?: string }) {
+export function CelszamGomb({ aktív, onClick, children, className = '', disabled = false }: { aktív: boolean; onClick: () => void; children: ReactNode; className?: string; disabled?: boolean }) {
   return (
-    <button type="button" className={`he-field-btn${className ? ` ${className}` : ''}${aktív ? ' vallas-active' : ''}`} aria-pressed={aktív} onClick={onClick}>
+    <button type="button" className={`he-field-btn${className ? ` ${className}` : ''}${aktív ? ' vallas-active' : ''}`} aria-pressed={aktív} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );

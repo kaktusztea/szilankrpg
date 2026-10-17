@@ -11,7 +11,7 @@ import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPic
 import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, helyettesítésSzint, képzetlenCélszám } from './proba-common';
 import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from './kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraSor, ExtraGomb, OsszetettValaszto, EllenprobaValaszto, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraSor, ExtraGomb, OsszetettValaszto, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
 
 /** Vállalás próba eredménye (k6 vs vállalás: Kritikus hiba, ha ≤). */
 interface VállalásEredmény {
@@ -207,8 +207,12 @@ export function KepzettsegProbaPopup({
               </CelszamGomb>
             ))}
           </div>
-          {!ellenpróba && (
-            <div className="kep-proba-dual-col">
+          <div className="kep-proba-dual-col">
+            <CelszamGomb aktív={ellenpróba} disabled={összetettDb > 0}
+              onClick={() => { setEllenpróba(!ellenpróba); if (!ellenpróba) setÖsszetettDb(0); resetDobás(); }}>
+              <span className="kep-proba-rejtett-label">Ellenpróba</span>
+            </CelszamGomb>
+            {!ellenpróba && (<>
               <CelszamGomb aktív={ismeretlen} onClick={() => { setNehézség(-1); resetDobás(); }}>
                 <span className="kep-proba-rejtett-label">Rejtett célszám</span>
               </CelszamGomb>
@@ -224,8 +228,8 @@ export function KepzettsegProbaPopup({
                   <CelszamGomb key={é} aktív={nehézség === é} onClick={() => { setNehézség(é); resetDobás(); }}>{é}</CelszamGomb>
                 ))
               ))}
-            </div>
-          )}
+            </>)}
+          </div>
         </div>
 
         {kiterjesztesek.length > 0 && (
@@ -241,8 +245,8 @@ export function KepzettsegProbaPopup({
         {/* --- Módosító értékek chip (opens picker popup) --- */}
         {módosítóTáblák.length > 0 && (
           <div className="kep-proba-row">
-            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('szit')}>
-              Helyzetfüggő módosítók: <span className={szitModÖsszeg > 0 ? 'kep-proba-szit-pos' : szitModÖsszeg < 0 ? 'kep-proba-szit-neg' : ''}>{szitModÖsszeg === 0 ? '0' : `${szitModÖsszeg > 0 ? '+' : ''}${szitModÖsszeg}`}</span>
+            <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash" onClick={() => setOpenPicker('szit')}>
+              Helyzetfüggő módosítók<span className={szitModÖsszeg > 0 ? 'kep-proba-szit-pos' : szitModÖsszeg < 0 ? 'kep-proba-szit-neg' : ''}>{szitModÖsszeg === 0 ? ' →' : `: ${szitModÖsszeg > 0 ? '+' : ''}${szitModÖsszeg}`}</span>
               {próbaEnyhítések.length > 0 && (
                 <span className="kep-proba-enyhites-lista">
                   {[...new Map(próbaEnyhítések.map(e => [e.fortély, e])).values()].filter(e => e.fortély).map(e => (
@@ -277,8 +281,6 @@ export function KepzettsegProbaPopup({
                     onClick={() => { setVállalás(vállalás === n ? 0 : n); resetDobás(); }}>{n}</ExtraGomb>
                 ))}
               </ExtraSor>
-              <EllenprobaValaszto ellenpróba={ellenpróba} disabled={összetettDb > 0}
-                onChange={v => { setEllenpróba(v); if (v) setÖsszetettDb(0); resetDobás(); }} />
               {/* Helyettesítés */}
               {képzettségek.length > 1 && (
               <div className="kep-proba-extras-row">

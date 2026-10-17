@@ -4,7 +4,7 @@ import { ManualDicePicker } from '../harc/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
 import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from './proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraSor, ExtraGomb, OsszetettValaszto, EllenprobaValaszto, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraSor, ExtraGomb, OsszetettValaszto, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -62,21 +62,27 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
           </div>
         )}
 
-        {!ellenpróba && (
-          <div className="kep-proba-neh-list">
-            <CelszamGomb aktív={ismeretlen} onClick={váltás(() => setNehézség(-1))}>Ismeretlen célszám</CelszamGomb>
+        <div className="kep-proba-neh-list">
+          <CelszamGomb aktív={ellenpróba} disabled={összetettDb > 0}
+            onClick={váltás(() => { setEllenpróba(!ellenpróba); if (!ellenpróba) setÖsszetettDb(0); })}>
+            <span className="kep-proba-rejtett-label">Ellenpróba</span>
+          </CelszamGomb>
+          {!ellenpróba && (<>
+            <CelszamGomb aktív={ismeretlen} onClick={váltás(() => setNehézség(-1))}>
+              <span className="kep-proba-rejtett-label">Rejtett célszám</span>
+            </CelszamGomb>
             {p.nehézségek.map(n => (
               <CelszamGomb key={n.érték} aktív={nehézség === n.érték} onClick={váltás(() => setNehézség(n.érték))}>
                 {n.érték} ({n.név})
               </CelszamGomb>
             ))}
-          </div>
-        )}
+          </>)}
+        </div>
 
         {fortélyBónuszok.length > 0 && !d.vanEredmény && (
           <div className="kep-proba-row">
-            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setSzitNyitva(true)}>
-              Helyzetfüggő módosítók: <span className={bónusz > 0 ? 'kep-proba-szit-pos' : bónusz < 0 ? 'kep-proba-szit-neg' : ''}>{bónusz === 0 ? '0' : `${bónusz > 0 ? '+' : ''}${bónusz}`}</span>
+            <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash" onClick={() => setSzitNyitva(true)}>
+              Helyzetfüggő módosítók<span className={bónusz > 0 ? 'kep-proba-szit-pos' : bónusz < 0 ? 'kep-proba-szit-neg' : ''}>{bónusz === 0 ? ' →' : `: ${bónusz > 0 ? '+' : ''}${bónusz}`}</span>
             </button>
           </div>
         )}
@@ -97,8 +103,6 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
                 </ExtraSor>
                 <OsszetettValaszto db={összetettDb} max={próba.összetett_max_másodlagos} levonás={p.másodlagos_levonás}
                   disabled={ellenpróba} onChange={n => { setÖsszetettDb(n); d.reset(); }} />
-                <EllenprobaValaszto ellenpróba={ellenpróba} disabled={összetettDb > 0}
-                  onChange={v => { setEllenpróba(v); if (v) setÖsszetettDb(0); d.reset(); }} />
               </div>
             )}
           </div>
