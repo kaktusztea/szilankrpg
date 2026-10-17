@@ -1,4 +1,5 @@
 import type { Kepzettseg } from '../engine/types';
+import { MD_BASE } from './MdLink';
 import type { KepzettsegDef } from '../engine/data-loader';
 import { képzettségNév, képzettségSzint } from '../engine/azonosito';
 import type { FortelySummary, FortelyFokSummary } from '../engine/data-loader';
@@ -44,6 +45,14 @@ export function FortelyDetails({ def, fokDef, képzettségek, kepzettsegDefs }: 
 
       <KiterjesztesLista label="Normál kiterjesztés" nevek={def.kiterjeszti_normál} képzettségek={képzettségek} kepzettsegDefs={kepzettsegDefs} />
       <KiterjesztesLista label="Erős kiterjesztés" nevek={def.kiterjeszti_erős} képzettségek={képzettségek} kepzettsegDefs={kepzettsegDefs} />
+      {(def.kapcsolódó_szituációk?.length ?? 0) > 0 && (
+        <div className="info-panel-row info-panel-szit">
+          <span className="info-panel-label">Szituációk:</span>
+          <span className="info-panel-szit-list">{def.kapcsolódó_szituációk!.map((sz, i) => (
+            <a key={i} className="info-panel-szit-link" href={MD_BASE + sz.fájl} target="_blank" rel="noopener noreferrer">{sz.név}</a>
+          ))}</span>
+        </div>
+      )}
     </div>
   );
 }

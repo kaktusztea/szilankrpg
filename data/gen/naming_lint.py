@@ -30,7 +30,7 @@ def _runs_ok(s: str) -> bool:
 
 
 # TOP-LEVEL kulcsaik entitás-nevek → a gyökér szintű kulcs-ellenőrzés kimarad
-NAME_KEYED_FILES = {"szituacio_mapping.yaml"}
+NAME_KEYED_FILES = set()   # szituacio_mapping.yaml kulcsai 2026-10-17 óta "prefix:id" (nem nevek)
 
 # Értékük entitás-név / megjelenítendő szöveg → az érték NEM ellenőrzött
 NAME_VALUE_KEYS = {"név", "nev", "alapnév", "kat", "fájl", "spec_elem", "spec_típus"}

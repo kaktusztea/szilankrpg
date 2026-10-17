@@ -50,7 +50,10 @@ def generate_kepzettsegek():
                 'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
                 'helyzetfüggő_módosítók': data.get('helyzetfüggő_módosítók', []),
                 'dobás_komment': data.get('dobás_komment', []),
-                'kapcsolódó_szituációk': szit_mapping.get(data['id'], []),
+                'kapcsolódó_szituációk': szit_mapping.get(f"képzettség:{data['id']}", []),
+                # többszörös elemhez kötött szituációk ("képzettség:harcmodor/közelharc") - elem → lista
+                'kapcsolódó_szituációk_elem': {k.split('/', 1)[1]: v for k, v in szit_mapping.items()
+                                               if k.startswith(f"képzettség:{data['id']}/")},
                 'md_fájl': md_fajl,
             })
     errors += id_hibak(id_elemek, 'képzettség')

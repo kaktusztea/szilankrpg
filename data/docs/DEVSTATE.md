@@ -48,7 +48,7 @@ Sáskaharcos → Természetes páncél 3. fok, név-hivatkozás build-gate. Nyit
 
 - [x] Kétkezes harc (1-3) (2026-10-17): `{típus: képzettség, név: harcmodor, érték, feltétel: "fegyverfogás:kétkezes", alcél: "felszerelés:nagyobb_fegyver|kisebb_fegyver"}` (alcél-enum bővítve). Fortélyok fül: bármely közelharci harcmodor max szintje (a döntés); Harc fül kétkezes fogásnál a kézben lévő párra ⚠ (`kétkezesKövetelményHiány`, nem tilt).
 - [ ] Szöveges maradók (Kínokozás: használati feltétel; Körkörös harc: körönkénti próba; Éneklés: KM-mérlegelés) - jelölés (pl. `csak_szöveges`) + build-gate: szöveges követelmény gépi pár vagy jelölés nélkül → hiba.
-- [ ] `szituacio_mapping.yaml` → `Úszás` kulcs: az Úszás fortély, nem képzettség → a mapping csak képzettségre generál, a bejegyzés halott. Döntés: fortély-kulcs támogatása, vagy törlés. Utána a kulcsok is a név-gate alá.
+- [x] `szituacio_mapping.yaml` fortély-kulcs (2026-10-17): kulcsok `képzettség:<id>[/<elem>]` / `fortély:<id>`; Úszás (fortély) → Víz alatt bírni visszakerült; build-gate: prefix, létező id, létező md fájl. A két harcmodor-elem kulcs (Közelharc → Belharc folyamata, Hajítás → 2 szituáció) eddig SOHA nem jelent meg (a generátor def-névre keresett) → `kapcsolódó_szituációk_elem`.
 - [x] Fortély / képzettség stabil `id` (2026-10-17): F0 regressziós snapshot, F1 `id` mező (265 yaml), F2 forrás-hivatkozások id-re (`gen/hivatkozas.py`, `validate_id_hivatkozasok`), F3 karakter-séma v3 `{id, elem, szint|fok}` (template-ek migrálva, URL-séma 3, régi mentés hibaüzenettel elutasítva), F4 kód + GUI (`engine/azonosito.ts` feloldó). Napló: `refactorlog/2026-10-17.md`.
 
 ---

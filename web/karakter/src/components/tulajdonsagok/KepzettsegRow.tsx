@@ -50,7 +50,7 @@ export function KepzettsegRow({
       </div>
 
       {gameMode && infoOpen && def && (
-        <KepzettsegDetails def={def} kit={kit} fortélyFokok={fortélyFokok} />
+        <KepzettsegDetails def={def} kit={kit} fortélyFokok={fortélyFokok} elem={slot.elem} />
       )}
 
       {showProba && def && (

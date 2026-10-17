@@ -678,7 +678,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - **Próba**: dobható / nem dobható / ellenpróba
   - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
   - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel, zöld=felvett / szürke=hiányzó)
-  - **Szituációk**: kapcsolódó szituáció linkek (🔗 prefix, kék, új tab). Forrás: `data/sources/szituacio_mapping.yaml` → `kepzettsegek.json` `kapcsolódó_szituációk` mező.
+  - **Szituációk**: kapcsolódó szituáció linkek (🔗 prefix, kék, új tab). Forrás: `data/sources/szituacio_mapping.yaml` (`képzettség:<id>` → `kepzettsegek.json` `kapcsolódó_szituációk`; `képzettség:<id>/<elem>` → `kapcsolódó_szituációk_elem`, a karakter eleme szerint, pl. Harcmodor: Közelharc → Belharc folyamata). Fortélynál ugyanez (`fortély:<id>` → `fortelyok.json` `kapcsolódó_szituációk`, a fortély info-panelen, pl. Úszás → Víz alatt bírni).
 - **Szabályrendszer link** (🔗): mindig látható a sor jobb oldalán (nem az accordion-ban), mindkét módban
 - **🎲 gomb**: csak Játék módban, csak accordion nyitva, a sor headerben jelenik meg
 - **Közös komponens**: `KepzettsegDetails.tsx` - a picker és a game-mode accordion azonos komponenst használja

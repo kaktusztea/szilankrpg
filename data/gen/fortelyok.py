@@ -13,6 +13,8 @@ def generate_fortelyok():
     result = []
     errors = []
     id_elemek = []
+    szit_path = os.path.join(SOURCES_DIR, 'szituacio_mapping.yaml')
+    szit_mapping = (load_yaml(szit_path) or {}) if os.path.exists(szit_path) else {}
     valid_csoportok = {'harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'}
     for root, dirs, files in os.walk(fdir):
         dirs.sort()
@@ -56,6 +58,7 @@ def generate_fortelyok():
                 'id': data['id'],
                 'név': data['név'],
                 'csoport': data.get('csoport', ''),
+                'kapcsolódó_szituációk': szit_mapping.get(f"fortély:{data['id']}", []),
                 'alcsoport': alcsoport,
                 'maxfok': data.get('maxfok', 1),
                 'session_toggle': data.get('session_toggle', False),

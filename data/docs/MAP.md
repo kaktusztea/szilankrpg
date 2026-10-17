@@ -326,7 +326,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `hatasok.yaml` | Hatás mechanikák | - (csak validáció, az app nem tölti be) |
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
 | `hatterek.yaml` | Leíró + Karma hátterek | `hatterek.json` |
-| `szituacio_mapping.yaml` | Képzettség → Szituáció kapcsolatok | → `kepzettsegek.json` (`kapcsolódó_szituációk` mező) |
+| `szituacio_mapping.yaml` | Képzettség / fortély → Szituáció kapcsolatok (kulcs `képzettség:<id>[/<elem>]` / `fortély:<id>`) | → `kepzettsegek.json` (`kapcsolódó_szituációk`, `kapcsolódó_szituációk_elem`), `fortelyok.json` (`kapcsolódó_szituációk`) |
 | `fegyverek/fegyverek.yaml` (+ `fegyverek_fixed.json`) | Fegyver v2 definíciók (módok[], fegyverhossz, sebzésjelleg) | `fegyverek_v2.json` |
 | `fegyverek/sebzesjelleg_pancel_matrix.yaml` | Sebzésjelleg × páncélosztály SP-delta mátrix | `sebzesjelleg_pancel_matrix.json` |
 | `fegyverek/extrak.yaml` | Fegyver-extrák (pl. `cél_páncél` SP-hatások) | `fegyver_extrak.json` |

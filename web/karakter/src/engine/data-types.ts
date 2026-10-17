@@ -30,6 +30,8 @@ export interface KepzettsegDef {
   helyzetfüggő_módosítók: ModositoTabla[];
   dobás_komment: { line: string }[];
   kapcsolódó_szituációk: { név: string; fájl: string }[];
+  /** Többszörös képzettség elemhez kötött szituációi (elem → lista, pl. közelharc → Belharc folyamata). */
+  kapcsolódó_szituációk_elem?: Record<string, { név: string; fájl: string }[]>;
   md_fájl: string;
 }
 
@@ -74,6 +76,8 @@ export interface FortelyFokSummary {
 }
 
 export interface FortelySummary {
+  /** Kapcsolódó szituációk (szituacio_mapping.yaml `fortély:<id>`). */
+  kapcsolódó_szituációk?: { név: string; fájl: string }[];
   /** Stabil fortély-azonosító (átnevezéskor nem változik) - a hivatkozások célja (2026-10-17). */
   id: string;
   név: string;

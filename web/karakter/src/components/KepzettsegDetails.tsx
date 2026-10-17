@@ -2,16 +2,18 @@ import type { KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import { MD_BASE } from './MdLink';
 
 interface Props {
+  /** A karakter képzettség-eleme (többszörösnél): az elemhez kötött szituációk is megjelennek. */
+  elem?: string;
   def: KepzettsegDef;
   kit: KiterjesztesEntry[];
   /** Felvett fortélyok fok-mapje szín-jelzéshez; ha üres/undefined → nincs szín */
   fortélyFokok?: Record<string, number>;
 }
 
-export function KepzettsegDetails({ def, kit, fortélyFokok }: Props) {
+export function KepzettsegDetails({ def, kit, fortélyFokok, elem }: Props) {
   const normál = kit.filter(k => k.típus !== 'erős');
   const erős = kit.filter(k => k.típus === 'erős');
-  const szituációk = def.kapcsolódó_szituációk ?? [];
+  const szituációk = [...(def.kapcsolódó_szituációk ?? []), ...(elem ? def.kapcsolódó_szituációk_elem?.[elem] ?? [] : [])];
 
   return (
     <div className="info-panel">

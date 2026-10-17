@@ -53,6 +53,7 @@
         "fájl": "szituaciok/loveskiteres_sikertelen.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/akrobatika.md"
   },
   {
@@ -66,6 +67,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/harci/alakzatharc.md"
   },
   {
@@ -105,6 +107,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/alkimia.md"
   },
   {
@@ -118,6 +121,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/asztralmagia.md"
   },
   {
@@ -131,6 +135,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/aurahangolas.md"
   },
   {
@@ -144,6 +149,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_belso_sikok.md"
   },
   {
@@ -157,6 +163,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/elemi_magia.md"
   },
   {
@@ -170,6 +177,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/eletero_manipulalasa.md"
   },
   {
@@ -183,6 +191,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/idomagia.md"
   },
   {
@@ -196,6 +205,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/illuziok.md"
   },
   {
@@ -209,6 +219,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md"
   },
   {
@@ -222,6 +233,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/mentalmagia.md"
   },
   {
@@ -235,6 +247,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/metamagia.md"
   },
   {
@@ -248,6 +261,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/nekromancia.md"
   },
   {
@@ -261,6 +275,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_befolyasolas.md"
   },
   {
@@ -274,6 +289,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_erzekeles.md"
   },
   {
@@ -287,6 +303,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md"
   },
   {
@@ -300,6 +317,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md"
   },
   {
@@ -313,6 +331,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/arkanumok/termagia.md"
   },
   {
@@ -387,6 +406,7 @@
         "fájl": "szituaciok/hamisitas_es_felismerese.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
   },
   {
@@ -453,6 +473,7 @@
         "fájl": "szituaciok/allat_bestia_idomitasa.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/befolyasolas.md"
   },
   {
@@ -517,6 +538,7 @@
         "fájl": "szituaciok/csapda_hatatalanitas_szabotalas.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/csapdaallitas.md"
   },
   {
@@ -557,6 +579,7 @@
         "fájl": "szituaciok/eneklessel_bajolas.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/eloadomuveszet.md"
   },
   {
@@ -623,6 +646,7 @@
         "fájl": "szituaciok/informacioszerzes_valakitol.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/emberismeret.md"
   },
   {
@@ -660,6 +684,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
   },
   {
@@ -695,6 +720,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
   },
   {
@@ -773,6 +799,7 @@
         "fájl": "szituaciok/elugrani_lovaskocsi_elol.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
   },
   {
@@ -786,6 +813,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md"
   },
   {
@@ -799,6 +827,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_anatyda.md"
   },
   {
@@ -812,6 +841,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_buzzgoblin.md"
   },
   {
@@ -825,6 +855,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_dzsenn.md"
   },
   {
@@ -838,6 +869,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elar.md"
   },
   {
@@ -851,6 +883,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md"
   },
   {
@@ -864,6 +897,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md"
   },
   {
@@ -877,6 +911,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md"
   },
   {
@@ -890,6 +925,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md"
   },
   {
@@ -903,6 +939,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md"
   },
   {
@@ -916,6 +953,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_erdopille.md"
   },
   {
@@ -929,6 +967,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_feenhar.md"
   },
   {
@@ -942,6 +981,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gnom.md"
   },
   {
@@ -955,6 +995,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_goblin.md"
   },
   {
@@ -968,6 +1009,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gyikleny.md"
   },
   {
@@ -981,6 +1023,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homoki_elf.md"
   },
   {
@@ -994,6 +1037,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homano.md"
   },
   {
@@ -1007,6 +1051,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_khal.md"
   },
   {
@@ -1020,6 +1065,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kineta.md"
   },
   {
@@ -1033,6 +1079,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kobold.md"
   },
   {
@@ -1046,6 +1093,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kyr.md"
   },
   {
@@ -1059,6 +1107,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ork.md"
   },
   {
@@ -1072,6 +1121,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_saskaharcos.md"
   },
   {
@@ -1085,6 +1135,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md"
   },
   {
@@ -1098,6 +1149,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_tuzkobold.md"
   },
   {
@@ -1111,6 +1163,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md"
   },
   {
@@ -1126,6 +1179,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/fajdalomtures.md"
   },
   {
@@ -1170,6 +1224,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/hadaszat.md"
   },
   {
@@ -1247,6 +1302,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/hajozas.md"
   },
   {
@@ -1322,6 +1378,7 @@
       }
     ],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/harci/harci_laz.md"
   },
   {
@@ -1346,6 +1403,14 @@
         "fájl": "szituaciok/harci_jartassag_felmerese.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {
+      "közelharc": [
+        {
+          "név": "Belharc folyamata",
+          "fájl": "szituaciok/belharc_folyamata.md"
+        }
+      ]
+    },
     "md_fájl": "kepzettsegek.primer/harci/harcmodor.md"
   },
   {
@@ -1395,6 +1460,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
   },
   {
@@ -1431,6 +1497,7 @@
         "fájl": "szituaciok/hamisitas_es_felismerese.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
   },
   {
@@ -1471,6 +1538,7 @@
         "fájl": "szituaciok/terkep_keszitese_ertelmezes.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
   },
   {
@@ -1551,6 +1619,7 @@
         "fájl": "szituaciok/csapda_hatatalanitas_szabotalas.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/lexikum.md"
   },
   {
@@ -1601,6 +1670,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
   },
   {
@@ -1771,6 +1841,7 @@
         "fájl": "szituaciok/vakharc_sotetben_lathatatlanul.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/lopakodas_rejtozes.md"
   },
   {
@@ -1815,6 +1886,7 @@
         "fájl": "szituaciok/lopas_kirablas.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/lopas.md"
   },
   {
@@ -1852,6 +1924,7 @@
         "fájl": "szituaciok/hatasrol_leeses.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
   },
   {
@@ -1865,6 +1938,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/harci/magikus_celzas.md"
   },
   {
@@ -1961,6 +2035,7 @@
         "fájl": "szituaciok/eses_magasbol.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/maszas.md"
   },
   {
@@ -2007,6 +2082,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
   },
   {
@@ -2043,6 +2119,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
   },
   {
@@ -2074,6 +2151,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
   },
   {
@@ -2172,6 +2250,7 @@
         "fájl": "szituaciok/nyomok_nyomkovetes_varos.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/nyomozas.md"
   },
   {
@@ -2225,6 +2304,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
   },
   {
@@ -2242,6 +2322,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md"
   },
   {
@@ -2277,6 +2358,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
   },
   {
@@ -2296,6 +2378,18 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {
+      "hajítás": [
+        {
+          "név": "Hajítás alkalmatlan fegyverrel",
+          "fájl": "szituaciok/hajitas_alkalmatlan_fegyverrel.md"
+        },
+        {
+          "név": "Hajítás nem dobásra készített tárgyakkal",
+          "fájl": "szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md"
+        }
+      ]
+    },
     "md_fájl": "kepzettsegek.primer/harci/tavolsagi_harcmodor.md"
   },
   {
@@ -2354,6 +2448,7 @@
         "fájl": "szituaciok/nyomok_nyomkovetes_termeszet.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
   },
   {
@@ -2367,6 +2462,7 @@
     "helyzetfüggő_módosítók": "",
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
   },
   {
@@ -2402,6 +2498,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
   },
   {
@@ -2460,6 +2557,7 @@
         "fájl": "szituaciok/ismerem_mit_tudhatok_rola.md"
       }
     ],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/varosi_jartassag.md"
   },
   {
@@ -2495,6 +2593,7 @@
     ],
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/zarnyitas.md"
   }
 ]

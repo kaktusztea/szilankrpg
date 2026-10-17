@@ -127,7 +127,14 @@ def validate_id_hivatkozasok():
         for k in lst(e.get('feltétel')): kov(f"extra {e['id']} feltétel", k)
         for h in lst(e.get('hatás')):
             for kk in ('cél', 'alcél', 'feltétel'): prefix(f"extra {e['id']} hatás {kk}", h.get(kk))
-    for k in load_yaml(os.path.join(src, 'szituacio_mapping.yaml')) or {}: kepz("szituacio_mapping kulcs", k)
+    md_dir = os.path.join(os.path.dirname(src), '..', 'md')
+    for k, sorok in (load_yaml(os.path.join(src, 'szituacio_mapping.yaml')) or {}).items():
+        pre, _, ref = str(k).partition(':')
+        if pre == 'képzettség': kepz("szituacio_mapping kulcs", ref)
+        elif pre == 'fortély': fort("szituacio_mapping kulcs", ref)
+        else: errors.append(f"szituacio_mapping kulcs: '{k}' (\"képzettség:<id>\" vagy \"fortély:<id>\" kell)")
+        for sz in sorok or []:
+            if not os.path.isfile(os.path.join(md_dir, sz.get('fájl', ''))): errors.append(f"szituacio_mapping {k}: nem létező md fájl: '{sz.get('fájl')}'")
     for k, v in load_yaml(os.path.join(src, 'konstansok.yaml'))['fegyver_kategória_harcmodor'].items():
         hm(f"konstansok fegyver_kategória_harcmodor.{k}", v)
     for t in load_yaml(os.path.join(src, 'taktikak.yaml'))['taktikák']:
