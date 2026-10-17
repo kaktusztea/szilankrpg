@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mozgó_cél_könnyítése_mágia"
 név: "Mozgó cél könnyítése (mágia)"
 névkomment: ""
 maxfok: 1

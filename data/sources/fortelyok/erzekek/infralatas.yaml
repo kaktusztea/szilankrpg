@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "infralátás"
 név: "Infralátás"
 névkomment: ""
 maxfok: 2

@@ -1,4 +1,5 @@
 schema_version: 1
+id: "harci_kocsihajtás"
 név: "Harci kocsihajtás"
 névkomment: ""
 maxfok: 2

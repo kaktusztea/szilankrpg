@@ -1,4 +1,5 @@
 schema_version: 1
+id: "vezető_tudósprofesszor"
 név: "Vezető: Tudósprofesszor"
 névkomment: ""
 maxfok: 2

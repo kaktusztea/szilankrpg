@@ -4,7 +4,7 @@ import os
 
 from .common import SOURCES_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
-from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs
+from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs, id_hibak
 
 
 def generate_fortelyok():
@@ -12,6 +12,7 @@ def generate_fortelyok():
     fdir = os.path.join(SOURCES_DIR, 'fortelyok')
     result = []
     errors = []
+    id_elemek = []
     valid_csoportok = {'harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'}
     for root, dirs, files in os.walk(fdir):
         dirs.sort()
@@ -50,7 +51,9 @@ def generate_fortelyok():
             # md_fájl: fortelyok.{alcsoport}/{fájlnév}.md
             alcsoport = os.path.relpath(root, fdir).replace(os.sep, '/')
             md_fajl = f"fortelyok.{alcsoport}/{f.replace('.yaml', '.md')}"
+            id_elemek.append((ctx, data))
             result.append({
+                'id': data['id'],
                 'név': data['név'],
                 'csoport': data.get('csoport', ''),
                 'alcsoport': alcsoport,
@@ -68,6 +71,7 @@ def generate_fortelyok():
                 'fokok': fokok_summary,
                 'md_fájl': md_fajl,
             })
+    errors += id_hibak(id_elemek, 'fortély')
     if errors:
         print("  ❌ Fortély validációs hibák:")
         for e in errors:

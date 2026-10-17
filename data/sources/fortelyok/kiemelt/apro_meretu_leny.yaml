@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "apró_méretű_lény"
 név: "Apró méretű lény"
 névkomment: ""
 maxfok: 1

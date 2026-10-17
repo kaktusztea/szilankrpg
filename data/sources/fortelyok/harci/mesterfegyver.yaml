@@ -1,4 +1,5 @@
 schema_version: 1
+id: "mesterfegyver"
 név: "Mesterfegyver"
 névkomment: ""
 maxfok: 3

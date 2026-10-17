@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "lovaglás"
 név: "Lovaglás"
 leírás: "Földi hátasok megülése és irányítása."
 primer: false

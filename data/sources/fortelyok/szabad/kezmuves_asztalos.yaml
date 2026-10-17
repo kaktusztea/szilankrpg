@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kézműves_asztalos"
 név: "Kézműves: Asztalos"
 névkomment: ""
 maxfok: 1

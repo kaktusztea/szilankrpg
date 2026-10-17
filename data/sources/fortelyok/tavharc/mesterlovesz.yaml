@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mesterlövész"
 név: "Mesterlövész"
 névkomment: ""
 maxfok: 1

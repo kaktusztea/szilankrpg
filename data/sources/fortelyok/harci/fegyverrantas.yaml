@@ -1,4 +1,5 @@
 schema_version: 1
+id: "fegyverrántás"
 név: "Fegyverrántás"
 névkomment: ""
 maxfok: 2

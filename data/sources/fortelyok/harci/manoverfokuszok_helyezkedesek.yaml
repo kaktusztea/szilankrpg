@@ -1,4 +1,5 @@
 schema_version: 1
+id: "manőverfókuszok_helyezkedések"
 név: "Manőverfókuszok: Helyezkedések"
 névkomment: ""
 maxfok: 1

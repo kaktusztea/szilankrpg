@@ -1,4 +1,5 @@
 schema_version: 1
+id: "pajzshasználat"
 név: "Pajzshasználat"
 névkomment: ""
 maxfok: 3

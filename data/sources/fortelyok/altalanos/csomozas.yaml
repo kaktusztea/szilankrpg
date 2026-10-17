@@ -1,4 +1,5 @@
 schema_version: 1
+id: "csomózás"
 név: "Csomózás"
 névkomment: ""
 maxfok: 2

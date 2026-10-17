@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mágikus_lövedék_gyorsítása"
 név: "Mágikus lövedék gyorsítása"
 névkomment: ""
 maxfok: 2

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "befolyásolás"
 név: "Befolyásolás"
 leírás: "Mások meggyőzése, szándékainknak megfelelő cselekedetek elérése."
 primer: true

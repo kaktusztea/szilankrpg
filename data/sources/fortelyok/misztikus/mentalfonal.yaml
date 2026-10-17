@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mentálfonál"
 név: "Mentálfonál"
 névkomment: ""
 maxfok: 1

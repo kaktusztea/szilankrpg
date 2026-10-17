@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "helyismeret"
 név: "Helyismeret"
 névkomment: ""
 maxfok: 1

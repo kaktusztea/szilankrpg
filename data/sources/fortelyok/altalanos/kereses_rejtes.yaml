@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "keresés_rejtés"
 név: "Keresés/rejtés"
 névkomment: ""
 maxfok: 2

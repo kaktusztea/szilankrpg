@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "nagy_méretű_lény"
 név: "Nagy méretű lény"
 névkomment: ""
 maxfok: 3

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "alakzatharc"
 név: "Alakzatharc"
 leírás: "Harci alakzatok ismerete és alkalmazása csapatban."
 primer: true

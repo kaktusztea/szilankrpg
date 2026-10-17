@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "harcmodor"
 név: "Harcmodor"
 leírás: "Közelharci fegyverforgatás képessége egy adott harcmodor-kategóriában."
 primer: true

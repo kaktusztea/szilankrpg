@@ -4,6 +4,7 @@ import os
 
 from .common import SOURCES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
+from .validators import id_hibak
 
 
 def generate_kepzettsegek():
@@ -14,6 +15,7 @@ def generate_kepzettsegek():
     szit_mapping = load_yaml(szit_path) if os.path.exists(szit_path) else {}
     result = []
     errors = []
+    id_elemek = []
     for root, dirs, files in os.walk(kdir):
         dirs.sort()
         for f in sorted(files):
@@ -37,7 +39,9 @@ def generate_kepzettsegek():
                 md_fajl = f"kepzettsegek.primer/{sub}/{md_parts[2]}"
             else:
                 md_fajl = f"kepzettsegek.szekunder/{md_parts[-1]}"
+            id_elemek.append((ctx, data))
             result.append({
+                'id': data['id'],
                 'név': data['név'],
                 'csoport': data['csoport'],
                 'primer': data.get('primer', False),
@@ -49,6 +53,7 @@ def generate_kepzettsegek():
                 'kapcsolódó_szituációk': szit_mapping.get(data['név'], []),
                 'md_fájl': md_fajl,
             })
+    errors += id_hibak(id_elemek, 'képzettség')
     if errors:
         print("  ❌ Képzettség validációs hibák:")
         for e in errors:

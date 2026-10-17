@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_elemi_mágia"
 név: "Arkánum: Elemi mágia"
 leírás: ""
 primer: true

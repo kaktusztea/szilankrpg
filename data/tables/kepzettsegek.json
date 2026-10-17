@@ -1,5 +1,6 @@
 [
   {
+    "id": "akrobatika",
     "név": "Akrobatika",
     "csoport": "fizikai",
     "primer": true,
@@ -55,6 +56,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/akrobatika.md"
   },
   {
+    "id": "alakzatharc",
     "név": "Alakzatharc",
     "csoport": "harci",
     "primer": true,
@@ -67,6 +69,7 @@
     "md_fájl": "kepzettsegek.primer/harci/alakzatharc.md"
   },
   {
+    "id": "alkímia",
     "név": "Alkímia",
     "csoport": "tudományos",
     "primer": false,
@@ -105,6 +108,7 @@
     "md_fájl": "kepzettsegek.szekunder/alkimia.md"
   },
   {
+    "id": "arkánum_asztrálmágia",
     "név": "Arkánum: Asztrálmágia",
     "csoport": "misztikus",
     "primer": true,
@@ -117,6 +121,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/asztralmagia.md"
   },
   {
+    "id": "arkánum_aurahangolás",
     "név": "Arkánum: Aurahangolás",
     "csoport": "misztikus",
     "primer": true,
@@ -129,6 +134,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/aurahangolas.md"
   },
   {
+    "id": "arkánum_belső_síkok_lényeinek_idézése",
     "név": "Arkánum: Belső síkok lényeinek idézése",
     "csoport": "misztikus",
     "primer": true,
@@ -141,6 +147,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_belso_sikok.md"
   },
   {
+    "id": "arkánum_elemi_mágia",
     "név": "Arkánum: Elemi mágia",
     "csoport": "misztikus",
     "primer": true,
@@ -153,6 +160,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/elemi_magia.md"
   },
   {
+    "id": "arkánum_életerő_manipulálása",
     "név": "Arkánum: Életerő Manipulálása",
     "csoport": "misztikus",
     "primer": true,
@@ -165,6 +173,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/eletero_manipulalasa.md"
   },
   {
+    "id": "arkánum_időmágia",
     "név": "Arkánum: Időmágia",
     "csoport": "misztikus",
     "primer": true,
@@ -177,6 +186,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/idomagia.md"
   },
   {
+    "id": "arkánum_illúziók",
     "név": "Arkánum: Illúziók",
     "csoport": "misztikus",
     "primer": true,
@@ -189,6 +199,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/illuziok.md"
   },
   {
+    "id": "arkánum_külső_síkok_lényeinek_idézése",
     "név": "Arkánum: Külső síkok lényeinek idézése",
     "csoport": "misztikus",
     "primer": true,
@@ -201,6 +212,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md"
   },
   {
+    "id": "arkánum_mentálmágia",
     "név": "Arkánum: Mentálmágia",
     "csoport": "misztikus",
     "primer": true,
@@ -213,6 +225,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/mentalmagia.md"
   },
   {
+    "id": "arkánum_metamágia",
     "név": "Arkánum: Metamágia",
     "csoport": "misztikus",
     "primer": true,
@@ -225,6 +238,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/metamagia.md"
   },
   {
+    "id": "arkánum_nekromancia",
     "név": "Arkánum: Nekromancia",
     "csoport": "misztikus",
     "primer": true,
@@ -237,6 +251,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/nekromancia.md"
   },
   {
+    "id": "arkánum_sors_befolyásolás",
     "név": "Arkánum: Sors befolyásolás",
     "csoport": "misztikus",
     "primer": true,
@@ -249,6 +264,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_befolyasolas.md"
   },
   {
+    "id": "arkánum_sors_érzékelése",
     "név": "Arkánum: Sors érzékelése",
     "csoport": "misztikus",
     "primer": true,
@@ -261,6 +277,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/sors_erzekeles.md"
   },
   {
+    "id": "arkánum_természetes_anyagok_mágiája",
     "név": "Arkánum: Természetes anyagok mágiája",
     "csoport": "misztikus",
     "primer": true,
@@ -273,6 +290,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md"
   },
   {
+    "id": "arkánum_természeti_jelenségek",
     "név": "Arkánum: Természeti jelenségek",
     "csoport": "misztikus",
     "primer": true,
@@ -285,6 +303,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md"
   },
   {
+    "id": "arkánum_térmágia",
     "név": "Arkánum: Térmágia",
     "csoport": "misztikus",
     "primer": true,
@@ -297,6 +316,7 @@
     "md_fájl": "kepzettsegek.primer/arkanumok/termagia.md"
   },
   {
+    "id": "álcázás_álruha",
     "név": "Álcázás/Álruha",
     "csoport": "alvilági",
     "primer": false,
@@ -370,6 +390,7 @@
     "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
   },
   {
+    "id": "befolyásolás",
     "név": "Befolyásolás",
     "csoport": "világi",
     "primer": true,
@@ -435,6 +456,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/befolyasolas.md"
   },
   {
+    "id": "csapdaállítás",
     "név": "Csapdaállítás",
     "csoport": "alvilági",
     "primer": false,
@@ -498,6 +520,7 @@
     "md_fájl": "kepzettsegek.szekunder/csapdaallitas.md"
   },
   {
+    "id": "előadóművészet",
     "név": "Előadóművészet",
     "csoport": "művészeti",
     "primer": false,
@@ -537,6 +560,7 @@
     "md_fájl": "kepzettsegek.szekunder/eloadomuveszet.md"
   },
   {
+    "id": "emberismeret",
     "név": "Emberismeret",
     "csoport": "világi",
     "primer": true,
@@ -602,6 +626,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/emberismeret.md"
   },
   {
+    "id": "etikett",
     "név": "Etikett",
     "csoport": "világi",
     "primer": false,
@@ -638,6 +663,7 @@
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
   },
   {
+    "id": "értékbecslés",
     "név": "Értékbecslés",
     "csoport": "világi",
     "primer": false,
@@ -672,6 +698,7 @@
     "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
   },
   {
+    "id": "észlelés",
     "név": "Észlelés",
     "csoport": "világi",
     "primer": true,
@@ -749,6 +776,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
   },
   {
+    "id": "faj_misztérium_amund",
     "név": "Faj misztérium: Amund",
     "csoport": "misztikus",
     "primer": true,
@@ -761,6 +789,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md"
   },
   {
+    "id": "faj_misztérium_anatyda",
     "név": "Faj misztérium: Anatyda",
     "csoport": "misztikus",
     "primer": true,
@@ -773,6 +802,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_anatyda.md"
   },
   {
+    "id": "faj_misztérium_buzzgoblin",
     "név": "Faj misztérium: Buzzgoblin",
     "csoport": "misztikus",
     "primer": true,
@@ -785,6 +815,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_buzzgoblin.md"
   },
   {
+    "id": "faj_misztérium_dzsenn",
     "név": "Faj misztérium: Dzsenn",
     "csoport": "misztikus",
     "primer": true,
@@ -797,6 +828,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_dzsenn.md"
   },
   {
+    "id": "faj_misztérium_elar",
     "név": "Faj misztérium: Elar",
     "csoport": "misztikus",
     "primer": true,
@@ -809,6 +841,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elar.md"
   },
   {
+    "id": "faj_misztérium_elf",
     "név": "Faj misztérium: Elf",
     "csoport": "misztikus",
     "primer": true,
@@ -821,6 +854,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md"
   },
   {
+    "id": "faj_misztérium_ember_déli",
     "név": "Faj misztérium: Ember (déli)",
     "csoport": "misztikus",
     "primer": true,
@@ -833,6 +867,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md"
   },
   {
+    "id": "faj_misztérium_ember_északi",
     "név": "Faj misztérium: Ember (Északi)",
     "csoport": "misztikus",
     "primer": true,
@@ -845,6 +880,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md"
   },
   {
+    "id": "faj_misztérium_ember_korg",
     "név": "Faj misztérium: Ember (korg)",
     "csoport": "misztikus",
     "primer": true,
@@ -857,6 +893,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md"
   },
   {
+    "id": "faj_misztérium_ember_slan",
     "név": "Faj misztérium: Ember (Slan)",
     "csoport": "misztikus",
     "primer": true,
@@ -869,6 +906,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md"
   },
   {
+    "id": "faj_misztérium_erdőpille",
     "név": "Faj misztérium: Erdőpille",
     "csoport": "misztikus",
     "primer": true,
@@ -881,6 +919,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_erdopille.md"
   },
   {
+    "id": "faj_misztérium_feenhar",
     "név": "Faj misztérium: Feenhar",
     "csoport": "misztikus",
     "primer": true,
@@ -893,6 +932,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_feenhar.md"
   },
   {
+    "id": "faj_misztérium_gnóm",
     "név": "Faj misztérium: Gnóm",
     "csoport": "misztikus",
     "primer": true,
@@ -905,6 +945,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gnom.md"
   },
   {
+    "id": "faj_misztérium_goblin",
     "név": "Faj misztérium: Goblin",
     "csoport": "misztikus",
     "primer": true,
@@ -917,6 +958,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_goblin.md"
   },
   {
+    "id": "faj_misztérium_gyíklény",
     "név": "Faj misztérium: Gyíklény",
     "csoport": "misztikus",
     "primer": true,
@@ -929,6 +971,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gyikleny.md"
   },
   {
+    "id": "faj_misztérium_homoki_elf",
     "név": "Faj misztérium: Homoki elf",
     "csoport": "misztikus",
     "primer": true,
@@ -941,6 +984,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homoki_elf.md"
   },
   {
+    "id": "faj_misztérium_hómanó",
     "név": "Faj misztérium: Hómanó",
     "csoport": "misztikus",
     "primer": true,
@@ -953,6 +997,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homano.md"
   },
   {
+    "id": "faj_misztérium_khál",
     "név": "Faj misztérium: Khál",
     "csoport": "misztikus",
     "primer": true,
@@ -965,6 +1010,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_khal.md"
   },
   {
+    "id": "faj_misztérium_kineta",
     "név": "Faj misztérium: Kineta",
     "csoport": "misztikus",
     "primer": true,
@@ -977,6 +1023,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kineta.md"
   },
   {
+    "id": "faj_misztérium_kobold",
     "név": "Faj misztérium: Kobold",
     "csoport": "misztikus",
     "primer": true,
@@ -989,6 +1036,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kobold.md"
   },
   {
+    "id": "faj_misztérium_kyr",
     "név": "Faj misztérium: Kyr",
     "csoport": "misztikus",
     "primer": true,
@@ -1001,6 +1049,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kyr.md"
   },
   {
+    "id": "faj_misztérium_ork",
     "név": "Faj misztérium: Ork",
     "csoport": "misztikus",
     "primer": true,
@@ -1013,6 +1062,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ork.md"
   },
   {
+    "id": "faj_misztérium_sáskaharcos",
     "név": "Faj misztérium: Sáskaharcos",
     "csoport": "misztikus",
     "primer": true,
@@ -1025,6 +1075,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_saskaharcos.md"
   },
   {
+    "id": "faj_misztérium_törpe",
     "név": "Faj misztérium: Törpe",
     "csoport": "misztikus",
     "primer": true,
@@ -1037,6 +1088,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md"
   },
   {
+    "id": "faj_misztérium_tűzkobold",
     "név": "Faj misztérium: Tűzkobold",
     "csoport": "misztikus",
     "primer": true,
@@ -1049,6 +1101,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_tuzkobold.md"
   },
   {
+    "id": "faj_misztérium_udvari_ork",
     "név": "Faj misztérium: Udvari ork",
     "csoport": "misztikus",
     "primer": true,
@@ -1061,6 +1114,7 @@
     "md_fájl": "kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md"
   },
   {
+    "id": "fájdalomtűrés",
     "név": "Fájdalomtűrés",
     "csoport": "fizikai",
     "primer": true,
@@ -1075,6 +1129,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/fajdalomtures.md"
   },
   {
+    "id": "hadászat",
     "név": "Hadászat",
     "csoport": "tudományos",
     "primer": true,
@@ -1118,6 +1173,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/hadaszat.md"
   },
   {
+    "id": "hajózás",
     "név": "Hajózás",
     "csoport": "világi",
     "primer": false,
@@ -1194,6 +1250,7 @@
     "md_fájl": "kepzettsegek.szekunder/hajozas.md"
   },
   {
+    "id": "harci_láz",
     "név": "Harci láz",
     "csoport": "harci",
     "primer": true,
@@ -1268,6 +1325,7 @@
     "md_fájl": "kepzettsegek.primer/harci/harci_laz.md"
   },
   {
+    "id": "harcmodor",
     "név": "Harcmodor",
     "csoport": "harci",
     "primer": true,
@@ -1291,6 +1349,7 @@
     "md_fájl": "kepzettsegek.primer/harci/harcmodor.md"
   },
   {
+    "id": "képzőművészet",
     "név": "Képzőművészet",
     "csoport": "művészeti",
     "primer": false,
@@ -1339,6 +1398,7 @@
     "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
   },
   {
+    "id": "kézművesség",
     "név": "Kézművesség",
     "csoport": "világi",
     "primer": false,
@@ -1374,6 +1434,7 @@
     "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
   },
   {
+    "id": "kvantikum",
     "név": "Kvantikum",
     "csoport": "tudományos",
     "primer": false,
@@ -1413,6 +1474,7 @@
     "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
   },
   {
+    "id": "lexikum",
     "név": "Lexikum",
     "csoport": "tudományos",
     "primer": false,
@@ -1492,6 +1554,7 @@
     "md_fájl": "kepzettsegek.szekunder/lexikum.md"
   },
   {
+    "id": "léglovaglás",
     "név": "Léglovaglás",
     "csoport": "fizikai",
     "primer": false,
@@ -1541,6 +1604,7 @@
     "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
   },
   {
+    "id": "lopakodás_rejtőzés",
     "név": "Lopakodás/rejtőzés",
     "csoport": "alvilági",
     "primer": true,
@@ -1710,6 +1774,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/lopakodas_rejtozes.md"
   },
   {
+    "id": "lopás",
     "név": "Lopás",
     "csoport": "alvilági",
     "primer": false,
@@ -1753,6 +1818,7 @@
     "md_fájl": "kepzettsegek.szekunder/lopas.md"
   },
   {
+    "id": "lovaglás",
     "név": "Lovaglás",
     "csoport": "fizikai",
     "primer": false,
@@ -1789,6 +1855,7 @@
     "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
   },
   {
+    "id": "mágikus_célzás",
     "név": "Mágikus célzás",
     "csoport": "harci",
     "primer": true,
@@ -1801,6 +1868,7 @@
     "md_fájl": "kepzettsegek.primer/harci/magikus_celzas.md"
   },
   {
+    "id": "mászás",
     "név": "Mászás",
     "csoport": "fizikai",
     "primer": false,
@@ -1896,6 +1964,7 @@
     "md_fájl": "kepzettsegek.szekunder/maszas.md"
   },
   {
+    "id": "méregkeverés",
     "név": "Méregkeverés",
     "csoport": "tudományos",
     "primer": true,
@@ -1941,6 +2010,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
   },
   {
+    "id": "művészetismeret",
     "név": "Művészetismeret",
     "csoport": "művészeti",
     "primer": false,
@@ -1976,6 +2046,7 @@
     "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
   },
   {
+    "id": "nyelvtanulás",
     "név": "Nyelvtanulás",
     "csoport": "világi",
     "primer": false,
@@ -2006,6 +2077,7 @@
     "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
   },
   {
+    "id": "nyomozás",
     "név": "Nyomozás",
     "csoport": "világi",
     "primer": true,
@@ -2103,6 +2175,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/nyomozas.md"
   },
   {
+    "id": "orvoslás",
     "név": "Orvoslás",
     "csoport": "tudományos",
     "primer": true,
@@ -2155,6 +2228,7 @@
     "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
   },
   {
+    "id": "ősi_nyelv_ismerete",
     "név": "Ősi nyelv ismerete",
     "csoport": "misztikus",
     "primer": true,
@@ -2171,6 +2245,7 @@
     "md_fájl": "kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md"
   },
   {
+    "id": "szerencsejáték",
     "név": "Szerencsejáték",
     "csoport": "alvilági",
     "primer": false,
@@ -2205,6 +2280,7 @@
     "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
   },
   {
+    "id": "távolsági_harcmodor",
     "név": "Távolsági harcmodor",
     "csoport": "harci",
     "primer": true,
@@ -2223,6 +2299,7 @@
     "md_fájl": "kepzettsegek.primer/harci/tavolsagi_harcmodor.md"
   },
   {
+    "id": "természetjárás",
     "név": "Természetjárás",
     "csoport": "világi",
     "primer": false,
@@ -2280,6 +2357,7 @@
     "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
   },
   {
+    "id": "tradíció",
     "név": "Tradíció",
     "csoport": "misztikus",
     "primer": true,
@@ -2292,6 +2370,7 @@
     "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
   },
   {
+    "id": "vajákosság",
     "név": "Vajákosság",
     "csoport": "világi",
     "primer": false,
@@ -2326,6 +2405,7 @@
     "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
   },
   {
+    "id": "városi_jártasság",
     "név": "Városi jártasság",
     "csoport": "világi",
     "primer": false,
@@ -2383,6 +2463,7 @@
     "md_fájl": "kepzettsegek.szekunder/varosi_jartassag.md"
   },
   {
+    "id": "zárnyitás",
     "név": "Zárnyitás",
     "csoport": "alvilági",
     "primer": false,

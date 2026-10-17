@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "pénzügyek"
 név: "Pénzügyek"
 névkomment: ""
 maxfok: 1

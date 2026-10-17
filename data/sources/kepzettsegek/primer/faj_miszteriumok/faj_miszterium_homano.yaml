@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_hómanó"
 név: "Faj misztérium: Hómanó"
 leírás: ""
 primer: true

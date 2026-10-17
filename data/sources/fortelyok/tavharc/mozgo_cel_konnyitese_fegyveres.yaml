@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mozgó_cél_könnyítése_fegyveres"
 név: "Mozgó cél könnyítése (fegyveres)"
 névkomment: ""
 maxfok: 1

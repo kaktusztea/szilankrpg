@@ -1,4 +1,5 @@
 schema_version: 1
+id: "vezető_bölcsészprofesszor"
 név: "Vezető: Bölcsészprofesszor"
 névkomment: ""
 maxfok: 2

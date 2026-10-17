@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kézműves_lakatos"
 név: "Kézműves: Lakatos"
 névkomment: ""
 maxfok: 1

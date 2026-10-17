@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "szónoklás"
 név: "Szónoklás"
 névkomment: ""
 maxfok: 1

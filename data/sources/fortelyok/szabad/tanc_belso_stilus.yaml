@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tánc_speciális_belső_stílus"
 név: "Tánc: speciális/belső stílus"
 névkomment: ""
 maxfok: 1

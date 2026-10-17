@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_sors_érzékelése"
 név: "Arkánum: Sors érzékelése"
 leírás: ""
 primer: true

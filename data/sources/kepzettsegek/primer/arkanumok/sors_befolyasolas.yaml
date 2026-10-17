@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_sors_befolyásolás"
 név: "Arkánum: Sors befolyásolás"
 leírás: ""
 primer: true

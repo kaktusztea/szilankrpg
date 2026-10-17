@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "vezető_léglovaskapitány"
 név: "Vezető: Léglovaskapitány"
 névkomment: ""
 maxfok: 2

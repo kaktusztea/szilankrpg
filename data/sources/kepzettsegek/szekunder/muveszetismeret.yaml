@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "művészetismeret"
 név: "Művészetismeret"
 leírás: "Passzív művészeti ismeretek: stílusok, korszakok, alkotók felismerése."
 primer: false

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "lopakodás_rejtőzés"
 név: "Lopakodás/rejtőzés"
 leírás: "Észrevétlen mozgás és elrejtőzés."
 primer: true

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "taktikafókusz_kitartott_célzás"
 név: "Taktikafókusz: Kitartott célzás"
 névkomment: ""
 maxfok: 1

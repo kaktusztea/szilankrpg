@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "elpusztíthatatlan"
 név: "Elpusztíthatatlan"
 névkomment: ""
 maxfok: 2

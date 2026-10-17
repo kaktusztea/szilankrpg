@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "ősi_nyelv_ismerete"
 név: "Ősi nyelv ismerete"
 leírás: "Ősi, holt nyelvek ismerete. Nyelvenként külön felveendő."
 primer: true

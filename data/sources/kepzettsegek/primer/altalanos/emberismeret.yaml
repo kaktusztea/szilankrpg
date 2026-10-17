@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "emberismeret"
 név: "Emberismeret"
 leírás: "Mások szándékainak, érzelmeinek felismerése."
 primer: true

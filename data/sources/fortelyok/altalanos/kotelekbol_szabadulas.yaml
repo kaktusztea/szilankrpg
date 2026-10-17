@@ -1,4 +1,5 @@
 schema_version: 1
+id: "kötelékből_szabadulás"
 név: "Kötelékből szabadulás"
 névkomment: ""
 maxfok: 2

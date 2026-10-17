@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "városi_jártasság"
 név: "Városi jártasság"
 leírás: "Városi élet, informális kapcsolatok, tájékozódás városban."
 primer: false

@@ -1,4 +1,5 @@
 schema_version: 1
+id: "belharcos"
 név: "Belharcos"
 névkomment: "adott fegyverre"
 maxfok: 2

@@ -19,6 +19,8 @@ export interface ModositoTabla {
 }
 
 export interface KepzettsegDef {
+  /** Stabil képzettség-azonosító (átnevezéskor nem változik) - a hivatkozások célja (2026-10-17). */
+  id: string;
   név: string;
   csoport: string;
   primer: boolean;
@@ -68,6 +70,8 @@ export interface FortelyFokSummary {
 }
 
 export interface FortelySummary {
+  /** Stabil fortély-azonosító (átnevezéskor nem változik) - a hivatkozások célja (2026-10-17). */
+  id: string;
   név: string;
   csoport: string;
   alcsoport?: string;

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "heraldika"
 név: "Heraldika"
 névkomment: ""
 maxfok: 1

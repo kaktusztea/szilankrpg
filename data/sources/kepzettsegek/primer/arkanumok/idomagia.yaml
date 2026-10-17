@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_időmágia"
 név: "Arkánum: Időmágia"
 leírás: ""
 primer: true

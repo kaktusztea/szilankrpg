@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "gazdálkodás"
 név: "Gazdálkodás"
 névkomment: ""
 maxfok: 1

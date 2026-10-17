@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "jogismeret"
 név: "Jogismeret"
 névkomment: ""
 maxfok: 1

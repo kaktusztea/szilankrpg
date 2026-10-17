@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "analfabéta"
 név: "Analfabéta"
 névkomment: ""
 maxfok: 1

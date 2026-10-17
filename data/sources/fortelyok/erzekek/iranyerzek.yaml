@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "irányérzék"
 név: "Irányérzék"
 névkomment: ""
 maxfok: 1

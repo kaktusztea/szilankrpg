@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "etikett"
 név: "Etikett"
 leírás: "Udvari, nemesi környezetben való viselkedés ismerete."
 primer: false

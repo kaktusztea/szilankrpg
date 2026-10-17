@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kézműves_kádár"
 név: "Kézműves: Kádár"
 névkomment: ""
 maxfok: 1

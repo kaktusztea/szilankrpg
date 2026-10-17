@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "észlelés"
 név: "Észlelés"
 leírás: "Dolgok, személyek, események észrevétele."
 primer: true

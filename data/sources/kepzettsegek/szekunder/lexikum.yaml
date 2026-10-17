@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "lexikum"
 név: "Lexikum"
 leírás: "Történelem, földrajz, társadalom, jog, politika enciklopédikus ismerete."
 primer: false

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "zsonglőrködés"
 név: "Zsonglőrködés"
 névkomment: ""
 maxfok: 1

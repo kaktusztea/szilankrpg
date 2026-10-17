@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "csapdaállítás"
 név: "Csapdaállítás"
 leírás: "Mechanikus és egyéb csapdák készítése, felismerése, hatástalanítása."
 primer: false

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tartós_sérültség"
 név: "Tartós sérültség"
 névkomment: ""
 maxfok: 3

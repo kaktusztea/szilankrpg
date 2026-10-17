@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "stratégia"
 név: "Stratégia"
 névkomment: ""
 maxfok: 1

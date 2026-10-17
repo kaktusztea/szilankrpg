@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "hajózás"
 név: "Hajózás"
 leírás: "Hajók, legénység kezelése, irányítása és tengeri navigáció."
 primer: false

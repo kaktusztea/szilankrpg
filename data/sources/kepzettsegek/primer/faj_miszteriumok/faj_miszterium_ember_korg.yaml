@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_ember_korg"
 név: "Faj misztérium: Ember (korg)"
 leírás: ""
 primer: true

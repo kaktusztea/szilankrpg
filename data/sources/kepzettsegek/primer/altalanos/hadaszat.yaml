@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "hadászat"
 név: "Hadászat"
 leírás: "Hadvezetés, stratégia, taktika, erődítések ismerete."
 primer: true

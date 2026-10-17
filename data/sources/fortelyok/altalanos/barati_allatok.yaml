@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "baráti_állatok"
 név: "Baráti állatok"
 névkomment: ""
 maxfok: 1

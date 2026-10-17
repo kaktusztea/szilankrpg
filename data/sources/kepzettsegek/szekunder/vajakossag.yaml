@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "vajákosság"
 név: "Vajákosság"
 leírás: "Növényi, állati alapanyagokból hatóanyag kinyerése, tartósítása."
 primer: false

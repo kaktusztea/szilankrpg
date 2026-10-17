@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "bűvészet"
 név: "Bűvészet"
 névkomment: ""
 maxfok: 1

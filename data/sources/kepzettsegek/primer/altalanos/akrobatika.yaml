@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "akrobatika"
 név: "Akrobatika"
 leírás: "Esés, ugrás, kötéltánc és akrobatikus mozgásformák."
 primer: true

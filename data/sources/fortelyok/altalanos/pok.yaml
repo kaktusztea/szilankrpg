@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "pók"
 név: "Pók"
 névkomment: ""
 maxfok: 1

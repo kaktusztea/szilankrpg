@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "nyomozás"
 név: "Nyomozás"
 leírás: "Nyomok értelmezése, logikai következtetés, nyomkövetés."
 primer: true

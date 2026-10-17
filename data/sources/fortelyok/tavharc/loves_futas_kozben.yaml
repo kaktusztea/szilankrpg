@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "lövés_futás_közben"
 név: "Lövés futás közben"
 névkomment: ""
 maxfok: 1

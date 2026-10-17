@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "képzőművészet"
 név: "Képzőművészet"
 leírás: "Belső művészetek alkotói folyamatai: festés, szobrászat, ötvösség."
 primer: false

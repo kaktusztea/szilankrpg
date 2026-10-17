@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_kyr"
 név: "Faj misztérium: Kyr"
 leírás: ""
 primer: true

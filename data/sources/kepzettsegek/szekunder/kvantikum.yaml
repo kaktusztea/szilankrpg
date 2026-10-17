@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kvantikum"
 név: "Kvantikum"
 leírás: "Számokkal dolgozó tudományok: matematika, mértan, csillagászat."
 primer: false

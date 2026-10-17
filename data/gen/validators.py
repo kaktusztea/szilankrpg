@@ -1,3 +1,4 @@
+import re
 """Referenciális és tartalmi validátorok az Aktív fül adataihoz (taktikák, helyzetek, hatások)."""
 
 # A tiltás-feltételek fegyverenként kiértékelt forrásai (web: engine/effekt.ts → tiltásokFegyverre).
@@ -240,3 +241,18 @@ def validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek):
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)
+
+
+ID_FORMÁTUM = re.compile(r'^[0-9a-záéíóöőúüű]+(_[0-9a-záéíóöőúüű]+)*$')
+
+
+def id_hibak(elemek, mi):
+    """Build-gate: minden elemnek van `id`-je, formátuma kanonikus és egyedi (2026-10-17, id-átállás F1)."""
+    errors, látott = [], {}
+    for ctx, d in elemek:
+        i = d.get('id', '')
+        if not i: errors.append(f"{ctx}: hiányzó 'id'"); continue
+        if not ID_FORMÁTUM.match(i): errors.append(f"{ctx}: {mi}-id formátum: '{i}' (kisbetű, ékezet, _ elválasztó)")
+        if i in látott: errors.append(f"{ctx}: duplikált {mi}-id '{i}' (már: {látott[i]})")
+        látott[i] = ctx
+    return errors

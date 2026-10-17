@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "zárnyitás"
 név: "Zárnyitás"
 leírás: "Zárak feltörése, mechanizmusok manipulálása."
 primer: false

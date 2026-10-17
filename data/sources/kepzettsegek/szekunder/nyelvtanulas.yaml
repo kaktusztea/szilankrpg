@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "nyelvtanulás"
 név: "Nyelvtanulás"
 leírás: "Idegen nyelvek elsajátításának képessége."
 primer: false

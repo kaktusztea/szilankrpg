@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kézműves_molnár"
 név: "Kézműves: Molnár"
 névkomment: ""
 maxfok: 1

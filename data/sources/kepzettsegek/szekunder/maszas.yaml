@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mászás"
 név: "Mászás"
 leírás: "Falak, sziklák, épületek megmászása."
 primer: false

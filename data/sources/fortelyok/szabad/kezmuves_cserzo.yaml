@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kézműves_cserző"
 név: "Kézműves: Cserző"
 névkomment: ""
 maxfok: 1

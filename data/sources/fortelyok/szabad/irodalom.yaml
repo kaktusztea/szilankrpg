@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "irodalom"
 név: "Irodalom"
 névkomment: ""
 maxfok: 1

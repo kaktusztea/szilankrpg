@@ -1,4 +1,5 @@
 schema_version: 1
+id: "kétkezesség"
 név: Kétkezesség
 névkomment: ''
 maxfok: 1

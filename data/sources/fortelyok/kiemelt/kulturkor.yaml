@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kultúrkör"
 név: "Kultúrkör"
 névkomment: ""
 maxfok: 1

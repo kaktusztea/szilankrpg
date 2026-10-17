@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tradíció"
 név: "Tradíció"
 leírás: "Egy mágikus vagy szellemi tradíció ismerete és gyakorlása."
 primer: true

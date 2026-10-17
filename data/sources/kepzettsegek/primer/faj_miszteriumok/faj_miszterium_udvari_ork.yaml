@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_udvari_ork"
 név: "Faj misztérium: Udvari ork"
 leírás: ""
 primer: true

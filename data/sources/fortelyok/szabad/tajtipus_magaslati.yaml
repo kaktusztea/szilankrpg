@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tájtípus_magaslati"
 név: "Tájtípus - magaslati"
 névkomment: ""
 maxfok: 1

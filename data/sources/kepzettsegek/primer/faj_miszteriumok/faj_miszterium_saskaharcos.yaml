@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_sáskaharcos"
 név: "Faj misztérium: Sáskaharcos"
 leírás: ""
 primer: true

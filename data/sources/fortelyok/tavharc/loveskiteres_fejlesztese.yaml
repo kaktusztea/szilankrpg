@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "lövéskitérés_fejlesztése"
 név: "Lövéskitérés fejlesztése"
 névkomment: ""
 maxfok: 1

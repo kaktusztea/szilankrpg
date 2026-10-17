@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "megfélemlítés"
 név: "Megfélemlítés"
 névkomment: ""
 maxfok: 1

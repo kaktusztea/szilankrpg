@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kínokozás"
 név: "Kínokozás"
 névkomment: ""
 maxfok: 2

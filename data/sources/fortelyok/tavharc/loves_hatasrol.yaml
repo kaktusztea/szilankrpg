@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "lövés_hátasról"
 név: "Lövés hátasról"
 névkomment: ""
 maxfok: 2

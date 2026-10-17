@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_aurahangolás"
 név: "Arkánum: Aurahangolás"
 leírás: ""
 primer: true

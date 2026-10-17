@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_goblin"
 név: "Faj misztérium: Goblin"
 leírás: ""
 primer: true

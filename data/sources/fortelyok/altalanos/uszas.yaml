@@ -1,4 +1,5 @@
 schema_version: 1
+id: "úszás"
 név: "Úszás"
 névkomment: ""
 maxfok: 2

@@ -1,4 +1,5 @@
 schema_version: 1
+id: "sprint"
 név: "Sprint"
 névkomment: ""
 maxfok: 1

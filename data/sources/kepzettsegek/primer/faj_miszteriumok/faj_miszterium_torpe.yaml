@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_törpe"
 név: "Faj misztérium: Törpe"
 leírás: ""
 primer: true

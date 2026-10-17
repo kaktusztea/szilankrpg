@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "szobrászat"
 név: "Szobrászat"
 névkomment: ""
 maxfok: 1

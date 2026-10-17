@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_ember_slan"
 név: "Faj misztérium: Ember (Slan)"
 leírás: ""
 primer: true

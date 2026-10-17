@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "léglovaglás"
 név: "Léglovaglás"
 leírás: "Légi hátasok (pteropták, wyvernek, racklák) megülése és irányítása."
 primer: false

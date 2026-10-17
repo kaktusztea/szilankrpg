@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "manőverfókusz_lefegyverzés"
 név: "Manőverfókusz: Lefegyverzés"
 névkomment: ""
 maxfok: 1

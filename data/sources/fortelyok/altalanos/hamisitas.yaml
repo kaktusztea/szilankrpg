@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "hamisítás"
 név: "Hamisítás"
 névkomment: ""
 maxfok: 1

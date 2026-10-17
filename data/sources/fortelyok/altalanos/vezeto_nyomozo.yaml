@@ -1,4 +1,5 @@
 schema_version: 1
+id: "vezető_nyomozó"
 név: "Vezető: Nyomozó"
 névkomment: ""
 maxfok: 2

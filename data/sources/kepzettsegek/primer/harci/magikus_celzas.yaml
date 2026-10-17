@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mágikus_célzás"
 név: "Mágikus célzás"
 leírás: "Mágikus lövedékek és csatamágia célzásának harcmodora."
 primer: true

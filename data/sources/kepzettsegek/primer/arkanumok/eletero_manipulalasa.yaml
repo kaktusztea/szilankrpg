@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_életerő_manipulálása"
 név: "Arkánum: Életerő Manipulálása"
 leírás: ""
 primer: true

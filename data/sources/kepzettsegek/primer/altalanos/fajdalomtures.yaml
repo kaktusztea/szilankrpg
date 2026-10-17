@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "fájdalomtűrés"
 név: "Fájdalomtűrés"
 leírás: "Sebesülés okozta fájdalom és sokk elviselése. Kiemelt szintjei Sebesülés kategóriák TÉ levonást enyhítik."
 primer: true

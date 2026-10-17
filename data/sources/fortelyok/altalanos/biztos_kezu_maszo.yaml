@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "biztos_kezű_mászó"
 név: "Biztos kezű mászó"
 névkomment: ""
 maxfok: 1

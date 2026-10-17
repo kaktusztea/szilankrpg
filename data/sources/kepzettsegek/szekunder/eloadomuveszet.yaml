@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "előadóművészet"
 név: "Előadóművészet"
 leírás: "Aktív előadást igénylő művészetek: ének, zene, színészet, tánc."
 primer: false

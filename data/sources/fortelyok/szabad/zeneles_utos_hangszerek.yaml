@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "zenélés_ütős_hangszerek"
 név: "Zenélés: ütős hangszerek"
 névkomment: ""
 maxfok: 1

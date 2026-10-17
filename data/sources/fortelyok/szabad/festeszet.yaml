@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "festészet"
 név: "Festészet"
 névkomment: ""
 maxfok: 1

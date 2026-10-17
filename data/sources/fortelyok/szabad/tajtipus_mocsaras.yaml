@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tájtípus_mocsaras"
 név: "Tájtípus - mocsaras"
 névkomment: ""
 maxfok: 1

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "építészet"
 név: "Építészet"
 névkomment: ""
 maxfok: 2

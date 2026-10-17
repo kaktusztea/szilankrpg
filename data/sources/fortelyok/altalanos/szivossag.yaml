@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "szívósság"
 név: "Szívósság"
 névkomment: ""
 maxfok: 1

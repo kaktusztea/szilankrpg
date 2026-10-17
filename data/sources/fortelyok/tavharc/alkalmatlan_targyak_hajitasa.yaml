@@ -1,4 +1,5 @@
 schema_version: 1
+id: "alkalmatlan_tárgyak_hajítása"
 név: "Alkalmatlan tárgyak hajítása"
 névkomment: ""
 maxfok: 2

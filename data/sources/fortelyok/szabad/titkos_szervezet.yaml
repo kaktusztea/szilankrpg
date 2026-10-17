@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "titkos_szervezet"
 név: "Titkos szervezet"
 névkomment: ""
 maxfok: 1

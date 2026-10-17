@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tájtípus_erdős"
 név: "Tájtípus - erdős"
 névkomment: ""
 maxfok: 1

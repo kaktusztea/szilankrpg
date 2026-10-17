@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "harci_láz"
 név: "Harci láz"
 leírás: "Harci extázis irányítása, fokozatai között lépdelés."
 primer: true

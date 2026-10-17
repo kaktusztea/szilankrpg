@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kalligráfia"
 név: "Kalligráfia"
 névkomment: ""
 maxfok: 1

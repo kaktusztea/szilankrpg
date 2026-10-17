@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "taktikafókusz_visszafogott"
 név: "Taktikafókusz: Visszafogott"
 névkomment: ""
 maxfok: 1

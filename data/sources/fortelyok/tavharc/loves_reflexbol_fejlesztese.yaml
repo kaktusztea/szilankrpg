@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "lövés_reflexből_fejlesztése"
 név: "Lövés reflexből fejlesztése"
 névkomment: ""
 maxfok: 1

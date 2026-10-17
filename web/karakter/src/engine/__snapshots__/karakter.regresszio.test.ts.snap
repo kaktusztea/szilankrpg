@@ -1,0 +1,1358 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`karakter számított értékei - id-átállás regressziós snapshot > minden fortély, fok-index 0 1`] = `
+{
+  "kp": {
+    "elköltöttKp": 1506,
+    "kiemeltKp": 0,
+    "kpCm": 6,
+    "kpFortélyok": 990,
+    "kpHm": 168,
+    "kpKépzettségek": 342,
+    "maradékKp": -730,
+    "primerKeret": 576,
+    "primerKöltés": 792,
+    "primerMaradt": -216,
+    "specKp": 66,
+    "szekunderKp": 200,
+    "összesKp": 510,
+  },
+  "követelményHiány": {
+    "Alkalmatlan fegyver hajítása (1)": [
+      "Hajítás ≥ 3",
+    ],
+    "Alkalmatlan tárgyak hajítása (1)": [
+      "Hajítás ≥ 6",
+    ],
+    "Biztos kezű mászó (1)": [
+      "Mászás ≥ 6",
+    ],
+    "Emberentúli hallás (1)": [
+      "Faj Háttér (Emberentúli hallás ≥ 1. fok)",
+    ],
+    "Emberentúli látás (1)": [
+      "Faj Háttér (Emberentúli látás ≥ 1. fok)",
+    ],
+    "Emberentúli szaglás (1)": [
+      "Faj Háttér (Emberentúli szaglás ≥ 1. fok)",
+    ],
+    "Gyors hajítás (1)": [
+      "Hajítás ≥ 5",
+    ],
+    "Gyöngyhalász (1)": [
+      "Úszás fortély ≥ 2. fok",
+    ],
+    "Harci akrobatika (1)": [
+      "Akrobatika ≥ 6",
+    ],
+    "Harci kocsihajtás (1)": [
+      "Lovaglás/Léglovaglás ≥ 6",
+    ],
+    "Infralátás (1)": [
+      "Faj Háttér (Infralátás ≥ 1. fok)",
+    ],
+    "Irodalom (1)": [
+      "Nyelvismeret fortély ≥ 2. fok",
+    ],
+    "Irányérzék (1)": [
+      "Faj Háttér (Irányérzék ≥ 1. fok)",
+    ],
+    "Jogismeret (1)": [
+      "Nem lehet: Analfabéta fortély",
+    ],
+    "Kalligráfia (1)": [
+      "Nem lehet: Analfabéta fortély",
+    ],
+    "Lovas harc (1)": [
+      "Lovaglás ≥ 6",
+    ],
+    "Léglovas harc (1)": [
+      "Léglovaglás ≥ 3",
+    ],
+    "Lövés hátasról (1)": [
+      "Lovaglás/Léglovaglás ≥ 6",
+      "Harcmodor ≥ 6",
+    ],
+    "Manőverfókusz: Fegyvertörés (1)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Manőverfókusz: Lefegyverzés (1)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Mesterlövész (1)": [
+      "Lövészet ≥ 5",
+    ],
+    "Műhelymester (1)": [
+      "Kézművesség ≥ 9",
+    ],
+    "Nyílpuska újratöltés fejlesztése (1)": [
+      "Lövészet ≥ 6",
+    ],
+    "Pók (1)": [
+      "Mászás ≥ 6",
+    ],
+    "Suhanó árnyék (1)": [
+      "Lopakodás/rejtőzés ≥ 6",
+    ],
+    "Szájról olvasás (1)": [
+      "Nyelvismeret fortély ≥ 2. fok",
+    ],
+    "Százarcú (1)": [
+      "Álcázás/Álruha ≥ 4",
+    ],
+    "Természetes fegyver (1)": [
+      "Faj Háttér (Természetes fegyver ≥ 1. fok)",
+    ],
+    "Természetes páncél (1)": [
+      "Faj Háttér (Természetes páncél ≥ 1. fok)",
+    ],
+    "Tánc: speciális/belső stílus (1)": [
+      "Etikett ≥ 9",
+      "Előadóművészet ≥ 6",
+    ],
+    "Ultralátás (1)": [
+      "Faj Háttér (Ultralátás ≥ 1. fok)",
+    ],
+    "Vezető: Alakzatparancsnok (1)": [
+      "Alakzatharc ≥ 6",
+    ],
+    "Vezető: Bölcsészprofesszor (1)": [
+      "Lexikum ≥ 6",
+    ],
+    "Vezető: Fejvadász strategis (1)": [
+      "Lopakodás/rejtőzés ≥ 6",
+    ],
+    "Vezető: Hajóskapitány (1)": [
+      "Hajózás ≥ 6",
+    ],
+    "Vezető: Lovaskapitány (1)": [
+      "Lovaglás ≥ 6",
+    ],
+    "Vezető: Léglovaskapitány (1)": [
+      "Léglovaglás ≥ 6",
+    ],
+    "Vezető: Nyomozó (1)": [
+      "Nyomozás ≥ 6",
+    ],
+    "Vezető: Orvosprofesszor (1)": [
+      "Orvoslás ≥ 6",
+    ],
+    "Vezető: Rendező (1)": [
+      "Előadóművészet ≥ 6",
+    ],
+    "Vezető: Tudósprofesszor (1)": [
+      "Kvantikum ≥ 6",
+    ],
+    "Vezető: Íjászparancsnok (1)": [
+      "Harcmodor ≥ 6",
+    ],
+    "Zártörő (1)": [
+      "Zárnyitás ≥ 6",
+    ],
+  },
+  "próbaBónusz": {
+    "képzettség": {
+      "Fájdalomtűrés": [
+        {
+          "leírás": "Fakír (1): Fájdalomtűrés próba kínzás esetén",
+          "érték": 2,
+        },
+      ],
+      "Észlelés": [
+        {
+          "leírás": "Éber alvó (1): Észlelés próba alvás közben",
+          "érték": 2,
+        },
+      ],
+    },
+    "tulajdonság": {
+      "edzettség": [
+        {
+          "leírás": "Futás (1): Edzettség próba hosszútávfutáskor",
+          "érték": 1,
+        },
+        {
+          "leírás": "Kitartás (1): Edzettség próba tartós igénybevételnél",
+          "érték": 1,
+        },
+        {
+          "leírás": "Méregálló (1): Edzettség (méregellenállás)",
+          "érték": 1,
+        },
+      ],
+      "gyorsaság": [
+        {
+          "leírás": "Futás (1): Gyorsaság próba rövidtávfutáskor",
+          "érték": 1,
+        },
+        {
+          "leírás": "Sprint (1): Gyorsaság próba rövid távú futásnál",
+          "érték": 2,
+        },
+      ],
+      "érzékenység": [
+        {
+          "leírás": "Szájról olvasás (1): Érzékenység próba célszám csökkentés (szájról olvasás)",
+          "érték": 3,
+        },
+      ],
+      "ügyesség": [
+        {
+          "leírás": "Csomózás (1): Ügyesség ellenpróba (csomózás)",
+          "érték": 2,
+        },
+        {
+          "leírás": "Kötelékből szabadulás (1): Ügyesség ellenpróba (szabadulás)",
+          "érték": 2,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`karakter számított értékei - id-átállás regressziós snapshot > minden fortély, fok-index 9 1`] = `
+{
+  "kp": {
+    "elköltöttKp": 1998,
+    "kiemeltKp": 0,
+    "kpCm": 6,
+    "kpFortélyok": 1482,
+    "kpHm": 168,
+    "kpKépzettségek": 342,
+    "maradékKp": -1210,
+    "primerKeret": 588,
+    "primerKöltés": 1122,
+    "primerMaradt": -534,
+    "specKp": 78,
+    "szekunderKp": 200,
+    "összesKp": 510,
+  },
+  "követelményHiány": {
+    "Alakzat: támadó (2)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Alakzat: védekező (2)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Alkalmatlan fegyver hajítása (2)": [
+      "Harcmodor ≥ 9",
+      "Hajítás ≥ 6",
+    ],
+    "Alkalmatlan tárgyak hajítása (2)": [
+      "Hajítás ≥ 9",
+    ],
+    "Belharcos (2)": [
+      "Közelharc ≥ 9",
+    ],
+    "Biztos kezű mászó (1)": [
+      "Mászás ≥ 6",
+    ],
+    "Elpusztíthatatlan (2)": [
+      "Fájdalomtűrés ≥ 10",
+    ],
+    "Emberentúli hallás (1)": [
+      "Faj Háttér (Emberentúli hallás ≥ 1. fok)",
+    ],
+    "Emberentúli látás (1)": [
+      "Faj Háttér (Emberentúli látás ≥ 1. fok)",
+    ],
+    "Emberentúli szaglás (1)": [
+      "Faj Háttér (Emberentúli szaglás ≥ 1. fok)",
+    ],
+    "Gyors hajítás (1)": [
+      "Hajítás ≥ 5",
+    ],
+    "Harci akrobatika (3)": [
+      "Akrobatika ≥ 12",
+    ],
+    "Harci kocsihajtás (2)": [
+      "Lovaglás/Léglovaglás ≥ 9",
+    ],
+    "Harckeret növelés (3)": [
+      "Harcmodor ≥ 12",
+    ],
+    "Harcos elme (3)": [
+      "Harcmodor ≥ 12",
+    ],
+    "Infralátás (2)": [
+      "Faj Háttér (Infralátás ≥ 2. fok)",
+    ],
+    "Irányérzék (1)": [
+      "Faj Háttér (Irányérzék ≥ 1. fok)",
+    ],
+    "Jogismeret (1)": [
+      "Nem lehet: Analfabéta fortély",
+    ],
+    "Kalligráfia (1)": [
+      "Nem lehet: Analfabéta fortély",
+    ],
+    "Lovas harc (3)": [
+      "Harcmodor ≥ 12",
+      "Lovaglás ≥ 12",
+    ],
+    "Léglovas harc (3)": [
+      "Léglovaglás ≥ 9",
+    ],
+    "Lövés hátasról (2)": [
+      "Lovaglás/Léglovaglás ≥ 9",
+      "Harcmodor ≥ 9",
+    ],
+    "Manőverfókusz: Fegyvertörés (1)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Manőverfókusz: Lefegyverzés (1)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Mesterfegyver (3)": [
+      "Harcmodor ≥ 12",
+    ],
+    "Mesterlövész (1)": [
+      "Lövészet ≥ 5",
+    ],
+    "Műhelymester (1)": [
+      "Kézművesség ≥ 9",
+    ],
+    "Nyílpuska újratöltés fejlesztése (2)": [
+      "Lövészet ≥ 9",
+    ],
+    "Orgyilkos (3)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Páros harc (3)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Pók (1)": [
+      "Mászás ≥ 6",
+    ],
+    "Suhanó árnyék (1)": [
+      "Lopakodás/rejtőzés ≥ 6",
+    ],
+    "Százarcú (2)": [
+      "Álcázás/Álruha ≥ 8",
+    ],
+    "Természetes fegyver (1)": [
+      "Faj Háttér (Természetes fegyver ≥ 1. fok)",
+    ],
+    "Természetes páncél (3)": [
+      "Faj Háttér (Természetes páncél ≥ 3. fok)",
+    ],
+    "Testőr (2)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Tánc: speciális/belső stílus (1)": [
+      "Etikett ≥ 9",
+      "Előadóművészet ≥ 6",
+    ],
+    "Ultralátás (3)": [
+      "Faj Háttér (Ultralátás ≥ 3. fok)",
+    ],
+    "Vezető: Alakzatparancsnok (2)": [
+      "Alakzatharc ≥ 9",
+    ],
+    "Vezető: Bölcsészprofesszor (2)": [
+      "Lexikum ≥ 9",
+    ],
+    "Vezető: Fejvadász strategis (2)": [
+      "Lopakodás/rejtőzés ≥ 9",
+    ],
+    "Vezető: Hajóskapitány (2)": [
+      "Hajózás ≥ 9",
+    ],
+    "Vezető: Lovaskapitány (2)": [
+      "Lovaglás ≥ 9",
+    ],
+    "Vezető: Léglovaskapitány (2)": [
+      "Léglovaglás ≥ 9",
+    ],
+    "Vezető: Nyomozó (2)": [
+      "Nyomozás ≥ 9",
+    ],
+    "Vezető: Orvosprofesszor (2)": [
+      "Orvoslás ≥ 9",
+    ],
+    "Vezető: Rendező (2)": [
+      "Előadóművészet ≥ 9",
+    ],
+    "Vezető: Testőrparancsnok (2)": [
+      "Észlelés ≥ 9",
+    ],
+    "Vezető: Tudósprofesszor (2)": [
+      "Kvantikum ≥ 9",
+    ],
+    "Vezető: Íjászparancsnok (2)": [
+      "Harcmodor ≥ 9",
+    ],
+    "Zártörő (1)": [
+      "Zárnyitás ≥ 6",
+    ],
+  },
+  "próbaBónusz": {
+    "képzettség": {
+      "Fájdalomtűrés": [
+        {
+          "leírás": "Fakír (2): Fájdalomtűrés próba kínzás esetén",
+          "érték": 4,
+        },
+      ],
+      "Kézművesség": [
+        {
+          "leírás": "Kézműves: Fegyverkovács (2): Kézművesség (fegyver kovácsolás)",
+          "érték": 2,
+        },
+        {
+          "leírás": "Kézműves: Páncélkovács (2): Kézművesség (páncél kovácsolás)",
+          "érték": 2,
+        },
+      ],
+      "Észlelés": [
+        {
+          "leírás": "Éber alvó (1): Észlelés próba alvás közben",
+          "érték": 2,
+        },
+      ],
+    },
+    "tulajdonság": {
+      "edzettség": [
+        {
+          "leírás": "Futás (2): Edzettség próba hosszútávfutáskor",
+          "érték": 2,
+        },
+        {
+          "leírás": "Kitartás (1): Edzettség próba tartós igénybevételnél",
+          "érték": 1,
+        },
+        {
+          "leírás": "Méregálló (3): Edzettség (méregellenállás)",
+          "érték": 3,
+        },
+        {
+          "leírás": "Úszás (2): Edzettség próba hosszú távú úszásnál",
+          "érték": 2,
+        },
+      ],
+      "gyorsaság": [
+        {
+          "leírás": "Futás (2): Gyorsaság próba rövidtávfutáskor",
+          "érték": 2,
+        },
+        {
+          "leírás": "Sprint (1): Gyorsaság próba rövid távú futásnál",
+          "érték": 2,
+        },
+      ],
+      "érzékenység": [
+        {
+          "leírás": "Szájról olvasás (1): Érzékenység próba célszám csökkentés (szájról olvasás)",
+          "érték": 3,
+        },
+      ],
+      "ügyesség": [
+        {
+          "leírás": "Csomózás (2): Ügyesség ellenpróba (csomózás)",
+          "érték": 4,
+        },
+        {
+          "leírás": "Kötelékből szabadulás (2): Ügyesség ellenpróba (szabadulás)",
+          "érték": 4,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`karakter számított értékei - id-átállás regressziós snapshot > test_karakter2.json 1`] = `
+{
+  "harc": {
+    "fegyverek": [
+      {
+        "Forgatás": "egykezes",
+        "SP": -2,
+        "TÉ": 34,
+        "VÉ": 49,
+        "aktor": "ököl",
+        "alap_TÉ": -3,
+        "alap_VÉ": -3,
+        "fegyver_név": "Puszta kéz",
+        "fegyverhossz": 0,
+        "fortély": {
+          "CÉ": 0,
+          "KÉ": 5,
+          "SFÉ": 0,
+          "SP": 0,
+          "SP_erőbónusz_arány": 0,
+          "TÉ": 0,
+          "VÉ": 0,
+          "fegyverhossz": 0,
+          "harckeret": 4,
+        },
+        "harckeret": 0,
+        "hk_fortély": 4,
+        "hk_gyorsaság": 3,
+        "hk_harcmodor": 6,
+        "hk_mgt": 14,
+        "jelleg": "zúzó",
+        "módok": [
+          {
+            "Forgatás": "egykezes",
+            "SP": -2,
+            "TÉ": 34,
+            "VÉ": 49,
+            "aktor": "ököl",
+            "alap_TÉ": -3,
+            "alap_VÉ": -3,
+            "harckeret": 0,
+            "hk_fortély": 4,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 6,
+            "hk_mgt": 14,
+            "jelleg": "zúzó",
+            "sebesség": 5,
+            "sebzéstípus": "elsődleges",
+            "támadások": 1,
+            "Átütés": 0,
+          },
+        ],
+        "sebesség": 5,
+        "sebzéstípus": "elsődleges",
+        "tiltások": [],
+        "támadások": 1,
+        "Átütés": 0,
+      },
+      {
+        "Forgatás": "egykezes",
+        "SP": 11,
+        "TÉ": 47,
+        "VÉ": 62,
+        "aktor": "vágóél-egyenes-átlagos",
+        "alap_TÉ": 6,
+        "alap_VÉ": 6,
+        "fegyver_név": "Kard, lovag",
+        "fegyverhossz": 3,
+        "fortély": {
+          "CÉ": 0,
+          "KÉ": 5,
+          "SFÉ": 0,
+          "SP": 0,
+          "SP_erőbónusz_arány": 0,
+          "TÉ": 0,
+          "VÉ": 0,
+          "fegyverhossz": 0,
+          "harckeret": 4,
+        },
+        "harckeret": 1,
+        "hk_fortély": 4,
+        "hk_gyorsaság": 3,
+        "hk_harcmodor": 8,
+        "hk_mgt": 14,
+        "jelleg": "vágó-egyenes",
+        "módok": [
+          {
+            "Forgatás": "egykezes",
+            "SP": 11,
+            "TÉ": 47,
+            "VÉ": 62,
+            "aktor": "vágóél-egyenes-átlagos",
+            "alap_TÉ": 6,
+            "alap_VÉ": 6,
+            "harckeret": 1,
+            "hk_fortély": 4,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 8,
+            "hk_mgt": 14,
+            "jelleg": "vágó-egyenes",
+            "sebesség": 8,
+            "sebzéstípus": "elsődleges",
+            "támadások": 1,
+            "Átütés": 0,
+          },
+          {
+            "Forgatás": "egykezes",
+            "SP": 11,
+            "TÉ": 45,
+            "VÉ": 60,
+            "aktor": "pengehegy-kard",
+            "alap_TÉ": 4,
+            "alap_VÉ": 4,
+            "harckeret": 1,
+            "hk_fortély": 4,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 8,
+            "hk_mgt": 14,
+            "jelleg": "szúró",
+            "sebesség": 8,
+            "sebzéstípus": "másodlagos",
+            "támadások": 1,
+            "Átütés": 1,
+          },
+        ],
+        "sebesség": 8,
+        "sebzéstípus": "elsődleges",
+        "tiltások": [],
+        "támadások": 1,
+        "Átütés": 0,
+      },
+      {
+        "Forgatás": "egykezes",
+        "SP": 6,
+        "TÉ": 41,
+        "VÉ": 56,
+        "aktor": "vágóél-egyenes-rövid",
+        "alap_TÉ": 3,
+        "alap_VÉ": 3,
+        "fegyver_név": "Tőr",
+        "fegyverhossz": 1,
+        "fortély": {
+          "CÉ": 0,
+          "KÉ": 5,
+          "SFÉ": 0,
+          "SP": 0,
+          "SP_erőbónusz_arány": 0,
+          "TÉ": 0,
+          "VÉ": 0,
+          "fegyverhossz": 0,
+          "harckeret": 4,
+        },
+        "harckeret": 0,
+        "hk_fortély": 4,
+        "hk_gyorsaság": 3,
+        "hk_harcmodor": 6,
+        "hk_mgt": 14,
+        "jelleg": "vágó-egyenes",
+        "módok": [
+          {
+            "Forgatás": "egykezes",
+            "SP": 6,
+            "TÉ": 41,
+            "VÉ": 56,
+            "aktor": "vágóél-egyenes-rövid",
+            "alap_TÉ": 3,
+            "alap_VÉ": 3,
+            "harckeret": 0,
+            "hk_fortély": 4,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 6,
+            "hk_mgt": 14,
+            "jelleg": "vágó-egyenes",
+            "sebesség": 6,
+            "sebzéstípus": "elsődleges",
+            "támadások": 1,
+            "Átütés": 0,
+          },
+          {
+            "Forgatás": "egykezes",
+            "SP": 7,
+            "TÉ": 40,
+            "VÉ": 55,
+            "aktor": "pengehegy-tőr",
+            "alap_TÉ": 2,
+            "alap_VÉ": 2,
+            "harckeret": 0,
+            "hk_fortély": 4,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 6,
+            "hk_mgt": 14,
+            "jelleg": "szúró",
+            "sebesség": 6,
+            "sebzéstípus": "másodlagos",
+            "támadások": 1,
+            "Átütés": 0,
+          },
+        ],
+        "sebesség": 6,
+        "sebzéstípus": "elsődleges",
+        "tiltások": [],
+        "támadások": 1,
+        "Átütés": 0,
+      },
+      {
+        "Forgatás": "egykezes",
+        "SP": 4,
+        "TÉ": 40,
+        "VÉ": 64,
+        "aktor": "kivétel",
+        "alap_TÉ": 1,
+        "alap_VÉ": 10,
+        "fegyver_név": "Közepes Pajzs",
+        "fegyverhossz": 0,
+        "fortély": {
+          "CÉ": 0,
+          "KÉ": 5,
+          "SFÉ": 0,
+          "SP": 2,
+          "SP_erőbónusz_arány": 0,
+          "TÉ": 2,
+          "VÉ": 2,
+          "fegyverhossz": 0,
+          "harckeret": 4,
+        },
+        "harckeret": 0,
+        "hk_fortély": 4,
+        "hk_gyorsaság": 3,
+        "hk_harcmodor": 6,
+        "hk_mgt": 14,
+        "jelleg": "zúzó",
+        "módok": [
+          {
+            "Forgatás": "egykezes",
+            "SP": 4,
+            "TÉ": 40,
+            "VÉ": 64,
+            "aktor": "kivétel",
+            "alap_TÉ": 1,
+            "alap_VÉ": 10,
+            "harckeret": 0,
+            "hk_fortély": 4,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 6,
+            "hk_mgt": 14,
+            "jelleg": "zúzó",
+            "sebesség": 7,
+            "sebzéstípus": "elsődleges",
+            "támadások": 1,
+            "Átütés": 0,
+          },
+        ],
+        "sebesség": 7,
+        "sebzéstípus": "elsődleges",
+        "tiltások": [],
+        "támadások": 1,
+        "Átütés": 0,
+      },
+    ],
+    "fogás": null,
+    "fortélyMods": {
+      "CÉ": 0,
+      "KÉ": 5,
+      "SFÉ": 0,
+      "SP": 0,
+      "SP_erőbónusz_arány": 0,
+      "TÉ": 0,
+      "VÉ": 0,
+      "fegyverhossz": 0,
+      "harckeret": 4,
+    },
+    "ké": 19,
+    "kétkezes": {
+      "Forgatás": "egykezes",
+      "SP": 11,
+      "TÉ": 50,
+      "VÉ": 65,
+      "aktor": "vágóél-egyenes-átlagos",
+      "alap_TÉ": 9,
+      "alap_VÉ": 9,
+      "fegyver_név": "Kard, lovag + Tőr",
+      "fegyverhossz": 3,
+      "harckeret": 0,
+      "hk_fortély": 4,
+      "hk_gyorsaság": 3,
+      "hk_harcmodor": 8,
+      "hk_mgt": 14,
+      "jelleg": "vágó-egyenes",
+      "módok": [
+        {
+          "Forgatás": "egykezes",
+          "SP": 11,
+          "TÉ": 50,
+          "VÉ": 65,
+          "aktor": "vágóél-egyenes-átlagos",
+          "alap_TÉ": 9,
+          "alap_VÉ": 9,
+          "harckeret": 0,
+          "hk_fortély": 4,
+          "hk_gyorsaság": 3,
+          "hk_harcmodor": 8,
+          "hk_mgt": 14,
+          "jelleg": "vágó-egyenes",
+          "sebesség": 8,
+          "sebzéstípus": "elsődleges",
+          "támadások": 1,
+          "Átütés": 0,
+        },
+      ],
+      "sebesség": 8,
+      "sebzéstípus": "elsődleges",
+      "sumFegyverhossz": 4,
+      "támadások": 1,
+      "Átütés": 0,
+    },
+    "ma": 3,
+    "maxVéCsökk": 59,
+    "merevvért": 0,
+    "mgt": 14,
+    "mp": 4,
+    "pajzsVÉ": 0,
+    "sfé": [
+      5,
+      5,
+    ],
+    "ép": 40,
+  },
+  "kp": {
+    "elköltöttKp": 714,
+    "kiemeltKp": 6,
+    "kpCm": 6,
+    "kpFortélyok": 192,
+    "kpHm": 168,
+    "kpKépzettségek": 342,
+    "maradékKp": 2,
+    "primerKeret": 516,
+    "primerKöltés": 516,
+    "primerMaradt": 0,
+    "specKp": 6,
+    "szekunderKp": 200,
+    "összesKp": 510,
+  },
+  "követelményHiány": {},
+  "primerKp": {
+    "harcifortDetails": [
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Mesterfegyver",
+        "spec": "Tőr",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Mesterfegyver",
+        "spec": "Kard, lovag",
+      },
+      {
+        "fok": 3,
+        "kp": 18,
+        "név": "Merevvértviselet",
+        "spec": "",
+      },
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Harcos elme",
+        "spec": "",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Gyors kezdeményezés",
+        "spec": "",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Pajzshasználat",
+        "spec": "",
+      },
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Harckeret növelés",
+        "spec": "",
+      },
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Elpusztíthatatlan",
+        "spec": "",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Kaszabolás",
+        "spec": "",
+      },
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Fárasztás",
+        "spec": "",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Kétkezes harc",
+        "spec": "",
+      },
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Mesterfegyver",
+        "spec": "Rövid íj",
+      },
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Lövés reflexből fejlesztése",
+        "spec": "",
+      },
+    ],
+    "harcmodorDetails": [
+      {
+        "kp": 53,
+        "név": "Közelharc",
+        "szint": 6,
+      },
+      {
+        "kp": 108,
+        "név": "Kardvívás",
+        "szint": 8,
+      },
+      {
+        "kp": 22,
+        "név": "Rombolás",
+        "szint": 4,
+      },
+      {
+        "kp": 35,
+        "név": "Íjászat",
+        "szint": 5,
+      },
+    ],
+    "kp_harci_fort": 120,
+    "kp_harcmodor": 218,
+    "kp_hm_cm": 174,
+    "kp_miszt_fort": 12,
+    "kp_misztikus": 220,
+    "kp_világi": 191,
+    "misztfortDetails": [
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Mágikus lövedék gyorsítása",
+        "spec": "",
+      },
+    ],
+    "misztikusDetails": [
+      {
+        "kp": 53,
+        "név": "Tradíció: Vulgármágia",
+        "szint": 6,
+      },
+      {
+        "kp": 77,
+        "név": "Arkánum: Illúziók",
+        "szint": 7,
+      },
+      {
+        "kp": 13,
+        "név": "Arkánum: Külső síkok lényeinek idézése",
+        "szint": 3,
+      },
+      {
+        "kp": 77,
+        "név": "Ősi nyelv ismerete: Kyr",
+        "szint": 7,
+      },
+    ],
+    "total": 935,
+    "világiDetails": [
+      {
+        "kp": 13,
+        "név": "Akrobatika",
+        "szint": 3,
+      },
+      {
+        "kp": 77,
+        "név": "Fájdalomtűrés",
+        "szint": 7,
+      },
+      {
+        "kp": 53,
+        "név": "Észlelés",
+        "szint": 6,
+      },
+      {
+        "kp": 13,
+        "név": "Befolyásolás",
+        "szint": 3,
+      },
+      {
+        "kp": 35,
+        "név": "Emberismeret",
+        "szint": 5,
+      },
+    ],
+  },
+  "próbaBónusz": {
+    "képzettség": {
+      "Észlelés": [
+        {
+          "leírás": "Éber alvó (1): Észlelés próba alvás közben",
+          "érték": 2,
+        },
+      ],
+    },
+    "tulajdonság": {
+      "edzettség": [
+        {
+          "leírás": "Futás (2): Edzettség próba hosszútávfutáskor",
+          "érték": 2,
+        },
+      ],
+      "gyorsaság": [
+        {
+          "leírás": "Futás (2): Gyorsaság próba rövidtávfutáskor",
+          "érték": 2,
+        },
+      ],
+      "érzékenység": [
+        {
+          "leírás": "Szájról olvasás (1): Érzékenység próba célszám csökkentés (szájról olvasás)",
+          "érték": 3,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`karakter számított értékei - id-átállás regressziós snapshot > test_karakter3.json 1`] = `
+{
+  "harc": {
+    "fegyverek": [
+      {
+        "Forgatás": "egykezes",
+        "SP": -3,
+        "TÉ": 6,
+        "VÉ": 24,
+        "aktor": "ököl",
+        "alap_TÉ": -3,
+        "alap_VÉ": -3,
+        "fegyver_név": "Puszta kéz",
+        "fegyverhossz": 0,
+        "fortély": {
+          "CÉ": 0,
+          "KÉ": 0,
+          "SFÉ": 0,
+          "SP": 0,
+          "SP_erőbónusz_arány": 0,
+          "TÉ": 0,
+          "VÉ": 0,
+          "fegyverhossz": 0,
+          "harckeret": 0,
+        },
+        "harckeret": 0,
+        "hk_fortély": 0,
+        "hk_gyorsaság": 3,
+        "hk_harcmodor": 0,
+        "hk_mgt": 3,
+        "jelleg": "zúzó",
+        "módok": [
+          {
+            "Forgatás": "egykezes",
+            "SP": -3,
+            "TÉ": 6,
+            "VÉ": 24,
+            "aktor": "ököl",
+            "alap_TÉ": -3,
+            "alap_VÉ": -3,
+            "harckeret": 0,
+            "hk_fortély": 0,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 0,
+            "hk_mgt": 3,
+            "jelleg": "zúzó",
+            "sebesség": 5,
+            "sebzéstípus": "elsődleges",
+            "támadások": 1,
+            "Átütés": 0,
+          },
+        ],
+        "sebesség": 5,
+        "sebzéstípus": "elsődleges",
+        "tiltások": [],
+        "támadások": 1,
+        "Átütés": 0,
+      },
+      {
+        "Forgatás": "egykezes",
+        "SP": 7,
+        "TÉ": 25,
+        "VÉ": 43,
+        "aktor": "vágóél-íves-rövid",
+        "alap_TÉ": 3,
+        "alap_VÉ": 3,
+        "fegyver_név": "Meneth",
+        "fegyverhossz": 2,
+        "fortély": {
+          "CÉ": 0,
+          "KÉ": 0,
+          "SFÉ": 0,
+          "SP": 0,
+          "SP_erőbónusz_arány": 0,
+          "TÉ": 0,
+          "VÉ": 0,
+          "fegyverhossz": 0,
+          "harckeret": 0,
+        },
+        "harckeret": 6,
+        "hk_fortély": 0,
+        "hk_gyorsaság": 3,
+        "hk_harcmodor": 6,
+        "hk_mgt": 3,
+        "jelleg": "vágó-íves",
+        "módok": [
+          {
+            "Forgatás": "egykezes",
+            "SP": 7,
+            "TÉ": 25,
+            "VÉ": 43,
+            "aktor": "vágóél-íves-rövid",
+            "alap_TÉ": 3,
+            "alap_VÉ": 3,
+            "harckeret": 6,
+            "hk_fortély": 0,
+            "hk_gyorsaság": 3,
+            "hk_harcmodor": 6,
+            "hk_mgt": 3,
+            "jelleg": "vágó-íves",
+            "sebesség": 6,
+            "sebzéstípus": "elsődleges",
+            "támadások": 1,
+            "Átütés": 0,
+          },
+        ],
+        "sebesség": 6,
+        "sebzéstípus": "elsődleges",
+        "tiltások": [],
+        "támadások": 1,
+        "Átütés": 0,
+      },
+    ],
+    "fogás": null,
+    "fortélyMods": {
+      "CÉ": 0,
+      "KÉ": 0,
+      "SFÉ": 0,
+      "SP": 0,
+      "SP_erőbónusz_arány": 0,
+      "TÉ": 0,
+      "VÉ": 0,
+      "fegyverhossz": 0,
+      "harckeret": 0,
+    },
+    "ké": 16,
+    "kétkezes": null,
+    "ma": 1,
+    "maxVéCsökk": 37,
+    "merevvért": 0,
+    "mgt": 3,
+    "mp": 2,
+    "pajzsVÉ": 0,
+    "sfé": [
+      8,
+      14,
+    ],
+    "ép": 36,
+  },
+  "kp": {
+    "elköltöttKp": 825,
+    "kiemeltKp": 0,
+    "kpCm": 30,
+    "kpFortélyok": 156,
+    "kpHm": 12,
+    "kpKépzettségek": 627,
+    "maradékKp": 0,
+    "primerKeret": 572,
+    "primerKöltés": 551,
+    "primerMaradt": 21,
+    "specKp": 0,
+    "szekunderKp": 253,
+    "összesKp": 572,
+  },
+  "követelményHiány": {},
+  "primerKp": {
+    "harcifortDetails": [
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Mesterfegyver",
+        "spec": "Meneth",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Elpusztíthatatlan",
+        "spec": "",
+      },
+    ],
+    "harcmodorDetails": [
+      {
+        "kp": 53,
+        "név": "Kardvívás",
+        "szint": 6,
+      },
+    ],
+    "kp_harci_fort": 18,
+    "kp_harcmodor": 53,
+    "kp_hm_cm": 42,
+    "kp_miszt_fort": 48,
+    "kp_misztikus": 823,
+    "kp_világi": 801,
+    "misztfortDetails": [
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Külső síkok lényeinek ismerete",
+        "spec": "dzsinnek",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Mágiatáv növelés",
+        "spec": "",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Pszí Telekinézis",
+        "spec": "",
+      },
+      {
+        "fok": 2,
+        "kp": 12,
+        "név": "Pszí Telepátia",
+        "spec": "",
+      },
+      {
+        "fok": 1,
+        "kp": 6,
+        "név": "Mentálfonál",
+        "spec": "Hah-Sehh főpap",
+      },
+    ],
+    "misztikusDetails": [
+      {
+        "kp": 247,
+        "név": "Tradíció: Szakrális (Amhe-Ramun)",
+        "szint": 11,
+      },
+      {
+        "kp": 192,
+        "név": "Arkánum: Asztrálmágia",
+        "szint": 10,
+      },
+      {
+        "kp": 108,
+        "név": "Arkánum: Külső síkok lényeinek idézése",
+        "szint": 8,
+      },
+      {
+        "kp": 146,
+        "név": "Arkánum: Térmágia",
+        "szint": 9,
+      },
+      {
+        "kp": 77,
+        "név": "Faj misztérium: Amund",
+        "szint": 7,
+      },
+      {
+        "kp": 53,
+        "név": "Ősi nyelv ismerete: Ős-Amund",
+        "szint": 6,
+      },
+    ],
+    "total": 1785,
+    "világiDetails": [
+      {
+        "kp": 108,
+        "név": "Akrobatika",
+        "szint": 8,
+      },
+      {
+        "kp": 192,
+        "név": "Fájdalomtűrés",
+        "szint": 10,
+      },
+      {
+        "kp": 53,
+        "név": "Lopakodás/Rejtőzés",
+        "szint": 6,
+      },
+      {
+        "kp": 53,
+        "név": "Hadászat",
+        "szint": 6,
+      },
+      {
+        "kp": 53,
+        "név": "Orvoslás",
+        "szint": 6,
+      },
+      {
+        "kp": 146,
+        "név": "Befolyásolás",
+        "szint": 9,
+      },
+      {
+        "kp": 108,
+        "név": "Észlelés",
+        "szint": 8,
+      },
+      {
+        "kp": 35,
+        "név": "Nyomozás",
+        "szint": 5,
+      },
+      {
+        "kp": 53,
+        "név": "Emberismeret",
+        "szint": 6,
+      },
+    ],
+  },
+  "próbaBónusz": {
+    "képzettség": {
+      "Hadászat": [
+        {
+          "leírás": "Történelemismeret (2): Hadászat próba történelmi témában",
+          "érték": 2,
+        },
+      ],
+      "Lexikum": [
+        {
+          "leírás": "Történelemismeret (2): Lexikum próba történelmi témában",
+          "érték": 2,
+        },
+      ],
+      "Észlelés": [
+        {
+          "leírás": "Éber alvó (1): Észlelés próba alvás közben",
+          "érték": 2,
+        },
+      ],
+    },
+    "tulajdonság": {
+      "edzettség": [
+        {
+          "leírás": "Futás (1): Edzettség próba hosszútávfutáskor",
+          "érték": 1,
+        },
+        {
+          "leírás": "Méregálló (2): Edzettség (méregellenállás)",
+          "érték": 2,
+        },
+      ],
+      "gyorsaság": [
+        {
+          "leírás": "Futás (1): Gyorsaság próba rövidtávfutáskor",
+          "érték": 1,
+        },
+      ],
+      "érzékenység": [
+        {
+          "leírás": "Szájról olvasás (1): Érzékenység próba célszám csökkentés (szájról olvasás)",
+          "érték": 3,
+        },
+      ],
+      "ügyesség": [
+        {
+          "leírás": "Csomózás (1): Ügyesség ellenpróba (csomózás)",
+          "érték": 2,
+        },
+      ],
+    },
+  },
+}
+`;

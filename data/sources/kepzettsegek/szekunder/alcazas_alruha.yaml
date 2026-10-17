@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "álcázás_álruha"
 név: "Álcázás/Álruha"
 leírás: "Külső megváltoztatása, más személynek való kiadás."
 primer: false

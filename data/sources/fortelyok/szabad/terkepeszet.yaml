@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "térképészet"
 név: "Térképészet"
 névkomment: ""
 maxfok: 1

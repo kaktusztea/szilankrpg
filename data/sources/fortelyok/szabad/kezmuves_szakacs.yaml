@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kézműves_szakács"
 név: "Kézműves: Szakács"
 névkomment: ""
 maxfok: 1

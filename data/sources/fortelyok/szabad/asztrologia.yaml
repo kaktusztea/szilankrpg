@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "asztrológia"
 név: "Asztrológia"
 névkomment: ""
 maxfok: 1

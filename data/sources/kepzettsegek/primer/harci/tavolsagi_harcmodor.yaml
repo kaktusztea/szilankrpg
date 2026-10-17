@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "távolsági_harcmodor"
 név: "Távolsági harcmodor"
 leírás: "Lő- és hajítófegyverek használatának képessége egy adott kategóriában."
 primer: true

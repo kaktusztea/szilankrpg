@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "zeneszerző"
 név: "Zeneszerző"
 névkomment: ""
 maxfok: 1

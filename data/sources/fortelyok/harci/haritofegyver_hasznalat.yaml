@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "hárítófegyver_használat"
 név: "Hárítófegyver használat"
 névkomment: ""
 maxfok: 1

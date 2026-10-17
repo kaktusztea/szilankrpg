@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "értékbecslés"
 név: "Értékbecslés"
 leírás: "Tárgyak, műtárgyak, nyersanyagok értékének felmérése."
 primer: false

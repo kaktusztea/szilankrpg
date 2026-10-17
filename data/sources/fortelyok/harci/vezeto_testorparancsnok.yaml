@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "vezető_testőrparancsnok"
 név: "Vezető: Testőrparancsnok"
 névkomment: ""
 maxfok: 2

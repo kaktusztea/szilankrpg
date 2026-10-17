@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "méregkeverés"
 név: "Méregkeverés"
 leírás: "Mérgek előállítása, hatásaik ismerete."
 primer: true

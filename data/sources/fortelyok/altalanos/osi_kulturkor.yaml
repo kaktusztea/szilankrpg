@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "ősi_kultúrkör"
 név: "Ősi kultúrkör"
 névkomment: ""
 maxfok: 1

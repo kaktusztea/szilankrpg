@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "pszí_telekinézis"
 név: "Pszí Telekinézis"
 névkomment: ""
 maxfok: 3

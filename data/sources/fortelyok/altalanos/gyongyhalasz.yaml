@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "gyöngyhalász"
 név: "Gyöngyhalász"
 névkomment: ""
 maxfok: 1

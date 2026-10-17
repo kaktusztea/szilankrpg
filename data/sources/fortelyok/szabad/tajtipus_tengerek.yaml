@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tájtípus_tengerek"
 név: "Tájtípus - tengerek"
 névkomment: ""
 maxfok: 1

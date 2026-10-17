@@ -1,4 +1,5 @@
 schema_version: 1
+id: "harcos_elme"
 név: "Harcos elme"
 névkomment: ""
 maxfok: 3

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "gyors_lövés"
 név: "Gyors lövés"
 névkomment: ""
 maxfok: 1

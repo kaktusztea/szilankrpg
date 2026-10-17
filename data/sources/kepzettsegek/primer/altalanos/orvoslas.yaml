@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "orvoslás"
 név: "Orvoslás"
 leírás: "Sebek ellátása, betegségek kezelése, gyógyítás."
 primer: true

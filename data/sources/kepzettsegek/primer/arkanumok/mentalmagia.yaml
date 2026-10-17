@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_mentálmágia"
 név: "Arkánum: Mentálmágia"
 leírás: ""
 primer: true

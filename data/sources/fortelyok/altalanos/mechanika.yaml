@@ -1,4 +1,5 @@
 schema_version: 1
+id: "mechanika"
 név: "Mechanika"
 névkomment: ""
 maxfok: 2

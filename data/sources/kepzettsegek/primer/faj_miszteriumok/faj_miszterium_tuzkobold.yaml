@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_tűzkobold"
 név: "Faj misztérium: Tűzkobold"
 leírás: ""
 primer: true

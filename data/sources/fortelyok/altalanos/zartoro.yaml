@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "zártörő"
 név: "Zártörő"
 névkomment: ""
 maxfok: 1

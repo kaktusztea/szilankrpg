@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_elar"
 név: "Faj misztérium: Elar"
 leírás: ""
 primer: true

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "szerencsejáték"
 név: "Szerencsejáték"
 leírás: "Kártyajátékok, kockajátékok, fogadások ismerete és csalás."
 primer: false

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "vezető_alakzatparancsnok"
 név: "Vezető: Alakzatparancsnok"
 névkomment: ""
 maxfok: 2

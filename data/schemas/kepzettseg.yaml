@@ -1,6 +1,7 @@
 ---
 schema_version: 1             # a képzettség séma verziója
 
+id: ""                        # stabil képzettség-azonosító (kisbetűs, ékezetes, _ elválasztó); átnevezéskor NEM változik. Hivatkozások erre mutatnak.
 név: ""
 leírás: ""                      # rövid, egy mondatos leírás
 primer: false                   # true: primer, false: szekunder

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "gyors_hajítás"
 név: "Gyors hajítás"
 névkomment: ""
 maxfok: 1

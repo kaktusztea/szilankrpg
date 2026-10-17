@@ -1,6 +1,7 @@
 ---
 schema_version: 1           # a fortely séma verziója
 
+id: ""                        # stabil fortély-azonosító (kisbetűs, ékezetes, _ elválasztó); átnevezéskor NEM változik. Hivatkozások erre mutatnak.
 név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
 maxfok: 0                     # [0;3] Legfeljebb hány foka lehet a fortélynak

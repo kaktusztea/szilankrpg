@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_erdőpille"
 név: "Faj misztérium: Erdőpille"
 leírás: ""
 primer: true

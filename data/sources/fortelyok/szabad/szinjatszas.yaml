@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "színjátszás"
 név: "Színjátszás"
 névkomment: ""
 maxfok: 1

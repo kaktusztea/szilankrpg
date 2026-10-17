@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "éneklés"
 név: "Éneklés"
 névkomment: ""
 maxfok: 1

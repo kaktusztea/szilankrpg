@@ -1,5 +1,6 @@
 [
   {
+    "id": "baráti_állatok",
     "név": "Baráti állatok",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -30,6 +31,7 @@
     "md_fájl": "fortelyok.altalanos/barati_allatok.md"
   },
   {
+    "id": "biztos_kezű_mászó",
     "név": "Biztos kezű mászó",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -76,6 +78,7 @@
     "md_fájl": "fortelyok.altalanos/biztos_kezu_maszo.md"
   },
   {
+    "id": "csábítás",
     "név": "Csábítás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -108,6 +111,7 @@
     "md_fájl": "fortelyok.altalanos/csabitas.md"
   },
   {
+    "id": "csomózás",
     "név": "Csomózás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -171,6 +175,7 @@
     "md_fájl": "fortelyok.altalanos/csomozas.md"
   },
   {
+    "id": "éber_alvó",
     "név": "Éber alvó",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -211,6 +216,7 @@
     "md_fájl": "fortelyok.altalanos/eber_alvo.md"
   },
   {
+    "id": "élettan",
     "név": "Élettan",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -255,6 +261,7 @@
     "md_fájl": "fortelyok.altalanos/elettan.md"
   },
   {
+    "id": "építészet",
     "név": "Építészet",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -299,6 +306,7 @@
     "md_fájl": "fortelyok.altalanos/epiteszet.md"
   },
   {
+    "id": "fakír",
     "név": "Fakír",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -360,6 +368,7 @@
     "md_fájl": "fortelyok.altalanos/fakir.md"
   },
   {
+    "id": "futás",
     "név": "Futás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -443,6 +452,7 @@
     "md_fájl": "fortelyok.altalanos/futas.md"
   },
   {
+    "id": "gyöngyhalász",
     "név": "Gyöngyhalász",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -498,6 +508,7 @@
     "md_fájl": "fortelyok.altalanos/gyongyhalasz.md"
   },
   {
+    "id": "hamisítás",
     "név": "Hamisítás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -532,6 +543,7 @@
     "md_fájl": "fortelyok.altalanos/hamisitas.md"
   },
   {
+    "id": "hangutánzás",
     "név": "Hangutánzás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -571,6 +583,7 @@
     "md_fájl": "fortelyok.altalanos/hangutanzas.md"
   },
   {
+    "id": "hazudozás",
     "név": "Hazudozás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -604,6 +617,7 @@
     "md_fájl": "fortelyok.altalanos/hazudozas.md"
   },
   {
+    "id": "keresés_rejtés",
     "név": "Keresés/rejtés",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -662,6 +676,7 @@
     "md_fájl": "fortelyok.altalanos/kereses_rejtes.md"
   },
   {
+    "id": "kézműves_fegyverkovács",
     "név": "Kézműves: Fegyverkovács",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -730,6 +745,7 @@
     "md_fájl": "fortelyok.altalanos/kezmuves_fegyverkovacs.md"
   },
   {
+    "id": "kézműves_páncélkovács",
     "név": "Kézműves: Páncélkovács",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -798,6 +814,7 @@
     "md_fájl": "fortelyok.altalanos/kezmuves_pancelkovacs.md"
   },
   {
+    "id": "kitartás",
     "név": "Kitartás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -838,6 +855,7 @@
     "md_fájl": "fortelyok.altalanos/kitartas.md"
   },
   {
+    "id": "kocsihajtás",
     "név": "Kocsihajtás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -878,6 +896,7 @@
     "md_fájl": "fortelyok.altalanos/kocsihajtas.md"
   },
   {
+    "id": "kötelékből_szabadulás",
     "név": "Kötelékből szabadulás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -939,6 +958,7 @@
     "md_fájl": "fortelyok.altalanos/kotelekbol_szabadulas.md"
   },
   {
+    "id": "mechanika",
     "név": "Mechanika",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -983,6 +1003,7 @@
     "md_fájl": "fortelyok.altalanos/mechanika.md"
   },
   {
+    "id": "megfélemlítés",
     "név": "Megfélemlítés",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1015,6 +1036,7 @@
     "md_fájl": "fortelyok.altalanos/megfelemlites.md"
   },
   {
+    "id": "méregálló",
     "név": "Méregálló",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1097,6 +1119,7 @@
     "md_fájl": "fortelyok.altalanos/meregallo.md"
   },
   {
+    "id": "műhelymester",
     "név": "Műhelymester",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1137,6 +1160,7 @@
     "md_fájl": "fortelyok.altalanos/muhelymester.md"
   },
   {
+    "id": "nyomolvasás_eltűntetés",
     "név": "Nyomolvasás/eltűntetés",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1178,6 +1202,7 @@
     "md_fájl": "fortelyok.altalanos/nyomolvasas_eltuntetes.md"
   },
   {
+    "id": "ősi_kultúrkör",
     "név": "Ősi kultúrkör",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1210,6 +1235,7 @@
     "md_fájl": "fortelyok.altalanos/osi_kulturkor.md"
   },
   {
+    "id": "pók",
     "név": "Pók",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1256,6 +1282,7 @@
     "md_fájl": "fortelyok.altalanos/pok.md"
   },
   {
+    "id": "sprint",
     "név": "Sprint",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1296,6 +1323,7 @@
     "md_fájl": "fortelyok.altalanos/sprint.md"
   },
   {
+    "id": "suhanó_árnyék",
     "név": "Suhanó árnyék",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1340,6 +1368,7 @@
     "md_fájl": "fortelyok.altalanos/suhano_arnyek.md"
   },
   {
+    "id": "szájról_olvasás",
     "név": "Szájról olvasás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1388,6 +1417,7 @@
     "md_fájl": "fortelyok.altalanos/szajrol_olvasas.md"
   },
   {
+    "id": "százarcú",
     "név": "Százarcú",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1469,6 +1499,7 @@
     "md_fájl": "fortelyok.altalanos/szazarcu.md"
   },
   {
+    "id": "szívósság",
     "név": "Szívósság",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1500,6 +1531,7 @@
     "md_fájl": "fortelyok.altalanos/szivossag.md"
   },
   {
+    "id": "történelemismeret",
     "név": "Történelemismeret",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1565,6 +1597,7 @@
     "md_fájl": "fortelyok.altalanos/tortenelemismeret.md"
   },
   {
+    "id": "úszás",
     "név": "Úszás",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1626,6 +1659,7 @@
     "md_fájl": "fortelyok.altalanos/uszas.md"
   },
   {
+    "id": "vezető_bölcsészprofesszor",
     "név": "Vezető: Bölcsészprofesszor",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1703,6 +1737,7 @@
     "md_fájl": "fortelyok.altalanos/vezeto_bolcseszprofesszor.md"
   },
   {
+    "id": "vezető_hajóskapitány",
     "név": "Vezető: Hajóskapitány",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1780,6 +1815,7 @@
     "md_fájl": "fortelyok.altalanos/vezeto_hajoskapitany.md"
   },
   {
+    "id": "vezető_nyomozó",
     "név": "Vezető: Nyomozó",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1857,6 +1893,7 @@
     "md_fájl": "fortelyok.altalanos/vezeto_nyomozo.md"
   },
   {
+    "id": "vezető_orvosprofesszor",
     "név": "Vezető: Orvosprofesszor",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -1934,6 +1971,7 @@
     "md_fájl": "fortelyok.altalanos/vezeto_orvosprofesszor.md"
   },
   {
+    "id": "vezető_rendező",
     "név": "Vezető: Rendező",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -2011,6 +2049,7 @@
     "md_fájl": "fortelyok.altalanos/vezeto_rendezo.md"
   },
   {
+    "id": "vezető_tudósprofesszor",
     "név": "Vezető: Tudósprofesszor",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -2088,6 +2127,7 @@
     "md_fájl": "fortelyok.altalanos/vezeto_tudosprofesszor.md"
   },
   {
+    "id": "villámgyors_keresés_rejtés",
     "név": "Villámgyors keresés/rejtés",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -2140,6 +2180,7 @@
     "md_fájl": "fortelyok.altalanos/villamgyors.kereses.rejtes.md"
   },
   {
+    "id": "zártörő",
     "név": "Zártörő",
     "csoport": "általános",
     "alcsoport": "altalanos",
@@ -2186,6 +2227,7 @@
     "md_fájl": "fortelyok.altalanos/zartoro.md"
   },
   {
+    "id": "emberentúli_hallás",
     "név": "Emberentúli hallás",
     "csoport": "érzékek",
     "alcsoport": "erzekek",
@@ -2235,6 +2277,7 @@
     "md_fájl": "fortelyok.erzekek/emberentuli_hallas.md"
   },
   {
+    "id": "emberentúli_látás",
     "név": "Emberentúli látás",
     "csoport": "érzékek",
     "alcsoport": "erzekek",
@@ -2285,6 +2328,7 @@
     "md_fájl": "fortelyok.erzekek/emberentuli_latas.md"
   },
   {
+    "id": "emberentúli_szaglás",
     "név": "Emberentúli szaglás",
     "csoport": "érzékek",
     "alcsoport": "erzekek",
@@ -2336,6 +2380,7 @@
     "md_fájl": "fortelyok.erzekek/emberentuli_szaglas.md"
   },
   {
+    "id": "infralátás",
     "név": "Infralátás",
     "csoport": "érzékek",
     "alcsoport": "erzekek",
@@ -2401,6 +2446,7 @@
     "md_fájl": "fortelyok.erzekek/infralatas.md"
   },
   {
+    "id": "irányérzék",
     "név": "Irányérzék",
     "csoport": "érzékek",
     "alcsoport": "erzekek",
@@ -2439,6 +2485,7 @@
     "md_fájl": "fortelyok.erzekek/iranyerzek.md"
   },
   {
+    "id": "ultralátás",
     "név": "Ultralátás",
     "csoport": "érzékek",
     "alcsoport": "erzekek",
@@ -2515,6 +2562,7 @@
     "md_fájl": "fortelyok.erzekek/ultralatas.md"
   },
   {
+    "id": "alakzat_támadó",
     "név": "Alakzat: támadó",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -2582,6 +2630,7 @@
     "md_fájl": "fortelyok.harci/alakzat_tamado.md"
   },
   {
+    "id": "alakzat_védekező",
     "név": "Alakzat: védekező",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -2649,6 +2698,7 @@
     "md_fájl": "fortelyok.harci/alakzat_vedekezo.md"
   },
   {
+    "id": "belharcos",
     "név": "Belharcos",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -2850,6 +2900,7 @@
     "md_fájl": "fortelyok.harci/belharcos.md"
   },
   {
+    "id": "elpusztíthatatlan",
     "név": "Elpusztíthatatlan",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -2905,6 +2956,7 @@
     "md_fájl": "fortelyok.harci/elpusztithatatlan.md"
   },
   {
+    "id": "fárasztás",
     "név": "Fárasztás",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -2955,6 +3007,7 @@
     "md_fájl": "fortelyok.harci/farasztas.md"
   },
   {
+    "id": "fegyverrántás",
     "név": "Fegyverrántás",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3036,6 +3089,7 @@
     "md_fájl": "fortelyok.harci/fegyverrantas.md"
   },
   {
+    "id": "gladiátor_bestiái",
     "név": "Gladiátor bestiái",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3088,6 +3142,7 @@
     "md_fájl": "fortelyok.harci/gladiator.bestiai.md"
   },
   {
+    "id": "gladiátor_közönsége",
     "név": "Gladiátor közönsége",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3140,6 +3195,7 @@
     "md_fájl": "fortelyok.harci/gladiator.kozonsege.md"
   },
   {
+    "id": "gyors_kezdeményezés",
     "név": "Gyors kezdeményezés",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3216,6 +3272,7 @@
     "md_fájl": "fortelyok.harci/gyors_kezdemenyezes.md"
   },
   {
+    "id": "harci_akrobatika",
     "név": "Harci akrobatika",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3382,6 +3439,7 @@
     "md_fájl": "fortelyok.harci/harci_akrobatika.md"
   },
   {
+    "id": "harci_kocsihajtás",
     "név": "Harci kocsihajtás",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3491,6 +3549,7 @@
     "md_fájl": "fortelyok.harci/harci_kocsihajtas.md"
   },
   {
+    "id": "harckeret_növelés",
     "név": "Harckeret növelés",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3636,6 +3695,7 @@
     "md_fájl": "fortelyok.harci/harckeret_noveles.md"
   },
   {
+    "id": "harcos_elme",
     "név": "Harcos elme",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3727,6 +3787,7 @@
     "md_fájl": "fortelyok.harci/harcos_elme.md"
   },
   {
+    "id": "hárítófegyver_használat",
     "név": "Hárítófegyver használat",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3778,6 +3839,7 @@
     "md_fájl": "fortelyok.harci/haritofegyver_hasznalat.md"
   },
   {
+    "id": "helyhez_kötve_fejlesztése",
     "név": "Helyhez kötve fejlesztése",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3873,6 +3935,7 @@
     "md_fájl": "fortelyok.harci/helyhez_kotve_fejlesztese.md"
   },
   {
+    "id": "kaszabolás",
     "név": "Kaszabolás",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -3942,6 +4005,7 @@
     "md_fájl": "fortelyok.harci/kaszabolas.md"
   },
   {
+    "id": "kétkezes_harc",
     "név": "Kétkezes harc",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4030,6 +4094,7 @@
     "md_fájl": "fortelyok.harci/ketkezes_harc.md"
   },
   {
+    "id": "kétkezesség",
     "név": "Kétkezesség",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4086,6 +4151,7 @@
     "md_fájl": "fortelyok.harci/ketkezesseg.md"
   },
   {
+    "id": "kínokozás",
     "név": "Kínokozás",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4133,6 +4199,7 @@
     "md_fájl": "fortelyok.harci/kinokozas.md"
   },
   {
+    "id": "körkörös_harc",
     "név": "Körkörös harc",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4165,6 +4232,7 @@
     "md_fájl": "fortelyok.harci/korkoros_harc.md"
   },
   {
+    "id": "léglovas_harc",
     "név": "Léglovas harc",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4364,6 +4432,7 @@
     "md_fájl": "fortelyok.harci/leglovas_harc.md"
   },
   {
+    "id": "lovas_harc",
     "név": "Lovas harc",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4602,6 +4671,7 @@
     "md_fájl": "fortelyok.harci/lovas_harc.md"
   },
   {
+    "id": "manőverfókusz_fegyvertörés",
     "név": "Manőverfókusz: Fegyvertörés",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4659,6 +4729,7 @@
     "md_fájl": "fortelyok.harci/manoverfokusz_fegyvertores.md"
   },
   {
+    "id": "manőverfókusz_földrevitel",
     "név": "Manőverfókusz: Földrevitel",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4711,6 +4782,7 @@
     "md_fájl": "fortelyok.harci/manoverfokusz_foldrevitel.md"
   },
   {
+    "id": "manőverfókusz_lefegyverzés",
     "név": "Manőverfókusz: Lefegyverzés",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4767,6 +4839,7 @@
     "md_fájl": "fortelyok.harci/manoverfokusz_lefegyverzes.md"
   },
   {
+    "id": "manőverfókuszok_belharcmozgás",
     "név": "Manőverfókuszok: Belharcmozgás",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4828,6 +4901,7 @@
     "md_fájl": "fortelyok.harci/manoverfokuszok_belharcmozgas.md"
   },
   {
+    "id": "manőverfókuszok_helyezkedések",
     "név": "Manőverfókuszok: Helyezkedések",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4875,6 +4949,7 @@
     "md_fájl": "fortelyok.harci/manoverfokuszok_helyezkedesek.md"
   },
   {
+    "id": "manőverfókuszok_kitörés",
     "név": "Manőverfókuszok: Kitörés",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4922,6 +4997,7 @@
     "md_fájl": "fortelyok.harci/manoverfokuszok_kitores.md"
   },
   {
+    "id": "manőverfókuszok_nyúlcipő",
     "név": "Manőverfókuszok: Nyúlcipő",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4969,6 +5045,7 @@
     "md_fájl": "fortelyok.harci/manoverfokuszok_nyulcipo.md"
   },
   {
+    "id": "manőverfókuszok_szike",
     "név": "Manőverfókuszok: Szike",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5037,6 +5114,7 @@
     "md_fájl": "fortelyok.harci/manoverfokuszok_szike.md"
   },
   {
+    "id": "merevvértviselet",
     "név": "Merevvértviselet",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5169,6 +5247,7 @@
     "md_fájl": "fortelyok.harci/merevvertviselet.md"
   },
   {
+    "id": "mesterfegyver",
     "név": "Mesterfegyver",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5359,6 +5438,7 @@
     "md_fájl": "fortelyok.harci/mesterfegyver.md"
   },
   {
+    "id": "orgyilkos",
     "név": "Orgyilkos",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5501,6 +5581,7 @@
     "md_fájl": "fortelyok.harci/orgyilkos.md"
   },
   {
+    "id": "pajzshasználat",
     "név": "Pajzshasználat",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5657,6 +5738,7 @@
     "md_fájl": "fortelyok.harci/pajzshasznalat.md"
   },
   {
+    "id": "páros_harc",
     "név": "Páros harc",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5827,6 +5909,7 @@
     "md_fájl": "fortelyok.harci/paros_harc.md"
   },
   {
+    "id": "taktikafókusz_roham",
     "név": "Taktikafókusz: Roham",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5887,6 +5970,7 @@
     "md_fájl": "fortelyok.harci/taktikafokusz_roham.md"
   },
   {
+    "id": "taktikafókusz_visszafogott",
     "név": "Taktikafókusz: Visszafogott",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5956,6 +6040,7 @@
     "md_fájl": "fortelyok.harci/taktikafokusz_visszafogott.md"
   },
   {
+    "id": "természetes_fegyver",
     "név": "Természetes fegyver",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -5993,6 +6078,7 @@
     "md_fájl": "fortelyok.harci/termeszetes_fegyver.md"
   },
   {
+    "id": "természetes_páncél",
     "név": "Természetes páncél",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6093,6 +6179,7 @@
     "md_fájl": "fortelyok.harci/termeszetes_pancel.md"
   },
   {
+    "id": "testőr",
     "név": "Testőr",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6206,6 +6293,7 @@
     "md_fájl": "fortelyok.harci/testor.md"
   },
   {
+    "id": "vakharc_fejlesztése",
     "név": "Vakharc fejlesztése",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6267,6 +6355,7 @@
     "md_fájl": "fortelyok.harci/vakharc_fejlesztese.md"
   },
   {
+    "id": "vezető_alakzatparancsnok",
     "név": "Vezető: Alakzatparancsnok",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6334,6 +6423,7 @@
     "md_fájl": "fortelyok.harci/vezeto_alakzatparancsnok.md"
   },
   {
+    "id": "vezető_fejvadász_strategis",
     "név": "Vezető: Fejvadász strategis",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6395,6 +6485,7 @@
     "md_fájl": "fortelyok.harci/vezeto_fejvadasz_strategis.md"
   },
   {
+    "id": "vezető_íjászparancsnok",
     "név": "Vezető: Íjászparancsnok",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6460,6 +6551,7 @@
     "md_fájl": "fortelyok.harci/vezeto_ijaszparancsnok.md"
   },
   {
+    "id": "vezető_léglovaskapitány",
     "név": "Vezető: Léglovaskapitány",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6529,6 +6621,7 @@
     "md_fájl": "fortelyok.harci/vezeto_leglovaskapitany.md"
   },
   {
+    "id": "vezető_lovaskapitány",
     "név": "Vezető: Lovaskapitány",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6598,6 +6691,7 @@
     "md_fájl": "fortelyok.harci/vezeto_lovaskapitany.md"
   },
   {
+    "id": "vezető_testőrparancsnok",
     "név": "Vezető: Testőrparancsnok",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -6679,6 +6773,7 @@
     "md_fájl": "fortelyok.harci/vezeto_testorparancsnok.md"
   },
   {
+    "id": "analfabéta",
     "név": "Analfabéta",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6710,6 +6805,7 @@
     "md_fájl": "fortelyok.kiemelt/analfabeta.md"
   },
   {
+    "id": "apró_méretű_lény",
     "név": "Apró méretű lény",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6741,6 +6837,7 @@
     "md_fájl": "fortelyok.kiemelt/apro_meretu_leny.md"
   },
   {
+    "id": "családos",
     "név": "Családos",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6771,6 +6868,7 @@
     "md_fájl": "fortelyok.kiemelt/csalados.md"
   },
   {
+    "id": "helyismeret",
     "név": "Helyismeret",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6807,6 +6905,7 @@
     "md_fájl": "fortelyok.kiemelt/helyismeret.md"
   },
   {
+    "id": "kultúrkör",
     "név": "Kultúrkör",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6875,6 +6974,7 @@
     "md_fájl": "fortelyok.kiemelt/kulturkor.md"
   },
   {
+    "id": "nagy_méretű_lény",
     "név": "Nagy méretű lény",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6924,6 +7024,7 @@
     "md_fájl": "fortelyok.kiemelt/nagy_meretu_leny.md"
   },
   {
+    "id": "nyelvismeret",
     "név": "Nyelvismeret",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6964,6 +7065,7 @@
     "md_fájl": "fortelyok.kiemelt/nyelvismeret.md"
   },
   {
+    "id": "süketség",
     "név": "Süketség",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -6995,6 +7097,7 @@
     "md_fájl": "fortelyok.kiemelt/suketseg.md"
   },
   {
+    "id": "tartós_sérültség",
     "név": "Tartós sérültség",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -7044,6 +7147,7 @@
     "md_fájl": "fortelyok.kiemelt/tartos_serultseg.md"
   },
   {
+    "id": "vakság",
     "név": "Vakság",
     "csoport": "kiemelt",
     "alcsoport": "kiemelt",
@@ -7075,6 +7179,7 @@
     "md_fájl": "fortelyok.kiemelt/vaksag.md"
   },
   {
+    "id": "antissjárás",
     "név": "Antissjárás",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7104,6 +7209,7 @@
     "md_fájl": "fortelyok.misztikus/antissjaras.md"
   },
   {
+    "id": "belső_síkok_lényeinek_ismerete",
     "név": "Belső síkok lényeinek ismerete",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7142,6 +7248,7 @@
     "md_fájl": "fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md"
   },
   {
+    "id": "külső_síkok_lényeinek_ismerete",
     "név": "Külső síkok lényeinek ismerete",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7178,6 +7285,7 @@
     "md_fájl": "fortelyok.misztikus/kulso_sikok_lenyeinek_ismerete.md"
   },
   {
+    "id": "mágiatáv_növelés",
     "név": "Mágiatáv növelés",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7227,6 +7335,7 @@
     "md_fájl": "fortelyok.misztikus/magiatav_noveles.md"
   },
   {
+    "id": "mágikus_lövedék_gyorsítása",
     "név": "Mágikus lövedék gyorsítása",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7266,6 +7375,7 @@
     "md_fájl": "fortelyok.misztikus/magikus_lovedek_gyorsitasa.md"
   },
   {
+    "id": "mentálfonál",
     "név": "Mentálfonál",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7296,6 +7406,7 @@
     "md_fájl": "fortelyok.misztikus/mentalfonal.md"
   },
   {
+    "id": "mozgó_cél_könnyítése_mágia",
     "név": "Mozgó cél könnyítése (mágia)",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7335,6 +7446,7 @@
     "md_fájl": "fortelyok.misztikus/mozgo_cel_konnyitese_magia.md"
   },
   {
+    "id": "pszí_telekinézis",
     "név": "Pszí Telekinézis",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7384,6 +7496,7 @@
     "md_fájl": "fortelyok.misztikus/pszi_telekinezis.md"
   },
   {
+    "id": "pszí_telepátia",
     "név": "Pszí Telepátia",
     "csoport": "misztikus",
     "alcsoport": "misztikus",
@@ -7434,6 +7547,7 @@
     "md_fájl": "fortelyok.misztikus/pszi_telepatia.md"
   },
   {
+    "id": "alkudozás",
     "név": "Alkudozás",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7466,6 +7580,7 @@
     "md_fájl": "fortelyok.szabad/alkudozas.md"
   },
   {
+    "id": "asztrológia",
     "név": "Asztrológia",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7497,6 +7612,7 @@
     "md_fájl": "fortelyok.szabad/asztrologia.md"
   },
   {
+    "id": "bűvészet",
     "név": "Bűvészet",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7530,6 +7646,7 @@
     "md_fájl": "fortelyok.szabad/buveszet.md"
   },
   {
+    "id": "éneklés",
     "név": "Éneklés",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7564,6 +7681,7 @@
     "md_fájl": "fortelyok.szabad/enekles.md"
   },
   {
+    "id": "festészet",
     "név": "Festészet",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7597,6 +7715,7 @@
     "md_fájl": "fortelyok.szabad/festeszet.md"
   },
   {
+    "id": "gazdálkodás",
     "név": "Gazdálkodás",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7628,6 +7747,7 @@
     "md_fájl": "fortelyok.szabad/gazdalkodas.md"
   },
   {
+    "id": "hadtáp",
     "név": "Hadtáp",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7659,6 +7779,7 @@
     "md_fájl": "fortelyok.szabad/hadtap.md"
   },
   {
+    "id": "harci_iskola",
     "név": "Harci iskola",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7688,6 +7809,7 @@
     "md_fájl": "fortelyok.szabad/harci_iskola.md"
   },
   {
+    "id": "hátas",
     "név": "Hátas",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7720,6 +7842,7 @@
     "md_fájl": "fortelyok.szabad/hatas.md"
   },
   {
+    "id": "háziállatok_idomítása",
     "név": "Háziállatok idomítása",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7751,6 +7874,7 @@
     "md_fájl": "fortelyok.szabad/haziallatok_idomitasa.md"
   },
   {
+    "id": "heraldika",
     "név": "Heraldika",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7783,6 +7907,7 @@
     "md_fájl": "fortelyok.szabad/heraldika.md"
   },
   {
+    "id": "hivatalnok",
     "név": "Hivatalnok",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7814,6 +7939,7 @@
     "md_fájl": "fortelyok.szabad/hivatalnok.md"
   },
   {
+    "id": "irodalom",
     "név": "Irodalom",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7857,6 +7983,7 @@
     "md_fájl": "fortelyok.szabad/irodalom.md"
   },
   {
+    "id": "jogismeret",
     "név": "Jogismeret",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7895,6 +8022,7 @@
     "md_fájl": "fortelyok.szabad/jogismeret.md"
   },
   {
+    "id": "kalligráfia",
     "név": "Kalligráfia",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7933,6 +8061,7 @@
     "md_fájl": "fortelyok.szabad/kalligrafia.md"
   },
   {
+    "id": "kézműves_ács",
     "név": "Kézműves: Ács",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7964,6 +8093,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_acs.md"
   },
   {
+    "id": "kézműves_asztalos",
     "név": "Kézműves: Asztalos",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -7995,6 +8125,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_asztalos.md"
   },
   {
+    "id": "kézműves_cipész",
     "név": "Kézműves: Cipész",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8026,6 +8157,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_cipesz.md"
   },
   {
+    "id": "kézműves_cserző",
     "név": "Kézműves: Cserző",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8057,6 +8189,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_cserzo.md"
   },
   {
+    "id": "kézműves_cukrász",
     "név": "Kézműves: Cukrász",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8088,6 +8221,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_cukrasz.md"
   },
   {
+    "id": "kézműves_ékszerész",
     "név": "Kézműves: Ékszerész",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8119,6 +8253,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_ekszeresz.md"
   },
   {
+    "id": "kézműves_kádár",
     "név": "Kézműves: Kádár",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8150,6 +8285,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_kadar.md"
   },
   {
+    "id": "kézműves_kőműves",
     "név": "Kézműves: Kőműves",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8181,6 +8317,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_komuves.md"
   },
   {
+    "id": "kézműves_kötélgyártó",
     "név": "Kézműves: Kötélgyártó",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8212,6 +8349,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_kotelgyarto.md"
   },
   {
+    "id": "kézműves_kovács",
     "név": "Kézműves: Kovács",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8243,6 +8381,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_kovacs.md"
   },
   {
+    "id": "kézműves_lakatos",
     "név": "Kézműves: Lakatos",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8274,6 +8413,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_lakatos.md"
   },
   {
+    "id": "kézműves_molnár",
     "név": "Kézműves: Molnár",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8305,6 +8445,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_molnar.md"
   },
   {
+    "id": "kézműves_pénzverő",
     "név": "Kézműves: Pénzverő",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8336,6 +8477,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_penzvero.md"
   },
   {
+    "id": "kézműves_szabó",
     "név": "Kézműves: Szabó",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8367,6 +8509,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_szabo.md"
   },
   {
+    "id": "kézműves_szakács",
     "név": "Kézműves: Szakács",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8398,6 +8541,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_szakacs.md"
   },
   {
+    "id": "kézműves_szűcs",
     "név": "Kézműves: Szűcs",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8429,6 +8573,7 @@
     "md_fájl": "fortelyok.szabad/kezmuves_szucs.md"
   },
   {
+    "id": "kihallgatás",
     "név": "Kihallgatás",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8461,6 +8606,7 @@
     "md_fájl": "fortelyok.szabad/kihallgatas.md"
   },
   {
+    "id": "különleges_faj_boncolása",
     "név": "Különleges faj boncolása",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8498,6 +8644,7 @@
     "md_fájl": "fortelyok.szabad/kulonleges_faj_boncolasa.md"
   },
   {
+    "id": "pénzügyek",
     "név": "Pénzügyek",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8530,6 +8677,7 @@
     "md_fájl": "fortelyok.szabad/penzugyek.md"
   },
   {
+    "id": "rejtjelfejtő",
     "név": "Rejtjelfejtő",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8562,6 +8710,7 @@
     "md_fájl": "fortelyok.szabad/rejtjelfejto.md"
   },
   {
+    "id": "stratégia",
     "név": "Stratégia",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8594,6 +8743,7 @@
     "md_fájl": "fortelyok.szabad/strategia.md"
   },
   {
+    "id": "szertartás",
     "név": "Szertartás",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8625,6 +8775,7 @@
     "md_fájl": "fortelyok.szabad/szertartas.md"
   },
   {
+    "id": "színjátszás",
     "név": "Színjátszás",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8657,6 +8808,7 @@
     "md_fájl": "fortelyok.szabad/szinjatszas.md"
   },
   {
+    "id": "szobrászat",
     "név": "Szobrászat",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8690,6 +8842,7 @@
     "md_fájl": "fortelyok.szabad/szobraszat.md"
   },
   {
+    "id": "szónoklás",
     "név": "Szónoklás",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8722,6 +8875,7 @@
     "md_fájl": "fortelyok.szabad/szonoklas.md"
   },
   {
+    "id": "tájtípus_barlangi",
     "név": "Tájtípus - barlangi",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8757,6 +8911,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_barlangi.md"
   },
   {
+    "id": "tájtípus_dzsungel",
     "név": "Tájtípus - dzsungel",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8792,6 +8947,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_dzsungel.md"
   },
   {
+    "id": "tájtípus_erdős",
     "név": "Tájtípus - erdős",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8827,6 +8983,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_erdos.md"
   },
   {
+    "id": "tájtípus_jégmezők",
     "név": "Tájtípus - jégmezők",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8862,6 +9019,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_jegmezok.md"
   },
   {
+    "id": "tájtípus_magaslati",
     "név": "Tájtípus - magaslati",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8897,6 +9055,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_magaslati.md"
   },
   {
+    "id": "tájtípus_mocsaras",
     "név": "Tájtípus - mocsaras",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8932,6 +9091,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_mocsaras.md"
   },
   {
+    "id": "tájtípus_puszta",
     "név": "Tájtípus - puszta",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -8967,6 +9127,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_puszta.md"
   },
   {
+    "id": "tájtípus_sivatagi",
     "név": "Tájtípus - sivatagi",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9002,6 +9163,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_sivatagi.md"
   },
   {
+    "id": "tájtípus_tengerek",
     "név": "Tájtípus - tengerek",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9035,6 +9197,7 @@
     "md_fájl": "fortelyok.szabad/tajtipus_tengerek.md"
   },
   {
+    "id": "tánc",
     "név": "Tánc",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9067,6 +9230,7 @@
     "md_fájl": "fortelyok.szabad/tanc.md"
   },
   {
+    "id": "tánc_speciális_belső_stílus",
     "név": "Tánc: speciális/belső stílus",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9123,6 +9287,7 @@
     "md_fájl": "fortelyok.szabad/tanc_belso_stilus.md"
   },
   {
+    "id": "térképészet",
     "név": "Térképészet",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9156,6 +9321,7 @@
     "md_fájl": "fortelyok.szabad/terkepeszet.md"
   },
   {
+    "id": "titkos_szervezet",
     "név": "Titkos szervezet",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9189,6 +9355,7 @@
     "md_fájl": "fortelyok.szabad/titkos_szervezet.md"
   },
   {
+    "id": "vadállat_idomítása",
     "név": "Vadállat idomítása",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9220,6 +9387,7 @@
     "md_fájl": "fortelyok.szabad/vadallat_idomitasa.md"
   },
   {
+    "id": "zenélés_fúvós_hangszerek",
     "név": "Zenélés: fúvós hangszerek",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9252,6 +9420,7 @@
     "md_fájl": "fortelyok.szabad/zeneles_fuvos_hangszerek.md"
   },
   {
+    "id": "zenélés_húros_hangszerek",
     "név": "Zenélés: húros hangszerek",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9284,6 +9453,7 @@
     "md_fájl": "fortelyok.szabad/zeneles_huros_hangszerek.md"
   },
   {
+    "id": "zenélés_ütős_hangszerek",
     "név": "Zenélés: ütős hangszerek",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9316,6 +9486,7 @@
     "md_fájl": "fortelyok.szabad/zeneles_utos_hangszerek.md"
   },
   {
+    "id": "zeneszerző",
     "név": "Zeneszerző",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9347,6 +9518,7 @@
     "md_fájl": "fortelyok.szabad/zeneszerzo.md"
   },
   {
+    "id": "zsonglőrködés",
     "név": "Zsonglőrködés",
     "csoport": "szabad",
     "alcsoport": "szabad",
@@ -9378,6 +9550,7 @@
     "md_fájl": "fortelyok.szabad/zsonglorkodes.md"
   },
   {
+    "id": "alkalmatlan_fegyver_hajítása",
     "név": "Alkalmatlan fegyver hajítása",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9493,6 +9666,7 @@
     "md_fájl": "fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md"
   },
   {
+    "id": "alkalmatlan_tárgyak_hajítása",
     "név": "Alkalmatlan tárgyak hajítása",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9584,6 +9758,7 @@
     "md_fájl": "fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md"
   },
   {
+    "id": "gyors_hajítás",
     "név": "Gyors hajítás",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9621,6 +9796,7 @@
     "md_fájl": "fortelyok.tavharc/gyors_hajitas.md"
   },
   {
+    "id": "gyors_lövés",
     "név": "Gyors lövés",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9658,6 +9834,7 @@
     "md_fájl": "fortelyok.tavharc/gyors_loves.md"
   },
   {
+    "id": "lövés_futás_közben",
     "név": "Lövés futás közben",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9709,6 +9886,7 @@
     "md_fájl": "fortelyok.tavharc/loves_futas_kozben.md"
   },
   {
+    "id": "lövés_hátasról",
     "név": "Lövés hátasról",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9826,6 +10004,7 @@
     "md_fájl": "fortelyok.tavharc/loves_hatasrol.md"
   },
   {
+    "id": "lövés_reflexből_fejlesztése",
     "név": "Lövés reflexből fejlesztése",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9887,6 +10066,7 @@
     "md_fájl": "fortelyok.tavharc/loves_reflexbol_fejlesztese.md"
   },
   {
+    "id": "lövéskitérés_fejlesztése",
     "név": "Lövéskitérés fejlesztése",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9916,6 +10096,7 @@
     "md_fájl": "fortelyok.tavharc/loveskiteres_fejlesztese.md"
   },
   {
+    "id": "mesterlövész",
     "név": "Mesterlövész",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9953,6 +10134,7 @@
     "md_fájl": "fortelyok.tavharc/mesterlovesz.md"
   },
   {
+    "id": "mozgó_cél_könnyítése_fegyveres",
     "név": "Mozgó cél könnyítése (fegyveres)",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -10004,6 +10186,7 @@
     "md_fájl": "fortelyok.tavharc/mozgo_cel_konnyitese_fegyveres.md"
   },
   {
+    "id": "nyílpuska_újratöltés_fejlesztése",
     "név": "Nyílpuska újratöltés fejlesztése",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -10087,6 +10270,7 @@
     "md_fájl": "fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md"
   },
   {
+    "id": "taktikafókusz_kitartott_célzás",
     "név": "Taktikafókusz: Kitartott célzás",
     "csoport": "harci",
     "alcsoport": "tavharc",

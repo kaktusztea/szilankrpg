@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "harci_iskola"
 név: "Harci iskola"
 névkomment: ""
 maxfok: 1

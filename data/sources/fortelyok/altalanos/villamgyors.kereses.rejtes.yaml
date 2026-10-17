@@ -1,4 +1,5 @@
 schema_version: 1
+id: "villámgyors_keresés_rejtés"
 név: "Villámgyors keresés/rejtés"
 névkomment: ""
 maxfok: 1

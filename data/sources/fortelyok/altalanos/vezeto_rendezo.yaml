@@ -1,4 +1,5 @@
 schema_version: 1
+id: "vezető_rendező"
 név: "Vezető: Rendező"
 névkomment: ""
 maxfok: 2

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "mágiatáv_növelés"
 név: "Mágiatáv növelés"
 névkomment: ""
 maxfok: 3

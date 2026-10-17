@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "háziállatok_idomítása"
 név: "Háziállatok idomítása"
 névkomment: ""
 maxfok: 1

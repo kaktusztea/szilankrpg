@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "kézművesség"
 név: "Kézművesség"
 leírás: "Kétkezi mesterségek ismerete és gyakorlása."
 primer: false

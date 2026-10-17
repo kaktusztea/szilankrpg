@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "természetes_fegyver"
 név: "Természetes fegyver"
 névkomment: ""
 maxfok: 1

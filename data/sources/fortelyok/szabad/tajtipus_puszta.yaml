@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tájtípus_puszta"
 név: "Tájtípus - puszta"
 névkomment: ""
 maxfok: 1

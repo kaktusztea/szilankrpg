@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "faj_misztérium_ork"
 név: "Faj misztérium: Ork"
 leírás: ""
 primer: true

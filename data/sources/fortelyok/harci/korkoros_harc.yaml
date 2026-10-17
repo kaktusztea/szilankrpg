@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "körkörös_harc"
 név: "Körkörös harc"
 névkomment: ""
 maxfok: 1

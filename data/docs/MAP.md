@@ -313,8 +313,8 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | Fájl | Tartalom | Generált JSON |
 |------|----------|--------------|
 | `konstansok.yaml` | Központi konstansok (harcértékek, arányok, limitek) | `konstansok.json` |
-| `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml` | Fortély definíciók (177 db) | `fortelyok.json` |
-| `kepzettsegek/{primer,szekunder}/*.yaml` | Képzettség definíciók (81 db) | `kepzettsegek.json` |
+| `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml` | Fortély definíciók (184 db, stabil `id` + `név`) | `fortelyok.json` |
+| `kepzettsegek/{primer,szekunder}/*.yaml` | Képzettség definíciók (81 db, stabil `id` + `név`) | `kepzettsegek.json` |
 | `fajok/*.yaml` | Faj hátterek (27 db) | `fajok.json`, `faj_tulajdonsag_keretek.json`, `faj_fortelyok.json` (faj → {fortély: max_fok}, `faj` követelmény) |
 | `taktikak.yaml` | Harci taktikák (14 db) | `taktikak.json` |
 | `harci_helyzetek.yaml` | Harci helyzetek (32 db) | `harci_helyzetek.json` |

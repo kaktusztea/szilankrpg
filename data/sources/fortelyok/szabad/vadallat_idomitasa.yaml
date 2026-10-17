@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "vadállat_idomítása"
 név: "Vadállat idomítása"
 névkomment: ""
 maxfok: 1

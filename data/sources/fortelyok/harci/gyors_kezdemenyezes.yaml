@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "gyors_kezdeményezés"
 név: "Gyors kezdeményezés"
 névkomment: ""
 maxfok: 3

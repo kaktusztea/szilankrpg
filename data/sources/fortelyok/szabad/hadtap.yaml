@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "hadtáp"
 név: "Hadtáp"
 névkomment: ""
 maxfok: 1

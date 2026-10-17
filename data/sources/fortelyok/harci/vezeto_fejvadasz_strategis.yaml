@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "vezető_fejvadász_strategis"
 név: "Vezető: Fejvadász strategis"
 névkomment: ""
 maxfok: 2

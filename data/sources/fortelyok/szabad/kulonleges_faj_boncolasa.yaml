@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "különleges_faj_boncolása"
 név: "Különleges faj boncolása"
 névkomment: ""
 maxfok: 1

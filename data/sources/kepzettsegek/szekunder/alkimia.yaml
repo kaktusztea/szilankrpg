@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "alkímia"
 név: "Alkímia"
 leírás: "Anyagok átalakítása, kémiai folyamatok ismerete és alkalmazása."
 primer: false

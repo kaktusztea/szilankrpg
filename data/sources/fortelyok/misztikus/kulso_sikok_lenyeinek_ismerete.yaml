@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "külső_síkok_lényeinek_ismerete"
 név: "Külső síkok lényeinek ismerete"
 névkomment: ""
 maxfok: 1

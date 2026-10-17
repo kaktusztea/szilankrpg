@@ -1,4 +1,5 @@
 schema_version: 1
+id: "fárasztás"
 név: "Fárasztás"
 névkomment: ""
 maxfok: 1

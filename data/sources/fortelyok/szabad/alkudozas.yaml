@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "alkudozás"
 név: "Alkudozás"
 névkomment: ""
 maxfok: 1

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "vakság"
 név: "Vakság"
 névkomment: ""
 maxfok: 1

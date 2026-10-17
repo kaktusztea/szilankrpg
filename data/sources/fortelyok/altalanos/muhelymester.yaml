@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "műhelymester"
 név: "Műhelymester"
 névkomment: ""
 maxfok: 1

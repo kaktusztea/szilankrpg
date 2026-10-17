@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "nyomolvasás_eltűntetés"
 név: "Nyomolvasás/eltűntetés"
 névkomment: ""
 maxfok: 2

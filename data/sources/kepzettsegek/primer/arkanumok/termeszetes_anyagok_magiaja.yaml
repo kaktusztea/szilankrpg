@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "arkánum_természetes_anyagok_mágiája"
 név: "Arkánum: Természetes anyagok mágiája"
 leírás: ""
 primer: true

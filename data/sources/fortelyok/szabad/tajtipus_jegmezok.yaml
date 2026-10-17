@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tájtípus_jégmezők"
 név: "Tájtípus - jégmezők"
 névkomment: ""
 maxfok: 1

@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "százarcú"
 név: "Százarcú"
 névkomment: ""
 maxfok: 2

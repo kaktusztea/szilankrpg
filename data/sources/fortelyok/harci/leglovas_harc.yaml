@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "léglovas_harc"
 név: "Léglovas harc"
 névkomment: ""
 maxfok: 3

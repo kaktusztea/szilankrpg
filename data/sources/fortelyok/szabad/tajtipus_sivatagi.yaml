@@ -1,6 +1,7 @@
 ---
 schema_version: 1
 
+id: "tájtípus_sivatagi"
 név: "Tájtípus - sivatagi"
 névkomment: ""
 maxfok: 1
