@@ -312,6 +312,13 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           aktívTÉ={aktívTÉ}
           aktívVÉ={aktívVÉ}
           téHatások={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név)).téHatások}
+          véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
+          véCsökkentésSzorzó={véCsökkentésSzorzó}
+          véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
+          helyzetVéCsökkentés={hc.helyzetVéCsökkentés}
+          fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
+          extraDefs={data.fegyverExtrák}
+          extraKontextus={hc.extraKontextus}
           onClose={() => setPopupManőver(null)}
         />
       )}

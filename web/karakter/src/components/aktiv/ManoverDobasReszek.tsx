@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction, ReactNode } from 'react';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla } from '../../engine/data-types';
@@ -84,10 +84,12 @@ export function ManoverKovetelmenyLepes({ követelmények, karakter, data, sessi
  * Az aktív fázis siker / kudarc gombjai. Szín az ALKALMAZÓ szempontjából: aktívban a manőver-siker jó (zöld),
  * passzívban ÉN védekezem, így a manőver-siker nekem ROSSZ (piros).
  */
-export function ManoverFazisChipek({ fázis, mód, manőver, biztosRontás, onSiker }: {
+export function ManoverFazisChipek({ fázis, mód, manőver, biztosRontás, letiltva, onSiker }: {
   fázis: 'M' | 'V' | 'E'; mód: Mód; manőver: ManőverDef;
   /** 99 sentinel (aktív E fázis): a siker gomb eltűnik, a Manőver ezekkel a körülményekkel nem sikerülhet. */
   biztosRontás: boolean;
+  /** A siker/kudarc gombok tiltva (aktív V/E fázisnál a Dobás megtörténtéig nincs mit elkönyvelni). */
+  letiltva?: boolean;
   onSiker: (siker: boolean) => void;
 }) {
   // ellenpróba_bünteti + E: a rontott dobás is sikeres manőver (csak büntetés) - saját feliratok.
@@ -99,18 +101,20 @@ export function ManoverFazisChipek({ fázis, mód, manőver, biztosRontás, onSi
   const sikerZöld = mód !== 'passzív';
   return (
     <div className="manover-fazis-chips">
-      {!biztosRontás && <button type="button" className={`manover-chip ${sikerZöld ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => onSiker(true)}>{felirat.siker}</button>}
-      <button type="button" className={`manover-chip ${sikerZöld ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => onSiker(false)}>{felirat.kudarc}</button>
+      {!biztosRontás && <button type="button" disabled={letiltva} className={`manover-chip ${sikerZöld ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => onSiker(true)}>{felirat.siker}</button>}
+      <button type="button" disabled={letiltva} className={`manover-chip ${sikerZöld ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => onSiker(false)}>{felirat.kudarc}</button>
     </div>
   );
 }
 
 /** Végeredmény-sáv (sikeres / sikertelen / büntetve) + a hatás-mondatok. */
-export function ManoverVegeredmeny({ végeredmény, mód, manőver, büntetve, immunisLeírás }: {
+export function ManoverVegeredmeny({ végeredmény, mód, manőver, büntetve, immunisLeírás, alsóAkció }: {
   végeredmény: Exclude<Végeredmény, 'folyamatban'>; mód: Mód; manőver: ManőverDef;
   /** Bünteti-manőver sikeres, de rontott ellenpróbával (SÁRGA átmeneti állapot). */
   büntetve: boolean;
   immunisLeírás: string | null;
+  /** Opcionális akció a sáv alján (pl. rontott V → Ellenfél VÉ csökkentés gomb) - a sávon belül. */
+  alsóAkció?: ReactNode;
 }) {
   const passzív = mód === 'passzív';
   const sikeres = végeredmény === 'sikeres';
@@ -133,6 +137,7 @@ export function ManoverVegeredmeny({ végeredmény, mód, manőver, büntetve, i
           ))}
         </div>
       )}
+      {alsóAkció}
     </div>
   );
 }

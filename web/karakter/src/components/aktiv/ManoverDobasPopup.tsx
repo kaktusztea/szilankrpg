@@ -4,13 +4,17 @@ import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../harc/ElonyPicker';
 import { HatasokInfo as HatásokInfo } from '../harc/HatasokInfo';
+import { VeCsokkentesPopup } from '../harc/VeCsokkentesPopup';
+import type { Fegyverviszony } from '../harc/ve-csokkentes-calc';
+import type { FegyverExtraDef } from '../../engine/data-types';
+import type { ExtraKontextus } from '../harc/extrak-info-calc';
 import { netElőnySzint } from '../harc/combat-roll-info';
 import type { DobásHatás } from '../harc/combat-roll-info';
 import type { ProbaDobás } from '../../engine/dice';
 import {
   type Mód, type FázisEredmény, type ManőverDef,
   követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, aktívFegyverInfo,
-  calcManőverPont, getBelharcFok, fázisCselekvő, fázisSikeres, FÁZIS_FELIRAT,
+  calcManőverPont, getBelharcFok, fázisCselekvő, fázisSikeres, FÁZIS_FELIRAT, rontottVFázis,
   szitModKezdőÁllapot, szitTáblákMódszerint, szitModÁllapot,
 } from './manover-dobas-calc';
 import {
@@ -39,10 +43,22 @@ interface Props {
   aktívVÉ: number | null;
   /** Aktív TÉ-dobás hatások (helyzet/státusz Előny/Hátrány) - kezdőszint + forrás-sor, mint a Támadó dobásnál. */
   téHatások?: DobásHatás[];
+  /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázis) - a rontott V fázis VÉ-csökkentéséhez. */
+  véCsökkentésAlap?: Record<Fegyverviszony, number>;
+  /** Taktika-eredetű szorzó a Fegyverviszony-alapú VÉ csökkentésre (pl. Roham: 2) - mint a Támadó dobásnál. */
+  véCsökkentésSzorzó?: number;
+  /** A szorzót adó taktika(k) neve - a VÉ-csökkentés bontásban jelenik meg. */
+  véCsökkentésSzorzóForrás?: string;
+  /** Harci helyzet-eredetű flat VÉ-csökkentés bővítések (pl. Meglepetés +2). */
+  helyzetVéCsökkentés?: { forrás: string; érték: number }[];
+  /** Az aktív fegyver extrái + definíciói + kontextus a VÉ-csökkentés warninghoz. */
+  fegyverExtrák?: { id: string }[];
+  extraDefs?: Record<string, FegyverExtraDef>;
+  extraKontextus?: ExtraKontextus;
   onClose: () => void;
 }
 
-export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], onClose }: Props) {
+export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onClose }: Props) {
   const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
   const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
   const aktívFegyver = mód === 'aktív' ? aktívFegyverInfo(karakter, session, data) : null;
@@ -53,6 +69,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [téSzint, setTéSzint] = useState(() => netElőnySzint(téHatások));
   const [vDobás, setVDobás] = useState<ProbaDobás | null>(null);
   const [eDobás, setEDobás] = useState<ProbaDobás | null>(null);
+  const [véCsökkNyitva, setVéCsökkNyitva] = useState(false);
 
   // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák (mód_oldal szerint, §066_04). Aktív: aktív-
   // oldali táblák + globális módosítók; passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
@@ -126,6 +143,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // (a manőver átment, de megcsaphatták/megcsaptad). Ez a végeredmény-sáv SÁRGA átmeneti állapota.
   const bünteti_büntetve = végeredmény === 'sikeres' && manőver.ellenpróba_bünteti
     && fázisok.some((f, i) => f === 'E' && eredmények[i] === 'nem');
+
+  // Rontott Végrehajtás (V) → VÉ csökkentés, mint egy sima sikertelen támadás (md/066_04:
+  // „Sikertelen Manőver és VÉ csökkentés"). CSAK aktív módban és csak V fázisnál (a Megakasztás
+  // rontása NEM okoz VÉ-csökkentést). A VÉ-csökkenés az ELLENFELET éri (én támadok), ezért CSAK
+  // megjelenítés - nem írjuk a saját session.vé_csökkenés-t (mint a Támadó dobásnál). A k20 a már
+  // eldobott V (támadó) dobásból jön - l. rontottVFázis.
+  const vRontott = rontottVFázis(fázisok, eredmények, mód, vDobás != null);
+  const véCsökkGombLátszik = vRontott && !!véCsökkentésAlap;
 
   function handleChip(igen: boolean) {
     if (aktívFázisIdx === -1) return;
@@ -265,10 +290,13 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
   return (
     <>
-    <PopupOverlay onClose={onClose} onEscape={() => { if (!szitPickerNyitva && !mpPickerNyitva && !téPopupNyitva) onClose(); }}>
+    <PopupOverlay onClose={onClose} onEscape={() => { if (!szitPickerNyitva && !mpPickerNyitva && !téPopupNyitva && !véCsökkNyitva) onClose(); }}>
       <div className="manover-dobas-popup">
         <div className="manover-dobas-header">
           <span className="manover-dobas-title">{manőver.név} ({fázisok.join(' ')})</span>
+          {/* VÉ mindig látható (a popup eltakarja a HarcHeader VÉ-dobozát): passzív manővernél kézi
+              VÉ-csökkenés könyveléshez, aktívban a Megakasztás elleni védekezéshez kell. */}
+          {aktívVÉ != null && <span className="manover-dobas-ve-chip">VÉ: <strong>{aktívVÉ}</strong></span>}
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
 
@@ -311,7 +339,13 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                         M: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást). */}
                     {(f === 'E' || f === 'V' || !manőver.fázis_info?.[f]) && renderFázisInfo(f)}
                     {/* Biztos rontás: 99 sentinel aktív E fázisban. (Immunis / passzív letilt → azonnali végeredmény, nincs aktív fázis.) */}
-                    <ManoverFazisChipek fázis={f} mód={mód} manőver={manőver} biztosRontás={szitLehetetlen && f === 'E' && mód === 'aktív'} onSiker={handleSiker} />
+                    {/* A siker/kudarc gombok csak a Dobás UTÁN aktívak (aktív mód, V/E fázis): a dobás
+                        adja az eredményt, előtte nincs mit elkönyvelni. Passzív módban nincs dobás-sor
+                        (az ellenfél dob) → nincs gate. */}
+                    <ManoverFazisChipek fázis={f} mód={mód} manőver={manőver}
+                      biztosRontás={szitLehetetlen && f === 'E' && mód === 'aktív'}
+                      letiltva={mód === 'aktív' && ((f === 'V' && !vDobás) || (f === 'E' && !eDobás))}
+                      onSiker={handleSiker} />
                   </>
                 )}
               </div>
@@ -320,7 +354,15 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         </div>
 
         {végeredmény !== 'folyamatban' && (
-          <ManoverVegeredmeny végeredmény={végeredmény} mód={mód} manőver={manőver} büntetve={bünteti_büntetve} immunisLeírás={szitImmunis ? immunisLeírás : null} />
+          <ManoverVegeredmeny végeredmény={végeredmény} mód={mód} manőver={manőver} büntetve={bünteti_büntetve} immunisLeírás={szitImmunis ? immunisLeírás : null}
+            alsóAkció={véCsökkGombLátszik ? (
+              <button type="button" className="manover-ve-csokk-btn manover-ve-csokk-pulse" onClick={() => setVéCsökkNyitva(true)}>
+                VÉ csökkentés
+                {véCsökkentésSzorzó && véCsökkentésSzorzó !== 1 && (
+                  <span className="manover-ve-csokk-hint"> × {véCsökkentésSzorzó}{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}</span>
+                )}
+              </button>
+            ) : undefined} />
         )}
       </div>
     </PopupOverlay>
@@ -332,6 +374,24 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     {mpPickerNyitva && <ManoverMpPicker költött={költöttMP} max={maxKölthető} onSelect={setKöltöttMP} onClose={() => setMpPickerNyitva(false)} />}
     {téPopupNyitva && (
       <ManoverTePopup módosító={manőver.végrehajtás_té_módosító} standard={mk.végrehajtás_TÉ_standard} aktívTÉ={aktívTÉ} onClose={() => setTéPopupNyitva(false)} />
+    )}
+    {véCsökkNyitva && véCsökkentésAlap && vDobás && (
+      <VeCsokkentesPopup
+        k20={vDobás.eredmény}
+        alapTáblázat={véCsökkentésAlap}
+        véCsökkentésSzorzó={véCsökkentésSzorzó}
+        véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
+        helyzetVéCsökkentés={helyzetVéCsökkentés}
+        fegyverExtrák={fegyverExtrák}
+        extraDefs={extraDefs}
+        extraKontextus={extraKontextus}
+        onClose={(eredmény) => {
+          // A manőver-flow a rontott V után itt ér véget: az EREDMÉNY-ablakból (eredmény != null)
+          // mellékattintva az egész flow-t zárjuk. A Fegyverviszony-választó fázisból (eredmény null)
+          // csak a VÉ-popupot - vissza a végeredmény-sávhoz.
+          if (eredmény) onClose(); else setVéCsökkNyitva(false);
+        }}
+      />
     )}
     </>
   );

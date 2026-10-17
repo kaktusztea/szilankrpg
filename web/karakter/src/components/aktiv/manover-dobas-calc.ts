@@ -437,3 +437,17 @@ export const FÁZIS_FELIRAT: Record<'M' | 'V' | 'E', string> = {
   V: '(V)égrehajtás',
   E: '(E)llenpróba',
 };
+
+/**
+ * A rontott Végrehajtás (V) fázis VÉ-csökkentést okoz, mint egy sima sikertelen támadás
+ * (md/066_04 „Sikertelen Manőver és VÉ csökkentés"). CSAK aktív módban és KIZÁRÓLAG a V fázisra:
+ * a Megakasztás (M) rontása kifejezetten NEM okoz VÉ-csökkentést (md/066_04 🔆). A `vanVDobás` azt
+ * jelzi, hogy van eldobott V (támadó) k20 - ez adja a VÉ-csökkentés kockatagját (k20P).
+ */
+export function rontottVFázis(
+  fázisok: ('M' | 'V' | 'E')[], eredmények: FázisEredmény[], mód: Mód, vanVDobás: boolean,
+): boolean {
+  if (mód !== 'aktív' || !vanVDobás) return false;
+  const i = fázisok.indexOf('V');
+  return i >= 0 && eredmények[i] === 'nem';
+}
