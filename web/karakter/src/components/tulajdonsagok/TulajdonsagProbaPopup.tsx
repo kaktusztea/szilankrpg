@@ -31,6 +31,8 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const érték = tulÉrték + bónusz;
   const [nehézség, setNehézség] = useState<number | null>(null);
   const [extrákNyitva, setExtrákNyitva] = useState(false);
+  // Helyzetfüggő módosítók (fortély-bónuszok) külön picker popupban - a képzettségpróba mintájára.
+  const [szitNyitva, setSzitNyitva] = useState(false);
   // A felszerelés-túlterhelés Hátránya a dobás alap EH-ja (a KM felülírhatja).
   const [ehSzint, setEhSzint] = useState(felszEH);
   const [összetettDb, setÖsszetettDb] = useState(0);
@@ -71,6 +73,14 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
           </div>
         )}
 
+        {fortélyBónuszok.length > 0 && !d.vanEredmény && (
+          <div className="kep-proba-row">
+            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setSzitNyitva(true)}>
+              Helyzetfüggő módosítók: <span className={bónusz > 0 ? 'kep-proba-szit-pos' : bónusz < 0 ? 'kep-proba-szit-neg' : ''}>{bónusz === 0 ? '0' : `${bónusz > 0 ? '+' : ''}${bónusz}`}</span>
+            </button>
+          </div>
+        )}
+
         {!d.vanEredmény && (
           <div className="kep-proba-extras-box">
             <button type="button" className="kep-proba-extras-toggle" aria-expanded={extrákNyitva} onClick={() => setExtrákNyitva(v => !v)}>
@@ -87,15 +97,6 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
                 </ExtraSor>
                 <OsszetettValaszto db={összetettDb} max={próba.összetett_max_másodlagos} levonás={p.másodlagos_levonás}
                   disabled={ellenpróba} onChange={n => { setÖsszetettDb(n); d.reset(); }} />
-                {fortélyBónuszok.length > 0 && (
-                  <ExtraSor label="Fortélyok:">
-                    {fortélyBónuszok.map((b, i) => (
-                      <ExtraGomb key={i} aktív={bónuszBe[i]} onClick={váltás(() => setBónuszBe(v => v.map((x, j) => (j === i ? !x : x))))}>
-                        +{b.érték} {b.leírás}
-                      </ExtraGomb>
-                    ))}
-                  </ExtraSor>
-                )}
                 <EllenprobaValaszto ellenpróba={ellenpróba} disabled={összetettDb > 0}
                   onChange={v => { setEllenpróba(v); if (v) setÖsszetettDb(0); d.reset(); }} />
               </div>
@@ -138,6 +139,27 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             összetett={összetettDb > 0 ? d.összetett : null} kocka={p.kocka} kiemeltKülönbség={p.kiemelt_különbség} ehSzint={ehSzint} />
         )}
       </div>
+
+      {szitNyitva && (
+        <PopupOverlay className="kep-prompt kep-proba-szit-popup" onClose={() => setSzitNyitva(false)}>
+          <label className="kep-prompt-label-bold-mb">Helyzetfüggő módosítók</label>
+          <div className="kep-proba-szit-items">
+            {fortélyBónuszok.map((b, i) => (
+              <button key={i} type="button"
+                className={`kep-proba-szit-item${bónuszBe[i] ? ' kep-proba-szit-item-active kep-proba-szit-pos' : ''} kep-proba-szit-pos`}
+                onClick={váltás(() => setBónuszBe(v => v.map((x, j) => (j === i ? !x : x))))}>
+                <span className="kep-proba-szit-val">+{b.érték}</span>
+                <span className="kep-proba-szit-desc">{b.leírás}</span>
+              </button>
+            ))}
+          </div>
+          {bónusz !== 0 && (
+            <div className={`kep-proba-szit-sum-footer${bónusz > 0 ? ' kep-proba-szit-pos' : ' kep-proba-szit-neg'}`}>
+              Összesen: {bónusz > 0 ? '+' : ''}{bónusz}
+            </div>
+          )}
+        </PopupOverlay>
+      )}
     </PopupOverlay>
   );
 }

@@ -507,6 +507,7 @@
 
 /* Szituációs módosítók popup */
 .kep-proba-szit-popup {
+  max-width: min(420px, 92vw);
   max-height: 70vh;
   overflow-y: auto;
 }
@@ -534,7 +535,7 @@
 }
 .kep-proba-szit-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   padding: 4px 8px;
   border-radius: 4px;
@@ -563,9 +564,12 @@
   font-weight: 700;
   min-width: 28px;
   text-align: right;
+  flex-shrink: 0;
 }
 .kep-proba-szit-desc {
   opacity: 0.85;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .kep-proba-szit-pos .kep-proba-szit-val { color: var(--success); }
 .kep-proba-szit-neg .kep-proba-szit-val { color: var(--danger, #e55); }
