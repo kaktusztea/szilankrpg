@@ -53,7 +53,9 @@ export function HarcFegyverTable({
     const spBase = spTotal - spBónusz;
     const ph = r.fegyverhossz + (fortelyMods['fegyverhossz'] ?? 0);
     const belharcWarning = !!r.tiltások?.length; // §42.4: a sor saját aktív tiltásai (pl. túl hosszú / nem Közelharc)
-    const név = displayNév ?? r.fegyver_név;
+    // Megjelenített név: a fogás/kétkezes overlay-név (displayNév) > példány-becenév > fegyver-def név.
+    // A `fegyver_név` MARAD a lookup/aktív-egyeztetés kulcsa (getAktívFegyverNév), csak a kijelzés vált.
+    const név = displayNév ?? r.becenév ?? r.fegyver_név;
 
     return (
       <tr key={név + (isOverlay ? '-overlay' : '')}

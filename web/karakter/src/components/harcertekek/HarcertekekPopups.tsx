@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Kepzettseg } from '../../engine/types';
 import { FORTÉLY_FOK_VALUES } from '../../ui-constants';
 import { képzKulcs, fortélyFok } from '../../engine/azonosito';
@@ -7,12 +8,14 @@ import { PopupOverlay } from './PopupOverlay';
 import { PancelPopup } from './HarcertekekPancelPopup';
 import { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from './PickerComponents';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
+import { TextInputPopup } from '../tulajdonsagok/popups/TextInputPopup';
 import { getMfFok, harciKepzDisplayName } from './helpers';
 
 interface PopupState {
   ideaTarget: { type: 'fegyver' | 'páncél'; idx: number } | null;
   mfTarget: number | null;
   anyagTarget: number | null;
+  becenévTarget: number | null;
   pancelPopup: string | null;
   pajzsPopup: string | null;
   deleteTarget: number | null;
@@ -26,7 +29,7 @@ interface Props {
   képzettségek: Kepzettseg[];
   state: PopupState;
   onClose: (key: keyof PopupState) => void;
-  updateFegyver: (idx: number, patch: { idea?: number; anyag?: string }) => void;
+  updateFegyver: (idx: number, patch: { idea?: number; anyag?: string; név?: string }) => void;
   updatePancel: (patch: Record<string, unknown>) => void;
   setMfFok: (fegyverAlap: string, fok: number) => void;
   setMerevvertFok: (fok: number) => void;
@@ -41,7 +44,7 @@ export function Popups({
   updateFegyver, updatePancel, setMfFok, setMerevvertFok,
   setPajzsFok, updatePajzs, removeFegyver, setKépzettségek,
 }: Props) {
-  const { ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget } = state;
+  const { ideaTarget, mfTarget, anyagTarget, becenévTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget } = state;
   const { konstansok } = data;
 
   const pancelIdeaRange = konstansok.páncél_struktúrák
@@ -84,6 +87,14 @@ export function Popups({
             onSelect={a => { updateFegyver(anyagTarget, { anyag: a }); onClose('anyagTarget'); }}
           />
         </PopupOverlay>
+      )}
+
+      {becenévTarget !== null && (
+        <BecenévPopup
+          kezdő={k.fegyverek[becenévTarget]?.név ?? ''}
+          onMent={név => { updateFegyver(becenévTarget, { név: név.trim() }); onClose('becenévTarget'); }}
+          onMégse={() => onClose('becenévTarget')}
+        />
       )}
 
       {pancelPopup && (
@@ -161,5 +172,24 @@ export function Popups({
         </PopupOverlay>
       )}
     </>
+  );
+}
+
+// --- Becenév popup (kontrollált szöveg-input, max 15 karakter) ---
+function BecenévPopup({ kezdő, onMent, onMégse }: {
+  kezdő: string;
+  onMent: (név: string) => void;
+  onMégse: () => void;
+}) {
+  const [szöveg, setSzöveg] = useState(kezdő);
+  return (
+    <TextInputPopup
+      label="Fegyver beceneve (max 15):"
+      value={szöveg}
+      maxLength={15}
+      onChange={setSzöveg}
+      onConfirm={() => onMent(szöveg)}
+      onCancel={onMégse}
+    />
   );
 }

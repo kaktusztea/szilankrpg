@@ -28,6 +28,8 @@ export interface FegyverResultMód {
  * PLUSZ az összes mód listája (`módok`) a Támadó dobás mód-választójához. */
 export interface FegyverResult extends FegyverResultMód {
   fegyver_név: string;
+  /** Példány-becenév (FegyverPeldany.név) - ha nem üres, a megjelenítésben felülírja a fegyver_név-et. */
+  becenév?: string;
   fegyverhossz: number;
   módok: FegyverResultMód[];
   /** Erre a fegyverre ható aktív tiltás-id-k (pl. "belharc_fegyverhossz") - figyelmeztetéshez (§42.4). */

@@ -1088,6 +1088,15 @@
   overflow-y: auto;
 }
 
+/* Fegyver becenév esetén a def-név kisebb alcímként a főcím alatt. */
+.fi-alcim {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
 .fi-meta {
   width: 100%;
   display: flex;

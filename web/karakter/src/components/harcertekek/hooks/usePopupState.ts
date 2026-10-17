@@ -4,6 +4,7 @@ export interface PopupState {
   ideaTarget: { type: 'fegyver' | 'páncél'; idx: number } | null;
   mfTarget: number | null;
   anyagTarget: number | null;
+  becenévTarget: number | null;
   pancelPopup: string | null;
   pajzsPopup: string | null;
   deleteTarget: number | null;
@@ -15,13 +16,14 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
   const [ideaTarget, setIdeaTarget] = useState<PopupState['ideaTarget']>(null);
   const [mfTarget, setMfTarget] = useState<number | null>(null);
   const [anyagTarget, setAnyagTarget] = useState<number | null>(null);
+  const [becenévTarget, setBecenévTarget] = useState<number | null>(null);
   const [pancelPopup, setPancelPopup] = useState<string | null>(null);
   const [pajzsPopup, setPajzsPopup] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
   const [deleteKepzTarget, setDeleteKepzTarget] = useState<string | null>(null);
   const [kepzSzintTarget, setKepzSzintTarget] = useState<string | null>(null);
 
-  const anyOpen = !!(ideaTarget || mfTarget !== null || anyagTarget !== null || pancelPopup || pajzsPopup || deleteTarget !== null || deleteKepzTarget || kepzSzintTarget);
+  const anyOpen = !!(ideaTarget || mfTarget !== null || anyagTarget !== null || becenévTarget !== null || pancelPopup || pajzsPopup || deleteTarget !== null || deleteKepzTarget || kepzSzintTarget);
 
   useEffect(() => {
     if (!anyOpen) return;
@@ -39,6 +41,7 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
     setIdeaTarget(null);
     setMfTarget(null);
     setAnyagTarget(null);
+    setBecenévTarget(null);
     setPancelPopup(null);
     setPajzsPopup(null);
     setDeleteTarget(null);
@@ -51,6 +54,7 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
       ideaTarget: setIdeaTarget,
       mfTarget: setMfTarget,
       anyagTarget: setAnyagTarget,
+      becenévTarget: setBecenévTarget,
       pancelPopup: setPancelPopup,
       pajzsPopup: setPajzsPopup,
       deleteTarget: setDeleteTarget,
@@ -60,7 +64,7 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
     setters[key](null);
   }
 
-  const state: PopupState = { ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget };
+  const state: PopupState = { ideaTarget, mfTarget, anyagTarget, becenévTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget };
 
   return {
     state,
@@ -68,6 +72,7 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
     setIdeaTarget,
     setMfTarget,
     setAnyagTarget,
+    setBecenévTarget,
     setPancelPopup,
     setPajzsPopup,
     setDeleteTarget,

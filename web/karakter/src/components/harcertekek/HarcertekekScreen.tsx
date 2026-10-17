@@ -50,7 +50,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
       <FegyverekSection
         data={data} karakter={karakter} setKarakter={undoSetKarakter} gameMode={gameMode}
         onIdeaTarget={idx => popup.setIdeaTarget({ type: 'fegyver', idx })}
-        onMfTarget={popup.setMfTarget} onAnyagTarget={popup.setAnyagTarget} onDeleteTarget={popup.setDeleteTarget}
+        onMfTarget={popup.setMfTarget} onAnyagTarget={popup.setAnyagTarget} onBecenévTarget={popup.setBecenévTarget} onDeleteTarget={popup.setDeleteTarget}
       />
 
       <PancelSection

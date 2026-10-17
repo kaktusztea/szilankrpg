@@ -66,12 +66,13 @@ describe('buildFegyverInfó', () => {
     expect(info.módok[1].sebzéstípus).toBe('másodlagos');
   });
 
-  it('nincs felvett példány (pl. puszta kéz) → anyag/idea null, a többi megvan', () => {
-    const üresK = { képzettségek: [{ id: 'harcmodor', elem: 'kardvívás', szint: 6 }], fegyverek: [] } as unknown as Karakter;
-    const info = buildFegyverInfó(result, üresK, data);
-    expect(info.anyag).toBeNull();
-    expect(info.idea).toBeNull();
-    expect(info.harcmodorSzint).toBe(6);
-    expect(info.módok.length).toBe(2);
+  it('becenév: a result.becenév kerül át (a név marad a def-név, fő/alcímhez)', () => {
+    const infoVan = buildFegyverInfó({ ...result, becenév: 'Villámcsapás' }, karakter, data);
+    expect(infoVan.becenév).toBe('Villámcsapás');
+    expect(infoVan.név).toBe('Hosszúkard');
+
+    const infoNincs = buildFegyverInfó(result, karakter, data);
+    expect(infoNincs.becenév).toBeUndefined();
+    expect(infoNincs.név).toBe('Hosszúkard');
   });
 });

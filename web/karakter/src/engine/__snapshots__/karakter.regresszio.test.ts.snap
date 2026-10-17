@@ -478,6 +478,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "aktor": "ököl",
         "alap_TÉ": -3,
         "alap_VÉ": -3,
+        "becenév": undefined,
         "fegyver_név": "Puszta kéz",
         "fegyverhossz": 0,
         "fortély": {
@@ -532,6 +533,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "aktor": "vágóél-egyenes-átlagos",
         "alap_TÉ": 6,
         "alap_VÉ": 6,
+        "becenév": "Hajnalpenge",
         "fegyver_név": "Kard, lovag",
         "fegyverhossz": 3,
         "fortély": {
@@ -605,6 +607,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "aktor": "vágóél-egyenes-rövid",
         "alap_TÉ": 3,
         "alap_VÉ": 3,
+        "becenév": undefined,
         "fegyver_név": "Tőr",
         "fegyverhossz": 1,
         "fortély": {
@@ -678,6 +681,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "aktor": "kivétel",
         "alap_TÉ": 1,
         "alap_VÉ": 10,
+        "becenév": undefined,
         "fegyver_név": "Közepes Pajzs",
         "fegyverhossz": 0,
         "fortély": {
@@ -1026,6 +1030,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "aktor": "ököl",
         "alap_TÉ": -3,
         "alap_VÉ": -3,
+        "becenév": undefined,
         "fegyver_név": "Puszta kéz",
         "fegyverhossz": 0,
         "fortély": {
@@ -1080,6 +1085,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "aktor": "vágóél-íves-rövid",
         "alap_TÉ": 3,
         "alap_VÉ": 3,
+        "becenév": "Árnyékfog",
         "fegyver_név": "Meneth",
         "fegyverhossz": 2,
         "fortély": {

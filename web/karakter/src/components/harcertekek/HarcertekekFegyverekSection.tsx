@@ -18,10 +18,11 @@ interface Props {
   onIdeaTarget: (idx: number) => void;
   onMfTarget: (idx: number) => void;
   onAnyagTarget: (idx: number) => void;
+  onBecenévTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
 }
 
-export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onIdeaTarget, onMfTarget, onAnyagTarget, onDeleteTarget }: Props) {
+export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onIdeaTarget, onMfTarget, onAnyagTarget, onBecenévTarget, onDeleteTarget }: Props) {
   const { konstansok } = data;
   const [pickerOpen, setPickerOpen] = useState(false);
 
@@ -62,6 +63,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
           onIdeaTarget={onIdeaTarget}
           onMfTarget={onMfTarget}
           onAnyagTarget={onAnyagTarget}
+          onBecenévTarget={onBecenévTarget}
           onDeleteTarget={onDeleteTarget}
           onToggleFelszerelésben={toggleFelszerelésben}
         />
@@ -82,7 +84,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
 
 // --- FegyverCard ---
 
-function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget, onMfTarget, onAnyagTarget, onDeleteTarget, onToggleFelszerelésben }: {
+function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget, onMfTarget, onAnyagTarget, onBecenévTarget, onDeleteTarget, onToggleFelszerelésben }: {
   index: number;
   fegyver: FegyverPeldany;
   data: GameData;
@@ -91,6 +93,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
   onIdeaTarget: (idx: number) => void;
   onMfTarget: (idx: number) => void;
   onAnyagTarget: (idx: number) => void;
+  onBecenévTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
   onToggleFelszerelésben: (idx: number) => void;
 }) {
@@ -116,6 +119,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
         </button>
         <button className="he-field-btn" onClick={() => onIdeaTarget(index)}>Idea: <strong>{fegyver.idea}</strong></button>
         <button className="he-field-btn" onClick={() => onAnyagTarget(index)}>Anyag: <strong>{fegyver.anyag}</strong></button>
+        <button className="he-field-btn" onClick={() => onBecenévTarget(index)}>Becenév: <strong>{fegyver.név || '-'}</strong></button>
         <button
           className={`he-field-btn${fegyver.felszerelésben === false ? ' he-field-off' : ''}`}
           onClick={() => onToggleFelszerelésben(index)}

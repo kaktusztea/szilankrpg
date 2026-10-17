@@ -19,6 +19,8 @@ export interface FegyverInfoMód {
 /** A fegyver infó popup teljes, megjelenítésre kész adata (pure). */
 export interface FegyverInfoAdat {
   név: string;
+  /** Példány-becenév (ha nem üres) - a popup főcíme, a `név` (def-név) alcímként. */
+  becenév?: string;
   /** Harcmodor képzettség neve + a karakter szintje benne. */
   harcmodorNév: string;
   harcmodorSzint: number;
@@ -64,6 +66,7 @@ export function buildFegyverInfó(
 
   return {
     név: result.fegyver_név,
+    becenév: result.becenév,
     harcmodorNév: hmMegjelenítés(harcmodorNév, data),
     harcmodorSzint: képzettségSzint(karakter.képzettségek, `harcmodor/${harcmodorNév}`),
     extrák: (fDef?.extrák ?? []).map(e => ({

@@ -23,7 +23,10 @@ export function FegyverInfoPopup({ result, karakter, data, onClose }: Props) {
 
   return (
     <PopupOverlay onClose={onClose} className="kep-prompt fi-popup">
-      <div className="ke-dobas-header">{info.név}</div>
+      <div className="ke-dobas-header">
+        {info.becenév || info.név}
+        {info.becenév && <span className="fi-alcim">{info.név}</span>}
+      </div>
 
       <div className="fi-meta">
         <div className="fi-meta-row">
