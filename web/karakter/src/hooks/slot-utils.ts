@@ -1,7 +1,7 @@
 import { MAX_KARAKTER_DB } from '../ui-constants';
 import type { Karakter, StoredKarakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { isValidKarakter } from '../engine/validate';
+import { isValidKarakter, sémaVerzióHiba } from '../engine/validate';
 import { sanitizeUndo } from './useUndo';
 
 const SLOTS_KEY = 'szilank_slots';
@@ -64,13 +64,15 @@ export function isUidTaken(uid: string): boolean {
 
 /**
  * Betölt egy tárolt slotot localStorage-ből: parse + séma validáció + default merge.
- * null, ha nincs meg, sérült, vagy nem valid karakter.
+ * null, ha nincs meg, sérült, vagy nem valid karakter; `{ error }`, ha elavult sémaverziójú (konverzió nincs).
  */
-export function loadSlotKarakter(uid: string): { karakter: Karakter; undo: any[] } | null {
+export function loadSlotKarakter(uid: string): { karakter: Karakter; undo: any[] } | { error: string } | null {
   const charData = localStorage.getItem(`szilank_char_${uid}`);
   if (!charData) return null;
   try {
     const parsed = JSON.parse(charData);
+    const vHiba = sémaVerzióHiba(parsed?.schema_version);
+    if (vHiba) return { error: vHiba };
     if (!isValidKarakter(parsed)) return null;
     return {
       karakter: {

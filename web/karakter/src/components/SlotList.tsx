@@ -10,6 +10,8 @@ import { ImportOptionsPopup } from './overlays/ImportOptionsPopup';
 interface Props {
   activeUid: string | undefined;
   onLoad: (karakter: Karakter, undo: any[]) => void;
+  /** Betöltési hiba (pl. elavult sémaverzió) megjelenítése. */
+  onLoadError?: (msg: string) => void;
   onDelete: (uid: string, név: string) => void;
   onShare: (uid: string) => void;
   onQrCode: (uid: string) => void;
@@ -26,7 +28,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
   // Full backup: show a spinner in place of the icon while the
   // (Windows) native save dialog is being prepared.
   const [savingBackup, setSavingBackup] = useState(false);
@@ -53,7 +55,8 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onQrCode, onSav
 
   function loadSlot(uid: string) {
     const loaded = loadSlotKarakter(uid);
-    if (loaded) onLoad(loaded.karakter, loaded.undo);
+    if (loaded && 'error' in loaded) onLoadError?.(loaded.error);
+    else if (loaded) onLoad(loaded.karakter, loaded.undo);
   }
 
   /** SaveOptionsPopup handlers */

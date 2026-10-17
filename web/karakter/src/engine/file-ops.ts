@@ -1,7 +1,7 @@
 import type { Karakter, StoredKarakter } from './types';
 import type { GameData } from './data-loader';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
-import { validateKarakter, validateKarakterData } from './validate';
+import { validateKarakter, validateKarakterData, sémaVerzióHiba } from './validate';
 import { sanitizeUndo } from '../hooks/useUndo';
 import { readSlots } from '../hooks/slot-utils';
 import { MAX_NÉV, MAX_BECENÉV } from '../ui-constants';
@@ -150,6 +150,8 @@ function isBackupFile(obj: unknown): obj is { szilánk_backup: true; karakterek:
 }
 
 function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter; undo: any[] } | { error: string } {
+  const vHiba = sémaVerzióHiba((obj as Record<string, unknown> | null)?.schema_version);
+  if (vHiba) return { error: vHiba };
   const validation = validateKarakter(obj);
   if (!validation.valid) return { error: `Érvénytelen karakter - hiányzó mezők: ${validation.missing.join(', ')}` };
   const raw = obj as Record<string, any>;

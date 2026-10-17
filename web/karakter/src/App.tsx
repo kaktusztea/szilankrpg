@@ -32,9 +32,12 @@ function App() {
     undoStack, setUndoStack, pushUndo, undoTo,
     setTulajdonságok, setKépzettségek, setFortélyok, setSession,
     saveErrors,
+    initialWarning,
   } = useKarakterState();
 
   const { overlays, setOverlay } = useOverlays();
+  // Elavult aktív karakter induláskor: üzenet (a betöltés üres karakterrel folytatódott).
+  useEffect(() => { if (initialWarning) setOverlay('loadError', initialWarning); }, [initialWarning, setOverlay]);
   const [activeTab, setActiveTab] = useState(5);
   const [gameMode, setGameMode] = useState(false);
   const [viewingCheckpointId, setViewingCheckpointId] = useState<string | null>(null);
@@ -180,7 +183,7 @@ function App() {
       />
 
       {karakter.jk === false && !viewingCheckpointId && (
-        <NjkSwitcher aktív={karakter} data={data} onLoad={activateKarakter} />
+        <NjkSwitcher aktív={karakter} data={data} onLoad={activateKarakter} onLoadError={msg => setOverlay('loadError', msg)} />
       )}
 
       {viewingCheckpoint && (

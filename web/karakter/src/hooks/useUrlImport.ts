@@ -20,7 +20,7 @@ export function useUrlImport(
     hashImportDone.current = true;
     const result = decodeKarakterFromHash(hash);
     if ('error' in result) {
-      setOverlay('toast', { msg: result.error, type: 'error' });
+      setOverlay('loadError', result.error);   // többsoros (pl. elavult sémaverzió) → hiba-overlay
       history.replaceState(null, '', window.location.pathname);
       return;
     }

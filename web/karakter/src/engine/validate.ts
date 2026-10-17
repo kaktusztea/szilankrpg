@@ -2,6 +2,21 @@ import type { Karakter } from './types';
 import type { GameData } from './data-loader';
 import { EGYEDI_FORTÉLY_ID, TRADÍCIÓ_ID, képzKulcs } from './azonosito';
 
+/**
+ * Az aktuális karakter-séma verzió. 3: fortély/képzettség `{id, elem}` (2026-10-17).
+ * Eltérő verzió NEM tölthető be - konverzió (még) nincs; ha lesz, a `sémaVerzióHiba` hívóinál kell bekötni.
+ */
+export const KARAKTER_SÉMA_VERZIÓ = 3;
+
+/**
+ * Hibaüzenet, ha a betöltendő karakter sémaverziója (szám) nem az aktuális; egyébként null.
+ * Hiányzó / nem szám verzió = sérült adat, nem „elavult" → a hívó a szokásos érvénytelen-ágon kezeli.
+ */
+export function sémaVerzióHiba(verzió: unknown): string | null {
+  if (typeof verzió !== 'number' || verzió === KARAKTER_SÉMA_VERZIÓ) return null;
+  return `Betöltendő karakter séma verzió: v${verzió}\nAktuális verzió: v${KARAKTER_SÉMA_VERZIÓ}\nElavult verzió, kreáld újra a karaktert.`;
+}
+
 /** Required top-level fields in a Karakter object. */
 const REQUIRED_TOP_FIELDS = [
   'schema_version', 'uid', 'id_leíró', 'név', 'becenév', 'jk', 'játékos', 'mentés_dátum',
@@ -28,10 +43,9 @@ export function validateKarakter(obj: unknown): { valid: true } | { valid: false
   const missing: string[] = [];
 
   // Check schema_version first
-  // 3: fortély/képzettség id + elem (2026-10-17). Régebbi mentés nem tölthető be (nincs migráció).
-  if (k.schema_version !== 3) {
-    missing.push(`schema_version (${String(k.schema_version)} ≠ 3 - régi formátumú karakter, nem tölthető be)`);
-  }
+  // Eltérő sémaverzió: a mező-lista értelmetlen (más alak) → csak a verzió-hiba (l. sémaVerzióHiba).
+  const vHiba = sémaVerzióHiba(k.schema_version);
+  if (vHiba) return { valid: false, missing: [vHiba] };
 
   // Top-level fields
   for (const field of REQUIRED_TOP_FIELDS) {

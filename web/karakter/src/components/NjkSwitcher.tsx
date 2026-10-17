@@ -16,6 +16,8 @@ interface Props {
   aktív: Karakter;
   data: GameData;
   onLoad: (karakter: Karakter, undo: any[]) => void;
+  /** Betöltési hiba (pl. elavult sémaverzió) megjelenítése. */
+  onLoadError?: (msg: string) => void;
 }
 
 /**
@@ -24,7 +26,7 @@ interface Props {
  * Minden box háttere egy fakó Életerő csík (arány + szín), a név után stat:
  * "maradék/max (Skat)". Ha nem férnek egy sorba, új sáv nyílik.
  */
-export function NjkSwitcher({ aktív, data, onLoad }: Props) {
+export function NjkSwitcher({ aktív, data, onLoad, onLoadError }: Props) {
   // Az aktív karakter friss állapotát ráolvassuk a persistált slotokra: a JK/NJK váltás
   // React-state-ben azonnal megvan, a slot-metaadatot viszont az autosave csak később írja.
   const slots = mergeAktív(readSlots(), aktív);
@@ -39,7 +41,8 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
   const váltás = (uid: string) => {
     if (uid === aktív.uid) return;
     const loaded = loadSlotKarakter(uid);
-    if (loaded) onLoad(loaded.karakter, loaded.undo);
+    if (loaded && 'error' in loaded) onLoadError?.(loaded.error);
+    else if (loaded) onLoad(loaded.karakter, loaded.undo);
   };
   const { pressProps } = useLongPress<string>(setPickerUid, váltás);
 
@@ -59,7 +62,7 @@ export function NjkSwitcher({ aktív, data, onLoad }: Props) {
       </div>
       {njkok.map(s => {
         // Az aktív NJK-nál a LIVE karaktert használjuk (friss ÉP/sebzések), a többinél a tárolt.
-        const kar = s.uid === aktív.uid ? aktív : loadSlotKarakter(s.uid)?.karakter ?? null;
+        const kar = s.uid === aktív.uid ? aktív : (() => { const l = loadSlotKarakter(s.uid); return l && 'karakter' in l ? l.karakter : null; })();
         const stat = kar ? életerőStat(kar, data) : null;
         const harcérték = kar ? njkHarcértékStat(kar, data) : null;
         const jel = getKmJelölés(s.uid);

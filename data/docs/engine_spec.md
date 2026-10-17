@@ -2454,6 +2454,19 @@ Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik
 - Ha nincs aktív: `emptyKarakter` + uid generálás
 - `_undo` mező → undo stack inicializálás
 
+**Karakter sémaverzió** (2026-10-17): `engine/validate.ts` → `KARAKTER_SÉMA_VERZIÓ` (jelenleg 3). Eltérő (szám)
+verziójú karakter NEM tölthető be, konverzió nincs (később lehet - a `sémaVerzióHiba` hívóinál kell bekötni).
+Egy üzenet minden betöltési úton (aktív slot induláskor, karakterlista, NJK switcher, fájl / backup import,
+URL-link, vágólap / QR), a „Betöltési hiba" overlay-ben:
+
+```
+Betöltendő karakter séma verzió: vX
+Aktuális verzió: vY
+Elavult verzió, kreáld újra a karaktert.
+```
+Induláskor (elavult aktív slot) az app nem blokkol: üres karakterrel indul, a régi slot a listában marad.
+Hiányzó / nem szám verzió = sérült adat → a szokásos érvénytelen-karakter ág.
+
 ### 30.4 Törlés / Reset
 
 - "Új karakter": új uid, új slot (régi megmarad a listában)
@@ -3541,7 +3554,7 @@ Többszörös (elem nem üres; a 3. pozíció üres helyőrző - a pozíciós fo
 Kiérdemelt flag (kiérdemelt=true):
   utolsó elemként: 1
   Példa: ["nyelvismeret", 1, "", "Toroni", 1]
-(Séma-verzió: 3 - a régebbi linkek „Elavult karakter link" hibát adnak.)
+(Séma-verzió: `KARAKTER_SÉMA_VERZIÓ`, eltérésnél a §30.3 „Karakter sémaverzió" üzenete.)
 ```
 
 Példák:

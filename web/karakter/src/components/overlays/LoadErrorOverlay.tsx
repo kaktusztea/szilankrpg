@@ -10,7 +10,7 @@ export function LoadErrorOverlay({ message, onClose }: Props) {
     <OverlayPortal>
       <div className="kep-prompt overlay-confirm">
         <label className="overlay-label overlay-label-error">Betöltési hiba</label>
-        <span className="overlay-desc">{message}</span>
+        <span className="overlay-desc overlay-desc-pre">{message}</span>
         <button className="btn-del-confirm overlay-ok-btn" onClick={onClose}>OK</button>
       </div>
     </OverlayPortal>

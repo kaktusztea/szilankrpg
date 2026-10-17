@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
+import { sémaVerzióHiba } from '../engine/validate';
 import { upsertSlotEntry, readSlots, isUidTaken, loadSlotKarakter } from './slot-utils';
 import type { Karakter } from '../engine/types';
 import { installLocalStorage } from '../__tests__/localstorage-stub';
@@ -44,5 +45,8 @@ describe('loadSlotKarakter', () => {
   it('érvénytelen sémájú karakter → null (nem tölt be szemetet)', () => {
     localStorage.setItem('szilank_char_x', JSON.stringify({ valami: 1 }));
     expect(loadSlotKarakter('x')).toBeNull();
+    // Elavult sémaverzió: nem null, hanem a felhasználói hibaüzenet (konverzió nincs)
+    localStorage.setItem('szilank_char_v2', JSON.stringify({ schema_version: 2 }));
+    expect(loadSlotKarakter('v2')).toEqual({ error: sémaVerzióHiba(2) });
   });
 });

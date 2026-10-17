@@ -103,6 +103,7 @@
 .overlay-label-center { font-weight: bold; text-align: center; }
 .overlay-label-error { color: var(--error); }
 .overlay-desc { font-size: 13px; color: var(--text); text-align: center; }
+.overlay-desc-pre { white-space: pre-line; }   /* többsoros hibaüzenet (\n) */
 .overlay-desc-dim { font-size: 13px; color: var(--text-dim); }
 .overlay-filename { font-size: 12px; color: #888; text-align: center; }
 .overlay-ok-btn { padding: 6px 15px; }

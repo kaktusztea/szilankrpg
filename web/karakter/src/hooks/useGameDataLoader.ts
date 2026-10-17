@@ -3,7 +3,7 @@ import { loadGameData } from '../engine/data-loader';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { validateKarakter, isValidKarakter, validateKarakterData } from '../engine/validate';
+import { validateKarakter, isValidKarakter, validateKarakterData, sémaVerzióHiba } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { writeSlots } from './slot-utils';
 
@@ -16,6 +16,8 @@ export function useGameDataLoader() {
   const [error, setError] = useState('');
   const [initialKarakter, setInitialKarakter] = useState<Karakter | null>(null);
   const [initialDirty, setInitialDirty] = useState(false);
+  /** Nem blokkoló indulási figyelmeztetés (pl. elavult sémaverziójú aktív karakter → üres karakterrel indul). */
+  const [initialWarning, setInitialWarning] = useState('');
 
   useEffect(() => {
     loadGameData().then(d => {
@@ -60,6 +62,13 @@ export function useGameDataLoader() {
         if (charData) {
           try {
             const parsed = JSON.parse(charData);
+            const vHiba = sémaVerzióHiba(parsed?.schema_version);
+            if (vHiba) {
+              // Nem blokkolunk: az üzenet overlay-ben, az app üres karakterrel indul (a régi slot a listában marad).
+              setInitialWarning(vHiba);
+              setInitialKarakter({ ...d.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', d.emptyKarakter.tsz) });
+              return;
+            }
             const v = validateKarakter(parsed);
             if (v.valid) {
               setInitialKarakter({ ...parsed, uid: parsed.uid || activeUid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [] });
@@ -78,5 +87,5 @@ export function useGameDataLoader() {
     }).catch(e => setError(`Betöltési hiba: ${String(e)}`));
   }, []);
 
-  return { data, error, initialKarakter, initialDirty };
+  return { data, error, initialKarakter, initialDirty, initialWarning };
 }

@@ -3,6 +3,7 @@
  * Encode: karakter → kompakt JSON → deflate → base64url
  * Decode: base64url → inflate → kompakt JSON → karakter
  */
+import { sémaVerzióHiba } from './validate';
 import { deflate, inflate } from 'pako';
 import type { Karakter, Fortely, FegyverPeldany } from './types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
@@ -213,7 +214,6 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
 // Public API
 // ============================================================
 
-const CURRENT_SCHEMA_VERSION = 3;   // 3: fortély/képzettség id + elem (2026-10-17)
 
 export function encodeKarakterUrl(karakter: Karakter): string {
   const compact = compactEncode(karakter);
@@ -239,8 +239,9 @@ export function decodeKarakterFromHash(hash: string): { karakter: Karakter } | {
     const json = new TextDecoder().decode(inflate(bytes));
     const compact: CompactKarakter = JSON.parse(json);
 
-    if (compact.sv !== CURRENT_SCHEMA_VERSION) {
-      return { error: 'Elavult karakter link (inkompatibilis verzió).' };
+    const vHiba = sémaVerzióHiba(compact.sv);
+    if (vHiba) {
+      return { error: vHiba };
     }
 
     const partial = compactDecode(compact);

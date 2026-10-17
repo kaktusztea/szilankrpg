@@ -5,6 +5,7 @@ import type { Karakter } from '../../engine/types';
 interface Props {
   activeUid: string | undefined;
   onLoad: (k: Karakter, undo: any[]) => void;
+  onLoadError?: (msg: string) => void;
   onDelete: (uid: string, név: string) => void;
   onShare: (uid: string) => void;
   onQrCode: (uid: string) => void;
@@ -21,7 +22,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function SlotListOverlay({ activeUid, onLoad, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+export function SlotListOverlay({ activeUid, onLoad, onLoadError, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt overlay-slots">
@@ -29,6 +30,7 @@ export function SlotListOverlay({ activeUid, onLoad, onDelete, onShare, onQrCode
         <SlotList
           activeUid={activeUid}
           onLoad={onLoad}
+          onLoadError={onLoadError}
           onDelete={onDelete}
           onShare={onShare}
           onQrCode={onQrCode}

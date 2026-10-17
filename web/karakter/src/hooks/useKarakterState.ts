@@ -6,7 +6,7 @@ import { useUndo } from './useUndo';
 export type { UndoEntry } from './useUndo';
 
 export function useKarakterState() {
-  const { data, error, initialKarakter, initialDirty } = useGameDataLoader();
+  const { data, error, initialKarakter, initialDirty, initialWarning } = useGameDataLoader();
 
   const [karakter, setKarakter] = useState<Karakter | null>(null);
   const [testMode, setTestMode] = useState(false);
@@ -51,7 +51,7 @@ export function useKarakterState() {
   }, []);
 
   return {
-    data, error, karakter, setKarakter,
+    data, error, initialWarning, karakter, setKarakter,
     testMode, setTestMode, isDirty, setIsDirty,
     viewingMode, setViewingMode,
     undoStack, setUndoStack, pushUndo, undoTo,

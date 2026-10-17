@@ -90,7 +90,7 @@ export function useOverlayHandlers({ state: s, set, data, karakter, isDirty, act
 
     const result = decodeKarakterFromHash(hash);
     if ('error' in result) {
-      set('toast', { msg: result.error, type: 'error' });
+      set('loadError', result.error);   // többsoros (pl. elavult sémaverzió) → hiba-overlay
       return;
     }
 

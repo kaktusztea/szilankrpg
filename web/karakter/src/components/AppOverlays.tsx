@@ -91,6 +91,7 @@ export function AppOverlays({
         <SlotListOverlay
           activeUid={karakter?.uid}
           onLoad={handleSlotLoad}
+          onLoadError={msg => set('loadError', msg)}
           onDelete={(uid, név) => set('slotDeleteTarget', { uid, név })}
           onShare={shareSlotUrl}
           onQrCode={handleQrCode}
