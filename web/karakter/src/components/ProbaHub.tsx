@@ -141,7 +141,7 @@ export function ProbaHub({ data, karakter, aktív }: Props) {
           fortélyBónuszByTul={fortélyBónuszByTul}
           fortélyBónuszByKép={fortélyBónuszByKép}
           próbaEnyhítésekByKép={próbaEnyhítésekByKép}
-          onClose={() => setCél(null)}
+          onClose={() => { setCél(null); setHubNyitva(false); }}
         />
       )}
     </>

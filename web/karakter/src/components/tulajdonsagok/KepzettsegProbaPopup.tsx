@@ -158,9 +158,10 @@ export function KepzettsegProbaPopup({
   const vanEredmény = d.vanEredmény;
 
 
-  // Escape: ha belső picker nyitva → azt zárjuk, ne a teljes popup-ot.
+  // Escape / mellékattintás: belső picker nyitva → azt zárjuk. DE ha már megtörtént a dobás
+  // (vanEredmény), a flow véget ért → mindig a teljes popup záruljon (ne térjen vissza pickerbe).
   const handleOuterClose = () => {
-    if (openPicker !== null) { setOpenPicker(null); return; }
+    if (!vanEredmény && openPicker !== null) { setOpenPicker(null); return; }
     onClose();
   };
 
