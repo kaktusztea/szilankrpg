@@ -1,51 +1,14 @@
+import type { ComponentProps } from 'react';
 import { OverlayPortal } from './OverlayPortal';
 import { SlotList } from '../SlotList';
-import type { Karakter } from '../../engine/types';
 
-interface Props {
-  activeUid: string | undefined;
-  onLoad: (k: Karakter, undo: any[]) => void;
-  onLoadError?: (msg: string) => void;
-  onDelete: (uid: string, név: string) => void;
-  onShare: (uid: string) => void;
-  onQrCode: (uid: string) => void;
-  onSaveFile: (uid: string) => void;
-  onShareFile: (uid: string) => void;
-  onDuplicate: (uid: string) => void;
-  onFileLoad: () => void;
-  onClipboardImport: (text: string) => void;
-  onNew: () => void;
-  onSave: () => void;
-  newDisabled: boolean;
-  onTest: () => void;
-  onFullscreenHint: () => void;
-  onClose: () => void;
-}
-
-export function SlotListOverlay({ activeUid, onLoad, onLoadError, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+/** Karakterek hub overlay: a SlotList portálban, címmel (a propok 1:1 a SlotList-éi). */
+export function SlotListOverlay(props: ComponentProps<typeof SlotList>) {
   return (
-    <OverlayPortal dismissible onClose={onClose}>
+    <OverlayPortal dismissible onClose={props.onClose}>
       <div className="kep-prompt overlay-slots">
         <label className="overlay-label-center">Karakterek</label>
-        <SlotList
-          activeUid={activeUid}
-          onLoad={onLoad}
-          onLoadError={onLoadError}
-          onDelete={onDelete}
-          onShare={onShare}
-          onQrCode={onQrCode}
-          onSaveFile={onSaveFile}
-          onShareFile={onShareFile}
-          onDuplicate={onDuplicate}
-          onFileLoad={onFileLoad}
-          onClipboardImport={onClipboardImport}
-          onNew={onNew}
-          onSave={onSave}
-          newDisabled={newDisabled}
-          onTest={onTest}
-          onFullscreenHint={onFullscreenHint}
-          onClose={onClose}
-        />
+        <SlotList {...props} />
       </div>
     </OverlayPortal>
   );

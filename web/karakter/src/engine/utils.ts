@@ -1,6 +1,6 @@
 import type { FegyverAlap, Session, Karakter, Kepzettseg } from './types';
 import type { GameData } from './data-loader';
-import { képzKulcs, képzettségNév, HARCMODOR_ID } from './azonosito';
+import { képzKulcs, képzettségNév, képzettségSzint, HARCMODOR_ID } from './azonosito';
 
 /** Fegyver definíció keresése név alapján (case-insensitive) */
 export function lookupFegyver(fegyverek: FegyverAlap[], alap: string): FegyverAlap | undefined {
@@ -8,19 +8,9 @@ export function lookupFegyver(fegyverek: FegyverAlap[], alap: string): FegyverAl
   return fegyverek.find(d => d.név.toLowerCase() === lower);
 }
 
-/** Képzettség szintje hivatkozási kulcs alapján ("lexikum", "harcmodor/kardvívás"), vagy 0 ha nincs felvéve. */
-export function képzettségSzint(karakter: Karakter, kulcs: string): number {
-  return karakter.képzettségek.find(k => képzKulcs(k) === kulcs)?.szint ?? 0;
-}
-
-/** Fortély foka id alapján, vagy 0 ha nincs felvéve. */
-export function fortélyFok(karakter: Karakter, id: string): number {
-  return karakter.fortélyok.find(f => f.id === id)?.fok ?? 0;
-}
-
 /** Több közelharci harcmodor szintjének összege; `elemek`: harcmodor-elemek (pl. "kardvívás"). */
 export function harcmodorÖsszeg(karakter: Karakter, elemek: string[]): number {
-  return elemek.reduce((s, e) => s + képzettségSzint(karakter, `${HARCMODOR_ID}/${e}`), 0);
+  return elemek.reduce((s, e) => s + képzettségSzint(karakter.képzettségek, `${HARCMODOR_ID}/${e}`), 0);
 }
 
 /** Érték szorítása [min, max] tartományba. */

@@ -1,10 +1,14 @@
 /** UI layout constants (not game-rule values - those live in konstansok.yaml) */
 
 export const MAX_FORTÉLY_FOK = 3;
+/** Fortély-fok választó értékei (0 = nincs). */
+export const FORTÉLY_FOK_VALUES = Array.from({ length: MAX_FORTÉLY_FOK + 1 }, (_, i) => i);
 // ponytail: a konstansok.arányok.képzettség_max_szint (=15) UI-oldali másolata. A picker
 // grid modul-szintű konstanst vár, a data layer async töltődik → nem köthető be triviálisan.
 // Ceiling: ha a yaml értéke változik, ezt kézzel kell követni. Upgrade: data-driven grid.
 export const MAX_KÉPZETTSÉG_SZINT = 15;
+/** Ettől a szinttől a képzettség-szám kiemelt színű (kep-szint-high). */
+export const KÉPZETTSÉG_SZINT_MAGAS = 9;
 export const SZINT_VALUES = Array.from({ length: MAX_KÉPZETTSÉG_SZINT }, (_, i) => i + 1);
 export const MAX_KARAKTER_DB = 16;
 export const MAX_NÉV = 40;

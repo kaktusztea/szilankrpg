@@ -5,12 +5,12 @@ import { KepzettsegDetails } from '../KepzettsegDetails';
 import { GridPickerPopup } from './popups';
 import { MdLink } from '../MdLink';
 import { KepzettsegProbaPopup } from './KepzettsegProbaPopup';
-import { DELETE_BTN_TAP_ZONE_PX, SZINT_VALUES } from '../../ui-constants';
+import { DELETE_BTN_TAP_ZONE_PX, SZINT_VALUES, KÉPZETTSÉG_SZINT_MAGAS } from '../../ui-constants';
 
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
   kiterjesztesek, infoOpen, onInfoToggle,
-  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések, fortélyBónuszok, kepzettsegDefs, felszEH = 0, felszNemHarcol = false
+  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések, fortélyBónuszok, kepzettsegDefs, felszEH = 0, felszNemHarcol = false, próba
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
@@ -43,7 +43,7 @@ export function KepzettsegRow({
           {!gameMode && (
             <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className={`kep-szint${slot.szint === 0 ? ' kep-szint-zero' : slot.szint >= 9 ? ' kep-szint-high' : ''}${overLimit ? ' kep-over' : ''}`}>
+          <span className={`kep-szint${slot.szint === 0 ? ' kep-szint-zero' : slot.szint >= KÉPZETTSÉG_SZINT_MAGAS ? ' kep-szint-high' : ''}${overLimit ? ' kep-over' : ''}`}>
             {slot.szint}
           </span>
         </span>
@@ -75,6 +75,7 @@ export function KepzettsegRow({
           dobásKomment={def.dobás_komment || []}
           felszEH={felszEH}
           felszNemHarcol={felszNemHarcol}
+          próba={próba}
           onClose={() => setShowProba(false)}
         />
       )}

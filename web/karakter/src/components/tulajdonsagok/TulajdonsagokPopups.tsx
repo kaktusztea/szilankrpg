@@ -6,7 +6,7 @@ import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { KorPicker } from './KorPicker';
 import { OverlayPortal } from '../overlays/OverlayPortal';
 import { getDisplayName } from './helpers';
-import { SZINT_VALUES } from '../../ui-constants';
+import { SZINT_VALUES, MAX_FREETEXT_NÉV, MAX_NÉV, MAX_BECENÉV } from '../../ui-constants';
 
 interface PromptState { alapId: string }
 interface DeleteTarget { idx: number; név: string; szint: number }
@@ -70,7 +70,7 @@ export function TulajdonsagokPopups({
         onChange={v => close({ promptValue: v })}
         onConfirm={onConfirmPrompt}
         onCancel={() => close({ promptState: null })}
-        maxLength={20}
+        maxLength={MAX_FREETEXT_NÉV}
         disabled={!p.promptValue.trim()}
       />
     )}
@@ -116,7 +116,7 @@ export function TulajdonsagokPopups({
         onChange={v => close({ tempNév: v })}
         onConfirm={() => { setNév(p.tempNév.trim()); close({ editingNév: false }); }}
         onCancel={() => close({ editingNév: false })}
-        maxLength={40}
+        maxLength={MAX_NÉV}
         disabled={!p.tempNév.trim()}
       />
     )}
@@ -124,12 +124,12 @@ export function TulajdonsagokPopups({
     {/* Becenév szerkesztő */}
     {p.editingBecenév && (
       <TextInputPopup
-        label="Becenév (max 12)"
+        label={`Becenév (max ${MAX_BECENÉV})`}
         value={p.tempBecenév}
         onChange={v => close({ tempBecenév: v })}
         onConfirm={() => { setBecenév(p.tempBecenév.trim()); close({ editingBecenév: false }); }}
         onCancel={() => close({ editingBecenév: false })}
-        maxLength={12}
+        maxLength={MAX_BECENÉV}
       />
     )}
 
@@ -160,7 +160,7 @@ export function TulajdonsagokPopups({
         onChange={v => close({ tempJátékos: v })}
         onConfirm={() => { setJátékos(p.tempJátékos); close({ editingJátékos: false }); }}
         onCancel={() => close({ editingJátékos: false })}
-        maxLength={40}
+        maxLength={MAX_NÉV}
       />
     )}
   </>);

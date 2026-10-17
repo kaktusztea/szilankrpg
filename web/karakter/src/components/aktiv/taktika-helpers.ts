@@ -1,6 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { lookupFegyver, képzettségSzint, fortélyFok } from '../../engine/utils';
+import { lookupFegyver } from '../../engine/utils';
+import { képzettségSzint, fortélyFok } from '../../engine/azonosito';
 
 /** Extrapolált fokDef interpoláció: ha a keresett fok nincs a fokok listában de van fortély_bővítés. */
 export function interpolateFokDef<T extends { fok: number }>(fokok: T[], fok: number, hasBővítés: boolean): T | undefined {
@@ -45,7 +46,7 @@ export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): an
   // Fortély-based expansion (e.g. Támadás erőből)
   if (def.fortély_bővítés) {
     const fb = def.fortély_bővítés;
-    const fbFok = fortélyFok(karakter, fb.fortély);
+    const fbFok = fortélyFok(karakter.fortélyok, fb.fortély);
     const extraCount = fbFok * fb.extra_fokok_per_fok;
     const utolsó = def.fokok[def.fokok.length - 1];
     const perFok: Record<string, number> = {};
@@ -68,7 +69,7 @@ export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): an
       const fp = karakter.fegyverek[karakter.session?.aktív_fegyver_index ?? -1];
       const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
       const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'közelharc') : 'közelharc';
-      const harcmodorSzint = képzettségSzint(karakter, `harcmodor/${harcmodorNév}`);
+      const harcmodorSzint = képzettségSzint(karakter.képzettségek, `harcmodor/${harcmodorNév}`);
 
       // Find highest applicable absolute max_fok
       let maxFok = 0;

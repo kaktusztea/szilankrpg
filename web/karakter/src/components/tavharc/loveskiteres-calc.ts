@@ -1,5 +1,5 @@
 import type { Karakter, TavfegyverAlap } from '../../engine/types';
-import { képzettségSzint } from '../../engine/utils';
+import { képzettségSzint } from '../../engine/azonosito';
 
 // Lövéskitérés (védekező Akrobatika próba, md/073 + kategóriák md/078) + range-gát segédek.
 // Kiemelve a tavharc/helpers.ts-ből (2026-09-30 refaktor, modularizáció).
@@ -48,7 +48,7 @@ export function calcLöveskitérésCélszám(
 
 /** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */
 export function calcAkrobatikaÉrték(k: Karakter): number {
-  const akrobatika = képzettségSzint(k, 'akrobatika');
+  const akrobatika = képzettségSzint(k.képzettségek, 'akrobatika');
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const fejlesztés = k.fortélyok.some(f => f.id === 'lövéskitérés_fejlesztése') ? 2 : 0;
   return akrobatika + gyorsaság + fejlesztés;

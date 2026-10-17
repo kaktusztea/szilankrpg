@@ -73,20 +73,19 @@ function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: P
   const disabled = !hasMásikFegyverfogás(data, karakter, session);
 
   return (
-    <div className={`aktiv-field-btn${disabled ? ' disabled' : ''}`}
-      onClick={() => { if (!disabled) onShowFegyverfogás(); }}>
+    <button type="button" className={`aktiv-field-btn${disabled ? ' disabled' : ''}`} disabled={disabled} onClick={onShowFegyverfogás}>
       <span className="aktiv-field-label">Fegyverfogás</span>
       <strong>{aktívNév}</strong>
-    </div>
+    </button>
   );
 }
 
 function PáncélToggle({ session, setSession, pushUndo }: Pick<HarcBaseProps, 'session' | 'setSession' | 'pushUndo'>) {
   return (
-    <div className={`aktiv-field-btn aktiv-field-toggle${session.aktív_páncél ? ' on' : ''}`}
+    <button type="button" className={`aktiv-field-btn aktiv-field-toggle${session.aktív_páncél ? ' on' : ''}`} aria-pressed={session.aktív_páncél}
       onClick={() => { const next = { ...session, aktív_páncél: !session.aktív_páncél }; pushUndo(`Páncél: ${next.aktív_páncél ? 'Igen' : 'Nem'}`, [{ field: 'session', prev: session, ckey: 'aktív_páncél' }], next); setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél })); }}>
       <span className="aktiv-field-label">Páncél viselve</span>
       <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
-    </div>
+    </button>
   );
 }

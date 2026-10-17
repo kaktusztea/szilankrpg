@@ -1,13 +1,13 @@
-import type { Kepzettseg } from '../../engine/types';
-import type { KepzettsegDef } from '../../engine/data-loader';
 import { useState } from 'react';
-import type { Fortely } from '../../engine/types';
-import type { FortelySummary } from '../../engine/data-loader';
+import type { Kepzettseg, Fortely } from '../../engine/types';
+import type { KepzettsegDef, FortelySummary } from '../../engine/data-loader';
 import { OverlayPortal } from '../overlays/OverlayPortal';
 import { FortelyDetails } from '../FortelyDetails';
 import { MdLink } from '../MdLink';
 import { EGYEDI_FORTELY_SENTINEL, MAX_AZONOS_FORTÉLY } from '../../ui-constants';
 import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
+import { calcNyelvPontKeret, nyelvPontHasznált, ingyenesFortélyDb } from './helpers';
+import { kattinthatóProps } from '../a11y';
 
 interface Props {
   available: FortelySummary[];
@@ -68,7 +68,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
 
             return (
               <div key={d.név} className={`fort-picker-item-wrap${disabled ? ' fort-picker-disabled' : ''}`}>
-                <div className="fort-picker-item-top" onClick={() => !disabled && handlePick(d.id)}>
+                <div className="fort-picker-item-top" {...kattinthatóProps(() => handlePick(d.id), disabled)}>
                   <span className="fort-picker-item-name">
                     {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
                     {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
@@ -76,6 +76,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                   {d.md_fájl && <span className="md-link-wrap" onClick={e => e.stopPropagation()}><MdLink mdFájl={d.md_fájl} /></span>}
                   {hasDetails && (
                     <button
+                      type="button"
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
                       onClick={e => { e.stopPropagation(); toggleItem(d.név); }}
                       aria-label="Részletek"
@@ -90,7 +91,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
           })}
           {csoport === 'szabad' && (
             <div className="fort-picker-item-wrap">
-              <div className="fort-picker-item-top" onClick={() => handlePick(EGYEDI_FORTELY_SENTINEL)}>
+              <div className="fort-picker-item-top" {...kattinthatóProps(() => handlePick(EGYEDI_FORTELY_SENTINEL))}>
                 <span className="fort-picker-item-name">⭐ Egyedi fortély</span>
               </div>
             </div>
@@ -113,7 +114,7 @@ function buildSuffix(
     const maradt = Math.max(0, tsz - slotok.filter(s => !s.kiérdemelt).length);
     if (maradt > 0) parts.push(`●${maradt}`);
   } else if (d.ingyenes_perszint > 0) {
-    const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
+    const ingyenesDb = ingyenesFortélyDb(d, tsz);
     const maradt = Math.max(0, ingyenesDb - fortélyok.filter(f => f.id === d.id && !f.kiérdemelt).length);
     if (maradt > 0) parts.push(`●${maradt}`);
   } else if (d.kp_perfok < 0) {
@@ -129,10 +130,7 @@ function buildSuffix(
 }
 
 function calcNyelvMaradt(fortélyok: Fortely[], nyelvtanulásSzint: number): number {
-  const keret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
-  const used = fortélyok.filter(f => f.id === 'nyelvismeret' && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0)
-    + fortélyok.filter(f => f.id === 'nyelvismeret' && f.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
-  return keret - used;
+  return calcNyelvPontKeret(nyelvtanulásSzint) - nyelvPontHasznált(fortélyok);
 }
 
 function isOptionDisabled(

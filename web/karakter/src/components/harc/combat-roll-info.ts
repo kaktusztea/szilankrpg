@@ -98,79 +98,71 @@ function collectFortélyHatások(
 // ─── Public API ──────────────────────────────────────────────────────────────
 
 /**
- * Collect effects for TÉ dobás + Sebzésdobás (Harc fül).
- *
- * `aktívFegyver` opcionális: ha megadva és a karakter Ereje nem éri el a fegyver
- * `erő_követelmény`-ét (md/064_02_06 "Fegyverek Erő követelménye"), Hátrány-1 kerül
- * a Támadó (TÉ) dobásra.
+ * Az aktív források (helyzet → taktika → státusz → fortély) dobás-hatásai a `célFilter` céljaira, forrás-sorrendben,
+ * + a taktikák SP-bónuszai és megjegyzései (a hívó szűri cél szerint).
  */
-export function collectDobásInfo(
-  session: Session, karakter: Karakter, data: GameData, aktívFegyver?: { erő_követelmény: number; név: string },
-): DobásInfo {
-  const célFilter = new Set(['té_dobás', 'sebzésdobás']);
-  const téHatások: DobásHatás[] = [];
-  const sebzésHatások: DobásHatás[] = [];
+function collectSessionHatások(session: Session, karakter: Karakter, data: GameData, célFilter: Set<string>) {
+  const hatások: DobásHatás[] = [];
   const spBónuszok: SpBónusz[] = [];
-  const téMegjegyzések: { forrás: string; szöveg: string }[] = [];
-  const sebzésMegjegyzések: { forrás: string; szöveg: string }[] = [];
-  const aktívFeltételek = buildAktívFeltételekSet(session, data);
+  const taktikaMegjegyzések: { forrás: string; szöveg: string }[] = [];
 
   // 1. Harci helyzetek
   for (const név of session.aktív_helyzetek) {
     const def = (data.harciHelyzetek as HarciHelyzetEntry[]).find(h => h.név === név);
-    if (!def?.hatások) continue;
-    for (const e of extractHatások(def.hatások, név, célFilter)) {
-      (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
-    }
+    if (def?.hatások) hatások.push(...extractHatások(def.hatások, név, célFilter));
   }
 
-  // 2. Taktikák
+  // 2. Taktikák (fokozatosnál a választott fok)
   for (const at of session.aktív_taktikák) {
     const def = (data.taktikak as TaktikaEntry[]).find(t => t.név === at.név);
     if (!def) continue;
-    if (def.megjegyzés) {
-      if (/támadódobás/i.test(def.megjegyzés)) téMegjegyzések.push({ forrás: at.név, szöveg: def.megjegyzés });
-      else if (/sebz/i.test(def.megjegyzés)) sebzésMegjegyzések.push({ forrás: at.név, szöveg: def.megjegyzés });
-    }
+    if (def.megjegyzés) taktikaMegjegyzések.push({ forrás: at.név, szöveg: def.megjegyzés });
     if (def.fokozatos && def.fokok) {
       const fokDef = def.fokok.find(f => f.fok === (at.fok ?? 1));
-      if (fokDef) {
-        if (fokDef.SP) spBónuszok.push({ forrás: `${at.név} (${fokDef.fok})`, érték: fokDef.SP });
-        for (const e of extractHatások(fokDef.hatások, `${at.név} (${fokDef.fok})`, célFilter)) {
-          (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
-        }
-      }
+      if (!fokDef) continue;
+      const forrás = `${at.név} (${fokDef.fok})`;
+      if (fokDef.SP) spBónuszok.push({ forrás, érték: fokDef.SP });
+      hatások.push(...extractHatások(fokDef.hatások, forrás, célFilter));
     } else {
       if (def.módosítók?.SP) spBónuszok.push({ forrás: at.név, érték: def.módosítók.SP });
-      for (const e of extractHatások(def.hatások, at.név, célFilter)) {
-        (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
-      }
+      hatások.push(...extractHatások(def.hatások, at.név, célFilter));
     }
   }
 
-  // 3. Státuszok
+  // 3. Státuszok ("Név (fok)")
   for (const entry of session.aktív_státuszok) {
     const match = entry.match(/^(.+?)\s*\((\d+)\)$/);
     if (!match) continue;
     const [, név, fokStr] = match;
-    const fok = parseInt(fokStr);
     const def = (data.statuszok as { név: string; fokok: { fok: number; hatások?: StatuszHatas[] }[] }[]).find(s => s.név === név);
-    if (!def) continue;
-    const fokDef = def.fokok.find(f => f.fok === fok);
-    if (!fokDef?.hatások) continue;
-    for (const e of extractHatások(fokDef.hatások, entry, célFilter)) {
-      (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
-    }
+    const fokDef = def?.fokok.find(f => f.fok === parseInt(fokStr, 10));
+    if (fokDef?.hatások) hatások.push(...extractHatások(fokDef.hatások, entry, célFilter));
   }
 
   // 4. Fortélyok
-  const fort = collectFortélyHatások(karakter, data, aktívFeltételek, célFilter);
-  for (const e of fort.hatások) (e.cél === 'té_dobás' ? téHatások : sebzésHatások).push(e);
+  const fort = collectFortélyHatások(karakter, data, buildAktívFeltételekSet(session, data), célFilter);
+  hatások.push(...fort.hatások);
   spBónuszok.push(...fort.spBónuszok);
 
-  // 5. Fegyver Erő-követelmény (md/064_02_06 "Fegyverek Erő követelménye"):
-  // ha a karakter Ereje nem éri el a fegyver súly-kategóriájának követelményét, Hátrány a Támadó dobásra
-  // (a hátrány mértéke data layer - konstansok.yaml → fegyver_erő_követelmény_hátrány).
+  return { hatások, spBónuszok, taktikaMegjegyzések };
+}
+
+/**
+ * Collect effects for TÉ dobás + Sebzésdobás (Harc fül).
+ *
+ * `aktívFegyver` opcionális: ha megadva és a karakter Ereje nem éri el a fegyver
+ * `erő_követelmény`-ét (md/064_02_06 "Fegyverek Erő követelménye"), Hátrány kerül
+ * a Támadó (TÉ) dobásra (mértéke: konstansok.yaml → fegyver_erő_követelmény_hátrány).
+ */
+export function collectDobásInfo(
+  session: Session, karakter: Karakter, data: GameData, aktívFegyver?: { erő_követelmény: number; név: string },
+): DobásInfo {
+  const { hatások, spBónuszok, taktikaMegjegyzések } = collectSessionHatások(session, karakter, data, new Set(['té_dobás', 'sebzésdobás']));
+  const téHatások = hatások.filter(e => e.cél === 'té_dobás');
+  const sebzésHatások = hatások.filter(e => e.cél !== 'té_dobás');
+  const téMegjegyzések = taktikaMegjegyzések.filter(m => /támadódobás/i.test(m.szöveg));
+  const sebzésMegjegyzések = taktikaMegjegyzések.filter(m => !/támadódobás/i.test(m.szöveg) && /sebz/i.test(m.szöveg));
+
   if (aktívFegyver && karakter.tulajdonságok.erő < aktívFegyver.erő_követelmény) {
     téHatások.push({
       forrás: `${aktívFegyver.név}\n(Erő hiány)`, cél: 'té_dobás', operátor: 'hátrány',
@@ -181,55 +173,10 @@ export function collectDobásInfo(
   return { téHatások, sebzésHatások, spBónuszok, téMegjegyzések, sebzésMegjegyzések };
 }
 
-/**
- * Collect effects for CÉ dobás (Távharc fül).
- */
+/** Collect effects for CÉ dobás (Távharc fül). */
 export function collectCéDobásInfo(session: Session, karakter: Karakter, data: GameData): CéDobásInfo {
-  const célFilter = new Set(['cé_dobás']);
-  const céHatások: DobásHatás[] = [];
-  const céMegjegyzések: { forrás: string; szöveg: string }[] = [];
-  const aktívFeltételek = buildAktívFeltételekSet(session, data);
-
-  // 1. Harci helyzetek
-  for (const név of session.aktív_helyzetek) {
-    const def = (data.harciHelyzetek as HarciHelyzetEntry[]).find(h => h.név === név);
-    if (!def?.hatások) continue;
-    céHatások.push(...extractHatások(def.hatások, név, célFilter));
-  }
-
-  // 2. Taktikák
-  for (const at of session.aktív_taktikák) {
-    const def = (data.taktikak as TaktikaEntry[]).find(t => t.név === at.név);
-    if (!def) continue;
-    if (def.megjegyzés && /cé|célz/i.test(def.megjegyzés)) {
-      céMegjegyzések.push({ forrás: at.név, szöveg: def.megjegyzés });
-    }
-    if (def.fokozatos && def.fokok) {
-      const fokDef = def.fokok.find(f => f.fok === (at.fok ?? 1));
-      if (fokDef) céHatások.push(...extractHatások(fokDef.hatások, `${at.név} (${fokDef.fok})`, célFilter));
-    } else {
-      céHatások.push(...extractHatások(def.hatások, at.név, célFilter));
-    }
-  }
-
-  // 3. Státuszok
-  for (const entry of session.aktív_státuszok) {
-    const match = entry.match(/^(.+?)\s*\((\d+)\)$/);
-    if (!match) continue;
-    const [, név, fokStr] = match;
-    const fok = parseInt(fokStr);
-    const def = (data.statuszok as { név: string; fokok: { fok: number; hatások?: StatuszHatas[] }[] }[]).find(s => s.név === név);
-    if (!def) continue;
-    const fokDef = def.fokok.find(f => f.fok === fok);
-    if (!fokDef?.hatások) continue;
-    céHatások.push(...extractHatások(fokDef.hatások, entry, célFilter));
-  }
-
-  // 4. Fortélyok
-  const fort = collectFortélyHatások(karakter, data, aktívFeltételek, célFilter);
-  céHatások.push(...fort.hatások);
-
-  return { céHatások, céMegjegyzések };
+  const { hatások, taktikaMegjegyzések } = collectSessionHatások(session, karakter, data, new Set(['cé_dobás']));
+  return { céHatások: hatások, céMegjegyzések: taktikaMegjegyzések.filter(m => /cé|célz/i.test(m.szöveg)) };
 }
 
 /** Sum the net Előny/Hátrány level for a given set of effects. */

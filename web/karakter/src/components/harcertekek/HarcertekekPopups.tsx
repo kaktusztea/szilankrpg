@@ -1,5 +1,6 @@
 import type { Kepzettseg } from '../../engine/types';
-import { képzKulcs } from '../../engine/azonosito';
+import { FORTÉLY_FOK_VALUES } from '../../ui-constants';
+import { képzKulcs, fortélyFok } from '../../engine/azonosito';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from './PopupOverlay';
@@ -68,7 +69,7 @@ export function Popups({
         <PopupOverlay onClose={() => onClose('mfTarget')}>
           <label>Mesterfegyver fok</label>
           <FokRadios
-            values={[0, 1, 2, 3]}
+            values={FORTÉLY_FOK_VALUES}
             current={getMfFok(data, k, k.fegyverek[mfTarget]?.alap ?? '')}
             onSelect={n => { setMfFok(k.fegyverek[mfTarget]?.alap ?? '', n); onClose('mfTarget'); }}
           />
@@ -93,7 +94,7 @@ export function Popups({
           fémalapanyagok={konstansok.páncél_fémalapanyagok}
           kidolgozottságOpciók={Object.keys(konstansok.páncél_csatolt_tag_mgt.hajlékonyvért_nem_fém)}
           méretOpciók={(konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[]).map(m => m.fokozat)}
-          merevvertFok={k.fortélyok.find(f => f.id === 'merevvértviselet')?.fok ?? 0}
+          merevvertFok={fortélyFok(k.fortélyok, 'merevvértviselet')}
           onUpdate={patch => { updatePancel(patch); onClose('pancelPopup'); }}
           onMerevvert={fok => { setMerevvertFok(fok); onClose('pancelPopup'); }}
         />
@@ -116,8 +117,8 @@ export function Popups({
           )}
           {pajzsPopup === 'pajzshasználat' && (
             <FokRadios
-              values={[0, 1, 2, 3]}
-              current={k.fortélyok.find(f => f.id === 'pajzshasználat')?.fok ?? 0}
+              values={FORTÉLY_FOK_VALUES}
+              current={fortélyFok(k.fortélyok, 'pajzshasználat')}
               onSelect={n => { setPajzsFok(n); onClose('pajzsPopup'); }}
             />
           )}

@@ -1,5 +1,6 @@
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
+import { KÉPZETTSÉG_SZINT_MAGAS } from '../../ui-constants';
 import { KepzettsegDetails } from '../KepzettsegDetails';
 
 interface MisztikusRowProps {
@@ -21,7 +22,7 @@ interface MisztikusRowProps {
 
 export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning = false, gameMode, infoOpen, def, kit, fortélyFokok, tulajdonságok: _tulajdonságok, onEdit, onDelete, onInfoToggle }: MisztikusRowProps) {
   const displayName = név.includes(':') ? név.split(':')[1].trim() : név;
-  const szintClass = `kep-szint${szint > maxSzint ? ' kep-over' : szint >= 9 ? ' kep-szint-high' : ''}`;
+  const szintClass = `kep-szint${szint > maxSzint ? ' kep-over' : szint >= KÉPZETTSÉG_SZINT_MAGAS ? ' kep-szint-high' : ''}`;
 
   return (
     <div className="kep-row-wrapper">

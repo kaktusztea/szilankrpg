@@ -1,7 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
-import { lookupFegyver, képzettségSzint } from '../../engine/utils';
-import { elsődlegesMód } from '../harc/fegyver-calc';
+import { lookupFegyver } from '../../engine/utils';
+import { harcFejlécÉrtékek } from '../harc/harc-fejlec-calc';
 
 // Taktika megkötés-kiértékelés (session/fegyver/harcmodor/támadás/távfegyver + kombó).
 // Kiemelve a taktika-helpers.ts-ből (2026-09-30 refaktor, modularizáció).
@@ -37,12 +37,8 @@ export function isTaktikaAllowed(
         }
       }
       if (mk.típus === 'támadások' && mk.mód === 'min') {
-        const fp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
-        const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
-        const sebesség = fd ? (elsődlegesMód(fd).Sebesség ?? 6) : 6;
-        const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'közelharc') : 'közelharc';
-        const harcmodorSzint = képzettségSzint(karakter, `harcmodor/${harcmodorNév}`);
-        const támadások = 1 + Math.floor((harcmodorSzint * 2) / sebesség);
+        // A Harc fül aktív fegyverének támadásszáma (rules.json fegyver_támadások: harckeret / sebesség), kétkezes/fogás szerint.
+        const támadások = harcFejlécÉrtékek(data, karakter, session).ctx?.result.támadások ?? 1;
         if (támadások < (mk.érték as number)) return false;
       }
       if (mk.típus === 'távfegyver_kategória' && mk.mód === 'szükséges') {

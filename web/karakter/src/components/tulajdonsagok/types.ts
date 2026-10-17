@@ -1,5 +1,5 @@
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
+import type { PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok, Karakter, Kepzettseg } from '../../engine/types';
 
 /** A karakter egy képzettsége (engine/types Kepzettseg). */
@@ -61,4 +61,6 @@ export interface KepzettsegRowProps {
   /** Felszerelés-túlterhelés Hátrány (Fizikai csoportnál), különben 0/false. */
   felszEH?: number;
   felszNemHarcol?: boolean;
+  /** konstansok.próba - a Képzettségpróba popuphoz. */
+  próba: PróbaKonstansok;
 }

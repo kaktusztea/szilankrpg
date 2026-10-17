@@ -1,52 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { nextDuplicateName, nextDuplicateNamePair, generateIdLeíró } from './file-ops';
-
-describe('nextDuplicateName', () => {
-  it('first duplicate of a base name → 2', () => {
-    expect(nextDuplicateName('Példa', ['Példa'])).toBe('Példa 2');
-  });
-
-  it('picks max existing N + 1 when duplicating the base again', () => {
-    // "Példa" and "Példa 2" already exist → duplicating "Példa" must yield 3, not 2
-    expect(nextDuplicateName('Példa', ['Példa', 'Példa 2'])).toBe('Példa 3');
-  });
-
-  it('duplicating an already-suffixed name uses the same base', () => {
-    expect(nextDuplicateName('Példa 2', ['Példa', 'Példa 2'])).toBe('Példa 3');
-  });
-
-  it('handles gaps / highest wins', () => {
-    expect(nextDuplicateName('Példa', ['Példa', 'Példa 5'])).toBe('Példa 6');
-  });
-
-  it('base need not exist; only suffixed variants present', () => {
-    expect(nextDuplicateName('Példa 3', ['Példa 3'])).toBe('Példa 4');
-  });
-
-  it('does not match a different base', () => {
-    expect(nextDuplicateName('Példa', ['Példabeszéd 9'])).toBe('Példa 2');
-  });
-
-  it('truncates the base so " N" fits within maxLen', () => {
-    // 12-char limit (becenév): base "Hosszúbecen" (11) + " 2" (2) = 13 > 12 → trim base to 10
-    expect(nextDuplicateName('Hosszúbecen', ['Hosszúbecen'], 12)).toBe('Hosszúbece 2');
-    expect('Hosszúbece 2'.length).toBe(12);
-  });
-
-  it('trims trailing whitespace left after truncation', () => {
-    // Cutting "Abcdefghi Jk" (maxLen 12, " 2" = 2) to 10 chars → "Abcdefghi " → trimEnd → "Abcdefghi"
-    expect(nextDuplicateName('Abcdefghi Jk', [], 12)).toBe('Abcdefghi 2');
-  });
-
-  it('no truncation when the name already fits', () => {
-    expect(nextDuplicateName('Rövid', ['Rövid'], 12)).toBe('Rövid 2');
-  });
-
-  it('higher N takes more room, truncating the base further', () => {
-    // suffix " 10" is 3 chars → base "Hosszúbecen" trimmed to 9
-    expect(nextDuplicateName('Hosszúbecen', ['Hosszúbecen 9'], 12)).toBe('Hosszúbec 10');
-  });
-});
+import { nextDuplicateNamePair, generateIdLeíró } from './file-ops';
 
 describe('nextDuplicateNamePair - név/becenév szinkron verziózás', () => {
   it('egyik sincs verziózva → mindkettő 2', () => {

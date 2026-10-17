@@ -248,20 +248,6 @@ export interface FortelyFok {
   módosítók: Modosito[] | '';
 }
 
-export interface FortelyDef {
-  schema_version: number;
-  név: string;
-  névkomment: string;
-  maxfok: number;
-  többszörösség: { spec_típus: string; spec_lista: string[] };
-  csoport: string;
-  leírások: { text: string }[];
-  megjegyzések: { text: string }[];
-  kiterjeszti: { normál: string[]; erős: string[] };
-  fokok: FortelyFok[];
-  todo: { text: string }[];
-}
-
 // ============================================================
 // Fegyver (alaptípus, fegyverek_v2.json - Fegyvergenerátor v2)
 // ============================================================

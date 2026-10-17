@@ -34,8 +34,10 @@ export function előnyHátrányLabel(szint: number): string {
 }
 
 /** Az Előny/Hátrány szint értelmezési tartománya (a szabály szerint legfeljebb ±2). */
-const EH_SZINT_MIN = -2;
-const EH_SZINT_MAX = 2;
+// ponytail: a konstansok.yaml próba.előny_hátrány_max szinkron másolata (a kocka-réteg adat nélkül, szinkron fut);
+// az egyezést a dice.konstans.test.ts őrzi.
+export const EH_SZINT_MAX = 2;
+export const EH_SZINT_MIN = -EH_SZINT_MAX;
 
 /** Előny/Hátrány szint a [-2, +2] tartományra szorítva - a kézi `Math.max(-2, Math.min(2, x))` helyett. */
 export function clampEHSzint(szint: number): number {

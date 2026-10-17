@@ -128,6 +128,7 @@ kp-calc.ts                 KP bontás kalkuláció (calcKpDetails - reactive eng
 karakter-setters.ts        Karakter mező-setter factory-k (undo-wrapped)
 fegyver-groups.ts          Fegyver kategória-csoportosítás (dropdown rendezés)
 formatters.tsx             Szöveg-formázók (fmtCode, md-inline → ReactNode)
+a11y.ts                    `kattinthatóProps`: nem-<button> kattintható elem (gomb a sorban) billentyűzettel: role=button, Enter/Szóköz
 
 aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fegyverválasztás)
   AktivScreen.tsx          Fő layout
@@ -135,6 +136,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   TaktikaPickerList.tsx    Taktika választó lista (pinned + többi)
   TaktikaFokPicker.tsx     Fokozatos taktika fok-választó
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
+  ManoverDobasReszek.tsx   A manőver popup al-komponensei (dobó-sor, követelmény-lépés, fázis-gombok, végeredmény, módosító / MP / TÉ popupok)
   ManoverDobasPopup.tsx    Manőver dobás popup (követelmény 0. lépés Normál/Erős, fázis lépegetés, Siker/Kudarc, helyzetfüggő módosítók, MP+TÉ popup)
   manover-dobas-calc.ts    Manőver dobás pure logika (követelmény kiértékelés, fázisok, TÉ-bontás, fázis-feliratok, eredmény-hatás) - a popup számítási magja. `szitFeltételTeljesül`/`szitModKezdőÁllapot`: a helyzetfüggő módosító sorok `feltétel` ("fegyver_extra:<id>"/"taktika:<id>"/…) auto-matchje → az illő sor alapból bekapcsolva (kézi override marad). `szitTáblákMódszerint`: a mód szerinti tábla-szűrés (aktív = aktív-oldali + globális; passzív = `mód_oldal: passzív` táblák). `szitModÁllapot`: a kiválasztott módosítók aggregált állapota egy helyen (összeg + két sentinel-ág: `99` nem kísérelhető meg / `-99` immunis + az immunis extra leírása). A `manoverek.yaml` `extra_ref` pointer-sorai build-időben feloldódnak az extrák `manőver_ellenpróba` hatásából (érték+leírás+feltétel; `letilt` mód → `-99` sentinel; a tábla `mód_oldal` ↔ extra `manőver_állapot` egyezés build-gate), l. `data/gen/aktiv_ful.py` - EGY igazságforrás (A/1, §42)
   AktivStatuszok.tsx       Státusz picker
@@ -153,6 +155,8 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcScreen.tsx           Fő screen
   useHarcComputed.ts       Context build + reactive evaluate + feltétel dispatch
+  useVeCsokkenes.ts        VÉ-csökkenés kezelés hook (szorzó, korlát, undo, history-összevonás, flash)
+  useSerultStatusz.ts      „Sérült (N)" státusz automatikus karbantartása az ÉP-rubrikák szerint
   fegyver-calc.ts          Per-fegyver TÉ/VÉ/SP/harckeret (optimalizált: 5 rule/fegyver)
   taktika-calc.ts          Taktika módosítók
   pancel-calc.ts           Páncél lookup + fogás VÉ
@@ -218,7 +222,9 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
   KepzettsegRow.tsx        Képzettség sor (szint +/- , limit jelzés, ▾ accordion → KepzettsegDetails)
   KepzettsegPickerOverlay.tsx  Képzettség picker overlay popup (név + md link + ▾ accordion → KepzettsegDetails)
   TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
-  proba-common.ts          Próba közös logika (Előny/Hátrány szintek, lehetetlen/biztos siker, összetett próba típusok)
+  useProbaDobas.ts         Próba dobás-állapot hook (sima / összetett, automatikus / kézi) - mindkét próba popup
+  ProbaReszek.tsx          Próba popupok közös UI-részei (fejléc, Extrák sor/gomb, Összetett / Ellenpróba választó, eredmény-blokk)
+  proba-common.ts          Próba közös logika (konstansok.próba-vezérelt: Előny/Hátrány szintek, lehetetlen/biztos siker, siker-felirat, helyettesítés, összetett próbaok)
   kepzettseg-proba-calc.ts Képzettségpróba tiszta kalkuláció (célszámok, kiterjesztés EH, szituációs módosítók, enyhítés)
   KepzettsegProbaPickers.tsx Képzettségpróba alpickerei (kiterjesztés, helyzetfüggő módosítók, infó)
   kepzettseg-limit.ts      Képzettség max szint a rules.json-ból (§19)
@@ -248,6 +254,7 @@ fortelyok/                 Fortélyok fül
 harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
   HarcertekekScreen.tsx    Fő screen
   HarcertekekHmSection.tsx HM (TÉ/VÉ) szekció - felvett HM elosztása, aszimmetria-limit
+  HarcmodorLista.tsx       Harcmodor-képzettség lista (felvettek + felvétel select) - Harcértékek + Távharc közös
   HarcertekekHarciKepzettsegekSection.tsx  Harci képzettségek (szerkeszthető harcmodor szintek)
   HarcertekekFegyverekSection.tsx  Fegyver kártyák
   HarcertekekFegyverChip.tsx  Egy fegyver chip/kártya (anyag, Idea, MF)

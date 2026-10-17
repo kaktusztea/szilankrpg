@@ -1,5 +1,5 @@
 import type { Karakter, Fortely } from '../engine/types';
-import { képzettségSzint } from '../engine/utils';
+import { képzettségSzint } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';
 import type { UndoPatch } from '../hooks/useUndo';
 import { njkLimitBlocked } from '../hooks/njk-slots';
@@ -45,7 +45,7 @@ export function makeAnyanyelvSetter(
 /** Fortélyok screen props builder. */
 export function buildFortelyokProps(karakter: Karakter, data: GameData) {
   const fegyverNevek = [...new Set(data.fegyverek.map(f => f.név))];
-  const nyelvtanulásSzint = képzettségSzint(karakter, 'nyelvtanulás');
+  const nyelvtanulásSzint = képzettségSzint(karakter.képzettségek, 'nyelvtanulás');
   return { fegyverNevek, nyelvtanulásSzint };
 }
 

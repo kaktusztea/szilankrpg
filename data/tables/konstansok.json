@@ -198,6 +198,7 @@
     "max_mp_támadó": 4,
     "max_mp_védő": 2,
     "belharc_fok_szorzó": 2,
+    "végrehajtás_TÉ_standard": 4,
     "sentinel_nem_kísérelhető": 99,
     "sentinel_immunis": -99,
     "globális_módosítók": [
@@ -233,6 +234,10 @@
     "fortélyfok": 6,
     "hm": 6,
     "cm": 6
+  },
+  "tulajdonság_érték": {
+    "min": -5,
+    "max": 7
   },
   "arányok": {
     "min_tsz": 3,
@@ -639,6 +644,87 @@
         "TÉ": 0
       }
     ]
+  },
+  "próba": {
+    "előny_hátrány_max": 2,
+    "összetett_max_másodlagos": 3,
+    "tulajdonság": {
+      "kocka": 6,
+      "kiemelt_különbség": 3,
+      "másodlagos_levonás": 1,
+      "nehézségek": [
+        {
+          "érték": 3,
+          "név": "Könnyű"
+        },
+        {
+          "érték": 4,
+          "név": "Átlagos"
+        },
+        {
+          "érték": 5,
+          "név": "Nehéz"
+        },
+        {
+          "érték": 6,
+          "név": "Nagyon nehéz"
+        },
+        {
+          "érték": 7,
+          "név": "Rendkívül nehéz"
+        },
+        {
+          "érték": 8,
+          "név": "Emberfeletti"
+        }
+      ],
+      "nehézségek_extra": []
+    },
+    "képzettség": {
+      "kocka": 10,
+      "kiemelt_különbség": 6,
+      "másodlagos_levonás": 3,
+      "nehézségek": [
+        {
+          "érték": 6,
+          "név": "Könnyű"
+        },
+        {
+          "érték": 9,
+          "név": "Átlagos"
+        },
+        {
+          "érték": 12,
+          "név": "Nehéz"
+        },
+        {
+          "érték": 15,
+          "név": "N. nehéz"
+        },
+        {
+          "érték": 18,
+          "név": "Rendkívüli"
+        },
+        {
+          "érték": 21,
+          "név": "Emberfeletti"
+        }
+      ],
+      "nehézségek_extra": [
+        24,
+        27,
+        30
+      ]
+    },
+    "vállalás": {
+      "max": 3,
+      "kocka": 6
+    },
+    "helyettesítés": {
+      "min_szint": 3,
+      "osztó": 3,
+      "max": 5
+    }
   },
   "aura_bónusz": [
     {

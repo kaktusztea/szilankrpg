@@ -1,4 +1,5 @@
 import type { Karakter } from '../../engine/types';
+import { FORTÉLY_FOK_VALUES } from '../../ui-constants';
 import type { TavharcPopupState } from './types';
 import { PopupOverlay } from '../PopupOverlay';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
@@ -46,7 +47,7 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, távol
         <PopupOverlay onClose={() => closePopup('mfTarget')}>
           <h4>Mesterfegyver fok - {k.távfegyverek[popup.mfTarget]?.alap}</h4>
           <div className="kep-prompt-flex-fok">
-            {[0, 1, 2, 3].map(f => (
+            {FORTÉLY_FOK_VALUES.map(f => (
               <button key={f} className={`fort-fok-btn${getMfFok(k, k.távfegyverek[popup.mfTarget!]?.alap) === f ? ' active' : ''}`}
                 onClick={() => { setMfFok(k.távfegyverek[popup.mfTarget!]!.alap, f); closePopup('mfTarget'); }}>{f}</button>
             ))}

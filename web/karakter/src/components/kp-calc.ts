@@ -1,8 +1,8 @@
 import type { GameData } from '../engine/data-loader';
-import { HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID } from '../engine/azonosito';
+import { HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID, képzettségSzint } from '../engine/azonosito';
 import type { Karakter } from '../engine/types';
 import { evaluate, buildContext, buildArrayContext } from '../engine/reactive';
-import { képzettségSzint, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../engine/utils';
+import { harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../engine/utils';
 
 export interface KpDetails {
   maradékKp: number;
@@ -27,7 +27,7 @@ export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
 
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(karakter,
     [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])]);
-  const alakzatharcSzint = képzettségSzint(karakter, 'alakzatharc');
+  const alakzatharcSzint = képzettségSzint(karakter.képzettségek, 'alakzatharc');
 
   const ctx = buildContext(tulajdonságok, tsz, data.konstansok, {
     HM_TÉ: karakter.HM_TÉ, HM_VÉ: karakter.HM_VÉ, CM: karakter.CM,

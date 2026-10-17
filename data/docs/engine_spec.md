@@ -2965,6 +2965,13 @@ UI: név (flex:1) + szint (kep-szint class, limit jelzés) + −/+ gombok + ✕ 
 
 Forrás: md/010_05_04_tulajdonsagproba.md, md/030_06_01_kepzettsegproba.md
 
+**Paraméterek a data layerben** (2026-10-17): `konstansok.yaml → próba` - típusonként (`tulajdonság` / `képzettség`)
+kocka, célszám-lista (`nehézségek`, `nehézségek_extra`), `kiemelt_különbség`, `másodlagos_levonás`; közös:
+`előny_hátrány_max`, `összetett_max_másodlagos`, `vállalás {max, kocka}`, `helyettesítés {min_szint, osztó, max}`.
+A két popup közös logikája: `tulajdonsagok/proba-common.ts` (pure), `useProbaDobas.ts` (dobás-állapot),
+`ProbaReszek.tsx` (UI-részek). Az E/H skála a kocka-rétegben (`engine/dice.ts EH_SZINT_MAX`) szinkron másolat,
+az egyezést teszt őrzi.
+
 ### 37.1 Tulajdonságpróba
 
 ```

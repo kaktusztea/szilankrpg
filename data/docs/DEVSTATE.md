@@ -31,6 +31,10 @@ A §42 mindhárom fázisa kész (l. „Elkészült"); spec: `engine_spec.md` §4
 napló: `refactorlog/2026-10-16.md`. Nyitott:
 
 - [ ] `beszorithato` extra halott hivatkozás: `státusz: Beszorított (2)`, ilyen státusz nincs → soha nem teljesül. Döntés: új státusz, vagy a `Beszorított ellenfél` helyzetre mutasson? Utána build-gate az extrák státusz-/helyzet-hivatkozásaira (`validate_effekt_hivatkozasok`).
+- [ ] Refaktor-maradék (2026-10-17, l. refactorlog): a fegyver Idea ±5 tartomány a `HarcertekekPopups`-ban kódolt
+  (a fegyvergenerátor `idea` táblájából kellene); a `loveskiteres-calc` Lövéskitérés-fejlesztés +2-je és a
+  `tavharc/helpers` Alkalmi tárgy fortély Osztó-cseréje fortély-hatás kódban (→ fortély `módosítók`, effekt-modell);
+  a `felszereles.ts páncélLefedettség` és a `calcManőverPont` a `rules.json` képletének TS-másolata.
 - [ ] Harcszimulátor szinkron (`code/balance/fegyvergenerator_harcszimulator.py`):
   - Belharc: még `pengehossz > 0` (max 0) és `te = 0` végső nullázás; nem ismeri a tiltás-keretet / a páncélszúró kivételt (a webapp és a §42.3 szerint max 1, alapérték-csere, a harcmodor/MF/fortély marad).
   - Fárasztás: fix `v = 3` - hiányzik a fegyverelőnyös +1 és a helyzet-bővítés (pl. Meglepetés +2).

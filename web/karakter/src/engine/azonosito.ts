@@ -63,6 +63,6 @@ export function képzettségSzint(képzettségek: readonly (KépzRef & { szint: 
 }
 
 /** A karakter adott fortélyának legmagasabb foka (több példánynál a max; 0, ha nincs). */
-export function fortélyFokId(fortélyok: readonly { id: string; fok: number }[], id: string): number {
+export function fortélyFok(fortélyok: readonly { id: string; fok: number }[], id: string): number {
   return fortélyok.reduce((m, f) => (f.id === id && f.fok > m ? f.fok : m), 0);
 }

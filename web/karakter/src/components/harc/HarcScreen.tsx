@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import type { HarcBaseProps } from './types';
 import type { FegyverResult } from './types';
 import type { SebzésRubrika } from '../../engine/types';
@@ -13,30 +13,28 @@ import { HarcReszletek } from './HarcReszletek';
 import { HarcFegyverSection } from './HarcFegyverSection';
 import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
-import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás, pushTéDobás } from './DobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
 import { VeCsokkentesPopup } from './VeCsokkentesPopup';
 import { TaktikaTiltvaInfoPopup } from './TaktikaTiltvaInfoPopup';
-import { calcTaktikaVéCsökkentés, calcVéCsökkentésSzorzó } from './ve-csokkentes-calc';
+import { taktikaVéCsökkentésÁllapot } from './ve-csokkentes-calc';
+import { useSérültStátusz } from './useSerultStatusz';
+import { useVéCsökkenés } from './useVeCsokkenes';
 import { VeSzorzoInfoPopup } from './VeSzorzoInfoPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { ManoverPicker } from './ManoverPicker';
-import { coalesceVéHistory } from './shared';
 import { toggleHelyzet, GYENGÉBB_KÉZ } from './helyzet-toggle';
 import { rollK20 } from '../../engine/dice';
-import { VÉ_FLASH_MS, VÉ_COALESCE_MS } from '../../ui-constants';
 import './HarcScreen.css';
 
+/** A Fájdalomtűrés képzettség id-je (ÉP-tábla → Tulajdonságok fül ugrás; a KepzettsegRow `data-kep` = kulcs). */
+const FÁJDALOMTŰRÉS_ID = 'fájdalomtűrés';
+
 export function HarcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, onNavigate, gameMode }: HarcBaseProps) {
-  const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
-  const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastVéChangeRef = useRef<number>(0);
   const [showVéHistory, setShowVéHistory] = useState(false);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
-  const [véSzorzóInfo, setVéSzorzóInfo] = useState<number | null>(null);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_fortély: number } | null>(null);
   const [fegyverInfo, setFegyverInfo] = useState<FegyverResult | null>(null);
   const [sebCount, setSebCount] = useState(0);
@@ -55,34 +53,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const { hc, téLevonás, ctx, aktívTÉ, aktívVÉ } = harcFejlécÉrtékek(data, karakter, session, sebCount);
   const { hint, showHint } = useHint();
 
-  // VÉ flash animation
-  const triggerVéFlash = useCallback((dir: 'down' | 'up') => {
-    setVéFlash(dir);
-    if (véFlashTimer.current) clearTimeout(véFlashTimer.current);
-    véFlashTimer.current = setTimeout(() => setVéFlash(''), VÉ_FLASH_MS);
-  }, []);
-
-  /** delta: nyers változás (pozitív = csökkenés, negatív = visszanyerés); reset=true → teljes törlés. */
-  const changeVé = useCallback((delta: number, reset = false) => {
-    // Csökkenéskor (delta > 0) a "VÉ veszteség duplázódik" jellegű harci helyzetek szorzót adnak
-    // (Földön fekve, Helyhez kötve, VÉ kiterjesztés - l. harci_helyzetek.yaml `mód: szorzó`, cél: vé_veszteség).
-    const scaledDelta = delta > 0 ? delta * hc.véVeszSzorzó : delta;
-    if (delta > 0 && hc.véVeszSzorzó !== 1) setVéSzorzóInfo(delta);
-    const newVal = reset ? 0 : Math.max(0, Math.min(session.vé_csökkenés + scaledDelta, hc.maxVéCsökk));
-    const diff = newVal - session.vé_csökkenés;
-    if (diff !== 0) pushUndo(`${diff > 0 ? 'VÉ csökkenés' : 'VÉ visszanyerés'}: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`, [{ field: 'session', prev: session }]);
-    const now = Date.now();
-    const elapsed = now - lastVéChangeRef.current;
-    lastVéChangeRef.current = now;
-    // history bejegyzés előjele: csökkenés → negatív, visszanyerés → pozitív
-    const historyDelta = diff > 0 ? -diff : Math.abs(diff);
-    setSession(prev => ({
-      ...prev,
-      vé_csökkenés: newVal,
-      vé_history: newVal === 0 ? [] : coalesceVéHistory(prev.vé_history, historyDelta, elapsed, VÉ_COALESCE_MS),
-    }));
-    triggerVéFlash(diff > 0 ? 'down' : 'up');
-  }, [session.vé_csökkenés, pushUndo, setSession, triggerVéFlash, hc.véVeszSzorzó, hc.maxVéCsökk]);
+  const { véFlash, changeVé, véSzorzóInfo, setVéSzorzóInfo } = useVéCsökkenés(session, setSession, pushUndo, hc.véVeszSzorzó, hc.maxVéCsökk);
 
   // KÉ dobás handler
   const handleKéClick = useCallback(() => {
@@ -127,51 +98,11 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     setTámInfo(null);
   }
 
-  // Auto Sérült státusz
-  useEffect(() => {
-    const targetFok = calcSérültFok(sebCount, hc.oszlopMéret);
-    const current = session.aktív_státuszok.find(s => s.startsWith('Sérült ('));
-    const currentFok = current ? parseInt(current.match(/\((\d+)\)/)?.[1] ?? '0') : 0;
-    if (targetFok === currentFok) return;
-    setSession(prev => {
-      const filtered = prev.aktív_státuszok.filter(s => !s.startsWith('Sérült ('));
-      return targetFok === 0
-        ? { ...prev, aktív_státuszok: filtered }
-        : { ...prev, aktív_státuszok: [...filtered, `Sérült (${targetFok})`] };
-    });
-  }, [sebCount, hc.oszlopMéret]);
+  useSérültStátusz(sebCount, hc.oszlopMéret, session.aktív_státuszok, setSession);
 
 
-  // Fárasztás taktika (md/065_02): aktív esetén a TÉ chip NEM Támadó dobást nyit, hanem direktben
-  // a VÉ csökkentés popup-ot (nincs támadódobás) - fix taktika-override + feltételes fortély-bővítés.
-  const fárasztásAktív = session.aktív_taktikák.some(t => t.név === 'Fárasztás');
-  const fárasztásDef = fárasztásAktív ? data.taktikak.find(t => t.név === 'Fárasztás') : undefined;
-  const fárasztásFortélyModosítók = karakter.fortélyok
-    .map(kf => {
-      const def = data.fortelySummaries.find(d => d.id === kf.id);
-      const fokDef = def?.fokok.find(f => f.fok === kf.fok);
-      return def && fokDef?.módosítók?.length ? { forrás: def.név, módosítók: fokDef.módosítók } : null;
-    })
-    .filter((x): x is { forrás: string; módosítók: NonNullable<typeof x>['módosítók'] } => x !== null);
-  const fárasztásEredmény = fárasztásDef
-    ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fárasztásFortélyModosítók, hc.feltételTeljesül, hc.helyzetVéCsökkentés)
-    : null;
-
-  // Roham / Öngyilkos roham (md/065_02): "VÉ csökk 2x" - a Fegyverviszony-alapú VÉ csökkentés
-  // (bázis+k20P) szorzója, a taktika `hatások` tömbjéből (nem akkumulálva, csak kinyerve).
-  // A szorzót adó taktikák nevét is gyűjtjük, hogy a VÉ-csökkentés bontásban kiírható legyen.
-  const véCsökkentésSzorzóForrások: string[] = [];
-  const véCsökkentésSzorzó = session.aktív_taktikák.reduce((szorzó, t) => {
-    const def = data.taktikak.find(d => d.név === t.név);
-    const taktikaSzorzó = calcVéCsökkentésSzorzó(def?.hatások);
-    if (taktikaSzorzó !== 1) véCsökkentésSzorzóForrások.push(t.név);
-    return Math.max(szorzó, taktikaSzorzó); // §42.3: oldalon belül a legnagyobb szorzó számít
-  }, 1);
-  const véCsökkentésSzorzóForrás = véCsökkentésSzorzóForrások.join(', ') || undefined;
-
-  // Teljes Védekezés (md/065_02): nem támad - a TÉ chip info popup-ot nyit a dobás helyett.
-  const teljesVédekezésAktív = session.aktív_taktikák.some(t => t.név === 'Teljes Védekezés');
-  const teljesVédekezésDef = teljesVédekezésAktív ? data.taktikak.find(t => t.név === 'Teljes Védekezés') : undefined;
+  const { fárasztásDef, fárasztásEredmény, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, teljesVédekezésDef } =
+    taktikaVéCsökkentésÁllapot(data, karakter, session, hc.feltételTeljesül, hc.helyzetVéCsökkentés);
 
   const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[], leírás: string) => {
     pushUndo(leírás, [{ field: 'session', prev: session }]);
@@ -182,11 +113,11 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     onNavigate?.('tulajdonsagok');
     // WORKAROUND: tab-render-delay - 200ms wait for tab transition to complete before scrolling
     setTimeout(() => {
-      document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      document.querySelector(`[data-kep="${FÁJDALOMTŰRÉS_ID}"]`)?.scrollIntoView({ block: 'start', behavior: 'smooth' });
     }, 200);
   }, [onNavigate]);
 
-  const hasFt = karakter.képzettségek.some(kp => kp.id === 'fájdalomtűrés');
+  const hasFt = karakter.képzettségek.some(kp => kp.id === FÁJDALOMTŰRÉS_ID);
 
   return (
     <div className="screen harc-screen">
@@ -219,8 +150,8 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         onKéClick={handleKéClick}
         onTéClick={() => {
           if (aktívTÉ == null) return;
-          if (teljesVédekezésAktív) setShowTeljesVédekezésInfo(true);
-          else if (fárasztásAktív) setShowFárasztásVéCsökkentés(true);
+          if (teljesVédekezésDef) setShowTeljesVédekezésInfo(true);
+          else if (fárasztásDef) setShowFárasztásVéCsökkentés(true);
           else handleTéDobás();
         }}
         onSféClick={() => setShowPancelInfo(true)}

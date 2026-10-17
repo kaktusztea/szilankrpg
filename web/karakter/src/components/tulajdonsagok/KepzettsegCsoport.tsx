@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { képzKulcs, TRADÍCIÓ_ID } from '../../engine/azonosito';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
+import type { PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegSlot } from './types';
 import type { KépzettségLimitek } from './kepzettseg-limit';
@@ -38,13 +38,14 @@ interface Props {
   próbaEnyhítésekByKép: Record<string, PróbaEnyhítés[]>;
   /** Fortély szituációs próba-bónuszai képzettségenként (a próba popup „Fortélyok" táblájához). */
   fortélyBónuszByKép?: Record<string, { érték: number; leírás: string }[]>;
+  próba: PróbaKonstansok;
 }
 
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, szintLimitek, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
   fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál,
-  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, felszHátrány, próbaEnyhítésekByKép, fortélyBónuszByKép
+  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, felszHátrány, próbaEnyhítésekByKép, fortélyBónuszByKép, próba
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -91,6 +92,7 @@ export function KepzettsegCsoport({
               felszNemHarcol={csoport === 'fizikai' ? felszHátrány.nemHarcol : false}
               próbaEnyhítések={próbaEnyhítésekByKép[kulcs] || []}
               fortélyBónuszok={fortélyBónuszByKép?.[kulcs]}
+              próba={próba}
             />
           );
         })}

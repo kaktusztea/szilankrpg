@@ -1,3 +1,5 @@
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter, Session } from '../../engine/types';
 /**
  * Sikertelen támadás VÉ csökkentésének kalkulációja (harcszimulacio.spec.md §5.3).
  *
@@ -122,3 +124,47 @@ export function calcTaktikaVéCsökkentés(
   const végső = taktikaBázis + [...fortélyBővítések, ...helyzetBővítések].reduce((sum, f) => sum + f.érték, 0);
   return { taktikaBázis, fortélyBővítések, helyzetBővítések, végső };
 }
+
+/** Taktika-név → definíció (a session a taktikát név szerint tárolja). */
+const taktikaDef = (data: GameData, név: string) => data.taktikak.find(t => t.név === név);
+
+/**
+ * A Harc fül taktika-függő VÉ-csökkentés állapota (md/065_02):
+ * - Fárasztás: a TÉ chip direktben a VÉ csökkentés popupot nyitja (taktika-override + fortély-bővítés);
+ * - Roham / Öngyilkos roham: a Fegyverviszony-alapú VÉ csökkentés szorzója (oldalon belül a legnagyobb, §42.3),
+ *   a szorzót adó taktikák nevével (bontás-felirat);
+ * - Teljes Védekezés: nem támad - a TÉ chip info popupot nyit.
+ */
+export function taktikaVéCsökkentésÁllapot(
+  data: GameData, karakter: Karakter, session: Session,
+  feltételTeljesül: (feltétel: string) => boolean, helyzetVéCsökkentés: FortélyMódosítóBontás[],
+) {
+  const aktív = (név: string) => session.aktív_taktikák.some(t => t.név === név);
+  const fárasztásDef = aktív(FÁRASZTÁS) ? taktikaDef(data, FÁRASZTÁS) : undefined;
+  const fortélyModosítók = karakter.fortélyok.flatMap(kf => {
+    const def = data.fortelySummaries.find(d => d.id === kf.id);
+    const módosítók = def?.fokok.find(f => f.fok === kf.fok)?.módosítók;
+    return def && módosítók?.length ? [{ forrás: def.név, módosítók }] : [];
+  });
+  const fárasztásEredmény = fárasztásDef
+    ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fortélyModosítók, feltételTeljesül, helyzetVéCsökkentés)
+    : null;
+
+  const szorzóForrások: string[] = [];
+  const szorzó = session.aktív_taktikák.reduce((max, t) => {
+    const sz = calcVéCsökkentésSzorzó(taktikaDef(data, t.név)?.hatások);
+    if (sz !== 1) szorzóForrások.push(t.név);
+    return Math.max(max, sz);
+  }, 1);
+
+  return {
+    fárasztásDef, fárasztásEredmény,
+    véCsökkentésSzorzó: szorzó,
+    véCsökkentésSzorzóForrás: szorzóForrások.join(', ') || undefined,
+    teljesVédekezésDef: aktív(TELJES_VÉDEKEZÉS) ? taktikaDef(data, TELJES_VÉDEKEZÉS) : undefined,
+  };
+}
+
+/** Taktika-nevek, amelyekhez a Harc fül TÉ chip-je eltérő viselkedést kapcsol. */
+const FÁRASZTÁS = 'Fárasztás';
+const TELJES_VÉDEKEZÉS = 'Teljes Védekezés';

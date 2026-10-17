@@ -68,7 +68,7 @@ def generate_aktiv_ful():
         fcs = m.get('fázis_cselekvő')
         m['fázis_cselekvő'] = fcs if isinstance(fcs, dict) else {}
         m.setdefault('ellenpróba_bünteti', False)
-        m.setdefault('végrehajtás_té_módosító', 4)
+        m.setdefault('végrehajtás_té_módosító', _manover_konst['végrehajtás_TÉ_standard'])
 
     write_json('taktikak.json', taktikak)
     write_json('harci_helyzetek.json', helyzetek)

@@ -1,8 +1,8 @@
 import type { Karakter, FegyverAlap, FegyverPeldany } from '../../engine/types';
-import { harcmodorNév as hmMegjelenítés } from '../../engine/azonosito';
+import { harcmodorNév as hmMegjelenítés, képzettségSzint } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult, FegyverResultMód } from './types';
-import { lookupFegyver, képzettségSzint } from '../../engine/utils';
+import { lookupFegyver } from '../../engine/utils';
 
 /** Egy mód (aktor) megjelenítendő fegyver-harcértékei (csak fegyver, taktika/páncél nélkül). */
 export interface FegyverInfoMód {
@@ -65,7 +65,7 @@ export function buildFegyverInfó(
   return {
     név: result.fegyver_név,
     harcmodorNév: hmMegjelenítés(harcmodorNév, data),
-    harcmodorSzint: képzettségSzint(karakter, `harcmodor/${harcmodorNév}`),
+    harcmodorSzint: képzettségSzint(karakter.képzettségek, `harcmodor/${harcmodorNév}`),
     extrák: (fDef?.extrák ?? []).map(e => ({
       név: e.név,
       leírás: data.fegyverExtrák?.[e.id]?.leírás ?? '',

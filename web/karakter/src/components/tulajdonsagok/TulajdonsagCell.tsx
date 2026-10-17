@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { GridPickerPopup } from './popups';
 import { TulajdonsagProbaPopup } from './TulajdonsagProbaPopup';
-
-const TUL_VALUES = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7];
+import type { PróbaKonstansok } from '../../engine/data-types';
 
 interface Props {
   név: string;
@@ -15,9 +14,12 @@ interface Props {
   felszEH?: number;
   fortélyBónuszok?: { érték: number; leírás: string }[];
   felszNemHarcol?: boolean;
+  próba: PróbaKonstansok;
+  /** konstansok.tulajdonság_érték - a szerkesztő grid értékei. */
+  tartomány: { min: number; max: number };
 }
 
-export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax, felszEH = 0, felszNemHarcol = false, fortélyBónuszok }: Props) {
+export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax, felszEH = 0, felszNemHarcol = false, fortélyBónuszok, próba, tartomány }: Props) {
   const [editing, setEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
 
@@ -49,7 +51,7 @@ export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, faj
       {editing && (
         <GridPickerPopup
           label={label}
-          values={TUL_VALUES}
+          values={Array.from({ length: tartomány.max - tartomány.min + 1 }, (_, i) => tartomány.min + i)}
           current={érték}
           onSelect={v => { onChange(v); setEditing(false); }}
           onCancel={() => setEditing(false)}
@@ -63,6 +65,7 @@ export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, faj
           felszEH={felszEH}
           fortélyBónuszok={fortélyBónuszok}
           felszNemHarcol={felszNemHarcol}
+          próba={próba}
           onClose={() => setShowProba(false)}
         />
       )}

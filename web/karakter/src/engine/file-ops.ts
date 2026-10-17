@@ -90,10 +90,6 @@ function buildVersionedName(base: string, ver: number, maxLen?: number): string 
 // Compute the next "<base> N" name: strips any trailing " N" from src to get the base,
 // then picks max(existing N for that base) + 1 (base with no suffix counts as v1 → min result is 2).
 // If maxLen is given and "<base> N" would exceed it, the base is truncated so that " N" still fits.
-export function nextDuplicateName(srcName: string, existingNames: string[], maxLen?: number): string {
-  const base = parseVersion(srcName).base;
-  return buildVersionedName(base, maxExistingVersion(base, existingNames) + 1, maxLen);
-}
 
 export function generateSaveFile(karakter: Karakter, undoStack: any[], mode: 'single' | 'backup'): { blob: Blob; filename: string } {
   const now = new Date();

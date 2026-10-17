@@ -1,9 +1,9 @@
 import type { Kepzettseg } from '../../engine/types';
 import type { FortelySummary, FortelyFokSummary, GameData } from '../../engine/data-loader';
-import { fortélyNév, képzettségNév, képzettségSzint, isHarcmodorId, bontKépzKulcs, EGYEDI_FORTÉLY_ID, HARCMODOR_ID } from '../../engine/azonosito';
+import { fortélyNév, fortélyFok, képzettségNév, képzettségSzint, isHarcmodorId, bontKépzKulcs, EGYEDI_FORTÉLY_ID, HARCMODOR_ID } from '../../engine/azonosito';
 
 /** Követelmény-alcél feliratok (felszerelés-rész). */
-export const FELSZERELÉS_FELIRAT: Record<string, string> = {
+const FELSZERELÉS_FELIRAT: Record<string, string> = {
   'felszerelés:nagyobb_fegyver': 'nagyobb fegyver',
   'felszerelés:kisebb_fegyver': 'kisebb fegyver',
 };
@@ -53,10 +53,15 @@ export function calcNyelvPontKeret(nyelvtanulásSzint: number): number {
   return Math.max(0, (nyelvtanulásSzint - 3) * 3);
 }
 
+/** A Nyelvismeret-példányok által elhasznált nyelv-pont (kiérdemeltnél az 1. fok ingyenes). */
+export function nyelvPontHasznált(fortélyok: Fortely[]): number {
+  return fortélyok.filter(f => f.id === 'nyelvismeret')
+    .reduce((s, f) => s + (f.kiérdemelt ? Math.max(0, f.fok - 1) : f.fok), 0);
+}
+
 export function calcNyelvTúllépés(slotok: Fortely[], nyelvPontKeret: number): { túllépés: number; overSet: Set<Fortely> } {
   const nyelvismeretSlotok = slotok.filter(s => s.id === 'nyelvismeret');
-  const összFok = nyelvismeretSlotok.filter(s => !s.kiérdemelt).reduce((s, f) => s + f.fok, 0)
-    + nyelvismeretSlotok.filter(s => !!s.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
+  const összFok = nyelvPontHasznált(slotok);
   const túllépés = Math.max(0, összFok - nyelvPontKeret);
 
   let maradékTúl = túllépés;
@@ -82,12 +87,17 @@ export function isSlotIngyenes(
     return nonKierdemeltIdx < tsz;
   }
   if (def && def.ingyenes_perszint > 0) {
-    const ingyenesDb = Math.floor((tsz + 1) / def.ingyenes_perszint);
+    const ingyenesDb = ingyenesFortélyDb(def, tsz);
     const sameTypeSlots = slotok.filter(s => s.id === def.id);
     const posInType = sameTypeSlots.indexOf(slot);
     return posInType < ingyenesDb;
   }
   return false;
+}
+
+/** Szintenként ingyenes fortély (ingyenes_perszint): az eddig járó ingyenes darabszám TSz-ig. */
+export function ingyenesFortélyDb(def: Pick<FortelySummary, 'ingyenes_perszint'>, tsz: number): number {
+  return def.ingyenes_perszint > 0 ? Math.floor((tsz + 1) / def.ingyenes_perszint) : 0;
 }
 
 export function buildDefsByGroup(fortelySummaries: FortelySummary[]): Map<string, FortelySummary[]> {
@@ -114,7 +124,6 @@ export function checkKövetelmények(
 ): string[] {
   if (!fokDef?.követelmények?.length) return [];
   const hiányzó: string[] = [];
-  const fortélyFok = (id: string) => fortélyok.reduce((m, f) => (f.id === id && f.fok > m ? f.fok : m), 0);
   for (const kov of fokDef.követelmények) {
     const refek = Array.isArray(kov.név) ? kov.név : [kov.név];
     if (kov.típus === 'képzettség') {
@@ -134,10 +143,10 @@ export function checkKövetelmények(
         hiányzó.push(`${név} ≥ ${kov.érték}`);
       }
     } else if (kov.típus === 'fortély') {
-      if (fortélyFok(refek[0]) < kov.érték) hiányzó.push(`${fortélyNév(refek[0], data)} fortély ≥ ${kov.érték}. fok`);
+      if (fortélyFok(fortélyok, refek[0]) < kov.érték) hiányzó.push(`${fortélyNév(refek[0], data)} fortély ≥ ${kov.érték}. fok`);
     } else if (kov.típus === 'tiltó_fortély') {
       // Tiltó követelmény: a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok.
-      if (fortélyFok(refek[0]) >= kov.érték) hiányzó.push(`Nem lehet: ${fortélyNév(refek[0], data)} fortély`);
+      if (fortélyFok(fortélyok, refek[0]) >= kov.érték) hiányzó.push(`Nem lehet: ${fortélyNév(refek[0], data)} fortély`);
     } else if (kov.típus === 'faj') {
       // A faj ajánlja-e ezt a fortélyt legalább `érték` fokig (érzék / ajánlott fortélyok, md: hatterek.faji).
       if ((fajFortélyok[fortélyId] ?? 0) < kov.érték) hiányzó.push(`Faj Háttér (${fortélyNév(fortélyId, data)} ≥ ${kov.érték}. fok)`);

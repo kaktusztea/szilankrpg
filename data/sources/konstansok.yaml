@@ -188,6 +188,7 @@ manőver:
   max_mp_támadó: 4
   max_mp_védő: 2
   belharc_fok_szorzó: 2
+  végrehajtás_TÉ_standard: 4       # a Végrehajtás fázis TÉ-módosítójának default-ja (manoverek.yaml végrehajtás_té_módosító hiányában)
   # Helyzetfüggő módosító sentinel: ha egy KIVÁLASZTOTT sor értéke ez, a Manőver az adott
   # körülmények közt NEM kísérelhető meg (nem dobás-módosító, hanem jelző). L. md/066_04.
   sentinel_nem_kísérelhető: 99
@@ -223,6 +224,9 @@ kp:
 # ============================================================
 # Arányok, limitek
 # ============================================================
+
+# Tulajdonság-érték abszolút határai (alap [-5; 5], a faj-keret ezt tolhatja; md/010_05_01_00)
+tulajdonság_érték: { min: -5, max: 7 }
 
 arányok:
   min_tsz: 3                                # kalandozás a 3. szinten kezdődik (1-2. szint = előtörténet)
@@ -546,7 +550,44 @@ pajzs_hatások:
     - { fok: 3, VÉ: 18, TÉ: 0 }
 
 # ============================================================
-# Aura bónusz tábla
+# Próbák (engine_spec §37; md/010_05_04_tulajdonsagproba.md, md/030_06_01_kepzettsegproba.md)
+# ============================================================
+
+próba:
+  előny_hátrány_max: 2              # E/H szint skála: -max..+max (a TS engine/dice EH_SZINT_MAX-szal egyezik, teszt őrzi)
+  összetett_max_másodlagos: 3       # Összetett próba: legfeljebb ennyi Másodlagos dobás
+  tulajdonság:
+    kocka: 6
+    kiemelt_különbség: 3            # |eredmény - célszám| >= ez → Kiemelt siker / Kiemelt kudarc
+    másodlagos_levonás: 1           # Összetett próba: Másodlagos célszám = célszám - ez
+    nehézségek:
+      - { érték: 3, név: "Könnyű" }
+      - { érték: 4, név: "Átlagos" }
+      - { érték: 5, név: "Nehéz" }
+      - { érték: 6, név: "Nagyon nehéz" }
+      - { érték: 7, név: "Rendkívül nehéz" }
+      - { érték: 8, név: "Emberfeletti" }
+    nehézségek_extra: []            # elnevezés nélküli, lenyitható célszámok
+  képzettség:
+    kocka: 10
+    kiemelt_különbség: 6
+    másodlagos_levonás: 3
+    nehézségek:
+      - { érték: 6, név: "Könnyű" }
+      - { érték: 9, név: "Átlagos" }
+      - { érték: 12, név: "Nehéz" }
+      - { érték: 15, név: "N. nehéz" }
+      - { érték: 18, név: "Rendkívüli" }
+      - { érték: 21, név: "Emberfeletti" }
+    nehézségek_extra: [24, 27, 30]
+  vállalás:
+    max: 3                          # bónusz +1..+max (de legfeljebb a képzettség szintje)
+    kocka: 6                        # Kritikus hiba, ha a dobás <= vállalás
+  helyettesítés:
+    min_szint: 3                    # ennél kisebb szintű képzettség nem helyettesíthet
+    osztó: 3                        # helyettesítő érték = floor(szint / osztó)
+    max: 5                          # max helyettesített szint
+
 # ============================================================
 
 # REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!

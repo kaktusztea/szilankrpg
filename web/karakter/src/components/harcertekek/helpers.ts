@@ -1,7 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
-import { bontKépzKulcs, képzettségNév, harcmodorNév, HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID } from '../../engine/azonosito';
+import { bontKépzKulcs, képzettségNév, harcmodorNév, HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID, képzettségSzint } from '../../engine/azonosito';
 import type { Karakter } from '../../engine/types';
-import { lookupFegyver, képzettségSzint, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../../engine/utils';
+import { lookupFegyver, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../../engine/utils';
 import { findMfFok as findMfFokCanonical } from '../../engine/mf-utils';
 import { evaluate, buildContext } from '../../engine/reactive';
 
@@ -16,7 +16,7 @@ export function calcMaxHM(data: GameData, k: Karakter): number {
     .filter(f => harciFortelyNevek.has(f.id) && f.id !== 'mesterfegyver')
     .reduce((s, f) => s + f.fok, 0);
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(k, harcmodorok);
-  const alakzatharcSzint = képzettségSzint(k, 'alakzatharc');
+  const alakzatharcSzint = képzettségSzint(k.képzettségek, 'alakzatharc');
   return harciFokok + harcmodorÖsszeg + alakzatharcSzint;
 }
 
@@ -72,7 +72,7 @@ export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: st
       const refek = fegyverHarcmodor
         ? [`${HARCMODOR_ID}/${fegyverHarcmodor}`]
         : (Array.isArray(kov.név) ? kov.név : [kov.név]);
-      if (!refek.some(r => képzettségSzint(k, r) >= kov.érték)) return true;
+      if (!refek.some(r => képzettségSzint(k.képzettségek, r) >= kov.érték)) return true;
     } else if (kov.típus === 'fortély') {
       const id = Array.isArray(kov.név) ? kov.név[0] : kov.név;
       if (!k.fortélyok.some(f => f.id === id && f.fok >= kov.érték)) return true;

@@ -94,7 +94,7 @@ export function EgyediFortelyPopup({ képzettségek, data, onConfirm, onCancel }
       <input
         className="field-input"
         type="text"
-        placeholder="Fortély neve (max 20)"
+        placeholder={`Fortély neve (max ${MAX_EGYEDI_FORTELY_NÉV})`}
         maxLength={MAX_EGYEDI_FORTELY_NÉV}
         value={név}
         onChange={e => setNév(e.target.value)}

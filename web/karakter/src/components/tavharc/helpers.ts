@@ -1,8 +1,8 @@
 import type { GameData } from '../../engine/data-loader';
+import { képzettségSzint, fortélyFok } from '../../engine/azonosito';
 import type { Karakter, Session, TavfegyverAlap, TavharcSzorzok, TavharcSzorzoEntry } from '../../engine/types';
 import type { AlkalmatlanInfo, CÉBontás } from './types';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
-import { képzettségSzint } from '../../engine/utils';
 import { getMfFok } from './mesterfegyver-calc';
 
 // --- Alkalmatlan fegyver info ---
@@ -72,7 +72,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
   }
   // Fortély módosítók: feltételes CÉ bónuszok
   for (const fDef of data.fortelySummaries) {
-    const effFok = Math.max(0, k.fortélyok.find(f => f.id === fDef.id)?.fok ?? 0);
+    const effFok = fortélyFok(k.fortélyok, fDef.id);
     const módosítók = fDef.fokok.find(f => f.fok === effFok)?.módosítók;
     if (!módosítók) continue;
     for (const mod of módosítók) {
@@ -114,7 +114,7 @@ export function calcCÉBontás(k: Karakter, data: GameData, session: Session, de
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
   const harcmodorNév = def?.harcmodor ?? 'Hajítás';
-  const harcmodorSzint = képzettségSzint(k, `távolsági_harcmodor/${harcmodorNév.toLowerCase()}`);
+  const harcmodorSzint = képzettségSzint(k.képzettségek, `távolsági_harcmodor/${harcmodorNév.toLowerCase()}`);
   const harcmodorCÉ = data.harcmodorBonusz.find(b => b.szint === harcmodorSzint)?.CÉ ?? -9;
   const fegyverCÉ = def?.CÉ ?? 0;
   const mfAlap = fegyverAlap ?? k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '';
@@ -153,7 +153,7 @@ export function calcVÉ(szorzóÖsszeg: number, cella: number): number {
 
 export function calcÚjratöltésEnyhítés(session: Session, k: Karakter): number {
   if (!session.aktív_helyzetek.includes('Nyílpuska újratöltés')) return 0;
-  return k.fortélyok.find(f => f.id === 'nyílpuska_újratöltés_fejlesztése')?.fok ?? 0;
+  return fortélyFok(k.fortélyok, 'nyílpuska_újratöltés_fejlesztése');
 }
 
 // --- Szorzó összeg ---

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
+import { képzettségSzint } from '../../engine/azonosito';
 import type { HarcBaseProps } from './types';
 import { getFegyverhossz } from './fegyver-helpers';
-import { képzettségSzint } from '../../engine/utils';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> {
   páncélMGT: number;
@@ -21,7 +21,7 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
 
   // Akrobatika képzettség
   const akroKépz = harciAkroKövek.find(k => k.típus === 'képzettség' && (Array.isArray(k.név) ? k.név.includes('akrobatika') : k.név === 'akrobatika'));
-  const akroSzint = képzettségSzint(karakter, 'akrobatika');
+  const akroSzint = képzettségSzint(karakter.képzettségek, 'akrobatika');
   const akroKépzHiba = !!(akroKépz && akroSzint < akroKépz.érték);
 
   // Páncél hajlékonyság (nem_fém | nem_merev) — a struktúra fém/merev flagjéből (l. konstansok.páncél_struktúrák).
@@ -65,7 +65,9 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
         const feltételDisabled = sessionKey === 'harci_akrobatika' && harciAkroDisabled;
         const disabled = !has || feltételDisabled;
         return (
-          <div key={tf.név} className={`aktiv-field-btn aktiv-field-toggle ${active && !disabled ? 'on' : ''} ${disabled ? 'disabled' : ''}`}
+          // disabled-nál is kattintható (aria-disabled): a tiltás okát hint-ben mutatja
+          <button type="button" key={tf.név} className={`aktiv-field-btn aktiv-field-toggle ${active && !disabled ? 'on' : ''} ${disabled ? 'disabled' : ''}`}
+            aria-pressed={active && !disabled} aria-disabled={disabled || undefined}
             onClick={() => {
               if (disabled) {
                 if (sessionKey === 'harci_akrobatika') {
@@ -83,7 +85,7 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
             }}>
             <span className="aktiv-field-label">{tf.név.length > 14 ? tf.név.replace('Harci ', 'H. ') : tf.név}</span>
             <strong>{active && !disabled ? 'Igen' : 'Nem'}</strong>
-          </div>
+          </button>
         );
       })}
     </>

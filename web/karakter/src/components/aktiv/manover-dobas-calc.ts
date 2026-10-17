@@ -2,11 +2,11 @@
 // Kiemelve a ManoverDobasPopup.tsx-ből (2026-09-11 refaktor): a komponens csak a
 // dobás-folyamat state-jét és JSX-ét tartja, minden számítás/feltétel ide kerül.
 // Ezekre a fn-ekre írt tesztek: Manover{Kovetelmeny,TeBontas,FazisFelirat,EredmenyHatas}.test.ts
-import { HARCMODOR_ID } from '../../engine/azonosito';
+import { HARCMODOR_ID, képzettségSzint, fortélyFok } from '../../engine/azonosito';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
-import { képzettségSzint, fortélyFok, harcmodorÖsszeg } from '../../engine/utils';
+import { harcmodorÖsszeg } from '../../engine/utils';
 import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
@@ -272,11 +272,11 @@ export function követelményTeljesül(
   if (köv.típus === 'képzettség') {
     const szint = köv.név === HARCMODOR_ID
       ? harcmodorMaxSzint(karakter, data)
-      : képzettségSzint(karakter, köv.név ?? '');
+      : képzettségSzint(karakter.képzettségek, köv.név ?? '');
     return szint >= küszöb;
   }
   // fortély: a felvett (max) fok
-  const fok = Math.max(0, ...karakter.fortélyok.filter(f => f.id === köv.név).map(f => f.fok));
+  const fok = fortélyFok(karakter.fortélyok, köv.név ?? '');
   return fok >= küszöb;
 }
 
@@ -334,7 +334,7 @@ export function calcManőverPont(karakter: Karakter, data: GameData): number {
 }
 
 export function getBelharcFok(karakter: Karakter): number {
-  return fortélyFok(karakter, 'belharcos');
+  return fortélyFok(karakter.fortélyok, 'belharcos');
 }
 
 /**
@@ -430,3 +430,10 @@ export function követelményJelölés(
   if (döntés === 'mind') return '✓';
   return erősség === döntés ? '✗' : '✓';
 }
+
+/** Fázis-feliratok a manőver dobás popuphoz. */
+export const FÁZIS_FELIRAT: Record<'M' | 'V' | 'E', string> = {
+  M: '(M)egakasztás',
+  V: '(V)égrehajtás',
+  E: '(E)llenpróba',
+};

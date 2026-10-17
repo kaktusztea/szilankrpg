@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import type { Karakter } from '../engine/types';
-import { fortélyFok as getFortélyFok } from '../engine/utils';
+import { fortélyFok } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';
 
 export function useTaktikaInvalidation(
@@ -18,8 +18,8 @@ export function useTaktikaInvalidation(
       const alapMax = def.fokok[def.fokok.length - 1].fok;
       if (at.fok <= alapMax) return true;
       if (!def.fortély_bővítés) { changed = true; return false; }
-      const fortélyFok = getFortélyFok(karakter, def.fortély_bővítés!.fortély);
-      const maxFok = alapMax + fortélyFok * def.fortély_bővítés.extra_fokok_per_fok;
+      const bővítőFok = fortélyFok(karakter.fortélyok, def.fortély_bővítés.fortély);
+      const maxFok = alapMax + bővítőFok * def.fortély_bővítés.extra_fokok_per_fok;
       if (at.fok > maxFok) { changed = true; return false; }
       return true;
     });

@@ -135,6 +135,8 @@ export function TulajdonsagokHeader({
             felszEH={fizikaiTulajdonság(key, data) ? felszHátrány.ehSzint : 0}
             felszNemHarcol={fizikaiTulajdonság(key, data) ? felszHátrány.nemHarcol : false}
             fortélyBónuszok={fortélyBónuszByTul?.[key]}
+            próba={data.konstansok.próba}
+            tartomány={data.konstansok.tulajdonság_érték}
           />
         ))}
       </div>

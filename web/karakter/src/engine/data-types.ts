@@ -231,7 +231,31 @@ export interface HatterekData {
 // --- Konstansok (belső, nem exportált a data-loader-ből) ---
 // A `konstansok.yaml` MINDEN top-level kulcsa deklarált - nincs `[key: string]` catch-all,
 // hogy a yaml ↔ típus drift fordítási hibaként jelentkezzen.
+/** Egy próbatípus (Tulajdonság / Képzettség) paraméterei - konstansok.yaml `próba.*`. */
+export interface PróbaTípusKonstansok {
+  kocka: number;
+  kiemelt_különbség: number;
+  másodlagos_levonás: number;
+  nehézségek: { érték: number; név: string }[];
+  nehézségek_extra: number[];
+}
+
+/** konstansok.yaml `próba` (§37). */
+export interface PróbaKonstansok {
+  előny_hátrány_max: number;
+  összetett_max_másodlagos: number;
+  tulajdonság: PróbaTípusKonstansok;
+  képzettség: PróbaTípusKonstansok;
+  vállalás: { max: number; kocka: number };
+  helyettesítés: { min_szint: number; osztó: number; max: number };
+}
+
 export interface KonstansokRaw {
+  próba: PróbaKonstansok;
+  tulajdonság_érték: { min: number; max: number };
+  /** Build-validációs katalógusok (gen/aktiv_ful, validators) - a runtime nem olvassa, a drift-ellenőrzés miatt típusos. */
+  effekt_módok: string[];
+  harcérték_célok: string[];
   version: number;
   harcérték_alap: { KÉ: number; TÉ: number; VÉ: number; CÉ: number };
   kp: { perszint: number; szekunder_perszint: number; fortélyfok: number; hm: number; cm: number };
@@ -292,7 +316,7 @@ export interface KonstansokRaw {
     aurakiterjesztés_levonás: Record<string, number>;
     auraerősítés_tábla: { komplexitás: number; bónusz: number }[];
   };
-  manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number; sentinel_nem_kísérelhető: number; sentinel_immunis: number; globális_módosítók: ModositoTabla[] };
+  manőver: { max_mp_támadó: number; max_mp_védő: number; belharc_fok_szorzó: number; végrehajtás_TÉ_standard: number; sentinel_nem_kísérelhető: number; sentinel_immunis: number; globális_módosítók: ModositoTabla[] };
   pinned_taktikák: string[];
   fegyver_anyagok: string[];
   páncél_méret_illeszkedés: { fokozat: string; mgt: number }[];

@@ -2,8 +2,8 @@ import type { FegyverAlap, Karakter, Session } from './types';
 import type { KonstansokRaw, GameData } from './data-types';
 import type { FegyverResultMód } from '../components/harc/types';
 import { ideaDelta } from '../components/harc/shared';
-import { képzettségSzint, fortélyFok, lookupFegyver } from './utils';
-import { HARCMODOR_ID, harcmodorNév } from './azonosito';
+import { lookupFegyver } from './utils';
+import { HARCMODOR_ID, harcmodorNév, képzettségSzint, fortélyFok } from './azonosito';
 
 interface KétkezesInput {
   jobbFp: { alap: string; idea: number };
@@ -43,7 +43,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   if (jobbFh > konstansok.kétkezes_harc_max_egy_fegyver || balFh > konstansok.kétkezes_harc_max_egy_fegyver) return null;
   if (sumFh > konstansok.kétkezes_harc_max_fegyverméret) return null;
 
-  const khFok = fortélyFok(k, 'kétkezes_harc');
+  const khFok = fortélyFok(k.fortélyok, 'kétkezes_harc');
   const nagyobb = jobbFh >= balFh ? jobbDef : balDef;
   const kisebb = jobbFh >= balFh ? balDef : jobbDef;
   const nagyobbFp = jobbFh >= balFh ? jobbFp : balFp;
@@ -55,7 +55,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
 
   // Harcmodor: nagyobb fegyveré
   const harcmodorNév = konstansok.fegyver_kategória_harcmodor[nagyobb.kategória] ?? 'közelharc';
-  const harcmodorSzint = képzettségSzint(k, `harcmodor/${harcmodorNév}`);
+  const harcmodorSzint = képzettségSzint(k.képzettségek, `harcmodor/${harcmodorNév}`);
   const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
 
   // MF
@@ -139,7 +139,7 @@ export function kétkezesKövetelményHiány(
   data: Pick<GameData, 'fegyverek' | 'fortelySummaries' | 'kepzettsegDefs'> & { konstansok: Pick<GameData['konstansok'], 'fegyver_kategória_harcmodor'> },
 ): string[] {
   if (session.fegyverfogás !== 'kétkezes') return [];
-  const fok = fortélyFok(k, 'kétkezes_harc');
+  const fok = fortélyFok(k.fortélyok, 'kétkezes_harc');
   const fokDef = data.fortelySummaries.find(d => d.id === 'kétkezes_harc')?.fokok.find(f => f.fok === fok);
   const kövek = (fokDef?.követelmények ?? []).filter(kv => kv.feltétel === 'fegyverfogás:kétkezes' && kv.alcél);
   const jobb = lookupFegyver(data.fegyverek, k.fegyverek[session.aktív_fegyver_index]?.alap ?? '');
@@ -151,7 +151,7 @@ export function kétkezesKövetelményHiány(
     const f = kv.alcél === 'felszerelés:nagyobb_fegyver' ? nagyobb : kv.alcél === 'felszerelés:kisebb_fegyver' ? kisebb : null;
     if (!f) continue;
     const elem = data.konstansok.fegyver_kategória_harcmodor[f.kategória] ?? 'közelharc';
-    const szint = képzettségSzint(k, `${HARCMODOR_ID}/${elem}`);
+    const szint = képzettségSzint(k.képzettségek, `${HARCMODOR_ID}/${elem}`);
     if (szint < kv.érték) hiány.push(`${f.név}: ${harcmodorNév(elem, data)} ${szint} < ${kv.érték}`);
   }
   return hiány;

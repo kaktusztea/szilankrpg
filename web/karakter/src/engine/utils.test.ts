@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { lookupFegyver, evaluateFeltétel, describeKepChange, képzettségSzint, fortélyFok, harcmodorÖsszeg, clamp } from './utils';
+import { lookupFegyver, evaluateFeltétel, describeKepChange, harcmodorÖsszeg, clamp } from './utils';
+import { képzettségSzint, fortélyFok } from './azonosito';
 import type { FegyverAlap, Session, Karakter } from './types';
 
 describe('lookupFegyver', () => {
@@ -67,13 +68,13 @@ describe('képzettségSzint / fortélyFok / harcmodorÖsszeg', () => {
   } as unknown as Karakter;
 
   it('képzettségSzint: hivatkozási kulcs szerint (felvett szint vagy 0)', () => {
-    expect(képzettségSzint(karakter, 'harcmodor/kardvívás')).toBe(5);
-    expect(képzettségSzint(karakter, 'akrobatika')).toBe(2);
-    expect(képzettségSzint(karakter, 'harcmodor/rombolás')).toBe(0);
+    expect(képzettségSzint(karakter.képzettségek, 'harcmodor/kardvívás')).toBe(5);
+    expect(képzettségSzint(karakter.képzettségek, 'akrobatika')).toBe(2);
+    expect(képzettségSzint(karakter.képzettségek, 'harcmodor/rombolás')).toBe(0);
   });
   it('fortélyFok: id szerint, felvett fok vagy 0', () => {
-    expect(fortélyFok(karakter, 'kétkezes_harc')).toBe(3);
-    expect(fortélyFok(karakter, 'nincs_ilyen')).toBe(0);
+    expect(fortélyFok(karakter.fortélyok, 'kétkezes_harc')).toBe(3);
+    expect(fortélyFok(karakter.fortélyok, 'nincs_ilyen')).toBe(0);
   });
   it('harcmodorÖsszeg: közelharci harcmodor-elemek szintjének összege (hiányzó = 0)', () => {
     expect(harcmodorÖsszeg(karakter, ['kardvívás', 'rombolás'])).toBe(5);

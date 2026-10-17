@@ -78,7 +78,7 @@ export function gyűjtFortélyEffektek(
  * Returns a Set of `"${taktika_feltétel_kulcs}|${cél}"` keys (e.g. "taktika:visszafogott|TÉ").
  * Number-independent: the taktika's contribution to that cél is dropped entirely.
  */
-export function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
+function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
   const letiltva = new Set<string>();
   for (const kf of k.fortélyok) {
     const def = data.fortelySummaries.find(d => d.id === kf.id);
@@ -212,7 +212,7 @@ export function arányÖsszeg(effektek: Effekt[], cél: string, arányForrás: s
 export interface AktívTiltás { id: string; leírás: string; helyzet: string }
 
 /** A kézben lévő fegyverek: jobb kéz (vagy pajzs, index -2) + bal kéz kétkezes / hárító fogásnál. Üres = puszta kéz. */
-export function aktívFegyverDefek(k: Karakter, session: Session, data: GameData): FegyverAlap[] {
+function aktívFegyverDefek(k: Karakter, session: Session, data: GameData): FegyverAlap[] {
   const ki: FegyverAlap[] = [];
   const jobb = session.aktív_fegyver_index === -2
     ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(k) ?? '')

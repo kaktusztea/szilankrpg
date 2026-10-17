@@ -1,3 +1,4 @@
+import { clamp } from '../../engine/utils';
 import { useState, useMemo, useCallback } from 'react';
 import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
 import type { Tulajdonsagok } from '../../engine/types';
@@ -106,7 +107,7 @@ export function TulajdonsagokScreen({
   useEscapeClose(hasAnyPopup, resetPopups);
 
   function setTul(key: keyof Tulajdonsagok, val: number) {
-    setTulajdonságok(prev => ({ ...prev, [key]: Math.max(-5, Math.min(7, val)) }));
+    setTulajdonságok(prev => ({ ...prev, [key]: clamp(val, data.konstansok.tulajdonság_érték.min, data.konstansok.tulajdonság_érték.max) }));
   }
 
   function handleSzintChange(globalIdx: number, szint: number) {
@@ -182,6 +183,7 @@ export function TulajdonsagokScreen({
         {CSOPORT_SORREND.map(csoport => (
           <KepzettsegCsoport
             key={csoport}
+            próba={data.konstansok.próba}
             csoport={csoport}
             csoportLabel={CSOPORT_LABEL[csoport]}
             gameMode={gameMode}

@@ -19,7 +19,7 @@ manőverek:
     hatás:                     # kötelező, dict: { aktív: [...], passzív: [...] } - mondatonként egy elem.
       aktív: []                # az alkalmazó (én hajtom végre) szemszögéből
       passzív: []              # az elszenvedő (ellenem hajtják végre) szemszögéből
-    végrehajtás_té_módosító: 4 # opcionális. Végrehajtás fázis TÉ módosítója. Default: 4 (standard +4). 0 = nincs (sima támadás).
+    végrehajtás_té_módosító: 4 # opcionális. Végrehajtás fázis TÉ módosítója. Default: konstansok.yaml manőver.végrehajtás_TÉ_standard (+4). 0 = nincs (sima támadás).
     követelmények: ""          # opcionális. Üres ("") ha nincs. Lista ha van:
       # - erősség: "normál"    # "normál" = hiány → Ellenpróba Hátrány-2 (nem halmozódik); "erős" = hiány → auto-kudarc
       #   típus: "képzettség"  # gépi (auto-kiértékelt): "képzettség" | "fortély" | "fegyver_kategória" | "fegyver_sebzéstípus"; informatív: "egyéb"

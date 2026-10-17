@@ -289,7 +289,13 @@
   gap: 2px;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
+  /* <button> reset (a select-et tartalmazó div-változat is ezt a classt használja) */
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
+.aktiv-field-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 .aktiv-field-btn.disabled { opacity: 0.4; cursor: not-allowed; }
 
