@@ -145,6 +145,8 @@ class FegyverMod:
     erolimit: int
     pengehossz: float
     sebzes_hatrany: int   # 0 = elsődleges, -1 = másodlagos (Hátrány-1 sebzésdobásra)
+    fegyverhossz: int = 0        # kanonikus fegyverhossz-kategória (0..12) - a belharc tiltás-keret forrása
+    extrak: tuple = ()           # a fegyver extra-id-jei (pl. pancelszuras_belharcban) - belharc kivételekhez
 
 
 def generator_fegyverek(ero=2):
@@ -167,6 +169,8 @@ def generator_fegyverek(ero=2):
                 jelleg=m["tipus"], erolimit=m["erőbónusz_limit"],
                 pengehossz=_FEGYVERHOSSZ_TO_PENGEHOSSZ[f.hossz],
                 sebzes_hatrany=m["sebzes_hatrany"],
+                fegyverhossz=f.hossz,
+                extrak=tuple(rec.get("extrak", [])),
             ))
         if modok:
             eredmeny[rec["név"]] = modok
@@ -324,6 +328,20 @@ class Harcos:
             return dict(eh=0, szorzo=1.0, letiltott=False, max_limit=None, szoveges=[])
         return DA.statusz_hatasa(self.statusz, self.statusz_fok, cel)
 
+    def belharc_fegyver_tiltva(self):
+        """Belharci helyzetben a fegyver TÉ/VÉ=0-ra csökken, ha a §42.4 tiltás-keret valamelyik
+        tiltása él (belharc_fegyverhossz: fegyverhossz-kategória > 1; belharc_harcmodor: nem
+        közelharci kategória). A pancelszuras_belharcban extra feloldja a hossz-tiltást erre a
+        fegyverre (a harcmodor-tiltást nem). ponytail: a Belharcos fortély felvételét a hívó AI
+        a belharcos (nem tiltott) fegyverrel modellezi; a szúró páncél-SFÉ:0 al-hatás (földön
+        fekvő ellenfél) nincs ide kötve - az a sebzés-oldali modell része."""
+        if self.helyzet != "belharci_helyzet":
+            return False
+        páncélszúró = "pancelszuras_belharcban" in self.mod.extrak
+        hossz_tiltva = self.mod.fegyverhossz > 1 and not páncélszúró
+        nem_közelharc = KATEGORIA_TO_HARCMODOR.get(self.mod.kategoria, "") != "Közelharc"
+        return hossz_tiltva or nem_közelharc
+
     def te_aktualis(self, tobbszoros_tamadas):
         tm = self.taktika_mod()
         lev = sebesules_te_levonas(self.s_kat, self.szarmaztatott["ft_enyhites"])
@@ -332,12 +350,11 @@ class Harcos:
         te = self.szarmaztatott["TE"] + lev + tm.get("te", 0)
         if tobbszoros_tamadas:
             te -= 3
-        # §8: Belharci helyzet - hosszú fegyver (pengehossz > 0) TÉ override 0 (fegyver_override,
-        # a helyzet_fegyver_override() adatból); rövid/belharcos fegyver (pengehossz <= 0)
-        # Belharcos fortély 1.fok TÉ+2 (egyszerűsítés: a döntési AI-hoz kötött karakter
-        # feltételezetten birtokolja 1.fokon - a fortély-adat maga NINCS ide bekötve)
+        # §8/§42.4: Belharci helyzet - a tiltás-keret (fegyverhossz>1 vagy nem-közelharc harcmodor)
+        # a fegyver TÉ-jét 0-ra nullázza; a pancelszuras_belharcban extra feloldja a hossz-tiltást.
+        # Nem-tiltott (belharcos/rövid közelharci) fegyver: Belharcos fortély 1.fok TÉ+2.
         if self.helyzet == "belharci_helyzet":
-            if self.mod.pengehossz > 0:
+            if self.belharc_fegyver_tiltva():
                 te = 0
             else:
                 te += 2
@@ -349,7 +366,7 @@ class Harcos:
         ve = self.szarmaztatott["VE"] + tm.get("ve", 0) + hh.get("flat", 0)
         ve -= self.ve_faradas + self.ve_seb
         if self.helyzet == "belharci_helyzet":
-            if self.mod.pengehossz > 0:
+            if self.belharc_fegyver_tiltva():
                 ve = 0
             else:
                 ve += 2
@@ -416,7 +433,12 @@ def jelleg_bonusz(mod: FegyverMod, pancel_oszaly):
 
 def akcio_feloldas(tamado: Harcos, vedo: Harcos, pancel_oszaly, tobbszoros_tamadas):
     if tamado.taktika == "fárasztás":
+        # taktikak.yaml: override 3; +1 flat ha a támadó Fegyverelőnyben van (harci_helyzet:fegyverelőny).
         v = 3
+        if fegyverviszony(tamado, vedo) == "fegyverelőny":
+            v += 1
+        # Helyzet VÉ-csökkentés (pl. Meglepetés +2) - ugyanaz a hatás, mint a normál támadásnál.
+        v += tamado.helyzet_hatas("vé_csökkentés").get("flat", 0)
         vedo.ve_faradas += v
         return "fárasztás", 0
 
@@ -621,6 +643,22 @@ def selftest():
     t5 = wins[0] / N > 0.55
     print(f"  {'✔' if t5 else '✘ HIBA'}  T5  Kard,hosszú vs Kés (azonos profil) → kard győz {wins[0]/N:.1%} (elvárt >55%)")
     ok &= t5
+
+    # T6: Belharc tiltás-keret (§42.4) - hosszú fegyver TÉ/VÉ=0; a pancelszuras_belharcban extra feloldja.
+    def _elso(nev_resz):
+        for nev, mods in ALL_WEAPON_MODES.items():
+            if nev_resz.lower() in nev.lower():
+                return mods[0]
+        return None
+    pszuro = _elso("páncélszúró")
+    hosszu = _elso("Kard, lovag") or _elso("Kard, hosszú")
+    t6 = True
+    if pszuro is not None and hosszu is not None:
+        h_tor = Harcos("tőr", 0, _profil_referencia("A"), pszuro, helyzet="belharci_helyzet")
+        h_kard = Harcos("kard", 1, _profil_referencia("B"), hosszu, helyzet="belharci_helyzet")
+        t6 = (not h_tor.belharc_fegyver_tiltva()) and h_kard.belharc_fegyver_tiltva() and h_kard.te_aktualis(False) == 0
+    print(f"  {'✔' if t6 else '✘ HIBA'}  T6  Belharc tiltás-keret: páncélszúró feloldva, hosszú kard TÉ=0")
+    ok &= t6
 
     print(f"\n{'MIND OK' if ok else 'HIBA VAN'}\n")
     return ok

@@ -186,9 +186,9 @@ def selftest():
     print(f"  {'✔' if t1b else '✘ HIBA'}  T1b Földön fekve vé_veszteség szorzó={h2['szorzo']} (elvárt 2)")
     ok &= t1b
 
-    # T2: Belharci helyzet fegyver_override létezik és a feltétele pengehossz>0
+    # T2: Belharci helyzet fegyver_override létezik, feltétele a tiltás-keretre hivatkozik
     fo = helyzet_fegyver_override("belharci_helyzet")
-    t2 = fo is not None and fo["feltétel"][0]["forrás"] == "aktív_fegyver_pengehossz"
+    t2 = fo is not None and fo["feltétel"][0]["forrás"] == "tiltás:belharc_fegyverhossz"
     print(f"  {'✔' if t2 else '✘ HIBA'}  T2  Belharci helyzet fegyver_override betöltve")
     ok &= t2
 
@@ -210,17 +210,17 @@ def selftest():
     print(f"  {'✔' if t5 else '✘ HIBA'}  T5  Visszafogott sebzésdobás eh={vh.get('sebzésdobás', {}).get('eh')} (elvárt -2)")
     ok &= t5
 
-    # T6: Fárasztás megkötése tiltja Pengehátrányból
+    # T6: Fárasztás megkötése tiltja Fegyverhátrányból
     mk = taktika_megkotesek("fárasztás")
-    t6 = any(m["mód"] == "tiltott" and m["érték"] == "Pengehátrány" for m in mk)
-    print(f"  {'✔' if t6 else '✘ HIBA'}  T6  Fárasztás megkötés (Pengehátrány tiltott): {t6}")
+    t6 = any(m["mód"] == "tiltott" and m["érték"] == "Fegyverhátrány" for m in mk)
+    print(f"  {'✔' if t6 else '✘ HIBA'}  T6  Fárasztás megkötés (Fegyverhátrány tiltott): {t6}")
     ok &= t6
 
     # T7: Mögékerülés nehézsége és helyzetfüggő módosítói
     n = manover_nehezseg("mögékerülés")
     hm = manover_helyzetfuggo_modositok("mögékerülés")
-    t7 = n == 8 and "Túlerő" in hm
-    print(f"  {'✔' if t7 else '✘ HIBA'}  T7  Mögékerülés nehézség={n}, 'Túlerő' kategória betöltve: {'Túlerő' in hm}")
+    t7 = n == 8 and "Túlerőben vagytok" in hm
+    print(f"  {'✔' if t7 else '✘ HIBA'}  T7  Mögékerülés nehézség={n}, 'Túlerőben vagytok' kategória betöltve: {'Túlerőben vagytok' in hm}")
     ok &= t7
 
     # T8: Orvtámadás megjegyzések narratíva betöltve ("csak az 1. támadásra" finomítás)
