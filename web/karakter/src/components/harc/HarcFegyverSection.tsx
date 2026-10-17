@@ -23,7 +23,7 @@ function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Ses
     if (opt.id === 'fegyver_pajzs') return !!karakter.pajzs?.méret;
     if (opt.id === 'fegyver_hárító') {
       return karakter.fegyverek.some(fp => isHárító(lookupFegyver(data.fegyverek, fp.alap)))
-        && karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
+        && karakter.fortélyok.some(f => f.id === 'hárítófegyver_használat' && f.fok > 0);
     }
     if (opt.id === 'kétkezes') {
       return kétkezesLehetséges(data, karakter, jobbIdx);

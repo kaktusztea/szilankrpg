@@ -113,7 +113,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Kardvívás",
+        "név": "harcmodor/kardvívás",
         "érték": 6
       },
       {
@@ -160,7 +160,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Kardvívás",
+        "név": "harcmodor/kardvívás",
         "érték": 6
       },
       {
@@ -226,7 +226,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Harcmodor",
+        "név": "harcmodor",
         "érték": 5
       },
       {
@@ -377,7 +377,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Harcmodor",
+        "név": "harcmodor",
         "érték": 5
       },
       {
@@ -483,7 +483,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Lándzsavívás",
+        "név": "harcmodor/lándzsavívás",
         "érték": 6
       },
       {
@@ -535,7 +535,7 @@
       {
         "erősség": "normál",
         "típus": "fortély",
-        "név": "Mesterfegyver",
+        "név": "mesterfegyver",
         "érték": 1
       },
       {
@@ -594,7 +594,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Harcmodor",
+        "név": "harcmodor",
         "érték": 5
       },
       {
@@ -732,7 +732,7 @@
       {
         "erősség": "normál",
         "típus": "fortély",
-        "név": "Mesterfegyver",
+        "név": "mesterfegyver",
         "érték": 2
       },
       {
@@ -834,7 +834,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Harcmodor",
+        "név": "harcmodor",
         "érték": 6
       },
       {
@@ -872,13 +872,13 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Harcmodor",
+        "név": "harcmodor",
         "érték": 5
       },
       {
         "erősség": "normál",
         "típus": "fortély",
-        "név": "Pajzshasználat",
+        "név": "pajzshasználat",
         "érték": 2
       },
       {
@@ -945,7 +945,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Közelharc",
+        "név": "harcmodor/közelharc",
         "érték": 4
       },
       {
@@ -1078,7 +1078,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Harcmodor",
+        "név": "harcmodor",
         "érték": 5
       },
       {
@@ -1124,7 +1124,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Harcmodor",
+        "név": "harcmodor",
         "érték": 6
       }
     ],
@@ -1485,7 +1485,7 @@
       {
         "erősség": "normál",
         "típus": "képzettség",
-        "név": "Közelharc",
+        "név": "harcmodor/közelharc",
         "érték": 5
       },
       {
@@ -1827,7 +1827,7 @@
       {
         "erősség": "normál",
         "típus": "fortély",
-        "név": "Lovas harc",
+        "név": "lovas_harc",
         "érték": 2
       },
       {

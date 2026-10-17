@@ -166,7 +166,7 @@
       {
         "típus": "harcmodor",
         "mód": "tiltott",
-        "érték": "Ostorharc"
+        "érték": "ostorharc"
       },
       {
         "típus": "per_küzdelem",
@@ -230,7 +230,7 @@
       {
         "típus": "harcmodor",
         "mód": "tiltott",
-        "érték": "Ostorharc"
+        "érték": "ostorharc"
       },
       {
         "típus": "harci_helyzet",
@@ -276,7 +276,7 @@
       {
         "típus": "harcmodor",
         "mód": "tiltott",
-        "érték": "Ostorharc"
+        "érték": "ostorharc"
       }
     ],
     "kombó_mód": "whitelist",
@@ -500,8 +500,8 @@
     "fortély_bővítés": null,
     "csoport": "távharc",
     "szűrő_harcmodorok": [
-      "Íjászat",
-      "Lövészet"
+      "íjászat",
+      "lövészet"
     ],
     "feltétel_kulcs": "taktika:kitartott_célzás"
   },

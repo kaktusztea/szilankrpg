@@ -15,7 +15,7 @@ export function SectionRow({ ctx, név, szint, canDelete = true, warning = false
   const infoKey = `kep-${név}`;
   return (
     <MisztikusRow
-      név={név} szint={szint} maxSzint={ctx.maxSzint} canDelete={canDelete}
+      név={ctx.név(név)} szint={szint} maxSzint={ctx.maxSzint} canDelete={canDelete}
       warning={warning} gameMode={ctx.gameMode}
       infoOpen={ctx.infoTarget === infoKey}
       onInfoToggle={() => ctx.onInfoToggle(infoKey)}

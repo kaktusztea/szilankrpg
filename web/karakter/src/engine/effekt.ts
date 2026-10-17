@@ -9,6 +9,7 @@
  * `effekt.regresszio.test.ts` (a régi kézi implementációval rögzített snapshot).
  * A fájl végén: a tiltás-keret (§42.4) és a fegyver_override soronkénti kiértékelése (2. szelet).
  */
+import { képzKulcs } from './azonosito';
 import type { Karakter, Session, FegyverAlap } from './types';
 import type { GameData, ExtraHatás } from './data-loader';
 import { evaluateAlapesetek } from './alapeset';
@@ -31,7 +32,7 @@ export interface Effekt {
   arány?: number;
   /** A forrás-sor szöveges kontextusa (pl. „Fájdalomtűrés próba kínzás esetén") - szituációs megjelenítéshez. */
   megjegyzés?: string;
-  forrás: { típus: EffektForrásTípus; név: string };
+  forrás: { típus: EffektForrásTípus; név: string; /** fortély-forrásnál a fortély-id */ id?: string };
 }
 
 /** Fortély-módosítók + alapesetek (fok 0) aktív effektjei. */
@@ -42,21 +43,21 @@ export function gyűjtFortélyEffektek(
 ): Effekt[] {
   const ki: Effekt[] = [];
   for (const kf of k.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    const def = data.fortelySummaries.find(d => d.id === kf.id);
     const fokDef = def?.fokok.find(fd => fd.fok === kf.fok);
     if (!def || !fokDef?.módosítók) continue;
-    const forrás = { típus: 'fortély' as const, név: kf.név };
+    const forrás = { típus: 'fortély' as const, név: def.név, id: def.id };
     for (const mod of fokDef.módosítók) {
       if (!feltételTeljesül(mod.feltétel)) continue;
       // Session-toggle fortély (pl. Harci akrobatika): a TÉ/VÉ hatás csak bekapcsolt állapotban él.
       if (def.session_toggle && (mod.cél === 'TÉ' || mod.cél === 'VÉ')
-        && !(session as unknown as Record<string, unknown>)[kf.név.toLowerCase().replace(/ /g, '_')]) continue;
+        && !(session as unknown as Record<string, unknown>)[kf.id]) continue;
       const alap = { cél: mod.cél, ...(mod.alcél ? { alcél: mod.alcél } : {}), ...(mod.megjegyzés ? { megjegyzés: mod.megjegyzés } : {}), forrás };
       if (mod.mód === 'scaled' && mod.forrás === 'erőbónusz') {
         ki.push({ ...alap, mód: 'scaled', arányForrás: 'erőbónusz', arány: mod.arány });
       } else if (mod.mód === 'scaled' && mod.forrás) {
         // Képzettség-forrás: a gyűjtéskor feloldva (FLOOR), additív értékként megy tovább.
-        const szint = k.képzettségek.find(kp => kp.név.toLowerCase() === mod.forrás)?.szint ?? 0;
+        const szint = k.képzettségek.find(kp => képzKulcs(kp) === mod.forrás)?.szint ?? 0;
         ki.push({ ...alap, mód: 'scaled', érték: Math.floor(szint * mod.arány) });
       } else {
         ki.push({ ...alap, mód: mod.mód, érték: mod.érték });
@@ -80,7 +81,7 @@ export function gyűjtFortélyEffektek(
 export function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
   const letiltva = new Set<string>();
   for (const kf of k.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    const def = data.fortelySummaries.find(d => d.id === kf.id);
     if (!def) continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef?.módosítók) continue;
@@ -178,7 +179,7 @@ export function fortélyPróbaBónuszok(
     .filter(e => e.forrás.típus === 'fortély' && e.mód === 'flat' && célok.includes(e.cél) && !!e.alcél && alcélIllik(e.alcél)
       && typeof e.érték === 'number')
     .map(e => {
-      const fok = k.fortélyok.find(f => f.név === e.forrás.név)?.fok;
+      const fok = k.fortélyok.find(f => f.id === e.forrás.id)?.fok;
       return { érték: e.érték!, leírás: `${e.forrás.név} (${fok}): ${e.megjegyzés ?? ''}`.replace(/: $/, '') };
     });
 }
@@ -260,7 +261,7 @@ export function tiltásokFegyverre(fDef: FegyverAlap, session: Session, data: Ga
     .filter(h => h?.tiltások?.length);
   if (!helyzetek.length) return [];
   const ctx = new Map([['fegyver.fegyverhossz', fDef.fegyverhossz]]);
-  const sctx = new Map([['fegyver.harcmodor', data.konstansok.fegyver_kategória_harcmodor[fDef.kategória] ?? 'Közelharc']]);
+  const sctx = new Map([['fegyver.harcmodor', data.konstansok.fegyver_kategória_harcmodor[fDef.kategória] ?? 'közelharc']]);
   const { feltételTeljesül } = createFeltételEvaluator(new Set(), session, new Map(), ctx, sctx);
   const feloldott = feloldottTiltások(fDef, data, aktívFeltételek);
   const ki: AktívTiltás[] = [];

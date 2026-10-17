@@ -1,4 +1,5 @@
 import type { GameData } from '../../engine/data-loader';
+import { bontKépzKulcs, képzettségNév, harcmodorNév, HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID } from '../../engine/azonosito';
 import type { Karakter } from '../../engine/types';
 import { lookupFegyver, képzettségSzint, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../../engine/utils';
 import { findMfFok as findMfFokCanonical } from '../../engine/mf-utils';
@@ -9,13 +10,13 @@ import { evaluate, buildContext } from '../../engine/reactive';
 export function calcMaxHM(data: GameData, k: Karakter): number {
   const harcmodorok = getHarcmodorok(data);
   const harciFortelyNevek = new Set(
-    data.fortelySummaries.filter(d => d.csoport === 'harci').map(d => d.név)
+    data.fortelySummaries.filter(d => d.csoport === 'harci').map(d => d.id)
   );
   const harciFokok = k.fortélyok
-    .filter(f => harciFortelyNevek.has(f.név) && f.név !== 'Mesterfegyver')
+    .filter(f => harciFortelyNevek.has(f.id) && f.id !== 'mesterfegyver')
     .reduce((s, f) => s + f.fok, 0);
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(k, harcmodorok);
-  const alakzatharcSzint = képzettségSzint(k, 'Alakzatharc');
+  const alakzatharcSzint = képzettségSzint(k, 'alakzatharc');
   return harciFokok + harcmodorÖsszeg + alakzatharcSzint;
 }
 
@@ -35,20 +36,19 @@ export function getHarcmodorok(data: GameData): string[] {
   return [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
 }
 
-function getKözelharciHmSet(data: GameData): Set<string> {
-  return new Set(getHarcmodorok(data));
-}
-
+/** Távolsági harcmodor-kulcsok ("távolsági_harcmodor/íjászat"). */
 function getTávharciHmSet(data: GameData): Set<string> {
   return new Set(
-    data.kepzettsegDefs.find(d => d.név === 'Távolsági harcmodor')?.többszörös ?? []
+    (data.kepzettsegDefs.find(d => d.id === TÁVOLSÁGI_HARCMODOR_ID)?.többszörös ?? []).map(n => `${TÁVOLSÁGI_HARCMODOR_ID}/${n.toLowerCase()}`)
   );
 }
 
-export function harciKepzDisplayName(data: GameData, név: string): string {
-  if (getKözelharciHmSet(data).has(név)) return `Harcmodor: ${név}`;
-  if (getTávharciHmSet(data).has(név)) return `Táv. harcmodor: ${név}`;
-  return név;
+/** Harci képzettség felirata kulcsból ("harcmodor/kardvívás" → "Harcmodor: Kardvívás"). */
+export function harciKepzDisplayName(data: GameData, kulcs: string): string {
+  const { id } = bontKépzKulcs(kulcs);
+  if (id === HARCMODOR_ID) return `Harcmodor: ${képzettségNév(kulcs, data)}`;
+  if (id === TÁVOLSÁGI_HARCMODOR_ID) return `Táv. harcmodor: ${képzettségNév(kulcs, data)}`;
+  return képzettségNév(kulcs, data);
 }
 
 // --- Mesterfegyver ---
@@ -60,7 +60,7 @@ export function getMfFok(data: GameData, k: Karakter, fegyverAlap: string): numb
 export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: string): boolean {
   const fok = getMfFok(data, k, fegyverAlap);
   if (fok === 0) return false;
-  const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
+  const mfDef = data.fortelySummaries.find(d => d.id === 'mesterfegyver');
   const fokDef = mfDef?.fokok.find(f => f.fok === fok);
   if (!fokDef?.követelmények?.length) return false;
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
@@ -69,15 +69,13 @@ export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: st
     : undefined;
   for (const kov of fokDef.követelmények) {
     if (kov.típus === 'képzettség') {
-      const szűrtNevek = fegyverHarcmodor
-        ? [fegyverHarcmodor]
+      const refek = fegyverHarcmodor
+        ? [`${HARCMODOR_ID}/${fegyverHarcmodor}`]
         : (Array.isArray(kov.név) ? kov.név : [kov.név]);
-      if (!szűrtNevek.some(n =>
-        (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték
-      )) return true;
+      if (!refek.some(r => képzettségSzint(k, r) >= kov.érték)) return true;
     } else if (kov.típus === 'fortély') {
-      const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
-      if (!k.fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték)) return true;
+      const id = Array.isArray(kov.név) ? kov.név[0] : kov.név;
+      if (!k.fortélyok.some(f => f.id === id && f.fok >= kov.érték)) return true;
     }
   }
   return false;
@@ -86,7 +84,7 @@ export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: st
 export function mfKövetelményText(data: GameData, k: Karakter, fegyverAlap: string): string {
   const fok = getMfFok(data, k, fegyverAlap);
   if (fok === 0) return '';
-  const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
+  const mfDef = data.fortelySummaries.find(d => d.id === 'mesterfegyver');
   const fokDef = mfDef?.fokok.find(f => f.fok === fok);
   if (!fokDef?.követelmények?.length) return '';
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
@@ -95,7 +93,8 @@ export function mfKövetelményText(data: GameData, k: Karakter, fegyverAlap: st
     : undefined;
   const kov = fokDef.követelmények[0];
   if (kov.típus === 'képzettség') {
-    const név = fegyverHarcmodor ?? (Array.isArray(kov.név) ? kov.név.join(' / ') : kov.név);
+    const név = fegyverHarcmodor ? harcmodorNév(fegyverHarcmodor, data)
+      : (Array.isArray(kov.név) ? kov.név : [kov.név]).map(r => képzettségNév(r, data)).join(' / ');
     return `⚠ ${név} ≥ ${kov.érték}`;
   }
   return '';
@@ -110,20 +109,20 @@ function getAllHarciNames(data: GameData): string[] {
   const names: string[] = [];
   for (const d of harciDefs) {
     if (d.többszörös.length > 0 && d.többszörös[0] !== '*') {
-      for (const sub of d.többszörös) names.push(sub);
+      for (const sub of d.többszörös) names.push(`${d.id}/${sub.toLowerCase()}`);
     } else {
-      names.push(d.név);
+      names.push(d.id);
     }
   }
   return names;
 }
 
-/** Csak távharci harcmodor nevek (Hajítás, Íjászat, Lövészet, stb.) */
+/** Csak távharci harcmodor-kulcsok ("távolsági_harcmodor/íjászat", …) */
 export function getAllTávharciNames(data: GameData): string[] {
   return [...getTávharciHmSet(data)];
 }
 
-/** Közelharci harcmodorok + egyéb harci képzettségek (távharci NÉLKÜL) */
+/** Közelharci harcmodorok + egyéb harci képzettségek kulcsai (távharci NÉLKÜL) */
 export function getAllKözelharciNames(data: GameData): string[] {
   const távharci = getTávharciHmSet(data);
   return getAllHarciNames(data).filter(n => !távharci.has(n));

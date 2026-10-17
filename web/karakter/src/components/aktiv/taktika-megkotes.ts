@@ -40,8 +40,8 @@ export function isTaktikaAllowed(
         const fp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
         const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
         const sebesség = fd ? (elsődlegesMód(fd).Sebesség ?? 6) : 6;
-        const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'Közelharc') : 'Közelharc';
-        const harcmodorSzint = képzettségSzint(karakter, harcmodorNév);
+        const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'közelharc') : 'közelharc';
+        const harcmodorSzint = képzettségSzint(karakter, `harcmodor/${harcmodorNév}`);
         const támadások = 1 + Math.floor((harcmodorSzint * 2) / sebesség);
         if (támadások < (mk.érték as number)) return false;
       }

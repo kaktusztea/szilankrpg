@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import { fortélyNév, képzettségNév, képzKulcs } from '../../engine/azonosito';
 import { useState } from 'react';
 import type { FortelySummary } from '../../engine/data-loader';
 import type { GameData } from '../../engine/data-loader';
@@ -9,15 +11,16 @@ import { SpecPicker, buildFortelyPickerSource } from '../SpecPicker';
 import { MAX_EGYEDI_FORTELY_NÉV } from '../../ui-constants';
 
 // --- Fok picker (for new fortély) ---
-export function FokPickerPopup({ slot, maxfok, nyelvFokLabels, onSelect, onCancel }: {
+export function FokPickerPopup({ slot, maxfok, nyelvFokLabels, data, onSelect, onCancel }: {
   slot: Fortely;
+  data: GameData;
   maxfok: number;
   nyelvFokLabels: Record<number, string>;
   onSelect: (fok: number) => void;
   onCancel: () => void;
 }) {
-  const isNyelv = slot.név === 'Nyelvismeret';
-  const label = isNyelv ? displayName(slot) : `${slot.név} - fok:`;
+  const isNyelv = slot.id === 'nyelvismeret';
+  const label = isNyelv ? displayName(slot, data) : `${fortélyNév(slot, data)} - fok:`;
   return (
     <PopupOverlay onClose={onCancel}>
       <label>{label}</label>
@@ -42,20 +45,21 @@ export function MultiPicker({ def, fortélyok, data, onSelect, onCancel }: {
   onSelect: (subName: string) => void;
   onCancel: () => void;
 }) {
-  const usedSubs = new Set(fortélyok.filter(f => f.név === def.név).map(f => f.spec_elem));
+  const usedSubs = new Set(fortélyok.filter(f => f.id === def.id).map(f => f.elem));
   const source = buildFortelyPickerSource(def, usedSubs, data);
   return <SpecPicker source={source} onSelect={onSelect} onCancel={onCancel} />;
 }
 
 // --- Szabad type picker (Felvett / Kiérdemelt) ---
-export function SzabadTypePickerPopup({ picker, felvettKp, onFelvett, onKiérdemelt, onCancel }: {
+export function SzabadTypePickerPopup({ picker, felvettKp, data, onFelvett, onKiérdemelt, onCancel }: {
   picker: SzabadTypePicker;
+  data: GameData;
   felvettKp: number;
   onFelvett: () => void;
   onKiérdemelt: () => void;
   onCancel: () => void;
 }) {
-  const label = picker.spec_elem ? `${picker.név} - ${picker.spec_elem}` : picker.név;
+  const label = displayName({ ...picker, fok: 1 }, data);
   return (
     <PopupOverlay onClose={onCancel} className="kep-prompt kep-prompt-align-center kep-prompt-gap-12">
       <label className="kep-prompt-label-bold">{label}</label>
@@ -68,8 +72,9 @@ export function SzabadTypePickerPopup({ picker, felvettKp, onFelvett, onKiérdem
 }
 
 // --- Egyedi fortély név + kiterjesztés picker ---
-export function EgyediFortelyPopup({ képzettségek, onConfirm, onCancel }: {
-  képzettségek: { név: string; szint: number }[];
+export function EgyediFortelyPopup({ képzettségek, data, onConfirm, onCancel }: {
+  képzettségek: Kepzettseg[];
+  data: GameData;
   onConfirm: (név: string, kiterjeszti: string[]) => void;
   onCancel: () => void;
 }) {
@@ -99,10 +104,10 @@ export function EgyediFortelyPopup({ képzettségek, onConfirm, onCancel }: {
         <div className="egyedi-kit-section">
           <label className="egyedi-kit-label">Kiterjeszti (opcionális):</label>
           <div className="egyedi-kit-list">
-            {[...képzettségek].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(k => (
-              <button key={k.név}
-                className={`egyedi-kit-btn${kiterjeszti.has(k.név) ? ' active' : ''}`}
-                onClick={() => toggleKép(k.név)}>{k.név}</button>
+            {[...képzettségek].sort((a, b) => képzettségNév(a, data).localeCompare(képzettségNév(b, data), 'hu')).map(k => (
+              <button key={képzKulcs(k)}
+                className={`egyedi-kit-btn${kiterjeszti.has(képzKulcs(k)) ? ' active' : ''}`}
+                onClick={() => toggleKép(képzKulcs(k))}>{képzettségNév(k, data)}</button>
             ))}
           </div>
         </div>

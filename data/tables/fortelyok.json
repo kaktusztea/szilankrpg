@@ -57,7 +57,7 @@
         ],
         "követelmények": [
           {
-            "név": "Mászás",
+            "név": "mászás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -65,7 +65,7 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Mászás",
+            "képzettség": "mászás",
             "kategória": "Körülmény",
             "sorok": [
               "Mentő próba (rontás után)"
@@ -92,8 +92,8 @@
     "többszörös_lista": [],
     "leírás": "A másik nem elcsábítása, vagy a rosszindulatú csábítás felismerése.",
     "kiterjeszti_normál": [
-      "Befolyásolás",
-      "Emberismeret"
+      "befolyásolás",
+      "emberismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -207,7 +207,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Észlelés próba alvás közben",
-            "alcél": "képzettség:Észlelés"
+            "alcél": "képzettség:észlelés"
           }
         ],
         "próba_enyhítések": []
@@ -230,9 +230,9 @@
     "többszörös_lista": [],
     "leírás": "Magába foglalja az összes közismert faj ismeretét, anatómiáját és boncolását.",
     "kiterjeszti_normál": [
-      "Nyomozás",
-      "Arkánum: Nekromancia",
-      "Lexikum"
+      "nyomozás",
+      "arkánum_nekromancia",
+      "lexikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -252,7 +252,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Méregkeverés képzettségre",
-            "alcél": "képzettség:Méregkeverés"
+            "alcél": "képzettség:méregkeverés"
           }
         ],
         "próba_enyhítések": []
@@ -275,11 +275,11 @@
     "többszörös_lista": [],
     "leírás": "Épületek statikai ismerete, építésének, tervezésének módja, korszakai, stílusai.",
     "kiterjeszti_normál": [
-      "Nyomozás",
-      "Művészetismeret"
+      "nyomozás",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [
-      "Kvantikum"
+      "kvantikum"
     ],
     "fokok": [
       {
@@ -338,7 +338,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Fájdalomtűrés próba kínzás esetén",
-            "alcél": "képzettség:Fájdalomtűrés"
+            "alcél": "képzettség:fájdalomtűrés"
           }
         ],
         "próba_enyhítések": []
@@ -359,7 +359,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Fájdalomtűrés próba kínzás esetén",
-            "alcél": "képzettség:Fájdalomtűrés"
+            "alcél": "képzettség:fájdalomtűrés"
           }
         ],
         "próba_enyhítések": []
@@ -478,7 +478,7 @@
         ],
         "követelmények": [
           {
-            "név": "Úszás",
+            "név": "úszás",
             "érték": 1,
             "típus": "fortély"
           }
@@ -496,7 +496,7 @@
         ],
         "követelmények": [
           {
-            "név": "Úszás",
+            "név": "úszás",
             "érték": 2,
             "típus": "fortély"
           }
@@ -522,10 +522,10 @@
     "többszörös_lista": [],
     "leírás": "Műkincsek, műtárgyak megtévesztő másolása, vagy hamisítvány felismerése.",
     "kiterjeszti_normál": [
-      "Értékbecslés",
-      "Képzőművészet",
-      "Művészetismeret",
-      "Kézművesség"
+      "értékbecslés",
+      "képzőművészet",
+      "művészetismeret",
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -597,9 +597,9 @@
     "többszörös_lista": [],
     "leírás": "Az egyik leggyakoribb félrevezető technika.",
     "kiterjeszti_normál": [
-      "Befolyásolás",
-      "Emberismeret",
-      "Nyomozás"
+      "befolyásolás",
+      "emberismeret",
+      "nyomozás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -631,8 +631,8 @@
     "többszörös_lista": [],
     "leírás": "Titkos rejtekajtók, zugok, rejtett tárgyak felkutatása és elrejtése.",
     "kiterjeszti_normál": [
-      "Észlelés",
-      "Természetjárás"
+      "észlelés",
+      "természetjárás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -646,7 +646,7 @@
         ],
         "követelmények": [
           {
-            "név": "Észlelés",
+            "név": "észlelés",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -664,7 +664,7 @@
         ],
         "követelmények": [
           {
-            "név": "Észlelés",
+            "név": "észlelés",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -690,7 +690,7 @@
     "többszörös_lista": [],
     "leírás": "Fém ötvözetekből fegyverek kovácsolása.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -704,7 +704,7 @@
         ],
         "követelmények": [
           {
-            "név": "Kézműves: Kovács",
+            "név": "kézműves_kovács",
             "érték": 1,
             "típus": "fortély"
           }
@@ -722,7 +722,7 @@
         ],
         "követelmények": [
           {
-            "név": "Kézműves: Kovács",
+            "név": "kézműves_kovács",
             "érték": 1,
             "típus": "fortély"
           }
@@ -736,7 +736,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Kézművesség (fegyver kovácsolás)",
-            "alcél": "képzettség:Kézművesség"
+            "alcél": "képzettség:kézművesség"
           }
         ],
         "próba_enyhítések": []
@@ -759,7 +759,7 @@
     "többszörös_lista": [],
     "leírás": "Fém ötvözetekből páncélok kovácsolása.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -773,7 +773,7 @@
         ],
         "követelmények": [
           {
-            "név": "Kézműves: Kovács",
+            "név": "kézműves_kovács",
             "érték": 1,
             "típus": "fortély"
           }
@@ -791,7 +791,7 @@
         ],
         "követelmények": [
           {
-            "név": "Kézműves: Kovács",
+            "név": "kézműves_kovács",
             "érték": 1,
             "típus": "fortély"
           }
@@ -805,7 +805,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Kézművesség (páncél kovácsolás)",
-            "alcél": "képzettség:Kézművesség"
+            "alcél": "képzettség:kézművesség"
           }
         ],
         "próba_enyhítések": []
@@ -882,8 +882,8 @@
         "követelmények": [
           {
             "név": [
-              "Lovaglás",
-              "Léglovaglás"
+              "lovaglás",
+              "léglovaglás"
             ],
             "érték": 3,
             "típus": "képzettség"
@@ -972,11 +972,11 @@
     "többszörös_lista": [],
     "leírás": "Mechanikus szerkezetek ismerete.",
     "kiterjeszti_normál": [
-      "Csapdaállítás",
-      "Kézművesség"
+      "csapdaállítás",
+      "kézművesség"
     ],
     "kiterjeszti_erős": [
-      "Kvantikum"
+      "kvantikum"
     ],
     "fokok": [
       {
@@ -1017,8 +1017,8 @@
     "többszörös_lista": [],
     "leírás": "Zord külsőd és fenyegető belsőd engedelmességre parancsolja a pondrókat.",
     "kiterjeszti_normál": [
-      "Befolyásolás",
-      "Emberismeret"
+      "befolyásolás",
+      "emberismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -1148,7 +1148,7 @@
         ],
         "követelmények": [
           {
-            "név": "Kézművesség",
+            "név": "kézművesség",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -1174,7 +1174,7 @@
     "többszörös_lista": [],
     "leírás": "Nyomok értelmezése, követése, eltűntetése városon kívül és belül.",
     "kiterjeszti_normál": [
-      "Természetjárás"
+      "természetjárás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -1216,8 +1216,8 @@
     "többszörös_lista": [],
     "leírás": "Egy adott kihalt, ősi kultúra specializált ismerete.",
     "kiterjeszti_normál": [
-      "Értékbecslés",
-      "Lexikum"
+      "értékbecslés",
+      "lexikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -1261,7 +1261,7 @@
         ],
         "követelmények": [
           {
-            "név": "Mászás",
+            "név": "mászás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1269,7 +1269,7 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Mászás",
+            "képzettség": "mászás",
             "kategória": "Körülmény",
             "sorok": [
               "Gyorsan mászni"
@@ -1349,7 +1349,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lopakodás/rejtőzés",
+            "név": "lopakodás_rejtőzés",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1357,7 +1357,7 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Lopakodás/rejtőzés",
+            "képzettség": "lopakodás_rejtőzés",
             "kategória": "Mozgás",
             "sorok": [],
             "érték": 999
@@ -1394,7 +1394,7 @@
         ],
         "követelmények": [
           {
-            "név": "Nyelvismeret",
+            "név": "nyelvismeret",
             "érték": 2,
             "típus": "fortély"
           }
@@ -1443,7 +1443,7 @@
         ],
         "követelmények": [
           {
-            "név": "Álcázás/Álruha",
+            "név": "álcázás_álruha",
             "érték": 4,
             "típus": "képzettség"
           }
@@ -1451,13 +1451,13 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Álcázás/Álruha",
+            "képzettség": "álcázás_álruha",
             "kategória": "Idő",
             "sorok": [],
             "érték": 3
           },
           {
-            "képzettség": "Álcázás/Álruha",
+            "képzettség": "álcázás_álruha",
             "kategória": "Felszerelés",
             "sorok": [],
             "érték": 3
@@ -1474,7 +1474,7 @@
         ],
         "követelmények": [
           {
-            "név": "Álcázás/Álruha",
+            "név": "álcázás_álruha",
             "érték": 8,
             "típus": "képzettség"
           }
@@ -1482,13 +1482,13 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Álcázás/Álruha",
+            "képzettség": "álcázás_álruha",
             "kategória": "Idő",
             "sorok": [],
             "érték": 6
           },
           {
-            "képzettség": "Álcázás/Álruha",
+            "képzettség": "álcázás_álruha",
             "kategória": "Felszerelés",
             "sorok": [],
             "érték": 6
@@ -1546,8 +1546,8 @@
     "leírás": "A történelem írott részének, múlt eseményeinek, legendáinak ismerete.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [
-      "Hadászat",
-      "Lexikum"
+      "hadászat",
+      "lexikum"
     ],
     "fokok": [
       {
@@ -1578,7 +1578,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Lexikum próba történelmi témában",
-            "alcél": "képzettség:Lexikum"
+            "alcél": "képzettség:lexikum"
           },
           {
             "cél": "képzettségpróba",
@@ -1588,7 +1588,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "Hadászat próba történelmi témában",
-            "alcél": "képzettség:Hadászat"
+            "alcél": "képzettség:hadászat"
           }
         ],
         "próba_enyhítések": []
@@ -1685,7 +1685,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lexikum",
+            "név": "lexikum",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1699,7 +1699,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Lexikum értékre",
-            "alcél": "képzettség:Lexikum"
+            "alcél": "képzettség:lexikum"
           }
         ],
         "próba_enyhítések": []
@@ -1714,7 +1714,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lexikum",
+            "név": "lexikum",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -1728,7 +1728,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Lexikum értékre",
-            "alcél": "képzettség:Lexikum"
+            "alcél": "képzettség:lexikum"
           }
         ],
         "próba_enyhítések": []
@@ -1763,7 +1763,7 @@
         ],
         "követelmények": [
           {
-            "név": "Hajózás",
+            "név": "hajózás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1777,7 +1777,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Hajózás értékre",
-            "alcél": "képzettség:Hajózás"
+            "alcél": "képzettség:hajózás"
           }
         ],
         "próba_enyhítések": []
@@ -1792,7 +1792,7 @@
         ],
         "követelmények": [
           {
-            "név": "Hajózás",
+            "név": "hajózás",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -1806,7 +1806,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Hajózás értékre",
-            "alcél": "képzettség:Hajózás"
+            "alcél": "képzettség:hajózás"
           }
         ],
         "próba_enyhítések": []
@@ -1841,7 +1841,7 @@
         ],
         "követelmények": [
           {
-            "név": "Nyomozás",
+            "név": "nyomozás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1855,7 +1855,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Nyomozás értékre",
-            "alcél": "képzettség:Nyomozás"
+            "alcél": "képzettség:nyomozás"
           }
         ],
         "próba_enyhítések": []
@@ -1870,7 +1870,7 @@
         ],
         "követelmények": [
           {
-            "név": "Nyomozás",
+            "név": "nyomozás",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -1884,7 +1884,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Nyomozás értékre",
-            "alcél": "képzettség:Nyomozás"
+            "alcél": "képzettség:nyomozás"
           }
         ],
         "próba_enyhítések": []
@@ -1919,7 +1919,7 @@
         ],
         "követelmények": [
           {
-            "név": "Orvoslás",
+            "név": "orvoslás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1933,7 +1933,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Orvoslás értékre",
-            "alcél": "képzettség:Orvoslás"
+            "alcél": "képzettség:orvoslás"
           }
         ],
         "próba_enyhítések": []
@@ -1948,7 +1948,7 @@
         ],
         "követelmények": [
           {
-            "név": "Orvoslás",
+            "név": "orvoslás",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -1962,7 +1962,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Orvoslás értékre",
-            "alcél": "képzettség:Orvoslás"
+            "alcél": "képzettség:orvoslás"
           }
         ],
         "próba_enyhítések": []
@@ -1997,7 +1997,7 @@
         ],
         "követelmények": [
           {
-            "név": "Előadóművészet",
+            "név": "előadóművészet",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -2011,7 +2011,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Előadóművészet értékre",
-            "alcél": "képzettség:Előadóművészet"
+            "alcél": "képzettség:előadóművészet"
           }
         ],
         "próba_enyhítések": []
@@ -2026,7 +2026,7 @@
         ],
         "követelmények": [
           {
-            "név": "Előadóművészet",
+            "név": "előadóművészet",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -2040,7 +2040,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Előadóművészet értékre",
-            "alcél": "képzettség:Előadóművészet"
+            "alcél": "képzettség:előadóművészet"
           }
         ],
         "próba_enyhítések": []
@@ -2075,7 +2075,7 @@
         ],
         "követelmények": [
           {
-            "név": "Kvantikum",
+            "név": "kvantikum",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -2089,7 +2089,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Kvantikum értékre",
-            "alcél": "képzettség:Kvantikum"
+            "alcél": "képzettség:kvantikum"
           }
         ],
         "próba_enyhítések": []
@@ -2104,7 +2104,7 @@
         ],
         "követelmények": [
           {
-            "név": "Kvantikum",
+            "név": "kvantikum",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -2118,7 +2118,7 @@
             "arány": 0,
             "feltétel": "",
             "megjegyzés": "csoportos Kvantikum értékre",
-            "alcél": "képzettség:Kvantikum"
+            "alcél": "képzettség:kvantikum"
           }
         ],
         "próba_enyhítések": []
@@ -2154,12 +2154,12 @@
         ],
         "követelmények": [
           {
-            "név": "Észlelés",
+            "név": "észlelés",
             "érték": 3,
             "típus": "képzettség"
           },
           {
-            "név": "Keresés/rejtés",
+            "név": "keresés_rejtés",
             "érték": 1,
             "típus": "fortély"
           }
@@ -2167,7 +2167,7 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Észlelés",
+            "képzettség": "észlelés",
             "kategória": "Körülmény",
             "sorok": [
               "Gyorsan, nyomás alatt keresni"
@@ -2206,7 +2206,7 @@
         ],
         "követelmények": [
           {
-            "név": "Zárnyitás",
+            "név": "zárnyitás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -2214,7 +2214,7 @@
         "módosítók": [],
         "próba_enyhítések": [
           {
-            "képzettség": "Zárnyitás",
+            "képzettség": "zárnyitás",
             "kategória": "Körülmény",
             "sorok": [
               "Sietős nyitás"
@@ -2589,11 +2589,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -2613,11 +2613,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -2657,11 +2657,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -2681,11 +2681,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -2724,7 +2724,7 @@
         ],
         "követelmények": [
           {
-            "név": "Közelharc",
+            "név": "harcmodor/közelharc",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -2815,7 +2815,7 @@
         ],
         "követelmények": [
           {
-            "név": "Közelharc",
+            "név": "harcmodor/közelharc",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -2926,7 +2926,7 @@
         ],
         "követelmények": [
           {
-            "név": "Fájdalomtűrés",
+            "név": "fájdalomtűrés",
             "érték": 7,
             "típus": "képzettség"
           }
@@ -2944,7 +2944,7 @@
         ],
         "követelmények": [
           {
-            "név": "Fájdalomtűrés",
+            "név": "fájdalomtűrés",
             "érték": 10,
             "típus": "képzettség"
           }
@@ -2983,11 +2983,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Lándzsavívás",
-              "Rombolás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/rombolás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -3032,11 +3032,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 4,
             "típus": "képzettség"
@@ -3063,11 +3063,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 8,
             "típus": "képzettség"
@@ -3116,11 +3116,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -3169,11 +3169,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -3300,7 +3300,7 @@
         ],
         "követelmények": [
           {
-            "név": "Akrobatika",
+            "név": "akrobatika",
             "érték": 6,
             "típus": "képzettség"
           },
@@ -3349,7 +3349,7 @@
         ],
         "követelmények": [
           {
-            "név": "Akrobatika",
+            "név": "akrobatika",
             "érték": 9,
             "típus": "képzettség"
           },
@@ -3398,7 +3398,7 @@
         ],
         "követelmények": [
           {
-            "név": "Akrobatika",
+            "név": "akrobatika",
             "érték": 12,
             "típus": "képzettség"
           },
@@ -3467,14 +3467,14 @@
         ],
         "követelmények": [
           {
-            "név": "Kocsihajtás",
+            "név": "kocsihajtás",
             "érték": 1,
             "típus": "fortély"
           },
           {
             "név": [
-              "Lovaglás",
-              "Léglovaglás"
+              "lovaglás",
+              "léglovaglás"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -3512,14 +3512,14 @@
         ],
         "követelmények": [
           {
-            "név": "Kocsihajtás",
+            "név": "kocsihajtás",
             "érték": 1,
             "típus": "fortély"
           },
           {
             "név": [
-              "Lovaglás",
-              "Léglovaglás"
+              "lovaglás",
+              "léglovaglás"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -3577,11 +3577,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Lándzsavívás",
-              "Rombolás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/rombolás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -3619,11 +3619,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Lándzsavívás",
-              "Rombolás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/rombolás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -3661,11 +3661,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Lándzsavívás",
-              "Rombolás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/rombolás",
+              "harcmodor/ostorharc"
             ],
             "érték": 12,
             "típus": "képzettség"
@@ -3722,11 +3722,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -3746,11 +3746,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -3770,11 +3770,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 12,
             "típus": "képzettség"
@@ -3876,11 +3876,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 3,
             "típus": "képzettség"
@@ -3909,11 +3909,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -3963,11 +3963,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 4,
             "típus": "képzettség"
@@ -3988,11 +3988,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 8,
             "típus": "képzettség"
@@ -4288,7 +4288,7 @@
         ],
         "követelmények": [
           {
-            "név": "Léglovaglás",
+            "név": "léglovaglás",
             "érték": 3,
             "típus": "képzettség"
           },
@@ -4339,7 +4339,7 @@
         ],
         "követelmények": [
           {
-            "név": "Léglovaglás",
+            "név": "léglovaglás",
             "érték": 6,
             "típus": "képzettség"
           },
@@ -4390,7 +4390,7 @@
         ],
         "követelmények": [
           {
-            "név": "Léglovaglás",
+            "név": "léglovaglás",
             "érték": 9,
             "típus": "képzettség"
           },
@@ -4491,17 +4491,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Lovaglás",
+            "név": "lovaglás",
             "érték": 6,
             "típus": "képzettség"
           },
@@ -4555,17 +4555,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Lovaglás",
+            "név": "lovaglás",
             "érték": 9,
             "típus": "képzettség"
           },
@@ -4619,17 +4619,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 12,
             "típus": "képzettség"
           },
           {
-            "név": "Lovaglás",
+            "név": "lovaglás",
             "érték": 12,
             "típus": "képzettség"
           },
@@ -4699,16 +4699,16 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás"
             ],
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Mesterfegyver",
+            "név": "mesterfegyver",
             "érték": 1,
             "típus": "fortély"
           }
@@ -4756,11 +4756,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -4810,15 +4810,15 @@
         "követelmények": [
           {
             "név": [
-              "Kardvívás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/kardvívás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Mesterfegyver",
+            "név": "mesterfegyver",
             "érték": 1,
             "típus": "fortély"
           }
@@ -4867,11 +4867,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -5075,17 +5075,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Élettan",
+            "név": "élettan",
             "érték": 1,
             "típus": "fortély"
           }
@@ -5141,9 +5141,9 @@
         "követelmények": [
           {
             "név": [
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás"
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás"
             ],
             "érték": 3,
             "típus": "képzettség"
@@ -5172,9 +5172,9 @@
         "követelmények": [
           {
             "név": [
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás"
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás"
             ],
             "érték": 3,
             "típus": "képzettség"
@@ -5204,9 +5204,9 @@
         "követelmények": [
           {
             "név": [
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás"
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás"
             ],
             "érték": 3,
             "típus": "képzettség"
@@ -5274,11 +5274,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 4,
             "típus": "képzettség"
@@ -5331,11 +5331,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 8,
             "típus": "képzettség"
@@ -5388,11 +5388,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 12,
             "típus": "képzettség"
@@ -5465,11 +5465,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -5506,11 +5506,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -5547,11 +5547,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -5610,11 +5610,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 3,
             "típus": "képzettség"
@@ -5656,11 +5656,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 5,
             "típus": "képzettség"
@@ -5702,11 +5702,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 8,
             "típus": "képzettség"
@@ -5767,11 +5767,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 3,
             "típus": "képzettség"
@@ -5817,11 +5817,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -5867,11 +5867,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -5937,10 +5937,10 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás"
             ],
             "érték": 4,
             "típus": "képzettség"
@@ -5999,10 +5999,10 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -6226,11 +6226,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Lándzsavívás",
-              "Rombolás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/rombolás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -6259,11 +6259,11 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Lándzsavívás",
-              "Rombolás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/rombolás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -6382,12 +6382,12 @@
         ],
         "követelmények": [
           {
-            "név": "Alakzatharc",
+            "név": "alakzatharc",
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Befolyásolás",
+            "név": "befolyásolás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -6406,12 +6406,12 @@
         ],
         "követelmények": [
           {
-            "név": "Alakzatharc",
+            "név": "alakzatharc",
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Befolyásolás",
+            "név": "befolyásolás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -6437,7 +6437,7 @@
     "többszörös_lista": [],
     "leírás": "Fejvadász alakulat észrevétlen mozgásának koordinálása.",
     "kiterjeszti_normál": [
-      "Hadászat"
+      "hadászat"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6453,7 +6453,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lopakodás/rejtőzés",
+            "név": "lopakodás_rejtőzés",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -6473,7 +6473,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lopakodás/rejtőzés",
+            "név": "lopakodás_rejtőzés",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -6499,7 +6499,7 @@
     "többszörös_lista": [],
     "leírás": "Íjász/lövész alakzat koordinálása.",
     "kiterjeszti_normál": [
-      "Hadászat"
+      "hadászat"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6514,9 +6514,9 @@
         "követelmények": [
           {
             "név": [
-              "Íjászat",
-              "Lövészet",
-              "Ostromlövészet"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet",
+              "távolsági_harcmodor/ostromlövészet"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -6536,9 +6536,9 @@
         "követelmények": [
           {
             "név": [
-              "Íjászat",
-              "Lövészet",
-              "Ostromlövészet"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet",
+              "távolsági_harcmodor/ostromlövészet"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -6565,7 +6565,7 @@
     "többszörös_lista": [],
     "leírás": "Légi hátasokkal küzdő egység koordinálása.",
     "kiterjeszti_normál": [
-      "Hadászat"
+      "hadászat"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6580,12 +6580,12 @@
         ],
         "követelmények": [
           {
-            "név": "Léglovaglás",
+            "név": "léglovaglás",
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Befolyásolás",
+            "név": "befolyásolás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -6604,12 +6604,12 @@
         ],
         "követelmények": [
           {
-            "név": "Léglovaglás",
+            "név": "léglovaglás",
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Befolyásolás",
+            "név": "befolyásolás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -6635,7 +6635,7 @@
     "többszörös_lista": [],
     "leírás": "Földi hátasokkal küzdő egység koordinálása.",
     "kiterjeszti_normál": [
-      "Hadászat"
+      "hadászat"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6650,12 +6650,12 @@
         ],
         "követelmények": [
           {
-            "név": "Lovaglás",
+            "név": "lovaglás",
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Befolyásolás",
+            "név": "befolyásolás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -6674,12 +6674,12 @@
         ],
         "követelmények": [
           {
-            "név": "Lovaglás",
+            "név": "lovaglás",
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Befolyásolás",
+            "név": "befolyásolás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -6705,7 +6705,7 @@
     "többszörös_lista": [],
     "leírás": "Testőrcsapat koordinálása, védelem és észlelés.",
     "kiterjeszti_normál": [
-      "Hadászat"
+      "hadászat"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6721,17 +6721,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Észlelés",
+            "név": "észlelés",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -6751,17 +6751,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Észlelés",
+            "név": "észlelés",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -6882,10 +6882,10 @@
     "többszörös_lista": [],
     "leírás": "Egy adott terület ismerete: falvaknál egy uradalom (több falu és a vár), város/városállam, vagy nagyvárosnak egy kerülete.",
     "kiterjeszti_normál": [
-      "Nyomozás",
-      "Lexikum",
-      "Városi jártasság",
-      "Etikett"
+      "nyomozás",
+      "lexikum",
+      "városi_jártasság",
+      "etikett"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6949,12 +6949,12 @@
     ],
     "leírás": "Egy adott kultúrkör ismerete.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Etikett",
-      "Képzőművészet",
-      "Művészetismeret",
-      "Lexikum",
-      "Városi jártasság"
+      "előadóművészet",
+      "etikett",
+      "képzőművészet",
+      "művészetismeret",
+      "lexikum",
+      "városi_jártasság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7230,7 +7230,7 @@
     ],
     "leírás": "A belső síkok túlvilági teremtményeinek ismerete.",
     "kiterjeszti_normál": [
-      "Lexikum"
+      "lexikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7267,7 +7267,7 @@
     ],
     "leírás": "A külső síkok túlvilági teremtményeinek ismerete.",
     "kiterjeszti_normál": [
-      "Lexikum"
+      "lexikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7561,8 +7561,8 @@
     "többszörös_lista": [],
     "leírás": "Elemedben érzed magad a piacon akár fegyverekről, akár egy marék friss szamócán való alkudozásról van szó.",
     "kiterjeszti_normál": [
-      "Befolyásolás",
-      "Emberismeret"
+      "befolyásolás",
+      "emberismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7594,7 +7594,7 @@
     "többszörös_lista": [],
     "leírás": "Jóslás, együttállások olvasása csillagképekből.",
     "kiterjeszti_normál": [
-      "Kvantikum"
+      "kvantikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7626,9 +7626,9 @@
     "többszörös_lista": [],
     "leírás": "Gondosan begyakorolt trükkök, kellékek segítenek a tátottszájú nézőközönség becsapásában. Szórakoztatás, vagy sötétebb szándékok is vezethetnek.",
     "kiterjeszti_normál": [
-      "Befolyásolás",
-      "Előadóművészet",
-      "Lopás"
+      "befolyásolás",
+      "előadóművészet",
+      "lopás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7660,8 +7660,8 @@
     "többszörös_lista": [],
     "leírás": "Dalolás képessége és annak műértése.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Művészetismeret"
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7695,9 +7695,9 @@
     "többszörös_lista": [],
     "leírás": "Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket. Vagy passzív tudásként ismered a nagy festők műveit, technikáját, műveinek szellemiségét.",
     "kiterjeszti_normál": [
-      "Értékbecslés",
-      "Képzőművészet",
-      "Művészetismeret"
+      "értékbecslés",
+      "képzőművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7729,7 +7729,7 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy egy birtokot igazgatni.",
     "kiterjeszti_normál": [
-      "Kvantikum"
+      "kvantikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7761,7 +7761,7 @@
     "többszörös_lista": [],
     "leírás": "A hadsereg élelmezése, felszereléssel való ellátása, utánpótlási vonalak kiépítése a feladatod. Jellemzően NJK ismeret.",
     "kiterjeszti_normál": [
-      "Hadászat"
+      "hadászat"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7823,8 +7823,8 @@
     "többszörös_lista": [],
     "leírás": "Földi hátas esetén a Lovaglás, légi hátasnál pedig a Léglovaglás képzettséget terjeszti ki.",
     "kiterjeszti_normál": [
-      "Lovaglás",
-      "Léglovaglás"
+      "lovaglás",
+      "léglovaglás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7856,7 +7856,7 @@
     "többszörös_lista": [],
     "leírás": "Minden háziasított állat idomítása ide tartozik a kutyától a malacokon át a kecskékig.",
     "kiterjeszti_normál": [
-      "Befolyásolás"
+      "befolyásolás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7888,8 +7888,8 @@
     "többszörös_lista": [],
     "leírás": "Címerek ismeretét takarja.",
     "kiterjeszti_normál": [
-      "Lexikum",
-      "Nyomozás"
+      "lexikum",
+      "nyomozás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7921,7 +7921,7 @@
     "többszörös_lista": [],
     "leírás": "Járatos vagy az állami, vagy uradalmi bürokráciában írott és íratlan szabályaiban, ügyintézésben.",
     "kiterjeszti_normál": [
-      "Lexikum"
+      "lexikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7953,8 +7953,8 @@
     "többszörös_lista": [],
     "leírás": "- Előadóművészet: Versek, novellák, regények, históriák, színdarabok írása. - Művészetismeret: Ismered adott Kultúrkör neves irodalmárait, íróit, költőit és stílusukat, műveiket.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Művészetismeret"
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7966,12 +7966,12 @@
         "követelmény": [],
         "követelmények": [
           {
-            "név": "Kultúrkör",
+            "név": "kultúrkör",
             "érték": 1,
             "típus": "fortély"
           },
           {
-            "név": "Nyelvismeret",
+            "név": "nyelvismeret",
             "érték": 2,
             "típus": "fortély"
           }
@@ -7997,8 +7997,8 @@
     "többszörös_lista": [],
     "leírás": "",
     "kiterjeszti_normál": [
-      "Lexikum",
-      "Nyomozás"
+      "lexikum",
+      "nyomozás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8010,7 +8010,7 @@
         "követelmény": [],
         "követelmények": [
           {
-            "név": "Analfabéta",
+            "név": "analfabéta",
             "érték": 1,
             "típus": "tiltó_fortély"
           }
@@ -8036,8 +8036,8 @@
     "többszörös_lista": [],
     "leírás": "Írástípusok, írásmódok, titkosírás és annak fejtése.",
     "kiterjeszti_normál": [
-      "Képzőművészet",
-      "Művészetismeret"
+      "képzőművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8049,7 +8049,7 @@
         "követelmény": [],
         "követelmények": [
           {
-            "név": "Analfabéta",
+            "név": "analfabéta",
             "érték": 1,
             "típus": "tiltó_fortély"
           }
@@ -8075,7 +8075,7 @@
     "többszörös_lista": [],
     "leírás": "Ács mesterként fából alkotsz épületeket, nagyobb szerkezeteket.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8107,7 +8107,7 @@
     "többszörös_lista": [],
     "leírás": "Asztalos mesterként fából alkotsz bútorokat, szerszámokat.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8139,7 +8139,7 @@
     "többszörös_lista": [],
     "leírás": "Cipőket készítesz a pórnépnek, vagy az udvari dámák kecses lábaira.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8171,7 +8171,7 @@
     "többszörös_lista": [],
     "leírás": "Járatos vagy a nyersbőrök tartósításában, előkészítésében.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8203,7 +8203,7 @@
     "többszörös_lista": [],
     "leírás": "Édességek készítése, amely nem is olyan könnyű, mint hiszed. A pontos arányok, körülmények betartása nagyon fontos.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8235,7 +8235,7 @@
     "többszörös_lista": [],
     "leírás": "Nemes fémekből gyönyörű ékszerek készítése, ritka ékkövek míves keretekbe foglalása.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8267,7 +8267,7 @@
     "többszörös_lista": [],
     "leírás": "Fából készült edényeket, hordókat, kádakat, dézsákat és más fa tárolóeszközöket készítesz.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8299,7 +8299,7 @@
     "többszörös_lista": [],
     "leírás": "Kövekből és égetett téglákból erős, tartós épületszerkezeteket készítesz, például falakat, boltíveket, tornyokat és tervek alapján akár várakat is. Ácsolt állványzatokat húzol fel, különféle emelőszerkezeteket használsz a nehéz kövek helyre emeléséhez.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8331,7 +8331,7 @@
     "többszörös_lista": [],
     "leírás": "Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a kötél alapanyagai: kender, papírusz, datolyapálma, de akár, bőr és egyéb növényi rostok is.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8363,7 +8363,7 @@
     "többszörös_lista": [],
     "leírás": "Alap kovácsmesterség. Fémből kalapálsz ki lópatkókat, kapákat, ásókat, ekéket, háztartási eszközöket.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8395,7 +8395,7 @@
     "többszörös_lista": [],
     "leírás": "Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek ki kezed alól. Magasabb szinten egyéb vasból és acélból készült szerkezetek, például ajtók, ablakok, korlátok, lépcsők, és más fémes tartószerkezetek készítése, javítása is ide tartozik. 🔆 A zárak nyitása a Zárnyitás képzettség alá tartozik! Ez a fortély nem ad bónuszt az ilyen jellegű próbákra.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8427,7 +8427,7 @@
     "többszörös_lista": [],
     "leírás": "Malomban dolgozol, lisztet és különböző kalászosok feldolgozását végzed.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8459,7 +8459,7 @@
     "többszörös_lista": [],
     "leírás": "Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz ki pénzérméket. A pénz megfelelő súlyának, méretének és mintázatának biztosítása is feladatod.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8491,7 +8491,7 @@
     "többszörös_lista": [],
     "leírás": "Akár vászonból, akár szőtt kelmékből főként felsőruházatot, például kabátot, nadrágot és blúzt szabsz és varrsz.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8523,7 +8523,7 @@
     "többszörös_lista": [],
     "leírás": "Finom étkek készítése, vagy akár a hadsereg hadtápjának működtetése.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8555,7 +8555,7 @@
     "többszörös_lista": [],
     "leírás": "Főleg juhbőrök tisztításával, kikészítésével és feldolgozásával foglalkozol. Megtisztítod a lenyúzott bőrt, eltávolítod a húst és hártyákat, puhítod, sózod és fested az alapanyagot. A fenti készítményből szabsz és varrsz ruhákat, bundákat, ködmönöket. Prémes bundák, drága szőrmekülönlegességek kerülnek ki kezeid alól.",
     "kiterjeszti_normál": [
-      "Kézművesség"
+      "kézművesség"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8587,8 +8587,8 @@
     "többszörös_lista": [],
     "leírás": "Magában foglalja a kihallgatási technikákat (nem kínzást!), a beszédtechnikát és jól bevált keresztkérdéseket, amellyel az ellentmondások felfedhetők. A fentieken kívül a kihallgatott érzelmi világát is hangolja az alkalmazó, kooperatív viselkedésre sarkallva őt.",
     "kiterjeszti_normál": [
-      "Nyomozás",
-      "Emberismeret"
+      "nyomozás",
+      "emberismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8632,7 +8632,7 @@
         ],
         "követelmények": [
           {
-            "név": "Élettan",
+            "név": "élettan",
             "érték": 1,
             "típus": "fortély"
           }
@@ -8658,8 +8658,8 @@
     "többszörös_lista": [],
     "leírás": "Pénzügyi ismereteid vannak.",
     "kiterjeszti_normál": [
-      "Kvantikum",
-      "Nyomozás"
+      "kvantikum",
+      "nyomozás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8691,8 +8691,8 @@
     "többszörös_lista": [],
     "leírás": "Érthetetlen szimbólumokkal teli fóliásokat bújsz, a rejtélyek megfejtése legfőbb szenvedélyed. Ha titkosírás megfejtésére kerül sor, ezzel a fortéllyal büntetés nélkül dobhatsz Kvantikum képzettségpróbát.",
     "kiterjeszti_normál": [
-      "Kvantikum",
-      "Nyomozás"
+      "kvantikum",
+      "nyomozás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8724,8 +8724,8 @@
     "többszörös_lista": [],
     "leírás": "Nagyban látod a harci helyzetet, térkép felett csapatok mozgását tervezed.",
     "kiterjeszti_normál": [
-      "Hadászat",
-      "Lexikum"
+      "hadászat",
+      "lexikum"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8757,7 +8757,7 @@
     "többszörös_lista": [],
     "leírás": "- Etikett: Az ismert Kultúrkörök egyedi szertartásait Etikett képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás. A szakrális szertartások nem tartoznak ide.",
     "kiterjeszti_normál": [
-      "Etikett"
+      "etikett"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8789,8 +8789,8 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismerete, árnyjátékok ismerete is ide tartozik. 🔆 Nem használható hazudozásra, mások becsapására. Arra lásd a Befolyásolás képzettséget.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Művészetismeret"
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8822,9 +8822,9 @@
     "többszörös_lista": [],
     "leírás": "Holt anyagból faragsz, hívsz életre alakokat az örökkévalóságnak.",
     "kiterjeszti_normál": [
-      "Értékbecslés",
-      "Képzőművészet",
-      "Művészetismeret"
+      "értékbecslés",
+      "képzőművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8856,8 +8856,8 @@
     "többszörös_lista": [],
     "leírás": "Oh, az a birka nép! Mind a lábad előtt hever, mikor súlyos gondokkal tépelődve, mégis erős akarattal arcodon kilépsz eléjük a napfényre és lángra gyújtod lelküket...",
     "kiterjeszti_normál": [
-      "Befolyásolás",
-      "Emberismeret"
+      "befolyásolás",
+      "emberismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8889,11 +8889,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered a barlangi környezetet.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8925,11 +8925,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered a dzsungel környezetet.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8961,11 +8961,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered az erdős környezetet.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8997,11 +8997,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered a jégmezők kegyetlen világát.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9033,11 +9033,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered a magaslati, sarkvidéki környezetet.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9069,11 +9069,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered az mocsaras környezetet.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9105,11 +9105,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered a végtelen füves puszták környezetét.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9141,11 +9141,11 @@
     "többszörös_lista": [],
     "leírás": "Ismered a sivatagi környezetet.",
     "kiterjeszti_normál": [
-      "Alkímia",
-      "Lexikum",
-      "Lopakodás/rejtőzés",
-      "Természetjárás",
-      "Vajákosság"
+      "alkímia",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9177,9 +9177,9 @@
     "többszörös_lista": [],
     "leírás": "Tengerek, óceánok világának ismerete.",
     "kiterjeszti_normál": [
-      "Lexikum",
-      "Természetjárás",
-      "Vajákosság"
+      "lexikum",
+      "természetjárás",
+      "vajákosság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9211,8 +9211,8 @@
     "többszörös_lista": [],
     "leírás": "Az ismert Kultúrkörök táncai Előadóművészet képzettséged szintjének megfelelően járni is tudod.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Művészetismeret"
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9244,9 +9244,9 @@
     "többszörös_lista": [],
     "leírás": "Jellemzően Kiérdemelt szabad fortély. Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális táncot takar, mint például a Tor0ni Vérnász. Magától értetődik, hogy speciális/belső táncstílus tanulásához kapcsolódó Kultúrkör fortély is szükségeltetik (lásd követelmények).",
     "kiterjeszti_normál": [
-      "Etikett",
-      "Előadóművészet",
-      "Művészetismeret"
+      "etikett",
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9260,22 +9260,22 @@
         ],
         "követelmények": [
           {
-            "név": "Etikett",
+            "név": "etikett",
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Előadóművészet",
+            "név": "előadóművészet",
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Kultúrkör",
+            "név": "kultúrkör",
             "érték": 1,
             "típus": "fortély"
           },
           {
-            "név": "Tánc",
+            "név": "tánc",
             "érték": 1,
             "típus": "fortély"
           }
@@ -9301,9 +9301,9 @@
     "többszörös_lista": [],
     "leírás": "'... térkép e táj.'",
     "kiterjeszti_normál": [
-      "Kvantikum",
-      "Nyomozás",
-      "Hajózás"
+      "kvantikum",
+      "nyomozás",
+      "hajózás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9335,9 +9335,9 @@
     "többszörös_lista": [],
     "leírás": "Többször felvehető.",
     "kiterjeszti_normál": [
-      "Etikett",
-      "Nyomozás",
-      "Városi jártasság"
+      "etikett",
+      "nyomozás",
+      "városi_jártasság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9369,7 +9369,7 @@
     "többszörös_lista": [],
     "leírás": "Egy-egy, konkrét vadállat idomítása - fajonként külön kell felvenned. Minden bestia is ide tartozik, amely vadállatnak minősül. A lovak és egyéb, akár légi hátasok betanítása is ide tartozik.",
     "kiterjeszti_normál": [
-      "Befolyásolás"
+      "befolyásolás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9401,8 +9401,8 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy fúvós hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Művészetismeret"
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9434,8 +9434,8 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy húros hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Művészetismeret"
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9467,8 +9467,8 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy ütős hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
-      "Előadóművészet",
-      "Művészetismeret"
+      "előadóművészet",
+      "művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9500,7 +9500,7 @@
     "többszörös_lista": [],
     "leírás": "Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is.",
     "kiterjeszti_normál": [
-      "Előadóművészet"
+      "előadóművészet"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9532,7 +9532,7 @@
     "többszörös_lista": [],
     "leírás": "'Négy labdával is tudom ám!'",
     "kiterjeszti_normál": [
-      "Előadóművészet"
+      "előadóművészet"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9579,17 +9579,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "Hajítás",
+            "név": "távolsági_harcmodor/hajítás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -9627,17 +9627,17 @@
         "követelmények": [
           {
             "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
+              "harcmodor/közelharc",
+              "harcmodor/kardvívás",
+              "harcmodor/rombolás",
+              "harcmodor/lándzsavívás",
+              "harcmodor/ostorharc"
             ],
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "Hajítás",
+            "név": "távolsági_harcmodor/hajítás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -9693,7 +9693,7 @@
         ],
         "követelmények": [
           {
-            "név": "Hajítás",
+            "név": "távolsági_harcmodor/hajítás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -9729,7 +9729,7 @@
         ],
         "követelmények": [
           {
-            "név": "Hajítás",
+            "név": "távolsági_harcmodor/hajítás",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -9784,7 +9784,7 @@
         ],
         "követelmények": [
           {
-            "név": "Hajítás",
+            "név": "távolsági_harcmodor/hajítás",
             "érték": 5,
             "típus": "képzettség"
           }
@@ -9822,7 +9822,7 @@
         ],
         "követelmények": [
           {
-            "név": "Íjászat",
+            "név": "távolsági_harcmodor/íjászat",
             "érték": 5,
             "típus": "képzettség"
           }
@@ -9871,9 +9871,9 @@
         "követelmények": [
           {
             "név": [
-              "Íjászat",
-              "Lövészet",
-              "Hajítás"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet",
+              "távolsági_harcmodor/hajítás"
             ],
             "érték": 5,
             "típus": "képzettség"
@@ -9933,17 +9933,17 @@
         "követelmények": [
           {
             "név": [
-              "Lovaglás",
-              "Léglovaglás"
+              "lovaglás",
+              "léglovaglás"
             ],
             "érték": 6,
             "típus": "képzettség"
           },
           {
             "név": [
-              "Íjászat",
-              "Lövészet",
-              "Hajítás"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet",
+              "távolsági_harcmodor/hajítás"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -9972,17 +9972,17 @@
         "követelmények": [
           {
             "név": [
-              "Lovaglás",
-              "Léglovaglás"
+              "lovaglás",
+              "léglovaglás"
             ],
             "érték": 9,
             "típus": "képzettség"
           },
           {
             "név": [
-              "Íjászat",
-              "Lövészet",
-              "Hajítás"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet",
+              "távolsági_harcmodor/hajítás"
             ],
             "érték": 9,
             "típus": "képzettség"
@@ -10051,9 +10051,9 @@
         "követelmények": [
           {
             "név": [
-              "Íjászat",
-              "Lövészet",
-              "Hajítás"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet",
+              "távolsági_harcmodor/hajítás"
             ],
             "érték": 5,
             "típus": "képzettség"
@@ -10122,7 +10122,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lövészet",
+            "név": "távolsági_harcmodor/lövészet",
             "érték": 5,
             "típus": "képzettség"
           }
@@ -10171,9 +10171,9 @@
         "követelmények": [
           {
             "név": [
-              "Íjászat",
-              "Lövészet",
-              "Hajítás"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet",
+              "távolsági_harcmodor/hajítás"
             ],
             "érték": 5,
             "típus": "képzettség"
@@ -10222,7 +10222,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lövészet",
+            "név": "távolsági_harcmodor/lövészet",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -10249,7 +10249,7 @@
         ],
         "követelmények": [
           {
-            "név": "Lövészet",
+            "név": "távolsági_harcmodor/lövészet",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -10309,8 +10309,8 @@
         "követelmények": [
           {
             "név": [
-              "Íjászat",
-              "Lövészet"
+              "távolsági_harcmodor/íjászat",
+              "távolsági_harcmodor/lövészet"
             ],
             "érték": 5,
             "típus": "képzettség"

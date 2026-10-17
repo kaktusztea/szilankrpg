@@ -7,9 +7,9 @@ import type { KonstansokRaw } from './data-types';
  * fegyver alapnevével egyezik - mindkettő elfogadott.
  */
 export function findMfFokByName(karakter: Karakter, fegyverNév: string, alap: string): number {
-  const entry = karakter.fortélyok.find(f => f.név === 'Mesterfegyver' && (
-    f.spec_elem?.toLowerCase() === fegyverNév.toLowerCase() ||
-    f.spec_elem?.toLowerCase() === alap.toLowerCase()
+  const entry = karakter.fortélyok.find(f => f.id === 'mesterfegyver' && (
+    f.elem?.toLowerCase() === fegyverNév.toLowerCase() ||
+    f.elem?.toLowerCase() === alap.toLowerCase()
   ));
   return entry?.fok ?? 0;
 }

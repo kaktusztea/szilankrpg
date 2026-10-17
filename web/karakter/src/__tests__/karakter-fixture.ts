@@ -6,7 +6,7 @@ import type { Karakter } from '../engine/types';
  */
 export function validKarakter(overrides: Partial<Karakter> = {}): Karakter {
   return {
-    schema_version: 2,
+    schema_version: 3,
     uid: 'test',
     id_leíró: 'test',
     név: 'Teszt',

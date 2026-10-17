@@ -51,13 +51,13 @@ describe('Golden #2 - rules.json alapszámítások (Teszt karakter, 10. TSz, Dzs
     stringCtx.set('páncél_méret_illeszkedés', karakter.páncél.méret_illeszkedés || '');
 
     const harcmodorÖsszeg = karakter.képzettségek
-      .filter(k => (konstansok.harcmodorok.közelharci as string[]).includes(k.név.toLowerCase()))
+      .filter(k => k.id === 'harcmodor' && (konstansok.harcmodorok.közelharci as string[]).includes(k.elem))
       .reduce((s, k) => s + k.szint, 0);
 
     const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, konstansok, {
       HM_TÉ: karakter.HM_TÉ, HM_VÉ: karakter.HM_VÉ, CM: karakter.CM,
       harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: 0,
-      merevvért_fok: karakter.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0,
+      merevvért_fok: karakter.fortélyok.find(f => f.id === 'merevvértviselet')?.fok ?? 0,
       páncél_van: karakter.páncél.alap ? 1 : 0,
       páncél_végtagvédettség: karakter.páncél.végtagvédettség,
       páncél_sisak: karakter.páncél.sisak ? 1 : 0,
@@ -97,7 +97,7 @@ describe('Golden #2 - fegyver kalkuláció', () => {
     stringCtx.set('páncél_kidolgozottság', karakter.páncél.kidolgozottság || '');
     stringCtx.set('páncél_méret_illeszkedés', karakter.páncél.méret_illeszkedés || '');
     harcmodorÖsszeg = karakter.képzettségek
-      .filter(k => (konstansok.harcmodorok.közelharci as string[]).includes(k.név.toLowerCase()))
+      .filter(k => k.id === 'harcmodor' && (konstansok.harcmodorok.közelharci as string[]).includes(k.elem))
       .reduce((s, k) => s + k.szint, 0);
     data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] };
   });

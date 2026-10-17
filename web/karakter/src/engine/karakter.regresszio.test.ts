@@ -13,6 +13,7 @@ import { calcPrimerKp } from '../components/tulajdonsagok/primerKpCalc';
 import { checkKövetelmények } from '../components/fortelyok/helpers';
 import { fortélyPróbaBónuszok } from './effekt';
 import type { Karakter } from './types';
+import { fortélyNév, képzettségNév, képzKulcs } from './azonosito';
 
 const data = loadGameDataSync();
 const karakterJson = (f: string): Karakter =>
@@ -20,7 +21,6 @@ const karakterJson = (f: string): Karakter =>
 
 function számított(k: Karakter) {
   const hc = useHarcComputed(data, k, k.session);
-  const harcmodorNevek = [...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági];
   const fajF = data.fajFortélyok[k.hátterek.faj] ?? {};
   return {
     kp: calcKpDetails(data, k),
@@ -31,13 +31,13 @@ function számított(k: Karakter) {
       fortélyMods: hc.fortelyMods, fegyverek: hc.fegyverResults, kétkezes: hc.kétkezesResult, fogás: hc.fogásResult,
     },
     követelményHiány: Object.fromEntries(k.fortélyok.map(f => {
-      const fokDef = data.fortelySummaries.find(d => d.név === f.név)?.fokok.find(x => x.fok === f.fok);
-      return [`${f.név}${f.spec_elem ? ` [${f.spec_elem}]` : ''} (${f.fok})`,
-        checkKövetelmények(fokDef, k.képzettségek, k.fortélyok, harcmodorNevek, undefined, fajF, f.név)];
+      const fokDef = data.fortelySummaries.find(d => d.id === f.id)?.fokok.find(x => x.fok === f.fok);
+      return [`${fortélyNév(f, data)}${f.elem ? ` [${f.elem}]` : ''} (${f.fok})`,
+        checkKövetelmények(fokDef, k.képzettségek, k.fortélyok, data, undefined, fajF, f.id)];
     }).filter(([, h]) => (h as string[]).length)),
     próbaBónusz: {
       képzettség: Object.fromEntries(k.képzettségek.map(kp =>
-        [kp.név, fortélyPróbaBónuszok(k, data, ['képzettségpróba'], a => a === `képzettség:${kp.név}`)]).filter(([, b]) => (b as unknown[]).length)),
+        [képzettségNév(kp, data), fortélyPróbaBónuszok(k, data, ['képzettségpróba'], a => a === `képzettség:${képzKulcs(kp)}`)]).filter(([, b]) => (b as unknown[]).length)),
       tulajdonság: Object.fromEntries(Object.keys(k.tulajdonságok).map(t =>
         [t, fortélyPróbaBónuszok(k, data, ['tulajdonságpróba'], a => a === `tulajdonság:${t}`)]).filter(([, b]) => (b as unknown[]).length)),
     },
@@ -49,7 +49,7 @@ function mindenFortély(alap: Karakter, fokIndex: number): Karakter {
   const fortélyok = data.fortelySummaries.flatMap(fd => {
     const fokok = fd.fokok.map(f => f.fok).filter(f => f >= 1);
     const fok = fokok[Math.min(fokIndex, fokok.length - 1)];
-    return fok ? [{ név: fd.név, fok, spec_típus: '', spec_elem: '' }] : [];
+    return fok ? [{ id: fd.id, fok, elem: '' }] : [];
   });
   return { ...alap, fortélyok } as Karakter;
 }

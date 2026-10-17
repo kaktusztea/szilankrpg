@@ -1,4 +1,5 @@
 import type { Karakter, FegyverAlap, FegyverPeldany } from '../../engine/types';
+import { harcmodorNév as hmMegjelenítés } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult, FegyverResultMód } from './types';
 import { lookupFegyver, képzettségSzint } from '../../engine/utils';
@@ -54,7 +55,7 @@ export function buildFegyverInfó(
   );
 
   const kategória = fDef?.kategória ?? '';
-  const harcmodorNév = data.konstansok.fegyver_kategória_harcmodor[kategória] ?? 'Közelharc';
+  const harcmodorNév = data.konstansok.fegyver_kategória_harcmodor[kategória] ?? 'közelharc';
 
   // Elsődleges mód elöl, utána a többi (a táblázat is az elsődlegest mutatja fejlécként).
   const módok = [...result.módok].sort((a, b) =>
@@ -63,8 +64,8 @@ export function buildFegyverInfó(
 
   return {
     név: result.fegyver_név,
-    harcmodorNév,
-    harcmodorSzint: képzettségSzint(karakter, harcmodorNév),
+    harcmodorNév: hmMegjelenítés(harcmodorNév, data),
+    harcmodorSzint: képzettségSzint(karakter, `harcmodor/${harcmodorNév}`),
     extrák: (fDef?.extrák ?? []).map(e => ({
       név: e.név,
       leírás: data.fegyverExtrák?.[e.id]?.leírás ?? '',

@@ -79,7 +79,7 @@ export function KepzettsegProbaPickers({
                 const billenthető = többszörösNevek.has(k.fortély);
                 return (
                   <button key={i} className={`he-field-btn${active ? ' vallas-active' : ''}`} {...pressProps(i)}>
-                    {k.fortély} <span className={kitDotClass(k)}>{kitDots(k)}</span>
+                    {k.név} <span className={kitDotClass(k)}>{kitDots(k)}</span>
                     {billenthető && <span className="kep-proba-kit-longpress" title="Hosszú nyomás: teljesül/nem teljesül">⤺</span>}
                   </button>
                 );

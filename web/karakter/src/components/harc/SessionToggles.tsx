@@ -12,16 +12,16 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
   const toggleForts = data.fortelySummaries.filter(d => d.session_toggle);
 
   // Harci akrobatika: a fortély AKTUÁLIS fokának követelményeiből (fok-függő: fok 3 lazább páncél/MGT).
-  const harciAkroDef = toggleForts.find(d => d.név === 'Harci akrobatika');
-  const harciAkroFok = karakter.fortélyok.find(f => f.név === 'Harci akrobatika' && f.fok > 0);
+  const harciAkroDef = toggleForts.find(d => d.id === 'harci_akrobatika');
+  const harciAkroFok = karakter.fortélyok.find(f => f.id === 'harci_akrobatika' && f.fok > 0);
   const harciAkroFokDef = harciAkroFok && harciAkroDef?.fokok.find(fd => fd.fok === harciAkroFok.fok);
   const harciAkroKövek = harciAkroFokDef?.követelmények ?? [];
 
   const kov = (típus: string) => harciAkroKövek.find(k => k.típus === típus);
 
   // Akrobatika képzettség
-  const akroKépz = harciAkroKövek.find(k => k.típus === 'képzettség' && (Array.isArray(k.név) ? k.név.includes('Akrobatika') : k.név === 'Akrobatika'));
-  const akroSzint = képzettségSzint(karakter, 'Akrobatika');
+  const akroKépz = harciAkroKövek.find(k => k.típus === 'képzettség' && (Array.isArray(k.név) ? k.név.includes('akrobatika') : k.név === 'akrobatika'));
+  const akroSzint = képzettségSzint(karakter, 'akrobatika');
   const akroKépzHiba = !!(akroKépz && akroSzint < akroKépz.érték);
 
   // Páncél hajlékonyság (nem_fém | nem_merev) — a struktúra fém/merev flagjéből (l. konstansok.páncél_struktúrák).
@@ -59,8 +59,8 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
   return (
     <>
       {toggleForts.map(tf => {
-        const has = karakter.fortélyok.some(f => f.név === tf.név && f.fok > 0);
-        const sessionKey = tf.név.toLowerCase().replace(/ /g, '_');
+        const has = karakter.fortélyok.some(f => f.id === tf.id && f.fok > 0);
+        const sessionKey = tf.id;   // session-kulcs = fortély-id (pl. harci_akrobatika)
         const active = (session as unknown as Record<string, unknown>)[sessionKey] as boolean ?? false;
         const feltételDisabled = sessionKey === 'harci_akrobatika' && harciAkroDisabled;
         const disabled = !has || feltételDisabled;

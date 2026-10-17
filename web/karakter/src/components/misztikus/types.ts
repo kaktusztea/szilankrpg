@@ -1,11 +1,12 @@
+import type { Kepzettseg } from '../../engine/types';
 import type { GameData, KepzettsegDef, KiterjesztesEntry, FortelySummary } from '../../engine/data-loader';
 import type { Karakter, Fortely, Tulajdonsagok } from '../../engine/types';
 
 export interface MisztikusScreenProps {
   data: GameData;
   karakter: Karakter;
-  képzettségek: { név: string; szint: number }[];
-  setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  képzettségek: Kepzettseg[];
+  setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
   fortélyok: Fortely[];
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
   gameMode: boolean;
@@ -17,7 +18,10 @@ export interface SectionContext {
   gameMode: boolean;
   infoTarget: string | null;
   onInfoToggle: (key: string) => void;
-  findDef: (név: string) => KepzettsegDef | undefined;
+  /** A misztikus modulban a „név" paraméterek képzettség hivatkozási KULCSok (pl. "tradíció/Vulgármágia"). */
+  findDef: (kulcs: string) => KepzettsegDef | undefined;
+  /** Kulcs → teljes megjelenített név ("Tradíció: Vulgármágia", "Arkánum: Asztrálmágia"). */
+  név: (kulcs: string) => string;
   kiterjesztesek: Record<string, KiterjesztesEntry[]>;
   fortélyFokok: Record<string, number>;
   tulajdonságok: Tulajdonsagok;

@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import type { KepzettsegDef } from '../../engine/data-loader';
 import { useState } from 'react';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
@@ -15,12 +17,13 @@ interface Props {
   fortélyok: Fortely[];
   fegyverNevek: string[];
   nyelvtanulásSzint: number;
-  képzettségek: { név: string; szint: number }[];
-  onAdd: (név: string) => void;
+  képzettségek: Kepzettseg[];
+  kepzettsegDefs: KepzettsegDef[];
+  onAdd: (id: string) => void;
   onClose: () => void;
 }
 
-export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, képzettségek, onAdd, onClose }: Props) {
+export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, képzettségek, kepzettsegDefs, onAdd, onClose }: Props) {
   const [expandedNév, setExpandedNév] = useState<string | null>(null);
   const [allExpanded, setAllExpanded] = useState(false);
 
@@ -65,7 +68,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
 
             return (
               <div key={d.név} className={`fort-picker-item-wrap${disabled ? ' fort-picker-disabled' : ''}`}>
-                <div className="fort-picker-item-top" onClick={() => !disabled && handlePick(d.név)}>
+                <div className="fort-picker-item-top" onClick={() => !disabled && handlePick(d.id)}>
                   <span className="fort-picker-item-name">
                     {d.név} <span className="fort-picker-item-maxfok">({d.maxfok})</span>
                     {suffix && <span className="fort-picker-item-suffix">{suffix}</span>}
@@ -80,7 +83,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                   )}
                 </div>
                 {isExpanded && (
-                  <FortelyDetails def={d} képzettségek={képzettségek} />
+                  <FortelyDetails def={d} képzettségek={képzettségek} kepzettsegDefs={kepzettsegDefs} />
                 )}
               </div>
             );
@@ -111,13 +114,13 @@ function buildSuffix(
     if (maradt > 0) parts.push(`●${maradt}`);
   } else if (d.ingyenes_perszint > 0) {
     const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
-    const maradt = Math.max(0, ingyenesDb - fortélyok.filter(f => f.név === d.név && !f.kiérdemelt).length);
+    const maradt = Math.max(0, ingyenesDb - fortélyok.filter(f => f.id === d.id && !f.kiérdemelt).length);
     if (maradt > 0) parts.push(`●${maradt}`);
   } else if (d.kp_perfok < 0) {
     parts.push(`🎁${Array.from({ length: d.maxfok }, (_, i) => Math.abs(d.kp_perfok) * (i + 1)).join('-')}KP`);
   }
 
-  if (d.név === 'Nyelvismeret') {
+  if (d.id === 'nyelvismeret') {
     const maradt = calcNyelvMaradt(fortélyok, nyelvtanulásSzint);
     if (maradt > 0) parts.push(`●${maradt}`);
   }
@@ -127,18 +130,18 @@ function buildSuffix(
 
 function calcNyelvMaradt(fortélyok: Fortely[], nyelvtanulásSzint: number): number {
   const keret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
-  const used = fortélyok.filter(f => f.név === 'Nyelvismeret' && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0)
-    + fortélyok.filter(f => f.név === 'Nyelvismeret' && f.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
+  const used = fortélyok.filter(f => f.id === 'nyelvismeret' && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0)
+    + fortélyok.filter(f => f.id === 'nyelvismeret' && f.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
   return keret - used;
 }
 
 function isOptionDisabled(
   d: FortelySummary, fortélyok: Fortely[], fegyverNevek: string[], nyelvtanulásSzint: number,
 ): boolean {
-  if (isFreeTextPicker(d, RUNTIME_PICKER_TYPES) && fortélyok.filter(f => f.név === d.név).length >= MAX_AZONOS_FORTÉLY) return true;
+  if (isFreeTextPicker(d, RUNTIME_PICKER_TYPES) && fortélyok.filter(f => f.id === d.id).length >= MAX_AZONOS_FORTÉLY) return true;
   if (d.többszörös_típus === 'fegyver') {
-    return fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.név === d.név && f.spec_elem === n));
+    return fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.id === d.id && f.elem === n));
   }
-  if (d.név === 'Nyelvismeret') return calcNyelvMaradt(fortélyok, nyelvtanulásSzint) <= 0;
+  if (d.id === 'nyelvismeret') return calcNyelvMaradt(fortélyok, nyelvtanulásSzint) <= 0;
   return false;
 }

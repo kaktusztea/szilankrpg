@@ -1,10 +1,11 @@
+import type { Kepzettseg } from '../../engine/types';
 import type { SectionContext } from './types';
 import { SectionRow } from './SectionRow';
 
 interface Props {
   ctx: SectionContext;
-  arkánumok: { név: string; szint: number }[];
-  elérhetőArkánumok: { név: string }[];
+  arkánumok: Kepzettseg[];
+  elérhetőArkánumok: { id: string; név: string }[];
   feloldva: boolean;
   onEdit: (név: string) => void;
   onDelete: (név: string) => void;
@@ -18,14 +19,14 @@ export function ArkánumokSection({ ctx, arkánumok, elérhetőArkánumok, felol
     <section className="miszt-section">
       <h3 className="miszt-section-title">Arkánumok</h3>
       {arkánumok.map(a => (
-        <SectionRow key={a.név} ctx={ctx} név={a.név} szint={a.szint} warning={!feloldva}
-          onEdit={() => onEdit(a.név)} onDelete={() => onDelete(a.név)} />
+        <SectionRow key={a.id} ctx={ctx} név={a.id} szint={a.szint} warning={!feloldva}
+          onEdit={() => onEdit(a.id)} onDelete={() => onDelete(a.id)} />
       ))}
       {!ctx.gameMode && elérhetőArkánumok.length > 0 && (
         <select className="he-add-select" value="" disabled={!feloldva}
           onChange={e => { if (e.target.value) onAdd(e.target.value); }}>
           <option value="">{!feloldva ? '⚠ Tradíció vagy faj misztérium szükséges' : '+ Arkánum...'}</option>
-          {elérhetőArkánumok.map(d => <option key={d.név} value={d.név}>{d.név.split(':')[1].trim()}</option>)}
+          {elérhetőArkánumok.map(d => <option key={d.id} value={d.id}>{d.név.split(':')[1].trim()}</option>)}
         </select>
       )}
     </section>

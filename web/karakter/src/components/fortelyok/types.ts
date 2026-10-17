@@ -1,3 +1,4 @@
+import type { Kepzettseg } from '../../engine/types';
 import type { GameData, FortelySummary } from '../../engine/data-loader';
 import type { Fortely, Karakter } from '../../engine/types';
 
@@ -11,7 +12,7 @@ export interface FortelyokScreenProps {
   tsz: number;
   fegyverNevek: string[];
   nyelvtanulásSzint: number;
-  képzettségek: { név: string; szint: number }[];
+  képzettségek: Kepzettseg[];
 }
 
 export interface FortelyCsoportProps {
@@ -27,8 +28,7 @@ export interface FortelyCsoportProps {
   fegyverNevek: string[];
   nyelvtanulásSzint: number;
   nyelvFokLabels: Record<number, string>;
-  képzettségek: { név: string; szint: number }[];
-  harcmodorNevek: string[];
+  képzettségek: Kepzettseg[];
   /** A karakter fajának ajánlott fortélyai (max fok) - `faj` követelmény. */
   fajFortélyok: Record<string, number>;
   data: GameData;
@@ -52,9 +52,9 @@ export interface FortelyRowProps {
   kiterjesztHiányos: boolean;
   nyelvPontKeret?: number;
   nyelvFokLabels: Record<number, string>;
-  képzettségek: { név: string; szint: number }[];
+  képzettségek: Kepzettseg[];
   fortélyok: Fortely[];
-  harcmodorNevek: string[];
+  data: GameData;
   /** A karakter fajának ajánlott fortélyai (max fok) - `faj` követelmény. */
   fajFortélyok: Record<string, number>;
   fegyverHarcmodorNév?: string;
@@ -70,9 +70,9 @@ export interface DeleteTarget {
   fok: number;
 }
 
+/** Felvétel előtti fortély (kiérdemelt-kérdés): a karakter-fortély alakja fok nélkül. */
 export interface SzabadTypePicker {
-  név: string;
-  spec_típus: string;
-  spec_elem: string;
+  id: string;
+  elem: string;
   kiterjeszti?: string[];
 }

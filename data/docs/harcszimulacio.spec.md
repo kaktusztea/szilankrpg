@@ -89,7 +89,7 @@ harcos:
   HM_TÉ: int
   HM_VÉ: int
   képzettségek: { <név>: szint }          # ebből kell: harcmodorok + Fájdalomtűrés + Akrobatika
-  fortélyok: [{ név, fok, spec_elem }]
+  fortélyok: [{ név, fok, spec_elem }]   # szimulátor-statblokk (nem a webapp karakter-sémája, az: {id, elem, fok})
 
   # --- felszerelés ---
   fegyver:                                # az AKTÍV fegyver (fegyverek_v2.json egy sora)

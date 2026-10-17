@@ -2,6 +2,7 @@
 // Kiemelve a ManoverDobasPopup.tsx-ből (2026-09-11 refaktor): a komponens csak a
 // dobás-folyamat state-jét és JSX-ét tartja, minden számítás/feltétel ide kerül.
 // Ezekre a fn-ekre írt tesztek: Manover{Kovetelmeny,TeBontas,FazisFelirat,EredmenyHatas}.test.ts
+import { HARCMODOR_ID } from '../../engine/azonosito';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
@@ -61,8 +62,8 @@ export interface ManőverDef {
 
 /** Egy harcmodor-képzettség szintje-e, ill. bármely harcmodor max szintje ("Harcmodor"). */
 function harcmodorMaxSzint(karakter: Karakter, data: GameData): number {
-  const nevek = new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[]);
-  return Math.max(0, ...karakter.képzettségek.filter(k => nevek.has(k.név)).map(k => k.szint));
+  const elemek = new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[]);
+  return Math.max(0, ...karakter.képzettségek.filter(k => k.id === HARCMODOR_ID && elemek.has(k.elem)).map(k => k.szint));
 }
 
 /** Az aktív (támadó) fegyver a manőver-követelmény gépi kiértékeléséhez. */
@@ -269,13 +270,13 @@ export function követelményTeljesül(
   }
   const küszöb = typeof köv.érték === 'number' ? köv.érték : 0;
   if (köv.típus === 'képzettség') {
-    const szint = köv.név === 'Harcmodor'
+    const szint = köv.név === HARCMODOR_ID
       ? harcmodorMaxSzint(karakter, data)
       : képzettségSzint(karakter, köv.név ?? '');
     return szint >= küszöb;
   }
   // fortély: a felvett (max) fok
-  const fok = Math.max(0, ...karakter.fortélyok.filter(f => f.név === köv.név).map(f => f.fok));
+  const fok = Math.max(0, ...karakter.fortélyok.filter(f => f.id === köv.név).map(f => f.fok));
   return fok >= küszöb;
 }
 
@@ -333,7 +334,7 @@ export function calcManőverPont(karakter: Karakter, data: GameData): number {
 }
 
 export function getBelharcFok(karakter: Karakter): number {
-  return fortélyFok(karakter, 'Belharc');
+  return fortélyFok(karakter, 'belharcos');
 }
 
 /**

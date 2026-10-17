@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { képzettségNév, képzKulcs, bontKépzKulcs, TRADÍCIÓ_ID } from '../../engine/azonosito';
+
 import type { MisztikusScreenProps, SectionContext } from './types';
 import type { Fortely } from '../../engine/types';
 import { evaluate, buildContext } from '../../engine/reactive';
@@ -15,6 +17,10 @@ import { MisztikusPopups } from './MisztikusPopups';
 import { HINT_DURATION_MS } from '../../ui-constants';
 import { useHint } from '../harcertekek/hooks/useHint';
 import './MisztikusScreen.css';
+
+// Misztikus képzettség-azonosítók (kepzettsegek/*.yaml `id`).
+const ARKÁNUM_PREFIX = 'arkánum_';
+const ŐSI_NYELV_ID = 'ősi_nyelv_ismerete';
 
 export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, fortélyok, setFortélyok, gameMode }: MisztikusScreenProps) {
   const konstansok = data.konstansok;
@@ -34,58 +40,61 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
     gameMode,
     infoTarget,
     onInfoToggle: (key) => setInfoTarget(prev => prev === key ? null : key),
-    findDef: (név) => findKepzDef(név, data.kepzettsegDefs),
+    findDef: (kulcs) => findKepzDef(kulcs, data.kepzettsegDefs),
+    név: (kulcs) => képzettségNév(kulcs, data),
     kiterjesztesek: data.kiterjesztesek,
     fortélyFokok: buildFortélyFokok(karakter.fortélyok),
     tulajdonságok: karakter.tulajdonságok,
   };
 
-  const aurahangolásKep = képzettségek.find(k => k.név === 'Arkánum: Aurahangolás');
+  const aurahangolásKep = képzettségek.find(k => k.id === 'arkánum_aurahangolás');
   const aurahangolás = aurahangolásKep?.szint ?? 0;
   const önuralom = karakter.tulajdonságok.önuralom;
 
   // Derived data
-  const tradíció = képzettségek.find(k => k.név.startsWith('Tradíció'));
-  const arkánumok = képzettségek.filter(k => k.név.startsWith('Arkánum')).sort((a, b) => a.név.localeCompare(b.név, 'hu'));
-  const ősiNyelvek = képzettségek.filter(k => k.név.startsWith('Ősi nyelv ismerete')).sort((a, b) => a.név.localeCompare(b.név, 'hu'));
-  const felvettArkNevek = new Set(arkánumok.map(a => a.név));
-  const elérhetőArkánumok = data.kepzettsegDefs.filter(d => d.név.startsWith('Arkánum:') && !felvettArkNevek.has(d.név));
+  const név = (k: { id: string; elem: string }) => képzettségNév(k, data);
+  const tradíció = képzettségek.find(k => k.id === TRADÍCIÓ_ID);
+  const arkánumok = képzettségek.filter(k => k.id.startsWith(ARKÁNUM_PREFIX)).sort((a, b) => név(a).localeCompare(név(b), 'hu'));
+  const ősiNyelvek = képzettségek.filter(k => k.id === ŐSI_NYELV_ID).sort((a, b) => név(a).localeCompare(név(b), 'hu'));
+  const felvettArkIdk = new Set(arkánumok.map(a => a.id));
+  const elérhetőArkánumok = data.kepzettsegDefs.filter(d => d.id.startsWith(ARKÁNUM_PREFIX) && !felvettArkIdk.has(d.id));
   const misztFortDefs = data.fortelySummaries.filter(d => d.csoport === 'misztikus');
   const fajNév = karakter.hátterek.faj;
-  const fajMisztNév = fajNév ? `Faj misztérium: ${fajNév}` : '';
-  const fajMisztSzint = (fajMisztNév ? képzettségek.find(k => k.név === fajMisztNév)?.szint : 0) ?? 0;
+  // A faj misztérium képzettség a faj nevéből ("Faj misztérium: <faj>" def) - id szerint tárolva.
+  const fajMisztId = fajNév ? (data.kepzettsegDefs.find(d => d.név === `Faj misztérium: ${fajNév}`)?.id ?? '') : '';
+  const fajMisztSzint = (fajMisztId ? képzettségek.find(k => k.id === fajMisztId)?.szint : 0) ?? 0;
 
   // Képzettség actions
-  function addKépzettség(név: string) {
-    setKépzettségek(prev => [...prev, { név, szint: 1 }]);
-    actions.openSzint(név);
+  function addKépzettség(kulcs: string) {
+    setKépzettségek(prev => [...prev, { ...bontKépzKulcs(kulcs), szint: 1 }]);
+    actions.openSzint(kulcs);
   }
-  function removeKépzettség(név: string) {
-    setKépzettségek(prev => prev.filter(k => k.név !== név));
+  function removeKépzettség(kulcs: string) {
+    setKépzettségek(prev => prev.filter(k => képzKulcs(k) !== kulcs));
   }
-  function setSzint(név: string, szint: number) {
-    setKépzettségek(prev => prev.map(k => k.név === név ? { ...k, szint } : k));
+  function setSzint(kulcs: string, szint: number) {
+    setKépzettségek(prev => prev.map(k => képzKulcs(k) === kulcs ? { ...k, szint } : k));
   }
   function handleSzintPick(szint: number) {
     const target = popups.szintTarget;
     if (!target) return;
-    if (szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== target));
-    else if (!képzettségek.find(k => k.név === target)) setKépzettségek(prev => [...prev, { név: target, szint }]);
+    if (szint === 0) setKépzettségek(prev => prev.filter(k => képzKulcs(k) !== target));
+    else if (!képzettségek.find(k => képzKulcs(k) === target)) setKépzettségek(prev => [...prev, { ...bontKépzKulcs(target), szint }]);
     else setSzint(target, szint);
     actions.closeSzint();
   }
   function handleTradícióPick(név: string) {
-    addKépzettség(`Tradíció: ${név}`);
+    addKépzettség(`${TRADÍCIÓ_ID}/${név}`);
     actions.closeTradíció();
   }
   function handleAltípusPick(tradíció: string, altípus: string) {
-    addKépzettség(`Tradíció: ${tradíció} (${altípus})`);
+    addKépzettség(`${TRADÍCIÓ_ID}/${tradíció} (${altípus})`);
     actions.closeAltípus();
     actions.closeTradíció();
   }
   function handlePromptConfirm() {
     if (popups.promptTarget && popups.promptValue.trim()) {
-      addKépzettség(`${popups.promptTarget}: ${popups.promptValue.trim()}`);
+      addKépzettség(`${popups.promptTarget}/${popups.promptValue.trim()}`);
       actions.closePrompt();
     }
   }
@@ -108,16 +117,16 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         elérhetőArkánumok={elérhetőArkánumok} feloldva={!!tradíció || fajMisztSzint > 0}
         onEdit={actions.openSzint} onDelete={actions.openDelete} onAdd={addKépzettség} />
 
-      <FajMisztériumSection ctx={sectionCtx} fajNév={fajNév} szint={fajMisztSzint}
+      <FajMisztériumSection ctx={sectionCtx} fajNév={fajNév} fajMisztId={fajMisztId} szint={fajMisztSzint}
         onEdit={actions.openSzint} />
 
       <ŐsiNyelvSection ctx={sectionCtx} ősiNyelvek={ősiNyelvek}
         onEdit={actions.openSzint} onDelete={actions.openDelete}
-        onAdd={() => actions.openPrompt('Ősi nyelv ismerete')} onHint={showHint} />
+        onAdd={() => actions.openPrompt(ŐSI_NYELV_ID)} onHint={showHint} />
 
       <MisztikusFortélyokSection
         misztFortDefs={misztFortDefs} fortélyok={fortélyok} gameMode={gameMode}
-        képzettségek={képzettségek} infoTarget={infoTarget}
+        képzettségek={képzettségek} kepzettsegDefs={data.kepzettsegDefs} infoTarget={infoTarget}
         onInfoToggle={sectionCtx.onInfoToggle}
         onFelvétel={actions.openFelvétel} onFokChange={actions.openFok}
         onDelete={actions.openDeleteFort} onHint={showHint} />
@@ -128,6 +137,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         state={popups} képzettségek={képzettségek} fortélyok={fortélyok}
         tradícióOpciók={data.tradiciok ?? []} misztFortDefs={misztFortDefs}
         önuralom={önuralom} aurahangolás={aurahangolás}
+        képzNév={sectionCtx.név}
         actions={actions}
         onConfirmDelete={() => { if (popups.deleteTarget) { removeKépzettség(popups.deleteTarget); actions.closeDelete(); } }}
         onSzintPick={handleSzintPick}

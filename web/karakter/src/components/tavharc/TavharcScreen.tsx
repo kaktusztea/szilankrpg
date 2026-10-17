@@ -1,4 +1,6 @@
 import { useState, useCallback } from 'react';
+import { harciKepzDisplayName } from '../harcertekek/helpers';
+import { képzKulcs } from '../../engine/azonosito';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
 import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
 import { getMfFok } from './mesterfegyver-calc';
@@ -85,8 +87,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   const closeKepzPopup = useCallback(() => {
     if (kepzSzintTarget) {
-      const kp = képzettségek.find(k => k.név === kepzSzintTarget);
-      if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget));
+      const kp = képzettségek.find(k => képzKulcs(k) === kepzSzintTarget);
+      if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => képzKulcs(k) !== kepzSzintTarget));
     }
     setKepzSzintTarget(null);
   }, [kepzSzintTarget, képzettségek, setKépzettségek]);
@@ -145,11 +147,11 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {kepzSzintTarget && (
         <PopupOverlay onClose={closeKepzPopup}>
           <SzintGrid
-            label={`Távolsági harcmodor: ${kepzSzintTarget} - szint:`}
+            label={`${harciKepzDisplayName(data, kepzSzintTarget)} - szint:`}
             maxSzint={data.konstansok.arányok.képzettség_max_szint}
-            current={képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0}
+            current={képzettségek.find(kp => képzKulcs(kp) === kepzSzintTarget)?.szint ?? 0}
             onSelect={n => {
-              setKépzettségek(prev => prev.map(kp => kp.név === kepzSzintTarget ? { ...kp, szint: n } : kp));
+              setKépzettségek(prev => prev.map(kp => képzKulcs(kp) === kepzSzintTarget ? { ...kp, szint: n } : kp));
               setKepzSzintTarget(null);
             }}
           />
@@ -158,9 +160,9 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
       {deleteKepzTarget && (
         <DeleteConfirmPopup
-          label={`Távolsági harcmodor: ${deleteKepzTarget}`}
+          label={harciKepzDisplayName(data, deleteKepzTarget)}
           buttonText="Képzettség törlése"
-          onConfirm={() => { setKépzettségek(prev => prev.filter(kp => kp.név !== deleteKepzTarget)); setDeleteKepzTarget(null); }}
+          onConfirm={() => { setKépzettségek(prev => prev.filter(kp => képzKulcs(kp) !== deleteKepzTarget)); setDeleteKepzTarget(null); }}
           onClose={() => setDeleteKepzTarget(null)}
         />
       )}

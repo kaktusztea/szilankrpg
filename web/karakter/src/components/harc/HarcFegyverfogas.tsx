@@ -22,7 +22,7 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
     if (id === 'fegyver_pajzs' && karakter.felszerelés?.kizárt_auto?.includes('pajzs')) return true;
     if (id === 'fegyver_hárító') {
       const hasHáritó = karakter.fegyverek.some(fp => isHárító(lookupFegyver(data.fegyverek, fp.alap)));
-      const hasFortély = karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
+      const hasFortély = karakter.fortélyok.some(f => f.id === 'hárítófegyver_használat' && f.fok > 0);
       if (!hasHáritó || !hasFortély) return true;
     }
     if (id === 'kétkezes') {

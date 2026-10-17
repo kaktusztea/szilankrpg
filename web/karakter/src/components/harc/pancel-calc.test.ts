@@ -14,15 +14,15 @@ describe('calcFtEnyhites', () => {
 
   it('returns 0 when below the first threshold', () => {
     // ftTable starts at szint 1; szint 0 → nothing applies
-    expect(calcFtEnyhites([{ név: 'Fájdalomtűrés', szint: 0 }], ftTable)).toBe(0);
+    expect(calcFtEnyhites([{ id: 'fájdalomtűrés', elem: '', szint: 0 }], ftTable)).toBe(0);
   });
 
   it('picks the highest row whose szint <= the character szint', () => {
-    expect(calcFtEnyhites([{ név: 'Fájdalomtűrés', szint: 4 }], ftTable)).toBe(2);
+    expect(calcFtEnyhites([{ id: 'fájdalomtűrés', elem: '', szint: 4 }], ftTable)).toBe(2);
   });
 
   it('applies the top row at or above the last threshold', () => {
-    expect(calcFtEnyhites([{ név: 'Fájdalomtűrés', szint: 9 }], ftTable)).toBe(3);
+    expect(calcFtEnyhites([{ id: 'fájdalomtűrés', elem: '', szint: 9 }], ftTable)).toBe(3);
   });
 
   it('ignores unrelated képzettségek', () => {

@@ -16,7 +16,7 @@ describe('validateKarakter', () => {
   it('rejects wrong schema version', () => {
     const r = validateKarakter({ ...valid, schema_version: 1 });
     expect(r.valid).toBe(false);
-    if (!r.valid) expect(r.missing).toContain('schema_version (≠ 2)');
+    if (!r.valid) expect(r.missing.some(m => m.startsWith('schema_version (1 ≠ 3'))).toBe(true);
   });
   it('rejects missing top-level fields', () => {
     const { fortélyok, ...noFort } = valid;

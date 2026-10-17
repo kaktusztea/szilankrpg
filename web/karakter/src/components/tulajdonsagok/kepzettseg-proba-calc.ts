@@ -53,10 +53,10 @@ export function probaBiztosSiker(tulÉrték: number, szint: number, célszám: n
   return probaBiztosSikerKözös(tulÉrték + szint, célszám);
 }
 
-/** Fortély név → felvett (max) fok. Többszörös fortélynél a legmagasabb példány foka. */
+/** Fortély-id → felvett (max) fok. Többszörös fortélynél a legmagasabb példány foka. */
 export function buildFortélyFokok(fortélyok: Fortely[]): Record<string, number> {
   const m: Record<string, number> = {};
-  for (const f of fortélyok) m[f.név] = Math.max(m[f.név] ?? 0, f.fok);
+  for (const f of fortélyok) m[f.id] = Math.max(m[f.id] ?? 0, f.fok);
   return m;
 }
 

@@ -4,7 +4,6 @@ import os
 
 from .common import SOURCES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
-from .hivatkozas import fort_nev  # ÁTMENETI (F2-F3)
 
 
 def generate_fajok():
@@ -12,7 +11,7 @@ def generate_fajok():
     fdir = os.path.join(SOURCES_DIR, 'fajok')
     names = []
     keretek = {}
-    faj_fortelyok = {}   # faj → {fortély: max_fok} (érzék + ajánlott) - a `faj` követelmény-típus forrása
+    faj_fortelyok = {}   # faj → {fortély-id: max_fok} (érzék + ajánlott) - a `faj` követelmény-típus forrása
     errors = []
     required_tul = {'erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység'}
     for f in sorted(os.listdir(fdir)):
@@ -31,7 +30,7 @@ def generate_fajok():
         keretek[data['név']] = tk
         ff = {}
         for e in (data.get('érzék_fortélyok') or []) + (data.get('ajánlott_fortélyok') or []):
-            if e.get('név'): ff[fort_nev(e['név'])] = max(ff.get(fort_nev(e['név']), 0), e.get('max_fok', 0))
+            if e.get('név'): ff[e['név']] = max(ff.get(e['név'], 0), e.get('max_fok', 0))
         faj_fortelyok[data['név']] = ff
     if errors:
         print("  ❌ Faj validációs hibák:")

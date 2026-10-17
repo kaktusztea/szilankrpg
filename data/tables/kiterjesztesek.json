@@ -1,878 +1,1044 @@
 {
-  "Alkímia": [
+  "alkímia": [
     {
-      "fortély": "Tájtípus - barlangi",
+      "fortély": "tájtípus_barlangi",
+      "név": "Tájtípus - barlangi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - dzsungel",
+      "fortély": "tájtípus_dzsungel",
+      "név": "Tájtípus - dzsungel",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - erdős",
+      "fortély": "tájtípus_erdős",
+      "név": "Tájtípus - erdős",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - jégmezők",
+      "fortély": "tájtípus_jégmezők",
+      "név": "Tájtípus - jégmezők",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - magaslati",
+      "fortély": "tájtípus_magaslati",
+      "név": "Tájtípus - magaslati",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - mocsaras",
+      "fortély": "tájtípus_mocsaras",
+      "név": "Tájtípus - mocsaras",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - puszta",
+      "fortély": "tájtípus_puszta",
+      "név": "Tájtípus - puszta",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - sivatagi",
+      "fortély": "tájtípus_sivatagi",
+      "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Arkánum: Nekromancia": [
+  "arkánum_nekromancia": [
     {
-      "fortély": "Élettan",
+      "fortély": "élettan",
+      "név": "Élettan",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Befolyásolás": [
+  "befolyásolás": [
     {
-      "fortély": "Alkudozás",
+      "fortély": "alkudozás",
+      "név": "Alkudozás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Bűvészet",
+      "fortély": "bűvészet",
+      "név": "Bűvészet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Csábítás",
+      "fortély": "csábítás",
+      "név": "Csábítás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Hazudozás",
+      "fortély": "hazudozás",
+      "név": "Hazudozás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Háziállatok idomítása",
+      "fortély": "háziállatok_idomítása",
+      "név": "Háziállatok idomítása",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Megfélemlítés",
+      "fortély": "megfélemlítés",
+      "név": "Megfélemlítés",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Szónoklás",
+      "fortély": "szónoklás",
+      "név": "Szónoklás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Vadállat idomítása",
+      "fortély": "vadállat_idomítása",
+      "név": "Vadállat idomítása",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Csapdaállítás": [
+  "csapdaállítás": [
     {
-      "fortély": "Mechanika",
+      "fortély": "mechanika",
+      "név": "Mechanika",
       "típus": "normál",
       "maxfok": 2
     }
   ],
-  "Előadóművészet": [
+  "előadóművészet": [
     {
-      "fortély": "Bűvészet",
+      "fortély": "bűvészet",
+      "név": "Bűvészet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Irodalom",
+      "fortély": "irodalom",
+      "név": "Irodalom",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kultúrkör",
+      "fortély": "kultúrkör",
+      "név": "Kultúrkör",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Színjátszás",
+      "fortély": "színjátszás",
+      "név": "Színjátszás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tánc",
+      "fortély": "tánc",
+      "név": "Tánc",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tánc: speciális/belső stílus",
+      "fortély": "tánc_speciális_belső_stílus",
+      "név": "Tánc: speciális/belső stílus",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zeneszerző",
+      "fortély": "zeneszerző",
+      "név": "Zeneszerző",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zenélés: fúvós hangszerek",
+      "fortély": "zenélés_fúvós_hangszerek",
+      "név": "Zenélés: fúvós hangszerek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zenélés: húros hangszerek",
+      "fortély": "zenélés_húros_hangszerek",
+      "név": "Zenélés: húros hangszerek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zenélés: ütős hangszerek",
+      "fortély": "zenélés_ütős_hangszerek",
+      "név": "Zenélés: ütős hangszerek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zsonglőrködés",
+      "fortély": "zsonglőrködés",
+      "név": "Zsonglőrködés",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Éneklés",
+      "fortély": "éneklés",
+      "név": "Éneklés",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Emberismeret": [
+  "emberismeret": [
     {
-      "fortély": "Alkudozás",
+      "fortély": "alkudozás",
+      "név": "Alkudozás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Csábítás",
+      "fortély": "csábítás",
+      "név": "Csábítás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Hazudozás",
+      "fortély": "hazudozás",
+      "név": "Hazudozás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kihallgatás",
+      "fortély": "kihallgatás",
+      "név": "Kihallgatás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Megfélemlítés",
+      "fortély": "megfélemlítés",
+      "név": "Megfélemlítés",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Szónoklás",
+      "fortély": "szónoklás",
+      "név": "Szónoklás",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Etikett": [
+  "etikett": [
     {
-      "fortély": "Helyismeret",
+      "fortély": "helyismeret",
+      "név": "Helyismeret",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kultúrkör",
+      "fortély": "kultúrkör",
+      "név": "Kultúrkör",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Szertartás",
+      "fortély": "szertartás",
+      "név": "Szertartás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Titkos szervezet",
+      "fortély": "titkos_szervezet",
+      "név": "Titkos szervezet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tánc: speciális/belső stílus",
+      "fortély": "tánc_speciális_belső_stílus",
+      "név": "Tánc: speciális/belső stílus",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Hadászat": [
+  "hadászat": [
     {
-      "fortély": "Hadtáp",
+      "fortély": "hadtáp",
+      "név": "Hadtáp",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Stratégia",
+      "fortély": "stratégia",
+      "név": "Stratégia",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Történelemismeret",
+      "fortély": "történelemismeret",
+      "név": "Történelemismeret",
       "típus": "erős",
       "maxfok": 2
     },
     {
-      "fortély": "Vezető: Fejvadász strategis",
+      "fortély": "vezető_fejvadász_strategis",
+      "név": "Vezető: Fejvadász strategis",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Vezető: Lovaskapitány",
+      "fortély": "vezető_lovaskapitány",
+      "név": "Vezető: Lovaskapitány",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Vezető: Léglovaskapitány",
+      "fortély": "vezető_léglovaskapitány",
+      "név": "Vezető: Léglovaskapitány",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Vezető: Testőrparancsnok",
+      "fortély": "vezető_testőrparancsnok",
+      "név": "Vezető: Testőrparancsnok",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Vezető: Íjászparancsnok",
+      "fortély": "vezető_íjászparancsnok",
+      "név": "Vezető: Íjászparancsnok",
       "típus": "normál",
       "maxfok": 2
     }
   ],
-  "Hajózás": [
+  "hajózás": [
     {
-      "fortély": "Térképészet",
+      "fortély": "térképészet",
+      "név": "Térképészet",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Kvantikum": [
+  "kvantikum": [
     {
-      "fortély": "Asztrológia",
+      "fortély": "asztrológia",
+      "név": "Asztrológia",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Gazdálkodás",
+      "fortély": "gazdálkodás",
+      "név": "Gazdálkodás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Mechanika",
+      "fortély": "mechanika",
+      "név": "Mechanika",
       "típus": "erős",
       "maxfok": 2
     },
     {
-      "fortély": "Pénzügyek",
+      "fortély": "pénzügyek",
+      "név": "Pénzügyek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Rejtjelfejtő",
+      "fortély": "rejtjelfejtő",
+      "név": "Rejtjelfejtő",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Térképészet",
+      "fortély": "térképészet",
+      "név": "Térképészet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Építészet",
+      "fortély": "építészet",
+      "név": "Építészet",
       "típus": "erős",
       "maxfok": 2
     }
   ],
-  "Képzőművészet": [
+  "képzőművészet": [
     {
-      "fortély": "Festészet",
+      "fortély": "festészet",
+      "név": "Festészet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Hamisítás",
+      "fortély": "hamisítás",
+      "név": "Hamisítás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kalligráfia",
+      "fortély": "kalligráfia",
+      "név": "Kalligráfia",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kultúrkör",
+      "fortély": "kultúrkör",
+      "név": "Kultúrkör",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Szobrászat",
+      "fortély": "szobrászat",
+      "név": "Szobrászat",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Kézművesség": [
+  "kézművesség": [
     {
-      "fortély": "Hamisítás",
+      "fortély": "hamisítás",
+      "név": "Hamisítás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Asztalos",
+      "fortély": "kézműves_asztalos",
+      "név": "Kézműves: Asztalos",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Cipész",
+      "fortély": "kézműves_cipész",
+      "név": "Kézműves: Cipész",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Cserző",
+      "fortély": "kézműves_cserző",
+      "név": "Kézműves: Cserző",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Cukrász",
+      "fortély": "kézműves_cukrász",
+      "név": "Kézműves: Cukrász",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Fegyverkovács",
+      "fortély": "kézműves_fegyverkovács",
+      "név": "Kézműves: Fegyverkovács",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Kézműves: Kovács",
+      "fortély": "kézműves_kovács",
+      "név": "Kézműves: Kovács",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Kádár",
+      "fortély": "kézműves_kádár",
+      "név": "Kézműves: Kádár",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Kötélgyártó",
+      "fortély": "kézműves_kötélgyártó",
+      "név": "Kézműves: Kötélgyártó",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Kőműves",
+      "fortély": "kézműves_kőműves",
+      "név": "Kézműves: Kőműves",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Lakatos",
+      "fortély": "kézműves_lakatos",
+      "név": "Kézműves: Lakatos",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Molnár",
+      "fortély": "kézműves_molnár",
+      "név": "Kézműves: Molnár",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Páncélkovács",
+      "fortély": "kézműves_páncélkovács",
+      "név": "Kézműves: Páncélkovács",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Kézműves: Pénzverő",
+      "fortély": "kézműves_pénzverő",
+      "név": "Kézműves: Pénzverő",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Szabó",
+      "fortély": "kézműves_szabó",
+      "név": "Kézműves: Szabó",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Szakács",
+      "fortély": "kézműves_szakács",
+      "név": "Kézműves: Szakács",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Szűcs",
+      "fortély": "kézműves_szűcs",
+      "név": "Kézműves: Szűcs",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Ács",
+      "fortély": "kézműves_ács",
+      "név": "Kézműves: Ács",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kézműves: Ékszerész",
+      "fortély": "kézműves_ékszerész",
+      "név": "Kézműves: Ékszerész",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Mechanika",
+      "fortély": "mechanika",
+      "név": "Mechanika",
       "típus": "normál",
       "maxfok": 2
     }
   ],
-  "Lexikum": [
+  "lexikum": [
     {
-      "fortély": "Belső síkok lényeinek ismerete",
+      "fortély": "belső_síkok_lényeinek_ismerete",
+      "név": "Belső síkok lényeinek ismerete",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Helyismeret",
+      "fortély": "helyismeret",
+      "név": "Helyismeret",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Heraldika",
+      "fortély": "heraldika",
+      "név": "Heraldika",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Hivatalnok",
+      "fortély": "hivatalnok",
+      "név": "Hivatalnok",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Jogismeret",
+      "fortély": "jogismeret",
+      "név": "Jogismeret",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kultúrkör",
+      "fortély": "kultúrkör",
+      "név": "Kultúrkör",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Külső síkok lényeinek ismerete",
+      "fortély": "külső_síkok_lényeinek_ismerete",
+      "név": "Külső síkok lényeinek ismerete",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Stratégia",
+      "fortély": "stratégia",
+      "név": "Stratégia",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - barlangi",
+      "fortély": "tájtípus_barlangi",
+      "név": "Tájtípus - barlangi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - dzsungel",
+      "fortély": "tájtípus_dzsungel",
+      "név": "Tájtípus - dzsungel",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - erdős",
+      "fortély": "tájtípus_erdős",
+      "név": "Tájtípus - erdős",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - jégmezők",
+      "fortély": "tájtípus_jégmezők",
+      "név": "Tájtípus - jégmezők",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - magaslati",
+      "fortély": "tájtípus_magaslati",
+      "név": "Tájtípus - magaslati",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - mocsaras",
+      "fortély": "tájtípus_mocsaras",
+      "név": "Tájtípus - mocsaras",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - puszta",
+      "fortély": "tájtípus_puszta",
+      "név": "Tájtípus - puszta",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - sivatagi",
+      "fortély": "tájtípus_sivatagi",
+      "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - tengerek",
+      "fortély": "tájtípus_tengerek",
+      "név": "Tájtípus - tengerek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Történelemismeret",
+      "fortély": "történelemismeret",
+      "név": "Történelemismeret",
       "típus": "erős",
       "maxfok": 2
     },
     {
-      "fortély": "Élettan",
+      "fortély": "élettan",
+      "név": "Élettan",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Ősi kultúrkör",
+      "fortély": "ősi_kultúrkör",
+      "név": "Ősi kultúrkör",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Lopakodás/rejtőzés": [
+  "lopakodás_rejtőzés": [
     {
-      "fortély": "Tájtípus - barlangi",
+      "fortély": "tájtípus_barlangi",
+      "név": "Tájtípus - barlangi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - dzsungel",
+      "fortély": "tájtípus_dzsungel",
+      "név": "Tájtípus - dzsungel",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - erdős",
+      "fortély": "tájtípus_erdős",
+      "név": "Tájtípus - erdős",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - jégmezők",
+      "fortély": "tájtípus_jégmezők",
+      "név": "Tájtípus - jégmezők",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - magaslati",
+      "fortély": "tájtípus_magaslati",
+      "név": "Tájtípus - magaslati",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - mocsaras",
+      "fortély": "tájtípus_mocsaras",
+      "név": "Tájtípus - mocsaras",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - puszta",
+      "fortély": "tájtípus_puszta",
+      "név": "Tájtípus - puszta",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - sivatagi",
+      "fortély": "tájtípus_sivatagi",
+      "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Lopás": [
+  "lopás": [
     {
-      "fortély": "Bűvészet",
+      "fortély": "bűvészet",
+      "név": "Bűvészet",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Lovaglás": [
+  "lovaglás": [
     {
-      "fortély": "Hátas",
+      "fortély": "hátas",
+      "név": "Hátas",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Léglovaglás": [
+  "léglovaglás": [
     {
-      "fortély": "Hátas",
+      "fortély": "hátas",
+      "név": "Hátas",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Művészetismeret": [
+  "művészetismeret": [
     {
-      "fortély": "Festészet",
+      "fortély": "festészet",
+      "név": "Festészet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Hamisítás",
+      "fortély": "hamisítás",
+      "név": "Hamisítás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Irodalom",
+      "fortély": "irodalom",
+      "név": "Irodalom",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kalligráfia",
+      "fortély": "kalligráfia",
+      "név": "Kalligráfia",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kultúrkör",
+      "fortély": "kultúrkör",
+      "név": "Kultúrkör",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Szobrászat",
+      "fortély": "szobrászat",
+      "név": "Szobrászat",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Színjátszás",
+      "fortély": "színjátszás",
+      "név": "Színjátszás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tánc",
+      "fortély": "tánc",
+      "név": "Tánc",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tánc: speciális/belső stílus",
+      "fortély": "tánc_speciális_belső_stílus",
+      "név": "Tánc: speciális/belső stílus",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zenélés: fúvós hangszerek",
+      "fortély": "zenélés_fúvós_hangszerek",
+      "név": "Zenélés: fúvós hangszerek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zenélés: húros hangszerek",
+      "fortély": "zenélés_húros_hangszerek",
+      "név": "Zenélés: húros hangszerek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Zenélés: ütős hangszerek",
+      "fortély": "zenélés_ütős_hangszerek",
+      "név": "Zenélés: ütős hangszerek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Éneklés",
+      "fortély": "éneklés",
+      "név": "Éneklés",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Építészet",
+      "fortély": "építészet",
+      "név": "Építészet",
       "típus": "normál",
       "maxfok": 2
     }
   ],
-  "Nyomozás": [
+  "nyomozás": [
     {
-      "fortély": "Hazudozás",
+      "fortély": "hazudozás",
+      "név": "Hazudozás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Helyismeret",
+      "fortély": "helyismeret",
+      "név": "Helyismeret",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Heraldika",
+      "fortély": "heraldika",
+      "név": "Heraldika",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Jogismeret",
+      "fortély": "jogismeret",
+      "név": "Jogismeret",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kihallgatás",
+      "fortély": "kihallgatás",
+      "név": "Kihallgatás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Pénzügyek",
+      "fortély": "pénzügyek",
+      "név": "Pénzügyek",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Rejtjelfejtő",
+      "fortély": "rejtjelfejtő",
+      "név": "Rejtjelfejtő",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Titkos szervezet",
+      "fortély": "titkos_szervezet",
+      "név": "Titkos szervezet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Térképészet",
+      "fortély": "térképészet",
+      "név": "Térképészet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Élettan",
+      "fortély": "élettan",
+      "név": "Élettan",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Építészet",
+      "fortély": "építészet",
+      "név": "Építészet",
       "típus": "normál",
       "maxfok": 2
     }
   ],
-  "Természetjárás": [
+  "természetjárás": [
     {
-      "fortély": "Keresés/rejtés",
+      "fortély": "keresés_rejtés",
+      "név": "Keresés/rejtés",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Nyomolvasás/eltűntetés",
+      "fortély": "nyomolvasás_eltűntetés",
+      "név": "Nyomolvasás/eltűntetés",
       "típus": "normál",
       "maxfok": 2
     },
     {
-      "fortély": "Tájtípus - barlangi",
+      "fortély": "tájtípus_barlangi",
+      "név": "Tájtípus - barlangi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - dzsungel",
+      "fortély": "tájtípus_dzsungel",
+      "név": "Tájtípus - dzsungel",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - erdős",
+      "fortély": "tájtípus_erdős",
+      "név": "Tájtípus - erdős",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - jégmezők",
+      "fortély": "tájtípus_jégmezők",
+      "név": "Tájtípus - jégmezők",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - magaslati",
+      "fortély": "tájtípus_magaslati",
+      "név": "Tájtípus - magaslati",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - mocsaras",
+      "fortély": "tájtípus_mocsaras",
+      "név": "Tájtípus - mocsaras",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - puszta",
+      "fortély": "tájtípus_puszta",
+      "név": "Tájtípus - puszta",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - sivatagi",
+      "fortély": "tájtípus_sivatagi",
+      "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - tengerek",
+      "fortély": "tájtípus_tengerek",
+      "név": "Tájtípus - tengerek",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Vajákosság": [
+  "vajákosság": [
     {
-      "fortély": "Tájtípus - barlangi",
+      "fortély": "tájtípus_barlangi",
+      "név": "Tájtípus - barlangi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - dzsungel",
+      "fortély": "tájtípus_dzsungel",
+      "név": "Tájtípus - dzsungel",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - erdős",
+      "fortély": "tájtípus_erdős",
+      "név": "Tájtípus - erdős",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - jégmezők",
+      "fortély": "tájtípus_jégmezők",
+      "név": "Tájtípus - jégmezők",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - magaslati",
+      "fortély": "tájtípus_magaslati",
+      "név": "Tájtípus - magaslati",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - mocsaras",
+      "fortély": "tájtípus_mocsaras",
+      "név": "Tájtípus - mocsaras",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - puszta",
+      "fortély": "tájtípus_puszta",
+      "név": "Tájtípus - puszta",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - sivatagi",
+      "fortély": "tájtípus_sivatagi",
+      "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Tájtípus - tengerek",
+      "fortély": "tájtípus_tengerek",
+      "név": "Tájtípus - tengerek",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Városi jártasság": [
+  "városi_jártasság": [
     {
-      "fortély": "Helyismeret",
+      "fortély": "helyismeret",
+      "név": "Helyismeret",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Kultúrkör",
+      "fortély": "kultúrkör",
+      "név": "Kultúrkör",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Titkos szervezet",
+      "fortély": "titkos_szervezet",
+      "név": "Titkos szervezet",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Értékbecslés": [
+  "értékbecslés": [
     {
-      "fortély": "Festészet",
+      "fortély": "festészet",
+      "név": "Festészet",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Hamisítás",
+      "fortély": "hamisítás",
+      "név": "Hamisítás",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Szobrászat",
+      "fortély": "szobrászat",
+      "név": "Szobrászat",
       "típus": "normál",
       "maxfok": 1
     },
     {
-      "fortély": "Ősi kultúrkör",
+      "fortély": "ősi_kultúrkör",
+      "név": "Ősi kultúrkör",
       "típus": "normál",
       "maxfok": 1
     }
   ],
-  "Észlelés": [
+  "észlelés": [
     {
-      "fortély": "Keresés/rejtés",
+      "fortély": "keresés_rejtés",
+      "név": "Keresés/rejtés",
       "típus": "normál",
       "maxfok": 2
     }

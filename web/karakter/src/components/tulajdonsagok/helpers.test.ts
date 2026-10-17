@@ -5,59 +5,53 @@ import {
   getDisplayName, findDef, sortKepzettsegSlotok, buildDefsByGroup, getAvailableNames,
 } from './helpers';
 
+// A képzettségeket hivatkozási KULCS azonosítja ("úszás", "nyelvtudás/aszisz", "tradíció/Dzsad") - 2026-10-17.
 const defs = [
-  { név: 'Úszás', csoport: 'fizikai', többszörös: [] },
-  { név: 'Nyelvtudás', csoport: 'szellemi', többszörös: ['Aszisz', 'Pyar'] },
-  { név: 'Művészet', csoport: 'szellemi', többszörös: ['*'] },
-  { név: 'Tradíció', csoport: 'misztikus', többszörös: ['*'] },
+  { id: 'úszás', név: 'Úszás', csoport: 'fizikai', többszörös: [] },
+  { id: 'nyelvtudás', név: 'Nyelvtudás', csoport: 'szellemi', többszörös: ['Aszisz', 'Pyar'] },
+  { id: 'művészet', név: 'Művészet', csoport: 'szellemi', többszörös: ['*'] },
+  { id: 'tradíció', név: 'Tradíció', csoport: 'misztikus', többszörös: [] },
+  { id: 'arkánum_y', név: 'Arkánum: Y', csoport: 'misztikus', többszörös: [] },
+  { id: 'harcmodor', név: 'Harcmodor', csoport: 'harci', többszörös: ['Kardvívás'] },
 ] as unknown as KepzettsegDef[];
 
 describe('getDisplayName', () => {
-  it('passes through Tradíció entries verbatim', () => {
-    expect(getDisplayName('Tradíció: Dzsad', defs)).toBe('Tradíció: Dzsad');
+  it('Tradíció: "Tradíció: <elem>"', () => {
+    expect(getDisplayName('tradíció/Dzsad', defs)).toBe('Tradíció: Dzsad');
   });
-  it('prefixes a fixed-list sub-skill with its base name', () => {
-    expect(getDisplayName('Aszisz', defs)).toBe('Nyelvtudás: Aszisz');
+  it('fixed-list sub-skill: "Alapnév: elem"', () => {
+    expect(getDisplayName('nyelvtudás/Aszisz', defs)).toBe('Nyelvtudás: Aszisz');
   });
-  it('passes a freetext "Base:Sub" entry through as-is', () => {
-    expect(getDisplayName('Művészet:Festészet', defs)).toBe('Művészet:Festészet');
+  it('harcmodor: "Harcmodor: <elem neve>"', () => {
+    expect(getDisplayName('harcmodor/kardvívás', defs)).toBe('Harcmodor: Kardvívás');
   });
-  it('returns single skills unchanged', () => {
-    expect(getDisplayName('Úszás', defs)).toBe('Úszás');
+  it('single skill: a def neve', () => {
+    expect(getDisplayName('úszás', defs)).toBe('Úszás');
   });
 });
 
 describe('findDef', () => {
-  it('maps a Tradíció entry to the Tradíció def', () => {
-    expect(findDef('Tradíció: Dzsad', defs)?.név).toBe('Tradíció');
+  it('többszörös / Tradíció: az alap def', () => {
+    expect(findDef('tradíció/Dzsad', defs)?.név).toBe('Tradíció');
+    expect(findDef('nyelvtudás/Aszisz', defs)?.név).toBe('Nyelvtudás');
+    expect(findDef('művészet/Festészet', defs)?.név).toBe('Művészet');
   });
-  it('maps a fixed-list sub-skill to its base def', () => {
-    expect(findDef('Aszisz', defs)?.név).toBe('Nyelvtudás');
-  });
-  it('maps a freetext entry to its base def', () => {
-    expect(findDef('Művészet:Festészet', defs)?.név).toBe('Művészet');
-  });
-  it('resolves a direct single-skill name', () => {
-    expect(findDef('Úszás', defs)?.név).toBe('Úszás');
-  });
-  it('returns undefined for an unknown name', () => {
-    expect(findDef('Nincsilyen', defs)).toBeUndefined();
+  it('egyszerű: id szerint; ismeretlen → undefined', () => {
+    expect(findDef('úszás', defs)?.név).toBe('Úszás');
+    expect(findDef('nincsilyen', defs)).toBeUndefined();
   });
 });
 
 describe('sortKepzettsegSlotok', () => {
-  it('orders Tradíció, then Arkánum, then Harcmodor, then alphabetically', () => {
-    const slots = [
-      { név: 'Úszás' }, { név: 'Harcmodor: Kard' },
-      { név: 'Tradíció: X' }, { név: 'Arkánum: Y' },
-    ] as unknown as KepzettsegSlot[];
-    expect(sortKepzettsegSlotok(slots).map(s => s.név))
-      .toEqual(['Tradíció: X', 'Arkánum: Y', 'Harcmodor: Kard', 'Úszás']);
+  const slot = (id: string, elem = '') => ({ id, elem, szint: 1 }) as KepzettsegSlot;
+  it('Tradíció, Arkánum, Harcmodor, majd név szerint', () => {
+    const slots = [slot('úszás'), slot('harcmodor', 'kardvívás'), slot('tradíció', 'X'), slot('arkánum_y')];
+    expect(sortKepzettsegSlotok(slots, defs).map(s => s.id)).toEqual(['tradíció', 'arkánum_y', 'harcmodor', 'úszás']);
   });
   it('does not mutate the input array', () => {
-    const slots = [{ név: 'B' }, { név: 'A' }] as unknown as KepzettsegSlot[];
-    sortKepzettsegSlotok(slots);
-    expect(slots.map(s => s.név)).toEqual(['B', 'A']);
+    const slots = [slot('úszás'), slot('nyelvtudás', 'Aszisz')];
+    sortKepzettsegSlotok(slots, defs);
+    expect(slots.map(s => s.id)).toEqual(['úszás', 'nyelvtudás']);
   });
 });
 
@@ -70,12 +64,12 @@ describe('buildDefsByGroup', () => {
 });
 
 describe('getAvailableNames', () => {
-  it('excludes used fixed-list subs, offers a freetext prompt and remaining subs', () => {
-    const byGroup = buildDefsByGroup(defs);
-    const opts = getAvailableNames('szellemi', ['Aszisz'], byGroup);
+  it('a felvett elemek kimaradnak, szabad szöveges → prompt; a value hivatkozási kulcs', () => {
+    const opts = getAvailableNames('szellemi', ['nyelvtudás/Aszisz'], buildDefsByGroup(defs));
     const values = opts.map(o => o.value);
-    expect(values).toContain('Nyelvtudás:Pyar');   // Aszisz used → only Pyar remains
-    expect(values).not.toContain('Nyelvtudás:Aszisz');
-    expect(values).toContain('__prompt:Művészet');  // freetext always offered
+    expect(values).toContain('nyelvtudás/Pyar');
+    expect(values).not.toContain('nyelvtudás/Aszisz');
+    expect(values).toContain('__prompt:művészet');
+    expect(opts.find(o => o.value === 'nyelvtudás/Pyar')?.label).toBe('Nyelvtudás: Pyar');
   });
 });

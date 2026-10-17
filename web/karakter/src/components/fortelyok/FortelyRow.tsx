@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { képzettségNév, képzettségSzint } from '../../engine/azonosito';
 import type { FortelyRowProps } from './types';
 import { displayName, checkKövetelmények } from './helpers';
 import { FortelyDetails } from '../FortelyDetails';
@@ -9,7 +10,7 @@ import { MAX_FORTÉLY_FOK, DELETE_BTN_TAP_ZONE_PX } from '../../ui-constants';
 export function FortelyRow({
   slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,
   isIngyenes, onHint, overLimit, nyelvPontKeret, nyelvFokLabels,
-  képzettségek, fortélyok, harcmodorNevek, fajFortélyok, fegyverHarcmodorNév, kiterjesztHiányos
+  képzettségek, fortélyok, data, fajFortélyok, fegyverHarcmodorNév, kiterjesztHiányos
 }: FortelyRowProps) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
@@ -30,11 +31,11 @@ export function FortelyRow({
   }
 
   const fokDef = def?.fokok.find(f => f.fok === slot.fok);
-  const label = displayName(slot);
+  const label = displayName(slot, data);
   const giftBadge = def && def.kp_perfok < 0 ? ` 🎁${Math.abs(def.kp_perfok * slot.fok)}KP` : '';
-  const hiányzóKöv = checkKövetelmények(fokDef, képzettségek, fortélyok, harcmodorNevek, fegyverHarcmodorNév, fajFortélyok, slot.név);
+  const hiányzóKöv = checkKövetelmények(fokDef, képzettségek, fortélyok, data, fegyverHarcmodorNév, fajFortélyok, slot.id);
   const követelményHiba = hiányzóKöv.length > 0;
-  const isNyelv = slot.név === 'Nyelvismeret';
+  const isNyelv = slot.id === 'nyelvismeret';
 
   return (
     <div className="fort-row-wrapper">
@@ -64,6 +65,7 @@ export function FortelyRow({
           def={def}
           fokDef={fokDef}
           képzettségek={képzettségek}
+          kepzettsegDefs={data.kepzettsegDefs}
         />
       )}
 
@@ -73,7 +75,7 @@ export function FortelyRow({
             <span className="info-panel-label">Kiterjeszti:</span>{' '}
             <span className="info-panel-kit">
               {slot.kiterjeszti.map((kn, ki) => (
-                <span key={ki} className={képzettségek.some(k => k.név === kn && k.szint >= 1) ? 'fort-req-met' : 'fort-req-unmet'}>{ki > 0 ? ', ' : ''}{kn}</span>
+                <span key={ki} className={képzettségSzint(képzettségek, kn) >= 1 ? 'fort-req-met' : 'fort-req-unmet'}>{ki > 0 ? ', ' : ''}{képzettségNév(kn, data)}</span>
               ))}
             </span>
           </div>

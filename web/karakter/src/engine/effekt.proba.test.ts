@@ -8,8 +8,9 @@ import type { Karakter } from './types';
 describe('fortélyPróbaBónuszok', () => {
   const data = loadGameDataSync();
   const kar = (fortélyok: [string, number][]) =>
-    ({ ...validKarakter(), fortélyok: fortélyok.map(([név, fok]) => ({ név, fok, spec_típus: '', spec_elem: '' })) }) as Karakter;
-  const kép = (k: Karakter, név: string) => fortélyPróbaBónuszok(k, data, ['képzettségpróba'], a => a === `képzettség:${név}`);
+    ({ ...validKarakter(), fortélyok: fortélyok.map(([név, fok]) => ({ id: data.fortelySummaries.find(d => d.név === név)!.id, fok, elem: '' })) }) as Karakter;
+  const kép = (k: Karakter, név: string) => fortélyPróbaBónuszok(k, data, ['képzettségpróba'],
+    a => a === `képzettség:${data.kepzettsegDefs.find(d => d.név === név)!.id}`);
   const tul = (k: Karakter, kulcs: string, érzék = false) =>
     fortélyPróbaBónuszok(k, data, érzék ? ['tulajdonságpróba', 'érzék_próba'] : ['tulajdonságpróba'],
       a => a === `tulajdonság:${kulcs}` || (érzék && a.startsWith('érzék:')));

@@ -1,3 +1,4 @@
+import type { Kepzettseg } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, Fortely, Tulajdonsagok } from '../engine/types';
 import type { UndoPatch } from '../hooks/useUndo';
@@ -31,8 +32,8 @@ interface Props {
   setActiveTab: (i: number) => void;
   tulajdonságok: Tulajdonsagok;
   setTulajdonságok: React.Dispatch<React.SetStateAction<Tulajdonsagok>>;
-  képzettségek: { név: string; szint: number }[];
-  setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  képzettségek: Kepzettseg[];
+  setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
   fortélyok: Fortely[];
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
   session: Session;
@@ -48,7 +49,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
   képzettségek, fortélyok, setFortélyok, session, setSession,
   karakter, setKarakter, pushUndo, onToast, onTestReset }: Props) {
 
-  const { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo } = useUndoWrappedSetters({ karakter, setKarakter, pushUndo });
+  const { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo } = useUndoWrappedSetters({ karakter, setKarakter, pushUndo, data });
 
   switch (tab) {
     case 'aktiv': return <AktivScreen data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} />;

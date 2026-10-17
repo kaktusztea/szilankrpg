@@ -491,12 +491,12 @@
     ]
   },
   "fegyver_kategória_harcmodor": {
-    "közelharci": "Közelharc",
-    "kardvívó": "Kardvívás",
-    "romboló": "Rombolás",
-    "lándzsavívó": "Lándzsavívás",
-    "ostorharc": "Ostorharc",
-    "pajzs": "Közelharc"
+    "közelharci": "közelharc",
+    "kardvívó": "kardvívás",
+    "romboló": "rombolás",
+    "lándzsavívó": "lándzsavívás",
+    "ostorharc": "ostorharc",
+    "pajzs": "közelharc"
   },
   "kétkezes_harc_max_fegyverméret": 6,
   "kétkezes_harc_max_egy_fegyver": 3,

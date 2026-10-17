@@ -319,7 +319,7 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
-            "alcél": "képzettség:Fájdalomtűrés",
+            "alcél": "képzettség:fájdalomtűrés",
             "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására"
           }
         ]
@@ -369,7 +369,7 @@
             "mód": "előny",
             "érték": 2,
             "cél": "képzettségpróba",
-            "alcél": "képzettség:Fájdalomtűrés",
+            "alcél": "képzettség:fájdalomtűrés",
             "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására"
           }
         ]

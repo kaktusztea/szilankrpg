@@ -17,7 +17,7 @@ const karakter = {
   tulajdonságok: { erő: 5, ügyesség: 4, gyorsaság: 3 },
   HM_TÉ: 1, HM_VÉ: 1,
   fortélyok: [],           // no Kétkezes harc → khFok 0 (Alapeset)
-  képzettségek: [{ név: 'Kardvívás', szint: 4 }],
+  képzettségek: [{ id: 'harcmodor', elem: 'kardvívás', szint: 4 }],
 } as unknown as Karakter;
 
 const konstansok = {
@@ -26,7 +26,7 @@ const konstansok = {
   kétkezes_harc_fegyverlevonás_osztó: 2,
   kétkezes_harc_bónuszok: [{ fok: 0, harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: false, mf: 'nincs' }],
   mesterfegyver_bónuszok: [{ fok: 0, TÉ: 0, VÉ: 0, SP: 0 }],
-  fegyver_kategória_harcmodor: { kardvívó: 'Kardvívás' },
+  fegyver_kategória_harcmodor: { kardvívó: 'kardvívás' },
   harcérték_alap: { TÉ: 10, VÉ: 10 },
 };
 
@@ -98,7 +98,7 @@ describe('calcKétkezesHarc', () => {
     // khFok 1 (mindkét_fegyver_értékei=true): a kisebb (Tőr) TÉ/VÉ idea-ja IS számít.
     const kh1 = {
       ...input,
-      karakter: { ...karakter, fortélyok: [{ név: 'Kétkezes harc', fok: 1 }] } as unknown as Karakter,
+      karakter: { ...karakter, fortélyok: [{ id: 'kétkezes_harc', fok: 1, elem: ''}] } as unknown as Karakter,
       konstansok: { ...konstansok, kétkezes_harc_bónuszok: [
         { fok: 0, harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: false, mf: 'nincs' },
         { fok: 1, harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: true, mf: 'nincs' },

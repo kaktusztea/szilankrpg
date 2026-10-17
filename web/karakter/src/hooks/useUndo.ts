@@ -86,15 +86,15 @@ export function coalesceKey(patches: UndoPatch[]): string | null {
     // Array element: key by field + item identity
     if (p.op === 'update') {
       const prev = p.prev as Record<string, unknown>;
-      return `${p.field}:${prev?.['név'] ?? ''}:${prev?.['spec_elem'] ?? ''}`;
+      return `${p.field}:${prev?.['id'] ?? ''}:${prev?.['elem'] ?? ''}`;
     }
     if (p.op === 'add') {
       const item = p.item as Record<string, unknown>;
-      return `${p.field}:${item?.['név'] ?? ''}:${item?.['spec_elem'] ?? ''}`;
+      return `${p.field}:${item?.['id'] ?? ''}:${item?.['elem'] ?? ''}`;
     }
     if (p.op === 'remove') {
       const item = p.item as Record<string, unknown>;
-      return `${p.field}:${item?.['név'] ?? ''}:${item?.['spec_elem'] ?? ''}`;
+      return `${p.field}:${item?.['id'] ?? ''}:${item?.['elem'] ?? ''}`;
     }
   }
   // Scalar field - include optional discriminator so edits to distinct

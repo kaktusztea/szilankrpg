@@ -11,31 +11,31 @@ const data = {
   // cumulative cost: kpCost(1)=1, kpCost(2)=3, kpCost(3)=6
   kepzettsegKp: [{ szint: 1, kp: 1 }, { szint: 2, kp: 2 }, { szint: 3, kp: 3 }],
   kepzettsegDefs: [
-    { név: 'Kardvívás', csoport: 'harci', primer: true },
-    { név: 'Alkímia', csoport: 'misztikus', primer: true },
-    { név: 'Úszás', csoport: 'fizikai', primer: true },
-    { név: 'Kufárkodás', csoport: 'társadalmi', primer: false },
+    { id: 'harcmodor', név: 'Harcmodor', csoport: 'harci', primer: true, többszörös: ['Kardvívás'] },
+    { id: 'alkímia', név: 'Alkímia', csoport: 'misztikus', primer: true, többszörös: [] },
+    { id: 'úszás', név: 'Úszás', csoport: 'fizikai', primer: true, többszörös: [] },
+    { id: 'kufárkodás', név: 'Kufárkodás', csoport: 'társadalmi', primer: false, többszörös: [] },
   ],
-  primerFortelyok: ['Támadó fokozás', 'Meditáció'],
+  primerFortelyok: ['támadó_fokozás', 'meditáció'],
   fortelySummaries: [
-    { név: 'Támadó fokozás', csoport: 'harci', kp_perfok: 2 },
-    { név: 'Meditáció', csoport: 'misztikus', kp_perfok: 1 },
+    { id: 'támadó_fokozás', név: 'Támadó fokozás', csoport: 'harci', kp_perfok: 2 },
+    { id: 'meditáció', név: 'Meditáció', csoport: 'misztikus', kp_perfok: 1 },
   ],
 } as unknown as GameData;
 
 const karakter = {
   HM_TÉ: 1, HM_VÉ: 2, CM: 1,
   fortélyok: [
-    { név: 'Támadó fokozás', fok: 3, spec_elem: '' },
-    { név: 'Meditáció', fok: 2, spec_elem: '' },
+    { id: 'támadó_fokozás', fok: 3, elem: '' },
+    { id: 'meditáció', fok: 2, elem: '' },
   ],
 } as unknown as Karakter;
 
 const képzettségek = [
-  { név: 'Kardvívás', szint: 3 },   // harcmodor → 6
-  { név: 'Alkímia', szint: 2 },     // misztikus → 3
-  { név: 'Úszás', szint: 1 },       // világi (primer) → 1
-  { név: 'Kufárkodás', szint: 2 },  // not primer → excluded
+  { id: 'harcmodor', elem: 'kardvívás', szint: 3 },   // harcmodor → 6
+  { id: 'alkímia', elem: '', szint: 2 },     // misztikus → 3
+  { id: 'úszás', elem: '', szint: 1 },       // világi (primer) → 1
+  { id: 'kufárkodás', elem: '', szint: 2 },  // not primer → excluded
 ];
 
 describe('calcPrimerKp', () => {

@@ -25,7 +25,7 @@ describe('buildFegyverRows - Mesterfegyver fok (case-insensitive)', () => {
   function karakterWith(fegyverAlap: string, specElem: string): Karakter {
     return {
       fegyverek: [{ alap: fegyverAlap, név: '', anyag: 'acél', idea: 0, felszerelésben: true }],
-      fortélyok: [{ név: 'Mesterfegyver', fok: 2, spec_típus: 'fegyver', spec_elem: specElem }],
+      fortélyok: [{ id: 'mesterfegyver', fok: 2, elem: specElem }],
     } as unknown as Karakter;
   }
 
@@ -130,7 +130,7 @@ describe('calcFegyverResults - alapOverride (Belharc: helyzet + Puszta kéz extr
   });
 
   it('Természetes fegyver: belharcban is SP 1 alap marad (a fortély elsőbbsége), TÉ/VÉ büntetés eltűnik', () => {
-    const tf = kar([{ név: 'Természetes fegyver', fok: 1, spec_típus: '', spec_elem: '' }]);
+    const tf = kar([{ id: 'természetes_fegyver', fok: 1, elem: '' }]);
     const ki = futtat(tf, false), be = futtat(tf, true);
     expect(be['Puszta kéz'][2]).toBe(ki['Puszta kéz'][2]);
     expect(be['Puszta kéz'][0]).toBe(ki['Puszta kéz'][0] - elsőd('Puszta kéz').TÉ);

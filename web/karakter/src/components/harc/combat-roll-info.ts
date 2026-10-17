@@ -76,13 +76,13 @@ function collectFortélyHatások(
   const hatások: DobásHatás[] = [];
   const spBónuszok: SpBónusz[] = [];
   for (const kf of karakter.fortélyok) {
-    const def = (data.fortelySummaries as FortelySummary[]).find(f => f.név === kf.név);
+    const def = (data.fortelySummaries as FortelySummary[]).find(f => f.id === kf.id);
     if (!def) continue;
     const fokDef = def.fokok.find(f => f.fok === kf.fok);
     if (!fokDef?.módosítók) continue;
     for (const mod of fokDef.módosítók) {
       if (mod.feltétel && !aktívFeltételek.has(mod.feltétel)) continue;
-      const forrás = kf.spec_elem ? `${kf.név} - ${kf.spec_elem}` : kf.név;
+      const forrás = kf.elem ? `${def.név} - ${kf.elem}` : def.név;
       if (mod.cél === 'SP' && mod.mód === 'flat' && célFilter.has('sebzésdobás')) {
         spBónuszok.push({ forrás, érték: mod.érték });
         continue;

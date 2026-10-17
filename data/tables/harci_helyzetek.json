@@ -57,7 +57,7 @@
           {
             "forrás": "fegyver.harcmodor",
             "operátor": "!=",
-            "érték": "Közelharc"
+            "érték": "közelharc"
           }
         ]
       }

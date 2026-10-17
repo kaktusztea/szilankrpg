@@ -46,43 +46,37 @@ describe('evaluateFeltétel', () => {
 });
 
 describe('describeKepChange', () => {
+  // A felirat a képzettség-def nevéből jön (id → név), az egyezés kulcs szerint.
+  const data = { kepzettsegDefs: [{ id: 'a', név: 'A', többszörös: [] }, { id: 'b', név: 'B', többszörös: [] }] } as never;
+  const kp = (id: string, szint: number) => ({ id, elem: '', szint });
   it('describes addition', () => {
-    const prev = [{ név: 'A', szint: 3 }];
-    const next = [{ név: 'A', szint: 3 }, { név: 'B', szint: 1 }];
-    expect(describeKepChange(prev, next)).toBe('Képzettség: B 0→1');
+    expect(describeKepChange([kp('a', 3)], [kp('a', 3), kp('b', 1)], data)).toBe('Képzettség: B 0→1');
   });
   it('describes removal', () => {
-    const prev = [{ név: 'A', szint: 3 }, { név: 'B', szint: 2 }];
-    const next = [{ név: 'A', szint: 3 }];
-    expect(describeKepChange(prev, next)).toBe('Képzettség: B 2→0❌');
+    expect(describeKepChange([kp('a', 3), kp('b', 2)], [kp('a', 3)], data)).toBe('Képzettség: B 2→0❌');
   });
   it('describes level change', () => {
-    const prev = [{ név: 'A', szint: 2 }];
-    const next = [{ név: 'A', szint: 4 }];
-    expect(describeKepChange(prev, next)).toBe('Képzettség: A 2→4');
+    expect(describeKepChange([kp('a', 2)], [kp('a', 4)], data)).toBe('Képzettség: A 2→4');
   });
 });
 
 describe('képzettségSzint / fortélyFok / harcmodorÖsszeg', () => {
   const karakter = {
-    képzettségek: [{ név: 'Kardvívás', szint: 5 }, { név: 'Akrobatika', szint: 2 }],
-    fortélyok: [{ név: 'Kétkezes harc', fok: 3 }],
+    képzettségek: [{ id: 'harcmodor', elem: 'kardvívás', szint: 5 }, { id: 'akrobatika', elem: '', szint: 2 }],
+    fortélyok: [{ id: 'kétkezes_harc', fok: 3, elem: ''}],
   } as unknown as Karakter;
 
-  it('képzettségSzint: felvett szint vagy 0', () => {
-    expect(képzettségSzint(karakter, 'Kardvívás')).toBe(5);
-    expect(képzettségSzint(karakter, 'Nincs ilyen')).toBe(0);
+  it('képzettségSzint: hivatkozási kulcs szerint (felvett szint vagy 0)', () => {
+    expect(képzettségSzint(karakter, 'harcmodor/kardvívás')).toBe(5);
+    expect(képzettségSzint(karakter, 'akrobatika')).toBe(2);
+    expect(képzettségSzint(karakter, 'harcmodor/rombolás')).toBe(0);
   });
-  it('képzettségSzint case-sensitive (viselkedés-megőrző)', () => {
-    expect(képzettségSzint(karakter, 'kardvívás')).toBe(0);
+  it('fortélyFok: id szerint, felvett fok vagy 0', () => {
+    expect(fortélyFok(karakter, 'kétkezes_harc')).toBe(3);
+    expect(fortélyFok(karakter, 'nincs_ilyen')).toBe(0);
   });
-  it('fortélyFok: felvett fok vagy 0', () => {
-    expect(fortélyFok(karakter, 'Kétkezes harc')).toBe(3);
-    expect(fortélyFok(karakter, 'Nincs ilyen')).toBe(0);
-  });
-  it('harcmodorÖsszeg: több képzettség szintjének összege (hiányzó = 0)', () => {
-    expect(harcmodorÖsszeg(karakter, ['Kardvívás', 'Akrobatika'])).toBe(7);
-    expect(harcmodorÖsszeg(karakter, ['Kardvívás', 'Nincs'])).toBe(5);
+  it('harcmodorÖsszeg: közelharci harcmodor-elemek szintjének összege (hiányzó = 0)', () => {
+    expect(harcmodorÖsszeg(karakter, ['kardvívás', 'rombolás'])).toBe(5);
     expect(harcmodorÖsszeg(karakter, [])).toBe(0);
   });
 });

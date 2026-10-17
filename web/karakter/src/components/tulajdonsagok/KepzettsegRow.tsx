@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { képzKulcs } from '../../engine/azonosito';
 import type { KepzettsegRowProps } from './types';
 import { KepzettsegDetails } from '../KepzettsegDetails';
 import { GridPickerPopup } from './popups';
@@ -9,7 +10,7 @@ import { DELETE_BTN_TAP_ZONE_PX, SZINT_VALUES } from '../../ui-constants';
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
   kiterjesztesek, infoOpen, onInfoToggle,
-  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések, fortélyBónuszok, felszEH = 0, felszNemHarcol = false
+  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, próbaEnyhítések, fortélyBónuszok, kepzettsegDefs, felszEH = 0, felszNemHarcol = false
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
@@ -24,12 +25,13 @@ export function KepzettsegRow({
     setSzintEditing(true);
   }
 
-  const def = findDef(slot.név);
-  const kit = kiterjesztesek[slot.név] || [];
+  const kulcs = képzKulcs(slot);
+  const def = findDef(kulcs);
+  const kit = kiterjesztesek[kulcs] || [];
 
   return (
     <div className="kep-row-wrapper">
-      <div className="item-row" data-kep={slot.név} onClick={handleTap}>
+      <div className="item-row" data-kep={kulcs} onClick={handleTap}>
         <span className={`kep-név${overLimit || warning ? ' kep-over' : ''}`}>{displayName}</span>
         {gameMode && infoOpen && (
           <span className="kep-header-actions" onClick={e => e.stopPropagation()}>
@@ -53,7 +55,9 @@ export function KepzettsegRow({
 
       {showProba && def && (
         <KepzettsegProbaPopup
-          képzettségNév={def.név}
+          képzettségNév={displayName}
+          képzettségKulcs={kulcs}
+          kepzettsegDefs={kepzettsegDefs}
           képzettségCsoport={def.csoport}
           szint={slot.szint}
           tulajdonságok={tulajdonságok}

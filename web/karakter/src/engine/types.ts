@@ -14,15 +14,19 @@ export interface Tulajdonsagok {
 }
 
 export interface Kepzettseg {
-  név: string;
+  /** Képzettség-id (kepzettsegek.json). */
+  id: string;
+  /** Többszörösnél a választott elem (harcmodor-elem / szabad szöveg), egyébként ''. Kulcs: engine/azonosito.ts képzKulcs. */
+  elem: string;
   szint: number;
 }
 
 export interface Fortely {
-  név: string;
+  /** Fortély-id (fortelyok.json); egyedi fortélynál 'egyedi'. */
+  id: string;
+  /** Többszörösnél a választott elem; egyedi fortélynál a neve; egyébként ''. */
+  elem: string;
   fok: number;
-  spec_típus: string;
-  spec_elem: string;
   kiérdemelt?: boolean;
   kiterjeszti?: string[];
 }

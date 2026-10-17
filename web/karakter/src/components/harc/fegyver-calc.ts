@@ -27,7 +27,7 @@ function getFegyverRules(allRules: Rule[]): Rule[] {
  */
 function calcSpOverride(fegyverNév: string, karakter: Karakter): number | null {
   if (fegyverNév.toLowerCase() !== 'puszta kéz') return null;
-  if (!karakter.fortélyok.some(kf => kf.név === 'Természetes fegyver')) return null;
+  if (!karakter.fortélyok.some(kf => kf.id === 'természetes_fegyver')) return null;
   return 1;
 }
 
@@ -66,8 +66,8 @@ function calcModResult(
   alapOvr?: Map<string, number>,
 ): FegyverResultMód {
   const { konstansok, harcmodorBonusz } = data;
-  const harcmodorNév = konstansok.fegyver_kategória_harcmodor[fDef.kategória] ?? 'Közelharc';
-  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
+  const harcmodorNév = konstansok.fegyver_kategória_harcmodor[fDef.kategória] ?? 'közelharc';
+  const harcmodorSzint = képzettségSzint(k, `harcmodor/${harcmodorNév}`);
   const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
   const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
 

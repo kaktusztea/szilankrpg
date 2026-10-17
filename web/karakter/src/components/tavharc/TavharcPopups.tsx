@@ -21,8 +21,8 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, távol
   function setMfFok(alap: string, fok: number) {
     setKarakter(prev => {
       if (!prev) return prev;
-      let fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && f.spec_elem === alap));
-      if (fok > 0) fortélyok = [...fortélyok, { név: 'Mesterfegyver', fok, spec_típus: 'fegyver', spec_elem: alap }];
+      let fortélyok = prev.fortélyok.filter(f => !(f.id === 'mesterfegyver' && f.elem === alap));
+      if (fok > 0) fortélyok = [...fortélyok, { id: 'mesterfegyver', fok, elem: alap }];
       return { ...prev, fortélyok };
     });
   }
@@ -32,7 +32,7 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, távol
       if (!prev) return prev;
       const removed = prev.távfegyverek[idx];
       const távfegyverek = prev.távfegyverek.filter((_, i) => i !== idx);
-      const fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && f.spec_elem === removed.alap));
+      const fortélyok = prev.fortélyok.filter(f => !(f.id === 'mesterfegyver' && f.elem === removed.alap));
       const session = { ...prev.session };
       if (session.aktív_távfegyver_index >= távfegyverek.length) session.aktív_távfegyver_index = Math.max(0, távfegyverek.length - 1);
       if (távfegyverek.length === 0) session.aktív_távfegyver_index = -1;

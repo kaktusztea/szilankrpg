@@ -1,16 +1,18 @@
+import type { Kepzettseg } from '../../engine/types';
+import { képzKulcs, bontKépzKulcs, harcmodorNév } from '../../engine/azonosito';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { getAllTávharciNames } from '../harcertekek/helpers';
 
-function távharciDisplayName(név: string): string {
-  return `Távolsági harcmodor: ${név}`;
+function távharciDisplayName(kulcs: string): string {
+  return `Távolsági harcmodor: ${harcmodorNév(bontKépzKulcs(kulcs).elem)}`;
 }
 
 interface Props {
   data: GameData;
   karakter: Karakter;
-  képzettségek: { név: string; szint: number }[];
-  setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  képzettségek: Kepzettseg[];
+  setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
   gameMode: boolean;
   onDeleteKepz: (név: string) => void;
   onKepzSzint: (név: string) => void;
@@ -18,8 +20,8 @@ interface Props {
 
 export function TavharcKepzettsegekSection({ data, karakter: k, képzettségek, setKépzettségek, gameMode, onDeleteKepz, onKepzSzint }: Props) {
   const allTávharciNames = getAllTávharciNames(data);
-  const felvett = képzettségek.filter(kp => allTávharciNames.includes(kp.név) && kp.szint > 0);
-  const nemFelvett = allTávharciNames.filter(n => !képzettségek.some(kp => kp.név === n && kp.szint > 0));
+  const felvett = képzettségek.filter(kp => allTávharciNames.includes(képzKulcs(kp)) && kp.szint > 0);
+  const nemFelvett = allTávharciNames.filter(n => !képzettségek.some(kp => képzKulcs(kp) === n && kp.szint > 0));
 
   if (gameMode && felvett.length === 0) return null;
 
@@ -27,13 +29,13 @@ export function TavharcKepzettsegekSection({ data, karakter: k, képzettségek, 
     <section className="he-section th-kepz-section">
       <div className="he-harcmodor-list he-harcmodor-col">
         {felvett.map(h => (
-            <div key={h.név} className="kep-row-wrapper">
+            <div key={képzKulcs(h)} className="kep-row-wrapper">
               <div className="item-row" onClick={() => {
-                if (!gameMode) onKepzSzint(h.név);
+                if (!gameMode) onKepzSzint(képzKulcs(h));
               }}>
-                <span className="kep-név aktiv-flex-1">{távharciDisplayName(h.név)}</span>
+                <span className="kep-név aktiv-flex-1">{távharciDisplayName(képzKulcs(h))}</span>
                 {!gameMode && (
-                  <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteKepz(h.név); }}>✕</button>
+                  <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteKepz(képzKulcs(h)); }}>✕</button>
                 )}
                 <strong className={`kep-szint${h.szint > k.tsz ? ' kep-over' : h.szint >= 9 ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
               </div>
@@ -46,7 +48,7 @@ export function TavharcKepzettsegekSection({ data, karakter: k, képzettségek, 
             onChange={e => {
               if (!e.target.value) return;
               const név = e.target.value;
-              setKépzettségek(prev => [...prev, { név, szint: 0 }]);
+              setKépzettségek(prev => [...prev, { ...bontKépzKulcs(név), szint: 0 }]);
               onKepzSzint(név);
             }}
           >

@@ -20,7 +20,7 @@ export function useKarakterMutators(data: GameData, setKarakter: SetKarakter) {
       const fegyverek = prev.fegyverek.filter((_, i) => i !== idx);
       const fDef = lookupFegyver(data.fegyverek, removed.alap);
       const displayName = fDef?.név || removed.alap;
-      const fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === removed.alap)));
+      const fortélyok = prev.fortélyok.filter(f => !(f.id === 'mesterfegyver' && (f.elem === displayName || f.elem === removed.alap)));
       const session = { ...prev.session };
       if (session.aktív_fegyver_index >= fegyverek.length) { session.aktív_fegyver_index = 0; session.kétkezes_harc = false; }
       if (session.aktív_fegyver_bal_index >= fegyverek.length) { session.aktív_fegyver_bal_index = -1; session.kétkezes_harc = false; }
@@ -42,8 +42,8 @@ export function useKarakterMutators(data: GameData, setKarakter: SetKarakter) {
     const displayName = fDef?.név || fegyverAlap;
     setKarakter(prev => {
       if (!prev) return prev;
-      let fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fegyverAlap)));
-      if (fok > 0) fortélyok = [{ név: 'Mesterfegyver', fok, spec_típus: 'fegyver', spec_elem: displayName }, ...fortélyok];
+      let fortélyok = prev.fortélyok.filter(f => !(f.id === 'mesterfegyver' && (f.elem === displayName || f.elem === fegyverAlap)));
+      if (fok > 0) fortélyok = [{ id: 'mesterfegyver', fok, elem: displayName }, ...fortélyok];
       return { ...prev, fortélyok };
     });
   }, [data, setKarakter]);
@@ -51,8 +51,8 @@ export function useKarakterMutators(data: GameData, setKarakter: SetKarakter) {
   const setPajzsFok = useCallback((fok: number) => {
     setKarakter(prev => {
       if (!prev) return prev;
-      let fortélyok = prev.fortélyok.filter(f => f.név !== 'Pajzshasználat');
-      if (fok > 0) fortélyok = [{ név: 'Pajzshasználat', fok, spec_típus: '', spec_elem: '' }, ...fortélyok];
+      let fortélyok = prev.fortélyok.filter(f => f.id !== 'pajzshasználat');
+      if (fok > 0) fortélyok = [{ id: 'pajzshasználat', fok, elem: '' }, ...fortélyok];
       return { ...prev, fortélyok };
     });
   }, [setKarakter]);
@@ -60,8 +60,8 @@ export function useKarakterMutators(data: GameData, setKarakter: SetKarakter) {
   const setMerevvertFok = useCallback((fok: number) => {
     setKarakter(prev => {
       if (!prev) return prev;
-      let fortélyok = prev.fortélyok.filter(f => f.név !== 'Merevvértviselet');
-      if (fok > 0) fortélyok = [{ név: 'Merevvértviselet', fok, spec_típus: '', spec_elem: '' }, ...fortélyok];
+      let fortélyok = prev.fortélyok.filter(f => f.id !== 'merevvértviselet');
+      if (fok > 0) fortélyok = [{ id: 'merevvértviselet', fok, elem: '' }, ...fortélyok];
       return { ...prev, fortélyok };
     });
   }, [setKarakter]);

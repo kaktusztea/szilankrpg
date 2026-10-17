@@ -159,9 +159,9 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const fárasztásDef = fárasztásAktív ? data.taktikak.find(t => t.név === 'Fárasztás') : undefined;
   const fárasztásFortélyModosítók = karakter.fortélyok
     .map(kf => {
-      const def = data.fortelySummaries.find(d => d.név === kf.név);
+      const def = data.fortelySummaries.find(d => d.id === kf.id);
       const fokDef = def?.fokok.find(f => f.fok === kf.fok);
-      return fokDef?.módosítók?.length ? { forrás: kf.név, módosítók: fokDef.módosítók } : null;
+      return def && fokDef?.módosítók?.length ? { forrás: def.név, módosítók: fokDef.módosítók } : null;
     })
     .filter((x): x is { forrás: string; módosítók: NonNullable<typeof x>['módosítók'] } => x !== null);
   const fárasztásEredmény = fárasztásDef
@@ -197,7 +197,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     }, 200);
   }, [onNavigate]);
 
-  const hasFt = karakter.képzettségek.some(kp => kp.név === 'Fájdalomtűrés');
+  const hasFt = karakter.képzettségek.some(kp => kp.id === 'fájdalomtűrés');
 
   return (
     <div className="screen harc-screen">

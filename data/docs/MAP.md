@@ -13,7 +13,8 @@ data/
   rules.json                 Reactive engine: 51 deklaratív szabály
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
-                             fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate)
+                             fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate),
+                             hivatkozas (fortély/képzettség id-hivatkozás formátum + feloldó)
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (generate.markdown.py + lib/JinjaHandler.py - md fejezet-generálás)
@@ -56,6 +57,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
 | `fortely-mods.ts` | calcFortelyMods - burkoló az `effekt.ts` gyűjtő fölött (fortély + alapeset → célonkénti Record) |
 | `effekt.ts` | Egységes effekt-modell (§42 3. fázis): `gyűjtFortélyEffektek`, `gyűjtTaktikaEffektek`, `értékCélra`, `arányÖsszeg`; regressziós snapshot: `effekt.regresszio.test.ts`; a `calcFortelyMods` / `calcTaktikaMods` ennek burkolói |
+| `azonosito.ts` | Fortély/képzettség azonosítás (séma v3): `képzKulcs` / `bontKépzKulcs` (`<id>/<elem>`), `fortélyNév` / `képzettségNév` / `harcmodorNév` (id → megjelenített név), `képzettségSzint`; konstansok `HARCMODOR_ID`, `TRADÍCIÓ_ID`, `EGYEDI_FORTÉLY_ID` |
 | `mf-utils.ts` | `findMfFokByName` (egyetlen MF egyeztető) + `findMfFok` (fegyvertáblából) + `getMfBónusz` |
 | `alapeset.ts` | Fortély 0.fok (Alapeset) kiértékelés |
 | `ketkezes.ts` | Kétkezes harc összesítő kalkuláció |

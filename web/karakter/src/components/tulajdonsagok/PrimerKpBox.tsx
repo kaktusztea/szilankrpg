@@ -1,3 +1,4 @@
+import type { Kepzettseg } from '../../engine/types';
 import { useMemo } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
@@ -6,7 +7,7 @@ import { calcPrimerKp, type KpDetail } from './primerKpCalc';
 interface Props {
   data: GameData;
   karakter: Karakter;
-  képzettségek: { név: string; szint: number }[];
+  képzettségek: Kepzettseg[];
 }
 
 export function PrimerKpBox({ data, karakter, képzettségek }: Props) {

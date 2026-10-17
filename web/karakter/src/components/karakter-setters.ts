@@ -31,12 +31,12 @@ export function makeAnyanyelvSetter(
 ) {
   return (v: string) => setKarakter(prev => {
     if (!prev) return prev;
-    const filtered = prev.fortélyok.filter(f => !(f.név === 'Nyelvismeret' && f.kiérdemelt));
+    const filtered = prev.fortélyok.filter(f => !(f.id === 'nyelvismeret' && f.kiérdemelt));
     const ingyenesek: Fortely[] = [
-      { név: 'Nyelvismeret', fok: 1, spec_típus: 'nyelv', spec_elem: közösNyelv, kiérdemelt: true },
+      { id: 'nyelvismeret', fok: 1, elem: közösNyelv, kiérdemelt: true },
     ];
     if (v && v !== közösNyelv) {
-      ingyenesek.push({ név: 'Nyelvismeret', fok: 1, spec_típus: 'nyelv', spec_elem: v, kiérdemelt: true });
+      ingyenesek.push({ id: 'nyelvismeret', fok: 1, elem: v, kiérdemelt: true });
     }
     return { ...prev, anyanyelv: v, fortélyok: [...ingyenesek, ...filtered] };
   });
@@ -45,7 +45,7 @@ export function makeAnyanyelvSetter(
 /** Fortélyok screen props builder. */
 export function buildFortelyokProps(karakter: Karakter, data: GameData) {
   const fegyverNevek = [...new Set(data.fegyverek.map(f => f.név))];
-  const nyelvtanulásSzint = képzettségSzint(karakter, 'Nyelvtanulás');
+  const nyelvtanulásSzint = képzettségSzint(karakter, 'nyelvtanulás');
   return { fegyverNevek, nyelvtanulásSzint };
 }
 

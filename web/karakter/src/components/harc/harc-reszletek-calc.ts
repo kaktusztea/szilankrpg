@@ -1,4 +1,5 @@
 import type { Karakter, Session } from '../../engine/types';
+import { harcmodorNév as hmMegjelenítés } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult } from './types';
 import { lookupFegyver, képzettségSzint, fortélyFok } from '../../engine/utils';
@@ -51,7 +52,7 @@ function calcKétkezesMf(
   _jobbMfFok: number,
 ): KétkezesMfResult {
   const { konstansok } = data;
-  const khFok = fortélyFok(k, 'Kétkezes harc');
+  const khFok = fortélyFok(k, 'kétkezes_harc');
   const khFokEntry = konstansok.kétkezes_harc_bónuszok?.find((b: any) => b.fok === khFok);
   const mfMode: string = khFokEntry?.mf ?? 'nincs';
 
@@ -115,8 +116,8 @@ export function calcReszletekData(
 
   // Harcmodor
   const kat = fDef?.kategória ?? 'közelharci';
-  const harcmodorNév = konstansok.fegyver_kategória_harcmodor[kat] ?? 'Közelharc';
-  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
+  const harcmodorNév = konstansok.fegyver_kategória_harcmodor[kat] ?? 'közelharc';
+  const harcmodorSzint = képzettségSzint(k, `harcmodor/${harcmodorNév}`);
   const hb = harcmodorBonusz.find((b: any) => b.szint === harcmodorSzint);
 
   // Mesterfegyver bónusz
@@ -174,7 +175,7 @@ export function calcReszletekData(
   return {
     fegyverNév: r.fegyver_név,
     kategória: kat,
-    harcmodorNév,
+    harcmodorNév: hmMegjelenítés(harcmodorNév, data),
     harcmodorSzint,
     harcmodorTÉ: hb?.TÉ ?? 0,
     harcmodorVÉ: hb?.VÉ ?? 0,

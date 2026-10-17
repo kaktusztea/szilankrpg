@@ -6,8 +6,9 @@ import { loadGameDataSync } from '../../__tests__/load-gamedata';
 describe('checkKövetelmények - faj', () => {
   const data = loadGameDataSync();
   const hiány = (fortély: string, fok: number, faj: string) => {
-    const fokDef = data.fortelySummaries.find(f => f.név === fortély)!.fokok.find(f => f.fok === fok);
-    return checkKövetelmények(fokDef, [], [], [], undefined, data.fajFortélyok[faj] ?? {}, fortély);
+    const def = data.fortelySummaries.find(f => f.név === fortély)!;
+    const fokDef = def.fokok.find(f => f.fok === fok);
+    return checkKövetelmények(fokDef, [], [], data, undefined, data.fajFortélyok[faj] ?? {}, def.id);
   };
 
   it('Természetes páncél (3): Sáskaharcos OK, Ork nem', () => {

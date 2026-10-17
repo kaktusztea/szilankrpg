@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import { képzettségNév, isHarcmodorId } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
 
@@ -21,26 +23,14 @@ interface PrimerKpData {
 export function calcPrimerKp(
   data: GameData,
   karakter: Karakter,
-  képzettségek: { név: string; szint: number }[]
+  képzettségek: Kepzettseg[]
 ): PrimerKpData {
   const konstansok = data.konstansok;
   const kpTábla = data.kepzettsegKp;
   const kpCost = (szint: number) => kpTábla.filter(r => r.szint <= szint).reduce((s, r) => s + r.kp, 0);
 
-  const harcmodorNevek = [...konstansok.harcmodorok.közelharci, ...konstansok.harcmodorok.távolsági];
-  const misztikusNevek = data.kepzettsegDefs
-    .filter(k => k.csoport === 'misztikus')
-    .map(k => k.név.toLowerCase());
-
-  const isMisztikus = (név: string) => {
-    const lower = név.toLowerCase();
-    return misztikusNevek.some(m => lower === m || lower.startsWith(m + ':'));
-  };
-
-  const primerKepzNevek = new Set(
-    data.kepzettsegDefs.filter(k => k.primer).map(k => k.név.toLowerCase())
-  );
-  for (const nm of harcmodorNevek) primerKepzNevek.add(nm);
+  const defOf = (id: string) => data.kepzettsegDefs.find(d => d.id === id);
+  const név = (kp: Kepzettseg) => képzettségNév(kp, data);
 
   const kp_hm_cm = (karakter.HM_TÉ + karakter.HM_VÉ) * konstansok.kp.hm + karakter.CM * konstansok.kp.cm;
 
@@ -52,15 +42,15 @@ export function calcPrimerKp(
   for (const kp of képzettségek) {
     if (kp.szint <= 0) continue;
     const cost = kpCost(kp.szint);
-    if (harcmodorNevek.includes(kp.név.toLowerCase())) {
+    if (isHarcmodorId(kp.id)) {
       kp_harcmodor += cost;
-      harcmodorDetails.push({ név: kp.név, szint: kp.szint, kp: cost });
-    } else if (isMisztikus(kp.név)) {
+      harcmodorDetails.push({ név: név(kp), szint: kp.szint, kp: cost });
+    } else if (defOf(kp.id)?.csoport === 'misztikus') {
       kp_misztikus += cost;
-      misztikusDetails.push({ név: kp.név, szint: kp.szint, kp: cost });
-    } else if (primerKepzNevek.has(kp.név.toLowerCase())) {
+      misztikusDetails.push({ név: név(kp), szint: kp.szint, kp: cost });
+    } else if (defOf(kp.id)?.primer) {
       kp_világi += cost;
-      világiDetails.push({ név: kp.név, szint: kp.szint, kp: cost });
+      világiDetails.push({ név: név(kp), szint: kp.szint, kp: cost });
     }
   }
 
@@ -69,16 +59,16 @@ export function calcPrimerKp(
   const misztfortDetails: KpDetail[] = [];
 
   for (const f of karakter.fortélyok) {
-    if (!data.primerFortelyok.includes(f.név)) continue;
-    const def = data.fortelySummaries.find(d => d.név === f.név);
+    if (!data.primerFortelyok.includes(f.id)) continue;
+    const def = data.fortelySummaries.find(d => d.id === f.id);
     if (!def || def.kp_perfok === 0) continue;
     const cost = f.fok * def.kp_perfok;
     if (def.csoport === 'harci' || def.csoport === 'távharc') {
       kp_harci_fort += cost;
-      harcifortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' });
+      harcifortDetails.push({ név: def.név, fok: f.fok, kp: cost, spec: f.elem || '' });
     } else if (def.csoport === 'misztikus') {
       kp_miszt_fort += cost;
-      misztfortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' });
+      misztfortDetails.push({ név: def.név, fok: f.fok, kp: cost, spec: f.elem || '' });
     }
   }
 

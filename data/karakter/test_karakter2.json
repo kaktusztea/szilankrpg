@@ -1,7 +1,7 @@
 {
   "uid": "52a5adb5-f900-4668-89f0-102a57c47a36",
   "id_leíró": "teszt-karakter-10tsz",
-  "schema_version": 2,
+  "schema_version": 3,
   "név": "Teszt karakter",
   "becenév": "Teszt kari",
   "jk": true,
@@ -27,399 +27,373 @@
   "CM": 1,
   "képzettségek": [
     {
-      "név": "Közelharc",
+      "id": "harcmodor",
+      "elem": "közelharc",
       "szint": 6
     },
     {
-      "név": "Kardvívás",
+      "id": "harcmodor",
+      "elem": "kardvívás",
       "szint": 8
     },
     {
-      "név": "Rombolás",
+      "id": "harcmodor",
+      "elem": "rombolás",
       "szint": 4
     },
     {
-      "név": "Akrobatika",
+      "id": "akrobatika",
+      "elem": "",
       "szint": 3
     },
     {
-      "név": "Fájdalomtűrés",
+      "id": "fájdalomtűrés",
+      "elem": "",
       "szint": 7
     },
     {
-      "név": "Észlelés",
+      "id": "észlelés",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Nyelvtanulás",
+      "id": "nyelvtanulás",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Lovaglás",
+      "id": "lovaglás",
+      "elem": "",
       "szint": 4
     },
     {
-      "név": "Mászás",
+      "id": "mászás",
+      "elem": "",
       "szint": 5
     },
     {
-      "név": "Kvantikum",
+      "id": "kvantikum",
+      "elem": "",
       "szint": 5
     },
     {
-      "név": "Előadóművészet",
+      "id": "előadóművészet",
+      "elem": "",
       "szint": 5
     },
     {
-      "név": "Etikett",
+      "id": "etikett",
+      "elem": "",
       "szint": 5
     },
     {
-      "név": "Értékbecslés",
+      "id": "értékbecslés",
+      "elem": "",
       "szint": 4
     },
     {
-      "név": "Művészetismeret",
+      "id": "művészetismeret",
+      "elem": "",
       "szint": 5
     },
     {
-      "név": "Városi jártasság",
+      "id": "városi_jártasság",
+      "elem": "",
       "szint": 4
     },
     {
-      "név": "Természetjárás",
+      "id": "természetjárás",
+      "elem": "",
       "szint": 5
     },
     {
-      "név": "Tradíció: Vulgármágia",
+      "id": "tradíció",
+      "elem": "Vulgármágia",
       "szint": 6
     },
     {
-      "név": "Arkánum: Illúziók",
+      "id": "arkánum_illúziók",
+      "elem": "",
       "szint": 7
     },
     {
-      "név": "Arkánum: Külső síkok lényeinek idézése",
+      "id": "arkánum_külső_síkok_lényeinek_idézése",
+      "elem": "",
       "szint": 3
     },
     {
-      "név": "Ősi nyelv ismerete: Kyr",
+      "id": "ősi_nyelv_ismerete",
+      "elem": "Kyr",
       "szint": 7
     },
     {
-      "név": "Íjászat",
+      "id": "távolsági_harcmodor",
+      "elem": "íjászat",
       "szint": 5
     },
     {
-      "név": "Befolyásolás",
+      "id": "befolyásolás",
+      "elem": "",
       "szint": 3
     },
     {
-      "név": "Kézművesség",
+      "id": "kézművesség",
+      "elem": "",
       "szint": 4
     },
     {
-      "név": "Emberismeret",
+      "id": "emberismeret",
+      "elem": "",
       "szint": 5
     }
   ],
   "fortélyok": [
     {
-      "név": "Mesterfegyver",
+      "id": "mesterfegyver",
+      "elem": "Tőr",
+      "fok": 1
+    },
+    {
+      "id": "mesterfegyver",
+      "elem": "Kard, lovag",
+      "fok": 2
+    },
+    {
+      "id": "merevvértviselet",
+      "elem": "",
+      "fok": 3
+    },
+    {
+      "id": "harcos_elme",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "gyors_kezdeményezés",
+      "elem": "",
+      "fok": 2
+    },
+    {
+      "id": "pajzshasználat",
+      "elem": "",
+      "fok": 2
+    },
+    {
+      "id": "harckeret_növelés",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "elpusztíthatatlan",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "kaszabolás",
+      "elem": "",
+      "fok": 2
+    },
+    {
+      "id": "fárasztás",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "építészet",
+      "elem": "",
+      "fok": 2
+    },
+    {
+      "id": "futás",
+      "elem": "",
+      "fok": 2
+    },
+    {
+      "id": "szájról_olvasás",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "éber_alvó",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "kocsihajtás",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "keresés_rejtés",
+      "elem": "",
+      "fok": 2
+    },
+    {
+      "id": "kultúrkör",
+      "elem": "dw00n",
+      "fok": 1
+    },
+    {
+      "id": "kultúrkör",
+      "elem": "erv",
+      "fok": 1
+    },
+    {
+      "id": "kultúrkör",
+      "elem": "py4r",
+      "fok": 1
+    },
+    {
+      "id": "kultúrkör",
+      "elem": "dzs4d",
+      "fok": 1
+    },
+    {
+      "id": "helyismeret",
+      "elem": "Erion",
+      "fok": 1
+    },
+    {
+      "id": "helyismeret",
+      "elem": "Pyarron",
+      "fok": 1
+    },
+    {
+      "id": "helyismeret",
+      "elem": "Haonwell",
+      "fok": 1
+    },
+    {
+      "id": "helyismeret",
+      "elem": "Shulur",
+      "fok": 1
+    },
+    {
+      "id": "gazdálkodás",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "kézműves_lakatos",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "kihallgatás",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "színjátszás",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "éneklés",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "bűvészet",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "alkudozás",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "térképészet",
+      "elem": "",
+      "fok": 1
+    },
+    {
+      "id": "nyelvismeret",
+      "elem": "Közös (pyarroni)",
       "fok": 1,
-      "spec_típus": "fegyver",
-      "spec_elem": "Tőr"
-    },
-    {
-      "név": "Mesterfegyver",
-      "fok": 2,
-      "spec_típus": "fegyver",
-      "spec_elem": "Kard, lovag"
-    },
-    {
-      "név": "Merevvértviselet",
-      "fok": 3,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Harcos elme",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Gyors kezdeményezés",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Pajzshasználat",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Harckeret növelés",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Elpusztíthatatlan",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Kaszabolás",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Fárasztás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Építészet",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Futás",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Szájról olvasás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Éber alvó",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Kocsihajtás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Keresés/rejtés",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "dw00n"
-    },
-    {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "erv"
-    },
-    {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "py4r"
-    },
-    {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "dzs4d"
-    },
-    {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "Erion"
-    },
-    {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "Pyarron"
-    },
-    {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "Haonwell"
-    },
-    {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "Shulur"
-    },
-    {
-      "név": "Gazdálkodás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Kézműves: Lakatos",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Kihallgatás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Színjátszás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Éneklés",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Bűvészet",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Alkudozás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Térképészet",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
-    },
-    {
-      "név": "Nyelvismeret",
-      "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Közös (pyarroni)",
       "kiérdemelt": true
     },
     {
-      "név": "Nyelvismeret",
+      "id": "nyelvismeret",
+      "elem": "Toroni",
       "fok": 2,
-      "spec_típus": "nyelv",
-      "spec_elem": "Toroni",
       "kiérdemelt": true
     },
     {
-      "név": "Kétkezes harc",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "kétkezes_harc",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Mágikus lövedék gyorsítása",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": "",
-      "kiérdemelt": false
+      "id": "mágikus_lövedék_gyorsítása",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Mesterfegyver",
-      "fok": 1,
-      "spec_típus": "fegyver",
-      "spec_elem": "Rövid íj"
+      "id": "mesterfegyver",
+      "elem": "Rövid íj",
+      "fok": 1
     },
     {
-      "név": "Nyelvismeret",
-      "fok": 2,
-      "spec_típus": "nyelv",
-      "spec_elem": "Dwoon"
+      "id": "nyelvismeret",
+      "elem": "Dwoon",
+      "fok": 2
     },
     {
-      "név": "Nyelvismeret",
-      "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Erv"
+      "id": "nyelvismeret",
+      "elem": "Erv",
+      "fok": 1
     },
     {
-      "név": "Nyelvismeret",
-      "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Aszisz"
+      "id": "nyelvismeret",
+      "elem": "Aszisz",
+      "fok": 1
     },
     {
-      "név": "Nyelvismeret",
-      "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Ork"
+      "id": "nyelvismeret",
+      "elem": "Ork",
+      "fok": 1
     },
     {
-      "név": "Nyelvismeret",
-      "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Dzsadal"
+      "id": "nyelvismeret",
+      "elem": "Dzsadal",
+      "fok": 1
     },
     {
-      "név": "Analfabéta",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "analfabéta",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Nyelvismeret",
-      "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Dzsad/Dzsenn"
+      "id": "nyelvismeret",
+      "elem": "Dzsad/Dzsenn",
+      "fok": 1
     },
     {
-      "név": "Nyelvismeret",
-      "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Sinemosi"
+      "id": "nyelvismeret",
+      "elem": "Sinemosi",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "4mund"
+      "id": "kultúrkör",
+      "elem": "4mund",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "pier"
+      "id": "kultúrkör",
+      "elem": "pier",
+      "fok": 1
     },
     {
-      "név": "Lövés reflexből fejlesztése",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "lövés_reflexből_fejlesztése",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Hamisítás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "hamisítás",
+      "elem": "",
+      "fok": 1
     }
   ],
   "hátterek": {

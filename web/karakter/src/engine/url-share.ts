@@ -46,7 +46,7 @@ interface CompactKarakter {
   tu: number[];
   hm: [number, number];
   cm: number;
-  kp: [string, number][];
+  kp: [string, string, number][];
   fo: (string | number)[][];
   ht: (string | string[])[];
   fg: (string | number)[][];
@@ -67,10 +67,10 @@ function compactEncode(k: Karakter): CompactKarakter {
     tu: TULAJ_ORDER.map(key => k.tulajdonságok[key]),
     hm: [k.HM_TÉ, k.HM_VÉ],
     cm: k.CM,
-    kp: k.képzettségek.map(kp => [kp.név, kp.szint]),
+    kp: k.képzettségek.map(kp => [kp.id, kp.elem, kp.szint]),
     fo: k.fortélyok.map(f => {
-      const entry: (string | number)[] = [f.név, f.fok];
-      if (f.spec_típus) { entry.push(f.spec_típus, f.spec_elem); }
+      const entry: (string | number)[] = [f.id, f.fok];
+      if (f.elem) { entry.push('', f.elem); }
       if (f.kiérdemelt) entry.push(1);
       return entry;
     }),
@@ -135,10 +135,9 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
   TULAJ_ORDER.forEach((key, i) => { tulajdonságok[key] = c.tu[i] ?? 0; });
 
   const fortélyok: Fortely[] = c.fo.map(f => {
-    const entry: Fortely = { név: f[0] as string, fok: f[1] as number, spec_típus: '', spec_elem: '' };
+    const entry: Fortely = { id: f[0] as string, fok: f[1] as number, elem: '' };
     if (f.length >= 4 && typeof f[2] === 'string') {
-      entry.spec_típus = f[2] as string;
-      entry.spec_elem = f[3] as string;
+      entry.elem = f[3] as string;   // f[2]: régen spec_típus, ma üres helyőrző (a pozíciós formátum megmarad)
     }
     // kiérdemelt flag: utolsó elem === 1 (és nem a fok pozíción)
     const last = f[f.length - 1];
@@ -190,7 +189,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     HM_TÉ: c.hm[0],
     HM_VÉ: c.hm[1],
     CM: c.cm,
-    képzettségek: c.kp.map(([név, szint]) => ({ név, szint })),
+    képzettségek: c.kp.map(([id, elem, szint]) => ({ id, elem, szint })),
     fortélyok,
     hátterek,
     fegyverek,
@@ -214,7 +213,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
 // Public API
 // ============================================================
 
-const CURRENT_SCHEMA_VERSION = 2;
+const CURRENT_SCHEMA_VERSION = 3;   // 3: fortély/képzettség id + elem (2026-10-17)
 
 export function encodeKarakterUrl(karakter: Karakter): string {
   const compact = compactEncode(karakter);

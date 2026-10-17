@@ -48,9 +48,9 @@ export function calcLöveskitérésCélszám(
 
 /** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */
 export function calcAkrobatikaÉrték(k: Karakter): number {
-  const akrobatika = képzettségSzint(k, 'Akrobatika');
+  const akrobatika = képzettségSzint(k, 'akrobatika');
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
-  const fejlesztés = k.fortélyok.some(f => f.név === 'Lövéskitérés fejlesztése') ? 2 : 0;
+  const fejlesztés = k.fortélyok.some(f => f.id === 'lövéskitérés_fejlesztése') ? 2 : 0;
   return akrobatika + gyorsaság + fejlesztés;
 }
 

@@ -42,7 +42,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   if (jobbFh > konstansok.kétkezes_harc_max_egy_fegyver || balFh > konstansok.kétkezes_harc_max_egy_fegyver) return null;
   if (sumFh > konstansok.kétkezes_harc_max_fegyverméret) return null;
 
-  const khFok = fortélyFok(k, 'Kétkezes harc');
+  const khFok = fortélyFok(k, 'kétkezes_harc');
   const nagyobb = jobbFh >= balFh ? jobbDef : balDef;
   const kisebb = jobbFh >= balFh ? balDef : jobbDef;
   const nagyobbFp = jobbFh >= balFh ? jobbFp : balFp;
@@ -53,13 +53,13 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   const jobbElsődleges = jobbFh >= balFh ? nagyobbElsődleges : kisebbElsődleges;
 
   // Harcmodor: nagyobb fegyveré
-  const harcmodorNév = konstansok.fegyver_kategória_harcmodor[nagyobb.kategória] ?? 'Közelharc';
-  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
+  const harcmodorNév = konstansok.fegyver_kategória_harcmodor[nagyobb.kategória] ?? 'közelharc';
+  const harcmodorSzint = képzettségSzint(k, `harcmodor/${harcmodorNév}`);
   const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
 
   // MF
-  const mfNagyobb = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === nagyobb.név || f.spec_elem === nagyobbFp.alap))?.fok ?? 0;
-  const mfKisebb = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === kisebb.név || f.spec_elem === kisebbFp.alap))?.fok ?? 0;
+  const mfNagyobb = k.fortélyok.find(f => f.id === 'mesterfegyver' && (f.elem === nagyobb.név || f.elem === nagyobbFp.alap))?.fok ?? 0;
+  const mfKisebb = k.fortélyok.find(f => f.id === 'mesterfegyver' && (f.elem === kisebb.név || f.elem === kisebbFp.alap))?.fok ?? 0;
 
   const khBónusz = konstansok.kétkezes_harc_bónuszok;
   const khFokEntry = khBónusz?.find(b => b.fok === khFok);

@@ -48,14 +48,14 @@ describe('kiterjesztésElőnyHátrány (md/030_08_01)', () => {
 });
 
 describe('buildFortélyFokok', () => {
-  it('név → max fok (többszörösnél a legmagasabb)', () => {
+  it('fortély-id → max fok (többszörösnél a legmagasabb)', () => {
     const m = buildFortélyFokok([
-      { név: 'Történelemismeret', fok: 2 } as never,
-      { név: 'Kultúrkör', fok: 1 } as never,
-      { név: 'Kultúrkör', fok: 3 } as never,
+      { id: 'történelemismeret', fok: 2, elem: ''} as never,
+      { id: 'kultúrkör', fok: 1, elem: ''} as never,
+      { id: 'kultúrkör', fok: 3, elem: ''} as never,
     ]);
-    expect(m['Történelemismeret']).toBe(2);
-    expect(m['Kultúrkör']).toBe(3); // max, nem az utolsó
+    expect(m['történelemismeret']).toBe(2);
+    expect(m['kultúrkör']).toBe(3); // max, nem az utolsó (fortély-id kulcs)
   });
 });
 

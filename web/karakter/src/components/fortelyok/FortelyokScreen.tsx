@@ -25,9 +25,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
   const CSOPORT_SORREND = fortCsoportSorrend.map(c => c.id);
   const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(fortCsoportSorrend.map(c => [c.id, c.label]));
   const NYELV_FOK_LABELS: Record<number, string> = data.konstansok.nyelv_fok_nevek;
-  const többszörösNevek = useMemo(() => new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név)), [data]);
+  const többszörösNevek = useMemo(() => new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.id)), [data]);
   const fajFortélyok = data.fajFortélyok[karakter.hátterek.faj] ?? {};
-  const harcmodorNevek = useMemo(() => [...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági], [data]);
   const defsByGroup = useMemo(() => buildDefsByGroup(data.fortelySummaries), [data]);
 
   useEffect(() => { setInfoTarget(null); }, [gameMode]);
@@ -52,14 +51,13 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
             nyelvtanulásSzint={nyelvtanulásSzint}
             nyelvFokLabels={NYELV_FOK_LABELS}
             képzettségek={képzettségek}
-            harcmodorNevek={harcmodorNevek}
             fajFortélyok={fajFortélyok}
             data={data}
             onToggleCollapse={() => setCollapsedGroups(prev => { const n = new Set(prev); if (n.has(csoport)) n.delete(csoport); else n.add(csoport); return n; })}
             onAddFortely={addFortely}
             onToggleInfo={idx => setInfoTarget(prev => prev === `${idx}` ? null : `${idx}`)}
             onFokChange={setFok}
-            onRemove={(idx) => setDeleteTarget({ idx, név: displayName(fortélyok[idx]), fok: fortélyok[idx]?.fok ?? 0 })}
+            onRemove={(idx) => setDeleteTarget({ idx, név: displayName(fortélyok[idx], data), fok: fortélyok[idx]?.fok ?? 0 })}
             onHint={showHint}
             infoTarget={infoTarget}
           />
@@ -80,7 +78,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
       {pendingFort && pendingSlot && (
         <FokPickerPopup
           slot={pendingSlot}
-          maxfok={data.fortelySummaries.find(d => d.név === pendingSlot.név)?.maxfok ?? 1}
+          maxfok={data.fortelySummaries.find(d => d.id === pendingSlot.id)?.maxfok ?? 1}
+          data={data}
           nyelvFokLabels={NYELV_FOK_LABELS}
           onSelect={confirmFok}
           onCancel={() => setPendingFort(null)}
@@ -99,8 +98,9 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
 
       {szabadTypePicker && (
         <SzabadTypePickerPopup
+          data={data}
           picker={szabadTypePicker}
-          felvettKp={calcSzabadFelvettKp(szabadTypePicker.név, fortélyok, data.fortelySummaries, tsz)}
+          felvettKp={calcSzabadFelvettKp(szabadTypePicker.id, fortélyok, data.fortelySummaries, tsz)}
           onFelvett={() => confirmSzabad(false)}
           onKiérdemelt={() => confirmSzabad(true)}
           onCancel={() => setSzabadTypePicker(null)}
@@ -109,6 +109,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
 
       {egyediPicker && (
         <EgyediFortelyPopup
+          data={data}
           képzettségek={képzettségek}
           onConfirm={confirmEgyedi}
           onCancel={() => setEgyediPicker(false)}

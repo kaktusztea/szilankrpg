@@ -22,12 +22,12 @@ const result: FegyverResult = {
 
 const data = {
   fegyverek: [{ név: 'Hosszúkard', kategória: 'kardvívó', idea_default: 2, extrák: [{ id: 'x', név: 'Pontos' }], módok: [] }],
-  konstansok: { fegyver_kategória_harcmodor: { kardvívó: 'Kardvívás' } },
+  konstansok: { fegyver_kategória_harcmodor: { kardvívó: 'kardvívás' } },
   fegyverExtrák: { x: { id: 'x', név: 'Pontos', leírás: 'Precíziós szúróhegy.' } },
 } as unknown as GameData;
 
 const karakter = {
-  képzettségek: [{ név: 'Kardvívás', szint: 6 }],
+  képzettségek: [{ id: 'harcmodor', elem: 'kardvívás', szint: 6 }],
   fegyverek: [{ alap: 'Hosszúkard', név: 'Sajátom', anyag: 'acél', idea: 4, felszerelésben: true }],
 } as unknown as Karakter;
 
@@ -67,7 +67,7 @@ describe('buildFegyverInfó', () => {
   });
 
   it('nincs felvett példány (pl. puszta kéz) → anyag/idea null, a többi megvan', () => {
-    const üresK = { képzettségek: [{ név: 'Kardvívás', szint: 6 }], fegyverek: [] } as unknown as Karakter;
+    const üresK = { képzettségek: [{ id: 'harcmodor', elem: 'kardvívás', szint: 6 }], fegyverek: [] } as unknown as Karakter;
     const info = buildFegyverInfó(result, üresK, data);
     expect(info.anyag).toBeNull();
     expect(info.idea).toBeNull();

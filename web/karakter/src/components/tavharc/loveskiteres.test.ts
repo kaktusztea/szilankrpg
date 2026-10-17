@@ -71,8 +71,8 @@ describe('tavHatótáv', () => {
 });
 
 describe('calcAkrobatikaÉrték', () => {
-  const base = (fortélyok: { név: string }[]) => ({
-    képzettségek: [{ név: 'Akrobatika', szint: 4 }],
+  const base = (fortélyok: { id: string }[]) => ({
+    képzettségek: [{ id: 'akrobatika', elem: '', szint: 4 }],
     tulajdonságok: { gyorsaság: 3 },
     fortélyok,
   }) as unknown as Karakter;
@@ -82,7 +82,7 @@ describe('calcAkrobatikaÉrték', () => {
   });
 
   it('adds +2 with the Lövéskitérés fejlesztése fortély', () => {
-    expect(calcAkrobatikaÉrték(base([{ név: 'Lövéskitérés fejlesztése' }]))).toBe(9);
+    expect(calcAkrobatikaÉrték(base([{ id: 'lövéskitérés_fejlesztése' }]))).toBe(9);
   });
 
   it('treats missing Akrobatika as 0', () => {

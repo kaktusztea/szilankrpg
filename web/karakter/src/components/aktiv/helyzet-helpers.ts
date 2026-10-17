@@ -23,7 +23,7 @@ export function getMinFegyverhosszWarning(
   helyzetFeltételKulcs: string, karakter: Karakter, session: Session, data: GameData,
 ): string {
   for (const kf of karakter.fortélyok) {
-    const fd = data.fortelySummaries.find(d => d.név === kf.név);
+    const fd = data.fortelySummaries.find(d => d.id === kf.id);
     if (!fd) continue;
     const fokDef = fd.fokok.find((f: any) => f.fok === kf.fok);
     const köv = fokDef?.követelmények?.find((k: any) => k.típus === 'min_fegyverméret' && k.feltétel === helyzetFeltételKulcs);

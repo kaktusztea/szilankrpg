@@ -4,8 +4,8 @@ import type { Karakter, FegyverAlap } from './types';
 
 const karakter = {
   fortélyok: [
-    { név: 'Mesterfegyver', fok: 2, spec_típus: '', spec_elem: 'Hosszúkard' },
-    { név: 'Mesterfegyver', fok: 1, spec_típus: '', spec_elem: 'Rövidkard' },
+    { id: 'mesterfegyver', fok: 2, elem: 'Hosszúkard' },
+    { id: 'mesterfegyver', fok: 1, elem: 'Rövidkard' },
   ],
 } as unknown as Karakter;
 

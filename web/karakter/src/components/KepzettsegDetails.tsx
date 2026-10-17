@@ -46,7 +46,7 @@ function FortelyLista({ label, entries, fortélyFokok }: {
       <span className="info-panel-label">{label}:</span>
       <span className="info-panel-kit">{entries.map((k, i) => (
         <span key={i} className={fortélyFokok ? ((fortélyFokok[k.fortély] ?? 0) > 0 ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
-          {i > 0 ? '; ' : ''}{k.fortély}
+          {i > 0 ? '; ' : ''}{k.név}
         </span>
       ))}</span>
     </div>

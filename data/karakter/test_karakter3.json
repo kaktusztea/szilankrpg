@@ -1,7 +1,7 @@
 {
   "uid": "mr218l84owh6yd6bzo",
   "id_leíró": "pak-teth-11tsz",
-  "schema_version": 2,
+  "schema_version": 3,
   "név": "pak-Teth",
   "becenév": "pakkk",
   "jk": false,
@@ -27,363 +27,338 @@
   "CM": 5,
   "képzettségek": [
     {
-      "név": "Akrobatika",
+      "id": "akrobatika",
+      "elem": "",
       "szint": 8
     },
     {
-      "név": "Fájdalomtűrés",
+      "id": "fájdalomtűrés",
+      "elem": "",
       "szint": 10
     },
     {
-      "név": "Tradíció: Szakrális (Amhe-Ramun)",
+      "id": "tradíció",
+      "elem": "Szakrális (Amhe-Ramun)",
       "szint": 11
     },
     {
-      "név": "Arkánum: Asztrálmágia",
+      "id": "arkánum_asztrálmágia",
+      "elem": "",
       "szint": 10
     },
     {
-      "név": "Arkánum: Külső síkok lényeinek idézése",
+      "id": "arkánum_külső_síkok_lényeinek_idézése",
+      "elem": "",
       "szint": 8
     },
     {
-      "név": "Arkánum: Térmágia",
+      "id": "arkánum_térmágia",
+      "elem": "",
       "szint": 9
     },
     {
-      "név": "Faj misztérium: Amund",
+      "id": "faj_misztérium_amund",
+      "elem": "",
       "szint": 7
     },
     {
-      "név": "Ősi nyelv ismerete: Ős-Amund",
+      "id": "ősi_nyelv_ismerete",
+      "elem": "Ős-Amund",
       "szint": 6
     },
     {
-      "név": "Lopakodás/Rejtőzés",
+      "id": "lopakodás_rejtőzés",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Művészetismeret",
+      "id": "művészetismeret",
+      "elem": "",
       "szint": 7
     },
     {
-      "név": "Kvantikum",
+      "id": "kvantikum",
+      "elem": "",
       "szint": 9
     },
     {
-      "név": "Lexikum",
+      "id": "lexikum",
+      "elem": "",
       "szint": 9
     },
     {
-      "név": "Hadászat",
+      "id": "hadászat",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Orvoslás",
+      "id": "orvoslás",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Befolyásolás",
+      "id": "befolyásolás",
+      "elem": "",
       "szint": 9
     },
     {
-      "név": "Etikett",
+      "id": "etikett",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Nyelvtanulás",
+      "id": "nyelvtanulás",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Észlelés",
+      "id": "észlelés",
+      "elem": "",
       "szint": 8
     },
     {
-      "név": "Nyomozás",
+      "id": "nyomozás",
+      "elem": "",
       "szint": 5
     },
     {
-      "név": "Természetjárás",
+      "id": "természetjárás",
+      "elem": "",
       "szint": 7
     },
     {
-      "név": "Emberismeret",
+      "id": "emberismeret",
+      "elem": "",
       "szint": 6
     },
     {
-      "név": "Kardvívás",
+      "id": "harcmodor",
+      "elem": "kardvívás",
       "szint": 6
     },
     {
-      "név": "Lopás",
+      "id": "lopás",
+      "elem": "",
       "szint": 3
     }
   ],
   "fortélyok": [
     {
-      "név": "Mesterfegyver",
-      "fok": 1,
-      "spec_típus": "fegyver",
-      "spec_elem": "Meneth"
+      "id": "mesterfegyver",
+      "elem": "Meneth",
+      "fok": 1
     },
     {
-      "név": "Nyelvismeret",
+      "id": "nyelvismeret",
+      "elem": "Közös (pyarroni)",
       "fok": 1,
-      "spec_típus": "nyelv",
-      "spec_elem": "Közös (pyarroni)",
       "kiérdemelt": true
     },
     {
-      "név": "Nyelvismeret",
+      "id": "nyelvismeret",
+      "elem": "Amund",
       "fok": 2,
-      "spec_típus": "nyelv",
-      "spec_elem": "Amund",
       "kiérdemelt": true
     },
     {
-      "név": "Külső síkok lényeinek ismerete",
-      "fok": 1,
-      "spec_típus": "lénycsoport",
-      "spec_elem": "dzsinnek",
-      "kiérdemelt": false
+      "id": "külső_síkok_lényeinek_ismerete",
+      "elem": "dzsinnek",
+      "fok": 1
     },
     {
-      "név": "Mágiatáv növelés",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": "",
-      "kiérdemelt": false
+      "id": "mágiatáv_növelés",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Pszí Telekinézis",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": "",
-      "kiérdemelt": false
+      "id": "pszí_telekinézis",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Pszí Telepátia",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": "",
-      "kiérdemelt": false
+      "id": "pszí_telepátia",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Mentálfonál",
-      "fok": 1,
-      "spec_típus": "személy",
-      "spec_elem": "Hah-Sehh főpap",
-      "kiérdemelt": false
+      "id": "mentálfonál",
+      "elem": "Hah-Sehh főpap",
+      "fok": 1
     },
     {
-      "név": "Baráti állatok",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "baráti_állatok",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Csomózás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "csomózás",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Futás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "futás",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Hazudozás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "hazudozás",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Asztrológia",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "asztrológia",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Alkudozás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "alkudozás",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Hivatalnok",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "hivatalnok",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Gazdálkodás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "gazdálkodás",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Hadtáp",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "hadtáp",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Heraldika",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "heraldika",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Kihallgatás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "kihallgatás",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Térképészet",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "térképészet",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Zenélés: húros hangszerek",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "zenélés_húros_hangszerek",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Tájtípus - sivatagi",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "tájtípus_sivatagi",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Tájtípus - puszta",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "tájtípus_puszta",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Irodalom",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "irodalom",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "el-Sobira"
+      "id": "helyismeret",
+      "elem": "el-Sobira",
+      "fok": 1
     },
     {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "el-xyz"
+      "id": "helyismeret",
+      "elem": "el-xyz",
+      "fok": 1
     },
     {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "el-xyz2"
+      "id": "helyismeret",
+      "elem": "el-xyz2",
+      "fok": 1
     },
     {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "el-xy3"
+      "id": "helyismeret",
+      "elem": "el-xy3",
+      "fok": 1
     },
     {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "el-xyz4"
+      "id": "helyismeret",
+      "elem": "el-xyz4",
+      "fok": 1
     },
     {
-      "név": "Helyismeret",
-      "fok": 1,
-      "spec_típus": "terület",
-      "spec_elem": "el-xyz5"
+      "id": "helyismeret",
+      "elem": "el-xyz5",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "4mund"
+      "id": "kultúrkör",
+      "elem": "4mund",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "dzs4d"
+      "id": "kultúrkör",
+      "elem": "dzs4d",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "sh4doni"
+      "id": "kultúrkör",
+      "elem": "sh4doni",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "barbár"
+      "id": "kultúrkör",
+      "elem": "barbár",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "gorv1ki"
+      "id": "kultúrkör",
+      "elem": "gorv1ki",
+      "fok": 1
     },
     {
-      "név": "Kultúrkör",
-      "fok": 1,
-      "spec_típus": "kultúrkör",
-      "spec_elem": "elf"
+      "id": "kultúrkör",
+      "elem": "elf",
+      "fok": 1
     },
     {
-      "név": "Elpusztíthatatlan",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "elpusztíthatatlan",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Ultralátás",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "ultralátás",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Éber alvó",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "éber_alvó",
+      "elem": "",
+      "fok": 1
     },
     {
-      "név": "Keresés/rejtés",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "keresés_rejtés",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Méregálló",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "méregálló",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Történelemismeret",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "történelemismeret",
+      "elem": "",
+      "fok": 2
     },
     {
-      "név": "Szájról olvasás",
-      "fok": 1,
-      "spec_típus": "",
-      "spec_elem": ""
+      "id": "szájról_olvasás",
+      "elem": "",
+      "fok": 1
     }
   ],
   "hátterek": {

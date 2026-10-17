@@ -58,13 +58,13 @@ describe('fortély-módosítók soronként (§42 4b-3)', () => {
   // fegyverek: 0 = Kard, lovag (hossz 3, Kardvívás), 1 = Tőr (hossz 1, Közelharc); pajzs: közepes
   const sorok = (fortély: string, fok: number, session: Partial<Session>) => {
     const s = { ...k.session, kétkezes_harc: false, aktív_fegyver_bal_index: -1, aktív_taktikák: [], aktív_státuszok: [], aktív_helyzetek: [], ...session } as Session;
-    const kar = { ...k, session: s, fortélyok: [...k.fortélyok.filter(f => f.név !== fortély), { név: fortély, fok, spec_típus: '', spec_elem: '' }] } as Karakter;
+    const kar = { ...k, session: s, fortélyok: [...k.fortélyok.filter(f => f.id !== fortély), { id: fortély, fok, elem: '' }] } as Karakter;
     return Object.fromEntries(useHarcComputed(data, kar, s).fegyverResults.map(r => [r.fegyver_név, r.fortély]));
   };
 
   it('Belharcos 1: a bónusz csak a nem tiltott sorokon - a kézben lévő fegyvertől függetlenül', () => {
     for (const aktív of [0, 1]) {
-      const r = sorok('Belharcos', 1, { aktív_helyzetek: ['Belharci helyzet'], aktív_fegyver_index: aktív });
+      const r = sorok('belharcos', 1, { aktív_helyzetek: ['Belharci helyzet'], aktív_fegyver_index: aktív });
       expect([r['Tőr']?.TÉ, r['Tőr']?.VÉ, r['Puszta kéz']?.TÉ]).toEqual([2, 2, 2]);
       expect([r['Kard, lovag']?.TÉ, r['Kard, lovag']?.VÉ]).toEqual([0, 0]);
     }
@@ -72,7 +72,7 @@ describe('fortély-módosítók soronként (§42 4b-3)', () => {
 
   it('Pajzshasználat 2: a +2 TÉ/VÉ/SP csak a pajzs saját során (a kézben lévő fegyvertől függetlenül)', () => {
     for (const aktív of [-2, 0]) {
-      const r = sorok('Pajzshasználat', 2, { aktív_fegyver_index: aktív });
+      const r = sorok('pajzshasználat', 2, { aktív_fegyver_index: aktív });
       const pajzs = Object.keys(r).find(n => n.includes('Pajzs'))!;
       expect([r[pajzs]?.TÉ, r[pajzs]?.VÉ, r[pajzs]?.SP]).toEqual([2, 2, 2]);
       expect([r['Kard, lovag']?.TÉ, r['Tőr']?.SP]).toEqual([0, 0]);

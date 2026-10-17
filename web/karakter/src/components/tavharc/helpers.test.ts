@@ -48,7 +48,7 @@ describe('calcSzorzóÖsszeg', () => {
 });
 
 describe('calcÚjratöltésEnyhítés', () => {
-  const withFortély = (fok: number) => ({ fortélyok: [{ név: 'Nyílpuska újratöltés fejlesztése', fok }] }) as unknown as Karakter;
+  const withFortély = (fok: number) => ({ fortélyok: [{ id: 'nyílpuska_újratöltés_fejlesztése', fok, elem: ''}] }) as unknown as Karakter;
 
   it('is 0 when the reload situation is not active', () => {
     const session = { aktív_helyzetek: [] } as unknown as Session;

@@ -14,10 +14,10 @@ const CÉL_CSOPORT_MAP: Record<string, string[]> = {
 };
 
 /** Szociális képzettségek (a világi csoportból nem mind szociális) */
-const SZOCIÁLIS_NEVEK = new Set(['Befolyásolás', 'Etikett', 'Emberismeret']);
+const SZOCIÁLIS_NEVEK = new Set(['befolyásolás', 'etikett', 'emberismeret']);   // képzettség-id-k
 
 /** Érzék képzettségek */
-const ÉRZÉK_NEVEK = new Set(['Észlelés']);
+const ÉRZÉK_NEVEK = new Set(['észlelés']);   // képzettség-id
 
 interface PróbaEHEredmény {
   /** Összesített EH szint (clamp [-2, +2]) */
@@ -33,7 +33,7 @@ interface PróbaEHEredmény {
  *
  * @param aktívStátuszok - session.aktív_státuszok tömb ("Név (fok)" formátum)
  * @param statuszDefs - GameData.statuszok (StatuszEntry[])
- * @param képzettségNév - a próbázott képzettség neve
+ * @param képzettségNév - a próbázott képzettség hivatkozási KULCSa ("észlelés", "harcmodor/kardvívás"; 2026-10-17 óta)
  * @param képzettségCsoport - a próbázott képzettség csoportja
  */
 export function calcStátuszPróbaEH(

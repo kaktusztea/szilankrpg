@@ -1,4 +1,5 @@
 import type { GameData } from '../engine/data-loader';
+import { HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID } from '../engine/azonosito';
 import type { Karakter } from '../engine/types';
 import { evaluate, buildContext, buildArrayContext } from '../engine/reactive';
 import { képzettségSzint, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../engine/utils';
@@ -26,7 +27,7 @@ export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
 
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(karakter,
     [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])]);
-  const alakzatharcSzint = képzettségSzint(karakter, 'Alakzatharc');
+  const alakzatharcSzint = képzettségSzint(karakter, 'alakzatharc');
 
   const ctx = buildContext(tulajdonságok, tsz, data.konstansok, {
     HM_TÉ: karakter.HM_TÉ, HM_VÉ: karakter.HM_VÉ, CM: karakter.CM,
@@ -35,21 +36,11 @@ export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
     páncél_sisak: 0, páncél_idea: 0, páncél_rongálódás: 0, merevvért_fok: 0,
   });
 
-  const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.név, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
-  const harciFortelyNevek = new Set(data.fortelySummaries.filter(d => d.csoport === 'harci').map(d => d.név));
+  const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.id, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
+  const harciFortelyNevek = new Set(data.fortelySummaries.filter(d => d.csoport === 'harci').map(d => d.id));
 
-  const primerKepNevek = new Set(data.kepzettsegDefs.filter(d => d.primer).map(d => d.név));
-  const harcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Harcmodor');
-  if (harcmodorDef?.többszörös) for (const a of harcmodorDef.többszörös) primerKepNevek.add(a);
-  const távHarcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Távolsági harcmodor');
-  if (távHarcmodorDef?.többszörös) for (const a of távHarcmodorDef.többszörös) primerKepNevek.add(a);
-  for (const k of képzettségek) {
-    const colonIdx = k.név.indexOf(':');
-    if (colonIdx > 0) {
-      const base = k.név.slice(0, colonIdx).trim();
-      if (primerKepNevek.has(base)) primerKepNevek.add(k.név);
-    }
-  }
+  // Primer képzettség-id-k (a karakter képzettség `id`-je szerint). A harcmodorok (közel + táv) mindig primerek.
+  const primerKepNevek = new Set([...data.kepzettsegDefs.filter(d => d.primer).map(d => d.id), HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID]);
 
   const ingyenesFortelyok = data.fortelySummaries.filter(d => d.ingyenes_perszint > 0);
   const arrays = buildArrayContext(képzettségek, fortélyok, data.kepzettsegKp, fortelyKpMap, harciFortelyNevek, {
@@ -57,7 +48,7 @@ export function calcKpDetails(data: GameData, karakter: Karakter): KpDetails {
     ingyenesFortelyok,
     primerKepNevek,
     primerFortNevek: new Set(data.primerFortelyok),
-    szabadFortelyNevek: new Set(data.fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.név)),
+    szabadFortelyNevek: new Set(data.fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.id)),
   });
 
   const computed = evaluate(data.rules, ctx, arrays);

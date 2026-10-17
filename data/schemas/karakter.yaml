@@ -2,7 +2,7 @@
 # Szilánk RPG - Karakter séma (mentett példány validációja)
 # A mentett .json fájlnak ehhez kell validálnia.
 # NEM tároljuk a származtatott/számított értékeket (ÉP, KÉ, TÉ, VÉ, SP, KP, SFÉ, MGT, stb.)
-schema_version: 2
+schema_version: 3
 
 uid: ""                       # UUID, egyedi azonosító (generált, nem módosítandó)
 id_leíró: ""                  # slug, auto-frissül név/TSz-ből (pl. "harcos_5sz")
@@ -32,16 +32,19 @@ HM_VÉ: 0                     # KP-ból vásárolt Harcérték Módosító → V
 CM: 0                         # KP-ból vásárolt Célzóérték Módosító
 
 képzettségek:                 # Egységes lista (nincs külön primer/szekunder/harcmodor)
-  - név: ""                   # Képzettség neve VAGY "AlapNév: AlNév" többszöröseknél
+  - id: ""                    # Képzettség `id` (kepzettsegek/*.yaml) - stabil, átnevezéskor nem változik
+    elem: ""                  # Többszörösnél a választott elem: harcmodor-elem (konstansok.harcmodorok, pl. "kardvívás"),
+                              # Ősi nyelv / Tradíció: szabad szöveg (pl. "Kyr"). Üres, ha nem többszörös.
+                              # Hivatkozási kulcs: "<id>/<elem>" (pl. "harcmodor/kardvívás"), elem nélkül "<id>".
     szint: 0                  # 0-15
 
 fortélyok:                    # Egységes lista (harci, általános, érzék, szabad, kiemelt többszörösök)
-  - név: ""                   # Fortély alap neve (megegyezik a fortely yaml "név" mezőjével)
+  - id: ""                    # Fortély `id` (fortelyok/**/*.yaml). Egyedi (KM-alkotta) fortélynál: "egyedi".
+    elem: ""                  # Többszörösnél a választott elem (pl. "erv", "Erion", "Kard, lovag"); egyedi fortélynál a NEVE.
+                              # Üres, ha nem többszörös. (A spec-típus a fortély-definícióból jön: többszörösség.spec_típus.)
     fok: 1                    # 1-maxfok (szabad fortélyoknál mindig 1)
-    spec_típus: ""            # Többszöröseknél: megegyezik a fortely.yaml többszörösség.spec_típus-ával. Üres ha nem többszörös. Egyedi fortélynál: "egyedi".
-    spec_elem: ""             # Többszöröseknél: a konkrét választott elem (pl. "erv", "Erion", "kard, lovag"). Üres ha nem többszörös.
     kiérdemelt: false         # Opcionális. true ha kiérdemelt fortély (nem KP-ból vásárolt).
-    # kiterjeszti: []         # Opcionális. Csak egyedi fortélyoknál: kiterjesztett képzettségek listája.
+    # kiterjeszti: []         # Opcionális. Csak egyedi fortélyoknál: kiterjesztett képzettségek (hivatkozási kulcs) listája.
 
 hátterek:
   faj: ""                     # Faj neve (lookup kulcs → fajok.json)

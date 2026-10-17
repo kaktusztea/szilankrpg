@@ -34,7 +34,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(k,
     [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]);
 
-  const merevvértFok = fortélyFok(k, 'Merevvértviselet');
+  const merevvértFok = fortélyFok(k, 'merevvértviselet');
   const lookupArrays = buildPancelLookups(konstansok);
 
   const stringCtx = new Map<string, string>();
@@ -125,7 +125,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     // kategóriát a Sebzés popup állítja (ellenfél-páncél választó); itt undefined marad.
     extraKontextus: {
       aktívFeltételek,
-      fortélyFokok: new Map(k.fortélyok.map(f => [f.név, f.fok])),
+      fortélyFokok: new Map(k.fortélyok.map(f => [f.id, f.fok])),
       aktívStátuszok: new Set(session.aktív_státuszok),
       aktorNév: aktívFegyverDef?.módok?.[0]?.aktor,
       forgatás: aktívFegyverDef?.módok?.[0]?.Forgatás,

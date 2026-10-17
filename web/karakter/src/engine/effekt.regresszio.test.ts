@@ -18,7 +18,7 @@ function mindenFortély(alap: Karakter, fokIndex: number): Karakter {
   const fortélyok = data.fortelySummaries.flatMap(fd => {
     const fokok = fd.fokok.map(f => f.fok).filter(f => f >= 1);
     const fok = fokok[Math.min(fokIndex, fokok.length - 1)];
-    return fok ? [{ név: fd.név, fok, spec_típus: '', spec_elem: '' }] : [];
+    return fok ? [{ id: fd.id, fok, elem: '' }] : [];
   });
   return { ...alap, fortélyok } as Karakter;
 }

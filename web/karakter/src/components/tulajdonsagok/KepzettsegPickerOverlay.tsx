@@ -72,7 +72,7 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, kiterjeszte
                   )}
                 </div>
                 {isExpanded && def && (
-                  <KepzettsegDetails def={def} kit={kiterjesztesek[def.név] || []} />
+                  <KepzettsegDetails def={def} kit={kiterjesztesek[def.id] || []} />
                 )}
               </div>
             );

@@ -1,4 +1,5 @@
 import type { FortelyCsoportProps } from './types';
+import { harcmodorNév, képzettségSzint } from '../../engine/azonosito';
 import { FortelyRow } from './FortelyRow';
 import { NewFortelySelect } from './NewFortelySelect';
 import { calcNyelvPontKeret, calcNyelvTúllépés, isSlotIngyenes } from './helpers';
@@ -6,13 +7,13 @@ import { calcNyelvPontKeret, calcNyelvTúllépés, isSlotIngyenes } from './help
 export function FortelyCsoport({
   csoport, csoportLabel, csoportDefs, slotok, collapsed, gameMode, tsz,
   többszörösNevek, fortélyok, fegyverNevek,
-  nyelvtanulásSzint, nyelvFokLabels, képzettségek, harcmodorNevek, fajFortélyok, data,
+  nyelvtanulásSzint, nyelvFokLabels, képzettségek, fajFortélyok, data,
   onToggleCollapse, onAddFortely, onToggleInfo, onFokChange, onRemove, onHint, infoTarget
 }: FortelyCsoportProps) {
   if (gameMode && slotok.length === 0) return null;
 
-  const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
-  const available = csoportDefs.filter(d => !usedNonMulti.has(d.név) || többszörösNevek.has(d.név));
+  const usedNonMulti = new Set(slotok.filter(f => !f.elem).map(f => f.id));
+  const available = csoportDefs.filter(d => !usedNonMulti.has(d.id) || többszörösNevek.has(d.id));
 
   const nyelvPontKeret = calcNyelvPontKeret(nyelvtanulásSzint);
   const { overSet: nyelvOverSet } = calcNyelvTúllépés(slotok, nyelvPontKeret);
@@ -31,7 +32,7 @@ export function FortelyCsoport({
       {!collapsed && (<>
         {slotok.map((slot, i) => {
           const globalIdx = fortélyok.indexOf(slot);
-          const def = csoportDefs.find(d => d.név === slot.név);
+          const def = csoportDefs.find(d => d.id === slot.id);
           const isOpen = infoTarget === `${globalIdx}`;
           const isIngyenes = isSlotIngyenes(slot, csoport, slotok, tsz, def);
 
@@ -40,11 +41,12 @@ export function FortelyCsoport({
           // open in edit mode (otherwise the extension info is game-mode only).
           const kiterjeszt = def ? [...def.kiterjeszti_normál, ...def.kiterjeszti_erős] : (slot.kiterjeszti ?? []);
           const kiterjesztHiányos = kiterjeszt.length > 0
-            && !kiterjeszt.some(kn => képzettségek.some(k => k.név === kn && k.szint >= 1));
+            && !kiterjeszt.some(kn => képzettségSzint(képzettségek, kn) >= 1);
 
-          const fegyverHarcmodorNév = slot.spec_elem ? (() => {
-            const fd = data.fegyverek.find(d => d.név.toLowerCase() === slot.spec_elem!.toLowerCase());
-            return fd ? data.konstansok.fegyver_kategória_harcmodor[fd.kategória] : undefined;
+          const fegyverHarcmodorNév = slot.elem ? (() => {
+            const fd = data.fegyverek.find(d => d.név.toLowerCase() === slot.elem.toLowerCase());
+            const elem = fd ? data.konstansok.fegyver_kategória_harcmodor[fd.kategória] : undefined;
+            return elem ? harcmodorNév(elem, data) : undefined;
           })() : undefined;
 
           return (
@@ -57,12 +59,12 @@ export function FortelyCsoport({
               gameMode={gameMode}
               isOpen={isOpen || (!gameMode && kiterjesztHiányos)}
               kiterjesztHiányos={kiterjesztHiányos}
-              overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}
-              nyelvPontKeret={slot.név === 'Nyelvismeret' ? nyelvPontKeret : undefined}
+              overLimit={slot.id === 'nyelvismeret' && nyelvOverSet.has(slot)}
+              nyelvPontKeret={slot.id === 'nyelvismeret' ? nyelvPontKeret : undefined}
               nyelvFokLabels={nyelvFokLabels}
               képzettségek={képzettségek}
               fortélyok={fortélyok}
-              harcmodorNevek={harcmodorNevek}
+              data={data}
               fajFortélyok={fajFortélyok}
               fegyverHarcmodorNév={fegyverHarcmodorNév}
               onToggleInfo={() => onToggleInfo(globalIdx)}
@@ -85,6 +87,7 @@ export function FortelyCsoport({
             fegyverNevek={fegyverNevek}
             nyelvtanulásSzint={nyelvtanulásSzint}
             képzettségek={képzettségek}
+            kepzettsegDefs={data.kepzettsegDefs}
             onAdd={onAddFortely}
           />
         )}

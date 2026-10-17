@@ -1154,8 +1154,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
     "kpKépzettségek": 627,
     "maradékKp": 0,
     "primerKeret": 572,
-    "primerKöltés": 551,
-    "primerMaradt": 21,
+    "primerKöltés": 569,
+    "primerMaradt": 3,
     "specKp": 0,
     "szekunderKp": 253,
     "összesKp": 572,
@@ -1267,7 +1267,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
       },
       {
         "kp": 53,
-        "név": "Lopakodás/Rejtőzés",
+        "név": "Lopakodás/rejtőzés",
         "szint": 6,
       },
       {

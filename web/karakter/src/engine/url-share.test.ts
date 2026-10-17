@@ -41,7 +41,8 @@ describe('url-share encode/decode roundtrip', () => {
   it('preserves list contents (képzettségek, fortélyok, fegyverek, távfegyverek)', () => {
     const d = roundtrip(karakter);
     expect(d.képzettségek).toEqual(karakter.képzettségek);
-    expect(d.fortélyok.map(f => [f.név, f.fok])).toEqual(karakter.fortélyok.map(f => [f.név, f.fok]));
+    const f4 = (f: { id: string; elem: string; fok: number; kiérdemelt?: boolean }) => [f.id, f.elem, f.fok, !!f.kiérdemelt];
+    expect(d.fortélyok.map(f4)).toEqual(karakter.fortélyok.map(f4));
     expect(d.fegyverek.map(f => f.alap)).toEqual(karakter.fegyverek.map(f => f.alap));
     expect(d.távfegyverek.map(f => f.alap)).toEqual(karakter.távfegyverek.map(f => f.alap));
   });

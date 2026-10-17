@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { képzKulcs, TRADÍCIÓ_ID } from '../../engine/azonosito';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
@@ -48,8 +49,8 @@ export function KepzettsegCsoport({
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
 
-  const usedNames = slotok.map(s => s.név);
-  const available = getAvailableNames(csoport, usedNames, defsByGroup);
+  const usedKeys = slotok.map(képzKulcs);
+  const available = getAvailableNames(csoport, usedKeys, defsByGroup);
   const boundFindDef = (név: string) => findDefHelper(név, kepzettsegDefs);
 
   return (
@@ -60,34 +61,36 @@ export function KepzettsegCsoport({
       {!collapsed && (<>
         {slotok.map((slot, i) => {
           const globalIdx = képzettségek.findIndex(k => k === slot);
-          const kepDef = boundFindDef(slot.név);
+          const kulcs = képzKulcs(slot);
+          const kepDef = boundFindDef(kulcs);
           const maxSzint = kepDef?.primer ? szintLimitek.primer : szintLimitek.szekunder;
           return (
             <KepzettsegRow
               key={`${csoport}-${i}`}
               slot={slot}
+              kepzettsegDefs={kepzettsegDefs}
               gameMode={gameMode}
               onSzintChange={szint => onSzintChange(globalIdx, szint)}
               onRemove={() => onRemove(globalIdx, slot)}
               kiterjesztesek={kiterjesztesek}
               infoOpen={infoTarget === `${globalIdx}`}
               onInfoToggle={() => setInfoTarget(infoTarget === `${globalIdx}` ? null : `${globalIdx}`)}
-              displayName={getDisplayName(slot.név, kepzettsegDefs)}
+              displayName={getDisplayName(kulcs, kepzettsegDefs)}
               findDef={boundFindDef}
               overLimit={slot.szint > maxSzint}
-              warning={slot.név.startsWith('Arkánum') && !képzettségek.some(k => k.név.startsWith('Tradíció'))}
+              warning={slot.id.startsWith('arkánum_') && !képzettségek.some(k => k.id === TRADÍCIÓ_ID)}
               fortélyFokok={fortélyFokok}
               többszörösNevek={többszörösNevek}
               negáltKulcsok={negáltKulcsok}
-              onToggleNegál={fortélyNév => onToggleNegál(slot.név, fortélyNév)}
+              onToggleNegál={fortélyId => onToggleNegál(kulcs, fortélyId)}
               tulajdonságok={tulajdonságok}
               képzettségek={képzettségek}
               aktívStátuszok={aktívStátuszok}
               statuszDefs={statuszDefs}
               felszEH={csoport === 'fizikai' ? felszHátrány.ehSzint : 0}
               felszNemHarcol={csoport === 'fizikai' ? felszHátrány.nemHarcol : false}
-              próbaEnyhítések={próbaEnyhítésekByKép[slot.név] || []}
-              fortélyBónuszok={fortélyBónuszByKép?.[slot.név]}
+              próbaEnyhítések={próbaEnyhítésekByKép[kulcs] || []}
+              fortélyBónuszok={fortélyBónuszByKép?.[kulcs]}
             />
           );
         })}

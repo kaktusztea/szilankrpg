@@ -1,3 +1,6 @@
+import type { Kepzettseg } from '../../engine/types';
+import type { KepzettsegDef } from '../../engine/data-loader';
+import { képzKulcs, képzettségNév as képzettségNévId } from '../../engine/azonosito';
 import { useState, useRef } from 'react';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { KiterjesztesEntry } from '../../engine/data-loader';
@@ -24,7 +27,11 @@ interface VállalásEredmény {
 }
 
 interface Props {
+  /** Megjelenített név (felirat). */
   képzettségNév: string;
+  /** Hivatkozási kulcs ("lexikum", "harcmodor/kardvívás") - státusz-alcél, kiterjesztés-negálás. */
+  képzettségKulcs: string;
+  kepzettsegDefs: KepzettsegDef[];
   képzettségCsoport: string;
   szint: number;
   tulajdonságok: Tulajdonsagok;
@@ -33,7 +40,7 @@ interface Props {
   többszörösNevek: ReadonlySet<string>;
   negáltKulcsok: ReadonlySet<string>;
   onToggleNegál: (fortélyNév: string) => void;
-  képzettségek: { név: string; szint: number }[];
+  képzettségek: Kepzettseg[];
   aktívStátuszok: string[];
   statuszDefs: StatuszEntry[];
   módosítóTáblák: ModositoTabla[];
@@ -49,7 +56,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, onClose,
+  képzettségNév, képzettségKulcs, kepzettsegDefs, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -97,12 +104,12 @@ export function KepzettsegProbaPopup({
 
   // A manuálisan negált kiterjesztéseket VALÓDIként vesszük be: effektív fok-map ehhez a
   // képzettséghez (a negált fortélyok auto-értéke megfordítva). A calc + pötty ezt használja.
-  const effFortélyFokok = effektívFortélyFokok(fortélyFokok, képzettségNév, kiterjesztesek, negáltKulcsok);
+  const effFortélyFokok = effektívFortélyFokok(fortélyFokok, képzettségKulcs, kiterjesztesek, negáltKulcsok);
 
   const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
   const ehAlap = calcMultiKiterjesztésEH(selectedKits, effFortélyFokok);
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt)
-  const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségNév, képzettségCsoport);
+  const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségKulcs, képzettségCsoport);
   const ehSzintRaw = ehAlap.szint + státuszEH.szint + felszEH;
   const eh = { szint: clampEHSzint(ehSzintRaw), tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };
   const erősTiltott = eh.tiltott;
@@ -133,7 +140,7 @@ export function KepzettsegProbaPopup({
   const ismeretlen = nehézség === -1;
   const kész = selTul !== null && (ellenpróba || nehézség !== null);
   const tulÉrték = selTul !== null ? tulajdonságok[selTul] : 0;
-  const helyettesítőSzint = helyettesítés ? (képzettségek.find(k => k.név === helyettesítés)?.szint ?? 0) : null;
+  const helyettesítőSzint = helyettesítés ? (képzettségek.find(k => képzKulcs(k) === helyettesítés)?.szint ?? 0) : null;
   const effSzint = calcEffSzint(szint, helyettesítőSzint, vállalás, szitModÖsszeg);
   // Lehetetlen/biztos siker: csak ha nincs ellenpróba mód
   const lehetetlen = !ellenpróba && !ismeretlen && kész && nehézség !== null && probaLehetetlen(tulÉrték, effSzint, nehézség);
@@ -246,7 +253,7 @@ export function KepzettsegProbaPopup({
         </div>
         <div className="kep-proba-subtitle">
           {helyettesítés
-            ? <><span className="kep-proba-strike">{képzettségNév} ({szint})</span><br/>{helyettesítés} ({effSzint - vállalás})</>
+            ? <><span className="kep-proba-strike">{képzettségNév} ({szint})</span><br/>{képzettségNévId(helyettesítés, { kepzettsegDefs })} ({effSzint - vállalás})</>
             : <>{képzettségNév} ({szint})</>}
           {dobásKomment.length > 0 && (
             <button className="kep-proba-info-btn" title="Próbadobás magyarázat" onClick={() => setOpenPicker('info')}>💡</button>
@@ -292,7 +299,7 @@ export function KepzettsegProbaPopup({
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
               {selKits.size === 0 ? 'Kiterjesztő fortély: nincs'
-                : selKits.size === 1 ? <>Kiterjesztő: {selectedKits[0].fortély} <span className={kitDotClass(selectedKits[0])}>{kitDots(selectedKits[0])}</span></>
+                : selKits.size === 1 ? <>Kiterjesztő: {selectedKits[0].név} <span className={kitDotClass(selectedKits[0])}>{kitDots(selectedKits[0])}</span></>
                 : `Kiterjesztő: ${selKits.size} fortély`}
             </button>
           </div>
@@ -324,7 +331,7 @@ export function KepzettsegProbaPopup({
             const parts: string[] = [];
             if (összetettDb > 0) parts.push(`+${összetettDb}M`);
             if (vállalás > 0) parts.push(`V:${vállalás}`);
-            if (helyettesítés) parts.push(`H:${helyettesítés}`);
+            if (helyettesítés) parts.push(`H:${képzettségNévId(helyettesítés, { kepzettsegDefs })}`);
             return parts.length > 0 ? <span className="kep-proba-extras-summary">{parts.join(', ')}</span> : null;
           })()}
           {extrákNyitva && (
@@ -385,8 +392,8 @@ export function KepzettsegProbaPopup({
                   onChange={e => { setHelyettesítés(e.target.value || null); resetDobás(); }}>
                   <option value="">nincs</option>
                   {képzettségek
-                    .filter(k => k.név !== képzettségNév && k.szint >= 3)
-                    .map(k => <option key={k.név} value={k.név}>{k.név} ({k.szint} → {Math.min(5, Math.floor(k.szint / 3))})</option>)}
+                    .filter(k => képzKulcs(k) !== képzettségKulcs && k.szint >= 3)
+                    .map(k => <option key={képzKulcs(k)} value={képzKulcs(k)}>{képzettségNévId(k, { kepzettsegDefs })} ({k.szint} → {Math.min(5, Math.floor(k.szint / 3))})</option>)}
                 </select>
               </div>
               )}
@@ -441,7 +448,7 @@ export function KepzettsegProbaPopup({
                 <div className="kep-proba-eh-accordion" ref={ehAccordionRef}>
                   <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
                     {ehAlap.szint !== 0 && (
-                      <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({selectedKits.map(k => k.fortély).join(', ') || '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
+                      <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({selectedKits.map(k => k.név).join(', ') || '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
                     )}
                     {státuszEH.források.map((f, i) => <div key={i} className="kep-proba-eh-bontas-sor">{f}</div>)}
                     {felszEH !== 0 && (

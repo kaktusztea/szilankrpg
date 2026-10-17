@@ -4,6 +4,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Fortely, Karakter } from '../../engine/types';
 import type { SzabadTypePicker } from './types';
 import { EGYEDI_FORTELY_SENTINEL } from '../../ui-constants';
+import { EGYEDI_FORTÉLY_ID } from '../../engine/azonosito';
 
 interface Opts {
   data: GameData;
@@ -23,45 +24,45 @@ export function useFortelyActions({ data, setFortélyok, karakter, setKarakter }
     setFortélyok(prev => prev.map((f, i) => i === idx ? { ...f, fok } : f));
   }
 
-  function addFortely(név: string) {
-    if (név === EGYEDI_FORTELY_SENTINEL) {
+  function addFortely(id: string) {
+    if (id === EGYEDI_FORTELY_SENTINEL) {
       setEgyediPicker(true);
       return;
     }
-    const def = data.fortelySummaries.find(d => d.név === név);
+    const def = data.fortelySummaries.find(d => d.id === id);
     if (def && def.csoport === 'szabad') {
       if (def.többszörös_típus) { setMultiPickerDef(def); return; }
-      setSzabadTypePicker({ név, spec_típus: '', spec_elem: '' });
+      setSzabadTypePicker({ id, elem: '' });
       return;
     }
     if (def && def.többszörös_típus) { setMultiPickerDef(def); return; }
     // maxfok > 1: defer the insert until the user picks a fok (cancel = no add, no undo)
     if (def && def.maxfok > 1) {
-      setPendingFort({ név, fok: 0, spec_típus: '', spec_elem: '' });
+      setPendingFort({ id, fok: 0, elem: '' });
       return;
     }
-    setFortélyok(prev => [...prev, { név, fok: 1, spec_típus: '', spec_elem: '' }]);
+    setFortélyok(prev => [...prev, { id, fok: 1, elem: '' }]);
   }
 
   function confirmEgyedi(név: string, kiterjeszti: string[]) {
     setEgyediPicker(false);
-    setSzabadTypePicker({ név, spec_típus: 'egyedi', spec_elem: '', kiterjeszti: kiterjeszti.length > 0 ? kiterjeszti : undefined });
+    setSzabadTypePicker({ id: EGYEDI_FORTÉLY_ID, elem: név, kiterjeszti: kiterjeszti.length > 0 ? kiterjeszti : undefined });
   }
 
   function addMultiInstance(subName: string) {
     if (!multiPickerDef) return;
     if (multiPickerDef.csoport === 'szabad' || multiPickerDef.csoport === 'kiemelt' || multiPickerDef.csoport === 'misztikus') {
-      setSzabadTypePicker({ név: multiPickerDef.név, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName });
+      setSzabadTypePicker({ id: multiPickerDef.id, elem: subName });
       setMultiPickerDef(null);
       return;
     }
     // maxfok > 1: defer the insert until the user picks a fok (cancel = no add, no undo)
     if (multiPickerDef.maxfok > 1) {
-      setPendingFort({ név: multiPickerDef.név, fok: 0, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName });
+      setPendingFort({ id: multiPickerDef.id, fok: 0, elem: subName });
       setMultiPickerDef(null);
       return;
     }
-    setFortélyok(prev => [...prev, { név: multiPickerDef.név, fok: 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }]);
+    setFortélyok(prev => [...prev, { id: multiPickerDef.id, fok: 1, elem: subName }]);
     setMultiPickerDef(null);
   }
 
@@ -69,7 +70,7 @@ export function useFortelyActions({ data, setFortélyok, karakter, setKarakter }
     if (!szabadTypePicker) return;
     const p = szabadTypePicker;
     setFortélyok(prev => [...prev, {
-      név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem,
+      id: p.id, fok: 1, elem: p.elem,
       ...(kiérdemelt ? { kiérdemelt: true } : {}),
       ...(p.kiterjeszti ? { kiterjeszti: p.kiterjeszti } : {}),
     }]);
@@ -80,8 +81,8 @@ export function useFortelyActions({ data, setFortélyok, karakter, setKarakter }
     if (!pendingFort) return;
     setFortélyok(prev => [...prev, { ...pendingFort, fok }]);
     // Auto-add weapon to karakter.fegyverek if this is a weapon-type fortély (Mesterfegyver)
-    if (pendingFort.spec_típus === 'fegyver' && pendingFort.spec_elem) {
-      ensureFegyverOnKarakter(pendingFort.spec_elem);
+    if (data.fortelySummaries.find(d => d.id === pendingFort.id)?.többszörös_típus === 'fegyver' && pendingFort.elem) {
+      ensureFegyverOnKarakter(pendingFort.elem);
     }
     setPendingFort(null);
   }

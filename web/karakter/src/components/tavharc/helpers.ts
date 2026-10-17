@@ -9,11 +9,11 @@ import { getMfFok } from './mesterfegyver-calc';
 
 export function getAlkalmatlanInfo(k: Karakter, data: GameData): AlkalmatlanInfo {
   const nevek = k.fortélyok
-    .filter(f => f.név === 'Alkalmatlan fegyver hajítása' && f.spec_elem)
-    .map(f => f.spec_elem);
+    .filter(f => f.id === 'alkalmatlan_fegyver_hajítása' && f.elem)
+    .map(f => f.elem);
   const def = data.tavfegyverek.find(d => d.név.startsWith('🔆'));
 
-  const alkalmiTárgyFortély = k.fortélyok.find(f => f.név === 'Alkalmatlan tárgyak hajítása');
+  const alkalmiTárgyFortély = k.fortélyok.find(f => f.id === 'alkalmatlan_tárgyak_hajítása');
   const alkalmiTárgyNév = alkalmiTárgyFortély ? 'Alkalmi tárgy' : null;
   const alkalmiTárgyDef = def && alkalmiTárgyFortély
     ? { ...def, Osztó: alkalmiTárgyFortély.fok >= 2 ? 2 : 1 }
@@ -66,13 +66,13 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
     if (!def?.módosítók?.CÉ) continue;
     // szűrő_harcmodorok: bónusz csak akkor jár ha az aktív távfegyver harcmodora egyezik
     if (def.szűrő_harcmodorok?.length) {
-      if (!tfDefR || !def.szűrő_harcmodorok.includes(tfDefR.harcmodor ?? '')) continue;
+      if (!tfDefR || !def.szűrő_harcmodorok.includes((tfDefR.harcmodor ?? '').toLowerCase())) continue;
     }
     total += def.módosítók.CÉ;
   }
   // Fortély módosítók: feltételes CÉ bónuszok
   for (const fDef of data.fortelySummaries) {
-    const effFok = Math.max(0, k.fortélyok.find(f => f.név === fDef.név)?.fok ?? 0);
+    const effFok = Math.max(0, k.fortélyok.find(f => f.id === fDef.id)?.fok ?? 0);
     const módosítók = fDef.fokok.find(f => f.fok === effFok)?.módosítók;
     if (!módosítók) continue;
     for (const mod of módosítók) {
@@ -81,7 +81,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
       if (mod.feltétel.startsWith('taktika:')) {
         const tDef = data.taktikak.find(t => t.feltétel_kulcs === mod.feltétel);
         if (tDef?.szűrő_harcmodorok?.length) {
-          if (!tfDefR || !tDef.szűrő_harcmodorok.includes(tfDefR.harcmodor ?? '')) continue;
+          if (!tfDefR || !tDef.szűrő_harcmodorok.includes((tfDefR.harcmodor ?? '').toLowerCase())) continue;
         }
       }
       total += mod.érték;
@@ -114,7 +114,7 @@ export function calcCÉBontás(k: Karakter, data: GameData, session: Session, de
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
   const harcmodorNév = def?.harcmodor ?? 'Hajítás';
-  const harcmodorSzint = képzettségSzint(k, harcmodorNév);
+  const harcmodorSzint = képzettségSzint(k, `távolsági_harcmodor/${harcmodorNév.toLowerCase()}`);
   const harcmodorCÉ = data.harcmodorBonusz.find(b => b.szint === harcmodorSzint)?.CÉ ?? -9;
   const fegyverCÉ = def?.CÉ ?? 0;
   const mfAlap = fegyverAlap ?? k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '';
@@ -153,7 +153,7 @@ export function calcVÉ(szorzóÖsszeg: number, cella: number): number {
 
 export function calcÚjratöltésEnyhítés(session: Session, k: Karakter): number {
   if (!session.aktív_helyzetek.includes('Nyílpuska újratöltés')) return 0;
-  return k.fortélyok.find(f => f.név === 'Nyílpuska újratöltés fejlesztése')?.fok ?? 0;
+  return k.fortélyok.find(f => f.id === 'nyílpuska_újratöltés_fejlesztése')?.fok ?? 0;
 }
 
 // --- Szorzó összeg ---

@@ -1,4 +1,6 @@
-import type { FegyverAlap, Session, Karakter } from './types';
+import type { FegyverAlap, Session, Karakter, Kepzettseg } from './types';
+import type { GameData } from './data-loader';
+import { képzKulcs, képzettségNév, HARCMODOR_ID } from './azonosito';
 
 /** Fegyver definíció keresése név alapján (case-insensitive) */
 export function lookupFegyver(fegyverek: FegyverAlap[], alap: string): FegyverAlap | undefined {
@@ -6,19 +8,19 @@ export function lookupFegyver(fegyverek: FegyverAlap[], alap: string): FegyverAl
   return fegyverek.find(d => d.név.toLowerCase() === lower);
 }
 
-/** Képzettség szintje név alapján, vagy 0 ha nincs felvéve. */
-export function képzettségSzint(karakter: Karakter, név: string): number {
-  return karakter.képzettségek.find(k => k.név === név)?.szint ?? 0;
+/** Képzettség szintje hivatkozási kulcs alapján ("lexikum", "harcmodor/kardvívás"), vagy 0 ha nincs felvéve. */
+export function képzettségSzint(karakter: Karakter, kulcs: string): number {
+  return karakter.képzettségek.find(k => képzKulcs(k) === kulcs)?.szint ?? 0;
 }
 
-/** Fortély foka név alapján, vagy 0 ha nincs felvéve. */
-export function fortélyFok(karakter: Karakter, név: string): number {
-  return karakter.fortélyok.find(f => f.név === név)?.fok ?? 0;
+/** Fortély foka id alapján, vagy 0 ha nincs felvéve. */
+export function fortélyFok(karakter: Karakter, id: string): number {
+  return karakter.fortélyok.find(f => f.id === id)?.fok ?? 0;
 }
 
-/** Több harcmodor-képzettség szintjének összege (pl. Manőver Pont / harckeret). */
-export function harcmodorÖsszeg(karakter: Karakter, nevek: string[]): number {
-  return nevek.reduce((s, n) => s + képzettségSzint(karakter, n), 0);
+/** Több közelharci harcmodor szintjének összege; `elemek`: harcmodor-elemek (pl. "kardvívás"). */
+export function harcmodorÖsszeg(karakter: Karakter, elemek: string[]): number {
+  return elemek.reduce((s, e) => s + képzettségSzint(karakter, `${HARCMODOR_ID}/${e}`), 0);
 }
 
 /** Érték szorítása [min, max] tartományba. */
@@ -55,16 +57,18 @@ export function evaluateFeltétel(feltétel: string, session: Session, karakter:
 }
 
 /** Undo leírás generálás képzettség változáshoz */
-export function describeKepChange(prev: { név: string; szint: number }[], next: { név: string; szint: number }[]): string {
+export function describeKepChange(prev: Kepzettseg[], next: Kepzettseg[], data: Pick<GameData, 'kepzettsegDefs'>): string {
+  const név = (k: Kepzettseg) => képzettségNév(k, data);
+  const same = (a: Kepzettseg) => (b: Kepzettseg) => képzKulcs(a) === képzKulcs(b);
   if (next.length > prev.length) {
-    const added = next.find(n => !prev.some(k => k.név === n.név));
-    if (added) return `Képzettség: ${added.név} 0→${added.szint}`;
+    const added = next.find(n => !prev.some(same(n)));
+    if (added) return `Képzettség: ${név(added)} 0→${added.szint}`;
   } else if (next.length < prev.length) {
-    const removed = prev.find(k => !next.some(n => n.név === k.név));
-    if (removed) return `Képzettség: ${removed.név} ${removed.szint}→0❌`;
+    const removed = prev.find(k => !next.some(same(k)));
+    if (removed) return `Képzettség: ${név(removed)} ${removed.szint}→0❌`;
   } else {
-    const changed = next.find(n => { const old = prev.find(k => k.név === n.név); return old && old.szint !== n.szint; });
-    if (changed) { const old = prev.find(k => k.név === changed.név)!; return `Képzettség: ${changed.név} ${old.szint}→${changed.szint}`; }
+    const changed = next.find(n => { const old = prev.find(same(n)); return old && old.szint !== n.szint; });
+    if (changed) { const old = prev.find(same(changed))!; return `Képzettség: ${név(changed)} ${old.szint}→${changed.szint}`; }
   }
   return '';
 }

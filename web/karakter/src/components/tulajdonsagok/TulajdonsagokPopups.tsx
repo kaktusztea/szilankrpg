@@ -1,4 +1,5 @@
 import type { GameData } from '../../engine/data-loader';
+import { bontKépzKulcs } from '../../engine/azonosito';
 import type { KepzettsegSlot } from './types';
 import { TextInputPopup, GridPickerPopup } from './popups';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
@@ -7,14 +8,14 @@ import { OverlayPortal } from '../overlays/OverlayPortal';
 import { getDisplayName } from './helpers';
 import { SZINT_VALUES } from '../../ui-constants';
 
-interface PromptState { alapNév: string }
+interface PromptState { alapId: string }
 interface DeleteTarget { idx: number; név: string; szint: number }
 
 export interface PopupState {
   promptState: PromptState | null;
   promptValue: string;
   deleteTarget: DeleteTarget | null;
-  pendingNew: { név: string; insertAt: number } | null;
+  pendingNew: { kulcs: string; insertAt: number } | null;
   editingNév: boolean;
   tempNév: string;
   editingBecenév: boolean;
@@ -64,7 +65,7 @@ export function TulajdonsagokPopups({
     {/* Szabad szöveges képzettség alnév */}
     {p.promptState && (
       <TextInputPopup
-        label={`${p.promptState.alapNév} - alnév:`}
+        label={`${getDisplayName(p.promptState.alapId, data.kepzettsegDefs)} - alnév:`}
         value={p.promptValue}
         onChange={v => close({ promptValue: v })}
         onConfirm={onConfirmPrompt}
@@ -91,14 +92,14 @@ export function TulajdonsagokPopups({
     {/* Új képzettség szint választó - a képzettség csak szint választáskor kerül be */}
     {p.pendingNew && (
       <GridPickerPopup
-        label={`${getDisplayName(p.pendingNew.név, data.kepzettsegDefs)} - szint:`}
+        label={`${getDisplayName(p.pendingNew.kulcs, data.kepzettsegDefs)} - szint:`}
         values={SZINT_VALUES}
         current={0}
         onSelect={n => {
-          const { név, insertAt } = p.pendingNew!;
+          const { kulcs, insertAt } = p.pendingNew!;
           setKépzettségek(prev => {
             const arr = [...prev];
-            arr.splice(insertAt, 0, { név, szint: n });
+            arr.splice(insertAt, 0, { ...bontKépzKulcs(kulcs), szint: n });
             return arr;
           });
           close({ pendingNew: null });

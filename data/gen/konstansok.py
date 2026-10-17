@@ -30,6 +30,4 @@ def generate_konstansok():
     """konstansok.yaml → konstansok.json (+ derivált mesterfegyver_bónuszok)"""
     data = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
     data['mesterfegyver_bónuszok'] = _derive_mf_bónuszok()
-    from .hivatkozas import hm_nev  # ÁTMENETI (F2-F3): harcmodor-elem id → név
-    data['fegyver_kategória_harcmodor'] = {k: hm_nev(v) for k, v in data['fegyver_kategória_harcmodor'].items()}
     write_json('konstansok.json', data)

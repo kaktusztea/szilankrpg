@@ -121,7 +121,7 @@ export function njkHarcértékStat(karakter: Karakter, data: GameData): Harcért
   // TÉ/VÉ: az aktív fegyver harcértékei a közös pure kalkulációból.
   const harcmodorÖsszeg = calcHarcmodorÖsszeg(k,
     [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]);
-  const merevvértFok = fortélyFok(k, 'Merevvértviselet');
+  const merevvértFok = fortélyFok(k, 'merevvértviselet');
   const lookupArrays = buildPancelLookups(konstansok);
 
   const stringCtx = new Map<string, string>([

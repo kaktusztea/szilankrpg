@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import type { KepzettsegDef } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import { FortelyDetails } from '../FortelyDetails';
@@ -8,7 +10,8 @@ interface Props {
   misztFortDefs: FortelySummary[];
   fortélyok: Fortely[];
   gameMode: boolean;
-  képzettségek: { név: string; szint: number }[];
+  képzettségek: Kepzettseg[];
+  kepzettsegDefs: KepzettsegDef[];
   infoTarget: string | null;
   onInfoToggle: (key: string) => void;
   onFelvétel: (def: FortelySummary) => void;
@@ -17,16 +20,17 @@ interface Props {
   onHint: (msg: string) => void;
 }
 
-export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode, képzettségek, infoTarget, onInfoToggle, onFelvétel, onFokChange, onDelete, onHint }: Props) {
+export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode, képzettségek, kepzettsegDefs, infoTarget, onInfoToggle, onFelvétel, onFokChange, onDelete, onHint }: Props) {
+  const név = (f: Fortely) => misztFortDefs.find(d => d.id === f.id)?.név ?? f.id;
   const misztFortSlotok = fortélyok
-    .filter(f => misztFortDefs.some(d => d.név === f.név))
-    .sort((a, b) => a.név.localeCompare(b.név, 'hu'));
+    .filter(f => misztFortDefs.some(d => d.id === f.id))
+    .sort((a, b) => név(a).localeCompare(név(b), 'hu'));
 
   const felvehető = misztFortDefs.filter(d => {
-    const count = misztFortSlotok.filter(s => s.név === d.név).length;
+    const count = misztFortSlotok.filter(s => s.id === d.id).length;
     if (!d.többszörös_típus) return count === 0;
     if (isFreeTextPicker(d, RUNTIME_PICKER_TYPES) && count >= MAX_AZONOS_FORTÉLY) return false;
-    if (d.többszörös_lista.length > 0) return d.többszörös_lista.some(l => !misztFortSlotok.some(s => s.név === d.név && s.spec_elem === l));
+    if (d.többszörös_lista.length > 0) return d.többszörös_lista.some(l => !misztFortSlotok.some(s => s.id === d.id && s.elem === l));
     return true;
   });
 
@@ -36,7 +40,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
     <section className="miszt-section">
       <h3 className="miszt-section-title">Misztikus fortélyok</h3>
       {misztFortSlotok.map((f, i) => {
-        const def = misztFortDefs.find(d => d.név === f.név);
+        const def = misztFortDefs.find(d => d.id === f.id);
         const maxfok = def?.maxfok ?? 1;
         const globalIdx = fortélyok.indexOf(f);
         const infoKey = `mf-${globalIdx}`;
@@ -44,7 +48,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
         const fokDef = def?.fokok.find(fd => fd.fok === f.fok);
 
         return (
-          <div key={`${f.név}-${f.spec_elem}-${i}`} className="fort-row-wrapper">
+          <div key={`${f.id}-${f.elem}-${i}`} className="fort-row-wrapper">
             <div className="item-row miszt-fort-row"
               onClick={() => {
                 if (gameMode) { onInfoToggle(infoKey); return; }
@@ -52,7 +56,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
                 else onHint('1 fok a maximum');
               }}>
               <span className="kep-név miszt-fort-name">
-                {f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}
+                {f.elem ? `${név(f)} - ${f.elem}` : név(f)}{f.kiérdemelt ? ' ⭐' : ''}
               </span>
               {!gameMode && (
                 <button className="item-delete" onClick={e => { e.stopPropagation(); onDelete(globalIdx); }}>✕</button>
@@ -67,6 +71,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
               <FortelyDetails
                 def={def} fokDef={fokDef}
                 képzettségek={képzettségek}
+                kepzettsegDefs={kepzettsegDefs}
               />
             )}
           </div>

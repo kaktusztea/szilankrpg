@@ -36,6 +36,8 @@ export interface KepzettsegDef {
 // --- Kiterjesztés entry ---
 export interface KiterjesztesEntry {
   fortély: string;
+  /** A fortély megjelenített neve (a `fortély` mező az id). */
+  név: string;
   típus: 'normál' | 'erős';
   maxfok: number;
 }

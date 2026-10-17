@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
+import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { PróbaEnyhítés } from '../../engine/data-types';
 import type { Props, KepzettsegSlot } from './types';
@@ -30,15 +31,15 @@ export function TulajdonsagokScreen({
 
   // Többszörösen felvehető fortélyok nevei (csak ezek kiterjesztés-teljesülése billenthető).
   const többszörösNevek = useMemo(
-    () => new Set(data.fortelySummaries.filter(d => d.többszörös_típus !== '').map(d => d.név)),
+    () => new Set(data.fortelySummaries.filter(d => d.többszörös_típus !== '').map(d => d.id)),
     [data.fortelySummaries],
   );
   const negáltKulcsok = useMemo(
     () => new Set(karakter.kiterjesztés_negálva ?? []),
     [karakter.kiterjesztés_negálva],
   );
-  const toggleNegál = useCallback((képzettségNév: string, fortélyNév: string) => {
-    const kulcs = negálásKulcs(képzettségNév, fortélyNév);
+  const toggleNegál = useCallback((képzettségKulcs: string, fortélyId: string) => {
+    const kulcs = negálásKulcs(képzettségKulcs, fortélyId);
     setKarakter(prev => {
       if (!prev) return prev;
       const lista = prev.kiterjesztés_negálva ?? [];
@@ -51,8 +52,8 @@ export function TulajdonsagokScreen({
   const fortélyBónuszByKép = useMemo(() => {
     const result: Record<string, { érték: number; leírás: string }[]> = {};
     for (const kp of karakter.képzettségek) {
-      const b = fortélyPróbaBónuszok(karakter, data, ['képzettségpróba'], a => a === `képzettség:${kp.név}`);
-      if (b.length) result[kp.név] = b;
+      const b = fortélyPróbaBónuszok(karakter, data, ['képzettségpróba'], a => a === `képzettség:${képzKulcs(kp)}`);
+      if (b.length) result[képzKulcs(kp)] = b;
     }
     return result;
   }, [karakter, data]);
@@ -73,13 +74,13 @@ export function TulajdonsagokScreen({
   const próbaEnyhítésekByKép = useMemo(() => {
     const result: Record<string, PróbaEnyhítés[]> = {};
     for (const kf of karakter.fortélyok) {
-      const def = data.fortelySummaries.find(d => d.név === kf.név);
+      const def = data.fortelySummaries.find(d => d.id === kf.id);
       if (!def) continue;
       const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
       const pe_lista = fokDef?.próba_enyhítések;
       if (!pe_lista || !pe_lista.length) continue;
       for (const pe of pe_lista) {
-        (result[pe.képzettség] ??= []).push({ ...pe, fortély: kf.név });
+        (result[pe.képzettség] ??= []).push({ ...pe, fortély: def.név });
       }
     }
     return result;
@@ -116,38 +117,28 @@ export function TulajdonsagokScreen({
     if (slot.szint === 0) {
       setKépzettségek(prev => prev.filter((_, i) => i !== globalIdx));
     } else {
-      setPopup(p => ({ ...p, deleteTarget: { idx: globalIdx, név: getDisplayName(slot.név, data.kepzettsegDefs), szint: slot.szint } }));
+      setPopup(p => ({ ...p, deleteTarget: { idx: globalIdx, név: getDisplayName(képzKulcs(slot), data.kepzettsegDefs), szint: slot.szint } }));
     }
   }
 
-  function addKepzettseg(_csoport: string, név: string) {
-    if (név.startsWith('__prompt:')) {
-      const alapNév = név.slice('__prompt:'.length);
-      setPopup(p => ({ ...p, promptState: { alapNév }, promptValue: '' }));
+  function addKepzettseg(_csoport: string, kulcs: string) {
+    if (kulcs.startsWith('__prompt:')) {
+      const alapId = kulcs.slice('__prompt:'.length);
+      setPopup(p => ({ ...p, promptState: { alapId }, promptValue: '' }));
       return;
     }
-    let actualNév = név;
-    if (név.includes(':') && !név.startsWith('__') && !data.kepzettsegDefs.some(d => d.név === név)) {
-      actualNév = név.split(':')[1];
-    }
-    // Compute insert position without mutating - the képzettség is only added
-    // once the user picks a szint (cancel = no insert, no undo entry).
-    const parentDef = data.kepzettsegDefs.find(d =>
-      d.többszörös.length > 0 && d.többszörös[0] !== '*' && d.többszörös.includes(actualNév)
-    );
-    let insertAt = képzettségek.length;
-    if (parentDef) {
-      const siblings = new Set(parentDef.többszörös);
-      const lastIdx = képzettségek.reduce((acc, k, i) => siblings.has(k.név) ? i : acc, -1);
-      insertAt = lastIdx + 1;
-    }
-    setPopup(p => ({ ...p, pendingNew: { név: actualNév, insertAt } }));
+    // Insert position without mutating - the képzettség is only added once the user picks a szint
+    // (cancel = no insert, no undo entry). Többszörös elem: a testvérek (azonos id) után.
+    const { id } = bontKépzKulcs(kulcs);
+    const lastIdx = képzettségek.reduce((acc, k, i) => k.id === id ? i : acc, -1);
+    const insertAt = lastIdx >= 0 ? lastIdx + 1 : képzettségek.length;
+    setPopup(p => ({ ...p, pendingNew: { kulcs, insertAt } }));
   }
 
   function confirmPrompt() {
     if (!popup.promptState || !popup.promptValue.trim()) return;
-    const fullNév = `${popup.promptState.alapNév}: ${popup.promptValue.trim()}`;
-    setPopup(p => ({ ...p, promptState: null, pendingNew: { név: fullNév, insertAt: képzettségek.length } }));
+    const kulcs = `${popup.promptState.alapId}/${popup.promptValue.trim()}`;
+    setPopup(p => ({ ...p, promptState: null, pendingNew: { kulcs, insertAt: képzettségek.length } }));
   }
 
   function toggleCollapse(csoport: string) {

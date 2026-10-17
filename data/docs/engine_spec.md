@@ -657,14 +657,17 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
           végzi (§8). Pl. Taktikafókusz: Roham → Roham taktikánál "erőbónusz duplázódik" (arány 1).
       Követelmények logika (részletes tábla: §25):
         - A követelmények lista elemei ÉS kapcsolatban vannak (mindegyiknek teljesülnie kell).
-        - Ha egy elem "név" mezője lista (pl. ["Közelharc", "Kardvívás"]), az VAGY kapcsolat: bármelyik teljesíti.
+        - A "név" mező HIVATKOZÁS (id, 2026-10-17): fortély-id, ill. képzettség-kulcs ("lexikum",
+          "harcmodor/kardvívás"). Lista = VAGY kapcsolat (pl. ["harcmodor/közelharc", "harcmodor/kardvívás"]).
+          Formátum: data/gen/hivatkozas.py; build-gate: generate_tables.validate_id_hivatkozasok.
         - Típusok: képzettség (szint ≥ érték), fortély (fok ≥ érték, többszörösnél bármelyik példány)
-        - UI: nem teljesülő követelmény → piros jelzés (FortelyokScreen), case-insensitive
-      Többszörös fortélyok (karakter séma v2):
-        - kf.név = mindig az alapnév (megegyezik a fortely yaml "név" mezőjével)
-        - kf.spec_típus = megegyezik fortély_def.többszörösség.spec_típus-ával ("" ha nem többszörös)
-        - kf.spec_elem = a konkrét választott példány (pl. "erv", "kard, lovag")
-        - Lookup: kf.név alapján (nem kf.spec_elem!)
+        - UI: nem teljesülő követelmény → piros jelzés (FortelyokScreen); pontos id/kulcs-egyezés, a felirat a feloldott név
+      Karakter fortély / képzettség (séma v3, 2026-10-17):
+        - kf = { id, elem, fok, kiérdemelt? }: id = fortély yaml `id`; elem = többszörösnél a választott példány
+          (pl. "erv", "Kard, lovag"), egyedi fortélynál (id "egyedi") a neve; a spec-típus a definícióból jön.
+        - kp = { id, elem, szint }: hivatkozási kulcs `<id>/<elem>` (harcmodor-elem = konstansok.harcmodorok,
+          kisbetűs; Ősi nyelv / Tradíció: szabad szöveg) vagy `<id>`.
+        - Lookup: id / kulcs alapján; megjelenítés: engine/azonosito.ts (fortélyNév, képzettségNév).
 ```
 
 ### 16.1 Alapeset (fok: 0) - IMPLEMENTÁLT
@@ -3530,14 +3533,15 @@ Minden fortély egy tömb:
 
 ```
 Alap eset (nem többszörös, nincs kiérdemelt):
-  [név, fok]
+  [id, fok]
 
-Többszörös (spec_típus nem üres):
-  [név, fok, spec_típus, spec_elem]
+Többszörös (elem nem üres; a 3. pozíció üres helyőrző - a pozíciós formátum megmaradt):
+  [id, fok, "", elem]
 
 Kiérdemelt flag (kiérdemelt=true):
   utolsó elemként: 1
-  Példa: ["Nyelvismeret", 1, "nyelv", "Toroni", 1]
+  Példa: ["nyelvismeret", 1, "", "Toroni", 1]
+(Séma-verzió: 3 - a régebbi linkek „Elavult karakter link" hibát adnak.)
 ```
 
 Példák:
@@ -3648,8 +3652,8 @@ input:  URL hash fragment (a '#' utáni rész)
 4. Dekompaktálás:
    - "tu" → tulajdonságok objektum (fix sorrend: erő, edz, ügy, gyo, int, eml, önu, érz)
    - "hm" → HM_TÉ, HM_VÉ
-   - "kp" → képzettségek[{név, szint}]
-   - "fo" → fortélyok[{név, fok, spec_típus, spec_elem, kiérdemelt?}]
+   - "kp" → képzettségek[{id, elem, szint}]   (tömb: [id, elem, szint])
+   - "fo" → fortélyok[{id, elem, fok, kiérdemelt?}]
    - "ht" → hátterek{faj, leíró[], karma[]}
    - "fg" → fegyverek[{alap, név, anyag, idea}]  (default-ok visszaállítása)
    - "tf" → távfegyverek[{alap, idea}]  (string = idea 0, [alap, idea] egyébként)

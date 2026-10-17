@@ -1,3 +1,4 @@
+import type { Kepzettseg } from '../../engine/types';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { KonstansokRaw } from '../../engine/data-types';
@@ -34,7 +35,7 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
   const { konstansok } = data;
 
   // Pajzs VÉ és TÉ büntetés: egyetlen lookup a pajzs_hatások táblából (méret × Pajzshasználat fok)
-  const pajzsFok = fortélyFok(k, 'Pajzshasználat');
+  const pajzsFok = fortélyFok(k, 'pajzshasználat');
   const hasPajzs = (session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs') && k.pajzs.méret;
   let pajzsVÉ = 0;
   let pajzsTÉBüntetés = 0;
@@ -55,7 +56,7 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
 
   let hárítóVÉ = 0;
   let hárítóNév = '';
-  const hasHárítóFortély = k.fortélyok.some(f => f.név === 'Hárítófegyver használat');
+  const hasHárítóFortély = k.fortélyok.some(f => f.id === 'hárítófegyver_használat');
   if (session.fegyverfogás === 'fegyver_hárító' && session.aktív_fegyver_bal_index >= 0 && hasHárítóFortély) {
     const hFp = k.fegyverek[session.aktív_fegyver_bal_index];
     if (hFp) {
@@ -63,7 +64,7 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
       if (isHárító(hDef)) {
         hárítóVÉ = elsődlegesMód(hDef!).VÉ;
         hárítóNév = hFp.alap;
-        const hMfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === hDef!.név || f.spec_elem === hFp.alap));
+        const hMfEntry = k.fortélyok.find(f => f.id === 'mesterfegyver' && (f.elem === hDef!.név || f.elem === hFp.alap));
         if (hMfEntry) {
           const hMf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === hMfEntry.fok);
           if (hMf) hárítóVÉ += hMf.VÉ;
@@ -85,8 +86,8 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
 }
 
 /** Fájdalomtűrés enyhítés lookup */
-export function calcFtEnyhites(képzettségek: { név: string; szint: number }[], ftTable: { szint: number; enyhítés: number }[]): number {
-  const ftSzint = képzettségek.find(kp => kp.név === 'Fájdalomtűrés')?.szint ?? 0;
+export function calcFtEnyhites(képzettségek: Kepzettseg[], ftTable: { szint: number; enyhítés: number }[]): number {
+  const ftSzint = képzettségek.find(kp => kp.id === 'fájdalomtűrés')?.szint ?? 0;
   let enyhítés = 0;
   for (const row of ftTable) {
     if (ftSzint >= row.szint) enyhítés = row.enyhítés;

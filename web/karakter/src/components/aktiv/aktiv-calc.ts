@@ -109,7 +109,7 @@ function calcFortélyPool(
   const manőverBónuszok: ManőverBónusz[] = [];
 
   for (const kf of karakter.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    const def = data.fortelySummaries.find(d => d.id === kf.id);
     if (!def) continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef) continue;
@@ -123,7 +123,7 @@ function calcFortélyPool(
         if (!isFeltételAktív(mod.feltétel, aktívFeltételek)) continue;
 
         if (typeof mod.cél === 'string' && mod.cél.startsWith('manőver:')) {
-          manőverBónuszok.push({ név: kf.név, manőver: mod.cél.slice(8), érték: mod.érték });
+          manőverBónuszok.push({ név: def.név, manőver: mod.cél.slice(8), érték: mod.érték });
         }
 
         const kötés = extractHelyzetKötés(mod.feltétel);
@@ -139,12 +139,12 @@ function calcFortélyPool(
     if (helyzetKötés) {
       const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
       const arr = helyzetFortélyok.get(hNév) || [];
-      arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
+      arr.push({ név: def.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
       helyzetFortélyok.set(hNév, arr);
     } else if (taktikaKötés) {
       const tNév = data.taktikak.find(d => d.feltétel_kulcs === `taktika:${taktikaKötés}`)?.név || taktikaKötés;
       const arr = taktikaFortélyok.get(tNév) || [];
-      arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`taktika:${taktikaKötés}`) });
+      arr.push({ név: def.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`taktika:${taktikaKötés}`) });
       taktikaFortélyok.set(tNév, arr);
     } else {
       // Box-kombó lila rész. emlékeztető: false → soha (pl. Mesterfegyver: többször felvehető).
@@ -155,7 +155,7 @@ function calcFortélyPool(
       const mindig = kulcs === 'harci' || kulcs === 'tavharc';
       const vanAlapeset = def.fokok.some(fd => fd.fok === 0);
       if (def.emlékeztető && (mindig || vanAlapeset)) {
-        fortélyEmlékeztetők[kulcs].push({ név: kf.név, fok: kf.fok, hatás: hatásText });
+        fortélyEmlékeztetők[kulcs].push({ név: def.név, fok: kf.fok, hatás: hatásText });
       }
     }
   }

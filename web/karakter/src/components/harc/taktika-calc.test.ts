@@ -12,6 +12,7 @@ function makeData(): GameData {
     ],
     fortelySummaries: [
       {
+        id: 'taktikafókusz_visszafogott',
         név: 'Taktikafókusz: Visszafogott',
         fokok: [{ fok: 1, módosítók: [{ cél: 'TÉ', érték: 0, mód: 'letilt', forrás: '', arány: 0, feltétel: 'taktika:visszafogott' }] }],
       },
@@ -28,7 +29,7 @@ describe('calcTaktikaMods - letilt taktika-módosító semlegesítés', () => {
   });
 
   it('a letilt fortéllyal a taktika TÉ-je semlegesítődik (0), szám-függetlenül', () => {
-    const k = { fortélyok: [{ név: 'Taktikafókusz: Visszafogott', fok: 1 }] } as unknown as Karakter;
+    const k = { fortélyok: [{ id: 'taktikafókusz_visszafogott', fok: 1, elem: ''}] } as unknown as Karakter;
     const mods = calcTaktikaMods(session, makeData(), k);
     expect(mods['TÉ']).toBe(0);
   });

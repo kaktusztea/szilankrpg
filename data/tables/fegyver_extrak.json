@@ -7,7 +7,7 @@
     "feltétel": [
       {
         "típus": "fortély",
-        "név": "Mesterfegyver",
+        "név": "mesterfegyver",
         "érték": 1
       },
       {
@@ -17,7 +17,7 @@
     ],
     "hatás": [
       {
-        "cél": "fortély:Mesterfegyver",
+        "cél": "fortély:mesterfegyver",
         "mód": "szorzó",
         "érték": 2
       }

@@ -67,8 +67,8 @@ export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): an
       // Find the active weapon's harcmodor level
       const fp = karakter.fegyverek[karakter.session?.aktív_fegyver_index ?? -1];
       const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
-      const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'Közelharc') : 'Közelharc';
-      const harcmodorSzint = képzettségSzint(karakter, harcmodorNév);
+      const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'közelharc') : 'közelharc';
+      const harcmodorSzint = képzettségSzint(karakter, `harcmodor/${harcmodorNév}`);
 
       // Find highest applicable absolute max_fok
       let maxFok = 0;

@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import type { KepzettsegDef } from '../../engine/data-loader';
 import { useState } from 'react';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
@@ -11,11 +13,12 @@ interface Props {
   fortélyok: Fortely[];
   fegyverNevek: string[];
   nyelvtanulásSzint: number;
-  képzettségek: { név: string; szint: number }[];
-  onAdd: (név: string) => void;
+  képzettségek: Kepzettseg[];
+  kepzettsegDefs: KepzettsegDef[];
+  onAdd: (id: string) => void;
 }
 
-export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, képzettségek, onAdd }: Props) {
+export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, képzettségek, kepzettsegDefs, onAdd }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -35,6 +38,7 @@ export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, 
           fegyverNevek={fegyverNevek}
           nyelvtanulásSzint={nyelvtanulásSzint}
           képzettségek={képzettségek}
+          kepzettsegDefs={kepzettsegDefs}
           onAdd={onAdd}
           onClose={() => setOpen(false)}
         />

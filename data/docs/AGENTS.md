@@ -80,7 +80,8 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 ### Karakter adatmodell
 - Schema v2 (`data/schemas/karakter.yaml`)
 - `session` szekció = runtime harc state (NEM mentett állapot)
-- Fortélyok: `{ név, fok, spec_típus, spec_elem, kiérdemelt? }` - név = alapnév
+- Fortélyok: `{ id, elem, fok, kiérdemelt? }`, képzettségek: `{ id, elem, szint }` (séma v3) - `id` = a fortély/képzettség yaml `id`-je, `elem` = többszörös példány
+- **Fortélyra / képzettségre MINDIG `id`-vel hivatkozunk** (data layer és kód): fortély `<id>`, képzettség `<id>` vagy `<id>/<elem>` (`harcmodor/kardvívás`). A név csak megjelenítés: `engine/azonosito.ts` (`fortélyNév`, `képzettségNév`). Formátum + build-gate: `data/gen/hivatkozas.py`, `validate_id_hivatkozasok`
 - Multi-slot localStorage: `szilank_char_{uid}`, max 16 (ebből max 10 NJK)
 
 ### Feltétel rendszer

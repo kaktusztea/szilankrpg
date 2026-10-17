@@ -13,16 +13,16 @@ export interface AktívAlapeset {
  * Aktív ha: karakter NEM rendelkezik a fortéllyal ÉS feltétel teljesül.
  */
 export function evaluateAlapesetek(
-  fortelyDefs: readonly Pick<FortelySummary, 'név' | 'fokok'>[],
+  fortelyDefs: readonly Pick<FortelySummary, 'id' | 'név' | 'fokok'>[],
   karakter: Karakter,
   session: Session,
   aktívFeltételek?: Set<string>
 ): AktívAlapeset[] {
-  const kFort = new Set(karakter.fortélyok.map(f => f.név));
+  const kFort = new Set(karakter.fortélyok.map(f => f.id));
   const result: AktívAlapeset[] = [];
 
   for (const def of fortelyDefs) {
-    if (kFort.has(def.név)) continue;
+    if (kFort.has(def.id)) continue;
     const fok0 = def.fokok.find(f => f.fok === 0);
     if (!fok0 || (!fok0.hatás?.length && !fok0.módosítók?.length)) continue;
 

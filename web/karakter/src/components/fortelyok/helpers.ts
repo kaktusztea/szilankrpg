@@ -1,8 +1,11 @@
-import type { FortelySummary, FortelyFokSummary } from '../../engine/data-loader';
+import type { Kepzettseg } from '../../engine/types';
+import type { FortelySummary, FortelyFokSummary, GameData } from '../../engine/data-loader';
+import { fortélyNév, képzettségNév, képzettségSzint, isHarcmodorId, bontKépzKulcs, EGYEDI_FORTÉLY_ID } from '../../engine/azonosito';
 import type { Fortely } from '../../engine/types';
 
-export function displayName(f: Fortely): string {
-  const base = f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
+export function displayName(f: Fortely, data: Pick<GameData, 'fortelySummaries'>): string {
+  const név = fortélyNév(f, data);
+  const base = f.elem && f.id !== EGYEDI_FORTÉLY_ID ? `${név} - ${f.elem}` : név;
   if (f.kiérdemelt) return f.fok > 1 ? `${base} ⭐➕` : `${base} ⭐`;
   return base;
 }
@@ -12,12 +15,14 @@ export function getFortelyokForCsoport(
   fortélyok: Fortely[],
   defsByGroup: Map<string, FortelySummary[]>,
 ): Fortely[] {
-  const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
+  const csoportDefs = defsByGroup.get(csoport) || [];
+  const csoportIdk = new Set(csoportDefs.map(d => d.id));
+  const név = (f: Fortely) => f.id === EGYEDI_FORTÉLY_ID ? f.elem : (csoportDefs.find(d => d.id === f.id)?.név ?? f.id);
   const items = fortélyok.filter(f =>
-    csoportNevek.has(f.név) || (csoport === 'szabad' && f.spec_típus === 'egyedi')
+    csoportIdk.has(f.id) || (csoport === 'szabad' && f.id === EGYEDI_FORTÉLY_ID)
   );
   items.sort((a, b) => {
-    const nameComp = a.név.localeCompare(b.név);
+    const nameComp = név(a).localeCompare(név(b));
     if (nameComp !== 0) return nameComp;
     return b.fok - a.fok;
   });
@@ -26,15 +31,15 @@ export function getFortelyokForCsoport(
 
 /** KP cost of the next non-kiérdemelt ("Felvett") szabad fortély: 0 while within the free quota (tsz), else the def's kp_perfok. */
 export function calcSzabadFelvettKp(
-  név: string,
+  id: string,
   fortélyok: Fortely[],
   fortelySummaries: FortelySummary[],
   tsz: number
 ): number {
-  const def = fortelySummaries.find(d => d.név === név);
+  const def = fortelySummaries.find(d => d.id === id);
   const kpPerFok = def?.kp_perfok ?? 6;
-  const szabadNevek = new Set(fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.név));
-  const nonKierdemelt = fortélyok.filter(f => (szabadNevek.has(f.név) || f.spec_típus === 'egyedi') && !f.kiérdemelt).length;
+  const szabadIdk = new Set(fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.id));
+  const nonKierdemelt = fortélyok.filter(f => (szabadIdk.has(f.id) || f.id === EGYEDI_FORTÉLY_ID) && !f.kiérdemelt).length;
   return nonKierdemelt < tsz ? 0 : kpPerFok;
 }
 
@@ -43,7 +48,7 @@ export function calcNyelvPontKeret(nyelvtanulásSzint: number): number {
 }
 
 export function calcNyelvTúllépés(slotok: Fortely[], nyelvPontKeret: number): { túllépés: number; overSet: Set<Fortely> } {
-  const nyelvismeretSlotok = slotok.filter(s => s.név === 'Nyelvismeret');
+  const nyelvismeretSlotok = slotok.filter(s => s.id === 'nyelvismeret');
   const összFok = nyelvismeretSlotok.filter(s => !s.kiérdemelt).reduce((s, f) => s + f.fok, 0)
     + nyelvismeretSlotok.filter(s => !!s.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
   const túllépés = Math.max(0, összFok - nyelvPontKeret);
@@ -72,7 +77,7 @@ export function isSlotIngyenes(
   }
   if (def && def.ingyenes_perszint > 0) {
     const ingyenesDb = Math.floor((tsz + 1) / def.ingyenes_perszint);
-    const sameTypeSlots = slotok.filter(s => s.név === def.név);
+    const sameTypeSlots = slotok.filter(s => s.id === def.id);
     const posInType = sameTypeSlots.indexOf(slot);
     return posInType < ingyenesDb;
   }
@@ -92,36 +97,35 @@ export function buildDefsByGroup(fortelySummaries: FortelySummary[]): Map<string
 
 export function checkKövetelmények(
   fokDef: FortelyFokSummary | undefined,
-  képzettségek: { név: string; szint: number }[],
-  fortélyok: { név: string; fok: number }[],
-  harcmodorNevek: string[],
+  képzettségek: Kepzettseg[],
+  fortélyok: { id: string; fok: number }[],
+  /** A hiány-feliratok fortély-/képzettség-neveihez (a követelmények id-vel hivatkoznak). */
+  data: Pick<GameData, 'kepzettsegDefs' | 'fortelySummaries'>,
   fegyverHarcmodorNév?: string,
-  /** A karakter fajának ajánlott fortélyai max fokkal (data.fajFortélyok[faj]) - a `faj` típushoz. */
+  /** A karakter fajának ajánlott fortélyai max fokkal (data.fajFortélyok[faj], fortély-id kulcs) - a `faj` típushoz. */
   fajFortélyok: Record<string, number> = {},
-  fortélyNév = '',
+  fortélyId = '',
 ): string[] {
   if (!fokDef?.követelmények?.length) return [];
   const hiányzó: string[] = [];
+  const fortélyFok = (id: string) => fortélyok.reduce((m, f) => (f.id === id && f.fok > m ? f.fok : m), 0);
   for (const kov of fokDef.követelmények) {
+    const refek = Array.isArray(kov.név) ? kov.név : [kov.név];
     if (kov.típus === 'képzettség') {
-      const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
-      const teljesül = nevek.some(n => (képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték);
+      const teljesül = refek.some(r => képzettségSzint(képzettségek, r) >= kov.érték);
       if (!teljesül) {
-        const isHarcmodor = Array.isArray(kov.név) && kov.név.every(n => harcmodorNevek.some(h => h.toLowerCase() === n.toLowerCase()));
-        hiányzó.push(`${isHarcmodor ? (fegyverHarcmodorNév ? `Harcmodor - ${fegyverHarcmodorNév}` : 'Harcmodor') : (Array.isArray(kov.név) ? kov.név.join('/') : kov.név)} ≥ ${kov.érték}`);
+        // Csupa harcmodor-elem (VAGY-lista) → „Harcmodor"; egyébként a nevek „/"-lel.
+        const isHarcmodor = Array.isArray(kov.név) && refek.every(r => { const b = bontKépzKulcs(r); return isHarcmodorId(b.id) && !!b.elem; });
+        hiányzó.push(`${isHarcmodor ? (fegyverHarcmodorNév ? `Harcmodor - ${fegyverHarcmodorNév}` : 'Harcmodor') : refek.map(r => képzettségNév(r, data)).join('/')} ≥ ${kov.érték}`);
       }
     } else if (kov.típus === 'fortély') {
-      const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
-      const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
-      if (!megvan) hiányzó.push(`${név} fortély ≥ ${kov.érték}. fok`);
+      if (fortélyFok(refek[0]) < kov.érték) hiányzó.push(`${fortélyNév(refek[0], data)} fortély ≥ ${kov.érték}. fok`);
     } else if (kov.típus === 'tiltó_fortély') {
       // Tiltó követelmény: a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok.
-      const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
-      const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
-      if (megvan) hiányzó.push(`Nem lehet: ${név} fortély`);
+      if (fortélyFok(refek[0]) >= kov.érték) hiányzó.push(`Nem lehet: ${fortélyNév(refek[0], data)} fortély`);
     } else if (kov.típus === 'faj') {
       // A faj ajánlja-e ezt a fortélyt legalább `érték` fokig (érzék / ajánlott fortélyok, md: hatterek.faji).
-      if ((fajFortélyok[fortélyNév] ?? 0) < kov.érték) hiányzó.push(`Faj Háttér (${fortélyNév} ≥ ${kov.érték}. fok)`);
+      if ((fajFortélyok[fortélyId] ?? 0) < kov.érték) hiányzó.push(`Faj Háttér (${fortélyNév(fortélyId, data)} ≥ ${kov.érték}. fok)`);
     }
     // típus 'min_fegyverméret': NEM felvételi feltétel - harci-helyzet-kötött, fegyverfüggő
     // WARNING (l. getMinFegyverhosszWarning). Itt tudatosan kihagyjuk, nem blokkolja a felvételt.

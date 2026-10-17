@@ -1,3 +1,4 @@
+import type { Kepzettseg } from './types';
 /**
  * Reactive rule engine - evaluates declarative formulas from rules.json
  * against a context of named values (scalars and arrays).
@@ -103,14 +104,15 @@ export type KontextusKonstansok = Pick<KonstansokRaw, 'harcérték_alap' | 'kp' 
  * Build array context from character data (képzettségek, fortélyok, etc.)
  */
 export function buildArrayContext(
-  képzettségek: { név: string; szint: number }[],
-  fortélyok: readonly { név: string; fok: number; kiérdemelt?: boolean }[],
+  képzettségek: Kepzettseg[],
+  fortélyok: readonly { id: string; fok: number; kiérdemelt?: boolean }[],
   kepzettsegKpTable: { szint: number; kp: number }[],
   fortelyKpMap?: Map<string, number>,
   harciFortelyNevek?: Set<string>,
   opts?: {
     tsz?: number;
-    ingyenesFortelyok?: { név: string; ingyenes_perszint: number; kp_perfok: number }[];
+    ingyenesFortelyok?: { id: string; ingyenes_perszint: number; kp_perfok: number }[];
+    /** Primer képzettség-id-k (a karakter képzettség `id`-je szerint). */
     primerKepNevek?: Set<string>;
     primerFortNevek?: Set<string>;
     szabadFortelyNevek?: Set<string>;
@@ -130,9 +132,9 @@ export function buildArrayContext(
   const kpFortélyok = fortélyok.filter(f => {
     if (f.kiérdemelt) return false;
     if (!fortelyKpMap) return true;
-    const perFok = fortelyKpMap.get(f.név) ?? 6;
+    const perFok = fortelyKpMap.get(f.id) ?? 6;
     if (perFok <= 0) return false;
-    if (opts?.szabadFortelyNevek?.has(f.név) && !f.kiérdemelt && szabadCount < szabadIngyenesDb) {
+    if (opts?.szabadFortelyNevek?.has(f.id) && !f.kiérdemelt && szabadCount < szabadIngyenesDb) {
       szabadCount++;
       return false;
     }
@@ -144,7 +146,7 @@ export function buildArrayContext(
   if (fortelyKpMap) {
     const bónusz: Record<string, number | string>[] = [];
     for (const f of fortélyok) {
-      const perFok = fortelyKpMap.get(f.név) ?? 6;
+      const perFok = fortelyKpMap.get(f.id) ?? 6;
       if (perFok < 0) {
         bónusz.push({ bónusz_kp: f.fok * Math.abs(perFok) });
       }
@@ -156,8 +158,8 @@ export function buildArrayContext(
 
   // harci_fortélyok: for max_HM calculation
   if (harciFortelyNevek) {
-    const harci = fortélyok.filter(f => harciFortelyNevek.has(f.név));
-    arrays.set('harci_fortélyok', harci.map(f => ({ fok: f.fok, is_mesterfegyver: f.név === 'Mesterfegyver' ? 1 : 0 })));
+    const harci = fortélyok.filter(f => harciFortelyNevek.has(f.id));
+    arrays.set('harci_fortélyok', harci.map(f => ({ fok: f.fok, is_mesterfegyver: f.id === 'mesterfegyver' ? 1 : 0 })));
   }
 
   // kiemelt_fortélyok: for kiemelt_kp calculation (ingyenes keret felettiek)
@@ -165,7 +167,7 @@ export function buildArrayContext(
     const kiemelt: Record<string, number | string>[] = [];
     for (const d of opts.ingyenesFortelyok) {
       const ingyenesDb = Math.floor((opts.tsz + 1) / d.ingyenes_perszint);
-      const felvettDb = fortélyok.filter(f => f.név === d.név && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0);
+      const felvettDb = fortélyok.filter(f => f.id === d.id && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0);
       const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
       if (fizetősDb > 0) {
         kiemelt.push({ fizetős_kp: fizetősDb * d.kp_perfok });
@@ -176,7 +178,7 @@ export function buildArrayContext(
 
   // primer_képzettségek: for primer költés calculation
   if (opts?.primerKepNevek) {
-    const primer = képzettségek.filter(k => opts.primerKepNevek!.has(k.név));
+    const primer = képzettségek.filter(k => opts.primerKepNevek!.has(k.id));
     arrays.set('primer_képzettségek', primer.map(k => ({ szint: k.szint })));
   }
 
@@ -185,8 +187,8 @@ export function buildArrayContext(
     const primerFort: Record<string, number | string>[] = [];
     for (const f of fortélyok) {
       if (f.kiérdemelt) continue;
-      if (opts.primerFortNevek.has(f.név)) {
-        const perFok = fortelyKpMap.get(f.név) ?? 6;
+      if (opts.primerFortNevek.has(f.id)) {
+        const perFok = fortelyKpMap.get(f.id) ?? 6;
         if (perFok > 0) primerFort.push({ kp: f.fok * perFok });
       }
     }

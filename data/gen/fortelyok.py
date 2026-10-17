@@ -5,7 +5,6 @@ import os
 from .common import SOURCES_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
 from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs, id_hibak
-from .hivatkozas import kepz_nev, kovetelmeny_vissza, prefixes_vissza  # ÁTMENETI (F2-F3): forrás id → tábla név
 
 
 def generate_fortelyok():
@@ -38,19 +37,16 @@ def generate_fortelyok():
                 mods = fok.get('módosítók') or []
                 if mods == '':
                     mods = []
-                mods = [{**m, **{k: prefixes_vissza(m[k]) for k in ('cél', 'alcél', 'feltétel') if k in m}} for m in mods]
                 követelmények = fok.get('követelmények') or []
                 if követelmények == '': követelmények = []
-                követelmények = [kovetelmeny_vissza(k) for k in követelmények]
                 próba_e = fok.get('próba_enyhítések') or []
                 if próba_e == '': próba_e = []
-                próba_e = [{**p, 'képzettség': kepz_nev(p['képzettség'])} for p in próba_e]
                 fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv, 'követelmények': követelmények, 'módosítók': mods, 'próba_enyhítések': próba_e})
             leírás = ' '.join([l['text'] for l in (data.get('leírások') or []) if l.get('text')])
             leírás = leírás.replace('**', '').replace('`', '')
             kiterjeszti = data.get('kiterjeszti', {})
-            kit_norm = [kepz_nev(k) for k in (kiterjeszti.get('normál') or [])] if kiterjeszti else []
-            kit_eros = [kepz_nev(k) for k in (kiterjeszti.get('erős') or [])] if kiterjeszti else []
+            kit_norm = list(kiterjeszti.get('normál') or []) if kiterjeszti else []
+            kit_eros = list(kiterjeszti.get('erős') or []) if kiterjeszti else []
             tobbszorosseg = data.get('többszörösség', {})
             # md_fájl: fortelyok.{alcsoport}/{fájlnév}.md
             alcsoport = os.path.relpath(root, fdir).replace(os.sep, '/')
@@ -81,27 +77,7 @@ def generate_fortelyok():
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)
-    # Kiterjesztett képzettségek referenciális validáció
-    kep_dir = os.path.join(SOURCES_DIR, 'kepzettsegek')
-    valid_kep_nevek = set()
-    for root, dirs, files in os.walk(kep_dir):
-        for kf in files:
-            if kf.endswith('.yaml'):
-                kd = load_yaml(os.path.join(root, kf))
-                valid_kep_nevek.add(kd['név'])
-    kit_errors = []
-    for fort in result:
-        for kn in fort.get('kiterjeszti_normál', []):
-            if kn not in valid_kep_nevek:
-                kit_errors.append(f"{fort['név']}: kiterjeszti_normál ismeretlen képzettség: '{kn}'")
-        for ke in fort.get('kiterjeszti_erős', []):
-            if ke not in valid_kep_nevek:
-                kit_errors.append(f"{fort['név']}: kiterjeszti_erős ismeretlen képzettség: '{ke}'")
-    if kit_errors:
-        print("  ❌ Fortély kiterjesztés referenciális hibák:")
-        for e in kit_errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    # Kiterjesztett képzettségek: referenciális ellenőrzés id-re → generate_tables.validate_id_hivatkozasok
     # Feltétel prefix validáció
     konstansok = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
     valid_prefixek = set(konstansok.get('feltétel_prefixek', []))
@@ -155,29 +131,31 @@ def generate_kiterjesztesek():
     """fortelyok/**/*.yaml kiterjeszti → kiterjesztesek.json (inverz mapping)"""
     fdir = os.path.join(SOURCES_DIR, 'fortelyok')
     mapping = {}
+    nev_by_id = {}
     for root, dirs, files in os.walk(fdir):
         for f in files:
             if not f.endswith('.yaml'):
                 continue
             data = load_yaml(os.path.join(root, f))
             nev = data.get('név', '')
+            nev_by_id[data['id']] = nev
             maxfok = data.get('maxfok', 1)
             kit = data.get('kiterjeszti', {})
             if not kit:
                 continue
             for kep in (kit.get('normál') or []):
-                mapping.setdefault(kepz_nev(kep), []).append({'fortély': nev, 'típus': 'normál', 'maxfok': maxfok})
+                mapping.setdefault(kep, []).append({'fortély': data['id'], 'név': nev, 'típus': 'normál', 'maxfok': maxfok})
             for kep in (kit.get('erős') or []):
-                mapping.setdefault(kepz_nev(kep), []).append({'fortély': nev, 'típus': 'erős', 'maxfok': maxfok})
+                mapping.setdefault(kep, []).append({'fortély': data['id'], 'név': nev, 'típus': 'erős', 'maxfok': maxfok})
     # Sort keys and value lists for deterministic output
     sorted_mapping = {}
     for key in sorted(mapping.keys()):
-        sorted_mapping[key] = sorted(mapping[key], key=lambda x: x['fortély'])
+        sorted_mapping[key] = sorted(mapping[key], key=lambda x: nev_by_id[x['fortély']])   # UI-sorrend: fortély-név
     write_json('kiterjesztesek.json', sorted_mapping)
 
 
 def generate_primer_fortelyok():
-    """fortelyok/**/*.yaml → primer_fortelyok.json (harci+misztikus nevek)"""
+    """fortelyok/**/*.yaml → primer_fortelyok.json (harci+misztikus fortély-id-k)"""
     fdir = os.path.join(SOURCES_DIR, 'fortelyok')
     primer_names = []
     for root, dirs, files in os.walk(fdir):
@@ -186,6 +164,6 @@ def generate_primer_fortelyok():
                 continue
             data = load_yaml(os.path.join(root, f))
             if data.get('csoport', '') in ('harci', 'misztikus'):
-                primer_names.append(data['név'])
+                primer_names.append(data['id'])
     primer_names.sort()
     write_json('primer_fortelyok.json', primer_names)

@@ -1,15 +1,20 @@
+import type { Kepzettseg } from '../engine/types';
+import type { KepzettsegDef } from '../engine/data-loader';
+import { képzettségNév, képzettségSzint } from '../engine/azonosito';
 import type { FortelySummary, FortelyFokSummary } from '../engine/data-loader';
 import { fmtCode } from './formatters';
 
 interface Props {
+  /** Képzettség-definíciók a kiterjesztett képzettségek neveihez (id → név). */
+  kepzettsegDefs: KepzettsegDef[];
   def: FortelySummary;
   /** Aktuális fok def (game-mode); ha undefined → picker mód (összes fok) */
   fokDef?: FortelyFokSummary;
   /** Képzettségek listája szín-jelzéshez; ha üres/undefined → nincs szín */
-  képzettségek?: { név: string; szint: number }[];
+  képzettségek?: Kepzettseg[];
 }
 
-export function FortelyDetails({ def, fokDef, képzettségek }: Props) {
+export function FortelyDetails({ def, fokDef, képzettségek, kepzettsegDefs }: Props) {
   const pickerMode = !fokDef;
 
   return (
@@ -37,17 +42,19 @@ export function FortelyDetails({ def, fokDef, képzettségek }: Props) {
         </div>
       ))}
 
-      <KiterjesztesLista label="Normál kiterjesztés" nevek={def.kiterjeszti_normál} képzettségek={képzettségek} />
-      <KiterjesztesLista label="Erős kiterjesztés" nevek={def.kiterjeszti_erős} képzettségek={képzettségek} />
+      <KiterjesztesLista label="Normál kiterjesztés" nevek={def.kiterjeszti_normál} képzettségek={képzettségek} kepzettsegDefs={kepzettsegDefs} />
+      <KiterjesztesLista label="Erős kiterjesztés" nevek={def.kiterjeszti_erős} képzettségek={képzettségek} kepzettsegDefs={kepzettsegDefs} />
     </div>
   );
 }
 
 /** Közös kiterjesztés lista renderelő */
-function KiterjesztesLista({ label, nevek, képzettségek }: {
+function KiterjesztesLista({ label, nevek, képzettségek, kepzettsegDefs }: {
   label: string;
+  /** Képzettség hivatkozási kulcsok. */
   nevek: string[];
-  képzettségek?: { név: string; szint: number }[];
+  képzettségek?: Kepzettseg[];
+  kepzettsegDefs: KepzettsegDef[];
 }) {
   if (nevek.length === 0) return null;
   return (
@@ -55,8 +62,8 @@ function KiterjesztesLista({ label, nevek, képzettségek }: {
       <span className="info-panel-label">{label}:</span>{' '}
       <span className="info-panel-kit">
         {nevek.map((kn, i) => (
-          <span key={i} className={képzettségek ? (képzettségek.some(k => k.név === kn && k.szint >= 1) ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
-            {kn}{i < nevek.length - 1 ? ', ' : ''}
+          <span key={i} className={képzettségek ? (képzettségSzint(képzettségek, kn) >= 1 ? 'fort-req-met' : 'fort-req-unmet') : undefined}>
+            {képzettségNév(kn, { kepzettsegDefs })}{i < nevek.length - 1 ? ', ' : ''}
           </span>
         ))}
       </span>

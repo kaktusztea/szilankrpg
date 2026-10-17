@@ -5,33 +5,33 @@ import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 
 const data = {
-  konstansok: { fegyver_kategória_harcmodor: { kard: 'Kardvívás', ököl: 'Közelharc' } },
+  konstansok: { fegyver_kategória_harcmodor: { kard: 'kardvívás', ököl: 'közelharc' } },
 } as unknown as GameData;
 
 const karakter = {
   képzettségek: [
-    { név: 'Kardvívás', szint: 6 },
-    { név: 'Közelharc', szint: 3 },
-    { név: 'Lándzsavívás', szint: 2 },
+    { id: 'harcmodor', elem: 'kardvívás', szint: 6 },
+    { id: 'harcmodor', elem: 'közelharc', szint: 3 },
+    { id: 'harcmodor', elem: 'lándzsavívás', szint: 2 },
   ],
-  fortélyok: [{ név: 'Mesterfegyver', fok: 1 }],
+  fortélyok: [{ id: 'mesterfegyver', fok: 1, elem: ''}],
 } as unknown as Karakter;
 
 describe('követelményTeljesül', () => {
   it('"Harcmodor" = bármely harcmodor-képzettség max szintje (Kardvívás 6 ≥ 5)', () => {
-    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'Harcmodor', érték: 5 };
+    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'harcmodor', érték: 5 };
     expect(követelményTeljesül(köv, karakter, data)).toBe(true);
   });
   it('konkrét képzettség szint alatt → false', () => {
-    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'Lándzsavívás', érték: 6 };
+    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'harcmodor/lándzsavívás', érték: 6 };
     expect(követelményTeljesül(köv, karakter, data)).toBe(false);
   });
   it('fortély fok teljesül', () => {
-    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'fortély', név: 'Mesterfegyver', érték: 1 };
+    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'fortély', név: 'mesterfegyver', érték: 1 };
     expect(követelményTeljesül(köv, karakter, data)).toBe(true);
   });
   it('hiányzó fortély → false', () => {
-    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'fortély', név: 'Pajzshasználat', érték: 2 };
+    const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'fortély', név: 'pajzshasználat', érték: 2 };
     expect(követelményTeljesül(köv, karakter, data)).toBe(false);
   });
   it('informatív (egyéb) → null (nem gépi)', () => {
@@ -71,15 +71,15 @@ describe('követelményTeljesül', () => {
 
 describe('gépiKövetelményStátusz', () => {
   it('minden gépi teljesül → nincs hiány', () => {
-    const k: ManoverKövetelmény[] = [{ erősség: 'normál', típus: 'képzettség', név: 'Kardvívás', érték: 6 }];
+    const k: ManoverKövetelmény[] = [{ erősség: 'normál', típus: 'képzettség', név: 'harcmodor/kardvívás', érték: 6 }];
     expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: false, normálHiány: false });
   });
   it('gépi Normál hiány', () => {
-    const k: ManoverKövetelmény[] = [{ erősség: 'normál', típus: 'képzettség', név: 'Lándzsavívás', érték: 6 }];
+    const k: ManoverKövetelmény[] = [{ erősség: 'normál', típus: 'képzettség', név: 'harcmodor/lándzsavívás', érték: 6 }];
     expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: false, normálHiány: true });
   });
   it('gépi Erős hiány', () => {
-    const k: ManoverKövetelmény[] = [{ erősség: 'erős', típus: 'fortély', név: 'Pajzshasználat', érték: 2 }];
+    const k: ManoverKövetelmény[] = [{ erősség: 'erős', típus: 'fortély', név: 'pajzshasználat', érték: 2 }];
     expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: true, normálHiány: false });
   });
   it('informatív követelmény nem befolyásol (null)', () => {

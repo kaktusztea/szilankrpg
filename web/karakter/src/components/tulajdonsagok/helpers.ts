@@ -1,140 +1,74 @@
 import type { KepzettsegDef } from '../../engine/data-loader';
 import type { KepzettsegSlot } from './types';
+import { bontKépzKulcs, képzettségNév, isHarcmodorId, HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID, TRADÍCIÓ_ID } from '../../engine/azonosito';
 
 /**
- * Megjelenítési név: többszörös képzettségeknél "AlapNév: AlNév" formátum.
+ * Megjelenítési név egy képzettség hivatkozási kulcsából ("lexikum", "harcmodor/kardvívás", "tradíció/Vulgármágia").
+ * Harcmodornál az elem neve ("Kardvívás" - a karakterlapon így áll), egyéb többszörösnél "AlapNév: elem".
  */
-export function getDisplayName(név: string, kepzettsegDefs: KepzettsegDef[]): string {
-  if (név.startsWith('Tradíció: ')) return név;
-  for (const d of kepzettsegDefs) {
-    if (d.többszörös.length === 0) continue;
-    if (d.többszörös[0] === '*') {
-      if (név.startsWith(d.név + ':')) return név;
-    } else {
-      if (d.többszörös.includes(név)) return `${d.név}: ${név}`;
-    }
-  }
-  return név;
+export function getDisplayName(kulcs: string, kepzettsegDefs: KepzettsegDef[]): string {
+  const { id, elem } = bontKépzKulcs(kulcs);
+  if (elem && isHarcmodorId(id)) return `${kepzettsegDefs.find(d => d.id === id)?.név ?? id}: ${képzettségNév(kulcs, { kepzettsegDefs })}`;
+  return képzettségNév(kulcs, { kepzettsegDefs });
+}
+
+/** Def lookup kulcs alapján (többszörösnél az alap def). */
+export function findDef(kulcs: string, kepzettsegDefs: KepzettsegDef[]): KepzettsegDef | undefined {
+  const { id } = bontKépzKulcs(kulcs);
+  return kepzettsegDefs.find(d => d.id === id);
 }
 
 /**
- * Def lookup: többszörös képzettségeknél az alap def-et adja vissza.
- */
-export function findDef(név: string, kepzettsegDefs: KepzettsegDef[]): KepzettsegDef | undefined {
-  if (név.startsWith('Tradíció: ')) return kepzettsegDefs.find(d => d.név === 'Tradíció');
-  for (const d of kepzettsegDefs) {
-    if (d.többszörös.length === 0) continue;
-    if (d.többszörös[0] === '*' && név.startsWith(d.név + ':')) return d;
-    if (d.többszörös.includes(név)) return d;
-  }
-  return kepzettsegDefs.find(d => d.név === név);
-}
-
-/**
- * Csoport elérhető neveinek generálása (többszörös kibontva).
+ * Csoport felvehető képzettségei (többszörös kibontva). `value` = hivatkozási kulcs; szabad szöveges
+ * többszörösnél `__prompt:<id>`, Tradíciónál `__tradicio`.
  */
 export function getAvailableNames(
   csoport: string,
-  usedNames: string[],
+  usedKeys: string[],
   defsByGroup: Map<string, KepzettsegDef[]>
 ): { label: string; value: string }[] {
   const csoportDefs = defsByGroup.get(csoport) || [];
   const options: { label: string; value: string }[] = [];
   for (const d of csoportDefs) {
-    if (d.név === 'Tradíció') {
-      const hasTradicio = usedNames.some(n => n.startsWith('Tradíció: '));
-      if (!hasTradicio) options.push({ label: 'Tradíció', value: '__tradicio' });
+    if (d.id === TRADÍCIÓ_ID) {
+      if (!usedKeys.some(k => k.startsWith(`${TRADÍCIÓ_ID}/`))) options.push({ label: d.név, value: '__tradicio' });
       continue;
     }
     if (d.többszörös.length > 0) {
       if (d.többszörös[0] === '*') {
-        options.push({ label: `${d.név} (új)`, value: `__prompt:${d.név}` });
+        options.push({ label: `${d.név} (új)`, value: `__prompt:${d.id}` });
       } else {
         for (const sub of d.többszörös) {
-          if (!usedNames.includes(sub)) {
-            options.push({ label: `${d.név}: ${sub}`, value: `${d.név}:${sub}` });
-          }
+          const kulcs = `${d.id}/${isHarcmodorId(d.id) ? sub.toLowerCase() : sub}`;   // harcmodor-elem = konstansok.harcmodorok (kisbetűs)
+          if (!usedKeys.includes(kulcs)) options.push({ label: `${d.név}: ${sub}`, value: kulcs });
         }
       }
-    } else {
-      if (!usedNames.includes(d.név)) {
-        options.push({ label: d.név, value: d.név });
-      }
+    } else if (!usedKeys.includes(d.id)) {
+      options.push({ label: d.név, value: d.id });
     }
   }
   return options.sort((a, b) => a.value === '__tradicio' ? -1 : b.value === '__tradicio' ? 1 : 0);
 }
 
-/**
- * Adott csoportba tartozó felvett képzettség slot-ok.
- */
+/** Adott csoportba tartozó felvett képzettség slot-ok (a def csoportja szerint). */
 export function getKepzettsegekForCsoport(
   csoport: string,
   képzettségek: KepzettsegSlot[],
   defsByGroup: Map<string, KepzettsegDef[]>
 ): KepzettsegSlot[] {
-  const csoportDefs = defsByGroup.get(csoport) || [];
-  const allValidNames = new Set<string>();
-  const freeTextPrefixes: string[] = [];
-  for (const d of csoportDefs) {
-    if (d.név === 'Tradíció') {
-      freeTextPrefixes.push('Tradíció: ');
-      continue;
-    }
-    if (d.többszörös.length > 0) {
-      if (d.többszörös[0] === '*') {
-        freeTextPrefixes.push(d.név + ':');
-      } else {
-        for (const sub of d.többszörös) allValidNames.add(sub);
-      }
-    } else {
-      allValidNames.add(d.név);
-    }
-  }
-  return képzettségek.filter(k =>
-    allValidNames.has(k.név) || freeTextPrefixes.some(p => k.név.startsWith(p))
-  );
+  const idk = new Set((defsByGroup.get(csoport) || []).map(d => d.id));
+  return képzettségek.filter(k => idk.has(k.id));
 }
 
 /**
- * Képzettség slot-ok rendezése csoporton belül.
+ * Képzettség slot-ok rendezése csoporton belül: Tradíció, Arkánumok, közelharci, távolsági harcmodorok,
+ * majd név szerint.
  */
-export function sortKepzettsegSlotok(slotok: KepzettsegSlot[], kepzettsegDefs?: KepzettsegDef[]): KepzettsegSlot[] {
-  // Build harcmodor name sets for grouping
-  const közelharciNames = new Set<string>();
-  const távharciNames = new Set<string>();
-  if (kepzettsegDefs) {
-    const hmDef = kepzettsegDefs.find(d => d.név === 'Harcmodor');
-    if (hmDef && hmDef.többszörös.length > 0) {
-      for (const n of hmDef.többszörös) közelharciNames.add(n);
-    }
-    const thDef = kepzettsegDefs.find(d => d.név === 'Távolsági harcmodor');
-    if (thDef && thDef.többszörös.length > 0) {
-      for (const n of thDef.többszörös) távharciNames.add(n);
-    }
-  }
-
-  return slotok.slice().sort((a, b) => {
-    const aTrad = a.név.startsWith('Tradíció');
-    const bTrad = b.név.startsWith('Tradíció');
-    if (aTrad && !bTrad) return -1;
-    if (bTrad && !aTrad) return 1;
-    const aArk = a.név.startsWith('Arkánum');
-    const bArk = b.név.startsWith('Arkánum');
-    if (aArk && !bArk) return -1;
-    if (bArk && !aArk) return 1;
-    // Közelharci harcmodorok
-    const aKhm = közelharciNames.has(a.név);
-    const bKhm = közelharciNames.has(b.név);
-    if (aKhm && !bKhm) return -1;
-    if (bKhm && !aKhm) return 1;
-    // Távharci harcmodorok (after közelharci)
-    const aThm = távharciNames.has(a.név);
-    const bThm = távharciNames.has(b.név);
-    if (aThm && !bThm) return -1;
-    if (bThm && !aThm) return 1;
-    return a.név.localeCompare(b.név, 'hu');
-  });
+export function sortKepzettsegSlotok(slotok: KepzettsegSlot[], kepzettsegDefs: KepzettsegDef[] = []): KepzettsegSlot[] {
+  const rang = (k: KepzettsegSlot) => k.id === TRADÍCIÓ_ID ? 0 : k.id.startsWith('arkánum_') ? 1
+    : k.id === HARCMODOR_ID ? 2 : k.id === TÁVOLSÁGI_HARCMODOR_ID ? 3 : 4;
+  const név = (k: KepzettsegSlot) => képzettségNév(k, { kepzettsegDefs });
+  return slotok.slice().sort((a, b) => (rang(a) - rang(b)) || név(a).localeCompare(név(b), 'hu'));
 }
 
 /**

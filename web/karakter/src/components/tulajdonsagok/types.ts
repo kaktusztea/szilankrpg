@@ -1,11 +1,9 @@
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { PróbaEnyhítés, StatuszEntry } from '../../engine/data-types';
-import type { Tulajdonsagok, Karakter } from '../../engine/types';
+import type { Tulajdonsagok, Karakter, Kepzettseg } from '../../engine/types';
 
-export interface KepzettsegSlot {
-  név: string;
-  szint: number;
-}
+/** A karakter egy képzettsége (engine/types Kepzettseg). */
+export type KepzettsegSlot = Kepzettseg;
 
 export interface Props {
   data: GameData;
@@ -58,6 +56,8 @@ export interface KepzettsegRowProps {
   próbaEnyhítések: PróbaEnyhítés[];
   /** Fortély szituációs próba-bónuszai erre a képzettségre (kapcsolható „Fortélyok" tábla a popupban). */
   fortélyBónuszok?: { érték: number; leírás: string }[];
+  /** Képzettség-definíciók (id → név feloldás a próba-popupban). */
+  kepzettsegDefs: KepzettsegDef[];
   /** Felszerelés-túlterhelés Hátrány (Fizikai csoportnál), különben 0/false. */
   felszEH?: number;
   felszNemHarcol?: boolean;

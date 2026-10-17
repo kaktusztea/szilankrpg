@@ -5,17 +5,17 @@ import { calcFortelyMods } from './fortely-mods';
 
 const data = {
   fortelySummaries: [
-    { név: 'A', fokok: [{ fok: 2, módosítók: [{ cél: 'TÉ', mód: 'flat', érték: 3, feltétel: 'x' }] }] },
-    { név: 'B', fokok: [{ fok: 1, módosítók: [{ cél: 'VÉ', mód: 'scaled', forrás: 'kardvívás', arány: 0.5 }] }] },
-    { név: 'C', session_toggle: true, fokok: [{ fok: 1, módosítók: [{ cél: 'TÉ', mód: 'flat', érték: 5 }] }] },
+    { id: 'a', név: 'A', fokok: [{ fok: 2, módosítók: [{ cél: 'TÉ', mód: 'flat', érték: 3, feltétel: 'x' }] }] },
+    { id: 'b', név: 'B', fokok: [{ fok: 1, módosítók: [{ cél: 'VÉ', mód: 'scaled', forrás: 'harcmodor/kardvívás', arány: 0.5 }] }] },
+    { id: 'c', név: 'C', session_toggle: true, fokok: [{ fok: 1, módosítók: [{ cél: 'TÉ', mód: 'flat', érték: 5 }] }] },
     // Not owned by the character → contributes via alapeset (fok 0)
-    { név: 'Alap', fokok: [{ fok: 0, hatás: [], módosítók: [{ cél: 'SP', mód: 'flat', érték: 1, feltétel: 'af' }] }] },
+    { id: 'alap', név: 'Alap', fokok: [{ fok: 0, hatás: [], módosítók: [{ cél: 'SP', mód: 'flat', érték: 1, feltétel: 'af' }] }] },
   ],
 } as unknown as GameData;
 
 const karakter = {
-  fortélyok: [{ név: 'A', fok: 2 }, { név: 'B', fok: 1 }, { név: 'C', fok: 1 }],
-  képzettségek: [{ név: 'Kardvívás', szint: 4 }],
+  fortélyok: [{ id: 'a', fok: 2, elem: '' }, { id: 'b', fok: 1, elem: '' }, { id: 'c', fok: 1, elem: '' }],
+  képzettségek: [{ id: 'harcmodor', elem: 'kardvívás', szint: 4 }],
 } as unknown as Karakter;
 
 const alwaysTrue = () => true;
@@ -43,9 +43,9 @@ describe('calcFortelyMods', () => {
 
   it('collects a scaled "erőbónusz" SP mod as an arány (weapon-dependent, applied by fegyver_SP)', () => {
     const d = { fortelySummaries: [
-      { név: 'R', fokok: [{ fok: 1, módosítók: [{ cél: 'SP', mód: 'scaled', forrás: 'erőbónusz', arány: 1, feltétel: 'taktika:roham' }] }] },
+      { id: 'r', név: 'R', fokok: [{ fok: 1, módosítók: [{ cél: 'SP', mód: 'scaled', forrás: 'erőbónusz', arány: 1, feltétel: 'taktika:roham' }] }] },
     ] } as unknown as GameData;
-    const k = { fortélyok: [{ név: 'R', fok: 1 }], képzettségek: [] } as unknown as Karakter;
+    const k = { fortélyok: [{ id: 'r', fok: 1, elem: '' }], képzettségek: [] } as unknown as Karakter;
     const on = calcFortelyMods(k, {} as Session, d, new Set(), f => f === 'taktika:roham');
     expect(on.SP_erőbónusz_arány).toBe(1);
     expect(on.SP).toBe(0);                // nem flat SP - a képzettség-lookup ág nem fut rá
@@ -65,7 +65,7 @@ describe('calcFortelyMods', () => {
   it('applies a flat SFÉ mod (Természetes páncél mintájára) - nincs kivétel-ág, generikus cél', () => {
     const sfeData = {
       fortelySummaries: [
-        { név: 'Természetes páncél', fokok: [
+        { id: 'természetes_páncél', fokok: [
           { fok: 1, módosítók: [{ cél: 'SFÉ', mód: 'flat', érték: 2, feltétel: '' }] },
           { fok: 2, módosítók: [{ cél: 'SFÉ', mód: 'flat', érték: 4, feltétel: '' }] },
           { fok: 3, módosítók: [{ cél: 'SFÉ', mód: 'flat', érték: 6, feltétel: '' }] },
@@ -73,7 +73,7 @@ describe('calcFortelyMods', () => {
       ],
     } as unknown as GameData;
     const sfeKarakter = {
-      fortélyok: [{ név: 'Természetes páncél', fok: 2 }],
+      fortélyok: [{ id: 'természetes_páncél', fok: 2, elem: ''}],
       képzettségek: [],
     } as unknown as Karakter;
     const session = {} as unknown as Session;

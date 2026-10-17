@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import { képzKulcs } from '../../engine/azonosito';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from './PopupOverlay';
@@ -20,7 +22,7 @@ interface PopupState {
 interface Props {
   data: GameData;
   karakter: Karakter;
-  képzettségek: { név: string; szint: number }[];
+  képzettségek: Kepzettseg[];
   state: PopupState;
   onClose: (key: keyof PopupState) => void;
   updateFegyver: (idx: number, patch: { idea?: number; anyag?: string }) => void;
@@ -30,7 +32,7 @@ interface Props {
   setPajzsFok: (fok: number) => void;
   updatePajzs: (patch: { méret?: string }) => void;
   removeFegyver: (idx: number) => void;
-  setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
 }
 
 export function Popups({
@@ -91,7 +93,7 @@ export function Popups({
           fémalapanyagok={konstansok.páncél_fémalapanyagok}
           kidolgozottságOpciók={Object.keys(konstansok.páncél_csatolt_tag_mgt.hajlékonyvért_nem_fém)}
           méretOpciók={(konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[]).map(m => m.fokozat)}
-          merevvertFok={k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0}
+          merevvertFok={k.fortélyok.find(f => f.id === 'merevvértviselet')?.fok ?? 0}
           onUpdate={patch => { updatePancel(patch); onClose('pancelPopup'); }}
           onMerevvert={fok => { setMerevvertFok(fok); onClose('pancelPopup'); }}
         />
@@ -115,7 +117,7 @@ export function Popups({
           {pajzsPopup === 'pajzshasználat' && (
             <FokRadios
               values={[0, 1, 2, 3]}
-              current={k.fortélyok.find(f => f.név === 'Pajzshasználat')?.fok ?? 0}
+              current={k.fortélyok.find(f => f.id === 'pajzshasználat')?.fok ?? 0}
               onSelect={n => { setPajzsFok(n); onClose('pajzsPopup'); }}
             />
           )}
@@ -135,23 +137,23 @@ export function Popups({
         <DeleteConfirmPopup
           label={harciKepzDisplayName(data, deleteKepzTarget)}
           buttonText="Képzettség törlése"
-          onConfirm={() => { setKépzettségek(prev => prev.filter(kp => kp.név !== deleteKepzTarget)); onClose('deleteKepzTarget'); }}
+          onConfirm={() => { setKépzettségek(prev => prev.filter(kp => képzKulcs(kp) !== deleteKepzTarget)); onClose('deleteKepzTarget'); }}
           onClose={() => onClose('deleteKepzTarget')}
         />
       )}
 
       {kepzSzintTarget && (
         <PopupOverlay onClose={() => {
-          const kp = képzettségek.find(k => k.név === kepzSzintTarget);
-          if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget));
+          const kp = képzettségek.find(k => képzKulcs(k) === kepzSzintTarget);
+          if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => képzKulcs(k) !== kepzSzintTarget));
           onClose('kepzSzintTarget');
         }}>
           <SzintGrid
             label={`${harciKepzDisplayName(data, kepzSzintTarget)} - szint:`}
             maxSzint={data.konstansok.arányok.képzettség_max_szint}
-            current={képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0}
+            current={képzettségek.find(kp => képzKulcs(kp) === kepzSzintTarget)?.szint ?? 0}
             onSelect={n => {
-              setKépzettségek(prev => prev.map(kp => kp.név === kepzSzintTarget ? { ...kp, szint: n } : kp));
+              setKépzettségek(prev => prev.map(kp => képzKulcs(kp) === kepzSzintTarget ? { ...kp, szint: n } : kp));
               onClose('kepzSzintTarget');
             }}
           />

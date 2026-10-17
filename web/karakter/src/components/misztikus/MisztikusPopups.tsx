@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import { képzKulcs } from '../../engine/azonosito';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import type { PopupState, TradícióOpció } from './types';
@@ -14,12 +16,14 @@ import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 
 interface Props {
   state: PopupState;
-  képzettségek: { név: string; szint: number }[];
+  képzettségek: Kepzettseg[];
   fortélyok: Fortely[];
   tradícióOpciók: TradícióOpció[];
   misztFortDefs: FortelySummary[];
   önuralom: number;
   aurahangolás: number;
+  /** Képzettség-kulcs → megjelenített név (felirat). */
+  képzNév: (kulcs: string) => string;
   actions: {
     closeDelete: () => void;
     closeSzint: () => void;
@@ -43,29 +47,29 @@ interface Props {
   onConfirmDeleteFort: () => void;
 }
 
-export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióOpciók, misztFortDefs, önuralom, aurahangolás, actions, ...h }: Props) {
+export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióOpciók, misztFortDefs, önuralom, aurahangolás, képzNév, actions, ...h }: Props) {
   const { deleteTarget, szintTarget, promptTarget, promptValue, tradícióPicker, tradícióAltípusPicker, felvételDef, misztFokTarget, deleteFortIdx } = state;
 
   // Derived values for fok/delete popups
   const fokFortély = misztFokTarget !== null ? fortélyok[misztFokTarget] : null;
-  const fokDef = fokFortély ? misztFortDefs.find(d => d.név === fokFortély.név) : null;
+  const fokDef = fokFortély ? misztFortDefs.find(d => d.id === fokFortély.id) : null;
   const delFortSlot = deleteFortIdx !== null ? fortélyok[deleteFortIdx] : null;
-  const delFortLabel = delFortSlot ? `${delFortSlot.név}${delFortSlot.spec_elem ? ` - ${delFortSlot.spec_elem}` : ''}` : '';
+  const delFortLabel = delFortSlot ? `${misztFortDefs.find(d => d.id === delFortSlot.id)?.név ?? delFortSlot.id}${delFortSlot.elem ? ` - ${delFortSlot.elem}` : ''}` : '';
 
   return (
     <>
       {deleteTarget && (
-        <DeleteConfirmPopup label={deleteTarget} buttonText="Képzettség törlése" onConfirm={h.onConfirmDelete} onClose={actions.closeDelete} />
+        <DeleteConfirmPopup label={képzNév(deleteTarget)} buttonText="Képzettség törlése" onConfirm={h.onConfirmDelete} onClose={actions.closeDelete} />
       )}
 
       {szintTarget && (
-        <SzintPickerPopup target={szintTarget}
-          currentSzint={képzettségek.find(k => k.név === szintTarget)?.szint ?? 0}
+        <SzintPickerPopup target={képzNév(szintTarget)}
+          currentSzint={képzettségek.find(k => képzKulcs(k) === szintTarget)?.szint ?? 0}
           onPick={h.onSzintPick} onClose={actions.closeSzint} />
       )}
 
       {promptTarget && (
-        <TextPromptPopup target={promptTarget} value={promptValue}
+        <TextPromptPopup target={képzNév(promptTarget)} value={promptValue}
           onChange={actions.setPromptValue} onConfirm={h.onPromptConfirm} onClose={actions.closePrompt} />
       )}
 
@@ -81,12 +85,12 @@ export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióO
 
       {felvételDef && (
         <FortélyFelvétel def={felvételDef} kiérdemeltOpció={false}
-          felvettSpecElemek={fortélyok.filter(f => f.név === felvételDef.név).map(f => f.spec_elem)}
+          felvettSpecElemek={fortélyok.filter(f => f.id === felvételDef.id).map(f => f.elem)}
           onDone={h.onFelvételDone} onCancel={actions.closeFelvétel} />
       )}
 
       {misztFokTarget !== null && fokFortély && (
-        <FokPickerPopup név={fokFortély.név} maxfok={fokDef?.maxfok ?? 3}
+        <FokPickerPopup név={fokDef?.név ?? fokFortély.id} maxfok={fokDef?.maxfok ?? 3}
           currentFok={fokFortély.fok} onPick={h.onFokPick} onClose={actions.closeFok} />
       )}
 

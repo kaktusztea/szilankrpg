@@ -5,7 +5,6 @@ import os
 from .common import SOURCES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
 from .validators import id_hibak
-from .hivatkozas import kepz_nev  # ÁTMENETI (F2-F3)
 
 
 def generate_kepzettsegek():
@@ -14,7 +13,6 @@ def generate_kepzettsegek():
     # Load szituáció mapping
     szit_path = os.path.join(SOURCES_DIR, 'szituacio_mapping.yaml')
     szit_mapping = load_yaml(szit_path) if os.path.exists(szit_path) else {}
-    szit_mapping = {kepz_nev(k): v for k, v in szit_mapping.items()}   # kulcs: képzettség-id → név
     result = []
     errors = []
     id_elemek = []
@@ -52,7 +50,7 @@ def generate_kepzettsegek():
                 'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
                 'helyzetfüggő_módosítók': data.get('helyzetfüggő_módosítók', []),
                 'dobás_komment': data.get('dobás_komment', []),
-                'kapcsolódó_szituációk': szit_mapping.get(data['név'], []),
+                'kapcsolódó_szituációk': szit_mapping.get(data['id'], []),
                 'md_fájl': md_fajl,
             })
     errors += id_hibak(id_elemek, 'képzettség')

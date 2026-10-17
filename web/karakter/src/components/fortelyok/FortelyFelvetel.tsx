@@ -32,18 +32,18 @@ export function FortélyFelvétel({ def, kiérdemeltOpció, felvettSpecElemek, o
   const [freetextValue, setFreetextValue] = useState('');
 
   if (firstStep === null) {
-    onDone({ név: def.név, fok: 1, spec_típus: '', spec_elem: '', kiérdemelt: false });
+    onDone({ id: def.id, fok: 1, elem: '', kiérdemelt: false });
     return null;
   }
 
   function finish(fok = 1) {
-    onDone({ név: def.név, fok, spec_típus: def.többszörös_típus, spec_elem: specElem, kiérdemelt });
+    onDone({ id: def.id, fok, elem: specElem, kiérdemelt });
   }
 
   function handleListaSelect(item: string) {
     setSpecElem(item);
     if (def.maxfok > 1) { setSpecElem(item); setStep('fok'); return; }
-    onDone({ név: def.név, fok: 1, spec_típus: def.többszörös_típus, spec_elem: item, kiérdemelt: false });
+    onDone({ id: def.id, fok: 1, elem: item, kiérdemelt: false });
   }
 
   function handleFreetextOk() {
@@ -52,13 +52,13 @@ export function FortélyFelvétel({ def, kiérdemeltOpció, felvettSpecElemek, o
     setSpecElem(val);
     if (kiérdemeltOpció) { setSpecElem(val); setStep('kiérdemelt'); return; }
     if (def.maxfok > 1) { setSpecElem(val); setStep('fok'); return; }
-    onDone({ név: def.név, fok: 1, spec_típus: def.többszörös_típus, spec_elem: val, kiérdemelt: false });
+    onDone({ id: def.id, fok: 1, elem: val, kiérdemelt: false });
   }
 
   function handleKiérdemelt(value: boolean) {
     setKiérdemelt(value);
     if (def.maxfok > 1) { setStep('fok'); return; }
-    onDone({ név: def.név, fok: 1, spec_típus: def.többszörös_típus, spec_elem: specElem, kiérdemelt: value });
+    onDone({ id: def.id, fok: 1, elem: specElem, kiérdemelt: value });
   }
 
   return (

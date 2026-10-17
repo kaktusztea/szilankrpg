@@ -1,3 +1,5 @@
+import type { Kepzettseg } from '../../engine/types';
+import { képzKulcs } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
 import { fortélyFok } from '../../engine/utils';
@@ -11,8 +13,8 @@ interface Props {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
-  képzettségek: { név: string; szint: number }[];
-  setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  képzettségek: Kepzettseg[];
+  setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
   gameMode: boolean;
 }
 
@@ -26,14 +28,14 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
   };
 
   const popup = usePopupState((név) => {
-    const kp = képzettségek.find(k => k.név === név);
-    if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== név));
+    const kp = képzettségek.find(k => képzKulcs(k) === név);
+    if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => képzKulcs(k) !== név));
   });
 
   const mutators = useKarakterMutators(data, undoSetKarakter);
 
-  const merevvertFok = fortélyFok(karakter, 'Merevvértviselet');
-  const pajzsFok = fortélyFok(karakter, 'Pajzshasználat');
+  const merevvertFok = fortélyFok(karakter, 'merevvértviselet');
+  const pajzsFok = fortélyFok(karakter, 'pajzshasználat');
 
   return (
     <div className="screen harcertekek-screen">

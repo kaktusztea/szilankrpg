@@ -1,5 +1,6 @@
 import type { Karakter } from './types';
 import type { GameData } from './data-loader';
+import { EGYEDI_FORTÉLY_ID, TRADÍCIÓ_ID, képzKulcs } from './azonosito';
 
 /** Required top-level fields in a Karakter object. */
 const REQUIRED_TOP_FIELDS = [
@@ -27,8 +28,9 @@ export function validateKarakter(obj: unknown): { valid: true } | { valid: false
   const missing: string[] = [];
 
   // Check schema_version first
-  if (k.schema_version !== 2) {
-    missing.push('schema_version (≠ 2)');
+  // 3: fortély/képzettség id + elem (2026-10-17). Régebbi mentés nem tölthető be (nincs migráció).
+  if (k.schema_version !== 3) {
+    missing.push(`schema_version (${String(k.schema_version)} ≠ 3 - régi formátumú karakter, nem tölthető be)`);
   }
 
   // Top-level fields
@@ -65,25 +67,18 @@ export function validateKarakterData(k: Karakter, data: GameData): string | null
     errors.push(`Ismeretlen anyanyelv: "${k.anyanyelv}"`);
   }
 
-  const fortelyNevek = new Set(data.fortelySummaries.map(d => d.név));
+  const fortelyIdk = new Set(data.fortelySummaries.map(d => d.id));
   for (const f of k.fortélyok) {
-    if (!fortelyNevek.has(f.név)) {
-      errors.push(`Ismeretlen fortély: "${f.név}"`);
-    }
+    if (f.id !== EGYEDI_FORTÉLY_ID && !fortelyIdk.has(f.id)) errors.push(`Ismeretlen fortély: "${f.id}"`);
   }
 
-  const validKepNames = new Set(data.kepzettsegDefs.map(d => d.név));
-  for (const d of data.kepzettsegDefs) {
-    if (d.többszörös) for (const alnév of d.többszörös) validKepNames.add(alnév);
-  }
-  const validKepPrefixes = data.kepzettsegDefs.filter(d => d.többszörös.length === 0 && d.csoport === 'misztikus').map(d => d.név + ': ');
-  for (const d of data.kepzettsegDefs) {
-    if (d.többszörös.length > 0 && d.többszörös[0] === '*') validKepPrefixes.push(d.név + ': ');
-  }
+  // Képzettség: létező id; többszörösnél az elem a def listájából (harcmodor: kisbetűs elem) vagy szabad szöveg ('*').
   for (const kep of k.képzettségek) {
-    if (!validKepNames.has(kep.név) && !validKepPrefixes.some(p => kep.név.startsWith(p))) {
-      errors.push(`Ismeretlen képzettség: "${kep.név}"`);
-    }
+    const def = data.kepzettsegDefs.find(d => d.id === kep.id);
+    const szabad = def && (def.többszörös[0] === '*' || def.id === TRADÍCIÓ_ID);
+    const elemOk = !kep.elem ? (def?.többszörös.length ?? 0) === 0 || def?.id === TRADÍCIÓ_ID
+      : szabad || !!def?.többszörös.some(n => n.toLowerCase() === kep.elem);
+    if (!def || !elemOk) errors.push(`Ismeretlen képzettség: "${képzKulcs(kep)}"`);
   }
 
   const validKidolgozottság = new Set(Object.keys(data.konstansok.páncél_csatolt_tag_mgt.merevvért_fém));

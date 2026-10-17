@@ -39,9 +39,9 @@ describe('getExtraFokok', () => {
   it('adds extra fokok from fortély_bővítés', () => {
     const def = {
       fokok: [{ fok: 1, TÉ: -5 }, { fok: 2, TÉ: -10 }],
-      fortély_bővítés: { fortély: 'Harcos', extra_fokok_per_fok: 1 },
+      fortély_bővítés: { fortély: 'harcos', extra_fokok_per_fok: 1 },
     };
-    const karakter = { fortélyok: [{ név: 'Harcos', fok: 2 }] } as any;
+    const karakter = { fortélyok: [{ id: 'harcos', fok: 2, elem: '' }] } as any;
     const result = getExtraFokok(def, karakter);
     expect(result).toHaveLength(4); // 2 base + 2 extra
     expect(result[3].fok).toBe(4);
