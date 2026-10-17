@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { HarcBaseProps } from './types';
 import type { FegyverResult } from './types';
 import type { SebzésRubrika } from '../../engine/types';
-import { useHarcComputed } from './useHarcComputed';
+import { harcFejlécÉrtékek } from './harc-fejlec-calc';
 import { useHint } from '../harcertekek/hooks/useHint';
 import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
@@ -24,8 +24,7 @@ import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { ManoverPicker } from './ManoverPicker';
-import { computeTÉ, computeVÉ, coalesceVéHistory } from './shared';
-import { resolveAktívFegyverContext } from './aktiv-fegyver-ctx';
+import { coalesceVéHistory } from './shared';
 import { toggleHelyzet, GYENGÉBB_KÉZ } from './helyzet-toggle';
 import { rollK20 } from '../../engine/dice';
 import { VÉ_FLASH_MS, VÉ_COALESCE_MS } from '../../ui-constants';
@@ -52,7 +51,8 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const [manoverMód, setManoverMód] = useState<'aktív' | 'passzív'>('aktív');
   const [popupManőver, setPopupManőver] = useState<typeof data.manoverek[number] | null>(null);
 
-  const hc = useHarcComputed(data, karakter, session);
+  // Fejléc-harcértékek: közös számítás (az NJK switcher is ezt mutatja) - harc-fejlec-calc.ts
+  const { hc, téLevonás, ctx, aktívTÉ, aktívVÉ } = harcFejlécÉrtékek(data, karakter, session, sebCount);
   const { hint, showHint } = useHint();
 
   // VÉ flash animation
@@ -141,17 +141,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     });
   }, [sebCount, hc.oszlopMéret]);
 
-  // TÉ levonás az aktuális sérülés alapján (Fájdalomtűrés enyhítéssel)
-  const aktKat = sebCount === 0 ? 0 : Math.min(3, Math.ceil(sebCount / hc.oszlopMéret) - 1);
-  const ftEnyhítés = calcFtEnyhítés(karakter.képzettségek, data.konstansok.fájdalomtűrés_enyhítés);
-  const rawTéLevonás = hc.téLevonások[aktKat];
-  const téLevonás = rawTéLevonás === 0 ? 0 : Math.min(0, rawTéLevonás + ftEnyhítés);
-
-  // Compute active weapon TÉ/VÉ for the header boxes
-  const ctx = resolveAktívFegyverContext(hc, karakter, session, data);
-  const többTámTÉ = data.konstansok.több_támadás_TÉ_levonás;
-  const aktívTÉ = ctx ? computeTÉ(ctx.result.TÉ, téLevonás, hc.taktikaMods['TÉ'], ctx.téExtra, ctx.result.támadások, többTámTÉ) : null;
-  const aktívVÉ = ctx ? computeVÉ(ctx.result.VÉ, ctx.veBónusz, hc.taktikaMods['VÉ'] + hc.helyzetMods.VÉ, session.vé_csökkenés) : null;
 
   // Fárasztás taktika (md/065_02): aktív esetén a TÉ chip NEM Támadó dobást nyit, hanem direktben
   // a VÉ csökkentés popup-ot (nincs támadódobás) - fix taktika-override + feltételes fortély-bővítés.

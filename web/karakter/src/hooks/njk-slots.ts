@@ -4,11 +4,7 @@ import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { evaluate, buildContext } from '../engine/reactive';
 import { readKmJelölések } from './km-jelolesek';
-import { harcmodorÖsszeg as calcHarcmodorÖsszeg, fortélyFok } from '../engine/utils';
-import { buildPancelLookups, calcFogas as calcFogás } from '../components/harc/pancel-calc';
-import { buildFegyverRows, calcFegyverResults } from '../components/harc/fegyver-calc';
-import { buildPajzsFegyverNév, computeVÉ } from '../components/harc/shared';
-import { resolveAktívFegyverContext } from '../components/harc/aktiv-fegyver-ctx';
+import { harcFejlécÉrtékek } from '../components/harc/harc-fejlec-calc';
 
 /**
  * NJK (Nem Játékos Karakter) slot szabályok: tárolási limit + a switcher sáv adatai.
@@ -103,52 +99,12 @@ export interface HarcértékStat {
 }
 
 /**
- * Egy karakter aktuális KÉ/TÉ/VÉ harcértékei - gyors áttekintéshez (NJK switcher chip
- * tooltip + aktív NJK fejléc-box). A HarcScreen-nel AZONOS pure building blockokat
- * használja (buildFegyverRows + calcFegyverResults + resolveAktívFegyverContext), hogy
- * ne duplikálódjon a kalkuláció - a karakter SAJÁT session-je szerinti aktív fegyvert
- * veszi (taktika/helyzet/fortély nélkül: ez a nyugalmi harcérték, a részletes bontás
- * továbbra is a Harc fülön). A KÉ reactive, taktika/fortély KÉ-mod nélkül (gyors becslés).
+ * Egy karakter aktuális KÉ/TÉ/VÉ harcértékei (NJK switcher chip tooltip + aktív NJK fejléc-box), a karakter SAJÁT
+ * session-je szerint. A Harc fül fejlécével azonos számítás (`harcFejlécÉrtékek`).
  */
 export function njkHarcértékStat(karakter: Karakter, data: GameData): HarcértékStat {
-  const k = karakter;
-  const { konstansok } = data;
-
-  // KÉ: tiszta reactive (tulajdonság + tsz), session-független.
-  const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok);
-  const KÉ = evaluate(data.rules, ctx).get('KÉ') ?? 0;
-
-  // TÉ/VÉ: az aktív fegyver harcértékei a közös pure kalkulációból.
-  const harcmodorÖsszeg = calcHarcmodorÖsszeg(k,
-    [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])]);
-  const merevvértFok = fortélyFok(k, 'merevvértviselet');
-  const lookupArrays = buildPancelLookups(konstansok);
-
-  const stringCtx = new Map<string, string>([
-    ['páncél_alap', k.páncél.alap],
-    ['páncél_fémalapanyag', k.páncél.fémalapanyag],
-    ['páncél_kidolgozottság', k.páncél.kidolgozottság],
-    ['páncél_méret_illeszkedés', k.páncél.méret_illeszkedés],
-  ]);
-
-  const pajzsFegyverNév = buildPajzsFegyverNév(k);
-  const fegyverRows = buildFegyverRows(k, data, pajzsFegyverNév);
-  const fegyverResults = calcFegyverResults(
-    fegyverRows, k, data, NO_FORTELY_MODS, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx,
-  );
-  const { pajzsVÉ, fogásResult } = calcFogás(k, k.session, data, NO_FORTELY_MODS);
-
-  const aktív = resolveAktívFegyverContext(
-    { fegyverResults, kétkezesResult: null, fogásResult, pajzsVÉ, pajzsFegyverNév },
-    k, k.session, data,
-  );
-
-  return {
-    KÉ,
-    TÉ: aktív ? aktív.result.TÉ + aktív.téExtra : null,
-    VÉ: aktív ? computeVÉ(aktív.result.VÉ, aktív.veBónusz, 0, k.session.vé_csökkenés) : null,
-  };
+  // Ugyanaz a számítás, mint a Harc fül fejlécéé (fortély, taktika, helyzet, státusz, kétkezes, sebesülés) - 2026-10-17.
+  const f = harcFejlécÉrtékek(data, karakter);
+  return { KÉ: f.ké, TÉ: f.aktívTÉ, VÉ: f.aktívVÉ };
 }
 
-/** Üres fortély-mod map (a gyors stat nem alkalmaz taktika/fortély módosítót). */
-const NO_FORTELY_MODS: Record<string, number> = {};

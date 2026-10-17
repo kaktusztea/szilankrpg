@@ -159,6 +159,7 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   shared.ts                Közös utils: findMfFok, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév
   ep-logic.ts              ÉP sebesülés/gyógyulás pure logika
   harc-reszletek-calc.ts   Részletes értékek bontás
+  harc-fejlec-calc.ts      A fejléc KÉ/TÉ/VÉ egyetlen számítása (harcFejlécÉrtékek) - HarcScreen + NJK switcher gyors-stat
   HarcReszletek.tsx        Részletes értékek box (aktív fegyver harcérték bontás megjelenítés)
   ve-csokkentes-calc.ts    Sikertelen támadás VÉ csökkentése (Fegyverviszony bázis + k20P; taktika override/flat; fortély flat) - §5.3/§13.1
   VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P; a Roham/Öngyilkos roham ×2 szorzó forrás-taktikája kiírva a gombon és a bontásban)

@@ -3,7 +3,6 @@
  * Cél: a stat a HarcScreen pure building blockjaival konzisztens értéket adjon.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
-import { evaluate, buildContext } from '../engine/reactive';
 import { njkHarcértékStat } from '../hooks/njk-slots';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
 import type { GameData } from '../engine/data-loader';
@@ -18,11 +17,8 @@ beforeAll(() => {
 });
 
 describe('njkHarcértékStat', () => {
-  it('KÉ megegyezik a reactive KÉ szabállyal (session-független)', () => {
-    const stat = njkHarcértékStat(karakter, data);
-    const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, data.konstansok);
-    const reactiveKÉ = evaluate(data.rules, ctx).get('KÉ') ?? 0;
-    expect(stat.KÉ).toBe(reactiveKÉ);
+  it('a Harc fül fejlécével AZONOS (KÉ 19 / TÉ 52 / VÉ 59 a teszt karakteren - kétkezes, fortélyok, taktika)', () => {
+    expect(njkHarcértékStat(karakter, data)).toEqual({ KÉ: 19, TÉ: 52, VÉ: 59 });
   });
 
   it('a teszt karakternek van aktív fegyvere → TÉ/VÉ nem null, és pozitív', () => {
