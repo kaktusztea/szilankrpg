@@ -13041,7 +13041,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 
 ### Kapcsolódik
 
-- [Manőverfókusz: Szike](../fortelyok.harci/manoverfokuszok_szike.md)
+- [Manőverfókuszok: Szike](../fortelyok.harci/manoverfokuszok_szike.md)
 - [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
 
 ### Bónuszt ad erre
@@ -22563,6 +22563,8 @@ Első oda-vissza csapásnál:
 
 ❌ Ostorharc harcmodorban
 
+🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
+
 A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy hatalmas sebzést érjen el. Súlyosan sérült harcosok utolsó mentsvára lehet.
 
 🔆 Ha a rohamozó betalál (nem muszáj sebzőnek lennie):
@@ -22609,6 +22611,8 @@ Első oda-vissza csapásnál:
 ❌ Más taktikával együtt
 
 ❌ Ostorharc harcmodorban
+
+🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
 
 🔆 Ha a rohamozó betalál (nem muszáj sebzőnek lennie):
 
@@ -23005,9 +23009,12 @@ Belharc: 2.fok
 ```
 Közelharc harcmodor kötelező
 Max 1 fegyverhossz-kategória fegyver
+  (kivétel: "Belharcban rések közt
+   beszúr" Extrás fegyver)
 
 Puszta kéz harcértékei
   TÉ, VÉ, SP = 0
+  (Természetes fegyver: SP 1)
   Sebzés: FP
   1 ÉP / 5 FP
 ```
@@ -24670,7 +24677,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 
 **Megjegyezés**: a **Fegyver markolat** sebzése: `k20 + 0 SP + Erőbónusz` (Zúzó)
 
-**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
+**Kapcsolódik**: [Manőverfókuszok: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
 
 <br />
 
@@ -24814,7 +24821,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély
 
-**Kapcsolódik**: [Manőverfókusz: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
+**Kapcsolódik**: [Manőverfókuszok: Szike](fortelyok.harci/manoverfokuszok_szike.md) fortély
 
 <br />
 
@@ -25653,7 +25660,6 @@ Zúzó felületek
   → buzogányfej-tompa
   → buzogányfej-szöges
   → ököl
-  → ököl-belharc
   → vasököl
 
 Szúró felületek
@@ -25884,14 +25890,24 @@ Hatás:    VÉ:0
 
 Páncélos ellenfél ellen a hárítási hátrány kiütközik.
 
+### Puszta kéz belharcban
+
+```
+Feltétel: Belharci helyzet
+Hatás:    TÉ:0, VÉ:0, SP:0
+```
+
+Puszta kéz belharcban: a fegyvertelen büntetés megszűnik. Természetes fegyver fortéllyal az SP 1 marad.
+
 ### Belharcban rések közt beszúr
 
 ```
 Feltétel: Belharci helyzet
-Hatás:    célpont páncél SFÉ: 0
+Hatás:    Belharc fegyverhossz-korlát nem vonatkozik rá
+          + földön fekvő ellenfélnél: célpont páncél SFÉ: 0
 ```
 
-Belharcban, földön lévő ellenfélnél a rések közt szúr.
+Belharcban a fegyverhossza ellenére is használható, földön lévő ellenfélnél a rések közt szúr.
 
 ### Pikás közrefogása
 
@@ -26190,8 +26206,7 @@ A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyve
 |                         | vágóél-egyenes-rövid | vágó-egyenes | másodlagos  |  `3` |  `3` |  `+2` |      `2` |    `0` |      `6` | egykezes |   `1` |        `0` |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Pugoss                  | pengehegy-tőr        | szúró        | elsődleges  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes |   `2` |        `0` | Különleges felkészítés; Övön hordható                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |                         | vágóél-egyenes-rövid | vágó-egyenes | másodlagos  |  `4` |  `4` |  `+3` |      `3` |    `0` |      `6` | egykezes |   `2` |        `0` |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Puszta kéz              | ököl                 | zúzó · FP    | elsődleges  | `-3` | `-3` |  `-5` |     `99` |    `0` |      `5` | egykezes |   `0` |        `0` | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Puszta kéz, belharcban  | ököl-belharc         | zúzó · FP    | elsődleges  |  `0` |  `0` |  `+0` |     `99` |    `0` |      `5` | egykezes |   `0` |        `0` | Övön hordható                                                                             | Belharci helyzet: a fegyvertelen büntetés nullázódik.                                                                                                                                                                                                                                                                                                                                                                                        |
+| Puszta kéz              | ököl                 | zúzó · FP    | elsődleges  | `-3` | `-3` |  `-5` |     `99` |    `0` |      `5` | egykezes |   `0` |        `0` | Puszta kéz belharcban; Övön hordható                                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Vasököl / páncélkesztyű | vasököl              | zúzó         | elsődleges  | `-1` | `-2` |  `+0` |      `5` |    `0` |      `5` | egykezes |   `0` |        `0` | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Markolatgomb            | vasököl              | zúzó         | elsődleges  | `-1` | `-2` |  `+0` |      `5` |    `0` |      `5` | egykezes |   `0` |        `0` | Övön hordható                                                                             | A kard markolatgombjával ütés. Ugyanazok az értékei, mint a Vasökölnek.                                                                                                                                                                                                                                                                                                                                                                      |
 | Ramiera                 | pengehegy-tőr        | szúró        | elsődleges  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes |   `2` |        `0` | Különleges felkészítés; Övön hordható                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -26798,9 +26813,7 @@ Zúzó
                      (Vasököl, Markolatgomb)
   ököl               SP:-5, TÉ:-3, VÉ:-3
                      puha: FP-sebzés (Puszta kéz)
-  ököl-belharc       nincs
-                     puha: FP-sebzés (Puszta kéz
-                     Belharcban)
+                     Belharcban: TÉ/VÉ/SP 0 (Extra)
 Szúró
   pengehegy-rejtett  VÉ:-3
                      tenyérbe rejtett tüske
@@ -29333,6 +29346,11 @@ A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy
 
 Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod. Mágikus tárgyak, fegyverek is képesek lehetnek **Hatások** okozására.
 
+### Szorzó hatások ökölszabály ❗
+
+Egy karakterre ható több szorzó kombinációja esetén CSAK a legnagyobb számít.\
+Természetesen ez a másik karakter oldalán is igaz, így szélsőséges esetben lehetséges, hogy a támadó és védő szorzói erősítik egymás hatását (összeszorzódnak).
+
 <br />
 
 ## ⚜️ Előny+1,2 és Hátrány-1,2 Hatások
@@ -29558,7 +29576,7 @@ Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra ninc
 
 Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged duplázódik.
 
-Nem halmozható.
+🔆 Nem halmozható. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
 
 <br />
 
