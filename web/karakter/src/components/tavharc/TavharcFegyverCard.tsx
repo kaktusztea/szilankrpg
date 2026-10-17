@@ -1,4 +1,5 @@
 import type { Karakter, Session } from '../../engine/types';
+import { SP_NINCS } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { calcCÉBontás, calcTámadásLabel, getFortélyCÉ } from './helpers';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './mesterfegyver-calc';
@@ -43,6 +44,8 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
           <span className="he-stat-label">CÉ:</span>
           <span>{bontás.cé}</span>
           {' '}<span className="he-stat-ml">({tám})</span>
+          {' '}<span className="he-stat-ml">SP:</span>
+          <span>{def?.SP === SP_NINCS ? '–' : (def?.SP ?? 0)}</span>
         </span>
       </div>
       <div className="th-card-fields">

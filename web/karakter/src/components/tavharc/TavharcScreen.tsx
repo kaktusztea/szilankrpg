@@ -120,7 +120,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
       {tfDef && gameMode && (
         <TavharcKalkulator
-          cé={bontás.cé} vé={vé} támadásLabel={támadásLabel} szorzóÖsszeg={szorzóÖsszeg} cella={cella} távolság={távolság}
+          cé={bontás.cé} vé={vé} sp={tfDef?.SP ?? 0} támadásLabel={támadásLabel} szorzóÖsszeg={szorzóÖsszeg} cella={cella} távolság={távolság}
           szorzok={szorzok} szorzóState={szorzóState} onSzorzóChange={onSzorzóChange}
           onTávolságPopup={() => setPopup(s => ({ ...s, távolságPopup: true }))}
           onCéDobás={() => setShowCéDobás(true)}

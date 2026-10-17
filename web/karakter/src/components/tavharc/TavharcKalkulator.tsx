@@ -1,4 +1,5 @@
 import type { TavharcSzorzok, Karakter, TavfegyverAlap } from '../../engine/types';
+import { SP_NINCS } from '../../engine/types';
 import type { KonstansokRaw } from '../../engine/data-types';
 import { SzorzóPicker } from './SzorzoPicker';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
@@ -14,6 +15,7 @@ interface SzorzóState {
 interface Props {
   cé: number;
   vé: number;
+  sp: number;
   támadásLabel: string;
   szorzóÖsszeg: number;
   cella: number;
@@ -28,14 +30,14 @@ interface Props {
   tavfegyverek: TavfegyverAlap[];
 }
 
-export function TavharcKalkulator({ cé, vé, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, onCéDobás, karakter, konstansok, tavfegyverek }: Props) {
+export function TavharcKalkulator({ cé, vé, sp, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, onCéDobás, karakter, konstansok, tavfegyverek }: Props) {
   const véClass = vé <= cé + 1 ? 'th-ve-ok' : vé - cé > 20 ? 'th-ve-bad' : 'th-ve-warn';
 
   return (
     <>
       <div className="th-main-row">
         <div className="th-value-main th-ce-ve-box th-ce-ve-clickable" onClick={onCéDobás}>
-          <span>CÉ: {cé}  ({támadásLabel})</span>
+          <span>CÉ: {cé}  ({támadásLabel})<span className="th-ce-sp-sep">•</span>SP: {sp === SP_NINCS ? '–' : sp}</span>
           <span className={véClass}>VÉ: {vé}</span>
         </div>
         <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span className="th-szc-value">{szorzóÖsszeg} × {cella}</span></span>
