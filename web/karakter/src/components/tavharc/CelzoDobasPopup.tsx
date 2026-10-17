@@ -105,10 +105,15 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
     <PopupOverlay onClose={onClose}>
       <div className="tamado-dobas-popup">
         {result && <button className="sebzes-reset-btn" onClick={() => setResult(null)}>⟲</button>}
-        <div className="ke-dobas-header">Célzó dobás ({cé})</div>
+        <div className="ke-dobas-header">Célzó dobás</div>
 
         {!result ? (
           <>
+            <div className="ke-dobas-cel-ve-row">
+              <span className="ke-dobas-cel-ve-ce">{cé}</span>
+              <span className="ke-dobas-cel-ve-sep">vs</span>
+              <span className="ke-dobas-cel-ve-ve">{vé}</span>
+            </div>
             {céMegjegyzések.length > 0 && (
               <div className="dobas-info-list dobas-notes">
                 {céMegjegyzések.map((m, i) => (
@@ -119,7 +124,7 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
                 ))}
               </div>
             )}
-            <ElonyPicker szint={szint} onChange={setSzint} />
+            <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>

@@ -240,7 +240,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
                 Harci helyzet{session.aktív_helyzetek.length > 0 ? ` (${session.aktív_helyzetek.length})` : ''}
               </button>
             </div>
-            <ElonyPicker szint={szint} onChange={setSzint} />
+            <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {dobásInfo.téHatások.length > 0 && (
               <HatásokInfo hatások={dobásInfo.téHatások} />
             )}

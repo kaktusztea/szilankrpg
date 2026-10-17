@@ -311,6 +311,30 @@
   gap: 10px;
 }
 
+/* Célzó dobás előnézet (dobás előtt): CÉ vs VÉ alapértékek. CÉ zöld, VÉ narancs. */
+.ke-dobas-cel-ve-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+}
+.ke-dobas-cel-ve-ce {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--success);
+  font-family: monospace;
+}
+.ke-dobas-cel-ve-sep {
+  font-size: 15px;
+  color: var(--text-dim);
+}
+.ke-dobas-cel-ve-ve {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--warning);
+  font-family: monospace;
+}
+
 .ke-dobas-result-vs {
   font-size: 16px;
   color: var(--text-dim);
@@ -430,6 +454,30 @@
 .tamado-elony-chip.eredeti {
   border-color: var(--success);
   border-style: dashed;
+}
+
+/* Kompakt, egy soros Előny/Hátrány picker (E+2 E+1 - H-1 H-2) - helytakarékos a dobás-popupokban. */
+.tamado-elony-kompakt {
+  flex-direction: row;
+  gap: 4px;
+  align-items: stretch;
+}
+.tamado-elony-kompakt .tamado-elony-chip {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 8px 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* Az Alap középső chip keskeny '-' elválasztó a nyerő/vesztő oldal közt (nem nyúlhat szét). */
+.tamado-elony-kompakt .tamado-elony-alap {
+  flex: 0 0 auto;
+  width: 34px;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--text-dim);
 }
 
 .tamado-dobas-btn {
