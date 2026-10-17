@@ -1,13 +1,16 @@
 /* Lebegő próba-hub FAB (Játék mód). Az alsó tab-ikon (max 18px) kétszerese: 36px. */
 .proba-fab {
   position: fixed;
-  right: 16px;
+  /* Desktopon a középre igazított 600px-es konténeren KÍVÜL, a jobb oldali sávban (8px-re a kerettől),
+     hogy ne takarja a tartalmat. A fab 64px széles → a keret-szél (50% - 300px) mínusz a fab + gap.
+     Ha a sáv túl keskeny (kis desktop / mobil), a 16px a nagyobb → viewport jobb széle mellett marad. */
+  right: max(16px, calc(50% - 300px - 72px));
   bottom: 72px; /* a tab-bar fölé */
   z-index: 900;
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  border: 2px solid var(--accent, #c8a24a);
+  border: 2px solid var(--color-taktika, #90caf9);
   background: var(--input-bg, #1c2333);
   color: inherit;
   font-size: 36px;
