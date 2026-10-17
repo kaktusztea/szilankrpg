@@ -8,7 +8,7 @@ import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
-import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, helyettesítésSzint } from './proba-common';
+import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, helyettesítésSzint, képzetlenCélszám } from './proba-common';
 import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from './kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
 import { ProbaFejlec, ExtraSor, ExtraGomb, OsszetettValaszto, EllenprobaValaszto, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
@@ -44,6 +44,10 @@ interface Props {
   felszNemHarcol?: boolean;
   /** konstansok.próba (célszámok, kocka, összetett / vállalás / helyettesítés paraméterek). */
   próba: PróbaKonstansok;
+  /** Képzetlen próba (szint 0, a listában nem felvett): nem-fizikai képzettségnél +3 célszám (§030_06_01). */
+  képzetlen?: boolean;
+  /** Általános képzetlen próba (nincs konkrét képzettség): belső "Fizikai képzettség" kapcsoló dönti a +3-at. */
+  képzetlenFizikaiToggle?: boolean;
   onClose: () => void;
 }
 
@@ -52,7 +56,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségKulcs, kepzettsegDefs, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, próba, onClose,
+  képzettségNév, képzettségKulcs, kepzettsegDefs, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, próba, képzetlen = false, képzetlenFizikaiToggle = false, onClose,
 }: Props) {
   const p = próba.képzettség;
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
@@ -60,6 +64,8 @@ export function KepzettsegProbaPopup({
   const [selKits, setSelKits] = useState<Set<number>>(new Set()); // multi-select indexes into kiterjesztesek[]
   const [openPicker, setOpenPicker] = useState<ProbaPickerId>(null);
   const [nehTöbbi, setNehTöbbi] = useState(false); // 21 feletti célszámok lenyitva?
+  // Általános képzetlen próba (nincs konkrét képzettség): a fizikai-e a próba, ez vezérli a +3-at.
+  const [fizikaiKépzetlen, setFizikaiKépzetlen] = useState(false);
 
   // Extrák state
   const [extrákNyitva, setExtrákNyitva] = useState(false);
@@ -124,18 +130,23 @@ export function KepzettsegProbaPopup({
 
   // Ellenpróba módban nincs célszám szükséges
   const ismeretlen = nehézség === -1;
+  // Képzetlen próba: +képzetlen_büntetés a célszámra, DE fizikai képzettségnél nincs büntetés (§030_06_01).
+  // Általános képzetlen (nincs konkrét képzettség): a belső "Fizikai" kapcsoló dönti; különben a csoport.
+  const fizikaiKépzettség = képzetlenFizikaiToggle ? fizikaiKépzetlen : képzettségCsoport === 'fizikai';
+  const képzetlenBüntetés = képzetlen && !fizikaiKépzettség ? (p.képzetlen_büntetés ?? 0) : 0;
+  const effNehézség = képzetlenCélszám(nehézség, képzetlen, fizikaiKépzettség, p.képzetlen_büntetés ?? 0);
   const kész = selTul !== null && (ellenpróba || nehézség !== null);
   const tulÉrték = selTul !== null ? tulajdonságok[selTul] : 0;
   const helyettesítőSzint = helyettesítés ? képzettségSzint(képzettségek, helyettesítés) : null;
   const effSzint = calcEffSzint(szint, helyettesítőSzint, vállalás, szitModÖsszeg, próba.helyettesítés);
   const bázis = tulÉrték + effSzint;
   const vanCélszám = !ellenpróba && !ismeretlen && nehézség !== null;
-  const lehetetlen = kész && vanCélszám && probaLehetetlen(bázis, p.kocka, nehézség);
-  const biztosSiker = kész && vanCélszám && !lehetetlen && probaBiztosSiker(bázis, nehézség);
+  const lehetetlen = kész && vanCélszám && probaLehetetlen(bázis, p.kocka, effNehézség ?? 0);
+  const biztosSiker = kész && vanCélszám && !lehetetlen && probaBiztosSiker(bázis, effNehézség ?? 0);
   const ehCímke = előnyHátrányLabel(eh.szint);
 
   const d = useProbaDobas({
-    bázis, ehSzint: eh.szint, kocka: p.kocka, nehézség, összetettDb, másodlagosLevonás: p.másodlagos_levonás,
+    bázis, ehSzint: eh.szint, kocka: p.kocka, nehézség: effNehézség, összetettDb, másodlagosLevonás: p.másodlagos_levonás,
     onDobott: () => {
       if (vállalás <= 0) return;
       const k6 = rollDie(próba.vállalás.kocka);
@@ -175,6 +186,17 @@ export function KepzettsegProbaPopup({
             <button className="kep-proba-info-btn" title="Próbadobás magyarázat" onClick={() => setOpenPicker('info')}>💡</button>
           )}
         </div>
+
+        {képzetlenFizikaiToggle && (
+          <button
+            type="button"
+            className="kep-proba-fizikai-toggle"
+            onClick={() => { setFizikaiKépzetlen(v => !v); resetDobás(); }}
+            title="Szellemi képzettségnél +3 célszám-büntetés jár képzetlenül (fizikainál nem)"
+          >
+            Típus: {fizikaiKépzetlen ? 'fizikai' : 'szellemi (+3)'}
+          </button>
+        )}
 
         <div className="kep-proba-dual-list">
           <div className="kep-proba-dual-col">
@@ -283,7 +305,7 @@ export function KepzettsegProbaPopup({
             {kész && (
               <div className="kep-proba-summary">
                 <span className="kep-proba-sum-total">{bázis}+k{p.kocka}</span>
-                {vanCélszám && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">{nehézség}</span></>}
+                {vanCélszám && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">{effNehézség}{képzetlenBüntetés > 0 && <span className="kep-proba-kepzetlen-jel"> (képzetlen +{képzetlenBüntetés})</span>}</span></>}
               </div>
             )}
             {lehetetlen ? (
@@ -328,7 +350,7 @@ export function KepzettsegProbaPopup({
             )}
           </>
         ) : (
-          <ProbaEredmeny bázis={bázis} nehézség={nehézség} csakÖsszeg={ellenpróba || ismeretlen} dobás={d.dobás}
+          <ProbaEredmeny bázis={bázis} nehézség={effNehézség} csakÖsszeg={ellenpróba || ismeretlen} dobás={d.dobás}
             összetett={összetettDb > 0 ? d.összetett : null} kocka={p.kocka} kiemeltKülönbség={p.kiemelt_különbség} ehSzint={eh.szint}>
             {renderVállalásEredmény()}
           </ProbaEredmeny>

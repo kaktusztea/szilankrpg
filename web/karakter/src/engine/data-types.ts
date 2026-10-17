@@ -236,6 +236,8 @@ export interface PróbaTípusKonstansok {
   kocka: number;
   kiemelt_különbség: number;
   másodlagos_levonás: number;
+  /** Képzetlen próba célszám-büntetése (csak képzettségnél; nem-fizikai képzettségre). */
+  képzetlen_büntetés?: number;
   nehézségek: { érték: number; név: string }[];
   nehézségek_extra: number[];
 }

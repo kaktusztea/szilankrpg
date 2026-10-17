@@ -20,6 +20,7 @@ import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './engine/types';
 import type { Karakter } from './engine/types';
 import { validateKarakterData } from './engine/validate';
 import { CheckpointBanner } from './components/CheckpointBanner';
+import { ProbaHub } from './components/ProbaHub';
 import { CheckpointRestoreOverlay } from './components/overlays/CheckpointRestoreOverlay';
 import './App.css';
 
@@ -232,6 +233,8 @@ function App() {
       {!effectiveGameMode && <KpBar data={data} karakter={karakter} />}
 
       <TabBar tabs={TABS} activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      <ProbaHub data={data} karakter={karakter} aktív={gameMode && !viewingCheckpointId} />
 
       <AppOverlays
         state={overlays} setState={setOverlay}

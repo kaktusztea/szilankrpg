@@ -572,6 +572,7 @@ próba:
     kocka: 10
     kiemelt_különbség: 6
     másodlagos_levonás: 3
+    képzetlen_büntetés: 3           # Próba képzetlenül: +3 célszám (nem-fizikai képzettségnél; §030_06_01)
     nehézségek:
       - { érték: 6, név: "Könnyű" }
       - { érték: 9, név: "Átlagos" }

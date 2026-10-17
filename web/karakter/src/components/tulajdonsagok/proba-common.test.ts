@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, probaSiker,
-  eredményFelirat, összetettCélszámok, összetettEredmény, összetettKéziFelirat,
+  eredményFelirat, összetettCélszámok, összetettEredmény, összetettKéziFelirat, képzetlenCélszám,
 } from './proba-common';
 import { EH_SZINT_MAX } from '../../engine/dice';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
@@ -76,5 +76,22 @@ describe('összetett próba', () => {
 describe('E/H skála ↔ konstansok.yaml', () => {
   it('a dice EH_SZINT_MAX egyezik a próba.előny_hátrány_max-szal', () => {
     expect(EH_SZINT_MAX).toBe(loadGameDataSync().konstansok.próba.előny_hátrány_max);
+  });
+});
+
+describe('képzetlenCélszám', () => {
+  it('nem-fizikai képzettség képzetlenül → +büntetés', () => {
+    expect(képzetlenCélszám(9, true, false, 3)).toBe(12);
+    expect(képzetlenCélszám(15, true, false, 3)).toBe(18);
+  });
+  it('fizikai képzettség képzetlenül → nincs büntetés', () => {
+    expect(képzetlenCélszám(9, true, true, 3)).toBe(9);
+  });
+  it('nem képzetlen (felvett) → változatlan célszám', () => {
+    expect(képzetlenCélszám(9, false, false, 3)).toBe(9);
+  });
+  it('rejtett (-1) / ellenpróba (null) célszámot nem érinti', () => {
+    expect(képzetlenCélszám(-1, true, false, 3)).toBe(-1);
+    expect(képzetlenCélszám(null, true, false, 3)).toBeNull();
   });
 });

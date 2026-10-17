@@ -1,0 +1,111 @@
+/* Lebegő próba-hub FAB (Játék mód). Az alsó tab-ikon (max 18px) kétszerese: 36px. */
+.proba-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 72px; /* a tab-bar fölé */
+  z-index: 900;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--accent, #c8a24a);
+  background: var(--input-bg, #1c2333);
+  color: inherit;
+  font-size: 36px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.15s;
+}
+.proba-fab:hover,
+.proba-fab:active {
+  opacity: 0.85;
+}
+
+/* Próba-hub popup: fejlécek + chip-grid (3 oszlop). */
+.proba-hub-popup {
+  max-width: min(460px, 94vw);
+  max-height: 82vh;
+  overflow-y: auto;
+}
+.proba-hub-header {
+  margin: 10px 0 6px;
+  font-size: 15px;
+  text-align: left;
+  width: 100%;
+}
+.proba-hub-header:first-child {
+  margin-top: 0;
+}
+.proba-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+.proba-hub-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.proba-hub-chip {
+  padding: 8px 6px;
+  border: 1px solid var(--border-input, #3a4258);
+  border-radius: 6px;
+  background: var(--input-bg, #1c2333);
+  color: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.proba-hub-chip:hover {
+  border-color: var(--accent, #c8a24a);
+}
+/* Tulajdonságpróba chip hover: fehér keret. */
+.proba-hub-chip-tul:hover {
+  border-color: #fff;
+}
+/* Képzettségpróba chip hover: képzettség-kék keret. */
+.proba-hub-chip-kep:hover {
+  border-color: var(--color-kepzettseg);
+}
+.proba-hub-chip-kepzetlen {
+  border-color: rgba(220, 80, 80, 0.5);
+  background: rgba(200, 60, 60, 0.12);
+  color: #e08a8a;
+}
+/* Képzetlenül a képzettség-szekcióban van → hover szintén képzettség-kék (nem piros). */
+.proba-hub-chip-kepzetlen:hover {
+  border-color: var(--color-kepzettseg);
+}
+.proba-hub-csoport {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.proba-hub-csoport-cim {
+  font-size: 12px;
+  opacity: 0.6;
+  margin: 6px 0 4px;
+}
+.kep-proba-kepzetlen-jel {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Képzetlen próba típus-kapcsoló (fizikai/szellemi; a +3 célszámot vezérli). */
+.kep-proba-fizikai-toggle {
+  width: 100%;
+  margin: 2px 0 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--border-input, #3a4258);
+  border-radius: 6px;
+  background: var(--input-bg, #1c2333);
+  color: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}

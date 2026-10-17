@@ -29,6 +29,21 @@ export function probaBiztosSiker(bázis: number, célszám: number): boolean {
   return bázis + 1 >= célszám;
 }
 
+/**
+ * Képzetlen próba célszáma: a választott célszámra +büntetés, DE fizikai képzettségnél nincs (§030_06_01).
+ * A rejtett (null/-1) célszámot érintetlenül hagyja (ott nincs megjelenített célszám).
+ * @param nehézség a választott célszám (null/-1 = rejtett/ellenpróba → változatlan)
+ * @param képzetlen képzetlen próba-e
+ * @param fizikai a képzettség `csoport === 'fizikai'`-e (ott nincs büntetés)
+ * @param büntetés konstansok.próba.képzettség.képzetlen_büntetés
+ */
+export function képzetlenCélszám(
+  nehézség: number | null, képzetlen: boolean, fizikai: boolean, büntetés: number,
+): number | null {
+  if (nehézség === null || nehézség === -1) return nehézség;
+  return képzetlen && !fizikai ? nehézség + büntetés : nehézség;
+}
+
 /** Sikeres próba: bázis + dobás ≥ célszám. */
 export function probaSiker(bázis: number, dobás: number, célszám: number): boolean {
   return bázis + dobás >= célszám;
