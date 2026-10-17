@@ -395,6 +395,8 @@
   gap: 12px;
   padding: 20px 24px;
   min-width: 240px;
+  /* A hosszú megjegyzés-label (céMegjegyzések) ne feszítse szét a popupot - tördeljen a korláton belül. */
+  max-width: min(420px, 92vw);
   position: relative;
 }
 
@@ -870,6 +872,9 @@
   color: var(--text-dim);
   font-size: 11px;
   white-space: pre-line;
+  /* Flex-gyerekként engedje a tördelést, ne feszítse a popupot a szöveg hosszáig. */
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 
