@@ -319,6 +319,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
           extraDefs={data.fegyverExtrák}
           extraKontextus={hc.extraKontextus}
+          onTéDobás={(té, veCsökkentés) => setSession(prev => ({ ...prev, té_dobások: pushTéDobás(prev.té_dobások ?? [], { té, veCsökkentés }) }))}
           onClose={() => setPopupManőver(null)}
         />
       )}

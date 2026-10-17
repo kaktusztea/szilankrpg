@@ -55,10 +55,13 @@ interface Props {
   fegyverExtrák?: { id: string }[];
   extraDefs?: Record<string, FegyverExtraDef>;
   extraKontextus?: ExtraKontextus;
+  /** A rontott V fázis dobásának + a hozzá választott VÉ-csökkentésnek a TÉ-chip history-ba vezetése
+   *  (ugyanaz a `té_dobások` tömb, mint a Támadó dobásnál - a megjelenített érték az ellenfélé). */
+  onTéDobás?: (té: number, veCsökkentés: number) => void;
   onClose: () => void;
 }
 
-export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onClose }: Props) {
+export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onTéDobás, onClose }: Props) {
   const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
   const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
   const aktívFegyver = mód === 'aktív' ? aktívFegyverInfo(karakter, session, data) : null;
@@ -389,7 +392,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           // A manőver-flow a rontott V után itt ér véget: az EREDMÉNY-ablakból (eredmény != null)
           // mellékattintva az egész flow-t zárjuk. A Fegyverviszony-választó fázisból (eredmény null)
           // csak a VÉ-popupot - vissza a végeredmény-sávhoz.
-          if (eredmény) onClose(); else setVéCsökkNyitva(false);
+          if (eredmény) {
+            // A rontott V dobás + a választott VÉ-csökkentés a TÉ-chip history-ba (mint a Támadó dobás).
+            const vÖsszeg = (aktívTÉ ?? 0) + manőver.végrehajtás_té_módosító + (vDobás?.eredmény ?? 0);
+            onTéDobás?.(vÖsszeg, eredmény.végső);
+            onClose();
+          } else {
+            setVéCsökkNyitva(false);
+          }
         }}
       />
     )}
