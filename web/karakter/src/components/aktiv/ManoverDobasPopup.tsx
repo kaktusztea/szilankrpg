@@ -333,11 +333,10 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                   {FÁZIS_FELIRAT[f]}
                 </div>
                 {isAktív && (() => {
-                  // A fázis_info szövegek az ALKALMAZÓ (aktív) nézőpontját írják le ("Nem kapod meg
-                  // a +4 TÉ...", "TE adod le a Megakasztást") → passzív módban félrevezetők, ott a
-                  // renderFázisInfo passzív ága adja a helyes, mód-tudatos szöveget. Ezért a magyarázatot
-                  // CSAK aktív módban mutatjuk.
-                  const magyarázat = mód === 'aktív' ? manőver.fázis_info?.[f] : undefined;
+                  // A fázis_info mód-tudatos: aktív = alkalmazó nézőpont, passzív = elszenvedő nézőpont
+                  // (data/sources/manoverek.yaml `fázis_info: { aktív, passzív }`). A passzív szöveg nem
+                  // utal aktív-only mechanikára (TÉ+4, dobás). Mindkét módban a saját ágat mutatjuk.
+                  const magyarázat = manőver.fázis_info?.[mód]?.[f];
                   return (
                   <>
                     {magyarázat && (

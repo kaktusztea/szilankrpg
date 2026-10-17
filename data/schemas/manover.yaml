@@ -8,10 +8,10 @@ manőverek:
     típus: ""                  # kötelező, enum: "általános" | "belharcos" | "lovas"
     nehézség: 0                # kötelező, number [0;12]
     fázisok: ""                # kötelező, string (pl. "V,E", "M,E", "E (M*)")
-    fázis_info: ""             # opcionális. Üres ("") ha nincs. Map ha van: fázis-betű → magyarázó szöveg
-      # M: ""                  # pl. "A Megakasztást TE adod le (megszakító támadás)"
-      # V: ""
-      # E: ""
+    fázis_info: ""             # opcionális. Üres ("") ha nincs. Dict ha van: { aktív: {fázis-betű: szöveg}, passzív: {...} }
+      # aktív:  { V: "..." }    # az ALKALMAZÓ nézőpontú fázis-magyarázat (pl. "Nem kapod meg a +4 TÉ...")
+      # passzív: { V: "..." }   # az ELSZENVEDŐ nézőpontú magyarázat (aktív-only mechanikára - TÉ+4, dobás - NE utalj)
+      # Build-gate: minden fázis-betűhöz, amihez van aktív szöveg, PASSZÍV is kell (data/gen/aktiv_ful.py).
     fázis_cselekvő: ""         # opcionális. Üres ("") ha nincs. Map: fázis-betű → "én" | "ellenfél"
       # Default (ha nincs megadva): M → ellenfél, V → én, E → én (az alkalmazó szemszögéből).
       # Pl. Távoltartás: { M: "én" } - a Megakasztást az alkalmazó adja.

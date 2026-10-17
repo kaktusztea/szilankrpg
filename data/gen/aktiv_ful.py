@@ -63,8 +63,21 @@ def generate_aktiv_ful():
         _resolve_extra_ref_sorok(m, extrak_by_id, _immunis_sentinel)
         köv = m.get('követelmények')
         m['követelmények'] = köv if isinstance(köv, list) else []
+        # fázis_info: { aktív: {fázis: szöveg}, passzív: {...} }. Üres/hiányzó → {aktív:{}, passzív:{}}.
+        # Build-gate: minden fázis-betűhöz, amihez van AKTÍV szöveg, legyen PASSZÍV is (mód-tudatos UI).
         fi = m.get('fázis_info')
-        m['fázis_info'] = fi if isinstance(fi, dict) else {}
+        if isinstance(fi, dict):
+            aktív = fi.get('aktív') if isinstance(fi.get('aktív'), dict) else {}
+            passzív = fi.get('passzív') if isinstance(fi.get('passzív'), dict) else {}
+            hiányzó = [f for f in aktív if f not in passzív]
+            if hiányzó:
+                raise ValueError(
+                    f"manoverek.yaml '{m.get('id')}': fázis_info passzív szöveg hiányzik "
+                    f"a következő fázis(ok)hoz: {', '.join(hiányzó)} (minden aktívhoz kell passzív)"
+                )
+            m['fázis_info'] = {'aktív': aktív, 'passzív': passzív}
+        else:
+            m['fázis_info'] = {'aktív': {}, 'passzív': {}}
         fcs = m.get('fázis_cselekvő')
         m['fázis_cselekvő'] = fcs if isinstance(fcs, dict) else {}
         m.setdefault('ellenpróba_bünteti', False)

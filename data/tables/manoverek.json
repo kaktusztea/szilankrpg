@@ -17,7 +17,12 @@
     },
     "id": "átsiklás",
     "fázis_info": {
-      "E": "Nem buktató: rontott dobásnál is átsiklasz, de minden köztes ellenfél leadhat rád egy Megakasztó támadást."
+      "aktív": {
+        "E": "Nem buktató: rontott dobásnál is átsiklasz, de minden köztes ellenfél leadhat rád egy Megakasztó támadást."
+      },
+      "passzív": {
+        "E": "Nem buktató: rontott dobásnál is átsiklik, de minden köztes szövetségesed leadhat rá egy Megakasztó támadást."
+      }
     },
     "helyzetfüggő_módosítók": [
       {
@@ -84,7 +89,10 @@
       }
     ],
     "követelmények": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -106,7 +114,12 @@
     },
     "id": "csonkolás_kéz",
     "fázis_info": {
-      "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      "aktív": {
+        "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      },
+      "passzív": {
+        "V": "Ellenfeled sima támadást dob rád. Siker esetén jöhet az Ellenpróba."
+      }
     },
     "végrehajtás_té_módosító": 0,
     "követelmények": [
@@ -153,7 +166,12 @@
     },
     "id": "csonkolás_láb",
     "fázis_info": {
-      "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      "aktív": {
+        "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      },
+      "passzív": {
+        "V": "Ellenfeled sima támadást dob rád. Siker esetén jöhet az Ellenpróba."
+      }
     },
     "végrehajtás_té_módosító": 0,
     "követelmények": [
@@ -200,7 +218,12 @@
     },
     "id": "ellenfél_elfogása",
     "fázis_info": {
-      "E": "Kijövetel a helyzetből: Kibontakozás Nehézség 10; ellenfeled megelőző Megakasztására TÉ:+4 jár."
+      "aktív": {
+        "E": "Kijövetel a helyzetből: Kibontakozás Nehézség 10; ellenfeled megelőző Megakasztására TÉ:+4 jár."
+      },
+      "passzív": {
+        "E": "Kijövetel a helyzetből: Kibontakozás Nehézség 10; megelőző Megakasztásodra TÉ:+4 jár."
+      }
     },
     "végrehajtás_té_módosító": 0,
     "helyzetfüggő_módosítók": [],
@@ -292,7 +315,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -313,7 +339,10 @@
     "id": "felállás_földről",
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -337,8 +366,14 @@
     },
     "id": "forgószél",
     "fázis_info": {
-      "V": "Egy köríves támadás egyszerre több ellenfélre; ha talált, dobj sebzést mindegyikre külön.",
-      "E": "Ez a támadás NEM okoz VÉ csökkentést. Körönként max 1x."
+      "aktív": {
+        "V": "Egy köríves támadás egyszerre több ellenfélre; ha talált, dobj sebzést mindegyikre külön.",
+        "E": "Ez a támadás NEM okoz VÉ csökkentést. Körönként max 1x."
+      },
+      "passzív": {
+        "V": "Ellenfeled egy köríves támadása egyszerre több célpontra, rád is; találat esetén külön sebzés jár.",
+        "E": "Ez a támadás NEM okoz VÉ csökkentést. Körönként max 1x."
+      }
     },
     "követelmények": [
       {
@@ -402,7 +437,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -427,7 +465,12 @@
     },
     "id": "kibontakozás",
     "fázis_info": {
-      "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
+      "aktív": {
+        "E": "Nem buktató: rontott dobásnál is kibontakozol, de minden köztes ellenfél leadhat rád egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
+      },
+      "passzív": {
+        "E": "Nem buktató: rontott dobásnál is kibontakozik, de minden köztes szövetségesed leadhat rá egy Megakasztó támadást. Utána Futás - Gyorsaság ellenpróba (Sprint fortély számít)."
+      }
     },
     "helyzetfüggő_módosítók": [
       {
@@ -510,7 +553,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -550,7 +596,10 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -571,7 +620,10 @@
     "id": "lánccsapdából_szabadítás",
     "helyzetfüggő_módosítók": [],
     "követelmények": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -650,7 +702,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -674,8 +729,14 @@
     },
     "id": "leütés_hátulról",
     "fázis_info": {
-      "V": "Célpont VÉ = a mozgás jellegétől függő érték (lásd Orvtámadás). Fegyver markolat sebzése: k20+0 SP + Erőbónusz (Zúzó).",
-      "E": "Ájulás, ha a sebzés eléri az áldozat Max ÉP/4↓ értékét; egyébként Bódultság. A sebzés FP-ként jelenik meg."
+      "aktív": {
+        "V": "Célpont VÉ = a mozgás jellegétől függő érték (lásd Orvtámadás). Fegyver markolat sebzése: k20+0 SP + Erőbónusz (Zúzó).",
+        "E": "Ájulás, ha a sebzés eléri az áldozat Max ÉP/4↓ értékét; egyébként Bódultság. A sebzés FP-ként jelenik meg."
+      },
+      "passzív": {
+        "V": "Markolattal mért ütés tarkón (Zúzó sebzés).",
+        "E": "Elájulsz, ha a sebzés eléri a Max ÉP/4↓ értékedet; egyébként Bódultság. A sebzés FP-ként jelenik meg."
+      }
     },
     "követelmények": [
       {
@@ -761,7 +822,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -809,7 +873,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -849,7 +916,10 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -917,7 +987,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -939,7 +1012,12 @@
     },
     "id": "piszkos_trükk",
     "fázis_info": {
-      "V": "Alattomos ütés sebzése: k20+0 SP (+ vaskesztyű/szegecs/Erőbónusz beleszámít)."
+      "aktív": {
+        "V": "Alattomos ütés sebzése: k20+0 SP (+ vaskesztyű/szegecs/Erőbónusz beleszámít)."
+      },
+      "passzív": {
+        "V": "Ellenfeled alattomos ütést mér rád (+ vaskesztyű/szegecs/Erőbónusz beleszámít)."
+      }
     },
     "követelmények": [
       {
@@ -1023,7 +1101,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false
   },
@@ -1049,7 +1130,10 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1072,7 +1156,12 @@
       "M": "én"
     },
     "fázis_info": {
-      "M": "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
+      "aktív": {
+        "M": "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
+      },
+      "passzív": {
+        "M": "Ellenfeled megszakító támadása. Találat esetén (nem sebez) elveszíted a következő támadásodat."
+      }
     },
     "követelmények": [
       {
@@ -1166,7 +1255,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1216,7 +1308,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1238,7 +1333,12 @@
     },
     "id": "belharcba_kerülés",
     "fázis_info": {
-      "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül - mindenképp dobj Ellenpróbát."
+      "aktív": {
+        "E": "Nagy siker (+4 túldobás): sebző Megakasztás ellenére is sikerül - mindenképp dobj Ellenpróbát."
+      },
+      "passzív": {
+        "E": "Nagy siker (+4 túldobás) esetén a sebző Megakasztásod ellenére is sikerül neki - mindenképp dobja az Ellenpróbát."
+      }
     },
     "követelmények": [
       {
@@ -1320,7 +1420,12 @@
     },
     "id": "belharcból_kibontakozás",
     "fázis_info": {
-      "E": "Ha belharcban sebzel, bármilyen dobás nélkül automatikusan kibontakozol."
+      "aktív": {
+        "E": "Ha belharcban sebzel, bármilyen dobás nélkül automatikusan kibontakozol."
+      },
+      "passzív": {
+        "E": "Ha ellenfeled belharcban sebez, bármilyen dobás nélkül automatikusan kibontakozik."
+      }
     },
     "követelmények": [
       {
@@ -1376,7 +1481,12 @@
     },
     "id": "feszítés_leszorítás",
     "fázis_info": {
-      "E": "Fenntartás: az áldozat körönként Fájdalomtűrés + Önuralom próbát dob (célszám 15). Kudarcnál nem tud visszatámadni, mágiát/pszít/manővert használni."
+      "aktív": {
+        "E": "Fenntartás: az áldozat körönként Fájdalomtűrés + Önuralom próbát dob (célszám 15). Kudarcnál nem tud visszatámadni, mágiát/pszít/manővert használni."
+      },
+      "passzív": {
+        "E": "Fenntartás: körönként Fájdalomtűrés + Önuralom próbát dobsz (célszám 15). Kudarcnál nem tudsz visszatámadni, mágiát/pszít/manővert használni."
+      }
     },
     "követelmények": [
       {
@@ -1430,7 +1540,12 @@
     },
     "id": "feszítésből_kijövetel",
     "fázis_info": {
-      "E": "Körönként Fájdalomtűrés + Önuralom próba (célszám 15). Kudarcnál nem tudsz visszatámadni, mágiát/pszít/manővert használni."
+      "aktív": {
+        "E": "Körönként Fájdalomtűrés + Önuralom próba (célszám 15). Kudarcnál nem tudsz visszatámadni, mágiát/pszít/manővert használni."
+      },
+      "passzív": {
+        "E": "Körönként Fájdalomtűrés + Önuralom próba (célszám 15). Kudarcnál ellenfeled nem tud visszatámadni, mágiát/pszít/manővert használni."
+      }
     },
     "követelmények": [
       {
@@ -1518,7 +1633,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1568,7 +1686,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1618,7 +1739,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1668,7 +1792,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1730,7 +1857,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1792,7 +1922,10 @@
         ]
       }
     ],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1821,7 +1954,12 @@
       "M": "én"
     },
     "fázis_info": {
-      "M": "TE (lovas) adod le a soron kívüli Megakasztást minden harcérintkezésben lévő ellenfélre. Nincs Ellenpróba, nincs Nehézség."
+      "aktív": {
+        "M": "TE (lovas) adod le a soron kívüli Megakasztást minden harcérintkezésben lévő ellenfélre. Nincs Ellenpróba, nincs Nehézség."
+      },
+      "passzív": {
+        "M": "A lovas ellenfeled soron kívüli Megakasztást ad le rád, ha harcérintkezésben vagy vele. Nincs Ellenpróba, nincs Nehézség."
+      }
     },
     "követelmények": [
       {
@@ -1873,7 +2011,10 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1904,7 +2045,10 @@
       }
     ],
     "helyzetfüggő_módosítók": [],
-    "fázis_info": {},
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 4
@@ -1931,7 +2075,12 @@
       "M": "én"
     },
     "fázis_info": {
-      "M": "TE (védekező gyalogos) adod le a Megakasztást a rohamozó lovasra, mielőtt lecsapna rád. Siker = eltaláltad."
+      "aktív": {
+        "M": "TE (védekező gyalogos) adod le a Megakasztást a rohamozó lovasra, mielőtt lecsapna rád. Siker = eltaláltad."
+      },
+      "passzív": {
+        "M": "A védekező gyalogos ellenfeled Megakasztást ad le rád (rohamozó lovas), mielőtt lecsapnál. Találat esetén eltalált."
+      }
     },
     "követelmények": [
       {

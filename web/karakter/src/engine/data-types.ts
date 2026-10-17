@@ -172,7 +172,7 @@ export interface ManoverEntry {
   típus: string;
   nehézség: number;
   fázisok: string;
-  fázis_info: Record<string, string>;
+  fázis_info: { aktív: Record<string, string>; passzív: Record<string, string> };
   fázis_cselekvő: Record<string, 'én' | 'ellenfél'>;
   ellenpróba_bünteti: boolean;
   /** Hatás-szövegek a dobó szemszögéből: aktív (én hajtom végre) / passzív (ellenem). */
