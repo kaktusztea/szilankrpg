@@ -127,7 +127,7 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
             <div className="dobas-btn-row">
-              <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
+              <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás (k20)</button>
               <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={cé} alapLabel="CÉ" />
             </div>
           </>

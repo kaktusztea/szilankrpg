@@ -120,7 +120,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             ) : (
               <div className="dobas-btn-row">
                 <button type="button" className="kep-proba-roll-btn" disabled={!kész} onClick={d.dob}>
-                  Dobás
+                  Dobás (k{p.kocka})
                   {ehCímke && (
                     <span className={`kep-proba-roll-eh${ehSzint > 0 ? ' kep-proba-eh-előny' : ''}`}>
                       {ehCímke}

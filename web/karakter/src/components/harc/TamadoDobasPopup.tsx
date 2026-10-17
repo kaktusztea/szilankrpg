@@ -248,7 +248,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
               <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={aktívExtraKontextus} />
             )}
             <div className="dobas-btn-row">
-              <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
+              <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás (k20)</button>
               <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={aktívTé} alapLabel="TÉ" />
             </div>
           </>
