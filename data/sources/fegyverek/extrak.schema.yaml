@@ -33,7 +33,8 @@ alfeltetel_prefix_enum: [manőver, ellenfél_harci_helyzet]   # ellenfél_harci_
 # hatás.alcél (a cél al-scope-ja) prefixek ("prefix:érték") - webapp-bound prefix
 alcel_prefix_enum: [felszerelés]
 # felszerelés-komponens értékek (a cél melyik felszerelés-részére hat)
-alcel_felszereles_enum: [fegyver, pajzs, páncél]
+# nagyobb_fegyver / kisebb_fegyver: kétkezes harcnál a hosszabb / rövidebb fegyver (md 065_05 „Nagyobb fegyver"; a fortély-követelmények is ezt a listát használják)
+alcel_felszereles_enum: [fegyver, pajzs, páncél, nagyobb_fegyver, kisebb_fegyver]
 
 # feltétel ÉRTÉK-enumok - CSAK a fix értékkészletű típusokra. A katalógus-referencia típusoknál
 # (fortély/képzettség/státusz/harci_helyzet/aktor/narratív) NINCS enum - más katalógusra/entitásra mutatnak.

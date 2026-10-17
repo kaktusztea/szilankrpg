@@ -76,6 +76,8 @@ def validate_id_hivatkozasok():
     from gen.hivatkozas import fortely_ids, kepz_ref_hiba, harcmodor_elemek
     src = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sources')
     F, HM = fortely_ids(), harcmodor_elemek()
+    alcel_ok = {f"felszerelés:{v}" for v in load_yaml(os.path.join(src, 'fegyverek', 'extrak.schema.yaml'))['alcel_felszereles_enum']}
+    fogas_ok = {o['id'] for o in load_yaml(os.path.join(src, 'konstansok.yaml'))['fegyverfogás_opciók']}
     errors = []
     def fort(ctx, n):
         for x in (n if isinstance(n, list) else [n]):
@@ -103,6 +105,10 @@ def validate_id_hivatkozasok():
             for fok in d.get('fokok') or []:
                 cf = f"{c} fok {fok['fok']}"
                 for k in lst(fok.get('követelmények')): kov(f"{cf} követelmény", k)
+                for k in lst(fok.get('követelmények')):
+                    if k.get('alcél') and k['alcél'] not in alcel_ok: errors.append(f"{cf} követelmény alcél: '{k['alcél']}' (érvényes: {sorted(alcel_ok)})")
+                    if k.get('feltétel', '').startswith('fegyverfogás:') and k['feltétel'].split(':', 1)[1] not in fogas_ok:
+                        errors.append(f"{cf} követelmény feltétel: ismeretlen fegyverfogás '{k['feltétel']}'")
                 for m in lst(fok.get('módosítók')):
                     for kk in ('cél', 'alcél', 'feltétel'): prefix(f"{cf} módosító {kk}", m.get(kk))
                 for pe in lst(fok.get('próba_enyhítések')): kepz(f"{cf} próba_enyhítés", pe['képzettség'])

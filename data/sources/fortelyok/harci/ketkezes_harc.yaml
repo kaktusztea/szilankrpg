@@ -23,7 +23,17 @@ fokok:
 - fok: 1
   követelménytext:
     - text: "Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint."
-  követelmények: ''
+  követelmények:
+  - típus: "képzettség"
+    név: "harcmodor"
+    érték: 6
+    feltétel: "fegyverfogás:kétkezes"
+    alcél: "felszerelés:nagyobb_fegyver"
+  - típus: "képzettség"
+    név: "harcmodor"
+    érték: 3
+    feltétel: "fegyverfogás:kétkezes"
+    alcél: "felszerelés:kisebb_fegyver"
   hatástext:
   - text: 'Harckeret: +2.'
   - text: Fegyver harcértékek összeadódnak.
@@ -38,7 +48,17 @@ fokok:
 - fok: 2
   követelménytext:
     - text: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint."
-  követelmények: ''
+  követelmények:
+  - típus: "képzettség"
+    név: "harcmodor"
+    érték: 9
+    feltétel: "fegyverfogás:kétkezes"
+    alcél: "felszerelés:nagyobb_fegyver"
+  - típus: "képzettség"
+    név: "harcmodor"
+    érték: 6
+    feltétel: "fegyverfogás:kétkezes"
+    alcél: "felszerelés:kisebb_fegyver"
   hatástext:
   - text: 'Harckeret: +3.'
   - text: Fegyver harcértékek összeadódnak.
@@ -53,7 +73,17 @@ fokok:
 - fok: 3
   követelménytext:
     - text: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint."
-  követelmények: ''
+  követelmények:
+  - típus: "képzettség"
+    név: "harcmodor"
+    érték: 9
+    feltétel: "fegyverfogás:kétkezes"
+    alcél: "felszerelés:nagyobb_fegyver"
+  - típus: "képzettség"
+    név: "harcmodor"
+    érték: 9
+    feltétel: "fegyverfogás:kétkezes"
+    alcél: "felszerelés:kisebb_fegyver"
   hatástext:
   - text: 'Harckeret: +4.'
   - text: Fegyver harcértékek összeadódnak.

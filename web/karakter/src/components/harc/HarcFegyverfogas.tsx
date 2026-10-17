@@ -61,12 +61,12 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
         const disabled = isDisabled(opt.id);
         const active = session.fegyverfogás === opt.id;
         return (
-          <div key={opt.id}
+          <button type="button" key={opt.id} disabled={disabled} aria-pressed={active}
             className={`aktiv-picker-item${disabled ? ' aktiv-picker-item-disabled-inline' : ''}${active ? ' aktiv-picker-item-active-accent' : ''}`}
             onClick={() => { if (!disabled) onSelect(buildPatch(opt.id)); }}>
             <span className="aktiv-picker-item-name">{opt.név}</span>
             {disabled && opt.id === 'fegyver_hárító' && <span className="aktiv-hint-disabled">Vegyél fel legalább 1 hárítófegyvert és a Hárítófegyver használat fortélyt.</span>}
-          </div>
+          </button>
         );
       })}
     </PickerOverlay>

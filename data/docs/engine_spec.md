@@ -1925,6 +1925,12 @@ Közelharc/Kardvívás/Rombolás/Lándzsavívás/Ostorharc, Mesterfegyvernél a 
 
 ## §26 Kétkezes harc
 
+**Kétkezes harc fortély követelményei** (2026-10-17): fokonként két `képzettség` követelmény `név: harcmodor`,
+`feltétel: fegyverfogás:kétkezes`, `alcél: felszerelés:nagyobb_fegyver` / `felszerelés:kisebb_fegyver` (6/3, 9/6, 9/9).
+Nagyobb = hosszabb fegyver (azonos hossznál az ügyesebb kéz). Fortélyok fül (felvétel, a fegyverpár még nem ismert):
+bármely közelharci harcmodor legmagasabb szintje mér mindkét sorra. Harc fül, kétkezes fogásnál: a kézben lévő pár
+fegyverenkénti harcmodor-szintje (`engine/ketkezes.ts → kétkezesKövetelményHiány`) - ⚠ sáv a fegyver-szekció alatt, nem tilt.
+
 Forrás: md/065_05_ketkezes_harc.md, fortelyok.harci/ketkezes_harc.md, fortelyok.harci/ketkezesseg.md
 
 ### 26.1 Alapfogalmak

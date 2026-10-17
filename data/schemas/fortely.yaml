@@ -46,6 +46,11 @@ fokok:
       #   (pl. "Nem lehetsz Analfabéta"). érték: 1 = a fortély bármely foka tilt.
       # típus: "faj" - a karakter faja ajánlja a fortélyt legalább `érték` fokig (faj `érzék_fortélyok` /
       #   `ajánlott_fortélyok` max_fok). { név: "faj", érték: <fok>, típus: "faj" }
+      # Opcionális a követelmény-elemen: `feltétel` ("<prefix>:<érték>", konstansok.feltétel_prefixek) - a követelmény
+      #   csak ekkor érvényes; `alcél` ("felszerelés:<komponens>", extrak.schema alcel_felszereles_enum) - melyik
+      #   felszerelés-rész harcmodora. Pl. Kétkezes harc: { típus: "képzettség", név: "harcmodor", érték: 6,
+      #   feltétel: "fegyverfogás:kétkezes", alcél: "felszerelés:nagyobb_fegyver" }. A `név: "harcmodor"` elem nélkül
+      #   = a (megjelölt) fegyver harcmodora; felvételkor bármely közelharci harcmodor legmagasabb szintje.
       # típus: "min_fegyverméret" - harci-helyzet-kötött min fegyverhossz WARNING (nem blokkol):
       #   { típus: "min_fegyverméret", érték: <min fegyverhossz>, feltétel: "harci_helyzet:<id>" }
     hatástext:

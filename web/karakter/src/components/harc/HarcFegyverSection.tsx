@@ -1,4 +1,5 @@
 import type { HarcBaseProps } from './types';
+import { kétkezesKövetelményHiány } from '../../engine/ketkezes';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
@@ -41,6 +42,9 @@ interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 's
 export function HarcFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás, páncélMGT, showHint }: Props) {
   const fegyverOpciók = buildFegyverOpciók(karakter, data);
 
+  // Kétkezes harc fortély harcmodor-követelményei a kézben lévő fegyverpárra (figyelmeztetés, nem tilt).
+  const kétkezesHiány = kétkezesKövetelményHiány(karakter, session, data);
+
   return (
     <div className="harc-fegyver-section">
       <div className="harc-fegyver-row">
@@ -54,6 +58,11 @@ export function HarcFegyverSection({ data, karakter, session, setSession, pushUn
         <FegyverfogásButton data={data} karakter={karakter} session={session} onShowFegyverfogás={onShowFegyverfogás} />
         <PáncélToggle session={session} setSession={setSession} pushUndo={pushUndo} />
       </div>
+      {kétkezesHiány.length > 0 && (
+        <div className="harc-ketkezes-warning" role="status">
+          ⚠ Kétkezes harc követelmény: {kétkezesHiány.join('; ')}
+        </div>
+      )}
     </div>
   );
 }

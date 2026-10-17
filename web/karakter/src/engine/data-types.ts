@@ -66,7 +66,9 @@ export interface FortelyFokSummary {
   fok: number;
   hatás: string[];
   követelmény: string[];
-  követelmények: { név: string | string[]; érték: number; típus: string; feltétel?: string }[];
+  /** `feltétel`: a követelmény csak ekkor érvényes (pl. "fegyverfogás:kétkezes"); `alcél`: melyik felszerelés-rész
+   *  harcmodora ("felszerelés:nagyobb_fegyver" / "felszerelés:kisebb_fegyver"). */
+  követelmények: { név: string | string[]; érték: number; típus: string; feltétel?: string; alcél?: string }[];
   módosítók: FortelyModosito[];
   próba_enyhítések: PróbaEnyhítés[];
 }

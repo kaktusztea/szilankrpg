@@ -4031,7 +4031,22 @@
         "követelmény": [
           "Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint."
         ],
-        "követelmények": [],
+        "követelmények": [
+          {
+            "típus": "képzettség",
+            "név": "harcmodor",
+            "érték": 6,
+            "feltétel": "fegyverfogás:kétkezes",
+            "alcél": "felszerelés:nagyobb_fegyver"
+          },
+          {
+            "típus": "képzettség",
+            "név": "harcmodor",
+            "érték": 3,
+            "feltétel": "fegyverfogás:kétkezes",
+            "alcél": "felszerelés:kisebb_fegyver"
+          }
+        ],
         "módosítók": [
           {
             "cél": "harckeret",
@@ -4054,7 +4069,22 @@
         "követelmény": [
           "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint."
         ],
-        "követelmények": [],
+        "követelmények": [
+          {
+            "típus": "képzettség",
+            "név": "harcmodor",
+            "érték": 9,
+            "feltétel": "fegyverfogás:kétkezes",
+            "alcél": "felszerelés:nagyobb_fegyver"
+          },
+          {
+            "típus": "képzettség",
+            "név": "harcmodor",
+            "érték": 6,
+            "feltétel": "fegyverfogás:kétkezes",
+            "alcél": "felszerelés:kisebb_fegyver"
+          }
+        ],
         "módosítók": [
           {
             "cél": "harckeret",
@@ -4077,7 +4107,22 @@
         "követelmény": [
           "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint."
         ],
-        "követelmények": [],
+        "követelmények": [
+          {
+            "típus": "képzettség",
+            "név": "harcmodor",
+            "érték": 9,
+            "feltétel": "fegyverfogás:kétkezes",
+            "alcél": "felszerelés:nagyobb_fegyver"
+          },
+          {
+            "típus": "képzettség",
+            "név": "harcmodor",
+            "érték": 9,
+            "feltétel": "fegyverfogás:kétkezes",
+            "alcél": "felszerelés:kisebb_fegyver"
+          }
+        ],
         "módosítók": [
           {
             "cél": "harckeret",

@@ -1213,3 +1213,6 @@
   overflow-wrap: anywhere;
 }
 
+
+/* Kétkezes harc fortély-követelmény figyelmeztetés a fegyver-szekció alatt */
+.harc-ketkezes-warning { margin-top: 6px; padding: 6px 10px; border: 1px solid var(--warning); border-radius: 6px; color: var(--warning); font-size: 13px; }

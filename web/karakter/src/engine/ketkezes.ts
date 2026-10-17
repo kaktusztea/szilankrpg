@@ -1,8 +1,9 @@
-import type { FegyverAlap, Karakter } from './types';
+import type { FegyverAlap, Karakter, Session } from './types';
 import type { KonstansokRaw, GameData } from './data-types';
 import type { FegyverResultMód } from '../components/harc/types';
 import { ideaDelta } from '../components/harc/shared';
-import { képzettségSzint, fortélyFok } from './utils';
+import { képzettségSzint, fortélyFok, lookupFegyver } from './utils';
+import { HARCMODOR_ID, harcmodorNév } from './azonosito';
 
 interface KétkezesInput {
   jobbFp: { alap: string; idea: number };
@@ -126,3 +127,33 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
     módok: [módEredmény],
   };
 }
+
+/**
+ * Kétkezes harc fortély követelményei a KÉZBEN LÉVŐ fegyverpárra (Harc fül, `fegyverfogás: kétkezes`):
+ * a fortély aktuális fokának `feltétel: fegyverfogás:kétkezes` + `alcél: felszerelés:nagyobb_fegyver|kisebb_fegyver`
+ * harcmodor-követelményei. Nagyobb = hosszabb fegyver (azonos hossznál az ügyesebb kéz) - mint a calcKétkezesHarc.
+ * Hiány-feliratok listája (üres = teljesül). Nem tilt, csak jelez (a KM / játékos dönt).
+ */
+export function kétkezesKövetelményHiány(
+  k: Karakter, session: Session,
+  data: Pick<GameData, 'fegyverek' | 'fortelySummaries' | 'kepzettsegDefs'> & { konstansok: Pick<GameData['konstansok'], 'fegyver_kategória_harcmodor'> },
+): string[] {
+  if (session.fegyverfogás !== 'kétkezes') return [];
+  const fok = fortélyFok(k, 'kétkezes_harc');
+  const fokDef = data.fortelySummaries.find(d => d.id === 'kétkezes_harc')?.fokok.find(f => f.fok === fok);
+  const kövek = (fokDef?.követelmények ?? []).filter(kv => kv.feltétel === 'fegyverfogás:kétkezes' && kv.alcél);
+  const jobb = lookupFegyver(data.fegyverek, k.fegyverek[session.aktív_fegyver_index]?.alap ?? '');
+  const bal = lookupFegyver(data.fegyverek, k.fegyverek[session.aktív_fegyver_bal_index]?.alap ?? '');
+  if (!kövek.length || !jobb || !bal) return [];
+  const [nagyobb, kisebb] = jobb.fegyverhossz >= bal.fegyverhossz ? [jobb, bal] : [bal, jobb];
+  const hiány: string[] = [];
+  for (const kv of kövek) {
+    const f = kv.alcél === 'felszerelés:nagyobb_fegyver' ? nagyobb : kv.alcél === 'felszerelés:kisebb_fegyver' ? kisebb : null;
+    if (!f) continue;
+    const elem = data.konstansok.fegyver_kategória_harcmodor[f.kategória] ?? 'közelharc';
+    const szint = képzettségSzint(k, `${HARCMODOR_ID}/${elem}`);
+    if (szint < kv.érték) hiány.push(`${f.név}: ${harcmodorNév(elem, data)} ${szint} < ${kv.érték}`);
+  }
+  return hiány;
+}
+

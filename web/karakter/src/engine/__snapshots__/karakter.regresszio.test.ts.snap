@@ -287,6 +287,10 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
     "Kalligráfia (1)": [
       "Nem lehet: Analfabéta fortély",
     ],
+    "Kétkezes harc (3)": [
+      "Harcmodor (nagyobb fegyver) ≥ 9",
+      "Harcmodor (kisebb fegyver) ≥ 9",
+    ],
     "Lovas harc (3)": [
       "Harcmodor ≥ 12",
       "Lovaglás ≥ 12",
@@ -804,7 +808,11 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
     "szekunderKp": 200,
     "összesKp": 510,
   },
-  "követelményHiány": {},
+  "követelményHiány": {
+    "Kétkezes harc (2)": [
+      "Harcmodor (nagyobb fegyver) ≥ 9",
+    ],
+  },
   "primerKp": {
     "harcifortDetails": [
       {

@@ -46,7 +46,7 @@ napló: `refactorlog/2026-10-16.md`. Nyitott:
 `faj` típus (13 fok: érzék-fortélyok, Természetes fegyver/páncél), faj `ajánlott_fortélyok: [{név, max_fok}]`,
 Sáskaharcos → Természetes páncél 3. fok, név-hivatkozás build-gate. Nyitott:
 
-- [ ] Kétkezes harc (1-3): „nagyobb fegyver harcmodora N, kisebb M" - új `kétkezes_harcmodor` típus (felvételkor: van-e N és M szintű harcmodor; Harc fül kétkezes fogásnál ⚠ a kézben lévő fegyverek szerint, a `min_fegyverméret` mintájára).
+- [x] Kétkezes harc (1-3) (2026-10-17): `{típus: képzettség, név: harcmodor, érték, feltétel: "fegyverfogás:kétkezes", alcél: "felszerelés:nagyobb_fegyver|kisebb_fegyver"}` (alcél-enum bővítve). Fortélyok fül: bármely közelharci harcmodor max szintje (a döntés); Harc fül kétkezes fogásnál a kézben lévő párra ⚠ (`kétkezesKövetelményHiány`, nem tilt).
 - [ ] Szöveges maradók (Kínokozás: használati feltétel; Körkörös harc: körönkénti próba; Éneklés: KM-mérlegelés) - jelölés (pl. `csak_szöveges`) + build-gate: szöveges követelmény gépi pár vagy jelölés nélkül → hiba.
 - [ ] `szituacio_mapping.yaml` → `Úszás` kulcs: az Úszás fortély, nem képzettség → a mapping csak képzettségre generál, a bejegyzés halott. Döntés: fortély-kulcs támogatása, vagy törlés. Utána a kulcsok is a név-gate alá.
 - [x] Fortély / képzettség stabil `id` (2026-10-17): F0 regressziós snapshot, F1 `id` mező (265 yaml), F2 forrás-hivatkozások id-re (`gen/hivatkozas.py`, `validate_id_hivatkozasok`), F3 karakter-séma v3 `{id, elem, szint|fok}` (template-ek migrálva, URL-séma 3, régi mentés hibaüzenettel elutasítva), F4 kód + GUI (`engine/azonosito.ts` feloldó). Napló: `refactorlog/2026-10-17.md`.

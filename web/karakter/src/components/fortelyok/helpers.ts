@@ -1,6 +1,12 @@
 import type { Kepzettseg } from '../../engine/types';
 import type { FortelySummary, FortelyFokSummary, GameData } from '../../engine/data-loader';
-import { fortélyNév, képzettségNév, képzettségSzint, isHarcmodorId, bontKépzKulcs, EGYEDI_FORTÉLY_ID } from '../../engine/azonosito';
+import { fortélyNév, képzettségNév, képzettségSzint, isHarcmodorId, bontKépzKulcs, EGYEDI_FORTÉLY_ID, HARCMODOR_ID } from '../../engine/azonosito';
+
+/** Követelmény-alcél feliratok (felszerelés-rész). */
+export const FELSZERELÉS_FELIRAT: Record<string, string> = {
+  'felszerelés:nagyobb_fegyver': 'nagyobb fegyver',
+  'felszerelés:kisebb_fegyver': 'kisebb fegyver',
+};
 import type { Fortely } from '../../engine/types';
 
 export function displayName(f: Fortely, data: Pick<GameData, 'fortelySummaries'>): string {
@@ -112,11 +118,20 @@ export function checkKövetelmények(
   for (const kov of fokDef.követelmények) {
     const refek = Array.isArray(kov.név) ? kov.név : [kov.név];
     if (kov.típus === 'képzettség') {
-      const teljesül = refek.some(r => képzettségSzint(képzettségek, r) >= kov.érték);
+      // "harcmodor" elem nélkül (pl. Kétkezes harc: a nagyobb / kisebb fegyver harcmodora): felvételkor a fegyver
+      // még nem ismert → bármely közelharci harcmodor legmagasabb szintje (a pontos ellenőrzés a Harc fülön).
+      const szint = (r: string) => r === HARCMODOR_ID
+        ? Math.max(0, ...képzettségek.filter(kp => kp.id === HARCMODOR_ID).map(kp => kp.szint))
+        : képzettségSzint(képzettségek, r);
+      const teljesül = refek.some(r => szint(r) >= kov.érték);
       if (!teljesül) {
         // Csupa harcmodor-elem (VAGY-lista) → „Harcmodor"; egyébként a nevek „/"-lel.
         const isHarcmodor = Array.isArray(kov.név) && refek.every(r => { const b = bontKépzKulcs(r); return isHarcmodorId(b.id) && !!b.elem; });
-        hiányzó.push(`${isHarcmodor ? (fegyverHarcmodorNév ? `Harcmodor - ${fegyverHarcmodorNév}` : 'Harcmodor') : refek.map(r => képzettségNév(r, data)).join('/')} ≥ ${kov.érték}`);
+        const fegyverRész = kov.alcél ? ` (${FELSZERELÉS_FELIRAT[kov.alcél] ?? kov.alcél})` : '';
+        const név = isHarcmodor || refek[0] === HARCMODOR_ID
+          ? (fegyverHarcmodorNév ? `Harcmodor - ${fegyverHarcmodorNév}` : 'Harcmodor') + fegyverRész
+          : refek.map(r => képzettségNév(r, data)).join('/');
+        hiányzó.push(`${név} ≥ ${kov.érték}`);
       }
     } else if (kov.típus === 'fortély') {
       if (fortélyFok(refek[0]) < kov.érték) hiányzó.push(`${fortélyNév(refek[0], data)} fortély ≥ ${kov.érték}. fok`);
