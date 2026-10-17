@@ -336,28 +336,6 @@ export function getBelharcFok(karakter: Karakter): number {
   return fortélyFok(karakter, 'Belharc');
 }
 
-interface TéBontásSor { forrás: string; érték: number }
-
-/**
- * A Manőver popup közelítő TÉ-bontása (a HarcScreen `baseTÉ` képletének EGYETLEN forrása).
- * A HarcScreen ennek az összegét használja - így a bontás és az összeg sosem driftel szét.
- * ponytail: közelítő (per-fegyver módosítók nélkül), ahogy a `baseTÉ` komment is jelzi.
- */
-export function téBontás(karakter: Karakter, data: GameData): TéBontásSor[] {
-  const t = karakter.tulajdonságok;
-  return [
-    { forrás: 'Alap TÉ', érték: data.konstansok.harcérték_alap?.TÉ ?? 0 },
-    { forrás: 'Erő', érték: t.erő },
-    { forrás: 'Ügyesség', érték: t.ügyesség },
-    { forrás: 'Gyorsaság', érték: t.gyorsaság },
-    { forrás: 'Harcmodor (HM)', érték: karakter.HM_TÉ },
-  ];
-}
-
-export function téBontásÖsszeg(karakter: Karakter, data: GameData): number {
-  return téBontás(karakter, data).reduce((s, r) => s + r.érték, 0);
-}
-
 /**
  * Ki a cselekvő az adott fázisban (az ALKALMAZÓ szemszögéből, aktív mód).
  * Default: M → ellenfél (ő akaszt), V/E → én. A manőver `fázis_cselekvő` felülírhatja

@@ -24,14 +24,14 @@ export function ManoverPicker({ fázis, manoverek, onMód, onPick, onClose }: Pr
   if (fázis === 'mód') {
     return (
       <PickerOverlay title="Manőver mód" onClose={onClose}>
-        <div className="aktiv-picker-item manover-mod-btn" onClick={() => onMód('aktív')}>
+        <button type="button" className="aktiv-picker-item manover-mod-btn" onClick={() => onMód('aktív')}>
           <span className="aktiv-picker-item-name">⚔️ Aktív</span>
           <span className="aktiv-picker-item-details">Én hajtom végre a manővert</span>
-        </div>
-        <div className="aktiv-picker-item manover-mod-btn" onClick={() => onMód('passzív')}>
+        </button>
+        <button type="button" className="aktiv-picker-item manover-mod-btn" onClick={() => onMód('passzív')}>
           <span className="aktiv-picker-item-name">🛡️ Passzív</span>
           <span className="aktiv-picker-item-details">Ellenem hajtják végre</span>
-        </div>
+        </button>
       </PickerOverlay>
     );
   }
@@ -45,11 +45,11 @@ export function ManoverPicker({ fázis, manoverek, onMód, onPick, onClose }: Pr
           <div key={típus} className={`manover-cat manover-cat-${típus}`}>
             <div className="aktiv-picker-category">{TÍPUS_LABEL[típus]}</div>
             {items.map(m => (
-              <div key={m.név} className="aktiv-picker-item" onClick={() => onPick(m)}>
+              <button type="button" key={m.név} className="aktiv-picker-item" onClick={() => onPick(m)}>
                 <span className="aktiv-picker-item-name">{m.név}</span>
                 <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
                 <span className="aktiv-picker-item-hatas">{m.hatás.aktív.join(' ')}</span>
-              </div>
+              </button>
             ))}
           </div>
         );

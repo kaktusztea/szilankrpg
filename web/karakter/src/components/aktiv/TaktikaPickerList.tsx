@@ -34,7 +34,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
       if (showHeader) tavharcHeaderShown = true;
       return <div key={t.név}>
         {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header">🏹 Távharci taktikák</div>}
-        <div className="aktiv-picker-item" onClick={() => {
+        <button type="button" className="aktiv-picker-item" onClick={() => {
           if (t.fokozatos) onFokválasztó(t.név);
           else onAddSimple(t.név);
         }}>
@@ -45,7 +45,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
               : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ') : ''}
           </span>
           {t.megjegyzés && <span className="aktiv-picker-item-hatas">{t.megjegyzés}</span>}
-        </div>
+        </button>
       </div>;
     })}
   </>;

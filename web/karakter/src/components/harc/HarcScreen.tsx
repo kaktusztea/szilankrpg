@@ -23,7 +23,6 @@ import { VeSzorzoInfoPopup } from './VeSzorzoInfoPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
-import { téBontásÖsszeg } from '../aktiv/manover-dobas-calc';
 import { ManoverPicker } from './ManoverPicker';
 import { computeTÉ, computeVÉ, coalesceVéHistory } from './shared';
 import { resolveAktívFegyverContext } from './aktiv-fegyver-ctx';
@@ -199,10 +198,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   }, [onNavigate]);
 
   const hasFt = karakter.képzettségek.some(kp => kp.név === 'Fájdalomtűrés');
-
-  // Base TÉ/VÉ for manőver popup (approximation without per-weapon calc).
-  const baseTÉ = téBontásÖsszeg(karakter, data);
-  const baseVÉ = (data.konstansok.harcérték_alap?.VÉ ?? 0) + karakter.tulajdonságok.gyorsaság + karakter.tulajdonságok.ügyesség + karakter.HM_VÉ - session.vé_csökkenés;
 
   return (
     <div className="screen harc-screen">
@@ -394,8 +389,9 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           setSession={setSession}
           data={data}
           manőverAlap={hc.manőverAlap}
-          aktívTÉ={baseTÉ}
-          aktívVÉ={baseVÉ}
+          aktívTÉ={aktívTÉ}
+          aktívVÉ={aktívVÉ}
+          téHatások={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név)).téHatások}
           onClose={() => setPopupManőver(null)}
         />
       )}

@@ -195,7 +195,11 @@
 .manover-fazis-info { margin: 6px 0; }
 .manover-fazis-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
 .manover-fazis-ertek { font-size: 14px; margin: 2px 0; }
-.manover-te-center { display: flex; justify-content: center; }
+.manover-te-center { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+/* A Támadó dobás függőleges Előny/Hátrány listája a manőver-boxban egy kompakt sor (a box keskeny, a fázis-gombok férjenek el). */
+.manover-te-center .tamado-elony-list { flex-direction: row; gap: 4px; }
+.manover-te-center .tamado-elony-chip { flex: 1 1 0; min-width: 0; padding: 6px 2px; font-size: 13px; white-space: nowrap; }
+.manover-te-center .tamado-elony-list, .manover-te-center .dobas-btn-row { width: 100%; }
 .manover-te-chip { padding: 4px 14px; border-radius: 14px; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 14px; cursor: pointer; }
 .manover-te-chip:hover { background: rgba(255,255,255,0.06); }
 .manover-te-info { color: var(--text-dim); font-size: 12px; margin-left: 2px; }
@@ -251,3 +255,11 @@
 .manover-dobas-hatas-mondat { overflow-wrap: anywhere; white-space: normal; line-height: 1.4; }
 
 .manover-mod-btn { cursor: pointer; }
+
+/* Manőver dobás: a kockadobás eredménye (tap → törlés/újradobás) */
+.manover-dobas-eredmeny {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  margin: 6px auto 0; padding: 4px 12px;
+  background: none; border: 1px solid var(--border); border-radius: 8px;
+  color: inherit; cursor: pointer;
+}

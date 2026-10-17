@@ -2,6 +2,12 @@ import { useState } from 'react';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
+import { ElonyPicker } from '../harc/ElonyPicker';
+import { HatasokInfo as HatásokInfo } from '../harc/HatasokInfo';
+import { netElőnySzint } from '../harc/combat-roll-info';
+import type { DobásHatás } from '../harc/combat-roll-info';
+import { ManualDicePicker } from '../harc/ManualDicePicker';
+import { rollElőnyHátrányDie, type ProbaDobás } from '../../engine/dice';
 import {
   type Mód, type FázisEredmény, type ManőverDef,
   követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, követelményJelölés, követelményCimke, aktívFegyverInfo,
@@ -19,20 +25,26 @@ interface Props {
   data: GameData;
   /** Manőver Alap - kanonikus érték a reactive engine-ből (rules.json: manőver_alap). */
   manőverAlap: number;
-  /** Aktív fegyver TÉ (from Harc fül computed - may be unavailable). */
+  /** Aktív fegyver TÉ - ugyanaz, mint a Támadó dobásé (fegyver, MF, fortély, taktika, helyzet, státusz). */
   aktívTÉ: number | null;
-  /** Aktuális VÉ (base - csökkenés). */
+  /** Aktív fegyver VÉ - ugyanaz, mint a Harc fülé (fegyver/pajzs, taktika, helyzet, VÉ-csökkenés). */
   aktívVÉ: number | null;
+  /** Aktív TÉ-dobás hatások (helyzet/státusz Előny/Hátrány) - kezdőszint + forrás-sor, mint a Támadó dobásnál. */
+  téHatások?: DobásHatás[];
   onClose: () => void;
 }
 
-export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, onClose }: Props) {
+export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], onClose }: Props) {
   const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
   const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
   const aktívFegyver = mód === 'aktív' ? aktívFegyverInfo(karakter, session, data) : null;
   const fázisok = könnyítettFázisok(parseFázisok(manőver.fázisok), mód, session);
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
+  // Kockadobások: csak a kocka értéke tárolt, az összeg élőben számol (a módosító/MP változása utólag is érvényes).
+  const [téSzint, setTéSzint] = useState(() => netElőnySzint(téHatások));
+  const [vDobás, setVDobás] = useState<ProbaDobás | null>(null);
+  const [eDobás, setEDobás] = useState<ProbaDobás | null>(null);
 
   // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák (mód_oldal szerint, §066_04). Aktív: aktív-
   // oldali táblák + globális módosítók; passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
@@ -157,6 +169,27 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     }
   }
 
+  /** Dobó-sor (Dobás gomb + kézi 🎲) vagy az eredmény „alap + kocka = összeg" alakban. */
+  function renderDobás(alap: number, alapLabel: string, sides: number, szint: number,
+    dobás: ProbaDobás | null, setDobás: (d: ProbaDobás | null) => void) {
+    if (!dobás) {
+      return (
+        <div className="dobas-btn-row">
+          <button className="tamado-dobas-btn" onClick={() => setDobás(rollElőnyHátrányDie(szint, sides))}>Dobás</button>
+          <ManualDicePicker sides={sides} szint={szint} onSelect={v => setDobás({ rolls: [v], eredmény: v })} alapÉrték={alap} alapLabel={alapLabel} />
+        </div>
+      );
+    }
+    return (
+      <button className="manover-dobas-eredmeny" onClick={() => setDobás(null)} aria-label="Dobás törlése, újradobás">
+        <span className="ke-dobas-result">{alap + dobás.eredmény}</span>
+        <span className="ke-dobas-detail">
+          {alapLabel} ({alap}) + k{sides}{dobás.rolls.length > 1 ? ` [${dobás.rolls.join(', ')}] → ${dobás.eredmény}` : ` (${dobás.eredmény})`} ↺
+        </span>
+      </button>
+    );
+  }
+
   function renderVégrehajtás() {
     if (mód === 'aktív') {
       const téMód = manőver.végrehajtás_té_módosító;
@@ -168,6 +201,9 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
               TÉ: <strong>{téVégső}</strong> <span className="manover-te-info">ⓘ</span>
             </button>
           )}
+          {téVégső != null && !vDobás && <ElonyPicker szint={téSzint} onChange={setTéSzint} rövid />}
+          {téVégső != null && !vDobás && téHatások.length > 0 && <HatásokInfo hatások={téHatások} />}
+          {téVégső != null && renderDobás(téVégső, 'TÉ', 20, téSzint, vDobás, setVDobás)}
         </div>
       );
     } else {
@@ -224,6 +260,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
               </span>
             </div>
           )}
+          {!szitLehetetlen && !szitImmunis && renderDobás(dobásÉrték, 'Dobás', 10, ellenpróbaHátrány2 ? -2 : 0, eDobás, setEDobás)}
         </div>
       );
     } else {

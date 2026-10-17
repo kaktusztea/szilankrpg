@@ -228,7 +228,14 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  /* <button> reset (billentyűzettel is elérhető picker-elem) */
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
 }
+
+.aktiv-picker-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 .aktiv-picker-item.active { border-color: var(--success); }
 

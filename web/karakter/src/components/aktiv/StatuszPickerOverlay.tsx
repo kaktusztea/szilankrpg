@@ -31,7 +31,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
             {items.map(s => {
               const isAuto = s.név === 'Sérült';
               return (
-                <div key={s.név} className={`aktiv-picker-item${isAuto ? ' aktiv-picker-disabled' : ''}`} onClick={() => {
+                <button type="button" key={s.név} className={`aktiv-picker-item${isAuto ? ' aktiv-picker-disabled' : ''}`} disabled={isAuto} onClick={() => {
                   if (isAuto) return;
                   if (s.többszörös && s.alkategóriák?.length) {
                     setÉrzékválasztó(s.név);
@@ -43,7 +43,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
                 }}>
                   <span className="aktiv-picker-item-name">{isAuto ? 'Sérült (auto)' : s.név}</span>
                   <span className="aktiv-picker-item-details">{s.fokok.map(f => `${f.fok}. ${f.alcím}`).join(' • ')}</span>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -52,9 +52,9 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
       {!fokválasztó && !érzékválasztó && onNarratív && (
         <div>
           <div className="aktiv-picker-category">Narratív</div>
-          <div className="aktiv-picker-item" onClick={onNarratív}>
+          <button type="button" className="aktiv-picker-item" onClick={onNarratív}>
             <span className="aktiv-picker-item-name">🔆 Narratív Előny/Hátrányok</span>
-          </div>
+          </button>
         </div>
       )}
       {érzékválasztó && !fokválasztó && (() => {
@@ -63,9 +63,9 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
           <div>
             <div className="aktiv-picker-category">Alkategória kiválasztása</div>
             {(def?.alkategóriák ?? []).map(é => (
-              <div key={é} className="aktiv-picker-item" onClick={() => { setFokválasztó(`${érzékválasztó}: ${é}`); setÉrzékválasztó(null); }}>
+              <button type="button" key={é} className="aktiv-picker-item" onClick={() => { setFokválasztó(`${érzékválasztó}: ${é}`); setÉrzékválasztó(null); }}>
                 <span className="aktiv-picker-item-name">{é}</span>
-              </div>
+              </button>
             ))}
           </div>
         );
@@ -75,12 +75,12 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
         const def = data.statuszok.find(s => s.név === baseName);
         if (!def) return null;
         return def.fokok.map(f => (
-          <div key={f.fok} className="aktiv-picker-item" onClick={() => { onPick(`${fokválasztó} (${f.fok})`); }}>
+          <button type="button" key={f.fok} className="aktiv-picker-item" onClick={() => { onPick(`${fokválasztó} (${f.fok})`); }}>
             <span className="aktiv-picker-item-name">{f.alcím} ({f.fok})</span>
             <span className="aktiv-picker-item-hatas">{f.hatások.slice(0, 4)
               .map(h => typeof h === 'string' ? h : fmtHatás(h, eseményNév))
               .filter(Boolean).join('; ')}</span>
-          </div>
+          </button>
         ));
       })()}
     </PickerOverlay>
