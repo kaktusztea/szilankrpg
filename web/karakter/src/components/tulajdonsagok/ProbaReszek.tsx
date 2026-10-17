@@ -13,16 +13,6 @@ export function ProbaFejlec({ cím, vanEredmény, onReset, onClose }: { cím: st
   );
 }
 
-/** Egy "Extrák" sor: címke + gombok. */
-export function ExtraSor({ label, children }: { label: string; children: ReactNode }) {
-  return (
-    <div className="kep-proba-extras-row">
-      <span className="kep-proba-extras-label">{label}</span>
-      <div className="kep-proba-extras-btns">{children}</div>
-    </div>
-  );
-}
-
 /** Kapcsoló gomb az Extrák sorban. */
 export function ExtraGomb({ aktív, disabled, title, onClick, children }: { aktív: boolean; disabled?: boolean; title?: string; onClick: () => void; children: ReactNode }) {
   return (
@@ -34,17 +24,6 @@ export function ExtraGomb({ aktív, disabled, title, onClick, children }: { akt�
 }
 
 /** Összetett próba: +1M … +maxM (újrakattintás = ki). */
-export function OsszetettValaszto({ db, max, levonás, disabled, onChange }: { db: number; max: number; levonás: number; disabled: boolean; onChange: (db: number) => void }) {
-  return (
-    <ExtraSor label="Összetett próba:">
-      {Array.from({ length: max }, (_, i) => i + 1).map(n => (
-        <ExtraGomb key={n} aktív={db === n} disabled={disabled} title={`${n}db Másodlagos dobás (-${levonás})`}
-          onClick={() => onChange(db === n ? 0 : n)}>+{n}M</ExtraGomb>
-      ))}
-    </ExtraSor>
-  );
-}
-
 /** A dobott kockák sora (E/H címke + az összes kocka, a választott kiemelve). */
 function DobasKockak({ dobás, kocka, ehSzint }: { dobás: ProbaDobás; kocka: number; ehSzint: number }) {
   const ehCímke = előnyHátrányLabel(ehSzint);

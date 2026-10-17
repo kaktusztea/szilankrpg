@@ -2,16 +2,16 @@ import { useState, useRef } from 'react';
 import type { Kepzettseg, Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { ModositoTabla, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
-import { képzKulcs, képzettségSzint, képzettségNév as képzettségNévId } from '../../engine/azonosito';
+import { képzettségSzint, képzettségNév as képzettségNévId } from '../../engine/azonosito';
 import { calcStátuszPróbaEH } from '../../engine/statusz-proba';
 import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
-import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, helyettesítésSzint, képzetlenCélszám } from './proba-common';
+import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from './proba-common';
 import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from './kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraSor, ExtraGomb, OsszetettValaszto, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
 
 /** Vállalás próba eredménye (k6 vs vállalás: Kritikus hiba, ha ≤). */
 interface VállalásEredmény {
@@ -68,7 +68,6 @@ export function KepzettsegProbaPopup({
   const [fizikaiKépzetlen, setFizikaiKépzetlen] = useState(false);
 
   // Extrák state
-  const [extrákNyitva, setExtrákNyitva] = useState(false);
   const [ehBontásNyitva, setEhBontásNyitva] = useState(false);
   const ehAccordionRef = useRef<HTMLDivElement>(null);
   const [összetettDb, setÖsszetettDb] = useState(0); // 0=ki, 1-3=másodlagos dobások száma
@@ -258,44 +257,25 @@ export function KepzettsegProbaPopup({
           </div>
         )}
 
-        {/* --- Extrák szekció (eltűnik ha van eredmény) --- */}
+        {/* --- Extrák (accordion nélkül, közvetlenül): Vállalás + Összetett sorok + Helyettesítés chip --- */}
         {!vanEredmény && (
-        <div className="kep-proba-extras-box">
-          <button className="kep-proba-extras-toggle" onClick={() => setExtrákNyitva(v => !v)}>
-            Extra dobás funkciók {extrákNyitva ? '▴' : '▾'}
-          </button>
-          {!extrákNyitva && (() => {
-            const parts: string[] = [];
-            if (összetettDb > 0) parts.push(`+${összetettDb}M`);
-            if (vállalás > 0) parts.push(`V:${vállalás}`);
-            if (helyettesítés) parts.push(`H:${képzettségNévId(helyettesítés, { kepzettsegDefs })}`);
-            return parts.length > 0 ? <span className="kep-proba-extras-summary">{parts.join(', ')}</span> : null;
-          })()}
-          {extrákNyitva && (
-            <div className="kep-proba-extras-body">
-              <OsszetettValaszto db={összetettDb} max={próba.összetett_max_másodlagos} levonás={p.másodlagos_levonás}
-                disabled={ellenpróba} onChange={n => { setÖsszetettDb(n); setVállalás(0); resetDobás(); }} />
-              <ExtraSor label="Vállalás:">
-                {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
-                  <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás}
-                    onClick={() => { setVállalás(vállalás === n ? 0 : n); resetDobás(); }}>{n}</ExtraGomb>
-                ))}
-              </ExtraSor>
-              {/* Helyettesítés */}
-              {képzettségek.length > 1 && (
-              <div className="kep-proba-extras-row">
-                <span className="kep-proba-extras-label">Helyettesítés:</span>
-                <select className="field-select kep-proba-hely-select"
-                  value={helyettesítés || ''}
-                  onChange={e => { setHelyettesítés(e.target.value || null); resetDobás(); }}>
-                  <option value="">nincs</option>
-                  {képzettségek
-                    .filter(k => képzKulcs(k) !== képzettségKulcs && k.szint >= próba.helyettesítés.min_szint)
-                    .map(k => <option key={képzKulcs(k)} value={képzKulcs(k)}>{képzettségNévId(k, { kepzettsegDefs })} ({k.szint} → {helyettesítésSzint(k.szint, próba.helyettesítés)})</option>)}
-                </select>
-              </div>
-              )}
-            </div>
+        <div className="kep-proba-extras-flat">
+          <div className="kep-proba-osszetett-row">
+            {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
+              <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás} title="Vállalás mértéke"
+                onClick={() => { setVállalás(vállalás === n ? 0 : n); resetDobás(); }}>V{n}</ExtraGomb>
+            ))}
+          </div>
+          <div className="kep-proba-osszetett-row">
+            {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
+              <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
+                onClick={() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); resetDobás(); }}>+{n}M</ExtraGomb>
+            ))}
+          </div>
+          {képzettségek.length > 1 && (
+            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('hely')}>
+              Helyettesítés{helyettesítés ? `: ${képzettségNévId(helyettesítés, { kepzettsegDefs })}` : ' →'}
+            </button>
           )}
         </div>
         )}
@@ -369,6 +349,9 @@ export function KepzettsegProbaPopup({
         szitMods={szitMods} setSzitMods={setSzitMods} multiMods={multiMods} setMultiMods={setMultiMods}
         szitModÖsszeg={szitModÖsszeg}
         képzettségNév={képzettségNév} dobásKomment={dobásKomment}
+        képzettségek={képzettségek} képzettségKulcs={képzettségKulcs}
+        helyettesítés={helyettesítés} setHelyettesítés={setHelyettesítés}
+        helyettesítésParams={próba.helyettesítés} kepzettsegDefs={kepzettsegDefs}
       />
     </PopupOverlay>
   );

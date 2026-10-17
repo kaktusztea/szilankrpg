@@ -1,11 +1,15 @@
 import type { KiterjesztesEntry } from '../../engine/data-loader';
 import type { ModositoTabla, PróbaEnyhítés } from '../../engine/data-types';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter } from '../../engine/types';
 import { PopupOverlay } from '../PopupOverlay';
 import { enyhítettSorRészletes } from './kepzettseg-proba-calc';
+import { helyettesítésSzint } from './proba-common';
+import { képzKulcs, képzettségNév as képzettségNévId } from '../../engine/azonosito';
 import { useLongPress } from '../../hooks/useLongPress';
 
 /** Melyik alpicker van nyitva a Képzettségpróba popupban. */
-export type ProbaPickerId = 'kit' | 'szit' | 'info' | null;
+export type ProbaPickerId = 'kit' | 'szit' | 'info' | 'hely' | null;
 
 interface Props {
   openPicker: ProbaPickerId;
@@ -35,6 +39,14 @@ interface Props {
   // Infó popup
   képzettségNév: string;
   dobásKomment: { line: string }[];
+
+  // Helyettesítés picker
+  képzettségek: Karakter['képzettségek'];
+  képzettségKulcs: string;
+  helyettesítés: string | null;
+  setHelyettesítés: (kulcs: string | null) => void;
+  helyettesítésParams: { min_szint: number; osztó: number; max: number };
+  kepzettsegDefs: GameData['kepzettsegDefs'];
 }
 
 /**
@@ -48,6 +60,7 @@ export function KepzettsegProbaPickers({
   módosítóTáblák, próbaEnyhítések, szitMods, setSzitMods, multiMods, setMultiMods,
   szitModÖsszeg,
   képzettségNév, dobásKomment,
+  képzettségek, képzettségKulcs, helyettesítés, setHelyettesítés, helyettesítésParams, kepzettsegDefs,
 }: Props) {
   // Kiterjesztő fortély gomb: rövid tap = kijelölés a próbához; long-press = teljesül/nem
   // negálás (csak többszörösen felvehető fortélynél - a KM dönti el a kapcsolódó spec_elem-et).
@@ -136,6 +149,31 @@ export function KepzettsegProbaPickers({
             {dobásKomment.map((k, i) => (
               <p key={i} className="kep-proba-info-line">{k.line}</p>
             ))}
+          </div>
+        </PopupOverlay>
+      )}
+
+      {openPicker === 'hely' && (
+        <PopupOverlay onClose={() => setOpenPicker(null)}>
+          <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
+            <label className="kep-prompt-label-bold-mb">Helyettesítés</label>
+            <div className="kep-prompt-flex-col-list">
+              <button className={`he-field-btn${!helyettesítés ? ' vallas-active' : ''}`}
+                onClick={() => { setHelyettesítés(null); resetDobás(); setOpenPicker(null); }}>
+                Nincs ❌
+              </button>
+              {képzettségek
+                .filter(k => képzKulcs(k) !== képzettségKulcs && k.szint >= helyettesítésParams.min_szint)
+                .map(k => {
+                  const kulcs = képzKulcs(k);
+                  return (
+                    <button key={kulcs} className={`he-field-btn${helyettesítés === kulcs ? ' vallas-active' : ''}`}
+                      onClick={() => { setHelyettesítés(kulcs); resetDobás(); setOpenPicker(null); }}>
+                      {képzettségNévId(k, { kepzettsegDefs })} ({k.szint} → {helyettesítésSzint(k.szint, helyettesítésParams)})
+                    </button>
+                  );
+                })}
+            </div>
           </div>
         </PopupOverlay>
       )}
