@@ -9,9 +9,11 @@
 
 - [Nyitott tételek (áttekintés)](#nyitott-tételek-áttekintés)
 - [Egységes effekt-modell: maradék](#egységes-effekt-modell-maradék-) 🚧
+- [Fortély-követelmények gépesítése](#fortély-követelmények-gépesítése-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
 - [Harc alakzatban](#harc-alakzatban-) 🚧
 - [Méreggenerátor](#méreggenerátor-) 🚧
+- [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
 - [Szabálykönyv (md/) konvenciók, tanulságok](#szabálykönyv-md-konvenciók-tanulságok)
 - [Elkészült](#elkészült-) ✅
@@ -19,10 +21,12 @@
 ---
 ## Nyitott tételek (áttekintés)
 
-- **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, harcszimulátor szinkron, kocka-hatások a gyűjtőre
+- **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, refaktor-maradék (kódolt képletek a gyűjtőre)
+- **Fortély-követelmények gépesítése** - szöveges maradók jelölése (`csak_szöveges`) + build-gate
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver, ár-modell
 - **Harc alakzatban** (§28) - NJK kalkulátor, "Alakzat ellen" helyzet, taktika tiltások
 - **Méreggenerátor** (§39) - KM eszköz
+- **Good to have** 💡 - kocka-hatások a közös gyűjtőre, ellenfél statblokk nézet (nem sürgős)
 
 ---
 ## Egységes effekt-modell: maradék 🚧
@@ -35,13 +39,6 @@ napló: `refactorlog/2026-10-16.md`. Nyitott:
   (a fegyvergenerátor `idea` táblájából kellene); a `loveskiteres-calc` Lövéskitérés-fejlesztés +2-je és a
   `tavharc/helpers` Alkalmi tárgy fortély Osztó-cseréje fortély-hatás kódban (→ fortély `módosítók`, effekt-modell);
   a `felszereles.ts páncélLefedettség` és a `calcManőverPont` a `rules.json` képletének TS-másolata.
-- [ ] Harcszimulátor szinkron (`code/balance/fegyvergenerator_harcszimulator.py`):
-  - Belharc: még `pengehossz > 0` (max 0) és `te = 0` végső nullázás; nem ismeri a tiltás-keretet / a páncélszúró kivételt (a webapp és a §42.3 szerint max 1, alapérték-csere, a harcmodor/MF/fortély marad).
-  - Fárasztás: fix `v = 3` - hiányzik a fegyverelőnyös +1 és a helyzet-bővítés (pl. Meglepetés +2).
-  - `fegyvergenerator_data_adapter.py` önteszt T2/T6/T7: a 2026-10-16 előtt is bukott; a T2 a régi `fegyver_override`-alakot keresi.
-- [ ] Kocka-hatások (Előny/Hátrány/Enyhít) a közös gyűjtőre (ma `combat-roll-info.ts`, `statusz-proba.ts`) - csak egységesítés, az értékek helyesek.
-- [ ] A gyűjtő extra-kontextusa csak helyzet-/taktika-feltételt ismer (`biztosExtraHatások`, `ponytail:`) - fortély/státusz/aktor-feltételű numerikus extránál bővítendő.
-- [ ] Statikus VÉ/SFÉ-táblák effekt-alkalmazása egy jövőbeli „ellenfél statblokk" nézetben.
 
 ---
 ## Fortély-követelmények gépesítése 🚧
@@ -50,10 +47,7 @@ napló: `refactorlog/2026-10-16.md`. Nyitott:
 `faj` típus (13 fok: érzék-fortélyok, Természetes fegyver/páncél), faj `ajánlott_fortélyok: [{név, max_fok}]`,
 Sáskaharcos → Természetes páncél 3. fok, név-hivatkozás build-gate. Nyitott:
 
-- [x] Kétkezes harc (1-3) (2026-10-17): `{típus: képzettség, név: harcmodor, érték, feltétel: "fegyverfogás:kétkezes", alcél: "felszerelés:nagyobb_fegyver|kisebb_fegyver"}` (alcél-enum bővítve). Fortélyok fül: bármely közelharci harcmodor max szintje (a döntés); Harc fül kétkezes fogásnál a kézben lévő párra ⚠ (`kétkezesKövetelményHiány`, nem tilt).
 - [ ] Szöveges maradók (Kínokozás: használati feltétel; Körkörös harc: körönkénti próba; Éneklés: KM-mérlegelés) - jelölés (pl. `csak_szöveges`) + build-gate: szöveges követelmény gépi pár vagy jelölés nélkül → hiba.
-- [x] `szituacio_mapping.yaml` fortély-kulcs (2026-10-17): kulcsok `képzettség:<id>[/<elem>]` / `fortély:<id>`; Úszás (fortély) → Víz alatt bírni visszakerült; build-gate: prefix, létező id, létező md fájl. A két harcmodor-elem kulcs (Közelharc → Belharc folyamata, Hajítás → 2 szituáció) eddig SOHA nem jelent meg (a generátor def-névre keresett) → `kapcsolódó_szituációk_elem`.
-- [x] Fortély / képzettség stabil `id` (2026-10-17): F0 regressziós snapshot, F1 `id` mező (265 yaml), F2 forrás-hivatkozások id-re (`gen/hivatkozas.py`, `validate_id_hivatkozasok`), F3 karakter-séma v3 `{id, elem, szint|fok}` (template-ek migrálva, URL-séma 3, régi mentés hibaüzenettel elutasítva), F4 kód + GUI (`engine/azonosito.ts` feloldó). Napló: `refactorlog/2026-10-17.md`.
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧
@@ -152,6 +146,19 @@ TODO:
 - [ ] Konstansok YAML: méreg paraméter táblák
 - [ ] Méreggenerátor overlay (KM eszköz)
 - [ ] Preset mérgek (144_peldamergek.md)
+
+---
+## Good to have 💡
+
+Nem sürgős, ma nem okoz hibás értéket; nagyobb vagy jóváhagyást igénylő tételek.
+
+### Kocka-hatások a közös gyűjtőre
+
+Az Előny/Hátrány/Enyhít ma a `combat-roll-info.ts` (dobás-EH info forrás+megjegyzéssel) és a `statusz-proba.ts` (próba-cél→képzettség-csoport szűrés) saját kódútján megy, nem az `engine/effekt.ts` numerikus gyűjtőn. Az értékek helyesek; ez tisztán belső egységesítés. A két modul MÁS doménben dolgozik (megjelenítő info-réteg, ill. próba-csoport-mapping), mint az effekt-gyűjtő, ezért a váltás az `effekt.ts` bővítését + a regressziós háló (`effekt.regresszio.test.ts`) átírását igényelné.
+
+### Ellenfél statblokk nézet
+
+Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ, VÉ, aktuális harci helyzete), hogy a ma KM-re bízott, ellenfél-függő effektek (sebzésjelleg×páncél mátrix, `cél_páncél` és `ellenfél_harci_helyzet:*` feltételek) ténylegesen kiértékelődjenek. Ma csak részei léteznek: a Sebzés popup „Ellenfél páncél" választója pontszerű input, a `hiányzóInfósExtrák` (`extrak-effekt.ts`) pedig KM-warning badge-ként jelzi a nem-eldönthető hatásokat. Új feature - UX-tervezés + gui_spec szekció + jóváhagyás kell (hol él az állapot, harc idejére/NJK-ból, milyen részletes).
 
 ---
 ## Fontos adatmodell összefoglaló
