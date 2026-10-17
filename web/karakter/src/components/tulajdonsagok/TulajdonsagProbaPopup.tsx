@@ -53,7 +53,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
     <PopupOverlay onClose={onClose}>
       <div className="kep-proba-popup">
         <ProbaFejlec cím="Tulajdonságpróba" vanEredmény={d.vanEredmény} onReset={d.reset} onClose={onClose} />
-        <div className="kep-proba-subtitle">{label} ({tulÉrték}){bónusz ? ` + ${bónusz} fortély` : ''}</div>
+        <div className="kep-proba-subtitle">{label} ({tulÉrték}){bónusz ? ` + ${bónusz} (fortély)` : ''}</div>
 
         {(felszEH < 0 || felszNemHarcol) && (
           <div className="kep-proba-felsz-warn">

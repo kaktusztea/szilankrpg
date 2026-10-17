@@ -103,6 +103,7 @@ export function ProbaHub({ data, karakter, aktív }: Props) {
 
       {hubNyitva && !cél && (
         <PopupOverlay onClose={() => setHubNyitva(false)} className="kep-prompt proba-hub-popup">
+          <button type="button" className="kep-proba-close-btn proba-hub-close-btn" onClick={() => setHubNyitva(false)} title="Bezárás" aria-label="Bezárás">✕</button>
           <h3 className="proba-hub-header">Tulajdonságpróba</h3>
           <div className="proba-hub-grid">
             {tulajdonságok.map(t => (

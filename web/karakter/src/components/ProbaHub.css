@@ -28,9 +28,16 @@
 
 /* Próba-hub popup: fejlécek + chip-grid (3 oszlop). */
 .proba-hub-popup {
+  position: relative;
   max-width: min(460px, 94vw);
   max-height: 82vh;
   overflow-y: auto;
+}
+/* A közös kep-proba-close-btn a popup sarkához igazodik (itt nincs header-konténer). */
+.proba-hub-close-btn {
+  top: 8px;
+  left: 8px;
+  transform: none;
 }
 .proba-hub-header {
   margin: 10px 0 6px;
@@ -38,8 +45,10 @@
   text-align: left;
   width: 100%;
 }
-.proba-hub-header:first-child {
+/* Az első header az X gomb mellett kezdődik (a gomb az első gyerek). */
+.proba-hub-close-btn + .proba-hub-header {
   margin-top: 0;
+  padding-left: 28px;
 }
 .proba-hub-grid {
   display: grid;
