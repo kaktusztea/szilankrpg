@@ -57,8 +57,12 @@ function fegyverPont(fegyverAlap: string, data: GameData): number {
   return Math.max(hosszPont, súlyPont);
 }
 
-/** Páncél lefedettsége (a reactive `páncél_lefedettség` pure megfelelője): 50 + végtag*10 + sisak*10. */
-function páncélLefedettség(karakter: Karakter): number {
+/**
+ * Páncél lefedettsége - a reactive `páncél_lefedettség` szabály pure megfelelője: 50 + végtag*10 + sisak*10.
+ * ponytail: a rules.json formula TS-másolata (a felszerelés-számítás nem épít reactive kontextust). A drift
+ * ellen a `felszereles.rules-tukor.test.ts` köti a rules.json formulájához - ha a szabály változik, a teszt bukik.
+ */
+export function páncélLefedettség(karakter: Karakter): number {
   if (!karakter.páncél.alap) return 0;
   return 50 + karakter.páncél.végtagvédettség * 10 + (karakter.páncél.sisak ? 10 : 0);
 }

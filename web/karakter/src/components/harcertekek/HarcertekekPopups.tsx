@@ -49,6 +49,7 @@ export function Popups({
 
   const pancelIdeaRange = konstansok.páncél_struktúrák
     .find(s => s.struktúra === k.páncél.alap)?.idea_plusz_minusz ?? 0;
+  const fegyverIdeaRange = konstansok.fegyver_idea_plusz_minusz;
 
   return (
     <>
@@ -56,8 +57,8 @@ export function Popups({
         <PopupOverlay onClose={() => onClose('ideaTarget')}>
           <label>Idea érték</label>
           <IdeaGrid
-            minIdea={ideaTarget.type === 'fegyver' ? -5 : -pancelIdeaRange}
-            maxIdea={ideaTarget.type === 'fegyver' ? 5 : pancelIdeaRange}
+            minIdea={ideaTarget.type === 'fegyver' ? -fegyverIdeaRange : -pancelIdeaRange}
+            maxIdea={ideaTarget.type === 'fegyver' ? fegyverIdeaRange : pancelIdeaRange}
             current={ideaTarget.type === 'fegyver' ? k.fegyverek[ideaTarget.idx]?.idea ?? 0 : k.páncél.idea}
             onSelect={n => {
               if (ideaTarget.type === 'fegyver') updateFegyver(ideaTarget.idx, { idea: n });

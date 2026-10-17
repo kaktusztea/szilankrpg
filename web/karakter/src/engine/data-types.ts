@@ -286,6 +286,7 @@ export interface KonstansokRaw {
   belharc_pajzs_max_méret: string;
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
+  fegyver_idea_plusz_minusz: number;
   több_támadás_TÉ_levonás: number;
   kétkezes_harc_max_fegyverméret: number;
   kétkezes_harc_max_egy_fegyver: number;

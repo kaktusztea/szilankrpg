@@ -15,6 +15,9 @@ export function getAlkalmatlanInfo(k: Karakter, data: GameData): AlkalmatlanInfo
 
   const alkalmiTárgyFortély = k.fortélyok.find(f => f.id === 'alkalmatlan_tárgyak_hajítása');
   const alkalmiTárgyNév = alkalmiTárgyFortély ? 'Alkalmi tárgy' : null;
+  // ponytail: a fok-függő Osztó-csere (2. fokon 1→2) kódban marad. Az Osztó nem effekt-cél, a távharc
+  // CÉ-kalkuláció nem olvas fortély-módosítót - data-vezérlés a közös gyűjtő bővítését igényelné
+  // (DEVSTATE → Good to have: kocka-hatások a közös gyűjtőre).
   const alkalmiTárgyDef = def && alkalmiTárgyFortély
     ? { ...def, Osztó: alkalmiTárgyFortély.fok >= 2 ? 2 : 1 }
     : undefined;

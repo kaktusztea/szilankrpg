@@ -50,6 +50,9 @@ export function calcLöveskitérésCélszám(
 export function calcAkrobatikaÉrték(k: Karakter): number {
   const akrobatika = képzettségSzint(k.képzettségek, 'akrobatika');
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
+  // ponytail: a lövéskitérés_fejlesztése fortély +2-je kódban marad. A cél (Akrobatika-érték) nem
+  // effekt-cél, a lövéskitérés-kalkuláció nem olvas fortély-módosítót - a data-vezérlés a közös
+  // gyűjtő bővítését igényelné (DEVSTATE → Good to have: kocka-hatások a közös gyűjtőre).
   const fejlesztés = k.fortélyok.some(f => f.id === 'lövéskitérés_fejlesztése') ? 2 : 0;
   return akrobatika + gyorsaság + fejlesztés;
 }

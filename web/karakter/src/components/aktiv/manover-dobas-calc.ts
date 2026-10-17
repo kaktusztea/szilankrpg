@@ -326,11 +326,20 @@ export function könnyítettFázisok(fázisok: ('M' | 'V' | 'E')[], mód: Mód, 
   return fázisok.filter(f => f === 'E');
 }
 
+/**
+ * Manőver Pont képlet - a reactive `manőver_pont` szabály pure megfelelője: ceil(harcmodor_összeg * 2 / tsz).
+ * ponytail: a rules.json formula TS-másolata (a manőver-popup nem épít reactive kontextust). A drift ellen a
+ * `manover-dobas-calc.rules-tukor.test.ts` köti a rules.json formulájához.
+ */
+export function manőverPontKéplet(harcmodorÖsszeg: number, tsz: number): number {
+  return Math.ceil(harcmodorÖsszeg * 2 / (tsz || 1));
+}
+
 export function calcManőverPont(karakter: Karakter, data: GameData): number {
   const { tsz } = karakter;
   const harcmodorNevek = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
   const összeg = harcmodorÖsszeg(karakter, harcmodorNevek);
-  return Math.ceil(összeg * 2 / (tsz || 1));
+  return manőverPontKéplet(összeg, tsz);
 }
 
 export function getBelharcFok(karakter: Karakter): number {

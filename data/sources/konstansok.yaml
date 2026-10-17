@@ -437,6 +437,9 @@ harcmodorok:
   közelharci: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
   távolsági: ["hajítás", "íjászat", "lövészet", "ostromlövészet", "mágikus célzás"]
 
+# Fegyver Idea szerkesztési tartomány (±N). A páncélé struktúránként a páncél_struktúrák[].idea_plusz_minusz.
+fegyver_idea_plusz_minusz: 5
+
 fegyver_kategória_harcmodor:
   közelharci: "közelharc"
   kardvívó: "kardvívás"
