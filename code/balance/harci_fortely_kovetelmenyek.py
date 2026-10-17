@@ -36,7 +36,6 @@ def _load_harcmodorok():
     return hm
 
 
-import sys  # noqa: E402
 sys.path.insert(0, os.path.join(REPO, 'data'))
 from gen.hivatkozas import kovetelmeny_vissza  # noqa: E402
 
@@ -48,7 +47,9 @@ def is_harcmodor(nev):
         # a yaml VAGY-listája: ha MINDEN eleme harcmodor -> harcmodor követelmény
         return all(str(x).lower() in HARCMODOROK for x in nev)
     # string lehet összevont "A/B/C" (md-forma): ha MINDEN tag harcmodor -> az
-    tagok = [t.strip() for t in str(nev).split("/") if t.strip()]
+    # md: "Kardvívás/Rombolás/Lándzsavívás Harcmodor" - a záró " harcmodor" szó a felsorolás címkéje, nem a tag része
+    txt = re.sub(r"\s+harcmodor$", "", str(nev).strip(), flags=re.I)
+    tagok = [t.strip() for t in txt.split("/") if t.strip()]
     return bool(tagok) and all(t.lower() in HARCMODOROK for t in tagok)
 
 
@@ -70,7 +71,10 @@ def yaml_kovetelmenyek():
                 egyeb = []
                 if isinstance(req, list):
                     for e in req:
-                        if not isinstance(e, dict):
+                        # Csak név-hivatkozó követelmény vethető össze az md "Név - `N.szint`" soraival. A többi típus
+                        # (páncél_hajlékonyság, max_effektív_mgt, faj, min_fegyverméret…) név nélküli, értéke nem
+                        # feltétlenül szám → a rendezésnél TypeError volt (int vs 'nem_fém').
+                        if not isinstance(e, dict) or e.get("típus") not in ("képzettség", "fortély", "tiltó_fortély"):
                             continue
                         nev = kovetelmeny_vissza(e).get("név")   # forrás id → név (gen/hivatkozas, 2026-10-17)
                         if is_harcmodor(nev):
