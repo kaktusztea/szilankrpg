@@ -4145,7 +4145,7 @@ A módok jelenleg KÜLÖN kódutakon élnek - ez az egyesítés kiindulópontja 
 | `flat` | `engine/effekt.ts` gyűjtő (fortély/alapeset/taktika; `calcFortelyMods` / `calcTaktikaMods` burkolók) + `harc/combat-roll-info.ts` (dobás-bónusz) + `engine/effekt.ts` `gyűjtHelyzetEffektek` (helyzet: `VÉ` → `helyzetMods`, `vé_csökkentés` → VÉ-csökkentés popup, `(bázis + k20P + flat) × szorzó`; a Fárasztás override-jára is ráadódik - általános szabály, 2026-10-16) | §16, §21 |
 | `scaled` | `engine/effekt.ts` `gyűjtFortélyEffektek` (képzettség-forrás FLOOR; `erőbónusz` → arány) | §16 |
 | `override` | `harc/fegyver-calc.ts` (SP override, fegyver_override) + `harc/extrak-effekt.ts` (extrák) | §5–8, §21 |
-| `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`harc/combat-roll-info.ts` saját gyűjtése - DÖNTÉS: marad, l. refactorlog 2026-10-18) | §22 |
+| `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`harc/combat-roll-info.ts`: a `gyűjt*Effektek` szűrése dobás-célokra; nettó szint: `kockaSzint`, 2026-10-18) | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
 | `letilt` | `harc/taktika-calc.ts` (feltételes TÉ semlegesítés) | §21 |
 | `szöveges` | `formatters.tsx` / `harc/HatasokInfo.tsx` (megjelenítés) | §22 |

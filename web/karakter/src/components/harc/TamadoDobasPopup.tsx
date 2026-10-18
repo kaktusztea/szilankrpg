@@ -15,7 +15,7 @@ import type { UndoPatch } from '../../hooks/useUndo';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { Fegyverviszony } from './ve-csokkentes-calc';
 import { támadódobástTiltóTaktika } from './ve-csokkentes-calc';
-import { netElőnySzint } from './combat-roll-info';
+import { netElőnySzint, fegyverSpBónuszok } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
 import type { ExtraKontextus } from './extrak-info-calc';
@@ -40,6 +40,8 @@ interface Props {
   /** A fegyver összes kiszámított módja. >1 elem esetén mód-választó gomb jelenik meg.
    * Üres/1 elem → egymódú fegyver, a té/sp/átütés propok érvényesek. */
   módok?: FegyverResultMód[];
+  /** Az aktív fegyver neve (a Mesterfegyver bontás-feliratához). */
+  fegyverNév?: string;
   /** Sebzésjelleg × páncél mátrix - továbbadva a Sebzés popupnak az „Ellenfél páncél" választóhoz. */
   páncélMátrix?: SebzésjellegPáncélMátrix;
   /** Az aktív fegyver extráinak listája (`cél_páncél` SP-hatás kiértékeléséhez). */
@@ -78,7 +80,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, data, karakter, session, setSession, pushUndo, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, data, karakter, session, setSession, pushUndo, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
@@ -146,7 +148,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
         defaultElőny={sebzésElőny}
         téK20={k20Érték}
         sebzésHatások={dobásInfo.sebzésHatások}
-        spBónuszok={dobásInfo.spBónuszok}
+        spBónuszok={[...fegyverSpBónuszok(aktívMód ?? elsődleges, fegyverNév), ...dobásInfo.spBónuszok]}
         megjegyzések={dobásInfo.sebzésMegjegyzések}
         átütés={aktívÁtütés}
         jelleg={aktívMód?.jelleg}

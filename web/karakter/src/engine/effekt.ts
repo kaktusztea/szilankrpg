@@ -19,6 +19,7 @@ import { createFeltételEvaluator } from './feltetel-eval';
 import { lookupFegyver } from './utils';
 import { buildPajzsFegyverNév } from '../components/harc/shared';
 import { extraFeltételTeljesül } from '../components/harc/extrak-info-calc';
+import { clampEHSzint } from './dice';
 
 export type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';
 
@@ -38,6 +39,8 @@ export interface Effekt {
     típus: EffektForrásTípus; név: string;
     /** fortély-forrásnál a fortély-id */ id?: string;
     /** státusz-forrásnál a fok alcíme (pl. „Zavart") - feliratokhoz */ alcím?: string;
+    /** fortély-forrásnál a többszörös példány eleme (pl. fegyver) */ elem?: string;
+    /** fokozatos taktika választott foka */ fok?: number;
   };
 }
 
@@ -52,7 +55,7 @@ export function gyűjtFortélyEffektek(
     const def = data.fortelySummaries.find(d => d.id === kf.id);
     const fokDef = def?.fokok.find(fd => fd.fok === kf.fok);
     if (!def || !fokDef?.módosítók) continue;
-    const forrás = { típus: 'fortély' as const, név: def.név, id: def.id };
+    const forrás = { típus: 'fortély' as const, név: def.név, id: def.id, ...(kf.elem ? { elem: kf.elem } : {}) };
     for (const mod of fokDef.módosítók) {
       if (!feltételTeljesül(mod.feltétel)) continue;
       // Session-toggle fortély (pl. Harci akrobatika): a TÉ/VÉ hatás csak bekapcsolt állapotban él.
@@ -103,23 +106,23 @@ function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
 const TAKTIKA_CÉLOK = ['KÉ', 'TÉ', 'VÉ', 'SP'] as const;
 
 /**
- * Aktív taktikák effektjei: a numerikus `módosítók` (fokozatosnál a fok-interpoláció) + a strukturált
- * `hatások[]` (teljesült feltétellel). A fortély `letilt` (pl. Taktikafókusz: Visszafogott) a taktika adott
- * célú hozzájárulását ejti. Forrás-specifikus korlát (§42.7, B döntés): a taktikák VÉ-összege a
- * `taktika_vé_eltolás_limit` közé szorul - ezért a numerikus módosítók célonként EGY összevont effektként jönnek.
+ * Aktív taktikák effektjei, taktikánként (forrás-bontással): a numerikus `módosítók` (fokozatosnál a fok-interpoláció)
+ * + a strukturált `hatások[]` (a taktika szintjén és fokozatosnál a választott fokén; teljesült feltétellel).
+ * A fortély `letilt` (pl. Taktikafókusz: Visszafogott) a taktika adott célú hozzájárulását ejti. Forrás-specifikus
+ * korlát (§42.7, B döntés): a taktikák VÉ-összege a `taktika_vé_eltolás_limit` közé szorul - túllépésnél egy
+ * „Taktika VÉ-plafon" korrekciós `flat` sor kerül a végére (így az összeg a plafon, a bontás megmarad).
  */
 export function gyűjtTaktikaEffektek(
   session: Session, data: GameData, k: Karakter | undefined,
   feltételTeljesül: (feltétel: unknown) => boolean,
 ): Effekt[] {
   const letiltva = k ? collectTaktikaLetiltások(k, data) : new Set<string>();
-  const összeg: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0 };
-  const nevek: string[] = [];
   const ki: Effekt[] = [];
+  let véÖsszeg = 0;
   for (const at of session.aktív_taktikák) {
     const def = data.taktikak.find(t => t.név === at.név);
     if (!def) continue;
-    nevek.push(at.név);
+    const forrás = { típus: 'taktika' as const, név: at.név, ...(def.fokozatos ? { fok: at.fok ?? 1 } : {}) };
     let mods: Partial<Record<string, number>> | undefined;
     if (def.fokozatos && def.fokok && at.fok != null) {
       mods = interpolateFokDef(def.fokok, at.fok, !!def.fortély_bővítés || !!def.skálázható) as typeof mods;
@@ -128,17 +131,21 @@ export function gyűjtTaktikaEffektek(
     }
     for (const cél of TAKTIKA_CÉLOK) {
       const v = mods?.[cél];
-      if (v && !letiltva.has(`${def.feltétel_kulcs}|${cél}`)) összeg[cél] += v;
+      if (!v || letiltva.has(`${def.feltétel_kulcs}|${cél}`)) continue;
+      ki.push({ cél, mód: 'flat', érték: v, forrás });
+      if (cél === 'VÉ') véÖsszeg += v;
     }
-    for (const h of def.hatások ?? []) {
+    const fokHatások = def.fokozatos ? def.fokok?.find(f => f.fok === (at.fok ?? 1))?.hatások ?? [] : [];
+    for (const h of [...(def.hatások ?? []), ...fokHatások]) {
       if (h.feltétel && !feltételTeljesül(h.feltétel)) continue;
-      ki.push({ cél: h.cél, mód: h.mód, érték: h.érték, forrás: { típus: 'taktika', név: at.név } });
+      ki.push({ cél: h.cél, mód: h.mód, érték: h.érték, ...(h.megjegyzés ? { megjegyzés: h.megjegyzés } : {}), forrás });
     }
   }
   const lim = data.konstansok.taktika_vé_eltolás_limit;
-  összeg.VÉ = Math.max(-lim, Math.min(lim, összeg.VÉ));
-  const forrás = { típus: 'taktika' as const, név: nevek.join(', ') };
-  for (const cél of TAKTIKA_CÉLOK) if (összeg[cél]) ki.push({ cél, mód: 'flat', érték: összeg[cél], forrás });
+  const vágott = Math.max(-lim, Math.min(lim, véÖsszeg));
+  if (vágott !== véÖsszeg) {
+    ki.push({ cél: 'VÉ', mód: 'flat', érték: vágott - véÖsszeg, forrás: { típus: 'taktika', név: 'Taktika VÉ-plafon' } });
+  }
   return ki;
 }
 
@@ -148,7 +155,8 @@ export function gyűjtHelyzetEffektek(session: Session, data: GameData): Effekt[
   for (const név of session.aktív_helyzetek) {
     const def = data.harciHelyzetek.find(h => h.név === név);
     for (const h of def?.hatások ?? []) {
-      ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), mód: h.mód, érték: h.érték, forrás: { típus: 'helyzet', név } });
+      ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), mód: h.mód, érték: h.érték,
+        ...(h.megjegyzés ? { megjegyzés: h.megjegyzés } : {}), forrás: { típus: 'helyzet', név } });
     }
   }
   return ki;
@@ -168,7 +176,8 @@ export function gyűjtStátuszEffektek(session: Pick<Session, 'aktív_státuszok
     const fokDef = data.statuszok.find(s => s.név === alapNév)?.fokok.find(f => f.fok === parseInt(m[2]));
     for (const h of fokDef?.hatások ?? []) {
       ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), ...(al ? { alkategória: al } : {}),
-        mód: h.mód, érték: h.érték, forrás: { típus: 'státusz', név: st, alcím: fokDef!.alcím } });
+        mód: h.mód, érték: h.érték, ...(h.megjegyzés ? { megjegyzés: h.megjegyzés } : {}),
+        forrás: { típus: 'státusz', név: st, alcím: fokDef!.alcím } });
     }
   }
   return ki;
@@ -205,6 +214,15 @@ export function értékCélra(effektek: Effekt[], cél: string, bázis = 0, alc�
     .map(e => ({ cél: e.cél, mód: e.mód, érték: e.érték }));
   return alkalmazEffektek(bázis, hatások);
 }
+
+/**
+ * Kocka-dimenzió (§42.3 5. lépés): az előny / hátrány / enyhít hatások előjeles összege, clamp [-2, +2]
+ * (előny +, hátrány −, enyhít +). A `szöveges` és a többi mód nem számít.
+ */
+export function kockaSzint(hatások: { mód: string; érték?: number }[]): number {
+  return clampEHSzint(hatások.reduce((s, h) => (KOCKA_SZINT_MÓDOK.has(h.mód) ? s + (h.érték ?? 0) : s), 0));
+}
+const KOCKA_SZINT_MÓDOK = new Set(['előny', 'hátrány', 'enyhít']);
 
 /** Fegyverfüggő `scaled` arányok összege (pl. SP + "erőbónusz": a fegyver Erőlimitje szerint szorzódik). */
 export function arányÖsszeg(effektek: Effekt[], cél: string, arányForrás: string): number {

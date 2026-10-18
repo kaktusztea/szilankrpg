@@ -100,6 +100,9 @@ function calcModResult(
     Átütés: mód.Átütés,
     támadások: fComp.get('fegyver_támadások') ?? 1, harckeret: fComp.get('fegyver_harckeret') ?? 0,
     sebesség: mód.Sebesség ?? 6, alap_TÉ: alapTÉ, alap_VÉ: alapVÉ,
+    // A rules.json fegyver_SP erőbónusz-tagja (ugyanazokból a ctx-értékekből) - csak a bontás-felirathoz.
+    sp_erőbónusz: Math.floor(Math.min(fCtx.get('tulajdonságok.erő') ?? 0, mód.Erőlimit) * (1 + (fCtx.get('fegyver_fortély_SP_erőbónusz_arány') ?? 0))),
+    sp_mf: mf.SP,
     hk_harcmodor: harcmodorSzint,
     hk_gyorsaság: fCtx.get('tulajdonságok.gyorsaság') ?? 0,
     hk_mgt: fCtx.get('páncél_MGT') ?? 0,

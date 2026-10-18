@@ -1,6 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { collectDobásInfo, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
-import type { Session, Karakter } from '../../engine/types';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { loadGameDataSync } from '../../__tests__/load-gamedata';
+import { useHarcComputed } from './useHarcComputed';
+import { elsődlegesMód } from './fegyver-calc';
+import { collectDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
+import type { Session, Karakter, FegyverAlap } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
 
@@ -8,6 +13,7 @@ import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
 function makeData(): GameData {
   return {
     harciHelyzetek: [],
+    fegyverek: [],
     statuszok: [],
     fortelySummaries: [],
     konstansok: { fegyver_erő_követelmény_hátrány: -1 },
@@ -55,7 +61,7 @@ describe('collectDobásInfo - nem-fokozatos taktika strukturált hatás', () => 
 describe('collectDobásInfo - Erő-követelmény (md/064_02_06)', () => {
   const karakterGyenge = { fortélyok: [], tulajdonságok: { erő: 1 } } as unknown as Karakter;
   const karakterErős = { fortélyok: [], tulajdonságok: { erő: 3 } } as unknown as Karakter;
-  const nehézFegyver = { név: 'Alabárd', erő_követelmény: 2 };
+  const nehézFegyver = { név: 'Alabárd', kategória: 'szálfegyver', erő_követelmény: 2 } as unknown as FegyverAlap;
   const sessionNincsTaktika = { aktív_helyzetek: [], aktív_taktikák: [], aktív_státuszok: [], fegyverfogás: 'egykezes' } as unknown as Session;
 
   it('Hátrány-1 a Támadó dobásra, ha a karakter Ereje a követelmény alatt van', () => {
@@ -142,5 +148,37 @@ describe('távjellegMátrixKulcs', () => {
   it('spec vagy ismeretlen → undefined (nincs páncélmátrix-interakció → nincs választó)', () => {
     expect(távjellegMátrixKulcs('spec')).toBeUndefined();
     expect(távjellegMátrixKulcs('')).toBeUndefined();
+  });
+});
+// Fegyverfüggő SP-bónuszok a bontásban (2026-10-18): a kézben lévő fegyver kulcsaival, valódi adaton.
+describe('collectDobásInfo - Pajzshasználat / Mesterfegyver SP a bontásban', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const session = { ...alap.session, aktív_taktikák: [], aktív_helyzetek: [], aktív_státuszok: [] } as Session;
+  const sp = (fortély: { id: string; fok: number; elem: string }, fegyverNév: string) => {
+    const k = { ...alap, fortélyok: [fortély], session } as Karakter;
+    return collectDobásInfo(session, k, data, data.fegyverek.find(f => f.név === fegyverNév)).spBónuszok;
+  };
+  const pajzs = data.fegyverek.find(f => f.kategória === 'pajzs')!;
+  const kard = data.fegyverek.find(f => f.kategória !== 'pajzs')!;
+
+  it('Pajzshasználat (2): +2 csak pajzzsal', () => {
+    expect(sp({ id: 'pajzshasználat', fok: 2, elem: '' }, pajzs.név)).toEqual([{ forrás: 'Pajzshasználat', érték: 2 }]);
+    expect(sp({ id: 'pajzshasználat', fok: 2, elem: '' }, kard.név)).toEqual([]);
+  });
+
+  it('Mesterfegyver + Erőbónusz: a fegyver-mód saját SP-tagjaiból (fegyverSpBónuszok), csak a megjelölt fegyverre', () => {
+    const mf = data.konstansok.mesterfegyver_bónuszok.find(b => b.fok === 2)!.SP;
+    const k = { ...alap, fortélyok: [{ id: 'mesterfegyver', fok: 2, elem: kard.név }], fegyverek: [{ ...alap.fegyverek[0], alap: kard.név }], session } as Karakter;
+    const r = useHarcComputed(data, k, session).fegyverResults.find(x => x.fegyver_név === kard.név)!;
+    const erő = Math.min(k.tulajdonságok.erő, elsődlegesMód(kard).Erőlimit);
+    expect(fegyverSpBónuszok(r, kard.név)).toEqual([
+      ...(erő ? [{ forrás: 'Erőbónusz', érték: erő }] : []),
+      { forrás: `Mesterfegyver - ${kard.név}`, érték: mf },
+    ]);
+    // Minden mód SP-je tartalmazza a tagokat: SP − erő − mf = a mód nélkülük számolt SP-je
+    const k0 = { ...k, fortélyok: [], tulajdonságok: { ...k.tulajdonságok, erő: 0 } } as Karakter;
+    const r0 = useHarcComputed(data, k0, session).fegyverResults.find(x => x.fegyver_név === kard.név)!;
+    r.módok.forEach((m, i) => expect(m.SP - m.sp_erőbónusz - m.sp_mf).toBe(r0.módok[i].SP));
   });
 });

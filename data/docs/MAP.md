@@ -56,7 +56,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `data-types.ts` | GameData, FortelySummary, TaktikaEntry, HarciHelyzetEntry stb. |
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
 | `fortely-mods.ts` | calcFortelyMods - burkoló az `effekt.ts` gyűjtő fölött (fortély + alapeset → célonkénti Record) |
-| `effekt.ts` | Egységes effekt-modell (§42 3. fázis): `gyűjtFortélyEffektek`, `gyűjtTaktikaEffektek`, `értékCélra`, `arányÖsszeg`; regressziós snapshot: `effekt.regresszio.test.ts`; a `calcFortelyMods` / `calcTaktikaMods` ennek burkolói |
+| `effekt.ts` | Egységes effekt-modell (§42 3. fázis): `gyűjtFortélyEffektek`, `gyűjtTaktikaEffektek` (taktikánként + VÉ-plafon korrekciós sor), `gyűjtHelyzetEffektek`, `gyűjtStátuszEffektek`, `értékCélra`, `arányÖsszeg`, `kockaSzint` (E/H nettó szint); a harci dobás-hatások (`combat-roll-info.ts`) és a próba-státusz (`statusz-proba.ts`) is ebből; regressziós snapshot: `effekt.regresszio.test.ts`; a `calcFortelyMods` / `calcTaktikaMods` ennek burkolói |
 | `azonosito.ts` | Fortély/képzettség azonosítás (séma v3): `képzKulcs` / `bontKépzKulcs` (`<id>/<elem>`), `fortélyNév` / `képzettségNév` / `harcmodorNév` (id → megjelenített név), `képzettségSzint`; konstansok `HARCMODOR_ID`, `TRADÍCIÓ_ID`, `EGYEDI_FORTÉLY_ID` |
 | `mf-utils.ts` | `findMfFokByName` (egyetlen MF egyeztető) + `findMfFok` (fegyvertáblából) + `getMfBónusz` |
 | `alapeset.ts` | Fortély 0.fok (Alapeset) kiértékelés |
@@ -168,7 +168,7 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   ve-csokkentes-calc.ts    Sikertelen támadás VÉ csökkentése (Fegyverviszony bázis + k20P; taktika override/flat; fortély flat) - §5.3/§13.1
   VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P; a Roham/Öngyilkos roham ×2 szorzó forrás-taktikája kiírva a gombon és a bontásban)
   VeSzorzoInfoPopup.tsx    VÉ csökkentés szorzó/bázis infó popup
-  combat-roll-info.ts      Támadó/Sebzés dobás bónusz kalkuláció (pure fn)
+  combat-roll-info.ts      Támadó/Sebzés/CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve)
   HatasokInfo.tsx          Dobás-hatás badge feliratok (Előny/Hátrány/Enyhít formázás, pure fn)
   extrak-info-calc.ts      Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn). Aktív-jelzés: harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél feltételek + aktív manőverhez kapcsolt hatás-al-feltétel ("manőver:<id>")
   extrak-effekt.ts         Egységes effekt-precedencia (§42.3: additív→szorzó→override→max_limit, FLOOR) pure motor + aktívHatásokCélra (csak teljesült feltételű hatások) + hiányzóInfósExtrák (KM-warning, hiányos korreláció). Bekötve: Sebzés popup SP-delta, VÉ-csökkentés warning

@@ -1,0 +1,5137 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`harci dobás-hatások regressziós snapshot > minden fortély 0 1`] = `
+{
+  "alap": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Csúszós talaj": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Elvesztett egyensúly": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Földön fekve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Földön fekve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Gyengébb kéz": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "cé_dobás",
+          "forrás": "Alkalmatlan fegyver hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Alkalmatlan fegyver hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "cé_dobás",
+          "forrás": "Alkalmatlan tárgyak hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Alkalmatlan tárgyak hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Helyhez kötve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Helyhez kötve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hátulról támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Levegőből támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Levegőből támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - részlegesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - teljesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Lövés reflexből": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Lövés reflexből",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Magasabbról": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Magasabbról",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Meglepetés": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Meglepetés",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Orvtámadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Orgyilkos",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Orgyilkos",
+          "érték": 1,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Takarásban harcolás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Takarásban harcolás",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - ég": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - félhomályban": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - félhomályban",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - sötétben": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - sötétben",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vér elvakít": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "kombó": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Orgyilkos",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "szöveges",
+          "érték": 0,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+        {
+          "forrás": "Orgyilkos",
+          "érték": 1,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas roham",
+          "érték": 10,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas támadás galoppból",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Fárasztás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [
+        {
+          "forrás": "Fárasztás",
+          "szöveg": "Nincs támadódobás.",
+        },
+      ],
+    },
+  },
+  "taktika Kitartott célzás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Kitartott célzás",
+          "szöveg": "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. Csak íjakkal és lőfegyverekkel.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Páros kétkezes hajítás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Páros kétkezes hajítás",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 1": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (1)",
+          "érték": 1,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (2)",
+          "érték": 2,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (3)",
+          "érték": 3,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (5)",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Visszafogott": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "szöveges",
+          "érték": 0,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Érintő": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Érintő",
+          "szöveg": "Sebzés: 0. Csak megérintés.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Öngyilkos roham",
+          "érték": 7,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+}
+`;
+
+exports[`harci dobás-hatások regressziós snapshot > minden fortély 1 1`] = `
+{
+  "alap": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Csúszós talaj": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Elvesztett egyensúly": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Földön fekve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Földön fekve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Gyengébb kéz": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "cé_dobás",
+          "forrás": "Alkalmatlan fegyver hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Alkalmatlan fegyver hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "cé_dobás",
+          "forrás": "Alkalmatlan tárgyak hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Alkalmatlan tárgyak hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Helyhez kötve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Helyhez kötve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "té_dobás",
+          "forrás": "Helyhez kötve fejlesztése",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hátulról támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Levegőből támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Levegőből támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - részlegesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - teljesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Lövés reflexből": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Lövés reflexből",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Magasabbról": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Magasabbról",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Meglepetés": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Meglepetés",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Orvtámadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Orgyilkos",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Orgyilkos",
+          "érték": 2,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Takarásban harcolás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Takarásban harcolás",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - ég": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - félhomályban": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - félhomályban",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - sötétben": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - sötétben",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vér elvakít": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "kombó": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Orgyilkos",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "szöveges",
+          "érték": 0,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+        {
+          "forrás": "Orgyilkos",
+          "érték": 2,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas roham",
+          "érték": 10,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas támadás galoppból",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Fárasztás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [
+        {
+          "forrás": "Fárasztás",
+          "szöveg": "Nincs támadódobás.",
+        },
+      ],
+    },
+  },
+  "taktika Kitartott célzás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Kitartott célzás",
+          "szöveg": "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. Csak íjakkal és lőfegyverekkel.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Páros kétkezes hajítás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Páros kétkezes hajítás",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 1": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (1)",
+          "érték": 1,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (2)",
+          "érték": 2,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (3)",
+          "érték": 3,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (5)",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Visszafogott": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "szöveges",
+          "érték": 0,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Érintő": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Érintő",
+          "szöveg": "Sebzés: 0. Csak megérintés.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Öngyilkos roham",
+          "érték": 7,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+}
+`;
+
+exports[`harci dobás-hatások regressziós snapshot > minden fortély 2 1`] = `
+{
+  "alap": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Csúszós talaj": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Elvesztett egyensúly": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Földön fekve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Földön fekve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Gyengébb kéz": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "cé_dobás",
+          "forrás": "Alkalmatlan fegyver hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Alkalmatlan fegyver hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "cé_dobás",
+          "forrás": "Alkalmatlan tárgyak hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Alkalmatlan tárgyak hajítása",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Helyhez kötve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Helyhez kötve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+        {
+          "cél": "té_dobás",
+          "forrás": "Helyhez kötve fejlesztése",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hátulról támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Levegőből támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Levegőből támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - részlegesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - teljesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Lövés reflexből": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Lövés reflexből",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Magasabbról": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Magasabbról",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Meglepetés": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Meglepetés",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Orvtámadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Orgyilkos",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Orgyilkos",
+          "érték": 3,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Takarásban harcolás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Takarásban harcolás",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - ég": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - félhomályban": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - félhomályban",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - sötétben": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - sötétben",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vér elvakít": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "kombó": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Orgyilkos",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "szöveges",
+          "érték": 0,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+        {
+          "forrás": "Orgyilkos",
+          "érték": 3,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas roham",
+          "érték": 10,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas támadás galoppból",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Fárasztás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [
+        {
+          "forrás": "Fárasztás",
+          "szöveg": "Nincs támadódobás.",
+        },
+      ],
+    },
+  },
+  "taktika Kitartott célzás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Kitartott célzás",
+          "szöveg": "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. Csak íjakkal és lőfegyverekkel.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Páros kétkezes hajítás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Páros kétkezes hajítás",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 1": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (1)",
+          "érték": 1,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (2)",
+          "érték": 2,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (3)",
+          "érték": 3,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (5)",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Visszafogott": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "enyhít",
+          "érték": 2,
+        },
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Taktikafókusz: Visszafogott",
+          "megjegyzés": undefined,
+          "operátor": "szöveges",
+          "érték": 0,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Érintő": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Érintő",
+          "szöveg": "Sebzés: 0. Csak megérintés.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Öngyilkos roham",
+          "érték": 7,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+}
+`;
+
+exports[`harci dobás-hatások regressziós snapshot > teszt2 1`] = `
+{
+  "alap": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Csúszós talaj": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Elvesztett egyensúly": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Földön fekve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Földön fekve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Gyengébb kéz": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Helyhez kötve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Helyhez kötve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hátulról támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Levegőből támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Levegőből támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - részlegesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - teljesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Lövés reflexből": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Lövés reflexből",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Magasabbról": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Magasabbról",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Meglepetés": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Meglepetés",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Orvtámadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Takarásban harcolás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Takarásban harcolás",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - ég": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - félhomályban": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - félhomályban",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - sötétben": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - sötétben",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vér elvakít": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "kombó": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas roham",
+          "érték": 10,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas támadás galoppból",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Fárasztás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [
+        {
+          "forrás": "Fárasztás",
+          "szöveg": "Nincs támadódobás.",
+        },
+      ],
+    },
+  },
+  "taktika Kitartott célzás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Kitartott célzás",
+          "szöveg": "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. Csak íjakkal és lőfegyverekkel.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Páros kétkezes hajítás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Páros kétkezes hajítás",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 1": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (1)",
+          "érték": 1,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (2)",
+          "érték": 2,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (3)",
+          "érték": 3,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (5)",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Visszafogott": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Érintő": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Érintő",
+          "szöveg": "Sebzés: 0. Csak megérintés.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Öngyilkos roham",
+          "érték": 7,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+}
+`;
+
+exports[`harci dobás-hatások regressziós snapshot > teszt3 1`] = `
+{
+  "alap": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Meglepetés",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Csúszós talaj": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Csúszós talaj",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Elvesztett egyensúly": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Elvesztett egyensúly",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Földön fekve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Földön fekve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Gyengébb kéz": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Gyengébb kéz",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás alkalmatlan fegyverrel": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás alkalmatlan fegyverrel",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hajítás nem dobásra készített tárgyakkal": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Hajítás nem dobásra készített tárgyakkal",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Helyhez kötve": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Helyhez kötve",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Hátulról támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Hátulról támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Levegőből támadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Levegőből támadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - részlegesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - részlegesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Láthatatlan - teljesen": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Láthatatlan - teljesen",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Lövés reflexből": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Lövés reflexből",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Magasabbról": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Magasabbról",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Meglepetés": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Meglepetés",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Orvtámadás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Takarásban harcolás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Takarásban harcolás",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - lángol": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - lángol",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Tűz ruhán - ég": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Tűz ruhán - ég",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - félhomályban": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - félhomályban",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vakharc - sötétben": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vakharc - sötétben",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "helyzet Vér elvakít": {
+    "c": {
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Vér elvakít",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "kombó": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Orvtámadás",
+          "megjegyzés": undefined,
+          "operátor": "előny",
+          "érték": 2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Blokkolt (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Blokkolt (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Eszmélet (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Eszmélet (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (1)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (1)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Rosszullét (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Rosszullét (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas roham",
+          "érték": 10,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika (Lég)Lovas támadás galoppból": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "(Lég)Lovas támadás galoppból",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Fárasztás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [
+        {
+          "forrás": "Fárasztás",
+          "szöveg": "Nincs támadódobás.",
+        },
+      ],
+    },
+  },
+  "taktika Páros kétkezes hajítás": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [
+        {
+          "forrás": "Páros kétkezes hajítás",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+        },
+      ],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Roham",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 1": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (1)",
+          "érték": 1,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 2": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (2)",
+          "érték": 2,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 3": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (3)",
+          "érték": 3,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Támadás erőből 5": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Támadás erőből (5)",
+          "érték": 5,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Visszafogott": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [
+        {
+          "cél": "sebzésdobás",
+          "forrás": "Visszafogott",
+          "megjegyzés": "Sebzésdobás: Hátrány-2",
+          "operátor": "hátrány",
+          "érték": -2,
+        },
+      ],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Visszafogott",
+          "szöveg": "TÉ levonásért szándékos Hátrány-2 Sebzésdobásra.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Érintő": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [
+        {
+          "forrás": "Érintő",
+          "szöveg": "Sebzés: 0. Csak megérintés.",
+        },
+      ],
+      "spBónuszok": [],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+  "taktika Öngyilkos roham": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [
+        {
+          "forrás": "Öngyilkos roham",
+          "érték": 7,
+        },
+      ],
+      "téHatások": [],
+      "téMegjegyzések": [],
+    },
+  },
+}
+`;

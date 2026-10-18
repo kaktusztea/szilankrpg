@@ -235,6 +235,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           sp={ctx?.result.SP ?? 0}
           átütés={ctx?.result.Átütés ?? 0}
           módok={ctx?.result.módok}
+          fegyverNév={ctx?.result.fegyver_név}
           páncélMátrix={data.sebzésjellegPáncélMátrix}
           fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
           extraDefs={data.fegyverExtrák}
