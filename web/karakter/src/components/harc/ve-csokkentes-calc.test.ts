@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { calcVéCsökkentés, calcTaktikaVéCsökkentésBázis, calcTaktikaVéCsökkentés, calcVéCsökkentésSzorzó } from './ve-csokkentes-calc';
+import { calcVéCsökkentés, calcTaktikaVéCsökkentésBázis, calcTaktikaVéCsökkentés, calcVéCsökkentésSzorzó, támadódobástTiltóTaktika } from './ve-csokkentes-calc';
+import type { Session } from '../../engine/types';
 
 const alapTáblázat = { fegyverhátrány: 0, fegyverazonosság: 1, fegyverelőny: 2 };
 
@@ -141,5 +142,22 @@ describe('calcVéCsökkentésSzorzó - Roham/Öngyilkos roham duplázás', () =>
   it('több szorzó: a legnagyobb számít (§42.3, nem kumulál)', () => {
     const hatások = [{ mód: 'szorzó', érték: 2, cél: 'vé_csökkentés' }, { mód: 'szorzó', érték: 2, cél: 'vé_csökkentés' }];
     expect(calcVéCsökkentésSzorzó(hatások)).toBe(2);
+  });
+});
+
+describe('támadódobástTiltóTaktika - Fárasztás / Teljes Védekezés → a Támadó dobás popup nem enged dobni', () => {
+  const sess = (taktikák: string[]) => ({ aktív_taktikák: taktikák.map(név => ({ név })) }) as unknown as Session;
+
+  it('Fárasztás aktív → a taktika neve', () => {
+    expect(támadódobástTiltóTaktika(sess(['Fárasztás']))).toBe('Fárasztás');
+  });
+  it('Teljes Védekezés aktív → a taktika neve', () => {
+    expect(támadódobástTiltóTaktika(sess(['Teljes Védekezés']))).toBe('Teljes Védekezés');
+  });
+  it('nincs aktív taktika → null', () => {
+    expect(támadódobástTiltóTaktika(sess([]))).toBeNull();
+  });
+  it('más taktika (pl. Roham) nem tiltja a támadódobást → null', () => {
+    expect(támadódobástTiltóTaktika(sess(['Roham']))).toBeNull();
   });
 });

@@ -168,3 +168,15 @@ export function taktikaVéCsökkentésÁllapot(
 /** Taktika-nevek, amelyekhez a Harc fül TÉ chip-je eltérő viselkedést kapcsol. */
 const FÁRASZTÁS = 'Fárasztás';
 const TELJES_VÉDEKEZÉS = 'Teljes Védekezés';
+
+/**
+ * A rendes Támadó dobást kizáró aktív taktika NEVE, ha van ilyen (különben null):
+ *  - Fárasztás: a TÉ chip a VÉ csökkentés popupot nyitja (nincs támadódobás);
+ *  - Teljes Védekezés: a karakter nem támad (hátrál).
+ * A Támadó dobás popup erre figyel, ha a taktikát a popupon BELÜL kapcsolják be (akkor is érvényesülnie
+ * kell, nem csak a popup újranyitásakor) - l. HarcScreen.onTéClick ugyanezen két taktika ágai.
+ * A visszaadott névvel a popup a taktika `megjegyzés`-ét mutatja (egy igazságforrás: taktikak.yaml).
+ */
+export function támadódobástTiltóTaktika(session: Session): string | null {
+  return session.aktív_taktikák.find(t => t.név === FÁRASZTÁS || t.név === TELJES_VÉDEKEZÉS)?.név ?? null;
+}

@@ -14,6 +14,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { UndoPatch } from '../../hooks/useUndo';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { Fegyverviszony } from './ve-csokkentes-calc';
+import { támadódobástTiltóTaktika } from './ve-csokkentes-calc';
 import { netElőnySzint } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
@@ -123,6 +124,12 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
   // Másodlagos sebzéstípus → Hátrány−1 (a Sebzés popupba beépítve adjuk át).
   const sebzésElőny = sebzésElőnyFromK20(k20Érték) + (aktívSebzéstípus === 'másodlagos' ? -1 : 0);
 
+  // Ha a popupon BELÜL olyan taktikát kapcsolnak be, ami kizárja a rendes Támadó dobást (Fárasztás /
+  // Teljes Védekezés), a dobás-fázisban nem engedünk dobni (csak Bezár). A tiltás oka a taktika saját
+  // `megjegyzés`-éből jön (egy igazságforrás: taktikak.yaml) - l. HarcScreen.onTéClick ugyanezen ágai.
+  const tiltóTaktika = támadódobástTiltóTaktika(session);
+  const tiltóMegjegyzés = tiltóTaktika ? data.taktikak.find(t => t.név === tiltóTaktika)?.megjegyzés ?? '' : '';
+
   // Az aktuálisan választott mód aktorára igazított extra-kontextus (az `aktor`-feltételes extrák -
   // pl. `pontos` - mód-váltásra reagáljanak). A forgatás a base kontextusból (elsődleges mód) jön,
   // a cél_páncél-t a Sebzés popup adja.
@@ -217,7 +224,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
 
         {!téResult ? (
           <>
-            {dobásInfo.téMegjegyzések.length > 0 && (
+            {!tiltóTaktika && dobásInfo.téMegjegyzések.length > 0 && (
               <div className="dobas-info-list dobas-notes">
                 {dobásInfo.téMegjegyzések.map((m, i) => (
                   <div key={i} className="dobas-info-item">
@@ -247,10 +254,24 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, páncélMátrix, 
             {aktívExtraKontextus && (
               <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={aktívExtraKontextus} />
             )}
-            <div className="dobas-btn-row">
-              <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás (k20)</button>
-              <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={aktívTé} alapLabel="TÉ" />
-            </div>
+            {tiltóTaktika ? (
+              <>
+                <div className="dobas-info-list dobas-notes">
+                  <div className="dobas-info-item">
+                    <span className="dobas-info-badge note">⚠</span>
+                    <span className="dobas-info-source">{tiltóTaktika}: {tiltóMegjegyzés}</span>
+                  </div>
+                </div>
+                <div className="dobas-btn-row">
+                  <button className="tamado-ve-csokkentes-btn" onClick={() => onClose(null)}>Bezár</button>
+                </div>
+              </>
+            ) : (
+              <div className="dobas-btn-row">
+                <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás (k20)</button>
+                <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={aktívTé} alapLabel="TÉ" />
+              </div>
+            )}
           </>
         ) : (
           <>
