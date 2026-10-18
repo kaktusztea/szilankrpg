@@ -54,6 +54,13 @@ fokok:
   - text: "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások."
   - text: "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
   módosítók:
+  - cél: "alkalmi_tárgy_osztó"
+    érték: 2
+    mód: "override"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+    megjegyzés: "Alkalmi tárgy Osztó"
   - cél: "sebzésdobás"
     érték: 1
     mód: "enyhít"

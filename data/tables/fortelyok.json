@@ -9960,6 +9960,15 @@
         ],
         "módosítók": [
           {
+            "cél": "alkalmi_tárgy_osztó",
+            "érték": 2,
+            "mód": "override",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Alkalmi tárgy Osztó"
+          },
+          {
             "cél": "sebzésdobás",
             "érték": 1,
             "mód": "enyhít",
@@ -10319,7 +10328,17 @@
         ],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": [],
+        "módosítók": [
+          {
+            "cél": "lövéskitérés",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Lövéskitérés: Akrobatika próba"
+          }
+        ],
         "próba_enyhítések": []
       }
     ],

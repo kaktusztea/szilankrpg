@@ -30,4 +30,11 @@ fokok:
     követelmények: ""
     hatástext:
       - text: "Lövéskitérés taktikában Akrobatika próbára +2 bónusz."
-    módosítók: ""
+    módosítók:
+      - cél: "lövéskitérés"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+        megjegyzés: "Lövéskitérés: Akrobatika próba"

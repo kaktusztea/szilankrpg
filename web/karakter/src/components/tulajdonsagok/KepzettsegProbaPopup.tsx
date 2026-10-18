@@ -3,7 +3,7 @@ import type { Kepzettseg, Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { ModositoTabla, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 import { képzettségSzint, képzettségNév as képzettségNévId } from '../../engine/azonosito';
-import { calcStátuszPróbaEH } from '../../engine/statusz-proba';
+import { calcStátuszPróbaEH, próbaÉrzékek } from '../../engine/statusz-proba';
 import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
@@ -106,8 +106,11 @@ export function KepzettsegProbaPopup({
 
   const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
   const ehAlap = calcMultiKiterjesztésEH(selectedKits, effFortélyFokok);
-  // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt)
-  const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségKulcs, képzettségCsoport);
+  // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt). Alkategóriás státusz (Érzékvesztés: Látás)
+  // csak a választott érzékre hat; alapból az első érintett érzék (a büntetés látható, átkapcsolható / kikapcsolható).
+  const érzékek = próbaÉrzékek(aktívStátuszok, statuszDefs, képzettségKulcs, képzettségCsoport);
+  const [érzék, setÉrzék] = useState<string | undefined>(érzékek.érintett[0]);
+  const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségKulcs, képzettségCsoport, érzék);
   const ehSzintRaw = ehAlap.szint + státuszEH.szint + felszEH;
   const eh = { szint: clampEHSzint(ehSzintRaw), tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };
   const erősTiltott = eh.tiltott;
@@ -230,6 +233,17 @@ export function KepzettsegProbaPopup({
             </>)}
           </div>
         </div>
+
+        {érzékek.érintett.length > 0 && !vanEredmény && (
+          <div className="kep-proba-osszetett-row kep-proba-erzek-row" role="group" aria-label="Használt érzék">
+            {érzékek.opciók.map(é => (
+              <ExtraGomb key={é} aktív={érzék === é} title={érzékek.érintett.includes(é) ? 'Érzékvesztés érinti' : undefined}
+                onClick={() => { setÉrzék(érzék === é ? undefined : é); resetDobás(); }}>
+                {é}{érzékek.érintett.includes(é) ? ' ⚠' : ''}
+              </ExtraGomb>
+            ))}
+          </div>
+        )}
 
         {kiterjesztesek.length > 0 && (
           <div className="kep-proba-row">

@@ -1,6 +1,6 @@
-import type { TavharcSzorzok, Karakter, TavfegyverAlap } from '../../engine/types';
+import type { TavharcSzorzok, Karakter } from '../../engine/types';
 import { SP_NINCS } from '../../engine/types';
-import type { KonstansokRaw } from '../../engine/data-types';
+import type { GameData } from '../../engine/data-loader';
 import { SzorzóPicker } from './SzorzoPicker';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 
@@ -26,11 +26,10 @@ interface Props {
   onTávolságPopup: () => void;
   onCéDobás: () => void;
   karakter: Karakter;
-  konstansok: KonstansokRaw;
-  tavfegyverek: TavfegyverAlap[];
+  data: GameData;
 }
 
-export function TavharcKalkulator({ cé, vé, sp, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, onCéDobás, karakter, konstansok, tavfegyverek }: Props) {
+export function TavharcKalkulator({ cé, vé, sp, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, onCéDobás, karakter, data }: Props) {
   const véClass = vé <= cé + 1 ? 'th-ve-ok' : vé - cé > 20 ? 'th-ve-bad' : 'th-ve-warn';
 
   return (
@@ -51,7 +50,7 @@ export function TavharcKalkulator({ cé, vé, sp, támadásLabel, szorzóÖsszeg
         <SzorzóPicker label="Méret" list={szorzok.célpont_méret} activeId={szorzóState.méretId} onSelect={id => onSzorzóChange('méretId', id)} />
         <SzorzóPicker label="Észlelhetőség" list={szorzok.észlelhetőség} activeId={szorzóState.észlelhetőségId} onSelect={id => onSzorzóChange('észlelhetőségId', id)} />
         <SzorzóPicker label="Szél ereje" list={szorzok.szél} activeId={szorzóState.szélId} onSelect={id => onSzorzóChange('szélId', id)} />
-        <TavharcLoveskiteres karakter={karakter} konstansok={konstansok} tavfegyverek={tavfegyverek} />
+        <TavharcLoveskiteres karakter={karakter} data={data} />
       </div>
     </>
   );

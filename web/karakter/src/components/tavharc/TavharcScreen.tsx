@@ -132,12 +132,12 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           szorzok={szorzok} szorzóState={szorzóState} onSzorzóChange={onSzorzóChange}
           onTávolságPopup={() => setPopup(s => ({ ...s, távolságPopup: true }))}
           onCéDobás={() => setShowCéDobás(true)}
-          karakter={k} konstansok={konstansok} tavfegyverek={data.tavfegyverek}
+          karakter={k} data={data}
         />
       )}
 
       {gameMode && !tfDef && (
-        <TavharcLoveskiteres karakter={k} konstansok={konstansok} tavfegyverek={data.tavfegyverek} />
+        <TavharcLoveskiteres karakter={k} data={data} />
       )}
 
       {!tfDef && összesFegyver.length === 0 && gameMode && (

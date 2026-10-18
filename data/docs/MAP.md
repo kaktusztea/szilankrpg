@@ -69,7 +69,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `dice.ts` | Kockadobás: rollDie(sides), rollK20/K10, `rollElőnyHátrányDie(szint, sides)` + k6/k10/k20 wrapperek, `előnyHátrányLabel`, `clampEHSzint` (E/H szint [-2,+2]) |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
-| `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció |
+| `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció (a `gyűjtStátuszEffektek`-ből); `próbaÉrzékek`: alkategóriás státusz (Érzékvesztés) érzék-választó opciói |
 | `felszereles.ts` | Felszerelés keret/terhelés/Hátrány (§15/§33.1): `felszerelésMax`, `felszerelésTerhelés`, `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság` - a fegyver pont VAGY-VAGY `max(hossz,súly)` |
 | `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange |
 

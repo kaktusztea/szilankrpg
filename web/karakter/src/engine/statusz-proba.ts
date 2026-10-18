@@ -1,5 +1,6 @@
-import type { StatuszEntry, StatuszHatas } from './data-types';
+import type { StatuszEntry } from './data-types';
 import { clampEHSzint } from './dice';
+import { gyűjtStátuszEffektek } from './effekt';
 
 /**
  * Próba cél → képzettség csoport mapping.
@@ -29,45 +30,37 @@ interface PróbaEHEredmény {
 }
 
 /**
- * Kiszámolja az aktív státuszok Előny/Hátrány hatását egy adott képzettségpróbára.
+ * Kiszámolja az aktív státuszok Előny/Hátrány hatását egy adott képzettségpróbára - a közös effekt-gyűjtőből
+ * (`gyűjtStátuszEffektek`, §42), a próba-célt a képzettség-csoportra / -id-re szűrve.
  *
- * @param aktívStátuszok - session.aktív_státuszok tömb ("Név (fok)" formátum)
+ * @param aktívStátuszok - session.aktív_státuszok tömb ("Név (fok)" / "Név: Alkategória (fok)" formátum)
  * @param statuszDefs - GameData.statuszok (StatuszEntry[])
  * @param képzettségNév - a próbázott képzettség hivatkozási KULCSa ("észlelés", "harcmodor/kardvívás"; 2026-10-17 óta)
  * @param képzettségCsoport - a próbázott képzettség csoportja
+ * @param érzék - a próbához használt érzék (pl. „Látás"); alkategóriás státusz-hatás csak az illő érzékre él
  */
 export function calcStátuszPróbaEH(
   aktívStátuszok: string[],
   statuszDefs: StatuszEntry[],
   képzettségNév: string,
   képzettségCsoport: string,
+  érzék?: string,
 ): PróbaEHEredmény {
   let ehSzint = 0;
   let tiltott = false;
   const források: string[] = [];
 
-  for (const aktív of aktívStátuszok) {
-    // Parse "Név (fok)" vagy "Név (fok) alkategória"
-    const m = aktív.match(/^(.+?)\s*\((\d+)\)/);
-    if (!m) continue;
-    const [, név, fokStr] = m;
-    const fok = parseInt(fokStr, 10);
-
-    const def = statuszDefs.find(s => s.név === név);
-    if (!def) continue;
-    const fokDef = def.fokok.find(f => f.fok === fok);
-    if (!fokDef?.hatások) continue;
-
-    for (const h of fokDef.hatások) {
-      if (!hatásVonatkozik(h, képzettségNév, képzettségCsoport)) continue;
-
-      if (h.mód === 'letilt') {
-        tiltott = true;
-        források.push(`${név} (${fokDef.alcím}): kudarc`);
-      } else if (h.mód === 'előny' || h.mód === 'hátrány') {
-        ehSzint += h.érték ?? 0;
-        források.push(`${név} (${fokDef.alcím}): ${h.érték! > 0 ? '+' : ''}${h.érték}`);
-      }
+  for (const e of gyűjtStátuszEffektek({ aktív_státuszok: aktívStátuszok }, { statuszok: statuszDefs })) {
+    if (!hatásVonatkozik(e, képzettségNév, képzettségCsoport)) continue;
+    if (e.alkategória && e.alkategória !== érzék) continue;
+    // Felirat: „Név (alcím)" / „Név: Alkategória (alcím)"
+    const címke = e.forrás.név.replace(/\(\d+\)$/, `(${e.forrás.alcím})`);
+    if (e.mód === 'letilt') {
+      tiltott = true;
+      források.push(`${címke}: kudarc`);
+    } else if (e.mód === 'előny' || e.mód === 'hátrány') {
+      ehSzint += e.érték ?? 0;
+      források.push(`${címke}: ${e.érték! > 0 ? '+' : ''}${e.érték}`);
     }
   }
 
@@ -78,8 +71,22 @@ export function calcStátuszPróbaEH(
   };
 }
 
+/**
+ * A próbát érintő alkategóriás státusz-hatások érzékei (`érintett`) és a választható érzékek (`opciók`: az
+ * érintett státuszok összes alkategóriája). Üres `érintett` → nincs érzék-választás a próbán.
+ */
+export function próbaÉrzékek(
+  aktívStátuszok: string[], statuszDefs: StatuszEntry[], képzettségNév: string, képzettségCsoport: string,
+): { opciók: string[]; érintett: string[] } {
+  const érintett = [...new Set(gyűjtStátuszEffektek({ aktív_státuszok: aktívStátuszok }, { statuszok: statuszDefs })
+    .filter(e => e.alkategória && hatásVonatkozik(e, képzettségNév, képzettségCsoport))
+    .map(e => e.alkategória!))];
+  const opciók = [...new Set(statuszDefs.filter(s => s.alkategóriák?.some(a => érintett.includes(a))).flatMap(s => s.alkategóriák ?? []))];
+  return { opciók, érintett };
+}
+
 /** Eldönti, hogy egy hatás vonatkozik-e az adott képzettségre. */
-function hatásVonatkozik(h: StatuszHatas, képzettségNév: string, képzettségCsoport: string): boolean {
+function hatásVonatkozik(h: { cél: string; alcél?: string }, képzettségNév: string, képzettségCsoport: string): boolean {
   const cél = h.cél;
 
   // Nem próba-jellegű cél

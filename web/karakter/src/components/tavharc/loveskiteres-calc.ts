@@ -1,5 +1,7 @@
 import type { Karakter, TavfegyverAlap } from '../../engine/types';
 import { képzettségSzint } from '../../engine/azonosito';
+import type { GameData } from '../../engine/data-loader';
+import { gyűjtFortélyEffektek, értékCélra } from '../../engine/effekt';
 
 // Lövéskitérés (védekező Akrobatika próba, md/073 + kategóriák md/078) + range-gát segédek.
 // Kiemelve a tavharc/helpers.ts-ből (2026-09-30 refaktor, modularizáció).
@@ -46,15 +48,12 @@ export function calcLöveskitérésCélszám(
   return sorok[sorok.length - 1].célszám;
 }
 
-/** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */
-export function calcAkrobatikaÉrték(k: Karakter): number {
+/** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság + fortély-bónusz (`lövéskitérés` cél). */
+export function calcAkrobatikaÉrték(k: Karakter, data: GameData): number {
   const akrobatika = képzettségSzint(k.képzettségek, 'akrobatika');
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
-  // ponytail: a lövéskitérés_fejlesztése fortély +2-je kódban marad. A cél (Akrobatika-érték) nem
-  // effekt-cél, a lövéskitérés-kalkuláció nem olvas fortély-módosítót - a data-vezérlés a közös
-  // gyűjtő bővítését igényelné (DEVSTATE → Good to have: kocka-hatások a közös gyűjtőre).
-  const fejlesztés = k.fortélyok.some(f => f.id === 'lövéskitérés_fejlesztése') ? 2 : 0;
-  return akrobatika + gyorsaság + fejlesztés;
+  const fortély = értékCélra(gyűjtFortélyEffektek(k, k.session, data, new Set(), f => !f), 'lövéskitérés');
+  return akrobatika + gyorsaság + fortély;
 }
 
 /** Egy választható bejövő fegyver / kategória a lövéskitéréshez. */

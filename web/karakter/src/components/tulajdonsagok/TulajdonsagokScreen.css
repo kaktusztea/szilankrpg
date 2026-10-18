@@ -500,6 +500,19 @@
   justify-content: center;
   gap: 6px;
 }
+/* Érzék-választó (alkategóriás státusz, pl. Érzékvesztés: Látás): több chip → tördelhető sor */
+.kep-proba-erzek-row {
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 6px 0;
+}
+/* A közös extras-btn fix 36px (V1 / +1M) - itt a felirat hossza szerint, a sort kitöltve, egy sorban */
+.kep-proba-erzek-row .kep-proba-extras-btn {
+  flex: 1 1 auto;
+  width: auto;
+  padding: 0 6px;
+  white-space: nowrap;
+}
 .kep-proba-extras-sep {
   align-self: center;
   color: var(--text-dim);

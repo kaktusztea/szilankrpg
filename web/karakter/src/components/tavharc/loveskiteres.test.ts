@@ -1,6 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import type { Karakter, TavfegyverAlap } from '../../engine/types';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { loadGameDataSync } from '../../__tests__/load-gamedata';
+import { getAlkalmatlanInfo } from './helpers';
 import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, weaponToLöveskitérésKategória, osztóToLöveskitérésKategória, tavHatótáv, buildOpciók } from './loveskiteres-calc';
+
+const data = loadGameDataSync();
+const alapK: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
 
 // Íjak tábla (md/073): 5m→21, 10m→18, 15m→15, 20m→12, 25m→9
 const íjak = [
@@ -71,23 +78,29 @@ describe('tavHatótáv', () => {
 });
 
 describe('calcAkrobatikaÉrték', () => {
-  const base = (fortélyok: { id: string }[]) => ({
-    képzettségek: [{ id: 'akrobatika', elem: '', szint: 4 }],
-    tulajdonságok: { gyorsaság: 3 },
-    fortélyok,
-  }) as unknown as Karakter;
+  // Valódi GameData + teszt karakter alap: a fortély-bónusz a fortély yaml `lövéskitérés` céljából jön (2026-10-18).
+  const base = (fortélyok: { id: string; fok: number }[], képzettségek = [{ id: 'akrobatika', elem: '', szint: 4 }], gyorsaság = 3) =>
+    ({ ...alapK, képzettségek, tulajdonságok: { ...alapK.tulajdonságok, gyorsaság }, fortélyok: fortélyok.map(f => ({ ...f, elem: '' })) }) as Karakter;
 
   it('sums Akrobatika + Gyorsaság', () => {
-    expect(calcAkrobatikaÉrték(base([]))).toBe(7);
+    expect(calcAkrobatikaÉrték(base([]), data)).toBe(7);
   });
 
-  it('adds +2 with the Lövéskitérés fejlesztése fortély', () => {
-    expect(calcAkrobatikaÉrték(base([{ id: 'lövéskitérés_fejlesztése' }]))).toBe(9);
+  it('adds +2 with the Lövéskitérés fejlesztése fortély (data-driven)', () => {
+    expect(calcAkrobatikaÉrték(base([{ id: 'lövéskitérés_fejlesztése', fok: 1 }]), data)).toBe(9);
   });
 
   it('treats missing Akrobatika as 0', () => {
-    const k = { képzettségek: [], tulajdonságok: { gyorsaság: 2 }, fortélyok: [] } as unknown as Karakter;
-    expect(calcAkrobatikaÉrték(k)).toBe(2);
+    expect(calcAkrobatikaÉrték(base([], [], 2), data)).toBe(2);
+  });
+});
+
+describe('getAlkalmatlanInfo - Alkalmi tárgy Osztó (fortély override)', () => {
+  const osztó = (fok: number) => getAlkalmatlanInfo({ ...alapK, fortélyok: [{ id: 'alkalmatlan_tárgyak_hajítása', fok, elem: '' }] } as Karakter, data)
+    .alkalmiTárgyDef?.Osztó;
+  it('1. fokon 1, 2. fokon 2; fortély nélkül nincs alkalmi tárgy', () => {
+    expect([osztó(1), osztó(2)]).toEqual([1, 2]);
+    expect(getAlkalmatlanInfo({ ...alapK, fortélyok: [] } as Karakter, data).alkalmiTárgyDef).toBeUndefined();
   });
 });
 

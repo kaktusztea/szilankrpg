@@ -4120,7 +4120,8 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
   alakban: `képzettségpróba` → `képzettség:<képzettség név>`, `tulajdonságpróba` → `tulajdonság:<karakter-séma kulcs>`
   (kisbetűs, pl. `tulajdonság:edzettség`), `érzék_próba` → `érzék:<Érzék-státusz alkategória>` (pl. `érzék:Látás`).
   Build-gate (`validators.proba_alcel_hibak`, fortély + státusz): a prefix illik a célhoz, a név létezik. Fogyasztó:
-  `engine/statusz-proba.ts` (képzettség-egyezés). Így az alcél MINDEN forrásban `prefix:érték` (felszerelés / próba-scope).
+  `engine/statusz-proba.ts` (képzettség-egyezés). Alkategóriás státusz (`"Érzékvesztés: Látás (2)"`): a gyűjtő `alkategória`
+  mezője szűkít - csak a próbához választott érzékre hat (Képzettségpróba popup „Érzék:" sora, 2026-10-18). Így az alcél MINDEN forrásban `prefix:érték` (felszerelés / próba-scope).
 
 ### 42.5 Fázisolt migrációs terv
 
@@ -4144,7 +4145,7 @@ A módok jelenleg KÜLÖN kódutakon élnek - ez az egyesítés kiindulópontja 
 | `flat` | `engine/effekt.ts` gyűjtő (fortély/alapeset/taktika; `calcFortelyMods` / `calcTaktikaMods` burkolók) + `harc/combat-roll-info.ts` (dobás-bónusz) + `engine/effekt.ts` `gyűjtHelyzetEffektek` (helyzet: `VÉ` → `helyzetMods`, `vé_csökkentés` → VÉ-csökkentés popup, `(bázis + k20P + flat) × szorzó`; a Fárasztás override-jára is ráadódik - általános szabály, 2026-10-16) | §16, §21 |
 | `scaled` | `engine/effekt.ts` `gyűjtFortélyEffektek` (képzettség-forrás FLOOR; `erőbónusz` → arány) | §16 |
 | `override` | `harc/fegyver-calc.ts` (SP override, fegyver_override) + `harc/extrak-effekt.ts` (extrák) | §5–8, §21 |
-| `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` / harc-popupok | §22 |
+| `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`harc/combat-roll-info.ts` saját gyűjtése - DÖNTÉS: marad, l. refactorlog 2026-10-18) | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
 | `letilt` | `harc/taktika-calc.ts` (feltételes TÉ semlegesítés) | §21 |
 | `szöveges` | `formatters.tsx` / `harc/HatasokInfo.tsx` (megjelenítés) | §22 |

@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import type { Karakter, TavfegyverAlap } from '../../engine/types';
-import type { KonstansokRaw } from '../../engine/data-types';
+import type { Karakter } from '../../engine/types';
+import type { GameData } from '../../engine/data-loader';
 import { useHoldRepeat } from '../../hooks/useHoldRepeat';
 import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 import { PopupOverlay } from '../PopupOverlay';
@@ -9,8 +9,7 @@ import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, buildOpciók, type
 
 interface Props {
   karakter: Karakter;
-  konstansok: KonstansokRaw;
-  tavfegyverek: TavfegyverAlap[];
+  data: GameData;
 }
 
 /**
@@ -18,18 +17,18 @@ interface Props {
  * CÉLPONT: saját Akrobatikájával tér ki egy BEJÖVŐ fegyver lövése elől. A célszám a
  * fegyver kategóriájából (Osztó) + távolságból, a „hatótávon kívül" a fegyver Hatótávjából.
  */
-export function TavharcLoveskiteres({ karakter, konstansok, tavfegyverek }: Props) {
+export function TavharcLoveskiteres({ karakter, data }: Props) {
   const [sel, setSel] = useState<LKOpció | null>(null);
   const [távolság, setTávolság] = useState(5);
   const [dobás, setDobás] = useState<{ k10: number; siker: boolean } | null>(null);
   const [showPicker, setShowPicker] = useState(false);
 
-  const opciók = buildOpciók(tavfegyverek);
+  const opciók = buildOpciók(data.tavfegyverek);
   const hatótávonKívül = !!sel && távolság > sel.hatótáv;
   const célszám = (sel && sel.kategória && !hatótávonKívül)
-    ? calcLöveskitérésCélszám(konstansok.lövéskitérés[sel.kategória], távolság)
+    ? calcLöveskitérésCélszám(data.konstansok.lövéskitérés[sel.kategória], távolság)
     : null;
-  const akrobatika = calcAkrobatikaÉrték(karakter);
+  const akrobatika = calcAkrobatikaÉrték(karakter, data);
   // Lehetetlen: még a max k10 (10) dobással sem érhető el a célszám.
   const lehetetlen = célszám !== null && akrobatika + 10 < célszám;
 

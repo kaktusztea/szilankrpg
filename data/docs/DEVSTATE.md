@@ -11,7 +11,6 @@
 - [Egységes effekt-modell: maradék](#egységes-effekt-modell-maradék-) 🚧
 - [Fortély-követelmények gépesítése](#fortély-követelmények-gépesítése-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
-- [Kocka-hatások a közös gyűjtőre](#kocka-hatások-a-közös-gyűjtőre-) 🚧
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
 - [Szabálykönyv (md/) konvenciók, tanulságok](#szabálykönyv-md-konvenciók-tanulságok)
@@ -23,7 +22,6 @@
 - **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, refaktor-maradék (kódolt képletek a gyűjtőre)
 - **Fortély-követelmények gépesítése** - szöveges maradók jelölése (`csak_szöveges`) + build-gate
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver, ár-modell
-- **Kocka-hatások a közös gyűjtőre** (§42) - Előny/Hátrány/Enyhít + két kódolt fortély-hatás az `engine/effekt.ts` numerikus gyűjtőre (belső egységesítés)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -34,7 +32,7 @@ napló: `refactorlog/2026-10-16.md`. Nyitott:
 
 - [ ] `beszorithato` extra halott hivatkozás: `státusz: Beszorított (2)`, ilyen státusz nincs → soha nem teljesül. Döntés: új státusz, vagy a `Beszorított ellenfél` helyzetre mutasson? Utána build-gate az extrák státusz-/helyzet-hivatkozásaira (`validate_effekt_hivatkozasok`).
 
-Refaktor-maradék (2026-10-17): a fegyver Idea ±5 → `konstansok.fegyver_idea_plusz_minusz` (a páncél mintájára); a `páncélLefedettség` / `calcManőverPont` rules.json-tükrök `ponytail:` + drift-őr teszt (`rules-tukor.test.ts`) alá kerültek. A két fortély-hatás-kódolás (Lövéskitérés +2, Alkalmi tárgy Osztó) a „Kocka-hatások a közös gyűjtőre" szekció alatt.
+Refaktor-maradék (2026-10-17): a fegyver Idea ±5 → `konstansok.fegyver_idea_plusz_minusz` (a páncél mintájára); a `páncélLefedettség` / `calcManőverPont` rules.json-tükrök `ponytail:` + drift-őr teszt (`rules-tukor.test.ts`) alá kerültek.
 
 ---
 ## Fortély-követelmények gépesítése 🚧
@@ -115,13 +113,6 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 - `fegyverek.yaml` módosítás → az `update_fegyvertablazat.yml` workflow (önteszt-kapu + `sync_fegyvertablazatok.py`) újragenerálja a `md/068_0x` táblákat; lokálisan is futtatható.
 - Változik a `data/tables/fegyverek_v2.json` → `npm run build` (vitest is); az érintett fegyverekre épülő golden tesztek frissítendők.
 - A balansz-önteszt regressziós elvárásait (`teszt.elvart`) egyik javaslat sem érinti.
-
----
-## Kocka-hatások a közös gyűjtőre 🚧
-
-Az Előny/Hátrány/Enyhít ma a `combat-roll-info.ts` (dobás-EH info forrás+megjegyzéssel) és a `statusz-proba.ts` (próba-cél→képzettség-csoport szűrés) saját kódútján megy, nem az `engine/effekt.ts` numerikus gyűjtőn. Az értékek helyesek; ez tisztán belső egységesítés. A két modul MÁS doménben dolgozik (megjelenítő info-réteg, ill. próba-csoport-mapping), mint az effekt-gyűjtő, ezért a váltás az `effekt.ts` bővítését + a regressziós háló (`effekt.regresszio.test.ts`) átírását igényelné.
-
-Ide tartozik két kódba égetett fortély-hatás is, amiknek a célja nem effekt-cél (a fogadó kalkuláció nem olvas fortély-módosítót), ezért a data-vezérlés a gyűjtő bővítését igényelné: a `lövéskitérés_fejlesztése` +2-je (`loveskiteres-calc.ts` → Akrobatika-érték) és az `alkalmatlan_tárgyak_hajítása` fok-függő Osztó-cseréje (`tavharc/helpers.ts` → távharc Osztó). Mindkettő `ponytail:` megjegyzéssel jelölve a kódban.
 
 ---
 ## Good to have 💡
@@ -260,6 +251,7 @@ A szabálykönyv headingjei dekoratív emojikat használnak (pl. `⚜️`, `🗡
 ---
 ## Elkészült ✅
 
+- **Kocka-hatások a közös gyűjtőn (részben)** (§42, 2026-10-18) - a képzettségpróba státusz-E/H (`statusz-proba.ts`) a `gyűjtStátuszEffektek`-ből megy; javítva: az alkategóriás Érzékvesztés eddig SOHA nem hatott - most az illő érzékre hat (popup „Érzék:" sor). A Lövéskitérés fejlesztése +2 (`lövéskitérés` cél) és az Alkalmi tárgy Osztó (`alkalmi_tárgy_osztó` override) a fortély yaml-ból. DÖNTÉS: a harci dobások (`combat-roll-info.ts`) saját gyűjtése marad (ma helyes értéket ad, átírása nagy, haszon nélkül). Napló: `refactorlog/2026-10-18.md`.
 - **Egységes effekt-modell, 1-3. fázis** (§42, 2026-10-16) - egy effekt-alak (`{cél, alcél?, mód, érték, feltétel?}`) és egy mód-enum minden forrásban (az operátor-réteg / `hatas_operatorok.yaml` megszűnt); §42.3 precedencia: override = alapérték-csere → additív → szorzó (egy félen belül a legnagyobb, a két fél között szorzódik) → max_limit; alcél `prefix:név` (`felszerelés:` / `képzettség:` / `tulajdonság:` / `érzék:`); nevesített tiltás-keret (`tiltás:<id>`, extrával feloldható). `engine/effekt.ts`: gyűjtők (fortély, alapeset, taktika, helyzet, státusz), `calcFortelyMods` / `calcTaktikaMods` burkolók; fortély-módosítók soronként; helyzet `flat` (VÉ, VÉ-csökkentés), `támadások_száma` max_limit; fortély próba-bónuszok kapcsolható szituációs sorként. Build-gate-ek: hatás-mód/cél, alcél, tiltás-/ellenfél-hivatkozás. Napló: `refactorlog/2026-10-16.md`.
 - **Belharc rendszer** (§21.4, 2026-10-16) - max 1 fegyverhossz + Közelharc harcmodor tiltásként (`belharc_fegyverhossz` / `belharc_harcmodor`), soronkénti (kétkezesnél kezenkénti) kiértékelés; Puszta kéz belharcban extraként (TÉ/VÉ/SP 0, Természetes fegyverrel SP 1); Tőr, páncélszúró: a `pancelszuras_belharcban` feloldja a hossz-tiltást, SFÉ 0 földön fekvő ellenfélnél (KM); Belharcos fortély soronként; ⚠ jelzés az Aktív fül chipjén és a fegyvertáblában.
 - **Szorzók halmozása** (2026-10-16) - "keverék" szabály: egy fél forrásaiból (helyzet/státusz/taktika/fegyver-extra) a legnagyobb szorzó számít, a két fél szorzói összeszorzódnak → plafon ×4. Spec §42.3, md/081 "Szorzó hatások ökölszabály" (065_02 Roham/Öngyilkos roham erre hivatkozik). Kód: `alkalmazEffektek` + `calcVéCsökkentésSzorzó` + `HarcScreen` taktika-reduce max-ra; a passzív oldal (`véVesztésSzorzó`) már a `halmozás: legnagyobb`-ot követte.

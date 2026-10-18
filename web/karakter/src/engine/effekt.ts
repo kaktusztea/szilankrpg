@@ -32,7 +32,13 @@ export interface Effekt {
   arány?: number;
   /** A forrás-sor szöveges kontextusa (pl. „Fájdalomtűrés próba kínzás esetén") - szituációs megjelenítéshez. */
   megjegyzés?: string;
-  forrás: { típus: EffektForrásTípus; név: string; /** fortély-forrásnál a fortély-id */ id?: string };
+  /** Alkategóriás státusz (pl. „Érzékvesztés: Látás (2)") alkategóriája: a hatás csak erre az érzékre/fajtára él. */
+  alkategória?: string;
+  forrás: {
+    típus: EffektForrásTípus; név: string;
+    /** fortély-forrásnál a fortély-id */ id?: string;
+    /** státusz-forrásnál a fok alcíme (pl. „Zavart") - feliratokhoz */ alcím?: string;
+  };
 }
 
 /** Fortély-módosítók + alapesetek (fok 0) aktív effektjei. */
@@ -149,10 +155,11 @@ export function gyűjtHelyzetEffektek(session: Session, data: GameData): Effekt[
 }
 
 /**
- * Az aktív státuszok (`"Név (fok)"` vagy `"Név: alkategória (fok)"`) adott fokának `hatások[]`-a közös alakban.
- * Alkategóriás státusznál a cél kiegészül (pl. `érzék_próba (látás)`), mint az Aktív fül Hatás-poolban.
+ * Az aktív státuszok (`"Név (fok)"` vagy `"Név: Alkategória (fok)"`, a StatuszPickerOverlay formátuma) adott
+ * fokának `hatások[]`-a közös alakban. Alkategóriás státusznál a cél kanonikus marad, az `alkategória` mező
+ * szűkíti (pl. Érzékvesztés: Látás → csak a látással végzett érzék-próbára).
  */
-export function gyűjtStátuszEffektek(session: Session, data: GameData): Effekt[] {
+export function gyűjtStátuszEffektek(session: Pick<Session, 'aktív_státuszok'>, data: Pick<GameData, 'statuszok'>): Effekt[] {
   const ki: Effekt[] = [];
   for (const st of session.aktív_státuszok) {
     const m = st.match(/^(.+) \((\d+)\)$/);
@@ -160,8 +167,8 @@ export function gyűjtStátuszEffektek(session: Session, data: GameData): Effekt
     const [alapNév, al] = m[1].split(': ');
     const fokDef = data.statuszok.find(s => s.név === alapNév)?.fokok.find(f => f.fok === parseInt(m[2]));
     for (const h of fokDef?.hatások ?? []) {
-      ki.push({ cél: al ? `${h.cél} (${al.toLowerCase()})` : h.cél, ...(h.alcél ? { alcél: h.alcél } : {}),
-        mód: h.mód, érték: h.érték, forrás: { típus: 'státusz', név: st } });
+      ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), ...(al ? { alkategória: al } : {}),
+        mód: h.mód, érték: h.érték, forrás: { típus: 'státusz', név: st, alcím: fokDef!.alcím } });
     }
   }
   return ki;
