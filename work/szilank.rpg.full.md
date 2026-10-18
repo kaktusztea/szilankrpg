@@ -4169,7 +4169,7 @@ TODO ⭕
 
 ### Ajánlott fortélyok
 
-- xyz
+- [Természetes páncél](../fortelyok.harci/termeszetes_pancel.md) - 3. fok
 
 ### Ajánlott képzettségek
 
@@ -15487,7 +15487,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 1. fok
 
-🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
+🔒 Kardvívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-5`
 
@@ -15495,7 +15495,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 2. fok
 
-🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
+🔒 Kardvívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-10`
 
@@ -15503,7 +15503,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 3. fok
 
-🔒 Kardívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
+🔒 Kardvívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 **Hatás**:
 - Merevvérted `TÉ` büntetése ennyivel enyhül: `-15`
