@@ -222,18 +222,23 @@ function PáncélVálasztóBtn({ páncél, delta, jelleg, onSelect }: {
 }) {
   const [open, setOpen] = useState(false);
   const aktLabel = páncél ? PÁNCÉLOSZTÁLYOK.find(p => p.id === páncél)?.label : null;
-  const colorClass = delta > 0 ? 'sebzes-stat-pos' : delta < 0 ? 'sebzes-stat-neg' : '';
+  const deltaClass = delta > 0 ? 'pancel-valaszto-delta-pos' : delta < 0 ? 'pancel-valaszto-delta-neg' : '';
   // STUDY 3g: kötelező, kiemelt elem - amíg nincs választva, pulzáló figyelmeztető keret.
   const kellClass = páncél === null ? ' pancel-valaszto-kell' : '';
 
   return (
     <>
-      <button className={`sebzes-stat-btn pancel-valaszto-btn ${colorClass}${kellClass}`} onClick={() => setOpen(true)}>
-        <span className="pancel-valaszto-fej">
-          {aktLabel === null ? 'Ellenfél páncél →' : `Ellenfél páncél: ${aktLabel}`}
-        </span>
-        {páncél !== null && delta !== 0 && (
-          <span className="pancel-valaszto-delta">({jelleg ?? 'sebzés'} ellene: {delta > 0 ? '+' : ''}{delta})</span>
+      <button className={`sebzes-stat-btn pancel-valaszto-btn${kellClass}`} onClick={() => setOpen(true)}
+        aria-label={aktLabel ? `Ellenfél páncél: ${aktLabel}${jelleg ? `, ${jelleg}` : ''}, SP ${delta > 0 ? '+' : ''}${delta}` : 'Ellenfél páncél választása'}>
+        {aktLabel === null ? (
+          <span className="pancel-valaszto-fej">Ellenfél páncél →</span>
+        ) : (
+          // Választás után tömör kétsoros: 🛡️ páncél / 🗡️ sebzésjelleg, jobbra a két sort kitöltő SP-delta.
+          <span className="pancel-valaszto-racs">
+            <span className="pancel-valaszto-sor">🛡️{aktLabel}</span>
+            {jelleg && <span className="pancel-valaszto-sor">🗡️{jelleg}</span>}
+            <span className={`pancel-valaszto-delta ${deltaClass}`}>{delta > 0 ? '+' : ''}{delta}</span>
+          </span>
         )}
       </button>
       {open && (

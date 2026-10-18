@@ -29,6 +29,7 @@ fokok:
     követelménytext:
       - text: "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2)."
     követelmények: ""
+    követelmény_text_only: true    # körönkénti próba, nem felvételi
     hatástext:
       - text: "Orvtámadás harci helyzetet nem alkalmazhatják ellened harc közben."
       - text: "Nem kapják meg a Hátulról támadás módosítóit."

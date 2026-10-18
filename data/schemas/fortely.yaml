@@ -29,6 +29,7 @@ fokok:
     követelménytext:            # Szöveges követelmények (nem kalkuláció alapja)
       - text: ""
     követelmények: ""         # Megengedett: "képzettség", "mesterfegyver". Üres ha nincs.
+    követelmény_text_only: false  # opcionális, boolean - true: a követelménytext szándékosan NEM gépesített (használati feltétel / körönkénti próba / KM-döntés). Build-gate (data/gen/fortelyok.py): szöveges követelmény gépi `követelmények` nélkül → ez kötelező; gépi követelmény mellett vagy szöveg nélkül → hiba.
     hatástext:                # Nem-gépesíthető, narratív hatások szövege
       - text: ""
     módosítók: ""             # Gépesíthető hatások listája. Üres ("") ha nincs.
@@ -53,6 +54,7 @@ fokok:
       #   = a (megjelölt) fegyver harcmodora; felvételkor bármely közelharci harcmodor legmagasabb szintje.
       # típus: "min_fegyverméret" - harci-helyzet-kötött min fegyverhossz WARNING (nem blokkol):
       #   { típus: "min_fegyverméret", érték: <min fegyverhossz>, feltétel: "harci_helyzet:<id>" }
+    követelmény_text_only: false  # opcionális, boolean - true: a követelménytext szándékosan NEM gépesített (használati feltétel / körönkénti próba / KM-döntés). Build-gate (data/gen/fortelyok.py): szöveges követelmény gépi `követelmények` nélkül → ez kötelező; gépi követelmény mellett vagy szöveg nélkül → hiba.
     hatástext:
       - text: ""
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.

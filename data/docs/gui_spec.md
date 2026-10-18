@@ -435,7 +435,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - Fázis 2: eredmény (TÉ + k20), részlet kiírás, "Sebzés" gomb (ha k20≥16: Előny+1, k20=20: Előny+2 jelzéssel)
     - Sebzés gomb → **SebzesPopup** nyílik (SP bontás, statikus bónuszok, Előny/Hátrány picker, újradobás gomb):
       - **Mód-választó** (csak több módú fegyvernél): a fegyver módjai (§26 módok[]) közül vált, delta-alapú TÉ/SP (a taktika mods megőrzésével). A választott mód sebzésjellege (S/V/Z) számít.
-      - **"Ellenfél páncél" választó** (KÖTELEZŐ): csupasz / puha / bőr / lánc / merev. A sebzésjelleg × páncél mátrixból SP-deltát ad, plusz a `cél_páncél` SP-hatású extrák (pl. `panceltalant_jobban_sebez` +3 SP vérttelen célon). Amíg nincs választva: pulzáló jelzés + a Dobás gomb (és a kézi kocka) TILTVA.
+      - **"Ellenfél páncél" választó** (KÖTELEZŐ): csupasz / puha / bőr / lánc / merev. A sebzésjelleg × páncél mátrixból SP-deltát ad, plusz a `cél_páncél` SP-hatású extrák (pl. `panceltalant_jobban_sebez` +3 SP vérttelen célon). Amíg nincs választva: pulzáló jelzés + a Dobás gomb (és a kézi kocka) TILTVA. Választás után a gomb tömör kétsoros: `🛡️<páncél>` / `🗡️<sebzésjelleg>`, jobbra a két sort kitöltő SP-delta (csak a szám színezett, tompított piros / zöld).
       - **Másodlagos sebzéstípus**: passzív info-label "(Hátrány-1)" (nincs toggle).
     - Mellé katt / Escape bezár → eredmény push a session `té_dobások` FIFO tömbbe (max 3, legújabb elöl).
     - Komponensek: `TamadoDobasPopup.tsx`, `SebzesPopup.tsx`, `ElonyPicker.tsx`, `ManualDicePicker.tsx`, `combat-roll-info.ts`

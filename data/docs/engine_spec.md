@@ -1749,6 +1749,11 @@ Generálás: `generate_tables.py` → `fortelyok.json` (fokok[].követelmények 
 UI validáció: `fortelyok/helpers.ts → checkKövetelmények` (FortelyRow; runtime ellenőrzés karakter adatok ellen).
 A nem gépi feltételek (faj háttér, leíró háttér, társ) a `követelménytext`-ben élnek, nem a `követelmények`-ben.
 
+Szöveges-only build-gate (`data/gen/fortelyok.py`, 2026-10-18): ha egy fok `követelménytext`-je nem üres, de gépi
+`követelmények`-e nincs, a fok `követelmény_text_only: true` jelölése kötelező (tudatos döntés: használati feltétel,
+körönkénti próba, KM-mérlegelés - Kínokozás 1-2, Körkörös harc 1, Éneklés 1); jelölés nélkül build hiba. A jelölés gépi
+követelmény mellett vagy szöveg nélkül szintén hiba (elavult jelölés). A jelölés nem kerül a JSON-ba (az app nem olvassa).
+
 Típusok (felvételi gate):
 - `képzettség` - karakter képzettség szintje ≥ érték (név lista → VAGY)
 - `fortély` - karakter felvett fortély fokszáma ≥ érték (többszörös fortélynál bármely példány teljesítheti, pl. Nyelvismeret)

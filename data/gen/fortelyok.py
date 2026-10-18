@@ -41,6 +41,14 @@ def generate_fortelyok():
                     mods = []
                 követelmények = fok.get('követelmények') or []
                 if követelmények == '': követelmények = []
+                # Build-gate: szöveges követelmény gépi pár nélkül csak tudatos jelöléssel (követelmény_text_only).
+                text_only = fok.get('követelmény_text_only', False)
+                if köv and not követelmények and not text_only:
+                    errors.append(f"{ctx} fok {fok.get('fok')}: szöveges követelmény gépi pár nélkül - add meg a "
+                                  f"'követelmények'-et, vagy jelöld: követelmény_text_only: true")
+                if text_only and (követelmények or not köv):
+                    errors.append(f"{ctx} fok {fok.get('fok')}: 'követelmény_text_only' jelölés, de "
+                                  f"{'van gépi követelmény' if követelmények else 'nincs szöveges követelmény'} - töröld a jelölést")
                 próba_e = fok.get('próba_enyhítések') or []
                 if próba_e == '': próba_e = []
                 fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv, 'követelmények': követelmények, 'módosítók': mods, 'próba_enyhítések': próba_e})

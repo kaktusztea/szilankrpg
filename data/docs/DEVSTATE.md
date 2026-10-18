@@ -9,7 +9,6 @@
 
 - [Nyitott tételek (áttekintés)](#nyitott-tételek-áttekintés)
 - [Egységes effekt-modell: maradék](#egységes-effekt-modell-maradék-) 🚧
-- [Fortély-követelmények gépesítése](#fortély-követelmények-gépesítése-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
@@ -19,7 +18,6 @@
 ## Nyitott tételek (áttekintés)
 
 - **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, Távharc fül teljes feltétel-kiértékelő, Playwright végigkattintás (kocka-hatások, 2026-10-18)
-- **Fortély-követelmények gépesítése** - szöveges maradók jelölése (`csak_szöveges`) + build-gate
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver, ár-modell
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
@@ -39,13 +37,6 @@ Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refact
   - **CÉ dobás popup** (Távharc): Alkalmatlan tárgyak / fegyver hajítása + a megfelelő helyzet → CÉ / Sebzés enyhít; Kitartott célzás megjegyzés csak illő harcmodorú távfegyverrel.
   - **Manőver dobás popup** (Aktív fül): a TÉ E/H szint a taktika / helyzet / státusz / fortély hatásokból, mint a Támadó popupban.
   - **VÉ plafon**: Teljes Védekezés + Védő (3) → a fejléc VÉ-eltolása +10-re szorul (a taktika-gyűjtő „Taktika VÉ-plafon" korrekciós sora).
-
----
-## Fortély-követelmények gépesítése 🚧
-
-Fortély-fokok, amelyeknek csak szöveges követelménye (`követelménytext`) van, gépi (`követelmények`) nincs. Nyitott:
-
-- [ ] Szöveges maradók (Kínokozás: használati feltétel; Körkörös harc: körönkénti próba; Éneklés: KM-mérlegelés) - jelölés (pl. `csak_szöveges`) + build-gate: szöveges követelmény gépi pár vagy jelölés nélkül → hiba.
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧

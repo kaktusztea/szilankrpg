@@ -29,6 +29,7 @@ fokok:
     követelménytext:
       - text: "Egykezes szúró-vágó-ostor fegyver. Sikeres Precíz támadás manőver."
     követelmények: ""
+    követelmény_text_only: true    # használati feltétel (fegyver + Precíz támadás), nem felvételi
     hatástext:
       - text: "Sebzésed: 1 ÉP."
       - text: "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: 12)."
@@ -38,6 +39,7 @@ fokok:
     követelménytext:
       - text: "Egykezes szúró-vágó-ostor fegyver. Sikeres Precíz támadás manőver."
     követelmények: ""
+    követelmény_text_only: true    # használati feltétel (fegyver + Precíz támadás), nem felvételi
     hatástext:
       - text: "Sebzésed: 1 ÉP."
       - text: "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: 15)."

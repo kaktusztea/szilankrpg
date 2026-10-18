@@ -29,6 +29,7 @@ fokok:
     követelménytext:
       - text: "Nyelvismeret fortély (adott nyelv), ha indokolt"
     követelmények: ""
+    követelmény_text_only: true    # KM-mérlegelés ("ha indokolt")
     hatástext:
       - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""

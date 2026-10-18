@@ -591,7 +591,25 @@
   line-height: 1.3;
 }
 .pancel-valaszto-fej { font-weight: 600; }
-.pancel-valaszto-delta { font-size: 13px; opacity: 0.95; }
+/* Választott páncél: bal oszlop 2 sor (🛡️ páncél, 🗡️ jelleg), jobb oszlop a két sort kitöltő delta. */
+.pancel-valaszto-racs {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto;
+  column-gap: 14px;
+  align-items: center;
+}
+.pancel-valaszto-sor { grid-column: 1; text-align: left; font-size: 14px; }
+.pancel-valaszto-delta {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+}
+/* Tompított színek (a teljes gomb már nem piros / zöld, csak a szám). */
+.pancel-valaszto-delta-neg { color: #e57373; }
+.pancel-valaszto-delta-pos { color: #81c784; }
 
 .sebzes-stat-popup {
   display: flex;
