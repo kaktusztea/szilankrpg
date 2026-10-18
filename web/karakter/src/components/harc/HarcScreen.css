@@ -581,6 +581,8 @@
 }
 .sebzes-stat-pos { color: var(--success); }
 .sebzes-stat-neg { color: var(--error); }
+/* Limit vágta bónusz (pl. íj Erőbónusz-limit): vízszintes „plafon" vonal az érték fölött. */
+.sebzes-limit-plafon { border-top: 2px solid currentColor; padding-top: 1px; }
 
 /* Ellenfél páncél választó: kétsoros tömör felirat (fej + jelleg-függő delta). */
 .pancel-valaszto-btn {
@@ -795,7 +797,6 @@
   background: var(--input-bg);
   color: var(--text);
   font-size: 15px;
-  font-weight: 600;
   cursor: pointer;
   text-align: center;
 }
@@ -806,10 +807,10 @@
   0%, 100% { border-color: var(--border-input); box-shadow: none; }
   50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.45); }
 }
-/* A popup GYÖKÉR (.kep-prompt) szélessége - a hosszú leírás ne nyújtsa túl (app 90%-a). */
+/* A popup GYÖKÉR (.kep-prompt) szélessége: keskeny, a Sebzés / Támadó popup szélességéhez igazodó doboz -
+   a leírás benne tördelődik (nem nyújtja ki az ablakot). Mobilon legfeljebb a képernyő 90%-a. */
 .extrak-prompt {
-  width: 90vw;
-  max-width: 560px;   /* asztali gépen ne legyen indokolatlanul széles */
+  width: min(90vw, 340px);
   box-sizing: border-box;
 }
 .extrak-popup {

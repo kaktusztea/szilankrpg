@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { harciKepzDisplayName } from '../harcertekek/helpers';
 import { képzKulcs } from '../../engine/azonosito';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
-import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
+import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, calcTávSP } from './helpers';
 import { getMfFok } from './mesterfegyver-calc';
 import { collectCéDobásInfo, netElőnySzint, collectDobásInfo, távjellegMátrixKulcs } from '../harc/combat-roll-info';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
@@ -47,6 +47,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const ideaDelta = (tfPeldany?.idea ?? 0) - (tfDef?.idea_default ?? 0);
   const fortélyCÉ = getFortélyCÉ(k, data, session, tfPeldany?.alap);
   const bontás = calcCÉBontás(k, data, session, tfDef, ideaDelta, fortélyCÉ);
+  // MF-kulcs: mint a calcCÉBontás (az aktív példány alapja; virtuális fegyvernél üres → nincs MF).
+  const távSP = calcTávSP(k, data, tfDef, k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '');
 
   // --- MF ---
   const mfFok = tfPeldany ? getMfFok(k, tfPeldany.alap) : 0;
@@ -128,7 +130,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
       {tfDef && gameMode && (
         <TavharcKalkulator
-          cé={bontás.cé} vé={vé} sp={tfDef?.SP ?? 0} támadásLabel={támadásLabel} szorzóÖsszeg={szorzóÖsszeg} cella={cella} távolság={távolság}
+          cé={bontás.cé} vé={vé} sp={távSP.sp} támadásLabel={támadásLabel} szorzóÖsszeg={szorzóÖsszeg} cella={cella} távolság={távolság}
           szorzok={szorzok} szorzóState={szorzóState} onSzorzóChange={onSzorzóChange}
           onTávolságPopup={() => setPopup(s => ({ ...s, távolságPopup: true }))}
           onCéDobás={() => setShowCéDobás(true)}
@@ -179,8 +181,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {showCéDobás && (() => {
         const céInfo = collectCéDobásInfo(session, k, data);
         const dobásInfo = collectDobásInfo(session, k, data);
-        // Raw SP (nem tavSP): a SebzesPopup maga ismeri fel az SP_NINCS (-99) sentinelt → "nem sebez".
-        const fegyverSP = tfDef?.SP ?? 0;
+        // SP_NINCS (-99) változatlanul átmegy: a SebzesPopup maga ismeri fel → "nem sebez".
         const fegyverÁtütés = tfDef?.Átütés ?? 0;
         // Ellenfél-páncél választó (ugyanaz, mint a közelharci Sebzésnél): a sebzésjelleg betűjét
         // (S/V/Z) a mátrix teljes-szavas kulcsára képezzük. `spec` → nincs mátrix-interakció.
@@ -195,7 +196,9 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           <CélzóDobasPopup
             cé={bontás.cé}
             vé={vé}
-            sp={fegyverSP}
+            sp={távSP.sp}
+            spBónuszok={távSP.bónuszok}
+            kapcsolhatóSpBónusz={távSP.tervezettÍjErő ? { felirat: 'Erőbónusz', érték: távSP.tervezettÍjErő, kiFelirat: 'Erődre tervezett íj: nem', limitált: távSP.íjErőLimitált } : undefined}
             átütés={fegyverÁtütés}
             céHatások={céInfo.céHatások}
             céMegjegyzések={céInfo.céMegjegyzések}

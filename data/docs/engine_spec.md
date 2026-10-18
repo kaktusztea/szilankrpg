@@ -902,10 +902,18 @@ max_hatótáv = távfegyver.hatótáv_bázis + Erő × távfegyver.hatótáv_er�
 ### 17.6 Sebzés
 
 ```
-Íjak: SP + Erőbónusz (ha fegyver megfelelő Erőre tervezett)
-Nyílpuskák: SP (fix, nincs Erőbónusz)
-Hajítófegyverek: SP (nincs Erőbónusz, kivéve speciális)
+SP = fegyver.SP + Erőbónusz + MF.SP
+  Erőbónusz = MAX(0, MIN(Erő, fegyver.erőbónusz_limit))      (md/064_02_06, md/068_07-08)
+    Hajítófegyverek: a szokásos módon (limit a táblából, pl. Dárda 99, Hajítótőr 1, Parittya 2)
+    Íjak: CSAK ha az íj az adott Erőre tervezett (md/068_08) → a Sebzés popupban kapcsolható sor,
+          alapból BE („Erőbónusz: +N"; limit vágta → vonal az érték fölött), KI: „Erődre tervezett íj: nem";
+          a kártya / kalkulátor SP-je az íj-Erőbónusz NÉLKÜL; extra: tavharc_ij_erobonusz_tervezett
+    Nyílpuskák: nincs (limit 0)
+  MF.SP: konstansok.mesterfegyver_bónuszok (a megjelölt távfegyverre)
+  Fortély-SP: nincs (Orvtámadás távharcban nem végezhető; Pajzshasználat pajzs-kötött). Idea: csak CÉ (§17.7).
+  SP_NINCS (-99) / mágikus: nyers érték, nincs kalkuláció.
 Többszörös találat sebzésbónusz: NINCS távharcban
+impl: tavharc/helpers.ts → calcTávSP (fegyverkártya, kalkulátor, Sebzés popup + „Statikus bónuszok" bontás)
 ```
 
 ### 17.7 Távharc fül - webapp

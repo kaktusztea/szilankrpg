@@ -4,7 +4,7 @@ import { ElonyPicker } from '../harc/ElonyPicker';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { SebzesPopup } from '../harc/SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
-import type { DobásHatás } from '../harc/combat-roll-info';
+import type { DobásHatás, SpBónusz } from '../harc/combat-roll-info';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { ExtraKontextus } from '../harc/extrak-info-calc';
 import { HatasokInfo } from '../harc/HatasokInfo';
@@ -24,8 +24,12 @@ interface Props {
   cé: number;
   /** Target VÉ (from szorzó × cella) */
   vé: number;
-  /** Weapon SP value */
+  /** Weapon SP value (a biztos tagokkal: alap + Erőbónusz + Mesterfegyver, l. calcTávSP) */
   sp: number;
+  /** Az SP bontása a Sebzés popup „Statikus bónuszok" listájához. */
+  spBónuszok: SpBónusz[];
+  /** Íj: kapcsolható Erőbónusz (md/068_08; alapból BE), l. SebzesPopup. */
+  kapcsolhatóSpBónusz?: { felirat: string; érték: number; kiFelirat: string; limitált?: boolean };
   /** Fegyver Átütés értéke (informatív, ha > 0) */
   átütés?: number;
   /** Collected active effects on CÉ rolls */
@@ -61,7 +65,7 @@ interface CéEredmény {
  *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat → Sebzés button
  *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
  */
-export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, onClose }: Props) {
+export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBónusz, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, onClose }: Props) {
   const [szint, setSzint] = useState(defaultSzint);
   const [result, setResult] = useState<CéEredmény | null>(null);
   const [showSebzés, setShowSebzés] = useState(false);
@@ -87,9 +91,9 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
         defaultElőny={sebzésElőny}
         téK20={k20Érték}
         sebzésHatások={sebzésHatások}
-        spBónuszok={[]}
+        spBónuszok={spBónuszok}
+        kapcsolhatóSpBónusz={kapcsolhatóSpBónusz}
         megjegyzések={[]}
-        hideAutoBónusz
         átütés={átütés}
         jelleg={jelleg}
         páncélMátrix={páncélMátrix}

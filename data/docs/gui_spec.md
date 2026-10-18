@@ -539,6 +539,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
   - **Fázis 1:** Megjegyzések (ha vannak) → ElőnyPicker (default: aktív hatásokból számolt nettó szint) → Hatások lista (aktív helyzetek/taktikák/fortélyok `cé_dobás` hatásai, badge + forrás) → Dobás gomb + ManualDicePicker (🎲)
   - **Fázis 2:** Eredmény vs VÉ kijelzés (két nagy szám „vs"-sel), alatta részlet: `CÉ (X) + k20 [rolls] → Y`, alatta Találat (zöld) / Nem talált (piros).
   - Hatásforrások: harci helyzetek, taktikák (fokok), státuszok, fortélyok - mind aminek `cé_dobás` célú Előny/Hátrány hatása van.
+  - **Sebzés** (Találat után, a közös `SebzesPopup`): SP = `calcTávSP` (alap + Erőbónusz + Mesterfegyver, §17.6); a „Statikus bónuszok" listája a bontást mutatja (Erőbónusz, „Mesterfegyver - <fegyver>"). Íjnál kapcsolható gomb: alapból BE „Erőbónusz: +N" (az SP-be és a bontásba kerül; ha a fegyver Erőbónusz-limitje vágta, vízszintes vonal a „+N" fölött), kattintásra KI: „Erődre tervezett íj: nem". A fegyverkártya és a kalkulátor SP-je ugyanez (kapcsolt íj-Erőbónusz nélkül).
   - Mellé katt / Escape bezár.
 - Szorzó×Cella: szürke (`#999`), nem kattintható
 - Táv: zöld keret + zöld érték, kattintható → Távolság popup (−/+ gombok, cella kijelzés)
