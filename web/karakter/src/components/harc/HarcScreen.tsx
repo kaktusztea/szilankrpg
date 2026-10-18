@@ -240,7 +240,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
           extraDefs={data.fegyverExtrák}
           extraKontextus={hc.extraKontextus}
-          dobásInfo={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név))}
+          dobásInfo={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név), hc.feltételTeljesül)}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
@@ -315,7 +315,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           manőverAlap={hc.manőverAlap}
           aktívTÉ={aktívTÉ}
           aktívVÉ={aktívVÉ}
-          téHatások={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név)).téHatások}
+          téHatások={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név), hc.feltételTeljesül).téHatások}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}

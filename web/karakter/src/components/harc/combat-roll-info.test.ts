@@ -182,3 +182,49 @@ describe('collectDobásInfo - Pajzshasználat / Mesterfegyver SP a bontásban', 
     r.módok.forEach((m, i) => expect(m.SP - m.sp_erőbónusz - m.sp_mf).toBe(r0.módok[i].SP));
   });
 });
+
+// A korábbi 3 rejtett eltérés (DEVSTATE, 2026-10-18) - ma egyik sem fordul elő az adatban, ezért szintetikus
+// adat-kiegészítéssel (a valódi GameData klónján) rögzítve, hogy a közös gyűjtőn mindhárom helyesen működik.
+describe('collectDobásInfo - a korábbi rejtett eltérések', () => {
+  const alapData = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const üres = { ...alap.session, aktív_taktikák: [], aktív_helyzetek: [], aktív_státuszok: [], kétkezes_harc: false } as Session;
+  const klón = () => structuredClone(alapData);
+  const té = (data: GameData, s: Partial<Session>, k: Karakter = alap, f?: (x: unknown) => boolean) => {
+    const session = { ...üres, ...s } as Session;
+    return collectDobásInfo(session, { ...k, session }, data, undefined, f).téHatások;
+  };
+
+  it('1. strukturált feltételű fortély kocka-hatás: session-forrás magától, computed-forrás a harc-kiértékelővel', () => {
+    const data = klón();
+    const def = data.fortelySummaries.find(d => d.id === 'kétkezesség')!;
+    const fok = def.fokok.find(f => f.fok === 1)!;
+    fok.módosítók = [
+      { cél: 'té_dobás', mód: 'előny', érték: 1, feltétel: [{ forrás: 'kétkezes_harc', operátor: '==', érték: true }] },
+      { cél: 'té_dobás', mód: 'hátrány', érték: -1, feltétel: [{ forrás: 'páncél_merev', operátor: '==', érték: true }] },
+    ] as typeof fok.módosítók;
+    const k = { ...alap, fortélyok: [{ id: 'kétkezesség', fok: 1, elem: '' }] } as Karakter;
+    expect(té(data, {}, k)).toEqual([]);
+    expect(té(data, { kétkezes_harc: true }, k).map(h => h.érték)).toEqual([1]);
+    // computed-forrás (páncél_merev): a hívó harc-kiértékelője dönti el
+    const páncélMerev = (f: unknown) => Array.isArray(f) && f.every(p => p.forrás === 'páncél_merev');
+    expect(té(data, {}, k, páncélMerev).map(h => h.érték)).toEqual([-1]);
+  });
+
+  it('2. taktika hatás feltétele: csak teljesült feltétellel', () => {
+    const data = klón();
+    const t = data.taktikak.find(x => x.név === 'Roham')!;
+    t.hatások = [...(t.hatások ?? []), { cél: 'té_dobás', mód: 'előny', érték: 1, feltétel: 'harci_helyzet:fegyverelőny' }] as typeof t.hatások;
+    const fegyverelőny = data.harciHelyzetek.find(h => h.feltétel_kulcs === 'harci_helyzet:fegyverelőny')!.név;
+    expect(té(data, { aktív_taktikák: [{ név: 'Roham' }] })).toEqual([]);
+    expect(té(data, { aktív_taktikák: [{ név: 'Roham' }], aktív_helyzetek: [fegyverelőny] }).map(h => [h.forrás, h.érték])).toEqual([['Roham', 1]]);
+  });
+
+  it('3. fokozatos taktika fok-szintű hatása: csak a választott fokon, „Név (fok)" forrással', () => {
+    const data = klón();
+    const t = data.taktikak.find(x => x.név === 'Támadó')!;
+    t.fokok!.find(f => f.fok === 2)!.hatások = [{ cél: 'té_dobás', mód: 'előny', érték: 1 }] as never;
+    expect(té(data, { aktív_taktikák: [{ név: 'Támadó', fok: 1 }] })).toEqual([]);
+    expect(té(data, { aktív_taktikák: [{ név: 'Támadó', fok: 2 }] }).map(h => [h.forrás, h.érték])).toEqual([['Támadó (2)', 1]]);
+  });
+});

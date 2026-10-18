@@ -56,14 +56,21 @@ function forrásCímke(e: Effekt): string {
  * + az SP-bónuszok (taktika + fortély `SP` flat) és a taktika-megjegyzések (a hívó szűri cél szerint).
  * Forrás: a közös effekt-gyűjtő (`engine/effekt.ts`, §42); itt csak a dobás-célokra szűrés + felirat-alak.
  */
-function collectSessionHatások(session: Session, karakter: Karakter, data: GameData, célFilter: Set<string>, fegyver?: FegyverAlap) {
+function collectSessionHatások(
+  session: Session, karakter: Karakter, data: GameData, célFilter: Set<string>, fegyver?: FegyverAlap,
+  teljesKiértékelő?: (feltétel: unknown) => boolean,
+) {
   // A kézben lévő fegyver kulcsai (mint a fegyversor fortély-feltételei, useHarcComputed): fegyver_kategória + tiltás.
   const feltételek = buildAktívFeltételek(session, data);
   if (fegyver) {
     feltételek.add(`fegyver_kategória:${fegyver.kategória}`);
     for (const t of tiltásokFegyverre(fegyver, session, data, feltételek)) feltételek.add(`tiltás:${t.id}`);
   }
-  const { feltételTeljesül } = createFeltételEvaluator(feltételek, session, new Map(), new Map(), new Map());
+  const saját = createFeltételEvaluator(feltételek, session, new Map(), new Map(), new Map()).feltételTeljesül;
+  // A „prefix:érték" kulcsokat a saját (fegyverre szabott) halmaz dönti el; a strukturált predikátumot - ha a hívó
+  // átadja - a teljes harc-kontextus (computed: páncél_merev / páncél_lefedettség, tulajdonságok; useHarcComputed),
+  // különben csak a session-mezők.
+  const feltételTeljesül = (f: unknown) => (Array.isArray(f) && teljesKiértékelő ? teljesKiértékelő(f) : saját(f));
   const effektek = [
     ...gyűjtHelyzetEffektek(session, data),
     ...gyűjtTaktikaEffektek(session, data, karakter, feltételTeljesül),
@@ -97,14 +104,17 @@ function collectSessionHatások(session: Session, karakter: Karakter, data: Game
  * Collect effects for TÉ dobás + Sebzésdobás (Harc fül).
  *
  * `aktívFegyver` opcionális (a kézben lévő fegyver): a fegyverfüggő fortély SP-bónusz (Pajzshasználat) a bontásban
- * (a mód-függő Erőbónusz / Mesterfegyver: `fegyverSpBónuszok`), és ha a karakter Ereje nem éri el a fegyver
+ * (a mód-függő Erőbónusz / Mesterfegyver: `fegyverSpBónuszok`). `feltételTeljesül` opcionális: a harc-kontextus teljes
+ * kiértékelője (`useHarcComputed().feltételTeljesül`) a strukturált fortély-/taktika-feltételekhez. Ha a karakter Ereje nem éri el a fegyver
  * `erő_követelmény`-ét (md/064_02_06 "Fegyverek Erő követelménye"), Hátrány kerül
  * a Támadó (TÉ) dobásra (mértéke: konstansok.yaml → fegyver_erő_követelmény_hátrány).
  */
 export function collectDobásInfo(
   session: Session, karakter: Karakter, data: GameData, aktívFegyver?: FegyverAlap,
+  feltételTeljesül?: (feltétel: unknown) => boolean,
 ): DobásInfo {
-  const { hatások, spBónuszok, taktikaMegjegyzések } = collectSessionHatások(session, karakter, data, new Set(['té_dobás', 'sebzésdobás']), aktívFegyver);
+  const { hatások, spBónuszok, taktikaMegjegyzések } = collectSessionHatások(
+    session, karakter, data, new Set(['té_dobás', 'sebzésdobás']), aktívFegyver, feltételTeljesül);
   const téHatások = hatások.filter(e => e.cél === 'té_dobás');
   const sebzésHatások = hatások.filter(e => e.cél !== 'té_dobás');
   const téMegjegyzések = taktikaMegjegyzések.filter(m => /támadódobás/i.test(m.szöveg));
