@@ -10,9 +10,11 @@ interface Props {
   /** Escape handler; defaults to onClose. Use when Escape must cancel while a
    *  backdrop click does something else (e.g. commits the typed value). */
   onEscape?: () => void;
+  /** Extra osztály(ok) a `.kep-prompt-overlay` div-re (pl. mobil bottom-sheet pozíció). */
+  overlayClassName?: string;
 }
 
-export function OverlayPortal({ children, dismissible, onClose, onEscape }: Props) {
+export function OverlayPortal({ children, dismissible, onClose, onEscape, overlayClassName }: Props) {
   const escapeHandler = onEscape ?? onClose;
   useEscapeClose(!!escapeHandler, escapeHandler ?? (() => {}));
 
@@ -29,7 +31,7 @@ export function OverlayPortal({ children, dismissible, onClose, onEscape }: Prop
   };
 
   return createPortal(
-    <div className="kep-prompt-overlay" onClick={handleBackdrop}>
+    <div className={`kep-prompt-overlay${overlayClassName ? ` ${overlayClassName}` : ''}`} onClick={handleBackdrop}>
       {children}
     </div>,
     document.body

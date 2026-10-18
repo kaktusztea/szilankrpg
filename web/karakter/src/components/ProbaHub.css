@@ -36,6 +36,27 @@
   max-height: 82vh;
   overflow-y: auto;
 }
+
+/* --- Mobil (bottom-sheet): a kocka ablak teteje alapból a képernyő közepén van (könnyen elérhető
+   hüvelykujjal), és felfelé legyintve a tetőig úszik. A natív overlay-görgetést használjuk: a popup fölé
+   egy 50vh térköz (margin-top) kerül, ez gördül ki felfelé. A popup nem görget saját maga - egyetlen
+   görgethető elem az overlay (spacer + teljes popup), így nincs nested-scroll ütközés; hosszú tartalomnál
+   a felúszás után a tartalom alja az overlay-görgetéssel érhető el. Desktopon (min-width: 600px) marad a
+   középre igazítás. --- */
+@media (max-width: 599px) {
+  .kep-prompt-overlay.proba-hub-overlay {
+    align-items: flex-start;
+    overflow-y: auto;
+    touch-action: auto; /* a .kep-prompt-overlay `none`-ját felülírva engedjük az ujj-görgetést */
+    -webkit-overflow-scrolling: touch;
+  }
+  .proba-hub-overlay .proba-hub-popup {
+    margin-top: 50vh;          /* a teteje a viewport közepén indul */
+    margin-bottom: 10vh;       /* alul levegő, a tab-bar ne ragadjon rá */
+    max-height: none;          /* egyetlen görgető elem az overlay (nincs nested scroll ütközés) */
+    overflow: visible;
+  }
+}
 /* A közös kep-proba-close-btn a popup sarkához igazodik (itt nincs header-konténer). */
 .proba-hub-close-btn {
   top: 8px;
@@ -65,9 +86,10 @@
 .proba-hub-grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
-/* Harci dobás chipek (KÉ / 🗡️ / 🏹): nagyobb felirat, arany hover-keret. */
-.proba-hub-chip-harc {
-  font-size: 16px;
+/* Harci dobás chipek (KÉ / 🗡️ / 🏹): nagyobb felirat, arany hover-keret.
+   Dupla-class specificitás, mert a base .proba-hub-chip (12px) a CSS-ben később van. */
+.proba-hub-chip.proba-hub-chip-harc {
+  font-size: 18px;
   padding: 10px 6px;
 }
 .proba-hub-chip-harc:hover {
