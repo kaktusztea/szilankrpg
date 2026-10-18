@@ -14,12 +14,11 @@
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
 - [Szabálykönyv (md/) konvenciók, tanulságok](#szabálykönyv-md-konvenciók-tanulságok)
-- [Elkészült](#elkészült-) ✅
 
 ---
 ## Nyitott tételek (áttekintés)
 
-- **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, refaktor-maradék (kódolt képletek a gyűjtőre)
+- **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, Távharc fül teljes feltétel-kiértékelő, Playwright végigkattintás (kocka-hatások, 2026-10-18)
 - **Fortély-követelmények gépesítése** - szöveges maradók jelölése (`csak_szöveges`) + build-gate
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver, ár-modell
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
@@ -27,26 +26,31 @@
 ---
 ## Egységes effekt-modell: maradék 🚧
 
-A §42 mindhárom fázisa kész (l. „Elkészült"); spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`,
-napló: `refactorlog/2026-10-16.md`. Nyitott:
+Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`. Nyitott:
 
 - [ ] `beszorithato` extra halott hivatkozás: `státusz: Beszorított (2)`, ilyen státusz nincs → soha nem teljesül. Döntés: új státusz, vagy a `Beszorított ellenfél` helyzetre mutasson? Utána build-gate az extrák státusz-/helyzet-hivatkozásaira (`validate_effekt_hivatkozasok`).
-
-Refaktor-maradék (2026-10-17): a fegyver Idea ±5 → `konstansok.fegyver_idea_plusz_minusz` (a páncél mintájára); a `páncélLefedettség` / `calcManőverPont` rules.json-tükrök `ponytail:` + drift-őr teszt (`rules-tukor.test.ts`) alá kerültek.
+- [ ] Távharc fül: a dobás-hatások gyűjtése (`collectCéDobásInfo`, és a távharci `collectDobásInfo`) nem kap teljes harc-kontextust - a `TavharcScreen` nem épít `useHarcComputed`-ot, ezért a gyűjtés saját kiértékelője üres computed/ctx map-pel fut. Következmény: a computed- vagy tulajdonság-forrású strukturált feltétel (pl. `páncél_merev`, `páncél_lefedettség`) távharcban mindig hamis; csak a session-mezős (pl. `kétkezes_harc`) és a `"prefix:érték"` feltétel működik. Ma nem tüzel (nincs ilyen kocka-hatás az adatban). Teendő: a Távharc fül adjon át teljes kiértékelőt (a `collectDobásInfo` 5. paramétere már létezik; a `collectCéDobásInfo`-nak is kell) - forrás pl. egy közös, a reactive `computed`-ot építő helper (a `useHarcComputed` feltétel-részéből kiemelve). Teszt mintája: `combat-roll-info.test.ts` „a korábbi rejtett eltérések" 1. eset.
+- [ ] Böngészős (Playwright) végigkattintás a 2026-10-18-i „kocka-hatások a közös gyűjtőre" munkára - Kiro végzi. Előtte rákérdezni (költséges); telepítés: `/tmp/szilank-pw` (pinned playwright) + `~/.cache/ms-playwright`, a repóba nem kerül. `npm run dev` (localhost:5173), mobil viewport (pl. 390×844) + egy asztali. Teszt karakter: `test_karakter2.json` (Kard, lovag + Tőr, közepes pajzs, Erő 3); a fortélyok / státuszok / taktikák az app UI-ján vehetők fel. Az egységtesztek + regressziós snapshotok (`statusz-proba.regresszio`, `combat-roll-info.regresszio`, `effekt.regresszio`, `karakter.regresszio`) szerint az értékek változatlanok - itt a MEGJELENÍTÉS és a kattintási folyamat a kérdés. Mit kell nézni:
+  - **Képzettségpróba, Érzékvesztés** (`statusz-proba.ts`, `KepzettsegProbaPopup.tsx`): `Érzékvesztés: Látás (2)` → Észlelés próba: felirat nélküli érzék chip-sor (Látás ⚠ / Hallás / Szaglás / Tapintás / Ízlelés, egy sorban, kitöltve), alapból Látás kiválasztva → Hátrány−2, a bontásban `Érzékvesztés: Látás (Részleges): -2`; Hallás → nincs Hátrány; újrakattintás (egyik sem) → nincs Hátrány. `(1)` → −1, `(3)` → „automatikus kudarc", nincs Dobás gomb. Etikett / Lexikum próbán NINCS chip-sor. Két alkategória (Látás + Hallás) egyszerre → mindkettő ⚠. Nem-alkategóriás státusz változatlan: `Félelem (1)` → Befolyásolás Hátrány, Lexikum nem.
+  - **Lövéskitérés** (Távharc fül, `loveskiteres-calc.ts`): Akrobatika+Gyorsaság érték „Lövéskitérés fejlesztése" fortéllyal +2-vel több, nélküle nem.
+  - **Alkalmi tárgy** (Távharc fül, `tavharc/helpers.ts`): „Alkalmatlan tárgyak hajítása" 1. fok → kártya Osztó 1, 2. fok → Osztó 2 (és a lövéskitérés-kategória ennek megfelelő).
+  - **Támadó dobás popup** (Harc fül, `combat-roll-info.ts`): Visszafogott taktika → a Sebzésnél Hátrány−2 forrással; Orgyilkos fortély + Orvtámadás helyzet → Sebzés Előny; Helyhez kötve fejlesztése (2) + Helyhez kötve helyzet → TÉ dobás enyhít; Erő-követelmény (nehéz fegyver, alacsony Erő) → TÉ Hátrány-1 „(Erő hiány)"; taktika-megjegyzések a TÉ / Sebzés popupban mint eddig. Az E/H címke és a kocka-picker előre beállított szintje egyezik a forrás-összeggel (clamp ±2).
+  - **Sebzés popup „Statikus bónuszok"** (`fegyverSpBónuszok` + `spBónuszok`): Erőbónusz (min(Erő, mód Erőlimit)); „Mesterfegyver - <fegyver>" csak a megjelölt fegyverrel a kézben; Pajzshasználat csak pajzzsal; Roham / (Lég)Lovas roham taktika SP-je; Támadás erőből magas fok (pl. 5, fortély-bővítéssel) SP-je „Támadás erőből (5)" felirattal; Orgyilkos SP Orvtámadásban. Mód-váltás másodlagosra → az Erőbónusz a másodlagos mód Erőlimitje szerint. **Kulcs-ellenőrzés: az összesített SP (alap + bónuszok) = a fegyvertábla SP-je** (+ taktika SP), a bontás csak szétosztja. Kétkezes harcnál a jobb kéz MF-je.
+  - **CÉ dobás popup** (Távharc): Alkalmatlan tárgyak / fegyver hajítása + a megfelelő helyzet → CÉ / Sebzés enyhít; Kitartott célzás megjegyzés csak illő harcmodorú távfegyverrel.
+  - **Manőver dobás popup** (Aktív fül): a TÉ E/H szint a taktika / helyzet / státusz / fortély hatásokból, mint a Támadó popupban.
+  - **VÉ plafon**: Teljes Védekezés + Védő (3) → a fejléc VÉ-eltolása +10-re szorul (a taktika-gyűjtő „Taktika VÉ-plafon" korrekciós sora).
 
 ---
 ## Fortély-követelmények gépesítése 🚧
 
-20 fortély-foknál csak szöveges követelmény volt (`követelménytext`), gépi (`követelmények`) nem. Kész (2026-10-17):
-`faj` típus (13 fok: érzék-fortélyok, Természetes fegyver/páncél), faj `ajánlott_fortélyok: [{név, max_fok}]`,
-Sáskaharcos → Természetes páncél 3. fok, név-hivatkozás build-gate. Nyitott:
+Fortély-fokok, amelyeknek csak szöveges követelménye (`követelménytext`) van, gépi (`követelmények`) nincs. Nyitott:
 
 - [ ] Szöveges maradók (Kínokozás: használati feltétel; Körkörös harc: körönkénti próba; Éneklés: KM-mérlegelés) - jelölés (pl. `csak_szöveges`) + build-gate: szöveges követelmény gépi pár vagy jelölés nélkül → hiba.
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧
 
-Utómunka (a v2 bevezetés lezárult, l. "Elkészült"):
+Utómunka (a v2 bevezetés lezárult):
 - [ ] Balansz `raw` → `final`: mind a 67 fegyver `state: raw` (a `fegyverek.yaml` `state` mezője a mérőszám). Eszközök: `code/balance/` szimulátor + taktikai AI, l. wiki `STUDY.fegyvergenerator_harcszimulacio`.
 - [ ] Custom (egyedi, generált) fegyver a karakterben: `fegyverek[].custom` séma-mező + build-time vagy runtime kiértékelés (nyitott döntés) - wiki `STUDY.fegyvergenerator_v2` 4a.
 - [ ] Ár-modell: paraméter-alapú alapár (fegyverhossz / anyag / Idea szorzókból) - a JSON `ár` mező ma placeholder (`null`).
@@ -247,22 +251,3 @@ A szabálykönyv headingjei dekoratív emojikat használnak (pl. `⚜️`, `🗡
 1. Új emoji-heading után a rá mutató link anchorját a tényleges slug alapján add meg (github-slugger: a FE0F-es emojiknál `#️-...`).
 2. Anchor-ellenőrzés mindig `npx @umbrelladocs/linkspector check -c .linkspector.yml` a módosítás végén (a 404 a FE0F-eltérést is kiszűri).
 3. Variation-selector nélküli, egykódpontos emojik (pl. `🟡`, `🔆`) tiszta `#-...` slugot adnak - ha egyszerű anchor kell, azok jobbak.
-
----
-## Elkészült ✅
-
-- **Kocka-hatások a közös gyűjtőn** (§42, 2026-10-18) - a képzettségpróba státusz-E/H (`statusz-proba.ts`) a `gyűjtStátuszEffektek`-ből megy; javítva: az alkategóriás Érzékvesztés eddig SOHA nem hatott - most az illő érzékre hat (popup „Érzék:" sor). A Lövéskitérés fejlesztése +2 (`lövéskitérés` cél) és az Alkalmi tárgy Osztó (`alkalmi_tárgy_osztó` override) a fortély yaml-ból. Utána (ugyanaznap) a harci dobások (`combat-roll-info.ts`) is a gyűjtőn: megszűnt 3 rejtett eltérés, mindhárom szintetikus teszttel rögzítve (strukturált fortély-feltétel - a computed-forrásúhoz (pl. `páncél_merev`) a Harc fül a `useHarcComputed` kiértékelőjét adja át, taktika `hatások[].feltétel`, fokozatos taktika fok-szintű `hatások` - most mindkét út ugyanazt olvassa); javítva a Sebzés popup SP-bontása: skálázott taktika-fok (pl. Támadás erőből 5), Pajzshasználat, Mesterfegyver és Erőbónusz SP-je (a kézben lévő fegyver kulcsaival / a választott mód SP-tagjaiból). `kockaSzint` (E/H nettó szint) az `effekt.ts`-ben. Napló: `refactorlog/2026-10-18.md`.
-- **Egységes effekt-modell, 1-3. fázis** (§42, 2026-10-16) - egy effekt-alak (`{cél, alcél?, mód, érték, feltétel?}`) és egy mód-enum minden forrásban (az operátor-réteg / `hatas_operatorok.yaml` megszűnt); §42.3 precedencia: override = alapérték-csere → additív → szorzó (egy félen belül a legnagyobb, a két fél között szorzódik) → max_limit; alcél `prefix:név` (`felszerelés:` / `képzettség:` / `tulajdonság:` / `érzék:`); nevesített tiltás-keret (`tiltás:<id>`, extrával feloldható). `engine/effekt.ts`: gyűjtők (fortély, alapeset, taktika, helyzet, státusz), `calcFortelyMods` / `calcTaktikaMods` burkolók; fortély-módosítók soronként; helyzet `flat` (VÉ, VÉ-csökkentés), `támadások_száma` max_limit; fortély próba-bónuszok kapcsolható szituációs sorként. Build-gate-ek: hatás-mód/cél, alcél, tiltás-/ellenfél-hivatkozás. Napló: `refactorlog/2026-10-16.md`.
-- **Belharc rendszer** (§21.4, 2026-10-16) - max 1 fegyverhossz + Közelharc harcmodor tiltásként (`belharc_fegyverhossz` / `belharc_harcmodor`), soronkénti (kétkezesnél kezenkénti) kiértékelés; Puszta kéz belharcban extraként (TÉ/VÉ/SP 0, Természetes fegyverrel SP 1); Tőr, páncélszúró: a `pancelszuras_belharcban` feloldja a hossz-tiltást, SFÉ 0 földön fekvő ellenfélnél (KM); Belharcos fortély soronként; ⚠ jelzés az Aktív fül chipjén és a fegyvertáblában.
-- **Szorzók halmozása** (2026-10-16) - "keverék" szabály: egy fél forrásaiból (helyzet/státusz/taktika/fegyver-extra) a legnagyobb szorzó számít, a két fél szorzói összeszorzódnak → plafon ×4. Spec §42.3, md/081 "Szorzó hatások ökölszabály" (065_02 Roham/Öngyilkos roham erre hivatkozik). Kód: `alkalmazEffektek` + `calcVéCsökkentésSzorzó` + `HarcScreen` taktika-reduce max-ra; a passzív oldal (`véVesztésSzorzó`) már a `halmozás: legnagyobb`-ot követte.
-- **Fegyver v2 bevezetés** - a webapp a `fegyverek_v2.json`-t olvassa (`módok[]` modell), a régi md→json pipeline archiválva (`archive/data_fegyverek_v1/`), a szabálykönyv táblái generáltak (`sync_fegyvertablazatok.py`). Napló: wiki `STUDY.fegyvergenerator_v2`.
-- **Fegyver Idea** - `idea_default` modell: a példány Ideájának deltája hat (közelharc `TÉ`/`VÉ`/`SP`, kétkezes, távharc CÉ). `harc/shared.ts` `ideaDelta()`, spec §17.
-- **`cél_páncél` extrák** - Sebzés popup "Ellenfél páncél" választó: mátrix + `SP`-hatású extra numerikusan, a `VÉ`/SFÉ-hatásúak az "Extrák" gombon jelölve. STUDY 3g.
-- **Pajzs pipeline** - a pajzsok a `fegyverek_v2.json`-ban + `konstansok.pajzs_hatások` (`pancel-calc.ts`); a `pajzsok.json` archiválva.
-- **Távharc fegyverek v2** - `tavfegyverek_fixed.json` → `tavfegyverek_v2.json`, nem-numerikus hatások `tavharc_` extrákként. Wiki `STUDY.tavharc_v2`.
-- **Erő-követelmény** - nehéz/súlyos fegyver Erő alatt: Hátrány-1 a Támadó dobásra. `md/064_02_06`, `combat-roll-info.ts`.
-- **Fárasztás taktika `VÉ`-csökkentés** - strukturált `hatások` a `taktikak.yaml`-ban, `ve-csokkentes-calc.ts`.
-- **Manőver helyzetfüggő módosítók: Nehézség → Dobásmódosító** (2026-10) - dobó-oldali előjel, `99`/`-99` sentinel. Refactorlog `2026-10-10.md`, spec §21. A teljes eredeti terv: a DEVSTATE.md git-története (2026-10-14 előtt).
-- **Felszerelés funkció** (2026-10) - keret `2 + Erő`, fegyverpont `max(hossz, súly)`, túllépés → Fizikai próba-Hátrány. Spec §15/§33.1, refactorlog `2026-10-09.md`. A korábbi "akadályoztatás" státuszokat ez váltotta. A teljes eredeti terv: a DEVSTATE.md git-története (2026-10-14 előtt).
-- **Fegyvergenerátor KM-fejezet** - `md/068_10_fegyvergenerator.md` (paraméter-táblák, képletek, kidolgozott példák).
-- **Fegyvertáblázat CI** - `update_fegyvertablazat.yml`: önteszt-kapu (balansz, harcszimulátor, taktikai AI) + táblagenerálás, a generátor kódjára is triggerel.
