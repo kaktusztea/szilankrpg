@@ -62,6 +62,17 @@
 .proba-hub-grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
+.proba-hub-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+/* Harci dobás chipek (KÉ / 🗡️ / 🏹): nagyobb felirat, arany hover-keret. */
+.proba-hub-chip-harc {
+  font-size: 16px;
+  padding: 10px 6px;
+}
+.proba-hub-chip-harc:hover {
+  border-color: var(--accent, #c8a24a);
+}
 .proba-hub-chip {
   padding: 8px 6px;
   border: 1px solid var(--border-input, #3a4258);

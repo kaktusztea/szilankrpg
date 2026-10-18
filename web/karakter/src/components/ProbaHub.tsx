@@ -5,6 +5,9 @@ import type { PróbaEnyhítés } from '../engine/data-types';
 import { képzKulcs } from '../engine/azonosito';
 import { PopupOverlay } from './PopupOverlay';
 import { ProbaDispatcher, type ProbaCél } from './ProbaDispatcher';
+import { harcFejlécÉrtékek } from './harc/harc-fejlec-calc';
+import { DobasPopup } from './harc/DobasPopup';
+import { rollK20 } from '../engine/dice';
 import { buildFortélyFokok } from './tulajdonsagok/kepzettseg-proba-calc';
 import { getDisplayName } from './tulajdonsagok/helpers';
 import { fortélyPróbaBónuszok } from '../engine/effekt';
@@ -16,6 +19,8 @@ interface Props {
   karakter: Karakter;
   /** Csak Játék módban (és nem verzió-nézetben) látszik a FAB. */
   aktív: boolean;
+  /** 🗡️/🏹 chip: a cél-fülre váltás + ott a Támadó / Célzó dobás popup megnyitása (App oldja fel). */
+  onHarciDobás: (cél: 'támadó' | 'célzó') => void;
 }
 
 /**
@@ -24,9 +29,11 @@ interface Props {
  * elrejtőzik. A próba-adatokat a karakterből itt állítjuk össze (ugyanaz a logika, mint a
  * TulajdonsagokScreen - l. a memók; a próba-ablakok maguk a meglévő popup-komponensek).
  */
-export function ProbaHub({ data, karakter, aktív }: Props) {
+export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
   const [hubNyitva, setHubNyitva] = useState(false);
   const [cél, setCél] = useState<ProbaCél | null>(null);
+  // KÉ dobás helyben (nem vált fület): a Harc fejléc KÉ-értéke + k20.
+  const [kéDobás, setKéDobás] = useState<{ ké: number; eredmény: number } | null>(null);
   // Van-e nyitott overlay a body-ban (bármilyen popup/menü) - ekkor a FAB elrejtőzik.
   const [overlayNyitva, setOverlayNyitva] = useState(false);
 
@@ -104,6 +111,17 @@ export function ProbaHub({ data, karakter, aktív }: Props) {
       {hubNyitva && !cél && (
         <PopupOverlay onClose={() => setHubNyitva(false)} className="kep-prompt proba-hub-popup">
           <button type="button" className="kep-proba-close-btn proba-hub-close-btn" onClick={() => setHubNyitva(false)} title="Bezárás" aria-label="Bezárás">✕</button>
+          <h3 className="proba-hub-header">Harci dobás</h3>
+          <div className="proba-hub-grid proba-hub-grid-3">
+            <button className="proba-hub-chip proba-hub-chip-harc" onClick={() => {
+              const { ké } = harcFejlécÉrtékek(data, karakter);
+              setKéDobás({ ké, eredmény: ké + rollK20() });
+              setHubNyitva(false);
+            }}>KÉ</button>
+            <button className="proba-hub-chip proba-hub-chip-harc" title="Támadó dobás (Harc fül)" aria-label="Támadó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('támadó'); }}>🗡️</button>
+            <button className="proba-hub-chip proba-hub-chip-harc" title="Célzó dobás (Távharc fül)" aria-label="Célzó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('célzó'); }}>🏹</button>
+          </div>
+
           <h3 className="proba-hub-header">Tulajdonságpróba</h3>
           <div className="proba-hub-grid">
             {tulajdonságok.map(t => (
@@ -128,6 +146,10 @@ export function ProbaHub({ data, karakter, aktív }: Props) {
               ))}
           </div>
         </PopupOverlay>
+      )}
+
+      {kéDobás && (
+        <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={kéDobás.ké} eredmény={kéDobás.eredmény} onClose={() => setKéDobás(null)} />
       )}
 
       {cél && (

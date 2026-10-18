@@ -146,7 +146,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
               </div>
             )}
 
-            <ElonyPicker szint={aktuális} onChange={handleSzintChange} />
+            <ElonyPicker szint={aktuális} onChange={handleSzintChange} rövid kompakt />
 
             {(sebzésHatások.length > 0 || defaultElőny > 0) && (
               <HatasokInfo hatások={sebzésHatások}>

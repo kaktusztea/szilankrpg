@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { HarcBaseProps } from './types';
 import type { FegyverResult } from './types';
 import type { SebzésRubrika } from '../../engine/types';
@@ -31,7 +31,7 @@ import './HarcScreen.css';
 /** A Fájdalomtűrés képzettség id-je (ÉP-tábla → Tulajdonságok fül ugrás; a KepzettsegRow `data-kep` = kulcs). */
 const FÁJDALOMTŰRÉS_ID = 'fájdalomtűrés';
 
-export function HarcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, onNavigate, gameMode }: HarcBaseProps) {
+export function HarcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, onNavigate, gameMode, pendingDobás, onPendingDobásConsumed }: HarcBaseProps) {
   const [showVéHistory, setShowVéHistory] = useState(false);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_fortély: number } | null>(null);
@@ -67,11 +67,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     }));
   }, [setSession]);
 
-  // Támadó dobás handler: open the new TamadoDobasPopup
-  const handleTéDobás = useCallback(() => {
-    setShowTamadoDobas(true);
-  }, []);
-
   const handleTamadoClose = useCallback((eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => {
     setShowTamadoDobas(false);
     if (eredmény !== null) {
@@ -97,6 +92,22 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
   const { fárasztásDef, fárasztásEredmény, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, teljesVédekezésDef } =
     taktikaVéCsökkentésÁllapot(data, karakter, session, hc.feltételTeljesül, hc.helyzetVéCsökkentés);
+
+  // A TÉ chip / ProbaHub 🗡️ közös dispatch-e: Teljes Védekezés → info, Fárasztás → VÉ csökkentés popup,
+  // különben rendes Támadó dobás. EGY igazságforrás (a pending effect és az onTéClick is ezt hívja).
+  const openTámadóDobás = useCallback(() => {
+    if (aktívTÉ == null) return;
+    if (teljesVédekezésDef) setShowTeljesVédekezésInfo(true);
+    else if (fárasztásDef) setShowFárasztásVéCsökkentés(true);
+    else setShowTamadoDobas(true);
+  }, [aktívTÉ, teljesVédekezésDef, fárasztásDef]);
+
+  // ProbaHub 🗡️: a Harc fülre váltás után itt nyílik meg a Támadó dobás (a pendinget rögtön consume-oljuk).
+  useEffect(() => {
+    if (pendingDobás !== 'támadó') return;
+    openTámadóDobás();
+    onPendingDobásConsumed?.();
+  }, [pendingDobás, openTámadóDobás, onPendingDobásConsumed]);
 
   const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[], leírás: string) => {
     pushUndo(leírás, [{ field: 'session', prev: session }]);
@@ -142,12 +153,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
-        onTéClick={() => {
-          if (aktívTÉ == null) return;
-          if (teljesVédekezésDef) setShowTeljesVédekezésInfo(true);
-          else if (fárasztásDef) setShowFárasztásVéCsökkentés(true);
-          else handleTéDobás();
-        }}
+        onTéClick={openTámadóDobás}
         onSféClick={() => setShowPancelInfo(true)}
         onManőverClick={() => setManoverPicker('mód')}
         gameMode={gameMode}

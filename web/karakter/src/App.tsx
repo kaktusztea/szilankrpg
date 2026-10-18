@@ -41,6 +41,8 @@ function App() {
   useEffect(() => { if (initialWarning) setOverlay('loadError', initialWarning); }, [initialWarning, setOverlay]);
   const [activeTab, setActiveTab] = useState(5);
   const [gameMode, setGameMode] = useState(false);
+  // ProbaHub 🗡️/🏹: a cél-fülre váltás után a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot.
+  const [pendingDobás, setPendingDobás] = useState<'támadó' | 'célzó' | null>(null);
   const [viewingCheckpointId, setViewingCheckpointId] = useState<string | null>(null);
 
   // When viewing a checkpoint, everything is read-only
@@ -221,6 +223,8 @@ function App() {
                       pushUndo={pushUndo}
                       onToast={(msg, type) => setOverlay('toast', { msg, type })}
                       onTestReset={handleTestReset}
+                      pendingDobás={pendingDobás}
+                      onPendingDobásConsumed={() => setPendingDobás(null)}
                     />
                   </ScreenErrorBoundary>
                 )}
@@ -234,7 +238,13 @@ function App() {
 
       <TabBar tabs={TABS} activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <ProbaHub data={data} karakter={karakter} aktív={gameMode && !viewingCheckpointId} />
+      <ProbaHub data={data} karakter={karakter} aktív={gameMode && !viewingCheckpointId}
+        onHarciDobás={cél => {
+          const tabId = cél === 'támadó' ? 'harc' : 'tavharc';
+          const idx = TABS.findIndex(t => t.id === tabId);
+          if (idx >= 0) setActiveTab(idx);
+          setPendingDobás(cél);
+        }} />
 
       <AppOverlays
         state={overlays} setState={setOverlay}

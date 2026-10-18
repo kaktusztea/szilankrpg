@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { harciKepzDisplayName } from '../harcertekek/helpers';
 import { képzKulcs } from '../../engine/azonosito';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
@@ -19,7 +19,7 @@ import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { CélzóDobasPopup } from './CelzoDobasPopup';
 import './TavharcScreen.css';
 
-export function TavharcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, képzettségek, setKépzettségek, gameMode }: TavharcProps) {
+export function TavharcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, képzettségek, setKépzettségek, gameMode, pendingDobás, onPendingDobásConsumed }: TavharcProps) {
   const k = karakter;
   const konstansok = data.konstansok;
   const szorzok = data.tavharcSzorzok;
@@ -32,6 +32,14 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   // --- Célzó dobás popup ---
   const [showCéDobás, setShowCéDobás] = useState(false);
+
+  // ProbaHub 🏹: a Távharc fülre váltás után itt nyílik meg a Célzó dobás. Csak ha van aktív távfegyver
+  // (tfDef) ÉS Játék mód - ugyanaz a feltétel, mint a kalkulátor Célzó gombjáé. A pendinget rögtön consume-oljuk.
+  useEffect(() => {
+    if (pendingDobás !== 'célzó') return;
+    if (tfDef && gameMode) setShowCéDobás(true);
+    onPendingDobásConsumed?.();
+  }, [pendingDobás, tfDef, gameMode, onPendingDobásConsumed]);
 
   // --- CÉ bontás ---
   // Per-fegyver CÉ-Idea delta (Modell 2, spec §17): az aktív példány Ideája a idea_default-tól eltérve

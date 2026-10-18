@@ -13,6 +13,9 @@ export interface TavharcProps {
   képzettségek: Kepzettseg[];
   setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
   gameMode: boolean;
+  /** A ProbaHub 🏹 chipje: ha 'célzó', a Távharc fül mountkor megnyitja a Célzó dobás popupot (majd consume). */
+  pendingDobás?: 'célzó' | null;
+  onPendingDobásConsumed?: () => void;
 }
 
 export interface VirtuálisFegyver {

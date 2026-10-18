@@ -47,6 +47,9 @@ export interface HarcBaseProps {
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onNavigate?: (tabId: string) => void;
   gameMode?: boolean;
+  /** A ProbaHub 🗡️ chipje: ha 'támadó', a Harc fül mountkor megnyitja a Támadó dobás popupot (majd consume). */
+  pendingDobás?: 'támadó' | null;
+  onPendingDobásConsumed?: () => void;
 }
 
 export interface HarcComputed {

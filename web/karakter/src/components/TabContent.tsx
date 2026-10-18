@@ -43,21 +43,28 @@ interface Props {
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onToast: (msg: string, type: 'success' | 'error') => void;
   onTestReset?: () => void;
+  /** ProbaHub 🗡️/🏹 → a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot. */
+  pendingDobás?: 'támadó' | 'célzó' | null;
+  onPendingDobásConsumed?: () => void;
 }
 
 export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
   képzettségek, fortélyok, setFortélyok, session, setSession,
-  karakter, setKarakter, pushUndo, onToast, onTestReset }: Props) {
+  karakter, setKarakter, pushUndo, onToast, onTestReset,
+  pendingDobás, onPendingDobásConsumed }: Props) {
 
   const { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo } = useUndoWrappedSetters({ karakter, setKarakter, pushUndo, data });
 
   switch (tab) {
     case 'aktiv': return <AktivScreen data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} />;
-    case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode} onNavigate={(id) => {
+    case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}
+      pendingDobás={pendingDobás === 'támadó' ? 'támadó' : null} onPendingDobásConsumed={onPendingDobásConsumed}
+      onNavigate={(id) => {
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
-    case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo} gameMode={gameMode} />;
+    case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo} gameMode={gameMode}
+      pendingDobás={pendingDobás === 'célzó' ? 'célzó' : null} onPendingDobásConsumed={onPendingDobásConsumed} />;
     case 'tulajdonsagok': {
       const sf = makeFieldSetter(karakter, pushUndo, setKarakter);
       const setAnyanyelv = makeAnyanyelvSetter(setKarakter, data.konstansok.közös_nyelv);
