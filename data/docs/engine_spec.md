@@ -1176,7 +1176,7 @@ note: Forrás: tables/taktikak.json (kombó: `kombó_mód` + `kombó_lista`). A 
 |---------|-----------|------------|
 | Kitartott célzás | CÉ:+3 | 1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. szűrő_harcmodorok: [Íjászat, Lövészet] |
 | Lövéskitérés | - | Akrobatika próba lövedék elkerülésére. Fortéllyal +2. Nem kombinálható: Kitartott célzás |
-| Páros kétkezes hajítás | - | 2 db Célzó dobás Hátrány-1 büntetéssel. Nem kombinálható: Kitartott célzás, Lövéskitérés |
+| Páros kétkezes hajítás | `hatások`: `cé_dobás` hátrány −1 | 2 db Célzó dobás Hátrány-1 büntetéssel (gépi: a Célzó popup alapszintje). Kétkezességgel a 2. dobást nem sújtja - szöveges (a popup egy dobást kezel). Nem kombinálható: Kitartott célzás, Lövéskitérés |
 
 #### Taktika mezők (data layer)
 

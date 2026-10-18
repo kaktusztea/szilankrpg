@@ -17,6 +17,24 @@ export function interpolateFokDef<T extends { fok: number }>(fokok: T[], fok: nu
   return result as T;
 }
 
+/** Harci terület szűrő a taktika / helyzet pickerekhez: a dobó popup csak a saját területét mutatja. */
+export type HarcTerület = 'közelharc' | 'távharc';
+
+/** A `csoport` (taktika / harci helyzet) illik-e a területhez; terület nélkül (Aktív fül) mindig. */
+export function területIllik(csoport: string | undefined, terület?: HarcTerület): boolean {
+  return !terület || (terület === 'távharc') === (csoport === 'távharc');
+}
+
+/** Az aktív taktikák / helyzetek száma az adott területen (a dobó popup chipjeinek feliratához). */
+export function aktívTerületen(
+  session: { aktív_taktikák: { név: string }[]; aktív_helyzetek: string[] }, data: GameData, terület: HarcTerület,
+): { taktika: number; helyzet: number } {
+  return {
+    taktika: session.aktív_taktikák.filter(a => területIllik(data.taktikak.find(t => t.név === a.név)?.csoport, terület)).length,
+    helyzet: session.aktív_helyzetek.filter(n => területIllik(data.harciHelyzetek.find(h => h.név === n)?.csoport, terület)).length,
+  };
+}
+
 /** Taktika engedélyezett-e: l. taktika-megkotes.ts (isTaktikaAllowed). */
 
 /** Taktika módosítók szöveges kijelzése */

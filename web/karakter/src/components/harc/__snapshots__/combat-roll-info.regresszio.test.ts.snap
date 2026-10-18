@@ -875,11 +875,19 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 0 1`] = `
   },
   "taktika Páros kétkezes hajítás": {
     "c": {
-      "céHatások": [],
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Páros kétkezes hajítás",
+          "megjegyzés": "Célzó dobás: Hátrány-1 (mindkét dobásra)",
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
       "céMegjegyzések": [
         {
           "forrás": "Páros kétkezes hajítás",
-          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség fortéllyal a második dobást NEM sújtja a Hátrány-1.",
         },
       ],
     },
@@ -1942,11 +1950,19 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 1 1`] = `
   },
   "taktika Páros kétkezes hajítás": {
     "c": {
-      "céHatások": [],
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Páros kétkezes hajítás",
+          "megjegyzés": "Célzó dobás: Hátrány-1 (mindkét dobásra)",
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
       "céMegjegyzések": [
         {
           "forrás": "Páros kétkezes hajítás",
-          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség fortéllyal a második dobást NEM sújtja a Hátrány-1.",
         },
       ],
     },
@@ -3009,11 +3025,19 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 2 1`] = `
   },
   "taktika Páros kétkezes hajítás": {
     "c": {
-      "céHatások": [],
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Páros kétkezes hajítás",
+          "megjegyzés": "Célzó dobás: Hátrány-1 (mindkét dobásra)",
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
       "céMegjegyzések": [
         {
           "forrás": "Páros kétkezes hajítás",
-          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség fortéllyal a második dobást NEM sújtja a Hátrány-1.",
         },
       ],
     },
@@ -4003,11 +4027,19 @@ exports[`harci dobás-hatások regressziós snapshot > teszt2 1`] = `
   },
   "taktika Páros kétkezes hajítás": {
     "c": {
-      "céHatások": [],
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Páros kétkezes hajítás",
+          "megjegyzés": "Célzó dobás: Hátrány-1 (mindkét dobásra)",
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
       "céMegjegyzések": [
         {
           "forrás": "Páros kétkezes hajítás",
-          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség fortéllyal a második dobást NEM sújtja a Hátrány-1.",
         },
       ],
     },
@@ -4965,11 +4997,19 @@ exports[`harci dobás-hatások regressziós snapshot > teszt3 1`] = `
   },
   "taktika Páros kétkezes hajítás": {
     "c": {
-      "céHatások": [],
+      "céHatások": [
+        {
+          "cél": "cé_dobás",
+          "forrás": "Páros kétkezes hajítás",
+          "megjegyzés": "Célzó dobás: Hátrány-1 (mindkét dobásra)",
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
       "céMegjegyzések": [
         {
           "forrás": "Páros kétkezes hajítás",
-          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+          "szöveg": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség fortéllyal a második dobást NEM sújtja a Hátrány-1.",
         },
       ],
     },

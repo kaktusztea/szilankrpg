@@ -431,7 +431,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Tám cella kattintható (Játék mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
   - **Támadó dobás** (Játék mód): a `TÉ` fejléc (kattintható gomb) ÉS az éppen aktív fegyver sorának TÉ cellája (pontozott aláhúzás) rányomásra **TamadoDobasPopup**-ot nyit. Kétfázisú:
-    - Fázis 1: aktív hatások infó (Előny/Hátrány lista forrással) + Előny/Hátrány picker + "Dobás" gomb + manuális dobás lehetőség (ManualDicePicker). Több módú fegyvernél mód-választó gomb (a választott mód TÉ/SP-jét adja tovább a Sebzés popupnak).
+    - Fázis 1: aktív hatások infó (Előny/Hátrány lista forrással) + Előny/Hátrány picker + "Dobás" gomb + manuális dobás lehetőség (ManualDicePicker). Több módú fegyvernél mód-választó gomb (a választott mód TÉ/SP-jét adja tovább a Sebzés popupnak). „Taktika" / „Harci helyzet" chip: az Aktív fül picker-ablaka (`TaktikaPickerPopup` / `HelyzetPickerPopup`), `terület="közelharc"` - csak a NEM-távharci taktikák / helyzetek; a chip száma is csak ezeket számolja.
     - Fázis 2: eredmény (TÉ + k20), részlet kiírás, "Sebzés" gomb (ha k20≥16: Előny+1, k20=20: Előny+2 jelzéssel)
     - Sebzés gomb → **SebzesPopup** nyílik (SP bontás, statikus bónuszok, Előny/Hátrány picker, újradobás gomb):
       - **Mód-választó** (csak több módú fegyvernél): a fegyver módjai (§26 módok[]) közül vált, delta-alapú TÉ/SP (a taktika mods megőrzésével). A választott mód sebzésjellege (S/V/Z) számít.
@@ -536,7 +536,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - CÉ: fehér szöveg, `Yx` = támadások/kör
 - VÉ: zöld (`#4caf50`) ha VÉ ≤ CÉ+1 (tuti találat), narancssárga (`#ffa726`) normál, piros (`#e53935`) ha lehetetlen (VÉ-CÉ > 20)
 - **Célzó dobás** (Játék mód): a CÉ/VÉ box kattintható (cursor: pointer). Kattintásra `CélzóDobasPopup` nyílik (TamadoDobasPopup mintájára, két fázis):
-  - **Fázis 1:** Megjegyzések (ha vannak) → ElőnyPicker (default: aktív hatásokból számolt nettó szint) → Hatások lista (aktív helyzetek/taktikák/fortélyok `cé_dobás` hatásai, badge + forrás) → Dobás gomb + ManualDicePicker (🎲)
+  - **Fázis 1:** Megjegyzések (ha vannak) → „Taktika" / „Harci helyzet" chip (mint a Támadó popupban, `terület="távharc"`: CSAK a távharci taktikák / helyzetek; a dobás előtt az E/H szint és a CÉ követi a kapcsolást) → ElőnyPicker (default: aktív hatásokból számolt nettó szint) → Hatások lista (aktív helyzetek/taktikák/fortélyok `cé_dobás` hatásai, badge + forrás) → Dobás gomb + ManualDicePicker (🎲)
   - **Fázis 2:** Eredmény vs VÉ kijelzés (két nagy szám „vs"-sel), alatta részlet: `CÉ (X) + k20 [rolls] → Y`, alatta Találat (zöld) / Nem talált (piros).
   - Hatásforrások: harci helyzetek, taktikák (fokok), státuszok, fortélyok - mind aminek `cé_dobás` célú Előny/Hátrány hatása van.
   - **Sebzés** (Találat után, a közös `SebzesPopup`): SP = `calcTávSP` (alap + Erőbónusz + Mesterfegyver, §17.6); a „Statikus bónuszok" listája a bontást mutatja (Erőbónusz, „Mesterfegyver - <fegyver>"). Íjnál kapcsolható gomb: alapból BE „Erőbónusz: +N" (az SP-be és a bontásba kerül; ha a fegyver Erőbónusz-limitje vágta, vízszintes vonal a „+N" fölött), kattintásra KI: „Erődre tervezett íj: nem". A fegyverkártya és a kalkulátor SP-je ugyanez (kapcsolt íj-Erőbónusz nélkül).

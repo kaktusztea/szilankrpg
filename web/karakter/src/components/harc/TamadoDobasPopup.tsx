@@ -6,6 +6,7 @@ import { VeCsokkentesPopup } from './VeCsokkentesPopup';
 import { ManualDicePicker } from './ManualDicePicker';
 import { TaktikaPickerPopup } from '../aktiv/TaktikaPickerPopup';
 import { HelyzetPickerPopup } from '../aktiv/HelyzetPickerPopup';
+import { aktívTerületen } from '../aktiv/taktika-helpers';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from './combat-roll-info';
 import type { FegyverResultMód } from './types';
@@ -129,6 +130,8 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   // Ha a popupon BELÜL olyan taktikát kapcsolnak be, ami kizárja a rendes Támadó dobást (Fárasztás /
   // Teljes Védekezés), a dobás-fázisban nem engedünk dobni (csak Bezár). A tiltás oka a taktika saját
   // `megjegyzés`-éből jön (egy igazságforrás: taktikak.yaml) - l. HarcScreen.onTéClick ugyanezen ágai.
+  // A chipek száma: csak a közelharci aktívak (a picker is csak ezeket mutatja).
+  const aktívDb = aktívTerületen(session, data, 'közelharc');
   const tiltóTaktika = támadódobástTiltóTaktika(session);
   const tiltóMegjegyzés = tiltóTaktika ? data.taktikak.find(t => t.név === tiltóTaktika)?.megjegyzés ?? '' : '';
 
@@ -185,14 +188,14 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
 
   if (showTaktikaPicker) {
     return (
-      <TaktikaPickerPopup data={data} karakter={karakter} session={session}
+      <TaktikaPickerPopup data={data} karakter={karakter} session={session} terület="közelharc"
         setSession={setSession} pushUndo={pushUndo} onClose={() => setShowTaktikaPicker(false)} />
     );
   }
 
   if (showHelyzetPicker) {
     return (
-      <HelyzetPickerPopup data={data} karakter={karakter} session={session}
+      <HelyzetPickerPopup data={data} karakter={karakter} session={session} terület="közelharc"
         setSession={setSession} pushUndo={pushUndo} onClose={() => setShowHelyzetPicker(false)} />
     );
   }
@@ -243,10 +246,10 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
             )}
             <div className="tamado-aktiv-chips">
               <button className="tamado-aktiv-chip" onClick={() => setShowTaktikaPicker(true)}>
-                Taktika{session.aktív_taktikák.length > 0 ? ` (${session.aktív_taktikák.length})` : ''}
+                Taktika{aktívDb.taktika > 0 ? ` (${aktívDb.taktika})` : ''}
               </button>
               <button className="tamado-aktiv-chip" onClick={() => setShowHelyzetPicker(true)}>
-                Harci helyzet{session.aktív_helyzetek.length > 0 ? ` (${session.aktív_helyzetek.length})` : ''}
+                Harci helyzet{aktívDb.helyzet > 0 ? ` (${aktívDb.helyzet})` : ''}
               </button>
             </div>
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />

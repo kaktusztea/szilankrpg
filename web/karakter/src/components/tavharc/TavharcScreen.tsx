@@ -179,6 +179,10 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       )}
 
       {showCéDobás && (() => {
+        // ponytail: a távharci gyűjtés a feltétel-kiértékelőt nem kapja meg (nincs useHarcComputed a fülön) → a
+        // computed- / tulajdonság-forrású strukturált feltétel (pl. páncél_merev) itt mindig hamis; a "prefix:érték"
+        // és a session-mezős feltétel működik. Ma egyetlen távharci kocka-hatás sem ilyen. Ha lesz: a collectDobásInfo
+        // 5. paramétere már kész (közelharc: hc.feltételTeljesül), a collectCéDobásInfo-nak is kell + kiértékelő-helper.
         const céInfo = collectCéDobásInfo(session, k, data);
         const dobásInfo = collectDobásInfo(session, k, data);
         // SP_NINCS (-99) változatlanul átmegy: a SebzesPopup maga ismeri fel → "nem sebez".
@@ -209,6 +213,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             fegyverExtrák={(tfDef?.extrák ?? []).map(id => ({ id }))}
             extraDefs={data.fegyverExtrák}
             extraKontextus={extraKontextus}
+            data={data} karakter={k} session={session} setSession={setSession} pushUndo={pushUndo}
             onClose={() => setShowCéDobás(false)}
           />
         );

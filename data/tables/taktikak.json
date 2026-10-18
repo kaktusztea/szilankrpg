@@ -526,7 +526,15 @@
     "id": "páros_kétkezes_hajítás",
     "fokozatos": false,
     "módosítók": {},
-    "megjegyzés": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
+    "hatások": [
+      {
+        "mód": "hátrány",
+        "érték": -1,
+        "cél": "cé_dobás",
+        "megjegyzés": "Célzó dobás: Hátrány-1 (mindkét dobásra)"
+      }
+    ],
+    "megjegyzés": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség fortéllyal a második dobást NEM sújtja a Hátrány-1.",
     "megkötések": [],
     "kombó_mód": "blacklist",
     "kombó_lista": [

@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { useHarcComputed } from './useHarcComputed';
 import { elsődlegesMód } from './fegyver-calc';
-import { collectDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, collectCéDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter, FegyverAlap } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { SebzésjellegPáncélMátrix } from '../../engine/data-types';
@@ -226,5 +226,19 @@ describe('collectDobásInfo - a korábbi rejtett eltérések', () => {
     t.fokok!.find(f => f.fok === 2)!.hatások = [{ cél: 'té_dobás', mód: 'előny', érték: 1 }] as never;
     expect(té(data, { aktív_taktikák: [{ név: 'Támadó', fok: 1 }] })).toEqual([]);
     expect(té(data, { aktív_taktikák: [{ név: 'Támadó', fok: 2 }] }).map(h => [h.forrás, h.érték])).toEqual([['Támadó (2)', 1]]);
+  });
+});
+
+// Páros, kétkezes hajítás (md/073): a taktika Hátrány-1-e gépi a Célzó dobáson (2026-10-19); a Kétkezesség-kivétel
+// (a 2. dobást nem sújtja) két dobás miatt szöveges marad a megjegyzésben.
+describe('collectCéDobásInfo - Páros, kétkezes hajítás', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  it('Hátrány-1 a CÉ dobásra, a Kétkezesség-megjegyzés látszik', () => {
+    const session = { ...alap.session, aktív_taktikák: [{ név: 'Páros kétkezes hajítás' }], aktív_helyzetek: [], aktív_státuszok: [] } as Session;
+    const info = collectCéDobásInfo(session, { ...alap, session }, data);
+    expect(info.céHatások.map(h => [h.forrás, h.operátor, h.érték])).toEqual([['Páros kétkezes hajítás', 'hátrány', -1]]);
+    expect(netElőnySzint(info.céHatások)).toBe(-1);
+    expect(info.céMegjegyzések.some(m => /Kétkezesség/.test(m.szöveg))).toBe(true);
   });
 });

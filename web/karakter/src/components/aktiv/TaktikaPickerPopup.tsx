@@ -5,6 +5,7 @@ import type { UndoPatch } from '../../hooks/useUndo';
 import { PickerOverlay } from './PickerOverlay';
 import { TaktikaPickerList } from './TaktikaPickerList';
 import { TaktikaFokPicker } from './TaktikaFokPicker';
+import type { HarcTerület } from './taktika-helpers';
 
 interface Props {
   data: GameData;
@@ -13,6 +14,8 @@ interface Props {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onClose: () => void;
+  /** Csak az adott terület taktikái (l. TaktikaPickerList). */
+  terület?: HarcTerület;
 }
 
 /**
@@ -21,7 +24,7 @@ interface Props {
  * az EGYETLEN állapot - így az Aktív fül és a Támadó dobás popup ugyanazt kapcsolja, ugyanazzal a kizáró
  * logikával (isTaktikaAllowed a TaktikaPickerList-ben). ponytail: egy ablak, két belépési pont.
  */
-export function TaktikaPickerPopup({ data, karakter, session, setSession, pushUndo, onClose }: Props) {
+export function TaktikaPickerPopup({ data, karakter, session, setSession, pushUndo, onClose, terület }: Props) {
   const [fokválasztó, setFokválasztó] = useState<string | null>(null);
 
   function addTaktika(név: string) {
@@ -50,13 +53,13 @@ export function TaktikaPickerPopup({ data, karakter, session, setSession, pushUn
   }
 
   return (
-    <PickerOverlay title={fokválasztó ? `${fokválasztó} - fok választó` : 'Taktika választó'} onClose={onClose}>
+    <PickerOverlay title={fokválasztó ? `${fokválasztó} - fok választó` : terület === 'távharc' ? 'Távharci taktika választó' : 'Taktika választó'} onClose={onClose}>
       {fokválasztó
         ? <TaktikaFokPicker fokválasztó={fokválasztó} data={data} karakter={karakter} session={session} onSelect={handleFokSelect} />
         : <TaktikaPickerList data={data} karakter={karakter} session={session}
             onAddSimple={addTaktika}
             onFokválasztó={setFokválasztó}
-            onRemove={removeTaktika} />
+            onRemove={removeTaktika} terület={terület} />
       }
     </PickerOverlay>
   );

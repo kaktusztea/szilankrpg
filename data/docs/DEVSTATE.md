@@ -17,7 +17,7 @@
 ---
 ## Nyitott tételek (áttekintés)
 
-- **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, Távharc fül teljes feltétel-kiértékelő, Playwright végigkattintás (kocka-hatások, 2026-10-18)
+- **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, Playwright végigkattintás (kocka-hatások, 2026-10-18)
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver, ár-modell
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
@@ -27,7 +27,6 @@
 Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`. Nyitott:
 
 - [ ] `beszorithato` extra halott hivatkozás: `státusz: Beszorított (2)`, ilyen státusz nincs → soha nem teljesül. Döntés: új státusz, vagy a `Beszorított ellenfél` helyzetre mutasson? Utána build-gate az extrák státusz-/helyzet-hivatkozásaira (`validate_effekt_hivatkozasok`).
-- [ ] Távharc fül: a dobás-hatások gyűjtése (`collectCéDobásInfo`, és a távharci `collectDobásInfo`) nem kap teljes harc-kontextust - a `TavharcScreen` nem épít `useHarcComputed`-ot, ezért a gyűjtés saját kiértékelője üres computed/ctx map-pel fut. Következmény: a computed- vagy tulajdonság-forrású strukturált feltétel (pl. `páncél_merev`, `páncél_lefedettség`) távharcban mindig hamis; csak a session-mezős (pl. `kétkezes_harc`) és a `"prefix:érték"` feltétel működik. Ma nem tüzel (nincs ilyen kocka-hatás az adatban). Teendő: a Távharc fül adjon át teljes kiértékelőt (a `collectDobásInfo` 5. paramétere már létezik; a `collectCéDobásInfo`-nak is kell) - forrás pl. egy közös, a reactive `computed`-ot építő helper (a `useHarcComputed` feltétel-részéből kiemelve). Teszt mintája: `combat-roll-info.test.ts` „a korábbi rejtett eltérések" 1. eset.
 - [ ] Böngészős (Playwright) végigkattintás a 2026-10-18-i „kocka-hatások a közös gyűjtőre" munkára - Kiro végzi. Előtte rákérdezni (költséges); telepítés: `/tmp/szilank-pw` (pinned playwright) + `~/.cache/ms-playwright`, a repóba nem kerül. `npm run dev` (localhost:5173), mobil viewport (pl. 390×844) + egy asztali. Teszt karakter: `test_karakter2.json` (Kard, lovag + Tőr, közepes pajzs, Erő 3); a fortélyok / státuszok / taktikák az app UI-ján vehetők fel. Az egységtesztek + regressziós snapshotok (`statusz-proba.regresszio`, `combat-roll-info.regresszio`, `effekt.regresszio`, `karakter.regresszio`) szerint az értékek változatlanok - itt a MEGJELENÍTÉS és a kattintási folyamat a kérdés. Mit kell nézni:
   - **Képzettségpróba, Érzékvesztés** (`statusz-proba.ts`, `KepzettsegProbaPopup.tsx`): `Érzékvesztés: Látás (2)` → Észlelés próba: felirat nélküli érzék chip-sor (Látás ⚠ / Hallás / Szaglás / Tapintás / Ízlelés, egy sorban, kitöltve), alapból Látás kiválasztva → Hátrány−2, a bontásban `Érzékvesztés: Látás (Részleges): -2`; Hallás → nincs Hátrány; újrakattintás (egyik sem) → nincs Hátrány. `(1)` → −1, `(3)` → „automatikus kudarc", nincs Dobás gomb. Etikett / Lexikum próbán NINCS chip-sor. Két alkategória (Látás + Hallás) egyszerre → mindkettő ⚠. Nem-alkategóriás státusz változatlan: `Félelem (1)` → Befolyásolás Hátrány, Lexikum nem.
   - **Lövéskitérés** (Távharc fül, `loveskiteres-calc.ts`): Akrobatika+Gyorsaság érték „Lövéskitérés fejlesztése" fortéllyal +2-vel több, nélküle nem.
@@ -161,7 +160,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 - Harci → Harcértékek fül; Misztikus → Misztikus fül; többi → Tul/Képz
 
 ### Fortélyok
-- Tárolás: `{ név, fok, spec_típus, spec_elem, kiérdemelt? }` - név = alapnév
+- Tárolás (séma v3): `{ id, elem, fok, kiérdemelt? }` - `id` = a fortély yaml `id`-je, `elem` = többszörös példány; a név csak megjelenítés (`engine/azonosito.ts`)
 - Locked (a Harcértékek fülről kezelt): Mesterfegyver, Pajzshasználat, Merevvértviselet
 - Effekt-módok (`konstansok.yaml` → `effekt_módok`, build-validált, §42.2): `flat`, `szorzó`, `scaled`, `override`, `max_limit`, `előny`, `hátrány`, `enyhít`, `letilt`, `szöveges`
 - Részletek → engine_spec §16, §16.1, §24, §25, §42
@@ -194,7 +193,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
   - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
   - Marker fájl: `tables/.generated_marker` - Vite plugin ezt nézi freshness check-hez
   - `--force` flag: kényszerített újragenerálás (`python3 generate_tables.py --force`)
-- `vitest run`: 560 unit teszt (67 fájl); build előtt fut
+- `vitest run`: 657 unit teszt (82 fájl, 2026-10-18); build előtt fut
 - Deploy: GitHub Pages, auto-deploy push master
 - Metadata: `ÉV.ÉVNAPJA.napibuild` - a `public/metadata.json` és a bundle `__APP_VERSION__` ugyanabból a fájlból jön (egy build = egy verzió)
 

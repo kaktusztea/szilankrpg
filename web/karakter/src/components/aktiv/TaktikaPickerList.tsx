@@ -1,6 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
-import { isTaktikaAllowed, taktikaTiltásOka, formatFokMods } from './AktivHelpers';
+import { isTaktikaAllowed, taktikaTiltásOka, formatFokMods, területIllik, type HarcTerület } from './AktivHelpers';
 
 interface Props {
   data: GameData;
@@ -11,14 +11,17 @@ interface Props {
   /** Toggle-mód: ha adott, az aktív taktikák is megjelennek (kattintásra kikapcsolás).
    * Ha nincs, az add-only viselkedés marad (az aktívak kiszűrve). */
   onRemove?: (név: string) => void;
+  /** Csak az adott terület taktikái (Támadó: közelharc, Célzó: távharc); nincs = mind (Aktív fül). */
+  terület?: HarcTerület;
 }
 
-export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokválasztó, onRemove }: Props) {
+export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokválasztó, onRemove, terület }: Props) {
   const toggle = !!onRemove;
   const pinned = (data.konstansok.pinned_taktikák ?? []) as string[];
   const items = data.taktikak
     // Add-only módban az aktívak kiszűrve; toggle-módban mind látszik (aktív/felvehető/tiltott).
     .filter(t => toggle || !session.aktív_taktikák.some(a => a.név === t.név))
+    .filter(t => területIllik(t.csoport, terület))
     .sort((a, b) => {
       // Távharci taktikák mindig a végére kerülnek
       const aRemote = a.csoport === 'távharc' ? 1 : 0;
@@ -35,7 +38,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
 
   return <>
     {items.map(t => {
-      const showHeader = t.csoport === 'távharc' && !tavharcHeaderShown;
+      const showHeader = t.csoport === 'távharc' && !tavharcHeaderShown && !terület;
       if (showHeader) tavharcHeaderShown = true;
       const aktív = session.aktív_taktikák.some(a => a.név === t.név);
       // Toggle-módban a nem-aktív, de nem-engedélyezett taktikák halványan/letiltva (okkal: kizárás/megkötés).

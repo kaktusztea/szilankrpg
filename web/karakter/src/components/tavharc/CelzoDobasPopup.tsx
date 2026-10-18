@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../harc/ElonyPicker';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
@@ -8,6 +8,12 @@ import type { DobásHatás, SpBónusz } from '../harc/combat-roll-info';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { ExtraKontextus } from '../harc/extrak-info-calc';
 import { HatasokInfo } from '../harc/HatasokInfo';
+import { TaktikaPickerPopup } from '../aktiv/TaktikaPickerPopup';
+import { HelyzetPickerPopup } from '../aktiv/HelyzetPickerPopup';
+import { aktívTerületen } from '../aktiv/taktika-helpers';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter, Session } from '../../engine/types';
+import type { UndoPatch } from '../../hooks/useUndo';
 
 /**
  * Derive Sebzés Előny from the CÉ k20 roll value (same rule as TÉ):
@@ -50,6 +56,12 @@ interface Props {
   extraDefs?: Record<string, FegyverExtraDef>;
   /** Harci kontextus az „Extrák" gomb + effekt-motor cél_páncél feltételeihez. */
   extraKontextus?: ExtraKontextus;
+  /** A Taktika / Harci helyzet kapcsoló chipekhez (ugyanaz a picker-ablak, mint az Aktív fülön, csak távharci tételek). */
+  data: GameData;
+  karakter: Karakter;
+  session: Session;
+  setSession: React.Dispatch<React.SetStateAction<Session>>;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onClose: () => void;
 }
 
@@ -65,10 +77,19 @@ interface CéEredmény {
  *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat → Sebzés button
  *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
  */
-export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBónusz, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, onClose }: Props) {
+export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBónusz, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, data, karakter, session, setSession, pushUndo, onClose }: Props) {
   const [szint, setSzint] = useState(defaultSzint);
   const [result, setResult] = useState<CéEredmény | null>(null);
   const [showSebzés, setShowSebzés] = useState(false);
+  const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
+  const [showHelyzetPicker, setShowHelyzetPicker] = useState(false);
+
+  // Dobás ELŐTT az E/H szint követi az aktív hatásokat (a chipekkel kapcsolt taktika / helyzet azonnal látszik),
+  // dobás után a felhasználó választását nem írjuk felül - mint a Támadó dobás popupban.
+  useEffect(() => {
+    if (!result) setSzint(defaultSzint);
+  }, [defaultSzint, result]);
+  const aktívDb = aktívTerületen(session, data, 'távharc');
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
@@ -83,6 +104,19 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
   const k20Érték = result?.dobás.eredmény ?? 0;
   const siker = result ? result.eredmény >= vé : false;
   const sebzésElőny = sebzésElőnyFromK20(k20Érték);
+
+  if (showTaktikaPicker) {
+    return (
+      <TaktikaPickerPopup data={data} karakter={karakter} session={session} terület="távharc"
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowTaktikaPicker(false)} />
+    );
+  }
+  if (showHelyzetPicker) {
+    return (
+      <HelyzetPickerPopup data={data} karakter={karakter} session={session} terület="távharc"
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowHelyzetPicker(false)} />
+    );
+  }
 
   if (showSebzés) {
     return (
@@ -128,6 +162,14 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
                 ))}
               </div>
             )}
+            <div className="tamado-aktiv-chips">
+              <button className="tamado-aktiv-chip" onClick={() => setShowTaktikaPicker(true)}>
+                Taktika{aktívDb.taktika > 0 ? ` (${aktívDb.taktika})` : ''}
+              </button>
+              <button className="tamado-aktiv-chip" onClick={() => setShowHelyzetPicker(true)}>
+                Harci helyzet{aktívDb.helyzet > 0 ? ` (${aktívDb.helyzet})` : ''}
+              </button>
+            </div>
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
             <div className="dobas-btn-row">

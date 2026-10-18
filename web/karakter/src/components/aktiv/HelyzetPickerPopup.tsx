@@ -3,6 +3,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { UndoPatch } from '../../hooks/useUndo';
 import { fmtCode } from '../formatters';
 import { PickerOverlay } from './PickerOverlay';
+import { területIllik, type HarcTerület } from './taktika-helpers';
 
 interface Props {
   data: GameData;
@@ -11,6 +12,8 @@ interface Props {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onClose: () => void;
+  /** Csak az adott terület helyzetei (Támadó: közelharc, Célzó: távharc); nincs = mind (Aktív fül). */
+  terület?: HarcTerület;
 }
 
 type HelyzetDef = GameData['harciHelyzetek'][number];
@@ -22,7 +25,7 @@ type HelyzetDef = GameData['harciHelyzetek'][number];
  * ponytail: egy ablak, két belépési pont. A felvétel a kizárás/tiltja_taktikákat/fegyverfogás patch-et
  * is elvégzi (azonos az Aktív fül eredeti addHelyzet logikájával).
  */
-export function HelyzetPickerPopup({ data, session, setSession, pushUndo, onClose }: Props) {
+export function HelyzetPickerPopup({ data, session, setSession, pushUndo, onClose, terület }: Props) {
   function addHelyzet(h: HelyzetDef) {
     pushUndo(`Helyzet: ${h.név}`, [{ field: 'session', prev: session }]);
     const hDef = data.harciHelyzetek.find(d => d.név === h.név);
@@ -63,10 +66,11 @@ export function HelyzetPickerPopup({ data, session, setSession, pushUndo, onClos
     { label: 'Semleges helyzet', cls: 'aktiv-picker-group-semleges', csoport: 'semleges' },
     { label: 'Negatív helyzet', cls: 'aktiv-picker-group-negatív', csoport: 'negatív' },
     { label: 'Távharci helyzet', cls: 'aktiv-picker-group-távharc', csoport: 'távharc' },
-  ].map(g => ({ ...g, items: data.harciHelyzetek.filter(h => h.csoport === g.csoport && !h.rejtett) }));
+  ].filter(g => területIllik(g.csoport, terület))
+    .map(g => ({ ...g, items: data.harciHelyzetek.filter(h => h.csoport === g.csoport && !h.rejtett) }));
 
   return (
-    <PickerOverlay title="Harci helyzet választó" onClose={onClose}>
+    <PickerOverlay title={terület === 'távharc' ? 'Távharci helyzet választó' : 'Harci helyzet választó'} onClose={onClose}>
       {groups.flatMap(g => g.items.length > 0 ? [
         <div key={g.label} className={`aktiv-picker-group-label ${g.cls}`}>{g.label}</div>,
         ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => {
