@@ -11,8 +11,7 @@
 - [Egységes effekt-modell: maradék](#egységes-effekt-modell-maradék-) 🚧
 - [Fortély-követelmények gépesítése](#fortély-követelmények-gépesítése-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
-- [Harc alakzatban](#harc-alakzatban-) 🚧
-- [Méreggenerátor](#méreggenerátor-) 🚧
+- [Kocka-hatások a közös gyűjtőre](#kocka-hatások-a-közös-gyűjtőre-) 🚧
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
 - [Szabálykönyv (md/) konvenciók, tanulságok](#szabálykönyv-md-konvenciók-tanulságok)
@@ -24,9 +23,8 @@
 - **Egységes effekt-modell: maradék** (§42) - `beszorithato` döntés, refaktor-maradék (kódolt képletek a gyűjtőre)
 - **Fortély-követelmények gépesítése** - szöveges maradók jelölése (`csak_szöveges`) + build-gate
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver, ár-modell
-- **Harc alakzatban** (§28) - NJK kalkulátor, "Alakzat ellen" helyzet, taktika tiltások
-- **Méreggenerátor** (§39) - KM eszköz
-- **Good to have** 💡 - kocka-hatások a közös gyűjtőre, ellenfél statblokk nézet (nem sürgős)
+- **Kocka-hatások a közös gyűjtőre** (§42) - Előny/Hátrány/Enyhít + két kódolt fortély-hatás az `engine/effekt.ts` numerikus gyűjtőre (belső egységesítés)
+- **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
 ## Egységes effekt-modell: maradék 🚧
@@ -36,7 +34,7 @@ napló: `refactorlog/2026-10-16.md`. Nyitott:
 
 - [ ] `beszorithato` extra halott hivatkozás: `státusz: Beszorított (2)`, ilyen státusz nincs → soha nem teljesül. Döntés: új státusz, vagy a `Beszorított ellenfél` helyzetre mutasson? Utána build-gate az extrák státusz-/helyzet-hivatkozásaira (`validate_effekt_hivatkozasok`).
 
-Refaktor-maradék (2026-10-17): a fegyver Idea ±5 → `konstansok.fegyver_idea_plusz_minusz` (a páncél mintájára); a `páncélLefedettség` / `calcManőverPont` rules.json-tükrök `ponytail:` + drift-őr teszt (`rules-tukor.test.ts`) alá kerültek. A két fortély-hatás-kódolás (Lövéskitérés +2, Alkalmi tárgy Osztó) a „Good to have → Kocka-hatások a közös gyűjtőre" alatt.
+Refaktor-maradék (2026-10-17): a fegyver Idea ±5 → `konstansok.fegyver_idea_plusz_minusz` (a páncél mintájára); a `páncélLefedettség` / `calcManőverPont` rules.json-tükrök `ponytail:` + drift-őr teszt (`rules-tukor.test.ts`) alá kerültek. A két fortély-hatás-kódolás (Lövéskitérés +2, Alkalmi tárgy Osztó) a „Kocka-hatások a közös gyűjtőre" szekció alatt.
 
 ---
 ## Fortély-követelmények gépesítése 🚧
@@ -119,7 +117,18 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 - A balansz-önteszt regressziós elvárásait (`teszt.elvart`) egyik javaslat sem érinti.
 
 ---
-## Harc alakzatban 🚧
+## Kocka-hatások a közös gyűjtőre 🚧
+
+Az Előny/Hátrány/Enyhít ma a `combat-roll-info.ts` (dobás-EH info forrás+megjegyzéssel) és a `statusz-proba.ts` (próba-cél→képzettség-csoport szűrés) saját kódútján megy, nem az `engine/effekt.ts` numerikus gyűjtőn. Az értékek helyesek; ez tisztán belső egységesítés. A két modul MÁS doménben dolgozik (megjelenítő info-réteg, ill. próba-csoport-mapping), mint az effekt-gyűjtő, ezért a váltás az `effekt.ts` bővítését + a regressziós háló (`effekt.regresszio.test.ts`) átírását igényelné.
+
+Ide tartozik két kódba égetett fortély-hatás is, amiknek a célja nem effekt-cél (a fogadó kalkuláció nem olvas fortély-módosítót), ezért a data-vezérlés a gyűjtő bővítését igényelné: a `lövéskitérés_fejlesztése` +2-je (`loveskiteres-calc.ts` → Akrobatika-érték) és az `alkalmatlan_tárgyak_hajítása` fok-függő Osztó-cseréje (`tavharc/helpers.ts` → távharc Osztó). Mindkettő `ponytail:` megjegyzéssel jelölve a kódban.
+
+---
+## Good to have 💡
+
+Nem sürgős, ma nem okoz hibás értéket; nagyobb vagy jóváhagyást igénylő tételek.
+
+### Harc alakzatban
 
 Előfeltétel: `md/065_04_harc_alakzatban.md` véglegesítése. Engine spec: §28 (TERV).
 
@@ -131,8 +140,7 @@ TODO:
 - [ ] "Alakzat ellen" helyzet (VÉ csökk mérséklés -2, taktika tiltások)
 - [ ] Taktika megkötések: Fárasztó/Kezdeményező/Kiváró/Visszafogott tiltott alakzat ellen
 
----
-## Méreggenerátor 🚧
+### Méreggenerátor
 
 Forrás: `md/141_meregkeveres_szabalyai.md`. Engine spec: §39 (TERV).
 
@@ -144,17 +152,6 @@ TODO:
 - [ ] Konstansok YAML: méreg paraméter táblák
 - [ ] Méreggenerátor overlay (KM eszköz)
 - [ ] Preset mérgek (144_peldamergek.md)
-
----
-## Good to have 💡
-
-Nem sürgős, ma nem okoz hibás értéket; nagyobb vagy jóváhagyást igénylő tételek.
-
-### Kocka-hatások a közös gyűjtőre
-
-Az Előny/Hátrány/Enyhít ma a `combat-roll-info.ts` (dobás-EH info forrás+megjegyzéssel) és a `statusz-proba.ts` (próba-cél→képzettség-csoport szűrés) saját kódútján megy, nem az `engine/effekt.ts` numerikus gyűjtőn. Az értékek helyesek; ez tisztán belső egységesítés. A két modul MÁS doménben dolgozik (megjelenítő info-réteg, ill. próba-csoport-mapping), mint az effekt-gyűjtő, ezért a váltás az `effekt.ts` bővítését + a regressziós háló (`effekt.regresszio.test.ts`) átírását igényelné.
-
-Ide tartozik két kódba égetett fortély-hatás is, amiknek a célja nem effekt-cél (a fogadó kalkuláció nem olvas fortély-módosítót), ezért a data-vezérlés a gyűjtő bővítését igényelné: a `lövéskitérés_fejlesztése` +2-je (`loveskiteres-calc.ts` → Akrobatika-érték) és az `alkalmatlan_tárgyak_hajítása` fok-függő Osztó-cseréje (`tavharc/helpers.ts` → távharc Osztó). Mindkettő `ponytail:` megjegyzéssel jelölve a kódban.
 
 ### Ellenfél statblokk nézet
 
