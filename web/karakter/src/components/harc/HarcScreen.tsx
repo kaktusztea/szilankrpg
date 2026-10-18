@@ -93,7 +93,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const { fárasztásDef, fárasztásEredmény, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, teljesVédekezésDef } =
     taktikaVéCsökkentésÁllapot(data, karakter, session, hc.feltételTeljesül, hc.helyzetVéCsökkentés);
 
-  // A TÉ chip / ProbaHub 🗡️ közös dispatch-e: Teljes Védekezés → info, Fárasztás → VÉ csökkentés popup,
+  // A TÉ chip / ProbaHub TÉ chip közös dispatch-e: Teljes Védekezés → info, Fárasztás → VÉ csökkentés popup,
   // különben rendes Támadó dobás. EGY igazságforrás (a pending effect és az onTéClick is ezt hívja).
   const openTámadóDobás = useCallback(() => {
     if (aktívTÉ == null) return;

@@ -87,13 +87,15 @@
   grid-template-columns: repeat(3, 1fr);
 }
 /* Harci dobás chipek (KÉ / 🗡️ / 🏹): nagyobb felirat, arany hover-keret.
-   Dupla-class specificitás, mert a base .proba-hub-chip (12px) a CSS-ben később van. */
+   Dupla-class specificitás, mert a base .proba-hub-chip (14px) a CSS-ben később van. */
 .proba-hub-chip.proba-hub-chip-harc {
   font-size: 18px;
+  font-weight: bold;
   padding: 10px 6px;
 }
-.proba-hub-chip-harc:hover {
-  border-color: var(--accent, #c8a24a);
+/* Harci dobás chip hover: bordó keret. Dupla-class, mert a base .proba-hub-chip:hover később van. */
+.proba-hub-chip.proba-hub-chip-harc:hover {
+  border-color: var(--color-harc-dobas);
 }
 .proba-hub-chip {
   padding: 8px 6px;
@@ -101,7 +103,7 @@
   border-radius: 6px;
   background: var(--input-bg, #1c2333);
   color: inherit;
-  font-size: 12px;
+  font-size: 14px;   /* Tulajdonság / Képzettség chipek (a harci chip saját 18px-e felülírja) */
   cursor: pointer;
   text-align: center;
   overflow: hidden;

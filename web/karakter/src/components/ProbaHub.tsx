@@ -19,7 +19,7 @@ interface Props {
   karakter: Karakter;
   /** Csak Játék módban (és nem verzió-nézetben) látszik a FAB. */
   aktív: boolean;
-  /** 🗡️/🏹 chip: a cél-fülre váltás + ott a Támadó / Célzó dobás popup megnyitása (App oldja fel). */
+  /** TÉ / CÉ chip: a cél-fülre váltás + ott a Támadó / Célzó dobás popup megnyitása (App oldja fel). */
   onHarciDobás: (cél: 'támadó' | 'célzó') => void;
 }
 
@@ -118,8 +118,8 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
               setKéDobás({ ké, eredmény: ké + rollK20() });
               setHubNyitva(false);
             }}>KÉ</button>
-            <button className="proba-hub-chip proba-hub-chip-harc" title="Támadó dobás (Harc fül)" aria-label="Támadó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('támadó'); }}>🗡️</button>
-            <button className="proba-hub-chip proba-hub-chip-harc" title="Célzó dobás (Távharc fül)" aria-label="Célzó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('célzó'); }}>🏹</button>
+            <button className="proba-hub-chip proba-hub-chip-harc" title="Támadó dobás (Harc fül)" aria-label="Támadó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('támadó'); }}>TÉ</button>
+            <button className="proba-hub-chip proba-hub-chip-harc" title="Célzó dobás (Távharc fül)" aria-label="Célzó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('célzó'); }}>CÉ</button>
           </div>
 
           <h3 className="proba-hub-header">Tulajdonságpróba</h3>
