@@ -2,6 +2,7 @@ import { MAX_KARAKTER_DB } from '../ui-constants';
 import type { Karakter, StoredKarakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { isValidKarakter, sémaVerzióHiba } from '../engine/validate';
+import { removeKmJelölés } from './km-jelolesek';
 import { sanitizeUndo } from './useUndo';
 
 const SLOTS_KEY = 'szilank_slots';
@@ -63,8 +64,22 @@ export function isUidTaken(uid: string): boolean {
 }
 
 /**
+ * Egy slot teljes eltávolítása a karaktertárból: karakter adat + slot metaadat + KM jelölés.
+ * Ha ez volt az aktív karakter, az `szilank_active` flaget is törli.
+ * NEM nyúl React state-hez (l. useKarakterActions.deleteSlot a state-kezelő változatért).
+ */
+export function removeSlotData(uid: string): void {
+  localStorage.removeItem(`szilank_char_${uid}`);
+  removeKmJelölés(uid);
+  writeSlots(readSlots().filter(s => s.uid !== uid));
+  if (localStorage.getItem('szilank_active') === uid) localStorage.removeItem('szilank_active');
+}
+
+/**
  * Betölt egy tárolt slotot localStorage-ből: parse + séma validáció + default merge.
  * null, ha nincs meg, sérült, vagy nem valid karakter; `{ error }`, ha elavult sémaverziójú (konverzió nincs).
+ * Tiszta olvasó (NINCS mellékhatás - a NjkSwitcher renderelés közben is hívja). Az elavult példány
+ * eltávolítása a hívó felelőssége az `error` ág kezelésekor (`removeSlotData`).
  */
 export function loadSlotKarakter(uid: string): { karakter: Karakter; undo: any[] } | { error: string } | null {
   const charData = localStorage.getItem(`szilank_char_${uid}`);

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import type { Karakter } from '../engine/types';
 import { FEEDBACK_TIMEOUT_MS } from '../ui-constants';
 import { APP_VERSION } from '../version';
-import { readSlots, loadSlotKarakter, type SlotEntry } from '../hooks/slot-utils';
+import { readSlots, loadSlotKarakter, removeSlotData, type SlotEntry } from '../hooks/slot-utils';
 import { SlotRow } from './SlotRow';
 import { SaveOptionsPopup } from './overlays/SaveOptionsPopup';
 import { ImportOptionsPopup } from './overlays/ImportOptionsPopup';
@@ -55,7 +55,7 @@ export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, on
 
   function loadSlot(uid: string) {
     const loaded = loadSlotKarakter(uid);
-    if (loaded && 'error' in loaded) onLoadError?.(loaded.error);
+    if (loaded && 'error' in loaded) { removeSlotData(uid); onLoadError?.(loaded.error); }
     else if (loaded) onLoad(loaded.karakter, loaded.undo);
   }
 

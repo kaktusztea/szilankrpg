@@ -11,10 +11,11 @@ export const KARAKTER_SÉMA_VERZIÓ = 3;
 /**
  * Hibaüzenet, ha a betöltendő karakter sémaverziója (szám) nem az aktuális; egyébként null.
  * Hiányzó / nem szám verzió = sérült adat, nem „elavult" → a hívó a szokásos érvénytelen-ágon kezeli.
+ * Az elavult sémaverziójú példányt a hívó a karaktertárból is eltávolítja (l. `removeSlotData`).
  */
 export function sémaVerzióHiba(verzió: unknown): string | null {
   if (typeof verzió !== 'number' || verzió === KARAKTER_SÉMA_VERZIÓ) return null;
-  return `Betöltendő karakter séma verzió: v${verzió}\nAktuális verzió: v${KARAKTER_SÉMA_VERZIÓ}\nElavult verzió, kreáld újra a karaktert.`;
+  return `Betöltendő karakter séma verzió: v${verzió}\nAktuális verzió: v${KARAKTER_SÉMA_VERZIÓ}\nElavult verzió - a karaktert eltávolítottuk a karaktertárból, kreáld újra.\n(Migrációs eszköz későbbi verzióváltásnál várható)`;
 }
 
 /** Required top-level fields in a Karakter object. */

@@ -34,8 +34,8 @@ describe('validateKarakter', () => {
 });
 
 describe('sémaVerzióHiba', () => {
-  it('aktuális verzió → null; eltérő → a felhasználói üzenet (3 sor)', () => {
+  it('aktuális verzió → null; eltérő → a felhasználói üzenet (karaktertárból törlés + migráció)', () => {
     expect(sémaVerzióHiba(KARAKTER_SÉMA_VERZIÓ)).toBeNull();
-    expect(sémaVerzióHiba(2)).toBe(`Betöltendő karakter séma verzió: v2\nAktuális verzió: v${KARAKTER_SÉMA_VERZIÓ}\nElavult verzió, kreáld újra a karaktert.`);
+    expect(sémaVerzióHiba(2)).toBe(`Betöltendő karakter séma verzió: v2\nAktuális verzió: v${KARAKTER_SÉMA_VERZIÓ}\nElavult verzió - a karaktert eltávolítottuk a karaktertárból, kreáld újra.\n(Migrációs eszköz későbbi verzióváltásnál várható)`);
   });
 });

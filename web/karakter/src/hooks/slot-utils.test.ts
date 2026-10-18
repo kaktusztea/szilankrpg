@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { sémaVerzióHiba } from '../engine/validate';
-import { upsertSlotEntry, readSlots, isUidTaken, loadSlotKarakter } from './slot-utils';
+import { upsertSlotEntry, readSlots, isUidTaken, loadSlotKarakter, removeSlotData } from './slot-utils';
 import type { Karakter } from '../engine/types';
 import { installLocalStorage } from '../__tests__/localstorage-stub';
 
@@ -48,5 +48,38 @@ describe('loadSlotKarakter', () => {
     // Elavult sémaverzió: nem null, hanem a felhasználói hibaüzenet (konverzió nincs)
     localStorage.setItem('szilank_char_v2', JSON.stringify({ schema_version: 2 }));
     expect(loadSlotKarakter('v2')).toEqual({ error: sémaVerzióHiba(2) });
+  });
+
+  it('elavult sémaverziónál NEM töröl (tiszta olvasó - NjkSwitcher renderben hívja)', () => {
+    upsertSlotEntry(kar('v2', 'Régi'));
+    localStorage.setItem('szilank_char_v2', JSON.stringify({ schema_version: 2 }));
+    loadSlotKarakter('v2');
+    expect(localStorage.getItem('szilank_char_v2')).not.toBeNull();
+    expect(readSlots().some(s => s.uid === 'v2')).toBe(true);
+  });
+});
+
+describe('removeSlotData', () => {
+  beforeEach(() => installLocalStorage());
+
+  it('törli a karakter adatot + slot metaadatot + active flaget', () => {
+    upsertSlotEntry(kar('a', 'Agabor'));
+    upsertSlotEntry(kar('b', 'Bandita'));
+    localStorage.setItem('szilank_char_a', JSON.stringify(kar('a', 'Agabor')));
+    localStorage.setItem('szilank_active', 'a');
+
+    removeSlotData('a');
+
+    expect(localStorage.getItem('szilank_char_a')).toBeNull();
+    expect(readSlots().map(s => s.uid)).toEqual(['b']);
+    expect(localStorage.getItem('szilank_active')).toBeNull();  // az aktív flag törlődik
+  });
+
+  it('nem aktív slot törlése az active flaget békén hagyja', () => {
+    upsertSlotEntry(kar('a', 'Agabor'));
+    upsertSlotEntry(kar('b', 'Bandita'));
+    localStorage.setItem('szilank_active', 'b');
+    removeSlotData('a');
+    expect(localStorage.getItem('szilank_active')).toBe('b');
   });
 });

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { SlotEntry } from '../hooks/slot-utils';
-import { readSlots, loadSlotKarakter } from '../hooks/slot-utils';
+import { readSlots, loadSlotKarakter, removeSlotData } from '../hooks/slot-utils';
 import { njkSlots, életerőStat, njkHarcértékStat, type ÉleterőStat, type HarcértékStat } from '../hooks/njk-slots';
 import { useLongPress } from '../hooks/useLongPress';
 import { getKmJelölés, writeKmJelölés, readKmJelölések, választSzínt, kombináltBetűk } from '../hooks/km-jelolesek';
@@ -41,7 +41,7 @@ export function NjkSwitcher({ aktív, data, onLoad, onLoadError }: Props) {
   const váltás = (uid: string) => {
     if (uid === aktív.uid) return;
     const loaded = loadSlotKarakter(uid);
-    if (loaded && 'error' in loaded) onLoadError?.(loaded.error);
+    if (loaded && 'error' in loaded) { removeSlotData(uid); rerender(n => n + 1); onLoadError?.(loaded.error); }
     else if (loaded) onLoad(loaded.karakter, loaded.undo);
   };
   const { pressProps } = useLongPress<string>(setPickerUid, váltás, 500, setJegyzetUid);

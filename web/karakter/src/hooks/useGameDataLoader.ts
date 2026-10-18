@@ -5,7 +5,7 @@ import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { validateKarakter, isValidKarakter, validateKarakterData, sémaVerzióHiba } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
-import { writeSlots } from './slot-utils';
+import { writeSlots, removeSlotData } from './slot-utils';
 
 /**
  * Loads GameData, validates emptyKarakter, migrates legacy localStorage,
@@ -64,7 +64,9 @@ export function useGameDataLoader() {
             const parsed = JSON.parse(charData);
             const vHiba = sémaVerzióHiba(parsed?.schema_version);
             if (vHiba) {
-              // Nem blokkolunk: az üzenet overlay-ben, az app üres karakterrel indul (a régi slot a listában marad).
+              // Elavult sémaverzió: a példányt eltávolítjuk a karaktertárból (konverzió nincs),
+              // az üzenet overlay-ben, az app üres karakterrel indul.
+              removeSlotData(activeUid);
               setInitialWarning(vHiba);
               setInitialKarakter({ ...d.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', d.emptyKarakter.tsz) });
               return;
