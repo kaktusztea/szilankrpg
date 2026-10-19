@@ -58,7 +58,7 @@ A [Páncélok Idea szorzóihoz](069_06_pancel_ara.md#idea-%C3%A1r-szorz%C3%B3) h
 ```
 1x: Kard, hosszú
 
-1x: hossz(3)
+1x: fegyver alapár
 1x: acél
 1x: Idea(0)
 ```
