@@ -327,6 +327,20 @@ export function könnyítettFázisok(fázisok: ('M' | 'V' | 'E')[], mód: Mód, 
 }
 
 /**
+ * A manőver-popup jobb felső fejléc-chipje fázis-tudatos:
+ * - passzív mód → 'VÉ' (kézi VÉ-csökkenés könyveléshez);
+ * - aktív mód, Megakasztás (M) fázis → 'VÉ' (az ellenfél támad a VÉ-d ellen);
+ * - aktív mód, V/E fázis → 'TÉ' (a saját támadó/próba értéked a releváns).
+ * Ha nincs aktív fázis (vég/követelmény-lépés), a manőver M-tartalma dönt.
+ */
+export function fejlécChip(mód: Mód, aktFázis: 'M' | 'V' | 'E' | null, fázisok: ('M' | 'V' | 'E')[]): 'VÉ' | 'TÉ' {
+  if (mód !== 'aktív') return 'VÉ';
+  if (aktFázis === 'M') return 'VÉ';
+  if (aktFázis === null && fázisok.includes('M')) return 'VÉ';
+  return 'TÉ';
+}
+
+/**
  * Manőver Pont képlet - a reactive `manőver_pont` szabály pure megfelelője: ceil(harcmodor_összeg * 2 / tsz).
  * ponytail: a rules.json formula TS-másolata (a manőver-popup nem épít reactive kontextust). A drift ellen a
  * `manover-dobas-calc.rules-tukor.test.ts` köti a rules.json formulájához.

@@ -304,11 +304,6 @@
           },
           {
             "érték": -2,
-            "leírás": "Fegyver extra: Lefegyverezhetőbb",
-            "feltétel": "fegyver_extra:lefegyverezhetobb"
-          },
-          {
-            "érték": -2,
             "leírás": "Fegyver extra: Fanyél fegyvertörése könnyebb",
             "feltétel": "fegyver_extra:fanyel_fegyvertores_konnyebb"
           }

@@ -202,7 +202,6 @@ extrak:
       - {típus: manőver_állapot, érték: passzív}   # a manőver a fegyver ELLEN történik
     hatás:
       - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:lefegyverzés"}
-      - {cél: manőver_ellenpróba, mód: flat, érték: -2, feltétel: "manőver:fegyvertörés"}
 
   - id: lefegyverzese_nehezebb
     név: "Lefegyverzése nehezebb"

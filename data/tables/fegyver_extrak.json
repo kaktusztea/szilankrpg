@@ -395,12 +395,6 @@
         "mód": "flat",
         "érték": -2,
         "feltétel": "manőver:lefegyverzés"
-      },
-      {
-        "cél": "manőver_ellenpróba",
-        "mód": "flat",
-        "érték": -2,
-        "feltétel": "manőver:fegyvertörés"
       }
     ]
   },

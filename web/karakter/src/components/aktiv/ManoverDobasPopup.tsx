@@ -14,7 +14,7 @@ import type { ProbaDobás } from '../../engine/dice';
 import {
   type Mód, type FázisEredmény, type ManőverDef,
   követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, aktívFegyverInfo,
-  calcManőverPont, getBelharcFok, fázisCselekvő, fázisSikeres, FÁZIS_FELIRAT, rontottVFázis,
+  calcManőverPont, getBelharcFok, fázisCselekvő, fázisSikeres, FÁZIS_FELIRAT, rontottVFázis, fejlécChip,
   szitModKezdőÁllapot, szitTáblákMódszerint, szitModÁllapot,
 } from './manover-dobas-calc';
 import {
@@ -297,9 +297,18 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       <div className="manover-dobas-popup">
         <div className="manover-dobas-header">
           <span className="manover-dobas-title">{manőver.név} ({fázisok.join(' ')})</span>
-          {/* VÉ mindig látható (a popup eltakarja a HarcHeader VÉ-dobozát): passzív manővernél kézi
-              VÉ-csökkenés könyveléshez, aktívban a Megakasztás elleni védekezéshez kell. */}
-          {aktívVÉ != null && <span className="manover-dobas-ve-chip">VÉ: <strong>{aktívVÉ}</strong></span>}
+          {/* Fejléc-chip fázis-tudatos (a popup eltakarja a HarcHeader VÉ-dobozát):
+              - passzív mód: mindig VÉ (kézi VÉ-csökkenés könyveléshez);
+              - aktív mód, Megakasztás (M) fázis: VÉ (az ellenfél támad a VÉ-d ellen);
+              - aktív mód, V/E fázis: TÉ (a saját támadó/próba értéked a releváns).
+              M-nél az aktívFázisIdx == -1 esetén is a manőver Megakasztásos volta dönt. */}
+          {(() => {
+            const aktFázis = aktívFázisIdx >= 0 ? fázisok[aktívFázisIdx] : null;
+            if (fejlécChip(mód, aktFázis, fázisok) === 'VÉ') {
+              return aktívVÉ != null && <span className="manover-dobas-ve-chip">VÉ: <strong>{aktívVÉ}</strong></span>;
+            }
+            return aktívTÉ != null && <span className="manover-dobas-ve-chip">TÉ: <strong>{aktívTÉ}</strong></span>;
+          })()}
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
 

@@ -142,7 +142,6 @@ manőverek:
       mód: "single"
       sorok:
         - { extra_ref: "fegyvertores_immunis" }
-        - { extra_ref: "lefegyverezhetobb" }
         - { extra_ref: "fanyel_fegyvertores_konnyebb" }
 - név: "Felállás földről"
   típus: "általános"
