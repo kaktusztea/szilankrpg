@@ -235,7 +235,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     if (maxKölthető <= 0) return null;
     return (
       <button type="button" className="manover-szit-btn" onClick={() => setMpPickerNyitva(true)}>
-        MP használata
+        <span className="manover-szit-label">MP használata →</span>
         {költöttMP > 0 && <span className="manover-szit-sum manover-szit-pos">+{költöttMP}</span>}
       </button>
     );
@@ -251,7 +251,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         <div className="manover-fazis-info">
           {módosítóTáblák.length > 0 && (
             <button type="button" className="manover-szit-btn manover-szit-btn-flash" onClick={() => setSzitPickerNyitva(true)}>
-              Helyzetfüggő módosítók
+              <span className="manover-szit-label">Helyzetfüggő módosítók →</span>
               {szitLehetetlen
                 ? <span className="manover-szit-sum manover-szit-neg">letilt</span>
                 : szitImmunis

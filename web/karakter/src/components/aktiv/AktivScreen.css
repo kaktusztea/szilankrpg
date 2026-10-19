@@ -174,6 +174,8 @@
 .manover-dobas-ve-chip { font-size: 13px; color: var(--text); white-space: nowrap; padding: 2px 8px; border-radius: 6px; border: 1px solid var(--border); background: rgba(255, 255, 255, 0.04); }
 .manover-konnyites-chip { font-size: 12px; color: #e0b84a; background: rgba(224, 184, 74, 0.12); border: 1px solid rgba(224, 184, 74, 0.4); border-radius: 6px; padding: 6px 10px; margin-bottom: 10px; }
 .manover-szit-btn { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; padding: 8px 12px; margin-bottom: 12px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 13px; cursor: pointer; }
+/* A szit-chip label a chipen belül középre (badge nélkül teljes szélességen; badge esetén a maradék helyen). */
+.manover-szit-label { flex: 1; text-align: center; }
 .manover-szit-sum { font-weight: bold; }
 .manover-szit-pos { color: var(--success); }
 .manover-szit-neg { color: var(--error); }
