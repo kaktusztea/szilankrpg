@@ -1557,7 +1557,6 @@ STÁTUSZ (fontos): a `hatasok.yaml` jelenleg CSAK build-validációs/dokumentác
 | mozgás_lecövekelt | Mozgás - lecövekelt | letilt | mozgás | Helyváltoztatás képtelen |
 | mozgás_képtelen | Mozgás - képtelen | letilt | mozgás+harci | Nyaktól lefelé mozdulni sem |
 | pszi_elvesztése | Pszi elvesztése | letilt | pszi | Diszciplínák használhatatlan |
-| sebzés_csökkentett | Sebzés csökkentett | szöveges | sebzésdobás | 0 + k20 SP |
 | támadás_elvesztés_1 | 1 támadás elvesztése | szöveges | támadások_száma | -1 támadás (min 1) |
 | támadás_elvesztés_többszörös | Többsz. tám. elvesztés | max_limit 1 | támadások_száma | Max 1 tám/kör |
 | varázslás_elvesztése | Varázslás elvesztése | letilt | varázslás | Mágia végzése képtelen |

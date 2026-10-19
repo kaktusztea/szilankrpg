@@ -14,6 +14,8 @@
 
 ### [Páncél példák](069_07_pancel_peldak.md) ⚡
 
+### [Besták páncéljai](069_08_bestiak_panceljai.md)
+
 ---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

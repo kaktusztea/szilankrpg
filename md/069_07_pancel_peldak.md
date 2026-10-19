@@ -129,4 +129,6 @@ Végleges ár: 7,5x
 
 ---
 
+🔗 [Bestiák páncéljai](069_08_bestiak_panceljai.md) →
+
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -197,15 +197,6 @@ Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással
 <br />
 
 ---
-### 🔥 Sebzés csökkentett
-
-```
-0 + k20 SP
-```
-
-<br />
-
----
 ### 🔥 `1` támadás elvesztése
 
 ```

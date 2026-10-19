@@ -107,6 +107,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
 - [Páncél példák](069_07_pancel_peldak.md) ⚡
+- [Besták páncéljai](069_08_bestiak_panceljai.md)
 
 ---
 

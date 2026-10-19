@@ -108,12 +108,6 @@ hatások:
   leírás: "Képtelen vagy Pszí alkalmazására. Az Aurádra nincs hatással."
   mechanika: [{mód: "letilt", cél: "pszi"}]
 
-# --- Sebzés ---
-- id: "sebzés_csökkentett"
-  név: "Sebzés csökkentett"
-  leírás: "Sebzésed: 0 + k20 SP."
-  mechanika: [{mód: "szöveges", cél: "sebzésdobás", megjegyzés: "0 + k20 SP"}]
-
 # --- Támadások ---
 - id: "támadás_elvesztés_1"
   név: "1 támadás elvesztése"

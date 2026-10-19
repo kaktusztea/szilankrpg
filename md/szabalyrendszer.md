@@ -200,6 +200,7 @@
 - [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
 - [Páncél példák](069_07_pancel_peldak.md) ⚡
+- [Bestiák páncéljai](069_08_bestiak_panceljai.md)
 
 ---
 ### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
