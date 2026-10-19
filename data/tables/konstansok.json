@@ -389,36 +389,39 @@
       "mgt": 6
     }
   ],
+  "alapanyag_ár_szorzó": {
+    "fa": 0.1,
+    "acél": 1,
+    "bronz": 0.5,
+    "abbitacél": 10,
+    "mithrill": 100,
+    "lunír": 100000
+  },
   "páncél_fémalapanyagok": [
     {
       "anyag": "acél",
       "sfé_bónusz": 0,
-      "mgt": 0,
-      "ár_szorzó": 1
+      "mgt": 0
     },
     {
       "anyag": "bronz",
       "sfé_bónusz": -5,
-      "mgt": 2,
-      "ár_szorzó": 0.5
+      "mgt": 2
     },
     {
       "anyag": "abbitacél",
       "sfé_bónusz": 5,
-      "mgt": -2,
-      "ár_szorzó": 10
+      "mgt": -2
     },
     {
       "anyag": "mithrill",
       "sfé_bónusz": 10,
-      "mgt": -4,
-      "ár_szorzó": 100
+      "mgt": -4
     },
     {
       "anyag": "lunír",
       "sfé_bónusz": "10-20",
-      "mgt": -6,
-      "ár_szorzó": 100000
+      "mgt": -6
     }
   ],
   "páncél_ár_szorzó_kidolgozottság": {
@@ -426,7 +429,11 @@
     "átlagos": 1,
     "mestermunka": 100
   },
-  "páncél_ár_szorzó_idea": [
+  "ár_szorzó_idea": [
+    {
+      "idea": -5,
+      "ár_szorzó": 0.05
+    },
     {
       "idea": -4,
       "ár_szorzó": 0.1
@@ -462,6 +469,10 @@
     {
       "idea": 4,
       "ár_szorzó": 10
+    },
+    {
+      "idea": 5,
+      "ár_szorzó": 13
     }
   ],
   "tulajdonság_pontok": {

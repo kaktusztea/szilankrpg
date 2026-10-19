@@ -27,20 +27,20 @@ x Idea
 
 ### ⚜️ Alapanyag szorzó
 
-Azonos a Páncélok Alapanyag szorzóival.
+Azonos a [Páncélok Alapanyag szorzóival](069_06_pancel_ara.md#alapanyag-%C3%A1r-szorz%C3%B3) + "Fa" alapanyag.
 
 ```
-  0.1x : Fa
-  0.5x : Bronz
-    1x: Acél
-   10x: Abbitacél
-  100x: Mithrill
-   ∞  : Lunír
+   0.1x: Fa
+   0.5x: Bronz
+     1x: Acél
+    10x: Abbitacél
+   100x: Mithrill
+100000x: Lunír
 ```
 
 ### ⚜️ Idea szorzó
 
-Azonos a Páncélok Idea szorzóival.
+Azonos a [Páncélok Idea szorzóival](069_06_pancel_ara.md#idea-%C3%A1r-szorz%C3%B3).
 
 ```
  -5        0.05x

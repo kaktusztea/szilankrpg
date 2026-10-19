@@ -152,3 +152,19 @@ sebzéstípus_hátrány:
 # balansz-teszt konstansok
 k20_atlag: 10.5     # k20 átlagdobás
 ep_per_kat: 9.0     # ~ÉP/4 tipikus kalandozónál (sebesülés-kategória)
+
+# REFERENCIA: a kód nem olvassa (dokumentációs adat, md/068_01_05_fegyverek_ara.md).
+# Ha kód lesz rá, INNEN olvasd, ne hardcode-old! Fegyver ár = hossz × alapanyag × idea szorzó.
+# Az alapanyag/idea szorzó a fő data/sources/konstansok.yaml közös tábláiból jön
+# (alapanyag_ár_szorzó, ár_szorzó_idea) - itt csak a fegyver-egyedi hossz-sáv él.
+# hossz_max: null = nyílt felső vég (7+).
+fegyver_ár_szorzó_hossz:
+  - hossz_min: 1
+    hossz_max: 2
+    ár_szorzó: 0.5
+  - hossz_min: 3
+    hossz_max: 6
+    ár_szorzó: 1
+  - hossz_min: 7
+    hossz_max: null
+    ár_szorzó: 2

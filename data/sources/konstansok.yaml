@@ -361,27 +361,36 @@ páncél_méret_illeszkedés:
   - fokozat: "borzalmas"
     mgt: 6
 
+# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
+# Általános alapanyag ár-szorzó (páncél + fegyver közös). A páncél md/069_06_pancel_ara.md és a
+# fegyver md/068_01_05_fegyverek_ara.md ugyanezeket az értékeket használja. A "fa" csak fegyvernél
+# releváns (pl. szálfegyver nyélanyag), a páncélnál nem fordul elő. Lunír: nem vásárolható (∞),
+# referencia-érték 100000.
+alapanyag_ár_szorzó:
+  fa: 0.1
+  acél: 1
+  bronz: 0.5
+  abbitacél: 10
+  mithrill: 100
+  lunír: 100000
+
+# ár szempontból → alapanyag_ár_szorzó (külön tábla, páncél + fegyver közös)
 páncél_fémalapanyagok:
   - anyag: "acél"
     sfé_bónusz: 0
     mgt: 0
-    ár_szorzó: 1
   - anyag: "bronz"
     sfé_bónusz: -5
     mgt: 2
-    ár_szorzó: 0.5
   - anyag: "abbitacél"
     sfé_bónusz: 5
     mgt: -2
-    ár_szorzó: 10
   - anyag: "mithrill"
     sfé_bónusz: 10
     mgt: -4
-    ár_szorzó: 100
   - anyag: "lunír"
     sfé_bónusz: "10-20"
     mgt: -6
-    ár_szorzó: 100000
 
 # REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
 páncél_ár_szorzó_kidolgozottság:
@@ -390,7 +399,11 @@ páncél_ár_szorzó_kidolgozottság:
   mestermunka: 100
 
 # REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
-páncél_ár_szorzó_idea:
+# Általános Idea ár-szorzó (páncél + fegyver közös). A páncélnál a struktúra korlátozza az elérhető
+# Idea-tartományt, így a -5 / +5 végek ott nem látszanak; a fegyver md/068_01_05 ezeket is használja.
+ár_szorzó_idea:
+  - idea: -5
+    ár_szorzó: 0.05
   - idea: -4
     ár_szorzó: 0.1
   - idea: -3
@@ -409,6 +422,8 @@ páncél_ár_szorzó_idea:
     ár_szorzó: 7
   - idea: 4
     ár_szorzó: 10
+  - idea: 5
+    ár_szorzó: 13
 
 # ============================================================
 # Tulajdonságok

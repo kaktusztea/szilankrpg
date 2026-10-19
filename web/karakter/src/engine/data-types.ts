@@ -278,7 +278,8 @@ export interface KonstansokRaw {
     struktúra: string; leírás: string; fém: boolean; merev: boolean;
     mgt: number; sfé_fizikai: number; sfé_energia: number; ár_szorzó: number; idea_plusz_minusz: number;
   }[];
-  páncél_fémalapanyagok: { anyag: string; sfé_bónusz: number; mgt: number; ár_szorzó: number }[];
+  páncél_fémalapanyagok: { anyag: string; sfé_bónusz: number; mgt: number }[];
+  alapanyag_ár_szorzó: Record<string, number>;
   páncél_csatolt_tag_mgt: { hajlékonyvért_nem_fém: Record<string, number>; hajlékonyvért_fém: Record<string, number>; merevvért_fém: Record<string, number> };
   mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; CÉ: number; SP: number }[];
   merevvértviselet_bónuszok: { fok: number; TÉ_büntetés_csökkentés: number }[];
@@ -334,7 +335,7 @@ export interface KonstansokRaw {
   képzettség_csoportok: string[];
   módosító_célok: string[];
   páncél_védett_terület: Record<string, number>;
-  páncél_ár_szorzó_idea: { idea: number; ár_szorzó: number }[];
+  ár_szorzó_idea: { idea: number; ár_szorzó: number }[];
   páncél_ár_szorzó_kidolgozottság: Record<string, number>;
 }
 

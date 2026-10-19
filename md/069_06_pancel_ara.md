@@ -58,7 +58,7 @@ A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
     1x: Acél
    10x: Abbitacél
   100x: Mithrill
-    ∞ : Lunír
+  100000x: Lunír
 ```
 
 ---
