@@ -19,7 +19,7 @@ x Idea
 
 ### ⚜️ Fegyver alapár
 
-Ez a [Fegyvergenerátor](068_10_fegyvergenerator.md) oldalon kiszámított, fődarab- és fejrész-összetételéből kiszámolt alap érték (ár-osztály × fejdarab × hossz).
+Ez a [Fegyvergenerátor](068_10_fegyvergenerator.md#ár) oldalon kiszámított, fődarab- és fejrész-összetételéből kiszámolt alap érték (ár-osztály × fejdarab × hossz-szorzó).
 
 ### ⚜️ Alapanyag szorzó
 
