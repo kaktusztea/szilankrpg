@@ -1082,7 +1082,7 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (19 taktika: 16 közelharci + 3 távharci; módosítók, hatások, fokok, kombó szabályok, megkötések, skálázható flag)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (40 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek, tiltott_fegyverfogások, fegyver_override)
-- `data/sources/manoverek.yaml` → `tables/manoverek.json` (39 manőver: id, típus, nehézség, fázisok, `fázis_info` [opcionális map: fázis-betű → magyarázó szöveg], `fázis_cselekvő` [opcionális map: fázis-betű → "én"|"ellenfél"; default M→ellenfél, V/E→én - pl. Távoltartás/Hátas táncoltatása/Lovas megakasztása M→én], `ellenpróba_bünteti` [opcionális bool: az Ellenpróba nem buktató, rontásnál is sikeres a manőver, csak büntetés - Átsiklás, Kibontakozás], `hatás` [mondatonkénti lista; a `Sikertelen:` / `Kudarc:` / `Feltétel:` előtagú sorokat a sikeres-box kiszűri, a picker mind mutatja], `végrehajtás_té_módosító` [default 4, 0=nincs +4], `követelmények` [opcionális, Normál/Erős - lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (39 manőver: id, típus, nehézség, fázisok, `fázis_info` [opcionális map: fázis-betű → magyarázó szöveg], `fázis_cselekvő` [opcionális map: fázis-betű → "én"|"ellenfél"; default M→ellenfél, V/E→én - pl. Távoltartás/Hátas táncoltatása/Lovas megakasztása M→én], `ellenpróba_bünteti` [opcionális bool: az Ellenpróba nem buktató, rontásnál is sikeres a manőver, csak büntetés - Átsiklás, Kibontakozás], `hatás` [mondatonkénti lista; a `Sikertelen:` / `Kudarc:` / `Feltétel:` előtagú sorokat a sikeres-box kiszűri, a picker mind mutatja], `végrehajtás_té_módosító` [default 5, 0=nincs bónusz], `követelmények` [opcionális, Normál/Erős - lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
@@ -1119,7 +1119,7 @@ A Manőver dobás popup (§21.4) viszont interaktív dobás-módosítókat haszn
   - `helyzetfüggő_módosítók` → az Ellenpróba **dobásához** (`dobásÉrték = Manőver Alap + MP + belharc + szitModÖsszeg`), a Célszám fix (`nehézség`). A táblák `mód_oldal` mezője (default `aktív`) dönti el, melyik dobó-oldalhoz tartoznak: **aktív** módban az aktív-oldali táblák + a GLOBÁLIS módosítók, **passzív** módban a `mód_oldal: passzív` táblák (pl. fegyver-extrák, amelyek a fegyver birtokosát - a passzív félt - érintik: Lefegyverezhetőbb, Lefegyverzése nehezebb, Fegyvertörés-immunis). A képzettségpróba `calcSzitModÖsszeg`-ét használja üres enyhítés-listával. Szín-konvenció EGYSÉGES a képzettségpróbával: pozitív (könnyebb, nagyobb dobás) = zöld, negatív (nehezebb) = piros. (Korábban célszám-oldali volt fordított színnel; 2026-10 átállás a dobó-oldalra, l. refactorlog/2026-10-10.md + md/066_04.) Két KÜLÖNLEGES sentinel (nem dobásmódosító, nem adódik az összeghez):
     - `99` (`konstansok.yaml` → `manőver.sentinel_nem_kísérelhető`): „letilt" jelző - a Manőver az adott körülmények közt nem kísérelhető meg (aktív E fázis: a dobás-sor + a siker-gomb eltűnik).
     - `-99` (`manőver.sentinel_immunis`): passzív-oldali „immunis" jelző - a fegyver a manőverre immunis (Fegyvertörés-immunis) → a passzív félnek automatikus SIKER (passzív E fázis: a dobás-sor + a manőver-siker gomb eltűnik). Mindkettőt a `szitModSentinelLehetetlen` pure fn detektálja (a sentinel-érték paraméter). A passzív extra_ref sorokat a generátor (`aktiv_ful.py`) oldja fel az `extrak.yaml`-ból; a tábla `mód_oldal`-jának egyeznie kell az extra `manőver_állapot`-ával (különben build hiba), `letilt` módú hatásnál az érték a `-99` sentinel.
-  - `végrehajtás_té_módosító` → a Végrehajtás fázis TÉ értékébe (`aktívTÉ + módosító`). Default 4; `0` = nincs +4 (Ellenfél elfogása, Precíz támadás - a TÉ chip popupja külön jelzi).
+  - `végrehajtás_té_módosító` → a Végrehajtás fázis TÉ értékébe (`aktívTÉ + módosító`). Default 5 (`konstansok.yaml → manőver.végrehajtás_TÉ_standard`); `0` = nincs bónusz (Ellenfél elfogása, Precíz támadás, Csonkolás - a TÉ chip popupja külön jelzi). A Manőver popup fejléc-chipje a TÉ-t bontva mutatja: `TÉ: <nyers> (+<módosító>)`, hogy ne tűnjön ellentmondásosnak a Végrehajtás-fázis `aktívTÉ + módosító` értékével.
   - `követelmények` → a Manőver dobás popup **0. lépése** (a M/V/E fázisok előtt, CSAK aktív módban, ha van követelmény). Szabály: `md/066_04` „Manőver-követelmények: Normál és Erős" (a Képzettség-kiterjesztés mintája).
     - Erősség: 🟨 `normál` (hiány → Ellenpróba `Hátrány-2`, nem halmozódik) · 🟥 `erős` (hiány → auto-kudarc, nem dobható; dominál a Normál felett).
     - Ellenőrizhetőség: gépi (`típus: képzettség|fortély`, `név`+`érték` küszöb - a webapp auto-értékeli a karakterből; „Harcmodor" = bármely harcmodor-képzettség max szintje) · informatív (`típus: egyéb`, `leírás` - a játékos/KM dönt).
@@ -1459,6 +1459,31 @@ fegyver_override?: {
 ```
 
 note: A Kétkezes harc összesítő sorra is alkalmazódik (calcKetkezes → ugyanaz a loop).
+
+#### Fegyver-járulék post-szorzó (Beszorítva, md/065_03_03)
+
+A `fegyver_override`-tól eltérő, rokon mechanika. A „fegyver TÉ/VÉ feleződik / nullázódik" büntetés
+(Beszorítva harci helyzet) NEM a teljes TÉ/VÉ-re hat, hanem csak a **fegyver-járulékra**:
+
+```
+fegyver_járulék = fegyver alap hossz-járulék (alap_TÉ/VÉ) + Mesterfegyver + Idea
+```
+
+A karakter saját része (bázis, tulajdonság, harcmodor-szint, harci fortélyok) **érintetlen**.
+
+```
+FOR EACH cél ∈ {TÉ, VÉ}:
+  rész = alap_<cél> + mf_<cél> + idea_<cél>          // a fegyver-járulék
+  <cél> = <cél> - rész + alkalmazEffektek(rész, hatások)   // FLOOR (§42.3)
+```
+
+- Alcél: `fegyver_járulék` (`extrak.schema.yaml` `alcel_felszereles_enum`), szemben a `fegyver`
+  bázis-csere alcéllel (az a reactive ELŐTT cseréli az alapot, ez UTÁNA szorozza a járulékot).
+- Forrás: a `Beszorítható enyhén` (hossz 5 → járulék `szorzó 0.5`) / `Beszorítható nagyon`
+  (hossz 7+ → járulék `override 0`) fegyver-extrák, `harci_helyzet:beszorítva` feltétellel.
+  A Beszorítva helyzetnek magának nincs `hatások`-ja - a büntetés fegyverenként az extrákból jön.
+- Kiértékelés: `fegyver-calc.ts` `járulékHatásSorra` (per-fegyver, kézenként), a hatás-precedencia
+  az `extrak-effekt.ts` `alkalmazEffektek`-je (§42.3).
 
 ---
 
@@ -4202,3 +4227,39 @@ Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implement�
   forrása a `konstansok.yaml → effekt_módok`; a `halmozás` mező a globális §42.3 szabályba olvadt. Build-gate:
   `validate_statuszok` / `validate_harci_helyzet_hatasok` / `validate_hatasok_katalogus` / taktika → effekt_módok.
   (A feltétel-predikátumok `{forrás, operátor: ">", érték}` operátora összehasonlító reláció, NEM effekt - marad.)
+
+---
+## §43 Fegyver és páncél ár-modell
+
+Az ár egy arány-szorzó (egymáshoz viszonyított érték), nem valuta. Szabálykönyv:
+`md/068_01_05_fegyverek_ara.md` (fegyver), `md/069_06_pancel_ara.md` (páncél).
+
+### §43.1 Páncél ár (reactive, rules.json)
+
+```
+páncél_torzó_ár = struktúra_ár × alapanyag_ár × idea_ár
+páncél_ár = páncél_torzó_ár + csatolt_tag_db × (páncél_torzó_ár / 5 × kidolgozottság_ár)
+```
+
+- Lookup-táblák: `konstansok.yaml` → `páncél_struktúrák[].struktúra_ár`, `alapanyag_ár`,
+  `idea_ár`, `kidolgozottság_ár`.
+- `alapanyag_ár`: csak fém struktúránál (`páncél_fém`); nem-pozitív / hiányzó → 1 (semleges).
+- Nincs páncél (`páncél_van = 0`) → ár 0.
+- Szabályok: `rules.json` `páncél_struktúra_ár`, `páncél_alapanyag_ár`, `páncél_idea_ár`,
+  `páncél_kidolgozottság_ár`, `páncél_torzó_ár`, `páncél_ár`.
+
+### §43.2 Fegyver ár (generátor + fegyver-ar-calc.ts, NEM reactive)
+
+```
+fegyver_ár = ár_alap × alapanyag_ár_szorzó[anyag] × ár_szorzó_idea[idea]
+```
+
+- `ár_alap`: a fegyver fix felépítésének alapára (hossz-szorzó × ár-osztály × fejdarab),
+  amit a generátor számol a `fegyverek_v2.json`-ba. Hossz-szorzó: 0.5× (0-2), 1× (3-6),
+  2× (7+). A webapp NEM ismeri az ár-osztály/fejdarab logikát.
+- A webapp (`fegyver-ar-calc.ts`) csak a hangolható tengelyeket teszi rá: `anyag`
+  (`konstansok.yaml → alapanyag_ár_szorzó`, pl. Fa 0.1×, Bronz 0.5×, Acél 1×, Abbitacél 10×,
+  Mithrill 100×, Lunír 100000×) és `idea` (`ár_szorzó_idea`).
+- `ár_alap = null` (fixed fegyver, nincs ár-modell: Garott, hárítók, Kopják, pajzsok) → ár null
+  (a chip nem jelenít árat). Ismeretlen anyag/idea → 1 (trust boundary: localStorage elavult lehet).
+- Az alapanyag ár-szorzók azonosak a páncél alapanyag-szorzóival + a "Fa" alapanyaggal.

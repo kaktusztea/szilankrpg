@@ -151,6 +151,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   CheckpointSection.tsx    Karakter verziók accordion (lista, létrehozás, törlés, megtekintés)
   NaploSection.tsx         Napló accordion (bejegyzések, szerkesztő form, opcionális checkpoint)
   FelszerelesSection.tsx   Felszerelés accordion (keret Max/Aktuális, tárgy-táblázat; fegyver/pajzs/páncél auto + kézi tárgyak; §15/§33.1)
+  AkadalySection.tsx       Akadály accordion (read-only származtatott: tartós viselet/cipelés Akadály-állapota; páncél/pajzs forrásonként viselve/külső/nincs; engine `felszereles.ts` `akadályÁllapot`)
 
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcScreen.tsx           Fő screen
@@ -257,7 +258,8 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
   HarcmodorLista.tsx       Harcmodor-képzettség lista (felvettek + felvétel select) - Harcértékek + Távharc közös
   HarcertekekHarciKepzettsegekSection.tsx  Harci képzettségek (szerkeszthető harcmodor szintek)
   HarcertekekFegyverekSection.tsx  Fegyver kártyák
-  HarcertekekFegyverChip.tsx  Egy fegyver chip/kártya (anyag, Idea, MF)
+  HarcertekekFegyverChip.tsx  Egy fegyver chip/kártya (anyag, Idea, MF, Ár)
+  fegyver-ar-calc.ts       Fegyver példány ár-szorzó (ár_alap × anyag × idea; §43.2 - a webapp csak a hangolható tengelyeket teszi az ár_alap-ra, fixed fegyver=null)
   HarcertekekPancelSection.tsx     Páncél mezők
   HarcertekekPancelPopup.tsx       Páncél szerkesztő popup (struktúra/alapanyag/kidolgozottság/tagok/idea)
   HarcertekekPajzsSection.tsx      Pajzs szekció (méret, pajzshasználat)
@@ -327,8 +329,8 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `kepzettsegek/{primer,szekunder}/*.yaml` | Képzettség definíciók (81 db, stabil `id` + `név`) | `kepzettsegek.json` |
 | `fajok/*.yaml` | Faj hátterek (27 db) | `fajok.json`, `faj_tulajdonsag_keretek.json`, `faj_fortelyok.json` (faj → {fortély: max_fok}, `faj` követelmény) |
 | `taktikak.yaml` | Harci taktikák (14 db) | `taktikak.json` |
-| `harci_helyzetek.yaml` | Harci helyzetek (32 db) | `harci_helyzetek.json` |
-| `manoverek.yaml` | Manőverek (38 db) | `manoverek.json` |
+| `harci_helyzetek.yaml` | Harci helyzetek (39 db) | `harci_helyzetek.json` |
+| `manoverek.yaml` | Manőverek (39 db) | `manoverek.json` |
 | `statuszok.yaml` | Státuszok (19 db) | `statuszok.json` |
 | `hatasok.yaml` | Hatás mechanikák | - (csak validáció, az app nem tölti be) |
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
@@ -347,7 +349,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `AGENTS.md` | AI irányelvek, build, konvenciók | Mindig (rövid) |
 | `MAP.md` | Kódtérkép (ez a fájl) | Navigációhoz |
 | `DEVSTATE.md` | Backlog, TODO, állapot | Státusz áttekintéshez |
-| `engine_spec.md` | Kalkulációs formulák (§1-§41) | Engine logika módosításkor |
+| `engine_spec.md` | Kalkulációs formulák (§1-§43) | Engine logika módosításkor |
 | `gui_spec.md` | UI viselkedés, screen-ek, stílusok | UI módosításkor |
 | `harcszimulacio.spec.md` | Önhordó harcrendszer spec tesztharc szimulációhoz (statblokk, körfeloldás, VÉ könyvelés, taktika/helyzet/státusz táblák, ambiguitás-regiszter, önteszt) | Szabály-hangolás, tesztharc, balance vizsgálat |
 
@@ -390,3 +392,5 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | 38 | Lovas harc | `harci_helyzetek.yaml`, `taktikak.yaml` |
 | 40 | URL Export | `url-share.ts` |
 | 41 | Reactive Engine | `reactive.ts`, `reactive-parse.ts`, `rules.json` |
+| 42 | Egységes effekt-modell | `effekt.ts`, `extrak-effekt.ts`, `konstansok.yaml` → `effekt_módok` |
+| 43 | Fegyver/páncél ár-modell | `fegyver-ar-calc.ts`, `rules.json` (páncél), `konstansok.yaml` → ár-szorzók |
