@@ -88,58 +88,23 @@
     "feltétel_kulcs": "harci_helyzet:belharci_helyzet"
   },
   {
-    "név": "Beszorított ellenfél",
-    "infó": "Előny+1 TÉ dobásra.",
+    "név": "Beszorítva",
+    "infó": "Szűk térben beszorítva. A fegyvered hossza dönti el a hátrányt (lásd fegyver-extrák).",
     "megjegyzések": [
       {
-        "text": "Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni."
+        "text": "Helyhiány miatt nem tudod fegyvered technikáit maradéktalanul alkalmazni."
       },
       {
-        "text": "Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt."
+        "text": "Önmagában nincs hatása; a hosszú fegyvereket viszont a hossz-kategória szerint bünteti (Beszorítható enyhén/nagyon extra)."
       }
     ],
-    "hatások": [
-      {
-        "mód": "előny",
-        "érték": 1,
-        "cél": "té_dobás"
-      }
-    ],
-    "id": "ellenfél_beszorított",
-    "csoport": "pozitív",
+    "hatások": [],
+    "id": "beszorítva",
+    "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [
-      "ellenfél_beszorított_hosszú_fegyverrel"
-    ],
-    "feltétel_kulcs": "harci_helyzet:ellenfél_beszorított"
-  },
-  {
-    "név": "Beszorított ellenfél - hosszú fegyverrel",
-    "infó": "Előny+2 TÉ dobásra.",
-    "megjegyzések": [
-      {
-        "text": "Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben."
-      },
-      {
-        "text": "Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt."
-      }
-    ],
-    "hatások": [
-      {
-        "mód": "előny",
-        "érték": 2,
-        "cél": "té_dobás"
-      }
-    ],
-    "id": "ellenfél_beszorított_hosszú_fegyverrel",
-    "csoport": "pozitív",
-    "rejtett": false,
-    "tiltja_taktikákat": false,
-    "kizár_helyzetek": [
-      "ellenfél_beszorított"
-    ],
-    "feltétel_kulcs": "harci_helyzet:ellenfél_beszorított_hosszú_fegyverrel"
+    "kizár_helyzetek": [],
+    "feltétel_kulcs": "harci_helyzet:beszorítva"
   },
   {
     "név": "Csúszós talaj",

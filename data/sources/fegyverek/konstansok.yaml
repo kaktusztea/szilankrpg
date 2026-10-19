@@ -22,10 +22,10 @@ fegyverhossz:
   1:  {TÉ: 1,  VÉ: 1,  SP: 1, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
   2:  {TÉ: 2,  VÉ: 2,  SP: 2, sebesség: 5, forgatás: egykezes,    övön_hordható: true, felszerelés_pont: 0}
   3:  {TÉ: 3,  VÉ: 3,  SP: 3, sebesség: 6, forgatás: egykezes,    felszerelés_pont: 0}
-  5:  {TÉ: 5,  VÉ: 5,  SP: 4, sebesség: 6, forgatás: másfélkezes, felszerelés_pont: 1}
-  7:  {TÉ: 7,  VÉ: 7,  SP: 5, sebesség: 7, forgatás: kétkezes,    felszerelés_pont: 2, extrak: [beszorithato]}
-  9:  {TÉ: 9,  VÉ: 9,  SP: 5, sebesség: 8, forgatás: kétkezes,    felszerelés_pont: 2, extrak: [beszorithato]}
-  12: {TÉ: 12, VÉ: 12, SP: 5, sebesség: 9, forgatás: kétkezes,    felszerelés_pont: 2}
+  5:  {TÉ: 5,  VÉ: 5,  SP: 4, sebesség: 6, forgatás: másfélkezes, felszerelés_pont: 1, extrak: [beszorithato_enyhen]}
+  7:  {TÉ: 7,  VÉ: 7,  SP: 5, sebesség: 7, forgatás: kétkezes,    felszerelés_pont: 2, extrak: [beszorithato_nagyon]}
+  9:  {TÉ: 9,  VÉ: 9,  SP: 5, sebesség: 8, forgatás: kétkezes,    felszerelés_pont: 2, extrak: [beszorithato_nagyon]}
+  12: {TÉ: 12, VÉ: 12, SP: 5, sebesség: 9, forgatás: kétkezes,    felszerelés_pont: 2, extrak: [beszorithato_nagyon]}
 
 # aktor: név -> sebzésjelleg, SP, átütés, TÉ, VÉ, sebesség
 # ponytail: ha itt új aktor kerül be, frissítsd az éles szabálykönyv

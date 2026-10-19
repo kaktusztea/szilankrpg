@@ -1,31 +1,5 @@
 # Pozitív helyzetek
 
-## Beszorított ellenfél
-
-Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
-
-```
-Előny+1 TÉ dobásra
-```
-
-❌ Kizárja: Beszorított ellenfél - hosszú fegyverrel
-
-<br />
-
----
-## Beszorított ellenfél - hosszú fegyverrel
-
-Hosszú - jellemzően szálfegyveres - ellenfeled ellen különösen jól tudsz támadni, mivel az ilyen fegyverek extrém körülményesen forgathatóak szűk térben. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
-
-```
-Előny+2 TÉ dobásra
-```
-
-❌ Kizárja: Beszorított ellenfél
-
-<br />
-
----
 ## Harci szekér
 
 Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.

@@ -889,8 +889,8 @@
     "erő_követelmény": 2,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       }
     ],
     "módok": [
@@ -1056,7 +1056,12 @@
     "ár": null,
     "idea_default": 0,
     "erő_követelmény": 0,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "beszorithato_enyhen",
+        "név": "Beszorítható (enyhén)"
+      }
+    ],
     "módok": [
       {
         "aktor": "vágóél-egyenes-átlagos",
@@ -1123,7 +1128,12 @@
     "ár": null,
     "idea_default": 0,
     "erő_követelmény": 2,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "beszorithato_enyhen",
+        "név": "Beszorítható (enyhén)"
+      }
+    ],
     "módok": [
       {
         "aktor": "vágóél-egyenes-átlagos",
@@ -1317,6 +1327,10 @@
       {
         "id": "kulonleges_felkeszites",
         "név": "Különleges felkészítés"
+      },
+      {
+        "id": "beszorithato_enyhen",
+        "név": "Beszorítható (enyhén)"
       }
     ],
     "módok": [
@@ -1391,8 +1405,8 @@
         "név": "Különleges felkészítés"
       },
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       }
     ],
     "módok": [
@@ -1526,6 +1540,10 @@
       {
         "id": "kulonleges_felkeszites",
         "név": "Különleges felkészítés"
+      },
+      {
+        "id": "beszorithato_enyhen",
+        "név": "Beszorítható (enyhén)"
       }
     ],
     "módok": [
@@ -1735,8 +1753,8 @@
     "erő_követelmény": 2,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1798,8 +1816,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1835,8 +1853,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1872,8 +1890,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1909,8 +1927,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -1950,6 +1968,10 @@
         "név": "Pikás közrefogása"
       },
       {
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
+      },
+      {
         "id": "fanyel_fegyvertores_konnyebb",
         "név": "Fanyél fegyvertörése könnyebb"
       }
@@ -1987,6 +2009,10 @@
         "név": "Pikás közrefogása"
       },
       {
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
+      },
+      {
         "id": "fanyel_fegyvertores_konnyebb",
         "név": "Fanyél fegyvertörése könnyebb"
       }
@@ -2019,6 +2045,10 @@
     "idea_default": 0,
     "erő_követelmény": 0,
     "extrák": [
+      {
+        "id": "beszorithato_enyhen",
+        "név": "Beszorítható (enyhén)"
+      },
       {
         "id": "fanyel_fegyvertores_konnyebb",
         "név": "Fanyél fegyvertörése könnyebb"
@@ -2066,8 +2096,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "fanyel_fegyvertores_konnyebb",
@@ -2225,8 +2255,8 @@
     "erő_követelmény": 3,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       }
     ],
     "módok": [
@@ -2373,7 +2403,12 @@
     "ár": null,
     "idea_default": 0,
     "erő_követelmény": 3,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "beszorithato_enyhen",
+        "név": "Beszorítható (enyhén)"
+      }
+    ],
     "módok": [
       {
         "aktor": "vágóél-íves-nagy",
@@ -2449,8 +2484,8 @@
     "erő_követelmény": 3,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       }
     ],
     "módok": [
@@ -2519,8 +2554,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "pajzs_megkerules",
@@ -2564,8 +2599,8 @@
         "név": "Önsebzés-kockázat"
       },
       {
-        "id": "beszorithato",
-        "név": "Beszorítható"
+        "id": "beszorithato_nagyon",
+        "név": "Beszorítható (nagyon)"
       },
       {
         "id": "pajzs_megkerules",

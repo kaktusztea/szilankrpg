@@ -100,7 +100,7 @@ hossz  TÉ/VÉ  SP  Sebesség  forgatás     Felsz.
  12     12    +5     9      kétkezes       2
 
 övön hordható:  0, 1, 2
-Beszorítható:   7, 9
+Beszorítható:   enyhén: 5; nagyon: 7, 9, 12
 másfélkezes:    külön "1 kézzel" fegyvermód is
 Felsz.:         Felszerelés pont; a végső érték
                 a hossz és a súly szerinti
@@ -407,7 +407,7 @@ GAME
     TÉ:8, VÉ:10, SP:+9, Átütés:2, Sebesség:11
   másodlagos: buzogányfej-tompa (zúzó)
     TÉ:8, VÉ:8, SP:+9, Átütés:0, Sebesség:11
-  Extrák: Beszorítható (hossz 9),
+  Extrák: Beszorítható (nagyon) (hossz 9),
           fanyél fegyvertörése könnyebb
 ```
 

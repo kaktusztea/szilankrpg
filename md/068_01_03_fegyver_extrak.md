@@ -19,14 +19,23 @@ A feltételek nélkül nem jár a bónusz. Lásd még: [Harci iskola](fortelyok.
 ---
 ## Harci helyzet (szituációs, automatikus)
 
-### Beszorítható
+### Beszorítható (enyhén)
 
 ```
-Feltétel: Beszorított (2) státusz
-Hatás:    TÉ:0, VÉ:0 (nem forgatható rendesen)
+Feltétel: Beszorítva harci helyzet
+Hatás:    fegyver TÉ/VÉ feleződik
 ```
 
-Hosszú fegyver (`7/9 kategória`): beszorított helyzetben nem forgatható rendesen.
+Közepesen hosszú fegyver (hossz `5`): beszorítva csak részben forgatható.
+
+### Beszorítható (nagyon)
+
+```
+Feltétel: Beszorítva harci helyzet
+Hatás:    fegyver TÉ/VÉ: 0 (nem forgatható rendesen)
+```
+
+Hosszú fegyver (hossz `7` és felette): beszorítva nem forgatható rendesen.
 
 ### Páncéltalant jobban sebez
 

@@ -21,15 +21,7 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
     },
     "t": {},
   },
-  "helyzet Beszorított ellenfél": {
-    "f": {
-      "KÉ": 3,
-      "SFÉ": 2,
-      "harckeret": 4,
-    },
-    "t": {},
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+  "helyzet Beszorítva": {
     "f": {
       "KÉ": 3,
       "SFÉ": 2,
@@ -710,15 +702,7 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
     },
     "t": {},
   },
-  "helyzet Beszorított ellenfél": {
-    "f": {
-      "KÉ": 6,
-      "SFÉ": 4,
-      "harckeret": 6,
-    },
-    "t": {},
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+  "helyzet Beszorítva": {
     "f": {
       "KÉ": 6,
       "SFÉ": 4,
@@ -1399,15 +1383,7 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
     },
     "t": {},
   },
-  "helyzet Beszorított ellenfél": {
-    "f": {
-      "KÉ": 9,
-      "SFÉ": 6,
-      "harckeret": 8,
-    },
-    "t": {},
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+  "helyzet Beszorítva": {
     "f": {
       "KÉ": 9,
       "SFÉ": 6,
@@ -2086,14 +2062,7 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > teszt2 1`] =
     },
     "t": {},
   },
-  "helyzet Beszorított ellenfél": {
-    "f": {
-      "KÉ": 5,
-      "harckeret": 4,
-    },
-    "t": {},
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
+  "helyzet Beszorítva": {
     "f": {
       "KÉ": 5,
       "harckeret": 4,

@@ -1,5 +1,20 @@
 # Negatív helyzetek
 
+## Beszorítva
+
+Szűk térben beszorítva nem tudod fegyvered technikáit maradéktalanul alkalmazni. A hátrányt a fegyvered hossza dönti el.
+
+```
+Rövid/közepes fegyver (hossz < 5): nincs hatás
+Közepesen hosszú (hossz 5): fegyver TÉ/VÉ feleződik
+Hosszú (hossz 7+):           fegyver TÉ/VÉ: 0
+```
+
+A fegyverenkénti büntetést a [Beszorítható (enyhén/nagyon)](065_03_04_fegyver_harci_helyzetek.md) fegyver-extra adja, a fegyverhossz-kategória szerint.
+
+<br />
+
+---
 ## Csúszós talaj
 
 ```

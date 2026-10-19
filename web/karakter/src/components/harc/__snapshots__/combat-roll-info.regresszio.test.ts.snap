@@ -23,48 +23,6 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 0 1`] = `
       "téMegjegyzések": [],
     },
   },
-  "helyzet Beszorított ellenfél": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 1,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 2,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
   "helyzet Csúszós talaj": {
     "c": {
       "céHatások": [
@@ -1086,48 +1044,6 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 1 1`] = `
           "megjegyzés": undefined,
           "operátor": "előny",
           "érték": 1,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
-  "helyzet Beszorított ellenfél": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 1,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 2,
         },
       ],
       "téMegjegyzések": [],
@@ -2166,48 +2082,6 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 2 1`] = `
       "téMegjegyzések": [],
     },
   },
-  "helyzet Beszorított ellenfél": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 1,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 2,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
   "helyzet Csúszós talaj": {
     "c": {
       "céHatások": [
@@ -3241,48 +3115,6 @@ exports[`harci dobás-hatások regressziós snapshot > teszt2 1`] = `
       "téMegjegyzések": [],
     },
   },
-  "helyzet Beszorított ellenfél": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 1,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 2,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
   "helyzet Csúszós talaj": {
     "c": {
       "céHatások": [
@@ -4224,48 +4056,6 @@ exports[`harci dobás-hatások regressziós snapshot > teszt3 1`] = `
           "megjegyzés": undefined,
           "operátor": "előny",
           "érték": 1,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
-  "helyzet Beszorított ellenfél": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 1,
-        },
-      ],
-      "téMegjegyzések": [],
-    },
-  },
-  "helyzet Beszorított ellenfél - hosszú fegyverrel": {
-    "c": {
-      "céHatások": [],
-      "céMegjegyzések": [],
-    },
-    "d": {
-      "sebzésHatások": [],
-      "sebzésMegjegyzések": [],
-      "spBónuszok": [],
-      "téHatások": [
-        {
-          "cél": "té_dobás",
-          "forrás": "Beszorított ellenfél - hosszú fegyverrel",
-          "megjegyzés": undefined,
-          "operátor": "előny",
-          "érték": 2,
         },
       ],
       "téMegjegyzések": [],

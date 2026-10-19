@@ -7,8 +7,8 @@ A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyve
 | Fegyver   | Aktorok             | Sebzésjelleg | Sebzéstípus |  TÉ |  VÉ |   SP | Erőlimit | Átütés | Sebesség | Forgatás | Hossz | Felsz.pont | Extrák                                                                                   | Megj.                  |
 | --------- | ------------------- | ------------ | ----------- | --: | --: | ---: | -------: | -----: | -------: | -------- | ----: | ---------: | ---------------------------------------------------------------------------------------- | ---------------------- |
 | Korbács   | botvég              | zúzó         | elsődleges  | `3` | `1` | `+3` |      `2` |    `0` |      `7` | egykezes |   `3` |        `0` | Pajzs megkerülése; Fegyvertörés-immunis                                                  |                        |
-| Ostor     | botvég              | zúzó         | elsődleges  | `9` | `7` | `+5` |      `3` |    `0` |      `9` | kétkezes |   `9` |        `2` | Beszorítható; Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2                    |                        |
-| Ostorkard | vágóél-íves-átlagos | vágó-íves    | elsődleges  | `9` | `7` | `+7` |     `99` |    `0` |     `11` | kétkezes |   `9` |        `2` | Önsebzés-kockázat; Beszorítható; Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2 | Urumi néven is ismert. |
+| Ostor     | botvég              | zúzó         | elsődleges  | `9` | `7` | `+5` |      `3` |    `0` |      `9` | kétkezes |   `9` |        `2` | Beszorítható (nagyon); Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2                    |                        |
+| Ostorkard | vágóél-íves-átlagos | vágó-íves    | elsődleges  | `9` | `7` | `+7` |     `99` |    `0` |     `11` | kétkezes |   `9` |        `2` | Önsebzés-kockázat; Beszorítható (nagyon); Pajzs megkerülése; Fegyvertörés-immunis; Felszerelés: 2 | Urumi néven is ismert. |
 
 <!-- tag: md_table_fegyver_end -->
 

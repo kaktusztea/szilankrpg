@@ -36,12 +36,22 @@ extrak:
       - {cél: "fortély:mesterfegyver", mód: szorzó, érték: 2}
 
   # ── HARCI HELYZET (szituációs, automatikus) ──
-  - id: beszorithato
-    név: "Beszorítható"
+  - id: beszorithato_enyhen
+    név: "Beszorítható (enyhén)"
     csoport: harci_helyzet
-    leírás: "Hosszú fegyver (kat. 7/9): Beszorított(2) státuszban nem forgatható rendesen, TÉ/VÉ:0."
+    leírás: "Közepesen hosszú fegyver (hossz 5): beszorítva a technikák csak részben vihetők ki, fegyver TÉ/VÉ feleződik."
     feltétel:
-      - {típus: státusz, név: Beszorított, érték: 2}      # (2) = súlyosság/tier
+      - {típus: harci_helyzet, id: beszorítva}
+    hatás:
+      - {cél: TÉ, alcél: "felszerelés:fegyver", mód: szorzó, érték: 0.5}
+      - {cél: VÉ, alcél: "felszerelés:fegyver", mód: szorzó, érték: 0.5}
+
+  - id: beszorithato_nagyon
+    név: "Beszorítható (nagyon)"
+    csoport: harci_helyzet
+    leírás: "Hosszú fegyver (hossz 7+): beszorítva nem forgatható rendesen, fegyver TÉ/VÉ:0."
+    feltétel:
+      - {típus: harci_helyzet, id: beszorítva}
     hatás:
       - {cél: TÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
       - {cél: VÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}

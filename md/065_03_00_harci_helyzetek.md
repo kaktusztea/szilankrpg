@@ -4,8 +4,6 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Pozitív helyzetek](065_03_01_pozitiv_helyzetek.md)
 
-- [Beszorított ellenfél](065_03_01_pozitiv_helyzetek.md#beszorított-ellenfél)
-- [Beszorított ellenfél - hosszú fegyverrel](065_03_01_pozitiv_helyzetek.md#beszorított-ellenfél---hosszú-fegyverrel)
 - [Harci szekér](065_03_01_pozitiv_helyzetek.md#harci-szekér)
 - [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás)
 - [Közönség előtt](065_03_01_pozitiv_helyzetek.md#közönség-előtt)
@@ -31,6 +29,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Negatív helyzetek](065_03_03_negativ_helyzetek.md)
 
+- [Beszorítva](065_03_03_negativ_helyzetek.md#beszorítva)
 - [Csúszós talaj](065_03_03_negativ_helyzetek.md#csúszós-talaj)
 - [Elvesztett egyensúly](065_03_03_negativ_helyzetek.md#elvesztett-egyensúly)
 - [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve)

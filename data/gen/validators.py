@@ -35,12 +35,15 @@ def proba_alcel_refs(sources_dir, statuszok):
     return {'képzettség': kepz, 'tulajdonság': tul, 'érzék': erz}
 
 
-def validate_effekt_hivatkozasok(helyzetek, extrak):
+def validate_effekt_hivatkozasok(helyzetek, extrak, statuszok=()):
     """`tiltás:<id>` és `ellenfél_harci_helyzet:<id>` hivatkozások létező célra mutassanak
-    (fegyver_override feltétel + extra hatás cél / al-feltétel). Különben a hatás CSENDBEN nem élne."""
+    (fegyver_override feltétel + extra hatás cél / al-feltétel). Különben a hatás CSENDBEN nem élne.
+    Továbbá az extrák strukturált `feltétel[]` listájában a `típus: harci_helyzet` / `típus: státusz`
+    hivatkozások is létező helyzet-id-re / státusz-névre mutassanak (különben az extra SOHA nem aktiválódik)."""
     errors = []
     tiltasok = tiltas_ids_of(helyzetek)
     helyzet_ids = {h.get('id') for h in helyzetek}
+    statusz_nevek = {s.get('név') for s in statuszok}
     def ref(s, hely):
         if not isinstance(s, str) or ':' not in s: return
         pre, _, val = s.partition(':')
@@ -55,6 +58,11 @@ def validate_effekt_hivatkozasok(helyzetek, extrak):
             ref(x.get('feltétel'), f"extrak [{e.get('id')}] hatás.feltétel")
             if isinstance(x.get('cél'), str) and x['cél'].startswith('tiltás:') and x.get('mód') != 'letilt':
                 errors.append(f"extrak [{e.get('id')}]: tiltás-cél csak mód 'letilt' lehet (kapott '{x.get('mód')}')")
+        for f in e.get('feltétel') or []:
+            if f.get('típus') == 'harci_helyzet' and f.get('id') not in helyzet_ids:
+                errors.append(f"extrak [{e.get('id')}]: ismeretlen harci helyzet '{f.get('id')}' (feltétel)")
+            if f.get('típus') == 'státusz' and f.get('név') not in statusz_nevek:
+                errors.append(f"extrak [{e.get('id')}]: ismeretlen státusz '{f.get('név')}' (feltétel)")
     if errors:
         print("  ❌ Effekt-hivatkozás hibák (tiltás / ellenfél_harci_helyzet):")
         for e in errors: print(f"     {e}")
