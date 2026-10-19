@@ -4,13 +4,13 @@ A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy
 
 Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod. Mágikus tárgyak, fegyverek is képesek lehetnek **Hatások** okozására.
 
-### Szorzó hatások ökölszabály ❗
+### Szorzó hatások ökölszabály
 
-Egy karakterre ható több szorzó kombinációja esetén CSAK a legnagyobb számít.\
-Természetesen ez a másik karakter oldalán is igaz, így szélsőséges esetben lehetséges, hogy a támadó és védő szorzói erősítik egymás hatását (összeszorzódnak).
+[Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-szorzó-hatások)
 
 <br />
 
+---
 ## ⚜️ Előny+1,2 és Hátrány-1,2 Hatások
 
 ```

@@ -7,7 +7,10 @@ Alább egy tömör összefoglaló táblázatot adunk, amely választ ad a fenti 
 ```
 Erő
   - Támadó Érték (TÉ)
-  - Erőbónusz 1:1
+  - Sebzéspont (SP) - Erőbónusz 1:1 (Erőbónusz limitig)
+  - Páncél MGT (csökkenti)
+  - Felszerelés keret (2 + Erő)
+  - Fegyver Erő-követelmény
   - Merevvértviselet követelmény
 ```
 
@@ -45,6 +48,7 @@ Emlékezet
 ```
 Önuralom
   - Célzó Érték (CÉ)
+  - Aura (2 x [TSz + Önuralom])
   - Mágikus ismeretek követelménye
 ```
 

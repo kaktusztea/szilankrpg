@@ -41,8 +41,9 @@
   - [Manőver Pontok (MP)](010_10_03_manover_pontok_99.md)
   - [Mágiaellenállás](010_10_04_magiaellenallas.md) 🎲
   - [Méregellenállás](010_10_05_meregellenallas.md) 🎲
-- [Nem Játékos Karakterek](010_11_njk.md)
-- [Példakarakter megalkotása](010_12_peldakarakter_megalkotasa.md)
+- [Bónuszok alkalmazásának sorrendje, Ökölszabályok](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md)
+- [Nem Játékos Karakterek](010_12_njk.md)
+- [Példakarakter megalkotása](010_13_peldakarakter_megalkotasa.md)
 
 ---
 ### 2. [Hátterek](020_hattererek.md) 🟡
