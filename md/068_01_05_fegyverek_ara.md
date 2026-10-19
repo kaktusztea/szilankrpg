@@ -1,6 +1,6 @@
 # Fegyverek ára
 
-A fegyverek ára - a péncélokhoz hasonlóan - egy arány-szorzó, ami egymáshoz képest mutatja meg az egyes típusok értékét. Jó tudni, hogy a fegyverek jellemzően olcsóbbak a [Páncéloknál](069_06_pancel_ara.md).
+A fegyverek ára - a péncélokhoz hasonlóan - egy arány-szorzó, ami egymáshoz képest mutatja meg az egyes típusok értékét. Jó tudni, hogy a fegyverek jellemzően olcsóbbak a [Páncéloknál](069_06_pancel_ara.md). A 
 
 ```
 10 átlagos hosszúkard == 1 bőrvért ára
@@ -12,10 +12,15 @@ A fegyverek ára - a péncélokhoz hasonlóan - egy arány-szorzó, ami egymásh
 ```
 Fegyver ár szorzója =
 
+x fegyver alapár
 x Hossz
 x Alapanyag
 x Idea
 ```
+
+### ⚜️ Fegyver alapár
+
+Ez a [Fegyvergenerátor](068_10_fegyvergenerator.md) oldalon kiszámított, fődarab- és fejrész-összetételéből kiszámolt alap érték (ár-osztály × fejdarab × hossz).
 
 ### ⚜️ Hossz szorzó
 
@@ -24,8 +29,6 @@ x Idea
   1x - 3-6 hossz
   2x - 7+  hossz
 ```
-
-> A fenti három szorzó a fegyver fix felépítéséből számolt alapárra (`ár_alap`) hat. Az `ár_alap` maga a fegyver fődarab- és fejrész-összetételéből jön (ár-osztály × fejdarab × hossz) - a részletes számítás a [Fegyvergenerátor](068_10_fegyvergenerator.md#ár) fejezetben.
 
 ### ⚜️ Alapanyag szorzó
 
