@@ -102,10 +102,11 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     else setShowTamadoDobas(true);
   }, [aktívTÉ, teljesVédekezésDef, fárasztásDef]);
 
-  // ProbaHub 🗡️: a Harc fülre váltás után itt nyílik meg a Támadó dobás (a pendinget rögtön consume-oljuk).
+  // ProbaHub 🗡️: a Harc fülre váltás után itt nyílik meg a Támadó dobás / Manőver (a pendinget rögtön consume-oljuk).
   useEffect(() => {
-    if (pendingDobás !== 'támadó') return;
-    openTámadóDobás();
+    if (pendingDobás === 'támadó') openTámadóDobás();
+    else if (pendingDobás === 'manőver') setManoverPicker('mód');
+    else return;
     onPendingDobásConsumed?.();
   }, [pendingDobás, openTámadóDobás, onPendingDobásConsumed]);
 

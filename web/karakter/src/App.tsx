@@ -43,7 +43,7 @@ function App() {
   const [activeTab, setActiveTab] = useState(5);
   const [gameMode, setGameMode] = useState(false);
   // ProbaHub 🗡️/🏹: a cél-fülre váltás után a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot.
-  const [pendingDobás, setPendingDobás] = useState<'támadó' | 'célzó' | null>(null);
+  const [pendingDobás, setPendingDobás] = useState<'támadó' | 'célzó' | 'manőver' | null>(null);
   const [viewingCheckpointId, setViewingCheckpointId] = useState<string | null>(null);
 
   // When viewing a checkpoint, everything is read-only
@@ -242,7 +242,7 @@ function App() {
 
       <ProbaHub data={data} karakter={karakter} aktív={gameMode && !viewingCheckpointId}
         onHarciDobás={cél => {
-          const tabId = cél === 'támadó' ? 'harc' : 'tavharc';
+          const tabId = cél === 'célzó' ? 'tavharc' : 'harc';
           const idx = TABS.findIndex(t => t.id === tabId);
           if (idx >= 0) setActiveTab(idx);
           setPendingDobás(cél);

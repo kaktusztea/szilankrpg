@@ -44,7 +44,7 @@ interface Props {
   onToast: (msg: string, type: 'success' | 'error') => void;
   onTestReset?: () => void;
   /** ProbaHub 🗡️/🏹 → a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot. */
-  pendingDobás?: 'támadó' | 'célzó' | null;
+  pendingDobás?: 'támadó' | 'célzó' | 'manőver' | null;
   onPendingDobásConsumed?: () => void;
 }
 

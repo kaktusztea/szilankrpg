@@ -86,12 +86,21 @@
 .proba-hub-grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
+/* KÉ / TÉ / CÉ / Manőver egy sorban, mind a 4 chip azonos szélességű. A Manőver kisebb fontja
+   (proba-hub-chip-manover) biztosítja, hogy a hosszabb felirat a negyed-szélességbe is beférjen. */
+.proba-hub-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 /* Harci dobás chipek (KÉ / 🗡️ / 🏹): nagyobb felirat, arany hover-keret.
    Dupla-class specificitás, mert a base .proba-hub-chip (14px) a CSS-ben később van. */
 .proba-hub-chip.proba-hub-chip-harc {
   font-size: 18px;
   font-weight: bold;
   padding: 10px 6px;
+}
+/* A „Manőver" felirat hosszabb a 2-betűs KÉ/TÉ/CÉ-nél: kisebb font, hogy keskeny viewporton se törjön. */
+.proba-hub-chip.proba-hub-chip-manover {
+  font-size: 14px;
 }
 /* Harci dobás chip hover: bordó keret. Dupla-class, mert a base .proba-hub-chip:hover később van. */
 .proba-hub-chip.proba-hub-chip-harc:hover {

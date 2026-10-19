@@ -19,8 +19,8 @@ interface Props {
   karakter: Karakter;
   /** Csak Játék módban (és nem verzió-nézetben) látszik a FAB. */
   aktív: boolean;
-  /** TÉ / CÉ chip: a cél-fülre váltás + ott a Támadó / Célzó dobás popup megnyitása (App oldja fel). */
-  onHarciDobás: (cél: 'támadó' | 'célzó') => void;
+  /** TÉ / CÉ / Manőver chip: a cél-fülre váltás + ott a megfelelő dobás-popup megnyitása (App oldja fel). */
+  onHarciDobás: (cél: 'támadó' | 'célzó' | 'manőver') => void;
 }
 
 /**
@@ -112,7 +112,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
         <PopupOverlay onClose={() => setHubNyitva(false)} className="kep-prompt proba-hub-popup" overlayClassName="proba-hub-overlay">
           <button type="button" className="kep-proba-close-btn proba-hub-close-btn" onClick={() => setHubNyitva(false)} title="Bezárás" aria-label="Bezárás">✕</button>
           <h3 className="proba-hub-header">Harci dobás</h3>
-          <div className="proba-hub-grid proba-hub-grid-3">
+          <div className="proba-hub-grid proba-hub-grid-4">
             <button className="proba-hub-chip proba-hub-chip-harc" onClick={() => {
               const { ké } = harcFejlécÉrtékek(data, karakter);
               setKéDobás({ ké, eredmény: ké + rollK20() });
@@ -120,6 +120,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
             }}>KÉ</button>
             <button className="proba-hub-chip proba-hub-chip-harc" title="Támadó dobás (Harc fül)" aria-label="Támadó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('támadó'); }}>TÉ</button>
             <button className="proba-hub-chip proba-hub-chip-harc" title="Célzó dobás (Távharc fül)" aria-label="Célzó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('célzó'); }}>CÉ</button>
+            <button className="proba-hub-chip proba-hub-chip-harc proba-hub-chip-manover" title="Manőver (Harc fül)" aria-label="Manőver" onClick={() => { setHubNyitva(false); onHarciDobás('manőver'); }}>Manőver</button>
           </div>
 
           <h3 className="proba-hub-header">Tulajdonságpróba</h3>
