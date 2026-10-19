@@ -25,12 +25,15 @@ x Idea
   2x - 7+  hossz
 ```
 
+> A fenti három szorzó a fegyver fix felépítéséből számolt alapárra (`ár_alap`) hat. Az `ár_alap` maga a fegyver fődarab- és fejrész-összetételéből jön (ár-osztály × fejdarab × hossz) - a részletes számítás a [Fegyvergenerátor](068_10_fegyvergenerator.md#ár) fejezetben.
+
 ### ⚜️ Alapanyag szorzó
 
-Azonos a [Páncélok Alapanyag szorzóival](069_06_pancel_ara.md#alapanyag-%C3%A1r-szorz%C3%B3) + "Fa" alapanyag.
+A fém-rész anyaga a fém-osztályú fegyvereknél hangolható (Bronz / Acél / Abbitacél / Mithrill); a fa / kő nem-fém anyag a fegyver gyári felépítéséből adódik.
 
 ```
    0.1x: Fa
+   0.1x: Kő
    0.5x: Bronz
      1x: Acél
     10x: Abbitacél
@@ -40,7 +43,7 @@ Azonos a [Páncélok Alapanyag szorzóival](069_06_pancel_ara.md#alapanyag-%C3%A
 
 ### ⚜️ Idea szorzó
 
-Azonos a [Páncélok Idea szorzóival](069_06_pancel_ara.md#idea-%C3%A1r-szorz%C3%B3).
+A [Páncélok Idea szorzóihoz](069_06_pancel_ara.md#idea-%C3%A1r-szorz%C3%B3) hasonló, de a fegyvernél a teljes `-5` … `+5` Idea-sáv használható (a páncél Idea-ban korlátozott).
 
 ```
  -5        0.05x

@@ -318,6 +318,48 @@ Részletek: [Másfél- és kétkezes fegyverek egy kézzel](068_01_07_masfelkeze
 <br />
 
 ---
+## Ár
+
+A harcértékekhez hasonlóan az ár is a fegyver fix felépítéséből jön. A generátor az
+**ár_alap**-ot számolja (a fegyver „csupasz" ára, gyári anyag és Idea nélkül):
+
+```
+ár_alap = ár-osztály × fejdarab-rész × hossz-szorzó
+```
+
+### ⚜️ Ár-osztály
+
+A nyél és a fejdarab dönti el (mennyi fém van a fegyverben):
+
+```
+fa         1x    fanyelű, fejdarab 0    (tiszta fabot, ököl)
+fém-hegyű  0.2x  fanyelű, fejdarab ≥ 1  (fanyél + fémfej: lándzsa, alabárd)
+fém        1x    minden más             (teljes fém: kard, buzogány)
+```
+
+### ⚜️ Fejdarab-rész
+
+```
+fa-osztály   → 1                (egy fadarab, nincs fém fej)
+egyébként    → a fejdarab-szám  (az alabárd 2 feje duplán számít)
+```
+
+### ⚜️ Hossz-szorzó
+
+```
+0.5x   hossz 0-2
+  1x   hossz 3-6
+  2x   hossz 7+
+```
+
+A **teljes gyári ár** = ár_alap × alapanyag × Idea - de az alapanyag és az Idea a felvett
+példányon hangolódik, ezért a játékos-oldali szorzók a [Fegyverek ára](068_01_05_fegyverek_ara.md)
+fejezetben szerepelnek. A generátor az `ár_alap`-ot adja a fegyvertáblába; a példány ára ebből
+× a hangolt anyag × Idea.
+
+<br />
+
+---
 ## Sebzésjelleg × páncél
 
 Sebzésdobáskor a fegyvermód jellege a cél vértjének fajtája szerint `SP`-bónuszt vagy -büntetést kap (az `SFÉ`-levonás mellett). Ez teszi szituáció-függővé a fegyvereket.
@@ -369,6 +411,7 @@ GAME
     TÉ:6, VÉ:6, SP:+5, Átütés:0, Sebesség:7
   másodlagos: pengehegy-kard (szúró)
     TÉ:4, VÉ:4, SP:+6, Átütés:1, Sebesség:7
+  ár_alap  fém(1x) × fejdarab 1 × hossz 3(1x) = 1
 ```
 
 Vágj a páncéltalanra, szúrj a láncingesre, lemez ellen válts fegyvert.
@@ -386,6 +429,7 @@ GAME
     TÉ:1, VÉ:1, SP:+1, Átütés:0, Sebesség:5
   másodlagos: pengehegy-apró (szúró)
     TÉ:1, VÉ:1, SP:+1, Átütés:0, Sebesség:5
+  ár_alap  fém(1x) × fejdarab 1 × hossz 0(0.5x) = 0.5
 ```
 
 A könnyű súly gyorsítja, de a vágómód `SP`-jét `-1`-gyel csökkenti. Páncéltalanra veszélyes, vértre alig.
@@ -409,6 +453,7 @@ GAME
     TÉ:8, VÉ:8, SP:+9, Átütés:0, Sebesség:11
   Extrák: Beszorítható (nagyon) (hossz 9),
           fanyél fegyvertörése könnyebb
+  ár_alap  fém-hegyű(0.2x) × fejdarab 2 × hossz 9(2x) = 0.8
 ```
 
 Minden vért ellen van jó módja, de a 2 fejdarab miatt pontatlanabb, lassú, nehéz és nehezen cipelhető: a sokoldalúság stratégiai előny, nem taktikai.
@@ -427,6 +472,8 @@ GAME
   1 kézzel: vágóél-íves-átlagos (vágó-íves)
     TÉ:6, VÉ:6, SP:+11, Átütés:0, Sebesség:7
     Erőbónusz-limit: 2
+  ár_alap  fém(1x) × fejdarab 1 × hossz 5(1x) = 1
+           (a feketeacél + Idea +3 a példány-árban hat, nem az ár_alap-ban)
 ```
 
 Az Idea `+3` és a feketeacél kiemelkedő `SP`-t ad, és az íves él lassúságát is ellensúlyozza (Sebesség: 6 + 1 + 1 - 1 = 7). Lemez ellen viszont `-4`: egy legendás penge is szituáció-függő.
