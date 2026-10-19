@@ -307,7 +307,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             if (fejlécChip(mód, aktFázis, fázisok) === 'VÉ') {
               return aktívVÉ != null && <span className="manover-dobas-ve-chip">VÉ: <strong>{aktívVÉ}</strong></span>;
             }
-            return aktívTÉ != null && <span className="manover-dobas-ve-chip">TÉ: <strong>{aktívTÉ}</strong></span>;
+            // TÉ bontva: nyers fegyveres TÉ + a Végrehajtás-bónusz (ha ≠ 0), hogy a fejléc és a
+            // Végrehajtás-fázis TÉ-je (aktívTÉ + bónusz) ne tűnjön ellentmondásosnak.
+            const téMód = manőver.végrehajtás_té_módosító;
+            return aktívTÉ != null && (
+              <span className="manover-dobas-ve-chip">
+                TÉ: <strong>{aktívTÉ}</strong>{téMód !== 0 && <span className="manover-dobas-te-bonus"> ({téMód > 0 ? '+' : ''}{téMód})</span>}
+              </span>
+            );
           })()}
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
