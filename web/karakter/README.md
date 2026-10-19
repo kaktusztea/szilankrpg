@@ -20,7 +20,7 @@ A fejléc bal oldalán a **Szilánk pont** (keretes szám) látható, jobb oldal
 | Gomb | Funkció |
 | ---- | ------- |
 | ↩    | Visszavonás (undo) - a szám a visszavonható lépéseket mutatja |
-| ✏️   | Felszerelés, Verziók, Napló, Jegyzetek ablak |
+| ✏️   | Felszerelés, Akadály, Verziók, Napló, Jegyzetek ablak (piros jelző pötty a sarkában, ha a Felszerelés túlterhelt vagy van Akadály-állapot) |
 | 🧑   | Karakterek (karaktertár, mentés/betöltés) |
 | 🔧/🎮 | Szerkesztő ⇄ Játék mód váltás |
 
@@ -47,7 +47,7 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 
 - **Tulajdonságok**: koppintással popup-ból állíthatók (-5..+7), faj-korlátok ellenőrzésével
 - **Képzettségek**: csoportokba rendezve, szint popup-pal (1-15), TSz limit jelzéssel
-- **Fortélyok**: fok pöttyök (●/○), követelmény-ellenőrzés (piros jelzés nem teljesüléskor), többszörös fortélyok kezelése, egyedi Szabad fortély felvétele (saját név + kiterjesztés választás)
+- **Fortélyok**: fok pöttyök (●/○), követelmény-ellenőrzés (piros jelzés nem teljesüléskor - a követelmény lehet tulajdonság, képzettség vagy másik fortély megléte is), többszörös fortélyok kezelése, egyedi Szabad fortély felvétele (saját név + kiterjesztés választás)
 - **Fegyverek**: példányonként Mesterfegyver fok, Idea, Anyag beállítás
 - **Páncél**: struktúra, fémalapanyag, kidolgozottság, sisak, végtag, méret - SFÉ és MGT automatikus számítás
 - **KP sáv**: a tab-bar felett folyamatosan mutatja a maradék KP-t és a primer keretet
@@ -57,7 +57,7 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Aktív fül**: fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes), taktikák kombó-szabályokkal, harci helyzetek, manőverek, státuszok - minden választás azonnal hat a Harc fülre
 - **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, TÉ, SFÉ, VÉ csökkenés, MP boxok a fejlécben, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
   - **Kezdeményezés dobás**: a KÉ boxra koppintva `KÉ + k20` dobás nagy számmal; az utolsó 3 dobás a KÉ boxban látszik
-  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Ha a fegyver Erő-követelményét (nehéz: Erő 2, súlyos: Erő 3) nem éred el, Hátrány jelenik meg a dobáson. Manuális dobás is lehetséges (saját kocka értékkel).
+  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Ha a fegyver Erő-követelményét (nehéz: Erő 2, súlyos: Erő 3) nem éred el, Hátrány jelenik meg a dobáson. Manuális dobás is lehetséges (saját kocka értékkel). Az ablakban közvetlenül **Taktika** és **Harci helyzet** választó gombok is vannak, így a dobás előtt a fülváltás nélkül módosíthatod az aktív taktikát/helyzetet. Ha az aktív taktika nem tehet támadó dobást (pl. tisztán védekező), az ablak ezt jelzi.
   - **Sebzésdobás**: a Támadó dobás eredménye után a „Sebzés" gombbal indítható - SP bontás (alap, erő, MF, taktika, fortély), statikus bónuszok, Előny/Hátrány kocka picker és újradobás gomb. Az Átütés értéke is kijelzésre kerül (ha > 0).
     - **Ellenfél páncél**: kötelező választó (csupasz / puha / bőr / lánc / pikkely-lemez) - a sebzésjelleg (szúró/vágó/zúzó) és a páncél alapján módosítja az SP-t. Amíg nincs páncél választva, a dobás nem indítható.
     - Ha a fegyver az adott móddal nem sebez (pl. bola, háló, lasszó), „Ez a fegyver nem sebez" jelzés jelenik meg.
@@ -70,8 +70,8 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **ÉP táblázat / Sebesülés**: S1-S4 rubrikák, TÉ levonás automatika
   - **Sebesülés rögzítése**: típus (S/V/Z/FP) + érték választás (1-15, bővíthető ▾ nagyobb értékekre)
   - **Gyógyulás**: ÉP vagy FP + érték választás (csak a meglévő sebekre)
-- **Távharc**: CÉ + célpont VÉ kalkulátor szorzó-pickerekkel (mozgás, méret, szél stb.)
-  - **Célzó dobás**: a CÉ/VÉ box-ra koppintva - első fázisban aktív hatások, Előny/Hátrány picker és forrásaik (harci helyzetek, taktikák, státuszok, fortélyok), második fázisban `CÉ + k20` dobás a kiszámolt VÉ-vel összevetve → Találat / Nem talált jelzés. Találat után SP dobás is indítható. Manuális dobás is lehetséges.
+- **Távharc**: CÉ + célpont VÉ kalkulátor szorzó-pickerekkel (mozgás, méret, szél stb.). A távfegyver kártyákon a CÉ mellett az SP (sebzéspont) érték is látszik.
+  - **Célzó dobás**: a CÉ/VÉ box-ra koppintva - első fázisban aktív hatások, Előny/Hátrány picker és forrásaik (harci helyzetek, taktikák, státuszok, fortélyok), valamint közvetlen **Taktika** és **Harci helyzet** választó gombok; második fázisban `CÉ + k20` dobás a kiszámolt VÉ-vel összevetve → Találat / Nem talált jelzés. Találat után SP (sebzés) dobás is indítható, kötelező **Ellenfél páncél** választóval (a sebzésjelleg × páncél alapján módosítja az SP-t, ugyanúgy mint a közelharci Sebzés ablakban). Manuális dobás is lehetséges.
   - **Lövéskitérés**: védekező eszköz - válaszd ki a bejövő fegyvert és a távolságot, az app kiszámolja a célszámot (fegyver kategória + távolság). "Kitérés" gombbal `Akrobatika+Gyorsaság + k10` dobás a célszám ellen → siker (kitértél) / sikertelen (a lövész jöhet)
 
 ### Aktív fül
@@ -83,11 +83,12 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Státuszok**: fokozatonkénti hatások (Előny/Hátrány, letilt, szorzó stb.)
 
 ---
-## Felszerelés, Verziók, Napló, Jegyzetek (✏️)
+## Felszerelés, Akadály, Verziók, Napló, Jegyzetek (✏️)
 
-A fejléc ✏️ gombjával nyíló ablak négy részből áll:
+A fejléc ✏️ gombjával nyíló ablak öt részből áll:
 
 - **Felszerelés**: a cipelt tárgyak keretét kezeli. Fent a keret-kijelzés pöttyökkel (Max / Aktuális - a túlcsordulás piros pöttyel). A táblázat automatikusan tartalmazza a felvett fegyvereket, a pajzsot és a páncélt (ezek a saját adataikból számolódnak, „nincs" ↔ visel állapot kapcsolható), alattuk szabadon felvehető kézi tárgyak (név + méret). A pajzs/páncél „visel" állapota ugyanaz az igazságforrás, mint a Harc fül „Páncél viselve" kapcsolója és a Fegyver+pajzs fegyverfogás. A keret túllépése Hátrányt ad a Fizikai próbákra (§15/§33.1).
+- **Akadály**: a hosszútávú viselet / barangolás okozta akadályozás (fém páncél, közepes/nagy pajzs). A fejlécben piros pöttyök jelzik az Akadály-állapotot (1 vagy 2). Informatív panel: megmutatja, melyik felszerelés (páncél / pajzs) okozza és milyen hatással (Fizikai státusz + csökkent napi táv). Forrásonként állítható a „viselve / külső tárolóban / nincs nálad" állapot (csak a viselt számít), ez ugyanaz az igazságforrás, mint a Felszerelés panelé. Nem additív: mindig a legnagyobb forrás számít.
 - **Karakter verziók**: kiemelt pillanatképek (checkpoint) a karakterről. Bármikor létrehozhatsz egyet, megtekintheted vagy visszaállhatsz rá. Visszaállításnál választhatsz: az utána lévő verziók törlése, vagy új verzióként hozzáfűzés. Napló bejegyzés írásakor opcionálisan automatikusan is készül verzió.
 - **Napló**: játék session bejegyzések (dátum, KM, kaland neve, események). Összecsukható lista, szerkeszthető.
 - **Jegyzetek**: szabad szöveges jegyzetmező (mindig nyitva).
@@ -111,6 +112,18 @@ A Harc fülön a **VÉ csökkenés** label-re vagy értékre koppintva megjeleni
 ### Képzettség info panel (Játék mód)
 
 A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok (zöld = megvan, piros = nincs meg), és alul 🔗 szabály link + 🎲 Képzettségpróba dobás gomb.
+
+### Lebegő 🎲 próba-hub (Játék mód)
+
+Játék módban a képernyő sarkában megjelenik egy lebegő **🎲** gomb, amivel bárhonnan (bármelyik fülről) indítható próba vagy harci dobás anélkül, hogy a megfelelő fülre/boxra kellene navigálni:
+
+- **Tulajdonságpróba** / **Képzettségpróba** indítása (ugyanaz a dobás-ablak, mint a füleken)
+- **KÉ** dobás helyben (a 🎲 hubon belül, nem vált fület)
+- **TÉ** (Támadó dobás) / **CÉ** (Célzó dobás) gyors indítása - a hub a megfelelő fülre vált és megnyitja a dobás-ablakot
+
+A FAB automatikusan elrejtőzik, ha bármilyen más popup/ablak nyitva van, hogy ne zavarjon.
+
+> A dobás-ablakokban (Kezdeményezés, Támadó, Célzó, Tulajdonság-, Képzettségpróba) a dobás-chipeken a kockatípus is látszik (k6 / k10 / k20).
 
 ### Tulajdonságpróba dobás (Játék mód)
 
@@ -147,7 +160,7 @@ A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képz
 
 ### NJK switcher sáv és harci jelölés (KM eszköz)
 
-Ha **NJK** (Nem Játékos Karakter) van kijelölve, a fejléc alatt megjelenik egy fix sáv az összes tárolt NJK-val (egy-egy box: becenév vagy név + Életerő állapot). A Kalandmester harc közben egyetlen koppintással válthat az NJK-k között, anélkül hogy a Karakterek ablakot megnyitná. A sáv tetején az aktív NJK gyors harcértékei (KÉ/TÉ/VÉ) láthatók; az egyes NJK boxokra mutatva (hover) azok harcértékei is felugranak egy kis lebegő ablakban.
+Ha **NJK** (Nem Játékos Karakter) van kijelölve, a fejléc alatt megjelenik egy fix sáv az összes tárolt NJK-val (egy-egy box: becenév vagy név + Életerő állapot). A Kalandmester harc közben egyetlen koppintással válthat az NJK-k között, anélkül hogy a Karakterek ablakot megnyitná. A sáv tetején az aktív NJK gyors harcértékei (KÉ/TÉ/VÉ) láthatók; az egyes NJK boxokra mutatva (hover) azok harcértékei is felugranak egy kis lebegő ablakban. Ha egy NJK Életereje 0-ra csökken (kampec), a boxban az Életerő-kijelzés helyett 💀 jelenik meg.
 
 Egy karakter a Tulajdonságok fül fejlécében a **JK / NJK chip**-pel tehető Nem Játékos Karakterré (a chip koppintással vált JK ⇄ NJK között).
 
@@ -168,6 +181,8 @@ A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára kop
 ### Fegyver infó popup
 
 A Harc fül fegyver táblázatában a fegyver **nevére** koppintva részletes infó popup nyílik: harcmodor szint, anyag, Idea, extrák, és a fegyver harcértékei aktoronként (TÉ/VÉ/SP/Átütés/Tám), elsődleges/másodlagos jelzéssel.
+
+> A Harcértékek fülön minden fegyverhez megadható egy **becenév** (pl. „Apám kardja"), ami a megadott alaptípus helyett jelenik meg a fegyvertáblában és az infó popupban.
 
 ### Fegyver Extrák (💡)
 
@@ -213,6 +228,7 @@ A "Szilánk" feliratra duplán koppintva 5 másodpercre megjelenik a build verzi
 ## Technikai tudnivalók
 
 - **Automatikus mentés**: minden módosítás azonnal localStorage-ba mentődik
+- **Elavult karakterek**: ha egy tárolt karakter régi (már nem támogatott) adat-sémával készült, az app betöltéskor jelzi és eltávolítja a karaktertárból (a karaktert újra kell kreálni; migrációs eszköz későbbi verzióváltásnál várható)
 - **Offline működés**: egyszer betöltve az app internet nélkül is használható
 - **Böngésző**: modern böngésző szükséges (Chrome, Firefox, Safari, Edge)
 - **Képernyő**: 320px szélességtől használható, optimális: mobil (< 600px)
