@@ -7,6 +7,8 @@ import { findMfFok } from '../../engine/mf-utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
 import { ideaDelta } from './shared';
 import { tiltásokFegyverre, fegyverOverrideÉrtékek } from '../../engine/effekt';
+import { alkalmazEffektek } from './extrak-effekt';
+import type { ExtraHatás } from '../../engine/data-types';
 import type { FegyverResult, FegyverResultMód } from './types';
 
 /** Cached filtered fegyver rules (keyed by rules array reference). */
@@ -100,6 +102,7 @@ function calcModResult(
     Átütés: mód.Átütés,
     támadások: fComp.get('fegyver_támadások') ?? 1, harckeret: fComp.get('fegyver_harckeret') ?? 0,
     sebesség: mód.Sebesség ?? 6, alap_TÉ: alapTÉ, alap_VÉ: alapVÉ,
+    mf_TÉ: mf.TÉ, mf_VÉ: mf.VÉ,
     // A rules.json fegyver_SP erőbónusz-tagja (ugyanazokból a ctx-értékekből) - csak a bontás-felirathoz.
     sp_erőbónusz: Math.floor(Math.min(fCtx.get('tulajdonságok.erő') ?? 0, mód.Erőlimit) * (1 + (fCtx.get('fegyver_fortély_SP_erőbónusz_arány') ?? 0))),
     sp_mf: mf.SP,
@@ -125,6 +128,8 @@ export function calcFegyverResults(
   alapOverride?: (fDef: FegyverAlap) => Map<string, number>,
   /** Fegyverenkénti fortély-módosítók (a sor saját fegyver-feltételeivel); hiányában a globális `fortelyMods`. */
   fortélyModsSorra?: (fDef: FegyverAlap) => Record<string, number>,
+  /** Fegyverenkénti fegyver-járulék (alap+MF+Idea) szorzó/override hatások célonként (Beszorítva, §065_03_03). */
+  járulékHatásSorra?: (fDef: FegyverAlap) => Map<string, ExtraHatás[]>,
 ): FegyverResult[] {
   const { konstansok } = data;
   const fegyverRules = getFegyverRules(data.rules);
@@ -158,10 +163,23 @@ export function calcFegyverResults(
     sorCtx.set('fegyver_fortély_harckeret', fm['harckeret'] ?? 0);
     const módok = fDef.módok.map(m => calcModResult(m, fDef, k, data, sorCtx, fegyverRules, mfFok, ovr));
     const ih = ideaHatás ?? { TÉ: 0, VÉ: 0, SP: 0 };
+    const járulék = járulékHatásSorra?.(fDef);
     for (const m of módok) {
       m.hk_fortély = fm['harckeret'] ?? 0;
       // Példány-Idea delta (Modell 2): a idea_default-tól való eltérés TÉ/VÉ/SP-hatása. Default példány → 0.
       m.TÉ += ih.TÉ; m.VÉ += ih.VÉ; m.SP += ih.SP;
+      // Fegyver-járulék post-szorzó (Beszorítva, md/065_03_03): a fegyver TÁRGY-járuléka (alap hossz-járulék
+      // + Mesterfegyver + Idea) feleződik/nullázódik; a karakter-rész (bázis + tulajdonság + HM + harcmodor-szint
+      // + harci fortélyok) érintetlen. FLOOR (§42.3). A járulékot kivonjuk, módosítjuk, visszaadjuk.
+      if (járulék?.size) {
+        for (const [cél, mező, ideaTag] of [['TÉ', 'mf_TÉ', ih.TÉ], ['VÉ', 'mf_VÉ', ih.VÉ]] as const) {
+          const hatások = járulék.get(cél);
+          if (!hatások?.length) continue;
+          const rész = (cél === 'TÉ' ? m.alap_TÉ : m.alap_VÉ) + (m[mező] as number) + ideaTag;
+          const mód = m as unknown as Record<string, number>;
+          mód[cél] = m[cél] - rész + alkalmazEffektek(rész, hatások);
+        }
+      }
     }
     const elsődleges = módok.find(m => m.sebzéstípus === 'elsődleges') ?? módok[0];
     return { fegyver_név: fDef.név, becenév, fegyverhossz: fDef.fegyverhossz, módok, ...elsődleges, fortély: fm };

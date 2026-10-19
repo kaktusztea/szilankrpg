@@ -498,6 +498,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "hk_harcmodor": 6,
         "hk_mgt": 14,
         "jelleg": "zúzó",
+        "mf_TÉ": 0,
+        "mf_VÉ": 0,
         "módok": [
           {
             "Forgatás": "egykezes",
@@ -513,6 +515,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 6,
             "hk_mgt": 14,
             "jelleg": "zúzó",
+            "mf_TÉ": 0,
+            "mf_VÉ": 0,
             "sebesség": 5,
             "sebzéstípus": "elsődleges",
             "sp_erőbónusz": 3,
@@ -557,6 +561,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "hk_harcmodor": 8,
         "hk_mgt": 14,
         "jelleg": "vágó-egyenes",
+        "mf_TÉ": 2,
+        "mf_VÉ": 2,
         "módok": [
           {
             "Forgatás": "egykezes",
@@ -572,6 +578,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 8,
             "hk_mgt": 14,
             "jelleg": "vágó-egyenes",
+            "mf_TÉ": 2,
+            "mf_VÉ": 2,
             "sebesség": 8,
             "sebzéstípus": "elsődleges",
             "sp_erőbónusz": 3,
@@ -593,6 +601,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 8,
             "hk_mgt": 14,
             "jelleg": "szúró",
+            "mf_TÉ": 2,
+            "mf_VÉ": 2,
             "sebesség": 8,
             "sebzéstípus": "másodlagos",
             "sp_erőbónusz": 3,
@@ -637,6 +647,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "hk_harcmodor": 6,
         "hk_mgt": 14,
         "jelleg": "vágó-egyenes",
+        "mf_TÉ": 1,
+        "mf_VÉ": 1,
         "módok": [
           {
             "Forgatás": "egykezes",
@@ -652,6 +664,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 6,
             "hk_mgt": 14,
             "jelleg": "vágó-egyenes",
+            "mf_TÉ": 1,
+            "mf_VÉ": 1,
             "sebesség": 6,
             "sebzéstípus": "elsődleges",
             "sp_erőbónusz": 3,
@@ -673,6 +687,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 6,
             "hk_mgt": 14,
             "jelleg": "szúró",
+            "mf_TÉ": 1,
+            "mf_VÉ": 1,
             "sebesség": 6,
             "sebzéstípus": "másodlagos",
             "sp_erőbónusz": 3,
@@ -717,6 +733,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "hk_harcmodor": 6,
         "hk_mgt": 14,
         "jelleg": "zúzó",
+        "mf_TÉ": 0,
+        "mf_VÉ": 0,
         "módok": [
           {
             "Forgatás": "egykezes",
@@ -732,6 +750,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 6,
             "hk_mgt": 14,
             "jelleg": "zúzó",
+            "mf_TÉ": 0,
+            "mf_VÉ": 0,
             "sebesség": 7,
             "sebzéstípus": "elsődleges",
             "sp_erőbónusz": 2,
@@ -778,6 +798,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
       "hk_harcmodor": 8,
       "hk_mgt": 14,
       "jelleg": "vágó-egyenes",
+      "mf_TÉ": 2,
+      "mf_VÉ": 2,
       "módok": [
         {
           "Forgatás": "egykezes",
@@ -793,6 +815,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
           "hk_harcmodor": 8,
           "hk_mgt": 14,
           "jelleg": "vágó-egyenes",
+          "mf_TÉ": 2,
+          "mf_VÉ": 2,
           "sebesség": 8,
           "sebzéstípus": "elsődleges",
           "sp_erőbónusz": 3,
@@ -1074,6 +1098,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "hk_harcmodor": 0,
         "hk_mgt": 3,
         "jelleg": "zúzó",
+        "mf_TÉ": 0,
+        "mf_VÉ": 0,
         "módok": [
           {
             "Forgatás": "egykezes",
@@ -1089,6 +1115,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 0,
             "hk_mgt": 3,
             "jelleg": "zúzó",
+            "mf_TÉ": 0,
+            "mf_VÉ": 0,
             "sebesség": 5,
             "sebzéstípus": "elsődleges",
             "sp_erőbónusz": 2,
@@ -1133,6 +1161,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
         "hk_harcmodor": 6,
         "hk_mgt": 3,
         "jelleg": "vágó-íves",
+        "mf_TÉ": 1,
+        "mf_VÉ": 1,
         "módok": [
           {
             "Forgatás": "egykezes",
@@ -1148,6 +1178,8 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
             "hk_harcmodor": 6,
             "hk_mgt": 3,
             "jelleg": "vágó-íves",
+            "mf_TÉ": 1,
+            "mf_VÉ": 1,
             "sebesség": 6,
             "sebzéstípus": "elsődleges",
             "sp_erőbónusz": 2,

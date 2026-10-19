@@ -37,13 +37,13 @@
     "hatás": [
       {
         "cél": "TÉ",
-        "alcél": "felszerelés:fegyver",
+        "alcél": "felszerelés:fegyver_járulék",
         "mód": "szorzó",
         "érték": 0.5
       },
       {
         "cél": "VÉ",
-        "alcél": "felszerelés:fegyver",
+        "alcél": "felszerelés:fegyver_járulék",
         "mód": "szorzó",
         "érték": 0.5
       }
@@ -63,13 +63,13 @@
     "hatás": [
       {
         "cél": "TÉ",
-        "alcél": "felszerelés:fegyver",
+        "alcél": "felszerelés:fegyver_járulék",
         "mód": "override",
         "érték": 0
       },
       {
         "cél": "VÉ",
-        "alcél": "felszerelés:fegyver",
+        "alcél": "felszerelés:fegyver_járulék",
         "mód": "override",
         "érték": 0
       }

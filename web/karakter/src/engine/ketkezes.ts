@@ -114,7 +114,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   const módEredmény: FegyverResultMód = {
     aktor: jobbElsődleges.aktor, jelleg: jobbElsődleges.jelleg, sebzéstípus: 'elsődleges', Forgatás: jobbElsődleges.Forgatás,
     TÉ, VÉ, SP, Átütés: jobbElsődleges.Átütés, támadások, harckeret: hk, sebesség,
-    alap_TÉ: alapTÉ, alap_VÉ: alapVÉ, sp_erőbónusz: erőbónusz, sp_mf: mfSP,
+    alap_TÉ: alapTÉ, alap_VÉ: alapVÉ, mf_TÉ: mfTÉ, mf_VÉ: mfVÉ, sp_erőbónusz: erőbónusz, sp_mf: mfSP,
     hk_harcmodor: harcmodorSzint, hk_gyorsaság: k.tulajdonságok.gyorsaság,
     hk_mgt: mgt, hk_fortély: fortelyMods['harckeret'] ?? 0,
   };

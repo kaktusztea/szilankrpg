@@ -43,8 +43,8 @@ extrak:
     feltétel:
       - {típus: harci_helyzet, id: beszorítva}
     hatás:
-      - {cél: TÉ, alcél: "felszerelés:fegyver", mód: szorzó, érték: 0.5}
-      - {cél: VÉ, alcél: "felszerelés:fegyver", mód: szorzó, érték: 0.5}
+      - {cél: TÉ, alcél: "felszerelés:fegyver_járulék", mód: szorzó, érték: 0.5}
+      - {cél: VÉ, alcél: "felszerelés:fegyver_járulék", mód: szorzó, érték: 0.5}
 
   - id: beszorithato_nagyon
     név: "Beszorítható (nagyon)"
@@ -53,8 +53,8 @@ extrak:
     feltétel:
       - {típus: harci_helyzet, id: beszorítva}
     hatás:
-      - {cél: TÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
-      - {cél: VÉ, alcél: "felszerelés:fegyver", mód: override, érték: 0}
+      - {cél: TÉ, alcél: "felszerelés:fegyver_járulék", mód: override, érték: 0}
+      - {cél: VÉ, alcél: "felszerelés:fegyver_járulék", mód: override, érték: 0}
 
   - id: panceltalant_jobban_sebez
     név: "Páncéltalant jobban sebez"

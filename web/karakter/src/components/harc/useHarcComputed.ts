@@ -11,7 +11,7 @@ import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
 import { buildPajzsFegyverNév, véVesztésSzorzó } from './shared';
-import { aktívTiltások, tiltásokFegyverre, fegyverOverrideÉrtékek, gyűjtHelyzetEffektek, gyűjtStátuszEffektek, értékCélra, flatBontás } from '../../engine/effekt';
+import { aktívTiltások, tiltásokFegyverre, fegyverOverrideÉrtékek, fegyverJárulékHatások, gyűjtHelyzetEffektek, gyűjtStátuszEffektek, értékCélra, flatBontás } from '../../engine/effekt';
 import { alkalmazEffektek } from './extrak-effekt';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
@@ -91,7 +91,8 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
       sor.add(`fegyver_kategória:${fDef.kategória}`);
       for (const t of tiltásokFegyverre(fDef, session, data, aktívFeltételek)) sor.add(`tiltás:${t.id}`);
       return calcFortelyMods(k, session, data, sor, createFeltételEvaluator(sor, session, computed, ctx, stringCtx).feltételTeljesül);
-    });
+    },
+    fDef => fegyverJárulékHatások(fDef, data, aktívFeltételek));
   jelölFegyverTiltások(fegyverResults, session, data, aktívFeltételek);
   if (támadásKorlát.length) for (const r of fegyverResults) for (const m of [r, ...r.módok]) m.támadások = alkalmazEffektek(m.támadások, támadásKorlát);
 

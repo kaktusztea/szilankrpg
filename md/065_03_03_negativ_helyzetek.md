@@ -2,12 +2,12 @@
 
 ## Beszorítva
 
-Szűk térben beszorítva nem tudod fegyvered technikáit maradéktalanul alkalmazni. A hátrányt a fegyvered hossza dönti el.
+Szűk térben beszorítva nem tudod fegyvered technikáit maradéktalanul alkalmazni. A hátrányt a fegyvered hossza dönti el. A büntetés a fegyver harcérték-járulékát (fegyver alap TÉ/VÉ + Mesterfegyver + Idea) érinti; a karakter saját része (tulajdonságok, harcmodor, harci fortélyok) változatlan.
 
 ```
 Rövid/közepes fegyver (hossz < 5): nincs hatás
-Közepesen hosszú (hossz 5): fegyver TÉ/VÉ feleződik
-Hosszú (hossz 7+):           fegyver TÉ/VÉ: 0
+Közepesen hosszú (hossz 5): fegyver-járulék feleződik (TÉ/VÉ)
+Hosszú (hossz 7+):           fegyver-járulék 0 (TÉ/VÉ)
 ```
 
 A fegyverenkénti büntetést a [Beszorítható (enyhén/nagyon)](065_03_04_fegyver_harci_helyzetek.md) fegyver-extra adja, a fegyverhossz-kategória szerint.

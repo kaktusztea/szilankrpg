@@ -34,7 +34,8 @@ alfeltetel_prefix_enum: [manőver, ellenfél_harci_helyzet]   # ellenfél_harci_
 alcel_prefix_enum: [felszerelés]
 # felszerelés-komponens értékek (a cél melyik felszerelés-részére hat)
 # nagyobb_fegyver / kisebb_fegyver: kétkezes harcnál a hosszabb / rövidebb fegyver (md 065_05 „Nagyobb fegyver"; a fortély-követelmények is ezt a listát használják)
-alcel_felszereles_enum: [fegyver, pajzs, páncél, nagyobb_fegyver, kisebb_fegyver]
+# fegyver_járulék: a fegyver mint TÁRGY teljes harcérték-járuléka (alap hossz-járulék + Mesterfegyver + Idea) - a post-szorzó erre hat (szemben a 'fegyver'-rel, ami a bázis-csere alap-komponense)
+alcel_felszereles_enum: [fegyver, fegyver_járulék, pajzs, páncél, nagyobb_fegyver, kisebb_fegyver]
 
 # feltétel ÉRTÉK-enumok - CSAK a fix értékkészletű típusokra. A katalógus-referencia típusoknál
 # (fortély/képzettség/státusz/harci_helyzet/aktor/narratív) NINCS enum - más katalógusra/entitásra mutatnak.

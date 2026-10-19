@@ -332,3 +332,22 @@ export function fegyverOverrideÉrtékek(fDef: FegyverAlap, session: Session, da
   }
   return ki;
 }
+
+const FEGYVER_JÁRULÉK_KOMPONENS = 'felszerelés:fegyver_járulék';
+
+/**
+ * EGY fegyverre ható, a fegyver TÁRGY-járulékára (alap hossz-járulék + Mesterfegyver + Idea) vonatkozó
+ * szorzó/override hatások célonként (TÉ/VÉ), a biztosan aktív extrákból (pl. Beszorítható enyhén/nagyon).
+ * A hívó (fegyver-calc) ezt a fegyver-járulék rész-összegre alkalmazza post-lépésben - a karakter-rész
+ * (bázis + tulajdonságok + HM + harcmodor-szint + harci fortélyok) érintetlen marad. L. md/065_03_03 „Beszorítva".
+ */
+export function fegyverJárulékHatások(fDef: FegyverAlap, data: GameData, aktívFeltételek: Set<string>): Map<string, ExtraHatás[]> {
+  const ki = new Map<string, ExtraHatás[]>();
+  for (const h of biztosExtraHatások(fDef, data, aktívFeltételek)) {
+    if (h.alcél !== FEGYVER_JÁRULÉK_KOMPONENS) continue;
+    if (h.mód !== 'szorzó' && h.mód !== 'override') continue;
+    if (typeof h.érték !== 'number') continue;
+    (ki.get(h.cél) ?? ki.set(h.cél, []).get(h.cél)!).push(h);
+  }
+  return ki;
+}

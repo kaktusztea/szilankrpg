@@ -17,6 +17,9 @@ export interface FegyverResultMód {
   sebesség: number;
   alap_TÉ: number;
   alap_VÉ: number;
+  /** A Mesterfegyver-bónusz TÉ/VÉ része - a fegyver-járulék post-szorzóhoz (Beszorítva). */
+  mf_TÉ: number;
+  mf_VÉ: number;
   /** Az SP-ben lévő Erőbónusz (min(Erő, mód Erőlimit) × (1 + fortély-arány), FLOOR) - a Sebzés popup bontásához. */
   sp_erőbónusz: number;
   /** Az SP-ben lévő Mesterfegyver-bónusz (konstansok.mesterfegyver_bónuszok) - a Sebzés popup bontásához. */

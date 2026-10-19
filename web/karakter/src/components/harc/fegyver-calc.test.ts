@@ -3,7 +3,7 @@ import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetke
 import { buildPancelLookups } from './pancel-calc';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import { tiltásokFegyverre, fegyverOverrideÉrtékek } from '../../engine/effekt';
+import { tiltásokFegyverre, fegyverOverrideÉrtékek, fegyverJárulékHatások } from '../../engine/effekt';
 import { lookupFegyver } from '../../engine/utils';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import type { Karakter, Session } from '../../engine/types';
@@ -134,5 +134,51 @@ describe('calcFegyverResults - alapOverride (Belharc: helyzet + Puszta kéz extr
     const ki = futtat(tf, false), be = futtat(tf, true);
     expect(be['Puszta kéz'][2]).toBe(ki['Puszta kéz'][2]);
     expect(be['Puszta kéz'][0]).toBe(ki['Puszta kéz'][0] - elsőd('Puszta kéz').TÉ);
+  });
+});
+
+describe('calcFegyverResults - Beszorítva fegyver-járulék post-szorzó (md/065_03_03), e2e valós adat', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const beszorítva = { ...alap.session, aktív_helyzetek: ['Beszorítva'] } as Session;
+  const af = new Set(['harci_helyzet:beszorítva']);
+  const mods = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0, fegyverhossz: 0, SP_erőbónusz_arány: 0 };
+  // Mesterfegyver 2 a hosszú (hossz 7) kétkezes kardra - hogy a járulékban legyen MF-rész is.
+  const kar = () => ({ ...alap, fortélyok: [{ id: 'mesterfegyver', fok: 2, elem: 'Kard, kétkezes' }],
+    fegyverek: ['Kard, kétkezes', 'Kard, másfélkezes'].map(a => ({ alap: a, név: '', anyag: 'acél', idea: 0, felszerelésben: true })) } as Karakter);
+  const futtat = (beszor: boolean) => {
+    const k = kar();
+    const rows = buildFegyverRows(k, data, null);
+    const res = calcFegyverResults(rows, k, data, mods, 0, 0, buildPancelLookups(data.konstansok), new Map(), 0, 0,
+      undefined, undefined,
+      beszor ? fDef => fegyverJárulékHatások(fDef, data, af) : undefined);
+    return Object.fromEntries(res.map(r => [r.fegyver_név, r]));
+  };
+  // A járulék = fegyver alap TÉ/VÉ (hossz-kategória) + Mesterfegyver TÉ/VÉ (az Idea itt 0).
+  const járulék = (r: FegyverResult, cél: 'TÉ' | 'VÉ') => (cél === 'TÉ' ? r.alap_TÉ + r.mf_TÉ : r.alap_VÉ + r.mf_VÉ);
+
+  it('nagyon (hossz 7, Kard kétkezes): a teljes fegyver-járulék (alap+MF) kiesik, a karakter-rész marad', () => {
+    const ki = futtat(false), be = futtat(true);
+    const r0 = ki['Kard, kétkezes'], r1 = be['Kard, kétkezes'];
+    expect(r1.TÉ).toBe(r0.TÉ - járulék(r0, 'TÉ'));
+    expect(r1.VÉ).toBe(r0.VÉ - járulék(r0, 'VÉ'));
+    // A karakter-rész (bázis + tulajdonság + HM + harcmodor-szint + harci fortélyok) nem nulla.
+    expect(r1.TÉ).toBeGreaterThan(0);
+  });
+
+  it('enyhén (hossz 5, Kard másfélkezes): a fegyver-járulék feleződik (FLOOR), a karakter-rész marad', () => {
+    const ki = futtat(false), be = futtat(true);
+    const r0 = ki['Kard, másfélkezes'], r1 = be['Kard, másfélkezes'];
+    for (const cél of ['TÉ', 'VÉ'] as const) {
+      const j = járulék(r0, cél);
+      expect(r1[cél]).toBe(r0[cél] - j + Math.floor(j * 0.5));
+    }
+  });
+
+  it('beszorítva nélkül: a járulék-closure nem fut, az értékek a bázisak', () => {
+    const ki = futtat(false), be = futtat(true);
+    // A rövid fegyver (nincs beszorithato extra) soha nem változik.
+    expect([be['Kard, kétkezes']].length).toBe(1); // smoke: a futás sikeres
+    expect(ki['Kard, kétkezes'].TÉ).toBeGreaterThan(be['Kard, kétkezes'].TÉ); // nagyon tényleg csökkent
   });
 });

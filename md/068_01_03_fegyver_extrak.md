@@ -23,7 +23,7 @@ A feltételek nélkül nem jár a bónusz. Lásd még: [Harci iskola](fortelyok.
 
 ```
 Feltétel: Beszorítva harci helyzet
-Hatás:    fegyver TÉ/VÉ feleződik
+Hatás:    fegyver-járulék (alap+MF+Idea) TÉ/VÉ feleződik
 ```
 
 Közepesen hosszú fegyver (hossz `5`): beszorítva csak részben forgatható.
@@ -32,10 +32,10 @@ Közepesen hosszú fegyver (hossz `5`): beszorítva csak részben forgatható.
 
 ```
 Feltétel: Beszorítva harci helyzet
-Hatás:    fegyver TÉ/VÉ: 0 (nem forgatható rendesen)
+Hatás:    fegyver-járulék (alap+MF+Idea) TÉ/VÉ: 0
 ```
 
-Hosszú fegyver (hossz `7` és felette): beszorítva nem forgatható rendesen.
+Hosszú fegyver (hossz `7` és felette): beszorítva nem forgatható rendesen. A karakter saját harcérték-része (tulajdonságok, harcmodor, harci fortélyok) változatlan.
 
 ### Páncéltalant jobban sebez
 
