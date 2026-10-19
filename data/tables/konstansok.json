@@ -198,7 +198,7 @@
     "max_mp_támadó": 4,
     "max_mp_védő": 2,
     "belharc_fok_szorzó": 2,
-    "végrehajtás_TÉ_standard": 4,
+    "végrehajtás_TÉ_standard": 5,
     "sentinel_nem_kísérelhető": 99,
     "sentinel_immunis": -99,
     "globális_módosítók": [

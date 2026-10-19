@@ -75,10 +75,11 @@ describe('Golden #2 - rules.json alapszámítások (Teszt karakter, 10. TSz, Dzs
   it('CÉ_alap = -12', () => expect(results.get('CÉ_alap')).toBe(-12));
   it('Aura = 24 (Dzsenn)', () => expect(results.get('Aura')).toBe(24));
 
-  // Bronz lánc/sodrony, idea=3, sisak, végtagvédettség=3, nem passzol, rongálódás=3
+  // Bronz lánc/sodrony, idea=1, sisak, végtagvédettség=3, nem passzol, rongálódás=3
+  // sfé = struktúra(10) + bronz_sfé_bónusz(-5) + idea(1) - rongálódás(3) = 3
   it('páncél_MGT = 14', () => expect(results.get('páncél_MGT')).toBe(14));
-  it('sfé_fizikai = 5', () => expect(results.get('sfé_fizikai')).toBe(5));
-  it('sfé_energia = 5', () => expect(results.get('sfé_energia')).toBe(5));
+  it('sfé_fizikai = 3', () => expect(results.get('sfé_fizikai')).toBe(3));
+  it('sfé_energia = 3', () => expect(results.get('sfé_energia')).toBe(3));
   it('páncél_lefedettség = 90', () => expect(results.get('páncél_lefedettség')).toBe(90));
   it('merevvért_TÉ_büntetés = 0 (lánc/sodrony nem merev)', () => expect(results.get('merevvért_TÉ_büntetés')).toBe(0));
 });

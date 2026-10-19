@@ -32,9 +32,9 @@ Fázisai:
 ### `1.` Végrehajtás (`V`)
 
 ```
-Rühes TÉ:+4 értékkel leadja támadását
+Rühes TÉ:+5 értékkel leadja támadását
 
-TÉ = 35 + 4 + k20(11) = 50
+TÉ = 35 + 5 + k20(11) = 51
 
 Ez nagyobb mint az ellenfél VÉ
 → Sikeres Végrehajtás

@@ -188,7 +188,7 @@ manőver:
   max_mp_támadó: 4
   max_mp_védő: 2
   belharc_fok_szorzó: 2
-  végrehajtás_TÉ_standard: 4       # a Végrehajtás fázis TÉ-módosítójának default-ja (manoverek.yaml végrehajtás_té_módosító hiányában)
+  végrehajtás_TÉ_standard: 5       # a Végrehajtás fázis TÉ-módosítójának default-ja (manoverek.yaml végrehajtás_té_módosító hiányában)
   # Helyzetfüggő módosító sentinel: ha egy KIVÁLASZTOTT sor értéke ez, a Manőver az adott
   # körülmények közt NEM kísérelhető meg (nem dobás-módosító, hanem jelző). L. md/066_04.
   sentinel_nem_kísérelhető: 99

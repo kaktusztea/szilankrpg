@@ -42,7 +42,7 @@
     ],
     "követelmények": [],
     "fázis_cselekvő": {},
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Áttörés",
@@ -95,7 +95,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Csonkolás (kéz)",
@@ -115,7 +115,7 @@
     "id": "csonkolás_kéz",
     "fázis_info": {
       "aktív": {
-        "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+        "V": "Nem kapod meg a +5 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
       },
       "passzív": {
         "V": "Ellenfeled sima támadást dob rád. Siker esetén jöhet az Ellenpróba."
@@ -167,7 +167,7 @@
     "id": "csonkolás_láb",
     "fázis_info": {
       "aktív": {
-        "V": "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+        "V": "Nem kapod meg a +5 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
       },
       "passzív": {
         "V": "Ellenfeled sima támadást dob rád. Siker esetén jöhet az Ellenpróba."
@@ -321,7 +321,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Felállás földről",
@@ -345,7 +345,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Forgószél",
@@ -390,7 +390,7 @@
     "helyzetfüggő_módosítók": [],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Földrevitel",
@@ -443,7 +443,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Kibontakozás",
@@ -504,7 +504,7 @@
     ],
     "követelmények": [],
     "fázis_cselekvő": {},
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lábkirántás szálfegyverrel",
@@ -559,7 +559,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lánccsapda",
@@ -602,7 +602,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lánccsapdából szabadítás",
@@ -626,7 +626,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lefegyverzés",
@@ -708,7 +708,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Leütés hátulról",
@@ -773,7 +773,7 @@
     ],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Mesterjel",
@@ -828,7 +828,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Mögékerülés",
@@ -879,7 +879,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Pajzsrongálás",
@@ -922,7 +922,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Pajzzsal felöklelés",
@@ -993,7 +993,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Piszkos trükk",
@@ -1035,7 +1035,7 @@
     "helyzetfüggő_módosítók": [],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Precíz támadás",
@@ -1136,7 +1136,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Távoltartás",
@@ -1157,7 +1157,7 @@
     },
     "fázis_info": {
       "aktív": {
-        "M": "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
+        "M": "Megszakító támadás TÉ:+5 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
       },
       "passzív": {
         "M": "Ellenfeled megszakító támadása. Találat esetén (nem sebez) elveszíted a következő támadásodat."
@@ -1193,7 +1193,7 @@
       }
     ],
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Terelés",
@@ -1261,7 +1261,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Átdobás",
@@ -1314,7 +1314,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Belharcba kerülés",
@@ -1401,7 +1401,7 @@
     ],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Belharcból kibontakozás",
@@ -1460,7 +1460,7 @@
     ],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Feszítés, Leszorítás",
@@ -1521,7 +1521,7 @@
     ],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Feszítésből kijövetel",
@@ -1580,7 +1580,7 @@
     ],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Gáncsolás",
@@ -1639,7 +1639,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Kéztörés",
@@ -1692,7 +1692,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lábtörés",
@@ -1745,7 +1745,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lefejelés",
@@ -1798,7 +1798,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Leforgatás/Irányítás",
@@ -1863,7 +1863,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Nyaktörés",
@@ -1928,7 +1928,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Hátas táncoltatása",
@@ -1976,7 +1976,7 @@
     ],
     "helyzetfüggő_módosítók": [],
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lóhátról lerántás",
@@ -2017,7 +2017,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lovas áttörés",
@@ -2051,7 +2051,7 @@
     },
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   },
   {
     "név": "Lovas megakasztása",
@@ -2101,6 +2101,6 @@
     ],
     "helyzetfüggő_módosítók": [],
     "ellenpróba_bünteti": false,
-    "végrehajtás_té_módosító": 4
+    "végrehajtás_té_módosító": 5
   }
 ]

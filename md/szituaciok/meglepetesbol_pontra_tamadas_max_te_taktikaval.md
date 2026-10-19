@@ -8,7 +8,7 @@ A fenti Manővernek [**Végrehajtás** és **Ellenpróba**](../066_04_manover_ve
 
 - itt jár a **Meglepetés** bónusza: `Előny+1` erre a Támadó dobásra
 - `TÉ:+3` a **Támadó taktikából**
-- `TÉ:+4`, ami a szokásos bónusz a Manőverek Végrehajtás fázisánál
+- `TÉ:+5`, ami a szokásos bónusz a Manőverek Végrehajtás fázisánál
 
 ### Manőver **Ellenpróba** fázisa
 

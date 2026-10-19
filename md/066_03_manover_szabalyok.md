@@ -15,7 +15,7 @@
 
 [Meglepett](065_03_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
 - Kimarad a **Megakasztás** (`M`) fázis a védő oldalán (ha van)
-- **Végrehajtás** dobásnál továbbra is `TÉ:+4` + `Előny+1` a dobásra
+- **Végrehajtás** dobásnál továbbra is `TÉ:+5` + `Előny+1` a dobásra
 - Támadó tehet bele `Manőver Pontot`
 - Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
 

@@ -76,7 +76,7 @@ Lecsapod ellenfeled kezét, vagy lábát.
   - `8`: kéz csonkolása
   - `10`: láb csonkolása
 - Fázisok: `Végrehajtás, Ellenpróba`
-	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
 - 🟨 Normál követelmény: [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény:
   - Vágófegyver használata
@@ -94,7 +94,7 @@ Lecsapod ellenfeled kezét, vagy lábát.
 
   - Nehézség: `10`
   - Fázisok: `Végrehajtás, Ellenpróba`
-  - **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+4` módosító
+  - **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+5` módosító
 
 **Hatás**: Olyan helyzetet alakítasz ki, ahol az ellenfél fegyvere már nem fenyeget, te viszont életfontosságú pont mellé helyezed fegyvered - például a nyakára teszed fegyveredet, - míg ő kiszolgáltatottan féltérdre rogy. Ha megmozdul, végzel vele.
 
@@ -433,7 +433,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
         - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
     - `12`: Szemkiszúrás
 - Fázisok: `Végrehajtás, Ellenpróba`
-	- **Végrehajtás** során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
 - 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
@@ -484,7 +484,7 @@ Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, min
         - `+4`: Alakzatban (nagy előny, KM)
         - `+2`: Alakzatban (kis előny, KM)
 
-**Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
+**Hatás**: leadhatsz `TÉ:+5`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 
 <br />
 

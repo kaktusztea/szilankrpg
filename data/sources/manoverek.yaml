@@ -62,7 +62,7 @@ manőverek:
   id: "csonkolás_kéz"
   fázis_info:
     aktív:
-      V: "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      V: "Nem kapod meg a +5 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
     passzív:
       V: "Ellenfeled sima támadást dob rád. Siker esetén jöhet az Ellenpróba."
   végrehajtás_té_módosító: 0
@@ -85,7 +85,7 @@ manőverek:
   id: "csonkolás_láb"
   fázis_info:
     aktív:
-      V: "Nem kapod meg a +4 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
+      V: "Nem kapod meg a +5 TÉ módosítót - sima támadást dobsz. Siker esetén jöhet az Ellenpróba."
     passzív:
       V: "Ellenfeled sima támadást dob rád. Siker esetén jöhet az Ellenpróba."
   végrehajtás_té_módosító: 0
@@ -492,7 +492,7 @@ manőverek:
     M: "én"
   fázis_info:
     aktív:
-      M: "Megszakító támadás TÉ:+4 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
+      M: "Megszakító támadás TÉ:+5 bónusszal. Siker = eltaláltad (nem sebzel), ellenfeled elveszíti a következő támadását."
     passzív:
       M: "Ellenfeled megszakító támadása. Találat esetén (nem sebez) elveszíted a következő támadásodat."
   követelmények:

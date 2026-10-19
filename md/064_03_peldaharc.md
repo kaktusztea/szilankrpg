@@ -213,7 +213,7 @@ A manőver fázisai: `Végrehajtás, Ellenpróba`.
 
 #### `1.` Végrehajtás
 
-Tetves sima támadást dob (a Precíz támadás manővernél ❗**nem jár** a szokásos `TÉ:+4` manőver bónusz❗):
+Tetves sima támadást dob (a Precíz támadás manővernél ❗**nem jár** a szokásos `TÉ:+5` manőver bónusz❗):
 
 ```
 Tetves TÉ dobás: k20 → 15

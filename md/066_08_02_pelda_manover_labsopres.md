@@ -32,12 +32,12 @@ Fázisai
 ### 1. Végrehajtás
 
 ```
-Tetves támad TÉ:+4 bónusszal
+Tetves támad TÉ:+5 bónusszal
 
-TÉ = 50
-(35 + 4 + k20)
+TÉ = 51
+(35 + 5 + k20)
 
-50 > ellenfél VÉ
+51 > ellenfél VÉ
 → Sikeres Végrehajtás
 ```
 

@@ -16,7 +16,7 @@ Az **Ellenfél** teszi. Sima (extra) támadás, ami ha talál, a Manőver automa
 
 #### `2.` Végrehajtás
 
-Manővert végző teszi aktuális, fegyveres `TÉ` értékkel. Sikeréhez sebzést érő támadás szükséges `TÉ:+4` módosítóval, de nem okoz sebet. Ha a támadás sikertelen, a Manőver is. Azért dobjuk ezt az Ellenpróba előtt, mert ez ad gyorsabban eredményt 🔆
+Manővert végző teszi aktuális, fegyveres `TÉ` értékkel. Sikeréhez sebzést érő támadás szükséges `TÉ:+5` módosítóval, de nem okoz sebet. Ha a támadás sikertelen, a Manőver is. Azért dobjuk ezt az Ellenpróba előtt, mert ez ad gyorsabban eredményt 🔆
 
 #### `3.` Ellenpróba
 
@@ -40,10 +40,10 @@ Ha a Megakasztás találatot ér el (nem kell, hogy valós sebzést is okozzon),
 ## ⚜️`2.` Végrehajtás (V)
 
 ```
-(TÉ +4 + k20)  vs  VÉ
+(TÉ +5 + k20)  vs  VÉ
 ```
 
-Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékeddel, melyhez `TÉ:+4` módosító járul. Ha ez a támadás sikeres, akkor jöhet az Ellenpróba fázis (ha szükséges).
+Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékeddel, melyhez `TÉ:+5` módosító járul. Ha ez a támadás sikeres, akkor jöhet az Ellenpróba fázis (ha szükséges).
 
 Az aktuális `TÉ` értékébe beleszámít az esetleges [több-támadás levonás](063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt) is (`TÉ:-3`), amennyiben **legalább** `2` támadást adsz le egy körben! De ezt ellensúlyozandó kombinálhatod [1 támadás taktikával](065_02_harci_taktikak.md#1-támadás-taktika).
 
