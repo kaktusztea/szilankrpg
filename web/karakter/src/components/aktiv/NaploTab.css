@@ -201,7 +201,7 @@
   background: transparent;
 }
 .felsz-dot.filled { background: #fff; border-color: #fff; }
-.felsz-dot.filled.over { background: #e06a6a; border-color: #e06a6a; }
+.felsz-dot.filled.over { background: #c94646; border-color: #c94646; }
 .felsz-warning {
   margin: 6px 0;
   padding: 6px 10px;
@@ -278,4 +278,12 @@
   color: var(--text);
   font-size: 15px;
   cursor: pointer;
+}
+
+/* --- Akadály section (AkadalySection) --- */
+.akadaly-dots .felsz-dot.filled { background: #c94646; border-color: #c94646; }
+.akadaly-ures {
+  margin: 8px 0 2px;
+  font-size: 13px;
+  color: var(--text-dim);
 }

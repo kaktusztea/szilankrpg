@@ -164,3 +164,57 @@ export function felszerelésHátrány(terhelés: number, max: number, data: Game
 export function fizikaiTulajdonság(tulajdonság: string, data: GameData): boolean {
   return data.konstansok.felszerelés.hátrány_tulajdonságok.includes(tulajdonság);
 }
+
+// ============================================================
+// Akadály: hosszútávú viselet, barangolás (md/010_03_07_akadaly.md)
+// ============================================================
+
+/** Egy akadály-forrás (páncél vagy pajzs) hozzájárulása. */
+export interface AkadályForrás {
+  /** Megjelenítendő név (a felszerelés-sor neve). */
+  név: string;
+  /** Az általa kiváltott Akadály-állapot (1 vagy 2; 0 = nem vált ki). */
+  állapot: number;
+  /** A forrás "viselve" van-e (csak ekkor számít; a felszerelésSorok.számít alapján). */
+  viselve: boolean;
+}
+
+export interface AkadályÁllapot {
+  /** A végső Akadály-állapot: a viselt források állapotainak MAX-a (nem additív). 0 = nincs. */
+  állapot: number;
+  /** A két potenciális forrás (páncél / pajzs) - akkor is megjelenítve, ha épp nem viselt (0 állapot). */
+  források: AkadályForrás[];
+}
+
+/**
+ * Akadály-állapot a tartós viselet/cipelés szabálya szerint (md/010_03_07).
+ *
+ * Kiváltók (bármelyik a legnagyobbat adja - NEM additív):
+ * - 1. állapot: hajlékony FÉM páncél (>= páncél_fedés_min lefedettség) VAGY közepes pajzs
+ * - 2. állapot: merev FÉM páncél (>= páncél_fedés_min lefedettség) VAGY nagy pajzs
+ *
+ * ponytail: a páncél/pajzs "viselve" eldöntését a felszerelésSorok `számít` flagje adja (egy
+ * igazságforrás a Felszerelés accordionnal) - csak a viselt forrás számít az állapotba. A nem-fém
+ * páncél (bőr/posztó) és a kis pajzs soha nem vált ki Akadályt.
+ */
+export function akadályÁllapot(karakter: Karakter, data: GameData): AkadályÁllapot {
+  const sorok = felszerelésSorok(karakter, data);
+  const források: AkadályForrás[] = [];
+
+  const páncélSor = sorok.find(s => s.típus === 'páncél');
+  if (páncélSor) {
+    const struktúra = data.konstansok.páncél_struktúrák.find(s => s.struktúra === karakter.páncél.alap);
+    // Akadályt csak FÉM páncél vált ki (bőr/posztó nem); merev → 2, hajlékony → 1.
+    const állapot = struktúra?.fém ? (struktúra.merev ? 2 : 1) : 0;
+    források.push({ név: páncélSor.név, állapot, viselve: páncélSor.számít });
+  }
+
+  const pajzsSor = sorok.find(s => s.típus === 'pajzs');
+  if (pajzsSor) {
+    const állapot = { nagy: 2, közepes: 1, kis: 0 }[karakter.pajzs.méret] ?? 0;
+    források.push({ név: pajzsSor.név, állapot, viselve: pajzsSor.számít });
+  }
+
+  const állapot = források.reduce((m, f) => (f.viselve ? Math.max(m, f.állapot) : m), 0);
+  return { állapot, források };
+}

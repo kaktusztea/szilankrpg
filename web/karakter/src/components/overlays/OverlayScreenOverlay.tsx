@@ -1,6 +1,7 @@
 import { OverlayPortal } from './OverlayPortal';
 import { NaploTab } from '../aktiv/NaploTab';
 import { FelszerelesSection } from '../aktiv/FelszerelesSection';
+import { AkadalySection } from '../aktiv/AkadalySection';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 
@@ -23,6 +24,9 @@ export function OverlayScreenOverlay({ karakter, setKarakter, data, onClose, onV
         <div className="fullscreen-overlay-body">
           {/* Felszerelés - legfelső accordion */}
           <FelszerelesSection karakter={karakter} setKarakter={setKarakter} data={data} />
+
+          {/* Akadály - a Felszerelés alatt (hosszútávú viselet, md/010_03_07) */}
+          <AkadalySection karakter={karakter} setKarakter={setKarakter} data={data} />
 
           {/* Karakter verziók + Napló (accordionok) */}
           <NaploTab karakter={karakter} setKarakter={setKarakter} onViewCheckpoint={id => { onViewCheckpoint?.(id); onClose(); }} />
