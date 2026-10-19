@@ -111,3 +111,26 @@ describe('calcKétkezesHarc', () => {
     expect(r1.SP - b1.SP).toBe(2);
   });
 });
+
+/**
+ * Invariáns (Beszorítva, md/065_03_03): a beszorítás-bünti fegyverenként, a fegyver hossza szerint él.
+ * A kétkezes harcban EGYETLEN fegyver sem lehet hosszabb `kétkezes_harc_max_egy_fegyver`-nél, a beszorítható
+ * extrát viszont csak a legkisebb beszorítható fegyverhossztól (ma 5) örökli egy fegyver. Amíg a max-egy-fegyver
+ * limit e hossz ALATT van, kétkezes párba beszorítható fegyver nem kerülhet → a kétkezes ágat NEM kell bekötni.
+ * Ha ez az invariáns megdől (limit ≥ legkisebb beszorítható hossz), a `calcKétkezesHarc`-ba per-fegyver
+ * járulék-felezést kell tenni (l. calcFegyverResults post-lépés). A teszt adat-vezérelt (nincs hardcode).
+ */
+describe('Beszorítva invariáns: a kétkezes ág nem érhet el beszorítható fegyvert', () => {
+  it('kétkezes_harc_max_egy_fegyver < legkisebb beszorítható fegyverhossz', async () => {
+    const { loadGameDataSync } = await import('../__tests__/load-gamedata');
+    const data = loadGameDataSync();
+    const rows = (data.fegyverek as { fegyverhossz: number; extrák?: { id: string }[] }[]);
+    const beszoríthatóHosszak = rows
+      .filter(f => (f.extrák ?? []).some(e => e.id.startsWith('beszorithato')))
+      .map(f => f.fegyverhossz);
+    const minBeszorítható = Math.min(...beszoríthatóHosszak);
+    const maxEgyFegyver = data.konstansok.kétkezes_harc_max_egy_fegyver as number;
+    expect(beszoríthatóHosszak.length).toBeGreaterThan(0);
+    expect(maxEgyFegyver).toBeLessThan(minBeszorítható);
+  });
+});
