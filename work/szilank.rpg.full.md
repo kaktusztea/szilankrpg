@@ -12086,27 +12086,33 @@ Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2
 ### Képzettségpróba hátrányok (összes)
 
 `Hátrány-1`
+- Átkozott Képzettség (1) (adott Képzettségre)
+- Átkozott Viselkedés (1) (KM határozza meg)
 - Eszmélet (1) Bódultság
 - Hangulat (4) Obszesszív (kivéve az obszesszió tárgyát)
-- Rosszullét (1) Közepes
 - Sérült (1) S3
 
 `Hátrány-2`
+- Átkozott Képzettség (2) (adott Képzettségre)
+- Átkozott Viselkedés (2) (KM határozza meg)
 - Eszmélet (2) Kábultság
-- Sérült (1) S3
+- Sérült (2) S4
 
 Automatikus kudarc
 - Eszmélet (3) Ájulás
+- Eszmélet (4) Kóma
+- Sérült (3) Haldoklás
 - Zavar (3) Sokk
 
 ---
 ### Fizikai képzettségpróba hátrányok
 
 `Hátrány-1`
-- Felszerelés kéret aktuális értéke: `-1`
+- Felszerelés keret aktuális értéke: `-1`
+- Rosszullét (`1`) Közepes
 
 `Hátrány-2`
-- Felszerelés kéret aktuális értéke: `-2`
+- Felszerelés keret aktuális értéke: `-2`
 - Rosszullét (`2`) Erős
 
 ---
@@ -12130,17 +12136,14 @@ Automatikus kudarc
 
 `Hátrány-1`
 - Félelem (`1`) Szorongás
-- Fizikai (`3`) Elcsigázottság
 - Rosszullét (`2`) Erős
 - Szellemi (`2`) Eltompultság
 
 `Hátrány-2`
-- Eszmélet (`1`) Bódultság
 - Szellemi (`3`) Delírium
 - Zavar (`1`) Kizökkent
 
 Automatikus kudarc
-- Eszmélet (`2`) Kábultság
 - Félelem (`2`) Rettegés/Pánik
 - Indulat (`3`) Őrjöngés
 - Zavar (`2`) Megrendült
