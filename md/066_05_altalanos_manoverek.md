@@ -506,7 +506,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
         - `-2`: Nagyobb (KM)
         - `-4`: Jelentősen nagyobb (KM)
 
-**Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
+**Hatás**: arra tereled az ellenfelet, amerre akarod. Hátrálásnál nem kell használni, az megy magától.
 
 **Kapcsolódik**: [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md) fortély
 
