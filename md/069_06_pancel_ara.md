@@ -14,12 +14,12 @@ Teljes ár
 Ez a mellvért tag ára egyedül.
 
 ```
-  0.1x: Posztó/Bunda
-  0.5x: Fegyverkabát
-    1x: Bőrpáncél
-   10x: Lánc/Sodrony
-   50x: Pikkely fémpáncél
-  100x: Lemezpáncél
+    1x: Posztó/Bunda
+    5x: Fegyverkabát
+   10x: Bőrpáncél
+  100x: Lánc/Sodrony
+  500x: Pikkely fémpáncél
+ 1000x: Lemezpáncél
 ```
 
 ---
@@ -54,13 +54,11 @@ Kidolgozottság
 A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 
 ```
-    1x: Acél
   0,5x: Bronz
+    1x: Acél
    10x: Abbitacél
   100x: Mithrill
- *    : Lunír
-
-* a csillagos ég
+    ∞ : Lunír
 ```
 
 ---
@@ -85,9 +83,9 @@ A jobb Idea nagyon megdobhatja a páncél árát:
 ### Miért szorzó érték az "Ár"?
 
 ```
-1x = 1 arany
-1x = minden tekintetben
-     átlagos bőr mellvért ára
+ 1x = 1 arany
+10x = minden tekintetben
+      átlagos bőr mellvért ára
 ```
 
 Az SFÉ táblázatban nem véletlenül _szorzó_ értékek szerepelnek arany, vagy más fizetőeszköz helyett. Itt ugyan `1x = 1 arany` arányszámot vázoltunk, de tájegységtől függően más-más lehet a páncélok ára.

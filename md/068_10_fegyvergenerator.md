@@ -313,7 +313,7 @@ kétkezes · 1 kézzel
 Az SP egyik esetben sem változik.
 ```
 
-Részletek: [Másfél- és kétkezes fegyverek egy kézzel](068_01_06_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md).
+Részletek: [Másfél- és kétkezes fegyverek egy kézzel](068_01_07_masfelkezes_es_ketkezes_fegyverek_egy_kezzel.md).
 
 <br />
 

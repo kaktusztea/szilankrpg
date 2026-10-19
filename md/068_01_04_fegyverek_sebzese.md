@@ -64,6 +64,6 @@ Lásd [Rúnamágiával felruházott tárgyak](120_varazstargyak.md#r%C3%BAnam%C3
 
 ---
 
-🔗 [Puszta kéz](068_01_05_puszta_kez.md) →
+🔗 [Fegyverek ára](068_01_05_fegyverek_ara.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
