@@ -19,6 +19,7 @@ import { restoreTruncate, restoreAppend } from './engine/checkpoint-utils';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './engine/types';
 import type { Karakter } from './engine/types';
 import { validateKarakterData } from './engine/validate';
+import { felszerelésVagyAkadályJelző } from './engine/felszereles';
 import { CheckpointBanner } from './components/CheckpointBanner';
 import { ProbaHub } from './components/ProbaHub';
 import { CheckpointRestoreOverlay } from './components/overlays/CheckpointRestoreOverlay';
@@ -183,6 +184,7 @@ function App() {
         testMode={testMode} gameMode={gameMode} setGameMode={setGameMode}
         viewingCheckpoint={!!viewingCheckpointId}
         session={session} undoCount={undoStack.length} setOverlay={setOverlay}
+        felszerelésJelző={felszerelésVagyAkadályJelző(karakter, data)}
       />
 
       {karakter.jk === false && !viewingCheckpointId && (

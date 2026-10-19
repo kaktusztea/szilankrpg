@@ -4,7 +4,7 @@
  * nem-additív MAX, és a "viselve" háromállapot (külső/nincs → nem számít).
  */
 import { describe, it, expect, beforeAll } from 'vitest';
-import { akadályÁllapot } from '../engine/felszereles';
+import { akadályÁllapot, felszerelésVagyAkadályJelző } from '../engine/felszereles';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
@@ -96,5 +96,32 @@ describe('akadályÁllapot', () => {
       felszerelés: { tárgyak: [], kizárt_auto: [], külső: ['pajzs'] },
     };
     expect(akadályÁllapot(k, data).állapot).toBe(0);
+  });
+});
+
+describe('felszerelésVagyAkadályJelző (✏️ chip piros pötty)', () => {
+  it('se túlterhelés, se akadály → false', () => {
+    expect(felszerelésVagyAkadályJelző(base, data)).toBe(false);
+  });
+
+  it('csak akadály (viselt merev páncél) → true', () => {
+    const k: Karakter = {
+      ...base,
+      páncél: { ...base.páncél, alap: 'lemez' },
+      session: { ...base.session, aktív_páncél: true },
+    };
+    expect(felszerelésVagyAkadályJelző(k, data)).toBe(true);
+  });
+
+  it('csak túlterhelés (keret 2 fölött kézi tárgyakkal) → true', () => {
+    const k: Karakter = {
+      ...base,
+      felszerelés: {
+        tárgyak: [{ név: 'A', méret: 'nagy' }, { név: 'B', méret: 'nagy' }],
+        kizárt_auto: [], külső: [],
+      },
+    };
+    // keret = 2 + Erő(0) = 2; terhelés = 2+2 = 4 > 2
+    expect(felszerelésVagyAkadályJelző(k, data)).toBe(true);
   });
 });

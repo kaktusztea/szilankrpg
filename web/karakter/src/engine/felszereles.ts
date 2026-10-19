@@ -218,3 +218,12 @@ export function akadályÁllapot(karakter: Karakter, data: GameData): AkadályÁ
   const állapot = források.reduce((m, f) => (f.viselve ? Math.max(m, f.állapot) : m), 0);
   return { állapot, források };
 }
+
+/**
+ * A ✏️ chip piros-pötty jelzője: akkor igaz, ha a Felszerelés túllépésben van (terhelés > keret),
+ * VAGY az Akadály-állapot > 0 - azaz bármelyik panel headerében van legalább egy piros pötty.
+ */
+export function felszerelésVagyAkadályJelző(karakter: Karakter, data: GameData): boolean {
+  const túlterhelt = felszerelésTerhelés(karakter, data) > felszerelésMax(karakter, data);
+  return túlterhelt || akadályÁllapot(karakter, data).állapot > 0;
+}

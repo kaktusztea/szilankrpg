@@ -9,9 +9,11 @@ interface Props {
   session: Session;
   undoCount: number;
   setOverlay: <K extends keyof OverlayState>(key: K, value: OverlayState[K]) => void;
+  /** Piros jelző pötty a ✏️ chipen: Felszerelés túllépés VAGY Akadály-állapot. */
+  felszerelésJelző: boolean;
 }
 
-export function Header({ testMode, gameMode, setGameMode, viewingCheckpoint, session, undoCount, setOverlay }: Props) {
+export function Header({ testMode, gameMode, setGameMode, viewingCheckpoint, session, undoCount, setOverlay, felszerelésJelző }: Props) {
   return (
     <header className="header">
       <span className="header-szilank" onClick={() => setOverlay('showSzilánkPicker', true)}>
@@ -25,7 +27,10 @@ export function Header({ testMode, gameMode, setGameMode, viewingCheckpoint, ses
         >
           ↩{undoCount > 0 ? ` ${undoCount}` : ''}
         </button>
-        <button className="gear-btn" onClick={() => setOverlay('overlayScreen', true)}>✏️</button>
+        <button className="gear-btn gear-btn-badge" onClick={() => setOverlay('overlayScreen', true)}>
+          ✏️
+          {felszerelésJelző && <span className="gear-badge-dot" title="Felszerelés / Akadály figyelmeztetés" />}
+        </button>
         <button className="gear-btn gear-btn-padded" onClick={() => setOverlay('showSlotList', true)}>🧑</button>
         <button
           className={`mode-toggle ${(gameMode || viewingCheckpoint) ? 'mode-toggle-game' : 'mode-toggle-szerk'}`}
