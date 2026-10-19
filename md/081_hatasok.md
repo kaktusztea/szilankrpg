@@ -6,7 +6,7 @@ Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Stát
 
 ### Szorzó hatások ökölszabály
 
-[Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-szorzó-hatások)
+[Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
 <br />
 
@@ -234,7 +234,7 @@ Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra ninc
 
 Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged duplázódik.
 
-🔆 Nem halmozható. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
+🔆 Nem halmozható. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
 
 <br />
 

@@ -24,7 +24,7 @@ Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a
 
 ### 🔆 Ökölszabály Védő Érték eltolásra
 
-[Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-védő-érték-eltolás)
+[Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-védő-érték-eltolás)
 
 <br />
 
@@ -240,7 +240,7 @@ Első oda-vissza csapásnál:
 
 ❌ Ostorharc harcmodorban
 
-🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
+🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
 
 A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy hatalmas sebzést érjen el. Súlyosan sérült harcosok utolsó mentsvára lehet.
 
@@ -289,7 +289,7 @@ Első oda-vissza csapásnál:
 
 ❌ Ostorharc harcmodorban
 
-🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorz%C3%B3-hat%C3%A1sok-%C3%B6k%C3%B6lszab%C3%A1ly-)
+🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
 
 🔆 Ha a rohamozó betalál (nem muszáj sebzőnek lennie):
 
