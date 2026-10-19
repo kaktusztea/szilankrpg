@@ -4,9 +4,10 @@ interface Props {
   ideaHatás: { TÉ: number; VÉ: number; SP: number };
   konstansok: { mesterfegyver_bónuszok?: { fok: number; TÉ: number; VÉ: number; SP: number }[] };
   inactive?: boolean;
+  ár?: string;
 }
 
-export function FegyverChip({ fd, mfFok, ideaHatás, konstansok, inactive }: Props) {
+export function FegyverChip({ fd, mfFok, ideaHatás, konstansok, inactive, ár }: Props) {
   const mf = konstansok.mesterfegyver_bónuszok?.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
   const cls = inactive ? ' he-strike' : '';
   return (
@@ -20,6 +21,8 @@ export function FegyverChip({ fd, mfFok, ideaHatás, konstansok, inactive }: Pro
         <span className={cls}>{fd.SP + mf.SP + ideaHatás.SP}</span>
         {' '}<span className={`he-stat-ml${cls}`}>Sebesség:</span>
         <span className={cls}>{fd.Sebesség}</span>
+        {ár !== undefined && <>{' '}<span className={`he-stat-ml${cls}`}>Ár:</span>
+        {' '}<span className={cls}>{ár}x</span></>}
       </span>
     </div>
   );

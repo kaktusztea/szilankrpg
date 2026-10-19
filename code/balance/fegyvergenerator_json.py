@@ -25,6 +25,59 @@ F = bal.Fegyver
 
 _EXTRAK = {m["id"]: m for m in bal._load("extrak.yaml")["extrak"]}
 
+# Ár-számítás konstansai - mind a FŐ data/sources/konstansok.yaml-ból (a webapp runtime chip
+# ugyanonnan olvassa - egy igazságforrás, nincs duplikáció). md/068_01_05_fegyverek_ara.md.
+import pathlib  # noqa: E402
+
+with open(pathlib.Path(bal.DATA_DIR).parent / "konstansok.yaml", encoding="utf-8") as _fh:
+    import yaml as _yaml  # noqa: E402
+    _FO_K = _yaml.safe_load(_fh)
+_AR_OSZTALY = _FO_K["fegyver_ár_osztály"]
+_AR_HOSSZ = _FO_K["fegyver_ár_szorzó_hossz"]
+_AR_ALAPANYAG = _FO_K["alapanyag_ár_szorzó"]
+_AR_IDEA = {r["idea"]: r["ár_szorzó"] for r in _FO_K["ár_szorzó_idea"]}
+
+
+def _ar_osztaly(fv):
+    """Fa / fém-hegyű / fém ár-osztály a nyél + fejdarab paraméterekből (md/068_01_05)."""
+    fanyelű = fv.get("szálfegyver_nyélanyag", "sima") == "fanyelű"
+    fejdarab = fv.get("fejdarab", 0)
+    if fanyelű and fejdarab == 0:
+        return "fa"
+    if fanyelű and fejdarab >= 1:
+        return "fém-hegyű"
+    return "fém"
+
+
+def _hossz_szorzo(hossz):
+    for r in _AR_HOSSZ:
+        if hossz >= r["hossz_min"] and (r["hossz_max"] is None or hossz <= r["hossz_max"]):
+            return r["ár_szorzó"]
+    return 1
+
+
+def ar_alap(fv):
+    """Gyári ALAPÁR (a fegyver fix felépítéséből): ár_osztály × fejdarab_rész × hossz_szorzó.
+    A fejdarab_rész a fém mennyisége: a fa-osztálynál 1 (egy fadarab, nincs fém fej), különben a
+    fejdarab-szám (az alabárd 2 feje duplán számít). Az alapanyag/idea NINCS benne - azt a webapp
+    chip teszi rá a hangolt példányon. md/068_01_05_fegyverek_ara.md.
+    """
+    osztály = _ar_osztaly(fv)
+    fejdarab_rész = 1 if osztály == "fa" else fv.get("fejdarab", 0)
+    return _AR_OSZTALY[osztály] * fejdarab_rész * _hossz_szorzo(fv["hossz"])
+
+
+def fegyver_ar(fv, idea_default):
+    """Teljes GYÁRI ár-szorzó = ár_alap × alapanyag_ár_szorzó[alapanyag] × idea_szorzó.
+    Ez a lista/katalógus referencia-ár (gyári anyag + gyári idea). A webapp chip ugyanezt számolja
+    a hangolt példány anyag/idea-jával az `ár_alap`-ból. Ismeretlen alapanyag → acél (1) + warning.
+    """
+    anyag = fv.get("alapanyag", "acél")
+    if anyag not in _AR_ALAPANYAG:
+        print(f"WARNING fegyver_ar: ismeretlen alapanyag '{anyag}' - acél (1) fallback", file=sys.stderr)
+    anyag_szorzó = _AR_ALAPANYAG.get(anyag, 1)
+    return round(ar_alap(fv) * anyag_szorzó * _AR_IDEA.get(idea_default, 1), 1)
+
 
 def _extra_id_lista(fv):
     """Az extra id-k listája: saját (fegyverek.yaml → extrak) + ÖRÖKÖLT (fegyverhossz-kategória,
@@ -76,7 +129,9 @@ def _fegyver_json(r):
         "akadály": akadály,
         "súly": súly,  # könnyű/átlagos/nehéz/súlyos - a Felszerelés-pont forrása (md/010_03_06, VAGY-VAGY a fegyverhosszal)
         "övön_hordható": bool(bal.FEGYVERHOSSZ[fv["hossz"]].get("övön_hordható", False)),
-        "ár": None,  # TODO: placeholder - kalkulált érték lesz (fegyverhossz/alapanyag/idea szorzókból), lásd v2.md "Ár"
+        "ár": fegyver_ar(fv, f.idea_default),  # teljes gyári ár-szorzó (ár_alap × gyári anyag × gyári idea), md/068_01_05
+        "ár_alap": ar_alap(fv),  # a fix felépítés alapára (osztály × fejdarab × hossz); a webapp chip ebből × hangolt anyag × idea
+        "alapanyag": fv.get("alapanyag", "acél"),  # gyári anyag (fém-rész/penge): a felvett példány anyag-defaultja; fa/kő → nem-fém (anyag nem hangolható)
         "idea_default": f.idea_default,  # a standard példány kezdő-Ideája; a fenti harcértékek EZT MÁR tartalmazzák (Modell 2). A webapp a felvett példány idea-ját erről indítja.
         "erő_követelmény": erő_követelmény,
         "extrák": [{"id": eid, "név": _EXTRAK.get(eid, {}).get("név", eid)} for eid in extra_ids],
@@ -97,6 +152,11 @@ def build():
         r.setdefault("idea_default", 0)
         r.setdefault("erő_követelmény", 0)
         r.setdefault("súly", "átlagos")
+        # A fixed fegyverekre (Garott, hárítók, Kopják, Pajzsok) nincs fa/fém ár-modell (nem mennek
+        # át a generátoron) - ár null, a webapp chip ilyenkor nem jelenít árat.
+        r.setdefault("ár", None)
+        r.setdefault("ár_alap", None)
+        r.setdefault("alapanyag", "acél")
     return generalt + fixed
 
 

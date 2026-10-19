@@ -336,6 +336,7 @@ export interface KonstansokRaw {
   módosító_célok: string[];
   páncél_védett_terület: Record<string, number>;
   ár_szorzó_idea: { idea: number; ár_szorzó: number }[];
+  fegyver_ár_szorzó_hossz: { hossz_min: number; hossz_max: number | null; ár_szorzó: number }[];
   páncél_ár_szorzó_kidolgozottság: Record<string, number>;
 }
 

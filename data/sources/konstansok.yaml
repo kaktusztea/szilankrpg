@@ -273,7 +273,7 @@ páncél_struktúrák:
     mgt: 2
     sfé_fizikai: 4
     sfé_energia: 4
-    ár_szorzó: 0.1
+    ár_szorzó: 1
     idea_plusz_minusz: 0
   - struktúra: "fegyverkabát"
     leírás: "Fegyverkabát"
@@ -282,7 +282,7 @@ páncél_struktúrák:
     mgt: 3
     sfé_fizikai: 6
     sfé_energia: 8
-    ár_szorzó: 0.5
+    ár_szorzó: 5
     idea_plusz_minusz: 0
   - struktúra: "bőr"
     leírás: "Bőrpáncél"
@@ -291,7 +291,7 @@ páncél_struktúrák:
     mgt: 5
     sfé_fizikai: 8
     sfé_energia: 14
-    ár_szorzó: 1
+    ár_szorzó: 10
     idea_plusz_minusz: 1
   - struktúra: "lánc/sodrony"
     leírás: "Láncing / sodronying"
@@ -300,7 +300,7 @@ páncél_struktúrák:
     mgt: 8
     sfé_fizikai: 10
     sfé_energia: 10
-    ár_szorzó: 10
+    ár_szorzó: 100
     idea_plusz_minusz: 1
   - struktúra: "pikkely"
     leírás: "Pikkely fémpáncél"
@@ -309,7 +309,7 @@ páncél_struktúrák:
     mgt: 8
     sfé_fizikai: 15
     sfé_energia: 10
-    ár_szorzó: 50
+    ár_szorzó: 500
     idea_plusz_minusz: 2
   - struktúra: "lemez"
     leírás: "Lemezpáncél"
@@ -318,7 +318,7 @@ páncél_struktúrák:
     mgt: 10
     sfé_fizikai: 20
     sfé_energia: 8
-    ár_szorzó: 100
+    ár_szorzó: 1000
     idea_plusz_minusz: 3
 
 # REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
@@ -361,17 +361,18 @@ páncél_méret_illeszkedés:
   - fokozat: "borzalmas"
     mgt: 6
 
-# REFERENCIA: a kód nem olvassa (dokumentációs adat). Ha kód lesz rá, INNEN olvasd, ne hardcode-old!
-# Általános alapanyag ár-szorzó (páncél + fegyver közös). A páncél md/069_06_pancel_ara.md és a
-# fegyver md/068_01_05_fegyverek_ara.md ugyanezeket az értékeket használja. A "fa" csak fegyvernél
-# releváns (pl. szálfegyver nyélanyag), a páncélnál nem fordul elő. Lunír: nem vásárolható (∞),
-# referencia-érték 100000.
+# Általános alapanyag ár-szorzó (fém-minőség tengely), páncél + fegyver közös.
+# Olvassa: rules.json `páncél_alapanyag_ár` (reaktív) + a fegyvergenerátor (fegyver `ár` mező).
+# Páncél md/069_06_pancel_ara.md, fegyver md/068_01_05_fegyverek_ara.md. A "fa" és "kő" csak
+# fegyvernél fordul elő (nyél/primitív anyag), páncélnál nem. Lunír: nem vásárolható (∞), referencia 100000.
 alapanyag_ár_szorzó:
   fa: 0.1
+  kő: 0.1
   acél: 1
   bronz: 0.5
   abbitacél: 10
   mithrill: 100
+  feketeacél: 100
   lunír: 100000
 
 # ár szempontból → alapanyag_ár_szorzó (külön tábla, páncél + fegyver közös)
@@ -424,6 +425,35 @@ páncél_ár_szorzó_kidolgozottság:
     ár_szorzó: 10
   - idea: 5
     ár_szorzó: 13
+
+# REFERENCIA: a kód nem olvassa reaktív szabályként, a webapp fegyver-ár chip olvassa közvetlenül.
+# Fegyver-egyedi hossz ár-szorzó (md/068_01_05_fegyverek_ara.md). Fegyver ár = hossz × alapanyag ×
+# idea szorzó; az alapanyag/idea szorzó a fenti közös alapanyag_ár_szorzó / ár_szorzó_idea táblákból.
+# hossz_max: null = nyílt felső vég (7+).
+fegyver_ár_szorzó_hossz:
+  - hossz_min: 0
+    hossz_max: 2
+    ár_szorzó: 0.5
+  - hossz_min: 3
+    hossz_max: 6
+    ár_szorzó: 1
+  - hossz_min: 7
+    hossz_max: null
+    ár_szorzó: 2
+
+# Fegyver ár-osztály szorzó (md/068_01_05_fegyverek_ara.md). A fegyver fa/fém arányát fejezi ki,
+# a szálfegyver_nyélanyag + fejdarab paraméterekből LEVEZETVE (a generátor számolja, a v2 JSON
+# `ár_alap` mezőbe építve). A webapp chip NEM ismeri ezt a táblát - csak `ár_alap × alapanyag × idea`:
+#   fa        : fanyelű nyél ÉS fejdarab == 0  (bot) - a "fa" ALAPANYAG adja az olcsóságot (0.1),
+#               ezért az osztály-szorzó 1 (nincs kivétel: a fa-bot alapanyaga definíció szerint fa)
+#   fém-hegyű : fanyelű nyél ÉS fejdarab >= 1  (olcsó fanyél + fém hegy, pl. lándzsa/alabárd)
+#   fém       : nem fanyelű nyél              (végig fém, pl. kard/buzogány) - kalibrációs 1x
+# ár_alap = ár_osztály × fejdarab_rész × fegyver_ár_szorzó_hossz, ahol fejdarab_rész = 1 a fa-osztálynál
+#   (egy fadarab, nincs fém fej), különben a fejdarab-szám (az alabárd 2 feje duplán számít).
+fegyver_ár_osztály:
+  fa: 1
+  fém-hegyű: 0.2
+  fém: 1
 
 # ============================================================
 # Tulajdonságok

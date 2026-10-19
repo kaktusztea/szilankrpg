@@ -20,7 +20,7 @@ x Idea
 ### ⚜️ Hossz szorzó
 
 ```
-0.5x - 1-2 hossz
+0.5x - 0-2 hossz
   1x - 3-6 hossz
   2x - 7+  hossz
 ```

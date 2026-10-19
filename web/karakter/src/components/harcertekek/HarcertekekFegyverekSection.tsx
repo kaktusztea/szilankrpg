@@ -5,6 +5,8 @@ import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
 import { ideaDelta } from '../harc/shared';
 import { FegyverChip } from './HarcertekekFegyverChip';
+import { fegyverÁr } from './fegyver-ar-calc';
+import { árFormátum } from '../formatters';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './helpers';
 import { SpecPicker, type PickerSource } from '../SpecPicker';
 import { buildFegyverGroups } from '../fegyver-groups';
@@ -29,8 +31,11 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
   function addFegyver(alap: string) {
     setKarakter(prev => {
       if (!prev) return prev;
-      const defaultAnyag = (konstansok.fegyver_anyagok as string[])[0] ?? '';
-      const ideaDefault = lookupFegyver(data.fegyverek, alap)?.idea_default ?? 0;
+      const fd = lookupFegyver(data.fegyverek, alap);
+      // Felvételkor a gyári anyagról indulunk (bot→fa, kard→acél). A fém-rész anyag a fém-osztályú
+      // fegyvereknél hangolható; a fa/kő nem-fém anyag fix.
+      const defaultAnyag = fd?.alapanyag ?? (konstansok.fegyver_anyagok as string[])[0] ?? '';
+      const ideaDefault = fd?.idea_default ?? 0;
       return { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: defaultAnyag, idea: ideaDefault, felszerelésben: true }] };
     });
   }
@@ -101,6 +106,9 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
   const mfFok = getMfFok(data, karakter, fegyver.alap);
   const hasError = mfKövetelményHiba(data, karakter, fegyver.alap);
   const errorText = mfKövetelményText(data, karakter, fegyver.alap);
+  // Fém-e a fegyver? A gyári alapanyag a fém-enumban (fegyver_anyagok) van-e. Nem-fém (fa/kő) anyaga
+  // nem hangolható (egy fabotot nem csinálsz mithrillből) → az anyag chip tiltott, az ár a gyári anyaggal számol.
+  const fém = fd ? (konstansok.fegyver_anyagok as string[]).includes(fd.alapanyag) : true;
 
   return (
     <div className="he-fegyver-card">
@@ -108,7 +116,13 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
         <strong>{fegyver.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
         <button className="item-delete" onClick={() => onDeleteTarget(index)}>✕</button>
       </div>
-      {fd && <FegyverChip fd={elsődlegesMód(fd)} mfFok={mfFok} ideaHatás={ideaDelta(fegyver.idea, fd.idea_default, data.fegyverIdeaTabla)} konstansok={konstansok} />}
+      {fd && (() => {
+        // Nem-fém fegyver (fa/kő) anyaga fix (a chip tiltja) → az ár is a gyári anyaggal számol,
+        // nem a példány `anyag`-jával (ami régi localStorage-ban tévesen acél lehet).
+        const árAnyag = fém ? fegyver.anyag : fd.alapanyag;
+        const árÉrték = fegyverÁr(fd.ár_alap, árAnyag, fegyver.idea, konstansok);
+        return <FegyverChip fd={elsődlegesMód(fd)} mfFok={mfFok} ideaHatás={ideaDelta(fegyver.idea, fd.idea_default, data.fegyverIdeaTabla)} konstansok={konstansok} ár={árÉrték == null ? undefined : árFormátum(árÉrték)} />;
+      })()}
       <div className="he-fegyver-fields">
         <button
           className={`he-field-btn he-field-fortely${hasError ? ' he-error' : ''}`}
@@ -118,7 +132,13 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
           {hasError && <span className="he-mf-error">{errorText}</span>}
         </button>
         <button className="he-field-btn" onClick={() => onIdeaTarget(index)}>Idea: <strong>{fegyver.idea}</strong></button>
-        <button className="he-field-btn" onClick={() => onAnyagTarget(index)}>Anyag: <strong>{fegyver.anyag}</strong></button>
+        <button
+          className={`he-field-btn${fém ? '' : ' he-field-disabled'}`}
+          disabled={!fém}
+          onClick={() => fém && onAnyagTarget(index)}
+        >
+          {fém ? <>Anyag: <strong>{fegyver.anyag}</strong></> : <span className="he-strike">Anyag</span>}
+        </button>
         <button className="he-field-btn" onClick={() => onBecenévTarget(index)}>Becenév: <strong>{fegyver.név || '-'}</strong></button>
         <button
           className={`he-field-btn${fegyver.felszerelésben === false ? ' he-field-off' : ''}`}

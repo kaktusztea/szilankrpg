@@ -11,7 +11,8 @@ import { elsődlegesMód } from './fegyver-calc';
 export function buildPancelLookups(
   konstansok: Pick<KonstansokRaw,
     'páncél_csatolt_tag_mgt' | 'páncél_struktúrák' | 'páncél_fémalapanyagok'
-    | 'páncél_méret_illeszkedés' | 'merevvértviselet_bónuszok'>,
+    | 'páncél_méret_illeszkedés' | 'merevvértviselet_bónuszok'
+    | 'alapanyag_ár_szorzó' | 'ár_szorzó_idea' | 'páncél_ár_szorzó_kidolgozottság'>,
 ): Map<string, Record<string, number | string>[]> {
   const lookupArrays = new Map<string, Record<string, number | string>[]>();
   const csatoltMgt = konstansok.páncél_csatolt_tag_mgt;
@@ -20,11 +21,16 @@ export function buildPancelLookups(
   lookupArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([n, v]) => ({ név: n, érték: v })));
   lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map(s => ({
     név: s.struktúra, mgt: s.mgt, struktúra_sfé_fizikai: s.sfé_fizikai,
-    struktúra_sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0
+    struktúra_sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0,
+    struktúra_ár: s.ár_szorzó
   })));
   lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map(a => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
   lookupArrays.set('méret_tábla', konstansok.páncél_méret_illeszkedés.map(m => ({ név: m.fokozat, érték: m.mgt })));
   lookupArrays.set('merevvért_tábla', konstansok.merevvértviselet_bónuszok.map(b => ({ fok: b.fok, csökkentés: b.TÉ_büntetés_csökkentés })));
+  // Ár lookupok (páncél_ár szabály, rules.json): alapanyag + idea + kidolgozottság szorzók
+  lookupArrays.set('alapanyag_ár', Object.entries(konstansok.alapanyag_ár_szorzó).map(([anyag, v]) => ({ anyag, érték: v })));
+  lookupArrays.set('idea_ár', konstansok.ár_szorzó_idea.map(r => ({ idea: r.idea, érték: r.ár_szorzó })));
+  lookupArrays.set('kidolgozottság_ár', Object.entries(konstansok.páncél_ár_szorzó_kidolgozottság).map(([n, v]) => ({ név: n, érték: v })));
   return lookupArrays;
 }
 

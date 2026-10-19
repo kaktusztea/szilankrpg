@@ -390,6 +390,58 @@
       ]
     },
     {
+      "id": "páncél_struktúra_ár",
+      "formula": "lookup(struktúrák, név, páncél_alap, struktúra_ár)",
+      "inputs": [
+        "struktúrák",
+        "páncél_alap"
+      ]
+    },
+    {
+      "id": "páncél_alapanyag_ár",
+      "formula": "if(páncél_fém, if(lookup(alapanyag_ár, anyag, páncél_fémalapanyag, érték) > 0, lookup(alapanyag_ár, anyag, páncél_fémalapanyag, érték), 1), 1)",
+      "inputs": [
+        "páncél_fém",
+        "alapanyag_ár",
+        "páncél_fémalapanyag"
+      ]
+    },
+    {
+      "id": "páncél_idea_ár",
+      "formula": "lookup(idea_ár, idea, páncél_idea, érték)",
+      "inputs": [
+        "idea_ár",
+        "páncél_idea"
+      ]
+    },
+    {
+      "id": "páncél_kidolgozottság_ár",
+      "formula": "lookup(kidolgozottság_ár, név, páncél_kidolgozottság, érték)",
+      "inputs": [
+        "kidolgozottság_ár",
+        "páncél_kidolgozottság"
+      ]
+    },
+    {
+      "id": "páncél_torzó_ár",
+      "formula": "páncél_struktúra_ár * páncél_alapanyag_ár * páncél_idea_ár",
+      "inputs": [
+        "páncél_struktúra_ár",
+        "páncél_alapanyag_ár",
+        "páncél_idea_ár"
+      ]
+    },
+    {
+      "id": "páncél_ár",
+      "formula": "if(páncél_van, páncél_torzó_ár + páncél_csatolt_db * (páncél_torzó_ár / 5 * páncél_kidolgozottság_ár), 0)",
+      "inputs": [
+        "páncél_van",
+        "páncél_torzó_ár",
+        "páncél_csatolt_db",
+        "páncél_kidolgozottság_ár"
+      ]
+    },
+    {
       "id": "fegyver_TÉ",
       "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + tulajdonságok.ügyesség + tulajdonságok.gyorsaság + HM_TÉ + fegyver_harcmodor_TÉ + fegyver_alap_TÉ + fegyver_mf_TÉ + fegyver_fortély_TÉ - merevvért_TÉ_büntetés",
       "inputs": [

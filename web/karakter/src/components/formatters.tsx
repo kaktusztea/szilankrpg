@@ -1,5 +1,10 @@
 import type { ReactNode } from 'react';
 
+/** Ár-szorzó megjelenítés: max 1 tizedes, egész ha egész (pl. 5, 0.5, 13). */
+export function árFormátum(ár: number): string {
+  return String(Math.round(ár * 10) / 10);
+}
+
 export function fmtCode(text: string): ReactNode[] {
   const parts = text.split(/(`[^`]+`)/g);
   return parts.map((p, i) => p.startsWith('`') && p.endsWith('`')

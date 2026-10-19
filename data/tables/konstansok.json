@@ -294,7 +294,7 @@
       "mgt": 2,
       "sfé_fizikai": 4,
       "sfé_energia": 4,
-      "ár_szorzó": 0.1,
+      "ár_szorzó": 1,
       "idea_plusz_minusz": 0
     },
     {
@@ -305,7 +305,7 @@
       "mgt": 3,
       "sfé_fizikai": 6,
       "sfé_energia": 8,
-      "ár_szorzó": 0.5,
+      "ár_szorzó": 5,
       "idea_plusz_minusz": 0
     },
     {
@@ -316,7 +316,7 @@
       "mgt": 5,
       "sfé_fizikai": 8,
       "sfé_energia": 14,
-      "ár_szorzó": 1,
+      "ár_szorzó": 10,
       "idea_plusz_minusz": 1
     },
     {
@@ -327,7 +327,7 @@
       "mgt": 8,
       "sfé_fizikai": 10,
       "sfé_energia": 10,
-      "ár_szorzó": 10,
+      "ár_szorzó": 100,
       "idea_plusz_minusz": 1
     },
     {
@@ -338,7 +338,7 @@
       "mgt": 8,
       "sfé_fizikai": 15,
       "sfé_energia": 10,
-      "ár_szorzó": 50,
+      "ár_szorzó": 500,
       "idea_plusz_minusz": 2
     },
     {
@@ -349,7 +349,7 @@
       "mgt": 10,
       "sfé_fizikai": 20,
       "sfé_energia": 8,
-      "ár_szorzó": 100,
+      "ár_szorzó": 1000,
       "idea_plusz_minusz": 3
     }
   ],
@@ -391,10 +391,12 @@
   ],
   "alapanyag_ár_szorzó": {
     "fa": 0.1,
+    "kő": 0.1,
     "acél": 1,
     "bronz": 0.5,
     "abbitacél": 10,
     "mithrill": 100,
+    "feketeacél": 100,
     "lunír": 100000
   },
   "páncél_fémalapanyagok": [
@@ -475,6 +477,28 @@
       "ár_szorzó": 13
     }
   ],
+  "fegyver_ár_szorzó_hossz": [
+    {
+      "hossz_min": 0,
+      "hossz_max": 2,
+      "ár_szorzó": 0.5
+    },
+    {
+      "hossz_min": 3,
+      "hossz_max": 6,
+      "ár_szorzó": 1
+    },
+    {
+      "hossz_min": 7,
+      "hossz_max": null,
+      "ár_szorzó": 2
+    }
+  ],
+  "fegyver_ár_osztály": {
+    "fa": 1,
+    "fém-hegyű": 0.2,
+    "fém": 1
+  },
   "tulajdonság_pontok": {
     "-5": 0,
     "-4": 1,

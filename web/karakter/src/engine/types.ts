@@ -280,6 +280,8 @@ export interface FegyverAlap {
   súly: string;                 // könnyű/átlagos/nehéz/súlyos - Felszerelés-pont (súly-ág)
   övön_hordható: boolean;
   ár: number | null;
+  ár_alap: number | null;       // a fix felépítés alapára (osztály × fejdarab × hossz); a chip ebből × anyag × idea
+  alapanyag: string;            // gyári anyag (fém-rész); felvételi anyag-default + fém-e levezetés (fa/kő → nem hangolható)
   idea_default: number;
   erő_követelmény: number;
   extrák: FegyverExtra[];

@@ -3,6 +3,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { HintType } from './hooks/useHint';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { buildPancelLookups } from '../harc/pancel-calc';
+import { árFormátum } from '../formatters';
 
 interface Props {
   data: GameData;
@@ -15,8 +16,8 @@ interface Props {
 }
 
 /** Evaluate páncél rules via reactive engine */
-function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; sfé_energia: number; mgt: number } {
-  if (!k.páncél.alap) return { sfé_fizikai: 0, sfé_energia: 0, mgt: 0 };
+function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; sfé_energia: number; mgt: number; ár: number } {
+  if (!k.páncél.alap) return { sfé_fizikai: 0, sfé_energia: 0, mgt: 0, ár: 0 };
 
   const { konstansok } = data;
   const lookupArrays = buildPancelLookups(konstansok);
@@ -41,6 +42,7 @@ function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; 
     sfé_fizikai: computed.get('sfé_fizikai') ?? 0,
     sfé_energia: computed.get('sfé_energia') ?? 0,
     mgt: computed.get('páncél_MGT') ?? 0,
+    ár: computed.get('páncél_ár') ?? 0,
   };
 }
 
@@ -50,7 +52,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
   const aktStruktúra = struktúrák.find((s: any) => s.struktúra === k.páncél.alap);
   const hasAlap = !!k.páncél.alap;
 
-  const { sfé_fizikai, sfé_energia, mgt } = calcPancelValues(k, data);
+  const { sfé_fizikai, sfé_energia, mgt, ár } = calcPancelValues(k, data);
 
   function updatePancel(patch: Partial<PancelPeldany>) {
     setKarakter(prev => prev ? { ...prev, páncél: { ...prev.páncél, ...patch } } : prev);
@@ -68,6 +70,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
             const erőTag = erő > 0 ? `- ${erő} (Erő bónusz)` : erő < 0 ? `+ ${-erő} (Erő büntetés)` : '';
             showHint(`MGT: ${mgt} = ${nyers}(páncél)${erőTag ? ' ' + erőTag : ''}`, 'info', 2000);
           }}>MGT: {mgt}</button>
+          <span className="he-pancel-chip">Ár: {árFormátum(ár)}x</span>
           <button className="he-field-btn" onClick={() => onPopup('rongálódás')}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
         </div>
       )}
