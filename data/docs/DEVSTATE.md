@@ -33,7 +33,7 @@ Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refact
   - **Támadó dobás popup** (Harc fül, `combat-roll-info.ts`): Visszafogott taktika → a Sebzésnél Hátrány−2 forrással; Orgyilkos fortély + Orvtámadás helyzet → Sebzés Előny; Helyhez kötve fejlesztése (2) + Helyhez kötve helyzet → TÉ dobás enyhít; Erő-követelmény (nehéz fegyver, alacsony Erő) → TÉ Hátrány-1 „(Erő hiány)"; taktika-megjegyzések a TÉ / Sebzés popupban mint eddig. Az E/H címke és a kocka-picker előre beállított szintje egyezik a forrás-összeggel (clamp ±2).
   - **Sebzés popup „Statikus bónuszok"** (`fegyverSpBónuszok` + `spBónuszok`): Erőbónusz (min(Erő, mód Erőlimit)); „Mesterfegyver - <fegyver>" csak a megjelölt fegyverrel a kézben; Pajzshasználat csak pajzzsal; Roham / (Lég)Lovas roham taktika SP-je; Támadás erőből magas fok (pl. 5, fortély-bővítéssel) SP-je „Támadás erőből (5)" felirattal; Orgyilkos SP Orvtámadásban. Mód-váltás másodlagosra → az Erőbónusz a másodlagos mód Erőlimitje szerint. **Kulcs-ellenőrzés: az összesített SP (alap + bónuszok) = a fegyvertábla SP-je** (+ taktika SP), a bontás csak szétosztja. Kétkezes harcnál a jobb kéz MF-je.
   - **CÉ dobás popup** (Távharc): Alkalmatlan tárgyak / fegyver hajítása + a megfelelő helyzet → CÉ / Sebzés enyhít; Kitartott célzás megjegyzés csak illő harcmodorú távfegyverrel.
-  - **Manőver dobás popup** (Aktív fül): a TÉ E/H szint a taktika / helyzet / státusz / fortély hatásokból, mint a Támadó popupban.
+  - **Manőver dobás popup** (Aktív fül): a TÉ E/H szint a taktika / helyzet / státusz / fortély hatásokból, mint a Támadó popupban. Fejléc-chip fázis-tudatos (2026-10-19): V/E fázisban `TÉ: <nyers> (+<Végrehajtás-bónusz>)` bontva, Megakasztás (M) fázisban és passzív módban `VÉ`; a bontott fejléc-TÉ + a bónusz = a Végrehajtás-fázis TÉ-chip értéke (ne tűnjön ellentmondásosnak).
   - **VÉ plafon**: Teljes Védekezés + Védő (3) → a fejléc VÉ-eltolása +10-re szorul (a taktika-gyűjtő „Taktika VÉ-plafon" korrekciós sora).
 
 ---
@@ -192,7 +192,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
   - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
   - Marker fájl: `tables/.generated_marker` - Vite plugin ezt nézi freshness check-hez
   - `--force` flag: kényszerített újragenerálás (`python3 generate_tables.py --force`)
-- `vitest run`: 657 unit teszt (82 fájl, 2026-10-18); build előtt fut
+- `vitest run`: 690 unit teszt (87 fájl, 2026-10-19); build előtt fut
 - Deploy: GitHub Pages, auto-deploy push master
 - Metadata: `ÉV.ÉVNAPJA.napibuild` - a `public/metadata.json` és a bundle `__APP_VERSION__` ugyanabból a fájlból jön (egy build = egy verzió)
 
