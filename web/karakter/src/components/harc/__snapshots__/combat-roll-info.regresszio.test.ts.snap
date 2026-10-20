@@ -759,6 +759,27 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 0 1`] = `
       "téMegjegyzések": [],
     },
   },
+  "státusz Zavar (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Zavar (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
   "taktika (Lég)Lovas roham": {
     "c": {
       "céHatások": [],
@@ -1787,6 +1808,27 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 1 1`] = `
           "megjegyzés": undefined,
           "operátor": "hátrány",
           "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Zavar (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Zavar (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
         },
       ],
       "téMegjegyzések": [],
@@ -2825,6 +2867,27 @@ exports[`harci dobás-hatások regressziós snapshot > minden fortély 2 1`] = `
       "téMegjegyzések": [],
     },
   },
+  "státusz Zavar (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Zavar (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
   "taktika (Lég)Lovas roham": {
     "c": {
       "céHatások": [],
@@ -3785,6 +3848,27 @@ exports[`harci dobás-hatások regressziós snapshot > teszt2 1`] = `
       "téMegjegyzések": [],
     },
   },
+  "státusz Zavar (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Zavar (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
   "taktika (Lég)Lovas roham": {
     "c": {
       "céHatások": [],
@@ -4726,6 +4810,27 @@ exports[`harci dobás-hatások regressziós snapshot > teszt3 1`] = `
           "megjegyzés": undefined,
           "operátor": "hátrány",
           "érték": -2,
+        },
+      ],
+      "téMegjegyzések": [],
+    },
+  },
+  "státusz Zavar (2)": {
+    "c": {
+      "céHatások": [],
+      "céMegjegyzések": [],
+    },
+    "d": {
+      "sebzésHatások": [],
+      "sebzésMegjegyzések": [],
+      "spBónuszok": [],
+      "téHatások": [
+        {
+          "cél": "té_dobás",
+          "forrás": "Zavar (2)",
+          "megjegyzés": undefined,
+          "operátor": "hátrány",
+          "érték": -1,
         },
       ],
       "téMegjegyzések": [],
