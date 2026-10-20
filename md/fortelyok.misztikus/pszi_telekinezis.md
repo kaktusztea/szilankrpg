@@ -1,8 +1,8 @@
 ## 🟣🌀 Pszí Telekinézis (3)
 
-Egy lassú, andalogva sétáló ember sebességével vagy képes tárgyakat szellemi akaratoddal mozgatni.
+Egy lassú, andalogva sétáló ember sebességével képes vagy tárgyakat szellemi akaratoddal mozgatni.
 
-A Telekinézis valós erejű alkalmazása a **Természetes Anyagok Mágiája** Arkánummal valósul meg, mikor a mágiatudó Étert köt a célpontban meg. Ez a pszionikus alkalmazás e varázslat nagyságrendekkel leegyszerűsítettebb, jelentősen gyengébb módja.
+A Telekinézis valós erejű alkalmazása a **Természetes Anyagok Mágiája** Arkánummal valósul meg, mikor a mágiatudó ***Étert*** köt meg a célpontban. Az itt leírt pszionikus alkalmazás e varázslat nagyságrendekkel leegyszerűsítettebb, jelentősen gyengébb módja.
 
 ### 1. fok
 
@@ -28,7 +28,7 @@ A Telekinézis valós erejű alkalmazása a **Természetes Anyagok Mágiája** A
 
 Hogy a tárgy megemelésekor mekkora súlyt vagy képes mozgatni, az az **Önuralom** Tulajdonságodtól függ, amelyet úgy veszünk, mintha **Erő** Tulajdonság lenne. Ez tehát az elme "Erőpróbája" (Tulajdonságpróbája) szó szerint.
 
-A KM határozzon meg egy Erő Tulajdonságpróba Nehézséget, amit a játékos az **Önuralom** Tulajdonságával dob.
+A KM a tárgy súlyának ismeretében határozzon meg egy **Erő** Tulajdonságpróba Nehézséget, amit a játékos az **Önuralom** Tulajdonságával dob.
 
 **Tanács**: ne mélyedjetek el a kilogrammok részleteiben, érzésre határozzátok meg a Nehézséget.
 
@@ -47,9 +47,11 @@ Csak mágikus Arkánummal:
 
 Az élőlényeket a Telekinézis ellen is védi személyes Aurájuk és így **Mágiaellenállásuk** is - így élőlényt csak mágiatudó képes mozgatni a **Természetes Anyagok Mágiája** Arkánum segítségével, **ezzel a Pszí fortéllyal nem**.
 
-Amennyiben az áldozat meg tud kapaszkodni, akkor `Önuralom vs Erő` Tulajdonságpróba következik, hogy képes -e tartani magát, vagy a mágiatudó varázslata sikerrel "elvonszolja".
+(Mágia esetén: amennyiben az áldozat meg tud kapaszkodni, akkor `Önuralom vs Erő` Tulajdonságpróba következik, hogy képes -e tartani magát, vagy a mágiatudó varázslata sikerrel "elvonszolja")
 
 ---
 ### Speciális szituáció: Lopás
 
-A [Lopás](../kepzettsegek.szekunder/lopas.md) képzettséget Telekinézis használatával is használhatod - ugyanúgy Lopás képzettségpróbát kell dobnod.
+A [Lopás](../kepzettsegek.szekunder/lopas.md) képzettséget Telekinézis használatával is használhatod - ugyanúgy Lopás Képzettségpróbát kell dobnod.
+
+---

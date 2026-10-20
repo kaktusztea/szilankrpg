@@ -1,6 +1,6 @@
 ## Harci helyzetek ✴️🗡️
 
-Minden Harci helyzet egy speciális Státusz, de "térbeli relációkat" szimulál, ezért hívjuk máshogy.\
+Minden **Harci helyzet** egy speciális **Státusz**, de "térbeli relációkat" szimulál, ezért nevezzük máshogy.\
 A Státusz ezzel szemben egy ideiglenes, vagy tartós hatás, amiből előbb-utóbb "kigyógyul" a karakter.
 
 Leírásukat lásd a Harcrendszer **[Harci helyzetek](065_03_00_harci_helyzetek.md)** fejezetében.
