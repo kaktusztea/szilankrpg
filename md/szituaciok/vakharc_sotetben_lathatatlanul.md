@@ -1,12 +1,12 @@
 ## Vakharc, sötétben, láthatatlanul
 
-Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesszük a harci helyzeteket
+Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesztjük a harci helyzeteket.
 
 ### ⚜️ Nappali fényben: Érzékelhetetlen harcoló  vs. másik harcos
 
-- sikeres  [Lopakodás/rejtőzés és észlelése](lopakodas_rejtozes_es_eszlelese.md)
+- Sikeres [Lopakodás/rejtőzés és észlelése](lopakodas_rejtozes_es_eszlelese.md)
 - Érzékelhetetlen harcoló: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszait kapja
-- Másik harcos: alap harcértékeivel harcol
+- Másik harcos: normál (fegyveres) harcértékeivel harcol
 
 <br />
 
@@ -18,22 +18,15 @@ Láthatatlan harcoló bónuszai:
 - [Láthatatlan - teljesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---teljesen)
 
 Másik harcos
-- alap harcértékeivel harcol
+- normál (fegyveres) harcértékeivel harcol
 
 <br />
 
 ---
 ### ⚜️ Sötétben: Láthatatlan harcoló   vs.  másik harcos
 
-Ez egy speciális eset, a Láthatatlanság bónuszai megszűnnek. 
-Mindketten a látási viszonyok
-
-[Láthatatlan - részlegesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)  harcoló
-- bónuszait elveszíti
-- [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
-
-[Láthatatlan - teljesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---teljesen) harcoló
-- bónuszai lecsökkennek [Láthatatlan - részlegesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) bónuszaira
+Láthatatlan (mindegy a mértéke)
+- [Láthatatlanság](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) bónuszait elveszíti ❌
 - [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
 Másik harcos
@@ -49,9 +42,9 @@ Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol.
 - [Vakharc félhomályban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban)
 - [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben)
 
-🔆 A sötét a [Lopakodás/rejtőzés vs Észlelés](lopakodas_rejtozes_es_eszlelese.md) szituációban bónuszt ad
+🔆 Szituáció: [Lopakodás/rejtőzés vs Észlelés](lopakodas_rejtozes_es_eszlelese.md) → a sötét bónuszt ad rá
 
-🔆 Hallás: nem vesszük külön a csendes és zajos helyzeteket, CSAK akkor ha érzékelhetetlen [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetbe akar kerülni az egyik fél.
+🔆 Zajok, Hallás: nem vesszük külön a csendes és zajos helyzeteket, CSAK akkor ha érzékelhetetlen [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetbe akar kerülni az egyik fél.
 
 ---
 

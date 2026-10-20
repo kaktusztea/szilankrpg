@@ -1,6 +1,6 @@
 ## Ki mozdul elsőnek?
 
-Számos szituáció van, mikor elhangozhat a fenti kérdés. Igyekszünk nem bonyolítani:
+Számos szituáció van, mikor elhangozhat a fenti kérdés. Igyekszünk nem bonyolítani.
 
 <br />
 
@@ -12,17 +12,19 @@ Ilyenkor egyszerű harci [Kezdeményezést](../064_02_01_kezdemenyezes.md) kell 
 
 ### 🔆 Nem harci cselekedet esetén
 
-Ilyen esetben **Gyorsaság** [Tulajdonság ellenpróbát](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba) dobassunk. Reflex jellegű és futás szituáció esetén szintén.
+→ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba). Reflex jellegű és futás szituáció esetén szintén.
 
-A próbát módosíthatja, ha valaki közelebb van az elérni kívánt célhoz, illetve ne feledkezzünk meg a [Sprint](../fortelyok.altalanos/sprint.md) fortély módosítóiról sem.
+→ Fortély: [Sprint](../fortelyok.altalanos/sprint.md) módosítói
+
+→  Helyzetfüggő módosító: bónusz jár, ha valaki közelebb van az elérni kívánt célhoz
 
 <br />
 
-### 🔆 Vegyes eset
+### 🔆 Mozgás harcon kívül, amíg a többiek harcolnak
 
-Előfordul, hogy valaki nem akar részt venni a harcban és úgy akar mozgást végezni.
+Előfordul, hogy valaki nem vesz részt a harcban és úgy akar mozgást végezni.
 
-Ebben az esetben viszont **neki is** [Kezdeményezést](../064_02_01_kezdemenyezes.md) kell dobnia, mivel így kezelhetőek csak a cselekedetek egységes keretben.
+→ [Kezdeményezést](../064_02_01_kezdemenyezes.md) kell dobnia **neki is**, mert így kezelhetőek csak a cselekedetek egységes keretben.
 
 ---
 

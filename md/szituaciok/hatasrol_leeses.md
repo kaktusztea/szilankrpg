@@ -32,9 +32,9 @@ Hátas       Nehézség
  Üget         15
  Vágtázik     18
 
-Módosítók:
-→ Terep Nehézség: [-6; +3]
-→ Páncélban: [+1; 6]
+Helyzetfüggő Módosítók (dobásra):
+→ Terep Nehézség: -3; +3; +6
+→ Páncélban: -3; -6
 → Levegőből: lásd lenn
 ```
 
@@ -44,7 +44,7 @@ Módosítók:
 
 ### ⚜️ Esésből sebződés: Sikertelen Akrobatika-próba után
 
-Ha elvétetted az Akrobatika (esés) próbát, a hátas mozgásától függően kapsz zuhanásból adódó sebzést.
+Ha elvétetted az **Akrobatika** (esés) próbát, a hátas mozgásától függően kapsz zuhanásból adódó sebzést. **SFÉ** nyilván **nem** számít.
 
 ```
 Hátas            SP

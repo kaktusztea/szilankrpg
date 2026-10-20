@@ -22,6 +22,8 @@ Mindenki ezzel jöhet ki - harcmodortól függetlenül.
 
 → Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
+→ Manőverek: [Belharcos](../066_06_belharcos_manoverek.md)
+
 ---
 
 🔗 [Szituációk](../150_szituaciok.md) ↑
