@@ -1,12 +1,16 @@
 ## Meglepetésből, Precíz támadás max TÉ taktikával
 
-[Meglepetésből](../065_03_01_pozitiv_helyzetek.md#meglepetés) támadsz (harci helyzet) és maximális [Támadó taktikát](../065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) bevetve (`TÉ:+3, VÉ:-6`) megpróbálkozol egy [Precíz támadás manőverrel](../066_05_altalanos_manoverek.md#precíz-támadás).
+→ Harci helyzet: [Meglepetésből](../065_03_01_pozitiv_helyzetek.md#meglepetés) támadsz
 
-A fenti Manővernek [**Végrehajtás** és **Ellenpróba**](../066_04_manover_vegbevitele.md) fázisai vannak. A **Meglepetés** harci helyzet bónusza és a **Támadó taktika** bónusza hogyan érvényesülnek?
+→ Taktika: [Támadó taktika](../065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) (`TÉ:+3, VÉ:-6`)
+
+→ Manőver:  [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás)
+- [**Végrehajtás** és **Ellenpróba**](../066_04_manover_vegbevitele.md) fázisai vannak
+- A **Meglepetés** harci helyzet bónusza és a **Támadó taktika** bónusza hogyan érvényesülnek itt?
 
 ### Manőver **Végrehajtás** fázisa
 
-- itt jár a **Meglepetés** bónusza: `Előny+1` erre a Támadó dobásra
+- **Meglepetés** bónusza: `Előny+1` erre a Támadó dobásra
 - `TÉ:+3` a **Támadó taktikából**
 - `TÉ:+5`, ami a szokásos bónusz a Manőverek Végrehajtás fázisánál
 
@@ -16,7 +20,7 @@ Itt nem jár bónusz, de lehet Manőver Pontot (`MP`) bőven beletenni (maximum 
 
 ### Ellenfél visszatámadásnál
 
-A manőver után, az ellenfél visszatámadása során a manővert végző `VÉ:-6` büntetéssel védekezik - a Támadó Taktika fonákja ekkor érvényesül.
+A manőver után a manővert végző `VÉ:-6` büntetéssel védekezik a kör végéig - a Támadó Taktika fonákja ekkor érvényesül.
 
 ---
 

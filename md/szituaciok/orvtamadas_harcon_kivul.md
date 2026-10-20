@@ -6,7 +6,7 @@
 
 → [Összetett képzettség ellenpróba](../030_06_01_kepzettsegproba.md#%C3%B6sszetett-ellenpr%C3%B3ba) is indokolt lehet - helyszín, távolság, jelenlevők - KM dönt.
 
-→ **Módosítók** a Képzettség: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) leírásában találhatóak.
+→ **Módosítók**: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) Képzettség leírásában találhatóak.
 
 ```
 Lopakodás/rejtőzés + Ügyesség
@@ -27,12 +27,14 @@ Lopakodás/rejtőzés + Ügyesség
 ---
 ### ⚡ Példa
 
-Tegyük fel, hogy az éjjeli, csendes palota folyosóján az őr mögé akarsz lopakodni, majd hátbaszúrni. **Lopakodás/rejtőzés** releváns módosítói - testközelben:
+Tegyük fel, hogy az éjjeli, csendes palota folyosóján az őr mögé akarsz lopakodni, majd hátbaszúrni. **Lopakodás/rejtőzés** releváns Helyzetfüggő módosítói - testközelben:
 
 ```
--3: Környezeti zajok: süket csend
-+6: Lopakodó helyzete: mozgás a látótéren kívül
--9: Távolság: Testközelbe kerülni
+Helyzetfüggő módosítók: -6 (dobásra)
+
+ -3: Környezeti zajok: süket csend
+ +6: Lopakodó helyzete: mozgás a látótéren kívül
+ -9: Távolság: Testközelbe kerülni
 ```
 
 ### Ellenpróba dobás
