@@ -643,6 +643,9 @@ Automatikus kudarc
   Szellemi képzettségpróbákra
   Szociális képzettségpróbákra
 
+Hátrány-1
+  TÉ dobásra
+
 Hátrány-2
   KÉ dobásra
   Gyorsaság Tulajdonságpróbákra
