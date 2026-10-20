@@ -704,6 +704,9 @@ státuszok:
       cél: szociális_próba
       megjegyzés: automatikus kudarc
     - mód: hátrány
+      érték: -1
+      cél: té_dobás
+    - mód: hátrány
       érték: -2
       cél: ké_dobás
     - mód: hátrány
