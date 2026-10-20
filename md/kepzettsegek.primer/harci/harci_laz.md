@@ -1,5 +1,7 @@
 ## 🔵 Harci láz
 
+⭕TODO: kapcsolódhat/ütközhet ezzel: [Indulat Státusz](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-indulat-1-harag) ⭕
+
 Ez egy [Primer (harci) képzettség](../../010_09_primer_szekunder_ismeretek.md).
 
 Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem gondolsz. A fokozatok között a harc során "lépdelsz" - képzettségpróbáiddal irányítod, mennyire engeded el magad.

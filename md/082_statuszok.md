@@ -1,6 +1,6 @@
 ## Státuszok ✴️
 
-A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulnia".
+A **Státuszok** ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulnia".
 
 A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, akinek levágták a karját).
 
@@ -40,7 +40,7 @@ Előny+1,2  //  Hátrány-1,2
   adott Képzettségpróbára
 ```
 
-####  ⚡ Példa képzettség Átokra: Alulművelt Bölcsész 🤓
+####  ⚡ Példa képzettség Átokra: "Alulművelt Bölcsész" 🤓
 
 ```
 Hátrány-1
@@ -74,7 +74,7 @@ Hajlamos vagy kockázatos
 
 ```
 Folyamatosan gyanakszol másokra,
-és nehezen bízol meg bárkiben
+  és nehezen bízol meg bárkiben
 ```
 
 #### ⚡ Példa: Irigy
@@ -255,7 +255,7 @@ Hátrány-1
   Szociális képzettségpróbákra
 ```
 
-Mi okozhatja?
+#### Mi okozhatja?
 
 ```
 → Nem bírod a stresszt
@@ -352,7 +352,7 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci 
 
 A nem-mágikus érzékszervi, vagy érzelmi ingerek fokozottabban hatnak rád. Érzelmileg jobban megnyílsz - pozitív és negatív értelemben is.
 
-A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az szituáció függő.
+A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az szituációfüggő.
 
 ### ✴️ Hangulat (2) Inspirált
 
@@ -368,7 +368,7 @@ Hátrány-1
 
 ### ✴️ Hangulat (3) Eufórikus
 
-Euforikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására.
+Euforikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására. Ilyenkor túlzottan magabiztos vagy, meggondolatlan döntéseket hozhatsz.
 
 ```
 Előny+1
@@ -376,15 +376,12 @@ Előny+1
 
 Hátrány-1
   Ellenséges varázstudó:
-    Asztrálmágia Komplexitás-próbára
+    Asztrálmágia Komplexitás-próbájára
     (asztrális befolyásolásnak jobban
      ellenáll az eufórikus személy)
 
 Hátrány-2
   Koncentrációt igénylő feladatokra
-
-Ilyenkor túlzottan magabiztos vagy,
-  meggondolatlan döntéseket hozhatsz
 ```
 
 ### ✴️ Hangulat (4) Obszesszív
@@ -409,6 +406,8 @@ Hátrány-1
 
 ---
 ### ✴️ Indulat (1) Harag
+
+⭕TODO: kapcsolódhat/ütközhet ezzel: [Harci láz képzettség](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.primer/harci/harci_laz.md)⭕
 
 Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör.
 
@@ -471,9 +470,9 @@ Kleptománia (1,2,3)
   "El kéne lopni valamit..."
 
 Alkoholizmus (1,2,3) ("Igyak piát?")
- 1. Akaraterő tulajdonságpróba (Nagyivó)
- 2. Hátrány-1 (Alkoholista)
- 3. Hátrány-2 (Masszív alkoholista)
+  Sugallat: Nagyivó
+  Vágy: Alkoholista
+  Kényszer: Masszív alkoholista
 ```
 
 <br />
@@ -635,7 +634,7 @@ Példa: ledöbbenés, stb.
 
 ### ✴️ Zavar (2) Megrendült
 
-A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból ismert, "stunned".
+A következő utáni kör végéig tart csak (`2 kör`). Ez a videójátékokból ismert, "**stunned**".
 
 ```
 2 körig tart
@@ -658,7 +657,7 @@ Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az 
 
 ### ✴️ Zavar (3) Sokk
 
-Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képes részt venni.
+Nagyjából `10-20` percig tart, KM dönt. Az aktuális harci jelenetben nem képes részt venni.
 
 ```
 Automatikus kudarc
@@ -672,7 +671,7 @@ Pszi használat elvesztése
 Varázslás képesség elvesztése
 
 Beszéd (zavart, vagy némult)
-  (szituáció függő)
+  (szituációfüggő)
 ```
 
 #### Kijövetel sokkból automatikusan
@@ -685,8 +684,8 @@ Beszéd (zavart, vagy némult)
 #### Kihozni valakit sokkból hamarabb
 
 ```
-Emberismeret + Érzékenység
-  Képzettségpróba
+Képzettségpróba:
+  Emberismeret + Érzékenység
 
 Célszám: 12 (Nehéz)
   → siker enyhíti 2.fokra

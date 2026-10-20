@@ -7,4 +7,6 @@ Leírásukat lásd a Harcrendszer **[Harci helyzetek](065_03_00_harci_helyzetek.
 
 ---
 
+🔗 [Mágikus státuszok](084_magikus_statuszok_99.md) →
+
 ⚜️ [Nyitóoldal](szabalyrendszer.md#8-hatások-és-státuszok)
