@@ -2,7 +2,9 @@
 
 ### Távolsági fegyver kategóriák, Fegyverek Célzó Értéke
 
-A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy általánosságban mennyire könnyű kezelni őket, mennyire alkalmasak messzi célok leküzdésére. Ezek szerint az alábbi módosítók járulnak **minden** karakter `Célzó Értékéhez`, aki a felsorolt fegyverek valamelyikét kezébe veszi. A konkrét fegyverek `Célzó Értéke` és egyedi jellemzőik az alábbi linkeken találhatóak.
+A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy általánosságban mennyire könnyű kezelni őket, mennyire alkalmasak messzi célok leküzdésére.
+
+A lenti általános értékek irányadóak - a konkrét fegyverek jellemzői az alábbi linkeken találhatóak:
 
 ### → [Hajítófegyverek táblázata](068_07_hajitofegyverek.md)
 
@@ -11,7 +13,7 @@ A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy 
 ---
 ### Általános harcértékek
 
-Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek értékei ezektől enyhén eltérhetnek:
+Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek értékei ezektől enyhén eltérhetnek.
 
 ```
 Nem hajításra alkotott tárgyak 🔆
@@ -76,9 +78,9 @@ Modern, nagy hatótávú fegyver
 
 Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezhető:
 
-→ [Hajítás alkalmatlan fegyverrel](065_03_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet
+🗡️ Harci helyzet: [Hajítás alkalmatlan fegyverrel](065_03_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
 
-⚜️ [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) 🔁 fortély tanulásával (fegyverenként) a büntetések mérsékelhetőek.
+⚜️ Fortély: [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) 🔁  (fegyverenként) - a büntetéseket mérsékli
 
 <br />
 
@@ -87,9 +89,9 @@ Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezh
 
 Például sámli hajítása. Alapesetben büntetésekkel végezhető:
 
-→ [Hajítás nem dobásra készített tárgyakkal](065_03_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal) harci helyzet
+🗡️ Harci helyzet: [Hajítás nem dobásra készített tárgyakkal](065_03_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal)
 
-⚜️ [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély tanulásával a büntetések mérsékelhetőek.
+⚜️ Fortély: [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) a büntetéseket mérsékli
 
 <br />
 
@@ -111,23 +113,29 @@ Harckeret =
 
 ✅ [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk
 
-❌ [Nyílpuskáknak](075_nyilpuskak_ujratoltese.md) nincs **Sebesség** értéke. Ezt mérsékelheti a [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md) harci fortély.
+🏹 Távolsági fegyverek **Sebesség** értékeit lásd itt: [Hajítófegyverek táblázata](068_07_hajitofegyverek.md), [Lőfegyverek táblázata](068_08_lofegyverek.md)
 
-→ Távolsági fegyverek **Sebesség** értékeit lásd itt: [Hajítófegyverek táblázata](068_07_hajitofegyverek.md), [Lőfegyverek táblázata](068_08_lofegyverek.md)
+❌ [Nyílpuskáknak](075_nyilpuskak_ujratoltese.md) nincs **Sebesség** értéke. Ezt mérsékelheti a [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md) harci fortély
 
 <br />
 
 ---
 ### Hatótáv
 
-A fegyver méterben megadott, elérhető legnagyobb lőtávolságát jelenti. Hajítás esetén még szerepet játszhat a támadó Erő tulajdonsága.
+A fegyver méterben megadott, elérhető legnagyobb lőtávolságát jelenti. Hajítás esetén még szerepet játszhat a támadó **Erő** Tulajdonsága.
 
-⚡Példa: a Nyílpuska **Hatótávja** `50`, tehát maximálisan `50` méterre lehet vele ellőni
+⚡Példa: Nyílpuska **Hatótáv: `50`**, tehát maximálisan `50` méterre lehet vele ellőni
 
 <br />
 
 ---
 ### Távolsági fegyverek minősége
+
+```
+Minőség (Idea)
+  CÉ értékét javítja/rontja
+  Osztót csak szélsőséges esetben
+```
 
 Nem minden fegyver egyformán jó minőségű, valamelyik igazi mestermunka, pontos, megbízható, mások pedig olyan hitványul vannak összeeszkábálva, hogy még egy öt méterre álló gólemet se talál el vele az ember.
 

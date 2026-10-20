@@ -1,12 +1,12 @@
-## ⚡`I.` Példalövészet merénylet
+## ⚡`I.` Példalövészet: Merénylet
 
 Tetves, a tolvaj-bérgyilkos egy raktár ablakából les nyílpuskával a sikátorban hazafelé battyogó tehetős kalmárra.
 
-A Nyílpuska **Osztója:** `5`
+Nyílpuska **Osztó: `5`**
 
 ### `I/1` Tetves Célzó Értéke
 
-Ezt már karakteralkotáskor kiszámoltuk, így játék közben már nincs szükség semmilyen számításra. Az érthetőség kedvéért azért listázzuk a `CÉ` komponenseit.
+Karakteralkotáskor kiszámoltuk, játék közben nincs szükség újrakalkulációra. Az érthetőség kedvéért listázzuk a `CÉ` komponenseit:
 
 ```
 Önuralom: 3
@@ -43,7 +43,8 @@ Szorzó: 2
 ```
 
 ```
-VÉ = 8  (2 × 4)
+VÉ = Szorzó x Cella
+VÉ = 2 × 4 = 8
 ```
 
 ---
@@ -53,14 +54,14 @@ VÉ = 8  (2 × 4)
 3(CÉ) + k20   vs   8(VÉ)
 ```
 
-azaz ha Tetves legalább `5`-öt dob `k20`-on, akkor találatot ér el. Átlagos cél (`75 % esély`)...
+azaz ha Tetves legalább `5`-öt dob `k20`-on, akkor találatot ér el. Nem egy nagy feladat (`75 % esély`).
 
 ```
 k20 Célzó dobás: 6
 
 CÉ = 3 + 6 = 9
  → Találat
- → dobhatja a sebzést
+ → Sebzésdobás
 ```
 
 <br />
@@ -73,13 +74,12 @@ Lássunk egy bonyolultabb esetet.
 
 Tetves ezúttal ősi nemezisét Rühest, a cingár, aprótermetű tolvajt próbálja rövid íjával eltalálni, miközben az az enyhe ködben, a tetőkön oson. Rühes lassú, egyenletes mozgással üget végig egy tetőgerincen `12` méter távolságra.
 
-Tetves a szomszédos balkonon áll, de rövid íját megfeszítve, lassan sétálnia kell, hogy Rühes ne kerüljön ki a látóteréből. Balszerencséjére enyhe szél is fúj, így a célzás tovább nehezedik. Az észlelést továbbá enyhe köd és sötét bonyolítja - csak az épületek lámpafénye és a Vörös Hold segíti a látást.
+Tetves a szomszédos balkonon áll, de rövid íját megfeszítve, lassan sétálnia kell, hogy Rühes ne kerüljön ki a látóteréből. Balszerencséjére erős szél is fúj, így a célzás tovább nehezedik. Az észlelést továbbá enyhe köd és sötét bonyolítja - csak az épületek lámpafénye és a Vörös Hold segíti a látást.
 
 ---
 ### `II/1` Tetves Célzó Értéke
 
-Tetves Íjászat képzettsége is `6.szintű`, sőt a **Rövid íjra** van `Mf: 1.fok` fortélya is.\
-Ez némileg mérsékli a fegyver rosszabb `CÉ` jellemzőjét és `Osztóját`.
+A magasabb Harcmodor (Íjászat) szint és a Mesterfegyver fortély némileg mérsékli a fegyver rosszabb `CÉ` jellemzőjét és `Osztóját`.
 
 ```
 Önuralom: 3
@@ -108,7 +108,7 @@ CÉ = 3
 Szorzók: 7
 + 2x: Mozgás: lassú, egyenletes
 + 1x: Lövész mozgása: lassú egyenletes
-+ 1x: Célpont mérete:törpe méret (Rühes cingár)
++ 1x: Célpont mérete:törpe méret (Rühes elég cingár)
 + 1x: Észlelhetőség: homályos kontúr
 + 2x: Szél: erős
 ```
@@ -132,7 +132,7 @@ VÉ = 7 × 3 = 21
 3 + k20  vs  21
 ```
 
-azaz ha Tetvesnek minimum`18`-as dobásra van szüksége `k20`-on, hogy célt találjon. Nehéz próba.
+azaz Tetvesnek minimum`18`-as dobásra van szüksége `k20`-on, hogy célt találjon. Elég nehéz próba.
 
 ```
 k20 Célzó dobás: 15
@@ -143,7 +143,7 @@ CÉ = 3 + 15 = 18
 
  Elvétette.... Rühes lába előtt a tetőcserépen csattan a vessző. A cingár tolvaj egy merész vetődéssel átgurul a tető másik felére és némi cserepet leverve lecsúszik az ereszig. Megmenekült.
 
-Ha nem fújt volna ennyire erősen a szél (`-1` Szorzóra) vagy nem ilyen rosszak a látási viszonyok (ez is `-1` Szorzóra), akkor Tetves éppen célt talált volna (`VÉ=18 (6x3)`) és Rühes napja is sokkal rosszabbul alakul.
+Ha nem fújt volna ennyire erősen a szél (`-1x` Szorzó) vagy nem ilyen rosszak a látási viszonyok (szintén `-1x` Szorzó), akkor Tetves éppen célt talált volna (`VÉ=18 (6x3)`) és Rühes napja is sokkal rosszabbul alakul.
 
 ---
 

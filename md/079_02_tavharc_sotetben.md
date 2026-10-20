@@ -8,18 +8,23 @@ Ez egy speciális eset, sokat számít a "vak" szerencse is, de nem lehetetlen. 
 k10
  vs
 (Távolság - Érzékenység)
+
+Speciális (k10)
+  1: kudarc mindig
+ 10: siker mindig
 ```
 
-Dobjunk `k10`-zel, a dobáshoz ne adjunk hozzá semmit. A Célszám a célpont távolsága **méterben** mínusz a lövész **Érzékenység** Tulajdonsága. Ha sikeres a próba, akkor elkezdhetjük kiszámolni a `CÉ` és `VÉ` értékeket a táblázatban megadott `5x` [Észlelhetőség Szorzóval](072_02_tavharc_ve_szorzo.md#szorzó---észlelhetőség-módosító).
+Dobjunk `k10`-zel - módosító nélkül. A Célszám a célpont távolsága **méterben** mínusz a lövész **Érzékenység** Tulajdonsága.
 
-Ha a fenti `k10`-es próba sikertelen, akkor a lövés/dobás is automatikusan sikertelennek minősül. A rontás mértékétől függően közelben lévő barátot, szövetségest találhat el az eltévedt lövedék. Erről a KM dönt. Az `1`-es dobás itt is mindig kudarc, a `10`-es mindig siker.
+Ha sikeres a próba, akkor elkezdhetjük kiszámolni a `CÉ` és `VÉ` értékeket a táblázatban megadott `5x` [Észlelhetőség Szorzóval](072_02_tavharc_ve_szorzo.md#szorzó---észlelhetőség-módosító).
 
-Érthető, hogy közvetlen közelről egy képzetlen karakter is valószínűleg betalál, viszont ahogy nő a távolság, úgy csökkenek (drasztikusan) a találati esélyei.
+Ha a próba sikertelen, akkor a lövés/dobás is automatikusan sikertelen. A rontás mértékétől függően közelben lévő barátot, szövetségest találhat el az eltévedt lövedék - KM dönt.
+
+Érthető, hogy közvetlen közelről egy képzetlen karakter is valószínűleg betalál, viszont ahogy nő a távolság, úgy csökkenek (drasztikusan) a találati esélyek.
 
 <br />
 
 ---
-
 ### `I/1` Harcos Célzó Értéke nyílpuskával, vaksötétben
 
 ```
@@ -35,12 +40,17 @@ CÉ = – 15(konstans)
 ```
 
 ---
-###  `I/2` Szerencse dobás
+###  `I/2` Szerencsedobás
 
 ```
 Érzékenység: +2
+
+k10   vs   8 (10-2)
+
+→ Esély: 30%
 ```
-A játékos először is dob `k10`-zel: ha az eredmény nagyobb, vagy egyenlő `(10-2)=8` értékkel, amire `30%` esély van, akkor dobhat Célzást, egyébként automatikusan célt téveszt.
+
+Ha sikeres, tehet Célzó dobást, egyébként automatikusan célt téveszt.
 
 ---
 ### `I/3` A célpont Védő Értéke vaksötétben
@@ -64,8 +74,8 @@ Szorzó: 7
 ```
 
 ```
-VÉ = 14  (7 × 2)
 VÉ = Szorzó x Cella
+VÉ = 7 × 2 = 14
 ```
 
 ```
@@ -92,7 +102,7 @@ Szorzó: 6
 ```
 
 ```
-VÉ = 12  (6 × 2)
+VÉ = 6 × 2 = 12
 ```
 
 ```

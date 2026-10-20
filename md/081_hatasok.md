@@ -6,7 +6,7 @@ Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Stát
 
 ### Szorzó hatások ökölszabály
 
-[Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
+→ [Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
 <br />
 
@@ -18,7 +18,7 @@ MIN,MAX: [-2, +2]
 ```
 
 Az `Előny` és `Hátrány` speciális, kockadobásokat érintő Hatások.\
-Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
+Az alábbi dobásokat befolyásolhatják:
 
 ```
 KÉ dobás
@@ -29,47 +29,35 @@ Tulajdonságpróba
 Képzettségpróba (mágia is)
 Sebzésdobás
 Mágia Akarata
-Mágiaellenállás dobás
+Mágiaellenállás
 ```
 
-🔆 Halmozódásuk esetén is az alábbi alsó és felső korlátuk érvényes: `[-2, +2]`.
+🔆 Halmozódásuk esetén is alsó és felső korlátuk érvényes: `[-2, +2]`.
 
-🔆 A fenti Előny/Hátrány modell **Státuszok** és **képzettség-kiterjesztések** esetén alkalmazandó. Ezzel szemben a Fortélyok fix bónuszai és Harci taktikák esetén konstans, statikus módosítókat alkalmazunk.
+🔆 Az Előny/Hátrány modell **Státuszok** és **Képzettség-kiterjesztések** esetén alkalmazandó. Ezzel szemben a **Fortélyok** bónuszai és **Harci taktikák** esetén konstans, statikus módosítókat alkalmazunk.
 
 ### 🔥 Előny+1
 
 ```
 2x dobhat, nagyobb számít
-
-Védekezés esetén:
-  támadó dob → Hátrány-1
 ```
 
 ### 🔥 Előny+2
 
 ```
 3x dobhat, legnagyobb számít
-
-Védekezés esetén:
-  támadó dob → Hátrány-2
 ```
 
 ### 🔥 Hátrány-1
 
 ```
 2x dobhat, kisebb számít
-
-Védekezés esetén:
-  támadó dob → Előny+1
 ```
 
 ### 🔥 Hátrány-2
 
 ```
 3x dobhat, legkisebb számít
-
-Védekezés esetén:
-  támadó dob → Előny+2
 ```
 
 <br />
@@ -78,29 +66,30 @@ Védekezés esetén:
 ---
 ### 🔥 Antyssjárás elvesztése
 
-Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - alvás közben sem.
+Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - még alvás közben sem.
 
 <br />
 
 ---
 ### 🔥 Automatikus kudarc
 
-- KÉ dobásra (utolsónak kezdeményezhetsz)
+- KÉ dobásra → utolsónak kezdeményezhetsz
 - Tulajdonságpróbára
 - Képzettségpróbára
 
-Az adott Tulajdonságra/Képzettségre nem is dobhatsz próbát, azonnali kudarc.
+Tulajdonságra/Képzettségre nem is dobhatsz próbát, azonnali kudarc.
 
-Példa: csábítás **Befolyásolás-próba** borzasztó büdösen.
+Példa: csábítás **Befolyásolás-próba** a latrinából kimászva.
 
 <br />
 
 ---
-### 🔥 Automatikus tulajdonság/képzettségpróba
+### 🔥 Automatikus Tulajdonság/Képzettségpróba
 
 Sima próbadobás (Tulajdonságpróba, Képzettségpróba)
 
-Ami másnak automatikus siker, az neked sima próbadobás.
+Nehezebben mennek bizonyos hétköznapi dolgok.\
+Ami másnak automatikus siker, az neked már próbadobásos.
 
 <br />
 
@@ -108,12 +97,12 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 ### 🔥 Beszéd - zavart
 
 - Nehezen tudsz szavakat formálni
-- Varázslásnál: Extra Önuralom tulajdonságpróba (Nehéz). Ha megvan, sikerül a hang komponenst kimondani
+- Varázslásnál: Extra **Önuralom** Tulajdonságpróba (**Nehéz**). Ha megvan, sikerül a varázslat hang komponensét kimondani
 
 ### 🔥 Beszéd - némult
 
 - Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem.
-- Mágia hangalapú komponensét sem tudod alkalmazni
+- Mágia hangalapú komponensét nem tudod alkalmazni
 
 <br />
 
@@ -124,8 +113,8 @@ Látás / Hallás / Szaglás.
 
 ```
 Hátrány-1 minden adott érzéken
-  alapuló tulajdonságpróbára és
-  képzettségpróbára
+  alapuló Tulajdonságpróbára és
+  Képzettségpróbára
 ```
 
 ### 🔥 Érzék - Hátrány-2 (részleges)
@@ -134,8 +123,8 @@ Látás / Hallás / Szaglás.
 
 ```
 Hátrány-2 minden adott érzéken
-  alapuló tulajdonságpróbára és
-  képzettségpróbára
+  alapuló Tulajdonságpróbára és
+  Képzettségpróbára
 ```
 
 ### 🔥 Érzék - automatikus kudarc (kioltott)
@@ -144,7 +133,7 @@ Látás / Hallás / Szaglás.
 
 ```
 Automatikus kudarc minden
-adott érzéken alapuló próbára.
+  adott érzéken alapuló próbára.
 ```
 
 <br />
@@ -152,11 +141,11 @@ adott érzéken alapuló próbára.
 ---
 ### 🔥 `FP S1`
 
-Az `S1` Egészség kategória összes rubrikája feltöltődik új [FP](061_02_faradtsag_pont.md) jelölőkkel.
+Az `S1` Egészség kategória összes rubrikája feltöltődik új [FP](061_02_faradtsag_pont.md) jelölőkkel. Ha `S1` már betelt, nincs hatása.
 
 ### 🔥 `FP S2`
 
-Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [FP](061_02_faradtsag_pont.md) jelölőkkel.
+Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [FP](061_02_faradtsag_pont.md) jelölőkkel. Ha `S2` már betelt, nincs hatása.
 
 <br />
 
@@ -164,14 +153,14 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
-- minden támadás ellened automatikusan sebző
+- minden támadás ellened: automatikus Sebzés
 
 <br />
 
 ---
 ### 🔥 Mozgás - feleződik
 
-- [Mozgás](063_01_harci_kor.md#2-mozgás) értéked feleződik ↑ - harcon belül
+- [Mozgás](063_01_harci_kor.md#2-mozgás) értéked feleződik ↑ - harc közben
 - Felére csökken a megtehető távolságod - harcon kívül
 
 ---
@@ -182,7 +171,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Mozgás - képtelen
 
-- minden támadás ellened automatikusan sebző
+- minden támadás ellened: automatikus Sebzés
 - mozdulni se bírsz nyaktól lefelé
 - szemmozgás, légzés működik
 - csak fizikai hatás, mentális hatása nincs
@@ -201,10 +190,8 @@ Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással
 
 ```
 -1 támadás a körben
-(minimum 1)
+(minimum 1 marad)
 ```
-
-<br />
 
 ---
 ### 🔥 Többszörös támadás elvesztése
@@ -213,28 +200,30 @@ Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással
 Max 1 támadás / kör
 ```
 
+<br />
+
 ---
 ### 🔥 Varázslás képesség elvesztése
 
-Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra nincs hatással.
+Képtelen vagy bármilyen mágia létrehozára, fenntartására. Az Aurádra nincs hatással.
 
 <br />
 
 ---
 ### 🔥 VÉ veszteség duplázódik
 
-Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged duplázódik.
+Irányodba indított támadásnál az elszenvedett `VÉ` veszteséged duplázódik.
 
-🔆 Nem halmozható. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
+🔆 Nem halmozható többször. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
 
 <br />
 
 ---
 ### 🔥 VÉ csökkentés bónusz `+[1;2]`
 
-Védő Érték csökkentésedhez `1`-től `2`-ig terjedő bónuszt kapsz.
+Védő Érték csökkentésedhez `1` vagy `2` bónuszt kapsz.
 
-Additív, de maximális értéke összesen: `+2`.
+Additív, de maximum: `+2`
 
 <br />
 
