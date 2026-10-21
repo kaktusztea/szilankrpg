@@ -14,7 +14,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Intelligencia
 - Normál kiterjesztés: [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
-- Extra: A KM a játékos előadásának, karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
+- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#-szerepjátékos-módosító), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
 
 `VS`
 
@@ -45,7 +45,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Érzékenység
 - Normál kiterjesztés: [Csábítás](../fortelyok.altalanos/csabitas.md) fortély
-- Extra: a bájoló karakter szubjektív szépségétől függő bónuszok [-3;+3] tartományban - KM dönt a szituáció és a karakterek ismeretében.
+- Extra: a bájoló karakter szubjektív szépségétől függő bónuszok `-3;+3` → KM dönt a szituáció és a karakterek ismeretében.
 
 `VS`
 
@@ -68,9 +68,9 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 - Tulajdonság: Önuralom
 - Normál kiterjesztés: [Megfélemlítés](../fortelyok.altalanos/megfelemlites.md) fortély
 
-#### Megfélemlítés Módosítók
+#### Helyzetfüggő Módosító
 
-Véres karddal, félmeztelenül hadonászás: a felek ⚪ **Erő** Tulajdonságának **különbsége** hozzáadódik bónuszként a **Befolyásolás** képzettséghez.
+- **Erő** Tulajdonságok különbsége: véres karddal, félmeztelenül hadonászik az egyik fél
 
 ---
 

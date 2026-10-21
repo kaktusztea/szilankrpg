@@ -21,9 +21,9 @@ Kihallgatott: [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) k
 
 Gyakran kombinálják a [Megfélemlítés](befolyasolas_modszerei.md#%EF%B8%8F-megf%C3%A9leml%C3%ADt%C3%A9s-szitu%C3%A1ci%C3%B3) szituációval, amely ha sikeres, akkor `+2` Bónusz jár a fenti Kihallgatás szituációra.
 
-#### Összetett próba
+#### [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba)
 
-Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a kérdezés hosszú ideig is eltarthat. Ilyenkor [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobandó - a szituáció függvényében a KM dönt, mennyire többlépcsős.
+Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a kérdezés hosszú ideig is eltarthat. Ilyenkor összetett képzettségpróba dobandó - a szituáció függvényében a KM dönt, mennyire többlépcsős.
 
 ---
 ### 🔆 Megvezetés, hazudozás
