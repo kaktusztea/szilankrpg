@@ -2,14 +2,18 @@
 
 Harcoló csoportban egy konkrét személyre célzol.
 
-### Célpont Védő Érték kiszámítása
+### Célpont Védő Érték módosító
 
-Szokásos módon, de\
-Szorzó - Mozgás módosító: `5x` ([Harcoló célpont](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont))
+```
+Szorzó - Mozgás
+  +5x (Harcoló célpont)
+```
+
+→ [Mozgás szorzók](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)
 
 ### Elvétett lövés
 
-Ha elvétetted, akkor kiszámoljuk a [Tömeg Védő Értékét](harcolo_tomegbe_loves__barki_jo_talalatnak.md) is (Szorzó - Mozgás módosító: `1x`). Ha azt eltaláltad, akkor a célpont mellett levő **saját társadat** találtad el!
+→ Szituáció: [Harcoló tömegbe lövés - bárki jó találatnak](harcolo_tomegbe_loves__barki_jo_talalatnak.md) szerint számold újra.
 
 ---
 

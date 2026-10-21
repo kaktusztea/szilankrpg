@@ -1,10 +1,8 @@
 ## Hajítás alkalmatlan fegyverrel
 
-Ilyen szituációban a `Célzó dobásodra` az alábbi **Harci helyzet** módosító érvényesek:\
-→ [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
+→ Harci helyzet: [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) módosítói érvényesek
 
-A fenti büntetéseket mérséklik:\
-→ [Alkalmatlan fegyver hajítása](../fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) (`2`) fortély fokai
+→ Fortély [Alkalmatlan fegyver hajítása](../fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) (`2`) → a fenti büntetéseket mérséklik
 
 ---
 

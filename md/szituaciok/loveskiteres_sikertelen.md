@@ -1,13 +1,17 @@
 ## Lövéskitérés sikertelen (rontott Akrobatika próba)
 
-A célpont [megpróbált kitérni](../073_tavharci_taktikak.md#lövéskitérés) a lövés/hajítás elől - sikertelenül.
+→ Távharci taktika: [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés) → ❌ Sikertelen volt
 
-Ilyenkor a lövész rendesen **Célzó Dobást** tesz.
+→ Ilyenkor a lövész rendesen **Célzó Dobást** tesz.
 
-### Célpont Védő Érték kiszámítása
+### Célpont Védő Érték módosító
 
-Szokásos módon, de\
-`3x`: [Sikertelenül szándékosan kitérő célpont](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont) Szorzó-Mozgás módosítóval
+```
+Szorzó - Mozgás
+  +3x (Sikertelenül szándékosan kitérő célpont)
+```
+
+→ [Mozgás szorzók](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)
 
 ---
 

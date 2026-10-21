@@ -26,7 +26,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Harcoló tömegbe lövés - egy konkrét célra](szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md)
 - [Harcoló tömegbe lövés - bárki jó találatnak](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md)
 - [Lövéskitérés próba](szituaciok/loveskiteres.md)
-- [Lövéskitérés sikertelen (rontott Gyorsaságpróba)](szituaciok/loveskiteres_sikertelen.md)
+- [Lövéskitérés sikertelen (rontott Akrobatika próba után)](szituaciok/loveskiteres_sikertelen.md)
 - [Lövész nyúl a fegyveréért, támad rá egy harcos](szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md)
 - [Lövés vaksötétben, zajos célpontra](079_02_tavharc_sotetben.md)
 

@@ -44,6 +44,7 @@ CÉ = – 15(konstans)
 
 ```
 Érzékenység: +2
+Távolság: 10m
 
 k10   vs   8 (10-2)
 

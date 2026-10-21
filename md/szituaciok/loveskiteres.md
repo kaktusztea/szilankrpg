@@ -1,8 +1,8 @@
 ## Lövéskitérés
 
-Kitérés lövés előt.
+Megpróbálsz tudatosan kitérni a rád leadott lövés/hajítás elől.
 
-Lásd a [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés) távharci taktikát!
+→ Távharci taktika: [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés)
 
 ---
 

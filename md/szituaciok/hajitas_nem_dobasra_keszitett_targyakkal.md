@@ -1,10 +1,9 @@
 ## Hajítás nem dobásra készített tárgyakkal
 
-Ilyen szituációban a `Célzó dobásodra` az alábbi **Harci helyzet** módosító érvényesek:\
-→ [Hajítás nem dobásra készített tárgyakkal](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
+→ Harci helyzet: [Hajítás nem dobásra készített tárgyakkal](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) módosítói érvényesek
 
-A fenti büntetéseket mérséklik:\
-→ [Alkalmatlan tárgyak hajítása](../fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) (`2`) fortély fokai
+→ Fortély: [Alkalmatlan tárgyak hajítása](../fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) (`2`) → a fenti büntetéseket mérséklik
+
 
 ---
 
