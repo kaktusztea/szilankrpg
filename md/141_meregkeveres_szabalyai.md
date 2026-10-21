@@ -79,6 +79,14 @@ Hatás max súlyossága
 
 #### Másodlagos hatás
 
+```
++0: nincs másodlagos
++2: 1 fokkal enyhébb
++4: 2 fokkal enyhébb
+```
+
+Kiemelt sikernél nem hat a másodlagos
+
 Opcionális, sikeres próba esetén következhet be. Hatása legfeljebb a rendes hatásnál `1`-gyel ⭕(`2`-vel???)⭕ alacsonyabb kategóriájú lehet. (Pl. Halál→Életveszély(⭕vagy Bódulat⭕))
 
 <br />

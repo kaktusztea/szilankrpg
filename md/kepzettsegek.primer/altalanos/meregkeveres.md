@@ -58,7 +58,7 @@ Méregkeverés képzettségpróba
   Nehézség: 9
 
 Dobásmódosító:
-  Élettan fortély: +2 / fok
+  Élettan fortély: +2
 ```
 
 → Fortély: [Élettan](../../fortelyok.altalanos/elettan.md)

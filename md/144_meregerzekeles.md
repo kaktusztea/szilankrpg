@@ -21,7 +21,7 @@ Alap célszám: `xy`    ⭕TODO⭕
 ```
 
 ---
-### 2. Érzékenység tulajdonságpróba
+### 2. Érzékenység Tulajdonságpróba
 
 ```
 Célszám: 4 (Átlagos)
