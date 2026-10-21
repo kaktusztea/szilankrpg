@@ -13,14 +13,14 @@ A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriá
 - növényi
 - ásványi (szervetlen)
 
-A **[Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)** külön képzettség, működését lásd annak leírásában.
+→ **Képzettség**: **[Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)**
 
 ---
 ## A méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos.
+A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 ```
 Méreg komplexitása =
@@ -35,10 +35,9 @@ Méreg komplexitása =
 ### (1) Méreg Erőssége
 
 ```
- Méreg erőssége: 1-10
+ Méreg erőssége: [1-10]
 ```
 
-A **Méreg erőssége** `(1-10)` intervallumban mozog.\
 Ez adja meg, hogy mennyire nehezen áll ellen a szervezet a méregnek, mennyire hatékony. Gyakorlatilag az összetevők "erejétől" függ. A hatékonyabb (esetleg titkos) összetevők ismerete a magas szintű méregkeverés ismérve.
 
 Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsuk észben, hogy **az Erősség nem egyenlő a romboló hatással!** Léteznek például nagyon hatékony, `10`-es erősségű altatók is.
@@ -47,9 +46,12 @@ Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsu
 
 Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
 
-**Erősség változása**:
-- Kis adag: Erősség `50%`-kal csökken (lefele kerekítünk)
-- Nagy adag: Erősség: `50%`-kal nő (lefele kerekítünk)
+```
+Erősség változása
+
+→ Kis adag:  Erősség 50% csökken ↓
+→ Nagy adag: Erősség 50% nő ↓
+```
 
 Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
 
@@ -77,19 +79,17 @@ Hatás max súlyossága
 
 #### Másodlagos hatás
 
-A mérgeknek lehet ún. **Másodlagos hatása**, amely a sikeres próba esetén következik be. Ennek hatása legfeljebb a rendes hatásnál `1`-gyel ⭕(`2`-vel???)⭕ alacsonyabb kategóriájú lehet. (Pl. Halál→Életveszély(⭕vagy Bódulat⭕))
+Opcionális, sikeres próba esetén következhet be. Hatása legfeljebb a rendes hatásnál `1`-gyel ⭕(`2`-vel???)⭕ alacsonyabb kategóriájú lehet. (Pl. Halál→Életveszély(⭕vagy Bódulat⭕))
 
 <br />
 
 ---
 ### (3) Elállás / Kiürülés
 
-Ez a tétel attól függ, hogy milyen típusú mérget szándékozik készíteni a méregkeverő:
+Ez a tétel a méreg típusától függ:
 
-- **Elállás**: kizárólag fegyvermérgek esetén: meddig áll el szabad levegőn/folyadékban?
-- **Kiürülés**: minden más méreg típus esetén - mennyi idő alatt ürül ki az áldozat szervezetéből
-
-A "**Méregkeverés X.szint**" ("Mk") az **igényelt biztos tudás** szintjét jelenti.
+- **Elállás**: kizárólag **fegyvermérgek** esetén: meddig áll el szabad levegőn/folyadékban?
+- **Kiürülés**: minden más méreg típus esetén: mennyi idő alatt ürül ki az áldozat szervezetéből
 
 #### (3a) Elállás
 
@@ -103,6 +103,8 @@ Meddig áll el?
 4: 1 nap,   Mk 6.szint
 5: 1 hónap, Mk 9.szint
 6: Örökké,  Mk 12.szint
+
+Mk: Méregkeverés biztos tudás követelmény
 ```
 
 #### (3b) Kiürülés
@@ -114,6 +116,8 @@ Mennyi idő alatt ürül ki?
 1: 1 óra, Mk 6. szint
 2: 1 nap, Mk 9. szint
 3: 1 hét, Mk 12. szint
+
+Mk: Méregkeverés biztos tudás követelmény
 ```
 
 <br />
@@ -134,6 +138,8 @@ Milyen gyorsan hat?
 +4: Hónapok múlva,            Mk 9. szint
 +5: Azonnal (1 szívdobbanás), Mk 9. szint
 +5: Évek múlva,               Mk 12. szint
+
+Mk: Méregkeverés biztos tudás követelmény
 ```
 
 <br />
@@ -166,14 +172,14 @@ Milyen gyorsan hat?
 ---
 ### Hány adag méreg készíthető?
 
-Ez az alapanyagok beszerezhetőségétől függ. Amennyiben megvan az **Alkímia+Vajákosság** követelmény és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
+Az alapanyagok beszerezhetőségétől függ. Ha megvan az **Alkímia+Vajákosság** követelmény és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
 
 ---
 ### Fajok különbözősége
 
-Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak Yn3v leggyakoribb elfszabású teremtményeinek méreggel szembeni tulajdonságaival.
+Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a világ leggyakoribb elfszabású teremtményeinek méreggel szemben álló tulajdonságaival.
 
-Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortély megléte szükséges az adott fajra felvéve.
+→ Szabad Fortély: [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) szükséges, ha ritka fajról van szó - az adott fajra felvéve.
 
 ---
 
