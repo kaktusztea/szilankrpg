@@ -16,21 +16,21 @@ Célszám: 7
 Érzékenység Tulajdonságpróba dobás módosítói.
 
 ```
-+3: Szájról olvasás fortéllyal
+Fortély bónusz
+ +3: Szájról olvasás fortéllyal
 ```
 
 ```
 Láthatóság
-
--1: nagyobb távolság
--2: nehezen kivehető szájmozgás //
-    enyhe köd
--3: még éppen kivehető szájmozgás //
-    rossz látási viszonyok
-E fölött lehetetlen.
+ -1: nagyobb távolság
+ -2: nehezen kivehető szájmozgás //
+     enyhe köd
+ -3: még éppen kivehető szájmozgás //
+     rossz látási viszonyok
+ E fölött lehetetlen.
 ```
 
-Lásd: [Szájról olvasás](../fortelyok.altalanos/szajrol_olvasas.md) fortély.
+→ Fortély: [Szájról olvasás](../fortelyok.altalanos/szajrol_olvasas.md)
 
 ---
 

@@ -19,7 +19,7 @@ Kihallgatott: [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) k
 
 #### Bónuszok
 
-Gyakran kombinálják a [Megfélemlítés](befolyasolas_modszerei.md#%EF%B8%8F-megf%C3%A9leml%C3%ADt%C3%A9s-szitu%C3%A1ci%C3%B3) szituációval, amely ha sikeres, akkor `+2` Bónusz jár a fenti Kihallgatás szituációra.
+Szituáció: [Megfélemlítés](befolyasolas_modszerei.md#%EF%B8%8F-megf%C3%A9leml%C3%ADt%C3%A9s-szitu%C3%A1ci%C3%B3) → gyakran kombinálják ezzel. Sikere esetén `+2` Bónusza a fenti Kihallgatás szituációra.
 
 #### [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba)
 
