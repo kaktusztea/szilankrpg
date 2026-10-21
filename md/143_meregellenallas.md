@@ -8,7 +8,7 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 🔆 **Fontos**: a Méregellenállást a méreg **Erőssége** (és NEM komplexitása) ellen kell dobni!
 
-🔆 Bónuszt ad: [Méregálló](fortelyok.altalanos/meregallo.md) fortély
+🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
 
 ---
 

@@ -43,15 +43,25 @@ A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../
 <br />
 
 ---
-### Próbák 🎲
+### Méreg kikeverése 🎲
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos. A **Méreg komplexitásának** számítása a [Méregrendszer](../../140_meregrendszer.md) fejezetben található.
+A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
-### Méreg azonosítása tünetek, környezeti hatás alapján
+→ **Méreg komplexitása**: [Méregrendszer](../../140_meregrendszer.md) fejezetben részletezett számítása
 
-- Sima Méregkeverés próba, alap célszám: `6`
-- Félrevezető (speciális) :`+3/6 Nehézség`
-- [Élettan](../../fortelyok.altalanos/elettan.md) fortély: `+2 dobás bónusz / fok`
+### Méreg azonosítása tünetek, környezeti hatás alapján 🎲
+
+A méreg azonosítása a [Méregérzékelés](../../144_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
+
+```
+Méregkeverés képzettségpróba
+  Nehézség: 9
+
+Dobásmódosító:
+  Élettan fortély: +2 / fok
+```
+
+→ Fortély: [Élettan](../../fortelyok.altalanos/elettan.md)
 
 ---
 ### Helyzetfüggő módosítók
@@ -69,4 +79,11 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 ```
 -3: Hiányzó, de helyettesíthető komponensek
  0: Szükséges komponensek mind megvannak
+```
+
+#### ⚜️ Méreg azonosítása 1️⃣
+
+```
+-3: Félrevezető (speciális)
+-6: Félrevezető nagyon (speciális)
 ```
