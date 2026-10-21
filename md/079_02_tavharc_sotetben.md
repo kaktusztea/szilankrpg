@@ -1,6 +1,6 @@
 ## ⚡Távolsági harc vaksötétben, zajos célpontra
 
-Ez egy speciális eset, sokat számít a "vak" szerencse is, de nem lehetetlen. Ami újdonság az az, hogy a **Célzó dobást** megelőzi egy random Szerencsedobás.
+Ez egy speciális eset, sokat számít a "vak" szerencse is, de nem lehetetlen. A **Célzó dobást** megelőzi egy random Szerencsedobás.
 
 ### Szerencsedobás a sötét miatt
 
@@ -14,44 +14,40 @@ Speciális (k10)
  10: siker mindig
 ```
 
-Dobjunk `k10`-zel - módosító nélkül. A Célszám a célpont távolsága **méterben** mínusz a lövész **Érzékenység** Tulajdonsága.
+→ Dobás: `k10`\
+→ Célszám: célpont távolsága **méterben** mínusz a lövész **Érzékenység** Tulajdonsága. Távolsággal csökken a rontás esélye.
 
-Ha sikeres a próba, akkor elkezdhetjük kiszámolni a `CÉ` és `VÉ` értékeket a táblázatban megadott `5x` [Észlelhetőség Szorzóval](072_02_tavharc_ve_szorzo.md#szorzó---észlelhetőség-módosító).
-
-Ha a próba sikertelen, akkor a lövés/dobás is automatikusan sikertelen. A rontás mértékétől függően közelben lévő barátot, szövetségest találhat el az eltévedt lövedék - KM dönt.
-
-Érthető, hogy közvetlen közelről egy képzetlen karakter is valószínűleg betalál, viszont ahogy nő a távolság, úgy csökkenek (drasztikusan) a találati esélyek.
+→ Sikeres próba: mehet a lövés, `VÉ`: `5x` [Észlelhetőség Szorzóval](072_02_tavharc_ve_szorzo.md#szorzó---észlelhetőség-módosító) (Vaksötétben harcoló ellenfél)\
+→ Sikertelen próba: lövés/dobás is automatikusan sikertelen. Rontás mértékétől függően közelben lévő barátot, szövetségest találhatsz el - KM dönt.
 
 <br />
 
 ---
-### `I/1` Harcos Célzó Értéke nyílpuskával, vaksötétben
+### `I/1` Harcos Célzó Értéke nyílpuskával
 
 ```
 CÉ = 2
-```
-
-```
-CÉ = – 15(konstans)
-     + 3 (Önuralom)
-     + 8 (nyílpuska CÉ)
-     + 5 (CM)
-     + 1 (Lövészet 4.szint)
+ – 15(konstans)
+ + 3 (Önuralom)
+ + 8 (nyílpuska CÉ)
+ + 5 (CM)
+ + 1 (Lövészet 4.szint)
 ```
 
 ---
-###  `I/2` Szerencsedobás
+###  `I/2` Szerencsedobás sötét miatt
 
 ```
-Érzékenység: +2
-Távolság: 10m
+Célszám: 8 (10-2)
+  Érzékenység: +2
+  Távolság: 10m
 
-k10   vs   8 (10-2)
+k10   vs   8
 
 → Esély: 30%
+→ Sikeres próba: mehet a lövés
+→ Sikertelen próba: mellé
 ```
-
-Ha sikeres, tehet Célzó dobást, egyébként automatikusan célt téveszt.
 
 ---
 ### `I/3` A célpont Védő Értéke vaksötétben
@@ -63,8 +59,8 @@ Két esetet nézünk: az elsőben a célpont lassan oson, a másodikban egy hely
 ```
 Cella: 2  (10m / 5 ↑)
 
-Távolság: 10 méter
-Nyílpuska Osztó: 5
+ Távolság: 10 méter
+ Nyílpuska Osztó: 5
 ```
 
 ```
@@ -91,8 +87,8 @@ Célzó dobás #1
 ```
 Cella: 2  (10m / 5 ↑)
 
-Távolság: 10 méter
-Nyílpuska Osztó: 5
+ Távolság: 10 méter
+ Nyílpuska Osztó: 5
 ```
 
 ```
