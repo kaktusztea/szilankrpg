@@ -300,7 +300,8 @@
 - [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
 - [Méregellenállás próba](143_meregellenallas.md)
 - [Méregérzékelés](144_meregerzekeles.md)
-- [Példamérgek](145_peldamergek.md) ⚡
+- [Méregazonosítás](145_meregazonositas.md)
+- [Példamérgek](146_peldamergek.md) ⚡
 
 ---
 ### 15. [Szituációk](150_szituaciok.md)

@@ -8,7 +8,9 @@
 
 ### [Méregérzékelés](144_meregerzekeles.md)
 
-### [Példamérgek](145_peldamergek.md) ⚡
+### [Méregazonosítás](145_meregazonositas.md)
+
+### [Példamérgek](146_peldamergek.md) ⚡
 
 ---
 

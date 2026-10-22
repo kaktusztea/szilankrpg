@@ -64,11 +64,16 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 Hatás max súlyossága
 
 1: Enyhe rosszullét, hányás
+   Fájdalom(9) → Státusz: Fizikai(1)Fáradtság
 2: Eszmélet: Bódultság Státusz, Görcs
+   Fájdalom(12) → Státusz: Fizikai(2)Kimerültség
 3: Eszmélet: Kábultság Státusz,
-     Részleges bénulás
+   Részleges bénulás
+   Fájdalom(15) → Státusz: Fizikai(2)Kimerültség
 4: Életveszély, Alvás, Teljes bénulás
+   Fájdalom(18) → Státusz: Fizikai(2)Kimerültség
 5: Halál
+   Fájdalom(21) → Státusz: Fizikai(3)Elcsigázottság
 ```
 
 #### Másodlagos hatás
