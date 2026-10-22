@@ -51,7 +51,7 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 
 ### Méreg azonosítása tünetek, környezeti hatás alapján 🎲
 
-A méreg azonosítása a [Méregérzékelés](../../144_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
+A méreg azonosítása a [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
 
 ```
 Méregkeverés képzettségpróba

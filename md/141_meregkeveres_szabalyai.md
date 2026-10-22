@@ -10,13 +10,13 @@ A mérgeket jelleg szerint négy csoportra bontjuk:
 A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriába sorolhatjuk:
 
 - állati
-- növényi
+- növényi(3) Elállás
 - ásványi (szervetlen)
 
 → **Képzettség**: **[Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)**
 
 ---
-## A méreg komplexitása
+## Méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
@@ -24,14 +24,15 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 
 ```
 Méreg komplexitása =
-  + Erősség
-  + Súlyosság
-  + Elállás
-  + Hatóidő
-  + Speciális
+  + (1) Erősség
+  + (2) Hatás Súlyosság
+  + (3) Elállás
+  + (4) Hatóidő
+  + (5) Hatás hossza
+  + (6) Kiürülés ideje
+  + (7) Speciális
 ```
 
----
 ### (1) Méreg Erőssége
 
 ```
@@ -58,7 +59,7 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 <br />
 
 ---
-### (2) Hatása súlyossága
+### (2) Hatás súlyossága
 
 ```
 Hatás max súlyossága
@@ -87,18 +88,11 @@ Hatás max súlyossága
 <br />
 
 ---
-### (3) Elállás / Kiürülés
+### (3) Elállás
 
-Ez a tétel a méreg típusától függ:
-
-- **Elállás**: kizárólag **fegyvermérgek** esetén: meddig áll el szabad levegőn/folyadékban?
-- **Kiürülés**: minden más méreg típus esetén: mennyi idő alatt ürül ki az áldozat szervezetéből
-
-#### (3a) Elállás
+Meddig áll el szabad levegőn/folyadékban?
 
 ```
-Meddig áll el?
-
 0: Pár másodperc
 1: 1 perc
 2: 10 perc
@@ -106,19 +100,6 @@ Meddig áll el?
 4: 1 nap,   Mk 6.szint
 5: 1 hónap, Mk 9.szint
 6: Örökké,  Mk 12.szint
-
-Mk: Méregkeverés biztos tudás követelmény
-```
-
-#### (3b) Kiürülés
-
-```
-Mennyi idő alatt ürül ki?
-
-0: 1 kör, Mk 3. szint
-1: 1 óra, Mk 6. szint
-2: 1 nap, Mk 9. szint
-3: 1 hét, Mk 12. szint
 
 Mk: Méregkeverés biztos tudás követelmény
 ```
@@ -148,7 +129,36 @@ Mk: Méregkeverés biztos tudás követelmény
 <br />
 
 ---
-### (5) Speciális
+### (5) Hatás hossza
+
+```
++0: 1 kör
++1: 2 kör 
++2: rövid jelenet (harcon kívül)
++3: pár óra (harcon kívül)
++5: hónapok  (Kiürülés ideje egyezzen)
+```
+
+<br />
+
+---
+### (6) Kiürülés ideje
+
+Eddig kimutatható Hatás lejárta után.
+
+```
+0: 1 nap
+2: fél nap
+3: 1 óra;                   Mk 6.szint
+4: Hatás lejárta után nem;  Mk 9.szint
+
+Mk: Méregkeverés biztos tudás követelmény
+```
+
+<br />
+
+---
+### (7) Speciális
 
 ```
 +2: Plusz 1 komponens

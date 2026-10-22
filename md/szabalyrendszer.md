@@ -298,10 +298,11 @@
 
 - [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
 - [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
-- [Méregellenállás próba](143_meregellenallas.md)
-- [Méregérzékelés](144_meregerzekeles.md)
-- [Méregazonosítás](145_meregazonositas.md)
-- [Példamérgek](146_peldamergek.md) ⚡
+- [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
+- [Méregellenállás próba](144_meregellenallas.md)
+- [Méregérzékelés](145_meregerzekeles.md)
+- [Méregazonosítás](146_meregazonositas.md)
+- [Példamérgek](147_peldamergek.md) ⚡
 
 ---
 ### 15. [Szituációk](150_szituaciok.md)

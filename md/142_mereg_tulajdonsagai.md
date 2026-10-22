@@ -13,6 +13,6 @@ Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [
 
 ---
 
-🔗 [Méregellenállás próba](143_meregellenallas.md) →
+🔗 [Méregellenállás próba](144_meregellenallas.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)

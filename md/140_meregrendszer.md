@@ -4,13 +4,15 @@
 
 ### [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
 
-### [Méregellenállás próba](143_meregellenallas.md)
+### [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
 
-### [Méregérzékelés](144_meregerzekeles.md)
+### [Méregellenállás próba](144_meregellenallas.md)
 
-### [Méregazonosítás](145_meregazonositas.md)
+### [Méregérzékelés](145_meregerzekeles.md)
 
-### [Példamérgek](146_peldamergek.md) ⚡
+### [Méregazonosítás](146_meregazonositas.md)
+
+### [Példamérgek](147_peldamergek.md) ⚡
 
 ---
 
