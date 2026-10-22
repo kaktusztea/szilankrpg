@@ -5929,15 +5929,25 @@ A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../
 <br />
 
 ---
-### Próbák 🎲
+### Méreg kikeverése 🎲
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos. A **Méreg komplexitásának** számítása a [Méregrendszer](../../140_meregrendszer.md) fejezetben található.
+A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
-### Méreg azonosítása tünetek, környezeti hatás alapján
+→ **Méreg komplexitása**: [Méregrendszer](../../140_meregrendszer.md) fejezetben részletezett számítása
 
-- Sima Méregkeverés próba, alap célszám: `6`
-- Félrevezető (speciális) :`+3/6 Nehézség`
-- [Élettan](../../fortelyok.altalanos/elettan.md) fortély: `+2 dobás bónusz / fok`
+### Méreg azonosítása tünetek, környezeti hatás alapján 🎲
+
+A méreg azonosítása a [Méregérzékelés](../../144_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
+
+```
+Méregkeverés képzettségpróba
+  Nehézség: 9
+
+Dobásmódosító:
+  Élettan fortély: +2
+```
+
+→ Fortély: [Élettan](../../fortelyok.altalanos/elettan.md)
 
 ---
 ### Helyzetfüggő módosítók
@@ -5955,6 +5965,13 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 ```
 -3: Hiányzó, de helyettesíthető komponensek
  0: Szükséges komponensek mind megvannak
+```
+
+#### ⚜️ Méreg azonosítása 1️⃣
+
+```
+-3: Félrevezető tünetek 3
+-6: Félrevezető tünetek 6
 ```
 
 
@@ -29463,7 +29480,7 @@ Ha nem fújt volna ennyire erősen a szél (`-1x` Szorzó) vagy nem ilyen rossza
 
 ## ⚡Távolsági harc vaksötétben, zajos célpontra
 
-Ez egy speciális eset, sokat számít a "vak" szerencse is, de nem lehetetlen. Ami újdonság az az, hogy a **Célzó dobást** megelőzi egy random Szerencsedobás.
+Ez egy speciális eset, sokat számít a "vak" szerencse is, de nem lehetetlen. A **Célzó dobást** megelőzi egy random Szerencsedobás.
 
 ### Szerencsedobás a sötét miatt
 
@@ -29477,43 +29494,40 @@ Speciális (k10)
  10: siker mindig
 ```
 
-Dobjunk `k10`-zel - módosító nélkül. A Célszám a célpont távolsága **méterben** mínusz a lövész **Érzékenység** Tulajdonsága.
+→ Dobás: `k10`\
+→ Célszám: célpont távolsága **méterben** mínusz a lövész **Érzékenység** Tulajdonsága. Távolsággal csökken a rontás esélye.
 
-Ha sikeres a próba, akkor elkezdhetjük kiszámolni a `CÉ` és `VÉ` értékeket a táblázatban megadott `5x` [Észlelhetőség Szorzóval](072_02_tavharc_ve_szorzo.md#szorzó---észlelhetőség-módosító).
-
-Ha a próba sikertelen, akkor a lövés/dobás is automatikusan sikertelen. A rontás mértékétől függően közelben lévő barátot, szövetségest találhat el az eltévedt lövedék - KM dönt.
-
-Érthető, hogy közvetlen közelről egy képzetlen karakter is valószínűleg betalál, viszont ahogy nő a távolság, úgy csökkenek (drasztikusan) a találati esélyek.
+→ Sikeres próba: mehet a lövés, `VÉ`: `5x` [Észlelhetőség Szorzóval](072_02_tavharc_ve_szorzo.md#szorzó---észlelhetőség-módosító) (Vaksötétben harcoló ellenfél)\
+→ Sikertelen próba: lövés/dobás is automatikusan sikertelen. Rontás mértékétől függően közelben lévő barátot, szövetségest találhatsz el - KM dönt.
 
 <br />
 
 ---
-### `I/1` Harcos Célzó Értéke nyílpuskával, vaksötétben
+### `I/1` Harcos Célzó Értéke nyílpuskával
 
 ```
 CÉ = 2
-```
-
-```
-CÉ = – 15(konstans)
-     + 3 (Önuralom)
-     + 8 (nyílpuska CÉ)
-     + 5 (CM)
-     + 1 (Lövészet 4.szint)
+ – 15(konstans)
+ + 3 (Önuralom)
+ + 8 (nyílpuska CÉ)
+ + 5 (CM)
+ + 1 (Lövészet 4.szint)
 ```
 
 ---
-###  `I/2` Szerencsedobás
+###  `I/2` Szerencsedobás sötét miatt
 
 ```
-Érzékenység: +2
+Célszám: 8 (10-2)
+  Érzékenység: +2
+  Távolság: 10m
 
-k10   vs   8 (10-2)
+k10   vs   8
 
 → Esély: 30%
+→ Sikeres próba: mehet a lövés
+→ Sikertelen próba: mellé
 ```
-
-Ha sikeres, tehet Célzó dobást, egyébként automatikusan célt téveszt.
 
 ---
 ### `I/3` A célpont Védő Értéke vaksötétben
@@ -29525,8 +29539,8 @@ Két esetet nézünk: az elsőben a célpont lassan oson, a másodikban egy hely
 ```
 Cella: 2  (10m / 5 ↑)
 
-Távolság: 10 méter
-Nyílpuska Osztó: 5
+ Távolság: 10 méter
+ Nyílpuska Osztó: 5
 ```
 
 ```
@@ -29553,8 +29567,8 @@ Célzó dobás #1
 ```
 Cella: 2  (10m / 5 ↑)
 
-Távolság: 10 méter
-Nyílpuska Osztó: 5
+ Távolság: 10 méter
+ Nyílpuska Osztó: 5
 ```
 
 ```
@@ -32672,14 +32686,14 @@ A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriá
 - növényi
 - ásványi (szervetlen)
 
-A **[Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)** külön képzettség, működését lásd annak leírásában.
+→ **Képzettség**: **[Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)**
 
 ---
 ## A méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos.
+A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 ```
 Méreg komplexitása =
@@ -32694,10 +32708,9 @@ Méreg komplexitása =
 ### (1) Méreg Erőssége
 
 ```
- Méreg erőssége: 1-10
+ Méreg erőssége: [1-10]
 ```
 
-A **Méreg erőssége** `(1-10)` intervallumban mozog.\
 Ez adja meg, hogy mennyire nehezen áll ellen a szervezet a méregnek, mennyire hatékony. Gyakorlatilag az összetevők "erejétől" függ. A hatékonyabb (esetleg titkos) összetevők ismerete a magas szintű méregkeverés ismérve.
 
 Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsuk észben, hogy **az Erősség nem egyenlő a romboló hatással!** Léteznek például nagyon hatékony, `10`-es erősségű altatók is.
@@ -32706,9 +32719,12 @@ Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsu
 
 Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
 
-**Erősség változása**:
-- Kis adag: Erősség `50%`-kal csökken (lefele kerekítünk)
-- Nagy adag: Erősség: `50%`-kal nő (lefele kerekítünk)
+```
+Erősség változása
+
+→ Kis adag:  Erősség 50% csökken ↓
+→ Nagy adag: Erősség 50% nő ↓
+```
 
 Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
 
@@ -32736,19 +32752,25 @@ Hatás max súlyossága
 
 #### Másodlagos hatás
 
-A mérgeknek lehet ún. **Másodlagos hatása**, amely a sikeres próba esetén következik be. Ennek hatása legfeljebb a rendes hatásnál `1`-gyel ⭕(`2`-vel???)⭕ alacsonyabb kategóriájú lehet. (Pl. Halál→Életveszély(⭕vagy Bódulat⭕))
+```
++0: nincs másodlagos
++2: 1 fokkal enyhébb
++4: 2 fokkal enyhébb
+```
+
+Kiemelt sikernél nem hat a másodlagos
+
+Opcionális, sikeres próba esetén következhet be. Hatása legfeljebb a rendes hatásnál `1`-gyel ⭕(`2`-vel???)⭕ alacsonyabb kategóriájú lehet. (Pl. Halál→Életveszély(⭕vagy Bódulat⭕))
 
 <br />
 
 ---
 ### (3) Elállás / Kiürülés
 
-Ez a tétel attól függ, hogy milyen típusú mérget szándékozik készíteni a méregkeverő:
+Ez a tétel a méreg típusától függ:
 
-- **Elállás**: kizárólag fegyvermérgek esetén: meddig áll el szabad levegőn/folyadékban?
-- **Kiürülés**: minden más méreg típus esetén - mennyi idő alatt ürül ki az áldozat szervezetéből
-
-A "**Méregkeverés X.szint**" ("Mk") az **igényelt biztos tudás** szintjét jelenti.
+- **Elállás**: kizárólag **fegyvermérgek** esetén: meddig áll el szabad levegőn/folyadékban?
+- **Kiürülés**: minden más méreg típus esetén: mennyi idő alatt ürül ki az áldozat szervezetéből
 
 #### (3a) Elállás
 
@@ -32762,6 +32784,8 @@ Meddig áll el?
 4: 1 nap,   Mk 6.szint
 5: 1 hónap, Mk 9.szint
 6: Örökké,  Mk 12.szint
+
+Mk: Méregkeverés biztos tudás követelmény
 ```
 
 #### (3b) Kiürülés
@@ -32773,6 +32797,8 @@ Mennyi idő alatt ürül ki?
 1: 1 óra, Mk 6. szint
 2: 1 nap, Mk 9. szint
 3: 1 hét, Mk 12. szint
+
+Mk: Méregkeverés biztos tudás követelmény
 ```
 
 <br />
@@ -32793,6 +32819,8 @@ Milyen gyorsan hat?
 +4: Hónapok múlva,            Mk 9. szint
 +5: Azonnal (1 szívdobbanás), Mk 9. szint
 +5: Évek múlva,               Mk 12. szint
+
+Mk: Méregkeverés biztos tudás követelmény
 ```
 
 <br />
@@ -32825,14 +32853,14 @@ Milyen gyorsan hat?
 ---
 ### Hány adag méreg készíthető?
 
-Ez az alapanyagok beszerezhetőségétől függ. Amennyiben megvan az **Alkímia+Vajákosság** követelmény és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
+Az alapanyagok beszerezhetőségétől függ. Ha megvan az **Alkímia+Vajákosság** követelmény és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
 
 ---
 ### Fajok különbözősége
 
-Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak Yn3v leggyakoribb elfszabású teremtményeinek méreggel szembeni tulajdonságaival.
+Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a világ leggyakoribb elfszabású teremtményeinek méreggel szemben álló tulajdonságaival.
 
-Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortély megléte szükséges az adott fajra felvéve.
+→ Szabad Fortély: [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) szükséges, ha ritka fajról van szó - az adott fajra felvéve.
 
 ---
 
@@ -32877,7 +32905,7 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 🔆 **Fontos**: a Méregellenállást a méreg **Erőssége** (és NEM komplexitása) ellen kell dobni!
 
-🔆 Bónuszt ad: [Méregálló](fortelyok.altalanos/meregallo.md) fortély
+🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
 
 ---
 
@@ -32913,7 +32941,7 @@ Alap célszám: `xy`    ⭕TODO⭕
 ```
 
 ---
-### 2. Érzékenység tulajdonságpróba
+### 2. Érzékenység Tulajdonságpróba
 
 ```
 Célszám: 4 (Átlagos)
@@ -33056,7 +33084,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Harcoló tömegbe lövés - egy konkrét célra](szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md)
 - [Harcoló tömegbe lövés - bárki jó találatnak](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md)
 - [Lövéskitérés próba](szituaciok/loveskiteres.md)
-- [Lövéskitérés sikertelen (rontott Gyorsaságpróba)](szituaciok/loveskiteres_sikertelen.md)
+- [Lövéskitérés sikertelen (rontott Akrobatika próba után)](szituaciok/loveskiteres_sikertelen.md)
 - [Lövész nyúl a fegyveréért, támad rá egy harcos](szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md)
 - [Lövés vaksötétben, zajos célpontra](079_02_tavharc_sotetben.md)
 
@@ -33126,12 +33154,12 @@ Fegyvertelen VÉ
 
 # Állat, bestia idomítása
 
-Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba dobandó. Hogy melyik Szabad Fortély követelmény hozzá, az attól függ, háziállatot, vagy vadállatot próbálsz irányítani. Ha nincs meg a kapcsolódó Szabad Fortély, nem dobhatsz (Erős kiterjesztés).
+Idomításnál, állatokat, bestiákat kontrolláló szituációban a lenti próba dobandó. Hogy melyik Szabad Fortély követelmény hozzá, az attól függ, háziállatot, vagy vadállatot próbálsz irányítani. Ha nincs meg a kapcsolódó Szabad Fortély, nem dobhatsz (🟥 Erős kiterjesztés).
 
 ---
 ### [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség + Érzékenység Tulajdonság
 
- **Erős** kiterjesztéssel:
+ 🟥 **Erős** kiterjesztéssel:
 - [Háziállatok idomítása](../fortelyok.szabad/haziallatok_idomitasa.md): "Morzsi, térülj... fordulj!"
 - [Vadállat idomítása](../fortelyok.szabad/vadallat_idomitasa.md) 🔁: "Táncolj Brumi!"
 
@@ -33140,39 +33168,40 @@ Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba 
 
 #### Könnyű (6) 🎲
 
-- Alap parancs betanítása ("Ülj!", "Fekszik!", "Állj!").
-- Vad vagy félénk állat bizalmának első megnyerése.
-- Kisállat (kutya, macska, lócsikó) kézből etetése, odahívása.
+- Alap parancsok betanítása: "Ülj!", "Fekszik!", "Állj!"
+- Vad vagy félénk állat bizalmának első megnyerése
+- Kisállat (kutya, macska, csikó) kézből etetése, odahívása
 
 #### Átlagos (9) 🎲
 
-- Tárgyak hozatása, átvitele, visszahívás nagyobb távolságból.
-- Lovak, öszvérek vagy igásállatok betörése szelídített szintre.
-- Állat hozzászoktatása alapfelszerelésekhez (hám, szájkosár, nyeregtáska).
+- Tárgyak hozatása, átvitele, visszahívás nagyobb távolságból
+- Lovak, öszvérek, igásállatok betörése, szelídítése
+- Állat hozzászoktatása alapfelszerelésekhez (hám, szájkosár, nyeregtáska)
 
 #### Nehéz (12) 🎲
 
-- Őrző, védő vagy harci parancs betanítása.
-- Vadon élő, agresszívabb állat bizalmának kiépítése (pl. farkas, medve).
-- Vadászat közbeni együttműködés: prédára terelés, jelzés.
+- Őrző, védő vagy harci parancs betanítása
+- Vadon élő, agresszívabb állat bizalmának kiépítése (pl. farkas, medve)
+- Vadászat közbeni együttműködés: préda terelése, jelzés
 
 #### Nagyon nehéz (15) 🎲
 
-- Állat irányítása veszélyhelyzetben (pl. roham közben nem fut el, hanem kitart).
-- Több állat koordinált idomítása egyszerre.
-- Exotikus, intelligensebb állatokhoz való alkalmazkodás. Pl. ocsány.
+- Állat irányítása veszélyes helyzetben (pl. ellenséges roham közben nem fut el)
+- Több állat összehangolt idomítása egyszerre
+- Exotikus, intelligensebb állatokhoz való alkalmazkodás. Pl. ocsány
 
 #### Rendkívül nehéz (18) 🎲
 
-- Telepatikus kapcsolat létrehozása (egyszerű parancs, érzés átadása).
-- Harcban állatoddal egységes taktikai együttműködés (pl. oldalról támad, védi a sebezhető pontod).
-- Egy vad, természetfeletti lény (pl. démontestbe zárt állat) szelídítése – csak átmenetileg.
+- Itt már kötelező a [Mentálfonál](../fortelyok.misztikus/mentalfonal.md) az alkalmazó és az állat között (mindkét fél felvette a másikukra)
+- Telepatikus kapcsolat létrehozása (egyszerű parancs, érzés átadása)
+- Harcban állatoddal taktikai együttműködés (pl. oldalról támad, védi a sebezhető pontod)
+- Egy vad, természetfeletti lény (pl. démon testébe zárt állat) szelídítése átmenetileg
 
 #### Emberfeletti (21) 🎲
 
-- Teljes érzelmi és értelmi egybeolvadás a társállattal.
-- Saját érzékeid kiterjesztése az övével: repülés, éjjellátás, szaglás is.
-- Olyan kötelék létrehozása, amely egyszerre mágikus és lelki.
+- Itt már kötelező a [Mentálfonál](../fortelyok.misztikus/mentalfonal.md) az alkalmazó és az állat között (mindkét fél felvette a másikukra)
+- Teljes érzelmi,értelmi, lelki egybeolvadás a társállattal - ez már mágikus kapcsolatnak számít!
+- Saját érzékeid kiterjesztése az övével: repülés, éjjellátás, szaglás
 
 ---
 
@@ -33202,7 +33231,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Intelligencia
 - Normál kiterjesztés: [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
-- Extra: A KM a játékos előadásának, karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
+- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#-szerepjátékos-módosító), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
 
 `VS`
 
@@ -33233,7 +33262,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Érzékenység
 - Normál kiterjesztés: [Csábítás](../fortelyok.altalanos/csabitas.md) fortély
-- Extra: a bájoló karakter szubjektív szépségétől függő bónuszok [-3;+3] tartományban - KM dönt a szituáció és a karakterek ismeretében.
+- Extra: a bájoló karakter szubjektív szépségétől függő bónuszok `-3;+3` → KM dönt a szituáció és a karakterek ismeretében.
 
 `VS`
 
@@ -33256,9 +33285,9 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 - Tulajdonság: Önuralom
 - Normál kiterjesztés: [Megfélemlítés](../fortelyok.altalanos/megfelemlites.md) fortély
 
-#### Megfélemlítés Módosítók
+#### Helyzetfüggő Módosító
 
-Véres karddal, félmeztelenül hadonászás: a felek ⚪ **Erő** Tulajdonságának **különbsége** hozzáadódik bónuszként a **Befolyásolás** képzettséghez.
+- **Erő** Tulajdonságok különbsége: véres karddal, félmeztelenül hadonászik az egyik fél
 
 ---
 
@@ -33326,21 +33355,21 @@ Célszám: 7
 Érzékenység Tulajdonságpróba dobás módosítói.
 
 ```
-+3: Szájról olvasás fortéllyal
+Fortély bónusz
+ +3: Szájról olvasás fortéllyal
 ```
 
 ```
 Láthatóság
-
--1: nagyobb távolság
--2: nehezen kivehető szájmozgás //
-    enyhe köd
--3: még éppen kivehető szájmozgás //
-    rossz látási viszonyok
-E fölött lehetetlen.
+ -1: nagyobb távolság
+ -2: nehezen kivehető szájmozgás //
+     enyhe köd
+ -3: még éppen kivehető szájmozgás //
+     rossz látási viszonyok
+ E fölött lehetetlen.
 ```
 
-Lásd: [Szájról olvasás](../fortelyok.altalanos/szajrol_olvasas.md) fortély.
+→ Fortély: [Szájról olvasás](../fortelyok.altalanos/szajrol_olvasas.md)
 
 ---
 
@@ -33428,13 +33457,20 @@ Az Éneklés szabad fortély a [Befolyásolás](../kepzettsegek.primer/altalanos
 
 `1.` **Énekkel elbájolni**: képzettségpróba, hogy sikerül-e az előadás
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség
-- [Éneklés](../fortelyok.szabad/enekles.md) (Erős kiterjesztés)
+- [Éneklés](../fortelyok.szabad/enekles.md) (🟥 Erős kiterjesztés)
 - **Érzékenység** Tulajdonság
+- Nehézség: `9/12` (KM dönt)
 
-`2.` **Csábítás**: képzettségpróba bájolásra - az ének ilyenkor csak a "közvetítő közeg".
+`2.` **Csábítás**: képzettségpróba **ellenpróba** bájolásra - az ének ilyenkor csak a "közvetítő közeg".
 - [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
-- [Csábítás](../fortelyok.altalanos/csabitas.md) (Normál kiterjesztés)
+- [Csábítás](../fortelyok.altalanos/csabitas.md) (🟨 Normál kiterjesztés)
 - **Intelligencia** Tulajdonság
+
+`VS`
+
+- [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) képzettség
+- Tulajdonság: Önuralom
+- Normál kiterjesztés: [Csábítás](../fortelyok.altalanos/csabitas.md) fortély
 
 Az éneklés ismerete sem ad segítséget egy igéző ének ellen.
 
@@ -33629,11 +33665,9 @@ Dobásmódosító: 0
 
 ## Hajítás alkalmatlan fegyverrel
 
-Ilyen szituációban a `Célzó dobásodra` az alábbi **Harci helyzet** módosító érvényesek:\
-→ [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
+→ Harci helyzet: [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) módosítói érvényesek
 
-A fenti büntetéseket mérséklik:\
-→ [Alkalmatlan fegyver hajítása](../fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) (`2`) fortély fokai
+→ Fortély [Alkalmatlan fegyver hajítása](../fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) (`2`) → a fenti büntetéseket mérséklik
 
 ---
 
@@ -33648,11 +33682,10 @@ A fenti büntetéseket mérséklik:\
 
 ## Hajítás nem dobásra készített tárgyakkal
 
-Ilyen szituációban a `Célzó dobásodra` az alábbi **Harci helyzet** módosító érvényesek:\
-→ [Hajítás nem dobásra készített tárgyakkal](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
+→ Harci helyzet: [Hajítás nem dobásra készített tárgyakkal](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) módosítói érvényesek
 
-A fenti büntetéseket mérséklik:\
-→ [Alkalmatlan tárgyak hajítása](../fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) (`2`) fortély fokai
+→ Fortély: [Alkalmatlan tárgyak hajítása](../fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) (`2`) → a fenti büntetéseket mérséklik
+
 
 ---
 
@@ -33825,14 +33858,18 @@ Random dobás: `k10`
 
 Harcoló csoportban egy konkrét személyre célzol.
 
-### Célpont Védő Érték kiszámítása
+### Célpont Védő Érték módosító
 
-Szokásos módon, de\
-Szorzó - Mozgás módosító: `5x` ([Harcoló célpont](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont))
+```
+Szorzó - Mozgás
+  +5x (Harcoló célpont)
+```
+
+→ [Mozgás szorzók](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)
 
 ### Elvétett lövés
 
-Ha elvétetted, akkor kiszámoljuk a [Tömeg Védő Értékét](harcolo_tomegbe_loves__barki_jo_talalatnak.md) is (Szorzó - Mozgás módosító: `1x`). Ha azt eltaláltad, akkor a célpont mellett levő **saját társadat** találtad el!
+→ Szituáció: [Harcoló tömegbe lövés - bárki jó találatnak](harcolo_tomegbe_loves__barki_jo_talalatnak.md) szerint számold újra.
 
 ---
 
@@ -33942,11 +33979,11 @@ Kihallgatott: [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) k
 
 #### Bónuszok
 
-Gyakran kombinálják a [Megfélemlítés](befolyasolas_modszerei.md#%EF%B8%8F-megf%C3%A9leml%C3%ADt%C3%A9s-szitu%C3%A1ci%C3%B3) szituációval, amely ha sikeres, akkor `+2` Bónusz jár a fenti Kihallgatás szituációra.
+Szituáció: [Megfélemlítés](befolyasolas_modszerei.md#%EF%B8%8F-megf%C3%A9leml%C3%ADt%C3%A9s-szitu%C3%A1ci%C3%B3) → gyakran kombinálják ezzel. Sikere esetén `+2` Bónusza a fenti Kihallgatás szituációra.
 
-#### Összetett próba
+#### [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba)
 
-Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a kérdezés hosszú ideig is eltarthat. Ilyenkor [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobandó - a szituáció függvényében a KM dönt, mennyire többlépcsős.
+Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a kérdezés hosszú ideig is eltarthat. Ilyenkor összetett képzettségpróba dobandó - a szituáció függvényében a KM dönt, mennyire többlépcsős.
 
 ---
 ### 🔆 Megvezetés, hazudozás
@@ -33968,48 +34005,48 @@ A Befolyásolásos szituációknál említett [Átverés, Hazudozás](befolyasol
 
 Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismereteire, hogy eldöntsük, hallott-e már róla és ha igen, mit.
 
-\- JK: *"Ismerem ezt az "Mottar" nevű alakot?"* \
-\- KM: *"Igen, ő az Ekkorin család vezetője. Úgy hírlik, kapzsi és gyáva is."*
+\- JK: *"Ismerem ezt az "Bülbü" nevű alakot?"* \
+\- KM: *"Igen, ő az Fattimar család vezetője. Úgy hírlik, kapzsi és gyáva is."*
 
 ---
 ### 🔆 Régi idők híres/hírhedt alakja
 
 [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettség
 - Tulajdonság: Emlékezet
-- Erős kiterjesztés: [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md) fortély
+- 🟥 Erős kiterjesztés: [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md) fortély
 
 ---
 ### 🔆 Alvilági alak
 
 [Városi jártasság](../kepzettsegek.szekunder/varosi_jartassag.md) képzettség
 - Tulajdonság: Emlékezet
-- Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély
+- 🟨 Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély
 
 `VAGY`
 
 [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md) képzettség
 - Tulajdonság: Emlékezet
-- Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély
+- 🟨 Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély
 
 ---
 ### 🔆 Alvilági alak egy adott bűnszervezetben
 
 [Városi jártasság](../kepzettsegek.szekunder/varosi_jartassag.md) képzettség
 - Tulajdonság: Emlékezet
-- Normál kiterjesztés: ["Titkos szervezet"](../fortelyok.szabad/titkos_szervezet.md) (adott szervezetre) fortély
+- 🟨 Normál kiterjesztés: ["Titkos szervezet"](../fortelyok.szabad/titkos_szervezet.md) (adott szervezetre) fortély
 
 `VAGY`
 
 [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md) képzettség
 - Tulajdonság: Emlékezet
-- Normál kiterjesztés: ["Titkos szervezet"](../fortelyok.szabad/titkos_szervezet.md) (adott szervezetre) fortély
+- 🟨 Normál kiterjesztés: ["Titkos szervezet"](../fortelyok.szabad/titkos_szervezet.md) (adott szervezetre) fortély
 
 ---
 ### 🔆 Nemesi körökből ismert személy
 
 [Etikett](../kepzettsegek.szekunder/etikett.md) képzettség
 - Tulajdonság: Emlékezet
-- Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély (nem mindig szükséges, ne legyünk szigorúak)
+- 🟨 Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély - nem mindig szükséges, ne legyünk szigorúak
 
 ---
 
@@ -34208,9 +34245,9 @@ Lopás + Ügyesség
 
 ## Lövéskitérés
 
-Kitérés lövés előt.
+Megpróbálsz tudatosan kitérni a rád leadott lövés/hajítás elől.
 
-Lásd a [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés) távharci taktikát!
+→ Távharci taktika: [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés)
 
 ---
 
@@ -34225,14 +34262,18 @@ Lásd a [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés) távhar
 
 ## Lövéskitérés sikertelen (rontott Akrobatika próba)
 
-A célpont [megpróbált kitérni](../073_tavharci_taktikak.md#lövéskitérés) a lövés/hajítás elől - sikertelenül.
+→ Távharci taktika: [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés) → ❌ Sikertelen volt
 
-Ilyenkor a lövész rendesen **Célzó Dobást** tesz.
+→ Ilyenkor a lövész rendesen **Célzó Dobást** tesz.
 
-### Célpont Védő Érték kiszámítása
+### Célpont Védő Érték módosító
 
-Szokásos módon, de\
-`3x`: [Sikertelenül szándékosan kitérő célpont](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont) Szorzó-Mozgás módosítóval
+```
+Szorzó - Mozgás
+  +3x (Sikertelenül szándékosan kitérő célpont)
+```
+
+→ [Mozgás szorzók](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)
 
 ---
 
@@ -34247,9 +34288,11 @@ Szokásos módon, de\
 
 ## Lövész nyúl a fegyveréért, támad rá egy harcos
 
-Előfordul olyan harci szituáció, mikor egy lövésznek nincs épp kezében a fegyvere, mellette pihen, vagy lóg a fegyverövén.
+### Szituáció
 
-Ha ilyen állapotában támadja meg őt egy fegyveres kardjával, vagy egyéb kézben forgatott fegyverével, akkor fontos eldönteni, ki támad először. Nyilván egy módosítatlan [Kezdeményező dobás](../064_02_01_kezdemenyezes.md) nem lenne megfelelő, ilyenkor az alábbi módosítók járnak a felek számára:
+- Lövésznek nincs épp kezében a fegyvere. Mellette pihen, vagy lóg a fegyverövén.
+- Támad rá egy fegyveres
+- **Ki támad először?**
 
 ### Fegyveres támadó `KÉ`
 
@@ -34265,7 +34308,7 @@ Hátrány-1 KÉ dobásra
 Hátrány-2 KÉ dobásra
 ```
 
-A levonás a lőfegyver méretétől függ. Minél nagyobb, annál nagyobb a levonás, mivel annál időigényesebb a fegyver tűzkész állapotba hozni. KM dönt.
+**Büntetés**: a lőfegyver méretétől függ. Kics/közepes: `-1`, Nagy: `-2`. KM dönt.
 
 ---
 
