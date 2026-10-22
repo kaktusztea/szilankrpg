@@ -5,8 +5,10 @@ Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [
 ```
 → Erősség
 → Elállás/Kiürülés
-→ Hatás
+→ Hatás ideje (mennyi ideig tart a hatás)
+→ Hatóidő (mennyi idő után kezd hatni)
 → Másodlagos hatás
+→ összetevők: állati / növényi / ásványi
 ```
 
 ---

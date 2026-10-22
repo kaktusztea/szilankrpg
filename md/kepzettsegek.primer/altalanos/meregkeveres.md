@@ -84,6 +84,6 @@ Dobásmódosító:
 #### ⚜️ Méreg azonosítása 1️⃣
 
 ```
--3: Félrevezető tünetek 3
--6: Félrevezető tünetek 6
+-3: Félrevezető tünetek (3)
+-6: Félrevezető tünetek (6)
 ```

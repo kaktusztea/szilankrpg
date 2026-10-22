@@ -14,10 +14,14 @@ Ez a próba csak akkor dobható, ha a karakter rendelkezik [Méregkeverés](kepz
 ```
 Méregkeverés + Érzékenység
           vs
-       Célszám
+     Nehézség: 12
+```
 
-Alap célszám: `xy`    ⭕TODO⭕
-⭕TODO: egyéb módosítók⭕
+#### Helyzetfüggő módosítók
+
+```
+-3: Színtelen
+-3: Szagtalan
 ```
 
 ---

@@ -20,7 +20,7 @@ Tulajdonságpróba célszám (k6)
 ```
 
 ---
-### Siker/Kudarc mértéke
+### Kiemelt Siker/Kudarc
 
 ⚜️ Ha `3` vagy annál nagyobb különbséggel rontottál, akkor kiemelten nagy hibát vétettél.
 

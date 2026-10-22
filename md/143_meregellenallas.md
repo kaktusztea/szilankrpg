@@ -10,6 +10,8 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
 
+🔆 Ha Tulajdonságpróba [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc), akkor a méreg esetleges [Másodlagos hatása](141_meregkeveres_szabalyai.md#másodlagos-hatás) sem hat rád egyáltalán
+
 ---
 
 🔗 [Méregérzékelés](144_meregerzekeles.md) →

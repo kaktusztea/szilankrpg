@@ -60,21 +60,15 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 ---
 ### (2) Hatása súlyossága
 
-````diff
-⭕TODO⭕
-- Alvás: melyik "Hatás" kategóriába tartozzon?
-- Most a legenyhébben van (1), de lehet, hogy nehezebb alvást előidézni, mint pl. bódulatot...?
-````
-
 ```
 Hatás max súlyossága
 
-⭕1: Enyhe rosszullét, hányás, alvás
-⭕2: Eszmélet: Bódultság Státusz, Görcs
-⭕3: Eszmélet: Kábultság Státusz,
+1: Enyhe rosszullét, hányás
+2: Eszmélet: Bódultság Státusz, Görcs
+3: Eszmélet: Kábultság Státusz,
      Részleges bénulás
-⭕4: Életveszély, Teljes bénulás
-⭕5: Halál
+4: Életveszély, Alvás, Teljes bénulás
+5: Halál
 ```
 
 #### Másodlagos hatás
@@ -84,10 +78,6 @@ Hatás max súlyossága
 +2: 1 fokkal enyhébb
 +4: 2 fokkal enyhébb
 ```
-
-Kiemelt sikernél nem hat a másodlagos
-
-Opcionális, sikeres próba esetén következhet be. Hatása legfeljebb a rendes hatásnál `1`-gyel ⭕(`2`-vel???)⭕ alacsonyabb kategóriájú lehet. (Pl. Halál→Életveszély(⭕vagy Bódulat⭕))
 
 <br />
 
