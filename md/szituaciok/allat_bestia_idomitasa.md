@@ -1,7 +1,7 @@
 # Állat, bestia idomítása
 
-Idomításnál, állatokat, bestiákat kontrolláló szituációban a lenti próba dobandó.\
-A Szabad Fortély követelmény attól függ, hogy háziállatot, vagy vadállatot próbálsz irányítani. \
+Idomításnál, állatokat, bestiákat kontrolláló szituációban a lenti **Befolyásolás** próba dobandó.\
+A kiterjesztő Szabad Fortély követelmény típusa attól függ, hogy háziállatot, vagy vadállatot próbálsz irányítani. \
 🟥 Erős kiterjesztés, tehát ha nincs meg a kapcsolódó Szabad Fortély, nem dobhatsz.
 
 ---
