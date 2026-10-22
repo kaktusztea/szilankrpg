@@ -7,12 +7,12 @@ Ha a méregnek több hordozója van, mindegyikre külön próbá(k) dobható(ak)
 Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha bármelyik sikeres, a karakter kiszúrta a mérget.
 
 ---
-### 1. Méregkeverés próba
+### 1. Mérgek próba
 
-Ez a próba csak akkor dobható, ha a karakter rendelkezik [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md) képzettséggel legalább `3.szinten`.
+Ez a próba csak akkor dobható, ha a karakter rendelkezik [Mérgek](kepzettsegek.primer/altalanos/mergek.md) képzettséggel legalább `3.szinten`.
 
 ```
-Méregkeverés + Érzékenység
+Mérgek + Érzékenység
           vs
      Nehézség: 12
 ```

@@ -3402,9 +3402,9 @@ KM eszköz: méreg összeállítása paraméterekből → komplexitás és jelle
 ```
 Komplexitás = Erősség + Súlyosság + Elállás/Kiürülés + Hatóidő + Speciális
 
-Méregkeverés próba célszáma = Komplexitás
+Mérgek próba célszáma = Komplexitás
 
-Minimum szükséges Méregkeverés szint = MAX(
+Minimum szükséges Mérgek szint = MAX(
   CEIL(Komplexitás / 2),
   legmagasabb paraméter Mk küszöb (lásd Elállás/Kiürülés és Hatóidő táblák)
 )
@@ -3493,8 +3493,8 @@ Sikeres: másodlagos hatás érvényesül (ha van, egyébként semmi)
 ### 39.10 Méregérzékelés
 
 ```
-1. Méregkeverés próba (ha Méregkeverés ≥ 3):
-   Méregkeverés + Érzékenység vs Célszám (TODO: alap célszám kidolgozás)
+1. Mérgek próba (ha Mérgek ≥ 3):
+   Mérgek + Érzékenység vs Célszám (TODO: alap célszám kidolgozás)
 
 2. Érzékenység tulajdonságpróba:
    Alap célszám: 4
@@ -3504,8 +3504,8 @@ Sikeres: másodlagos hatás érvényesül (ha van, egyébként semmi)
 ### 39.11 Követelmény számítás
 
 ```
-Méregkeverés próba célszáma = Komplexitás
-  (Méregkeverés képzettségpróba: Méregkeverés szint + k10 vs Komplexitás)
+Mérgek próba célszáma = Komplexitás
+  (Mérgek képzettségpróba: Mérgek szint + k10 vs Komplexitás)
 
 Minimum Mk szint = MAX(
   CEIL(Komplexitás / 2),

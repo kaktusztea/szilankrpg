@@ -11,7 +11,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 
 ### Bónuszt ad erre
 
-- [Méregkeverés](../kepzettsegek.primer/altalanos/meregkeveres.md) képzettség: `+2`
+- [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség: `+2`
 - [Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettség
 
 ### Kiterjeszti ezeket

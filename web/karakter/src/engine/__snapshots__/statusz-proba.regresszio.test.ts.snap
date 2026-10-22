@@ -450,7 +450,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
-  "Eszmélet (1) | méregkeverés": {
+  "Eszmélet (1) | mérgek": {
     "források": [
       "Eszmélet (Bódultság): -1",
     ],
@@ -1010,7 +1010,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Eszmélet (2) | méregkeverés": {
+  "Eszmélet (2) | mérgek": {
     "források": [
       "Eszmélet (Kábultság): -2",
     ],
@@ -1577,7 +1577,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
-  "Eszmélet (3) | méregkeverés": {
+  "Eszmélet (3) | mérgek": {
     "források": [
       "Eszmélet (Ájulás): kudarc",
     ],
@@ -2144,7 +2144,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
-  "Eszmélet (4) | méregkeverés": {
+  "Eszmélet (4) | mérgek": {
     "források": [
       "Eszmélet (Kóma): kudarc",
     ],
@@ -2592,7 +2592,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
-  "Fizikai (1) | méregkeverés": {
+  "Fizikai (1) | mérgek": {
     "források": [
       "Fizikai (Fáradtság): -1",
     ],
@@ -2963,7 +2963,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Fizikai (2) | méregkeverés": {
+  "Fizikai (2) | mérgek": {
     "források": [
       "Fizikai (Kimerültség): -2",
     ],
@@ -3453,7 +3453,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Fizikai (3) | méregkeverés": {
+  "Fizikai (3) | mérgek": {
     "források": [
       "Fizikai (Elcsigázottság): -2",
     ],
@@ -4127,7 +4127,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
-  "Hangulat (3) | méregkeverés": {
+  "Hangulat (3) | mérgek": {
     "források": [
       "Hangulat (Eufórikus): +1",
       "Hangulat (Eufórikus): -2",
@@ -4612,7 +4612,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
-  "Indulat (3) | méregkeverés": {
+  "Indulat (3) | mérgek": {
     "források": [
       "Indulat (Őrjöngés): kudarc",
     ],
@@ -5186,7 +5186,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
-  "Szellemi (2) | méregkeverés": {
+  "Szellemi (2) | mérgek": {
     "források": [
       "Szellemi (Eltompultság): -1",
     ],
@@ -5578,7 +5578,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Szellemi (3) | méregkeverés": {
+  "Szellemi (3) | mérgek": {
     "források": [
       "Szellemi (Delírium): -2",
     ],
@@ -6068,7 +6068,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
-  "Sérült (1) | méregkeverés": {
+  "Sérült (1) | mérgek": {
     "források": [
       "Sérült (S3): -1",
     ],
@@ -6635,7 +6635,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Sérült (2) | méregkeverés": {
+  "Sérült (2) | mérgek": {
     "források": [
       "Sérült (S4): -2",
     ],
@@ -7202,7 +7202,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
-  "Sérült (3) | méregkeverés": {
+  "Sérült (3) | mérgek": {
     "források": [
       "Sérült (Haldoklás): kudarc",
     ],
@@ -7713,7 +7713,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Zavar (1) | méregkeverés": {
+  "Zavar (1) | mérgek": {
     "források": [
       "Zavar (Kizökkent): -2",
     ],
@@ -8105,7 +8105,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
-  "Zavar (2) | méregkeverés": {
+  "Zavar (2) | mérgek": {
     "források": [
       "Zavar (Megrendült): kudarc",
     ],
@@ -8595,7 +8595,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
-  "Zavar (3) | méregkeverés": {
+  "Zavar (3) | mérgek": {
     "források": [
       "Zavar (Sokk): kudarc",
     ],
@@ -9162,7 +9162,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | méregkeverés": {
+  "Áldott Képzettség (1) | mérgek": {
     "források": [
       "Áldott Képzettség (Előny+1): +1",
     ],
@@ -9729,7 +9729,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | méregkeverés": {
+  "Áldott Képzettség (2) | mérgek": {
     "források": [
       "Áldott Képzettség (Előny+2): +2",
     ],
@@ -10296,7 +10296,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | méregkeverés": {
+  "Átkozott Képzettség (1) | mérgek": {
     "források": [
       "Átkozott Képzettség (Hátrány-1): -1",
     ],
@@ -10863,7 +10863,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | méregkeverés": {
+  "Átkozott Képzettség (2) | mérgek": {
     "források": [
       "Átkozott Képzettség (Hátrány-2): -2",
     ],
@@ -11430,7 +11430,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Viselkedés (1) | méregkeverés": {
+  "Átkozott Viselkedés (1) | mérgek": {
     "források": [
       "Átkozott Viselkedés (Hátrány-1): -1",
     ],
@@ -11997,7 +11997,7 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Viselkedés (2) | méregkeverés": {
+  "Átkozott Viselkedés (2) | mérgek": {
     "források": [
       "Átkozott Viselkedés (Hátrány-2): -2",
     ],

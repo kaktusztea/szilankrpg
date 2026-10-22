@@ -48,7 +48,7 @@ A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen 
 
 Példák `21` feletti célszámokra:
 - Aktuális Aura számításánál Aurahangolás képzettségpróba ⭕LINK⭕
-- [Méreg komplexitása](141_meregkeveres_szabalyai.md#méreg-komplexitása) Méregkeverésnél
+- [Méreg komplexitása](141_meregkeveres_szabalyai.md#méreg-komplexitása)
 
 <br />
 
@@ -292,8 +292,8 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 ### ⚡További Helyettesítés példák felsorolásszerűen
 
 - [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
-- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) ⇆ [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)
-- [Alkímia](kepzettsegek.szekunder/alkimia.md) ⇆ [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)
+- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) ⇆ [Mérgek](kepzettsegek.primer/altalanos/mergek.md)
+- [Alkímia](kepzettsegek.szekunder/alkimia.md) ⇆ [Mérgek](kepzettsegek.primer/altalanos/mergek.md)
 - [Vajákosság](kepzettsegek.szekunder/vajakossag.md) ⇆ [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md)
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) ⇆ [Művészetismeret](kepzettsegek.szekunder/muveszetismeret.md)
 - stb.

@@ -245,7 +245,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Ismered a boncolás tudományát. Méregkeverés képzettségre: +2 bónusz."
+          "Ismered a boncolás tudományát. Mérgek képzettségre: +2 bónusz."
         ],
         "követelmény": [],
         "követelmények": [],
@@ -257,8 +257,8 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "",
-            "megjegyzés": "Méregkeverés képzettségre",
-            "alcél": "képzettség:méregkeverés"
+            "megjegyzés": "Mérgek képzettségre",
+            "alcél": "képzettség:mérgek"
           }
         ],
         "próba_enyhítések": []

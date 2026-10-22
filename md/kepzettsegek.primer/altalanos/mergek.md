@@ -1,4 +1,4 @@
-## 🔵 Méregkeverés
+## 🔵 Mérgek
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható, de a rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat).
 
@@ -45,7 +45,7 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Elállás](../../141_meregk
 ---
 ### Méreg kikeverése 🎲
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
+A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 → **Méreg komplexitása**: [Méregrendszer](../../140_meregrendszer.md) fejezetben részletezett számítása
 
@@ -54,7 +54,7 @@ A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelyne
 A méreg azonosítása a [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
 
 ```
-Méregkeverés képzettségpróba
+Mérgek képzettségpróba
   Nehézség: 9
 
 Dobásmódosító:

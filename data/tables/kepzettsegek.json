@@ -2039,8 +2039,8 @@
     "md_fájl": "kepzettsegek.szekunder/maszas.md"
   },
   {
-    "id": "méregkeverés",
-    "név": "Méregkeverés",
+    "id": "mérgek",
+    "név": "Mérgek",
     "csoport": "tudományos",
     "primer": true,
     "többszörös": [],
@@ -2083,7 +2083,7 @@
     "dobás_komment": [],
     "kapcsolódó_szituációk": [],
     "kapcsolódó_szituációk_elem": {},
-    "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
+    "md_fájl": "kepzettsegek.primer/altalanos/mergek.md"
   },
   {
     "id": "művészetismeret",

@@ -1,7 +1,7 @@
 ## Méregazonosítás
 
 ```
-Méregkeverés + Intelligencia
+Mérgek + Intelligencia
           vs
      Nehézség: 9
 ```

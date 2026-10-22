@@ -1376,7 +1376,7 @@ KM eszköz overlay (hasonló a Jegyzetek overlay-hez). Méreg paraméterek beál
 
 **Output szekció:**
 - Komplexitás (nagy, bold szám)
-- Minimum Méregkeverés szint
+- Minimum Mérgek szint
 - Méregellenállás célszám (= Erősség)
 - Érzékelés nehézsége (Érzékenység célszám módosítókkal)
 

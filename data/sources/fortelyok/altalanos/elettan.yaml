@@ -24,7 +24,7 @@ fokok:
   követelménytext: []
   követelmények: ""
   hatástext: 
-  - text: "Ismered a boncolás tudományát. Méregkeverés képzettségre: +2 bónusz."
+  - text: "Ismered a boncolás tudományát. Mérgek képzettségre: +2 bónusz."
   módosítók: 
   - cél: "képzettségpróba"
     érték: 2
@@ -32,5 +32,5 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: ""
-    megjegyzés: "Méregkeverés képzettségre"
-    alcél: "képzettség:méregkeverés"
+    megjegyzés: "Mérgek képzettségre"
+    alcél: "képzettség:mérgek"

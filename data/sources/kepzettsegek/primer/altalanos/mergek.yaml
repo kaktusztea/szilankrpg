@@ -1,8 +1,8 @@
 ---
 schema_version: 1
 
-id: "méregkeverés"
-név: "Méregkeverés"
+id: "mérgek"
+név: "Mérgek"
 leírás: "Mérgek előállítása, hatásaik ismerete."
 primer: true
 csoport: "tudományos"

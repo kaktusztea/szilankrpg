@@ -16,7 +16,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - Fájdalomtűrés
 - Hadászat
 - Lopakodás/rejtőzés
-- Méregkeverés
+- Mérgek
 - Nyomozás
 - Orvoslás
 - Ősi nyelv ismerete
@@ -116,7 +116,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Hadászat](kepzettsegek.primer/altalanos/hadaszat.md) 🅿️
 
-🔵 [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md) 🅿️
+🔵 [Mérgek](kepzettsegek.primer/altalanos/mergek.md) 🅿️
 
 🔵 [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) 🅿️🤝
 

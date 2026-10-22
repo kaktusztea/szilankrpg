@@ -17,7 +17,7 @@
 
 A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy kicsattanó egészségű, 120 kilós barbár is szinte biztos, hogy kidől tőle egy kis délutáni durmolásra.
 
-🔆 Látható, hogy egy fél óra alatt ható, ugyanilyen méreghez elég lenne a `8.szintű` Méregkeverés képzettség is.
+🔆 Látható, hogy egy fél óra alatt ható, ugyanilyen méreghez elég lenne a `8.szintű` Mérgek képzettség is.
 
 <br />
 
@@ -34,7 +34,7 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 
 ```
 Így a méreg komplexitása: 17
- → Minimum 9. szintű Méregkeverés képzettség szükséges
+ → Minimum 9. szintű Mérgek képzettség szükséges
 ```
 
 🔆 A fenti fegyverméreg erőssége az átlagosnál kicsit erősebbnek mondható, de egy magas Edzettséggel bíró áldozat jó eséllyel megússza az elsődleges hatását (halál) és "csak" lebénul, vagy erős bódulatba kerül.
@@ -58,7 +58,7 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 
 ```
 Így a méreg komplexitása: 30
- → Minimum 15. szintű Méregkeverés képzettség szükséges 5-ös Tulajdonsággal!
+ → Minimum 15. szintű Mérgek képzettség szükséges 5-ös Tulajdonsággal!
 ```
 
 Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas szinten és a képzettség követelményen.

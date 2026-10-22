@@ -13,14 +13,14 @@ A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriá
 - növényi(3) Elállás
 - ásványi (szervetlen)
 
-→ **Képzettség**: **[Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)**
+→ **Képzettség**: **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)**
 
 ---
 ## Méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
+A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 ```
 Méreg komplexitása =
@@ -101,7 +101,7 @@ Meddig áll el szabad levegőn/folyadékban?
 5: 1 hónap, Mk 9.szint
 6: Örökké,  Mk 12.szint
 
-Mk: Méregkeverés biztos tudás követelmény
+Mk: Mérgek biztos tudás követelmény
 ```
 
 <br />
@@ -123,7 +123,7 @@ Milyen gyorsan hat?
 +5: Azonnal (1 szívdobbanás), Mk 9. szint
 +5: Évek múlva,               Mk 12. szint
 
-Mk: Méregkeverés biztos tudás követelmény
+Mk: Mérgek biztos tudás követelmény
 ```
 
 <br />
@@ -152,7 +152,7 @@ Eddig kimutatható Hatás lejárta után.
 3: 1 óra;                   Mk 6.szint
 4: Hatás lejárta után nem;  Mk 9.szint
 
-Mk: Méregkeverés biztos tudás követelmény
+Mk: Mérgek biztos tudás követelmény
 ```
 
 <br />
