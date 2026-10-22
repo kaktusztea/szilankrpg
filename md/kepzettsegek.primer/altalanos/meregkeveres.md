@@ -22,7 +22,7 @@ Emlékezet, Önuralom, Intelligencia
 ---
 ### Szintek
 
-A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../../141_meregkeveres_szabalyai.md#3-elállás--kiürülés) is **biztos tudást igényel**. Bővebben lásd ott.
+Biztos tudást igényelnek a méreg kikeverésekor: [Elállás](../../141_meregkeveres_szabalyai.md#3-elállás), [Hatóidő](../../141_meregkeveres_szabalyai.md#4-hatóidő), [Kiürülés](../../141_meregkeveres_szabalyai.md#6-kiürülés-ideje)
 
 ### Mesterbónuszok
 
