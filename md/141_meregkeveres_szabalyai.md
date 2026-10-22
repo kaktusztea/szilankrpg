@@ -195,6 +195,15 @@ Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a vi
 → Szabad Fortély: [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) szükséges, ha ritka fajról van szó - az adott fajra felvéve.
 
 ---
+### Elkészítés ideje
+
+1 jelenet, ami nem kötött időtartam, KM dönt.
+
+### Ár
+
+A méreg elkészítéséhez szükséges alapanyagok, extra felszerelés árát a KM döntse el becsléssel, vagy a kaland szempontjából fontos szempontok alapján.
+
+---
 
 🔗 [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)→
 
