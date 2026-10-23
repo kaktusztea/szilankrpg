@@ -10,7 +10,7 @@
 ---
 ## Dobások
 
-### [Méregellenállás próba](144_meregellenallas.md)
+### [Méregellenállás próba](144_meregellenallas_proba.md)
 
 ### [Méregérzékelés](145_meregerzekeles.md)
 

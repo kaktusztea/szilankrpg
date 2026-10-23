@@ -1,6 +1,6 @@
 ## Méregellenállás
 
-Lásd [Méregrendszer - Méregellenállás próba](144_meregellenallas.md).
+Lásd [Méregrendszer - Méregellenállás próba](144_meregellenallas_proba.md).
 
 Bővebben lásd a [Mérgek](kepzettsegek.primer/altalanos/mergek.md) képzettség és a [Méregrendszer](140_meregrendszer.md) leírását.
 

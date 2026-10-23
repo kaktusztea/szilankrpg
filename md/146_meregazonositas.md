@@ -24,3 +24,7 @@ A méreg azonosítását (próbadobást) annak egyes tulajdonságai nehezítheti
 -3: Félrevezető tünetek 3
 -6: Félrevezető tünetek 6
 ```
+
+🔗 [Példamérgek](147_peldamergek.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

@@ -49,4 +49,8 @@ Figyeljünk rá, hogy csak addig a szintig tud alapanyagokat eladni, amennyit a 
   Vajákosság >= 8
 ```
 
+---
 
+🔗 [Méreg tulajdonságai](143_mereg_tulajdonsagai.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

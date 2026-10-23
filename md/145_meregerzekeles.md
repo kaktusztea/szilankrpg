@@ -45,6 +45,6 @@ Célszám: 4 (Átlagos)
 
 ---
 
-🔗 [Példamérgek](147_peldamergek.md) →
+🔗 [Méregazonosítás](146_meregazonositas.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

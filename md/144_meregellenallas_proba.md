@@ -1,4 +1,4 @@
-## Méregellenállás
+## Méregellenállás próba
 
 A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsagproba.md):
 
@@ -16,4 +16,4 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 🔗 [Méregérzékelés](145_meregerzekeles.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
