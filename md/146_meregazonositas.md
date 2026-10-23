@@ -1,6 +1,6 @@
 ## Méregazonosítás
 
-A  [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz. Szükséges hozzá minta a hordozó közegről/ből, eseleg vér/nyálminta.
+A  [Méregérzékelés](145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz. Szükséges hozzá minta a hordozó közegről/ből, eseleg vér/nyálminta.
 
 ```
 Mérgek + Intelligencia
