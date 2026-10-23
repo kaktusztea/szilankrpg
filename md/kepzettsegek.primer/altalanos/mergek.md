@@ -46,20 +46,15 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Elállás](../../141_meregk
 <br />
 
 ---
-### Méreg kikeverése 🎲
+### → [Méreg kikeverése](../../141_meregkeveres_szabalyai.md) 🎲
 
-A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
+### → [Méreg azonosítása](../../146_meregazonositas.md) 🎲
 
-→ **Méreg komplexitása**: [Méregrendszer](../../140_meregrendszer.md) fejezetben részletezett számítása
+A  [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
 
-### Méreg azonosítása tünetek, környezeti hatás alapján 🎲
-
-A méreg azonosítása a [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
+### Bónusz
 
 ```
-Mérgek képzettségpróba
-  Nehézség: 9
-
 Dobásmódosító:
   Élettan fortély: +2
 ```
