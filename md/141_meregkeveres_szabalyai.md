@@ -169,10 +169,22 @@ Eddig kimutatható a szer - a Hatástartam lejárta után.
 Mk: Mérgek biztos tudás követelmény
 ```
 
+
+---
+### (7) Elállás
+
+Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
+
+```
+0: 1 holdfordulón belül
+2: 1-2 év
+4: örökké
+```
+
 <br />
 
 ---
-### (7) Speciális
+### (8) Speciális
 
 ```
 +2: Plusz 1 komponens
@@ -181,13 +193,20 @@ Mk: Mérgek biztos tudás követelmény
 +3: Több hordozó közegből
     csak 1 a méreg hatóanyag,
     a többi természetes alapanyag
+```
+
+```
 +2: Sűrű: kis mennyiség is elég 1 adaghoz
 +3: Színtelen
 +3: Szagtalan/ízetlen (egyben értendő)
+```
+
+```
 +3: Félrevezető tünetek 3
     (ennyivel nő az azonosítás nehézsége)
 +6: Félrevezető tünetek 6
     (ennyivel nő az azonosítás nehézsége)
+
 +0: Szabadban sem eloszló légméreg:
     nem nehezebb, de speciális fizikai
     közvetítő kell (füstöt okádó labdacs),
@@ -211,7 +230,7 @@ Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a vi
 ---
 ### Elkészítés ideje
 
-1 jelenet, ami nem kötött időtartam, KM dönt.
+`1` jelenet, ami nem kötött időtartam, KM dönt.
 
 ### Ár
 
