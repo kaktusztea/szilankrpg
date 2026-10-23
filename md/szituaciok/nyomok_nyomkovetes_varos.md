@@ -1,6 +1,6 @@
 ## Nyomok észrevétele, Nyomkövetés - városi környezetben
 
-Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kiszúrni, értelmezni. A nyomok *követése* városi környezetben nem értelmezhető - kivéve az olyan egyértelmű jeleket, mint például a vérnyomok, de ezeket bárki képes követni.
+Gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kiszúrni, értelmezni. A nyomok *követése* városi környezetben nem értelmezhető - kivéve az olyan egyértelmű jeleket, mint például a vérnyomok, de ezeket bárki képes követni.
 
 ### Általános célszám módosítók 🎲
 
@@ -12,56 +12,58 @@ Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyo
 ```
 
 ---
-### Nyomok észrevétele városi környezetben 🏠
+### 🏠 Nyomok észrevétele városi környezetben
 
 "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
-**[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)** képzettségpróba
+#### → Képzettségpróba: **[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)**
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
-- **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
+- 🟨  **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
 <br />
 
 ---
-### Nyomok értelmezése városi környezetben 🏠
+### 🏠 Nyomok értelmezése városi környezetben
 
 Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése. Felfedezett titkosírás elemzése.
 
-**[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)** képzettségpróba
+#### → Képzettségpróba: **[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)**
 - **Nehézség**: a felfedezett nyom értelmezésének bonyolultságától függő szint ellen
-- **Normál Kiterjesztés**: egyet válassz az aktuális szituációhoz passzolóan:
+- 🟨  **Normál Kiterjesztés**: egyet válassz az aktuális szituációhoz passzolóan:
   - [Heraldika](../fortelyok.szabad/heraldika.md)
   - [Jogismeret](../fortelyok.szabad/jogismeret.md)
   - [Pénzügyek](../fortelyok.szabad/penzugyek.md)
-  - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md) (ennél használható a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)) képzettség is
+  - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md) (ennél [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettség is használható)
 
-Példákhoz lásd a fenti, kapcsolódó fortélyok **Nyomozás** képzettséghez kapcsolódó leírásait.
+Példákhoz lásd e kapcsolódó fortélyok ↑ **Nyomozás** képzettséghez kapcsolódó leírásait.
 
-🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító).
+🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító)
 
 <br />
 
 ---
-### Rejtett nyomok, tárgyak elrejtése/megtalálása városi környezetben 🏠
+### 🏠 Rejtett nyomok, tárgyak elrejtése/megtalálása városi környezetben
 
-Ha az egyik fél szándékosan energiát fektet bele, hogy rejtse nyomait, vagy egy tárgyat, akkor a sima [képzettségpróbás szituációból](nyomok_nyomkovetes_varos.md#nyomok-%C3%A9szrev%C3%A9tele-v%C3%A1rosi-k%C3%B6rnyezetben-) ellenpróba válik:
+Ha az egyik fél szándékosan energiát fektet bele, hogy elrejtse nyomait - vagy egy tárgyat.
+
+#### → Képzettség-ellenpróba
 
 ```
 Észlelés + Érzékenység   🔆kereső
             vs
 Észlelés + Intelligencia 🔆rejtő
 
-Kiterjesztés
-  + Keresés/Rejtés kiterjeszt (N)
+🟨 Normál Kiterjesztés: Keresés/Rejtés fortély
 
 + szituációtól függő módosítók
 ```
 
-A "szituációtól függő módosítókat" a KM adhatja, az eredeti [nyomok észrevétele képzettségpróbánál](#nyomok-%C3%A9szrev%C3%A9tele-v%C3%A1rosi-k%C3%B6rnyezetben-) leírt módon, a Nehézség függvényében. Például egy üres szobában nehezebb elrejteni valamit, mint egy 100 éves raktárban, ami plafonig van kacatokkal.
+"Szituációtól függő módosítók: KM adhatja Nehézség függvényében.\
+Például egy üres szobában nehezebb elrejteni valamit, mint egy 100 éves raktárban, ami plafonig van kacatokkal.
 
 Kapcsolódik:
-- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettség
-- [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md) fortély
+- Képzettség: [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)
+- Fortély: [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md)
 
 ---
 

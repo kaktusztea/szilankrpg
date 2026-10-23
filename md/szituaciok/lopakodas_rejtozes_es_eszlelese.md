@@ -8,37 +8,35 @@ Lopakodás/rejtőzés + Ügyesség/Önuralom
 Észlelés + Érzékenység  (+3 aktívnál)
 ```
 
-### ⚜️ Alapeset
+### ⚜️ Lopakodás és módosítói
 
-Leírását és a próba körülményeit, módosítóit lásd a [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) képzettség leírásánál.
-
-<br />
-
-### ⚜️ Módosítók
-
-A **Lopakodás/rejtőzés** képzettség oldalán a [Helyzetfüggő módosítók](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#helyzetfüggő-módosítók) bekezdés alatt található.
+Képzettség: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md)
 
 ---
 ### ⚜️ Passzív észlelés
 
-Ha az észlelő passzívan szemlélődik: **alap ellenpróba**. Lásd még [Érzékelés, Aktív/Passzív Észlelés](erzekeles_eszleles_aktiv_passziv.md#passz%C3%ADv-%C3%A9szlel%C3%A9s).
+Ha az észlelő passzívan szemlélődik: **alap ellenpróba**.\
+→ Szituáció: [Érzékelés, Passzív Észlelés](erzekeles_eszleles_aktiv_passziv.md#passz%C3%ADv-%C3%A9szlel%C3%A9s)
 
 <br />
 
 ### ⚜️ Aktív észlelés
 
 ```
-Észlelés dobás: +3
+Észlelés dobás bónusz: +3
 ```
 
-Ha az észlelő odafigyel, számít a támadásra: `+3` jár [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) próbájára. Lásd még [Érzékelés, Aktív/Passzív Észlelés](erzekeles_eszleles_aktiv_passziv.md#akt%C3%ADv-%C3%A9szlel%C3%A9s).
+Ha az észlelő odafigyel, számít a támadásra: bónusz ↑
+→ Szituáció: [Érzékelés, Aktív Észlelés](erzekeles_eszleles_aktiv_passziv.md#akt%C3%ADv-%C3%A9szlel%C3%A9s)
 
 ---
 ### ⚜️  Csoport ember elől kell elbújni
 
-A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkező dob.
+```
+Észlelés dobás bónusz: +3
+```
 
-Észlelés próba bónusz: `+3`
+A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkező dob, bónusszal ↑
 
 ---
 
