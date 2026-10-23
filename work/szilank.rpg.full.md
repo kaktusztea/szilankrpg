@@ -485,9 +485,11 @@ https://github.com/kaktusztea/szilankrpg/
 
 - [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
 - [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
-- [Méregellenállás próba](143_meregellenallas.md)
-- [Méregérzékelés](144_meregerzekeles.md)
-- [Példamérgek](145_peldamergek.md) ⚡
+- [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
+- [Méregellenállás próba](144_meregellenallas.md)
+- [Méregérzékelés](145_meregerzekeles.md)
+- [Méregazonosítás](146_meregazonositas.md)
+- [Példamérgek](147_peldamergek.md) ⚡
 
 ---
 ### 15. [Szituációk](150_szituaciok.md)
@@ -2320,7 +2322,7 @@ Tulajdonságpróba célszám (k6)
 ```
 
 ---
-### Siker/Kudarc mértéke
+### Kiemelt Siker/Kudarc
 
 ⚜️ Ha `3` vagy annál nagyobb különbséggel rontottál, akkor kiemelten nagy hibát vétettél.
 
@@ -2922,9 +2924,9 @@ Lásd a [Mágiarendszer](100_magiarendszer.md) fejezetet!
 
 ## Méregellenállás
 
-Lásd [Méregrendszer - Méregellenállás próba](143_meregellenallas.md).
+Lásd [Méregrendszer - Méregellenállás próba](144_meregellenallas.md).
 
-Bővebben lásd a [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md) képzettség és a [Méregrendszer](140_meregrendszer.md) leírását.
+Bővebben lásd a [Mérgek](kepzettsegek.primer/altalanos/mergek.md) képzettség és a [Méregrendszer](140_meregrendszer.md) leírását.
 
 ---
 
@@ -4841,7 +4843,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - Fájdalomtűrés
 - Hadászat
 - Lopakodás/rejtőzés
-- Méregkeverés
+- Mérgek
 - Nyomozás
 - Orvoslás
 - Ősi nyelv ismerete
@@ -4941,7 +4943,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Hadászat](kepzettsegek.primer/altalanos/hadaszat.md) 🅿️
 
-🔵 [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md) 🅿️
+🔵 [Mérgek](kepzettsegek.primer/altalanos/mergek.md) 🅿️
 
 🔵 [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) 🅿️🤝
 
@@ -5882,9 +5884,9 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 
 ---
 ---
-## File: md/kepzettsegek.primer/altalanos/meregkeveres.md
+## File: md/kepzettsegek.primer/altalanos/mergek.md
 
-## 🔵 Méregkeverés
+## 🔵 Mérgek
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható, de a rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat).
 
@@ -5908,7 +5910,7 @@ Emlékezet, Önuralom, Intelligencia
 ---
 ### Szintek
 
-A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../../141_meregkeveres_szabalyai.md#3-elállás--kiürülés) is **biztos tudást igényel**. Bővebben lásd ott.
+Biztos tudást igényelnek a méreg kikeverésekor: [Elállás](../../141_meregkeveres_szabalyai.md#3-elállás), [Hatóidő](../../141_meregkeveres_szabalyai.md#4-hatóidő), [Kiürülés](../../141_meregkeveres_szabalyai.md#6-kiürülés-ideje)
 
 ### Mesterbónuszok
 
@@ -5931,16 +5933,16 @@ A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../
 ---
 ### Méreg kikeverése 🎲
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
+A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 → **Méreg komplexitása**: [Méregrendszer](../../140_meregrendszer.md) fejezetben részletezett számítása
 
 ### Méreg azonosítása tünetek, környezeti hatás alapján 🎲
 
-A méreg azonosítása a [Méregérzékelés](../../144_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
+A méreg azonosítása a [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
 
 ```
-Méregkeverés képzettségpróba
+Mérgek képzettségpróba
   Nehézség: 9
 
 Dobásmódosító:
@@ -5970,8 +5972,8 @@ Dobásmódosító:
 #### ⚜️ Méreg azonosítása 1️⃣
 
 ```
--3: Félrevezető tünetek 3
--6: Félrevezető tünetek 6
+-3: Félrevezető tünetek (3)
+-6: Félrevezető tünetek (6)
 ```
 
 
@@ -5991,7 +5993,7 @@ Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illet
 - Mikor járt itt utoljára valaki?
 - Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.
 - Vérnyomok elemzése: alvadás, jelleg. Állati vér, vagy emberi? (Ez utóbbiban a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segíthet).
-- Holttest vizsgálata: mitől halt meg? Apró tűnyom kiszúrása. Mérgezés? Milyen méreg lehetett? (Ez utóbbiban a [Méregkeverés](meregkeveres.md) képzettség segíthet).
+- Holttest vizsgálata: mitől halt meg? Apró tűnyom kiszúrása. Mérgezés? Milyen méreg lehetett? (Ez utóbbiban a [Mérgek](mergek.md) képzettség segíthet).
 - Kit érdemes kikérdezni a helyszínen
 - KM kis segítsége: "Valamit még nem kérdeztél meg"
 
@@ -9100,7 +9102,7 @@ A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakter
 - arany transzmutáció (nagyon magas szinten - félmágikus hatás)
 - mágiához szükséges fizikai komponensek létrehozása, szakszerű tárolása, tartósítása
 - Prima Materia, Mindent Oldó Szer kutatása
-- Mérgek **alapanyagainak** előállítása (nem magának a méregnek!). Ez által speciális követelménye is a [Méregkeverés](../kepzettsegek.primer/altalanos/meregkeveres.md) képzettségnek!
+- Mérgek **alapanyagainak** előállítása (nem magának a méregnek!). Ez által speciális követelménye is a [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettségnek!
 
 ### Domináns Tulajdonságok
 
@@ -9109,7 +9111,7 @@ Intelligencia, Emlékezet
 ### Kapcsolódik
 
 - [Álcázás/álruha](alcazas_alruha.md) képzettség
-- [Méregkeverés](../kepzettsegek.primer/altalanos/meregkeveres.md) képzettség
+- [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség
 
 ### Normál kiterjesztés
 
@@ -11735,7 +11737,7 @@ A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen 
 
 Példák `21` feletti célszámokra:
 - Aktuális Aura számításánál Aurahangolás képzettségpróba ⭕LINK⭕
-- [Méreg komplexitása](141_meregkeveres_szabalyai.md#a-méreg-komplexitása) Méregkeverésnél
+- [Méreg komplexitása](141_meregkeveres_szabalyai.md#méreg-komplexitása)
 
 <br />
 
@@ -11979,8 +11981,8 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 ### ⚡További Helyettesítés példák felsorolásszerűen
 
 - [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
-- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) ⇆ [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)
-- [Alkímia](kepzettsegek.szekunder/alkimia.md) ⇆ [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)
+- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) ⇆ [Mérgek](kepzettsegek.primer/altalanos/mergek.md)
+- [Alkímia](kepzettsegek.szekunder/alkimia.md) ⇆ [Mérgek](kepzettsegek.primer/altalanos/mergek.md)
 - [Vajákosság](kepzettsegek.szekunder/vajakossag.md) ⇆ [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md)
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) ⇆ [Művészetismeret](kepzettsegek.szekunder/muveszetismeret.md)
 - stb.
@@ -13142,7 +13144,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 
 ### Bónuszt ad erre
 
-- [Méregkeverés](../kepzettsegek.primer/altalanos/meregkeveres.md) képzettség: `+2`
+- [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség: `+2`
 - [Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettség
 
 ### Kiterjeszti ezeket
@@ -13599,19 +13601,19 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 
 ### 1. fok
 
-🌟 [Méregellenállás dobásakor](../143_meregellenallas.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../144_meregellenallas.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 <br />
 
 ### 2. fok
 
-🌟 [Méregellenállás dobásakor](../143_meregellenallas.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../144_meregellenallas.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 <br />
 
 ### 3. fok
 
-🌟 [Méregellenállás dobásakor](../143_meregellenallas.md) kapsz `+3` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../144_meregellenallas.md) kapsz `+3` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 ---
 
@@ -32656,11 +32658,15 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 
 ### [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
 
-### [Méregellenállás próba](143_meregellenallas.md)
+### [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
 
-### [Méregérzékelés](144_meregerzekeles.md)
+### [Méregellenállás próba](144_meregellenallas.md)
 
-### [Példamérgek](145_peldamergek.md) ⚡
+### [Méregérzékelés](145_meregerzekeles.md)
+
+### [Méregazonosítás](146_meregazonositas.md)
+
+### [Példamérgek](147_peldamergek.md) ⚡
 
 ---
 
@@ -32683,28 +32689,29 @@ A mérgeket jelleg szerint négy csoportra bontjuk:
 A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriába sorolhatjuk:
 
 - állati
-- növényi
+- növényi(3) Elállás
 - ásványi (szervetlen)
 
-→ **Képzettség**: **[Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)**
+→ **Képzettség**: **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)**
 
 ---
-## A méreg komplexitása
+## Méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
+A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 ```
 Méreg komplexitása =
-  + Erősség
-  + Súlyosság
-  + Elállás
-  + Hatóidő
-  + Speciális
+  + (1) Erősség
+  + (2) Hatás Súlyosság
+  + (3) Elállás
+  + (4) Hatóidő
+  + (5) Hatás hossza
+  + (6) Kiürülés ideje
+  + (7) Speciális
 ```
 
----
 ### (1) Méreg Erőssége
 
 ```
@@ -32731,23 +32738,22 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 <br />
 
 ---
-### (2) Hatása súlyossága
-
-````diff
-⭕TODO⭕
-- Alvás: melyik "Hatás" kategóriába tartozzon?
-- Most a legenyhébben van (1), de lehet, hogy nehezebb alvást előidézni, mint pl. bódulatot...?
-````
+### (2) Hatás súlyossága
 
 ```
 Hatás max súlyossága
 
-⭕1: Enyhe rosszullét, hányás, alvás
-⭕2: Eszmélet: Bódultság Státusz, Görcs
-⭕3: Eszmélet: Kábultság Státusz,
-     Részleges bénulás
-⭕4: Életveszély, Teljes bénulás
-⭕5: Halál
+1: Enyhe rosszullét, hányás
+   Fájdalom(9) → Státusz: Fizikai(1)Fáradtság
+2: Eszmélet: Bódultság Státusz, Görcs
+   Fájdalom(12) → Státusz: Fizikai(2)Kimerültség
+3: Eszmélet: Kábultság Státusz,
+   Részleges bénulás
+   Fájdalom(15) → Státusz: Fizikai(2)Kimerültség
+4: Életveszély, Alvás, Teljes bénulás
+   Fájdalom(18) → Státusz: Fizikai(2)Kimerültség
+5: Halál
+   Fájdalom(21) → Státusz: Fizikai(3)Elcsigázottság
 ```
 
 #### Másodlagos hatás
@@ -32758,25 +32764,14 @@ Hatás max súlyossága
 +4: 2 fokkal enyhébb
 ```
 
-Kiemelt sikernél nem hat a másodlagos
-
-Opcionális, sikeres próba esetén következhet be. Hatása legfeljebb a rendes hatásnál `1`-gyel ⭕(`2`-vel???)⭕ alacsonyabb kategóriájú lehet. (Pl. Halál→Életveszély(⭕vagy Bódulat⭕))
-
 <br />
 
 ---
-### (3) Elállás / Kiürülés
+### (3) Elállás
 
-Ez a tétel a méreg típusától függ:
-
-- **Elállás**: kizárólag **fegyvermérgek** esetén: meddig áll el szabad levegőn/folyadékban?
-- **Kiürülés**: minden más méreg típus esetén: mennyi idő alatt ürül ki az áldozat szervezetéből
-
-#### (3a) Elállás
+Meddig áll el szabad levegőn/folyadékban?
 
 ```
-Meddig áll el?
-
 0: Pár másodperc
 1: 1 perc
 2: 10 perc
@@ -32785,20 +32780,7 @@ Meddig áll el?
 5: 1 hónap, Mk 9.szint
 6: Örökké,  Mk 12.szint
 
-Mk: Méregkeverés biztos tudás követelmény
-```
-
-#### (3b) Kiürülés
-
-```
-Mennyi idő alatt ürül ki?
-
-0: 1 kör, Mk 3. szint
-1: 1 óra, Mk 6. szint
-2: 1 nap, Mk 9. szint
-3: 1 hét, Mk 12. szint
-
-Mk: Méregkeverés biztos tudás követelmény
+Mk: Mérgek biztos tudás követelmény
 ```
 
 <br />
@@ -32820,13 +32802,42 @@ Milyen gyorsan hat?
 +5: Azonnal (1 szívdobbanás), Mk 9. szint
 +5: Évek múlva,               Mk 12. szint
 
-Mk: Méregkeverés biztos tudás követelmény
+Mk: Mérgek biztos tudás követelmény
 ```
 
 <br />
 
 ---
-### (5) Speciális
+### (5) Hatás hossza
+
+```
++0: 1 kör
++1: 2 kör 
++2: rövid jelenet (harcon kívül)
++3: pár óra (harcon kívül)
++5: hónapok  (Kiürülés ideje egyezzen)
+```
+
+<br />
+
+---
+### (6) Kiürülés ideje
+
+Eddig kimutatható Hatás lejárta után.
+
+```
+0: 1 nap
+2: fél nap
+3: 1 óra;                   Mk 6.szint
+4: Hatás lejárta után nem;  Mk 9.szint
+
+Mk: Mérgek biztos tudás követelmény
+```
+
+<br />
+
+---
+### (7) Speciális
 
 ```
 +2: Plusz 1 komponens
@@ -32863,6 +32874,15 @@ Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a vi
 → Szabad Fortély: [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) szükséges, ha ritka fajról van szó - az adott fajra felvéve.
 
 ---
+### Elkészítés ideje
+
+1 jelenet, ami nem kötött időtartam, KM dönt.
+
+### Ár
+
+A méreg elkészítéséhez szükséges alapanyagok, extra felszerelés árát a KM döntse el becsléssel, vagy a kaland szempontjából fontos szempontok alapján.
+
+---
 
 🔗 [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)→
 
@@ -32880,20 +32900,80 @@ Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [
 ```
 → Erősség
 → Elállás/Kiürülés
-→ Hatás
+→ Hatás ideje (mennyi ideig tart a hatás)
+→ Hatóidő (mennyi idő után kezd hatni)
 → Másodlagos hatás
+→ összetevők: állati / növényi / ásványi
 ```
 
 ---
 
-🔗 [Méregellenállás próba](143_meregellenallas.md) →
+🔗 [Méregellenállás próba](144_meregellenallas.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
 
 
 ---
 ---
-## File: md/143_meregellenallas.md
+## File: md/143_mereg_alapanyagok_beszerzese.md
+
+## Méreg alapanyagok beszerzése
+
+Három forrásból vonhatóak ki méreg-alapanyagok. Ezeket két képzettség fedi le:
+ 
+- Képzettség: [Vajákosság](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.szekunder/vajakossag.md) → növényből/állatból
+- Képzettség: [Alkímia](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.szekunder/alkimia.md) → ásványokból
+
+### Egyéni beszerzés követelménye
+
+Ha saját magad akarod állatokból, növényekből, ásványokból kinyerni az alapanyagokat, a fenti két képzettség **biztos tudás** szintjei szükségesek.
+
+```
+Több komponens esetén
+ (Alkimia + Vajákosság) >= (Méreg Komplexitása / 2)
+
+1 komponens esetén
+ Alkimia >= (Méreg Komplexitása / 2)
+   VAGY
+ Vajákosság >= (Méreg Komplexitása / 2)
+```
+
+### Beszerzés kereskedőtől / lápi boszorkánytól, stb.
+
+Bemész a boltba, vagy a mocsárban lakó banyához, ahol az illető `NJK` árulja az alapanyagokat és megvannak a fenti szükséges képzettség szint biztos tudás követelményei. 
+
+Figyeljünk rá, hogy csak addig a szintig tud alapanyagokat eladni, amennyit a fenti képettségeinek szintjei engednek.
+
+<br />
+
+---
+### ⚡ Példák
+
+```
+2 komponensű méreg
+- Méreg komplexitása: 16
+- Követelmény:
+  Alkimia + Vajákosság >= 8
+
+Így például megvalósulhat:
+  Alkimia: 3, Vajákosság: 5
+```
+
+```
+1 komponensű méreg
+- Méreg komplexitása: 16
+- Követelmény:
+  Alkimia >= 8
+     VAGY
+  Vajákosság >= 8
+```
+
+
+
+
+---
+---
+## File: md/144_meregellenallas.md
 
 ## Méregellenállás
 
@@ -32907,16 +32987,18 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
 
+🔆 Ha Tulajdonságpróba [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc), akkor a méreg esetleges [Másodlagos hatása](141_meregkeveres_szabalyai.md#másodlagos-hatás) sem hat rád egyáltalán
+
 ---
 
-🔗 [Méregérzékelés](144_meregerzekeles.md) →
+🔗 [Méregérzékelés](145_meregerzekeles.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
 
 
 ---
 ---
-## File: md/144_meregerzekeles.md
+## File: md/145_meregerzekeles.md
 
 ## Méregérzékelés
 
@@ -32927,17 +33009,21 @@ Ha a méregnek több hordozója van, mindegyikre külön próbá(k) dobható(ak)
 Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha bármelyik sikeres, a karakter kiszúrta a mérget.
 
 ---
-### 1. Méregkeverés próba
+### 1. Mérgek próba
 
-Ez a próba csak akkor dobható, ha a karakter rendelkezik [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md) képzettséggel legalább `3.szinten`.
+Ez a próba csak akkor dobható, ha a karakter rendelkezik [Mérgek](kepzettsegek.primer/altalanos/mergek.md) képzettséggel legalább `3.szinten`.
 
 ```
-Méregkeverés + Érzékenység
+Mérgek + Érzékenység
           vs
-       Célszám
+     Nehézség: 12
+```
 
-Alap célszám: `xy`    ⭕TODO⭕
-⭕TODO: egyéb módosítók⭕
+#### Helyzetfüggő módosítók
+
+```
+-3: Színtelen
+-3: Szagtalan
 ```
 
 ---
@@ -32961,14 +33047,46 @@ Célszám: 4 (Átlagos)
 
 ---
 
-🔗 [Példamérgek](145_peldamergek.md) →
+🔗 [Példamérgek](147_peldamergek.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
 
 
 ---
 ---
-## File: md/145_peldamergek.md
+## File: md/146_meregazonositas.md
+
+## Méregazonosítás
+
+```
+Mérgek + Intelligencia
+          vs
+     Nehézség: 9
+```
+
+### Helyzetfüggő módosítók
+
+A méreg azonosítását (próbadobást) annak egyes tulajdonságai nehezíthetik.
+
+```
+-2: Plusz 1 komponens
+-3: Plusz 1 hordozó közeg
+    (étel/ital, légnemű, véráram)
+-3: Több hordozó közegből
+    csak 1 a méreg hatóanyag,
+    a többi természetes alapanyag
+
+-2: Sűrű: kis mennyiség is elég 1 adaghoz
+-3: Szagtalan/ízetlen (egyben értendő)
+
+-3: Félrevezető tünetek 3
+-6: Félrevezető tünetek 6
+```
+
+
+---
+---
+## File: md/147_peldamergek.md
 
 ## Példamérgek
 
@@ -32989,7 +33107,7 @@ Célszám: 4 (Átlagos)
 
 A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy kicsattanó egészségű, 120 kilós barbár is szinte biztos, hogy kidől tőle egy kis délutáni durmolásra.
 
-🔆 Látható, hogy egy fél óra alatt ható, ugyanilyen méreghez elég lenne a `8.szintű` Méregkeverés képzettség is.
+🔆 Látható, hogy egy fél óra alatt ható, ugyanilyen méreghez elég lenne a `8.szintű` Mérgek képzettség is.
 
 <br />
 
@@ -33006,7 +33124,7 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 
 ```
 Így a méreg komplexitása: 17
- → Minimum 9. szintű Méregkeverés képzettség szükséges
+ → Minimum 9. szintű Mérgek képzettség szükséges
 ```
 
 🔆 A fenti fegyverméreg erőssége az átlagosnál kicsit erősebbnek mondható, de egy magas Edzettséggel bíró áldozat jó eséllyel megússza az elsődleges hatását (halál) és "csak" lebénul, vagy erős bódulatba kerül.
@@ -33030,7 +33148,7 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 
 ```
 Így a méreg komplexitása: 30
- → Minimum 15. szintű Méregkeverés képzettség szükséges 5-ös Tulajdonsággal!
+ → Minimum 15. szintű Mérgek képzettség szükséges 5-ös Tulajdonsággal!
 ```
 
 Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas szinten és a képzettség követelményen.
@@ -33154,7 +33272,9 @@ Fegyvertelen VÉ
 
 # Állat, bestia idomítása
 
-Idomításnál, állatokat, bestiákat kontrolláló szituációban a lenti próba dobandó. Hogy melyik Szabad Fortély követelmény hozzá, az attól függ, háziállatot, vagy vadállatot próbálsz irányítani. Ha nincs meg a kapcsolódó Szabad Fortély, nem dobhatsz (🟥 Erős kiterjesztés).
+Idomításnál, állatokat, bestiákat kontrolláló szituációban a lenti **Befolyásolás** próba dobandó.\
+A kiterjesztő Szabad Fortély követelmény típusa attól függ, hogy háziállatot, vagy vadállatot próbálsz irányítani. \
+🟥 Erős kiterjesztés, tehát ha nincs meg a kapcsolódó Szabad Fortély, nem dobhatsz.
 
 ---
 ### [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség + Érzékenység Tulajdonság
