@@ -35,11 +35,11 @@ A méreg kikeverése **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)** kép
 ```
 Méreg komplexitása =
   + (1) Erősség
-  + (2) Hatás Súlyosság
-  + (3) Elállás
-  + (4) Hatóidő
-  + (5) Hatás hossza
-  + (6) Kiürülés ideje
+  + (2) Súlyosság
+  + (3) Bomlási idő
+  + (4) Hatáskezdet
+  + (5) Hatástartam
+  + (6) Kimutatási idő
   + (7) Speciális
 ```
 
@@ -69,10 +69,10 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 <br />
 
 ---
-### (2) Hatás súlyossága
+### (2) Súlyosság
 
 ```
-Hatás max súlyossága
+Hatás maximális súlyossága
 
 1: Enyhe rosszullét, hányás
    Fájdalom(9) → Státusz: Fizikai(1)Fáradtság
@@ -98,9 +98,9 @@ Hatás max súlyossága
 <br />
 
 ---
-### (3) Elállás
+### (3) Bomlási idő
 
-Meddig áll el szabad levegőn/folyadékban?
+Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
 
 ```
 0: Pár másodperc
@@ -117,10 +117,10 @@ Mk: Mérgek biztos tudás követelmény
 <br />
 
 ---
-### (4) Hatóidő
+### (4) Hatáskezdet
 
 ```
-Milyen gyorsan hat?
+Bevitel után mennyi idő után hat?
 
 +0: (30 perc - 3 óra múlva)
 +1: (4 - 23 óra múlva),   Mk 3. szint
@@ -139,22 +139,24 @@ Mk: Mérgek biztos tudás követelmény
 <br />
 
 ---
-### (5) Hatás hossza
+### (5) Hatástartam
+
+Az aktiválódás után meddig tart a szer hatása.
 
 ```
 +0: 1 kör
 +1: 2 kör 
 +2: rövid jelenet (harcon kívül)
 +3: pár óra (harcon kívül)
-+5: hónapok  (Kiürülés ideje egyezzen)
++5: hónapok  (Kimutatási idő egyezzen!)
 ```
 
 <br />
 
 ---
-### (6) Kiürülés ideje
+### (6) Kimutatási idő
 
-Eddig kimutatható Hatás lejárta után.
+Eddig kimutatható a szer - a Hatástartam lejárta után.
 
 ```
 0: 1 nap
