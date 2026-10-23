@@ -2,12 +2,22 @@
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-
-
-
-Lásd még a [Méregrendszer](../../140_meregrendszer.md) főfejezetet!
-
 Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
+
+**Főfejezet**: [Méregrendszer](../../140_meregrendszer.md)
+
+- [Méregkeverés szabályai](../../141_meregkeveres_szabalyai.md) 🎲
+- [Méreg alapanyagok beszerzése](../../142_mereg_alapanyagok_beszerzese.md)
+- [Méreg tulajdonságai](../../143_mereg_tulajdonsagai.md)
+- [Méregellenállás próba](144_meregellenallas_proba.md) 🎲
+- [Méregérzékelés](../../145_meregerzekeles.md) 🎲
+- [Méreg azonosítása](../../146_meregazonositas.md) 🎲
+
+A képzettség minden mérgekkel kapcsolatos ismeretet lefed:
+- méregkeverés
+- méregismerete, felismerése
+- ellenszer készítés
+- mérgezés gyógyítása
 
 ### Domináns Tulajdonságok
 
@@ -18,6 +28,7 @@ Emlékezet, Önuralom, Intelligencia
 - [Méregrendszer](../../140_meregrendszer.md) főfejezet
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
+- [Orvoslás](orvoslas.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 - [Alkímia](../../kepzettsegek.szekunder/alkimia.md) képzettség
 
 <br />
@@ -46,17 +57,12 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Elállás](../../141_meregk
 <br />
 
 ---
-### → [Méreg kikeverése](../../141_meregkeveres_szabalyai.md) 🎲
-
-### → [Méreg azonosítása](../../146_meregazonositas.md) 🎲
-
-A  [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
-
 ### Bónusz
 
 ```
 Dobásmódosító:
-  Élettan fortély: +2
+  +2: Élettan fortély
+  (minden Mérgek próbára)
 ```
 
 → Fortély: [Élettan](../../fortelyok.altalanos/elettan.md)

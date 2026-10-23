@@ -10,7 +10,7 @@ A képzettség az alábbi tevékenységeket fedi le:
 - vérzés elállítása
 - fertőtlenítés, sebkötözés kencék használatával
 - [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
-- mérgezés gyógyítása
+- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) (ha azt nem ismered)
 
 Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
 

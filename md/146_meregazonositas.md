@@ -1,14 +1,16 @@
 ## Méregazonosítás
 
+A  [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz. Szükséges hozzá minta a hordozó közegről/ből, eseleg vér/nyálminta.
+
 ```
 Mérgek + Intelligencia
           vs
-     Nehézség: 9
+      Nehézség: 9
 ```
 
 ### Helyzetfüggő módosítók
 
-A méreg azonosítását (próbadobást) annak egyes tulajdonságai nehezíthetik.
+A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 
 ```
 -2: Plusz 1 komponens
@@ -17,10 +19,14 @@ A méreg azonosítását (próbadobást) annak egyes tulajdonságai nehezítheti
 -3: Több hordozó közegből
     csak 1 a méreg hatóanyag,
     a többi természetes alapanyag
+```
 
+```
 -2: Sűrű: kis mennyiség is elég 1 adaghoz
 -3: Szagtalan/ízetlen (egyben értendő)
+```
 
+```
 -3: Félrevezető tünetek 3
 -6: Félrevezető tünetek 6
 ```
