@@ -7,15 +7,13 @@ Ha a méregnek több hordozója van, mindegyikre külön próbá(k) dobható(ak)
 Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha bármelyik sikeres, a karakter kiszúrta a mérget.
 
 ---
-### 1. Mérgek próba
+### 1. Képzettségpróba: Mérgek + Érzékenység
+
+```
+Nehézség: 12
+```
 
 Ez a próba csak akkor dobható, ha a karakter rendelkezik [Mérgek](kepzettsegek.primer/altalanos/mergek.md) képzettséggel legalább `3.szinten`.
-
-```
-Mérgek + Érzékenység
-          vs
-     Nehézség: 12
-```
 
 #### Helyzetfüggő módosítók
 
@@ -25,7 +23,7 @@ Mérgek + Érzékenység
 ```
 
 ---
-### 2. Érzékenység Tulajdonságpróba
+### 2. Tulajdonságpróba: Érzékenység
 
 ```
 Célszám: 4 (Átlagos)
@@ -47,4 +45,4 @@ Célszám: 4 (Átlagos)
 
 🔗 [Méregazonosítás](146_meregazonositas.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)

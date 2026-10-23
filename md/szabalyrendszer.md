@@ -301,7 +301,8 @@
 - [Méregellenállás próba](144_meregellenallas_proba.md)
 - [Méregérzékelés](145_meregerzekeles.md)
 - [Méregazonosítás](146_meregazonositas.md)
-- [Példamérgek](147_peldamergek.md) ⚡
+- [Ellenméreg keverése](147_ellenmereg_keverese.md)
+- [Példamérgek](148_peldamergek.md) ⚡
 
 ---
 ### 15. [Szituációk](150_szituaciok.md)

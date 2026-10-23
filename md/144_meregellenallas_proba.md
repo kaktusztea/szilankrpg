@@ -1,19 +1,19 @@
 ## Méregellenállás próba
 
-A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsagproba.md):
+###  → Tulajdonságpróba: Edzettség
 
 ```
-(Edzettség + k6)  vs  Méreg Erőssége
+Nehézség = Méreg Erőssége
 ```
-
-🔆 **Fontos**: a Méregellenállást a méreg **Erőssége** (és NEM komplexitása) ellen kell dobni!
 
 🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
 
-🔆 Ha Tulajdonságpróba [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc), akkor a méreg esetleges [Másodlagos hatása](141_meregkeveres_szabalyai.md#másodlagos-hatás) sem hat rád egyáltalán
+🔆 [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc):  az esetleges [Másodlagos hatás](141_meregkeveres_szabalyai.md#másodlagos-hatás) sem hat rád egyáltalán
+
+🔆 **Fontos**: Méregellenállást az **Erősség** (NEM ~~komplexitás~~) ellen kell dobni!
 
 ---
 
 🔗 [Méregérzékelés](145_meregerzekeles.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)

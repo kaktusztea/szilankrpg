@@ -2,7 +2,7 @@
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
+Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit, de a mérgek felismerése, ellenszer készítés, mérgezés gyógyítása is ide tartozik. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
 
 **Főfejezet**: [Méregrendszer](../../140_meregrendszer.md)
 
@@ -13,16 +13,6 @@ Ismered a különböző hatású és erősségű mérgek kikeverésének módjá
 - [Méregérzékelés](../../145_meregerzekeles.md) 🎲
 - [Méreg azonosítása](../../146_meregazonositas.md) 🎲
 
-A képzettség minden mérgekkel kapcsolatos ismeretet lefed:
-- méregkeverés
-- méregismerete, felismerése
-- ellenszer készítés
-- mérgezés gyógyítása
-
-### Domináns Tulajdonságok
-
-Emlékezet, Önuralom, Intelligencia
-
 ### Kapcsolódik
 
 - [Méregrendszer](../../140_meregrendszer.md) főfejezet
@@ -30,6 +20,10 @@ Emlékezet, Önuralom, Intelligencia
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
 - [Orvoslás](orvoslas.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 - [Alkímia](../../kepzettsegek.szekunder/alkimia.md) képzettség
+
+### Domináns Tulajdonságok
+
+Emlékezet, Önuralom, Intelligencia
 
 <br />
 
@@ -57,15 +51,12 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_me
 <br />
 
 ---
-### Bónusz
+### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
 
 ```
-Dobásmódosító:
-  +2: Élettan fortély
-  (minden Mérgek próbára)
++2: Élettan fortély
+    (minden próbára)
 ```
-
-→ Fortély: [Élettan](../../fortelyok.altalanos/elettan.md)
 
 ---
 ### Helyzetfüggő módosítók

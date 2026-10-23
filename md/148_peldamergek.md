@@ -77,4 +77,4 @@ A hatást a vajákos eltolta fél nappal, hogy éjszaka jöjjön a vég, így a 
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)

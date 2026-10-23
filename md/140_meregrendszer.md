@@ -16,11 +16,13 @@
 
 ### [Méregazonosítás](146_meregazonositas.md)
 
+### [Ellenméreg keverése](147_ellenmereg_keverese.md)
+
 ---
 ## Példa
 
-### [Példamérgek](147_peldamergek.md) ⚡
+### [Példamérgek](148_peldamergek.md) ⚡
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)

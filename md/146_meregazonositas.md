@@ -1,12 +1,12 @@
 ## Méregazonosítás
 
-A  [Méregérzékelés](145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz. Szükséges hozzá minta a hordozó közegről/ből, eseleg vér/nyálminta.
+### Képzettségpróba: Mérgek + Intelligencia
 
 ```
-Mérgek + Intelligencia
-          vs
-      Nehézség: 9
+Nehézség: 9
 ```
+
+A  [Méregérzékelés](145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz. Szükséges hozzá minta a hordozó közegről/ből, eseleg vér/nyálminta.
 
 ### Helyzetfüggő módosítók
 
@@ -31,6 +31,8 @@ A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 -6: Félrevezető tünetek 6
 ```
 
-🔗 [Példamérgek](147_peldamergek.md) →
+---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+🔗 [Ellenméreg keverése](147_ellenmereg_keverese.md)] →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)
