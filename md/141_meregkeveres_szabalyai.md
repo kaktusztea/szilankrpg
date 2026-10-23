@@ -122,16 +122,18 @@ Mk: Mérgek biztos tudás követelmény
 ```
 Bevitel után mennyi idő után hat?
 
-+0: (30 perc - 3 óra múlva)
-+1: (4 - 23 óra múlva),   Mk 3. szint
-+1: (2 - 20 perc múlva),  Mk 3. szint
-+2: (1 - 10 nap múlva),   Mk 5. szint
-+2: (2 - 6 kör múlva),    Mk 5. szint
-+3: (2 - 4 hét múlva),    Mk 7. szint
-+4: Gyorsan (1 kör múlva),    Mk 7. szint
-+4: Hónapok múlva,            Mk 9. szint
-+5: Azonnal (1 szívdobbanás), Mk 9. szint
-+5: Évek múlva,               Mk 12. szint
++2: harc végén         Mk 5. szint
++4: Következő körben   Mk 7. szint
++5: Azonnal            Mk 9. szint
+
++1: 1 jelenet után (harcon kívül)
++0: néhány óra múlva
++1: 1 napon belül
++2: 1 héten belül         Mk 5. szint
+
++3: 1 holdfordulón belül  Mk 7. szint
++4: Hónapok múlva         Mk 9. szint
++5: Évek múlva            Mk 12. szint
 
 Mk: Mérgek biztos tudás követelmény
 ```
