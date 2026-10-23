@@ -39,24 +39,24 @@ Azaz az "észreveszem-e?" jellegű szituációk
 #### Passzív észlelés
 
 ```
- Módosulatlan nehézség az
+ Módosulatlan Nehézség az
  Észlelés képzettségpróba-dobásra
 ```
 
 A karakternek feltűnik valami anélkül, hogy kifejezetten kereste volna/figyelt volna rá.
 
-⚡Például: a nemesúrnak álbajusza van, mérgezett az étel, stb.
+⚡Például: a nemesúrnak álbajusza van, a madárcsicsergés természetellenes, stb.
 
 ---
 ### 🔆 Különbség az észrevétel és az értelmezés között
 
-- **Észlelés** + **Érzékenység**: Követik-e? ; Észreveszi-e a ruha alatt villanó tőrt?
-- **Nyomozás** + **Intelligencia**: Rájön-e, hogy mit vett észre? (az igazi szakáll nem nő így például)
+- **Észlelés** + **Érzékenység**: Követnek-e? ; Észreveszed-e a ruha alatt villanó tőrt?
+- **Nyomozás** + **Intelligencia**: Rájössz-e, hogy mit vettél észre? ("az igazi szakáll nem így nő")
 
 ---
 ### 🔆 Lopakodás/rejtőzés és észlelése
 
-Lásd: a [saját oldalát](lopakodas_rejtozes_es_eszlelese.md)!
+Lásd: [Lopakodás szituáció](lopakodas_rejtozes_es_eszlelese.md)
 
 ---
 
