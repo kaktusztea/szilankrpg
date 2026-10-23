@@ -205,6 +205,6 @@ A méreg elkészítéséhez szükséges alapanyagok, extra felszerelés árát a
 
 ---
 
-🔗 [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)→
+🔗 [Méreg tulajdonságai](143_mereg_tulajdonsagai.md)→
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)

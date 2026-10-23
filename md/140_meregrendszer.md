@@ -1,10 +1,10 @@
-# Méregrendszer, mérgek
+# Méregrendszer
 
 ### [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
 
-### [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
+### [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md)
 
-### [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
+### [Méreg tulajdonságai](143_mereg_tulajdonsagai.md)
 
 ### [Méregellenállás próba](144_meregellenallas.md)
 

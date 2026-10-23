@@ -293,12 +293,11 @@
 ### 13. [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md)
 
 ---
-
-### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
+### 14. [Méregrendszer](140_meregrendszer.md)
 
 - [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
-- [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
-- [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
+- [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md)
+- [Méreg tulajdonságai](143_mereg_tulajdonsagai.md)
 - [Méregellenállás próba](144_meregellenallas.md)
 - [Méregérzékelés](145_meregerzekeles.md)
 - [Méregazonosítás](146_meregazonositas.md)
