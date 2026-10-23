@@ -23,4 +23,4 @@
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
