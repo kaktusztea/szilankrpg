@@ -53,4 +53,4 @@ Figyeljünk rá, hogy csak addig a szintig tud alapanyagokat eladni, amennyit a 
 
 🔗 [Méreg tulajdonságai](143_mereg_tulajdonsagai.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

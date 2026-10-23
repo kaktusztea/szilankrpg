@@ -28,4 +28,4 @@ Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [
 
 🔗 [Méregellenállás próba](144_meregellenallas_proba.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

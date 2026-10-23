@@ -45,4 +45,4 @@ Célszám: 4 (Átlagos)
 
 🔗 [Méregazonosítás](146_meregazonositas.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

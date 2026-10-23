@@ -16,4 +16,4 @@ Nehézség = Méreg Erőssége
 
 🔗 [Méregérzékelés](145_meregerzekeles.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

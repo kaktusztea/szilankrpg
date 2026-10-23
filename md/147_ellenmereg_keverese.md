@@ -16,4 +16,4 @@ A  [Méregérzékelés](145_meregerzekeles.md) és [Méregazonosítás](146_mere
 ---
 🔗 [Példamérgek](148_peldamergek.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)

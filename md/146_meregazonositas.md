@@ -35,4 +35,4 @@ A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 
 🔗 [Ellenméreg keverése](147_ellenmereg_keverese.md)] →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#140-méregrendszer)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
