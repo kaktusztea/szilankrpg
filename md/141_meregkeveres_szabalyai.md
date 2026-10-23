@@ -1,7 +1,5 @@
 ## Méregkeverés szabályai
 
-<br />
-
 ### → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
 
 ```
@@ -9,6 +7,8 @@ Nehézség = Méreg Komplexitása
 ```
 
 A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesül az esetleges balsikerrel (nem hat a szer).
+
+<br />
 
 ### Méreg jelleg csoportok
 
