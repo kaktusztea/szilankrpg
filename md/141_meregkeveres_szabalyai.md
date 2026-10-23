@@ -1,26 +1,36 @@
 ## Méregkeverés szabályai
 
-A mérgeket jelleg szerint négy csoportra bontjuk:
+<br />
+
+### → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
+
+```
+Nehézség = Méreg Komplexitása
+```
+
+A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesül az esetleges balsikerrel (nem hat a szer).
+
+### Méreg jelleg csoportok
 
 - Étel és italmérgek
 - Légimérgek
 - Kontaktmérgek
 - Fegyvermérgek
 
-A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriába sorolhatjuk:
+### Méreg összetevő csoportok
 
 - állati
-- növényi(3) Elállás
+- növényi
 - ásványi (szervetlen)
 
-→ **Képzettség**: **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)**
+<br />
 
 ---
 ## Méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
+A méreg kikeverése **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 ```
 Méreg komplexitása =

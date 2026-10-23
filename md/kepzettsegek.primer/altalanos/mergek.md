@@ -1,6 +1,9 @@
 ## 🔵 Mérgek
 
-Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható, de a rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat).
+Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
+
+
+
 
 Lásd még a [Méregrendszer](../../140_meregrendszer.md) főfejezetet!
 
