@@ -40,7 +40,8 @@ Méreg komplexitása =
   + (4) Hatáskezdet
   + (5) Hatástartam
   + (6) Kimutatási idő
-  + (7) Speciális
+  + (7) Elállás
+  + (8) Speciális
 ```
 
 ### (1) Méreg Erőssége
