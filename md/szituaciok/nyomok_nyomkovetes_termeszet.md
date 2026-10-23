@@ -9,7 +9,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 
 "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 
-#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
+#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
@@ -20,7 +20,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 
 Ha már észrevetted az első nyomot, utána követheted a csapást.
 
-#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
+#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység/Intelligencia
 - [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba): több dobás kell a folyamatos követéshez
 - 🟨 **Normál Kiterjesztés egyszerre mindkettőre**:
   - Fortélyok: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra)

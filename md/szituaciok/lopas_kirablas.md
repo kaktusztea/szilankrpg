@@ -24,7 +24,9 @@ Az előljáró felesége a piac forgatagában válogat, tőle pár méterrel, ci
 Tetves a tolvaj gyanítja, hogy a hölgy nem egyedül jött a vásárba, így [aktív Észleléssel](erzekeles_eszleles_aktiv_passziv.md) keresi a védelmező alakot. A testőr nem rejtegeti védelemező szerepét, így nem végez **Lopakodás/rejtőzést** sem, ami kapcsolódó ellenpróbát igényelne.\
 Így Tetves sima **Észlelés** képzettségpróbát dob - körülményektől függő Nehézségre.
 
-#### `1.` Észlelés próba: Tetves észreveszi -e a testőrt 🎲
+#### `1.` Képzettségpróba: Észlelés + Érzékenység 🎲
+
+Tetves észreveszi -e a testőrt 
 
 ```
 Tetves Észlelés dobás módosítói: +3
@@ -48,7 +50,7 @@ Célszám alap: 12 (Nehéz)
 
 Függetlenül attól, hogy Tetves észrevette-e a testőrt, ha úgy dönt, hogy megpróbálkozik, akkor a páros mindkét tagja dobhat:
 
-#### `2.` Ellenpróbák 🎲
+#### `2.` Képzettség-ellenpróbák 🎲
 
 ```
 Lopás + Ügyesség

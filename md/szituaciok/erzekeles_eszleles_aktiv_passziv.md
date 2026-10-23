@@ -50,8 +50,10 @@ A karakternek feltűnik valami anélkül, hogy kifejezetten kereste volna/figyel
 ---
 ### 🔆 Különbség az észrevétel és az értelmezés között
 
-- **Észlelés** + **Érzékenység**: Követnek-e? ; Észreveszed-e a ruha alatt villanó tőrt?
-- **Nyomozás** + **Intelligencia**: Rájössz-e, hogy mit vettél észre? ("az igazi szakáll nem így nő")
+- **Észlelés** + **Érzékenység**
+  - Követnek-e? ; Észreveszed-e a ruha alatt villanó tőrt?
+- **Nyomozás** + **Intelligencia**
+  - Rájössz-e, hogy mit vettél észre? ("az igazi szakáll nem így nő")
 
 ---
 ### 🔆 Lopakodás/rejtőzés és észlelése

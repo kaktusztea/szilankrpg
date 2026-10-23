@@ -16,7 +16,7 @@ Gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kis
 
 "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
-#### → Képzettségpróba: **[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)**
+#### → Képzettségpróba: **[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)** + Érzékenység
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - 🟨  **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
@@ -27,7 +27,7 @@ Gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kis
 
 Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése. Felfedezett titkosírás elemzése.
 
-#### → Képzettségpróba: **[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)**
+#### → Képzettségpróba: **[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)** + Intelligencia
 - **Nehézség**: a felfedezett nyom értelmezésének bonyolultságától függő szint ellen
 - 🟨  **Normál Kiterjesztés**: egyet válassz az aktuális szituációhoz passzolóan:
   - [Heraldika](../fortelyok.szabad/heraldika.md)
