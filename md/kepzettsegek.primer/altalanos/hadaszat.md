@@ -104,3 +104,5 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 -6: Szabotőr aknamunkája
  0: Nincs szabotőr
 ```
+
+---

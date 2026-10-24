@@ -71,3 +71,5 @@ Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják l
 ### Helyzetfüggő módosítók
 
 Nincsenek. A különböző drogok és tudatállapot változások a [Státuszokon](../../082_statuszok.md) keresztül fejtik ki a hatásukat.
+
+---

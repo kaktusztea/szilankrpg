@@ -86,3 +86,5 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 ```
 
 Kapcsolódhat: [Csúszós talaj](../../065_03_03_negativ_helyzetek.md#csúszós-talaj) harci helyzet (küzdelem esetén)
+
+---

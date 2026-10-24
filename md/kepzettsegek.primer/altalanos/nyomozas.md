@@ -2,11 +2,8 @@
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-A rejtett nyomok megtalálásához az **[Észlelés](eszleles.md)** képzettség használandó.\
-Nyomok értelmezéséhez a **Nyomozás** képzettség.
-
-Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Az alábbi példák segítenek leírni, milyen jellegű információk nyerhetők a képzettség segítségével:
-- bűnjelek elemzése és következtetés is. "Itt el lett mozdítva a bútor."
+Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Példák, hogy milyen jellegű információk nyerhetők a képzettség segítségével:
+- Bűnjelek elemzése és következtetés is. "Itt el lett mozdítva a bútor."
 - Mikor járt itt utoljára valaki?
 - Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.
 - Vérnyomok elemzése: alvadás, jelleg. Állati vér, vagy emberi? (Ez utóbbiban a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segíthet).
@@ -14,16 +11,47 @@ Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illet
 - Kit érdemes kikérdezni a helyszínen
 - KM kis segítsége: "Valamit még nem kérdeztél meg"
 
+→ Képzettség: **[Észlelés](eszleles.md)** - Rejtett nyomok megtalálásához\
+→ Képzettség: **Nyomozás** - Nyomok értelmezéséhez
+
+### Helyzetfüggő módosítók
+
+#### ⚜️ Helyszín 1️⃣
+
+```
++0: Érintetlen helyszín
+-3: Megbolygatott helyszín
+-6: Összejárkált helyszín
+```
+
+#### ⚜️ Szemtanú 1️⃣
+
+```
+ 0: Nincs hasznos szemtanú
++3: Hasznos szemtanú
+```
+
+#### ⚜️ Eszközök 1️⃣
+
+```
+ 0: Eszközök nélkül
++3: Porok / nagyító / lámpák (ha segítenek)
+```
+
+---
+
+
+
 ### Domináns Tulajdonságok
 
 Intelligencia, Emlékezet
 
 ### Kapcsolódik
 
-- [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat.
-- [Vezető: Nyomozó](../../fortelyok.altalanos/vezeto_nyomozo.md) fortély: csoportos nyomozás esetén bónuszt ad.
+- [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) → egy nyomozócsapat eszerint használja
+- Fortély: [Vezető: Nyomozó](../../fortelyok.altalanos/vezeto_nyomozo.md) →  csoportos nyomozás esetén bónuszt ad
 
-### Normál kiterjesztés
+### 🟨  Normál kiterjesztés
 
 - ❗ [Helyismeret](../../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
 - [Építészet](../../fortelyok.altalanos/epiteszet.md): "Az a fal sokkal vastagabb, mint a másik!"
@@ -34,13 +62,13 @@ Intelligencia, Emlékezet
 - [Térképészet](../../fortelyok.szabad/terkepeszet.md): "A két 'O' a két ablakot, az 'Y', a hátsó ajtót jelzi, a szaggatott vonalon az 'X' szerintem csapdát jelent."
 - [Titkos szervezet](../../fortelyok.szabad/titkos_szervezet.md): "A Karvaly céh második embere..., a nyakát az Ítészek céhének stílusában vágták át."
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
-- [Élettan](../../fortelyok.altalanos/elettan.md) (boncoláshoz)
+- [Élettan](../../fortelyok.altalanos/elettan.md): boncoláshoz
 - [Jogismeret](../../fortelyok.szabad/jogismeret.md): "Az anyai ági öröklés miatt a féltestvér is részesül az örökségből a gyászév leteltével! Tehát neki is volt indítéka."
 - [Pénzügyek](../../fortelyok.szabad/penzugyek.md): "A lefoglalt iratokból egyből kiviláglik: Kamarás uram kettős könyvelést vezetett."
 
-### Szituáció
+### Szituációk
 
 - [Információ szerzés valakitől](../../szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem azt a nevet? Mit tudhatok róla?](../../szituaciok/ismerem_mit_tudhatok_rola.md)
@@ -55,9 +83,9 @@ Intelligencia, Emlékezet
 
 A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
-A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót (lásd fenn).  A játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
+A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót.  A játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
 
-Például a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan megkaphatja a `-3` büntetést a dobásra.
+Ha a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan megkaphatja a `-3` büntetést.
 
 Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
@@ -92,52 +120,29 @@ Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befoly
 
 - Rájössz, mikor járt itt utoljára valaki (pl. a por állapotából).
 - Egy rövid beszélgetés alapján kideríted, ki tudhat a legtöbbet az ügyről.
-- Apró kéznyomot felfedezel egy poros tárgyon.
-- Ösztönösen megérzed, hogy kihez érdemes először szót intézni egy nyomozásban - a leggyengébb láncszem mindig feltűnik számodra.
+- Apró ujjnyomot felfedezel egy poros tárgyon.
+- Ösztönösen megérzed, hogy kihez érdemes először szót intézni egy nyomozásban;. A leggyengébb láncszem mindig feltűnik számodra.
 
 #### Nehéz (12) 🎲
 
-- Kiszúrsz egy **tűszúrást** egy holttesten.
-- Megállapítod, hogy a helyszíni vér alvadása órákkal ezelőtti.
-- Széttöredezett utalásokból rájössz, hogy két gyanúsított lehet, hogy összejátszik.
+- Rájössz, hogy valójában egy **tűszúrást** látsz egy holttesten.
+- Megállapítod, hogy a helyszíni vér alvadása nagyjából `3` órával ezelőtti.
+- Töredezett utalásokból rájössz, hogy két gyanúsított lehet, hogy összejátszik.
 
 #### Nagyon nehéz (15) 🎲
 
 - Egy vallomásból kiszúrod, hogy kulcsfontosságú részletet hallgattak el.
-- A nyomokból felismered, hogy egy tettes színlelte az eseményeket, pl. betörést imitált.
+- A nyomokból felismered, hogy egy tettes beállította a helyszín tárgyait, pl. betörést imitált.
 - Kaotikus helyszínen (pl. verekedés, piaci kavarodás) értelmes nyomokat tudsz rekonstruálni.
 
 #### Rendkívül nehéz (18) 🎲
 
-- Átérzed, hogy a halott utolsó pillanataiban milyen érzéseket élt át.
+- Bevillan, hogy a halott utolsó pillanataiban nagyjából milyen érzéseket élt át.
 - Hetekkel vagy hónapokkal korábban elhelyezett nyomokat is képes vagy visszafejteni.
 
 #### Emberfeletti (21) 🎲
 
-- Évek múltán, egy felújított szobában is érzed: "itt gyilkosság történt."
-- Töredékjegyzetekből és szétszórt dokumentumokból képes vagy rekonstruálni egy teljes összeesküvés történetét.
+- Évek múltán, egy felújított szobában is érzed a csontjaidban: "itt gyilkosság történt."
+- Töredékes jegyzetekből és nagy mennyiségű vegyes dokumentumból képes vagy rekonstruálni egy teljes összeesküvés történetét.
 
 ---
-### Helyzetfüggő módosítók
-
-#### ⚜️ Helyszín 1️⃣
-
-```
--6: Összejárkált helyszín
--3: Megbolygatott helyszín
-+0: Érintetlen helyszín
-```
-
-#### ⚜️ Szemtanú 1️⃣
-
-```
- 0: Nincs hasznos szemtanú
-+3: Hasznos szemtanú
-```
-
-#### ⚜️ Eszközök 1️⃣
-
-```
- 0: Eszközök nélkül
-+3: Porok / nagyító / lámpák (ha segítenek)
-```

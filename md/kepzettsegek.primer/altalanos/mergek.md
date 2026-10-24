@@ -82,3 +82,5 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_me
 -3: Félrevezető tünetek (3)
 -6: Félrevezető tünetek (6)
 ```
+
+---

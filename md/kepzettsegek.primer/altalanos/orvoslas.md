@@ -134,3 +134,5 @@ Gyógyulási sebesség szorzó: `x3`.
 +3: hasznos gyógyszer (vajákos készítette)
 +6: legjobb gyógyszer (vajákos készítette)
 ```
+
+---
