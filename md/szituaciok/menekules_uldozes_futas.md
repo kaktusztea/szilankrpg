@@ -1,52 +1,59 @@
 ## Menekülés, Üldözés, Futás
 
-Gyakori eset, hogy a játékosok és / vagy Nem Játékos Karakterek között kergetőzés veszi kezdetét.
+Gyakori eset 2, vagy több fél között.
 
-### 🔆 Menekülés
+### 🔆 Menekülés harcból → Manőver: [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) 
 
-Ha harc közben dönt úgy egy karakter, hogy ideje távozni, akkor [Kibontakozás Manővert](../066_05_altalanos_manoverek.md#kibontakozás) kell dobnia. Ha sikertelen, akkor is kibontakozik, de ellenfele kap egy extra támadást, amivel még utána csaphat.
+→ **Sikertelen**: választhatsz
+- harcolsz tovább
+- kibontakoztál, de ellenfeled extra támadást kap [Hátulról](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) módosítókkal
 
-A Manőver után jön a **Futás ellenpróba** (lásd lejjebb) - amennyiben ellenfele úgy dönt, hogy üldözni kezdi.
-
-Ha elveszíti az ellenpróbát, dönthet VAGY-VAGY:
-- `1.` visszafordul, újra felveszi a harcot aktuális, fegyveres harcértékével
-- `2.`egy újabb támadást adhat le rá ellenfele - [Hátulról](../065_03_01_pozitiv_helyzetek.md#hátulról-támadás) módosítókkal
-
-Ha megnyerted a Futás ellenpróbát, sikerült lehagynod üldöződet.
+→ **Sikeres**: Kibontakoztál, jöhet a "Futás rövidtáv" ellenpróba ↓ (ha üldöznek)
 
 <br />
 
 ---
-### 🔆 Futás ellenpróba - rövidtáv
+### 🔆 Futás rövidtáv → Ellenpróba: Gyorsaság
 
-→ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba)\
-→ Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
-→ [MGT hatása a próbára](../069_03_MGT.md): KM dönt a helyzet ismeretében
-
-Aki győz, az ér oda előbb a célhoz.
+→ Fortély: [Sprint](../fortelyok.altalanos/sprint.md) → bónuszt ad
+→ [MGT](../069_03_MGT.md) hatása: KM dönt a helyzet ismeretében
 
 <br />
 
 ---
-### 🔆 Futás ellenpróba - üldözés
+### 🔆 Futás hosszabb üldözés → Több Ellenpróba
 
 ```
-Távolság: 1 db szám
-  → Minél távolabb vagytok egymástól, annál nagyobb
+Felváltva Tulajdonság ellenpróbák
+  Gyorsaság
+  Edzettség
+
+→ Fortély: Sprint → bónuszt ad
+```
+
+```
+Távolság: X (1 db szám)
+  → Távolság egymástól
   → KM határozza meg érzésre
 ```
 
-→ Több ⚪ **Gyorsaság** és **Edzettség** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba) felváltva\
-→ Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
+#### Próbák menete
 
 ```
-→ Megnyersz egy ellenpróbát:  Távolság: -1 (csökken)
-→ Elvesztesz egy ellenpróbát: Távolság: +1 (nő)
+→ Üldöző nyer egy ellenpróbát:
+  Távolság: -1 (csökken)
 
-→ Távolság 0-ra csökken: üldöző utólérte az üldözöttet
+→ Üldözött nyer egy ellenpróbát:
+  Távolság: +1 (nő)
+
+→ Távolság 0-ra csökken:
+  üldöző utólérte az üldözöttet
 ```
 
-🔆 A szám nem mindig publikus, nagy távolságú üldözéseknél a KM jellemzően nem mondja meg. Ilyen esetekben ráadásul más ismeretekre is dobathat próbákat. Lásd például: [Nyomok észrevétele, Nyomkövetés - természetben](nyomok_nyomkovetes_termeszet.md); [Nyomok észrevétele, Nyomkövetés - városban](nyomok_nyomkovetes_varos.md).
+🔆 A szám nem mindig publikus, nagy távolságú üldözéseknél a KM jellemzően nem mondja meg.\
+Ilyen esetekben ráadásul más ismeretekre is dobathat próbákat. Szituációk:
+- [Nyomok észrevétele, Nyomkövetés - természetben](nyomok_nyomkovetes_termeszet.md)
+- [Nyomok észrevétele, Nyomkövetés - városban](nyomok_nyomkovetes_varos.md)
 
 ---
 
