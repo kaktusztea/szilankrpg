@@ -58,11 +58,11 @@ Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csök
 
 #### Adag
 ```
-normál adag: alap Erősség
-kis adag:    -1 Erősség 
-             Méregérzékelés próba: -1 büntetés
-nagy adag:   +1 Erősség, 
-             Méregérzékelés próba: +1 bónusz
+ 0: Normál adag
+-1: Kis adag
+    Méregérzékelés próba: -1 büntetés
++1: Nagy adag
+    Méregérzékelés próba: +1 bónusz
 ```
 
 Vegyük figyelembe, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
@@ -239,7 +239,8 @@ Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a vi
 ---
 ### Elkészítés ideje
 
-`1` jelenet, ami nem kötött időtartam, KM dönt.
+`1` jelenet, ami nem kötött időtartam, KM dönt.\
+Lehetnek órák, de napok, hetek is.
 
 ### Ár
 

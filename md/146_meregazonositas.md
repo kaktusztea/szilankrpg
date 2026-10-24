@@ -22,11 +22,7 @@ A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 ```
 
 ```
--2: Sűrű: kis mennyiség is elég 1 adaghoz
 -3: Szagtalan/ízetlen (egyben értendő)
-```
-
-```
 -3: Félrevezető tünetek 3
 -6: Félrevezető tünetek 6
 ```

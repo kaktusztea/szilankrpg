@@ -32,8 +32,9 @@ Célszám: 4 (Átlagos)
 #### Helyzetfüggő módosítók
 
 ```
--1: Kis (fél) mennyiség
-+1: Dupla mennyiség
+ 0: Normál adag
+-1: Kis adag
++1: Nagy adag
 
 -1: Sűrű (azonos hatás, fele adag)
 

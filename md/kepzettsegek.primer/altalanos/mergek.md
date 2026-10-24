@@ -21,13 +21,6 @@ Ismered a különböző hatású és erősségű mérgek kikeverésének módjá
  0: Szükséges komponensek mind megvannak
 ```
 
-#### ⚜️ Méreg azonosítása 1️⃣
-
-```
--3: Félrevezető tünetek (3)
--6: Félrevezető tünetek (6)
-```
-
 ---
 ### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
 
@@ -37,18 +30,11 @@ Ismered a különböző hatású és erősségű mérgek kikeverésének módjá
 ```
 
 ---
-**Főfejezet**: [Méregrendszer](../../140_meregrendszer.md)
+### → Főfejezet: [Méregrendszer](../../140_meregrendszer.md)
 
-- [Méregkeverés szabályai](../../141_meregkeveres_szabalyai.md) 🎲
-- [Méreg alapanyagok beszerzése](../../142_mereg_alapanyagok_beszerzese.md)
-- [Méreg tulajdonságai](../../143_mereg_tulajdonsagai.md)
-- [Méregellenállás próba](../../144_meregellenallas_proba.md) 🎲
-- [Méregérzékelés](../../145_meregerzekeles.md) 🎲
-- [Méreg azonosítása](../../146_meregazonositas.md) 🎲
-
+---
 ### Kapcsolódik
 
-- [Méregrendszer](../../140_meregrendszer.md) főfejezet
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
 - [Orvoslás](orvoslas.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
