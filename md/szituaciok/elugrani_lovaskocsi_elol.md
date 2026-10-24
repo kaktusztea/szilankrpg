@@ -1,7 +1,5 @@
 ## Elugrani egy feléd száguldó lovaskocsi elől
 
-<br />
-
 #### → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Gyorsaság
 
 ```

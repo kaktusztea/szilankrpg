@@ -24,39 +24,32 @@ Nehézség magasság alapján
 16 m: 30
 ```
 
-Szituáció:  [Mászás - összetett példa](maszas_osszetett_pelda.md) rontása esetén például a karakter nem képes megkapaszkodni és leesik.
-
-
-Ilyenkor a fenti [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát kell dobnia, ahol a Nehézség magasság-arányos - így még mindig van esélye megúszni kisebb-nagyobb sérülésekkel a leérkezést.
-
----
 ### Helyzetfüggő módosítók (dobásra)
 
 ```
-Terep Nehézség: -3; +3; +6
-Páncélban: -3; -6
+Talaj jellege
+   -3: kő
+   +3: susnya
+   +6: hó/széna
+Páncélban
+   -3: bőrvért+
+   -6: merevvértek
 ```
 
-A talaj jellegétől függően kaphat a karakter a dobásra módosítókat.
-
-Az alapállapot a döngölt földnek megfelelő minőségű talaj. Ennél lehet sokkal könnyebb a dobás, ha például hóba esik (`+6`), vagy nehezebb, ha kövezett útra, erkélyre (`-3`) érkezik az érintett.
-
-A páncél szintén problémásabb, a merev páncélok inkább. A KM a körülmények és a páncélok jellege, súlya alapján adjon egy negatív dobásmódosítót `-3 / -6`.
-
 ---
-### Sebesülés esés után
+### Sebesülés zuhanás után
 
-A zuhanás okozta sérüléseket a [Sebződés hatása](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) fejezetben tárgyaljuk.
+→ [Sebződés hatása](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) fejezetben tárgyaljuk.
 
 ---
 ### ⚡Példa
 
-Tetves elvéti **Mászás** képzettségpróbáját és annak [mentődobását](../030_06_01_kepzettsegproba.md#mentődobás) is - lehullik egy `4 méter` magas kiszögellésről. Akrobatika próba jön. Szerencséjére egy füves susnyába érkezik (Dobásmódosító: `+3`), viszont könnyű bőrvértet visel (Dobásmódosító: -3), így a körülmények kioltják egymást.
+Tetves elvéti **Mászás** képzettségpróbáját és annak [mentődobását](../030_06_01_kepzettsegproba.md#mentődobás) is - lehullik egy `4 méter` magas kiszögellésről. Akrobatika próba jön. Szerencséjére egy füves susnyába érkezik (Dobásmódosító: `+3`), viszont könnyű bőrvértet visel (Dobásmódosító: `-3`), így a körülmények kioltják egymást.
 
 ```
 Akrobatika + Ügyesség/Edzettség
-
-Célszám: 9 (magasság: 4 méter)
+           vs
+Nehézség: 9 (magasság: 4 méter)
 
 Dobásmódosító: 0
  + 3 (susnyásba)

@@ -2,49 +2,58 @@
 
 Kapcsolódik: [Lovas Harc](../067_01_lovas_harc_szabalyai.md) fejezet
 
-## Sebesüléskor leesés kockázata
-
-Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy lássuk, leesik-e:
+## `1.` Sebesüléskor hátason maradni → Képzettségpróba: Lovaglás + Önuralom
 
 ```
 Seb       Nehézség
-6-10 ÉP       9
-11-15 ÉP     12
-15+ ÉP       15
+ÉP: 6-10      9
+ÉP: 11-15    12
+ÉP: 15+      15
 ```
 
-Ha sikertelen, leesik. Ekkor jön a lenti Akrobatika próba.
+Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy lássuk, leesik-e.\
+Ha sikertelen, leesik. Ekkor jön a lenti esés (Akrobatika) próba.
 
 <br />
 
 ---
-## Leeséskor: Akrobatika próba és Sérülés
-
-Ha leesel hátasodról, [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében. Egy szénaboglya például sokat könnyíthet.
-
-### ⚜️Eséskor: Akrobatika képzettségpróba
-
-A próba **Nehézsége** a hátas mozgásától függ.
+## `2.` Leestél a hátasról → Képzettségpróba: Akrobatika + Ügyesség
 
 ```
-Hátas       Nehézség
- Áll,lassú     9
- Üget         15
- Vágtázik     18
+Hátas mozgása  Nehézség
+ Áll,lassú        9
+ Üget            15
+ Vágtázik        18
 
-Helyzetfüggő Módosítók (dobásra):
-→ Terep Nehézség: -3; +3; +6
-→ Páncélban: -3; -6
+Helyzetfüggő Módosítók (dobásra)
+→ Talaj jellege
+   -3: kő
+   +3: susnya
+   +6: hó/széna
+→ Páncélban:
+   -3: bőrvért+
+   -6: merevvértek
 → Levegőből: lásd lenn
 ```
 
-🔆 Ha légi hátasról zuhansz le, akkor a fenti Nehézség és az [Esés magasból](eses_magasbol.md) szituációnál a magasságból adódó Nehézség értékek közül a **nagyobbik** számít, továbbá a Sebesülést (`SP`) a [Zuhanásnál](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) leírtak szerint számoljuk.
+### Ha **légi** hátasról zuhansz le
+
+```
+Nehézség = MAX (
+         → fenti Nehézség (2. pont) ↑
+         → "Esés magasból" szituáció Nehézsége )
+```
+
+→ Szituáció: [Esés magasból](eses_magasbol.md)\
+→ Sebződés (`SP`): [Zuhanásnál](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) leírtak szerint számoljuk.
+
+A **nagyobb Nehézség** érték számít a két táblázatból.
 
 <br />
 
-### ⚜️ Esésből sebződés: Sikertelen Akrobatika-próba után
+## ⚜️ Rontott esés → Sebződés
 
-Ha elvétetted az **Akrobatika** (esés) próbát, a hátas mozgásától függően kapsz zuhanásból adódó sebzést. **SFÉ** nyilván **nem** számít.
+Hátasod mozgásától függően sebződsz. **SFÉ** nyilván **nem** számít.
 
 ```
 Hátas            SP
@@ -55,9 +64,7 @@ Hátas            SP
 
 <br />
 
-### ⚜️ Esésből sebződés: Sikeres Akrobatika-próba után
-
-Ha sikeres volt a próba, akkor is fennáll az esésből sebződés veszélye, de jelentősen kisebb mértékű:
+## ⚜️ Sikeres esés → kisebb Sebződés
 
 ```
 (k20 - 10) SP
