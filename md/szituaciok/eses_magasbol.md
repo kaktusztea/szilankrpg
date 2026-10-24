@@ -21,11 +21,13 @@ Nehézség magasság alapján
 13 m: 23
 14 m: 25
 15 m: 27
+16 m: 30
 ```
 
-Szituáció:  [Mászás - összetett példa](maszas_osszetett_pelda.md) rontása esetén például a karakter nem képes megkapaszkodni és leesik, még mindig van esélye megúszni kisebb-nagyobb sérülésekkel a leérkezést.
+Szituáció:  [Mászás - összetett példa](maszas_osszetett_pelda.md) rontása esetén például a karakter nem képes megkapaszkodni és leesik.
 
-Ilyenkor [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát kell dobnia, ahol a Nehézség magasság-arányos és a fenti táblázatból kiolvasható.
+
+Ilyenkor a fenti [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát kell dobnia, ahol a Nehézség magasság-arányos - így még mindig van esélye megúszni kisebb-nagyobb sérülésekkel a leérkezést.
 
 ---
 ### Helyzetfüggő módosítók (dobásra)
@@ -49,9 +51,11 @@ A zuhanás okozta sérüléseket a [Sebződés hatása](../064_02_08_sebzodes_ha
 ---
 ### ⚡Példa
 
-Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../030_06_01_kepzettsegproba.md#mentődobás) is, lehullik egy `4 méter` magas kiszögellésről. Akrobatika próba jön. Szerencséjére egy füves susnyába érkezik (Dobásmódosító: `+3`), viszont könnyű bőrvértet visel (Dobásmódosító: -3), így a körülmények kioltják egymást.
+Tetves elvéti **Mászás** képzettségpróbáját és annak [mentődobását](../030_06_01_kepzettsegproba.md#mentődobás) is - lehullik egy `4 méter` magas kiszögellésről. Akrobatika próba jön. Szerencséjére egy füves susnyába érkezik (Dobásmódosító: `+3`), viszont könnyű bőrvértet visel (Dobásmódosító: -3), így a körülmények kioltják egymást.
 
 ```
+Akrobatika + Ügyesség/Edzettség
+
 Célszám: 9 (magasság: 4 méter)
 
 Dobásmódosító: 0
