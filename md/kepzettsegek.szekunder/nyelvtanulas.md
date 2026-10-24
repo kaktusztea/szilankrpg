@@ -102,7 +102,7 @@ Emlékezet, Érzékenység.
 #### Nehéz (12) 🎲
 
 - Eltérő nyelvek között közvetíteni: tolmácsolás szinte valós időben, kisebb hibákkal.
-- Rövid, idegen nyelvű szöveg nagy részének pontos megértése.
+- Rövid, idegen, de ismert nyelvcsaládú, írott szöveg nagy részének nagyjából megértése.
 - Bonyolult beszélgetésből a lényegi információ kihámozása.
 - Előtted sosem hallott idegen nyelv alapmondatait átültetni közös (p4ar) nyelvre.
 
@@ -113,14 +113,13 @@ Emlékezet, Érzékenység.
 
 #### Rendkívül nehéz (18) 🎲
 
-- Soha nem hallott nyelven hosszabb szöveg nagy részét értelmezni, közben aktívan tolmácsolni.
 - Több nyelv keverékét (pl. zsargon) megfejteni és összefésülni.
 - Szakrális beszéd nyelvi szimbólumait átültetni közös beszédre.
+- Idegen, de ismert nyelvcsaládú, írott szöveg nagy részének majdnem pontos megértése.
 
 #### Emberfeletti (21) 🎲
 
 - "Elfeledett, isteni nyelv" töredékének megértése.
-- Azonnali tolmácsolás teljesen új nyelvről közösre.
 - Nyelvi mintázatból előre megérezni a kulturális hátteret, társadalmi berendezkedést.
 
 <br />
