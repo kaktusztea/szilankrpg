@@ -149,9 +149,11 @@ Az aktiválódás után meddig tart a szer hatása.
 ```
 +0: 1 kör
 +1: 2 kör 
-+2: rövid jelenet (harcon kívül)
++2: harc végéig;
+    rövid jelenet (harcon kívül)
 +3: pár óra (harcon kívül)
-+5: hónapok  (Kimutatási idő egyezzen!)
++5: hónapok
+    (Kimutatási idő egyezzen!)
 ```
 
 <br />
