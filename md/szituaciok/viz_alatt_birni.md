@@ -1,8 +1,12 @@
 ## Víz alatt bírni
 
-Alapesetben `(1 + Edzettség perc)` ideig bírod a víz alatt, ha van [Úszás](../fortelyok.altalanos/uszas.md) fortélyod legalább `1. fokon`.
+```
+1 + Edzettség perc
+```
 
-Ez a [Gyöngyhalász](../fortelyok.altalanos/gyongyhalasz.md) fortéllyal fejleszthető tovább.
+→ Fortély: [Úszás](../fortelyok.altalanos/uszas.md) - `1.fok` **követelmény**
+
+→ Fortély: [Gyöngyhalász](../fortelyok.altalanos/gyongyhalasz.md) bónuszt ad
 
 ---
 
