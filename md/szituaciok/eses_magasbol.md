@@ -1,9 +1,9 @@
 ## Esés magasból
 
-**[Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md)** képzettségpróba.
+###  → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Ügyesség/Edzettség
 
 ```
-Nehézségek magasság alapján:
+Nehézség magasság alapján
 
  1 m: 5
  2 m: 6
@@ -23,17 +23,9 @@ Nehézségek magasság alapján:
 15 m: 27
 ```
 
-```
-Tulajdonságok
-  Ügyesség
-  Edzettség
-```
-
-Ha például [Mászás](../kepzettsegek.szekunder/maszas.md) képzettség használata során (mint a [Mászás: összetett példa](maszas_osszetett_pelda.md)) a karakter nem képes megkapaszkodni és leesik, még mindig van esélye megúszni kisebb-nagyobb sérülésekkel a leérkezést.
+Szituáció:  [Mászás - összetett példa](maszas_osszetett_pelda.md) rontása esetén például a karakter nem képes megkapaszkodni és leesik, még mindig van esélye megúszni kisebb-nagyobb sérülésekkel a leérkezést.
 
 Ilyenkor [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát kell dobnia, ahol a Nehézség magasság-arányos és a fenti táblázatból kiolvasható.
-
-<br />
 
 ---
 ### Helyzetfüggő módosítók (dobásra)
@@ -49,14 +41,10 @@ Az alapállapot a döngölt földnek megfelelő minőségű talaj. Ennél lehet 
 
 A páncél szintén problémásabb, a merev páncélok inkább. A KM a körülmények és a páncélok jellege, súlya alapján adjon egy negatív dobásmódosítót `-3 / -6`.
 
-<br />
-
 ---
 ### Sebesülés esés után
 
 A zuhanás okozta sérüléseket a [Sebződés hatása](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) fejezetben tárgyaljuk.
-
-<br />
 
 ---
 ### ⚡Példa
