@@ -15,9 +15,9 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 ### Kapcsolódik
 
-- [Éber alvó](../../fortelyok.altalanos/eber_alvo.md) fortély
-- [Infralátás](../../fortelyok.erzekek/infralatas.md) fortély
-- [Villámgyors keresés/rejtés](../../fortelyok.altalanos/villamgyors.kereses.rejtes.md) fortély
+- Fortély: [Éber alvó](../../fortelyok.altalanos/eber_alvo.md)
+- Fortély: [Infralátás](../../fortelyok.erzekek/infralatas.md)
+- Fortély: [Villámgyors keresés/rejtés](../../fortelyok.altalanos/villamgyors.kereses.rejtes.md)
 
 ### Normál kiterjesztés
 
@@ -78,7 +78,6 @@ Harcművész nagymester, mágus.
 #### Nagyon nehéz (15) 🎲
 
 - Észrevenni egy fejedre zuhanó sziklát zajban.
-- Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
 
 #### Rendkívül nehéz (18) 🎲
 
@@ -90,7 +89,6 @@ Harcművész nagymester, mágus.
 Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tulajdonság segítségével dobjuk.
 - Mágikus csapda kitörését megérezni egy szemvillanással a kisülés előtt.
 - Szellemlény érintését megérezni - mágikus ismeretek nélkül.
-- Íztelen, szagtalan ételméreg kiszúrása
 
 <br />
 
