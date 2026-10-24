@@ -115,7 +115,7 @@ Hajlékony fegyver a pajzs mögé csap.
 
 ```
 Feltétel: passzív fél
-Hatás:    a Fegyvertörés manőver nem fog rajta
+Hatás:    Fegyvertörés manőver nem fog rajta
 ```
 
 Hajlékony (nem merev) fegyver.
@@ -127,7 +127,7 @@ Feltétel: cél páncélos
 Hatás:    célpont páncél SFÉ: duplán számít
 ```
 
-Íves rövid penge páncél ellen különösen rossz.
+Ez a penge páncél ellen különösen rossz.
 
 <br />
 
@@ -138,7 +138,7 @@ Hatás:    célpont páncél SFÉ: duplán számít
 
 ```
 Feltétel: 'pengehegy' aktor + egykezes forgatás + aktív fél
-Hatás:    az aktív fél dobása +2 (Precíz támadás manőver)
+Hatás:    aktív fél "Precíz támadás" manőver Ellenpróba: +2
 ```
 
 Precíziós szúróhegy.
@@ -147,8 +147,8 @@ Precíziós szúróhegy.
 
 ```
 Feltétel: egykezes forgatás, passzív fél
-Hatás:    a passzív fél (akié a fegyver) dobása -2
-          (Lefegyverzés és Fegyvertörés manővernél is)
+Hatás:    passzív fél (akié a fegyver)
+          Lefegyverzés manőver Ellenpróba: -2
 ```
 
 Az ilyen fegyvert az ellenfél könnyebben kiüti a kezedből, könnyebben eltöri.
@@ -157,7 +157,8 @@ Az ilyen fegyvert az ellenfél könnyebben kiüti a kezedből, könnyebben eltö
 
 ```
 Feltétel: passzív fél
-Hatás:    a passzív fél (akié a fegyver) dobása +2 (nehezebb lefegyverezni)
+Hatás:    passzív fél (akié a fegyver)
+          Lefegyverzés manőver Ellenpróba: +2
 ```
 
 Az ilyen fegyvert nehezebben ütik ki a kezedből.
@@ -165,8 +166,10 @@ Az ilyen fegyvert nehezebben ütik ki a kezedből.
 ### Fanyél fegyvertörése könnyebb
 
 ```
-Feltétel: passzív fél, ellenfél fegyvere fém
-Hatás:    a passzív fél (akié a fegyver) dobása -2 (könnyebb eltörni)
+Feltétel: passzív fél; ellenfél fegyvere fém
+Hatás:    passzív fél (akié a fegyver)
+          Fegyvertörés manőver Ellenpróba: -2
+          (könnyebb eltörni)
 ```
 
 Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
@@ -174,8 +177,8 @@ Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
 ### Zúzó fegyver ellen rosszabb
 
 ```
-Feltétel: az ellenfél fegyverének sebzésjellege Zúzó
-Hatás:    az elszenvedett VÉ csökkenésed duplázódik
+Feltétel: ellenfél fegyverének sebzésjellege Zúzó
+Hatás:    elszenvedett VÉ csökkenésed duplázódik
 ```
 
 Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
@@ -184,7 +187,7 @@ Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
 
 ```
 Feltétel: 'kampós' aktor + aktív fél
-Hatás:    az aktív fél dobása +2 (Lábkirántás manőver)
+Hatás:    aktív fél Lábkirántás manőver Ellenpróba: +2
 ```
 
 A fegyver kampós vége (pl. glaive-szerű penge).
@@ -199,7 +202,7 @@ Hatás: sebző találat után ~50% esély, hogy beakad és
 ### Önsebzés-kockázat
 
 ```
-Hatás: a támadó k20 egyben esélydobás:
+Hatás: támadó k20 egyben esélydobás:
        Küszöb alá dobva magadat sebzed
    Mf nélkül: 1-10
    Mf 1.fok: 1-2
