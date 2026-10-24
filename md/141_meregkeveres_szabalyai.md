@@ -36,9 +36,9 @@ A méreg kikeverése **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)** kép
 Méreg komplexitása =
   + (1) Erősség
   + (2) Súlyosság
-  + (3) Bomlási idő
-  + (4) Hatáskezdet
-  + (5) Hatástartam
+  + (3) Hatáskezdet
+  + (4) Hatástartam
+  + (5) Bomlási idő
   + (6) Kimutatási idő
   + (7) Elállás
   + (8) Speciális
@@ -103,26 +103,7 @@ Az ilyen tulajdonság szintén Komplexitást emel.
 <br />
 
 ---
-### (3) Bomlási idő
-
-Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
-
-```
-0: Pár másodperc
-1: 1 perc
-2: 10 perc
-3: 1 óra
-4: 1 nap,   Mk 6.szint
-5: 1 hónap, Mk 9.szint
-6: Örökké,  Mk 12.szint
-
-Mk: Mérgek biztos tudás követelmény
-```
-
-<br />
-
----
-### (4) Hatáskezdet
+### (3) Hatáskezdet
 
 ```
 Bevitel után mennyi idő után hat?
@@ -146,7 +127,7 @@ Mk: Mérgek biztos tudás követelmény
 <br />
 
 ---
-### (5) Hatástartam
+### (4) Hatástartam
 
 Az aktiválódás után meddig tart a szer hatása.
 
@@ -160,6 +141,24 @@ Az aktiválódás után meddig tart a szer hatása.
     (Kimutatási idő egyezzen!)
 ```
 
+<br />
+
+---
+### (5) Bomlási idő
+
+Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
+
+```
+0: Pár másodperc
+1: 1 perc
+2: 10 perc
+3: 1 óra
+4: 1 nap,   Mk 6.szint
+5: 1 hónap, Mk 9.szint
+6: Örökké,  Mk 12.szint
+
+Mk: Mérgek biztos tudás követelmény
+```
 <br />
 
 ---
