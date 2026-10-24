@@ -107,7 +107,7 @@ Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
 0: Pár másodperc
 1: 1 perc
 2: 10 perc
-3: 1 óra,   Mk 3.szint
+3: 1 óra
 4: 1 nap,   Mk 6.szint
 5: 1 hónap, Mk 9.szint
 6: Örökké,  Mk 12.szint
