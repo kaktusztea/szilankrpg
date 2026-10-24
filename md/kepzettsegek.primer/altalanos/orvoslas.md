@@ -14,6 +14,25 @@ A képzettség az alábbi tevékenységeket fedi le:
 
 Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-6: Felszerelés nélkül
+-3: Szegényes felszerelés
+ 0: Normál felszerelés
+```
+
+#### ⚜️ Körülmény 🔀
+
+```
+-6: Páciens ellenáll
++3: hasznos gyógyszer (vajákos készítette)
++6: legjobb gyógyszer (vajákos készítette)
+```
+
+---
 ### Domináns Tulajdonságok
 
 - Érzékenység
@@ -113,26 +132,5 @@ Gyógyulási sebesség szorzó: `x3`.
 #### Emberfeletti (21) 🎲
 
 3 S kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`); csonkolást gyógyítani (csak ha megvan a levágott végtag)
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Felszerelés 1️⃣
-
-```
--6: Felszerelés nélkül
--3: Szegényes felszerelés
- 0: Normál felszerelés
-```
-
-#### ⚜️ Körülmény 🔀
-
-```
--6: Páciens ellenáll
-+3: hasznos gyógyszer (vajákos készítette)
-+6: legjobb gyógyszer (vajákos készítette)
-```
 
 ---

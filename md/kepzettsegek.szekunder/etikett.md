@@ -6,6 +6,17 @@ Hogy kell köszönteni a nemesi vendégeket, hogyan kell udvariasan hárítani e
 
 Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívásokat teljesíteni, de az alapismeret és a gyors tanulás segítségével hamar beépíthető más kultúrkörök ismerete is. Például egy "Etikett: `9.szint`" képzettséggel rendelkező py4rroni nemes pár nap alatt képes megtanulni a tor0ni udvari Etikett szabályait, mert már megvan a mentális "váz", amire csak fel kell "aggatnia" az új tudást. Ezt a [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) Kiemelt Fortély rendszerén keresztül szimuláljuk.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Ruházat 1️⃣
+
+```
+-6: Szegényes, sérült ruházat
+-3: szabálytalan ruházat, smink
+ 0: Megfelelő ruházat, smink
+```
+
+---
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia, Önuralom, Emlékezet
@@ -70,15 +81,4 @@ Tor0ni vérnászt megnyerni. Több tor0ni dáma együttes támadását látszól
 
 Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynök -, túlélnie egy t0roni vérnászt és az egész nemesi bált, sőt még a párbajra hívást is.
 
-<br />
-
 ---
-### Helyzetfüggő módosítók
-
-#### ⚜️ Ruházat 1️⃣
-
-```
--6: Szegényes, sérült ruházat
--3: szabálytalan ruházat, smink
- 0: Megfelelő ruházat, smink
-```

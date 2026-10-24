@@ -11,6 +11,18 @@ A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakter
 - Prima Materia, Mindent Oldó Szer kutatása
 - Mérgek **alapanyagainak** előállítása (nem magának a méregnek!). Ez által speciális követelménye is a [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettségnek!
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-9: Súlyosan hiányos labor
+-6: Rosszul felszerelt labor
+-3: Hiányos műszerek
++0: Megfelelő labor
+```
+
+---
 ### Domináns Tulajdonságok
 
 Intelligencia, Emlékezet
@@ -89,19 +101,5 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 - Mindent oldó szer előállítása (összetett próbával).
 - A világ szövetét érintő transzmutációs kísérletek (pl. kőből kenyér, vízből vér).
 - Saját auráddal felruházott alkimista anyagok létrehozása, amelyek "élő szubsztanciaként" viselkednek (összetett próbával).
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Felszerelés 1️⃣
-
-```
--9: Súlyosan hiányos labor
--6: Rosszul felszerelt labor
--3: Hiányos műszerek
-+0: Megfelelő labor
-```
 
 ---

@@ -6,6 +6,18 @@ Aki lovaglást tanul, az képes megülni egy választott földi hátast lényt a
 
 Válassz hátas fajt: `1 db` [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortélyt kötelezően fel kell venned. A tudás univerzális, némi gyakorlással más fajú földi hátasokra is használható: a [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély többszöri felvételével.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Hátas 1️⃣
+
+```
+-3: Vad hátas
++0: Betört hátas
+```
+
+Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
+
+---
 ### Domináns Tulajdonságok
 
 Önuralom, Ügyesség, Gyorsaság
@@ -75,16 +87,4 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 - Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmaradni.
 - [Állat testvér] esetén: telepatikus, nem begyakorolt komplex parancsok (pl. "vidd biztonságba a társamat, majd térj vissza értem").
 
-<br />
-
 ---
-### Helyzetfüggő módosítók
-
-#### ⚜️ Hátas 1️⃣
-
-```
--3: Vad hátas
-+0: Betört hátas
-```
-
-Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges

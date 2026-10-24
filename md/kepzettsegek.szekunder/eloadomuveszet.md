@@ -6,6 +6,17 @@ Aktív, alkotó művész vagy. A lenti [Szabad-Fortélyok](../042_szabad_fortely
 
 Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. Arra az [Álcázás/álruha](alcazas_alruha.md) képzettség felvétele ad lehetőséget.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Közönség 1️⃣
+
+```
+-6: Ellenséges tömeg
+-3: Ellenszenves közönség
++0: Normál közönség
+```
+
+---
 ### Domináns Tulajdonságok
 
 Érzékenység, Emlékezet
@@ -90,18 +101,5 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 - Egyetlen fellépéseddel legendává válsz: a történetedet, dalodat énekli a város.
 - Tömegeket vagy seregeket hangolsz össze: harci indulótól politikai szónoklatig.
 - Színpadi játékod valóságnak érződik: a közönség – és talán a világ szövete is – reagál rá.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Közönség 1️⃣
-
-```
--6: Ellenséges tömeg
--3: Ellenszenves közönség
-+0: Normál közönség
-```
 
 ---

@@ -6,6 +6,24 @@ Az alkotás, a kézzel alkotott műremekek aktív, ihletett kreálása, amit akt
 
 Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély is (Normál kiterjesztésben). Lásd még a [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md) szituációt.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Idő 1️⃣
+
+```
+-3: Kapkodás
++0: Normál tempó
++3: Ráérős munka
+```
+
+#### ⚜️ Környezet 1️⃣
+
+```
++0: Normál környezet
++3: Inspiráló környezet (szent hely, művésztelep)
+```
+
+---
 ### Domináns Tulajdonságok
 
 Érzékenység, Ügyesség
@@ -84,25 +102,5 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 - A műveddel spirituális kapcsolatot teremtesz a befogadó néző számára.
 - Aurád erejével azonos érzelmi hatást fejthetsz ki a nézők irányába – halálod után is.
 - Lelked beleköltözhet a műbe halálod pillanatában (titkos tudás)
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Idő 1️⃣
-
-```
--3: Kapkodás
-+0: Normál tempó
-+3: Ráérős munka
-```
-
-#### ⚜️ Környezet 1️⃣
-
-```
-+0: Normál környezet
-+3: Inspiráló környezet (szent hely, művésztelep)
-```
 
 ---

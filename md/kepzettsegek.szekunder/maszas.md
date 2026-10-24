@@ -2,11 +2,38 @@
 
 Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember nem képes. Ebben segít a Mászás képzettség. Magas szintű alkalmazói jellemzően egyes tolvaj- és fejvadászklánok elit tagjai.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Körülmény 🔀
+
+```
+-3: Gyorsan mászni
+-3: Sötétben mászni
+-3: Rontott próba után Mentő dobás ❗
+```
+
+#### ⚜️ Segédeszköz 1️⃣
+
+```
++3: Mászókampók (csak ha segítenek)
++3: Lengő kötél
++6: Stabil kötél
+```
+
+#### ⚜️ Túlsúly 1️⃣
+
+```
+-6: nagy túlsúly
+-3: kis túlsúly
+ 0: nincs túlsúly
+ 
+ Infó: Erőpróba kellhet
+```
+
 ### Domináns Tulajdonságok
 
 - Ügyesség, Edzettség (a mászáshoz): technikás, rövid úthoz az **Ügyesség**, hosszabb úthoz az **Edzettség** a javasolt
 - Önuralom (rontott próbánál)
-- Erő (erőtartalék kritikus helyzetben)
 - Intelligencia (felmérni a mászandó terepet, helyeket)
 
 ### Pihenés
@@ -25,6 +52,58 @@ Ha a terep (próba) nehézsége nem nagyobb a Mászás képzettségnél, akkor a
 
 <br />
 
+---
+#### ⚜️ Erő Tulajdonság bevetése [mentődobásnál](../030_06_01_kepzettsegproba.md#mentődobás) 🔀
+
+Az Erő `0` feletti részét vetheted be.
+
+```
+→ Pihenésben 1 pont / perc tér vissza
+```
+
+#### ⚜️ Sérülten mászni
+
+[Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
+
+---
+### Hosszabb mászandó út
+
+Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobást kell végezni (**Edzettség** Tulajdonsággal).
+
+---
+### Rontott mászás próba után
+
+Ha a rontott Mászás próba végzetes lenne, akkor természetesen [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás) vagy jogosult, aminek **Vállalás** dobását **Erő** Tulajdonsággal tudod megtámogatni.
+
+---
+### Megállás ÉS pihenés a falon rontás után
+
+Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg kell állni, pihenni a falon.
+
+Ehhez 2 próbának kell meglennie **biztos tudásból**:
+- Edzettség tulajdonságpróba (a fenti körülményektől függ)
+- Mászás képzettségpróba (a fenti körülményektől függ)
+
+A Nehézség a körülményektől függ, de jellemzően alacsonyabb, mint az eredeti próba. Az alábbi tényezők adhatnak bónuszt:
+- van-e kikötés valahova
+- van-e rendes biztosítás
+- van-e perem, amin ülni lehet
+
+---
+### Leesés szituáció
+
+Van, hogy semmi nem segít és hősünk lehullik a magasból.
+
+Lásd: [Esés magasból](../szituaciok/eses_magasbol.md) szituáció.
+
+---
+### Pánik, Önuralom próba
+
+Ha a próbát nagyon kiélezett, életveszélyes helyzetben rontja el a karakter, a KM dönthet úgy, hogy `Önuralom` próbát dobat. Ha ez nincs meg, akkor a KM-nek jogában áll, hogy tetszőlegesen nagy `Erő` Tulajdonság tartalékot felhasználtasson a karakterrel (adrenalin hatása). Így jó eséllyel meg tud kapaszkodni, de minden erőtartalékát feléli, gyakorlatilag remegve a falhoz tapadva marad, további mászása erősen kérdéses, segítségre szorul.
+
+Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az főleg a testsúlyától, kisebb részben pedig pszichikai állapotától függ. A fenti probléma eldöntése a KM feladata.
+
+---
 ### Mesterbónuszok
 
 #### 🌟 `9.szint`
@@ -71,88 +150,5 @@ Gleccserszakadékból puszta kézzel kimászni.
 #### Emberfeletti (21) 🎲
 
 Visszahajló acélfalon felmászni.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Körülmény 🔀
-
-```
--3: Gyorsan mászni
--3: Sötétben mászni
--3: Rontott próba után Mentő dobás ❗
-```
-
-#### ⚜️ Segédeszköz 1️⃣
-
-```
-+3: Mászókampók (csak ha segítenek)
-+3: Lengő kötél
-+6: Stabil kötél
-```
-
-#### ⚜️ Túlsúly 1️⃣
-
-```
--6: nagy túlsúly
--3: kis túlsúly
- 0: nincs túlsúly
- 
- Infó: Erőpróba kellhet
-```
-
-#### ⚜️ Erő Tulajdonság bevetése [mentődobásnál](../030_06_01_kepzettsegproba.md#mentődobás) 🔀
-
-Az Erő `0` feletti részét vetheted be.
-
-```
-→ Pihenésben 1 pont / perc tér vissza
-```
-
-#### ⚜️ Sérülten mászni
-
-[Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
-
-<br />
-
----
-### Hosszabb mászandó út
-
-Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobást kell végezni (**Edzettség** Tulajdonsággal).
-
----
-### Rontott mászás próba után
-
-Ha a rontott Mászás próba végzetes lenne, akkor természetesen [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás) vagy jogosult, aminek **Vállalás** dobását **Erő** Tulajdonsággal tudod megtámogatni.
-
----
-### Megállás ÉS pihenés a falon rontás után
-
-Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg kell állni, pihenni a falon.
-
-Ehhez 2 próbának kell meglennie **biztos tudásból**:
-- Edzettség tulajdonságpróba (a fenti körülményektől függ)
-- Mászás képzettségpróba (a fenti körülményektől függ)
-
-A Nehézség a körülményektől függ, de jellemzően alacsonyabb, mint az eredeti próba. Az alábbi tényezők adhatnak bónuszt:
-- van-e kikötés valahova
-- van-e rendes biztosítás
-- van-e perem, amin ülni lehet
-
----
-### Leesés szituáció
-
-Van, hogy semmi nem segít és hősünk lehullik a magasból.
-
-Lásd: [Esés magasból](../szituaciok/eses_magasbol.md) szituáció.
-
----
-### Pánik, Önuralom próba
-
-Ha a próbát nagyon kiélezett, életveszélyes helyzetben rontja el a karakter, a KM dönthet úgy, hogy `Önuralom` próbát dobat. Ha ez nincs meg, akkor a KM-nek jogában áll, hogy tetszőlegesen nagy `Erő` Tulajdonság tartalékot felhasználtasson a karakterrel (adrenalin hatása). Így jó eséllyel meg tud kapaszkodni, de minden erőtartalékát feléli, gyakorlatilag remegve a falhoz tapadva marad, további mászása erősen kérdéses, segítségre szorul.
-
-Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az főleg a testsúlyától, kisebb részben pedig pszichikai állapotától függ. A fenti probléma eldöntése a KM feladata.
 
 ---

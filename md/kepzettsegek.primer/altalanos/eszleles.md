@@ -6,8 +6,24 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 
 Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, egy meglapuló merénylő a lombok közt, egy árulkodó súrlódó nesz. Fontos, hogy az Észlelés csak a momentum észrevételt jelenti, annak értelmezését nem! Az a játékos feladata, melyet esetleg megkönnyíthet például a [Nyomozás](nyomozas.md), vagy a [Természetjárás](../../kepzettsegek.szekunder/termeszetjaras.md) képzettség.
 
-<br />
+### Helyzetfüggő módosítók
 
+#### ⚜️ Keresés 🔀
+
+```
+-3: Gyorsan, nyomás alatt keresni
++3: Aktív, koncentrált keresés
+```
+
+#### ⚜️ Zavaró körülmények 1️⃣
+
+```
+-6: Nagyon zavaró
+-3: Enyhén zavaró
++0: Normál körülmények
+```
+
+---
 ### Domináns Tulajdonságok
 
 - Érzékenység (fizikai érzékekre is ez használandó)
@@ -89,25 +105,5 @@ Harcművész nagymester, mágus.
 Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tulajdonság segítségével dobjuk.
 - Mágikus csapda kitörését megérezni egy szemvillanással a kisülés előtt.
 - Szellemlény érintését megérezni - mágikus ismeretek nélkül.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Keresés 🔀
-
-```
--3: Gyorsan, nyomás alatt keresni
-+3: Aktív, koncentrált keresés
-```
-
-#### ⚜️ Zavaró körülmények 1️⃣
-
-```
--6: Nagyon zavaró
--3: Enyhén zavaró
-+0: Normál körülmények
-```
 
 ---

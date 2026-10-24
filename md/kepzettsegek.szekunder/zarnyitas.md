@@ -9,6 +9,16 @@ Kiterjed az alábbiakra:
 
 A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** váltja ki a [Zárnyitás](zarnyitas.md) képzettséget. Egy mérnök ismeri a szerkezetet, de esetlen lehet a finom ujjmozgásban.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Körülmény 🔀
+
+```
+-3: Sietős nyitás
+-3: Zavaró tényezők (zaj, káosz, sötét)
+-3: Hiányos eszközök
+```
+
 ### Domináns Tulajdonságok
 
 Ügyesség, Önuralom
@@ -77,18 +87,5 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 - Legendás, egyedi mestermunka-zárak megnyitása.
 - Zár kinyitása szinte pusztán a "tapasztalati érzékelésből", eszköz nélkül.
 - Mágikus erő nélkül, fizikai módon kinyitni egy félig misztikus zárat.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Körülmény 🔀
-
-```
--3: Sietős nyitás
--3: Zavaró tényezők (zaj, káosz, sötét)
--3: Hiányos eszközök
-```
 
 ---

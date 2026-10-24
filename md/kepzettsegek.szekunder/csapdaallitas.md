@@ -4,6 +4,30 @@ Próba dobható.
 
 Magában foglalja a csapdák állítását és hatástalanítását is.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Idő 1️⃣
+
+```
+-6: Kapkodós állítás/hatástalanítás
+-3: Gyors állítás/hatástalanítás
++0: Normál tempó
+```
+
+#### ⚜️ Környezet 🔀
+
+```
+-3: Zavaró körülmények
+-3: Rossz látási viszonyok
+```
+
+#### ⚜️ Csapda hatástalanítás 🔀
+
+```
+-3: Nyom nélkül hatástalanítani
+```
+
+---
 ### Domináns Tulajdonságok
 
 Intelligencia, Önuralom
@@ -72,31 +96,5 @@ Intelligencia, Önuralom
 - Legendás bonyolultságú csapda állítása, amely hónapokig működőképes, és önjavító funkciókat is tartalmaz.
 - Mágiaérzékkel szőtt "élő" csapda, amely reagál arra, ha a közelében járnak (összetett próba).
 - Egyetlen pillantásból megérzed, hogyan funkcionál egy nagyon komplex csapda és képes vagy beavatkozni, akár a saját életed kockáztatása nélkül.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Idő 1️⃣
-
-```
--6: Kapkodós állítás/hatástalanítás
--3: Gyors állítás/hatástalanítás
-+0: Normál tempó
-```
-
-#### ⚜️ Környezet 🔀
-
-```
--3: Zavaró körülmények
--3: Rossz látási viszonyok
-```
-
-#### ⚜️ Csapda hatástalanítás 🔀
-
-```
--3: Nyom nélkül hatástalanítani
-```
 
 ---

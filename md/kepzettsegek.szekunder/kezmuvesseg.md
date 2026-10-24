@@ -4,6 +4,16 @@ Próba dobható.
 
 Magasabb szintjein a karakter egyre jobb, majd mesteri szintű produktumokat hoz létre, illetve társadalmi elismertségre tesz szert.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Körülmény 1️⃣
+
+```
+-3: Rövid határidő
+ 0: Normál határidő
+```
+
+---
 ### Domináns Tulajdonságok
 
 Változó.
@@ -130,11 +140,3 @@ Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegp
 <br />
 
 ---
-### Helyzetfüggő módosítók
-
-#### ⚜️ Körülmény 1️⃣
-
-```
--3: Rövid határidő
- 0: Normál határidő
-```

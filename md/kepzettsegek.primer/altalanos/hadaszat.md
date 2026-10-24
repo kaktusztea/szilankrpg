@@ -4,6 +4,24 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 
 Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, hadtáp, harci csoportok vezetése.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Tanácsadók 1️⃣
+
+```
+-3: Rossz tanácsadók
++0: Átlagos tanácsadók
++3: Jó tanácsadók
+```
+
+#### ⚜️ Szabotőr 1️⃣
+
+```
+-6: Szabotőr aknamunkája
+ 0: Nincs szabotőr
+```
+
+---
 ### Domináns Tulajdonságok
 
 - Intelligencia
@@ -84,25 +102,5 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 - Ránézésre tudni, hogy egy hadjárat **vesztésre vagy győzelemre van ítélve**, még a fő csapásmérés előtt.
 - Az ellenség taktikáját napokkal korábban **átérezni**, szinte úgy, mintha a fejében járna.
 - Saját csapatai számára a jelenlétével azonnali hadrendfegyelmet és morált biztosítani
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Tanácsadók 1️⃣
-
-```
--3: Rossz tanácsadók
-+0: Átlagos tanácsadók
-+3: Jó tanácsadók
-```
-
-#### ⚜️ Szabotőr 1️⃣
-
-```
--6: Szabotőr aknamunkája
- 0: Nincs szabotőr
-```
 
 ---

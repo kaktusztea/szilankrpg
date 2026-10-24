@@ -4,6 +4,25 @@ Ritka szerencsés, aki ezt a képzettséget tanulhatja, mert Yn3v kevés levegő
 
 Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket a képzettség szintjétől függő tehetséggel. A tudás univerzális, némi gyakorlással más fajú légi hátasokra is használható: a [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély többszöri felvételével.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Hátas 1️⃣
+
+```
+-3: Vad hátas
++0: Betört hátas
+```
+
+Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
+
+#### ⚜️ Időjárás 1️⃣
+
+```
+-6: Vihar, orkán
+-3: Erős szél vagy felhőszakadás
++0: Normál időjárás
+```
+
 ### Domináns Tulajdonságok
 
 Önuralom, Ügyesség, Gyorsaság
@@ -77,24 +96,4 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 - Az évszázad viharában zuhanó hátasodat felhúzni, miközben ellenfeled nyakadat szorongatja.
 - Telepatikus összhanggal ösztönszerűen végrehajtani bonyolult manővereket (siklás, kitérés, közös támadás).
 
-<br />
-
 ---
-### Helyzetfüggő módosítók
-
-#### ⚜️ Hátas 1️⃣
-
-```
--3: Vad hátas
-+0: Betört hátas
-```
-
-Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
-
-#### ⚜️ Időjárás 1️⃣
-
-```
--6: Vihar, orkán
--3: Erős szél vagy felhőszakadás
-+0: Normál időjárás
-```

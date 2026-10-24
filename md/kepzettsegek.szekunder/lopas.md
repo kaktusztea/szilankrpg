@@ -2,15 +2,25 @@
 
 Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) formájában. A módosítók mértéke helyzettől függ.
 
-### Általános ismeretek
-
-Összefoglalva a képzettség az alábbi ismereteket nyújtja:
-- ujjak finom koordinációja, "simító" mozdulat az árú felett
+Az alábbi ismereteket nyújtja:
+- ujjak finom koordinációja, "simító" mozdulat a portéka felett
 - zsebből/asztalról apróság elemelése anélkül, hogy feltűnne
 - tárgy, kulcs, erszény észrevétlen megszerzése
-- spontán és természetes testbeszéd a mozdulathoz
+- természetes testbeszéd a mozdulathoz
 - figyelemelterelő viselkedés a környezethez igazodva
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Körülmény 🔀
+
+```
+-3: Kapkodni kell
+-3: Nincs meg a testközel-távolság, csak pár lépés
+-3: Több tárgy manipulálása szinte egy időben
++3: Zajos, zsibongó környezet
+```
+
+---
 ### Domináns Tulajdonságok
 
 Ügyesség, Önuralom
@@ -80,19 +90,5 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
 - Bármi elvétele úgy, hogy a mozdulat "észlelhetetlen" → ellenfél még utólag sem mindig biztos benne, hogy történt valami.
 - Teljes csoport / tömeg közepén természetesen kivitelezett észrevétlen mozdulat miközben a figyelem rád szegeződik.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Körülmény 🔀
-
-```
--3: Kapkodni kell
--3: Nincs meg a testközel-távolság, csak pár lépés
--3: Több tárgy manipulálása szinte egy időben
-+3: Zajos, zsibongó környezet
-```
 
 ---

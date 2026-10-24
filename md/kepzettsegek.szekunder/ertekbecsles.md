@@ -6,6 +6,17 @@ Bármilyen vagyontárgy értékének felbecsülése, legyenek akár fegyverek, �
 
 Híres ereklyék ismeretét is magában foglalja. Minél ritkább egy tárgy annál nehezebb a próba.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Könyvtár 1️⃣
+
+```
++0: Nincs könyvtár
++3: Jó könyvtár
++6: Kiváló könyvtár
+```
+
+---
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia
@@ -84,18 +95,5 @@ A Nehézség meghatározásánál vegyük figyelmebe az alábbiakat (is):
 - Őskorból vagy istenek korából származó mitikus ereklyék értékét felismerni.
 - Egy tárgy aurájából megérezni, hogy hogyan kapcsolódik a világ történetéhez vagy mítoszaihoz.
 - Egy legendás történelmi alak által használt műremekből látomáson keresztül újraélheted legendás, valós pillanatait.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Könyvtár 1️⃣
-
-```
-+0: Nincs könyvtár
-+3: Jó könyvtár
-+6: Kiváló könyvtár
-```
 
 ---

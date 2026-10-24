@@ -4,6 +4,33 @@ Próba dobható.
 
 Általános ismeret amely a tárgyi tudásra támaszkodó tudományok alapját adja. Könyvtárazás, tárgyi ismeretek gyűjtése, rengeteg olvasás, magolás. Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal érhetjük el.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Könyvtár 1️⃣
+
+```
++0: Nincs könyvtár
++3: Jó könyvtár
++6: Kiváló könyvtár
+```
+
+#### ⚜️ Hozzáférés 1️⃣
+
+```
+-6: Tiltott/erősen hiányos anyag
+-3: Hiányos anyag
++0: Szabad hozzáférés
+```
+
+#### ⚜️ Nyelv 1️⃣
+
+```
+-6: Súlyos nyelvi nehézség
+-3: Idegen nyelvjárás
++0: Anyanyelvű szöveg
+```
+
+---
 ### Követelmény
 
 - Nem lehetsz [Analfabéta](../fortelyok.kiemelt/analfabeta.md).
@@ -105,34 +132,5 @@ Próba dobható.
 - Negyedkori tudás felidézése, titkos rendek ismerete.
 - Álmaidban vagy meditációdban átélt valódi régmúlt események helyes értelmezése.
 - Jövő társadalmi eseményeinek előrejelzése a múlt és jelen mintái alapján.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Könyvtár 1️⃣
-
-```
-+0: Nincs könyvtár
-+3: Jó könyvtár
-+6: Kiváló könyvtár
-```
-
-#### ⚜️ Hozzáférés 1️⃣
-
-```
--6: Tiltott/erősen hiányos anyag
--3: Hiányos anyag
-+0: Szabad hozzáférés
-```
-
-#### ⚜️ Nyelv 1️⃣
-
-```
--6: Súlyos nyelvi nehézség
--3: Idegen nyelvjárás
-+0: Anyanyelvű szöveg
-```
 
 ---

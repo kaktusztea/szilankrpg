@@ -8,6 +8,13 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md).
 
 Ősi nyelvenként külön-külön kell felvenni.
 
+
+---
+### Helyzetfüggő módosítók
+
+- ⭕TODO⭕
+
+---
 ### Próba
 
 ⭕Dobható / ⭕Nincs, csak biztos tudásból ???
@@ -83,9 +90,4 @@ Emlékezet
 
 ⭕TODO⭕
 
-<br />
-
 ---
-### Helyzetfüggő módosítók
-
-- ⭕TODO⭕

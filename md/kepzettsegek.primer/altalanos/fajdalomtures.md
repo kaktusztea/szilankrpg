@@ -6,6 +6,11 @@ A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási ok
 
 Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve kínzás elviselésénél is.
 
+### Helyzetfüggő módosítók
+
+Nincsenek. A különböző drogok és tudatállapot változások a [Státuszokon](../../082_statuszok.md) keresztül fejtik ki a hatásukat.
+
+---
 ### Domináns Tulajdonságok
 
 - Önuralom
@@ -66,10 +71,5 @@ Hang nélkül kiállni, hogy csonkolnak. Nagyon súlyos sebet (minimum `9 ÉP`) 
 #### Emberfeletti (21) 🎲
 
 Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják le.
-
----
-### Helyzetfüggő módosítók
-
-Nincsenek. A különböző drogok és tudatállapot változások a [Státuszokon](../../082_statuszok.md) keresztül fejtik ki a hatásukat.
 
 ---

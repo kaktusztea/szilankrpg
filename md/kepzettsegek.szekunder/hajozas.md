@@ -2,6 +2,34 @@
 
 A hajózás képessége magában foglalja a hajók, legénység kezelését, irányítását és a tengeri navigációt.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Időjárás 1️⃣
+
+```
+-9: Vihar, orkán
+-6: Erős vihar
+-3: Erős szél, zivatar
++0: Enyhe szél, jó idő
+```
+
+#### ⚜️ Hajó állapota 1️⃣
+
+```
+-6: Súlyosan sérült vagy túlterhelt
+-3: Sérült vagy túlterhelt
++0: Karbantartott, jó állapotú
+```
+
+#### ⚜️ Legénység 1️⃣
+
+```
+-6: Képzetlen zsoldosok
+-3: Fegyelmezetlen legénység
++0: Tapasztalt legénység
+```
+
+---
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia, Emlékezet, Ügyesség
@@ -76,35 +104,5 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 - Navigáció orkánban, özönvízszerű esőben, jéghegyek vagy sziklás szorosok közt.
 - Egy flottilla teljes viharon átkormányzása, veszteség nélkül.
 - Misztikus ráérzéssel ismeretlen vizeken is megtalálod a biztonságos utat: mintha a csillagok és szelek is neked súgnának.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Időjárás 1️⃣
-
-```
--9: Vihar, orkán
--6: Erős vihar
--3: Erős szél, zivatar
-+0: Enyhe szél, jó idő
-```
-
-#### ⚜️ Hajó állapota 1️⃣
-
-```
--6: Súlyosan sérült vagy túlterhelt
--3: Sérült vagy túlterhelt
-+0: Karbantartott, jó állapotú
-```
-
-#### ⚜️ Legénység 1️⃣
-
-```
--6: Képzetlen zsoldosok
--3: Fegyelmezetlen legénység
-+0: Tapasztalt legénység
-```
 
 ---

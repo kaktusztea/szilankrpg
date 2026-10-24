@@ -4,6 +4,17 @@ Próba dobható.
 
 Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről szól, hanem a blöffölés, csalás, ellenfél olvasása és önuralom megtartásának megfelelő kombinációjáról.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Közeg 1️⃣
+
+```
+-3: Ismeretlen kaszinó, idegen szabályok
++0: Normál környezet
++3: Kocsma, barátságos közeg
+```
+
+---
 ### Domináns Tulajdonságok
 
 Önuralom, Intelligencia
@@ -78,16 +89,5 @@ Szerencsejáték
 - Látod ellenfeled lapjait, mintha átlátszóak lennének.
 - Az ellenfél megingását akkor is megérzed, ha semmilyen objektív jelet nem mutat.
 - Komoly bűnszervezet vagy arisztokrácia legendás bajnokságának is bajnoka is vagy.
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Közeg 1️⃣
-
-```
--3: Ismeretlen kaszinó, idegen szabályok
-+0: Normál környezet
-+3: Kocsma, barátságos közeg
-```
 
 ---

@@ -4,6 +4,39 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 
 Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit, de a mérgek felismerése, ellenszer készítés, mérgezés gyógyítása is ide tartozik. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-3: Szegényes felszerelés
++0: Normál felszerelés
++3: Jól felszerelt labor
+```
+
+#### ⚜️ Komponensek 1️⃣
+
+```
+-3: Hiányzó, de helyettesíthető komponensek
+ 0: Szükséges komponensek mind megvannak
+```
+
+#### ⚜️ Méreg azonosítása 1️⃣
+
+```
+-3: Félrevezető tünetek (3)
+-6: Félrevezető tünetek (6)
+```
+
+---
+### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
+
+```
++2: Élettan fortély
+    (minden próbára)
+```
+
+---
 **Főfejezet**: [Méregrendszer](../../140_meregrendszer.md)
 
 - [Méregkeverés szabályai](../../141_meregkeveres_szabalyai.md) 🎲
@@ -47,40 +80,5 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_me
 #### 🌟 `15.szint`
 
 ⭕TODO⭕ Immunissá válsz minden típusú méregre. Ha kr4ni vagy, Banarát készíthetsz.
-
-<br />
-
----
-### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
-
-```
-+2: Élettan fortély
-    (minden próbára)
-```
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Felszerelés 1️⃣
-
-```
--3: Szegényes felszerelés
-+0: Normál felszerelés
-+3: Jól felszerelt labor
-```
-
-#### ⚜️ Komponensek 1️⃣
-
-```
--3: Hiányzó, de helyettesíthető komponensek
- 0: Szükséges komponensek mind megvannak
-```
-
-#### ⚜️ Méreg azonosítása 1️⃣
-
-```
--3: Félrevezető tünetek (3)
--6: Félrevezető tünetek (6)
-```
 
 ---

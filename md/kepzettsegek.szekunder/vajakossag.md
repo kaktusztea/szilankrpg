@@ -10,6 +10,17 @@ Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, m
 
 Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-3: Szegényes felszerelés
++0: Normál felszerelés
++3: Jól felszerelt labor
+```
+
+---
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia
@@ -85,16 +96,5 @@ Emlékezet, Intelligencia
 
 - Bonyolult, évtizedekig őrzött recept hibátlan reprodukálása.
 - Legendás lény (pl. unikornis, mantikór, sárkány) szervének kezelése és hatásainak kinyerése, tartósítása.
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Felszerelés 1️⃣
-
-```
--3: Szegényes felszerelés
-+0: Normál felszerelés
-+3: Jól felszerelt labor
-```
 
 ---

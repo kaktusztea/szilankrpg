@@ -2,6 +2,25 @@
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba, ellenpróba dobható.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Személyiség érzékelése esetén 1️⃣
+
+```
+-3: Rövidebb kontaktus
++0: Átlagos kontaktus
++3: Hosszabb, mélyebb kontaktus
+```
+
+#### ⚜️ Faj 1️⃣
+
+```
+-6: Teljesen idegen fajú célszemély
+-3: Más fajú/kultúrájú célszemély
+ 0: Azonos fajú/kultúrájú célszemély
+```
+
+---
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia
@@ -106,26 +125,5 @@ Alapvető nem leplezett személyiségvonások felismerése.
 - ⭕TODO⭕ Mágia kidolgozásakor visszatérni.
 - ⭕Ráérezni, hogy a másik fél személyisége valószínűleg túlvilági lény befolyása alatt áll.
 - ⭕"Magzat megrontása" vulgármágikus varázslatot felismerni.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Személyiség érzékelése esetén 1️⃣
-
-```
--3: Rövidebb kontaktus
-+0: Átlagos kontaktus
-+3: Hosszabb, mélyebb kontaktus
-```
-
-#### ⚜️ Faj 1️⃣
-
-```
--6: Teljesen idegen fajú célszemély
--3: Más fajú/kultúrájú célszemély
- 0: Azonos fajú/kultúrájú célszemély
-```
 
 ---

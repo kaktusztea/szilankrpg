@@ -4,6 +4,15 @@ Próba speciálisan dobható: nem magára a beszédre, hanem kapcsolódó szitu�
 
 Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelképezi az összes nyelv tanulását.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Segédeszköz 🔀
+
+```
++3: Könyvtár
++3: Tanító aktívan segít
+```
+
 ---
 ### Nyelvek fokai
 
@@ -121,17 +130,5 @@ Emlékezet, Érzékenység.
 
 - "Elfeledett, isteni nyelv" töredékének megértése.
 - Nyelvi mintázatból előre megérezni a kulturális hátteret, társadalmi berendezkedést.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Segédeszköz 🔀
-
-```
-+3: Könyvtár
-+3: Tanító aktívan segít
-```
 
 ---

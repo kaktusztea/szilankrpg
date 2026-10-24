@@ -10,6 +10,25 @@ Az alábbi területeket fedi le:
 
 Szereplőtipikus: **tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági futár, zsoldos** – vagy akár egy **nemes, aki mindig tudja, kit kell lefizetni.**
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Idő  1️⃣
+
+```
+-3: Szűkös határidő
+ 0: Normál ügymenet
+```
+
+#### ⚜️ Hírnév/Karma 1️⃣
+
+```
+-6: Rossz hírnév, súlyos karma
+-3: Rossz hírnév, karma
++0: Semleges
++3: Jó hírnév
+```
+
+---
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia
@@ -99,26 +118,5 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 - Olyan hírt kreálni, amit a város hivatalos történelmi eseményként kezel.
 - Egy teljes város alvilági és pletykaáramlási rendszerét átlátni.
 - Minden hatalmi pozíció szereplőjéről tudsz információt szerezni napok alatt.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Idő  1️⃣
-
-```
--3: Szűkös határidő
- 0: Normál ügymenet
-```
-
-#### ⚜️ Hírnév/Karma 1️⃣
-
-```
--6: Rossz hírnév, súlyos karma
--3: Rossz hírnév, karma
-+0: Semleges
-+3: Jó hírnév
-```
 
 ---

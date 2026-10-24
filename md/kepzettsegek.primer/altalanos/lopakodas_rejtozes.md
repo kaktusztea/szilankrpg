@@ -4,6 +4,77 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md).
 
 Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között, áldozat háta mögé sunnyogni, beolvadni a környezetbe, elbújni az üldözők elől.
 
+### ⚜️ Alapeset Lopakodás/rejtőzés vs. Észlelés ellenpróbához
+
+- Nem zajos ruha
+- Gyenge alapzaj, például tücsök ciripelés, fáklya ropogás, erdő hangjai; város halk moraja, szomszédok neszezése
+- Átlagos nappali fény
+- Mozgás: a lopakodó az észlelő látásának perifériáján halad
+- Távolság: `10-15` méter
+
+### Helyzetfüggő módosítók
+
+#### ⚜️ Láthatóság (lopakodó) 1️⃣
+
+```
+-6: Világosban, éles kontúrral válsz el a háttértől
+-3: Világosban, háttértől elütő ruházatban
++0: Átlagos nappali fény, ruhád nem üt el a háttértől
++3: Szürkület, félhomály
++6: Vaksötét. Szabad szemmel csak
+    Infra- vagy Ultralátással vagy észlelhető
++6: Láthatatlan vagy
+```
+
+Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
+
+#### ⚜️ Látótér (lopakodó) 1️⃣
+
+```
+-6: lopakodó a látótérben van
++0: lopakodó az észlelő látásának perifériáján
++6: lopakodó az észlelő látókörén kívül
+```
+
+#### ⚜️ Mozgás (lopakodó) 1️⃣
+
+```
+-6: gyors haladás
+ 0: Megfontolt haladás
+```
+
+ [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
+
+#### ⚜️ Zajok (lopakodó) 1️⃣
+
+```
+-6: csörgő ruha, fémpáncél
+-3: süket csend, nyikorgós ruha
++0: gyenge alapzaj
++3: közepesen zajos környezet (nyugisabb piac)
++3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
+```
+
+#### ⚜️ Környezet, rejtekhely (lopakodó) 1️⃣
+
+```
+-6: nyílt tér fedezék nélkül
++0: pár tucat ember a piacon, néhány jól használható rejtekhely, fedezék
++6: zsúfolt piac, rengeteg pult, beugró, alkóv
+```
+
+#### ⚜️ Távolság, Harci szituáció megteremtése (lopakodó) 1️⃣
+
+```
+-9: Testközelbe kerülni; Orvtámadás
+-6: 1 - 5 méter; Meglepetésből támadás
+-3: 6 - 9 méter
++0: 10 - 15 méter 🔆
++3: 16 - 20 méter
++6: 20 - 30 méter
+```
+
+---
 ### Domináns Tulajdonságok
 
 Ügyesség, Önuralom
@@ -77,78 +148,5 @@ Megérezni, melyik rejtekhely mögött van az ellenség.
 #### Emberfeletti (21) 🎲
 
 Nyílt téren kaméleonként beleolvadni a mintázatba.
-
-<br />
-
----
-### ⚜️ Alapeset Lopakodás/rejtőzés vs. Észlelés ellenpróbához
-
-- Nem zajos ruha
-- Gyenge alapzaj, például tücsök ciripelés, fáklya ropogás, erdő hangjai; város halk moraja, szomszédok neszezése
-- Átlagos nappali fény
-- Mozgás: a lopakodó az észlelő látásának perifériáján halad
-- Távolság: `10-15` méter
-
-### Helyzetfüggő módosítók
-
-#### ⚜️ Láthatóság (lopakodó) 1️⃣
-
-```
--6: Világosban, éles kontúrral válsz el a háttértől
--3: Világosban, háttértől elütő ruházatban
-+0: Átlagos nappali fény, ruhád nem üt el a háttértől
-+3: Szürkület, félhomály
-+6: Vaksötét. Szabad szemmel csak
-    Infra- vagy Ultralátással vagy észlelhető
-+6: Láthatatlan vagy
-```
-
-Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
-
-#### ⚜️ Látótér (lopakodó) 1️⃣
-
-```
--6: lopakodó a látótérben van
-+0: lopakodó az észlelő látásának perifériáján
-+6: lopakodó az észlelő látókörén kívül
-```
-
-#### ⚜️ Mozgás (lopakodó) 1️⃣
-
-```
--6: gyors haladás
- 0: Megfontolt haladás
-```
-
- [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
-
-#### ⚜️ Zajok (lopakodó) 1️⃣
-
-```
--6: csörgő ruha, fémpáncél
--3: süket csend, nyikorgós ruha
-+0: gyenge alapzaj
-+3: közepesen zajos környezet (nyugisabb piac)
-+3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
-```
-
-#### ⚜️ Környezet, rejtekhely (lopakodó) 1️⃣
-
-```
--6: nyílt tér fedezék nélkül
-+0: pár tucat ember a piacon, néhány jól használható rejtekhely, fedezék
-+6: zsúfolt piac, rengeteg pult, beugró, alkóv
-```
-
-#### ⚜️ Távolság, Harci szituáció megteremtése (lopakodó) 1️⃣
-
-```
--9: Testközelbe kerülni; Orvtámadás
--6: 1 - 5 méter; Meglepetésből támadás
--3: 6 - 9 méter
-+0: 10 - 15 méter 🔆
-+3: 16 - 20 méter
-+6: 20 - 30 méter
-```
 
 ---

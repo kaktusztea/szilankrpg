@@ -2,6 +2,34 @@
 
 Próba dobható. Alapesetben ellenpróbával megy, a másik fél [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettséggel dob.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Archetípus 1️⃣
+
+```
++0: Nem kiemelt
++3: Kiemelt
+```
+
+#### ⚜️ Idő 1️⃣
+
+```
+-6: Átöltözés másodpercek alatt
+-3: Gyors átöltözés
++0: Normál tempó
+```
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-6: Minimális felszerelés
+-3: Szegényes felszerelés
++0: Megfelelő felszerelés
+```
+
+Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
+
+---
 ### Domináns Tulajdonságok
 
 Ügyesség, Intelligencia, Önuralom, Érzékenység
@@ -113,35 +141,5 @@ Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzőe
 
 - Egy kis cérnából és egy falevélből álcát készíteni.
 - Más testfelépítésű lénnyé válni, akár állattá is.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Archetípus 1️⃣
-
-```
-+0: Nem kiemelt
-+3: Kiemelt
-```
-
-#### ⚜️ Idő 1️⃣
-
-```
--6: Átöltözés másodpercek alatt
--3: Gyors átöltözés
-+0: Normál tempó
-```
-
-#### ⚜️ Felszerelés 1️⃣
-
-```
--6: Minimális felszerelés
--3: Szegényes felszerelés
-+0: Megfelelő felszerelés
-```
-
-Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 
 ---

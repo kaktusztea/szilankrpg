@@ -6,6 +6,16 @@ Professzor, vagy számokkal dolgozó tudósember vagy, a tudás a legfőbb kincs
 
 Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal érhetjük el.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Körülmény 1️⃣
+
+```
+-3: Kapkodó munka
+ 0: Normális kutatás
+```
+
+---
 ### Követelmény
 
 - Nem lehetsz [Analfabéta](../fortelyok.kiemelt/analfabeta.md).
@@ -96,17 +106,5 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 - Valószínűségi előrejelzéssel megérzed a jövő közelgő lehetőségeit (például: mely kereskedelmi útvonal lesz nyereséges, vagy merre fúj majd a szél a következő napokban).
 - Egyedül képes vagy több száz ember munkáját igénylő számításokra rövid idő alatt (hatalmas építkezések, erődítmény vagy mechanikus csoda).
 - Matematikai szinten a világ törvényeit úgy olvasod, mint más a betűket – közel jársz ahhoz, hogy "alkímiává" vagy "mágikus fizikává" váljon a tudományod.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Körülmény 1️⃣
-
-```
--3: Kapkodó munka
- 0: Normális kutatás
-```
 
 ---

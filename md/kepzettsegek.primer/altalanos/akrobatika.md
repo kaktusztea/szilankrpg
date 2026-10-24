@@ -4,6 +4,18 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 
 Magába foglalja az [esést](../../szituaciok/eses_magasbol.md), **ugrást** és a **kötéltáncot** is.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Körülmény  1️⃣
+
+```
+-6: Csúszós talaj
+ 0: Normál talaj
+```
+
+Kapcsolódhat: [Csúszós talaj](../../065_03_03_negativ_helyzetek.md#csúszós-talaj) harci helyzet (küzdelem esetén)
+
+---
 ### Kapcsolódik
 
 - [Harci akrobatika](../../fortelyok.harci/harci_akrobatika.md) fortély
@@ -74,17 +86,5 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 #### Emberfeletti (21) 🎲
 
 - Szakadékba ugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Körülmény  1️⃣
-
-```
--6: Csúszós talaj
- 0: Normál talaj
-```
-
-Kapcsolódhat: [Csúszós talaj](../../065_03_03_negativ_helyzetek.md#csúszós-talaj) harci helyzet (küzdelem esetén)
 
 ---

@@ -4,6 +4,18 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 
 Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi. Alapból sima érveléstechnika, de a lenti Fortélyokkal **kiterjeszthető** más szituációkra is.
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Nyelvi akadály 1️⃣
+
+```
+-3: Célszemély nem érti a nyelved
++0: Azonos nyelven beszéltek
+```
+
+Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
+
+---
 ### Domináns Tulajdonságok
 
 Intelligencia, Érzékenység
@@ -73,19 +85,5 @@ Biztos tudás erejű Aurád (nem dobhatsz rá) hatása érvényesül a célszem�
 #### 🌟 `15.szint`
 
 Biztos tudás erejű Aurád (nem dobhatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+2` jár a képzettségpróbádra.
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Nyelvi akadály 1️⃣
-
-```
--3: Célszemély nem érti a nyelved
-+0: Azonos nyelven beszéltek
-```
-
-Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
 
 ---

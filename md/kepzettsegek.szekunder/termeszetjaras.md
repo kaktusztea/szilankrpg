@@ -11,6 +11,25 @@ A képzettség magában foglalja a következőket:
 - Víz megtalálása (ha van egyáltalán)
 - Nyomkövetés (állat, elfszabású)
 
+### Helyzetfüggő módosítók
+
+#### ⚜️ Időjárás 1️⃣
+
+```
+-6: Szélsőséges időjárás
+-3: Rossz időjárás
++0: Normál időjárás
+```
+
+#### ⚜️ Vad becserkészése 🔀
+
+```
+-6: Szél felől közelítesz
+    jó szaglású vad felé
+-6: Zajos aljnövényzet
+```
+
+---
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia
@@ -97,26 +116,5 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 
 - Több napos, szinte elmosódott nyomból rekonstruálni eseményt.
 - Rejtett jelekből következtetni, amelyeket alapból csak állatok értenek (madarak viselkedése, állati szag mintázatok).
-
-<br />
-
----
-### Helyzetfüggő módosítók
-
-#### ⚜️ Időjárás 1️⃣
-
-```
--6: Szélsőséges időjárás
--3: Rossz időjárás
-+0: Normál időjárás
-```
-
-#### ⚜️ Vad becserkészése 🔀
-
-```
--6: Szél felől közelítesz
-    jó szaglású vad felé
--6: Zajos aljnövényzet
-```
 
 ---
