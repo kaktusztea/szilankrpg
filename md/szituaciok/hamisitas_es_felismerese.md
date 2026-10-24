@@ -1,9 +1,10 @@
 ## Hamisítás és felismerése
 
-Az ősi versenyfutás: hamisítás és annak felismerése. Kard és pajzs a műtárgyak, művészeti alkotások területén.
-### Képzőművészet vs Értékbecslés
+Az ősi versenyfutás: hamisítás és annak felismerése.
 
-Műtárgyak hamisítása és felismerésük.
+### Műtárgyak → Ellenpróba:  Képzőművészet vs Értékbecslés
+
+
 
 ```
 🔆Készítő
@@ -25,14 +26,13 @@ Képzőművészet + Érzékenység
   Szobrászat fortély (N)
 ```
 
-Kapcsolódik: [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md), [Értékbecslés](../kepzettsegek.szekunder/ertekbecsles.md) képzettségek.
+→ Képzettség: [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md)\
+→ Képzettség: [Értékbecslés](../kepzettsegek.szekunder/ertekbecsles.md)
 
 <br />
 
 ---
-### Képzőművészet vs Művészetismeret
-
-Szélesebb művészeti körben való hamisítás és annak felismerése.
+### Szélesebb művészeti kör → Képzőművészet vs Művészetismeret
 
 ```
 🔆Készítő
@@ -44,28 +44,22 @@ Művészetismeret + Intelligencia
 
 ```
 + mindkettőre kiterjesztés:
-  Hamisítás kiterjesztés (N)
-  Kultúrkör kiterjesztés (E)
+  🟨 Hamisítás fortély
+  🟥 Kultúrkör fortély
 
 + valamelyikre kiterjesztés ezekből:
-  Festészet fortély (E)
-  Kalligráfia fortély (E)
-  Szobrászat fortély (E)
+  🟥 Festészet fortély
+  🟥 Kalligráfia fortély
+  🟥 Szobrászat fortély
 ```
 
-```
-N: Normál kiterjesztés
-E: Erős kiterjesztés
-```
-
-Kapcsolódik: [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md), [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md) képzettségek.
+→ Képzettség: [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md)
+→ Képzettség: [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md)
 
 <br />
 
 ---
-### Kézművesség vs Kézművesség
-
-Egy adott szakmában létrehozott produktum hamisítása és annak felismerése.
+### Adott szakma terméke: Kézművesség vs Kézművesség
 
 ```
 🔆Készítő
@@ -78,10 +72,10 @@ Kézművesség + Tulajdonság
 
 ```
 + mindkettőre kiterjesztés:
-  Hamisítás kiterjesztés (N)
+  🟨 Hamisítás fortély
 ```
 
-Kapcsolódik: [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettség.
+→ Képzettség: [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
 ---
 
