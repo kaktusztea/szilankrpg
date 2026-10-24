@@ -54,18 +54,18 @@ Ez adja meg, hogy mennyire nehezen áll ellen a szervezet a méregnek, mennyire 
 
 Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsuk észben, hogy **az Erősség nem egyenlő a romboló hatással!** Léteznek például nagyon hatékony, `10`-es erősségű altatók is.
 
-#### Plusz adag
-
 Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
 
+#### Adag
 ```
-Erősség változása
-
-→ Kis adag:  Erősség 50% csökken ↓
-→ Nagy adag: Erősség 50% nő ↓
+normál adag: alap Erősség
+kis adag:    -1 Erősség 
+             Méregérzékelés próba: -1 büntetés
+nagy adag:   +1 Erősség, 
+             Méregérzékelés próba: +1 bónusz
 ```
 
-Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
+Vegyük figyelembe, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
 
 <br />
 
@@ -90,11 +90,15 @@ Hatás maximális súlyossága
 
 #### Másodlagos hatás
 
+Sikeres [Méregellenállás próba](144_meregellenallas_proba.md) esetén is lehet egy méregnek (másodlagos) hatása.\
+Az ilyen tulajdonság szintén Komplexitást emel.
+
 ```
-+0: nincs másodlagos
-+2: 1 fokkal enyhébb
-+4: 2 fokkal enyhébb
++0: nincs másodlagos hatás
++2: 2 fokkal enyhébb Súlyosság
++4: 1 fokkal enyhébb Súlyosság
 ```
+⚡ Példa: `+4` Komplexitásért cserébe egy halálos méreg is Életveszélyes állapotot okoz - sikeres próba esetén is.
 
 <br />
 
@@ -172,6 +176,7 @@ Eddig kimutatható a szer - a Hatástartam lejárta után.
 Mk: Mérgek biztos tudás követelmény
 ```
 
+<br />
 
 ---
 ### (7) Elállás
@@ -188,6 +193,8 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 
 ---
 ### (8) Speciális
+
+
 
 ```
 +2: Plusz 1 komponens
