@@ -10,8 +10,8 @@ A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhet�
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
-- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2` bónusz **Ellenpróbánál**
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2` bónusz **Ellenpróbánál**
 - Extra:
   - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
   - Szemgolyót szedhet ki harc közben Puszta kézzel.
