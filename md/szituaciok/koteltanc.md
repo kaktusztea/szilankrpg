@@ -1,17 +1,17 @@
 ## Kötéltánc
 
+###  → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Önuralom / Ügyesség
+
+```
+Nehézség: 6
+
+-3: átlagos szél
+-6: erős szél
+
+-3: halálos magasságban
+```
+
 Végigegyensúlyozni egy kifeszített kötélen.
-
-Ez [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróba Átlagos (6) Nehézség ellen - bővebben a kötéltáncot lásd ott.
-- **Önuralom** Tulajdonsággal elsődlegesen
-- **Ügyesség** Tulajdonsággal is lehet
-
-### Módosítók
-
-- kötéltánc átlagos szélben: `+3`
-- kötéltánc erős szélben: `+6`
-- kötéltánc halálos magasságban: `+3`
-
 
 ---
 
