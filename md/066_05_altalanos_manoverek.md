@@ -98,7 +98,9 @@ Lecsapod ellenfeled kezét, vagy lábát.
 
 **Hatás**: Olyan helyzetet alakítasz ki, ahol az ellenfél fegyvere már nem fenyeget, te viszont életfontosságú pont mellé helyezed fegyvered - például a nyakára teszed fegyveredet, - míg ő kiszolgáltatottan féltérdre rogy. Ha megmozdul, végzel vele.
 
-**Kijövetel**: egy ilyen helyzetből `10`-es Nehézségű [Kibontakozás](#kibontakoz%C3%A1s) Manőverrel jöhetsz ki, ahol ellenfeled megelőző **Megakasztás** támadására `TÉ:+4` módosítót kap!
+**Kijövetel**:
+- áldozat: [Kibontakozás](#kibontakoz%C3%A1s) Manőver (Ellenpróbára:`-5`)
+- te: megelőző **Megakasztás** támadásodra `TÉ:+10` módosítót kapsz!
 
 <br />
 
@@ -194,6 +196,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
     - Körülöttem állók:
         - `-2`: minden további ellenfél után
         - `+2`: minden szövetséges után, aki ellenfeleddel harcol
+    - Elfogva
+        - `-5`: "Ellenfél elfogása" Manővert alkalmaztak ellened, megpróbálsz kiszabadulni.
 
 **Hatás**: Sikerül a harcból kibontakoznod, ellenfele(i)d már nem támadhat(nak) rád. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróba ([Sprint](fortelyok.altalanos/sprint.md) fortély számít!). Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`Előny+2` Támadó dobásra).
 
