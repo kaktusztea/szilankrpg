@@ -11,7 +11,7 @@ Szorzó - Mozgás
 
 → [Mozgás szorzók](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)
 
-### Elvétett lövés
+### ❌ Elvétett lövés
 
 → Szituáció: [Harcoló tömegbe lövés - bárki jó találatnak](harcolo_tomegbe_loves__barki_jo_talalatnak.md) szerint számold újra.
 

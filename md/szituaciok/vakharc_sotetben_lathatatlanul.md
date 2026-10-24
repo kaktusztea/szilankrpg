@@ -4,32 +4,34 @@ Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesztjü
 
 ### ⚜️ Nappali fényben: Érzékelhetetlen harcoló  vs. másik harcos
 
-- Sikeres [Lopakodás/rejtőzés és észlelése](lopakodas_rejtozes_es_eszlelese.md)
-- Érzékelhetetlen harcoló: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszait kapja
-- Másik harcos: normál (fegyveres) harcértékeivel harcol
+→ Érzékelhetetlenséghez: sikeres [Lopakodás/rejtőzés és észlelése](lopakodas_rejtozes_es_eszlelese.md) szituáció kell
+
+→ Érzékelhetetlen harcoló: [Orvtámadás](../065_03_01_pozitiv_helyzetek.md#orvtámadás) bónuszait kapja
+
+→ Másik harcos: normál (fegyveres) harcértékeivel harcol
 
 <br />
 
 ---
 ### ⚜️ Nappali fényben: Láthatatlan harcoló  vs. másik harcos
 
-Láthatatlan harcoló bónuszai:
+
+→ Láthatatlan harcoló bónuszai:
 - [Láthatatlan - részlegesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)  vagy
 - [Láthatatlan - teljesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---teljesen)
 
-Másik harcos
-- normál (fegyveres) harcértékeivel harcol
+→ Másik harcos: normál (fegyveres) harcértékeivel harcol
 
 <br />
 
 ---
 ### ⚜️ Sötétben: Láthatatlan harcoló   vs.  másik harcos
 
-Láthatatlan (mindegy a mértéke)
+→ Láthatatlan harcoló (mindegy a mértéke)
 - [Láthatatlanság](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) bónuszait elveszíti ❌
 - [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
-Másik harcos
+→ Másik harcos
 - [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
 <br />
@@ -37,7 +39,7 @@ Másik harcos
 ---
 ### ⚜️ Vakharc: félhomályban, sötétben
 
-Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol.
+Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol:
 
 - [Vakharc félhomályban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban)
 - [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben)

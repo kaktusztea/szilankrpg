@@ -1,8 +1,8 @@
 ## Hajítás alkalmatlan fegyverrel
 
-→ Harci helyzet: [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) módosítói érvényesek
+#### → Harci helyzet: [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
 
-→ Fortély [Alkalmatlan fegyver hajítása](../fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) (`2`) → a fenti büntetéseket mérséklik
+→ Fortély: [Alkalmatlan fegyver hajítása](../fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) (`2`) → a fenti büntetéseket mérséklik
 
 ---
 

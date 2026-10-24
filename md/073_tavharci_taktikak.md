@@ -9,17 +9,9 @@ Néhány egyedi taktika itt is előfordul.
 🔆 Sima [Harci taktikákkal](065_02_harci_taktikak.md) és [Lovas harci taktikákkal](067_03_lovas_harci_taktikak.md)NEM kombinálhatóak.
 
 ---
-### Lövéskitérés
+### Lövéskitérés → Képzettségpróba: Akrobatika + Gyorsaság
 
-```
-Akrobatika képzettségpróba
-  Gyorsaság Tulajdonsággal
-
-+2 "Lövéskitérés fejlesztése"
-   távharci fortéllyal
-```
-
-→ [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md) távharci fortély
+→ Fortély: [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md): `+2` bónusz
 
 #### Követelmények célpont számára
 
@@ -91,11 +83,15 @@ Leggyorsabb mozgatás (EM)
    6:  51m - 60m
 ```
 
-🔆 Ha a próba sikeres, sikerült elugrani a lövedék elől, a támadó automatikusan elvesztette a támadását - már nem is tehet **Célzó dobást**.
+### ✅ Sikeres → elugrottál a  lövedék elől
 
-🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy betalál-e. Ennek módosítóiról itt: [Lövéskitérés sikertelen](szituaciok/loveskiteres_sikertelen.md).
+A támadó automatikusan elvesztette a támadását - már nem is tehet **Célzó dobást**.
 
-🔆 Miért a legkönnyebb kategóriába tartozik a "Testközelben"? Ennek az az oka, hogy így van lehetősége a megtámadottnak kézzel eltérítő mozdulatokat alkalmazni a támadó fegyvere, karja ellen.
+### ❌ Sikertelen → ellenfél sima Célzó dobást tesz
+
+→ Szituáció:  [Lövéskitérés sikertelen](szituaciok/loveskiteres_sikertelen.md)
+
+→ "Testközelben" azért könnyű, mert a megtámadottnak kézzel eltérítő mozdulatra van lehetősége a támadó fegyvere, karja ellen.
 
 <br />
 

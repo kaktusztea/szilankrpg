@@ -2,7 +2,7 @@
 
 Kapcsolódik: [Lovas Harc](../067_01_lovas_harc_szabalyai.md) fejezet
 
-## `1.` Sebesüléskor hátason maradni → Képzettségpróba: Lovaglás + Önuralom
+## `1.` Sebesülés fennmaradni → Képzettségpróba: Lovaglás + Önuralom
 
 ```
 Seb       Nehézség
@@ -17,7 +17,7 @@ Ha sikertelen, leesik. Ekkor jön a lenti esés (Akrobatika) próba.
 <br />
 
 ---
-## `2.` Leestél a hátasról → Képzettségpróba: Akrobatika + Ügyesség
+## `2.` Leestél hátasról → Képzettségpróba: Akrobatika + Ügyesség
 
 ```
 Hátas mozgása  Nehézség
@@ -51,7 +51,7 @@ A **nagyobb Nehézség** érték számít a két táblázatból.
 
 <br />
 
-## ⚜️ Rontott esés → Sebződés
+### ❌ Rontott esés → Sebződés
 
 Hátasod mozgásától függően sebződsz. **SFÉ** nyilván **nem** számít.
 
@@ -64,7 +64,7 @@ Hátas            SP
 
 <br />
 
-## ⚜️ Sikeres esés → kisebb Sebződés
+### ✅ Sikeres esés → kisebb Sebződés
 
 ```
 (k20 - 10) SP

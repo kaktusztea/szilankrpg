@@ -1,12 +1,12 @@
 ## Ajtóstul nekirontani a túloldalról benyitó ellenfélnek
 
-Ez egy harci szituáció, amiben mindkét fél a fegyvertelen harcértékével vesz részt, de a támadó megkapja a [Meglepetés](../065_03_01_pozitiv_helyzetek.md#meglepetés) bónuszát az első támadására.
-
 ```
-Fegyvertelen TÉ + Meglepetés
-vs
+Fegyvertelen TÉ + Meglepetés (1.támadásra)
+      vs
 Fegyvertelen VÉ
 ```
+
+→ Harci helyzet: [Meglepetés](../065_03_01_pozitiv_helyzetek.md#meglepetés)
 
 ---
 

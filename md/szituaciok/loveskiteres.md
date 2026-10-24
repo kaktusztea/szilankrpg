@@ -2,7 +2,7 @@
 
 Megpróbálsz tudatosan kitérni a rád leadott lövés/hajítás elől.
 
-→ Távharci taktika: [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés)
+#### → Távharci taktika: [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés)
 
 ---
 

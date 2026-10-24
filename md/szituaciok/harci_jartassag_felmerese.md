@@ -2,9 +2,10 @@
 
 Sokszor előfordul, hogy kíváncsi vagy, milyen ellenféllel állsz szemben. Harcoljak vele? Vagy itt az idő felkötni a nyúlcipőt?
 
-### Harcmodor + Érzékenység képzettségpróba 🎲
+### → Képzettségpróba: Harcmodor + Érzékenység 
 
 ```
+Nehézség
  9: Jobb/gyengébb nálam?
  9: Sebesült az ellenfél?
 12: Ki a gyenge láncszem a másik csapatban?
@@ -16,10 +17,10 @@ Sokszor előfordul, hogy kíváncsi vagy, milyen ellenféllel állsz szemben. Ha
 ```
 
 ```
-Módosítók
-+6: Harc előtt
-+3: 1 kör harc után
-+0: 2 kör harc után
+Helyzetfüggő Dobásmódosítók
+ -6: Harc előtt
+ -3: 1 kör harc után
+ +0: 2 kör harc után
 ```
 
 ---

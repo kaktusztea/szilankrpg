@@ -1,16 +1,14 @@
 ## Meglepetésből, Precíz támadás max TÉ taktikával
 
-→ Harci helyzet: [Meglepetésből](../065_03_01_pozitiv_helyzetek.md#meglepetés) támadsz
+→ Harci helyzet: [Meglepetés](../065_03_01_pozitiv_helyzetek.md#meglepetés)
 
 → Taktika: [Támadó taktika](../065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) (`TÉ:+3, VÉ:-6`)
 
-→ Manőver:  [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás)
-- [**Végrehajtás** és **Ellenpróba**](../066_04_manover_vegbevitele.md) fázisai vannak
-- A **Meglepetés** harci helyzet bónusza és a **Támadó taktika** bónusza hogyan érvényesülnek itt?
+→ Manőver:  [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) (`V,E`)
 
 ### Manőver **Végrehajtás** fázisa
 
-- **Meglepetés** bónusza: `Előny+1` erre a Támadó dobásra
+- **Meglepetés**: `Előny+1` erre a Támadó dobásra
 - `TÉ:+3` a **Támadó taktikából**
 - `TÉ:+5`, ami a szokásos bónusz a Manőverek Végrehajtás fázisánál
 

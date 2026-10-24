@@ -4,27 +4,27 @@ Számos szituáció van, mikor elhangozhat a fenti kérdés. Igyekszünk nem bon
 
 <br />
 
-### 🔆 Harci cselekedet esetén
+### 🔆 Harci cselekedet → [Kezdeményező dobás](../064_02_01_kezdemenyezes.md)
 
-Ilyenkor egyszerű harci [Kezdeményezést](../064_02_01_kezdemenyezes.md) kell dobnia minden félnek.
+Mindkét félnek.
 
 <br />
 
-### 🔆 Nem harci cselekedet esetén
+### 🔆 Nem harci cselekedet → Ellenpróba: Gyorsaság
 
-→ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba). Reflex jellegű és futás szituáció esetén szintén.
+Reflex jellegű és futás szituáció esetén szintén.
 
-→ Fortély: [Sprint](../fortelyok.altalanos/sprint.md) módosítói
+→ Fortély: [Sprint](../fortelyok.altalanos/sprint.md) bónuszt ad
 
-→  Helyzetfüggő módosító: bónusz jár, ha valaki közelebb van az elérni kívánt célhoz
+→ Helyzetfüggő módosító: Bónusz jár, ha valaki közelebb van a célhoz
 
 <br />
 
 ### 🔆 Mozgás harcon kívül, amíg a többiek harcolnak
 
-Előfordul, hogy valaki nem vesz részt a harcban és úgy akar mozgást végezni.
+#### → [Kezdeményező dobás](../064_02_01_kezdemenyezes.md) neked is
 
-→ [Kezdeményezést](../064_02_01_kezdemenyezes.md) kell dobnia **neki is**, mert így kezelhetőek csak a cselekedetek egységes keretben.
+Ha nem veszel részt a harcban és úgy akarsz mozgást végezni, akkor is dobnod kell, mert a cselekedetek így kezelhetőek csak egységes keretben.
 
 ---
 

@@ -4,15 +4,13 @@ A belharcos célja [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharc
 
 <br />
 
-### ⚜️ Belharci helyzetbe kerülés
+### ⚜️ Belharci helyzetbe kerülés → Manőver: [Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés)
 
-→ Manőver: [Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) sikeres (**Közelharc** harcmodorban)
+**Közelharc** harcmodorban.
 
 <br />
 
-### ⚜️ Belharci helyzetből kikerülés
-
-→ Manőver: [Belharcból kibontakozás](../066_06_belharcos_manoverek.md#belharcból-kibontakozás) sikeres
+### ⚜️ Belharci helyzetből kikerülés → Manőver: [Belharcból kibontakozás](../066_06_belharcos_manoverek.md#belharcból-kibontakozás)
 
 Mindenki ezzel jöhet ki - harcmodortól függetlenül.
 
