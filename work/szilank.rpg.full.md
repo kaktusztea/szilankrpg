@@ -480,16 +480,16 @@ https://github.com/kaktusztea/szilankrpg/
 ### 13. [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md)
 
 ---
-
-### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
+### 14. [Méregrendszer](140_meregrendszer.md)
 
 - [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
-- [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
-- [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
-- [Méregellenállás próba](144_meregellenallas.md)
+- [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md)
+- [Méreg tulajdonságai](143_mereg_tulajdonsagai.md)
+- [Méregellenállás próba](144_meregellenallas_proba.md)
 - [Méregérzékelés](145_meregerzekeles.md)
 - [Méregazonosítás](146_meregazonositas.md)
-- [Példamérgek](147_peldamergek.md) ⚡
+- [Ellenméreg keverése](147_ellenmereg_keverese.md)
+- [Példamérgek](148_peldamergek.md) ⚡
 
 ---
 ### 15. [Szituációk](150_szituaciok.md)
@@ -2924,7 +2924,7 @@ Lásd a [Mágiarendszer](100_magiarendszer.md) fejezetet!
 
 ## Méregellenállás
 
-Lásd [Méregrendszer - Méregellenállás próba](144_meregellenallas.md).
+Lásd [Méregrendszer - Méregellenállás próba](144_meregellenallas_proba.md).
 
 Bővebben lásd a [Mérgek](kepzettsegek.primer/altalanos/mergek.md) képzettség és a [Méregrendszer](140_meregrendszer.md) leírását.
 
@@ -5888,29 +5888,37 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 
 ## 🔵 Mérgek
 
-Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható, de a rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat).
+Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-Lásd még a [Méregrendszer](../../140_meregrendszer.md) főfejezetet!
+Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit, de a mérgek felismerése, ellenszer készítés, mérgezés gyógyítása is ide tartozik. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
 
-Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
+**Főfejezet**: [Méregrendszer](../../140_meregrendszer.md)
 
-### Domináns Tulajdonságok
-
-Emlékezet, Önuralom, Intelligencia
+- [Méregkeverés szabályai](../../141_meregkeveres_szabalyai.md) 🎲
+- [Méreg alapanyagok beszerzése](../../142_mereg_alapanyagok_beszerzese.md)
+- [Méreg tulajdonságai](../../143_mereg_tulajdonsagai.md)
+- [Méregellenállás próba](../../144_meregellenallas_proba.md) 🎲
+- [Méregérzékelés](../../145_meregerzekeles.md) 🎲
+- [Méreg azonosítása](../../146_meregazonositas.md) 🎲
 
 ### Kapcsolódik
 
 - [Méregrendszer](../../140_meregrendszer.md) főfejezet
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
+- [Orvoslás](orvoslas.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 - [Alkímia](../../kepzettsegek.szekunder/alkimia.md) képzettség
+
+### Domináns Tulajdonságok
+
+Emlékezet, Önuralom, Intelligencia
 
 <br />
 
 ---
 ### Szintek
 
-Biztos tudást igényelnek a méreg kikeverésekor: [Elállás](../../141_meregkeveres_szabalyai.md#3-elállás), [Hatóidő](../../141_meregkeveres_szabalyai.md#4-hatóidő), [Kiürülés](../../141_meregkeveres_szabalyai.md#6-kiürülés-ideje)
+Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_meregkeveres_szabalyai.md#3-bomlási-idő), [Hatóidő](../../141_meregkeveres_szabalyai.md#4-hatáskezdet), [Kiürülés](../../141_meregkeveres_szabalyai.md#6-kimutatási-idő)
 
 ### Mesterbónuszok
 
@@ -5931,25 +5939,12 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Elállás](../../141_meregk
 <br />
 
 ---
-### Méreg kikeverése 🎲
-
-A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
-
-→ **Méreg komplexitása**: [Méregrendszer](../../140_meregrendszer.md) fejezetben részletezett számítása
-
-### Méreg azonosítása tünetek, környezeti hatás alapján 🎲
-
-A méreg azonosítása a [Méregérzékelés](../../145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz.
+### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
 
 ```
-Mérgek képzettségpróba
-  Nehézség: 9
-
-Dobásmódosító:
-  Élettan fortély: +2
++2: Élettan fortély
+    (minden próbára)
 ```
-
-→ Fortély: [Élettan](../../fortelyok.altalanos/elettan.md)
 
 ---
 ### Helyzetfüggő módosítók
@@ -6027,7 +6022,7 @@ Intelligencia, Emlékezet
 
 - [Információ szerzés valakitől](../../szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem azt a nevet? Mit tudhatok róla?](../../szituaciok/ismerem_mit_tudhatok_rola.md)
-- [Nyomok értelmezése, Nyomkövetés - városi környezetben](../../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-értelmezése-városi-környezetben-)
+- [Nyomok értelmezése, Nyomkövetés - városi környezetben](../../szituaciok/nyomok_nyomkovetes_varos.md#-nyomok-értelmezése-városi-környezetben)
 
 ### 🔆 Szerepjátékos módosító
 
@@ -6142,7 +6137,7 @@ A képzettség az alábbi tevékenységeket fedi le:
 - vérzés elállítása
 - fertőtlenítés, sebkötözés kencék használatával
 - [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
-- mérgezés gyógyítása
+- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) (ha azt nem ismered)
 
 Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
 
@@ -12377,9 +12372,9 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 ---
 ### ⚡ Példa képzettség kiterjesztésere - 2 fortéllyal
 
-Horgas Apó orkok [nyomát fedezte fel](szituaciok/nyomok_nyomkovetes_termeszet.md#nyomok-észrevétele-a-természetben-) a folyóparton és követni szeretné, hova vezetnek.
+Horgas Apó orkok [nyomát fedezte fel](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-észrevétele-a-természetben) a folyóparton és követni szeretné, hova vezetnek.
 
-Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_termeszet.md#nyomok-követése-a-természetben-) Szituáció.
+Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-követése-a-természetben) Szituáció.
 
 \- KM: "Mennyi a **Természetjárás** képzettséged és az **Érzékenység** Tulajdonságod? Ezekkel fogsz dobni."
 
@@ -13601,19 +13596,19 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 
 ### 1. fok
 
-🌟 [Méregellenállás dobásakor](../144_meregellenallas.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../144_meregellenallas_proba.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 <br />
 
 ### 2. fok
 
-🌟 [Méregellenállás dobásakor](../144_meregellenallas.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../144_meregellenallas_proba.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 <br />
 
 ### 3. fok
 
-🌟 [Méregellenállás dobásakor](../144_meregellenallas.md) kapsz `+3` bónuszt **Edzettség** Tulajdonságpróbádra.
+🌟 [Méregellenállás dobásakor](../144_meregellenallas_proba.md) kapsz `+3` bónuszt **Edzettség** Tulajdonságpróbádra.
 
 ---
 
@@ -13665,8 +13660,8 @@ Megtalált nyomok értelmezését, eltűntetését, illetve városon kívül a n
 
 ### Szituációk
 
-- [Nyomok értelmezése természetben](../szituaciok/nyomok_nyomkovetes_termeszet.md#nyomok-%C3%A9rtelmez%C3%A9se-a-term%C3%A9szetben-)
-- [Nyomok értelmezése városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-%C3%A9rtelmez%C3%A9se-v%C3%A1rosi-k%C3%B6rnyezetben-)
+- [Nyomok értelmezése természetben](../szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-%C3%A9rtelmez%C3%A9se-a-term%C3%A9szetben)
+- [Nyomok értelmezése városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md#-nyomok-%C3%A9rtelmez%C3%A9se-v%C3%A1rosi-k%C3%B6rnyezetben)
 
 ### 1. fok
 
@@ -32652,25 +32647,34 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 ---
 ## File: md/140_meregrendszer.md
 
-# Méregrendszer, mérgek
+# Méregrendszer
 
+## Keverés, mérgek
 ### [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
 
-### [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)
+### [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md)
 
-### [Méreg alapanyagok beszerzése](143_mereg_alapanyagok_beszerzese.md)
+### [Méreg tulajdonságai](143_mereg_tulajdonsagai.md)
 
-### [Méregellenállás próba](144_meregellenallas.md)
+---
+## Dobások
+
+### [Méregellenállás próba](144_meregellenallas_proba.md)
 
 ### [Méregérzékelés](145_meregerzekeles.md)
 
 ### [Méregazonosítás](146_meregazonositas.md)
 
-### [Példamérgek](147_peldamergek.md) ⚡
+### [Ellenméreg keverése](147_ellenmereg_keverese.md)
+
+---
+## Példa
+
+### [Példamérgek](148_peldamergek.md) ⚡
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
 
 
 ---
@@ -32679,37 +32683,48 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 
 ## Méregkeverés szabályai
 
-A mérgeket jelleg szerint négy csoportra bontjuk:
+### → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
+
+```
+Nehézség = Méreg Komplexitása
+```
+
+A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesül az esetleges balsikerrel (nem hat a szer).
+
+<br />
+
+### Méreg jelleg csoportok
 
 - Étel és italmérgek
 - Légimérgek
 - Kontaktmérgek
 - Fegyvermérgek
 
-A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriába sorolhatjuk:
+### Méreg összetevő csoportok
 
 - állati
-- növényi(3) Elállás
+- növényi
 - ásványi (szervetlen)
 
-→ **Képzettség**: **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)**
+<br />
 
 ---
 ## Méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Mérgek** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
+A méreg kikeverése **[Mérgek](kepzettsegek.primer/altalanos/mergek.md)** képzettségpróbához kötött, amelynek Nehézsége a **Méreg komplexitásával** azonos.
 
 ```
 Méreg komplexitása =
   + (1) Erősség
-  + (2) Hatás Súlyosság
-  + (3) Elállás
-  + (4) Hatóidő
-  + (5) Hatás hossza
-  + (6) Kiürülés ideje
-  + (7) Speciális
+  + (2) Súlyosság
+  + (3) Bomlási idő
+  + (4) Hatáskezdet
+  + (5) Hatástartam
+  + (6) Kimutatási idő
+  + (7) Elállás
+  + (8) Speciális
 ```
 
 ### (1) Méreg Erőssége
@@ -32738,10 +32753,10 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 <br />
 
 ---
-### (2) Hatás súlyossága
+### (2) Súlyosság
 
 ```
-Hatás max súlyossága
+Hatás maximális súlyossága
 
 1: Enyhe rosszullét, hányás
    Fájdalom(9) → Státusz: Fizikai(1)Fáradtság
@@ -32767,9 +32782,9 @@ Hatás max súlyossága
 <br />
 
 ---
-### (3) Elállás
+### (3) Bomlási idő
 
-Meddig áll el szabad levegőn/folyadékban?
+Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
 
 ```
 0: Pár másodperc
@@ -32786,21 +32801,23 @@ Mk: Mérgek biztos tudás követelmény
 <br />
 
 ---
-### (4) Hatóidő
+### (4) Hatáskezdet
 
 ```
-Milyen gyorsan hat?
+Bevitel után mennyi idő után hat?
 
-+0: (30 perc - 3 óra múlva)
-+1: (4 - 23 óra múlva),   Mk 3. szint
-+1: (2 - 20 perc múlva),  Mk 3. szint
-+2: (1 - 10 nap múlva),   Mk 5. szint
-+2: (2 - 6 kör múlva),    Mk 5. szint
-+3: (2 - 4 hét múlva),    Mk 7. szint
-+4: Gyorsan (1 kör múlva),    Mk 7. szint
-+4: Hónapok múlva,            Mk 9. szint
-+5: Azonnal (1 szívdobbanás), Mk 9. szint
-+5: Évek múlva,               Mk 12. szint
++2: harc végén         Mk 5. szint
++4: Következő körben   Mk 7. szint
++5: Azonnal            Mk 9. szint
+
++1: 1 jelenet után (harcon kívül)
++0: néhány óra múlva
++1: 1 napon belül
++2: 1 héten belül         Mk 5. szint
+
++3: 1 holdfordulón belül  Mk 7. szint
++4: Hónapok múlva         Mk 9. szint
++5: Évek múlva            Mk 12. szint
 
 Mk: Mérgek biztos tudás követelmény
 ```
@@ -32808,22 +32825,24 @@ Mk: Mérgek biztos tudás követelmény
 <br />
 
 ---
-### (5) Hatás hossza
+### (5) Hatástartam
+
+Az aktiválódás után meddig tart a szer hatása.
 
 ```
 +0: 1 kör
 +1: 2 kör 
 +2: rövid jelenet (harcon kívül)
 +3: pár óra (harcon kívül)
-+5: hónapok  (Kiürülés ideje egyezzen)
++5: hónapok  (Kimutatási idő egyezzen!)
 ```
 
 <br />
 
 ---
-### (6) Kiürülés ideje
+### (6) Kimutatási idő
 
-Eddig kimutatható Hatás lejárta után.
+Eddig kimutatható a szer - a Hatástartam lejárta után.
 
 ```
 0: 1 nap
@@ -32834,10 +32853,22 @@ Eddig kimutatható Hatás lejárta után.
 Mk: Mérgek biztos tudás követelmény
 ```
 
+
+---
+### (7) Elállás
+
+Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
+
+```
+0: 1 holdfordulón belül
+2: 1-2 év
+4: örökké
+```
+
 <br />
 
 ---
-### (7) Speciális
+### (8) Speciális
 
 ```
 +2: Plusz 1 komponens
@@ -32846,13 +32877,20 @@ Mk: Mérgek biztos tudás követelmény
 +3: Több hordozó közegből
     csak 1 a méreg hatóanyag,
     a többi természetes alapanyag
+```
+
+```
 +2: Sűrű: kis mennyiség is elég 1 adaghoz
 +3: Színtelen
 +3: Szagtalan/ízetlen (egyben értendő)
+```
+
+```
 +3: Félrevezető tünetek 3
     (ennyivel nő az azonosítás nehézsége)
 +6: Félrevezető tünetek 6
     (ennyivel nő az azonosítás nehézsége)
+
 +0: Szabadban sem eloszló légméreg:
     nem nehezebb, de speciális fizikai
     közvetítő kell (füstöt okádó labdacs),
@@ -32876,7 +32914,7 @@ Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a vi
 ---
 ### Elkészítés ideje
 
-1 jelenet, ami nem kötött időtartam, KM dönt.
+`1` jelenet, ami nem kötött időtartam, KM dönt.
 
 ### Ár
 
@@ -32884,38 +32922,14 @@ A méreg elkészítéséhez szükséges alapanyagok, extra felszerelés árát a
 
 ---
 
-🔗 [Méreg tulajdonságai](142_mereg_tulajdonsagai.md)→
+🔗 [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
-
-
----
----
-## File: md/142_mereg_tulajdonsagai.md
-
-# Méreg tulajdonságai
-
-Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [Méregkeverés szabályai](141_meregkeveres_szabalyai.md) oldalon olvasható.
-
-```
-→ Erősség
-→ Elállás/Kiürülés
-→ Hatás ideje (mennyi ideig tart a hatás)
-→ Hatóidő (mennyi idő után kezd hatni)
-→ Másodlagos hatás
-→ összetevők: állati / növényi / ásványi
-```
-
----
-
-🔗 [Méregellenállás próba](144_meregellenallas.md) →
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
 
 
 ---
 ---
-## File: md/143_mereg_alapanyagok_beszerzese.md
+## File: md/142_mereg_alapanyagok_beszerzese.md
 
 ## Méreg alapanyagok beszerzése
 
@@ -32968,32 +32982,73 @@ Figyeljünk rá, hogy csak addig a szintig tud alapanyagokat eladni, amennyit a 
   Vajákosság >= 8
 ```
 
+---
 
+🔗 [Méreg tulajdonságai](143_mereg_tulajdonsagai.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
 
 
 ---
 ---
-## File: md/144_meregellenallas.md
+## File: md/143_mereg_tulajdonsagai.md
 
-## Méregellenállás
+# Méreg tulajdonságai
 
-A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsagproba.md):
+Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [Méregkeverés szabályai](141_meregkeveres_szabalyai.md) oldalon olvasható.
 
 ```
-(Edzettség + k6)  vs  Méreg Erőssége
+→ Név
+→ (1) Erősség
+→ (2) Súlyosság + Másodlagos hatás
+→ (3) Bomlási idő
+→ (4) Hatáskezdet
+      Mennyi idő után kezd hatni
+→ (5) Hatástartam
+      Aktiválódás után meddig tart a szer hatása
+→ (6) Kimutatási idő
+      Eddig kimutatható a Hatástartam lejárta után
+→ (7) Elállás
+      Lezárt állapotban eddig áll el
+→ (8) Speciális tulajdonságok
+
+→ Jelleg: Étel/ital / légi / kontakt / fegyver
+→ Összetevő-csoport: állati / növényi / ásványi
+
+→ Recept: konkrét összetevők
+
 ```
 
-🔆 **Fontos**: a Méregellenállást a méreg **Erőssége** (és NEM komplexitása) ellen kell dobni!
+---
+
+🔗 [Méregellenállás próba](144_meregellenallas_proba.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+
+
+---
+---
+## File: md/144_meregellenallas_proba.md
+
+## Méregellenállás próba
+
+###  → Tulajdonságpróba: Edzettség
+
+```
+Nehézség = Méreg Erőssége
+```
 
 🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
 
-🔆 Ha Tulajdonságpróba [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc), akkor a méreg esetleges [Másodlagos hatása](141_meregkeveres_szabalyai.md#másodlagos-hatás) sem hat rád egyáltalán
+🔆 [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc):  az esetleges [Másodlagos hatás](141_meregkeveres_szabalyai.md#másodlagos-hatás) sem hat rád egyáltalán
+
+🔆 **Fontos**: Méregellenállást az **Erősség** (NEM ~~komplexitás~~) ellen kell dobni!
 
 ---
 
 🔗 [Méregérzékelés](145_meregerzekeles.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
 
 
 ---
@@ -33009,15 +33064,13 @@ Ha a méregnek több hordozója van, mindegyikre külön próbá(k) dobható(ak)
 Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha bármelyik sikeres, a karakter kiszúrta a mérget.
 
 ---
-### 1. Mérgek próba
+### 1. Képzettségpróba: Mérgek + Érzékenység
+
+```
+Nehézség: 12
+```
 
 Ez a próba csak akkor dobható, ha a karakter rendelkezik [Mérgek](kepzettsegek.primer/altalanos/mergek.md) képzettséggel legalább `3.szinten`.
-
-```
-Mérgek + Érzékenység
-          vs
-     Nehézség: 12
-```
 
 #### Helyzetfüggő módosítók
 
@@ -33027,7 +33080,7 @@ Mérgek + Érzékenység
 ```
 
 ---
-### 2. Érzékenység Tulajdonságpróba
+### 2. Tulajdonságpróba: Érzékenység
 
 ```
 Célszám: 4 (Átlagos)
@@ -33047,9 +33100,9 @@ Célszám: 4 (Átlagos)
 
 ---
 
-🔗 [Példamérgek](147_peldamergek.md) →
+🔗 [Méregazonosítás](146_meregazonositas.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
 
 
 ---
@@ -33058,15 +33111,17 @@ Célszám: 4 (Átlagos)
 
 ## Méregazonosítás
 
+### Képzettségpróba: Mérgek + Intelligencia
+
 ```
-Mérgek + Intelligencia
-          vs
-     Nehézség: 9
+Nehézség: 9
 ```
+
+A  [Méregérzékelés](145_meregerzekeles.md) **után** történik, vagy ha már fennáll a gyanú, hogy az adott hordozó közeg mérget tartalmaz. Szükséges hozzá minta a hordozó közegről/ből, eseleg vér/nyálminta.
 
 ### Helyzetfüggő módosítók
 
-A méreg azonosítását (próbadobást) annak egyes tulajdonságai nehezíthetik.
+A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 
 ```
 -2: Plusz 1 komponens
@@ -33075,18 +33130,53 @@ A méreg azonosítását (próbadobást) annak egyes tulajdonságai nehezítheti
 -3: Több hordozó közegből
     csak 1 a méreg hatóanyag,
     a többi természetes alapanyag
+```
 
+```
 -2: Sűrű: kis mennyiség is elég 1 adaghoz
 -3: Szagtalan/ízetlen (egyben értendő)
+```
 
+```
 -3: Félrevezető tünetek 3
 -6: Félrevezető tünetek 6
 ```
 
+---
+
+🔗 [Ellenméreg keverése](147_ellenmereg_keverese.md)] →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+
 
 ---
 ---
-## File: md/147_peldamergek.md
+## File: md/147_ellenmereg_keverese.md
+
+## Ellenméreg keverése
+
+###  → Képzettségpróba: Mérgek + Intelligencia
+
+```
+Nehézség = Méreg Komplexitása
+```
+
+```
+Helyzetfüggő módosító
+ -3: A Méregazonosítás rontott volt
+```
+
+A  [Méregérzékelés](145_meregerzekeles.md) és [Méregazonosítás](146_meregazonositas.md) **után** történik.
+
+---
+🔗 [Példamérgek](148_peldamergek.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
+
+
+---
+---
+## File: md/148_peldamergek.md
 
 ## Példamérgek
 
@@ -33167,7 +33257,7 @@ A hatást a vajákos eltolta fél nappal, hogy éjszaka jöjjön a vég, így a 
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer)
 
 
 ---
@@ -33546,18 +33636,19 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 
 ## Elugrani egy feléd száguldó lovaskocsi elől
 
- **[Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md)** képzettségpróba **Gyorsaság** Tulajdonsággal, melynek nehézsége függ a lovaskocsi távolságától az észlelés pillanatában.
+<br />
+
+#### → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Gyorsaság
 
 ```
-Nehézség távolság
-  függvényében
-
-21:  1m
-18:  2m
-15:  3m
-12:  4m
- 9:  5m
- 6:  6m
+Nehézség | Távolság
+           (észlelés pillanatában)
+  21:     1m
+  18:     2m
+  15:     3m
+  12:     4m
+   9:     5m
+   6:     6m
 ```
 
 ---
@@ -33646,24 +33737,26 @@ Azaz az "észreveszem-e?" jellegű szituációk
 #### Passzív észlelés
 
 ```
- Módosulatlan nehézség az
+ Módosulatlan Nehézség az
  Észlelés képzettségpróba-dobásra
 ```
 
 A karakternek feltűnik valami anélkül, hogy kifejezetten kereste volna/figyelt volna rá.
 
-⚡Például: a nemesúrnak álbajusza van, mérgezett az étel, stb.
+⚡Például: a nemesúrnak álbajusza van, a madárcsicsergés természetellenes, stb.
 
 ---
 ### 🔆 Különbség az észrevétel és az értelmezés között
 
-- **Észlelés** + **Érzékenység**: Követik-e? ; Észreveszi-e a ruha alatt villanó tőrt?
-- **Nyomozás** + **Intelligencia**: Rájön-e, hogy mit vett észre? (az igazi szakáll nem nő így például)
+- **Észlelés** + **Érzékenység**
+  - Követnek-e? ; Észreveszed-e a ruha alatt villanó tőrt?
+- **Nyomozás** + **Intelligencia**
+  - Rájössz-e, hogy mit vettél észre? ("az igazi szakáll nem így nő")
 
 ---
 ### 🔆 Lopakodás/rejtőzés és észlelése
 
-Lásd: a [saját oldalát](lopakodas_rejtozes_es_eszlelese.md)!
+Lásd: [Lopakodás szituáció](lopakodas_rejtozes_es_eszlelese.md)
 
 ---
 
@@ -34254,37 +34347,35 @@ Lopakodás/rejtőzés + Ügyesség/Önuralom
 Észlelés + Érzékenység  (+3 aktívnál)
 ```
 
-### ⚜️ Alapeset
+### ⚜️ Lopakodás és módosítói
 
-Leírását és a próba körülményeit, módosítóit lásd a [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) képzettség leírásánál.
-
-<br />
-
-### ⚜️ Módosítók
-
-A **Lopakodás/rejtőzés** képzettség oldalán a [Helyzetfüggő módosítók](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#helyzetfüggő-módosítók) bekezdés alatt található.
+Képzettség: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md)
 
 ---
 ### ⚜️ Passzív észlelés
 
-Ha az észlelő passzívan szemlélődik: **alap ellenpróba**. Lásd még [Érzékelés, Aktív/Passzív Észlelés](erzekeles_eszleles_aktiv_passziv.md#passz%C3%ADv-%C3%A9szlel%C3%A9s).
+Ha az észlelő passzívan szemlélődik: **alap ellenpróba**.\
+→ Szituáció: [Érzékelés, Passzív Észlelés](erzekeles_eszleles_aktiv_passziv.md#passz%C3%ADv-%C3%A9szlel%C3%A9s)
 
 <br />
 
 ### ⚜️ Aktív észlelés
 
 ```
-Észlelés dobás: +3
+Észlelés dobás bónusz: +3
 ```
 
-Ha az észlelő odafigyel, számít a támadásra: `+3` jár [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) próbájára. Lásd még [Érzékelés, Aktív/Passzív Észlelés](erzekeles_eszleles_aktiv_passziv.md#akt%C3%ADv-%C3%A9szlel%C3%A9s).
+Ha az észlelő odafigyel, számít a támadásra: bónusz ↑
+→ Szituáció: [Érzékelés, Aktív Észlelés](erzekeles_eszleles_aktiv_passziv.md#akt%C3%ADv-%C3%A9szlel%C3%A9s)
 
 ---
 ### ⚜️  Csoport ember elől kell elbújni
 
-A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkező dob.
+```
+Észlelés dobás bónusz: +3
+```
 
-Észlelés próba bónusz: `+3`
+A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkező dob, bónusszal ↑
 
 ---
 
@@ -34299,12 +34390,9 @@ A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkez�
 
 ## Meglopni, kirabolni valakit
 
-Kapcsolódó képzettségek
-- [Lopás](../kepzettsegek.szekunder/lopas.md)
-- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)
-- [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md)
+Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre.
 
-Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre:
+#### → Képzettség-ellenpróba
 
 ```
 Lopás + Ügyesség
@@ -34312,34 +34400,47 @@ Lopás + Ügyesség
 Észlelés + Érzékenység/Intelligencia
 ```
 
+- Képzettség: [Lopás](../kepzettsegek.szekunder/lopas.md)
+- Képzettség: [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)
+- Képzettség: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md)
+
+<br />
+
+---
 ### ⚡ Példa szituáció: Nemeshölgy testőrrel
 
-A nemeshölgy a piac forgatagában válogat, tőle pár méterrel, civil ruhában lépdel testőre.
+Az előljáró felesége a piac forgatagában válogat, tőle pár méterrel, civil ruhában lépdel testőre.
 
-Tetves a tolvaj gyanítja, hogy a hölgy nem egyedül jött a vásárba, így [aktív Észleléssel](erzekeles_eszleles_aktiv_passziv.md) keresi a védelmező alakot. A testőr nem játszik szerepet, így nem végez **Lopakodás/rejtőzést**, ami kapcsolódó ellenpróbát igényelne - így Tetves sima Észlelés próbát dob a körülményektől függő Nehézségre.
+Tetves a tolvaj gyanítja, hogy a hölgy nem egyedül jött a vásárba, így [aktív Észleléssel](erzekeles_eszleles_aktiv_passziv.md) keresi a védelmező alakot. A testőr nem rejtegeti védelemező szerepét, így nem végez **Lopakodás/rejtőzést** sem, ami kapcsolódó ellenpróbát igényelne.\
+Így Tetves sima **Észlelés** képzettségpróbát dob - körülményektől függő Nehézségre.
 
-#### `1.` 🎲 Észlelés próba: Tetves észreveszi -e a testőrt
+#### `1.` Képzettségpróba: Észlelés + Érzékenység 🎲
+
+Tetves észreveszi -e a testőrt 
 
 ```
-Tetves dobás módosítói: +3
+Tetves Észlelés dobás módosítói: +3
  +3: aktív Észlelés
+ -3: Zsúfolt piac
+ +3: Testőr katonás tartása árulkodó
 
 Célszám alap: 12 (Nehéz)
  → A testőr nem lopakodik, de nem is feltűnő
  → Civil ruhában van (nem egyértelmű a szerepe)
  → Piacon sok ember van általában
+```
 
-Célszám módosítók: 0
- +3: Zsúfolt piac: +3
- -3: Testőr katonás tartása árulkodó
-     (KM becslése)
+```
+ Észlelés + Érzékenység + 3
+          vs
+     Nehézség: 12
 ```
 
 ❌ **Lopakodás/rejtőzés** vs **Észlelés** ellenpróba ez esetben **nem** szükséges, mert a közelkerülés még nem kelt gyanút, lehet Tetves egy sima vásárló is...
 
 Függetlenül attól, hogy Tetves észrevette-e a testőrt, ha úgy dönt, hogy megpróbálkozik, akkor a páros mindkét tagja dobhat:
 
-#### `2.` 🎲 Ellenpróbák
+#### `2.` Képzettség-ellenpróbák 🎲
 
 ```
 Lopás + Ügyesség
@@ -34696,53 +34797,59 @@ Távolság: 1 db szám
 
 Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelmezni, követni. Ezekben a szituációkban a [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba játssza a főszerepet - változó kiterjesztő fortélyokkal használva.
 
+<br />
+
 ---
-### Nyomok észrevétele a természetben 🌳
+### 🌳 Nyomok **észrevétele** a természetben
 
 "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 
-[Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
+#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
 
 ---
-### Nyomok követése a természetben 🌳
+### 🌳 Nyomok **követése** a természetben
 
-Előbb észre kell venni az első nyomot, utána lehet követni a csapást.
+Ha már észrevetted az első nyomot, utána követheted a csapást.
 
-[Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
-- [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba), tehát több dobás kell, mivel átfogóbb próba kell a folyamatos követéshez.
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
+#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység/Intelligencia
+- [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba): több dobás kell a folyamatos követéshez
+- 🟨 **Normál Kiterjesztés egyszerre mindkettőre**:
+  - Fortélyok: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra)
 
 <br />
 
 ---
-### Leplezett nyomok követése a természetben 🌳
+### 🌳 Leplezett nyomok **követése** a természetben
 
-Ha a követett személy szándékosan leplezi nyomait, akkor ellenpróbás szituáció következik:
+Ha a követett személy szándékosan leplezi nyomait.
+
+#### → Képzettség-ellenpróba
 
 ```
 Természetjárás + Érzékenység (nyomolvasó)
                 vs
 Természetjárás + Intelligencia (menekülő)
 
-Normál Kiterjesztés egyszerre mindkét félnél
- - Nyomolvasás/eltűntetés fortély ÉS
- - Tájtípus (aktuális tájra) fortély
+🟨 Normál Kiterjesztés egyszerre mindkét félnél
+ → Nyomolvasás/eltűntetés fortély ÉS
+ → Tájtípus (aktuális tájra) fortély
 ```
 
 <br />
 
 ---
-### Nyomok értelmezése a természetben 🌳
+### 🌳 Nyomok **értelmezése** a természetben
 
 "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
 
- [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
+#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
 - **Nehézség**: a nyom bonyolultságának megfelelő szint ellen
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
+- 🟨  **Normál Kiterjesztés egyszerre mindkettőre**:
+  - Fortélyok: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra)
 
 ---
 
@@ -34757,7 +34864,7 @@ Normál Kiterjesztés egyszerre mindkét félnél
 
 ## Nyomok észrevétele, Nyomkövetés - városi környezetben
 
-Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kiszúrni, értelmezni. A nyomok *követése* városi környezetben nem értelmezhető - kivéve az olyan egyértelmű jeleket, mint például a vérnyomok, de ezeket bárki képes követni.
+Gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kiszúrni, értelmezni. A nyomok *követése* városi környezetben nem értelmezhető - kivéve az olyan egyértelmű jeleket, mint például a vérnyomok, de ezeket bárki képes követni.
 
 ### Általános célszám módosítók 🎲
 
@@ -34769,56 +34876,58 @@ Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyo
 ```
 
 ---
-### Nyomok észrevétele városi környezetben 🏠
+### 🏠 Nyomok észrevétele városi környezetben
 
 "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
-**[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)** képzettségpróba
+#### → Képzettségpróba: **[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)** + Érzékenység
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
-- **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
+- 🟨  **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
 <br />
 
 ---
-### Nyomok értelmezése városi környezetben 🏠
+### 🏠 Nyomok értelmezése városi környezetben
 
 Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése. Felfedezett titkosírás elemzése.
 
-**[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)** képzettségpróba
+#### → Képzettségpróba: **[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)** + Intelligencia
 - **Nehézség**: a felfedezett nyom értelmezésének bonyolultságától függő szint ellen
-- **Normál Kiterjesztés**: egyet válassz az aktuális szituációhoz passzolóan:
+- 🟨  **Normál Kiterjesztés**: egyet válassz az aktuális szituációhoz passzolóan:
   - [Heraldika](../fortelyok.szabad/heraldika.md)
   - [Jogismeret](../fortelyok.szabad/jogismeret.md)
   - [Pénzügyek](../fortelyok.szabad/penzugyek.md)
-  - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md) (ennél használható a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)) képzettség is
+  - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md) (ennél [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettség is használható)
 
-Példákhoz lásd a fenti, kapcsolódó fortélyok **Nyomozás** képzettséghez kapcsolódó leírásait.
+Példákhoz lásd e kapcsolódó fortélyok ↑ **Nyomozás** képzettséghez kapcsolódó leírásait.
 
-🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító).
+🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító)
 
 <br />
 
 ---
-### Rejtett nyomok, tárgyak elrejtése/megtalálása városi környezetben 🏠
+### 🏠 Rejtett nyomok, tárgyak elrejtése/megtalálása városi környezetben
 
-Ha az egyik fél szándékosan energiát fektet bele, hogy rejtse nyomait, vagy egy tárgyat, akkor a sima [képzettségpróbás szituációból](nyomok_nyomkovetes_varos.md#nyomok-%C3%A9szrev%C3%A9tele-v%C3%A1rosi-k%C3%B6rnyezetben-) ellenpróba válik:
+Ha az egyik fél szándékosan energiát fektet bele, hogy elrejtse nyomait - vagy egy tárgyat.
+
+#### → Képzettség-ellenpróba
 
 ```
 Észlelés + Érzékenység   🔆kereső
             vs
 Észlelés + Intelligencia 🔆rejtő
 
-Kiterjesztés
-  + Keresés/Rejtés kiterjeszt (N)
+🟨 Normál Kiterjesztés: Keresés/Rejtés fortély
 
 + szituációtól függő módosítók
 ```
 
-A "szituációtól függő módosítókat" a KM adhatja, az eredeti [nyomok észrevétele képzettségpróbánál](#nyomok-%C3%A9szrev%C3%A9tele-v%C3%A1rosi-k%C3%B6rnyezetben-) leírt módon, a Nehézség függvényében. Például egy üres szobában nehezebb elrejteni valamit, mint egy 100 éves raktárban, ami plafonig van kacatokkal.
+"Szituációtól függő módosítók: KM adhatja Nehézség függvényében.\
+Például egy üres szobában nehezebb elrejteni valamit, mint egy 100 éves raktárban, ami plafonig van kacatokkal.
 
 Kapcsolódik:
-- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettség
-- [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md) fortély
+- Képzettség: [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)
+- Fortély: [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md)
 
 ---
 
