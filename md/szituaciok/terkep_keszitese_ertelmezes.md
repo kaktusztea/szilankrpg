@@ -1,13 +1,21 @@
-## Térkép készítése, értelmezése
+## Térkép készítése, olvasása, értelmezése
 
-Nem valami hevenyészett papírfecnire gondoljunk, hanem valós, méréseken, földrajzi ismereten alapuló térkép készítésére.
+Ne valami hevenyészett papírfecnire gondoljunk, hanem valós, méréseken, földrajzi ismereten alapuló térkép készítésére. Nyilván egy egyszerű "kalóztérkép" olvasásának **Nehézsége** rendkívül alacsony - még képzetlenül is menni fog.
 
-A térkép olvasása is ide tartozik, a lenti képzettséggel dobjuk. Nyilván egy egyszerű "kalóztérkép" olvasásának Nehézsége rendkívül alacsony - még képzetlenül is menni fog.
+###  → Képzettségpróba:  [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) + Önuralom
 
-[Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettségpróba
-- **Nehézség**: a térkép bonyolultsága és részletessége alapján megállapított szint
-- **Erős kiterjesztés**: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) - adott városnyi terület
-- **Normál kiterjesztés**: [Térképészet](../fortelyok.szabad/terkepeszet.md) fortély
+```
+Nehézség
+  térkép bonyolultsága és részletessége
+  alapján megállapított szint
+
+Kiterjesztések
+🟥 Helyismeret fortély - adott városnyi terület
+🟨 Térképészet fortély
+```
+
+→ Fortély: [Helyismeret](../fortelyok.kiemelt/helyismeret.md)\
+→ Fortély: [Térképészet](../fortelyok.szabad/terkepeszet.md)
 
 ---
 

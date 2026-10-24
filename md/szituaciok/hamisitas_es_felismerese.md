@@ -2,9 +2,7 @@
 
 Az ősi versenyfutás: hamisítás és annak felismerése.
 
-### Műtárgyak → Ellenpróba:  Képzőművészet vs Értékbecslés
-
-
+### Műtárgyak → Képzőművészet vs Értékbecslés
 
 ```
 🔆Készítő
@@ -53,7 +51,7 @@ Művészetismeret + Intelligencia
   🟥 Szobrászat fortély
 ```
 
-→ Képzettség: [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md)
+→ Képzettség: [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md)\
 → Képzettség: [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md)
 
 <br />
