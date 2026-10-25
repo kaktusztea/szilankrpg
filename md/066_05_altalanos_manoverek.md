@@ -17,7 +17,6 @@
 - [Lovas, léglovas megakasztása](#lovas-l%C3%A9glovas-megakaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
-- [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Piszkos trükk](#piszkos-trükk)
 - [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s)
@@ -353,36 +352,6 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 - **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról** bónuszait - attól függően, hogy milyen pozícióban van.
 
 **Kapcsolódik**: [Manőverfókuszok: Helyezkedések](fortelyok.harci/manoverfokuszok_helyezkedesek.md) fortély
-
-<br />
-
----
-### Pajzsrongálás
-
-Szándékosan rongálod ellenfeled pajzsát, csökkentve annak **Védő Értékét**.
-
-- Nehézség: `6`
-- Fázisok: `Végrehajtás, Ellenpróba`
-- 🟨 Normál követelmény: Aktuális harcmodor - `6.szint`
-- 🟥 Erős követelmény: `Erő: +1`, Zúzó- vagy kétkezes fegyver használata
-- ❌ Ez ellen a manőver ellen **NEM** számít a pajzs adta **Védő Érték**!
-
-**Hatás**: Sebzést dobsz. Zúzó- és kétkezes vágó fegyverek sebzése (`SP`) csökkenti ellenfeled pajzsának **Védő Értékét** (véglegesen).
-- Zúzó: `1:2 SP`
-- Vágó: `1:4 SP`
-
-🔆 Fontos: legalább azonos alapanyag erősségű fegyverrel tudod megrongálni az adott pajzsot.
-
-```
-Anyagok erőssége
-
-↑ Lunír
-↑ Mithrill
-↑ Abbitacél
-↑ Acél
-↑ Bronz
-↑ Fa
-```
 
 <br />
 
