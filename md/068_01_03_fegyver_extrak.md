@@ -143,10 +143,10 @@ Kimondottan pajzs megrongálására alkalmas fegyver.
 ```
 Feltétel: cél pajzsot használ; Támadó dobás k20: 11-20
 Hatás:    Kisebb fegyver
-             Cél Pajzs-VÉ: -3 (végleg)
+             Cél Pajzs-VÉ: -3 (kihúzásig)
              Státusz: Blokkolt (1)
           Szálfegyver
-             Cél Pajzs-VÉ: -5 (végleg)
+             Cél Pajzs-VÉ: -5 (kihúzásig)
              Státusz: Blokkolt (2)
 ```
 
