@@ -69,7 +69,7 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 ---
 ### Csonkolás
 
-Lecsapod ellenfeled kezét, vagy lábát.
+Lecsapod vagy megnyomorítod ellenfeled kezét, vagy lábát.
 
 - Nehézség:
   - `8`: kéz csonkolása
