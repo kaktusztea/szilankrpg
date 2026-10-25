@@ -141,8 +141,8 @@ Kimondottan pajzs megrongálására alkalmas fegyver.
 ### Pajzsrongáló (hajító)
 
 ```
-Feltétel: cél pajzsot használ; Támadó dobás k20: 11-20
-Hatás:    Kisebb fegyver
+Feltétel: cél pajzsot használ; Célzó dobás találat: pajzsot
+Hatás:    Kisebb hajítófegyver
              Cél Pajzs-VÉ: -3 (kihúzásig)
              Státusz: Blokkolt (1)
           Szálfegyver
