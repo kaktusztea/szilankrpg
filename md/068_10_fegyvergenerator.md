@@ -123,7 +123,7 @@ Szúró
   pengehegy-apró              nincs
   pengehegy-tőr               SP:+1
   pengehegy-kard              SP:+2, Átütés:1
-  (egykezes pengehegynél: "Pontos" extra)
+  (egykezes pengehegynél: "Manőver Precíz támadás könnyebb (pontos)" extra)
 Vágó-egyenes
   vágóél-egyenes-rövid        TÉ:+1, VÉ:+1
   vágóél-egyenes-átlagos      SP:+1, TÉ:+2, VÉ:+2
@@ -147,7 +147,7 @@ Speciális aktorok (kevés, egyedi fegyverhez):
 Zúzó
   kampós             SP:-5
                      másodlagos aktornak, extra:
-                     Kampós véggel lábkirántás
+                     Manőver Lábkirántás könnyebb (kampós véggel)
   vasököl            TÉ:-1, VÉ:-2
                      fém ütőfelület
                      (Vasököl, Markolatgomb)
@@ -246,7 +246,8 @@ A legendás anyagok és a magas Idea ritkák és drágák - a `+4`/`+5` Idea nar
 ```
 szálfegyver nyél
   sima          nincs hatás
-  fanyelű       extra: Fegyvertörés-ellenpróba -2
+  fanyelű       extra: Manőver Fegyvertörés ellene könnyebb (fanyél)
+                Fegyvertörés-ellenpróba -2
                 (a fa nyél könnyebben törik)
   vasaltszárú   súly +1 kategória
   tömörszárú    SP:+1, súly +2 kategória
@@ -451,8 +452,9 @@ GAME
     TÉ:8, VÉ:10, SP:+9, Átütés:2, Sebesség:11
   másodlagos: buzogányfej-tompa (zúzó)
     TÉ:8, VÉ:8, SP:+9, Átütés:0, Sebesség:11
-  Extrák: Beszorítható (nagyon) (hossz 9),
-          fanyél fegyvertörése könnyebb
+  Extrák: Pajzsrongáló,
+          Beszorítható (nagyon) (hossz 9),
+          Manőver Fegyvertörés ellene könnyebb (fanyél)
   ár_alap  fém-hegyű(0.2x) × fejdarab 2 × hossz 9(2x) = 0.8
 ```
 

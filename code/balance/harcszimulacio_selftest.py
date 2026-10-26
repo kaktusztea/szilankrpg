@@ -54,7 +54,7 @@ def ref_a(fegyver_nev, mf_fok, harcmodor_szint):
     meret = {'passzol': 0, 'nem passzol': 3, 'borzalmas': 6}[p['méret_illeszkedés']]
     mgt = max(0, st['mgt'] + al['mgt'] + csat * tag + meret - t['erő'])
     sfe = st['sfé_fizikai'] + al['sfé_bónusz'] + p['idea'] - p['rongálódás']
-    mv_fok = next((x['fok'] for x in KAR['fortélyok'] if x['név'] == 'Merevvértviselet'), 0)
+    mv_fok = next((x['fok'] for x in KAR['fortélyok'] if x['id'] == 'merevvértviselet'), 0)
     mv_csokk = next(b['TÉ_büntetés_csökkentés'] for b in K['merevvértviselet_bónuszok'] if b['fok'] == mv_fok)
     mv_bunt = max(0, mgt - mv_csokk) if st['merev'] else 0
     hk = max(0, harcmodor_szint + t['gyorsaság'] - mgt - 0 + 1)   # +1 = Harckeret növelés 1.fok

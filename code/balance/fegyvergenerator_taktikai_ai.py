@@ -51,7 +51,7 @@ _MANOVEREK_RAW = {m["id"]: m for m in _load_table("manoverek.json")}
 # halál vagy "fenntartott fogás" (Feszítés/Leszorítás) állapotot - ezért csak azok a
 # manőverek vannak bekötve, amiknek a KÖVETKEZMÉNYE leképezhető a meglévő `Harcos.helyzet`
 # mezőre (harci_helyzetek.json id-k). A kihagyott manőverek (Fegyvertörés, Lefegyverzés,
-# Csonkolás, Feszítés/Leszorítás, Lánccsapda, Nyaktörés, Kéztörés/Lábtörés, Pajzsrongálás,
+# Csonkolás, Feszítés/Leszorítás, Lánccsapda, Nyaktörés, Kéztörés/Lábtörés,
 # stb.) NINCSENEK bekötve - mechanikai hatásuk (állapot-mutáció) kívül esik a modell
 # hatókörén. Ha ezt bővíteni kell, a Harcos állapotot elsőre fegyver/végtag-állapotokkal
 # kellene kiegészíteni, ami a jelen motor scope-ján túlmutat.

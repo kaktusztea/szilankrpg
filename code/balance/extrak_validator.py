@@ -2,7 +2,7 @@
 """A data/sources/fegyverek/extrak.yaml validálása az extrak.schema.yaml alapján.
 
 Az egységes effekt-modell (engine_spec.md §42) vokabulárját ellenőrzi:
-  - rekord: kötelező/ismeretlen mezők, csoport enum
+  - rekord: kötelező/ismeretlen mezők, csoport enum, állapot enum (aktív/passzív)
   - feltétel[]: minden elem {típus, ...} REFERENCIA, a típus a feltetel_tipus_enum-ból
   - hatás[]: mód a mod_enum-ból; cél string; entitás-cél ("prefix:érték") prefixe a cel_prefix_enum-ból;
     al-feltétel ("prefix:érték") prefixe az alfeltetel_prefix_enum-ból
@@ -39,6 +39,7 @@ def _prefix_ok(ertek, enum, cimke, hibak, prefix_kotelezo):
 def validate():
     s = _load("extrak.schema.yaml")
     csoport_enum = set(s["csoport_enum"])
+    allapot_enum = set(s["allapot_enum"])
     mod_enum = set(s["mod_enum"])
     feltetel_tipus = set(s["feltetel_tipus_enum"])
     cel_prefix = set(s["cel_prefix_enum"])
@@ -70,6 +71,8 @@ def validate():
                 hibak.append(f"{c}: hiányzó kötelező mező {k!r}")
         if "csoport" in e and e["csoport"] not in csoport_enum:
             hibak.append(f"{c}.csoport: érvénytelen {e['csoport']!r} - megengedett: {sorted(csoport_enum)}")
+        if "állapot" in e and e["állapot"] not in allapot_enum:
+            hibak.append(f"{c}.állapot: érvénytelen {e['állapot']!r} - megengedett: {sorted(allapot_enum)}")
 
         for f in e.get("feltétel", []) or []:
             if not isinstance(f, dict) or "típus" not in f:
