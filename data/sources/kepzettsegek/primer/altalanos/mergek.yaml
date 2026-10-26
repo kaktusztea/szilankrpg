@@ -3,7 +3,7 @@ schema_version: 1
 
 id: "mérgek"
 név: "Mérgek"
-leírás: "Mérgek előállítása, hatásaik ismerete."
+leírás: "Mérgek kikeverésének receptjei és módja; mérgek felismerése, ellenszer készítése, mérgezés gyógyítása. Magasabb szinten egyre komplexebb, rafináltabb keverékek állíthatók össze."
 primer: true
 csoport: "tudományos"
 többszörös: []
@@ -14,7 +14,7 @@ mesterbónuszok:
   - szint: 9
     leírás: ""
   - szint: 12
-    leírás: ""
+    leírás: "Érintésed mérgező lesz, de csak ha akarod (izzadság, nyál, extrém esetben vér) - egyfajta méreg-testkontroll. Érintéssel apró adag mérget juttathatsz a célba a saját repertoárodból (pl. bénító, gyengítő). A veled kompatibilis, saját készítésű mérgeket kis adagban beépítheted a testedbe anélkül, hogy hatnának, majd később a bőrödön át kieresztheted."
   - szint: 15
     leírás: ""
 helyzetfüggő_módosítók:
@@ -22,6 +22,7 @@ helyzetfüggő_módosítók:
     mód: "single"
     sorok:
       - { érték: -3, leírás: "Szegényes felszerelés" }
+      - { érték: 0, leírás: "Normál felszerelés" }
       - { érték: +3, leírás: "Jól felszerelt labor" }
   - kategória: "Komponensek"
     mód: "single"
