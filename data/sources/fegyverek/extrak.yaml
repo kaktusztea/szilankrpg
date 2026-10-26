@@ -161,8 +161,8 @@ extrak:
     hatás:
       - {cél: SFÉ, mód: szorzó, érték: 2}
 
-  - id: pajzsrongaló_kézi
-    név: "Pajzsrongáló (kézi)"
+  - id: pajzsrongáló
+    név: "Pajzsrongáló"
     csoport: harci_helyzet
     leírás: >
       Kimondottan pajzs megrongálására alkalmas kézi fegyver. Ha a cél pajzsot használ és a
@@ -173,11 +173,11 @@ extrak:
     hatás:
       - {cél: pajzs-VÉ, mód: szöveges}
 
-  - id: pajzsrongaló_hajító
-    név: "Pajzsrongáló (hajító)"
+  - id: pajzsbénító
+    név: "Pajzsbénító"
     csoport: harci_helyzet
     leírás: >
-      Pajzsba dobva megakad benne és akadályozza használatát. Ha a cél pajzsot használ és a
+      Hajítófegyver, pajzsba dobva megakad benne és akadályozza használatát. Ha a cél pajzsot használ és a
       Célzó dobás a pajzsot találja: kisebb hajítófegyver → Pajzs-VÉ:-3 (kihúzásig) + Blokkolt (1);
       szálfegyver → Pajzs-VÉ:-5 (kihúzásig) + Blokkolt (2). (KM könyveli.)
     feltétel:

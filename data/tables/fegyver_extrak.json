@@ -322,9 +322,9 @@
       }
     ]
   },
-  "pajzsrongaló_kézi": {
-    "id": "pajzsrongaló_kézi",
-    "név": "Pajzsrongáló (kézi)",
+  "pajzsrongáló": {
+    "id": "pajzsrongáló",
+    "név": "Pajzsrongáló",
     "csoport": "harci_helyzet",
     "leírás": "Kimondottan pajzs megrongálására alkalmas kézi fegyver. Ha a cél pajzsot használ és a Támadó dobás k20 eredménye 11-20, a cél Pajzs-VÉ-je véglegesen -1 (KM könyveli).\n",
     "feltétel": [
@@ -344,11 +344,11 @@
       }
     ]
   },
-  "pajzsrongaló_hajító": {
-    "id": "pajzsrongaló_hajító",
-    "név": "Pajzsrongáló (hajító)",
+  "pajzsbénító": {
+    "id": "pajzsbénító",
+    "név": "Pajzsbénító",
     "csoport": "harci_helyzet",
-    "leírás": "Pajzsba dobva megakad benne és akadályozza használatát. Ha a cél pajzsot használ és a Célzó dobás a pajzsot találja: kisebb hajítófegyver → Pajzs-VÉ:-3 (kihúzásig) + Blokkolt (1); szálfegyver → Pajzs-VÉ:-5 (kihúzásig) + Blokkolt (2). (KM könyveli.)\n",
+    "leírás": "Hajítófegyver, pajzsba dobva megakad benne és akadályozza használatát. Ha a cél pajzsot használ és a Célzó dobás a pajzsot találja: kisebb hajítófegyver → Pajzs-VÉ:-3 (kihúzásig) + Blokkolt (1); szálfegyver → Pajzs-VÉ:-5 (kihúzásig) + Blokkolt (2). (KM könyveli.)\n",
     "feltétel": [
       {
         "típus": "cél_felszereles",
