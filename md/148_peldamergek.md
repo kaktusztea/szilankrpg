@@ -3,21 +3,24 @@
 ### ⚡ **Lórúgás (brutálisan erős altató - italméreg)**
 
 ```
-→ Erősség: 10 (a legerősebb)
-→ Hatás max súlyossága: 1 (alvás)
-→ Meddig áll el: +4 (1 nap folyadékban)
-→ Hatóidő: +5 (azonnal)
-→ 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
+→ (1) Erősség:       10 (a legerősebb)
+→ (2) Súlyosság:      1 (Alvás)
+→ (3) Hatáskezdet:   +5 (Azonnal)
+→ (4) Hatástartam:   +3 (pár óra)
+→ (5) Bomlási idő:    4 (1 nap folyadékban)
+→ (6) Kimutatási idő: 0 (1 nap)
+→ (7) Elállás:        0 (1 holdfordulón belül)
+→ (8) Speciális:     +0 (1 komponens, 1 hordozó közeg, nem-sűrű)
 ```
 
 ```
-Így a méreg komplexitása: 20
- → Minimum 10. szintű méregkeverés szükséges
+Komplexitás: 23
+ → Biztos tudás: Mk 9
 ```
 
 A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy kicsattanó egészségű, 120 kilós barbár is szinte biztos, hogy kidől tőle egy kis délutáni durmolásra.
 
-🔆 Látható, hogy egy fél óra alatt ható, ugyanilyen méreghez elég lenne a `8.szintű` Mérgek képzettség is.
+🔆 Látható, hogy az azonnali hatás és a hosszú bomlási idő húzza fel a Komplexitást: egy fél óra alatt ható, rövidebb eltarthatóságú, ugyanilyen erős méreg jóval könnyebben kikeverhető lenne.
 
 <br />
 
@@ -25,16 +28,19 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 ### ⚡ **Könnycsepp a pengén (halálos fegyverméreg)**
 
 ```
-→ Erősség: 6
-→ Hatás max súlyossága: 5 (halál)
-→ Meddig áll el: +2 (10 percig a pengére locsolva)
-→ Hatóidő: +4 (gyors (1 kör múlva)
-→ 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
+→ (1) Erősség:        6
+→ (2) Súlyosság:      5 (Halál)
+→ (3) Hatáskezdet:   +4 (Következő körben)
+→ (4) Hatástartam:   +2 (harc végéig / rövid jelenet)
+→ (5) Bomlási idő:    2 (10 perc a pengére locsolva)
+→ (6) Kimutatási idő: 0 (1 nap)
+→ (7) Elállás:        0 (1 holdfordulón belül)
+→ (8) Speciális:     +0 (1 komponens, 1 hordozó közeg, nem-sűrű)
 ```
 
 ```
-Így a méreg komplexitása: 17
- → Minimum 9. szintű Mérgek képzettség szükséges
+Komplexitás: 19
+ → Biztos tudás: Mk 7
 ```
 
 🔆 A fenti fegyverméreg erőssége az átlagosnál kicsit erősebbnek mondható, de egy magas Edzettséggel bíró áldozat jó eséllyel megússza az elsődleges hatását (halál) és "csak" lebénul, vagy erős bódulatba kerül.
@@ -47,21 +53,27 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 ### ⚡ **Múló évszakok (többkomponensű mesteri ital/légiméreg)**
 
 ```
-→ Erősség: 5
-→ Hatás max súlyossága: 5 (halál)
-→ Meddig áll el: +6 (Örökké)
-→ Hatóidő: +1 (fél nap múlva)
-→ 3 komponensű, 2 hordozó közeg (levegő, folyadék), nem-sűrű: +4 +3 +0
-→ Csak 1 komponensben van hatóanyag, a többi természetes: +3
-→ Szagtalan/ízetlen: +3
+→ (1) Erősség:         5
+→ (2) Súlyosság:       5 (Halál)
+→ (3) Hatáskezdet:    +1 (1 nappal eltolva)
+→ (4) Hatástartam:    +5 (hónapok)
+→ (5) Bomlási idő:     6  (Örökké)
+→ (6) Kimutatási idő:  4 (Hatás után nem kimutatható)
+→ (7) Elállás:         4  (örökké)
+→ (8) Speciális:     +11
+     +4: 3 komponens (+2 +2)
+     +3: 2 hordozó közeg (levegő, folyadék)
+     +3: csak 1 komponensben van hatóanyag,
+     +3: szagtalan/ízetlen
+     (a nem-sűrű: +0)
 ```
 
 ```
-Így a méreg komplexitása: 30
- → Minimum 15. szintű Mérgek képzettség szükséges 5-ös Tulajdonsággal!
+Komplexitás: 41
+ → Biztos tudás: Mk 12
 ```
 
-Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas szinten és a képzettség követelményen.
+Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas Komplexitáson és a biztos tudás követelményeken.
 
 ⚜️ "Az öreg király rajongott az orchideákért. Tavaszra és nyárra is volt egy-egy különleges, ritka fajtája végtelen udvarának kertjében. Tavasszal leszakajtotta a legszebbet a narancsszínből, nyáron a bíborszínből. Mindkettő hálószobáját díszítette.
 
@@ -73,7 +85,7 @@ Fia nem lévén, unokaöccse lépett helyébe, ki - úgy mondják - már nagyon 
 
 🔆 A fenti méreget `3` darab komponensre bontotta a déli vajákos: a király borába (ital hordozó) adagolta hetente egyszer az elmúlt 9 hónapban a szagtalan/ízetlen alapmérget, amely önmagában ártalmatlan, így nem is kimutatható, viszont stabilan felgyűlt a szervezetben. A maradék 2 komponens a 2 orchidea (légi hordozó) virágpora volt, melyet a király belélegzett - hisz mindet a hálószobájába tette. Az első leszakajtása után még nem történt semmi, a hatáshoz mind a kettőre (plusz a borban levő alapméregre) szükség volt.
 
-A hatást a vajákos eltolta fél nappal, hogy éjszaka jöjjön a vég, így a gyanú sem ébredt fel senkiben. Az Erősséget (`5`) bőven elégnek vélte - a király Egészsége (`-1`) már amúgy is igen gyenge lábakon állt.
+A hatást a vajákos eltolta egy nappal, hogy éjszaka jöjjön a vég, így a gyanú sem ébredt fel senkiben. Az Erősséget (`5`) bőven elégnek vélte - a király Egészsége (`-1`) már amúgy is igen gyenge lábakon állt.
 
 ---
 
