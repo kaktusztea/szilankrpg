@@ -1082,7 +1082,7 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (19 taktika: 16 közelharci + 3 távharci; módosítók, hatások, fokok, kombó szabályok, megkötések, skálázható flag)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (40 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek, tiltott_fegyverfogások, fegyver_override)
-- `data/sources/manoverek.yaml` → `tables/manoverek.json` (39 manőver: id, típus, nehézség, fázisok, `fázis_info` [opcionális map: fázis-betű → magyarázó szöveg], `fázis_cselekvő` [opcionális map: fázis-betű → "én"|"ellenfél"; default M→ellenfél, V/E→én - pl. Távoltartás/Hátas táncoltatása/Lovas megakasztása M→én], `ellenpróba_bünteti` [opcionális bool: az Ellenpróba nem buktató, rontásnál is sikeres a manőver, csak büntetés - Átsiklás, Kibontakozás], `hatás` [mondatonkénti lista; a `Sikertelen:` / `Kudarc:` / `Feltétel:` előtagú sorokat a sikeres-box kiszűri, a picker mind mutatja], `végrehajtás_té_módosító` [default 5, 0=nincs bónusz], `követelmények` [opcionális, Normál/Erős - lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (38 manőver: id, típus, nehézség, fázisok, `fázis_info` [opcionális map: fázis-betű → magyarázó szöveg], `fázis_cselekvő` [opcionális map: fázis-betű → "én"|"ellenfél"; default M→ellenfél, V/E→én - pl. Távoltartás/Hátas táncoltatása/Lovas megakasztása M→én], `ellenpróba_bünteti` [opcionális bool: az Ellenpróba nem buktató, rontásnál is sikeres a manőver, csak büntetés - Átsiklás, Kibontakozás], `hatás` [mondatonkénti lista; a `Sikertelen:` / `Kudarc:` / `Feltétel:` előtagú sorokat a sikeres-box kiszűri, a picker mind mutatja], `végrehajtás_té_módosító` [default 5, 0=nincs bónusz], `követelmények` [opcionális, Normál/Erős - lásd lentebb], `helyzetfüggő_módosítók` [opcionális, képzettség-minta táblák])
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
@@ -3858,7 +3858,7 @@ Forrás: `web/karakter/src/engine/reactive.ts`, `data/rules.json`
 
 ### 41.1 Architektúra
 
-A webapp **minden numerikus kalkulációja** deklaratív szabályokból áll (`rules.json`, 51 szabály).
+A webapp **minden numerikus kalkulációja** deklaratív szabályokból áll (`rules.json`, 57 szabály).
 Nincs hardcoded TS kalkuláció - a TypeScript kód csak context-et épít és `evaluate()`-ot hív.
 
 Kivétel (maradék TS inline logika):
@@ -3980,7 +3980,7 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 
 note: A távharc cella / cél_VÉ NEM reactive szabály - tavharc/helpers.ts (calcVÉ, calcSzorzóÖsszeg).
 
-### 41.9 Teljes szabálylista (51 db)
+### 41.9 Teljes szabálylista (57 db)
 
 | ID | Típus | Bemenet összefoglaló |
 |----|-------|---------------------|
@@ -4025,6 +4025,12 @@ note: A távharc cella / cél_VÉ NEM reactive szabály - tavharc/helpers.ts (ca
 | páncél_lefedettség | if | páncél_van, végtagvédettség, sisak |
 | páncél_MGT | képlet + nested if/lookup | struktúra + alapanyag + csatolt + méret - erő |
 | merevvért_TÉ_büntetés | if | páncél_merev, MGT, csökkentés |
+| páncél_struktúra_ár | lookup | struktúrák tábla → struktúra_ár (§43.1) |
+| páncél_alapanyag_ár | if + lookup | páncél_fém → alapanyag_ár tábla (nem-fém: 1) (§43.1) |
+| páncél_kidolgozottság_ár | lookup | kidolgozottság_ár tábla (§43.1) |
+| páncél_idea_ár | lookup | idea_ár tábla (§43.1) |
+| páncél_torzó_ár | képlet | struktúra_ár × alapanyag_ár × idea_ár (§43.1) |
+| páncél_ár | if + képlet | páncél_van → torzó_ár + csatolt_db × (torzó_ár/5 × kidolgozottság_ár) (§43.1) |
 | képzettség_max_szint_primer | képlet | max_szint, tsz |
 | képzettség_max_szint_szekunder | képlet | max_szint, tsz + plusz |
 | fegyver_TÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély - merevvért_TÉ_büntetés |

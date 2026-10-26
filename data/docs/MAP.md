@@ -10,7 +10,7 @@ data/
   schemas/                   YAML sémák (karakter, fortely, kepzettseg, fegyver, stb.)
   tables/                    Generált JSON (runtime adat, NE kézzel szerkeszd)
   karakter/                  Template-ek (empty_karakter.json, test_karakter2.json, test_karakter3.json)
-  rules.json                 Reactive engine: 51 deklaratív szabály
+  rules.json                 Reactive engine: 57 deklaratív szabály
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
                              fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate),
@@ -336,9 +336,9 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml` | Fortély definíciók (184 db, stabil `id` + `név`) | `fortelyok.json` |
 | `kepzettsegek/{primer,szekunder}/*.yaml` | Képzettség definíciók (81 db, stabil `id` + `név`) | `kepzettsegek.json` |
 | `fajok/*.yaml` | Faj hátterek (27 db) | `fajok.json`, `faj_tulajdonsag_keretek.json`, `faj_fortelyok.json` (faj → {fortély: max_fok}, `faj` követelmény) |
-| `taktikak.yaml` | Harci taktikák (14 db) | `taktikak.json` |
+| `taktikak.yaml` | Harci taktikák (19 db) | `taktikak.json` |
 | `harci_helyzetek.yaml` | Harci helyzetek (39 db) | `harci_helyzetek.json` |
-| `manoverek.yaml` | Manőverek (39 db) | `manoverek.json` |
+| `manoverek.yaml` | Manőverek (38 db) | `manoverek.json` |
 | `statuszok.yaml` | Státuszok (19 db) | `statuszok.json` |
 | `hatasok.yaml` | Hatás mechanikák | - (csak validáció, az app nem tölti be) |
 | `esemenyek.yaml` | Célpontok/események (23 db) | `esemenyek.json` |
