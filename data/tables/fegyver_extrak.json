@@ -3,6 +3,7 @@
     "id": "kulonleges_felkeszites",
     "név": "Különleges felkészítés",
     "csoport": "felkészítés",
+    "állapot": "aktív",
     "leírás": "Belső harci iskola + Mesterfegyver-tudás kell. Enélkül a felkészítetlen alapértékek érvényesek; felkészítve a Mesterfegyver fortély e fegyverre adott bónusza megduplázódik.\n",
     "feltétel": [
       {
@@ -27,6 +28,7 @@
     "id": "beszorithato_enyhen",
     "név": "Beszorítható (enyhén)",
     "csoport": "harci_helyzet",
+    "állapot": "passzív",
     "leírás": "Közepesen hosszú fegyver (hossz 5): beszorítva a technikák csak részben vihetők ki, fegyver TÉ/VÉ feleződik.",
     "feltétel": [
       {
@@ -53,6 +55,7 @@
     "id": "beszorithato_nagyon",
     "név": "Beszorítható (nagyon)",
     "csoport": "harci_helyzet",
+    "állapot": "passzív",
     "leírás": "Hosszú fegyver (hossz 7+): beszorítva nem forgatható rendesen, fegyver TÉ/VÉ:0.",
     "feltétel": [
       {
@@ -79,6 +82,7 @@
     "id": "panceltalant_jobban_sebez",
     "név": "Páncéltalant jobban sebez",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Vérttelen célon nagyobb sebet ejt. Példa: Meneth, Béltépő",
     "feltétel": [
       {
@@ -98,6 +102,7 @@
     "id": "pocsek_vedekezo_pancelos_ellen",
     "név": "Pocsék védekező (páncélos ellen)",
     "csoport": "harci_helyzet",
+    "állapot": "passzív",
     "leírás": "Páncélos ellenfél ellen a hárítási hátrány kiütközik - VÉ:0. Páncéltalan ellen a kontakt-fenyegetés miatt a bázis VÉ marad.",
     "feltétel": [
       {
@@ -118,6 +123,7 @@
     "id": "pancelszuras_belharcban",
     "név": "Belharcban rések közt beszúr",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Belharcban a fegyverhossz-korlát rá nem vonatkozik; földön lévő ellenfélnél a rések közt szúr - a páncél SFÉ-je 0.",
     "feltétel": [
       {
@@ -143,6 +149,7 @@
     "id": "puszta_kez_belharcban",
     "név": "Puszta kéz belharcban",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Puszta kéz Belharci helyzetben: TÉ, VÉ, SP = 0 (a fegyvertelen büntetés megszűnik). Természetes fegyver fortéllyal az SP 1 marad.",
     "feltétel": [
       {
@@ -175,6 +182,7 @@
     "id": "pikas_kozrefogasa",
     "név": "Pikás közrefogása",
     "csoport": "harci_helyzet",
+    "állapot": "passzív",
     "leírás": "Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó ellen 0 harcértékű.",
     "feltétel": [
       {
@@ -205,6 +213,7 @@
     "id": "kopjas_roham",
     "név": "Kopja lovas rohamban",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Lovas roham taktikában a kopja alap Sebzéséhez +10 SP bónusz adódik (harci és tornakopja is).",
     "feltétel": [
       {
@@ -220,10 +229,11 @@
       }
     ]
   },
-  "pajzs_ve_felezes": {
-    "id": "pajzs_ve_felezes",
+  "lancos_pajzs_ve_felezes": {
+    "id": "lancos_pajzs_ve_felezes",
     "név": "Láncos: pajzs VÉ felezés",
     "csoport": "harci_helyzet",
+    "állapot": "passzív",
     "leírás": "A láncos fej megkerüli a pajzsot - a pajzs adta VÉ feleződik.",
     "feltétel": [
       {
@@ -240,10 +250,11 @@
       }
     ]
   },
-  "pajzs_megkerules": {
-    "id": "pajzs_megkerules",
+  "pajzs_megkerulese": {
+    "id": "pajzs_megkerulese",
     "név": "Pajzs megkerülése",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Hajlékony fegyver a pajzs mögé csap, a pajzs adta VÉ NEM számít ellene (teljes megkerülés).",
     "feltétel": [
       {
@@ -264,13 +275,8 @@
     "id": "fegyvertores_immunis",
     "név": "Fegyvertörés-immunis",
     "csoport": "harci_helyzet",
+    "állapot": "passzív",
     "leírás": "Hajlékony (nem merev) fegyver, a Fegyvertörés manőver nem fog rajta.",
-    "feltétel": [
-      {
-        "típus": "manőver_állapot",
-        "érték": "passzív"
-      }
-    ],
     "hatás": [
       {
         "cél": "manőver_ellenpróba",
@@ -279,16 +285,13 @@
       }
     ]
   },
-  "fanyel_fegyvertores_konnyebb": {
-    "id": "fanyel_fegyvertores_konnyebb",
-    "név": "Fanyél fegyvertörése könnyebb",
+  "manover_fegyvertores_ellene_konnyebb_fanyel": {
+    "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+    "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)",
     "csoport": "tulajdonság",
+    "állapot": "passzív",
     "leírás": "Fanyelű fegyver: Fegyvertörés manővernél a passzív fél (akié a fegyver) dobása -2 (az ő fegyverét könnyebb eltörni).",
     "feltétel": [
-      {
-        "típus": "manőver_állapot",
-        "érték": "passzív"
-      },
       {
         "típus": "narratív",
         "név": "Ellenfél fegyvere fém"
@@ -307,6 +310,7 @@
     "id": "sfe_duplazodik",
     "név": "SFÉ dupla ellene",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Páncél ellen különösen rossz, a célpont páncél SFÉ-je duplán számít.",
     "feltétel": [
       {
@@ -326,6 +330,7 @@
     "id": "pajzsrongáló",
     "név": "Pajzsrongáló",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Kimondottan pajzs megrongálására alkalmas kézi fegyver. Ha a cél pajzsot használ és a Támadó dobás k20 eredménye 11-20, a cél Pajzs-VÉ-je véglegesen -1 (KM könyveli).\n",
     "feltétel": [
       {
@@ -348,6 +353,7 @@
     "id": "pajzsbénító",
     "név": "Pajzsbénító",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Hajítófegyver, pajzsba dobva megakad benne és akadályozza használatát. Ha a cél pajzsot használ és a Célzó dobás a pajzsot találja: kisebb hajítófegyver → Pajzs-VÉ:-3 (kihúzásig) + Blokkolt (1); szálfegyver → Pajzs-VÉ:-5 (kihúzásig) + Blokkolt (2). (KM könyveli.)\n",
     "feltétel": [
       {
@@ -370,6 +376,7 @@
     "id": "beakadas_kockazat",
     "név": "Beakad (~50%)",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Sebző találat után (tehát átment a páncélon) ~50% esély, hogy beakad és harc közben nem húzható ki (KM dönti el).",
     "hatás": [
       {
@@ -382,6 +389,7 @@
     "id": "onsebzes_kockazat",
     "név": "Önsebzés-kockázat",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Köz- és önveszélyes: a támadó k20 EGYBEN esélydobás - Mesterfegyver-foktól függő küszöb (Mf nélkül 1-10, Mf:1.fok 1-2, Mf:2-3.fok nincs) alá/rá dobva magadat sebzed (rendes sebzés önmagad ellen). Részletek: md/068_06.\n",
     "hatás": [
       {
@@ -390,10 +398,11 @@
       }
     ]
   },
-  "pontos": {
-    "id": "pontos",
-    "név": "Pontos",
+  "manover_preciz_tamadas_konnyebb_pontos": {
+    "id": "manover_preciz_tamadas_konnyebb_pontos",
+    "név": "Manőver Precíz támadás könnyebb (pontos)",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Precíziós szúróhegy: a Precíz támadás manőver Ellenpróbára bónusz: +2. Csak pengehegy aktor + egykezes forgatás mellett értelmes.\n",
     "feltétel": [
       {
@@ -403,10 +412,6 @@
       {
         "típus": "forgatás",
         "érték": "egykezes"
-      },
-      {
-        "típus": "manőver_állapot",
-        "érték": "aktív"
       }
     ],
     "hatás": [
@@ -418,19 +423,16 @@
       }
     ]
   },
-  "lefegyverezhetobb": {
-    "id": "lefegyverezhetobb",
-    "név": "Lefegyverezhetőbb",
+  "manover_lefegyverezes_ellene_konnyebb": {
+    "id": "manover_lefegyverezes_ellene_konnyebb",
+    "név": "Manőver Lefegyverezés ellene könnyebb",
     "csoport": "tulajdonság",
+    "állapot": "passzív",
     "leírás": "Az ilyen fegyvert az ellenfél könnyebben kiüti kezedből, könnyebben eltöri. Lefegyverzés / Fegyvertörés manővernél a passzív fél (akié a fegyver) dobása -2.\n",
     "feltétel": [
       {
         "típus": "forgatás",
         "érték": "egykezes"
-      },
-      {
-        "típus": "manőver_állapot",
-        "érték": "passzív"
       }
     ],
     "hatás": [
@@ -442,17 +444,12 @@
       }
     ]
   },
-  "lefegyverzese_nehezebb": {
-    "id": "lefegyverzese_nehezebb",
-    "név": "Lefegyverzése nehezebb",
+  "manover_lefegyverzes_ellene_nehezebb": {
+    "id": "manover_lefegyverzes_ellene_nehezebb",
+    "név": "Manőver Lefegyverzés ellene nehezebb",
     "csoport": "tulajdonság",
+    "állapot": "passzív",
     "leírás": "A fegyvert az ellenfél nehezebben üti ki a kezedből. Lefegyverzés manővernél a passzív fél (akié a fegyver) dobása +2 (nehezebb lefegyverezni).\n",
-    "feltétel": [
-      {
-        "típus": "manőver_állapot",
-        "érték": "passzív"
-      }
-    ],
     "hatás": [
       {
         "cél": "manőver_ellenpróba",
@@ -466,6 +463,7 @@
     "id": "zuzo_ellen_rosszabb",
     "név": "Zúzó fegyver ellen rosszabb",
     "csoport": "tulajdonság",
+    "állapot": "passzív",
     "leírás": "Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására. Elszenvedett VÉ csökkenésed duplázódik.\n",
     "feltétel": [
       {
@@ -481,19 +479,16 @@
       }
     ]
   },
-  "kampos_veggel_labkirantas": {
-    "id": "kampos_veggel_labkirantas",
-    "név": "Kampós véggel lábkirántás",
+  "manover_labkirantas_konnyebb_kampos_veggel": {
+    "id": "manover_labkirantas_konnyebb_kampos_veggel",
+    "név": "Manőver Lábkirántás könnyebb (kampós véggel)",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "A fegyver kampós vége a Lábkirántás manőver Ellenpróba dobásához +2 Helyzetfüggő módosítót ad. Jelenleg nincs fegyver, ami használja. pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).\n",
     "feltétel": [
       {
         "típus": "aktor",
         "érték": "kampós"
-      },
-      {
-        "típus": "manőver_állapot",
-        "érték": "aktív"
       }
     ],
     "hatás": [
@@ -507,8 +502,9 @@
   },
   "tavharc_sfe_duplan": {
     "id": "tavharc_sfe_duplan",
-    "név": "SFÉ duplán számít ellene",
+    "név": "Távharc SFÉ duplán számít ellene",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "A célpont páncél SFÉ-je duplán számít e lövedék ellen (pl. Dobócsillag, Parittya).",
     "hatás": [
       {
@@ -520,8 +516,9 @@
   },
   "tavharc_ij_erobonusz_tervezett": {
     "id": "tavharc_ij_erobonusz_tervezett",
-    "név": "Erőbónusz csak tervezett Erőnél",
+    "név": "Távharc íj Erőbónusz tervezett",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Az íj Erőbónusza csak akkor számít, ha az íj erre az Erő értékre lett tervezve (KM).",
     "hatás": [
       {
@@ -530,10 +527,11 @@
       }
     ]
   },
-  "tavharc_hajitotor_kozeli_loves": {
-    "id": "tavharc_hajitotor_kozeli_loves",
-    "név": "Közeli lövés automatikus bónusza",
+  "tavharc_kozeli_loves_automatikus_bonusz": {
+    "id": "tavharc_kozeli_loves_automatikus_bonusz",
+    "név": "Távharc Közeli lövés automatikus bónusz",
     "csoport": "harci_helyzet",
+    "állapot": "aktív",
     "leírás": "Ha a célpont az 1. Cellában van, automatikusan jár a Közeli lövés fortély CÉ:+10 bónusza.",
     "hatás": [
       {
@@ -542,10 +540,11 @@
       }
     ]
   },
-  "tavharc_elf_ij_keszito": {
-    "id": "tavharc_elf_ij_keszito",
-    "név": "Csak a készítő kezében",
+  "tavharc_ertekek_csak_keszito_kezeben": {
+    "id": "tavharc_ertekek_csak_keszito_kezeben",
+    "név": "Távharc Értékek csak készítő kezében",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Az értékek csak a készítő-birtokos kezében érvényesek; másnak hagyományos íjként (Osztó 4, nincs Erőbónusz).",
     "hatás": [
       {
@@ -556,8 +555,9 @@
   },
   "tavharc_ujratoltes_kharei": {
     "id": "tavharc_ujratoltes_kharei",
-    "név": "Tár + újratöltés (Kharei)",
+    "név": "Távharc Újratöltés (Kharei)",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Míg ki nem fogy a tár, sebesség-büntetés nélkül lő; utána újratöltés 1 kör (KM).",
     "hatás": [
       {
@@ -568,8 +568,9 @@
   },
   "tavharc_ujratoltes_shad0ni": {
     "id": "tavharc_ujratoltes_shad0ni",
-    "név": "Újratöltés (Shad0ni)",
+    "név": "Távharc Újratöltés (Shad0ni)",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Újratöltés: 1 emberrel 3 kör, 2 emberrel 1 kör (KM).",
     "hatás": [
       {
@@ -578,10 +579,11 @@
       }
     ]
   },
-  "tavharc_aquir_azonnali_halal": {
-    "id": "tavharc_aquir_azonnali_halal",
-    "név": "Aquir kézben azonnali halál",
+  "tavharc_aquir_kezben_azonnali_halal": {
+    "id": "tavharc_aquir_kezben_azonnali_halal",
+    "név": "Távharc Aquir kézben azonnali halál",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "Aquir kézben találatkor azonnali halált okoz; az Átütés is csak aquir kézben érvényes (KM).",
     "hatás": [
       {
@@ -590,10 +592,11 @@
       }
     ]
   },
-  "tavharc_fuvocso_kicsi_kabitas": {
-    "id": "tavharc_fuvocso_kicsi_kabitas",
-    "név": "Fúvócső (kicsi) esélydobás",
+  "tavharc_fuvocso_kicsi_hatas": {
+    "id": "tavharc_fuvocso_kicsi_hatas",
+    "név": "Távharc Fúvócső (kicsi) hatas",
     "csoport": "tulajdonság",
+    "állapot": "aktív",
     "leírás": "k20 Sebzésdobásnál: 20 → 1 ÉP, egyébként 0 ÉP (a méreg/altató a lényeg, KM).",
     "hatás": [
       {

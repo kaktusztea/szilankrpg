@@ -142,7 +142,7 @@ manőverek:
       mód: "single"
       sorok:
         - { extra_ref: "fegyvertores_immunis" }
-        - { extra_ref: "fanyel_fegyvertores_konnyebb" }
+        - { extra_ref: "manover_fegyvertores_ellene_konnyebb_fanyel" }
 - név: "Felállás földről"
   típus: "általános"
   nehézség: 6
@@ -253,7 +253,7 @@ manőverek:
     - kategória: "Fegyver"
       mód: "single"
       sorok:
-        - { extra_ref: "kampos_veggel_labkirantas" }
+        - { extra_ref: "manover_labkirantas_konnyebb_kampos_veggel" }
 - név: "Lánccsapda"
   típus: "általános"
   nehézség: 9
@@ -308,8 +308,8 @@ manőverek:
       mód_oldal: "passzív"
       mód: "single"
       sorok:
-        - { extra_ref: "lefegyverzese_nehezebb" }
-        - { extra_ref: "lefegyverezhetobb" }
+        - { extra_ref: "manover_lefegyverzes_ellene_nehezebb" }
+        - { extra_ref: "manover_lefegyverezes_ellene_konnyebb" }
 - név: "Leütés hátulról"
   típus: "általános"
   nehézség: 6
@@ -445,7 +445,7 @@ manőverek:
     - kategória: "Fegyvered"
       mód: "single"
       sorok:
-        - { extra_ref: "pontos" }
+        - { extra_ref: "manover_preciz_tamadas_konnyebb_pontos" }
         - { érték: 0, leírás: "Egykezes kardvívó fegyver / Puszta kéz" }
         - { érték: -2, leírás: "Zúzófegyver" }
     - kategória: "Taktika"

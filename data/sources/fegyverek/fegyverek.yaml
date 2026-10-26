@@ -15,7 +15,7 @@
 # ── Közelharci ──
 - {név: "Dzsambia", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid, pengehegy-apró], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 0}}
 - {név: "Kés", state: raw, kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true}, fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid, pengehegy-apró], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 2}}
-- {név: "Karambit", state: raw, kategória: közelharci, megjegyzés: "Gyűrűs markolatú, görbe tépőpenge. Vágásra jó, szúrásra nem.", extrak: [lefegyverzese_nehezebb, panceltalant_jobban_sebez], fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 1}}
+- {név: "Karambit", state: raw, kategória: közelharci, megjegyzés: "Gyűrűs markolatú, görbe tépőpenge. Vágásra jó, szúrásra nem.", extrak: [manover_lefegyverzes_ellene_nehezebb, panceltalant_jobban_sebez], fegyver: {hossz: 0, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1, súly: könnyű, erőbónusz_limit: 1}}
 - {név: "Kő", state: raw, kategória: közelharci, megjegyzés: "", teszt: {teszt_minta: true, elvart: {buzogányfej-tompa: [0, -2]}}, fegyver: {hossz: 0, aktorok: [buzogányfej-tompa], fejdarab: 1, súly: könnyű, alapanyag: kő}}
 - {név: "Béltépő", state: raw, kategória: közelharci, megjegyzés: "", extrak: [panceltalant_jobban_sebez, pocsek_vedekezo_pancelos_ellen, beakadas_kockazat], fegyver: {hossz: 1, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 0}}
 - {név: "Levéltőr", state: raw, kategória: közelharci, megjegyzés: "", fegyver: {hossz: 1, aktorok: [pengehegy-apró, vágóél-egyenes-rövid], fejdarab: 1, pengés: 1, erőbónusz_limit: 2}}
@@ -54,7 +54,7 @@
 - {név: "Mara-sequor", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, extrak: [kulonleges_felkeszites, pajzsrongáló], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], fejdarab: 1, pengés: 1, idea_default: 3, alapanyag: feketeacél}}
 - {név: "Meneth", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [panceltalant_jobban_sebez, sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1}}
 - {név: "Sequor", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Tőrkard", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [pontos, lefegyverezhetobb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
+- {név: "Tőrkard", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [manover_preciz_tamadas_konnyebb_pontos, manover_lefegyverezes_ellene_konnyebb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
 - {név: "Vívóbot", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 1, szálfegyver_nyélanyag: fanyelű}}
 
 # ── Lándzsavívó ──

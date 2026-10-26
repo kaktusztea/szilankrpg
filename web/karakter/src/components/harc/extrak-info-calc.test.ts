@@ -19,11 +19,10 @@ const defs: Record<string, FegyverExtraDef> = {
     hatás: [{ cél: 'beakadás', mód: 'szöveges' }],
   },
   pontos: {
-    id: 'pontos', név: 'Pontos', leírás: '',
+    id: 'pontos', név: 'Pontos', leírás: '', állapot: 'aktív',
     feltétel: [
       { típus: 'aktor', érték: 'pengehegy' },
       { típus: 'forgatás', érték: 'egykezes' },
-      { típus: 'manőver_állapot', érték: 'aktív' },
     ],
     hatás: [{ cél: 'manőver_ellenpróba', mód: 'flat', érték: 2, feltétel: 'manőver:precíz_támadás' }],
   },
@@ -68,12 +67,12 @@ describe('extrakInfoTételek - fegyver-extrák állapota', () => {
     expect(t.státusz).toBe('km');
   });
 
-  it('több feltétel: egy nem-auto (manőver_állapot) → KM, ha a többi teljesül', () => {
-    // pengehegy aktor + egykezes forgatás teljesül, de a manőver_állapot nem auto → KM.
+  it('illő aktor/forgatás, nincs manőver-mód → aktív (az állapot nem szűr)', () => {
+    // pengehegy aktor + egykezes forgatás teljesül; manőverÁllapot nincs → az állapot-oldaliság nem szűr.
     const t = extrakInfoTételek([{ id: 'pontos' }], defs, ctx({
       aktorNév: 'pengehegy-tőr', forgatás: 'egykezes',
     }))[0];
-    expect(t.státusz).toBe('km');
+    expect(t.státusz).toBe('aktív');
   });
 
   it('több feltétel: egy hamis ÉS-tag (rossz aktor) → inaktív', () => {
@@ -83,20 +82,20 @@ describe('extrakInfoTételek - fegyver-extrák állapota', () => {
     expect(t.státusz).toBe('inaktív');
   });
 
-  it('manőver-kapcsolat: aktív manőver + illő aktor/forgatás → aktív', () => {
-    // pontos hatás-al-feltétele "manőver:precíz_támadás"; ha az az aktív manőver, a manőver_állapot
-    // teljesül, és az egész extra aktívvá válik.
+  it('állapot-oldaliság: aktív extra + aktív manőver-mód → aktív', () => {
+    // pontos állapota 'aktív'; a Manőver ablak aktív módjában rá/általa hat.
     const t = extrakInfoTételek([{ id: 'pontos' }], defs, ctx({
-      aktorNév: 'pengehegy-tőr', forgatás: 'egykezes', aktívManőver: 'precíz_támadás',
+      aktorNév: 'pengehegy-tőr', forgatás: 'egykezes', manőverÁllapot: 'aktív',
     }))[0];
     expect(t.státusz).toBe('aktív');
   });
 
-  it('manőver-kapcsolat: MÁS manőver aktív → a manőver_állapot marad KM', () => {
+  it('állapot-oldaliság: aktív extra + passzív manőver-mód → inaktív', () => {
+    // pontos állapota 'aktív', de a Manőver ablak passzív módjában (ellenem) nem releváns.
     const t = extrakInfoTételek([{ id: 'pontos' }], defs, ctx({
-      aktorNév: 'pengehegy-tőr', forgatás: 'egykezes', aktívManőver: 'lefegyverzés',
+      aktorNév: 'pengehegy-tőr', forgatás: 'egykezes', manőverÁllapot: 'passzív',
     }))[0];
-    expect(t.státusz).toBe('km');
+    expect(t.státusz).toBe('inaktív');
   });
 
   it('aktív harci taktika → a taktika-feltételes extra aktív', () => {

@@ -304,8 +304,8 @@
           },
           {
             "érték": -2,
-            "leírás": "Fegyver extra: Fanyél fegyvertörése könnyebb",
-            "feltétel": "fegyver_extra:fanyel_fegyvertores_konnyebb"
+            "leírás": "Fegyver extra: Manőver Fegyvertörés ellene könnyebb (fanyél)",
+            "feltétel": "fegyver_extra:manover_fegyvertores_ellene_konnyebb_fanyel"
           }
         ]
       }
@@ -552,8 +552,8 @@
         "sorok": [
           {
             "érték": 2,
-            "leírás": "Fegyver extra: Kampós véggel lábkirántás",
-            "feltétel": "fegyver_extra:kampos_veggel_labkirantas"
+            "leírás": "Fegyver extra: Manőver Lábkirántás könnyebb (kampós véggel)",
+            "feltétel": "fegyver_extra:manover_labkirantas_konnyebb_kampos_veggel"
           }
         ]
       }
@@ -696,13 +696,13 @@
         "sorok": [
           {
             "érték": 2,
-            "leírás": "Fegyver extra: Lefegyverzése nehezebb",
-            "feltétel": "fegyver_extra:lefegyverzese_nehezebb"
+            "leírás": "Fegyver extra: Manőver Lefegyverzés ellene nehezebb",
+            "feltétel": "fegyver_extra:manover_lefegyverzes_ellene_nehezebb"
           },
           {
             "érték": -2,
-            "leírás": "Fegyver extra: Lefegyverezhetőbb",
-            "feltétel": "fegyver_extra:lefegyverezhetobb"
+            "leírás": "Fegyver extra: Manőver Lefegyverezés ellene könnyebb",
+            "feltétel": "fegyver_extra:manover_lefegyverezes_ellene_konnyebb"
           }
         ]
       }
@@ -1033,8 +1033,8 @@
         "sorok": [
           {
             "érték": 2,
-            "leírás": "Fegyver extra: Pontos",
-            "feltétel": "fegyver_extra:pontos"
+            "leírás": "Fegyver extra: Manőver Precíz támadás könnyebb (pontos)",
+            "feltétel": "fegyver_extra:manover_preciz_tamadas_konnyebb_pontos"
           },
           {
             "érték": 0,

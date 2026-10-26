@@ -70,7 +70,7 @@ pengés:
 # láncos: 0/1 -> SP, sebesség (láncos fej: nagyobb lendület, de lassabb lendítés)
 láncos:
   0: {SP: 0, sebesség: 0}
-  1: {SP: 1, sebesség: 1, extrak: [pajzs_ve_felezes]}   # a láncos fej megkerüli a pajzsot
+  1: {SP: 1, sebesség: 1, extrak: [lancos_pajzs_ve_felezes]}   # a láncos fej megkerüli a pajzsot
 
 # nehéz/súlyos: SP VAGY átütés (a fegyver súly_delta_cél dönt).
 súly:
@@ -132,7 +132,7 @@ egykezes_forgatás:
 # A fanyelű Fegyvertörés-ellenpróba +2 és a Felszerelés-pont RUNTIME/logisztika - bázis-hatásuk nincs.
 szálfegyver_nyélanyag:
   sima:        {SP: 0, súly: 0}   # alap (nincs speciális nyél)
-  fanyelű:     {SP: 0, súly: 0, extrak: [fanyel_fegyvertores_konnyebb]}   # bázis-hatás nincs; Fegyvertörés-büntetés (a fa nyél könnyebben törik)
+  fanyelű:     {SP: 0, súly: 0, extrak: [manover_fegyvertores_ellene_konnyebb_fanyel]}   # bázis-hatás nincs; Fegyvertörés-büntetés (a fa nyél könnyebben törik)
   vasaltszárú: {SP: 0, súly: 1}   # +1 súly kategória
   tömörszárú:  {SP: 1, súly: 2}   # +1 SP, +2 súly kategória (a nehezebb súly a Felszerelés súly_pont-ba számít, md/010_03_06)
 
@@ -140,7 +140,7 @@ szálfegyver_nyélanyag:
 # A fegyverlista az extrákat innen örökíti (mint a fegyverhossz → beszorithato, szálfegyver_nyélanyag → fanyelű).
 hajlékony:
   0: {VÉ: 0,  sebesség: 0}
-  1: {VÉ: -2, sebesség: 1, extrak: [pajzs_megkerules, fegyvertores_immunis]}
+  1: {VÉ: -2, sebesség: 1, extrak: [pajzs_megkerulese, fegyvertores_immunis]}
 
 # sebzésmód rangja (aktor-sorrend: 1. = elsődleges, a többi = másodlagos) → Sebzésdobás Előny/Hátrány szint.
 # Kanonikus effekt-alak: cél=sebzésdobás (esemenyek), mód=hátrány (→ előny_hátrány, clamp [-2,+2]).

@@ -48,9 +48,9 @@ export interface ExtraKontextus {
 
 /**
  * Egyetlen feltétel logikai kiértékelése: teljesül (true) / nem (false) / nem auto-eldönthető
- * (undefined = KM-döntés). A `manőverReleváns` a hatás-al-feltételbeli manőver aktív állapota.
+ * (undefined = KM-döntés). Az oldaliságot (aktív/passzív) a rekord-szintű `állapot` + `állapotIllik` kezeli.
  */
-export function extraFeltételTeljesül(f: ExtraFeltétel, ctx: ExtraKontextus, manőverReleváns = false): boolean | undefined {
+export function extraFeltételTeljesül(f: ExtraFeltétel, ctx: ExtraKontextus): boolean | undefined {
   switch (f.típus) {
     case 'harci_helyzet':
       return ctx.aktívFeltételek.has(`harci_helyzet:${f.id ?? f.érték}`);
@@ -71,27 +71,35 @@ export function extraFeltételTeljesül(f: ExtraFeltétel, ctx: ExtraKontextus, 
     case 'cél_páncél':
       if (!ctx.célPáncélKategória) return undefined; // még nincs választva ellenfél-páncél
       return ctx.célPáncélKategória === String(f.érték);
-    case 'manőver_állapot':
-      // A Manőver ablak módja adja (aktív = én hajtom végre, passzív = ellenem irányul). Ha nincs
-      // megadva (nem manőver-context, pl. Sebzés popup), a manőver-al-feltétel egyezése a fallback.
-      if (ctx.manőverÁllapot != null) return ctx.manőverÁllapot === String(f.érték);
-      return manőverReleváns ? true : undefined;
     // Nem auto-eldönthető: narratív, cél_felszereles, ellenfél_fegyver_sebzésjelleg.
     default:
       return undefined;
   }
 }
 
+/**
+ * Az extra OLDALISÁGÁNAK (rekord-szintű `állapot`) illeszkedése a Manőver ablak módjához.
+ * - Manőver-kontextusban (ctx.manőverÁllapot megadva): az extra csak akkor releváns, ha az
+ *   állapota egyezik a móddal (aktív = én hajtom végre / passzív = ellenem-a fegyverem ELLEN).
+ * - Nincs manőver-kontextus (pl. Támadó/Sebzés popup): az állapot nem szűr (undefined = nem dönt).
+ * (A régi `manőver_állapot` FELTÉTELT váltotta ki - 2026-10-26.)
+ */
+export function állapotIllik(def: FegyverExtraDef, ctx: ExtraKontextus): boolean | undefined {
+  if (!def.állapot) return undefined;        // nincs oldaliság → nem szűr
+  if (ctx.manőverÁllapot == null) return undefined;  // nem manőver-context → nem szűr
+  return def.állapot === ctx.manőverÁllapot;
+}
+
 /** Egyetlen feltétel kiértékelése státuszként (aktív/inaktív/KM). */
-function feltételStátusz(f: ExtraFeltétel, ctx: ExtraKontextus, manőverReleváns: boolean): ExtraStátusz {
-  const t = extraFeltételTeljesül(f, ctx, manőverReleváns);
+function feltételStátusz(f: ExtraFeltétel, ctx: ExtraKontextus): ExtraStátusz {
+  const t = extraFeltételTeljesül(f, ctx);
   return t === undefined ? 'km' : t ? 'aktív' : 'inaktív';
 }
 
 /** Több feltétel (ÉS-kapcsolat) aggregált státusza. */
-function feltételekStátusz(feltételek: ExtraFeltétel[] | undefined, ctx: ExtraKontextus, manőverReleváns: boolean): ExtraStátusz {
+function feltételekStátusz(feltételek: ExtraFeltétel[] | undefined, ctx: ExtraKontextus): ExtraStátusz {
   if (!feltételek?.length) return 'aktív'; // feltétel nélküli extra = mindig érvényes
-  const részek = feltételek.map(f => feltételStátusz(f, ctx, manőverReleváns));
+  const részek = feltételek.map(f => feltételStátusz(f, ctx));
   if (részek.some(r => r === 'inaktív')) return 'inaktív'; // egy hamis ÉS-tag → az egész inaktív
   if (részek.some(r => r === 'km')) return 'km';           // nincs hamis, de van bizonytalan → KM
   return 'aktív';
@@ -171,7 +179,10 @@ export function extrakInfoTételek(
     if (csakManőver && !manőverReleváns) continue;
     // Tisztán `szöveges` hatású extra (pl. beakadas_kockazat, onsebzes_kockazat) → mindig KM-döntés.
     const csakSzöveges = !!def.hatás?.length && def.hatás.every(h => h.mód === 'szöveges');
-    const státusz: ExtraStátusz = csakSzöveges ? 'km' : feltételekStátusz(def.feltétel, ctx, manőverReleváns);
+    // Oldaliság: ha a Manőver ablak módja NEM egyezik az extra állapotával → inaktív (nem rá/általa hat).
+    const státusz: ExtraStátusz = állapotIllik(def, ctx) === false
+      ? 'inaktív'
+      : csakSzöveges ? 'km' : feltételekStátusz(def.feltétel, ctx);
     ki.push({
       id: def.id,
       név: def.név,

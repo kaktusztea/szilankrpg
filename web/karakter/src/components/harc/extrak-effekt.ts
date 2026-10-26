@@ -12,7 +12,7 @@
 
 import type { ExtraFeltétel, ExtraHatás, FegyverExtraDef } from '../../engine/data-types';
 import type { ExtraKontextus } from './extrak-info-calc';
-import { extraFeltételTeljesül } from './extrak-info-calc';
+import { extraFeltételTeljesül, állapotIllik } from './extrak-info-calc';
 
 /** Egy célra ható effektek a §42.3 precedencia szerint alkalmazva a bázisértékre. */
 export function alkalmazEffektek(bázis: number, hatások: ExtraHatás[]): number {
@@ -63,9 +63,10 @@ export function aktívHatásokCélra(
   for (const { id } of fegyverExtrák) {
     const def = extraDefs[id];
     if (!def?.hatás?.length) continue;
-    const manőverReleváns = !!ctx.aktívManőver && def.hatás.some(h => h.feltétel === `manőver:${ctx.aktívManőver}`);
+    // Oldaliság: ha a Manőver ablak módja NEM egyezik az extra állapotával → nem rá/általa hat, kihagyjuk.
+    if (állapotIllik(def, ctx) === false) continue;
     // A top-level feltételeknek maradéktalanul teljesülniük kell (KM/inaktív → nem alkalmazzuk).
-    if (!feltételekBiztosanTeljesülnek(def.feltétel, ctx, manőverReleváns)) continue;
+    if (!feltételekBiztosanTeljesülnek(def.feltétel, ctx)) continue;
     for (const h of def.hatás) {
       if (!célIllik(h, cél, alcél)) continue;
       // Hatás-al-feltétel (pl. "manőver:<id>"): csak ha az aktív manőverre illik.
@@ -82,9 +83,9 @@ function célIllik(h: ExtraHatás, cél: string, alcél?: string): boolean {
 }
 
 /** Minden top-level feltétel BIZTOSAN teljesül (nincs hamis és nincs bizonytalan/KM tag). */
-function feltételekBiztosanTeljesülnek(feltételek: ExtraFeltétel[] | undefined, ctx: ExtraKontextus, manőverReleváns: boolean): boolean {
+function feltételekBiztosanTeljesülnek(feltételek: ExtraFeltétel[] | undefined, ctx: ExtraKontextus): boolean {
   if (!feltételek?.length) return true;
-  return feltételek.every(f => extraFeltételTeljesül(f, ctx, manőverReleváns) === true);
+  return feltételek.every(f => extraFeltételTeljesül(f, ctx) === true);
 }
 
 /**
@@ -105,8 +106,7 @@ export function hiányzóInfósExtrák(
     const def = extraDefs[id];
     if (!def?.hatás?.some(h => célIllik(h, cél, alcél))) continue;
     if (!def.feltétel?.length) continue;
-    const manőverReleváns = !!ctx.aktívManőver && def.hatás.some(h => h.feltétel === `manőver:${ctx.aktívManőver}`);
-    const részek = def.feltétel.map(f => extraFeltételTeljesül(f, ctx, manőverReleváns));
+    const részek = def.feltétel.map(f => extraFeltételTeljesül(f, ctx));
     // Bizonytalan (KM), ha nincs hamis tag, de van legalább egy undefined.
     if (!részek.some(r => r === false) && részek.some(r => r === undefined)) nevek.push(def.név);
   }

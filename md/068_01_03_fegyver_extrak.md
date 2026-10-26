@@ -355,6 +355,7 @@ Nehéz, lassan tölthető páncéltörő. Példa: Shad0ni páncéltörő.
 
 ```
 id: tavharc_aquir_kezben_azonnali_halal
+Állapot: Aktív
 Feltétel: aquir használja
 Hatás:    találatkor azonnali halál;
           az Átütés is csak aquir kézben érvényes (KM)
@@ -366,6 +367,7 @@ A fegyver teljes ereje csak aquir kézben bontakozik ki. Példa: Aquir nyílpusk
 
 ```
 id: tavharc_fuvocso_kicsi_hatas
+Állapot: Aktív
 Hatás: k20 Sebzésdobás: 20 → 1 ÉP, egyébként 0 ÉP
        (a méreg/altató a lényeg, KM)
 ```

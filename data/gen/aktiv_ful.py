@@ -122,13 +122,12 @@ def _resolve_extra_ref_sorok(manőver, extrak_by_id, immunis_sentinel):
             extra = extrak_by_id.get(ref)
             if extra is None:
                 raise ValueError(f"manoverek.yaml: '{manőver.get('név')}' extra_ref='{ref}' nincs az extrak.yaml-ban")
-            # Az extra manőver_állapota (ha van) egyezzen a tábla oldalával.
-            extra_oldal = next((f.get('érték') for f in (extra.get('feltétel') or [])
-                                if f.get('típus') == 'manőver_állapot'), None)
+            # Az extra oldalisága (állapot rekord-mező) egyezzen a tábla oldalával.
+            extra_oldal = extra.get('állapot')
             if extra_oldal is not None and extra_oldal != tab_oldal:
                 raise ValueError(
                     f"manoverek.yaml: '{manőver.get('név')}' extra_ref='{ref}' - az extra "
-                    f"manőver_állapot='{extra_oldal}', de a tábla mód_oldal='{tab_oldal}'")
+                    f"állapot='{extra_oldal}', de a tábla mód_oldal='{tab_oldal}'")
             kulcs = f"manőver:{mid}"
             hatás = next((h for h in (extra.get('hatás') or [])
                           if h.get('cél') == 'manőver_ellenpróba' and h.get('feltétel') == kulcs), None)

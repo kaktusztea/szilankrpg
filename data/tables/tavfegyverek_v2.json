@@ -15,7 +15,7 @@
     "hatótáv_erő_szorzó": 0,
     "idea_default": 0,
     "extrák": [
-      "tavharc_aquir_azonnali_halal"
+      "tavharc_aquir_kezben_azonnali_halal"
     ],
     "megjegyzés": "Halálos hatása és Átütés értéke csak aquir kézben érvényesül"
   },
@@ -113,7 +113,7 @@
     "hatótáv_erő_szorzó": 0,
     "idea_default": 0,
     "extrák": [
-      "tavharc_elf_ij_keszito"
+      "tavharc_ertekek_csak_keszito_kezeben"
     ],
     "megjegyzés": "Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: 4. Erőbónusz nincs"
   },
@@ -133,7 +133,7 @@
     "hatótáv_erő_szorzó": 0,
     "idea_default": 0,
     "extrák": [
-      "tavharc_fuvocso_kicsi_kabitas"
+      "tavharc_fuvocso_kicsi_hatas"
     ],
     "megjegyzés": "k20 dobásnál: 20-as dobás: 1 ÉP, különben 0 ÉP"
   },
@@ -191,7 +191,7 @@
     "hatótáv_erő_szorzó": 0,
     "idea_default": 0,
     "extrák": [
-      "tavharc_hajitotor_kozeli_loves"
+      "tavharc_kozeli_loves_automatikus_bonusz"
     ],
     "megjegyzés": "Automatikusan jár rá a Közeli lövés fortélynál leírt CÉ:+10 bónusz ha a célpont az 1. Cellában van."
   },

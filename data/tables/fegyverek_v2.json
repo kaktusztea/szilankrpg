@@ -100,8 +100,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "lefegyverzese_nehezebb",
-        "név": "Lefegyverzése nehezebb"
+        "id": "manover_lefegyverzes_ellene_nehezebb",
+        "név": "Manőver Lefegyverzés ellene nehezebb"
       },
       {
         "id": "panceltalant_jobban_sebez",
@@ -1758,12 +1758,12 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "pontos",
-        "név": "Pontos"
+        "id": "manover_preciz_tamadas_konnyebb_pontos",
+        "név": "Manőver Precíz támadás könnyebb (pontos)"
       },
       {
-        "id": "lefegyverezhetobb",
-        "név": "Lefegyverezhetőbb"
+        "id": "manover_lefegyverezes_ellene_konnyebb",
+        "név": "Manőver Lefegyverezés ellene könnyebb"
       },
       {
         "id": "zuzo_ellen_rosszabb",
@@ -1814,8 +1814,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -1857,8 +1857,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -1922,8 +1922,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -1961,8 +1961,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2000,8 +2000,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2039,8 +2039,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2082,8 +2082,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2125,8 +2125,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2164,8 +2164,8 @@
         "név": "Beszorítható (enyhén)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2216,8 +2216,8 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2286,8 +2286,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2321,8 +2321,8 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "fanyel_fegyvertores_konnyebb",
-        "név": "Fanyél fegyvertörése könnyebb"
+        "id": "manover_fegyvertores_ellene_konnyebb_fanyel",
+        "név": "Manőver Fegyvertörés ellene könnyebb (fanyél)"
       }
     ],
     "módok": [
@@ -2434,7 +2434,7 @@
         "név": "Pajzsrongáló"
       },
       {
-        "id": "pajzs_ve_felezes",
+        "id": "lancos_pajzs_ve_felezes",
         "név": "Láncos: pajzs VÉ felezés"
       }
     ],
@@ -2704,7 +2704,7 @@
     "erő_követelmény": 0,
     "extrák": [
       {
-        "id": "pajzs_megkerules",
+        "id": "pajzs_megkerulese",
         "név": "Pajzs megkerülése"
       },
       {
@@ -2747,7 +2747,7 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "pajzs_megkerules",
+        "id": "pajzs_megkerulese",
         "név": "Pajzs megkerülése"
       },
       {
@@ -2794,7 +2794,7 @@
         "név": "Beszorítható (nagyon)"
       },
       {
-        "id": "pajzs_megkerules",
+        "id": "pajzs_megkerulese",
         "név": "Pajzs megkerülése"
       },
       {

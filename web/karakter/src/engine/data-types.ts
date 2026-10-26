@@ -358,6 +358,9 @@ export interface ExtraHatás { cél: string; mód: string; érték?: number; alc
 /** Teljes fegyver-extra definíció (id-kulcsolt, `fegyver_extrak.json`). */
 export interface FegyverExtraDef {
   id: string; név: string; csoport?: string; leírás?: string;
+  /** Az extra oldalisága (2026-10-26): "aktív" (én alkalmazom) | "passzív" (ellenem/a fegyverem ELLEN).
+   *  A Manőver ablak Mód-jával vetjük össze - a régi `manőver_állapot` feltételt váltotta ki. */
+  állapot?: 'aktív' | 'passzív';
   feltétel?: ExtraFeltétel[]; hatás?: ExtraHatás[];
 }
 

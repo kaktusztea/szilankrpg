@@ -6,6 +6,10 @@
 # ── Vokabulárok (enumok) ──
 csoport_enum: [felkészítés, harci_helyzet, tulajdonság]
 
+# állapot - az extra OLDALISÁGA (rekord-szintű, 2026-10-26): aktív (én alkalmazom) | passzív (ellenem/a fegyverem ELLEN irányul).
+# A korábbi `manőver_állapot` FELTÉTELT váltotta ki (dedup) - a webapp Manőver dobás Mód-jával (manover-dobas-calc) egyezik.
+allapot_enum: [aktív, passzív]
+
 # hatás.mód - az egyesített mód-enum (§42.2); a előny/hátrány a `előny_hátrány` kategória operátor-nevei
 mod_enum: [flat, szorzó, scaled, override, max_limit, előny, hátrány, enyhít, letilt, szöveges]
 
@@ -20,7 +24,6 @@ feltetel_tipus_enum:
   - cél_felszereles
   - aktor
   - forgatás
-  - manőver_állapot          # érték: aktív (én alkalmazom) | passzív (ellenem irányul) - vö. webapp Manőver dobás (manover-dobas-calc Mód)
   - ellenfél_fegyver_sebzésjelleg
   - narratív
 
@@ -41,7 +44,6 @@ alcel_felszereles_enum: [fegyver, fegyver_járulék, pajzs, páncél, nagyobb_fe
 # (fortély/képzettség/státusz/harci_helyzet/aktor/narratív) NINCS enum - más katalógusra/entitásra mutatnak.
 feltetel_ertek_enum:
   forgatás:                      [egykezes, másfélkezes, kétkezes]
-  manőver_állapot:               [aktív, passzív]
   ellenfél_fegyver_sebzésjelleg: [S, V, Z]              # szúró / vágó / zúzó
   cél_páncél:                    [vérttelen, páncélos]   # coarse; a finom páncélosztályok (csupasz/puha/bor/lanc/merev) a sebzesjelleg_pancel_matrix-ban
   cél_felszereles:               [pajzs]
@@ -51,6 +53,7 @@ rekord:
   id:       {kötelező: true,  típus: str,  megjegyzés: "egyedi; fegyverek.yaml / konstansok.yaml hivatkozza"}
   név:      {kötelező: true,  típus: str}
   csoport:  {kötelező: true,  típus: str,  forrás: csoport_enum}
+  állapot:  {kötelező: true,  típus: str,  forrás: allapot_enum,  megjegyzés: "az extra oldalisága (aktív/passzív) - a régi manőver_állapot feltételt váltotta ki"}
   leírás:   {kötelező: false, típus: str}
   feltétel: {kötelező: false, típus: list, elem: feltétel}
   hatás:    {kötelező: true,  típus: list, elem: hatás}
