@@ -53,9 +53,9 @@
     "hatótáv_erő_szorzó": 3,
     "idea_default": 0,
     "extrák": [
-      "tavharc_pajzs_ve_csokkentes"
+      "pajzsbénító"
     ],
-    "megjegyzés": "Követelmény: Erő +0. Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
+    "megjegyzés": "Követelmény: Erő +0. Pajzsba dobva megakad és bénítja a pajzsot (Pajzsrongáló/Pajzsbénító extra)"
   },
   {
     "név": "Dobócsillag",
@@ -92,8 +92,10 @@
     "hatótáv_bázis": 4,
     "hatótáv_erő_szorzó": 1,
     "idea_default": 0,
-    "extrák": [],
-    "megjegyzés": ""
+    "extrák": [
+      "pajzsbénító"
+    ],
+    "megjegyzés": "Pajzsra dobva megakad és bénítja azt (Pajzsbénító extra)"
   },
   {
     "név": "Elf íj",
@@ -169,9 +171,9 @@
     "hatótáv_erő_szorzó": 4,
     "idea_default": 0,
     "extrák": [
-      "tavharc_pajzs_ve_csokkentes"
+      "pajzsbénító"
     ],
-    "megjegyzés": "Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
+    "megjegyzés": "Pajzsba dobva megakad és bénítja a pajzsot (Pajzsbénító extra)"
   },
   {
     "név": "Hajítótőr",

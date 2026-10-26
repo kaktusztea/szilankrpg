@@ -271,13 +271,6 @@ extrak:
     hatás:
       - {cél: SFÉ, mód: szorzó, érték: 2}
 
-  - id: tavharc_pajzs_ve_csokkentes
-    név: "Pajzsba dobva csökkenti a VÉ-t"
-    csoport: harci_helyzet
-    leírás: "Pajzsba dobva a dobott SP értékével csökkenti a pajzs adta Védő Értéket (KM könyveli)."
-    hatás:
-      - {cél: pajzs-VÉ, mód: szöveges}
-
   - id: tavharc_ij_erobonusz_tervezett
     név: "Erőbónusz csak tervezett Erőnél"
     csoport: tulajdonság

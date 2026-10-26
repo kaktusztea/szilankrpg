@@ -518,18 +518,6 @@
       }
     ]
   },
-  "tavharc_pajzs_ve_csokkentes": {
-    "id": "tavharc_pajzs_ve_csokkentes",
-    "név": "Pajzsba dobva csökkenti a VÉ-t",
-    "csoport": "harci_helyzet",
-    "leírás": "Pajzsba dobva a dobott SP értékével csökkenti a pajzs adta Védő Értéket (KM könyveli).",
-    "hatás": [
-      {
-        "cél": "pajzs-VÉ",
-        "mód": "szöveges"
-      }
-    ]
-  },
   "tavharc_ij_erobonusz_tervezett": {
     "id": "tavharc_ij_erobonusz_tervezett",
     "név": "Erőbónusz csak tervezett Erőnél",

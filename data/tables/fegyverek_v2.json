@@ -937,6 +937,10 @@
     "erő_követelmény": 2,
     "extrák": [
       {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      },
+      {
         "id": "beszorithato_nagyon",
         "név": "Beszorítható (nagyon)"
       }
@@ -1473,6 +1477,10 @@
         "név": "Különleges felkészítés"
       },
       {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      },
+      {
         "id": "beszorithato_nagyon",
         "név": "Beszorítható (nagyon)"
       }
@@ -1614,6 +1622,10 @@
       {
         "id": "kulonleges_felkeszites",
         "név": "Különleges felkészítés"
+      },
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
       },
       {
         "id": "beszorithato_enyhen",
@@ -1836,6 +1848,10 @@
     "idea_default": 0,
     "erő_követelmény": 2,
     "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      },
       {
         "id": "beszorithato_nagyon",
         "név": "Beszorítható (nagyon)"
@@ -2233,7 +2249,12 @@
     "alapanyag": "acél",
     "idea_default": 0,
     "erő_követelmény": 2,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      }
+    ],
     "módok": [
       {
         "aktor": "vágóél-íves-rövid",
@@ -2333,7 +2354,12 @@
     "alapanyag": "acél",
     "idea_default": 0,
     "erő_követelmény": 2,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      }
+    ],
     "módok": [
       {
         "aktor": "buzogányfej-tompa",
@@ -2364,6 +2390,10 @@
     "idea_default": 0,
     "erő_követelmény": 3,
     "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      },
       {
         "id": "beszorithato_nagyon",
         "név": "Beszorítható (nagyon)"
@@ -2400,6 +2430,10 @@
     "erő_követelmény": 0,
     "extrák": [
       {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      },
+      {
         "id": "pajzs_ve_felezes",
         "név": "Láncos: pajzs VÉ felezés"
       }
@@ -2433,7 +2467,12 @@
     "alapanyag": "acél",
     "idea_default": 0,
     "erő_követelmény": 2,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      }
+    ],
     "módok": [
       {
         "aktor": "buzogányfej-szöges",
@@ -2463,7 +2502,12 @@
     "alapanyag": "acél",
     "idea_default": 0,
     "erő_követelmény": 0,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      }
+    ],
     "módok": [
       {
         "aktor": "buzogányfej-szöges",
@@ -2493,7 +2537,12 @@
     "alapanyag": "acél",
     "idea_default": 0,
     "erő_követelmény": 2,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      }
+    ],
     "módok": [
       {
         "aktor": "vágóél-íves-átlagos",
@@ -2524,6 +2573,10 @@
     "idea_default": 0,
     "erő_követelmény": 3,
     "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      },
       {
         "id": "beszorithato_enyhen",
         "név": "Beszorítható (enyhén)"
@@ -2575,6 +2628,10 @@
       {
         "id": "beakadas_kockazat",
         "név": "Beakad (~50%)"
+      },
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
       }
     ],
     "módok": [
@@ -2607,6 +2664,10 @@
     "idea_default": 0,
     "erő_követelmény": 3,
     "extrák": [
+      {
+        "id": "pajzsrongáló",
+        "név": "Pajzsrongáló"
+      },
       {
         "id": "beszorithato_nagyon",
         "név": "Beszorítható (nagyon)"
