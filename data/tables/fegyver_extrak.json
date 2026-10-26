@@ -394,7 +394,7 @@
     "id": "pontos",
     "név": "Pontos",
     "csoport": "tulajdonság",
-    "leírás": "Precíziós szúróhegy: a Precíz támadás manőver Ellenpróba célszámát -2-vel könnyíti. Csak pengehegy aktor + egykezes forgatás mellett értelmes.\n",
+    "leírás": "Precíziós szúróhegy: a Precíz támadás manőver Ellenpróbára bónusz: +2. Csak pengehegy aktor + egykezes forgatás mellett értelmes.\n",
     "feltétel": [
       {
         "típus": "aktor",

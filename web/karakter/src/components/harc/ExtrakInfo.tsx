@@ -10,22 +10,17 @@ const STÁTUSZ_LABEL: Record<ExtraStátusz, string> = {
 };
 
 /**
- * A hatás-szöveg renderelése: AKTÍV tétel esetén a numerikus módosítót (+N / -N) szín-span-be
- * csomagolja (zöld bónusz / piros büntetés) - a (B) szabály szerint csak akkor, ha az extra a
- * jelen kontextusban ténylegesen a saját oldaladra él. Inaktív/KM: semleges (nincs szín).
- * A szorzó (×2) / override (:0) nem kap +/- színt (nem egyértelmű bónusz/büntetés).
+ * A hatás-szöveg sor-szín osztálya: AKTÍV tétel esetén az EGÉSZ sor zöld (bónusz) / piros (büntetés)
+ * a módosító előjele szerint - a (B) szabály (csak ha az extra a saját oldaladra él). Vegyes előjel
+ * vagy nincs +/- módosító (csak ×/override): semleges. Inaktív/KM: semleges.
  */
-function renderHatásSzöveg(szöveg: string, aktív: boolean) {
-  if (!aktív) return szöveg;
-  // A +N / -N módosítók köré span (a számot megelőző +/- az előjel).
-  const részek = szöveg.split(/([+-]\d+)/);
-  return részek.map((rész, i) => {
-    const m = /^([+-])(\d+)$/.exec(rész);
-    if (!m) return rész;
-    return (
-      <span key={i} className={m[1] === '+' ? 'extrak-mod-pos' : 'extrak-mod-neg'}>{rész}</span>
-    );
-  });
+function hatásSorSzínOsztály(szöveg: string, aktív: boolean): string {
+  if (!aktív) return '';
+  const vanPoz = /\+\d+/.test(szöveg);
+  const vanNeg = /-\d+/.test(szöveg);
+  if (vanPoz && !vanNeg) return ' extrak-mod-pos';
+  if (vanNeg && !vanPoz) return ' extrak-mod-neg';
+  return '';
 }
 
 /**
@@ -67,7 +62,7 @@ export function ExtrakInfo({ fegyverExtrák, extraDefs, kontextus, csakManőver 
                     <span className="extrak-tetel-nev">{t.név}</span>
                     <span className={`extrak-badge extrak-badge-${t.státusz}`}>{STÁTUSZ_LABEL[t.státusz]}</span>
                   </div>
-                  {t.hatásSzöveg && <div className="extrak-tetel-hatas">{renderHatásSzöveg(t.hatásSzöveg, t.státusz === 'aktív')}</div>}
+                  {t.hatásSzöveg && <div className={`extrak-tetel-hatas${hatásSorSzínOsztály(t.hatásSzöveg, t.státusz === 'aktív')}`}>{t.hatásSzöveg}</div>}
                   {t.leírás && <div className="extrak-tetel-leiras">{t.leírás}</div>}
                 </div>
               ))}
