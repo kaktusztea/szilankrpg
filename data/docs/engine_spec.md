@@ -1340,7 +1340,6 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 | Leütés hátulról | leütés_hátulról | 6 | V,E |
 | Mesterjel | mesterjel | 10 | V,E |
 | Mögékerülés | mögékerülés | 8 | E |
-| Pajzsrongálás | pajzsrongálás | 6 | V,E |
 | Pajzzsal felöklelés | pajzzsal_felöklelés | 7 | V,E |
 | Piszkos trükk | piszkos_trükk | 7 | V,E |
 | Precíz támadás | precíz_támadás | 6 | V,E |

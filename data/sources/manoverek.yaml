@@ -101,16 +101,16 @@ manőverek:
   hatás:
     aktív:
       - "Kiszolgáltatott pozíció (fegyver a nyakánál)."
-      - "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
+      - "Kijövetel: áldozat Kibontakozás Nehézség:10, Ellenpróbára:-5; megelőző Megakasztásodra TÉ:+10 jár."
     passzív:
       - "Kiszolgáltatott pozícióba kerültél (fegyver a nyakadnál)."
-      - "Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kapsz."
+      - "Kijövetel: Kibontakozás Nehézség:10, Ellenpróbára:-5; ellenfeled megelőző Megakasztására TÉ:+10 jár."
   id: "ellenfél_elfogása"
   fázis_info:
     aktív:
-      E: "Kijövetel a helyzetből: Kibontakozás Nehézség 10; ellenfeled megelőző Megakasztására TÉ:+4 jár."
+      E: "Kijövetel a helyzetből: áldozat Kibontakozás Nehézség 10 (Ellenpróbára -5); megelőző Megakasztásodra TÉ:+10 jár."
     passzív:
-      E: "Kijövetel a helyzetből: Kibontakozás Nehézség 10; megelőző Megakasztásodra TÉ:+4 jár."
+      E: "Kijövetel a helyzetből: Kibontakozás Nehézség 10 (Ellenpróbára -5); ellenfeled megelőző Megakasztására TÉ:+10 jár."
   végrehajtás_té_módosító: 0
 - név: "Fegyvertörés"
   típus: "általános"
@@ -229,6 +229,10 @@ manőverek:
       sorok:
         - { érték: -2, leírás: "Minden további ellenfél után" }
         - { érték: 2, leírás: "Minden szövetséges után (ellenfeleddel harcol)" }
+    - kategória: "Elfogva"
+      mód: "single"
+      sorok:
+        - { érték: -5, leírás: "Ellenfél elfogása Manővert alkalmaztak ellened, megpróbálsz kiszabadulni" }
 - név: "Lábkirántás szálfegyverrel"
   típus: "általános"
   nehézség: 6
@@ -378,22 +382,6 @@ manőverek:
         - { érték: 0, leírás: "Egy:kettő túlerő" }
         - { érték: 2, leírás: "Egy:három túlerő" }
         - { érték: 4, leírás: "Egy:négy+ túlerő" }
-- név: "Pajzsrongálás"
-  típus: "általános"
-  nehézség: 6
-  fázisok: "V,E"
-  hatás:
-    aktív:
-      - "Pajzs VÉ végleges csökkentése."
-      - "Zúzó: SP/2, Vágó: SP/4."
-    passzív:
-      - "A pajzsod VÉ-je véglegesen csökken."
-      - "Zúzó: SP/2, Vágó: SP/4."
-  id: "pajzsrongálás"
-  követelmények:
-    - { erősség: "normál", típus: "képzettség", név: "harcmodor", érték: 6 }
-    - { erősség: "erős", típus: "egyéb", leírás: "Erő: +1" }
-    - { erősség: "erős", típus: "egyéb", leírás: "Zúzó- vagy kétkezes fegyver" }
 - név: "Pajzzsal felöklelés"
   típus: "általános"
   nehézség: 7
