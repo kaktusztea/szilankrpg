@@ -419,7 +419,11 @@
   gap: 12px;
   padding: 20px 16px;
   min-width: 240px;
-  /* A hosszú megjegyzés-label (céMegjegyzések) ne feszítse szét a popupot - tördeljen a korláton belül. */
+  /* A popup a (kep-prompt) wrapper teljes szélességét töltse ki, ne a leghosszabb belső
+     szöveghez nőjön - a wrapper max-width-je (lásd .tamado-dobas-wrapper) korlátoz, a hosszú
+     megjegyzés-szövegek azon belül tördelnek. */
+  width: 100%;
+  box-sizing: border-box;
   max-width: min(420px, 92vw);
   position: relative;
 }
@@ -932,6 +936,12 @@
   margin-top: 4px;
 }
 
+/* A Támadó dobás popup wrapper (kep-prompt) max-szélessége: a hosszú megjegyzés-szöveg ne
+   feszítse a wrappert korlátlanul (a .kep-prompt alap nem ad max-width-et). */
+.tamado-dobas-wrapper {
+  max-width: min(420px, 92vw);
+}
+
 /* --- Dobás info (active effects, informational) --- */
 .dobas-info-list {
   width: 100%;
@@ -949,6 +959,9 @@
   align-items: flex-start;
   gap: 8px;
   font-size: 12px;
+  /* A sor töltse ki a listát, hogy a hosszú szöveg a boxon belül tördeljön (ne feszítse a popupot). */
+  width: 100%;
+  min-width: 0;
 }
 
 .dobas-info-badge {

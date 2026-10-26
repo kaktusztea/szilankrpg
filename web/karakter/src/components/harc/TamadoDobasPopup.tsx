@@ -215,7 +215,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   }
 
   return (
-    <PopupOverlay onClose={() => onClose(téResult ? { té: téResult.eredmény } : null)}>
+    <PopupOverlay className="kep-prompt tamado-dobas-wrapper" onClose={() => onClose(téResult ? { té: téResult.eredmény } : null)}>
       <div className="tamado-dobas-popup">
         {téResult && <button className="sebzes-reset-btn" onClick={() => setTéResult(null)}>⟲</button>}
         <div className="ke-dobas-header">Támadó dobás ({aktívTé})</div>
@@ -282,6 +282,14 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
                 ? ` [${téResult.dobás.rolls.join(', ')}] → ${téResult.dobás.eredmény}`
                 : ` (${téResult.dobás.eredmény})`}
             </div>
+            {téResult.dobás.eredmény === 1 && (
+              <div className="dobas-info-list dobas-notes">
+                <div className="dobas-info-item">
+                  <span className="dobas-info-badge note">⚠</span>
+                  <span className="dobas-info-source">Dobás: 1 (k20) - ha a támadás sikertelen, narratív hátrány érhet.</span>
+                </div>
+              </div>
+            )}
             <button className="tamado-sebzes-btn" onClick={() => setShowSebzés(true)}>
               Sebzés
               {sebzésElőny > 0 && <span className="tamado-sebzes-btn-hint">Előny+{sebzésElőny}</span>}
