@@ -4,7 +4,7 @@ import { ManualDicePicker } from '../harc/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
 import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from './proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -81,7 +81,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
         {fortélyBónuszok.length > 0 && !d.vanEredmény && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash" onClick={() => setSzitNyitva(true)}>
-              Helyzetfüggő módosítók<span className={bónusz > 0 ? 'kep-proba-szit-pos' : bónusz < 0 ? 'kep-proba-szit-neg' : ''}>{bónusz === 0 ? ' →' : `: ${bónusz > 0 ? '+' : ''}${bónusz}`}</span>
+              <SzitChipFelirat összeg={bónusz} />
             </button>
           </div>
         )}

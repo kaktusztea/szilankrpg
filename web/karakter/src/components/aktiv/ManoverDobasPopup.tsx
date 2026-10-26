@@ -257,9 +257,10 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   /** Helyzetfüggő módosítók gomb (aktív ÉS passzív módban - a táblák módonként szűrve, l. szitTáblákMódszerint). */
   function renderSzitGomb() {
     if (módosítóTáblák.length === 0) return null;
+    const vanÉrték = szitLehetetlen || szitImmunis || szitModÖsszeg !== 0;
     return (
-      <button type="button" className="manover-szit-btn manover-szit-btn-flash" onClick={() => setSzitPickerNyitva(true)}>
-        <span className="manover-szit-label">Helyzetfüggő módosítók →</span>
+      <button type="button" className={`manover-szit-btn manover-szit-btn-flash${vanÉrték ? ' manover-szit-btn-val' : ''}`} onClick={() => setSzitPickerNyitva(true)}>
+        <span className="manover-szit-label">Helyzetfüggő módosítók{vanÉrték ? ': ' : ' →'}</span>
         {szitLehetetlen
           ? <span className="manover-szit-sum manover-szit-neg">letilt</span>
           : szitImmunis

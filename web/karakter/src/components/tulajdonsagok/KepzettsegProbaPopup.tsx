@@ -11,7 +11,7 @@ import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPic
 import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from './proba-common';
 import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from './kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat } from './ProbaReszek';
 
 /** Vállalás próba eredménye (k6 vs vállalás: Kritikus hiba, ha ≤). */
 interface VállalásEredmény {
@@ -267,7 +267,7 @@ export function KepzettsegProbaPopup({
         {módosítóTáblák.length > 0 && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash" onClick={() => setOpenPicker('szit')}>
-              Helyzetfüggő módosítók<span className={szitModÖsszeg > 0 ? 'kep-proba-szit-pos' : szitModÖsszeg < 0 ? 'kep-proba-szit-neg' : ''}>{szitModÖsszeg === 0 ? ' →' : `: ${szitModÖsszeg > 0 ? '+' : ''}${szitModÖsszeg}`}</span>
+              <SzitChipFelirat összeg={szitModÖsszeg} />
               {próbaEnyhítések.length > 0 && (
                 <span className="kep-proba-enyhites-lista">
                   {[...new Map(próbaEnyhítések.map(e => [e.fortély, e])).values()].filter(e => e.fortély).map(e => (

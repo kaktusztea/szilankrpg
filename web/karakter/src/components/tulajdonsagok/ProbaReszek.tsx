@@ -23,6 +23,18 @@ export function ExtraGomb({ aktív, disabled, title, onClick, children }: { akt�
   );
 }
 
+/**
+ * „Helyzetfüggő módosítók" chip-felirat (Tulajdonság- és Képzettségpróba közös).
+ * Érték nélkül nyíl (` →`), értékkel `: <előjeles szám>` - a kettőspontot NEM színezi, csak a számot
+ * (ezért a `: ` a színes spanen kívül van).
+ */
+export function SzitChipFelirat({ összeg }: { összeg: number }) {
+  if (összeg === 0) return <>Helyzetfüggő módosítók →</>;
+  return (
+    <>Helyzetfüggő módosítók: <span className={összeg > 0 ? 'kep-proba-szit-pos' : 'kep-proba-szit-neg'}>{összeg > 0 ? '+' : ''}{összeg}</span></>
+  );
+}
+
 /** Összetett próba: +1M … +maxM (újrakattintás = ki). */
 /** A dobott kockák sora (E/H címke + az összes kocka, a választott kiemelve). */
 function DobasKockak({ dobás, kocka, ehSzint }: { dobás: ProbaDobás; kocka: number; ehSzint: number }) {

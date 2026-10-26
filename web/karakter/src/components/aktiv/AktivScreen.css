@@ -178,6 +178,9 @@
 /* A szit-chip label a chipen belül középre (badge nélkül teljes szélességen; badge esetén a maradék helyen). */
 .manover-szit-label { flex: 1; text-align: center; }
 .manover-szit-sum { font-weight: bold; }
+/* Értékállapotban (badge jelen) a chip tartalma balra, a szám közvetlenül a kettőspont utáni 1 space-szel (nincs flex-szétszórás/gap). */
+.manover-szit-btn-val { justify-content: flex-start; gap: 0; }
+.manover-szit-btn-val .manover-szit-label { flex: 0 0 auto; text-align: left; white-space: pre; }
 .manover-szit-pos { color: var(--success); }
 .manover-szit-neg { color: var(--error); }
 
