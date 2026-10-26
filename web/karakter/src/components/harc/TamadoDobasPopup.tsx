@@ -16,21 +16,11 @@ import type { UndoPatch } from '../../hooks/useUndo';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { Fegyverviszony } from './ve-csokkentes-calc';
 import { támadódobástTiltóTaktika } from './ve-csokkentes-calc';
-import { netElőnySzint, fegyverSpBónuszok } from './combat-roll-info';
+import { netElőnySzint, fegyverSpBónuszok, sebzésElőnyK20ból } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
 import { KeziBonuszBtn } from './KeziBonuszBtn';
 import type { ExtraKontextus } from './extrak-info-calc';
-
-/**
- * Derive Sebzés Előny from the TÉ k20 roll value:
- *  16-19 → Előny+1, 20 → Előny+2, otherwise 0
- */
-export function sebzésElőnyFromK20(k20: number): number {
-  if (k20 === 20) return 2;
-  if (k20 >= 16) return 1;
-  return 0;
-}
 
 interface Props {
   /** Active weapon TÉ value (fallback: elsődleges mód, ha nincs módok lista) */
@@ -128,7 +118,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
 
   const k20Érték = téResult?.dobás.eredmény ?? 0;
   // Másodlagos sebzéstípus → Hátrány−1 (a Sebzés popupba beépítve adjuk át).
-  const sebzésElőny = sebzésElőnyFromK20(k20Érték) + (aktívSebzéstípus === 'másodlagos' ? -1 : 0);
+  const sebzésElőny = sebzésElőnyK20ból(k20Érték) + (aktívSebzéstípus === 'másodlagos' ? -1 : 0);
 
   // Ha a popupon BELÜL olyan taktikát kapcsolnak be, ami kizárja a rendes Támadó dobást (Fárasztás /
   // Teljes Védekezés), a dobás-fázisban nem engedünk dobni (csak Bezár). A tiltás oka a taktika saját

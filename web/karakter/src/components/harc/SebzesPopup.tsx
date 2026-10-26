@@ -4,7 +4,7 @@ import { ElonyPicker } from './ElonyPicker';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
-import { netElőnySzint, sebzésPáncélDelta, célPáncélKategória } from './combat-roll-info';
+import { netElőnySzint, sebzésPáncélDelta, célPáncélKategória, sebzésElőnyK20ból } from './combat-roll-info';
 import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import { HatasokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
@@ -156,11 +156,11 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
 
             <ElonyPicker szint={aktuális} onChange={handleSzintChange} rövid kompakt />
 
-            {(sebzésHatások.length > 0 || defaultElőny > 0) && (
+            {(sebzésHatások.length > 0 || sebzésElőnyK20ból(téK20) > 0) && (
               <HatasokInfo hatások={sebzésHatások}>
-                {defaultElőny > 0 && (
+                {sebzésElőnyK20ból(téK20) > 0 && (
                   <div className="dobas-info-item">
-                    <span className="dobas-info-badge előny">Előny+{defaultElőny}</span>
+                    <span className="dobas-info-badge előny">Előny+{sebzésElőnyK20ból(téK20)}</span>
                     <span className="dobas-info-source">Támadó dobás ({téK20})</span>
                   </div>
                 )}

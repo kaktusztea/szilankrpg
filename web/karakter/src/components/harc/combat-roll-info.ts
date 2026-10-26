@@ -13,6 +13,17 @@ import {
 
 type DobásCél = 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
 
+/**
+ * A Támadó/Célzó k20 dobás NYERS sebzés-Előnye (a sebzésdobásra tovább adott Előny), §065:
+ *  16-19 → Előny+1, 20 → Előny+2, egyébként 0. A másodlagos sebzéstípus −1 korrekciója NEM része
+ *  ennek (azt a hívó külön, saját tételként kezeli).
+ */
+export function sebzésElőnyK20ból(k20: number): number {
+  if (k20 === 20) return 2;
+  if (k20 >= 16) return 1;
+  return 0;
+}
+
 export interface DobásHatás {
   forrás: string;
   cél: DobásCél;

@@ -6,6 +6,7 @@ import { KeziBonuszBtn } from '../harc/KeziBonuszBtn';
 import { ExtrakInfo } from '../harc/ExtrakInfo';
 import { SebzesPopup } from '../harc/SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
+import { sebzésElőnyK20ból } from '../harc/combat-roll-info';
 import type { DobásHatás, SpBónusz } from '../harc/combat-roll-info';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { ExtraKontextus } from '../harc/extrak-info-calc';
@@ -21,11 +22,6 @@ import type { UndoPatch } from '../../hooks/useUndo';
  * Derive Sebzés Előny from the CÉ k20 roll value (same rule as TÉ):
  *  16-19 → Előny+1, 20 → Előny+2, otherwise 0
  */
-function sebzésElőnyFromK20(k20: number): number {
-  if (k20 === 20) return 2;
-  if (k20 >= 16) return 1;
-  return 0;
-}
 
 interface Props {
   /** Active weapon CÉ value */
@@ -107,7 +103,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
 
   const k20Érték = result?.dobás.eredmény ?? 0;
   const siker = result ? result.eredmény >= vé : false;
-  const sebzésElőny = sebzésElőnyFromK20(k20Érték);
+  const sebzésElőny = sebzésElőnyK20ból(k20Érték);
 
   if (showTaktikaPicker) {
     return (
