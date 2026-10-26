@@ -54,7 +54,7 @@
 - {név: "Mara-sequor", state: raw, kategória: kardvívó, megjegyzés: "", teszt: {teszt_minta: true}, extrak: [kulonleges_felkeszites, pajzsrongáló], fegyver: {hossz: 5, aktorok: [vágóél-íves-átlagos], fejdarab: 1, pengés: 1, idea_default: 3, alapanyag: feketeacél}}
 - {név: "Meneth", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [panceltalant_jobban_sebez, sfe_duplazodik], fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid], fejdarab: 1, pengés: 1}}
 - {név: "Sequor", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 2, aktorok: [vágóél-íves-rövid, pengehegy-tőr], fejdarab: 1, pengés: 1, erőbónusz_limit: 3}}
-- {név: "Tőrkard", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [manover_preciz_tamadas_konnyebb_pontos, manover_lefegyverezes_ellene_konnyebb, zuzo_ellen_rosszabb], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
+- {név: "Tőrkard", state: raw, kategória: kardvívó, megjegyzés: "", extrak: [manover_preciz_tamadas_konnyebb_pontos, manover_lefegyverezes_ellene_konnyebb, zuzo_ellen_rosszabb, manover_mesterjel_alkalmas], fegyver: {hossz: 3, aktorok: [pengehegy-kard, vágóél-egyenes-átlagos], fejdarab: 1, pengés: 1, erőbónusz_limit: 1}}
 - {név: "Vívóbot", state: raw, kategória: kardvívó, megjegyzés: "", fegyver: {hossz: 3, aktorok: [botvég], alapanyag: fa, erőbónusz_limit: 1, szálfegyver_nyélanyag: fanyelű}}
 
 # ── Lándzsavívó ──
@@ -63,8 +63,8 @@
 - {név: "Lándzsa, átlagos", state: raw, kategória: lándzsavívó, megjegyzés: "", teszt: {teszt_minta: true, elvart_1kez_kétkezes: {lándzsahegy-rövid-átlagos: [6, 6]}}, fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 - {név: "Lándzsa, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 - {név: "Lándzsa, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
-- {név: "Pika, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", extrak: [pikas_kozrefogasa], fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
-- {név: "Pika, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", extrak: [pikas_kozrefogasa], fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
+- {név: "Pika, keskeny hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", extrak: [pikas_kozrefogasa, manover_lovas_megakasztasa, manover_tavoltartas_alkalmas], fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-keskeny], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
+- {név: "Pika, széles hegyű", state: raw, kategória: lándzsavívó, megjegyzés: "", extrak: [pikas_kozrefogasa, manover_lovas_megakasztasa, manover_tavoltartas_alkalmas], fegyver: {hossz: 12, aktorok: [lándzsahegy-rövid-széles], fejdarab: 1, pengés: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű, akadály: 2}}
 - {név: "Szigony, egykezes", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 5, aktorok: [lándzsahegy-tőrhossz], fejdarab: 1, erőbónusz_limit: 3, szálfegyver_nyélanyag: fanyelű}}
 - {név: "Szigony, kétkezes", state: raw, kategória: lándzsavívó, megjegyzés: "", fegyver: {hossz: 9, aktorok: [lándzsahegy-rövid-átlagos], fejdarab: 1, szálfegyver_nyélanyag: fanyelű, akadály: 1}}
 

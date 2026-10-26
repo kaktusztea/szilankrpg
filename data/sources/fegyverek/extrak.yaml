@@ -273,12 +273,52 @@ extrak:
     állapot: aktív
     leírás: >
       A fegyver kampós vége a Lábkirántás manőver Ellenpróba dobásához +2 Helyzetfüggő módosítót ad.
-      Jelenleg nincs fegyver, ami használja.
-      pl. glaive-szerű penge -- fegyverek.yaml → `extrak: [kampos_veggel_labkirantas]`).
+      Jelenleg nincs fegyver, ami használja (pl. glaive-szerű penge).
     feltétel:
       - {típus: aktor, érték: kampós}
     hatás:
       - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:lábkirántás_szálfegyverrel"}
+
+  - id: manover_attores_alkalmas
+    név: "Manőver Áttörés alkalmas"
+    csoport: tulajdonság
+    állapot: aktív
+    leírás: "Könnyebb vele a harcolók vonalán áttörni: az Áttörés manőver Ellenpróbájára +2."
+    hatás:
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:áttörés"}
+
+  - id: manover_csonkolas_alkalmas
+    név: "Manőver Csonkolás alkalmas"
+    csoport: tulajdonság
+    állapot: aktív
+    leírás: "Kimondottan alkalmas csonkolásra: a Csonkolás (kéz/láb) manőver Ellenpróbájára +2."
+    hatás:
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:csonkolás_kéz"}
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:csonkolás_láb"}
+
+  - id: manover_lovas_megakasztasa
+    név: "Manőver Lovas megakasztása"
+    csoport: tulajdonság
+    állapot: aktív
+    leírás: "Kimondottan alkalmas támadó lovasok megakasztására: a Lovas megakasztása manőver Ellenpróbájára +2."
+    hatás:
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:lovas_megakasztása"}
+
+  - id: manover_mesterjel_alkalmas
+    név: "Manőver Mesterjel alkalmas"
+    csoport: tulajdonság
+    állapot: aktív
+    leírás: "Kimondottan alkalmas Mesterjel bevésésére az ellenfél ruházatába: a Mesterjel manőver Ellenpróbájára +2."
+    hatás:
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:mesterjel"}
+
+  - id: manover_tavoltartas_alkalmas
+    név: "Manőver Távoltartás alkalmas"
+    csoport: tulajdonság
+    állapot: aktív
+    leírás: "Kimondottan alkalmas az ellenfél távoltartására: a Távoltartás manőver Ellenpróbájára +2."
+    hatás:
+      - {cél: manőver_ellenpróba, mód: flat, érték: 2, feltétel: "manőver:távoltartás"}
 
   # ── TÁVHARC extrák (tavfegyverek_fixed.json hivatkozza) ──
   - id: tavharc_sfe_duplan

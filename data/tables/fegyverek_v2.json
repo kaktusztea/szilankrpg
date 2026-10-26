@@ -1768,6 +1768,10 @@
       {
         "id": "zuzo_ellen_rosszabb",
         "név": "Zúzó fegyver ellen rosszabb"
+      },
+      {
+        "id": "manover_mesterjel_alkalmas",
+        "név": "Manőver Mesterjel alkalmas"
       }
     ],
     "módok": [
@@ -2078,6 +2082,14 @@
         "név": "Pikás közrefogása"
       },
       {
+        "id": "manover_lovas_megakasztasa",
+        "név": "Manőver Lovas megakasztása"
+      },
+      {
+        "id": "manover_tavoltartas_alkalmas",
+        "név": "Manőver Távoltartás alkalmas"
+      },
+      {
         "id": "beszorithato_nagyon",
         "név": "Beszorítható (nagyon)"
       },
@@ -2119,6 +2131,14 @@
       {
         "id": "pikas_kozrefogasa",
         "név": "Pikás közrefogása"
+      },
+      {
+        "id": "manover_lovas_megakasztasa",
+        "név": "Manőver Lovas megakasztása"
+      },
+      {
+        "id": "manover_tavoltartas_alkalmas",
+        "név": "Manőver Távoltartás alkalmas"
       },
       {
         "id": "beszorithato_nagyon",
@@ -3076,7 +3096,12 @@
     "akadály": 0,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "manover_attores_alkalmas",
+        "név": "Manőver Áttörés alkalmas"
+      }
+    ],
     "módok": [
       {
         "aktor": "kivétel",
@@ -3106,7 +3131,12 @@
     "akadály": 0,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [
+      {
+        "id": "manover_attores_alkalmas",
+        "név": "Manőver Áttörés alkalmas"
+      }
+    ],
     "módok": [
       {
         "aktor": "kivétel",

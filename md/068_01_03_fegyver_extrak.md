@@ -183,7 +183,7 @@ Hajítófegyver, pajzsba dobva megakad benne és akadályozza annak használatá
 <br />
 
 ---
-## Tulajdonság (építési / minőségi opció)
+## Manőver hatással
 
 ### Manőver Precíz támadás könnyebb (pontos)
 
@@ -232,17 +232,6 @@ Hatás:    passzív fél (akié a fegyver)
 
 Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
 
-### Zúzó fegyver ellen rosszabb
-
-```
-id: zuzo_ellen_rosszabb
-Állapot: passzív
-Feltétel: ellenfél fegyverének sebzésjellege Zúzó
-Hatás: elszenvedett VÉ csökkenésed duplázódik
-```
-
-Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
-
 ### Manőver Lábkirántás könnyebb (kampós véggel)
 
 ```
@@ -253,6 +242,61 @@ Hatás: Lábkirántás manőver Ellenpróba: +2
 ```
 
 A fegyver kampós vége (pl. glaive-szerű penge).
+
+### Manőver Áttörés alkalmas
+
+```
+id: manover_attores_alkalmas
+Állapot: Aktív
+Hatás: Áttörés manőver Ellenpróba: +2
+```
+
+Könnyebb vele a harcolók vonalán áttörni.
+
+### Manőver Csonkolás alkalmas
+
+```
+id: manover_csonkolas_alkalmas
+Állapot: Aktív
+Hatás: Csonkolás (kéz) és Csonkolás (láb) manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas csonkolásra.
+
+### Manőver Lovas megakasztása
+
+```
+id: manover_lovas_megakasztasa
+Állapot: Aktív
+Hatás: Lovas megakasztása manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas támadó lovasok megakasztására.
+
+### Manőver Mesterjel alkalmas
+
+```
+id: manover_mesterjel_alkalmas
+Állapot: Aktív
+Hatás: Mesterjel manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas Mesterjel bevésésére az ellenfél ruházatába.
+
+### Manőver Távoltartás alkalmas
+
+```
+id: manover_tavoltartas_alkalmas
+Állapot: Aktív
+Hatás: Távoltartás manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas az ellenfél távoltartására.
+
+<br />
+
+---
+## Tulajdonság (építési / minőségi opció)
 
 ### Beakad (~50%)
 
@@ -276,6 +320,17 @@ Hatás: támadó k20 egyben esélydobás:
 ```
 
 Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md).
+
+### Zúzó fegyver ellen rosszabb
+
+```
+id: zuzo_ellen_rosszabb
+Állapot: passzív
+Feltétel: ellenfél fegyverének sebzésjellege Zúzó
+Hatás: elszenvedett VÉ csökkenésed duplázódik
+```
+
+Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
 
 <br />
 

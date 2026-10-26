@@ -207,7 +207,7 @@
     "akadály": 0,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [{"id": "manover_attores_alkalmas", "név": "Manőver Áttörés alkalmas"}],
     "módok": [
       {
         "aktor": "kivétel",
@@ -232,7 +232,7 @@
     "akadály": 0,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [],
+    "extrák": [{"id": "manover_attores_alkalmas", "név": "Manőver Áttörés alkalmas"}],
     "módok": [
       {
         "aktor": "kivétel",
