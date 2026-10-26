@@ -195,8 +195,7 @@
 .manover-fazis { padding: 8px; border-radius: 6px; background: rgba(255,255,255,0.03); }
 .manover-fazis-aktiv { background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-left: 3px solid #6b9bd1; }
 .manover-fazis-done { opacity: 0.6; }
-.manover-fazis-label { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-.manover-fazis-aktiv .manover-fazis-label { color: #8fb3d9; }
+.manover-fazis-label { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: #f5f5f0; }
 .manover-fazis-ok { color: var(--success); }
 .manover-fazis-fail { color: var(--error); }
 

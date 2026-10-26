@@ -333,7 +333,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         </div>
 
         {manőverExtraKontextus && (
-          <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={manőverExtraKontextus} />
+          <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={manőverExtraKontextus} csakManőver />
         )}
 
         {vanKönnyítés && (

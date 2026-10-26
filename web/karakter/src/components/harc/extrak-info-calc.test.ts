@@ -119,6 +119,12 @@ describe('extrakInfoTételek - fegyver-extrák állapota', () => {
     expect(t[1].hatásSzöveg).toBe('SFÉ ×2');
   });
 
+  it('manőver-hatás: a felirat előtagja megnevezi a manővert', () => {
+    // pontos: hatás-al-feltétel "manőver:precíz_támadás" → "Precíz támadás: manőver_ellenpróba +2"
+    const t = extrakInfoTételek([{ id: 'pontos' }], defs, ctx());
+    expect(t[0].hatásSzöveg).toBe('Precíz támadás: manőver_ellenpróba +2');
+  });
+
   it('alcélos hatás: a felirat a komponenst nevezi meg (nem a teljes VÉ-t)', () => {
     const d: Record<string, FegyverExtraDef> = {
       pajzs_megkerules: { id: 'pajzs_megkerules', név: 'Pajzs megkerülése', leírás: '', feltétel: [{ típus: 'cél_felszereles', érték: 'pajzs' }],
@@ -139,5 +145,24 @@ describe('extrakInfoTételek - fegyver-extrák állapota', () => {
   it('nincs extra / nincs def → üres', () => {
     expect(extrakInfoTételek(undefined, defs, ctx())).toEqual([]);
     expect(extrakInfoTételek([{ id: 'x' }], undefined, ctx())).toEqual([]);
+  });
+
+  describe('csakManőver szűrő (Manőver ablak)', () => {
+    const vegyes = [{ id: 'pontos' }, { id: 'kopjas_roham' }, { id: 'panceltalant_jobban_sebez' }];
+
+    it('csak az aktív manőverre ható extra marad (a többi kiesik)', () => {
+      const t = extrakInfoTételek(vegyes, defs, ctx({ aktívManőver: 'precíz_támadás' }), true);
+      expect(t.map(x => x.id)).toEqual(['pontos']); // kopjas_roham / panceltalant: nincs manőver-hatás
+    });
+
+    it('más aktív manőver → egy manőver-hatású extra sem marad', () => {
+      const t = extrakInfoTételek(vegyes, defs, ctx({ aktívManőver: 'lefegyverzés' }), true);
+      expect(t).toEqual([]);
+    });
+
+    it('csakManőver=false (default): a teljes lista marad', () => {
+      const t = extrakInfoTételek(vegyes, defs, ctx({ aktívManőver: 'precíz_támadás' }));
+      expect(t.map(x => x.id)).toEqual(['pontos', 'kopjas_roham', 'panceltalant_jobban_sebez']);
+    });
   });
 });

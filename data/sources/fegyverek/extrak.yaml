@@ -207,7 +207,7 @@ extrak:
     név: "Pontos"
     csoport: tulajdonság
     leírás: >
-      Precíziós szúróhegy: a Precíz támadás manőver Ellenpróba célszámát -2-vel könnyíti.
+      Precíziós szúróhegy: a Precíz támadás manőver Ellenpróbára bónusz: +2.
       Csak pengehegy aktor + egykezes forgatás mellett értelmes.
     feltétel:
       - {típus: aktor, érték: pengehegy}

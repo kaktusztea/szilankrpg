@@ -881,6 +881,9 @@
   color: var(--text-dim);
   overflow-wrap: anywhere;
 }
+/* Aktív extra numerikus módosítója: halvány zöld bónusz / halvány piros büntetés (a hatás-szövegben). */
+.extrak-mod-pos { color: #9ccc9e; font-weight: 600; }
+.extrak-mod-neg { color: #e49a95; font-weight: 600; }
 .extrak-tetel-leiras {
   margin-top: 4px;
   font-size: 12px;

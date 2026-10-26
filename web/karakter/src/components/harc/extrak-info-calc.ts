@@ -113,7 +113,17 @@ function hatásSzöveg(h: ExtraHatás): string {
   // Al-feltétel az ellenfél helyzetére (KM-döntés): a felirat megnevezi, mikor él a hatás.
   const ellenfél = h.feltétel?.startsWith('ellenfél_harci_helyzet:')
     ? ` (ha az ellenfél: ${h.feltétel.split(':')[1].replace(/_/g, ' ')})` : '';
-  return hatásAlapSzöveg(h) + ellenfél;
+  // Manőver al-feltétel: a felirat ELŐTAGként megnevezi, MELYIK manőverre szól a hatás
+  // (pl. "Precíz támadás: manőver_ellenpróba +2") - különben csak a leírásból derülne ki.
+  const manőver = h.feltétel?.startsWith('manőver:')
+    ? `${olvashatóId(h.feltétel.split(':')[1])}: ` : '';
+  return manőver + hatásAlapSzöveg(h) + ellenfél;
+}
+
+/** id-token → olvasható felirat: aláhúzás→szóköz, első betű nagy (pl. "precíz_támadás" → "Precíz támadás"). */
+function olvashatóId(id: string): string {
+  const szöveg = id.replace(/_/g, ' ');
+  return szöveg.charAt(0).toUpperCase() + szöveg.slice(1);
 }
 
 function hatásAlapSzöveg(h: ExtraHatás): string {
@@ -146,17 +156,21 @@ export function extrakInfoTételek(
   fegyverExtrák: { id: string }[] | undefined,
   extraDefs: Record<string, FegyverExtraDef> | undefined,
   ctx: ExtraKontextus,
+  csakManőver = false,
 ): ExtraInfoTétel[] {
   if (!fegyverExtrák?.length || !extraDefs) return [];
   const ki: ExtraInfoTétel[] = [];
   for (const { id } of fegyverExtrák) {
     const def = extraDefs[id];
     if (!def) continue;
-    // Tisztán `szöveges` hatású extra (pl. beakadas_kockazat, onsebzes_kockazat) → mindig KM-döntés.
-    const csakSzöveges = !!def.hatás?.length && def.hatás.every(h => h.mód === 'szöveges');
     // Az aktív manőverhez kapcsolt extra (hatás-al-feltétel: "manőver:<aktív>") → a manőver-állapot
     // teljesültnek vehető, az extra a manőver alatt aktív.
     const manőverReleváns = manőverreIllik(def, ctx.aktívManőver);
+    // Manőver ablak: CSAK az épp választott manőverre ható extrák (a `hatás.feltétel: "manőver:<id>"`
+    // al-feltétel alapján). A többi dobás-ablak (Támadó/Sebzés/Célzó) a teljes listát mutatja.
+    if (csakManőver && !manőverReleváns) continue;
+    // Tisztán `szöveges` hatású extra (pl. beakadas_kockazat, onsebzes_kockazat) → mindig KM-döntés.
+    const csakSzöveges = !!def.hatás?.length && def.hatás.every(h => h.mód === 'szöveges');
     const státusz: ExtraStátusz = csakSzöveges ? 'km' : feltételekStátusz(def.feltétel, ctx, manőverReleváns);
     ki.push({
       id: def.id,
