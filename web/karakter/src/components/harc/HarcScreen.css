@@ -669,6 +669,35 @@
 .sebzes-stat-circle.active.sebzes-stat-pos { border-color: var(--success); background: rgba(76, 175, 80, 0.2); }
 .sebzes-stat-circle.active.sebzes-stat-neg { border-color: var(--error); background: rgba(244, 67, 54, 0.2); }
 
+/* Kézi bónusz chip grid (Támadó / Célzó / Manőver Végrehajtás) - 3 oszlop, kompakt + kibontható */
+.kezi-bonusz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 36px);
+  gap: 6px;
+  justify-content: center;
+}
+.kezi-bonusz-ures { width: 36px; height: 36px; }
+.kezi-bonusz-cim { text-align: center; }
+/* Kézi bónusz chip gomb: picit kisebb felirat; 0 értéknél nem félkövér. */
+.kezi-bonusz-btn { font-size: 13px; }
+.kezi-bonusz-btn-nulla { font-weight: 400; }
+/* A 0 cella aktív (bónusz=0) állapotban is semleges: halvány szürke keret + diszkrét kitöltés, nem a warning-narancs. */
+.kezi-bonusz-nulla.active {
+  border-color: var(--border-input);
+  background: rgba(255, 255, 255, 0.18);
+}
+.kezi-bonusz-kibont {
+  align-self: center;
+  width: 48px;
+  padding: 2px 0;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-dim);
+  font-size: 14px;
+  cursor: pointer;
+}
+
 /* Másodlagos sebzés toggle */
 .sebzes-nincs {
   width: 100%;

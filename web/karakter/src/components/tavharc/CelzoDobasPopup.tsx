@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../harc/ElonyPicker';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
+import { KeziBonuszBtn } from '../harc/KeziBonuszBtn';
 import { SebzesPopup } from '../harc/SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from '../harc/combat-roll-info';
@@ -67,6 +68,7 @@ interface Props {
 
 interface CéEredmény {
   alap: number;
+  kézi: number;
   dobás: ProbaDobás;
   eredmény: number;
 }
@@ -80,6 +82,7 @@ interface CéEredmény {
 export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBónusz, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, data, karakter, session, setSession, pushUndo, onClose }: Props) {
   const [szint, setSzint] = useState(defaultSzint);
   const [result, setResult] = useState<CéEredmény | null>(null);
+  const [kéziBónusz, setKéziBónusz] = useState(0);
   const [showSebzés, setShowSebzés] = useState(false);
   const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
   const [showHelyzetPicker, setShowHelyzetPicker] = useState(false);
@@ -93,12 +96,12 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
-    setResult({ alap: cé, dobás, eredmény: cé + dobás.eredmény });
+    setResult({ alap: cé, kézi: kéziBónusz, dobás, eredmény: cé + kéziBónusz + dobás.eredmény });
   }
 
   function handleManualK20(value: number) {
     const dobás: ProbaDobás = { rolls: [value], eredmény: value };
-    setResult({ alap: cé, dobás, eredmény: cé + value });
+    setResult({ alap: cé, kézi: kéziBónusz, dobás, eredmény: cé + kéziBónusz + value });
   }
 
   const k20Érték = result?.dobás.eredmény ?? 0;
@@ -172,6 +175,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
             </div>
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
+            <KeziBonuszBtn bónusz={kéziBónusz} onChange={setKéziBónusz} />
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás (k20)</button>
               <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={cé} alapLabel="CÉ" />
@@ -185,7 +189,9 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
               <span className="ke-dobas-result-cel">{vé}</span>
             </div>
             <div className="ke-dobas-detail">
-              CÉ ({result.alap}) + k20{result.dobás.rolls.length > 1
+              CÉ ({result.alap})
+              {result.kézi !== 0 ? ` ${result.kézi > 0 ? '+' : ''}${result.kézi}` : ''}
+              {' + '}k20{result.dobás.rolls.length > 1
                 ? ` [${result.dobás.rolls.join(', ')}] → ${result.dobás.eredmény}`
                 : ` (${result.dobás.eredmény})`}
             </div>

@@ -19,6 +19,7 @@ import { támadódobástTiltóTaktika } from './ve-csokkentes-calc';
 import { netElőnySzint, fegyverSpBónuszok } from './combat-roll-info';
 import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
+import { KeziBonuszBtn } from './KeziBonuszBtn';
 import type { ExtraKontextus } from './extrak-info-calc';
 
 /**
@@ -72,6 +73,7 @@ interface Props {
 
 interface TéEredmény {
   alap: number;
+  kézi: number;
   dobás: ProbaDobás;
   eredmény: number;
 }
@@ -86,6 +88,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
   const [téResult, setTéResult] = useState<TéEredmény | null>(null);
+  const [kéziBónusz, setKéziBónusz] = useState(0);
   const [showMódVálasztó, setShowMódVálasztó] = useState(false);
   const [showSebzés, setShowSebzés] = useState(false);
   const [showVéCsökkentés, setShowVéCsökkentés] = useState(false);
@@ -115,12 +118,12 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
-    setTéResult({ alap: aktívTé, dobás, eredmény: aktívTé + dobás.eredmény });
+    setTéResult({ alap: aktívTé, kézi: kéziBónusz, dobás, eredmény: aktívTé + kéziBónusz + dobás.eredmény });
   }
 
   function handleManualK20(value: number) {
     const dobás: ProbaDobás = { rolls: [value], eredmény: value };
-    setTéResult({ alap: aktívTé, dobás, eredmény: aktívTé + value });
+    setTéResult({ alap: aktívTé, kézi: kéziBónusz, dobás, eredmény: aktívTé + kéziBónusz + value });
   }
 
   const k20Érték = téResult?.dobás.eredmény ?? 0;
@@ -259,6 +262,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
             {aktívExtraKontextus && (
               <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={aktívExtraKontextus} />
             )}
+            {!tiltóTaktika && <KeziBonuszBtn bónusz={kéziBónusz} onChange={setKéziBónusz} />}
             {tiltóTaktika ? (
               <>
                 <div className="dobas-info-list dobas-notes">
@@ -282,7 +286,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
           <>
             <div className="ke-dobas-result">{téResult.eredmény}</div>
             <div className="ke-dobas-detail">
-              TÉ ({téResult.alap}) + k20{téResult.dobás.rolls.length > 1
+              TÉ ({téResult.alap})
+              {téResult.kézi !== 0 ? ` ${téResult.kézi > 0 ? '+' : ''}${téResult.kézi}` : ''}
+              {' + '}k20{téResult.dobás.rolls.length > 1
                 ? ` [${téResult.dobás.rolls.join(', ')}] → ${téResult.dobás.eredmény}`
                 : ` (${téResult.dobás.eredmény})`}
             </div>

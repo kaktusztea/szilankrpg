@@ -3,6 +3,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../harc/ElonyPicker';
+import { KeziBonuszBtn } from '../harc/KeziBonuszBtn';
 import { HatasokInfo as HatásokInfo } from '../harc/HatasokInfo';
 import { VeCsokkentesPopup } from '../harc/VeCsokkentesPopup';
 import type { Fegyverviszony } from '../harc/ve-csokkentes-calc';
@@ -70,6 +71,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [költöttMP, setKöltöttMP] = useState(0);
   // Kockadobások: csak a kocka értéke tárolt, az összeg élőben számol (a módosító/MP változása utólag is érvényes).
   const [téSzint, setTéSzint] = useState(() => netElőnySzint(téHatások));
+  const [téKéziBónusz, setTéKéziBónusz] = useState(0);
   const [vDobás, setVDobás] = useState<ProbaDobás | null>(null);
   const [eDobás, setEDobás] = useState<ProbaDobás | null>(null);
   const [véCsökkNyitva, setVéCsökkNyitva] = useState(false);
@@ -207,7 +209,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   function renderVégrehajtás() {
     if (mód === 'aktív') {
       const téMód = manőver.végrehajtás_té_módosító;
-      const téVégső = aktívTÉ != null ? aktívTÉ + téMód : null;
+      const téVégső = aktívTÉ != null ? aktívTÉ + téMód + téKéziBónusz : null;
       return (
         <div className="manover-fazis-info manover-te-center">
           {téVégső != null && (
@@ -217,6 +219,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           )}
           {téVégső != null && !vDobás && <ElonyPicker szint={téSzint} onChange={setTéSzint} rövid />}
           {téVégső != null && !vDobás && téHatások.length > 0 && <HatásokInfo hatások={téHatások} />}
+          {téVégső != null && !vDobás && <KeziBonuszBtn bónusz={téKéziBónusz} onChange={setTéKéziBónusz} />}
           {téVégső != null && <ManoverDobasSor alap={téVégső} alapLabel="TÉ" kocka={VÉGREHAJTÁS_KOCKA} szint={téSzint} dobás={vDobás} setDobás={setVDobás} />}
         </div>
       );
@@ -416,7 +419,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           // csak a VÉ-popupot - vissza a végeredmény-sávhoz.
           if (eredmény) {
             // A rontott V dobás + a választott VÉ-csökkentés a TÉ-chip history-ba (mint a Támadó dobás).
-            const vÖsszeg = (aktívTÉ ?? 0) + manőver.végrehajtás_té_módosító + (vDobás?.eredmény ?? 0);
+            const vÖsszeg = (aktívTÉ ?? 0) + manőver.végrehajtás_té_módosító + téKéziBónusz + (vDobás?.eredmény ?? 0);
             onTéDobás?.(vÖsszeg, eredmény.végső);
             onClose();
           } else {
