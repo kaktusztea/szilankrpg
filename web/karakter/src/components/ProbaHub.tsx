@@ -104,6 +104,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
           className="proba-fab"
           title="Próbadobás"
           aria-label="Próbadobás indítása"
+          onPointerDown={e => e.preventDefault()}
           onClick={() => setHubNyitva(true)}
         >🎲</button>
       )}
