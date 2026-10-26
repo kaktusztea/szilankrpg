@@ -129,7 +129,7 @@ Hatás:    célpont páncél SFÉ: duplán számít
 
 Ez a penge páncél ellen különösen rossz.
 
-### Pajzsrongáló (kézi)
+### Pajzsrongáló
 
 ```
 Feltétel: cél pajzsot használ; Támadó dobás k20: 11-20
@@ -138,7 +138,7 @@ Hatás:    cél Pajzs-VÉ: -1 (végleg)
 
 Kimondottan pajzs megrongálására alkalmas fegyver.
 
-### Pajzsrongáló (hajító)
+### Pajzsbénító
 
 ```
 Feltétel: cél pajzsot használ; Célzó dobás találat: pajzsot
@@ -150,7 +150,7 @@ Hatás:    Kisebb hajítófegyver
              Státusz: Blokkolt (2)
 ```
 
-Pajzsba dobva megakad benne és akadályozza annak használatát.
+Hajítófegyver, pajzsba dobva megakad benne és akadályozza annak használatát.
 
 <br />
 

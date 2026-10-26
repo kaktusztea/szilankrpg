@@ -47,6 +47,7 @@ export type Mód = 'aktív' | 'passzív';
 export type FázisEredmény = 'pending' | 'igen' | 'nem';
 
 export interface ManőverDef {
+  id: string;
   név: string;
   nehézség: number;
   fázisok: string;

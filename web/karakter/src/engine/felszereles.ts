@@ -215,6 +215,13 @@ export function akadályÁllapot(karakter: Karakter, data: GameData): AkadályÁ
     források.push({ név: pajzsSor.név, állapot, viselve: pajzsSor.számít });
   }
 
+  // Az Akadály büntetései CSAK 1 nap viselet/utazás után hatnak (md/010_03_07) - a "úton" kapcsoló
+  // aktiválja. Kikapcsolva a végső állapot 0 (nincs warning / státusz), de a `források` lista marad,
+  // hogy a UI mutassa a potenciális forrásokat.
+  if (karakter.felszerelés?.úton !== true) {
+    return { állapot: 0, források };
+  }
+
   const állapot = források.reduce((m, f) => (f.viselve ? Math.max(m, f.állapot) : m), 0);
   return { állapot, források };
 }

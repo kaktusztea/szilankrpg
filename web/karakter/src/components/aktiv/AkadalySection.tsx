@@ -12,8 +12,8 @@ interface Props {
 
 /** Az állapothoz tartozó informatív hatás-szöveg (md/010_03_07_akadaly.md). */
 const ÁLLAPOT_HATÁS: Record<number, string> = {
-  1: 'Státusz: Fizikai (1) · napi táv fele (hátráltatja a csapatot)',
-  2: 'Státusz: Fizikai (2) · napi táv negyede (hátráltatja a csapatot)',
+  1: 'Státusz: Fizikai (1) + napi táv fele (hátráltatja a csapatot)',
+  2: 'Státusz: Fizikai (2) + napi táv negyede (hátráltatja a csapatot)',
 };
 
 const VISELVE_LABEL = 'viselve';
@@ -44,6 +44,24 @@ export function AkadalySection({ karakter, setKarakter, data }: Props) {
   // A pötty-skála a maximális lehetséges állapot (2); teli = aktuális állapot.
   const MAX = 2;
 
+  const úton = karakter.felszerelés?.úton === true;
+
+  /** "Úton vagy" kapcsoló: az Akadály büntetései csak ekkor hatnak (md/010_03_07). */
+  function setÚton(be: boolean) {
+    setKarakter(prev => {
+      if (!prev) return prev;
+      return {
+        ...prev,
+        felszerelés: {
+          tárgyak: prev.felszerelés?.tárgyak ?? [],
+          kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
+          külső: prev.felszerelés?.külső ?? [],
+          úton: be,
+        },
+      };
+    });
+  }
+
   /** "külső" jelző be/ki a felszerelés.külső halmazban (kulcs-alapú). */
   function setKülső(kulcs: string, be: boolean) {
     setKarakter(prev => {
@@ -56,6 +74,7 @@ export function AkadalySection({ karakter, setKarakter, data }: Props) {
           tárgyak: prev.felszerelés?.tárgyak ?? [],
           kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
           külső: [...new Set(külső)],
+          úton: prev.felszerelés?.úton,
         },
       };
     });
@@ -77,6 +96,7 @@ export function AkadalySection({ karakter, setKarakter, data }: Props) {
           tárgyak: prev.felszerelés?.tárgyak ?? [],
           kizárt_auto: [...new Set(kizárt)] as ('pajzs' | 'páncél')[],
           külső: prev.felszerelés?.külső ?? [],
+          úton: prev.felszerelés?.úton,
         },
       };
     });
@@ -111,6 +131,14 @@ export function AkadalySection({ karakter, setKarakter, data }: Props) {
           ))}
         </span>
       </summary>
+
+      <button
+        className={`he-field-btn akadaly-uton-btn${úton ? ' on' : ''}`}
+        aria-pressed={úton}
+        onClick={() => setÚton(!úton)}
+      >
+        Úton vagy: <strong>{úton ? 'igen' : 'nem'}</strong>
+      </button>
 
       {állapot > 0 && (
         <div className="felsz-warning">⚠ {ÁLLAPOT_HATÁS[állapot]}</div>

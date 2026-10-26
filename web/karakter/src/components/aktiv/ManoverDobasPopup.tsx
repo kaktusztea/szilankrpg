@@ -5,6 +5,7 @@ import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../harc/ElonyPicker';
 import { KeziBonuszBtn } from '../harc/KeziBonuszBtn';
 import { HatasokInfo as HatásokInfo } from '../harc/HatasokInfo';
+import { ExtrakInfo } from '../harc/ExtrakInfo';
 import { VeCsokkentesPopup } from '../harc/VeCsokkentesPopup';
 import type { Fegyverviszony } from '../harc/ve-csokkentes-calc';
 import type { FegyverExtraDef } from '../../engine/data-types';
@@ -156,6 +157,15 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // eldobott V (támadó) dobásból jön - l. rontottVFázis.
   const vRontott = rontottVFázis(fázisok, eredmények, mód, vDobás != null);
   const véCsökkGombLátszik = vRontott && !!véCsökkentésAlap;
+
+  // Az „Extrák" gomb kontextusa a manőver-módhoz igazítva: a manőver_állapot-feltételes extrák
+  // (pl. Fegyvertörés-immunis passzív oldalon) és a manőver-al-feltételes hatások helyes státuszt
+  // kapjanak. A mód (aktív/passzív) → manőverÁllapot, a manőver id → aktívManőver.
+  const manőverExtraKontextus = extraKontextus && {
+    ...extraKontextus,
+    manőverÁllapot: mód,
+    aktívManőver: manőver.id,
+  };
 
   function handleChip(igen: boolean) {
     if (aktívFázisIdx === -1) return;
@@ -321,6 +331,10 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           })()}
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
+
+        {manőverExtraKontextus && (
+          <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={manőverExtraKontextus} />
+        )}
 
         {vanKönnyítés && (
           <div className="manover-konnyites-chip">

@@ -160,7 +160,7 @@ export interface Karakter {
   távfegyverek: TavfegyverPeldany[];
   páncél: PancelPeldany;
   pajzs: PajzsPeldany;
-  felszerelés: { tárgyak: FelszerelésTárgy[]; kizárt_auto: ('pajzs' | 'páncél')[]; külső: string[] };
+  felszerelés: { tárgyak: FelszerelésTárgy[]; kizárt_auto: ('pajzs' | 'páncél')[]; külső: string[]; úton?: boolean };
   előtörténet: Előtörténet;
   jegyzetek: string;
   napló: NaploBejegyzes[];

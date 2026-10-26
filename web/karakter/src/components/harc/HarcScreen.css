@@ -821,13 +821,13 @@
 /* --- „Extrák" gomb + popup (§42 fegyver-extrák info) --- */
 .extrak-btn {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   margin-top: 4px;
   border: 1px solid var(--border-input);
   border-radius: 6px;
   background: var(--input-bg);
   color: var(--text);
-  font-size: 15px;
+  font-size: 13px;
   cursor: pointer;
   text-align: center;
 }

@@ -33,7 +33,7 @@ export function ExtrakInfo({ fegyverExtrák, extraDefs, kontextus }: {
         onClick={() => setOpen(true)}
         title="Fegyver extrák"
       >
-        💡 Extrák{aktívDb > 0 ? ` (${aktívDb} aktív)` : ''}
+        💡 Fegyver extrák{aktívDb > 0 ? ` (${aktívDb} aktív)` : ''}
       </button>
       {open && (
         <PopupOverlay onClose={() => setOpen(false)} className="kep-prompt extrak-prompt">

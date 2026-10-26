@@ -85,6 +85,7 @@ felszerelés:
       hely: "nincs"            # opcionális: "nincs" (nincs nálad) / "külső" (külső tárolóban); hiányzik → nálad van. A nincs/külső nem számít a terhelésbe
   kizárt_auto: []              # a Felszerelés táblából "nincs nálad"-ra állított AUTO források: "pajzs" és/vagy "páncél" (a fegyver a saját felszerelésben flagjét használja)
   külső: []                    # a Felszerelés táblában "külső tárolóban" (lovon/szekéren) jelzővel ellátott AUTO sorok kulcsai (fegyver:<idx> / pajzs / páncél) - megjelenítési jelző, a terhelésbe nem számít (mint a "nincs nálad"). A kézi tárgy a saját "hely" mezőjét használja
+  úton: false                  # Barangolás/utazás: az Akadály büntetései (md/010_03_07) CSAK 1 nap viselet után hatnak - ez a kapcsoló aktiválja. false → nincs Akadály-hatás; true → a viselt fém páncél / közepes-nagy pajzs "Fizikai (N)" státuszt ad
 
 jegyzetek: ""                   # Szabad szöveges jegyzetmező
 

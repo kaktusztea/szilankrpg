@@ -54,7 +54,7 @@ interface CompactKarakter {
   tf: (string | [string, number])[];
   pa?: Record<string, string | number | boolean>;
   pj?: string;
-  fl?: { t?: [string, string, string?][]; kiz?: string[]; fkiz?: number[]; kul?: string[] };
+  fl?: { t?: [string, string, string?][]; kiz?: string[]; fkiz?: number[]; kul?: string[]; ut?: 1 };
   sh?: string;
 }
 
@@ -116,13 +116,14 @@ function compactEncode(k: Karakter): CompactKarakter {
 
   // felszerelés (tárgyak [név, méret, hely?] + pajzs/páncél kizárás + "felszerelésben=false" fegyver-indexek + AUTO külső-jelzők)
   {
-    const fl: { t?: [string, string, string?][]; kiz?: string[]; fkiz?: number[]; kul?: string[] } = {};
+    const fl: { t?: [string, string, string?][]; kiz?: string[]; fkiz?: number[]; kul?: string[]; ut?: 1 } = {};
     if (k.felszerelés.tárgyak.length) fl.t = k.felszerelés.tárgyak.map(t => t.hely ? [t.név, t.méret, t.hely] : [t.név, t.méret]);
     if (k.felszerelés.kizárt_auto.length) fl.kiz = k.felszerelés.kizárt_auto;
     const fkiz = k.fegyverek.map((f, i) => (f.felszerelésben === false ? i : -1)).filter(i => i >= 0);
     if (fkiz.length) fl.fkiz = fkiz;
     if (k.felszerelés.külső?.length) fl.kul = k.felszerelés.külső;
-    if (fl.t || fl.kiz || fl.fkiz || fl.kul) c.fl = fl;
+    if (k.felszerelés.úton) fl.ut = 1;
+    if (fl.t || fl.kiz || fl.fkiz || fl.kul || fl.ut) c.fl = fl;
   }
 
   // előtörténet (csak származás_helye)
@@ -205,6 +206,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
       })) || [],
       kizárt_auto: (c.fl?.kiz as ('pajzs' | 'páncél')[] | undefined) || [],
       külső: c.fl?.kul || [],
+      úton: c.fl?.ut === 1,
     },
     előtörténet: { ...DEFAULT_ELOTORTENET, ...(c.sh ? { származás_helye: c.sh } : {}) },
   };

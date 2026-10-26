@@ -287,3 +287,7 @@
   font-size: 13px;
   color: var(--text-dim);
 }
+/* "Úton vagy" kapcsoló: az Akadály büntetései csak ekkor hatnak (md/010_03_07). */
+.akadaly-uton-btn { width: 100%; margin: 8px 0; }
+.akadaly-uton-btn strong { color: var(--text-dim); }
+.akadaly-uton-btn.on strong { color: var(--success); }

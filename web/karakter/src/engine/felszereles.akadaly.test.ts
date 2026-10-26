@@ -17,6 +17,11 @@ beforeAll(() => {
   base = data.emptyKarakter;
 });
 
+/** Alap felszerelés „úton: true"-val (az Akadály-hatás csak ekkor él, md/010_03_07). */
+function útonFelsz(extra?: Partial<Karakter['felszerelés']>): Karakter['felszerelés'] {
+  return { tárgyak: [], kizárt_auto: [], külső: [], úton: true, ...extra };
+}
+
 describe('akadályÁllapot', () => {
   it('csupasz (se páncél, se pajzs) → 0', () => {
     expect(akadályÁllapot(base, data).állapot).toBe(0);
@@ -27,6 +32,7 @@ describe('akadályÁllapot', () => {
       ...base,
       páncél: { ...base.páncél, alap: 'lemez' },
       session: { ...base.session, aktív_páncél: true },
+      felszerelés: útonFelsz(),
     };
     expect(akadályÁllapot(k, data).állapot).toBe(2);
   });
@@ -36,6 +42,7 @@ describe('akadályÁllapot', () => {
       ...base,
       páncél: { ...base.páncél, alap: 'lánc/sodrony' },
       session: { ...base.session, aktív_páncél: true },
+      felszerelés: útonFelsz(),
     };
     expect(akadályÁllapot(k, data).állapot).toBe(1);
   });
@@ -45,14 +52,15 @@ describe('akadályÁllapot', () => {
       ...base,
       páncél: { ...base.páncél, alap: 'bőr' },
       session: { ...base.session, aktív_páncél: true },
+      felszerelés: útonFelsz(),
     };
     expect(akadályÁllapot(k, data).állapot).toBe(0);
   });
 
   it('közepes pajzs → 1, nagy pajzs → 2, kis pajzs → 0', () => {
-    const közepes: Karakter = { ...base, pajzs: { méret: 'közepes' } };
-    const nagy: Karakter = { ...base, pajzs: { méret: 'nagy' } };
-    const kis: Karakter = { ...base, pajzs: { méret: 'kis' } };
+    const közepes: Karakter = { ...base, pajzs: { méret: 'közepes' }, felszerelés: útonFelsz() };
+    const nagy: Karakter = { ...base, pajzs: { méret: 'nagy' }, felszerelés: útonFelsz() };
+    const kis: Karakter = { ...base, pajzs: { méret: 'kis' }, felszerelés: útonFelsz() };
     expect(akadályÁllapot(közepes, data).állapot).toBe(1);
     expect(akadályÁllapot(nagy, data).állapot).toBe(2);
     expect(akadályÁllapot(kis, data).állapot).toBe(0);
@@ -64,6 +72,7 @@ describe('akadályÁllapot', () => {
       páncél: { ...base.páncél, alap: 'lánc/sodrony' },
       pajzs: { méret: 'közepes' },
       session: { ...base.session, aktív_páncél: true },
+      felszerelés: útonFelsz(),
     };
     expect(akadályÁllapot(k, data).állapot).toBe(1);
   });
@@ -74,6 +83,7 @@ describe('akadályÁllapot', () => {
       páncél: { ...base.páncél, alap: 'lemez' },
       pajzs: { méret: 'közepes' },
       session: { ...base.session, aktív_páncél: true },
+      felszerelés: útonFelsz(),
     };
     expect(akadályÁllapot(k, data).állapot).toBe(2);
   });
@@ -83,6 +93,7 @@ describe('akadályÁllapot', () => {
       ...base,
       páncél: { ...base.páncél, alap: 'lemez' },
       session: { ...base.session, aktív_páncél: false },
+      felszerelés: útonFelsz(),
     };
     const r = akadályÁllapot(k, data);
     expect(r.állapot).toBe(0);
@@ -93,9 +104,41 @@ describe('akadályÁllapot', () => {
     const k: Karakter = {
       ...base,
       pajzs: { méret: 'nagy' },
-      felszerelés: { tárgyak: [], kizárt_auto: [], külső: ['pajzs'] },
+      felszerelés: útonFelsz({ külső: ['pajzs'] }),
     };
     expect(akadályÁllapot(k, data).állapot).toBe(0);
+  });
+});
+
+describe('akadályÁllapot - "úton" gate (md/010_03_07: csak 1 nap után hat)', () => {
+  it('úton=false (default): viselt merev páncél → állapot 0, de a forrás látszik', () => {
+    const k: Karakter = {
+      ...base,
+      páncél: { ...base.páncél, alap: 'lemez' },
+      session: { ...base.session, aktív_páncél: true },
+      felszerelés: { tárgyak: [], kizárt_auto: [], külső: [], úton: false },
+    };
+    const r = akadályÁllapot(k, data);
+    expect(r.állapot).toBe(0);
+    expect(r.források.find(f => f.név.includes('lemez'))).toMatchObject({ állapot: 2, viselve: true });
+  });
+
+  it('úton hiányzik (régi localStorage): viselt nagy pajzs → állapot 0', () => {
+    const k: Karakter = {
+      ...base,
+      pajzs: { méret: 'nagy' },
+      felszerelés: { tárgyak: [], kizárt_auto: [], külső: [] },
+    };
+    expect(akadályÁllapot(k, data).állapot).toBe(0);
+  });
+
+  it('úton=true: ugyanaz a nagy pajzs → állapot 2', () => {
+    const k: Karakter = {
+      ...base,
+      pajzs: { méret: 'nagy' },
+      felszerelés: útonFelsz(),
+    };
+    expect(akadályÁllapot(k, data).állapot).toBe(2);
   });
 });
 
@@ -104,11 +147,12 @@ describe('felszerelésVagyAkadályJelző (✏️ chip piros pötty)', () => {
     expect(felszerelésVagyAkadályJelző(base, data)).toBe(false);
   });
 
-  it('csak akadály (viselt merev páncél) → true', () => {
+  it('csak akadály (viselt merev páncél, úton) → true', () => {
     const k: Karakter = {
       ...base,
       páncél: { ...base.páncél, alap: 'lemez' },
       session: { ...base.session, aktív_páncél: true },
+      felszerelés: útonFelsz(),
     };
     expect(felszerelésVagyAkadályJelző(k, data)).toBe(true);
   });

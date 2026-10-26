@@ -53,6 +53,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
         tárgyak,
         kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
         külső: prev.felszerelés?.külső ?? [],
+        úton: prev.felszerelés?.úton,
       },
     } : prev);
   }
@@ -99,6 +100,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
           tárgyak: prev.felszerelés?.tárgyak ?? [],
           kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
           külső: [...new Set(külső)],
+          úton: prev.felszerelés?.úton,
         },
       };
     });
@@ -128,6 +130,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
           tárgyak: prev.felszerelés?.tárgyak ?? [],
           kizárt_auto: [...new Set(kizárt)] as ('pajzs' | 'páncél')[],
           külső: prev.felszerelés?.külső ?? [],
+          úton: prev.felszerelés?.úton,
         },
       };
     });

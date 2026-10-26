@@ -3,6 +3,7 @@ import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../harc/ElonyPicker';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { KeziBonuszBtn } from '../harc/KeziBonuszBtn';
+import { ExtrakInfo } from '../harc/ExtrakInfo';
 import { SebzesPopup } from '../harc/SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from '../harc/combat-roll-info';
@@ -175,6 +176,9 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
             </div>
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
+            {extraKontextus && (
+              <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={extraKontextus} />
+            )}
             <KeziBonuszBtn bónusz={kéziBónusz} onChange={setKéziBónusz} />
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás (k20)</button>
