@@ -30,8 +30,10 @@ Nem feltétlenül balsiker.\
 HA a támadó dobás sikertelen, akkor narratív hátrányt kaphatsz a KM-től. Példák:
 
 ```
-• fegyvered beakadhat egy pajzsba
+• fegyvered beakadhat egy pajzsba,
+  nem tudod kihúzni
 • fegyvered beakadhat egy páncélba
+  nem tudod kihúzni
 • elejted a fegyvered
 • elcsúszol
 ```
