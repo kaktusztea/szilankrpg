@@ -8,7 +8,7 @@ import { rollElőnyHátrányDie, type ProbaDobás } from '../../engine/dice';
 import {
   type Mód, type ManőverDef, type AktívFegyverInfo,
   követelményTeljesül, követelményJelölés, követelményCimke, getFázisFelirat, fázisCselekvő, eredményHatás,
-  szitFeltételTeljesül, aktívFegyverNév,
+  extraHordozóNév,
 } from './manover-dobas-calc';
 
 export type KövetelményDöntés = 'pending' | 'mind' | 'normál' | 'erős';
@@ -164,10 +164,10 @@ export function ManoverSzitPicker({ táblák, szitMods, setSzitMods, multiMods, 
                 const kattintás = isMulti
                   ? () => setMultiMods(m => ({ ...m, [t.kategória]: m[t.kategória].map((v, j) => j === i ? !v : v) }))
                   : () => setSzitMods(m => ({ ...m, [t.kategória]: m[t.kategória] === i ? -1 : i }));
-                // Fegyver-extrából feloldott sor: a fegyvernév CSAK akkor jelenik meg zárójelben, ha az aktív
-                // fegyver ténylegesen hordozza az extrát - "Fegyver extra: Pontos (Tőrkard)".
-                const extraMatch = s.feltétel?.startsWith('fegyver_extra:') && szitFeltételTeljesül(s.feltétel, karakter, session, data);
-                const fegyverNév = extraMatch ? aktívFegyverNév(karakter, session, data) : null;
+                // Fegyver-extrából feloldott sor: a hordozó neve (aktív fegyver VAGY használt pajzs) CSAK akkor
+                // jelenik meg zárójelben, ha ténylegesen hordozza az extrát - "Fegyver extra: … (Tőrkard)".
+                const fegyverNév = s.feltétel?.startsWith('fegyver_extra:')
+                  ? extraHordozóNév(s.feltétel.slice('fegyver_extra:'.length), karakter, session, data) : null;
                 // A sentinel (99) NEM dobásmódosító, hanem „nem kísérelhető meg" jelző → tiltó (piros) ✖.
                 const isSentinel = s.érték === sentinel;
                 const színClass = isSentinel || s.érték < 0 ? ' kep-proba-szit-neg' : s.érték > 0 ? ' kep-proba-szit-pos' : '';

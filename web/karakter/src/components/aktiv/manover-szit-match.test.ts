@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { szitFeltételTeljesül, szitModKezdőÁllapot } from './manover-dobas-calc';
+import { szitFeltételTeljesül, szitModKezdőÁllapot, extraHordozóNév } from './manover-dobas-calc';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla } from '../../engine/data-types';
@@ -9,14 +9,16 @@ function makeData(): GameData {
   return {
     fegyverek: [
       { név: 'Tőrkard', kategória: 'kardvívó', fegyverhossz: 3, akadály: 0, övön_hordható: true, ár: null,
-        extrák: [{ id: 'pontos', név: 'Pontos' }], módok: [{ aktor: 'pengehegy-kard', jelleg: 'szúró', sebzéstípus: 'elsődleges', TÉ: 0, VÉ: 0, SP: 0, Átütés: 0, Sebesség: 6, Forgatás: 'egykezes', Erőlimit: 99, FP: false }] },
+        extrák: [{ id: 'manover_preciz_tamadas_konnyebb_pontos', név: 'Manőver Precíz támadás könnyebb (pontos)' }], módok: [{ aktor: 'pengehegy-kard', jelleg: 'szúró', sebzéstípus: 'elsődleges', TÉ: 0, VÉ: 0, SP: 0, Átütés: 0, Sebesség: 6, Forgatás: 'egykezes', Erőlimit: 99, FP: false }] },
+      { név: 'Közepes Pajzs', kategória: 'pajzs', fegyverhossz: 0, akadály: 0, övön_hordható: false, ár: null,
+        extrák: [{ id: 'manover_attores_alkalmas', név: 'Manőver Áttörés alkalmas' }], módok: [] },
     ],
     taktikak: [{ név: 'Roham', feltétel_kulcs: 'taktika:roham', fokozatos: false, módosítók: {}, hatások: [], kombó_mód: 'whitelist', kombó_lista: [] }],
     harciHelyzetek: [],
   } as unknown as GameData;
 }
 
-const karakter = { fegyverek: [{ alap: 'Tőrkard' }] } as unknown as Karakter;
+const karakter = { fegyverek: [{ alap: 'Tőrkard' }], pajzs: { méret: 'közepes' } } as unknown as Karakter;
 
 function session(over: Partial<Session> = {}): Session {
   return {
@@ -27,8 +29,20 @@ function session(over: Partial<Session> = {}): Session {
 
 describe('szitFeltételTeljesül', () => {
   it('fegyver_extra: az aktív fegyver hordozza-e az extrát', () => {
-    expect(szitFeltételTeljesül('fegyver_extra:pontos', karakter, session(), makeData())).toBe(true);
+    expect(szitFeltételTeljesül('fegyver_extra:manover_preciz_tamadas_konnyebb_pontos', karakter, session(), makeData())).toBe(true);
     expect(szitFeltételTeljesül('fegyver_extra:nincs_ilyen', karakter, session(), makeData())).toBe(false);
+  });
+
+  it('fegyver_extra: a HASZNÁLT pajzs is hordozhatja (Áttörés), a neve is visszajön', () => {
+    const X = 'fegyver_extra:manover_attores_alkalmas';
+    // pajzs nincs használatban → nem illik
+    expect(szitFeltételTeljesül(X, karakter, session(), makeData())).toBe(false);
+    // fegyver+pajzs fogás / pajzs toggle → illik, a hordozó a pajzs
+    expect(szitFeltételTeljesül(X, karakter, session({ fegyverfogás: 'fegyver_pajzs' }), makeData())).toBe(true);
+    expect(szitFeltételTeljesül(X, karakter, session({ aktív_pajzs: true } as never), makeData())).toBe(true);
+    expect(extraHordozóNév('manover_attores_alkalmas', karakter, session({ fegyverfogás: 'fegyver_pajzs' }), makeData())).toBe('Közepes Pajzs');
+    // a fegyver-extránál a fegyver neve jön vissza
+    expect(extraHordozóNév('manover_preciz_tamadas_konnyebb_pontos', karakter, session(), makeData())).toBe('Tőrkard');
   });
 
   it('fegyver_kategória: az aktív fegyver kategóriája', () => {
@@ -50,7 +64,7 @@ describe('szitFeltételTeljesül', () => {
 describe('szitModKezdőÁllapot - auto-match kezdőérték', () => {
   const táblák: ModositoTabla[] = [
     { kategória: 'Fegyver', mód: 'single', sorok: [
-      { érték: -2, leírás: 'Precíziós szúróhegy (Pontos)', feltétel: 'fegyver_extra:pontos' },
+      { érték: -2, leírás: 'Precíziós szúróhegy (Pontos)', feltétel: 'fegyver_extra:manover_preciz_tamadas_konnyebb_pontos' },
       { érték: 0, leírás: 'Egykezes kardvívó' },
       { érték: 2, leírás: 'Zúzófegyver' },
     ] },

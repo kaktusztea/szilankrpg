@@ -86,6 +86,17 @@
             "leírás": "Nagy pajzs"
           }
         ]
+      },
+      {
+        "kategória": "Fegyver",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Fegyver extra: Manőver Áttörés alkalmas",
+            "feltétel": "fegyver_extra:manover_attores_alkalmas"
+          }
+        ]
       }
     ],
     "követelmények": [],
@@ -145,7 +156,19 @@
         "leírás": "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)"
       }
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Fegyver",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Fegyver extra: Manőver Csonkolás alkalmas",
+            "feltétel": "fegyver_extra:manover_csonkolas_alkalmas"
+          }
+        ]
+      }
+    ],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false
   },
@@ -197,7 +220,19 @@
         "leírás": "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)"
       }
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Fegyver",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Fegyver extra: Manőver Csonkolás alkalmas",
+            "feltétel": "fegyver_extra:manover_csonkolas_alkalmas"
+          }
+        ]
+      }
+    ],
     "fázis_cselekvő": {},
     "ellenpróba_bünteti": false
   },
@@ -265,16 +300,6 @@
     ],
     "helyzetfüggő_módosítók": [
       {
-        "kategória": "Ellenfél fegyvere",
-        "mód": "single",
-        "sorok": [
-          {
-            "érték": 4,
-            "leírás": "Fából készült szálfegyver"
-          }
-        ]
-      },
-      {
         "kategória": "Saját fegyver alkalmassága",
         "mód": "single",
         "sorok": [
@@ -293,7 +318,7 @@
         ]
       },
       {
-        "kategória": "A te fegyvered (törés ellen)",
+        "kategória": "Fegyver",
         "mód_oldal": "passzív",
         "mód": "single",
         "sorok": [
@@ -690,7 +715,7 @@
         ]
       },
       {
-        "kategória": "A te fegyvered (lefegyverzés ellen)",
+        "kategória": "Fegyver",
         "mód_oldal": "passzív",
         "mód": "single",
         "sorok": [
@@ -823,6 +848,17 @@
           {
             "érték": -2,
             "leírás": "Bonyolult jel"
+          }
+        ]
+      },
+      {
+        "kategória": "Fegyver",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Fegyver extra: Manőver Mesterjel alkalmas",
+            "feltétel": "fegyver_extra:manover_mesterjel_alkalmas"
           }
         ]
       }
@@ -1028,7 +1064,7 @@
     "végrehajtás_té_módosító": 0,
     "helyzetfüggő_módosítók": [
       {
-        "kategória": "Fegyvered",
+        "kategória": "Fegyver",
         "mód": "single",
         "sorok": [
           {
@@ -1150,6 +1186,17 @@
           {
             "érték": 2,
             "leírás": "Alakzatban (kis előny, KM)"
+          }
+        ]
+      },
+      {
+        "kategória": "Fegyver",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Fegyver extra: Manőver Távoltartás alkalmas",
+            "feltétel": "fegyver_extra:manover_tavoltartas_alkalmas"
           }
         ]
       }
@@ -2061,7 +2108,19 @@
         "leírás": "Fegyverelőny a lovashoz képest"
       }
     ],
-    "helyzetfüggő_módosítók": [],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Fegyver",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 2,
+            "leírás": "Fegyver extra: Manőver Lovas megakasztása",
+            "feltétel": "fegyver_extra:manover_lovas_megakasztasa"
+          }
+        ]
+      }
+    ],
     "ellenpróba_bünteti": false,
     "végrehajtás_té_módosító": 5
   }

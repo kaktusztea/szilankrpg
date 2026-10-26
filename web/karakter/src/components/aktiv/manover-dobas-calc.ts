@@ -9,6 +9,7 @@ import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-type
 import { harcmodorÖsszeg } from '../../engine/utils';
 import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
+import { buildPajzsFegyverNév } from '../harc/shared';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 
@@ -88,16 +89,25 @@ export function aktívFegyverInfo(karakter: Karakter, session: Session, data: Ga
   return { kategória: def.kategória, sebzésMódja: elsődlegesMód(def).jelleg };
 }
 
-/** Az aktív (jobb kéz) fegyver neve, vagy null ha nincs kiválasztva (puszta kéz / index<0). */
-export function aktívFegyverNév(karakter: Karakter, session: Session, data: GameData): string | null {
+/**
+ * Az extrát hordozó, éppen HASZNÁLT felszerelés neve: az aktív (jobb kéz) fegyver, VAGY a használt
+ * pajzs (pajzs toggle / fegyver+pajzs fogás / pajzs mint fegyver). null, ha egyik sem hordozza.
+ * A pajzs a karakter.fegyverek-en KÍVÜL él (karakter.pajzs), ezért külön kell nézni.
+ */
+export function extraHordozóNév(extraId: string, karakter: Karakter, session: Session, data: GameData): string | null {
   const idx = session.aktív_fegyver_index;
   const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
-  return fp ? (lookupFegyver(data.fegyverek, fp.alap)?.név ?? null) : null;
+  const fdef = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
+  if (fdef?.extrák?.some(e => e.id === extraId)) return fdef.név;
+  const pajzsHasznált = session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs' || idx === -2;
+  const pajzsNév = pajzsHasznált ? buildPajzsFegyverNév(karakter) : null;
+  const pdef = pajzsNév ? lookupFegyver(data.fegyverek, pajzsNév) : null;
+  return pdef?.extrák?.some(e => e.id === extraId) ? pdef.név : null;
 }
 
 /**
  * Egy helyzetfüggő módosító sor `feltétel` STRING-je (`"prefix:érték"`) teljesül-e a jelen manőver-
- * kontextusban. Támogatott prefixek: `fegyver_extra:<id>` (az aktív fegyver hordozza-e az extrát),
+ * kontextusban. Támogatott prefixek: `fegyver_extra:<id>` (az aktív fegyver VAGY a használt pajzs hordozza-e),
  * `taktika:<id>` / `harci_helyzet:<id>` / `fegyverfogás:<id>` (aktív feltételek), `fegyver_kategória:<kat>`.
  * Ismeretlen prefix / nincs feltétel → false (nem auto-matchel, marad kézi).
  */
@@ -105,12 +115,7 @@ export function szitFeltételTeljesül(feltétel: string | undefined, karakter: 
   if (!feltétel || !feltétel.includes(':')) return false;
   const [prefix, ...rest] = feltétel.split(':');
   const érték = rest.join(':');
-  if (prefix === 'fegyver_extra') {
-    const idx = session.aktív_fegyver_index;
-    const fp = idx >= 0 ? karakter.fegyverek[idx] : null;
-    const fdef = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
-    return !!fdef?.extrák?.some(e => e.id === érték);
-  }
+  if (prefix === 'fegyver_extra') return extraHordozóNév(érték, karakter, session, data) !== null;
   if (prefix === 'fegyver_kategória') {
     const idx = session.aktív_fegyver_index;
     const fp = idx >= 0 ? karakter.fegyverek[idx] : null;

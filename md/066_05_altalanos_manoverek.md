@@ -59,6 +59,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
     - Pajzsos ellenfél:
         - `-1`: Közepes pajzs
         - `-2`: Nagy pajzs
+    - Fegyver:
+        - `+2`: [Manőver Áttörés alkalmas](068_01_03_fegyver_extrak.md#manőver-áttörés-alkalmas) fegyver-extra
 
 **Hatás**: Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már.
 
@@ -83,6 +85,9 @@ Lecsapod vagy megnyomorítod ellenfeled kezét, vagy lábát.
   - Kéz csonkolása: min (áldozat `max ÉP / 3`) ↑ sebzés szükséges
   - Láb csonkolása: min (áldozat `max ÉP / 2`) ↑ sebzés szükséges
 - alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
+- Helyzetfüggő módosítók:
+    - Fegyver:
+        - `+2`: [Manőver Csonkolás alkalmas](068_01_03_fegyver_extrak.md#manőver-csonkolás-alkalmas) fegyver-extra (kéz és láb csonkolásra is)
 
 **Hatás**: levágtad ellenfeled választott végtagját.
 
@@ -113,12 +118,13 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 - 🟨 Normál követelmény: Harcmodor – `5.szint`
 - 🟥 Erős követelmény: karmok/szarvak ellen nem használható (ott **Csonkolás** szükséges).
 - Helyzetfüggő módosítók:
-    - Ellenfél fegyvere:
-        - `+4`: Fából készült szálfegyver (sokkal könnyebb)
     - Saját fegyver alkalmassága:
         - `+2`: Nagyobb / alkalmasabb törésre
         - `-2`: Kisebb / alkalmatlanabb törésre
         - `99`: Nem alkalmas fegyvertörésre → a Manőver nem kísérelhető meg (KM)
+    - Fegyver (a te fegyvered, ha ellened alkalmazzák):
+        - `immunis`: [Fegyvertörés-immunis](068_01_03_fegyver_extrak.md#fegyvertörés-immunis) fegyver-extra → a Manőver nem hat a fegyveredre
+        - célszám `-2`: [Manőver Fegyvertörés ellene könnyebb (fanyél)](068_01_03_fegyver_extrak.md#manőver-fegyvertörés-ellene-könnyebb-fanyél) fegyver-extra
 
 **Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
 
@@ -218,7 +224,7 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 - Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 - Helyzetfüggő módosítók:
     - Fegyver:
-        - `+2`: Kampós véggel (kifejezetten lábkirántásra alkalmas)
+        - `+2`: [Manőver Lábkirántás könnyebb (kampós véggel)](068_01_03_fegyver_extrak.md#manőver-lábkirántás-könnyebb-kampós-véggel) fegyver-extra
 
 **Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
@@ -276,6 +282,9 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
         - `99`: Nem alkalmas lefegyverzésre → a Manőver nem kísérelhető meg (KM)
     - Ellenfél fegyvere:
         - `+5`: Lánccsapdában foglyul ejtett fegyver
+    - Fegyver (a te fegyvered, ha ellened alkalmazzák):
+        - célszám `+2`: [Manőver Lefegyverzés ellene nehezebb](068_01_03_fegyver_extrak.md#manőver-lefegyverzés-ellene-nehezebb) fegyver-extra
+        - célszám `-2`: [Manőver Lefegyverezés ellene könnyebb](068_01_03_fegyver_extrak.md#manőver-lefegyverezés-ellene-könnyebb) fegyver-extra
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
 
@@ -330,6 +339,8 @@ Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
         - `0`: Egyszerű jel
         - `-1`: Közepes jel
         - `-2`: Bonyolult jel
+    - Fegyver:
+        - `+2`: [Manőver Mesterjel alkalmas](068_01_03_fegyver_extrak.md#manőver-mesterjel-alkalmas) fegyver-extra
 
 **Hatás**: Sikeres manőver esetén képes vagy mesterjeledet belekarcolni ellenfeled ruhájába vagy bőrébe (`1 ÉP`).
 
@@ -410,8 +421,8 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 - 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
-    - Fegyvered:
-        - `+2`: Pontos aktorral (pl. Tőrkard pengehegye, egykezes)
+    - Fegyver:
+        - `+2`: [Manőver Precíz támadás könnyebb (pontos)](068_01_03_fegyver_extrak.md#manőver-precíz-támadás-könnyebb-pontos) fegyver-extra
         - `0`: Egykezes kardvívó fegyver / Puszta kéz
         - `-2`: Zúzófegyver
     - Taktika:
@@ -456,6 +467,8 @@ Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, min
     - Harci alakzat:
         - `+4`: Alakzatban (nagy előny, KM)
         - `+2`: Alakzatban (kis előny, KM)
+    - Fegyver:
+        - `+2`: [Manőver Távoltartás alkalmas](068_01_03_fegyver_extrak.md#manőver-távoltartás-alkalmas) fegyver-extra
 
 **Hatás**: leadhatsz `TÉ:+5`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 

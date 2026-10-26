@@ -48,6 +48,10 @@ manőverek:
       sorok:
         - { érték: -1, leírás: "Közepes pajzs" }
         - { érték: -2, leírás: "Nagy pajzs" }
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { extra_ref: "manover_attores_alkalmas" }
 - név: "Csonkolás (kéz)"
   típus: "általános"
   nehézség: 8
@@ -71,6 +75,11 @@ manőverek:
     - { erősség: "erős", típus: "fegyver_sebzéstípus", érték: "V" }
     - { erősség: "erős", típus: "fegyver_kategória", érték: "kardvívó" }
     - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)" }
+  helyzetfüggő_módosítók:
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { extra_ref: "manover_csonkolas_alkalmas" }
 - név: "Csonkolás (láb)"
   típus: "általános"
   nehézség: 10
@@ -94,6 +103,11 @@ manőverek:
     - { erősség: "erős", típus: "fegyver_sebzéstípus", érték: "V" }
     - { erősség: "erős", típus: "fegyver_kategória", érték: "kardvívó" }
     - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok / van Különleges faj boncolása fortély)" }
+  helyzetfüggő_módosítók:
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { extra_ref: "manover_csonkolas_alkalmas" }
 - név: "Ellenfél elfogása"
   típus: "általános"
   nehézség: 10
@@ -127,17 +141,13 @@ manőverek:
     - { erősség: "erős", típus: "egyéb", leírás: "A használt fegyver Harcmodor-követelménye teljesül" }
     - { erősség: "erős", típus: "egyéb", leírás: "Nem karom/szarv ellen (ott Csonkolás)" }
   helyzetfüggő_módosítók:
-    - kategória: "Ellenfél fegyvere"
-      mód: "single"
-      sorok:
-        - { érték: 4, leírás: "Fából készült szálfegyver" }
     - kategória: "Saját fegyver alkalmassága"
       mód: "single"
       sorok:
         - { érték: 2, leírás: "Nagyobb / alkalmasabb törésre" }
         - { érték: -2, leírás: "Kisebb / alkalmatlanabb törésre" }
         - { érték: 99, leírás: "Nem alkalmas fegyvertörésre (KM)" }
-    - kategória: "A te fegyvered (törés ellen)"
+    - kategória: "Fegyver"
       mód_oldal: "passzív"
       mód: "single"
       sorok:
@@ -304,7 +314,7 @@ manőverek:
       mód: "single"
       sorok:
         - { érték: 5, leírás: "Lánccsapdában foglyul ejtett fegyver" }
-    - kategória: "A te fegyvered (lefegyverzés ellen)"
+    - kategória: "Fegyver"
       mód_oldal: "passzív"
       mód: "single"
       sorok:
@@ -361,6 +371,10 @@ manőverek:
         - { érték: 0, leírás: "Egyszerű jel" }
         - { érték: -1, leírás: "Közepes jel" }
         - { érték: -2, leírás: "Bonyolult jel" }
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { extra_ref: "manover_mesterjel_alkalmas" }
 - név: "Mögékerülés"
   típus: "általános"
   nehézség: 8
@@ -442,7 +456,7 @@ manőverek:
     - { erősség: "erős", típus: "egyéb", leírás: "Elfszabású anatómia (nem titok)" }
   végrehajtás_té_módosító: 0
   helyzetfüggő_módosítók:
-    - kategória: "Fegyvered"
+    - kategória: "Fegyver"
       mód: "single"
       sorok:
         - { extra_ref: "manover_preciz_tamadas_konnyebb_pontos" }
@@ -491,6 +505,10 @@ manőverek:
       sorok:
         - { érték: 4, leírás: "Alakzatban (nagy előny, KM)" }
         - { érték: 2, leírás: "Alakzatban (kis előny, KM)" }
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { extra_ref: "manover_tavoltartas_alkalmas" }
 - név: "Terelés"
   típus: "általános"
   nehézség: 8
@@ -873,3 +891,8 @@ manőverek:
     - { erősség: "erős", típus: "egyéb", leírás: "Védekező gyalogos végzi (nem a lovas)" }
     - { erősség: "erős", típus: "egyéb", leírás: "Szúró szálfegyver használata" }
     - { erősség: "erős", típus: "egyéb", leírás: "Fegyverelőny a lovashoz képest" }
+  helyzetfüggő_módosítók:
+    - kategória: "Fegyver"
+      mód: "single"
+      sorok:
+        - { extra_ref: "manover_lovas_megakasztasa" }

@@ -45,6 +45,9 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
   - A **védekező gyalogos** végezheti (nem a lovas)
   - Szúró szálfegyver használata
   - [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny) a lovashoz képest
+- Helyzetfüggő módosítók:
+    - Fegyver:
+        - `+2`: [Manőver Lovas megakasztása](068_01_03_fegyver_extrak.md#manőver-lovas-megakasztása) fegyver-extra
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed effektív sebzésétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba). Sikertelen manőver esetén a lovas zavartalanul leadhatja rád rohamozó támadását.
 
 <br />

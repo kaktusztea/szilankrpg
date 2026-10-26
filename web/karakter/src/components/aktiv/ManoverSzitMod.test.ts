@@ -87,7 +87,7 @@ describe('szitModSentinelLehetetlen (immunis -99 sentinel)', () => {
   const passzívTábla: ModositoTabla[] = [
     { kategória: 'A te fegyvered (törés ellen)', mód_oldal: 'passzív', mód: 'single', sorok: [
       { érték: IMMUNIS, leírás: 'Fegyver extra: Fegyvertörés-immunis', feltétel: 'fegyver_extra:fegyvertores_immunis' },
-      { érték: -2, leírás: 'Fegyver extra: Lefegyverezhetőbb', feltétel: 'fegyver_extra:lefegyverezhetobb' },
+      { érték: -2, leírás: 'Fegyver extra: Manőver Lefegyverezés ellene könnyebb', feltétel: 'fegyver_extra:manover_lefegyverezes_ellene_konnyebb' },
     ] },
   ];
 

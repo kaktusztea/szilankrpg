@@ -103,11 +103,11 @@ def _resolve_extra_ref_sorok(manőver, extrak_by_id, immunis_sentinel):
     A pointer-sor (`{extra_ref: "<id>"}`) helyére a generátor kitölti:
       - `érték`   : az extra `manőver_ellenpróba`-hatásának értéke, amelynek al-feltétele
                     a jelen manőverre (`manőver:<manőver_id>`) szól - dobásmódosító a dobó
-                    (a `manőver_állapot` szerinti) fél szemszögéből (pozitív = a dobónak kedvez).
+                    (az extra `állapot`-a szerinti) fél szemszögéből (pozitív = a dobónak kedvez).
                     `letilt` módú hatásnál az érték az `immunis_sentinel` (passzív automatikus siker),
       - `leírás`  : "Fegyver extra: <extra név>",
-      - `feltétel`: `fegyver_extra:<id>` (auto-match: az aktív fegyver hordozza-e az extrát).
-    A tábla `mód_oldal` mezőjének (default "aktív") EGYEZNIE kell az extra `manőver_állapot`-ával
+      - `feltétel`: `fegyver_extra:<id>` (auto-match: az aktív fegyver VAGY a használt pajzs hordozza-e az extrát).
+    A tábla `mód_oldal` mezőjének (default "aktív") EGYEZNIE kell az extra `állapot`-ával
     (ha az extra megadja), különben build hiba - így a passzív extra csak passzív-oldali táblába kerülhet.
     Így EGY igazságforrás (extra) adja az értéket + a leírást + a match-feltételt; a manőver-tábla
     csak a pointert (helyet) tartja. Ismeretlen id / hiányzó manőver-hatás → build hiba.

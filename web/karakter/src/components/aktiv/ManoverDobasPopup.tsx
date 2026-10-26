@@ -254,6 +254,25 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     );
   }
 
+  /** Helyzetfüggő módosítók gomb (aktív ÉS passzív módban - a táblák módonként szűrve, l. szitTáblákMódszerint). */
+  function renderSzitGomb() {
+    if (módosítóTáblák.length === 0) return null;
+    return (
+      <button type="button" className="manover-szit-btn manover-szit-btn-flash" onClick={() => setSzitPickerNyitva(true)}>
+        <span className="manover-szit-label">Helyzetfüggő módosítók →</span>
+        {szitLehetetlen
+          ? <span className="manover-szit-sum manover-szit-neg">letilt</span>
+          : szitImmunis
+          ? <span className="manover-szit-sum manover-szit-pos">immunis</span>
+          : szitModÖsszeg !== 0 && (
+            <span className={`manover-szit-sum${szitModÖsszeg > 0 ? ' manover-szit-pos' : ' manover-szit-neg'}`}>
+              {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
+            </span>
+          )}
+      </button>
+    );
+  }
+
   function renderEllenpróba() {
     if (mód === 'aktív') {
       // §066_04: a Helyzetfüggő módosítók a DOBÁShoz adódnak (nem a Célszámhoz). A Célszám fix:
@@ -262,20 +281,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       const célszám = manőver.nehézség;
       return (
         <div className="manover-fazis-info">
-          {módosítóTáblák.length > 0 && (
-            <button type="button" className="manover-szit-btn manover-szit-btn-flash" onClick={() => setSzitPickerNyitva(true)}>
-              <span className="manover-szit-label">Helyzetfüggő módosítók →</span>
-              {szitLehetetlen
-                ? <span className="manover-szit-sum manover-szit-neg">letilt</span>
-                : szitImmunis
-                ? <span className="manover-szit-sum manover-szit-pos">immunis</span>
-                : szitModÖsszeg !== 0 && (
-                  <span className={`manover-szit-sum${szitModÖsszeg > 0 ? ' manover-szit-pos' : ' manover-szit-neg'}`}>
-                    {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
-                  </span>
-                )}
-            </button>
-          )}
+          {renderSzitGomb()}
           {renderMpGomb()}
           {!szitLehetetlen && !szitImmunis && (
             <div className="manover-ep-vs-row">
@@ -291,9 +297,12 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         </div>
       );
     } else {
-      const célszámAlap = manőverAlap + manőver.nehézség + költöttMP + belharcBónusz;
+      // Passzív: a passzív-oldali táblák (pl. fegyver-extrák: "Lefegyverzés ellene nehezebb +2") a passzív
+      // fél szemszögéből értendők - pozitív = neki kedvez → az ellenfél célszáma nő (mint a költött MP).
+      const célszámAlap = manőverAlap + manőver.nehézség + költöttMP + belharcBónusz + szitModÖsszeg;
       return (
         <div className="manover-fazis-info">
+          {renderSzitGomb()}
           {renderMpGomb()}
           <div className="manover-ep-vs-row">
             <span className="manover-ep-side">Célszám: <strong className="manover-celszam-ertek">{célszámAlap}</strong></span>
