@@ -990,7 +990,7 @@ fortélyok: Mesterfegyver(2, "kard, lovag"), Mesterfegyver(1, "tőr"),
            Kaszabolás 2, Fárasztás 1
 fegyverek: "Kard, lovag" (TÉ 6, VÉ 4, SP +6, Sebesség 8, V/S, Ph 1, Átütés 1, kardvívó)
            "Tőr"         (TÉ 2, VÉ 1, SP +1, Sebesség 6, S/V, Ph 0, közelharci)
-páncél: lánc/sodrony, bronz, átlagos, idea 3, rongálódás 3, sisak igen,
+páncél: lánc/sodrony, bronz, átlagos, idea 1, rongálódás 3, sisak igen,
         végtagvédettség 3, méret_illeszkedés "nem passzol"
 pajzs: közepes
 ```
@@ -1007,8 +1007,8 @@ pajzs: közepes
 | TÉ_alap | 10 + 3 + 3 + 3 + 15 | **34** |
 | VÉ_alap | 30 + 3 + 3 + 13 | **49** |
 | páncél_MGT | MAX(0, 8 + 2 + 4×1 + 3 − 3) | **14** |
-| SFÉ_fizikai | 10 − 5 + 3 − 3 | **5** |
-| SFÉ_energia | 10 − 5 + 3 − 3 | **5** |
+| SFÉ_fizikai | 10 − 5 + 1 − 3 | **3** |
+| SFÉ_energia | 10 − 5 + 1 − 3 | **3** |
 | merevvért_TÉ_büntetés | lánc nem merev | **0** |
 | páncél_lefedettség | torzó 50 + sisak 10 + 3×10 | **90 %** |
 | manőver_alap | CEIL((15+13)/10) | **3** |
@@ -1041,7 +1041,7 @@ Hangolási tesztekhez ez a javasolt neutrális beállítás:
 
 ```
 2 db REF-A klón, "Kard, lovag", egyfegyveres, páncél aktív, pajzs nélkül
-→ mindkettő: TÉ 47, VÉ 60, SP+11, SFÉ 5, ÉP 40, KÉ 19, 1 támadás/kör
+→ mindkettő: TÉ 47, VÉ 60, SP+11, SFÉ 3, ÉP 40, KÉ 19, 1 támadás/kör
 → Fegyverazonosság (azonos fegyver)  →  sikertelen támadás VÉ csökk = 1 + k20P
 → Harcos elme 1 aktív  →  kör elején +1 VÉ (csak fáradásból)
 → nincs taktika, nincs harci helyzet, nincs státusz
@@ -1052,10 +1052,10 @@ Ellenőrző jellemzők ehhez a felálláshoz (20 000 futás, ±0,5 % tolerancia)
 | Metrika | Elvárt |
 |---|---|
 | Találati esély az 1. körben (VÉ 60 vs TÉ 47) | k20 ≥ 13 → **40 %** |
-| Átlagos sebzés találatonként (SFÉ 5, túldobás nélkül) | 10,5 + 11 − 5 ≈ **16,5 ÉP** |
-| 1:1 harc hossza | **≈ 3,9 kör** |
+| Átlagos sebzés találatonként (SFÉ 3, túldobás nélkül) | 10,5 + 11 − 3 ≈ **18,5 ÉP** |
+| 1:1 harc hossza | **≈ 3,65 kör** |
 | 1:1 győzelmi arány | **50 / 50 %** |
-| 1:2 - a magányos győzelmi aránya | **≈ 2 %**, ≈ 2,7 kör |
+| 1:2 - a magányos győzelmi aránya | **≈ 1 %**, ≈ 2,5 kör |
 | 1:3 - a magányos győzelmi aránya | **≈ 0 %**, ≈ 1,8 kör |
 
 ### 11.3 REF-C - "Tank" (hosszú harc kikényszerítése)
@@ -1157,7 +1157,7 @@ explicit döntést kell hoznia, és a döntést jelentenie kell az eredménnyel 
 
 A `1 + k20P` VÉ csökkentésnél a `k20P` mindig a már eldobott támadó dobás (a k20, ami a
 találat/tévesztést eldöntötte) páros/páratlan részéből jön - **közös kocka**, nincs külön
-dobás. Minden hangolási eszköz (`fegyvergenerator_harcszimulator.py`,
+dobás. Minden hangolási eszköz (`harcszimulator.py`,
 `harcszimulacio_selftest.py`, `harci_laz_*.py`, `sfe_hangolas.py`) ezt implementálja.
 
 ### 13.2 Kezdeményezés holtversenye
@@ -1274,7 +1274,7 @@ A3   S-kategória(ép_használt=11, oszlopméret=10)      == 2
 A4   sebesülés_TÉ_levonás(kat=3, FT_enyhítés=2)       == -4
 A5   REF-A "Kard, lovag": TÉ==47, VÉ==60, SP==11, támadások==1
 A6   REF-A "Tőr":         TÉ==40, VÉ==54, SP==5
-A7   REF-A páncél_MGT==14, SFÉ_fizikai==5, merevvért_TÉ_büntetés==0
+A7   REF-A páncél_MGT==14, SFÉ_fizikai==3, merevvért_TÉ_büntetés==0
 A8   k20P(5)==0 és k20P(16)==1 és k20P(10)==2 és k20P(20)==2
 A9   sebzésElőny(15)==0, sebzésElőny(16)==1, sebzésElőny(20)==2
 A10  netÉH([előny+2, előny+2])                        == 2      # clamp!
@@ -1285,9 +1285,9 @@ A12  computeVÉ(base=10, bónusz=0, taktika=-5, csökk=50) == 0    # alsó clamp
 ### Statisztikai (20 000 futás, ±0,5 % / ±0,1 kör)
 
 ```
-B1   REF-B 1:1, mindkettő támad   →  győzelem 50/50 %,  hossz ≈ 3,9 kör
-B2   REF-B 1:3, mindenki támad    →  a magányos ≈ 0 %,  hossz ≈ 1,8 kör
-B3   E[sebzés | találat, SFÉ 5, túldobás 0]            ≈ 16,5
+B1   REF-B 1:1, mindkettő támad   →  győzelem 50/50 %,  hossz ≈ 3,65 kör
+B2   REF-B 1:3, mindenki támad    →  a magányos ≈ 0 %,  hossz ≈ 1,7 kör
+B3   E[sebzés | találat, SFÉ 3, túldobás 0]            ≈ 18,5
 B4   P(találat | VÉ 60, TÉ 47, éh 0)                   == 0,40 pontosan
 ```
 
@@ -1328,6 +1328,7 @@ javítani kell, kérj rá külön döntést.
 
 | Dátum | Változás |
 |---|---|
+| 2026-10-26 | **REF-A/REF-B páncél SFÉ 5 → 3.** A tesztkarakter (`data/karakter/test_karakter2.json`) páncél-Ideája 3 → 1 lett (a lánc/sodrony `idea_plusz_minusz: 1` korlátja miatt a 3 érvénytelen volt). Az önteszt a szabályhoz igazodik: A7 SFÉ==3; a REF-B SFÉ-je mostantól a REF-A páncéljából jön (nem beégetett); B1 hossz ≈3,65, B2 hossz ≈1,7, B3 ≈18,5, 1:2 ≈1 % / 2,5 kör (20 000 futásból mérve). Egyúttal a fortély-lookup id-alapú lett (séma v3). |
 | 2026-10-02 | **Ambiguitás-regiszter teljes revalidálás.** A "nyitott" tételek újraellenőrzése a jelenlegi kód/data ellen: a 2 (Fárasztás VÉ data layer), 5 (golden Kard lovag cím), 7 (`1+k20P` jelentése), 8 (fegyver Idea), 10 (MK sorpár) ELAVULT → LEZÁRVA (a v2 fegyvermigráció + a k20P/VÉ-csökkentés szabálydöntés megoldotta, a regiszter nem frissült). 3 javítva (§21.1 Teljes Védekezés +6→+8). **Egyedül a 9. tétel maradt valóban nyitott** (Fegyver/Pajzs + Páncél akadályoztatása státuszok hiányoznak a `statuszok.yaml`-ból). |
 | 2026-10-02 | **Ambiguitás-regiszter 4. tétel LEZÁRVA: pajzs TÉ büntetés.** Az `engine_spec.md` a nem létező `pajzs_TÉ_büntetés` / `pajzs_TÉ_mérséklés` konstansokra hivatkozott; javítva a tényleges `pajzs_hatások[méret][fok]` 2D táblára (szabálykönyv: `pajzshasznalat.md` mátrix, Alapeset -3/-6/-9 ... 3.fok 0/0/0). Érintett engine_spec §-ok: §6, §13, §27, §22.10. Spec-only változás (kód/data már helyes volt). |
 | 2026-09-27 | **A sikertelen támadás VÉ csökkentése `k20P`-t használ** (k20 páros/páratlan része, `10`/`20`→2) - a 2026-09-26-i éles szabálydöntés (`md/006`, `md/064_01`, `md/064_02_03`, `md/064_03`, `md/065_01_04`, `md/065_02`) átvezetve. Érintett a jelen fájlban: §4 kockajelölés, §5.3 formula, §7 táblázat, §11 referencia statblokk, §13.1/§13.9, §16 A8 önteszt. Átvezetve a `code/balance/fegyvergenerator_harcszimulator.py`, `harcszimulacio_selftest.py`, `harci_laz_csapat.py`, `harci_laz_egyesitett.py`, `harci_laz_hangolas.py`, `sfe_hangolas.py` szkriptekbe is. |

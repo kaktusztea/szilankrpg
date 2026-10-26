@@ -40,13 +40,13 @@ Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refact
 ## Fegyverek: hangolás és utómunka 🚧
 
 Utómunka (a v2 bevezetés lezárult):
-- [ ] Balansz `raw` → `final`: mind a 67 fegyver `state: raw` (a `fegyverek.yaml` `state` mezője a mérőszám). Eszközök: `code/balance/` szimulátor + taktikai AI, l. wiki `STUDY.fegyvergenerator_harcszimulacio`.
+- [ ] Balansz `raw` → `final`: mind a 67 fegyver `state: raw` (a `fegyverek.yaml` `state` mezője a mérőszám). Eszközök: `code/fegyvergenerator/` szimulátor + taktikai AI, l. wiki `STUDY.fegyvergenerator_harcszimulacio`.
 - [ ] Custom (egyedi, generált) fegyver a karakterben: `fegyverek[].custom` séma-mező + build-time vagy runtime kiértékelés (nyitott döntés) - wiki `STUDY.fegyvergenerator_v2` 4a.
 - [ ] Ár-modell: paraméter-alapú alapár (fegyverhossz / anyag / Idea szorzókból) - a JSON `ár` mező ma placeholder (`null`).
 
 ### Bemenő paraméterek hangolása (javaslat, jóváhagyásra vár)
 
-Forrás: `data/sources/fegyverek/fegyverek.yaml` (WORK paraméterek). Szempontok: középkori fegyverismeret + más fantasy RPG-k konvenciói, a Szilánk Fegyvergenerátor modelljén belül (`code/balance/fegyvergenerator_balansz.py` `modok()`), a Fegyver extrák (`extrak.yaml`) és a Felszerelés pont (`max(hossz-pont, súly-pont)`, `md/010_03_06`) figyelembevételével.
+Forrás: `data/sources/fegyverek/fegyverek.yaml` (WORK paraméterek). Szempontok: középkori fegyverismeret + más fantasy RPG-k konvenciói, a Szilánk Fegyvergenerátor modelljén belül (`code/fegyvergenerator/modell.py` `modok()`), a Fegyver extrák (`extrak.yaml`) és a Felszerelés pont (`max(hossz-pont, súly-pont)`, `md/010_03_06`) figyelembevételével.
 
 Az értékek Erő=0 bázisértékek, a generátorral kiszámolva (előtte → utána).
 
@@ -103,7 +103,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 
 #### Végrehajtáskor
 
-- `fegyverek.yaml` módosítás → az `update_fegyvertablazat.yml` workflow (önteszt-kapu + `sync_fegyvertablazatok.py`) újragenerálja a `md/068_0x` táblákat; lokálisan is futtatható.
+- `fegyverek.yaml` módosítás → az `update_fegyvertablazat.yml` workflow (önteszt-kapu + `md_fegyvertablak_sync.py`) újragenerálja a `md/068_0x` táblákat; lokálisan is futtatható.
 - Változik a `data/tables/fegyverek_v2.json` → `npm run build` (vitest is); az érintett fegyverekre épülő golden tesztek frissítendők.
 - A balansz-önteszt regressziós elvárásait (`teszt.elvart`) egyik javaslat sem érinti.
 

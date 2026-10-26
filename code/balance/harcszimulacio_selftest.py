@@ -75,7 +75,7 @@ tests = [
                                              (A['TÉ'], A['VÉ'], A['SP'], A['támadások'])),
     ('A6  Tőr TÉ40/VÉ54/SP5',                (T['TÉ'], T['VÉ'], T['SP']) == (40, 54, 5),
                                              (T['TÉ'], T['VÉ'], T['SP'])),
-    ('A7  MGT14/SFÉ5/mvbünt0',               (A['MGT'], A['SFÉ'], A['mv_bunt']) == (14, 5, 0),
+    ('A7  MGT14/SFÉ3/mvbünt0',               (A['MGT'], A['SFÉ'], A['mv_bunt']) == (14, 3, 0),
                                              (A['MGT'], A['SFÉ'], A['mv_bunt'])),
     ('A8  k20P 5/16/10/20 == 0/1/2/2',       (k20P(5), k20P(16), k20P(10), k20P(20)) == (0, 1, 2, 2), None),
     ('A9  sebzésElőny 15/16/20 == 0/1/2',    (sebzes_elony(15), sebzes_elony(16), sebzes_elony(20)) == (0, 1, 2), None),
@@ -91,7 +91,7 @@ for név, ok, got in tests:
     fail += not ok
 
 # ── Statisztikai: REF-B szimuláció ───────────────────────────────────────────
-TE, VE, SP, SFE, EP, KE, OSZL, ENYH, REGEN = 47, 60, 11, 5, 40, 19, 10, 2, 1
+TE, VE, SP, SFE, EP, KE, OSZL, ENYH, REGEN = 47, 60, 11, A['SFÉ'], 40, 19, 10, 2, 1   # SFÉ: a REF-A páncéljából
 
 
 class H:
@@ -131,20 +131,20 @@ print('\n=== STATISZTIKAI ÁLLÍTÁSOK (%d futás) ===' % N)
 r11 = [kuzdelem(1, 1) for _ in range(N)]
 aw = sum(1 for x in r11 if x[0] == 'A') / N
 h11 = mean(x[1] for x in r11)
-ok = abs(aw - 0.5) < 0.02 and abs(h11 - 3.9) < 0.15
-print(f"  {'✔' if ok else '✘ HIBA'}  B1  1:1 → A győz {aw:.1%} (elvárt 50%), hossz {h11:.2f} kör (elvárt 3,9)")
+ok = abs(aw - 0.5) < 0.02 and abs(h11 - 3.65) < 0.15
+print(f"  {'✔' if ok else '✘ HIBA'}  B1  1:1 → A győz {aw:.1%} (elvárt 50%), hossz {h11:.2f} kör (elvárt 3,65)")
 fail += not ok
 
 r13 = [kuzdelem(1, 3) for _ in range(N)]
 aw3 = sum(1 for x in r13 if x[0] == 'A') / N
 h13 = mean(x[1] for x in r13)
-ok = aw3 < 0.01 and abs(h13 - 1.8) < 0.15
-print(f"  {'✔' if ok else '✘ HIBA'}  B2  1:3 → magányos {aw3:.1%} (elvárt ~0%), hossz {h13:.2f} kör (elvárt 1,8)")
+ok = aw3 < 0.01 and abs(h13 - 1.7) < 0.15
+print(f"  {'✔' if ok else '✘ HIBA'}  B2  1:3 → magányos {aw3:.1%} (elvárt ~0%), hossz {h13:.2f} kör (elvárt 1,7)")
 fail += not ok
 
 dmg = mean(max(0, d20() + SP - SFE) for _ in range(200000))
-ok = abs(dmg - 16.5) < 0.15
-print(f"  {'✔' if ok else '✘ HIBA'}  B3  E[sebzés|találat] {dmg:.2f} (elvárt 16,5)")
+ok = abs(dmg - 18.5) < 0.15
+print(f"  {'✔' if ok else '✘ HIBA'}  B3  E[sebzés|találat] {dmg:.2f} (elvárt 18,5)")
 fail += not ok
 
 hit = sum(1 for _ in range(200000) if TE + d20() >= VE) / 200000

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Fegyvergenerátor - kör-alapú harci szimulátor a fegyverek egymáshoz mérésére.
 
-Cél: a fegyvergenerátor (`fegyvergenerator_balansz.FEGYVER_RECORDS`) fegyvereit valódi, kör-alapú
+Cél: a fegyvergenerátor (`modell.FEGYVER_RECORDS`) fegyvereit valódi, kör-alapú
 harcban (§3-§6 `harcszimulacio.spec.md`) mérjük össze, nem csak statikus sebzés/tempó
-metrikával (az utóbbit a `fegyvergenerator_balansz.py` már adja).
+metrikával (az utóbbit a `modell.py` már adja).
 
 A harci motor a `harcszimulacio_selftest.py` REFERENCIA implementációjának bővítése:
   - Fegyver-adapter: a generátor `módok[]` (aktoronkénti elsődleges/másodlagos sor)
@@ -25,7 +25,7 @@ Célválasztás politika (mindenki, csak REF/N:N/N:1 nem): "legveszélyesebb gye
   az élő, még harcképes ellenfelek közül a legkisebb ÉP-hátralévővel/VÉ-vel rendelkezőt
   célozza (nem a legerősebbet, de nem is vaktában/randomul).
 
-Futtatás:  python3 code/balance/fegyvergenerator_harcszimulator.py
+Futtatás:  python3 code/fegyvergenerator/harcszimulator.py
 """
 import json
 import pathlib
@@ -35,7 +35,7 @@ from dataclasses import dataclass, field
 from statistics import mean
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import fegyvergenerator_balansz as FB   # AKTOR, TIPUS_PANCEL, PANCEL, Fegyver, FEGYVER_RECORDS
+import modell as FB   # AKTOR, TIPUS_PANCEL, PANCEL, Fegyver, FEGYVER_RECORDS
 
 DATA_TABLES = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "tables"
 
@@ -54,7 +54,7 @@ _MVV_BONUSZ = {b["fok"]: b["TÉ_büntetés_csökkentés"] for b in _load_table("
 _PANCEL_MEREV = {s["struktúra"]: s["merev"] for s in _load_table("konstansok.json")["páncél_struktúrák"]}
 _PANCEL_MEREV["csupasz"] = False
 
-# Mátrix-osztály (a `fegyvergenerator_balansz.PANCEL`-ből) → (struktúra, sfé_fizikai, mgt).
+# Mátrix-osztály (a `modell.PANCEL`-ből) → (struktúra, sfé_fizikai, mgt).
 # Az első struktúrát választjuk minden osztályból (pl. "merev" → pikkely, nem lemez) -
 # konzisztens, determinisztikus, és a Profil páncél-mezőit ÖSSZHANGBAN tartja a
 # sebzésjelleg×páncél mátrix-oldallal (l. §6.5.1 megjegyzés a modul docstringjében).
@@ -250,10 +250,10 @@ def profil_szarmaztatott(p: Profil, mod: FegyverMod):
 
 # ── Taktika / helyzet - ADATVEZÉRELT (data/tables/taktikak.json, harci_helyzetek.json) ──
 # A korábbi, kézzel írt TAKTIKAK/HARCI_HELYZETEK dict-ek megszűntek - minden mező a valós
-# webapp forrásból jön (`fegyvergenerator_data_adapter.py`). Az id-k a JSON id-jei (ékezetes,
+# webapp forrásból jön (`data_adapter.py`). Az id-k a JSON id-jei (ékezetes,
 # pl. "roham", "támadó", "belharci_helyzet"), NEM a korábbi ASCII-sított custom kulcsok.
 
-import fegyvergenerator_data_adapter as DA
+import data_adapter as DA
 
 
 def netEH(*ertekek):

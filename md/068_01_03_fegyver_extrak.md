@@ -8,6 +8,7 @@ Egyes fegyverek egyedi, szituációs hatásokat hordoznak - ezeket **extráknak*
 
 ```
 id: kulonleges_felkeszites
+Állapot: Aktív
 Feltétel: Mesterfegyver fortély 1.fok az adott fegyverre
         + harci iskola (KM dönti el, narratív)
 Hatás:    Mesterfegyver e fegyverre adott bónuszai megduplázódnak

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Fegyver ár-számítás önteszt (md/068_01_05_fegyverek_ara.md).
 
-A fegyvergenerator_json.ar_alap / fegyver_ar függvényeit ellenőrzi a data layer ÉLŐ
+A json_export.ar_alap / fegyver_ar függvényeit ellenőrzi a data layer ÉLŐ
 konstansaival (nincs beégetett érték a tesztben a bemeneten kívül). Futtatás:
-    python3 code/balance/fegyver_ar_selftest.py
+    python3 code/fegyvergenerator/ar_selftest.py
 """
 import os
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-import fegyvergenerator_json as fgj  # noqa: E402
+import json_export as fgj  # noqa: E402
 
 
 def _case(név, fv, idea, várt_alap, várt_ár):
@@ -34,7 +34,7 @@ def run():
     _case("Mara-sequor", {"hossz": 5, "fejdarab": 1, "alapanyag": "feketeacél"}, 3, 1.0, 700.0)
     # ököl: fém, fejdarab 0 → alap 0 → ár 0 (nem vásárolható)
     _case("ököl", {"hossz": 0, "fejdarab": 0}, 0, 0.0, 0.0)
-    print("fegyver_ar_selftest: OK")
+    print("ar_selftest: OK")
 
 
 if __name__ == "__main__":

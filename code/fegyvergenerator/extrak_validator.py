@@ -9,8 +9,8 @@ Az egységes effekt-modell (engine_spec.md §42) vokabulárját ellenőrzi:
 
 A vokabulár a SÉMÁBÓL jön - a szkriptben NINCS beégetett adat.
 
-Futtatás:  python3 code/balance/extrak_validator.py     (0 = OK, 1 = hiba)
-Bekötve:   a fegyvergenerator_balansz.py a tesztek ELŐTT lefuttatja.
+Futtatás:  python3 code/fegyvergenerator/extrak_validator.py     (0 = OK, 1 = hiba)
+Bekötve:   a modell.py a tesztek ELŐTT lefuttatja.
 """
 import pathlib
 import sys

@@ -1,6 +1,6 @@
 """data/sources/fegyverek/fegyverek.yaml (+ fegyverek_fixed.json) → tables/fegyverek_v2.json
 
-A Fegyvergenerátor v2 (`code/balance/fegyvergenerator_balansz.py`) modelljével leszármaztatott
+A Fegyvergenerátor v2 (`code/fegyvergenerator/modell.py`) modelljével leszármaztatott
 mainstream fegyverek JSON-exportja - build-gate-be kötve (l. STUDY.fegyvergenerator_v2 wiki,
 "Migrációs terv" 3a pont). A kimenet EGY fegyver = EGY elem, `módok` tömbbel (fegyvermódonként,
 aktoronként) - NEM a régi flat v1 (`archive/data_fegyverek_v1/fegyverek.json`) sémája.
@@ -16,7 +16,7 @@ import json
 
 from .common import DATA_DIR, load_yaml, write_json
 
-_BALANCE_DIR = os.path.join(DATA_DIR, '..', 'code', 'balance')
+_FEGYVERGENERATOR_DIR = os.path.join(DATA_DIR, '..', 'code', 'fegyvergenerator')
 
 
 def generate_sebzesjelleg_pancel_matrix():
@@ -63,13 +63,13 @@ def generate_fegyverek_v2():
     """fegyverek.yaml → fegyverek_v2.json (a fegyvergenerátor natural módok[] modellje).
 
     Séma-hiba esetén (extrak.yaml / fegyverek.yaml) a build-gate hibával áll - ugyanazt a
-    validációt futtatja, amit a `code/balance/fegyvergenerator_json.py` CLI-módban is.
+    validációt futtatja, amit a `code/fegyvergenerator/json_export.py` CLI-módban is.
     """
-    if _BALANCE_DIR not in sys.path:
-        sys.path.insert(0, _BALANCE_DIR)
+    if _FEGYVERGENERATOR_DIR not in sys.path:
+        sys.path.insert(0, _FEGYVERGENERATOR_DIR)
     import extrak_validator  # noqa: E402
     import fegyverek_validator  # noqa: E402
-    import fegyvergenerator_json as fgj  # noqa: E402
+    import json_export as fgj  # noqa: E402
 
     # A validátorok print()-je STDOUT-ra menne (elszennyezné a build-log-ot) - STDERR-re irányítva.
     _stdout = sys.stdout

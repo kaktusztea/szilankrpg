@@ -132,7 +132,7 @@
     "akadály": 2,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [{"id": "kopjas_roham", "név": "Kopja lovas rohamban"}],
+    "extrák": ["kopjas_roham"],
     "módok": [
       {
         "aktor": "kivétel",
@@ -157,7 +157,7 @@
     "akadály": 2,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [{"id": "kopjas_roham", "név": "Kopja lovas rohamban"}],
+    "extrák": ["kopjas_roham"],
     "módok": [
       {
         "aktor": "kivétel",
@@ -207,7 +207,7 @@
     "akadály": 0,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [{"id": "manover_attores_alkalmas", "név": "Manőver Áttörés alkalmas"}],
+    "extrák": ["manover_attores_alkalmas"],
     "módok": [
       {
         "aktor": "kivétel",
@@ -232,7 +232,7 @@
     "akadály": 0,
     "övön_hordható": false,
     "ár": null,
-    "extrák": [{"id": "manover_attores_alkalmas", "név": "Manőver Áttörés alkalmas"}],
+    "extrák": ["manover_attores_alkalmas"],
     "módok": [
       {
         "aktor": "kivétel",

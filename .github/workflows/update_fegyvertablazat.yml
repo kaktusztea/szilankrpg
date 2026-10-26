@@ -6,13 +6,13 @@ on:
     paths:
       - 'data/sources/fegyverek/**.yaml'
       - 'data/sources/fegyverek/fegyverek_fixed.json'
-      - 'code/sync_fegyvertablazatok.py'
-      - 'code/balance/fegyvergenerator_balansz.py'
-      - 'code/balance/fegyvergenerator_harcszimulator.py'
-      - 'code/balance/fegyvergenerator_taktikai_ai.py'
-      - 'code/balance/fegyvergenerator_data_adapter.py'
-      - 'code/balance/extrak_validator.py'
-      - 'code/balance/fegyverek_validator.py'
+      - 'code/fegyvergenerator/md_fegyvertablak_sync.py'
+      - 'code/fegyvergenerator/modell.py'
+      - 'code/fegyvergenerator/harcszimulator.py'
+      - 'code/fegyvergenerator/taktikai_ai.py'
+      - 'code/fegyvergenerator/data_adapter.py'
+      - 'code/fegyvergenerator/extrak_validator.py'
+      - 'code/fegyvergenerator/fegyverek_validator.py'
       - 'data/tables/taktikak.json'
       - 'data/tables/harci_helyzetek.json'
       - 'data/tables/manoverek.json'
@@ -24,13 +24,13 @@ on:
     paths:
       - 'data/sources/fegyverek/**.yaml'
       - 'data/sources/fegyverek/fegyverek_fixed.json'
-      - 'code/sync_fegyvertablazatok.py'
-      - 'code/balance/fegyvergenerator_balansz.py'
-      - 'code/balance/fegyvergenerator_harcszimulator.py'
-      - 'code/balance/fegyvergenerator_taktikai_ai.py'
-      - 'code/balance/fegyvergenerator_data_adapter.py'
-      - 'code/balance/extrak_validator.py'
-      - 'code/balance/fegyverek_validator.py'
+      - 'code/fegyvergenerator/md_fegyvertablak_sync.py'
+      - 'code/fegyvergenerator/modell.py'
+      - 'code/fegyvergenerator/harcszimulator.py'
+      - 'code/fegyvergenerator/taktikai_ai.py'
+      - 'code/fegyvergenerator/data_adapter.py'
+      - 'code/fegyvergenerator/extrak_validator.py'
+      - 'code/fegyvergenerator/fegyverek_validator.py'
       - 'data/tables/taktikak.json'
       - 'data/tables/harci_helyzetek.json'
       - 'data/tables/manoverek.json'
@@ -58,16 +58,16 @@ jobs:
 
     # Self-test kapu: hibás modellből ne generálódjon/commitolódjon tábla.
     - name: Self-test - fegyvergenerátor (séma + regresszió)
-      run: python code/balance/fegyvergenerator_balansz.py > /dev/null
+      run: python code/fegyvergenerator/modell.py > /dev/null
 
     - name: Self-test - harcszimulátor
-      run: python code/balance/fegyvergenerator_harcszimulator.py > /dev/null
+      run: python code/fegyvergenerator/harcszimulator.py > /dev/null
 
     - name: Self-test - taktikai AI
-      run: python code/balance/fegyvergenerator_taktikai_ai.py > /dev/null
+      run: python code/fegyvergenerator/taktikai_ai.py > /dev/null
 
-    - name: Execute sync_fegyvertablazatok.py
-      run: python code/sync_fegyvertablazatok.py
+    - name: Execute md_fegyvertablak_sync.py
+      run: python code/fegyvergenerator/md_fegyvertablak_sync.py
 
     - name: Check for Changes
       run: |
@@ -87,7 +87,7 @@ jobs:
       if: ${{ env.files_modified == 'true' }}
       run: |
         git add .
-        git commit -m "GitHub Action: sync_fegyvertablazatok.py"
+        git commit -m "GitHub Action: md_fegyvertablak_sync.py"
 
     - name: Push Changes
       if: ${{ env.files_modified == 'true' }}

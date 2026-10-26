@@ -2,7 +2,7 @@
 """Fegyvergenerátor → éles md fegyvertáblázat-fejezetek szinkronizálása (mind az 5 kategória).
 
 A `data/sources/fegyverek/fegyverek.yaml` kategóriánkénti rekordjait a fegyvergenerátor
-(`code/balance/fegyvergenerator_balansz.py`) modelljével harcértékekre számolja, PLUSZ a
+(`code/fegyvergenerator/modell.py`) modelljével harcértékekre számolja, PLUSZ a
 `data/sources/fegyverek/fegyverek_fixed.json` azonos kategóriájú rekordjait (Garott,
 hárítófegyverek, Kopják - már végleges módok[] JSON, nem WORK-paraméter, nem megy át a
 generátor modellen), és a kimenő markdown táblát beírja az éles `md/068_0N_*.md` fájlba,
@@ -13,9 +13,9 @@ A generátor **saját formátumát** használja (nincs backward compatibility a 
 séma oszlopaival) - a régi `Pengehossz`/`MK`/`KF`/`Íves` oszlopok helyett a `módok[]`
 struktúra (Aktorok, Sebzésjelleg, Sebzéstípus) jelenik meg, egy fegyver több sorban, módonként.
 
-Futtatás:  python3 code/sync_fegyvertablazatok.py [kategória ...]
+Futtatás:  python3 code/fegyvergenerator/md_fegyvertablak_sync.py [kategória ...]
   Argumentum nélkül mind az 5 kategóriát frissíti. Egy vagy több kategória-név megadható
-  (pl. `python3 code/sync_fegyvertablazatok.py kardvívó`), ha csak azokat kell frissíteni.
+  (pl. `python3 code/fegyvergenerator/md_fegyvertablak_sync.py kardvívó`), ha csak azokat kell frissíteni.
 Csak akkor ír egy fájlba, ha a táblázat tartalma valóban változott (git diff-barát,
 "no-op ha nincs változás" elv, l. AGENTS.md).
 """
@@ -23,13 +23,13 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / "balance"))
-import fegyvergenerator_balansz as bal  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import modell as bal  # noqa: E402
 
 F = bal.Fegyver
 
-MD_DIR = Path(__file__).resolve().parent.parent / "md"
-FIXED_PATH = Path(__file__).resolve().parent.parent / "data" / "sources" / "fegyverek" / "fegyverek_fixed.json"
+MD_DIR = Path(__file__).resolve().parents[2] / "md"
+FIXED_PATH = Path(__file__).resolve().parents[2] / "data" / "sources" / "fegyverek" / "fegyverek_fixed.json"
 TAG_START = "<!-- tag: md_table_fegyver_start -->"
 TAG_END = "<!-- tag: md_table_fegyver_end -->"
 
@@ -84,8 +84,8 @@ def _fixed_sorok(kategoria):
         if r.get("kategória") != kategoria:
             continue
         megj = r.get("megjegyzés", "")
-        # Az `extrák` lehet string-lista VAGY {id, név} dict-lista (pl. Kopják) - a nevet jelenítjük.
-        extrak_cimkek = [e["név"] if isinstance(e, dict) else e for e in r.get("extrák", [])]
+        # Az `extrák` id-lista (mint a fegyverek.yaml-ban) - a megjelenített név az extrak.yaml-ból.
+        extrak_cimkek = [_extra_cimke(e) for e in r.get("extrák", [])]
         for i, m in enumerate(r.get("módok", [])):
             n = r["név"] if i == 0 else ""
             mm = megj if i == 0 else ""

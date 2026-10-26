@@ -9,7 +9,7 @@ Leképezés: pengehossz→fegyverhossz (0→0/1, 0.5→2, 1→3, 1.5→5, 2→7,
 sebzés módja→Aktor (S→pengehegy, V-egyenes→vágóél-egyenes, V-íves→vágóél-íves, Z→botvég/buzogányfej),
 súly az Erő-követelményből. Kihagyva: hárítófegyverek, puszta kéz, exotikus-speciális, pajzs, távharc.
 
-Futtatás:  python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md
+Futtatás:  python3 code/fegyvergenerator/wiki_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md
 
 ─────────────────────────────────────────────────────────────────────────────
 Eredet: szilank.wiki/STUDY.fegyvergenerator_v2_fegyverlista.gen.py - migrálva 2026-09-10.
@@ -22,7 +22,7 @@ automatikusan az éles `md/068_0x_*.md` fegyvertáblákra - azok kézzel hangolt
 """
 import datetime
 
-import fegyvergenerator_balansz as bal
+import modell as bal
 
 F = bal.Fegyver
 FEGYVERHOSSZ = bal.FEGYVERHOSSZ
@@ -108,7 +108,7 @@ def emit_tabla(rows):
         print("| " + " | ".join(cell(r[c], c) for c in range(len(FEJLEC))) + " |")
 
 
-GEN_CMD = "python3 code/balance/fegyvergenerator_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md"
+GEN_CMD = "python3 code/fegyvergenerator/wiki_fegyverlista.py > STUDY.fegyvergenerator_v2_fegyverlista.md"
 
 INTRO = """> ⚠️ **AUTOMATIKUSAN GENERÁLT OLDAL - kézzel NE szerkeszd.**
 >
@@ -126,7 +126,7 @@ Az éles `068_0x` közelharci fegyvertáblák **mainstream** fegyverei a jelenle
 leszármaztatva, **harcmodoronként külön táblázatban** (mint az éles doksiban).
 Forrás/terv: [STUDY.fegyvergenerator_v2](STUDY.fegyvergenerator_v2).
 
-- **Generátor:** `szilank.code/code/balance/fegyvergenerator_fegyverlista.py` (a `fegyvergenerator_balansz.py` modellt használja) → a táblák **reprodukálhatók**.
+- **Generátor:** `szilank.code/code/fegyvergenerator/wiki_fegyverlista.py` (a `modell.py` modellt használja) → a táblák **reprodukálhatók**.
 - **Értékek:** Erő=0 bázis (a játékban az Erőbónusz hozzáadódik az SP-hez). A sebzésjelleg×páncél módosító NEM ezekben van, hanem harc közben a páncél fajtájától függ.
 - **Nem cél a régi éles fegyvertábla reprodukálása** → a generátor a mérvadó.
 

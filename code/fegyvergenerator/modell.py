@@ -8,7 +8,7 @@ Cél:
 
 Konvenció: magasabb Sebesség szám = LASSABB fegyver.
 
-Futtatás:  python3 code/fegyvergenerator_balansz.py
+Futtatás:  python3 code/fegyvergenerator/modell.py
 
 ─────────────────────────────────────────────────────────────────────────────
 Eredet: szilank.wiki/STUDY.fegyvergenerator.balance.py - migrálva 2026-09-10.

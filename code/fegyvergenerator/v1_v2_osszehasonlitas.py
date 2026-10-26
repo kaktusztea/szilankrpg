@@ -14,7 +14,7 @@ Névpárosítás: NEM egyezik automatikusan minden esetben (pl. "Predoci egyenes
 vs "Kard, predoci egyeneskard" (új), "Alabárd S+V"/"Alabárd Z" (régi, 2 sor) vs "Alabárd"
 (új, 1 sor)) - kézi alias-tábla + "nincs pár" listázás mindkét irányban.
 
-Futtatás:  python3 code/balance/fegyverek_regi_uj_osszehasonlitas.py
+Futtatás:  python3 code/fegyvergenerator/v1_v2_osszehasonlitas.py
 """
 import json
 import pathlib

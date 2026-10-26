@@ -1,6 +1,6 @@
 ---
 # fegyverek.schema.yaml - a data/fegyvergenerator/fegyverek.yaml rekordjainak sémája.
-# EZT olvassa a validátor: code/balance/fegyverek_validator.py
+# EZT olvassa a validátor: code/fegyvergenerator/fegyverek_validator.py
 #
 # Stílus: strukturált (minden mező = {kötelező, típus, …}) - a validátor kommentek parse-olása
 # NÉLKÜL dolgozik. A katalógus-alapú enumokat NEM duplikáljuk: a `forrás:` / `elem_forrás:` a

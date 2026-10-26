@@ -1,7 +1,7 @@
 ---
 # Séma: extrak.yaml (Fegyvergenerátor extrák katalógus)
 # Az egységes effekt-modell (engine_spec.md §42) PILOTja.
-# A validátor (code/balance/extrak_validator.py) EBBŐL dolgozik - a szkriptben nincs beégetett vokabulár.
+# A validátor (code/fegyvergenerator/extrak_validator.py) EBBŐL dolgozik - a szkriptben nincs beégetett vokabulár.
 
 # ── Vokabulárok (enumok) ──
 csoport_enum: [felkészítés, harci_helyzet, tulajdonság]

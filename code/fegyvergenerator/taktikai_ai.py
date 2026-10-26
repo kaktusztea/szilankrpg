@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fegyvergenerátor - Taktikai döntési AI (Harci taktikák / Harci helyzetek / Manőverek).
 
-Cél: a `fegyvergenerator_harcszimulator.py` alap harci motorját bővíti egy körönkénti
+Cél: a `harcszimulator.py` alap harci motorját bővíti egy körönkénti
 DÖNTÉSI RÉTEGGEL - minden harcos minden körben felméri a helyzetet (saját/ellenfél fegyver-
 hossz, VÉ/ÉP állapot, létszámarány) és SÚLYOZOTT VÉLETLENNEL választ taktikát vagy próbál
 meg egy manővert. Ez válaszol arra a kérdésre, hogy a hosszú fegyverek (Pika/Lándzsa) 1:1
@@ -19,7 +19,7 @@ Manőver-ellenpróba (EGYSZERŰSÍTETT, l. harcszimulacio.spec.md §3.13 + engin
   A §13.8 hangolási spec explicit óva int a manőverek bevonásától ALAP hangolási tesztekben
   (nagy variancia) - ez a modul EZT a varianciát vizsgálja SZÁNDÉKOSAN, külön forgatókönyvben.
 
-Futtatás:  python3 code/balance/fegyvergenerator_taktikai_ai.py
+Futtatás:  python3 code/fegyvergenerator/taktikai_ai.py
 """
 import json
 import pathlib
@@ -28,7 +28,7 @@ import sys
 from statistics import mean
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import fegyvergenerator_harcszimulator as S
+import harcszimulator as S
 
 DATA_TABLES = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "tables"
 
@@ -415,7 +415,7 @@ def alkalmaz_dontes(harcos: "S.Harcos", akcio, ctx):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def kuzdelem_ai(csapatok, pancel_oszaly="csupasz", max_kor=40, regen=1, naplo=None):
-    """A `fegyvergenerator_harcszimulator.kuzdelem` bővítése: minden kör elején minden
+    """A `harcszimulator.kuzdelem` bővítése: minden kör elején minden
     élő harcos dönt (taktika-váltás VAGY manőver-próba), MIELŐTT a támadási körök futnak."""
     for kor in range(1, max_kor + 1):
         for h in csapatok:

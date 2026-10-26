@@ -4,7 +4,7 @@
 Cél: konklúziót levonni arról, mely fegyverek túl erősek / túl gyengék / jól hangoltak,
 minél szélesebb körülmény-mátrixban (páncélosztály × döntési AI be/ki × létszámarány).
 NEM egyetlen új mechanika validálása (ahhoz a `harcszimulacio_selftest.py` és a
-`fegyvergenerator_harcszimulator.py`/`_taktikai_ai.py` self-testjei valók) - ez itt egy
+`harcszimulator.py`/`_taktikai_ai.py` self-testjei valók) - ez itt egy
 FELMÉRÉS, aggregált statisztikával.
 
 Metodológia (l. harcszimulacio.spec.md §12.1 - a klón-csapda):
@@ -18,11 +18,11 @@ Metodológia (l. harcszimulacio.spec.md §12.1 - a klón-csapda):
     (tükör+túlerő) ≈ 1320 mérési pont × 250 futás - ez már ~15-20 perc, ezért a futásszámot
     a script paraméterben tartjuk, gyors smoke-teszthez csökkenthető).
 
-Kimenet: CSV (`code/balance/output/fegyverbalansz_matrix.csv`) + konzolos összesítő -
+Kimenet: CSV (`code/fegyvergenerator/output/fegyverbalansz_matrix.csv`) + konzolos összesítő -
 az összesítő a KONKLÚZIÓHOZ kell (túl erős / túl gyenge / jól hangolt lista), a CSV a
 nyers adat, amiből bármilyen további szűrés/pivot elvégezhető.
 
-Futtatás:  python3 code/balance/fegyvergenerator_balansz_elemzes.py [--n=250] [--gyors]
+Futtatás:  python3 code/fegyvergenerator/balansz_elemzes.py [--n=250] [--gyors]
 """
 import csv
 import pathlib
@@ -32,8 +32,8 @@ import time
 from statistics import mean
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import fegyvergenerator_harcszimulator as S
-import fegyvergenerator_taktikai_ai as AI
+import harcszimulator as S
+import taktikai_ai as AI
 
 OUT_DIR = pathlib.Path(__file__).resolve().parent / "output"
 OUT_DIR.mkdir(exist_ok=True)

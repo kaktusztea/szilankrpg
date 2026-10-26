@@ -1,5 +1,5 @@
 # Fegyvergenerátor - EGYESÍTETT fegyver-katalógus (WORK paraméterek). Egy fegyver = egy rekord.
-# Betölti: code/balance/fegyvergenerator_balansz.py (FEGYVEREK) és fegyvergenerator_fegyverlista.py (W).
+# Betölti: code/fegyvergenerator/modell.py (FEGYVEREK) és wiki_fegyverlista.py (W).
 #
 #   név         : lookup + megjelenített név
 #   kategória   : harcmodor - ha JELEN van, a fegyver MEGJELENIK a generált fegyverlistában (enélkül csak teszt-minta)

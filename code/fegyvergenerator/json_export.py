@@ -14,12 +14,12 @@ Sebesség, Forgatás, Erőlimit, FP}, ... ]. Erő=0 bázisérték (mint a fegyve
 A `build()` a build pipeline része: a `data/gen/fegyverek_v2.py::generate_fegyverek_v2()`
 adapter hívja, és a `generate_tables.py` a kimenetet `data/tables/fegyverek_v2.json`-ba írja
 (ezt olvassa a webapp runtime, `engine/data-loader.ts`). CLI-ből futtatva (`python3
-code/balance/fegyvergenerator_json.py`) a JSON a STDOUT-ra íródik - ad-hoc ellenőrzésre.
+code/fegyvergenerator/json_export.py`) a JSON a STDOUT-ra íródik - ad-hoc ellenőrzésre.
 """
 import json
 import sys
 
-import fegyvergenerator_balansz as bal
+import modell as bal
 
 F = bal.Fegyver
 
@@ -142,7 +142,7 @@ def _fegyver_json(r):
 def build():
     """A `fegyverek.yaml` (WORK-paraméterek, a generátor modellen át) + `fegyverek_fixed.json`
     (Garott, hárítófegyverek, Kopják - már végleges módok[] JSON, nem megy át a modellen,
-    l. `sync_fegyvertablazatok.py` azonos logikája) mainstream fegyvereinek egyesített listája."""
+    l. `md_fegyvertablak_sync.py` azonos logikája) mainstream fegyvereinek egyesített listája."""
     generalt = [_fegyver_json(r) for r in bal._load("fegyverek.yaml") if "kategória" in r]
     with open(bal.DATA_DIR / "fegyverek_fixed.json", encoding="utf-8") as fh:
         fixed = json.load(fh)
@@ -157,6 +157,9 @@ def build():
         r.setdefault("ár", None)
         r.setdefault("ár_alap", None)
         r.setdefault("alapanyag", "acél")
+        # Forrás: sima id-lista (mint a fegyverek.yaml / tavfegyverek); a kimenet a generált fegyverekkel
+        # egyező {id, név} forma (a webapp ezt olvassa).
+        r["extrák"] = [{"id": eid, "név": _EXTRAK.get(eid, {}).get("név", eid)} for eid in r.get("extrák", [])]
     return generalt + fixed
 
 

@@ -11,8 +11,8 @@ Ellenőriz:
 
 A szabályok a sémából és a katalógusokból jönnek - a szkriptben NINCS beégetett adat.
 
-Futtatás:  python3 code/balance/fegyverek_validator.py     (0 = OK, 1 = hiba)
-Bekötve:   a fegyvergenerator_balansz.py a tesztek ELŐTT lefuttatja.
+Futtatás:  python3 code/fegyvergenerator/fegyverek_validator.py     (0 = OK, 1 = hiba)
+Bekötve:   a modell.py a tesztek ELŐTT lefuttatja.
 """
 import pathlib
 import sys

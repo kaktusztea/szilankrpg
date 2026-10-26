@@ -14,7 +14,7 @@ A generátor determinisztikus: a fegyver néhány paraméteréből (hossz, sebz�
 ## Adat és kód
 
 - [Adatállományok](../data/sources/fegyverek/)
-- [Scriptek](../code/balance/)
+- [Scriptek](../code/fegyvergenerator/)
 
 <br />
 

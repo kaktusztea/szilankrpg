@@ -1,5 +1,5 @@
 # Fegyvergenerátor - konstans paramétertáblák (a modell bemenete).
-# Ezt olvassa be a code/balance/fegyvergenerator_balansz.py. A szkriptekben NINCS adat.
+# Ezt olvassa be a code/fegyvergenerator/modell.py. A szkriptekben NINCS adat.
 # FIGYELEM: tervezői eszköz adata, NEM a data/sources pipeline része (a generate_tables.py
 # csak a data/sources/ könyvtárat dolgozza fel - ez a mappa kimarad).
 #
@@ -10,7 +10,7 @@
 
 # fegyverhossz: kategória -> TÉ, VÉ, SP, sebesség, forgatás, övön_hordható, felszerelés_pont
 #   felszerelés_pont: a fegyver forgatás-kategóriájából levezetett HOSSZ-ág (0/1/2); a tervezői
-#   eszköz (fegyvergenerator_fegyverlista) ezt használja becslésnek. A hatályos szabály
+#   eszköz (wiki_fegyverlista) ezt használja becslésnek. A hatályos szabály
 #   (md/010_03_06_felszereles.md) VAGY-VAGY: a fegyver végső Felszerelés-pontja
 #   MAX(hossz_pont, súly_pont). A kanonikus runtime leképezés a data/sources/konstansok.yaml
 #   `felszerelés` szekciójában van (a webapp azt olvassa); itt csak a hossz-ág szerepel.

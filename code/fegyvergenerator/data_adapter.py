@@ -2,7 +2,7 @@
 """Fegyvergenerátor - adatvezérelt adapter a webapp Taktikák / Harci helyzetek / Manőverek
 forrásaihoz (`data/tables/*.json`, generálva a `data/sources/*.yaml`-ból).
 
-Cél: a `fegyvergenerator_harcszimulator.py`/`fegyvergenerator_taktikai_ai.py` korábbi,
+Cél: a `harcszimulator.py`/`taktikai_ai.py` korábbi,
 KÉZZEL írt `TAKTIKAK`/`HARCI_HELYZETEK` Python dict-jei csak egy RÉSZLETET fedtek le a
 valós adatból (hiányzott pl. Csúszós talaj, Elvesztett egyensúly, Közrefogás, Orvtámadás,
 Kezdeményező, Kiváró, Plusz támadás, Tettetés, a `megkötések[]`/`kombó_mód` validáció).
@@ -18,7 +18,7 @@ ad - nincs több kézzel duplikált adat. A hatás-mechanika szemantikája a `m�
     szöveges → nem kumulálható, informatív (a szimulátor kihagyja, csak logolja)
     enyhít → csökkenti egy másik hatás fokát (csak fortélyokból jön, itt nem releváns)
 
-Futtatás (önteszt):  python3 code/balance/fegyvergenerator_data_adapter.py
+Futtatás (önteszt):  python3 code/fegyvergenerator/data_adapter.py
 """
 import json
 import pathlib
