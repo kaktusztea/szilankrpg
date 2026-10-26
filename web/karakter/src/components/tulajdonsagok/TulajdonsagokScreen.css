@@ -358,6 +358,12 @@
   cursor: default;
 }
 
+/* Domináns tulajdonság (data: domináns_tulajdonságok): enyhén világosabb háttér a kiemeléshez.
+   Csak nem-aktív állapotban - a kiválasztott (vallas-active) gomb saját erősebb kiemelést kap. */
+.kep-proba-dominans:not(.vallas-active) {
+  background: rgba(255, 255, 255, 0.13);
+}
+
 /* Kiterjesztés státusz pötty (kicsi, mint a Szabad fortély pötty) */
 .kep-proba-dot-green, .kep-proba-dot-yellow, .kep-proba-dot-red {
   font-size: 11px;

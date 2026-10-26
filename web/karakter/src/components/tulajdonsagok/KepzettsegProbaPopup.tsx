@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import type { Kepzettseg, Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { ModositoTabla, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
-import { képzettségSzint, képzettségNév as képzettségNévId } from '../../engine/azonosito';
+import { képzettségSzint, képzettségNév as képzettségNévId, bontKépzKulcs } from '../../engine/azonosito';
 import { calcStátuszPróbaEH, próbaÉrzékek } from '../../engine/statusz-proba';
 import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
@@ -104,6 +104,13 @@ export function KepzettsegProbaPopup({
   // képzettséghez (a negált fortélyok auto-értéke megfordítva). A calc + pötty ezt használja.
   const effFortélyFokok = effektívFortélyFokok(fortélyFokok, képzettségKulcs, kiterjesztesek, negáltKulcsok);
 
+  // A képzettség domináns tulajdonságai (data: domináns_tulajdonságok) - a chip háttere ennél kiemelt.
+  // A lista nagy kezdőbetűs ("Ügyesség"), a chip id-je kisbetűs ("ügyesség") → tulLabel-lel vetjük össze.
+  // Képzetlen próbánál nincs konkrét képzettség → üres halmaz.
+  const dominánsTulajdonságok = new Set(
+    kepzettsegDefs.find(d => d.id === bontKépzKulcs(képzettségKulcs).id)?.domináns_tulajdonságok ?? [],
+  );
+
   const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
   const ehAlap = calcMultiKiterjesztésEH(selectedKits, effFortélyFokok);
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt). Alkategóriás státusz (Érzékvesztés: Látás)
@@ -204,7 +211,8 @@ export function KepzettsegProbaPopup({
         <div className="kep-proba-dual-list">
           <div className="kep-proba-dual-col">
             {MIND_TULAJDONSÁG.map(t => (
-              <CelszamGomb key={t} aktív={selTul === t} onClick={() => { setSelTul(t); resetDobás(); }}>
+              <CelszamGomb key={t} aktív={selTul === t} onClick={() => { setSelTul(t); resetDobás(); }}
+                className={dominánsTulajdonságok.has(tulLabel(t)) ? 'kep-proba-dominans' : ''}>
                 {tulLabel(t)} • {tulajdonságok[t]}
               </CelszamGomb>
             ))}
