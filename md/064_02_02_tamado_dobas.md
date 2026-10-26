@@ -24,6 +24,18 @@ Max 3 támadás
   3.támadás: TÉ:31
 ```
 
+### `k20 → 1` dobás
+
+Nem feltétlenül balsiker.\
+HA a támadó dobás sikertelen, akkor narratív hátrányt kaphatsz a KM-től. Példák:
+
+```
+• fegyvered beakadhat egy pajzsba
+• fegyvered beakadhat egy páncélba
+• elejted a fegyvered
+• elcsúszol
+```
+
 ---
 
 🔗 [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md) →
