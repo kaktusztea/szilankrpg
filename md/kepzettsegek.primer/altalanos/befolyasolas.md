@@ -13,6 +13,26 @@ Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi
 +0: Azonos nyelven beszéltek
 ```
 
+#### ⚜️  Szerepjátékos módosító
+
+```
+-3: a játékos nem feccöl bele túl sok
+    energiát, átlátszó szöveggel próbálkozik
+ 0: átlagos teljesítmény
++3: kreatív ötletek, jól kijátszott karakter
+```
+
+A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
+
+A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy dobásmódosítót.
+
+Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
+<br />
+
+---
+### Előny/Hátrány dobásmódosítók
+
 Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
 
 ---
@@ -54,22 +74,6 @@ Befolyásolás + Intelligencia
             vs
 Emberismeret + Érzékenység
 ```
-
-### 🔆 Szerepjátékos módosító
-
-```
--3; 0; +3
-```
-
-A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
-
-A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy módosítót (lásd fenn). A játékos ezt hozzáadja a **Befolyásolás** képzettségpróbájához.
-
-Például a játékos nem feccöl bele túl sok energiát sem a karaktere megszemélyesítésébe, sem az ötletbe, amivel át akarja verni a másik felet, tehát valami nagyon átlátszó hazugságot akar megetetni, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
-
-Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
-
-<br />
 
 ---
 ### Mesterbónuszok

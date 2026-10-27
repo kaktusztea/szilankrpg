@@ -56,9 +56,6 @@ Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befoly
 <br />
 
 ---
-
-
-
 ### Domináns Tulajdonságok
 
 Intelligencia, Emlékezet
