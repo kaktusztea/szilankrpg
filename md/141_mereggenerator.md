@@ -1,6 +1,12 @@
 ## Méreggenerátor
 
-### → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
+A Szilánk rendszerében - a [Fegyvergenerátorhoz](068_10_fegyvergenerator.md) hasonlóan a mérgek előállítása is determinisztikus, generált módon történik. Minden a [Példamérgek](148_peldamergek.md) fejezetben található vegyület az itt lent leírt mechanikával készült. Amennyiben a játékhoz nem találod elegendőnek az ott bemutatott mérgeket, nyugodtan alkothatsz újat a generátorral.
+
+Előfordul, hogy a képzetlen karakter egy vajákos boltjába tér be, ahol elsorolja az elkészíttetni kívánt méreg tulajdonságait. Ez esetben a bolt tulajdonosának kell - a leírtaknak megfelelően - összeállítania a komponenseket és dobnia a képzettségpróbát. Előfordulhat az is, hogy a kért kombináció meghaladja az illető tudását.
+
+<br />
+
+## Méreg kikeverése → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
 
 ```
 Nehézség = Méreg Komplexitása
@@ -10,14 +16,14 @@ A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesü
 
 <br />
 
-### Méreg jelleg csoportok
+## Méreg jelleg csoportok
 
 - Étel és italmérgek
 - Légimérgek
 - Kontaktmérgek
 - Fegyvermérgek
 
-### Méreg összetevő csoportok
+## Méreg összetevő csoportok
 
 - állati
 - növényi
