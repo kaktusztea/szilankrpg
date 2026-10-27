@@ -21293,6 +21293,20 @@ Max 3 támadás
   3.támadás: TÉ:31
 ```
 
+### `k20 → 1` dobás
+
+Nem feltétlenül balsiker.\
+HA a támadó dobás sikertelen, akkor narratív hátrányt kaphatsz a KM-től. Példák:
+
+```
+• fegyvered beakadhat egy pajzsba,
+  nem tudod kihúzni
+• fegyvered beakadhat egy páncélba
+  nem tudod kihúzni
+• elejted a fegyvered
+• elcsúszol
+```
+
 ---
 
 🔗 [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md) →
@@ -24477,6 +24491,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
     - Pajzsos ellenfél:
         - `-1`: Közepes pajzs
         - `-2`: Nagy pajzs
+    - Fegyver:
+        - `+2`: [Manőver Áttörés alkalmas](068_01_03_fegyver_extrak.md#manőver-áttörés-alkalmas) fegyver-extra
 
 **Hatás**: Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már.
 
@@ -24501,6 +24517,9 @@ Lecsapod vagy megnyomorítod ellenfeled kezét, vagy lábát.
   - Kéz csonkolása: min (áldozat `max ÉP / 3`) ↑ sebzés szükséges
   - Láb csonkolása: min (áldozat `max ÉP / 2`) ↑ sebzés szükséges
 - alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
+- Helyzetfüggő módosítók:
+    - Fegyver:
+        - `+2`: [Manőver Csonkolás alkalmas](068_01_03_fegyver_extrak.md#manőver-csonkolás-alkalmas) fegyver-extra (kéz és láb csonkolásra is)
 
 **Hatás**: levágtad ellenfeled választott végtagját.
 
@@ -24531,12 +24550,13 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 - 🟨 Normál követelmény: Harcmodor – `5.szint`
 - 🟥 Erős követelmény: karmok/szarvak ellen nem használható (ott **Csonkolás** szükséges).
 - Helyzetfüggő módosítók:
-    - Ellenfél fegyvere:
-        - `+4`: Fából készült szálfegyver (sokkal könnyebb)
     - Saját fegyver alkalmassága:
         - `+2`: Nagyobb / alkalmasabb törésre
         - `-2`: Kisebb / alkalmatlanabb törésre
         - `99`: Nem alkalmas fegyvertörésre → a Manőver nem kísérelhető meg (KM)
+    - Fegyver (a te fegyvered, ha ellened alkalmazzák):
+        - `immunis`: [Fegyvertörés-immunis](068_01_03_fegyver_extrak.md#fegyvertörés-immunis) fegyver-extra → a Manőver nem hat a fegyveredre
+        - célszám `-2`: [Manőver Fegyvertörés ellene könnyebb (fanyél)](068_01_03_fegyver_extrak.md#manőver-fegyvertörés-ellene-könnyebb-fanyél) fegyver-extra
 
 **Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
 
@@ -24636,7 +24656,7 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 - Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 - Helyzetfüggő módosítók:
     - Fegyver:
-        - `+2`: Kampós véggel (kifejezetten lábkirántásra alkalmas)
+        - `+2`: [Manőver Lábkirántás könnyebb (kampós véggel)](068_01_03_fegyver_extrak.md#manőver-lábkirántás-könnyebb-kampós-véggel) fegyver-extra
 
 **Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
@@ -24694,6 +24714,9 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
         - `99`: Nem alkalmas lefegyverzésre → a Manőver nem kísérelhető meg (KM)
     - Ellenfél fegyvere:
         - `+5`: Lánccsapdában foglyul ejtett fegyver
+    - Fegyver (a te fegyvered, ha ellened alkalmazzák):
+        - célszám `+2`: [Manőver Lefegyverzés ellene nehezebb](068_01_03_fegyver_extrak.md#manőver-lefegyverzés-ellene-nehezebb) fegyver-extra
+        - célszám `-2`: [Manőver Lefegyverezés ellene könnyebb](068_01_03_fegyver_extrak.md#manőver-lefegyverezés-ellene-könnyebb) fegyver-extra
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
 
@@ -24748,6 +24771,8 @@ Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
         - `0`: Egyszerű jel
         - `-1`: Közepes jel
         - `-2`: Bonyolult jel
+    - Fegyver:
+        - `+2`: [Manőver Mesterjel alkalmas](068_01_03_fegyver_extrak.md#manőver-mesterjel-alkalmas) fegyver-extra
 
 **Hatás**: Sikeres manőver esetén képes vagy mesterjeledet belekarcolni ellenfeled ruhájába vagy bőrébe (`1 ÉP`).
 
@@ -24828,8 +24853,8 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 - 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
-    - Fegyvered:
-        - `+2`: Pontos aktorral (pl. Tőrkard pengehegye, egykezes)
+    - Fegyver:
+        - `+2`: [Manőver Precíz támadás könnyebb (pontos)](068_01_03_fegyver_extrak.md#manőver-precíz-támadás-könnyebb-pontos) fegyver-extra
         - `0`: Egykezes kardvívó fegyver / Puszta kéz
         - `-2`: Zúzófegyver
     - Taktika:
@@ -24874,6 +24899,8 @@ Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, min
     - Harci alakzat:
         - `+4`: Alakzatban (nagy előny, KM)
         - `+2`: Alakzatban (kis előny, KM)
+    - Fegyver:
+        - `+2`: [Manőver Távoltartás alkalmas](068_01_03_fegyver_extrak.md#manőver-távoltartás-alkalmas) fegyver-extra
 
 **Hatás**: leadhatsz `TÉ:+5`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 
@@ -25519,6 +25546,9 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
   - A **védekező gyalogos** végezheti (nem a lovas)
   - Szúró szálfegyver használata
   - [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny) a lovashoz képest
+- Helyzetfüggő módosítók:
+    - Fegyver:
+        - `+2`: [Manőver Lovas megakasztása](068_01_03_fegyver_extrak.md#manőver-lovas-megakasztása) fegyver-extra
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed effektív sebzésétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba). Sikertelen manőver esetén a lovas zavartalanul leadhatja rád rohamozó támadását.
 
 <br />
@@ -25871,6 +25901,8 @@ Egyes fegyverek egyedi, szituációs hatásokat hordoznak - ezeket **extráknak*
 ### Különleges felkészítés
 
 ```
+id: kulonleges_felkeszites
+Állapot: Aktív
 Feltétel: Mesterfegyver fortély 1.fok az adott fegyverre
         + harci iskola (KM dönti el, narratív)
 Hatás:    Mesterfegyver e fegyverre adott bónuszai megduplázódnak
@@ -25886,8 +25918,10 @@ A feltételek nélkül nem jár a bónusz. Lásd még: [Harci iskola](fortelyok.
 ### Beszorítható (enyhén)
 
 ```
+id: beszorithato_enyhen
+Állapot: passzív
 Feltétel: Beszorítva harci helyzet
-Hatás:    fegyver-járulék (alap+MF+Idea) TÉ/VÉ feleződik
+Hatás: fegyver-járulék (alap+MF+Idea) TÉ/VÉ feleződik
 ```
 
 Közepesen hosszú fegyver (hossz `5`): beszorítva csak részben forgatható.
@@ -25895,8 +25929,10 @@ Közepesen hosszú fegyver (hossz `5`): beszorítva csak részben forgatható.
 ### Beszorítható (nagyon)
 
 ```
+id: beszorithato_nagyon
+Állapot: passzív
 Feltétel: Beszorítva harci helyzet
-Hatás:    fegyver-járulék (alap+MF+Idea) TÉ/VÉ: 0
+Hatás: fegyver-járulék (alap+MF+Idea) TÉ/VÉ: 0
 ```
 
 Hosszú fegyver (hossz `7` és felette): beszorítva nem forgatható rendesen. A karakter saját harcérték-része (tulajdonságok, harcmodor, harci fortélyok) változatlan.
@@ -25904,6 +25940,8 @@ Hosszú fegyver (hossz `7` és felette): beszorítva nem forgatható rendesen. A
 ### Páncéltalant jobban sebez
 
 ```
+id: panceltalant_jobban_sebez
+Állapot: aktív
 Feltétel: cél vérttelen
 Hatás:    SP:+3
 ```
@@ -25913,6 +25951,8 @@ Vérttelen célon nagyobb sebet ejt. Példa: Meneth, Béltépő.
 ### Pocsék védekező (páncélos ellen)
 
 ```
+id: pocsek_vedekezo_pancelos_ellen
+Állapot: passzív
 Feltétel: cél páncélos
 Hatás:    VÉ:0
 ```
@@ -25922,6 +25962,8 @@ Páncélos ellenfél ellen a hárítási hátrány kiütközik.
 ### Puszta kéz belharcban
 
 ```
+id: puszta_kez_belharcban
+Állapot: aktív
 Feltétel: Belharci helyzet
 Hatás:    TÉ:0, VÉ:0, SP:0
 ```
@@ -25931,6 +25973,8 @@ Puszta kéz belharcban: a fegyvertelen büntetés megszűnik. Természetes fegyv
 ### Belharcban rések közt beszúr
 
 ```
+id: pancelszuras_belharcban
+Állapot: aktív
 Feltétel: Belharci helyzet
 Hatás:    Belharc fegyverhossz-korlát nem vonatkozik rá
           + földön fekvő ellenfélnél: célpont páncél SFÉ: 0
@@ -25941,6 +25985,8 @@ Belharcban a fegyverhossza ellenére is használható, földön lévő ellenfél
 ### Pikás közrefogása
 
 ```
+id: pikas_kozrefogasa
+Állapot: passzív
 Feltétel: Közrefogás helyzet + választott támadó (KM/játékos)
 Hatás:    TÉ:0, VÉ:0 az egyik (választott) támadó ellen
 ```
@@ -25950,6 +25996,8 @@ Ha pikával harcolsz és közrefognak, a fegyver az egyik támadó ellen `TÉ/V�
 ### Kopja lovas rohamban
 
 ```
+id: kopjas_roham
+Állapot: aktív
 Feltétel: Lovas roham taktika
 Hatás:    SP:+10 (kopja alap Sebzéséhez)
 ```
@@ -25959,8 +26007,10 @@ Harci- és tornakopja is. A táblák `SP` mezője ezt NEM tartalmazza.
 ### Láncos: pajzs VÉ felezés
 
 ```
+id: lancos_pajzs_ve_felezes
+Állapot: passzív
 Feltétel: cél pajzsot használ
-Hatás:    pajzs adta VÉ feleződik
+Hatás: pajzs adta VÉ feleződik
 ```
 
 A láncos fej megkerüli a pajzsot.
@@ -25968,9 +26018,11 @@ A láncos fej megkerüli a pajzsot.
 ### Pajzs megkerülése
 
 ```
+id: pajzs_megkerulese
+Állapot: aktív
 Feltétel: cél pajzsot használ
-Hatás:    pajzs adta VÉ NEM számít ellene
-         (teljes megkerülés)
+Hatás: pajzs adta VÉ NEM számít ellene
+       (teljes megkerülés)
 ```
 
 Hajlékony fegyver a pajzs mögé csap.
@@ -25978,8 +26030,9 @@ Hajlékony fegyver a pajzs mögé csap.
 ### Fegyvertörés-immunis
 
 ```
-Feltétel: passzív fél
-Hatás:    Fegyvertörés manőver nem fog rajta
+id: fegyvertores_immunis
+Állapot: passzív
+Hatás: Fegyvertörés manőver nem hat ellene
 ```
 
 Hajlékony (nem merev) fegyver.
@@ -25987,24 +26040,30 @@ Hajlékony (nem merev) fegyver.
 ### SFÉ dupla ellene
 
 ```
+id: sfe_duplazodik
+Állapot: aktív
 Feltétel: cél páncélos
 Hatás:    célpont páncél SFÉ: duplán számít
 ```
 
 Ez a penge páncél ellen különösen rossz.
 
-### Pajzsrongáló (kézi)
+### Pajzsrongáló
 
 ```
+id: pajzsrongáló
+Állapot: aktív
 Feltétel: cél pajzsot használ; Támadó dobás k20: 11-20
-Hatás:    cél Pajzs-VÉ: -1 (végleg)
+Hatás: cél Pajzs-VÉ: -1 (végleg)
 ```
 
 Kimondottan pajzs megrongálására alkalmas fegyver.
 
-### Pajzsrongáló (hajító)
+### Pajzsbénító
 
 ```
+id: pajzsbénító
+Állapot: aktív
 Feltétel: cél pajzsot használ; Célzó dobás találat: pajzsot
 Hatás:    Kisebb hajítófegyver
              Cél Pajzs-VÉ: -3 (kihúzásig)
@@ -26014,25 +26073,29 @@ Hatás:    Kisebb hajítófegyver
              Státusz: Blokkolt (2)
 ```
 
-Pajzsba dobva megakad benne és akadályozza annak használatát.
+Hajítófegyver, pajzsba dobva megakad benne és akadályozza annak használatát.
 
 <br />
 
 ---
-## Tulajdonság (építési / minőségi opció)
+## Manőver hatással
 
-### Pontos
+### Manőver Precíz támadás könnyebb (pontos)
 
 ```
-Feltétel: 'pengehegy' aktor + egykezes forgatás + aktív fél
-Hatás:    aktív fél "Precíz támadás" manőver Ellenpróba: +2
+id: manover_preciz_tamadas_konnyebb_pontos
+Állapot: aktív
+Feltétel: 'pengehegy' aktor + egykezes forgatás
+Hatás:    "Precíz támadás" manőver Ellenpróba: +2
 ```
 
 Precíziós szúróhegy.
 
-### Lefegyverezhetőbb
+### Manőver Lefegyverezés ellene könnyebb
 
 ```
+id: manover_lefegyverezes_ellene_konnyebb
+Állapot: passzív
 Feltétel: egykezes forgatás, passzív fél
 Hatás:    passzív fél (akié a fegyver)
           Lefegyverzés manőver Ellenpróba: -2
@@ -26040,19 +26103,22 @@ Hatás:    passzív fél (akié a fegyver)
 
 Az ilyen fegyvert az ellenfél könnyebben kiüti a kezedből, könnyebben eltöri.
 
-### Lefegyverzése nehezebb
+### Manőver Lefegyverzés ellene nehezebb
 
 ```
-Feltétel: passzív fél
-Hatás:    passzív fél (akié a fegyver)
-          Lefegyverzés manőver Ellenpróba: +2
+id: manover_lefegyverzes_ellene_nehezebb
+Állapot: passzív
+Hatás:   passzív fél (akié a fegyver)
+         Lefegyverzés manőver Ellenpróba: +2
 ```
 
 Az ilyen fegyvert nehezebben ütik ki a kezedből.
 
-### Fanyél fegyvertörése könnyebb
+### Manőver Fegyvertörés ellene könnyebb (fanyél)
 
 ```
+id: manover_fegyvertores_ellene_konnyebb_fanyel
+Állapot: passzív
 Feltétel: passzív fél; ellenfél fegyvere fém
 Hatás:    passzív fél (akié a fegyver)
           Fegyvertörés manőver Ellenpróba: -2
@@ -26061,27 +26127,77 @@ Hatás:    passzív fél (akié a fegyver)
 
 Fegyvered nyele fából készült, az ellenfél az ilyet könnyebben eltöri.
 
-### Zúzó fegyver ellen rosszabb
+### Manőver Lábkirántás könnyebb (kampós véggel)
 
 ```
-Feltétel: ellenfél fegyverének sebzésjellege Zúzó
-Hatás:    elszenvedett VÉ csökkenésed duplázódik
-```
-
-Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
-
-### Kampós véggel lábkirántás
-
-```
+id: manover_labkirantas_konnyebb_kampos_veggel
+Állapot: Aktív
 Feltétel: 'kampós' aktor + aktív fél
-Hatás:    aktív fél Lábkirántás manőver Ellenpróba: +2
+Hatás: Lábkirántás manőver Ellenpróba: +2
 ```
 
 A fegyver kampós vége (pl. glaive-szerű penge).
 
+### Manőver Áttörés alkalmas
+
+```
+id: manover_attores_alkalmas
+Állapot: Aktív
+Hatás: Áttörés manőver Ellenpróba: +2
+```
+
+Könnyebb vele a harcolók vonalán áttörni.
+
+### Manőver Csonkolás alkalmas
+
+```
+id: manover_csonkolas_alkalmas
+Állapot: Aktív
+Hatás: Csonkolás (kéz) és Csonkolás (láb) manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas csonkolásra.
+
+### Manőver Lovas megakasztása
+
+```
+id: manover_lovas_megakasztasa
+Állapot: Aktív
+Hatás: Lovas megakasztása manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas támadó lovasok megakasztására.
+
+### Manőver Mesterjel alkalmas
+
+```
+id: manover_mesterjel_alkalmas
+Állapot: Aktív
+Hatás: Mesterjel manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas Mesterjel bevésésére az ellenfél ruházatába.
+
+### Manőver Távoltartás alkalmas
+
+```
+id: manover_tavoltartas_alkalmas
+Állapot: Aktív
+Hatás: Távoltartás manőver Ellenpróba: +2
+```
+
+Kimondottan alkalmas az ellenfél távoltartására.
+
+<br />
+
+---
+## Tulajdonság (építési / minőségi opció)
+
 ### Beakad (~50%)
 
 ```
+id: beakadas_kockazat
+Állapot: Aktív
 Hatás: sebző találat után ~50% esély, hogy beakad és
        harc közben nem húzható ki (KM dönti el)
 ```
@@ -26089,6 +26205,8 @@ Hatás: sebző találat után ~50% esély, hogy beakad és
 ### Önsebzés-kockázat
 
 ```
+id: onsebzes_kockazat
+Állapot: Aktív
 Hatás: támadó k20 egyben esélydobás:
        Küszöb alá dobva magadat sebzed
    Mf nélkül: 1-10
@@ -26097,6 +26215,116 @@ Hatás: támadó k20 egyben esélydobás:
 ```
 
 Köz- és önveszélyes fegyver. Részletek: [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md).
+
+### Zúzó fegyver ellen rosszabb
+
+```
+id: zuzo_ellen_rosszabb
+Állapot: passzív
+Feltétel: ellenfél fegyverének sebzésjellege Zúzó
+Hatás: elszenvedett VÉ csökkenésed duplázódik
+```
+
+Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
+
+<br />
+
+---
+## Távharc extrák
+
+Ezek a hatások a [hajító-](068_07_hajitofegyverek.md) és [lőfegyverekhez](068_08_lofegyverek.md) kötöttek. A legtöbb KM által könyvelt (szituációs) hatás.
+
+### Távharc SFÉ duplán számít ellene
+
+```
+id: tavharc_sfe_duplan
+Állapot: Aktív
+Feltétel: -
+Hatás:    célpont páncél SFÉ: duplán számít
+```
+
+A lövedék páncél ellen különösen hatékony. Példa: Dobócsillag, Parittya.
+
+### Távharc íj Erőbónusz tervezett
+
+```
+id: tavharc_ij_erobonusz_tervezett
+Állapot: Aktív
+Feltétel: az íj a lövő Erő értékére tervezve
+Hatás:    íj Erőbónusza csak ekkor számít (KM)
+```
+
+Az íj Erőbónusza csak akkor jár, ha az íjat kifejezetten erre az Erő értékre készítették.
+
+### Távharc Közeli lövés automatikus bónusz
+
+```
+id: tavharc_kozeli_loves_automatikus_bonusz
+Állapot: Aktív
+Feltétel: célpont az 1. Cellában
+Hatás:    automatikus Közeli lövés fortély CÉ:+10
+```
+
+Közeli célra a fegyver automatikusan megkapja a Közeli lövés fortély bónuszát. Példa: Hajítótőr.
+
+### Távharc Értékek csak készítő kezében
+
+```
+id: tavharc_ertekek_csak_keszito_kezeben
+Állapot: Aktív
+Feltétel: a fegyvert a készítő-birtokos használja
+Hatás: az értékek csak ekkor érvényesek;
+       másnak hagyományos íj (Osztó 4, nincs Erőbónusz)
+```
+
+Az egyedi (elf) íj teljes értéke csak a készítőjének jár. Példa: Elf íj.
+
+### Távharc Újratöltés (Kharei)
+
+```
+id: tavharc_ujratoltes_kharei
+Állapot: Aktív
+Hatás: míg a tár ki nem fogy, sebesség-büntetés
+       nélkül lő; utána újratöltés 1 kör (KM)
+```
+
+Tölténytáras nyílpuska. Példa: Kharei nyílpuska.
+
+### Távharc Újratöltés (Shad0ni)
+
+```
+id: tavharc_ujratoltes_shad0ni
+Állapot: Aktív
+Hatás: újratöltés 1 emberrel 3 kör,
+       2 emberrel 1 kör (KM)
+```
+
+Nehéz, lassan tölthető páncéltörő. Példa: Shad0ni páncéltörő.
+
+### Távharc Aquir kézben azonnali halál
+
+```
+id: tavharc_aquir_kezben_azonnali_halal
+Állapot: Aktív
+Feltétel: aquir használja
+Hatás:    találatkor azonnali halál;
+          az Átütés is csak aquir kézben érvényes (KM)
+```
+
+A fegyver teljes ereje csak aquir kézben bontakozik ki. Példa: Aquir nyílpuska.
+
+### Távharc Fúvócső (kicsi) hatas
+
+```
+id: tavharc_fuvocso_kicsi_hatas
+Állapot: Aktív
+Hatás: k20 Sebzésdobás: 20 → 1 ÉP, egyébként 0 ÉP
+       (a méreg/altató a lényeg, KM)
+```
+
+A kis fúvócső maga alig sebez - a rajta bevitt méreg vagy altató a lényeg.
+
+<br />
 
 ---
 
@@ -26330,7 +26558,7 @@ A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyve
 |                         | pengehegy-apró       | szúró        | másodlagos  |  `2` |  `2` |  `+2` |      `0` |    `0` |      `5` | egykezes |   `1` |        `0` |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Kés                     | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  `1` |  `1` |  `+1` |      `2` |    `0` |      `5` | egykezes |   `0` |        `0` | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |                         | pengehegy-apró       | szúró        | másodlagos  |  `1` |  `1` |  `+1` |      `2` |    `0` |      `5` | egykezes |   `0` |        `0` |                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Karambit                | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  `1` |  `1` |  `+1` |      `1` |    `0` |      `5` | egykezes |   `0` |        `0` | Lefegyverzése nehezebb; Páncéltalant jobban sebez; Övön hordható                          | Gyűrűs markolatú, görbe tépőpenge. Vágásra jó, szúrásra nem.                                                                                                                                                                                                                                                                                                                                                                                 |
+| Karambit                | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  `1` |  `1` |  `+1` |      `1` |    `0` |      `5` | egykezes |   `0` |        `0` | Manőver Lefegyverzés ellene nehezebb; Páncéltalant jobban sebez; Övön hordható            | Gyűrűs markolatú, görbe tépőpenge. Vágásra jó, szúrásra nem.                                                                                                                                                                                                                                                                                                                                                                                 |
 | Kő                      | buzogányfej-tompa    | zúzó         | elsődleges  |  `0` | `-2` |  `-2` |     `99` |    `0` |      `5` | egykezes |   `0` |        `0` | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Béltépő                 | vágóél-íves-rövid    | vágó-íves    | elsődleges  |  `2` |  `2` |  `+3` |      `0` |    `0` |      `6` | egykezes |   `1` |        `0` | Páncéltalant jobban sebez; Pocsék védekező (páncélos ellen); Beakad (~50%); Övön hordható |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Levéltőr                | pengehegy-apró       | szúró        | elsődleges  |  `2` |  `2` |  `+2` |      `2` |    `0` |      `6` | egykezes |   `1` |        `0` | Övön hordható                                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -26405,61 +26633,61 @@ A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyve
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver                   | Aktorok                | Sebzésjelleg | Sebzéstípus |   TÉ |   VÉ |    SP | Erőlimit | Átütés | Sebesség | Forgatás               | Hossz | Felsz.pont | Extrák                                                                    | Megj.                                                                                                                                                                                                                                                |
-| ------------------------- | ---------------------- | ------------ | ----------- | ---: | ---: | ----: | -------: | -----: | -------: | ---------------------- | ----: | ---------: | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kard, dzsenn szablya      | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |     `99` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, emrelin             | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |     `99` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, handzsár            | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+7` |     `99` |    `0` |      `9` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, hiequar             | pengehegy-kard         | szúró        | elsődleges  |  `4` |  `4` |  `+6` |      `3` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           | elf                                                                                                                                                                                                                                                  |
-|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  `6` |  `6` |  `+5` |      `3` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, hosszú              | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |     `99` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, jatagán             | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` | Övön hordható                                                             |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-tőr          | szúró        | másodlagos  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, kétkezes            | vágóél-egyenes-nagy    | vágó-egyenes | elsődleges  | `10` | `10` |  `+9` |     `99` |    `0` |      `9` | kétkezes               |   `7` |        `2` | Beszorítható (nagyon); Felszerelés: 2; Akadály: 2                         |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `8` |  `8` |  `+8` |     `99` |    `1` |      `9` | kétkezes               |   `7` |        `2` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, khossas             | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |      `3` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                           | elf                                                                                                                                                                                                                                                  |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `3` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, kígyó               | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |      `1` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `1` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, lovag               | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+6` |     `99` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `8` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, másfélkezes         | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `8` |  `8` |  `+6` |     `99` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Beszorítható (enyhén); Felszerelés: 1                                     |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `6` |  `6` |  `+7` |     `99` |    `1` |      `7` | másfélkezes            |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+6` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+7` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, mesterkard          | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `8` |  `8` |  `+7` |     `99` |    `0` |      `8` | másfélkezes            |   `5` |        `1` | Beszorítható (enyhén); Felszerelés: 1                                     |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `6` |  `6` |  `+7` |     `99` |    `1` |      `8` | másfélkezes            |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+7` |      `2` |    `0` |      `8` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+7` |      `2` |    `0` |      `8` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, predoci egyeneskard | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |     `99` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, rapír               | pengehegy-kard         | szúró        | elsődleges  |  `4` |  `4` |  `+6` |      `3` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  `6` |  `6` |  `+5` |      `3` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, rövid               | vágóél-egyenes-rövid   | vágó-egyenes | elsődleges  |  `4` |  `4` |  `+3` |      `2` |    `0` |      `6` | egykezes               |   `2` |        `0` | Övön hordható                                                             |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-tőr          | szúró        | másodlagos  |  `3` |  `3` |  `+4` |      `2` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, Slan                | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `7` |  `7` | `+10` |     `99` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Különleges felkészítés; Beszorítható (enyhén); Felszerelés: 1             |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `7` |  `7` | `+10` |     `99` |    `1` |      `6` | másfélkezes            |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `5` |  `5` | `+10` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `5` |  `5` | `+10` |      `2` |    `0` |      `6` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, Slan csatakard      | vágóél-íves-nagy       | vágó-íves    | elsődleges  | `10` | `10` | `+13` |     `99` |    `0` |      `8` | kétkezes               |   `7` |        `2` | Különleges felkészítés; Beszorítható (nagyon); Felszerelés: 2; Akadály: 1 |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  | `10` | `10` | `+12` |     `99` |    `1` |      `7` | kétkezes               |   `7` |        `2` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, Slan rövid          | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` | Különleges felkészítés; Övön hordható                                     |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-tőr          | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Kard, szablya             | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |      `4` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `4` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Mara-sequor               | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `8` |  `8` | `+11` |     `99` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Különleges felkészítés; Beszorítható (enyhén); Felszerelés: 1             |                                                                                                                                                                                                                                                      |
-|                           | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `6` |  `6` | `+11` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                           |                                                                                                                                                                                                                                                      |
-| Meneth                    | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `3` |  `3` |  `+4` |     `99` |    `0` |      `6` | egykezes               |   `2` |        `0` | Páncéltalant jobban sebez; SFÉ dupla ellene; Övön hordható                |                                                                                                                                                                                                                                                      |
-| Sequor                    | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` | Övön hordható                                                             |                                                                                                                                                                                                                                                      |
-|                           | pengehegy-tőr          | szúró        | másodlagos  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Tőrkard                   | pengehegy-kard         | szúró        | elsődleges  |  `4` |  `4` |  `+6` |      `1` |    `1` |      `7` | egykezes               |   `3` |        `0` | Pontos; Lefegyverezhetőbb; Zúzó fegyver ellen rosszabb                    |                                                                                                                                                                                                                                                      |
-|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  `6` |  `6` |  `+5` |      `1` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                           |                                                                                                                                                                                                                                                      |
-| Vívóbot                   | botvég                 | zúzó         | elsődleges  |  `3` |  `3` |  `+3` |      `1` |    `0` |      `6` | egykezes               |   `3` |        `0` | Fanyél fegyvertörése könnyebb                                             |                                                                                                                                                                                                                                                      |
-| Hárító: Csatakesztyű      | kivétel                | zúzó         | elsődleges  |  `0` |  `2` |  `+0` |     `99` |    `0` |     `99` | egykezes               |   `0` |        `0` |                                                                           | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Nem támadhat vele - a fenti mód csak a passzív VÉ-bónuszt jelzi. Ha mindkét kéz hárítófegyvert forgat, akkor is csak ennyi VÉ jár, további bónusz nem.       |
-| Hárító: Köpeny            | kivétel                | zúzó         | elsődleges  |  `0` |  `3` | `-20` |      `0` |    `0` |     `99` | egykezes               |   `0` |        `0` |                                                                           | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-20 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni. |
+| Fegyver                   | Aktorok                | Sebzésjelleg | Sebzéstípus |   TÉ |   VÉ |    SP | Erőlimit | Átütés | Sebesség | Forgatás               | Hossz | Felsz.pont | Extrák                                                                                                                                   | Megj.                                                                                                                                                                                                                                                |
+| ------------------------- | ---------------------- | ------------ | ----------- | ---: | ---: | ----: | -------: | -----: | -------: | ---------------------- | ----: | ---------: | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kard, dzsenn szablya      | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |     `99` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, emrelin             | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |     `99` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, handzsár            | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+7` |     `99` |    `0` |      `9` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, hiequar             | pengehegy-kard         | szúró        | elsődleges  |  `4` |  `4` |  `+6` |      `3` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          | elf                                                                                                                                                                                                                                                  |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  `6` |  `6` |  `+5` |      `3` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, hosszú              | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |     `99` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, jatagán             | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` | Övön hordható                                                                                                                            |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, kétkezes            | vágóél-egyenes-nagy    | vágó-egyenes | elsődleges  | `10` | `10` |  `+9` |     `99` |    `0` |      `9` | kétkezes               |   `7` |        `2` | Pajzsrongáló; Beszorítható (nagyon); Felszerelés: 2; Akadály: 2                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `8` |  `8` |  `+8` |     `99` |    `1` |      `9` | kétkezes               |   `7` |        `2` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, khossas             | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |      `3` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          | elf                                                                                                                                                                                                                                                  |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `3` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, kígyó               | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |      `1` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `1` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, lovag               | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+6` |     `99` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `8` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, másfélkezes         | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `8` |  `8` |  `+6` |     `99` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Beszorítható (enyhén); Felszerelés: 1                                                                                                    |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `6` |  `6` |  `+7` |     `99` |    `1` |      `7` | másfélkezes            |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+6` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+7` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, mesterkard          | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `8` |  `8` |  `+7` |     `99` |    `0` |      `8` | másfélkezes            |   `5` |        `1` | Beszorítható (enyhén); Felszerelés: 1                                                                                                    |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `6` |  `6` |  `+7` |     `99` |    `1` |      `8` | másfélkezes            |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+7` |      `2` |    `0` |      `8` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+7` |      `2` |    `0` |      `8` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, predoci egyeneskard | vágóél-egyenes-átlagos | vágó-egyenes | elsődleges  |  `6` |  `6` |  `+5` |     `99` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |     `99` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, rapír               | pengehegy-kard         | szúró        | elsődleges  |  `4` |  `4` |  `+6` |      `3` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  `6` |  `6` |  `+5` |      `3` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, rövid               | vágóél-egyenes-rövid   | vágó-egyenes | elsődleges  |  `4` |  `4` |  `+3` |      `2` |    `0` |      `6` | egykezes               |   `2` |        `0` | Övön hordható                                                                                                                            |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  `3` |  `3` |  `+4` |      `2` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, Slan                | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `7` |  `7` | `+10` |     `99` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Különleges felkészítés; Beszorítható (enyhén); Felszerelés: 1                                                                            |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `7` |  `7` | `+10` |     `99` |    `1` |      `6` | másfélkezes            |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `5` |  `5` | `+10` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `5` |  `5` | `+10` |      `2` |    `0` |      `6` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, Slan csatakard      | vágóél-íves-nagy       | vágó-íves    | elsődleges  | `10` | `10` | `+13` |     `99` |    `0` |      `8` | kétkezes               |   `7` |        `2` | Különleges felkészítés; Pajzsrongáló; Beszorítható (nagyon); Felszerelés: 2; Akadály: 1                                                  |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  | `10` | `10` | `+12` |     `99` |    `1` |      `7` | kétkezes               |   `7` |        `2` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, Slan rövid          | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` | Különleges felkészítés; Övön hordható                                                                                                    |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Kard, szablya             | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `4` |  `4` |  `+6` |      `4` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-kard         | szúró        | másodlagos  |  `4` |  `4` |  `+6` |      `4` |    `1` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Mara-sequor               | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `8` |  `8` | `+11` |     `99` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Különleges felkészítés; Pajzsrongáló; Beszorítható (enyhén); Felszerelés: 1                                                              |                                                                                                                                                                                                                                                      |
+|                           | vágóél-íves-átlagos    | vágó-íves    | elsődleges  |  `6` |  `6` | `+11` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Meneth                    | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `3` |  `3` |  `+4` |     `99` |    `0` |      `6` | egykezes               |   `2` |        `0` | Páncéltalant jobban sebez; SFÉ dupla ellene; Övön hordható                                                                               |                                                                                                                                                                                                                                                      |
+| Sequor                    | vágóél-íves-rövid      | vágó-íves    | elsődleges  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` | Övön hordható                                                                                                                            |                                                                                                                                                                                                                                                      |
+|                           | pengehegy-tőr          | szúró        | másodlagos  |  `3` |  `3` |  `+4` |      `3` |    `0` |      `6` | egykezes               |   `2` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Tőrkard                   | pengehegy-kard         | szúró        | elsődleges  |  `4` |  `4` |  `+6` |      `1` |    `1` |      `7` | egykezes               |   `3` |        `0` | Manőver Precíz támadás könnyebb (pontos); Manőver Lefegyverezés ellene könnyebb; Zúzó fegyver ellen rosszabb; Manőver Mesterjel alkalmas |                                                                                                                                                                                                                                                      |
+|                           | vágóél-egyenes-átlagos | vágó-egyenes | másodlagos  |  `6` |  `6` |  `+5` |      `1` |    `0` |      `7` | egykezes               |   `3` |        `0` |                                                                                                                                          |                                                                                                                                                                                                                                                      |
+| Vívóbot                   | botvég                 | zúzó         | elsődleges  |  `3` |  `3` |  `+3` |      `1` |    `0` |      `6` | egykezes               |   `3` |        `0` | Manőver Fegyvertörés ellene könnyebb (fanyél)                                                                                            |                                                                                                                                                                                                                                                      |
+| Hárító: Csatakesztyű      | kivétel                | zúzó         | elsődleges  |  `0` |  `2` |  `+0` |     `99` |    `0` |     `99` | egykezes               |   `0` |        `0` |                                                                                                                                          | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Nem támadhat vele - a fenti mód csak a passzív VÉ-bónuszt jelzi. Ha mindkét kéz hárítófegyvert forgat, akkor is csak ennyi VÉ jár, további bónusz nem.       |
+| Hárító: Köpeny            | kivétel                | zúzó         | elsődleges  |  `0` |  `3` | `-20` |      `0` |    `0` |     `99` | egykezes               |   `0` |        `0` |                                                                                                                                          | Hárítófegyver: csak a gyengébb kézben forgatható, a Hárítófegyver használat fortéllyal. Csak legfeljebb 3 fegyverhossz-kategóriájú fegyver ellen hárít. Az SP:-20 arra a (nem rendeltetésszerű) esetre vonatkozik, ha támadásra próbálják használni. |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26499,22 +26727,22 @@ Nagyobb szálfegyvereknél (is) jelentkezhet a [Fegyver felszerelést érintő](
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver                | Aktorok                   | Sebzésjelleg | Sebzéstípus |   TÉ |   VÉ |    SP | Erőlimit | Átütés | Sebesség | Forgatás               | Hossz | Felsz.pont | Extrák                                                                                              | Megj.                                                                                                                                                                                                                                                                                                  |
-| ---------------------- | ------------------------- | ------------ | ----------- | ---: | ---: | ----: | -------: | -----: | -------: | ---------------------- | ----: | ---------: | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Alabárd                | vágóél-íves-nagy          | vágó-íves    | elsődleges  |  `8` | `10` | `+10` |     `99` |    `0` |     `12` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 2                    |                                                                                                                                                                                                                                                                                                        |
-|                        | lándzsahegy-rövid-átlagos | szúró        | másodlagos  |  `8` | `10` |  `+9` |     `99` |    `2` |     `11` | kétkezes               |   `9` |        `2` |                                                                                                     |                                                                                                                                                                                                                                                                                                        |
-|                        | buzogányfej-tompa         | zúzó         | másodlagos  |  `8` |  `8` |  `+9` |     `99` |    `0` |     `11` | kétkezes               |   `9` |        `2` |                                                                                                     |                                                                                                                                                                                                                                                                                                        |
-| Bot, hosszú            | botvég                    | zúzó         | elsődleges  |  `7` |  `7` |  `+5` |      `2` |    `0` |      `7` | kétkezes               |   `7` |        `2` | Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1                    |                                                                                                                                                                                                                                                                                                        |
-| Lándzsa, átlagos       | lándzsahegy-rövid-átlagos | szúró        | elsődleges  | `10` | `10` |  `+9` |     `99` |    `2` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1                    |                                                                                                                                                                                                                                                                                                        |
-| Lándzsa, keskeny hegyű | lándzsahegy-rövid-keskeny | szúró        | elsődleges  | `10` | `10` |  `+8` |     `99` |    `4` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1                    |                                                                                                                                                                                                                                                                                                        |
-| Lándzsa, széles hegyű  | lándzsahegy-rövid-széles  | szúró        | elsődleges  | `10` | `10` | `+10` |     `99` |    `0` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1                    |                                                                                                                                                                                                                                                                                                        |
-| Pika, keskeny hegyű    | lándzsahegy-rövid-keskeny | szúró        | elsődleges  | `13` | `13` |  `+8` |      `3` |    `4` |     `10` | kétkezes               |  `12` |        `2` | Pikás közrefogása; Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 2 |                                                                                                                                                                                                                                                                                                        |
-| Pika, széles hegyű     | lándzsahegy-rövid-széles  | szúró        | elsődleges  | `13` | `13` | `+10` |      `3` |    `0` |     `10` | kétkezes               |  `12` |        `2` | Pikás közrefogása; Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 2 |                                                                                                                                                                                                                                                                                                        |
-| Szigony, egykezes      | lándzsahegy-tőrhossz      | szúró        | elsődleges  |  `5` |  `5` |  `+8` |      `3` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Beszorítható (enyhén); Fanyél fegyvertörése könnyebb; Felszerelés: 1                                |                                                                                                                                                                                                                                                                                                        |
-|                        | lándzsahegy-tőrhossz      | szúró        | elsődleges  |  `3` |  `3` |  `+8` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                     |                                                                                                                                                                                                                                                                                                        |
-| Szigony, kétkezes      | lándzsahegy-rövid-átlagos | szúró        | elsődleges  |  `9` |  `9` |  `+8` |     `99` |    `2` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Fanyél fegyvertörése könnyebb; Felszerelés: 2; Akadály: 1                    |                                                                                                                                                                                                                                                                                                        |
-| Kopja, harci           | kivétel                   | szúró        | elsődleges  | `13` | `13` | `+10` |      `0` |    `5` |     `99` | kétkezes               |   `4` |        `0` | Kopja lovas rohamban                                                                                | Csak lovon használható, Lándzsavívás harcmodorban forgatandó. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza). |
-| Kopja, torna           | kivétel                   | szúró        | elsődleges  | `13` | `13` |  `-3` |      `0` |    `0` |     `99` | kétkezes               |   `4` |        `0` | Kopja lovas rohamban                                                                                | Puhafa, lovagi tornákra való. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).                                 |
+| Fegyver                | Aktorok                   | Sebzésjelleg | Sebzéstípus |   TÉ |   VÉ |    SP | Erőlimit | Átütés | Sebesség | Forgatás               | Hossz | Felsz.pont | Extrák                                                                                                                                                                        | Megj.                                                                                                                                                                                                                                                                                                  |
+| ---------------------- | ------------------------- | ------------ | ----------- | ---: | ---: | ----: | -------: | -----: | -------: | ---------------------- | ----: | ---------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Alabárd                | vágóél-íves-nagy          | vágó-íves    | elsődleges  |  `8` | `10` | `+10` |     `99` |    `0` |     `12` | kétkezes               |   `9` |        `2` | Pajzsrongáló; Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 2                                                                |                                                                                                                                                                                                                                                                                                        |
+|                        | lándzsahegy-rövid-átlagos | szúró        | másodlagos  |  `8` | `10` |  `+9` |     `99` |    `2` |     `11` | kétkezes               |   `9` |        `2` |                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                        |
+|                        | buzogányfej-tompa         | zúzó         | másodlagos  |  `8` |  `8` |  `+9` |     `99` |    `0` |     `11` | kétkezes               |   `9` |        `2` |                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                        |
+| Bot, hosszú            | botvég                    | zúzó         | elsődleges  |  `7` |  `7` |  `+5` |      `2` |    `0` |      `7` | kétkezes               |   `7` |        `2` | Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 1                                                                              |                                                                                                                                                                                                                                                                                                        |
+| Lándzsa, átlagos       | lándzsahegy-rövid-átlagos | szúró        | elsődleges  | `10` | `10` |  `+9` |     `99` |    `2` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 1                                                                              |                                                                                                                                                                                                                                                                                                        |
+| Lándzsa, keskeny hegyű | lándzsahegy-rövid-keskeny | szúró        | elsődleges  | `10` | `10` |  `+8` |     `99` |    `4` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 1                                                                              |                                                                                                                                                                                                                                                                                                        |
+| Lándzsa, széles hegyű  | lándzsahegy-rövid-széles  | szúró        | elsődleges  | `10` | `10` | `+10` |     `99` |    `0` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 1                                                                              |                                                                                                                                                                                                                                                                                                        |
+| Pika, keskeny hegyű    | lándzsahegy-rövid-keskeny | szúró        | elsődleges  | `13` | `13` |  `+8` |      `3` |    `4` |     `10` | kétkezes               |  `12` |        `2` | Pikás közrefogása; Manőver Lovas megakasztása; Manőver Távoltartás alkalmas; Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 2 |                                                                                                                                                                                                                                                                                                        |
+| Pika, széles hegyű     | lándzsahegy-rövid-széles  | szúró        | elsődleges  | `13` | `13` | `+10` |      `3` |    `0` |     `10` | kétkezes               |  `12` |        `2` | Pikás közrefogása; Manőver Lovas megakasztása; Manőver Távoltartás alkalmas; Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 2 |                                                                                                                                                                                                                                                                                                        |
+| Szigony, egykezes      | lándzsahegy-tőrhossz      | szúró        | elsődleges  |  `5` |  `5` |  `+8` |      `3` |    `0` |      `7` | másfélkezes            |   `5` |        `1` | Beszorítható (enyhén); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 1                                                                                          |                                                                                                                                                                                                                                                                                                        |
+|                        | lándzsahegy-tőrhossz      | szúró        | elsődleges  |  `3` |  `3` |  `+8` |      `2` |    `0` |      `7` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                        |
+| Szigony, kétkezes      | lándzsahegy-rövid-átlagos | szúró        | elsődleges  |  `9` |  `9` |  `+8` |     `99` |    `2` |      `9` | kétkezes               |   `9` |        `2` | Beszorítható (nagyon); Manőver Fegyvertörés ellene könnyebb (fanyél); Felszerelés: 2; Akadály: 1                                                                              |                                                                                                                                                                                                                                                                                                        |
+| Kopja, harci           | kivétel                   | szúró        | elsődleges  | `13` | `13` | `+10` |      `0` |    `5` |     `99` | kétkezes               |   `4` |        `0` | Kopja lovas rohamban                                                                                                                                                          | Csak lovon használható, Lándzsavívás harcmodorban forgatandó. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza). |
+| Kopja, torna           | kivétel                   | szúró        | elsődleges  | `13` | `13` |  `-3` |      `0` |    `0` |     `99` | kétkezes               |   `4` |        `0` | Kopja lovas rohamban                                                                                                                                                          | Puhafa, lovagi tornákra való. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (Erőlimit:0) - a ló lendülete már beszámításra került a Sebzés értékbe. Lovas roham taktika esetén a Sebzéshez +10 SP bónusz jár (a fenti SP mező ezt NEM tartalmazza).                                 |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26545,21 +26773,21 @@ A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyve
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver             | Aktorok                   | Sebzésjelleg | Sebzéstípus |  TÉ |   VÉ |   SP | Erőlimit | Átütés | Sebesség | Forgatás               | Hossz | Felsz.pont | Extrák                                            | Megj. |
-| ------------------- | ------------------------- | ------------ | ----------- | --: | ---: | ---: | -------: | -----: | -------: | ---------------------- | ----: | ---------: | ------------------------------------------------- | ----- |
-| Balta               | vágóél-íves-rövid         | vágó-íves    | elsődleges  | `2` |  `2` | `+4` |     `99` |    `0` |      `7` | egykezes               |   `2` |        `0` | Övön hordható                                     |       |
-| Bot, furkós         | botvég                    | zúzó         | elsődleges  | `3` |  `3` | `+3` |      `2` |    `0` |      `6` | egykezes               |   `3` |        `0` | Fanyél fegyvertörése könnyebb                     |       |
-| Bot, rövid          | botvég                    | zúzó         | elsődleges  | `2` |  `2` | `+1` |      `0` |    `0` |      `4` | egykezes               |   `2` |        `0` | Fanyél fegyvertörése könnyebb; Övön hordható      |       |
-| Buzogány, egykezes  | buzogányfej-tompa         | zúzó         | elsődleges  | `3` |  `1` | `+6` |      `4` |    `0` |      `8` | egykezes               |   `3` |        `0` |                                                   |       |
-| Buzogány, kétkezes  | buzogányfej-tompa         | zúzó         | elsődleges  | `7` |  `5` | `+9` |     `99` |    `0` |     `10` | kétkezes               |   `7` |        `2` | Beszorítható (nagyon); Felszerelés: 2; Akadály: 1 |       |
-| Buzogány, láncos    | buzogányfej-tompa         | zúzó         | elsődleges  | `3` |  `1` | `+6` |     `99` |    `0` |      `8` | egykezes               |   `3` |        `0` | Láncos: pajzs VÉ felezés                          |       |
-| Buzogány, shadleki  | buzogányfej-szöges        | zúzó         | elsődleges  | `3` |  `0` | `+5` |     `99` |    `2` |      `8` | egykezes               |   `3` |        `0` |                                                   |       |
-| Buzogány, tollas    | buzogányfej-szöges        | zúzó         | elsődleges  | `2` | `-1` | `+3` |      `4` |    `2` |      `6` | egykezes               |   `2` |        `0` | Övön hordható                                     |       |
-| Csatabárd, egykezes | vágóél-íves-átlagos       | vágó-íves    | elsődleges  | `2` |  `2` | `+4` |      `4` |    `1` |      `8` | egykezes               |   `2` |        `0` | Övön hordható                                     |       |
-| Csatabárd, kétkezes | vágóél-íves-nagy          | vágó-íves    | elsődleges  | `5` |  `5` | `+7` |     `99` |    `2` |     `10` | másfélkezes            |   `5` |        `1` | Beszorítható (enyhén); Felszerelés: 1; Akadály: 2 |       |
-|                     | vágóél-íves-nagy          | vágó-íves    | elsődleges  | `3` |  `3` | `+7` |      `2` |    `0` |     `10` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                   |       |
-| Csatacsákány        | lándzsahegy-rövid-keskeny | szúró        | elsődleges  | `3` |  `3` | `+5` |     `99` |    `4` |      `7` | egykezes               |   `3` |        `0` | Beakad (~50%); Akadály: 1                         |       |
-| Harci kalapács      | buzogányfej-tompa         | zúzó         | elsődleges  | `7` |  `5` | `+9` |     `99` |    `0` |     `10` | kétkezes               |   `7` |        `2` | Beszorítható (nagyon); Felszerelés: 2; Akadály: 2 |       |
+| Fegyver             | Aktorok                   | Sebzésjelleg | Sebzéstípus |  TÉ |   VÉ |   SP | Erőlimit | Átütés | Sebesség | Forgatás               | Hossz | Felsz.pont | Extrák                                                          | Megj. |
+| ------------------- | ------------------------- | ------------ | ----------- | --: | ---: | ---: | -------: | -----: | -------: | ---------------------- | ----: | ---------: | --------------------------------------------------------------- | ----- |
+| Balta               | vágóél-íves-rövid         | vágó-íves    | elsődleges  | `2` |  `2` | `+4` |     `99` |    `0` |      `7` | egykezes               |   `2` |        `0` | Pajzsrongáló; Övön hordható                                     |       |
+| Bot, furkós         | botvég                    | zúzó         | elsődleges  | `3` |  `3` | `+3` |      `2` |    `0` |      `6` | egykezes               |   `3` |        `0` | Manőver Fegyvertörés ellene könnyebb (fanyél)                   |       |
+| Bot, rövid          | botvég                    | zúzó         | elsődleges  | `2` |  `2` | `+1` |      `0` |    `0` |      `4` | egykezes               |   `2` |        `0` | Manőver Fegyvertörés ellene könnyebb (fanyél); Övön hordható    |       |
+| Buzogány, egykezes  | buzogányfej-tompa         | zúzó         | elsődleges  | `3` |  `1` | `+6` |      `4` |    `0` |      `8` | egykezes               |   `3` |        `0` | Pajzsrongáló                                                    |       |
+| Buzogány, kétkezes  | buzogányfej-tompa         | zúzó         | elsődleges  | `7` |  `5` | `+9` |     `99` |    `0` |     `10` | kétkezes               |   `7` |        `2` | Pajzsrongáló; Beszorítható (nagyon); Felszerelés: 2; Akadály: 1 |       |
+| Buzogány, láncos    | buzogányfej-tompa         | zúzó         | elsődleges  | `3` |  `1` | `+6` |     `99` |    `0` |      `8` | egykezes               |   `3` |        `0` | Pajzsrongáló; Láncos: pajzs VÉ felezés                          |       |
+| Buzogány, shadleki  | buzogányfej-szöges        | zúzó         | elsődleges  | `3` |  `0` | `+5` |     `99` |    `2` |      `8` | egykezes               |   `3` |        `0` | Pajzsrongáló                                                    |       |
+| Buzogány, tollas    | buzogányfej-szöges        | zúzó         | elsődleges  | `2` | `-1` | `+3` |      `4` |    `2` |      `6` | egykezes               |   `2` |        `0` | Pajzsrongáló; Övön hordható                                     |       |
+| Csatabárd, egykezes | vágóél-íves-átlagos       | vágó-íves    | elsődleges  | `2` |  `2` | `+4` |      `4` |    `1` |      `8` | egykezes               |   `2` |        `0` | Pajzsrongáló; Övön hordható                                     |       |
+| Csatabárd, kétkezes | vágóél-íves-nagy          | vágó-íves    | elsődleges  | `5` |  `5` | `+7` |     `99` |    `2` |     `10` | másfélkezes            |   `5` |        `1` | Pajzsrongáló; Beszorítható (enyhén); Felszerelés: 1; Akadály: 2 |       |
+|                     | vágóél-íves-nagy          | vágó-íves    | elsődleges  | `3` |  `3` | `+7` |      `2` |    `0` |     `10` | másfélkezes · 1 kézzel |   `5` |        `1` |                                                                 |       |
+| Csatacsákány        | lándzsahegy-rövid-keskeny | szúró        | elsődleges  | `3` |  `3` | `+5` |     `99` |    `4` |      `7` | egykezes               |   `3` |        `0` | Beakad (~50%); Pajzsrongáló; Akadály: 1                         |       |
+| Harci kalapács      | buzogányfej-tompa         | zúzó         | elsődleges  | `7` |  `5` | `+9` |     `99` |    `0` |     `10` | kétkezes               |   `7` |        `2` | Pajzsrongáló; Beszorítható (nagyon); Felszerelés: 2; Akadály: 2 |       |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -26627,10 +26855,10 @@ A Hajítófegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez m�
 | ------------------------------ | :-: | :---: | :---: | :------: | :----------: | :---------------: | :-------------: | :----: | ----------------: | :-------: | ----------------------------------------------------------------------------------------------------------- |
 | 🔆 Nem dobásra készített tárgy | `0` |  `1`  | `-5`  |  `6-9`   |   `S/V/Z`    | egykezes/kétkezes |       `2`       |  `0`   |     `5-10m + Erő` |  hajító   |                                                                                                             |
 | Bola                           | `0` |  `2`  |   -   |   `11`   |      -       |     kétkezes      |       `0`       |  `0`   |             `20m` |  hajító   |                                                                                                             |
-| Dárda                          | `3` |  `3`  | `+3`  |   `9`    |     `S`      |     egykezes      |      `99`       |  `3`   |  `5m + (Erő x 3)` |  hajító   | Követelmény: Erő `+0`.<br />Pajzsba dobva csökkenti annak **Védő Értékét** a dobott `SP` értékkel           |
+| Dárda                          | `3` |  `3`  | `+3`  |   `9`    |     `S`      |     egykezes      |      `99`       |  `3`   |  `5m + (Erő x 3)` |  hajító   | Követelmény: Erő `+0`.<br />Pajzsba dobva megakad és bénítja a pajzsot ([Pajzsbénító](068_01_03_fegyver_extrak.md#pajzsbénító) extra)   |
 | Dobócsillag                    | `1` |  `2`  | `-3`  |   `5`    |     `S`      |     egykezes      |       `0`       |  `0`   |             `15m` |  hajító   | `SFÉ` duplán számít ellene                                                                                  |
-| Dobóháló                       | `0` |  `2`  |   -   |   `11`   |      -       |     kétkezes      |       `0`       |  `0`   |        `4m + Erő` |  hajító   |                                                                                                             |
-| Hajítóbárd                     | `2` |  `3`  | `+2`  |   `7`    |     `Z`      |     egykezes      |      `99`       |  `0`   | `20m + (Erő x 4)` |  hajító   | Pajzsba dobva csökkenti annak Védő Értékét a dobott **SP** értékkel                                         |
+| Dobóháló                       | `0` |  `2`  |   -   |   `11`   |      -       |     kétkezes      |       `0`       |  `0`   |        `4m + Erő` |  hajító   | Pajzsra dobva megakad és bénítja azt ([Pajzsbénító](068_01_03_fegyver_extrak.md#pajzsbénító) extra)         |
+| Hajítóbárd                     | `2` |  `3`  | `+2`  |   `7`    |     `Z`      |     egykezes      |      `99`       |  `0`   | `20m + (Erő x 4)` |  hajító   | Pajzsba dobva megakad és bénítja a pajzsot ([Pajzsbénító](068_01_03_fegyver_extrak.md#pajzsbénító) extra)   |
 | Hajítótőr                      | `2` |  `3`  | `+0`  |   `6`    |     `S`      |     egykezes      |       `1`       |  `0`   |             `10m` |  hajító   | Automatikusan jár rá a **Közeli lövés** fortélynál leírt `CÉ:+10` bónusz ha a célpont az `1.` Cellában van. |
 | Kő                             | `1` |  `2`  | `-10` |   `6`    |     `Z`      |     egykezes      |       `0`       |  `0`   | `20m + (Erő x 5)` |  hajító   |                                                                                                             |
 | Lasszó                         | `0` |  `1`  |   -   |   `10`   |      -       |     kétkezes      |       `0`       |  `0`   |             `10m` |  hajító   | Sebesülés az esés következtében lehet.                                                                      |
@@ -26805,7 +27033,7 @@ A generátor determinisztikus: a fegyver néhány paraméteréből (hossz, sebz�
 ## Adat és kód
 
 - [Adatállományok](../data/sources/fegyverek/)
-- [Scriptek](../code/balance/)
+- [Scriptek](../code/fegyvergenerator/)
 
 <br />
 
@@ -26914,7 +27142,7 @@ Szúró
   pengehegy-apró              nincs
   pengehegy-tőr               SP:+1
   pengehegy-kard              SP:+2, Átütés:1
-  (egykezes pengehegynél: "Pontos" extra)
+  (egykezes pengehegynél: "Manőver Precíz támadás könnyebb (pontos)" extra)
 Vágó-egyenes
   vágóél-egyenes-rövid        TÉ:+1, VÉ:+1
   vágóél-egyenes-átlagos      SP:+1, TÉ:+2, VÉ:+2
@@ -26938,7 +27166,7 @@ Speciális aktorok (kevés, egyedi fegyverhez):
 Zúzó
   kampós             SP:-5
                      másodlagos aktornak, extra:
-                     Kampós véggel lábkirántás
+                     Manőver Lábkirántás könnyebb (kampós véggel)
   vasököl            TÉ:-1, VÉ:-2
                      fém ütőfelület
                      (Vasököl, Markolatgomb)
@@ -27037,7 +27265,8 @@ A legendás anyagok és a magas Idea ritkák és drágák - a `+4`/`+5` Idea nar
 ```
 szálfegyver nyél
   sima          nincs hatás
-  fanyelű       extra: Fegyvertörés-ellenpróba -2
+  fanyelű       extra: Manőver Fegyvertörés ellene könnyebb (fanyél)
+                Fegyvertörés-ellenpróba -2
                 (a fa nyél könnyebben törik)
   vasaltszárú   súly +1 kategória
   tömörszárú    SP:+1, súly +2 kategória
@@ -27242,8 +27471,9 @@ GAME
     TÉ:8, VÉ:10, SP:+9, Átütés:2, Sebesség:11
   másodlagos: buzogányfej-tompa (zúzó)
     TÉ:8, VÉ:8, SP:+9, Átütés:0, Sebesség:11
-  Extrák: Beszorítható (nagyon) (hossz 9),
-          fanyél fegyvertörése könnyebb
+  Extrák: Pajzsrongáló,
+          Beszorítható (nagyon) (hossz 9),
+          Manőver Fegyvertörés ellene könnyebb (fanyél)
   ár_alap  fém-hegyű(0.2x) × fejdarab 2 × hossz 9(2x) = 0.8
 ```
 
@@ -33139,21 +33369,24 @@ A  [Méregérzékelés](145_meregerzekeles.md) és [Méregazonosítás](146_mere
 ### ⚡ **Lórúgás (brutálisan erős altató - italméreg)**
 
 ```
-→ Erősség: 10 (a legerősebb)
-→ Hatás max súlyossága: 1 (alvás)
-→ Meddig áll el: +4 (1 nap folyadékban)
-→ Hatóidő: +5 (azonnal)
-→ 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
+→ (1) Erősség:       10 (a legerősebb)
+→ (2) Súlyosság:      1 (Alvás)
+→ (3) Hatáskezdet:   +5 (Azonnal)
+→ (4) Hatástartam:   +3 (pár óra)
+→ (5) Bomlási idő:    4 (1 nap folyadékban)
+→ (6) Kimutatási idő: 0 (1 nap)
+→ (7) Elállás:        0 (1 holdfordulón belül)
+→ (8) Speciális:     +0 (1 komponens, 1 hordozó közeg, nem-sűrű)
 ```
 
 ```
-Így a méreg komplexitása: 20
- → Minimum 10. szintű méregkeverés szükséges
+Komplexitás: 23
+ → Biztos tudás: Mk 9
 ```
 
 A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy kicsattanó egészségű, 120 kilós barbár is szinte biztos, hogy kidől tőle egy kis délutáni durmolásra.
 
-🔆 Látható, hogy egy fél óra alatt ható, ugyanilyen méreghez elég lenne a `8.szintű` Mérgek képzettség is.
+🔆 Látható, hogy az azonnali hatás és a hosszú bomlási idő húzza fel a Komplexitást: egy fél óra alatt ható, rövidebb eltarthatóságú, ugyanilyen erős méreg jóval könnyebben kikeverhető lenne.
 
 <br />
 
@@ -33161,16 +33394,19 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 ### ⚡ **Könnycsepp a pengén (halálos fegyverméreg)**
 
 ```
-→ Erősség: 6
-→ Hatás max súlyossága: 5 (halál)
-→ Meddig áll el: +2 (10 percig a pengére locsolva)
-→ Hatóidő: +4 (gyors (1 kör múlva)
-→ 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
+→ (1) Erősség:        6
+→ (2) Súlyosság:      5 (Halál)
+→ (3) Hatáskezdet:   +4 (Következő körben)
+→ (4) Hatástartam:   +2 (harc végéig / rövid jelenet)
+→ (5) Bomlási idő:    2 (10 perc a pengére locsolva)
+→ (6) Kimutatási idő: 0 (1 nap)
+→ (7) Elállás:        0 (1 holdfordulón belül)
+→ (8) Speciális:     +0 (1 komponens, 1 hordozó közeg, nem-sűrű)
 ```
 
 ```
-Így a méreg komplexitása: 17
- → Minimum 9. szintű Mérgek képzettség szükséges
+Komplexitás: 19
+ → Biztos tudás: Mk 7
 ```
 
 🔆 A fenti fegyverméreg erőssége az átlagosnál kicsit erősebbnek mondható, de egy magas Edzettséggel bíró áldozat jó eséllyel megússza az elsődleges hatását (halál) és "csak" lebénul, vagy erős bódulatba kerül.
@@ -33183,21 +33419,27 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 ### ⚡ **Múló évszakok (többkomponensű mesteri ital/légiméreg)**
 
 ```
-→ Erősség: 5
-→ Hatás max súlyossága: 5 (halál)
-→ Meddig áll el: +6 (Örökké)
-→ Hatóidő: +1 (fél nap múlva)
-→ 3 komponensű, 2 hordozó közeg (levegő, folyadék), nem-sűrű: +4 +3 +0
-→ Csak 1 komponensben van hatóanyag, a többi természetes: +3
-→ Szagtalan/ízetlen: +3
+→ (1) Erősség:         5
+→ (2) Súlyosság:       5 (Halál)
+→ (3) Hatáskezdet:    +1 (1 nappal eltolva)
+→ (4) Hatástartam:    +5 (hónapok)
+→ (5) Bomlási idő:     6  (Örökké)
+→ (6) Kimutatási idő:  4 (Hatás után nem kimutatható)
+→ (7) Elállás:         4  (örökké)
+→ (8) Speciális:     +11
+     +4: 3 komponens (+2 +2)
+     +3: 2 hordozó közeg (levegő, folyadék)
+     +3: csak 1 komponensben van hatóanyag,
+     +3: szagtalan/ízetlen
+     (a nem-sűrű: +0)
 ```
 
 ```
-Így a méreg komplexitása: 30
- → Minimum 15. szintű Mérgek képzettség szükséges 5-ös Tulajdonsággal!
+Komplexitás: 41
+ → Biztos tudás: Mk 12
 ```
 
-Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas szinten és a képzettség követelményen.
+Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas Komplexitáson és a biztos tudás követelményeken.
 
 ⚜️ "Az öreg király rajongott az orchideákért. Tavaszra és nyárra is volt egy-egy különleges, ritka fajtája végtelen udvarának kertjében. Tavasszal leszakajtotta a legszebbet a narancsszínből, nyáron a bíborszínből. Mindkettő hálószobáját díszítette.
 
@@ -33209,7 +33451,7 @@ Fia nem lévén, unokaöccse lépett helyébe, ki - úgy mondják - már nagyon 
 
 🔆 A fenti méreget `3` darab komponensre bontotta a déli vajákos: a király borába (ital hordozó) adagolta hetente egyszer az elmúlt 9 hónapban a szagtalan/ízetlen alapmérget, amely önmagában ártalmatlan, így nem is kimutatható, viszont stabilan felgyűlt a szervezetben. A maradék 2 komponens a 2 orchidea (légi hordozó) virágpora volt, melyet a király belélegzett - hisz mindet a hálószobájába tette. Az első leszakajtása után még nem történt semmi, a hatáshoz mind a kettőre (plusz a borban levő alapméregre) szükség volt.
 
-A hatást a vajákos eltolta fél nappal, hogy éjszaka jöjjön a vég, így a gyanú sem ébredt fel senkiben. Az Erősséget (`5`) bőven elégnek vélte - a király Egészsége (`-1`) már amúgy is igen gyenge lábakon állt.
+A hatást a vajákos eltolta egy nappal, hogy éjszaka jöjjön a vég, így a gyanú sem ébredt fel senkiben. Az Erősséget (`5`) bőven elégnek vélte - a király Egészsége (`-1`) már amúgy is igen gyenge lábakon állt.
 
 ---
 
