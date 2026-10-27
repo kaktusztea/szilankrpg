@@ -2,7 +2,7 @@ name: Update Szilánk full text file
 
 on:
   schedule:
-    - cron: '0 3 * * *' # 03:00 UTC every day
+    - cron: '0 21 * * *' # 21:00 every day (US)
   workflow_dispatch:  # Optional: allows manual triggering
 
 jobs:
