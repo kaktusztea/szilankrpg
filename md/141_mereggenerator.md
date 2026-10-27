@@ -14,7 +14,7 @@ Nehézség = Méreg Komplexitása
 
 A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesül az esetleges balsikerrel (nem hat a szer).
 
-Rendkívül magas Komplexitású mérgek esetén már narratív bónuszok megszerzése is indokolt lehet. Mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék, esetleg szimpatikus mágiával megtámogatva a célpont vére, haja. Ezek "Helyzetfüggő módosító" bónuszt adhatnak a képzettségpróbánál.
+Rendkívül magas Komplexitású mérgek esetén már narratív bónuszok megszerzése is indokolt lehet. Mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék, esetleg szimpatikus mágiával megtámogatva a célpont vére, haja - ezek "Helyzetfüggő módosító" bónuszt adhatnak a képzettségpróbánál.
 
 <br />
 
