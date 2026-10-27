@@ -3375,20 +3375,20 @@ A webapp nem modellezi külön - informatív szöveg, KM kezeli.
 
 ## §39 Méreggenerátor (TERV - NEM IMPLEMENTÁLT)
 
-Forrás: md/141_meregkeveres_szabalyai.md, md/142_meregellenallas.md, md/143_meregerzekeles.md, md/144_peldamergek.md
+Forrás: md/141_mereggenerator.md, md/143_mereg_tulajdonsagai.md, md/144_meregellenallas_proba.md, md/145_meregerzekeles.md, md/146_meregazonositas.md, md/148_peldamergek.md
 
-KM eszköz: méreg összeállítása paraméterekből → komplexitás és jellemzők kiszámítása.
+KM eszköz (szabályszint): méreg összeállítása paraméterekből → Komplexitás és jellemzők kiszámítása. A méreg kikeverése Mérgek + Intelligencia képzettségpróbához kötött, amelynek Nehézsége a Komplexitással egyenlő. A dobás rejtett.
 
-### 39.1 Méreg típusok (hordozó közeg)
+### 39.1 Méreg jelleg csoportok (hordozó közeg)
 
 ```
-- Étel/italméreg
-- Légiméreg
-- Kontaktméreg
-- Fegyverméreg
+- Étel és italmérgek
+- Légimérgek
+- Kontaktmérgek
+- Fegyvermérgek
 ```
 
-### 39.2 Összetevő eredet
+### 39.2 Összetevő csoportok
 
 ```
 - Állati
@@ -3399,132 +3399,208 @@ KM eszköz: méreg összeállítása paraméterekből → komplexitás és jelle
 ### 39.3 Komplexitás formula
 
 ```
-Komplexitás = Erősség + Súlyosság + Elállás/Kiürülés + Hatóidő + Speciális
+Komplexitás =
+  + (1) Erősség
+  + (2) Súlyosság
+  + (3) Hatáskezdet
+  + (4) Hatástartam
+  + (5) Bomlási idő
+  + (6) Kimutatási idő
+  + (7) Elállás
+  + (8) Speciális
 
-Mérgek próba célszáma = Komplexitás
-
-Minimum szükséges Mérgek szint = MAX(
-  CEIL(Komplexitás / 2),
-  legmagasabb paraméter Mk küszöb (lásd Elállás/Kiürülés és Hatóidő táblák)
-)
+Mérgek képzettségpróba: Intelligencia + Mérgek szint + k10 vs Komplexitás
+  (Komplexitás = a próba Nehézsége)
 ```
 
-### 39.4 Méreg Erőssége (1-10)
+A Komplexitás szándékosan mehet a 21-es "Emberfeletti", sőt a 30-as maximum próbacélszám fölé is - az ilyen mérgek legendás vállalkozások (lásd Múló évszakok, Komplexitás 33).
+
+Minimum szükséges Mérgek szint: nincs külön képlet. A korlátot az egyes tengelyek "biztos tudás" (Mk) küszöbei adják (Hatáskezdet, Bomlási idő, Kimutatási idő) - a méreg Mk követelménye a benne szereplő legmagasabb tengely-küszöb.
+
+### 39.4 (1) Méreg Erőssége (1-10)
 
 ```
 Skála: 1 (leggyengébb) - 10 (legerősebb)
-Méregellenállás próba célszáma = Erősség
-Plusz adag: Erősség × 1.5 (lefelé kerekítve)
-Kis adag: Erősség × 0.5 (lefelé kerekítve)
+Méregellenállás próba célszáma = Erősség (NEM a Komplexitás, NEM a Súlyosság)
+Az Erősség nem egyenlő a romboló hatással (létezik erős altató is).
 ```
 
-### 39.5 Hatás súlyossága (1-5)
+Adag (KM dönt, Erősség el is térhet):
 
 ```
-1: Enyhe rosszullét, hányás, alvás
-2: Bódultság státusz, Görcs
-3: Kábultság státusz, Részleges bénulás
-4: Életveszély, Teljes bénulás
-5: Halál
-
-Másodlagos hatás (sikeres ellenállás próba esetén): max (Súlyosság - 1) kategória
+ 0: Normál adag
+-1: Kis adag   → Méregérzékelés próba: -1 büntetés
++1: Nagy adag  → Méregérzékelés próba: +1 bónusz
 ```
 
-### 39.6 Elállás (fegyvermérgek) / Kiürülés (egyéb)
+### 39.5 (2) Hatás súlyossága (1-5)
 
-#### Elállás (fegyverméreg)
+| Érték | Hatás | Fájdalom → Státusz |
+|-------|-------|--------------------|
+| 1 | Enyhe rosszullét, hányás | Fájdalom(9) → Fizikai(1) Fáradtság |
+| 2 | Bódultság státusz, Görcs | Fájdalom(12) → Fizikai(2) Kimerültség |
+| 3 | Kábultság státusz, Részleges bénulás | Fájdalom(15) → Fizikai(2) Kimerültség |
+| 4 | Életveszély, Alvás, Teljes bénulás | Fájdalom(18) → Fizikai(2) Kimerültség |
+| 5 | Halál | Fájdalom(21) → Fizikai(3) Elcsigázottság |
 
-| Érték | Időtartam | Min. Mk szint |
-|-------|-----------|---------------|
+Másodlagos hatás (sikeres Méregellenállás próba esetén is érvényesül, Komplexitást emel):
+
+```
++0: nincs másodlagos hatás
++2: 2 fokkal enyhébb Súlyosság
++4: 1 fokkal enyhébb Súlyosság
+```
+
+### 39.6 (3) Hatáskezdet
+
+Bevitel után mennyi idő múlva hat. Mk = Mérgek biztos tudás küszöb.
+
+```
++2: harc végén         Mk 5
++4: következő körben    Mk 7
++5: azonnal            Mk 9
+
++1: 1 jelenet után (harcon kívül)
++0: néhány óra múlva
++1: 1 napon belül
++2: 1 héten belül       Mk 5
++3: 1 holdfordulón belül Mk 7
++4: hónapok múlva       Mk 9
++5: évek múlva          Mk 12
+```
+
+### 39.7 (4) Hatástartam
+
+Az aktiválódás után meddig tart a hatás.
+
+```
++0: 1 kör
++1: 2 kör
++2: harc végéig; rövid jelenet (harcon kívül)
++3: pár óra (harcon kívül)
++5: hónapok (Kimutatási idő egyezzen)
+```
+
+### 39.8 (5) Bomlási idő
+
+Meddig áll el szabad levegőn / folyadékban / pengén kibontás után.
+
+| Érték | Időtartam | Min. Mk |
+|-------|-----------|---------|
 | 0 | Pár másodperc | - |
 | 1 | 1 perc | - |
 | 2 | 10 perc | - |
-| 3 | 1 óra | 3 |
+| 3 | 1 óra | - |
 | 4 | 1 nap | 6 |
 | 5 | 1 hónap | 9 |
 | 6 | Örökké | 12 |
 
-#### Kiürülés (étel/ital/légi/kontakt)
+Több komponensű méreg minimum-korlát: ha a komponenseket időben elnyújtva kell beadni (lásd 39.11 Speciális), akkor
 
-| Érték | Időtartam | Min. Mk szint |
-|-------|-----------|---------------|
-| 0 | 1 kör | 3 |
-| 1 | 1 óra | 6 |
-| 2 | 1 nap | 9 |
-| 3 | 1 hét | 12 |
+```
+Bomlási idő >= (utolsó és első komponens beadása közti idő) + Hatáskezdet
+```
 
-### 39.7 Hatóidő
+Indok: a korábban beadott komponenseknek ki kell tartaniuk a szervezetben/hordozóban, amíg a méreg összeáll és hatni kezd - különben lebomlanak. Így a drága Bomlási időt nem lehet egy gyorsan ható utolsó komponensre terhelve megspórolni. Ez akkor is igaz, ha a komponensek egyenként ártalmatlanok, és csak együtt hatnak.
 
-| Érték | Lassú verzió | Min. Mk (lassú) | Gyors verzió | Min. Mk (gyors) |
-|-------|--------------|-----------------|--------------|-----------------|
-| +0 | 30 perc – 3 óra | - | - | - |
-| +1 | 4–23 óra | 3 | 2–20 perc | 3 |
-| +2 | 1–10 nap | 5 | 2–6 kör | 5 |
-| +3 | 2–4 hét | 7 | - | - |
-| +4 | Hónapok | 9 | 10 szegmens (Gyorsan) | 7 |
-| +5 | Évek | 12 | 1 szegmens (Azonnal) | 9 |
+### 39.9 (6) Kimutatási idő
 
-Megjegyzés: Lassú és Gyors verzió ugyanannyi Komplexitás pontot ad (+érték), de eltérő Mk küszöbük van.
+Eddig kimutatható a szer a Hatástartam lejárta után.
 
-### 39.8 Speciális módosítók
+| Érték | Időtartam | Min. Mk |
+|-------|-----------|---------|
+| 0 | 1 nap | - |
+| 2 | fél nap | - |
+| 3 | 1 óra | 6 |
+| 4 | hatás lejárta után nem | 9 |
+
+### 39.10 (7) Elállás
+
+Lezárt állapotban (fiolában, tablettában) eddig áll el.
+
+```
+0: 1 holdfordulón belül
+2: 1-2 év
+4: örökké
+```
+
+### 39.11 (8) Speciális módosítók
 
 | Módosító | Leírás |
 |----------|--------|
 | +2 | Plusz 1 komponens |
-| +3 | Plusz 1 hordozó közeg |
-| +3 | Több hordozóból csak 1 hatóanyag, többi természetes |
-| +2 | Sűrű (kis mennyiség elég 1 adaghoz) |
+| +3 | Plusz 1 hordozó közeg (étel/ital, légnemű, véráram) |
+| +3 | Több hordozó közeg, egyenként egyik sem mérgező - csak együtt, a szervezetben összeállva hatnak (külön-külön ártalmatlan, természetesnek látszó anyagok) |
+| +2 | Sűrű: kis mennyiség is elég 1 adaghoz |
 | +3 | Színtelen |
 | +3 | Szagtalan/ízetlen (egyben értendő) |
-| +3/+6 | Félrevezető tünetek I/II (érzékelés nehézsége nő) |
-| +0 | Szabadban sem eloszló légméreg (speciális fizikai közvetítő kell, pl. füstöt okádó labdacs) |
+| +3 | Félrevezető tünetek 3 (ennyivel nő az azonosítás nehézsége) |
+| +6 | Félrevezető tünetek 6 (ennyivel nő az azonosítás nehézsége) |
+| +0 | Szabadban sem eloszló légméreg (nem nehezebb, de speciális fizikai közvetítő kell, pl. füstöt okádó labdacs, folyamatos utánpótlással) |
 
-### 39.9 Méregellenállás próba
+### 39.12 Kikeverési próba módosítói és narratív bónuszok
+
+A Mérgek képzettségpróbát (kikeverés) befolyásoló helyzetfüggő módosítók (md/kepzettsegek.primer/altalanos/mergek.md):
 
 ```
-(Edzettség + k6) vs Méreg_Erősség
+Felszerelés:  -3 szegényes / +0 normál / +3 jól felszerelt labor
+Komponensek:  -3 hiányzó de helyettesíthető / 0 mind megvan
+Élettan fortély: +2 (minden próbára)
+Vállalás: +1..+3 (legfeljebb a Mérgek szint; kritikus hiba kockázattal)
+```
 
-Bónusz: Méregálló fortély fok × 1 (TODO: pontosítás)
+Rendkívül magas Komplexitású mérgeknél narratív bónuszok is indokoltak lehetnek (mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék, szimpatikus mágiával a célpont vére/haja) - ezek Helyzetfüggő módosító bónuszt adhatnak; részletezésük a mágiarendszerre / KM-re marad.
+
+Elvi maximum kikeverési dobás (minden kedvező tényezővel): 15 (szint) + 5 (tulajdonság) + 10 (k10) + 3 (vállalás) + 2 (Élettan) + 3 (labor) = 38 (narratív/misztikus bónuszok ezen felül).
+
+### 39.13 Méregellenállás próba
+
+```
+(Edzettség + k6) vs Méreg Erőssége     (NEM a Komplexitás, NEM a Súlyosság)
+
+Fortély: Méregálló bónuszt ad
+Kiemelt siker: az esetleges Másodlagos hatás sem érvényesül
 Sikertelen: elsődleges hatás érvényesül
-Sikeres: másodlagos hatás érvényesül (ha van, egyébként semmi)
+Sikeres: csak a másodlagos hatás (ha van), egyébként semmi
 ```
 
-### 39.10 Méregérzékelés
+### 39.14 Méregérzékelés
+
+Két típusú próba dobható egymás után; ha bármelyik sikeres, a karakter kiszúrta a mérget.
 
 ```
-1. Mérgek próba (ha Mérgek ≥ 3):
-   Mérgek + Érzékenység vs Célszám (TODO: alap célszám kidolgozás)
+1. Képzettségpróba: Mérgek + Érzékenység (csak ha Mérgek >= 3.szint)
+   Nehézség: 12
+   Helyzetfüggő: -3 Színtelen, -3 Szagtalan
 
-2. Érzékenység tulajdonságpróba:
-   Alap célszám: 4
-   Módosítók: Kis adag +1, Dupla −1, Sűrű +1, Színtelen +1, Szagtalan +1
+2. Tulajdonságpróba: Érzékenység
+   Célszám: 4 (Átlagos)
+   Helyzetfüggő: 0 Normál adag, -1 Kis adag, +1 Nagy adag,
+                 -1 Sűrű, -1 Színtelen, -1 Szagtalan
 ```
 
-### 39.11 Követelmény számítás
+### 39.15 Méregazonosítás
+
+A méreg beazonosítása (Méregérzékelés után, vagy fennálló gyanú esetén; minta szükséges).
 
 ```
-Mérgek próba célszáma = Komplexitás
-  (Mérgek képzettségpróba: Mérgek szint + k10 vs Komplexitás)
+Nehézség: 9
 
-Minimum Mk szint = MAX(
-  CEIL(Komplexitás / 2),
-  legmagasabb Elállás/Kiürülés/Hatóidő paraméter Mk küszöbe
-)
-
-Alapanyag követelmény (TODO - wiki javaslat):
-  (Alkímia + Vajákosság) >= Komplexitás / 2
-  Ha csak ásványi → csak Alkímia számít
-  Ha csak állati/növényi → csak Vajákosság számít
+Helyzetfüggő módosítók (a méreg tulajdonságai nehezítik):
+-2: Plusz 1 komponens
+-3: Plusz 1 hordozó közeg
+-3: Több hordozó közeg, egyenként egyik sem mérgező - csak együtt hatnak
+-3: Szagtalan/ízetlen
+-3: Félrevezető tünetek 3
+-6: Félrevezető tünetek 6
 ```
 
-### 39.12 Implementációs terv
+### 39.16 Alapanyag követelmény és adagszám
 
 ```
-Webapp scope: Méreggenerátor overlay (KM eszköz)
-  - Input: típus, erősség, súlyosság, elállás/kiürülés, hatóidő, speciálisok (checkboxok)
-  - Output: komplexitás, min Mk szint, méregellenállás célszám, érzékelés nehézsége
-  - Opcionális: mentés név+leírás formában a karakter napló/jegyzetek rovatába
-  - Példamérgek betöltése (preset-ek a 144_peldamergek.md alapján)
+(Alkímia + Vajákosság) követelmény az elkészítéshez.
+Ha az alapanyagok nem rendkívül ritkák/egyediek, tetszőleges adag készíthető (KM dönt).
+Ritka faj elleni méreghez: Szabad Fortély "Különleges faj boncolása" (fajra felvéve).
 ```
 
 
