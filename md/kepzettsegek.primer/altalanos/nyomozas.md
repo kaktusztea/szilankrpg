@@ -38,6 +38,23 @@ Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illet
 +3: Porok / nagyító / lámpák (ha segítenek)
 ```
 
+#### ⚜️ Szerepjátékos módosító
+
+```
+-3: a játékos nem feccöl bele túl sok
+    energiát, inkább a kockadobást várja
+ 0: átlagos teljesítmény
++3: kreatív ötletek, jól kijátszott karakter
+```
+
+A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
+
+A játékos élőszóban elmondja, hogy mit, hogyan vizsgál át a nyomozás helyszínén, kit kérdez ki. Az ötletek, a kreativitás, a szerep kijátszásának minőségétől függően a KM ad egy dobásmódosítót.
+
+Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
+<br />
+
 ---
 
 
@@ -73,23 +90,6 @@ Intelligencia, Emlékezet
 - [Információ szerzés valakitől](../../szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem azt a nevet? Mit tudhatok róla?](../../szituaciok/ismerem_mit_tudhatok_rola.md)
 - [Nyomok értelmezése, Nyomkövetés - városi környezetben](../../szituaciok/nyomok_nyomkovetes_varos.md#-nyomok-értelmezése-városi-környezetben)
-
-### 🔆 Szerepjátékos módosító
-
-
-```
--3; 0; +3
-```
-
-A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
-
-A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót.  A játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
-
-Ha a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan megkaphatja a `-3` büntetést.
-
-Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
-
-<br />
 
 ### Mesterbónuszok
 
