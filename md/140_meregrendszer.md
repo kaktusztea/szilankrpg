@@ -1,7 +1,7 @@
 # Méregrendszer
 
 ## Keverés, mérgek
-### [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
+### [Méreggenerátor](141_mereggenerator.md)
 
 ### [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md)
 

@@ -1,6 +1,6 @@
 # Méreg tulajdonságai
 
-Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [Méregkeverés szabályai](141_meregkeveres_szabalyai.md) oldalon olvasható.
+Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [Méreggenerátor](141_mereggenerator.md) oldalon olvasható.
 
 ```
 → Név

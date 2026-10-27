@@ -1,4 +1,4 @@
-## Méregkeverés szabályai
+## Méreggenerátor
 
 ### → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
 

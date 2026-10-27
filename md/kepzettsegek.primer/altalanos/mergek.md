@@ -49,7 +49,7 @@ Emlékezet, Önuralom, Intelligencia
 ---
 ### Szintek
 
-Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_meregkeveres_szabalyai.md#5-bomlási-idő), [Hatáskezdet](../../141_meregkeveres_szabalyai.md#3-hatáskezdet), [Kimutatási idő](../../141_meregkeveres_szabalyai.md#6-kimutatási-idő)
+Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_mereggenerator.md#5-bomlási-idő), [Hatáskezdet](../../141_mereggenerator.md#3-hatáskezdet), [Kimutatási idő](../../141_mereggenerator.md#6-kimutatási-idő)
 
 ### Mesterbónuszok
 
