@@ -58,8 +58,10 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 → (3) Hatáskezdet:    +1 (1 nappal eltolva)
 → (4) Hatástartam:    +5 (hónapok)
 → (5) Bomlási idő:     6  (Örökké)
-→ (6) Kimutatási idő:  4 (Hatás után nem kimutatható)
-→ (7) Elállás:         4  (örökké)
+     (9 hónapos "felépülési" idő miatt,
+      lásd a több komponensű méreg szabályát)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0  (1 holdfordulón belül)
 → (8) Speciális:     +11
      +4: 3 komponens (+2 +2)
      +3: 2 hordozó közeg (levegő, folyadék)
@@ -69,11 +71,11 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 ```
 
 ```
-Komplexitás: 41
+Komplexitás: 33
  → Biztos tudás: Mk 12
 ```
 
-Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas Komplexitáson és a biztos tudás követelményeken.
+Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas Komplexitáson és a biztos tudás követelményeken - egy ilyen mérget csak a legnagyobb méregkeverők képesek kikeverni.
 
 ⚜️ "Az öreg király rajongott az orchideákért. Tavaszra és nyárra is volt egy-egy különleges, ritka fajtája végtelen udvarának kertjében. Tavasszal leszakajtotta a legszebbet a narancsszínből, nyáron a bíborszínből. Mindkettő hálószobáját díszítette.
 
@@ -86,6 +88,10 @@ Fia nem lévén, unokaöccse lépett helyébe, ki - úgy mondják - már nagyon 
 🔆 A fenti méreget `3` darab komponensre bontotta a déli vajákos: a király borába (ital hordozó) adagolta hetente egyszer az elmúlt 9 hónapban a szagtalan/ízetlen alapmérget, amely önmagában ártalmatlan, így nem is kimutatható, viszont stabilan felgyűlt a szervezetben. A maradék 2 komponens a 2 orchidea (légi hordozó) virágpora volt, melyet a király belélegzett - hisz mindet a hálószobájába tette. Az első leszakajtása után még nem történt semmi, a hatáshoz mind a kettőre (plusz a borban levő alapméregre) szükség volt.
 
 A hatást a vajákos eltolta egy nappal, hogy éjszaka jöjjön a vég, így a gyanú sem ébredt fel senkiben. Az Erősséget (`5`) bőven elégnek vélte - a király Egészsége (`-1`) már amúgy is igen gyenge lábakon állt.
+
+🔆 Figyeljük meg, hogy a **Bomlási idő** itt nem szabadon választott: mivel a komponenseket `9` hónapon át elnyújtva adagolták, a korábbi adagoknak végig stabilnak kellett maradniuk a szervezetben, amíg a méreg összeállt. Ezért a Bomlási időt ez a "felépülési idő" kényszeríti `6` értékre - lásd a [Bomlási idő](141_mereggenerator.md#5-bomlási-idő) több komponensű szabályát.
+
+A vajákos a **Kimutatási idő** (`0`) és az **Elállás** (`0`) értékeivel "spórolt". Előbbivel némi kockázatot vállalt: nem számított a holttest alapos átvizsgálására, ezért `1 napig` még kimutatható lett volna a méreg. Az utolsó hatóanyag-komponens adagolása pedig gyorsan követte az előállítását (Elállás).
 
 ---
 

@@ -139,7 +139,7 @@ Az aktiválódás után meddig tart a szer hatása.
 
 ```
 +0: 1 kör
-+1: 2 kör 
++1: 2 kör
 +2: harc végéig;
     rövid jelenet (harcon kívül)
 +3: pár óra (harcon kívül)
@@ -165,6 +165,24 @@ Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
 
 Mk: Mérgek biztos tudás követelmény
 ```
+
+#### Több komponensű méreg
+
+```
+E = Első komponens beadásának ideje
+U = Utolsó komponens beadásának ideje
+
+Bomlási idő >=
+    (U és E közti idő) +
+    Hatáskezdet
+```
+
+Ha egy méreg [több komponensből áll](#8-speciális), amelyeket időben elnyújtva kell beadni, akkor a Bomlási idő **nem lehet kisebb**, mint ami az első és az utolsó komponens beadása közt eltelt időt, plusz a [Hatáskezdet](#3-hatáskezdet) késleltetése.
+
+Magyarázat: a korábban beadott komponenseknek a szervezetben (vagy a hordozóban) ki kell tartaniuk, amíg a méreg összeáll és hatni kezd - különben külön-külön lebomlanak, mielőtt a hatás beindulna. Így a magas költségű **Bomlási időt** nem lehet egy gyorsan ható, utolsó komponensre "terhelve" megspórolni.
+
+Ez akkor is igaz, ha több hordozó közegből csak 1 a méreg hatóanyag, a többi pedig természetes alapanyag.
+
 <br />
 
 ---
