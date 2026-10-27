@@ -14,6 +14,8 @@ Nehézség = Méreg Komplexitása
 
 A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesül az esetleges balsikerrel (nem hat a szer).
 
+Rendkívül magas Komplexitású mérgek esetén már narratív bónuszok megszerzése is indokolt lehet. Mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék, esetleg szimpatikus mágiával megtámogatva a célpont vére, haja. Ezek "Helyzetfüggő módosító" bónuszt adhatnak a képzettségpróbánál.
+
 <br />
 
 ## Méreg jelleg csoportok
@@ -28,6 +30,8 @@ A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesü
 - állati
 - növényi
 - ásványi (szervetlen)
+
+Beszerzésüknek [Alkímia+Vajákosság képzettség követelménye](142_mereg_alapanyagok_beszerzese.md) van.
 
 <br />
 
@@ -63,6 +67,7 @@ Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsu
 Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
 
 #### Adag
+
 ```
  0: Normál adag
 -1: Kis adag
@@ -251,7 +256,7 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 ---
 ### Hány adag méreg készíthető?
 
-Az alapanyagok beszerezhetőségétől függ. Ha megvan az **Alkímia+Vajákosság** követelmény és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
+Az alapanyagok beszerezhetőségétől függ. Ha megvan az [Alkímia+Vajákosság követelmény](142_mereg_alapanyagok_beszerzese.md) és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
 
 ---
 ### Fajok különbözősége

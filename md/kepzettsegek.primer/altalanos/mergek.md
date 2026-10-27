@@ -21,6 +21,10 @@ Ismered a különböző hatású és erősségű mérgek kikeverésének módjá
  0: Szükséges komponensek mind megvannak
 ```
 
+#### ⚜️ Narratív bónuszok
+
+A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék hatása, vagy szimpatikus mágiával megtámogatott vér, haj komponensek dobásnövelő hatásait itt nem részletezzük. Ezek Helyzetfüggő módosítóit a mágiarendszer írja le, vagy narratív formában a KM dönt róluk.
+
 ---
 ### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
 
