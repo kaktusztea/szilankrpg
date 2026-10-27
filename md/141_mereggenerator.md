@@ -181,7 +181,7 @@ Ha egy méreg [több komponensből áll](#8-speciális), amelyeket időben elny�
 
 Magyarázat: a korábban beadott komponenseknek a szervezetben (vagy a hordozóban) ki kell tartaniuk, amíg a méreg összeáll és hatni kezd - különben külön-külön lebomlanak, mielőtt a hatás beindulna. Így a magas költségű **Bomlási időt** nem lehet egy gyorsan ható, utolsó komponensre "terhelve" megspórolni.
 
-Ez akkor is igaz, ha több hordozó közegből csak 1 a méreg hatóanyag, a többi pedig természetes alapanyag.
+Ez akkor is igaz, ha a komponensek egyenként ártalmatlanok, és csak együtt hatnak.
 
 <br />
 
@@ -223,9 +223,9 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 +2: Plusz 1 komponens
 +3: Plusz 1 hordozó közeg
     (étel/ital, légnemű, véráram)
-+3: Több hordozó közegből
-    csak 1 a méreg hatóanyag,
-    a többi természetes alapanyag
++3: Több hordozó közeg, egyenként egyik
+    sem mérgező - csak együtt.
+    A szervezetben összeállva hatnak.
 ```
 
 ```

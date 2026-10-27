@@ -16,9 +16,9 @@ A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 -2: Plusz 1 komponens
 -3: Plusz 1 hordozó közeg
     (étel/ital, légnemű, véráram)
--3: Több hordozó közegből
-    csak 1 a méreg hatóanyag,
-    a többi természetes alapanyag
+-3: Több hordozó közeg, egyenként egyik
+    sem mérgező - csak együtt.
+    A szervezetben összeállva hatnak.
 ```
 
 ```

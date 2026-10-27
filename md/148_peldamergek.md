@@ -65,7 +65,7 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 → (8) Speciális:     +11
      +4: 3 komponens (+2 +2)
      +3: 2 hordozó közeg (levegő, folyadék)
-     +3: csak 1 komponensben van hatóanyag,
+     +3: a komponensek csak együtt mérgezők
      +3: szagtalan/ízetlen
      (a nem-sűrű: +0)
 ```
