@@ -37,7 +37,7 @@ helyzetfüggő_módosítók:
   - kategória: "Szerepjátékos módosító"
     mód: "single"
     sorok:
-      - { érték: -3, leírás: "Kevés ötlet / erőtlen átvizsgálás" }
+      - { érték: -3, leírás: "Nulla szerepjáték/ötlet, csak kockadobás" }
       - { érték: 0, leírás: "Átlagos ötletek" }
-      - { érték: 3, leírás: "Kreatív, alapos átvizsgálás" }
+      - { érték: 3, leírás: "Kreatív ötletek, jól kijátszott nyomozás" }
 dobás_komment: []
