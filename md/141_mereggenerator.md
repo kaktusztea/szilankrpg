@@ -108,7 +108,13 @@ Az ilyen tulajdonság szintén Komplexitást emel.
 +0: nincs másodlagos hatás
 +2: 2 fokkal enyhébb Súlyosság
 +4: 1 fokkal enyhébb Súlyosság
+
++6: 2 fokkal enyhébb Súlyosság,
+    maradandó a Hatástartam lejárta után is
++8: 1 fokkal enyhébb Súlyosság,
+    maradandó a Hatástartam lejárta után is
 ```
+
 ⚡ Példa: `+4` Komplexitásért cserébe egy halálos méreg is Életveszélyes állapotot okoz - sikeres próba esetén is.
 
 <br />
@@ -222,14 +228,10 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 ---
 ### (8) Speciális
 
-
-
 ```
-+2: Plusz 1 komponens
 +3: Plusz 1 hordozó közeg
     (étel/ital, légnemű, véráram)
-+3: Több hordozó közeg, egyenként egyik
-    sem mérgező - csak együtt.
+    Egyenként egyik sem mérgező, csak együtt.
     A szervezetben összeállva hatnak.
 ```
 
