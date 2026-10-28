@@ -18,8 +18,12 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []                  # normál módban terjeszti ki ezeket a képzettségeket
-  erős: []                    # erős módban terjeszti ki ezeket a képzettségeket
+  normál:                     # normál módban kiterjesztett képzettségek (objektum-lista; üres [] ha nincs)
+    - képzettség: ""          # kiterjesztett képzettség id-je
+      leírás: ""              # opcionális - a kapcsolat leírása (a kapcsolódó képzettség md-jéből); üres "" ha nincs
+  erős:                       # erős módban kiterjesztett képzettségek (objektum-lista; üres [] ha nincs)
+    - képzettség: ""          # kiterjesztett képzettség id-je
+      leírás: ""              # opcionális - a kapcsolat leírása; üres "" ha nincs
 
 kp_perfok: 6
 ingyenes_perszint: 0

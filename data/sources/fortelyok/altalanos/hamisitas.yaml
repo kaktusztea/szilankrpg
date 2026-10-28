@@ -18,7 +18,15 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["értékbecslés", "képzőművészet", "művészetismeret", "kézművesség"]
+  normál:
+    - képzettség: "képzőművészet"
+      leírás: "valamelyik lenti képzőművészeti ágban - amelynek fortélya megvan karakterednek - képes vagy tudásodnak megfelelő szintű hamisítványokat létrehozni."
+    - képzettség: "kézművesség"
+      leírás: "az adott kézműves szakma magas szintű produktumainak hamisítása és felismerése."
+    - képzettség: "művészetismeret"
+      leírás: "Felismered, hogy a mű hamisítvány"
+    - képzettség: "értékbecslés"
+      leírás: "Már a hamis portéka is könnyebben feltűnik."
   erős: []
 
 kp_perfok: 6

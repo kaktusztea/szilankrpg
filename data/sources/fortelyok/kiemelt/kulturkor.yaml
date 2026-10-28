@@ -18,8 +18,22 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["előadóművészet", "etikett", "képzőművészet", "művészetismeret", "lexikum", "városi_jártasság"]
-  erős: []
+  normál:
+    - képzettség: "etikett"
+      leírás: "Ha érintett az adott kultúrkör. Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak (jár a -3 levonás). Ha ismered, nincs gond."
+    - képzettség: "lexikum"
+      leírás: "Az adott, kapcsolódó Kultúrkör ismerete sokszor (nem mindig) szükséges."
+    - képzettség: "művészetismeret"
+      leírás: "Ha érintett az adott kultúrkör. Enélkül érvényes a -3 levonás mindegyik meglevő művészeti ágra."
+    - képzettség: "városi_jártasság"
+      leírás: "Az adott kultúrkör ismerete 🔆képes pótolni 🔆 a Helyismeret hiányát. Ha ez megvan, de az nem, akkor sem jár a levonás."
+    - képzettség: "álcázás_álruha"
+      leírás: ""
+  erős:
+    - képzettség: "előadóművészet"
+      leírás: "Ha érintett az adott kultúrkör"
+    - képzettség: "képzőművészet"
+      leírás: "Ha érintett az adott kultúrkör. Ennek ismerete nélkül nem tudsz az adott kultúrkör stílusában alkotni."
 
 kp_perfok: 6
 ingyenes_perszint: 2

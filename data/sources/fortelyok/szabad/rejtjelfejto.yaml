@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kvantikum", "nyomozás"]
+  normál:
+    - képzettség: "kvantikum"
+      leírás: ""
+    - képzettség: "nyomozás"
+      leírás: "\"A szimbólumok által jelképezett átjáró az kandalló feletti festményre utal!\""
   erős: []
 
 kp_perfok: 6

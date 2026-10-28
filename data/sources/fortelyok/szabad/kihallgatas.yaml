@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["nyomozás", "emberismeret"]
+  normál:
+    - képzettség: "emberismeret"
+      leírás: "\"Kopjon le. Ilyen ócska trükköknek nem dőlök be.\""
+    - képzettség: "nyomozás"
+      leírás: "\"Hol rejtegetitek az ereklyét? A társaid már mindent bevallottak.\""
   erős: []
 
 kp_perfok: 6

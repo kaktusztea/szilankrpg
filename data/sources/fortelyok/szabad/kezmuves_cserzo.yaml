@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Járatos vagy a nyersbőrök tartósításában, előkészítésében."
   erős: []
 
 kp_perfok: 6

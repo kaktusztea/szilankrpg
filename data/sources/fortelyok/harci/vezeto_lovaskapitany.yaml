@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["hadászat"]
+  normál:
+    - képzettség: "hadászat"
+      leírás: "\"Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!\""
   erős: []
 
 kp_perfok: 6

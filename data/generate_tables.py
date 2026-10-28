@@ -101,7 +101,8 @@ def validate_id_hivatkozasok():
             if not fn.endswith('.yaml'): continue
             d = load_yaml(os.path.join(root, fn)); c = f"fortelyok/{fn}"
             kit = d.get('kiterjeszti') or {}
-            kepz(f"{c} kiterjeszti", lst(kit.get('normál')) + lst(kit.get('erős')))
+            kit_ids = [(e.get('képzettség') if isinstance(e, dict) else e) for e in (lst(kit.get('normál')) + lst(kit.get('erős')))]
+            kepz(f"{c} kiterjeszti", kit_ids)
             for fok in d.get('fokok') or []:
                 cf = f"{c} fok {fok['fok']}"
                 for k in lst(fok.get('követelmények')): kov(f"{cf} követelmény", k)

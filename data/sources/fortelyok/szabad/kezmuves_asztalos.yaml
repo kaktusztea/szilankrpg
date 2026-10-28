@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Asztalos mesterként fából alkotsz bútorokat, szerszámokat."
   erős: []
 
 kp_perfok: 6

@@ -7,6 +7,18 @@ from .schema import validate_schema
 from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs, id_hibak
 
 
+def _kit_parse(elem):
+    """Egy kiterjeszti listaelem → (képzettség_id, leírás). Objektum-forma: {képzettség, leírás}."""
+    if not isinstance(elem, dict):
+        raise SystemExit(f"  ❌ kiterjeszti elem nem objektum ({{képzettség, leírás}} forma kötelező): {elem!r}")
+    return elem.get('képzettség', ''), (elem.get('leírás') or '')
+
+
+def _kit_ids(lista):
+    """kiterjeszti lista → képzettség-id-k (leírás nélkül, a fortelyok.json string-listájához)."""
+    return [_kit_parse(e)[0] for e in (lista or [])]
+
+
 def generate_fortelyok():
     """fortelyok/**/*.yaml → fortelyok.json"""
     fdir = os.path.join(SOURCES_DIR, 'fortelyok')
@@ -55,8 +67,9 @@ def generate_fortelyok():
             leírás = ' '.join([l['text'] for l in (data.get('leírások') or []) if l.get('text')])
             leírás = leírás.replace('**', '').replace('`', '')
             kiterjeszti = data.get('kiterjeszti', {})
-            kit_norm = list(kiterjeszti.get('normál') or []) if kiterjeszti else []
-            kit_eros = list(kiterjeszti.get('erős') or []) if kiterjeszti else []
+            # Új forma: objektum-lista {képzettség, leírás}. A fortelyok.json csak az id-listát viszi.
+            kit_norm = _kit_ids(kiterjeszti.get('normál')) if kiterjeszti else []
+            kit_eros = _kit_ids(kiterjeszti.get('erős')) if kiterjeszti else []
             tobbszorosseg = data.get('többszörösség', {})
             # md_fájl: fortelyok.{alcsoport}/{fájlnév}.md
             alcsoport = os.path.relpath(root, fdir).replace(os.sep, '/')
@@ -155,9 +168,11 @@ def generate_kiterjesztesek():
             if not kit:
                 continue
             for kep in (kit.get('normál') or []):
-                mapping.setdefault(kep, []).append({'fortély': data['id'], 'név': nev, 'típus': 'normál', 'maxfok': maxfok})
+                kid, leiras = _kit_parse(kep)
+                mapping.setdefault(kid, []).append({'fortély': data['id'], 'név': nev, 'típus': 'normál', 'maxfok': maxfok, 'leírás': leiras})
             for kep in (kit.get('erős') or []):
-                mapping.setdefault(kep, []).append({'fortély': data['id'], 'név': nev, 'típus': 'erős', 'maxfok': maxfok})
+                kid, leiras = _kit_parse(kep)
+                mapping.setdefault(kid, []).append({'fortély': data['id'], 'név': nev, 'típus': 'erős', 'maxfok': maxfok, 'leírás': leiras})
     # Sort keys and value lists for deterministic output
     sorted_mapping = {}
     for key in sorted(mapping.keys()):

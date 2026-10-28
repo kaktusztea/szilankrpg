@@ -18,8 +18,12 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["előadóművészet", "művészetismeret"]
-  erős: []
+  normál:
+    - képzettség: "művészetismeret"
+      leírás: "Ismered a Kultúrköreidnek megfelelő tánc stílusokat, a híresebb előadókat, táncos darabokat."
+  erős:
+    - képzettség: "előadóművészet"
+      leírás: "Művelni vagy képes a Kultúrköreidnek megfelelő tánc stílusokat."
 
 kp_perfok: 6
 ingyenes_perszint: 0

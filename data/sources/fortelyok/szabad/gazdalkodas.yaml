@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kvantikum"]
+  normál:
+    - képzettség: "kvantikum"
+      leírás: "\"A birtok idén már nyereséges volt köszönhetően a 12 marhának, amit tavaly vettünk a Szőlőshegyi özvegytől.\""
   erős: []
 
 kp_perfok: 6

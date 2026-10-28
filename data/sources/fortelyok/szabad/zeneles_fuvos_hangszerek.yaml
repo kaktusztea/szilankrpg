@@ -18,8 +18,12 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["előadóművészet", "művészetismeret"]
-  erős: []
+  normál:
+    - képzettség: "művészetismeret"
+      leírás: "Ismered, felismered a neves fúvós hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is."
+  erős:
+    - képzettség: "előadóművészet"
+      leírás: "Ismered a fúvós hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ."
 
 kp_perfok: 6
 ingyenes_perszint: 0

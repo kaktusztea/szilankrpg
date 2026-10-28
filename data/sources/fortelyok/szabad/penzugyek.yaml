@@ -18,8 +18,12 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kvantikum", "nyomozás"]
-  erős: []
+  normál:
+    - képzettség: "kvantikum"
+      leírás: "\"Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az e havi beszedett többletadók elegek lesznek a kölcsön törlesztésére.\""
+  erős:
+    - képzettség: "nyomozás"
+      leírás: "\"A lefoglalt iratokból egyből kiviláglik: Kamarás uram kettős könyvelést vezetett.\""
 
 kp_perfok: 6
 ingyenes_perszint: 0

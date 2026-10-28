@@ -18,8 +18,10 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["lexikum"]
-  erős: []
+  normál: []
+  erős:
+    - képzettség: "lexikum"
+      leírás: "\"Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani.\""
 
 kp_perfok: 6
 ingyenes_perszint: 0

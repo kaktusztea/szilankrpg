@@ -18,7 +18,13 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["lexikum", "természetjárás", "vajákosság"]
+  normál:
+    - képzettség: "lexikum"
+      leírás: ""
+    - képzettség: "természetjárás"
+      leírás: ""
+    - képzettség: "vajákosság"
+      leírás: ""
   erős: []
 
 kp_perfok: 6

@@ -42,6 +42,8 @@ export interface KiterjesztesEntry {
   név: string;
   típus: 'normál' | 'erős';
   maxfok: number;
+  /** A kapcsolat leírása (a kapcsolódó képzettség md-jéből); üres ha nincs. */
+  leírás: string;
 }
 
 // --- Fortély összefoglaló (UI-hoz) ---

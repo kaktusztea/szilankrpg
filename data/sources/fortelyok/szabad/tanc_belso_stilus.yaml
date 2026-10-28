@@ -19,8 +19,14 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["etikett", "előadóművészet", "művészetismeret"]
-  erős: []
+  normál: []
+  erős:
+    - képzettség: "előadóművészet"
+      leírás: "Ismersz egy speciális belső táncstílust. Hogy milyen jól tudod előadni, az a próbától függ."
+    - képzettség: "etikett"
+      leírás: "\"A vérnász során egyre több pengét kell elkerülni, a hetedik után hátulról is jöhet egy meglepetés.\""
+    - képzettség: "művészetismeret"
+      leírás: "Mozdulatok alapján felismersz egy adott belső táncstílust. Minél magasabb szintű próbát dobsz meg, annál mélyebb jelentések, árnyalatok válnak egyértelművé."
 
 kp_perfok: 6
 ingyenes_perszint: 0

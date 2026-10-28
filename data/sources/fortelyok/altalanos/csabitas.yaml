@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["befolyásolás", "emberismeret"]
+  normál:
+    - képzettség: "befolyásolás"
+      leírás: "Eltekered a másik fejét. Hamar megered a nyelve, hisz a szerelem vak. Nem mágikus hatású."
+    - képzettség: "emberismeret"
+      leírás: "Kiszúrod, hogy az ellenkező nem közeledése nem épp ártatlan, rejtett szándékot sejtesz."
   erős: []
 
 kp_perfok: 6

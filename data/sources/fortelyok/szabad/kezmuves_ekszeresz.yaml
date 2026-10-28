@@ -19,7 +19,9 @@ megjegyzések:
 
 kiterjeszti:
   normál: []
-  erős: ["kézművesség"]
+  erős:
+    - képzettség: "kézművesség"
+      leírás: "Nemes fémekből gyönyörű ékszerek készítése, ritka ékkövek míves keretekbe foglalása."
 
 kp_perfok: 6
 ingyenes_perszint: 0

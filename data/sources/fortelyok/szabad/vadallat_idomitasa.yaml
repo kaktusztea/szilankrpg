@@ -19,8 +19,10 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["befolyásolás"]
-  erős: []
+  normál: []
+  erős:
+    - képzettség: "befolyásolás"
+      leírás: "🔁: \"Táncolj Brumi!\""
 
 kp_perfok: 6
 ingyenes_perszint: 0

@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Fából készült edényeket, hordókat, kádakat, dézsákat és más fa tárolóeszközöket készítesz."
   erős: []
 
 kp_perfok: 6

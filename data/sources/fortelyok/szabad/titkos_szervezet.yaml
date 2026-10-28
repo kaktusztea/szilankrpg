@@ -18,8 +18,14 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["etikett", "nyomozás", "városi_jártasság"]
-  erős: []
+  normál:
+    - képzettség: "nyomozás"
+      leírás: "\"A Karvaly céh második embere..., a nyakát az Ítészek céhének stílusában vágták át.\""
+  erős:
+    - képzettség: "etikett"
+      leírás: "\"A véráldozat után két perc ima, utána indul minden fejvadász a küldetésre. Most nem szabad megszólalnom.\""
+    - képzettség: "városi_jártasság"
+      leírás: "Egy adott titkos klán vagy szervezet belső működésének, szokásainak, hierarchiájának ismerete. Székhelyek, besúgók, informátorok fellelésének helyei."
 
 kp_perfok: 6
 ingyenes_perszint: 0

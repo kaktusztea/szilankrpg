@@ -14,9 +14,12 @@ leírások:
 - text: "Íjász/lövész alakzat koordinálása."
 megjegyzések: 
 - text: ""
-kiterjeszti: 
-  normál: ["hadászat"]
+kiterjeszti:
+  normál:
+    - képzettség: "hadászat"
+      leírás: "\"Fedezőtüzet a visszavonuló lovasság mögé!\""
   erős: []
+
 kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 

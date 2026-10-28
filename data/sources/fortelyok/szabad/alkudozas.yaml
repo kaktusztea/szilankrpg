@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["befolyásolás", "emberismeret"]
+  normál:
+    - képzettség: "befolyásolás"
+      leírás: "\"Micsoda? A felét nem éri! Félkegyelműnek tűnök talán?!\""
+    - képzettség: "emberismeret"
+      leírás: "\"Sajnálom uram, de ez valódi pamut, az árért, amit kínál, egy vak koldus sem adná oda.\""
   erős: []
 
 kp_perfok: 6

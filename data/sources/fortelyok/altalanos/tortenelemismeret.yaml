@@ -14,9 +14,14 @@ leírások:
 - text: "A történelem írott részének, múlt eseményeinek, legendáinak ismerete."
 megjegyzések: 
 - text: ""
-kiterjeszti: 
+kiterjeszti:
   normál: []
-  erős: ["hadászat", "lexikum"]
+  erős:
+    - képzettség: "hadászat"
+      leírás: "Ismered a régi háborúk hadászati emlékeit. \"A IX. Zászlóháború idején P.sz. 2885-ben Siren4rban felbukkant Nyolcadik Vörös lobogó hordozója, Unn4m4li4r vyvern-lovasai alkalmazták először az alacsonyan repülő, mélységi beszivárgás módszerét.\""
+    - képzettség: "lexikum"
+      leírás: "Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés."
+
 kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 

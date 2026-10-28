@@ -14,9 +14,14 @@ leírások:
 - text: "Magába foglalja az összes közismert faj ismeretét, anatómiáját és boncolását."
 megjegyzések: 
 - text: "Speciálisabb fajokhoz külön Szabad Fortély kell: Különleges faj boncolása."
-kiterjeszti: 
-  normál: ["nyomozás", "arkánum_nekromancia", "lexikum"]
-  erős: []
+kiterjeszti:
+  normál: []
+  erős:
+    - képzettség: "lexikum"
+      leírás: "Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten."
+    - képzettség: "nyomozás"
+      leírás: "boncoláshoz"
+
 kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 

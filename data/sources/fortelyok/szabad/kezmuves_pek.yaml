@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Kenyér, péksütemény és egyéb sült tésztafélék készítése kovászból vagy élesztős tésztából, a kemence hőjének pontos kezelésével."
   erős: []
 
 kp_perfok: 6

@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["hadászat"]
+  normál:
+    - képzettség: "hadászat"
+      leírás: "\"A hadtápot szét tudjuk húzni még 5 mérfölddel, de kettővel növelnünk kell a szállító szekerek számát naponta.\""
   erős: []
 
 kp_perfok: 6

@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["lovaglás", "léglovaglás"]
+  normál:
+    - képzettség: "lovaglás"
+      leírás: "(1 faj felvétele kötelező)"
+    - képzettség: "léglovaglás"
+      leírás: "(1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)"
   erős: []
 
 kp_perfok: 6

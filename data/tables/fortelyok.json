@@ -235,12 +235,11 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Magába foglalja az összes közismert faj ismeretét, anatómiáját és boncolását.",
-    "kiterjeszti_normál": [
-      "nyomozás",
-      "arkánum_nekromancia",
-      "lexikum"
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
+      "lexikum",
+      "nyomozás"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -282,8 +281,8 @@
     "többszörös_lista": [],
     "leírás": "Épületek statikai ismerete, építésének, tervezésének módja, korszakai, stílusai.",
     "kiterjeszti_normál": [
-      "nyomozás",
-      "művészetismeret"
+      "művészetismeret",
+      "nyomozás"
     ],
     "kiterjeszti_erős": [
       "kvantikum"
@@ -533,10 +532,10 @@
     "többszörös_lista": [],
     "leírás": "Műkincsek, műtárgyak megtévesztő másolása, vagy hamisítvány felismerése.",
     "kiterjeszti_normál": [
-      "értékbecslés",
       "képzőművészet",
+      "kézművesség",
       "művészetismeret",
-      "kézművesség"
+      "értékbecslés"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -645,8 +644,8 @@
     "többszörös_lista": [],
     "leírás": "Titkos rejtekajtók, zugok, rejtett tárgyak felkutatása és elrejtése.",
     "kiterjeszti_normál": [
-      "észlelés",
-      "természetjárás"
+      "természetjárás",
+      "észlelés"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -992,11 +991,12 @@
     "többszörös_lista": [],
     "leírás": "Mechanikus szerkezetek ismerete.",
     "kiterjeszti_normál": [
-      "csapdaállítás",
       "kézművesség"
     ],
     "kiterjeszti_erős": [
-      "kvantikum"
+      "csapdaállítás",
+      "kvantikum",
+      "lexikum"
     ],
     "fokok": [
       {
@@ -1241,10 +1241,13 @@
     "többszörös_lista": [],
     "leírás": "Egy adott kihalt, ősi kultúra specializált ismerete.",
     "kiterjeszti_normál": [
-      "értékbecslés",
-      "lexikum"
+      "lexikum",
+      "művészetismeret",
+      "értékbecslés"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "képzőművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -6507,7 +6510,9 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Fegyveres alakzat koordinálása, Alakzatszint emelése.",
-    "kiterjeszti_normál": [],
+    "kiterjeszti_normál": [
+      "hadászat"
+    ],
     "kiterjeszti_erős": [],
     "fokok": [
       {
@@ -7030,10 +7035,10 @@
     "többszörös_lista": [],
     "leírás": "Egy adott terület ismerete: falvaknál egy uradalom (több falu és a vár), város/városállam, vagy nagyvárosnak egy kerülete.",
     "kiterjeszti_normál": [
-      "nyomozás",
+      "etikett",
       "lexikum",
-      "városi_jártasság",
-      "etikett"
+      "nyomozás",
+      "városi_jártasság"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7098,14 +7103,16 @@
     ],
     "leírás": "Egy adott kultúrkör ismerete.",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "etikett",
-      "képzőművészet",
-      "művészetismeret",
       "lexikum",
-      "városi_jártasság"
+      "művészetismeret",
+      "városi_jártasság",
+      "álcázás_álruha"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet",
+      "képzőművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -7188,8 +7195,12 @@
     "többszörös_típus": "nyelv",
     "többszörös_lista": [],
     "leírás": "Egy adott nyelv ismerete. Nem KP-ból tanulható, a Nyelvtanulás képzettség által kapott speciális pontjokból. 1 pont: 1 fok",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_normál": [
+      "művészetismeret"
+    ],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -7385,10 +7396,10 @@
       "természetszellemek"
     ],
     "leírás": "A belső síkok túlvilági teremtményeinek ismerete.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "lexikum"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -7423,10 +7434,10 @@
       "dzsinnek"
     ],
     "leírás": "A külső síkok túlvilági teremtményeinek ismerete.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "lexikum"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -7793,10 +7804,11 @@
     "leírás": "Gondosan begyakorolt trükkök, kellékek segítenek a tátottszájú nézőközönség becsapásában. Szórakoztatás, vagy sötétebb szándékok is vezethetnek.",
     "kiterjeszti_normál": [
       "befolyásolás",
-      "előadóművészet",
       "lopás"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -7827,10 +7839,11 @@
     "többszörös_lista": [],
     "leírás": "Dalolás képessége és annak műértése.",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -7863,11 +7876,12 @@
     "többszörös_lista": [],
     "leírás": "Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket. Vagy passzív tudásként ismered a nagy festők műveit, technikáját, műveinek szellemiségét.",
     "kiterjeszti_normál": [
-      "értékbecslés",
-      "képzőművészet",
-      "művészetismeret"
+      "művészetismeret",
+      "értékbecslés"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "képzőművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -8028,10 +8042,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Minden háziasított állat idomítása ide tartozik a kutyától a malacokon át a kecskékig.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "befolyásolás"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8095,10 +8109,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Járatos vagy az állami, vagy uradalmi bürokráciában írott és íratlan szabályaiban, ügyintézésben.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "lexikum"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8127,12 +8141,13 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "- Előadóművészet: Versek, novellák, regények, históriák, színdarabok írása. - Művészetismeret: Ismered adott Kultúrkör neves irodalmárait, íróit, költőit és stílusukat, műveiket.",
+    "leírás": "",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -8173,11 +8188,11 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "lexikum",
       "nyomozás"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8214,10 +8229,11 @@
     "többszörös_lista": [],
     "leírás": "Írástípusok, írásmódok, titkosírás és annak fejtése.",
     "kiterjeszti_normál": [
-      "képzőművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "képzőművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -8815,8 +8831,8 @@
     "többszörös_lista": [],
     "leírás": "Magában foglalja a kihallgatási technikákat (nem kínzást!), a beszédtechnikát és jól bevált keresztkérdéseket, amellyel az ellentmondások felfedhetők. A fentieken kívül a kihallgatott érzelmi világát is hangolja az alkalmazó, kooperatív viselkedésre sarkallva őt.",
     "kiterjeszti_normál": [
-      "nyomozás",
-      "emberismeret"
+      "emberismeret",
+      "nyomozás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -8888,10 +8904,11 @@
     "többszörös_lista": [],
     "leírás": "Pénzügyi ismereteid vannak.",
     "kiterjeszti_normál": [
-      "kvantikum",
+      "kvantikum"
+    ],
+    "kiterjeszti_erős": [
       "nyomozás"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8989,10 +9006,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "- Etikett: Az ismert Kultúrkörök egyedi szertartásait Etikett képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás. A szakrális szertartások nem tartoznak ide.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "etikett"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -9023,10 +9040,11 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismerete, árnyjátékok ismerete is ide tartozik. 🔆 Nem használható hazudozásra, mások becsapására. Arra lásd a Befolyásolás képzettséget.",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -9057,11 +9075,12 @@
     "többszörös_lista": [],
     "leírás": "Holt anyagból faragsz, hívsz életre alakokat az örökkévalóságnak.",
     "kiterjeszti_normál": [
-      "értékbecslés",
-      "képzőművészet",
-      "művészetismeret"
+      "művészetismeret",
+      "értékbecslés"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "képzőművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -9457,10 +9476,11 @@
     "többszörös_lista": [],
     "leírás": "Az ismert Kultúrkörök táncai Előadóművészet képzettséged szintjének megfelelően járni is tudod.",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -9490,12 +9510,12 @@
     "többszörös_típus": "stílus",
     "többszörös_lista": [],
     "leírás": "Jellemzően Kiérdemelt szabad fortély. Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális táncot takar, mint például a Tor0ni Vérnász. Magától értetődik, hogy speciális/belső táncstílus tanulásához kapcsolódó Kultúrkör fortély is szükségeltetik (lásd követelmények).",
-    "kiterjeszti_normál": [
-      "etikett",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "előadóművészet",
+      "etikett",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -9549,9 +9569,9 @@
     "többszörös_lista": [],
     "leírás": "'... térkép e táj.'",
     "kiterjeszti_normál": [
+      "hajózás",
       "kvantikum",
-      "nyomozás",
-      "hajózás"
+      "nyomozás"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -9584,11 +9604,12 @@
     "többszörös_lista": [],
     "leírás": "Többször felvehető.",
     "kiterjeszti_normál": [
+      "nyomozás"
+    ],
+    "kiterjeszti_erős": [
       "etikett",
-      "nyomozás",
       "városi_jártasság"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -9618,10 +9639,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Egy-egy, konkrét vadállat idomítása - fajonként külön kell felvenned. Minden bestia is ide tartozik, amely vadállatnak minősül. A lovak és egyéb, akár légi hátasok betanítása is ide tartozik.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "befolyásolás"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -9652,10 +9673,11 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy fúvós hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -9686,10 +9708,11 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy húros hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -9720,10 +9743,11 @@
     "többszörös_lista": [],
     "leírás": "Képes vagy ütős hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
-      "előadóművészet",
       "művészetismeret"
     ],
-    "kiterjeszti_erős": [],
+    "kiterjeszti_erős": [
+      "előadóművészet"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -9753,10 +9777,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "előadóművészet"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -9786,10 +9810,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "'Négy labdával is tudom ám!'",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "előadóművészet"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,

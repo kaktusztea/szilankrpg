@@ -18,7 +18,13 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kvantikum", "nyomozás", "hajózás"]
+  normál:
+    - képzettség: "hajózás"
+      leírás: "\"A térkép szerint is veszélyes homokpadok vannak. Kormányos: jobbra, a sziget bal oldala felé, maradj szél alatt!\". Az egyszerű tájékozódáshoz nem szükséges, ne legyünk szigorúak, de a speciális jelzések ismeretéhez kellhet."
+    - képzettség: "kvantikum"
+      leírás: "Térképet készítesz. \"Elkészültem a kastély körüli dombok térképével, a magasságvonalakon látszik, hogy kemény mászás vár arra, aki nem a főúton szándékozik bemenni.\""
+    - képzettség: "nyomozás"
+      leírás: "\"A két 'O' a két ablakot, az 'Y', a hátsó ajtót jelzi, a szaggatott vonalon az 'X' szerintem csapdát jelent.\""
   erős: []
 
 kp_perfok: 6

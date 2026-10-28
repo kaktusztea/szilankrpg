@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["természetjárás"]
+  normál:
+    - képzettség: "természetjárás"
+      leírás: ""
   erős: []
 
 kp_perfok: 6

@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["hadászat"]
+  normál:
+    - képzettség: "hadászat"
+      leírás: "\"Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult.\""
   erős: []
 
 kp_perfok: 6

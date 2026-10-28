@@ -52,6 +52,14 @@
 .info-panel-row { margin-bottom: 3px; }
 .info-panel-label { color: var(--text-dim); margin-right: 4px; }
 .info-panel-kit { color: var(--success); }
+/* Kiterjesztő fortély szín-jelzés: felvett = zöld (.fort-req-met); hiányzó = sárga (normál) / piros (erős) */
+.kit-hiany-normal { color: var(--warning); }
+.kit-hiany-eros { color: var(--error); }
+/* Kattintható kiterjesztő-fortély név (van leírás → info popup) */
+.kit-nev-info { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; }
+.kit-info-popup { max-width: 320px; }
+.kit-info-cim { font-weight: 600; margin-bottom: 6px; }
+.kit-info-leiras { color: var(--text-dim); font-size: 13px; line-height: 1.45; }
 .info-panel-error { color: var(--error); }
 .info-panel-szit { flex-direction: column; align-items: flex-start; }
 .info-panel-szit-list { display: flex; flex-direction: column; gap: 2px; margin-top: 2px; }

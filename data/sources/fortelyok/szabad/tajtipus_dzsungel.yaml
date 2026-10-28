@@ -18,7 +18,17 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["alkímia", "lexikum", "lopakodás_rejtőzés", "természetjárás", "vajákosság"]
+  normál:
+    - képzettség: "alkímia"
+      leírás: ""
+    - képzettség: "lexikum"
+      leírás: ""
+    - képzettség: "lopakodás_rejtőzés"
+      leírás: "Dzsungel környezetben settenkedni. \"A vörös pille alatt ne haladj el, rikoltani fog!\""
+    - képzettség: "természetjárás"
+      leírás: ""
+    - képzettség: "vajákosság"
+      leírás: ""
   erős: []
 
 kp_perfok: 6

@@ -14,9 +14,18 @@ leírások:
 - text: "Mechanikus szerkezetek ismerete."
 megjegyzések: 
 - text: ""
-kiterjeszti: 
-  normál: ["csapdaállítás", "kézművesség"]
-  erős: ["kvantikum"]
+kiterjeszti:
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "(Kézműves:Fegyverkovács, Kézműves:Páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz"
+  erős:
+    - képzettség: "csapdaállítás"
+      leírás: "mechanikus csapdákat készíteni/hatástalanítani"
+    - képzettség: "kvantikum"
+      leírás: "\"Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés.\""
+    - képzettség: "lexikum"
+      leírás: "Mechanikus zárak készítése. Nem helyettesíti a Zárnyitás képzettséget"
+
 kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 

@@ -18,8 +18,12 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["lexikum", "nyomozás"]
-  erős: []
+  normál: []
+  erős:
+    - képzettség: "lexikum"
+      leírás: "\"Három példányban iktatni, utána lehet kegyelemért folyamodni.\", \"Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért.\"; Hivatalnokként specializálódtál, értesz a jogrendszerhez is."
+    - képzettség: "nyomozás"
+      leírás: "\"Az anyai ági öröklés miatt a féltestvér is részesül az örökségből a gyászév leteltével! Tehát neki is volt indítéka.\""
 
 kp_perfok: 6
 ingyenes_perszint: 0

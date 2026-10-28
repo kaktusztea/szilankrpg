@@ -4,57 +4,57 @@
       "fortély": "tájtípus_barlangi",
       "név": "Tájtípus - barlangi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_dzsungel",
       "név": "Tájtípus - dzsungel",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_erdős",
       "név": "Tájtípus - erdős",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_jégmezők",
       "név": "Tájtípus - jégmezők",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_magaslati",
       "név": "Tájtípus - magaslati",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_mocsaras",
       "név": "Tájtípus - mocsaras",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_puszta",
       "név": "Tájtípus - puszta",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_sivatagi",
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
-      "maxfok": 1
-    }
-  ],
-  "arkánum_nekromancia": [
-    {
-      "fortély": "élettan",
-      "név": "Élettan",
-      "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\\"
     }
   ],
   "befolyásolás": [
@@ -62,131 +62,159 @@
       "fortély": "alkudozás",
       "név": "Alkudozás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Micsoda? A felét nem éri! Félkegyelműnek tűnök talán?!\""
     },
     {
       "fortély": "bűvészet",
       "név": "Bűvészet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Végtelen hatalmam megkettőzte az aranyok számát!\""
     },
     {
       "fortély": "csábítás",
       "név": "Csábítás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Eltekered a másik fejét. Hamar megered a nyelve, hisz a szerelem vak. Nem mágikus hatású."
     },
     {
       "fortély": "hazudozás",
       "név": "Hazudozás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Arra mentek! Jajjh, a lábam!\""
     },
     {
       "fortély": "háziállatok_idomítása",
       "név": "Háziállatok idomítása",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"Morzsi, térülj... fordulj!\""
     },
     {
       "fortély": "megfélemlítés",
       "név": "Megfélemlítés",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér...\""
     },
     {
       "fortély": "szónoklás",
       "név": "Szónoklás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Mit választotok? A hazug, kövér urat, aki soha nem fogott kaszát a kezébe, vagy engem, aki magam is egy folyómenti faluból származom?\""
     },
     {
       "fortély": "vadállat_idomítása",
       "név": "Vadállat idomítása",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "🔁: \"Táncolj Brumi!\""
     }
   ],
   "csapdaállítás": [
     {
       "fortély": "mechanika",
       "név": "Mechanika",
-      "típus": "normál",
-      "maxfok": 2
+      "típus": "erős",
+      "maxfok": 2,
+      "leírás": "mechanikus csapdákat készíteni/hatástalanítani"
     }
   ],
   "előadóművészet": [
     {
       "fortély": "bűvészet",
       "név": "Bűvészet",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"Amint látják a kártya a tűz martaléka lett... hm... úgy tűnik nagyuram, kedves hitvese csipkefodrai között még megvan egyben!\""
     },
     {
       "fortély": "irodalom",
       "név": "Irodalom",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Versek, novellák, regények, históriák, színdarabok írása."
     },
     {
       "fortély": "kultúrkör",
       "név": "Kultúrkör",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ha érintett az adott kultúrkör"
+    },
+    {
+      "fortély": "nyelvismeret",
+      "név": "Nyelvismeret",
+      "típus": "erős",
+      "maxfok": 2,
+      "leírás": "fortély (adott nyelv) ha érintett (Színjátszás, Irodalom, Éneklés esetén)"
     },
     {
       "fortély": "színjátszás",
       "név": "Színjátszás",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Életed a világot jelentő deszkák. Vándorszínháztól a nagyvárosok ünnepelt színészóriásaikig mind a publikum hálájára vágytok. A Kultúrkörnek megfelelő darabokban játszol."
     },
     {
       "fortély": "tánc",
       "név": "Tánc",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Művelni vagy képes a Kultúrköreidnek megfelelő tánc stílusokat."
     },
     {
       "fortély": "tánc_speciális_belső_stílus",
       "név": "Tánc: speciális/belső stílus",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ismersz egy speciális belső táncstílust. Hogy milyen jól tudod előadni, az a próbától függ."
     },
     {
       "fortély": "zeneszerző",
       "név": "Zeneszerző",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Dallamok születnek a fejedben, melyeket papírra vetsz, hogy te, vagy akár egy zenekar előadhassa."
     },
     {
       "fortély": "zenélés_fúvós_hangszerek",
       "név": "Zenélés: fúvós hangszerek",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ismered a fúvós hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ."
     },
     {
       "fortély": "zenélés_húros_hangszerek",
       "név": "Zenélés: húros hangszerek",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ismered a húros hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ."
     },
     {
       "fortély": "zenélés_ütős_hangszerek",
       "név": "Zenélés: ütős hangszerek",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ismered az ütős hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ."
     },
     {
       "fortély": "zsonglőrködés",
       "név": "Zsonglőrködés",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ujjaid között pörögnek, forognak a labdák, kések, kisállatok. A publikum ámul."
     },
     {
       "fortély": "éneklés",
       "név": "Éneklés",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "nézők előtt dalolsz a hallgatók örömére."
     }
   ],
   "emberismeret": [
@@ -194,37 +222,43 @@
       "fortély": "alkudozás",
       "név": "Alkudozás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Sajnálom uram, de ez valódi pamut, az árért, amit kínál, egy vak koldus sem adná oda.\""
     },
     {
       "fortély": "csábítás",
       "név": "Csábítás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Kiszúrod, hogy az ellenkező nem közeledése nem épp ártatlan, rejtett szándékot sejtesz."
     },
     {
       "fortély": "hazudozás",
       "név": "Hazudozás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Ugyan kérem, nem ma jöttem le a falvédőről.\""
     },
     {
       "fortély": "kihallgatás",
       "név": "Kihallgatás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Kopjon le. Ilyen ócska trükköknek nem dőlök be.\""
     },
     {
       "fortély": "megfélemlítés",
       "név": "Megfélemlítés",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Hiába lóbálja a kardját uram, fehér kendő nélkül nem engedhetem be.\""
     },
     {
       "fortély": "szónoklás",
       "név": "Szónoklás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Még egy szélhámos... Azt a csűrt, amivel a tömegnek henceg, nem ő építtette, hanem még az öreg Szakáll kamarás uram.\""
     }
   ],
   "etikett": [
@@ -232,31 +266,36 @@
       "fortély": "helyismeret",
       "név": "Helyismeret",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "a helyi celebritások, nemesi körökben forgó emberek ismerete"
     },
     {
       "fortély": "kultúrkör",
       "név": "Kultúrkör",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ha érintett az adott kultúrkör. Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak (jár a -3 levonás). Ha ismered, nincs gond."
     },
     {
       "fortély": "szertartás",
       "név": "Szertartás",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Amely Kultúrköröket ismersz, azok egyes speciális szertartásait Etikett képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás."
     },
     {
       "fortély": "titkos_szervezet",
       "név": "Titkos szervezet",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"A véráldozat után két perc ima, utána indul minden fejvadász a küldetésre. Most nem szabad megszólalnom.\""
     },
     {
       "fortély": "tánc_speciális_belső_stílus",
       "név": "Tánc: speciális/belső stílus",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"A vérnász során egyre több pengét kell elkerülni, a hetedik után hátulról is jöhet egy meglepetés.\""
     }
   ],
   "hadászat": [
@@ -264,49 +303,64 @@
       "fortély": "hadtáp",
       "név": "Hadtáp",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A hadtápot szét tudjuk húzni még 5 mérfölddel, de kettővel növelnünk kell a szállító szekerek számát naponta.\""
     },
     {
       "fortély": "stratégia",
       "név": "Stratégia",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A hegyláncot tartani tudjuk, ha a 4. hadtest egy hét múlva megérkezik a folyópartra.\""
     },
     {
       "fortély": "történelemismeret",
       "név": "Történelemismeret",
       "típus": "erős",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "Ismered a régi háborúk hadászati emlékeit. \"A IX. Zászlóháború idején P.sz. 2885-ben Siren4rban felbukkant Nyolcadik Vörös lobogó hordozója, Unn4m4li4r vyvern-lovasai alkalmazták először az alacsonyan repülő, mélységi beszivárgás módszerét.\""
+    },
+    {
+      "fortély": "vezető_alakzatparancsnok",
+      "név": "Vezető: Alakzatparancsnok",
+      "típus": "normál",
+      "maxfok": 2,
+      "leírás": "\"Lándzsások vonalba, megakasztásra készülj!\" ; \"A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lősz, Mocsok, tied a kocsis.\""
     },
     {
       "fortély": "vezető_fejvadász_strategis",
       "név": "Vezető: Fejvadász strategis",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Ketten a tetőre, magitor savfelhőt a teraszra. Mortel, indulj!\""
     },
     {
       "fortély": "vezető_lovaskapitány",
       "név": "Vezető: Lovaskapitány",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!\""
     },
     {
       "fortély": "vezető_léglovaskapitány",
       "név": "Vezető: Léglovaskapitány",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult.\""
     },
     {
       "fortély": "vezető_testőrparancsnok",
       "név": "Vezető: Testőrparancsnok",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember.\""
     },
     {
       "fortély": "vezető_íjászparancsnok",
       "név": "Vezető: Íjászparancsnok",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Fedezőtüzet a visszavonuló lovasság mögé!\""
     }
   ],
   "hajózás": [
@@ -314,7 +368,8 @@
       "fortély": "térképészet",
       "név": "Térképészet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A térkép szerint is veszélyes homokpadok vannak. Kormányos: jobbra, a sziget bal oldala felé, maradj szél alatt!\". Az egyszerű tájékozódáshoz nem szükséges, ne legyünk szigorúak, de a speciális jelzések ismeretéhez kellhet."
     }
   ],
   "kvantikum": [
@@ -322,75 +377,94 @@
       "fortély": "asztrológia",
       "név": "Asztrológia",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Kiszámoltam: Diss tüzének idejében vagyunk. Nem jó idő ez a gyógyításra.\""
     },
     {
       "fortély": "gazdálkodás",
       "név": "Gazdálkodás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A birtok idén már nyereséges volt köszönhetően a 12 marhának, amit tavaly vettünk a Szőlőshegyi özvegytől.\""
     },
     {
       "fortély": "mechanika",
       "név": "Mechanika",
       "típus": "erős",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés.\""
     },
     {
       "fortély": "pénzügyek",
       "név": "Pénzügyek",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az e havi beszedett többletadók elegek lesznek a kölcsön törlesztésére.\""
     },
     {
       "fortély": "rejtjelfejtő",
       "név": "Rejtjelfejtő",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "térképészet",
       "név": "Térképészet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Térképet készítesz. \"Elkészültem a kastély körüli dombok térképével, a magasságvonalakon látszik, hogy kemény mászás vár arra, aki nem a főúton szándékozik bemenni.\""
     },
     {
       "fortély": "építészet",
       "név": "Építészet",
       "típus": "erős",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Az a torony pár hónap és leomlik.\""
     }
   ],
   "képzőművészet": [
     {
       "fortély": "festészet",
       "név": "Festészet",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Vászonra álmodod a lelkedben születő képeket."
     },
     {
       "fortély": "hamisítás",
       "név": "Hamisítás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "valamelyik lenti képzőművészeti ágban - amelynek fortélya megvan karakterednek - képes vagy tudásodnak megfelelő szintű hamisítványokat létrehozni."
     },
     {
       "fortély": "kalligráfia",
       "név": "Kalligráfia",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Mesterien bánsz a pennával, festett betűidben ott lakozik az örökkévalóság."
     },
     {
       "fortély": "kultúrkör",
       "név": "Kultúrkör",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ha érintett az adott kultúrkör. Ennek ismerete nélkül nem tudsz az adott kultúrkör stílusában alkotni."
     },
     {
       "fortély": "szobrászat",
       "név": "Szobrászat",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Kezed alatt agyagból, kőből, fából, fémből készülnek a mesteri alkotások."
+    },
+    {
+      "fortély": "ősi_kultúrkör",
+      "név": "Ősi kultúrkör",
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra."
     }
   ],
   "kézművesség": [
@@ -398,249 +472,297 @@
       "fortély": "hamisítás",
       "név": "Hamisítás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "az adott kézműves szakma magas szintű produktumainak hamisítása és felismerése."
     },
     {
       "fortély": "kézműves_asztalos",
       "név": "Kézműves: Asztalos",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Asztalos mesterként fából alkotsz bútorokat, szerszámokat."
     },
     {
       "fortély": "kézműves_cipész",
       "név": "Kézműves: Cipész",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Cipőket készítesz a pórnépnek, vagy az udvari dámák kecses lábaira."
     },
     {
       "fortély": "kézműves_cserző",
       "név": "Kézműves: Cserző",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Járatos vagy a nyersbőrök tartósításában, előkészítésében."
     },
     {
       "fortély": "kézműves_cukrász",
       "név": "Kézműves: Cukrász",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Édességek készítése, amely nem is olyan könnyű, mint hiszed. A pontos arányok, körülmények betartása nagyon fontos."
     },
     {
       "fortély": "kézműves_fegyverkovács",
       "név": "Kézműves: Fegyverkovács",
       "típus": "erős",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "Fém ötvözetekből fegyverek kovácsolása. (követelménye: Kovács Szabad Fortély)"
     },
     {
       "fortély": "kézműves_kovács",
       "név": "Kézműves: Kovács",
       "típus": "erős",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Alap kovácsmesterség. Fémből kalapálsz ki lópatkókat, kapákat, ásókat, ekéket, háztartási eszközöket."
     },
     {
       "fortély": "kézműves_kádár",
       "név": "Kézműves: Kádár",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Fából készült edényeket, hordókat, kádakat, dézsákat és más fa tárolóeszközöket készítesz."
     },
     {
       "fortély": "kézműves_kötélgyártó",
       "név": "Kézműves: Kötélgyártó",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a kötél alapanyagai: kender, papírusz, datolyapálma, de akár, bőr és egyéb növényi rostok is."
     },
     {
       "fortély": "kézműves_kőműves",
       "név": "Kézműves: Kőműves",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Kövekből és égetett téglákból erős, tartós épületszerkezeteket készítesz, például falakat, boltíveket, tornyokat és tervek alapján akár várakat is. Ácsolt állványzatokat húzol fel, különféle emelőszerkezeteket használsz a nehéz kövek helyre emeléséhez."
     },
     {
       "fortély": "kézműves_lakatos",
       "név": "Kézműves: Lakatos",
       "típus": "erős",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek ki kezed alól. Magasabb szinten egyéb vasból és acélból készült szerkezetek, például ajtók, ablakok, korlátok, lépcsők, és más fémes tartószerkezetek készítése, javítása is ide tartozik. A zárak nyitása a Zárnyitás képzettség alá tartozik! Ez a fortély nem ad bónuszt az ilyen jellegű próbákra."
     },
     {
       "fortély": "kézműves_molnár",
       "név": "Kézműves: Molnár",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Malomban dolgozol, lisztet és különböző kalászosok feldolgozását végzed."
     },
     {
       "fortély": "kézműves_páncélkovács",
       "név": "Kézműves: Páncélkovács",
       "típus": "erős",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "Fém ötvözetekből páncélok kovácsolása. (követelménye: Kovács Szabad Fortély)"
     },
     {
       "fortély": "kézműves_pék",
       "név": "Kézműves: Pék",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Kenyér, péksütemény és egyéb sült tésztafélék készítése kovászból vagy élesztős tésztából, a kemence hőjének pontos kezelésével."
     },
     {
       "fortély": "kézműves_pénzverő",
       "név": "Kézműves: Pénzverő",
       "típus": "erős",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz ki pénzérméket. A pénz megfelelő súlyának, méretének és mintázatának biztosítása is feladatod."
     },
     {
       "fortély": "kézműves_szabó",
       "név": "Kézműves: Szabó",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Akár vászonból, akár szőtt kelmékből főként felsőruházatot, például kabátot, nadrágot és blúzt szabsz és varrsz."
     },
     {
       "fortély": "kézműves_szakács",
       "név": "Kézműves: Szakács",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Finom étkek készítése, vagy akár a hadsereg hadtápjának működtetése."
     },
     {
       "fortély": "kézműves_szűcs",
       "név": "Kézműves: Szűcs",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Főleg juhbőrök tisztításával, kikészítésével és feldolgozásával foglalkozol. Megtisztítod a lenyúzott bőrt, eltávolítod a húst és hártyákat, puhítod, sózod és fested az alapanyagot. A fenti készítményből szabsz és varrsz ruhákat, bundákat, ködmönöket. Prémes bundák, drága szőrmekülönlegességek kerülnek ki kezeid alól."
     },
     {
       "fortély": "kézműves_ács",
       "név": "Kézműves: Ács",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ács mesterként fából alkotsz épületeket, nagyobb szerkezeteket."
     },
     {
       "fortély": "kézműves_ékszerész",
       "név": "Kézműves: Ékszerész",
       "típus": "erős",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Nemes fémekből gyönyörű ékszerek készítése, ritka ékkövek míves keretekbe foglalása."
     },
     {
       "fortély": "mechanika",
       "név": "Mechanika",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "(Kézműves:Fegyverkovács, Kézműves:Páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz"
     }
   ],
   "lexikum": [
     {
       "fortély": "belső_síkok_lényeinek_ismerete",
       "név": "Belső síkok lényeinek ismerete",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "🔁 Ismered az adott lénycsoport fajait, alfajait, azok jellemzőit, képességeit - a képzettség szintjének megfelelő mértékben."
     },
     {
       "fortély": "helyismeret",
       "név": "Helyismeret",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "csak ha konkrétan helyi témával kapcsolatos ismeretről van szó, akkor szükséges. Ne legyünk túl szigorúak."
     },
     {
       "fortély": "heraldika",
       "név": "Heraldika",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Ez a címer egy - már kihalt - kyr házé, akik Sogron egyházának voltak erős szövetségesei a hatodkorban.\""
     },
     {
       "fortély": "hivatalnok",
       "név": "Hivatalnok",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani.\""
     },
     {
       "fortély": "jogismeret",
       "név": "Jogismeret",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"Három példányban iktatni, utána lehet kegyelemért folyamodni.\", \"Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért.\"; Hivatalnokként specializálódtál, értesz a jogrendszerhez is."
     },
     {
       "fortély": "kultúrkör",
       "név": "Kultúrkör",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Az adott, kapcsolódó Kultúrkör ismerete sokszor (nem mindig) szükséges."
     },
     {
       "fortély": "külső_síkok_lényeinek_ismerete",
       "név": "Külső síkok lényeinek ismerete",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "🔁 Ismered az adott lénycsoport fajait, alfajait, azok jellemzőit, képességeit - a képzettség szintjének megfelelő mértékben."
+    },
+    {
+      "fortély": "mechanika",
+      "név": "Mechanika",
+      "típus": "erős",
+      "maxfok": 2,
+      "leírás": "Mechanikus zárak készítése. Nem helyettesíti a Zárnyitás képzettséget"
     },
     {
       "fortély": "stratégia",
       "név": "Stratégia",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Kevesen tudják, hogy a legutóbbi Zászlóháború döntő csatájában a párás idő okozta a t0roni S0gron papok összhangjainak elvesztését, amely Antoh szolgáinak irányába billentette a mérleget.\""
     },
     {
       "fortély": "tájtípus_barlangi",
       "név": "Tájtípus - barlangi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_dzsungel",
       "név": "Tájtípus - dzsungel",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_erdős",
       "név": "Tájtípus - erdős",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_jégmezők",
       "név": "Tájtípus - jégmezők",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_magaslati",
       "név": "Tájtípus - magaslati",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_mocsaras",
       "név": "Tájtípus - mocsaras",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_puszta",
       "név": "Tájtípus - puszta",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_sivatagi",
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\\"
     },
     {
       "fortély": "tájtípus_tengerek",
       "név": "Tájtípus - tengerek",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "történelemismeret",
       "név": "Történelemismeret",
       "típus": "erős",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés."
     },
     {
       "fortély": "élettan",
       "név": "Élettan",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten."
     },
     {
       "fortély": "ősi_kultúrkör",
       "név": "Ősi kultúrkör",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Az adott, kapcsolódó Ősi Kultúrkör ismerete néha (nem mindig) szükséges, akkor is csak Történelemismeret fortéllyal együtt."
     }
   ],
   "lopakodás_rejtőzés": [
@@ -648,49 +770,57 @@
       "fortély": "tájtípus_barlangi",
       "név": "Tájtípus - barlangi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Barlangi környezetben lopakodni. \"Az a kristály a legapróbb rezgésre is leeshet.\""
     },
     {
       "fortély": "tájtípus_dzsungel",
       "név": "Tájtípus - dzsungel",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Dzsungel környezetben settenkedni. \"A vörös pille alatt ne haladj el, rikoltani fog!\""
     },
     {
       "fortély": "tájtípus_erdős",
       "név": "Tájtípus - erdős",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Erdős környezetben lopakodni. \"Vigyázz, az avar kiszáradt, zörögne, ha rálépsz.\""
     },
     {
       "fortély": "tájtípus_jégmezők",
       "név": "Tájtípus - jégmezők",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Jégmezőn lopakodni. \"Ne menj a világos jégre, jobban ropog!\""
     },
     {
       "fortély": "tájtípus_magaslati",
       "név": "Tájtípus - magaslati",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Havas, hegyi, magaslati környezetben beolvadni. \"Hó a szájba, ne látszódjon a leheleted!\""
     },
     {
       "fortély": "tájtípus_mocsaras",
       "név": "Tájtípus - mocsaras",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Mocsaras környezetben lopakodni. \"A kő mellé lépj, akkor nem cuppog.\""
     },
     {
       "fortély": "tájtípus_puszta",
       "név": "Tájtípus - puszta",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Pusztákon lopakodni. \"Maradj a sűrű fűben és együtt mozogj a széllel.\""
     },
     {
       "fortély": "tájtípus_sivatagi",
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Homokos, köves sivatagi lankákon hangtalanul haladni."
     }
   ],
   "lopás": [
@@ -698,7 +828,8 @@
       "fortély": "bűvészet",
       "név": "Bűvészet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki (majdnem ugyanazt) az aranyórát.\""
     }
   ],
   "lovaglás": [
@@ -706,7 +837,8 @@
       "fortély": "hátas",
       "név": "Hátas",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "(1 faj felvétele kötelező)"
     }
   ],
   "léglovaglás": [
@@ -714,7 +846,8 @@
       "fortély": "hátas",
       "név": "Hátas",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "(1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)"
     }
   ],
   "művészetismeret": [
@@ -722,85 +855,113 @@
       "fortély": "festészet",
       "név": "Festészet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered, felismered adott Kultúrkör festőit, műveiket, történetüket, stílusukat."
     },
     {
       "fortély": "hamisítás",
       "név": "Hamisítás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Felismered, hogy a mű hamisítvány"
     },
     {
       "fortély": "irodalom",
       "név": "Irodalom",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered adott Kultúrkör neves irodalmárait, íróit, költőit és stílusukat, műveiket."
     },
     {
       "fortély": "kalligráfia",
       "név": "Kalligráfia",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A kezdőbetű bezártsága alkotójának szomorú sorsát jelzi, a belekényszerített házasság szimbolikája.\""
     },
     {
       "fortély": "kultúrkör",
       "név": "Kultúrkör",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ha érintett az adott kultúrkör. Enélkül érvényes a -3 levonás mindegyik meglevő művészeti ágra."
+    },
+    {
+      "fortély": "nyelvismeret",
+      "név": "Nyelvismeret",
+      "típus": "normál",
+      "maxfok": 2,
+      "leírás": "Udvari fok (ahol szükségesnek érezzük)"
     },
     {
       "fortély": "szobrászat",
       "név": "Szobrászat",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered a Kultúrkörnek megfelelő klasszikus szobrokat, felismered az egyes stílusokat, korszakokat akár ismeretlen szobrokon is."
     },
     {
       "fortély": "színjátszás",
       "név": "Színjátszás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered a Kultúrkörnek megfelelő klasszikus darabokat, otthonosan mozogsz a színészvilágban."
     },
     {
       "fortély": "tánc",
       "név": "Tánc",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered a Kultúrköreidnek megfelelő tánc stílusokat, a híresebb előadókat, táncos darabokat."
     },
     {
       "fortély": "tánc_speciális_belső_stílus",
       "név": "Tánc: speciális/belső stílus",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Mozdulatok alapján felismersz egy adott belső táncstílust. Minél magasabb szintű próbát dobsz meg, annál mélyebb jelentések, árnyalatok válnak egyértelművé."
     },
     {
       "fortély": "zenélés_fúvós_hangszerek",
       "név": "Zenélés: fúvós hangszerek",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered, felismered a neves fúvós hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is."
     },
     {
       "fortély": "zenélés_húros_hangszerek",
       "név": "Zenélés: húros hangszerek",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered, felismered a neves húros hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is."
     },
     {
       "fortély": "zenélés_ütős_hangszerek",
       "név": "Zenélés: ütős hangszerek",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered, felismered a ütős húros hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is."
     },
     {
       "fortély": "éneklés",
       "név": "Éneklés",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "felismered a híres dalnokokat, dallamaikat, slágereiket."
     },
     {
       "fortély": "építészet",
       "név": "Építészet",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Shad0ni hatást érzek azon az oszlopfőn...\""
+    },
+    {
+      "fortély": "ősi_kultúrkör",
+      "név": "Ősi kultúrkör",
+      "típus": "normál",
+      "maxfok": 1,
+      "leírás": "Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra."
     }
   ],
   "nyomozás": [
@@ -808,67 +969,78 @@
       "fortély": "hazudozás",
       "név": "Hazudozás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Sokat pislog, kerüli a tekintetem, hazudik...\""
     },
     {
       "fortély": "helyismeret",
       "név": "Helyismeret",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre"
     },
     {
       "fortély": "heraldika",
       "név": "Heraldika",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A famor címerében levő lombok vérszínűek, akárcsak az - állítólagos - ellenséges házéban.\""
     },
     {
       "fortély": "jogismeret",
       "név": "Jogismeret",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"Az anyai ági öröklés miatt a féltestvér is részesül az örökségből a gyászév leteltével! Tehát neki is volt indítéka.\""
     },
     {
       "fortély": "kihallgatás",
       "név": "Kihallgatás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"Hol rejtegetitek az ereklyét? A társaid már mindent bevallottak.\""
     },
     {
       "fortély": "pénzügyek",
       "név": "Pénzügyek",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "\"A lefoglalt iratokból egyből kiviláglik: Kamarás uram kettős könyvelést vezetett.\""
     },
     {
       "fortély": "rejtjelfejtő",
       "név": "Rejtjelfejtő",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A szimbólumok által jelképezett átjáró az kandalló feletti festményre utal!\""
     },
     {
       "fortély": "titkos_szervezet",
       "név": "Titkos szervezet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A Karvaly céh második embere..., a nyakát az Ítészek céhének stílusában vágták át.\""
     },
     {
       "fortély": "térképészet",
       "név": "Térképészet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\"A két 'O' a két ablakot, az 'Y', a hátsó ajtót jelzi, a szaggatott vonalon az 'X' szerintem csapdát jelent.\""
     },
     {
       "fortély": "élettan",
       "név": "Élettan",
-      "típus": "normál",
-      "maxfok": 1
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "boncoláshoz"
     },
     {
       "fortély": "építészet",
       "név": "Építészet",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "\"Az a fal sokkal vastagabb, mint a másik!\""
     }
   ],
   "természetjárás": [
@@ -876,67 +1048,78 @@
       "fortély": "keresés_rejtés",
       "név": "Keresés/rejtés",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "Nyomok észrevétele a természetben. \"Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki.\""
     },
     {
       "fortély": "nyomolvasás_eltűntetés",
       "név": "Nyomolvasás/eltűntetés",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_barlangi",
       "név": "Tájtípus - barlangi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_dzsungel",
       "név": "Tájtípus - dzsungel",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_erdős",
       "név": "Tájtípus - erdős",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_jégmezők",
       "név": "Tájtípus - jégmezők",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_magaslati",
       "név": "Tájtípus - magaslati",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_mocsaras",
       "név": "Tájtípus - mocsaras",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_puszta",
       "név": "Tájtípus - puszta",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_sivatagi",
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\\"
     },
     {
       "fortély": "tájtípus_tengerek",
       "név": "Tájtípus - tengerek",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     }
   ],
   "vajákosság": [
@@ -944,55 +1127,64 @@
       "fortély": "tájtípus_barlangi",
       "név": "Tájtípus - barlangi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_dzsungel",
       "név": "Tájtípus - dzsungel",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_erdős",
       "név": "Tájtípus - erdős",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_jégmezők",
       "név": "Tájtípus - jégmezők",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_magaslati",
       "név": "Tájtípus - magaslati",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_mocsaras",
       "név": "Tájtípus - mocsaras",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_puszta",
       "név": "Tájtípus - puszta",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_sivatagi",
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "\\"
     },
     {
       "fortély": "tájtípus_tengerek",
       "név": "Tájtípus - tengerek",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     }
   ],
   "városi_jártasság": [
@@ -1000,19 +1192,31 @@
       "fortély": "helyismeret",
       "név": "Helyismeret",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Az adott környék ismerete sokat segít, nélküle az általános tapasztalatok dominálnak inkább."
     },
     {
       "fortély": "kultúrkör",
       "név": "Kultúrkör",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Az adott kultúrkör ismerete 🔆képes pótolni 🔆 a Helyismeret hiányát. Ha ez megvan, de az nem, akkor sem jár a levonás."
     },
     {
       "fortély": "titkos_szervezet",
       "név": "Titkos szervezet",
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "Egy adott titkos klán vagy szervezet belső működésének, szokásainak, hierarchiájának ismerete. Székhelyek, besúgók, informátorok fellelésének helyei."
+    }
+  ],
+  "álcázás_álruha": [
+    {
+      "fortély": "kultúrkör",
+      "név": "Kultúrkör",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": ""
     }
   ],
   "értékbecslés": [
@@ -1020,25 +1224,29 @@
       "fortély": "festészet",
       "név": "Festészet",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered, felismered adott Kultúrkör festőinek, műveiknek értékét."
     },
     {
       "fortély": "hamisítás",
       "név": "Hamisítás",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Már a hamis portéka is könnyebben feltűnik."
     },
     {
       "fortély": "szobrászat",
       "név": "Szobrászat",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Ismered a Kultúrkörnek megfelelő klasszikus szobrok értékét."
     },
     {
       "fortély": "ősi_kultúrkör",
       "név": "Ősi kultúrkör",
       "típus": "normál",
-      "maxfok": 1
+      "maxfok": 1,
+      "leírás": "Az adott Ősi kultúrkör idejében készült műkincsek felismerése, értékük felmérése."
     }
   ],
   "észlelés": [
@@ -1046,7 +1254,8 @@
       "fortély": "keresés_rejtés",
       "név": "Keresés/rejtés",
       "típus": "normál",
-      "maxfok": 2
+      "maxfok": 2,
+      "leírás": "Nyomok észrevétele/elrejtése városi környezetben. \"Az az asztal el lett mozdítva.\" / \"Huzatos itt a fal mellett.\""
     }
   ]
 }

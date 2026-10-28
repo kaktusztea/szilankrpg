@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["észlelés", "természetjárás"]
+  normál:
+    - képzettség: "természetjárás"
+      leírás: "Nyomok észrevétele a természetben. \"Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki.\""
+    - képzettség: "észlelés"
+      leírás: "Nyomok észrevétele/elrejtése városi környezetben. \"Az az asztal el lett mozdítva.\" / \"Huzatos itt a fal mellett.\""
   erős: []
 
 kp_perfok: 6

@@ -18,8 +18,16 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["értékbecslés", "lexikum"]
-  erős: []
+  normál:
+    - képzettség: "lexikum"
+      leírás: "Az adott, kapcsolódó Ősi Kultúrkör ismerete néha (nem mindig) szükséges, akkor is csak Történelemismeret fortéllyal együtt."
+    - képzettség: "művészetismeret"
+      leírás: "Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra."
+    - képzettség: "értékbecslés"
+      leírás: "Az adott Ősi kultúrkör idejében készült műkincsek felismerése, értékük felmérése."
+  erős:
+    - képzettség: "képzőművészet"
+      leírás: "Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra."
 
 kp_perfok: 6
 ingyenes_perszint: 0

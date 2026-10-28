@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Édességek készítése, amely nem is olyan könnyű, mint hiszed. A pontos arányok, körülmények betartása nagyon fontos."
   erős: []
 
 kp_perfok: 6

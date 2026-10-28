@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["befolyásolás", "emberismeret"]
+  normál:
+    - képzettség: "befolyásolás"
+      leírás: "\"Mit választotok? A hazug, kövér urat, aki soha nem fogott kaszát a kezébe, vagy engem, aki magam is egy folyómenti faluból származom?\""
+    - képzettség: "emberismeret"
+      leírás: "\"Még egy szélhámos... Azt a csűrt, amivel a tömegnek henceg, nem ő építtette, hanem még az öreg Szakáll kamarás uram.\""
   erős: []
 
 kp_perfok: 6

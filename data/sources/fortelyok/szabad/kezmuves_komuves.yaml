@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Kövekből és égetett téglákból erős, tartós épületszerkezeteket készítesz, például falakat, boltíveket, tornyokat és tervek alapján akár várakat is. Ácsolt állványzatokat húzol fel, különféle emelőszerkezeteket használsz a nehéz kövek helyre emeléséhez."
   erős: []
 
 kp_perfok: 6

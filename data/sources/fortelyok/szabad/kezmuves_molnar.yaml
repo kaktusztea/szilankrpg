@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Malomban dolgozol, lisztet és különböző kalászosok feldolgozását végzed."
   erős: []
 
 kp_perfok: 6

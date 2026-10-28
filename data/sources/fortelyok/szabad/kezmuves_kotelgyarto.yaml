@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a kötél alapanyagai: kender, papírusz, datolyapálma, de akár, bőr és egyéb növényi rostok is."
   erős: []
 
 kp_perfok: 6

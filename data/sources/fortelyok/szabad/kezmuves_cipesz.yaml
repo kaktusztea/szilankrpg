@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Cipőket készítesz a pórnépnek, vagy az udvari dámák kecses lábaira."
   erős: []
 
 kp_perfok: 6

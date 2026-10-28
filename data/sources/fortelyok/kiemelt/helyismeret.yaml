@@ -18,7 +18,15 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["nyomozás", "lexikum", "városi_jártasság", "etikett"]
+  normál:
+    - képzettség: "etikett"
+      leírás: "a helyi celebritások, nemesi körökben forgó emberek ismerete"
+    - képzettség: "lexikum"
+      leírás: "csak ha konkrétan helyi témával kapcsolatos ismeretről van szó, akkor szükséges. Ne legyünk túl szigorúak."
+    - képzettség: "nyomozás"
+      leírás: "ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre"
+    - képzettség: "városi_jártasság"
+      leírás: "Az adott környék ismerete sokat segít, nélküle az általános tapasztalatok dominálnak inkább."
   erős: []
 
 kp_perfok: 6

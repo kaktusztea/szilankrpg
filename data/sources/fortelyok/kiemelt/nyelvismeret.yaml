@@ -18,8 +18,12 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
-  erős: []
+  normál:
+    - képzettség: "művészetismeret"
+      leírás: "Udvari fok (ahol szükségesnek érezzük)"
+  erős:
+    - képzettség: "előadóművészet"
+      leírás: "fortély (adott nyelv) ha érintett (Színjátszás, Irodalom, Éneklés esetén)"
 
 kp_perfok: 0
 ingyenes_perszint: 0

@@ -18,7 +18,13 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["befolyásolás", "emberismeret", "nyomozás"]
+  normál:
+    - képzettség: "befolyásolás"
+      leírás: "\"Arra mentek! Jajjh, a lábam!\""
+    - képzettség: "emberismeret"
+      leírás: "\"Ugyan kérem, nem ma jöttem le a falvédőről.\""
+    - képzettség: "nyomozás"
+      leírás: "\"Sokat pislog, kerüli a tekintetem, hazudik...\""
   erős: []
 
 kp_perfok: 6

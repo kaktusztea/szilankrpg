@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["lexikum", "nyomozás"]
+  normál:
+    - képzettség: "lexikum"
+      leírás: "\"Ez a címer egy - már kihalt - kyr házé, akik Sogron egyházának voltak erős szövetségesei a hatodkorban.\""
+    - képzettség: "nyomozás"
+      leírás: "\"A famor címerében levő lombok vérszínűek, akárcsak az - állítólagos - ellenséges házéban.\""
   erős: []
 
 kp_perfok: 6

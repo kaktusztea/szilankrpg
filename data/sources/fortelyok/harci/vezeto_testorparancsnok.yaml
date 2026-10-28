@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["hadászat"]
+  normál:
+    - képzettség: "hadászat"
+      leírás: "\"A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember.\""
   erős: []
 
 kp_perfok: 6

@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["befolyásolás", "emberismeret"]
+  normál:
+    - képzettség: "befolyásolás"
+      leírás: "\"Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér...\""
+    - képzettség: "emberismeret"
+      leírás: "\"Hiába lóbálja a kardját uram, fehér kendő nélkül nem engedhetem be.\""
   erős: []
 
 kp_perfok: 6

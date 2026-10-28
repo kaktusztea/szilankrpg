@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Akár vászonból, akár szőtt kelmékből főként felsőruházatot, például kabátot, nadrágot és blúzt szabsz és varrsz."
   erős: []
 
 kp_perfok: 6

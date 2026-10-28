@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Ács mesterként fából alkotsz épületeket, nagyobb szerkezeteket."
   erős: []
 
 kp_perfok: 6

@@ -18,7 +18,17 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["alkímia", "lexikum", "lopakodás_rejtőzés", "természetjárás", "vajákosság"]
+  normál:
+    - képzettség: "alkímia"
+      leírás: ""
+    - képzettség: "lexikum"
+      leírás: ""
+    - képzettség: "lopakodás_rejtőzés"
+      leírás: "Havas, hegyi, magaslati környezetben beolvadni. \"Hó a szájba, ne látszódjon a leheleted!\""
+    - képzettség: "természetjárás"
+      leírás: ""
+    - képzettség: "vajákosság"
+      leírás: ""
   erős: []
 
 kp_perfok: 6

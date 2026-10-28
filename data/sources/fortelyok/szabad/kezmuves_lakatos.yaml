@@ -21,7 +21,9 @@ megjegyzések:
 
 kiterjeszti:
   normál: []
-  erős: ["kézművesség"]
+  erős:
+    - képzettség: "kézművesség"
+      leírás: "Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek ki kezed alól. Magasabb szinten egyéb vasból és acélból készült szerkezetek, például ajtók, ablakok, korlátok, lépcsők, és más fémes tartószerkezetek készítése, javítása is ide tartozik. A zárak nyitása a Zárnyitás képzettség alá tartozik! Ez a fortély nem ad bónuszt az ilyen jellegű próbákra."
 
 kp_perfok: 6
 ingyenes_perszint: 0

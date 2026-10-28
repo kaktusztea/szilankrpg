@@ -18,8 +18,14 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["értékbecslés", "képzőművészet", "művészetismeret"]
-  erős: []
+  normál:
+    - képzettség: "művészetismeret"
+      leírás: "Ismered a Kultúrkörnek megfelelő klasszikus szobrokat, felismered az egyes stílusokat, korszakokat akár ismeretlen szobrokon is."
+    - képzettség: "értékbecslés"
+      leírás: "Ismered a Kultúrkörnek megfelelő klasszikus szobrok értékét."
+  erős:
+    - képzettség: "képzőművészet"
+      leírás: "Kezed alatt agyagból, kőből, fából, fémből készülnek a mesteri alkotások."
 
 kp_perfok: 6
 ingyenes_perszint: 0

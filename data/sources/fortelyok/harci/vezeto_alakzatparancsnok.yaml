@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál:
+    - képzettség: "hadászat"
+      leírás: "\"Lándzsások vonalba, megakasztásra készülj!\" ; \"A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lősz, Mocsok, tied a kocsis.\""
   erős: []
 
 kp_perfok: 6

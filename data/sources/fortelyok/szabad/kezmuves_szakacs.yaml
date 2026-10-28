@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kézművesség"]
+  normál:
+    - képzettség: "kézművesség"
+      leírás: "Finom étkek készítése, vagy akár a hadsereg hadtápjának működtetése."
   erős: []
 
 kp_perfok: 6

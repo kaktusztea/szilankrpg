@@ -18,7 +18,9 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["kvantikum"]
+  normál:
+    - képzettség: "kvantikum"
+      leírás: "\"Kiszámoltam: Diss tüzének idejében vagyunk. Nem jó idő ez a gyógyításra.\""
   erős: []
 
 kp_perfok: 6

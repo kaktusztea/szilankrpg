@@ -31,7 +31,7 @@ Az alábbi ismereteket nyújtja:
 
 ### 🟨 Normál kiterjesztés
 
-- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
+- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki (majdnem ugyanazt) az aranyórát."
 
 ---
 ### Próbadobás menete
