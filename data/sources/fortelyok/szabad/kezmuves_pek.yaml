@@ -1,0 +1,33 @@
+---
+schema_version: 1
+
+id: "kézműves_pék"
+név: "Kézműves: Pék"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: true
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "szabad"
+leírások:
+  - text: "Kenyér, péksütemény és egyéb sült tésztafélék készítése kovászból vagy élesztős tésztából, a kemence hőjének pontos kezelésével."
+megjegyzések:
+  - text: ""
+
+kiterjeszti:
+  normál: ["kézművesség"]
+  erős: []
+
+kp_perfok: 6
+ingyenes_perszint: 0
+
+fokok:
+  - fok: 1
+    követelménytext: []
+    követelmények: ""
+    hatástext:
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+    módosítók: ""

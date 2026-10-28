@@ -704,10 +704,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Fém ötvözetekből fegyverek kovácsolása.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "kézművesség"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -774,10 +774,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Fém ötvözetekből páncélok kovácsolása.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "kézművesség"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8418,10 +8418,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Nemes fémekből gyönyörű ékszerek készítése, ritka ékkövek míves keretekbe foglalása.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "kézművesség"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8550,10 +8550,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Alap kovácsmesterség. Fémből kalapálsz ki lópatkókat, kapákat, ásókat, ekéket, háztartási eszközöket.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "kézművesség"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8583,10 +8583,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek ki kezed alól. Magasabb szinten egyéb vasból és acélból készült szerkezetek, például ajtók, ablakok, korlátok, lépcsők, és más fémes tartószerkezetek készítése, javítása is ide tartozik. 🔆 A zárak nyitása a Zárnyitás képzettség alá tartozik! Ez a fortély nem ad bónuszt az ilyen jellegű próbákra.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "kézművesség"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
@@ -8635,6 +8635,39 @@
     "md_fájl": "fortelyok.szabad/kezmuves_molnar.md"
   },
   {
+    "id": "kézműves_pék",
+    "név": "Kézműves: Pék",
+    "csoport": "szabad",
+    "kapcsolódó_szituációk": [],
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kenyér, péksütemény és egyéb sült tésztafélék készítése kovászból vagy élesztős tésztából, a kemence hőjének pontos kezelésével.",
+    "kiterjeszti_normál": [
+      "kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [],
+        "próba_enyhítések": []
+      }
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_pek.md"
+  },
+  {
     "id": "kézműves_pénzverő",
     "név": "Kézműves: Pénzverő",
     "csoport": "szabad",
@@ -8649,10 +8682,10 @@
     "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz ki pénzérméket. A pénz megfelelő súlyának, méretének és mintázatának biztosítása is feladatod.",
-    "kiterjeszti_normál": [
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [
       "kézművesség"
     ],
-    "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,

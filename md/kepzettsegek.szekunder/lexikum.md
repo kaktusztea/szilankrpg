@@ -60,14 +60,13 @@ Próba dobható.
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (adott tájtípusra jellemző élővilág, földrajz ismerete)
 - [Heraldika](../fortelyok.szabad/heraldika.md): "Ez a címer egy - már kihalt - kyr házé, akik Sogron egyházának voltak erős szövetségesei a hatodkorban."
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért."
 - [Stratégia](../fortelyok.szabad/strategia.md): "Kevesen tudják, hogy a legutóbbi Zászlóháború döntő csatájában a párás idő okozta a t0roni S0gron papok összhangjainak elvesztését, amely Antoh szolgáinak irányába billentette a mérleget."
 
 ### 🟥 Erős kiterjesztés
 
 - [Élettan](../fortelyok.altalanos/elettan.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
 - [Hivatalnok](../fortelyok.szabad/hivatalnok.md): "Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani."
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is.
+- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni.", "Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért."; Hivatalnokként specializálódtál, értesz a jogrendszerhez is.
 - [Mechanika](../fortelyok.altalanos/mechanika.md): Mechanikus zárak készítése. **Nem** helyettesíti a [Zárnyitás](zarnyitas.md) képzettséget
 - [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md): Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés.
 - [Belső síkok lényeinek ismerete](../fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md) 🔁 Ismered az adott lénycsoport fajait, alfajait, azok jellemzőit, képességeit - a képzettség szintjének megfelelő mértékben.

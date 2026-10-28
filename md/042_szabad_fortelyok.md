@@ -68,7 +68,7 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 - [Kézműves: Kovács](fortelyok.szabad/kezmuves_kovacs.md)
 - [Kézműves: Lakatos](fortelyok.szabad/kezmuves_lakatos.md)
 - [Kézműves: Molnár](fortelyok.szabad/kezmuves_molnar.md)
-- [Kézműves: Pék](fortelyok.szabad/kezmuves_penzvero.md)
+- [Kézműves: Pék](fortelyok.szabad/kezmuves_pek.md)
 - [Kézműves: Pénzverő](fortelyok.szabad/kezmuves_penzvero.md)
 - [Kézműves: Szabó](fortelyok.szabad/kezmuves_szabo.md)
 - [Kézműves: Szakács](fortelyok.szabad/kezmuves_szakacs.md)

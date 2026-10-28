@@ -427,13 +427,13 @@
     {
       "fortély": "kézműves_fegyverkovács",
       "név": "Kézműves: Fegyverkovács",
-      "típus": "normál",
+      "típus": "erős",
       "maxfok": 2
     },
     {
       "fortély": "kézműves_kovács",
       "név": "Kézműves: Kovács",
-      "típus": "normál",
+      "típus": "erős",
       "maxfok": 1
     },
     {
@@ -457,7 +457,7 @@
     {
       "fortély": "kézműves_lakatos",
       "név": "Kézműves: Lakatos",
-      "típus": "normál",
+      "típus": "erős",
       "maxfok": 1
     },
     {
@@ -469,13 +469,19 @@
     {
       "fortély": "kézműves_páncélkovács",
       "név": "Kézműves: Páncélkovács",
-      "típus": "normál",
+      "típus": "erős",
       "maxfok": 2
+    },
+    {
+      "fortély": "kézműves_pék",
+      "név": "Kézműves: Pék",
+      "típus": "normál",
+      "maxfok": 1
     },
     {
       "fortély": "kézműves_pénzverő",
       "név": "Kézműves: Pénzverő",
-      "típus": "normál",
+      "típus": "erős",
       "maxfok": 1
     },
     {
@@ -505,7 +511,7 @@
     {
       "fortély": "kézműves_ékszerész",
       "név": "Kézműves: Ékszerész",
-      "típus": "normál",
+      "típus": "erős",
       "maxfok": 1
     },
     {

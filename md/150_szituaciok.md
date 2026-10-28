@@ -39,6 +39,10 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 
+- Étel készítése    🔆 [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettség + [Kézműves: Szakács](fortelyok.szabad/kezmuves_szakacs.md) fortély kiegészítéssel 🟥
+  - Különösen finom étel készítése: 🔆 magas Nehézség
+  - Fogyasztásra alkalmas étel készítése minimális alapanyagokból: 🔆 alacsony Nehézség; [képzetlenül](030_06_01_kepzettsegproba.md#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl) is megpróbálható
+
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
 - [Érzékelés, Aktív/Passzív Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md)

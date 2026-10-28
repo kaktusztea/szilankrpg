@@ -3,13 +3,13 @@
 exports[`karakter számított értékei - id-átállás regressziós snapshot > minden fortély, fok-index 0 1`] = `
 {
   "kp": {
-    "elköltöttKp": 1506,
+    "elköltöttKp": 1512,
     "kiemeltKp": 0,
     "kpCm": 6,
-    "kpFortélyok": 990,
+    "kpFortélyok": 996,
     "kpHm": 168,
     "kpKépzettségek": 342,
-    "maradékKp": -730,
+    "maradékKp": -736,
     "primerKeret": 576,
     "primerKöltés": 792,
     "primerMaradt": -216,
@@ -214,13 +214,13 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
 exports[`karakter számított értékei - id-átállás regressziós snapshot > minden fortély, fok-index 9 1`] = `
 {
   "kp": {
-    "elköltöttKp": 1998,
+    "elköltöttKp": 2004,
     "kiemeltKp": 0,
     "kpCm": 6,
-    "kpFortélyok": 1482,
+    "kpFortélyok": 1488,
     "kpHm": 168,
     "kpKépzettségek": 342,
-    "maradékKp": -1210,
+    "maradékKp": -1216,
     "primerKeret": 588,
     "primerKöltés": 1122,
     "primerMaradt": -534,

@@ -29,34 +29,37 @@ Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemz�
 
 ### 🟨 Normál kiterjesztés
 
+A fortély hiányában a kapcsolódó képzettségpróba `Hátrány-2`-vel dobható: egy hozzáértő kézműves laikusként is nekikezdhet, csak ügyetlenebbül.
+
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): az adott kézműves szakma magas szintű produktumainak hamisítása és felismerése.
 - [Mechanika](../fortelyok.altalanos/mechanika.md) (Kézműves:Fegyverkovács, Kézműves:Páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz
+- Szabad Fortélyok
+  - [Kézműves: Ács](../fortelyok.szabad/kezmuves_acs.md)
+  - [Kézműves: Asztalos](../fortelyok.szabad/kezmuves_asztalos.md)
+  - [Kézműves: Cipész](../fortelyok.szabad/kezmuves_cipesz.md)
+  - [Kézműves: Cserző](../fortelyok.szabad/kezmuves_cserzo.md)
+  - [Kézműves: Cukrász](../fortelyok.szabad/kezmuves_cukrasz.md)
+  - [Kézműves: Kádár](../fortelyok.szabad/kezmuves_kadar.md)
+  - [Kézműves: Kötélgyártó](../fortelyok.szabad/kezmuves_kotelgyarto.md)
+  - [Kézműves: Kőműves](../fortelyok.szabad/kezmuves_komuves.md)
+  - [Kézműves: Molnár](../fortelyok.szabad/kezmuves_molnar.md)
+  - [Kézműves: Pék](../fortelyok.szabad/kezmuves_pek.md)
+  - [Kézműves: Szabó](../fortelyok.szabad/kezmuves_szabo.md)
+  - [Kézműves: Szakács](../fortelyok.szabad/kezmuves_szakacs.md)
+  - [Kézműves: Szűcs](../fortelyok.szabad/kezmuves_szucs.md)
 
 ### 🟥 Erős kiterjesztés
 
-Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsolódó fortélyok.
+Ezek olyan szakmák, amelyek speciális műhelyt/felszerelést igényelnek, vagy ahol a félkész munka használhatatlan vagy veszélyes. A fortély hiányában a kapcsolódó képzettségpróba nem dobható (auto-kudarc).
 
 - Fortélyok
   - [Kézműves: Fegyverkovács](../fortelyok.altalanos/kezmuves_fegyverkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
   - [Kézműves: Páncélkovács](../fortelyok.altalanos/kezmuves_pancelkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
 - Szabad Fortélyok
-  - [Kézműves: Ács](../fortelyok.szabad/kezmuves_acs.md)
-  - [Kézműves: Asztalos](../fortelyok.szabad/kezmuves_asztalos.md)
-  - [Kézműves: Cipész](../fortelyok.szabad/kezmuves_cipesz.md)
-  - [Kézműves: Cukrász](../fortelyok.szabad/kezmuves_cukrasz.md)
-  - [Kézműves: Cserző](../fortelyok.szabad/kezmuves_cserzo.md)
   - [Kézműves: Ékszerész](../fortelyok.szabad/kezmuves_ekszeresz.md)
-  - [Kézműves: Kötélgyártó](../fortelyok.szabad/kezmuves_kotelgyarto.md)
-  - [Kézműves: Kőműves](../fortelyok.szabad/kezmuves_komuves.md)
-  - [Kézműves: Kádár](../fortelyok.szabad/kezmuves_kadar.md)
   - [Kézműves: Kovács](../fortelyok.szabad/kezmuves_kovacs.md)
   - [Kézműves: Lakatos](../fortelyok.szabad/kezmuves_lakatos.md)
-  - [Kézműves: Molnár](../fortelyok.szabad/kezmuves_molnar.md)
-  - [Kézműves: Pék](../fortelyok.szabad/kezmuves_penzvero.md)
   - [Kézműves: Pénzverő](../fortelyok.szabad/kezmuves_penzvero.md)
-  - [Kézműves: Szabó](../fortelyok.szabad/kezmuves_szabo.md)
-  - [Kézműves: Szakács](../fortelyok.szabad/kezmuves_szakacs.md)
-  - [Kézműves: Szűcs](../fortelyok.szabad/kezmuves_szucs.md)
 
 ### Mesterbónuszok
 
