@@ -3528,9 +3528,7 @@ Lezárt állapotban (fiolában, tablettában) eddig áll el.
 
 | Módosító | Leírás |
 |----------|--------|
-| +2 | Plusz 1 komponens |
-| +3 | Plusz 1 hordozó közeg (étel/ital, légnemű, véráram) |
-| +3 | Több hordozó közeg, egyenként egyik sem mérgező - csak együtt, a szervezetben összeállva hatnak (külön-külön ártalmatlan, természetesnek látszó anyagok) |
+| +3 | Plusz 1 hordozó közeg (étel/ital, légnemű, véráram): a csatornák egyenként ártalmatlanok, csak együtt, a szervezetben összeállva hatnak (bináris méreg) |
 | +2 | Sűrű: kis mennyiség is elég 1 adaghoz |
 | +3 | Színtelen |
 | +3 | Szagtalan/ízetlen (egyben értendő) |
@@ -3587,9 +3585,7 @@ A méreg beazonosítása (Méregérzékelés után, vagy fennálló gyanú eset�
 Nehézség: 9
 
 Helyzetfüggő módosítók (a méreg tulajdonságai nehezítik):
--2: Plusz 1 komponens
--3: Plusz 1 hordozó közeg
--3: Több hordozó közeg, egyenként egyik sem mérgező - csak együtt hatnak
+-3: Plusz 1 hordozó közeg (bináris: a csatornák csak együtt hatnak)
 -3: Szagtalan/ízetlen
 -3: Félrevezető tünetek 3
 -6: Félrevezető tünetek 6
