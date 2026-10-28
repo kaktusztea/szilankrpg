@@ -64,20 +64,6 @@ Ez adja meg, hogy mennyire nehezen áll ellen a szervezet a méregnek, mennyire 
 
 Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsuk észben, hogy **az Erősség nem egyenlő a romboló hatással!** Léteznek például nagyon hatékony, `10`-es erősségű altatók is.
 
-Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
-
-#### Adag
-
-```
- 0: Normál adag
--1: Kis adag
-    Méregérzékelés próba: -1 büntetés
-+1: Nagy adag
-    Méregérzékelés próba: +1 bónusz
-```
-
-Vegyük figyelembe, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
-
 <br />
 
 ---
