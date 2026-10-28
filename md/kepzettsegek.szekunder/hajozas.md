@@ -43,7 +43,7 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 - [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk.
 - [Vezető: Hajóskapitány](../fortelyok.altalanos/vezeto_hajoskapitany.md) fortély: csoportos hajózás esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Térképészet](../fortelyok.szabad/terkepeszet.md): "A térkép szerint is veszélyes homokpadok vannak. Kormányos: jobbra, a sziget bal oldala felé, maradj szél alatt!". Az egyszerű tájékozódáshoz nem szükséges, ne legyünk szigorúak, de a speciális jelzések ismeretéhez kellhet.
 

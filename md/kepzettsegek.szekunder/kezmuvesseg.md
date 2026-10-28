@@ -27,12 +27,12 @@ Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemz�
 - [Mechanika](../fortelyok.altalanos/mechanika.md) fortély
 - [Műhelymester](../fortelyok.altalanos/muhelymester.md) fortély
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): az adott kézműves szakma magas szintű produktumainak hamisítása és felismerése.
 - [Mechanika](../fortelyok.altalanos/mechanika.md) (Kézműves:Fegyverkovács, Kézműves:Páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsolódó fortélyok.
 

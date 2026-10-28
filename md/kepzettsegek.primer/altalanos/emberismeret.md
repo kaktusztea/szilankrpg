@@ -30,7 +30,7 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 - [Befolyásolás](befolyasolas.md) képzettség
 - [Etikett](../../kepzettsegek.szekunder/etikett.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 Az alábbi Fortélyok a képzettség `3.szintjének` elérésekor vehetőek csak fel!
 - [Alkudozás](../../fortelyok.szabad/alkudozas.md): "Sajnálom uram, de ez **valódi** pamut, az árért, amit kínál, egy vak koldus sem adná oda."

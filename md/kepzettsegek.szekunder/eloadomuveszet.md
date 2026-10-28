@@ -25,7 +25,7 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 
 - [Vezető: Rendező](../fortelyok.altalanos/vezeto_rendezo.md) fortély: színésztársulat esetén bónuszt ad.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör
 - ❗ [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) ha érintett (Színjátszás, Irodalom, Éneklés esetén)

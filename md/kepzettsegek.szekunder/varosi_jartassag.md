@@ -33,12 +33,12 @@ Szereplőtipikus: **tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági fut
 
 Emlékezet, Intelligencia
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): Az adott környék ismerete sokat segít, nélküle az általános tapasztalatok dominálnak inkább.
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Az adott kultúrkör ismerete 🔆képes pótolni 🔆 a Helyismeret hiányát. Ha ez megvan, de az nem, akkor sem jár a levonás.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md): Egy adott titkos klán vagy szervezet belső működésének, szokásainak, hierarchiájának ismerete. Székhelyek, besúgók, informátorok fellelésének helyei.
 

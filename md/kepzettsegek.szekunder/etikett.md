@@ -21,12 +21,12 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 Érzékenység, Intelligencia, Önuralom, Emlékezet
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak (jár a `-3` levonás). Ha ismered, nincs gond.
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): a helyi celebritások, nemesi körökben forgó emberek ismerete
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Szertartás](../fortelyok.szabad/szertartas.md): Amely Kultúrköröket ismersz, azok egyes speciális szertartásait **Etikett** képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás.
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): "A vérnász során egyre több pengét kell elkerülni, a hetedik után hátulról is jöhet egy meglepetés."

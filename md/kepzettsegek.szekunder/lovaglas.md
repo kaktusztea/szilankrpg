@@ -28,7 +28,7 @@ Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad 
 - [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): csoportos lovas/földi alakzat vezetése esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hátas: (faj)](../fortelyok.szabad/hatas.md) (1 faj felvétele kötelező)
 

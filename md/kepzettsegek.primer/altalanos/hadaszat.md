@@ -27,7 +27,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 - Intelligencia
 - Emlékezet
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hadtáp](../../fortelyok.szabad/hadtap.md): "A hadtápot szét tudjuk húzni még 5 mérfölddel, de kettővel növelnünk kell a szállító szekerek számát naponta."
 - [Stratégia](../../fortelyok.szabad/strategia.md): "A hegyláncot tartani tudjuk, ha a 4. hadtest egy hét múlva megérkezik a folyópartra."
@@ -38,7 +38,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 - [Vezető: Léglovaskapitány](../../fortelyok.harci/vezeto_leglovaskapitany.md): "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
 - [Vezető: Testőrparancsnok](../../fortelyok.harci/vezeto_testorparancsnok.md): "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Történelemismeret](../../fortelyok.altalanos/tortenelemismeret.md): Ismered a régi háborúk hadászati emlékeit. "A IX. Zászlóháború idején P.sz. 2885-ben Siren4rban felbukkant Nyolcadik Vörös lobogó hordozója, Unn4m4li4r vyvern-lovasai alkalmazták először az alacsonyan repülő, mélységi beszivárgás módszerét."
 

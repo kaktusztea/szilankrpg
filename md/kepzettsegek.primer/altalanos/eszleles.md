@@ -35,7 +35,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 - Fortély: [Infralátás](../../fortelyok.erzekek/infralatas.md)
 - Fortély: [Villámgyors keresés/rejtés](../../fortelyok.altalanos/villamgyors.kereses.rejtes.md)
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Keresés/rejtés](../../fortelyok.altalanos/kereses_rejtes.md): Nyomok észrevétele/elrejtése városi környezetben. "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 

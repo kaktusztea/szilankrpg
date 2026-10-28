@@ -32,7 +32,7 @@ Intelligencia, Emlékezet
 - [Álcázás/álruha](alcazas_alruha.md) képzettség
 - [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 

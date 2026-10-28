@@ -44,7 +44,7 @@ Intelligencia, Érzékenység
 
 - [Emberismeret](emberismeret.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Alkudozás](../../fortelyok.szabad/alkudozas.md): "Micsoda? A felét nem éri! Félkegyelműnek tűnök talán?!"
 - [Bűvészet](../../fortelyok.szabad/buveszet.md): "Végtelen hatalmam megkettőzte az aranyok számát!"
@@ -53,7 +53,7 @@ Intelligencia, Érzékenység
 - [Megfélemlítés](../../fortelyok.altalanos/megfelemlites.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."
 - [Szónoklás](../../fortelyok.szabad/szonoklas.md): "Mit választotok? A hazug, kövér urat, aki soha nem fogott kaszát a kezébe, vagy engem, aki magam is egy folyómenti faluból származom?"
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Háziállatok idomítása](../../fortelyok.szabad/haziallatok_idomitasa.md): "Morzsi, térülj... fordulj!"
 - [Vadállat idomítása](../../fortelyok.szabad/vadallat_idomitasa.md) 🔁: "Táncolj Brumi!"

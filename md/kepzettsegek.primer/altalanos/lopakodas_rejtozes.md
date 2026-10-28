@@ -85,7 +85,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 - [Csoportos fizikai képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
 - [Vezető: Fejvadász strategis](../../fortelyok.harci/vezeto_fejvadasz_strategis.md) fortély: csoportos alakulatban lopakodás esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Tájtípus: barlangi](../../fortelyok.szabad/tajtipus_barlangi.md): Barlangi környezetben lopakodni. "Az a kristály a legapróbb rezgésre is leeshet."
 - [Tájtípus: dzsungel](../../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungel környezetben settenkedni. "A vörös pille alatt ne haladj el, rikoltani fog!"

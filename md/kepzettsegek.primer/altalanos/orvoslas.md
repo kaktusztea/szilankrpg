@@ -49,12 +49,12 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 
 A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINCS** Összhang, mert az csak a gyógyszer komponens beszerzésének követelménye.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 ⭕xyz. Ha nincs, törölni
 
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 ⭕xyz. Ha nincs, törölni
 

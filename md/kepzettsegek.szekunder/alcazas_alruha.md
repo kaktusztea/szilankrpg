@@ -38,7 +38,7 @@ Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 
 - [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)
 

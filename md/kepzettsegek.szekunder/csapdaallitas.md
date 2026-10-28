@@ -32,7 +32,7 @@ Magában foglalja a csapdák állítását és hatástalanítását is.
 
 Intelligencia, Önuralom
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Mechanika](../fortelyok.altalanos/mechanika.md): mechanikus csapdákat készíteni/hatástalanítani
 

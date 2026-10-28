@@ -19,7 +19,7 @@ A tudás szélesíthető a lenti, kiterjesztések alatt található [Szabad Fort
 
 Emlékezet, Intelligencia, Érzékenység
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Enélkül érvényes a `-3` levonás mindegyik meglevő művészeti ágra.
 - ❗ [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md): Udvari fok (ahol szükségesnek érezzük)
@@ -37,7 +37,7 @@ Emlékezet, Intelligencia, Érzékenység
 - [Zenélés: húros hangszerek](../fortelyok.szabad/zeneles_huros_hangszerek.md): Ismered, felismered a neves húros hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is.
 - [Zenélés: ütős hangszerek](../fortelyok.szabad/zeneles_utos_hangszerek.md): Ismered, felismered a ütős húros hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): Mozdulatok alapján felismersz egy adott belső táncstílust. Minél magasabb szintű próbát dobsz meg, annál mélyebb jelentések, árnyalatok válnak egyértelművé.
 

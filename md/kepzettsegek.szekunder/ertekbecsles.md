@@ -21,7 +21,7 @@ Híres ereklyék ismeretét is magában foglalja. Minél ritkább egy tárgy ann
 
 Emlékezet, Intelligencia
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): Már a hamis portéka is könnyebben feltűnik.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.

@@ -32,11 +32,11 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 
 - [Művészetismeret](muveszetismeret.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): valamelyik lenti képzőművészeti ágban - amelynek fortélya megvan karakterednek - képes vagy tudásodnak megfelelő szintű hamisítványokat létrehozni.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Ennek ismerete nélkül **nem** tudsz az adott kultúrkör stílusában alkotni.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.

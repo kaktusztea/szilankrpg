@@ -29,7 +29,7 @@ Az alábbi ismereteket nyújtja:
 
 - [Ellopni valamit, kirabolni valakit](../szituaciok/lopas_kirablas.md)
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
 

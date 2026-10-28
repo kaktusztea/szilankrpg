@@ -25,7 +25,7 @@ Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont
 
 Emlékezet, Intelligencia
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)

@@ -33,11 +33,11 @@ Emlékezet
 
 ⭕TODO⭕ Ha van kapcsolódó szituáció, akkor itt linkelni.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 ⭕TODO. Ha nincs, törölni⭕
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 ⭕TODO. Ha nincs, törölni.
 

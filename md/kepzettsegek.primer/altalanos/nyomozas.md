@@ -65,7 +65,7 @@ Intelligencia, Emlékezet
 - [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) → egy nyomozócsapat eszerint használja
 - Fortély: [Vezető: Nyomozó](../../fortelyok.altalanos/vezeto_nyomozo.md) →  csoportos nyomozás esetén bónuszt ad
 
-### 🟨  Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - ❗ [Helyismeret](../../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
 - [Építészet](../../fortelyok.altalanos/epiteszet.md): "Az a fal sokkal vastagabb, mint a másik!"

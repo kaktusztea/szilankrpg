@@ -38,7 +38,7 @@ A képzettség magában foglalja a következőket:
 
 - [Nyomok észrevétele, Nyomkövetés - természetben](../szituaciok/nyomok_nyomkovetes_termeszet.md)
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md): Nyomok észrevétele a természetben. "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 - [Nyomolvasás/eltűntetés](../fortelyok.altalanos/nyomolvasas_eltuntetes.md):
