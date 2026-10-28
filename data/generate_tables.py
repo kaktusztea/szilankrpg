@@ -23,6 +23,7 @@ from gen.fajok import generate_fajok  # noqa: E402
 from gen.aktiv_ful import generate_aktiv_ful  # noqa: E402
 from gen.fegyverek_v2 import generate_fegyverek_v2, generate_sebzesjelleg_pancel_matrix, generate_fegyver_extrak, generate_fegyver_idea_tabla, generate_tavfegyverek_v2  # noqa: E402
 from gen.naming_lint import lint as lint_naming  # noqa: E402
+from gen.kiterjesztes_check import kiterjesztes_sync_hibak  # noqa: E402
 
 # Generálási sorrend: a későbbiek az előzők kimenetére építhetnek
 GENERATORS = [
@@ -168,6 +169,19 @@ def validate_naming_convention():
         raise SystemExit(1)
 
 
+def validate_kiterjesztes_sync():
+    """Build-gate (2026-10-28): képzettség md kiterjesztés-szekciók ↔ kiterjesztesek.json szinkron.
+
+    Post-hoc (a kiterjesztesek.json kimenetét olvassa). Determinisztikus statikus szövegelemzés.
+    """
+    errors = kiterjesztes_sync_hibak()
+    if errors:
+        print("  ❌ Kiterjesztés md ↔ data layer eltérések (a képzettség md a source of truth):")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
+
+
 def main():
     force = '--force' in sys.argv
 
@@ -184,6 +198,7 @@ def main():
 
     validate_fortely_manover_refs()
     validate_id_hivatkozasok()
+    validate_kiterjesztes_sync()
     write_marker()   # Vite plugin freshness detection
     write_hash()     # a következő futás skip-ellenőrzéséhez
     print("Done.")
