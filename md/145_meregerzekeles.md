@@ -6,6 +6,8 @@ Ha a méregnek több hordozója van, mindegyikre külön próbá(k) dobható(ak)
 
 Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha bármelyik sikeres, a karakter kiszúrta a mérget.
 
+Érdemes lehet kiemelt helyzetben a KM által végeztetni a dobást, így a fix Nehézség ismeretében sem derül ki, hogy a próba sikeres volt-e, vagy sem.
+
 ---
 ### 1. Képzettségpróba: Mérgek + Érzékenység
 
@@ -22,6 +24,8 @@ Ezeket a **dobásmódosítókat** a KM adja hozzá az áldozat dobásához fejbe
 ```
 -3: Színtelen
 -3: Szagtalan
+
++3: büdös / feltűnő ízű
 
 -3: Kis adag
 -3: Kis adag és "Sűrű"
@@ -42,6 +46,8 @@ Ezeket a **dobásmódosítókat** a KM adja hozzá az áldozat dobásához fejbe
 ```
 -1: Színtelen
 -1: Szagtalan
+
++1: büdös / feltűnő ízű
 
 -1: Kis adag
 -1: Kis adag és "Sűrű"

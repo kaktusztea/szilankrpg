@@ -225,6 +225,7 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 +2: Sűrű: kis mennyiség is elég 1 adaghoz
 +3: Színtelen
 +3: Szagtalan/ízetlen (egyben értendő)
+-3: nem baj, ha büdös / feltűnő ízű
 ```
 
 ```

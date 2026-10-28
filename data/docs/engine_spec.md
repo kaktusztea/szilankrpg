@@ -3532,6 +3532,7 @@ Lezárt állapotban (fiolában, tablettában) eddig áll el.
 | +2 | Sűrű: kis mennyiség is elég 1 adaghoz |
 | +3 | Színtelen |
 | +3 | Szagtalan/ízetlen (egyben értendő) |
+| -3 | Nem baj, ha büdös / feltűnő ízű (a méreg érzékszervi feltűnősége vállalt - kedvezmény) |
 | +3 | Félrevezető tünetek 3 (ennyivel nő az azonosítás nehézsége) |
 | +6 | Félrevezető tünetek 6 (ennyivel nő az azonosítás nehézsége) |
 | +0 | Szabadban sem eloszló légméreg (nem nehezebb, de speciális fizikai közvetítő kell, pl. füstöt okádó labdacs, folyamatos utánpótlással) |
