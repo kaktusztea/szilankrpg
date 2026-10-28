@@ -62,16 +62,15 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
       lásd a több komponensű méreg szabályát)
 → (6) Kimutatási idő:  0 (1 nap)
 → (7) Elállás:         0  (1 holdfordulón belül)
-→ (8) Speciális:     +11
-     +4: 3 komponens (+2 +2)
-     +3: 2 hordozó közeg (levegő, folyadék)
-     +3: a komponensek csak együtt mérgezők
+→ (8) Speciális:      +6
+     +3: 2 hordozó közeg (levegő, folyadék),
+         egyenként ártalmatlan, csak együtt hatnak
      +3: szagtalan/ízetlen
      (a nem-sűrű: +0)
 ```
 
 ```
-Komplexitás: 33
+Komplexitás: 28
  → Biztos tudás: Mk 12
 ```
 
@@ -92,6 +91,156 @@ A hatást a vajákos eltolta egy nappal, hogy éjszaka jöjjön a vég, így a g
 🔆 Figyeljük meg, hogy a **Bomlási idő** itt nem szabadon választott: mivel a komponenseket `9` hónapon át elnyújtva adagolták, a korábbi adagoknak végig stabilnak kellett maradniuk a szervezetben, amíg a méreg összeállt. Ezért a Bomlási időt ez a "felépülési idő" kényszeríti `6` értékre - lásd a [Bomlási idő](141_mereggenerator.md#5-bomlási-idő) több komponensű szabályát.
 
 A vajákos a **Kimutatási idő** (`0`) és az **Elállás** (`0`) értékeivel "spórolt". Előbbivel némi kockázatot vállalt: nem számított a holttest alapos átvizsgálására, ezért `1 napig` még kimutatható lett volna a méreg. Az utolsó hatóanyag-komponens adagolása pedig gyorsan követte az előállítását (Elállás).
+
+---
+### ⚡ Szegény ember trónja 
+
+Gyenge emésztőrendszeri étel/italméreg.
+
+```
+→ (1) Erősség:         2
+→ (2) Súlyosság:       1 (Enyhe rosszullét, hányás)
+→ (3) Hatáskezdet:    +1 (1 napon belül - lassú)
+→ (4) Hatástartam:    +3 (pár óra, elhúzódó)
+→ (5) Bomlási idő:     2 (10 perc)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0 (1 holdfordulón belül)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 9
+```
+
+Olcsó, közönséges szer: hasi görcsöt, hasmenést okoz, de Életerőt nem fogyaszt. Sikeres Méregellenállás esetén is marad néhány óra enyhe rosszullét (ez a méreg Súlyosság-hatása, nem külön másodlagos hatás). Arra jó, hogy valakit jó időre helyhez kössön - őrszolgálatot, utazást ellehetetlenítsen. Kezdő méregkeverő is kikeveri.
+
+<br />
+
+---
+### ⚡ Érzéki sóhajok
+
+Légi alapú ajzószer.
+
+```
+→ (1) Erősség:         4
+→ (2) Súlyosság:       1 (Enyhe - vágykeltés)
+→ (3) Hatáskezdet:    +2 (1 héten belül is - itt gyors füstként)  Mk 5
+→ (4) Hatástartam:    +2 (rövid jelenet)
+→ (5) Bomlási idő:     1 (1 perc - égő füst)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         2 (1-2 év - szárított/gyertyába kötve)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 12
+ → Biztos tudás: Mk 5
+```
+
+Füstölőben, pipában vagy gyertyaviaszba keverve elégetve édeskés füstöt ad, amely szerelmi vágyat kelt. Rendszeres használata (heti 2-3) függőséget okoz, ami évek alatt szívelégtelenséghez vezethet.
+
+<br />
+
+---
+### ⚡ Szemmel verő
+
+Idegrendszeri fegyverméreg.
+
+```
+→ (1) Erősség:         6
+→ (2) Súlyosság:       3 (Kábultság, részleges bénulás)
+     +8: 1 fokkal enyhébb (látáskárosodás), maradandó
+→ (3) Hatáskezdet:    +4 (következő körben)  Mk 7
+→ (4) Hatástartam:    +2 (harc végéig)
+→ (5) Bomlási idő:     2 (10 perc a pengén)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0 (1 holdfordulón belül)
+→ (8) Speciális:      +2
+     +2: Sűrű (kis adag is elég)
+```
+
+```
+Komplexitás: 27
+ → Biztos tudás: Mk 7
+```
+
+Fegyverméreg, amely a sebzést követő körben kábulatot hoz, majd elhúzódva a látást rontja: bevérzett szem, kettős látás. Kezeletlenül a látáskárosodás tartóssá válik, és akkor sem múlik el, ha az áldozat egyébként ellenáll a méreg akut hatásának.
+
+<br />
+
+---
+### ⚡ Éber rémálom
+
+Idegrendszeri fegyverméreg, hallucinogén.
+
+```
+→ (1) Erősség:         5
+→ (2) Súlyosság:       3 (Kábultság)
+→ (3) Hatáskezdet:    +4 (következő körben)  Mk 7
+→ (4) Hatástartam:    +3 (pár óra)
+→ (5) Bomlási idő:     2 (10 perc)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0 (1 holdfordulón belül)
+→ (8) Speciális:      +2
+     +2: Sűrű
+```
+
+```
+Komplexitás: 19
+ → Biztos tudás: Mk 7
+```
+
+Fegyverméreg, amely kábulat után pár óra múlva erős, irracionális félelmet és hallucinációt okoz (az áldozat szörnyeket lát). A hallucinogén hatás a [Félelem](082_statuszok.md) státuszon keresztül jelenik meg.
+
+<br />
+
+---
+### ⚡ Vérzékeny vágás
+
+Keringési fegyverméreg.
+
+```
+→ (1) Erősség:         5
+→ (2) Súlyosság:       4 (Életveszély - elvérzés)
+→ (3) Hatáskezdet:    +5 (azonnal)  Mk 9
+→ (4) Hatástartam:    +3 (pár óra, gyógyításig)
+→ (5) Bomlási idő:     2 (10 perc a pengén)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         2 (1-2 év)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 21
+ → Biztos tudás: Mk 9
+```
+
+Azonnal ható fegyverméreg: a vér megalvadási képességét rontja, az áldozat a méreg hatása alatt szerzett minden sebből elvérzéssel fenyeget, amíg el nem múlik vagy el nem látják. Nem kiugróan erős (az alapanyag könnyen beszerezhető), de a folyamatos vérzés veszélyessé teszi. Az azonnali Hatáskezdet (`+5`) húzza fel a Komplexitást.
+
+<br />
+
+---
+### ⚡ Fullasztó
+
+ Keringési fegyverméreg.
+
+```
+→ (1) Erősség:         5
+→ (2) Súlyosság:       4 (Életveszély - fulladás)
+→ (3) Hatáskezdet:    +1 (1 jelenet - lassú)
+→ (4) Hatástartam:    +2 (rövid jelenet)
+→ (5) Bomlási idő:     2 (10 perc)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         2 (1-2 év)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 16
+ → Biztos tudás: Mk 0 (nincs biztos tudás követelmény)
+```
+
+Lassan, de folyamatosan ható fegyverméreg: a véráramba jutva rontja a vér oxigénmegkötő képességét, a ciklus végére súlyos légszomj, végül fulladás.
 
 ---
 
