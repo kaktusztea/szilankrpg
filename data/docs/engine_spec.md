@@ -2967,6 +2967,12 @@ Fortély yaml séma (data/schemas/fortely.yaml) - releváns generált mezők a f
   kp_perfok, ingyenes_perszint, többszörös_típus, többszörös_lista,
   leírás, kiterjeszti_normál, kiterjeszti_erős, fokok[], md_fájl
 
+  kiterjeszti (forrás-yaml, 2026-10-28): objektum-lista `{ képzettség: "<id>", leírás: "<szöveg>" }` a
+    `normál` és `erős` kulcs alatt (nem puszta id-lista). `leírás` opcionális (default ""), forrása a
+    kapcsolódó képzettség md "Normál/Erős kiterjesztés" listaeleme. A `fortelyok.json`
+    `kiterjeszti_normál/_erős` CSAK az id-listát viszi (string[], a webapp FortelyDetails így használja);
+    a `leírás` a `kiterjesztesek.json` entry-be kerül (l. §37.7).
+
   kiérdemelhető: boolean - ha true, a felvételi wizard-ban választható a "⭐ Kiérdemelt" opció
     true: szabad (mind), kiemelt (mind), misztikus: Mentálfonál
     false: harci, távharc, általános, érzékek, misztikus (többi)
@@ -3104,6 +3110,16 @@ Forrás: md/030_08_01_kepzettsegek_fortelyok_kapcsolata.md
 
 Egy fortély Normál vagy Erős kiterjesztésben kapcsolódhat egy képzettséghez (`tables/kiterjesztesek.json`).
 A képzettségpróba Előny/Hátrány szintje a kiterjesztő fortély **felvett fokából** adódik:
+
+`kiterjesztesek.json` entry (inverz mapping, kulcs = képzettség-id): `{ fortély (id), név, típus (normál/erős),
+maxfok, leírás }`. A `leírás` (2026-10-28) a kapcsolat szövege a kapcsolódó képzettség md-jéből, a fortély yaml
+`kiterjeszti` objektum-pár `leírás` mezőjén át (l. §35b). Üres, ha a md listaelemnek nincs tételes magyarázata.
+
+**Source of truth = a képzettség md "Normál/Erős kiterjesztés" szekciói.** A fortély yaml `kiterjeszti` ebből
+generálódik; a szinkront build-gate őrzi: `data/gen/kiterjesztes_check.py` (`generate_tables.py →
+validate_kiterjesztes_sync`, post-hoc a `kiterjesztesek.json`-ra). Eltérés (md-ben van/data-ban nincs, vagy
+szint-eltérés) → build hiba. Determinisztikus statikus szövegelemzés. Parse-szabály: a kiterjesztés-tétel a
+listaelem elején álló ELSŐ `fortelyok.*` link (a leírásban hivatkozott további linkek nem tételek).
 
 ```
 típus    fok            hatás

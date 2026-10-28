@@ -179,7 +179,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 
 ### Build pipeline
 - `generate_tables.py`: belépési pont (CLI + freshness + sorrend), a generátorok a `data/gen/` csomagban (Vite buildStart + prebuild)
-  - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful,fegyverek_v2}.py` · `gen/validators.py` (referenciális ellenőrzések) · `gen/naming_lint.py` (YAML naming build-gate)
+  - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful,fegyverek_v2}.py` · `gen/validators.py` (referenciális ellenőrzések) · `gen/naming_lint.py` (YAML naming build-gate) · `gen/kiterjesztes_check.py` (képzettség md ↔ kiterjesztesek.json szinkron build-gate, 2026-10-28)
   - **Séma validáció**: minden source entitás kulcshalmazát a `schemas/*.yaml`-hoz méri (ismeretlen kulcs / hiányzó kötelező mező → build hiba). Kötelezőség a séma megjegyzéseiből: `# opcionális` → elhagyható, `# generált` → a generátor adja hozzá
   - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
   - Marker fájl: `tables/.generated_marker` - Vite plugin ezt nézi freshness check-hez

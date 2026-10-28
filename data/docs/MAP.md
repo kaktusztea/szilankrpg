@@ -14,7 +14,8 @@ data/
   generate_tables.py         YAML→JSON belépési pont (Vite buildStart + prebuild futtatja)
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
                              fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate),
-                             hivatkozas (fortély/képzettség id-hivatkozás formátum + feloldó)
+                             hivatkozas (fortély/képzettség id-hivatkozás formátum + feloldó),
+                             kiterjesztes_check (képzettség md ↔ kiterjesztesek.json szinkron build-gate)
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (generate.markdown.py + lib/JinjaHandler.py - md fejezet-generálás)

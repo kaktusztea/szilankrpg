@@ -682,7 +682,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - **Primer** jelölés (ha primer képzettség)
   - **Próba**: dobható / nem dobható / ellenpróba
   - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
-  - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel, zöld=felvett / szürke=hiányzó)
+  - **Kiterjeszti Normál / Kiterjeszti Erős**: a kiterjesztő fortélyok két külön sorban, szintfüggő szín-jelzéssel. Felvett (fok ≥ 1) = zöld (`fort-req-met`, `--success`); hiányzó Normál = sárga (`kit-hiany-normal`, `--warning` - a próba Hátrány-2-vel még dobható); hiányzó Erős = piros (`kit-hiany-eros`, `--error` - a próba nem dobható). Ha a kiterjesztés-tételnek van leírása (`kiterjesztesek.json` `leírás`), a fortély neve kattintható (`kit-nev-info`, pontozott aláhúzás) → `PopupOverlay` a kapcsolat leírásával (`kit-info-popup`). Leírás nélkül a név nem kattintható. (2026-10-28)
   - **Szituációk**: kapcsolódó szituáció linkek (🔗 prefix, kék, új tab). Forrás: `data/sources/szituacio_mapping.yaml` (`képzettség:<id>` → `kepzettsegek.json` `kapcsolódó_szituációk`; `képzettség:<id>/<elem>` → `kapcsolódó_szituációk_elem`, a karakter eleme szerint, pl. Harcmodor: Közelharc → Belharc folyamata). Fortélynál ugyanez (`fortély:<id>` → `fortelyok.json` `kapcsolódó_szituációk`, a fortély info-panelen, pl. Úszás → Víz alatt bírni).
 - **Szabályrendszer link** (🔗): mindig látható a sor jobb oldalán (nem az accordion-ban), mindkét módban
 - **🎲 gomb**: csak Játék módban, csak accordion nyitva, a sor headerben jelenik meg
