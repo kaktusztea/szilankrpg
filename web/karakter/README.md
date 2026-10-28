@@ -48,7 +48,7 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Tulajdonságok**: koppintással popup-ból állíthatók (-5..+7), faj-korlátok ellenőrzésével
 - **Képzettségek**: csoportokba rendezve, szint popup-pal (1-15), TSz limit jelzéssel
 - **Fortélyok**: fok pöttyök (●/○), követelmény-ellenőrzés (piros jelzés nem teljesüléskor - a követelmény lehet tulajdonság, képzettség vagy másik fortély megléte is), többszörös fortélyok kezelése, egyedi Szabad fortély felvétele (saját név + kiterjesztés választás)
-- **Fegyverek**: példányonként Mesterfegyver fok, Idea, Anyag beállítás
+- **Fegyverek**: példányonként Mesterfegyver fok, Idea, Anyag beállítás; a fegyver chipen a számított **Ár** is megjelenik (ár-alap × anyag × Idea szorzók)
 - **Páncél**: struktúra, fémalapanyag, kidolgozottság, sisak, végtag, méret - SFÉ és MGT automatikus számítás
 - **KP sáv**: a tab-bar felett folyamatosan mutatja a maradék KP-t és a primer keretet
 
@@ -57,21 +57,21 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Aktív fül**: fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes), taktikák kombó-szabályokkal, harci helyzetek, manőverek, státuszok - minden választás azonnal hat a Harc fülre
 - **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, TÉ, SFÉ, VÉ csökkenés, MP boxok a fejlécben, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
   - **Kezdeményezés dobás**: a KÉ boxra koppintva `KÉ + k20` dobás nagy számmal; az utolsó 3 dobás a KÉ boxban látszik
-  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés. Ha a fegyver Erő-követelményét (nehéz: Erő 2, súlyos: Erő 3) nem éred el, Hátrány jelenik meg a dobáson. Manuális dobás is lehetséges (saját kocka értékkel). Az ablakban közvetlenül **Taktika** és **Harci helyzet** választó gombok is vannak, így a dobás előtt a fülváltás nélkül módosíthatod az aktív taktikát/helyzetet. Ha az aktív taktika nem tehet támadó dobást (pl. tisztán védekező), az ablak ezt jelzi.
+  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva - első fázisban aktív hatások és Előny/Hátrány picker, második fázisban `TÉ + k20` dobás eredménnyel. Ha a k20 ≥ 16 → Előny+1, k20 = 20 → Előny+2 jelzés; k20 = 1 → narratív hátrány (kritikus kudarc) jelzés. Ha a fegyver Erő-követelményét (nehéz: Erő 2, súlyos: Erő 3) nem éred el, Hátrány jelenik meg a dobáson. A dobáshoz **Statikus bónuszok** chippel kézi (eseti) módosító is beüthető (pl. egy infóban olvasott „+5 TÉ"). Manuális dobás is lehetséges (saját kocka értékkel). Az ablakban közvetlenül **Taktika** és **Harci helyzet** választó gombok is vannak, így a dobás előtt a fülváltás nélkül módosíthatod az aktív taktikát/helyzetet. Ha az aktív taktika nem tehet támadó dobást (pl. tisztán védekező), az ablak ezt jelzi.
   - **Sebzésdobás**: a Támadó dobás eredménye után a „Sebzés" gombbal indítható - SP bontás (alap, erő, MF, taktika, fortély), statikus bónuszok, Előny/Hátrány kocka picker és újradobás gomb. Az Átütés értéke is kijelzésre kerül (ha > 0).
     - **Ellenfél páncél**: kötelező választó (csupasz / puha / bőr / lánc / pikkely-lemez) - a sebzésjelleg (szúró/vágó/zúzó) és a páncél alapján módosítja az SP-t. Amíg nincs páncél választva, a dobás nem indítható.
     - Ha a fegyver az adott móddal nem sebez (pl. bola, háló, lasszó), „Ez a fegyver nem sebez" jelzés jelenik meg.
   - **SFÉ infó**: az SFÉ boxra koppintva részletes páncél infó popup nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT bontás).
   - **VÉ csökkentés**: a VÉ csökkenés boxban a `-N` gombokkal csökkentheted a védőértéket (támadásonként), `+1` gombbal visszaállíthatsz egyet, `⟲` nullázza. A label/érték koppintással a csökkentések története is látszik. Ha aktív taktika szorzót ad a VÉ-csökkentésre (pl. Roham / Öngyilkos roham ×2), a VÉ-csökkentés ablakban megjelenik a szorzó és a forrás-taktika.
   - **Manőver pont (MP)**: az MP box mutatja az aktuális/max manőver pontot; `-1` gombbal csökkentheted, `⟲` visszaállítja a maximumra.
-  - **Manőver végrehajtása** (⚔️ gomb): az Aktív fülön indítható manőver dobás. Először mód választó (Aktív = én hajtom végre / Passzív = ellenem hajtják végre). Ha a manővernek van követelménye, egy 0. lépés jelzi, teljesülnek-e (Normál hiány → Hátrány a dobásra, Erős hiány → nem végezhető). Aktív módban a popup tartalmaz egy **Helyzetfüggő módosítók** gombot (dobás-oldali módosítók: pl. Erő-különbség, fegyverhossz, pajzs, körülmények - minden manőverhez a globális „Újrapróbálkozás" és „Körülmények" is), és egy **MP** gombot a Manőver Pont felhasználásához. Zöld = könnyít, piros = nehezít; egyes körülmények „letilt" jelzése azt jelenti, hogy a manőver az adott helyzetben nem kísérelhető meg. Az Ellenpróba `dobás vs célszám` kijelzés után fázisonként (M/V/E) rögzíted az eredményt - a végeredmény Sikeres/Sikertelen.
+  - **Manőver végrehajtása** (⚔️ gomb): az Aktív fülön indítható manőver dobás. Először mód választó (Aktív = én hajtom végre / Passzív = ellenem hajtják végre). Ha a manővernek van követelménye, egy 0. lépés jelzi, teljesülnek-e (Normál hiány → Hátrány a dobásra, Erős hiány → nem végezhető). Aktív módban a popup tartalmaz egy **Helyzetfüggő módosítók** gombot (dobás-oldali módosítók: pl. Erő-különbség, fegyverhossz, pajzs, körülmények - minden manőverhez a globális „Újrapróbálkozás" és „Körülmények" is), egy **Statikus bónuszok** chipet a kézi (eseti) módosítóhoz, és egy **MP** gombot a Manőver Pont felhasználásához. Zöld = könnyít, piros = nehezít; egyes körülmények „letilt" jelzése azt jelenti, hogy a manőver az adott helyzetben nem kísérelhető meg. Az Ellenpróba `dobás vs célszám` kijelzés után fázisonként (M/V/E) rögzíted az eredményt - a végeredmény Sikeres/Sikertelen.
   - **Harci akrobatika ki/be**: session kapcsoló (Igen/Nem) - letiltva ha hiányzik a fortély, nem megfelelő a páncél (struktúra vagy túl magas MGT), vagy kevés az Akrobatika képzettség szint (koppintásra megjelenik a hiányzó feltétel)
   - **Páncél viselve ki/be**: session kapcsoló (Igen/Nem) - viseled-e épp a páncélt (hat az SFÉ-re, MGT-re és a Harci akrobatika elérhetőségére)
 - **ÉP táblázat / Sebesülés**: S1-S4 rubrikák, TÉ levonás automatika
   - **Sebesülés rögzítése**: típus (S/V/Z/FP) + érték választás (1-15, bővíthető ▾ nagyobb értékekre)
   - **Gyógyulás**: ÉP vagy FP + érték választás (csak a meglévő sebekre)
 - **Távharc**: CÉ + célpont VÉ kalkulátor szorzó-pickerekkel (mozgás, méret, szél stb.). A távfegyver kártyákon a CÉ mellett az SP (sebzéspont) érték is látszik.
-  - **Célzó dobás**: a CÉ/VÉ box-ra koppintva - első fázisban aktív hatások, Előny/Hátrány picker és forrásaik (harci helyzetek, taktikák, státuszok, fortélyok), valamint közvetlen **Taktika** és **Harci helyzet** választó gombok; második fázisban `CÉ + k20` dobás a kiszámolt VÉ-vel összevetve → Találat / Nem talált jelzés. Találat után SP (sebzés) dobás is indítható, kötelező **Ellenfél páncél** választóval (a sebzésjelleg × páncél alapján módosítja az SP-t, ugyanúgy mint a közelharci Sebzés ablakban). Manuális dobás is lehetséges.
+  - **Célzó dobás**: a CÉ/VÉ box-ra koppintva - első fázisban aktív hatások, Előny/Hátrány picker és forrásaik (harci helyzetek, taktikák, státuszok, fortélyok), valamint közvetlen **Taktika** és **Harci helyzet** választó gombok; második fázisban `CÉ + k20` dobás a kiszámolt VÉ-vel összevetve → Találat / Nem talált jelzés. A dobáshoz **Statikus bónuszok** chippel kézi módosító is beüthető. Találat után SP (sebzés) dobás is indítható, kötelező **Ellenfél páncél** választóval (a sebzésjelleg × páncél alapján módosítja az SP-t, ugyanúgy mint a közelharci Sebzés ablakban). Manuális dobás is lehetséges.
   - **Lövéskitérés**: védekező eszköz - válaszd ki a bejövő fegyvert és a távolságot, az app kiszámolja a célszámot (fegyver kategória + távolság). "Kitérés" gombbal `Akrobatika+Gyorsaság + k10` dobás a célszám ellen → siker (kitértél) / sikertelen (a lövész jöhet)
 
 ### Aktív fül
@@ -111,7 +111,7 @@ A Harc fülön a **VÉ csökkenés** label-re vagy értékre koppintva megjeleni
 
 ### Képzettség info panel (Játék mód)
 
-A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok (zöld = megvan, piros = nincs meg), és alul 🔗 szabály link + 🎲 Képzettségpróba dobás gomb.
+A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok és alul 🔗 szabály link + 🎲 Képzettségpróba dobás gomb. A kiterjesztő fortélyok két sorban (Kiterjeszti Normál / Kiterjeszti Erős), szín-jelzéssel: zöld = a fortély megvan, sárga = hiányzó Normál kiterjesztés (a próba Hátrány-2-vel még dobható), piros = hiányzó Erős kiterjesztés (a próba nem dobható). Ha egy kiterjesztő fortély neve aláhúzott, rákoppintva felugrik a kapcsolat leírása (hogyan terjeszti ki az adott képzettséget).
 
 ### Lebegő 🎲 próba-hub (Játék mód)
 
@@ -119,7 +119,7 @@ Játék módban a képernyő sarkában megjelenik egy lebegő **🎲** gomb, ami
 
 - **Tulajdonságpróba** / **Képzettségpróba** indítása (ugyanaz a dobás-ablak, mint a füleken)
 - **KÉ** dobás helyben (a 🎲 hubon belül, nem vált fület)
-- **TÉ** (Támadó dobás) / **CÉ** (Célzó dobás) gyors indítása - a hub a megfelelő fülre vált és megnyitja a dobás-ablakot
+- **TÉ** (Támadó dobás) / **CÉ** (Célzó dobás) / **Manőver** gyors indítása - a hub a megfelelő fülre vált és megnyitja a dobás-ablakot
 
 A FAB automatikusan elrejtőzik, ha bármilyen más popup/ablak nyitva van, hogy ne zavarjon.
 
@@ -182,11 +182,11 @@ A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára kop
 
 A Harc fül fegyver táblázatában a fegyver **nevére** koppintva részletes infó popup nyílik: harcmodor szint, anyag, Idea, extrák, és a fegyver harcértékei aktoronként (TÉ/VÉ/SP/Átütés/Tám), elsődleges/másodlagos jelzéssel.
 
-> A Harcértékek fülön minden fegyverhez megadható egy **becenév** (pl. „Apám kardja"), ami a megadott alaptípus helyett jelenik meg a fegyvertáblában és az infó popupban.
+> A Harcértékek fülön minden fegyverhez megadható egy **becenév** (pl. „Apám kardja"), ami a megadott alaptípus helyett jelenik meg a fegyvertáblában, az infó popupban és a fegyverválasztó dropdownban is.
 
 ### Fegyver Extrák (💡)
 
-A Támadó és Sebzés dobás ablakban (ha a fegyvernek van extrája) megjelenik egy **💡 Extrák** gomb. Rákoppintva listázza a fegyver extráit státusz-jelzéssel: aktív / inaktív / KM dönt. A gomb pulzál és mutatja az aktív extrák számát, ha a pillanatnyi harci helyzetben valamelyik extra épp hat.
+A dobás-ablakokban (Támadó, Sebzés, Célzó, Manőver - ha a fegyvernek van extrája) megjelenik egy **💡 Extrák** gomb. Rákoppintva listázza a fegyver extráit státusz-jelzéssel: aktív / inaktív / KM dönt. A gomb pulzál és mutatja az aktív extrák számát, ha a pillanatnyi harci helyzetben valamelyik extra épp hat.
 
 ### Mágia akarata segédlet
 
