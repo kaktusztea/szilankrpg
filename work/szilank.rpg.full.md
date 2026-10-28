@@ -84,7 +84,7 @@ Mágiában kisebb/nagyobb mellékhatások jelennek meg, különösen nagy hatalm
 ---
 ## Szociális ismeretek
 
-Az **Etikett**, **Befolyásolás** és **Emberismeret** képzettségek fedik le ezt az ismerethalmazt, de a meggyőzés, megfélemlítés, átverés jellegű szituációk nem intézhetőek el tisztán egy **Befolyásolás** vs. **Emberismeret** kockadobással - rengeteg múlik a KM és a játékos közti párbeszéden, illetve az elképzelt karaktereken is. A dobást kapcsolódó fortélyok még tovább könnyíthetik, de a szerepjáték részt nem pótolhatják. Bővebben lásd a [Befolyásolás](md/kepzettsegek.primer/altalanos/befolyasolas.md) képzettség leírását, azon belül a [Szerepjátékos módosító](md/kepzettsegek.primer/altalanos/befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3) bemutatását.
+Az **Etikett**, **Befolyásolás** és **Emberismeret** képzettségek fedik le ezt az ismerethalmazt, de a meggyőzés, megfélemlítés, átverés jellegű szituációk nem intézhetőek el tisztán egy **Befolyásolás** vs. **Emberismeret** kockadobással - rengeteg múlik a KM és a játékos közti párbeszéden, illetve az elképzelt karaktereken is. A dobást kapcsolódó fortélyok még tovább könnyíthetik, de a szerepjáték részt nem pótolhatják. Bővebben lásd a [Befolyásolás](md/kepzettsegek.primer/altalanos/befolyasolas.md) képzettség leírását, azon belül a [Szerepjátékos módosító](md/kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3) bemutatását.
 
 A rendszer tehát a **_szerep-játékra_** helyezi a hangsúlyt - szemben például egy számítógépes játékkal, ahol minden szociális szituáció dobással kerül elintézésre. Az élő játék egyik legnagyobb előnyét fontosnak tartottuk kiemelten kezelni.
 
@@ -482,7 +482,7 @@ https://github.com/kaktusztea/szilankrpg/
 ---
 ### 14. [Méregrendszer](140_meregrendszer.md)
 
-- [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
+- [Méreggenerátor](141_mereggenerator.md)
 - [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md)
 - [Méreg tulajdonságai](143_mereg_tulajdonsagai.md)
 - [Méregellenállás próba](144_meregellenallas_proba.md)
@@ -5197,6 +5197,26 @@ Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi
 +0: Azonos nyelven beszéltek
 ```
 
+#### ⚜️  Szerepjátékos módosító
+
+```
+-3: a játékos nem feccöl bele túl sok
+    energiát, átlátszó szöveggel próbálkozik
+ 0: átlagos teljesítmény
++3: kreatív ötletek, jól kijátszott karakter
+```
+
+A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
+
+A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy dobásmódosítót.
+
+Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
+<br />
+
+---
+### Előny/Hátrány dobásmódosítók
+
 Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
 
 ---
@@ -5238,22 +5258,6 @@ Befolyásolás + Intelligencia
             vs
 Emberismeret + Érzékenység
 ```
-
-### 🔆 Szerepjátékos módosító
-
-```
--3; 0; +3
-```
-
-A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
-
-A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy módosítót (lásd fenn). A játékos ezt hozzáadja a **Befolyásolás** képzettségpróbájához.
-
-Például a játékos nem feccöl bele túl sok energiát sem a karaktere megszemélyesítésébe, sem az ötletbe, amivel át akarja verni a másik felet, tehát valami nagyon átlátszó hazugságot akar megetetni, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
-
-Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
-
-<br />
 
 ---
 ### Mesterbónuszok
@@ -5901,6 +5905,10 @@ Ismered a különböző hatású és erősségű mérgek kikeverésének módjá
  0: Szükséges komponensek mind megvannak
 ```
 
+#### ⚜️ Narratív bónuszok
+
+A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék hatása, vagy szimpatikus mágiával megtámogatott vér, haj komponensek dobásnövelő hatásait itt nem részletezzük. Ezek Helyzetfüggő módosítóit a mágiarendszer írja le, vagy narratív formában a KM dönt róluk.
+
 ---
 ### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
 
@@ -5929,7 +5937,7 @@ Emlékezet, Önuralom, Intelligencia
 ---
 ### Szintek
 
-Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_meregkeveres_szabalyai.md#5-bomlási-idő), [Hatáskezdet](../../141_meregkeveres_szabalyai.md#3-hatáskezdet), [Kimutatási idő](../../141_meregkeveres_szabalyai.md#6-kimutatási-idő)
+Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_mereggenerator.md#5-bomlási-idő), [Hatáskezdet](../../141_mereggenerator.md#3-hatáskezdet), [Kimutatási idő](../../141_mereggenerator.md#6-kimutatási-idő)
 
 ### Mesterbónuszok
 
@@ -5994,10 +6002,24 @@ Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illet
 +3: Porok / nagyító / lámpák (ha segítenek)
 ```
 
+#### ⚜️ Szerepjátékos módosító
+
+```
+-3: a játékos nem feccöl bele túl sok
+    energiát, inkább a kockadobást várja
+ 0: átlagos teljesítmény
++3: kreatív ötletek, jól kijátszott karakter
+```
+
+A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
+
+A játékos élőszóban elmondja, hogy mit, hogyan vizsgál át a nyomozás helyszínén, kit kérdez ki. Az ötletek, a kreativitás, a szerep kijátszásának minőségétől függően a KM ad egy dobásmódosítót.
+
+Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
+<br />
+
 ---
-
-
-
 ### Domináns Tulajdonságok
 
 Intelligencia, Emlékezet
@@ -6029,23 +6051,6 @@ Intelligencia, Emlékezet
 - [Információ szerzés valakitől](../../szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem azt a nevet? Mit tudhatok róla?](../../szituaciok/ismerem_mit_tudhatok_rola.md)
 - [Nyomok értelmezése, Nyomkövetés - városi környezetben](../../szituaciok/nyomok_nyomkovetes_varos.md#-nyomok-értelmezése-városi-környezetben)
-
-### 🔆 Szerepjátékos módosító
-
-
-```
--3; 0; +3
-```
-
-A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
-
-A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót.  A játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
-
-Ha a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan megkaphatja a `-3` büntetést.
-
-Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
-
-<br />
 
 ### Mesterbónuszok
 
@@ -11685,7 +11690,7 @@ A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen 
 
 Példák `21` feletti célszámokra:
 - Aktuális Aura számításánál Aurahangolás képzettségpróba ⭕LINK⭕
-- [Méreg komplexitása](141_meregkeveres_szabalyai.md#méreg-komplexitása)
+- [Méreg komplexitása](141_mereggenerator.md#méreg-komplexitása)
 
 <br />
 
@@ -32830,7 +32835,7 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 # Méregrendszer
 
 ## Keverés, mérgek
-### [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
+### [Méreggenerátor](141_mereggenerator.md)
 
 ### [Méreg alapanyagok beszerzése](142_mereg_alapanyagok_beszerzese.md)
 
@@ -32859,11 +32864,17 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 
 ---
 ---
-## File: md/141_meregkeveres_szabalyai.md
+## File: md/141_mereggenerator.md
 
-## Méregkeverés szabályai
+## Méreggenerátor
 
-### → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
+A Szilánk rendszerében - a [Fegyvergenerátorhoz](068_10_fegyvergenerator.md) hasonlóan a mérgek előállítása is determinisztikus, generált módon történik. Minden a [Példamérgek](148_peldamergek.md) fejezetben található vegyület az itt lent leírt mechanikával készült. Amennyiben a játékhoz nem találod elegendőnek az ott bemutatott mérgeket, nyugodtan alkothatsz újat a generátorral.
+
+Előfordul, hogy a képzetlen karakter egy vajákos boltjába tér be, ahol elsorolja az elkészíttetni kívánt méreg tulajdonságait. Ez esetben a bolt tulajdonosának kell - a leírtaknak megfelelően - összeállítania a komponenseket és dobnia a képzettségpróbát. Előfordulhat az is, hogy a kért kombináció meghaladja az illető tudását.
+
+<br />
+
+## Méreg kikeverése → Képzettségpróba: [Mérgek](kepzettsegek.primer/altalanos/mergek.md) + Intelligencia
 
 ```
 Nehézség = Méreg Komplexitása
@@ -32871,20 +32882,24 @@ Nehézség = Méreg Komplexitása
 
 A **dobás rejtett**, tehát a játékos csak a méreg alkalmazásakor szembesül az esetleges balsikerrel (nem hat a szer).
 
+Rendkívül magas Komplexitású mérgek esetén már narratív bónuszok megszerzése is indokolt lehet. Mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék, esetleg szimpatikus mágiával megtámogatva a célpont vére, haja - ezek "Helyzetfüggő módosító" bónuszt adhatnak a képzettségpróbánál.
+
 <br />
 
-### Méreg jelleg csoportok
+## Méreg jelleg csoportok
 
 - Étel és italmérgek
 - Légimérgek
 - Kontaktmérgek
 - Fegyvermérgek
 
-### Méreg összetevő csoportok
+## Méreg összetevő csoportok
 
 - állati
 - növényi
 - ásványi (szervetlen)
+
+Beszerzésüknek [Alkímia+Vajákosság képzettség követelménye](142_mereg_alapanyagok_beszerzese.md) van.
 
 <br />
 
@@ -32920,6 +32935,7 @@ Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsu
 Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
 
 #### Adag
+
 ```
  0: Normál adag
 -1: Kis adag
@@ -32996,7 +33012,7 @@ Az aktiválódás után meddig tart a szer hatása.
 
 ```
 +0: 1 kör
-+1: 2 kör 
++1: 2 kör
 +2: harc végéig;
     rövid jelenet (harcon kívül)
 +3: pár óra (harcon kívül)
@@ -33022,6 +33038,24 @@ Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
 
 Mk: Mérgek biztos tudás követelmény
 ```
+
+#### Több komponensű méreg
+
+```
+E = Első komponens beadásának ideje
+U = Utolsó komponens beadásának ideje
+
+Bomlási idő >=
+    (U és E közti idő) +
+    Hatáskezdet
+```
+
+Ha egy méreg [több komponensből áll](#8-speciális), amelyeket időben elnyújtva kell beadni, akkor a Bomlási idő **nem lehet kisebb**, mint ami az első és az utolsó komponens beadása közt eltelt időt, plusz a [Hatáskezdet](#3-hatáskezdet) késleltetése.
+
+Magyarázat: a korábban beadott komponenseknek a szervezetben (vagy a hordozóban) ki kell tartaniuk, amíg a méreg összeáll és hatni kezd - különben külön-külön lebomlanak, mielőtt a hatás beindulna. Így a magas költségű **Bomlási időt** nem lehet egy gyorsan ható, utolsó komponensre "terhelve" megspórolni.
+
+Ez akkor is igaz, ha a komponensek egyenként ártalmatlanok, és csak együtt hatnak.
+
 <br />
 
 ---
@@ -33062,9 +33096,9 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 +2: Plusz 1 komponens
 +3: Plusz 1 hordozó közeg
     (étel/ital, légnemű, véráram)
-+3: Több hordozó közegből
-    csak 1 a méreg hatóanyag,
-    a többi természetes alapanyag
++3: Több hordozó közeg, egyenként egyik
+    sem mérgező - csak együtt.
+    A szervezetben összeállva hatnak.
 ```
 
 ```
@@ -33090,7 +33124,7 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 ---
 ### Hány adag méreg készíthető?
 
-Az alapanyagok beszerezhetőségétől függ. Ha megvan az **Alkímia+Vajákosság** követelmény és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
+Az alapanyagok beszerezhetőségétől függ. Ha megvan az [Alkímia+Vajákosság követelmény](142_mereg_alapanyagok_beszerzese.md) és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
 
 ---
 ### Fajok különbözősége
@@ -33184,7 +33218,7 @@ Figyeljünk rá, hogy csak addig a szintig tud alapanyagokat eladni, amennyit a 
 
 # Méreg tulajdonságai
 
-Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [Méregkeverés szabályai](141_meregkeveres_szabalyai.md) oldalon olvasható.
+Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [Méreggenerátor](141_mereggenerator.md) oldalon olvasható.
 
 ```
 → Név
@@ -33229,7 +33263,7 @@ Nehézség = Méreg Erőssége
 
 🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
 
-🔆 [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc):  az esetleges [Másodlagos hatás](141_meregkeveres_szabalyai.md#másodlagos-hatás) sem hat rád egyáltalán
+🔆 [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc):  az esetleges [Másodlagos hatás](141_mereggenerator.md#másodlagos-hatás) sem hat rád egyáltalán
 
 🔆 **Fontos**: Méregellenállást az **Erősség** (NEM ~~komplexitás~~) ellen kell dobni!
 
@@ -33317,9 +33351,9 @@ A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 -2: Plusz 1 komponens
 -3: Plusz 1 hordozó közeg
     (étel/ital, légnemű, véráram)
--3: Több hordozó közegből
-    csak 1 a méreg hatóanyag,
-    a többi természetes alapanyag
+-3: Több hordozó közeg, egyenként egyik
+    sem mérgező - csak együtt.
+    A szervezetben összeállva hatnak.
 ```
 
 ```
@@ -33424,22 +33458,24 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 → (3) Hatáskezdet:    +1 (1 nappal eltolva)
 → (4) Hatástartam:    +5 (hónapok)
 → (5) Bomlási idő:     6  (Örökké)
-→ (6) Kimutatási idő:  4 (Hatás után nem kimutatható)
-→ (7) Elállás:         4  (örökké)
+     (9 hónapos "felépülési" idő miatt,
+      lásd a több komponensű méreg szabályát)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0  (1 holdfordulón belül)
 → (8) Speciális:     +11
      +4: 3 komponens (+2 +2)
      +3: 2 hordozó közeg (levegő, folyadék)
-     +3: csak 1 komponensben van hatóanyag,
+     +3: a komponensek csak együtt mérgezők
      +3: szagtalan/ízetlen
      (a nem-sűrű: +0)
 ```
 
 ```
-Komplexitás: 41
+Komplexitás: 33
  → Biztos tudás: Mk 12
 ```
 
-Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas Komplexitáson és a biztos tudás követelményeken.
+Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen szinten, ünnepelt poéta vagy dalnok lehetne. Ez meg is látszik a rendkívül magas Komplexitáson és a biztos tudás követelményeken - egy ilyen mérget csak a legnagyobb méregkeverők képesek kikeverni.
 
 ⚜️ "Az öreg király rajongott az orchideákért. Tavaszra és nyárra is volt egy-egy különleges, ritka fajtája végtelen udvarának kertjében. Tavasszal leszakajtotta a legszebbet a narancsszínből, nyáron a bíborszínből. Mindkettő hálószobáját díszítette.
 
@@ -33452,6 +33488,10 @@ Fia nem lévén, unokaöccse lépett helyébe, ki - úgy mondják - már nagyon 
 🔆 A fenti méreget `3` darab komponensre bontotta a déli vajákos: a király borába (ital hordozó) adagolta hetente egyszer az elmúlt 9 hónapban a szagtalan/ízetlen alapmérget, amely önmagában ártalmatlan, így nem is kimutatható, viszont stabilan felgyűlt a szervezetben. A maradék 2 komponens a 2 orchidea (légi hordozó) virágpora volt, melyet a király belélegzett - hisz mindet a hálószobájába tette. Az első leszakajtása után még nem történt semmi, a hatáshoz mind a kettőre (plusz a borban levő alapméregre) szükség volt.
 
 A hatást a vajákos eltolta egy nappal, hogy éjszaka jöjjön a vég, így a gyanú sem ébredt fel senkiben. Az Erősséget (`5`) bőven elégnek vélte - a király Egészsége (`-1`) már amúgy is igen gyenge lábakon állt.
+
+🔆 Figyeljük meg, hogy a **Bomlási idő** itt nem szabadon választott: mivel a komponenseket `9` hónapon át elnyújtva adagolták, a korábbi adagoknak végig stabilnak kellett maradniuk a szervezetben, amíg a méreg összeállt. Ezért a Bomlási időt ez a "felépülési idő" kényszeríti `6` értékre - lásd a [Bomlási idő](141_mereggenerator.md#5-bomlási-idő) több komponensű szabályát.
+
+A vajákos a **Kimutatási idő** (`0`) és az **Elállás** (`0`) értékeivel "spórolt". Előbbivel némi kockázatot vállalt: nem számított a holttest alapos átvizsgálására, ezért `1 napig` még kimutatható lett volna a méreg. Az utolsó hatóanyag-komponens adagolása pedig gyorsan követte az előállítását (Elállás).
 
 ---
 
@@ -33629,7 +33669,7 @@ Klasszikus szociális helyzetek, melyekben az egyik fél különböző verbális
 
 🔆 Tartsuk észben, hogy ez egy **szerep-játék**, nem pedig társasjáték, így nem kell mindent a kocka döntsön el. A KM dönthet úgy, hogy a játékos meggyőző, - vagy ellenkezőleg - rendkívül bugyuta próbálkozása miatt egyáltalán nincs szükség dobásra. Ilyenkor automatikus siker és automatikus kudarc is megtörténhet.
 
-🔆 Opcionális befolyásoló tényező: [Befolyásolás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/befolyasolas.md#-szerepjátékos-módosító).
+🔆 Opcionális befolyásoló tényező: [Befolyásolás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
 ### ⚜️ Átverés, hazudozás
 
@@ -33639,7 +33679,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Intelligencia
 - Normál kiterjesztés: [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
-- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#-szerepjátékos-módosító), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
+- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
 
 `VS`
 
@@ -34357,7 +34397,7 @@ Hátas            SP
 
 Sokszor futunk bele karakterekbe, akikből megpróbálunk kihúzni némi információt. Nyilván nem mindenkit ejtettek a fejére, gyakran nem akarnak választ adni holmi jöttment idegeneknek. Ilyenkor jön jól a **Kihallgatás** fortély.
 
-🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító).
+🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
 ---
 ### 🔆 Kihallgatás szituáció
@@ -35088,7 +35128,7 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
 
 Példákhoz lásd e kapcsolódó fortélyok ↑ **Nyomozás** képzettséghez kapcsolódó leírásait.
 
-🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító)
+🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3)
 
 <br />
 
