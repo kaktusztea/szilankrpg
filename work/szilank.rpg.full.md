@@ -5228,7 +5228,7 @@ Intelligencia, Érzékenység
 
 - [Emberismeret](emberismeret.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Alkudozás](../../fortelyok.szabad/alkudozas.md): "Micsoda? A felét nem éri! Félkegyelműnek tűnök talán?!"
 - [Bűvészet](../../fortelyok.szabad/buveszet.md): "Végtelen hatalmam megkettőzte az aranyok számát!"
@@ -5237,7 +5237,7 @@ Intelligencia, Érzékenység
 - [Megfélemlítés](../../fortelyok.altalanos/megfelemlites.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."
 - [Szónoklás](../../fortelyok.szabad/szonoklas.md): "Mit választotok? A hazug, kövér urat, aki soha nem fogott kaszát a kezébe, vagy engem, aki magam is egy folyómenti faluból származom?"
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Háziállatok idomítása](../../fortelyok.szabad/haziallatok_idomitasa.md): "Morzsi, térülj... fordulj!"
 - [Vadállat idomítása](../../fortelyok.szabad/vadallat_idomitasa.md) 🔁: "Táncolj Brumi!"
@@ -5313,7 +5313,7 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 - [Befolyásolás](befolyasolas.md) képzettség
 - [Etikett](../../kepzettsegek.szekunder/etikett.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 Az alábbi Fortélyok a képzettség `3.szintjének` elérésekor vehetőek csak fel!
 - [Alkudozás](../../fortelyok.szabad/alkudozas.md): "Sajnálom uram, de ez **valódi** pamut, az árért, amit kínál, egy vak koldus sem adná oda."
@@ -5453,7 +5453,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 - Fortély: [Infralátás](../../fortelyok.erzekek/infralatas.md)
 - Fortély: [Villámgyors keresés/rejtés](../../fortelyok.altalanos/villamgyors.kereses.rejtes.md)
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Keresés/rejtés](../../fortelyok.altalanos/kereses_rejtes.md): Nyomok észrevétele/elrejtése városi környezetben. "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
@@ -5641,18 +5641,18 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 - Intelligencia
 - Emlékezet
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hadtáp](../../fortelyok.szabad/hadtap.md): "A hadtápot szét tudjuk húzni még 5 mérfölddel, de kettővel növelnünk kell a szállító szekerek számát naponta."
 - [Stratégia](../../fortelyok.szabad/strategia.md): "A hegyláncot tartani tudjuk, ha a 4. hadtest egy hét múlva megérkezik a folyópartra."
-- [Vezető: Alakzatparancsnok](../../fortelyok.harci/vezeto_alakzatparancsnok.md): "Lándzsások vonalba, megakasztásra készülj!" ; "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lősz, Mocsok, tied a kocsis.""
+- [Vezető: Alakzatparancsnok](../../fortelyok.harci/vezeto_alakzatparancsnok.md): "Lándzsások vonalba, megakasztásra készülj!" ; "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lősz, Mocsok, tied a kocsis."
 - [Vezető: Fejvadász strategis](../../fortelyok.harci/vezeto_fejvadasz_strategis.md): "Ketten a tetőre, magitor savfelhőt a teraszra. Mortel, indulj!"
 - [Vezető: Íjászparancsnok](../../fortelyok.harci/vezeto_ijaszparancsnok.md) "Fedezőtüzet a visszavonuló lovasság mögé!"
 - [Vezető: Lovaskapitány](../../fortelyok.harci/vezeto_lovaskapitany.md): "Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!"
 - [Vezető: Léglovaskapitány](../../fortelyok.harci/vezeto_leglovaskapitany.md): "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
 - [Vezető: Testőrparancsnok](../../fortelyok.harci/vezeto_testorparancsnok.md): "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Történelemismeret](../../fortelyok.altalanos/tortenelemismeret.md): Ismered a régi háborúk hadászati emlékeit. "A IX. Zászlóháború idején P.sz. 2885-ben Siren4rban felbukkant Nyolcadik Vörös lobogó hordozója, Unn4m4li4r vyvern-lovasai alkalmazták először az alacsonyan repülő, mélységi beszivárgás módszerét."
 
@@ -5811,7 +5811,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 - [Csoportos fizikai képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
 - [Vezető: Fejvadász strategis](../../fortelyok.harci/vezeto_fejvadasz_strategis.md) fortély: csoportos alakulatban lopakodás esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Tájtípus: barlangi](../../fortelyok.szabad/tajtipus_barlangi.md): Barlangi környezetben lopakodni. "Az a kristály a legapróbb rezgésre is leeshet."
 - [Tájtípus: dzsungel](../../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungel környezetben settenkedni. "A vörös pille alatt ne haladj el, rikoltani fog!"
@@ -6029,7 +6029,7 @@ Intelligencia, Emlékezet
 - [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) → egy nyomozócsapat eszerint használja
 - Fortély: [Vezető: Nyomozó](../../fortelyok.altalanos/vezeto_nyomozo.md) →  csoportos nyomozás esetén bónuszt ad
 
-### 🟨  Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - ❗ [Helyismeret](../../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
 - [Építészet](../../fortelyok.altalanos/epiteszet.md): "Az a fal sokkal vastagabb, mint a másik!"
@@ -6164,12 +6164,12 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 
 A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINCS** Összhang, mert az csak a gyógyszer komponens beszerzésének követelménye.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 ⭕xyz. Ha nincs, törölni
 
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 ⭕xyz. Ha nincs, törölni
 
@@ -8837,11 +8837,11 @@ Emlékezet
 
 ⭕TODO⭕ Ha van kapcsolódó szituáció, akkor itt linkelni.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 ⭕TODO. Ha nincs, törölni⭕
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 ⭕TODO. Ha nincs, törölni.
 
@@ -8965,7 +8965,7 @@ Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 
 - [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)
 
@@ -9110,7 +9110,7 @@ Intelligencia, Emlékezet
 - [Álcázás/álruha](alcazas_alruha.md) képzettség
 - [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 
@@ -9221,7 +9221,7 @@ Magában foglalja a csapdák állítását és hatástalanítását is.
 
 Intelligencia, Önuralom
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Mechanika](../fortelyok.altalanos/mechanika.md): mechanikus csapdákat készíteni/hatástalanítani
 
@@ -9320,7 +9320,7 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 
 - [Vezető: Rendező](../fortelyok.altalanos/vezeto_rendezo.md) fortély: színésztársulat esetén bónuszt ad.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör
 - ❗ [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) ha érintett (Színjátszás, Irodalom, Éneklés esetén)
@@ -9427,7 +9427,7 @@ Híres ereklyék ismeretét is magában foglalja. Minél ritkább egy tárgy ann
 
 Emlékezet, Intelligencia
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): Már a hamis portéka is könnyebben feltűnik.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.
@@ -9532,12 +9532,12 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 Érzékenység, Intelligencia, Önuralom, Emlékezet
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak (jár a `-3` levonás). Ha ismered, nincs gond.
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): a helyi celebritások, nemesi körökben forgó emberek ismerete
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Szertartás](../fortelyok.szabad/szertartas.md): Amely Kultúrköröket ismersz, azok egyes speciális szertartásait **Etikett** képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás.
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): "A vérnász során egyre több pengét kell elkerülni, a hetedik után hátulról is jöhet egy meglepetés."
@@ -9644,7 +9644,7 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 - [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk.
 - [Vezető: Hajóskapitány](../fortelyok.altalanos/vezeto_hajoskapitany.md) fortély: csoportos hajózás esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Térképészet](../fortelyok.szabad/terkepeszet.md): "A térkép szerint is veszélyes homokpadok vannak. Kormányos: jobbra, a sziget bal oldala felé, maradj szél alatt!". Az egyszerű tájékozódáshoz nem szükséges, ne legyünk szigorúak, de a speciális jelzések ismeretéhez kellhet.
 
@@ -9747,11 +9747,11 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 
 - [Művészetismeret](muveszetismeret.md) képzettség
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): valamelyik lenti képzőművészeti ágban - amelynek fortélya megvan karakterednek - képes vagy tudásodnak megfelelő szintű hamisítványokat létrehozni.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Ennek ismerete nélkül **nem** tudsz az adott kultúrkör stílusában alkotni.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
@@ -9854,36 +9854,39 @@ Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemz�
 - [Mechanika](../fortelyok.altalanos/mechanika.md) fortély
 - [Műhelymester](../fortelyok.altalanos/muhelymester.md) fortély
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
+
+A fortély hiányában a kapcsolódó képzettségpróba `Hátrány-2`-vel dobható: egy hozzáértő kézműves laikusként is nekikezdhet, csak ügyetlenebbül.
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): az adott kézműves szakma magas szintű produktumainak hamisítása és felismerése.
 - [Mechanika](../fortelyok.altalanos/mechanika.md) (Kézműves:Fegyverkovács, Kézműves:Páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz
+- Szabad Fortélyok
+  - [Kézműves: Ács](../fortelyok.szabad/kezmuves_acs.md)
+  - [Kézműves: Asztalos](../fortelyok.szabad/kezmuves_asztalos.md)
+  - [Kézműves: Cipész](../fortelyok.szabad/kezmuves_cipesz.md)
+  - [Kézműves: Cserző](../fortelyok.szabad/kezmuves_cserzo.md)
+  - [Kézműves: Cukrász](../fortelyok.szabad/kezmuves_cukrasz.md)
+  - [Kézműves: Kádár](../fortelyok.szabad/kezmuves_kadar.md)
+  - [Kézműves: Kötélgyártó](../fortelyok.szabad/kezmuves_kotelgyarto.md)
+  - [Kézműves: Kőműves](../fortelyok.szabad/kezmuves_komuves.md)
+  - [Kézműves: Molnár](../fortelyok.szabad/kezmuves_molnar.md)
+  - [Kézműves: Pék](../fortelyok.szabad/kezmuves_pek.md)
+  - [Kézműves: Szabó](../fortelyok.szabad/kezmuves_szabo.md)
+  - [Kézműves: Szakács](../fortelyok.szabad/kezmuves_szakacs.md)
+  - [Kézműves: Szűcs](../fortelyok.szabad/kezmuves_szucs.md)
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
-Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsolódó fortélyok.
+Ezek olyan szakmák, amelyek speciális műhelyt/felszerelést igényelnek, vagy ahol a félkész munka használhatatlan vagy veszélyes. A fortély hiányában a kapcsolódó képzettségpróba nem dobható (auto-kudarc).
 
 - Fortélyok
   - [Kézműves: Fegyverkovács](../fortelyok.altalanos/kezmuves_fegyverkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
   - [Kézműves: Páncélkovács](../fortelyok.altalanos/kezmuves_pancelkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
 - Szabad Fortélyok
-  - [Kézműves: Ács](../fortelyok.szabad/kezmuves_acs.md)
-  - [Kézműves: Asztalos](../fortelyok.szabad/kezmuves_asztalos.md)
-  - [Kézműves: Cipész](../fortelyok.szabad/kezmuves_cipesz.md)
-  - [Kézműves: Cukrász](../fortelyok.szabad/kezmuves_cukrasz.md)
-  - [Kézműves: Cserző](../fortelyok.szabad/kezmuves_cserzo.md)
   - [Kézműves: Ékszerész](../fortelyok.szabad/kezmuves_ekszeresz.md)
-  - [Kézműves: Kötélgyártó](../fortelyok.szabad/kezmuves_kotelgyarto.md)
-  - [Kézműves: Kőműves](../fortelyok.szabad/kezmuves_komuves.md)
-  - [Kézműves: Kádár](../fortelyok.szabad/kezmuves_kadar.md)
   - [Kézműves: Kovács](../fortelyok.szabad/kezmuves_kovacs.md)
   - [Kézműves: Lakatos](../fortelyok.szabad/kezmuves_lakatos.md)
-  - [Kézműves: Molnár](../fortelyok.szabad/kezmuves_molnar.md)
-  - [Kézműves: Pék](../fortelyok.szabad/kezmuves_penzvero.md)
   - [Kézműves: Pénzverő](../fortelyok.szabad/kezmuves_penzvero.md)
-  - [Kézműves: Szabó](../fortelyok.szabad/kezmuves_szabo.md)
-  - [Kézműves: Szakács](../fortelyok.szabad/kezmuves_szakacs.md)
-  - [Kézműves: Szűcs](../fortelyok.szabad/kezmuves_szucs.md)
 
 ### Mesterbónuszok
 
@@ -10003,7 +10006,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 - [Vezető: Tudósprofesszor](../fortelyok.altalanos/vezeto_tudosprofesszor.md) fortély: csoportos tudományos munka esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Asztrológia](../fortelyok.szabad/asztrologia.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
 - [Gazdálkodás](../fortelyok.szabad/gazdalkodas.md): "A birtok idén már nyereséges volt köszönhetően a 12 marhának, amit tavaly vettünk a Szőlőshegyi özvegytől."
@@ -10013,7 +10016,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
   - "Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni."
 - [Térképészet](../fortelyok.szabad/terkepeszet.md): Térképet készítesz. "Elkészültem a kastély körüli dombok térképével, a magasságvonalakon látszik, hogy kemény mászás vár arra, aki nem a főúton szándékozik bemenni."
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a torony pár hónap és leomlik."
 - [Mechanika](../fortelyok.altalanos/mechanika.md): "Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés."
@@ -10124,7 +10127,7 @@ Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad F
 - [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
 - [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md) fortély: csoportos légi hátas alakzat vezetése esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hátas](../fortelyok.szabad/hatas.md) (1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)
 
@@ -10237,10 +10240,10 @@ Próba dobható.
 
 ### Kapcsolódik
 
-- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#normál-kiterjesztés) próbál tudást kutatni, felhasználni.
+- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#-normál-kiterjesztés) próbál tudást kutatni, felhasználni.
 - [Vezető: Bölcsészprofesszor](../fortelyok.altalanos/vezeto_bolcseszprofesszor.md) fortély: csoportos kutatómunka, gondolkodás esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Az adott, kapcsolódó **Kultúrkör** ismerete sokszor (nem mindig) szükséges.
 - ❗ [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott, kapcsolódó **Ősi Kultúrkör** ismerete néha (nem mindig) szükséges, akkor is csak [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md) fortéllyal együtt.
@@ -10256,14 +10259,13 @@ Próba dobható.
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (adott tájtípusra jellemző élővilág, földrajz ismerete)
 - [Heraldika](../fortelyok.szabad/heraldika.md): "Ez a címer egy - már kihalt - kyr házé, akik Sogron egyházának voltak erős szövetségesei a hatodkorban."
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért."
 - [Stratégia](../fortelyok.szabad/strategia.md): "Kevesen tudják, hogy a legutóbbi Zászlóháború döntő csatájában a párás idő okozta a t0roni S0gron papok összhangjainak elvesztését, amely Antoh szolgáinak irányába billentette a mérleget."
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Élettan](../fortelyok.altalanos/elettan.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
 - [Hivatalnok](../fortelyok.szabad/hivatalnok.md): "Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani."
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is.
+- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni.", "Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért."; Hivatalnokként specializálódtál, értesz a jogrendszerhez is.
 - [Mechanika](../fortelyok.altalanos/mechanika.md): Mechanikus zárak készítése. **Nem** helyettesíti a [Zárnyitás](zarnyitas.md) képzettséget
 - [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md): Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés.
 - [Belső síkok lényeinek ismerete](../fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md) 🔁 Ismered az adott lénycsoport fajait, alfajait, azok jellemzőit, képességeit - a képzettség szintjének megfelelő mértékben.
@@ -10367,9 +10369,9 @@ Az alábbi ismereteket nyújtja:
 
 - [Ellopni valamit, kirabolni valakit](../szituaciok/lopas_kirablas.md)
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
-- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
+- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki (majdnem ugyanazt) az aranyórát."
 
 ---
 ### Próbadobás menete
@@ -10466,7 +10468,7 @@ Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad 
 - [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): csoportos lovas/földi alakzat vezetése esetén bónuszt ad.
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Hátas: (faj)](../fortelyok.szabad/hatas.md) (1 faj felvétele kötelező)
 
@@ -10713,7 +10715,7 @@ A tudás szélesíthető a lenti, kiterjesztések alatt található [Szabad Fort
 
 Emlékezet, Intelligencia, Érzékenység
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Enélkül érvényes a `-3` levonás mindegyik meglevő művészeti ágra.
 - ❗ [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md): Udvari fok (ahol szükségesnek érezzük)
@@ -10731,7 +10733,7 @@ Emlékezet, Intelligencia, Érzékenység
 - [Zenélés: húros hangszerek](../fortelyok.szabad/zeneles_huros_hangszerek.md): Ismered, felismered a neves húros hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is.
 - [Zenélés: ütős hangszerek](../fortelyok.szabad/zeneles_utos_hangszerek.md): Ismered, felismered a ütős húros hangszeren játszó előadóművészeket, ismered a neves darabokat, jártas vagy az ilyen hangszerek jellemzőiben is.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): Mozdulatok alapján felismersz egy adott belső táncstílust. Minél magasabb szintű próbát dobsz meg, annál mélyebb jelentések, árnyalatok válnak egyértelművé.
 
@@ -11084,7 +11086,7 @@ A képzettség magában foglalja a következőket:
 
 - [Nyomok észrevétele, Nyomkövetés - természetben](../szituaciok/nyomok_nyomkovetes_termeszet.md)
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md): Nyomok észrevétele a természetben. "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 - [Nyomolvasás/eltűntetés](../fortelyok.altalanos/nyomolvasas_eltuntetes.md):
@@ -11197,7 +11199,7 @@ Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont
 
 Emlékezet, Intelligencia
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
@@ -11311,12 +11313,12 @@ Szereplőtipikus: **tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági fut
 
 Emlékezet, Intelligencia
 
-### Normál kiterjesztés
+### 🟨 Normál kiterjesztés
 
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): Az adott környék ismerete sokat segít, nélküle az általános tapasztalatok dominálnak inkább.
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Az adott kultúrkör ismerete 🔆képes pótolni 🔆 a Helyismeret hiányát. Ha ez megvan, de az nem, akkor sem jár a levonás.
 
-### Erős kiterjesztés
+### 🟥 Erős kiterjesztés
 
 - [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md): Egy adott titkos klán vagy szervezet belső működésének, szokásainak, hierarchiájának ismerete. Székhelyek, besúgók, informátorok fellelésének helyei.
 
@@ -12452,7 +12454,7 @@ Vannak bizonyos bázis képzettségek, amelyek alaptudását sok [Szabad Fortél
 
 ## Kézműves tárgyak Ideái
 
-Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemzünk. Ez a szint függ a létrehozó mester [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettségének szintjétől. Természetesen jártasnak kell lenned a képzettséget kiterjesztő adott [kézműves fortélyban](kepzettsegek.szekunder/kezmuvesseg.md#er%C5%91s-kiterjeszt%C3%A9s) is.
+Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemzünk. Ez a szint függ a létrehozó mester [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettségének szintjétől. Természetesen jártasnak kell lenned a képzettséget kiterjesztő adott [kézműves fortélyban](kepzettsegek.szekunder/kezmuvesseg.md#-er%C5%91s-kiterjeszt%C3%A9s) is.
 
 ### Biztos tudás szintek
 
@@ -12680,7 +12682,7 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 - [Kézműves: Kovács](fortelyok.szabad/kezmuves_kovacs.md)
 - [Kézműves: Lakatos](fortelyok.szabad/kezmuves_lakatos.md)
 - [Kézműves: Molnár](fortelyok.szabad/kezmuves_molnar.md)
-- [Kézműves: Pék](fortelyok.szabad/kezmuves_penzvero.md)
+- [Kézműves: Pék](fortelyok.szabad/kezmuves_pek.md)
 - [Kézműves: Pénzverő](fortelyok.szabad/kezmuves_penzvero.md)
 - [Kézműves: Szabó](fortelyok.szabad/kezmuves_szabo.md)
 - [Kézműves: Szakács](fortelyok.szabad/kezmuves_szakacs.md)
@@ -13924,7 +13926,7 @@ Vezető professzorként koordinálod az alád tartozó bölcsészek munkáját.
 ---
 ### Alapeset
 
-A [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#normál-kiterjesztés) próbál tudást kutatni, felhasználni.
+A [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#-normál-kiterjesztés) próbál tudást kutatni, felhasználni.
 
 ---
 ### 1. fok
@@ -14110,7 +14112,7 @@ Vezető tudósprofesszorként koordinálod az alád tartozó nyomozók munkájá
 ---
 #### Bónusz
 
-A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#normál-kiterjesztés) próbál tudást kutatni, felhasználni.
+A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#-normál-kiterjesztés) próbál tudást kutatni, felhasználni.
 
 ---
 ### 1. fok
@@ -17749,6 +17751,21 @@ Magasabb szinten egyéb vasból és acélból készült szerkezetek, például a
 ## 🟣 Kézműves: Molnár
 
 Malomban dolgozol, lisztet és különböző kalászosok feldolgozását végzed.
+
+### Kiterjeszti ezeket
+
+- [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
+
+---
+
+
+---
+---
+## File: md/fortelyok.szabad/kezmuves_pek.md
+
+## 🟣 Kézműves: Pék
+
+Kenyér, péksütemény és egyéb sült tésztafélék készítése kovászból vagy élesztős tésztából. Kemencédet féltve őrzöd az éhes csavargóktól, macskáktól, kutyáktól.
 
 ### Kiterjeszti ezeket
 
@@ -32932,20 +32949,6 @@ Ez adja meg, hogy mennyire nehezen áll ellen a szervezet a méregnek, mennyire 
 
 Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsuk észben, hogy **az Erősség nem egyenlő a romboló hatással!** Léteznek például nagyon hatékony, `10`-es erősségű altatók is.
 
-Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
-
-#### Adag
-
-```
- 0: Normál adag
--1: Kis adag
-    Méregérzékelés próba: -1 büntetés
-+1: Nagy adag
-    Méregérzékelés próba: +1 bónusz
-```
-
-Vegyük figyelembe, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
-
 <br />
 
 ---
@@ -32976,7 +32979,13 @@ Az ilyen tulajdonság szintén Komplexitást emel.
 +0: nincs másodlagos hatás
 +2: 2 fokkal enyhébb Súlyosság
 +4: 1 fokkal enyhébb Súlyosság
+
++6: 2 fokkal enyhébb Súlyosság,
+    maradandó a Hatástartam lejárta után is
++8: 1 fokkal enyhébb Súlyosság,
+    maradandó a Hatástartam lejárta után is
 ```
+
 ⚡ Példa: `+4` Komplexitásért cserébe egy halálos méreg is Életveszélyes állapotot okoz - sikeres próba esetén is.
 
 <br />
@@ -33090,14 +33099,10 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 ---
 ### (8) Speciális
 
-
-
 ```
-+2: Plusz 1 komponens
 +3: Plusz 1 hordozó közeg
     (étel/ital, légnemű, véráram)
-+3: Több hordozó közeg, egyenként egyik
-    sem mérgező - csak együtt.
+    Egyenként egyik sem mérgező, csak együtt.
     A szervezetben összeállva hatnak.
 ```
 
@@ -33105,6 +33110,7 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 +2: Sűrű: kis mennyiség is elég 1 adaghoz
 +3: Színtelen
 +3: Szagtalan/ízetlen (egyben értendő)
+-3: nem baj, ha büdös / feltűnő ízű
 ```
 
 ```
@@ -33261,11 +33267,28 @@ Egy kész méreg az alábbi jellemzőkkel írható le. Részletes leírásuk a [
 Nehézség = Méreg Erőssége
 ```
 
-🔆 Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
-
-🔆 [Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc):  az esetleges [Másodlagos hatás](141_mereggenerator.md#másodlagos-hatás) sem hat rád egyáltalán
-
 🔆 **Fontos**: Méregellenállást az **Erősség** (NEM ~~komplexitás~~) ellen kell dobni!
+
+---
+### Helyzetfüggő módosítók
+
+Ezeket a **dobásmódosítókat** a KM adja hozzá az áldozat dobásához fejben, hogy ne "szivárogjon" ki információ.
+
+```
++1: Kis adag
+-1: Nagy adag
+```
+
+Vegyük figyelembe, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
+
+---
+### Bónuszok
+
+Fortély: [Méregálló](fortelyok.altalanos/meregallo.md) bónuszt ad
+
+[Kiemelt siker](010_05_04_tulajdonsagproba.md#kiemelt-sikerkudarc):  az esetleges [Másodlagos hatás](141_mereggenerator.md#másodlagos-hatás) sem hat rád egyáltalán - a maradandó sem.
+
+
 
 ---
 
@@ -33286,6 +33309,8 @@ Ha a méregnek több hordozója van, mindegyikre külön próbá(k) dobható(ak)
 
 Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha bármelyik sikeres, a karakter kiszúrta a mérget.
 
+Érdemes lehet kiemelt helyzetben a KM által végeztetni a dobást, így a fix Nehézség ismeretében sem derül ki, hogy a próba sikeres volt-e, vagy sem.
+
 ---
 ### 1. Képzettségpróba: Mérgek + Érzékenység
 
@@ -33297,9 +33322,17 @@ Ez a próba csak akkor dobható, ha a karakter rendelkezik [Mérgek](kepzettsege
 
 #### Helyzetfüggő módosítók
 
+Ezeket a **dobásmódosítókat** a KM adja hozzá az áldozat dobásához fejben, hogy ne "szivárogjon" ki információ.
+
 ```
 -3: Színtelen
 -3: Szagtalan
+
++3: büdös / feltűnő ízű
+
+-3: Kis adag
+-3: Kis adag és "Sűrű"
++3: Nagy adag
 ```
 
 ---
@@ -33311,15 +33344,17 @@ Célszám: 4 (Átlagos)
 
 #### Helyzetfüggő módosítók
 
+Ezeket a **dobásmódosítókat** a KM adja hozzá az áldozat dobásához fejben, hogy ne "szivárogjon" ki információ.
+
 ```
- 0: Normál adag
--1: Kis adag
-+1: Nagy adag
-
--1: Sűrű (azonos hatás, fele adag)
-
 -1: Színtelen
 -1: Szagtalan
+
++1: büdös / feltűnő ízű
+
+-1: Kis adag
+-1: Kis adag és "Sűrű"
++1: Nagy adag
 ```
 
 ---
@@ -33348,16 +33383,16 @@ A  [Méregérzékelés](145_meregerzekeles.md) **után** történik, vagy ha má
 A méreg egyes tulajdonságaitól függően nehezedhet a próbadobás.
 
 ```
--2: Plusz 1 komponens
 -3: Plusz 1 hordozó közeg
     (étel/ital, légnemű, véráram)
--3: Több hordozó közeg, egyenként egyik
-    sem mérgező - csak együtt.
+    Egyenként egyik sem mérgező, csak együtt.
     A szervezetben összeállva hatnak.
 ```
 
 ```
 -3: Szagtalan/ízetlen (egyben értendő)
++3: büdös / feltűnő ízű
+
 -3: Félrevezető tünetek 3
 -6: Félrevezető tünetek 6
 ```
@@ -33462,16 +33497,15 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
       lásd a több komponensű méreg szabályát)
 → (6) Kimutatási idő:  0 (1 nap)
 → (7) Elállás:         0  (1 holdfordulón belül)
-→ (8) Speciális:     +11
-     +4: 3 komponens (+2 +2)
-     +3: 2 hordozó közeg (levegő, folyadék)
-     +3: a komponensek csak együtt mérgezők
+→ (8) Speciális:      +6
+     +3: 2 hordozó közeg (levegő, folyadék),
+         egyenként ártalmatlan, csak együtt hatnak
      +3: szagtalan/ízetlen
      (a nem-sűrű: +0)
 ```
 
 ```
-Komplexitás: 33
+Komplexitás: 28
  → Biztos tudás: Mk 12
 ```
 
@@ -33492,6 +33526,156 @@ A hatást a vajákos eltolta egy nappal, hogy éjszaka jöjjön a vég, így a g
 🔆 Figyeljük meg, hogy a **Bomlási idő** itt nem szabadon választott: mivel a komponenseket `9` hónapon át elnyújtva adagolták, a korábbi adagoknak végig stabilnak kellett maradniuk a szervezetben, amíg a méreg összeállt. Ezért a Bomlási időt ez a "felépülési idő" kényszeríti `6` értékre - lásd a [Bomlási idő](141_mereggenerator.md#5-bomlási-idő) több komponensű szabályát.
 
 A vajákos a **Kimutatási idő** (`0`) és az **Elállás** (`0`) értékeivel "spórolt". Előbbivel némi kockázatot vállalt: nem számított a holttest alapos átvizsgálására, ezért `1 napig` még kimutatható lett volna a méreg. Az utolsó hatóanyag-komponens adagolása pedig gyorsan követte az előállítását (Elállás).
+
+---
+### ⚡ Szegény ember trónja 
+
+Gyenge emésztőrendszeri étel/italméreg.
+
+```
+→ (1) Erősség:         2
+→ (2) Súlyosság:       1 (Enyhe rosszullét, hányás)
+→ (3) Hatáskezdet:    +1 (1 napon belül - lassú)
+→ (4) Hatástartam:    +3 (pár óra, elhúzódó)
+→ (5) Bomlási idő:     2 (10 perc)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0 (1 holdfordulón belül)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 9
+```
+
+Olcsó, közönséges szer: hasi görcsöt, hasmenést okoz, de Életerőt nem fogyaszt. Sikeres Méregellenállás esetén is marad néhány óra enyhe rosszullét (ez a méreg Súlyosság-hatása, nem külön másodlagos hatás). Arra jó, hogy valakit jó időre helyhez kössön - őrszolgálatot, utazást ellehetetlenítsen. Kezdő méregkeverő is kikeveri.
+
+<br />
+
+---
+### ⚡ Érzéki sóhajok
+
+Légi alapú ajzószer.
+
+```
+→ (1) Erősség:         4
+→ (2) Súlyosság:       1 (Enyhe - vágykeltés)
+→ (3) Hatáskezdet:    +2 (1 héten belül is - itt gyors füstként)  Mk 5
+→ (4) Hatástartam:    +2 (rövid jelenet)
+→ (5) Bomlási idő:     1 (1 perc - égő füst)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         2 (1-2 év - szárított/gyertyába kötve)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 12
+ → Biztos tudás: Mk 5
+```
+
+Füstölőben, pipában vagy gyertyaviaszba keverve elégetve édeskés füstöt ad, amely szerelmi vágyat kelt. Rendszeres használata (heti 2-3) függőséget okoz, ami évek alatt szívelégtelenséghez vezethet.
+
+<br />
+
+---
+### ⚡ Szemmel verő
+
+Idegrendszeri fegyverméreg.
+
+```
+→ (1) Erősség:         6
+→ (2) Súlyosság:       3 (Kábultság, részleges bénulás)
+     +8: 1 fokkal enyhébb (látáskárosodás), maradandó
+→ (3) Hatáskezdet:    +4 (következő körben)  Mk 7
+→ (4) Hatástartam:    +2 (harc végéig)
+→ (5) Bomlási idő:     2 (10 perc a pengén)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0 (1 holdfordulón belül)
+→ (8) Speciális:      +2
+     +2: Sűrű (kis adag is elég)
+```
+
+```
+Komplexitás: 27
+ → Biztos tudás: Mk 7
+```
+
+Fegyverméreg, amely a sebzést követő körben kábulatot hoz, majd elhúzódva a látást rontja: bevérzett szem, kettős látás. Kezeletlenül a látáskárosodás tartóssá válik, és akkor sem múlik el, ha az áldozat egyébként ellenáll a méreg akut hatásának.
+
+<br />
+
+---
+### ⚡ Éber rémálom
+
+Idegrendszeri fegyverméreg, hallucinogén.
+
+```
+→ (1) Erősség:         5
+→ (2) Súlyosság:       3 (Kábultság)
+→ (3) Hatáskezdet:    +4 (következő körben)  Mk 7
+→ (4) Hatástartam:    +3 (pár óra)
+→ (5) Bomlási idő:     2 (10 perc)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         0 (1 holdfordulón belül)
+→ (8) Speciális:      +2
+     +2: Sűrű
+```
+
+```
+Komplexitás: 19
+ → Biztos tudás: Mk 7
+```
+
+Fegyverméreg, amely kábulat után pár óra múlva erős, irracionális félelmet és hallucinációt okoz (az áldozat szörnyeket lát). A hallucinogén hatás a [Félelem](082_statuszok.md) státuszon keresztül jelenik meg.
+
+<br />
+
+---
+### ⚡ Vérzékeny vágás
+
+Keringési fegyverméreg.
+
+```
+→ (1) Erősség:         5
+→ (2) Súlyosság:       4 (Életveszély - elvérzés)
+→ (3) Hatáskezdet:    +5 (azonnal)  Mk 9
+→ (4) Hatástartam:    +3 (pár óra, gyógyításig)
+→ (5) Bomlási idő:     2 (10 perc a pengén)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         2 (1-2 év)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 21
+ → Biztos tudás: Mk 9
+```
+
+Azonnal ható fegyverméreg: a vér megalvadási képességét rontja, az áldozat a méreg hatása alatt szerzett minden sebből elvérzéssel fenyeget, amíg el nem múlik vagy el nem látják. Nem kiugróan erős (az alapanyag könnyen beszerezhető), de a folyamatos vérzés veszélyessé teszi. Az azonnali Hatáskezdet (`+5`) húzza fel a Komplexitást.
+
+<br />
+
+---
+### ⚡ Fullasztó
+
+ Keringési fegyverméreg.
+
+```
+→ (1) Erősség:         5
+→ (2) Súlyosság:       4 (Életveszély - fulladás)
+→ (3) Hatáskezdet:    +1 (1 jelenet - lassú)
+→ (4) Hatástartam:    +2 (rövid jelenet)
+→ (5) Bomlási idő:     2 (10 perc)
+→ (6) Kimutatási idő:  0 (1 nap)
+→ (7) Elállás:         2 (1-2 év)
+→ (8) Speciális:      +0
+```
+
+```
+Komplexitás: 16
+ → Biztos tudás: Mk 0 (nincs biztos tudás követelmény)
+```
+
+Lassan, de folyamatosan ható fegyverméreg: a véráramba jutva rontja a vér oxigénmegkötő képességét, a ciklus végére súlyos légszomj, végül fulladás.
 
 ---
 
@@ -33542,6 +33726,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
+- [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
@@ -34063,6 +34248,34 @@ Dobásmódosító: 0
  + 3 (susnyásba)
  - 3 (könnyű bőrvért)
 ```
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/etelt_kesziteni.md
+
+## Ételt készíteni
+
+### [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettség + Emlékezet
+
+ 🟨 **Normál** kiterjesztéssel: [Kézműves: Szakács](../fortelyok.szabad/kezmuves_szakacs.md) fortély 
+
+---
+#### Fogyasztásra alkalmas étel készítése minimális alapanyagokból
+
+- Alacsony Nehézség
+- [képzetlenül](../030_06_01_kepzettsegproba.md#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl) is megpróbálhatod
+
+---
+#### Különösen finom étel készítése
+
+- Közepes/magas Nehézség
 
 ---
 
