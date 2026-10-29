@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import type { KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import { MD_BASE } from './MdLink';
 import { PopupOverlay } from './PopupOverlay';
@@ -64,14 +64,16 @@ function FortelyLista({ label, szint, entries, fortélyFokok, onInfo }: {
         const színClass = !fortélyFokok ? undefined : felvett ? 'fort-req-met' : hiányClass;
         const hasInfo = !!k.leírás;
         return (
-          <span
-            key={i}
-            className={`${színClass ?? ''}${hasInfo ? ' kit-nev-info' : ''}`.trim() || undefined}
-            title={hasInfo ? k.leírás : undefined}
-            {...(hasInfo ? kattinthatóProps(() => onInfo(k)) : {})}
-          >
-            {i > 0 ? '; ' : ''}{k.név}
-          </span>
+          <Fragment key={i}>
+            {i > 0 ? <span className="kit-sep">; </span> : null}
+            <span
+              className={`${színClass ?? ''}${hasInfo ? ' kit-nev-info' : ''}`.trim() || undefined}
+              title={hasInfo ? k.leírás : undefined}
+              {...(hasInfo ? kattinthatóProps(() => onInfo(k)) : {})}
+            >
+              {k.név}
+            </span>
+          </Fragment>
         );
       })}</span>
     </div>

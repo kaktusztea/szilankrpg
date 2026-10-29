@@ -55,6 +55,8 @@
 /* Kiterjesztő fortély szín-jelzés: felvett = zöld (.fort-req-met); hiányzó = sárga (normál) / piros (erős) */
 .kit-hiany-normal { color: var(--warning); }
 .kit-hiany-eros { color: var(--error); }
+/* Kiterjesztő fortélyok közti ";" szeparátor: mindig világos fehér, nem kattintható */
+.kit-sep { color: var(--text); }
 /* Kattintható kiterjesztő-fortély név (van leírás → info popup) */
 .kit-nev-info { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; }
 .kit-info-popup { max-width: 320px; }
