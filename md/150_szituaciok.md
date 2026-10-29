@@ -39,6 +39,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 - [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
+- [Piálás](szituaciok/pialas.md) 🟠D
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
