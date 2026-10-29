@@ -48,7 +48,7 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 
 #### 🌟 `15.szint`
 
-⭕TODO⭕ A legművészibb, mágikus elemeket nélkülöző zárakat is kinyitod puszta érintésre.
+⭕TODO⭕ Puszta kézzel, bármilyen segédeszköz nélkül, büntetés nélkül dobhatsz zárnyitást.
 
 <br />
 
