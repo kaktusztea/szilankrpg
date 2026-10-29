@@ -64,12 +64,13 @@
 
 .gear-btn-padded { padding: 4px 12px; }
 
-/* ✏️ chip piros jelző pötty (Felszerelés túllépés / Akadály) a jobb alsó sarokban */
+/* ✏️ chip piros jelző pötty (Felszerelés túllépés / Akadály). A gomb jobb-felső sarkán
+   kívülre húzva ül, hogy ne lógjon bele a ceruza-emojiba (a rajz iránya vendoronként eltér). */
 .gear-btn-badge { position: relative; }
 .gear-badge-dot {
   position: absolute;
-  right: 4px;
-  bottom: 4px;
+  right: -3px;
+  top: -3px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
