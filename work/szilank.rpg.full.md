@@ -11456,7 +11456,7 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 
 #### 🌟 `15.szint`
 
-⭕TODO⭕ A legművészibb, mágikus elemeket nélkülöző zárakat is kinyitod puszta érintésre.
+⭕TODO⭕ Puszta kézzel, bármilyen segédeszköz nélkül, büntetés nélkül dobhatsz zárnyitást.
 
 <br />
 
@@ -33727,6 +33727,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 - [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
+- [Piálás](szituaciok/pialas.md) 🟠D
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
@@ -35480,6 +35481,34 @@ Lopakodás/rejtőzés (-6) + Ügyesség
         vs
 Észlelés + Érzékenység
   +0: Passzív Észlelés
+```
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/pialas.md
+
+## Piálás
+
+
+### Egymás asztal alá ivása
+
+```
+Edzettség ellenpróba
+```
+
+### Pia bírása hányás nélkül
+
+```
+Edzettség ellenpróba
+  részegség mértékével
+  emelkedő Nehézséggel
 ```
 
 ---
