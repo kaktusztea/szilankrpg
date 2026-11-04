@@ -1,0 +1,15 @@
+// markdownlint-cli2 config.
+// Minden szabaly alapertelmezetten kikapcsolva: a korabbi CI (articulate@v2,
+// config nelkul) gyakorlatilag nem bukott el, ezt a viselkedest tartjuk.
+// Ha kesobb szigoritani akarunk, itt kapcsolj be konkret MD-szabalyokat.
+{
+  "config": {
+    "default": false
+  },
+  "globs": ["**/*.md"],
+  "ignores": [
+    "work",           // generalt: szilank.rpg.full.md (onefile.py kimenet)
+    "node_modules",
+    "web/karakter/node_modules"
+  ]
+}
