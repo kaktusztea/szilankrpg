@@ -12,7 +12,8 @@
     "MD001": false, // heading-szint ugras: a #### Kovetelmeny/Hatas tudatos vizualis tagolas a ## blokkokban
     "MD036": false, // kiemeles heading helyett: **cimke**-szeru vizualis jelolok (nem akarunk ranuk anchort/TOC-ot)
     "MD045": false, // kep alt-szoveg: a szabalykonyv kepei tabla-/dekorativ beagyazasok
-    "MD025": false  // tobb H1 egy dokumentumban: megengedett (pl. szilank.md tagolasa)
+    "MD025": false, // tobb H1 egy dokumentumban: megengedett (pl. szilank.md tagolasa)
+    "MD051": false  // link-fragment: a cli2 az emoji-s GitHub-anchorokat hamisan torottnek jelzi, elesben mukodnek (linkspector is zold)
   },
   "globs": ["md/**/*.md", "README.md"]
 }
