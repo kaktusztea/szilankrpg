@@ -23,6 +23,7 @@ Speciális (k10)
 <br />
 
 ---
+
 ### `I/1` Harcos Célzó Értéke nyílpuskával
 
 ```
@@ -35,7 +36,8 @@ CÉ = 2
 ```
 
 ---
-###  `I/2` Szerencsedobás sötét miatt
+
+### `I/2` Szerencsedobás sötét miatt
 
 ```
 Célszám: 8 (10-2)
@@ -50,6 +52,7 @@ k10   vs   8
 ```
 
 ---
+
 ### `I/3` A célpont Védő Értéke vaksötétben
 
 Két esetet nézünk: az elsőben a célpont lassan oson, a másodikban egy helyben áll.

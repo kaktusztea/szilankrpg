@@ -14,6 +14,7 @@ Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelk
 ```
 
 ---
+
 ### Nyelvek fokai
 
 Minden nyelv ismeretét `2` fokra osztjuk:
@@ -24,10 +25,10 @@ Minden nyelv ismeretét `2` fokra osztjuk:
 ⚡ Példa: "Gorviki - Udvari"
 
 ---
+
 ### Pontok
 
 A **Nyelvtanulás** képzettség `4.szintjétől` kezdve minden szinten `3 pontot` kapsz, melyeket [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély fokokra költhetsz. Az első `3 szint` az alapozást jelképezi, ahogy a `Szilánk` sok más területén. Ugyanez táblázatban:
-
 
 ```
 Szint   Pont
@@ -51,12 +52,14 @@ Szint   Pont
 **Nyelvtanulás -** `5.szint` →`6 pont` jár
 
 Pontok szétosztása Nyelvismeret fortély fokokra:
+
 - Nyelvismeret - Közös (Udvari) (`1 pont`)  → speciális, mert a "**Közös nyelv: Alap**" foka ingyenes mindenkinek. Lásd lenn.
 - Nyelvismeret - Ereni: Alap (`1 pont`)
 - Nyelvismeret - Toroni (Udvari) (`2 pont`)
 - Nyelvismeret - Asszisz (Udvari) (`2 pont`)
 
 ---
+
 ### Ingyenes nyelvismeret fortélyok
 
 - Közös (Pyarroni) - `Alap`
@@ -67,12 +70,12 @@ Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet `Alap` szint
 <br />
 
 ---
+
 ### Domináns tulajdonságok
 
 Emlékezet, Érzékenység.
 
 <br />
-
 
 ### Mesterbónuszok
 
@@ -96,6 +99,7 @@ Emlékezet, Érzékenység.
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

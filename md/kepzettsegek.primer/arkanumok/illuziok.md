@@ -9,23 +9,25 @@ Az **Jelenségek** szféra alá tartozó arkánum.
 xyz
 
 ---
+
 ### Csendmágia
 
 [Csendmágia RAW anyagok](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#csendmágia)
 
 ---
+
 ### Szagmágia / Ízmágia
 
 xyz
 
 ---
+
 ### Fénymágia
 
 xyz
 
 ---
+
 ### Tapintásmágia
 
 xyz
-
-

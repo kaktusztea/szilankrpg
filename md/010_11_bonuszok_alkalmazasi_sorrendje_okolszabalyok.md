@@ -14,6 +14,7 @@ A lenti bónuszok meghatározott sorrendben kerülnek kiértékelésre. A [Szil�
 ```
 
 ---
+
 ## 🔆 Ökölszabály: Szorzó hatások
 
 Egy karakterre ható több szorzó kombinációja esetén CSAK a legnagyobb számít.\

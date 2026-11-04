@@ -17,6 +17,7 @@ Híres ereklyék ismeretét is magában foglalja. Minél ritkább egy tárgy ann
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia
@@ -27,6 +28,7 @@ Emlékezet, Intelligencia
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.
 - [Szobrászat](../fortelyok.szabad/szobraszat.md): Ismered a [Kultúrkörnek](../fortelyok.kiemelt/kulturkor.md) megfelelő klasszikus szobrok értékét.
 - [Festészet](../fortelyok.szabad/festeszet.md): Ismered, felismered adott [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) festőinek, műveiknek értékét.
+
 ### Szituációk
 
 - [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md)
@@ -46,15 +48,18 @@ Emlékezet, Intelligencia
 #### 🌟 `15.szint`
 
 ⭕TODO⭕
+
 - A másodkortól örökölt tárgyak, legendás relikviákkal tudsz felszínesen kommunikálni.
 - A legjobb hamisítványok sem tévesztenek meg: a tárgy aurájából megérzed, hogy az eredeti alkotó szelleme hiányzik belőle.
 
 <br />
 
 ---
+
 ### Próbák 🎲
 
 A Nehézség meghatározásánál vegyük figyelmebe az alábbiakat (is):
+
 - Tárgy komplexitása
 - Tárgy ritkasága
 - Tárgy kora

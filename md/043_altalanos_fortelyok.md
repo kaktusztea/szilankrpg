@@ -14,6 +14,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Ultralátás](fortelyok.erzekek/ultralatas.md)
 
 ---
+
 ### Alvilági és fizikai fortélyok
 
 <!-- tag: alvilagi__fizikai__fortely -->
@@ -56,6 +57,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Zártörő](fortelyok.altalanos/zartoro.md)
 
 ---
+
 ### Tudományos fortélyok
 
 <!-- tag: tudomanyos__fortely -->

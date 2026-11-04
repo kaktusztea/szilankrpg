@@ -15,6 +15,7 @@ Továbbá számos fegyver van, melynek forgatása bizonyos **Erő** követelmén
 <br />
 
 ---
+
 ## Fegyverek Erő követelménye
 
 ```
@@ -37,6 +38,7 @@ Ha a forgatott fegyver "súly" kategóriája által megkövetelt Erő Tulajdons�
 <br />
 
 ---
+
 ## Erőbónusz limit
 
 Lásd a [Fegyverstatisztikák](068_01_01_fegyverstatisztikak.md#️-erőbónusz-limit) oldalon.

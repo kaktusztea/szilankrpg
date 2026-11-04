@@ -22,6 +22,7 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 ### 1. fok
 
 🌟 **Hatás**:
+
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+2`
 - A kapcsolódó, kiterjesztett képzettségek követelményeként megszűnteti a kiterjesztés-büntetést.
 
@@ -30,10 +31,12 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 ### 2. fok
 
 🌟 **Hatás**:
+
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+4`
 - A kapcsolódó képzettségek kiterjesztés követelményeként már `Előny+1` bónuszt is ad.
 
 ---
+
 ### Fizikai és Matematikai ismeretek
 
 Ezek **NEM** ide tartoznak, hanem a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettség szerves részét képezik.

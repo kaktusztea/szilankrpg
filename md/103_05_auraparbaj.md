@@ -13,6 +13,7 @@ A Mágiaellenállás egységes, mivel az **Aura** mind az **Asztrál**, **Mentá
 🔆 Az egyes Módosítókat lásd a fenti linkek alatt.
 
 ---
+
 ## ⚡Példa Aurapárbajra
 
 "*Hegedűszó*", - a piperkőc varázstudó - megpróbál egy szimfonikus koncerten asztrális befolyása alá vonni egy nemesembert, aki fontos döntést hoz majd meg a következő órákban.

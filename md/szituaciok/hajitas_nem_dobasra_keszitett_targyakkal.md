@@ -4,7 +4,6 @@
 
 → Fortély: [Alkalmatlan tárgyak hajítása](../fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) (`2`) → a fenti büntetéseket mérséklik
 
-
 ---
 
 🔗 [Szituációk](../150_szituaciok.md) ↑

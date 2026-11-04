@@ -16,8 +16,8 @@
 
 **15.szint:** ⭕TODO⭕
 
-
 ---
+
 #### Hatás
 
 A Pap a lefogott, rögzített áldozat fejéhez térdel, majd gonosz urát/úrnőjét segítségül hívva elorozza annak életerejét.
@@ -26,8 +26,8 @@ Az így nyert `ÉP` mennyiséget vagy saját maga, vagy egy választott, mellett
 
 A varázslattal annyi `ÉP` szívható el, amennyi maradt az áldozatban, `FP` keletkezést nem okoz - az alany `0 ÉP`-re kerül és elájul. Segítség nélkül elég hamar elhalálozhat - egy apró seb még és vége.
 
-
 ---
+
 #### Szabályok
 
 Feketemágiának számít, így leplezés nélkül meglátszik alkalmazójának Auráján is.

@@ -5,6 +5,7 @@ Ez egy [Primer (harci) képzettség](../../010_09_primer_szekunder_ismeretek.md)
 A harcmodorok a közvetlenül, fegyverrel való harc képességét fedik le. Kategóriánként külön-külön fel kell venni rájuk ezt a képzettséget.
 
 Alább összesen `5` ilyen különálló harcmodor képzettség általános leírását találjuk:
+
 - Közelharc
 - Kardvívás
 - Rombolás
@@ -28,7 +29,6 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 - [Mesterfegyver](../../fortelyok.harci/mesterfegyver.md) fortély egyes fokainak követelménye
 
 <br />
-
 
 ### Mesterbónuszok
 

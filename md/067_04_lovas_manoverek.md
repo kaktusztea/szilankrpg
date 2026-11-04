@@ -3,6 +3,7 @@
 Egyedi húzások, amelyeket hátasodon tudsz végbevinni, meglepve ezzel ellenfeleidet.
 
 ---
+
 ### ⚜️ Hátas táncoltatása
 
 Lovas végezheti.\
@@ -20,6 +21,7 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 <br />
 
 ---
+
 ### ⚜️ Lovas áttörés
 
 Megpróbálsz áttörni az ellenfél sorain, lendületed és hátasod erejét kihasználva.
@@ -32,6 +34,7 @@ Megpróbálsz áttörni az ellenfél sorain, lendületed és hátasod erejét ki
 <br />
 
 ---
+
 ### ⚜️ Lovas, léglovas megakasztása
 
 Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd [rohamozó lovas](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas-roham) felé mutat.
@@ -46,13 +49,14 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
   - Szúró szálfegyver használata
   - [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny) a lovashoz képest
 - Helyzetfüggő módosítók:
-    - Fegyver:
-        - `+2`: [Manőver Lovas megakasztása](068_01_03_fegyver_extrak.md#manőver-lovas-megakasztása) fegyver-extra
+  - Fegyver:
+    - `+2`: [Manőver Lovas megakasztása](068_01_03_fegyver_extrak.md#manőver-lovas-megakasztása) fegyver-extra
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed effektív sebzésétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba). Sikertelen manőver esetén a lovas zavartalanul leadhatja rád rohamozó támadását.
 
 <br />
 
 ---
+
 ### ⚜️ Lóhátról lerántás
 
 Megpróbálod lerántani lovas ellenfeled a nyergéből.
@@ -71,6 +75,7 @@ Megjegyzés: A `(M)egakasztás` lépés csak akkor történik a lovas részérő
 <br />
 
 ---
+
 ## Léglovas manőverek
 
 Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felmerül rá igény, a KM együttműködésével kitalálhatóak ilyen Manőverek is.

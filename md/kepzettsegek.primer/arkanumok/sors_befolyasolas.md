@@ -1,6 +1,5 @@
 ## Sors befolyásolás arkánum
 
-
 Az **Sors** szféra alá tartozó arkánum.
 
 ### XYZ⭕
@@ -8,6 +7,7 @@ Az **Sors** szféra alá tartozó arkánum.
 ⭕TODO
 
 ---
+
 ### Árnyékmágia
 
 ```
@@ -34,7 +34,6 @@ Nehézség
 21: Elmosódott, a háttértől alig megkülönböztethető
 +1: Minden méretváltozás (aranyban)
 ```
-
 
 #### ⚡Példa
 

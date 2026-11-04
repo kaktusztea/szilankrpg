@@ -21,6 +21,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
 
 ---
+
 ### 1. fok
 
 🌟 Ismered a boncolás tudományát.

@@ -11,6 +11,7 @@
 **3.szint:** Innen alkalmazható
 
 ---
+
 #### Hatás
 
 A hitetlen tömegek elméje csak arra vár, hogy megtöltsék Domvik csodálatával! A Pap nyilvános térítő beszédet tart, melyben Domvik nagyságát, erejét és szent arcait mutatja be a még egyházon kívüli hallgatóságnak.
@@ -24,6 +25,7 @@ A harmadik - utolsó - nyilvános okítás végén, rontott Mágiaellenállás e
 A mágia nem kényszerít senkit semmire, csupán tökéletesen felidézhető marad a Pap érvelése, így bármikor képessé válik rá a hallgató, hogy eltöprengjen annak esetleges igazságán.
 
 ---
+
 #### Szabályok
 
 Mágia hatása: Mentális befolyás, mágiaellenállásra jogosultak a hallgatók

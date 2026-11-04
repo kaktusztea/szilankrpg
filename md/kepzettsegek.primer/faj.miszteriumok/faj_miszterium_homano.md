@@ -4,12 +4,12 @@
 
 [Hómanó arkánum](../../magia.faj.arkanumok/homano_arkanum.md)
 
-
 **RAW**
 
 - xyz
 
 ---
+
 ### Szintek
 
 ```

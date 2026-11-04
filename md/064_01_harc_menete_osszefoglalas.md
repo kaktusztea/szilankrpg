@@ -42,6 +42,7 @@ SP Alap =
 <br />
 
 ---
+
 ### 🤞 Kezdeményezés
 
 ```
@@ -51,6 +52,7 @@ Kezdeményező dobás: KÉ + k20
 <br />
 
 ---
+
 ### 🤺 Támadás
 
 ```
@@ -88,6 +90,7 @@ Sebzés jellege
 <br />
 
 ---
+
 ### 😵 VÉ csökkentés ( TÉ < VÉ )
 
 ```
@@ -122,6 +125,7 @@ VÉ csökkentés
 <br />
 
 ---
+
 ### 🗡️ Fegyver sebzése
 
 ```
@@ -144,6 +148,7 @@ Többszörös találat bónusza
 <br />
 
 ---
+
 ### 💥 Találat, Sebzés ( TÉ >= VÉ )
 
 ```
@@ -177,6 +182,7 @@ Lásd: [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-)
 <br />
 
 ---
+
 ### 🍎 VÉ regenerálódás
 
 ```
@@ -194,6 +200,7 @@ Győzelmi szabály
 <br />
 
 ---
+
 ### 🔢 Támadások száma
 
 ```
@@ -208,6 +215,7 @@ Lásd: [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyvere
 <br />
 
 ---
+
 ### 🚷 Mozgásgátló Tényező (MGT)
 
 Lásd az [MGT fejezetet](069_03_MGT.md).
@@ -215,6 +223,7 @@ Lásd az [MGT fejezetet](069_03_MGT.md).
 <br />
 
 ---
+
 ### 📖Csataszabályok
 
 Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a játékot. Ilyenkor a következő – opcionális – szabályt javasoljuk:

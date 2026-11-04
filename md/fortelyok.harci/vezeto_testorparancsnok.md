@@ -10,6 +10,7 @@ Testőreid egy entitásként védelmeznek személyeket, területet vagy építm�
   - ⚡ "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
 
 ---
+
 ### Alapeset
 
 Az [Észlelés](../kepzettsegek.primer/harci/alakzatharc.md) képzettséget a [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy testőrcsapat.
@@ -20,8 +21,8 @@ Az [Észlelés](../kepzettsegek.primer/harci/alakzatharc.md) képzettséget a [c
 
 A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok képes koordinálásával megemelni.
 
-
 🔒 **Követelmény**:
+
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) - `6.szint`
 - Összeszokott tagokat igényel
@@ -33,6 +34,7 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) - `9.szint`
 - Összeszokott tagokat igényel
@@ -40,6 +42,7 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 🌟 `+4` bónusz az **Észlelés** képzettségre
 
 ---
+
 ### Jellemzően
 
 Jellemzően NJK ismeret

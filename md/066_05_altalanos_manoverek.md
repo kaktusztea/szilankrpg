@@ -25,6 +25,7 @@
 - [Terelés](#terel%C3%A9s)
 
 ---
+
 ### Átsiklás
 
 Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett elsiklani a harcérintkezés elkerülése végett.
@@ -33,12 +34,12 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 - ⚙️ Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - ❌ Ha legalább `2` pajzsos blokkolna téged, akkor ezt a manővert nem használhatod. Áttöréssel próbálkozhatsz.
 - Fázisok: `Ellenpróba (Megakasztás*)`
-	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
-	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
+ 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
+ 	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 - Helyzetfüggő módosítók:
-    - Körülmény:
-        - `+2`: Fegyverméretek / harcolók száma (KM)
-        - `-2`: Fegyverméretek / harcolók száma (KM)
+  - Körülmény:
+    - `+2`: Fegyverméretek / harcolók száma (KM)
+    - `-2`: Fegyverméretek / harcolók száma (KM)
 
 **Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróbát dobtok. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóival.
 
@@ -47,20 +48,21 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 <br />
 
 ---
+
 ### Áttörés
 
 - Nehézség: `5`
 - Ellenpróba célszámba a választott ellenfél **Manőver Alap** értéke számít be (akin próbálsz átrobogni)
 - Fázisok: `Megakasztás, Végrehajtás, Ellenpróba`
 - Helyzetfüggő módosítók:
-    - Erő különbség:
-        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
-        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
-    - Pajzsos ellenfél:
-        - `-1`: Közepes pajzs
-        - `-2`: Nagy pajzs
-    - Fegyver:
-        - `+2`: [Manőver Áttörés alkalmas](068_01_03_fegyver_extrak.md#manőver-áttörés-alkalmas) fegyver-extra
+  - Erő különbség:
+    - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+    - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
+  - Pajzsos ellenfél:
+    - `-1`: Közepes pajzs
+    - `-2`: Nagy pajzs
+  - Fegyver:
+    - `+2`: [Manőver Áttörés alkalmas](068_01_03_fegyver_extrak.md#manőver-áttörés-alkalmas) fegyver-extra
 
 **Hatás**: Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket is eléred már.
 
@@ -69,6 +71,7 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 <br />
 
 ---
+
 ### Csonkolás
 
 Lecsapod vagy megnyomorítod ellenfeled kezét, vagy lábát.
@@ -77,7 +80,7 @@ Lecsapod vagy megnyomorítod ellenfeled kezét, vagy lábát.
   - `8`: kéz csonkolása
   - `10`: láb csonkolása
 - Fázisok: `Végrehajtás, Ellenpróba`
-	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+ 	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
 - 🟨 Normál követelmény: [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény:
   - Vágófegyver használata
@@ -86,29 +89,32 @@ Lecsapod vagy megnyomorítod ellenfeled kezét, vagy lábát.
   - Láb csonkolása: min (áldozat `max ÉP / 2`) ↑ sebzés szükséges
 - alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
-    - Fegyver:
-        - `+2`: [Manőver Csonkolás alkalmas](068_01_03_fegyver_extrak.md#manőver-csonkolás-alkalmas) fegyver-extra (kéz és láb csonkolásra is)
+  - Fegyver:
+    - `+2`: [Manőver Csonkolás alkalmas](068_01_03_fegyver_extrak.md#manőver-csonkolás-alkalmas) fegyver-extra (kéz és láb csonkolásra is)
 
 **Hatás**: levágtad ellenfeled választott végtagját.
 
 <br />
 
 ---
+
 ### Ellenfél elfogása
 
-  - Nehézség: `10`
-  - Fázisok: `Végrehajtás, Ellenpróba`
-  - **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+5` módosító
+- Nehézség: `10`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+5` módosító
 
 **Hatás**: Olyan helyzetet alakítasz ki, ahol az ellenfél fegyvere már nem fenyeget, te viszont életfontosságú pont mellé helyezed fegyvered - például a nyakára teszed fegyveredet, - míg ő kiszolgáltatottan féltérdre rogy. Ha megmozdul, végzel vele.
 
 **Kijövetel**:
+
 - áldozat: [Kibontakozás](#kibontakoz%C3%A1s) Manőver (Ellenpróbára:`-5`)
 - te: megelőző **Megakasztás** támadásodra `TÉ:+10` módosítót kapsz!
 
 <br />
 
 ---
+
 ### Fegyvertörés
 
 Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted.
@@ -118,13 +124,13 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 - 🟨 Normál követelmény: Harcmodor – `5.szint`
 - 🟥 Erős követelmény: karmok/szarvak ellen nem használható (ott **Csonkolás** szükséges).
 - Helyzetfüggő módosítók:
-    - Saját fegyver alkalmassága:
-        - `+2`: Nagyobb / alkalmasabb törésre
-        - `-2`: Kisebb / alkalmatlanabb törésre
-        - `99`: Nem alkalmas fegyvertörésre → a Manőver nem kísérelhető meg (KM)
-    - Fegyver (a te fegyvered, ha ellened alkalmazzák):
-        - `immunis`: [Fegyvertörés-immunis](068_01_03_fegyver_extrak.md#fegyvertörés-immunis) fegyver-extra → a Manőver nem hat a fegyveredre
-        - célszám `-2`: [Manőver Fegyvertörés ellene könnyebb (fanyél)](068_01_03_fegyver_extrak.md#manőver-fegyvertörés-ellene-könnyebb-fanyél) fegyver-extra
+  - Saját fegyver alkalmassága:
+    - `+2`: Nagyobb / alkalmasabb törésre
+    - `-2`: Kisebb / alkalmatlanabb törésre
+    - `99`: Nem alkalmas fegyvertörésre → a Manőver nem kísérelhető meg (KM)
+  - Fegyver (a te fegyvered, ha ellened alkalmazzák):
+    - `immunis`: [Fegyvertörés-immunis](068_01_03_fegyver_extrak.md#fegyvertörés-immunis) fegyver-extra → a Manőver nem hat a fegyveredre
+    - célszám `-2`: [Manőver Fegyvertörés ellene könnyebb (fanyél)](068_01_03_fegyver_extrak.md#manőver-fegyvertörés-ellene-könnyebb-fanyél) fegyver-extra
 
 **Hatás**: A fegyvertörés sikeres. Ellenfeled fegyvere eltörik.
 
@@ -133,6 +139,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 <br />
 
 ---
+
 ### Felállás földről
 
 - Nehézség: `6`
@@ -146,6 +153,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 <br />
 
 ---
+
 ### Forgószél
 
 - Nehézség: `7 + ellenfél`
@@ -156,6 +164,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 **Hatás**: Egy darab köríves támadásod egyszerre több ellenfelet ér el. Ha talált, dobj sebzést mindegyikük ellen külön-külön.
 
 **🟥 Erős követelmény**
+
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
 - egyik ellenfeled sem lehet [Fegyverelőnyben](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny) veled szemben
 
@@ -166,6 +175,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 <br />
 
 ---
+
 ### Földrevitel
 
 Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
@@ -175,9 +185,9 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - 🟨 Normál követelmény: Aktuális harcmodor - `5.szint`
 - 🟥 Erős követelmény: Ellenfeled nem lehet [Fegyverelőnyben](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny) veled szemben
 - Helyzetfüggő módosítók:
-    - Erő különbség:
-        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
-        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
+  - Erő különbség:
+    - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+    - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
@@ -186,23 +196,24 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 <br />
 
 ---
+
 ### Kibontakozás
 
 - Nehézség: `5`
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - Fázisok: `Ellenpróba (Megakasztás)`
-	- **Ellenpróba** sikeres: kibontakoztál. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
-	- **Ellenpróba** sikertelen: kibontakoztál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
+ 	- **Ellenpróba** sikeres: kibontakoztál. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
+ 	- **Ellenpróba** sikertelen: kibontakoztál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 - Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető Kibontakozás.
 - Helyzetfüggő módosítók:
-    - Fegyverhossz különbség:
-        - `-2`: saját fegyvered rövidebb - több ellenfélnél a legnagyobb fegyver számít
-        - `+2`: saját fegyvered hosszabb
-    - Körülöttem állók:
-        - `-2`: minden további ellenfél után
-        - `+2`: minden szövetséges után, aki ellenfeleddel harcol
-    - Elfogva
-        - `-5`: "Ellenfél elfogása" Manővert alkalmaztak ellened, megpróbálsz kiszabadulni.
+  - Fegyverhossz különbség:
+    - `-2`: saját fegyvered rövidebb - több ellenfélnél a legnagyobb fegyver számít
+    - `+2`: saját fegyvered hosszabb
+  - Körülöttem állók:
+    - `-2`: minden további ellenfél után
+    - `+2`: minden szövetséges után, aki ellenfeleddel harcol
+  - Elfogva
+    - `-5`: "Ellenfél elfogása" Manővert alkalmaztak ellened, megpróbálsz kiszabadulni.
 
 **Hatás**: Sikerül a harcból kibontakoznod, ellenfele(i)d már nem támadhat(nak) rád. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróba ([Sprint](fortelyok.altalanos/sprint.md) fortély számít!). Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`Előny+2` Támadó dobásra).
 
@@ -211,6 +222,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 <br />
 
 ---
+
 ### Lábkirántás szálfegyverrel
 
 Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél [Földrevitellel](#földrevitel) kell próbálkoznod.
@@ -219,18 +231,19 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény: Lándzsavívás – `6.szint`
 - 🟥 Erős követelmény:
-	- Szálfegyver használata
-	- Csak kétlábú ellenfelek ellen (több lábbal rendelkezőnél [Földrevitel](#földrevitel))
+ 	- Szálfegyver használata
+ 	- Csak kétlábú ellenfelek ellen (több lábbal rendelkezőnél [Földrevitel](#földrevitel))
 - Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 - Helyzetfüggő módosítók:
-    - Fegyver:
-        - `+2`: [Manőver Lábkirántás könnyebb (kampós véggel)](068_01_03_fegyver_extrak.md#manőver-lábkirántás-könnyebb-kampós-véggel) fegyver-extra
+  - Fegyver:
+    - `+2`: [Manőver Lábkirántás könnyebb (kampós véggel)](068_01_03_fegyver_extrak.md#manőver-lábkirántás-könnyebb-kampós-véggel) fegyver-extra
 
 **Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 <br />
 
 ---
+
 ### Lánccsapda
 
 Láncos fegyverekkel hajthatod végre.
@@ -243,6 +256,7 @@ Láncos fegyverekkel hajthatod végre.
   - Minimum `1` fegyverhossz-kategória nagyságú fegyver ellen lehet csak használni
 
 **Hatás**:
+
 - Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
 - Ha ellenfeled elengedi fegyverét, akkor gyakorlatilag sikeres [Lefegyverzéssé](#lefegyverz%C3%A9s) változik a Manőver
 - Ha továbbra is kezében tartja:
@@ -255,6 +269,7 @@ Láncos fegyverekkel hajthatod végre.
 <br />
 
 ---
+
 ### Lánccsapdából szabadítás
 
 Láncos fegyverrel foglyul ejtett fegyveredet kiszabadítod.
@@ -267,6 +282,7 @@ Láncos fegyverrel foglyul ejtett fegyveredet kiszabadítod.
 <br />
 
 ---
+
 ### Lefegyverzés
 
 Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manővert kell alkalmaznod. Azokkal a fegyverekkel végezheted, amelyek Harcmodor követelményét teljesíted. A pontos lefegyverzés menetéről a KM dönt és az esetleges módosítókat is ő határozza meg.
@@ -276,15 +292,15 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
 - 🟨 Normál követelmény: Harcmodor – `5.szint`
 - 🟥 Erős követelmény: Kardvívás / Lándzsavívás / Ostorharc harcmodor
 - Helyzetfüggő módosítók:
-    - Saját fegyver alkalmassága:
-        - `+2`: Kimondottan alkalmas lefegyverzésre
-        - `-2`: Nem kimondottan alkalmas
-        - `99`: Nem alkalmas lefegyverzésre → a Manőver nem kísérelhető meg (KM)
-    - Ellenfél fegyvere:
-        - `+5`: Lánccsapdában foglyul ejtett fegyver
-    - Fegyver (a te fegyvered, ha ellened alkalmazzák):
-        - célszám `+2`: [Manőver Lefegyverzés ellene nehezebb](068_01_03_fegyver_extrak.md#manőver-lefegyverzés-ellene-nehezebb) fegyver-extra
-        - célszám `-2`: [Manőver Lefegyverezés ellene könnyebb](068_01_03_fegyver_extrak.md#manőver-lefegyverezés-ellene-könnyebb) fegyver-extra
+  - Saját fegyver alkalmassága:
+    - `+2`: Kimondottan alkalmas lefegyverzésre
+    - `-2`: Nem kimondottan alkalmas
+    - `99`: Nem alkalmas lefegyverzésre → a Manőver nem kísérelhető meg (KM)
+  - Ellenfél fegyvere:
+    - `+5`: Lánccsapdában foglyul ejtett fegyver
+  - Fegyver (a te fegyvered, ha ellened alkalmazzák):
+    - célszám `+2`: [Manőver Lefegyverzés ellene nehezebb](068_01_03_fegyver_extrak.md#manőver-lefegyverzés-ellene-nehezebb) fegyver-extra
+    - célszám `-2`: [Manőver Lefegyverezés ellene könnyebb](068_01_03_fegyver_extrak.md#manőver-lefegyverezés-ellene-könnyebb) fegyver-extra
 
 **Hatás**: A lefegyverzés sikeres. Ellenfeled kezéből kihullik a fegyver.
 
@@ -293,23 +309,25 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
 <br />
 
 ---
+
 ### Leütés hátulról
 
 Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
 
 - Nehézség: `6`
 - Fázisok: `Végrehajtás, Ellenpróba`
-    - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás))
+  - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás))
 - 🟥 Erős követelmény:
   - [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet
   - Célpont elfszabású anatómiával
   - Zúzófegyver (akár fegyver markolat), vagy Puszta kéz mint támadó fegyver
 - Helyzetfüggő módosítók:
-    - Célpont:
-        - `0`: Sisak nélküli célpont
-        - `-3`: Sisakos célpont (tarkón ütés)
+  - Célpont:
+    - `0`: Sisak nélküli célpont
+    - `-3`: Sisakos célpont (tarkón ütés)
 
 **Hatás**:
+
 - Ha a sebzés eléri az áldozat `Max ÉP / 4 ↓` értéket, akkor az az eszméletét veszti.
 - Ha nem éri el, akkor az áldozat eszméletén marad, de ✴️ [Eszmélet (2) Bódultság](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g) Státuszt kap és annak módosítóival harcol tovább. A **Hátulról támadás** szituáció megszűnik.
 - A sebzés `FP` sebesülésként jelenik meg mindkét esetben (minden `5.` ÉP).
@@ -321,6 +339,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 <br />
 
 ---
+
 ### Lovas, léglovas megakasztása
 
 Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
@@ -328,6 +347,7 @@ Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 <br />
 
 ---
+
 ### Mesterjel
 
 - Nehézség: `10`
@@ -335,18 +355,19 @@ Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 - 🟨 Normál követelmény: Mesterfegyver – `2.fok`
 - 🟥 Erős követelmény: legfeljebb `2` fegyverhossz-kategória hosszú hegyes szúrófegyver
 - Helyzetfüggő módosítók:
-    - Jel bonyolultsága:
-        - `0`: Egyszerű jel
-        - `-1`: Közepes jel
-        - `-2`: Bonyolult jel
-    - Fegyver:
-        - `+2`: [Manőver Mesterjel alkalmas](068_01_03_fegyver_extrak.md#manőver-mesterjel-alkalmas) fegyver-extra
+  - Jel bonyolultsága:
+    - `0`: Egyszerű jel
+    - `-1`: Közepes jel
+    - `-2`: Bonyolult jel
+  - Fegyver:
+    - `+2`: [Manőver Mesterjel alkalmas](068_01_03_fegyver_extrak.md#manőver-mesterjel-alkalmas) fegyver-extra
 
 **Hatás**: Sikeres manőver esetén képes vagy mesterjeledet belekarcolni ellenfeled ruhájába vagy bőrébe (`1 ÉP`).
 
 <br />
 
 ---
+
 ### Mögékerülés
 
 Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, hanem ügyes helyezkedéssel mozogsz a megfelelő helyre. Minél többen vagytok, minél nagyobb a túlerő, annál könnyebb a dolgod.
@@ -354,10 +375,10 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 - Nehézség: `8`
 - Fázisok: `E`
 - Helyzetfüggő módosítók:
-    - Túlerőben vagytok:
-        - `0`: Egy:kettő túlerő
-        - `+2`: Egy:három túlerő
-        - `+4`: Egy:négy+ túlerő
+  - Túlerőben vagytok:
+    - `0`: Egy:kettő túlerő
+    - `+2`: Egy:három túlerő
+    - `+4`: Egy:négy+ túlerő
 
 - **🟥 Erős követelmény**: a környezetnek, harctérnek alkalmasnak kell lennie a hátbakerülésre. Ha nincs elég hely, a KM megtagadhatja a Manőver használatát.
 - **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról** bónuszait - attól függően, hogy milyen pozícióban van.
@@ -367,6 +388,7 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 <br />
 
 ---
+
 ### Pajzzsal felöklelés
 
 - Nehézség: `7`
@@ -376,57 +398,60 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
   - Pajzshasználat – `2.fok`
 - 🟥 Erős követelmény: Nagy és Közepes pajzzsal lehetséges csak
 - Helyzetfüggő módosítók:
-    - Erő különbség:
-        - `+2`: Erő Tulajdonság min `2` ponttal magasabb
-        - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
-    - Pajzsos ellenfél:
-        - `-2`: Ellenfél Pajzshasználat fortély foka nagyobb
-        - `+2`: Te Pajzshasználat fortély fokod nagyobb
+  - Erő különbség:
+    - `+2`: Erő Tulajdonság min `2` ponttal magasabb
+    - `-2`: Erő Tulajdonság min `2` ponttal alacsonyabb
+  - Pajzsos ellenfél:
+    - `-2`: Ellenfél Pajzshasználat fortély foka nagyobb
+    - `+2`: Te Pajzshasználat fortély fokod nagyobb
 
 **Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
 
 <br />
 
 ---
+
 ### Piszkos trükk
 
 - Nehézség: `7`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény:
-	- Közelharc – `4.szint`
-	- Forgatott fegyverre: Mesterfegyver – `1.fok`
+ 	- Közelharc – `4.szint`
+ 	- Forgatott fegyverre: Mesterfegyver – `1.fok`
 
 **Hatás**:
+
 - Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
 - Ha a bement sebzés (SFÉ után) legalább `5 ÉP`, akkor ellenfeled elveszíti következő támadását is.
 
-Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. 
+Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe.
 
 <br />
 
 ---
+
 ### Precíz támadás
 
 Meglepetés esetén is kell **Ellenpróbát** dobni.
 
 - Nehézség:
-    - `1-9`: páncéllal nem fedett területre támadni. Páncél-lefedettségtől függ. Példa: 60% lefedettség → **Nehézség**: `6`
-    - `8`: egy adott végtagra támadni
-    - `10`: egy adott (nagy érme méretű) pontra támadás
-        - Csak Szúrófegyverrel
-        - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
-    - `12`: Szemkiszúrás
+  - `1-9`: páncéllal nem fedett területre támadni. Páncél-lefedettségtől függ. Példa: 60% lefedettség → **Nehézség**: `6`
+  - `8`: egy adott végtagra támadni
+  - `10`: egy adott (nagy érme méretű) pontra támadás
+    - Csak Szúrófegyverrel
+    - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
+  - `12`: Szemkiszúrás
 - Fázisok: `Végrehajtás, Ellenpróba`
-	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+ 	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
 - 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
-    - Fegyver:
-        - `+2`: [Manőver Precíz támadás könnyebb (pontos)](068_01_03_fegyver_extrak.md#manőver-precíz-támadás-könnyebb-pontos) fegyver-extra
-        - `0`: Egykezes kardvívó fegyver / Puszta kéz
-        - `-2`: Zúzófegyver
-    - Taktika:
-        - `-99`: [Roham](065_02_harci_taktikak.md#roham-taktika)é s [Öngyilkos roham](065_02_harci_taktikak.md#öngyilkos-roham-taktika) taktia alkalmazása
+  - Fegyver:
+    - `+2`: [Manőver Precíz támadás könnyebb (pontos)](068_01_03_fegyver_extrak.md#manőver-precíz-támadás-könnyebb-pontos) fegyver-extra
+    - `0`: Egykezes kardvívó fegyver / Puszta kéz
+    - `-2`: Zúzófegyver
+  - Taktika:
+    - `-99`: [Roham](065_02_harci_taktikak.md#roham-taktika)é s [Öngyilkos roham](065_02_harci_taktikak.md#öngyilkos-roham-taktika) taktia alkalmazása
 
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén az ellenfél SFÉ értéke nem érvényesül.
 
@@ -437,6 +462,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 <br />
 
 ---
+
 ### Rávetődés hátulról
 
 Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés + Ügyesség** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
@@ -448,6 +474,7 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés + Ügyess
 - 🟥 Erős követelmény: [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás), VAGY [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet
 
 **Hatás**:
+
 - Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
 - [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
 - [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja (az ehhez tartozó Ellenpróba dobására `-2` Helyzetfüggő módosítót kap).
@@ -455,6 +482,7 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés + Ügyess
 <br />
 
 ---
+
 ### Távoltartás
 
 Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, mint Ellenfeled kezében, akkor megpróbálhatod távoltartani őt, így nem tudja leadni támadását.
@@ -464,17 +492,18 @@ Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, min
 - 🟨 Normál követelmény: Harcmodor - `5.szint`
 - 🟥 Erős követelmény: [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny)
 - Helyzetfüggő módosítók:
-    - Harci alakzat:
-        - `+4`: Alakzatban (nagy előny, KM)
-        - `+2`: Alakzatban (kis előny, KM)
-    - Fegyver:
-        - `+2`: [Manőver Távoltartás alkalmas](068_01_03_fegyver_extrak.md#manőver-távoltartás-alkalmas) fegyver-extra
+  - Harci alakzat:
+    - `+4`: Alakzatban (nagy előny, KM)
+    - `+2`: Alakzatban (kis előny, KM)
+  - Fegyver:
+    - `+2`: [Manőver Távoltartás alkalmas](068_01_03_fegyver_extrak.md#manőver-távoltartás-alkalmas) fegyver-extra
 
 **Hatás**: leadhatsz `TÉ:+5`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 
 <br />
 
 ---
+
 ### Terelés
 
 Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor emelkedik a nehézség (KM dönt).
@@ -483,14 +512,14 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 - Fázisok: `Ellenpróba`
 - 🟨 Normál követelmény: Aktuális harcmodor - `6.szint`
 - Helyzetfüggő módosítók:
-    - Harci alakzat:
-        - `+3`: Alakzatban (nagy előny, KM)
-        - `+2`: Alakzatban (KM)
-        - `+1`: Alakzatban (kis előny, KM)
-    - Ellenfél mérete:
-        - `-1`: Kissé nagyobb (KM)
-        - `-2`: Nagyobb (KM)
-        - `-4`: Jelentősen nagyobb (KM)
+  - Harci alakzat:
+    - `+3`: Alakzatban (nagy előny, KM)
+    - `+2`: Alakzatban (KM)
+    - `+1`: Alakzatban (kis előny, KM)
+  - Ellenfél mérete:
+    - `-1`: Kissé nagyobb (KM)
+    - `-2`: Nagyobb (KM)
+    - `-4`: Jelentősen nagyobb (KM)
 
 **Hatás**: arra tereled az ellenfelet, amerre akarod. Hátrálásnál nem kell használni, az megy magától.
 

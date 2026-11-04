@@ -2,7 +2,7 @@
 
 Ez egy [Primer (harci) képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
 
-###  [Harc alakzatban](../../065_04_harc_alakzatban.md) fejezet
+### [Harc alakzatban](../../065_04_harc_alakzatban.md) fejezet
 
 Ez írja le a képzettség használatát.
 
@@ -17,6 +17,7 @@ Ez írja le a képzettség használatát.
 - [Vezető: Alakzatparancsnok](../../fortelyok.harci/vezeto_alakzatparancsnok.md) fortély: alakzat vezetése esetén bónuszt ad.
 
 ---
+
 ### Mesterbónuszok
 
 #### 🌟 `9.szint`

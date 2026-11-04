@@ -28,6 +28,7 @@ Magában foglalja a csapdák állítását és hatástalanítását is.
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Intelligencia, Önuralom
@@ -59,6 +60,7 @@ Intelligencia, Önuralom
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

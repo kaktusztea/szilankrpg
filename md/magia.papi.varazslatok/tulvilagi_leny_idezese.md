@@ -18,13 +18,14 @@
 
 **15.szint:** ⭕
 
-
 ---
+
 #### Hatás
 
 ⭕TODO
 
 ---
+
 #### Szabályok
 
 - ⭕TODO

@@ -7,21 +7,23 @@ Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összes
 Egy alakzat minimum létszáma `3` **fő** (mert `2` fő legfeljebb [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
 
 ---
+
 ## Mozgástér
 
 Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, barlangban **nem lehetséges**, csak ha kivételesen nagy tér áll rendelkezésre (pl. nagy belső udvar).
 
 ---
+
 ## Alakzat egyedi jellemzői
 
 ### Vezető fortélyok
 
 Ha van a csoportban olyan, aki a lentiek közül valamelyikkel bír - és elvállalja a vezetést -, az bónuszt ad a lenti Támadószint, Védekezőszint számításánál:
 
-  - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)  (gyalogos alakzat esetén)
-  - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
-  - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)  (lovas alakzat esetén)
-  - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (léglovas alakzat esetén)
+- [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)  (gyalogos alakzat esetén)
+- [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
+- [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)  (lovas alakzat esetén)
+- [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (léglovas alakzat esetén)
 
 ### ⚜️Támadószint
 
@@ -45,6 +47,7 @@ Ha van a csoportban olyan, aki a lentiek közül valamelyikkel bír - és elvál
 Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka `2` bónusz szintet ad fokonként.
 
 ---
+
 ## Alakzat harcértékeinek meghatározása
 
 A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem von el időt sem játékostól, sem a mesélőtől. Mivel előre tudható, hogy mely csapattagok, vagy nem játékos karakterek képesek és szoktak így küzdeni, ez felkészülési időben könnyen megállapítható.
@@ -70,12 +73,14 @@ A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem
 **Védekezőszint** `VÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 🔆 **Megjegyzés**
+
 - [Lovaglás bónuszai](067_01_lovas_harc_szabalyai.md#lovasléglovas-harcértékek-kiszámítása) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
 - Íjászok/Lövészek esetén `TÉ` helyett a `CÉ` az, amelyre a harcmodorból adódó bónusz jár
 
 <br />
 
 ---
+
 ## Személyek száma utáni `VÉ` bónusz
 
 ```
@@ -86,12 +91,14 @@ A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem
 A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer/harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy kiemelkedően jó harcos nem ad hozzá túl sokat az alakzathoz, ha az alakzatharcban képzetlen.
 
 Miért csak `VÉ` bónuszt ad?
+
 - mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.
 - az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) - és a megemelt `VÉ-csökkentést` - adja (lásd később).
 
 <br />
 
 ---
+
 ## ⚡Példa: 4 fős alakzat harcértékei
 
 ```
@@ -118,6 +125,7 @@ Csámpa
 ```
 
 ---
+
 ### ⚡Támadószint: `8`
 
 ```
@@ -133,6 +141,7 @@ Csámpa
 +2: bónusz (Borz, Vezető: Alakzatparancsnok (1))
 +4: MIN(2; 2; 2; 2) x 2
 ```
+
 <br />
 
 ### 🔆 Alakzat TÉ értéke = 33
@@ -159,6 +168,7 @@ Csámpa
 <br />
 
 ---
+
 ## Kezdeményezés szabályai
 
 Mindig az alakzat nyeri a kezdeményezést a személyekkel szemben.
@@ -166,6 +176,7 @@ Mindig az alakzat nyeri a kezdeményezést a személyekkel szemben.
 <br />
 
 ---
+
 ## VÉ csökkenés alakzat ellen alacsonyabb
 
 ```
@@ -186,6 +197,7 @@ Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-véde
 <br />
 
 ---
+
 ## VÉ csökkentés alakzat által és fegyverméret különbségek
 
 Az alakzat jellemző főfegyvere vs egyén **fegyverhosszának** különbsége adja a fegyverméret különbség megállapítását.
@@ -214,6 +226,7 @@ Tehát az egyén - a számára legrosszabb esetben - minden körben `-5 VÉ csö
 <br />
 
 ---
+
 ## Alakzat támadásainak száma
 
 ```
@@ -237,6 +250,7 @@ Példa: 4 fő alakzat
 <br />
 
 ---
+
 ## Alakzat `ÉP`
 
 Összesített `ÉP` értéke van, tehát az alakzatban levő összes ember `ÉP` értékét egybe vesszük egy "masszába".
@@ -248,6 +262,7 @@ Egyes lényeknél eltérhet ez a szám. Pl. orkok esetén vehetjük `40 ÉP` ér
 <br />
 
 ---
+
 ## Alakzat sebzése
 
 A jellemző főfegyver sebzése.
@@ -255,6 +270,7 @@ A jellemző főfegyver sebzése.
 <br />
 
 ---
+
 ## Alakzat taktikái, Manőverek
 
 Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok is csak fix értékekkel:
@@ -272,6 +288,7 @@ Manőverek használata alakzatban nem lehetséges.
 <br />
 
 ---
+
 ## Tiltott harci taktikák Alakzat ellen
 
 Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
@@ -284,6 +301,7 @@ Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
 <br />
 
 ---
+
 ## Alakzat vs Alakzat
 
 ```

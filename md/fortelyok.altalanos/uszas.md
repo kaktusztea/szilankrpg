@@ -12,6 +12,7 @@ Ha egy kacsaúsztatónál mélyebb vízbe tévedsz, többé már nem merülsz el
 Az illető elmerül, fuldoklik.
 
 ---
+
 ### 1. fok
 
 🌟 Tudsz úszni
@@ -19,6 +20,7 @@ Az illető elmerül, fuldoklik.
 ### 2. fok
 
 🌟 **Hatás**:
+
 - Tudsz úszni
 - Hosszú távú úszás esetén ⚪**Edzettség** próbára: `+2`
 

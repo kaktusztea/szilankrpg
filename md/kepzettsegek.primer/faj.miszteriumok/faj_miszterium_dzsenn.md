@@ -7,13 +7,13 @@
 ### Követelmények
 
 - **NEM** követelmény a tisztavérű dzsenn származás (mint a hatalomszavak alkalmazásánál)
-- Pszí ⭕? 
+- Pszí ⭕?
 - az egyes dzsenn különleges képességeknek nincs olyan változata, amelyek e képzettség nélkül működnének
 
 ---
 ⭕TODO⭕ Adaptálni a képzettség szintekhez
 
-###  [Mentálmágia](../arkanumok/mentalmagia.md), mint speciális pszionikus képesség
+### [Mentálmágia](../arkanumok/mentalmagia.md), mint speciális pszionikus képesség
 
 - `Mentálmágia szint == ("Faj misztérium: Dzsenn" szintje) - 8`
 - A dzsenn képes nem Manából, hanem pszi energiáiból Mentálmágikus mozaikokat megidézni. Ennek a különleges képességnek oka a dzsennek mentálsíkkal való szoros összefonódásában keresendő. Fontos: csak 1 darab formulát használhat egyszerre, nem kombinálhatja őket mozaikokként!
@@ -37,9 +37,11 @@ Amennyiben a dzsenn felveszi a [Magasmágia](../../051_01_magasmagia.md) tradíc
 ### Egyedi Dzsenn diszciplínák
 
 #### Agytörlés
+
 ⭕Ez szerintem Hatalomszó! Lásd Summarium példatörténet. NE lehessen felvenni⭕
 
 "Faj misztérium: Dzsenn" szintek (biztos tudás (⭕vagy próba legyen?)):
+
 - 6.szint - alapkövetelmény, max a mai nap emlékeinek törlése, 50% esély, hogy visszatérnek
 - 9.szint - max 2 hét törlése, 30% esély, hogy visszatérnek
 - 12.szint - max 1 év törlése, 10% esély, hogy visszatérnek
@@ -48,6 +50,7 @@ Amennyiben a dzsenn felveszi a [Magasmágia](../../051_01_magasmagia.md) tradíc
 ⭕TODO: átnézni⭕
 
 ---
+
 ### Szintek
 
 ```

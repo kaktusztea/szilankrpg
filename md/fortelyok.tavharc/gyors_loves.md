@@ -1,9 +1,11 @@
 ## 🟣 Gyors lövés (1)
 
 Lövéseidet íjjal kivételesen gyorsan tudod leadni.
+
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - Csak íjjal végezhető
 - Íjászat - `5.szint`
 

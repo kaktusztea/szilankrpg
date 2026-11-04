@@ -18,7 +18,6 @@ Ez egy [Primer (harci) képzettség](../../010_09_primer_szekunder_ismeretek.md)
 
 <br />
 
-
 ### Mesterbónuszok
 
 #### 🌟 `9.szint`

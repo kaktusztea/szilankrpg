@@ -13,6 +13,7 @@ Lopakodás/rejtőzés + Ügyesség/Önuralom
 Képzettség: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md)
 
 ---
+
 ### ⚜️ Passzív észlelés
 
 Ha az észlelő passzívan szemlélődik: **alap ellenpróba**.\
@@ -30,6 +31,7 @@ Ha az észlelő odafigyel, számít a támadásra: bónusz ↑
 → Szituáció: [Érzékelés, Aktív Észlelés](erzekeles_eszleles_aktiv_passziv.md#akt%C3%ADv-%C3%A9szlel%C3%A9s)
 
 ---
+
 ### ⚜️  Csoport ember elől kell elbújni
 
 ```

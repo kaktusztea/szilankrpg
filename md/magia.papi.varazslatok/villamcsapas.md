@@ -23,11 +23,13 @@
 **15.szint:** a villám 1 körön belül lecsap, `k6` méter pontossággal.
 
 ---
+
 #### Hatás
 
 Sötét fellegek gyűlnek a semmiből, majd lecsap belőlük egy villám, amely a kívánt célhelytől változó távolságra talál be. Lásd fenn.
 
 ---
+
 #### Szabályok
 
 A villám ennyi idő múlva csap le: ⭕3 - 2 -1  kör⭕

@@ -36,6 +36,7 @@ Beszerzésüknek [Alkímia+Vajákosság képzettség követelménye](142_mereg_a
 <br />
 
 ---
+
 ## Méreg komplexitása
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
@@ -67,6 +68,7 @@ Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsu
 <br />
 
 ---
+
 ### (2) Súlyosság
 
 ```
@@ -106,6 +108,7 @@ Az ilyen tulajdonság szintén Komplexitást emel.
 <br />
 
 ---
+
 ### (3) Hatáskezdet
 
 ```
@@ -130,6 +133,7 @@ Mk: Mérgek biztos tudás követelmény
 <br />
 
 ---
+
 ### (4) Hatástartam
 
 Az aktiválódás után meddig tart a szer hatása.
@@ -147,6 +151,7 @@ Az aktiválódás után meddig tart a szer hatása.
 <br />
 
 ---
+
 ### (5) Bomlási idő
 
 Meddig áll el szabad levegőn / folyadékban / pengén kibontás után?
@@ -183,6 +188,7 @@ Ez akkor is igaz, ha a komponensek egyenként ártalmatlanok, és csak együtt h
 <br />
 
 ---
+
 ### (6) Kimutatási idő
 
 Eddig kimutatható a szer - a Hatástartam lejárta után.
@@ -199,6 +205,7 @@ Mk: Mérgek biztos tudás követelmény
 <br />
 
 ---
+
 ### (7) Elállás
 
 Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
@@ -212,6 +219,7 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 <br />
 
 ---
+
 ### (8) Speciális
 
 ```
@@ -243,11 +251,13 @@ Lezárt állapotban (fiolában, tablettában, stb) eddig áll el.
 <br />
 
 ---
+
 ### Hány adag méreg készíthető?
 
 Az alapanyagok beszerezhetőségétől függ. Ha megvan az [Alkímia+Vajákosság követelmény](142_mereg_alapanyagok_beszerzese.md) és az alapanyagok nem rendkívül ritkák, vagy teljesen egyediek, akkor - az ésszerűség határait betartva - bármennyi adag készíthető.
 
 ---
+
 ### Fajok különbözősége
 
 Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a világ leggyakoribb elfszabású teremtményeinek méreggel szemben álló tulajdonságaival.
@@ -255,6 +265,7 @@ Alapesetben nem teszünk különbséget, a Méregkeverők tisztában vannak a vi
 → Szabad Fortély: [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) szükséges, ha ritka fajról van szó - az adott fajra felvéve.
 
 ---
+
 ### Elkészítés ideje
 
 `1` jelenet, ami nem kötött időtartam, KM dönt.\

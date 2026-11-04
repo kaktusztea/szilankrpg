@@ -14,12 +14,14 @@ Karaktered már `1.` Tapasztalati Szinten és onnan kezdve minden `2.` Tapasztal
 Kalandozásai során a karakter számos helyre elvetődik. Ha ott rászán időt a helyi kultúra tanulmányozására, akkor már ott is képes lesz Kultúrkör-függő képzettségeit maximális hatékonysággal kiaknázni, büntetés nélküli próbákat dobni rá. Ez minden - kultúrköri ismeretet igénylő - képzettségre igaz.
 
 Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
+
 - akcentus, dialektus
 - zenék, ünnepek, ételek
 - szokások, népszokások, babonák, vallásismeret
 - szleng, alkudozás kultúrája, hírességek
 
 ---
+
 ### Kapcsolódik
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély; [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md) szituáció
@@ -30,6 +32,7 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 - [Vezető: Testőrparancsnok](../fortelyok.harci/vezeto_testorparancsnok.md) fortély
 
 ---
+
 ### Kiterjeszti ezeket
 
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): enélkül érvényes a levonás mindegyik lenti művészeti ágra.
@@ -42,6 +45,7 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 <br />
 
 ---
+
 ### ⚡Példák
 
 ```
@@ -74,7 +78,6 @@ Etikett képzettségpróba
 
 Mikor van az éves Ocsánysimogató ünnep és mit kell olyankor csinálni?
 
-
 ```
 Lexikum képzettségpróba
 
@@ -82,6 +85,7 @@ Lexikum képzettségpróba
 ```
 
 ---
+
 ### Kultúrkör lista
 
 - 4mund
@@ -114,8 +118,8 @@ Lexikum képzettségpróba
 - t0r0ni
 - törpe
 
-
 ---
+
 ### Föbb területek Északon
 
 - Északi Szövetség és a vörös hadurak országai

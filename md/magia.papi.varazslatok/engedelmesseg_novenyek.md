@@ -20,13 +20,14 @@
 
 **15.szint:** ⭕TODO
 
-
 ---
+
 #### Hatás
 
 Egy kijelölt növény végrehajt 1 db nagyon egyszerű parancsot. Ez nem lehet önmagát szándékosan károsító hatás.
 
 ---
+
 #### Szabályok
 
 .

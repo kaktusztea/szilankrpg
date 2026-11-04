@@ -3,6 +3,7 @@
 Próba dobható.
 
 A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakterülete. Labor (akár tábori is) felszerelést igényel. Ide tartoznak az alábbi ismeretek:
+
 - anyagok összetevőinek elemzése saját laboreszközökkel; kémiai kísérletek
 - szerves és növényi anyagok kutatása
 - savas, lúgos anyagok, illatszerek, ragasztók, festékek előállítása
@@ -23,6 +24,7 @@ A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakter
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Intelligencia, Emlékezet
@@ -56,6 +58,7 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 #### 🌟 `12.szint`
 
 ⭕TODO⭕
+
 - Egy anyagról első pillantásra tudod, hogy sav‑e, lúg‑e vagy semleges - nem szükséges megvizsgálnod sem.
 - Félmágikus hatás: képes vagy apró arany‑szemcséket puszta kézzel kivonni sziklákból és földből.
 
@@ -66,6 +69,7 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

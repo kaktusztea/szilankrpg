@@ -40,6 +40,7 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 <br />
 
 ---
+
 ## Gyengébb kéz
 
 ```
@@ -51,6 +52,7 @@ Hátrány-1 TÉ dobásra
 <br />
 
 ---
+
 ## Hajítás alkalmatlan fegyverrel
 
 ```
@@ -65,6 +67,7 @@ SP: fegyver eredeti sebzése - 5
 🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély
 
 ---
+
 ## Hajítás nem dobásra készített tárgyakkal
 
 ```
@@ -84,6 +87,7 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 <br />
 
 ---
+
 ## Képzetlen fegyverhasználat
 
 → [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
@@ -93,6 +97,7 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 <br />
 
 ---
+
 ## Pusztakezes harc
 
 Egy fegyvertelen harcos jelentős hátrányban van egy fegyveressel szemben, ezért negatívak a [Puszta kéz](068_02_kozelharci_fegyverek.md) harcértékei.
@@ -113,6 +118,7 @@ KÉ: -3, TÉ: -3, VÉ: -3
 <br />
 
 ---
+
 ## Sebzéstípusok
 
 ### ⚜️ Sebzéstípus: elsődleges

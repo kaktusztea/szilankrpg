@@ -28,11 +28,13 @@ Tehát mondhatjuk, hogy "táposság" szerint csoportosítottuk az ismereteket. E
 → **Harcérték Módosító** (HM), **Célzóérték Módosító** (CM) pontok
 
 ---
+
 ### Szekunder ismeretek
 
 Minden más ismeret, ami nem Primer, de szintén Karakteralkotó Pontba (`KP`) kerül. Fontos, hogy a [Szekunder KP](010_07_kp.md#karakteralkotó-pontok-kp) csak ilyen ismeretre költhető, míg a "sima" KP bármire - akár Szekunder ismeretre is.
 
 ---
+
 ### Szabad Fortélyok
 
 Lásd a [Szabad Fortélyok](042_szabad_fortelyok.md) fejezetet.

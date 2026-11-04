@@ -29,6 +29,7 @@ Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a
 <br />
 
 ---
+
 ## Skálázható taktikák
 
 Összesen 4 harci taktika tartozik ebbe az alcsoportba: Kezdeményező, Támadó, Védő, Támadás erőből.
@@ -63,6 +64,7 @@ Mindenképp szeretnéd magadhoz ragadni a Kezdeményezést.
 🔆 A `VÉ` büntetés az ellenfél `1.` támadásával szemben érvényesül - mindenképp.
 
 ---
+
 ### Támadó taktika
 
 ```
@@ -85,6 +87,7 @@ TÉ:+3, VÉ:-6
 A támadásra helyezed a hangsúlyt. Lehetőségeidhez mérten folyamatosan nyomulsz előre.
 
 ---
+
 ### Védő taktika
 
 ```
@@ -109,6 +112,7 @@ A védekezésedre helyezed a hangsúlyt, ekkor kisebb vehemenciával támadsz.
 <br />
 
 ---
+
 ### Támadás erőből taktika
 
 Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `3`-ig.
@@ -132,6 +136,7 @@ TÉ:-3, SP:+3
 
 ---
 ---
+
 ## Nem skálázható taktikák
 
 Ezek a taktikák fix módosítókat adnak alkalmazásukkor.
@@ -152,6 +157,7 @@ Ha **legalább** `2 db` támadásod van, de úgy döntesz, hogy csak `1 db`-ot a
 Lásd még: [TÉ levonás támadásonként](063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt)
 
 ---
+
 ### Érintő taktika ⇄
 
 ```
@@ -170,6 +176,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 🔆 KM megtilthatja egyes fegyverek használatánál (láncos buzogány, ostorharcos fegyverek)
 
 ---
+
 ### Fárasztó taktika ⇄
 
 ```
@@ -195,6 +202,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta. Leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a "vadat", míg vezetőjük felkészül.
 
 ---
+
 ### Kiváró Taktika
 
 ```
@@ -219,6 +227,7 @@ Inkább bevárod ellenfeled támadását, kifejezetten az ellencsapásra készü
 🔆 Csak akkor alkalmazhatod, ha nem kapsz sebet ellenfelednek az átengedett támadás során.
 
 ---
+
 ### Öngyilkos roham taktika
 
 ```
@@ -252,6 +261,7 @@ A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem
 🔆 Rohamhoz min `5-10m` nekifutás szükséges (terepviszony, felszerelés súly függő)
 
 ---
+
 ### Plusz támadás taktika
 
 ```
@@ -272,6 +282,7 @@ Felpörögsz, cserébe azonnal `VÉ:-3` csökkenést szenvedsz el - mivel rendk�
 🔆 Tipp: ha fix plusz támadást szeretnél, a **[Harckeret növelés](fortelyok.harci/harckeret_noveles.md)** fortély felvétele segíthet.
 
 ---
+
 ### Roham taktika
 
 ```
@@ -301,6 +312,7 @@ Első oda-vissza csapásnál:
 🔆 Rohamhoz min `5-10m` nekifutás szükséges (terepviszony, felszerelés súly függő)
 
 ---
+
 ### Teljes Védekezés Taktika
 
 ```
@@ -322,6 +334,7 @@ A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 
 ---
+
 ## Tettetés
 
 Eljátszod, hogy képzetlenebb vagy a valóságosnál, átverve ellenfeled - ezzel esetleg meggondolatlanabb taktikákra kényszeríted ellenfeled. Persze csak akkor működik, ha még nem láttak harcolni eddig valós tudásod szerint.
@@ -346,6 +359,7 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 ❌ Más taktikával együtt
 
 ---
+
 ### Visszafogott taktika ⇄
 
 TÉ levonásért cserébe kisebb Sebzés

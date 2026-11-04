@@ -26,7 +26,7 @@ Alapanyag
    ha fém: milyenből készült?
 ```
 
-###  MGT
+### MGT
 
 ```
 Struktúra
@@ -71,6 +71,7 @@ Idea (±)
 <br />
 
 ---
+
 ### A fenti jellemzők fordított nézetőpontból
 
 ```

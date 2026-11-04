@@ -14,6 +14,7 @@ Magasabb szintjein a karakter egyre jobb, majd mesteri szintű produktumokat hoz
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Változó.
@@ -81,29 +82,32 @@ Ezek olyan szakmák, amelyek speciális műhelyt/felszerelést igényelnek, vagy
 - A tárgyaid akár kisebb mágikus vagy mechanikus kiegészítéseket is fogadhatnak (pl. rejtett rekesz, páncél illesztés).
 
 ⭕TODO⭕
-  - mágikus tulajdonságú a tárgy.
-  - Képes mágikus hatást is kiváltani. Pl. cipőben gyorsabban tudsz futni, vagy ugrani. Kimaxolt Idea is kell hozzá (+4).
-    - Gyors, ugrásos, lopakodós. Sok idő megcsinálni és k. nehéz.
-  - Kevésbé fog rajta az enyészet. Pl. nem romlik meg az étel.
+
+- mágikus tulajdonságú a tárgy.
+- Képes mágikus hatást is kiváltani. Pl. cipőben gyorsabban tudsz futni, vagy ugrani. Kimaxolt Idea is kell hozzá (+4).
+  - Gyors, ugrásos, lopakodós. Sok idő megcsinálni és k. nehéz.
+- Kevésbé fog rajta az enyészet. Pl. nem romlik meg az étel.
 
 #### 🌟 `15.szint`
 
 ⭕TODO⭕
+
 - Termékeid túlmutatnak a köznapin: egész városok, birodalmak jegyzik meg a neved.
 - Egy kezed alól kikerült fegyver, páncél, építmény vagy műtárgy örökségként él tovább.
 - Amit készítesz, arról ismeretlen országokban is tudják: "Ez bizony Brocco műhelyéből való."
 
 ⭕TODO⭕
+
 - Egyáltalán nem fog rajta az enyészet.
 - képes vagy ereklyét alkotni (max 1). Képes saját lelkét belefoglalni élete művébe. Esetleg egy készletet (tárgy készlet).
-    - lélek
-    - isteni entitás
-    - démonhercegi
-
+  - lélek
+  - isteni entitás
+  - démonhercegi
 
 <br />
 
 ---
+
 ### Próbák 🎲
 
 Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md) és az [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba).

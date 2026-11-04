@@ -7,6 +7,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - Akrobatika - `6.szint`
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
@@ -19,6 +20,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Akrobatika - `9.szint`
 - Csak posztó, fegyverkabát, bőr páncél struktúrában
 - Maximum `MGT:5` értékű vértben (Erő módosítót is beleszámolva)
@@ -31,6 +33,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 ### 3. fok
 
 🔒 **Követelmény**:
+
 - Akrobatika - `12.szint`
 - Csak Hajlékonyvértben
 - Maximum `MGT:10` értékű vértben (Erő módosítót is beleszámolva)
@@ -39,6 +42,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 🌟 **Hatás**: `TÉ:+3, VÉ:+3`
 
 ---
+
 ### Általános követelmények
 
 #### Fegyverek

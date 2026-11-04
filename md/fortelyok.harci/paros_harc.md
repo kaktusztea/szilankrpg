@@ -7,6 +7,7 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md)  - `3.szint` (mindkét félnek)
 - Két jól összeszokott társ.
 - A konkrét partnert nevesíteni kell.
@@ -25,6 +26,7 @@ TÉ, VÉ :+2
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Harcmodor - `6.szint` (mindkét félnek)
 - Két jól összeszokott társ.
 
@@ -42,6 +44,7 @@ TÉ, VÉ :+4
 ### 3. fok
 
 🔒 **Követelmény**:
+
 - Harcmodor  - `9.szint` (mindkét félnek)
 - Egypetéjű ikrek, harmonikus kapcsolattal a felek között. Bővebben lásd lenn ("Ikerharc").
 
@@ -55,6 +58,7 @@ TÉ, VÉ :+6
 ```
 
 ---
+
 ### Ikerharc
 
 - Csak egypetéjű ikertestvérek között lehetséges, az is csak akkor ha kisgyerekkoruk óta folyamatosan legalább `5 évig` gyakorolták a közös taktikát, mivel mély rezdülések és teljes összhang szükséges.

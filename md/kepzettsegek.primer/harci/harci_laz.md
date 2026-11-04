@@ -43,9 +43,11 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 Egyes fokozatokon juthatsz hozzá, és úgy kell kezelned, mintha valóban ennyivel magasabb `ÉP` kerettel rendelkeznél - így a harcot is tovább bírod. Hátránya, hogy a harc végén ez az extra keret eltűnik, így könnyen `ÉP` "mínuszba" csúszhatsz, ami azonnali haldokláshoz vezet.
 
 ---
+
 ### Bekerülés, bennmaradás Harci lázban
 
 Ez egy Harci láz képzettségpróba, amelyet dobni kell:
+
 - minden kör elején (`18`)
 - ha a lenti táblázatban valamelyik esemény bekövetkezik
 

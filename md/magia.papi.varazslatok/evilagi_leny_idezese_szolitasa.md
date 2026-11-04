@@ -11,12 +11,14 @@
 #### Kisszféra
 
 **3.szint:**
+
 - kis lények (madár, rágcsálók, denevér (max 1 csoportnyi)).
 - Ha konkrét állat fajtát akarok, akkor
   - `+3` szint szükséges
   - állati komponens kell. Pl. medvéhez egy medvefog.
 
 **6.szint:**
+
 - ragadozó jön, veszélyességük kb. ugyanakkora, hogy melyik, az random
 - 2 farkas, 1 medve, 3 róka, 2 delfin, 1 bálna (csak tengeren), 1 ocsány
 - Ha konkrét állat fajtát akarok, akkor
@@ -30,11 +32,13 @@
 **15.szint:** Legendás szörny (Legtáposabb állati intelligenciájú állat a Bestiáriumból akár tengerből is. Krák, Tengeri kígyó, Jégdémon.)
 
 ---
+
 #### Hatás
 
 Megidézel/szólítasz egy állati intelligenciájú lényt, akinek aztán egy darab parancsot adhatsz. Csak olyan lényt tudsz idézni, amely istenednek tetsző, vagy semleges. A lény egyszerűen megjelenik, kisétál a fák közül, előbújik a fűből, mintha eddig is ott lett volna.
 
 ---
+
 #### Szabályok
 
 - Ha véletlenül van ilyen lény a környéken (szitufüggő, KM dönt), akkor `-6` követelményre és akkor nem odateleportál(nak), hanem odajön(nek).

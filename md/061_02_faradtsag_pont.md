@@ -5,6 +5,7 @@ A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapot
 🔆 Az `FP` értékének semmi köze nincs a **Fájdalomtűrés** képzettséghez, tőle teljesen független fogalom.
 
 ---
+
 ### Milyen állapotokat szimulál az FP?
 
 - tartós kimerültség
@@ -24,16 +25,19 @@ Tipikus esete az `FP` sebesülésnek, mikor valakit alaposan fejbe kólintanak. 
 Jelölését lásd a [Sebesülés](061_03_sebesules.md#fp-jel%C3%B6l%C3%A9se-az-%C3%A9p-t%C3%A1bl%C3%A1zatban) fejezetben.
 
 ---
+
 ### Valós ÉP seb elszenvedése FP után
 
 Amennyiben a karakter életerő táblázatában van bármennyi `FP`, akkor egy újabb, - immár valós - `ÉP` seb elszenvedésekor először ezeket az `FP` jelölőket "alakítsuk" át valós sebbé és csak utána jelöljünk be újabb seb rubrikákat. Egyszerűen fogalmazva: egy valós sebzés először az `FP`-ket írja át ("felülről") és csak a "maradék" sebez újonnan.
 
 ---
+
 ### Túlcsordult `FP`
 
 Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcsorduló" bármilyen sebzés (`ÉP, FP`) felülről **átírja** az `FP` pontokat `ÉP` pontokká.
 
 ---
+
 ### FP gyógyulása
 
 Az elszenvedett `FP` pontok a [Természetes gyógyulásnál](130_gyogyitas_gyogyulas.md#%EF%B8%8F-term%C3%A9szetes-gy%C3%B3gyul%C3%A1s) leírt sebességgel tűnnek el - és mivel nem valós sebesülés okozta, gyorsabban "gyógyul", mint a valós `ÉP` seb.
@@ -45,11 +49,13 @@ Mérgezés, betegség esetén a hatás tartósabb is lehet, itt a KM dönt. Ha a
 Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 
 ---
+
 ### Tartós rosszullét
 
 Ha a karakter például méregnek "köszönhetően" tartósan gyengélkedik, akkor folyamatosan alkalmazhatjuk az `FP`-ket, azaz a rosszullét idejére ezek megmaradnak, vagy lassabban tűnnek el.
 
 ---
+
 ### Verekedés, Kocsmai bunyó és `FP`
 
 ```
@@ -64,11 +70,13 @@ Az `FP` kiválóan alkalmas kocsmai verekedések, kisebb – nem "vérre menő" 
 A szabály sebzésenként számít, tehát a karakter elszenvedhet több `4 FP` értékű csapást anélkül, hogy `ÉP` sebet szerezne.
 
 ---
+
 ### Fejbe vágás
 
 Gyakori eset, hogy valakinek ráhúznak egy nagyot a fejére. Például sisakos ellenfelet fejen találnak egy buzogánnyal. A sisak ugyan megvédi, de a feje mégis igen nagy traumát szenved el, pár körig meglehetősen kellemetlenül érzi magát. Ez természetesen helyzet specifikus, a – KM dönt –, de irányadónak elmondhatjuk, hogy ilyenkor például plusz `2-3 FP` büntetést kap az áldozat, amelyek azonban pár kör alatt elmúlnak. Ne tévesszük össze a **Fejbe vágást** a 🗡️[Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról) harci taktikával!
 
 ---
+
 ### ⚡ Példa `FP` alkalmazására
 
 Cravignon rossz napja kezdetén rossz embernek, az elöljáró élénkítőszereket előszeretettel magába tömő testőrének szólt be a hétvégi körmeneten, mikor az áttiport a lovag lábán. A jó lovag foghegyről odavetett szitkozódása a kántálásban beállt lélegzetvételnyi szünetben szisszent ki fogainak kerítésén. A testőr - ki lábát taposta imént - ezt hallván egy gyors fordulat után méretes öklével vágott Cravignon bal vállába.

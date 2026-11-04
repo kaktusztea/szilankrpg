@@ -15,6 +15,7 @@ A tudás szélesíthető a lenti, kiterjesztések alatt található [Szabad Fort
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia, Érzékenység
@@ -60,12 +61,14 @@ Emlékezet, Intelligencia, Érzékenység
 #### 🌟 `15.szint`
 
 ⭕TODO⭕
+
 - Olyan szinten értesz a művészethez, hogy időnként prófétikus meglátásaid támadnak egy alkotásról (pl. "Ez a szobor egy pusztulásra ítélt birodalom végső kétségbeesése").
 - Misztikus módon képes vagy "beleérezni" egy műbe: megérzed az alkotó érzelmeit, szándékát, vagy a kort, amelyben létrejött.
 
 <br />
 
 ---
+
 ### Próbák 🎲
 
 Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet?") magasabb az [Előadóművészet](eloadomuveszet.md) képzettség, **akkor is a Művészetismeret képzettség szintjével dobunk próbát!** Attól hogy valaki remekül furulyázik a kocsmában, nem feltétlenül járatos a zenei nagyvilágban.
@@ -84,7 +87,7 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 
 - Híres mester művének felismerése egy vázlatról vagy töredékről.
 - Egy darab vagy előadás mélyebb szimbolikájának elemzése.
--  Megmondani a híres előadások, festmények, építészeti darabok mögötti történeteket és hátteret
+- Megmondani a híres előadások, festmények, építészeti darabok mögötti történeteket és hátteret
 
 #### Nagyon nehéz (15) 🎲
 

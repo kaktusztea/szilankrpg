@@ -11,11 +11,13 @@ Különlegesen jó a szaglásod, állatokéval vetekszik.
 Emberi szaglás
 
 ---
+
 ### 1. fok
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli szaglás**, mint felvehető Érzék-fortély
 
 🌟 **Hatás**:
+
 - A szaglást érintő Tulajdonságpróbákra `+2` bónuszt kapsz
 - `2x` messzebbről megérzel szagokat, mint egy átlagos ember
 - Olyan **Érzékenység** próbákat dobhatsz, amelyet egy átlag szaglású ember egyáltalán nem, tehát megnyit lehetőségeket
@@ -23,6 +25,7 @@ Emberi szaglás
 - Egyéb alap szagok nem zavarják meg - ha nem túl erősek, képes megkülönböztetni a szagok forrását.
 
 ---
+
 ### Tulajdonságpróbához paraméterek
 
 A KM számára az alábbi paraméterek adhatnak kapaszkodót, mikor megállapítja a Nehézséget:

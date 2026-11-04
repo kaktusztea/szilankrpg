@@ -34,6 +34,7 @@ Vágó-íves          +3    +2    0    -2    -4
 <br />
 
 ---
+
 ## ⚜️ Sebzéstípusok
 
 - [Elsődleges](065_03_04_fegyver_harci_helyzetek.md#️-sebzéstípus-elsődleges): a fegyver alap sebzésjellege, nincs büntetés.
@@ -58,6 +59,7 @@ Tehát ha hosszú karddal szúrni próbálsz vágás helyett, akkor sebzéskor `
 <br />
 
 ---
+
 ## ⚜️ Mágikus fegyverek sebzése
 
 Lásd [Rúnamágiával felruházott tárgyak](120_varazstargyak.md#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak) fejezete.

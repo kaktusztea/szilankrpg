@@ -17,6 +17,7 @@ Hátrány-1 CÉ dobásra
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - Távolsági harcmodor – `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 

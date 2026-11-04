@@ -6,6 +6,7 @@ Egy fortély egyes képzettség(ek)re **két módon** gyakorolhat hatást:
 - **Kiterjesztés** (**N**ormál, **E**rős).
 
 ---
+
 ### `1.` Fortély mint bónusz
 
 ```
@@ -20,6 +21,7 @@ Valamilyen bónuszt ad
 Ebben az esetben képzettség használatához a kapcsolódó fortély megléte nem követelmény, viszont ha megvan, akkor valamilyen - jellemzően statikus -, vagy egyedi bónuszt ad.
 
 ---
+
 ### `2.` Képzettségek kiterjesztése Fortélyokkal
 
 Egyes képzettségek az alap tudást lefedő ismeretek keretein túl is "**kiterjeszthetőek**", egyesek pedig "felszeletelhetőek" tudásterületekre. A [Szabad Fortélyok](042_szabad_fortelyok.md) jellemzője, hogy mind ilyen képzettség-kiterjesztést végeznek, de egyes egyéb, "általános" fortélyok is képesek erre. Hogy melyek, azok mindig az adott képzettség adatlapján olvashatóak (a KM megkövetelhet egyéb kiterjesztéseket is, ha indokoltnak látja).
@@ -65,6 +67,7 @@ Fortély foka és
 <br />
 
 ---
+
 ### 🔆 Speciális: Több fortély terjeszt ki egy képzettséget
 
 Van, hogy egy képzettségpróba esetén nem csak egy, hanem több fortély is szükséges, mint kiterjesztés. Két esetet különböztetünk meg:
@@ -84,6 +87,7 @@ Ha több fortély terjeszt ki egy képzettséget a próba során és **legalább
 Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges Előny bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokát. Ilyenkor a magasabb bónusza az irányadó.
 
 Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjeszt
+
 - `A` fortély - `2.fok`
 - `B` fortély - `3.fok`
 
@@ -92,6 +96,7 @@ Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjesz
 <br />
 
 ---
+
 ### ⚡ Példa képzettség kiterjesztésere - hiányzó fortéllyal
 
 Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
@@ -115,6 +120,7 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 <br />
 
 ---
+
 ### ⚡ Példa képzettség kiterjesztésere - 2 fortéllyal
 
 Horgas Apó orkok [nyomát fedezte fel](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-észrevétele-a-természetben) a folyóparton és követni szeretné, hova vezetnek.
@@ -126,6 +132,7 @@ Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_
 \- JK: "Természetjárás: `6.szint`, Érzékenység: `+1`"
 
 \- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Fortély** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de `Hátrány-2`-vel."
+
 - [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
 - [Tájtípus: erdős](fortelyok.szabad/tajtipus_erdos.md)
 

@@ -9,6 +9,7 @@ Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.m
 <br />
 
 ---
+
 ## Hátulról támadás
 
 ```
@@ -20,6 +21,7 @@ Előny+1 TÉ dobásra
 <br />
 
 ---
+
 ## Közönség előtt
 
 Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harci/gladiator.kozonsege.md) fortély bónuszai aktívak.
@@ -27,6 +29,7 @@ Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harc
 <br />
 
 ---
+
 ## Láthatatlan - részlegesen
 
 Látással csak részben vagy érzékelhető. Példa: részben láthatatlanul, de kontúrjaid felfedezhetőek, VAGY hallható vagy.
@@ -44,6 +47,7 @@ VÉ: +5
 🔆 Áldozat oldalon:
 
 ---
+
 ## Láthatatlan - teljesen
 
 Látással, hallással nem vagy érzékelhető. Példa: teljes láthatatlanság és zajt sem keltesz.
@@ -63,6 +67,7 @@ VÉ: +10
 <br />
 
 ---
+
 ## Levegőből támadás
 
 ```
@@ -78,6 +83,7 @@ Előny+2 TÉ Dobásra
 <br />
 
 ---
+
 ## Lovas harc
 
 Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély bónuszai aktívak.
@@ -87,6 +93,7 @@ Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély b�
 <br />
 
 ---
+
 ## Léglovas harc
 
 Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély bónuszai aktívak.
@@ -96,6 +103,7 @@ Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglova
 <br />
 
 ---
+
 ## Magasabbról
 
 ```
@@ -109,6 +117,7 @@ Előny+1 TÉ dobásra
 <br />
 
 ---
+
 ## Meglepetés
 
 Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
@@ -135,6 +144,7 @@ VÉ csökkentés: +2
 <br />
 
 ---
+
 ## Orvtámadás
 
 Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás).
@@ -175,6 +185,7 @@ Módosítók • csak az 1.támadásra!
 <br />
 
 ---
+
 ## Páros harc
 
 Koordinált 2 fős harc. A [Páros harc](fortelyok.harci/paros_harc.md) fortély bónuszai aktívak.

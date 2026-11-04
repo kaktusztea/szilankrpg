@@ -8,7 +8,6 @@ Az **Anyag** szféra alá tartozó arkánum.
 
 xyz
 
-
 ### Méregmágia
 
 xyz
@@ -38,5 +37,3 @@ Alacsony szinten képes pl. egyes növények mérgező mivoltának ideáját fel
 > _Büszkén lépdelt a pár a díszes embertömeg között, majd megálltak, hogy az isteni szentség előtt is összekössék életüket. De jajj! A leány megtántorodott! Arca akár a hegyekben esett hó, lélegzete akadozik! Haszontalan fiam karjaiba hanyatlik. Micsoda tragédia! Rohanok, könnyes szemmel vigasztalom fiamat."_
 
 Ebben az esetben a ruha akkor fejtette ki hatását, amikor fő ideája (hogy viseljek) beteljesedett (plusz meg egy kis időzítés).
-
-

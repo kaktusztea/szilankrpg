@@ -49,14 +49,16 @@ A lenti fegyverstatisztikák automatikusan generáltak a Szilánk saját [Fegyve
 - Áldozat [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgat%C3%A1sir%C3%A1ny%C3%ADt%C3%A1s) manőverrel terelhető, forgatható
 
 Szabadulás a hurokból:
-  - [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
-  - Nehézség: `9` (magasabb)
+
+- [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
+- Nehézség: `9` (magasabb)
 
 A Garott használója is kiszolgáltatott külső támadó ellen: [Helyhez kötve](065_03_03_negativ_helyzetek.md#helyhez-kötve) módosítókat szenved el.
 
 <br />
 
 ---
+
 ## Közelharci hárítófegyverek
 
 Alapesetben hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverforgató kezedben, ha nem tudod használni, nem kapod meg annak semmilyen harcértékét (`0`-nak számítanak).

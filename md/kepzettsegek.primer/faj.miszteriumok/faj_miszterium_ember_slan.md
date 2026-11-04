@@ -1,6 +1,6 @@
 ## Faj misztérium: Ember (Slan)
 
-→ [STUDY: Faj misztérium: Ember (Slan) ](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.faj.miszterium.ember.slan) ⭕
+→ [STUDY: Faj misztérium: Ember (Slan)](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.faj.miszterium.ember.slan) ⭕
 
 ### Faj-Arkánum
 
@@ -11,6 +11,7 @@
 [Háttér: Ember (Slan)](../../hatterek.faji/ember_slan.md)
 
 ---
+
 ### Szintek
 
 ```

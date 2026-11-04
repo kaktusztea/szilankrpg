@@ -7,6 +7,7 @@
 ⭕TODO: Még nem tudom, mennyire kell itt belefolyni a többi területbe (mágia/pszí), de általános szabályokat érdemes egy helyre gyűjteni⭕
 
 ---
+
 ### 🔆 Érzékek
 
 ```
@@ -18,6 +19,7 @@ Az érzékeket (látás, hallás, szaglás, ízlelés) érintő próbákat **És
 A fajok esetleges bónuszai felvehetőek Érzék-Fortélyként. Bővebben lásd a [Faj Hátterek](../021_faj_hatterek.md) fejezetben.
 
 ---
+
 ### 🔆 Észlelés
 
 Idézet az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettség leírásából:
@@ -48,6 +50,7 @@ A karakternek feltűnik valami anélkül, hogy kifejezetten kereste volna/figyel
 ⚡Például: a nemesúrnak álbajusza van, a madárcsicsergés természetellenes, stb.
 
 ---
+
 ### 🔆 Különbség az észrevétel és az értelmezés között
 
 - **Észlelés** + **Érzékenység**
@@ -56,6 +59,7 @@ A karakternek feltűnik valami anélkül, hogy kifejezetten kereste volna/figyel
   - Rájössz-e, hogy mit vettél észre? ("az igazi szakáll nem így nő")
 
 ---
+
 ### 🔆 Lopakodás/rejtőzés és észlelése
 
 Lásd: [Lopakodás szituáció](lopakodas_rejtozes_es_eszlelese.md)

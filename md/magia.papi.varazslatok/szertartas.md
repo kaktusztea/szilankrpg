@@ -19,6 +19,7 @@
 **9.szint:** Kiátkozás
 
 ---
+
 #### Hatás
 
 Ide tartozik a Szentelés, Áldozat, Áldás, Összeesketés, Temetés, Templomszentelés, Névadás, valamint a Kiátkozás is.
@@ -26,6 +27,7 @@ Ide tartozik a Szentelés, Áldozat, Áldás, Összeesketés, Temetés, Temploms
 A Kiátkozáshoz több pap szükséges, a KM dönt helyzetfüggően.
 
 ---
+
 #### Szabályok
 
 A fenti szertartásokhoz értelemszerűen sokszor szükséges "összetevők" a hívek.

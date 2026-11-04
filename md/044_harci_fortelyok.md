@@ -51,6 +51,7 @@
 - [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md)
 
 ---
+
 ### Lovas harci fortélyok
 
 <!-- tag: harci__lovas__fortely -->
@@ -60,6 +61,7 @@
 - [Lövés hátasról](fortelyok.tavharc/loves_hatasrol.md)
 
 ---
+
 ### Távolsági harci fortélyok
 
 <!-- tag: tavharc__fortely -->

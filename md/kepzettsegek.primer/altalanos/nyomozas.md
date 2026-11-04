@@ -3,6 +3,7 @@
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
 Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Példák, hogy milyen jellegű információk nyerhetők a képzettség segítségével:
+
 - Bűnjelek elemzése és következtetés is. "Itt el lett mozdítva a bútor."
 - Mikor járt itt utoljára valaki?
 - Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.
@@ -56,6 +57,7 @@ Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befoly
 <br />
 
 ---
+
 ### Domináns Tulajdonságok
 
 Intelligencia, Emlékezet
@@ -105,6 +107,7 @@ Intelligencia, Emlékezet
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

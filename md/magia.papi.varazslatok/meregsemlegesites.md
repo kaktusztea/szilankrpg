@@ -19,6 +19,7 @@
 **15.szint:** ⭕TODO⭕
 
 ---
+
 #### Hatás
 
 A varázslat eltünteti a méreganyagot a alany szervezetéből, így állapota nem súlyosbodik tovább. Viszont a méreg eddigi hatása, az okozott betegség nem múlik el.
@@ -26,6 +27,7 @@ A varázslat eltünteti a méreganyagot a alany szervezetéből, így állapota 
 A fenti hatást Betegség gyógyítás varázslat képes megszűntetni.
 
 ---
+
 #### Szabályok
 
 Ezt a varázslatot elvégezheti Ranagol vagy Darton pap, de "Betegség gyógyítását" nem.

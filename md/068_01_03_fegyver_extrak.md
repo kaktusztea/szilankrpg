@@ -19,6 +19,7 @@ A feltételek nélkül nem jár a bónusz. Lásd még: [Harci iskola](fortelyok.
 <br />
 
 ---
+
 ## Harci helyzet (szituációs, automatikus)
 
 ### Beszorítható (enyhén)
@@ -184,6 +185,7 @@ Hajítófegyver, pajzsba dobva megakad benne és akadályozza annak használatá
 <br />
 
 ---
+
 ## Manőver hatással
 
 ### Manőver Precíz támadás könnyebb (pontos)
@@ -297,6 +299,7 @@ Kimondottan alkalmas az ellenfél távoltartására.
 <br />
 
 ---
+
 ## Tulajdonság (építési / minőségi opció)
 
 ### Beakad (~50%)
@@ -336,6 +339,7 @@ Fegyvered nem túl alkalmas zúzó fegyverek támadásainak hárítására.
 <br />
 
 ---
+
 ## Távharc extrák
 
 Ezek a hatások a [hajító-](068_07_hajitofegyverek.md) és [lőfegyverekhez](068_08_lofegyverek.md) kötöttek. A legtöbb KM által könyvelt (szituációs) hatás.

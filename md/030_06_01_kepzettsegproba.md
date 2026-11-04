@@ -19,6 +19,7 @@ A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzón�
 - [Mentődobás](#mentődobás)
 
 ---
+
 ## Próbadobás
 
 Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** szint értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő az adott szituációra meghatározott **Célszámmal**, akkor a próba sikerült.
@@ -47,12 +48,14 @@ Tulajdonság + Képzettség + k10
 A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Random példa: "szakrális emberáldozat csökkenti az adott próba nehézségét".
 
 Példák `21` feletti célszámokra:
+
 - Aktuális Aura számításánál Aurahangolás képzettségpróba ⭕LINK⭕
 - [Méreg komplexitása](141_mereggenerator.md#méreg-komplexitása)
 
 <br />
 
 ---
+
 ## Tulajdonság választás (opcionális)
 
 Hogy mely Tulajdonsággal kell a képzettségpróbát dobni, azt alapesetben a KM határozza meg, de van, hogy megoldható több Tulajdonsággal is.
@@ -60,6 +63,7 @@ Hogy mely Tulajdonsággal kell a képzettségpróbát dobni, azt alapesetben a K
 A KM is felajánlhatja a "menüt", de a játékos is jelentkezhet ötlettel, hogy ő melyik Tulajdonság segítségével **hogyan** oldaná meg a feladatot. A KM dönt, hogy ezt elfogadja-e.
 
 Tulajdonságonként viszont eltér(het)
+
 - Nehézség
 - megvalósítás módja, hossza
 - rontás hatása
@@ -69,6 +73,7 @@ Tulajdonságonként viszont eltér(het)
 <br />
 
 ---
+
 ## Előny-Hátrány dobások
 
 A Tulajdonságpróbánál már említett [Státusz rendszer](080_hatasok_es_statuszok.md) alá tartozó [Előnyt, vagy Hátrányt okozó Hatások](081_hatasok.md#%EF%B8%8F-el%C5%91ny12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok) a Képzettségpróbákra is vonatkozhatnak - az épp aktuális Státusz leírásától függően- így az `5` fokú skála itt is alkalmazásra kerülhet.
@@ -76,6 +81,7 @@ A Tulajdonságpróbánál már említett [Státusz rendszer](080_hatasok_es_stat
 <br />
 
 ---
+
 ## Felszerelés hatása fizikai Képzettségpróbákra
 
 Túl sok cipelt tárgy  fizikai **Képzettségpróbák** végrehajtásában.
@@ -85,6 +91,7 @@ Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 <br />
 
 ---
+
 ## Vállalás és Kritikus hiba
 
 A Vállalás azt jelenti, hogy (ha a KM is beleegyezik) képzettségpróba esetén kaphatsz `[+1; +3]` bónuszt a próbára - te döntöd el mennyit. Minél többet vállalsz, annál nagyobb veszélynek teszed ki magad. Ugyanis a próba előtt "Vállalás próbát" kell dobni:
@@ -131,6 +138,7 @@ Látható, hogy a vállalás sokat dob az esélyeken, de megvan a rizikója is: 
 <br />
 
 ---
+
 ## Próba biztos tudásból
 
 Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehetőség képzettségpróba dobására. Tipikusan a "Tudok-e valamit róla?"-jellegű határozottan eldönthető esetekben. Ilyenkor a KM dönti el, hogy az adott képzettségszinttel az adott feladat megoldható, avagy sem.
@@ -138,6 +146,7 @@ Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehe
 <br />
 
 ---
+
 ## Siker/Kudarc mértéke
 
 ⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) rontottál, akkor kiemelten nagy hibát vétettél.
@@ -149,6 +158,7 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 <br />
 
 ---
+
 ## Próba képzetlenül
 
 ```
@@ -163,6 +173,7 @@ Ha az adott képzettséget nem lehet képzetlenül megpróbálni, akkor a KM egy
 <br />
 
 ---
+
 ## Összetett képzettségpróba
 
 Ha a karakternek egy olyan összetett feladatot kell elvégeznie, ami nem intézhető el egy darab dobással (pl. megmászni egy hegyet, vagy rettentő magas várfalat, esetleg órákon keresztül verset szavalni), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
@@ -193,6 +204,7 @@ Természetesen a [fortélyok által kiterjesztett képzettségekre](030_08_01_ke
 <br />
 
 ---
+
 ### ⚡Példa összetett képzettségpróbára: Megmászni egy 200 méter magas, omladékos hegyet
 
 ```
@@ -239,6 +251,7 @@ Hasonló szituáció: [Mászás képzettségpróbára összetett példa](szituac
 <br />
 
 ---
+
 ## Összetett ellenpróba
 
 Különleges eset az ilyen. Olyankor fordulhat elő, mikor hosszabb, összetettebb próba szükséges, amelyben a felek összemérhetik tudásukat.
@@ -261,6 +274,7 @@ Ezen felül ez a módszer a feszültség fenntartására is alkalmas, mert esél
 <br />
 
 ---
+
 ## Helyettesítés
 
 ```
@@ -301,6 +315,7 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 <br />
 
 ---
+
 ## Sérülés hatása képzettségpróbára
 
 Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](061_03_sebesules.md) került, akkor ["Sérült" Státuszt](082_statuszok.md#️-sérült-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
@@ -308,6 +323,7 @@ Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](061_03_
 <br />
 
 ---
+
 ## Tulajdonság vs Képzettség ellenpróba
 
 Előfordulhat olyan furcsa helyzet, hogy a KM véleménye szerint egy szituációban az egyik fél a Tulajdonságát, a másik egy képzettségét használná.
@@ -315,6 +331,7 @@ Előfordulhat olyan furcsa helyzet, hogy a KM véleménye szerint egy szituáci�
 Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbálja vagy Tulajdonság ellenpróbába, vagy Képzettség ellenpróbába fordítani a szituációt. Ne bonyolítsunk feleslegesen.
 
 ---
+
 ## Mentődobás
 
 Ha egy olyan szituációban rontasz képzettségpróbát, ami végzetes hatású (**nem** Vállalás dobás hatására!), akkor jogosult vagy **Mentődobásra**.

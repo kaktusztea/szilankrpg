@@ -13,6 +13,7 @@ lorem ipsum dorem🗡️ amet
 lorem ipsum
 
 ---
+
 ### 1. fok
 
 🔒 Képzettség - `x.szint`

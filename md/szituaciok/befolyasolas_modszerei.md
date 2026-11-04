@@ -12,6 +12,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 "Elhittem, amit mondott?" - hangzik el sokszor.
 
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
+
 - Tulajdonság: Intelligencia
 - Normál kiterjesztés: [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
 - Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
@@ -19,30 +20,36 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 `VS`
 
 [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) képzettség
+
 - Tulajdonság: Intelligencia
 - Normál kiterjesztés: [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
 
 <br />
 
 ---
+
 ### ⚜️ Csábítás: Erős, izmos barbár csábít
 
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
+
 - Tulajdonság: Erő
 - Normál kiterjesztés: [Csábítás](../fortelyok.altalanos/csabitas.md) fortély
 
 `VS`
 
 [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) képzettség
+
 - Tulajdonság: Önuralom
 - Normál kiterjesztés: [Csábítás](../fortelyok.altalanos/csabitas.md) fortély
 
 <br />
 
 ---
+
 ### ⚜️ Csábítás: igéző huri táncos bájolása
 
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
+
 - Tulajdonság: Érzékenység
 - Normál kiterjesztés: [Csábítás](../fortelyok.altalanos/csabitas.md) fortély
 - Extra: a bájoló karakter szubjektív szépségétől függő bónuszok `-3;+3` → KM dönt a szituáció és a karakterek ismeretében.
@@ -50,21 +57,25 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 `VS`
 
 [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) képzettség
+
 - Tulajdonság: Önuralom
 - Normál kiterjesztés: [Csábítás](../fortelyok.altalanos/csabitas.md) fortély
 
 <br />
 
 ---
+
 ### ⚜️ Megfélemlítés szituáció
 
 [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
+
 - Tulajdonság: Intelligencia vagy Érzékenység
 - Normál kiterjesztés: [Megfélemlítés](../fortelyok.altalanos/megfelemlites.md) fortély
 
 `VS`
 
 [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) képzettség
+
 - Tulajdonság: Önuralom
 - Normál kiterjesztés: [Megfélemlítés](../fortelyok.altalanos/megfelemlites.md) fortély
 

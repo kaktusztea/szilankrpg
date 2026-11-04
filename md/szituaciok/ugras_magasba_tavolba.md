@@ -3,6 +3,7 @@
 Magaslatra ugrással eljutni, vagy átugorni egy akadályt. Alapeset: ideális elrugaszkodás - szükséges nekifutással.
 
 ---
+
 ## Ugrás magasba → Képzettségpróba: Akrobatika + Ügyesség/Edzettség
 
 ```
@@ -31,6 +32,7 @@ Magas  Nehézség
 ```
 
 ---
+
 ## Ugrás távolba → Képzettségpróba: Akrobatika + Ügyesség/Edzettség
 
 ```

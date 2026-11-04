@@ -5,6 +5,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - Harcmodor - `6.szint` (nem-távolsági)
 
 🌟 **Hatás**: Minden kör elején
@@ -19,6 +20,7 @@ Visszanyersz: 1 VÉ
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Harcmodor - `9.szint` (nem-távolsági)
 
 🌟 **Hatás**: Minden kör elején
@@ -29,13 +31,15 @@ Visszanyersz: 2 VÉ
 ```
 
 ---
+
 ### 3. fok
 
 🔒 **Követelmény**:
+
 - Harcmodor - `12.szint` (nem-távolsági)
 - [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazása folyamatosan
 
-🌟 **Hatás**: 
+🌟 **Hatás**:
 
 ```
 Visszanyersz: 2 VÉ
@@ -44,6 +48,7 @@ Visszanyersz: 2 VÉ
 ```
 
 ---
+
 ### NJK ismeretként
 
 NJK szereplők, sőt szörnyek, természeti lények is rendelkezhetnek ezzel a fortéllyal technikailag azonos képességgel.

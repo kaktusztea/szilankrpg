@@ -27,6 +27,7 @@ Kaland végén kaphatóak belőle
 - [Etikett](../kepzettsegek.szekunder/etikett.md): a helyi celebritások, nemesi körökben forgó emberek ismerete (nem mindig szükséges, ne legyünk szigorúak)
 
 ---
+
 ### Mit fed le
 
 A Helyismeret forrása az előtörténet és az átélt kalandok. Az alábbi ismereteket foglalja magában:
@@ -40,6 +41,7 @@ A Helyismeret forrása az előtörténet és az átélt kalandok. Az alábbi ism
 - helyi színdarabok
 
 ---
+
 ### Leírás
 
 Kalandozásai során a karakter számos helyre elvetődik. Ha ott rászán időt a város tanulmányozására, akkor már ott is képes lesz Helyismeret-függő képzettségeit maximális hatékonysággal kiaknázni, büntetés nélküli próbákat dobni rá.

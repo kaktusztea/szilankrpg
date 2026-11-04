@@ -37,11 +37,11 @@
 - [Rituális tánc](fortelyok.magia.metodusok/ritualis_tanc.md)
 - [Szexuálmágia](fortelyok.magia.metodusok/szexualmagia.md)
 - [Szimpatikus mágia](fortelyok.magia.metodusok/szimpatikus_magia.md)
--  ⭕ Hívás/Idézés ?
--  ⭕ Űzés ?
--  ⭕ Irányítás ?
--  ⭕ Hang (?)
--  ⭕ Fény (?): Így pl. az **Illúziók** arkánum is felbontható, nem tudna mindent az alkalmazó egyben rögtön.
+- ⭕ Hívás/Idézés ?
+- ⭕ Űzés ?
+- ⭕ Irányítás ?
+- ⭕ Hang (?)
+- ⭕ Fény (?): Így pl. az **Illúziók** arkánum is felbontható, nem tudna mindent az alkalmazó egyben rögtön.
 
 ---
 

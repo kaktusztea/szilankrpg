@@ -20,6 +20,7 @@ Tulajdonságpróba célszám (k6)
 ```
 
 ---
+
 ### Kiemelt Siker/Kudarc
 
 ⚜️ Ha `3` vagy annál nagyobb különbséggel rontottál, akkor kiemelten nagy hibát vétettél.
@@ -31,6 +32,7 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 <br />
 
 ---
+
 ## Helyzetfüggő módosítók
 
 Ezek a Tulajdonságpróba dobás módosítói, amelyek adott szituációkban jelenhetnek meg.
@@ -40,6 +42,7 @@ Példa: ["Beszéd szájról olvasása" szituációban](szituaciok/beszed_szajrol
 <br />
 
 ---
+
 ## Előny-Hátrány dobások
 
 A Szilánk későbbiekben tárgyalt [Státusz rendszere](080_hatasok_es_statuszok.md) alá tartoznak az [Előnyt, vagy Hátrányt okozó Hatások](081_hatasok.md#%EF%B8%8F-el%C5%91ny12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok), melyek gyakorlatilag bármilyen kockadobást módosíthatnak, az épp aktuális Státusz leírásától függően. A kockadobásokat az alábbi mértékben képesek módosítani, tehát egy `5` fokú skálát kapunk a kezünkbe differenciálásra.
@@ -54,6 +57,7 @@ Természetesen a Tulajdonságpróba dobásokra is járhat **Előny**, vagy **Há
 <br />
 
 ---
+
 ### Felszerelés hatása fizikai Tulajdonságpróbára
 
 Túl sok cipelt tárgy  fizikai **Tulajdonságpróbák** végrehajtásában.
@@ -63,6 +67,7 @@ Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 <br />
 
 ---
+
 ### Összetett Tulajdonságpróba
 
 Ha a karakternek egy olyan összetett próbát kell tennie, ami nem intézhető el `1 db` dobással (pl. több fázisból álló kombinált mozdulatsor, egy összetett, hosszan tartó, hullámzó érzelemimpulzus értelmezése **Érzékenység** próbával), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
@@ -96,6 +101,7 @@ Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal alacsonyabb nehézs
 <br />
 
 ---
+
 ### Példa Összetett Tulajdonságpróbára
 
 **⚡ Elkapdosni a folyamatosan potyogó tányérokat**
@@ -110,7 +116,6 @@ Próba: "Nagyon nehéz" (6)
 Mivel a feladat elég komplex és időben is elhúzódhat, ezért nem intézhető el a dolog `1 db` dobással. A KM `1 db` Másodlagos próbát ír elő.
 
 Ekkor a próbák célszámai:
-
 
 ```
 6: 50% esély
@@ -130,6 +135,7 @@ Ezzel kb. 33% esélye van a sikerre
 <br />
 
 ---
+
 ### Kombinált próbák
 
 Az összetett próbákhoz hasonlóak a Kombinált próbák: adódhat olyan helyzet, hogy a karakternek több fajta Tulajdonságát kell próbára tenni egy adott szituációban. Pl. **Erő** és **Ügyességpróbát** is dobnia kell.
@@ -157,6 +163,7 @@ Ha a KM szerint ebben az esetben az Ügyességpróba csak "apró kiegészítő",
 <br />
 
 ---
+
 ### Tulajdonság ellenpróba
 
 ```
@@ -174,6 +181,7 @@ Ha az eredmények azonosak, akkor patthelyzet alakul ki, a KM belátása szerint
 <br />
 
 ---
+
 ### Sérülés hatása tulajdonságpróbára
 
 Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a tulajdonságpróbáit.

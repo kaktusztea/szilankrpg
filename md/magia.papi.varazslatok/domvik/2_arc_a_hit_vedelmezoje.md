@@ -18,8 +18,8 @@
 
 **11.szint:** egész kis csoportra alkalmazhatja (magát is beleértve)
 
-
 ---
+
 #### Hatás
 
 A Pap Asztrális és Mentális behatások ellen nyújt védelmet maga, vagy szövetségesei számára.
@@ -29,6 +29,7 @@ Bónusz = Kisszféra x 2 ⭕
 ```
 
 ---
+
 #### Szabályok
 
 Az AME, MME esetén elég a **Lélek** Szféra.

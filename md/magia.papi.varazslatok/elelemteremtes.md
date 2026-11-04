@@ -15,12 +15,13 @@
 **6.szint:** Legfeljebb 2 tucat embernek
 
 ---
+
 #### Hatás
 
 A pap segít az éhezőkön. Vizet fakaszt, élelmet teremt - látszólag a semmiből.
 
-
 ---
+
 #### Szabályok
 
 - annyi élelem, ivóvíz terem, amennyi a pap környezetében a híveknek elég a jóllakáshoz

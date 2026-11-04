@@ -14,6 +14,7 @@ Max varázslat Erősség
 ```
 
 ---
+
 ## Varázslat szükséges Erőssége
 
 Több eset lehetséges adott varázslatod Erősségének megállapítására.
@@ -27,12 +28,12 @@ Több eset lehetséges adott varázslatod Erősségének megállapítására.
 <br />
 
 ---
+
 ## Túlvállalás Erősségre
 
 ⭕TODO⭕: [ADR: Mágia Erősség Túlvállalás, Kimerülés modell](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell)
 
 Ha ott kész, migrálni ide.
-
 
 ---
 

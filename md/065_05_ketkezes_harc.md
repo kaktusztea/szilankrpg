@@ -61,6 +61,7 @@ Kivéve ha direkt a [Gyengébb kézzel](065_03_04_fegyver_harci_helyzetek.md#gye
 <br />
 
 ---
+
 ### ⚡Példa: Harc 2 db tőrrel
 
 ```

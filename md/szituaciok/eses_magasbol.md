@@ -1,6 +1,6 @@
 ## Esés magasból
 
-###  → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Ügyesség/Edzettség
+### → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Ügyesség/Edzettség
 
 ```
 Nehézség magasság alapján
@@ -37,11 +37,13 @@ Páncélban
 ```
 
 ---
+
 ### Sebesülés zuhanás után
 
 → [Sebződés hatása](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) fejezetben tárgyaljuk.
 
 ---
+
 ### ⚡Példa
 
 Tetves elvéti **Mászás** képzettségpróbáját és annak [mentődobását](../030_06_01_kepzettsegproba.md#mentődobás) is - lehullik egy `4 méter` magas kiszögellésről. Akrobatika próba jön. Szerencséjére egy füves susnyába érkezik (Dobásmódosító: `+3`), viszont könnyű bőrvértet visel (Dobásmódosító: `-3`), így a körülmények kioltják egymást.

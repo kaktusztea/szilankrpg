@@ -3,13 +3,16 @@
 A precízitást igénylő manőverek nagy tudója vagy. Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső szervek elhelyezkedésével.
 
 ---
+
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
+
 - [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2` bónusz **Ellenpróbánál**
 - [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2` bónusz **Ellenpróbánál**
 - Extra:

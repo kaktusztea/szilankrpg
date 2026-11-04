@@ -3,6 +3,7 @@
 A Fortélyok egyedi ismeretek, melyeket ugyanúgy `KP`-ból vehet fel a karakter, mint a Képzettségeket, de legtöbbször pont rájuk épülnek, kiegészítik őket, valamint kevésbé differenciált tudást takarnak.
 
 ---
+
 ### Kategóriák
 
 - [Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
@@ -14,6 +15,7 @@ A Fortélyok egyedi ismeretek, melyeket ugyanúgy `KP`-ból vehet fel a karakter
 <br />
 
 ---
+
 ### Általános szabályok
 
 ```
@@ -30,6 +32,7 @@ Tulajdonságok elvárt értékei, képzettségek elvárt szintje, esetleg más f
 <br />
 
 ---
+
 ### 🔆 Jellemző hatás 1: Egyedi bónusz adása
 
 Az adott fortély - leírásában található - egyedi bónuszt szolgáltat.
@@ -37,6 +40,7 @@ Az adott fortély - leírásában található - egyedi bónuszt szolgáltat.
 <br />
 
 ---
+
 ### 🔆 Jellemző hatás 2: Képzettség kiterjesztése, képzettség bónusz adása
 
 Erről a [Képzettségek és fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) fejezetben olvashatunk.

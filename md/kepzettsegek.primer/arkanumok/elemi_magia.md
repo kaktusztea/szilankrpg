@@ -44,6 +44,7 @@ Képzettség
 Tűzvarázslat előtt lehűl a levegő (a hőt kivonja a környezetből)
 
 ---
+
 ## Formulák
 
 ⭕TODO: Bevezető
@@ -183,7 +184,6 @@ Leggyorsabb mozgatás,
 
 🔆Fontos: az idézett forma `TÉ/VÉ` értéke nem lehet nagyobb a varázsló harcértékeinél - kivéve, ha mentálisan összeköt egy képzettebb harcost a varázslattal. Az ilyesmi már igazán magas szintű mágiának számít.
 
-
 ⭕TODO: Link [Mágia célzására](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.celzasa), ha bekerül a fő doksiba.
 
 ⭕TODO: Méret módosító: ez is link a Mágia alaptörvényeire - ha kész lesz.
@@ -205,6 +205,7 @@ A fenti példánál az ez `3`, mert annyira "nyújtja ki" a varázsló.
 ⭕Ez is kérdéses még, nem könnyű eldönteni, hogy random is legyen, de közben meg sok se legyen. Az alap sebzés a sebző elemmel való 2 szegmenses érintkezést jelenti kivéve a nyíl és a kitörés formát, ahol a sebzés egyben, azonnal történik. Ha a 2 szegmensnél tovább tartózkodik valaki az elemmel érintkezésben, akkor a többszörös idő többszörös sebzést okoz. 1 kör például már 5x-ös sebzést! Viszont nem fog senki egy tűzgolyóban álldogálni valószínűleg.⭕
 
 ---
+
 ### ⚡Példavarázslat: Gyors tűzgolyó
 
 ```
@@ -215,6 +216,7 @@ TÉ=30
 ```
 
 ---
+
 ### ⚡Veszedelmes 2 fejű tűzsárkány
 
 ```
@@ -231,6 +233,7 @@ TÉ=30
 A sárkány irányításához **Önuralom** tulajdonságpróba is dobatható (KM határozza meg a célszámot)
 
 ---
+
 ### ⚡Lecsapó tűzkígyó
 
 ```
@@ -241,12 +244,11 @@ Komplexitás = 14
 TÉ = 60
 ```
 
-
-
 <br />
 
 ---
 ---
+
 ## ✨Elementál idézése
 
 ```
@@ -275,6 +277,7 @@ Mentál/Asztrálmágia – 9.szint
 ```
 
 ---
+
 ## ✨Elementál űzése
 
 - Mana: lénytől függ
@@ -304,6 +307,7 @@ Síkúr
 ```
 
 ---
+
 ## ✨Őselem megkötése anyagban
 
 ⭕TODO⭕

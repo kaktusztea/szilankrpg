@@ -31,11 +31,13 @@ Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md
 <br />
 
 ---
+
 ### Előny/Hátrány dobásmódosítók
 
 Egyes [Státuszok](../../082_statuszok.md) hatására járhatnak negatív [hatások](../../081_hatasok.md) a **Szociális képzettségpróbákra**.
 
 ---
+
 ### Domináns Tulajdonságok
 
 Intelligencia, Érzékenység
@@ -76,6 +78,7 @@ Emberismeret + Érzékenység
 ```
 
 ---
+
 ### Mesterbónuszok
 
 #### 🌟 `9.szint`

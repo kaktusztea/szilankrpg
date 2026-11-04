@@ -23,6 +23,7 @@ Manővert végző teszi aktuális, fegyveres `TÉ` értékkel. Sikeréhez sebzé
 Manővert végző teszi. `Próbadobás vs Célszám`
 
 ---
+
 ## ⚜️`1.` Megakasztás (M)
 
 A Megakasztás az első fázis a Manőver végrehajtása során.\
@@ -37,6 +38,7 @@ Ha a Megakasztás találatot ér el (nem kell, hogy valós sebzést is okozzon),
 <br />
 
 ---
+
 ## ⚜️`2.` Végrehajtás (V)
 
 ```
@@ -52,6 +54,7 @@ Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem siker�
 <br />
 
 ---
+
 ## ⚜️`3.` Ellenpróba (E)
 
 ```
@@ -118,6 +121,7 @@ Opcionális felhasználásukkal mindkét fél növelheti esélyeit: a támadó f
 Manőver Pontokat a **Védő Értékkel** együtt, azonos zavartalan pihenési körülmények között lehet visszanyerni.
 
 ---
+
 ## Általános szabályok
 
 ### 🟨 Normál Manőver-követelmények

@@ -9,6 +9,7 @@ Gyakorlott vagy földi, vagy légi hátasról való íjászatban, lövészetben.
 <br />
 
 ---
+
 ### Alapeset
 
 ```
@@ -23,6 +24,7 @@ CÉ levonás
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - Lovaglás/Léglovaglás - `6.szint`
 - Távolsági harcmodor - `6.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
@@ -32,6 +34,7 @@ CÉ levonás
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Lovaglás/Léglovaglás - `9.szint`
 - Távolsági harcmodor - `9.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)

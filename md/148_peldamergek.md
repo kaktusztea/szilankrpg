@@ -25,6 +25,7 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 <br />
 
 ---
+
 ### ⚡ **Könnycsepp a pengén (halálos fegyverméreg)**
 
 ```
@@ -50,6 +51,7 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 <br />
 
 ---
+
 ### ⚡ **Múló évszakok (többkomponensű mesteri ital/légiméreg)**
 
 ```
@@ -93,7 +95,8 @@ A hatást a vajákos eltolta egy nappal, hogy éjszaka jöjjön a vég, így a g
 A vajákos a **Kimutatási idő** (`0`) és az **Elállás** (`0`) értékeivel "spórolt". Előbbivel némi kockázatot vállalt: nem számított a holttest alapos átvizsgálására, ezért `1 napig` még kimutatható lett volna a méreg. Az utolsó hatóanyag-komponens adagolása pedig gyorsan követte az előállítását (Elállás).
 
 ---
-### ⚡ Szegény ember trónja 
+
+### ⚡ Szegény ember trónja
 
 Gyenge emésztőrendszeri étel/italméreg.
 
@@ -117,6 +120,7 @@ Olcsó, közönséges szer: hasi görcsöt, hasmenést okoz, de Életerőt nem f
 <br />
 
 ---
+
 ### ⚡ Érzéki sóhajok
 
 Légi alapú ajzószer.
@@ -142,6 +146,7 @@ Füstölőben, pipában vagy gyertyaviaszba keverve elégetve édeskés füstöt
 <br />
 
 ---
+
 ### ⚡ Szemmel verő
 
 Idegrendszeri fegyverméreg.
@@ -169,6 +174,7 @@ Fegyverméreg, amely a sebzést követő körben kábulatot hoz, majd elhúzódv
 <br />
 
 ---
+
 ### ⚡ Éber rémálom
 
 Idegrendszeri fegyverméreg, hallucinogén.
@@ -195,6 +201,7 @@ Fegyverméreg, amely kábulat után pár óra múlva erős, irracionális félel
 <br />
 
 ---
+
 ### ⚡ Vérzékeny vágás
 
 Keringési fegyverméreg.
@@ -220,6 +227,7 @@ Azonnal ható fegyverméreg: a vér megalvadási képességét rontja, az áldoz
 <br />
 
 ---
+
 ### ⚡ Fullasztó
 
  Keringési fegyverméreg.

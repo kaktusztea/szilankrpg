@@ -17,6 +17,7 @@ Lopás + Ügyesség
 <br />
 
 ---
+
 ### ⚡ Példa szituáció: Nemeshölgy testőrrel
 
 Az előljáró felesége a piac forgatagában válogat, tőle pár méterrel, civil ruhában lépdel testőre.
@@ -26,7 +27,7 @@ Tetves a tolvaj gyanítja, hogy a hölgy nem egyedül jött a vásárba, így [a
 
 #### `1.` Képzettségpróba: Észlelés + Érzékenység 🎲
 
-Tetves észreveszi -e a testőrt 
+Tetves észreveszi -e a testőrt
 
 ```
 Tetves Észlelés dobás módosítói: +3

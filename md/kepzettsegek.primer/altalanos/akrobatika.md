@@ -16,6 +16,7 @@ Magába foglalja az [esést](../../szituaciok/eses_magasbol.md), **ugrást** és
 Kapcsolódhat: [Csúszós talaj](../../065_03_03_negativ_helyzetek.md#csúszós-talaj) harci helyzet (küzdelem esetén)
 
 ---
+
 ### Kapcsolódik
 
 - [Harci akrobatika](../../fortelyok.harci/harci_akrobatika.md) fortély
@@ -32,17 +33,21 @@ Kapcsolódhat: [Csúszós talaj](../../065_03_03_negativ_helyzetek.md#csúszós-
 ### Mesterbónuszok
 
 #### 🌟 `9.szint`
+
 Ugrásmagasságod duplázódik. Az [Esés magasból](../../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-3`.
 
 #### 🌟 `12.szint`
+
 Ugrásmagasságod háromszorozódik. Képes vagy lassítani esésedet. Az [Esés magasból](../../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-6`.
 
 #### 🌟 `15.szint`
+
 Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és mindig puhán érsz földet. Ugrásmagasságod négyszereződik.
 
 <br />
 
 ---
+
 ### Próbák 🎲
 
 🔆 **Esés** próbákat lásd az **[Esés magasból](../../szituaciok/eses_magasbol.md)** szituáció leírásánál!
@@ -59,9 +64,9 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 - Gyors kigurulás végrehajtása egy enyhén lejtős, köves terepen
 - Megkapaszkodni egy ledőlő fa ágain
 - Ugrás/esés távolság felmérése. A KM megmondja kérdésedre, hogy:
-    - biztosan átugrod
-    - talán: van esélyed rá, hogy átugrod
-    - biztos nem tudod átugrani
+  - biztosan átugrod
+  - talán: van esélyed rá, hogy átugrod
+  - biztos nem tudod átugrani
 
 #### Nehéz (12) 🎲
 
@@ -69,8 +74,8 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 - Lecsúszni talpon egy hosszú lépcső korlátján.
 - Kimozogni közepes mennyiségű potyogó sziklát
 - Ugrás/esés távolság felmérése: pontosabb felmérés
-    - biztosan átugrod
-    - biztos nem tudod átugrani
+  - biztosan átugrod
+  - biztos nem tudod átugrani
 
 #### Nagyon nehéz (15) 🎲
 

@@ -25,6 +25,7 @@ A fegyverenkénti büntetést a [Beszorítható (enyhén/nagyon)](065_03_04_fegy
 <br />
 
 ---
+
 ## Csúszós talaj
 
 ```
@@ -36,6 +37,7 @@ Addig tart, amíg a csúszós felületen áll, mozog a karakter.
 <br />
 
 ---
+
 ## Elvesztett egyensúly
 
 ```
@@ -51,6 +53,7 @@ A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrob
 <br />
 
 ---
+
 ## Földön fekve
 
 ```
@@ -63,6 +66,7 @@ VÉ veszteség duplázódik
 <br />
 
 ---
+
 ## Gyengébb kéz
 
 ```
@@ -76,6 +80,7 @@ Megszűnteti: Kétkezesség fortély
 <br />
 
 ---
+
 ## Helyhez kötve
 
 ```
@@ -90,6 +95,7 @@ Enyhíti: [Helyhez kötve fejlesztése](fortelyok.harci/helyhez_kotve_fejlesztes
 <br />
 
 ---
+
 ## Lények méret különbsége
 
 Az egyes fajokat méret kategóriákba osztályozzuk.
@@ -127,6 +133,7 @@ A [Fegyverméret-különbség](065_03_04_fegyver_harci_helyzetek.md#fegyverviszo
 <br />
 
 ---
+
 ## Vakharc - félhomályban
 
 ```
@@ -138,6 +145,7 @@ Hátrány-1 TÉ dobásra
 <br />
 
 ---
+
 ## Vakharc - sötétben
 
 ```
@@ -149,6 +157,7 @@ Hátrány-2 TÉ dobásra
 <br />
 
 ---
+
 ## Tűz ruhán - ég
 
 Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
@@ -169,6 +178,7 @@ Harcon kívül: 1 kör
 <br />
 
 ---
+
 ## Tűz ruhán - lángol
 
 Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
@@ -190,6 +200,7 @@ Harcon kívül: 2 kör,
 <br />
 
 ---
+
 ## Vér elvakít
 
 ```

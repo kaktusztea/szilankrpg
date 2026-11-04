@@ -53,6 +53,7 @@ Ha a próba sikertelen és rontásod kisebb, mint `3`, akkor `1 FP` büntetést 
 <br />
 
 ---
+
 ## Varázskeret, Rekesz regeneráció - automatikus
 
 ✅ Agóra
@@ -71,11 +72,13 @@ Alapesetben `1 db` Rekesz töltődik vissza óránként. Ehhez a varázstudónak
 <br />
 
 ---
+
 ## 🔆 Erősség túlvállalás
 
 → [ADR: Varázslat túlvállalás](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell) ⭕TODO⭕
 
 ---
+
 ## 🔆 Összetett próba varázslás Erősségnél
 
 Nagyobb, hosszabb varázslatoknál a KM előírhat összetett próbát. Példa:
@@ -91,6 +94,7 @@ E igény
 <br />
 
 ---
+
 ## 🔆 Mágikus összhangok hatása Erősségre
 
 → [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md) ⭕TODO⭕

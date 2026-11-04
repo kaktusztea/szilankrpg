@@ -16,6 +16,7 @@ A Karmák lehetnek önmagukban, vagy `%`-kal jellemezhetőek.
 Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg a KM a játékossal való egyeztetés után!
 
 ---
+
 ## Tartalomjegyzék
 
 ### Általános
@@ -51,12 +52,14 @@ Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstetted�
 Megkapod az [Áldott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státuszt.
 
 Hatás:
+
 - Pro: Bizonyos helyzetekben természetfeletti szerencséd van, vagy kisebb csodák történnek körülötted.
 - Kontra: Az áldás elveszhet, ha méltatlanná válsz rá.
 
 <br />
 
 ---
+
 ## 🟡 Áldáshordozó
 
 Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív (főleg) és negatív hatásokkal számodra.
@@ -68,6 +71,7 @@ Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helysz
 <br />
 
 ---
+
 ## 🟡 Átkozott személy
 
 Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Ha az átok nem leplezett, meglátszik az Aurádon is.
@@ -79,6 +83,7 @@ Egészen szerteágazó hatásai lehetnek, tipikusan narratív elem, amelyet a KM
 <br />
 
 ---
+
 ## 🟡 Átokhordozó
 
 Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív és (főleg) negatív hatásokkal számodra.
@@ -92,6 +97,7 @@ Pl. Aquir ereklye, amitől nem tudsz megszabadulni. Vagy "Orwella érintése".
 <br />
 
 ---
+
 ## 🟡 Alkoholista
 
 #### Követelmény
@@ -107,6 +113,7 @@ Elvonás esetén `Hátrány-1,2` büntetéseket kaphatsz Tulajdonságpróbákra,
 <br />
 
 ---
+
 ## 🟡 Árnyjáró
 
 Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevétlenül mozogva.
@@ -117,6 +124,7 @@ Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevét
 <br />
 
 ---
+
 ## 🟡 Bajnok
 
 #### Követelmény
@@ -130,15 +138,18 @@ Puszta jelenléted lelkesítően hat. Minden híved, követőd `Előny+1` Hatás
 <br />
 
 ---
+
 ## 🟡 Bölcs Tanító
 
 Több karaktert segítettél fejlődni, tanítottál vagy mentoráltál hosszabb időn keresztül.
 
 Hatás:
+
 - Pro: Tanítványaid tisztelnek, és hajlandóak segíteni neked. Bölcsességed miatt könnyebben nyersz elismerést és bizalmat.
 - Kontra: Ha egy tanítványod elárul vagy kudarcot vall, az a te hírnevedet is csorbítja.
 
 ---
+
 ## 🟡 Bukott gyógyító
 
 #### Követelmény
@@ -151,8 +162,8 @@ Soha többet nem leszel képes kézrátétellel gyógyítani, a [Sebgyógyítás
 
 <br />
 
-
 ---
+
 ## 🟡 Gyerekgyilkos
 
 #### Követelmény
@@ -166,6 +177,7 @@ Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt. Tört�
 <br />
 
 ---
+
 ## 🟡 Gyilkos
 
 #### Követelmény
@@ -181,6 +193,7 @@ Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer/alt
 <br />
 
 ---
+
 ## 🟡 Hírhedt
 
 #### Követelmény
@@ -194,6 +207,7 @@ Híred messze megelőz. Ha aktív tevékenységed környékén lófrálsz, jó e
 <br />
 
 ---
+
 ## 🟡 Hős
 
 #### Követelmény
@@ -209,6 +223,7 @@ Mindig segítesz a bajbajutottakon, mindig kész vagy az önfeláldozásra, mind
 <br />
 
 ---
+
 ## 🟡 Szolgalelkű
 
 Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
@@ -220,6 +235,7 @@ A "nagy emberek" feléd irányuló **Befolyásolás** képzettségpróbája elle
 <br />
 
 ---
+
 ## 🟡 Természet Gyermeke
 
 Hosszú időt töltöttél a vadonban, és szoros kapcsolatot alakítottál ki a természettel.
@@ -234,6 +250,7 @@ Nem tájegységhez kötött (!)
 <br />
 
 ---
+
 ## 🟡 Világlátott
 
 Számos különböző helyet bejártál a világon, és kalandok során bizonyítottad rátermettségedet.
@@ -246,13 +263,14 @@ Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást ne
 
 ---
 ---
+
 ## 🟡 Mágia: Auraösszhang
 
 ### Követelmény
 
 Előtörténet, eddigi kalandok.
 
-### Hatás: Mágikus karmához jutsz.
+### Hatás: Mágikus karmához jutsz
 
 - Esőben varázsló (`30 %`): esőben hatékonyabban varázsol, viszont például sivatagban büntetést kap.
 - Tömegben varázsló (`20 %`): a nagy embertömeg "tuningolja", ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
@@ -264,6 +282,7 @@ Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](105_magikus
 <br />
 
 ---
+
 ## 🟡 Mágia: Profán
 
 Mágikus karma.
@@ -280,10 +299,10 @@ Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod
 ### Kontra hatás
 
 ⭕TODO⭕
+
 - Erősség: `6` felett minden további `1 szint` növekedés `2 szintnek` számít
 - Nem vagy képes Rituális mágiák alkalmazására⭕
 
 ---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#2-hátterek-)
-

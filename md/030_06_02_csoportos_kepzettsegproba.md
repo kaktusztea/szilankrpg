@@ -11,6 +11,7 @@ Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, 
 <br />
 
 ---
+
 ## ⚜️ 1. Csoportos fizikai képzettségpróba
 
 ```
@@ -21,6 +22,7 @@ Dobás:
 Ez a csoportos kooperáció nehezebb formája, itt a "leggyengébb láncszem" határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb.
 
 A csapat a tagjai közül a legalacsonyabb `(képzettség szint + Tulajdonság)` értékével dobja a próbát
+
 - egyéni fortély bónuszok is beleszámítanak
 - kiterjesztő fortély is beleszámít
 
@@ -37,6 +39,7 @@ A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az ad
 <br />
 
 ---
+
 ## ⚜️ 2. Csoportos szellemi képzettségpróba
 
 ```
@@ -49,6 +52,7 @@ Dobás:
 Ebben az esetben mindenki ugyanahhoz - a próbában érintett - képzettséghez ért és a csapat tagjai a közös tudás előnyeit hasznosítják.
 
 A csapatból az dob, akinek legnagyobb a `(Képzettség szint + Tulajdonság)` értéke
+
 - egyéni fortély bónuszok is beleszámítanak
 - kiterjesztő fortély is beleszámít
 
@@ -61,6 +65,7 @@ A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az ad
 <br />
 
 ---
+
 ## ⚜️ 3. Komplex csapatmunka képzettségpróba-részfeladatokkal
 
 ```

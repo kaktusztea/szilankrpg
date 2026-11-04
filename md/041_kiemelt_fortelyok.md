@@ -11,6 +11,7 @@ A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhat�
 #### [Kultúrkör](fortelyok.kiemelt/kulturkor.md) 🔁
 
 ---
+
 #### [Analfabéta](fortelyok.kiemelt/analfabeta.md)
 
 #### [Apró méretű lény](fortelyok.kiemelt/apro_meretu_leny.md)

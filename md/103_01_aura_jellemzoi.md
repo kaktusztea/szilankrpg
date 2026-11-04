@@ -8,6 +8,7 @@
 Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek aktív mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
 
 ---
+
 ## Aura
 
 ```
@@ -22,6 +23,7 @@ Egy karakter élete során megedződik, sokat tapasztal. Az **Aura** értéke eb
 <br />
 
 ---
+
 ## Mi ellen véd az Aura?
 
 ⭕TODO: fogalmazás, kifejtés
@@ -47,6 +49,7 @@ Az Aurára ható varázslatok ellen véd személyes Aurád. Ellenük [Mágiaelle
 <br />
 
 ---
+
 ## Aura általános képességei
 
 Az alábbiakat bárki elvégezheti, nem szükséges hozzá mágiatudónak lenni.
@@ -82,7 +85,8 @@ Aurabontásnál
 <br />
 
 ---
-##  `0` értékű Aura hatása
+
+## `0` értékű Aura hatása
 
 ⭕Aurabontás⭕ formula, vagy más mágikus/környezeti hatás előidézhet olyan szituációt, hogy Aura értéked `0`-ra zuhan. Ekkor az alábbi állapotba kerülsz:
 
@@ -99,4 +103,3 @@ Aurabontásnál
 🔗 [Speciális Aurák](103_02_specialis_aurak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
-

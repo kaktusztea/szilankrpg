@@ -9,6 +9,7 @@ Teljes ár
 ```
 
 ---
+
 ### Torzó Ár
 
 Ez a mellvért tag ára egyedül.
@@ -23,6 +24,7 @@ Ez a mellvért tag ára egyedül.
 ```
 
 ---
+
 ### Csatolt tagok ára, Kidolgozottság
 
 A plusz csatolt tagok egyenként a torzó-darab árának `1/5`-ét érik, így egy teljes (100%) páncél a torzó-darab árának pont a kétszerese.
@@ -49,6 +51,7 @@ Kidolgozottság
 ```
 
 ---
+
 ### Alapanyag Ár szorzó
 
 A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
@@ -62,6 +65,7 @@ A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 ```
 
 ---
+
 ### Idea Ár szorzó
 
 A jobb Idea nagyon megdobhatja a páncél árát:
@@ -80,6 +84,7 @@ A jobb Idea nagyon megdobhatja a páncél árát:
 ```
 
 ---
+
 ### Miért szorzó érték az "Ár"?
 
 ```

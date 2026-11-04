@@ -4,7 +4,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 
 ### Kapcsolódik
 
--  [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) képzettség
+- [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) képzettség
 
 ### Alapeset
 
@@ -12,11 +12,13 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 - [Nem dobásra készített tárgyak harcértékei](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
 
 ---
+
 ### 1. fok
 
 🔒 [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
+
 - Már nem sújtanak az Alapesetnél leírt [levonások](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
 - A tárgy [harcértéke](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy) nem változik!
 
@@ -27,6 +29,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 🔒 [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 
 🌟 **Hatás**:
+
 - Már nem sújtanak az Alapesetnél leírt [levonások](../065_03_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
 - Alkalmi fegyvereid [Osztó értéke](../072_01_tavharc_ve_oszto_cella.md) `2`-re emelkedik.
 

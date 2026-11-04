@@ -24,7 +24,6 @@ Tulajdonság  |  Költség
    +1 pont / 2 TSz
 ```
 
-
 ```
 * Csak faji módosítóval, vagy mágiával
 ```
@@ -38,6 +37,7 @@ Figyelem! Nem egy Tulajdonság értékét növelheted eggyel, hanem ennyi pontot
 Például egy `+3`-ról `+4`-re való növelés költsége `4 pont`, amely bónuszra `8` Tapasztalati szint fejlődés során tehetsz szert.
 
 ---
+
 ### Értékek magyarázata
 
 A Tulajdonságok értéke alapesetben `-5` és `+5` között mozoghat. A `-5` értelemszerűen a leggyengébb, súlyosan fogyatékos karakterek sajátja, míg a `+5`-ös értékkel bírók a legendák héroszai, irigyelt, rosszabb esetben gyűlölt nagyságok.
@@ -45,6 +45,7 @@ A Tulajdonságok értéke alapesetben `-5` és `+5` között mozoghat. A `-5` é
 A fenti határokon a [Faj Hátterek jellemzői](021_faj_hatterek.md), illetve esetleges mágikus hatások változtathatnak, de ökölszabály, hogy **elfszabásúak** egyik tulajdonsága sem nőhet `+7` fölé semmilyen körülmények között.
 
 ---
+
 ## Kinézet, érzelmi jellemzők
 
 A kinézetre és érzelmi "felépítésre" vonatkozó jellemzőket a játékosra bízzuk, nem rendelünk hozzá további értékeket - dolgozza ki ő karakteralkotáskor, a KM-el egyeztetve és használja ehhez bátran a [Leíró Háttereket](022_leiro_hatterek.md).

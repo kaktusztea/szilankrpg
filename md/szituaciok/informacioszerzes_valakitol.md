@@ -5,15 +5,18 @@ Sokszor futunk bele karakterekbe, akikből megpróbálunk kihúzni némi inform�
 🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
 ---
+
 ### 🔆 Kihallgatás szituáció
 
 Kihallgató: [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md) képzettség
+
 - Tulajdonság: Intelligencia vagy Érzékenység
 - Normál kiterjesztés: [Kihallgatás](../fortelyok.szabad/kihallgatas.md)
 
 `VS`
 
 Kihallgatott: [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) képzettség
+
 - Tulajdonság: Önuralom
 - Normál kiterjesztés: [Kihallgatás](../fortelyok.szabad/kihallgatas.md)  VAGY  [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
 
@@ -26,6 +29,7 @@ Szituáció: [Megfélemlítés](befolyasolas_modszerei.md#%EF%B8%8F-megf%C3%A9le
 Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a kérdezés hosszú ideig is eltarthat. Ilyenkor összetett képzettségpróba dobandó - a szituáció függvényében a KM dönt, mennyire többlépcsős.
 
 ---
+
 ### 🔆 Megvezetés, hazudozás
 
 A Befolyásolásos szituációknál említett [Átverés, Hazudozás](befolyasolas_modszerei.md#%EF%B8%8F-%C3%A1tver%C3%A9s-hazudoz%C3%A1s) technika is használható sokszor információ szerzésre.

@@ -12,13 +12,14 @@
 
 **9.szint:** Itt végezhető el
 
-
 ---
+
 #### Hatás
 
  Az elvesztett végtag a ceremónia végére visszanő.
 
 ---
+
 #### Szabályok
 
 A ceremoniális varázslathoz komponensek szükségesek: ⭕TODO⭕

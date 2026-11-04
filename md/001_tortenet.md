@@ -46,15 +46,15 @@ Ebben a hónapban indult el a [km100 Google Groups](https://groups.google.com/g/
 
 **Ez idő tájt a fejlesztés státuszának főbb jellemzői:**
 
-  - Hagyományos kasztrendszer megmarad
-  - Tulajdonságok és az elosztási rendszer kész
-  - Képzettségrendszer majdnem kész
-  - Harcrendszer: még hiányos
-  - Nagyjából kész a Manőverek és a Távolsági harc fejezet
-  - Fortélyok vannak, de hiányosak
-  - Kaszt fortélyok vannak, de hiányosak
-  - Pszí: ötlet szinten létezik
-  - Mágia: ötlet szinten létezik
+- Hagyományos kasztrendszer megmarad
+- Tulajdonságok és az elosztási rendszer kész
+- Képzettségrendszer majdnem kész
+- Harcrendszer: még hiányos
+- Nagyjából kész a Manőverek és a Távolsági harc fejezet
+- Fortélyok vannak, de hiányosak
+- Kaszt fortélyok vannak, de hiányosak
+- Pszí: ötlet szinten létezik
+- Mágia: ötlet szinten létezik
 
 <br />
 
@@ -69,6 +69,7 @@ A dokumentumok utolsó állapota ekkor: [2009-02-22_km100_develop.zip](https://g
 Eddig tartott az aktív fejlesztés. Ekkor már elég előrehaladott állapotban voltak a rendszer alapjai. Később ennek az átdolgozása, finomítása történik, a fundamentumok viszonylag ritkán változtak.
 
 **Változások a korábbi állapothoz képest:**
+
 - Nincsenek kasztok
 - Képzettségrendszer kész
 - Harcrendszer `k100` alapú
@@ -84,9 +85,11 @@ Eddig tartott az aktív fejlesztés. Ekkor már elég előrehaladott állapotban
 <br />
 
 ---
+
 ### 2022.07.18
 
 `km100` dokumentumok migrálásának kezdete
+
 - odt dokumentumok manuális konvertálása **markdown** formátumba és a [km100 Github repository](https://github.com/kaktusztea/szilankrpg) alá letárolva
 - [Fejlesztői wiki](https://github.com/kaktusztea/szilankrpg/wiki): a Github repóhoz tartozó wiki oldal lett a "kohó", ahol az ötletek, TODO, ISSUE elemek csoportosítása, munkadokumentumok kidolgozása folyik.
 

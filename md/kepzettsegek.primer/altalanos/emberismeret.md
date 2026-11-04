@@ -21,6 +21,7 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia
@@ -33,6 +34,7 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 ### 🟨 Normál kiterjesztés
 
 Az alábbi Fortélyok a képzettség `3.szintjének` elérésekor vehetőek csak fel!
+
 - [Alkudozás](../../fortelyok.szabad/alkudozas.md): "Sajnálom uram, de ez **valódi** pamut, az árért, amit kínál, egy vak koldus sem adná oda."
 - [Csábítás](../../fortelyok.altalanos/csabitas.md): Kiszúrod, hogy az ellenkező nem közeledése nem épp ártatlan, rejtett szándékot sejtesz.
 - [Hazudozás](../../fortelyok.altalanos/hazudozas.md): "Ugyan kérem, nem ma jöttem le a falvédőről."
@@ -67,6 +69,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 #### 🌟 `15.szint`
 
 Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
+
 - **Terápia**: pusztán egy rövid beszélgetés alatt képes vagy a [Státusz: Trauma (1,2)](../../082_statuszok.md#️-trauma-1-lélekrepedés) hatását megszűntetni.
 - **Példa**: asztrálmágus
 - Speciális: Szemed kinyílt az Asztrálsíkra is, képes vagy ott is érzékelni. ⭕TODO: Asztrálszem⭕
@@ -74,6 +77,7 @@ Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
 <br />
 
 ---
+
 ### Ellenpróbák
 
 A **Emberismeret** mindig a **[Befolyásolás](befolyasolas.md)** képzettséggel áll ellenpróbás szituációban - a szituációtól függő módosítókkal. A leggyakoribb az alábbi próba-szituáció:
@@ -89,6 +93,7 @@ Bővebben lásd: [Szituációk: Befolyásolás vs Emberismeret](../../szituaciok
 <br />
 
 ---
+
 ### Aktív próbák 🎲
 
 Ilyenkor az Emberismeret egyfajta "radarként" működik, megpróbál a különböző jelek alapján következtetésekre jutni. Ez lehet tudatos, vagy tudatlan vizsgálódás, lényeg, hogy nem az alkalmazót, vagy személyiségét éri külső behatás más által (lásd Passzív próbáknál), hanem ő érzékel bizonyos jeleket.

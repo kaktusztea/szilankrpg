@@ -12,9 +12,11 @@ Ha nem vagy kétkezes és a gyengébb kezedben tartod a fegyvered, levonások s�
 [Gyengébb kéz](../065_03_04_fegyver_harci_helyzetek.md#gyengébb-kéz) harci helyzet
 
 ---
+
 ### 1. fok
 
 🌟 **Hatás**:
+
 - Bármelyik kezeddel levonás nélkül tudsz harcolni, de csak ha `1` fegyvert használsz!
 - [Harckeret](../063_04_tamadasok_szama_fegyverrel.md#harckeret): `+1` bónusz
   - **ha** legalább `1.fokon` jártas vagy [Kétkezes harcban](ketkezes_harc.md)
@@ -22,6 +24,7 @@ Ha nem vagy kétkezes és a gyengébb kezedben tartod a fegyvered, levonások s�
 - [Páros, kétkezes hajítás](../073_tavharci_taktikak.md#páros-kétkezes-hajítás) harci szituációban csak az egyik `CÉ` dobásra jár a `Hátrány-1` büntetés.
 
 ---
+
 ## Fegyver + Pajzs eset
 
 Ha egy fegyver mellé simán pajzsot fogsz a másik kezedbe az **nem kétkezes szituáció**, ezért ekkor **nem** kapod meg a fenti Harckeret bónuszt ❌

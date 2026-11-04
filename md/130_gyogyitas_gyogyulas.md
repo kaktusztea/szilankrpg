@@ -10,6 +10,7 @@ A Sebesülés modellel már megismerkedtünk a harcrendszer [Életerő - Sebesü
 <br />
 
 ---
+
 ## ⚜️ Természetes gyógyulás
 
 ```
@@ -26,6 +27,7 @@ A fentiek a [Kalandozókra vonatkozó gyorsabb gyógyulás](010_03_01_kalandozok
 <br />
 
 ---
+
 ## ⚜️ [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettség, gyógyitalok
 
 A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. **Gyógyításra NEM képes**, de a gyógyszerek előállításához szükséges növényi és állati alapanyagokat be tudja szerezni. Minél magasabb a képzettsége, annál ritkábbakat.
@@ -33,6 +35,7 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi seg�
 <br />
 
 ---
+
 ## ⚜️ [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) képzettség
 
 Alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi.
@@ -40,6 +43,7 @@ Alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel
 <br />
 
 ---
+
 ## ⚜️ Papi gyógyítás
 
 Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyítás.

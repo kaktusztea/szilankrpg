@@ -11,6 +11,7 @@ Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Stát
 <br />
 
 ---
+
 ## ⚜️ Előny+1,2 és Hátrány-1,2 Hatások
 
 ```
@@ -64,6 +65,7 @@ Mágiaellenállás
 
 ---
 ---
+
 ### 🔥 Antyssjárás elvesztése
 
 Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - még alvás közben sem.
@@ -71,6 +73,7 @@ Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni -
 <br />
 
 ---
+
 ### 🔥 Automatikus kudarc
 
 - KÉ dobásra → utolsónak kezdeményezhetsz
@@ -84,6 +87,7 @@ Példa: csábítás **Befolyásolás-próba** a latrinából kimászva.
 <br />
 
 ---
+
 ### 🔥 Automatikus Tulajdonság/Képzettségpróba
 
 Sima próbadobás (Tulajdonságpróba, Képzettségpróba)
@@ -94,6 +98,7 @@ Ami másnak automatikus siker, az neked már próbadobásos.
 <br />
 
 ---
+
 ### 🔥 Beszéd - zavart
 
 - Nehezen tudsz szavakat formálni
@@ -107,6 +112,7 @@ Ami másnak automatikus siker, az neked már próbadobásos.
 <br />
 
 ---
+
 ### 🔥 Érzék - Hátrány-1 (zavart)
 
 Látás / Hallás / Szaglás.
@@ -139,6 +145,7 @@ Automatikus kudarc minden
 <br />
 
 ---
+
 ### 🔥 `FP S1`
 
 Az `S1` Egészség kategória összes rubrikája feltöltődik új [FP](061_02_faradtsag_pont.md) jelölőkkel. Ha `S1` már betelt, nincs hatása.
@@ -150,6 +157,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 <br />
 
 ---
+
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
@@ -158,17 +166,20 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 <br />
 
 ---
+
 ### 🔥 Mozgás - feleződik
 
 - [Mozgás](063_01_harci_kor.md#2-mozgás) értéked feleződik ↑ - harc közben
 - Felére csökken a megtehető távolságod - harcon kívül
 
 ---
+
 ### 🔥 Mozgás - lecövekelt
 
 Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem befolyásolja.
 
 ---
+
 ### 🔥 Mozgás - képtelen
 
 - minden támadás ellened: automatikus Sebzés
@@ -179,6 +190,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 <br />
 
 ---
+
 ### 🔥 Pszi használat elvesztése
 
 Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással.
@@ -186,6 +198,7 @@ Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással
 <br />
 
 ---
+
 ### 🔥 `1` támadás elvesztése
 
 ```
@@ -194,6 +207,7 @@ Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással
 ```
 
 ---
+
 ### 🔥 Többszörös támadás elvesztése
 
 ```
@@ -203,6 +217,7 @@ Max 1 támadás / kör
 <br />
 
 ---
+
 ### 🔥 Varázslás képesség elvesztése
 
 Képtelen vagy bármilyen mágia létrehozára, fenntartására. Az Aurádra nincs hatással.
@@ -210,6 +225,7 @@ Képtelen vagy bármilyen mágia létrehozára, fenntartására. Az Aurádra nin
 <br />
 
 ---
+
 ### 🔥 VÉ veszteség duplázódik
 
 Irányodba indított támadásnál az elszenvedett `VÉ` veszteséged duplázódik.
@@ -219,6 +235,7 @@ Irányodba indított támadásnál az elszenvedett `VÉ` veszteséged duplázód
 <br />
 
 ---
+
 ### 🔥 VÉ csökkentés bónusz `+[1;2]`
 
 Védő Érték csökkentésedhez `1` vagy `2` bónuszt kapsz.
@@ -228,6 +245,7 @@ Additív, de maximum: `+2`
 <br />
 
 ---
+
 ### 🔥 VÉ csökkentés: `X`
 
 Ellenfeled Védő Értékét csökkented `X` értékkel.
@@ -235,6 +253,7 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 <br />
 
 ---
+
 ### 🔥 Vérzés - gyenge
 
 ```
@@ -243,6 +262,7 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 ```
 
 ---
+
 ### 🔥 Vérzés - közepes
 
 ```
@@ -250,6 +270,7 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 ```
 
 ---
+
 ### 🔥 Vérzés - erős
 
 ```

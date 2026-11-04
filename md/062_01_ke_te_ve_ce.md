@@ -25,6 +25,7 @@ A fenti értékek hat jellemzőből épülnek fel:
 Az alábbiakban részletesen kifejtjük a `4` harcérték kiszámítási módját, valamint hogy mi és hogyan képes még módosítani őket.
 
 ---
+
 ### Harcérték Alapok
 
 Az `1.` Tapasztalati szinten minden karakter egységes, konstans értékeket kap `KÉ`, `TÉ`, `VÉ` és `CÉ` értékére. Ehhez az alapértékhez adódnak majd hozzá az egyéb módosítók.
@@ -39,6 +40,7 @@ Az `1.` Tapasztalati szinten minden karakter egységes, konstans értékeket kap
 <br />
 
 ---
+
 ### Kezdeményező érték (`KÉ`)
 
 A Kezdeményező Érték (`KÉ`) szerepe a harcban, hogy meghatározza, ki "mozdul először" a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb. A kezdeményezés műveletéről bővebben lásd a [Harc menete - Kezdeményezés](064_02_01_kezdemenyezes.md) fejezetet!
@@ -65,6 +67,7 @@ A `KÉ` egy darab, konkrét érték, ezt használjuk **minden** típusú cseleke
 <br />
 
 ---
+
 ### Támadó Érték (`TÉ`)
 
 A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott fegyverrel, az adott harcmodorban milyen hatékonyan képes ellenfele irányában támadást, támadásokat intézni.
@@ -106,6 +109,7 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
 <br />
 
 ---
+
 ### Védő Érték (`VÉ`)
 
 A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képességét, hogy mennyire hatásosan képes elhárítani, elkerülni az ellene intézett csapásokat. Értéke nem mondható állandónak, hisz a harci helyzettől függően változik, ráadásul kihat rá a testi, szellemi fáradtság (lásd [VÉ csökkenés](064_02_03_vedo_ertek_csokkentese.md)) és persze a [sebesülés](061_03_sebesules.md) is.
@@ -153,6 +157,7 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
 <br />
 
 ---
+
 ### Célzó Érték (CÉ)
 
 → Lásd a [Távolsági Harc - Célzó Érték számítása](071_tavharc_ce.md) fejezetet!

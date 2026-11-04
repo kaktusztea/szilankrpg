@@ -14,6 +14,7 @@
 - [Kvantikum](../kepzettsegek.szekunder/kvantikum.md): "Az a torony pár hónap és leomlik."
 
 ---
+
 ### 1. fok
 
 🌟 Kiterjeszt képzettségeket `1.fokon`

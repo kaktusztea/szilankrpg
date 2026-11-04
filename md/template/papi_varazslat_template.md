@@ -20,13 +20,14 @@
 
 **15.szint:**
 
-
 ---
+
 ##### Hatás
 
 lorem
 
 ---
+
 ##### Szabályok
 
 ipsum

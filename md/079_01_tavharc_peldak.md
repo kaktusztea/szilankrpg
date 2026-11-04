@@ -28,6 +28,7 @@ CÉ = 3
 ```
 
 ---
+
 ### `I/2` A célpont Védő Értéke
 
 ```
@@ -48,6 +49,7 @@ VÉ = 2 × 4 = 8
 ```
 
 ---
+
 ### `I/3` Célzó dobás
 
 ```
@@ -68,6 +70,7 @@ CÉ = 3 + 6 = 9
 
 ---
 ---
+
 ## ⚡`II.` Példalövészet a balkonról
 
 Lássunk egy bonyolultabb esetet.
@@ -77,6 +80,7 @@ Tetves ezúttal ősi nemezisét Rühest, a cingár, aprótermetű tolvajt prób�
 Tetves a szomszédos balkonon áll, de rövid íját megfeszítve, lassan sétálnia kell, hogy Rühes ne kerüljön ki a látóteréből. Balszerencséjére erős szél is fúj, így a célzás tovább nehezedik. Az észlelést továbbá enyhe köd és sötét bonyolítja - csak az épületek lámpafénye és a Vörös Hold segíti a látást.
 
 ---
+
 ### `II/1` Tetves Célzó Értéke
 
 A magasabb Harcmodor (Íjászat) szint és a Mesterfegyver fortély némileg mérsékli a fegyver rosszabb `CÉ` jellemzőjét és `Osztóját`.
@@ -102,6 +106,7 @@ CÉ = 3
 ```
 
 ---
+
 ### `II/2` A célpont Védő Értéke
 
 ```
@@ -126,6 +131,7 @@ VÉ = 7 × 3 = 21
 ```
 
 ---
+
 ### `II/3` Célzó dobás
 
 ```

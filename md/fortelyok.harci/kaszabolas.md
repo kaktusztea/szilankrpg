@@ -8,6 +8,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 - Lő- és hajítófegyvereknél nem alkalmazható
 
 ---
+
 #### 1. fok
 
 🔒 [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `4.szint`\

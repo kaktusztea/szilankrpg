@@ -19,6 +19,7 @@ Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, 
 <br />
 
 ---
+
 ## Javadalmazás
 
 ```
@@ -36,12 +37,14 @@ Következő Kaland elején mind
 Minden kaland elején a JK Szilánk és a Csapat Szilánk értéke is visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjelenetek, fontos pillanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
 
 Egy kaland során
+
 - `1` új Szilánkot szerezni nagy dolognak számít
 - `2` Szilánk szerezése már eposzi cselekedet
 
 <br />
 
 ---
+
 ## Szilánk használatának módjai
 
 ### 🔆 Átlagos belenyúlás a történetbe: `1 Szilánk`
@@ -49,6 +52,7 @@ Egy kaland során
 Egy (`1`) Szilánkért átlagos változtatásokat eszközölhetsz a történetben.
 
 Példák:
+
 - Véletlenül épp ismerem a fogadóst korábbról.
 - Mindenkinek jut épp elég ló, mikor friss hátasokra váltunk.
 - A boltos nőnek épp a férfiideálja a Játékos Karakter.
@@ -63,6 +67,7 @@ Példák:
 Fontos: a `2` Szilánk költség NEM adható össze két külön karakter pontjaiból, egy személynek kell fedeznie a teljes költséget!
 
 Példák:
+
 - "Éppen sikerül kihallgatnom a fekete mágust - gonosz terveiről". KM: "Rendben, nagy mázlid volt, a mágus azt mondja, hogy ..."
 - Épp van egy titkos ajtó a halálszekta börtönében (ezt is meg kell még találni)
 - "Újra elrontottam a **Mászás** próbámat, le fogok zuhanni a biztos halálba. Mi van, ha pont ledob egy kötelet az a goblin, akinek az életét megkíméltem a sziklateraszon?" KM: "Rendben."
@@ -82,6 +87,7 @@ Ezzel narratív irányba terelheted a harc folyását, végzetes helyzetekben vi
 <br />
 
 ---
+
 # Szilánk gyűjtése
 
 A kalandot megelőző áttekintő beszélgetésen a csapat eldöntheti, hogy melyik modellt szeretné követni a lent bemutatott két lehetőségből..

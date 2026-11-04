@@ -12,18 +12,20 @@ Az **Idézés** szféra alá tartozó arkánum.
 - [Szeráfok, szerafisták](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#szer%C3%A1fi-m%C3%A1gi%C3%A1k) ?
 - Isteni síkra távozott lelkek visszahívása (ez feketemágia)
 
-
 ### Varázsló Demonológia
+
 ⭕TODO⭕
+
 - átteleportálják a démont
 - asztrál/mentállal kényszeríteni kell
 - asztrál: 10
 - demonologia: 7
 - ekkor max olyan demonra tud asztrálmágiázni, amire 7-es Asztrálmágiával hatni tudna
 
-
 ### Vulgármágus
+
 ⭕TODO⭕
+
 - síkkaput nyit
 - alkudozni kezd a démonnal
 
@@ -113,6 +115,7 @@ Ha a fenti próba sikeres, akkor a démon játéktechnikailag rendes mágiaellen
 - ⭕xyz
 
 ---
+
 ##### Idézések
 
 Mágia nélkül démont idézni, hosszadalmas, költséges, bonyolult, de biztonságos. Minden démonhoz más és más rituálé tartozik, melyek sok időt és tárgyi komponenst követelnek meg. A legfontosabb azonban, hogy embert (vagy egyéb értelmes lényt) kell hozzá feláldozni. Ezért cserébe viszont a megidézett démon nem bántja megidézőjét, és teljesíti a parancsát, ami a következő lehet: megölni vkit/vkiket, elpusztítani vmit, rövidtávú (egynapos) testőrség. Azonban ha a feladat teljesítése közben súlyosan megsérül, azonnal távozik a saját síkjára.
@@ -123,6 +126,7 @@ Mágia nélkül démont idézni, hosszadalmas, költséges, bonyolult, de bizton
 - Herceg: 500 ember, vagy 100 serdülőkor előtti gyermek feláldozása, 3 napos rituálé, 300 arany
 
 ---
+
 ##### Állandó megkötés
 
 Alacsonyrendű és közrendű démonokat lehetséges megkötni, rabszolgává tenni. Itt is szükség van emberáldozatra, de itt ez nem a démonnak adott ajándék, hanem az ebből származó mágikus energiával végérvényesen lerombolja a démon ellenállását a megidézőjével szemben. Ezentúl mindenben engedelmeskedni fog neki, akár életét is adja érte. Ezekre a rituálékra csak gyermekeket lehet felhasználni.
@@ -131,17 +135,19 @@ Alacsonyrendű és közrendű démonokat lehetséges megkötni, rabszolgává te
 - Közrendű: 100 gyermek, 1 hét, 150 arany
 
 ---
+
 ##### Síkkapuk nyitása
 
 ⭕Márk: Ehhez most nincs ötletem.⭕
 
-
 ---
+
 ##### SFÉ irányelv
 
 A démonoknak van egy elég nagy SFÉ-je sima fegyver ellen, de nem sebezhetetlenek. Ez az SFÉ nem számít mágikus, vagy áldott fegyver ellen.
 
 ---
+
 ##### Gyertya
 
 - ⭕Az idézésnél a gyertya elfújós dolog részben hülyeség, mert a gyertya tuti leég előbb utóbb. Kelljen hozzá egy Démon-szimpátia mozaik, ami idézéskor hozzákapcsolja a gyertyát a démonhoz. Viszont! Ezt fenn kelljen tartani. Vagy koncentrálni rá vagy időtartammal nyújtani a mozaikot.⭕

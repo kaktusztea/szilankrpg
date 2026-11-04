@@ -19,6 +19,7 @@ VÉ:+16 - Nagy pajzs
 <br />
 
 ---
+
 ### Pajzshasználat hatása harcértékekre
 
 Lásd: [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
@@ -28,6 +29,7 @@ Lásd: [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 <br />
 
 ---
+
 ### Pajzs Harci helyzetekben
 
 Ha a karakter 🗡️[Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) támadás áldozata, akkor a `pajzs VÉ` csak akkor adódik hozzá az aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
@@ -35,6 +37,7 @@ Ha a karakter 🗡️[Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) t
 <br />
 
 ---
+
 ### Pajzs mozgást gátló hatása
 
 A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet kizárólag páncélokra alkalmazunk.
@@ -51,6 +54,7 @@ Felszerelés keretben
 <br />
 
 ---
+
 ### Hátulütők
 
 🔆 Kétkezes fegyverek nem használhatóak pajzzsal.

@@ -25,6 +25,7 @@ Lopakodás/rejtőzés + Ügyesség
 <br />
 
 ---
+
 ### ⚡ Példa
 
 Tegyük fel, hogy az éjjeli, csendes palota folyosóján az őr mögé akarsz lopakodni, majd hátbaszúrni. **Lopakodás/rejtőzés** releváns Helyzetfüggő módosítói - testközelben:

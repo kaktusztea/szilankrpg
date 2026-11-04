@@ -19,6 +19,7 @@ A fortély segítségével mikor sebet kapsz néhány `ÉP` "átalakul" `FP` pon
 🌟 `2 ÉP` forgatható át `FP` ponttá.
 
 ---
+
 ### `ÉP` vs `FP` ❗
 
 🔆 Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradtsag_pont.md#valós-ép-seb-elszenvedése-fp-után).
@@ -26,6 +27,7 @@ A fortély segítségével mikor sebet kapsz néhány `ÉP` "átalakul" `FP` pon
 🔆 Ha a kidobott Sebesülés pont `1 ÉP` lenne, akkor az valós sebként bemegy, a fortély `3 ÉP`-től kezdve használható.
 
 ---
+
 ### Példa
 
 ```
@@ -36,4 +38,3 @@ A fenti 11 ÉP átalakul:
 → ÉP: 9
 → FP: 2
 ```
-

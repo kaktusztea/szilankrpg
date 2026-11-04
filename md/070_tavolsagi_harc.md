@@ -18,6 +18,7 @@ A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem
 - **[Távolsági Harci Fortély módosítók](044_harci_fortelyok.md#távolsági-harci-fortélyok)**
 
 ---
+
 ## Célzó dobás
 
 A lövés/hajítás során Célzó Értékedre dobsz rá és ezt állítod szembe a Célpont `Védő Értékével`.
@@ -30,6 +31,7 @@ CÉ + k20   vs   távolsági VÉ
 🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal az eredeti `CÉ` értékkel történik.
 
 ---
+
 ## CÉ, VÉ számítása
 
 A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekre az alábbi fejezetekben fejtjük ki.
@@ -42,8 +44,8 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 ### [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
 
-
 ---
+
 ## Taktikák, mágikus lövedékek, fegyverek
 
 ### [Távharci taktikák](073_tavharci_taktikak.md)
@@ -57,6 +59,7 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 ### [Távolsági fegyverek](078_tavharc_fegyverek.md)
 
 ---
+
 ## Példák
 
 ### [Példalövészet](079_01_tavharc_peldak.md) ⚡

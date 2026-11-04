@@ -69,11 +69,13 @@ Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bí
 Extrái (részletek a [Fegyver Extrák](068_01_03_fegyver_extrak.md) fejezetben): Pontos, Lefegyverezhetőbb, Zúzó fegyver ellen rosszabb.
 
 ---
+
 ## Kardívó hárítófegyverek
 
 A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) szabályai szerint. Nem támadhatsz velük.
 
 A fenti listában ez a két hárítófegyver szerepel:
+
 - Hárító: Csatakesztyű
 - Hárító: Köpeny
 

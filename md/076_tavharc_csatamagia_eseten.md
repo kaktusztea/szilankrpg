@@ -12,6 +12,7 @@ A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy tá
 <br />
 
 ---
+
 ## Célzó érték, Osztó
 
 ```
@@ -75,6 +76,7 @@ Távolbahatás módja: Területmágia
 <br />
 
 ---
+
 ## ⚜️Távolbahatás módja: Lövedék
 
 ```
@@ -126,6 +128,7 @@ nyíl, ... ⭕
 <br />
 
 ---
+
 ## ⚜️Távolbahatás módja: Területmágia
 
 ```
@@ -162,6 +165,7 @@ kitörés, fal, ...⭕
 <br />
 
 ---
+
 ### [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortély és mágikus fegyverek
 
 Ez a fortély a **Mágiatáv** "fegyverre" is felvehető, ahogy bármely más fegyverre.
@@ -171,6 +175,7 @@ Ez a fortély a **Mágiatáv** "fegyverre" is felvehető, ahogy bármely más fe
 ```
 
 ---
+
 ### [Mágikus lövedék gyorsítása](fortelyok.misztikus/magikus_lovedek_gyorsitasa.md) fortély
 
 A lövedék sebessége alapból lassú, ezt a Komplexitás növelésével lehet fokozni. Ebben ad könnyítést ez a fortély. A pontosságra (`CÉ`, `Osztó`) semmilyen hatása nincs.
@@ -178,6 +183,7 @@ A lövedék sebessége alapból lassú, ezt a Komplexitás növelésével lehet 
 Kapcsolódik: [Lövéskitérés](073_tavharci_taktikak.md#lövéskitérés)
 
 ---
+
 ## Kapcsolódó Arkánumok
 
 [Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer/arkanumok/elemi_magia.md#őselem-idézése)

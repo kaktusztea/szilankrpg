@@ -3,21 +3,22 @@
 → [ADR: Mágia Arkánumok szabályai](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.arkanumok.szabalyai) ⭕
 
 ---
+
 ## ⚜️ Anyag szféra
 
 ### [Elemi mágia](kepzettsegek.primer/arkanumok/elemi_magia.md)
 
-  - Őselem idézése
-  - ...
+- Őselem idézése
+- ...
 
 ### [Természetes anyagok mágiája](kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md)
 
-  - Ideamágia (CX)
-  - [Méregmágia](kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md#méregmágia)
-  - Méregmágia szemita (CX)
-
+- Ideamágia (CX)
+- [Méregmágia](kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md#méregmágia)
+- Méregmágia szemita (CX)
 
 ---
+
 ## ⚜️ Lélek szféra
 
 ### [Asztrálmágia](kepzettsegek.primer/arkanumok/asztralmagia.md)
@@ -36,6 +37,7 @@
 - mentál-átoklevétel
 
 ---
+
 ## ⚜️ Jelenségek szféra
 
 ⭕CX Elemimágia formuláinak egy része ide jön⭕
@@ -51,16 +53,16 @@
 - Időjárásbefolyásolás
 - Villámmágia
 
-
 ---
+
 ## ⚜️ Téridő szféra
 
 ### [Időmágia](kepzettsegek.primer/arkanumok/idomagia.md)
 
 ### [Térmágia](kepzettsegek.primer/arkanumok/termagia.md)
 
-
 ---
+
 ## ⚜️ Életerő szféra (élet-halál)
 
 ### [Életerő manipulálása](kepzettsegek.primer/arkanumok/eletero_manipulalasa.md)
@@ -83,18 +85,18 @@
 
 - Élőholtak manipulálása
 
-
 ---
+
 ## ⚜️ Idézés szféra
 
 ### [Belső síkok lényeinek idézése](kepzettsegek.primer/arkanumok/idezes_belso_sikok.md)
 
-  - állatok (alacsony szintű)
-  - szörnyek (kicsit magasabb)
-  - elementálok
-  - ⭕Nekromancia: kísértetek (ember lelkek / lelkekből lehasadt szellemek) idézése
-  - ember lelkek / lelkekből lehasadt szellemek
-  - természeti szellemek
+- állatok (alacsony szintű)
+- szörnyek (kicsit magasabb)
+- elementálok
+- ⭕Nekromancia: kísértetek (ember lelkek / lelkekből lehasadt szellemek) idézése
+- ember lelkek / lelkekből lehasadt szellemek
+- természeti szellemek
 
 ### [Külső síkok lényeinek idézése](kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md)
 
@@ -104,8 +106,8 @@
 - [Szeráfok, szerafisták](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#szer%C3%A1fi-m%C3%A1gi%C3%A1k) ?
 - Isteni síkra távozott lelkek visszahívása (ez feketemágia)
 
-
 ---
+
 ## ⚜️ Sors szféra
 
 ### [Sors Érzékelés](kepzettsegek.primer/arkanumok/sors_erzekeles.md)
@@ -118,6 +120,7 @@
 - Lélekmágia (véletlenmágia) (CX)
 
 ---
+
 ## ⚜️ Mágia Szféra
 
 ### [Aurahangolás](kepzettsegek.primer/arkanumok/aurahangolas.md)
@@ -125,6 +128,7 @@
 ### [Metamágia](kepzettsegek.primer/arkanumok/metamagia.md)
 
 ---
+
 ## ⚜️ Titkos (Teremtés) Szféra
 
 ### Élet Princípiumának a megteremtése

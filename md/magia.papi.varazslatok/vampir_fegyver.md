@@ -17,11 +17,13 @@
 **10.szint**: 3 ÉP-t szív el (max)
 
 ---
+
 #### Hatás
 
 A Pap érintésére az általa megérintett fegyver különleges képességre tesz szert a harc idejére. Mikor a fegyver sebet ejt az ellenfélen, az Kisszférától függő mértékben az ejtett sebből valamennyi `ÉP`-t átáramoltat forgatójába.
 
 ---
+
 #### Szabályok
 
 Követelmény: csak halál jellemű istenek papjai alkalmazhatják.

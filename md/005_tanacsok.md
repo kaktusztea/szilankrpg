@@ -5,6 +5,7 @@ Nyilván minden mesélő és parti más, de pár jótanács segíthet, hogy a `S
 <br />
 
 ---
+
 ### "Nem svédasztal"
 
 Ismerős szituáció, mikor egy akadállyal szembesülve a játékos az alábbiakat mondja:
@@ -18,6 +19,7 @@ Mesélőként ekkor (vagy a játék elején) udvariasan tudassuk a játékosokka
 <br />
 
 ---
+
 ### A karakterek nem gépek
 
 A játékosok sokszor könnyen eltávolodnak karaktereiktől, azok nehézségeitől, egyfajta örökmozgó avatárként tekintenek rájuk.
@@ -27,6 +29,7 @@ Ilyenkor alkalmazhatsz több mesélői eszközt, például a kimerülés érzék
 <br />
 
 ---
+
 ### A KM nem szabálykönyv
 
 Mese közben a szűk keresztmetszet mindig a KM - ő írja le a környezetet, ő személyesíti meg a [Nem Játékos Karaktereket](010_12_njk.md), ő szimulálja le a képzeletbeli világ eseményeit.

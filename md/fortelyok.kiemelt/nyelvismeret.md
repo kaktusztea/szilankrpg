@@ -21,6 +21,7 @@ Nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. F
 Minden nyelvet, amit legalább **Alap** szinten beszélsz, képes vagy olvasni és írni is - kivéve ha [Analfabéta](../fortelyok.kiemelt/analfabeta.md) vagy.
 
 ---
+
 ### Kapcsolódik
 
 - [Irodalom](../fortelyok.szabad/irodalom.md) fortély
@@ -31,6 +32,7 @@ Minden nyelvet, amit legalább **Alap** szinten beszélsz, képes vagy olvasni �
 - [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md) képzettség
 
 ---
+
 ### Emberi nyelvek listája
 
 ([forrás](https://magus.fandom.com/hu/wiki/Nyelvek_%C3%A9s_nyelcsal%C3%A1dok))
@@ -59,7 +61,7 @@ Minden nyelvet, amit legalább **Alap** szinten beszélsz, képes vagy olvasni �
     - kr4ni birodalmi khors (kho) (kra)
     - niarei (nia)
     - yanna'an (yan)
-3.  Crantai nyelvek
+3. Crantai nyelvek
     - eme-chran (cra) (a Nagy-Crantai Birodalom nyelve)
     - anagmar nyelv (ang) (a Tajtéktrónus Birodalom nyelve)
 

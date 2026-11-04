@@ -5,11 +5,13 @@
 ### Kiterjeszti ezeket
 
 [Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) képzettség
+
 - Területlövés, fedezőtűz, előcsatározás és visszavonulás
 - Csapatban mozgás, megfelelő alakzat felvétele, annak tartása - harci körülmények között is.
 - ⚡ "Fedezőtüzet a visszavonuló lovasság mögé!"
 
 ---
+
 ### Alapeset
 
 Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer/harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén.
@@ -21,6 +23,7 @@ Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer/harci/tavols
 A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Távolsági harcmodor** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
+
 - Íjászat/Lövészet/Ostromlövészet - `6.szint`
 - Összeszokott tagokat igényel
 
@@ -31,12 +34,14 @@ A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **T
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Íjászat/Lövészet/Ostromlövészet - `9.szint`
 - Összeszokott tagokat igényel
 
 🌟 `+4` bónusz az **Alakzatszintre**
 
 ---
+
 ### Több Íjászkapitány a csapatban
 
 Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.

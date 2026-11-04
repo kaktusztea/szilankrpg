@@ -1,6 +1,6 @@
 ## Ellenméreg keverése
 
-###  → Képzettségpróba: Mérgek + Intelligencia
+### → Képzettségpróba: Mérgek + Intelligencia
 
 ```
 Nehézség = Méreg Komplexitása

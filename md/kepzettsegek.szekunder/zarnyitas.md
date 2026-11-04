@@ -2,6 +2,7 @@
 
 A zárak finom, hangtalan és szakszerű kinyitására szolgáló képzettség.
 Kiterjed az alábbiakra:
+
 - kulcs nélküli zárnyitás (tőrrel, finom eszközökkel, hajszállal, tolvajkulccsal),
 - rejtett mechanizmusok kitapintása
 - rugós, csapó- és kombinált zárak próbálgatással való felnyitása
@@ -35,7 +36,6 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 
 <br />
 
-
 ### Mesterbónuszok
 
 #### 🌟 `9.szint`
@@ -53,6 +53,7 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

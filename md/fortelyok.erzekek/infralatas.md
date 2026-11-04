@@ -5,11 +5,13 @@
 Fajhoz felvehető Érzék-fortély.
 
 Sötétben (leginkább élőlények által kibocsátott) hőképek alapján is képes vagy tájékozódni.
+
 ### Alapeset
 
 Emberi látás, sötétben nem látsz hőképeket.
 
 ---
+
 ### 1. fok
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 1.fok**, mint felvehető Érzék-fortély
@@ -25,6 +27,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 🌟 Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amennyiben ez teljesül, [Vakharcban](../065_03_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás.
 
 ---
+
 ### Egyedi jellemzők
 
 - Olvasásra nem alkalmas

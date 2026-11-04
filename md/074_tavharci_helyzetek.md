@@ -8,6 +8,7 @@ A [Harci helyzetek](065_03_04_fegyver_harci_helyzetek.md) távolsági harcra von
 - [Nyílpuska újratöltés](#nyílpuska-újratöltés)
 
 ---
+
 ## Hajítás alkalmatlan fegyverrel
 
 ```
@@ -22,6 +23,7 @@ SP: fegyver eredeti sebzése - 5
 🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély
 
 ---
+
 ## Hajítás nem dobásra készített tárgyakkal
 
 ```
@@ -40,6 +42,7 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 <br />
 
 ---
+
 ### Lövés reflexből
 
 Ha váratlanul kell lőnöd/hajítanod:
@@ -51,6 +54,7 @@ Hátrány-1 CÉ dobásra
 🔆 [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md) fortéllyal a büntetés nem érint.
 
 ---
+
 ### Nyílpuska újratöltés
 
 ```

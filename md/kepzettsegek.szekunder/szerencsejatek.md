@@ -15,6 +15,7 @@ Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről sz
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Önuralom, Intelligencia
@@ -38,6 +39,7 @@ Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről sz
 <br />
 
 ---
+
 ### Próbák 🎲
 
 A játék során sokszor ellenpróbaként dobják, főleg csalás kiszúrásánál:

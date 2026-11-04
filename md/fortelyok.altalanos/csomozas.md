@@ -36,6 +36,7 @@ Mestercsomók ismerete
 <br />
 
 ---
+
 ## 🟣 Kötelékből szabadulás (2)
 
 Könnyebben kibújsz kötelékeidből.
@@ -49,6 +50,7 @@ Könnyebben kibújsz kötelékeidből.
 🌟 Ügyesség ellenpróbához: `+4`
 
 ---
+
 ### Mechanikus zárak
 
 🔆 Mechanikus zárakhoz [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettség szükséges.

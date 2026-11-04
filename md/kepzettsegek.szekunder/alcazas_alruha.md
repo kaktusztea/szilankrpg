@@ -30,6 +30,7 @@ Próba dobható. Alapesetben ellenpróbával megy, a másik fél [Észlelés](..
 Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 
 ---
+
 ### Domináns Tulajdonságok
 
 Ügyesség, Intelligencia, Önuralom, Érzékenység
@@ -103,6 +104,7 @@ Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzőe
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

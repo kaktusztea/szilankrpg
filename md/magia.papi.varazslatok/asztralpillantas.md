@@ -20,13 +20,14 @@
 
 **15.szint:** ⭕Asztrális nyomokat is képes vagy megtalálni, egyes asztrális lények korábbi jelenlétét.
 
-
 ---
+
 #### Hatás
 
 Bepillantasz az Asztrálsíkra. ⭕TODO
 
 ---
+
 #### Szabályok
 
 ⭕TODO

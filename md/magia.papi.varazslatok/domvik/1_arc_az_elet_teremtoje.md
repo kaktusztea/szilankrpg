@@ -11,6 +11,7 @@
 **6.szint:** Innen alkalmazható
 
 ---
+
 #### Hatás
 
 Domvik első arcát egy termékenység varázslat képében fordítja hívei felé.
@@ -22,6 +23,7 @@ Ha a hallgatósághoz szól, a termékeny nők sok könnyebben teherbe esnek, n�
 Ha az állatokat áldja meg, azok sokkal könnyebben lesznek vemhesek.
 
 ---
+
 #### Szabályok
 
 Aki terméketlen arra nem hat az efféle mágia, az ő bajára a [Betegség gyógyítása](../betegseg_gyogyitasa.md) varázslat hozhat gyógyírt.

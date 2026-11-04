@@ -11,6 +11,7 @@ Most lássuk a **Magasmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 <br />
 
 ---
+
 ### Szintek
 
 #### Novícius (3) 📖
@@ -20,21 +21,25 @@ Most lássuk a **Magasmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
+
 #### Kismester (6) 📖
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
+
 #### Mester (9) 📖
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
+
 #### Nagymester (12) 📖
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
+
 #### Élő legenda (15) 📖
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
@@ -42,6 +47,7 @@ Most lássuk a **Magasmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲
@@ -70,11 +76,12 @@ Most lássuk a **Magasmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 
 <br />
 
-
 ---
+
 ### Metamágia arkánum
 
 `6.` szinten az alábbi formulák érhetőek el Metamágia Arkánumban:
+
 - Leplezés
 - Fürkészés
 - Destrukció

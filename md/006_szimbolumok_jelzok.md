@@ -25,6 +25,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 🗡️ Harci taktika, Harci szituáció vagy Manőver
 
 `k20P`: `k20` páros/páratlan része
+
 - "egyes rész páratlan" → `0`
 - "egyes rész páros" → `1`
 - `10,20` dobott érték → `2`
@@ -50,6 +51,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 ↓↑ Lefele/Felfelé kerekítünk
 
 ---
+
 ### Fejlesztést támogató jelzők
 
 ⭕ TODO: kidolgozásra/döntésre vár

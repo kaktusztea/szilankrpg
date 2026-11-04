@@ -7,9 +7,11 @@ Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - szem
 Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_03_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
 
 ---
+
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
@@ -20,12 +22,14 @@ Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Harcmodor - `9.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 Büntetések nélkül védheted pártfogoltad. A [Többszörös támadás elvesztése](../081_hatasok.md#-t%C3%B6bbsz%C3%B6r%C3%B6s-t%C3%A1mad%C3%A1s-elveszt%C3%A9se) Hatás sem sújt már.
 
 ---
+
 ### Követelmény, Távolság
 
 Az oltalmazott személy nem harcolhat, a testőrnek pedig **`2` méteren** belül kell lennie.

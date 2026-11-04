@@ -3,6 +3,7 @@
 Nem okoz számodra gondot, hogy összevissza mozgó ellenfelet kell eltalálnod.
 
 Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz mágikus lövedéket, a **Mozgásból** adódó 🗡️[Szorzó](../072_02_tavharc_ve_szorzo.md#szorzó---mozgás-módosító-célpont)  módosítók lecsökkennek.
+
 #### Alapeset
 
 🌟 **Hatás**
@@ -13,6 +14,7 @@ Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz 
 ```
 
 ---
+
 ### 1. fok
 
 🌟 **Hatás**

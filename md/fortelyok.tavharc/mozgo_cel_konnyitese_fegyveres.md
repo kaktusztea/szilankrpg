@@ -15,6 +15,7 @@
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
 🌟 **Hatás**:
+
 ```
 3x: Kiszámíthatatlan Szorzó
 4x: Harcoló Szorzó

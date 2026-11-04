@@ -7,6 +7,7 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 Igen sokszintű képzettség, amely alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi. Az Orvoslás tehát magában foglalja a sebgyógyítást és nagyon fejlett szinten a gyógyítást is.
 
 A képzettség az alábbi tevékenységeket fedi le:
+
 - vérzés elállítása
 - fertőtlenítés, sebkötözés kencék használatával
 - [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
@@ -33,6 +34,7 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 - Érzékenység
@@ -53,17 +55,18 @@ A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel **N
 
 ⭕xyz. Ha nincs, törölni
 
-
 ### 🟥 Erős kiterjesztés
 
 ⭕xyz. Ha nincs, törölni
 
 ---
+
 ## ⭕TODO⭕
 
 Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni
 
 ---
+
 ### Betegségek kezelése gyógyszerekkel
 
 A gyógyszerek kikeveréséhez szükség van alapanyagokra, amelyeket a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
@@ -73,6 +76,7 @@ Vajákosság szint követelmény: `Betegség szintje / 2`
 **Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
 
 ---
+
 ### Sebek kezelése gyógyszerekkel, kencékkel
 
 ```
@@ -105,6 +109,7 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

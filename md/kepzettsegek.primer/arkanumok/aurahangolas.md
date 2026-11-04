@@ -11,7 +11,6 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 - Aurarejtés
 - Aurahamisítás
 
-
 ### Domináns Tulajdonságok
 
 Önuralom, Intelligencia, Érzékenység
@@ -26,18 +25,14 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 
 #### 🌟 `9.szint`
 
-
-
 #### 🌟 `12.szint`
 
-
-
 #### 🌟 `15.szint`
-
 
 <br />
 
 ---
+
 ### Próbák
 
 #### Könnyű (6) 🎲
@@ -67,6 +62,7 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 <br />
 
 ---
+
 ### Helyzetfüggő módosítók
 
 A Mágia akaratát külön kezeljük.

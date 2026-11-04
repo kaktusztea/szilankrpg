@@ -18,16 +18,16 @@ Az isteneken kívülálló különleges "Sors" entitással egyedi kapcsolatot al
 
 A kártyavetéstől függ, milyen hatás következik be, vagy látsz bele az ismeretlenbe.
 
-
 ### Példa varázstudó: Jósnő
 
 ⭕TODO: fogalmazás, formázás⭕
 
 Ezeket határozhatod meg a kártyavetéskor (varázsláskor):
+
 - "Jót / Rosszat akarok". Hogy mi fog történni, arra nincs ráhatásod, az a kártyahúzástól függ.
 - Erősség
 - Komplexitás:
-  -  `3`: valaki (random, hogy ki)
+  - `3`: valaki (random, hogy ki)
   - `6`: "X legyen a célpont."
   - `9`: "Adott teremen belül" (mindenkire rászakad a plafon).
   - `12`: Csak rájuk, DE ránk ne

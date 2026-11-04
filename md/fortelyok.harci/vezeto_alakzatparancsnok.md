@@ -5,12 +5,13 @@ Egy jó vezető csodákat tehet egy fegyveres alakzattal.
 ### Kiterjeszti ezeket
 
 - [Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) képzettség
-    - Megfelelő alakzat felvétele, adaptálódás
-    - Alakzat egyben tartása változó harci környezetben
-    - ⚡"Lándzsások vonalba, megakasztásra készülj!"
-    - ⚡"A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lősz, Rühes, tied a kocsis."
+  - Megfelelő alakzat felvétele, adaptálódás
+  - Alakzat egyben tartása változó harci környezetben
+  - ⚡"Lándzsások vonalba, megakasztásra készülj!"
+  - ⚡"A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lősz, Rühes, tied a kocsis."
 
 ---
+
 ### Alapeset
 
 Az **[Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md)** képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk.
@@ -22,6 +23,7 @@ Az **[Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md)** képzettséget
 A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
+
 - Alakzatharc - `6.szint`
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
@@ -33,6 +35,7 @@ A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **A
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Alakzatharc - `9.szint`
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
@@ -40,6 +43,7 @@ A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **A
 🌟 `+4` bónusz az **Alakzatszintre**
 
 ---
+
 ### Több Alakzatparancsnok a csapatban
 
 Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.

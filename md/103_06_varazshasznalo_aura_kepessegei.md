@@ -3,6 +3,7 @@
 ⭕TODO⭕ Ezek igazából az Aurahangolás-arkánum formulái. Link oda??
 
 ---
+
 ## Aurakiterjesztés
 
 Lásd [Mágia akarata - Módosító: Aurakiterjesztés](103_04_magia_akarata.md#m%C3%B3dos%C3%ADt%C3%B3-aurakiterjeszt%C3%A9s) bekezdést.
@@ -10,12 +11,14 @@ Lásd [Mágia akarata - Módosító: Aurakiterjesztés](103_04_magia_akarata.md#
 <br />
 
 ---
+
 ## Aurabontás
 
 - [Aurahangolás](kepzettsegek.primer/arkanumok/aurahangolas.md) Arkánum egy Formulája. Teljes leírását lásd ott.
 - Komplexitás: `6`
 
 ⭕TODO⭕Itt csak tömören összefoglalni és hivatkozni rá. A kibontás az Aurahangolás Arkánumnál
+
 - (⭕megcsinálni ott: "mint a `VÉ` csökkentés, de inkább magasabb szintű ellenfelek ellen érdemes"
 
 🌟**Hatás**:
@@ -66,6 +69,7 @@ Rontás:
 <br />
 
 ---
+
 ## Sötétben kinyúlás Aurával, másik Aura keresgélése
 
 ⭕TODO⭕Észlelés próba??
@@ -73,6 +77,7 @@ Rontás:
 <br />
 
 ---
+
 ## Varázsló Auraérzete varázslatban
 
 ⭕TODO⭕ Auraérzet fogalom bevezetése az "Aura jellemzői" oldalon. Itt behivatkozni, hogy ez varázsláskor érezhető⭕

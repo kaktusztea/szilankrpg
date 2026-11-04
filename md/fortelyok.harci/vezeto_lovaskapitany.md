@@ -10,6 +10,7 @@ Egy földi hátasokkal küzdő egység parancsnokaként koordinálod annak harc�
   - ⚡ "Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!"
 
 ---
+
 ### Alapeset
 
 Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
@@ -21,6 +22,7 @@ Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos 
 A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó lovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
+
 - Lovaglás - `6.szint` (nehézlovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
@@ -32,6 +34,7 @@ A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **A
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Lovaglás - `9.szint` (nehézlovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
@@ -39,6 +42,7 @@ A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **A
 🌟 `+4` bónusz az **Alakzatszintre**
 
 ---
+
 ### Több Lovaskapitány a csapatban
 
 Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.

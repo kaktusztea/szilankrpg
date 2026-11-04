@@ -8,9 +8,10 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 - [Vakharc - sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben)
 
 ---
+
 ### 1. fok
 
-🌟 **Hatás**: 
+🌟 **Hatás**:
 
 ```
 Vakharc harci helyzetben
@@ -25,7 +26,7 @@ Vakharc harci helyzetben
 
 ### 2. fok
 
-🌟 **Hatás**: 
+🌟 **Hatás**:
 
 ```
 Vakharc harci helyzetben

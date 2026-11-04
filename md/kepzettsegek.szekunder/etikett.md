@@ -17,6 +17,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia, Önuralom, Emlékezet
@@ -55,6 +56,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 <br />
 
 ---
+
 ### Próbák
 
 #### Könnyű (6) 🎲

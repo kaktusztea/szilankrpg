@@ -5,6 +5,7 @@ A karakternek minimum `1 kör`, zavartalan, ellazult, nyugodt, fenyegetéstől m
 Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Értéke NEM regenerálódik, mert bármikor rajtaüthetnek, nem engedhet ki, figyelme továbbra is ki van hegyezve.
 
 ---
+
 ### Játékos karakterek VÉ regenerációja harc közben
 
 Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerjen valamennyit Védő Értékéből.
@@ -20,12 +21,14 @@ Lásd a fortély leírását.
 #### ⚜️ Papi varázslat
 
 ⭕TODO⭕
+
 - van narratív követelménye
 - cserébe harc után `FP`büntetés
 
 <br />
 
 ---
+
 ### Élőholtak VÉ regenerációja harc közben
 
 ```
@@ -39,6 +42,7 @@ csökkenések)
 Mivel nem fáradnak szellemileg, legfeljebb ideiglenes hátrányba kerülnek, ezért az élőholtak `VÉ`-je **minden** kör elején visszaáll eredeti értékére, kivéve azok a `VÉ` csökkenések, amelyek `ÉP` sebből adódtak.
 
 ---
+
 ### Szörnyek, túlvilági lényeg VÉ regenerációja harc közben
 
 A fenti kreatúrák közül több is képes harc közben `Védő Értékének` részleges, vagy teljes visszanyerésére.

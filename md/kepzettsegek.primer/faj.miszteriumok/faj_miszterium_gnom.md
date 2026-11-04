@@ -9,6 +9,7 @@
 - Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia Mágia metódussal), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
 
 ---
+
 ### Szintek
 
 ```

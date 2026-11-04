@@ -11,14 +11,17 @@
 #### Kisszféra
 
 **3.szint**: minden seb begyógyul (ms), `FP` mind megmarad (fp).
+
 - [Eszmélet (1) Bódultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `S2` kategóriában
 - [Eszmélet (2) Kábultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g): `S3-S4` kategóriában
 
 **4.szint**: ms, fp
+
 - [Eszmélet (1) Bódultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `S3` kategóriában
 - [Eszmélet (2) Kábultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g): `S4` kategóriában
 
 **5.szint**: ms, fp
+
 - [Eszmélet (1) Bódultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `S4` kategóriában
 
 **6.szint**: ms, fp, minden seb begyógyul, **nincs** Kábultság/Bódultság.
@@ -32,11 +35,13 @@
 **12.szint**: ms, minden `FP` eltűnik.
 
 ---
+
 #### Hatás
 
 A pap kézrátétellel - isteni csodaként - gyógyítja a sebeket.
 
 ---
+
 #### Szabályok
 
 - A gyógyítást nem lehet újrapróbálni többször egymás után azonos személyen, csak akkor, ha az illető új ÉP sebet kap és akkor is csak az új sebekre vonatkozik a mágia.

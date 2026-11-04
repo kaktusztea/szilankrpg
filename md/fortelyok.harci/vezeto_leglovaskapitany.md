@@ -5,12 +5,13 @@ Egy légi hátasokkal küzdő egység parancsnokaként koordinálod annak harcá
 ### Kiterjeszti ezeket
 
 - [Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) képzettség
-    - Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, adaptálódás
-    - Közösen lecsapni a magasból - harci körülmények között is.
-    - Légi hátas alakzat egyben tartására változó harci környezetben.
-    - ⚡ "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
+  - Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, adaptálódás
+  - Közösen lecsapni a magasból - harci körülmények között is.
+  - Légi hátas alakzat egyben tartására változó harci környezetben.
+  - ⚡ "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
 
 ---
+
 ### Alapeset
 
 Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
@@ -22,6 +23,7 @@ Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [cso
 A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
+
 - Léglovaglás - `6.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
@@ -33,6 +35,7 @@ A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **A
 ### 2. fok
 
 🔒 **Követelmény**:
+
 - Léglovaglás - `9.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
@@ -40,6 +43,7 @@ A [Harc alakzatban](../065_04_harc_alakzatban.md) fejezet szerint kiszámolt **A
 🌟 `+4` bónusz az **Alakzatszintre**
 
 ---
+
 ### Több Léglovaskapitány a csapatban
 
 Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.

@@ -17,6 +17,7 @@ Egy karakter [harcmodor](kepzettsegek.primer/harci/harcmodor.md) képzettség-sz
 Ez adja a **Manőver Pontok** mennyiségét. Látható, hogy a pontok értékének fenntartásához - a Tapasztalati Szint növekedésével - folyamatosan kell növelni a harcmodor képzettségeket. A Manőver pontok értéke így mindig `[0-10]` tartományban mozog.
 
 ---
+
 ### Felhasználása, Hatása
 
 ```
@@ -31,6 +32,7 @@ A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - meg
 Egy manőver során legfeljebb `4 MP` használható fel. Bővebben lásd: Manőver [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) fázisa.
 
 ---
+
 ### Ellenfelhasználás
 
 ```
@@ -44,6 +46,7 @@ Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni,
 **Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha végül nem sikerül ellene a Manőver, akkor feleslegesen használta el a beáldozott pontot.
 
 ---
+
 ### NJK Manőver Pontok
 
 ```

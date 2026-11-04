@@ -3,15 +3,15 @@
 → [STUDY: Tradíciók jellemzők](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.tradiciok.jellemzoi)⭕\
 → [ADR: Tradíciók működésük](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.tradiciok.mukodese)⭕
 
-  - [Magasmágia (mozaikmágia)](051_01_magasmagia.md)
-  - [Vulgármágia](051_02_vulgarmagia.md)
-  - [Orgyilkos mágia](051_03_orgyilkos_magia.md)
-  - [Ordani Tűzmágia](051_04_ordani_tuzmagia.md)
-  - [Bárdmágia](051_05_bardmagia.md)
-  - [Illuzionista](051_06_illuzionista.md)
-  - [Természeti mágia](051_07_termeszeti_magia.md)
-  - [Sámánmágia](051_08_samanmagia.md)
-  - [Drágakőmágia](051_09_dragakomagia.md)
+- [Magasmágia (mozaikmágia)](051_01_magasmagia.md)
+- [Vulgármágia](051_02_vulgarmagia.md)
+- [Orgyilkos mágia](051_03_orgyilkos_magia.md)
+- [Ordani Tűzmágia](051_04_ordani_tuzmagia.md)
+- [Bárdmágia](051_05_bardmagia.md)
+- [Illuzionista](051_06_illuzionista.md)
+- [Természeti mágia](051_07_termeszeti_magia.md)
+- [Sámánmágia](051_08_samanmagia.md)
+- [Drágakőmágia](051_09_dragakomagia.md)
 
 ### Metamágia Arkánum
 
@@ -34,6 +34,7 @@ A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korl
 A Metamágia Arkánumok tradíciók szerint eltérnek!
 
 ---
+
 ### Tradíciók követelményei
 
 Minden Tradíció szintjeinek lehetnek követelményei, amelyek biztosítják, hogy csak talentummal megáldott személyek tanulhassák az adott ismereteket.

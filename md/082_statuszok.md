@@ -25,6 +25,7 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 
 ---
 ---
+
 ### ✴️ Áldott / Átkozott (1,2) Tulajdonság
 
 ```
@@ -40,7 +41,7 @@ Előny+1,2  //  Hátrány-1,2
   adott Képzettségpróbára
 ```
 
-####  ⚡ Példa képzettség Átokra: "Alulművelt Bölcsész" 🤓
+#### ⚡ Példa képzettség Átokra: "Alulművelt Bölcsész" 🤓
 
 ```
 Hátrány-1
@@ -110,6 +111,7 @@ Orwella érintése
 <br />
 
 ---
+
 ### ✴️ Bénultság (1) Cselekvőképtelenség
 
 ```
@@ -135,6 +137,7 @@ Beszéd - némult
 <br />
 
 ---
+
 ### ✴️ Blokkolt (1) Közepesen
 
 **Harci lassulást** értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
@@ -154,6 +157,7 @@ Mozgás - feleződik
 <br />
 
 ---
+
 ### ✴️ Eszmélet (1) Bódultság
 
 ⚡Példa: sima részegség
@@ -213,12 +217,14 @@ Varázslás képesség elvesztése
 ### ✴️ Eszmélet (4) Kóma
 
 Mint az Ájulásnál, továbbá:
+
 - Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy.
 - Az Antyss a valóságod. Ha nincs ⭕Antyssjárás⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
 
 <br />
 
 ---
+
 ### ✴️ Érzékvesztés (1) Zavart
 
 Látás, Hallás, Szaglás.
@@ -245,6 +251,7 @@ Automatikus kudarc
 <br />
 
 ---
+
 ### ✴️ Félelem (1) Szorongás
 
 ```
@@ -296,6 +303,7 @@ Csak mágia vagy démonok hatására
 <br />
 
 ---
+
 ### ✴️ Fizikai (1) Fáradtság, Fejfájás
 
 ```
@@ -305,6 +313,7 @@ Hátrány-1
 ```
 
 ⚡ Példa
+
 - napok óta napja nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete nem ettél
@@ -348,6 +357,7 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci 
 <br />
 
 ---
+
 ### ✴️ Hangulat (1) Fogékony
 
 A nem-mágikus érzékszervi, vagy érzelmi ingerek fokozottabban hatnak rád. Érzelmileg jobban megnyílsz - pozitív és negatív értelemben is.
@@ -405,6 +415,7 @@ Hátrány-1
 <br />
 
 ---
+
 ### ✴️ Indulat (1) Harag
 
 ⭕TODO: kapcsolódhat/ütközhet ezzel: [Harci láz képzettség](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.primer/harci/harci_laz.md)⭕
@@ -412,6 +423,7 @@ Hátrány-1
 Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör.
 
 Ilyenkor
+
 - maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
 - [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
 
@@ -437,6 +449,7 @@ Automatikus kudarc
 <br />
 
 ---
+
 ### ✴️ Késztetés (1) Sugallat
 
 ```
@@ -478,6 +491,7 @@ Alkoholizmus (1,2,3) ("Igyak piát?")
 <br />
 
 ---
+
 ### ✴️ Mérgezés
 
 Lásd a [Méregrendszer](140_meregrendszer.md) fejezetben a mérgek **hatásait**.
@@ -485,6 +499,7 @@ Lásd a [Méregrendszer](140_meregrendszer.md) fejezetben a mérgek **hatásait*
 <br />
 
 ---
+
 ### ✴️  Rosszullét (1) Közepes
 
 ```
@@ -511,6 +526,7 @@ Hátrány-1
 <br />
 
 ---
+
 ### ✴️ Sérült (1) S3
 
 Ha az `S3` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.\
@@ -551,6 +567,7 @@ Varázslás képesség elvesztése
 <br />
 
 ---
+
 ### ✴️ Szellemi (1) Kialvatlanság
 
 ```
@@ -586,6 +603,7 @@ Hátrány-2
 <br />
 
 ---
+
 ### ✴️ Trauma (1) Lélekrepedés
 
 ```
@@ -614,6 +632,7 @@ Antyssjárás esetén "nagyon rossz" helyre kerülsz
 <br />
 
 ---
+
 ### ✴️ Zavar (1) Kizökkent
 
 ```

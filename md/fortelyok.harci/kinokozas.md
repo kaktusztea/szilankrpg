@@ -26,6 +26,7 @@ Sebzésed: 1 ÉP
 ```
 
 Ha az áldozat elrontja a próbát, akkor a következő körben valamelyik módosítóval harcol (KM dönt):
+
 - [Indulat (1) Harag](../082_statuszok.md#%EF%B8%8F-indulat-1-harag)
 - [Félelem (1) Szorongás](../082_statuszok.md#%EF%B8%8F-f%C3%A9lelem-1-szorong%C3%A1s)
 

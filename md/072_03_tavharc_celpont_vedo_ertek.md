@@ -20,6 +20,7 @@ Célpont VÉ =
 <br />
 
 ---
+
 ## Célzó dobás vs távolsági Védő Érték
 
 A célpont távolsági `Védő értéke` reprezentálja eltalálásának nehézségét. Ha a lövést/hajítást végző `Célzó Érték + k20` dobása eléri ezt, akkor találatról beszélünk - egyébként a támadás célt téveszt.

@@ -63,6 +63,7 @@ S4:  -6 TÉ
 ```
 
 ---
+
 ### Tetves, a bérgyilkos
 
 ```
@@ -120,6 +121,7 @@ S4:  -7 TÉ
 
 ---
 ---
+
 ## Lord Gustav és Tetves részletes összecsapása
 
 Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_03_01_pozitiv_helyzetek.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
@@ -132,6 +134,7 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 <br />
 
 ---
+
 ### Gustav első sebe  (`S1` kategória)
 
 #### ⚜️Tetves támadása meglepetésből
@@ -201,6 +204,7 @@ VÉ: 51
 <br />
 
 ---
+
 ### Gustav második sebe – Precíz támadás  (`S3` kategória)
 
 Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Tetves felméri a helyzetet: a láncing túl jól védi a lovagot. Elhatározza, hogy a páncél által **nem fedett** területet veszi célba – a lovag lábszárát, amelyet nem borít láncing. Bejelenti a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert.
@@ -289,6 +293,7 @@ VÉ: 40
 <br />
 
 ---
+
 ### Gustav harmadik sebe  (`S4` kategória)
 
 Gustav helyzete komoly. Bár sikerül sebet ejtenie támadóján (`8 ÉP`-t), a sors nem kedvez a lovagnak. A gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás erős (`15 SP`), de a láncing sokat (`10`) felfog.
@@ -346,6 +351,7 @@ Lord Gustav VÉ: 28
 <br />
 
 ---
+
 ### A gyilkos veszte
 
 Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `4` (összesen: `41`!), ami bőven talál (tekintve, hogy a lovag `VÉ`-je csak `28` a Támadó taktika miatt).

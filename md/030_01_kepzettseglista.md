@@ -7,6 +7,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 ---
 
 → **Primer képzettségek** 🅿️
+
 - minden harci képzettség
 - minden misztikus, mágikus, szakrális, pszí, slan képzettség
 - Akrobatika
@@ -31,6 +32,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 [Faj misztériumok](#faj-miszt%C3%A9riumok-%F0%9F%85%BF%EF%B8%8F) - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F) - [Mágikus Szférák és Arkánumaik](#m%C3%A1gikus-szf%C3%A9r%C3%A1k-%C3%A9s-ark%C3%A1numaik-%F0%9F%85%BF%EF%B8%8F) - [Papi mágia](#papi-m%C3%A1gia-%F0%9F%85%BF%EF%B8%8F)
 
 ---
+
 ### Harci képzettségek 🅿️
 
 🔵 [Alakzatharc](kepzettsegek.primer/harci/alakzatharc.md) 🤝
@@ -44,6 +46,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 🔵 [Távolsági harcmodor](kepzettsegek.primer/harci/tavolsagi_harcmodor.md) 🔁
 
 ---
+
 ### Fizikai képzettségek
 
 🔵 [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) 🅿️
@@ -57,6 +60,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 🔵 [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) 🤝
 
 ---
+
 ### Világi képzettségek
 
 🔵 [Befolyásolás](kepzettsegek.primer/altalanos/befolyasolas.md) 🅿️
@@ -84,6 +88,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 🔵 [Városi jártasság](kepzettsegek.szekunder/varosi_jartassag.md)
 
 ---
+
 ### Alvilági képzettségek
 
 🔵 [Álcázás/Álruha](kepzettsegek.szekunder/alcazas_alruha.md)
@@ -99,6 +104,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 🔵 [Zárnyitás](kepzettsegek.szekunder/zarnyitas.md)
 
 ---
+
 ### Művészeti képzettségek
 
 Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművészet** képzettségbe a belső művészetek alkotói folyamatait lefedő **Képzőművészettől**. A passzív művészeti ismereteket a **Művészetismeret** képzettség adja. Mind a három [Szabad Fortélyok](042_szabad_fortelyok.md) alkalmazásával terjeszthető ki különböző művészeti ágakra.
@@ -110,6 +116,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 🔵 [Művészetismeret](kepzettsegek.szekunder/muveszetismeret.md)
 
 ---
+
 ### Tudományos képzettségek
 
 🔵 [Alkímia](kepzettsegek.szekunder/alkimia.md)
@@ -125,6 +132,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 🔵 [Lexikum](kepzettsegek.szekunder/lexikum.md) 🤝
 
 ---
+
 ### Faj misztériumok 🅿️
 
 🔵 [Faj misztérium: Amund](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md)
@@ -180,6 +188,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 🔵 [Faj misztérium: Udvari ork](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md)
 
 ---
+
 ### Misztikus képzettségek 🅿️
 
 🔵 [Ősi nyelv ismerete](kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md) 🔁
@@ -187,6 +196,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 🔵 [Tradíció](kepzettsegek.primer/misztikus/tradicio.md)
 
 ---
+
 ### Mágikus Szférák és Arkánumaik 🅿️
 
 #### Anyag szféra
@@ -195,7 +205,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Természetes anyagok mágiája](kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md)
 
-####  Lélek szféra
+#### Lélek szféra
 
 🔵 [Asztrálmágia](kepzettsegek.primer/arkanumok/asztralmagia.md)
 
@@ -244,6 +254,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 → Lélekcsíra megteremtése: csak az istenek rendelkeznek vele, halandó nem ismerheti. Halhatatlan.
 
 ---
+
 ### Papi mágia 🅿️
 
 [STUDY oldal: Varázslat szférák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.papimagia#var%C3%A1zslat-szf%C3%A9r%C3%A1k) - mint iskola-képzettségek (draft) ⭕MÁGIA TODO⭕

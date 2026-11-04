@@ -5,12 +5,14 @@ Ha éltető, nagyszámú (20+) közönség előtt harcolsz, az extázis megacél
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - [Gladiátor Leíró Háttér](../022_leiro_hatterek.md#sz%C3%A1rmaz%C3%A1s)
 - Harcmodor - `6.szint`
 
 🌟 `TÉ:+3` bónusz a harc idejére
 
 ---
+
 ### Megjegyzések
 
 Valódi aréna hangulat szükséges. A minimum konkrét létszámot, környezetet nem specifikáljuk, a KM szava dönt.

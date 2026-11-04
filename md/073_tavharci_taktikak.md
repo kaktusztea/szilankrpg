@@ -9,6 +9,7 @@ Néhány egyedi taktika itt is előfordul.
 🔆 Sima [Harci taktikákkal](065_02_harci_taktikak.md) és [Lovas harci taktikákkal](067_03_lovas_harci_taktikak.md)NEM kombinálhatóak.
 
 ---
+
 ### Lövéskitérés
 
 #### → Képzettségpróba: Akrobatika + Gyorsaság
@@ -98,6 +99,7 @@ A támadó automatikusan elvesztette a támadását - már nem is tehet **Célz�
 <br />
 
 ---
+
 ### Kitartott célzás
 
 `1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. Csak mozdulatlan állapotban végezhető.
@@ -105,6 +107,7 @@ A támadó automatikusan elvesztette a támadását - már nem is tehet **Célz�
 → [Taktikafókusz: Kitartott célzás](fortelyok.tavharc/taktikafokusz_kitartott_celzas.md) fortély további `+4 CÉ`-t ad (összesen `+7`).
 
 ---
+
 ### Páros, kétkezes hajítás
 
 ```

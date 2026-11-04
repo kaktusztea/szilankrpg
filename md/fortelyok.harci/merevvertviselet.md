@@ -12,6 +12,7 @@ Merevvért büntetés Hatásairól az [MGT](../069_03_MGT.md) oldalon olvashatsz
 - [MGT](../069_03_MGT.md) fejezet
 
 ---
+
 ### Alapeset
 
 A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
@@ -39,6 +40,7 @@ A páncél teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 🔒 Kardvívás/Rombolás/Lándzsavívás Harcmodor - `3.szint`
 
 🌟 **Hatás**:
+
 - Merevvérted `TÉ` büntetése ennyivel enyhül: `-15`
 - Merevvért viselése esetén `VÉ:+3` bónuszt kapsz (ha a lefedettség minimum `70%`)
   (tudatos vérthasználat lecsúsztatásokkal)

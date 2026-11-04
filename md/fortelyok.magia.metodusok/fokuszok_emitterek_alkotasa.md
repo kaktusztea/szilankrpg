@@ -14,6 +14,7 @@ Lásd még: [Ereklyék, mágikus emitterek](../120_varazstargyak.md#ereklyék-m�
 ### Fókusz megalkotása
 
 ⭕TODO⭕
+
 ### Mágikus emitter
 
 ⭕TODO⭕

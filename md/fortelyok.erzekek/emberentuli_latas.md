@@ -16,6 +16,7 @@ Különlegesen éles a szemed, messzire ellátsz.
 Emberi látás
 
 ---
+
 ### 1. fok
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli látás**, mint felvehető Érzék-fortély
@@ -29,8 +30,8 @@ Emberi látás
  mint egy átlagos ember
 ```
 
-
 ---
+
 ### Hatása Infralátásra, Ultralátásra
 
 - Infralátásra is vonatkozik, így a hőkép-tartományban is messzebbre látsz. Példa: **elfek**.

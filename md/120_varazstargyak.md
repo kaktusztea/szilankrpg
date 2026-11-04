@@ -5,12 +5,13 @@
 A varázstárgyakat az alábbi kategóriára bonthatjuk:
 
 - [Rúnamágiával felruházott tárgyak](#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak)
-    - [Mágikus fegyverek](#mágikus-fegyverek)
+  - [Mágikus fegyverek](#mágikus-fegyverek)
 - [Ereklyék, Mágikus emitterek](#erekly%C3%A9k-m%C3%A1gikus-emitterek)
 - [Szellem által megszállt tárgyak](#szellem-%C3%A1ltal-megsz%C3%A1llt-t%C3%A1rgyak)
 - [Amulettek](#amulettek)
 
 ---
+
 ## Rúnamágiával felruházott tárgyak
 
 Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező tárgyakká váltak.
@@ -27,6 +28,7 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
 <br />
 
 ---
+
 ## Ereklyék, Mágikus emitterek
 
 ⭕TODO⭕
@@ -34,6 +36,7 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
 <br />
 
 ---
+
 ## Szellem által megszállt tárgyak
 
 ⭕TODO⭕
@@ -41,6 +44,7 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
 <br />
 
 ---
+
 ## Amulettek
 
 ⭕TODO⭕

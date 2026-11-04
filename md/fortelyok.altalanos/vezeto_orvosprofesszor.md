@@ -3,11 +3,13 @@
 Vezető orvosprofesszorként koordinálod az alád tartozó orvosok, gyógyítók munkáját.
 
 ---
+
 ### Alapeset
 
 A [Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
 
 ---
+
 ### 1. fok
 
 A fentiek szerint kiszámolt csoportos **Orvoslás** értéket egy jó vezető professzor képes koordinálásával megemelni.
@@ -25,6 +27,7 @@ A fentiek szerint kiszámolt csoportos **Orvoslás** értéket egy jó vezető p
 🌟 `+4` bónusz csoportos **Orvoslás** értékre
 
 ---
+
 ### Jellemzően
 
 NJK ismeret.

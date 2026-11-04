@@ -12,6 +12,7 @@ Ezek - az ésszerűség határain belül - nem igényelnek semmilyen feltételt.
 - Koncentrálást fenntartani
 
 ---
+
 ### `2.` Mozgás
 
 Egy körön belül szabadon mozoghatsz a lenti korlátok között és/vagy pár alapvető cselekedetet is végezhetsz. A KM dönt, hogy ha cselekszel is, mennyivel kevesebbet mozoghatsz.
@@ -29,6 +30,7 @@ Cselekedetek
 🔆Ha a kört mozgással kezded, akkor utolsó helyre csúszol a [Kezdeményezésben](064_02_00_harc_menete_reszletes.md#kezdeményezés).
 
 ---
+
 ### `3.` Akció
 
 Minden karakternek **`1 db`** Akciója van körönként összesen, amely az alábbiakat jelentheti (vagy-vagy):
@@ -50,6 +52,7 @@ Tehát ha **Akció** helyett **is** mozogsz, akkor ez a maximálisan megtehető 
 <br />
 
 ---
+
 ### Támadások sorrendje
 
 Mindenki leadja `1.` támadását, aztán ugyanebben a sorrendben a több támadással rendelkező karakterek a `2.` támadást, és így tovább - egészen addig, amíg már nincs senkinek hátralevő támadása.

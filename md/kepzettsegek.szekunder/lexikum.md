@@ -31,6 +31,7 @@ Próba dobható.
 ```
 
 ---
+
 ### Követelmény
 
 - Nem lehetsz [Analfabéta](../fortelyok.kiemelt/analfabeta.md).
@@ -93,6 +94,7 @@ Próba dobható.
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

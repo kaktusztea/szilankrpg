@@ -1,9 +1,11 @@
 ## 🟣 Gyors hajítás (1)
 
 Hajításaidat kivételesen gyorsan tudod leadni.
+
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - Csak hajítófegyverekkel végezhető
 - Hajítás - `5.szint`
 

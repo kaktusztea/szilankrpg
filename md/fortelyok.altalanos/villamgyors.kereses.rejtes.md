@@ -7,6 +7,7 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 - [Keresés/rejtés](kereses_rejtes.md) fortély
 
 ---
+
 ### Alapeset
 
 Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md#helyzetfüggő-módosítók) képzettségpróbát (amit kiterjeszt a Keresés/rejtés fortély).
@@ -16,6 +17,7 @@ Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` bü
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettség - `3.szint`
 - [Keresés/rejtés](kereses_rejtes.md) fortély: `1.fok`
 

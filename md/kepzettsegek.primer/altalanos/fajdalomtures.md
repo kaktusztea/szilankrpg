@@ -11,6 +11,7 @@ Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve k�
 Nincsenek. A különböző drogok és tudatállapot változások a [Státuszokon](../../082_statuszok.md) keresztül fejtik ki a hatásukat.
 
 ---
+
 ### Domináns Tulajdonságok
 
 - Önuralom
@@ -46,6 +47,7 @@ Harcon kívül fájdalmát akarata szerint választja meg – ha kell, teljesen 
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

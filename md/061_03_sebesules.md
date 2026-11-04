@@ -3,6 +3,7 @@
 Ha a karakter találatot kap, harcértékeit - fizikumától függően - levonások sújtják. Persze a seb, ami egy nyeszlett alakot az összeesés szélére sodor, még bőven belefér egy edzett korgnak. A fentiek modellezésére kerültek bevezetésre a **Sebesülés kategóriák**.
 
 ---
+
 ### Sebesülés jelölése a táblázatban
 
 Mikor a karaktert sebesülés éri, elkezdi bejelölni a korábban már bemutatott [Életerő táblázatban](061_01_eletero_pont.md#%C3%A9leter%C5%91-pontok-eloszt%C3%A1sa) a legmagasabb (`S1`) kategóriában lévő mezőket fentről lefelé. Mikor az első oszlop "betelt", folytatja az `S2`, majd az `S3` kategóriában levőkkel és így tovább. Az adott "S" kategória akkor "kezdődik meg", amikor az első rubrikát bejelöljük benne.
@@ -21,12 +22,14 @@ F: FP
 ```
 
 ⚡ Példa: `Z2` jelölések `8 db` rubrikával
+
 - ez a karakter **második** sebe
 - egy `8 ÉP`nagyságú, Zúzott sebet jelöl
 
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
 ---
+
 ### FP jelölése az `ÉP` táblázatban
 
 A sima `ÉP` és az [FP](061_02_faradtsag_pont.md) értékek kezelése ugyanabban az `ÉP` táblázatban történik, hatásaik is megegyeznek, csak az `FP` esetén nincs valós fizikai sérülés, viszont a "sebesülés" okozta harcérték levonások úgy számítandóak, mintha valós sebzés történt volna. A gyakorlatban ez úgy néz ki, hogy ha a karakter **Fáradtság Pontot** szerez, azt bejelöli a rendes `ÉP` táblázatában.
@@ -45,6 +48,7 @@ Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `F
 ![](images/06_fp.png)
 
 ---
+
 ### Haldoklás
 
 ```
@@ -71,6 +75,7 @@ Ha egy karaktert stabilizáltak, akkor nem kell `Edzettség` próbát dobnia, de
 <br />
 
 ---
+
 ### Sérülés hatása Tulajdonság- és Képzettségpróbára
 
 Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják.

@@ -24,8 +24,8 @@ TÉ levonás
 -9: Nagy pajzs
 ```
 
-
 ---
+
 ### 1. fok
 
 🔒 Harcmodor: `3.szint`

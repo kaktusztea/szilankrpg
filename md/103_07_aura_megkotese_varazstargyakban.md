@@ -2,8 +2,8 @@
 
 ⭕TODO⭕
 
- - leírás a hogyanról ÉS
- - link a [Varázstárgyak](120_varazstargyak.md) fejezetre
+- leírás a hogyanról ÉS
+- link a [Varázstárgyak](120_varazstargyak.md) fejezetre
 
 ---
 

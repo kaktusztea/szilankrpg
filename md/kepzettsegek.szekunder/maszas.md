@@ -53,6 +53,7 @@ Ha a terep (próba) nehézsége nem nagyobb a Mászás képzettségnél, akkor a
 <br />
 
 ---
+
 #### ⚜️ Erő Tulajdonság bevetése [mentődobásnál](../030_06_01_kepzettsegproba.md#mentődobás) 🔀
 
 Az Erő `0` feletti részét vetheted be.
@@ -66,30 +67,36 @@ Az Erő `0` feletti részét vetheted be.
 [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
 
 ---
+
 ### Hosszabb mászandó út
 
 Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobást kell végezni (**Edzettség** Tulajdonsággal).
 
 ---
+
 ### Rontott mászás próba után
 
 Ha a rontott Mászás próba végzetes lenne, akkor természetesen [mentődobásra](../030_06_01_kepzettsegproba.md#mentődobás) vagy jogosult, aminek **Vállalás** dobását **Erő** Tulajdonsággal tudod megtámogatni.
 
 ---
+
 ### Megállás ÉS pihenés a falon rontás után
 
 Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg kell állni, pihenni a falon.
 
 Ehhez 2 próbának kell meglennie **biztos tudásból**:
+
 - Edzettség tulajdonságpróba (a fenti körülményektől függ)
 - Mászás képzettségpróba (a fenti körülményektől függ)
 
 A Nehézség a körülményektől függ, de jellemzően alacsonyabb, mint az eredeti próba. Az alábbi tényezők adhatnak bónuszt:
+
 - van-e kikötés valahova
 - van-e rendes biztosítás
 - van-e perem, amin ülni lehet
 
 ---
+
 ### Leesés szituáció
 
 Van, hogy semmi nem segít és hősünk lehullik a magasból.
@@ -97,6 +104,7 @@ Van, hogy semmi nem segít és hősünk lehullik a magasból.
 Lásd: [Esés magasból](../szituaciok/eses_magasbol.md) szituáció.
 
 ---
+
 ### Pánik, Önuralom próba
 
 Ha a próbát nagyon kiélezett, életveszélyes helyzetben rontja el a karakter, a KM dönthet úgy, hogy `Önuralom` próbát dobat. Ha ez nincs meg, akkor a KM-nek jogában áll, hogy tetszőlegesen nagy `Erő` Tulajdonság tartalékot felhasználtasson a karakterrel (adrenalin hatása). Így jó eséllyel meg tud kapaszkodni, de minden erőtartalékát feléli, gyakorlatilag remegve a falhoz tapadva marad, további mászása erősen kérdéses, segítségre szorul.
@@ -104,6 +112,7 @@ Ha a próbát nagyon kiélezett, életveszélyes helyzetben rontja el a karakter
 Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az főleg a testsúlyától, kisebb részben pedig pszichikai állapotától függ. A fenti probléma eldöntése a KM feladata.
 
 ---
+
 ### Mesterbónuszok
 
 #### 🌟 `9.szint`
@@ -117,6 +126,7 @@ Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az 
 #### 🌟 `15.szint`
 
 ⭕TODO⭕
+
 - A puszta, csúszós sziklafalon is képes vagy haladni. Kézfejed, lábad deformálódott – alkalmazkodva a mászás követelményeihez.
 - Képes vagy pókként megtapadni a falon – akár a mennyezeten is. A kapaszkodáshoz nincs szükséged kiszögelésre.
 - Függeszkedve órákat is kibírsz!
@@ -124,6 +134,7 @@ Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az 
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

@@ -13,6 +13,7 @@ Vak karakter indítása esetén a karakter **látás** érzékére permanens [É
 🔆 Az így kapott KP [primer ismeretekre](../010_09_primer_szekunder_ismeretek.md) is fordítható.
 
 ---
+
 ### Vakság magasabb tapasztalati szinten
 
 **Fontos**: ha a karakter később (nem `1.szinten`, karakteralkotáskor) vakul meg, akkor természetesen NEM jár a `KP` bónusz.

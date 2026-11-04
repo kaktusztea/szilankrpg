@@ -17,6 +17,7 @@ A Telekinézis valós erejű alkalmazása a **Természetes Anyagok Mágiája** A
 🌟 Láda méretű tárgyak lassú mozgatása
 
 ---
+
 ### Megemelhető súly nagysága 💪
 
 "Meg tudom emelni?"
@@ -33,11 +34,13 @@ A KM a tárgy súlyának ismeretében határozzon meg egy **Erő** Tulajdonságp
 **Tanács**: ne mélyedjetek el a kilogrammok részleteiben, érzésre határozzátok meg a Nehézséget.
 
 ---
+
 ### Mozgó tárgyak ❌
 
 Ha egy célpont egy andalgó ember sebességénél gyorsabban mozog, akkor az már nem lehet Pszí alapú Telekinézis tárgya, mert védi a lendülete.
 
 ---
+
 ### Élőlények mozgatása ❌
 
 ```
@@ -50,6 +53,7 @@ Az élőlényeket a Telekinézis ellen is védi személyes Aurájuk és így **M
 (Mágia esetén: amennyiben az áldozat meg tud kapaszkodni, akkor `Önuralom vs Erő` Tulajdonságpróba következik, hogy képes -e tartani magát, vagy a mágiatudó varázslata sikerrel "elvonszolja")
 
 ---
+
 ### Speciális szituáció: Lopás
 
 A [Lopás](../kepzettsegek.szekunder/lopas.md) képzettséget Telekinézis használatával is használhatod - ugyanúgy Lopás Képzettségpróbát kell dobnod.

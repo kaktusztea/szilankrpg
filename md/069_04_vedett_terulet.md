@@ -18,6 +18,7 @@ Felkarok, Alkarok, Combok, Lábszárak
 ```
 
 ---
+
 ## Védett terület
 
 A páncél lefedettségi százaléka (`%`) azt jelzi, hogy a test mekkora részét védi a páncél. Ezt a fenti táblázatokból lehet kiszámolni.
@@ -25,6 +26,7 @@ A páncél lefedettségi százaléka (`%`) azt jelzi, hogy a test mekkora rész�
 A páncél `SFÉ` értéke **mindig, minden találatnál érvényesül**, amennyiben a Torzó elemet viseli a karakter. Ez egy egyszerűsítés, amely alól kivétel, ha a támadó sikeresen használja a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert, amellyel célzottan, fedetlen területet választhat.
 
 ---
+
 ### ⚡Példa
 
 Torzót, felkart és alkart védő páncél a test `70%`-át védi:

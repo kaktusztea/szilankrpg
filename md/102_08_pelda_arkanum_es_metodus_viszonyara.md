@@ -1,6 +1,5 @@
 # Példa Arkánum és Metódus viszonyára
 
-
 ```
 Arkánum
   Asztrálmágia: 7.szint
@@ -19,6 +18,7 @@ Komplexitás: 12
 <br />
 
 ---
+
 ### Bájital itatásával próbálkozunk a kereskedőnél
 
 ```

@@ -19,6 +19,7 @@ Szorzó =
 ```
 
 ---
+
 ### Szorzó - Mozgás módosító (célpont)
 
 Ha a célpont mozog, jóval nehezebb eltalálni. A távolság növekedésével ez a nehézség nem lineárisan, hanem exponenciálisan nő, éppen ezért érthető, hogy a mozgás is a Távolsági szorzó része. Alább a Célpont egyes mozgás típusaihoz tartozó módosítókat olvashatjuk.
@@ -51,6 +52,7 @@ Célpont mozgás jellege
 - [Sikertelenül szándékosan kitérő célpont](szituaciok/loveskiteres_sikertelen.md)
 
 ---
+
 ### Szorzó - Mozgás módosító (lövész)
 
 Természetesen a lövést végző személy mozgása is befolyásolja a találati esélyeket, hiszen könnyebb állva célozni, mint mondjuk futásból. A lövész mozgása az alábbiak szerint módosíthatja a **Szorzót**:
@@ -65,6 +67,7 @@ Lövész mozgása
 ```
 
 ---
+
 ### Szorzó - Méret módosító
 
 ```
@@ -85,6 +88,7 @@ Méret módosító
 ```
 
 ---
+
 ### Szorzó - Észlelhetőség módosító
 
 A látási viszonyok erősen meghatározzák a távolsági harcot, hiszen például félhomályban sokkal nehezebb eltalálni valakit, mint fényes nappal. Viszont... könnyebb valakit eltalálni sötétben, ha zajt ad ki, mintha csendben lapulna. Egyszóval a fenti körülmények is módosítják a **Szorzó** értékét:
@@ -115,6 +119,7 @@ Célpont láthatósága és hangossága
 ```
 
 ---
+
 ### Szorzó - Szél hatása
 
 Az erős szél eltérítheti a lövedéket. Orkán erejű szélben a lövés/hajítás lehetetlen, mindig célt téveszt.

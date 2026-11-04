@@ -11,6 +11,7 @@ A generátor determinisztikus: a fegyver néhány paraméteréből (hossz, sebz�
 <br />
 
 ---
+
 ## Adat és kód
 
 - [Adatállományok](../data/sources/fegyverek/)
@@ -19,6 +20,7 @@ A generátor determinisztikus: a fegyver néhány paraméteréből (hossz, sebz�
 <br />
 
 ---
+
 ## Az alapelv
 
 ```
@@ -33,6 +35,7 @@ Minden előnyt egyensúlyozzunk ki
 Ami valamiben erősít, máshol gyengít: a nehéz fegyver nagyobbat üt, de lassabb; az íves penge páncéltalan ellenfélen hatékonyabb, de fémvérten könnyebben lecsúszik. Így nincs "mindent vivő" fegyver.
 
 ---
+
 ## A folyamat
 
 ```
@@ -53,6 +56,7 @@ Ami valamiben erősít, máshol gyengít: a nehéz fegyver nagyobbat üt, de las
 ```
 
 ---
+
 ## Aktor és fejdarab
 
 **Aktor** = egy sebzőfelület (vágóél, pengehegy, buzogányfej, lándzsahegy). Egy fegyvernek több aktora is lehet - mindegyik egy külön **fegyvermód**, saját harcértékekkel.
@@ -80,6 +84,7 @@ alkalmatlan  nincs rá aktor  ha a KM engedi,
 ```
 
 ---
+
 ## Paraméter-táblák
 
 ```
@@ -205,6 +210,7 @@ súlyos    +2     +2            3
 A súlyt a fegyver mérete és anyaga nagyjából meghatározza - ettől legfeljebb `1` kategóriával térj el (pl. tömör kis buzogány: nehéz; üreges nagy penge: átlagos).
 
 ---
+
 ### ⚜️ Alapanyag és Idea
 
 ```
@@ -266,6 +272,7 @@ akadály
 <br />
 
 ---
+
 ## Képletek
 
 Aktoronként (fegyvermódonként) külön számolj:
@@ -319,6 +326,7 @@ Részletek: [Másfél- és kétkezes fegyverek egy kézzel](068_01_07_masfelkeze
 <br />
 
 ---
+
 ## Ár
 
 A harcértékekhez hasonlóan az ár is a fegyver fix felépítéséből jön. A generátor az
@@ -361,6 +369,7 @@ fejezetben szerepelnek. A generátor az `ár_alap`-ot adja a fegyvertáblába; a
 <br />
 
 ---
+
 ## Sebzésjelleg × páncél
 
 Sebzésdobáskor a fegyvermód jellege a cél vértjének fajtája szerint `SP`-bónuszt vagy -büntetést kap (az `SFÉ`-levonás mellett). Ez teszi szituáció-függővé a fegyvereket.
@@ -380,6 +389,7 @@ A zúzó a páncélos ellenfél válasza, a vágó-íves a páncéltalané, a sz
 <br />
 
 ---
+
 ## Kidolgozott példák
 
 A `GAME` értékek Erőbónusz nélküli bázisértékek, ahogy a fegyvertáblázatokban.
@@ -483,11 +493,13 @@ Az Idea `+3` és a feketeacél kiemelkedő `SP`-t ad, és az íves él lassúsá
 <br />
 
 ---
+
 ## Extrák és ellenőrzés
 
 Ami nem fejezhető ki számokkal (beakadás, különleges felkészítés, páncéltalan célon nagyobb sebzés, stb), az [Extraként](068_01_03_fegyver_extrak.md) kerül a fegyverre. A hossz, a láncos/hajlékony fej és a fanyél a saját extráját automatikusan hozza.
 
 Kész fegyvernél vesd össze az értékeit egy hasonló táblázatbeli fegyverrel
+
 - [Közelharci](068_02_kozelharci_fegyverek.md)
 - [Kardvívó](068_03_kardvivo_fegyverek.md)
 - [Lándzsavívó](068_04_landzsavivo_fegyverek.md)
@@ -502,6 +514,7 @@ Kész fegyvernél vesd össze az értékeit egy hasonló táblázatbeli fegyverr
 <br />
 
 ---
+
 ## Speciális fegyverek
 
 Léteznek nagyon speciális fegyverek, amelyek modellezésére ez a Fegyvergenerátor csak hatalmas módosításokkal lenne lehetséges, így ezek esetében az értékek és Extrák meghatározását manuálisan végeztük. Ezek az alábbi csoportok:

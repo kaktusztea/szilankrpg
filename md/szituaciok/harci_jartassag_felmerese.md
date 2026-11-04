@@ -2,7 +2,7 @@
 
 Sokszor előfordul, hogy kíváncsi vagy, milyen ellenféllel állsz szemben. Harcoljak vele? Vagy itt az idő felkötni a nyúlcipőt?
 
-### → Képzettségpróba: Harcmodor + Érzékenység 
+### → Képzettségpróba: Harcmodor + Érzékenység
 
 ```
 Nehézség

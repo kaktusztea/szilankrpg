@@ -25,4 +25,3 @@ A manőver után a manővert végző `VÉ:-6` büntetéssel védekezik a kör v�
 🔗 [Szituációk](../150_szituaciok.md) ↑
 
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
-

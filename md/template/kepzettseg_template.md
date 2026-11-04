@@ -56,6 +56,7 @@
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲
@@ -85,6 +86,7 @@
 <br />
 
 ---
+
 ### Célszám módosító körülmények
 
 - ⭕TODO⭕

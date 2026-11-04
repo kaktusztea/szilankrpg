@@ -21,6 +21,7 @@
 **12.szint:** Évszázadok óta saját és mások őrült lelki fájdalmából táplálkozva gyilkolt le százakat
 
 ---
+
 #### Hatás
 
 Megőrült/kárhozott szellem megváltása. A mentális, vagy érzelmi, lelki sebek okozta őrület elmúlik az itt ragadt szellemen, észhez tér, őrült fájdalma semmivé lesz.
@@ -30,6 +31,7 @@ A pap "elbeszélget" a szellemmel. Lassan megismeri, amit az látni enged magáb
 A varázslat rejt veszélyeket, mert nem tudni a próba nehézségét, így a pap vakon áll neki. Ha nem sikerül, jó eséllyel maga ellen haragítja a szellemet, illetve őrülete a papot is megroppanthatja lelkileg. A szellemtől függően ilyenkor a KM Önuralom próbát dobathat a pappal. Ha elvéti, ideiglenes AME, vagy MME csökkenést szenved el - ennek mértékét lásd lenn.
 
 ---
+
 #### Szabályok
 
 - Először a pap varázslatának Átütése szegül szembe a szellem aktuális Aurájával. Ha nem sikerül, a varázslat sikertelen.

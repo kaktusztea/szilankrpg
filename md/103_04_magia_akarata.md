@@ -13,6 +13,7 @@ Aura  =  2x (TSz + Önuralom)
 ```
 
 ---
+
 ## Módosító: Aurakiterjesztés
 
 Az Auraérintéshez a varázsló kiterjeszti az Auráját **Szellemkézzel** vagy **Zónában** és úgy éri el a célpontot.
@@ -40,6 +41,7 @@ Csatatér
 <br />
 
 ---
+
 ## Módosító: Auraerősítés formula bónusza
 
 - **Arkánum**: Aurahangolás
@@ -91,6 +93,7 @@ Komplexitás  Bónusz
 <br />
 
 ---
+
 ## Módosító: Metódus 3. foka
 
 ```
@@ -103,6 +106,7 @@ Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, a
 <br />
 
 ---
+
 ## Szituáció, összhang
 
 ### Varázsló állapota
@@ -140,6 +144,7 @@ Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, a
 <br />
 
 ---
+
 ## Képzettségek másodlagos hatásai
 
 ⭕TODO: formázás, fogalmazás⭕

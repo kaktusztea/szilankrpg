@@ -23,6 +23,7 @@ A Telepátia valós erejű alkalmazása a **Mentálmágia** Arkánummal valósul
 🌟 Harc közben is képes vagy üzenni valakinek - [Szabad cselekedetként](../063_01_harci_kor.md#1-szabad-cselekedetek) (`1x/kör`).
 
 ---
+
 ## [Mentálfonál](mentalfonal.md) fortély hatása
 
 Amennyiben mindkét személy számára ki lett építve oda-vissza, egymás felé egy **Mentálfonál** (személyenként felvehető fortély), akkor nem szükséges látniuk egymást - az üzenetváltás korlátlan távolságból megvalósítható.

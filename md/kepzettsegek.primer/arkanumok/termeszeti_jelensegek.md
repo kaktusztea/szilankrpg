@@ -4,11 +4,9 @@
 
 Az **Jelenségek** szféra alá tartozó arkánum.
 
-
 ### Időjárásbefolyásolás
 
 xyz
-
 
 ### Villámmágia
 

@@ -3,6 +3,7 @@
 A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. Ebből `1 db` alapból jár a képzettség felvételekor, a többit [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
 
 A képzettség magában foglalja a következőket:
+
 - Túlélés, hideg és meleg elleni technikák, tűzrakás
 - Tájékozódás
 - Állat és növényvilág részleges ismerete, szokásaik ("Erdőjárás")
@@ -30,6 +31,7 @@ A képzettség magában foglalja a következőket:
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia
@@ -42,8 +44,8 @@ A képzettség magában foglalja a következőket:
 
 - [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md): Nyomok észrevétele a természetben. "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 - [Nyomolvasás/eltűntetés](../fortelyok.altalanos/nyomolvasas_eltuntetes.md):
-    - Nyomok követése a természetben - miután már megtaláltad. "Erre haladt tovább, látszik a letört ágakból."
-    - Nyomok értelmezése a természetben. "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
+  - Nyomok követése a természetben - miután már megtaláltad. "Erre haladt tovább, látszik a letört ágakból."
+  - Nyomok értelmezése a természetben. "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus - dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
 - [Tájtípus - erdős](../fortelyok.szabad/tajtipus_erdos.md)
@@ -78,6 +80,7 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

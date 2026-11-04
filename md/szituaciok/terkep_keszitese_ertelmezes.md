@@ -2,7 +2,7 @@
 
 Ne valami hevenyészett papírfecnire gondoljunk, hanem valós, méréseken, földrajzi ismereten alapuló térkép készítésére. Nyilván egy egyszerű "kalóztérkép" olvasásának **Nehézsége** rendkívül alacsony - még képzetlenül is menni fog.
 
-###  → Képzettségpróba:  [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) + Önuralom
+### → Képzettségpróba:  [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) + Önuralom
 
 ```
 Nehézség

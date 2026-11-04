@@ -16,6 +16,7 @@ Fém ötvözetekből kalapálsz páncélokat. Fegyvereket NEM.
 - [Fegyverkovács](kezmuves_fegyverkovacs.md) fortély mint hasonló fortély
 
 ---
+
 ### 1. fok
 
 🌟 Dobhatsz alap szinten [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettségre páncél kovácsolásakor.

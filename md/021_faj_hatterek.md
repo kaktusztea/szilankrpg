@@ -37,14 +37,17 @@ Az alábbiakban a játszható fajok bemutatását egyedi jellemzőiket találjuk
 - [Udvari ork](hatterek.faji/udvari_ork.md)
 
 Speciális:
+
 - [Kevert fajú](hatterek.faji/kevert_faju.md)
 
 ---
+
 ## Faj jellemzők
 
  A fent kiválasztott **Faj Háttér** keretként fogja egybe minden egyes faj egyedi jellemzőit, melyek alább láthatóak:
 
 ---
+
 ## `1.` Tulajdonság keretek
 
 Minden fajnak vannak szellemi, fizikai határai. Van, hogy ez az átlag fölé emeli őket, vagy épp ellenkezőleg.
@@ -57,6 +60,7 @@ Példa:
 ```
 
 ---
+
 ## `2.` Felvehető Érzék-Fortélyok maximuma
 
 Amennyiben egy játékos választ egy Faj Hátteret a karakterének, akkor az annál felsorolt lehetséges [Érzék-Fortélyok](043_altalanos_fortelyok.md#érzék-fortélyok) közül **minimum 1 fokot** köteles `KP`-ból felvenni hozzá.
@@ -66,6 +70,7 @@ Tehát például ha spórolna a `KP` javadalmazáson, akkor alkothat egy olyan *
 A játékos megkapja a lehetőséget egy sokféle különleges érzékkel megáldott egyed indítására (lásd az adott Fej Háttér leírását a keretek megállapítására), de az sok KP-ba fog kerülni - a választás az övé.
 
 ---
+
 ## `3.` [Faj misztérium](030_01_kepzettseglista.md#faj-miszt%C3%A9riumok-%F0%9F%85%BF%EF%B8%8F) képzettség
 
 **Opcionálisan** felvehető, primer 🅿️ képzettség, amely kimondottan az adott faj misztikus/mágikus, ősi gyökerei felé nyúl ki.
@@ -75,6 +80,7 @@ Csak biztos tudásból adódó ismereteket nyújt, melyek magasabb szinteken egy
 Példa: [Faj misztérium: Törpe](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md)
 
 ---
+
 ## `4.` Faj Arkánum képzettség
 
 Szintén primer 🅿️ és opcionálisan felvehető képzettség, követelménye a Faj misztérium képzettség.
@@ -88,21 +94,25 @@ Az egyes szinteknek lehetnek követelményei.
 ⭕TODO⭕ `1 db` [Mágia metódust](045_misztikus_magia_fortelyok.md#-m%C3%A1gia-met%C3%B3dusok) fel kell venni egy adott "Mágia metódus pool-ból".
 
 ---
+
 ## `5.` Faji fortélyok
 
 Általában csak az adott fajra jellemző specializált, nem misztikus ismeretek.
 
 ---
+
 ## `6.` Tiltott ismeretek, korlátok
 
 Milyen ismereteket nem vehet fel a karakter ha ezt a fajt választja, illetve ha fel is vehet, milyen korlátokkal.
 
 ---
+
 ## `7.` Ajánlott fortélyok, képzettségek
 
 Nem kötelező, de az adott fajnál jellemzően gyakran előforduló fortélyok.
 
 ---
+
 ## `8.` Ajánlott képzettségek
 
 Nem kötelező, de az adott fajnál jellemzően gyakran előforduló képzettségek.

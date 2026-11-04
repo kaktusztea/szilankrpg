@@ -24,6 +24,7 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Érzékenység, Ügyesség
@@ -67,6 +68,7 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

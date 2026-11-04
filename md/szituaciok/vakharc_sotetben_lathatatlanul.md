@@ -13,10 +13,11 @@ Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesztjü
 <br />
 
 ---
+
 ### ⚜️ Nappali fényben: Láthatatlan harcoló  vs. másik harcos
 
-
 → Láthatatlan harcoló bónuszai:
+
 - [Láthatatlan - részlegesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)  vagy
 - [Láthatatlan - teljesen](../065_03_01_pozitiv_helyzetek.md#láthatatlan---teljesen)
 
@@ -25,18 +26,22 @@ Az alábbi helyzetekben a bónuszokat írjuk össze előbb és AZOKRA illesztjü
 <br />
 
 ---
+
 ### ⚜️ Sötétben: Láthatatlan harcoló   vs.  másik harcos
 
 → Láthatatlan harcoló (mindegy a mértéke)
+
 - [Láthatatlanság](../065_03_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) bónuszait elveszíti ❌
 - [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
 → Másik harcos
+
 - [Vakharc sötétben](../065_03_03_negativ_helyzetek.md#vakharc---sötétben) büntetéseit megkapja
 
 <br />
 
 ---
+
 ### ⚜️ Vakharc: félhomályban, sötétben
 
 Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol:

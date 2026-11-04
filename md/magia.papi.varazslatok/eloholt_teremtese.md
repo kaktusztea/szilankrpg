@@ -21,11 +21,13 @@
 ⭕TODO⭕: a fenti skálát meghatározni. Harcértékek, gyorsaság, stb.
 
 ---
+
 #### Hatás
 
 A Pap istene átküld egy lelket a kárpiton túlról, aki beleköltözik a holttestbe és mozgatni kezdi. Ez nem igazi feltámasztás, a lélek csak bitorolja a testet, a varázslat lejártakor eltávozik éa a test összeomlik.
 
 ---
+
 #### Szabályok
 
 A varázslathoz hulla szükséges, a mozgást a mágia biztostja.

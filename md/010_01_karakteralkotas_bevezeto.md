@@ -11,6 +11,7 @@ Ha egyből fejest ugranál a közepébe, a [Példakarakter megalkotása](010_13_
 <br />
 
 ---
+
 ### Karakter Tapasztalati szintje
 
 ```
@@ -28,6 +29,7 @@ Hogy a KM hányadik szintet engedélyez kezdésnek, az csak rajta és a parti j�
 <br />
 
 ---
+
 ### Tulajdonságok meghatározása
 
 ```
@@ -39,6 +41,7 @@ Folytatásként a `8 db` egyedi [Tulajdonságod](010_05_01_00_tulajdonsagok_list
 <br />
 
 ---
+
 ### Karakteralkotó Pontok számítása
 
 A [Karakteralkotó Pontjaid](010_07_kp.md) (`KP`) adnak lehetőséget a különböző ismeretek felvételére (képzettség, fortély, Harcérték Módosító (HM/CM)). Figyelj, hogy a [Szekunder KP](010_07_kp.md)-kat csak [Szekunder ismeretekre költheted](010_09_primer_szekunder_ismeretek.md).
@@ -46,6 +49,7 @@ A [Karakteralkotó Pontjaid](010_07_kp.md) (`KP`) adnak lehetőséget a különb
 <br />
 
 ---
+
 ### Képzettségek felvétele
 
 ```
@@ -57,6 +61,7 @@ Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd
 <br />
 
 ---
+
 ### Fortélyok felvétele
 
 ```
@@ -76,6 +81,7 @@ Fontos kiemelni a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) harci forté
 <br />
 
 ---
+
 ### Harcérték módosítók (HM/CM)
 
 A [Harcérték Módosítók (HM, CM)](062_04_hm_cm.md) az általános harci tapasztalat növekedését szimbolizálják, felvételük szintén `KP`-ból történik.
@@ -83,6 +89,7 @@ A [Harcérték Módosítók (HM, CM)](062_04_hm_cm.md) az általános harci tapa
 <br />
 
 ---
+
 ### Hátterek felvétele
 
 A [Hátterek](020_hattererek.md) számos érdekes aspektussal ruházhatják fel karakteredet. Leginkább színesítő szerepet látnak el, **nem** kerülnek `KP`ba.
@@ -94,6 +101,7 @@ A [Hátterek](020_hattererek.md) számos érdekes aspektussal ruházhatják fel 
 <br />
 
 ---
+
 ### Származtatott értékek
 
 Jöhetnek a [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md) kiszámításai. Ezek a jellemzők nem kerülnek külön pontba, a karakter meglevő ismereteinek értékeiből számoljuk ki őket:
@@ -108,6 +116,7 @@ Végül jöjjön karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_
 <br />
 
 ---
+
 ### Mágia ismeretek felépítése
 
 Használjunk egy "fa" hasonlatot.
@@ -121,6 +130,7 @@ Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortel
 <br />
 
 ---
+
 ### Ajánlás karakteralkotás opcionális menetére
 
 A lenti folyamat leginkább karakterközpontú játékosok számára ajánlott, akik nem csak egy számhalmazon alapuló gyilkológéppel szeretnének játszani, hanem "élő, lélegző" karaktereket alkotnának.

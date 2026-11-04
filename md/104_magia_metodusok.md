@@ -15,6 +15,7 @@ Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a vil
 Részletesen lásd a [Mágia metódusok](045_misztikus_magia_fortelyok.md#-m%C3%A1gia-met%C3%B3dusok) listáját, melyek mind mágikus fortélyként vehetőek fel.
 
 ---
+
 ## Fortély fokainak hatása Komplexitás próbára
 
 Amennyiben nem biztos tudásból varázsolsz, hanem kockázatot vállalsz Komplexitás próbát dobnál, akkor a `k10` dobásra Előny-Hátrány hatást gyakorol az éppen használt Metódus fortély foka.

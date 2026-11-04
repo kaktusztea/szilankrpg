@@ -22,13 +22,14 @@
 
 **15.szint:** Vulkánkitörés (Sogron). Komponens szükséges.
 
-
 ---
+
 #### Hatás
 
 Befolyásolhatod az időjárást.
 
 ---
+
 #### Szabályok
 
 - minél hatalmasabb az időjárás változása, annál tovább tart a varázslat.

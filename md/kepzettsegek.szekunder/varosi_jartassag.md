@@ -3,6 +3,7 @@
 Ez a képzettség a városi életbe való beilleszkedésről, az informális viszonyok olvasásáról, informális kapcsolatok építéséről szól.
 
 Az alábbi területeket fedi le:
+
 - pletykák, közbeszéd, közhangulat (ki mit gondol, mi terjed a kocsmákban),
 - tudod, hol kell keresni a helyi alvilág embereit (zsiványokat, informátorokat, csempészeket),
 - felismered a különböző társadalmi rétegek találkozópontjait (piac, ivó, színház, cirkusz, templom),
@@ -29,6 +30,7 @@ Szereplőtipikus: **tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági fut
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia
@@ -77,6 +79,7 @@ Célszám: 9 + város méret módosítója
 <br />
 
 ---
+
 ### Próbák 🎲
 
 Példa: keresek egy koldust, aki járatos a piac pletykáiban.

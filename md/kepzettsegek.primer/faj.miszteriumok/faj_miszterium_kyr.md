@@ -5,6 +5,7 @@
 [Kyr arkánum](../../magia.faj.arkanumok/kyr_arkanum.md)
 
 ---
+
 ### Szintek
 
 ```

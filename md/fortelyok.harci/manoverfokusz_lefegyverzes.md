@@ -9,6 +9,7 @@ Engedélyezett Harcmodorok: Kardvívás, Lándzsavívás, Ostorharc
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 

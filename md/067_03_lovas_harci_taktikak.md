@@ -30,6 +30,7 @@ Követelmény a megfelelő mennyiségű és dőlésszögű hely a begyorsulásho
 <br />
 
 ---
+
 ### Lovas támadás galoppból
 
 ```

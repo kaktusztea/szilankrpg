@@ -8,6 +8,7 @@ K: Komponens
 ```
 
 ---
+
 ## Jelleg szerint
 
 - együttállás (ideiglenes, alkalmi)
@@ -35,31 +36,38 @@ K: Komponens
 - [Varázsló jellemzői (Ö)](#varázsló-jellemzői)
 
 ---
+
 ## Álom (Ö, K)
 
 Álombeli helyszínek, álmokban megjelenő lények.
 
 Összhang
+
 - jelenléte
 
 Komponens
+
 - feláldozása (soha többet nem álmodsz erről)
 
 <br />
 
 ---
+
 ## Csillag együttállás (Ö)
 
 Összhang
+
 - történelmi esemény: államalapítással azonos aktuális csillagállás (együttállás)
 - misztikus együttállás
 
 <br />
 
 ---
+
 ## Esemény (Ö, K)
 
 Összhang
+
 - gyerek születése
 - házasság
 - bosszú beteljesülésének pillanata
@@ -71,12 +79,14 @@ Komponens
 - születés: ilyenkor könnyebb a gyógyítás
 
 Komponens
+
 - kivégzés: bónusz életerő manipulációra
 - halál: az alkalmazó maradék életerejét mágiává formázza
 
 <br />
 
 ---
+
 ## Érzelem, hangulat (Ö, K)
 
 Szeretet, félelem, gyűlölet
@@ -100,6 +110,7 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 <br />
 
 ---
+
 ## Fizikai összetevők (K)
 
 Komponens (természetes)
@@ -121,6 +132,7 @@ Komponens (Mágikus)
 <br />
 
 ---
+
 ## Fontos helyszín (Ö)
 
 Összhang
@@ -132,6 +144,7 @@ Komponens (Mágikus)
 <br />
 
 ---
+
 ## Helyszín jellege (Ö)
 
 Összhang
@@ -155,6 +168,7 @@ Komponens (Mágikus)
 <br />
 
 ---
+
 ## Idő, időszak (Ö)
 
 Összhang
@@ -166,6 +180,7 @@ Komponens (Mágikus)
 <br />
 
 ---
+
 ## Karma Háttér (Ö)
 
 Összhang
@@ -176,6 +191,7 @@ Komponens (Mágikus)
 <br />
 
 ---
+
 ## Lény: evilági (Ö, K)
 
 Összhang
@@ -190,6 +206,7 @@ Komponens
 <br />
 
 ---
+
 ## Lény: túlvilági (Ö, K)
 
 Összhang
@@ -204,6 +221,7 @@ Komponens
 <br />
 
 ---
+
 ## Őselem sűrű jelenléte (Ö)
 
 Nagy mocsár (víz), vulkán (tűz)
@@ -216,12 +234,14 @@ Nagy mocsár (víz), vulkán (tűz)
 - vulkán mellett tüzet varázsolni
 
 Összhang negatív
+
 - tóvidéken tüzet varázsolni
 - Elátkozott vidéken gyógyítani
 
 <br />
 
 ---
+
 ## Szakrális hatás
 
 Összhang
@@ -229,11 +249,13 @@ Nagy mocsár (víz), vulkán (tűz)
 - jelenléte: szentek szobrai
 
 Komponens
-- áldozása: 
+
+- áldozása:
 
 <br />
 
 ---
+
 ## Szimpatikus összetevők (K)
 
 Komponens
@@ -248,6 +270,7 @@ Komponens
 <br />
 
 ---
+
 ## Színek, fények (Ö)
 
 Összhang
@@ -258,9 +281,11 @@ Komponens
 <br />
 
 ---
+
 ## Természeti jelenség (Ö)
 
 Összhang
+
 - Vihar
 - Aszály
 - Szivárvány
@@ -268,12 +293,14 @@ Komponens
 - Holdfény
 
 Példák:
+
 - Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
 - Viharban könnyebb villámmágiát.
 
 ⭕TODO⭕
 
 ---
+
 ## Varázsló jellemzői
 
 - lelkiállapot, hangulat

@@ -27,6 +27,7 @@ A telepátiához természetesen a [Pszí Telepátia](pszi_telepatia.md) fortéll
 - [Pszí Telepátia](pszi_telepatia.md)
 
 ---
+
 ### 1. fok
 
 🌟 **Hatás**: Egy konkrét személy felé kiépítettél egy Mentálfonalat.

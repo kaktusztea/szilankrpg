@@ -30,6 +30,7 @@ Képzőművészet + Érzékenység
 <br />
 
 ---
+
 ### Szélesebb művészeti kör → Képzőművészet vs Művészetismeret
 
 ```
@@ -57,6 +58,7 @@ Művészetismeret + Intelligencia
 <br />
 
 ---
+
 ### Adott szakma terméke: Kézművesség vs Kézművesség
 
 ```
@@ -66,7 +68,6 @@ Kézművesség + Tulajdonság
 🔆Felismerő
 Kézművesség + Tulajdonság
 ```
-
 
 ```
 + mindkettőre kiterjesztés:

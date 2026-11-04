@@ -15,6 +15,7 @@
 <br />
 
 ---
+
 ## [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet) mint követelmény
 
 🟥 **Erős követelmény** mindegyik Belharcos Manővernek - kivéve a **Belharcba kerülést**. Enélkül a manőver nem kísérelhető meg.
@@ -29,11 +30,11 @@
 ```
 
 - Helyzetfüggő módosítók:
-    - Belharc körülmények (KM):
-        - `+6`: Testméret / páncél / Erő előny
-        - `+3`: Testméret / páncél / Erő előny
-        - `-3`: Testméret / páncél / Erő előny
-        - `-6`: Testméret / páncél / Erő hátrány
+  - Belharc körülmények (KM):
+    - `+6`: Testméret / páncél / Erő előny
+    - `+3`: Testméret / páncél / Erő előny
+    - `-3`: Testméret / páncél / Erő előny
+    - `-6`: Testméret / páncél / Erő hátrány
 
 A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 felsorolt adottságának ismeretében.
 
@@ -41,6 +42,7 @@ A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szu
 
 ---
 ---
+
 ### Belharcba kerülés
 
 Átjutva a nagyobb fegyverek fenyegetésén testközelbe lavírozod magad.
@@ -49,12 +51,12 @@ A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szu
 - Fázisok: `Megakasztás, Ellenpróba`
 - 🟥 Erős követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
 - Helyzetfüggő módosítók:
-    - Ellenfél helyzete:
-        - `+4`: Ellenfél háttal áll
-    - Ellenfél pajzsa:
-        - `-2`: Kis pajzs
-        - `-4`: Közepes pajzs
-        - `-6`: Nagy pajzs
+  - Ellenfél helyzete:
+    - `+4`: Ellenfél háttal áll
+  - Ellenfél pajzsa:
+    - `-2`: Kis pajzs
+    - `-4`: Közepes pajzs
+    - `-6`: Nagy pajzs
 
 **Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci helyzetnél](065_03_02_semleges_helyzetek.md#belharci-helyzet)** leírt módosítók érvényesülnek.
 
@@ -67,6 +69,7 @@ A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szu
 <br />
 
 ---
+
 ### Belharcból kibontakozás
 
 - Nehézség: `5`
@@ -82,46 +85,52 @@ A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szu
 <br />
 
 ---
+
 ### Átdobás
 
 - Nehézség: `7`
 - Fázisok: `Végrehajtás, Ellenpróba`
 
 **Hatás**:
+
 - Belharc közben fogást találsz ellenfeleden és átdobod a vállad felett, aki ezáltal földre kerül.
 - Innentől ellenfeled a [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói szerint harcol.
 
 <br />
 
 ---
+
 ### Feszítés, Leszorítás
 
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
 
 **Hatás**:
+
 - Ellenfél: `TÉ/VÉ:-7` + `KÉ` elvesztése
 - Sikeresen lefeszítetted ellenfeled, ebben az állapotban csak Puszta kézzel képes harcolni
 - Extra képzettségpróba követelmény:
-    - Körönként dobandó: `Fájdalomtűrés + Önuralom. Célszám: 15`
-    -  Kudarc esetén áldozatod képtelen visszatámadni és mágiát, pszít használni, vagy bármilyen manővert alkalmazni.
+  - Körönként dobandó: `Fájdalomtűrés + Önuralom. Célszám: 15`
+  - Kudarc esetén áldozatod képtelen visszatámadni és mágiát, pszít használni, vagy bármilyen manővert alkalmazni.
 
 <br />
 
 ---
+
 ### Feszítésből kijövetel
 
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Extra képzettségpróba követelmény:
-    - Fájdalomtűrés + Önuralom. Célszám: `15`
-    - Körönként dobandó. Kudarc esetén képtelen vagy visszatámadni és mágiát, pszít használni, vagy bármilyen manővert alkalmazni.
+  - Fájdalomtűrés + Önuralom. Célszám: `15`
+  - Körönként dobandó. Kudarc esetén képtelen vagy visszatámadni és mágiát, pszít használni, vagy bármilyen manővert alkalmazni.
 
 **Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet) megmarad.
 
 <br />
 
 ---
+
 ### Gáncsolás
 
 - Nehézség: `7`
@@ -129,6 +138,7 @@ A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szu
 - 🟨 Normál követelmény: Közelharc - `5.szint`
 
 **Hatás**: Sikeresen kigáncsoltad ellenfeled lábát, aki a földre zuhan.
+
 - [Harc földön fekve](065_03_03_negativ_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 - [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver sikeres alkalmazásával kelhet fel
 
@@ -137,6 +147,7 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_0
 <br />
 
 ---
+
 ### Kéztörés
 
 - Nehézség: `9`
@@ -147,6 +158,7 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_0
 <br />
 
 ---
+
 ### Lábtörés
 
 - Nehézség: `10`
@@ -157,6 +169,7 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_0
 <br />
 
 ---
+
 ### Lefejelés
 
 - Nehézség: `7`
@@ -167,21 +180,24 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_0
 <br />
 
 ---
+
 ### Leforgatás/Irányítás
 
 - Nehézség: `10`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Helyzetfüggő módosítók:
-    - Ellenfél helyzete:
-        - `+4`: Lefeszített ellenfél
+  - Ellenfél helyzete:
+    - `+4`: Lefeszített ellenfél
 
 **Hatás**:
+
 - Képes vagy ellenfeledet a számodra kedvező irányba forgatni/terelni miközben összeakaszkodtok.
 - Legfeljebb `5 méternyi` távot tehetsz meg vele.
 
 <br />
 
 ---
+
 ### Nyaktörés
 
 - Nehézség: `12`
@@ -189,6 +205,7 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Földrevitellel](066_0
 - 🟥 Erős követelmény: Megelőző sikeres [Feszítés, Leszorítás](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s) Manőver
 
 **Hatás**:
+
 - Kitörted ellenfeled nyakát.
 - Amennyiben elfszabású anatómiája van, `1` körön belül meghal.
 

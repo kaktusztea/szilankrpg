@@ -27,6 +27,7 @@ Edzettség szorzó: x8
 ### 3. fok
 
 🌟 **Hatás**:
+
 ```
 ÉP Alap: +60 ÉP
 Edzettség szorzó: x10

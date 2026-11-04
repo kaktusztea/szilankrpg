@@ -11,6 +11,7 @@ Aura  =  2x (TSz + Önuralom)
 ```
 
 ---
+
 ## Módosító: Amulett, varázstárgy, ereklye
 
 ⭕TODO: formázás, fogalmazás⭕
@@ -23,6 +24,7 @@ Aura  =  2x (TSz + Önuralom)
 ✅ Agóra:
 
 `1.` Átlagos "piacos" amulett.
+
 - széles körű `+1` (általános asztrál / mentál)
 - nagyon szűk: `+3`
   - idős nők bájolása ellen
@@ -31,6 +33,7 @@ Aura  =  2x (TSz + Önuralom)
   - mindentől védő is van (Ranagoltól védő)
 
 `2.` Komponenses
+
 - ezt is mindenre lehet csinálni, de sokkal erősebb, mert van benne egy darab mágikus eredetű anyag
 - Démoni amulett démontestből cafattal
 - Aquir amulett
@@ -38,6 +41,7 @@ Aura  =  2x (TSz + Önuralom)
 <br />
 
 ---
+
 ## Módosító: Litániák, versek
 
 ⭕TODO: formázás, fogalmazás⭕
@@ -45,6 +49,7 @@ Aura  =  2x (TSz + Önuralom)
 Mormolásuk védhet.
 
 ✅ Agóra:
+
 - mint az amulettek, amíg mormolja
   - általános, széles (asztrál/mentál/fizikai): `+1`
   - konkrétabb: `+2`
@@ -56,7 +61,6 @@ Mormolásuk védhet.
 - Asztrálmantra - `1.fok`
 - Mentálmantra - `1 fokú`
 - Fizikai mantra - `1 fokú`
-
 
 Választhatsz, hogyan használod (mint az amuletteknél)
 
@@ -81,6 +85,7 @@ A játékos választja ki, hogy melyik fokot használja és azt is, hogy mi elle
 - A papoknak NEM kell ezeket felvenni, benne van a Tradíciójukban.
 
 ---
+
 ## Képzettségek másodlagos hatásai
 
 ⭕TODO: formázás, fogalmazás⭕

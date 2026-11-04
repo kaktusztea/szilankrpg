@@ -5,6 +5,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 → Szituáció: [Belharc folyamata](../szituaciok/belharc_folyamata.md)
 
 ---
+
 ### 1. fok
 
 🔒 Közelharc - `6.szint`
@@ -16,7 +17,7 @@ KÉ: +1, TÉ/VÉ:+2
 ```
 
 Manőverek: [Belharcos manővereket](../066_06_belharcos_manoverek.md) használhatsz
- 
+
 ### 2. fok
 
 🔒 Közelharc - `9.szint`
@@ -28,9 +29,10 @@ KÉ: +2, TÉ/VÉ:+4
 ```
 
  Manőverek: Belharcos manővereket használhatsz
- 
+
 ---
-###  Ellenfél módosítói
+
+### Ellenfél módosítói
 
 → Harci helyzet: [Belharci helyzet](../065_03_02_semleges_helyzetek.md#belharci-helyzet)
 

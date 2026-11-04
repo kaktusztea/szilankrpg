@@ -5,6 +5,7 @@
 ### 1. fok
 
 🔒 **Követelmény**:
+
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Udvari szint (az épp beszélt nyelvre)
 - Jól látható legyen a célszemély szája
 

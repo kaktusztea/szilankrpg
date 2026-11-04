@@ -16,6 +16,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ```
 
 ---
+
 ### Követelmény
 
 - Nem lehetsz [Analfabéta](../fortelyok.kiemelt/analfabeta.md).
@@ -66,6 +67,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

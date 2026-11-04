@@ -53,7 +53,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 ⭕TODO⭕
 
- - [Állat testvér](#állat-testvér): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
+- [Állat testvér](#állat-testvér): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
 
 #### 🌟 `15.szint`
 
@@ -62,6 +62,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

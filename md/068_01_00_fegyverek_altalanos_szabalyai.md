@@ -13,4 +13,3 @@
 🔗 [Fegyverstatisztikák](068_01_01_fegyverstatisztikak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-

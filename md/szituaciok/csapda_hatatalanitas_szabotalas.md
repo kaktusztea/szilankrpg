@@ -14,8 +14,6 @@ Csak már felfedezett csapdát lehet hatástalanítani!
 
 #### → Képzettségpróba:  [Csapdaállítás](../kepzettsegek.szekunder/csapdaallitas.md) + Intelligencia/Ügyesség/Emlékezet
 
-
-
 <br />
 
 ### 🔆 Mechanikus csapda hatástalanítása / szabotálása

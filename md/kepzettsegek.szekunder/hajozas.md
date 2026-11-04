@@ -30,11 +30,12 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Érzékenység, Intelligencia, Emlékezet, Ügyesség
 
-###  [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba)
+### [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba)
 
 Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbadobásokra** van szükség. Sokszor komplex, többlépcsős feladat egy hajó kezelése.
 
@@ -66,6 +67,7 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

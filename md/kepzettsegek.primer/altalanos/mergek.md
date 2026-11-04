@@ -26,6 +26,7 @@ Ismered a különböző hatású és erősségű mérgek kikeverésének módjá
 A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék hatása, vagy szimpatikus mágiával megtámogatott vér, haj komponensek dobásnövelő hatásait itt nem részletezzük. Ezek Helyzetfüggő módosítóit a mágiarendszer írja le, vagy narratív formában a KM dönt róluk.
 
 ---
+
 ### Bónusz: [Élettan](../../fortelyok.altalanos/elettan.md)
 
 ```
@@ -34,9 +35,11 @@ A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék h
 ```
 
 ---
+
 ### → Főfejezet: [Méregrendszer](../../140_meregrendszer.md)
 
 ---
+
 ### Kapcsolódik
 
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
@@ -51,6 +54,7 @@ Emlékezet, Önuralom, Intelligencia
 <br />
 
 ---
+
 ### Szintek
 
 Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_mereggenerator.md#5-bomlási-idő), [Hatáskezdet](../../141_mereggenerator.md#3-hatáskezdet), [Kimutatási idő](../../141_mereggenerator.md#6-kimutatási-idő)
@@ -64,6 +68,7 @@ Biztos tudást igényelnek a méreg kikeverésekor: [Bomlási idő](../../141_me
 #### 🌟 `12.szint`
 
 Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Mekkora komplexitású, stb. mérget?⭕
+
 - Ha megérintesz valakit, automatikusan apró adag mérget juttathatsz belé – ez mindig apró dózis a saját repertoárodból (pl. bénító, gyengítő).
 - A saját szervezeteddel kompatibilis mérgeket (amiket te készítettél) kis adagban be tudod építeni a testedbe anélkül, hogy kifejtenék hatásukat, majd később bőrödön át kieresztheted.
 

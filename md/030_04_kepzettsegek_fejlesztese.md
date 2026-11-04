@@ -18,6 +18,7 @@ A **Szekunder** képzettségek értéke legfeljebb (`Tapasztalati Szint + 3`) le
 Szintlépéskor legfeljebb `2-vel` növelhetőek a képzettségek, kivéve, ha `0`-ról akar valaki egy képzettséget tanulni. Ilyenkor szintlépéskor maximum `3.szintre` növelheti egy lépésben az ilyen képzettséget.
 
 ---
+
 ### Képzettségszintek követelményei
 
 Nem csak a Fortélyoknak, a Képzettségek egyes szintjeinek is lehetnek követelményei. Ez persze nem minden Képzettségre igaz, de van, ahol szükséges. Ezek általában egyes [Tulajdonságok](010_05_01_00_tulajdonsagok_listaja.md) megkövetelt értékei.
@@ -27,16 +28,19 @@ Ha egy képzettség egy bizonyos fokának eléréséhez szükség van valamilyen
 A képzettségek egyes kiemelt szintjeinek is lehetnek követelményei! Magas szinten főleg.
 
 ---
+
 ### Kulturális korlát
 
 A másik felső korlát lehet az adott kultúra fejletlensége, vagy korlátai. Például egy primitív nomád törzs kuruzslója nem fejlődhet **Vajákosságban** `6`-os érték fölé, mert nincs olyan forrás, ahonnan a hatékonyabb módszereket megtanulhatná. A KM mindig vegye figyelembe az adott körülményeket és fejlődési lehetőségeket.
 
 ---
+
 ### A 14. és 15. képzettségszint
 
 `14`-es és `15`-ös szintre csak úgy juthat el a karakter, ha a képzettséggel kapcsolatos, nagyon ritka titkos tudásra tesz szert. Ez kaland alapja is lehet! Például megszerezni a "*Gyógyító Érintés Tudományának Titkos Fóliását*" ([Orvosláshoz](kepzettsegek.primer/altalanos/orvoslas.md)).
 
 ---
+
 ### Képzettség Bónuszok
 
 A `9.`, `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében, itt már különleges bónuszok, félmágikus hatások tűnnek fel. Ezek leírását lásd minden esetben az adott képzettség oldalán.

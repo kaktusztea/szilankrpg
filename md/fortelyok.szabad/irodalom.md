@@ -8,6 +8,7 @@
 ### Követelmény
 
 Hogy az adott kultúrkörben képes legyél aktívan művelni (írni, előadni) irodalmi műveket ([Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md)), ahhoz az alábbi követelmények szükségesek:
+
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) - adott kultúra ismerete (`E`)
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - adott nyelv Udvari foka
 

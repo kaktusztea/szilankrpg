@@ -18,11 +18,13 @@ Az **Életerő** szféra alá tartozó arkánum.
 - Termékenységi Mágia
 
 ---
+
 ### Rontások
 
 ⭕ Vagy az egy Mágia metódus inkább? ⭕
 
 ---
+
 ### Betegségmágia
 
 ⭕Rontás Mágia metódussal?⭕

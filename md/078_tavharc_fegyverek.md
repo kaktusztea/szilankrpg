@@ -11,6 +11,7 @@ A lenti általános értékek irányadóak - a konkrét fegyverek jellemzői az 
 ### → [Lőfegyverek táblázata](068_08_lofegyverek.md)
 
 ---
+
 ### Általános harcértékek
 
 Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek értékei ezektől enyhén eltérhetnek.
@@ -85,6 +86,7 @@ Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezh
 <br />
 
 ---
+
 ### Hajítás nem dobásra készített tárgyakkal
 
 Például sámli hajítása. Alapesetben büntetésekkel végezhető:
@@ -96,6 +98,7 @@ Például sámli hajítása. Alapesetben büntetésekkel végezhető:
 <br />
 
 ---
+
 ### Sebzés bónusz hiánya
 
 ❌ Távolsági fegyverek esetén **NINCS** [Többszörös találatból](064_02_07_sebzes.md#sebz%C3%A9sdob%C3%A1s) adódó plusz sebzés.
@@ -103,6 +106,7 @@ Például sámli hajítása. Alapesetben büntetésekkel végezhető:
 <br />
 
 ---
+
 ### Harckeret, Támadások száma, Sebesség (Íjászat, Hajítás)
 
 ```
@@ -120,6 +124,7 @@ Harckeret =
 <br />
 
 ---
+
 ### Hatótáv
 
 A fegyver méterben megadott, elérhető legnagyobb lőtávolságát jelenti. Hajítás esetén még szerepet játszhat a támadó **Erő** Tulajdonsága.
@@ -129,6 +134,7 @@ A fegyver méterben megadott, elérhető legnagyobb lőtávolságát jelenti. Ha
 <br />
 
 ---
+
 ### Távolsági fegyverek minősége
 
 ```

@@ -50,6 +50,7 @@ Ha nem komplett testre, hanem kisebb – akár önálló – testrészekre (dara
 |         +1         | Gorg méretű test |
 
 ---
+
 ### Foltozás
 
 Ez a formula a halott szövet összekapcsolására való. Itt is megmutatkozik az erős szemita jelleg, hisz minden egy konkrét, specializált cél érdekében történik.

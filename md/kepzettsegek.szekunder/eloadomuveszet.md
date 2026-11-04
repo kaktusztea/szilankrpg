@@ -17,6 +17,7 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Érzékenység, Emlékezet
@@ -60,6 +61,7 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 <br />
 
 ---
+
 ### Próbák 🎲
 
 Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet?") magasabb az **Előadóművészet** képzettség, **akkor is a [Művészetismeret](muveszetismeret.md) képzettség szintjével dobunk próbát**! Attól hogy valaki remekül furulyázik a kocsmában, nem feltétlenül járatos a zenei nagyvilágban.
@@ -76,7 +78,6 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 - Publikum szórakoztatása tánccal vagy zsonglőrszámmal.
 - Egy közönséges színdarabban hitelesen játszol el egy szerepet.
 - Remekül parodizálni ismert embereket, állatok hangját utánozni.
-
 
 #### Nehéz (12) 🎲
 

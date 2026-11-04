@@ -9,6 +9,7 @@ Alapeset:
 Néhány kivételnél ez kevesebb. Lásd a [Fegyver](068_00_fegyverek.md) táblázatot!
 
 ---
+
 ### Harckeret
 
 ```
@@ -27,6 +28,7 @@ A **Harckeret** értéke a [Harckeret növelés](fortelyok.harci/harckeret_novel
 <br />
 
 ---
+
 ### Fegyver Sebesség
 
 Minden fegyvernek van egy egyedi **Sebesség** értéke. Minél kisebb ez a szám, annál fürgébb a fegyver és minél nagyobb, annál lomhább.
@@ -45,6 +47,7 @@ Hány Sebesség pontonként kap +1
 <br />
 
 ---
+
 ### Plusz támadások száma (fegyverrel)
 
 Az alap `1` támadáson felül kapott **plusz** támadások számát úgy kapjuk meg, hogy megvizsgáljuk, a fegyver `Sebesség` értéke hányszor van meg a karakter aktuális "**Harckeret**" értékében (lefelé kerekítve).
@@ -57,6 +60,7 @@ Plusz támadások (db) =
 <br />
 
 ---
+
 ### TÉ levonás támadásonként
 
 ```
@@ -86,6 +90,7 @@ A levonás oka: így kerüljük el a plusz kapott támadások okozta radikális 
 <br />
 
 ---
+
 ### ⚡Példa több támadásra
 
 ```

@@ -24,6 +24,7 @@ bevezető ⭕
 <br />
 
 ---
+
 ### Tiltott ismeretek, korlátok
 
 Futásnál, úszásnál, gyaloglásnál `-2` jár a Gyorsaságpróbáira.

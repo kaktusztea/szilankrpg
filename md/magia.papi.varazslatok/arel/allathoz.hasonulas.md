@@ -14,8 +14,8 @@
 
 **7.szint:** `4x`Képesség
 
-
 ---
+
 #### Hatás
 
 Arelnek kedves állatok képességeivel ruházhatja fel a pap saját magát, vagy egy kijelölt, szövetséges, baráti személyt.
@@ -24,6 +24,7 @@ Arelnek kedves állatok képességeivel ruházhatja fel a pap saját magát, vag
 - Szarvasugrás: nagyobbat tudsz ugrani és magasabbról biztonságban leérkezni (esni)
 
 ---
+
 #### Szabályok
 
 .

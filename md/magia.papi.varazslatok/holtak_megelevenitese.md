@@ -21,11 +21,13 @@
 ⭕TODO⭕: a fenti skálát meghatározni. Harcértékek, gyorsaság, stb.
 
 ---
+
 #### Hatás
 
 A Pap a közelében levő összes holttestet megeleveníti, amelyeket ő irányít. A papnak a varázslás alatt folyamatosan koncentrálnia kell. Sétálhat, lovon léptethet, de nem harcolhat, vagy varázsolhat mást.
 
 ---
+
 #### Szabályok
 
 holtak harcértékei: ⭕TODO⭕

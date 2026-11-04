@@ -28,6 +28,7 @@ bevezető ⭕
 <br />
 
 ---
+
 ### Tiltott ismeretek, korlátok
 
 TODO ⭕

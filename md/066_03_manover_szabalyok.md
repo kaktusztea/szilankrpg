@@ -11,9 +11,11 @@
 <br />
 
 ---
+
 ## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
 [Meglepett](065_03_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
+
 - Kimarad a **Megakasztás** (`M`) fázis a védő oldalán (ha van)
 - **Végrehajtás** dobásnál továbbra is `TÉ:+5` + `Előny+1` a dobásra
 - Támadó tehet bele `Manőver Pontot`
@@ -36,6 +38,7 @@ Miért dobunk ilyenkor **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap*
 <br />
 
 ---
+
 ## ⚜️ Harci taktikák és Manőverek
 
 Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika egyes Manővereknél, ahol ez külön meg van említve - más Harci taktika nem.
@@ -43,6 +46,7 @@ Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_ta
 <br />
 
 ---
+
 ## ⚜️ Manőverek nehézsége
 
 A Manőver **Nehézségét** egy `[2;12]` intervallumból vett számértékkel jellemezzük - ez adja az [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) dobás **Célszámának** fix alapját (az ellenfél **Manőver Alapjával** együtt). A körülményi módosítók NEM a Nehézséget változtatják, hanem az alkalmazó **Ellenpróba dobásához** adódnak hozzá - lásd "Helyzetfüggő módosítók" az egyes manőverek adatlapján.
@@ -52,6 +56,7 @@ A `Szilánk` Manővereinek Nehézsége azok adatlapján szerepel - lásd: [Álta
 <br />
 
 ---
+
 ## ⚜️ Fegyverméret-kategóriák
 
 A Fegyverméret-kategóriák adta különbségek az **Ellenpróbánál** (`E`) **NEM** mérvadóak, mert ezt a hatást a résztvevők harcértékeibe már belefoglaltuk.
@@ -59,9 +64,11 @@ A Fegyverméret-kategóriák adta különbségek az **Ellenpróbánál** (`E`) *
 <br />
 
 ---
+
 ## 🔆 Tanácsok KM részére új manőver létrehozásakor
 
 A KM bármikor rögtönözhet új Manővert, mindössze az alábbiakat kell meghatároznia:
+
 - Nehézség `[2;12]`
 - 🟨 Normál követelmények: jártassági küszöb (Harcmodor szint, fortély fok); hiányuk `Hátrány-2` dobás büntetést okoz
 - Fázisok (`M V E`)

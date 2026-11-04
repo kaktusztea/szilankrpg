@@ -18,13 +18,14 @@
 
 **15.szint:** ⭕TODO
 
-
 ---
+
 #### Hatás
 
 Egy előtted levő állat/lény végrehajt 1 db parancsot. Ez nem lehet önmagát szándékosan károsító hatás.
 
 ---
+
 #### Szabályok
 
 Az állat a cselekedet végrehajtása után teljesen szabad, azt tehet, amit akar.

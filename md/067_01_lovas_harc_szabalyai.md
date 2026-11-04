@@ -14,6 +14,7 @@ nem járnak
 Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen - képzetlen - helyzetben a fenti `TÉ/VÉ` büntetések járnak, továbbá semmilyen lent leírt bónusz sem jár.
 
 ---
+
 ## Lovas/Léglovas harcértékek kiszámítása
 
 ```
@@ -35,6 +36,7 @@ A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel h
 <br />
 
 ---
+
 ## Lövés hátasról
 
 [Lövés hátasról](fortelyok.tavharc/loves_hatasrol.md) fortély szükséges hozzá. Nélküle a fortély Alapeseténél leírt büntetések érvényesek. Földi és légi hátasokra is érvényes, tehát csak `1x` kell/lehet felvenni.
@@ -42,6 +44,7 @@ A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel h
 <br />
 
 ---
+
 ## Hátason sebesülés, Leesés szituáció
 
 Lásd a [szituáció leírását](szituaciok/hatasrol_leeses.md)!
@@ -49,6 +52,7 @@ Lásd a [szituáció leírását](szituaciok/hatasrol_leeses.md)!
 <br />
 
 ---
+
 ## Hátulról jövő támadások
 
 Itt a [Harci helyzetek](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) fejezetben leírt módosítók érvényesek.
@@ -56,6 +60,7 @@ Itt a [Harci helyzetek](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) fej
 <br />
 
 ---
+
 ## Idomítatlan hátas
 
 Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor legfeljebb küzdeni tudsz, hogy nehogy ledobjon a megriadt állat. Támadni **nem** tudsz, védekezni is rosszul, továbbá körönként képzettségpróbát dobsz, hogy fenn tudsz -e maradni a hátason.

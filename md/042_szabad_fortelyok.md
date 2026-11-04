@@ -11,6 +11,7 @@ terjesztenek ki
 Specializált, egy, vagy több [képzettséget](030_01_kepzettseglista.md) "kiterjesztő" ismeretek. Egyes képzettségekkel való viszonyuk a [Normál kapcsolat és Erős kapcsolat](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) oldalon olvasható. Minden Tapasztalati Szinten kapsz egyet **ingyen** - `KP` költése nélkül.
 
 ---
+
 ### Szabad Fortély tanulása
 
 Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
@@ -30,6 +31,7 @@ A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmaz�
 KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Hátas - Wyvern](fortelyok.szabad/hatas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást.
 
 ---
+
 ### Általános szabályok
 
 **Képzettség nézőpontból**: van, hogy egy képzettséghez számos Szabad Fortély kapcsolódik, terjeszti ki - gyakorlatilag felszabdalják a képzettséget alterületekre.
@@ -37,6 +39,7 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 **Szabad Fortély nézőpontból**: van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 
 ---
+
 ### Tanulható Szabad Fortélyok listája
 
  Többször felvehető Szabad Fortély jelölése: 🔁

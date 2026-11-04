@@ -10,6 +10,7 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 <br />
 
 ---
+
 ### Használt harcmodor
 
 ```
@@ -17,6 +18,7 @@ Nagyobb fegyveré számít
 ```
 
 ---
+
 ### Alapeset (képzetlenül)
 
 ```

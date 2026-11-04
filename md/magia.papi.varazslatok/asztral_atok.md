@@ -18,13 +18,14 @@
 
 **15.szint:** ⭕
 
-
 ---
+
 #### Hatás
 
 Megidézel egy ártó lényt az Asztrálsíkról és hozzákötöd a varázslat célpontjához, így az folyamatosan kifejti rá érzelmi hatását.
 
 ---
+
 #### Szabályok
 
 - Átok/lény érzékelése más által: ⭕

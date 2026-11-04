@@ -21,6 +21,7 @@ Jól tudsz másolni műkincseket, műtárgyakat. Képes vagy egyes művészeti �
 - [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md)
 
 ---
+
 ### 1. fok
 
 🌟 A kiterjesztett képzettségek hamisítással kapcsolatos próbáinál nincs levonás.

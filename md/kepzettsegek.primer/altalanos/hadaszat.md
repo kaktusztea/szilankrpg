@@ -22,6 +22,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 - Intelligencia
@@ -61,11 +62,12 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲
 
- - Felmérni, hány óra alatt érhet oda egy kisebb egység (pl. 20 lovas) a közeli faluba, ha az út ismert és járható.
+- Felmérni, hány óra alatt érhet oda egy kisebb egység (pl. 20 lovas) a közeli faluba, ha az út ismert és járható.
 - Kiszúrni egy rosszul felállított őrséget (pl. egy gyalogos, aki fedezet nélkül áll egy nyitott mező szélén).
 - Egy napi menetoszlopból felismerni, mennyi szekér kell az élelmezéshez.
 

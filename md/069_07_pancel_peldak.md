@@ -7,6 +7,7 @@
 Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben passzol rád, nem kapsz extra büntetést."
 
 ---
+
 ## ⚡Példa 1: Átlagos páncél
 
 A lehető legátlagosabb sodronying, fejen (sisak) és lábszárakon **kívül** mindent beborít.
@@ -66,6 +67,7 @@ Azaz egy átlagos bőr torzódarab `16`-szeresének megfelelő pénzbe kerül a 
 <br />
 
 ---
+
 ## ⚡Példa 2: Legvacakabb teljes lemezvért
 
 ... amiben a lehető legnehezebb mozogni (Alapanyaga: bronz; Ideája a legvacakabb és még a tagok Kidolgozottsága is: pocsék).

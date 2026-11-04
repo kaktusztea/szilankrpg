@@ -1,6 +1,6 @@
 ## Kötéltánc
 
-###  → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Önuralom / Ügyesség
+### → Képzettségpróba: [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) + Önuralom / Ügyesség
 
 ```
 Nehézség: 6

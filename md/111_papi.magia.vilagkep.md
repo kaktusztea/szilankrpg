@@ -10,7 +10,7 @@ c.) Ideák az istenek is. Te varázsolsz. Ahogy hasonlatossá válsz az istenhez
 
 Randomitás: jelleget ad a varázslatnak, mint az Auraérzet
 
-### Nincs jogászkodás!
+### Nincs jogászkodás
 
 Ha a játékos a szabályok kijátszásával, egyedi értelmezésével akar blaszfémikus előnyökhöz jutni, istene (a KM-en keresztül) megbünteti. Először csak rövid ideig, majd egyre hosszabb távon képtelen lesz szakrális mágiát használni.
 

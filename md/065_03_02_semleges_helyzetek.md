@@ -59,6 +59,7 @@ Minden pajzs TÉ,VÉ értéke
 <br />
 
 ---
+
 ## Fegyverrántás váratlanul
 
 → Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély\
@@ -137,6 +138,7 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás.
 <br />
 
 ---
+
 ## Közrefogás
 
 Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Fegyverelőny** harci helyzetét.
@@ -146,18 +148,21 @@ Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges 
 ### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
 
 A hosszú kardos
+
 - "Fegyverelőny" helyzetből
 - "Fegyverazonosság" helyzetbe kerül
 
 ### ⚡Példa: Két tőrös közrefog egy lándzsást
 
 A lándzsás
+
 - "Fegyverelőny" helyzetből
 - "Fegyverazonosság" helyzetbe kerül
 
 <br />
 
 ---
+
 ## Szörnyeteg elleni harc
 
 Bestia/szörny elleni küzdelem. A [Gladiátor: Bestiái](fortelyok.harci/gladiator.bestiai.md) fortély bónuszai aktívak.
@@ -165,6 +170,7 @@ Bestia/szörny elleni küzdelem. A [Gladiátor: Bestiái](fortelyok.harci/gladia
 <br />
 
 ---
+
 ## Takarásban harcolás
 
 ```
@@ -179,6 +185,7 @@ VÉ: +5
 <br />
 
 ---
+
 ## Védő Érték kiterjesztése másra
 
 ```
@@ -195,6 +202,7 @@ Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
 <br />
 
 ---
+
 ## Vadállatok elleni harc
 
 ```

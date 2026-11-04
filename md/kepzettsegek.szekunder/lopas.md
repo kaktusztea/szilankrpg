@@ -3,6 +3,7 @@
 Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) formájában. A módosítók mértéke helyzettől függ.
 
 Az alábbi ismereteket nyújtja:
+
 - ujjak finom koordinációja, "simító" mozdulat a portéka felett
 - zsebből/asztalról apróság elemelése anélkül, hogy feltűnne
 - tárgy, kulcs, erszény észrevétlen megszerzése
@@ -21,6 +22,7 @@ Az alábbi ismereteket nyújtja:
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Ügyesség, Önuralom
@@ -34,6 +36,7 @@ Az alábbi ismereteket nyújtja:
 - [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki (majdnem ugyanazt) az aranyórát."
 
 ---
+
 ### Próbadobás menete
 
 Lásd az [Ellopni valamit, kirabolni valakit](../szituaciok/lopas_kirablas.md) szituáció leírását.
@@ -61,6 +64,7 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

@@ -1,7 +1,9 @@
 [Harci linkek](007_harci_linkek.md) • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md)
 
 ---
+
 ### 0. [Áttekintés, Bevezető](000_attekintes.md)
+
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
 
 - [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
@@ -46,13 +48,15 @@
 - [Példakarakter megalkotása](010_13_peldakarakter_megalkotasa.md)
 
 ---
+
 ### 2. [Hátterek](020_hattererek.md) 🟡
 
-  - [Faj Hátterek](021_faj_hatterek.md)
-  - [Leíró Hátterek](022_leiro_hatterek.md)
-  - [Karma Hátterek](023_karma_hatterek.md)
+- [Faj Hátterek](021_faj_hatterek.md)
+- [Leíró Hátterek](022_leiro_hatterek.md)
+- [Karma Hátterek](023_karma_hatterek.md)
 
 ---
+
 ### 3. [Képzettségrendszer](030_00_kepzettsegrendszer.md) 🔵
 
 - [Képzettséglista](030_01_kepzettseglista.md)
@@ -71,15 +75,17 @@
 - [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md)
 
 ---
+
 ### 4. [Fortélyok](040_fortelyok.md) 🟣
 
-  - [Kiemelt Fortélyok](041_kiemelt_fortelyok.md)
-  - [Szabad Fortélyok](042_szabad_fortelyok.md)
-  - [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
-  - [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
-  - [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
+- [Kiemelt Fortélyok](041_kiemelt_fortelyok.md)
+- [Szabad Fortélyok](042_szabad_fortelyok.md)
+- [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
+- [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
+- [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
 
 ---
+
 ### 5. [Tradíciók](050_tradiciok.md)
 
 ### 5.1 [Mágia tradíciók](051_00_magia_tradiciok.md)
@@ -97,6 +103,7 @@
 ### 5.2 [Papi tradíció](052_papi_tradicio.md)
 
 ---
+
 ### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
 
 ### 6.1 [Életerő, Sebesülés](061_00_eletero.md)
@@ -204,6 +211,7 @@
 - [Bestiák páncéljai](069_08_bestiak_panceljai.md)
 
 ---
+
 ### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
 
 - **CÉ, VÉ számítása**
@@ -225,6 +233,7 @@
   - [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
 
 ---
+
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)
 
 - [Hatások](081_hatasok.md) 🔥
@@ -233,9 +242,11 @@
 - [Mágikus Státuszok](084_magikus_statuszok_99.md) ✴️✨
 
 ---
+
 ### 9. [Pszí](090_pszi.md) 🌀
 
 ---
+
 ### 10. [Mágiarendszer](100_magiarendszer.md) ✨
 
 - [Mágiaelmélet](101_magiaelmelet.md)
@@ -280,6 +291,7 @@
   - [Természeti jelenségek](kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md)
 
 ---
+
 ### 11. [Papi mágia](110_papimagia.md)
 
 - [Papi mágia világképe](111_papi.magia.vilagkep.md)
@@ -287,12 +299,15 @@
 - [Papi varázslatok](113_papi.varazslatok.md) ✨
 
 ---
+
 ### 12. [Varázstárgyak](120_varazstargyak.md)
 
 ---
+
 ### 13. [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md)
 
 ---
+
 ### 14. [Méregrendszer](140_meregrendszer.md)
 
 - [Méreggenerátor](141_mereggenerator.md)
@@ -305,12 +320,15 @@
 - [Példamérgek](148_peldamergek.md) ⚡
 
 ---
+
 ### 15. [Szituációk](150_szituaciok.md)
 
 ---
+
 ### 16. [Példa karakterek](160_pelda_karakterek.md)
 
 ---
+
 ## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
 
 ---

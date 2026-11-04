@@ -22,6 +22,7 @@ Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász löved
 <!-- tag: md_table_tavfegyver_end -->
 
 ---
+
 ### Lövész lőfegyverek
 
 🔆Lásd: [Nyílpuskák újratöltése](075_nyilpuskak_ujratoltese.md) fejezetet.
@@ -44,6 +45,7 @@ Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász löved
 <!-- tag: md_table_tavfegyver_end -->
 
 ---
+
 ### Mágikus lövedékek
 
 🔆 Az Erőbónusz **nem** adódik hozzá a lövedékek **SP** értékéhez.

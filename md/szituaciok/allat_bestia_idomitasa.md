@@ -5,13 +5,16 @@ A kiterjesztő Szabad Fortély követelmény típusa attól függ, hogy háziál
 🟥 Erős kiterjesztés, tehát ha nincs meg a kapcsolódó Szabad Fortély, nem dobhatsz.
 
 ---
+
 ### [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség + Érzékenység Tulajdonság
 
  🟥 **Erős** kiterjesztéssel:
+
 - [Háziállatok idomítása](../fortelyok.szabad/haziallatok_idomitasa.md): "Morzsi, térülj... fordulj!"
 - [Vadállat idomítása](../fortelyok.szabad/vadallat_idomitasa.md) 🔁: "Táncolj Brumi!"
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲
@@ -56,4 +59,3 @@ A kiterjesztő Szabad Fortély követelmény típusa attól függ, hogy háziál
 🔗 [Szituációk](../150_szituaciok.md) ↑
 
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
-

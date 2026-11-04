@@ -9,6 +9,7 @@ Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha b
 Érdemes lehet kiemelt helyzetben a KM által végeztetni a dobást, így a fix Nehézség ismeretében sem derül ki, hogy a próba sikeres volt-e, vagy sem.
 
 ---
+
 ### 1. Képzettségpróba: Mérgek + Érzékenység
 
 ```
@@ -33,6 +34,7 @@ Ezeket a **dobásmódosítókat** a KM adja hozzá az áldozat dobásához fejbe
 ```
 
 ---
+
 ### 2. Tulajdonságpróba: Érzékenység
 
 ```

@@ -9,9 +9,9 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Képzettség-kiterjesztés Fortélyokkal, Szabad-Fortélyokkal
 - Fortélyok: `1-4.` fokig terjedhetnek - statikus ismeretek, nincs próba
 - Hátterek:
-    - Faj: Elf, Ember, Törpe, stb.
-    - Leíró: színesítő, szabadon választható jellemzők
-    - Karma: kalandjaid során KM-től kapod tetteid után
+  - Faj: Elf, Ember, Törpe, stb.
+  - Leíró: színesítő, szabadon választható jellemzők
+  - Karma: kalandjaid során KM-től kapod tetteid után
 - Életerő kategóriák (**Edzettség** Tulajdonság függő)
 - Méregrendszer: méreg-generátor, mérgek működése, ellenállás
 - Tradíciók: Mágikus, Papi
@@ -35,8 +35,8 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Harci helyzetek: adott, vagy kialakított harci Státuszok
 - Harci taktikák: harci jelleg általános, tudatos eltolása egy irányba
 - Manőverek: egyszeri trükkök
-    - Manőver Alap: `Összes költött HM / 3 ↑`
-    - Manőver Pontok: `2 x (Harcmodorok szint összege / Tapasztalati Szint ↑)`
+  - Manőver Alap: `Összes költött HM / 3 ↑`
+  - Manőver Pontok: `2 x (Harcmodorok szint összege / Tapasztalati Szint ↑)`
 
 ### Távolsági harcrendszer
 
@@ -47,10 +47,12 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 ### Mágia
 
 `1.`
+
 - Mágikus akarat vs Mágiaellenállás (Aura vs Aura)
 - Mágikus célzás
 
 `2.`
+
 - Tradíció képzettségek
 - Szférák/Arkánum képzettségek
 - Formulák (egyes varázslatok Arkánumok alatt)
@@ -64,6 +66,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
   - Szellem által megszállt tárgyak
 
 ---
+
 ### Szilánk DNS
 
 Egy szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét:

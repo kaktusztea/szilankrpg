@@ -11,6 +11,7 @@
 **7.szint:** Innen alkalmazható
 
 ---
+
 #### Hatás
 
 A pap kimondja az Exterminust. Egy gonosz lényt meg kell váltani, el kell távolítani erről a síkról, hogy a bűnös ne tudja a jövőben további sötét foltokkal mocskolni már amúgy is terhelt lelkét. A Papnak ismernie kell a bűnös illető pontos nevét, hátterét, bűnei lajstromát.
@@ -27,6 +28,7 @@ A varázsszavak kimondása után a pap egy sötét angyalhoz hasonlatossá váli
 A fegyver a harc idejére jelenik meg. Akkor tűnik el, ha az Exterminusra kijelölt személy meghalt, illetve amikor a Pap már nincs közvetlen harci szituációban, veszélyben és Védő Értéke elkezd visszatöltődni - ekkor megtörténik a visszaalakulás.
 
 ---
+
 #### Szabályok
 
 - Szent fegyver harcértékei: lásd a varázslat [leírását](../szent_fegyver.md).

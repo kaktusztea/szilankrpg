@@ -21,14 +21,17 @@
 **12.szint:** Félelmetes, griff méretű óriássólyommá alakulhatsz minden felszerelési tárgyaddal együtt
 
 ---
+
 #### Hatás
 
 Az Arel pap a Kisszféránál leírtaknál megfelelően átalakul Arel szent állatává, sólyommá, vagy alacsony szinten hasonul hozzá. Amíg a pap koncentrál rá, képes fenntartani az állapotot. Ez idő alatt nem varázsolhat.
 
 ---
+
 #### Szabályok
 
 ⭕TODO⭕
+
 - ⭕ÉP hogy legyen? JK ÉP, vagy sólyom ÉP
 - ⭕Koncentráció szükséges, vagy nem?
 - ⭕Ha elájul, akkor visszaalakul?

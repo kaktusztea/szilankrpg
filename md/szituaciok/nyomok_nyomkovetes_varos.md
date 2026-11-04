@@ -12,22 +12,26 @@ Gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kis
 ```
 
 ---
+
 ### 🏠 Nyomok észrevétele városi környezetben
 
 "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
 #### → Képzettségpróba: **[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)** + Érzékenység
+
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - 🟨  **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
 <br />
 
 ---
+
 ### 🏠 Nyomok értelmezése városi környezetben
 
 Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése. Felfedezett titkosírás elemzése.
 
 #### → Képzettségpróba: **[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)** + Intelligencia
+
 - **Nehézség**: a felfedezett nyom értelmezésének bonyolultságától függő szint ellen
 - 🟨  **Normál Kiterjesztés**: egyet válassz az aktuális szituációhoz passzolóan:
   - [Heraldika](../fortelyok.szabad/heraldika.md)
@@ -42,6 +46,7 @@ Példákhoz lásd e kapcsolódó fortélyok ↑ **Nyomozás** képzettséghez ka
 <br />
 
 ---
+
 ### 🏠 Rejtett nyomok, tárgyak elrejtése/megtalálása városi környezetben
 
 Ha az egyik fél szándékosan energiát fektet bele, hogy elrejtse nyomait - vagy egy tárgyat.
@@ -62,6 +67,7 @@ Ha az egyik fél szándékosan energiát fektet bele, hogy elrejtse nyomait - va
 Például egy üres szobában nehezebb elrejteni valamit, mint egy 100 éves raktárban, ami plafonig van kacatokkal.
 
 Kapcsolódik:
+
 - Képzettség: [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)
 - Fortély: [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md)
 

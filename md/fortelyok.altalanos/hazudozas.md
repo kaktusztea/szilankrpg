@@ -9,16 +9,19 @@ Az egyik leggyakoribb félrevezető technika, talán nem is kell magyarázni.
 - [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md): "Sokat pislog, kerüli a tekintetem, hazudik..."
 
 ---
+
 ### Aktív alkalmazás
 
 Megpróbálsz megetetni valakivel egy jó kis hazugságot.
 
 ---
+
 ### Passzív alkalmazás
 
 Téged próbálnak átverni.
 
 ---
+
 ### 1. fok
 
 🌟 A kiterjesztett képzettségek hazudozással kapcsolatos próbáinál nincs levonás.

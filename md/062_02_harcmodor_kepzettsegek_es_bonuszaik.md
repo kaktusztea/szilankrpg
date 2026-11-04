@@ -28,6 +28,7 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 🔆 A távolsági fegyvereknél értelemszerűen csak `CÉ:+1` jár szintenként, hiszen nincs `TÉ` és `VÉ` értékük.
 
 ---
+
 ### Harcmodorok egyedi jellemzői
 
 A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az alájuk tartozó fegyvercsoportokkal:
@@ -46,6 +47,7 @@ A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az al�
 🔆 **Fegyver harcértékek erősítése** a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortéllyal lehetséges.
 
 ---
+
 ### Harcmodorok és Manőverek
 
 A Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc Harcmodorok szintjeinek összege lehetőséget ad Manőverek könnyebb elvégzésére. Bővebben lásd a [Manőver Pontok](066_02_manover_pontok.md) fejezetet.

@@ -18,6 +18,7 @@ Válassz hátas fajt: `1 db` [Hátas](../fortelyok.szabad/hatas.md) Szabad Fort�
 Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
 
 ---
+
 ### Domináns Tulajdonságok
 
 Önuralom, Ügyesség, Gyorsaság
@@ -55,6 +56,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲

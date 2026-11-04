@@ -7,6 +7,7 @@ A [Fájdalomtűrés](kepzettsegek.primer/altalanos/fajdalomtures.md) képzettsé
 Különbséget teszünk harcon belüli és azon kívüli fájdalomtűrés között - részben játéktechnikai gyorsítás miatt, részben mert harc közben az adrenalin hatására nő a kín tűrése, valamint próbáltuk a harc heroizmusát is megőrizni.
 
 ---
+
 ### `1.` Fájdalomtűrés harc közben
 
 Ha harc közben más sebesülés kategóriába (`S`) lép a karakter, akkor statikus `TÉ` levonást kap büntetésül. Az első (`S1`) kategóriában lévő karaktert még nem sújtják negatív módosítók, sérülése – számára – olyan könnyű, ami még nem akadályozza a harcban. Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már `TÉ` büntetések sújtják.
@@ -38,6 +39,7 @@ TÉ levonás enyhítése
 ```
 
 ---
+
 ### `S4` kategóriás fájdalomtűrés
 
 ```
@@ -54,6 +56,7 @@ Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 🔆 A [Harci láz](kepzettsegek.primer/harci/harci_laz.md) képzettség bizonyos fokozatai felett szükségtelenné válik a fenti próba.
 
 ---
+
 ### ⚡ Példa Fájdalomtűrés `TÉ` módosítóira
 
 Tetves, a tolvaj Fájdalomtűrése `5.szintű`, ez `2` pontot enyhít.\
@@ -69,6 +72,7 @@ S4:  -7 TÉ
 ```
 
 ---
+
 ### `2.` Fájdalomtűrés harcon kívül
 
 Mérgezés, kínzás, egyéb fájdalom esetén a karakterek **Fájdalomtűrés** képzettségpróbát kell dobnia a KM által meghatározott célszámra - általában **Önuralom** Tulajdonsággal.

@@ -14,6 +14,7 @@ Erő:       +2
 ```
 
 ---
+
 ## ⚙️ [Mászás](../kepzettsegek.szekunder/maszas.md) összetett képzettségpróba
 
 A hosszabb táv miatt a KM [összetett képzettségpróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) ír elő, `2 db` próbával:
@@ -45,6 +46,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 <br />
 
 ---
+
 ## ⚙️ Rontott próba után mentődobás
 
 🎲 Önuralom próba pánik ellen: `1+k6 vs 5 (Nehéz)   →` sikeres ✅
@@ -92,6 +94,7 @@ Tetves minden erejét bevetve felgyűrte magát a `11 cm` széles kiszögellésr
 <br />
 
 ---
+
 ## ⚙️ [Megállás és pihenés a falon rontás után](../kepzettsegek.szekunder/maszas.md#megállás-és-pihenés-a-falon-rontás-után)
 
 Ez **2 biztos tudást** igényel, hogy meg tudja-e tartani magát tartósan. Ebben segíti a **perem** és az **ék**.
@@ -137,6 +140,7 @@ Az ék és a perem együtt ad annyit ami már rég biztos tudásból megvan, leh
 <br />
 
 ---
+
 ## ⚙️ Leesés
 
 Lásd az [Esés magasból](eses_magasbol.md) szituáció leírását!

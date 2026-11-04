@@ -5,6 +5,7 @@ Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemz�
 ### Biztos tudás szintek
 
 Négy jellemző minőségi (Idea) szintet különböztetünk meg, amelyek megadják, hogy az egyes [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettség tudásszinteken milyen minőségű (**Ideájú**) tárgyakat vagy képes alkotni:
+
 - **maximum**: határidőtől nem hátráltatva, tudásod legjobbját nyújtva elkészített műremek
 - **lelkiismeretes munka**: odafigyelve az apró részletekre, de még ésszerű időkeretben készített alkotás
 - **rutinmunka**: mindennapos munkád terméke

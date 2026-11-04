@@ -13,6 +13,7 @@ Süket karakter indítása esetén a karakter **hallás** érzékére permanens 
 🔆 Az így kapott KP [primer ismeretekre](../010_09_primer_szekunder_ismeretek.md) is fordítható.
 
 ---
+
 ### Süketség magasabb tapasztalati szinten
 
 **Fontos**: ha a karakter később (nem `1.szinten`, karakteralkotáskor) süketül meg teljesen, akkor természetesen NEM jár a `KP` bónusz.

@@ -3,6 +3,7 @@
 Speciális faj háttér. bevezető ⭕
 
 Ide tartozik:
+
 - félelf
 - dzsad
 - kyr vérű
@@ -16,8 +17,8 @@ Ide tartozik:
 - a legtöbb lény Yn3ven ilyen
 
 Kalandozók (Szilánkkal)
-- választhatnak, hogy biológiailag félelf, de felveszi az Elf képzettséget.
 
+- választhatnak, hogy biológiailag félelf, de felveszi az Elf képzettséget.
 
 ---
 TODO ⭕
@@ -45,6 +46,7 @@ TODO ⭕
 <br />
 
 ---
+
 ### Tiltott ismeretek, korlátok
 
 Nincs faj misztériuma.

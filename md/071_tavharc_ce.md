@@ -51,6 +51,7 @@ Támadó CÉ =
 ```
 
 Lásd bővebben:
+
 - [Harcmodor képzettségek bónuszai](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - [Hajítófegyverek harcértékei](068_07_hajitofegyverek.md)
 - [Lőfegyverek harcértékei](068_08_lofegyverek.md)
@@ -58,6 +59,7 @@ Lásd bővebben:
 <br />
 
 ---
+
 ## CÉ Módosítók
 
 → [Távharci helyzetek](074_tavharci_helyzetek.md)\

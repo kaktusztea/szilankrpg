@@ -4,8 +4,6 @@
 
 [Amund arkánum](../../magia.faj.arkanumok/amund_arkanum.md)
 
-
-
 ⭕TODO⭕
 
 ```
@@ -34,6 +32,7 @@ Az amund karakternek - amennyiben papi mágiatudó szeretne lenni - minimum `6.`
 Továbbá minden Szférát rendesen tanulnia kell. A két képesség nem kombinálható!
 
 ---
+
 ### Szintek
 
 ```

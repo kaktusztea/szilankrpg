@@ -75,6 +75,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Ügyesség, Önuralom
@@ -119,6 +120,7 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 <br />
 
 ---
+
 ### Próbák 🎲
 
 Ennek a képzettségnek a próbadobásai jellemzően ellenpróbák az [Észlelés](eszleles.md) képzettséggel. Bővebben lásd a [Lopakodás/rejtőzés és észlelése](../../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációt.

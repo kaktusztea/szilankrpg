@@ -21,6 +21,7 @@ Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont
 ```
 
 ---
+
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia
@@ -57,6 +58,7 @@ Emlékezet, Intelligencia
 <br />
 
 ---
+
 ### Próbák 🎲
 
 #### Könnyű (6) 🎲
