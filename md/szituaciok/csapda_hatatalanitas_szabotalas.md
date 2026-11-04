@@ -26,7 +26,7 @@ Csak már felfedezett csapdát lehet hatástalanítani!
 
 ### 🔆 Mechanikus szerkezet szabotálása
 
-#### → Képzettségpróba: [Lexikum](../kepzettsegek.szekunder/lexikum.md) + Intelligencia/Ügyesség/Emlékezet
+#### → Képzettségpróba: [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) + Intelligencia/Ügyesség/Emlékezet
 
 🟥 **Erős kiterjesztés**: [Mechanika](../fortelyok.altalanos/mechanika.md) (`2`)
 
