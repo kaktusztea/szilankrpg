@@ -8,7 +8,11 @@
     "MD040": false, // fenced code nyelv: a pelda-blokkok nyelv nelkuliek
     "MD041": false, // elso sor heading: nem minden md-fajl kezdodik H1-gyel
     "MD024": false, // ismetlodo headingek: szandekosak (azonos alcimek fejezetekben)
-    "MD060": false  // tabla-formazas: a kezi tablak nem egyseges stilusuak
+    "MD060": false, // tabla-formazas: a kezi tablak nem egyseges stilusuak
+    "MD001": false, // heading-szint ugras: a #### Kovetelmeny/Hatas tudatos vizualis tagolas a ## blokkokban
+    "MD036": false, // kiemeles heading helyett: **cimke**-szeru vizualis jelolok (nem akarunk ranuk anchort/TOC-ot)
+    "MD045": false, // kep alt-szoveg: a szabalykonyv kepei tabla-/dekorativ beagyazasok
+    "MD025": false  // tobb H1 egy dokumentumban: megengedett (pl. szilank.md tagolasa)
   },
   "globs": ["md/**/*.md", "README.md"]
 }
