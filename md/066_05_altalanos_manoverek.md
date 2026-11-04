@@ -34,8 +34,8 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 - ⚙️ Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - ❌ Ha legalább `2` pajzsos blokkolna téged, akkor ezt a manővert nem használhatod. Áttöréssel próbálkozhatsz.
 - Fázisok: `Ellenpróba (Megakasztás*)`
- 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
- 	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
+  - **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
+  - **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 - Helyzetfüggő módosítók:
   - Körülmény:
     - `+2`: Fegyverméretek / harcolók száma (KM)
@@ -80,7 +80,7 @@ Lecsapod vagy megnyomorítod ellenfeled kezét, vagy lábát.
   - `8`: kéz csonkolása
   - `10`: láb csonkolása
 - Fázisok: `Végrehajtás, Ellenpróba`
- 	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+  - **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
 - 🟨 Normál követelmény: [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény:
   - Vágófegyver használata
@@ -202,8 +202,8 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Nehézség: `5`
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - Fázisok: `Ellenpróba (Megakasztás)`
- 	- **Ellenpróba** sikeres: kibontakoztál. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
- 	- **Ellenpróba** sikertelen: kibontakoztál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
+  - **Ellenpróba** sikeres: kibontakoztál. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
+  - **Ellenpróba** sikertelen: kibontakoztál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 - Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető Kibontakozás.
 - Helyzetfüggő módosítók:
   - Fegyverhossz különbség:
@@ -231,8 +231,8 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény: Lándzsavívás – `6.szint`
 - 🟥 Erős követelmény:
- 	- Szálfegyver használata
- 	- Csak kétlábú ellenfelek ellen (több lábbal rendelkezőnél [Földrevitel](#földrevitel))
+  - Szálfegyver használata
+  - Csak kétlábú ellenfelek ellen (több lábbal rendelkezőnél [Földrevitel](#földrevitel))
 - Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 - Helyzetfüggő módosítók:
   - Fegyver:
@@ -416,8 +416,8 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 - Nehézség: `7`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - 🟨 Normál követelmény:
- 	- Közelharc – `4.szint`
- 	- Forgatott fegyverre: Mesterfegyver – `1.fok`
+  - Közelharc – `4.szint`
+  - Forgatott fegyverre: Mesterfegyver – `1.fok`
 
 **Hatás**:
 
@@ -442,7 +442,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
     - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
   - `12`: Szemkiszúrás
 - Fázisok: `Végrehajtás, Ellenpróba`
- 	- **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
+  - **Végrehajtás** során **❗ nem kapod meg a +5 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az **Ellenpróbát**.
 - 🟨 Normál követelmény: [Közelharc](kepzettsegek.primer/harci/harcmodor.md) VAGY [Kardvívás](kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - 🟥 Erős követelmény: alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, VAGY nem ismeretlen az alkalmazó számára (van rá [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortélya).
 - Helyzetfüggő módosítók:
