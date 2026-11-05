@@ -17,6 +17,7 @@ A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzón�
 - [Sérülés hatása képzettségpróbára](#sérülés-hatása-képzettségpróbára)
 - [Tulajdonság vs Képzettség ellenpróba](#tulajdonság-vs-képzettség-ellenpróba)
 - [Mentődobás](#mentődobás)
+- [Asszisztencia](#asszisztencia)
 
 ---
 
@@ -367,6 +368,36 @@ Szituáció: Tetves rontott Mászás képzettségpróbát vét a szikla feléné
   - független a képzettség dobás eredményétől
   - `1`: végzetes hiba
   - `2,3`: a bevetett `2` Erő pont mérséklése miatt ezeknél nincs végzetes hiba (amúgy lenne)
+
+br />
+
+---
+### Asszisztencia
+
+Társ segítése Képzettségpróba során.
+
+Ekkor a segítő is megdobja ugyanazt a Képzettségpróbát. Választhat, hogy mennyi bónuszt ad társának - a **Nehézség** azonos, vagy `3` ponttal alacsonyabb, mint a megsegített fél próbájánál:
+
+```
+Adott Bónusz • Nehézség  
+
++3  •  (Nehézség - 3)
++6  •  azonos Nehézség 
+```
+
+Azt, hogy egy próbába hányan segíthetnek be, az helyzetfüggő, nem akarunk erre képletet megadni. A KM döntsön az ésszerűség határain belül.
+
+#### Hol használható Asszisztencia?
+
+Csak az alábbi képzettségek esetén használható:
+- Akrobatika
+- Mászás
+- Lopakodás/rejtőzés
+- Csapdaállítás
+- Zárnyitás
+- Hajózás
+- Lovaglás
+- Léglovaglás
 
 ---
 
