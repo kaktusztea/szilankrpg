@@ -401,6 +401,8 @@ Csak az alábbi képzettségek esetén használható:
 - Lovaglás
 - Léglovaglás
 
+Fontos, hogy ez nem azonos a [csoportos képzettségpróbával](030_06_02_csoportos_kepzettsegproba.md), ott a csoport tagjai közösen végzik az azonos tevékenységet.
+
 ---
 
 🔗 [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) →
