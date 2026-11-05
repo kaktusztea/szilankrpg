@@ -372,6 +372,7 @@ Szituáció: Tetves rontott Mászás képzettségpróbát vét a szikla feléné
 br />
 
 ---
+
 ### Asszisztencia
 
 Társ segítése Képzettségpróba során.
@@ -390,6 +391,7 @@ Azt, hogy egy próbába hányan segíthetnek be, az helyzetfüggő, nem akarunk 
 #### Hol használható Asszisztencia?
 
 Csak az alábbi képzettségek esetén használható:
+
 - Akrobatika
 - Mászás
 - Lopakodás/rejtőzés
