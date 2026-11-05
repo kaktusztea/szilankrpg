@@ -1,4 +1,17 @@
-## Tulajdonságpróba
+# Tulajdonságpróba
+
+- [Tulajdonságpróba dobás](#tulajdonságpróba-dobás)
+- [Kiemelt Siker/Kudarc](#kiemelt-sikerkudarc)
+- [Helyzetfüggő módosítók](#helyzetfüggő-módosítók)
+- [Előny-Hátrány dobások](#előny-hátrány-dobások)
+- [Felszerelés hatása fizikai Tulajdonságpróbára](#felszerelés-hatása-fizikai-tulajdonságpróbára)
+- [Összetett Tulajdonságpróba](#összetett-tulajdonságpróba)
+- [Kombinált próbák](#kombinált-próbák)
+- [Tulajdonság ellenpróba](#tulajdonság-ellenpróba)
+- [Asszisztencia](#asszisztencia)
+- [Sérülés hatása tulajdonságpróbára](#sérülés-hatása-tulajdonságpróbára)
+
+## Tulajdonságpróba dobás
 
 ```
 Tulajdonság + k6  vs  Célszám
@@ -19,9 +32,7 @@ Tulajdonságpróba célszám (k6)
 8: Emberfeletti
 ```
 
----
-
-### Kiemelt Siker/Kudarc
+## Kiemelt Siker/Kudarc
 
 ⚜️ Ha `3` vagy annál nagyobb különbséggel rontottál, akkor kiemelten nagy hibát vétettél.
 
@@ -58,7 +69,7 @@ Természetesen a Tulajdonságpróba dobásokra is járhat **Előny**, vagy **Há
 
 ---
 
-### Felszerelés hatása fizikai Tulajdonságpróbára
+## Felszerelés hatása fizikai Tulajdonságpróbára
 
 Túl sok cipelt tárgy  fizikai **Tulajdonságpróbák** végrehajtásában.
 
@@ -68,7 +79,7 @@ Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 
 ---
 
-### Összetett Tulajdonságpróba
+## Összetett Tulajdonságpróba
 
 Ha a karakternek egy olyan összetett próbát kell tennie, ami nem intézhető el `1 db` dobással (pl. több fázisból álló kombinált mozdulatsor, egy összetett, hosszan tartó, hullámzó érzelemimpulzus értelmezése **Érzékenység** próbával), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
 
@@ -99,8 +110,6 @@ Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal alacsonyabb nehézs
 ```
 
 <br />
-
----
 
 ### Példa Összetett Tulajdonságpróbára
 
@@ -136,7 +145,7 @@ Ezzel kb. 33% esélye van a sikerre
 
 ---
 
-### Kombinált próbák
+## Kombinált próbák
 
 Az összetett próbákhoz hasonlóak a Kombinált próbák: adódhat olyan helyzet, hogy a karakternek több fajta Tulajdonságát kell próbára tenni egy adott szituációban. Pl. **Erő** és **Ügyességpróbát** is dobnia kell.
 
@@ -179,6 +188,25 @@ Mindkét játékos dob (NJK esetén természetesen a KM) `k6`-tal, és az eredm�
 Ha az eredmények azonosak, akkor patthelyzet alakul ki, a KM belátása szerint (esetleg némi idő elteltével) új ellenpróba dobható. Ha az adott szituációban nem lehetséges patthelyzet, akkor újra kell dobni `k6`-tal (ekkor már nem kell hozzáadni a Tulajdonság értékét) és a nagyobb szám nyer.
 
 <br />
+
+---
+
+### Asszisztencia
+
+Társ segítése Tulajdonságpróba során.
+
+Ekkor a segítő is megdobja ugyanazt a Tulajdonságpróbát. Választhat, hogy mennyi bónuszt ad társának - a **Nehézség** azonos, vagy `1` ponttal alacsonyabb, mint a megsegített fél próbájánál:
+
+```
+Adott Bónusz • Nehézség  
+
++2  •  (Nehézség - 1)
++4  •  azonos Nehézség 
+```
+
+Azt, hogy egy próbába hányan segíthetnek be, az helyzetfüggő, nem akarunk erre képletet megadni. A KM döntsön az ésszerűség határain belül.
+
+br />
 
 ---
 
