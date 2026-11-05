@@ -74,6 +74,13 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 +6: 20 - 30 méter
 ```
 
+#### ⚜️ [Asszisztencia](../../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ---
 
 ### Domináns Tulajdonságok

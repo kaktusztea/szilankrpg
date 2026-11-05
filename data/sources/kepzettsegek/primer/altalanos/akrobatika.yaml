@@ -23,4 +23,9 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -6, leírás: "Csúszós talaj" }
       - { érték: 0, leírás: "Normál talaj" }
+  - kategória: "Asszisztencia"
+    mód: "single"
+    sorok:
+      - { érték: 3, leírás: "segítség(3)" }
+      - { érték: 6, leírás: "segítség(6)" }
 dobás_komment: []

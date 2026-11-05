@@ -24,6 +24,20 @@
             "leírás": "Normál talaj"
           }
         ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
+          }
+        ]
       }
     ],
     "dobás_komment": [],
@@ -527,6 +541,20 @@
           {
             "érték": -3,
             "leírás": "Nyom nélkül hatástalanítani"
+          }
+        ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
           }
         ]
       }
@@ -1298,6 +1326,20 @@
             "leírás": "Tapasztalt legénység"
           }
         ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
+          }
+        ]
       }
     ],
     "dobás_komment": [],
@@ -1666,6 +1708,20 @@
             "leírás": "Normál időjárás"
           }
         ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
+          }
+        ]
       }
     ],
     "dobás_komment": [],
@@ -1816,6 +1872,20 @@
             "leírás": "20-30 méter"
           }
         ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
+          }
+        ]
       }
     ],
     "dobás_komment": [],
@@ -1915,6 +1985,20 @@
             "leírás": "Betört hátas"
           }
         ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
+          }
+        ]
       }
     ],
     "dobás_komment": [],
@@ -2007,6 +2091,20 @@
           {
             "érték": 0,
             "leírás": "nincs túlsúly"
+          }
+        ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
           }
         ]
       }
@@ -2591,6 +2689,20 @@
           {
             "érték": -3,
             "leírás": "Hiányos eszközök"
+          }
+        ]
+      },
+      {
+        "kategória": "Asszisztencia",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 3,
+            "leírás": "segítség(3)"
+          },
+          {
+            "érték": 6,
+            "leírás": "segítség(6)"
           }
         ]
       }

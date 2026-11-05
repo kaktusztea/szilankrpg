@@ -30,6 +30,13 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
  Infó: Erőpróba kellhet
 ```
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ### Domináns Tulajdonságok
 
 - Ügyesség, Edzettség (a mászáshoz): technikás, rövid úthoz az **Ügyesség**, hosszabb úthoz az **Edzettség** a javasolt

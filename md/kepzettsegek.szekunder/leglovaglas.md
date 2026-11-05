@@ -23,6 +23,13 @@ Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad F
 +0: Normál időjárás
 ```
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ### Domináns Tulajdonságok
 
 Önuralom, Ügyesség, Gyorsaság

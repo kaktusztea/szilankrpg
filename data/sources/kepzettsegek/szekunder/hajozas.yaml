@@ -37,4 +37,9 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Képzetlen zsoldosok" }
       - { érték: -3, leírás: "Fegyelmezetlen legénység" }
       - { érték: 0, leírás: "Tapasztalt legénység" }
+  - kategória: "Asszisztencia"
+    mód: "single"
+    sorok:
+      - { érték: 3, leírás: "segítség(3)" }
+      - { érték: 6, leírás: "segítség(6)" }
 dobás_komment: []

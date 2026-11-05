@@ -60,4 +60,9 @@ helyzetfüggő_módosítók:
       - { érték: 0, leírás: "10-15 méter" }
       - { érték: 3, leírás: "16-20 méter" }
       - { érték: 6, leírás: "20-30 méter" }
+  - kategória: "Asszisztencia"
+    mód: "single"
+    sorok:
+      - { érték: 3, leírás: "segítség(3)" }
+      - { érték: 6, leírás: "segítség(6)" }
 dobás_komment: []

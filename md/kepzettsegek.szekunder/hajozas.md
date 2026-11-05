@@ -29,6 +29,13 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 +0: Tapasztalt legénység
 ```
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ---
 
 ### Domináns Tulajdonságok

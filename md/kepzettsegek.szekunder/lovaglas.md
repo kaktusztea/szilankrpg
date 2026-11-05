@@ -17,6 +17,13 @@ Válassz hátas fajt: `1 db` [Hátas](../fortelyok.szabad/hatas.md) Szabad Fort�
 
 Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ---
 
 ### Domináns Tulajdonságok

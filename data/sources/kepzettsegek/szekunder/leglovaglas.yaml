@@ -29,4 +29,9 @@ helyzetfüggő_módosítók:
       - { érték: -6, leírás: "Vihar, orkán" }
       - { érték: -3, leírás: "Erős szél vagy felhőszaggatás" }
       - { érték: 0, leírás: "Normál időjárás" }
+  - kategória: "Asszisztencia"
+    mód: "single"
+    sorok:
+      - { érték: 3, leírás: "segítség(3)" }
+      - { érték: 6, leírás: "segítség(6)" }
 dobás_komment: []
