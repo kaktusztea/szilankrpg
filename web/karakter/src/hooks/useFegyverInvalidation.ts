@@ -49,4 +49,10 @@ export function useFegyverInvalidation(
       return { ...prev, session: { ...prev.session, fegyverfogás: 'egyfegyveres', aktív_pajzs: false, aktív_fegyver_bal_index: -1 } };
     });
   }, [karakter?.felszerelés?.kizárt_auto, karakter?.session.fegyverfogás, setKarakter]); // eslint-disable-line react-hooks/exhaustive-deps -- only on shield-exclusion / grip change
+
+  // Páncél-struktúra „- nincs -" (páncél.alap üres) + Páncél viselve → kikapcsol (az SFÉ / MGT így 0, a chip letiltva).
+  useEffect(() => {
+    if (!karakter || karakter.páncél.alap || !karakter.session.aktív_páncél) return;
+    setKarakter(prev => (prev ? { ...prev, session: { ...prev.session, aktív_páncél: false } } : prev));
+  }, [karakter?.páncél.alap, karakter?.session.aktív_páncél, setKarakter]); // eslint-disable-line react-hooks/exhaustive-deps -- only on armour-structure / worn change
 }

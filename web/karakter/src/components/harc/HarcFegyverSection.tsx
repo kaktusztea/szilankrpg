@@ -56,7 +56,7 @@ export function HarcFegyverSection({ data, karakter, session, setSession, pushUn
       <div className="harc-fegyver-row">
         <SessionToggles data={data} karakter={karakter} session={session} setSession={setSession} páncélMGT={páncélMGT} showHint={showHint} />
         <FegyverfogásButton data={data} karakter={karakter} session={session} onShowFegyverfogás={onShowFegyverfogás} />
-        <PáncélToggle session={session} setSession={setSession} pushUndo={pushUndo} />
+        <PáncélToggle session={session} setSession={setSession} pushUndo={pushUndo} vanPáncél={!!karakter.páncél.alap} />
       </div>
       {kétkezesHiány.length > 0 && (
         <div className="harc-ketkezes-warning" role="status">
@@ -80,12 +80,15 @@ function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: P
   );
 }
 
-function PáncélToggle({ session, setSession, pushUndo }: Pick<HarcBaseProps, 'session' | 'setSession' | 'pushUndo'>) {
+function PáncélToggle({ session, setSession, pushUndo, vanPáncél }: Pick<HarcBaseProps, 'session' | 'setSession' | 'pushUndo'> & { vanPáncél: boolean }) {
+  // No armour structure ("- nincs -"): the chip is off and disabled; useFegyverInvalidation keeps aktív_páncél false.
+  const on = vanPáncél && session.aktív_páncél;
   return (
-    <button type="button" className={`aktiv-field-btn aktiv-field-toggle${session.aktív_páncél ? ' on' : ''}`} aria-pressed={session.aktív_páncél}
+    <button type="button" className={`aktiv-field-btn aktiv-field-toggle${on ? ' on' : ''}${vanPáncél ? '' : ' disabled'}`} aria-pressed={on}
+      disabled={!vanPáncél} title={vanPáncél ? undefined : 'Nincs páncél (Harcértékek fül: Struktúra)'}
       onClick={() => { const next = { ...session, aktív_páncél: !session.aktív_páncél }; pushUndo(`Páncél: ${next.aktív_páncél ? 'Igen' : 'Nem'}`, [{ field: 'session', prev: session, ckey: 'aktív_páncél' }], next); setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél })); }}>
       <span className="aktiv-field-label">Páncél viselve</span>
-      <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
+      <strong>{on ? 'Igen' : 'Nem'}</strong>
     </button>
   );
 }

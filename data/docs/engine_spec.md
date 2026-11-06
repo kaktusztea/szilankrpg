@@ -383,18 +383,21 @@ formula:
   struktúra = lookup(páncél.alap → páncél_struktúrák)
   alapanyag = lookup(páncél.fémalapanyag → páncél_fémalapanyagok)  // üres ha nem fém
 
-  sfé_fizikai = struktúra.sfé_fizikai + alapanyag.sfé_bónusz + páncél.idea - páncél.rongálódás
-  sfé_energia = struktúra.sfé_energia + alapanyag.sfé_bónusz + páncél.idea - páncél.rongálódás
+  sfé_fizikai = if(páncél_van, struktúra.sfé_fizikai + alapanyag.sfé_bónusz + páncél.idea - páncél.rongálódás, 0)
+  sfé_energia = if(páncél_van, struktúra.sfé_energia + alapanyag.sfé_bónusz + páncél.idea - páncél.rongálódás, 0)
+  // páncél_van = páncél.alap nem üres. Nélküle a „- nincs -" struktúra mellett megmaradt rongálódás / sisak / végtag
+  // szivárgott az SFÉ-be / MGT-be (2026-11-06 bug: Harc fül SFÉ -3/-3).
 
 output: sfé_fizikai, sfé_energia
 
 reactive rules.json:
-  sfé_fizikai: páncél_struktúra_sfé_fizikai + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás
-  sfé_energia: páncél_struktúra_sfé_energia + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás
+  sfé_fizikai: if(páncél_van, páncél_struktúra_sfé_fizikai + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás, 0)
+  sfé_energia: if(páncél_van, páncél_struktúra_sfé_energia + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás, 0)
 
 impl: A struktúra és alapanyag értékek string-keyed lookup szabályokból jönnek (rules.json).
       A harc-computed.ts (+ pancel-calc.ts → buildPancelLookups) a karakter adatokból építi a context-et + lookup táblákat.
-      Ha nincs struktúra kiválasztva → minden 0, lefedettség = 0%.
+      Ha nincs struktúra kiválasztva → minden 0 (SFÉ / MGT / lefedettség / ár: `if(páncél_van, …, 0)`), és a Harc fül
+      „Páncél viselve" chipje Nem + letiltva (a `useFegyverInvalidation` az `aktív_páncél`-t false-ra állítja).
       Végleges SFÉ a Harc fülön (harc-computed.ts): (session.aktív_páncél ? computed.sfé : 0) + fortelyMods['SFÉ']
       A fortély SFÉ (pl. Természetes páncél) mindig aktív, független a páncél viseléstől.
 ```
@@ -432,7 +435,7 @@ formula:
 output: MGT
 
 reactive rules.json:
-  páncél_MGT: max(0, struktúra_mgt + alapanyag_mgt + csatolt_db * if(merev, lookup(merev_tábla,...), if(fém, lookup(fém_tábla,...), lookup(nemfém_tábla,...))) + méret_mgt - erő)
+  páncél_MGT: if(páncél_van, max(0, struktúra_mgt + alapanyag_mgt + csatolt_db * if(merev, lookup(merev_tábla,...), if(fém, lookup(fém_tábla,...), lookup(nemfém_tábla,...))) + méret_mgt - erő), 0)
 
 impl: A raw inputok (struktúra_mgt, alapanyag_mgt, csatolt_db, méret_mgt, merev, fém) lookup szabályokból jönnek.
       A feltételes lookup (kidolgozottság → tag_mgt_per_db) a rules.json-ban van nested if() + lookup() + StringContext-tel.
