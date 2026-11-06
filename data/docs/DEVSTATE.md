@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 9 fázis; 1. (halott kód) kész, a 2-9. (rétegek, lookup, párhuzamos kódutak, komponensek, típusok, CSS) jóváhagyásra vár
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; következő: 0. (ESLint + knip), utána 6a, 2, 3, 6b, 4, 5, 7 (+8 Python)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -107,7 +107,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **1. fázis kész, a 2-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **1. fázis kész, döntések megvannak; a 0. és a 2-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -145,7 +145,8 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | # | Lépés | Kockázat | Miért itt? |
 |---|---|---|---|
 | ✅ | 1. Halott kód | kicsi | kész (2026-11-06) |
-| 1 | **Döntési pontok** 1-3 (tooling, `rules.json` másolatok, mappaszerkezet) | nincs | a 2. és 4. fázis tartalmát megszabják; ha ESLint lesz, az a 2. fázis őrzője is |
+| ✅ | Döntési pontok | - | eldöntve (2026-11-06), l. lent |
+| 1 | **0. Tooling: ESLint + knip** | kicsi (futásidőt nem érint) | a 2. fázis rétegszabályát és a hooks deps-listákat innentől gép őrzi; a knip a további halott kódot adja |
 | 2 | **6a. Típusosság: `any` / `as unknown as` / `eslint-disable`** (a session-toggle séma nélkül) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
 | 3 | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
 | 4 | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
@@ -153,7 +154,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | 6 | **4. Párhuzamos kódutak** (benne: "Egységes effekt-modell: maradék" fent) | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
 | 7 | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
 | 8 | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
-| - | **8. Python pipeline** | kicsi | független, bármikor beilleszthető (vagy elhagyható - 4. döntési pont) |
+| - | **8. Python pipeline** | kicsi | független, bármikor beilleszthető (döntés: benne van) |
 | 9 | **9. Lezárás** | nincs | fázisonként részlegesen (MAP / refactorlog), a végén összesítve |
 
 *Dummies:* mint egy lakásfelújításnál - előbb eldöntjük, mi hova kerül (döntések), megjavítjuk a mérőműszert
@@ -161,6 +162,29 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 utána rendezzük át, a festés (CSS) pedig a legvégére marad, hogy ne kelljen kétszer festeni.
 
 ### Fázisok
+
+**0. Tooling: ESLint + knip** - kis kockázat (futásidőt nem érint), ~0,5-1 nap
+- [ ] devDependency: `eslint` (flat config, `typescript-eslint`), `eslint-plugin-react-hooks`, `eslint-plugin-import`
+  (vagy `-import-x`), `knip`; pontos, legalább 2 hetes verziók. Config a `web/karakter/` alatt (`eslint.config.js`, `knip.json`).
+- [ ] Kezdő szabálykészlet (szűk, hogy az első futás kezelhető legyen): `react-hooks/rules-of-hooks` (hiba),
+  `react-hooks/exhaustive-deps` (figyelmeztetés), `import/no-restricted-paths` (a 2. fázis rétegszabálya; addig a meglévő
+  6 sértés kivételként listázva), `@typescript-eslint/no-explicit-any` (figyelmeztetés, a 6a. fázis ezt nullázza).
+- [ ] `npm run lint` (eslint + knip). A `build`-be csak a HIBA szintű jelzés kerüljön (figyelmeztetés nem állítja meg a deployt).
+- [ ] A szándékosan szűk deps-listák (`useSérültStátusz`, `useAkadalyStatusz`, a meglévő 4 `eslint-disable`) indokolt
+  `// eslint-disable-next-line … -- <ok>` megjegyzést kapnak; NEM "javítandók".
+- [ ] Első knip-futás eredménye → az 1. fázis módszerével (egyenként ellenőrizve) takarítás; `AGENTS.md` Build & Test: `npm run lint`.
+
+*Dummies:* eddig egyetlen automata ellenőr volt (a `tsc`, ami a típusokat nézi). Most kettő érkezik mellé: az
+**ESLint** a "házirendet" figyeli (pl. "a motor nem nyúlhat a képernyőkhöz"), a **knip** pedig rendszeresen megkeresi
+a senki által nem használt kódot - amit az 1. fázisban kézzel, scripttel kerestünk.
+
+*Háttér (webes fogalmak):* a **devDependency** csak fejlesztéshez kell, a böngészőbe letöltött appba nem kerül bele
+(a bundle nem nő). Az **ESLint** a JavaScript/TypeScript világ szabványos kódellenőrzője: szabályokból áll, mindegyik
+hiba vagy figyelmeztetés szintű. A `react-hooks` szabályai a React hookok két buktatóját fogják meg: hook csak a
+komponens tetején hívható (feltételben nem), és a deps-listából ne maradjon ki változó. A **knip** a teljes import-gráfot
+bejárja (mint az 1. fázis saját scriptje, csak teljesebben), és listázza a nem használt fájlokat, exportokat, függőségeket.
+Csapda: az első futás sok jelzést ad - ezért szűk szabálykészlettel indulunk, és a meglévő sértéseket előbb listázzuk,
+nem egyszerre javítjuk.
 
 **1. Halott kód és üres indirekció** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
 (6 törölt fájl: 5 prod + 1 teszt; 6 halott export, 20 export szűkítve, 18 CSS osztály; +37 / −241 sor, build zöld).
@@ -183,7 +207,8 @@ A törlés biztonsági hálója a `tsc` (TypeScript fordító): ha valami mégis
   `extraFeltételTeljesül`, `FegyverResultMód` típus.
 - [ ] A 18 fül → fül import feloldása (+1: `tavharc` → `tulajdonsagok/proba-common`, 1. fázis); `harc/index.ts` /
   `harcertekek/index.ts` barrel: rendes API vagy törlés.
-- [ ] Őrző teszt (vitest, fájl-scan, új függőség nélkül): `engine/**` nem importál `components/**`-ból.
+- [ ] Őrző szabály (ESLint `import/no-restricted-paths`, 0. fázis): `engine/**` nem importál `components/**`-ból; fül → fül import csak `components/common/`-ra.
+- [ ] Mappaszerkezet (döntés): a csak egy fülhöz tartozó `*-calc.ts` a fül mellett marad; ami több fülön kell, `engine/`-be megy.
 
 *Dummies:* a motor (szabályszámítás) ne függjön a műszerfaltól (képernyők). Ma a motor néhány alkatrészt a
 Harc fül fiókjából vesz elő - ha valaki a Harc fület átrendezi, a motor eltörik. Rendrakás: minden közös alkatrész
@@ -218,8 +243,9 @@ csendes hiba (a fegyver "nem található", hibaüzenet nélkül).
 - [ ] §42 maradék (l. "Egységes effekt-modell: maradék" fent): VÉ-csökkentés, távharci CÉ, `collectTaktikaLetiltások`.
 - [ ] Közös `feltételKontextus(k, session, data, fegyver?)` helper a 14 kézi `buildAktívFeltételek` / `createFeltételEvaluator`
   összerakás helyett (2 `ponytail:` szűkítést is megold).
-- [ ] **Döntés:** `rules.json` képletek TS-másolatai (`manover-dobas-calc.ts`, `felszereles.ts`) - (a) marad + `rules-tukor`
-  teszt, vagy (b) közös `evalRule(név, ctx)` a reactive engine-ből.
+- [ ] `rules.json` képletek TS-másolatai (`manover-dobas-calc.ts` `manőverPontKéplet`, `felszereles.ts` páncél-lefedettség)
+  → közös `evalRule(data.rules, id, inputok)` az `engine/reactive.ts`-ben (`evalFormula` fölött; a `data.rules` már a
+  GameData-ban van). A két másolat és a `rules-tukor` teszt törlődik (döntés: (b)).
 - [ ] Kis klónok: `AkadalySection`↔`FelszerelesSection`, `ProbaHub`↔`TulajdonsagokScreen`, `AktivHelyzetek`↔`AktivTaktikak`,
   `TamadoDobasPopup`↔`CelzoDobasPopup`, `ImportOptionsPopup`.
 
@@ -285,7 +311,7 @@ egy névvel ellátott érték, mint egy konstans a kódban; a sötét/világos t
 hibáit semmilyen teszt nem fogja meg, a háló itt **screenshot-összevetés**: előtte és utána ugyanarról a képernyőről
 kép, és a kettőnek egyeznie kell.
 
-**8. Python pipeline (`data/gen`)** - opcionális, ~0,5 nap
+**8. Python pipeline (`data/gen`)** - kis kockázat, ~0,5 nap (döntés: benne van)
 - [ ] `validators.py` ismétlődő hibaüzenet- / ciklusmintái, `generate_tables.py` orchestration. Minden gate-re negatív teszt.
 
 *Dummies:* a YAML → JSON "fordító" kis takarítása. Kicsi (1500 sor), alacsony nyereség.
@@ -306,11 +332,13 @@ a refaktor után nem nőhet érdemben. A **refactorlog** a projekt naplója: mit
 
 ### Döntési pontok
 
-1. ESLint (`react-hooks` + `import/no-restricted-paths`) és `knip` devDependency-ként? Ha nem: a 2. fázis őrző tesztje + grep-heurisztika.
-2. `rules.json` TS-másolatok: (a) tükörteszt vagy (b) `evalRule` (4. fázis).
-3. Tiszta `*-calc.ts` fájlok: a fül mellett maradnak (javaslat) vagy mind `engine/<domain>/` alá?
-4. A 8. fázis (Python) benne legyen-e?
-5. Ütemezés: fázisonként külön jóváhagyással (javaslat); az 1-3. fázis önmagában is lezárható.
+Eldöntve (2026-11-06):
+
+1. **Tooling: ESLint + knip** devDependency-ként → új 0. fázis.
+2. **`rules.json` TS-másolatok: (b) `evalRule`** helper, a másolatok és a tükörteszt törlődnek (4. fázis).
+3. **Mappaszerkezet: fül mellett, közös → `engine/`** (2. fázis).
+4. **8. fázis (Python): benne van.**
+5. Ütemezés: fázisonként külön jóváhagyással (a steering szerint is).
 
 ---
 ## Good to have 💡
