@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
-import { useHarcComputed } from './useHarcComputed';
+import { calcHarcComputed } from './harc-computed';
 import { elsődlegesMód } from './fegyver-calc';
 import { collectDobásInfo, collectCéDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter, FegyverAlap } from '../../engine/types';
@@ -170,7 +170,7 @@ describe('collectDobásInfo - Pajzshasználat / Mesterfegyver SP a bontásban', 
   it('Mesterfegyver + Erőbónusz: a fegyver-mód saját SP-tagjaiból (fegyverSpBónuszok), csak a megjelölt fegyverre', () => {
     const mf = data.konstansok.mesterfegyver_bónuszok.find(b => b.fok === 2)!.SP;
     const k = { ...alap, fortélyok: [{ id: 'mesterfegyver', fok: 2, elem: kard.név }], fegyverek: [{ ...alap.fegyverek[0], alap: kard.név }], session } as Karakter;
-    const r = useHarcComputed(data, k, session).fegyverResults.find(x => x.fegyver_név === kard.név)!;
+    const r = calcHarcComputed(data, k, session).fegyverResults.find(x => x.fegyver_név === kard.név)!;
     const erő = Math.min(k.tulajdonságok.erő, elsődlegesMód(kard).Erőlimit);
     expect(fegyverSpBónuszok(r, kard.név)).toEqual([
       ...(erő ? [{ forrás: 'Erőbónusz', érték: erő }] : []),
@@ -178,7 +178,7 @@ describe('collectDobásInfo - Pajzshasználat / Mesterfegyver SP a bontásban', 
     ]);
     // Minden mód SP-je tartalmazza a tagokat: SP − erő − mf = a mód nélkülük számolt SP-je
     const k0 = { ...k, fortélyok: [], tulajdonságok: { ...k.tulajdonságok, erő: 0 } } as Karakter;
-    const r0 = useHarcComputed(data, k0, session).fegyverResults.find(x => x.fegyver_név === kard.név)!;
+    const r0 = calcHarcComputed(data, k0, session).fegyverResults.find(x => x.fegyver_név === kard.név)!;
     r.módok.forEach((m, i) => expect(m.SP - m.sp_erőbónusz - m.sp_mf).toBe(r0.módok[i].SP));
   });
 });

@@ -10,7 +10,7 @@
  * alkalmazzuk (warning + „Extrák" jelzés helyettesíti).
  */
 
-import type { ExtraFeltétel, ExtraHatás, FegyverExtraDef } from '../../engine/data-types';
+import type { ExtraFeltétel, ExtraHatás, FegyverExtraDef } from './data-types';
 import type { ExtraKontextus } from './extrak-info-calc';
 import { extraFeltételTeljesül, állapotIllik } from './extrak-info-calc';
 

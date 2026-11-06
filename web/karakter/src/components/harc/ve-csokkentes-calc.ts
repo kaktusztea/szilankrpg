@@ -8,7 +8,7 @@ import type { Karakter, Session } from '../../engine/types';
  * nincs külön dobás.
  */
 import { k20P } from '../../engine/dice';
-import { alkalmazEffektek } from './extrak-effekt';
+import { alkalmazEffektek } from '../../engine/extrak-effekt';
 
 export type Fegyverviszony = 'fegyverhátrány' | 'fegyverazonosság' | 'fegyverelőny';
 

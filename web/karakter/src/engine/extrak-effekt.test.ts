@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { alkalmazEffektek, aktívHatásokCélra, hiányzóInfósExtrák } from './extrak-effekt';
 import type { ExtraKontextus } from './extrak-info-calc';
-import type { FegyverExtraDef, ExtraHatás } from '../../engine/data-types';
+import type { FegyverExtraDef, ExtraHatás } from './data-types';
 
 function ctx(over: Partial<ExtraKontextus> = {}): ExtraKontextus {
   return { aktívFeltételek: new Set(), fortélyFokok: new Map(), aktívStátuszok: new Set(), ...over };

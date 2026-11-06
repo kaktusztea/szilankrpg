@@ -3,7 +3,6 @@ import type { Karakter, Session } from '../engine/types';
 import { useGameDataLoader } from './useGameDataLoader';
 import { useAutoSave } from './useAutoSave';
 import { useUndo } from './useUndo';
-export type { UndoEntry } from './useUndo';
 
 export function useKarakterState() {
   const { data, error, initialKarakter, initialDirty, initialWarning } = useGameDataLoader();

@@ -1,5 +1,5 @@
 import { MAX_KARAKTER_DB } from '../ui-constants';
-import type { Karakter, StoredKarakter } from '../engine/types';
+import type { Karakter, StoredKarakter, UndoEntry } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { isValidKarakter, sémaVerzióHiba } from '../engine/validate';
 import { removeKmJelölés } from './km-jelolesek';
@@ -81,7 +81,7 @@ export function removeSlotData(uid: string): void {
  * Tiszta olvasó (NINCS mellékhatás - a NjkSwitcher renderelés közben is hívja). Az elavult példány
  * eltávolítása a hívó felelőssége az `error` ág kezelésekor (`removeSlotData`).
  */
-export function loadSlotKarakter(uid: string): { karakter: Karakter; undo: any[] } | { error: string } | null {
+export function loadSlotKarakter(uid: string): { karakter: Karakter; undo: UndoEntry[] } | { error: string } | null {
   const charData = localStorage.getItem(`szilank_char_${uid}`);
   if (!charData) return null;
   try {

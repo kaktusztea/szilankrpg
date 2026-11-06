@@ -2,7 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import type { HarcComputed } from './types';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { lookupFegyver, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../../engine/utils';
+import { lookupFegyver, harcmodorÖsszeg as calcHarcmodorÖsszeg, buildPajzsFegyverNév } from '../../engine/utils';
 import { fortélyFok } from '../../engine/azonosito';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { createFeltételEvaluator } from '../../engine/feltetel-eval';
@@ -10,11 +10,11 @@ import { calcTaktikaMods } from './taktika-calc';
 import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
-import { buildPajzsFegyverNév, véVesztésSzorzó } from './shared';
+import { véVesztésSzorzó } from './shared';
 import { aktívTiltások, tiltásokFegyverre, fegyverOverrideÉrtékek, fegyverJárulékHatások, gyűjtHelyzetEffektek, gyűjtStátuszEffektek, értékCélra, flatBontás } from '../../engine/effekt';
-import { alkalmazEffektek } from './extrak-effekt';
+import { alkalmazEffektek } from '../../engine/extrak-effekt';
 
-export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
+export function calcHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
   const { konstansok } = data;
 

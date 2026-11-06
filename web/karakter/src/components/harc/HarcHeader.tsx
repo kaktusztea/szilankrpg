@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import type { Session } from '../../engine/types';
+import type { Session, UndoPatch } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { UndoPatch } from '../../hooks/useUndo';
 import { PopupOverlay } from '../PopupOverlay';
 
 interface HarcHeaderProps {

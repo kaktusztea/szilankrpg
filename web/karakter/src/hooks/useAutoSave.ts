@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { Karakter, StoredKarakter } from '../engine/types';
-import type { UndoEntry } from './useUndo';
+import type { Karakter, StoredKarakter, UndoEntry } from '../engine/types';
 import { generateIdLeíró } from '../engine/file-ops';
 import { upsertSlotEntry } from './slot-utils';
 

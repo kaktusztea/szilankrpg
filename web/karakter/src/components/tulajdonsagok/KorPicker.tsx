@@ -18,7 +18,7 @@ export function KorPicker({ kor, onSelect }: Props) {
 
   const { holdProps } = useHoldRepeat(step, { initialDelay: 200, minDelay: 30, factor: 0.82, getStep });
 
-  useEffect(() => { onSelect(value); }, [value]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { onSelect(value); }, [value]); // eslint-disable-line react-hooks/exhaustive-deps -- onSelect is a new closure each render; fire on value change only
 
   return (
     <div className="kep-prompt kor-picker">

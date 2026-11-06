@@ -12,6 +12,7 @@ import { buildPancelLookups, calcFtEnyhites } from '../components/harc/pancel-ca
 import { buildFegyverRows, calcFegyverResults } from '../components/harc/fegyver-calc';
 import { calcKétkezesHarc } from '../engine/ketkezes';
 import type { Karakter, FegyverAlap } from '../engine/types';
+import type { KonstansokRaw, GameData } from '../engine/data-types';
 
 const DATA_ROOT = resolve(__dirname, '../../../../data');
 
@@ -21,7 +22,7 @@ function loadJson<T>(path: string): T {
 
 let karakter: Karakter;
 let rules: Rule[];
-let konstansok: any;
+let konstansok: KonstansokRaw;
 let fegyverek: FegyverAlap[];
 let harcmodorBonusz: { szint: number; TÉ: number; VÉ: number; CÉ: number }[];
 
@@ -30,7 +31,7 @@ beforeAll(() => {
   rules = loadJson<{ rules: Rule[] }>('rules.json').rules;
   konstansok = loadJson('tables/konstansok.json');
   fegyverek = loadJson('tables/fegyverek_v2.json');
-  const raw = loadJson<any[]>('tables/harcmodor_kepzettsegek_bonuszok.json');
+  const raw = loadJson<Record<string, string>[]>('tables/harcmodor_kepzettsegek_bonuszok.json');
   harcmodorBonusz = raw.map(e => ({
     szint: parseInt(e['Harcmodor Szint']),
     TÉ: parseInt(e['TÉ']),
@@ -86,9 +87,9 @@ describe('Golden #2 - rules.json alapszámítások (Teszt karakter, 10. TSz, Dzs
 
 describe('Golden #2 - fegyver kalkuláció', () => {
   let harcmodorÖsszeg: number;
-  let lookupArrays: any;
+  let lookupArrays: ReturnType<typeof buildPancelLookups>;
   let stringCtx: Map<string, string>;
-  let data: any;
+  let data: GameData;
 
   beforeAll(() => {
     lookupArrays = buildPancelLookups(konstansok);
@@ -100,7 +101,7 @@ describe('Golden #2 - fegyver kalkuláció', () => {
     harcmodorÖsszeg = karakter.képzettségek
       .filter(k => k.id === 'harcmodor' && (konstansok.harcmodorok.közelharci as string[]).includes(k.elem))
       .reduce((s, k) => s + k.szint, 0);
-    data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] };
+    data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] } as Partial<GameData> as GameData;
   });
 
   it('Kard, lovag: TÉ=47, VÉ=62, SP=11, harckeret=0, támadások=1', () => {
@@ -142,7 +143,7 @@ describe('Golden #2 - kétkezes harc', () => {
     const result = calcKétkezesHarc({
       jobbFp: karakter.fegyverek[0],
       balFp: karakter.fegyverek[1],
-      fegyverek, karakter, konstansok, harcmodorBonusz, fortelyMods,
+      fegyverek, karakter, konstansok, harcmodorBonusz, fortelyMods, fegyverIdeaTabla: {},
       páncélMGT: 14,
     });
     expect(result).not.toBeNull();

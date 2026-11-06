@@ -1,6 +1,5 @@
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
+import type { Karakter, Session, UndoPatch } from '../../engine/types';
 
 export interface AktivBaseProps {
   data: GameData;

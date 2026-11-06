@@ -350,7 +350,7 @@ mert a Harc fül is használja. A korábbi `AktivFegyverSection`/`AktivFegyverfo
 | Komponens | Felelősség |
 |-----------|------------|
 | `HarcScreen.tsx` | Fő harc screen (fegyver blokk + header boxok + fegyvertábla + ÉP tábla) |
-| `useHarcComputed.ts` | Hook: context build + reactive evaluate + feltétel dispatch |
+| `harc-computed.ts` | Hook: context build + reactive evaluate + feltétel dispatch |
 | `fegyver-calc.ts` | buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes |
 | `taktika-calc.ts` | calcTaktikaMods (fokozatos extrapoláció) |
 | `pancel-calc.ts` | buildPancelLookups, calcFogas, calcFtEnyhites |

@@ -1,15 +1,14 @@
-import type { Karakter, Session, FegyverAlap, FegyverMod } from '../../engine/types';
+import type { Karakter, Session, FegyverAlap, FegyverMod, FegyverResultMód } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { evaluate, buildContext, filterFegyverRules, type Rule } from '../../engine/reactive';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, ideaDelta } from '../../engine/utils';
 import { képzettségSzint } from '../../engine/azonosito';
 import { findMfFok } from '../../engine/mf-utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
-import { ideaDelta } from './shared';
 import { tiltásokFegyverre, fegyverOverrideÉrtékek } from '../../engine/effekt';
-import { alkalmazEffektek } from './extrak-effekt';
+import { alkalmazEffektek } from '../../engine/extrak-effekt';
 import type { ExtraHatás } from '../../engine/data-types';
-import type { FegyverResult, FegyverResultMód } from './types';
+import type { FegyverResult } from './types';
 
 /** Cached filtered fegyver rules (keyed by rules array reference). */
 const _fegyverRulesCache = new WeakMap<Rule[], Rule[]>();

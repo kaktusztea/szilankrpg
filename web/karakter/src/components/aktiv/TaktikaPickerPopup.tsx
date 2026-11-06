@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, AktívTaktika } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
+import type { Karakter, Session, AktívTaktika, UndoPatch } from '../../engine/types';
 import { PickerOverlay } from './PickerOverlay';
 import { TaktikaPickerList } from './TaktikaPickerList';
 import { TaktikaFokPicker } from './TaktikaFokPicker';

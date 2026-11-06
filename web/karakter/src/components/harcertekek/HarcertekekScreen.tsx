@@ -1,8 +1,7 @@
-import type { Kepzettseg } from '../../engine/types';
+import type { Kepzettseg, UndoPatch } from '../../engine/types';
 import { képzKulcs, fortélyFok } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
 import { HmSection, HarciKepzettsegekSection, FegyverekSection, PancelSection, PajzsSection, Popups } from './index';
 import { useHint, usePopupState, useKarakterMutators } from './hooks';
 import './HarcertekekScreen.css';

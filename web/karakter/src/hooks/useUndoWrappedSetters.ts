@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
-import type { Karakter, Tulajdonsagok, Fortely, Kepzettseg } from '../engine/types';
-import type { UndoPatch } from './useUndo';
+import type { Karakter, Tulajdonsagok, Fortely, Kepzettseg, UndoPatch } from '../engine/types';
 import { describeKepChange } from '../engine/utils';
 import { képzKulcs, fortélyNév } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';

@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { buildPajzsFegyverNév, resolveNagyobbKisebb, computeTÉ, computeVÉ, coalesceVéHistory, véVesztésSzorzó } from './shared';
+import { resolveNagyobbKisebb, computeTÉ, computeVÉ, coalesceVéHistory, véVesztésSzorzó } from './shared';
 import type { Karakter } from '../../engine/types';
+import { buildPajzsFegyverNév } from '../../engine/utils';
 
 describe('buildPajzsFegyverNév', () => {
   it('builds name from méret', () => {

@@ -1,23 +1,6 @@
 import { useState, useCallback } from 'react';
-import type { Karakter, StoredKarakter } from '../engine/types';
+import type { Karakter, StoredKarakter, UndoPatch, UndoEntry } from '../engine/types';
 import { UNDO_MAX } from '../ui-constants';
-
-/**
- * Undo patch: a minimal inverse operation.
- * - For scalar fields: { field, prev } - restore field to prev value
- * - For array fields: { field, op, index?, item?, prev? }
- */
-export type UndoPatch =
-  | { field: string; prev: unknown; ckey?: string }                          // scalar overwrite (ckey: optional coalesce discriminator)
-  | { field: string; op: 'add'; item: unknown }                               // was added → undo = remove
-  | { field: string; op: 'remove'; index: number; item: unknown }             // was removed → undo = re-insert
-  | { field: string; op: 'update'; index: number; prev: unknown }             // was updated → undo = restore prev
-
-export interface UndoEntry {
-  timestamp: number;
-  leírás: string;
-  patches: UndoPatch[];
-}
 
 /** Apply a single patch (inverse) to a karakter. Returns new karakter. */
 function applyPatch(k: Karakter, patch: UndoPatch): Karakter {
@@ -49,7 +32,7 @@ function applyPatch(k: Karakter, patch: UndoPatch): Karakter {
 /** Filter out legacy undo entries (pre-patch format: full karakter snapshots). */
 export function sanitizeUndo(raw: unknown): UndoEntry[] {
   if (!Array.isArray(raw)) return [];
-  return raw.filter((e: any) => Array.isArray(e?.patches)) as UndoEntry[];
+  return raw.filter((e): e is UndoEntry => Array.isArray((e as { patches?: unknown } | null)?.patches));
 }
 
 function loadInitialUndo(): UndoEntry[] {

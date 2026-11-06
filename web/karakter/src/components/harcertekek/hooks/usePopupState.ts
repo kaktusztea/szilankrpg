@@ -50,7 +50,7 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
   }
 
   function close(key: keyof PopupState) {
-    const setters: Record<keyof PopupState, (v: any) => void> = {
+    const setters: Record<keyof PopupState, (v: null) => void> = {
       ideaTarget: setIdeaTarget,
       mfTarget: setMfTarget,
       anyagTarget: setAnyagTarget,

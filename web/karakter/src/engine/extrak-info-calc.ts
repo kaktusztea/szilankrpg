@@ -13,7 +13,7 @@
  *    ellenfél_fegyver_sebzésjelleg + minden `szöveges` mód → a KM/játékos dönt, nem auto.
  */
 
-import type { ExtraFeltétel, ExtraHatás, FegyverExtraDef } from '../../engine/data-types';
+import type { ExtraFeltétel, ExtraHatás, FegyverExtraDef } from './data-types';
 
 export type ExtraStátusz = 'aktív' | 'inaktív' | 'km';
 

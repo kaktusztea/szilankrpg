@@ -29,7 +29,7 @@ export function evaluateAlapesetek(
     if (!fok0.módosítók?.length) {
       result.push({ fortély_név: def.név, hatástext: fok0.hatás || [], módosítók: [] });
     } else {
-      const aktív = fok0.módosítók.filter((m: any) => {
+      const aktív = fok0.módosítók.filter(m => {
         if (!m.feltétel) return true;
         if (aktívFeltételek) return aktívFeltételek.has(m.feltétel);
         return evaluateFeltétel(m.feltétel, session, karakter);

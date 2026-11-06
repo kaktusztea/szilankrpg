@@ -8,8 +8,8 @@ import { netElőnySzint, sebzésPáncélDelta, célPáncélKategória, sebzésEl
 import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import { HatasokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
-import type { ExtraKontextus } from './extrak-info-calc';
-import { aktívHatásokCélra, alkalmazEffektek } from './extrak-effekt';
+import type { ExtraKontextus } from '../../engine/extrak-info-calc';
+import { aktívHatásokCélra, alkalmazEffektek } from '../../engine/extrak-effekt';
 import { SP_NINCS } from '../../engine/types';
 
 /** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */

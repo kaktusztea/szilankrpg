@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-types';
-import type { Karakter } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
+import type { Karakter, UndoPatch } from '../../engine/types';
 import type { HátterField } from './types';
 import { TagCloud } from './TagCloud';
 import { KarmaCloud } from './KarmaCloud';

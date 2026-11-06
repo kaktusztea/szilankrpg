@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { calcVéCsökkentés, type Fegyverviszony, type VéCsökkentésEredmény, type TaktikaVéCsökkentésEredmény } from './ve-csokkentes-calc';
 import type { FegyverExtraDef } from '../../engine/data-types';
-import type { ExtraKontextus } from './extrak-info-calc';
-import { hiányzóInfósExtrák } from './extrak-effekt';
+import type { ExtraKontextus } from '../../engine/extrak-info-calc';
+import { hiányzóInfósExtrák } from '../../engine/extrak-effekt';
 
 interface Props {
   /** A Támadó dobás k20 eredménye (a sikertelen támadás VÉ csökkentésének kockatagja). Fárasztás-ágnál irreleváns. */

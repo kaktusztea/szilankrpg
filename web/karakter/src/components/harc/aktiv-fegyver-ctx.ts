@@ -2,7 +2,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
 
-/** Egy fegyver kiszámolt harcértékei (a useHarcComputed eredményéből). */
+/** Egy fegyver kiszámolt harcértékei (a calcHarcComputed eredményéből). */
 interface FegyverResult {
   fegyver_név: string;
   TÉ: number;

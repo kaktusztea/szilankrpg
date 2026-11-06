@@ -1,6 +1,5 @@
-import type { Karakter } from '../../engine/types';
+import type { Karakter, UndoPatch } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { UndoPatch } from '../../hooks/useUndo';
 import { calcMaxHM, calcMaxAszimmetria } from './helpers';
 
 interface Props {

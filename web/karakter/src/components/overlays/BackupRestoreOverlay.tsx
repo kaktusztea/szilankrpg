@@ -3,11 +3,11 @@ import { OverlayPortal } from './OverlayPortal';
 import { MAX_KARAKTER_DB, MAX_NJK_DB } from '../../ui-constants';
 import { readSlots } from '../../hooks/slot-utils';
 import { njkCount } from '../../hooks/njk-slots';
-import type { Karakter } from '../../engine/types';
+import type { Karakter, UndoEntry } from '../../engine/types';
 
 interface BackupEntry {
   karakter: Karakter;
-  undo: any[];
+  undo: UndoEntry[];
 }
 
 interface Props {

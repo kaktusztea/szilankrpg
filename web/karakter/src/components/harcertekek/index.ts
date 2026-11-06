@@ -5,4 +5,3 @@ export { PancelSection } from './HarcertekekPancelSection';
 export { PajzsSection } from './HarcertekekPajzsSection';
 export { Popups } from './HarcertekekPopups';
 export { HarcertekekScreen } from './HarcertekekScreen';
-export { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from './PickerComponents';

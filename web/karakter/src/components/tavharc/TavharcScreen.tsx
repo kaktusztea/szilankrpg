@@ -179,7 +179,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       )}
 
       {showCéDobás && (() => {
-        // ponytail: a távharci gyűjtés a feltétel-kiértékelőt nem kapja meg (nincs useHarcComputed a fülön) → a
+        // ponytail: a távharci gyűjtés a feltétel-kiértékelőt nem kapja meg (nincs calcHarcComputed a fülön) → a
         // computed- / tulajdonság-forrású strukturált feltétel (pl. páncél_merev) itt mindig hamis; a "prefix:érték"
         // és a session-mezős feltétel működik. Ma egyetlen távharci kocka-hatás sem ilyen. Ha lesz: a collectDobásInfo
         // 5. paramétere már kész (közelharc: hc.feltételTeljesül), a collectCéDobásInfo-nak is kell + kiértékelő-helper.

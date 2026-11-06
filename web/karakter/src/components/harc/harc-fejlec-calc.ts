@@ -1,6 +1,6 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { useHarcComputed } from './useHarcComputed';
+import { calcHarcComputed } from './harc-computed';
 import { calcFtEnyhites } from './pancel-calc';
 import { buildRubrikák } from './ep-logic';
 import { computeTÉ, computeVÉ } from './shared';
@@ -13,7 +13,7 @@ import { resolveAktívFegyverContext } from './aktiv-fegyver-ctx';
  * `sebCount`: kitöltött ÉP-rubrikák száma; ha nincs megadva, a session sebzéseiből.
  */
 export function harcFejlécÉrtékek(data: GameData, karakter: Karakter, session: Session = karakter.session, sebCount?: number) {
-  const hc = useHarcComputed(data, karakter, session);
+  const hc = calcHarcComputed(data, karakter, session);
   const seb = sebCount ?? buildRubrikák(session.sebzések ?? [], hc.épValue).filter(r => r.típus !== '').length;
   const aktKat = seb === 0 ? 0 : Math.min(3, Math.ceil(seb / hc.oszlopMéret) - 1);
   const ftEnyhítés = calcFtEnyhites(karakter.képzettségek, data.konstansok.fájdalomtűrés_enyhítés);

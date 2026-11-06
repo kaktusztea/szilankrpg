@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
-import type { Session } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
+import type { Session, UndoPatch } from '../../engine/types';
 import { fmtHatás } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 import { PickerOverlay } from './PickerOverlay';
+import type { StátuszPerElem } from './aktiv-calc';
 import { előnyHátrányLabel } from '../../engine/dice';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
-  státuszPerElem: { név: string; hatások: any[] }[];
+  státuszPerElem: StátuszPerElem[];
   eseményNév: (id: string) => string;
 }
 

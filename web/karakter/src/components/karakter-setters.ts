@@ -1,7 +1,6 @@
-import type { Karakter, Fortely } from '../engine/types';
+import type { Karakter, Fortely, UndoPatch } from '../engine/types';
 import { képzettségSzint } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';
-import type { UndoPatch } from '../hooks/useUndo';
 import { njkLimitBlocked } from '../hooks/njk-slots';
 import { MAX_NJK_DB } from '../ui-constants';
 

@@ -30,7 +30,6 @@ function App() {
   const {
     data, error, karakter, setKarakter,
     testMode, setTestMode, isDirty, setIsDirty,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     viewingMode: _viewingMode, setViewingMode,
     undoStack, setUndoStack, pushUndo, undoTo,
     setTulajdonságok, setKépzettségek, setFortélyok, setSession,

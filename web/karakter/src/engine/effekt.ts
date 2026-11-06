@@ -13,12 +13,10 @@ import { képzKulcs } from './azonosito';
 import type { Karakter, Session, FegyverAlap } from './types';
 import type { GameData, ExtraHatás } from './data-loader';
 import { evaluateAlapesetek } from './alapeset';
-import { alkalmazEffektek } from '../components/harc/extrak-effekt';
-import { interpolateFokDef } from '../components/aktiv/taktika-helpers';
+import { alkalmazEffektek } from './extrak-effekt';
 import { createFeltételEvaluator } from './feltetel-eval';
-import { lookupFegyver } from './utils';
-import { buildPajzsFegyverNév } from '../components/harc/shared';
-import { extraFeltételTeljesül } from '../components/harc/extrak-info-calc';
+import { lookupFegyver, interpolateFokDef, buildPajzsFegyverNév } from './utils';
+import { extraFeltételTeljesül } from './extrak-info-calc';
 import { clampEHSzint } from './dice';
 
 type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';

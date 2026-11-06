@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter, UndoEntry } from '../engine/types';
 import { FEEDBACK_TIMEOUT_MS } from '../ui-constants';
 import { APP_VERSION } from '../version';
 import { readSlots, loadSlotKarakter, removeSlotData, type SlotEntry } from '../hooks/slot-utils';
@@ -9,7 +9,7 @@ import { ImportOptionsPopup } from './overlays/ImportOptionsPopup';
 
 interface Props {
   activeUid: string | undefined;
-  onLoad: (karakter: Karakter, undo: any[]) => void;
+  onLoad: (karakter: Karakter, undo: UndoEntry[]) => void;
   /** Betöltési hiba (pl. elavult sémaverzió) megjelenítése. */
   onLoadError?: (msg: string) => void;
   onDelete: (uid: string, név: string) => void;

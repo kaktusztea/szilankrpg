@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { interpolateFokDef, formatFokMods, getExtraFokok } from './taktika-helpers';
+import { formatFokMods, getExtraFokok } from './taktika-helpers';
+import { interpolateFokDef } from '../../engine/utils';
+import type { Karakter } from '../../engine/types';
 
 describe('interpolateFokDef', () => {
   const fokok = [
@@ -33,7 +35,7 @@ describe('formatFokMods', () => {
 describe('getExtraFokok', () => {
   it('returns base fokok without bővítés', () => {
     const def = { fokok: [{ fok: 1, TÉ: -5 }] };
-    const karakter = { fortélyok: [] } as any;
+    const karakter = { fortélyok: [] } as Partial<Karakter> as Karakter;
     expect(getExtraFokok(def, karakter)).toHaveLength(1);
   });
   it('adds extra fokok from fortély_bővítés', () => {
@@ -41,7 +43,7 @@ describe('getExtraFokok', () => {
       fokok: [{ fok: 1, TÉ: -5 }, { fok: 2, TÉ: -10 }],
       fortély_bővítés: { fortély: 'harcos', extra_fokok_per_fok: 1 },
     };
-    const karakter = { fortélyok: [{ id: 'harcos', fok: 2, elem: '' }] } as any;
+    const karakter = { fortélyok: [{ id: 'harcos', fok: 2, elem: '' }] } as Partial<Karakter> as Karakter;
     const result = getExtraFokok(def, karakter);
     expect(result).toHaveLength(4); // 2 base + 2 extra
     expect(result[3].fok).toBe(4);

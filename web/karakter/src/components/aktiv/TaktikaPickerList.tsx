@@ -56,7 +56,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
           <span className="aktiv-picker-item-name">{aktív ? '✔ ' : ''}{t.név}{t.fokozatos ? ' 📶' : ''}</span>
           <span className="aktiv-picker-item-details">
             {t.fokozatos && t.fokok
-              ? t.fokok.map((f: any) => `${f.fok}: ${formatFokMods(f)}`).join(' | ')
+              ? t.fokok.map(f => `${f.fok}: ${formatFokMods(f)}`).join(' | ')
               : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ') : ''}
           </span>
           {tiltásOk && <span className="aktiv-picker-item-tiltas">🔒 {tiltásOk}</span>}

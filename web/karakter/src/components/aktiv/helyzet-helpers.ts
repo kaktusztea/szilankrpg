@@ -1,7 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
-import { lookupFegyver } from '../../engine/utils';
-import { buildPajzsFegyverNév } from '../harc/shared';
+import { lookupFegyver, buildPajzsFegyverNév } from '../../engine/utils';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { aktívTiltások } from '../../engine/effekt';
 
@@ -25,8 +24,8 @@ export function getMinFegyverhosszWarning(
   for (const kf of karakter.fortélyok) {
     const fd = data.fortelySummaries.find(d => d.id === kf.id);
     if (!fd) continue;
-    const fokDef = fd.fokok.find((f: any) => f.fok === kf.fok);
-    const köv = fokDef?.követelmények?.find((k: any) => k.típus === 'min_fegyverméret' && k.feltétel === helyzetFeltételKulcs);
+    const fokDef = fd.fokok.find(f => f.fok === kf.fok);
+    const köv = fokDef?.követelmények?.find(k => k.típus === 'min_fegyverméret' && k.feltétel === helyzetFeltételKulcs);
     if (!köv) continue;
     const aktívFp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
     const aktívFd = session.aktív_fegyver_index === -2
@@ -51,9 +50,9 @@ export function getHelyzetInfoText(helyzetNév: string, data: GameData): string 
   const hId = def.feltétel_kulcs?.split(':')[1] || '';
   let alapText = '';
   for (const fd of data.fortelySummaries) {
-    const f0 = fd.fokok?.find((f: any) => f.fok === 0);
+    const f0 = fd.fokok?.find(f => f.fok === 0);
     if (!f0?.hatás?.length) continue;
-    const hasFelt = f0.módosítók?.some((m: any) => m.feltétel === `harci_helyzet:${hId}`) || f0.hatás?.join(' ').toLowerCase().includes(helyzetNév.toLowerCase());
+    const hasFelt = f0.módosítók?.some(m => m.feltétel === `harci_helyzet:${hId}`) || f0.hatás?.join(' ').toLowerCase().includes(helyzetNév.toLowerCase());
     if (hasFelt) { alapText = f0.hatás.join(' '); break; }
   }
   return (def.infó || '') + (alapText ? ` Alapeset: ${alapText}` : '');

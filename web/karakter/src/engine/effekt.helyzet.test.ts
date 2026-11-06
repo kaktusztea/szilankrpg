@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
-import { useHarcComputed } from '../components/harc/useHarcComputed';
+import { calcHarcComputed } from '../components/harc/harc-computed';
 import type { Karakter, Session } from './types';
 import { gyűjtStátuszEffektek } from './effekt';
 
@@ -12,7 +12,7 @@ describe('helyzet-effektek: VÉ a harcértékbe, vé_csökkentés a popup-bőví
   const k: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../data/karakter/test_karakter2.json'), 'utf-8'));
   const hc = (helyzetek: string[]) => {
     const session = { ...k.session, aktív_helyzetek: helyzetek } as Session;
-    return useHarcComputed(data, { ...k, session }, session);
+    return calcHarcComputed(data, { ...k, session }, session);
   };
 
   it('Láthatatlan - teljesen: VÉ +10, VÉ-csökkentés +2; a max VÉ-csökkenés is 10-zel nő', () => {
@@ -35,7 +35,7 @@ describe('státusz-effektek (§42 4b-2)', () => {
   const k: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../data/karakter/test_karakter3.json'), 'utf-8'));
   const hc = (státuszok: string[]) => {
     const session = { ...k.session, aktív_státuszok: státuszok, aktív_helyzetek: [] } as Session;
-    return useHarcComputed(data, { ...k, session }, session);
+    return calcHarcComputed(data, { ...k, session }, session);
   };
 
   it('gyűjtStátuszEffektek: fok-hatások, alkategóriás cél-kiegészítéssel; ismeretlen bejegyzés kimarad', () => {
@@ -59,7 +59,7 @@ describe('fortély-módosítók soronként (§42 4b-3)', () => {
   const sorok = (fortély: string, fok: number, session: Partial<Session>) => {
     const s = { ...k.session, kétkezes_harc: false, aktív_fegyver_bal_index: -1, aktív_taktikák: [], aktív_státuszok: [], aktív_helyzetek: [], ...session } as Session;
     const kar = { ...k, session: s, fortélyok: [...k.fortélyok.filter(f => f.id !== fortély), { id: fortély, fok, elem: '' }] } as Karakter;
-    return Object.fromEntries(useHarcComputed(data, kar, s).fegyverResults.map(r => [r.fegyver_név, r.fortély]));
+    return Object.fromEntries(calcHarcComputed(data, kar, s).fegyverResults.map(r => [r.fegyver_név, r.fortély]));
   };
 
   it('Belharcos 1: a bónusz csak a nem tiltott sorokon - a kézben lévő fegyvertől függetlenül', () => {

@@ -161,9 +161,9 @@ export function QrCodePopup({ url, név, tsz, onClose }: Props) {
       const blob = await qrToPngBlob(url, PNG_SIZE, pngLabel);
       const file = new File([blob], filename, { type: 'image/png' });
       await navigator.share({ title: `Szilánk - ${név}`, files: [file] });
-    } catch (e: any) {
+    } catch (e) {
       // User cancelled (iOS AbortError) - do NOT retry with URL fallback
-      if (e?.name === 'AbortError') return;
+      if ((e as { name?: string } | null)?.name === 'AbortError') return;
       // Fallback: share URL only (files not supported on this platform)
       try { await navigator.share({ title: `Szilánk - ${név}`, url }); } catch { /* cancelled */ }
     }

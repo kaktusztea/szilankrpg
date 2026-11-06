@@ -61,7 +61,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 |------|-----------|
 | `reactive.ts` | Rule engine: evaluate, buildContext, buildArrayContext |
 | `reactive-parse.ts` | Formula parser: evalFormula, aggregate resolverek (sum, lookup, stb.) |
-| `types.ts` | Karakter v2, Session, Fortely interface-ek |
+| `types.ts` | Karakter v2, Session, Fortely interface-ek, `FegyverResultMód`, `UndoPatch` / `UndoEntry` |
 | `data-types.ts` | GameData, FortelySummary, TaktikaEntry, HarciHelyzetEntry stb. |
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
 | `fortely-mods.ts` | calcFortelyMods - burkoló az `effekt.ts` gyűjtő fölött (fortély + alapeset → célonkénti Record) |
@@ -80,7 +80,9 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `validate.ts` | Karakter validáció |
 | `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció (a `gyűjtStátuszEffektek`-ből); `próbaÉrzékek`: alkategóriás státusz (Érzékvesztés) érzék-választó opciói |
 | `felszereles.ts` | Felszerelés keret/terhelés/Hátrány (§15/§33.1): `felszerelésMax`, `felszerelésTerhelés`, `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság` - a fegyver pont VAGY-VAGY `max(hossz,súly)` |
-| `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange |
+| `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange, `interpolateFokDef` (taktika fok-extrapoláció), `ideaDelta` (§16 Idea-delta), `buildPajzsFegyverNév` |
+| `extrak-info-calc.ts` | Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn). Aktív-jelzés: harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél feltételek + aktív manőverhez kapcsolt hatás-al-feltétel ("manőver:<id>") |
+| `extrak-effekt.ts` | Egységes effekt-precedencia (§42.3: override (bázis-csere)→additív→szorzó→max_limit, FLOOR) pure motor + aktívHatásokCélra (csak teljesült feltételű hatások) + hiányzóInfósExtrák (KM-warning, hiányos korreláció). Bekötve: Sebzés popup SP-delta, VÉ-csökkentés warning |
 
 ### Hooks (`hooks/`)
 | Hook | Felelősség |
@@ -153,7 +155,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
   taktika-megkotes.ts      Taktika megkötés-kiértékelés (isTaktikaAllowed: session/fegyver/harcmodor/támadás/távfegyver + kombó)
-  taktika-helpers.ts       Taktika módosító-formázás + fok-interpoláció (getTaktikaMods, getExtraFokok, formatFokMods, interpolateFokDef)
+  taktika-helpers.ts       Taktika módosító-formázás + fok-bővítés (getTaktikaMods, getExtraFokok, formatFokMods)
   helyzet-helpers.ts       Helyzet elérhetőség, min fegyverhossz, infó szöveg
   NaploTab.tsx             Verziók + Napló accordionok kompozíciója (CheckpointSection + NaploSection)
   CheckpointSection.tsx    Karakter verziók accordion (lista, létrehozás, törlés, megtekintés)
@@ -163,13 +165,13 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
 
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcScreen.tsx           Fő screen
-  useHarcComputed.ts       Context build + reactive evaluate + feltétel dispatch
+  harc-computed.ts         Context build + reactive evaluate + feltétel dispatch
   useVeCsokkenes.ts        VÉ-csökkenés kezelés hook (szorzó, korlát, undo, history-összevonás, flash)
   useSerultStatusz.ts      „Sérült (N)" státusz automatikus karbantartása az ÉP-rubrikák szerint
   fegyver-calc.ts          Per-fegyver TÉ/VÉ/SP/harckeret (optimalizált: 5 rule/fegyver)
   taktika-calc.ts          Taktika módosítók
   pancel-calc.ts           Páncél lookup + fogás VÉ
-  shared.ts                Közös utils: findMfFok, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév
+  shared.ts                Harc fül közös utils: resolveNagyobbKisebb, computeTÉ / computeVÉ, véVesztésSzorzó, coalesceVéHistory
   ep-logic.ts              ÉP sebesülés/gyógyulás pure logika
   harc-reszletek-calc.ts   Részletes értékek bontás
   harc-fejlec-calc.ts      A fejléc KÉ/TÉ/VÉ egyetlen számítása (harcFejlécÉrtékek) - HarcScreen + NJK switcher gyors-stat
@@ -179,8 +181,6 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   VeSzorzoInfoPopup.tsx    VÉ csökkentés szorzó/bázis infó popup
   combat-roll-info.ts      Támadó/Sebzés/CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve)
   HatasokInfo.tsx          Dobás-hatás badge feliratok (Előny/Hátrány/Enyhít formázás, pure fn)
-  extrak-info-calc.ts      Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn). Aktív-jelzés: harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél feltételek + aktív manőverhez kapcsolt hatás-al-feltétel ("manőver:<id>")
-  extrak-effekt.ts         Egységes effekt-precedencia (§42.3: override (bázis-csere)→additív→szorzó→max_limit, FLOOR) pure motor + aktívHatásokCélra (csak teljesült feltételű hatások) + hiányzóInfósExtrák (KM-warning, hiányos korreláció). Bekötve: Sebzés popup SP-delta, VÉ-csökkentés warning
   ExtrakInfo.tsx           "Extrák" gomb (💡, pulzál ha van aktív) + popup: fegyver-extrák listája státusz-jelzéssel (Támadó + Sebzés popupban)
   EpTable.tsx              ÉP sebesülés tábla (S1-S4)
   EpDialogs.tsx            Seb/Gyógy dialógusok (explicit click handler)
@@ -371,7 +371,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 |---|------|-------------|
 | 1-2 | KP, Tulajdonság pontok | `rules.json`, `App.tsx` |
 | 3 | ÉP | `rules.json` |
-| 4 | KÉ | `rules.json`, `useHarcComputed.ts` |
+| 4 | KÉ | `rules.json`, `harc-computed.ts` |
 | 5-6 | TÉ, VÉ | `fegyver-calc.ts`, `rules.json` |
 | 7 | CÉ | `tavharc/helpers.ts` |
 | 8 | SP | `fegyver-calc.ts` |
@@ -388,7 +388,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | 20 | Faj hátterek | `fajok/*.yaml` |
 | 21 | Taktikák, Helyzetek, Manőverek | `aktiv/`, `taktika-calc.ts` |
 | 22 | Státuszok, Hatások | `statuszok.yaml`, `AktivStatuszok.tsx` |
-| 24 | Kalkulált feltételek | `useHarcComputed.ts` |
+| 24 | Kalkulált feltételek | `harc-computed.ts` |
 | 26 | Kétkezes harc | `ketkezes.ts` |
 | 27 | Fegyverfogás | `HarcFegyverfogas.tsx`, `pancel-calc.ts` |
 | 29 | Undo | `useKarakterState.ts`, `useUndo.ts` |

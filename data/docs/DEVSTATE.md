@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; következő: 0. (ESLint + knip), utána 6a, 2, 3, 6b, 4, 5, 7 (+8 Python)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; következő: 6a maradék (`as unknown as`), 2 (fül → fül), 3, 6b, 4, 5, 7 (+8 Python)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -107,7 +107,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **1. fázis kész, döntések megvannak; a 0. és a 2-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0. és 1. fázis kész, döntések megvannak; a 2-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -146,9 +146,9 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 |---|---|---|---|
 | ✅ | 1. Halott kód | kicsi | kész (2026-11-06) |
 | ✅ | Döntési pontok | - | eldöntve (2026-11-06), l. lent |
-| 1 | **0. Tooling: ESLint + knip** | kicsi (futásidőt nem érint) | a 2. fázis rétegszabályát és a hooks deps-listákat innentől gép őrzi; a knip a további halott kódot adja |
-| 2 | **6a. Típusosság: `any` / `as unknown as` / `eslint-disable`** (a session-toggle séma nélkül) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
-| 3 | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
+| ✅ | 0. Tooling: ESLint + knip | kicsi | kész (2026-11-06) |
+| 2 | **6a. Típusosság:** ~~`any`~~ (kész) / `as unknown as` / `eslint-disable` (a session-toggle séma nélkül) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
+| 3 | **2. Rétegek és modulhatárok** (az `engine/` rész kész; maradt: fül → fül) | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
 | 4 | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
 | 5 | **6b. Típusfájlok bontása + session-toggle tipizált mező** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
 | 6 | **4. Párhuzamos kódutak** (benne: "Egységes effekt-modell: maradék" fent) | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
@@ -163,16 +163,14 @@ utána rendezzük át, a festés (CSS) pedig a legvégére marad, hogy ne kellje
 
 ### Fázisok
 
-**0. Tooling: ESLint + knip** - kis kockázat (futásidőt nem érint), ~0,5-1 nap
-- [ ] devDependency: `eslint` (flat config, `typescript-eslint`), `eslint-plugin-react-hooks`, `eslint-plugin-import`
-  (vagy `-import-x`), `knip`; pontos, legalább 2 hetes verziók. Config a `web/karakter/` alatt (`eslint.config.js`, `knip.json`).
-- [ ] Kezdő szabálykészlet (szűk, hogy az első futás kezelhető legyen): `react-hooks/rules-of-hooks` (hiba),
-  `react-hooks/exhaustive-deps` (figyelmeztetés), `import/no-restricted-paths` (a 2. fázis rétegszabálya; addig a meglévő
-  6 sértés kivételként listázva), `@typescript-eslint/no-explicit-any` (figyelmeztetés, a 6a. fázis ezt nullázza).
-- [ ] `npm run lint` (eslint + knip). A `build`-be csak a HIBA szintű jelzés kerüljön (figyelmeztetés nem állítja meg a deployt).
-- [ ] A szándékosan szűk deps-listák (`useSérültStátusz`, `useAkadalyStatusz`, a meglévő 4 `eslint-disable`) indokolt
-  `// eslint-disable-next-line … -- <ok>` megjegyzést kapnak; NEM "javítandók".
-- [ ] Első knip-futás eredménye → az 1. fázis módszerével (egyenként ellenőrizve) takarítás; `AGENTS.md` Build & Test: `npm run lint`.
+**0. Tooling: ESLint + knip** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md` (2. rész)
+`eslint` 10.13.0 + `typescript-eslint` 8.72.0 + `eslint-plugin-react-hooks` 7.1.1 + `knip` 6.42.1 (pontos verzió);
+`web/karakter/eslint.config.js`, `knip.json`; `npm run lint` (eslint + knip), a `build` a HIBA szintű ESLint-jelzésen áll meg.
+Rétegszabály: a beépített `no-restricted-imports` (`engine/**` → `components/**` tiltva; a 6 ismert sértés `effekt.ts` /
+`ketkezes.ts`-ben figyelmeztetésre engedve - a 2. fázis törli a kivételt). Közben: `useHarcComputed` → `calcHarcComputed`
+(`harc-computed.ts`; nem hook volt, csak a neve), 28 nem használt barrel / re-export törölve.
+Alapszint (figyelmeztetés): 50 `no-explicit-any` (37 prod / 13 teszt, → 6a. fázis), 17 `exhaustive-deps` (→ 5. fázis,
+egyenként: szándékos-e), 6 rétegsértés (→ 2. fázis). A 3 szándékosan szűk deps-lista indoklást kapott.
 
 *Dummies:* eddig egyetlen automata ellenőr volt (a `tsc`, ami a típusokat nézi). Most kettő érkezik mellé: az
 **ESLint** a "házirendet" figyeli (pl. "a motor nem nyúlhat a képernyőkhöz"), a **knip** pedig rendszeresen megkeresi
@@ -201,13 +199,15 @@ semmi nem hivatkozza, a böngésző feleslegesen tölti le. Csapda: a név néha
 A törlés biztonsági hálója a `tsc` (TypeScript fordító): ha valami mégis használta a törölt exportot, fordítási hibát ad.
 
 **2. Rétegek és modulhatárok** - közepes kockázat, ~2 nap
-- [ ] Szabály: `engine/` = tiszta számítás, React és `components/` import nélkül; fülek közti közös logika → `engine/`,
-  közös UI → `components/common/`.
-- [ ] Áthelyezés `engine/`-be: `alkalmazEffektek` (§42.3 motor), `interpolateFokDef`, `buildPajzsFegyverNév`, `ideaDelta`,
-  `extraFeltételTeljesül`, `FegyverResultMód` típus.
+- ✅ **`engine/` → `components/` rétegsértés: 0 (2026-11-06).** Az `extrak-effekt.ts` + `extrak-info-calc.ts` (+ tesztjeik)
+  `engine/`-be költözött; `interpolateFokDef`, `ideaDelta`, `buildPajzsFegyverNév` → `engine/utils.ts`; `FegyverResultMód`,
+  `UndoPatch` / `UndoEntry` → `engine/types.ts`. A szabály (`no-restricted-imports`) hiba szinten él, kivétel nélkül.
+- [ ] Szabály a doksiba (`AGENTS.md`): `engine/` = tiszta számítás, React és `components/` import nélkül; fülek közti közös
+  logika → `engine/`, közös UI → `components/common/`.
 - [ ] A 18 fül → fül import feloldása (+1: `tavharc` → `tulajdonsagok/proba-common`, 1. fázis); `harc/index.ts` /
   `harcertekek/index.ts` barrel: rendes API vagy törlés.
-- [ ] Őrző szabály (ESLint `import/no-restricted-paths`, 0. fázis): `engine/**` nem importál `components/**`-ból; fül → fül import csak `components/common/`-ra.
+- [ ] Őrző szabály a fül → fül importokra (`no-restricted-imports`, csak `components/common/` engedett) - a 18 irány feloldása után.
+  (A `harc/shared.ts` `mf-utils` re-exportja és az `aktiv/AktivHelpers.ts` barrel is ide tartozik.)
 - [ ] Mappaszerkezet (döntés): a csak egy fülhöz tartozó `*-calc.ts` a fül mellett marad; ami több fülön kell, `engine/`-be megy.
 
 *Dummies:* a motor (szabályszámítás) ne függjön a műszerfaltól (képernyők). Ma a motor néhány alkatrészt a
@@ -282,7 +282,9 @@ felülírná a játékos kézi választását) - ezt a refaktor nem "javíthatja
 automata teszt van, itt a **Playwright** (programból vezérelt böngésző, ami végigkattintja a felületet) adja a hálót.
 
 **6. Típusosság** - kis kockázat, ~1 nap
-- [ ] 34 `any` + 10 `as unknown as` (pl. session-toggle fortély) → tipizált mező / type guard (nincs backward-compat).
+- ✅ **`any`: 0 (2026-11-06)**, a `no-explicit-any` hiba szinten (6a). Közben: `getExtraFokok` típusos + a duplikált
+  fok-extrapoláció helperbe vonva; 3 elavult teszt-fixture javítva (l. refactorlog).
+- [ ] 10 `as unknown as` (pl. session-toggle fortély) → tipizált mező / type guard (nincs backward-compat).
 - [ ] `data-types.ts` (399) + `types.ts` (333) domainenkénti bontása; a 4 `eslint-disable` felülvizsgálata.
 
 *Dummies:* a TypeScript egy helyesírás-ellenőrző a kódhoz. Az `any` és az `as unknown as` azt mondja neki: "itt ne

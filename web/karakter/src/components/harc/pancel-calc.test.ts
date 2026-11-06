@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { calcFtEnyhites, calcFogas } from './pancel-calc';
+import type { Karakter, Session } from '../../engine/types';
+import type { GameData, KonstansokRaw } from '../../engine/data-types';
 
 const ftTable = [
   { szint: 1, enyhítés: 1 },
@@ -26,7 +28,7 @@ describe('calcFtEnyhites', () => {
   });
 
   it('ignores unrelated képzettségek', () => {
-    expect(calcFtEnyhites([{ név: 'Úszás', szint: 9 }], ftTable)).toBe(0);
+    expect(calcFtEnyhites([{ id: 'úszás', elem: '', szint: 9 }], ftTable)).toBe(0);
   });
 });
 
@@ -39,12 +41,12 @@ describe('calcFogas - belharc pajzs degradáció', () => {
       nagy: [{ fok: 0, VÉ: 16, TÉ: -9 }],
     },
   };
-  const baseK = { fortélyok: [], pajzs: { méret: 'nagy' }, fegyverek: [] } as any;
+  const baseK = { fortélyok: [], pajzs: { méret: 'nagy' }, fegyverek: [] } as Partial<Karakter> as Karakter;
   const baseSession = {
-    aktív_pajzs: true, fegyverfogás: 'egy_kezes', aktív_fegyver_index: 0,
+    aktív_pajzs: true, fegyverfogás: 'egyfegyveres', aktív_fegyver_index: 0,
     aktív_fegyver_bal_index: -1, aktív_helyzetek: [] as string[],
-  } as any;
-  const data = { konstansok, fegyverek: [] } as any;
+  } as Partial<Session> as Session;
+  const data = { konstansok: konstansok as Partial<KonstansokRaw> as KonstansokRaw, fegyverek: [] } as Partial<GameData> as GameData;
 
   it('nagy pajzs teljes VÉ-t ad belharcon kívül', () => {
     const { pajzsVÉ } = calcFogas(baseK, baseSession, data, {});

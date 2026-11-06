@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { buildFegyverInfó } from './fegyver-info-calc';
-import type { FegyverResult, FegyverResultMód } from './types';
-import type { Karakter } from '../../engine/types';
+import type { FegyverResult } from './types';
+import type { Karakter, FegyverResultMód } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 
 const mód = (p: Partial<FegyverResultMód>): FegyverResultMód => ({

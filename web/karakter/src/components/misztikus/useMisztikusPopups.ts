@@ -34,7 +34,7 @@ export function useMisztikusPopups() {
     openAltípus: (név: string) => setState(s => ({ ...s, tradícióPicker: false, tradícióAltípusPicker: név })),
     closeAltípus: () => setState(s => ({ ...s, tradícióAltípusPicker: null, tradícióPicker: true })),
 
-    openFelvétel: (def: any) => setState(s => ({ ...s, felvételDef: def })),
+    openFelvétel: (def: PopupState['felvételDef']) => setState(s => ({ ...s, felvételDef: def })),
     closeFelvétel: () => setState(s => ({ ...s, felvételDef: null })),
 
     openFok: (idx: number) => setState(s => ({ ...s, misztFokTarget: idx })),

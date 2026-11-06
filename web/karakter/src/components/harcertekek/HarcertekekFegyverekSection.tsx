@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import type { Karakter, FegyverPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, ideaDelta } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
-import { ideaDelta } from '../harc/shared';
 import { FegyverChip } from './HarcertekekFegyverChip';
 import { fegyverÁr } from './fegyver-ar-calc';
 import { árFormátum } from '../formatters';

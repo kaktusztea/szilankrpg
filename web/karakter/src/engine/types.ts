@@ -302,3 +302,53 @@ export interface TavfegyverAlap {
   extrák: string[];
   megjegyzés: string;
 }
+
+/** Egy fegyver-mód (Aktor) kiszámított harcértékei. */
+export interface FegyverResultMód {
+  aktor: string;
+  jelleg: string;
+  sebzéstípus: 'elsődleges' | 'másodlagos';
+  Forgatás: string;
+  TÉ: number;
+  VÉ: number;
+  SP: number;
+  Átütés: number;
+  támadások: number;
+  harckeret: number;
+  sebesség: number;
+  alap_TÉ: number;
+  alap_VÉ: number;
+  /** A Mesterfegyver-bónusz TÉ/VÉ része - a fegyver-járulék post-szorzóhoz (Beszorítva). */
+  mf_TÉ: number;
+  mf_VÉ: number;
+  /** Az SP-ben lévő Erőbónusz (min(Erő, mód Erőlimit) × (1 + fortély-arány), FLOOR) - a Sebzés popup bontásához. */
+  sp_erőbónusz: number;
+  /** Az SP-ben lévő Mesterfegyver-bónusz (konstansok.mesterfegyver_bónuszok) - a Sebzés popup bontásához. */
+  sp_mf: number;
+  // Harckeret részletezés
+  hk_harcmodor: number;
+  hk_gyorsaság: number;
+  hk_mgt: number;
+  hk_fortély: number;
+}
+
+// ============================================================
+// Undo (a mentett fájlba és a slotba is bekerül)
+// ============================================================
+
+/**
+ * Undo patch: a minimal inverse operation.
+ * - For scalar fields: { field, prev } - restore field to prev value
+ * - For array fields: { field, op, index?, item?, prev? }
+ */
+export type UndoPatch =
+  | { field: string; prev: unknown; ckey?: string }                          // scalar overwrite (ckey: optional coalesce discriminator)
+  | { field: string; op: 'add'; item: unknown }                               // was added → undo = remove
+  | { field: string; op: 'remove'; index: number; item: unknown }             // was removed → undo = re-insert
+  | { field: string; op: 'update'; index: number; prev: unknown }             // was updated → undo = restore prev
+
+export interface UndoEntry {
+  timestamp: number;
+  leírás: string;
+  patches: UndoPatch[];
+}

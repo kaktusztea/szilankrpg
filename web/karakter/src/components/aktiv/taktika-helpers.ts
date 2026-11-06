@@ -1,21 +1,8 @@
 import type { GameData } from '../../engine/data-loader';
+import type { TaktikaEntry } from '../../engine/data-types';
 import type { Karakter } from '../../engine/types';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, interpolateFokDef } from '../../engine/utils';
 import { képzettségSzint, fortélyFok } from '../../engine/azonosito';
-
-/** Extrapolált fokDef interpoláció: ha a keresett fok nincs a fokok listában de van fortély_bővítés. */
-export function interpolateFokDef<T extends { fok: number }>(fokok: T[], fok: number, hasBővítés: boolean): T | undefined {
-  const found = fokok.find(f => f.fok === fok);
-  if (found) return found;
-  if (!hasBővítés || fokok.length === 0) return undefined;
-  const utolsó = fokok[fokok.length - 1];
-  // Lineáris extrapoláció az utolsó definiált fokból: minden numerikus mező arányosan skálázódik
-  const result: Record<string, unknown> = { fok };
-  for (const [k, v] of Object.entries(utolsó)) {
-    if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') result[k] = Math.round((v / utolsó.fok) * fok);
-  }
-  return result as T;
-}
 
 /** Harci terület szűrő a taktika / helyzet pickerekhez: a dobó popup csak a saját területét mutatja. */
 export type HarcTerület = 'közelharc' | 'távharc';
@@ -57,26 +44,37 @@ export function getTaktikaMods(t: { név: string; fok?: number }, data: GameData
   return mods;
 }
 
+type TaktikaFokDef = NonNullable<TaktikaEntry['fokok']>[number];
+
+/** Numeric fields of the last defined fok, per fok (linear extrapolation base). */
+function fokonkéntiLépés(utolsó: TaktikaFokDef): Record<string, number> {
+  const perFok: Record<string, number> = {};
+  for (const [k, v] of Object.entries(utolsó)) {
+    if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
+  }
+  return perFok;
+}
+
+function extrapoláltFok(perFok: Record<string, number>, fok: number): TaktikaFokDef {
+  const entry: Record<string, unknown> = { fok };
+  for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * fok);
+  return entry as TaktikaFokDef;
+}
+
 /** Get taktika fokok including fortély bővítés extra fokok and harcmodor-level scaling. */
-export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): any[] {
-  let fokok = [...def.fokok];
+export function getExtraFokok(def: Pick<TaktikaEntry, 'fokok' | 'fortély_bővítés' | 'skálázható'>, karakter: Karakter, data?: GameData): TaktikaFokDef[] {
+  if (!def.fokok?.length) return [];
+  const alapFokok = def.fokok;
+  let fokok = [...alapFokok];
 
   // Fortély-based expansion (e.g. Támadás erőből)
   if (def.fortély_bővítés) {
     const fb = def.fortély_bővítés;
     const fbFok = fortélyFok(karakter.fortélyok, fb.fortély);
     const extraCount = fbFok * fb.extra_fokok_per_fok;
-    const utolsó = def.fokok[def.fokok.length - 1];
-    const perFok: Record<string, number> = {};
-    for (const [k, v] of Object.entries(utolsó)) {
-      if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
-    }
-    for (let i = 1; i <= extraCount; i++) {
-      const newFok = utolsó.fok + i;
-      const entry: any = { fok: newFok };
-      for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
-      fokok.push(entry);
-    }
+    const utolsó = alapFokok[alapFokok.length - 1];
+    const perFok = fokonkéntiLépés(utolsó);
+    for (let i = 1; i <= extraCount; i++) fokok.push(extrapoláltFok(perFok, utolsó.fok + i));
   }
 
   // Harcmodor-level scaling for skálázható taktikák (absolute max fok cap)
@@ -100,17 +98,8 @@ export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): an
         const currentMax = fokok[fokok.length - 1].fok;
         if (currentMax < maxFok) {
           // Extend with interpolated fokok
-          const utolsó = def.fokok[def.fokok.length - 1];
-          const perFok: Record<string, number> = {};
-          for (const [k, v] of Object.entries(utolsó)) {
-            if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
-          }
-          while (fokok[fokok.length - 1].fok < maxFok) {
-            const newFok = fokok[fokok.length - 1].fok + 1;
-            const entry: any = { fok: newFok };
-            for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
-            fokok.push(entry);
-          }
+          const perFok = fokonkéntiLépés(alapFokok[alapFokok.length - 1]);
+          while (fokok[fokok.length - 1].fok < maxFok) fokok.push(extrapoláltFok(perFok, fokok[fokok.length - 1].fok + 1));
         } else if (currentMax > maxFok) {
           // Truncate: cap at maxFok
           fokok = fokok.filter(f => f.fok <= maxFok);

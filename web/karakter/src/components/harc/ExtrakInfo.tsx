@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import type { FegyverExtraDef } from '../../engine/data-types';
-import { extrakInfoTételek, type ExtraKontextus, type ExtraStátusz } from './extrak-info-calc';
+import { extrakInfoTételek, type ExtraKontextus, type ExtraStátusz } from '../../engine/extrak-info-calc';
 
 const STÁTUSZ_LABEL: Record<ExtraStátusz, string> = {
   aktív: 'aktív',

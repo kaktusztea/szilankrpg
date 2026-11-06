@@ -7,7 +7,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
-import { useHarcComputed } from '../components/harc/useHarcComputed';
+import { calcHarcComputed } from '../components/harc/harc-computed';
 import { calcKpDetails } from '../components/kp-calc';
 import { calcPrimerKp } from '../components/tulajdonsagok/primerKpCalc';
 import { checkKövetelmények } from '../components/fortelyok/helpers';
@@ -20,7 +20,7 @@ const karakterJson = (f: string): Karakter =>
   JSON.parse(readFileSync(resolve(__dirname, '../../../../data/karakter', f), 'utf-8'));
 
 function számított(k: Karakter) {
-  const hc = useHarcComputed(data, k, k.session);
+  const hc = calcHarcComputed(data, k, k.session);
   const fajF = data.fajFortélyok[k.hátterek.faj] ?? {};
   return {
     kp: calcKpDetails(data, k),

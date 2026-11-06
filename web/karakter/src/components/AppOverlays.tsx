@@ -1,6 +1,5 @@
-import type { Karakter, Session } from '../engine/types';
+import type { Karakter, Session, UndoPatch, UndoEntry } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
-import type { UndoPatch } from '../hooks/useUndo';
 import { isSlotFull } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
 import {
@@ -29,7 +28,7 @@ export interface OverlayState {
   toast: { msg: string; type: 'success' | 'error' } | null;
   importConfirm: { karakter: Karakter; matchUid: string } | null;
   slotLimit: SlotLimitKind | null;
-  backupRestore: { karakterek: { karakter: Karakter; undo: any[] }[]; dátum: string } | null;
+  backupRestore: { karakterek: { karakter: Karakter; undo: UndoEntry[] }[]; dátum: string } | null;
 }
 
 interface Props {
@@ -53,8 +52,8 @@ interface Props {
   importKarakter: (k: Karakter, overwriteUid: string | false) => void;
   deleteSlot: (uid: string) => void;
   /** Karakter aktívvá tétele (state + undo + teszt mód + dirty) - useKarakterActions */
-  activateKarakter: (k: Karakter, undo?: any[]) => void;
-  setUndoStack: React.Dispatch<React.SetStateAction<any[]>>;
+  activateKarakter: (k: Karakter, undo?: UndoEntry[]) => void;
+  setUndoStack: React.Dispatch<React.SetStateAction<UndoEntry[]>>;
   isDirty: boolean;
   onViewCheckpoint?: (id: string) => void;
 }
@@ -183,7 +182,7 @@ export function AppOverlays({
           onRestore={(selected) => {
             const restored = restoreBackup(selected);
             if (restored) {
-              activateKarakter(restored.karakter, restored.undo as typeof undoStack);
+              activateKarakter(restored.karakter, restored.undo);
             }
             set('backupRestore', null);
             set('toast', { msg: `${selected.length} karakter betöltve`, type: 'success' });

@@ -6,10 +6,9 @@ import { HARCMODOR_ID, képzettségSzint, fortélyFok } from '../../engine/azono
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../../engine/data-types';
-import { harcmodorÖsszeg } from '../../engine/utils';
+import { harcmodorÖsszeg, buildPajzsFegyverNév } from '../../engine/utils';
 import { lookupFegyver } from '../../engine/utils';
 import { elsődlegesMód } from '../harc/fegyver-calc';
-import { buildPajzsFegyverNév } from '../harc/shared';
 import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 

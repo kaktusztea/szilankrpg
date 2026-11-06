@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import fc from 'fast-check';
-import { interpolateFokDef } from './taktika-helpers';
+import { interpolateFokDef } from '../../engine/utils';
 
 describe('interpolateFokDef fuzz', () => {
   it('interpolated values scale linearly', () => {

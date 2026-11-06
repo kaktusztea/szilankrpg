@@ -1,4 +1,4 @@
-import type { Karakter, StoredKarakter } from './types';
+import type { Karakter, StoredKarakter, UndoEntry } from './types';
 import type { GameData } from './data-loader';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
 import { validateKarakter, validateKarakterData, sémaVerzióHiba } from './validate';
@@ -91,7 +91,7 @@ function buildVersionedName(base: string, ver: number, maxLen?: number): string 
 // then picks max(existing N for that base) + 1 (base with no suffix counts as v1 → min result is 2).
 // If maxLen is given and "<base> N" would exceed it, the base is truncated so that " N" still fits.
 
-export function generateSaveFile(karakter: Karakter, undoStack: any[], mode: 'single' | 'backup'): { blob: Blob; filename: string } {
+export function generateSaveFile(karakter: Karakter, undoStack: UndoEntry[], mode: 'single' | 'backup'): { blob: Blob; filename: string } {
   const now = new Date();
   const dátum = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
 
@@ -135,8 +135,8 @@ export async function shareFile(blob: Blob, filename: string) {
 }
 
 type LoadFileResult =
-  | { type: 'single'; karakter: Karakter; undo: any[] }
-  | { type: 'backup'; karakterek: { karakter: Karakter; undo: any[] }[]; dátum: string }
+  | { type: 'single'; karakter: Karakter; undo: UndoEntry[] }
+  | { type: 'backup'; karakterek: { karakter: Karakter; undo: UndoEntry[] }[]; dátum: string }
   | { error: string };
 
 function isBackupFile(obj: unknown): obj is { szilánk_backup: true; karakterek: unknown[] } {
@@ -145,13 +145,14 @@ function isBackupFile(obj: unknown): obj is { szilánk_backup: true; karakterek:
   return o['szilánk_backup'] === true && Array.isArray(o['karakterek']);
 }
 
-function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter; undo: any[] } | { error: string } {
+function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter; undo: UndoEntry[] } | { error: string } {
   const vHiba = sémaVerzióHiba((obj as Record<string, unknown> | null)?.schema_version);
   if (vHiba) return { error: vHiba };
   const validation = validateKarakter(obj);
   if (!validation.valid) return { error: `Érvénytelen karakter - hiányzó mezők: ${validation.missing.join(', ')}` };
-  const raw = obj as Record<string, any>;
-  const refErr = validateKarakterData(raw as Karakter, data);
+  // Shape checked by validateKarakter above; `_undo` is the optional embedded undo history.
+  const raw = obj as Karakter & { _undo?: unknown };
+  const refErr = validateKarakterData(raw, data);
   if (refErr) return { error: `Referencia hiba: ${refErr}` };
   const karakter = { ...raw, uid: raw.uid || generateUid(), id_leíró: raw.id_leíró || generateIdLeíró(raw.név, raw.tsz), jk: raw.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...raw.előtörténet }, session: { ...DEFAULT_SESSION, ...raw.session }, kiterjesztés_negálva: raw.kiterjesztés_negálva ?? [] } as Karakter;
   return { karakter, undo: sanitizeUndo(raw._undo) };
@@ -172,7 +173,7 @@ export function loadKarakterFromFile(data: GameData): Promise<LoadFileResult> {
 
           // Backup file: array of characters
           if (isBackupFile(obj)) {
-            const karakterek: { karakter: Karakter; undo: any[] }[] = [];
+            const karakterek: { karakter: Karakter; undo: UndoEntry[] }[] = [];
             const errors: string[] = [];
             for (let i = 0; i < obj.karakterek.length; i++) {
               const result = parseSingleKarakter(obj.karakterek[i], data);

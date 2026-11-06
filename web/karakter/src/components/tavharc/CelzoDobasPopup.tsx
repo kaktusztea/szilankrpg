@@ -9,14 +9,13 @@ import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import { sebzésElőnyK20ból } from '../harc/combat-roll-info';
 import type { DobásHatás, SpBónusz } from '../harc/combat-roll-info';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
-import type { ExtraKontextus } from '../harc/extrak-info-calc';
+import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { HatasokInfo } from '../harc/HatasokInfo';
 import { TaktikaPickerPopup } from '../aktiv/TaktikaPickerPopup';
 import { HelyzetPickerPopup } from '../aktiv/HelyzetPickerPopup';
 import { aktívTerületen } from '../aktiv/taktika-helpers';
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
+import type { Karakter, Session, UndoPatch } from '../../engine/types';
 
 /**
  * Derive Sebzés Előny from the CÉ k20 roll value (same rule as TÉ):

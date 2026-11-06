@@ -11,6 +11,7 @@ import { evaluate, buildContext, type Rule } from '../engine/reactive';
 import { buildPancelLookups, calcFtEnyhites } from '../components/harc/pancel-calc';
 import { buildFegyverRows, calcFegyverResults } from '../components/harc/fegyver-calc';
 import type { Karakter, FegyverAlap } from '../engine/types';
+import type { KonstansokRaw, GameData } from '../engine/data-types';
 
 const DATA_ROOT = resolve(__dirname, '../../../../data');
 
@@ -20,7 +21,7 @@ function loadJson<T>(path: string): T {
 
 let karakter: Karakter;
 let rules: Rule[];
-let konstansok: any;
+let konstansok: KonstansokRaw;
 let fegyverek: FegyverAlap[];
 let harcmodorBonusz: { szint: number; TÉ: number; VÉ: number; CÉ: number }[];
 
@@ -29,7 +30,7 @@ beforeAll(() => {
   rules = loadJson<{ rules: Rule[] }>('rules.json').rules;
   konstansok = loadJson('tables/konstansok.json');
   fegyverek = loadJson('tables/fegyverek_v2.json');
-  const raw = loadJson<any[]>('tables/harcmodor_kepzettsegek_bonuszok.json');
+  const raw = loadJson<Record<string, string>[]>('tables/harcmodor_kepzettsegek_bonuszok.json');
   harcmodorBonusz = raw.map(e => ({
     szint: parseInt(e['Harcmodor Szint']),
     TÉ: parseInt(e['TÉ']),
@@ -84,9 +85,9 @@ describe('Golden #3 - rules.json alapszámítások (pak-Teth, 11. TSz, Amund)', 
 
 describe('Golden #3 - fegyver kalkuláció', () => {
   let harcmodorÖsszeg: number;
-  let lookupArrays: any;
+  let lookupArrays: ReturnType<typeof buildPancelLookups>;
   let stringCtx: Map<string, string>;
-  let data: any;
+  let data: GameData;
 
   beforeAll(() => {
     lookupArrays = buildPancelLookups(konstansok);
@@ -98,7 +99,7 @@ describe('Golden #3 - fegyver kalkuláció', () => {
     harcmodorÖsszeg = karakter.képzettségek
       .filter(k => k.id === 'harcmodor' && (konstansok.harcmodorok.közelharci as string[]).includes(k.elem))
       .reduce((s, k) => s + k.szint, 0);
-    data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] };
+    data = { konstansok, fegyverek, harcmodorBonusz, rules, fortelySummaries: [] } as Partial<GameData> as GameData;
   });
 
   it('Meneth (abbitacél, MF 1.fok): TÉ=25, VÉ=43, SP=7, harckeret=6, támadások=2', () => {

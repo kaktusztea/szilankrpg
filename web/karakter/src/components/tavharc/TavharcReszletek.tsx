@@ -1,6 +1,5 @@
-import type { Karakter } from '../../engine/types';
+import type { Karakter, UndoPatch } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { UndoPatch } from '../../hooks/useUndo';
 import type { CÉBontás } from './types';
 
 interface Props {

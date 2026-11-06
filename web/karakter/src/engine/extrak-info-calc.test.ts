@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { extrakInfoTételek, type ExtraKontextus } from './extrak-info-calc';
-import type { FegyverExtraDef } from '../../engine/data-types';
+import type { FegyverExtraDef } from './data-types';
 
 // A valós extrak.yaml alakjait tükröző fixtures.
 const defs: Record<string, FegyverExtraDef> = {

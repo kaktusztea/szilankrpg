@@ -1,4 +1,3 @@
-export { OverlayPortal } from './OverlayPortal';
 export { SzilankPickerOverlay } from './SzilankPickerOverlay';
 export { NewCharConfirmOverlay } from './NewCharConfirmOverlay';
 export { TestConfirmOverlay } from './TestConfirmOverlay';
@@ -14,5 +13,3 @@ export { ToastOverlay } from './ToastOverlay';
 export { ImportConfirmOverlay } from './ImportConfirmOverlay';
 export { SlotLimitOverlay, type SlotLimitKind } from './SlotLimitOverlay';
 export { BackupRestoreOverlay } from './BackupRestoreOverlay';
-export { SaveOptionsPopup } from './SaveOptionsPopup';
-export { ImportOptionsPopup } from './ImportOptionsPopup';

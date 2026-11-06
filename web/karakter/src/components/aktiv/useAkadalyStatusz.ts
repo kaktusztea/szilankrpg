@@ -33,5 +33,5 @@ export function useAkadalyStatusz(karakter: Karakter | null, data: GameData | nu
     });
     // ponytail: csak a cél-fok változására fut (mint a useSérültStátusz) - a kézi státusz-választást
     // nem írja felül azonnal, csak amikor az Akadály-fok ténylegesen változik.
-  }, [célFok]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [célFok]); // eslint-disable-line react-hooks/exhaustive-deps -- only on target-level change, must not override manual status choice
 }

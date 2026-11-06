@@ -1,35 +1,5 @@
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
-
-/** Egy fegyver-mód (Aktor) kiszámított harcértékei. */
-export interface FegyverResultMód {
-  aktor: string;
-  jelleg: string;
-  sebzéstípus: 'elsődleges' | 'másodlagos';
-  Forgatás: string;
-  TÉ: number;
-  VÉ: number;
-  SP: number;
-  Átütés: number;
-  támadások: number;
-  harckeret: number;
-  sebesség: number;
-  alap_TÉ: number;
-  alap_VÉ: number;
-  /** A Mesterfegyver-bónusz TÉ/VÉ része - a fegyver-járulék post-szorzóhoz (Beszorítva). */
-  mf_TÉ: number;
-  mf_VÉ: number;
-  /** Az SP-ben lévő Erőbónusz (min(Erő, mód Erőlimit) × (1 + fortély-arány), FLOOR) - a Sebzés popup bontásához. */
-  sp_erőbónusz: number;
-  /** Az SP-ben lévő Mesterfegyver-bónusz (konstansok.mesterfegyver_bónuszok) - a Sebzés popup bontásához. */
-  sp_mf: number;
-  // Harckeret részletezés
-  hk_harcmodor: number;
-  hk_gyorsaság: number;
-  hk_mgt: number;
-  hk_fortély: number;
-}
+import type { Karakter, Session, FegyverResultMód, UndoPatch } from '../../engine/types';
 
 /** Egy fegyver összesített eredménye: az elsődleges mód adatai a gyökéren (táblázat-nézet),
  * PLUSZ az összes mód listája (`módok`) a Támadó dobás mód-választójához. */
@@ -87,5 +57,5 @@ export interface HarcComputed {
   oszlopMéret: number;
   téLevonások: number[];
   feltételTeljesül: (feltétel: unknown) => boolean;
-  extraKontextus: import('./extrak-info-calc').ExtraKontextus;
+  extraKontextus: import('../../engine/extrak-info-calc').ExtraKontextus;
 }

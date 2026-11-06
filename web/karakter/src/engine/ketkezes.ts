@@ -1,8 +1,6 @@
-import type { FegyverAlap, Karakter, Session } from './types';
+import type { FegyverAlap, Karakter, Session, FegyverResultMód } from './types';
 import type { KonstansokRaw, GameData } from './data-types';
-import type { FegyverResultMód } from '../components/harc/types';
-import { ideaDelta } from '../components/harc/shared';
-import { lookupFegyver } from './utils';
+import { lookupFegyver, ideaDelta } from './utils';
 import { HARCMODOR_ID, harcmodorNév, képzettségSzint, fortélyFok } from './azonosito';
 
 interface KétkezesInput {

@@ -17,5 +17,5 @@ export function useSérültStátusz(sebCount: number, oszlopMéret: number, akt�
     });
     // ponytail: szándékosan csak a seb-szám / oszlopméret változására fut (mint eddig) - a kézi státusz-
     // változtatást nem írja felül azonnal.
-  }, [sebCount, oszlopMéret]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [sebCount, oszlopMéret]); // eslint-disable-line react-hooks/exhaustive-deps -- only on wound change, must not override manual status edits
 }

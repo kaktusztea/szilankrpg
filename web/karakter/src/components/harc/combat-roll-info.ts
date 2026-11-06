@@ -71,7 +71,7 @@ function collectSessionHatások(
   session: Session, karakter: Karakter, data: GameData, célFilter: Set<string>, fegyver?: FegyverAlap,
   teljesKiértékelő?: (feltétel: unknown) => boolean,
 ) {
-  // A kézben lévő fegyver kulcsai (mint a fegyversor fortély-feltételei, useHarcComputed): fegyver_kategória + tiltás.
+  // A kézben lévő fegyver kulcsai (mint a fegyversor fortély-feltételei, calcHarcComputed): fegyver_kategória + tiltás.
   const feltételek = buildAktívFeltételek(session, data);
   if (fegyver) {
     feltételek.add(`fegyver_kategória:${fegyver.kategória}`);
@@ -79,7 +79,7 @@ function collectSessionHatások(
   }
   const saját = createFeltételEvaluator(feltételek, session, new Map(), new Map(), new Map()).feltételTeljesül;
   // A „prefix:érték" kulcsokat a saját (fegyverre szabott) halmaz dönti el; a strukturált predikátumot - ha a hívó
-  // átadja - a teljes harc-kontextus (computed: páncél_merev / páncél_lefedettség, tulajdonságok; useHarcComputed),
+  // átadja - a teljes harc-kontextus (computed: páncél_merev / páncél_lefedettség, tulajdonságok; calcHarcComputed),
   // különben csak a session-mezők.
   const feltételTeljesül = (f: unknown) => (Array.isArray(f) && teljesKiértékelő ? teljesKiértékelő(f) : saját(f));
   const effektek = [
@@ -116,7 +116,7 @@ function collectSessionHatások(
  *
  * `aktívFegyver` opcionális (a kézben lévő fegyver): a fegyverfüggő fortély SP-bónusz (Pajzshasználat) a bontásban
  * (a mód-függő Erőbónusz / Mesterfegyver: `fegyverSpBónuszok`). `feltételTeljesül` opcionális: a harc-kontextus teljes
- * kiértékelője (`useHarcComputed().feltételTeljesül`) a strukturált fortély-/taktika-feltételekhez. Ha a karakter Ereje nem éri el a fegyver
+ * kiértékelője (`calcHarcComputed().feltételTeljesül`) a strukturált fortély-/taktika-feltételekhez. Ha a karakter Ereje nem éri el a fegyver
  * `erő_követelmény`-ét (md/064_02_06 "Fegyverek Erő követelménye"), Hátrány kerül
  * a Támadó (TÉ) dobásra (mértéke: konstansok.yaml → fegyver_erő_követelmény_hátrány).
  */

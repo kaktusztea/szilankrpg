@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter, UndoEntry } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { SlotEntry } from '../hooks/slot-utils';
 import { readSlots, loadSlotKarakter, removeSlotData } from '../hooks/slot-utils';
@@ -15,7 +15,7 @@ interface Props {
    *  ez az autoritatív állapota (jk, becenév, név, sebzések), hogy a sáv azonnal helyes legyen. */
   aktív: Karakter;
   data: GameData;
-  onLoad: (karakter: Karakter, undo: any[]) => void;
+  onLoad: (karakter: Karakter, undo: UndoEntry[]) => void;
   /** Betöltési hiba (pl. elavult sémaverzió) megjelenítése. */
   onLoadError?: (msg: string) => void;
 }

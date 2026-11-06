@@ -5,7 +5,7 @@
  */
 import { sémaVerzióHiba } from './validate';
 import { deflate, inflate } from 'pako';
-import type { Karakter, Fortely, FegyverPeldany } from './types';
+import type { Karakter, Fortely, FegyverPeldany, Tulajdonsagok } from './types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
 
 // ============================================================
@@ -133,7 +133,7 @@ function compactEncode(k: Karakter): CompactKarakter {
 }
 
 function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' | 'mentés_dátum' | 'jegyzetek' | 'napló' | 'session' | 'checkpoints'> {
-  const tulajdonságok: any = {};
+  const tulajdonságok = {} as Tulajdonsagok;
   TULAJ_ORDER.forEach((key, i) => { tulajdonságok[key] = c.tu[i] ?? 0; });
 
   const fortélyok: Fortely[] = c.fo.map(f => {

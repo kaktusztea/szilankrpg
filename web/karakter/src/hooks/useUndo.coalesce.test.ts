@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { coalesceKey, isNoopAfterCoalesce, type UndoPatch } from './useUndo';
+import { coalesceKey, isNoopAfterCoalesce } from './useUndo';
+import type { UndoPatch } from '../engine/types';
 
 // A páncél toggle (session.aktív_páncél) undo-viselkedésének ellenőrzése:
 // oda-vissza váltás NE töltse az undo stacket (coalesce + noop-drop).

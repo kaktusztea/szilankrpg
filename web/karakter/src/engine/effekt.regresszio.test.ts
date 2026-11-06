@@ -7,7 +7,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
-import { useHarcComputed } from '../components/harc/useHarcComputed';
+import { calcHarcComputed } from '../components/harc/harc-computed';
 import type { Karakter, Session } from './types';
 
 const data = loadGameDataSync();
@@ -50,7 +50,7 @@ describe('fortély- és taktika-módosítók regressziós snapshot', () => {
     it(címke, () => {
       const ki: Record<string, unknown> = {};
       for (const [sc, session] of sessionVariánsok(k.session)) {
-        const hc = useHarcComputed(data, { ...k, session }, session);
+        const hc = calcHarcComputed(data, { ...k, session }, session);
         const f = nemNulla(hc.fortelyMods), t = nemNulla(hc.taktikaMods);
         if (Object.keys(f).length || Object.keys(t).length) ki[sc] = { f, t };
       }

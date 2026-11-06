@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session } from '../../engine/types';
-import type { UndoPatch } from '../../hooks/useUndo';
+import type { Karakter, Session, UndoPatch } from '../../engine/types';
 import { fmtHatás, fmtCode } from '../formatters';
 import { isTaktikaAllowed, getTaktikaMods } from './AktivHelpers';
 import { TaktikaPickerPopup } from './TaktikaPickerPopup';
+import type { TaktikaHatásPerElem } from './aktiv-calc';
 
 interface Props {
   data: GameData;
@@ -12,7 +12,7 @@ interface Props {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
-  taktikaHatásPerElem: { név: string; hatások: any[] }[];
+  taktikaHatásPerElem: TaktikaHatásPerElem[];
   taktikaFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
   eseményNév: (id: string) => string;
 }
@@ -53,7 +53,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                   </div>
                   {hatásEntry && (
                     <div className="aktiv-taktika-hatas">
-                      {hatásEntry.hatások.map((h: any, j: number) => {
+                      {hatásEntry.hatások.map((h, j) => {
                         const txt = fmtHatás({ mód: h.mód, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
                         return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
                       })}

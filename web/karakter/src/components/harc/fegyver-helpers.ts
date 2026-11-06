@@ -1,7 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { lookupFegyver } from '../../engine/utils';
-import { buildPajzsFegyverNév } from './shared';
+import { lookupFegyver, buildPajzsFegyverNév } from '../../engine/utils';
 
 /** Fegyverhossz-kategória lookup közös helper */
 export function getFegyverhossz(data: GameData, alap: string): number {

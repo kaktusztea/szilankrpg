@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver } from '../../engine/utils';
+import { lookupFegyver, buildPajzsFegyverNév } from '../../engine/utils';
 import { getFegyverhossz, isHárító } from './fegyver-helpers';
-import { buildPajzsFegyverNév } from './shared';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function getKétkezesBalOpciók(

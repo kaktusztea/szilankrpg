@@ -1,11 +1,10 @@
 import { useCallback } from 'react';
-import type { Karakter, StoredKarakter } from '../engine/types';
+import type { Karakter, StoredKarakter, UndoEntry } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile, downloadFile, shareFile } from '../engine/file-ops';
 import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
-import type { UndoEntry } from './useUndo';
 import { sanitizeUndo } from './useUndo';
 import { isSlotFull, isUidTaken, readSlots, writeSlots, upsertSlotEntry } from './slot-utils';
 import { njkLimitBlocked } from './njk-slots';

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ideaDelta } from './shared';
+import { ideaDelta } from '../../engine/utils';
 
 // A valós konstansok.yaml idea tábla releváns sorai (fegyver_idea_tabla.json).
 const tabla = {

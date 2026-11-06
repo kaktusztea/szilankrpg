@@ -11,7 +11,8 @@ Magyar nyelvű asztali szerepjáték (RPG) webes karakteralkotó.
 
 ```bash
 cd /repo/github/szilank.code/web/karakter
-npm run build    # generate_tables.py + tsc + vite build
+npm run build    # generate_tables.py + vitest + tsc + eslint (csak hiba) + vite build
+npm run lint     # eslint (figyelmeztetésekkel) + knip (nem használt fájl / export / függőség)
 npm run dev      # localhost:5173
 ```
 

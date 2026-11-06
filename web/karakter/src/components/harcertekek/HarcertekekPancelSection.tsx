@@ -49,7 +49,7 @@ function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; 
 export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, onPopup, onIdeaTarget, showHint }: Props) {
   const { konstansok } = data;
   const struktúrák = konstansok.páncél_struktúrák;
-  const aktStruktúra = struktúrák.find((s: any) => s.struktúra === k.páncél.alap);
+  const aktStruktúra = struktúrák.find(s => s.struktúra === k.páncél.alap);
   const hasAlap = !!k.páncél.alap;
 
   const { sfé_fizikai, sfé_energia, mgt, ár } = calcPancelValues(k, data);

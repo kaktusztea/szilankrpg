@@ -1,11 +1,11 @@
-import type { Karakter } from '../engine/types';
+import type { Karakter, UndoEntry } from '../engine/types';
 import { MAX_KARAKTER_DB, MAX_NJK_DB } from '../ui-constants';
 import { readSlots, writeSlots, type SlotEntry } from './slot-utils';
 import { njkCount } from './njk-slots';
 
 export interface BackupItem {
   karakter: Karakter;
-  undo: unknown[];
+  undo: UndoEntry[];
 }
 
 /**

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter, UndoEntry } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { validateKarakterData } from '../engine/validate';
@@ -15,7 +15,7 @@ interface Deps {
   data: GameData;
   karakter: Karakter;
   isDirty: boolean;
-  activateKarakter: (k: Karakter, undo?: any[]) => void;
+  activateKarakter: (k: Karakter, undo?: UndoEntry[]) => void;
   deleteSlot: (uid: string) => void;
 }
 
@@ -48,7 +48,7 @@ export function useOverlayHandlers({ state: s, set, data, karakter, isDirty, act
     set('showNewConfirm', false);
   };
 
-  const handleSlotLoad = (k: Karakter, undo: any[]) => {
+  const handleSlotLoad = (k: Karakter, undo: UndoEntry[]) => {
     activateKarakter(k, undo);
     set('showSlotList', false);
   };

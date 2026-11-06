@@ -9,7 +9,7 @@ import { ExtrakInfo } from '../harc/ExtrakInfo';
 import { VeCsokkentesPopup } from '../harc/VeCsokkentesPopup';
 import type { Fegyverviszony } from '../harc/ve-csokkentes-calc';
 import type { FegyverExtraDef } from '../../engine/data-types';
-import type { ExtraKontextus } from '../harc/extrak-info-calc';
+import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { netElőnySzint } from '../harc/combat-roll-info';
 import type { DobásHatás } from '../harc/combat-roll-info';
 import type { ProbaDobás } from '../../engine/dice';
