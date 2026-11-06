@@ -10,6 +10,7 @@
 - [Nyitott tételek (áttekintés)](#nyitott-tételek-áttekintés)
 - [Egységes effekt-modell: maradék](#egységes-effekt-modell-maradék-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
+- [Webapp teljes refaktor: terv](#webapp-teljes-refaktor-terv-) 🚧
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
 - [Szabálykönyv (md/) konvenciók, tanulságok](#szabálykönyv-md-konvenciók-tanulságok)
@@ -19,6 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
+- **Webapp teljes refaktor: terv** - 9 fázis (halott kód, rétegek, lookup, párhuzamos kódutak, komponensek, típusok, CSS), jóváhagyásra vár
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -101,6 +103,193 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 - `fegyverek.yaml` módosítás → az `update_fegyvertablazat.yml` workflow (önteszt-kapu + `md_fegyvertablak_sync.py`) újragenerálja a `md/068_0x` táblákat; lokálisan is futtatható.
 - Változik a `data/tables/fegyverek_v2.json` → `npm run build` (vitest is); az érintett fegyverekre épülő golden tesztek frissítendők.
 - A balansz-önteszt regressziós elvárásait (`teszt.elvart`) egyik javaslat sem érinti.
+
+---
+## Webapp teljes refaktor: terv 🚧
+
+Állapot: **javaslat, jóváhagyásra vár** (2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+`data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
+
+**Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
+hogyan van megírva - hogy könnyebb legyen benne eligazodni, kevesebb helyen kelljen ugyanazt átírni, és kisebb
+legyen az esélye a csendes hibáknak.
+
+### Kiinduló mérés
+
+| Mérőszám | Érték | Mit jelent? |
+|---|---|---|
+| Prod kód / teszt | ~24 100 / ~28 000 sor (92 tesztfájl) | erős a tesztháló, van mire támaszkodni |
+| Szó szerinti duplikáció (jscpd) | 0,35% (10 klón, 114 sor) | a copy-paste már elfogyott (2026-10-17-i refaktor) |
+| `engine/` → `components/` import | 6 | a "motor" a "kijelzőből" vesz kódot - fordított függés |
+| Fül → fül import | 18 irány | a fülek egymás belsejébe nyúlnak |
+| Lineáris `find` entitás-keresés | 150+ (fegyver 76) + 28 kézi kisbetűs névösszevetés | mindenki máshogy keres ugyanabban az adatban |
+| `any` / `as unknown as` | 34 / 10 | itt a típusellenőrző "be van kötve a szeme" |
+| Nem hivatkozott CSS osztály / halott export | 26 / 2 (+4 csak tesztből) | jelöltlista, egyenként ellenőrizendő |
+| Lint | nincs ESLint | csak a `tsc` strict őrzi a kódot |
+
+### Alapelvek (minden lépésre)
+
+- **Viselkedés nem változik.** Előbb regressziós háló (minta: `effekt.regresszio` - a régi kóddal rögzített snapshot),
+  utána az átírás. *Dummies:* előbb lefényképezzük, mit számol ma a program, és az átírás után összevetjük - ha egy
+  szám is eltér, megállunk.
+- **Egy szelet = egy commit**, minden szelet után `npm run build`. *Dummies:* kis lépések, mindegyik után "működik
+  még?" - így egy hiba mindig egy kis változtatásra vezethető vissza.
+- Törlés előbb, mint új absztrakció; új közös helper csak legalább 3 hívóval.
+- Fázisonként `refactorlog` napló + `MAP.md`; böngészős ellenőrzés csak jóváhagyással.
+
+### Fázisok
+
+**1. Halott kód és üres indirekció** - kis kockázat, ~1 nap
+- [ ] Halott exportok: `dice.ts rollElőnyHátrányK6`, `types.ts FortelyFok`; csak tesztből hívott: `rollElőnyHátrány`,
+  `helyzet-toggle.ts GYENGÉBB_KÉZ`/`toggleHelyzet`, `proba-common.ts probaSiker` (halott vagy inline másolja a prod kód?).
+- [ ] Re-export shimek törlése: `harcertekek/PopupOverlay.tsx`, `tulajdonsagok/useEscapeClose.ts`; a két `usePopupState` rendezése.
+- [ ] 26 nem hivatkozott CSS osztály (a dinamikus `prefix-${…}` neveket előbb kizárni); csak helyben használt exportok szűkítése; elavult megjegyzések.
+
+*Dummies:* kidobjuk, amit senki nem használ. A "re-export shim" egy üres fájl, ami csak annyit mond: "az igazi máshol
+van" - felesleges kerülőút. Kevesebb kód = kevesebb, amit olvasni és karbantartani kell.
+
+*Háttér (webes fogalmak):* egy TS/TSX fájl egy **modul**; amit `export`-tal kitesz, azt más fájl `import`-tal
+használhatja (mint egy C-s header publikus függvényei). A **re-export** (`export { X } from '../X'`) csak továbbadja
+egy másik fájl tartalmát - régen azért készült, hogy a régi útvonalon is működjön az import. A **CSS osztály** egy
+névvel ellátott megjelenési szabály (`.extrak-badge { color: … }`), amit a HTML-elem `className`-je hivatkoz; ha
+semmi nem hivatkozza, a böngésző feleslegesen tölti le. Csapda: a név néha futás közben áll össze
+(`className={'extrak-badge-' + állapot}`), ezért a szövegkeresés "nem használtnak" láthatja - ezt kézzel kell kizárni.
+A törlés biztonsági hálója a `tsc` (TypeScript fordító): ha valami mégis használta a törölt exportot, fordítási hibát ad.
+
+**2. Rétegek és modulhatárok** - közepes kockázat, ~2 nap
+- [ ] Szabály: `engine/` = tiszta számítás, React és `components/` import nélkül; fülek közti közös logika → `engine/`,
+  közös UI → `components/common/`.
+- [ ] Áthelyezés `engine/`-be: `alkalmazEffektek` (§42.3 motor), `interpolateFokDef`, `buildPajzsFegyverNév`, `ideaDelta`,
+  `extraFeltételTeljesül`, `FegyverResultMód` típus.
+- [ ] A 18 fül → fül import feloldása; `engine/index.ts` / `harc/index.ts` barrel: rendes API vagy törlés.
+- [ ] Őrző teszt (vitest, fájl-scan, új függőség nélkül): `engine/**` nem importál `components/**`-ból.
+
+*Dummies:* a motor (szabályszámítás) ne függjön a műszerfaltól (képernyők). Ma a motor néhány alkatrészt a
+Harc fül fiókjából vesz elő - ha valaki a Harc fület átrendezi, a motor eltörik. Rendrakás: minden közös alkatrész
+a motorba kerül, a fülek csak onnan vesznek, egymás fiókjába nem nyúlnak.
+
+*Háttér (webes fogalmak):* a webapp két fő része: az `engine/` sima TypeScript függvények (bemenet → kimenet,
+nincs képernyő), a `components/` pedig **React komponensek** - függvények, amik az adatból a képernyő egy darabját
+(HTML-t) állítják elő. Ez a klasszikus "üzleti logika vs. megjelenítés" (MVC-szerű) szétválasztás. A jó irány:
+a komponens hívja a motort, fordítva soha - így a motor képernyő nélkül, egységtesztben is futtatható, és egy
+képernyő átírása nem érinti a számítást. A **barrel** (`index.ts`, ami több fájl exportjait egybegyűjti) kényelmes
+"bejárat" egy mappához; ha félig van kitöltve, csak megtéveszt. Az **őrző teszt** egy kis automata, ami minden
+buildnél végigolvassa az `engine/` fájlok `import` sorait, és hibát jelez, ha valaki `components/`-ből importál.
+
+**3. Lookup-réteg a GameData-ra** - közepes kockázat, 1-2 nap
+- [ ] `engine/lookup.ts`: a `data-loader` EGYSZER épít indexet (id és kanonikus név szerint) fegyverre, fortélyra,
+  képzettségre, taktikára, helyzetre, státuszra, manőverre, extrára.
+- [ ] A 150+ `find` és 28 kisbetűs összevetés átállítása; ismeretlen névre a viselkedés marad (`undefined`, nem dob) - teszttel.
+
+*Dummies:* ma a program minden alkalommal végiglapozza az egész "fegyverkönyvet", hogy megtaláljon egy fegyvert,
+és mindenhol kicsit másképp (hol kisbetűsítve, hol nem). Helyette egyszer készül egy tárgymutató, és mindenki abból
+keres - gyorsabb, és nem lehet "elnézni" egy nevet.
+
+*Háttér (webes fogalmak):* a játékadat (fegyverek, fortélyok, …) induláskor JSON-fájlokból töltődik be a böngészőbe,
+egy nagy `GameData` objektumba, benne tömbökkel (listákkal). A `tömb.find(x => x.név === keresett)` elejétől
+végéig végignézi a listát (O(n)). A **`Map`** a JavaScript beépített hash-táblája (mint a Python `dict`): kulcs
+alapján azonnal ad értéket. A "kanonikus név" azt jelenti, hogy a kulcsot egyszer, egységesen normalizáljuk
+(pl. kisbetűre), és utána mindenki ugyanazzal a kulccsal keres. A sebességnyereség itt kicsi (pár száz elem), a fő
+haszon az egységesség: ma 28 helyen kézzel `toLowerCase()`-szel hasonlít a kód, és ha egy helyen kimarad, az
+csendes hiba (a fegyver "nem található", hibaüzenet nélkül).
+
+**4. Párhuzamos kódutak egyesítése** - közepes kockázat, ~2 nap
+- [ ] §42 maradék (l. "Egységes effekt-modell: maradék" fent): VÉ-csökkentés, távharci CÉ, `collectTaktikaLetiltások`.
+- [ ] Közös `feltételKontextus(k, session, data, fegyver?)` helper a 14 kézi `buildAktívFeltételek` / `createFeltételEvaluator`
+  összerakás helyett (2 `ponytail:` szűkítést is megold).
+- [ ] **Döntés:** `rules.json` képletek TS-másolatai (`manover-dobas-calc.ts`, `felszereles.ts`) - (a) marad + `rules-tukor`
+  teszt, vagy (b) közös `evalRule(név, ctx)` a reactive engine-ből.
+- [ ] Kis klónok: `AkadalySection`↔`FelszerelesSection`, `ProbaHub`↔`TulajdonsagokScreen`, `AktivHelyzetek`↔`AktivTaktikak`,
+  `TamadoDobasPopup`↔`CelzoDobasPopup`, `ImportOptionsPopup`.
+
+*Dummies:* ez a "rejtett duplikáció": a kód nem szó szerint ismétlődik, de ugyanazt a szabályt két helyen, kétféleképp
+számolja ki. Ha a szabály változik, és csak az egyik helyen javítják, a két hely csendben mást mond. Cél: minden
+szabály EGY helyen éljen.
+
+*Háttér (webes fogalmak):* a karakter értékeit (TÉ, VÉ, SP, …) a `data/rules.json` képletei számolják egy saját
+**reactive engine**-nel: mint egy táblázatkezelő, ha egy cella (pl. Erő) változik, a rá épülő cellák automatikusan
+újraszámolódnak. Néhány felugró ablak (popup) viszont nem ezt a motort hívja, hanem a képlet egy kézzel írt TS
+másolatát - ez a "TS-másolat". Ma egy teszt (`rules-tukor`) ellenőrzi, hogy a kettő egyezik; a (b) opció a másolatot
+törölné, és a popup is a motort kérdezné meg. A **feltétel-kontextus** az a "pillanatkép", ami alapján egy feltételes
+hatás eldől (pl. "csak ha Belharcban vagy"): melyik helyzet, taktika, fegyver aktív. Ma ezt 14 helyen külön rakja össze
+a kód - és ahol egy elem kimarad, ott a feltétel csendben hamis lesz.
+
+**5. Nagy, állapotgazdag komponensek szétbontása** - közepes-magas kockázat, ~3 nap
+- [ ] `ManoverDobasPopup` (458 sor, 14 `useState`) + `manover-dobas-calc` (482), `KepzettsegProbaPopup` (382, 16),
+  `HarcScreen` (333, 15), `SebzesPopup` / `TamadoDobasPopup` / `CelzoDobasPopup` közös váz, `App` + `AppOverlays`.
+- [ ] Minta (2026-10-17 próba-modul): tiszta `*-calc.ts` + `use*` állapot-hook (useReducer) + `*Reszek.tsx` megjelenítő részek.
+- [ ] A szándékosan szűk deps-listák (`useSérültStátusz`, `useAkadalyStatusz`) NEM javítandók. Böngészős ellenőrzés javasolt.
+
+*Dummies:* néhány képernyő-darab "mindenes": egyszerre számol, emlékszik 15 dologra és rajzol. Szétszedjük három
+szerepre: számoló (tesztelhető), emlékező (állapot) és rajzoló (megjelenés). Külön-külön mindegyik érthető.
+
+*Háttér (webes fogalmak):* a React komponens minden változáskor újra lefut, és újrarajzolja a képernyő-darabját.
+Ami két futás között megmarad (pl. "melyik kocka van kiválasztva", "nyitva van-e az al-ablak"), az **állapot**, és a
+`useState()` hívással kérhető - minden `useState` egy külön változó. 15 ilyen egy komponensben azt jelenti, hogy
+15 egymásra ható változót kell fejben tartani. A **hook** (`use…` nevű függvény) egy komponensből kiemelt, újra
+felhasználható állapot + logika csomag. A **`useReducer`** az összetartozó állapotokat egy objektumba gyűjti, és
+csak megnevezett "műveletekkel" engedi módosítani (`{ type: 'kockaVálasztás', … }`) - mint egy kis állapotgép,
+így nem kerülhet ellentmondásos állapotba. A **deps-lista** (`useEffect(…, [a, b])`) mondja meg, mikor fusson újra
+egy mellékhatás; a "szándékosan szűk" lista azt jelenti, hogy tudatosan NEM fut újra minden változásra (különben
+felülírná a játékos kézi választását) - ezt a refaktor nem "javíthatja ki". Mivel a komponens-viselkedésre kevés
+automata teszt van, itt a **Playwright** (programból vezérelt böngésző, ami végigkattintja a felületet) adja a hálót.
+
+**6. Típusosság** - kis kockázat, ~1 nap
+- [ ] 34 `any` + 10 `as unknown as` (pl. session-toggle fortély) → tipizált mező / type guard (nincs backward-compat).
+- [ ] `data-types.ts` (399) + `types.ts` (333) domainenkénti bontása; a 4 `eslint-disable` felülvizsgálata.
+
+*Dummies:* a TypeScript egy helyesírás-ellenőrző a kódhoz. Az `any` és az `as unknown as` azt mondja neki: "itt ne
+nézd". Ezeket a vakfoltokat szüntetjük meg, hogy az elírásokat a fordító fogja meg, ne a játékos.
+
+*Háttér (webes fogalmak):* a **TypeScript** a JavaScript típusos változata; a böngésző csak JavaScriptet ért, a
+típusok a fordításkor (`tsc`) ellenőrződnek, és utána eltűnnek. Az `any` típus kikapcsolja az ellenőrzést az adott
+értékre; az `as unknown as X` pedig "kényszerített típuskonverzió" (mint C-ben egy `void*` cast): a fordító elhiszi,
+hogy az érték X, akkor is, ha nem az. A **type guard** egy kis függvény, ami futás közben ellenőrzi az alakot, és
+utána a fordító is tudja a pontos típust. A nagy típusfájlok (`types.ts`, `data-types.ts`) bontása csak rendezés:
+a karakter, a session (harc közbeni állapot) és a játékadat típusai külön fájlba kerülnek. Az **eslint-disable**
+egy kódellenőrző figyelmeztetés kézi elnémítása - mind a 4-et újra kell nézni, indokolt-e még.
+
+**7. CSS** - kis kockázat, ~1 nap
+- [ ] `HarcScreen.css` (1361 sor): fülön kívül is használt szabályok → `styles/common.css`, popup-stílus a komponens mellé.
+- [ ] Ismétlődő szín / térköz / radius → CSS változók. Vizuális előtte / utána screenshot (jóváhagyással).
+
+*Dummies:* a megjelenés szabályai rendet kapnak: ami közös, egy helyre; a gyakran ismétlődő színek nevet kapnak,
+így egy szín cseréje egy sor, nem húsz.
+
+*Háttér (webes fogalmak):* a **CSS** írja le, hogyan néz ki egy HTML-elem (szín, méret, elrendezés). A CSS
+szabályok globálisak: egy `HarcScreen.css`-ben definiált osztály a Tulajdonságok fülön is hat, ha ott is ugyanazt
+a nevet használják - ezért egy fül fájljában "elrejtett" közös szabály törékeny (a fül CSS-ének takarításakor
+máshol is eltörhet a kinézet). A **CSS változó** (`--szín-kiemelés: #c33;`, használat: `color: var(--szín-kiemelés)`)
+egy névvel ellátott érték, mint egy konstans a kódban; a sötét/világos téma is ezen keresztül kapcsolható. Mivel a CSS
+hibáit semmilyen teszt nem fogja meg, a háló itt **screenshot-összevetés**: előtte és utána ugyanarról a képernyőről
+kép, és a kettőnek egyeznie kell.
+
+**8. Python pipeline (`data/gen`)** - opcionális, ~0,5 nap
+- [ ] `validators.py` ismétlődő hibaüzenet- / ciklusmintái, `generate_tables.py` orchestration. Minden gate-re negatív teszt.
+
+*Dummies:* a YAML → JSON "fordító" kis takarítása. Kicsi (1500 sor), alacsony nyereség.
+
+*Háttér:* a játékadat ember által szerkesztett YAML-ben él (`data/sources/`), a webapp viszont JSON-t tölt be.
+A `generate_tables.py` buildkor átalakítja, közben **build-gate**-ekkel ellenőriz (séma, elnevezés, hivatkozások):
+hibás adatnál a build megáll. A **negatív teszt** azt nézi meg, hogy egy szándékosan elrontott adatra a gate
+tényleg bukik-e - különben egy rossz útvonal miatt csendben "mindent rendben" mondhatna.
+
+**9. Lezárás**
+- [ ] `MAP.md`, `AGENTS.md` (rétegszabály, lookup-konvenció), `engine_spec` §42.6, DEVSTATE sync, összesítő refactorlog
+  (sor- és bundle-mérleg; 2026-10-17-i bundle: 781 kB).
+
+*Dummies / háttér:* a térkép (`MAP.md`: mi melyik fájlban van) és a szabályok (`AGENTS.md`: hogyan írunk kódot)
+frissítése, hogy a következő fejlesztő (ember vagy AI) az új rendet találja, ne a régit. A **bundle** az a pár
+JavaScript-fájl, amit a `vite build` az összes forrásból összecsomagol, és a böngésző letölt; a mérete jó "mérleg":
+a refaktor után nem nőhet érdemben. A **refactorlog** a projekt naplója: mit, miért, milyen csapdába futottunk.
+
+### Döntési pontok
+
+1. ESLint (`react-hooks` + `import/no-restricted-paths`) és `knip` devDependency-ként? Ha nem: a 2. fázis őrző tesztje + grep-heurisztika.
+2. `rules.json` TS-másolatok: (a) tükörteszt vagy (b) `evalRule` (4. fázis).
+3. Tiszta `*-calc.ts` fájlok: a fül mellett maradnak (javaslat) vagy mind `engine/<domain>/` alá?
+4. A 8. fázis (Python) benne legyen-e?
+5. Ütemezés: fázisonként külön jóváhagyással (javaslat); az 1-3. fázis önmagában is lezárható.
 
 ---
 ## Good to have 💡
