@@ -14,7 +14,7 @@ interface HelyzetFortélyEntry { név: string; fok: number; hatás: string; akt�
 interface ManőverBónusz { név: string; manőver: string; érték: number }
 
 /** Aktív fül box-kombó fülkulcsok (alcsoport → fül leképezés). */
-export type FülKulcs = 'harci' | 'tavharc' | 'misztikus' | 'egyeb';
+type FülKulcs = 'harci' | 'tavharc' | 'misztikus' | 'egyeb';
 export const FÜL_SORREND: { kulcs: FülKulcs; cím: string }[] = [
   { kulcs: 'harci', cím: 'Harci' },
   { kulcs: 'tavharc', cím: 'Távharci' },

@@ -9,7 +9,6 @@
 .th-controls { gap: 6px; }
 
 /* th-select → base: .field-select (common.css) */
-.th-select { font-size: 14px; flex: 1; min-width: 0; }
 
 .th-badge {
   background: var(--input-bg);
@@ -151,7 +150,6 @@
 .th-reszletek { display: flex; gap: 8px; margin-top: 20px; align-items: stretch; }
 
 .th-reszletek-box { flex: 1; }
-.th-reszletek-title { color: var(--accent); }
 
 .th-cm-box {
   padding: 10px;

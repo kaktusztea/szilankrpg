@@ -33,7 +33,7 @@ export function njkLimitBlocked(jk: boolean | undefined, overwriteUid?: string |
 }
 
 /** Egy NJK slot a switcher sávhoz: uid + megjelenítendő név. */
-export interface NjkSlot {
+interface NjkSlot {
   uid: string;
   név: string;
 }

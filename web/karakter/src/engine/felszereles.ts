@@ -62,7 +62,7 @@ function fegyverPont(fegyverAlap: string, data: GameData): number {
  * ponytail: a rules.json formula TS-másolata (a felszerelés-számítás nem épít reactive kontextust). A drift
  * ellen a `felszereles.rules-tukor.test.ts` köti a rules.json formulájához - ha a szabály változik, a teszt bukik.
  */
-export function páncélLefedettség(karakter: Karakter): number {
+function páncélLefedettség(karakter: Karakter): number {
   if (!karakter.páncél.alap) return 0;
   return 50 + karakter.páncél.végtagvédettség * 10 + (karakter.páncél.sisak ? 10 : 0);
 }
@@ -179,7 +179,7 @@ export interface AkadályForrás {
   viselve: boolean;
 }
 
-export interface AkadályÁllapot {
+interface AkadályÁllapot {
   /** A végső Akadály-állapot: a viselt források állapotainak MAX-a (nem additív). 0 = nincs. */
   állapot: number;
   /** A két potenciális forrás (páncél / pajzs) - akkor is megjelenítve, ha épp nem viselt (0 állapot). */

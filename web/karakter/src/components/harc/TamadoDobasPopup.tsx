@@ -306,5 +306,3 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
     </PopupOverlay>
   );
 }
-
-// ponytail: HatásokInfo moved to shared HatasokInfo.tsx

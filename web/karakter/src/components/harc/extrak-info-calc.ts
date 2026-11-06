@@ -17,7 +17,7 @@ import type { ExtraFeltétel, ExtraHatás, FegyverExtraDef } from '../../engine/
 
 export type ExtraStátusz = 'aktív' | 'inaktív' | 'km';
 
-export interface ExtraInfoTétel {
+interface ExtraInfoTétel {
   id: string;
   név: string;
   leírás: string;

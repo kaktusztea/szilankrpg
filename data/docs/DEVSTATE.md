@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 9 fázis (halott kód, rétegek, lookup, párhuzamos kódutak, komponensek, típusok, CSS), jóváhagyásra vár
+- **Webapp teljes refaktor: terv** - 9 fázis; 1. (halott kód) kész, a 2-9. (rétegek, lookup, párhuzamos kódutak, komponensek, típusok, CSS) jóváhagyásra vár
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -107,7 +107,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **javaslat, jóváhagyásra vár** (2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **1. fázis kész, a 2-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -139,11 +139,8 @@ legyen az esélye a csendes hibáknak.
 
 ### Fázisok
 
-**1. Halott kód és üres indirekció** - kis kockázat, ~1 nap
-- [ ] Halott exportok: `dice.ts rollElőnyHátrányK6`, `types.ts FortelyFok`; csak tesztből hívott: `rollElőnyHátrány`,
-  `helyzet-toggle.ts GYENGÉBB_KÉZ`/`toggleHelyzet`, `proba-common.ts probaSiker` (halott vagy inline másolja a prod kód?).
-- [ ] Re-export shimek törlése: `harcertekek/PopupOverlay.tsx`, `tulajdonsagok/useEscapeClose.ts`; a két `usePopupState` rendezése.
-- [ ] 26 nem hivatkozott CSS osztály (a dinamikus `prefix-${…}` neveket előbb kizárni); csak helyben használt exportok szűkítése; elavult megjegyzések.
+**1. Halott kód és üres indirekció** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
+(6 törölt fájl: 5 prod + 1 teszt; 6 halott export, 20 export szűkítve, 18 CSS osztály; +37 / −241 sor, build zöld).
 
 *Dummies:* kidobjuk, amit senki nem használ. A "re-export shim" egy üres fájl, ami csak annyit mond: "az igazi máshol
 van" - felesleges kerülőút. Kevesebb kód = kevesebb, amit olvasni és karbantartani kell.
@@ -161,7 +158,8 @@ A törlés biztonsági hálója a `tsc` (TypeScript fordító): ha valami mégis
   közös UI → `components/common/`.
 - [ ] Áthelyezés `engine/`-be: `alkalmazEffektek` (§42.3 motor), `interpolateFokDef`, `buildPajzsFegyverNév`, `ideaDelta`,
   `extraFeltételTeljesül`, `FegyverResultMód` típus.
-- [ ] A 18 fül → fül import feloldása; `engine/index.ts` / `harc/index.ts` barrel: rendes API vagy törlés.
+- [ ] A 18 fül → fül import feloldása (+1: `tavharc` → `tulajdonsagok/proba-common`, 1. fázis); `harc/index.ts` /
+  `harcertekek/index.ts` barrel: rendes API vagy törlés.
 - [ ] Őrző teszt (vitest, fájl-scan, új függőség nélkül): `engine/**` nem importál `components/**`-ból.
 
 *Dummies:* a motor (szabályszámítás) ne függjön a műszerfaltól (képernyők). Ma a motor néhány alkatrészt a

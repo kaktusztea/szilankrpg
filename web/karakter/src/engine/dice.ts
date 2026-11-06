@@ -51,16 +51,6 @@ export function rollElőnyHátrányDie(szint: number, sides: number): ProbaDobá
   return { rolls, eredmény };
 }
 
-/** Előny/Hátrány k10-zel (Képzettségpróba). */
-export function rollElőnyHátrány(szint: number): ProbaDobás {
-  return rollElőnyHátrányDie(szint, 10);
-}
-
-/** Előny/Hátrány k6-tal (Tulajdonságpróba, md/010_05_04). */
-export function rollElőnyHátrányK6(szint: number): ProbaDobás {
-  return rollElőnyHátrányDie(szint, 6);
-}
-
 /** Előny/Hátrány k20-szal (Támadó dobás, Sebzésdobás). */
 export function rollElőnyHátrányK20(szint: number): ProbaDobás {
   return rollElőnyHátrányDie(szint, 20);

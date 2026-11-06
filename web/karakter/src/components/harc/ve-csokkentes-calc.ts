@@ -50,7 +50,7 @@ export function calcVéCsökkentés(
 // aktív fortélyainak feltételes `vé_csökkentés` cél-ú módosítói bővíthetnek.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export interface TaktikaHatás {
+interface TaktikaHatás {
   mód?: string;
   érték?: number;
   cél: string;
@@ -72,7 +72,7 @@ export function calcVéCsökkentésSzorzó(hatások: TaktikaHatás[] | undefined
   return szorzó;
 }
 
-export interface FortélyMódosítóBontás {
+interface FortélyMódosítóBontás {
   forrás: string;
   érték: number;
   megjegyzés?: string;

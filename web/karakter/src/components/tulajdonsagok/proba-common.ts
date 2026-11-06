@@ -61,7 +61,7 @@ export function helyettesítésSzint(szint: number, h: PróbaKonstansok['helyett
 }
 
 /** Egy sor az összetett próba eredményében (elsődleges/másodlagos képzettség vagy tulajdonság). */
-export interface ÖsszetettSor {
+interface ÖsszetettSor {
   label: string;
   célszám: number;
   dobás: ProbaDobás;

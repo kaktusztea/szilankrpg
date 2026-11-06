@@ -11,7 +11,7 @@ import { loadGameDataSync } from '../../__tests__/load-gamedata';
 const PRÓBA = loadGameDataSync().konstansok.próba;
 const K10 = PRÓBA.képzettség.kocka;
 import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
-import { rollElőnyHátrány } from '../../engine/dice';
+import { rollElőnyHátrányDie } from '../../engine/dice';
 
 describe('probaSiker', () => {
   it('eredmény == célszám → siker (határeset)', () => {
@@ -81,17 +81,17 @@ describe('effektívFortélyFokok - a map csak a képzettség kiterjesztéseit ig
   });
 });
 
-describe('rollElőnyHátrány', () => {
+describe('rollElőnyHátrányDie (k10)', () => {
   it('szint==0 → 1 dobás', () => {
-    expect(rollElőnyHátrány(0).rolls).toHaveLength(1);
+    expect(rollElőnyHátrányDie(0, 10).rolls).toHaveLength(1);
   });
   it('Előny+2 → 3 dobás, a legnagyobb az eredmény', () => {
-    const r = rollElőnyHátrány(2);
+    const r = rollElőnyHátrányDie(2, 10);
     expect(r.rolls).toHaveLength(3);
     expect(r.eredmény).toBe(Math.max(...r.rolls));
   });
   it('Hátrány-2 → 3 dobás, a legkisebb az eredmény', () => {
-    const r = rollElőnyHátrány(-2);
+    const r = rollElőnyHátrányDie(-2, 10);
     expect(r.rolls).toHaveLength(3);
     expect(r.eredmény).toBe(Math.min(...r.rolls));
   });

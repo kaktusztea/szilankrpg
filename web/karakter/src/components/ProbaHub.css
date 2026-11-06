@@ -83,9 +83,6 @@
 .proba-hub-grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
-.proba-hub-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
 /* KÉ / TÉ / CÉ / Manőver egy sorban, mind a 4 chip azonos szélességű. A Manőver kisebb fontja
    (proba-hub-chip-manover) biztosítja, hogy a hosszabb felirat a negyed-szélességbe is beférjen. */
 .proba-hub-grid-4 {
@@ -138,15 +135,6 @@
 /* Képzetlenül a képzettség-szekcióban van → hover szintén képzettség-kék (nem piros). */
 .proba-hub-chip-kepzetlen:hover {
   border-color: var(--color-kepzettseg);
-}
-.proba-hub-csoport {
-  width: 100%;
-  margin-bottom: 8px;
-}
-.proba-hub-csoport-cim {
-  font-size: 12px;
-  opacity: 0.6;
-  margin: 6px 0 4px;
 }
 .kep-proba-kepzetlen-jel {
   font-size: 11px;

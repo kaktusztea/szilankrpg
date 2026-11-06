@@ -5,6 +5,7 @@ import { useHoldRepeat } from '../../hooks/useHoldRepeat';
 import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 import { PopupOverlay } from '../PopupOverlay';
 import { rollK10 } from '../../engine/dice';
+import { probaSiker } from '../tulajdonsagok/proba-common';
 import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, buildOpciók, type LKOpció } from './loveskiteres-calc';
 
 interface Props {
@@ -40,7 +41,7 @@ export function TavharcLoveskiteres({ karakter, data }: Props) {
   const kitérés = () => {
     if (célszám === null) return;
     const k10 = rollK10();
-    setDobás({ k10, siker: akrobatika + k10 >= célszám });
+    setDobás({ k10, siker: probaSiker(akrobatika, k10, célszám) });
   };
 
   return (

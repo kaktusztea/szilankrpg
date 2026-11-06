@@ -23,7 +23,7 @@ interface KétkezesInput {
   alapOverride?: (fDef: FegyverAlap) => Map<string, number>;
 }
 
-export interface KétkezesResult extends FegyverResultMód {
+interface KétkezesResult extends FegyverResultMód {
   fegyver_név: string;
   fegyverhossz: number;
   sumFegyverhossz: number;

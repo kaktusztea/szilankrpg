@@ -209,7 +209,7 @@ export function szitTáblákMódszerint(
 }
 
 /** A Helyzetfüggő módosítók aggregált állapota (összeg + sentinel-ágak), egy helyen kiszámolva. */
-export interface SzitModÁllapot {
+interface SzitModÁllapot {
   /** A dobáshoz adódó módosító-összeg (a sentinelek NEM adódnak hozzá). */
   összeg: number;
   /** 99 sentinel aktív: a Manőver nem kísérelhető meg (aktív E → biztos rontás). */

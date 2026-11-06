@@ -185,7 +185,7 @@ export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState)
 /** Íj: az Erőbónusz csak az adott Erőre tervezett íjnál jár (md/068_08) - a Sebzés popupban kikapcsolható (alapból BE). */
 const ÍJ_TERVEZETT_ERŐ_EXTRA = 'tavharc_ij_erobonusz_tervezett';
 
-export interface TávSP {
+interface TávSP {
   /** Az SP a biztos tagokkal (alap + Erőbónusz + Mesterfegyver); SP_NINCS / mágikus: a nyers érték. */
   sp: number;
   /** Bontás a Sebzés popup „Statikus bónuszok" listájához. */

@@ -3041,7 +3041,7 @@ Előny/Hátrány dobás (k6):
 Webapp implementáció: `TulajdonsagProbaPopup.tsx` (Játék mód, Tulajdonság box kattintás).
 Helperek: `tulProbaLehetetlen` / `tulProbaBiztosSiker` (a popupban, a közös `proba-common.ts →
 probaLehetetlen / probaBiztosSiker` köré).
-Dice: `engine/dice.ts → rollElőnyHátrányK6(szint)`.
+Dice: `engine/dice.ts → rollElőnyHátrányDie(szint, kocka)` (a `useProbaDobas` hívja, `kocka` = `konstansok.próba.kocka`).
 
 ### 37.2 Képzettségpróba
 
@@ -3136,13 +3136,13 @@ Erős     3              Előny+2
 
 Általánosan (fok ≥ 1): `szint = min(fok - 1, 2)`. Erős 0.fok esetén a próba tiltott.
 
-Előny/Hátrány dobás (webapp): `engine/dice.ts → rollElőnyHátrány(szint)`:
+Előny/Hátrány dobás (webapp): `engine/dice.ts → rollElőnyHátrányDie(szint, 10)`:
 - `szint > 0` (Előny+N): `N+1` db k10, a legnagyobb számít
 - `szint < 0` (Hátrány-N): `|N|+1` db k10, a legkisebb számít
 - `szint == 0`: egyetlen k10
 
 Implementáció: `KepzettsegProbaPopup.tsx` (Játék mód, képzettség accordion 🎲).
-Pure helperek (teszteltek, `kepzettseg-proba-calc.ts`; `előnyHátrányLabel` a `dice.ts`-ben): `kiterjesztésElőnyHátrány(típus, fok)`, `buildFortélyFokok(fortélyok)`, `előnyHátrányLabel(szint)`, `probaSiker(tul, szint, k10, célszám)`.
+Pure helperek (teszteltek, `kepzettseg-proba-calc.ts`; `előnyHátrányLabel` a `dice.ts`-ben): `kiterjesztésElőnyHátrány(típus, fok)`, `buildFortélyFokok(fortélyok)`, `előnyHátrányLabel(szint)`; a siker-feltétel: `proba-common.ts → probaSiker(bázis, dobás, célszám)`.
 A UI egy kiterjesztést kezel egyszerre (picker); a több-fortélyes eset (md/030_08_01 speciális szakasz) a KM döntése.
 
 ---

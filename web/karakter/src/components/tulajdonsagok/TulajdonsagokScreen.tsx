@@ -11,7 +11,7 @@ import { buildFortélyFokok, negálásKulcs } from './kepzettseg-proba-calc';
 import { TulajdonsagokPopups, INITIAL_POPUP_STATE, type PopupState } from './TulajdonsagokPopups';
 import { PrimerKpBox } from './PrimerKpBox';
 import { ElotortenetOverlay } from './ElotortenetOverlay';
-import { useEscapeClose } from './useEscapeClose';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { képzettségLimitek } from './kepzettseg-limit';
 import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../../engine/felszereles';
 import './TulajdonsagokScreen.css';

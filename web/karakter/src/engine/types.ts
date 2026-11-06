@@ -220,35 +220,6 @@ export const DEFAULT_SESSION: Session = {
 };
 
 // ============================================================
-// Fortély definíció (schema - yaml forrásból)
-// ============================================================
-
-export type ModMode = 'flat' | 'scaled' | 'override' | 'előny' | 'hátrány';
-
-export interface Modosito {
-  cél: string;
-  érték: number;
-  mód: ModMode;
-  forrás: string;
-  arány: number;
-  feltétel: string;
-}
-
-export interface FortelyKovetelmeny {
-  név: string | string[];
-  érték: number;
-  típus: string;
-}
-
-export interface FortelyFok {
-  fok: number;
-  követelménytext: string;
-  követelmények: FortelyKovetelmeny[] | '';
-  hatástext: { text: string }[];
-  módosítók: Modosito[] | '';
-}
-
-// ============================================================
 // Fegyver (alaptípus, fegyverek_v2.json - Fegyvergenerátor v2)
 // ============================================================
 

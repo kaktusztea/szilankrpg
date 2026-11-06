@@ -5,7 +5,7 @@ import type { FegyverResult, FegyverResultMód } from './types';
 import { lookupFegyver } from '../../engine/utils';
 
 /** Egy mód (aktor) megjelenítendő fegyver-harcértékei (csak fegyver, taktika/páncél nélkül). */
-export interface FegyverInfoMód {
+interface FegyverInfoMód {
   aktor: string;
   jelleg: string;
   sebzéstípus: 'elsődleges' | 'másodlagos';
@@ -17,7 +17,7 @@ export interface FegyverInfoMód {
 }
 
 /** A fegyver infó popup teljes, megjelenítésre kész adata (pure). */
-export interface FegyverInfoAdat {
+interface FegyverInfoAdat {
   név: string;
   /** Példány-becenév (ha nem üres) - a popup főcíme, a `név` (def-név) alcímként. */
   becenév?: string;

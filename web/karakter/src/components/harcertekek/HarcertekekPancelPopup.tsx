@@ -1,4 +1,4 @@
-import { PopupOverlay } from './PopupOverlay';
+import { PopupOverlay } from '../PopupOverlay';
 import { FokRadios, ColumnPicker } from './PickerComponents';
 
 interface Props {

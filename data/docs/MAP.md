@@ -75,7 +75,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `url-share.ts` | Karakter URL export/import (deflate+base64url) + `extractHashFromText` |
 | `version-check.ts` | Elavult HTML felismerés → egyszeri cache-kerülő újratöltés (§30b) |
 | `checkpoint-utils.ts` | Karakter verziók (checkpoint): snapshot, create, restore (truncate/append), delete - §31b |
-| `dice.ts` | Kockadobás: rollDie(sides), rollK20/K10, `rollElőnyHátrányDie(szint, sides)` + k6/k10/k20 wrapperek, `előnyHátrányLabel`, `clampEHSzint` (E/H szint [-2,+2]) |
+| `dice.ts` | Kockadobás: rollDie(sides), rollK20/K10, `rollElőnyHátrányDie(szint, sides)` + `rollElőnyHátrányK20`, `előnyHátrányLabel`, `clampEHSzint` (E/H szint [-2,+2]) |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
 | `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció (a `gyűjtStátuszEffektek`-ből); `próbaÉrzékek`: alkategóriás státusz (Érzékvesztés) érzék-választó opciói |
@@ -97,7 +97,6 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `useOverlayHandlers` | AppOverlays akció-logika (új/betöltés/import/QR/teszt karakter) |
 | `useHoldRepeat` | Hold-to-repeat gomb gyorsulás |
 | `useEscapeClose` | Escape billentyű popup bezárás |
-| `usePopupState` | Generikus popup/overlay state kezelő |
 | `useLongPress` | Long-press vs short-tap megkülönböztető (NJK chip betű-picker) |
 | `useTaktikaInvalidation` | Aktív taktikák érvénytelenítése fegyver/session változáskor (useEffect) |
 | `useFegyverInvalidation` | Aktív fegyver Puszta kéz fallback, ha `felszerelésben=false` lesz (useEffect) |
@@ -246,7 +245,6 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
   VallasPickerOverlay.tsx  Vallás választó overlay
   helpers.ts               Tul/Képz fül segédek
   types.ts                 Tul/Képz fül prop/slot típusok
-  useEscapeClose.ts        Re-export (hooks/useEscapeClose)
   popups/GridPickerPopup.tsx / popups/TextInputPopup.tsx  Közös grid-/szöveg-input popupok
 
 fortelyok/                 Fortélyok fül
@@ -274,7 +272,6 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
   HarcertekekPajzsSection.tsx      Pajzs szekció (méret, pajzshasználat)
   HarcertekekPopups.tsx    Harcértékek fül popup-dispatcher
   PickerComponents.tsx     Közös picker elemek (FokRadios, ColumnPicker)
-  PopupOverlay.tsx         Harcértékek fül-lokális popup shell
   helpers.ts               Harcértékek segédek (közelharci/távharci név-listák, MF fok, display-nevek)
   hooks/                   Harcértékek fül-lokális hookok
 

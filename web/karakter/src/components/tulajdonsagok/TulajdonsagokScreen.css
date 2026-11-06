@@ -185,7 +185,6 @@
 .elotortenet-field-narrow { flex-shrink: 0; }
 .elotortenet-field-flex1 { flex: 1; min-width: 0; }
 .elotortenet-label { font-size: 13px; color: var(--text-dim); font-weight: bold; }
-.elotortenet-value { font-size: 16px; color: var(--text); font-weight: bold; }
 .elotortenet-textarea-sm { min-height: 48px; resize: vertical; }
 .elotortenet-textarea-lg { min-height: 120px; resize: vertical; }
 @media (min-width: 600px) {
@@ -213,12 +212,6 @@
 .tul-test-reset-btn:active { opacity: 1; }
 
 /* --- Képzettségpróba dobás (Játék mód) --- */
-.info-panel-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 4px;
-}
 .kep-proba-dice-btn {
   background: none;
   border: none;
@@ -407,16 +400,6 @@
   gap: 1px;
   position: relative;
 }
-.kep-proba-roll-serult {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  font-weight: bold;
-  color: #e57373;
-  opacity: 0.8;
-}
 .kep-proba-roll-eh { font-size: 13px; font-weight: normal; color: var(--warning); }
 .kep-proba-eh-előny { color: var(--success); }
 .kep-proba-roll-btn:active { background: var(--accent); }
@@ -456,39 +439,8 @@
 
 /* Helyettesítés */
 .kep-proba-strike { text-decoration: line-through; opacity: 0.5; }
-.kep-proba-hely-select { font-size: 13px; padding: 4px 6px; flex: 1; min-width: 0; }
 
 /* --- Extrák szekció (Összetett, Vállalás, Ellenpróba) --- */
-.kep-proba-extras-box {
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  background: var(--input-bg);
-  padding: 8px 10px;
-}
-.kep-proba-extras-toggle {
-  background: none;
-  border: none;
-  color: var(--text);
-  font-size: 16px;
-  cursor: pointer;
-  padding: 0;
-  width: 100%;
-  text-align: left;
-}
-.kep-proba-extras-toggle:active { opacity: 0.8; }
-.kep-proba-extras-summary {
-  display: block;
-  font-size: 12px;
-  font-family: monospace;
-  opacity: 0.7;
-  padding: 2px 0 0 4px;
-}
-.kep-proba-extras-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 8px;
-}
 /* Tulajdonságpróba Extrák (accordion nélkül, közvetlenül): E/H sor + összetett sor. */
 .kep-proba-extras-flat {
   display: flex;
@@ -529,21 +481,6 @@
 .kep-proba-vm-row { width: 100%; }
 .kep-proba-vm-row .kep-proba-extras-btn { flex: 1 1 0; width: auto; }
 .kep-proba-vm-row .kep-proba-extras-sep { flex: 0 0 auto; }
-
-.kep-proba-extras-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.kep-proba-extras-label {
-  font-size: 13px;
-  color: var(--text-dim);
-  white-space: nowrap;
-}
-.kep-proba-extras-btns {
-  display: flex;
-  gap: 6px;
-}
 .kep-proba-extras-btn {
   width: 36px;
   height: 30px;
@@ -642,7 +579,6 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-enyhites-lista { display: block; margin-top: 2px; }
 .kep-proba-enyhites-fortely { display: block; font-size: 12px; color: #aaa; font-weight: 400; }
 .kep-proba-enyhites-nev { color: var(--success); }
-.kep-proba-statusz-info { font-size: 12px; color: #e88; text-align: center; margin-bottom: 4px; }
 .kep-proba-eh-bontas { display: block; font-size: 11px; font-weight: 400; margin-top: 4px; color: #888; }
 .kep-proba-eh-bontas-sor { display: block; }
 .kep-proba-eh-accordion { margin-top: -10px; max-width: calc(100% - 52px); }

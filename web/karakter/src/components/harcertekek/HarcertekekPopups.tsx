@@ -4,7 +4,7 @@ import { FORTÉLY_FOK_VALUES } from '../../ui-constants';
 import { képzKulcs, fortélyFok } from '../../engine/azonosito';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { PopupOverlay } from './PopupOverlay';
+import { PopupOverlay } from '../PopupOverlay';
 import { PancelPopup } from './HarcertekekPancelPopup';
 import { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from './PickerComponents';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';

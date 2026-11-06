@@ -11,7 +11,7 @@
 const KEY = 'szilank_km_jelolesek';
 
 /** Egy NJK-hoz rendelt KM jelölés. */
-export interface KmJelölés {
+interface KmJelölés {
   betű: string;   // egyetlen A–Z betű
   szín: string;   // felvételkor választott szín (KM_JEL_SZÍNEK egyike)
   jegyzet: string; // KM szabad szövege (max MAX_KM_JEGYZET)

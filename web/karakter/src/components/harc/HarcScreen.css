@@ -745,23 +745,6 @@
 .mod-valaszto-masodlagos {
   display: block;
 }
-/* Gyengébb kéz toggle: diszkrét kapcsoló (nem teli szélesség, halk) - Hátrány-1 harci helyzet.
-   A hangsúlyos hatást a megszokott HatasokInfo badge-sor adja; ez csak a gyors kapcsoló. */
-.gyengebb-kez-toggle {
-  align-self: center;
-  padding: 4px 12px;
-  border: 1px dashed var(--border-input);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text-dim);
-  font-size: 13px;
-  cursor: pointer;
-}
-.gyengebb-kez-toggle.on {
-  border-style: solid;
-  border-color: var(--warning);
-  color: var(--warning);
-}
 /* Taktika / Harci helyzet kapcsoló chipek a Támadó dobás popupban (az Előny/Hátrány picker felett).
    Ugyanazt a picker-ablakot nyitják, mint az Aktív fül. A label counter = aktív elemek száma. */
 .tamado-aktiv-chips {
@@ -1009,7 +992,6 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
-
 
 /* --- Dobás button row (button + manual dice icon) --- */
 .dobas-btn-row {
@@ -1355,7 +1337,6 @@
   margin-top: 1px;
   overflow-wrap: anywhere;
 }
-
 
 /* Kétkezes harc fortély-követelmény figyelmeztetés a fegyver-szekció alatt */
 .harc-ketkezes-warning { margin-top: 6px; padding: 6px 10px; border: 1px solid var(--warning); border-radius: 6px; color: var(--warning); font-size: 13px; }

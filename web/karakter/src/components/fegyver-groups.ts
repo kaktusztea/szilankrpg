@@ -2,7 +2,7 @@ import type { GameData } from '../engine/data-loader';
 import type { PickerItem } from './SpecPicker';
 
 /** Fegyverkategória-sorrend a csoportosított pickerekben. */
-export const FEGYVER_KATEGORIAK = ['kardvívó', 'közelharci', 'romboló', 'lándzsavívó', 'ostorharc'];
+const FEGYVER_KATEGORIAK = ['kardvívó', 'közelharci', 'romboló', 'lándzsavívó', 'ostorharc'];
 
 /**
  * Fegyverek kategóriánként csoportosítva, a `getValue` a picker-érték előállítója:

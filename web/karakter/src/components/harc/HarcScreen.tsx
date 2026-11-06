@@ -77,9 +77,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     }
   }, [setSession]);
 
-  // „Gyengébb kéz" harci helyzet be/ki a Támadó dobás ablakból (csak Kétkezes harcnál jelenik meg).
-  // Ugyanazt a session.aktív_helyzetek tömböt írja, mint az Aktív fül picker-e → egy igazságforrás,
-  // a hatás a megszokott HatasokInfo badge-sorban (Hátrány-1 Gyengébb kéz) jelenik meg.
   // Popup close handler
   function closePopups() {
     setShowVéResetConfirm(false);

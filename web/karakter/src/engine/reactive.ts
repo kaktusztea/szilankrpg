@@ -98,7 +98,7 @@ export function buildContext(
  * hogy a yaml ↔ típus drift itt is fordítási hiba legyen). `Pick`, hogy a tesztek
  * részleges konstansok objektumot adhassanak.
  */
-export type KontextusKonstansok = Pick<KonstansokRaw, 'harcérték_alap' | 'kp' | 'arányok'>;
+type KontextusKonstansok = Pick<KonstansokRaw, 'harcérték_alap' | 'kp' | 'arányok'>;
 
 /**
  * Build array context from character data (képzettségek, fortélyok, etc.)

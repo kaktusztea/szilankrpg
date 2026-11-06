@@ -21,7 +21,7 @@ import { buildPajzsFegyverNév } from '../components/harc/shared';
 import { extraFeltételTeljesül } from '../components/harc/extrak-info-calc';
 import { clampEHSzint } from './dice';
 
-export type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';
+type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';
 
 export interface Effekt {
   cél: string;
@@ -234,7 +234,7 @@ export function arányÖsszeg(effektek: Effekt[], cél: string, arányForrás: s
 // fegyver.harcmodor). Feltételben `tiltás:<id>`-ként hivatkozható; a fegyver egy extrája
 // `{cél: "tiltás:<id>", mód: letilt}` hatással feloldja (pl. Tőr, páncélszúró: pancelszuras_belharcban).
 
-export interface AktívTiltás { id: string; leírás: string; helyzet: string }
+interface AktívTiltás { id: string; leírás: string; helyzet: string }
 
 /** A kézben lévő fegyverek: jobb kéz (vagy pajzs, index -2) + bal kéz kétkezes / hárító fogásnál. Üres = puszta kéz. */
 function aktívFegyverDefek(k: Karakter, session: Session, data: GameData): FegyverAlap[] {
