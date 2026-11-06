@@ -28,7 +28,8 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
   const páncélStruktúra = (data.konstansok.páncél_struktúrák as { struktúra: string; fém: boolean; merev: boolean }[])
     .find(s => s.struktúra === karakter.páncél.alap);
   const hajlKöv = kov('páncél_hajlékonyság');
-  const hajlÉrték = hajlKöv?.érték as unknown as string | undefined;
+  // shortcut: the requirement `érték` is typed number but holds a string here ("nem_fém" / "nem_merev"); fix the type in phase 6b.
+  const hajlÉrték = hajlKöv ? String(hajlKöv.érték) : undefined;
   const hajlOk = !hajlÉrték || !páncélStruktúra
     ? true
     : hajlÉrték === 'nem_merev' ? !páncélStruktúra.merev

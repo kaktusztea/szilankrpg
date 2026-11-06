@@ -17,9 +17,7 @@ interface Deps {
 function buildTulajdonságPatch(prev: Tulajdonsagok, next: Tulajdonsagok): UndoPatch[] {
   // Tulajdonságok is a flat object - store as scalar overwrite, tagged with the
   // changed key so edits to different properties don't coalesce into one entry.
-  const prevR = prev as unknown as Record<string, number>;
-  const nextR = next as unknown as Record<string, number>;
-  const changed = Object.keys(nextR).find(k => nextR[k] !== prevR[k]);
+  const changed = (Object.keys(next) as (keyof Tulajdonsagok)[]).find(k => next[k] !== prev[k]);
   return [{ field: 'tulajdonságok', prev, ckey: changed }];
 }
 
@@ -68,10 +66,8 @@ function buildFortélyPatch(prev: Fortely[], next: Fortely[]): UndoPatch[] {
 // --- Describers ---
 
 function describeTulajdonság(prev: Tulajdonsagok, next: Tulajdonsagok): string {
-  const prevR = prev as unknown as Record<string, number>;
-  const nextR = next as unknown as Record<string, number>;
-  const key = Object.keys(nextR).find(k => nextR[k] !== prevR[k]);
-  return key ? `${key}: ${prevR[key]} → ${nextR[key]}` : 'Tulajdonság módosítás';
+  const key = (Object.keys(next) as (keyof Tulajdonsagok)[]).find(k => next[k] !== prev[k]);
+  return key ? `${key}: ${prev[key]} → ${next[key]}` : 'Tulajdonság módosítás';
 }
 
 function describeFortély(prev: Fortely[], next: Fortely[], data: GameData): string {

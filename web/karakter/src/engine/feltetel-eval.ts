@@ -20,7 +20,7 @@ export function createFeltételEvaluator(
 
   function getFeltételÉrték(forrás: string): number | boolean | string | undefined {
     if (aktívFeltételek.has(forrás)) return true;
-    if (forrás in session) return (session as unknown as Record<string, unknown>)[forrás] as number | boolean;
+    if (forrás in session) return session[forrás as keyof Session] as number | boolean;
     if (computed.has(forrás)) return computed.get(forrás)!;
     if (ctx.has(forrás)) return ctx.get(forrás)!;
     if (stringCtx.has(forrás)) return stringCtx.get(forrás)!;

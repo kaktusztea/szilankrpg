@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; következő: 6a maradék (`as unknown as`), 2 (fül → fül), 3, 6b, 4, 5, 7 (+8 Python)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a kész; következő: 2 (fül → fül), 3, 6b, 4, 5, 7 (+8 Python)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -147,7 +147,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | 1. Halott kód | kicsi | kész (2026-11-06) |
 | ✅ | Döntési pontok | - | eldöntve (2026-11-06), l. lent |
 | ✅ | 0. Tooling: ESLint + knip | kicsi | kész (2026-11-06) |
-| 2 | **6a. Típusosság:** ~~`any`~~ (kész) / `as unknown as` / `eslint-disable` (a session-toggle séma nélkül) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
+| ✅ | **6a. Típusosság** (`any` 0, `as unknown as` 2 - a session-toggle a 6b-ben) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
 | 3 | **2. Rétegek és modulhatárok** (az `engine/` rész kész; maradt: fül → fül) | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
 | 4 | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
 | 5 | **6b. Típusfájlok bontása + session-toggle tipizált mező** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
@@ -289,7 +289,13 @@ automata teszt van, itt a **Playwright** (programból vezérelt böngésző, ami
 **6. Típusosság** - kis kockázat, ~1 nap
 - ✅ **`any`: 0 (2026-11-06)**, a `no-explicit-any` hiba szinten (6a). Közben: `getExtraFokok` típusos + a duplikált
   fok-extrapoláció helperbe vonva; 3 elavult teszt-fixture javítva (l. refactorlog).
-- [ ] 10 `as unknown as` (pl. session-toggle fortély) → tipizált mező / type guard (nincs backward-compat).
+- ✅ **`as unknown as`: 9 → 2 (2026-11-06)**, `eslint-disable`: mind indokolt (`-- <ok>`). Kiváltva: `fegyver-calc` (közvetlen
+  írás), `feltetel-eval` (`keyof Session` az `in` után), `useUndoWrappedSetters` ×4 (`keyof Tulajdonsagok`), `SessionToggles`
+  hajlékonyság (`String(...)`, `shortcut:` - l. lent).
+- [ ] 6b: a 2 maradék session-toggle cast (`SessionToggles.tsx`, `effekt.ts` `gyűjtFortélyEffektek`) → tipizált
+  `session` toggle-mező (séma-változás, a localStorage invalidálható).
+- [ ] 6b: a fortély-követelmény `érték` típusa `number`, de a `páncél_hajlékonyság` szöveget tárol (`"nem_fém"`) →
+  `number | string` (+ a számos összehasonlítások szűkítése).
 - [ ] `data-types.ts` (399) + `types.ts` (333) domainenkénti bontása; a 4 `eslint-disable` felülvizsgálata.
 
 *Dummies:* a TypeScript egy helyesírás-ellenőrző a kódhoz. Az `any` és az `as unknown as` azt mondja neki: "itt ne

@@ -175,8 +175,7 @@ export function calcFegyverResults(
           const hatások = járulék.get(cél);
           if (!hatások?.length) continue;
           const rész = (cél === 'TÉ' ? m.alap_TÉ : m.alap_VÉ) + (m[mező] as number) + ideaTag;
-          const mód = m as unknown as Record<string, number>;
-          mód[cél] = m[cél] - rész + alkalmazEffektek(rész, hatások);
+          m[cél] = m[cél] - rész + alkalmazEffektek(rész, hatások);
         }
       }
     }
