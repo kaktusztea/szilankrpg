@@ -2358,7 +2358,20 @@ Emlékezet
 ---
 ## File: md/010_05_04_tulajdonsagproba.md
 
-## Tulajdonságpróba
+# Tulajdonságpróba
+
+- [Tulajdonságpróba dobás](#tulajdonságpróba-dobás)
+- [Kiemelt Siker/Kudarc](#kiemelt-sikerkudarc)
+- [Helyzetfüggő módosítók](#helyzetfüggő-módosítók)
+- [Előny-Hátrány dobások](#előny-hátrány-dobások)
+- [Felszerelés hatása fizikai Tulajdonságpróbára](#felszerelés-hatása-fizikai-tulajdonságpróbára)
+- [Összetett Tulajdonságpróba](#összetett-tulajdonságpróba)
+- [Kombinált próbák](#kombinált-próbák)
+- [Tulajdonság ellenpróba](#tulajdonság-ellenpróba)
+- [Asszisztencia](#asszisztencia)
+- [Sérülés hatása tulajdonságpróbára](#sérülés-hatása-tulajdonságpróbára)
+
+## Tulajdonságpróba dobás
 
 ```
 Tulajdonság + k6  vs  Célszám
@@ -2379,9 +2392,7 @@ Tulajdonságpróba célszám (k6)
 8: Emberfeletti
 ```
 
----
-
-### Kiemelt Siker/Kudarc
+## Kiemelt Siker/Kudarc
 
 ⚜️ Ha `3` vagy annál nagyobb különbséggel rontottál, akkor kiemelten nagy hibát vétettél.
 
@@ -2418,7 +2429,7 @@ Természetesen a Tulajdonságpróba dobásokra is járhat **Előny**, vagy **Há
 
 ---
 
-### Felszerelés hatása fizikai Tulajdonságpróbára
+## Felszerelés hatása fizikai Tulajdonságpróbára
 
 Túl sok cipelt tárgy  fizikai **Tulajdonságpróbák** végrehajtásában.
 
@@ -2428,7 +2439,7 @@ Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 
 ---
 
-### Összetett Tulajdonságpróba
+## Összetett Tulajdonságpróba
 
 Ha a karakternek egy olyan összetett próbát kell tennie, ami nem intézhető el `1 db` dobással (pl. több fázisból álló kombinált mozdulatsor, egy összetett, hosszan tartó, hullámzó érzelemimpulzus értelmezése **Érzékenység** próbával), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
 
@@ -2459,8 +2470,6 @@ Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal alacsonyabb nehézs
 ```
 
 <br />
-
----
 
 ### Példa Összetett Tulajdonságpróbára
 
@@ -2496,7 +2505,7 @@ Ezzel kb. 33% esélye van a sikerre
 
 ---
 
-### Kombinált próbák
+## Kombinált próbák
 
 Az összetett próbákhoz hasonlóak a Kombinált próbák: adódhat olyan helyzet, hogy a karakternek több fajta Tulajdonságát kell próbára tenni egy adott szituációban. Pl. **Erő** és **Ügyességpróbát** is dobnia kell.
 
@@ -2539,6 +2548,25 @@ Mindkét játékos dob (NJK esetén természetesen a KM) `k6`-tal, és az eredm�
 Ha az eredmények azonosak, akkor patthelyzet alakul ki, a KM belátása szerint (esetleg némi idő elteltével) új ellenpróba dobható. Ha az adott szituációban nem lehetséges patthelyzet, akkor újra kell dobni `k6`-tal (ekkor már nem kell hozzáadni a Tulajdonság értékét) és a nagyobb szám nyer.
 
 <br />
+
+---
+
+### Asszisztencia
+
+Társ segítése Tulajdonságpróba során.
+
+Ekkor a segítő is megdobja ugyanazt a Tulajdonságpróbát. Választhat, hogy mennyi bónuszt ad társának - a **Nehézség** azonos, vagy `1` ponttal alacsonyabb, mint a megsegített fél próbájánál:
+
+```
+Adott Bónusz • Nehézség  
+
++2  •  (Nehézség - 1)
++4  •  azonos Nehézség 
+```
+
+Azt, hogy egy próbába hányan segíthetnek be, az helyzetfüggő, nem akarunk erre képletet megadni. A KM döntsön az ésszerűség határain belül.
+
+br />
 
 ---
 
@@ -5249,6 +5277,13 @@ Magába foglalja az [esést](../../szituaciok/eses_magasbol.md), **ugrást** és
 
 Kapcsolódhat: [Csúszós talaj](../../065_03_03_negativ_helyzetek.md#csúszós-talaj) harci helyzet (küzdelem esetén)
 
+#### ⚜️ [Asszisztencia](../../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ---
 
 ### Kapcsolódik
@@ -5966,6 +6001,13 @@ Kapcsolódik Harci helyzet: [Láthatatlan](../../065_03_01_pozitiv_helyzetek.md#
 +0: 10 - 15 méter 🔆
 +3: 16 - 20 méter
 +6: 20 - 30 méter
+```
+
+#### ⚜️ [Asszisztencia](../../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
 ```
 
 ---
@@ -9431,6 +9473,13 @@ Magában foglalja a csapdák állítását és hatástalanítását is.
 -3: Nyom nélkül hatástalanítani
 ```
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ---
 
 ### Domináns Tulajdonságok
@@ -9853,6 +9902,13 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 -6: Képzetlen zsoldosok
 -3: Fegyelmezetlen legénység
 +0: Tapasztalt legénység
+```
+
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
 ```
 
 ---
@@ -10352,6 +10408,13 @@ Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad F
 +0: Normál időjárás
 ```
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ### Domináns Tulajdonságok
 
 Önuralom, Ügyesség, Gyorsaság
@@ -10699,6 +10762,13 @@ Válassz hátas fajt: `1 db` [Hátas](../fortelyok.szabad/hatas.md) Szabad Fort�
 
 Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ---
 
 ### Domináns Tulajdonságok
@@ -10808,6 +10878,13 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
  0: nincs túlsúly
  
  Infó: Erőpróba kellhet
+```
+
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
 ```
 
 ### Domináns Tulajdonságok
@@ -11700,6 +11777,13 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 -3: Hiányos eszközök
 ```
 
+#### ⚜️ [Asszisztencia](../030_06_01_kepzettsegproba.md#asszisztencia) 1️⃣
+
+```
++3: segítség(3)
++6: segítség(6)
+```
+
 ### Domináns Tulajdonságok
 
 Ügyesség, Önuralom
@@ -11938,6 +12022,7 @@ A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzón�
 - [Sérülés hatása képzettségpróbára](#sérülés-hatása-képzettségpróbára)
 - [Tulajdonság vs Képzettség ellenpróba](#tulajdonság-vs-képzettség-ellenpróba)
 - [Mentődobás](#mentődobás)
+- [Asszisztencia](#asszisztencia)
 
 ---
 
@@ -12288,6 +12373,40 @@ Szituáció: Tetves rontott Mászás képzettségpróbát vét a szikla feléné
   - független a képzettség dobás eredményétől
   - `1`: végzetes hiba
   - `2,3`: a bevetett `2` Erő pont mérséklése miatt ezeknél nincs végzetes hiba (amúgy lenne)
+
+br />
+
+---
+
+### Asszisztencia
+
+Társ segítése Képzettségpróba során.
+
+Ekkor a segítő is megdobja ugyanazt a Képzettségpróbát. Választhat, hogy mennyi bónuszt ad társának - a **Nehézség** azonos, vagy `3` ponttal alacsonyabb, mint a megsegített fél próbájánál:
+
+```
+Adott Bónusz • Nehézség  
+
++3  •  (Nehézség - 3)
++6  •  azonos Nehézség 
+```
+
+Azt, hogy egy próbába hányan segíthetnek be, az helyzetfüggő, nem akarunk erre képletet megadni. A KM döntsön az ésszerűség határain belül.
+
+#### Hol használható Asszisztencia?
+
+Csak az alábbi képzettségek esetén használható:
+
+- Akrobatika
+- Mászás
+- Lopakodás/rejtőzés
+- Csapdaállítás
+- Zárnyitás
+- Hajózás
+- Lovaglás
+- Léglovaglás
+
+Fontos, hogy ez nem azonos a [csoportos képzettségpróbával](030_06_02_csoportos_kepzettsegproba.md), ott a csoport tagjai közösen végzik az azonos tevékenységet.
 
 ---
 
