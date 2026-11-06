@@ -1,6 +1,6 @@
 import type { Karakter, UndoPatch } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { calcMaxHM, calcMaxAszimmetria } from './helpers';
+import { calcMaxHM, calcMaxAszimmetria } from '../../engine/harc/harcertekek-helpers';
 
 interface Props {
   data: GameData;

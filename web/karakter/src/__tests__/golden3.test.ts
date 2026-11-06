@@ -8,8 +8,8 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { evaluate, buildContext, type Rule } from '../engine/reactive';
-import { buildPancelLookups, calcFtEnyhites } from '../components/harc/pancel-calc';
-import { buildFegyverRows, calcFegyverResults } from '../components/harc/fegyver-calc';
+import { buildPancelLookups, calcFtEnyhites } from '../engine/harc/pancel-calc';
+import { buildFegyverRows, calcFegyverResults } from '../engine/harc/fegyver-calc';
 import type { Karakter, FegyverAlap } from '../engine/types';
 import type { KonstansokRaw, GameData } from '../engine/data-types';
 

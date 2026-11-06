@@ -1,0 +1,48 @@
+// Combat calc result types (shared by the Harc / Aktív / Távharc tabs).
+import type { FegyverResultMód } from '../types';
+import type { ExtraKontextus } from '../extrak-info-calc';
+
+/** Egy fegyver összesített eredménye: az elsődleges mód adatai a gyökéren (táblázat-nézet),
+ * PLUSZ az összes mód listája (`módok`) a Támadó dobás mód-választójához. */
+export interface FegyverResult extends FegyverResultMód {
+  fegyver_név: string;
+  /** Példány-becenév (FegyverPeldany.név) - ha nem üres, a megjelenítésben felülírja a fegyver_név-et. */
+  becenév?: string;
+  fegyverhossz: number;
+  módok: FegyverResultMód[];
+  /** Erre a fegyverre ható aktív tiltás-id-k (pl. "belharc_fegyverhossz") - figyelmeztetéshez (§42.4). */
+  tiltások?: string[];
+  /** A sorra ható fortély-módosítók (soronként kiértékelt feltételekkel, pl. Belharcos, Pajzshasználat) - bontáshoz. */
+  fortély?: Record<string, number>;
+}
+
+export interface HarcComputed {
+  ké: number;
+  épValue: number;
+  manöverPont: number;
+  manőverAlap: number;
+  sfé_fizikai: number;
+  sfé_energia: number;
+  páncélLefedettség: number;
+  páncélMGT: number;
+  merevvértBüntetés: number;
+  taktikaMods: Record<string, number>;
+  /** Harci helyzetek saját oldali harcérték-módosítói (pl. Láthatatlan VÉ +10) - §42 effekt-gyűjtő. */
+  helyzetMods: Record<string, number>;
+  /** Harci helyzetek `vé_csökkentés` flat bővítései forrás-bontással (pl. Meglepetés +2). */
+  helyzetVéCsökkentés: { forrás: string; érték: number }[];
+  fortelyMods: Record<string, number>;
+  fegyverResults: FegyverResult[];
+  kétkezesResult: (FegyverResult & { sumFegyverhossz: number }) | null;
+  fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null;
+  pajzsVÉ: number;
+  véVeszSzorzó: number;
+  véVeszSzorzóForrás: string;
+  pajzsFegyverNév: string | null;
+  belharciAktív: boolean;
+  maxVéCsökk: number;
+  oszlopMéret: number;
+  téLevonások: number[];
+  feltételTeljesül: (feltétel: unknown) => boolean;
+  extraKontextus: ExtraKontextus;
+}

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { fejlécChip } from './manover-dobas-calc';
+import { fejlécChip } from '../../engine/harc/manover-dobas-calc';
 
 describe('fejlécChip (fázis-tudatos VÉ/TÉ a manőver-popup fejlécében)', () => {
   it('passzív mód: mindig VÉ', () => {

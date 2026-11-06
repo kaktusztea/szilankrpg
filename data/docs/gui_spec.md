@@ -201,7 +201,7 @@ Második fix sáv közvetlenül a Header alatt (`NjkSwitcher.tsx`, `.njk-bar`). 
 
 ### NJK harcértékek gyors megtekintése (KÉ/TÉ/VÉ)
 
-A KM harc közben az NJK aktuális harcértékeit gyorsan, a Harc fülre váltás nélkül látja (`njkHarcértékStat`, `hooks/njk-slots.ts`). Az érték a Harc fül fejlécével AZONOS számításból jön (`components/harc/harc-fejlec-calc.ts → harcFejlécÉrtékek`), így a kettő nem térhet el (2026-10-17 előtt a gyors-stat fortély/taktika/kétkezes nélküli közelítés volt).
+A KM harc közben az NJK aktuális harcértékeit gyorsan, a Harc fülre váltás nélkül látja (`njkHarcértékStat`, `hooks/njk-slots.ts`). Az érték a Harc fül fejlécével AZONOS számításból jön (`engine/harc/harc-fejlec-calc.ts → harcFejlécÉrtékek`), így a kettő nem térhet el (2026-10-17 előtt a gyors-stat fortély/taktika/kétkezes nélküli közelítés volt).
 
 - **Mit mutat**: `KÉ`, `TÉ`, `VÉ` pontosan úgy, mint a Harc fül fejléc-boxai, a karakter SAJÁT session-je szerint (aktív fegyver / kétkezes / fogás, fortélyok, taktika, helyzet, státusz, sebesülés TÉ-levonása, VÉ-csökkenés).
 - **Fix fejléc** (`.njk-harcertek-fejlec`): a sáv elején, az **aktív** NJK harcértékei egy sorban: `KÉ x · TÉ y · VÉ z` (monospace, dim). Mindig látszik (hover-független).

@@ -12,12 +12,6 @@ export function getDisplayName(kulcs: string, kepzettsegDefs: KepzettsegDef[]): 
   return képzettségNév(kulcs, { kepzettsegDefs });
 }
 
-/** Def lookup kulcs alapján (többszörösnél az alap def). */
-export function findDef(kulcs: string, kepzettsegDefs: KepzettsegDef[]): KepzettsegDef | undefined {
-  const { id } = bontKépzKulcs(kulcs);
-  return kepzettsegDefs.find(d => d.id === id);
-}
-
 /**
  * Csoport felvehető képzettségei (többszörös kibontva). `value` = hivatkozási kulcs; szabad szöveges
  * többszörösnél `__prompt:<id>`, Tradíciónál `__tradicio`.

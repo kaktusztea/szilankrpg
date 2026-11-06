@@ -1,5 +1,5 @@
 import type { ManoverEntry } from '../../engine/data-types';
-import { PickerOverlay } from '../aktiv/PickerOverlay';
+import { PickerOverlay } from '../picker/PickerOverlay';
 
 const TÍPUS_LABEL: Record<string, string> = {
   általános: 'Általános',

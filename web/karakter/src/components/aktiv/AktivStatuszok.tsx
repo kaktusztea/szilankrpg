@@ -3,7 +3,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Session, UndoPatch } from '../../engine/types';
 import { fmtHatás } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
-import { PickerOverlay } from './PickerOverlay';
+import { PickerOverlay } from '../picker/PickerOverlay';
 import type { StátuszPerElem } from './aktiv-calc';
 import { előnyHátrányLabel } from '../../engine/dice';
 

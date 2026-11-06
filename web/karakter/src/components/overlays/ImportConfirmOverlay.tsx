@@ -1,4 +1,4 @@
-import { OverlayPortal } from './OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import type { Karakter } from '../../engine/types';
 
 interface Props {

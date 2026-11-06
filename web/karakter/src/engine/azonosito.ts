@@ -1,3 +1,4 @@
+import type { KepzettsegDef } from './data-types';
 /**
  * Fortély / képzettség azonosítás (2026-10-17, id-átállás F3-F4).
  *
@@ -65,4 +66,10 @@ export function képzettségSzint(képzettségek: readonly (KépzRef & { szint: 
 /** A karakter adott fortélyának legmagasabb foka (több példánynál a max; 0, ha nincs). */
 export function fortélyFok(fortélyok: readonly { id: string; fok: number }[], id: string): number {
   return fortélyok.reduce((m, f) => (f.id === id && f.fok > m ? f.fok : m), 0);
+}
+
+/** Def lookup kulcs alapján (többszörösnél az alap def). */
+export function findDef(kulcs: string, kepzettsegDefs: KepzettsegDef[]): KepzettsegDef | undefined {
+  const { id } = bontKépzKulcs(kulcs);
+  return kepzettsegDefs.find(d => d.id === id);
 }

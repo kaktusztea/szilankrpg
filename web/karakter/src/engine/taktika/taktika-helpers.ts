@@ -1,0 +1,119 @@
+import type { GameData } from '../data-loader';
+import type { TaktikaEntry } from '../data-types';
+import type { Karakter } from '../types';
+import { lookupFegyver, interpolateFokDef } from '../utils';
+import { képzettségSzint, fortélyFok } from '../azonosito';
+
+/** Harci terület szűrő a taktika / helyzet pickerekhez: a dobó popup csak a saját területét mutatja. */
+export type HarcTerület = 'közelharc' | 'távharc';
+
+/** A `csoport` (taktika / harci helyzet) illik-e a területhez; terület nélkül (Aktív fül) mindig. */
+export function területIllik(csoport: string | undefined, terület?: HarcTerület): boolean {
+  return !terület || (terület === 'távharc') === (csoport === 'távharc');
+}
+
+/** Az aktív taktikák / helyzetek száma az adott területen (a dobó popup chipjeinek feliratához). */
+export function aktívTerületen(
+  session: { aktív_taktikák: { név: string }[]; aktív_helyzetek: string[] }, data: GameData, terület: HarcTerület,
+): { taktika: number; helyzet: number } {
+  return {
+    taktika: session.aktív_taktikák.filter(a => területIllik(data.taktikak.find(t => t.név === a.név)?.csoport, terület)).length,
+    helyzet: session.aktív_helyzetek.filter(n => területIllik(data.harciHelyzetek.find(h => h.név === n)?.csoport, terület)).length,
+  };
+}
+
+/** Taktika engedélyezett-e: l. taktika-megkotes.ts (isTaktikaAllowed). */
+
+/** Taktika módosítók szöveges kijelzése */
+export function getTaktikaMods(t: { név: string; fok?: number }, data: GameData): string[] {
+  const def = data.taktikak.find(d => d.név === t.név);
+  if (!def) return [];
+  const mods: string[] = [];
+  if (def.fokozatos && def.fokok && t.fok != null) {
+    const fokDef = interpolateFokDef(def.fokok, t.fok, !!def.fortély_bővítés || !!def.skálázható);
+    if (fokDef) {
+      for (const [k, v] of Object.entries(fokDef)) {
+        if (k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`);
+      }
+    }
+  } else if (def.módosítók) {
+    for (const [k, v] of Object.entries(def.módosítók)) {
+      if (typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`);
+    }
+  }
+  return mods;
+}
+
+type TaktikaFokDef = NonNullable<TaktikaEntry['fokok']>[number];
+
+/** Numeric fields of the last defined fok, per fok (linear extrapolation base). */
+function fokonkéntiLépés(utolsó: TaktikaFokDef): Record<string, number> {
+  const perFok: Record<string, number> = {};
+  for (const [k, v] of Object.entries(utolsó)) {
+    if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
+  }
+  return perFok;
+}
+
+function extrapoláltFok(perFok: Record<string, number>, fok: number): TaktikaFokDef {
+  const entry: Record<string, unknown> = { fok };
+  for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * fok);
+  return entry as TaktikaFokDef;
+}
+
+/** Get taktika fokok including fortély bővítés extra fokok and harcmodor-level scaling. */
+export function getExtraFokok(def: Pick<TaktikaEntry, 'fokok' | 'fortély_bővítés' | 'skálázható'>, karakter: Karakter, data?: GameData): TaktikaFokDef[] {
+  if (!def.fokok?.length) return [];
+  const alapFokok = def.fokok;
+  let fokok = [...alapFokok];
+
+  // Fortély-based expansion (e.g. Támadás erőből)
+  if (def.fortély_bővítés) {
+    const fb = def.fortély_bővítés;
+    const fbFok = fortélyFok(karakter.fortélyok, fb.fortély);
+    const extraCount = fbFok * fb.extra_fokok_per_fok;
+    const utolsó = alapFokok[alapFokok.length - 1];
+    const perFok = fokonkéntiLépés(utolsó);
+    for (let i = 1; i <= extraCount; i++) fokok.push(extrapoláltFok(perFok, utolsó.fok + i));
+  }
+
+  // Harcmodor-level scaling for skálázható taktikák (absolute max fok cap)
+  if (def.skálázható && data) {
+    const entries = data.konstansok.skálázható_taktika_max_fok;
+    if (entries) {
+      // Find the active weapon's harcmodor level
+      const fp = karakter.fegyverek[karakter.session?.aktív_fegyver_index ?? -1];
+      const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
+      const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.kategória] ?? 'közelharc') : 'közelharc';
+      const harcmodorSzint = képzettségSzint(karakter.képzettségek, `harcmodor/${harcmodorNév}`);
+
+      // Find highest applicable absolute max_fok
+      let maxFok = 0;
+      for (const entry of entries) {
+        if (harcmodorSzint >= entry.szint) maxFok = entry.max_fok;
+      }
+
+      // Extend fokok up to maxFok (if above current max), and truncate fortély extras if over cap
+      if (maxFok > 0) {
+        const currentMax = fokok[fokok.length - 1].fok;
+        if (currentMax < maxFok) {
+          // Extend with interpolated fokok
+          const perFok = fokonkéntiLépés(alapFokok[alapFokok.length - 1]);
+          while (fokok[fokok.length - 1].fok < maxFok) fokok.push(extrapoláltFok(perFok, fokok[fokok.length - 1].fok + 1));
+        } else if (currentMax > maxFok) {
+          // Truncate: cap at maxFok
+          fokok = fokok.filter(f => f.fok <= maxFok);
+        }
+      }
+    }
+  }
+
+  return fokok;
+}
+
+/** Format fok modifier values as display string. */
+export function formatFokMods(f: Record<string, unknown>): string {
+  return Object.entries(f)
+    .filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0)
+    .map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ');
+}

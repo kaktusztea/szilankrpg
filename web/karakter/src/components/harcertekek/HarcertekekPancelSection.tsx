@@ -1,8 +1,8 @@
 import type { Karakter, PancelPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { HintType } from './hooks/useHint';
+import type { HintType } from '../../hooks/useHint';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { buildPancelLookups } from '../harc/pancel-calc';
+import { buildPancelLookups } from '../../engine/harc/pancel-calc';
 import { árFormátum } from '../formatters';
 
 interface Props {

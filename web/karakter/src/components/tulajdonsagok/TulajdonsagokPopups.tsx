@@ -1,12 +1,13 @@
 import type { GameData } from '../../engine/data-loader';
 import { bontKépzKulcs } from '../../engine/azonosito';
 import type { KepzettsegSlot } from './types';
-import { TextInputPopup, GridPickerPopup } from './popups';
+import { GridPickerPopup } from './popups';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { KorPicker } from './KorPicker';
-import { OverlayPortal } from '../overlays/OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { getDisplayName } from './helpers';
 import { SZINT_VALUES, MAX_FREETEXT_NÉV, MAX_NÉV, MAX_BECENÉV } from '../../ui-constants';
+import { TextInputPopup } from '../common/TextInputPopup';
 
 interface PromptState { alapId: string }
 interface DeleteTarget { idx: number; név: string; szint: number }

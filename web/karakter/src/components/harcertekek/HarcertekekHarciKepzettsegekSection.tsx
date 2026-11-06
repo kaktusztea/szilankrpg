@@ -1,7 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { getAllKözelharciNames, harciKepzDisplayName } from './helpers';
-import { HarcmodorLista, type HarcmodorListaProps } from './HarcmodorLista';
+import { getAllKözelharciNames, harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
+import { HarcmodorLista, type HarcmodorListaProps } from '../common/HarcmodorLista';
 
 type Props = Pick<HarcmodorListaProps, 'képzettségek' | 'setKépzettségek' | 'gameMode' | 'onDeleteKepz' | 'onKepzSzint'> & {
   data: GameData;

@@ -2,9 +2,10 @@ import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
 import { fmtHatás, fmtCode } from '../formatters';
-import { isTaktikaAllowed, getTaktikaMods } from './AktivHelpers';
-import { TaktikaPickerPopup } from './TaktikaPickerPopup';
+import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
 import type { TaktikaHatásPerElem } from './aktiv-calc';
+import { isTaktikaAllowed } from '../../engine/taktika/taktika-megkotes';
+import { getTaktikaMods } from '../../engine/taktika/taktika-helpers';
 
 interface Props {
   data: GameData;

@@ -3,7 +3,7 @@ import { kétkezesKövetelményHiány } from '../../engine/ketkezes';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
-import { buildFegyverOpciók, kétkezesLehetséges, isHárító } from './fegyver-helpers';
+import { buildFegyverOpciók, kétkezesLehetséges, isHárító } from '../../engine/harc/fegyver-helpers';
 import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';

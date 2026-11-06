@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SEB_TÍPUSOK, SEB_ALAP_MAX, SEB_BŐVÍTETT_MAX, type SebTípus } from './ep-logic';
+import { SEB_TÍPUSOK, SEB_ALAP_MAX, SEB_BŐVÍTETT_MAX, type SebTípus } from '../../engine/harc/ep-logic';
 
 /** Sebesülés dialógus: típus + érték választás → onConfirm. */
 export function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) => void }) {

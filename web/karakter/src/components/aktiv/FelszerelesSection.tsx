@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Karakter, FelszerelésTárgy } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { OverlayPortal } from '../overlays/OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import {
   felszerelésMax, felszerelésTerhelés, felszerelésSorok, felszerelésHátrány, type FelszerelésSor,
 } from '../../engine/felszereles';

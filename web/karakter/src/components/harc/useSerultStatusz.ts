@@ -1,6 +1,6 @@
 import { useEffect, type Dispatch, type SetStateAction } from 'react';
 import type { Session } from '../../engine/types';
-import { calcSérültFok } from './ep-logic';
+import { calcSérültFok } from '../../engine/harc/ep-logic';
 
 const SÉRÜLT_ELŐTAG = 'Sérült (';
 

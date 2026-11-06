@@ -1,4 +1,4 @@
-import { OverlayPortal } from './OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { MAX_KARAKTER_DB, MAX_NJK_DB } from '../../ui-constants';
 
 /** 'total' = összes karakter limit, 'njk' = tárolt NJK limit */

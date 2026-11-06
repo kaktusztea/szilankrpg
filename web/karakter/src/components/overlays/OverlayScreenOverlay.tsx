@@ -1,4 +1,4 @@
-import { OverlayPortal } from './OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { NaploTab } from '../aktiv/NaploTab';
 import { FelszerelesSection } from '../aktiv/FelszerelesSection';
 import { AkadalySection } from '../aktiv/AkadalySection';

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { SebzésRubrika } from '../../engine/types';
-import { buildRubrikák, toSebzések, applySeb, applyGyógy } from './ep-logic';
+import { buildRubrikák, toSebzések, applySeb, applyGyógy } from '../../engine/harc/ep-logic';
 import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { SebDialog, GyógyDialog } from './EpDialogs';
 import { DialogPortal } from './DialogPortal';

@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
-import { ElonyPicker } from './ElonyPicker';
-import { SebzesPopup } from './SebzesPopup';
-import { VeCsokkentesPopup } from './VeCsokkentesPopup';
-import { ManualDicePicker } from './ManualDicePicker';
-import { TaktikaPickerPopup } from '../aktiv/TaktikaPickerPopup';
-import { HelyzetPickerPopup } from '../aktiv/HelyzetPickerPopup';
-import { aktívTerületen } from '../aktiv/taktika-helpers';
+import { ElonyPicker } from '../dobas/ElonyPicker';
+import { SebzesPopup } from '../dobas/SebzesPopup';
+import { VeCsokkentesPopup } from '../dobas/VeCsokkentesPopup';
+import { ManualDicePicker } from '../dobas/ManualDicePicker';
+import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
+import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
+import { aktívTerületen } from '../../engine/taktika/taktika-helpers';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
-import type { DobásInfo } from './combat-roll-info';
+import type { DobásInfo } from '../../engine/harc/combat-roll-info';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, FegyverResultMód, UndoPatch } from '../../engine/types';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
-import type { Fegyverviszony } from './ve-csokkentes-calc';
-import { támadódobástTiltóTaktika } from './ve-csokkentes-calc';
-import { netElőnySzint, fegyverSpBónuszok, sebzésElőnyK20ból } from './combat-roll-info';
-import { HatasokInfo as HatásokInfo } from './HatasokInfo';
-import { ExtrakInfo } from './ExtrakInfo';
-import { KeziBonuszBtn } from './KeziBonuszBtn';
+import type { Fegyverviszony } from '../../engine/harc/ve-csokkentes-calc';
+import { támadódobástTiltóTaktika } from '../../engine/harc/ve-csokkentes-calc';
+import { netElőnySzint, fegyverSpBónuszok, sebzésElőnyK20ból } from '../../engine/harc/combat-roll-info';
+import { HatasokInfo as HatásokInfo } from '../dobas/HatasokInfo';
+import { ExtrakInfo } from '../dobas/ExtrakInfo';
+import { KeziBonuszBtn } from '../dobas/KeziBonuszBtn';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 
 interface Props {

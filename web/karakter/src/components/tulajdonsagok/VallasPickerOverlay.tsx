@@ -1,5 +1,5 @@
 import type { GameData } from '../../engine/data-loader';
-import { OverlayPortal } from '../overlays/OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 
 interface Props {
   data: GameData;

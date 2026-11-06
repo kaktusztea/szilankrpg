@@ -50,6 +50,16 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
 - State: App-szintű `karakter` objektum (schema v2, `engine/types.ts`)
 - Hooks: `hooks/useKarakterState.ts` (localStorage, slot), `hooks/useOverlays.ts` (overlay state)
 
+### Rétegek és modulhatárok (ESLint-tel őrizve, `web/karakter/eslint.config.js`)
+- `engine/` = tiszta számítás (React és `components/` import nélkül). Al-mappák: `engine/harc/` (Harc számoló réteg),
+  `engine/proba/` (próba-logika), `engine/taktika/` (taktika / helyzet logika).
+- `components/<fül>/` (`aktiv`, `harc`, `harcertekek`, `tavharc`, `tulajdonsagok`, `misztikus`, `fortelyok`, `hatterek`):
+  egy fül UI-ja + a CSAK ahhoz tartozó számítás. Fül nem importál másik fület (és az `overlays/`-t sem).
+- Ami több fülön kell: logika → `engine/`; UI → `components/` gyökér, `components/common/`, `components/dobas/`
+  (dobás-popup készlet), `components/picker/` (taktika / helyzet választók). Ezek sem importálhatnak fület.
+- App-keret kivétel: `App.tsx`, `TabContent.tsx`, `overlays/` (pl. `OverlayScreenOverlay`) importálhatja a fülek tartalmát.
+- `use…` előtag csak valódi React hooknak (a `react-hooks` linter a név alapján dönt).
+
 ## Konvenciók
 
 ### Data layer elsőbbség

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
-import { calcHarcComputed } from '../components/harc/harc-computed';
+import { calcHarcComputed } from './harc/harc-computed';
 import type { Karakter, Session } from './types';
 import { gyűjtStátuszEffektek } from './effekt';
 

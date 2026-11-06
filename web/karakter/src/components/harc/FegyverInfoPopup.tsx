@@ -1,8 +1,8 @@
 import { PopupOverlay } from '../PopupOverlay';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { FegyverResult } from './types';
 import { buildFegyverInfó } from './fegyver-info-calc';
+import type { FegyverResult } from '../../engine/harc/types';
 
 interface Props {
   result: FegyverResult;

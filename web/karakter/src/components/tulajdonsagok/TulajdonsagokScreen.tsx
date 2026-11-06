@@ -7,7 +7,7 @@ import type { Props, KepzettsegSlot } from './types';
 import { buildDefsByGroup, getDisplayName } from './helpers';
 import { TulajdonsagokHeader } from './TulajdonsagokHeader';
 import { KepzettsegCsoport } from './KepzettsegCsoport';
-import { buildFortélyFokok, negálásKulcs } from './kepzettseg-proba-calc';
+import { buildFortélyFokok, negálásKulcs } from '../../engine/proba/kepzettseg-proba-calc';
 import { TulajdonsagokPopups, INITIAL_POPUP_STATE, type PopupState } from './TulajdonsagokPopups';
 import { PrimerKpBox } from './PrimerKpBox';
 import { ElotortenetOverlay } from './ElotortenetOverlay';

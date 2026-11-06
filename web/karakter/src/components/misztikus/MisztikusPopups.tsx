@@ -3,7 +3,7 @@ import { képzKulcs } from '../../engine/azonosito';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import type { PopupState, TradícióOpció } from './types';
-import { FortélyFelvétel } from '../fortelyok/FortelyFelvetel';
+import { FortélyFelvétel } from '../common/FortelyFelvetel';
 import {
   SzintPickerPopup,
   TextPromptPopup,

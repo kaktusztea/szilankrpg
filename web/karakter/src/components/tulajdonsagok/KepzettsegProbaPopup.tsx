@@ -6,10 +6,10 @@ import { képzettségSzint, képzettségNév as képzettségNévId, bontKépzKul
 import { calcStátuszPróbaEH, próbaÉrzékek } from '../../engine/statusz-proba';
 import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
-import { ManualDicePicker } from '../harc/ManualDicePicker';
+import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
-import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from './proba-common';
-import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from './kepzettseg-proba-calc';
+import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from '../../engine/proba/proba-common';
+import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
 import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat } from './ProbaReszek';
 

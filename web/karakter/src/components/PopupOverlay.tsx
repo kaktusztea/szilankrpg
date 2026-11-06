@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { OverlayPortal } from './overlays/OverlayPortal';
+import { OverlayPortal } from './common/OverlayPortal';
 
 interface Props {
   children: ReactNode;

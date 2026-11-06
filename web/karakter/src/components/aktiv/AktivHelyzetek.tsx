@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import type { AktivBaseProps } from './types';
 import { fmtCode } from '../formatters';
-import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText, getTiltásWarnings } from './AktivHelpers';
-import { HelyzetPickerPopup } from './HelyzetPickerPopup';
+import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
+import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText, getTiltásWarnings } from '../../engine/taktika/helyzet-helpers';
 
 interface Props extends AktivBaseProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;

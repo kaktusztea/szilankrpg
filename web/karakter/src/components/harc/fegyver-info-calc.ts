@@ -1,8 +1,8 @@
 import type { Karakter, FegyverAlap, FegyverPeldany, FegyverResultMód } from '../../engine/types';
 import { harcmodorNév as hmMegjelenítés, képzettségSzint } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
-import type { FegyverResult } from './types';
 import { lookupFegyver } from '../../engine/utils';
+import type { FegyverResult } from '../../engine/harc/types';
 
 /** Egy mód (aktor) megjelenítendő fegyver-harcértékei (csak fegyver, taktika/páncél nélkül). */
 interface FegyverInfoMód {

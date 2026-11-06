@@ -1,4 +1,4 @@
-import { OverlayPortal } from './OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { MD_BASE, REPO_BASE, REPO_RAW_BASE } from '../MdLink';
 
 interface Props {

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { képzettségSzint } from '../../engine/azonosito';
 import type { HarcBaseProps } from './types';
-import { getFegyverhossz } from './fegyver-helpers';
+import { getFegyverhossz } from '../../engine/harc/fegyver-helpers';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> {
   páncélMGT: number;

@@ -7,7 +7,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
-import { calcHarcComputed } from '../components/harc/harc-computed';
+import { calcHarcComputed } from './harc/harc-computed';
 import { calcKpDetails } from '../components/kp-calc';
 import { calcPrimerKp } from '../components/tulajdonsagok/primerKpCalc';
 import { checkKövetelmények } from '../components/fortelyok/helpers';

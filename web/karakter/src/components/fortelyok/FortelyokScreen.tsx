@@ -6,7 +6,7 @@ import { FokPickerPopup, MultiPicker, SzabadTypePickerPopup, EgyediFortelyPopup 
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { useFortelyActions } from './useFortelyActions';
 import { HINT_DURATION_MS } from '../../ui-constants';
-import { useHint } from '../harcertekek/hooks/useHint';
+import { useHint } from '../../hooks/useHint';
 import './FortelyokScreen.css';
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, karakter, setKarakter, tsz, fegyverNevek, nyelvtanulásSzint, képzettségek }: FortelyokScreenProps) {

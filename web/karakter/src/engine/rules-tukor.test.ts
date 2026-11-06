@@ -3,7 +3,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { evalFormula } from './reactive-parse';
 import type { Context, ArrayContext, StringContext } from './reactive';
-import { manőverPontKéplet } from '../components/aktiv/manover-dobas-calc';
+import { manőverPontKéplet } from './harc/manover-dobas-calc';
 
 /**
  * Drift-őr: a reactive rules.json formulájából számolt kézi TS pure képletek (páncél_lefedettség,

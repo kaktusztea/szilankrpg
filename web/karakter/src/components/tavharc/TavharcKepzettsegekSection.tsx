@@ -1,8 +1,8 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
 import { képzKulcs, bontKépzKulcs, harcmodorNév } from '../../engine/azonosito';
-import { getAllTávharciNames } from '../harcertekek/helpers';
-import { HarcmodorLista, type HarcmodorListaProps } from '../harcertekek/HarcmodorLista';
+import { getAllTávharciNames } from '../../engine/harc/harcertekek-helpers';
+import { HarcmodorLista, type HarcmodorListaProps } from '../common/HarcmodorLista';
 
 type Props = Pick<HarcmodorListaProps, 'képzettségek' | 'setKépzettségek' | 'gameMode' | 'onDeleteKepz' | 'onKepzSzint'> & {
   data: GameData;

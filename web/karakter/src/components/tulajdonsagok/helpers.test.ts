@@ -1,9 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import type { KepzettsegDef } from '../../engine/data-loader';
 import type { KepzettsegSlot } from './types';
-import {
-  getDisplayName, findDef, sortKepzettsegSlotok, buildDefsByGroup, getAvailableNames,
-} from './helpers';
+import { getDisplayName, sortKepzettsegSlotok, buildDefsByGroup, getAvailableNames } from './helpers';
+import { findDef } from '../../engine/azonosito';
 
 // A képzettségeket hivatkozási KULCS azonosítja ("úszás", "nyelvtudás/aszisz", "tradíció/Dzsad") - 2026-10-17.
 const defs = [

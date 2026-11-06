@@ -5,7 +5,7 @@ import { useHoldRepeat } from '../../hooks/useHoldRepeat';
 import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 import { PopupOverlay } from '../PopupOverlay';
 import { rollK10 } from '../../engine/dice';
-import { probaSiker } from '../tulajdonsagok/proba-common';
+import { probaSiker } from '../../engine/proba/proba-common';
 import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, buildOpciók, type LKOpció } from './loveskiteres-calc';
 
 interface Props {

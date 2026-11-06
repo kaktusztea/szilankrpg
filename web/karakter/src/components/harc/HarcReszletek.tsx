@@ -1,7 +1,7 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { FegyverResult } from './types';
 import { calcReszletekData, type KétkezesBontás } from './harc-reszletek-calc';
+import type { FegyverResult } from '../../engine/harc/types';
 
 interface Props {
   karakter: Karakter;

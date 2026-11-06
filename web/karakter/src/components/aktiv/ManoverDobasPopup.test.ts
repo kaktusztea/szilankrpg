@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { parseFázisok, fázisSikeres, rontottVFázis } from './manover-dobas-calc';
-import type { FázisEredmény } from './manover-dobas-calc';
+import { parseFázisok, fázisSikeres, rontottVFázis } from '../../engine/harc/manover-dobas-calc';
+import type { FázisEredmény } from '../../engine/harc/manover-dobas-calc';
 
 describe('parseFázisok', () => {
   it('parses "M,V,E" → [M, V, E]', () => {

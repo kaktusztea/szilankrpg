@@ -6,10 +6,10 @@ import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 import { PancelPopup } from './HarcertekekPancelPopup';
-import { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from './PickerComponents';
+import { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from '../common/PickerComponents';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
-import { TextInputPopup } from '../tulajdonsagok/popups/TextInputPopup';
-import { getMfFok, harciKepzDisplayName } from './helpers';
+import { TextInputPopup } from '../common/TextInputPopup';
+import { getMfFok, harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
 
 interface PopupState {
   ideaTarget: { type: 'fegyver' | 'páncél'; idx: number } | null;

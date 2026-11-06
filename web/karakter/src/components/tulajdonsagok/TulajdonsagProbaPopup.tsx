@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
-import { ManualDicePicker } from '../harc/ManualDicePicker';
+import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
-import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from './proba-common';
+import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
 import { useProbaDobas } from './useProbaDobas';
 import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat } from './ProbaReszek';
 

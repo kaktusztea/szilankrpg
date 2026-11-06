@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import type { Karakter } from '../engine/types';
 import { fortélyFok } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';
-import { isTaktikaAllowed } from '../components/aktiv/taktika-megkotes';
+import { isTaktikaAllowed } from '../engine/taktika/taktika-megkotes';
 
 export function useTaktikaInvalidation(
   karakter: Karakter | null,

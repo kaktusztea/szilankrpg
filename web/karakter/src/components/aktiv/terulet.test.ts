@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
-import { területIllik, aktívTerületen } from './taktika-helpers';
+import { területIllik, aktívTerületen } from '../../engine/taktika/taktika-helpers';
 
 // Dobó popupok picker-szűrője (2026-10-19): Támadó = közelharc, Célzó = távharc, Aktív fül = mind.
 describe('területIllik / aktívTerületen', () => {

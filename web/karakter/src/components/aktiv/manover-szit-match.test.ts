@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { szitFeltételTeljesül, szitModKezdőÁllapot, extraHordozóNév } from './manover-dobas-calc';
+import { szitFeltételTeljesül, szitModKezdőÁllapot, extraHordozóNév } from '../../engine/harc/manover-dobas-calc';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla } from '../../engine/data-types';

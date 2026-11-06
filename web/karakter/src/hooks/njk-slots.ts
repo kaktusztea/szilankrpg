@@ -4,7 +4,7 @@ import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { evaluate, buildContext } from '../engine/reactive';
 import { readKmJelölések } from './km-jelolesek';
-import { harcFejlécÉrtékek } from '../components/harc/harc-fejlec-calc';
+import { harcFejlécÉrtékek } from '../engine/harc/harc-fejlec-calc';
 
 /**
  * NJK (Nem Játékos Karakter) slot szabályok: tárolási limit + a switcher sáv adatai.

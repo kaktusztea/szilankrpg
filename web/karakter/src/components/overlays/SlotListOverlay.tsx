@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import { OverlayPortal } from './OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { SlotList } from '../SlotList';
 
 /** Karakterek hub overlay: a SlotList portálban, címmel (a propok 1:1 a SlotList-éi). */

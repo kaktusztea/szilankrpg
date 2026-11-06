@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { buildPancelLookups } from '../harc/pancel-calc';
+import { buildPancelLookups } from '../../engine/harc/pancel-calc';
 
 /** Páncél ár reactive lánc (rules.json: páncél_ár) a valós data layerrel. */
 function páncélÁr(opts: {

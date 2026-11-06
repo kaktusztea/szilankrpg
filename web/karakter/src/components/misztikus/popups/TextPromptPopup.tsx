@@ -1,4 +1,4 @@
-import { OverlayPortal } from '../../overlays/OverlayPortal';
+import { OverlayPortal } from '../../common/OverlayPortal';
 import { MAX_FREETEXT_NÉV } from '../../../ui-constants';
 
 interface Props {

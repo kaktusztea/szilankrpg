@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Kepzettseg, Fortely } from '../../engine/types';
 import type { KepzettsegDef, FortelySummary } from '../../engine/data-loader';
-import { OverlayPortal } from '../overlays/OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { FortelyDetails } from '../FortelyDetails';
 import { MdLink } from '../MdLink';
 import { EGYEDI_FORTELY_SENTINEL, MAX_AZONOS_FORTÉLY } from '../../ui-constants';

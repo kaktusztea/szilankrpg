@@ -2,9 +2,15 @@ import type { Kepzettseg, UndoPatch } from '../../engine/types';
 import { képzKulcs, fortélyFok } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { HmSection, HarciKepzettsegekSection, FegyverekSection, PancelSection, PajzsSection, Popups } from './index';
-import { useHint, usePopupState, useKarakterMutators } from './hooks';
+import { usePopupState, useKarakterMutators } from './hooks';
 import './HarcertekekScreen.css';
+import { useHint } from '../../hooks/useHint';
+import { HmSection } from './HarcertekekHmSection';
+import { HarciKepzettsegekSection } from './HarcertekekHarciKepzettsegekSection';
+import { FegyverekSection } from './HarcertekekFegyverekSection';
+import { PancelSection } from './HarcertekekPancelSection';
+import { PajzsSection } from './HarcertekekPajzsSection';
+import { Popups } from './HarcertekekPopups';
 
 interface Props {
   data: GameData;

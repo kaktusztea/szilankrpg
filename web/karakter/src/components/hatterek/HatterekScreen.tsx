@@ -6,7 +6,7 @@ import { TagCloud } from './TagCloud';
 import { KarmaCloud } from './KarmaCloud';
 import { FreeTextPopup } from './FreeTextPopup';
 import { MAX_AZONOS_HÁTTÉR, HINT_DURATION_MS } from '../../ui-constants';
-import { useHint } from '../harcertekek/hooks/useHint';
+import { useHint } from '../../hooks/useHint';
 import './HatterekScreen.css';
 
 interface Props {

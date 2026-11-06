@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a kész; következő: 2 (fül → fül), 3, 6b, 4, 5, 7 (+8 Python)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a és 2 kész; következő: 3 (lookup), 6b, 4, 5, 7 (+8 Python)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -29,7 +29,7 @@
 Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`.
 Az adat-migráció és a közös gyűjtő + 42.3 motor kész (§42.5); a `calcFortelyMods` / `calcTaktikaMods` burkolók. Nyitott:
 
-- [ ] **VÉ-csökkentés a gyűjtőre**: `harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot` - a fortély `vé_csökkentés` flat-ok saját ciklussal + saját feltétel-ellenőrzéssel, a taktika bázis / szorzó a `hatások` közvetlen szűrésével (§42.6).
+- [ ] **VÉ-csökkentés a gyűjtőre**: `engine/harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot` - a fortély `vé_csökkentés` flat-ok saját ciklussal + saját feltétel-ellenőrzéssel, a taktika bázis / szorzó a `hatások` közvetlen szűrésével (§42.6).
 - [ ] **Távharci CÉ a gyűjtőre**: `tavharc/helpers.ts` - a helyzet `CÉ` flat és a taktika `módosítók.CÉ` saját ciklusból (§42.6).
 - [ ] **Böngészős ellenőrzés**: a §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) egyszer sem voltak végigkattintva. Módszer: **Böngészős (Playwright) tesztelés** (Build scriptek alatt); csak jóváhagyással.
 - Tudatos szűkítések (ma nem tüzelnek, új adatnál felülvizsgálandó): §42.6 lista (távharci feltétel-kiértékelő, extra feltétel-kontextus, szorzó-keverék).
@@ -107,7 +107,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **0. és 1. fázis kész, döntések megvannak; a 2-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0., 1., 2. és 6a fázis kész; a 3-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -148,7 +148,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | Döntési pontok | - | eldöntve (2026-11-06), l. lent |
 | ✅ | 0. Tooling: ESLint + knip | kicsi | kész (2026-11-06) |
 | ✅ | **6a. Típusosság** (`any` 0, `as unknown as` 2 - a session-toggle a 6b-ben) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
-| 3 | **2. Rétegek és modulhatárok** (az `engine/` rész kész; maradt: fül → fül) | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
+| ✅ | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
 | 4 | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
 | 5 | **6b. Típusfájlok bontása + session-toggle tipizált mező** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
 | 6 | **4. Párhuzamos kódutak** (benne: "Egységes effekt-modell: maradék" fent) | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
@@ -198,17 +198,13 @@ semmi nem hivatkozza, a böngésző feleslegesen tölti le. Csapda: a név néha
 (`className={'extrak-badge-' + állapot}`), ezért a szövegkeresés "nem használtnak" láthatja - ezt kézzel kell kizárni.
 A törlés biztonsági hálója a `tsc` (TypeScript fordító): ha valami mégis használta a törölt exportot, fordítási hibát ad.
 
-**2. Rétegek és modulhatárok** - közepes kockázat, ~2 nap
-- ✅ **`engine/` → `components/` rétegsértés: 0 (2026-11-06).** Az `extrak-effekt.ts` + `extrak-info-calc.ts` (+ tesztjeik)
-  `engine/`-be költözött; `interpolateFokDef`, `ideaDelta`, `buildPajzsFegyverNév` → `engine/utils.ts`; `FegyverResultMód`,
-  `UndoPatch` / `UndoEntry` → `engine/types.ts`. A szabály (`no-restricted-imports`) hiba szinten él, kivétel nélkül.
-- [ ] Szabály a doksiba (`AGENTS.md`): `engine/` = tiszta számítás, React és `components/` import nélkül; fülek közti közös
-  logika → `engine/`, közös UI → `components/common/`.
-- [ ] A 18 fül → fül import feloldása (+1: `tavharc` → `tulajdonsagok/proba-common`, 1. fázis); `harc/index.ts` /
-  `harcertekek/index.ts` barrel: rendes API vagy törlés.
-- [ ] Őrző szabály a fül → fül importokra (`no-restricted-imports`, csak `components/common/` engedett) - a 18 irány feloldása után.
-  (A `harc/shared.ts` `mf-utils` re-exportja és az `aktiv/AktivHelpers.ts` barrel is ide tartozik.)
-- [ ] Mappaszerkezet (döntés): a csak egy fülhöz tartozó `*-calc.ts` a fül mellett marad; ami több fülön kell, `engine/`-be megy.
+**2. Rétegek és modulhatárok** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
+- `engine/` → `components/`: 0; fül → fül import: 60 → 0 (csak az app-keret `overlays/` mutat fület). 38 éles fájl költözött:
+  Harc számoló réteg → `engine/harc/`, próba-logika → `engine/proba/`, taktika / helyzet → `engine/taktika/`; közös UI →
+  `components/common/`, `components/dobas/` (dobás-popup készlet), `components/picker/`; `useHint` → `hooks/`.
+- Őrzés: ESLint `no-restricted-imports` (engine-szabály + fülenkénti regex-szabály + a közös UI-mappákra), negatív teszttel.
+  A rétegszabály leírása: `AGENTS.md` → „Rétegek és modulhatárok".
+- Barrelek: `aktiv/AktivHelpers.ts` törölve, `harcertekek/index.ts` csak a Screen-t exportálja (körkörös import megszűnt).
 
 *Dummies:* a motor (szabályszámítás) ne függjön a műszerfaltól (képernyők). Ma a motor néhány alkatrészt a
 Harc fül fiókjából vesz elő - ha valaki a Harc fület átrendezi, a motor eltörik. Rendrakás: minden közös alkatrész

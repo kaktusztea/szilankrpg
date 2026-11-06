@@ -363,10 +363,10 @@ impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
       Kétkezes harc: saját kalkuláció (`engine/ketkezes.ts`, §26).
       Harc fül Tám cella: kattintásra info popup (fegyver név, sebesség, harckeret).
       Moduláris harc kalkuláció:
-        - `harc/fegyver-calc.ts` - buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes
-        - `harc/taktika-calc.ts` - calcTaktikaMods
-        - `harc/pancel-calc.ts` - buildPancelLookups, calcFogas, calcFtEnyhites
-        - `harc/harc-computed.ts` - hook: context build + evaluate + feltétel dispatch
+        - `engine/harc/fegyver-calc.ts` - buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes
+        - `engine/harc/taktika-calc.ts` - calcTaktikaMods
+        - `engine/harc/pancel-calc.ts` - buildPancelLookups, calcFogas, calcFtEnyhites
+        - `engine/harc/harc-computed.ts` - `calcHarcComputed` (pure): context build + evaluate + feltétel dispatch
         - `harc/harc-reszletek-calc.ts` - calcReszletekData (aktív fegyver bontás adatok)
         - `engine/fortely-mods.ts` - calcFortelyMods (önálló engine modul)
 ```
@@ -645,7 +645,7 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
         Input: karakter, session, gameData, aktívFeltételek Set, feltételTeljesül callback.
         Output: Record<string, number> (célokra összegzett bónuszok: KÉ, TÉ, VÉ, SP, CÉ, harckeret, SFÉ, fegyverhossz,
         + SP_erőbónusz_arány).
-        Hívó: harc/harc-computed.ts.
+        Hívó: engine/harc/harc-computed.ts.
         Belsőleg meghívja: `evaluateAlapesetek()` (engine/alapeset.ts) a 0.fok módosítók beszámítására.
       Könyvtár struktúra: `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml`
       A `tavharc/` mappából jövők `alcsoport: "tavharc"` mezőt kapnak a JSON-ban (picker csoport: "🏹 Távharc").
@@ -740,7 +740,7 @@ Lovas harc                         TÉ:-9, VÉ:-9 (harci_helyzet:lovas_harc)
 Léglovas harc                      TÉ:-9, VÉ:-9 (harci_helyzet:léglovas_harc)
 Lövés hátasról                     CÉ:-3 (harci_helyzet:lovas_harc)
 Lövés reflexből fejlesztése        CÉ:-7 (harci_helyzet:lövés_reflexből)
-Testőr                             jelzés (harci_helyzet:vé_kiterjesztés) - a ×2-t maga a helyzet adja (harc/shared.ts)
+Testőr                             jelzés (harci_helyzet:vé_kiterjesztés) - a ×2-t maga a helyzet adja (engine/harc/shared.ts)
 Hárítófegyver használat            jelzés (fegyverfogás:fegyver_hárító) - hatás: calcFogas
 Csak hatástext (emlékeztető):      Gyöngyhalász, Úszás, Infralátás, Helyhez kötve fejlesztése,
                                    Kétkezesség, Vakharc fejlesztése, Mozgó cél könnyítése
@@ -971,7 +971,7 @@ output: max_HM, max_CM, max_HM_aszimmetria
 
 reactive rules.json:
   max_HM: sum_where(harci_fortélyok, fok, is_mesterfegyver, 0) + harcmodor_összeg + alakzatharc_szint
-  max_HM_aszimmetria: floor(tsz / konstansok.hm_aszimmetria_osztó)   → TS: harcertekek/helpers.ts calcMaxAszimmetria
+  max_HM_aszimmetria: floor(tsz / konstansok.hm_aszimmetria_osztó)   → TS: engine/harc/harcertekek-helpers.ts calcMaxAszimmetria
   max_CM: tsz * konstansok.arányok.max_cm_perszint
 
 note: A Mesterfegyver fortély fokai NEM számítanak a max_HM-be.
@@ -1745,7 +1745,7 @@ Jelenlegi session_toggle fortélyok:
 ### Feltétel kiértékelés implementáció (engine/feltetel-eval.ts)
 
 A centralizált feltétel-kiértékelő: `engine/feltetel-eval.ts → createFeltételEvaluator(aktívFeltételek, session,
-computed, ctx, stringCtx)`, hívója a `harc/harc-computed.ts`:
+computed, ctx, stringCtx)`, hívója a `engine/harc/harc-computed.ts`:
 
 ```typescript
 // getFeltételÉrték: érték lookup sorrend
@@ -1807,7 +1807,7 @@ Ellenőrzés logika:
 **Mesterfegyver követelmény - fegyver-specifikus harcmodor szűkítés:**
 
 A Mesterfegyver fortély yaml-ban a követelmény OR listában az összes közelharci harcmodor szerepel.
-A fegyverenkénti ellenőrzés (`harcertekek/helpers.ts → mfKövetelményHiba`, `tavharc/mesterfegyver-calc.ts →
+A fegyverenkénti ellenőrzés (`engine/harc/harcertekek-helpers.ts → mfKövetelményHiba`, `tavharc/mesterfegyver-calc.ts →
 mfKövetelményHiba/Text`) azonban **nem az egész OR listát** vizsgálja, hanem **kizárólag az adott fegyverhez
 tartozó harcmodort** (a Fortélyok fül FortelyRow-ja csak a hiány-címkében nevezi meg a fegyver harcmodorát):
 - Közelharci fegyver: `fegyver.kategória` → `konstansok.fegyver_kategória_harcmodor[kategória]` lookup
@@ -2130,7 +2130,7 @@ if session.kétkezes_harc:
   fegyverlevonás = FLOOR(sum_fegyverhossz / konstansok.kétkezes_harc_fegyverlevonás_osztó)
   támadások = 1 + FLOOR(harckeret / nagyobb_fegyver.sebesség)
 
-impl: engine/ketkezes.ts → calcKétkezesHarc (hívó: harc/fegyver-calc.ts → calcKetkezes, + fegyver_override).
+impl: engine/ketkezes.ts → calcKétkezesHarc (hívó: engine/harc/fegyver-calc.ts → calcKetkezes, + fegyver_override).
 ```
 
 ## §27 Fegyverfogás
@@ -2802,7 +2802,7 @@ formula:
   inS4 = sebCount > 3 × oszlopMéret
   targetFok = inS4 ? 2 : inS3 ? 1 : 0
 
-impl: harc/ep-logic.ts → calcSérültFok (pure)
+impl: engine/harc/ep-logic.ts → calcSérültFok (pure)
 side effect (HarcScreen.tsx useEffect):
   Ha targetFok változik → session.aktív_státuszok frissítés:
     targetFok = 0: "Sérült (X)" eltávolítása
@@ -3010,7 +3010,7 @@ Forrás: md/010_05_04_tulajdonsagproba.md, md/030_06_01_kepzettsegproba.md
 **Paraméterek a data layerben** (2026-10-17): `konstansok.yaml → próba` - típusonként (`tulajdonság` / `képzettség`)
 kocka, célszám-lista (`nehézségek`, `nehézségek_extra`), `kiemelt_különbség`, `másodlagos_levonás`; közös:
 `előny_hátrány_max`, `összetett_max_másodlagos`, `vállalás {max, kocka}`, `helyettesítés {min_szint, osztó, max}`.
-A két popup közös logikája: `tulajdonsagok/proba-common.ts` (pure), `useProbaDobas.ts` (dobás-állapot),
+A két popup közös logikája: `engine/proba/proba-common.ts` (pure), `useProbaDobas.ts` (dobás-állapot),
 `ProbaReszek.tsx` (UI-részek). Az E/H skála a kocka-rétegben (`engine/dice.ts EH_SZINT_MAX`) szinkron másolat,
 az egyezést teszt őrzi.
 
@@ -3067,7 +3067,7 @@ Biztos siker: tulajdonság + szint + 1 >= célszám → dobás nélkül sikeres
 ```
 
 Webapp: `KepzettsegProbaPopup.tsx`.
-Pure helperek (`tulajdonsagok/kepzettseg-proba-calc.ts`): `probaLehetetlen(tulÉrték, szint, célszám)`, `probaBiztosSiker(tulÉrték, szint, célszám)`.
+Pure helperek (`engine/proba/kepzettseg-proba-calc.ts`): `probaLehetetlen(tulÉrték, szint, célszám)`, `probaBiztosSiker(tulÉrték, szint, célszám)`.
 
 ### 37.3 Próba képzetlenül
 
@@ -3954,7 +3954,7 @@ Kivétel (maradék TS inline logika):
 - Fájdalomtűrés enyhítés: küszöb-tábla lookup (`pancel-calc.ts → calcFtEnyhites`)
 - Kétkezes harc összesítő: multi-fegyver kompozíció (`engine/ketkezes.ts`)
 - Fortély módosítók iteráció: feltételes aktiválás (`engine/fortely-mods.ts`)
-- Taktika módosítók: fokozatos extrapoláció (`harc/taktika-calc.ts`)
+- Taktika módosítók: fokozatos extrapoláció (`engine/harc/taktika-calc.ts`)
 
 ### 41.2 Rule struktúra
 
@@ -4059,9 +4059,9 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 | Hívó | Mit épít | Mire használja |
 |------|----------|---------------|
 | `components/kp-calc.ts` (calcKpDetails, App.tsx-ből) | Teljes buildContext + buildArrayContext (összes tömb) | KP, primer keret, tulajdonság pont keret, max_HM, max_CM, ÉP |
-| `harc/harc-computed.ts` | buildContext + páncél lookupArrays + stringCtx | Páncél SFÉ/MGT, merevvért, lefedettség, KÉ, manőver alap/pont |
-| `harc/fegyver-calc.ts` | Per-fegyver × per-mód buildContext (fegyver-specifikus extras) | TÉ, VÉ, SP, harckeret, támadások |
-| `harcertekek/helpers.ts` (calcMaxAszimmetria) | Alap context (tsz) | max_HM_aszimmetria |
+| `engine/harc/harc-computed.ts` | buildContext + páncél lookupArrays + stringCtx | Páncél SFÉ/MGT, merevvért, lefedettség, KÉ, manőver alap/pont |
+| `engine/harc/fegyver-calc.ts` | Per-fegyver × per-mód buildContext (fegyver-specifikus extras) | TÉ, VÉ, SP, harckeret, támadások |
+| `engine/harc/harcertekek-helpers.ts` (calcMaxAszimmetria) | Alap context (tsz) | max_HM_aszimmetria |
 | `harcertekek/HarcertekekPancelSection.tsx` | Páncél context + lookupArrays + stringCtx | páncél SFÉ/MGT kijelzés |
 | `tulajdonsagok/kepzettseg-limit.ts` | Alap context | képzettség max szint (§19) |
 | `hooks/njk-slots.ts` | Alap context (NJK switcher stat) | ÉP, KÉ |
@@ -4271,21 +4271,21 @@ kimenetéből szűrve, ill. a megnevezett helyen):
 
 | mód | jelenlegi kezelő | § |
 |-----|------------------|---|
-| `flat` | `engine/effekt.ts` gyűjtő (fortély/alapeset/taktika; `calcFortelyMods` / `calcTaktikaMods` burkolók) + `harc/combat-roll-info.ts` (dobás-bónusz) + `engine/effekt.ts` `gyűjtHelyzetEffektek` (helyzet: `VÉ` → `helyzetMods`, `vé_csökkentés` → VÉ-csökkentés popup, `(bázis + k20P + flat) × szorzó`; a Fárasztás override-jára is ráadódik - általános szabály, 2026-10-16) | §16, §21 |
+| `flat` | `engine/effekt.ts` gyűjtő (fortély/alapeset/taktika; `calcFortelyMods` / `calcTaktikaMods` burkolók) + `engine/harc/combat-roll-info.ts` (dobás-bónusz) + `engine/effekt.ts` `gyűjtHelyzetEffektek` (helyzet: `VÉ` → `helyzetMods`, `vé_csökkentés` → VÉ-csökkentés popup, `(bázis + k20P + flat) × szorzó`; a Fárasztás override-jára is ráadódik - általános szabály, 2026-10-16) | §16, §21 |
 | `scaled` | `engine/effekt.ts` `gyűjtFortélyEffektek` (képzettség-forrás FLOOR; `erőbónusz` → arány) | §16 |
-| `override` | `harc/fegyver-calc.ts` (SP override, fegyver_override) + `engine/extrak-effekt.ts` (extrák) | §5–8, §21 |
-| `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`harc/combat-roll-info.ts`: a `gyűjt*Effektek` szűrése dobás-célokra; nettó szint: `kockaSzint`, 2026-10-18) | §22 |
+| `override` | `engine/harc/fegyver-calc.ts` (SP override, fegyver_override) + `engine/extrak-effekt.ts` (extrák) | §5–8, §21 |
+| `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`engine/harc/combat-roll-info.ts`: a `gyűjt*Effektek` szűrése dobás-célokra; nettó szint: `kockaSzint`, 2026-10-18) | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
 | `letilt` | `engine/effekt.ts` taktika-gyűjtő (fortély `letilt` → a taktika adott célú hozzájárulása kiesik, pl. Taktikafókusz: Visszafogott) + tiltás-feloldás (`tiltás:<id>`) + `engine/statusz-proba.ts` (próba auto-kudarc) | §21, §42.4 |
-| `szöveges` | `formatters.tsx` / `harc/HatasokInfo.tsx` (megjelenítés) | §22 |
-| `szorzó` | `harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `harc/shared.ts` `véVesztésSzorzó` (vé_veszteség - a `gyűjtHelyzetEffektek` + `gyűjtStátuszEffektek` effektjeiből) + `engine/extrak-effekt.ts` | §21, §22 |
+| `szöveges` | `formatters.tsx` / `dobas/HatasokInfo.tsx` (megjelenítés) | §22 |
+| `szorzó` | `engine/harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `engine/harc/shared.ts` `véVesztésSzorzó` (vé_veszteség - a `gyűjtHelyzetEffektek` + `gyűjtStátuszEffektek` effektjeiből) + `engine/extrak-effekt.ts` | §21, §22 |
 | `max_limit` | `engine/extrak-effekt.ts` motor; `calcHarcComputed`: helyzet/státusz `támadások_száma` (pl. Félelem (2): max 1) a fegyversorok + kétkezes `támadások`-ára (2026-10-16) | §42.3 |
 
 Megjegyzés: a `calcFortelyMods` / `calcTaktikaMods` / `értékCélra` minden numerikus módot a közös 42.3 motoron
 (`alkalmazEffektek`) számol; a fenti fájlok csak kiolvassák a gyűjtő kimenetét a saját céljukra.
 
 **Gyűjtőn kívüli kódutak (maradék, ma helyes értéket adnak):**
-- `harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot`: a fortélyok `vé_csökkentés` flat-jait saját ciklus +
+- `engine/harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot`: a fortélyok `vé_csökkentés` flat-jait saját ciklus +
   saját feltétel-ellenőrzés olvassa (nem `gyűjtFortélyEffektek`); a taktika `vé_csökkentés` bázis
   (`calcTaktikaVéCsökkentésBázis`) és szorzó (`calcVéCsökkentésSzorzó`) a taktika `hatások`-át közvetlenül szűri
   (a precedenciát már az `alkalmazEffektek` adja).

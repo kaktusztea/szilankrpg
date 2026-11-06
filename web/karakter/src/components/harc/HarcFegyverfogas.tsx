@@ -1,8 +1,8 @@
 import type { HarcBaseProps } from './types';
 import type { Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
-import { PickerOverlay } from '../aktiv/PickerOverlay';
-import { kétkezesLehetséges, isHárító } from './fegyver-helpers';
+import { PickerOverlay } from '../picker/PickerOverlay';
+import { kétkezesLehetséges, isHárító } from '../../engine/harc/fegyver-helpers';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session'> {
   onSelect: (patch: Partial<Session>) => void;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { rollElőnyHátrányDie, type ProbaDobás } from '../../engine/dice';
-import { összetettCélszámok, összetettEredmény, összetettKéziFelirat, type ÖsszetettEredmény } from './proba-common';
+import { összetettCélszámok, összetettEredmény, összetettKéziFelirat, type ÖsszetettEredmény } from '../../engine/proba/proba-common';
 
 interface Opciók {
   /** Tulajdonság [+ effektív szint] - a dobáshoz adódik. */

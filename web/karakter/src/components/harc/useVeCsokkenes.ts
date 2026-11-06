@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, type Dispatch, type SetStateAction } from 'react';
 import type { Session } from '../../engine/types';
 import type { HarcBaseProps } from './types';
-import { coalesceVéHistory } from './shared';
+import { coalesceVéHistory } from '../../engine/harc/shared';
 import { VÉ_FLASH_MS, VÉ_COALESCE_MS } from '../../ui-constants';
 
 /**

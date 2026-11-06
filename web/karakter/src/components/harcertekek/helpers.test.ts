@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { calcMaxHM, calcMaxAszimmetria, getHarcmodorok } from './helpers';
+import { calcMaxHM, calcMaxAszimmetria, getHarcmodorok } from '../../engine/harc/harcertekek-helpers';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 
 const data = {

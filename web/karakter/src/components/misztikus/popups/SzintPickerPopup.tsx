@@ -1,4 +1,4 @@
-import { OverlayPortal } from '../../overlays/OverlayPortal';
+import { OverlayPortal } from '../../common/OverlayPortal';
 import { MAX_KÉPZETTSÉG_SZINT } from '../../../ui-constants';
 
 interface Props {

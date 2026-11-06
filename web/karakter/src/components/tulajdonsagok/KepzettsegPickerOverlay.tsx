@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import { OverlayPortal } from '../overlays/OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { KepzettsegDetails } from '../KepzettsegDetails';
 import { MdLink } from '../MdLink';
 

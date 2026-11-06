@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { OverlayPortal } from '../overlays/OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 import { KorPicker } from './KorPicker';
 import { VallasPickerOverlay } from './VallasPickerOverlay';
 import { MAX_ELOTORTENET_MEZŐ, MAX_NÉV, MAX_BECENÉV } from '../../ui-constants';

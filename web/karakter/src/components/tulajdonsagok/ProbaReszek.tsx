@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { ProbaDobás } from '../../engine/dice';
-import { előnyHátrányLabel, eredményFelirat, type ÖsszetettEredmény } from './proba-common';
+import { előnyHátrányLabel, eredményFelirat, type ÖsszetettEredmény } from '../../engine/proba/proba-common';
 
 /** Popup fejléc: ✕ bezárás, cím, ⟲ újradobás (csak ha van eredmény). */
 export function ProbaFejlec({ cím, vanEredmény, onReset, onClose }: { cím: string; vanEredmény: boolean; onReset: () => void; onClose: () => void }) {

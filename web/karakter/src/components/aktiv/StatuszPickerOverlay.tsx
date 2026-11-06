@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
-import { PickerOverlay } from './PickerOverlay';
+import { PickerOverlay } from '../picker/PickerOverlay';
 import { fmtHatás } from '../formatters';
 
 interface Props {

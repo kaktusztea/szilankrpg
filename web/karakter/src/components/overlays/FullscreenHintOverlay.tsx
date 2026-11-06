@@ -1,4 +1,4 @@
-import { OverlayPortal } from './OverlayPortal';
+import { OverlayPortal } from '../common/OverlayPortal';
 
 interface Props {
   onClose: () => void;

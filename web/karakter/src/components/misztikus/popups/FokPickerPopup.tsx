@@ -1,4 +1,4 @@
-import { OverlayPortal } from '../../overlays/OverlayPortal';
+import { OverlayPortal } from '../../common/OverlayPortal';
 
 interface Props {
   név: string;

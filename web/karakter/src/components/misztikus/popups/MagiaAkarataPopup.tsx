@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { OverlayPortal } from '../../overlays/OverlayPortal';
+import { OverlayPortal } from '../../common/OverlayPortal';
 
 interface Props {
   önuralom: number;

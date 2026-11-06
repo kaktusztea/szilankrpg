@@ -1,5 +1,5 @@
 import type { TradícióOpció } from '../types';
-import { OverlayPortal } from '../../overlays/OverlayPortal';
+import { OverlayPortal } from '../../common/OverlayPortal';
 
 interface Props {
   tradícióNév: string;

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { calcSzitModÖsszeg } from '../tulajdonsagok/kepzettseg-proba-calc';
-import { szitModSentinelLehetetlen, szitModSentinelExtraId, szitModÁllapot, szitTáblákMódszerint } from './manover-dobas-calc';
+import { calcSzitModÖsszeg } from '../../engine/proba/kepzettseg-proba-calc';
+import { szitModSentinelLehetetlen, szitModSentinelExtraId, szitModÁllapot, szitTáblákMódszerint } from '../../engine/harc/manover-dobas-calc';
 import type { ModositoTabla, GameData } from '../../engine/data-types';
 
 // A sentinel data-driven (konstansok.yaml → manőver.sentinel_nem_kísérelhető = 99); a tesztben literál.

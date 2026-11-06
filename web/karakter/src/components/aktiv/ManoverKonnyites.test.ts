@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   helyzetKönnyítés, könnyítettFázisok, követelményTeljesül, gépiKövetelményStátusz, követelményJelölés,
   követelményCimke, type AktívFegyverInfo,
-} from './manover-dobas-calc';
+} from '../../engine/harc/manover-dobas-calc';
 import type { ManoverKövetelmény } from '../../engine/data-types';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';

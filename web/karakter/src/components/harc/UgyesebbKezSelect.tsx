@@ -1,6 +1,6 @@
 import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
-import { getFegyverhossz } from './fegyver-helpers';
+import { getFegyverhossz } from '../../engine/harc/fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function isSpeciális(karakter: Karakter, idx: number): boolean {

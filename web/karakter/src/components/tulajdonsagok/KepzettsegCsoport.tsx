@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { képzKulcs, TRADÍCIÓ_ID } from '../../engine/azonosito';
+import { képzKulcs, TRADÍCIÓ_ID, findDef as findDefHelper } from '../../engine/azonosito';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
@@ -7,7 +7,7 @@ import type { KepzettsegSlot } from './types';
 import type { KépzettségLimitek } from './kepzettseg-limit';
 import { KepzettsegRow } from './KepzettsegRow';
 import { KepzettsegPickerOverlay } from './KepzettsegPickerOverlay';
-import { getDisplayName, findDef as findDefHelper, getAvailableNames, getKepzettsegekForCsoport, sortKepzettsegSlotok } from './helpers';
+import { getDisplayName, getAvailableNames, getKepzettsegekForCsoport, sortKepzettsegSlotok } from './helpers';
 import type { FelszerelésHátrány } from '../../engine/felszereles';
 
 interface Props {

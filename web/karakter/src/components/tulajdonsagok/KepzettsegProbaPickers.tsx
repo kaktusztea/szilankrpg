@@ -3,8 +3,8 @@ import type { ModositoTabla, PróbaEnyhítés } from '../../engine/data-types';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
 import { PopupOverlay } from '../PopupOverlay';
-import { enyhítettSorRészletes } from './kepzettseg-proba-calc';
-import { helyettesítésSzint } from './proba-common';
+import { enyhítettSorRészletes } from '../../engine/proba/kepzettseg-proba-calc';
+import { helyettesítésSzint } from '../../engine/proba/proba-common';
 import { képzKulcs, képzettségNév as képzettségNévId } from '../../engine/azonosito';
 import { useLongPress } from '../../hooks/useLongPress';
 

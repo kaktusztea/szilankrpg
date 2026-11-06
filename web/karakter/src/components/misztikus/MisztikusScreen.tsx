@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { képzettségNév, képzKulcs, bontKépzKulcs, TRADÍCIÓ_ID } from '../../engine/azonosito';
+import { képzettségNév, képzKulcs, bontKépzKulcs, TRADÍCIÓ_ID, findDef as findKepzDef } from '../../engine/azonosito';
 
 import type { MisztikusScreenProps, SectionContext } from './types';
 import type { Fortely } from '../../engine/types';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { findDef as findKepzDef } from '../tulajdonsagok/helpers';
-import { buildFortélyFokok } from '../tulajdonsagok/kepzettseg-proba-calc';
+import { buildFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
 import { useMisztikusPopups } from './useMisztikusPopups';
 import { AuraPanel } from './AuraPanel';
 import { TradícióSection } from './TradicioSection';
@@ -15,7 +14,7 @@ import { ŐsiNyelvSection } from './OsiNyelvSection';
 import { MisztikusFortélyokSection } from './MisztikusFortelyokSection';
 import { MisztikusPopups } from './MisztikusPopups';
 import { HINT_DURATION_MS } from '../../ui-constants';
-import { useHint } from '../harcertekek/hooks/useHint';
+import { useHint } from '../../hooks/useHint';
 import './MisztikusScreen.css';
 
 // Misztikus képzettség-azonosítók (kepzettsegek/*.yaml `id`).

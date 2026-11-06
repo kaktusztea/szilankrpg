@@ -3,7 +3,7 @@ import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver, buildPajzsFegyverNév } from '../../engine/utils';
-import { getFegyverhossz, isHárító } from './fegyver-helpers';
+import { getFegyverhossz, isHárító } from '../../engine/harc/fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function getKétkezesBalOpciók(
