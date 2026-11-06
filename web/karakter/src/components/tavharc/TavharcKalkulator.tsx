@@ -1,8 +1,9 @@
-import type { TavharcSzorzok, Karakter } from '../../engine/types';
-import { SP_NINCS } from '../../engine/types';
+import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { SzorzóPicker } from './SzorzoPicker';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
+import type { TavharcSzorzok } from '../../engine/data-types';
+import { SP_NINCS } from '../../engine/data-types';
 
 interface SzorzóState {
   célMozgásId: number;

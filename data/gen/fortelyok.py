@@ -2,9 +2,9 @@
 
 import os
 
-from .common import SOURCES_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
+from .common import SOURCES_DIR, SCHEMAS_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
 from .schema import validate_schema
-from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs, id_hibak
+from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs, id_hibak, session_toggle_hibak
 
 
 def _kit_parse(elem):
@@ -96,6 +96,7 @@ def generate_fortelyok():
                 'md_fájl': md_fajl,
             })
     errors += id_hibak(id_elemek, 'fortély')
+    errors += session_toggle_hibak(result, (load_yaml(os.path.join(SCHEMAS_DIR, 'karakter.yaml')) or {}).get('session') or {})
     if errors:
         print("  ❌ Fortély validációs hibák:")
         for e in errors:

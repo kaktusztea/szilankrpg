@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import type { Karakter, TavfegyverAlap } from '../../engine/types';
+import type { Karakter } from '../../engine/types';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { getAlkalmatlanInfo } from './helpers';
 import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, weaponToLöveskitérésKategória, osztóToLöveskitérésKategória, tavHatótáv, buildOpciók } from './loveskiteres-calc';
+import type { TavfegyverAlap } from '../../engine/data-types';
 
 const data = loadGameDataSync();
 const alapK: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));

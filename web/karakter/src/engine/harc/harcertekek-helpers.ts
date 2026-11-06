@@ -73,10 +73,10 @@ export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: st
       const refek = fegyverHarcmodor
         ? [`${HARCMODOR_ID}/${fegyverHarcmodor}`]
         : (Array.isArray(kov.név) ? kov.név : [kov.név]);
-      if (!refek.some(r => képzettségSzint(k.képzettségek, r) >= kov.érték)) return true;
+      if (!refek.some(r => képzettségSzint(k.képzettségek, r) >= Number(kov.érték))) return true;
     } else if (kov.típus === 'fortély') {
       const id = Array.isArray(kov.név) ? kov.név[0] : kov.név;
-      if (!k.fortélyok.some(f => f.id === id && f.fok >= kov.érték)) return true;
+      if (!k.fortélyok.some(f => f.id === id && f.fok >= Number(kov.érték))) return true;
     }
   }
   return false;

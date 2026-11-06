@@ -20,7 +20,7 @@ export function mfKövetelményHiba(k: Karakter, data: GameData, alap: string): 
   for (const kov of fokDef.követelmények) {
     if (kov.típus === 'képzettség') {
       const refek = harcmodor ? [`${TÁVOLSÁGI_HARCMODOR_ID}/${harcmodor.toLowerCase()}`] : (Array.isArray(kov.név) ? kov.név : [kov.név]);
-      if (!refek.some(r => képzettségSzint(k.képzettségek, r) >= kov.érték)) return true;
+      if (!refek.some(r => képzettségSzint(k.képzettségek, r) >= Number(kov.érték))) return true;
     }
   }
   return false;

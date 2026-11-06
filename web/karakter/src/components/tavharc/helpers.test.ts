@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import type { Karakter, Session, TavharcSzorzok } from '../../engine/types';
+import type { Karakter, Session } from '../../engine/types';
 import {
   calcCÉ, calcVÉ, calcSzorzóÖsszeg, calcÚjratöltésEnyhítés, calcTámadásLabel,
   type SzorzóState,
 } from './helpers';
+import type { TavharcSzorzok } from '../../engine/data-types';
 
 describe('calcCÉ', () => {
   it('sums every input component', () => {

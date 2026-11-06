@@ -264,3 +264,16 @@ def id_hibak(elemek, mi):
         if i in látott: errors.append(f"{ctx}: duplikált {mi}-id '{i}' (már: {látott[i]})")
         látott[i] = ctx
     return errors
+
+
+def session_toggle_hibak(fortelyok, session_schema):
+    """session_toggle fortély: a runtime állapota a karakter `session.<fortély id>` boolean mezője (a webapp
+    `fortélyToggleAktív` erre támaszkodik) - a mezőnek léteznie kell a karakter.yaml session-sémájában."""
+    hibak = []
+    for f in fortelyok:
+        if not f.get('session_toggle'):
+            continue
+        if not isinstance(session_schema.get(f['id']), bool):
+            hibak.append(f"fortély '{f['id']}': session_toggle, de a karakter.yaml session szekciójában nincs "
+                         f"'{f['id']}' boolean mező")
+    return hibak

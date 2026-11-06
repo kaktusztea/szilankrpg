@@ -3,7 +3,7 @@
  * Unified module for both közelharc and távharc dobás popups - on top of the shared effekt collector (§42).
  */
 
-import type { Session, Karakter, FegyverAlap } from '../types';
+import type { Session, Karakter } from '../types';
 import type { GameData } from '../data-loader';
 import { buildAktívFeltételek } from '../feltetelek';
 import { createFeltételEvaluator } from '../feltetel-eval';
@@ -11,6 +11,7 @@ import {
   gyűjtHelyzetEffektek, gyűjtTaktikaEffektek, gyűjtStátuszEffektek, gyűjtFortélyEffektek, kockaSzint, tiltásokFegyverre, type Effekt,
 } from '../effekt';
 import { lookupTávfegyver, taktikaDef } from '../lookup';
+import type { FegyverAlap } from '../data-types';
 
 type DobásCél = 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
 

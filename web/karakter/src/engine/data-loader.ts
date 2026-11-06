@@ -1,6 +1,6 @@
-import type { FegyverAlap, TavfegyverAlap, TavharcSzorzok, Karakter } from './types';
+import type { Karakter } from './types';
 import type { Rule } from './reactive';
-import type { KonstansokRaw, KepzettsegDef, KiterjesztesEntry, FortelySummary, TradicioEntry, NyelvEntry, TaktikaEntry, HarciHelyzetEntry, ManoverEntry, StatuszEntry, EsemenyEntry, HatterekData, SebzésjellegPáncélMátrix, FegyverExtraDef, GameData } from './data-types';
+import type { KonstansokRaw, KepzettsegDef, KiterjesztesEntry, FortelySummary, TradicioEntry, NyelvEntry, TaktikaEntry, HarciHelyzetEntry, ManoverEntry, StatuszEntry, EsemenyEntry, HatterekData, SebzésjellegPáncélMátrix, FegyverExtraDef, GameData, FegyverAlap, TavfegyverAlap, TavharcSzorzok } from './data-types';
 export type { KepzettsegDef, KiterjesztesEntry, FortelyFokSummary, FortelySummary, ExtraHatás, GameData } from './data-types';
 
 import { APP_VERSION } from '../version';

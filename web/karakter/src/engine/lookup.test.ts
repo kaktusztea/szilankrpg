@@ -2,8 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { lookupFegyver, lookupTávfegyver, taktikaDef, helyzetDef, státuszDef, fortélyDef, képzettségDef, eseményDef } from './lookup';
-import type { FegyverAlap, TavfegyverAlap } from './types';
-import type { GameData } from './data-types';
+import type { GameData, FegyverAlap, TavfegyverAlap } from './data-types';
 
 const fegyverek = [{ név: 'Kard, hosszú' }, { név: 'Puszta kéz' }, { név: 'KARD, HOSSZÚ', extra: 'second' }] as unknown as FegyverAlap[];
 

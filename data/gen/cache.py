@@ -1,8 +1,8 @@
-"""Freshness cache: a source YAML-ok ÉS a generátor kód hashe alapján skippelhető a futás."""
+"""Freshness cache: a source YAML-ok, a sémák ÉS a generátor kód hashe alapján skippelhető a futás."""
 
 import hashlib, os
 
-from .common import DATA_DIR, SOURCES_DIR, TABLES_DIR, GEN_DIR
+from .common import DATA_DIR, SOURCES_DIR, SCHEMAS_DIR, TABLES_DIR, GEN_DIR
 
 HASH_FILE = os.path.join(TABLES_DIR, '.sources_hash')
 MARKER_FILE = os.path.join(TABLES_DIR, '.generated_marker')
@@ -16,7 +16,7 @@ def _generator_files():
 
 
 def compute_sources_hash():
-    """Az összes YAML source + a teljes generátor kód kombinált hashe."""
+    """Az összes YAML source + séma (a build-gate-ek ezekhez mérnek) + a teljes generátor kód kombinált hashe."""
     h = hashlib.md5()
     for path in _generator_files():
         with open(path, 'rb') as f:
@@ -24,11 +24,12 @@ def compute_sources_hash():
             h.update(f.read())
     # Walk all YAML sources sorted for determinism
     yaml_files = []
-    for root, dirs, files in os.walk(SOURCES_DIR):
-        dirs.sort()
-        for f in sorted(files):
-            if f.endswith('.yaml') or f.endswith('.yml'):
-                yaml_files.append(os.path.join(root, f))
+    for base in (SOURCES_DIR, SCHEMAS_DIR):
+        for root, dirs, files in os.walk(base):
+            dirs.sort()
+            for f in sorted(files):
+                if f.endswith('.yaml') or f.endswith('.yml'):
+                    yaml_files.append(os.path.join(root, f))
     for path in yaml_files:
         with open(path, 'rb') as f:
             h.update(path.encode())

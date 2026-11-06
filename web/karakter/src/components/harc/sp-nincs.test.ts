@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { SP_NINCS } from '../../engine/types';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
-import type { TavfegyverAlap } from '../../engine/types';
+import { SP_NINCS } from '../../engine/data-types';
+import type { TavfegyverAlap } from '../../engine/data-types';
 
 /**
  * A SebzesPopup az SP_NINCS (-99) sentinelt "nem sebez"-ként kezeli. Ez a teszt a data↔kód

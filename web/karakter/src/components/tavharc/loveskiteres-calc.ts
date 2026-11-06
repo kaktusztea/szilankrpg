@@ -1,7 +1,8 @@
-import type { Karakter, TavfegyverAlap } from '../../engine/types';
+import type { Karakter } from '../../engine/types';
 import { képzettségSzint } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import { gyűjtFortélyEffektek, értékCélra } from '../../engine/effekt';
+import type { TavfegyverAlap } from '../../engine/data-types';
 
 // Lövéskitérés (védekező Akrobatika próba, md/073 + kategóriák md/078) + range-gát segédek.
 // Kiemelve a tavharc/helpers.ts-ből (2026-09-30 refaktor, modularizáció).

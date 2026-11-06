@@ -86,7 +86,7 @@ export function TulajdonsagokScreen({
       }
     }
     return result;
-  }, [karakter.fortélyok, data.fortelySummaries]);
+  }, [karakter.fortélyok, data]);
 
   const [popup, setPopup] = useState<PopupState>(INITIAL_POPUP_STATE);
   const [infoTarget, setInfoTarget] = useState<string | null>(null);

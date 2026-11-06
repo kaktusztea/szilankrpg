@@ -10,15 +10,16 @@
  * A fájl végén: a tiltás-keret (§42.4) és a fegyver_override soronkénti kiértékelése (2. szelet).
  */
 import { képzKulcs } from './azonosito';
-import type { Karakter, Session, FegyverAlap } from './types';
+import type { Karakter, Session } from './types';
 import type { GameData, ExtraHatás } from './data-loader';
 import { evaluateAlapesetek } from './alapeset';
 import { alkalmazEffektek } from './extrak-effekt';
 import { createFeltételEvaluator } from './feltetel-eval';
-import { interpolateFokDef, buildPajzsFegyverNév } from './utils';
+import { interpolateFokDef, buildPajzsFegyverNév, fortélyToggleAktív } from './utils';
 import { extraFeltételTeljesül } from './extrak-info-calc';
 import { clampEHSzint } from './dice';
 import { lookupFegyver, fortélyDef, helyzetDef, státuszDef, taktikaDef } from './lookup';
+import type { FegyverAlap } from './data-types';
 
 type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';
 
@@ -59,7 +60,7 @@ export function gyűjtFortélyEffektek(
       if (!feltételTeljesül(mod.feltétel)) continue;
       // Session-toggle fortély (pl. Harci akrobatika): a TÉ/VÉ hatás csak bekapcsolt állapotban él.
       if (def.session_toggle && (mod.cél === 'TÉ' || mod.cél === 'VÉ')
-        && !(session as unknown as Record<string, unknown>)[kf.id]) continue;
+        && !fortélyToggleAktív(session, kf.id)) continue;
       const alap = { cél: mod.cél, ...(mod.alcél ? { alcél: mod.alcél } : {}), ...(mod.megjegyzés ? { megjegyzés: mod.megjegyzés } : {}), forrás };
       if (mod.mód === 'scaled' && mod.forrás === 'erőbónusz') {
         ki.push({ ...alap, mód: 'scaled', arányForrás: 'erőbónusz', arány: mod.arány });

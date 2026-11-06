@@ -11,8 +11,8 @@ import { evaluate, buildContext, type Rule } from '../engine/reactive';
 import { buildPancelLookups, calcFtEnyhites } from '../engine/harc/pancel-calc';
 import { buildFegyverRows, calcFegyverResults } from '../engine/harc/fegyver-calc';
 import { calcKétkezesHarc } from '../engine/ketkezes';
-import type { Karakter, FegyverAlap } from '../engine/types';
-import type { KonstansokRaw, GameData } from '../engine/data-types';
+import type { Karakter } from '../engine/types';
+import type { KonstansokRaw, GameData, FegyverAlap } from '../engine/data-types';
 
 const DATA_ROOT = resolve(__dirname, '../../../../data');
 

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { képzettségSzint } from '../../engine/azonosito';
 import type { HarcBaseProps } from './types';
 import { getFegyverhossz } from '../../engine/harc/fegyver-helpers';
+import { fortélyToggleAktív } from '../../engine/utils';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> {
   páncélMGT: number;
@@ -22,13 +23,12 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
   // Akrobatika képzettség
   const akroKépz = harciAkroKövek.find(k => k.típus === 'képzettség' && (Array.isArray(k.név) ? k.név.includes('akrobatika') : k.név === 'akrobatika'));
   const akroSzint = képzettségSzint(karakter.képzettségek, 'akrobatika');
-  const akroKépzHiba = !!(akroKépz && akroSzint < akroKépz.érték);
+  const akroKépzHiba = !!(akroKépz && akroSzint < Number(akroKépz.érték));
 
   // Páncél hajlékonyság (nem_fém | nem_merev) — a struktúra fém/merev flagjéből (l. konstansok.páncél_struktúrák).
   const páncélStruktúra = (data.konstansok.páncél_struktúrák as { struktúra: string; fém: boolean; merev: boolean }[])
     .find(s => s.struktúra === karakter.páncél.alap);
   const hajlKöv = kov('páncél_hajlékonyság');
-  // shortcut: the requirement `érték` is typed number but holds a string here ("nem_fém" / "nem_merev"); fix the type in phase 6b.
   const hajlÉrték = hajlKöv ? String(hajlKöv.érték) : undefined;
   const hajlOk = !hajlÉrték || !páncélStruktúra
     ? true
@@ -39,14 +39,14 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
 
   // Max effektív MGT (a páncélMGT már Erő-korrigált, l. rules.json páncél_MGT formula).
   const mgtKöv = kov('max_effektív_mgt');
-  const mgtHiba = !!(session.aktív_páncél && mgtKöv && páncélMGT > mgtKöv.érték);
+  const mgtHiba = !!(session.aktív_páncél && mgtKöv && páncélMGT > Number(mgtKöv.érték));
 
   // Max össz fegyverméret (jobb + bal kéz fegyverhosszának összege).
   const jobbFh = session.aktív_fegyver_index >= 0 ? getFegyverhossz(data, karakter.fegyverek[session.aktív_fegyver_index]?.alap ?? '') : 0;
   const balFh = session.aktív_fegyver_bal_index >= 0 ? getFegyverhossz(data, karakter.fegyverek[session.aktív_fegyver_bal_index]?.alap ?? '') : 0;
   const összFh = jobbFh + balFh;
   const fhKöv = kov('max_össz_fegyverméret');
-  const fhHiba = !!(fhKöv && összFh > fhKöv.érték);
+  const fhHiba = !!(fhKöv && összFh > Number(fhKöv.érték));
 
   const harciAkroDisabled = akroKépzHiba || páncélHajlHiba || mgtHiba || fhHiba;
 
@@ -62,7 +62,7 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
       {toggleForts.map(tf => {
         const has = karakter.fortélyok.some(f => f.id === tf.id && f.fok > 0);
         const sessionKey = tf.id;   // session-kulcs = fortély-id (pl. harci_akrobatika)
-        const active = (session as unknown as Record<string, unknown>)[sessionKey] as boolean ?? false;
+        const active = fortélyToggleAktív(session, sessionKey);
         const feltételDisabled = sessionKey === 'harci_akrobatika' && harciAkroDisabled;
         const disabled = !has || feltételDisabled;
         return (

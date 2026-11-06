@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { buildFegyverInfó } from './fegyver-info-calc';
-import type { Karakter, FegyverResultMód } from '../../engine/types';
+import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { FegyverResult } from '../../engine/harc/types';
+import type { FegyverResult, FegyverResultMód } from '../../engine/harc/types';
 
 const mód = (p: Partial<FegyverResultMód>): FegyverResultMód => ({
   aktor: 'vágóél', jelleg: 'V', sebzéstípus: 'elsődleges',

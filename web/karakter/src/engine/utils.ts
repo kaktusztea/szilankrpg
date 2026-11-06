@@ -1,4 +1,4 @@
-import type { Session, Karakter, Kepzettseg } from './types';
+import type { Session, SessionBoolKulcs, Karakter, Kepzettseg } from './types';
 import type { GameData } from './data-loader';
 import { képzKulcs, képzettségNév, képzettségSzint, HARCMODOR_ID } from './azonosito';
 
@@ -92,4 +92,9 @@ export function ideaDelta(példányIdea: number, ideaDefault: number, tábla: Id
 export function buildPajzsFegyverNév(karakter: Karakter): string | null {
   if (!karakter.pajzs?.méret) return null;
   return karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs';
+}
+
+/** Bekapcsolt-e a session_toggle fortély (pl. Harci akrobatika): a `session.<fortély id>` boolean mező. */
+export function fortélyToggleAktív(session: Session, id: string): boolean {
+  return id in session && session[id as SessionBoolKulcs] === true;
 }

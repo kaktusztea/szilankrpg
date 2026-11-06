@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import type { FegyverAlap, Karakter } from './types';
+import type { Karakter } from './types';
 import { calcKétkezesHarc } from './ketkezes';
+import type { FegyverAlap } from './data-types';
 
 // Minimal weapon defs - only the fields calcKétkezesHarc reads.
 // Fegyverhossz: v2 skála (egész kategóriák, 0-12) - kard=3 (pl. Kard, lovag), tőr=1.

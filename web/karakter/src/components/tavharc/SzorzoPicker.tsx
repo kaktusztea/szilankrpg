@@ -1,4 +1,4 @@
-import type { TavharcSzorzoEntry } from '../../engine/types';
+import type { TavharcSzorzoEntry } from '../../engine/data-types';
 
 interface Props {
   label: string;

@@ -1,4 +1,4 @@
-import type { Karakter, Session, FegyverAlap, FegyverMod, FegyverResultMód } from '../types';
+import type { Karakter, Session } from '../types';
 import type { GameData } from '../data-loader';
 import { evaluate, buildContext, filterFegyverRules, type Rule } from '../reactive';
 import { ideaDelta } from '../utils';
@@ -7,8 +7,8 @@ import { findMfFok } from '../mf-utils';
 import { calcKétkezesHarc } from '../ketkezes';
 import { tiltásokFegyverre, fegyverOverrideÉrtékek } from '../effekt';
 import { alkalmazEffektek } from '../extrak-effekt';
-import type { ExtraHatás } from '../data-types';
-import type { FegyverResult } from './types';
+import type { ExtraHatás, FegyverAlap, FegyverMod } from '../data-types';
+import type { FegyverResult, FegyverResultMód } from './types';
 import { lookupFegyver } from '../lookup';
 import { isPusztaKéz } from './fegyver-helpers';
 

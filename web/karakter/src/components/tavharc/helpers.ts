@@ -1,12 +1,13 @@
 import type { GameData } from '../../engine/data-loader';
 import { képzettségSzint, fortélyFok } from '../../engine/azonosito';
-import type { Karakter, Session, TavfegyverAlap, TavharcSzorzok, TavharcSzorzoEntry } from '../../engine/types';
+import type { Karakter, Session } from '../../engine/types';
 import type { AlkalmatlanInfo, CÉBontás } from './types';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { getMfFok } from './mesterfegyver-calc';
-import { SP_NINCS } from '../../engine/types';
 import { gyűjtFortélyEffektek, értékCélra } from '../../engine/effekt';
 import { helyzetDef, lookupTávfegyver, taktikaDef } from '../../engine/lookup';
+import type { TavfegyverAlap, TavharcSzorzok, TavharcSzorzoEntry } from '../../engine/data-types';
+import { SP_NINCS } from '../../engine/data-types';
 
 // --- Alkalmatlan fegyver info ---
 

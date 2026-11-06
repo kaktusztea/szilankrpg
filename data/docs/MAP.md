@@ -66,7 +66,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `harc/fegyver-calc.ts` | Per-fegyver TÉ/VÉ/SP/harckeret (optimalizált: 5 rule/fegyver) |
 | `harc/fegyver-helpers.ts` | Fegyver segéd (pajzs-fegyvernév, lookup wrapperek) |
 | `harc/harc-computed.ts` | `calcHarcComputed`: context build + reactive evaluate + feltétel dispatch (a Harc fül teljes számítása) |
-| `harc/types.ts` | Harc számoló eredmény-típusok (`FegyverResult`, `HarcComputed`) |
+| `harc/types.ts` | Harc számoló eredmény-típusok (`FegyverResultMód`, `FegyverResult`, `HarcComputed`) |
 | `harc/harc-fejlec-calc.ts` | A fejléc KÉ/TÉ/VÉ egyetlen számítása (harcFejlécÉrtékek) - HarcScreen + NJK switcher gyors-stat |
 | `harc/harcertekek-helpers.ts` | Harcértékek segédek (közelharci/távharci név-listák, MF fok, display-nevek) |
 | `harc/manover-dobas-calc.ts` | Manőver dobás pure logika (követelmény kiértékelés, fázisok, TÉ-bontás, fázis-feliratok, eredmény-hatás) - a popup számítási magja. `szitFeltételTeljesül`/`szitModKezdőÁllapot`: a helyzetfüggő módosító sorok `feltétel` ("fegyver_extra:<id>"/"taktika:<id>"/…) auto-matchje → az illő sor alapból bekapcsolva (kézi override marad). `szitTáblákMódszerint`: a mód szerinti tábla-szűrés (aktív = aktív-oldali + globális; passzív = `mód_oldal: passzív` táblák). `szitModÁllapot`: a kiválasztott módosítók aggregált állapota egy helyen (összeg + két sentinel-ág: `99` nem kísérelhető meg / `-99` immunis + az immunis extra leírása). A `manoverek.yaml` `extra_ref` pointer-sorai build-időben feloldódnak az extrák `manőver_ellenpróba` hatásából (érték+leírás+feltétel; `letilt` mód → `-99` sentinel; a tábla `mód_oldal` ↔ extra `manőver_állapot` egyezés build-gate), l. `data/gen/aktiv_ful.py` - EGY igazságforrás (A/1, §42) |
@@ -80,8 +80,8 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `taktika/taktika-helpers.ts` | Taktika módosító-formázás + fok-bővítés (getTaktikaMods, getExtraFokok, formatFokMods) |
 | `taktika/taktika-megkotes.ts` | Taktika megkötés-kiértékelés (isTaktikaAllowed: session/fegyver/harcmodor/támadás/távfegyver + kombó) |
 | `reactive-parse.ts` | Formula parser: evalFormula, aggregate resolverek (sum, lookup, stb.) |
-| `types.ts` | Karakter v2, Session, Fortely interface-ek, `FegyverResultMód`, `UndoPatch` / `UndoEntry` |
-| `data-types.ts` | GameData, FortelySummary, TaktikaEntry, HarciHelyzetEntry stb. |
+| `types.ts` | Mentett karakter: Karakter, Session (+ `SessionBoolKulcs`), Fortely / Kepzettseg / példány-típusok, `DEFAULT_*`, `UndoPatch` / `UndoEntry` |
+| `data-types.ts` | Játékadat (GameData és a táblák típusai): FortelySummary, TaktikaEntry, HarciHelyzetEntry, KonstansokRaw, `FegyverAlap` / `TavfegyverAlap` / `TavharcSzorzok`, `SP_NINCS` stb. |
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
 | `fortely-mods.ts` | calcFortelyMods - burkoló az `effekt.ts` gyűjtő fölött (fortély + alapeset → célonkénti Record) |
 | `effekt.ts` | Egységes effekt-modell (§42 3. fázis): `gyűjtFortélyEffektek`, `gyűjtTaktikaEffektek` (taktikánként + VÉ-plafon korrekciós sor), `gyűjtHelyzetEffektek`, `gyűjtStátuszEffektek`, `értékCélra`, `arányÖsszeg`, `kockaSzint` (E/H nettó szint); a harci dobás-hatások (`combat-roll-info.ts`) és a próba-státusz (`statusz-proba.ts`) is ebből; regressziós snapshot: `effekt.regresszio.test.ts`; a `calcFortelyMods` / `calcTaktikaMods` ennek burkolói |

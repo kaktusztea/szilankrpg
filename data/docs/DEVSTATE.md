@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2 és 3 kész; következő: 6b, 4, 5, 7 (+8 Python)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2, 3 és 6b kész; következő: 4, 5, 7 (+8 Python)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -107,7 +107,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **0., 1., 2., 3. és 6a fázis kész; a 6b, 4-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0., 1., 2., 3., 6a és 6b fázis kész; a 4-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -150,7 +150,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | **6a. Típusosság** (`any` 0, `as unknown as` 2 - a session-toggle a 6b-ben) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
 | ✅ | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
 | ✅ | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
-| 5 | **6b. Típusfájlok bontása + session-toggle tipizált mező** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
+| ✅ | **6b. Típusfájlok + session-toggle** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
 | 6 | **4. Párhuzamos kódutak** (benne: "Egységes effekt-modell: maradék" fent) | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
 | 7 | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
 | 8 | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
@@ -290,11 +290,14 @@ automata teszt van, itt a **Playwright** (programból vezérelt böngésző, ami
 - ✅ **`as unknown as`: 9 → 2 (2026-11-06)**, `eslint-disable`: mind indokolt (`-- <ok>`). Kiváltva: `fegyver-calc` (közvetlen
   írás), `feltetel-eval` (`keyof Session` az `in` után), `useUndoWrappedSetters` ×4 (`keyof Tulajdonsagok`), `SessionToggles`
   hajlékonyság (`String(...)`, `shortcut:` - l. lent).
-- [ ] 6b: a 2 maradék session-toggle cast (`SessionToggles.tsx`, `effekt.ts` `gyűjtFortélyEffektek`) → tipizált
-  `session` toggle-mező (séma-változás, a localStorage invalidálható).
-- [ ] 6b: a fortély-követelmény `érték` típusa `number`, de a `páncél_hajlékonyság` szöveget tárol (`"nem_fém"`) →
-  `number | string` (+ a számos összehasonlítások szűkítése).
-- [ ] `data-types.ts` (399) + `types.ts` (333) domainenkénti bontása; a 4 `eslint-disable` felülvizsgálata.
+- ✅ **6b (2026-11-06): `as unknown as` 0.** Session-toggle séma-változás NÉLKÜL: `SessionBoolKulcs` típus +
+  `fortélyToggleAktív(session, id)` (`engine/utils.ts`); új build-gate `session_toggle_hibak` (`data/gen/validators.py`):
+  minden `session_toggle` fortély id-je boolean mező a `karakter.yaml` session-szekciójában (negatív teszttel).
+  A követelmény `érték` → `number | string`, a 12 számos összehasonlítás `Number(...)` (azonos a futásidejű koercióval).
+- ✅ Közben javítva: a generátor freshness-hash-e a `data/schemas/`-t nem figyelte → csak-séma változásnál a build
+  kihagyta a generálást és a séma-gate-eket (`data/gen/cache.py`).
+- ✅ Típusfájlok (döntés: csak a keveredés): a fegyver / távfegyver alaptípusok + `SP_NINCS` → `data-types.ts` (játékadat),
+  `FegyverResultMód` → `engine/harc/types.ts`; a teljes bontás elmaradt (téma szerint már tagoltak). `eslint-disable`: mind indokolt.
 
 *Dummies:* a TypeScript egy helyesírás-ellenőrző a kódhoz. Az `any` és az `as unknown as` azt mondja neki: "itt ne
 nézd". Ezeket a vakfoltokat szüntetjük meg, hogy az elírásokat a fordító fogja meg, ne a játékos.

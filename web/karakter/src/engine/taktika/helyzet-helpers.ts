@@ -33,7 +33,7 @@ export function getMinFegyverhosszWarning(
       ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(karakter) ?? '')
       : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
     const ph = aktívFd?.fegyverhossz ?? 0;
-    if (ph < köv.érték) return `⚠ Min. fegyverhossz: ${köv.érték}!`;
+    if (ph < Number(köv.érték)) return `⚠ Min. fegyverhossz: ${köv.érték}!`;
   }
   return '';
 }

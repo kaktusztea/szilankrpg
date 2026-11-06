@@ -5,9 +5,9 @@ import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { calcHarcComputed } from './harc-computed';
 import { elsődlegesMód } from './fegyver-calc';
 import { collectDobásInfo, collectCéDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
-import type { Session, Karakter, FegyverAlap } from '../types';
+import type { Session, Karakter } from '../types';
 import type { GameData } from '../data-loader';
-import type { SebzésjellegPáncélMátrix } from '../data-types';
+import type { SebzésjellegPáncélMátrix, FegyverAlap } from '../data-types';
 import { fortélyDef, taktikaDef } from '../lookup';
 
 // Minimal fixtures - only the fields collectDobásInfo touches for the taktika path.

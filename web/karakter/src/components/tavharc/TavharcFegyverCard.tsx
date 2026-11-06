@@ -1,9 +1,9 @@
 import type { Karakter, Session } from '../../engine/types';
-import { SP_NINCS } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { calcCÉBontás, calcTámadásLabel, getFortélyCÉ, calcTávSP } from './helpers';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './mesterfegyver-calc';
 import { lookupTávfegyver } from '../../engine/lookup';
+import { SP_NINCS } from '../../engine/data-types';
 
 interface Props {
   index: number;

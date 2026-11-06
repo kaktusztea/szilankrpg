@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { evaluateFeltétel, describeKepChange, harcmodorÖsszeg, clamp } from './utils';
 import { képzettségSzint, fortélyFok } from './azonosito';
-import type { FegyverAlap, Session, Karakter } from './types';
+import type { Session, Karakter } from './types';
 import { lookupFegyver } from './lookup';
+import type { FegyverAlap } from './data-types';
 
 describe('lookupFegyver', () => {
   const fegyverek = [

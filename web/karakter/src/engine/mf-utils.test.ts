@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { findMfFok, findMfFokByName, getMfBónusz } from './mf-utils';
-import type { Karakter, FegyverAlap } from './types';
+import type { Karakter } from './types';
+import type { FegyverAlap } from './data-types';
 
 const karakter = {
   fortélyok: [

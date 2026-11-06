@@ -3,8 +3,7 @@
  * names (weapons, tactics, combat situations, statuses) case-insensitive, ids (fortély, képzettség, esemény) exact.
  * Unknown key → undefined (never throws). On duplicate keys the FIRST entry wins (same as Array.find).
  */
-import type { FegyverAlap, TavfegyverAlap } from './types';
-import type { GameData } from './data-types';
+import type { GameData, FegyverAlap, TavfegyverAlap } from './data-types';
 
 // shortcut: the index is cached per array identity; an array mutated after its first lookup would be stale.
 // GameData is immutable after load (and the data test guards unique keys) - revisit if data ever becomes editable.

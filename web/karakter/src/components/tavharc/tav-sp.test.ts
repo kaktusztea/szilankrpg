@@ -3,7 +3,8 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { calcTávSP } from './helpers';
-import { SP_NINCS, type Karakter } from '../../engine/types';
+import { type Karakter } from '../../engine/types';
+import { SP_NINCS } from '../../engine/data-types';
 
 // Távharci SP (engine_spec §17.6, 2026-10-18): alap + Erőbónusz (hajító: mindig; íj: csak kapcsolva) + Mesterfegyver.
 const data = loadGameDataSync();

@@ -1,5 +1,5 @@
-import type { Karakter, FegyverAlap } from './types';
-import type { KonstansokRaw } from './data-types';
+import type { Karakter } from './types';
+import type { KonstansokRaw, FegyverAlap } from './data-types';
 import { lookupFegyver } from './lookup';
 
 /**

@@ -1,6 +1,7 @@
 import type { Kepzettseg, UndoPatch } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, TavfegyverAlap } from '../../engine/types';
+import type { Karakter, Session } from '../../engine/types';
+import type { TavfegyverAlap } from '../../engine/data-types';
 
 export interface TavharcProps {
   data: GameData;

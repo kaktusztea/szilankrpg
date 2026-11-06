@@ -90,7 +90,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
       for (const pe of pe_lista) (result[pe.képzettség] ??= []).push({ ...pe, fortély: def.név });
     }
     return result;
-  }, [karakter.fortélyok, data.fortelySummaries]);
+  }, [karakter.fortélyok, data]);
 
   if (!aktív) return null;
 

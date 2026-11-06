@@ -10,7 +10,7 @@ import { aktívTerületen } from '../../engine/taktika/taktika-helpers';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from '../../engine/harc/combat-roll-info';
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, FegyverResultMód, UndoPatch } from '../../engine/types';
+import type { Karakter, Session, UndoPatch } from '../../engine/types';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { Fegyverviszony } from '../../engine/harc/ve-csokkentes-calc';
 import { támadódobástTiltóTaktika } from '../../engine/harc/ve-csokkentes-calc';
@@ -20,6 +20,7 @@ import { ExtrakInfo } from '../dobas/ExtrakInfo';
 import { KeziBonuszBtn } from '../dobas/KeziBonuszBtn';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { taktikaDef } from '../../engine/lookup';
+import type { FegyverResultMód } from '../../engine/harc/types';
 
 interface Props {
   /** Active weapon TÉ value (fallback: elsődleges mód, ha nincs módok lista) */

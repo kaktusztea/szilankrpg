@@ -133,7 +133,7 @@ export function checkKövetelmények(
       const szint = (r: string) => r === HARCMODOR_ID
         ? Math.max(0, ...képzettségek.filter(kp => kp.id === HARCMODOR_ID).map(kp => kp.szint))
         : képzettségSzint(képzettségek, r);
-      const teljesül = refek.some(r => szint(r) >= kov.érték);
+      const teljesül = refek.some(r => szint(r) >= Number(kov.érték));
       if (!teljesül) {
         // Csupa harcmodor-elem (VAGY-lista) → „Harcmodor"; egyébként a nevek „/"-lel.
         const isHarcmodor = Array.isArray(kov.név) && refek.every(r => { const b = bontKépzKulcs(r); return isHarcmodorId(b.id) && !!b.elem; });
@@ -144,13 +144,13 @@ export function checkKövetelmények(
         hiányzó.push(`${név} ≥ ${kov.érték}`);
       }
     } else if (kov.típus === 'fortély') {
-      if (fortélyFok(fortélyok, refek[0]) < kov.érték) hiányzó.push(`${fortélyNév(refek[0], data)} fortély ≥ ${kov.érték}. fok`);
+      if (fortélyFok(fortélyok, refek[0]) < Number(kov.érték)) hiányzó.push(`${fortélyNév(refek[0], data)} fortély ≥ ${kov.érték}. fok`);
     } else if (kov.típus === 'tiltó_fortély') {
       // Tiltó követelmény: a megnevezett fortély megléte (fok >= érték) KIZÁRÓ ok.
-      if (fortélyFok(fortélyok, refek[0]) >= kov.érték) hiányzó.push(`Nem lehet: ${fortélyNév(refek[0], data)} fortély`);
+      if (fortélyFok(fortélyok, refek[0]) >= Number(kov.érték)) hiányzó.push(`Nem lehet: ${fortélyNév(refek[0], data)} fortély`);
     } else if (kov.típus === 'faj') {
       // A faj ajánlja-e ezt a fortélyt legalább `érték` fokig (érzék / ajánlott fortélyok, md: hatterek.faji).
-      if ((fajFortélyok[fortélyId] ?? 0) < kov.érték) hiányzó.push(`Faj Háttér (${fortélyNév(fortélyId, data)} ≥ ${kov.érték}. fok)`);
+      if ((fajFortélyok[fortélyId] ?? 0) < Number(kov.érték)) hiányzó.push(`Faj Háttér (${fortélyNév(fortélyId, data)} ≥ ${kov.érték}. fok)`);
     }
     // típus 'min_fegyverméret': NEM felvételi feltétel - harci-helyzet-kötött, fegyverfüggő
     // WARNING (l. getMinFegyverhosszWarning). Itt tudatosan kihagyjuk, nem blokkolja a felvételt.

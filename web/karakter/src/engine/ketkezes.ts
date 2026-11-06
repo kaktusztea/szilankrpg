@@ -1,8 +1,9 @@
-import type { FegyverAlap, Karakter, Session, FegyverResultMód } from './types';
-import type { KonstansokRaw, GameData } from './data-types';
+import type { Karakter, Session } from './types';
+import type { KonstansokRaw, GameData, FegyverAlap } from './data-types';
 import { ideaDelta } from './utils';
 import { HARCMODOR_ID, harcmodorNév, képzettségSzint, fortélyFok } from './azonosito';
 import { lookupFegyver, fortélyDef } from './lookup';
+import type { FegyverResultMód } from './harc/types';
 
 interface KétkezesInput {
   jobbFp: { alap: string; idea: number };
@@ -151,7 +152,7 @@ export function kétkezesKövetelményHiány(
     if (!f) continue;
     const elem = data.konstansok.fegyver_kategória_harcmodor[f.kategória] ?? 'közelharc';
     const szint = képzettségSzint(k.képzettségek, `${HARCMODOR_ID}/${elem}`);
-    if (szint < kv.érték) hiány.push(`${f.név}: ${harcmodorNév(elem, data)} ${szint} < ${kv.érték}`);
+    if (szint < Number(kv.érték)) hiány.push(`${f.név}: ${harcmodorNév(elem, data)} ${szint} < ${kv.érték}`);
   }
   return hiány;
 }

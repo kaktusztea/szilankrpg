@@ -93,6 +93,10 @@ export interface AktívTaktika {
   fok?: number;
 }
 
+/** A Session boolean mezői. Egy session_toggle fortély runtime állapota a fortély-id nevű mező
+ * (build-gate: `data/gen/validators.py` → `session_toggle_hibak`). */
+export type SessionBoolKulcs = { [K in keyof Session]: Session[K] extends boolean ? K : never }[keyof Session];
+
 export interface Session {
   szilánk: number;
   vé_csökkenés: number;
@@ -218,119 +222,6 @@ export const DEFAULT_SESSION: Session = {
   ké_dobások: [],
   té_dobások: [],
 };
-
-// ============================================================
-// Fegyver (alaptípus, fegyverek_v2.json - Fegyvergenerátor v2)
-// ============================================================
-
-export interface FegyverMod {
-  aktor: string;
-  jelleg: string;
-  sebzéstípus: 'elsődleges' | 'másodlagos';
-  TÉ: number;
-  VÉ: number;
-  SP: number;
-  Átütés: number;
-  Sebesség: number | null;
-  Forgatás: 'egykezes' | 'másfélkezes' | 'kétkezes';
-  Erőlimit: number;
-  FP: boolean;
-}
-
-export interface FegyverExtra {
-  id: string;
-  név: string;
-}
-
-export interface FegyverAlap {
-  név: string;
-  kategória: string;
-  megjegyzés: string;
-  fegyverhossz: number;
-  akadály: number;
-  súly: string;                 // könnyű/átlagos/nehéz/súlyos - Felszerelés-pont (súly-ág)
-  övön_hordható: boolean;
-  ár: number | null;
-  ár_alap: number | null;       // a fix felépítés alapára (osztály × fejdarab × hossz); a chip ebből × anyag × idea
-  alapanyag: string;            // gyári anyag (fém-rész); felvételi anyag-default + fém-e levezetés (fa/kő → nem hangolható)
-  idea_default: number;
-  erő_követelmény: number;
-  extrák: FegyverExtra[];
-  módok: FegyverMod[];
-}
-
-// ============================================================
-// Távharc szorzók (tavharc_szorzok.json)
-// ============================================================
-
-export interface TavharcSzorzoEntry {
-  id: number;
-  leírás: string;
-  szorzó: number;
-}
-
-export interface TavharcSzorzok {
-  célpont_mozgás: TavharcSzorzoEntry[];
-  lövész_mozgás: TavharcSzorzoEntry[];
-  célpont_méret: TavharcSzorzoEntry[];
-  észlelhetőség: TavharcSzorzoEntry[];
-  szél: TavharcSzorzoEntry[];
-}
-
-// ============================================================
-// Távfegyver (alaptípus, tavfegyverek_v2.json)
-// ============================================================
-
-/** SP sentinel: a fegyver nem sebez (nincs / speciális sebzés). L. TavfegyverAlap.SP. */
-export const SP_NINCS = -99;
-
-export interface TavfegyverAlap {
-  név: string;
-  kategória: string;
-  harcmodor: string;
-  CÉ: number;
-  Osztó: number;
-  SP: number;                 // -99 sentinel = nincs / spec sebzés
-  Sebesség: number;           // -1 = nincs sebesség (nyílpuskák)
-  sebzésjelleg: 'S' | 'V' | 'Z' | 'spec';
-  Átütés: number;
-  forgatás: string;
-  erőbónusz_limit: number;
-  hatótáv_bázis: number;      // méter, fix rész
-  hatótáv_erő_szorzó: number; // tényleges hatótáv = bázis + Erő × szorzó
-  idea_default: number;
-  extrák: string[];
-  megjegyzés: string;
-}
-
-/** Egy fegyver-mód (Aktor) kiszámított harcértékei. */
-export interface FegyverResultMód {
-  aktor: string;
-  jelleg: string;
-  sebzéstípus: 'elsődleges' | 'másodlagos';
-  Forgatás: string;
-  TÉ: number;
-  VÉ: number;
-  SP: number;
-  Átütés: number;
-  támadások: number;
-  harckeret: number;
-  sebesség: number;
-  alap_TÉ: number;
-  alap_VÉ: number;
-  /** A Mesterfegyver-bónusz TÉ/VÉ része - a fegyver-járulék post-szorzóhoz (Beszorítva). */
-  mf_TÉ: number;
-  mf_VÉ: number;
-  /** Az SP-ben lévő Erőbónusz (min(Erő, mód Erőlimit) × (1 + fortély-arány), FLOOR) - a Sebzés popup bontásához. */
-  sp_erőbónusz: number;
-  /** Az SP-ben lévő Mesterfegyver-bónusz (konstansok.mesterfegyver_bónuszok) - a Sebzés popup bontásához. */
-  sp_mf: number;
-  // Harckeret részletezés
-  hk_harcmodor: number;
-  hk_gyorsaság: number;
-  hk_mgt: number;
-  hk_fortély: number;
-}
 
 // ============================================================
 // Undo (a mentett fájlba és a slotba is bekerül)
