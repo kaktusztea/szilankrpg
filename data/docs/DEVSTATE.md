@@ -137,6 +137,29 @@ legyen az esélye a csendes hibáknak.
 - Törlés előbb, mint új absztrakció; új közös helper csak legalább 3 hívóval.
 - Fázisonként `refactorlog` napló + `MAP.md`; böngészős ellenőrzés csak jóváhagyással.
 
+### Ajánlott sorrend
+
+Szempont: (1) ami a többit előkészíti, az előbb; (2) azonos helyzetben a kisebb kockázatú előbb. A fázisszámok
+azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
+
+| # | Lépés | Kockázat | Miért itt? |
+|---|---|---|---|
+| ✅ | 1. Halott kód | kicsi | kész (2026-11-06) |
+| 1 | **Döntési pontok** 1-3 (tooling, `rules.json` másolatok, mappaszerkezet) | nincs | a 2. és 4. fázis tartalmát megszabják; ha ESLint lesz, az a 2. fázis őrzője is |
+| 2 | **6a. Típusosság: `any` / `as unknown as` / `eslint-disable`** (a session-toggle séma nélkül) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
+| 3 | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
+| 4 | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
+| 5 | **6b. Típusfájlok bontása + session-toggle tipizált mező** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
+| 6 | **4. Párhuzamos kódutak** (benne: "Egységes effekt-modell: maradék" fent) | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
+| 7 | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
+| 8 | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
+| - | **8. Python pipeline** | kicsi | független, bármikor beilleszthető (vagy elhagyható - 4. döntési pont) |
+| 9 | **9. Lezárás** | nincs | fázisonként részlegesen (MAP / refactorlog), a végén összesítve |
+
+*Dummies:* mint egy lakásfelújításnál - előbb eldöntjük, mi hova kerül (döntések), megjavítjuk a mérőműszert
+(típusok), kijelöljük a szobákat (rétegek) és felcímkézzük a dobozokat (lookup); a bútorokat (komponensek) csak
+utána rendezzük át, a festés (CSS) pedig a legvégére marad, hogy ne kelljen kétszer festeni.
+
 ### Fázisok
 
 **1. Halott kód és üres indirekció** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
