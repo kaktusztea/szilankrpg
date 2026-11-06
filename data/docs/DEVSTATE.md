@@ -17,17 +17,20 @@
 ---
 ## Nyitott tételek (áttekintés)
 
-- **Egységes effekt-modell: maradék** (§42) - Playwright végigkattintás (kocka-hatások, 2026-10-18)
+- **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
 ## Egységes effekt-modell: maradék 🚧
 
-Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`. Nyitott:
+Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`.
+Az adat-migráció és a közös gyűjtő + 42.3 motor kész (§42.5); a `calcFortelyMods` / `calcTaktikaMods` burkolók. Nyitott:
 
-- [ ] **Fázis-2: fortély `módosítók` + `hatasok.yaml` egyesítés** a közös effekt-alakra (§42.5). Ma a `calcFortelyMods` ténylegesen csak `flat`+`scaled`-et implementál, a többi mód külön kódutakon él (§42.6 tábla). A cél EGY kiértékelő a §42.3 precedenciával, a `calcFortelyMods` és a hatás-operátor-feldolgozás beolvasztásával. Előfeltétel: a meglévő regressziós védőháló (`statusz-proba.regresszio`, `combat-roll-info.regresszio`, `effekt.regresszio`, `karakter.regresszio`) + új precedencia-tesztek. Egylépéses (nincs backward-compat, a localStorage invalidálható).
-- Böngészős visszaellenőrzéshez (megjelenítés / kattintási folyamat, amit az egységteszt nem fog meg) l. a **Böngészős (Playwright) tesztelés** módszert (Build scriptek alatt).
+- [ ] **VÉ-csökkentés a gyűjtőre**: `harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot` - a fortély `vé_csökkentés` flat-ok saját ciklussal + saját feltétel-ellenőrzéssel, a taktika bázis / szorzó a `hatások` közvetlen szűrésével (§42.6).
+- [ ] **Távharci CÉ a gyűjtőre**: `tavharc/helpers.ts` - a helyzet `CÉ` flat és a taktika `módosítók.CÉ` saját ciklusból (§42.6).
+- [ ] **Böngészős ellenőrzés**: a §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) egyszer sem voltak végigkattintva. Módszer: **Böngészős (Playwright) tesztelés** (Build scriptek alatt); csak jóváhagyással.
+- Tudatos szűkítések (ma nem tüzelnek, új adatnál felülvizsgálandó): §42.6 lista (távharci feltétel-kiértékelő, extra feltétel-kontextus, szorzó-keverék).
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧

@@ -181,7 +181,7 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   combat-roll-info.ts      Támadó/Sebzés/CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve)
   HatasokInfo.tsx          Dobás-hatás badge feliratok (Előny/Hátrány/Enyhít formázás, pure fn)
   extrak-info-calc.ts      Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn). Aktív-jelzés: harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél feltételek + aktív manőverhez kapcsolt hatás-al-feltétel ("manőver:<id>")
-  extrak-effekt.ts         Egységes effekt-precedencia (§42.3: additív→szorzó→override→max_limit, FLOOR) pure motor + aktívHatásokCélra (csak teljesült feltételű hatások) + hiányzóInfósExtrák (KM-warning, hiányos korreláció). Bekötve: Sebzés popup SP-delta, VÉ-csökkentés warning
+  extrak-effekt.ts         Egységes effekt-precedencia (§42.3: override (bázis-csere)→additív→szorzó→max_limit, FLOOR) pure motor + aktívHatásokCélra (csak teljesült feltételű hatások) + hiányzóInfósExtrák (KM-warning, hiányos korreláció). Bekötve: Sebzés popup SP-delta, VÉ-csökkentés warning
   ExtrakInfo.tsx           "Extrák" gomb (💡, pulzál ha van aktív) + popup: fegyver-extrák listája státusz-jelzéssel (Támadó + Sebzés popupban)
   EpTable.tsx              ÉP sebesülés tábla (S1-S4)
   EpDialogs.tsx            Seb/Gyógy dialógusok (explicit click handler)

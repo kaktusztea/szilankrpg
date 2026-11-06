@@ -4140,23 +4140,20 @@ note: A távharc cella / cél_VÉ NEM reactive szabály - tavharc/helpers.ts (ca
 
 ---
 
-## §42 Egységes effekt-modell (részben implementált)
+## §42 Egységes effekt-modell (implementálva; kis maradék: 42.6)
 
-Két effekt-rendszer él párhuzamosan, részben átfedő, részben szétosztott mód-készlettel:
+EGY közös effekt-nyelvtan (alak + mód-enum + precedencia), amit minden forrás használ (fortély, alapeset,
+taktika, státusz, harci helyzet, fegyver-extra). Állapot (2026-10-18):
 
-- **Fortély módosítók** (§16, `fortely-mods.ts`): a karakter build-jéből (fortélyok) folyamatosan
-  számított, additív harcérték-módosítók. Mód: `flat | scaled | override | előny | hátrány | enyhít`.
-- **Hatás-operátorok** (§22, a 2026-10-16-ig élt `hatas_operatorok.yaml`; azóta `mód`): státuszok / harci helyzetek okozta, nevesített
-  szituációs hatások. Mód: `előny_hátrány | szorzó | letilt | max_limit | szöveges | enyhít`.
-
-**Átfedés**: az „előny/hátrány", `szöveges`, `enyhít` fogalom MINDKÉT rendszerben szerepel (duplikáció).
-**Szétosztás**: a `szorzó` csak a hatás-operátornál, a `flat`/`override`/`scaled` csak a fortély-módosítónál.
-Egy új effekt-forrás (pl. `data/sources/fegyverek/extrak.yaml`) emiatt kénytelen MINDKETTŐBŐL meríteni.
-
-**Cél**: EGY közös effekt-nyelvtan (alak + mód-enum + precedencia), amit minden forrás használ (fortély,
-státusz, harci helyzet, extra). A KÓD egyesítése (egyetlen kiértékelő) a reactive engine runtime
-effekt-fázisára halasztva (§41) - addig ez vokabulár-szabvány + fokozatos adat-migráció. (YAGNI: a
-`calcFortelyMods` működik és tesztelt, big-bang összeolvasztás most csak regressziós kockázat.)
+- **Adat**: minden forrás `mód:` kulcsot használ a `konstansok.yaml → effekt_módok` enumból (build-gate). A
+  korábbi két párhuzamos rendszer (fortély-módosítók vs. `hatas_operatorok.yaml` operátor-réteg) 2026-10-16-án
+  összeolvadt (42.7, A döntés).
+- **Kód**: `engine/effekt.ts` gyűjtők (`gyűjtFortélyEffektek`, `gyűjtTaktikaEffektek`, `gyűjtHelyzetEffektek`,
+  `gyűjtStátuszEffektek`) EGY effekt-listát adnak, a 42.3 precedenciát EGY motor alkalmazza
+  (`értékCélra` → `harc/extrak-effekt.ts → alkalmazEffektek`), a kocka-dimenziót a `kockaSzint`. A `calcFortelyMods`
+  / `calcTaktikaMods` ezek vékony burkolói. Regressziós háló: `effekt.regresszio`, `statusz-proba.regresszio`,
+  `combat-roll-info.regresszio`, `karakter.regresszio`.
+- **Maradék**: néhány fogyasztó még saját ciklussal olvassa a forrás-adatot (42.6 "Gyűjtőn kívüli kódutak").
 
 ### 42.1 Közös effekt-alak
 
@@ -4256,20 +4253,21 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
 
 ### 42.5 Fázisolt migrációs terv
 
-1. **Szabvány** (kész): ez a szekció + a pilot `extrak.yaml` (már megfelel az alaknak/mód-enumnak).
-2. **Adat-migráció** (RÉSZBEN: az `extrak.yaml`-re kész - "Extrák" gomb `extrak-info-calc.ts` + a 42.3
-   precedencia-motor `harc/extrak-effekt.ts → alkalmazEffektek / aktívHatásokCélra`; numerikusan csak teljes
-   korrelációnál, pl. Sebzés popup SP-delta. HÁTRA: fortély `módosítók` + `hatasok.yaml`) (EGYLÉPÉSES - user döntése; nincs backward-compat, a localStorage invalidálható):
-   a fortély `módosítók` és a `hatasok.yaml` átállítása a közös alakra. A `előny`/`hátrány` NEM lesz
-   átnevezve (B döntés): a `előny_hátrány` a mód-kategória, a data a `előny`/`hátrány` operátor-neveket
-   használja előjeles értékkel - ez már konzisztens. A `szöveges`/`enyhít` egyetlen definícióra vonása.
-3. **Kód** (a runtime effekt-fázisnál, §41): EGY kiértékelő a 42.3 precedenciával, a `calcFortelyMods` és
-   a hatás-operátor-feldolgozás beolvasztásával. Előfeltétel: regressziós védőháló (meglévő fortély-mods
-   tesztek + új precedencia-tesztek).
+1. **Szabvány** (KÉSZ): ez a szekció + a pilot `extrak.yaml`.
+2. **Adat-migráció** (KÉSZ, 2026-10-16, egylépéses): fortély `módosítók`, státusz / helyzet / taktika `hatások`,
+   `hatasok.yaml` mind `mód:` kulcson, egy enum (`effekt_módok`); a `hatas_operatorok.yaml` törölve, a `szöveges` /
+   `enyhít` egyetlen definíció. A `előny`/`hátrány` nem lett átnevezve (B döntés, 42.7). A `hatasok.yaml` csak
+   katalógus: build-validált (`validate_hatasok_katalogus`), JSON-kimenete nincs, a webapp nem olvassa.
+3. **Kód** (KÉSZ, 2026-10-16 - 10-18, szeletekben): `engine/effekt.ts` gyűjtő + `értékCélra` (42.3 motor);
+   tiltás-keret és fegyver alapérték-override soronként; `calcFortelyMods` / `calcTaktikaMods` burkolóvá;
+   státusz-forrás + `támadások_száma` `max_limit` + `véVesztésSzorzó`; próba-státusz (`statusz-proba.ts`) és
+   harci dobás-hatások (`combat-roll-info.ts`) a gyűjtőn. Naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`.
+   Maradék: 42.6 "Gyűjtőn kívüli kódutak".
 
 ### 42.6 Jelenlegi kódutak (mód → hol kezelődik MA)
 
-A módok jelenleg KÜLÖN kódutakon élnek - ez az egyesítés kiindulópontja és egyben indoka:
+A számítás a közös gyűjtőn + motoron fut; a tábla azt mutatja, mely fogyasztó melyik módot olvassa ki (a gyűjtő
+kimenetéből szűrve, ill. a megnevezett helyen):
 
 | mód | jelenlegi kezelő | § |
 |-----|------------------|---|
@@ -4278,12 +4276,29 @@ A módok jelenleg KÜLÖN kódutakon élnek - ez az egyesítés kiindulópontja 
 | `override` | `harc/fegyver-calc.ts` (SP override, fegyver_override) + `harc/extrak-effekt.ts` (extrák) | §5–8, §21 |
 | `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`harc/combat-roll-info.ts`: a `gyűjt*Effektek` szűrése dobás-célokra; nettó szint: `kockaSzint`, 2026-10-18) | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
-| `letilt` | `harc/taktika-calc.ts` (feltételes TÉ semlegesítés) | §21 |
+| `letilt` | `engine/effekt.ts` taktika-gyűjtő (fortély `letilt` → a taktika adott célú hozzájárulása kiesik, pl. Taktikafókusz: Visszafogott) + tiltás-feloldás (`tiltás:<id>`) + `engine/statusz-proba.ts` (próba auto-kudarc) | §21, §42.4 |
 | `szöveges` | `formatters.tsx` / `harc/HatasokInfo.tsx` (megjelenítés) | §22 |
 | `szorzó` | `harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `harc/shared.ts` `véVesztésSzorzó` (vé_veszteség - a `gyűjtHelyzetEffektek` + `gyűjtStátuszEffektek` effektjeiből) + `harc/extrak-effekt.ts` | §21, §22 |
 | `max_limit` | `harc/extrak-effekt.ts` motor; `useHarcComputed`: helyzet/státusz `támadások_száma` (pl. Félelem (2): max 1) a fegyversorok + kétkezes `támadások`-ára (2026-10-16) | §42.3 |
 
-Megjegyzés: a `calcFortelyMods` ténylegesen CSAK `flat`+`scaled`-et implementál; a többi mód a fenti EGYÉB kódutakon kezelődik. A `harc/extrak-effekt.ts` a 42.3 precedenciát már implementálja, de csak az extrákra. A 3. FÁZIS (42.5) ezt a szórást vonja egyetlen kiértékelő alá a 42.3 precedenciával.
+Megjegyzés: a `calcFortelyMods` / `calcTaktikaMods` / `értékCélra` minden numerikus módot a közös 42.3 motoron
+(`alkalmazEffektek`) számol; a fenti fájlok csak kiolvassák a gyűjtő kimenetét a saját céljukra.
+
+**Gyűjtőn kívüli kódutak (maradék, ma helyes értéket adnak):**
+- `harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot`: a fortélyok `vé_csökkentés` flat-jait saját ciklus +
+  saját feltétel-ellenőrzés olvassa (nem `gyűjtFortélyEffektek`); a taktika `vé_csökkentés` bázis
+  (`calcTaktikaVéCsökkentésBázis`) és szorzó (`calcVéCsökkentésSzorzó`) a taktika `hatások`-át közvetlenül szűri
+  (a precedenciát már az `alkalmazEffektek` adja).
+- `tavharc/helpers.ts` CÉ-összeg: a helyzetek `CÉ` flat hatásait és a taktikák `módosítók.CÉ`-jét saját ciklus
+  gyűjti (nem `gyűjtHelyzetEffektek` / `gyűjtTaktikaEffektek`).
+
+**Tudatos szűkítések (`ponytail:` megjegyzéssel a kódban; ma egyik sem tüzel, új adatnál csendben hibázna):**
+- `tavharc/TavharcScreen.tsx`: a távharci kocka-gyűjtés (`collectCéDobásInfo`) nem kap feltétel-kiértékelőt →
+  computed- / tulajdonság-forrású strukturált feltétel ott mindig hamis.
+- `engine/effekt.ts` `biztosExtraHatások`: a fegyver-extra feltétel-kontextusa csak helyzet- / taktika-kulcsot
+  ismer; fortély- / státusz- / aktor-feltételű numerikus extra itt nem teljesülne.
+- `harc/extrak-effekt.ts`: nagyító + kicsinyítő szorzó ugyanarra a célra (42.3 "keverék") nincs az adatban; ha lesz,
+  a szabályt felül kell vizsgálni.
 
 ### 42.7 Rögzített döntések (2026-09-20)
 
