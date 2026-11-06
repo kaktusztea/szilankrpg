@@ -1,11 +1,11 @@
 import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
-import { getFegyverhossz } from '../../engine/harc/fegyver-helpers';
+import { getFegyverhossz, isPusztaKéz } from '../../engine/harc/fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function isSpeciális(karakter: Karakter, idx: number): boolean {
   if (idx < 0) return true;
-  return karakter.fegyverek[idx]?.alap.toLowerCase() === 'puszta kéz';
+  return isPusztaKéz(karakter.fegyverek[idx]?.alap ?? '');
 }
 
 type Props = HarcBaseProps & { fegyverOpciók: { név: string; idx: number }[] };

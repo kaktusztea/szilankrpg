@@ -15,9 +15,10 @@ import type { GameData, ExtraHatás } from './data-loader';
 import { evaluateAlapesetek } from './alapeset';
 import { alkalmazEffektek } from './extrak-effekt';
 import { createFeltételEvaluator } from './feltetel-eval';
-import { lookupFegyver, interpolateFokDef, buildPajzsFegyverNév } from './utils';
+import { interpolateFokDef, buildPajzsFegyverNév } from './utils';
 import { extraFeltételTeljesül } from './extrak-info-calc';
 import { clampEHSzint } from './dice';
+import { lookupFegyver, fortélyDef, helyzetDef, státuszDef, taktikaDef } from './lookup';
 
 type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';
 
@@ -50,7 +51,7 @@ export function gyűjtFortélyEffektek(
 ): Effekt[] {
   const ki: Effekt[] = [];
   for (const kf of k.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.id === kf.id);
+    const def = fortélyDef(data, kf.id);
     const fokDef = def?.fokok.find(fd => fd.fok === kf.fok);
     if (!def || !fokDef?.módosítók) continue;
     const forrás = { típus: 'fortély' as const, név: def.név, id: def.id, ...(kf.elem ? { elem: kf.elem } : {}) };
@@ -88,7 +89,7 @@ export function gyűjtFortélyEffektek(
 function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
   const letiltva = new Set<string>();
   for (const kf of k.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.id === kf.id);
+    const def = fortélyDef(data, kf.id);
     if (!def) continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef?.módosítók) continue;
@@ -118,7 +119,7 @@ export function gyűjtTaktikaEffektek(
   const ki: Effekt[] = [];
   let véÖsszeg = 0;
   for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
+    const def = taktikaDef(data, at.név);
     if (!def) continue;
     const forrás = { típus: 'taktika' as const, név: at.név, ...(def.fokozatos ? { fok: at.fok ?? 1 } : {}) };
     let mods: Partial<Record<string, number>> | undefined;
@@ -151,7 +152,7 @@ export function gyűjtTaktikaEffektek(
 export function gyűjtHelyzetEffektek(session: Session, data: GameData): Effekt[] {
   const ki: Effekt[] = [];
   for (const név of session.aktív_helyzetek) {
-    const def = data.harciHelyzetek.find(h => h.név === név);
+    const def = helyzetDef(data, név);
     for (const h of def?.hatások ?? []) {
       ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), mód: h.mód, érték: h.érték,
         ...(h.megjegyzés ? { megjegyzés: h.megjegyzés } : {}), forrás: { típus: 'helyzet', név } });
@@ -171,7 +172,7 @@ export function gyűjtStátuszEffektek(session: Pick<Session, 'aktív_státuszok
     const m = st.match(/^(.+) \((\d+)\)$/);
     if (!m) continue;
     const [alapNév, al] = m[1].split(': ');
-    const fokDef = data.statuszok.find(s => s.név === alapNév)?.fokok.find(f => f.fok === parseInt(m[2]));
+    const fokDef = státuszDef(data, alapNév)?.fokok.find(f => f.fok === parseInt(m[2]));
     for (const h of fokDef?.hatások ?? []) {
       ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), ...(al ? { alkategória: al } : {}),
         mód: h.mód, érték: h.érték, ...(h.megjegyzés ? { megjegyzés: h.megjegyzés } : {}),
@@ -280,7 +281,7 @@ function feloldottTiltások(fDef: FegyverAlap, data: GameData, aktívFeltételek
 /** Egy fegyverre ható aktív (nem feloldott) tiltások az aktív harci helyzetekből. */
 export function tiltásokFegyverre(fDef: FegyverAlap, session: Session, data: GameData, aktívFeltételek: Set<string>): AktívTiltás[] {
   const helyzetek = session.aktív_helyzetek
-    .map(n => data.harciHelyzetek.find(d => d.név === n))
+    .map(n => helyzetDef(data, n))
     .filter(h => h?.tiltások?.length);
   if (!helyzetek.length) return [];
   const ctx = new Map([['fegyver.fegyverhossz', fDef.fegyverhossz]]);
@@ -315,7 +316,7 @@ const FEGYVER_KOMPONENS = 'felszerelés:fegyver';
  */
 export function fegyverOverrideÉrtékek(fDef: FegyverAlap, session: Session, data: GameData, aktívFeltételek: Set<string>): Map<string, number> {
   const ki = new Map<string, number>();
-  const helyzetek = session.aktív_helyzetek.map(n => data.harciHelyzetek.find(d => d.név === n)).filter(h => h?.fegyver_override);
+  const helyzetek = session.aktív_helyzetek.map(n => helyzetDef(data, n)).filter(h => h?.fegyver_override);
   const sor = new Set([...aktívFeltételek].filter(f => !f.startsWith('tiltás:')));
   for (const t of tiltásokFegyverre(fDef, session, data, aktívFeltételek)) sor.add(`tiltás:${t.id}`);
   const { feltételTeljesül } = createFeltételEvaluator(sor, session, new Map(), new Map(), new Map());

@@ -11,7 +11,7 @@
  */
 import type { Karakter } from './types';
 import type { GameData } from './data-loader';
-import { lookupFegyver } from './utils';
+import { lookupFegyver } from './lookup';
 
 export interface FelszerelésSor {
   /** Megjelenítendő név (fegyver/pajzs/páncél neve, vagy kézi tárgy neve). */

@@ -3,6 +3,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import { fmtHatás } from '../formatters';
+import { eseményDef, státuszDef } from '../../engine/lookup';
 
 interface Props {
   data: GameData;
@@ -16,7 +17,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
   const [fokválasztó, setFokválasztó] = useState<string | null>(null);
   const [érzékválasztó, setÉrzékválasztó] = useState<string | null>(null);
 
-  const eseményNév = (id: string) => data.esemenyek.find(e => e.id === id)?.név ?? id;
+  const eseményNév = (id: string) => eseményDef(data, id)?.név ?? id;
 
   return (
     <PickerOverlay title={fokválasztó ? `${fokválasztó} - fok választó` : 'Státusz választó'} onClose={onClose}>
@@ -58,7 +59,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
         </div>
       )}
       {érzékválasztó && !fokválasztó && (() => {
-        const def = data.statuszok.find(s => s.név === érzékválasztó);
+        const def = státuszDef(data, érzékválasztó);
         return (
           <div>
             <div className="aktiv-picker-category">Alkategória kiválasztása</div>
@@ -72,7 +73,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
       })()}
       {fokválasztó && (() => {
         const baseName = fokválasztó.includes(': ') ? fokválasztó.split(': ')[0] : fokválasztó;
-        const def = data.statuszok.find(s => s.név === baseName);
+        const def = státuszDef(data, baseName);
         if (!def) return null;
         return def.fokok.map(f => (
           <button type="button" key={f.fok} className="aktiv-picker-item" onClick={() => { onPick(`${fokválasztó} (${f.fok})`); }}>

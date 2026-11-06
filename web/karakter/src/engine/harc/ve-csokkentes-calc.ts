@@ -9,6 +9,7 @@ import type { Karakter, Session } from '../types';
  */
 import { k20P } from '../dice';
 import { alkalmazEffektek } from '../extrak-effekt';
+import { fortélyDef, taktikaDef } from '../lookup';
 
 export type Fegyverviszony = 'fegyverhátrány' | 'fegyverazonosság' | 'fegyverelőny';
 
@@ -126,7 +127,6 @@ export function calcTaktikaVéCsökkentés(
 }
 
 /** Taktika-név → definíció (a session a taktikát név szerint tárolja). */
-const taktikaDef = (data: GameData, név: string) => data.taktikak.find(t => t.név === név);
 
 /**
  * A Harc fül taktika-függő VÉ-csökkentés állapota (md/065_02):
@@ -142,7 +142,7 @@ export function taktikaVéCsökkentésÁllapot(
   const aktív = (név: string) => session.aktív_taktikák.some(t => t.név === név);
   const fárasztásDef = aktív(FÁRASZTÁS) ? taktikaDef(data, FÁRASZTÁS) : undefined;
   const fortélyModosítók = karakter.fortélyok.flatMap(kf => {
-    const def = data.fortelySummaries.find(d => d.id === kf.id);
+    const def = fortélyDef(data, kf.id);
     const módosítók = def?.fokok.find(f => f.fok === kf.fok)?.módosítók;
     return def && módosítók?.length ? [{ forrás: def.név, módosítók }] : [];
   });

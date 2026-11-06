@@ -59,6 +59,8 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
   (dobás-popup készlet), `components/picker/` (taktika / helyzet választók). Ezek sem importálhatnak fület.
 - App-keret kivétel: `App.tsx`, `TabContent.tsx`, `overlays/` (pl. `OverlayScreenOverlay`) importálhatja a fülek tartalmát.
 - `use…` előtag csak valódi React hooknak (a `react-hooks` linter a név alapján dönt).
+- GameData entitás név / id szerint: `engine/lookup.ts` (`lookupFegyver`, `taktikaDef`, `fortélyDef` …), NEM `.find(...)`
+  és NEM kézi `toLowerCase()`-összevetés. A nevek kis/nagybetű-függetlenek, az id-k pontosak.
 
 ## Konvenciók
 

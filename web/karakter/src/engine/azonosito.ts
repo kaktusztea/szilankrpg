@@ -8,6 +8,7 @@ import type { KepzettsegDef } from './data-types';
  * Megjelenítéshez EGY helyen oldjuk fel a nevet (képzettségNév / fortélyNév).
  */
 import type { GameData } from './data-loader';
+import { fortélyDef, képzettségDef } from './lookup';
 
 /** Képzettség-id-k, amelyek eleme harcmodor (konstansok.harcmodorok) - a megjelenített név maga az elem. */
 export const HARCMODOR_ID = 'harcmodor';
@@ -47,7 +48,7 @@ export function harcmodorNév(elem: string, data?: Pick<GameData, 'kepzettsegDef
 export function képzettségNév(ref: KépzRef | string, data: Pick<GameData, 'kepzettsegDefs'>): string {
   const { id, elem } = typeof ref === 'string' ? bontKépzKulcs(ref) : { id: ref.id, elem: ref.elem ?? '' };
   if (elem && isHarcmodorId(id)) return harcmodorNév(elem, data);
-  const név = data.kepzettsegDefs.find(d => d.id === id)?.név ?? id;
+  const név = képzettségDef(data, id)?.név ?? id;
   return elem ? `${név}: ${elem}` : név;
 }
 
@@ -55,7 +56,7 @@ export function képzettségNév(ref: KépzRef | string, data: Pick<GameData, 'k
 export function fortélyNév(f: { id: string; elem?: string } | string, data: Pick<GameData, 'fortelySummaries'>): string {
   const id = typeof f === 'string' ? f : f.id;
   if (typeof f !== 'string' && id === EGYEDI_FORTÉLY_ID) return f.elem ?? '';
-  return data.fortelySummaries.find(d => d.id === id)?.név ?? id;
+  return fortélyDef(data, id)?.név ?? id;
 }
 
 /** A karakter adott képzettségének szintje (kulcs szerint; 0, ha nincs). */
@@ -71,5 +72,5 @@ export function fortélyFok(fortélyok: readonly { id: string; fok: number }[], 
 /** Def lookup kulcs alapján (többszörösnél az alap def). */
 export function findDef(kulcs: string, kepzettsegDefs: KepzettsegDef[]): KepzettsegDef | undefined {
   const { id } = bontKépzKulcs(kulcs);
-  return kepzettsegDefs.find(d => d.id === id);
+  return képzettségDef({ kepzettsegDefs }, id);
 }

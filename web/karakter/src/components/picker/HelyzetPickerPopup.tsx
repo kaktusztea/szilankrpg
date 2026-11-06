@@ -3,6 +3,7 @@ import type { Karakter, Session, UndoPatch } from '../../engine/types';
 import { fmtCode } from '../formatters';
 import { PickerOverlay } from './PickerOverlay';
 import { területIllik, type HarcTerület } from '../../engine/taktika/taktika-helpers';
+import { helyzetDef } from '../../engine/lookup';
 
 interface Props {
   data: GameData;
@@ -27,7 +28,7 @@ type HelyzetDef = GameData['harciHelyzetek'][number];
 export function HelyzetPickerPopup({ data, session, setSession, pushUndo, onClose, terület }: Props) {
   function addHelyzet(h: HelyzetDef) {
     pushUndo(`Helyzet: ${h.név}`, [{ field: 'session', prev: session }]);
-    const hDef = data.harciHelyzetek.find(d => d.név === h.név);
+    const hDef = helyzetDef(data, h.név);
     setSession(s => {
       let helyzetek = [...s.aktív_helyzetek, h.név];
       let taktikák = s.aktív_taktikák;
@@ -55,7 +56,7 @@ export function HelyzetPickerPopup({ data, session, setSession, pushUndo, onClos
   function kizárt(h: HelyzetDef): boolean {
     if (h.rejtett) return true;
     return session.aktív_helyzetek.some(ah => {
-      const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+      const ahDef = helyzetDef(data, ah);
       return ahDef?.kizár_helyzetek?.includes(h.id);
     });
   }

@@ -19,6 +19,7 @@ import { HatasokInfo as HatásokInfo } from '../dobas/HatasokInfo';
 import { ExtrakInfo } from '../dobas/ExtrakInfo';
 import { KeziBonuszBtn } from '../dobas/KeziBonuszBtn';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
+import { taktikaDef } from '../../engine/lookup';
 
 interface Props {
   /** Active weapon TÉ value (fallback: elsődleges mód, ha nincs módok lista) */
@@ -124,7 +125,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   // A chipek száma: csak a közelharci aktívak (a picker is csak ezeket mutatja).
   const aktívDb = aktívTerületen(session, data, 'közelharc');
   const tiltóTaktika = támadódobástTiltóTaktika(session);
-  const tiltóMegjegyzés = tiltóTaktika ? data.taktikak.find(t => t.név === tiltóTaktika)?.megjegyzés ?? '' : '';
+  const tiltóMegjegyzés = tiltóTaktika ? taktikaDef(data, tiltóTaktika)?.megjegyzés ?? '' : '';
 
   // Az aktuálisan választott mód aktorára igazított extra-kontextus (az `aktor`-feltételes extrák -
   // pl. `pontos` - mód-váltásra reagáljanak). A forgatás a base kontextusból (elsődleges mód) jön,

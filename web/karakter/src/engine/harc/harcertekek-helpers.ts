@@ -1,9 +1,10 @@
 import type { GameData } from '../data-loader';
 import { bontKépzKulcs, képzettségNév, harcmodorNév, HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID, képzettségSzint } from '../azonosito';
 import type { Karakter } from '../types';
-import { lookupFegyver, harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../utils';
+import { harcmodorÖsszeg as calcHarcmodorÖsszeg } from '../utils';
 import { findMfFok as findMfFokCanonical } from '../mf-utils';
 import { evaluate, buildContext } from '../reactive';
+import { lookupFegyver, fortélyDef, képzettségDef } from '../lookup';
 
 // --- HM számítás ---
 
@@ -39,7 +40,7 @@ export function getHarcmodorok(data: GameData): string[] {
 /** Távolsági harcmodor-kulcsok ("távolsági_harcmodor/íjászat"). */
 function getTávharciHmSet(data: GameData): Set<string> {
   return new Set(
-    (data.kepzettsegDefs.find(d => d.id === TÁVOLSÁGI_HARCMODOR_ID)?.többszörös ?? []).map(n => `${TÁVOLSÁGI_HARCMODOR_ID}/${n.toLowerCase()}`)
+    (képzettségDef(data, TÁVOLSÁGI_HARCMODOR_ID)?.többszörös ?? []).map(n => `${TÁVOLSÁGI_HARCMODOR_ID}/${n.toLowerCase()}`)
   );
 }
 
@@ -60,7 +61,7 @@ export function getMfFok(data: GameData, k: Karakter, fegyverAlap: string): numb
 export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: string): boolean {
   const fok = getMfFok(data, k, fegyverAlap);
   if (fok === 0) return false;
-  const mfDef = data.fortelySummaries.find(d => d.id === 'mesterfegyver');
+  const mfDef = fortélyDef(data, 'mesterfegyver');
   const fokDef = mfDef?.fokok.find(f => f.fok === fok);
   if (!fokDef?.követelmények?.length) return false;
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
@@ -84,7 +85,7 @@ export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: st
 export function mfKövetelményText(data: GameData, k: Karakter, fegyverAlap: string): string {
   const fok = getMfFok(data, k, fegyverAlap);
   if (fok === 0) return '';
-  const mfDef = data.fortelySummaries.find(d => d.id === 'mesterfegyver');
+  const mfDef = fortélyDef(data, 'mesterfegyver');
   const fokDef = mfDef?.fokok.find(f => f.fok === fok);
   if (!fokDef?.követelmények?.length) return '';
   const fDef = lookupFegyver(data.fegyverek, fegyverAlap);

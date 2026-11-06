@@ -1,7 +1,8 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver, buildPajzsFegyverNév } from '../../engine/utils';
+import { buildPajzsFegyverNév } from '../../engine/utils';
 import { elsődlegesMód } from '../../engine/harc/fegyver-calc';
+import { lookupFegyver } from '../../engine/lookup';
 
 interface Props {
   data: GameData;

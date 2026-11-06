@@ -7,10 +7,10 @@ import type { Karakter, Session } from '../types';
 import type { GameData } from '../data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../data-types';
 import { harcmodorÖsszeg, buildPajzsFegyverNév } from '../utils';
-import { lookupFegyver } from '../utils';
 import { elsődlegesMód } from './fegyver-calc';
 import { calcSzitModÖsszeg } from '../proba/kepzettseg-proba-calc';
 import { buildAktívFeltételek } from '../feltetelek';
+import { lookupFegyver } from '../lookup';
 
 /** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
 const MEGLEPETÉS = 'Meglepetés';

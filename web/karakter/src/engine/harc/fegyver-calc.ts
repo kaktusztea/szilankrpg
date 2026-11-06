@@ -1,7 +1,7 @@
 import type { Karakter, Session, FegyverAlap, FegyverMod, FegyverResultMód } from '../types';
 import type { GameData } from '../data-loader';
 import { evaluate, buildContext, filterFegyverRules, type Rule } from '../reactive';
-import { lookupFegyver, ideaDelta } from '../utils';
+import { ideaDelta } from '../utils';
 import { képzettségSzint } from '../azonosito';
 import { findMfFok } from '../mf-utils';
 import { calcKétkezesHarc } from '../ketkezes';
@@ -9,6 +9,8 @@ import { tiltásokFegyverre, fegyverOverrideÉrtékek } from '../effekt';
 import { alkalmazEffektek } from '../extrak-effekt';
 import type { ExtraHatás } from '../data-types';
 import type { FegyverResult } from './types';
+import { lookupFegyver } from '../lookup';
+import { isPusztaKéz } from './fegyver-helpers';
 
 /** Cached filtered fegyver rules (keyed by rules array reference). */
 const _fegyverRulesCache = new WeakMap<Rule[], Rule[]>();
@@ -28,7 +30,7 @@ function getFegyverRules(allRules: Rule[]): Rule[] {
  * (Belharc: SP 0, de Természetes fegyverrel 1 - 2026-10-16 döntés).
  */
 function calcSpOverride(fegyverNév: string, karakter: Karakter): number | null {
-  if (fegyverNév.toLowerCase() !== 'puszta kéz') return null;
+  if (!isPusztaKéz(fegyverNév)) return null;
   if (!karakter.fortélyok.some(kf => kf.id === 'természetes_fegyver')) return null;
   return 1;
 }

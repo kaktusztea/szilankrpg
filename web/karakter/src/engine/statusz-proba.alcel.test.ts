@@ -1,11 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
 import { calcStátuszPróbaEH, próbaÉrzékek } from './statusz-proba';
+import { státuszDef } from './lookup';
 
 /** Alcél "képzettség:<id>" (§42.4, 2026-10-17 óta id): a státusz-hatás csak a megnevezett képzettség próbájára hat. */
 describe('statusz-proba - alcél prefix-alak', () => {
   const data = loadGameDataSync();
-  const eszmélet = data.statuszok.find(s => s.név === 'Eszmélet')!;
+  const eszmélet = státuszDef(data, 'Eszmélet')!;
   const fok = eszmélet.fokok.find(f => f.hatások.some(h => h.alcél === 'képzettség:fájdalomtűrés'))!.fok;
   const eh = (képzettség: string) => calcStátuszPróbaEH([`Eszmélet (${fok})`], data.statuszok, képzettség, '').források;
 

@@ -14,6 +14,7 @@ import { checkKövetelmények } from '../components/fortelyok/helpers';
 import { fortélyPróbaBónuszok } from './effekt';
 import type { Karakter } from './types';
 import { fortélyNév, képzettségNév, képzKulcs } from './azonosito';
+import { fortélyDef } from './lookup';
 
 const data = loadGameDataSync();
 const karakterJson = (f: string): Karakter =>
@@ -31,7 +32,7 @@ function számított(k: Karakter) {
       fortélyMods: hc.fortelyMods, fegyverek: hc.fegyverResults, kétkezes: hc.kétkezesResult, fogás: hc.fogásResult,
     },
     követelményHiány: Object.fromEntries(k.fortélyok.map(f => {
-      const fokDef = data.fortelySummaries.find(d => d.id === f.id)?.fokok.find(x => x.fok === f.fok);
+      const fokDef = fortélyDef(data, f.id)?.fokok.find(x => x.fok === f.fok);
       return [`${fortélyNév(f, data)}${f.elem ? ` [${f.elem}]` : ''} (${f.fok})`,
         checkKövetelmények(fokDef, k.képzettségek, k.fortélyok, data, undefined, fajF, f.id)];
     }).filter(([, h]) => (h as string[]).length)),

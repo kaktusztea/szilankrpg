@@ -1,6 +1,10 @@
 import type { GameData } from '../data-loader';
 import type { Karakter } from '../types';
-import { lookupFegyver, buildPajzsFegyverNév } from '../utils';
+import { buildPajzsFegyverNév } from '../utils';
+import { lookupFegyver } from '../lookup';
+
+/** Bare-hand pseudo weapon (fegyverek_v2.json "Puszta kéz"); name compare is case-insensitive like every weapon lookup. */
+export const isPusztaKéz = (alap: string): boolean => alap.toLowerCase() === 'puszta kéz';
 
 /** Fegyverhossz-kategória lookup közös helper */
 export function getFegyverhossz(data: GameData, alap: string): number {
@@ -19,11 +23,11 @@ export function isHárító(fDef: { név: string } | undefined): boolean {
  */
 export function kétkezesLehetséges(data: GameData, karakter: Karakter, jobbIdx: number): boolean {
   const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
-  if (!jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz') return false;
+  if (!jobbFp || isPusztaKéz(jobbFp.alap)) return false;
   const jobbDef = lookupFegyver(data.fegyverek, jobbFp.alap);
   if (jobbDef?.módok.some(m => m.Forgatás === 'kétkezes')) return false;
   return karakter.fegyverek.some(fp =>
-    fp.alap.toLowerCase() !== 'puszta kéz' &&
+    !isPusztaKéz(fp.alap) &&
     !isHárító(lookupFegyver(data.fegyverek, fp.alap)));
 }
 

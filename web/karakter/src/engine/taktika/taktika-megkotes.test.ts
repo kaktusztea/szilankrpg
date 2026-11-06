@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { isTaktikaAllowed, taktikaTiltásOka } from './taktika-megkotes';
 import { harcFejlécÉrtékek } from '../harc/harc-fejlec-calc';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
+import { taktikaDef } from '../lookup';
 
 /** „1 támadás" taktika: `támadások min 2` - a Harc fül aktív fegyverének támadásszáma dönt (rules.json fegyver_támadások). */
 describe('taktika megkötés: támadások min', () => {
@@ -80,7 +81,7 @@ describe('taktikaTiltásOka', () => {
 
   it('az ok megléte ⇔ a taktika tiltott (allow-fn-nel konzisztens)', () => {
     for (const név of ['(Lég)Lovas roham', '(Lég)Lovas támadás galoppból', '1 támadás', 'Támadó', 'Védő']) {
-      if (!data.taktikak.some(t => t.név === név)) continue;
+      if (!!!taktikaDef(data, név)) continue;
       const engedélyezett = isTaktikaAllowed(név, üresSession as typeof k.session, k, data);
       const ok = taktikaTiltásOka(név, üresSession as typeof k.session, k, data);
       expect(engedélyezett).toBe(ok === null);

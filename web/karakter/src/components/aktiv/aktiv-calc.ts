@@ -3,6 +3,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { AktívAlapeset } from '../../engine/alapeset';
 import { evaluateAlapesetek } from '../../engine/alapeset';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
+import { eseményDef, fortélyDef, státuszDef, taktikaDef } from '../../engine/lookup';
 
 // --- Types ---
 
@@ -54,7 +55,7 @@ function calcStátuszHatások(session: Session, data: GameData): StátuszPerElem
     const stNév = match[1];
     const baseName = stNév.includes(': ') ? stNév.split(': ')[0] : stNév;
     const subName = stNév.includes(': ') ? stNév.split(': ')[1] : '';
-    const def = data.statuszok.find(s => s.név === baseName);
+    const def = státuszDef(data, baseName);
     const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
     if (fokDef) {
       const hatások = fokDef.hatások.map(h => subName ? { ...h, cél: `${h.cél} (${subName.toLowerCase()})` } : h);
@@ -67,7 +68,7 @@ function calcStátuszHatások(session: Session, data: GameData): StátuszPerElem
 function calcTaktikaHatások(session: Session, data: GameData): TaktikaHatásPerElem[] {
   const result: TaktikaHatásPerElem[] = [];
   for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
+    const def = taktikaDef(data, at.név);
     if (!def) continue;
     if (def.fokozatos && def.fokok && at.fok != null) {
       const fokDef = def.fokok.find(f => f.fok === at.fok);
@@ -109,7 +110,7 @@ function calcFortélyPool(
   const manőverBónuszok: ManőverBónusz[] = [];
 
   for (const kf of karakter.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.id === kf.id);
+    const def = fortélyDef(data, kf.id);
     if (!def) continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef) continue;
@@ -196,8 +197,8 @@ export function calcAktivData(data: GameData, karakter: Karakter, session: Sessi
 
   const eseményNév = (id: string) => {
     const m = id.match(/^(.+?)( \(.+\))$/);
-    if (m) { const base = data.esemenyek.find(e => e.id === m[1])?.név ?? m[1]; return base + m[2]; }
-    return data.esemenyek.find(e => e.id === id)?.név ?? id;
+    if (m) { const base = eseményDef(data, m[1])?.név ?? m[1]; return base + m[2]; }
+    return eseményDef(data, id)?.név ?? id;
   };
 
   const { fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, manőverBónuszok } = calcFortélyPool(karakter, data, aktívFeltételek);

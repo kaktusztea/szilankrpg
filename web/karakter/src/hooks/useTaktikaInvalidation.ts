@@ -3,6 +3,7 @@ import type { Karakter } from '../engine/types';
 import { fortélyFok } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';
 import { isTaktikaAllowed } from '../engine/taktika/taktika-megkotes';
+import { taktikaDef } from '../engine/lookup';
 
 export function useTaktikaInvalidation(
   karakter: Karakter | null,
@@ -15,7 +16,7 @@ export function useTaktikaInvalidation(
     const session = karakter.session;
     let changed = false;
     const újTaktikák = session.aktív_taktikák.filter(at => {
-      const def = data.taktikak.find(t => t.név === at.név);
+      const def = taktikaDef(data, at.név);
       // Megkötés/szűrő (fegyver, harcmodor, helyzet, szűrő_harcmodorok): ha már nem engedélyezett
       // az aktuális fegyver/session mellett (pl. íjról hajítóra váltás → Kitartott célzás), kiesik.
       if (!isTaktikaAllowed(at.név, session, karakter, data)) { changed = true; return false; }

@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver, buildPajzsFegyverNév } from '../../engine/utils';
-import { getFegyverhossz, isHárító } from '../../engine/harc/fegyver-helpers';
+import { buildPajzsFegyverNév } from '../../engine/utils';
+import { getFegyverhossz, isHárító, isPusztaKéz } from '../../engine/harc/fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
+import { lookupFegyver } from '../../engine/lookup';
 
 function getKétkezesBalOpciók(
   fegyverOpciók: { név: string; idx: number }[],
@@ -16,7 +17,7 @@ function getKétkezesBalOpciók(
   return fegyverOpciók.filter(f => {
     if (f.idx < 0) return false;
     const alap = karakter.fegyverek[f.idx]?.alap ?? '';
-    if (alap.toLowerCase() === 'puszta kéz') return false;
+    if (isPusztaKéz(alap)) return false;
     const fDef = lookupFegyver(data.fegyverek, alap);
     if (isHárító(fDef)) return false;
     if (jobbIdx < 0) return true;

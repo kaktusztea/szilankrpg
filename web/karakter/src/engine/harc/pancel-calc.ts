@@ -2,10 +2,10 @@ import type { Kepzettseg } from '../types';
 import type { Karakter, Session } from '../types';
 import type { GameData } from '../data-loader';
 import type { KonstansokRaw } from '../data-types';
-import { lookupFegyver } from '../utils';
 import { fortélyFok } from '../azonosito';
 import { isHárító } from './fegyver-helpers';
 import { elsődlegesMód } from './fegyver-calc';
+import { lookupFegyver } from '../lookup';
 
 /** Páncél lookup táblák építése */
 export function buildPancelLookups(

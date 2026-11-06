@@ -1,8 +1,9 @@
 import type { GameData } from '../data-loader';
 import type { Karakter, Session } from '../types';
-import { lookupFegyver, buildPajzsFegyverNév } from '../utils';
+import { buildPajzsFegyverNév } from '../utils';
 import { buildAktívFeltételek } from '../feltetelek';
 import { aktívTiltások } from '../effekt';
+import { lookupFegyver, fortélyDef, helyzetDef } from '../lookup';
 
 /** Helyzet elérhető-e a pickerben */
 export function isHelyzetAvailable(
@@ -11,7 +12,7 @@ export function isHelyzetAvailable(
   if (h.rejtett) return false;
   if (session.aktív_helyzetek.includes(h.név)) return false;
   for (const ah of session.aktív_helyzetek) {
-    const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+    const ahDef = helyzetDef(data, ah);
     if (ahDef?.kizár_helyzetek?.includes(h.id)) return false;
   }
   return true;
@@ -22,7 +23,7 @@ export function getMinFegyverhosszWarning(
   helyzetFeltételKulcs: string, karakter: Karakter, session: Session, data: GameData,
 ): string {
   for (const kf of karakter.fortélyok) {
-    const fd = data.fortelySummaries.find(d => d.id === kf.id);
+    const fd = fortélyDef(data, kf.id);
     if (!fd) continue;
     const fokDef = fd.fokok.find(f => f.fok === kf.fok);
     const köv = fokDef?.követelmények?.find(k => k.típus === 'min_fegyverméret' && k.feltétel === helyzetFeltételKulcs);
@@ -45,7 +46,7 @@ export function getTiltásWarnings(helyzetNév: string, karakter: Karakter, sess
 
 /** Helyzet infó szöveg összeállítása (alapesettel) */
 export function getHelyzetInfoText(helyzetNév: string, data: GameData): string {
-  const def = data.harciHelyzetek.find(d => d.név === helyzetNév);
+  const def = helyzetDef(data, helyzetNév);
   if (!def) return '';
   const hId = def.feltétel_kulcs?.split(':')[1] || '';
   let alapText = '';

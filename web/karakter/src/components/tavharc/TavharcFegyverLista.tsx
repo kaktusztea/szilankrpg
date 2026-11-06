@@ -2,6 +2,7 @@ import type { TavharcProps } from './types';
 import { getAlkalmatlanInfo, calcÚjratöltésEnyhítés } from './helpers';
 import { TavharcFegyverCard } from './TavharcFegyverCard';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
+import { lookupTávfegyver } from '../../engine/lookup';
 
 interface Props extends TavharcProps {
   onMfTarget: (idx: number) => void;
@@ -22,10 +23,10 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
   const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.név.toLowerCase()) && !d.név.startsWith('🔆'));
 
   const isMágikusDef = (alap: string) =>
-    data.tavfegyverek.find(d => d.név.toLowerCase() === alap.toLowerCase())?.kategória === 'mágikus';
+    lookupTávfegyver(data.tavfegyverek, alap)?.kategória === 'mágikus';
 
   function addTávfegyver(alap: string) {
-    const ideaDefault = data.tavfegyverek.find(d => d.név.toLowerCase() === alap.toLowerCase())?.idea_default ?? 0;
+    const ideaDefault = lookupTávfegyver(data.tavfegyverek, alap)?.idea_default ?? 0;
     setKarakter(prev => {
       if (!prev) return prev;
       // Mágiatáv: mindig csak 1 a 4-ből - ha már van mágikus, cseréljük (nem új példány).

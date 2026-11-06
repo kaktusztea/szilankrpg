@@ -2,18 +2,18 @@ import type { HarcBaseProps } from './types';
 import { kétkezesKövetelményHiány } from '../../engine/ketkezes';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver } from '../../engine/utils';
-import { buildFegyverOpciók, kétkezesLehetséges, isHárító } from '../../engine/harc/fegyver-helpers';
+import { buildFegyverOpciók, kétkezesLehetséges, isHárító, isPusztaKéz } from '../../engine/harc/fegyver-helpers';
 import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';
+import { lookupFegyver } from '../../engine/lookup';
 
 function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Session): boolean {
   const opciók = data.konstansok.fegyverfogás_opciók as { id: string }[];
   const aktív = session.fegyverfogás || 'egyfegyveres';
   const jobbIdx = session.aktív_fegyver_index;
   const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
-  if (!jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz') return false;
+  if (!jobbFp || isPusztaKéz(jobbFp.alap)) return false;
 
   const jobbDef = lookupFegyver(data.fegyverek, jobbFp.alap);
   const kétkezes = jobbDef?.módok.some(m => m.Forgatás === 'kétkezes') ?? false;

@@ -6,6 +6,7 @@ import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
 import type { TaktikaHatásPerElem } from './aktiv-calc';
 import { isTaktikaAllowed } from '../../engine/taktika/taktika-megkotes';
 import { getTaktikaMods } from '../../engine/taktika/taktika-helpers';
+import { taktikaDef } from '../../engine/lookup';
 
 interface Props {
   data: GameData;
@@ -35,7 +36,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
           <button className="aktiv-add-btn aktiv-add-btn-sm" disabled={allDisabled} onClick={() => setShowPicker(true)}>+</button>
         </h3>
         {session.aktív_taktikák.map((t, i) => {
-          const def = data.taktikak.find(d => d.név === t.név);
+          const def = taktikaDef(data, t.név);
           const mods = getTaktikaMods(t, data);
           const hatásLabel = `${t.név}${t.fok != null ? ` (${t.fok})` : ''}`;
           const hatásEntry = taktikaHatásPerElem.find(h => h.név === hatásLabel);

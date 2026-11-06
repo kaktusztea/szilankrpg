@@ -8,6 +8,7 @@ import { collectDobásInfo, collectCéDobásInfo, fegyverSpBónuszok, netElőnyS
 import type { Session, Karakter, FegyverAlap } from '../types';
 import type { GameData } from '../data-loader';
 import type { SebzésjellegPáncélMátrix } from '../data-types';
+import { fortélyDef, taktikaDef } from '../lookup';
 
 // Minimal fixtures - only the fields collectDobásInfo touches for the taktika path.
 function makeData(): GameData {
@@ -197,7 +198,7 @@ describe('collectDobásInfo - a korábbi rejtett eltérések', () => {
 
   it('1. strukturált feltételű fortély kocka-hatás: session-forrás magától, computed-forrás a harc-kiértékelővel', () => {
     const data = klón();
-    const def = data.fortelySummaries.find(d => d.id === 'kétkezesség')!;
+    const def = fortélyDef(data, 'kétkezesség')!;
     const fok = def.fokok.find(f => f.fok === 1)!;
     fok.módosítók = [
       { cél: 'té_dobás', mód: 'előny', érték: 1, feltétel: [{ forrás: 'kétkezes_harc', operátor: '==', érték: true }] },
@@ -213,7 +214,7 @@ describe('collectDobásInfo - a korábbi rejtett eltérések', () => {
 
   it('2. taktika hatás feltétele: csak teljesült feltétellel', () => {
     const data = klón();
-    const t = data.taktikak.find(x => x.név === 'Roham')!;
+    const t = taktikaDef(data, 'Roham')!;
     t.hatások = [...(t.hatások ?? []), { cél: 'té_dobás', mód: 'előny', érték: 1, feltétel: 'harci_helyzet:fegyverelőny' }] as typeof t.hatások;
     const fegyverelőny = data.harciHelyzetek.find(h => h.feltétel_kulcs === 'harci_helyzet:fegyverelőny')!.név;
     expect(té(data, { aktív_taktikák: [{ név: 'Roham' }] })).toEqual([]);
@@ -222,7 +223,7 @@ describe('collectDobásInfo - a korábbi rejtett eltérések', () => {
 
   it('3. fokozatos taktika fok-szintű hatása: csak a választott fokon, „Név (fok)" forrással', () => {
     const data = klón();
-    const t = data.taktikak.find(x => x.név === 'Támadó')!;
+    const t = taktikaDef(data, 'Támadó')!;
     t.fokok!.find(f => f.fok === 2)!.hatások = [{ cél: 'té_dobás', mód: 'előny', érték: 1 }] as never;
     expect(té(data, { aktív_taktikák: [{ név: 'Támadó', fok: 1 }] })).toEqual([]);
     expect(té(data, { aktív_taktikák: [{ név: 'Támadó', fok: 2 }] }).map(h => [h.forrás, h.érték])).toEqual([['Támadó (2)', 1]]);

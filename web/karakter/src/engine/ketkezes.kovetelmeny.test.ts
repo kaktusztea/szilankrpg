@@ -5,6 +5,7 @@ import { loadGameDataSync } from '../__tests__/load-gamedata';
 import { kétkezesKövetelményHiány } from './ketkezes';
 import { checkKövetelmények } from '../components/fortelyok/helpers';
 import type { Karakter } from './types';
+import { fortélyDef } from './lookup';
 
 /** Kétkezes harc fortély: nagyobb / kisebb fegyver harcmodor-követelménye (feltétel fegyverfogás:kétkezes), valós adaton. */
 describe('Kétkezes harc követelmények', () => {
@@ -12,7 +13,7 @@ describe('Kétkezes harc követelmények', () => {
   // test_karakter2: Kard, lovag (hossz 3, Kardvívás 8) + Tőr (hossz 1, Közelharc 6), kétkezes fogás
   const k: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../data/karakter/test_karakter2.json'), 'utf-8'));
   const fokkal = (fok: number) => ({ ...k, fortélyok: [...k.fortélyok.filter(f => f.id !== 'kétkezes_harc'), { id: 'kétkezes_harc', elem: '', fok }] });
-  const fokDef = (fok: number) => data.fortelySummaries.find(d => d.id === 'kétkezes_harc')!.fokok.find(f => f.fok === fok);
+  const fokDef = (fok: number) => fortélyDef(data, 'kétkezes_harc')!.fokok.find(f => f.fok === fok);
 
   it('Harc fül: 1. fok (6/3) teljesül; 2. fok (9/6): a Kard, lovag Kardvívás 8 kevés, a Tőr Közelharc 6 elég', () => {
     expect(kétkezesKövetelményHiány(fokkal(1), k.session, data)).toEqual([]);

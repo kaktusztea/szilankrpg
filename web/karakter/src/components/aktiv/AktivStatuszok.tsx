@@ -6,6 +6,7 @@ import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import type { StátuszPerElem } from './aktiv-calc';
 import { előnyHátrányLabel } from '../../engine/dice';
+import { státuszDef } from '../../engine/lookup';
 
 interface Props {
   data: GameData;
@@ -50,7 +51,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           const stNév = match?.[1] ?? st;
           const stFok = match ? parseInt(match[2]) : 1;
           const baseName = stNév.includes(': ') ? stNév.split(': ')[0] : stNév;
-          const def = data.statuszok.find(s => s.név === baseName);
+          const def = státuszDef(data, baseName);
           const maxFok = def?.fokok.length ?? 1;
           const alcím = def?.fokok.find(f => f.fok === stFok)?.alcím;
           const locked = baseName === 'Sérült';

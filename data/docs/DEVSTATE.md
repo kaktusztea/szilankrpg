@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a és 2 kész; következő: 3 (lookup), 6b, 4, 5, 7 (+8 Python)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2 és 3 kész; következő: 6b, 4, 5, 7 (+8 Python)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -107,7 +107,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **0., 1., 2. és 6a fázis kész; a 3-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0., 1., 2., 3. és 6a fázis kész; a 6b, 4-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -149,7 +149,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | 0. Tooling: ESLint + knip | kicsi | kész (2026-11-06) |
 | ✅ | **6a. Típusosság** (`any` 0, `as unknown as` 2 - a session-toggle a 6b-ben) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
 | ✅ | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
-| 4 | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
+| ✅ | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
 | 5 | **6b. Típusfájlok bontása + session-toggle tipizált mező** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
 | 6 | **4. Párhuzamos kódutak** (benne: "Egységes effekt-modell: maradék" fent) | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
 | 7 | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
@@ -218,10 +218,12 @@ képernyő átírása nem érinti a számítást. A **barrel** (`index.ts`, ami 
 "bejárat" egy mappához; ha félig van kitöltve, csak megtéveszt. Az **őrző teszt** egy kis automata, ami minden
 buildnél végigolvassa az `engine/` fájlok `import` sorait, és hibát jelez, ha valaki `components/`-ből importál.
 
-**3. Lookup-réteg a GameData-ra** - közepes kockázat, 1-2 nap
-- [ ] `engine/lookup.ts`: a `data-loader` EGYSZER épít indexet (id és kanonikus név szerint) fegyverre, fortélyra,
-  képzettségre, taktikára, helyzetre, státuszra, manőverre, extrára.
-- [ ] A 150+ `find` és 28 kisbetűs összevetés átállítása; ismeretlen névre a viselkedés marad (`undefined`, nem dob) - teszttel.
+**3. Lookup-réteg a GameData-ra** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
+- `engine/lookup.ts`: 8 kereső (fegyver, távfegyver, taktika, helyzet, státusz: név, kis/nagybetű-független; fortély,
+  képzettség, esemény: id, pontos). Az index tömbönként egyszer épül (`WeakMap`, a `data-loader` érintetlen). 95 lineáris
+  `find` / `some` + 6 `'puszta kéz'` összevetés (`isPusztaKéz`) kiváltva. Teszt: `lookup.test.ts` (+ a táblák kulcs-egyedisége).
+- Maradt (szándékosan): nem kanonikus kulcsú keresések (`feltétel_kulcs`, helyzet-`id`, `startsWith('🔆')`) és a
+  karakter saját listái (`karakter.fegyverek`, `többszörös` elemek).
 
 *Dummies:* ma a program minden alkalommal végiglapozza az egész "fegyverkönyvet", hogy megtaláljon egy fegyvert,
 és mindenhol kicsit másképp (hol kisbetűsítve, hol nem). Helyette egyszer készül egy tárgymutató, és mindenki abból

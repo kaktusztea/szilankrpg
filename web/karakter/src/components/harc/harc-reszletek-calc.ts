@@ -1,11 +1,12 @@
 import type { Karakter, Session } from '../../engine/types';
 import { harcmodorNév as hmMegjelenítés, képzettségSzint, fortélyFok } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver, buildPajzsFegyverNév } from '../../engine/utils';
+import { buildPajzsFegyverNév } from '../../engine/utils';
 import { elsődlegesMód } from '../../engine/harc/fegyver-calc';
 import { resolveNagyobbKisebb } from '../../engine/harc/shared';
 import { findMfFokByName, getMfBónusz } from '../../engine/mf-utils';
 import type { FegyverResult } from '../../engine/harc/types';
+import { lookupFegyver } from '../../engine/lookup';
 
 export interface KétkezesBontás {
   nagyobb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };

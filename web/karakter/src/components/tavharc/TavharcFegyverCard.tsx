@@ -3,6 +3,7 @@ import { SP_NINCS } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { calcCÉBontás, calcTámadásLabel, getFortélyCÉ, calcTávSP } from './helpers';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './mesterfegyver-calc';
+import { lookupTávfegyver } from '../../engine/lookup';
 
 interface Props {
   index: number;
@@ -21,7 +22,7 @@ interface Props {
 export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const tf = k.távfegyverek[index];
   const konstansok = data.konstansok;
-  const def = data.tavfegyverek.find(d => d.név.toLowerCase() === tf.alap.toLowerCase());
+  const def = lookupTávfegyver(data.tavfegyverek, tf.alap);
 
   // Per-fegyver CÉ-Idea delta (Modell 2, spec §17: az Idea 1:1 a CÉ-hez). A v2 CÉ a idea_default-ot
   // MÁR tartalmazza, ezért a példány Ideájának a default-tól való ELTÉRÉSE módosít.

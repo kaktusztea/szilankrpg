@@ -1,6 +1,7 @@
 import type { KepzettsegDef } from '../../engine/data-loader';
 import type { KepzettsegSlot } from './types';
 import { bontKépzKulcs, képzettségNév, isHarcmodorId, HARCMODOR_ID, TÁVOLSÁGI_HARCMODOR_ID, TRADÍCIÓ_ID } from '../../engine/azonosito';
+import { képzettségDef } from '../../engine/lookup';
 
 /**
  * Megjelenítési név egy képzettség hivatkozási kulcsából ("lexikum", "harcmodor/kardvívás", "tradíció/Vulgármágia").
@@ -8,7 +9,7 @@ import { bontKépzKulcs, képzettségNév, isHarcmodorId, HARCMODOR_ID, TÁVOLS�
  */
 export function getDisplayName(kulcs: string, kepzettsegDefs: KepzettsegDef[]): string {
   const { id, elem } = bontKépzKulcs(kulcs);
-  if (elem && isHarcmodorId(id)) return `${kepzettsegDefs.find(d => d.id === id)?.név ?? id}: ${képzettségNév(kulcs, { kepzettsegDefs })}`;
+  if (elem && isHarcmodorId(id)) return `${képzettségDef({ kepzettsegDefs }, id)?.név ?? id}: ${képzettségNév(kulcs, { kepzettsegDefs })}`;
   return képzettségNév(kulcs, { kepzettsegDefs });
 }
 

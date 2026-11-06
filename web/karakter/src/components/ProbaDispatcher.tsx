@@ -1,7 +1,7 @@
 import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { PróbaEnyhítés } from '../engine/data-types';
-import { képzKulcs, bontKépzKulcs } from '../engine/azonosito';
+import { képzKulcs, findDef } from '../engine/azonosito';
 import { TulajdonsagProbaPopup } from './tulajdonsagok/TulajdonsagProbaPopup';
 import { KepzettsegProbaPopup } from './tulajdonsagok/KepzettsegProbaPopup';
 import { getDisplayName } from './tulajdonsagok/helpers';
@@ -32,7 +32,7 @@ function képzettségPopup(
   kulcs: string, szint: number, képzetlen: boolean,
   { data, karakter, fortélyFokok, felszHátrány, négáltKulcsok, többszörösNevek, fortélyBónuszByKép, próbaEnyhítésekByKép, onClose }: Props & { onClose: () => void },
 ) {
-  const def = data.kepzettsegDefs.find(d => d.id === bontKépzKulcs(kulcs).id);
+  const def = findDef(kulcs, data.kepzettsegDefs);
   if (!def) return null;
   const displayName = getDisplayName(kulcs, data.kepzettsegDefs);
   const kit = data.kiterjesztesek[kulcs] || [];

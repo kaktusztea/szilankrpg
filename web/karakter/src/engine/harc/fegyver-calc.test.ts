@@ -4,11 +4,11 @@ import { buildPancelLookups } from './pancel-calc';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { tiltásokFegyverre, fegyverOverrideÉrtékek, fegyverJárulékHatások } from '../effekt';
-import { lookupFegyver } from '../utils';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import type { Karakter, Session } from '../types';
 import type { GameData } from '../data-loader';
 import type { FegyverResult } from './types';
+import { lookupFegyver } from '../lookup';
 
 /**
  * Regresszió: a Mesterfegyver-fok egyeztetés legyen kis/nagybetű-FÜGGETLEN.

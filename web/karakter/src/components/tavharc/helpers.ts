@@ -6,6 +6,7 @@ import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { getMfFok } from './mesterfegyver-calc';
 import { SP_NINCS } from '../../engine/types';
 import { gyűjtFortélyEffektek, értékCélra } from '../../engine/effekt';
+import { helyzetDef, lookupTávfegyver, taktikaDef } from '../../engine/lookup';
 
 // --- Alkalmatlan fegyver info ---
 
@@ -32,7 +33,7 @@ export function getAktívTfDef(
 ): TavfegyverAlap | undefined {
   const idx = session.aktív_távfegyver_index;
   const peldany = k.távfegyverek[idx];
-  if (peldany) return data.tavfegyverek.find(d => d.név.toLowerCase() === peldany.alap.toLowerCase());
+  if (peldany) return lookupTávfegyver(data.tavfegyverek, peldany.alap);
 
   const alkStartIdx = k.távfegyverek.length;
   const alkEndIdx = alkStartIdx + alkalmatlan.nevek.length;
@@ -53,11 +54,11 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
     ? { alap: fegyverAlap }
     : k.távfegyverek[session.aktív_távfegyver_index];
   const tfDefR = tfPeldanyR
-    ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldanyR.alap.toLowerCase())
+    ? lookupTávfegyver(data.tavfegyverek, tfPeldanyR.alap)
     : undefined;
   // Helyzet hatások: CÉ flat bónuszok aktív helyzetekből
   for (const hNév of session.aktív_helyzetek) {
-    const def = data.harciHelyzetek.find(d => d.név === hNév);
+    const def = helyzetDef(data, hNév);
     if (!def?.hatások) continue;
     for (const h of def.hatások) {
       if (h.cél === 'CÉ' && h.mód === 'flat' && h.érték) total += h.érték;
@@ -65,7 +66,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fe
   }
   // Taktika módosítók: CÉ bónuszok aktív taktikákból
   for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
+    const def = taktikaDef(data, at.név);
     if (!def?.módosítók?.CÉ) continue;
     // szűrő_harcmodorok: bónusz csak akkor jár ha az aktív távfegyver harcmodora egyezik
     if (def.szűrő_harcmodorok?.length) {

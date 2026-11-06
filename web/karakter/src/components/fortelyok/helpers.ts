@@ -8,6 +8,7 @@ const FELSZERELÉS_FELIRAT: Record<string, string> = {
   'felszerelés:kisebb_fegyver': 'kisebb fegyver',
 };
 import type { Fortely } from '../../engine/types';
+import { fortélyDef } from '../../engine/lookup';
 
 export function displayName(f: Fortely, data: Pick<GameData, 'fortelySummaries'>): string {
   const név = fortélyNév(f, data);
@@ -42,7 +43,7 @@ export function calcSzabadFelvettKp(
   fortelySummaries: FortelySummary[],
   tsz: number
 ): number {
-  const def = fortelySummaries.find(d => d.id === id);
+  const def = fortélyDef({ fortelySummaries }, id);
   const kpPerFok = def?.kp_perfok ?? 6;
   const szabadIdk = new Set(fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.id));
   const nonKierdemelt = fortélyok.filter(f => (szabadIdk.has(f.id) || f.id === EGYEDI_FORTÉLY_ID) && !f.kiérdemelt).length;

@@ -1,12 +1,6 @@
-import type { FegyverAlap, Session, Karakter, Kepzettseg } from './types';
+import type { Session, Karakter, Kepzettseg } from './types';
 import type { GameData } from './data-loader';
 import { képzKulcs, képzettségNév, képzettségSzint, HARCMODOR_ID } from './azonosito';
-
-/** Fegyver definíció keresése név alapján (case-insensitive) */
-export function lookupFegyver(fegyverek: FegyverAlap[], alap: string): FegyverAlap | undefined {
-  const lower = alap.toLowerCase();
-  return fegyverek.find(d => d.név.toLowerCase() === lower);
-}
 
 /** Több közelharci harcmodor szintjének összege; `elemek`: harcmodor-elemek (pl. "kardvívás"). */
 export function harcmodorÖsszeg(karakter: Karakter, elemek: string[]): number {

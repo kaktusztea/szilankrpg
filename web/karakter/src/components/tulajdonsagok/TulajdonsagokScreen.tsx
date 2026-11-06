@@ -16,6 +16,7 @@ import { képzettségLimitek } from './kepzettseg-limit';
 import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../../engine/felszereles';
 import './TulajdonsagokScreen.css';
 import { fortélyPróbaBónuszok } from '../../engine/effekt';
+import { fortélyDef } from '../../engine/lookup';
 
 export function TulajdonsagokScreen({
   data, gameMode, karakter, setKarakter, tulajdonságok, setTulajdonságok,
@@ -75,7 +76,7 @@ export function TulajdonsagokScreen({
   const próbaEnyhítésekByKép = useMemo(() => {
     const result: Record<string, PróbaEnyhítés[]> = {};
     for (const kf of karakter.fortélyok) {
-      const def = data.fortelySummaries.find(d => d.id === kf.id);
+      const def = fortélyDef(data, kf.id);
       if (!def) continue;
       const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
       const pe_lista = fokDef?.próba_enyhítések;

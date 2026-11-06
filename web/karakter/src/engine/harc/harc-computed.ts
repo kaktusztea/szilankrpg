@@ -1,7 +1,7 @@
 import type { GameData } from '../data-loader';
 import type { Karakter, Session } from '../types';
 import { evaluate, buildContext } from '../reactive';
-import { lookupFegyver, harcmodorÖsszeg as calcHarcmodorÖsszeg, buildPajzsFegyverNév } from '../utils';
+import { harcmodorÖsszeg as calcHarcmodorÖsszeg, buildPajzsFegyverNév } from '../utils';
 import { fortélyFok } from '../azonosito';
 import { buildAktívFeltételek } from '../feltetelek';
 import { createFeltételEvaluator } from '../feltetel-eval';
@@ -13,6 +13,7 @@ import { véVesztésSzorzó } from './shared';
 import { aktívTiltások, tiltásokFegyverre, fegyverOverrideÉrtékek, fegyverJárulékHatások, gyűjtHelyzetEffektek, gyűjtStátuszEffektek, értékCélra, flatBontás } from '../effekt';
 import { alkalmazEffektek } from '../extrak-effekt';
 import type { HarcComputed } from './types';
+import { lookupFegyver } from '../lookup';
 
 export function calcHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;

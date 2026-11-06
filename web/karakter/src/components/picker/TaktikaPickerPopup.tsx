@@ -5,6 +5,7 @@ import { PickerOverlay } from './PickerOverlay';
 import { TaktikaPickerList } from './TaktikaPickerList';
 import { TaktikaFokPicker } from './TaktikaFokPicker';
 import type { HarcTerület } from '../../engine/taktika/taktika-helpers';
+import { taktikaDef } from '../../engine/lookup';
 
 interface Props {
   data: GameData;
@@ -27,7 +28,7 @@ export function TaktikaPickerPopup({ data, karakter, session, setSession, pushUn
   const [fokválasztó, setFokválasztó] = useState<string | null>(null);
 
   function addTaktika(név: string) {
-    const def = data.taktikak.find(t => t.név === név);
+    const def = taktikaDef(data, név);
     if (!def) return;
     pushUndo(`Taktika: ${név}`, [{ field: 'session', prev: session }]);
     const entry: AktívTaktika = { név, fok: def.fokozatos ? 1 : undefined };

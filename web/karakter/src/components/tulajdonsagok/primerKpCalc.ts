@@ -2,6 +2,7 @@ import type { Kepzettseg } from '../../engine/types';
 import { képzettségNév, isHarcmodorId } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
+import { fortélyDef, képzettségDef } from '../../engine/lookup';
 
 export interface KpDetail { név: string; szint?: number; fok?: number; spec?: string; kp: number }
 
@@ -29,7 +30,7 @@ export function calcPrimerKp(
   const kpTábla = data.kepzettsegKp;
   const kpCost = (szint: number) => kpTábla.filter(r => r.szint <= szint).reduce((s, r) => s + r.kp, 0);
 
-  const defOf = (id: string) => data.kepzettsegDefs.find(d => d.id === id);
+  const defOf = (id: string) => képzettségDef(data, id);
   const név = (kp: Kepzettseg) => képzettségNév(kp, data);
 
   const kp_hm_cm = (karakter.HM_TÉ + karakter.HM_VÉ) * konstansok.kp.hm + karakter.CM * konstansok.kp.cm;
@@ -60,7 +61,7 @@ export function calcPrimerKp(
 
   for (const f of karakter.fortélyok) {
     if (!data.primerFortelyok.includes(f.id)) continue;
-    const def = data.fortelySummaries.find(d => d.id === f.id);
+    const def = fortélyDef(data, f.id);
     if (!def || def.kp_perfok === 0) continue;
     const cost = f.fok * def.kp_perfok;
     if (def.csoport === 'harci' || def.csoport === 'távharc') {

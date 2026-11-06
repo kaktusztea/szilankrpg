@@ -1,5 +1,6 @@
 import type { Karakter, FegyverAlap } from './types';
 import type { KonstansokRaw } from './data-types';
+import { lookupFegyver } from './lookup';
 
 /**
  * Mesterfegyver fok keresés név alapján (case-insensitive).
@@ -21,7 +22,7 @@ export function findMfFokByName(karakter: Karakter, fegyverNév: string, alap: s
  * tartja mindkét variánst egy `név` alatt, tehát a lookup mindig a fegyver saját nevét adja.)
  */
 export function findMfFok(karakter: Karakter, fegyverek: FegyverAlap[], alap: string): number {
-  const fDef = fegyverek.find(d => d.név.toLowerCase() === alap.toLowerCase());
+  const fDef = lookupFegyver(fegyverek, alap);
   return findMfFokByName(karakter, fDef?.név || alap, alap);
 }
 

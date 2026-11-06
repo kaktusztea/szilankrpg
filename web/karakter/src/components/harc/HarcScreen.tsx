@@ -27,6 +27,7 @@ import { ManoverPicker } from './ManoverPicker';
 import { rollK20 } from '../../engine/dice';
 import './HarcScreen.css';
 import type { FegyverResult } from '../../engine/harc/types';
+import { lookupFegyver } from '../../engine/lookup';
 
 /** A Fájdalomtűrés képzettség id-je (ÉP-tábla → Tulajdonságok fül ugrás; a KepzettsegRow `data-kep` = kulcs). */
 const FÁJDALOMTŰRÉS_ID = 'fájdalomtűrés';
@@ -235,10 +236,10 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           módok={ctx?.result.módok}
           fegyverNév={ctx?.result.fegyver_név}
           páncélMátrix={data.sebzésjellegPáncélMátrix}
-          fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
+          fegyverExtrák={ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.extrák : undefined}
           extraDefs={data.fegyverExtrák}
           extraKontextus={hc.extraKontextus}
-          dobásInfo={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név), hc.feltételTeljesül)}
+          dobásInfo={collectDobásInfo(session, karakter, data, (ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név) : undefined), hc.feltételTeljesül)}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
@@ -313,12 +314,12 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           manőverAlap={hc.manőverAlap}
           aktívTÉ={aktívTÉ}
           aktívVÉ={aktívVÉ}
-          téHatások={collectDobásInfo(session, karakter, data, data.fegyverek.find(f => f.név === ctx?.result.fegyver_név), hc.feltételTeljesül).téHatások}
+          téHatások={collectDobásInfo(session, karakter, data, (ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név) : undefined), hc.feltételTeljesül).téHatások}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
           helyzetVéCsökkentés={hc.helyzetVéCsökkentés}
-          fegyverExtrák={ctx ? data.fegyverek.find(f => f.név === ctx.result.fegyver_név)?.extrák : undefined}
+          fegyverExtrák={ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.extrák : undefined}
           extraDefs={data.fegyverExtrák}
           extraKontextus={hc.extraKontextus}
           onTéDobás={(té, veCsökkentés) => setSession(prev => ({ ...prev, té_dobások: pushTéDobás(prev.té_dobások ?? [], { té, veCsökkentés }) }))}

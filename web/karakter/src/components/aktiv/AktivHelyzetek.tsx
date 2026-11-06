@@ -3,6 +3,7 @@ import type { AktivBaseProps } from './types';
 import { fmtCode } from '../formatters';
 import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
 import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText, getTiltásWarnings } from '../../engine/taktika/helyzet-helpers';
+import { helyzetDef } from '../../engine/lookup';
 
 interface Props extends AktivBaseProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
@@ -22,7 +23,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
             onClick={() => setShowPicker(true)}>+</button>
         </h3>
         {session.aktív_helyzetek.map((h, i) => {
-          const def = data.harciHelyzetek.find(d => d.név === h);
+          const def = helyzetDef(data, h);
           if (!def) return null;
           const kötöttFortélyok = helyzetFortélyok.get(h) || [];
           const infóText = getHelyzetInfoText(h, data);

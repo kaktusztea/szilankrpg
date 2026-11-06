@@ -99,7 +99,8 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `validate.ts` | Karakter validáció |
 | `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció (a `gyűjtStátuszEffektek`-ből); `próbaÉrzékek`: alkategóriás státusz (Érzékvesztés) érzék-választó opciói |
 | `felszereles.ts` | Felszerelés keret/terhelés/Hátrány (§15/§33.1): `felszerelésMax`, `felszerelésTerhelés`, `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság` - a fegyver pont VAGY-VAGY `max(hossz,súly)` |
-| `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange, `interpolateFokDef` (taktika fok-extrapoláció), `ideaDelta` (§16 Idea-delta), `buildPajzsFegyverNév` |
+| `lookup.ts` | GameData entitás-keresők (tömbönként egyszer épített, `WeakMap`-ben tárolt index): `lookupFegyver`, `lookupTávfegyver`, `taktikaDef`, `helyzetDef`, `státuszDef` (név, kis/nagybetű-független), `fortélyDef`, `képzettségDef`, `eseményDef` (id, pontos); ismeretlen → `undefined`; adatteszt: kulcs-egyediség a táblákban |
+| `utils.ts` | evaluateFeltétel, describeKepChange, `interpolateFokDef` (taktika fok-extrapoláció), `ideaDelta` (§16 Idea-delta), `buildPajzsFegyverNév` |
 | `extrak-info-calc.ts` | Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn). Aktív-jelzés: harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél feltételek + aktív manőverhez kapcsolt hatás-al-feltétel ("manőver:<id>") |
 | `extrak-effekt.ts` | Egységes effekt-precedencia (§42.3: override (bázis-csere)→additív→szorzó→max_limit, FLOOR) pure motor + aktívHatásokCélra (csak teljesült feltételű hatások) + hiányzóInfósExtrák (KM-warning, hiányos korreláció). Bekötve: Sebzés popup SP-delta, VÉ-csökkentés warning |
 

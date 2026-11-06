@@ -1,6 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { getExtraFokok, formatFokMods } from '../../engine/taktika/taktika-helpers';
+import { taktikaDef } from '../../engine/lookup';
 
 interface Props {
   fokválasztó: string;
@@ -11,7 +12,7 @@ interface Props {
 }
 
 export function TaktikaFokPicker({ fokválasztó, data, karakter, session, onSelect }: Props) {
-  const def = data.taktikak.find(t => t.név === fokválasztó);
+  const def = taktikaDef(data, fokválasztó);
   if (!def?.fokok) return null;
   const existing = session.aktív_taktikák.findIndex(a => a.név === fokválasztó);
   const fokok = getExtraFokok(def, karakter, data);

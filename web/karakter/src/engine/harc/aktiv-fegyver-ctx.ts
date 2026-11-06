@@ -1,6 +1,6 @@
 import type { Karakter, Session } from '../types';
 import type { GameData } from '../data-loader';
-import { lookupFegyver } from '../utils';
+import { lookupFegyver } from '../lookup';
 
 /** Egy fegyver kiszámolt harcértékei (a calcHarcComputed eredményéből). */
 interface FegyverResult {

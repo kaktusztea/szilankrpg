@@ -10,6 +10,7 @@ import { createFeltételEvaluator } from '../feltetel-eval';
 import {
   gyűjtHelyzetEffektek, gyűjtTaktikaEffektek, gyűjtStátuszEffektek, gyűjtFortélyEffektek, kockaSzint, tiltásokFegyverre, type Effekt,
 } from '../effekt';
+import { lookupTávfegyver, taktikaDef } from '../lookup';
 
 type DobásCél = 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
 
@@ -102,7 +103,7 @@ function collectSessionHatások(
 
   const taktikaMegjegyzések: { forrás: string; szöveg: string }[] = [];
   for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
+    const def = taktikaDef(data, at.név);
     if (def?.megjegyzés) taktikaMegjegyzések.push({ forrás: at.név, szöveg: def.megjegyzés });
   }
 
@@ -157,13 +158,13 @@ export function collectCéDobásInfo(session: Session, karakter: Karakter, data:
   const { hatások, taktikaMegjegyzések } = collectSessionHatások(session, karakter, data, new Set(['cé_dobás']));
   // Az aktív távfegyver harcmodora (kisbetűsítve) - a szűrő_harcmodoros taktikák megjegyzés-szűréséhez.
   const tfPeldany = karakter.távfegyverek[session.aktív_távfegyver_index];
-  const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+  const tfDef = tfPeldany ? lookupTávfegyver(data.tavfegyverek, tfPeldany.alap) : undefined;
   const aktívHarcmodor = (tfDef?.harcmodor ?? '').toLowerCase();
   const céMegjegyzések = taktikaMegjegyzések.filter(m => {
     if (!/cé|célz/i.test(m.szöveg)) return false;
     // Ha a forrás-taktikának van szűrő_harcmodorok-ja és az aktív távfegyver NEM egyezik, a megjegyzés
     // félrevezető (a CÉ-bónusz úgysem érvényesül, l. getFortélyCÉ) → kihagyjuk.
-    const tDef = data.taktikak.find(t => t.név === m.forrás);
+    const tDef = taktikaDef(data, m.forrás);
     if (tDef?.szűrő_harcmodorok?.length && !tDef.szűrő_harcmodorok.includes(aktívHarcmodor)) return false;
     return true;
   });

@@ -1,8 +1,9 @@
 import type { GameData } from '../data-loader';
 import type { TaktikaEntry } from '../data-types';
 import type { Karakter } from '../types';
-import { lookupFegyver, interpolateFokDef } from '../utils';
+import { interpolateFokDef } from '../utils';
 import { képzettségSzint, fortélyFok } from '../azonosito';
+import { lookupFegyver, helyzetDef, taktikaDef } from '../lookup';
 
 /** Harci terület szűrő a taktika / helyzet pickerekhez: a dobó popup csak a saját területét mutatja. */
 export type HarcTerület = 'közelharc' | 'távharc';
@@ -17,8 +18,8 @@ export function aktívTerületen(
   session: { aktív_taktikák: { név: string }[]; aktív_helyzetek: string[] }, data: GameData, terület: HarcTerület,
 ): { taktika: number; helyzet: number } {
   return {
-    taktika: session.aktív_taktikák.filter(a => területIllik(data.taktikak.find(t => t.név === a.név)?.csoport, terület)).length,
-    helyzet: session.aktív_helyzetek.filter(n => területIllik(data.harciHelyzetek.find(h => h.név === n)?.csoport, terület)).length,
+    taktika: session.aktív_taktikák.filter(a => területIllik(taktikaDef(data, a.név)?.csoport, terület)).length,
+    helyzet: session.aktív_helyzetek.filter(n => területIllik(helyzetDef(data, n)?.csoport, terület)).length,
   };
 }
 
@@ -26,7 +27,7 @@ export function aktívTerületen(
 
 /** Taktika módosítók szöveges kijelzése */
 export function getTaktikaMods(t: { név: string; fok?: number }, data: GameData): string[] {
-  const def = data.taktikak.find(d => d.név === t.név);
+  const def = taktikaDef(data, t.név);
   if (!def) return [];
   const mods: string[] = [];
   if (def.fokozatos && def.fokok && t.fok != null) {

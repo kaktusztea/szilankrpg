@@ -1,7 +1,8 @@
 import type { FegyverAlap, Karakter, Session, FegyverResultMód } from './types';
 import type { KonstansokRaw, GameData } from './data-types';
-import { lookupFegyver, ideaDelta } from './utils';
+import { ideaDelta } from './utils';
 import { HARCMODOR_ID, harcmodorNév, képzettségSzint, fortélyFok } from './azonosito';
+import { lookupFegyver, fortélyDef } from './lookup';
 
 interface KétkezesInput {
   jobbFp: { alap: string; idea: number };
@@ -30,8 +31,8 @@ interface KétkezesResult extends FegyverResultMód {
 
 export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null {
   const { jobbFp, balFp, fegyverek, karakter: k, konstansok, harcmodorBonusz, fortelyMods } = input;
-  const jobbDef = fegyverek.find(f => f.név.toLowerCase() === jobbFp.alap.toLowerCase());
-  const balDef = fegyverek.find(f => f.név.toLowerCase() === balFp.alap.toLowerCase());
+  const jobbDef = lookupFegyver(fegyverek, jobbFp.alap);
+  const balDef = lookupFegyver(fegyverek, balFp.alap);
   if (!jobbDef || !balDef) return null;
 
   const jobbFh = jobbDef.fegyverhossz;
@@ -138,7 +139,7 @@ export function kétkezesKövetelményHiány(
 ): string[] {
   if (session.fegyverfogás !== 'kétkezes') return [];
   const fok = fortélyFok(k.fortélyok, 'kétkezes_harc');
-  const fokDef = data.fortelySummaries.find(d => d.id === 'kétkezes_harc')?.fokok.find(f => f.fok === fok);
+  const fokDef = fortélyDef(data, 'kétkezes_harc')?.fokok.find(f => f.fok === fok);
   const kövek = (fokDef?.követelmények ?? []).filter(kv => kv.feltétel === 'fegyverfogás:kétkezes' && kv.alcél);
   const jobb = lookupFegyver(data.fegyverek, k.fegyverek[session.aktív_fegyver_index]?.alap ?? '');
   const bal = lookupFegyver(data.fegyverek, k.fegyverek[session.aktív_fegyver_bal_index]?.alap ?? '');

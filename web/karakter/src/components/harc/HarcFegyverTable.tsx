@@ -1,8 +1,8 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver } from '../../engine/utils';
 import { computeTÉ, computeVÉ } from '../../engine/harc/shared';
 import type { FegyverResult } from '../../engine/harc/types';
+import { lookupFegyver } from '../../engine/lookup';
 
 interface HarcFegyverTableProps {
   karakter: Karakter;

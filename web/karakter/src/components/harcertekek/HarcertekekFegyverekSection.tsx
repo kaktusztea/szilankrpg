@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Karakter, FegyverPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver, ideaDelta } from '../../engine/utils';
+import { ideaDelta } from '../../engine/utils';
 import { elsődlegesMód } from '../../engine/harc/fegyver-calc';
 import { FegyverChip } from './HarcertekekFegyverChip';
 import { fegyverÁr } from './fegyver-ar-calc';
@@ -10,6 +10,7 @@ import { getMfFok, mfKövetelményHiba, mfKövetelményText } from '../../engine
 import { SpecPicker, type PickerSource } from '../SpecPicker';
 import { buildFegyverGroups } from '../fegyver-groups';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
+import { lookupFegyver } from '../../engine/lookup';
 
 interface Props {
   data: GameData;

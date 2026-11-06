@@ -5,6 +5,7 @@ import type { Fortely, Karakter } from '../../engine/types';
 import type { SzabadTypePicker } from './types';
 import { EGYEDI_FORTELY_SENTINEL } from '../../ui-constants';
 import { EGYEDI_FORTÉLY_ID } from '../../engine/azonosito';
+import { fortélyDef } from '../../engine/lookup';
 
 interface Opts {
   data: GameData;
@@ -29,7 +30,7 @@ export function useFortelyActions({ data, setFortélyok, karakter, setKarakter }
       setEgyediPicker(true);
       return;
     }
-    const def = data.fortelySummaries.find(d => d.id === id);
+    const def = fortélyDef(data, id);
     if (def && def.csoport === 'szabad') {
       if (def.többszörös_típus) { setMultiPickerDef(def); return; }
       setSzabadTypePicker({ id, elem: '' });
@@ -81,7 +82,7 @@ export function useFortelyActions({ data, setFortélyok, karakter, setKarakter }
     if (!pendingFort) return;
     setFortélyok(prev => [...prev, { ...pendingFort, fok }]);
     // Auto-add weapon to karakter.fegyverek if this is a weapon-type fortély (Mesterfegyver)
-    if (data.fortelySummaries.find(d => d.id === pendingFort.id)?.többszörös_típus === 'fegyver' && pendingFort.elem) {
+    if (fortélyDef(data, pendingFort.id)?.többszörös_típus === 'fegyver' && pendingFort.elem) {
       ensureFegyverOnKarakter(pendingFort.elem);
     }
     setPendingFort(null);

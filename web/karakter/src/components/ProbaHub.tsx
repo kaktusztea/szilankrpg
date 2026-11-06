@@ -13,6 +13,7 @@ import { getDisplayName } from './tulajdonsagok/helpers';
 import { fortélyPróbaBónuszok } from '../engine/effekt';
 import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../engine/felszereles';
 import './ProbaHub.css';
+import { fortélyDef } from '../engine/lookup';
 
 interface Props {
   data: GameData;
@@ -81,7 +82,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
   const próbaEnyhítésekByKép = useMemo(() => {
     const result: Record<string, PróbaEnyhítés[]> = {};
     for (const kf of karakter.fortélyok) {
-      const def = data.fortelySummaries.find(d => d.id === kf.id);
+      const def = fortélyDef(data, kf.id);
       if (!def) continue;
       const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
       const pe_lista = fokDef?.próba_enyhítések;

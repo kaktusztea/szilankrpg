@@ -1,7 +1,7 @@
 import type { GameData } from '../data-loader';
 import type { Karakter, Session } from '../types';
-import { lookupFegyver } from '../utils';
 import { harcFejlécÉrtékek } from '../harc/harc-fejlec-calc';
+import { lookupFegyver, helyzetDef, lookupTávfegyver, taktikaDef } from '../lookup';
 
 // Taktika megkötés-kiértékelés (session/fegyver/harcmodor/támadás/távfegyver + kombó).
 // Kiemelve a taktika-helpers.ts-ből (2026-09-30 refaktor, modularizáció).
@@ -11,10 +11,10 @@ export function isTaktikaAllowed(
   név: string, session: Session, karakter: Karakter, data: GameData,
 ): boolean {
   for (const h of session.aktív_helyzetek) {
-    const hDef = data.harciHelyzetek.find(d => d.név === h);
+    const hDef = helyzetDef(data, h);
     if (hDef?.tiltja_taktikákat) return false;
   }
-  const def = data.taktikak.find(t => t.név === név);
+  const def = taktikaDef(data, név);
   if (!def) return false;
 
   // szűrő_harcmodorok: a taktika CSAK akkor engedélyezett, ha az aktív távfegyver harcmodora
@@ -23,7 +23,7 @@ export function isTaktikaAllowed(
   // Egy igazságforrás: ugyanaz a `szűrő_harcmodorok`, amit a getFortélyCÉ a bónuszhoz használ.
   if (def.szűrő_harcmodorok?.length) {
     const tfPeldany = karakter.távfegyverek[session.aktív_távfegyver_index];
-    const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+    const tfDef = tfPeldany ? lookupTávfegyver(data.tavfegyverek, tfPeldany.alap) : undefined;
     if (!tfDef || !def.szűrő_harcmodorok.includes((tfDef.harcmodor ?? '').toLowerCase())) return false;
   }
 
@@ -35,7 +35,7 @@ export function isTaktikaAllowed(
       if (mk.típus === 'harci_helyzet' && mk.mód === 'szükséges') {
         const szükséges = Array.isArray(mk.érték) ? mk.érték : [mk.érték];
         if (!session.aktív_helyzetek.some(h => {
-          const hDef2 = data.harciHelyzetek.find(d => d.név === h);
+          const hDef2 = helyzetDef(data, h);
           return hDef2 && szükséges.includes(hDef2.id);
         })) return false;
       }
@@ -54,7 +54,7 @@ export function isTaktikaAllowed(
       if (mk.típus === 'távfegyver_kategória' && mk.mód === 'szükséges') {
         const tfIdx = session.aktív_távfegyver_index;
         const tfPeldany = karakter.távfegyverek[tfIdx];
-        const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+        const tfDef = tfPeldany ? lookupTávfegyver(data.tavfegyverek, tfPeldany.alap) : undefined;
         const szükséges = Array.isArray(mk.érték) ? mk.érték : [mk.érték as string];
         if (!tfDef || !szükséges.includes(tfDef.kategória ?? '')) return false;
       }
@@ -67,7 +67,7 @@ export function isTaktikaAllowed(
   const mások = session.aktív_taktikák.filter(a => a.név !== név);
   if (mások.length === 0) return true;
   for (const aktív of mások) {
-    const aktívDef = data.taktikak.find(t => t.név === aktív.név);
+    const aktívDef = taktikaDef(data, aktív.név);
     if (!aktívDef) continue;
     if (aktívDef.kombó_mód === 'whitelist' && !aktívDef.kombó_lista.includes(név)) return false;
     if (aktívDef.kombó_mód === 'blacklist' && aktívDef.kombó_lista.includes(név)) return false;
@@ -96,17 +96,17 @@ export function taktikaTiltásOka(
   név: string, session: Session, karakter: Karakter, data: GameData,
 ): string | null {
   for (const h of session.aktív_helyzetek) {
-    const hDef = data.harciHelyzetek.find(d => d.név === h);
+    const hDef = helyzetDef(data, h);
     if (hDef?.tiltja_taktikákat) return `${h} helyzet minden taktikát tilt`;
   }
-  const def = data.taktikak.find(t => t.név === név);
+  const def = taktikaDef(data, név);
   if (!def) return null;
 
   const helyzetNév = (id: string) => data.harciHelyzetek.find(d => d.id === id)?.név ?? id;
 
   if (def.szűrő_harcmodorok?.length) {
     const tfPeldany = karakter.távfegyverek[session.aktív_távfegyver_index];
-    const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+    const tfDef = tfPeldany ? lookupTávfegyver(data.tavfegyverek, tfPeldany.alap) : undefined;
     if (!tfDef || !def.szűrő_harcmodorok.includes((tfDef.harcmodor ?? '').toLowerCase())) {
       return `${def.szűrő_harcmodorok.join(' / ')} harcmodorú távfegyver kell`;
     }
@@ -120,7 +120,7 @@ export function taktikaTiltásOka(
       if (mk.típus === 'harci_helyzet' && mk.mód === 'szükséges') {
         const szükséges = Array.isArray(mk.érték) ? mk.érték : [mk.érték as string];
         const van = session.aktív_helyzetek.some(h => {
-          const hDef2 = data.harciHelyzetek.find(d => d.név === h);
+          const hDef2 = helyzetDef(data, h);
           return hDef2 && szükséges.includes(hDef2.id);
         });
         if (!van) return `${szükséges.map(helyzetNév).join(' / ')} helyzet szükséges`;
@@ -139,7 +139,7 @@ export function taktikaTiltásOka(
       if (mk.típus === 'távfegyver_kategória' && mk.mód === 'szükséges') {
         const tfIdx = session.aktív_távfegyver_index;
         const tfPeldany = karakter.távfegyverek[tfIdx];
-        const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.név.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+        const tfDef = tfPeldany ? lookupTávfegyver(data.tavfegyverek, tfPeldany.alap) : undefined;
         const szükséges = Array.isArray(mk.érték) ? mk.érték : [mk.érték as string];
         if (!tfDef || !szükséges.includes(tfDef.kategória ?? '')) return `${szükséges.join(' / ')} kategóriájú távfegyver kell`;
       }
@@ -149,7 +149,7 @@ export function taktikaTiltásOka(
   const mások = session.aktív_taktikák.filter(a => a.név !== név);
   if (mások.length === 0) return null;
   for (const aktív of mások) {
-    const aktívDef = data.taktikak.find(t => t.név === aktív.név);
+    const aktívDef = taktikaDef(data, aktív.név);
     if (!aktívDef) continue;
     if (aktívDef.kombó_mód === 'whitelist' && !aktívDef.kombó_lista.includes(név)) return `nem kombinálható ezzel: ${aktív.név}`;
     if (aktívDef.kombó_mód === 'blacklist' && aktívDef.kombó_lista.includes(név)) return `nem kombinálható ezzel: ${aktív.név}`;

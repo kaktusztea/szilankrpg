@@ -1,6 +1,7 @@
 import type { Karakter } from './types';
 import type { GameData } from './data-loader';
 import { EGYEDI_FORTÉLY_ID, TRADÍCIÓ_ID, képzKulcs } from './azonosito';
+import { képzettségDef, lookupFegyver } from './lookup';
 
 /**
  * Az aktuális karakter-séma verzió. 3: fortély/képzettség `{id, elem}` (2026-10-17).
@@ -89,7 +90,7 @@ export function validateKarakterData(k: Karakter, data: GameData): string | null
 
   // Képzettség: létező id; többszörösnél az elem a def listájából (harcmodor: kisbetűs elem) vagy szabad szöveg ('*').
   for (const kep of k.képzettségek) {
-    const def = data.kepzettsegDefs.find(d => d.id === kep.id);
+    const def = képzettségDef(data, kep.id);
     const szabad = def && (def.többszörös[0] === '*' || def.id === TRADÍCIÓ_ID);
     const elemOk = !kep.elem ? (def?.többszörös.length ?? 0) === 0 || def?.id === TRADÍCIÓ_ID
       : szabad || !!def?.többszörös.some(n => n.toLowerCase() === kep.elem);
@@ -120,7 +121,7 @@ export function validateKarakterData(k: Karakter, data: GameData): string | null
       errors.push(`Ismeretlen fegyver anyag: "${f.anyag}"`);
     }
     if (f.alap) {
-      const found = data.fegyverek.some(fd => fd.név.toLowerCase() === f.alap.toLowerCase());
+      const found = !!lookupFegyver(data.fegyverek, f.alap);
       if (!found) errors.push(`Ismeretlen fegyver alaptípus: "${f.alap}"`);
     }
   }

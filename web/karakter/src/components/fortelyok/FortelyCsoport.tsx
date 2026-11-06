@@ -3,6 +3,7 @@ import { harcmodorNév, képzettségSzint } from '../../engine/azonosito';
 import { FortelyRow } from './FortelyRow';
 import { NewFortelySelect } from './NewFortelySelect';
 import { calcNyelvPontKeret, calcNyelvTúllépés, isSlotIngyenes } from './helpers';
+import { lookupFegyver } from '../../engine/lookup';
 
 export function FortelyCsoport({
   csoport, csoportLabel, csoportDefs, slotok, collapsed, gameMode, tsz,
@@ -44,7 +45,7 @@ export function FortelyCsoport({
             && !kiterjeszt.some(kn => képzettségSzint(képzettségek, kn) >= 1);
 
           const fegyverHarcmodorNév = slot.elem ? (() => {
-            const fd = data.fegyverek.find(d => d.név.toLowerCase() === slot.elem.toLowerCase());
+            const fd = lookupFegyver(data.fegyverek, slot.elem);
             const elem = fd ? data.konstansok.fegyver_kategória_harcmodor[fd.kategória] : undefined;
             return elem ? harcmodorNév(elem, data) : undefined;
           })() : undefined;

@@ -1,8 +1,8 @@
 import type { HarcBaseProps } from './types';
 import type { Session } from '../../engine/types';
-import { lookupFegyver } from '../../engine/utils';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import { kétkezesLehetséges, isHárító } from '../../engine/harc/fegyver-helpers';
+import { lookupFegyver, helyzetDef } from '../../engine/lookup';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session'> {
   onSelect: (patch: Partial<Session>) => void;
@@ -29,7 +29,7 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
       if (!kétkezesLehetséges(data, karakter, jobbIdx)) return true;
     }
     for (const ah of session.aktív_helyzetek) {
-      const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+      const ahDef = helyzetDef(data, ah);
       if (ahDef?.tiltott_fegyverfogások?.includes(id)) return true;
     }
     return false;

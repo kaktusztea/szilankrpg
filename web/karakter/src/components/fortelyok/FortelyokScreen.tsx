@@ -8,6 +8,7 @@ import { useFortelyActions } from './useFortelyActions';
 import { HINT_DURATION_MS } from '../../ui-constants';
 import { useHint } from '../../hooks/useHint';
 import './FortelyokScreen.css';
+import { fortélyDef } from '../../engine/lookup';
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, karakter, setKarakter, tsz, fegyverNevek, nyelvtanulásSzint, képzettségek }: FortelyokScreenProps) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
@@ -78,7 +79,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
       {pendingFort && pendingSlot && (
         <FokPickerPopup
           slot={pendingSlot}
-          maxfok={data.fortelySummaries.find(d => d.id === pendingSlot.id)?.maxfok ?? 1}
+          maxfok={fortélyDef(data, pendingSlot.id)?.maxfok ?? 1}
           data={data}
           nyelvFokLabels={NYELV_FOK_LABELS}
           onSelect={confirmFok}
