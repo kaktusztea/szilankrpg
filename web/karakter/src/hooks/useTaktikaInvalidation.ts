@@ -30,6 +30,7 @@ export function useTaktikaInvalidation(
     });
     if (changed) setKarakter(prev => prev ? { ...prev, session: { ...prev.session, aktív_taktikák: újTaktikák } } : prev);
     // Fegyver/fegyverfogás/helyzet váltás is érvénytelenít (nem csak a fortélyok), ezért ezek is dep-ek.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only on the inputs that can invalidate a tactic; full karakter dep would re-run on every edit
   }, [
     karakter?.fortélyok, data, setKarakter,
     session?.aktív_fegyver_index, session?.aktív_fegyver_bal_index, session?.aktív_távfegyver_index,

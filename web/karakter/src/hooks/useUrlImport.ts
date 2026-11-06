@@ -35,5 +35,5 @@ export function useUrlImport(
       importKarakter(imported, false);
     }
     history.replaceState(null, '', window.location.pathname);
-  }, [data]);
+  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps -- one-shot URL import once the game data is loaded
 }

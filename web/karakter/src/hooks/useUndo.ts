@@ -159,7 +159,7 @@ export function useUndo(
       }
       return [entry, ...prev].slice(0, UNDO_MAX);
     });
-  }, [testMode, isDirty]);
+  }, [testMode, isDirty, karakterRef, setTestMode, setIsDirty]);
 
   /** Sequential undo: apply patches from entry 0 through index (inclusive). */
   const undoTo = useCallback((index: number) => {
@@ -175,7 +175,7 @@ export function useUndo(
     result.napló = karakter.napló;
     setKarakter(result);
     setUndoStack(prev => prev.slice(index + 1));
-  }, [karakter, undoStack]);
+  }, [karakter, undoStack, setKarakter]);
 
   return { undoStack, setUndoStack, pushUndo, undoTo };
 }

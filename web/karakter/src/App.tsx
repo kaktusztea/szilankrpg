@@ -60,7 +60,7 @@ function App() {
   // Autosave kvótahiba → figyelmeztetés (ne maradjon néma adatvesztés)
   useEffect(() => {
     if (saveErrors > 0) setOverlay('toast', { msg: 'A mentés nem sikerült: megtelt a böngésző tárhelye. Törölj egy karaktert vagy verziót!', type: 'error' });
-  }, [saveErrors]);
+  }, [saveErrors, setOverlay]);
 
   const { activateKarakter, importKarakter, shareSlotUrl, saveSlotToFile, duplicateSlot, handleGenerateSave, loadKarakter, deleteSlot } = useKarakterActions({
     data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay,

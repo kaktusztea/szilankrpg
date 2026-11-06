@@ -37,7 +37,7 @@ export function useFegyverInvalidation(
       }
       return { ...prev, session: next };
     });
-  }, [karakter?.fegyverek, setKarakter]);
+  }, [karakter?.fegyverek, setKarakter]); // eslint-disable-line react-hooks/exhaustive-deps -- only on weapon-list change; full karakter dep would re-run on every edit
 
   // Pajzs „nincs"-re állítva (kizárt_auto) + fegyver_pajzs fogás aktív → egyfegyveres.
   useEffect(() => {
@@ -48,5 +48,5 @@ export function useFegyverInvalidation(
       if (!prev) return prev;
       return { ...prev, session: { ...prev.session, fegyverfogás: 'egyfegyveres', aktív_pajzs: false, aktív_fegyver_bal_index: -1 } };
     });
-  }, [karakter?.felszerelés?.kizárt_auto, karakter?.session.fegyverfogás, setKarakter]);
+  }, [karakter?.felszerelés?.kizárt_auto, karakter?.session.fegyverfogás, setKarakter]); // eslint-disable-line react-hooks/exhaustive-deps -- only on shield-exclusion / grip change
 }

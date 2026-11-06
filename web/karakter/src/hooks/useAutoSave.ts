@@ -37,7 +37,7 @@ export function useAutoSave(
       // quota exceeded (vagy blokkolt storage) → jelezzük a hívónak
       setSaveErrors(n => n + 1);
     }
-  }, [karakter, undoStack, isDirty, testMode, viewingCheckpoint]);
+  }, [karakter, undoStack, isDirty, testMode, viewingCheckpoint, setKarakter]);
 
   return saveErrors;
 }

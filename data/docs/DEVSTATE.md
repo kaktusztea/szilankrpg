@@ -265,7 +265,12 @@ a kód - és ahol egy elem kimarad, ott a feltétel csendben hamis lesz.
 - [ ] `ManoverDobasPopup` (458 sor, 14 `useState`) + `manover-dobas-calc` (482), `KepzettsegProbaPopup` (382, 16),
   `HarcScreen` (333, 15), `SebzesPopup` / `TamadoDobasPopup` / `CelzoDobasPopup` közös váz, `App` + `AppOverlays`.
 - [ ] Minta (2026-10-17 próba-modul): tiszta `*-calc.ts` + `use*` állapot-hook (useReducer) + `*Reszek.tsx` megjelenítő részek.
-- [ ] A szándékosan szűk deps-listák (`useSérültStátusz`, `useAkadalyStatusz`) NEM javítandók. Böngészős ellenőrzés javasolt.
+- ✅ `exhaustive-deps` 1. kör (2026-11-06): 17 → 6. Stabil setter → deps; szándékosan szűk lista → indokolt
+  `eslint-disable … -- <ok>`; 2 valódi javítás (`useVeCsokkenes` elavult `session` az undo-ban, `usePopupState` elavult
+  `onEscapeKepz`). Playwright: `refactorlog/2026-11-06.md`.
+- [ ] `exhaustive-deps` maradék 6: `useCallback(gyár(...), [])` undo-burkolók (`useKarakterState` 45-47, `useUndoWrappedSetters`
+  115-133) - átírás inline / `useMemo`-ra; undo-sorozat Playwright-tal ellenőrizendő.
+- [ ] A szándékosan szűk deps-listák (`useSérültStátusz`, `useAkadalyStatusz`, invalidáló hookok, `useUrlImport`) NEM javítandók.
 
 *Dummies:* néhány képernyő-darab "mindenes": egyszerre számol, emlékszik 15 dologra és rajzol. Szétszedjük három
 szerepre: számoló (tesztelhető), emlékező (állapot) és rajzoló (megjelenés). Külön-külön mindegyik érthető.

@@ -25,7 +25,7 @@ export function useKarakterState() {
       setKarakter(initialKarakter);
       if (initialDirty) setIsDirty(true);
     }
-  }, [initialKarakter]);
+  }, [initialKarakter]); // eslint-disable-line react-hooks/exhaustive-deps -- init only when the loader delivers; must not re-run on later edits
 
   // Autosave
   const saveErrors = useAutoSave(karakter, undoStack, isDirty, testMode, setKarakter, viewingMode);

@@ -45,7 +45,7 @@ export function useVéCsökkenés(
       vé_history: newVal === 0 ? [] : coalesceVéHistory(prev.vé_history, historyDelta, elapsed, VÉ_COALESCE_MS),
     }));
     triggerVéFlash(diff > 0 ? 'down' : 'up');
-  }, [session.vé_csökkenés, pushUndo, setSession, triggerVéFlash, véVeszSzorzó, maxVéCsökk]);
+  }, [session, pushUndo, setSession, triggerVéFlash, véVeszSzorzó, maxVéCsökk]);
 
   return { véFlash, changeVé, véSzorzóInfo, setVéSzorzóInfo };
 }

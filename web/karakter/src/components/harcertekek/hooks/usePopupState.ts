@@ -35,7 +35,7 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
     }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [anyOpen, kepzSzintTarget]);
+  }, [anyOpen, kepzSzintTarget, onEscapeKepz]);
 
   function closeAll() {
     setIdeaTarget(null);
