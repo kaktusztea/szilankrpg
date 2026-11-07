@@ -651,6 +651,9 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
   flex-shrink: 0;
 }
 .kep-proba-eh-info:hover { background: rgba(255, 255, 255, 0.25); }
+/* outside the roll button: no longer inherits the E/H label color */
+.kep-proba-eh-info:not(.kep-proba-eh-előny) { color: var(--warning); }
+.kep-proba-eh-info.kep-proba-eh-előny { color: var(--success); }
 
 .kep-proba-felsz-warn {
   margin: 4px 0;

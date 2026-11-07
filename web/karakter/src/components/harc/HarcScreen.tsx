@@ -48,7 +48,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const [sebCount, setSebCount] = useState(0);
 
   // Fejléc-harcértékek: közös számítás (az NJK switcher is ezt mutatja) - harc-fejlec-calc.ts
-  const { hc, téLevonás, ctx, aktívTÉ, aktívVÉ } = harcFejlécÉrtékek(data, karakter, session, sebCount);
+  const { hc, téLevonás, ctx, aktívTÉ, aktívVÉ, aktívSP } = harcFejlécÉrtékek(data, karakter, session, sebCount);
   const { hint, showHint } = useHint();
 
   const { véFlash, changeVé, véSzorzóInfo, setVéSzorzóInfo } = useVéCsökkenés(session, setSession, pushUndo, hc.véVeszSzorzó, hc.maxVéCsökk);
@@ -223,7 +223,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
       {nyitott?.t === 'támadó' && aktívTÉ != null && (
         <TamadoDobasPopup
           té={aktívTÉ}
-          sp={ctx?.result.SP ?? 0}
+          sp={aktívSP ?? 0}
           átütés={ctx?.result.Átütés ?? 0}
           módok={ctx?.result.módok}
           fegyverNév={ctx?.result.fegyver_név}

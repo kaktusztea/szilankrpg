@@ -123,12 +123,13 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
                   {ehCímke && (
                     <span className={`kep-proba-roll-eh${ehSzint > 0 ? ' kep-proba-eh-előny' : ''}`}>
                       {ehCímke}
-                      {felszEH !== 0 && (
-                        <button type="button" className="kep-proba-eh-info" onClick={e => e.stopPropagation()} title={`Felszerelés túlterhelés: ${előnyHátrányLabel(felszEH)}${felszNemHarcol ? ' (nem tud harcolni)' : ''}`}>i</button>
-                      )}
                     </span>
                   )}
                 </button>
+                {/* sibling, not child: nested <button> is invalid and a disabled parent swallows its events */}
+                {ehCímke && felszEH !== 0 && (
+                  <button type="button" className={`kep-proba-eh-info${ehSzint > 0 ? ' kep-proba-eh-előny' : ''}`} title={`Felszerelés túlterhelés: ${előnyHátrányLabel(felszEH)}${felszNemHarcol ? ' (nem tud harcolni)' : ''}`}>i</button>
+                )}
                 <ManualDicePicker sides={p.kocka} szint={ehSzint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={érték} alapLabel={d.kéziFelirat ?? label} forceOpen={d.kéziFolyamatban} />
               </div>
             )}

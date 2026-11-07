@@ -8,7 +8,6 @@
 ## Tartalom
 
 - [Nyitott tételek (áttekintés)](#nyitott-tételek-áttekintés)
-- [§42 effekt-hatások: böngészős ellenőrzés](#42-effekt-hatások-böngészős-ellenőrzés-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
@@ -17,18 +16,8 @@
 ---
 ## Nyitott tételek (áttekintés)
 
-- **§42 effekt-hatások: böngészős ellenőrzés** - értékre még nem volt végigkattintva
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
-
----
-## §42 effekt-hatások: böngészős ellenőrzés 🚧
-
-Spec: `engine_spec.md` §42, kód: `engine/effekt.ts`. Kivételek és figyelendő szűkítések: `engine_spec` §42.6.
-
-- [ ] A §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) **értékre** végigkattintva még nem voltak
-  (a meglévő Playwright-ellenőrzések csak a popupok megnyílását / állapotát fedik). Receptek: **Böngészős (Playwright)
-  tesztelés** → „Ellenőrző-minták" (Build scriptek alatt); csak jóváhagyással.
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧
@@ -227,7 +216,12 @@ Mikor érdemes: ha az egységtesztek + regressziós snapshotok (`statusz-proba.r
 
 Alapszabály: **költséges, ezért előbb MINDIG kérdezz rá** (l. steering `workflow.md` → Böngészős tesztelés). Alapértelmezés: build + unit tesztek; böngésző csak jóváhagyással.
 
-Setup (ha jóváhagyott): telepítés `/tmp/szilank-pw` (pinned playwright) + `~/.cache/ms-playwright`, a repóba NEM kerül. `npm run dev` (localhost:5173), mobil viewport (pl. 390×844) + egy asztali. Teszt karakter: `data/karakter/test_karakter2.json` (Kard, lovag + Tőr, közepes pajzs, Erő 3); a fortélyok / státuszok / taktikák az app UI-ján vehetők fel. A teszt-eset az aktuális munkához igazodik; a lenti minták újrahasználható ellenőrző-receptek (effekt-/dobás-UI jellegű munkához).
+Setup (ha jóváhagyott): telepítés `/tmp/szilank-pw` (pinned playwright) + `~/.cache/ms-playwright`, a repóba NEM kerül. `npm run dev` (localhost:5173), mobil viewport (pl. 390×844) + egy asztali. Teszt karakter: `data/karakter/test_karakter2.json` (Kard, lovag + Tőr, közepes pajzs, Erő 3); a fortélyok / státuszok / taktikák az app UI-ján vehetők fel. Gyorsabb: a karaktert a `session` mezőivel
+(`aktív_taktikák`, `aktív_helyzetek`, `aktív_státuszok`, `fegyverfogás` …) közvetlenül a localStorage-ba írni
+(`szilank_char_<uid>` + `szilank_slots` + `szilank_active`, `addInitScript`-ben, betöltés előtt). Buktatók: az app
+**Szerk módban** indul (a 🎲 / dobás-popupok Játék módot kérnek: `🔧 Szerk` gomb), Játék módban **csak az aktív fül
+renderelődik** (előbb a fül-gomb, pl. `🗡️`), a Támadó popup „Mód:" gombja al-popupot nyit (nem kötelező választó).
+A script hibaágán is `browser.close()` (`finally`), különben a node nem lép ki. A teszt-eset az aktuális munkához igazodik; a lenti minták újrahasználható ellenőrző-receptek (effekt-/dobás-UI jellegű munkához).
 
 Vizuális regresszió (CSS-munkánál kötelező): teljes oldalas képernyőképek a RÉGI és az ÚJ kódon, `animations: 'disabled'`,
 `document.fonts.ready` megvárva (különben a webfont-időzítés szétszórt élsimítás-eltérést ad), majd bitre azonos összevetés.
@@ -235,14 +229,15 @@ A régi kód: ideiglenes `git worktree` + `vite build` + `vite preview` másik p
 production bundle-étől - mindkettőn érdemes). Eltérésnél: a kiszámított stílusok (`getComputedStyle`) elemenkénti összevetése.
 
 Ellenőrző-minták (effekt / dobás-UI jellegű változáshoz - bővíthető):
-- **Képzettségpróba, Érzékvesztés** (`statusz-proba.ts`, `KepzettsegProbaPopup.tsx`): `Érzékvesztés: Látás (2)` → Észlelés próba: felirat nélküli érzék chip-sor (Látás ⚠ / Hallás / Szaglás / Tapintás / Ízlelés, egy sorban, kitöltve), alapból Látás kiválasztva → Hátrány−2, a bontásban `Érzékvesztés: Látás (Részleges): -2`; Hallás → nincs Hátrány; újrakattintás (egyik sem) → nincs Hátrány. `(1)` → −1, `(3)` → „automatikus kudarc", nincs Dobás gomb. Etikett / Lexikum próbán NINCS chip-sor. Két alkategória (Látás + Hallás) egyszerre → mindkettő ⚠. Nem-alkategóriás státusz: `Félelem (1)` → Befolyásolás Hátrány, Lexikum nem.
+- **Képzettségpróba, Érzékvesztés** (`statusz-proba.ts`, `KepzettsegProbaPopup.tsx`): `Érzékvesztés: Látás (2)` → Észlelés próba: felirat nélküli érzék chip-sor (Látás ⚠ / Hallás / Szaglás / Tapintás / Ízlelés, egy sorban, kitöltve), alapból Látás kiválasztva → Hátrány−2, a bontásban `Érzékvesztés: Látás (Részleges): -2`; Hallás → nincs Hátrány; újrakattintás (egyik sem) → nincs Hátrány. `(1)` → −1, `(3)` → „automatikus kudarc", nincs Dobás gomb. Etikett / Lexikum próbán NINCS chip-sor. Két alkategória (Látás + Hallás) egyszerre → mindkettő ⚠. Nem-alkategóriás státusz: `Félelem (1)` → Befolyásolás és Etikett (szociális, `statusz-proba.ts`) Hátrány, Lexikum nem. Az E/H „i" (bontás) a Dobás gomb MELLETT van, tulajdonság / nehézség választása előtt is nyitható.
 - **Lövéskitérés** (Távharc fül, `loveskiteres-calc.ts`): Akrobatika+Gyorsaság érték „Lövéskitérés fejlesztése" fortéllyal +2-vel több, nélküle nem.
 - **Alkalmi tárgy** (Távharc fül, `tavharc/helpers.ts`): „Alkalmatlan tárgyak hajítása" 1. fok → kártya Osztó 1, 2. fok → Osztó 2 (és a lövéskitérés-kategória ennek megfelelő).
 - **Támadó dobás popup** (Harc fül, `combat-roll-info.ts`): Visszafogott taktika → a Sebzésnél Hátrány−2 forrással; Orgyilkos fortély + Orvtámadás helyzet → Sebzés Előny; Helyhez kötve fejlesztése (2) + Helyhez kötve helyzet → TÉ dobás enyhít; Erő-követelmény (nehéz fegyver, alacsony Erő) → TÉ Hátrány-1 „(Erő hiány)". Az E/H címke és a kocka-picker előre beállított szintje egyezik a forrás-összeggel (clamp ±2). Kézi „Statikus bónuszok" gomb → a végösszegbe és a részlet-sorba kerül. Extrák gomb elérhető (minden dobásnál).
-- **Sebzés popup „Statikus bónuszok"** (`fegyverSpBónuszok` + `spBónuszok`): Erőbónusz (min(Erő, mód Erőlimit)); „Mesterfegyver - <fegyver>" csak a megjelölt fegyverrel a kézben; Pajzshasználat csak pajzzsal; Roham / (Lég)Lovas roham taktika SP-je; Támadás erőből magas fok SP-je „Támadás erőből (N)" felirattal; Orgyilkos SP Orvtámadásban. Mód-váltás másodlagosra → az Erőbónusz a másodlagos mód Erőlimitje szerint. **Kulcs-ellenőrzés: az összesített SP (alap + bónuszok) = a fegyvertábla SP-je** (+ taktika SP), a bontás csak szétosztja. Kétkezes harcnál a jobb kéz MF-je.
+- **Sebzés popup „Statikus bónuszok"** (`fegyverSpBónuszok` + `spBónuszok`): Erőbónusz (min(Erő, mód Erőlimit)); „Mesterfegyver - <fegyver>" csak a megjelölt fegyverrel a kézben; Pajzshasználat csak pajzzsal; Roham / (Lég)Lovas roham taktika SP-je; Támadás erőből magas fok SP-je „Támadás erőből (N)" felirattal; Orgyilkos SP Orvtámadásban. Mód-váltás másodlagosra → az Erőbónusz a másodlagos mód Erőlimitje szerint. **Kulcs-ellenőrzés: az összesített SP (alap + bónuszok) = a fegyvertábla SP-je** (+ taktika SP), a bontás csak szétosztja (Roham: tábla `11+5` → popup `6+10`; a popup SP-je a `harcFejlécÉrtékek().aktívSP`, unit: `harc-fejlec-calc.test.ts`). Kétkezes harcnál a jobb kéz MF-je.
+- **Támadás-korlát** (`harc-computed.ts`, `támadások_száma` max_limit): a teszt-karakter páncélban 1 támadású (MGT) → páncél le + Gyorsaság 10 → 3-4 „Tám"; `Félelem (2)` → minden fegyversor 1 (a több-támadás TÉ-levonás is eltűnik).
 - **CÉ dobás popup** (Távharc): Alkalmatlan tárgyak / fegyver hajítása + a megfelelő helyzet → CÉ / Sebzés enyhít; Kitartott célzás megjegyzés csak illő harcmodorú távfegyverrel. Kézi „Statikus bónuszok" gomb mint a Támadó dobásnál.
 - **Manőver dobás popup** (Harc fül ⚔️ / Próba-hub, `dobas/ManoverDobasPopup.tsx`): a TÉ E/H szint a taktika / helyzet / státusz / fortély hatásokból, mint a Támadó popupban. Fázis-tudatos fejléc-chip: V/E fázisban `TÉ: <nyers> (+<Végrehajtás-bónusz>)` bontva, Megakasztás (M) fázisban és passzív módban `VÉ`; a bontott fejléc-TÉ + a bónusz = a Végrehajtás-fázis TÉ-chip értéke. Kézi „Statikus bónuszok" a Végrehajtás fázisban; Extrák gomb a manőver-módhoz igazított kontextussal.
-- **VÉ plafon**: Teljes Védekezés + Védő (3) → a fejléc VÉ-eltolása +10-re szorul (a taktika-gyűjtő „Taktika VÉ-plafon" korrekciós sora).
+- **VÉ plafon** (±`taktika_vé_eltolás_limit` = 10): érvényes taktika-kombóval böngészőben NEM érhető el (legnagyobb: Teljes Védekezés +8 egyedül - üres whitelist; legkisebb: Kezdeményező + Támadó −9). A „Taktika VÉ-plafon" korrekciós sort csak a unit teszt fedi (`taktika-calc.test.ts`, limit=6). Teljes Védekezés egyedül: VÉ +8.
 
 ---
 ## Szabálykönyv (md/) konvenciók, tanulságok

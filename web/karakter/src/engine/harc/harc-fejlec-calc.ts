@@ -23,5 +23,7 @@ export function harcFejlécÉrtékek(data: GameData, karakter: Karakter, session
   const többTámTÉ = data.konstansok.több_támadás_TÉ_levonás;
   const aktívTÉ = ctx ? computeTÉ(ctx.result.TÉ, téLevonás, hc.taktikaMods['TÉ'], ctx.téExtra, ctx.result.támadások, többTámTÉ) : null;
   const aktívVÉ = ctx ? computeVÉ(ctx.result.VÉ, ctx.veBónusz, hc.taktikaMods['VÉ'] + hc.helyzetMods.VÉ, session.vé_csökkenés) : null;
-  return { hc, ké: hc.ké, téLevonás, ctx, aktívTÉ, aktívVÉ };
+  // result.SP excludes tactic SP (the weapon table adds it separately); the roll needs it included.
+  const aktívSP = ctx ? ctx.result.SP + hc.taktikaMods['SP'] : null;
+  return { hc, ké: hc.ké, téLevonás, ctx, aktívTÉ, aktívVÉ, aktívSP };
 }

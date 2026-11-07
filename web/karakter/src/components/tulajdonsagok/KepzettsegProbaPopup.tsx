@@ -327,17 +327,18 @@ export function KepzettsegProbaPopup({
                   {ehCímke && (
                     <span className={`kep-proba-roll-eh${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}>
                       {ehCímke}
-                      {vanEhForrás && (
-                        <button
-                          type="button"
-                          className="kep-proba-eh-info"
-                          title="Mi adja a módosítót?"
-                          onClick={e => { e.stopPropagation(); setEhBontásNyitva(v => { if (!v) setTimeout(() => ehAccordionRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50); return !v; }); }}
-                        >i</button>
-                      )}
                     </span>
                   )}
                 </button>
+                {/* sibling, not child: a disabled roll button would swallow its clicks (and nested <button> is invalid) */}
+                {ehCímke && vanEhForrás && (
+                  <button
+                    type="button"
+                    className={`kep-proba-eh-info${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}
+                    title="Mi adja a módosítót?"
+                    onClick={() => setEhBontásNyitva(v => { if (!v) setTimeout(() => ehAccordionRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50); return !v; })}
+                  >i</button>
+                )}
                 <ManualDicePicker sides={p.kocka} szint={eh.szint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={bázis} alapLabel={d.kéziFelirat ?? 'Alap'} forceOpen={d.kéziFolyamatban} />
               </div>
               {vanEhForrás && ehBontásNyitva && (
