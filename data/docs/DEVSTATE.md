@@ -8,7 +8,7 @@
 ## Tartalom
 
 - [Nyitott tételek (áttekintés)](#nyitott-tételek-áttekintés)
-- [Egységes effekt-modell: maradék](#egységes-effekt-modell-maradék-) 🚧
+- [§42 effekt-hatások: böngészős ellenőrzés](#42-effekt-hatások-böngészős-ellenőrzés-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
@@ -17,19 +17,18 @@
 ---
 ## Nyitott tételek (áttekintés)
 
-- **Egységes effekt-modell: maradék** (§42) - böngészős ellenőrzés értékre; tudatos szűkítések figyelése
+- **§42 effekt-hatások: böngészős ellenőrzés** - értékre még nem volt végigkattintva
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
-## Egységes effekt-modell: maradék 🚧
+## §42 effekt-hatások: böngészős ellenőrzés 🚧
 
-Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`. Nyitott:
+Spec: `engine_spec.md` §42, kód: `engine/effekt.ts`. Kivételek és figyelendő szűkítések: `engine_spec` §42.6.
 
-- Gyűjtőn kívüli kódutak (VÉ-csökkentés taktika-része, távharci CÉ, `collectTaktikaLetiltások`): tudatos kivételek, l. `engine_spec` §42.6.
-- [ ] **Böngészős ellenőrzés**: a §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) értékre nem voltak végigkattintva
-  (a meglévő Playwright-ellenőrzések csak a popupok megnyílását / állapotát fedik). Módszer: **Böngészős (Playwright) tesztelés** (Build scriptek alatt); csak jóváhagyással.
-- Tudatos szűkítések (ma nem tüzelnek, új adatnál felülvizsgálandó): §42.6 lista (távharci feltétel-kiértékelő, extra feltétel-kontextus, szorzó-keverék).
+- [ ] A §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) **értékre** végigkattintva még nem voltak
+  (a meglévő Playwright-ellenőrzések csak a popupok megnyílását / állapotát fedik). Receptek: **Böngészős (Playwright)
+  tesztelés** → „Ellenőrző-minták" (Build scriptek alatt); csak jóváhagyással.
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧

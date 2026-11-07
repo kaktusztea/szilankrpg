@@ -3,9 +3,23 @@
 Ez a dokumentum leírja a webes karakteralkotó engine összes számítását.
 Minden formulánál megadjuk az inputokat (honnan jönnek), a képletet, és az outputot.
 
----
+## Tartalom (téma szerint)
 
-## 1. KP (Karakteralkotó Pontok)
+A § szám a szekció stabil azonosítója (kód- és doksi-hivatkozásokban), NEM sorrend - új szekció a végére kerül.
+
+- **Karakteralkotás**: [§1 KP (Karakteralkotó Pontok)](#1-kp-karakteralkotó-pontok) · [§2 Tulajdonság pontok](#2-tulajdonság-pontok) · [§3 Életerő Pont (ÉP)](#3-életerő-pont-ép) · [§18 HM / CM limitek](#18-hm--cm-limitek) · [§19 Képzettség limitek](#19-képzettség-limitek) · [§20 Faj háttér és tulajdonság keretek](#20-faj-háttér-és-tulajdonság-keretek)
+- **Fortélyok**: [§16 Fortély módosítók alkalmazása](#16-fortély-módosítók-alkalmazása) · [§24 Kalkulált feltételek (fortély módosítókban)](#24-kalkulált-feltételek-fortély-módosítókban) · [§25 Fortély követelmények](#25-fortély-követelmények) · [§35b Fortély schema mezők](#35b-fortély-schema-mezők)
+- **Harcértékek (közelharc)**: [§4 Kezdeményező Érték (KÉ)](#4-kezdeményező-érték-ké) · [§5 Támadó Érték (TÉ) - fegyverenként](#5-támadó-érték-té---fegyverenként) · [§6 Védő Érték (VÉ) - fegyverenként](#6-védő-érték-vé---fegyverenként) · [§8 Sebzés Pont (SP) - fegyverenként](#8-sebzés-pont-sp---fegyverenként) · [§9 Harckeret (támadások száma) - fegyverenként](#9-harckeret-támadások-száma---fegyverenként) · [§23 Több támadás TÉ levonás](#23-több-támadás-té-levonás) · [§26 Kétkezes harc](#26-kétkezes-harc) · [§27 Fegyverfogás](#27-fegyverfogás) · [§36 Harci képzettségek - Harcértékek fül](#36-harci-képzettségek---harcértékek-fül) · [§14 Manőver Alap / Manőver Pont](#14-manőver-alap--manőver-pont)
+- **Páncél, pajzs, felszerelés**: [§10 Páncél SFÉ](#10-páncél-sfé) · [§11 Páncél MGT](#11-páncél-mgt) · [§12 Merevvért TÉ büntetés](#12-merevvért-té-büntetés) · [§13 Pajzs bónuszok és büntetések](#13-pajzs-bónuszok-és-büntetések) · [§15 Felszerelés (próba-Hátrány)](#15-felszerelés-próba-hátrány) · [§43 Fegyver és páncél ár-modell](#43-fegyver-és-páncél-ár-modell)
+- **Távharc**: [§7 Célzó Érték (CÉ) - fegyverenként](#7-célzó-érték-cé---fegyverenként) · [§17 Távharc kalkulátor (CÉ + VÉ)](#17-távharc-kalkulátor-cé--vé)
+- **Harci helyzetek, taktikák, státuszok, effektek**: [§21 Aktív fül - Taktikák, Manőverek, Helyzetek](#21-aktív-fül---taktikák-manőverek-helyzetek) · [§22 Státuszok és Hatások](#22-státuszok-és-hatások) · [§33 Sérült státusz automatika](#33-sérült-státusz-automatika) · [§38 Lovas harc rendszer](#38-lovas-harc-rendszer) · [§42 Egységes effekt-modell (implementálva; kis maradék: 42.6)](#42-egységes-effekt-modell-implementálva-kis-maradék-426)
+- **Próbák**: [§37 Próbadobások és Célszámok](#37-próbadobások-és-célszámok)
+- **Misztikum**: [§34 Aura](#34-aura) · [§35 Misztikus fül - webapp](#35-misztikus-fül---webapp)
+- **Alkalmazás, adatkezelés, motor**: [§41 Reactive Engine implementáció](#41-reactive-engine-implementáció) · [§29 Undo Stack](#29-undo-stack) · [§30 Local Storage Cache](#30-local-storage-cache) · [§30b Karakter Schema verziókezelés](#30b-karakter-schema-verziókezelés) · [§31 Multi-karakter mentés](#31-multi-karakter-mentés) · [§31b Karakter verziók (checkpoint)](#31b-karakter-verziók-checkpoint) · [§32 Screen hibahatár (ScreenErrorBoundary)](#32-screen-hibahatár-screenerrorboundary) · [§40 Karakter URL Export (megosztás)](#40-karakter-url-export-megosztás)
+- **Tervek (nem implementált)**: [§28 Harc alakzatban (TERV - NEM IMPLEMENTÁLT)](#28-harc-alakzatban-terv---nem-implementált) · [§39 Méreggenerátor (TERV - NEM IMPLEMENTÁLT)](#39-méreggenerátor-terv---nem-implementált)
+
+---
+## §1 KP (Karakteralkotó Pontok)
 
 ### 1.1 Összes KP
 
@@ -91,7 +105,7 @@ impl: reactive.ts → buildArrayContext 'kp_bónusz_fortélyok' (perFok < 0 szű
 
 ---
 
-## 2. Tulajdonság pontok
+## §2 Tulajdonság pontok
 
 ```
 input:  karakter.tulajdonságok (mind a 8), karakter.tsz
@@ -112,7 +126,7 @@ note: Tapasztalati szint tartomány: [arányok.min_tsz, arányok.max_tsz] = [3, 
 
 ---
 
-## 3. Életerő Pont (ÉP)
+## §3 Életerő Pont (ÉP)
 
 ```
 input:  karakter.tulajdonságok.edzettség
@@ -139,7 +153,7 @@ note: JK-nál ÉP mindig 4-gyel osztható. NJK-nál maradék balról jobbra oszt
 
 ---
 
-## 4. Kezdeményező Érték (KÉ)
+## §4 Kezdeményező Érték (KÉ)
 
 ```
 input:  karakter.tulajdonságok.gyorsaság, karakter.tulajdonságok.intelligencia, karakter.tsz
@@ -157,7 +171,7 @@ note: A rules.json KÉ képlete NEM tartalmazza a fortély módosítókat (körk
 
 ---
 
-## 5. Támadó Érték (TÉ) - fegyverenként
+## §5 Támadó Érték (TÉ) - fegyverenként
 
 ```
 note: Fegyver = EGY rekord a fegyverek_v2.json-ban, `módok[]` listával (aktoronként egy mód; a
@@ -210,7 +224,7 @@ impl: engine/utils.ts → ideaDelta(); bekötve: calcFegyverResults (§5-§8), k
 
 ---
 
-## 6. Védő Érték (VÉ) - fegyverenként
+## §6 Védő Érték (VÉ) - fegyverenként
 
 ```
 input:  karakter.tulajdonságok.gyorsaság, karakter.tulajdonságok.ügyesség,
@@ -242,7 +256,7 @@ note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha sessio
 
 ---
 
-## 7. Célzó Érték (CÉ) - fegyverenként
+## §7 Célzó Érték (CÉ) - fegyverenként
 
 ```
 input:  karakter.tulajdonságok.önuralom,
@@ -269,7 +283,7 @@ note: Mágikus kategóriájú fegyverekre (Mágiatáv I–IV) eltérő formula -
 
 ---
 
-## 8. Sebzés Pont (SP) - fegyverenként
+## §8 Sebzés Pont (SP) - fegyverenként
 
 ```
 input:  fegyver.SP, mesterfegyver_fok (adott fegyverre),
@@ -330,7 +344,7 @@ Szabálykönyvi sebzés-mechanikák (md/064_02_07_sebzes.md):
 
 ---
 
-## 9. Harckeret (támadások száma) - fegyverenként
+## §9 Harckeret (támadások száma) - fegyverenként
 
 ```
 input:  fegyver.sebesség, harcmodor_szint (a fegyver kategóriájához tartozó),
@@ -373,7 +387,7 @@ impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
 
 ---
 
-## 10. Páncél SFÉ
+## §10 Páncél SFÉ
 
 ```
 input:  páncél.alap (struktúra), páncél.fémalapanyag, páncél.idea, páncél.rongálódás
@@ -404,7 +418,7 @@ impl: A struktúra és alapanyag értékek string-keyed lookup szabályokból j�
 
 ---
 
-## 11. Páncél MGT
+## §11 Páncél MGT
 
 ```
 input:  páncél.alap, páncél.fémalapanyag, páncél.kidolgozottság,
@@ -444,7 +458,7 @@ impl: A raw inputok (struktúra_mgt, alapanyag_mgt, csatolt_db, méret_mgt, mere
 
 ---
 
-## 12. Merevvért TÉ büntetés
+## §12 Merevvért TÉ büntetés
 
 ```
 input:  MGT (§11 outputja, ha merev páncél), merevvértviselet fortély fok
@@ -468,7 +482,7 @@ impl: páncél_merev (0/1) és merevvért_csökkentés lookup szabályokból jö
 
 ---
 
-## 13. Pajzs bónuszok és büntetések
+## §13 Pajzs bónuszok és büntetések
 
 ```
 input:  karakter.pajzs.méret (kis/közepes/nagy/""),
@@ -537,7 +551,7 @@ nehézségét a védekező pajzsmérete növeli - Kis +2, Közepes +4, Nagy +6. 
 
 ---
 
-## 14. Manőver Alap / Manőver Pont
+## §14 Manőver Alap / Manőver Pont
 
 ```
 input:  karakter.HM_TÉ, karakter.HM_VÉ
@@ -565,7 +579,7 @@ note: Értéke [0; 10] tartományban mozog. Egy harci jelenet alatt használhat�
 
 ---
 
-## 15. Felszerelés (próba-Hátrány)
+## §15 Felszerelés (próba-Hátrány)
 
 ```
 Felszerelés keret = 2 + Erő
@@ -593,7 +607,7 @@ note:
 
 ---
 
-## 16. Fortély módosítók alkalmazása
+## §16 Fortély módosítók alkalmazása
 
 ```
 input:  karakter.fortélyok[], data/sources/fortelyok/**/*.yaml
@@ -753,7 +767,7 @@ Csak hatástext (emlékeztető):      Gyöngyhalász, Úszás, Infralátás, Hel
 
 ---
 
-## 17. Távharc kalkulátor (CÉ + VÉ)
+## §17 Távharc kalkulátor (CÉ + VÉ)
 
 ### 17.1 Célzó Érték (CÉ) számítása
 
@@ -953,7 +967,7 @@ Adatforrások:
 
 ---
 
-## 18. HM / CM limitek
+## §18 HM / CM limitek
 
 ```
 input:  karakter.HM_TÉ, karakter.HM_VÉ, karakter.CM, karakter.tsz,
@@ -987,7 +1001,7 @@ note: A Mesterfegyver fortély fokai NEM számítanak a max_HM-be.
 
 ---
 
-## 19. Képzettség limitek
+## §19 Képzettség limitek
 
 ```
 input:  karakter.tsz, képzettség.primer
@@ -1030,7 +1044,7 @@ note: Nem rules.json szabály - fortelyok/helpers.ts → calcNyelvPontKeret, cal
 
 ---
 
-## 20. Faj háttér és tulajdonság keretek
+## §20 Faj háttér és tulajdonság keretek
 
 ```
 input:  karakter.hátterek.faj, data/sources/fajok/*.yaml
@@ -1074,7 +1088,7 @@ impl: CSAK a tulajdonság keretek: tables/faj_tulajdonsag_keretek.json → GameD
 
 ---
 
-## 21. Aktív fül - Taktikák, Manőverek, Helyzetek
+## §21 Aktív fül - Taktikák, Manőverek, Helyzetek
 
 Az Aktív fülön választható elemek és módosítóik összefoglalása.
 UI szekció sorrend: Fegyver+Fogás → Fortély bónuszok/Alapesetek → Taktikák → Harci helyzetek → Manőver → Státuszok → Narratív Előny/Hátrányok.

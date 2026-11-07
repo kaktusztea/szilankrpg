@@ -390,6 +390,8 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 
 ## Engine Spec szekciók (gyorshivatkozás)
 
+A § szám stabil azonosító (nem sorrend); téma szerinti tartalomjegyzék: `engine_spec.md` eleje.
+
 | § | Téma | Kulcs fájlok |
 |---|------|-------------|
 | 1-2 | KP, Tulajdonság pontok | `rules.json`, `App.tsx` |
