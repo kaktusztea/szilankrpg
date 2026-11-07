@@ -1,0 +1,8 @@
+/* components/common/ - a közös common komponensek stílusai (refaktor 7. fázis: a HarcScreen.css-ből). */
+
+/* --- Harcmodor lista --- */
+.he-harcmodor-list { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 16px; }
+.he-harcmodor-col { display: flex; flex-direction: column; gap: 4px; }
+.he-idea-row { display: flex; gap: 6px; }
+.he-idea-cell { width: 36px; height: 36px; font-size: 13px; }
+.he-column-layout { display: flex; flex-direction: column; gap: 6px; align-items: center; }

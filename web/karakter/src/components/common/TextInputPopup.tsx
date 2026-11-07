@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { OverlayPortal } from './OverlayPortal';
+import './common.css';
 
 interface Props {
   label: string;

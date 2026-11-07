@@ -2,6 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { isTaktikaAllowed, taktikaTiltásOka } from '../../engine/taktika/taktika-megkotes';
 import { formatFokMods, területIllik, type HarcTerület } from '../../engine/taktika/taktika-helpers';
+import './picker.css';
 
 interface Props {
   data: GameData;

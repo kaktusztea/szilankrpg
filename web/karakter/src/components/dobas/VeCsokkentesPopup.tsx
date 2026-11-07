@@ -4,6 +4,7 @@ import { calcVéCsökkentés, type Fegyverviszony, type VéCsökkentésEredmény
 import type { FegyverExtraDef } from '../../engine/data-types';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { hiányzóInfósExtrák } from '../../engine/extrak-effekt';
+import './dobas.css';
 
 interface Props {
   /** A Támadó dobás k20 eredménye (a sikertelen támadás VÉ csökkentésének kockatagja). Fárasztás-ágnál irreleváns. */

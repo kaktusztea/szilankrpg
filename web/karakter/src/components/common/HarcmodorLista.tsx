@@ -3,6 +3,7 @@ import type { Kepzettseg } from '../../engine/types';
 import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
 import { KÉPZETTSÉG_SZINT_MAGAS } from '../../ui-constants';
 import { kattinthatóProps } from '../a11y';
+import './common.css';
 
 export interface HarcmodorListaProps {
   /** A választható képzettség-kulcsok (pl. "harcmodor/kardvívás"). */

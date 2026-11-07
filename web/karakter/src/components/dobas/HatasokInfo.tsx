@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { DobásHatás } from '../../engine/harc/combat-roll-info';
+import './dobas.css';
 
 /** Dobás-hatás badge felirata (Előny/Hátrány/Enyhít, különben a megjegyzés). */
 function hatásBadgeLabel(h: DobásHatás): string {

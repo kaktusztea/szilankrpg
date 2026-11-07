@@ -32,6 +32,6 @@
 }
 
 /* --- Error boundary --- */
-.error-boundary { padding: 20px; color: #e53935; text-align: center; }
-.error-boundary-msg { font-size: 13px; color: #aaa; }
+.error-boundary { padding: 20px; color: var(--color-negative); text-align: center; }
+.error-boundary-msg { font-size: 13px; color: var(--text-soft); }
 .error-boundary-btn { margin-top: 10px; padding: 6px 12px; }

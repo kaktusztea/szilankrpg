@@ -4,6 +4,7 @@ import { fmtCode } from '../formatters';
 import { PickerOverlay } from './PickerOverlay';
 import { területIllik, type HarcTerület } from '../../engine/taktika/taktika-helpers';
 import { helyzetDef } from '../../engine/lookup';
+import './picker.css';
 
 interface Props {
   data: GameData;

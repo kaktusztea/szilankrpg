@@ -1,3 +1,4 @@
+import './dobas.css';
 /** Shared Előny/Hátrány radio chip picker for combat rolls. */
 
 const ELŐNY_OPCIÓK = [

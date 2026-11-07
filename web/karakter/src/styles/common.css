@@ -113,7 +113,7 @@
   border: 1px dashed #666;
   border-radius: 6px;
   font-size: 12px;
-  color: #aaa;
+  color: var(--text-soft);
 }
 .debug-box-title { color: var(--accent); display: block; margin-bottom: 6px; }
 
@@ -124,7 +124,7 @@
 .picker-controls { display: flex; align-items: center; gap: 16px; }
 .picker-btn-lg { width: 44px; height: 44px; font-size: 22px; }
 .picker-value-lg { font-size: 28px; min-width: 60px; text-align: center; user-select: none; }
-.picker-hint { font-size: 18px; color: #888; }
+.picker-hint { font-size: 18px; color: var(--text-muted); }
 
 /* ===================
    Gomb variánsok
@@ -253,7 +253,7 @@
 
 .aktiv-picker-item-name { font-weight: bold; color: var(--text); font-size: 14px; }
 
-.aktiv-picker-item-details { font-size: 12px; color: #aaa; }
+.aktiv-picker-item-details { font-size: 12px; color: var(--text-soft); }
 
 .aktiv-picker-category {
   font-size: 13px;
@@ -273,15 +273,15 @@
   border-bottom: 1px solid var(--border-light);
   margin-top: 4px;
 }
-.aktiv-picker-group-pozitív { color: #4caf50; }
-.aktiv-picker-group-semleges { color: #ff9800; }
-.aktiv-picker-group-negatív { color: #f44336;
+.aktiv-picker-group-pozitív { color: var(--success); }
+.aktiv-picker-group-semleges { color: var(--warning); }
+.aktiv-picker-group-negatív { color: var(--error);
 }
 
 /* Picker-item szélső csík: ugyanaz a szín, mint a szekció label, fakóbb tónusban. */
-.aktiv-picker-item.aktiv-picker-group-pozitív { border-left: 3px solid color-mix(in srgb, #4caf50 45%, var(--border)); }
-.aktiv-picker-item.aktiv-picker-group-semleges { border-left: 3px solid color-mix(in srgb, #ff9800 45%, var(--border)); }
-.aktiv-picker-item.aktiv-picker-group-negatív { border-left: 3px solid color-mix(in srgb, #f44336 45%, var(--border)); }
+.aktiv-picker-item.aktiv-picker-group-pozitív { border-left: 3px solid color-mix(in srgb, var(--success) 45%, var(--border)); }
+.aktiv-picker-item.aktiv-picker-group-semleges { border-left: 3px solid color-mix(in srgb, var(--warning) 45%, var(--border)); }
+.aktiv-picker-item.aktiv-picker-group-negatív { border-left: 3px solid color-mix(in srgb, var(--error) 45%, var(--border)); }
 
 /* ===================
    Field-btn (label + érték oszlopos card-szerű)
@@ -311,7 +311,7 @@
 
 .aktiv-field-label {
   font-size: 11px;
-  color: #888;
+  color: var(--text-muted);
   text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
@@ -350,7 +350,7 @@
    =================== */
 .fmt-code {
   font-family: monospace;
-  background: #333;
+  background: var(--border-light);
   padding: 0 3px;
   border-radius: 2px;
 }

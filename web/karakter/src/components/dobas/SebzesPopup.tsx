@@ -11,6 +11,7 @@ import { ExtrakInfo } from './ExtrakInfo';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { aktívHatásokCélra, alkalmazEffektek } from '../../engine/extrak-effekt';
 import { SP_NINCS } from '../../engine/data-types';
+import './dobas.css';
 
 /** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */
 const PÁNCÉLOSZTÁLYOK: { id: Páncélosztály; label: string }[] = [

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { előnyHátrányLabel } from '../../engine/dice';
+import './dobas.css';
 
 interface Props {
   /** Called with the manually chosen value. */

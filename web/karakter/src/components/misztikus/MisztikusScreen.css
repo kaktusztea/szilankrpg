@@ -14,7 +14,7 @@
 .miszt-row { gap: 4px; }
 
 .miszt-row-name { flex: 1; font-size: 17px; }
-.miszt-row-warn { color: #e53935; }
+.miszt-row-warn { color: var(--color-negative); }
 
 /* --- Fortély sor --- */
 .miszt-fort-row { gap: 8px; }
@@ -31,7 +31,7 @@
   text-align: center;
 }
 
-.aura-card-label { font-size: 14px; color: #aaa; }
+.aura-card-label { font-size: 14px; color: var(--text-soft); }
 .aura-card-value { font-size: 20px; }
 
 /* --- Tradíció altípus picker --- */

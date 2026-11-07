@@ -267,6 +267,7 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
   hooks/                   Harcértékek fül-lokális hookok
 
 common/                    Közös UI-elemek (több fül használja; fület nem importálhat - ESLint)
+  common.css               A common/ elemek stílusai
   FortelyFelvetel.tsx      Felvétel wizard (többszörös, kiérdemelt)
   HarcmodorLista.tsx       Harcmodor-képzettség lista (felvettek + felvétel select) - Harcértékek + Távharc közös
   HarciKepzettsegSzintPopup.tsx  Harcmodor-képzettség szint popup (Harcértékek + Távharc; mégse → a 0 szintű felvétel visszavonása)
@@ -275,6 +276,7 @@ common/                    Közös UI-elemek (több fül használja; fület nem 
   TextInputPopup.tsx       Közös szöveg-input popup (becenév, név, prompt)
 
 dobas/                     Dobás-popup készlet (Támadó / Sebzés / CÉ / Manőver popupok közös elemei; fület nem importálhat)
+  dobas.css                A dobás-popupok stílusai (Támadó / Sebzés / Célzó / Manőver / VÉ csökkentés)
   ElonyPicker.tsx          Előny/Hátrány kocka picker
   ExtrakInfo.tsx           "Extrák" gomb (💡, pulzál ha van aktív) + popup: fegyver-extrák listája státusz-jelzéssel (Támadó + Sebzés popupban)
   HatasokInfo.tsx          Dobás-hatás badge feliratok (Előny/Hátrány/Enyhít formázás, pure fn)
@@ -287,6 +289,7 @@ dobas/                     Dobás-popup készlet (Támadó / Sebzés / CÉ / Man
   VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P; a Roham/Öngyilkos roham ×2 szorzó forrás-taktikája kiírva a gombon és a bontásban)
 
 picker/                    Taktika- / helyzet-választók (Aktív fül + dobás-popupok; fület nem importálhat)
+  picker.css               A pickerek stílusai
   HelyzetPickerPopup.tsx   Harci helyzet választó popup (Aktív fül + Támadó / CÉ dobás)
   PickerOverlay.tsx        Közös picker overlay-keret (fejléc, bezárás, lista)
   TaktikaFokPicker.tsx     Fokozatos taktika fok-választó

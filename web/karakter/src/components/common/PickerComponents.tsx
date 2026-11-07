@@ -1,3 +1,4 @@
+import './common.css';
 /** Radios row - compact numbered buttons (MF fok, végtagvédettség, rongálódás, stb.) */
 export function FokRadios({ values, current, onSelect }: {
   values: number[];

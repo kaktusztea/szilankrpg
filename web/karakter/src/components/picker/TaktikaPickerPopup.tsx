@@ -6,6 +6,7 @@ import { TaktikaPickerList } from './TaktikaPickerList';
 import { TaktikaFokPicker } from './TaktikaFokPicker';
 import type { HarcTerület } from '../../engine/taktika/taktika-helpers';
 import { taktikaDef } from '../../engine/lookup';
+import './picker.css';
 
 interface Props {
   data: GameData;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
+import './dobas.css';
 
 /** Kompakt (ritka) grid értékei - 3 oszlop, a középső sorban csak a 0. */
 const KOMPAKT: (number | null)[] = [

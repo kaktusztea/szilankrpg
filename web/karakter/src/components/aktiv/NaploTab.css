@@ -205,10 +205,10 @@
 .felsz-warning {
   margin: 6px 0;
   padding: 6px 10px;
-  border: 1px solid var(--warning, #ffb300);
+  border: 1px solid var(--warning);
   border-radius: 6px;
   background: rgba(255, 179, 0, 0.1);
-  color: var(--warning, #ffb300);
+  color: var(--warning);
   font-size: 13px;
 }
 .felsz-table {

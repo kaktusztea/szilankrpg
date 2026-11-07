@@ -23,6 +23,7 @@ import {
   ManoverDobasSor, ManoverKovetelmenyLepes, ManoverFazisChipek, ManoverVegeredmeny, ManoverSzitPicker, ManoverMpPicker, ManoverTePopup,
   type KövetelményDöntés, type Végeredmény,
 } from './ManoverDobasReszek';
+import './dobas.css';
 
 /** Kockák: Végrehajtás = támadó dobás (k20), Ellenpróba = k10 (§066). */
 const VÉGREHAJTÁS_KOCKA = 20;

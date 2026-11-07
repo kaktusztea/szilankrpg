@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
 import type { ReactNode } from 'react';
 import { useEscapeClose } from '../../hooks/useEscapeClose';
+import './common.css';
 
 interface Props {
   children: ReactNode;

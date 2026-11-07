@@ -33,7 +33,7 @@
 }
 
 .kp-info-label-keret { color: #66bb6a; }
-.kp-info-label-elkoltott { color: #ff9800; }
+.kp-info-label-elkoltott { color: var(--warning); }
 .kp-info-label-eredmeny { color: #90caf9; }
 .kp-info-label-primer { color: #b0bec5; }
 

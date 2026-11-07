@@ -94,28 +94,28 @@
 
 /* Game mód: narancs csík bal szélén (háttér), zöld tölti ki jobbról balra */
 .mode-toggle-game {
-  background: #ff9800;
+  background: var(--warning);
 }
 .mode-toggle-game::after {
   content: '';
   position: absolute;
   top: 0; bottom: 0; right: 0;
   width: calc(100% - 5px);
-  background: #4caf50;
+  background: var(--success);
   z-index: -1;
   animation: fill-from-right 600ms ease forwards;
 }
 
 /* Szerk mód: zöld csík jobb szélén (háttér), narancs tölti ki balról jobbra */
 .mode-toggle-szerk {
-  background: #4caf50;
+  background: var(--success);
 }
 .mode-toggle-szerk::after {
   content: '';
   position: absolute;
   top: 0; bottom: 0; left: 0;
   width: calc(100% - 5px);
-  background: #ff9800;
+  background: var(--warning);
   z-index: -1;
   animation: fill-from-left 600ms ease forwards;
 }

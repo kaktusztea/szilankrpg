@@ -1,3 +1,4 @@
+import './dobas.css';
 /** Taktika / Harci helyzet gyors-chipek a dobás-popupokban (Támadó, Célzó): az aktív elemek száma + picker megnyitása. */
 export function TaktikaHelyzetChipek({ taktikaDb, helyzetDb, onTaktika, onHelyzet }: {
   taktikaDb: number; helyzetDb: number; onTaktika: () => void; onHelyzet: () => void;

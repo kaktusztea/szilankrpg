@@ -2,6 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { getExtraFokok, formatFokMods } from '../../engine/taktika/taktika-helpers';
 import { taktikaDef } from '../../engine/lookup';
+import './picker.css';
 
 interface Props {
   fokválasztó: string;

@@ -3,6 +3,7 @@ import type { FortelySummary } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
 import { PopupOverlay } from '../PopupOverlay';
 import { MAX_FREETEXT_NÉV } from '../../ui-constants';
+import './common.css';
 
 /**
  * Generikus fortély felvételi wizard overlay.

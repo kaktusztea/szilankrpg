@@ -1,0 +1,6 @@
+/* components/picker/ - a közös picker komponensek stílusai (refaktor 7. fázis: a HarcScreen.css-ből). */
+/* A letiltott taktika tiltás-oka (toggle-picker): halk warning-árnyalat, a halvány soron is kivehető. */
+.aktiv-picker-item-tiltas { font-size: 11px; color: var(--warning); font-style: italic; }
+.aktiv-extra-fok-dot { color: var(--color-kepzettseg); margin-left: 6px; }
+
+.aktiv-picker-tavharc-header { margin-top: 12px; }

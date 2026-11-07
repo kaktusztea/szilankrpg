@@ -323,7 +323,7 @@
 .kep-proba-kit-flash { animation: kep-proba-kit-villan 0.5s ease-in-out 3; }
 @keyframes kep-proba-kit-villan {
   0%, 100% { border-color: var(--border-input); box-shadow: none; }
-  50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 7px 1px rgba(255, 179, 0, 0.5); }
+  50% { border-color: var(--warning); box-shadow: 0 0 7px 1px rgba(255, 179, 0, 0.5); }
 }
 .kep-proba-neh-tobbi { text-align: center; opacity: 0.7; padding: 2px 0; }
 .kep-proba-neh-list {
@@ -366,7 +366,7 @@
 }
 .kep-proba-dot-green { color: #66bb6a; }
 .kep-proba-dot-yellow { color: #ffca28; }
-.kep-proba-dot-red { color: #e53935; }
+.kep-proba-dot-red { color: var(--color-negative); }
 /* Long-press affordancia jelző a többszörös kiterjesztő fortélyoknál (teljesül/nem váltás). */
 .kep-proba-kit-longpress { float: right; opacity: 0.4; font-size: 12px; }
 
@@ -379,8 +379,8 @@
   gap: 6px;
 }
 .kep-proba-sum-total { font-size: 22px; font-weight: bold; color: var(--text); }
-.kep-proba-vs { color: #888; font-size: 13px; margin: 0 4px; }
-.kep-proba-celszam { color: #e53935; font-size: 22px; font-weight: bold; }
+.kep-proba-vs { color: var(--text-muted); font-size: 13px; margin: 0 4px; }
+.kep-proba-celszam { color: var(--color-negative); font-size: 22px; font-weight: bold; }
 .kep-proba-eh { color: var(--warning); font-size: 13px; }
 .kep-proba-rolls { font-size: 13px; color: var(--text-dim); font-family: monospace; }
 .kep-proba-roll-sel { color: var(--text); font-weight: bold; }
@@ -407,7 +407,7 @@
 
 .kep-proba-tiltott {
   text-align: center;
-  color: #e53935;
+  color: var(--color-negative);
   font-weight: bold;
   font-size: 16px;
   padding: 8px 0;
@@ -432,10 +432,10 @@
   color: var(--text);
   font-family: monospace;
 }
-.kep-proba-result-vs { color: #888; font-size: 0.55em; }
-.kep-proba-result-cel { color: #e53935; }
+.kep-proba-result-vs { color: var(--text-muted); font-size: 0.55em; }
+.kep-proba-result-cel { color: var(--color-negative); }
 .kep-proba-siker { color: var(--success); font-weight: bold; font-size: 20px; }
-.kep-proba-sikertelen { color: #e53935; font-weight: bold; font-size: 20px; }
+.kep-proba-sikertelen { color: var(--color-negative); font-weight: bold; font-size: 20px; }
 
 /* Helyettesítés */
 .kep-proba-strike { text-decoration: line-through; opacity: 0.5; }
@@ -545,7 +545,7 @@
 }
 .kep-proba-szit-item:active { opacity: 0.7; }
 .kep-proba-szit-item-active {
-  border-color: #888;
+  border-color: var(--text-muted);
   background: rgba(136, 136, 136, 0.12);
 }
 .kep-proba-szit-item-active.kep-proba-szit-pos {
@@ -572,19 +572,19 @@
 .kep-proba-szit-neg .kep-proba-szit-val { color: var(--danger, #e55); }
 span.kep-proba-szit-pos { color: var(--success); font-weight: 700; }
 span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
-.kep-proba-szit-old { color: #888; font-weight: 400; }
-.kep-proba-szit-arrow { color: #888; margin: 0 3px; font-size: 11px; }
+.kep-proba-szit-old { color: var(--text-muted); font-weight: 400; }
+.kep-proba-szit-arrow { color: var(--text-muted); margin: 0 3px; font-size: 11px; }
 .kep-proba-szit-new { color: var(--success); font-weight: 700; }
 .kep-proba-szit-enyhitett .kep-proba-szit-desc { color: #ccc; }
 .kep-proba-enyhites-lista { display: block; margin-top: 2px; }
-.kep-proba-enyhites-fortely { display: block; font-size: 12px; color: #aaa; font-weight: 400; }
+.kep-proba-enyhites-fortely { display: block; font-size: 12px; color: var(--text-soft); font-weight: 400; }
 .kep-proba-enyhites-nev { color: var(--success); }
-.kep-proba-eh-bontas { display: block; font-size: 11px; font-weight: 400; margin-top: 4px; color: #888; }
+.kep-proba-eh-bontas { display: block; font-size: 11px; font-weight: 400; margin-top: 4px; color: var(--text-muted); }
 .kep-proba-eh-bontas-sor { display: block; }
 .kep-proba-eh-accordion { margin-top: -10px; max-width: calc(100% - 52px); }
 .kep-proba-eh-accordion-body {
-  margin-top: 2px; font-size: 12px; color: #aaa; text-align: center;
-  border: 1px solid #444; border-radius: 4px;
+  margin-top: 2px; font-size: 12px; color: var(--text-soft); text-align: center;
+  border: 1px solid var(--border); border-radius: 4px;
   padding: 4px 8px; cursor: pointer;
 }
 .kep-proba-rejtett-label { color: #c8c080; }
@@ -614,7 +614,7 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-osszetett-label { color: var(--text-dim); flex: 1; }
 .kep-proba-osszetett-sum { font-weight: bold; color: var(--text); min-width: 24px; text-align: right; }
 .kep-proba-osszetett-ok { color: var(--success); font-weight: bold; }
-.kep-proba-osszetett-x { color: #e53935; font-weight: bold; }
+.kep-proba-osszetett-x { color: var(--color-negative); font-weight: bold; }
 
 /* Vállalás eredmény */
 .kep-proba-vallalás-result {
@@ -625,7 +625,7 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
   text-align: center;
 }
 .kep-proba-vallalás-krit {
-  color: #e53935;
+  color: var(--color-negative);
   font-weight: bold;
 }
 
@@ -655,10 +655,10 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-felsz-warn {
   margin: 4px 0;
   padding: 5px 8px;
-  border: 1px solid var(--warning, #ffb300);
+  border: 1px solid var(--warning);
   border-radius: 5px;
   background: rgba(255, 179, 0, 0.1);
-  color: var(--warning, #ffb300);
+  color: var(--warning);
   font-size: 12px;
   text-align: center;
 }

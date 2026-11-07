@@ -12,6 +12,8 @@
   --accent: #e94560;
   --text: #eee;
   --text-dim: #999;
+  --text-muted: #888;           /* halványabb másodlagos szöveg / keret */
+  --text-soft: #aaa;            /* szekciócím / címke szürke */
   --input-bg: #2a2a4a;
   --success: #4caf50;
   --warning: #ff9800;
@@ -37,15 +39,10 @@
   --color-manover: #b0bec5;
   --color-misztikus: #9fa8da;
   --color-positive: #66bb6a;
+  --color-negative: #e53935;    /* sikertelen / hiányzó / hiba szöveg - a --color-positive párja */
 
   /* Háttér al-kategória (nem entitás-szín) */
   --color-hatter-cat: #7eb8da;
-
-  /* Legacy alias-ok (→ törlendő ha minden átállt) */
-  --color-section-blue: var(--color-kepzettseg);
-  --color-section-purple: var(--color-fortely);
-  --color-section-orange: var(--color-hatter);
-  --color-section-cat: var(--color-hatter-cat);
 }
 
 body {

@@ -86,6 +86,9 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 
 ### UI konvenciók
 - CSS class (prefix: `he-`, `aktiv-`, `naplo-`, stb.) - NEM inline style
+- Szín: `styles/variables.css` változó (új szín csak névvel, pl. `--color-negative`); komponens-csoport stílusa a mappája mellett
+  (`dobas/dobas.css`, `picker/picker.css`, `common/common.css`). A CSS globális: azonos specificitásnál a SORREND dönt -
+  CSS-áthelyezés előtt/után képernyőkép-összevetés (DEVSTATE „Böngészős (Playwright) tesztelés").
 - Popup: `createPortal(document.body)`, Escape bezár, mellé-katt bezár
 - Értékválasztó: kiválasztás = bezárás (nincs OK gomb)
 - Scrollozható overlay popup: `max-height: Xvh; overflow-y: auto` közvetlenül a popup div-en. NEM flex layout a szülőn! (A `.kep-prompt-overlay` flex center összenyomja a flex gyerekeket.)

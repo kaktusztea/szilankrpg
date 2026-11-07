@@ -33,18 +33,18 @@
 .th-card-dim { opacity: 0.8; }
 .th-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
 .th-card-fields { display: flex; gap: 6px; flex-wrap: wrap; }
-.th-mf-error { color: #e53935; }
+.th-mf-error { color: var(--color-negative); }
 
 /* --- Szekciók --- */
-.th-hajithato-title { margin-top: 12px; font-size: 14px; color: #aaa; }
-.th-section h3 { margin: 0 0 8px 0; font-size: 14px; color: #aaa; }
+.th-hajithato-title { margin-top: 12px; font-size: 14px; color: var(--text-soft); }
+.th-section h3 { margin: 0 0 8px 0; font-size: 14px; color: var(--text-soft); }
 
 /* --- Game mód kalkulátor --- */
 .th-main-row { display: flex; gap: 8px; align-items: stretch; }
 
 .th-value-main {
   background: var(--input-bg);
-  border: 2px solid #888;
+  border: 2px solid var(--text-muted);
   border-radius: 6px;
   padding: 12px 16px;
   font-size: 18px;
@@ -53,7 +53,7 @@
 
 .th-ce-ve-box { display: flex; flex-direction: column; justify-content: center; gap: 4px; flex: 1; min-width: 0; }
 .th-ce-ve-clickable { cursor: pointer; }
-.th-szc-box { font-size: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; flex: 0 0 auto; color: #999; }
+.th-szc-box { font-size: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; flex: 0 0 auto; color: var(--text-dim); }
 .th-szc-value { font-size: 18px; }
 
 .th-tav-btn {
@@ -72,7 +72,7 @@
 
 /* --- VÉ szín variánsok --- */
 .th-ve-ok { color: var(--success); }
-.th-ve-bad { color: #e53935; }
+.th-ve-bad { color: var(--color-negative); }
 .th-ve-warn { color: #ffa726; }
 
 /* --- Szorzó picker --- */
@@ -86,7 +86,7 @@
   padding: 8px;
 }
 
-.th-picker-label { font-weight: bold; font-size: 13px; margin-bottom: 4px; color: #aaa; }
+.th-picker-label { font-weight: bold; font-size: 13px; margin-bottom: 4px; color: var(--text-soft); }
 
 .th-picker-item {
   padding: 4px 6px;
@@ -106,25 +106,25 @@
 }
 .th-picker-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
-.th-picker-item:hover { background: #333; }
+.th-picker-item:hover { background: var(--border-light); }
 .th-picker-active { border-color: var(--success) !important; background: rgba(76, 175, 80, 0.1); }
 
 /* --- Lövéskitérés box (a szorzó-grid Szél ereje melletti cellája) --- */
 .th-lk-box { display: flex; flex-direction: column; gap: 6px; border-color: var(--warning); }
-.th-lk-box .th-picker-label { color: color-mix(in srgb, var(--warning) 60%, #999); }
+.th-lk-box .th-picker-label { color: color-mix(in srgb, var(--warning) 60%, var(--text-dim)); }
 .th-lk-kat-btn { width: 100%; font-size: 10px; }
 .th-lk-kat-btn-empty { opacity: 0.7; font-style: italic; }
-.th-lk-hint { color: #888; font-style: italic; }
+.th-lk-hint { color: var(--text-muted); font-style: italic; }
 .th-lk-tav { display: flex; align-items: center; justify-content: center; gap: 8px; }
 .th-lk-tav-btn { width: 28px; height: 28px; }
 .th-lk-tav-value { font-size: 14px; font-family: monospace; min-width: 44px; text-align: center; }
 .th-lk-info { display: flex; flex-direction: column; gap: 2px; font-size: 12px; }
 .th-lk-celszam { color: var(--text); }
 .th-lk-celszam strong { color: var(--accent); font-size: 15px; }
-.th-lk-outofrange { color: #e53935; font-style: italic; }
+.th-lk-outofrange { color: var(--color-negative); font-style: italic; }
 .th-lk-akrobatika { color: var(--text); }
 .th-lk-akrobatika strong { color: var(--text); font-size: 15px; }
-.th-lk-lehetetlen { color: #e53935; font-weight: bold; text-align: center; }
+.th-lk-lehetetlen { color: var(--color-negative); font-weight: bold; text-align: center; }
 .th-lk-actions { display: flex; justify-content: flex-end; margin-top: 2px; }
 .th-lk-kiteres-btn {
   background: var(--input-bg);
@@ -138,9 +138,9 @@
 }
 .th-lk-kiteres-btn:disabled { opacity: 0.4; cursor: default; border-color: var(--border); }
 .th-lk-siker { color: var(--success); font-weight: bold; font-size: 15px; }
-.th-lk-sikertelen { color: #e53935; font-weight: bold; font-size: 15px; }
-.th-lk-vs { color: #888; font-size: 0.55em; }
-.th-lk-celszam-num { color: #e53935; }
+.th-lk-sikertelen { color: var(--color-negative); font-weight: bold; font-size: 15px; }
+.th-lk-vs { color: var(--text-muted); font-size: 0.55em; }
+.th-lk-celszam-num { color: var(--color-negative); }
 
 /* --- Idea popup --- */
 .th-idea-row { display: flex; gap: 6px; }
@@ -162,12 +162,12 @@
   gap: 6px;
 }
 
-.th-cm-label { font-size: 12px; color: #aaa; }
+.th-cm-label { font-size: 12px; color: var(--text-soft); }
 .th-cm-controls { display: flex; align-items: center; gap: 8px; }
 .th-cm-value { font-size: 18px; }
 .th-cm-btn-size { width: 32px; height: 32px; }
-.th-cm-max { font-size: 11px; color: #888; }
-.th-no-fegyver { color: #888; text-align: center; margin-top: 20px; }
+.th-cm-max { font-size: 11px; color: var(--text-muted); }
+.th-no-fegyver { color: var(--text-muted); text-align: center; margin-top: 20px; }
 
 /* --- Távolság picker --- */
 .th-tavolsag-picker {
@@ -208,6 +208,6 @@
   text-align: left;
 }
 
-.th-fegyver-picker-item:hover { background: #333; }
+.th-fegyver-picker-item:hover { background: var(--border-light); }
 .th-fegyver-picker-active { border-color: var(--success); background: rgba(76, 175, 80, 0.12); }
 .th-fegyver-picker-sep { border: none; border-top: 1px solid var(--border); margin: 4px 0; }

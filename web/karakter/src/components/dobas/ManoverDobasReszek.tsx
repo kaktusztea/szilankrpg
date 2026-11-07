@@ -10,6 +10,7 @@ import {
   követelményTeljesül, követelményJelölés, követelményCimke, getFázisFelirat, fázisCselekvő, eredményHatás,
   extraHordozóNév,
 } from '../../engine/harc/manover-dobas-calc';
+import './dobas.css';
 
 export type KövetelményDöntés = 'pending' | 'mind' | 'normál' | 'erős';
 export type Végeredmény = 'folyamatban' | 'sikeres' | 'sikertelen';

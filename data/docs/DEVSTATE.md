@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2-5 és 6b kész; következő: 7 (CSS), 8 (Python), 9 (lezárás)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2-5, 6b és 7 kész; következő: 8 (Python), 9 (lezárás)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -109,7 +109,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **0-5., 6a és 6b fázis kész; a 7-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0-7. fázis kész; a 8-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -155,7 +155,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | **6b. Típusfájlok + session-toggle** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
 | ✅ | **4. Párhuzamos kódutak** | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
 | ✅ | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
-| 8 | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
+| ✅ | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
 | - | **8. Python pipeline** | kicsi | független, bármikor beilleszthető (döntés: benne van) |
 | 9 | **9. Lezárás** | nincs | fázisonként részlegesen (MAP / refactorlog), a végén összesítve |
 
@@ -313,9 +313,16 @@ utána a fordító is tudja a pontos típust. A nagy típusfájlok (`types.ts`, 
 a karakter, a session (harc közbeni állapot) és a játékadat típusai külön fájlba kerülnek. Az **eslint-disable**
 egy kódellenőrző figyelmeztetés kézi elnémítása - mind a 4-et újra kell nézni, indokolt-e még.
 
-**7. CSS** - kis kockázat, ~1 nap
-- [ ] `HarcScreen.css` (1361 sor): fülön kívül is használt szabályok → `styles/common.css`, popup-stílus a komponens mellé.
-- [ ] Ismétlődő szín / térköz / radius → CSS változók. Vizuális előtte / utána screenshot (jóváhagyással).
+**7. CSS** - **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`
+- A közös UI-mappák stílusa a komponens mellé: `dobas/dobas.css` (a `HarcScreen.css` 73 + az `AktivScreen.css` 71 szabálya),
+  `picker/picker.css`, `common/common.css`; minden komponens importálja a mappája CSS-ét. `HarcScreen.css` 1342 → 907 sor.
+- Változók (`styles/variables.css`): 52 beégetett szín → `var(...)` (csak AZONOS értékű változóra), új: `--color-negative`
+  (#e53935), `--text-muted` (#888), `--text-soft` (#aaa); a 4 nem használt `--color-section-*` alias és a halott
+  `var(--warning, #ffb300)` tartalékok törölve.
+- Háló: 37 képernyőkép (minden fül Szerk + Játék, 21 popup), animáció nélkül, betűtípus megvárva → régi = új pixelpontosan,
+  mobil (390×844) ÉS asztali (1280×900), dev ÉS production buildon.
+- Tudatosan maradt: a fülök közös szabályai a fül CSS-ében (pl. `kep-*` sorok a `TulajdonsagokScreen.css`-ben, `aktiv-picker-item-*`
+  az `AktivScreen.css`-ben); térköz / radius változók nem készültek (nincs egységes skála, csak érték-csere lenne).
 
 *Dummies:* a megjelenés szabályai rendet kapnak: ami közös, egy helyre; a gyakran ismétlődő színek nevet kapnak,
 így egy szín cseréje egy sor, nem húsz.
@@ -480,6 +487,11 @@ Mikor érdemes: ha az egységtesztek + regressziós snapshotok (`statusz-proba.r
 Alapszabály: **költséges, ezért előbb MINDIG kérdezz rá** (l. steering `workflow.md` → Böngészős tesztelés). Alapértelmezés: build + unit tesztek; böngésző csak jóváhagyással.
 
 Setup (ha jóváhagyott): telepítés `/tmp/szilank-pw` (pinned playwright) + `~/.cache/ms-playwright`, a repóba NEM kerül. `npm run dev` (localhost:5173), mobil viewport (pl. 390×844) + egy asztali. Teszt karakter: `data/karakter/test_karakter2.json` (Kard, lovag + Tőr, közepes pajzs, Erő 3); a fortélyok / státuszok / taktikák az app UI-ján vehetők fel. A teszt-eset az aktuális munkához igazodik; a lenti minták újrahasználható ellenőrző-receptek (effekt-/dobás-UI jellegű munkához).
+
+Vizuális regresszió (CSS-munkánál kötelező): teljes oldalas képernyőképek a RÉGI és az ÚJ kódon, `animations: 'disabled'`,
+`document.fonts.ready` megvárva (különben a webfont-időzítés szétszórt élsimítás-eltérést ad), majd bitre azonos összevetés.
+A régi kód: ideiglenes `git worktree` + `vite build` + `vite preview` másik porton (a dev szerver CSS-sorrendje eltérhet a
+production bundle-étől - mindkettőn érdemes). Eltérésnél: a kiszámított stílusok (`getComputedStyle`) elemenkénti összevetése.
 
 Ellenőrző-minták (effekt / dobás-UI jellegű változáshoz - bővíthető):
 - **Képzettségpróba, Érzékvesztés** (`statusz-proba.ts`, `KepzettsegProbaPopup.tsx`): `Érzékvesztés: Látás (2)` → Észlelés próba: felirat nélküli érzék chip-sor (Látás ⚠ / Hallás / Szaglás / Tapintás / Ízlelés, egy sorban, kitöltve), alapból Látás kiválasztva → Hátrány−2, a bontásban `Érzékvesztés: Látás (Részleges): -2`; Hallás → nincs Hátrány; újrakattintás (egyik sem) → nincs Hátrány. `(1)` → −1, `(3)` → „automatikus kudarc", nincs Dobás gomb. Etikett / Lexikum próbán NINCS chip-sor. Két alkategória (Látás + Hallás) egyszerre → mindkettő ⚠. Nem-alkategóriás státusz: `Félelem (1)` → Befolyásolás Hátrány, Lexikum nem.

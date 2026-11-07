@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { OverlayPortal } from '../common/OverlayPortal';
+import './picker.css';
 
 interface Props {
   title: string;

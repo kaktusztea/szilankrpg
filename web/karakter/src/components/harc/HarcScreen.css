@@ -160,8 +160,8 @@
 .sfe-line-fizikai { font-size: 26px; }
 .sfe-line-fizikai strong { font-size: 28px; font-family: monospace; font-weight: bold; }
 .sfe-sep { font-size: 26px; color: #666; }
-.sfe-line-energia { font-size: 26px; color: #aaa; }
-.sfe-line-energia strong { font-size: 28px; font-family: monospace; font-weight: bold; color: #aaa; }
+.sfe-line-energia { font-size: 26px; color: var(--text-soft); }
+.sfe-line-energia strong { font-size: 28px; font-family: monospace; font-weight: bold; color: var(--text-soft); }
 
 /* --- VÉ gombok --- */
 .ve-btns { display: flex; gap: 4px; margin-top: 4px; }
@@ -237,7 +237,7 @@
 
 /* --- Speciális jelölések --- */
 .harc-belharc-label { color: #ef9a9a; }
-.harc-belharc-warn { color: #e53935; }
+.harc-belharc-warn { color: var(--color-negative); }
 .harc-tam-clickable { cursor: pointer; }
 .harc-row-dimmed { opacity: 0.4; }
 .ph-bonus { color: var(--color-positive); }
@@ -372,8 +372,8 @@
 }
 
 .ke-history-item:nth-child(1) { color: #ccc; }
-.ke-history-item:nth-child(2) { color: #888; }
-.ke-history-item:nth-child(3) { color: #555; }
+.ke-history-item:nth-child(2) { color: var(--text-muted); }
+.ke-history-item:nth-child(3) { color: var(--border-input); }
 
 /* Sebzés (SP) érték a Támadó dobás mellett: TÉ(SP) - örökli a fakuló színt */
 .te-history-sp {
@@ -398,7 +398,7 @@
   border: 1px solid rgba(76, 175, 80, 0.4);
   border-radius: 6px;
   background: rgba(76, 175, 80, 0.08);
-  color: #4caf50;
+  color: var(--success);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -426,62 +426,6 @@
   box-sizing: border-box;
   max-width: min(420px, 92vw);
   position: relative;
-}
-
-.tamado-elony-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 100%;
-}
-
-.tamado-elony-chip {
-  display: block;
-  width: 100%;
-  padding: 10px 16px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 15px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.tamado-elony-chip.active {
-  border-color: var(--success);
-  background: rgba(76, 175, 80, 0.15);
-  color: var(--success);
-  font-weight: bold;
-}
-
-.tamado-elony-chip.eredeti {
-  border-color: var(--success);
-  border-style: dashed;
-}
-
-/* Kompakt, egy soros Előny/Hátrány picker (E+2 E+1 - H-1 H-2) - helytakarékos a dobás-popupokban. */
-.tamado-elony-kompakt {
-  flex-direction: row;
-  gap: 4px;
-  align-items: stretch;
-}
-.tamado-elony-kompakt .tamado-elony-chip {
-  flex: 1 1 0;
-  min-width: 0;
-  padding: 8px 4px;
-  font-size: 14px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-/* Az Alap középső chip keskeny '-' elválasztó a nyerő/vesztő oldal közt (nem nyúlhat szét). */
-.tamado-elony-kompakt .tamado-elony-alap {
-  flex: 0 0 auto;
-  width: 34px;
-  padding-left: 0;
-  padding-right: 0;
-  color: var(--text-dim);
 }
 
 .tamado-dobas-btn {
@@ -537,196 +481,6 @@
   gap: 2px;
 }
 
-.ve-csokkentes-szorzo-info {
-  margin-top: 8px;
-  font-size: 12px;
-  color: var(--success, #6ab04c);
-  text-align: center;
-}
-
-.ve-csokkentes-detail-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-}
-
-.ve-csokkentes-btn-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.ve-csokkentes-fv-btn {
-  padding: 12px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 15px;
-  cursor: pointer;
-}
-
-/* --- Sebzés bónusz section --- */
-/* --- Statikus bónusz gomb + popup --- */
-.sebzes-stat-btn {
-  width: 100%;
-  padding: 10px;
-  margin-top: 4px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-}
-.sebzes-stat-pos { color: var(--success); }
-.sebzes-stat-neg { color: var(--error); }
-/* Limit vágta bónusz (pl. íj Erőbónusz-limit): vízszintes „plafon" vonal az érték fölött. */
-.sebzes-limit-plafon { border-top: 2px solid currentColor; padding-top: 1px; }
-
-/* Ellenfél páncél választó: kétsoros tömör felirat (fej + jelleg-függő delta). */
-.pancel-valaszto-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  line-height: 1.3;
-}
-.pancel-valaszto-fej { font-weight: 600; }
-/* Választott páncél: bal oszlop 2 sor (🛡️ páncél, 🗡️ jelleg), jobb oszlop a két sort kitöltő delta. */
-.pancel-valaszto-racs {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-auto-rows: auto;
-  column-gap: 14px;
-  align-items: center;
-}
-.pancel-valaszto-sor { grid-column: 1; text-align: left; font-size: 14px; }
-.pancel-valaszto-delta {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 1;
-}
-/* Tompított színek (a teljes gomb már nem piros / zöld, csak a szám). */
-.pancel-valaszto-delta-neg { color: #e57373; }
-.pancel-valaszto-delta-pos { color: #81c784; }
-
-.sebzes-stat-popup {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-width: 240px;
-}
-.sebzes-stat-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.sebzes-stat-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-}
-.sebzes-stat-item > span:first-child {
-  font-weight: bold;
-  font-family: monospace;
-  min-width: 32px;
-}
-.sebzes-stat-source { color: var(--text-dim); }
-.sebzes-stat-manual-label {
-  font-size: 13px;
-  color: var(--text-dim);
-  margin-bottom: 4px;
-}
-.sebzes-stat-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 36px);
-  gap: 6px;
-  justify-content: center;
-}
-.sebzes-stat-circle {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--border-input);
-  border-radius: 50%;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 14px;
-  font-family: monospace;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sebzes-stat-circle.active {
-  border-color: var(--warning);
-  background: rgba(255, 152, 0, 0.2);
-  font-weight: bold;
-}
-.sebzes-stat-circle.active.sebzes-stat-pos { border-color: var(--success); background: rgba(76, 175, 80, 0.2); }
-.sebzes-stat-circle.active.sebzes-stat-neg { border-color: var(--error); background: rgba(244, 67, 54, 0.2); }
-
-/* Kézi bónusz chip grid (Támadó / Célzó / Manőver Végrehajtás) - 3 oszlop, kompakt + kibontható */
-.kezi-bonusz-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 36px);
-  gap: 6px;
-  justify-content: center;
-}
-.kezi-bonusz-ures { width: 36px; height: 36px; }
-.kezi-bonusz-cim { text-align: center; }
-/* Kézi bónusz chip gomb: picit kisebb felirat; 0 értéknél nem félkövér. */
-.kezi-bonusz-btn { font-size: 13px; }
-.kezi-bonusz-btn-nulla { font-weight: 400; }
-/* A 0 cella aktív (bónusz=0) állapotban is semleges: halvány szürke keret + diszkrét kitöltés, nem a warning-narancs. */
-.kezi-bonusz-nulla.active {
-  border-color: var(--border-input);
-  background: rgba(255, 255, 255, 0.18);
-}
-.kezi-bonusz-kibont {
-  align-self: center;
-  width: 48px;
-  padding: 2px 0;
-  border: 1px solid var(--border-input);
-  border-radius: 8px;
-  background: var(--input-bg);
-  color: var(--text-dim);
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* Másodlagos sebzés toggle */
-.sebzes-nincs {
-  width: 100%;
-  padding: 14px 10px;
-  margin-top: 10px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-muted, #9e9e9e);
-  font-size: 14px;
-  text-align: center;
-}
-
-.sebzes-masodlagos-info {
-  width: 100%;
-  padding: 8px 10px;
-  margin-top: 6px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: rgba(244, 67, 54, 0.08);
-  color: #e57373;
-  font-size: 13px;
-  text-align: center;
-}
-
 /* --- Mód-választó + Ellenfél páncél választó (lista popupok) --- */
 .mod-valaszto-btn {
   width: 100%;
@@ -744,27 +498,6 @@
 /* A (másodlagos) jelző külön sorban a Mód gombon belül (mobil: ne lógjon ki) */
 .mod-valaszto-masodlagos {
   display: block;
-}
-/* Taktika / Harci helyzet kapcsoló chipek a Támadó dobás popupban (az Előny/Hátrány picker felett).
-   Ugyanazt a picker-ablakot nyitják, mint az Aktív fül. A label counter = aktív elemek száma. */
-.tamado-aktiv-chips {
-  display: flex;
-  gap: 8px;
-  margin-top: 4px;
-  width: 100%;
-}
-.tamado-aktiv-chip {
-  flex: 1;
-  padding: 8px 8px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-  white-space: nowrap;
 }
 .mod-valaszto-list,
 .pancel-valaszto-list {
@@ -795,129 +528,17 @@
 .mod-valaszto-jelleg { font-weight: 600; }
 .mod-valaszto-tipus { font-size: 12px; color: var(--text-dim); }
 .mod-valaszto-ertekek { font-size: 12px; color: var(--text-dim); }
-
-/* STUDY 3g: kötelező „Ellenfél páncél" választó pulzáló figyelmeztetése, amíg nincs érték. */
-.pancel-valaszto-kell {
-  animation: pancel-kell-pulzal 1.2s ease-in-out infinite;
-}
 @keyframes pancel-kell-pulzal {
   0%, 100% { border-color: var(--border-input); box-shadow: none; }
-  50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.5); }
-}
-
-/* --- „Extrák" gomb + popup (§42 fegyver-extrák info) --- */
-.extrak-btn {
-  width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 13px;
-  cursor: pointer;
-  text-align: center;
-}
-.extrak-btn-pulse {
-  animation: extrak-pulzal 1.4s ease-in-out infinite;
+  50% { border-color: var(--warning); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.5); }
 }
 @keyframes extrak-pulzal {
   0%, 100% { border-color: var(--border-input); box-shadow: none; }
-  50% { border-color: var(--warning, #ffb300); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.45); }
-}
-/* A popup GYÖKÉR (.kep-prompt) szélessége: keskeny, a Sebzés / Támadó popup szélességéhez igazodó doboz -
-   a leírás benne tördelődik (nem nyújtja ki az ablakot). Mobilon legfeljebb a képernyő 90%-a. */
-.extrak-prompt {
-  width: min(90vw, 340px);
-  box-sizing: border-box;
-}
-.extrak-popup {
-  max-height: 70vh;
-  overflow-y: auto;
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-}
-.extrak-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 8px;
-  width: 100%;
-  min-width: 0;
-}
-.extrak-tetel {
-  padding: 8px 10px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: var(--input-bg);
-  min-width: 0;           /* engedi a flex-gyerekek zsugorodását, hogy a szöveg tördelhessen */
-}
-.extrak-tetel.extrak-inaktív { opacity: 0.55; }
-.extrak-tetel-fej {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-}
-.extrak-tetel-nev { font-weight: 600; overflow-wrap: anywhere; }
-.extrak-tetel-hatas {
-  margin-top: 3px;
-  font-family: monospace;
-  font-size: 13px;
-  color: var(--text-dim);
-  overflow-wrap: anywhere;
-}
-/* Aktív extra numerikus módosítója: halvány zöld bónusz / halvány piros büntetés (a hatás-szövegben). */
-.extrak-mod-pos { color: #9ccc9e; font-weight: 600; }
-.extrak-mod-neg { color: #e49a95; font-weight: 600; }
-.extrak-tetel-leiras {
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--text-dim);
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;   /* hosszú szó/összefüggő szöveg is tördelődik */
-}
-.extrak-badge {
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 10px;
-  white-space: nowrap;
+  50% { border-color: var(--warning); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.45); }
 }
 .extrak-badge-aktív { background: rgba(76, 175, 80, 0.2); color: var(--success); }
 .extrak-badge-inaktív { background: rgba(120, 120, 120, 0.2); color: var(--text-dim); }
-.extrak-badge-km { background: rgba(255, 179, 0, 0.18); color: var(--warning, #ffb300); }
-
-/* --- VÉ-csökkentés popup: ellenfél-infó nélküli VÉ-extra figyelmeztetés --- */
-.ve-csokkentes-warning {
-  padding: 8px 10px;
-  margin: 6px 0;
-  border: 1px solid var(--warning, #ffb300);
-  border-radius: 6px;
-  background: rgba(255, 179, 0, 0.1);
-  color: var(--warning, #ffb300);
-  font-size: 13px;
-  text-align: center;
-}
-
-.sebzes-summary {
-  font-size: 13px;
-  color: var(--text-dim);
-  font-family: monospace;
-}
-
-.sebzes-atutes {
-  color: var(--warning, #ffa726);
-  font-weight: 600;
-}
-
-.sebzes-atutes-result {
-  font-size: 13px;
-  color: var(--warning, #ffa726);
-  font-weight: 600;
-  margin-top: 4px;
-}
+.extrak-badge-km { background: rgba(255, 179, 0, 0.18); color: var(--warning); }
 
 /* A Támadó dobás popup wrapper (kep-prompt) max-szélessége: a hosszú megjegyzés-szöveg ne
    feszítse a wrappert korlátlanul (a .kep-prompt alap nem ad max-width-et). */
@@ -1006,62 +627,6 @@
 .dobas-btn-row > .tamado-sebzes-btn,
 .dobas-btn-row > .kep-proba-roll-btn {
   flex: 1;
-}
-
-.manual-dice-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border-input);
-  border-radius: 50%;
-  background: var(--input-bg);
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.manual-dice-btn:hover {
-  background: var(--surface-alt);
-}
-.manual-dice-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-/* --- Manual dice popup --- */
-.manual-dice-popup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-}
-
-.manual-dice-title {
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--text);
-}
-
-.manual-dice-szint {
-  font-size: 13px;
-  color: var(--success);
-  font-weight: bold;
-}
-.manual-dice-alap {
-  font-size: 16px;
-  color: var(--text);
-  font-weight: bold;
-}
-.manual-dice-alap-szint.elony { color: var(--success); }
-.manual-dice-alap-szint.hatrany { color: var(--error); }
-
-.manual-dice-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 36px);
-  gap: 6px;
-  justify-content: center;
 }
 
 /* --- Páncél info popup --- */

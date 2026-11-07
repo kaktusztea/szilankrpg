@@ -31,10 +31,6 @@
 .he-overflow { color: var(--error); }
 .he-hm-info { display: flex; gap: 12px; margin-top: 6px; font-size: 14px; color: var(--text-dim); }
 
-/* --- Harcmodor lista --- */
-.he-harcmodor-list { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 16px; }
-.he-harcmodor-col { display: flex; flex-direction: column; gap: 4px; }
-
 /* --- Fegyver kártya --- */
 .he-fegyver-card {
   background: var(--surface);
@@ -115,16 +111,13 @@
 
 /* --- Idea grid --- */
 .he-idea-grid { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.he-idea-row { display: flex; gap: 6px; }
-.he-idea-cell { width: 36px; height: 36px; font-size: 13px; }
 .he-del-confirm { padding: 6px 15px; }
 
 /* --- MF error --- */
-.he-mf-error { display: block; font-size: 11px; margin-top: 2px; color: #e53935; }
+.he-mf-error { display: block; font-size: 11px; margin-top: 2px; color: var(--color-negative); }
 
 /* --- Inline helpers --- */
 .he-stat-label { color: var(--color-taktika); }
 .he-stat-ml { color: var(--color-taktika); margin-left: 6px; }
-.he-column-layout { display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .he-strike { text-decoration: line-through; text-decoration-thickness: 2px; opacity: 0.5; }
 .he-btn-disabled { opacity: 0.3; }

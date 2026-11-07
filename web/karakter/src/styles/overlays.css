@@ -105,7 +105,7 @@
 .overlay-desc { font-size: 13px; color: var(--text); text-align: center; }
 .overlay-desc-pre { white-space: pre-line; }   /* többsoros hibaüzenet (\n) */
 .overlay-desc-dim { font-size: 13px; color: var(--text-dim); }
-.overlay-filename { font-size: 12px; color: #888; text-align: center; }
+.overlay-filename { font-size: 12px; color: var(--text-muted); text-align: center; }
 .overlay-ok-btn { padding: 6px 15px; }
 .overlay-btn-row { display: flex; gap: 8px; }
 
@@ -119,10 +119,10 @@
 .slot-row-top { font-size: 18px; overflow-wrap: break-word; }
 .slot-tsz { white-space: nowrap; }
 .slot-name-active { font-weight: bold; }
-.slot-empty { color: #888; text-align: center; }
+.slot-empty { color: var(--text-muted); text-align: center; }
 .slot-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .slot-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 10px; width: 38px; height: 38px; font-size: 18px; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
-.slot-chip-del { color: #e53935; font-weight: bold; }
+.slot-chip-del { color: var(--color-negative); font-weight: bold; }
 .slot-actions { display: flex; gap: 8px; margin-top: 8px; }
 .slot-actions-top { margin-top: 0; margin-bottom: 8px; }
 .slot-actions-top .slot-file-btn { padding: 8px 6px 6px; display: flex; flex-direction: column; align-items: center; gap: 3px; }
@@ -137,9 +137,9 @@
 .undo-list { display: flex; flex-direction: column; gap: 4px; max-height: 300px; overflow-y: auto; }
 .undo-entry { padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 13px; background: var(--input-bg); border: 1px solid var(--border); color: var(--text); }
 .undo-entry-selected { background: #3a1a1a; color: #ff6b6b; }
-.undo-entry-target { border-color: #e53935; }
-.undo-apply-btn { margin-top: 8px; padding: 8px; border-radius: 4px; background: #444; color: #fff; border: none; cursor: default; opacity: 0.5; }
-.undo-apply-active { background: #e53935; cursor: pointer; opacity: 1; }
+.undo-entry-target { border-color: var(--color-negative); }
+.undo-apply-btn { margin-top: 8px; padding: 8px; border-radius: 4px; background: var(--border); color: #fff; border: none; cursor: default; opacity: 0.5; }
+.undo-apply-active { background: var(--color-negative); cursor: pointer; opacity: 1; }
 .undo-header { display: flex; align-items: center; justify-content: center; gap: 8px; }
 .undo-reset-btn { background: none; border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); font-size: 14px; padding: 2px 6px; cursor: pointer; line-height: 1; }
 .undo-reset-btn:disabled { opacity: 0.3; cursor: default; }

@@ -63,7 +63,7 @@
 .fort-ingyenes-dot { color: #a5d6a7; font-size: 11px; margin-left: 4px; display: inline-block; transform: translateY(-3px); }
 .fort-csoport-ingyenes { color: #a5d6a7; font-size: 13px; font-weight: normal; margin-left: 6px; }
 .fort-req-met { color: var(--success); }
-.fort-req-unmet { color: #e53935; }
+.fort-req-unmet { color: var(--color-negative); }
 .fort-label-centered { text-align: center; width: 100%; }
 
 /* --- Egyedi fortély popup --- */

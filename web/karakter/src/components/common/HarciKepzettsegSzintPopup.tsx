@@ -4,6 +4,7 @@ import { képzKulcs } from '../../engine/azonosito';
 import { harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
 import { PopupOverlay } from '../PopupOverlay';
 import { SzintGrid } from './PickerComponents';
+import './common.css';
 
 /**
  * Harcmodor-képzettség szint választó (Harcértékek + Távharc). Bezárás választás nélkül: a frissen felvett, még
