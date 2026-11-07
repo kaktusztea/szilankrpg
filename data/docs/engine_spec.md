@@ -1664,11 +1664,9 @@ note: A pool informatív - a KM alkalmazza. Nincs aggregáció (minden státusz/
 
 ### 22.9 Validáció (build-time)
 
-- `validate_hatasok_katalogus()`: mechanika típus id egyediség, kötelező mezők, mód enum
+- `validate_hatasok_katalogus()`: mechanika típus id egyediség, kötelező mezők, mód enum, célpont id → esemenyek
 - `validate_esemenyek()`: célpont id egyediség, kötelező mezők, csoport enum
 - `validate_statuszok()`: referenciális integritás (hatás → mechanika id, cél → célpont id)
-
-- `validate_hatasok_katalogus()`: a hatasok.yaml mechanikái érvényes operátor + célpont id-re mutatnak
 
 note: `státusz:` feltétel prefix: a konstansok.feltétel_prefixek része, de a harc-oldali aktívFeltételek Set
       NEM tölti fel (a státuszok a próba-EH ágon és a vé_veszteség szorzóban hatnak) - jövőbeli.
@@ -3058,7 +3056,7 @@ Előny/Hátrány dobás (k6):
 ```
 
 Webapp implementáció: `TulajdonsagProbaPopup.tsx` (Játék mód, Tulajdonság box kattintás).
-Helperek: a közös `engine/proba/proba-common.ts → probaLehetetlen / probaBiztosSiker / probaSiker` (közvetlenül a popupból).
+Helperek: a közös `engine/proba/proba-common.ts → probaLehetetlen / probaBiztosSiker` (közvetlenül a popupból).
 Dice: `engine/dice.ts → rollElőnyHátrányDie(szint, kocka)` (a `useProbaDobas` hívja, `kocka` = `konstansok.próba.kocka`).
 
 ### 37.2 Képzettségpróba
@@ -4270,6 +4268,8 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
   Build-gate (`validators.proba_alcel_hibak`, fortély + státusz): a prefix illik a célhoz, a név létezik. Fogyasztó:
   `engine/statusz-proba.ts` (képzettség-egyezés). Alkategóriás státusz (`"Érzékvesztés: Látás (2)"`): a gyűjtő `alkategória`
   mezője szűkít - csak a próbához választott érzékre hat (Képzettségpróba popup „Érzék:" sora, 2026-10-18). Így az alcél MINDEN forrásban `prefix:érték` (felszerelés / próba-scope).
+
+### 42.5 (megszűnt - a migráció kész, l. `refactorlog/2026-10-16.md`)
 
 ### 42.6 Jelenlegi kódutak (mód → hol kezelődik MA)
 
