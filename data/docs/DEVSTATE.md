@@ -2,7 +2,7 @@
 
 > Konvenciók, build, irányelvek → **AGENTS.md**
 > Kódtérkép, fájl-felelősségek → **MAP.md**
-> Engine formulák → **engine_spec.md** (§1-§42)
+> Engine formulák → **engine_spec.md** (§1-§43)
 > UI viselkedés → **gui_spec.md**
 
 ## Tartalom
@@ -10,7 +10,6 @@
 - [Nyitott tételek (áttekintés)](#nyitott-tételek-áttekintés)
 - [Egységes effekt-modell: maradék](#egységes-effekt-modell-maradék-) 🚧
 - [Fegyverek: hangolás és utómunka](#fegyverek-hangolás-és-utómunka-) 🚧
-- [Webapp teljes refaktor: terv](#webapp-teljes-refaktor-terv-) 🚧
 - [Good to have](#good-to-have-) 💡
 - [Fontos adatmodell összefoglaló](#fontos-adatmodell-összefoglaló)
 - [Szabálykönyv (md/) konvenciók, tanulságok](#szabálykönyv-md-konvenciók-tanulságok)
@@ -18,22 +17,18 @@
 ---
 ## Nyitott tételek (áttekintés)
 
-- **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
+- **Egységes effekt-modell: maradék** (§42) - böngészős ellenőrzés értékre; tudatos szűkítések figyelése
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 0-8. kész; következő: 9 (lezárás)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
 ## Egységes effekt-modell: maradék 🚧
 
-Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`.
-Az adat-migráció és a közös gyűjtő + 42.3 motor kész (§42.5); a `calcFortelyMods` / `calcTaktikaMods` burkolók. Nyitott:
+Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`. Nyitott:
 
-- ✅ **VÉ-csökkentés fortély-része a gyűjtőn** (2026-11-07, refaktor 4.1): `fortélyVéCsökkentésBővítések` a `gyűjtFortélyEffektek`-ből;
-  regressziós snapshot (`ve-csokkentes.regresszio`) változatlan. A taktika bázis / szorzó taktikánként szűr (forrás-specifikus).
-- Távharci CÉ és `collectTaktikaLetiltások`: **tudatos kivétel**, l. `engine_spec` §42.6 „Gyűjtőn kívüli kódutak".
+- Gyűjtőn kívüli kódutak (VÉ-csökkentés taktika-része, távharci CÉ, `collectTaktikaLetiltások`): tudatos kivételek, l. `engine_spec` §42.6.
 - [ ] **Böngészős ellenőrzés**: a §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) értékre nem voltak végigkattintva
-  (a refaktor Playwright-csomagjai csak a popupok megnyílását / állapotát fedik). Módszer: **Böngészős (Playwright) tesztelés** (Build scriptek alatt); csak jóváhagyással.
+  (a meglévő Playwright-ellenőrzések csak a popupok megnyílását / állapotát fedik). Módszer: **Böngészős (Playwright) tesztelés** (Build scriptek alatt); csak jóváhagyással.
 - Tudatos szűkítések (ma nem tüzelnek, új adatnál felülvizsgálandó): §42.6 lista (távharci feltétel-kiértékelő, extra feltétel-kontextus, szorzó-keverék).
 
 ---
@@ -105,270 +100,6 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 - `fegyverek.yaml` módosítás → az `update_fegyvertablazat.yml` workflow (önteszt-kapu + `md_fegyvertablak_sync.py`) újragenerálja a `md/068_0x` táblákat; lokálisan is futtatható.
 - Változik a `data/tables/fegyverek_v2.json` → `npm run build` (vitest is); az érintett fegyverekre épülő golden tesztek frissítendők.
 - A balansz-önteszt regressziós elvárásait (`teszt.elvart`) egyik javaslat sem érinti.
-
----
-## Webapp teljes refaktor: terv 🚧
-
-Állapot: **0-8. fázis kész; a 9. (lezárás) jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
-`data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
-
-**Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
-hogyan van megírva - hogy könnyebb legyen benne eligazodni, kevesebb helyen kelljen ugyanazt átírni, és kisebb
-legyen az esélye a csendes hibáknak.
-
-### Kiinduló mérés
-
-| Mérőszám | Érték | Mit jelent? |
-|---|---|---|
-| Prod kód / teszt | ~24 100 / ~28 000 sor (92 tesztfájl) | erős a tesztháló, van mire támaszkodni |
-| Szó szerinti duplikáció (jscpd) | 0,35% (10 klón, 114 sor) | a copy-paste már elfogyott (2026-10-17-i refaktor) |
-| `engine/` → `components/` import | 6 | a "motor" a "kijelzőből" vesz kódot - fordított függés |
-| Fül → fül import | 18 irány | a fülek egymás belsejébe nyúlnak |
-| Lineáris `find` entitás-keresés | 150+ (fegyver 76) + 28 kézi kisbetűs névösszevetés | mindenki máshogy keres ugyanabban az adatban |
-| `any` / `as unknown as` | 34 / 10 | itt a típusellenőrző "be van kötve a szeme" |
-| Nem hivatkozott CSS osztály / halott export | 26 / 2 (+4 csak tesztből) | jelöltlista, egyenként ellenőrizendő |
-| Lint | nincs ESLint | csak a `tsc` strict őrzi a kódot |
-
-### Alapelvek (minden lépésre)
-
-- **Viselkedés nem változik.** Előbb regressziós háló (minta: `effekt.regresszio` - a régi kóddal rögzített snapshot),
-  utána az átírás. *Dummies:* előbb lefényképezzük, mit számol ma a program, és az átírás után összevetjük - ha egy
-  szám is eltér, megállunk.
-- **Egy szelet = egy commit**, minden szelet után `npm run build`. *Dummies:* kis lépések, mindegyik után "működik
-  még?" - így egy hiba mindig egy kis változtatásra vezethető vissza.
-- Törlés előbb, mint új absztrakció; új közös helper csak legalább 3 hívóval.
-- Fázisonként `refactorlog` napló + `MAP.md`; böngészős ellenőrzés csak jóváhagyással.
-
-### Ajánlott sorrend
-
-Szempont: (1) ami a többit előkészíti, az előbb; (2) azonos helyzetben a kisebb kockázatú előbb. A fázisszámok
-azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
-
-| # | Lépés | Kockázat | Miért itt? |
-|---|---|---|---|
-| ✅ | 1. Halott kód | kicsi | kész (2026-11-06) |
-| ✅ | Döntési pontok | - | eldöntve (2026-11-06), l. lent |
-| ✅ | 0. Tooling: ESLint + knip | kicsi | kész (2026-11-06) |
-| ✅ | **6a. Típusosság** (`any` 0, `as unknown as` 2 - a session-toggle a 6b-ben) | kicsi | minden későbbi átírásnál a `tsc` a fő háló - előbb vegyük le a vakfoltokat |
-| ✅ | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
-| ✅ | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
-| ✅ | **6b. Típusfájlok + session-toggle** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
-| ✅ | **4. Párhuzamos kódutak** | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
-| ✅ | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
-| ✅ | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
-| ✅ | **8. Python pipeline** | kicsi | kész (2026-11-07) |
-| 9 | **9. Lezárás** | nincs | fázisonként részlegesen (MAP / refactorlog), a végén összesítve |
-
-*Dummies:* mint egy lakásfelújításnál - előbb eldöntjük, mi hova kerül (döntések), megjavítjuk a mérőműszert
-(típusok), kijelöljük a szobákat (rétegek) és felcímkézzük a dobozokat (lookup); a bútorokat (komponensek) csak
-utána rendezzük át, a festés (CSS) pedig a legvégére marad, hogy ne kelljen kétszer festeni.
-
-### Fázisok
-
-**0. Tooling: ESLint + knip** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md` (2. rész)
-`eslint` 10.13.0 + `typescript-eslint` 8.72.0 + `eslint-plugin-react-hooks` 7.1.1 + `knip` 6.42.1 (pontos verzió);
-`web/karakter/eslint.config.js`, `knip.json`; `npm run lint` (eslint + knip), a `build` a HIBA szintű ESLint-jelzésen áll meg.
-Rétegszabály: a beépített `no-restricted-imports` (`engine/**` → `components/**` tiltva; a 6 ismert sértés `effekt.ts` /
-`ketkezes.ts`-ben figyelmeztetésre engedve - a 2. fázis törli a kivételt). Közben: `useHarcComputed` → `calcHarcComputed`
-(`harc-computed.ts`; nem hook volt, csak a neve), 28 nem használt barrel / re-export törölve.
-Alapszint (figyelmeztetés): 50 `no-explicit-any` (37 prod / 13 teszt, → 6a. fázis), 17 `exhaustive-deps` (→ 5. fázis,
-egyenként: szándékos-e), 6 rétegsértés (→ 2. fázis). A 3 szándékosan szűk deps-lista indoklást kapott.
-
-*Dummies:* eddig egyetlen automata ellenőr volt (a `tsc`, ami a típusokat nézi). Most kettő érkezik mellé: az
-**ESLint** a "házirendet" figyeli (pl. "a motor nem nyúlhat a képernyőkhöz"), a **knip** pedig rendszeresen megkeresi
-a senki által nem használt kódot - amit az 1. fázisban kézzel, scripttel kerestünk.
-
-*Háttér (webes fogalmak):* a **devDependency** csak fejlesztéshez kell, a böngészőbe letöltött appba nem kerül bele
-(a bundle nem nő). Az **ESLint** a JavaScript/TypeScript világ szabványos kódellenőrzője: szabályokból áll, mindegyik
-hiba vagy figyelmeztetés szintű. A `react-hooks` szabályai a React hookok két buktatóját fogják meg: hook csak a
-komponens tetején hívható (feltételben nem), és a deps-listából ne maradjon ki változó. A **knip** a teljes import-gráfot
-bejárja (mint az 1. fázis saját scriptje, csak teljesebben), és listázza a nem használt fájlokat, exportokat, függőségeket.
-Csapda: az első futás sok jelzést ad - ezért szűk szabálykészlettel indulunk, és a meglévő sértéseket előbb listázzuk,
-nem egyszerre javítjuk.
-
-**1. Halott kód és üres indirekció** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
-(6 törölt fájl: 5 prod + 1 teszt; 6 halott export, 20 export szűkítve, 18 CSS osztály; +37 / −241 sor, build zöld).
-
-*Dummies:* kidobjuk, amit senki nem használ. A "re-export shim" egy üres fájl, ami csak annyit mond: "az igazi máshol
-van" - felesleges kerülőút. Kevesebb kód = kevesebb, amit olvasni és karbantartani kell.
-
-*Háttér (webes fogalmak):* egy TS/TSX fájl egy **modul**; amit `export`-tal kitesz, azt más fájl `import`-tal
-használhatja (mint egy C-s header publikus függvényei). A **re-export** (`export { X } from '../X'`) csak továbbadja
-egy másik fájl tartalmát - régen azért készült, hogy a régi útvonalon is működjön az import. A **CSS osztály** egy
-névvel ellátott megjelenési szabály (`.extrak-badge { color: … }`), amit a HTML-elem `className`-je hivatkoz; ha
-semmi nem hivatkozza, a böngésző feleslegesen tölti le. Csapda: a név néha futás közben áll össze
-(`className={'extrak-badge-' + állapot}`), ezért a szövegkeresés "nem használtnak" láthatja - ezt kézzel kell kizárni.
-A törlés biztonsági hálója a `tsc` (TypeScript fordító): ha valami mégis használta a törölt exportot, fordítási hibát ad.
-
-**2. Rétegek és modulhatárok** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
-- `engine/` → `components/`: 0; fül → fül import: 60 → 0 (csak az app-keret `overlays/` mutat fület). 38 éles fájl költözött:
-  Harc számoló réteg → `engine/harc/`, próba-logika → `engine/proba/`, taktika / helyzet → `engine/taktika/`; közös UI →
-  `components/common/`, `components/dobas/` (dobás-popup készlet), `components/picker/`; `useHint` → `hooks/`.
-- Őrzés: ESLint `no-restricted-imports` (engine-szabály + fülenkénti regex-szabály + a közös UI-mappákra), negatív teszttel.
-  A rétegszabály leírása: `AGENTS.md` → „Rétegek és modulhatárok".
-- Barrelek: `aktiv/AktivHelpers.ts` törölve, `harcertekek/index.ts` csak a Screen-t exportálja (körkörös import megszűnt).
-
-*Dummies:* a motor (szabályszámítás) ne függjön a műszerfaltól (képernyők). Ma a motor néhány alkatrészt a
-Harc fül fiókjából vesz elő - ha valaki a Harc fület átrendezi, a motor eltörik. Rendrakás: minden közös alkatrész
-a motorba kerül, a fülek csak onnan vesznek, egymás fiókjába nem nyúlnak.
-
-*Háttér (webes fogalmak):* a webapp két fő része: az `engine/` sima TypeScript függvények (bemenet → kimenet,
-nincs képernyő), a `components/` pedig **React komponensek** - függvények, amik az adatból a képernyő egy darabját
-(HTML-t) állítják elő. Ez a klasszikus "üzleti logika vs. megjelenítés" (MVC-szerű) szétválasztás. A jó irány:
-a komponens hívja a motort, fordítva soha - így a motor képernyő nélkül, egységtesztben is futtatható, és egy
-képernyő átírása nem érinti a számítást. A **barrel** (`index.ts`, ami több fájl exportjait egybegyűjti) kényelmes
-"bejárat" egy mappához; ha félig van kitöltve, csak megtéveszt. Az **őrző teszt** egy kis automata, ami minden
-buildnél végigolvassa az `engine/` fájlok `import` sorait, és hibát jelez, ha valaki `components/`-ből importál.
-
-**3. Lookup-réteg a GameData-ra** - **KÉSZ (2026-11-06)**, napló: `refactorlog/2026-11-06.md`
-- `engine/lookup.ts`: 8 kereső (fegyver, távfegyver, taktika, helyzet, státusz: név, kis/nagybetű-független; fortély,
-  képzettség, esemény: id, pontos). Az index tömbönként egyszer épül (`WeakMap`, a `data-loader` érintetlen). 95 lineáris
-  `find` / `some` + 6 `'puszta kéz'` összevetés (`isPusztaKéz`) kiváltva. Teszt: `lookup.test.ts` (+ a táblák kulcs-egyedisége).
-- Maradt (szándékosan): nem kanonikus kulcsú keresések (`feltétel_kulcs`, helyzet-`id`, `startsWith('🔆')`) és a
-  karakter saját listái (`karakter.fegyverek`, `többszörös` elemek).
-
-*Dummies:* ma a program minden alkalommal végiglapozza az egész "fegyverkönyvet", hogy megtaláljon egy fegyvert,
-és mindenhol kicsit másképp (hol kisbetűsítve, hol nem). Helyette egyszer készül egy tárgymutató, és mindenki abból
-keres - gyorsabb, és nem lehet "elnézni" egy nevet.
-
-*Háttér (webes fogalmak):* a játékadat (fegyverek, fortélyok, …) induláskor JSON-fájlokból töltődik be a böngészőbe,
-egy nagy `GameData` objektumba, benne tömbökkel (listákkal). A `tömb.find(x => x.név === keresett)` elejétől
-végéig végignézi a listát (O(n)). A **`Map`** a JavaScript beépített hash-táblája (mint a Python `dict`): kulcs
-alapján azonnal ad értéket. A "kanonikus név" azt jelenti, hogy a kulcsot egyszer, egységesen normalizáljuk
-(pl. kisbetűre), és utána mindenki ugyanazzal a kulccsal keres. A sebességnyereség itt kicsi (pár száz elem), a fő
-haszon az egységesség: ma 28 helyen kézzel `toLowerCase()`-szel hasonlít a kód, és ha egy helyen kimarad, az
-csendes hiba (a fegyver "nem található", hibaüzenet nélkül).
-
-**4. Párhuzamos kódutak egyesítése** - **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`
-- 4.3 `evalRule(rules, id, inputok)` (`engine/reactive.ts`; minden deklarált input kötelező): a `manőverPontKéplet` és a
-  páncél-lefedettség TS-másolata + a `rules-tukor` teszt törölve (→ `eval-rule.test.ts`).
-- 4.1 VÉ-csökkentés fortély-része a közös gyűjtőn (regressziós snapshot); távharci CÉ + `collectTaktikaLetiltások` tudatos kivétel.
-- 4.2 közös `feltételKontextus`: NEM készült - a `buildAktívFeltételek` / `createFeltételEvaluator` már közös, a hívók
-  szándékosan eltérő mélységű kontextust kapnak (teljes csak a `calcHarcComputed`-ban); nem valódi duplikáció.
-- 4.4 kis klónok: jscpd 10 klón / 114 sor → **0**. Új: `engine/proba/proba-forrasok.ts`, `engine/felszereles.ts`
-  (`külsőJelző`, `páncélPajzsNincs`), `dobas/TaktikaHelyzetChipek`, `common/HarciKepzettsegSzintPopup`, `aktiv/KotottFortelySorok`.
-
-*Dummies:* ez a "rejtett duplikáció": a kód nem szó szerint ismétlődik, de ugyanazt a szabályt két helyen, kétféleképp
-számolja ki. Ha a szabály változik, és csak az egyik helyen javítják, a két hely csendben mást mond. Cél: minden
-szabály EGY helyen éljen.
-
-*Háttér (webes fogalmak):* a karakter értékeit (TÉ, VÉ, SP, …) a `data/rules.json` képletei számolják egy saját
-**reactive engine**-nel: mint egy táblázatkezelő, ha egy cella (pl. Erő) változik, a rá épülő cellák automatikusan
-újraszámolódnak. Néhány felugró ablak (popup) viszont nem ezt a motort hívja, hanem a képlet egy kézzel írt TS
-másolatát - ez a "TS-másolat". Ma egy teszt (`rules-tukor`) ellenőrzi, hogy a kettő egyezik; a (b) opció a másolatot
-törölné, és a popup is a motort kérdezné meg. A **feltétel-kontextus** az a "pillanatkép", ami alapján egy feltételes
-hatás eldől (pl. "csak ha Belharcban vagy"): melyik helyzet, taktika, fegyver aktív. Ma ezt 14 helyen külön rakja össze
-a kód - és ahol egy elem kimarad, ott a feltétel csendben hamis lesz.
-
-**5. Nagy, állapotgazdag komponensek szétbontása** - **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`
-- **Popup-állapot: egyetlen összetett állapot** a "showX" kapcsolók helyett (egyszerre legfeljebb egy popup / al-popup;
-  a "két popup egyszerre" állapot elő sem állhat): `HarcScreen` 15 → 3 `useState` (`nyitott: HarcPopup`, típusonként a saját
-  adatával), `ManoverDobasPopup` 14 → 11 (`alPopup`), `TamadoDobasPopup` 10 → 6, `CelzoDobasPopup` 8 → 5.
-- **Undo-burkolók**: `useCallback(gyár(...))` → `useMemo(() => gyár(...))` (azonos szemantika) → `exhaustive-deps` 0
-  figyelmeztetés, a szabály HIBA szinten. Az 1. kör (17 → 6, 2 valódi elavult-closure javítás) l. a napló.
-- **Próba-popupok**: a `váltás(f)` (állapotváltás → dobás-reset) a `useProbaDobas`-ból, mindkét popup azt használja (9 kézi minta).
-- **Tudatosan elmaradt**: a `KepzettsegProbaPopup` 16 `useState`-je egy űrlap független mezői (reducer csak sablonkód
-  lenne); a `manover-dobas-calc` (473 sor) egy témájú, tesztelt pure modul; közös dobás-popup váz (a szöveges duplikáció
-  0, a három popup eltérően viselkedik); `App.tsx` (7 állapot: tab / mód / overlay - rendben).
-- Háló: minden szelet előtt a RÉGI kódon rögzített Playwright-kimenet (harc-popups, manover-flow, dobas-alpopup, proba-flow),
-  az átírás után azonos.
-
-*Dummies:* néhány képernyő-darab "mindenes": egyszerre számol, emlékszik 15 dologra és rajzol. Szétszedjük három
-szerepre: számoló (tesztelhető), emlékező (állapot) és rajzoló (megjelenés). Külön-külön mindegyik érthető.
-
-*Háttér (webes fogalmak):* a React komponens minden változáskor újra lefut, és újrarajzolja a képernyő-darabját.
-Ami két futás között megmarad (pl. "melyik kocka van kiválasztva", "nyitva van-e az al-ablak"), az **állapot**, és a
-`useState()` hívással kérhető - minden `useState` egy külön változó. 15 ilyen egy komponensben azt jelenti, hogy
-15 egymásra ható változót kell fejben tartani. A **hook** (`use…` nevű függvény) egy komponensből kiemelt, újra
-felhasználható állapot + logika csomag. A **`useReducer`** az összetartozó állapotokat egy objektumba gyűjti, és
-csak megnevezett "műveletekkel" engedi módosítani (`{ type: 'kockaVálasztás', … }`) - mint egy kis állapotgép,
-így nem kerülhet ellentmondásos állapotba. A **deps-lista** (`useEffect(…, [a, b])`) mondja meg, mikor fusson újra
-egy mellékhatás; a "szándékosan szűk" lista azt jelenti, hogy tudatosan NEM fut újra minden változásra (különben
-felülírná a játékos kézi választását) - ezt a refaktor nem "javíthatja ki". Mivel a komponens-viselkedésre kevés
-automata teszt van, itt a **Playwright** (programból vezérelt böngésző, ami végigkattintja a felületet) adja a hálót.
-
-**6. Típusosság** - kis kockázat, ~1 nap
-- ✅ **`any`: 0 (2026-11-06)**, a `no-explicit-any` hiba szinten (6a). Közben: `getExtraFokok` típusos + a duplikált
-  fok-extrapoláció helperbe vonva; 3 elavult teszt-fixture javítva (l. refactorlog).
-- ✅ **`as unknown as`: 9 → 2 (2026-11-06)**, `eslint-disable`: mind indokolt (`-- <ok>`). Kiváltva: `fegyver-calc` (közvetlen
-  írás), `feltetel-eval` (`keyof Session` az `in` után), `useUndoWrappedSetters` ×4 (`keyof Tulajdonsagok`), `SessionToggles`
-  hajlékonyság (`String(...)`, `shortcut:` - l. lent).
-- ✅ **6b (2026-11-06): `as unknown as` 0.** Session-toggle séma-változás NÉLKÜL: `SessionBoolKulcs` típus +
-  `fortélyToggleAktív(session, id)` (`engine/utils.ts`); új build-gate `session_toggle_hibak` (`data/gen/validators.py`):
-  minden `session_toggle` fortély id-je boolean mező a `karakter.yaml` session-szekciójában (negatív teszttel).
-  A követelmény `érték` → `number | string`, a 12 számos összehasonlítás `Number(...)` (azonos a futásidejű koercióval).
-- ✅ Közben javítva: a generátor freshness-hash-e a `data/schemas/`-t nem figyelte → csak-séma változásnál a build
-  kihagyta a generálást és a séma-gate-eket (`data/gen/cache.py`).
-- ✅ Típusfájlok (döntés: csak a keveredés): a fegyver / távfegyver alaptípusok + `SP_NINCS` → `data-types.ts` (játékadat),
-  `FegyverResultMód` → `engine/harc/types.ts`; a teljes bontás elmaradt (téma szerint már tagoltak). `eslint-disable`: mind indokolt.
-
-*Dummies:* a TypeScript egy helyesírás-ellenőrző a kódhoz. Az `any` és az `as unknown as` azt mondja neki: "itt ne
-nézd". Ezeket a vakfoltokat szüntetjük meg, hogy az elírásokat a fordító fogja meg, ne a játékos.
-
-*Háttér (webes fogalmak):* a **TypeScript** a JavaScript típusos változata; a böngésző csak JavaScriptet ért, a
-típusok a fordításkor (`tsc`) ellenőrződnek, és utána eltűnnek. Az `any` típus kikapcsolja az ellenőrzést az adott
-értékre; az `as unknown as X` pedig "kényszerített típuskonverzió" (mint C-ben egy `void*` cast): a fordító elhiszi,
-hogy az érték X, akkor is, ha nem az. A **type guard** egy kis függvény, ami futás közben ellenőrzi az alakot, és
-utána a fordító is tudja a pontos típust. A nagy típusfájlok (`types.ts`, `data-types.ts`) bontása csak rendezés:
-a karakter, a session (harc közbeni állapot) és a játékadat típusai külön fájlba kerülnek. Az **eslint-disable**
-egy kódellenőrző figyelmeztetés kézi elnémítása - mind a 4-et újra kell nézni, indokolt-e még.
-
-**7. CSS** - **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`
-- A közös UI-mappák stílusa a komponens mellé: `dobas/dobas.css` (a `HarcScreen.css` 73 + az `AktivScreen.css` 71 szabálya),
-  `picker/picker.css`, `common/common.css`; minden komponens importálja a mappája CSS-ét. `HarcScreen.css` 1342 → 907 sor.
-- Változók (`styles/variables.css`): 52 beégetett szín → `var(...)` (csak AZONOS értékű változóra), új: `--color-negative`
-  (#e53935), `--text-muted` (#888), `--text-soft` (#aaa); a 4 nem használt `--color-section-*` alias és a halott
-  `var(--warning, #ffb300)` tartalékok törölve.
-- Háló: 37 képernyőkép (minden fül Szerk + Játék, 21 popup), animáció nélkül, betűtípus megvárva → régi = új pixelpontosan,
-  mobil (390×844) ÉS asztali (1280×900), dev ÉS production buildon.
-- Tudatosan maradt: a fülök közös szabályai a fül CSS-ében (pl. `kep-*` sorok a `TulajdonsagokScreen.css`-ben, `aktiv-picker-item-*`
-  az `AktivScreen.css`-ben); térköz / radius változók nem készültek (nincs egységes skála, csak érték-csere lenne).
-
-*Dummies:* a megjelenés szabályai rendet kapnak: ami közös, egy helyre; a gyakran ismétlődő színek nevet kapnak,
-így egy szín cseréje egy sor, nem húsz.
-
-*Háttér (webes fogalmak):* a **CSS** írja le, hogyan néz ki egy HTML-elem (szín, méret, elrendezés). A CSS
-szabályok globálisak: egy `HarcScreen.css`-ben definiált osztály a Tulajdonságok fülön is hat, ha ott is ugyanazt
-a nevet használják - ezért egy fül fájljában "elrejtett" közös szabály törékeny (a fül CSS-ének takarításakor
-máshol is eltörhet a kinézet). A **CSS változó** (`--szín-kiemelés: #c33;`, használat: `color: var(--szín-kiemelés)`)
-egy névvel ellátott érték, mint egy konstans a kódban; a sötét/világos téma is ezen keresztül kapcsolható. Mivel a CSS
-hibáit semmilyen teszt nem fogja meg, a háló itt **screenshot-összevetés**: előtte és utána ugyanarról a képernyőről
-kép, és a kettőnek egyeznie kell.
-
-**8. Python pipeline (`data/gen`)** - **KÉSZ (2026-11-07)**
-- ✅ **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`. `hibak_kilep(cím, hibák)` (`gen/common.py`) a 13 ismételt
-  „❌ cím / soronként / SystemExit(1)" minta helyett; a `generate_tables.py` két nagy validátora (`id_hivatkozasi_hibak`,
-  `manover_ref_hibak`) a `gen/hivatkozas.py`-ba, hibalistát ad (208 → 71 sor, valóban csak CLI + sorrend + freshness).
-  Halott kód: duplikált blokk (`aktiv_ful.py`), 3 nem használt import; 2 bezáratlan fájl (`naming_lint`, `schema`).
-- ✅ **Gate-tesztek**: `data/gen/test_gates.py` (stdlib `unittest`, 19 teszt): minden gate valódi adaton zöld ÉS elrontott
-  másolaton bukik. `npm run test:gates`, a `prebuild` futtatja (bukó teszt → a build megáll, ellenőrizve).
-  Háló: `generate_tables.py --force` előtte / utána → a generált JSON-ok bájtra azonosak.
-
-*Dummies:* a YAML → JSON "fordító" kis takarítása. Kicsi (1500 sor), alacsony nyereség.
-
-*Háttér:* a játékadat ember által szerkesztett YAML-ben él (`data/sources/`), a webapp viszont JSON-t tölt be.
-A `generate_tables.py` buildkor átalakítja, közben **build-gate**-ekkel ellenőriz (séma, elnevezés, hivatkozások):
-hibás adatnál a build megáll. A **negatív teszt** azt nézi meg, hogy egy szándékosan elrontott adatra a gate
-tényleg bukik-e - különben egy rossz útvonal miatt csendben "mindent rendben" mondhatna.
-
-**9. Lezárás**
-- [ ] `MAP.md`, `AGENTS.md` (rétegszabály, lookup-konvenció), `engine_spec` §42.6, DEVSTATE sync, összesítő refactorlog
-  (sor- és bundle-mérleg; 2026-10-17-i bundle: 781 kB).
-
-*Dummies / háttér:* a térkép (`MAP.md`: mi melyik fájlban van) és a szabályok (`AGENTS.md`: hogyan írunk kódot)
-frissítése, hogy a következő fejlesztő (ember vagy AI) az új rendet találja, ne a régit. A **bundle** az a pár
-JavaScript-fájl, amit a `vite build` az összes forrásból összecsomagol, és a böngésző letölt; a mérete jó "mérleg":
-a refaktor után nem nőhet érdemben. A **refactorlog** a projekt naplója: mit, miért, milyen csapdába futottunk.
-
-### Döntési pontok
-
-Eldöntve (2026-11-06):
-
-1. **Tooling: ESLint + knip** devDependency-ként → új 0. fázis.
-2. **`rules.json` TS-másolatok: (b) `evalRule`** helper, a másolatok és a tükörteszt törlődnek (4. fázis).
-3. **Mappaszerkezet: fül mellett, közös → `engine/`** (2. fázis).
-4. **8. fázis (Python): benne van.**
-5. Ütemezés: fázisonként külön jóváhagyással (a steering szerint is).
 
 ---
 ## Good to have 💡
@@ -446,16 +177,19 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 ### Reactive Engine
 - 57 szabály `data/rules.json`
 - Maradék TS: Fájdalomtűrés, Kétkezes harc, Fortély mods, Taktika mods
+- Egyetlen szabály TS-ből (reactive kontextus nélkül): `evalRule(data.rules, id, inputok)` - TS-képletmásolat helyett
 - Részletek → engine_spec §41
 
 ### Build pipeline
 - `generate_tables.py`: belépési pont (CLI + freshness + sorrend), a generátorok a `data/gen/` csomagban (Vite buildStart + prebuild)
-  - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful,fegyverek_v2}.py` · `gen/validators.py` (referenciális ellenőrzések) · `gen/naming_lint.py` (YAML naming build-gate) · `gen/kiterjesztes_check.py` (képzettség md ↔ kiterjesztesek.json szinkron build-gate, 2026-10-28)
+  - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés, `hibak_kilep` gate-kimenet) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful,fegyverek_v2}.py` · `gen/validators.py` (referenciális ellenőrzések) · `gen/hivatkozas.py` (id-hivatkozás + manőver-referencia gate) · `gen/naming_lint.py` (YAML naming build-gate) · `gen/kiterjesztes_check.py` (képzettség md ↔ kiterjesztesek.json szinkron build-gate)
+  - **Gate-tesztek**: `gen/test_gates.py` - minden gate valódi adaton zöld ÉS elrontott másolaton bukik (`npm run test:gates`, a prebuild futtatja)
   - **Séma validáció**: minden source entitás kulcshalmazát a `schemas/*.yaml`-hoz méri (ismeretlen kulcs / hiányzó kötelező mező → build hiba). Kötelezőség a séma megjegyzéseiből: `# opcionális` → elhagyható, `# generált` → a generátor adja hozzá
-  - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
+  - Hash-alapú skip: ha a YAML source-ok, a sémák (`schemas/`) és a generátor kód nem változtak, automatikusan kihagy (`tables/.sources_hash`)
   - Marker fájl: `tables/.generated_marker` - Vite plugin ezt nézi freshness check-hez
   - `--force` flag: kényszerített újragenerálás (`python3 generate_tables.py --force`)
-- `vitest run`: unit tesztek (build előtt fut)
+- `npm run build` = prebuild (generálás + gate-tesztek) → `vitest run` → `tsc --noEmit` → `eslint --quiet` (csak hiba) → `vite build`
+- `npm run lint`: ESLint (rétegszabály, react-hooks, no-explicit-any) + knip (nem használt fájl / export / függőség)
 - Deploy: GitHub Pages, auto-deploy push master
 - Metadata: `ÉV.ÉVNAPJA.napibuild` - a `public/metadata.json` és a bundle `__APP_VERSION__` ugyanabból a fájlból jön (egy build = egy verzió)
 
@@ -473,7 +207,9 @@ A natív Linux fájlrendszeren (`/repo/github/szilank.code/`) a teljes build ~30
 
 | Script | Mikor használd | Idő |
 |--------|---------------|-----|
-| `npm run build` | **Mindig ezt használd** - teljes: test + typecheck + bundle | ~30s |
+| `npm run build` | **Mindig ezt használd** - teljes: generálás + gate-tesztek + vitest + typecheck + eslint + bundle | ~30s |
+| `npm run lint` | Kódváltozás után: ESLint (figyelmeztetésekkel) + knip | ~15s |
+| `npm run test:gates` | Csak a `data/gen` build-gate tesztek | ~2s |
 | `npm run build:fast` | Elérhető, de nem használjuk (tesztek nélkül) | ~8s |
 | `npm run build:changed` | Elérhető, de nem használjuk (git-based teszt szűrés) | ~10s |
 | `npm run test` | Csak tesztek futtatása (build nélkül) | ~5s |
@@ -482,7 +218,7 @@ A natív Linux fájlrendszeren (`/repo/github/szilank.code/`) a teljes build ~30
 
 Inkrementális működés:
 - **TypeScript**: `incremental: true` + `tsBuildInfoFile` → változatlan fájlok skip
-- **generate_tables.py**: MD5 hash az összes YAML source + a teljes generátor kód (`generate_tables.py` + `gen/*.py`) alapján
+- **generate_tables.py**: MD5 hash az összes YAML source + séma + a teljes generátor kód (`generate_tables.py` + `gen/*.py`) alapján
 - **Vite plugin**: `tables/.generated_marker` mtime vs a source YAML-ok ÉS a generátor `.py` fájlok mtime-ja
 - **vitest --changed**: git diff-ből határozza meg az érintett teszteket
 
@@ -506,7 +242,7 @@ Ellenőrző-minták (effekt / dobás-UI jellegű változáshoz - bővíthető):
 - **Támadó dobás popup** (Harc fül, `combat-roll-info.ts`): Visszafogott taktika → a Sebzésnél Hátrány−2 forrással; Orgyilkos fortély + Orvtámadás helyzet → Sebzés Előny; Helyhez kötve fejlesztése (2) + Helyhez kötve helyzet → TÉ dobás enyhít; Erő-követelmény (nehéz fegyver, alacsony Erő) → TÉ Hátrány-1 „(Erő hiány)". Az E/H címke és a kocka-picker előre beállított szintje egyezik a forrás-összeggel (clamp ±2). Kézi „Statikus bónuszok" gomb → a végösszegbe és a részlet-sorba kerül. Extrák gomb elérhető (minden dobásnál).
 - **Sebzés popup „Statikus bónuszok"** (`fegyverSpBónuszok` + `spBónuszok`): Erőbónusz (min(Erő, mód Erőlimit)); „Mesterfegyver - <fegyver>" csak a megjelölt fegyverrel a kézben; Pajzshasználat csak pajzzsal; Roham / (Lég)Lovas roham taktika SP-je; Támadás erőből magas fok SP-je „Támadás erőből (N)" felirattal; Orgyilkos SP Orvtámadásban. Mód-váltás másodlagosra → az Erőbónusz a másodlagos mód Erőlimitje szerint. **Kulcs-ellenőrzés: az összesített SP (alap + bónuszok) = a fegyvertábla SP-je** (+ taktika SP), a bontás csak szétosztja. Kétkezes harcnál a jobb kéz MF-je.
 - **CÉ dobás popup** (Távharc): Alkalmatlan tárgyak / fegyver hajítása + a megfelelő helyzet → CÉ / Sebzés enyhít; Kitartott célzás megjegyzés csak illő harcmodorú távfegyverrel. Kézi „Statikus bónuszok" gomb mint a Támadó dobásnál.
-- **Manőver dobás popup** (Aktív fül): a TÉ E/H szint a taktika / helyzet / státusz / fortély hatásokból, mint a Támadó popupban. Fázis-tudatos fejléc-chip: V/E fázisban `TÉ: <nyers> (+<Végrehajtás-bónusz>)` bontva, Megakasztás (M) fázisban és passzív módban `VÉ`; a bontott fejléc-TÉ + a bónusz = a Végrehajtás-fázis TÉ-chip értéke. Kézi „Statikus bónuszok" a Végrehajtás fázisban; Extrák gomb a manőver-módhoz igazított kontextussal.
+- **Manőver dobás popup** (Harc fül ⚔️ / Próba-hub, `dobas/ManoverDobasPopup.tsx`): a TÉ E/H szint a taktika / helyzet / státusz / fortély hatásokból, mint a Támadó popupban. Fázis-tudatos fejléc-chip: V/E fázisban `TÉ: <nyers> (+<Végrehajtás-bónusz>)` bontva, Megakasztás (M) fázisban és passzív módban `VÉ`; a bontott fejléc-TÉ + a bónusz = a Végrehajtás-fázis TÉ-chip értéke. Kézi „Statikus bónuszok" a Végrehajtás fázisban; Extrák gomb a manőver-módhoz igazított kontextussal.
 - **VÉ plafon**: Teljes Védekezés + Védő (3) → a fejléc VÉ-eltolása +10-re szorul (a taktika-gyűjtő „Taktika VÉ-plafon" korrekciós sora).
 
 ---

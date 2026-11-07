@@ -386,6 +386,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | Fájl | Tartalom | Mikor olvasd |
 |------|----------|-------------|
 | `ÉÉÉÉ-HH-NN.md` | Egy nagy refaktor: fázisok, döntések, csapdák, újrahasznosítható detektáló scriptek | Refaktor, halott kód keresés, data layer átalakítás ELŐTT |
+| `2026-11-06.md` | A teljes webapp-refaktor (0-9. fázis, 2026-11-06 - 11-07): rétegek, lookup, effekt-gyűjtő, popup-állapot, CSS, Python gate-tesztek - döntések, kihagyások indokkal, csapdák, mérleg | Nagyobb szerkezeti módosítás ELŐTT |
 
 ## Engine Spec szekciók (gyorshivatkozás)
 
