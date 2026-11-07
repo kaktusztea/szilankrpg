@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2, 3, 6b és 4 kész; következő: 5, 7 (+8 Python)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2-5 és 6b kész; következő: 7 (CSS), 8 (Python), 9 (lezárás)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -109,7 +109,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **0-4., 6a és 6b fázis kész; az 5., 7-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0-5., 6a és 6b fázis kész; a 7-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -154,7 +154,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
 | ✅ | **6b. Típusfájlok + session-toggle** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
 | ✅ | **4. Párhuzamos kódutak** | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
-| 7 | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
+| ✅ | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
 | 8 | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
 | - | **8. Python pipeline** | kicsi | független, bármikor beilleszthető (döntés: benne van) |
 | 9 | **9. Lezárás** | nincs | fázisonként részlegesen (MAP / refactorlog), a végén összesítve |
@@ -260,16 +260,18 @@ törölné, és a popup is a motort kérdezné meg. A **feltétel-kontextus** az
 hatás eldől (pl. "csak ha Belharcban vagy"): melyik helyzet, taktika, fegyver aktív. Ma ezt 14 helyen külön rakja össze
 a kód - és ahol egy elem kimarad, ott a feltétel csendben hamis lesz.
 
-**5. Nagy, állapotgazdag komponensek szétbontása** - közepes-magas kockázat, ~3 nap
-- [ ] `ManoverDobasPopup` (458 sor, 14 `useState`) + `manover-dobas-calc` (482), `KepzettsegProbaPopup` (382, 16),
-  `HarcScreen` (333, 15), `SebzesPopup` / `TamadoDobasPopup` / `CelzoDobasPopup` közös váz, `App` + `AppOverlays`.
-- [ ] Minta (2026-10-17 próba-modul): tiszta `*-calc.ts` + `use*` állapot-hook (useReducer) + `*Reszek.tsx` megjelenítő részek.
-- ✅ `exhaustive-deps` 1. kör (2026-11-06): 17 → 6. Stabil setter → deps; szándékosan szűk lista → indokolt
-  `eslint-disable … -- <ok>`; 2 valódi javítás (`useVeCsokkenes` elavult `session` az undo-ban, `usePopupState` elavult
-  `onEscapeKepz`). Playwright: `refactorlog/2026-11-06.md`.
-- [ ] `exhaustive-deps` maradék 6: `useCallback(gyár(...), [])` undo-burkolók (`useKarakterState` 45-47, `useUndoWrappedSetters`
-  115-133) - átírás inline / `useMemo`-ra; undo-sorozat Playwright-tal ellenőrizendő.
-- [ ] A szándékosan szűk deps-listák (`useSérültStátusz`, `useAkadalyStatusz`, invalidáló hookok, `useUrlImport`) NEM javítandók.
+**5. Nagy, állapotgazdag komponensek szétbontása** - **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`
+- **Popup-állapot: egyetlen összetett állapot** a "showX" kapcsolók helyett (egyszerre legfeljebb egy popup / al-popup;
+  a "két popup egyszerre" állapot elő sem állhat): `HarcScreen` 15 → 3 `useState` (`nyitott: HarcPopup`, típusonként a saját
+  adatával), `ManoverDobasPopup` 14 → 11 (`alPopup`), `TamadoDobasPopup` 10 → 6, `CelzoDobasPopup` 8 → 5.
+- **Undo-burkolók**: `useCallback(gyár(...))` → `useMemo(() => gyár(...))` (azonos szemantika) → `exhaustive-deps` 0
+  figyelmeztetés, a szabály HIBA szinten. Az 1. kör (17 → 6, 2 valódi elavult-closure javítás) l. a napló.
+- **Próba-popupok**: a `váltás(f)` (állapotváltás → dobás-reset) a `useProbaDobas`-ból, mindkét popup azt használja (9 kézi minta).
+- **Tudatosan elmaradt**: a `KepzettsegProbaPopup` 16 `useState`-je egy űrlap független mezői (reducer csak sablonkód
+  lenne); a `manover-dobas-calc` (473 sor) egy témájú, tesztelt pure modul; közös dobás-popup váz (a szöveges duplikáció
+  0, a három popup eltérően viselkedik); `App.tsx` (7 állapot: tab / mód / overlay - rendben).
+- Háló: minden szelet előtt a RÉGI kódon rögzített Playwright-kimenet (harc-popups, manover-flow, dobas-alpopup, proba-flow),
+  az átírás után azonos.
 
 *Dummies:* néhány képernyő-darab "mindenes": egyszerre számol, emlékszik 15 dologra és rajzol. Szétszedjük három
 szerepre: számoló (tesztelhető), emlékező (állapot) és rajzoló (megjelenés). Külön-külön mindegyik érthető.

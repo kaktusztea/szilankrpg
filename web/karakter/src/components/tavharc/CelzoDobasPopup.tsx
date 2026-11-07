@@ -77,12 +77,11 @@ interface CéEredmény {
  *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
  */
 export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBónusz, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, data, karakter, session, setSession, pushUndo, onClose }: Props) {
+  // Egyszerre legfeljebb egy al-popup (a popup korai return-nel vált rájuk).
+  const [alPopup, setAlPopup] = useState<'sebzés' | 'taktika' | 'helyzet' | null>(null);
   const [szint, setSzint] = useState(defaultSzint);
   const [result, setResult] = useState<CéEredmény | null>(null);
   const [kéziBónusz, setKéziBónusz] = useState(0);
-  const [showSebzés, setShowSebzés] = useState(false);
-  const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
-  const [showHelyzetPicker, setShowHelyzetPicker] = useState(false);
 
   // Dobás ELŐTT az E/H szint követi az aktív hatásokat (a chipekkel kapcsolt taktika / helyzet azonnal látszik),
   // dobás után a felhasználó választását nem írjuk felül - mint a Támadó dobás popupban.
@@ -105,20 +104,20 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
   const siker = result ? result.eredmény >= vé : false;
   const sebzésElőny = sebzésElőnyK20ból(k20Érték);
 
-  if (showTaktikaPicker) {
+  if (alPopup === 'taktika') {
     return (
       <TaktikaPickerPopup data={data} karakter={karakter} session={session} terület="távharc"
-        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowTaktikaPicker(false)} />
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setAlPopup(null)} />
     );
   }
-  if (showHelyzetPicker) {
+  if (alPopup === 'helyzet') {
     return (
       <HelyzetPickerPopup data={data} karakter={karakter} session={session} terület="távharc"
-        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowHelyzetPicker(false)} />
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setAlPopup(null)} />
     );
   }
 
-  if (showSebzés) {
+  if (alPopup === 'sebzés') {
     return (
       <SebzesPopup
         sp={sp}
@@ -135,6 +134,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
         extraDefs={extraDefs}
         extraKontextus={extraKontextus}
         onClose={onClose}
+        onEscape={() => setAlPopup(null)}
       />
     );
   }
@@ -163,7 +163,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
               </div>
             )}
             <TaktikaHelyzetChipek taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
-              onTaktika={() => setShowTaktikaPicker(true)} onHelyzet={() => setShowHelyzetPicker(true)} />
+              onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')} />
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
             {extraKontextus && (
@@ -193,7 +193,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
               {siker ? 'Találat' : 'Nem talált'}
             </div>
             {siker && (
-              <button className="tamado-sebzes-btn" onClick={() => setShowSebzés(true)}>
+              <button className="tamado-sebzes-btn" onClick={() => setAlPopup('sebzés')}>
                 Sebzés
                 {sebzésElőny > 0 && <span className="tamado-sebzes-btn-hint">Előny+{sebzésElőny}</span>}
               </button>

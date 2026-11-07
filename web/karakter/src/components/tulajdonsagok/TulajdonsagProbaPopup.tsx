@@ -45,8 +45,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const biztosSiker = vanCélszám && !lehetetlen && probaBiztosSiker(érték, nehézség);
   const ehCímke = előnyHátrányLabel(ehSzint);
   const label = tulLabel(tulajdonságNév);
-  /** Állapotváltás az Extrákban / célszámban → a korábbi dobás érvénytelen. */
-  const váltás = (f: () => void) => () => { f(); d.reset(); };
+  const { váltás } = d;
 
   return (
     <PopupOverlay onClose={onClose}>
@@ -98,7 +97,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             <div className="kep-proba-osszetett-row">
               {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
                 <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
-                  onClick={() => { setÖsszetettDb(összetettDb === n ? 0 : n); d.reset(); }}>+{n}M</ExtraGomb>
+                  onClick={váltás(() => setÖsszetettDb(összetettDb === n ? 0 : n))}>+{n}M</ExtraGomb>
               ))}
             </div>
           </div>

@@ -55,6 +55,8 @@ interface Props {
   /** Fegyver Átütés értéke (informatív kijelzés, ha > 0) */
   átütés?: number;
   onClose: (spEredmény?: number) => void;
+  /** ESC sebzésdobás ELŐTT: csak ez a popup zárul (vissza a hívó dobáshoz). Eredmény után (és nélküle) az ESC = onClose. */
+  onEscape?: () => void;
 }
 
 interface SebzésEredmény {
@@ -65,7 +67,7 @@ interface SebzésEredmény {
 }
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + ellenfél páncél + k20 roll + info. */
-export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok: spBónuszokAlap, megjegyzések, kapcsolhatóSpBónusz, átütés, onClose }: Props) {
+export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok: spBónuszokAlap, megjegyzések, kapcsolhatóSpBónusz, átütés, onClose, onEscape }: Props) {
   // Raw (unclamped) combined value - includes TÉ k20 bonus + active effects.
   // A másodlagos sebzéstípus −1 E/H-ját a hívó (TamadoDobasPopup) már beépítette a defaultElőny-be.
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
@@ -83,7 +85,7 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
   // Korai kilépés (a hook-ok UTÁN, Rules of Hooks): a -99 SOHA nem kerül a delta/roll számításba.
   if (sp === SP_NINCS) {
     return (
-      <PopupOverlay onClose={() => onClose()}>
+      <PopupOverlay onClose={() => onClose()} onEscape={onEscape}>
         <div className="tamado-dobas-popup">
           <div className="ke-dobas-header">Sebzés</div>
           <div className="sebzes-nincs">Ez a fegyver nem sebez</div>
@@ -136,7 +138,7 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
   }
 
   return (
-    <PopupOverlay onClose={() => onClose(eredmény?.végső)}>
+    <PopupOverlay onClose={() => onClose(eredmény?.végső)} onEscape={eredmény ? undefined : onEscape}>
       <div className="tamado-dobas-popup">
         {eredmény && <button className="sebzes-reset-btn" onClick={() => setEredmény(null)}>⟲</button>}
         <div className="ke-dobas-header">Sebzés</div>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import type { Karakter, Session } from '../engine/types';
 import { useGameDataLoader } from './useGameDataLoader';
 import { useAutoSave } from './useAutoSave';
@@ -42,9 +42,9 @@ export function useKarakterState() {
       setKarakter(prev => prev ? { ...prev, [field]: typeof val === 'function' ? (val as Function)(prev[field]) : val } : prev);
     }, []);
 
-  const setTulajdonságok = useCallback(setField('tulajdonságok'), [setField]);
-  const setKépzettségek = useCallback(setField('képzettségek'), [setField]);
-  const setFortélyok = useCallback(setField('fortélyok'), [setField]);
+  const setTulajdonságok = useMemo(() => setField('tulajdonságok'), [setField]);
+  const setKépzettségek = useMemo(() => setField('képzettségek'), [setField]);
+  const setFortélyok = useMemo(() => setField('fortélyok'), [setField]);
   const setSession = useCallback((val: Session | ((prev: Session) => Session)) => {
     setKarakter(prev => prev ? { ...prev, session: typeof val === 'function' ? val(prev.session) : val } : prev);
   }, []);

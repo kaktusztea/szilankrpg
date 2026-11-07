@@ -29,25 +29,23 @@ import './HarcScreen.css';
 import type { FegyverResult } from '../../engine/harc/types';
 import { lookupFegyver } from '../../engine/lookup';
 
+type TámInfo = { név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_fortély: number };
+type ManőverDef = HarcBaseProps['data']['manoverek'][number];
+/** A Harc fül popupjai (egyszerre egy). */
+type HarcPopup =
+  | { t: 'ké'; eredmény: number } | { t: 'támadó' } | { t: 'fárasztás' } | { t: 'teljesVédekezés' }
+  | { t: 'véHistory' } | { t: 'véReset' } | { t: 'támInfo'; info: TámInfo } | { t: 'fegyverInfo'; result: FegyverResult }
+  | { t: 'fegyverfogás' } | { t: 'páncélInfo' }
+  | { t: 'manőverMód' } | { t: 'manőverLista'; mód: 'aktív' | 'passzív' } | { t: 'manőver'; manőver: ManőverDef; mód: 'aktív' | 'passzív' };
+
 /** A Fájdalomtűrés képzettség id-je (ÉP-tábla → Tulajdonságok fül ugrás; a KepzettsegRow `data-kep` = kulcs). */
 const FÁJDALOMTŰRÉS_ID = 'fájdalomtűrés';
 
 export function HarcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, onNavigate, gameMode, pendingDobás, onPendingDobásConsumed }: HarcBaseProps) {
-  const [showVéHistory, setShowVéHistory] = useState(false);
-  const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
-  const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_fortély: number } | null>(null);
-  const [fegyverInfo, setFegyverInfo] = useState<FegyverResult | null>(null);
+  // Legfeljebb EGY Harc-popup nyitott (a típus a saját adatát viszi) - a „két popup egyszerre" állapot elő sem állhat.
+  const [nyitott, setNyitott] = useState<HarcPopup | null>(null);
+  const bezár = useCallback(() => setNyitott(null), []);
   const [sebCount, setSebCount] = useState(0);
-  const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
-  const [showTamadoDobas, setShowTamadoDobas] = useState(false);
-  const [showFárasztásVéCsökkentés, setShowFárasztásVéCsökkentés] = useState(false);
-  const [showTeljesVédekezésInfo, setShowTeljesVédekezésInfo] = useState(false);
-  const [showFegyverfogás, setShowFegyverfogás] = useState(false);
-  const [showPancelInfo, setShowPancelInfo] = useState(false);
-  // Manőver state
-  const [manoverPicker, setManoverPicker] = useState<'closed' | 'mód' | 'lista'>('closed');
-  const [manoverMód, setManoverMód] = useState<'aktív' | 'passzív'>('aktív');
-  const [popupManőver, setPopupManőver] = useState<typeof data.manoverek[number] | null>(null);
 
   // Fejléc-harcértékek: közös számítás (az NJK switcher is ezt mutatja) - harc-fejlec-calc.ts
   const { hc, téLevonás, ctx, aktívTÉ, aktívVÉ } = harcFejlécÉrtékek(data, karakter, session, sebCount);
@@ -57,11 +55,11 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
   // KÉ dobás handler
   const handleKéClick = useCallback(() => {
-    setKéDobásEredmény(hc.ké + rollK20());
+    setNyitott({ t: 'ké', eredmény: hc.ké + rollK20() });
   }, [hc.ké]);
 
   const handleKéDobásClose = useCallback((eredmény: number) => {
-    setKéDobásEredmény(null);
+    setNyitott(null);
     setSession(prev => ({
       ...prev,
       ké_dobások: pushDobás(prev.ké_dobások ?? [], eredmény),
@@ -69,7 +67,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   }, [setSession]);
 
   const handleTamadoClose = useCallback((eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => {
-    setShowTamadoDobas(false);
+    setNyitott(null);
     if (eredmény !== null) {
       setSession(prev => ({
         ...prev,
@@ -77,13 +75,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
       }));
     }
   }, [setSession]);
-
-  // Popup close handler
-  function closePopups() {
-    setShowVéResetConfirm(false);
-    setShowVéHistory(false);
-    setTámInfo(null);
-  }
 
   useSérültStátusz(sebCount, hc.oszlopMéret, session.aktív_státuszok, setSession);
 
@@ -95,15 +86,13 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   // különben rendes Támadó dobás. EGY igazságforrás (a pending effect és az onTéClick is ezt hívja).
   const openTámadóDobás = useCallback(() => {
     if (aktívTÉ == null) return;
-    if (teljesVédekezésDef) setShowTeljesVédekezésInfo(true);
-    else if (fárasztásDef) setShowFárasztásVéCsökkentés(true);
-    else setShowTamadoDobas(true);
+    setNyitott({ t: teljesVédekezésDef ? 'teljesVédekezés' : fárasztásDef ? 'fárasztás' : 'támadó' });
   }, [aktívTÉ, teljesVédekezésDef, fárasztásDef]);
 
   // ProbaHub 🗡️: a Harc fülre váltás után itt nyílik meg a Támadó dobás / Manőver (a pendinget rögtön consume-oljuk).
   useEffect(() => {
     if (pendingDobás === 'támadó') openTámadóDobás();
-    else if (pendingDobás === 'manőver') setManoverPicker('mód');
+    else if (pendingDobás === 'manőver') setNyitott({ t: 'manőverMód' });
     else return;
     onPendingDobásConsumed?.();
   }, [pendingDobás, openTámadóDobás, onPendingDobásConsumed]);
@@ -122,6 +111,9 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   }, [onNavigate]);
 
   const hasFt = karakter.képzettségek.some(kp => kp.id === FÁJDALOMTŰRÉS_ID);
+  // A kézben lévő fegyver definíciója (Támadó / Manőver popup: extrák + dobás-hatások); a dobás-info csak nyitott popupnál számol.
+  const aktívFegyverDef = ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név) : undefined;
+  const dobásInfo = () => collectDobásInfo(session, karakter, data, aktívFegyverDef, hc.feltételTeljesül);
 
   return (
     <div className="screen harc-screen">
@@ -129,7 +121,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
       <HarcFegyverSection
         data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
-        onShowFegyverfogás={() => setShowFegyverfogás(true)}
+        onShowFegyverfogás={() => setNyitott({ t: 'fegyverfogás' })}
         páncélMGT={hc.páncélMGT} showHint={showHint}
       />
 
@@ -149,12 +141,12 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         pushUndo={pushUndo}
         konstansok={data.konstansok}
         onVéChange={changeVé}
-        onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
-        onVéResetClick={() => setShowVéResetConfirm(true)}
+        onVéLabelTap={() => { if (session.vé_csökkenés > 0) setNyitott({ t: 'véHistory' }); }}
+        onVéResetClick={() => setNyitott({ t: 'véReset' })}
         onKéClick={handleKéClick}
         onTéClick={openTámadóDobás}
-        onSféClick={() => setShowPancelInfo(true)}
-        onManőverClick={() => setManoverPicker('mód')}
+        onSféClick={() => setNyitott({ t: 'páncélInfo' })}
+        onManőverClick={() => setNyitott({ t: 'manőverMód' })}
         gameMode={gameMode}
       />
 
@@ -173,8 +165,8 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         téLevonás={téLevonás}
         belharciAktív={hc.belharciAktív}
         véFlash={véFlash}
-        onTámInfoClick={setTámInfo}
-        onFegyverInfoClick={setFegyverInfo}
+        onTámInfoClick={info => setNyitott({ t: 'támInfo', info })}
+        onFegyverInfoClick={result => setNyitott({ t: 'fegyverInfo', result })}
       />
 
       <div className="harc-section">
@@ -209,26 +201,26 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
       <HarcPopups
         session={session}
-        showVéResetConfirm={showVéResetConfirm}
-        showVéHistory={showVéHistory}
-        támInfo={támInfo}
-        onVéReset={() => { changeVé(0, true); setShowVéResetConfirm(false); }}
-        onCloseAll={closePopups}
+        showVéResetConfirm={nyitott?.t === 'véReset'}
+        showVéHistory={nyitott?.t === 'véHistory'}
+        támInfo={nyitott?.t === 'támInfo' ? nyitott.info : null}
+        onVéReset={() => { changeVé(0, true); bezár(); }}
+        onCloseAll={bezár}
       />
 
-      {kéDobásEredmény !== null && (
-        <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
+      {nyitott?.t === 'ké' && (
+        <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={nyitott.eredmény} onClose={handleKéDobásClose} />
       )}
 
-      {fegyverInfo !== null && (
-        <FegyverInfoPopup result={fegyverInfo} karakter={karakter} data={data} onClose={() => setFegyverInfo(null)} />
+      {nyitott?.t === 'fegyverInfo' && (
+        <FegyverInfoPopup result={nyitott.result} karakter={karakter} data={data} onClose={bezár} />
       )}
 
       {véSzorzóInfo !== null && (
         <VeSzorzoInfoPopup alap={véSzorzóInfo} szorzó={hc.véVeszSzorzó} forrás={hc.véVeszSzorzóForrás} onClose={() => setVéSzorzóInfo(null)} />
       )}
 
-      {showTamadoDobas && aktívTÉ != null && (
+      {nyitott?.t === 'támadó' && aktívTÉ != null && (
         <TamadoDobasPopup
           té={aktívTÉ}
           sp={ctx?.result.SP ?? 0}
@@ -236,10 +228,10 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           módok={ctx?.result.módok}
           fegyverNév={ctx?.result.fegyver_név}
           páncélMátrix={data.sebzésjellegPáncélMátrix}
-          fegyverExtrák={ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.extrák : undefined}
+          fegyverExtrák={aktívFegyverDef?.extrák}
           extraDefs={data.fegyverExtrák}
           extraKontextus={hc.extraKontextus}
-          dobásInfo={collectDobásInfo(session, karakter, data, (ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név) : undefined), hc.feltételTeljesül)}
+          dobásInfo={dobásInfo()}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
@@ -253,33 +245,33 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         />
       )}
 
-      {showFárasztásVéCsökkentés && fárasztásEredmény && (
+      {nyitott?.t === 'fárasztás' && fárasztásEredmény && (
         <VeCsokkentesPopup
           k20={0}
           alapTáblázat={data.konstansok.vé_csökkentés_alap}
           taktikaVéCsökkentés={fárasztásEredmény}
           taktikaCím="Fárasztás taktika"
-          onClose={() => setShowFárasztásVéCsökkentés(false)}
+          onClose={bezár}
         />
       )}
 
-      {showTeljesVédekezésInfo && teljesVédekezésDef && (
+      {nyitott?.t === 'teljesVédekezés' && teljesVédekezésDef && (
         <TaktikaTiltvaInfoPopup
           cím="Teljes védekezés taktika"
           szöveg={teljesVédekezésDef.megjegyzés ?? ''}
-          onClose={() => setShowTeljesVédekezésInfo(false)}
+          onClose={bezár}
         />
       )}
 
-      {showFegyverfogás && (
+      {nyitott?.t === 'fegyverfogás' && (
         <HarcFegyverfogas
           data={data} karakter={karakter} session={session}
-          onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`, [{ field: 'session', prev: session }]); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
-          onClose={() => setShowFegyverfogás(false)}
+          onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`, [{ field: 'session', prev: session }]); setSession(s => ({ ...s, ...patch })); bezár(); }}
+          onClose={bezár}
         />
       )}
 
-      {showPancelInfo && setKarakter && (
+      {nyitott?.t === 'páncélInfo' && setKarakter && (
         <PancelInfoPopup
           karakter={karakter}
           sfé_fizikai={hc.sfé_fizikai}
@@ -287,26 +279,26 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           mgt={hc.páncélMGT}
           lefedettség={hc.páncélLefedettség}
           setKarakter={setKarakter}
-          onClose={() => setShowPancelInfo(false)}
+          onClose={bezár}
         />
       )}
 
       {hint && <div className="he-hint">{hint}</div>}
 
-      {manoverPicker !== 'closed' && (
+      {(nyitott?.t === 'manőverMód' || nyitott?.t === 'manőverLista') && (
         <ManoverPicker
-          fázis={manoverPicker}
+          fázis={nyitott.t === 'manőverMód' ? 'mód' : 'lista'}
           manoverek={data.manoverek}
-          onMód={mód => { setManoverMód(mód); setManoverPicker('lista'); }}
-          onPick={m => { setPopupManőver(m); setManoverPicker('closed'); }}
-          onClose={() => setManoverPicker('closed')}
+          onMód={mód => setNyitott({ t: 'manőverLista', mód })}
+          onPick={m => setNyitott({ t: 'manőver', manőver: m, mód: nyitott.t === 'manőverLista' ? nyitott.mód : 'aktív' })}
+          onClose={bezár}
         />
       )}
 
-      {popupManőver && (
+      {nyitott?.t === 'manőver' && (
         <ManoverDobasPopup
-          manőver={popupManőver}
-          mód={manoverMód}
+          manőver={nyitott.manőver}
+          mód={nyitott.mód}
           karakter={karakter}
           session={session}
           setSession={setSession}
@@ -314,16 +306,16 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           manőverAlap={hc.manőverAlap}
           aktívTÉ={aktívTÉ}
           aktívVÉ={aktívVÉ}
-          téHatások={collectDobásInfo(session, karakter, data, (ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név) : undefined), hc.feltételTeljesül).téHatások}
+          téHatások={dobásInfo().téHatások}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
           helyzetVéCsökkentés={hc.helyzetVéCsökkentés}
-          fegyverExtrák={ctx ? lookupFegyver(data.fegyverek, ctx.result.fegyver_név)?.extrák : undefined}
+          fegyverExtrák={aktívFegyverDef?.extrák}
           extraDefs={data.fegyverExtrák}
           extraKontextus={hc.extraKontextus}
           onTéDobás={(té, veCsökkentés) => setSession(prev => ({ ...prev, té_dobások: pushTéDobás(prev.té_dobások ?? [], { té, veCsökkentés }) }))}
-          onClose={() => setPopupManőver(null)}
+          onClose={bezár}
         />
       )}
     </div>

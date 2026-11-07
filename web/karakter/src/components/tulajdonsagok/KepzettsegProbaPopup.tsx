@@ -201,7 +201,7 @@ export function KepzettsegProbaPopup({
           <button
             type="button"
             className="kep-proba-fizikai-toggle"
-            onClick={() => { setFizikaiKépzetlen(v => !v); resetDobás(); }}
+            onClick={d.váltás(() => { setFizikaiKépzetlen(v => !v); })}
             title="Szellemi képzettségnél +3 célszám-büntetés jár képzetlenül (fizikainál nem)"
           >
             Típus: {fizikaiKépzetlen ? 'fizikai' : 'szellemi (+3)'}
@@ -211,7 +211,7 @@ export function KepzettsegProbaPopup({
         <div className="kep-proba-dual-list">
           <div className="kep-proba-dual-col">
             {MIND_TULAJDONSÁG.map(t => (
-              <CelszamGomb key={t} aktív={selTul === t} onClick={() => { setSelTul(t); resetDobás(); }}
+              <CelszamGomb key={t} aktív={selTul === t} onClick={d.váltás(() => { setSelTul(t); })}
                 className={dominánsTulajdonságok.has(tulLabel(t)) ? 'kep-proba-dominans' : ''}>
                 {tulLabel(t)} • {tulajdonságok[t]}
               </CelszamGomb>
@@ -219,15 +219,15 @@ export function KepzettsegProbaPopup({
           </div>
           <div className="kep-proba-dual-col">
             <CelszamGomb aktív={ellenpróba} disabled={összetettDb > 0}
-              onClick={() => { setEllenpróba(!ellenpróba); if (!ellenpróba) setÖsszetettDb(0); resetDobás(); }}>
+              onClick={d.váltás(() => { setEllenpróba(!ellenpróba); if (!ellenpróba) setÖsszetettDb(0); })}>
               <span className="kep-proba-rejtett-label">Ellenpróba</span>
             </CelszamGomb>
             {!ellenpróba && (<>
-              <CelszamGomb aktív={ismeretlen} onClick={() => { setNehézség(-1); resetDobás(); }}>
+              <CelszamGomb aktív={ismeretlen} onClick={d.váltás(() => { setNehézség(-1); })}>
                 <span className="kep-proba-rejtett-label">Rejtett célszám</span>
               </CelszamGomb>
               {p.nehézségek.map(n => (
-                <CelszamGomb key={n.érték} aktív={nehézség === n.érték} onClick={() => { setNehézség(n.érték); resetDobás(); }}>
+                <CelszamGomb key={n.érték} aktív={nehézség === n.érték} onClick={d.váltás(() => { setNehézség(n.érték); })}>
                   {n.érték} • {n.név}
                 </CelszamGomb>
               ))}
@@ -235,7 +235,7 @@ export function KepzettsegProbaPopup({
                 <button type="button" className="he-field-btn kep-proba-neh-tobbi" aria-label="További célszámok" onClick={() => setNehTöbbi(true)}>▾</button>
               ) : (
                 p.nehézségek_extra.map(é => (
-                  <CelszamGomb key={é} aktív={nehézség === é} onClick={() => { setNehézség(é); resetDobás(); }}>{é}</CelszamGomb>
+                  <CelszamGomb key={é} aktív={nehézség === é} onClick={d.váltás(() => { setNehézség(é); })}>{é}</CelszamGomb>
                 ))
               ))}
             </>)}
@@ -246,7 +246,7 @@ export function KepzettsegProbaPopup({
           <div className="kep-proba-osszetett-row kep-proba-erzek-row" role="group" aria-label="Használt érzék">
             {érzékek.opciók.map(é => (
               <ExtraGomb key={é} aktív={érzék === é} title={érzékek.érintett.includes(é) ? 'Érzékvesztés érinti' : undefined}
-                onClick={() => { setÉrzék(érzék === é ? undefined : é); resetDobás(); }}>
+                onClick={d.váltás(() => { setÉrzék(érzék === é ? undefined : é); })}>
                 {é}{érzékek.érintett.includes(é) ? ' ⚠' : ''}
               </ExtraGomb>
             ))}
@@ -293,12 +293,12 @@ export function KepzettsegProbaPopup({
           <div className="kep-proba-osszetett-row kep-proba-vm-row">
             {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
               <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás} title="Vállalás mértéke"
-                onClick={() => { setVállalás(vállalás === n ? 0 : n); resetDobás(); }}>V{n}</ExtraGomb>
+                onClick={d.váltás(() => { setVállalás(vállalás === n ? 0 : n); })}>V{n}</ExtraGomb>
             ))}
             <span className="kep-proba-extras-sep">•</span>
             {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
               <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
-                onClick={() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); resetDobás(); }}>+{n}M</ExtraGomb>
+                onClick={d.váltás(() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); })}>+{n}M</ExtraGomb>
             ))}
           </div>
         </div>

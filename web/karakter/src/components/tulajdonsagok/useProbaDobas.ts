@@ -25,6 +25,8 @@ export function useProbaDobas({ bázis, ehSzint, kocka, nehézség, összetettDb
   const összetettAktív = összetettDb > 0 && nehézség !== null;
 
   const reset = () => { setDobás(null); setÖsszetett(null); setKézi([]); onReset?.(); };
+  /** Állapotváltás (célszám, Extrák, választók) → a korábbi dobás érvénytelen: a handler után a dobás-állapot reset. */
+  const váltás = (f: () => void) => () => { f(); reset(); };
 
   const lezár = (dobások: ProbaDobás[]) => {
     if (összetettAktív) {
@@ -51,6 +53,6 @@ export function useProbaDobas({ bázis, ehSzint, kocka, nehézség, összetettDb
     vanEredmény: összetettDb > 0 ? összetett !== null : dobás !== null,
     kéziFolyamatban: kézi.length > 0,
     kéziFelirat: összetettKéziFelirat(összetettDb, kézi.length),
-    reset, dob, kéziDobás,
+    reset, váltás, dob, kéziDobás,
   };
 }

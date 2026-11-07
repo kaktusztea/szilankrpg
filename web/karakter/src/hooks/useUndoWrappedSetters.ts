@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useMemo } from 'react';
 import type { Karakter, Tulajdonsagok, Fortely, Kepzettseg, UndoPatch } from '../engine/types';
 import { describeKepChange } from '../engine/utils';
 import { képzKulcs, fortélyNév } from '../engine/azonosito';
@@ -108,7 +108,7 @@ function makeUndoSetter<T>(
 }
 
 export function useUndoWrappedSetters({ karakter, setKarakter, pushUndo, data }: Deps) {
-  const setTulajdonságokUndo = useCallback(
+  const setTulajdonságokUndo = useMemo(() =>
     makeUndoSetter<Tulajdonsagok>(
       'tulajdonságok',
       () => karakter.tulajdonságok,
@@ -117,7 +117,7 @@ export function useUndoWrappedSetters({ karakter, setKarakter, pushUndo, data }:
       pushUndo, setKarakter,
     ), [karakter.tulajdonságok, pushUndo, setKarakter]);
 
-  const setKépzettségekUndo = useCallback(
+  const setKépzettségekUndo = useMemo(() =>
     makeUndoSetter<Kepzettseg[]>(
       'képzettségek',
       () => karakter.képzettségek,
@@ -126,7 +126,7 @@ export function useUndoWrappedSetters({ karakter, setKarakter, pushUndo, data }:
       pushUndo, setKarakter,
     ), [karakter.képzettségek, pushUndo, setKarakter, data]);
 
-  const setFortélyokUndo = useCallback(
+  const setFortélyokUndo = useMemo(() =>
     makeUndoSetter<Fortely[]>(
       'fortélyok',
       () => karakter.fortélyok,

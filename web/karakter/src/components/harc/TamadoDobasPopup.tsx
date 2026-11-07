@@ -76,15 +76,12 @@ interface TéEredmény {
  */
 export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, data, karakter, session, setSession, pushUndo, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
+  // Egyszerre legfeljebb egy al-popup (a popup korai return-nel vált rájuk).
+  const [alPopup, setAlPopup] = useState<'mód' | 'sebzés' | 'véCsökkentés' | 'taktika' | 'helyzet' | null>(null);
   const [módIndex, setMódIndex] = useState(0);
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
   const [téResult, setTéResult] = useState<TéEredmény | null>(null);
   const [kéziBónusz, setKéziBónusz] = useState(0);
-  const [showMódVálasztó, setShowMódVálasztó] = useState(false);
-  const [showSebzés, setShowSebzés] = useState(false);
-  const [showVéCsökkentés, setShowVéCsökkentés] = useState(false);
-  const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
-  const [showHelyzetPicker, setShowHelyzetPicker] = useState(false);
 
   // A dobás ELŐTT (nincs eredmény) a megjelenített Előny/Hátrány szint követi az aktív hatásokat,
   // hogy a Gyengébb kéz toggle (ami a session-t írja → új dobásInfo prop) azonnal tükröződjön az
@@ -137,7 +134,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
     aktorNév: aktívMód?.aktor ?? extraKontextus.aktorNév,
   };
 
-  if (showSebzés) {
+  if (alPopup === 'sebzés') {
     return (
       <SebzesPopup
         sp={aktívSp}
@@ -154,11 +151,12 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
         extraDefs={extraDefs}
         extraKontextus={aktívExtraKontextus}
         onClose={(spEredmény) => onClose(téResult ? { té: téResult.eredmény, sp: spEredmény } : null)}
+        onEscape={() => setAlPopup(null)}
       />
     );
   }
 
-  if (showVéCsökkentés) {
+  if (alPopup === 'véCsökkentés') {
     return (
       <VeCsokkentesPopup
         k20={k20Érték}
@@ -173,37 +171,37 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
           if (eredmény) {
             onClose(téResult ? { té: téResult.eredmény, veCsökkentés: eredmény.végső } : null);
           } else {
-            setShowVéCsökkentés(false);
+            setAlPopup(null);
           }
         }}
       />
     );
   }
 
-  if (showTaktikaPicker) {
+  if (alPopup === 'taktika') {
     return (
       <TaktikaPickerPopup data={data} karakter={karakter} session={session} terület="közelharc"
-        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowTaktikaPicker(false)} />
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setAlPopup(null)} />
     );
   }
 
-  if (showHelyzetPicker) {
+  if (alPopup === 'helyzet') {
     return (
       <HelyzetPickerPopup data={data} karakter={karakter} session={session} terület="közelharc"
-        setSession={setSession} pushUndo={pushUndo} onClose={() => setShowHelyzetPicker(false)} />
+        setSession={setSession} pushUndo={pushUndo} onClose={() => setAlPopup(null)} />
     );
   }
 
-  if (showMódVálasztó && módok) {
+  if (alPopup === 'mód' && módok) {
     return (
-      <PopupOverlay onClose={() => setShowMódVálasztó(false)}>
+      <PopupOverlay onClose={() => setAlPopup(null)}>
         <div className="tamado-dobas-popup">
           <div className="ke-dobas-header">Fegyver mód</div>
           <div className="mod-valaszto-list">
             {módok.map((m, i) => (
               <button key={i}
                 className={`mod-valaszto-item${i === módIndex ? ' active' : ''}`}
-                onClick={() => { setMódIndex(i); setTéResult(null); setShowMódVálasztó(false); }}>
+                onClick={() => { setMódIndex(i); setTéResult(null); setAlPopup(null); }}>
                 <span className="mod-valaszto-jelleg">{m.jelleg}</span>
                 <span className="mod-valaszto-tipus">{m.sebzéstípus} · {m.Forgatás}</span>
                 <span className="mod-valaszto-ertekek">TÉ {m.TÉ} · VÉ {m.VÉ} · SP {m.SP}</span>
@@ -234,12 +232,12 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
               </div>
             )}
             {többMódú && (
-              <button className="mod-valaszto-btn" onClick={() => setShowMódVálasztó(true)}>
+              <button className="mod-valaszto-btn" onClick={() => setAlPopup('mód')}>
                 Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && <span className="mod-valaszto-masodlagos">(másodlagos)</span>}
               </button>
             )}
             <TaktikaHelyzetChipek taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
-              onTaktika={() => setShowTaktikaPicker(true)} onHelyzet={() => setShowHelyzetPicker(true)} />
+              onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')} />
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {dobásInfo.téHatások.length > 0 && (
               <HatásokInfo hatások={dobásInfo.téHatások} />
@@ -285,11 +283,11 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
                 </div>
               </div>
             )}
-            <button className="tamado-sebzes-btn" onClick={() => setShowSebzés(true)}>
+            <button className="tamado-sebzes-btn" onClick={() => setAlPopup('sebzés')}>
               Sebzés
               {sebzésElőny > 0 && <span className="tamado-sebzes-btn-hint">Előny+{sebzésElőny}</span>}
             </button>
-            <button className="tamado-ve-csokkentes-btn" onClick={() => setShowVéCsökkentés(true)}>
+            <button className="tamado-ve-csokkentes-btn" onClick={() => setAlPopup('véCsökkentés')}>
               VÉ csökkentés
               {véCsökkentésSzorzó && véCsökkentésSzorzó !== 1 && (
                 <span className="tamado-sebzes-btn-hint">× {véCsökkentésSzorzó}{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}</span>

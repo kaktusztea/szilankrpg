@@ -75,14 +75,13 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [téKéziBónusz, setTéKéziBónusz] = useState(0);
   const [vDobás, setVDobás] = useState<ProbaDobás | null>(null);
   const [eDobás, setEDobás] = useState<ProbaDobás | null>(null);
-  const [véCsökkNyitva, setVéCsökkNyitva] = useState(false);
 
   // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák (mód_oldal szerint, §066_04). Aktív: aktív-
   // oldali táblák + globális módosítók; passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
   const módosítóTáblák = szitTáblákMódszerint(manőver.helyzetfüggő_módosítók, mód, data);
-  const [szitPickerNyitva, setSzitPickerNyitva] = useState(false);
-  const [mpPickerNyitva, setMpPickerNyitva] = useState(false);
-  const [téPopupNyitva, setTéPopupNyitva] = useState(false);
+  // A popupon belül egyszerre legfeljebb egy al-popup nyitott (TÉ magyarázat / MP / Helyzetfüggő módosítók / VÉ csökkentés).
+  const [alPopup, setAlPopup] = useState<'té' | 'mp' | 'szit' | 'véCsökk' | null>(null);
+  const alZár = () => setAlPopup(null);
   const [szitMods, setSzitMods] = useState<Record<string, number>>(
     () => szitModKezdőÁllapot(módosítóTáblák, karakter, session, data).single,
   );
@@ -223,7 +222,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       return (
         <div className="manover-fazis-info manover-te-center">
           {téVégső != null && (
-            <button type="button" className="manover-te-chip" onClick={() => setTéPopupNyitva(true)}>
+            <button type="button" className="manover-te-chip" onClick={() => setAlPopup('té')}>
               TÉ: <strong>{téVégső}</strong> <span className="manover-te-info">ⓘ</span>
             </button>
           )}
@@ -247,7 +246,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   function renderMpGomb() {
     if (maxKölthető <= 0) return null;
     return (
-      <button type="button" className="manover-szit-btn" onClick={() => setMpPickerNyitva(true)}>
+      <button type="button" className="manover-szit-btn" onClick={() => setAlPopup('mp')}>
         <span className="manover-szit-label">MP használata →</span>
         {költöttMP > 0 && <span className="manover-szit-sum manover-szit-pos">+{költöttMP}</span>}
       </button>
@@ -259,7 +258,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     if (módosítóTáblák.length === 0) return null;
     const vanÉrték = szitLehetetlen || szitImmunis || szitModÖsszeg !== 0;
     return (
-      <button type="button" className={`manover-szit-btn manover-szit-btn-flash${vanÉrték ? ' manover-szit-btn-val' : ''}`} onClick={() => setSzitPickerNyitva(true)}>
+      <button type="button" className={`manover-szit-btn manover-szit-btn-flash${vanÉrték ? ' manover-szit-btn-val' : ''}`} onClick={() => setAlPopup('szit')}>
         <span className="manover-szit-label">Helyzetfüggő módosítók{vanÉrték ? ': ' : ' →'}</span>
         {szitLehetetlen
           ? <span className="manover-szit-sum manover-szit-neg">letilt</span>
@@ -316,7 +315,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
   return (
     <>
-    <PopupOverlay onClose={onClose} onEscape={() => { if (!szitPickerNyitva && !mpPickerNyitva && !téPopupNyitva && !véCsökkNyitva) onClose(); }}>
+    <PopupOverlay onClose={onClose} onEscape={() => { if (!alPopup) onClose(); }}>
       <div className="manover-dobas-popup">
         <div className="manover-dobas-header">
           <span className="manover-dobas-title">{manőver.név} ({fázisok.join(' ')})</span>
@@ -408,7 +407,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         {végeredmény !== 'folyamatban' && (
           <ManoverVegeredmeny végeredmény={végeredmény} mód={mód} manőver={manőver} büntetve={bünteti_büntetve} immunisLeírás={szitImmunis ? immunisLeírás : null}
             alsóAkció={véCsökkGombLátszik ? (
-              <button type="button" className="manover-ve-csokk-btn manover-ve-csokk-pulse" onClick={() => setVéCsökkNyitva(true)}>
+              <button type="button" className="manover-ve-csokk-btn manover-ve-csokk-pulse" onClick={() => setAlPopup('véCsökk')}>
                 VÉ csökkentés
                 {véCsökkentésSzorzó && véCsökkentésSzorzó !== 1 && (
                   <span className="manover-ve-csokk-hint"> × {véCsökkentésSzorzó}{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}</span>
@@ -419,15 +418,15 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       </div>
     </PopupOverlay>
 
-    {szitPickerNyitva && (
+    {alPopup === 'szit' && (
       <ManoverSzitPicker táblák={módosítóTáblák} szitMods={szitMods} setSzitMods={setSzitMods} multiMods={multiMods} setMultiMods={setMultiMods}
-        összeg={szitModÖsszeg} karakter={karakter} session={session} data={data} onClose={() => setSzitPickerNyitva(false)} />
+        összeg={szitModÖsszeg} karakter={karakter} session={session} data={data} onClose={alZár} />
     )}
-    {mpPickerNyitva && <ManoverMpPicker költött={költöttMP} max={maxKölthető} onSelect={setKöltöttMP} onClose={() => setMpPickerNyitva(false)} />}
-    {téPopupNyitva && (
-      <ManoverTePopup módosító={manőver.végrehajtás_té_módosító} standard={mk.végrehajtás_TÉ_standard} aktívTÉ={aktívTÉ} onClose={() => setTéPopupNyitva(false)} />
+    {alPopup === 'mp' && <ManoverMpPicker költött={költöttMP} max={maxKölthető} onSelect={setKöltöttMP} onClose={alZár} />}
+    {alPopup === 'té' && (
+      <ManoverTePopup módosító={manőver.végrehajtás_té_módosító} standard={mk.végrehajtás_TÉ_standard} aktívTÉ={aktívTÉ} onClose={alZár} />
     )}
-    {véCsökkNyitva && véCsökkentésAlap && vDobás && (
+    {alPopup === 'véCsökk' && véCsökkentésAlap && vDobás && (
       <VeCsokkentesPopup
         k20={vDobás.eredmény}
         alapTáblázat={véCsökkentésAlap}
@@ -447,7 +446,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             onTéDobás?.(vÖsszeg, eredmény.végső);
             onClose();
           } else {
-            setVéCsökkNyitva(false);
+            alZár();
           }
         }}
       />
