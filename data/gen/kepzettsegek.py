@@ -2,7 +2,7 @@
 
 import os
 
-from .common import SOURCES_DIR, hu_sort_key, load_yaml, write_json
+from .common import SOURCES_DIR, hu_sort_key, load_yaml, write_json, hibak_kilep
 from .schema import validate_schema
 from .validators import id_hibak
 
@@ -57,10 +57,6 @@ def generate_kepzettsegek():
                 'md_fájl': md_fajl,
             })
     errors += id_hibak(id_elemek, 'képzettség')
-    if errors:
-        print("  ❌ Képzettség validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Képzettség validációs hibák", errors)
     result.sort(key=lambda x: hu_sort_key(x['név']))
     write_json('kepzettsegek.json', result)

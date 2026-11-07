@@ -1,5 +1,6 @@
 import re
 """Referenciális és tartalmi validátorok az Aktív fül adataihoz (taktikák, helyzetek, hatások)."""
+from .common import hibak_kilep
 
 # A tiltás-feltételek fegyverenként kiértékelt forrásai (web: engine/effekt.ts → tiltásokFegyverre).
 TILTAS_FORRASOK = {'fegyver.fegyverhossz', 'fegyver.harcmodor'}
@@ -63,10 +64,7 @@ def validate_effekt_hivatkozasok(helyzetek, extrak, statuszok=()):
                 errors.append(f"extrak [{e.get('id')}]: ismeretlen harci helyzet '{f.get('id')}' (feltétel)")
             if f.get('típus') == 'státusz' and f.get('név') not in statusz_nevek:
                 errors.append(f"extrak [{e.get('id')}]: ismeretlen státusz '{f.get('név')}' (feltétel)")
-    if errors:
-        print("  ❌ Effekt-hivatkozás hibák (tiltás / ellenfél_harci_helyzet):")
-        for e in errors: print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Effekt-hivatkozás hibák (tiltás / ellenfél_harci_helyzet)", errors)
 
 
 def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok):
@@ -144,11 +142,7 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok
     for ids, label in [(taktika_ids, 'taktika'), (helyzet_ids, 'harci_helyzet'), (manover_ids, 'manőver')]:
         dupes = [x for x in ids if ids.count(x) > 1]
         if dupes: errors.append(f"{label} duplikált id-k: {set(dupes)}")
-    if errors:
-        print("  ❌ Aktív fül validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Aktív fül validációs hibák", errors)
 
 
 def validate_esemenyek(esemenyek):
@@ -163,11 +157,7 @@ def validate_esemenyek(esemenyek):
         if e.get('csoport') not in valid_csoport: errors.append(f"{ctx}: 'csoport' invalid: '{e.get('csoport')}'")
         if e.get('id') in ids_seen: errors.append(f"{ctx}: duplikált id!")
         ids_seen.add(e.get('id'))
-    if errors:
-        print("  ❌ Esemény validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Esemény validációs hibák", errors)
 
 
 def validate_statuszok(statuszok, effekt_modok, esemenyek):
@@ -201,11 +191,7 @@ def validate_statuszok(statuszok, effekt_modok, esemenyek):
                         if h.get('mód') not in effekt_modok: errors.append(f"{hctx}: ismeretlen mód: '{h.get('mód')}'")
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
                         errors.extend(proba_alcel_hibak(h.get('cél'), h.get('alcél'), hctx, alcel_refs))
-    if errors:
-        print("  ❌ Státusz validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Státusz validációs hibák", errors)
 
 
 def validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, harcertek_celok):
@@ -219,11 +205,7 @@ def validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, harcertek
             if not isinstance(x, dict): errors.append(f"{hctx}: nem objektum"); continue
             if x.get('mód') not in effekt_modok: errors.append(f"{hctx}: ismeretlen mód: '{x.get('mód')}'")
             if x.get('cél') not in valid_cel: errors.append(f"{hctx}: ismeretlen cél: '{x.get('cél')}'")
-    if errors:
-        print("  ❌ Harci helyzet hatás validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Harci helyzet hatás validációs hibák", errors)
 
 
 def validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek):
@@ -244,11 +226,7 @@ def validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek):
                 mctx = f"{ctx} mechanika[{j}]"
                 if m.get('mód') not in effekt_modok: errors.append(f"{mctx}: ismeretlen mód: '{m.get('mód')}'")
                 if m.get('cél') and m['cél'] not in valid_cel_ids: errors.append(f"{mctx}: ismeretlen cél: '{m.get('cél')}'")
-    if errors:
-        print("  ❌ Hatás katalógus validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Hatás katalógus validációs hibák", errors)
 
 
 ID_FORMÁTUM = re.compile(r'^[0-9a-záéíóöőúüű]+(_[0-9a-záéíóöőúüű]+)*$')

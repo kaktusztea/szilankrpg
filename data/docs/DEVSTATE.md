@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2-5, 6b és 7 kész; következő: 8 (Python), 9 (lezárás)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 0-8. kész; következő: 9 (lezárás)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -109,7 +109,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **0-7. fázis kész; a 8-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0-8. fázis kész; a 9. (lezárás) jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -156,7 +156,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | **4. Párhuzamos kódutak** | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
 | ✅ | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
 | ✅ | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
-| - | **8. Python pipeline** | kicsi | független, bármikor beilleszthető (döntés: benne van) |
+| ✅ | **8. Python pipeline** | kicsi | kész (2026-11-07) |
 | 9 | **9. Lezárás** | nincs | fázisonként részlegesen (MAP / refactorlog), a végén összesítve |
 
 *Dummies:* mint egy lakásfelújításnál - előbb eldöntjük, mi hova kerül (döntések), megjavítjuk a mérőműszert
@@ -335,8 +335,14 @@ egy névvel ellátott érték, mint egy konstans a kódban; a sötét/világos t
 hibáit semmilyen teszt nem fogja meg, a háló itt **screenshot-összevetés**: előtte és utána ugyanarról a képernyőről
 kép, és a kettőnek egyeznie kell.
 
-**8. Python pipeline (`data/gen`)** - kis kockázat, ~0,5 nap (döntés: benne van)
-- [ ] `validators.py` ismétlődő hibaüzenet- / ciklusmintái, `generate_tables.py` orchestration. Minden gate-re negatív teszt.
+**8. Python pipeline (`data/gen`)** - **KÉSZ (2026-11-07)**
+- ✅ **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`. `hibak_kilep(cím, hibák)` (`gen/common.py`) a 13 ismételt
+  „❌ cím / soronként / SystemExit(1)" minta helyett; a `generate_tables.py` két nagy validátora (`id_hivatkozasi_hibak`,
+  `manover_ref_hibak`) a `gen/hivatkozas.py`-ba, hibalistát ad (208 → 71 sor, valóban csak CLI + sorrend + freshness).
+  Halott kód: duplikált blokk (`aktiv_ful.py`), 3 nem használt import; 2 bezáratlan fájl (`naming_lint`, `schema`).
+- ✅ **Gate-tesztek**: `data/gen/test_gates.py` (stdlib `unittest`, 19 teszt): minden gate valódi adaton zöld ÉS elrontott
+  másolaton bukik. `npm run test:gates`, a `prebuild` futtatja (bukó teszt → a build megáll, ellenőrizve).
+  Háló: `generate_tables.py --force` előtte / utána → a generált JSON-ok bájtra azonosak.
 
 *Dummies:* a YAML → JSON "fordító" kis takarítása. Kicsi (1500 sor), alacsony nyereség.
 

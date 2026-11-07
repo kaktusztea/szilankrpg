@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "generate": "python3 ../../data/generate_tables.py",
-    "prebuild": "python3 ../../data/generate_tables.py",
+    "prebuild": "python3 ../../data/generate_tables.py && npm run test:gates",
+    "test:gates": "cd ../../data && python3 -m unittest -q gen.test_gates",
     "test": "vitest run",
     "test:changed": "vitest run --changed HEAD~1",
     "lint": "eslint src && knip",

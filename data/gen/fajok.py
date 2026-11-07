@@ -2,7 +2,7 @@
 
 import os
 
-from .common import SOURCES_DIR, hu_sort_key, load_yaml, write_json
+from .common import SOURCES_DIR, load_yaml, write_json, hibak_kilep
 from .schema import validate_schema
 
 
@@ -32,11 +32,7 @@ def generate_fajok():
         for e in (data.get('érzék_fortélyok') or []) + (data.get('ajánlott_fortélyok') or []):
             if e.get('név'): ff[e['név']] = max(ff.get(e['név'], 0), e.get('max_fok', 0))
         faj_fortelyok[data['név']] = ff
-    if errors:
-        print("  ❌ Faj validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Faj validációs hibák", errors)
     write_json('fajok.json', names)
     write_json('faj_tulajdonsag_keretek.json', keretek)
     write_json('faj_fortelyok.json', faj_fortelyok)

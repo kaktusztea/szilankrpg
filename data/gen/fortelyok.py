@@ -2,7 +2,7 @@
 
 import os
 
-from .common import SOURCES_DIR, SCHEMAS_DIR, TABLES_DIR, hu_sort_key, load_yaml, write_json
+from .common import SOURCES_DIR, SCHEMAS_DIR, load_yaml, write_json, hibak_kilep
 from .schema import validate_schema
 from .validators import tiltas_ids_of, proba_alcel_hibak, proba_alcel_refs, id_hibak, session_toggle_hibak
 
@@ -97,11 +97,7 @@ def generate_fortelyok():
             })
     errors += id_hibak(id_elemek, 'fortély')
     errors += session_toggle_hibak(result, (load_yaml(os.path.join(SCHEMAS_DIR, 'karakter.yaml')) or {}).get('session') or {})
-    if errors:
-        print("  ❌ Fortély validációs hibák:")
-        for e in errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Fortély validációs hibák", errors)
     # Kiterjesztett képzettségek: referenciális ellenőrzés id-re → generate_tables.validate_id_hivatkozasok
     # Feltétel prefix validáció
     konstansok = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
@@ -144,11 +140,7 @@ def generate_fortelyok():
                         prefix = felt.split(':', 1)[0]
                         if prefix and prefix not in valid_prefixek:
                             felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen feltétel prefix '{prefix}' (értéke: '{felt}')")
-    if felt_errors:
-        print("  ❌ Fortély módosító validációs hibák (mód / feltétel prefix):")
-        for e in felt_errors:
-            print(f"     {e}")
-        raise SystemExit(1)
+    hibak_kilep("Fortély módosító validációs hibák (mód / feltétel prefix)", felt_errors)
     write_json('fortelyok.json', result)
 
 

@@ -49,3 +49,13 @@ _StrictLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _n
 def load_yaml(path):
     with open(path, encoding='utf-8') as f:
         return yaml.load(f, Loader=_StrictLoader)
+
+
+def hibak_kilep(cim, hibak):
+    """Build-gate kimenet: ha van hiba, kiírja (cím + soronként) és leállítja a buildet (SystemExit 1)."""
+    if not hibak:
+        return
+    print(f"  ❌ {cim}:")
+    for e in hibak:
+        print(f"     {e}")
+    raise SystemExit(1)

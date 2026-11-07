@@ -44,11 +44,6 @@ def generate_aktiv_ful():
     validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, _konstansok.get('harcérték_célok', []))
     validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek)
     validate_effekt_hivatkozasok(helyzetek, extrak, statuszok)
-    _manover_konst = _konstansok.get('manőver', {})
-    # Egységes effekt-mód enum (engine_spec §42.2) - minden hatás `mód` mezője ehhez mér.
-    effekt_modok = set(_konstansok.get('effekt_módok', []))
-    _immunis_sentinel = _manover_konst.get('sentinel_immunis', -99)
-
 
     # feltétel_kulcs generálás id-ból (yaml-ban nincs, JSON-ban kell)
     for t in taktikak:

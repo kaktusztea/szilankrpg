@@ -13,6 +13,7 @@ Magyar nyelvű asztali szerepjáték (RPG) webes karakteralkotó.
 cd /repo/github/szilank.code/web/karakter
 npm run build    # generate_tables.py + vitest + tsc + eslint (csak hiba) + vite build
 npm run lint     # eslint (figyelmeztetésekkel) + knip (nem használt fájl / export / függőség)
+npm run test:gates  # data/gen build-gate-ek pozitív + negatív tesztje (a prebuild is futtatja)
 npm run dev      # localhost:5173
 ```
 

@@ -16,6 +16,8 @@ data/
                              fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate),
                              hivatkozas (fortély/képzettség id-hivatkozás formátum + feloldó),
                              kiterjesztes_check (képzettség md ↔ kiterjesztesek.json szinkron build-gate)
+                             common.hibak_kilep (gate-kimenet + SystemExit), hivatkozas.id_hivatkozasi_hibak /
+                             manover_ref_hibak; test_gates.py (gate-ek pozitív + negatív tesztje, `npm run test:gates`)
 web/karakter/                React app gyökere
 web/karakter/refactorlog/    Refaktor naplók (ÉÉÉÉ-HH-NN.md): elvégzett műveletek, okok, csapdák
 code/                        Python scriptek (generate.markdown.py + lib/JinjaHandler.py - md fejezet-generálás)

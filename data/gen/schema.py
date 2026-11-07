@@ -25,7 +25,9 @@ def _schema_fields(schema_name, root_key=None):
     fields = set(node.keys())
 
     optional, generated = set(), set()
-    for line in open(path, encoding='utf-8'):
+    with open(path, encoding='utf-8') as fh:
+        lines = fh.read().splitlines(keepends=True)
+    for line in lines:
         if '#' not in line:
             continue
         key_part, comment = line.split('#', 1)

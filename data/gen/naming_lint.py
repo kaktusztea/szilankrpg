@@ -66,7 +66,8 @@ def lint(dirs):
     for d in dirs:
         for f in sorted(glob.glob(os.path.join(d, "**", "*.yaml"), recursive=True)):
             try:
-                data = yaml.safe_load(open(f, encoding="utf-8"))
+                with open(f, encoding="utf-8") as fh:
+                    data = yaml.safe_load(fh)
             except Exception:
                 continue   # a séma/parse hibát a saját validátorok jelzik
             _walk(data, os.path.relpath(f), errors, os.path.basename(f) in NAME_KEYED_FILES, True)
