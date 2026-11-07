@@ -6,10 +6,11 @@ import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 import { PancelPopup } from './HarcertekekPancelPopup';
-import { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from '../common/PickerComponents';
+import { FokRadios, ColumnPicker, IdeaGrid } from '../common/PickerComponents';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { TextInputPopup } from '../common/TextInputPopup';
 import { getMfFok, harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
+import { HarciKepzettsegSzintPopup } from '../common/HarciKepzettsegSzintPopup';
 
 interface PopupState {
   ideaTarget: { type: 'fegyver' | 'páncél'; idx: number } | null;
@@ -156,21 +157,8 @@ export function Popups({
       )}
 
       {kepzSzintTarget && (
-        <PopupOverlay onClose={() => {
-          const kp = képzettségek.find(k => képzKulcs(k) === kepzSzintTarget);
-          if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => képzKulcs(k) !== kepzSzintTarget));
-          onClose('kepzSzintTarget');
-        }}>
-          <SzintGrid
-            label={`${harciKepzDisplayName(data, kepzSzintTarget)} - szint:`}
-            maxSzint={data.konstansok.arányok.képzettség_max_szint}
-            current={képzettségek.find(kp => képzKulcs(kp) === kepzSzintTarget)?.szint ?? 0}
-            onSelect={n => {
-              setKépzettségek(prev => prev.map(kp => képzKulcs(kp) === kepzSzintTarget ? { ...kp, szint: n } : kp));
-              onClose('kepzSzintTarget');
-            }}
-          />
-        </PopupOverlay>
+        <HarciKepzettsegSzintPopup data={data} kulcs={kepzSzintTarget} képzettségek={képzettségek} setKépzettségek={setKépzettségek}
+          onDone={() => onClose('kepzSzintTarget')} />
       )}
     </>
   );

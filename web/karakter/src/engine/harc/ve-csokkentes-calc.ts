@@ -9,7 +9,8 @@ import type { Karakter, Session } from '../types';
  */
 import { k20P } from '../dice';
 import { alkalmazEffektek } from '../extrak-effekt';
-import { fortélyDef, taktikaDef } from '../lookup';
+import { taktikaDef } from '../lookup';
+import { gyűjtFortélyEffektek } from '../effekt';
 
 export type Fegyverviszony = 'fegyverhátrány' | 'fegyverazonosság' | 'fegyverelőny';
 
@@ -104,26 +105,28 @@ export function calcTaktikaVéCsökkentésBázis(
 }
 
 /**
- * Teljes Fárasztás-jellegű VÉ csökkentés: taktika bázis (override+flat sorrendben) + a karakter
- * aktív fortélyainak feltételes `vé_csökkentés` cél-ú flat módosítói (pl. Fárasztás fortély +1).
+ * Teljes Fárasztás-jellegű VÉ csökkentés: taktika bázis (override+flat sorrendben) + a karakter aktív fortélyainak
+ * `vé_csökkentés` flat bővítései (pl. Fárasztás fortély +1; a közös effekt-gyűjtőből, l. `fortélyVéCsökkentésBővítések`)
+ * + a harci helyzetek bővítései.
  */
 export function calcTaktikaVéCsökkentés(
   taktikaHatások: TaktikaHatás[] | undefined,
-  fortélyModosítók: { forrás: string; módosítók: { cél: string; érték: number; mód: string; feltétel?: string }[] }[],
+  fortélyBővítések: FortélyMódosítóBontás[],
   feltételTeljesül: (feltétel: string) => boolean,
   helyzetBővítések: FortélyMódosítóBontás[] = [],
 ): TaktikaVéCsökkentésEredmény {
   const taktikaBázis = calcTaktikaVéCsökkentésBázis(taktikaHatások, feltételTeljesül);
-  const fortélyBővítések: FortélyMódosítóBontás[] = [];
-  for (const { forrás, módosítók } of fortélyModosítók) {
-    for (const mod of módosítók) {
-      if (mod.cél !== 'vé_csökkentés' || mod.mód !== 'flat') continue;
-      if (mod.feltétel && !feltételTeljesül(mod.feltétel)) continue;
-      fortélyBővítések.push({ forrás, érték: mod.érték });
-    }
-  }
   const végső = taktikaBázis + [...fortélyBővítések, ...helyzetBővítések].reduce((sum, f) => sum + f.érték, 0);
   return { taktikaBázis, fortélyBővítések, helyzetBővítések, végső };
+}
+
+/** A karakter fortélyainak (teljesült feltételű) `vé_csökkentés` flat módosítói a közös §42 gyűjtőből, forrás-bontással. */
+export function fortélyVéCsökkentésBővítések(
+  karakter: Karakter, session: Session, data: GameData, feltételTeljesül: (feltétel: string) => boolean,
+): FortélyMódosítóBontás[] {
+  return gyűjtFortélyEffektek(karakter, session, data, new Set(), f => !f || feltételTeljesül(f as string))
+    .filter(e => e.forrás.típus === 'fortély' && e.cél === 'vé_csökkentés' && e.mód === 'flat' && typeof e.érték === 'number')
+    .map(e => ({ forrás: e.forrás.név, érték: e.érték! }));
 }
 
 /** Taktika-név → definíció (a session a taktikát név szerint tárolja). */
@@ -141,13 +144,9 @@ export function taktikaVéCsökkentésÁllapot(
 ) {
   const aktív = (név: string) => session.aktív_taktikák.some(t => t.név === név);
   const fárasztásDef = aktív(FÁRASZTÁS) ? taktikaDef(data, FÁRASZTÁS) : undefined;
-  const fortélyModosítók = karakter.fortélyok.flatMap(kf => {
-    const def = fortélyDef(data, kf.id);
-    const módosítók = def?.fokok.find(f => f.fok === kf.fok)?.módosítók;
-    return def && módosítók?.length ? [{ forrás: def.név, módosítók }] : [];
-  });
   const fárasztásEredmény = fárasztásDef
-    ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fortélyModosítók, feltételTeljesül, helyzetVéCsökkentés)
+    ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fortélyVéCsökkentésBővítések(karakter, session, data, feltételTeljesül),
+      feltételTeljesül, helyzetVéCsökkentés)
     : null;
 
   const szorzóForrások: string[] = [];

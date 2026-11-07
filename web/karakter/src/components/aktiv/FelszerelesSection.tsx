@@ -2,9 +2,7 @@ import { useState } from 'react';
 import type { Karakter, FelszerelésTárgy } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { OverlayPortal } from '../common/OverlayPortal';
-import {
-  felszerelésMax, felszerelésTerhelés, felszerelésSorok, felszerelésHátrány, type FelszerelésSor,
-} from '../../engine/felszereles';
+import { felszerelésMax, felszerelésTerhelés, felszerelésSorok, felszerelésHátrány, type FelszerelésSor, külsőJelző, páncélPajzsNincs } from '../../engine/felszereles';
 
 interface Props {
   karakter: Karakter;
@@ -89,50 +87,17 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
   }
 
   /** AUTO-sor „külső" jelző be/ki a felszerelés.külső halmazban (kulcs-alapú). */
-  function setAutoKülső(kulcs: string, be: boolean) {
-    setKarakter(prev => {
-      if (!prev) return prev;
-      const jelenlegi = prev.felszerelés?.külső ?? [];
-      const külső = be ? [...jelenlegi, kulcs] : jelenlegi.filter(x => x !== kulcs);
-      return {
-        ...prev,
-        felszerelés: {
-          tárgyak: prev.felszerelés?.tárgyak ?? [],
-          kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
-          külső: [...new Set(külső)],
-          úton: prev.felszerelés?.úton,
-        },
-      };
-    });
-  }
+  const setAutoKülső = (kulcs: string, be: boolean) => setKarakter(prev => (prev ? külsőJelző(prev, kulcs, be) : prev));
 
-  /** AUTO-sor „nálad ↔ nincs nálad" váltás: fegyver → felszerelésben, pajzs/páncél → kizárt_auto/aktív_páncél.
+  /** AUTO-sor „nálad ↔ nincs nálad" váltás: fegyver → felszerelésben, pajzs / páncél → `páncélPajzsNincs`.
    * A „külső" jelzőt is töröljük (a nincs/nálad kölcsönösen kizárja a külső-t). */
   function setAutoNincs(sor: FelszerelésSor, nincs: boolean) {
-    setAutoKülső(sor.kulcs, false);
     setKarakter(prev => {
       if (!prev) return prev;
-      if (sor.típus === 'fegyver') {
-        const idx = parseInt(sor.autoId!.split(':')[1], 10);
-        const fegyverek = prev.fegyverek.map((f, i) => i === idx ? { ...f, felszerelésben: !nincs } : f);
-        return { ...prev, fegyverek };
-      }
-      if (sor.típus === 'páncél') {
-        // A páncél "viselve/nincs" egyetlen igazságforrása a session.aktív_páncél (Harc fül "Páncél viselve").
-        return { ...prev, session: { ...prev.session, aktív_páncél: !nincs } };
-      }
-      // Pajzs: kizárt_auto lista (nincs session-toggle-je).
-      const jelenlegi = prev.felszerelés?.kizárt_auto ?? [];
-      const kizárt = nincs ? [...jelenlegi, 'pajzs'] : jelenlegi.filter(x => x !== 'pajzs');
-      return {
-        ...prev,
-        felszerelés: {
-          tárgyak: prev.felszerelés?.tárgyak ?? [],
-          kizárt_auto: [...new Set(kizárt)] as ('pajzs' | 'páncél')[],
-          külső: prev.felszerelés?.külső ?? [],
-          úton: prev.felszerelés?.úton,
-        },
-      };
+      if (sor.típus === 'páncél' || sor.típus === 'pajzs') return páncélPajzsNincs(prev, sor.típus, nincs);
+      const k = külsőJelző(prev, sor.kulcs, false);
+      const idx = parseInt(sor.autoId!.split(':')[1], 10);
+      return { ...k, fegyverek: k.fegyverek.map((f, i) => (i === idx ? { ...f, felszerelésben: !nincs } : f)) };
     });
   }
 

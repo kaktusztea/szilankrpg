@@ -197,3 +197,16 @@ export function buildArrayContext(
 
   return arrays;
 }
+
+/**
+ * One rules.json rule evaluated with plain scalar inputs (no reactive context) - for callers that need a single
+ * formula (manőver pont, páncél lefedettség) instead of a TS copy of it. Every declared input must be given:
+ * the formula engine reads a missing variable as 0, which would hide a wrong call.
+ */
+export function evalRule(rules: readonly Rule[], id: string, inputs: Record<string, number>): number {
+  const rule = rules.find(x => x.id === id);
+  if (!rule) throw new Error(`evalRule: unknown rules.json rule "${id}"`);
+  const missing = rule.inputs.filter(i => !(i in inputs));
+  if (missing.length) throw new Error(`evalRule("${id}"): missing input(s) ${missing.join(', ')}`);
+  return evalFormula(rule.formula, new Map(Object.entries(inputs)), new Map(), new Map(), new Map());
+}

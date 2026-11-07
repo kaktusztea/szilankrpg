@@ -4287,13 +4287,17 @@ kimenetéből szűrve, ill. a megnevezett helyen):
 Megjegyzés: a `calcFortelyMods` / `calcTaktikaMods` / `értékCélra` minden numerikus módot a közös 42.3 motoron
 (`alkalmazEffektek`) számol; a fenti fájlok csak kiolvassák a gyűjtő kimenetét a saját céljukra.
 
-**Gyűjtőn kívüli kódutak (maradék, ma helyes értéket adnak):**
-- `engine/harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot`: a fortélyok `vé_csökkentés` flat-jait saját ciklus +
-  saját feltétel-ellenőrzés olvassa (nem `gyűjtFortélyEffektek`); a taktika `vé_csökkentés` bázis
-  (`calcTaktikaVéCsökkentésBázis`) és szorzó (`calcVéCsökkentésSzorzó`) a taktika `hatások`-át közvetlenül szűri
-  (a precedenciát már az `alkalmazEffektek` adja).
-- `tavharc/helpers.ts` CÉ-összeg: a helyzetek `CÉ` flat hatásait és a taktikák `módosítók.CÉ`-jét saját ciklus
-  gyűjti (nem `gyűjtHelyzetEffektek` / `gyűjtTaktikaEffektek`).
+**Gyűjtőn kívüli kódutak (tudatos kivételek, ma helyes értéket adnak):**
+- `engine/harc/ve-csokkentes-calc.ts`: a fortély `vé_csökkentés` flat-jai MÁR a gyűjtőből jönnek
+  (`fortélyVéCsökkentésBővítések`, 2026-11-07); a taktika `vé_csökkentés` bázis (`calcTaktikaVéCsökkentésBázis`, csak a
+  Fárasztás) és szorzó (`calcVéCsökkentésSzorzó`, taktikánként a forrás-felirathoz) a taktika `hatások`-át közvetlenül
+  szűri - a precedenciát az `alkalmazEffektek` adja.
+- `tavharc/helpers.ts` `getFortélyCÉ`: a taktika és a taktika-feltételes fortély CÉ-bónusza a TÁVFEGYVER harcmodorától
+  függ (`szűrő_harcmodorok`); a közös gyűjtőnek nincs távfegyver-kontextusa és a taktika-ága a CÉ-célt nem ismeri
+  (bevezetve a CÉ-dobás hatás-listájába is bekerülne → dupla számolás). Ha harmadik ilyen forrás jön: a gyűjtő kapjon
+  fegyver-kontextust.
+- `engine/effekt.ts` `collectTaktikaLetiltások`: a fortély `letilt` módosító `feltétel`-e itt AZONOSÍTÓ (melyik taktika
+  hozzájárulását ejti), nem kiértékelendő feltétel - ezért nem a gyűjtőből jön.
 
 **Tudatos szűkítések (`ponytail:` megjegyzéssel a kódban; ma egyik sem tüzel, új adatnál csendben hibázna):**
 - `tavharc/TavharcScreen.tsx`: a távharci kocka-gyűjtés (`collectCéDobásInfo`) nem kap feltétel-kiértékelőt →

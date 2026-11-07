@@ -90,7 +90,8 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
     }
   }
 
-  function decodeQrFromUrl(objectUrl: string): Promise<string | null> {
+  /** QR text from an image object URL: string = decoded, null = no QR on the image, undefined = unreadable image. */
+  function decodeQrFromUrl(objectUrl: string): Promise<string | null | undefined> {
     return new Promise(resolve => {
       const img = new Image();
       img.onload = () => {
@@ -101,10 +102,9 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
         ctx.drawImage(img, 0, 0);
         URL.revokeObjectURL(objectUrl);
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const result = jsQR(imageData.data, canvas.width, canvas.height);
-        resolve(result?.data || null);
+        resolve(jsQR(imageData.data, canvas.width, canvas.height)?.data || null);
       };
-      img.onerror = () => { URL.revokeObjectURL(objectUrl); resolve(null); };
+      img.onerror = () => { URL.revokeObjectURL(objectUrl); resolve(undefined); };
       img.src = objectUrl;
     });
   }
@@ -134,31 +134,12 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
     }
   }
 
-  function loadImageAndDecode(objectUrl: string) {
-    const img = new Image();
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.naturalWidth || img.width;
-      canvas.height = img.naturalHeight || img.height;
-      const ctx = canvas.getContext('2d')!;
-      ctx.drawImage(img, 0, 0);
-      URL.revokeObjectURL(objectUrl);
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const result = jsQR(imageData.data, canvas.width, canvas.height);
-      if (result?.data) {
-        onClipboardLoad(result.data);
-      } else {
-        setQrError('Nem található QR kód a képen.');
-      }
-      // Reset input so same file can be re-selected
-      if (qrInputRef.current) qrInputRef.current.value = '';
-    };
-    img.onerror = () => {
-      URL.revokeObjectURL(objectUrl);
-      setQrError('A képfájl nem olvasható.');
-      if (qrInputRef.current) qrInputRef.current.value = '';
-    };
-    img.src = objectUrl;
+  async function loadImageAndDecode(objectUrl: string) {
+    const data = await decodeQrFromUrl(objectUrl);
+    if (data) onClipboardLoad(data);
+    else setQrError(data === undefined ? 'A képfájl nem olvasható.' : 'Nem található QR kód a képen.');
+    // Reset input so same file can be re-selected
+    if (qrInputRef.current) qrInputRef.current.value = '';
   }
 
   return createPortal(

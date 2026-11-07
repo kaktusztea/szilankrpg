@@ -127,28 +127,10 @@ function OsszehangTab() {
       <p className="miszt-magia-formula">Előny-Hátrány skálán eltolás (k10)</p>
 
       <h4 className="miszt-osszh-title">Varázsló állapota</h4>
-      <table className="miszt-magia-table">
-        <tbody>
-          {varázslóRows.map((r, i) => (
-            <tr key={i}>
-              <td className="miszt-magia-val">{r.érték > 0 ? `+${r.érték}` : r.érték}</td>
-              <td className="miszt-magia-label">{r.leírás}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <ModositoTabla sorok={varázslóRows} />
 
       <h4 className="miszt-osszh-title">Áldozat állapota</h4>
-      <table className="miszt-magia-table">
-        <tbody>
-          {áldozatRows.map((r, i) => (
-            <tr key={i}>
-              <td className="miszt-magia-val">{r.érték > 0 ? `+${r.érték}` : r.érték}</td>
-              <td className="miszt-magia-label">{r.leírás}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <ModositoTabla sorok={áldozatRows} />
     </div>
   );
 }
@@ -200,5 +182,21 @@ function KepzettsegPlusTab() {
         Példa: hajóskapitányra (Hajózás: 9.szint) nyugodt tengeren nehezebb (<strong>-3</strong>) őrületet varázsolni.
       </p>
     </div>
+  );
+}
+
+/** Előjeles módosító + leírás sorok táblája (Varázsló / Áldozat állapota). */
+function ModositoTabla({ sorok }: { sorok: { érték: number; leírás: string }[] }) {
+  return (
+    <table className="miszt-magia-table">
+      <tbody>
+        {sorok.map((r, i) => (
+          <tr key={i}>
+            <td className="miszt-magia-val">{r.érték > 0 ? `+${r.érték}` : r.érték}</td>
+            <td className="miszt-magia-label">{r.leírás}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }

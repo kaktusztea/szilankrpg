@@ -16,6 +16,7 @@ import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
 import { aktívTerületen } from '../../engine/taktika/taktika-helpers';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
+import { TaktikaHelyzetChipek } from '../dobas/TaktikaHelyzetChipek';
 
 /**
  * Derive Sebzés Előny from the CÉ k20 roll value (same rule as TÉ):
@@ -161,14 +162,8 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
                 ))}
               </div>
             )}
-            <div className="tamado-aktiv-chips">
-              <button className="tamado-aktiv-chip" onClick={() => setShowTaktikaPicker(true)}>
-                Taktika{aktívDb.taktika > 0 ? ` (${aktívDb.taktika})` : ''}
-              </button>
-              <button className="tamado-aktiv-chip" onClick={() => setShowHelyzetPicker(true)}>
-                Harci helyzet{aktívDb.helyzet > 0 ? ` (${aktívDb.helyzet})` : ''}
-              </button>
-            </div>
+            <TaktikaHelyzetChipek taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
+              onTaktika={() => setShowTaktikaPicker(true)} onHelyzet={() => setShowHelyzetPicker(true)} />
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
             {extraKontextus && (

@@ -20,7 +20,7 @@
 
 - **Egységes effekt-modell: maradék** (§42) - 2 gyűjtőn kívüli kódút (VÉ-csökkentés, távharci CÉ), böngészős ellenőrzés: Playwright végigkattintás
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2, 3 és 6b kész; következő: 4, 5, 7 (+8 Python)
+- **Webapp teljes refaktor: terv** - 1. (halott kód) kész, döntések megvannak; 0. (ESLint + knip) kész, `any` és `engine/` rétegsértés 0; 6a, 2, 3, 6b és 4 kész; következő: 5, 7 (+8 Python)
 - **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
 
 ---
@@ -29,9 +29,11 @@
 Spec: `engine_spec.md` §42.1-§42.7, kód: `engine/effekt.ts`, naplók: `refactorlog/2026-10-16.md`, `2026-10-18.md`.
 Az adat-migráció és a közös gyűjtő + 42.3 motor kész (§42.5); a `calcFortelyMods` / `calcTaktikaMods` burkolók. Nyitott:
 
-- [ ] **VÉ-csökkentés a gyűjtőre**: `engine/harc/ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot` - a fortély `vé_csökkentés` flat-ok saját ciklussal + saját feltétel-ellenőrzéssel, a taktika bázis / szorzó a `hatások` közvetlen szűrésével (§42.6).
-- [ ] **Távharci CÉ a gyűjtőre**: `tavharc/helpers.ts` - a helyzet `CÉ` flat és a taktika `módosítók.CÉ` saját ciklusból (§42.6).
-- [ ] **Böngészős ellenőrzés**: a §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) egyszer sem voltak végigkattintva. Módszer: **Böngészős (Playwright) tesztelés** (Build scriptek alatt); csak jóváhagyással.
+- ✅ **VÉ-csökkentés fortély-része a gyűjtőn** (2026-11-07, refaktor 4.1): `fortélyVéCsökkentésBővítések` a `gyűjtFortélyEffektek`-ből;
+  regressziós snapshot (`ve-csokkentes.regresszio`) változatlan. A taktika bázis / szorzó taktikánként szűr (forrás-specifikus).
+- Távharci CÉ és `collectTaktikaLetiltások`: **tudatos kivétel**, l. `engine_spec` §42.6 „Gyűjtőn kívüli kódutak".
+- [ ] **Böngészős ellenőrzés**: a §42 szeletek (kocka-hatások, Érzék-választó, támadás-korlát, SP-bontás) értékre nem voltak végigkattintva
+  (a refaktor Playwright-csomagjai csak a popupok megnyílását / állapotát fedik). Módszer: **Böngészős (Playwright) tesztelés** (Build scriptek alatt); csak jóváhagyással.
 - Tudatos szűkítések (ma nem tüzelnek, új adatnál felülvizsgálandó): §42.6 lista (távharci feltétel-kiértékelő, extra feltétel-kontextus, szorzó-keverék).
 
 ---
@@ -107,7 +109,7 @@ Szilánk-specifikus fegyverek (Slan, Mara-sequor, Pugoss, Ramiera, Emrelin, Mene
 ---
 ## Webapp teljes refaktor: terv 🚧
 
-Állapot: **0., 1., 2., 3., 6a és 6b fázis kész; a 4-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
+Állapot: **0-4., 6a és 6b fázis kész; az 5., 7-9. fázis jóváhagyásra vár** (terv: 2026-11-06, HEAD `d984f69b`). Scope: `web/karakter/src`, opcionálisan
 `data/gen`. Nem scope: `md/`, `code/fegyvergenerator/`, viselkedés-változás, új feature.
 
 **Mi ez az egész, egy mondatban?** A program már jól működik; a refaktor nem változtat azon, MIT csinál, csak azon,
@@ -151,7 +153,7 @@ azonosítók (a lenti szekciókra mutatnak), nem sorrendet jelentenek.
 | ✅ | **2. Rétegek és modulhatárok** | közepes (gépies, a `tsc` fogja) | a 3-5. fázis új kódja ide kerül (`engine/`); előbb legyen meg a hely és a szabály |
 | ✅ | **3. Lookup-réteg** | közepes | a 4. és 5. fázis már az indexet használja - különben kétszer írnánk át ugyanazt |
 | ✅ | **6b. Típusfájlok + session-toggle** | kicsi-közepes (localStorage invalidálódik) | a 2. fázis utánra, amikor a fájlhelyek már véglegesek |
-| 6 | **4. Párhuzamos kódutak** (benne: "Egységes effekt-modell: maradék" fent) | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
+| ✅ | **4. Párhuzamos kódutak** | közepes | kell hozzá a 2. (hova), a 3. (lookup) és a 2. döntési pont |
 | 7 | **5. Nagy komponensek szétbontása** | közepes-magas | a legkockázatosabb; addigra a logika már a helyén van, a komponensben csak az állapot és a megjelenítés marad. Böngészős háló kell |
 | 8 | **7. CSS** | kicsi, de teszt nem védi | az 5. fázis után, mert az 5. a popupokat szétszedi - különben a stílusokat kétszer mozgatnánk |
 | - | **8. Python pipeline** | kicsi | független, bármikor beilleszthető (döntés: benne van) |
@@ -237,15 +239,14 @@ alapján azonnal ad értéket. A "kanonikus név" azt jelenti, hogy a kulcsot eg
 haszon az egységesség: ma 28 helyen kézzel `toLowerCase()`-szel hasonlít a kód, és ha egy helyen kimarad, az
 csendes hiba (a fegyver "nem található", hibaüzenet nélkül).
 
-**4. Párhuzamos kódutak egyesítése** - közepes kockázat, ~2 nap
-- [ ] §42 maradék (l. "Egységes effekt-modell: maradék" fent): VÉ-csökkentés, távharci CÉ, `collectTaktikaLetiltások`.
-- [ ] Közös `feltételKontextus(k, session, data, fegyver?)` helper a 14 kézi `buildAktívFeltételek` / `createFeltételEvaluator`
-  összerakás helyett (2 `ponytail:` szűkítést is megold).
-- [ ] `rules.json` képletek TS-másolatai (`manover-dobas-calc.ts` `manőverPontKéplet`, `felszereles.ts` páncél-lefedettség)
-  → közös `evalRule(data.rules, id, inputok)` az `engine/reactive.ts`-ben (`evalFormula` fölött; a `data.rules` már a
-  GameData-ban van). A két másolat és a `rules-tukor` teszt törlődik (döntés: (b)).
-- [ ] Kis klónok: `AkadalySection`↔`FelszerelesSection`, `ProbaHub`↔`TulajdonsagokScreen`, `AktivHelyzetek`↔`AktivTaktikak`,
-  `TamadoDobasPopup`↔`CelzoDobasPopup`, `ImportOptionsPopup`.
+**4. Párhuzamos kódutak egyesítése** - **KÉSZ (2026-11-07)**, napló: `refactorlog/2026-11-06.md`
+- 4.3 `evalRule(rules, id, inputok)` (`engine/reactive.ts`; minden deklarált input kötelező): a `manőverPontKéplet` és a
+  páncél-lefedettség TS-másolata + a `rules-tukor` teszt törölve (→ `eval-rule.test.ts`).
+- 4.1 VÉ-csökkentés fortély-része a közös gyűjtőn (regressziós snapshot); távharci CÉ + `collectTaktikaLetiltások` tudatos kivétel.
+- 4.2 közös `feltételKontextus`: NEM készült - a `buildAktívFeltételek` / `createFeltételEvaluator` már közös, a hívók
+  szándékosan eltérő mélységű kontextust kapnak (teljes csak a `calcHarcComputed`-ban); nem valódi duplikáció.
+- 4.4 kis klónok: jscpd 10 klón / 114 sor → **0**. Új: `engine/proba/proba-forrasok.ts`, `engine/felszereles.ts`
+  (`külsőJelző`, `páncélPajzsNincs`), `dobas/TaktikaHelyzetChipek`, `common/HarciKepzettsegSzintPopup`, `aktiv/KotottFortelySorok`.
 
 *Dummies:* ez a "rejtett duplikáció": a kód nem szó szerint ismétlődik, de ugyanazt a szabályt két helyen, kétféleképp
 számolja ki. Ha a szabály változik, és csak az egyik helyen javítják, a két hely csendben mást mond. Cél: minden

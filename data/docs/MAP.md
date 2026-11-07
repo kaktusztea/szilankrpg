@@ -59,7 +59,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 ### Engine (`engine/`)
 | Fájl | Felelősség |
 |------|-----------|
-| `reactive.ts` | Rule engine: evaluate, buildContext, buildArrayContext |
+| `reactive.ts` | Rule engine: evaluate, buildContext, buildArrayContext, `evalRule` (egy szabály skalár inputokkal, a TS-képletmásolatok helyett; minden deklarált input kötelező) |
 | `harc/aktiv-fegyver-ctx.ts` | Aktív fegyver kontextus feloldás (kétkezes > fogás > pajzs > jobb kéz) |
 | `harc/combat-roll-info.ts` | Támadó/Sebzés/CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve) |
 | `harc/ep-logic.ts` | ÉP sebesülés/gyógyulás pure logika |
@@ -76,6 +76,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `harc/ve-csokkentes-calc.ts` | Sikertelen támadás VÉ csökkentése (Fegyverviszony bázis + k20P; taktika override/flat; fortély flat) - §5.3/§13.1 |
 | `proba/kepzettseg-proba-calc.ts` | Képzettségpróba tiszta kalkuláció (célszámok, kiterjesztés EH, szituációs módosítók, enyhítés) |
 | `proba/proba-common.ts` | Próba közös logika (konstansok.próba-vezérelt: Előny/Hátrány szintek, lehetetlen/biztos siker, siker-felirat, helyettesítés, összetett próbaok) |
+| `proba/proba-forrasok.ts` | A próbák fortély-forrásai karakterre bontva (Tulajdonságok fül + Próba-hub közös): próba-bónuszok tulajdonságonként / képzettségenként, próba-enyhítések |
 | `taktika/helyzet-helpers.ts` | Helyzet elérhetőség, min fegyverhossz, infó szöveg |
 | `taktika/taktika-helpers.ts` | Taktika módosító-formázás + fok-bővítés (getTaktikaMods, getExtraFokok, formatFokMods) |
 | `taktika/taktika-megkotes.ts` | Taktika megkötés-kiértékelés (isTaktikaAllowed: session/fegyver/harcmodor/támadás/távfegyver + kombó) |
@@ -98,7 +99,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
 | `statusz-proba.ts` | Státusz → Képzettségpróba Előny/Hátrány kalkuláció (a `gyűjtStátuszEffektek`-ből); `próbaÉrzékek`: alkategóriás státusz (Érzékvesztés) érzék-választó opciói |
-| `felszereles.ts` | Felszerelés keret/terhelés/Hátrány (§15/§33.1): `felszerelésMax`, `felszerelésTerhelés`, `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság` - a fegyver pont VAGY-VAGY `max(hossz,súly)` |
+| `felszereles.ts` | Felszerelés keret/terhelés/Hátrány (§15/§33.1): `felszerelésMax`, `felszerelésTerhelés`, `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság` - a fegyver pont VAGY-VAGY `max(hossz,súly)`; karakter-frissítők: `külsőJelző`, `páncélPajzsNincs` (Felszerelés + Akadály szekció közös) |
 | `lookup.ts` | GameData entitás-keresők (tömbönként egyszer épített, `WeakMap`-ben tárolt index): `lookupFegyver`, `lookupTávfegyver`, `taktikaDef`, `helyzetDef`, `státuszDef` (név, kis/nagybetű-független), `fortélyDef`, `képzettségDef`, `eseményDef` (id, pontos); ismeretlen → `undefined`; adatteszt: kulcs-egyediség a táblákban |
 | `utils.ts` | evaluateFeltétel, describeKepChange, `interpolateFokDef` (taktika fok-extrapoláció), `ideaDelta` (§16 Idea-delta), `buildPajzsFegyverNév` |
 | `extrak-info-calc.ts` | Fegyver-extrák (fegyver_extrak.json) futásidejű állapot-kiértékelése (aktív/inaktív/KM) az "Extrák" gombhoz (§42 info-szelet, pure fn). Aktív-jelzés: harci_helyzet/taktika/fortély/státusz/aktor/forgatás/cél_páncél feltételek + aktív manőverhez kapcsolt hatás-al-feltétel ("manőver:<id>") |
@@ -168,6 +169,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivStatuszok.tsx       Státusz picker
   StatuszPickerOverlay.tsx Státusz választó overlay (kategóriák + fok)
   AktivHatasPool.tsx       Hatás pool box
+  KotottFortelySorok.tsx   Aktív helyzethez / taktikához kötött fortélyok sorai (AktivHelyzetek + AktivTaktikak közös)
   aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)
   NaploTab.tsx             Verziók + Napló accordionok kompozíciója (CheckpointSection + NaploSection)
   CheckpointSection.tsx    Karakter verziók accordion (lista, létrehozás, törlés, megtekintés)
@@ -267,6 +269,7 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
 common/                    Közös UI-elemek (több fül használja; fület nem importálhat - ESLint)
   FortelyFelvetel.tsx      Felvétel wizard (többszörös, kiérdemelt)
   HarcmodorLista.tsx       Harcmodor-képzettség lista (felvettek + felvétel select) - Harcértékek + Távharc közös
+  HarciKepzettsegSzintPopup.tsx  Harcmodor-képzettség szint popup (Harcértékek + Távharc; mégse → a 0 szintű felvétel visszavonása)
   OverlayPortal.tsx        createPortal overlay-wrapper
   PickerComponents.tsx     Közös picker elemek (FokRadios, ColumnPicker)
   TextInputPopup.tsx       Közös szöveg-input popup (becenév, név, prompt)
@@ -280,6 +283,7 @@ dobas/                     Dobás-popup készlet (Támadó / Sebzés / CÉ / Man
   ManoverDobasReszek.tsx   A manőver popup al-komponensei (dobó-sor, követelmény-lépés, fázis-gombok, végeredmény, módosító / MP / TÉ popupok)
   ManualDicePicker.tsx     Manuális kockadobás érték választó
   SebzesPopup.tsx          Sebzésdobás popup (SP bontás, mód-választó, kötelező "Ellenfél páncél" választó → sebzésjelleg×páncél mátrix + cél_páncél SP-delta, másodlagos passzív info-label, újradobás)
+  TaktikaHelyzetChipek.tsx Taktika / Harci helyzet gyors-chipek (Támadó + Célzó dobás popup)
   VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P; a Roham/Öngyilkos roham ×2 szorzó forrás-taktikája kiírva a gombon és a bontásban)
 
 picker/                    Taktika- / helyzet-választók (Aktív fül + dobás-popupok; fület nem importálhat)

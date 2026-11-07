@@ -12,6 +12,7 @@
 import type { Karakter } from './types';
 import type { GameData } from './data-loader';
 import { lookupFegyver } from './lookup';
+import { evalRule } from './reactive';
 
 export interface FelszerelésSor {
   /** Megjelenítendő név (fegyver/pajzs/páncél neve, vagy kézi tárgy neve). */
@@ -55,16 +56,6 @@ function fegyverPont(fegyverAlap: string, data: GameData): number {
   const hosszPont = fp.forgatás_pont[forgatás] ?? 0;
   const súlyPont = fp.súly_pont[f.súly] ?? 0;
   return Math.max(hosszPont, súlyPont);
-}
-
-/**
- * Páncél lefedettsége - a reactive `páncél_lefedettség` szabály pure megfelelője: 50 + végtag*10 + sisak*10.
- * ponytail: a rules.json formula TS-másolata (a felszerelés-számítás nem épít reactive kontextust). A drift
- * ellen a `felszereles.rules-tukor.test.ts` köti a rules.json formulájához - ha a szabály változik, a teszt bukik.
- */
-function páncélLefedettség(karakter: Karakter): number {
-  if (!karakter.páncél.alap) return 0;
-  return 50 + karakter.páncél.végtagvédettség * 10 + (karakter.páncél.sisak ? 10 : 0);
 }
 
 /**
@@ -114,7 +105,9 @@ export function felszerelésSorok(karakter: Karakter, data: GameData): Felszerel
   if (karakter.páncél.alap) {
     const struktúra = data.konstansok.páncél_struktúrák.find(s => s.struktúra === karakter.páncél.alap);
     const merev = struktúra?.merev ?? false;
-    const fedésOk = páncélLefedettség(karakter) >= fp.páncél_fedés_min;
+    const fedésOk = evalRule(data.rules, 'páncél_lefedettség', {
+      páncél_van: karakter.páncél.alap ? 1 : 0, páncél_végtagvédettség: karakter.páncél.végtagvédettség, páncél_sisak: karakter.páncél.sisak ? 1 : 0,
+    }) >= fp.páncél_fedés_min;
     const külső = külsőSet.has('páncél');
     sorok.push({
       név: `Páncél (${karakter.páncél.alap})`,
@@ -233,4 +226,34 @@ export function akadályÁllapot(karakter: Karakter, data: GameData): AkadályÁ
 export function felszerelésVagyAkadályJelző(karakter: Karakter, data: GameData): boolean {
   const túlterhelt = felszerelésTerhelés(karakter, data) > felszerelésMax(karakter, data);
   return túlterhelt || akadályÁllapot(karakter, data).állapot > 0;
+}
+
+// ─── Karakter-frissítők (Felszerelés + Akadály szekció közös, pure) ──────────────────────────────────────────
+
+/** A karakter felszerelés-objektuma a megadott mezők cseréjével (régi mentésnél a hiányzó mezők üres alapértékkel). */
+function felszerelésPatch(k: Karakter, patch: Partial<Karakter['felszerelés']>): Karakter {
+  return {
+    ...k,
+    felszerelés: {
+      tárgyak: k.felszerelés?.tárgyak ?? [], kizárt_auto: k.felszerelés?.kizárt_auto ?? [],
+      külső: k.felszerelés?.külső ?? [], úton: k.felszerelés?.úton, ...patch,
+    },
+  };
+}
+
+/** „Külső tárolóban" jelző be/ki egy AUTO-sorra (kulcs: fegyver:<idx> / pajzs / páncél). */
+export function külsőJelző(k: Karakter, kulcs: string, be: boolean): Karakter {
+  const j = k.felszerelés?.külső ?? [];
+  return felszerelésPatch(k, { külső: [...new Set(be ? [...j, kulcs] : j.filter(x => x !== kulcs))] });
+}
+
+/**
+ * Páncél / pajzs „nálad ↔ nincs" (a külső jelzőt is törli). A páncél egyetlen igazságforrása a `session.aktív_páncél`
+ * (Harc fül „Páncél viselve"), a pajzsé a `felszerelés.kizárt_auto` (nincs session-toggle-je).
+ */
+export function páncélPajzsNincs(k: Karakter, kulcs: 'páncél' | 'pajzs', nincs: boolean): Karakter {
+  const kk = külsőJelző(k, kulcs, false);
+  if (kulcs === 'páncél') return { ...kk, session: { ...kk.session, aktív_páncél: !nincs } };
+  const j = kk.felszerelés?.kizárt_auto ?? [];
+  return felszerelésPatch(kk, { kizárt_auto: [...new Set(nincs ? [...j, 'pajzs' as const] : j.filter(x => x !== 'pajzs'))] });
 }

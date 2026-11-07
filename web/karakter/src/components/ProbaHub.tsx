@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
-import type { PróbaEnyhítés } from '../engine/data-types';
 import { képzKulcs } from '../engine/azonosito';
 import { PopupOverlay } from './PopupOverlay';
 import { ProbaDispatcher, type ProbaCél } from './ProbaDispatcher';
@@ -10,10 +9,9 @@ import { DobasPopup } from './harc/DobasPopup';
 import { rollK20 } from '../engine/dice';
 import { buildFortélyFokok } from '../engine/proba/kepzettseg-proba-calc';
 import { getDisplayName } from './tulajdonsagok/helpers';
-import { fortélyPróbaBónuszok } from '../engine/effekt';
 import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../engine/felszereles';
 import './ProbaHub.css';
-import { fortélyDef } from '../engine/lookup';
+import { fortélyBónuszokTulajdonságonként, fortélyBónuszokKépzettségenként, próbaEnyhítésekKépzettségenként } from '../engine/proba/proba-forrasok';
 
 interface Props {
   data: GameData;
@@ -59,38 +57,11 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
     [data.fortelySummaries],
   );
 
-  const fortélyBónuszByTul = useMemo(() => {
-    const result: Record<string, { érték: number; leírás: string }[]> = {};
-    for (const kulcs of Object.keys(karakter.tulajdonságok)) {
-      const érzék = kulcs === 'érzékenység';
-      const b = fortélyPróbaBónuszok(karakter, data, érzék ? ['tulajdonságpróba', 'érzék_próba'] : ['tulajdonságpróba'],
-        a => a === `tulajdonság:${kulcs}` || (érzék && a.startsWith('érzék:')));
-      if (b.length) result[kulcs] = b;
-    }
-    return result;
-  }, [karakter, data]);
+  const fortélyBónuszByTul = useMemo(() => fortélyBónuszokTulajdonságonként(karakter, data), [karakter, data]);
 
-  const fortélyBónuszByKép = useMemo(() => {
-    const result: Record<string, { érték: number; leírás: string }[]> = {};
-    for (const kp of karakter.képzettségek) {
-      const b = fortélyPróbaBónuszok(karakter, data, ['képzettségpróba'], a => a === `képzettség:${képzKulcs(kp)}`);
-      if (b.length) result[képzKulcs(kp)] = b;
-    }
-    return result;
-  }, [karakter, data]);
+  const fortélyBónuszByKép = useMemo(() => fortélyBónuszokKépzettségenként(karakter, data), [karakter, data]);
 
-  const próbaEnyhítésekByKép = useMemo(() => {
-    const result: Record<string, PróbaEnyhítés[]> = {};
-    for (const kf of karakter.fortélyok) {
-      const def = fortélyDef(data, kf.id);
-      if (!def) continue;
-      const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
-      const pe_lista = fokDef?.próba_enyhítések;
-      if (!pe_lista || !pe_lista.length) continue;
-      for (const pe of pe_lista) (result[pe.képzettség] ??= []).push({ ...pe, fortély: def.név });
-    }
-    return result;
-  }, [karakter.fortélyok, data]);
+  const próbaEnyhítésekByKép = useMemo(() => próbaEnyhítésekKépzettségenként(karakter.fortélyok, data), [karakter.fortélyok, data]);
 
   if (!aktív) return null;
 

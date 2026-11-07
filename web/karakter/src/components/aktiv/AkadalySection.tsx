@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { OverlayPortal } from '../common/OverlayPortal';
-import { akadályÁllapot, type AkadályForrás } from '../../engine/felszereles';
+import { akadályÁllapot, type AkadályForrás, külsőJelző, páncélPajzsNincs } from '../../engine/felszereles';
 
 interface Props {
   karakter: Karakter;
@@ -62,45 +62,8 @@ export function AkadalySection({ karakter, setKarakter, data }: Props) {
     });
   }
 
-  /** "külső" jelző be/ki a felszerelés.külső halmazban (kulcs-alapú). */
-  function setKülső(kulcs: string, be: boolean) {
-    setKarakter(prev => {
-      if (!prev) return prev;
-      const jelenlegi = prev.felszerelés?.külső ?? [];
-      const külső = be ? [...jelenlegi, kulcs] : jelenlegi.filter(x => x !== kulcs);
-      return {
-        ...prev,
-        felszerelés: {
-          tárgyak: prev.felszerelés?.tárgyak ?? [],
-          kizárt_auto: prev.felszerelés?.kizárt_auto ?? [],
-          külső: [...new Set(külső)],
-          úton: prev.felszerelés?.úton,
-        },
-      };
-    });
-  }
-
-  /** Páncél/pajzs "viselve ↔ nincs" váltás (a külső jelzőt is törli). */
-  function setNincs(kulcs: 'páncél' | 'pajzs', nincs: boolean) {
-    setKülső(kulcs, false);
-    setKarakter(prev => {
-      if (!prev) return prev;
-      if (kulcs === 'páncél') {
-        return { ...prev, session: { ...prev.session, aktív_páncél: !nincs } };
-      }
-      const jelenlegi = prev.felszerelés?.kizárt_auto ?? [];
-      const kizárt = nincs ? [...jelenlegi, 'pajzs'] : jelenlegi.filter(x => x !== 'pajzs');
-      return {
-        ...prev,
-        felszerelés: {
-          tárgyak: prev.felszerelés?.tárgyak ?? [],
-          kizárt_auto: [...new Set(kizárt)] as ('pajzs' | 'páncél')[],
-          külső: prev.felszerelés?.külső ?? [],
-          úton: prev.felszerelés?.úton,
-        },
-      };
-    });
-  }
+  const setKülső = (kulcs: string, be: boolean) => setKarakter(prev => (prev ? külsőJelző(prev, kulcs, be) : prev));
+  const setNincs = (kulcs: 'páncél' | 'pajzs', nincs: boolean) => setKarakter(prev => (prev ? páncélPajzsNincs(prev, kulcs, nincs) : prev));
 
   /** A forrás "viselve" háromállapot-választása. */
   function válaszd(forrás: AkadályForrás, cél: 'viselve' | 'külső' | 'nincs') {

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
-import { fmtHatás, fmtCode } from '../formatters';
+import { fmtHatás } from '../formatters';
 import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
 import type { TaktikaHatásPerElem } from './aktiv-calc';
 import { isTaktikaAllowed } from '../../engine/taktika/taktika-megkotes';
 import { getTaktikaMods } from '../../engine/taktika/taktika-helpers';
 import { taktikaDef } from '../../engine/lookup';
+import { KotottFortelySorok } from './KotottFortelySorok';
 
 interface Props {
   data: GameData;
@@ -64,11 +65,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                   {def?.megjegyzés && <div className="aktiv-taktika-note">{def.megjegyzés}</div>}
                 </div>
               </div>
-              {kötöttFortélyok.map((kf, j) => (
-                <div key={j} className={`item-row aktiv-helyzet-fortely-sor ${kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
-                  <span>→ {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}</span>
-                </div>
-              ))}
+              <KotottFortelySorok sorok={kötöttFortélyok} />
             </div>
           );
         })}

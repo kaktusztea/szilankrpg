@@ -11,6 +11,7 @@ import { elsődlegesMód } from './fegyver-calc';
 import { calcSzitModÖsszeg } from '../proba/kepzettseg-proba-calc';
 import { buildAktívFeltételek } from '../feltetelek';
 import { lookupFegyver } from '../lookup';
+import { evalRule } from '../reactive';
 
 /** Harci helyzetek (nevek), amelyek Aktív módban könnyítik a manővert (§066_03). */
 const MEGLEPETÉS = 'Meglepetés';
@@ -345,20 +346,11 @@ export function fejlécChip(mód: Mód, aktFázis: 'M' | 'V' | 'E' | null, fázi
   return 'TÉ';
 }
 
-/**
- * Manőver Pont képlet - a reactive `manőver_pont` szabály pure megfelelője: ceil(harcmodor_összeg * 2 / tsz).
- * ponytail: a rules.json formula TS-másolata (a manőver-popup nem épít reactive kontextust). A drift ellen a
- * `manover-dobas-calc.rules-tukor.test.ts` köti a rules.json formulájához.
- */
-export function manőverPontKéplet(harcmodorÖsszeg: number, tsz: number): number {
-  return Math.ceil(harcmodorÖsszeg * 2 / (tsz || 1));
-}
-
 export function calcManőverPont(karakter: Karakter, data: GameData): number {
   const { tsz } = karakter;
   const harcmodorNevek = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
   const összeg = harcmodorÖsszeg(karakter, harcmodorNevek);
-  return manőverPontKéplet(összeg, tsz);
+  return evalRule(data.rules, 'manőver_pont', { harcmodor_összeg: összeg, tsz });
 }
 
 export function getBelharcFok(karakter: Karakter): number {

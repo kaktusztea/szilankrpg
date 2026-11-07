@@ -4,6 +4,7 @@ import { fmtCode } from '../formatters';
 import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
 import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText, getTiltásWarnings } from '../../engine/taktika/helyzet-helpers';
 import { helyzetDef } from '../../engine/lookup';
+import { KotottFortelySorok } from './KotottFortelySorok';
 
 interface Props extends AktivBaseProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
@@ -43,11 +44,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
                   setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }));
                 }}>✕</button>
               </div>
-              {kötöttFortélyok.map((kf, j) => (
-                <div key={j} className={`item-row aktiv-helyzet-fortely-sor ${kf.fok === 0 ? 'aktiv-helyzet-alapeset' : kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
-                  <span>→ {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}</span>
-                </div>
-              ))}
+              <KotottFortelySorok sorok={kötöttFortélyok} alapeset />
             </div>
           );
         })}

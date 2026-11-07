@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { calcVéCsökkentés, calcTaktikaVéCsökkentésBázis, calcTaktikaVéCsökkentés, calcVéCsökkentésSzorzó, támadódobástTiltóTaktika } from './ve-csokkentes-calc';
-import type { Session } from '../types';
+import { calcVéCsökkentés, calcTaktikaVéCsökkentésBázis, calcTaktikaVéCsökkentés, calcVéCsökkentésSzorzó, támadódobástTiltóTaktika, fortélyVéCsökkentésBővítések } from './ve-csokkentes-calc';
+import type { Session, Karakter } from '../types';
+import { loadGameDataSync } from '../../__tests__/load-gamedata';
+import { validKarakter } from '../../__tests__/karakter-fixture';
 
 const alapTáblázat = { fegyverhátrány: 0, fegyverazonosság: 1, fegyverelőny: 2 };
 
@@ -79,9 +81,7 @@ describe('calcTaktikaVéCsökkentés - taktika + fortély bővítés', () => {
     { mód: 'override', érték: 3, cél: 'vé_csökkentés', megjegyzés: 'VÉ csökkentés: 3 fixen' },
     { mód: 'flat', érték: 1, cél: 'vé_csökkentés', feltétel: 'harci_helyzet:fegyverelőny' },
   ];
-  const farasztásFortély = [
-    { forrás: 'Fárasztás', módosítók: [{ cél: 'vé_csökkentés', érték: 1, mód: 'flat', feltétel: 'taktika:fárasztás' }] },
-  ];
+  const bővítés = [{ forrás: 'Fárasztás', érték: 1 }];
 
   it('csak taktika (nincs fortély, nincs Fegyverelőny) → 3', () => {
     const r = calcTaktikaVéCsökkentés(farasztásHatások, [], () => false);
@@ -90,26 +90,28 @@ describe('calcTaktikaVéCsökkentés - taktika + fortély bővítés', () => {
     expect(r.végső).toBe(3);
   });
 
-  it('taktika + fortély (taktika:fárasztás feltétel teljesül) → 4', () => {
-    const r = calcTaktikaVéCsökkentés(
-      farasztásHatások, farasztásFortély,
-      (f) => f === 'taktika:fárasztás',
-    );
-    expect(r.taktikaBázis).toBe(3);
-    expect(r.fortélyBővítések).toEqual([{ forrás: 'Fárasztás', érték: 1 }]);
-    expect(r.végső).toBe(4);
+  it('taktika + fortély bővítés → 4', () => {
+    const r = calcTaktikaVéCsökkentés(farasztásHatások, bővítés, () => false);
+    expect([r.taktikaBázis, r.fortélyBővítések, r.végső]).toEqual([3, bővítés, 4]);
   });
 
   it('taktika + fortély + Fegyverelőny (minden feltétel teljesül) → 5', () => {
-    const r = calcTaktikaVéCsökkentés(farasztásHatások, farasztásFortély, () => true);
-    expect(r.taktikaBázis).toBe(4);
-    expect(r.végső).toBe(5);
+    const r = calcTaktikaVéCsökkentés(farasztásHatások, bővítés, () => true);
+    expect([r.taktikaBázis, r.végső]).toEqual([4, 5]);
   });
+});
 
-  it('fortély megvan, de a taktika:fárasztás feltétele nem teljesül → a bővítés nem él', () => {
-    const r = calcTaktikaVéCsökkentés(farasztásHatások, farasztásFortély, () => false);
-    expect(r.fortélyBővítések).toEqual([]);
-    expect(r.végső).toBe(3);
+describe('fortélyVéCsökkentésBővítések - a közös §42 gyűjtőből (valódi adat)', () => {
+  const data = loadGameDataSync();
+  const k: Karakter = validKarakter({ fortélyok: [{ id: 'fárasztás', fok: 1, elem: '' }] });
+  it('taktika:fárasztás feltétel teljesül → Fárasztás +1', () => {
+    expect(fortélyVéCsökkentésBővítések(k, k.session, data, f => f === 'taktika:fárasztás')).toEqual([{ forrás: 'Fárasztás', érték: 1 }]);
+  });
+  it('feltétel nem teljesül → nincs bővítés', () => {
+    expect(fortélyVéCsökkentésBővítések(k, k.session, data, () => false)).toEqual([]);
+  });
+  it('fortély nélkül → nincs bővítés', () => {
+    expect(fortélyVéCsökkentésBővítések({ ...k, fortélyok: [] }, k.session, data, () => true)).toEqual([]);
   });
 });
 

@@ -13,11 +13,10 @@ import { TavharcKalkulator } from './TavharcKalkulator';
 import { TavharcReszletek } from './TavharcReszletek';
 import { TavharcPopups } from './TavharcPopups';
 import { TavharcKepzettsegekSection } from './TavharcKepzettsegekSection';
-import { PopupOverlay } from '../PopupOverlay';
-import { SzintGrid } from '../common/PickerComponents';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { CélzóDobasPopup } from './CelzoDobasPopup';
 import './TavharcScreen.css';
+import { HarciKepzettsegSzintPopup } from '../common/HarciKepzettsegSzintPopup';
 
 export function TavharcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, képzettségek, setKépzettségek, gameMode, pendingDobás, onPendingDobásConsumed }: TavharcProps) {
   const k = karakter;
@@ -96,14 +95,6 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const [kepzSzintTarget, setKepzSzintTarget] = useState<string | null>(null);
   const [deleteKepzTarget, setDeleteKepzTarget] = useState<string | null>(null);
 
-  const closeKepzPopup = useCallback(() => {
-    if (kepzSzintTarget) {
-      const kp = képzettségek.find(k => képzKulcs(k) === kepzSzintTarget);
-      if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => képzKulcs(k) !== kepzSzintTarget));
-    }
-    setKepzSzintTarget(null);
-  }, [kepzSzintTarget, képzettségek, setKépzettségek]);
-
   return (
     <div className="screen tavharc-screen">
       <h2>🏹 Távharc</h2>
@@ -156,17 +147,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       />
 
       {kepzSzintTarget && (
-        <PopupOverlay onClose={closeKepzPopup}>
-          <SzintGrid
-            label={`${harciKepzDisplayName(data, kepzSzintTarget)} - szint:`}
-            maxSzint={data.konstansok.arányok.képzettség_max_szint}
-            current={képzettségek.find(kp => képzKulcs(kp) === kepzSzintTarget)?.szint ?? 0}
-            onSelect={n => {
-              setKépzettségek(prev => prev.map(kp => képzKulcs(kp) === kepzSzintTarget ? { ...kp, szint: n } : kp));
-              setKepzSzintTarget(null);
-            }}
-          />
-        </PopupOverlay>
+        <HarciKepzettsegSzintPopup data={data} kulcs={kepzSzintTarget} képzettségek={képzettségek} setKépzettségek={setKépzettségek}
+          onDone={() => setKepzSzintTarget(null)} />
       )}
 
       {deleteKepzTarget && (

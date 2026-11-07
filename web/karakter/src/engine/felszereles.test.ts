@@ -5,9 +5,10 @@
  */
 import { describe, it, expect, beforeAll } from 'vitest';
 import {
-  felszerelésMax, felszerelésTerhelés, felszerelésHátrány, felszerelésSorok, fizikaiTulajdonság,
+  felszerelésMax, felszerelésTerhelés, felszerelésHátrány, felszerelésSorok, fizikaiTulajdonság, külsőJelző, páncélPajzsNincs,
 } from '../engine/felszereles';
 import { loadGameDataSync } from '../__tests__/load-gamedata';
+import { validKarakter } from '../__tests__/karakter-fixture';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 
@@ -120,5 +121,28 @@ describe('fizikaiTulajdonság', () => {
     }
     expect(fizikaiTulajdonság('intelligencia', data)).toBe(false);
     expect(fizikaiTulajdonság('önuralom', data)).toBe(false);
+  });
+});
+
+describe('külsőJelző / páncélPajzsNincs (Felszerelés + Akadály közös frissítők)', () => {
+  const alap = () => validKarakter({ felszerelés: { tárgyak: [], kizárt_auto: [], külső: ['páncél', 'fegyver:0'] } });
+  it('külső jelző be / ki, duplikátum nélkül, a többi mező marad', () => {
+    expect(külsőJelző(alap(), 'pajzs', true).felszerelés.külső).toEqual(['páncél', 'fegyver:0', 'pajzs']);
+    expect(külsőJelző(alap(), 'páncél', true).felszerelés.külső).toEqual(['páncél', 'fegyver:0']);
+    expect(külsőJelző(alap(), 'páncél', false).felszerelés.külső).toEqual(['fegyver:0']);
+  });
+  it('páncél nincs: aktív_páncél false + külső törölve; nálad: true', () => {
+    const k = páncélPajzsNincs(alap(), 'páncél', true);
+    expect([k.session.aktív_páncél, k.felszerelés.külső]).toEqual([false, ['fegyver:0']]);
+    expect(páncélPajzsNincs(k, 'páncél', false).session.aktív_páncél).toBe(true);
+  });
+  it('pajzs nincs: kizárt_auto-ba kerül (egyszer), nálad: kikerül', () => {
+    const k = páncélPajzsNincs(páncélPajzsNincs(alap(), 'pajzs', true), 'pajzs', true);
+    expect(k.felszerelés.kizárt_auto).toEqual(['pajzs']);
+    expect(páncélPajzsNincs(k, 'pajzs', false).felszerelés.kizárt_auto).toEqual([]);
+  });
+  it('régi mentés (felszerelés nélkül) nem dob', () => {
+    const k = { ...alap(), felszerelés: undefined } as unknown as Karakter;
+    expect(külsőJelző(k, 'pajzs', true).felszerelés).toEqual({ tárgyak: [], kizárt_auto: [], külső: ['pajzs'], úton: undefined });
   });
 });

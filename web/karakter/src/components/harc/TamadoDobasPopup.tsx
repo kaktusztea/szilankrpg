@@ -21,6 +21,7 @@ import { KeziBonuszBtn } from '../dobas/KeziBonuszBtn';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { taktikaDef } from '../../engine/lookup';
 import type { FegyverResultMód } from '../../engine/harc/types';
+import { TaktikaHelyzetChipek } from '../dobas/TaktikaHelyzetChipek';
 
 interface Props {
   /** Active weapon TÉ value (fallback: elsődleges mód, ha nincs módok lista) */
@@ -237,14 +238,8 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
                 Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && <span className="mod-valaszto-masodlagos">(másodlagos)</span>}
               </button>
             )}
-            <div className="tamado-aktiv-chips">
-              <button className="tamado-aktiv-chip" onClick={() => setShowTaktikaPicker(true)}>
-                Taktika{aktívDb.taktika > 0 ? ` (${aktívDb.taktika})` : ''}
-              </button>
-              <button className="tamado-aktiv-chip" onClick={() => setShowHelyzetPicker(true)}>
-                Harci helyzet{aktívDb.helyzet > 0 ? ` (${aktívDb.helyzet})` : ''}
-              </button>
-            </div>
+            <TaktikaHelyzetChipek taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
+              onTaktika={() => setShowTaktikaPicker(true)} onHelyzet={() => setShowHelyzetPicker(true)} />
             <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
             {dobásInfo.téHatások.length > 0 && (
               <HatásokInfo hatások={dobásInfo.téHatások} />
