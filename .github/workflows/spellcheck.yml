@@ -22,7 +22,7 @@ jobs:
           iconv --verbose -f ISO-8859-1 -t UTF-8 -c dictionaries/hu_HU/hu_HU.aff.tmp -o dictionaries/hu_HU/hu_HU.aff
 
       - name: Running spellcheck with Hunspell
-        uses: rojopolis/spellcheck-github-actions@f2df388397bcb35f524b4a0a3567d6b1e8a4e595 # 0.68.0
+        uses: rojopolis/spellcheck-github-actions@dad57fc333130f4c9ae9632a6ad7ddc4de3515a2 # 0.69.0
         with:
           config_path: .github/spellcheck-config.yaml
           task_name: Markdown
