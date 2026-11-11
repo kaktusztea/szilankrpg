@@ -19,14 +19,10 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 
 ### 1. fok
 
-🔒 Észlelés - `3.szint`
-
-🌟 Hatás leírását lásd fenn.
+🌟 Megszünteti a [kiterjeszett képzettségre kapott büntetést](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal).
 
 ### 2. fok
 
-🔒 Észlelés - `3.szint`
-
-🌟 Hatás leírását lásd fenn.
+🌟 A [képzettségkiterjesztés szabályainak megfelelően](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) bónuszt kapsz.
 
 ---

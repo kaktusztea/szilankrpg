@@ -6,7 +6,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 
 ---
 
-### 🌳 Nyomok **észrevétele** a természetben
+### 🌳 Nyomok aktív keresése és észrevétele a természetben
 
 "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 

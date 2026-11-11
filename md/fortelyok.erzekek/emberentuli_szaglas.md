@@ -18,6 +18,7 @@ Emberi szaglás
 
 🌟 **Hatás**:
 
+- 
 - A szaglást érintő Tulajdonságpróbákra `+2` bónuszt kapsz
 - `2x` messzebbről megérzel szagokat, mint egy átlagos ember
 - Olyan **Érzékenység** próbákat dobhatsz, amelyet egy átlag szaglású ember egyáltalán nem, tehát megnyit lehetőségeket

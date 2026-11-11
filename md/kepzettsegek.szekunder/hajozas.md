@@ -65,7 +65,7 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 
 #### 🌟 `12.szint`
 
-⭕TODO⭕ Érzed, "hallod" a hajódat: tudod, mikor roppan a test, mikor bír még többet, mikor kell engedni a vásznakon.
+⭕TODO⭕ Érzed, "hallod" a hajódat: tudod, mikor roppan a hajótest, mikor bír még többet, mikor kell engedni a vásznakon.
 
 #### 🌟 `15.szint`
 

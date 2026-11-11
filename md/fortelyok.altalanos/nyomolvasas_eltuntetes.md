@@ -15,10 +15,11 @@ Megtalált nyomok értelmezését, eltűntetését, illetve városon kívül a n
 
 ### 1. fok
 
-🌟 A Hatás leírásáért lásd Szituációkat fenn.
+🌟 Megszünteti a [kiterjeszett képzettségre kapott büntetést](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal).
 
 ### 2. fok
 
-🌟 A Hatás leírásáért lásd Szituációkat fenn.
+🌟 A [képzettségkiterjesztés szabályainak megfelelően](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) bónuszt kapsz.
+
 
 ---

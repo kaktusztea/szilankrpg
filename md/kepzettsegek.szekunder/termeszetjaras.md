@@ -1,6 +1,6 @@
 ## 🔵 Természetjárás
 
-A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. Ebből `1 db` alapból jár a képzettség felvételekor, a többit [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
+A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. a többit [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
 
 A képzettség magában foglalja a következőket:
 
@@ -22,12 +22,40 @@ A képzettség magában foglalja a következőket:
 +0: Normál időjárás
 ```
 
-#### ⚜️ Vad becserkészése 🔀
+#### ⚜️ Évszak 🔀
 
 ```
--6: Szél felől közelítesz
-    jó szaglású vad felé
--6: Zajos aljnövényzet
+-3: Tél (egyes esetekben)
+```
+
+#### ⚜️ Körülmények 🔀
+
+```
+-3: Felszerelés hiánya
+-3: Kapkodás
+```
+
+#### ⚜️ Nyom jellege követésnél 1️⃣
+
+```
+-3: Zavaros nyomok
++3: Egyértelmű nyomok
+```
+
+#### ⚜️ Nyom kora követésnél 1️⃣
+
+```
+ 0: Friss
+-3: 1-2 napos
+-6: több napos
+```
+
+#### ⚜️ Talaj követésnél 1️⃣
+
+```
+-6: Sziklás
+-3: Kemény
++3: Puha, hó, sár
 ```
 
 ---
@@ -72,10 +100,12 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 #### 🌟 `12.szint`
 
 ⭕TODO⭕
+Állatok nem futnak el rögtön.
 
 #### 🌟 `15.szint`
 
 ⭕TODO⭕
+Segítségedre hívod az erdő állatait.
 
 <br />
 

@@ -383,7 +383,7 @@ Ekkor a segítő is megdobja ugyanazt a Képzettségpróbát. Választhat, hogy 
 Adott Bónusz • Nehézség  
 
 +3  •  (Nehézség - 3)
-+6  •  azonos Nehézség 
++6  •  azonos Nehézség
 ```
 
 Azt, hogy egy próbába hányan segíthetnek be, az helyzetfüggő, nem akarunk erre képletet megadni. A KM döntsön az ésszerűség határain belül.
