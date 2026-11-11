@@ -652,36 +652,20 @@
       {
         "fok": 1,
         "hatás": [
-          "Kiterjeszti az Észlelés és Természetjárás képzettségeket 1.fokon."
+          "Megszünteti a kiterjesztett képzettségre kapott büntetést."
         ],
-        "követelmény": [
-          "Észlelés - 3.szint"
-        ],
-        "követelmények": [
-          {
-            "név": "észlelés",
-            "érték": 3,
-            "típus": "képzettség"
-          }
-        ],
+        "követelmény": [],
+        "követelmények": [],
         "módosítók": [],
         "próba_enyhítések": []
       },
       {
         "fok": 2,
         "hatás": [
-          "Kiterjeszti az Észlelés és Természetjárás képzettségeket 2.fokon."
+          "A képzettségkiterjesztés szabályainak megfelelően bónuszt kapsz."
         ],
-        "követelmény": [
-          "Észlelés - 3.szint"
-        ],
-        "követelmények": [
-          {
-            "név": "észlelés",
-            "érték": 3,
-            "típus": "képzettség"
-          }
-        ],
+        "követelmény": [],
+        "követelmények": [],
         "módosítók": [],
         "próba_enyhítések": []
       }
@@ -1205,7 +1189,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Kiterjeszti a Természetjárás képzettséget nyomolvasás témában 1.fokon."
+          "Megszünteti a kiterjesztett képzettségre kapott büntetést."
         ],
         "követelmény": [],
         "követelmények": [],
@@ -1215,7 +1199,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Kiterjeszti a Természetjárás képzettséget nyomolvasás témában 2.fokon."
+          "A képzettségkiterjesztés szabályainak megfelelően bónuszt kapsz."
         ],
         "követelmény": [],
         "követelmények": [],

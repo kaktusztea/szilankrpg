@@ -2525,16 +2525,76 @@
         ]
       },
       {
-        "kategória": "Vad becserkészése",
+        "kategória": "Évszak",
         "mód": "multi",
         "sorok": [
           {
-            "érték": -6,
-            "leírás": "Szél felől közelítesz jó szaglású vad felé"
+            "érték": -3,
+            "leírás": "Tél (egyes esetekben)"
+          }
+        ]
+      },
+      {
+        "kategória": "Körülmények",
+        "mód": "multi",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Felszerelés hiánya"
+          },
+          {
+            "érték": -3,
+            "leírás": "Kapkodás"
+          }
+        ]
+      },
+      {
+        "kategória": "Nyom jellege követésnél",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -3,
+            "leírás": "Zavaros nyomok"
+          },
+          {
+            "érték": 3,
+            "leírás": "Egyértelmű nyomok"
+          }
+        ]
+      },
+      {
+        "kategória": "Nyom kora követésnél",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": 0,
+            "leírás": "Friss"
+          },
+          {
+            "érték": -3,
+            "leírás": "1-2 napos"
           },
           {
             "érték": -6,
-            "leírás": "Zajos aljnövényzet"
+            "leírás": "több napos"
+          }
+        ]
+      },
+      {
+        "kategória": "Talaj követésnél",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Sziklás"
+          },
+          {
+            "érték": -3,
+            "leírás": "Kemény"
+          },
+          {
+            "érték": 3,
+            "leírás": "Puha, hó, sár"
           }
         ]
       }

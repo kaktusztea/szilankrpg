@@ -123,7 +123,7 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 
 ### ⚡ Példa képzettség kiterjesztésere - 2 fortéllyal
 
-Horgas Apó orkok [nyomát fedezte fel](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-észrevétele-a-természetben) a folyóparton és követni szeretné, hova vezetnek.
+Horgas Apó orkok [nyomát fedezte fel](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-aktív-keresése-és-észrevétele-a-természetben) a folyóparton és követni szeretné, hova vezetnek.
 
 Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-követése-a-természetben) Szituáció.
 

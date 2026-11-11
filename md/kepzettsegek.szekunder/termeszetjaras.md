@@ -1,6 +1,6 @@
 ## 🔵 Természetjárás
 
-A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. a többit [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
+A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. Ezeket [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
 
 A képzettség magában foglalja a következőket:
 

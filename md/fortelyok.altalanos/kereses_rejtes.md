@@ -19,7 +19,7 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 
 ### 1. fok
 
-🌟 Megszünteti a [kiterjeszett képzettségre kapott büntetést](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal).
+🌟 Megszünteti a [kiterjesztett képzettségre kapott büntetést](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal).
 
 ### 2. fok
 
