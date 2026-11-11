@@ -14,7 +14,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - 🟨 **Normál Kiterjesztés egyszerre mindkettőre**:
-  - [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély 
+  - [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
     ÉS
   - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
@@ -68,7 +68,7 @@ Természetjárás + Intelligencia (menekülő)
 - **Nehézség**: a nyom bonyolultságának megfelelő szint ellen
 - 🟨  **Normál Kiterjesztés egyszerre mindkettőre**:
   - [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) fortély
-    ÉS 
+    ÉS
   - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 ---
