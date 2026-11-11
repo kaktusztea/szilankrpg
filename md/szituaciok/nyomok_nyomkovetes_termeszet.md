@@ -13,7 +13,10 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 #### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység
 
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
-- 🟨 **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
+- 🟨 **Normál Kiterjesztés egyszerre mindkettőre**:
+  - [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély 
+    ÉS
+  - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
 
@@ -25,9 +28,11 @@ Ha már észrevetted az első nyomot, utána követheted a csapást.
 
 #### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység/Intelligencia
 
-- [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba): több dobás kell a folyamatos követéshez
+- [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba): több dobás kell a folyamatos követéshez
 - 🟨 **Normál Kiterjesztés egyszerre mindkettőre**:
-  - Fortélyok: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra)
+  - [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) fortély
+    ÉS
+  - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
 
@@ -45,7 +50,8 @@ Természetjárás + Érzékenység (nyomolvasó)
 Természetjárás + Intelligencia (menekülő)
 
 🟨 Normál Kiterjesztés egyszerre mindkét félnél
- → Nyomolvasás/eltűntetés fortély ÉS
+ → Nyomolvasás/eltűntetés fortély
+   ÉS
  → Tájtípus (aktuális tájra) fortély
 ```
 
@@ -57,11 +63,13 @@ Természetjárás + Intelligencia (menekülő)
 
 "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
 
-#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
+#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Intelligencia
 
 - **Nehézség**: a nyom bonyolultságának megfelelő szint ellen
 - 🟨  **Normál Kiterjesztés egyszerre mindkettőre**:
-  - Fortélyok: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra)
+  - [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) fortély
+    ÉS 
+  - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 ---
 
