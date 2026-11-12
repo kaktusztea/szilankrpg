@@ -13,7 +13,7 @@ export interface TavharcProps {
   képzettségek: Kepzettseg[];
   setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
   gameMode: boolean;
-  /** A ProbaHub 🏹 chipje: ha 'célzó', a Távharc fül mountkor megnyitja a Célzó dobás popupot (majd consume). */
+  /** ProbaHub CÉ chip: if 'célzó', the Távharc tab flashes the CÉ-SP-VÉ box (then consumes it). */
   pendingDobás?: 'célzó' | null;
   onPendingDobásConsumed?: () => void;
 }

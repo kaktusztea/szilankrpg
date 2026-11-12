@@ -18,7 +18,7 @@ interface Props {
   karakter: Karakter;
   /** Csak Játék módban (és nem verzió-nézetben) látszik a FAB. */
   aktív: boolean;
-  /** TÉ / CÉ / Manőver chip: a cél-fülre váltás + ott a megfelelő dobás-popup megnyitása (App oldja fel). */
+  /** TÉ / Manőver chip: switch to the target tab + open the roll popup there; CÉ: switch tab + flash the CÉ-SP-VÉ box (resolved by App). */
   onHarciDobás: (cél: 'támadó' | 'célzó' | 'manőver') => void;
 }
 

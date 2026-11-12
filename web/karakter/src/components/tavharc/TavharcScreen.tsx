@@ -32,13 +32,14 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   // --- Célzó dobás popup ---
   const [showCéDobás, setShowCéDobás] = useState(false);
 
-  // ProbaHub 🏹: a Távharc fülre váltás után itt nyílik meg a Célzó dobás. Csak ha van aktív távfegyver
-  // (tfDef) ÉS Játék mód - ugyanaz a feltétel, mint a kalkulátor Célzó gombjáé. A pendinget rögtön consume-oljuk.
+  // ProbaHub CÉ chip: no direct roll (multipliers must be set first) - flash the CÉ-SP-VÉ box instead.
+  // Counter so a repeated chip click re-triggers the animation (used as the box key).
+  const [céFlash, setCéFlash] = useState(0);
   useEffect(() => {
     if (pendingDobás !== 'célzó') return;
-    if (tfDef && gameMode) setShowCéDobás(true);
+    setCéFlash(n => n + 1);
     onPendingDobásConsumed?.();
-  }, [pendingDobás, tfDef, gameMode, onPendingDobásConsumed]);
+  }, [pendingDobás, onPendingDobásConsumed]);
 
   // --- CÉ bontás ---
   // Per-fegyver CÉ-Idea delta (Modell 2, spec §17): az aktív példány Ideája a idea_default-tól eltérve
@@ -124,7 +125,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           cé={bontás.cé} vé={vé} sp={távSP.sp} támadásLabel={támadásLabel} szorzóÖsszeg={szorzóÖsszeg} cella={cella} távolság={távolság}
           szorzok={szorzok} szorzóState={szorzóState} onSzorzóChange={onSzorzóChange}
           onTávolságPopup={() => setPopup(s => ({ ...s, távolságPopup: true }))}
-          onCéDobás={() => setShowCéDobás(true)}
+          onCéDobás={() => setShowCéDobás(true)} céFlash={céFlash}
           karakter={k} data={data}
         />
       )}

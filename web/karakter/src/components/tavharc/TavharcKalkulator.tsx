@@ -26,17 +26,19 @@ interface Props {
   onSzorzóChange: (key: keyof SzorzóState, id: number) => void;
   onTávolságPopup: () => void;
   onCéDobás: () => void;
+  /** >0: flash the CÉ-SP-VÉ box (ProbaHub CÉ chip); a new value restarts the animation. */
+  céFlash?: number;
   karakter: Karakter;
   data: GameData;
 }
 
-export function TavharcKalkulator({ cé, vé, sp, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, onCéDobás, karakter, data }: Props) {
+export function TavharcKalkulator({ cé, vé, sp, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, onCéDobás, céFlash = 0, karakter, data }: Props) {
   const véClass = vé <= cé + 1 ? 'th-ve-ok' : vé - cé > 20 ? 'th-ve-bad' : 'th-ve-warn';
 
   return (
     <>
       <div className="th-main-row">
-        <div className="th-value-main th-ce-ve-box th-ce-ve-clickable" onClick={onCéDobás}>
+        <div key={céFlash} className={`th-value-main th-ce-ve-box th-ce-ve-clickable${céFlash ? ' th-ce-ve-flash' : ''}`} onClick={onCéDobás}>
           <span>CÉ: {cé}  ({támadásLabel})</span>
           <span>SP: {sp === SP_NINCS ? '–' : `${sp >= 0 ? '+' : ''}${sp}`}</span>
           <span className={véClass}>VÉ: {vé}</span>

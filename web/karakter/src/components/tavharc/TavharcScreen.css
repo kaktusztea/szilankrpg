@@ -53,6 +53,13 @@
 
 .th-ce-ve-box { display: flex; flex-direction: column; justify-content: center; gap: 4px; flex: 1; min-width: 0; }
 .th-ce-ve-clickable { cursor: pointer; }
+.th-ce-ve-flash { animation: th-ce-ve-flash 0.5s ease-in-out 2; }
+@keyframes th-ce-ve-flash {
+  50% { border-color: #ffd54f; box-shadow: 0 0 8px 2px rgba(255, 213, 79, 0.6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .th-ce-ve-flash { animation: none; }
+}
 .th-szc-box { font-size: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; flex: 0 0 auto; color: var(--text-dim); }
 .th-szc-value { font-size: 18px; }
 
