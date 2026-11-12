@@ -9940,7 +9940,7 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 
 #### 🌟 `12.szint`
 
-⭕TODO⭕ Érzed, "hallod" a hajódat: tudod, mikor roppan a test, mikor bír még többet, mikor kell engedni a vásznakon.
+⭕TODO⭕ Érzed, "hallod" a hajódat: tudod, mikor roppan a hajótest, mikor bír még többet, mikor kell engedni a vásznakon.
 
 #### 🌟 `15.szint`
 
@@ -11389,7 +11389,7 @@ Szerencsejáték
 
 ## 🔵 Természetjárás
 
-A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. Ebből `1 db` alapból jár a képzettség felvételekor, a többit [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
+A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. Ezeket [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
 
 A képzettség magában foglalja a következőket:
 
@@ -11411,12 +11411,40 @@ A képzettség magában foglalja a következőket:
 +0: Normál időjárás
 ```
 
-#### ⚜️ Vad becserkészése 🔀
+#### ⚜️ Évszak 🔀
 
 ```
--6: Szél felől közelítesz
-    jó szaglású vad felé
--6: Zajos aljnövényzet
+-3: Tél (egyes esetekben)
+```
+
+#### ⚜️ Körülmények 🔀
+
+```
+-3: Felszerelés hiánya
+-3: Kapkodás
+```
+
+#### ⚜️ Nyom jellege követésnél 1️⃣
+
+```
+-3: Zavaros nyomok
++3: Egyértelmű nyomok
+```
+
+#### ⚜️ Nyom kora követésnél 1️⃣
+
+```
+ 0: Friss
+-3: 1-2 napos
+-6: több napos
+```
+
+#### ⚜️ Talaj követésnél 1️⃣
+
+```
+-6: Sziklás
+-3: Kemény
++3: Puha, hó, sár
 ```
 
 ---
@@ -11461,10 +11489,12 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 #### 🌟 `12.szint`
 
 ⭕TODO⭕
+Állatok nem futnak el rögtön.
 
 #### 🌟 `15.szint`
 
 ⭕TODO⭕
+Segítségedre hívod az erdő állatait.
 
 <br />
 
@@ -12388,7 +12418,7 @@ Ekkor a segítő is megdobja ugyanazt a Képzettségpróbát. Választhat, hogy 
 Adott Bónusz • Nehézség  
 
 +3  •  (Nehézség - 3)
-+6  •  azonos Nehézség 
++6  •  azonos Nehézség
 ```
 
 Azt, hogy egy próbába hányan segíthetnek be, az helyzetfüggő, nem akarunk erre képletet megadni. A KM döntsön az ésszerűség határain belül.
@@ -12769,7 +12799,7 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 
 ### ⚡ Példa képzettség kiterjesztésere - 2 fortéllyal
 
-Horgas Apó orkok [nyomát fedezte fel](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-észrevétele-a-természetben) a folyóparton és követni szeretné, hova vezetnek.
+Horgas Apó orkok [nyomát fedezte fel](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-aktív-keresése-és-észrevétele-a-természetben) a folyóparton és követni szeretné, hova vezetnek.
 
 Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_termeszet.md#-nyomok-követése-a-természetben) Szituáció.
 
@@ -13817,15 +13847,11 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 
 ### 1. fok
 
-🔒 Észlelés - `3.szint`
-
-🌟 Hatás leírását lásd fenn.
+🌟 Megszünteti a [kiterjesztett képzettségre kapott büntetést](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal).
 
 ### 2. fok
 
-🔒 Észlelés - `3.szint`
-
-🌟 Hatás leírását lásd fenn.
+🌟 A [képzettségkiterjesztés szabályainak megfelelően](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) bónuszt kapsz.
 
 ---
 
@@ -14097,11 +14123,11 @@ Megtalált nyomok értelmezését, eltűntetését, illetve városon kívül a n
 
 ### 1. fok
 
-🌟 A Hatás leírásáért lásd Szituációkat fenn.
+🌟 Megszünteti a [kiterjesztett képzettségre kapott büntetést](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal).
 
 ### 2. fok
 
-🌟 A Hatás leírásáért lásd Szituációkat fenn.
+🌟 A [képzettségkiterjesztés szabályainak megfelelően](../030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) bónuszt kapsz.
 
 ---
 
@@ -36490,14 +36516,17 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 
 ---
 
-### 🌳 Nyomok **észrevétele** a természetben
+### 🌳 Nyomok aktív keresése és észrevétele a természetben
 
 "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 
 #### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység
 
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
+- 🟨 **Normál Kiterjesztés egyszerre mindkettőre**:
+  - [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
+    ÉS
+  - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
 
@@ -36509,9 +36538,11 @@ Ha már észrevetted az első nyomot, utána követheted a csapást.
 
 #### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Érzékenység/Intelligencia
 
-- [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba): több dobás kell a folyamatos követéshez
+- [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba): több dobás kell a folyamatos követéshez
 - 🟨 **Normál Kiterjesztés egyszerre mindkettőre**:
-  - Fortélyok: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra)
+  - [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) fortély
+    ÉS
+  - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
 
@@ -36529,7 +36560,8 @@ Természetjárás + Érzékenység (nyomolvasó)
 Természetjárás + Intelligencia (menekülő)
 
 🟨 Normál Kiterjesztés egyszerre mindkét félnél
- → Nyomolvasás/eltűntetés fortély ÉS
+ → Nyomolvasás/eltűntetés fortély
+   ÉS
  → Tájtípus (aktuális tájra) fortély
 ```
 
@@ -36541,11 +36573,13 @@ Természetjárás + Intelligencia (menekülő)
 
 "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
 
-#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
+#### → Képzettségpróba: [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + Intelligencia
 
 - **Nehézség**: a nyom bonyolultságának megfelelő szint ellen
 - 🟨  **Normál Kiterjesztés egyszerre mindkettőre**:
-  - Fortélyok: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra)
+  - [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) fortély
+    ÉS
+  - [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 ---
 
