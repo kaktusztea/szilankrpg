@@ -106,7 +106,7 @@
 }
 
 .harc-header-bottom .mp-box .mp-box-sep {
-  color: var(--success);
+  color: var(--color-taktika);
   font-size: 18px;
   font-weight: bold;
 }
@@ -130,7 +130,7 @@
 .harc-header-bottom .mp-box .mp-value {
   font-size: 20px;
   font-weight: bold;
-  color: var(--success);
+  color: var(--color-taktika);
   font-family: monospace;
 }
 
@@ -398,7 +398,7 @@
   border: 1px solid rgba(76, 175, 80, 0.4);
   border-radius: 6px;
   background: rgba(76, 175, 80, 0.08);
-  color: var(--success);
+  color: var(--color-taktika);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;

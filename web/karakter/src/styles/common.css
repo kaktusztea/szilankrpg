@@ -321,7 +321,7 @@
 .aktiv-field-select {
   background: transparent;
   border: none;
-  color: var(--success);
+  color: var(--text);
   font-size: 16px;
   font-weight: bold;
   padding: 0;
@@ -342,8 +342,6 @@
 .aktiv-field-toggle strong { color: var(--text-dim); font-size: 14px; }
 .aktiv-field-toggle.on strong { color: var(--success); }
 .aktiv-field-toggle.disabled { opacity: 0.4; cursor: not-allowed; }
-
-.aktiv-option-special { color: #81c784; }
 
 /* ===================
    Inline code formatter

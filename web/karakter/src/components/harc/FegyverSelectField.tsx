@@ -11,7 +11,7 @@ export function FegyverSelectField({ label, selectedIdx, options, onChange }: Pr
       <span className="aktiv-field-label">{label}</span>
       <select className="aktiv-field-select" value={selectedIdx} onChange={e => onChange(parseInt(e.target.value))}>
         {options.map(f => (
-          <option key={f.idx} value={f.idx} disabled={f.disabled} className={f.idx < 0 ? 'aktiv-option-special' : undefined}>
+          <option key={f.idx} value={f.idx} disabled={f.disabled}>
             {f.név}{f.disabled ? ' (nincs nálad)' : ''}
           </option>
         ))}
