@@ -5,6 +5,15 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 <br />
 
 ---
+### 🔆 Speciális: [Emberentúli szaglás](../fortelyok.erzekek/emberentuli_szaglas.md) fortély hatása
+
+Előforduló eset, hogy a helyszínen épp nincs érzékelhető **vizuális** nyom, amit értelmezni/követni lehet. Ilyenkor ugye a dobás is lehetetlen.
+
+Viszont ha a fenti [érzék-fortéllyal](../043_altalanos_fortelyok.md#%C3%A9rz%C3%A9k-fort%C3%A9lyok) rendelkezik a karakter és szag nyom létezik, akkor ő az **összes** lenti szituációban továbbra is **dobhat** Természetjárás képzettségpróbát. Példa: Ork követi a menekülő törpe szagnyomait.
+
+<br />
+
+---
 
 ### 🌳 Nyomok aktív keresése és észrevétele a természetben
 
