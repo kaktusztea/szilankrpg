@@ -5,6 +5,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 <br />
 
 ---
+
 ### 🔆 Speciális: [Emberentúli szaglás](../fortelyok.erzekek/emberentuli_szaglas.md) fortély hatása
 
 Előforduló eset, hogy a helyszínen épp nincs érzékelhető **vizuális** nyom, amit értelmezni/követni lehet. Ilyenkor ugye a dobás is lehetetlen.
