@@ -31,6 +31,12 @@
   .sfe-box      { grid-column: 1; grid-row: 2; }
   .ve-csokk-box { grid-column: 2; grid-row: 2; }
   .harc-header-bottom { grid-column: 1 / -1; grid-row: 3; }
+  /* Bottom row aligns with the 2-col grid above (higher specificity: base flex rule comes later) */
+  .harc-header .harc-header-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .harc-header-bottom .mp-box { justify-content: center; }
 }
 
 .ke-box, .te-box, .sfe-box, .ve-csokk-box {
