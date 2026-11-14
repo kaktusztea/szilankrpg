@@ -1,3 +1,4 @@
+import { Ikon } from './common/Ikon';
 import type { SlotEntry } from '../hooks/slot-utils';
 
 interface Props {
@@ -20,9 +21,9 @@ export function SlotRow({ slot: s, displayName, active, onLoad, onSaveOptions, o
         <span className={`slot-tsz${activeCls}`}> ({s.tsz || '?'}sz)</span>
       </div>
       <div className="slot-chips">
-        <button className="slot-chip" title="Mentés / Exportálás" onClick={e => { e.stopPropagation(); onSaveOptions(s.uid); }}>💾</button>
+        <button className="slot-chip" title="Mentés / Exportálás" onClick={e => { e.stopPropagation(); onSaveOptions(s.uid); }}><Ikon név="mentés" /></button>
         <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
-        <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${displayName} (${s.tsz || '?'}sz)`); }}>✕</button>
+        <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${displayName} (${s.tsz || '?'}sz)`); }}><Ikon név="bezár" /></button>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import jsQR from 'jsqr';
@@ -148,7 +149,7 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
         <label className="overlay-label-center">Importálás</label>
 
         <button className="menu-item" disabled={loadingFile} onClick={handleFileLoad}>
-          {loadingFile ? <span className="slot-btn-spinner" /> : '📁 JSON fájlból'}
+          {loadingFile ? <span className="slot-btn-spinner" /> : <><Ikon név="mappa" /> JSON fájlból</>}
         </button>
 
         <button className="menu-item" disabled={loadingQr} onClick={() => {
@@ -156,11 +157,11 @@ export function ImportOptionsPopup({ onFileLoad, onClipboardLoad, onClose }: Pro
           setLoadingQr(true);
           requestAnimationFrame(() => requestAnimationFrame(() => qrInputRef.current?.click()));
         }}>
-          {loadingQr ? <span className="slot-btn-spinner" /> : '▣ QR kód képfájlból'}
+          {loadingQr ? <span className="slot-btn-spinner" /> : <><Ikon név="qr" /> QR kód képfájlból</>}
         </button>
         <input ref={qrInputRef} type="file" accept="image/*" hidden onChange={handleQrImageSelect} />
 
-        <button className="menu-item" onClick={handleClipboard}>📋 Vágólapról<span className="slot-btn-label import-sub-hint">(URL / QR)</span></button>
+        <button className="menu-item" onClick={handleClipboard}><Ikon név="vágólap" /> Vágólapról<span className="slot-btn-label import-sub-hint">(URL / QR)</span></button>
 
         {clipError && <span className="import-clip-error">{clipError}</span>}
         {qrError && <span className="import-clip-error">{qrError}</span>}

@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useRef } from 'react';
 import type { Kepzettseg, Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
@@ -193,7 +194,7 @@ export function KepzettsegProbaPopup({
             ? <><span className="kep-proba-strike">{képzettségNév} ({szint})</span><br/>{képzettségNévId(helyettesítés, { kepzettsegDefs })} ({effSzint - vállalás})</>
             : <>{képzettségNév} ({szint})</>}
           {dobásKomment.length > 0 && (
-            <button className="kep-proba-info-btn" title="Próbadobás magyarázat" onClick={() => setOpenPicker('info')}>💡</button>
+            <button className="kep-proba-info-btn" title="Próbadobás magyarázat" onClick={() => setOpenPicker('info')}><Ikon név="infó" /></button>
           )}
         </div>
 
@@ -232,7 +233,7 @@ export function KepzettsegProbaPopup({
                 </CelszamGomb>
               ))}
               {p.nehézségek_extra.length > 0 && (!nehTöbbi ? (
-                <button type="button" className="he-field-btn kep-proba-neh-tobbi" aria-label="További célszámok" onClick={() => setNehTöbbi(true)}>▾</button>
+                <button type="button" className="he-field-btn kep-proba-neh-tobbi" aria-label="További célszámok" onClick={() => setNehTöbbi(true)}><Ikon név="lenyit" /></button>
               ) : (
                 p.nehézségek_extra.map(é => (
                   <CelszamGomb key={é} aktív={nehézség === é} onClick={d.váltás(() => { setNehézség(é); })}>{é}</CelszamGomb>

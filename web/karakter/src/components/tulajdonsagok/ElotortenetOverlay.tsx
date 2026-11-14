@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -30,7 +31,7 @@ export function ElotortenetOverlay({ karakter, setKarakter, data, onClose }: Pro
     <OverlayPortal dismissible onClose={onClose}>
       <div className="fullscreen-overlay" onClick={e => e.stopPropagation()}>
         <div className="fullscreen-overlay-header">
-          <button className="fullscreen-overlay-close" onClick={onClose}>✕</button>
+          <button className="fullscreen-overlay-close" onClick={onClose}><Ikon név="bezár" /></button>
           <span className="fullscreen-overlay-title">Előtörténet</span>
         </div>
         <div className="fullscreen-overlay-body elotortenet-body">

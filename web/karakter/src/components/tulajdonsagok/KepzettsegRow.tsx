@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { képzKulcs } from '../../engine/azonosito';
 import type { KepzettsegRowProps } from './types';
@@ -41,7 +42,7 @@ export function KepzettsegRow({
         <span className="kep-right">
           {def?.md_fájl && <span className="md-link-wrap" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
           {!gameMode && (
-            <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+            <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}><Ikon név="bezár" /></button>
           )}
           <span className={`kep-szint${slot.szint === 0 ? ' kep-szint-zero' : slot.szint >= KÉPZETTSÉG_SZINT_MAGAS ? ' kep-szint-high' : ''}${overLimit ? ' kep-over' : ''}`}>
             {slot.szint}

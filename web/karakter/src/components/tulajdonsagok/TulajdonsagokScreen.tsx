@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { clamp } from '../../engine/utils';
 import { useState, useMemo, useCallback } from 'react';
 import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
@@ -130,7 +131,7 @@ export function TulajdonsagokScreen({
           className="tul-test-reset-btn"
           title="Teszt karakter alapállapotba állítása"
           onClick={onTestReset}
-        >🔄</button>
+        ><Ikon név="frissít" /></button>
       )}</h2>
 
       <TulajdonsagokHeader

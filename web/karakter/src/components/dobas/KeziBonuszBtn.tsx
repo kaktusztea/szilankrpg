@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import './dobas.css';
@@ -62,7 +63,7 @@ export function KeziBonuszBtn({ bónusz, onChange, label = 'Statikus bónuszok' 
             </div>
             {!részletes && (
               <button type="button" className="kezi-bonusz-kibont" onClick={() => setRészletes(true)} aria-label="Részletes nézet">
-                ▾
+                <Ikon név="lenyit" />
               </button>
             )}
           </div>

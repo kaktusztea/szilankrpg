@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { OverlayPortal } from '../common/OverlayPortal';
 
 interface Props {
@@ -15,9 +16,9 @@ export function SaveFileOverlay({ filename, blob, onShare, onDownload, onClose }
         <label className="overlay-label-center">Fájl kész</label>
         <span className="overlay-filename">{filename}</span>
         {typeof navigator.share === 'function' && (
-          <button className="menu-item" onClick={() => onShare(blob, filename)}>📤 Megosztás</button>
+          <button className="menu-item" onClick={() => onShare(blob, filename)}><Ikon név="megosztás" /> Megosztás</button>
         )}
-        <button className="menu-item" onClick={() => onDownload(blob, filename)}>💾 Helyi mentés</button>
+        <button className="menu-item" onClick={() => onDownload(blob, filename)}><Ikon név="mentés" /> Helyi mentés</button>
       </div>
     </OverlayPortal>
   );

@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { AktivBaseProps } from './types';
 import { fmtCode } from '../formatters';
@@ -42,7 +43,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
                   e.stopPropagation();
                   pushUndo(`Helyzet−: ${h}`, [{ field: 'session', prev: session }]);
                   setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }));
-                }}>✕</button>
+                }}><Ikon név="bezár" /></button>
               </div>
               <KotottFortelySorok sorok={kötöttFortélyok} alapeset />
             </div>

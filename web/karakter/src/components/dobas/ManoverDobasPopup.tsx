@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -370,8 +371,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
               <div key={i} className={`manover-fazis${isAktív ? ' manover-fazis-aktiv' : ''}${isDonePhase ? ' manover-fazis-done' : ''}`}>
                 <div className="manover-fazis-label">
                   {isDonePhase && (sikeresAManőverSzempontjából
-                    ? <span className="manover-fazis-ok">✓ </span>
-                    : <span className="manover-fazis-fail">✗ </span>
+                    ? <span className="manover-fazis-ok"><Ikon név="pipa" /> </span>
+                    : <span className="manover-fazis-fail"><Ikon név="kudarc" /> </span>
                   )}
                   {FÁZIS_FELIRAT[f]}
                 </div>

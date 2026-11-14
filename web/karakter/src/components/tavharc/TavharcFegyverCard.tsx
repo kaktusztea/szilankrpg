@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { calcCÉBontás, calcTámadásLabel, getFortélyCÉ, calcTávSP } from './helpers';
@@ -38,7 +39,7 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
     <div className={`th-card${isActive ? ' th-card-active' : ''}`} onClick={onSelect}>
       <div className="th-card-header">
         <strong>{tf.alap}</strong>
-        <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteTarget(); }}>✕</button>
+        <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteTarget(); }}><Ikon név="bezár" /></button>
       </div>
       <div className="he-fegyver-fields he-fegyver-chip-mb">
         <span className="he-field-btn he-field-indicator">

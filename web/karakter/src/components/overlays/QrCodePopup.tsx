@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { encode, renderSVG } from 'uqr';
@@ -186,12 +187,12 @@ export function QrCodePopup({ url, név, tsz, onClose }: Props) {
           </div>
         ) : (
           <div className="qr-popup-actions">
-            <button type="button" className="qr-popup-chip qr-popup-chip-disabled" title="Még nem implementált" onClick={() => setHint('Még nem implementált')}>📋 Vágólapra</button>
+            <button type="button" className="qr-popup-chip qr-popup-chip-disabled" title="Még nem implementált" onClick={() => setHint('Még nem implementált')}><Ikon név="vágólap" /> Vágólapra</button>
             <button type="button" className="qr-popup-chip" disabled={saving} onClick={handleDownload}>
-              {saving ? <span className="slot-btn-spinner" /> : '💾 PNG fájlba'}
+              {saving ? <span className="slot-btn-spinner" /> : <><Ikon név="mentés" /> PNG fájlba</>}
             </button>
             {canShare && (
-              <button type="button" className="qr-popup-chip" onClick={handleShare}>📤 Megosztás</button>
+              <button type="button" className="qr-popup-chip" onClick={handleShare}><Ikon név="megosztás" /> Megosztás</button>
             )}
           </div>
         )}

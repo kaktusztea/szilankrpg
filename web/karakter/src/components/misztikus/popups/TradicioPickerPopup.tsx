@@ -1,3 +1,4 @@
+import { Ikon } from '../../common/Ikon';
 import type { TradícióOpció } from '../types';
 import { OverlayPortal } from '../../common/OverlayPortal';
 
@@ -19,7 +20,7 @@ export function TradícióPickerPopup({ opciók, onPick, onPickAltípus, onClose
               if (t.altípusok.length > 0) onPickAltípus(t.név);
               else onPick(t.név);
             }}>
-              {t.név} {t.altípusok.length > 0 && '▸'}
+              {t.név} {t.altípusok.length > 0 && <Ikon név="jobbra" />}
               {' '}<span className="kep-prompt-text-dim">({t.típus})</span>
             </button>
           ))}

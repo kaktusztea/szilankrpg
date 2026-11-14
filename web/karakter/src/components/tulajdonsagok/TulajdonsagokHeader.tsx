@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { GameData } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
 import { TulajdonsagCell } from './TulajdonsagCell';
@@ -52,7 +53,7 @@ export function TulajdonsagokHeader({
                 className="tul-jk-chip tul-elotortenet-chip"
                 title="Előtörténet"
                 onClick={e => { e.stopPropagation(); onOpenElotortenet(); }}
-              >🪪</button>
+              ><Ikon név="adatlap" /></button>
               <button
                 type="button"
                 className={`tul-jk-chip${jk ? ' tul-jk-chip-jk' : ' tul-jk-chip-njk'}`}

@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { ReactNode } from 'react';
 import type { ProbaDobás } from '../../engine/dice';
 import { előnyHátrányLabel, eredményFelirat, type ÖsszetettEredmény } from '../../engine/proba/proba-common';
@@ -6,9 +7,9 @@ import { előnyHátrányLabel, eredményFelirat, type ÖsszetettEredmény } from
 export function ProbaFejlec({ cím, vanEredmény, onReset, onClose }: { cím: string; vanEredmény: boolean; onReset: () => void; onClose: () => void }) {
   return (
     <div className="kep-proba-header">
-      <button type="button" className="kep-proba-close-btn" onClick={onClose} title="Bezárás" aria-label="Bezárás">✕</button>
+      <button type="button" className="kep-proba-close-btn" onClick={onClose} title="Bezárás" aria-label="Bezárás"><Ikon név="bezár" /></button>
       {cím}
-      <button type="button" className="kep-proba-reset-btn" disabled={!vanEredmény} onClick={onReset} title="Újradobás" aria-label="Újradobás">⟲</button>
+      <button type="button" className="kep-proba-reset-btn" disabled={!vanEredmény} onClick={onReset} title="Újradobás" aria-label="Újradobás"><Ikon név="reset" /></button>
     </div>
   );
 }
@@ -73,7 +74,7 @@ export function ProbaEredmeny({ bázis, nehézség, csakÖsszeg, dobás, összet
             <div key={i} className={`kep-proba-osszetett-sor${!csakÖsszeg && !s.siker ? ' kep-proba-osszetett-fail' : ''}`}>
               <span className="kep-proba-osszetett-label">{s.label}{!csakÖsszeg ? ` (${s.célszám})` : ''}:</span>
               <span className="kep-proba-osszetett-sum">{s.összeg}</span>
-              {!csakÖsszeg && <span className={s.siker ? 'kep-proba-osszetett-ok' : 'kep-proba-osszetett-x'}>{s.siker ? '✓' : '✗'}</span>}
+              {!csakÖsszeg && <span className={s.siker ? 'kep-proba-osszetett-ok' : 'kep-proba-osszetett-x'}><Ikon név={s.siker ? 'pipa' : 'kudarc'} /></span>}
             </div>
           ))}
         </div>

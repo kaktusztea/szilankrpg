@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useEffect } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../dobas/ElonyPicker';
@@ -142,7 +143,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
   return (
     <PopupOverlay onClose={onClose}>
       <div className="tamado-dobas-popup">
-        {result && <button className="sebzes-reset-btn" onClick={() => setResult(null)}>⟲</button>}
+        {result && <button className="sebzes-reset-btn" onClick={() => setResult(null)}><Ikon név="reset" /></button>}
         <div className="ke-dobas-header">Célzó dobás</div>
 
         {!result ? (

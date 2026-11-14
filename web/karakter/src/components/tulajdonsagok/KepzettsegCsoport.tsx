@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { képzKulcs, TRADÍCIÓ_ID, findDef as findDefHelper } from '../../engine/azonosito';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
@@ -57,7 +58,7 @@ export function KepzettsegCsoport({
   return (
     <div className="kep-csoport">
       <h3 className="csoport-label kep-csoport-label" onClick={onToggleCollapse}>
-        <span className="kep-csoport-arrow">{collapsed ? '▸' : '▾'}</span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        <span className="kep-csoport-arrow"><Ikon név={collapsed ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
       </h3>
       {!collapsed && (<>
         {slotok.map((slot, i) => {

@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Session } from '../../engine/types';
 import type { VirtuálisFegyver } from './types';
@@ -23,7 +24,7 @@ export function TavharcGameSelector({ összesFegyver, tfIdx, setSession, mfFok, 
   return (
     <div className="th-row th-controls">
       <button className="he-field-btn th-game-fegyver-btn" onClick={() => setShowPicker(true)}>
-        🏹 <strong>{aktívNév}</strong>
+        <Ikon név="távharc" /> <strong>{aktívNév}</strong>
       </button>
       <span className="th-badge">MF: {mfFok}</span>
       {!isMágikus && <span className="th-badge">Idea: {idea >= 0 ? '+' : ''}{idea}</span>}

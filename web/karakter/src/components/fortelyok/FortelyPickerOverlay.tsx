@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Kepzettseg, Fortely } from '../../engine/types';
 import type { KepzettsegDef, FortelySummary } from '../../engine/data-loader';
@@ -56,8 +57,8 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
       <div className="fort-picker-popup" onClick={e => e.stopPropagation()}>
         <div className="fort-picker-header">
           <label>+ Új fortély</label>
-          <button type="button" className={`fort-picker-expand-all${allExpanded ? ' fort-picker-dot-active' : ''}`} aria-label="Összes lenyitása" onClick={toggleAll}>▾</button>
-          <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}>✕</button>
+          <button type="button" className={`fort-picker-expand-all${allExpanded ? ' fort-picker-dot-active' : ''}`} aria-label="Összes lenyitása" onClick={toggleAll}><Ikon név="lenyit" /></button>
+          <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}><Ikon név="bezár" /></button>
         </div>
         <div className="fort-picker-list">
           {available.map(d => {
@@ -80,7 +81,7 @@ export function FortelyPickerOverlay({ available, csoport, slotok, tsz, fortély
                       className={`fort-picker-dot${isExpanded ? ' fort-picker-dot-active' : ''}`}
                       onClick={e => { e.stopPropagation(); toggleItem(d.név); }}
                       aria-label="Részletek"
-                    >▾</button>
+                    ><Ikon név="lenyit" /></button>
                   )}
                 </div>
                 {isExpanded && (

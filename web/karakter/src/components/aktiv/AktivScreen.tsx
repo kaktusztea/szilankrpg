@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { AktivBaseProps } from './types';
 import { calcAktivData, FÜL_SORREND } from './aktiv-calc';
 import { AktivHatasPool } from './AktivHatasPool';
@@ -13,7 +14,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
 
   return (
     <div className="screen aktiv-screen">
-      <h2>✳️ Aktív</h2>
+      <h2><Ikon név="aktív" /> Aktív</h2>
 
       <AktivTaktikak data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
         taktikaHatásPerElem={taktikaHatásPerElem} taktikaFortélyok={taktikaFortélyok} eseményNév={eseményNév} />

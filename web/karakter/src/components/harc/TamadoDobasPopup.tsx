@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useEffect } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../dobas/ElonyPicker';
@@ -216,7 +217,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   return (
     <PopupOverlay className="kep-prompt tamado-dobas-wrapper" onClose={() => onClose(téResult ? { té: téResult.eredmény } : null)}>
       <div className="tamado-dobas-popup">
-        {téResult && <button className="sebzes-reset-btn" onClick={() => setTéResult(null)}>⟲</button>}
+        {téResult && <button className="sebzes-reset-btn" onClick={() => setTéResult(null)}><Ikon név="reset" /></button>}
         <div className="ke-dobas-header">Támadó dobás ({aktívTé})</div>
 
         {!téResult ? (

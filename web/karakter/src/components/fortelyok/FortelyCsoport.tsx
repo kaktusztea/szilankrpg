@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { FortelyCsoportProps } from './types';
 import { harcmodorNév, képzettségSzint } from '../../engine/azonosito';
 import { FortelyRow } from './FortelyRow';
@@ -25,7 +26,7 @@ export function FortelyCsoport({
   return (
     <div className="fort-csoport">
       <h3 className="csoport-label fort-csoport-label" onClick={onToggleCollapse}>
-        <span className="fort-csoport-arrow">{collapsed ? '▸' : '▾'}</span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        <span className="fort-csoport-arrow"><Ikon név={collapsed ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
         {csoport === 'szabad' && !gameMode && (
           <span className="fort-csoport-ingyenes">● {szabadMaradtIngyenes} ingyenes</span>
         )}

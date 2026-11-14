@@ -1,3 +1,4 @@
+import { Ikon } from './Ikon';
 import type { Dispatch, SetStateAction } from 'react';
 import type { Kepzettseg } from '../../engine/types';
 import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
@@ -35,7 +36,7 @@ export function HarcmodorLista({ kulcsok, felirat, felvételFelirat, tsz, képze
               <span className="kep-név aktiv-flex-1">{felirat(kulcs)}</span>
               {!gameMode && (
                 <button type="button" className="item-delete" aria-label={`${felirat(kulcs)} törlése`}
-                  onClick={e => { e.stopPropagation(); onDeleteKepz(kulcs); }}>✕</button>
+                  onClick={e => { e.stopPropagation(); onDeleteKepz(kulcs); }}><Ikon név="bezár" /></button>
               )}
               <strong className={`kep-szint${h.szint > tsz ? ' kep-over' : h.szint >= KÉPZETTSÉG_SZINT_MAGAS ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
             </div>

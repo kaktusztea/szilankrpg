@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { ManoverEntry } from '../../engine/data-types';
 import { PickerOverlay } from '../picker/PickerOverlay';
 
@@ -25,11 +26,11 @@ export function ManoverPicker({ fázis, manoverek, onMód, onPick, onClose }: Pr
     return (
       <PickerOverlay title="Manőver mód" onClose={onClose}>
         <button type="button" className="aktiv-picker-item manover-mod-btn" onClick={() => onMód('aktív')}>
-          <span className="aktiv-picker-item-name">⚔️ Aktív</span>
+          <span className="aktiv-picker-item-name"><Ikon név="manőver" /> Aktív</span>
           <span className="aktiv-picker-item-details">Én hajtom végre a manővert</span>
         </button>
         <button type="button" className="aktiv-picker-item manover-mod-btn" onClick={() => onMód('passzív')}>
-          <span className="aktiv-picker-item-name">🛡️ Passzív</span>
+          <span className="aktiv-picker-item-name"><Ikon név="pajzs" /> Passzív</span>
           <span className="aktiv-picker-item-details">Ellenem hajtják végre</span>
         </button>
       </PickerOverlay>

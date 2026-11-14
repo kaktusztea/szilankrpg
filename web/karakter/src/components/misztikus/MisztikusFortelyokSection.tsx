@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { Kepzettseg } from '../../engine/types';
 import type { KepzettsegDef } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
@@ -59,7 +60,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
                 {f.elem ? `${név(f)} - ${f.elem}` : név(f)}{f.kiérdemelt ? ' ⭐' : ''}
               </span>
               {!gameMode && (
-                <button className="item-delete" onClick={e => { e.stopPropagation(); onDelete(globalIdx); }}>✕</button>
+                <button className="item-delete" onClick={e => { e.stopPropagation(); onDelete(globalIdx); }}><Ikon név="bezár" /></button>
               )}
               <span className="fort-fok-dots">
                 {Array.from({ length: MAX_FORTÉLY_FOK }, (_, di) => (

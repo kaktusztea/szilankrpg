@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { isTaktikaAllowed, taktikaTiltásOka } from '../../engine/taktika/taktika-megkotes';
@@ -47,7 +48,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
       const tiltott = toggle && !aktív && !isTaktikaAllowed(t.név, session, karakter, data);
       const tiltásOk = tiltott ? taktikaTiltásOka(t.név, session, karakter, data) : null;
       return <div key={t.név}>
-        {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header">🏹 Távharci taktikák</div>}
+        {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header"><Ikon név="távharc" /> Távharci taktikák</div>}
         <button type="button"
           className={`aktiv-picker-item${aktív ? ' aktiv-picker-item-active-accent' : ''}${tiltott ? ' aktiv-picker-item-disabled-inline' : ''}`}
           onClick={() => {
@@ -55,13 +56,13 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
             if (t.fokozatos) onFokválasztó(t.név);
             else onAddSimple(t.név);
           }}>
-          <span className="aktiv-picker-item-name">{aktív ? '✔ ' : ''}{t.név}{t.fokozatos ? ' 📶' : ''}</span>
+          <span className="aktiv-picker-item-name">{aktív ? <><Ikon név="pipa" /> </> : null}{t.név}{t.fokozatos ? <> <Ikon név="fokozatos" /></> : null}</span>
           <span className="aktiv-picker-item-details">
             {t.fokozatos && t.fokok
               ? t.fokok.map(f => `${f.fok}: ${formatFokMods(f)}`).join(' | ')
               : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ') : ''}
           </span>
-          {tiltásOk && <span className="aktiv-picker-item-tiltas">🔒 {tiltásOk}</span>}
+          {tiltásOk && <span className="aktiv-picker-item-tiltas"><Ikon név="zár" /> {tiltásOk}</span>}
           {t.megjegyzés && <span className="aktiv-picker-item-hatas">{t.megjegyzés}</span>}
         </button>
       </div>;

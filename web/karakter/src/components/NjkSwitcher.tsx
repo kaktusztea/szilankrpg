@@ -1,3 +1,4 @@
+import { Ikon } from './common/Ikon';
 import { useState } from 'react';
 import type { Karakter, UndoEntry } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
@@ -91,7 +92,7 @@ export function NjkSwitcher({ aktív, data, onLoad, onLoadError }: Props) {
             <span className="njk-box-név">{s.név}</span>
             {/* Halott NJK (ÉP 0): a stat helyett 💀 (helyspórolás). Élőnél marad a maradék/max Skat. */}
             {halott
-              ? <span className="njk-box-halott-ikon" title="Halott (ÉP 0)">💀</span>
+              ? <span className="njk-box-halott-ikon" title="Halott (ÉP 0)"><Ikon név="halott" /></span>
               : stat && <span className="njk-box-stat">{statLabel(stat)}</span>}
             {harcérték && (
               <span className="njk-harcertek-tooltip" role="tooltip">

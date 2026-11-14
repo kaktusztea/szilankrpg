@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { OverlayPortal } from '../common/OverlayPortal';
 import { MD_BASE, REPO_BASE, REPO_RAW_BASE } from '../MdLink';
 
@@ -22,17 +23,17 @@ export function SzilankPickerOverlay({ current, onPick, onClose }: Props) {
         <hr className="szilank-divider" />
 
         <a className="szilank-hub-link" href={MD_BASE + 'szabalyrendszer.md'}
-          target="_blank" rel="noopener noreferrer">📖 Szabályrendszer</a>
+          target="_blank" rel="noopener noreferrer"><Ikon név="könyv" /> Szabályrendszer</a>
 
         <hr className="szilank-divider" />
 
         <a className="szilank-hub-link" href={REPO_BASE + 'web/karakter/README.md'}
-          target="_blank" rel="noopener noreferrer">📱 Webapp manuál</a>
+          target="_blank" rel="noopener noreferrer"><Ikon név="telefon" /> Webapp manuál</a>
 
         <hr className="szilank-divider" />
 
         <a className="szilank-hub-link" href={REPO_RAW_BASE + 'segedlet/szilank_segedlet_ingame.pdf?raw=true'}
-          target="_blank" rel="noopener noreferrer">📋 Segédlet pdf</a>
+          target="_blank" rel="noopener noreferrer"><Ikon név="vágólap" /> Segédlet pdf</a>
 
 
       </div>

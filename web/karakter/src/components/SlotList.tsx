@@ -1,3 +1,4 @@
+import { Ikon } from './common/Ikon';
 import { useState, useEffect } from 'react';
 import type { Karakter, UndoEntry } from '../engine/types';
 import { FEEDBACK_TIMEOUT_MS } from '../ui-constants';
@@ -125,10 +126,10 @@ export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, on
     <>
       <div className="slot-actions slot-actions-top">
         <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Új karakter" onClick={() => { if (!newDisabled) onNew(); }}>
-          <span className="slot-btn-icon">✚</span><span className="slot-btn-label">Új</span>
+          <span className="slot-btn-icon"><Ikon név="új" /></span><span className="slot-btn-label">Új</span>
         </button>
         <button className="menu-item slot-file-btn" title="Importálás" onClick={() => setShowImportPopup(true)}>
-          <span className="slot-btn-icon">📥</span><span className="slot-btn-label">Importálás</span>
+          <span className="slot-btn-icon"><Ikon név="import" /></span><span className="slot-btn-label">Importálás</span>
         </button>
         <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled || isSaving} title="Összes karakter mentése"
           onClick={() => {
@@ -142,7 +143,7 @@ export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, on
               onSave();
             }
           }}>
-          {savingBackup ? <span className="slot-btn-spinner" /> : <><span className="slot-btn-icon">📦</span><span className="slot-btn-label">Összes mentése</span></>}
+          {savingBackup ? <span className="slot-btn-spinner" /> : <><span className="slot-btn-icon"><Ikon név="csomag" /></span><span className="slot-btn-label">Összes mentése</span></>}
         </button>
       </div>
       <div className="slot-list">
@@ -170,9 +171,9 @@ export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, on
             if (document.fullscreenElement) document.exitFullscreen();
             else document.documentElement.requestFullscreen();
             onClose();
-          }}>⛶</button>
+          }}><Ikon név="teljesképernyő" /></button>
         ) : (!window.matchMedia('(display-mode: standalone)').matches && (
-          <button className="menu-fs-chip" title="Teljes képernyő" onClick={onFullscreenHint}>⛶</button>
+          <button className="menu-fs-chip" title="Teljes képernyő" onClick={onFullscreenHint}><Ikon név="teljesképernyő" /></button>
         ))}
       </div>
 

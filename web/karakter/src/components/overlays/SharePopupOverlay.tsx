@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { OverlayPortal } from '../common/OverlayPortal';
 
 interface Props {
@@ -11,7 +12,7 @@ export function SharePopupOverlay({ név, copied, url, onClose }: Props) {
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt overlay-confirm">
-        <label className="share-popup-label">🔗 Megosztás</label>
+        <label className="share-popup-label"><Ikon név="link" /> Megosztás</label>
         <span className="share-popup-msg">
           {copied
             ? <>„{név}" link vágólapra másolva!</>

@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { ReactNode } from 'react';
 import { OverlayPortal } from '../common/OverlayPortal';
 import './picker.css';
@@ -14,7 +15,7 @@ export function PickerOverlay({ title, onClose, children }: Props) {
       <div className="aktiv-picker" onClick={e => e.stopPropagation()}>
         <div className="aktiv-picker-header">
           <label>{title}</label>
-          <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}>✕</button>
+          <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}><Ikon név="bezár" /></button>
         </div>
         <div className="aktiv-picker-list">{children}</div>
       </div>

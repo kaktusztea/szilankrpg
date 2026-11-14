@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { OverlayPortal } from '../common/OverlayPortal';
 
 interface UndoEntry {
@@ -21,7 +22,7 @@ export function UndoOverlay({ entries, selected, onSelect, onApply, onReset, onC
         <div className="undo-header">
           <label className="overlay-label-center">Visszavonás</label>
           <button className="undo-reset-btn" disabled={entries.length === 0}
-            onClick={onReset} title="Előzmények törlése">⟲</button>
+            onClick={onReset} title="Előzmények törlése"><Ikon név="reset" /></button>
         </div>
         <div className="undo-list">
           {entries.map((entry, i) => (

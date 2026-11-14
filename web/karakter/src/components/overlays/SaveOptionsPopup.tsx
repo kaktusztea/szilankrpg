@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { FEEDBACK_TIMEOUT_MS } from '../../ui-constants';
@@ -61,22 +62,22 @@ export function SaveOptionsPopup({ név, canShare, onUrlLink, onSaveFile, onShar
         {canShare ? (
           <>
             <button className="menu-item" disabled={saving} onClick={handleDesktopSave}>
-              {saving ? <span className="slot-btn-spinner" /> : '📄 JSON háttértárra'}
+              {saving ? <span className="slot-btn-spinner" /> : <><Ikon név="fájl" /> JSON háttértárra</>}
             </button>
-            <button className="menu-item" onClick={onShareFile}>📤 JSON megosztása</button>
+            <button className="menu-item" onClick={onShareFile}><Ikon név="megosztás" /> JSON megosztása</button>
           </>
         ) : (
           <button className="menu-item" disabled={saving} onClick={handleDesktopSave}>
-            {saving ? <span className="slot-btn-spinner" /> : '📄 JSON fájlba'}
+            {saving ? <span className="slot-btn-spinner" /> : <><Ikon név="fájl" /> JSON fájlba</>}
           </button>
         )}
 
         <div className="save-row-with-info">
-          <button className="menu-item" onClick={onUrlLink}>🔗 URL link<span className="save-info-btn" onClick={e => { e.stopPropagation(); setShowInfo(true); }}>ⓘ</span></button>
+          <button className="menu-item" onClick={onUrlLink}><Ikon név="link" /> URL link<span className="save-info-btn" onClick={e => { e.stopPropagation(); setShowInfo(true); }}>ⓘ</span></button>
         </div>
 
         <div className="save-row-with-info">
-          <button className="menu-item" onClick={onQrCode}>▣ QR kód<span className="save-info-btn" onClick={e => { e.stopPropagation(); setShowInfo(true); }}>ⓘ</span></button>
+          <button className="menu-item" onClick={onQrCode}><Ikon név="qr" /> QR kód<span className="save-info-btn" onClick={e => { e.stopPropagation(); setShowInfo(true); }}>ⓘ</span></button>
         </div>
 
         {showInfo && (

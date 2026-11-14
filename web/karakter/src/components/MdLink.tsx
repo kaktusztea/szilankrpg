@@ -1,3 +1,4 @@
+import { Ikon } from './common/Ikon';
 // A repo base a Vite `define`-ból jön (site.config.ts). Teszt környezetben nincs
 // beállítva, ezért a fallback - a futó appban mindig a define értéke érvényesül.
 export const REPO_BASE =
@@ -25,6 +26,6 @@ export function MdLink({ mdFájl }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={e => e.stopPropagation()}
-    >🔗</a>
+    ><Ikon név="link" /></a>
   );
 }

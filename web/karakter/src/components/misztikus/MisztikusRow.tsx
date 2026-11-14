@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
 import { KÉPZETTSÉG_SZINT_MAGAS } from '../../ui-constants';
@@ -29,7 +30,7 @@ export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning 
       <div className="item-row miszt-row" onClick={() => gameMode ? onInfoToggle?.() : onEdit()}>
         <span className={`miszt-row-name${warning ? ' miszt-row-warn' : ''}`}>{displayName}</span>
         {canDelete && !gameMode && (
-          <button className="item-delete" onClick={e => { e.stopPropagation(); onDelete?.(); }}>✕</button>
+          <button className="item-delete" onClick={e => { e.stopPropagation(); onDelete?.(); }}><Ikon név="bezár" /></button>
         )}
         <strong className={szintClass}>{szint}</strong>
       </div>

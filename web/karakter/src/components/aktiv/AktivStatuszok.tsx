@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useRef, useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Session, UndoPatch } from '../../engine/types';
@@ -74,7 +75,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
                 e.stopPropagation();
                 pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`, [{ field: 'session', prev: session }]);
                 setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }));
-              }}>✕</button>}
+              }}><Ikon név="bezár" /></button>}
             </div>
           );
         })}
@@ -87,7 +88,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
             <button className="item-delete" onClick={() => {
               pushUndo(`Narratív−: ${nm.szöveg}`, [{ field: 'session', prev: session }]);
               setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) }));
-            }}>✕</button>
+            }}><Ikon név="bezár" /></button>
           </div>
         ))}
       </div>

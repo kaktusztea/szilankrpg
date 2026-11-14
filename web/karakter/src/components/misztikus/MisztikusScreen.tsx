@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { képzettségNév, képzKulcs, bontKépzKulcs, TRADÍCIÓ_ID, findDef as findKepzDef } from '../../engine/azonosito';
 
@@ -105,7 +106,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
 
   return (
     <div className="screen miszt-screen">
-      <h2>✨ Misztikus</h2>
+      <h2><Ikon név="misztikus" /> Misztikus</h2>
 
       <AuraPanel aura={aura} me={me} onMágiaAkarata={actions.openMágiaAkarata} />
 

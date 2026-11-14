@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { fmtCode } from '../formatters';
 import type { HelyzetFortélyEntry } from './aktiv-calc';
 
@@ -6,7 +7,7 @@ export function KotottFortelySorok({ sorok, alapeset = false }: { sorok: Helyzet
   return <>
     {sorok.map((kf, j) => (
       <div key={j} className={`item-row aktiv-helyzet-fortely-sor ${alapeset && kf.fok === 0 ? 'aktiv-helyzet-alapeset' : kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
-        <span>→ {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}</span>
+        <span>→ {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? <> <Ikon név="pipa" /></> : null}</span>
       </div>
     ))}
   </>;

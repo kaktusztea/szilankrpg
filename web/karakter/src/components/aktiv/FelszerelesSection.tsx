@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Karakter, FelszerelésTárgy } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -158,7 +159,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
                 </td>
                 <td>
                   {sor.számít && (
-                    <button className="felsz-torol" title="Nincs a karakternél" onClick={() => setAutoNincs(sor, true)}>✕</button>
+                    <button className="felsz-torol" title="Nincs a karakternél" onClick={() => setAutoNincs(sor, true)}><Ikon név="bezár" /></button>
                   )}
                 </td>
               </tr>
@@ -191,7 +192,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
                 </td>
                 <td>
                   {!üres && (
-                    <button className="felsz-torol" title="Tárgy törlése" onClick={() => törölKézi(idx)}>✕</button>
+                    <button className="felsz-torol" title="Tárgy törlése" onClick={() => törölKézi(idx)}><Ikon név="bezár" /></button>
                   )}
                 </td>
               </tr>

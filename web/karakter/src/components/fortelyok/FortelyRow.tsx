@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { képzettségNév, képzettségSzint } from '../../engine/azonosito';
 import type { FortelyRowProps } from './types';
@@ -46,7 +47,7 @@ export function FortelyRow({
         <span className="fort-right">
           {def?.md_fájl && <span className="md-link-wrap" onClick={e => e.stopPropagation()}><MdLink mdFájl={def.md_fájl} /></span>}
           {!gameMode && (
-            <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+            <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}><Ikon név="bezár" /></button>
           )}
           <span className={`fort-fok${isNyelv ? ' nyelvismeret-fok' : ''}${overLimit ? ' fort-over' : ''}`}>
             {isNyelv ? nyelvFokLabels[slot.fok] ?? slot.fok : (

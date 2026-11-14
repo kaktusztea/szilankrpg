@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, type ReactNode } from 'react';
 
-export interface TabDef { id: string; label: string; editOnly: boolean; }
+export interface TabDef { id: string; label: ReactNode; editOnly: boolean; }
 
 interface Props {
   tabs: TabDef[];

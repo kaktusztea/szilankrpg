@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { SEB_TÍPUSOK, SEB_ALAP_MAX, SEB_BŐVÍTETT_MAX, type SebTípus } from '../../engine/harc/ep-logic';
 
@@ -28,7 +29,7 @@ export function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) 
           <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => handleÉrték(n)}>{n}</button>
         ))}
       </div>
-      {!expanded && <div className="ep-expand-btn" onClick={() => setExpanded(true)}>▾</div>}
+      {!expanded && <div className="ep-expand-btn" onClick={() => setExpanded(true)}><Ikon név="lenyit" /></div>}
       {expanded && (
         <div className="kep-szint-grid">
           {Array.from({ length: SEB_BŐVÍTETT_MAX - SEB_ALAP_MAX }, (_, i) => i + SEB_ALAP_MAX + 1).map(n => (

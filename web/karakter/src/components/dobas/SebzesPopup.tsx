@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
@@ -141,7 +142,7 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
   return (
     <PopupOverlay onClose={() => onClose(eredmény?.végső)} onEscape={eredmény ? undefined : onEscape}>
       <div className="tamado-dobas-popup">
-        {eredmény && <button className="sebzes-reset-btn" onClick={() => setEredmény(null)}>⟲</button>}
+        {eredmény && <button className="sebzes-reset-btn" onClick={() => setEredmény(null)}><Ikon név="reset" /></button>}
         <div className="ke-dobas-header">Sebzés</div>
 
         {!eredmény ? (
@@ -255,8 +256,8 @@ function PáncélVálasztóBtn({ páncél, delta, jelleg, onSelect }: {
         ) : (
           // Választás után tömör kétsoros: 🛡️ páncél / 🗡️ sebzésjelleg, jobbra a két sort kitöltő SP-delta.
           <span className="pancel-valaszto-racs">
-            <span className="pancel-valaszto-sor">🛡️{aktLabel}</span>
-            {jelleg && <span className="pancel-valaszto-sor">🗡️{jelleg}</span>}
+            <span className="pancel-valaszto-sor"><Ikon név="pajzs" /> {aktLabel}</span>
+            {jelleg && <span className="pancel-valaszto-sor"><Ikon név="harc" /> {jelleg}</span>}
             <span className={`pancel-valaszto-delta ${deltaClass}`}>{delta > 0 ? '+' : ''}{delta}</span>
           </span>
         )}

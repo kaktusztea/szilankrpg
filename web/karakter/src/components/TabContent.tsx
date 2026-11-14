@@ -1,3 +1,4 @@
+import { Ikon } from './common/Ikon';
 import type { Kepzettseg, UndoPatch } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, Fortely, Tulajdonsagok } from '../engine/types';
@@ -14,11 +15,11 @@ import { MisztikusScreen } from './misztikus';
 import { HatterekScreen } from './hatterek';
 
 export const ALL_TABS: TabDef[] = [
-  { id: 'aktiv', label: '✳️', editOnly: false },
-  { id: 'harc', label: '🗡️', editOnly: false },
-  { id: 'tavharc', label: '🏹', editOnly: false },
-  { id: 'harcertekek', label: '🛡️', editOnly: false },
-  { id: 'misztikus', label: '✨', editOnly: false },
+  { id: 'aktiv', label: <Ikon név="aktív" />, editOnly: false },
+  { id: 'harc', label: <Ikon név="harc" />, editOnly: false },
+  { id: 'tavharc', label: <Ikon név="távharc" />, editOnly: false },
+  { id: 'harcertekek', label: <Ikon név="pajzs" />, editOnly: false },
+  { id: 'misztikus', label: <Ikon név="misztikus" />, editOnly: false },
   { id: 'tulajdonsagok', label: '🔵', editOnly: false },
   { id: 'fortelyok', label: '🟣', editOnly: false },
   { id: 'hatterek', label: '🟡', editOnly: false },

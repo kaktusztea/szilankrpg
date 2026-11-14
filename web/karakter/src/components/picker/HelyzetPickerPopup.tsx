@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
 import { fmtCode } from '../formatters';
@@ -81,7 +82,7 @@ export function HelyzetPickerPopup({ data, session, setSession, pushUndo, onClos
             <button type="button" key={h.név}
               className={`aktiv-picker-item ${g.cls}${aktív ? ' aktiv-picker-item-active-accent' : ''}${tiltott ? ' aktiv-picker-item-disabled-inline' : ''}`}
               onClick={() => aktív ? removeHelyzet(h.név) : addHelyzet(h)}>
-              <span className="aktiv-picker-item-name">{aktív ? '✔ ' : ''}{h.név}</span>
+              <span className="aktiv-picker-item-name">{aktív ? <><Ikon név="pipa" /> </> : null}{h.név}</span>
               <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
             </button>
           );

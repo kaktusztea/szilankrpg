@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { Dispatch, SetStateAction, ReactNode } from 'react';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -35,7 +36,7 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
     <button type="button" className="manover-dobas-eredmeny" onClick={() => setDobás(null)} aria-label="Dobás törlése, újradobás">
       <span className="ke-dobas-result">{alap + dobás.eredmény}</span>
       <span className="ke-dobas-detail">
-        {alapLabel} ({alap}) + k{kocka}{dobás.rolls.length > 1 ? ` [${dobás.rolls.join(', ')}] → ${dobás.eredmény}` : ` (${dobás.eredmény})`} ↺
+        {alapLabel} ({alap}) + k{kocka}{dobás.rolls.length > 1 ? ` [${dobás.rolls.join(', ')}] → ${dobás.eredmény}` : ` (${dobás.eredmény})`} <Ikon név="reset" />
       </span>
     </button>
   );
@@ -61,8 +62,8 @@ export function ManoverKovetelmenyLepes({ követelmények, karakter, data, sessi
             <div key={i} className="manover-kov-sor">
               <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟨'}</span>
               <span className="manover-kov-cimke">{követelményCimke(köv)}</span>
-              {jelölés === '✓' && <span className="manover-fazis-ok">✓</span>}
-              {jelölés === '✗' && <span className="manover-fazis-fail">✗</span>}
+              {jelölés === '✓' && <span className="manover-fazis-ok"><Ikon név="pipa" /></span>}
+              {jelölés === '✗' && <span className="manover-fazis-fail"><Ikon név="kudarc" /></span>}
               {jelölés === '?' && <span className="manover-kov-info">?</span>}
             </div>
           );
@@ -123,11 +124,11 @@ export function ManoverVegeredmeny({ végeredmény, mód, manőver, büntetve, i
   const felirat = büntetve
     ? (passzív ? '⚠ Átjutott, de megcsaptad (1x)' : '⚠ Sikeres, de megcsaptak (1x)')
     : sikeres
-      ? (passzív ? '✓ Manőver sikeres ellened' : '✓ Manőver sikeres')
-      : (passzív ? '✗ Manőver sikertelen ellened' : '✗ Manőver sikertelen');
+      ? (passzív ? 'Manőver sikeres ellened' : 'Manőver sikeres')
+      : (passzív ? 'Manőver sikertelen ellened' : 'Manőver sikertelen');
   return (
     <div className={`manover-dobas-veg ${osztály}`} role="status">
-      {felirat}
+      {!büntetve && <><Ikon név={sikeres ? 'pipa' : 'kudarc'} /> </>}{felirat}
       {immunisLeírás && (
         <div className="manover-dobas-hatas"><div className="manover-dobas-hatas-mondat">{immunisLeírás}</div></div>
       )}
@@ -175,7 +176,7 @@ export function ManoverSzitPicker({ táblák, szitMods, setSzitMods, multiMods, 
                 return (
                   <button type="button" key={i} aria-pressed={aktív}
                     className={`kep-proba-szit-item${aktív ? ' kep-proba-szit-item-active' : ''}${színClass}`} onClick={kattintás}>
-                    <span className="kep-proba-szit-val">{isSentinel ? '✖' : előjeles(s.érték)}</span>
+                    <span className="kep-proba-szit-val">{isSentinel ? <Ikon név="kudarc" /> : előjeles(s.érték)}</span>
                     <span className="kep-proba-szit-desc">{fegyverNév ? `${s.leírás} (${fegyverNév})` : s.leírás}</span>
                   </button>
                 );

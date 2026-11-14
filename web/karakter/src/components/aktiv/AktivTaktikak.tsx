@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
@@ -50,9 +51,9 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                   <div className="aktiv-taktika-header">
                     <span>
                       <strong className="aktiv-taktika-name">{hatásLabel}:</strong>
-                      {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.join(', ')} ✔</span>}
+                      {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.join(', ')} <Ikon név="pipa" /></span>}
                     </span>
-                    <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}>✕</button>
+                    <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}><Ikon név="bezár" /></button>
                   </div>
                   {hatásEntry && (
                     <div className="aktiv-taktika-hatas">

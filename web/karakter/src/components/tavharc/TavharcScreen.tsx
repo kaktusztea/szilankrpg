@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useCallback, useEffect } from 'react';
 import { harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
 import { képzKulcs } from '../../engine/azonosito';
@@ -98,7 +99,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   return (
     <div className="screen tavharc-screen">
-      <h2>🏹 Távharc</h2>
+      <h2><Ikon név="távharc" /> Távharc</h2>
 
       <TavharcKepzettsegekSection
         data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={setKépzettségek}

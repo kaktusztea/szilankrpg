@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useCallback, useEffect } from 'react';
 import type { HarcBaseProps } from './types';
 import type { SebzésRubrika } from '../../engine/types';
@@ -117,7 +118,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
   return (
     <div className="screen harc-screen">
-      <h2>🗡️ Harc</h2>
+      <h2><Ikon név="harc" /> Harc</h2>
 
       <HarcFegyverSection
         data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}

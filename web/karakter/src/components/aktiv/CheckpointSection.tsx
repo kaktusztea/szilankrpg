@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Karakter } from '../../engine/types';
 import { createCheckpoint, deleteCheckpoint, autoCheckpointName } from '../../engine/checkpoint-utils';
@@ -41,7 +42,7 @@ export function CheckpointSection({ karakter, setKarakter, onViewCheckpoint }: P
             <span className="naplo-cp-dot">●</span>
             <span className="naplo-cp-entry-name">{cp.név}</span>
             <span className="naplo-cp-entry-date">{cp.dátum.slice(0, 10)}</span>
-            <button className="item-delete" onClick={e => { e.stopPropagation(); handleDelete(cp.id); }}>✕</button>
+            <button className="item-delete" onClick={e => { e.stopPropagation(); handleDelete(cp.id); }}><Ikon név="bezár" /></button>
           </div>
         ))}
         {sorted.length === 0 && <div className="naplo-cp-empty">Nincs kiemelt verzió.</div>}

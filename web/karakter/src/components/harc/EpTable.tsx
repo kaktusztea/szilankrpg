@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState, useEffect, useCallback } from 'react';
 import type { SebzésRubrika } from '../../engine/types';
 import { buildRubrikák, toSebzések, applySeb, applyGyógy } from '../../engine/harc/ep-logic';
@@ -61,9 +62,9 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
     <div className="ep-table-wrapper">
       <div className="ep-table-header">
         <span><strong>ÉP: <span className="harc-monospace">{ÉP}({ÉP - kitöltött})</span></strong></span>
-        <button className="btn-reset btn-reset-sm" disabled={!gameMode || kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲</button>
-        <button className="btn-seb" disabled={!gameMode || (kitöltött === összRubrika && rubrikák.every(r => r.típus !== 'FP'))} onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
-        <button className="btn-heal" disabled={!gameMode || kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>
+        <button className="btn-reset btn-reset-sm" disabled={!gameMode || kitöltött === 0} onClick={() => setShowResetConfirm(true)}><Ikon név="reset" /></button>
+        <button className="btn-seb" disabled={!gameMode || (kitöltött === összRubrika && rubrikák.every(r => r.típus !== 'FP'))} onClick={() => setShowSebDialog(true)}><Ikon név="manőver" /> Seb</button>
+        <button className="btn-heal" disabled={!gameMode || kitöltött === 0} onClick={() => setShowGyógyDialog(true)}><Ikon név="gyógy" /> Gyógy</button>
       </div>
 
       <div className="ep-grid">

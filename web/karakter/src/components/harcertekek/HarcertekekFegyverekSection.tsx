@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Karakter, FegyverPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -114,7 +115,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
     <div className="he-fegyver-card">
       <div className="he-fegyver-header">
         <strong>{fegyver.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
-        <button className="item-delete" onClick={() => onDeleteTarget(index)}>✕</button>
+        <button className="item-delete" onClick={() => onDeleteTarget(index)}><Ikon név="bezár" /></button>
       </div>
       {fd && (() => {
         // Nem-fém fegyver (fa/kő) anyaga fix (a chip tiltja) → az ár is a gyári anyaggal számol,

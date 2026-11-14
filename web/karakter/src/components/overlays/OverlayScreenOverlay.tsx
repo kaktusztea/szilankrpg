@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { OverlayPortal } from '../common/OverlayPortal';
 import { NaploTab } from '../aktiv/NaploTab';
 import { FelszerelesSection } from '../aktiv/FelszerelesSection';
@@ -18,8 +19,8 @@ export function OverlayScreenOverlay({ karakter, setKarakter, data, onClose, onV
     <OverlayPortal dismissible onClose={onClose}>
       <div className="fullscreen-overlay">
         <div className="fullscreen-overlay-header">
-          <button className="fullscreen-overlay-close" onClick={onClose}>✕</button>
-          <span className="fullscreen-overlay-title">✏️ Felszerelés, Verziók, Napló, Jegyzetek</span>
+          <button className="fullscreen-overlay-close" onClick={onClose}><Ikon név="bezár" /></button>
+          <span className="fullscreen-overlay-title"><Ikon név="szerkeszt" /> Felszerelés, Verziók, Napló, Jegyzetek</span>
         </div>
         <div className="fullscreen-overlay-body">
           {/* Felszerelés - legfelső accordion */}

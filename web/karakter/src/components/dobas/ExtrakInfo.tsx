@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import type { FegyverExtraDef } from '../../engine/data-types';
@@ -50,7 +51,7 @@ export function ExtrakInfo({ fegyverExtrák, extraDefs, kontextus, csakManőver 
         onClick={() => setOpen(true)}
         title="Fegyver extrák"
       >
-        💡 Fegyver extrák{aktívDb > 0 ? ` (${aktívDb} aktív)` : ''}
+        <Ikon név="infó" /> Fegyver extrák{aktívDb > 0 ? ` (${aktívDb} aktív)` : ''}
       </button>
       {open && (
         <PopupOverlay onClose={() => setOpen(false)} className="kep-prompt extrak-prompt">

@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { Kepzettseg, UndoPatch } from '../../engine/types';
 import { képzKulcs, fortélyFok } from '../../engine/azonosito';
 import type { GameData } from '../../engine/data-loader';
@@ -43,7 +44,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
 
   return (
     <div className="screen harcertekek-screen">
-      <h2>🛡️ Harcértékek</h2>
+      <h2><Ikon név="pajzs" /> Harcértékek</h2>
 
       <HmSection data={data} karakter={karakter} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode} />
 
