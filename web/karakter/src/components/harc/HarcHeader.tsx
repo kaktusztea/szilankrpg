@@ -49,6 +49,7 @@ export function HarcHeader({
     btn.classList.add('mode-toggle-hint');
   }
 
+  const téDobások = session.té_dobások ?? [];
   return (
     <div className="harc-header">
       {/* Row 1: KÉ + TÉ (mobile) / KÉ + TÉ + SFÉ + VÉ csökk (desktop) */}
@@ -68,15 +69,20 @@ export function HarcHeader({
         style={gameMode && aktívTÉ != null ? undefined : { cursor: 'default' }}>
         <span className="label">TÉ</span>
         <span className="value">{aktívTÉ ?? '-'}</span>
-        {(session.té_dobások ?? []).length > 0 && (
-          <div className="ke-history">
-            {(session.té_dobások ?? []).map((d, i) => (
-              <span key={i} className="ke-history-item">
-                {d.té}
-                {d.sp != null && <span className="te-history-sp">({d.sp})</span>}
-                {d.veCsökkentés != null && <span className="te-history-ve">(−{d.veCsökkentés}VÉ)</span>}
-              </span>
-            ))}
+        {/* Roll history as a mini table: one column per roll (newest first), rows TÉ / SP / VÉ.
+            The SP and VÉ rows appear only if at least one roll has that value. */}
+        {téDobások.length > 0 && (
+          <div className="te-history" style={{ gridTemplateColumns: `auto repeat(${téDobások.length}, auto)` }}>
+            <span className="te-history-fej">TÉ</span>
+            {téDobások.map((d, i) => <span key={i} className={`te-history-te te-history-oszlop-${i}`}>{d.té}</span>)}
+            {téDobások.some(d => d.sp != null) && <>
+              <span className="te-history-fej">SP</span>
+              {téDobások.map((d, i) => <span key={i} className={`te-history-oszlop-${i}`}>{d.sp ?? '-'}</span>)}
+            </>}
+            {téDobások.some(d => d.veCsökkentés != null) && <>
+              <span className="te-history-fej te-history-ve">VÉ</span>
+              {téDobások.map((d, i) => <span key={i} className={`te-history-ve te-history-oszlop-${i}`}>{d.veCsökkentés != null ? `−${d.veCsökkentés}` : '-'}</span>)}
+            </>}
           </div>
         )}
       </div>

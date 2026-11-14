@@ -70,22 +70,9 @@
   .harc-header .sfe-ertek strong { font-size: 24px; }
   .harc-header .sfe-ikon { width: 17px; height: 17px; }
 
-  /* TÉ row: name, value, roll history as chips on the right */
+  /* TÉ row: name, value, roll history mini table on the right */
   .harc-header .te-box { flex-direction: row; align-items: center; gap: 8px; padding: 8px 10px; }
-  .harc-header .te-box .ke-history {
-    margin: 0 0 0 auto;
-    gap: 4px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  .harc-header .te-box .ke-history-item {
-    font-size: 14px;
-    padding: 3px 6px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-  .harc-header .te-box .te-history-sp, .harc-header .te-box .te-history-ve { font-size: 13px; }
+  .harc-header .te-history { margin: 0 0 0 auto; }
 
   /* VÉ row: name, value, reduction badge (= reset), then the small adjust buttons on the right (wraps below on very narrow screens) */
   .harc-header .ve-csokk-box { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 10px; }
@@ -452,19 +439,24 @@
 .ke-history-item:nth-child(2) { color: var(--text-muted); }
 .ke-history-item:nth-child(3) { color: var(--border-input); }
 
-/* Sebzés (SP) érték a Támadó dobás mellett: TÉ(SP) - örökli a fakuló színt */
-.te-history-sp {
-  margin-left: 1px;
-  font-size: 11px;
-  opacity: 0.85;
+/* TÉ roll history mini table: label column + one column per roll (newest first, older ones fade) */
+.te-history {
+  display: grid;
+  column-gap: 10px;
+  align-items: baseline;
+  justify-items: end;
+  margin-top: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.25;
+  color: #ccc;
 }
-
-.te-history-ve {
-  margin-left: 1px;
-  font-size: 11px;
-  opacity: 0.85;
-  color: #e08a8a;
-}
+.te-history-fej { justify-self: start; font-size: 11px; color: var(--text-muted); }
+.te-history-te { font-size: 15px; font-weight: bold; }
+.te-history-oszlop-0.te-history-te { color: var(--text); }
+.te-history-oszlop-1 { opacity: 0.7; }
+.te-history-oszlop-2 { opacity: 0.45; }
+.te-history-ve { color: #e08a8a; }
 
 /* Manőver trigger button (game mode, above weapon table) */
 .harc-manover-btn {
