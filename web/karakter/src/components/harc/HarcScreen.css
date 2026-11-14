@@ -59,10 +59,10 @@
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  .harc-header .ke-box .ke-history-item { font-size: 12px; }
+  .harc-header .ke-box .ke-history-item { font-size: 13px; }
   /* align-self: the base .sfe-box rule forces align-items: center !important */
   .harc-header .sfe-box > * { align-self: baseline; }
-  .harc-header .sfe-lefedettseg { display: block; font-size: 12px; font-weight: normal; color: var(--text-muted); }
+  .harc-header .sfe-lefedettseg { display: block; font-size: 13px; font-weight: normal; color: var(--text-muted); }
   .harc-header .sfe-values { margin-top: 0; }
   .harc-header .sfe-line-fizikai, .harc-header .sfe-line-energia, .harc-header .sfe-sep { font-size: 20px; }
   .harc-header .sfe-line-fizikai strong, .harc-header .sfe-line-energia strong { font-size: 24px; }
@@ -77,13 +77,13 @@
     justify-content: flex-end;
   }
   .harc-header .te-box .ke-history-item {
-    font-size: 13px;
+    font-size: 14px;
     padding: 3px 6px;
     border: 1px solid var(--border);
     border-radius: 4px;
     white-space: nowrap;
   }
-  .harc-header .te-box .te-history-sp, .harc-header .te-box .te-history-ve { font-size: 12px; }
+  .harc-header .te-box .te-history-sp, .harc-header .te-box .te-history-ve { font-size: 13px; }
 
   /* VÉ row: name, value, reduction badge (= reset), then the small adjust buttons on the right (wraps below on very narrow screens) */
   .harc-header .ve-csokk-box { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 10px; }
@@ -440,7 +440,7 @@
 }
 
 .ke-history-item {
-  font-size: 11px;
+  font-size: 12px;
   font-family: monospace;
 }
 
@@ -451,13 +451,13 @@
 /* Sebzés (SP) érték a Támadó dobás mellett: TÉ(SP) - örökli a fakuló színt */
 .te-history-sp {
   margin-left: 1px;
-  font-size: 10px;
+  font-size: 11px;
   opacity: 0.85;
 }
 
 .te-history-ve {
   margin-left: 1px;
-  font-size: 10px;
+  font-size: 11px;
   opacity: 0.85;
   color: #e08a8a;
 }
