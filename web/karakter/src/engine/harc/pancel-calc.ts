@@ -70,7 +70,7 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
       const hDef = lookupFegyver(data.fegyverek, hFp.alap);
       if (isHárító(hDef)) {
         hárítóVÉ = elsődlegesMód(hDef!).VÉ;
-        hárítóNév = hFp.alap;
+        hárítóNév = hFp.név || hFp.alap;  // instance nickname for display
         const hMfEntry = k.fortélyok.find(f => f.id === 'mesterfegyver' && (f.elem === hDef!.név || f.elem === hFp.alap));
         if (hMfEntry) {
           const hMf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === hMfEntry.fok);
@@ -83,10 +83,10 @@ export function calcFogas(k: Karakter, session: Session, data: GameData, _fortel
   let fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null = null;
   if (session.fegyverfogás === 'fegyver_pajzs' && pajzsVÉ > 0) {
     const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + Pajzs', VÉ_bónusz: pajzsVÉ, TÉ_büntetés: pajzsTÉBüntetés };
+    fogásResult = { név: (jobbFp?.név || jobbFp?.alap || 'Fegyver') + ' + Pajzs', VÉ_bónusz: pajzsVÉ, TÉ_büntetés: pajzsTÉBüntetés };
   } else if (session.fegyverfogás === 'fegyver_hárító' && hárítóVÉ > 0) {
     const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + ' + hárítóNév, VÉ_bónusz: hárítóVÉ, TÉ_büntetés: 0 };
+    fogásResult = { név: (jobbFp?.név || jobbFp?.alap || 'Fegyver') + ' + ' + hárítóNév, VÉ_bónusz: hárítóVÉ, TÉ_büntetés: 0 };
   }
 
   return { pajzsVÉ, fogásResult };

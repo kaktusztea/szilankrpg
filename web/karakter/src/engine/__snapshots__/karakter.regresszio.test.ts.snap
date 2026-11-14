@@ -790,6 +790,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
       "aktor": "vágóél-egyenes-átlagos",
       "alap_TÉ": 9,
       "alap_VÉ": 9,
+      "becenév": "Hajnalpenge + Tőr",
       "fegyver_név": "Kard, lovag + Tőr",
       "fegyverhossz": 3,
       "harckeret": 0,

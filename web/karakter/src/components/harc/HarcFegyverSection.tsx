@@ -52,7 +52,8 @@ function összegzés(data: GameData, karakter: Karakter, session: Session, fegyv
   const fegyverek = bal ? `${név(session.aktív_fegyver_index)} + ${bal}` : név(session.aktív_fegyver_index);
 
   const opciók = data.konstansok.fegyverfogás_opciók as { id: string; név: string }[];
-  const részek = [opciók.find(o => o.id === fogás)?.név ?? 'Egyfegyveres'];
+  // Egyfegyveres is the default: not worth showing in the summary
+  const részek = fogás === 'egyfegyveres' ? [] : [opciók.find(o => o.id === fogás)?.név ?? fogás];
   if (karakter.páncél.alap) részek.push(`Páncél: ${session.aktív_páncél ? 'Igen' : 'Nem'}`);
   // Session toggles the character actually has (SessionToggles stays mounted, so a disabled toggle is already forced off)
   for (const tf of data.fortelySummaries.filter(d => d.session_toggle)) {
@@ -79,7 +80,7 @@ export function HarcFegyverSection({ data, karakter, session, setSession, pushUn
         <button type="button" className="harc-fegyver-osszegzo" aria-expanded={kinyitva} onClick={() => setKinyitva(k => !k)}>
           <span className="harc-fegyver-osszegzo-szoveg">
             <span className="harc-fegyver-osszegzo-fegyver">{össz.fegyverek}</span>
-            <span className="harc-fegyver-osszegzo-reszlet">{össz.részlet}</span>
+            {össz.részlet && <span className="harc-fegyver-osszegzo-reszlet">{össz.részlet}</span>}
           </span>
           <span className="harc-fegyver-osszegzo-nyil" aria-hidden="true">{kinyitva ? '▴' : '▾'}</span>
         </button>

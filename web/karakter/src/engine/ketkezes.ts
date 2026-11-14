@@ -6,8 +6,8 @@ import { lookupFegyver, fortélyDef } from './lookup';
 import type { FegyverResultMód } from './harc/types';
 
 interface KétkezesInput {
-  jobbFp: { alap: string; idea: number };
-  balFp: { alap: string; idea: number };
+  jobbFp: { alap: string; idea: number; név?: string };
+  balFp: { alap: string; idea: number; név?: string };
   fegyverek: FegyverAlap[];
   karakter: Karakter;
   konstansok: Pick<KonstansokRaw,
@@ -25,6 +25,8 @@ interface KétkezesInput {
 
 interface KétkezesResult extends FegyverResultMód {
   fegyver_név: string;
+  /** Display name from the instance nicknames ("Hajnalpenge + Tőr"); the key `fegyver_név` stays def-based. */
+  becenév?: string;
   fegyverhossz: number;
   sumFegyverhossz: number;
   módok: FegyverResultMód[];
@@ -121,6 +123,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
 
   return {
     fegyver_név: `${nagyobb.név} + ${kisebb.név}`,
+    ...(nagyobbFp.név || kisebbFp.név ? { becenév: `${nagyobbFp.név || nagyobb.név} + ${kisebbFp.név || kisebb.név}` } : {}),
     ...módEredmény,
     fegyverhossz: Math.max(jobbFh, balFh),
     sumFegyverhossz: sumFh,
