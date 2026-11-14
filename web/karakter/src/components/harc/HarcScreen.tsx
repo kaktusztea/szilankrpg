@@ -34,7 +34,7 @@ type ManőverDef = HarcBaseProps['data']['manoverek'][number];
 /** A Harc fül popupjai (egyszerre egy). */
 type HarcPopup =
   | { t: 'ké'; eredmény: number } | { t: 'támadó' } | { t: 'fárasztás' } | { t: 'teljesVédekezés' }
-  | { t: 'véHistory' } | { t: 'véReset' } | { t: 'támInfo'; info: TámInfo } | { t: 'fegyverInfo'; result: FegyverResult }
+  | { t: 'véHistory' } | { t: 'támInfo'; info: TámInfo } | { t: 'fegyverInfo'; result: FegyverResult }
   | { t: 'fegyverfogás' } | { t: 'páncélInfo' }
   | { t: 'manőverMód' } | { t: 'manőverLista'; mód: 'aktív' | 'passzív' } | { t: 'manőver'; manőver: ManőverDef; mód: 'aktív' | 'passzív' };
 
@@ -142,7 +142,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         konstansok={data.konstansok}
         onVéChange={changeVé}
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setNyitott({ t: 'véHistory' }); }}
-        onVéResetClick={() => setNyitott({ t: 'véReset' })}
         onKéClick={handleKéClick}
         onTéClick={openTámadóDobás}
         onSféClick={() => setNyitott({ t: 'páncélInfo' })}
@@ -201,7 +200,6 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
 
       <HarcPopups
         session={session}
-        showVéResetConfirm={nyitott?.t === 'véReset'}
         showVéHistory={nyitott?.t === 'véHistory'}
         támInfo={nyitott?.t === 'támInfo' ? nyitott.info : null}
         onVéReset={() => { changeVé(0, true); bezár(); }}

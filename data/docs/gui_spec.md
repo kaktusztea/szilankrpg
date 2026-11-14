@@ -452,9 +452,9 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 - **VÉ csökkenés box**: label `VÉ csökkenés` (bold, fehér, uppercase), érték negálva kijelezve (pl. -3, -5), alatta gombok: -3, -2, -1, +1 (sorrend: `konstansok.yaml` `vé_csökkentés_gombok`). Külön reset gomb nincs.
   - -3/-2/-1: VÉ csökkentés (disabled ha minden fegyver VÉ = 0 a táblázatban)
   - +1: VÉ visszaadás (disabled ha csökkenés = 0)
-  - Reset: a csökkenés-jelző kapszula (`-N ⟲`, csak ha csökkenés > 0) koppintható → megerősítő popup: piros "VÉ Reset" gomb. Ugyanez a gomb a VÉ csökkenés történet popup alján is elérhető.
+  - Reset: csak a VÉ csökkenés történet popup alján lévő piros "VÉ Reset" gombbal. A csökkenés-jelző chip (`-N`, csak ha csökkenés > 0) nem reset: ugyanazt a történet popupot nyitja, mint az érték.
   - VÉ oszlop flash: sárga animáció csökkenéskor, zöld animáció +1-nél (1s fade-out)
-  - Koppintás a label-re vagy értékre (nem a kapszulára): VÉ csökkenés történet popup (pl. "-3; -2; +1") + alján piros "VÉ Reset" gomb, mellé kopp bezárja
+  - Koppintás a label-re, az értékre vagy a csökkenés-jelző chipre: VÉ csökkenés történet popup (pl. "-3; -2; +1") + alján piros "VÉ Reset" gomb, mellé kopp bezárja
 - **Fegyver infó popup**: a fegyvertábla ELSŐ oszlopa (fegyver név, pontozott aláhúzás) kattintható → **FegyverInfoPopup** overlay (`PopupOverlay`: portál + Escape + mellé-katt). Tartalom:
   - Meta info-grid: `Harcmodor: <név>: <szint>. szint`, `Anyag` (a felvett példányé), `Idea` (példány; ha eltér a fegyver alap Ideájától: `<idea> (alap: <default>)`), `Extrák` (a fegyver v2 extráinak nevei, vesszővel).
   - Harcértékek aktoronként (módonként) tábla: Aktor (+ elsődleges/másodlagos jelzés), TÉ, VÉ, SP (+jelleg), Át(ütés), Tám(adások). CSAK a fegyver-harcértékek (a `FegyverResult.módok`-ból), taktika/páncél/fogás módosító NÉLKÜL - statikus referencia.

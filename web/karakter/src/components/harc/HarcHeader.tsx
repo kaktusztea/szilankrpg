@@ -22,7 +22,6 @@ interface HarcHeaderProps {
   /** delta: nyers, nem szorzott csökkenés/(negatív) visszanyerés mennyisége. */
   onVéChange: (delta: number) => void;
   onVéLabelTap: () => void;
-  onVéResetClick: () => void;
   onKéClick: () => void;
   onTéClick: () => void;
   onSféClick: () => void;
@@ -33,7 +32,7 @@ interface HarcHeaderProps {
 export function HarcHeader({
   ké, aktívTÉ, aktívVÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont, manőverAlap, hm,
   maxVéCsökk, session, setSession, pushUndo, konstansok,
-  onVéChange, onVéLabelTap, onVéResetClick, onKéClick, onTéClick, onSféClick, onManőverClick, gameMode,
+  onVéChange, onVéLabelTap, onKéClick, onTéClick, onSféClick, onManőverClick, gameMode,
 }: HarcHeaderProps) {
   const [showMpPicker, setShowMpPicker] = useState(false);
   const [showMaInfo, setShowMaInfo] = useState(false);
@@ -94,10 +93,9 @@ export function HarcHeader({
         <span className="label" onClick={gameMode ? onVéLabelTap : undefined}>VÉ</span>
         <div className="ve-value-row" onClick={gameMode ? onVéLabelTap : undefined}>
           <span className="value">{aktívVÉ ?? '-'}</span>
-          {/* The reduction badge doubles as the reset control (opens the reset confirm) */}
+          {/* Reduction badge: the tap bubbles to the row → VÉ history popup (reset lives there) */}
           {session.vé_csökkenés > 0 && (
-            <button className="ve-csokk-badge" aria-label={`VÉ csökkenés (${session.vé_csökkenés}) visszaállítása`}
-              onClick={e => { e.stopPropagation(); onVéResetClick(); }}>-{session.vé_csökkenés} ⟲</button>
+            <button className="ve-csokk-badge" aria-label={`VÉ csökkenés (${session.vé_csökkenés}) - történet`}>-{session.vé_csökkenés}</button>
           )}
         </div>
         <div className="ve-btns">

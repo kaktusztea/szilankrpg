@@ -3,24 +3,17 @@ import { PopupOverlay } from '../PopupOverlay';
 
 interface HarcPopupsProps {
   session: Session;
-  showVéResetConfirm: boolean;
   showVéHistory: boolean;
   támInfo: { név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_fortély: number } | null;
   onVéReset: () => void;
   onCloseAll: () => void;
 }
 
-export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támInfo, onVéReset, onCloseAll }: HarcPopupsProps) {
-  if (!showVéResetConfirm && !showVéHistory && !támInfo) return null;
+export function HarcPopups({ session, showVéHistory, támInfo, onVéReset, onCloseAll }: HarcPopupsProps) {
+  if (!showVéHistory && !támInfo) return null;
 
   return (
     <>
-      {showVéResetConfirm && (
-        <PopupOverlay onClose={onCloseAll}>
-          <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={onVéReset}>VÉ Reset</button>
-        </PopupOverlay>
-      )}
-
       {showVéHistory && (
         <PopupOverlay onClose={onCloseAll}>
           <label className="harc-popup-label">VÉ csökkenés történet</label>

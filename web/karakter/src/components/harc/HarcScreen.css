@@ -115,7 +115,7 @@
 .ve-csokk-box { position: relative; }
 .ve-csokk-box-disabled > * { pointer-events: none; }
 .ve-value-row { display: flex; align-items: center; gap: 6px; cursor: pointer; }
-/* Reduction badge = reset control (tappable chip) */
+/* Reduction badge (tap → VÉ history popup, same as the value) */
 .ve-csokk-badge {
   display: inline-flex;
   align-items: center;
