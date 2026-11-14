@@ -21,9 +21,9 @@ helyzetfüggő_módosítók:
   - kategória: "Könyvtár"
     mód: "single"
     sorok:
-      - { érték: 6, leírás: "Kiváló könyvtár" }
-      - { érték: 3, leírás: "Jó könyvtár" }
       - { érték: 0, leírás: "Nincs könyvtár" }
+      - { érték: 3, leírás: "Jó könyvtár" }
+      - { érték: 6, leírás: "Kiváló könyvtár" }
   - kategória: "Hozzáférés"
     mód: "single"
     sorok:

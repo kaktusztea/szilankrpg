@@ -41,7 +41,7 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
 
 Példákhoz lásd e kapcsolódó fortélyok ↑ **Nyomozás** képzettséghez kapcsolódó leírásait.
 
-🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3)
+🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3)
 
 <br />
 

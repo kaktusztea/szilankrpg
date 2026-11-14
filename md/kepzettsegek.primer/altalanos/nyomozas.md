@@ -39,7 +39,7 @@ Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illet
 +3: Porok / nagyító / lámpák (ha segítenek)
 ```
 
-#### ⚜️ Szerepjátékos módosító
+#### ⚜️ Szerepjátékos módosító 1️⃣
 
 ```
 -3: a játékos nem feccöl bele túl sok
@@ -52,7 +52,7 @@ A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
 A játékos élőszóban elmondja, hogy mit, hogyan vizsgál át a nyomozás helyszínén, kit kérdez ki. Az ötletek, a kreativitás, a szerep kijátszásának minőségétől függően a KM ad egy dobásmódosítót.
 
-Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3).
 
 <br />
 

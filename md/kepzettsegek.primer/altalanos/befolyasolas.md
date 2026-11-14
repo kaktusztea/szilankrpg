@@ -13,7 +13,7 @@ Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi
 +0: Azonos nyelven beszéltek
 ```
 
-#### ⚜️  Szerepjátékos módosító
+#### ⚜️  Szerepjátékos módosító 1️⃣
 
 ```
 -3: a játékos nem feccöl bele túl sok
@@ -26,7 +26,7 @@ A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
 A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy dobásmódosítót.
 
-Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3).
 
 <br />
 

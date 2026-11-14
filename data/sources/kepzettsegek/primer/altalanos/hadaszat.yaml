@@ -22,6 +22,7 @@ helyzetfüggő_módosítók:
     mód: "single"
     sorok:
       - { érték: -3, leírás: "Rossz tanácsadók" }
+      - { érték: 0, leírás: "Átlagos tanácsadók" }
       - { érték: +3, leírás: "Jó tanácsadók" }
   - kategória: "Szabotőr"
     mód: "single"

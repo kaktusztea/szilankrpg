@@ -782,12 +782,16 @@
         "mód": "single",
         "sorok": [
           {
+            "érték": -6,
+            "leírás": "Nagyon zavaró"
+          },
+          {
             "érték": -3,
             "leírás": "Enyhén zavaró"
           },
           {
-            "érték": -6,
-            "leírás": "Nagyon zavaró"
+            "érték": 0,
+            "leírás": "Normál körülmények"
           }
         ]
       }
@@ -1230,6 +1234,10 @@
             "leírás": "Rossz tanácsadók"
           },
           {
+            "érték": 0,
+            "leírás": "Átlagos tanácsadók"
+          },
+          {
             "érték": 3,
             "leírás": "Jó tanácsadók"
           }
@@ -1600,16 +1608,16 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": 6,
-            "leírás": "Kiváló könyvtár"
+            "érték": 0,
+            "leírás": "Nincs könyvtár"
           },
           {
             "érték": 3,
             "leírás": "Jó könyvtár"
           },
           {
-            "érték": 0,
-            "leírás": "Nincs könyvtár"
+            "érték": 6,
+            "leírás": "Kiváló könyvtár"
           }
         ]
       },
@@ -2273,16 +2281,16 @@
         "mód": "single",
         "sorok": [
           {
-            "érték": -6,
-            "leírás": "Összejárkált helyszín"
+            "érték": 0,
+            "leírás": "Érintetlen helyszín"
           },
           {
             "érték": -3,
             "leírás": "Megbolygatott helyszín"
           },
           {
-            "érték": 0,
-            "leírás": "Érintetlen helyszín"
+            "érték": -6,
+            "leírás": "Összejárkált helyszín"
           }
         ]
       },

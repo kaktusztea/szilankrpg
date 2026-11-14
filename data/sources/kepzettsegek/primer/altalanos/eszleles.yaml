@@ -26,6 +26,7 @@ helyzetfüggő_módosítók:
   - kategória: "Zavaró körülmények"
     mód: "single"
     sorok:
-      - { érték: -3, leírás: "Enyhén zavaró" }
       - { érték: -6, leírás: "Nagyon zavaró" }
+      - { érték: -3, leírás: "Enyhén zavaró" }
+      - { érték: 0, leírás: "Normál körülmények" }
 dobás_komment: []

@@ -4,7 +4,7 @@ Klasszikus szociális helyzetek, melyekben az egyik fél különböző verbális
 
 🔆 Tartsuk észben, hogy ez egy **szerep-játék**, nem pedig társasjáték, így nem kell mindent a kocka döntsön el. A KM dönthet úgy, hogy a játékos meggyőző, - vagy ellenkezőleg - rendkívül bugyuta próbálkozása miatt egyáltalán nincs szükség dobásra. Ilyenkor automatikus siker és automatikus kudarc is megtörténhet.
 
-🔆 Opcionális befolyásoló tényező: [Befolyásolás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+🔆 Opcionális befolyásoló tényező: [Befolyásolás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3).
 
 ### ⚜️ Átverés, hazudozás
 
@@ -15,7 +15,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 
 - Tulajdonság: Intelligencia
 - Normál kiterjesztés: [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
-- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
+- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
 
 `VS`
 
