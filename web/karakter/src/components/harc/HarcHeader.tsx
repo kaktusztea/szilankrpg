@@ -49,7 +49,9 @@ export function HarcHeader({
     btn.classList.add('mode-toggle-hint');
   }
 
-  const téDobások = session.té_dobások ?? [];
+  // Stored newest first; displayed oldest → newest (newest on the right). `kor` = age (0 = newest) drives the fading.
+  const téDobások = [...(session.té_dobások ?? [])].reverse();
+  const téKor = (i: number) => téDobások.length - 1 - i;
   return (
     <div className="harc-header">
       {/* Row 1: KÉ + TÉ (mobile) / KÉ + TÉ + SFÉ + VÉ csökk (desktop) */}
@@ -58,7 +60,7 @@ export function HarcHeader({
         <span className="value">{ké}</span>
         {session.ké_dobások.length > 0 && (
           <div className="ke-history">
-            {session.ké_dobások.map((d, i) => (
+            {[...session.ké_dobások].reverse().map((d, i) => (
               <span key={i} className="ke-history-item">{d}</span>
             ))}
           </div>
@@ -69,7 +71,7 @@ export function HarcHeader({
         style={gameMode && aktívTÉ != null ? undefined : { cursor: 'default' }}>
         <span className="label">TÉ</span>
         <span className="value">{aktívTÉ ?? '-'}</span>
-        {/* Roll history as a mini table: one column per roll (newest first), rows TÉ / SP / VÉ.
+        {/* Roll history as a mini table: one column per roll (oldest → newest, newest on the right), rows TÉ / SP / VÉ.
             The SP and VÉ rows appear only if at least one roll has that value. */}
         {téDobások.length > 0 && (() => {
           // Cells are placed explicitly so the column separators (spanning every row) don't disturb auto-placement.
@@ -82,14 +84,14 @@ export function HarcHeader({
           return (
             <div className="te-history" style={{ gridTemplateColumns: `auto repeat(${téDobások.length}, auto)` }}>
               <span className="te-history-fej" style={hely(1, 1)}>TÉ</span>
-              {téDobások.map((d, i) => <span key={`te${i}`} style={hely(i + 2, 1)} className={`te-history-te te-history-oszlop-${i}`}>{d.té}</span>)}
+              {téDobások.map((d, i) => <span key={`te${i}`} style={hely(i + 2, 1)} className={`te-history-te te-history-oszlop-${téKor(i)}`}>{d.té}</span>)}
               {vanSP && <>
                 <span className="te-history-fej" style={hely(1, spSor)}>SP</span>
-                {téDobások.map((d, i) => <span key={`sp${i}`} style={hely(i + 2, spSor)} className={`te-history-oszlop-${i}`}>{d.sp ?? '-'}</span>)}
+                {téDobások.map((d, i) => <span key={`sp${i}`} style={hely(i + 2, spSor)} className={`te-history-oszlop-${téKor(i)}`}>{d.sp ?? '-'}</span>)}
               </>}
               {vanVÉ && <>
                 <span className="te-history-fej te-history-ve" style={hely(1, véSor)}>VÉ</span>
-                {téDobások.map((d, i) => <span key={`ve${i}`} style={hely(i + 2, véSor)} className={`te-history-ve te-history-oszlop-${i}`}>{d.veCsökkentés != null ? `−${d.veCsökkentés}` : '-'}</span>)}
+                {téDobások.map((d, i) => <span key={`ve${i}`} style={hely(i + 2, véSor)} className={`te-history-ve te-history-oszlop-${téKor(i)}`}>{d.veCsökkentés != null ? `−${d.veCsökkentés}` : '-'}</span>)}
               </>}
               {/* Vertical separators between roll columns (outside the fading column classes: constant color) */}
               {téDobások.slice(1).map((_, i) => (

@@ -414,7 +414,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
       - Eredmény: nagy szám (48px, bold, monospace)
       - Részlet: "KÉ (X) + k20 (Y)" (13px, dim szín)
       - Mellé kattintás bezárja → eredmény push a session `ké_dobások` FIFO tömbbe (max 3, legújabb elöl)
-    - Box alján: utolsó max 3 dobott érték egymás mellett (11px, monospace). Színek balról jobbra egyre sötétülnek: #ccc → #888 → #555 (legújabb a legvilágosabb).
+    - Box alján: utolsó max 3 dobott érték egymás mellett (11px, monospace). Sorrend: legrégebbi balra, legújabb jobbra (a tárolás továbbra is legújabb elöl, a kijelzés fordítja). Színek jobbról balra egyre sötétülnek: #ccc → #888 → #555 (legújabb a legvilágosabb). A TÉ box előzmény-mini táblája ugyanígy: legújabb oszlop jobbra.
   - **SFÉ box**: label `SFÉ`, mellette (mobilon jobbra, asztalin alatta) a két érték SVG ikonnal (`Ikon`: pajzs = fizikai, energia = villám), azonos súllyal. Alatta teljes szélességben a páncél lefedettség: vékony sáv + `X%`. Kattintásra **PancelInfoPopup** nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT, csatolt tagok részletek).
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
   - **MA/MP box** (alsó sáv, a „⚔️ Manőver" gomb mellett, egysoros): `MA X · MP Y/Z` vízszintesen.

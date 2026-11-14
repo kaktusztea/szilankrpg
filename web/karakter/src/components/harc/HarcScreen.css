@@ -435,11 +435,12 @@
   font-family: monospace;
 }
 
-.ke-history-item:nth-child(1) { color: #ccc; }
-.ke-history-item:nth-child(2) { color: var(--text-muted); }
-.ke-history-item:nth-child(3) { color: var(--border-input); }
+/* Newest roll is on the right (last child) and the brightest */
+.ke-history-item:nth-last-child(1) { color: #ccc; }
+.ke-history-item:nth-last-child(2) { color: var(--text-muted); }
+.ke-history-item:nth-last-child(3) { color: var(--border-input); }
 
-/* TÉ roll history mini table: label column + one column per roll (newest first, older ones fade) */
+/* TÉ roll history mini table: label column + one column per roll (newest on the right, older ones fade) */
 .te-history {
   display: grid;
   column-gap: 12px;
