@@ -406,7 +406,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 - **Fegyver blokk** (legfelül, a fejléc alatt):
   - Ügyesebb kéz fegyver dropdown (session toggle-ök: H. Akrobatika, Fegyverfogás, Páncél viselve)
   - `HarcFegyverSection` komponens (azonos az Aktív fül fegyver szekciójával)
-- **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 2x2 grid):
+- **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 1. sor KÉ + SFÉ alacsony csempe (név és alatta előzmény / lefedettség % balra, érték jobbra), 2. sor TÉ teljes szélességben (név, érték, jobbra az előzmények keretes chipként, 13px), 3. sor VÉ teljes szélességben (név + érték egy sorban, alatta teljes szélességű, 44px magas gombsor); a nevek mobilon 20px-esek):
   - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér). Kattintható (cursor: pointer, min-width: 64px).
     - Klikk → **Kezdeményező dobás**: KÉ + k20 (random 1-20). Overlay popup jelenik meg:
       - Fejléc: "Kezdeményezés" (16px, bold, uppercase)

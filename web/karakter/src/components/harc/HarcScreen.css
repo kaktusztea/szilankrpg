@@ -23,20 +23,75 @@
 @media (max-width: 480px) {
   .harc-header {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
   }
-  /* Row 1: KÉ + TÉ, Row 2: SFÉ + VÉ csökk, Row 3: bottom */
+  /* Row 1: KÉ + SFÉ (compact tiles), Row 2: TÉ, Row 3: VÉ (full width), Row 4: bottom */
   .ke-box       { grid-column: 1; grid-row: 1; }
-  .te-box       { grid-column: 2; grid-row: 1; }
-  .sfe-box      { grid-column: 1; grid-row: 2; }
-  .ve-csokk-box { grid-column: 2; grid-row: 2; }
-  .harc-header-bottom { grid-column: 1 / -1; grid-row: 3; }
+  .sfe-box      { grid-column: 2; grid-row: 1; }
+  .te-box       { grid-column: 1 / -1; grid-row: 2; }
+  .ve-csokk-box { grid-column: 1 / -1; grid-row: 3; }
+  .harc-header-bottom { grid-column: 1 / -1; grid-row: 4; }
   /* Bottom row aligns with the 2-col grid above (higher specificity: base flex rule comes later) */
   .harc-header .harc-header-bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
   .harc-header-bottom .mp-box { justify-content: center; }
+
+  /* .harc-header prefix: the base box rules come later in the file */
+  .harc-header .ke-box .label, .harc-header .te-box .label,
+  .harc-header .sfe-box .label, .harc-header .ve-csokk-box .label { font-size: 20px; }
+
+  /* KÉ / SFÉ tile: name (+ small line under it) left, value right */
+  .harc-header .ke-box, .harc-header .sfe-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-items: start;
+    column-gap: 6px;
+    padding: 8px 10px;
+  }
+  .harc-header .ke-box .label { grid-column: 1; grid-row: 1; }
+  .harc-header .ke-box .ke-history { grid-column: 1; grid-row: 2; margin-top: 0; }
+  .harc-header .ke-box .ke-history-item { font-size: 12px; }
+  .harc-header .ke-box .value { grid-column: 2; grid-row: 1 / span 2; }
+  .harc-header .sfe-lefedettseg { display: block; font-size: 12px; font-weight: normal; color: var(--text-muted); }
+  .harc-header .sfe-values { margin-top: 0; }
+  .harc-header .sfe-line-fizikai, .harc-header .sfe-line-energia, .harc-header .sfe-sep { font-size: 20px; }
+  .harc-header .sfe-line-fizikai strong, .harc-header .sfe-line-energia strong { font-size: 24px; }
+
+  /* TÉ row: name, value, roll history as chips on the right */
+  .harc-header .te-box { flex-direction: row; align-items: center; gap: 8px; padding: 8px 10px; }
+  .harc-header .te-box .value { font-size: 32px; line-height: 1.1; }
+  .harc-header .te-box .ke-history {
+    margin: 0 0 0 auto;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .harc-header .te-box .ke-history-item {
+    font-size: 13px;
+    padding: 3px 6px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .harc-header .te-box .te-history-sp, .harc-header .te-box .te-history-ve { font-size: 12px; }
+
+  /* VÉ row: name + value on one line, full-width button row below */
+  .harc-header .ve-csokk-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: start;
+    column-gap: 8px;
+    padding: 8px 10px;
+  }
+  .harc-header .ve-csokk-box .value { font-size: 32px; line-height: 1.1; }
+  .harc-header .ve-csokk-badge { font-size: 22px; }
+  .harc-header .ve-reset-btn { top: 0; right: 10px; }
+  .harc-header .ve-btns { grid-column: 1 / -1; justify-self: stretch; gap: 8px; margin-top: 8px; }
+  .harc-header .ve-btns button { flex: 1; height: 44px; font-size: 17px; border-radius: 6px; }
 }
 
 .ke-box, .te-box, .sfe-box, .ve-csokk-box {

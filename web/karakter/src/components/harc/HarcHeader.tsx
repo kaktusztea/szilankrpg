@@ -82,7 +82,7 @@ export function HarcHeader({
       </div>
 
       <div className="sfe-box" onClick={gameMode ? onSféClick : flashModeToggle} style={{ cursor: 'pointer' }}>
-        <span className="label">SFÉ (<span className="harc-monospace">{páncélLefedettség}%</span>)</span>
+        <span className="label">SFÉ{' '}<span className="sfe-lefedettseg">(<span className="harc-monospace">{páncélLefedettség}%</span>)</span></span>
         <div className="sfe-values">
           <span className="sfe-line-fizikai"><strong>{sfé_fizikai}</strong>F</span>
           <span className="sfe-sep">/</span>
