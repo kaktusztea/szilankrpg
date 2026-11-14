@@ -406,6 +406,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 - **Fegyver blokk** (legfelül, a fejléc alatt):
   - Ügyesebb kéz fegyver dropdown (session toggle-ök: H. Akrobatika, Fegyverfogás, Páncél viselve)
   - `HarcFegyverSection` komponens (azonos az Aktív fül fegyver szekciójával)
+  - Mobilon (≤480px) Játék módban alapból összecsukva: egy koppintható összefoglaló sor (`harc-fegyver-osszegzo`): 1. sor `Jobb + Bal` fegyvernév (fegyver+pajzsnál a pajzs neve), 2. sor kisebben `Fogás · Páncél: Igen/Nem · <session toggle>: Igen/Nem` (csak a karakter által birtokolt toggle-fortélyok, páncél csak ha van). Koppintásra kinyílik a teljes blokk (▾/▴). A kétkezes figyelmeztetés összecsukva is látszik. Desktopon és Szerkesztő módban nincs összefoglaló.
 - **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 1. sor KÉ + SFÉ alacsony csempe (KÉ: név, érték, jobbra az előzmények 12px-en; SFÉ: név és alatta lefedettség % balra, érték jobbra), 2. sor TÉ teljes szélességben (név, érték, jobbra az előzmények keretes chipként, 13px), 3. sor VÉ teljes szélességben, egy sorban (név, érték, csökkenés-kapszula = reset, jobbra a kis 36px magas gombok `-3 -2 -1 +1` sorrendben); a nevek mobilon 20px-esek):
   - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér). Kattintható (cursor: pointer, min-width: 64px).
     - Klikk → **Kezdeményező dobás**: KÉ + k20 (random 1-20). Overlay popup jelenik meg:
@@ -424,6 +425,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Fegyverhossz
+  - Mobilon (≤480px): csak vízszintes elválasztók (nincs cellarács), halvány fejléc háttér nélkül; aktív sor halvány kék háttér + bal oldali kék csík (keret helyett); fegyvernév aláhúzás nélkül, az összesítő sor nevének ` + ` utáni része második sorba (kisebb, halvány); SP alatt a jelleg rövidítve (`V-E`, `V-Í`, `Sz`, `Z`; magyar kettős betű egyben, `title`-ben a teljes név).
   - Fegyverfogás ≠ Egyfegyveres: összesítő sor felül (világoskék keret `#90caf9`), normál sorok halványítva (opacity: 0.4)
     - Kétkezes: összevont harcértékek (§26)
     - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő), név: "Fegyver + Pajzs". Csak a lila sorban (normálból kiszűrve).

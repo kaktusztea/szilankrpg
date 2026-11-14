@@ -977,3 +977,40 @@
 
 /* Kétkezes harc fortély-követelmény figyelmeztetés a fegyver-szekció alatt */
 .harc-ketkezes-warning { margin-top: 6px; padding: 6px 10px; border: 1px solid var(--warning); border-radius: 6px; color: var(--warning); font-size: 13px; }
+
+/* Kept at the end of the file: overrides the base .harc-table rules above.
+   Weapon setup summary (game mode, mobile only) + short damage type / name second line (mobile only) */
+.harc-fegyver-osszegzo, .harc-jelleg-rovid { display: none; }
+
+@media (max-width: 480px) {
+  .harc-fegyver-osszegzo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+  }
+  .harc-fegyver-osszegzo-szoveg { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .harc-fegyver-osszegzo-fegyver { font-size: 16px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .harc-fegyver-osszegzo-reszlet { font-size: 13px; color: var(--text-dim); }
+  .harc-fegyver-osszegzo-nyil { font-size: 18px; color: var(--text-dim); }
+  .harc-fegyver-section.osszecsukva .harc-fegyver-row { display: none; }
+
+  /* Weapon table: horizontal separators only, quiet header, tinted active row */
+  .harc-table th, .harc-table td { border: none; border-bottom: 1px solid var(--border-light); }
+  .harc-table th { background: none; font-size: 14px; color: var(--text-dim); border-bottom-color: var(--border); }
+  .harc-table td { vertical-align: top; }
+  .harc-table .harc-fegyver-active-row { border: none; }
+  .harc-table .harc-fegyver-active-row td { background: rgba(144, 202, 249, 0.08); }
+  .harc-table .harc-fegyver-active-row td:first-child { box-shadow: inset 3px 0 0 var(--color-taktika); }
+  .harc-table .harc-fegyver-nev-clickable { text-decoration: none; }
+  .harc-nev-masod { display: block; font-size: 13px; color: var(--text-dim); }
+  .harc-jelleg-teljes { display: none; }
+  .harc-jelleg-rovid { display: block; font-size: 12px; color: var(--text-dim); }
+}

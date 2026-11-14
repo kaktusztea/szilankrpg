@@ -123,7 +123,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
       <HarcFegyverSection
         data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
         onShowFegyverfogás={() => setNyitott({ t: 'fegyverfogás' })}
-        páncélMGT={hc.páncélMGT} showHint={showHint}
+        páncélMGT={hc.páncélMGT} showHint={showHint} gameMode={gameMode}
       />
 
       <HarcHeader

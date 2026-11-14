@@ -4,6 +4,21 @@ import { computeTÉ, computeVÉ } from '../../engine/harc/shared';
 import type { FegyverResult } from '../../engine/harc/types';
 import { lookupFegyver } from '../../engine/lookup';
 
+/** Short damage-type label for the mobile table: "vágó-egyenes" → "V-E", "szúró" → "Sz" (Hungarian digraphs kept). */
+function jellegRövid(jelleg: string): string {
+  return jelleg.split('-').map(r => {
+    const két = r.slice(0, 2);
+    const betűk = ['sz', 'zs', 'cs', 'gy', 'ly', 'ny', 'ty', 'dz'].includes(két) ? két : r.slice(0, 1);
+    return betűk.charAt(0).toUpperCase() + betűk.slice(1);
+  }).join('-');
+}
+
+/** "Kard, lovag + Tőr" → main name + "+ Tőr" second part (two lines on mobile). */
+function névRészek(név: string): [string, string | null] {
+  const i = név.indexOf(' + ');
+  return i < 0 ? [név, null] : [név.slice(0, i), név.slice(i + 1)];
+}
+
 interface HarcFegyverTableProps {
   karakter: Karakter;
   session: Session;
@@ -56,18 +71,22 @@ export function HarcFegyverTable({
     // Megjelenített név: a fogás/kétkezes overlay-név (displayNév) > példány-becenév > fegyver-def név.
     // A `fegyver_név` MARAD a lookup/aktív-egyeztetés kulcsa (getAktívFegyverNév), csak a kijelzés vált.
     const név = displayNév ?? r.becenév ?? r.fegyver_név;
+    const [főNév, másodNév] = névRészek(név);
 
     return (
       <tr key={név + (isOverlay ? '-overlay' : '')}
         className={isOverlay ? 'harc-fegyver-active-row' : dimmed ? 'harc-row-dimmed' : 'harc-fegyver-active-row'}>
         <td className={`harc-fegyver-nev-clickable${belharcWarning ? ' harc-belharc-warn' : ''}`}
-          onClick={() => onFegyverInfoClick(r)}>{név}</td>
+          onClick={() => onFegyverInfoClick(r)}>{főNév}{másodNév && <span className="harc-nev-masod"> {másodNév}</span>}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret, hk_harcmodor: r.hk_harcmodor, hk_gyorsaság: r.hk_gyorsaság, hk_mgt: r.hk_mgt, hk_fortély: r.hk_fortély })}>{r.támadások}</td>
         <td>{té}</td>
         <td className={véFlashClass}>{vé}</td>
         <td>{spBónusz !== 0
           ? <>{spBase}<span className={spBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{spBónusz > 0 ? '+' : ''}{spBónusz}</span></>
-          : spTotal} {r.jelleg}</td>
+          : spTotal}{r.jelleg && <>
+            {' '}<span className="harc-jelleg-teljes">{r.jelleg}</span>
+            <span className="harc-jelleg-rovid" title={r.jelleg}>{jellegRövid(r.jelleg)}</span>
+          </>}</td>
         <td className={phBonusClass}>{showPh2 != null ? `${ph}(${showPh2 + (fortelyMods['fegyverhossz'] ?? 0)})` : ph}</td>
       </tr>
     );

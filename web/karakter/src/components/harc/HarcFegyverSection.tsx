@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { HarcBaseProps } from './types';
 import { kétkezesKövetelményHiány } from '../../engine/ketkezes';
 import type { Karakter, Session } from '../../engine/types';
@@ -7,6 +8,7 @@ import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';
 import { lookupFegyver } from '../../engine/lookup';
+import { buildPajzsFegyverNév, fortélyToggleAktív } from '../../engine/utils';
 
 function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Session): boolean {
   const opciók = data.konstansok.fegyverfogás_opciók as { id: string }[];
@@ -37,16 +39,51 @@ interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 's
   onShowFegyverfogás: () => void;
   páncélMGT: number;
   showHint: (msg: string) => void;
+  gameMode?: boolean;
 }
 
-export function HarcFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás, páncélMGT, showHint }: Props) {
+/** One-line summary of the weapon setup: "Jobb + Bal" and "Fogás · Páncél: Igen · H. akrobatika: Nem". */
+function összegzés(data: GameData, karakter: Karakter, session: Session, fegyverOpciók: { név: string; idx: number }[]) {
+  const név = (idx: number) => fegyverOpciók.find(f => f.idx === idx)?.név ?? 'Puszta kéz';
+  const fogás = session.fegyverfogás || 'egyfegyveres';
+  const bal = fogás === 'egyfegyveres' ? null
+    : fogás === 'fegyver_pajzs' ? (buildPajzsFegyverNév(karakter) ?? 'Pajzs')
+    : session.aktív_fegyver_bal_index >= 0 ? név(session.aktív_fegyver_bal_index) : null;
+  const fegyverek = bal ? `${név(session.aktív_fegyver_index)} + ${bal}` : név(session.aktív_fegyver_index);
+
+  const opciók = data.konstansok.fegyverfogás_opciók as { id: string; név: string }[];
+  const részek = [opciók.find(o => o.id === fogás)?.név ?? 'Egyfegyveres'];
+  if (karakter.páncél.alap) részek.push(`Páncél: ${session.aktív_páncél ? 'Igen' : 'Nem'}`);
+  // Session toggles the character actually has (SessionToggles stays mounted, so a disabled toggle is already forced off)
+  for (const tf of data.fortelySummaries.filter(d => d.session_toggle)) {
+    if (!karakter.fortélyok.some(f => f.id === tf.id && f.fok > 0)) continue;
+    const rövid = tf.név.length > 14 ? tf.név.replace('Harci ', 'H. ') : tf.név;
+    részek.push(`${rövid}: ${fortélyToggleAktív(session, tf.id) ? 'Igen' : 'Nem'}`);
+  }
+  return { fegyverek, részlet: részek.join(' · ') };
+}
+
+export function HarcFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás, páncélMGT, showHint, gameMode }: Props) {
   const fegyverOpciók = buildFegyverOpciók(karakter, data);
+  // Game mode on mobile: the setup rows collapse into a tappable summary line (CSS hides it on desktop).
+  const [kinyitva, setKinyitva] = useState(false);
+  const összecsukva = !!gameMode && !kinyitva;
+  const össz = gameMode ? összegzés(data, karakter, session, fegyverOpciók) : null;
 
   // Kétkezes harc fortély harcmodor-követelményei a kézben lévő fegyverpárra (figyelmeztetés, nem tilt).
   const kétkezesHiány = kétkezesKövetelményHiány(karakter, session, data);
 
   return (
-    <div className="harc-fegyver-section">
+    <div className={`harc-fegyver-section${összecsukva ? ' osszecsukva' : ''}`}>
+      {össz && (
+        <button type="button" className="harc-fegyver-osszegzo" aria-expanded={kinyitva} onClick={() => setKinyitva(k => !k)}>
+          <span className="harc-fegyver-osszegzo-szoveg">
+            <span className="harc-fegyver-osszegzo-fegyver">{össz.fegyverek}</span>
+            <span className="harc-fegyver-osszegzo-reszlet">{össz.részlet}</span>
+          </span>
+          <span className="harc-fegyver-osszegzo-nyil" aria-hidden="true">{kinyitva ? '▴' : '▾'}</span>
+        </button>
+      )}
       <div className="harc-fegyver-row">
         <UgyesebbKezSelect data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} fegyverOpciók={fegyverOpciók} />
         {session.fegyverfogás !== 'egyfegyveres' && (
