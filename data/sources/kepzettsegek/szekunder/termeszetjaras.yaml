@@ -49,5 +49,6 @@ helyzetfüggő_módosítók:
     sorok:
       - { érték: -6, leírás: "Sziklás" }
       - { érték: -3, leírás: "Kemény" }
-      - { érték: 3, leírás: "Puha, hó, sár" }
+      - { érték: 0, leírás: "átlagos erdőtalaj" }
+      - { érték: 3, leírás: "Puha föld, hó, sár" }
 dobás_komment: []

@@ -2593,8 +2593,12 @@
             "leírás": "Kemény"
           },
           {
+            "érték": 0,
+            "leírás": "átlagos erdőtalaj"
+          },
+          {
             "érték": 3,
-            "leírás": "Puha, hó, sár"
+            "leírás": "Puha föld, hó, sár"
           }
         ]
       }
