@@ -66,7 +66,7 @@
   .harc-header .sfe-lefedettseg { grid-column: 1 / -1; justify-self: stretch; align-self: center; margin-top: 0; }
   .harc-header .sfe-values { margin-top: 0; gap: 10px; }
   .harc-header .sfe-ertek strong { font-size: 24px; }
-  .harc-header .sfe-ikon { font-size: 15px; }
+  .harc-header .sfe-ikon { width: 17px; height: 17px; }
 
   /* TÉ row: name, value, roll history as chips on the right */
   .harc-header .te-box { flex-direction: row; align-items: center; gap: 8px; padding: 8px 10px; }
@@ -232,7 +232,8 @@
 .sfe-values { display: flex; flex-direction: row; align-items: center; gap: 14px; margin-top: 4px; }
 .sfe-ertek { display: inline-flex; align-items: center; gap: 4px; }
 .sfe-ertek strong { font-size: 28px; font-family: monospace; font-weight: bold; color: var(--text); line-height: 1.1; }
-.sfe-ikon { font-size: 17px; }
+.sfe-ikon { width: 19px; height: 19px; color: var(--text-muted); flex-shrink: 0; }
+.sfe-ikon-energia { color: var(--color-taktika); }
 /* Armor coverage bar + % */
 .sfe-lefedettseg { display: flex; align-items: center; gap: 6px; width: 100%; margin-top: 4px; font-size: 13px; color: var(--text-muted); }
 .sfe-sav { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
@@ -467,7 +468,10 @@
 
 /* Manőver trigger button (game mode, above weapon table) */
 .harc-manover-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   width: 100%;
   padding: 10px;
   margin: 8px 0;

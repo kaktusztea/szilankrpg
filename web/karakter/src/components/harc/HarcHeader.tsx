@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Session, UndoPatch } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
+import { Ikon } from '../common/Ikon';
 
 interface HarcHeaderProps {
   ké: number;
@@ -84,10 +85,10 @@ export function HarcHeader({
         <span className="label">SFÉ</span>
         <div className="sfe-values">
           <span className="sfe-ertek" title="Fizikai SFÉ" aria-label={`Fizikai SFÉ: ${sfé_fizikai}`}>
-            <span className="sfe-ikon" aria-hidden="true">🛡️</span><strong>{sfé_fizikai}</strong>
+            <Ikon név="pajzs" className="sfe-ikon" /><strong>{sfé_fizikai}</strong>
           </span>
           <span className="sfe-ertek" title="Energia SFÉ" aria-label={`Energia SFÉ: ${sfé_energia}`}>
-            <span className="sfe-ikon" aria-hidden="true">⚡</span><strong>{sfé_energia}</strong>
+            <Ikon név="energia" className="sfe-ikon sfe-ikon-energia" /><strong>{sfé_energia}</strong>
           </span>
         </div>
         {/* Armor coverage: bar + % */}
@@ -119,7 +120,7 @@ export function HarcHeader({
       {/* Row 3 (mobile) / Row 2 (desktop): Manőver + MA/MP */}
       <div className="harc-header-bottom">
         <button className={`harc-manover-btn${!gameMode ? ' harc-manover-btn-disabled' : ''}`}
-          onClick={gameMode ? onManőverClick : flashModeToggle}>⚔️ Manőver</button>
+          onClick={gameMode ? onManőverClick : flashModeToggle}><Ikon név="manőver" />Manőver</button>
         <div className="mp-box">
           {/* MA: statikus érték → tap = képlet-bontás infó popup (mindkét módban) */}
           <span className="ma-tap" role="button" tabIndex={0}
