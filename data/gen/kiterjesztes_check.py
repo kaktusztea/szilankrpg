@@ -24,12 +24,18 @@ _ITEM = re.compile(r'^\s*-\s*(?:\S{0,3}\s+)?\[[^\]]+\]\((?:\.\./)+fortelyok\.[a-
 _HEAD = re.compile(r'^### .*(Normál|Erős) kiterjesztés')
 
 
+def _sorok(path):
+    """Read all lines and close the file (a bare open() in a for loop leaks the handle)."""
+    with open(path, encoding='utf-8') as fh:
+        return fh.read().splitlines()
+
+
 def _id_by_fajl(subdir):
     """{yaml-fájlnév (kiterjesztés nélkül) → id} az adott sources-alkönyvtárból."""
     out = {}
     for y in glob.glob(os.path.join(SOURCES_DIR, subdir, '**', '*.yaml'), recursive=True):
         base = os.path.splitext(os.path.basename(y))[0]
-        for line in open(y, encoding='utf-8'):
+        for line in _sorok(y):
             m = re.match(r'\s*id:\s*"([^"]+)"', line)
             if m:
                 out[base] = m.group(1)
@@ -55,7 +61,7 @@ def kiterjesztes_sync_hibak():
         kepz_id = kfajl2id.get(base)
         section = None
         md_map = {}
-        for ln in open(md, encoding='utf-8'):
+        for ln in _sorok(md):
             ln = ln.rstrip('\n')
             h = _HEAD.match(ln)
             if h:

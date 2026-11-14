@@ -29,7 +29,10 @@ def proba_alcel_hibak(cel, alcel, ctx, refs):
 
 def proba_alcel_refs(sources_dir, statuszok):
     import glob, os, yaml
-    kepz = {yaml.safe_load(open(f, encoding='utf-8'))['id'] for f in glob.glob(os.path.join(sources_dir, 'kepzettsegek', '**', '*.yaml'), recursive=True)}
+    kepz = set()
+    for f in glob.glob(os.path.join(sources_dir, 'kepzettsegek', '**', '*.yaml'), recursive=True):
+        with open(f, encoding='utf-8') as fh:
+            kepz.add(yaml.safe_load(fh)['id'])
     with open(os.path.join(sources_dir, '..', 'schemas', 'karakter.yaml'), encoding='utf-8') as fh:
         tul = set(yaml.safe_load(fh)['tulajdonságok'])
     erz = {a for s in statuszok for a in (s.get('alkategóriák') or [])}
