@@ -115,13 +115,13 @@
 .ve-csokk-box { position: relative; }
 .ve-csokk-box-disabled > * { pointer-events: none; }
 .ve-value-row { display: flex; align-items: center; gap: 6px; cursor: pointer; }
-/* Reduction badge = reset control (tappable pill) */
+/* Reduction badge = reset control (tappable chip) */
 .ve-csokk-badge {
   display: inline-flex;
   align-items: center;
   padding: 2px 8px;
   border: 1px solid rgba(255, 152, 0, 0.5);
-  border-radius: 999px;
+  border-radius: 4px;
   background: rgba(255, 152, 0, 0.1);
   color: var(--warning);
   font-size: 17px;
