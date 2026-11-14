@@ -442,7 +442,7 @@
 /* TÉ roll history mini table: label column + one column per roll (newest first, older ones fade) */
 .te-history {
   display: grid;
-  column-gap: 10px;
+  column-gap: 12px;
   align-items: baseline;
   justify-items: end;
   margin-top: 4px;
@@ -456,7 +456,9 @@
 .te-history-oszlop-0.te-history-te { color: var(--text); }
 .te-history-oszlop-1 { opacity: 0.7; }
 .te-history-oszlop-2 { opacity: 0.45; }
-.te-history-ve { color: #e08a8a; }
+.te-history-ve { color: #c9934f; }  /* faded VÉ orange (--warning #ff9800) */
+/* Separator sits in the column gap left of its roll column (half of column-gap, + 1px line) */
+.te-history-vonal { justify-self: start; align-self: stretch; width: 1px; margin-left: -6.5px; background: var(--border); }
 
 /* Manőver trigger button (game mode, above weapon table) */
 .harc-manover-btn {
