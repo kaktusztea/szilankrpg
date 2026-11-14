@@ -100,6 +100,8 @@ function serveDataPlugin(): Plugin {
 export default defineConfig({
   plugins: [react(), serveDataPlugin()],
   base: BASE_PATH,
+  // Single-bundle app (~810 kB minified): raise Vite's 500 kB chunk warning threshold
+  build: { chunkSizeWarningLimit: 1000 },
   server: {
     host: true,
     watch: { usePolling: true, interval: 500 },
