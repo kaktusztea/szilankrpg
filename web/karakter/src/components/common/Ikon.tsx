@@ -1,5 +1,5 @@
 import {
-  Asterisk, BookOpen, BowArrow, Check, ChevronDown, ChevronRight, ClipboardList, Download, FileText, Folder,
+  Activity, BookOpen, BowArrow, Check, ChevronDown, ChevronRight, ClipboardList, Download, FileText, Folder,
   Gamepad2, Heart, IdCard, Lightbulb, Link, Lock, Maximize, Package, Pencil, Plus, QrCode, RefreshCw, RotateCcw,
   Save, Share2, Shield, Signal, Skull, Smartphone, Sparkles, Sword, Swords, Undo2, User, Wrench, X, Zap,
   type LucideIcon,
@@ -13,7 +13,7 @@ const IKONOK = {
   lenyit: ChevronDown, jobbra: ChevronRight, szerkeszt: Pencil, zár: Lock, infó: Lightbulb,
   teljesképernyő: Maximize, új: Plus,
   // tabs and modes
-  aktív: Asterisk, harc: Sword, távharc: BowArrow, pajzs: Shield, misztikus: Sparkles,
+  aktív: Activity, harc: Sword, távharc: BowArrow, pajzs: Shield, misztikus: Sparkles,
   játék: Gamepad2, szerk: Wrench, karakter: User,
   // combat and game
   manőver: Swords, energia: Zap, halott: Skull, gyógy: Heart, fokozatos: Signal, adatlap: IdCard,
