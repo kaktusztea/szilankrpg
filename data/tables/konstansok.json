@@ -995,6 +995,7 @@
     "fegyverazonosság": 1,
     "fegyverelőny": 2
   },
+  "vé_csökkenés_találatnál": 3,
   "fegyver_erő_követelmény_hátrány": -1,
   "skálázható_taktika_max_fok": [
     {

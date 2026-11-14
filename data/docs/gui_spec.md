@@ -441,9 +441,10 @@ Fejléc: `<h2>🗡️ Harc</h2>`
       - **Mód-választó** (csak több módú fegyvernél): a fegyver módjai (§26 módok[]) közül vált, delta-alapú TÉ/SP (a taktika mods megőrzésével). A választott mód sebzésjellege (S/V/Z) számít.
       - **"Ellenfél páncél" választó** (KÖTELEZŐ): csupasz / puha / bőr / lánc / merev. A sebzésjelleg × páncél mátrixból SP-deltát ad, plusz a `cél_páncél` SP-hatású extrák (pl. `panceltalant_jobban_sebez` +3 SP vérttelen célon). Amíg nincs választva: pulzáló jelzés + a Dobás gomb (és a kézi kocka) TILTVA. Választás után a gomb tömör kétsoros: `🛡️<páncél>` / `🗡️<sebzésjelleg>`, jobbra a két sort kitöltő SP-delta (csak a szám színezett, tompított piros / zöld).
       - **Másodlagos sebzéstípus**: passzív info-label "(Hátrány-1)" (nincs toggle).
-    - Mellé katt / Escape bezár → eredmény push a session `té_dobások` FIFO tömbbe (max 3, legújabb elöl).
+    - A `té_dobások` FIFO tömbbe (max 3, legújabb elöl) CSAK a végigvitt folyamat kerül: Sebzés eredménnyel (vagy "nem sebez" fegyverrel), illetve VÉ csökkentés eredménnyel. Ha a Támadó dobás (vagy a Sebzés a dobás előtt) Escape-pel / mellé kattintva félbemarad, NEM keletkezik bejegyzés.
     - Escape a **SebzesPopup**-ban: sebzésdobás ELŐTT csak a Sebzés zárul, vissza a Támadó dobáshoz (TÉ-eredmény megmarad);
       a sebzés-EREDMÉNYNÉL (és mellé kattintva) minden bezárul, a TÉ + SP együtt kerül a `té_dobások`-ba (2026-11-07).
+      Közelharci találatnál a bejegyzés a fix VÉ csökkenést is viszi (`konstansok.vé_csökkenés_találatnál` = 3, md/064_02_07; "nem sebez" fegyvernél is; sebzésdobás ELŐTTI mellé-kattintásnál semmi nem rögzül), és a Sebzés popup kiírja: `Találat: VÉ −3`. Távharcra nem vonatkozik.
       A Célzó dobás Sebzés popupja ugyanígy (dobás előtt vissza a Célzó dobáshoz, eredménynél mindent zár).
     - Komponensek: `TamadoDobasPopup.tsx`, `SebzesPopup.tsx`, `ElonyPicker.tsx`, `ManualDicePicker.tsx`, `KeziBonuszBtn.tsx` (kézi Statikus bónusz, közös mindhárom dobás-popupnak), `ExtrakInfo.tsx`, `combat-roll-info.ts`
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)

@@ -379,6 +379,15 @@
   margin-top: 4px;
 }
 
+/* Melee hit: the target's fixed VÉ drop (md/064_02_07) */
+.sebzes-ve-talalat {
+  font-size: 14px;
+  color: #e08a8a;
+  font-weight: 600;
+  margin-top: 6px;
+  text-align: center;
+}
+
 .manual-dice-btn {
   width: 40px;
   height: 40px;

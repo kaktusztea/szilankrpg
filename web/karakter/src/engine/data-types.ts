@@ -307,6 +307,8 @@ export interface KonstansokRaw {
   vé_csökkentés_gombok: number[];
   taktika_vé_eltolás_limit: number;
   vé_csökkentés_alap: { fegyverhátrány: number; fegyverazonosság: number; fegyverelőny: number };
+  /** md/064_02_07: melee hit → target VÉ drops by this much (always, even if armor absorbed all SP). Not for ranged. */
+  vé_csökkenés_találatnál: number;
   fegyver_erő_követelmény_hátrány: number;
   skálázható_taktika_max_fok: { szint: number; max_fok: number }[];
   max_manőver_per_kör: number;

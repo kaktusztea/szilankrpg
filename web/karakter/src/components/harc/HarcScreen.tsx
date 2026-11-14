@@ -232,6 +232,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           extraKontextus={hc.extraKontextus}
           dobásInfo={dobásInfo()}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
+          véCsökkenésTalálatnál={data.konstansok.vé_csökkenés_találatnál}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}
           helyzetVéCsökkentés={hc.helyzetVéCsökkentés}

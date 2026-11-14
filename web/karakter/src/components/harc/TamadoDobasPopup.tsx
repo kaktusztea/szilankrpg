@@ -48,6 +48,8 @@ interface Props {
   dobásInfo: DobásInfo;
   /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázisértékek). */
   véCsökkentésAlap: Record<Fegyverviszony, number>;
+  /** `konstansok.yaml` → `vé_csökkenés_találatnál` (md/064_02_07): a hit always costs the target this much VÉ. */
+  véCsökkenésTalálatnál: number;
   /** Taktika-eredetű szorzó a Fegyverviszony-alapú VÉ csökkentésre (pl. Roham/Öngyilkos roham: 2). */
   véCsökkentésSzorzó?: number;
   /** A szorzót adó taktika(k) neve (pl. "Roham") - a VÉ-csökkentés bontásban jelenik meg. */
@@ -75,7 +77,7 @@ interface TéEredmény {
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, data, karakter, session, setSession, pushUndo, onClose }: Props) {
+export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, dobásInfo, véCsökkentésAlap, véCsökkenésTalálatnál, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés, data, karakter, session, setSession, pushUndo, onClose }: Props) {
   const többMódú = (módok?.length ?? 0) > 1;
   // Egyszerre legfeljebb egy al-popup (a popup korai return-nel vált rájuk).
   const [alPopup, setAlPopup] = useState<'mód' | 'sebzés' | 'véCsökkentés' | 'taktika' | 'helyzet' | null>(null);
@@ -151,7 +153,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
         fegyverExtrák={fegyverExtrák}
         extraDefs={extraDefs}
         extraKontextus={aktívExtraKontextus}
-        onClose={(spEredmény) => onClose(téResult ? { té: téResult.eredmény, sp: spEredmény } : null)}
+        véCsökkenésTalálatnál={véCsökkenésTalálatnál}
+        // Only a resolved damage step is recorded; closing before the roll abandons the flow (no history entry).
+        onClose={(spEredmény, találat) => onClose(téResult && találat ? { té: téResult.eredmény, sp: spEredmény, veCsökkentés: véCsökkenésTalálatnál } : null)}
         onEscape={() => setAlPopup(null)}
       />
     );
@@ -215,7 +219,8 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   }
 
   return (
-    <PopupOverlay className="kep-prompt tamado-dobas-wrapper" onClose={() => onClose(téResult ? { té: téResult.eredmény } : null)}>
+    // Closing here (Escape / outside click) abandons the flow: a TÉ roll without Sebzés or VÉ csökkentés is not recorded.
+    <PopupOverlay className="kep-prompt tamado-dobas-wrapper" onClose={() => onClose(null)}>
       <div className="tamado-dobas-popup">
         {téResult && <button className="sebzes-reset-btn" onClick={() => setTéResult(null)}><Ikon név="reset" /></button>}
         <div className="ke-dobas-header">Támadó dobás ({aktívTé})</div>
