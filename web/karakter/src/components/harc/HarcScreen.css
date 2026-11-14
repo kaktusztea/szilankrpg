@@ -467,21 +467,21 @@
   width: 100%;
   padding: 10px;
   margin: 8px 0;
-  border: 1px solid rgba(76, 175, 80, 0.4);
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background: rgba(76, 175, 80, 0.08);
+  background: var(--surface);
   color: var(--color-taktika);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   text-align: center;
 }
-.harc-manover-btn:hover { background: rgba(76, 175, 80, 0.15); }
+.harc-manover-btn:hover { background: var(--primary); }
 .harc-manover-btn-disabled {
   opacity: 0.4;
   cursor: default;
 }
-.harc-manover-btn-disabled:hover { background: rgba(76, 175, 80, 0.08); }
+.harc-manover-btn-disabled:hover { background: var(--surface); }
 
 /* --- Támadó dobás popup --- */
 .tamado-dobas-popup {
