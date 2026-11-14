@@ -42,13 +42,14 @@
   .harc-header .ke-box .label, .harc-header .te-box .label,
   .harc-header .sfe-box .label, .harc-header .ve-csokk-box .label { font-size: 20px; }
 
-  /* SFÉ tile: name (+ coverage % under it) left, value right */
+  /* SFÉ tile: name left, values right, coverage bar below (full width) */
   .harc-header .sfe-box {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     justify-items: start;
     column-gap: 6px;
+    row-gap: 4px;
     padding: 8px 10px;
   }
   /* KÉ tile: name, value, roll history on the right (plain text: chips do not fit a half-width tile) */
@@ -62,10 +63,10 @@
   .harc-header .ke-box .ke-history-item { font-size: 13px; }
   /* align-self: the base .sfe-box rule forces align-items: center !important */
   .harc-header .sfe-box > * { align-self: baseline; }
-  .harc-header .sfe-lefedettseg { display: block; font-size: 13px; font-weight: normal; color: var(--text-muted); }
-  .harc-header .sfe-values { margin-top: 0; }
-  .harc-header .sfe-line-fizikai, .harc-header .sfe-line-energia, .harc-header .sfe-sep { font-size: 20px; }
-  .harc-header .sfe-line-fizikai strong, .harc-header .sfe-line-energia strong { font-size: 24px; }
+  .harc-header .sfe-lefedettseg { grid-column: 1 / -1; justify-self: stretch; align-self: center; margin-top: 0; }
+  .harc-header .sfe-values { margin-top: 0; gap: 10px; }
+  .harc-header .sfe-ertek strong { font-size: 24px; }
+  .harc-header .sfe-ikon { font-size: 15px; }
 
   /* TÉ row: name, value, roll history as chips on the right */
   .harc-header .te-box { flex-direction: row; align-items: center; gap: 8px; padding: 8px 10px; }
@@ -228,12 +229,14 @@
   justify-content: center;
 }
 
-.sfe-values { display: flex; flex-direction: row; align-items: baseline; gap: 0; margin-top: 4px; }
-.sfe-line-fizikai { font-size: 26px; }
-.sfe-line-fizikai strong { font-size: 28px; font-family: monospace; font-weight: bold; }
-.sfe-sep { font-size: 26px; color: #666; }
-.sfe-line-energia { font-size: 26px; color: var(--text-soft); }
-.sfe-line-energia strong { font-size: 28px; font-family: monospace; font-weight: bold; color: var(--text-soft); }
+.sfe-values { display: flex; flex-direction: row; align-items: center; gap: 14px; margin-top: 4px; }
+.sfe-ertek { display: inline-flex; align-items: center; gap: 4px; }
+.sfe-ertek strong { font-size: 28px; font-family: monospace; font-weight: bold; color: var(--text); line-height: 1.1; }
+.sfe-ikon { font-size: 17px; }
+/* Armor coverage bar + % */
+.sfe-lefedettseg { display: flex; align-items: center; gap: 6px; width: 100%; margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+.sfe-sav { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.sfe-sav-fill { height: 100%; background: var(--text-muted); border-radius: 2px; }
 
 /* --- VÉ gombok --- */
 .ve-btns { display: flex; gap: 4px; margin-top: 4px; }

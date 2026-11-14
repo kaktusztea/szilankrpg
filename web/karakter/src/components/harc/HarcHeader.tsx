@@ -81,11 +81,19 @@ export function HarcHeader({
       </div>
 
       <div className="sfe-box" onClick={gameMode ? onSféClick : flashModeToggle} style={{ cursor: 'pointer' }}>
-        <span className="label">SFÉ{' '}<span className="sfe-lefedettseg">(<span className="harc-monospace">{páncélLefedettség}%</span>)</span></span>
+        <span className="label">SFÉ</span>
         <div className="sfe-values">
-          <span className="sfe-line-fizikai"><strong>{sfé_fizikai}</strong>F</span>
-          <span className="sfe-sep">/</span>
-          <span className="sfe-line-energia"><strong>{sfé_energia}</strong>E</span>
+          <span className="sfe-ertek" title="Fizikai SFÉ" aria-label={`Fizikai SFÉ: ${sfé_fizikai}`}>
+            <span className="sfe-ikon" aria-hidden="true">🛡️</span><strong>{sfé_fizikai}</strong>
+          </span>
+          <span className="sfe-ertek" title="Energia SFÉ" aria-label={`Energia SFÉ: ${sfé_energia}`}>
+            <span className="sfe-ikon" aria-hidden="true">⚡</span><strong>{sfé_energia}</strong>
+          </span>
+        </div>
+        {/* Armor coverage: bar + % */}
+        <div className="sfe-lefedettseg" aria-label={`Páncél lefedettség: ${páncélLefedettség}%`}>
+          <div className="sfe-sav"><div className="sfe-sav-fill" style={{ width: `${Math.max(0, Math.min(100, Number(páncélLefedettség) || 0))}%` }} /></div>
+          <span className="harc-monospace">{páncélLefedettség}%</span>
         </div>
       </div>
 
