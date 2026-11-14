@@ -55,7 +55,8 @@ A képzettség magában foglalja a következőket:
 ```
 -6: Sziklás
 -3: Kemény
-+3: Puha, hó, sár
+ 0: átlagos erdőtalaj
++3: Puha föld, hó, sár
 ```
 
 ---
