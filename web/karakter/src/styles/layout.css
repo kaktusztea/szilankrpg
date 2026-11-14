@@ -417,7 +417,7 @@
   border: 2px solid transparent;
   border-radius: 50%;
   color: var(--text-dim);
-  font-size: min(18px, calc(100vw / var(--tab-count) - 8px));
+  font-size: min(22px, calc(100vw / var(--tab-count) - 8px));
   padding: 8px;
   cursor: pointer;
   white-space: nowrap;
