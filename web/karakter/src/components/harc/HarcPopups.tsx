@@ -29,6 +29,7 @@ export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támI
               <span key={i}>{v > 0 ? `+${v}` : String(v)}</span>
             ))}
           </div>
+          <button className="btn-del-confirm kep-prompt-btn-confirm ve-history-reset" onClick={onVéReset}>VÉ Reset</button>
         </PopupOverlay>
       )}
 

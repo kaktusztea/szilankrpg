@@ -739,7 +739,7 @@ lövéskitérés:
 
 sebesülés_kategóriák_száma: 4
 hm_aszimmetria_osztó: 2
-vé_csökkentés_gombok: [1, 2, 3]
+vé_csökkentés_gombok: [3, 2, 1]
 taktika_vé_eltolás_limit: 10
 
 # Sikertelen támadás VÉ csökkentésének bázisértéke Fegyverviszony szerint

@@ -42,8 +42,8 @@
   .harc-header .ke-box .label, .harc-header .te-box .label,
   .harc-header .sfe-box .label, .harc-header .ve-csokk-box .label { font-size: 20px; }
 
-  /* KÉ / SFÉ tile: name (+ small line under it) left, value right */
-  .harc-header .ke-box, .harc-header .sfe-box {
+  /* SFÉ tile: name (+ coverage % under it) left, value right */
+  .harc-header .sfe-box {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -51,10 +51,17 @@
     column-gap: 6px;
     padding: 8px 10px;
   }
-  .harc-header .ke-box .label { grid-column: 1; grid-row: 1; }
-  .harc-header .ke-box .ke-history { grid-column: 1; grid-row: 2; margin-top: 0; }
+  /* KÉ tile: name, value, roll history on the right (plain text: chips do not fit a half-width tile) */
+  .harc-header .ke-box { flex-direction: row; align-items: center; gap: 6px; padding: 8px 10px; }
+  .harc-header .ke-box .ke-history {
+    margin: 0 0 0 auto;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
   .harc-header .ke-box .ke-history-item { font-size: 12px; }
-  .harc-header .ke-box .value { grid-column: 2; grid-row: 1 / span 2; }
+  /* align-self: the base .sfe-box rule forces align-items: center !important */
+  .harc-header .sfe-box > * { align-self: baseline; }
   .harc-header .sfe-lefedettseg { display: block; font-size: 12px; font-weight: normal; color: var(--text-muted); }
   .harc-header .sfe-values { margin-top: 0; }
   .harc-header .sfe-line-fizikai, .harc-header .sfe-line-energia, .harc-header .sfe-sep { font-size: 20px; }
@@ -78,20 +85,12 @@
   }
   .harc-header .te-box .te-history-sp, .harc-header .te-box .te-history-ve { font-size: 12px; }
 
-  /* VÉ row: name + value on one line, full-width button row below */
-  .harc-header .ve-csokk-box {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    justify-items: start;
-    column-gap: 8px;
-    padding: 8px 10px;
-  }
-  .harc-header .ve-csokk-box .value { font-size: 32px; line-height: 1.1; }
-  .harc-header .ve-csokk-badge { font-size: 22px; }
-  .harc-header .ve-reset-btn { top: 0; right: 10px; }
-  .harc-header .ve-btns { grid-column: 1 / -1; justify-self: stretch; gap: 8px; margin-top: 8px; }
-  .harc-header .ve-btns button { flex: 1; height: 44px; font-size: 17px; border-radius: 6px; }
+  /* VÉ row: name, value, reduction badge (= reset), then the small adjust buttons on the right (wraps below on very narrow screens) */
+  .harc-header .ve-csokk-box { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 10px; }
+  .harc-header .ve-csokk-box .value { font-size: 30px; line-height: 1.1; }
+  .harc-header .ve-csokk-badge { height: 36px; padding: 0 8px; font-size: 16px; }
+  .harc-header .ve-btns { margin: 0 0 0 auto; gap: 4px; }
+  .harc-header .ve-btns button { min-width: 38px; height: 36px; padding: 0 4px; font-size: 15px; border-radius: 4px; }
 }
 
 .ke-box, .te-box, .sfe-box, .ve-csokk-box {
@@ -115,10 +114,22 @@
 .ve-csokk-box .value { font-size: 28px; font-weight: bold; color: var(--warning); }
 .ve-csokk-box { position: relative; }
 .ve-csokk-box-disabled > * { pointer-events: none; }
-.ve-reset-btn { position: absolute; top: -5px; right: 6px; background: none; border: none; color: var(--text); font-size: 28px; cursor: pointer; padding: 0; opacity: 0.7; }
-.ve-reset-btn:disabled { opacity: 0.3; cursor: default; }
-.ve-value-row { display: flex; align-items: baseline; gap: 4px; cursor: pointer; }
-.ve-csokk-badge { font-size: 25px; font-weight: bold; color: var(--warning); opacity: 0.7; }
+.ve-value-row { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+/* Reduction badge = reset control (tappable pill) */
+.ve-csokk-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border: 1px solid rgba(255, 152, 0, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 152, 0, 0.1);
+  color: var(--warning);
+  font-size: 17px;
+  font-weight: bold;
+  font-family: monospace;
+  white-space: nowrap;
+  cursor: pointer;
+}
 
 /* --- Header bottom row (Manőver + MP) --- */
 .harc-header-bottom {
@@ -313,6 +324,7 @@
 .harc-popup-label { font-weight: bold; }
 .harc-popup-text { font-size: 15px; color: var(--text); }
 .ve-history-list { display: flex; flex-wrap: wrap; gap: 4px 8px; max-width: 200px; }
+.ve-history-reset { margin-top: 12px; }
 .harc-popup-col { font-size: 15px; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
 .harc-popup-detail { font-size: 13px; color: var(--text-dim); padding-left: 4px; }
 

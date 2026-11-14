@@ -92,10 +92,13 @@ export function HarcHeader({
 
       <div className={`ve-csokk-box${!gameMode ? ' ve-csokk-box-disabled' : ''}`} onClick={!gameMode ? flashModeToggle : undefined}>
         <span className="label" onClick={gameMode ? onVéLabelTap : undefined}>VÉ</span>
-        <button className="ve-reset-btn" disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
         <div className="ve-value-row" onClick={gameMode ? onVéLabelTap : undefined}>
           <span className="value">{aktívVÉ ?? '-'}</span>
-          {session.vé_csökkenés > 0 && <span className="ve-csokk-badge">(-{session.vé_csökkenés})</span>}
+          {/* The reduction badge doubles as the reset control (opens the reset confirm) */}
+          {session.vé_csökkenés > 0 && (
+            <button className="ve-csokk-badge" aria-label={`VÉ csökkenés (${session.vé_csökkenés}) visszaállítása`}
+              onClick={e => { e.stopPropagation(); onVéResetClick(); }}>-{session.vé_csökkenés} ⟲</button>
+          )}
         </div>
         <div className="ve-btns">
           {(konstansok.vé_csökkentés_gombok as number[]).map(n => (
