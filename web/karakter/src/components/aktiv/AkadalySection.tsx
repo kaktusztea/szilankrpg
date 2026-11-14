@@ -44,7 +44,8 @@ export function AkadalySection({ karakter, setKarakter, data }: Props) {
   // A pötty-skála a maximális lehetséges állapot (2); teli = aktuális állapot.
   const MAX = 2;
 
-  const úton = karakter.felszerelés?.úton === true;
+  // Default: igen (missing field = on); only an explicit false turns it off.
+  const úton = karakter.felszerelés?.úton !== false;
 
   /** "Úton vagy" kapcsoló: az Akadály büntetései csak ekkor hatnak (md/010_03_07). */
   function setÚton(be: boolean) {

@@ -1021,6 +1021,7 @@ Egyetlen görgethető nézetben, felülről lefelé. A szekciók összecsukható
 - Summary: `Akadály` + pötty-sor (`akadaly-dots`, állapot-szint); nyitva ⚠ hatás-szöveg (`ÁLLAPOT_HATÁS`).
 - Táblázat (`.felsz-table`): forrásonként (fém páncél / közepes-nagy pajzs) egy sor, chip-picker: `viselve` / `külső` / `nincs` (`forrásKulcs` → `páncél` / `pajzs` tároló-kulcs). A nem-számító forrás sora halvány (`.felsz-row-off`).
 - Üres állapot: „Nincs olyan felszerelés (fém páncél / közepes-nagy pajzs), ami Akadályt okozna." (`.akadaly-ures`).
+- „Úton vagy: igen/nem" kapcsoló (`felszerelés.úton`): az Akadály büntetései csak „igen" esetén hatnak. Alapértelmezés: **igen** (hiányzó mező = igen, csak explicit `false` = nem; URL-megosztásban csak a „nem" kódolódik: `fl.ut = 0`).
 - **Automatikus „Fizikai (N)" státusz** (`useAkadalyStatusz`, a `useSérültStátusz` mintájára): amíg az Akadály aktív (fok > 0, ami csak „úton" kapcsolóval áll be), a session „Fizikai" státuszának fokát az Akadály adja (a md „nem additív" szabálya: a legnagyobb forrás számít). Amikor az Akadály 0-ra vált (úton ki VAGY páncél/pajzs levéve), a hook törli a „Fizikai"-t. Ponytail-ceiling: az `aktív_státuszok` sima string-tömb eredet-jelölés nélkül, ezért a KÉZZEL felvett „Fizikai" (pl. alváshiány) és az Akadály-eredetű nem különböztethető meg - az Akadály levétele a „Fizikai"-t egységesen törli.
 
 ### 1. Karakter verziók (accordion, alapból csukva)

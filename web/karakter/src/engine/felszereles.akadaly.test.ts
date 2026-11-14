@@ -111,7 +111,7 @@ describe('akadályÁllapot', () => {
 });
 
 describe('akadályÁllapot - "úton" gate (md/010_03_07: csak 1 nap után hat)', () => {
-  it('úton=false (default): viselt merev páncél → állapot 0, de a forrás látszik', () => {
+  it('úton=false: viselt merev páncél → állapot 0, de a forrás látszik', () => {
     const k: Karakter = {
       ...base,
       páncél: { ...base.páncél, alap: 'lemez' },
@@ -123,13 +123,13 @@ describe('akadályÁllapot - "úton" gate (md/010_03_07: csak 1 nap után hat)',
     expect(r.források.find(f => f.név.includes('lemez'))).toMatchObject({ állapot: 2, viselve: true });
   });
 
-  it('úton hiányzik (régi localStorage): viselt nagy pajzs → állapot 0', () => {
+  it('úton hiányzik (default = igen): viselt nagy pajzs → állapot 2', () => {
     const k: Karakter = {
       ...base,
       pajzs: { méret: 'nagy' },
       felszerelés: { tárgyak: [], kizárt_auto: [], külső: [] },
     };
-    expect(akadályÁllapot(k, data).állapot).toBe(0);
+    expect(akadályÁllapot(k, data).állapot).toBe(2);
   });
 
   it('úton=true: ugyanaz a nagy pajzs → állapot 2', () => {

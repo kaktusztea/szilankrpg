@@ -209,9 +209,9 @@ export function akadályÁllapot(karakter: Karakter, data: GameData): AkadályÁ
   }
 
   // Az Akadály büntetései CSAK 1 nap viselet/utazás után hatnak (md/010_03_07) - a "úton" kapcsoló
-  // aktiválja. Kikapcsolva a végső állapot 0 (nincs warning / státusz), de a `források` lista marad,
+  // aktiválja (alapból BE: hiányzó mező = igen, csak explicit false kapcsolja ki). Kikapcsolva a végső állapot 0 (nincs warning / státusz), de a `források` lista marad,
   // hogy a UI mutassa a potenciális forrásokat.
-  if (karakter.felszerelés?.úton !== true) {
+  if (karakter.felszerelés?.úton === false) {
     return { állapot: 0, források };
   }
 
