@@ -453,6 +453,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 - **VÉ csökkenés box**: label `VÉ csökkenés` (bold, fehér, uppercase), érték negálva kijelezve (pl. -3, -5), alatta gombok: -3, -2, -1, +1 (sorrend: `konstansok.yaml` `vé_csökkentés_gombok`). Külön reset gomb nincs.
   - -3/-2/-1: VÉ csökkentés (disabled ha minden fegyver VÉ = 0 a táblázatban)
   - +1: VÉ visszaadás (disabled ha csökkenés = 0)
+  - Előzmény-összevonás: azonos irányú változások `VÉ_COALESCE_MS` (5 s) ablakon belül egy bejegyzésbe kerülnek (-1, -2 → -3). Bármely más interakció a VÉ gombokon kívül (kattintás, menü, popup, fülváltás, billentyű) megszakítja az ablakot.
   - Reset: csak a VÉ csökkenés történet popup alján lévő piros "VÉ Reset" gombbal. A csökkenés-jelző chip (`-N`, csak ha csökkenés > 0) nem reset: ugyanazt a történet popupot nyitja, mint az érték.
   - VÉ oszlop flash: sárga animáció csökkenéskor, zöld animáció +1-nél (1s fade-out)
   - Koppintás a label-re, az értékre vagy a csökkenés-jelző chipre: VÉ csökkenés történet popup (pl. "-3; -2; +1") + alján piros "VÉ Reset" gomb, mellé kopp bezárja
