@@ -24,11 +24,13 @@ interface SpecPickerProps {
   source: PickerSource;
   onSelect: (value: string) => void;
   onCancel: () => void;
+  /** Extra class on the popup (per-picker styling, e.g. the weapon picker's group label color). */
+  className?: string;
 }
 
 // --- Component ---
 
-export function SpecPicker({ source, onSelect, onCancel }: SpecPickerProps) {
+export function SpecPicker({ source, onSelect, onCancel, className }: SpecPickerProps) {
   const [freetextValue, setFreetextValue] = useState('');
 
   if (source.type === 'list') {
@@ -46,7 +48,7 @@ export function SpecPicker({ source, onSelect, onCancel }: SpecPickerProps) {
 
   if (source.type === 'grouped') {
     return (
-      <PopupOverlay onClose={onCancel} className="kep-prompt spec-picker">
+      <PopupOverlay onClose={onCancel} className={`kep-prompt spec-picker${className ? ` ${className}` : ''}`}>
         {source.groups.map(g => (
           <div key={g.label} className="spec-picker-csoport">
             <div className="spec-picker-csoport-label">{g.label}</div>

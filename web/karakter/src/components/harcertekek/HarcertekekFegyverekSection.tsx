@@ -97,6 +97,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
           source={pickerSource}
           onSelect={alap => { addFegyver(alap); setPickerOpen(false); }}
           onCancel={() => setPickerOpen(false)}
+          className="spec-picker-fegyver"
         />
       )}
     </section>

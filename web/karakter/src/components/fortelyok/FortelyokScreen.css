@@ -44,6 +44,8 @@
 .spec-picker { max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
 .spec-picker-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
 .spec-picker-csoport-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
+/* Harcértékek weapon picker: category labels in the TÉ blue instead of the default orange */
+.spec-picker-fegyver .spec-picker-csoport-label { color: var(--color-taktika); }
 .spec-picker-list { display: flex; flex-direction: column; gap: 3px; }
 .spec-picker-csoport { display: flex; flex-direction: column; gap: 3px; }
 
