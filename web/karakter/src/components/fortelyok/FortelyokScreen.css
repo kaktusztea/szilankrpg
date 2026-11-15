@@ -58,6 +58,10 @@
   cursor: pointer;
 }
 
+/* Optional stats line under the item name (e.g. Új fegyver: TÉ / VÉ / SP / Sebesség) */
+.spec-picker-nev { display: block; }
+.spec-picker-info { display: block; margin-top: 2px; font-size: 12px; font-family: monospace; color: var(--text-soft); }
+
 /* --- Követelmény --- */
 .fort-kov-hiba { border-left: 3px solid var(--error); }
 .fort-ingyenes-dot { color: #a5d6a7; font-size: 11px; margin-left: 4px; display: inline-block; transform: translateY(-3px); }

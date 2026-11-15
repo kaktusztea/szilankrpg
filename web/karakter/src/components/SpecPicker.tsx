@@ -5,7 +5,13 @@ import { buildFegyverGroups } from './fegyver-groups';
 
 // --- Source types ---
 
-export interface PickerItem { value: string; label: string }
+/** `info`: optional short stats shown under the label (e.g. "TÉ: 5, VÉ: 12, SP: 8, Sebesség: 6"). */
+export interface PickerItem { value: string; label: string; info?: string }
+
+function PickerItemLabel({ it }: { it: PickerItem }) {
+  if (!it.info) return <>{it.label}</>;
+  return <><span className="spec-picker-nev">{it.label}</span><span className="spec-picker-info">{it.info}</span></>;
+}
 
 export type PickerSource =
   | { type: 'list'; label: string; items: PickerItem[] }
@@ -31,7 +37,7 @@ export function SpecPicker({ source, onSelect, onCancel }: SpecPickerProps) {
         <div className="spec-picker-label">{source.label}</div>
         <div className="spec-picker-list">
           {source.items.map(it => (
-            <button key={it.value} className="spec-picker-btn" onClick={() => onSelect(it.value)}>{it.label}</button>
+            <button key={it.value} className="spec-picker-btn" onClick={() => onSelect(it.value)}><PickerItemLabel it={it} /></button>
           ))}
         </div>
       </PopupOverlay>
@@ -45,7 +51,7 @@ export function SpecPicker({ source, onSelect, onCancel }: SpecPickerProps) {
           <div key={g.label} className="spec-picker-csoport">
             <div className="spec-picker-csoport-label">{g.label}</div>
             {g.items.map(it => (
-              <button key={it.value} className="spec-picker-btn" onClick={() => onSelect(it.value)}>{it.label}</button>
+              <button key={it.value} className="spec-picker-btn" onClick={() => onSelect(it.value)}><PickerItemLabel it={it} /></button>
             ))}
           </div>
         ))}

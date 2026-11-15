@@ -12,6 +12,7 @@ import { SpecPicker, type PickerSource } from '../SpecPicker';
 import { buildFegyverGroups } from '../fegyver-groups';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 import { lookupFegyver } from '../../engine/lookup';
+import { SP_NINCS } from '../../engine/data-types';
 
 interface Props {
   data: GameData;
@@ -52,7 +53,16 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
   const pickerSource: PickerSource = {
     type: 'grouped',
     label: '+ Új fegyver:',
-    groups: buildFegyverGroups(data, f => f.név, felvettFegyverek),
+    // Base stats of the primary mode next to each name (table values, not character-calculated)
+    groups: buildFegyverGroups(data, f => f.név, felvettFegyverek).map(g => ({
+      ...g,
+      items: g.items.map(it => {
+        const fd = lookupFegyver(data.fegyverek, it.value);
+        if (!fd) return it;
+        const m = elsődlegesMód(fd);
+        return { ...it, info: `TÉ: ${m.TÉ}, VÉ: ${m.VÉ}, SP: ${m.SP === SP_NINCS ? '-' : m.SP}, Sebesség: ${m.Sebesség ?? '-'}` };
+      }),
+    })),
   };
 
   return (
