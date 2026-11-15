@@ -9,7 +9,7 @@ import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
 import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
 import { aktívTerületen } from '../../engine/taktika/taktika-helpers';
-import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
+import { rollElőnyHátrányK20, előnyHátrányLabel, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from '../../engine/harc/combat-roll-info';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
@@ -254,15 +254,17 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
                 Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && <span className="mod-valaszto-masodlagos">(másodlagos)</span>}
               </button>
             )}
-            {/* Előny/Hátrány: stepper + the sources it starts from (+ hand override line) */}
-            <div className="elony-blokk">
-              <ElonyLepteto szint={szint} onChange={setSzint} />
-              <ForrasLista hatások={dobásInfo.téHatások} szint={szint} alapSzint={téHatásSzint} onVissza={() => setSzint(téHatásSzint)} />
+            {/* Modifier pills above the E/H box (stepper + its sources); both share one column */}
+            <div className="dobas-oszlop">
+              <TaktikaHelyzetChipek kapszula taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
+                onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')}>
+                {!tiltóTaktika && <KeziBonuszBtn kapszula bónusz={kéziBónusz} onChange={setKéziBónusz} />}
+              </TaktikaHelyzetChipek>
+              <div className="elony-blokk">
+                <ElonyLepteto szint={szint} onChange={setSzint} />
+                <ForrasLista hatások={dobásInfo.téHatások} szint={szint} alapSzint={téHatásSzint} onVissza={() => setSzint(téHatásSzint)} />
+              </div>
             </div>
-            <TaktikaHelyzetChipek kapszula taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
-              onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')}>
-              {!tiltóTaktika && <KeziBonuszBtn kapszula bónusz={kéziBónusz} onChange={setKéziBónusz} />}
-            </TaktikaHelyzetChipek>
             {tiltóTaktika ? (
               <>
                 <div className="dobas-info-list dobas-notes">
@@ -291,6 +293,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
               {' + '}k20{téResult.dobás.rolls.length > 1
                 ? ` [${téResult.dobás.rolls.join(', ')}] → ${téResult.dobás.eredmény}`
                 : ` (${téResult.dobás.eredmény})`}
+              {szint !== 0 && ` · ${előnyHátrányLabel(szint)}`}
             </div>
             {téResult.dobás.eredmény === 1 && (
               <div className="dobas-info-list dobas-notes">
@@ -300,16 +303,17 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
                 </div>
               </div>
             )}
-            <button className="tamado-sebzes-btn" onClick={() => setAlPopup('sebzés')}>
-              Sebzés
-              {sebzésElőny > 0 && <span className="tamado-sebzes-btn-hint">Előny+{sebzésElőny}</span>}
-            </button>
-            <button className="tamado-ve-csokkentes-btn" onClick={() => setAlPopup('véCsökkentés')}>
-              VÉ csökkentés
-              {véCsökkentésSzorzó && véCsökkentésSzorzó !== 1 && (
-                <span className="tamado-sebzes-btn-hint">× {véCsökkentésSzorzó}{véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}</span>
-              )}
-            </button>
+            {/* The two outcomes: hit → Sebzés dobás, miss → VÉ csökkentés */}
+            <div className="talalat-par">
+              <button type="button" className="talalat-gomb talalt" onClick={() => setAlPopup('sebzés')}>
+                <b>Talált</b>
+                <span>Sebzés dobás{sebzésElőny > 0 ? ` · Előny+${sebzésElőny}` : ''}</span>
+              </button>
+              <button type="button" className="talalat-gomb" onClick={() => setAlPopup('véCsökkentés')}>
+                <b>Nem talált</b>
+                <span>VÉ csökkentés{véCsökkentésSzorzó && véCsökkentésSzorzó !== 1 ? ` · ×${véCsökkentésSzorzó}${véCsökkentésSzorzóForrás ? ` (${véCsökkentésSzorzóForrás})` : ''}` : ''}</span>
+              </button>
+            </div>
           </>
         )}
       </div>

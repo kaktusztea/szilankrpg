@@ -107,31 +107,6 @@
 /* Limit vágta bónusz (pl. íj Erőbónusz-limit): vízszintes „plafon" vonal az érték fölött. */
 .sebzes-limit-plafon { border-top: 2px solid currentColor; padding-top: 1px; }
 
-/* Ellenfél páncél választó: kétsoros tömör felirat (fej + jelleg-függő delta). */
-.pancel-valaszto-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  line-height: 1.3;
-}
-.pancel-valaszto-fej { font-weight: 600; }
-/* Választott páncél: bal oszlop 2 sor (🛡️ páncél, 🗡️ jelleg), jobb oszlop a két sort kitöltő delta. */
-.pancel-valaszto-racs {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-auto-rows: auto;
-  column-gap: 14px;
-  align-items: center;
-}
-.pancel-valaszto-sor { grid-column: 1; text-align: left; font-size: 14px; }
-.pancel-valaszto-delta {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 1;
-}
 /* Tompított színek (a teljes gomb már nem piros / zöld, csak a szám). */
 .pancel-valaszto-delta-neg { color: #e57373; }
 .pancel-valaszto-delta-pos { color: #81c784; }
@@ -234,17 +209,6 @@
   text-align: center;
 }
 
-.sebzes-masodlagos-info {
-  width: 100%;
-  padding: 8px 10px;
-  margin-top: 6px;
-  border: 1px solid var(--border-input);
-  border-radius: 6px;
-  background: rgba(244, 67, 54, 0.08);
-  color: #e57373;
-  font-size: 13px;
-  text-align: center;
-}
 /* Taktika / Harci helyzet kapcsoló chipek a Támadó dobás popupban (az Előny/Hátrány picker felett).
    Ugyanazt a picker-ablakot nyitják, mint az Aktív fül. A label counter = aktív elemek száma. */
 .tamado-aktiv-chips {
@@ -267,10 +231,6 @@
   white-space: nowrap;
 }
 
-/* STUDY 3g: kötelező „Ellenfél páncél" választó pulzáló figyelmeztetése, amíg nincs érték. */
-.pancel-valaszto-kell {
-  animation: pancel-kell-pulzal 1.2s ease-in-out infinite;
-}
 
 /* --- „Extrák" gomb + popup (§42 fegyver-extrák info) --- */
 .extrak-btn {
@@ -361,16 +321,7 @@
   text-align: center;
 }
 
-.sebzes-summary {
-  font-size: 13px;
-  color: var(--text-dim);
-  font-family: monospace;
-}
 
-.sebzes-atutes {
-  color: var(--warning, #ffa726);
-  font-weight: 600;
-}
 
 .sebzes-atutes-result {
   font-size: 13px;
@@ -558,8 +509,12 @@
 .dobas-keplet-kezi.sebzes-stat-pos { color: var(--success); }
 .dobas-keplet-kezi.sebzes-stat-neg { color: var(--error); }
 .dobas-keplet-ve { font-size: 20px; color: var(--warning); }
-/* Előny/Hátrány stepper */
-.elony-blokk { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+.dobas-keplet-al { font-size: 12px; color: var(--text-dim); text-align: center; }
+.dobas-keplet-al-sor { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+/* Modifier pills + E/H box share one column: the wider of the two sets the width (no wrapping) */
+.dobas-oszlop { display: flex; flex-direction: column; align-items: stretch; gap: 12px; width: max-content; max-width: 100%; }
+/* Előny/Hátrány box: thin border around the stepper + its sources; the stepper fills the box */
+.elony-blokk { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px; border: 1px solid var(--border-light); border-radius: 10px; }
 .elony-lepteto { display: flex; align-items: stretch; width: 100%; height: 38px; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }
 .elony-lepteto-pm { width: 44px; background: var(--input-bg); border: none; color: var(--text-soft); font-size: 20px; cursor: pointer; }
 .elony-lepteto-pm:disabled { opacity: 0.3; cursor: default; }
@@ -594,3 +549,34 @@
 }
 .manual-dice-link:disabled { opacity: 0.4; cursor: default; }
 .dobas-btn-ikon { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+/* Sebzés: Ellenfél páncélja inline segmented bar (mandatory; warning colour until chosen) */
+.pancel-sav { width: 100%; display: flex; flex-direction: column; gap: 4px; }
+.pancel-sav-cim { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.3px; }
+.pancel-sav-valassz { color: var(--warning); text-transform: none; }
+.pancel-sav-gombok { display: flex; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }
+.pancel-sav-kell .pancel-sav-gombok { border-color: var(--warning); }
+.pancel-sav-gombok button {
+  flex: 1; padding: 7px 0; background: none; border: none; border-left: 1px solid var(--border-input);
+  color: var(--text-soft); font-size: 12px; cursor: pointer;
+}
+.pancel-sav-gombok button:first-child { border-left: none; }
+.pancel-sav-gombok button.active { background: var(--input-bg); color: var(--text); font-weight: bold; }
+/* Támadó dobás result: Talált / Nem talált pair */
+.talalat-par { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+.talalat-gomb {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 6px;
+  border-radius: 8px; cursor: pointer; font: inherit;
+  border: 1px solid var(--border-input); background: var(--input-bg); color: var(--text);
+}
+.talalat-gomb b { font-size: 16px; }
+.talalat-gomb span { font-size: 11px; color: var(--text-dim); }
+.talalat-gomb.talalt { border-color: #c76a6a; background: rgba(199, 106, 106, 0.12); }
+.talalat-gomb.talalt b { color: #e08a8a; }
+/* Sebzés popup roll button: light blue (same as the TÉ value in the Harc fül header) instead of red */
+.tamado-sebzes-btn.sebzes-dobas-btn {
+  color: var(--color-taktika);
+  border-color: rgba(144, 202, 249, 0.6);
+  background: rgba(144, 202, 249, 0.1);
+}
+/* Unit after the damage result ("21 SP"): smaller and muted next to the 48px number */
+.sebzes-eredmeny-egyseg { font-size: 24px; color: var(--text-dim); }

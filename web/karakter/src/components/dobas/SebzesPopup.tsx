@@ -1,13 +1,13 @@
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
-import { ElonyPicker } from './ElonyPicker';
+import { ElonyLepteto } from './ElonyLepteto';
+import { ForrasLista } from './ForrasLista';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás, clampEHSzint } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from '../../engine/harc/combat-roll-info';
 import { netElőnySzint, sebzésPáncélDelta, célPáncélKategória, sebzésElőnyK20ból } from '../../engine/harc/combat-roll-info';
 import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
-import { HatasokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { aktívHatásokCélra, alkalmazEffektek } from '../../engine/extrak-effekt';
@@ -15,12 +15,12 @@ import { SP_NINCS } from '../../engine/data-types';
 import './dobas.css';
 
 /** Páncélosztály választó opciók (a mátrix 5 oszlopa) + megjelenítendő címke. */
-const PÁNCÉLOSZTÁLYOK: { id: Páncélosztály; label: string }[] = [
-  { id: 'csupasz', label: 'csupasz' },
-  { id: 'puha', label: 'puha' },
-  { id: 'bor', label: 'bőr' },
-  { id: 'lanc', label: 'lánc' },
-  { id: 'merev', label: 'pikkely/lemez' },
+const PÁNCÉLOSZTÁLYOK: { id: Páncélosztály; label: string; rövid: string }[] = [
+  { id: 'csupasz', label: 'csupasz', rövid: 'csupasz' },
+  { id: 'puha', label: 'puha', rövid: 'puha' },
+  { id: 'bor', label: 'bőr', rövid: 'bőr' },
+  { id: 'lanc', label: 'lánc', rövid: 'lánc' },
+  { id: 'merev', label: 'pikkely/lemez', rövid: 'lemez' },
 ];
 
 interface Props {
@@ -94,7 +94,7 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
         <div className="tamado-dobas-popup">
           <div className="ke-dobas-header">Sebzés</div>
           <div className="sebzes-nincs">Ez a fegyver nem sebez</div>
-          {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">Találat: VÉ −{véCsökkenésTalálatnál}</div>}
+          {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">VÉ −{véCsökkenésTalálatnál}</div>}
         </div>
       </PopupOverlay>
     );
@@ -122,6 +122,15 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
   // páncélosztály, a dobás blokkolva (rossz SP-eredményt adna a mátrix-lookup nélkül).
   const páncélKell = !!páncélMátrix && páncél === null;
 
+  // E/H sources for the list under the stepper: the attack roll's k20 bonus, the secondary damage type
+  // (both already part of defaultElőny, set by the caller) and the active Sebzés effects.
+  const k20Előny = sebzésElőnyK20ból(téK20);
+  const eHForrások: DobásHatás[] = [
+    ...(k20Előny > 0 ? [{ forrás: `Támadó dobás (${téK20})`, cél: 'sebzésdobás' as const, operátor: 'előny' as const, érték: k20Előny }] : []),
+    ...(sebzéstípus === 'másodlagos' ? [{ forrás: 'Másodlagos sebzéstípus', cél: 'sebzésdobás' as const, operátor: 'hátrány' as const, érték: 1 }] : []),
+    ...sebzésHatások,
+  ];
+
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(aktuális);
     setEredmény({ dobás, sp: effektívSp, bónusz, végső: dobás.eredmény + effektívSp + bónusz });
@@ -147,7 +156,13 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
     <PopupOverlay onClose={() => onClose(eredmény?.végső, eredmény != null)} onEscape={eredmény ? undefined : onEscape}>
       <div className="tamado-dobas-popup">
         {eredmény && <button className="sebzes-reset-btn" onClick={() => setEredmény(null)}><Ikon név="reset" /></button>}
-        <div className="ke-dobas-header">Sebzés</div>
+        {/* Header: title + (before the roll) the Fegyver extrák icon on the right */}
+        <div className="dobas-fejlec">
+          <div className="ke-dobas-header">Sebzés</div>
+          {!eredmény && extraKontextusPáncéllal && (
+            <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={extraKontextusPáncéllal} ikon />
+          )}
+        </div>
 
         {!eredmény ? (
           <>
@@ -162,66 +177,66 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
               </div>
             )}
 
-            <ElonyPicker szint={aktuális} onChange={handleSzintChange} rövid kompakt />
-
-            {(sebzésHatások.length > 0 || sebzésElőnyK20ból(téK20) > 0) && (
-              <HatasokInfo hatások={sebzésHatások}>
-                {sebzésElőnyK20ból(téK20) > 0 && (
-                  <div className="dobas-info-item">
-                    <span className="dobas-info-badge előny">Előny+{sebzésElőnyK20ból(téK20)}</span>
-                    <span className="dobas-info-source">Támadó dobás ({téK20})</span>
-                  </div>
-                )}
-              </HatasokInfo>
-            )}
-
-            {sebzéstípus === 'másodlagos' && (
-              <div className="sebzes-masodlagos-info">
-                Sebzéstípus: másodlagos (Hátrány−1)
+            {/* Ellenfél páncélja: mandatory, inline segmented bar (the roll is blocked until chosen) */}
+            {páncélMátrix && (
+              <div className={`pancel-sav${páncélKell ? ' pancel-sav-kell' : ''}`}>
+                <div className="pancel-sav-cim">
+                  <span>Ellenfél páncélja</span>
+                  {páncél === null
+                    ? <span className="pancel-sav-valassz">válassz</span>
+                    : <span className={páncélDelta > 0 ? 'pancel-valaszto-delta-pos' : páncélDelta < 0 ? 'pancel-valaszto-delta-neg' : ''}>SP {páncélDelta > 0 ? '+' : ''}{páncélDelta}</span>}
+                </div>
+                <div className="pancel-sav-gombok">
+                  {PÁNCÉLOSZTÁLYOK.map(p => (
+                    <button key={p.id} type="button" title={p.label} aria-pressed={páncél === p.id}
+                      className={páncél === p.id ? 'active' : ''}
+                      onClick={() => { setPáncél(p.id); setEredmény(null); }}>{p.rövid}</button>
+                  ))}
+                </div>
               </div>
             )}
 
-            <StatikusBonuszBtn
-              bónusz={bónusz}
-              spBónuszok={spBónuszok}
-              onBónuszClick={handleBónuszClick}
-            />
+            {/* Formula: SP (+ all static bonuses) + k20; weapon damage type and Átütés under it */}
+            <div>
+              <div className="dobas-keplet">
+                {effektívSp + bónusz}<span className="dobas-keplet-op"> + </span>k20
+              </div>
+              {/* Damage type · Átütés + the Bónusz pill on one line */}
+              <div className="dobas-keplet-al-sor">
+                {(jelleg || (átütés ?? 0) > 0) && (
+                  <span className="dobas-keplet-al">{[jelleg, (átütés ?? 0) > 0 ? `Átütés ${átütés}` : null].filter(Boolean).join(' · ')}</span>
+                )}
+                <StatikusBonuszBtn bónusz={bónusz} spBónuszok={spBónuszok} onBónuszClick={handleBónuszClick} />
+              </div>
+            </div>
 
-            {kapcsolhatóSpBónusz && kapcsolhatóSpBónusz.érték > 0 && (
-              <button type="button" className="sebzes-stat-btn" aria-pressed={kapcsolt}
-                title={kapcsolhatóSpBónusz.limitált ? 'A fegyver Erőbónusz-limitje vágja' : undefined}
-                onClick={() => { setKapcsolt(v => !v); setEredmény(null); }}>
-                {kapcsolt
-                  ? <>{kapcsolhatóSpBónusz.felirat}: <span className={`sebzes-stat-pos${kapcsolhatóSpBónusz.limitált ? ' sebzes-limit-plafon' : ''}`}>+{kapcsolhatóSpBónusz.érték}</span></>
-                  : kapcsolhatóSpBónusz.kiFelirat}
-              </button>
-            )}
-
-            {páncélMátrix && (
-              <PáncélVálasztóBtn páncél={páncél} delta={páncélDelta} jelleg={jelleg} onSelect={p => { setPáncél(p); setEredmény(null); }} />
-            )}
-            {extraKontextusPáncéllal && (
-              <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={extraKontextusPáncéllal} />
-            )}
-            <div className="sebzes-summary">
-              SP: {(() => {
-                const fortélySum = spBónuszok.reduce((s, b) => s + b.érték, 0);
-                const totalBónusz = fortélySum + bónusz + páncélDelta;
-                const base = sp - fortélySum;
-                if (totalBónusz !== 0) return <>{base}<span className={totalBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{totalBónusz > 0 ? '+' : ''}{totalBónusz}</span></>;
-                return effektívSp;
-              })()} + k20
-              {(átütés ?? 0) > 0 && <span className="sebzes-atutes"> | Átütés: {átütés}</span>}
+            {/* Switchable SP bonus pill (if any) above the E/H box; both share one column (the wider one sets the width) */}
+            <div className="dobas-oszlop">
+              {kapcsolhatóSpBónusz && kapcsolhatóSpBónusz.érték > 0 && (
+                <div className="dobas-kapszulak">
+                  <button type="button" className={`dobas-kapszula${kapcsolt ? ' sebzes-stat-pos' : ' dobas-kapszula-halvany'}`} aria-pressed={kapcsolt}
+                    title={kapcsolhatóSpBónusz.limitált ? 'A fegyver Erőbónusz-limitje vágja' : undefined}
+                    onClick={() => { setKapcsolt(v => !v); setEredmény(null); }}>
+                    {kapcsolt
+                      ? <>{kapcsolhatóSpBónusz.felirat} <span className={kapcsolhatóSpBónusz.limitált ? 'sebzes-limit-plafon' : undefined}>+{kapcsolhatóSpBónusz.érték}</span></>
+                      : kapcsolhatóSpBónusz.kiFelirat}
+                  </button>
+                </div>
+              )}
+              <div className="elony-blokk">
+                <ElonyLepteto szint={aktuális} onChange={handleSzintChange} />
+                <ForrasLista hatások={eHForrások} szint={aktuális} alapSzint={clampEHSzint(baseRaw)} onVissza={() => { setRawSzint(baseRaw); setEredmény(null); }} />
+              </div>
             </div>
 
             <div className="dobas-btn-row">
-              <button className="tamado-sebzes-btn" onClick={handleDobás} disabled={páncélKell}>Dobás</button>
-              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
+              <button className="tamado-sebzes-btn dobas-btn-ikon sebzes-dobas-btn" onClick={handleDobás} disabled={páncélKell}><Ikon név="kocka" méret={22} />Dobás</button>
+              <ManualDicePicker link szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
             </div>
           </>
         ) : (
           <>
-            <div className="ke-dobas-result">{eredmény.végső}</div>
+            <div className="ke-dobas-result">{eredmény.végső}<span className="sebzes-eredmeny-egyseg"> SP</span></div>
             <div className="ke-dobas-detail">
               k20{eredmény.dobás.rolls.length > 1
                 ? ` [${eredmény.dobás.rolls.join(', ')}] → ${eredmény.dobás.eredmény}`
@@ -230,60 +245,11 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
               {eredmény.bónusz !== 0 ? ` ${eredmény.bónusz > 0 ? '+' : ''}${eredmény.bónusz}` : ''}
             </div>
             {(átütés ?? 0) > 0 && <div className="sebzes-atutes-result">Átütés: {átütés}</div>}
-            {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">Találat: VÉ −{véCsökkenésTalálatnál}</div>}
+            {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">VÉ −{véCsökkenésTalálatnál}</div>}
           </>
         )}
       </div>
     </PopupOverlay>
-  );
-}
-
-// ─── Ellenfél páncél választó gomb + popup ─────────────────────────────────
-
-function PáncélVálasztóBtn({ páncél, delta, jelleg, onSelect }: {
-  páncél: Páncélosztály | null;
-  delta: number;
-  jelleg?: string;
-  onSelect: (p: Páncélosztály) => void;
-}) {
-  const [open, setOpen] = useState(false);
-  const aktLabel = páncél ? PÁNCÉLOSZTÁLYOK.find(p => p.id === páncél)?.label : null;
-  const deltaClass = delta > 0 ? 'pancel-valaszto-delta-pos' : delta < 0 ? 'pancel-valaszto-delta-neg' : '';
-  // STUDY 3g: kötelező, kiemelt elem - amíg nincs választva, pulzáló figyelmeztető keret.
-  const kellClass = páncél === null ? ' pancel-valaszto-kell' : '';
-
-  return (
-    <>
-      <button className={`sebzes-stat-btn pancel-valaszto-btn${kellClass}`} onClick={() => setOpen(true)}
-        aria-label={aktLabel ? `Ellenfél páncél: ${aktLabel}${jelleg ? `, ${jelleg}` : ''}, SP ${delta > 0 ? '+' : ''}${delta}` : 'Ellenfél páncél választása'}>
-        {aktLabel === null ? (
-          <span className="pancel-valaszto-fej">Ellenfél páncél →</span>
-        ) : (
-          // Választás után tömör kétsoros: 🛡️ páncél / 🗡️ sebzésjelleg, jobbra a két sort kitöltő SP-delta.
-          <span className="pancel-valaszto-racs">
-            <span className="pancel-valaszto-sor"><Ikon név="pajzs" /> {aktLabel}</span>
-            {jelleg && <span className="pancel-valaszto-sor"><Ikon név="harc" /> {jelleg}</span>}
-            <span className={`pancel-valaszto-delta ${deltaClass}`}>{delta > 0 ? '+' : ''}{delta}</span>
-          </span>
-        )}
-      </button>
-      {open && (
-        <PopupOverlay onClose={() => setOpen(false)}>
-          <div className="sebzes-stat-popup">
-            <label className="harc-popup-label">Ellenfél páncélja</label>
-            <div className="pancel-valaszto-list">
-              {PÁNCÉLOSZTÁLYOK.map(p => (
-                <button key={p.id}
-                  className={`pancel-valaszto-item${páncél === p.id ? ' active' : ''}`}
-                  onClick={() => { onSelect(p.id); setOpen(false); }}>
-                  {p.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </PopupOverlay>
-      )}
-    </>
   );
 }
 
@@ -301,8 +267,9 @@ function StatikusBonuszBtn({ bónusz, spBónuszok, onBónuszClick }: {
 
   return (
     <>
-      <button className={`sebzes-stat-btn ${colorClass}`} onClick={() => setOpen(true)}>
-        Statikus bónuszok: {total > 0 ? '+' : ''}{total}
+      {/* Pill: "+ Bónusz" at 0, else "Bónusz +N" (automatic + hand bonuses together) */}
+      <button type="button" className={`dobas-kapszula${total === 0 ? ' dobas-kapszula-halvany' : ` ${colorClass}`}`} onClick={() => setOpen(true)}>
+        {total === 0 ? '+ Bónusz' : `Bónusz ${total > 0 ? '+' : ''}${total}`}
       </button>
       {open && (
         <PopupOverlay onClose={() => setOpen(false)}>

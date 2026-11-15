@@ -347,6 +347,7 @@
   position: absolute;
   right: 8px;
   top: 8px;
+  z-index: 1;  /* above the positioned .dobas-fejlec header row, which otherwise swallows the taps */
   background: none;
   border: none;
   font-size: 30px;
@@ -550,15 +551,13 @@
 .mod-valaszto-masodlagos {
   display: block;
 }
-.mod-valaszto-list,
-.pancel-valaszto-list {
+.mod-valaszto-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
   min-width: 240px;
 }
-.mod-valaszto-item,
-.pancel-valaszto-item {
+.mod-valaszto-item {
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -571,18 +570,13 @@
   cursor: pointer;
   text-align: left;
 }
-.mod-valaszto-item.active,
-.pancel-valaszto-item.active {
+.mod-valaszto-item.active {
   border-color: var(--accent, var(--success));
   background: rgba(76, 175, 80, 0.12);
 }
 .mod-valaszto-jelleg { font-weight: 600; }
 .mod-valaszto-tipus { font-size: 12px; color: var(--text-dim); }
 .mod-valaszto-ertekek { font-size: 12px; color: var(--text-dim); }
-@keyframes pancel-kell-pulzal {
-  0%, 100% { border-color: var(--border-input); box-shadow: none; }
-  50% { border-color: var(--warning); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.5); }
-}
 @keyframes extrak-pulzal {
   0%, 100% { border-color: var(--border-input); box-shadow: none; }
   50% { border-color: var(--warning); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.45); }

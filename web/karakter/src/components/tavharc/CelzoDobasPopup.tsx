@@ -171,15 +171,17 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
                 ))}
               </div>
             )}
-            {/* Előny/Hátrány: stepper + the sources it starts from (+ hand override line) */}
-            <div className="elony-blokk">
-              <ElonyLepteto szint={szint} onChange={setSzint} />
-              <ForrasLista hatások={céHatások} szint={szint} alapSzint={defaultSzint} onVissza={() => setSzint(defaultSzint)} />
+            {/* Modifier pills above the E/H box (stepper + its sources); both share one column */}
+            <div className="dobas-oszlop">
+              <TaktikaHelyzetChipek kapszula taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
+                onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')}>
+                <KeziBonuszBtn kapszula bónusz={kéziBónusz} onChange={setKéziBónusz} />
+              </TaktikaHelyzetChipek>
+              <div className="elony-blokk">
+                <ElonyLepteto szint={szint} onChange={setSzint} />
+                <ForrasLista hatások={céHatások} szint={szint} alapSzint={defaultSzint} onVissza={() => setSzint(defaultSzint)} />
+              </div>
             </div>
-            <TaktikaHelyzetChipek kapszula taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
-              onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')}>
-              <KeziBonuszBtn kapszula bónusz={kéziBónusz} onChange={setKéziBónusz} />
-            </TaktikaHelyzetChipek>
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn dobas-btn-ikon" onClick={handleDobás}><Ikon név="kocka" méret={22} />Dobás</button>
               <ManualDicePicker link szint={szint} onSelect={handleManualK20} alapÉrték={cé} alapLabel="CÉ" />
