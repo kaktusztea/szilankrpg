@@ -12,6 +12,7 @@ import { SpecPicker, type PickerSource } from '../SpecPicker';
 import { buildFegyverGroups } from '../fegyver-groups';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 import { lookupFegyver } from '../../engine/lookup';
+import { ListaPicker } from '../picker/ListaPicker';
 import { SP_NINCS } from '../../engine/data-types';
 
 interface Props {
@@ -121,43 +122,54 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
   // nem hangolható (egy fabotot nem csinálsz mithrillből) → az anyag chip tiltott, az ár a gyári anyaggal számol.
   const fém = fd ? (konstansok.fegyver_anyagok as string[]).includes(fd.alapanyag) : true;
 
+  const [szerkNyitva, setSzerkNyitva] = useState(false);
+  const típusNév = fegyver.alap.replace(/ \(1K\)$| 1K$/, '');
+  const felszerelésben = fegyver.felszerelésben !== false;
+  // Subtitle: weapon type (only if a nickname is the title) · material · Idea
+  const alcím = [fegyver.név ? típusNév : null, fém ? fegyver.anyag : null, `Idea ${fegyver.idea}`].filter(Boolean).join(' · ');
+
   return (
-    <div className="he-fegyver-card">
+    <div className={`he-fegyver-card${felszerelésben ? '' : ' he-fegyver-card-ki'}`}>
+      {/* Compact card: title (nickname or type) + MF badge, subtitle, icon actions; all edits in one menu (pencil) */}
       <div className="he-fegyver-header">
-        <strong>{fegyver.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
-        <button className="item-delete" onClick={() => onDeleteTarget(index)}><Ikon név="bezár" /></button>
+        <div className="he-fegyver-cim">
+          <div className="he-fegyver-nev">
+            {fegyver.név || típusNév}
+            {(mfFok > 0 || hasError) && <span className={`he-mf-badge${hasError ? ' he-error' : ''}`}>MF {mfFok}</span>}
+          </div>
+          <div className="he-fegyver-alcim">{alcím}</div>
+          {hasError && <span className="he-mf-error">{errorText}</span>}
+        </div>
+        <div className="he-fegyver-ikonok">
+          <button type="button" className={`he-ikon-btn he-felsz-btn${felszerelésben ? ' on' : ''}`} aria-pressed={felszerelésben}
+            title={felszerelésben ? 'Felszerelésben: igen' : 'Felszerelésben: nem'} aria-label="Felszerelésben"
+            onClick={() => onToggleFelszerelésben(index)}><Ikon név="csomag" /></button>
+          <button type="button" className="he-ikon-btn" title="Szerkesztés" aria-label="Szerkesztés" onClick={() => setSzerkNyitva(true)}><Ikon név="szerkeszt" /></button>
+          <button type="button" className="he-ikon-btn" title="Törlés" aria-label="Törlés" onClick={() => onDeleteTarget(index)}><Ikon név="bezár" /></button>
+        </div>
       </div>
       {fd && (() => {
-        // Nem-fém fegyver (fa/kő) anyaga fix (a chip tiltja) → az ár is a gyári anyaggal számol,
+        // Nem-fém fegyver (fa/kő) anyaga fix → az ár is a gyári anyaggal számol,
         // nem a példány `anyag`-jával (ami régi localStorage-ban tévesen acél lehet).
         const árAnyag = fém ? fegyver.anyag : fd.alapanyag;
         const árÉrték = fegyverÁr(fd.ár_alap, árAnyag, fegyver.idea, konstansok);
         return <FegyverChip fd={elsődlegesMód(fd)} mfFok={mfFok} ideaHatás={ideaDelta(fegyver.idea, fd.idea_default, data.fegyverIdeaTabla)} konstansok={konstansok} ár={árÉrték == null ? undefined : árFormátum(árÉrték)} />;
       })()}
-      <div className="he-fegyver-fields">
-        <button
-          className={`he-field-btn he-field-fortely${hasError ? ' he-error' : ''}`}
-          onClick={() => onMfTarget(index)}
-        >
-          MF fok: <strong>{mfFok}</strong>
-          {hasError && <span className="he-mf-error">{errorText}</span>}
-        </button>
-        <button className="he-field-btn" onClick={() => onIdeaTarget(index)}>Idea: <strong>{fegyver.idea}</strong></button>
-        <button
-          className={`he-field-btn${fém ? '' : ' he-field-disabled'}`}
-          disabled={!fém}
-          onClick={() => fém && onAnyagTarget(index)}
-        >
-          {fém ? <>Anyag: <strong>{fegyver.anyag}</strong></> : <span className="he-strike">Anyag</span>}
-        </button>
-        <button className="he-field-btn" onClick={() => onBecenévTarget(index)}>Becenév: <strong>{fegyver.név || '-'}</strong></button>
-        <button
-          className={`he-field-btn${fegyver.felszerelésben === false ? ' he-field-off' : ''}`}
-          onClick={() => onToggleFelszerelésben(index)}
-        >
-          Felszerelésben: <strong>{fegyver.felszerelésben === false ? 'nem' : 'igen'}</strong>
-        </button>
-      </div>
+      {szerkNyitva && (
+        <ListaPicker title={fegyver.név || típusNév} onClose={() => setSzerkNyitva(false)}
+          opciók={[
+            { érték: 'mf', név: 'MF fok', infó: String(mfFok) },
+            { érték: 'idea', név: 'Idea', infó: String(fegyver.idea) },
+            { érték: 'anyag', név: 'Anyag', infó: fém ? fegyver.anyag : fd?.alapanyag, disabled: !fém, megjegyzés: fém ? undefined : 'nem fém fegyver: nem hangolható' },
+            { érték: 'becenév', név: 'Becenév', infó: fegyver.név || '-' },
+          ]}
+          onVálaszt={mező => {
+            if (mező === 'mf') onMfTarget(index);
+            else if (mező === 'idea') onIdeaTarget(index);
+            else if (mező === 'anyag') onAnyagTarget(index);
+            else onBecenévTarget(index);
+          }} />
+      )}
     </div>
   );
 }

@@ -10,20 +10,18 @@ interface Props {
 export function FegyverChip({ fd, mfFok, ideaHatás, konstansok, inactive, ár }: Props) {
   const mf = konstansok.mesterfegyver_bónuszok?.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
   const cls = inactive ? ' he-strike' : '';
+  // Plain stats (no box), two lines: TÉ / VÉ / SP, then Sebesség / Ár. TÉ blue / VÉ orange like the Harc fül.
   return (
-    <div className="he-fegyver-fields he-fegyver-chip-mb">
-      <span className="he-field-btn he-field-indicator">
-        <span className={`he-stat-label${cls}`}>TÉ:</span>
-        <span className={cls}>{fd.TÉ + mf.TÉ + ideaHatás.TÉ}</span>
-        {' '}<span className={`he-stat-ml${cls}`}>VÉ:</span>
-        <span className={cls}>{fd.VÉ + mf.VÉ + ideaHatás.VÉ}</span>
-        {' '}<span className={`he-stat-ml${cls}`}>SP:</span>
-        <span className={cls}>{fd.SP + mf.SP + ideaHatás.SP}</span>
-        {' '}<span className={`he-stat-ml${cls}`}>Sebesség:</span>
-        <span className={cls}>{fd.Sebesség}</span>
-        {ár !== undefined && <>{' '}<span className={`he-stat-ml${cls}`}>Ár:</span>
-        {' '}<span className={cls}>{ár}x</span></>}
-      </span>
+    <div className={`he-stat-sor${cls}`}>
+      <div>
+        <span className="he-stat-te">TÉ</span> <b>{fd.TÉ + mf.TÉ + ideaHatás.TÉ}</b>
+        <span className="he-stat-sep"> · </span><span className="he-stat-ve">VÉ</span> <b>{fd.VÉ + mf.VÉ + ideaHatás.VÉ}</b>
+        <span className="he-stat-sep"> · </span>SP <b>{fd.SP + mf.SP + ideaHatás.SP}</b>
+      </div>
+      <div>
+        Sebesség <b>{fd.Sebesség ?? '-'}</b>
+        {ár !== undefined && <><span className="he-stat-sep"> · </span>Ár <b>{ár}x</b></>}
+      </div>
     </div>
   );
 }
