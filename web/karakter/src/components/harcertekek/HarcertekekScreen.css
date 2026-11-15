@@ -53,7 +53,6 @@
   font-size: 16px;
 }
 
-.he-fegyver-chip-mb { margin-bottom: 8px; }
 
 /* --- Field gombok --- */
 .he-field-btn {
@@ -68,8 +67,6 @@
 }
 
 .he-field-btn strong { color: var(--success); margin-left: 4px; }
-.he-field-fortely { border-color: var(--color-fortely); }
-.he-field-indicator { cursor: default; opacity: 0.7; }
 .he-field-disabled { opacity: 0.4; pointer-events: none; }
 .he-field-off { opacity: 0.55; text-decoration: line-through; }
 
@@ -101,21 +98,12 @@
 .he-mf-error { display: block; font-size: 11px; margin-top: 2px; color: var(--color-negative); }
 
 /* --- Inline helpers --- */
-.he-stat-label { color: var(--color-taktika); }
-.he-stat-ml { color: var(--color-taktika); margin-left: 6px; }
 .he-strike { text-decoration: line-through; text-decoration-thickness: 2px; opacity: 0.5; }
 .he-btn-disabled { opacity: 0.3; }
 
 /* --- Közelharci fegyverkártya (kompakt): cím + MF jelvény, alcím, ikon-gombok, statisztika-sor --- */
 .he-fegyver-cim { flex: 1; min-width: 0; }
 .he-fegyver-nev { display: flex; align-items: center; gap: 6px; font-size: 17px; font-weight: bold; line-height: 1.25; }
-/* MF fok dots: faded fortély purple (--color-fortely #ce93d8), filled / empty; red outline on requirement error */
-/* Button: tap = MF fok picker; padding enlarges the tap area around the small dots */
-.he-mf-dots { display: inline-flex; gap: 3px; align-items: center; margin-left: -4px; padding: 6px; background: none; border: none; cursor: pointer; }
-.he-mf-dot { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid rgba(206, 147, 216, 0.55); box-sizing: border-box; }
-.he-mf-dot.filled { background: #a98bb0; border-color: #a98bb0; }
-.he-mf-dots.he-error .he-mf-dot { border-color: var(--error); }
-.he-mf-dots.he-error .he-mf-dot.filled { background: var(--error); }
 .he-fegyver-alcim { font-size: 12px; color: var(--text-dim); margin-top: 1px; }
 .he-fegyver-ikonok { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
 .he-ikon-btn {

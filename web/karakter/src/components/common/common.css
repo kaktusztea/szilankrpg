@@ -6,3 +6,12 @@
 .he-idea-row { display: flex; gap: 6px; }
 .he-idea-cell { width: 36px; height: 36px; font-size: 13px; }
 .he-column-layout { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+
+/* --- FokPottyok (fortély fok dots: MF / Merevvértviselet / Pajzshasználat) --- */
+/* MF fok dots: faded fortély purple (--color-fortely #ce93d8), filled / empty; red outline on requirement error */
+/* Button: tap = MF fok picker; padding enlarges the tap area around the small dots */
+.he-mf-dots { display: inline-flex; gap: 3px; align-items: center; margin-left: -4px; padding: 6px; background: none; border: none; cursor: pointer; }
+.he-mf-dot { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid rgba(206, 147, 216, 0.55); box-sizing: border-box; }
+.he-mf-dot.filled { background: #a98bb0; border-color: #a98bb0; }
+.he-mf-dots.he-error .he-mf-dot { border-color: var(--error); }
+.he-mf-dots.he-error .he-mf-dot.filled { background: var(--error); }

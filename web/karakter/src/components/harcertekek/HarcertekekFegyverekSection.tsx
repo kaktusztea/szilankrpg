@@ -13,7 +13,7 @@ import { buildFegyverGroups } from '../fegyver-groups';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 import { lookupFegyver } from '../../engine/lookup';
 import { ListaPicker } from '../picker/ListaPicker';
-import { FokPottyok } from './FokPottyok';
+import { FokPottyok } from '../common/FokPottyok';
 import { SP_NINCS } from '../../engine/data-types';
 
 interface Props {

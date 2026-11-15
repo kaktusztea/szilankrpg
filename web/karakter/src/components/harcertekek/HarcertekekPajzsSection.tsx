@@ -4,7 +4,7 @@ import { buildPajzsFegyverNév } from '../../engine/utils';
 import { elsődlegesMód } from '../../engine/harc/fegyver-calc';
 import { lookupFegyver } from '../../engine/lookup';
 import { Ikon } from '../common/Ikon';
-import { FokPottyok } from './FokPottyok';
+import { FokPottyok } from '../common/FokPottyok';
 import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 interface Props {

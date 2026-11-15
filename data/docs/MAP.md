@@ -261,7 +261,6 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
   HarcertekekHarciKepzettsegekSection.tsx  Harci képzettségek (szerkeszthető harcmodor szintek)
   HarcertekekFegyverekSection.tsx  Fegyver kártyák
   HarcertekekFegyverChip.tsx  Fegyverkártya statisztika-sora (TÉ / VÉ / SP, Sebesség / Ár)
-  FokPottyok.tsx           Fortély fok lila pöttyökben, koppintható (MF, Merevvértviselet, Pajzshasználat)
   fegyver-ar-calc.ts       Fegyver példány ár-szorzó (ár_alap × anyag × idea; §43.2 - a webapp csak a hangolható tengelyeket teszi az ár_alap-ra, fixed fegyver=null)
   HarcertekekPancelSection.tsx     Páncél mezők
   HarcertekekPancelPopup.tsx       Páncél szerkesztő popup (struktúra/alapanyag/kidolgozottság/tagok/idea)
@@ -271,6 +270,7 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
 
 common/                    Közös UI-elemek (több fül használja; fület nem importálhat - ESLint)
   common.css               A common/ elemek stílusai
+  FokPottyok.tsx           Fortély fok lila pöttyökben, koppintható (MF, Merevvértviselet, Pajzshasználat; Harcértékek + Távharc kártyák)
   FortelyFelvetel.tsx      Felvétel wizard (többszörös, kiérdemelt)
   HarcmodorLista.tsx       Harcmodor-képzettség lista (felvettek + felvétel select) - Harcértékek + Távharc közös
   HarciKepzettsegSzintPopup.tsx  Harcmodor-képzettség szint popup (Harcértékek + Távharc; mégse → a 0 szintű felvétel visszavonása)

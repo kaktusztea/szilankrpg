@@ -33,7 +33,6 @@
 .th-card-dim { opacity: 0.8; }
 .th-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
 .th-card-fields { display: flex; gap: 6px; flex-wrap: wrap; }
-.th-mf-error { color: var(--color-negative); }
 
 /* --- Szekciók --- */
 .th-hajithato-title { margin-top: 12px; font-size: 14px; color: var(--text-soft); }

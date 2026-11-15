@@ -524,11 +524,12 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 ### Szerkesztő mód
 
 **Távfegyverek szekció:**
-- Fegyver kártyák (hasonló a Harcértékek fül fegyver szekciójához)
-- Aktív fegyver: zöld keret (kattintásra váltható)
-- Kártyán: MF gomb (popup: 0–3) | Idea gomb (popup: -5..+5) | CÉ: X (Yx) badge
-- "Új távfegyver..." dropdown (`tavfegyverek_v2.json`-ból, 🔆 kiszűrve)
-- Törlés: ✕ gomb → megerősítő popup
+- Fegyver kártyák: a Harcértékek fül kompakt fegyverkártyájának mintájára (2026-11)
+  - Cím: fegyvernév + MF fok lila pöttyökben (`FokPottyok`, 0-3, tap → MF popup; hibánál piros + hiba-sor). Alcím: `Idea ±N` (mágikus fegyvernél nincs).
+  - Jobb felül ikon-gombok: ceruza → Idea popup (-5..+5; mágikus fegyvernél nincs), ✕ → törlés megerősítő popup.
+  - Statisztika-sor (keret nélkül, monospace, 15px): `CÉ N · Támadás Nx · SP N` (nem sebző fegyvernél SP `-`).
+- Aktív fegyver: zöld keret (a kártyára koppintva váltható; az ikon-gombok / pöttyök koppintása nem vált)
+- `+ Új távfegyver...` gomb → lista-választó (`tavfegyverek_v2.json`-ból, 🔆 kiszűrve; név mellett `CÉ / SP / Osz`)
 
 **Hajítható fegyverek (fortélyból) szekció:**
 - "Alkalmatlan fegyver hajítása" fortélyból: per spec_elem fegyver kártya (nem törölhető, CÉ:0, Osztó:1)

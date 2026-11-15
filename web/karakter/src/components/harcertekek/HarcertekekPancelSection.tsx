@@ -7,7 +7,7 @@ import { árFormátum } from '../formatters';
 import { useState, Fragment } from 'react';
 import { Ikon } from '../common/Ikon';
 import { ListaPicker } from '../picker/ListaPicker';
-import { FokPottyok } from './FokPottyok';
+import { FokPottyok } from '../common/FokPottyok';
 import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 interface Props {

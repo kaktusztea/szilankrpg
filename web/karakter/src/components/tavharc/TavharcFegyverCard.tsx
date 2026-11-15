@@ -5,6 +5,8 @@ import { calcCÉBontás, calcTámadásLabel, getFortélyCÉ, calcTávSP } from '
 import { getMfFok, mfKövetelményHiba, mfKövetelményText } from './mesterfegyver-calc';
 import { lookupTávfegyver } from '../../engine/lookup';
 import { SP_NINCS } from '../../engine/data-types';
+import { FokPottyok } from '../common/FokPottyok';
+import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 interface Props {
   index: number;
@@ -35,32 +37,35 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
   const tám = bontás.isMágikus ? '-' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
   const hasError = mfKövetelményHiba(k, data, tf.alap);
 
+  const spÉrték = def?.SP === SP_NINCS ? '-' : calcTávSP(k, data, def, tf.alap).sp;
+
   return (
+    // Compact card like the Harcértékek weapon cards; tapping the card selects the active ranged weapon
     <div className={`th-card${isActive ? ' th-card-active' : ''}`} onClick={onSelect}>
-      <div className="th-card-header">
-        <strong>{tf.alap}</strong>
-        <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteTarget(); }}><Ikon név="bezár" /></button>
-      </div>
-      <div className="he-fegyver-fields he-fegyver-chip-mb">
-        <span className="he-field-btn he-field-indicator">
-          <span className="he-stat-label">CÉ:</span>
-          <span>{bontás.cé}</span>
-          {' '}<span className="he-stat-ml">({tám})</span>
-          {' '}<span className="he-stat-ml">SP:</span>
-          <span>{def?.SP === SP_NINCS ? '–' : calcTávSP(k, data, def, tf.alap).sp}</span>
-        </span>
-      </div>
-      <div className="th-card-fields">
-        <button className={`he-field-btn he-field-fortely${hasError ? ' th-mf-error' : ''}`}
-          onClick={e => { e.stopPropagation(); onMfTarget(); }}>
-          MF fok: <strong>{mf}</strong>
+      <div className="he-fegyver-header">
+        <div className="he-fegyver-cim">
+          <div className="he-fegyver-nev">
+            {tf.alap}
+            <span onClick={e => e.stopPropagation()}>
+              <FokPottyok név="MF fok" fok={mf} max={MAX_FORTÉLY_FOK} hiba={hasError} onClick={onMfTarget} />
+            </span>
+          </div>
+          {!bontás.isMágikus && <div className="he-fegyver-alcim">Idea {tf.idea >= 0 ? '+' : ''}{tf.idea}</div>}
           {hasError && <span className="he-mf-error">{mfKövetelményText(k, data, tf.alap)}</span>}
-        </button>
-        {!bontás.isMágikus && (
-          <button className="he-field-btn" onClick={e => { e.stopPropagation(); onIdeaPopup(); }}>
-            Idea: <strong>{tf.idea >= 0 ? '+' : ''}{tf.idea}</strong>
-          </button>
-        )}
+        </div>
+        <div className="he-fegyver-ikonok" onClick={e => e.stopPropagation()}>
+          {!bontás.isMágikus && (
+            <button type="button" className="he-ikon-btn" title="Idea" aria-label="Idea szerkesztése" onClick={onIdeaPopup}><Ikon név="szerkeszt" /></button>
+          )}
+          <button type="button" className="he-ikon-btn" title="Törlés" aria-label="Törlés" onClick={onDeleteTarget}><Ikon név="bezár" /></button>
+        </div>
+      </div>
+      <div className="he-stat-sor">
+        <div className="he-stat-fo">
+          CÉ <b>{bontás.cé}</b>
+          <span className="he-stat-sep"> · </span>Támadás <b>{tám}</b>
+          <span className="he-stat-sep"> · </span>SP <b>{spÉrték}</b>
+        </div>
       </div>
     </div>
   );

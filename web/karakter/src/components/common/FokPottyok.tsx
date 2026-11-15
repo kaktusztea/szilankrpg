@@ -1,3 +1,4 @@
+import './common.css';
 /** Fortély fok as tappable purple dots (filled / empty), e.g. MF, Merevvértviselet, Pajzshasználat. Red on requirement error. */
 export function FokPottyok({ név, fok, max, hiba, onClick }: { név: string; fok: number; max: number; hiba?: boolean; onClick: () => void }) {
   return (
