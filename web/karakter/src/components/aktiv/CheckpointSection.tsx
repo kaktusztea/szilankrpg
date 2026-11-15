@@ -34,6 +34,7 @@ export function CheckpointSection({ karakter, setKarakter, onViewCheckpoint }: P
   return (
     <details className="naplo-cp-section" open={open} onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
       <summary className="naplo-cp-summary">
+        <Ikon név="lenyit" className="naplo-cp-nyil" />
         Karakter verziók ({sorted.length})
       </summary>
       <div className="naplo-cp-list">

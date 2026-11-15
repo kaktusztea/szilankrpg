@@ -120,6 +120,7 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
   return (
     <details className="naplo-cp-section" open={open} onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
       <summary className="naplo-cp-summary">
+        <Ikon név="lenyit" className="naplo-cp-nyil" />
         Felszerelés
         <span className="felsz-dots" title={`Max: ${max} / Aktuális: ${terhelés}`}>
           {Array.from({ length: max }, (_, i) => (

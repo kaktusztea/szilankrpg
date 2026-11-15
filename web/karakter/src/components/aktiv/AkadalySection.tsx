@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { OverlayPortal } from '../common/OverlayPortal';
+import { Ikon } from '../common/Ikon';
 import { akadályÁllapot, type AkadályForrás, külsőJelző, páncélPajzsNincs } from '../../engine/felszereles';
 
 interface Props {
@@ -88,6 +89,7 @@ export function AkadalySection({ karakter, setKarakter, data }: Props) {
   return (
     <details className="naplo-cp-section" open={open} onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
       <summary className="naplo-cp-summary">
+        <Ikon név="lenyit" className="naplo-cp-nyil" />
         Akadály
         <span className="felsz-dots akadaly-dots" title={`Akadály állapot: ${állapot}`}>
           {Array.from({ length: MAX }, (_, i) => (

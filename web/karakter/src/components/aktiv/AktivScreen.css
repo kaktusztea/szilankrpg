@@ -153,6 +153,11 @@
 
 /* --- Hatás pool details --- */
 .aktiv-hatas-pool-details { margin-top: 8px; }
+/* Only the SVG chevron: hide the native <details> triangle; the chevron flips up when open */
+.aktiv-hatas-pool-details > summary { list-style: none; cursor: pointer; }
+.aktiv-hatas-pool-details > summary::-webkit-details-marker { display: none; }
+.hatas-pool-nyil { vertical-align: -2px; transition: transform 0.15s ease-out; }
+.aktiv-hatas-pool-details[open] .hatas-pool-nyil { transform: rotate(180deg); }
 .aktiv-hatas-pool-details[open] > summary { cursor: pointer; }
 
 /* --- Helpers --- */

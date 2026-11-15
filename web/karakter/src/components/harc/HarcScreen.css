@@ -1002,7 +1002,21 @@
   .harc-fegyver-osszegzo-szoveg { flex: 1; min-width: 0; display: flex; flex-direction: column; }
   .harc-fegyver-osszegzo-fegyver { font-size: 18px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .harc-fegyver-osszegzo-reszlet { font-size: 13px; color: var(--text-dim); }
-  .harc-fegyver-osszegzo-nyil { font-size: 18px; color: var(--text-dim); }
+  /* Chevron in a round badge; rotates up when expanded */
+  .harc-fegyver-osszegzo-nyil {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--input-bg);
+    border: 1px solid var(--border-input);
+    color: var(--text);
+    transition: transform 0.15s ease-out;
+  }
+  .harc-fegyver-osszegzo-nyil.nyitva { transform: rotate(180deg); }
   .harc-fegyver-section.osszecsukva .harc-fegyver-row { display: none; }
 
   /* Weapon table: horizontal separators only, quiet header, tinted active row */

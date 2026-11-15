@@ -69,12 +69,20 @@
 }
 
 .naplo-cp-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;          /* hide the native <details> triangle (replaced by the SVG chevron) */
   font-weight: bold;
   font-size: 15px;
   color: var(--color-taktika);
   cursor: pointer;
   user-select: none;
 }
+.naplo-cp-summary::-webkit-details-marker { display: none; }
+/* Chevron: points right when closed, down when open */
+.naplo-cp-nyil { flex-shrink: 0; width: 20px; height: 20px; transform: rotate(-90deg); transition: transform 0.15s ease-out; }
+details[open] > .naplo-cp-summary .naplo-cp-nyil { transform: none; }
 
 .naplo-cp-list {
   margin-top: 8px;

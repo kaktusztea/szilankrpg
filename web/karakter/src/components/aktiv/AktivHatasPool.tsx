@@ -26,7 +26,7 @@ export function AktivHatasPool({ cím, fortélyEmlékeztetők, alapesetek }: Pro
       )}
       {alapesetek.length > 0 && (
         <details className="aktiv-hatas-pool-details">
-          <summary className="hatas-pool-title">Alapesetek ({alapesetek.length}) <Ikon név="lenyit" /></summary>
+          <summary className="hatas-pool-title">Alapesetek ({alapesetek.length}) <Ikon név="lenyit" className="hatas-pool-nyil" /></summary>
           <div className="hatas-pool-items">
             {alapesetek.map((ae, i) => (
               <span key={i} className="hatas-pool-item"><strong>{ae.fortély_név}:</strong> {fmtCode(ae.hatástext.join(' '))}</span>

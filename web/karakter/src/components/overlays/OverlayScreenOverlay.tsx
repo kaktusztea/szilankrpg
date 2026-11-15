@@ -34,7 +34,7 @@ export function OverlayScreenOverlay({ karakter, setKarakter, data, onClose, onV
 
           {/* Jegyzetek - accordion, alapból nyitva */}
           <details className="naplo-cp-section naplo-notes-section" open>
-            <summary className="naplo-cp-summary naplo-notes-summary">Jegyzetek</summary>
+            <summary className="naplo-cp-summary naplo-notes-summary"><Ikon név="lenyit" className="naplo-cp-nyil" />Jegyzetek</summary>
             <textarea
               className="app-jegyzetek-textarea"
               value={karakter.jegyzetek}

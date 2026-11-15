@@ -8,6 +8,7 @@ import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';
 import { lookupFegyver } from '../../engine/lookup';
+import { Ikon } from '../common/Ikon';
 import { buildPajzsFegyverNév, fortélyToggleAktív } from '../../engine/utils';
 
 function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Session): boolean {
@@ -82,7 +83,7 @@ export function HarcFegyverSection({ data, karakter, session, setSession, pushUn
             <span className="harc-fegyver-osszegzo-fegyver">{össz.fegyverek}</span>
             {össz.részlet && <span className="harc-fegyver-osszegzo-reszlet">{össz.részlet}</span>}
           </span>
-          <span className="harc-fegyver-osszegzo-nyil" aria-hidden="true">{kinyitva ? '▴' : '▾'}</span>
+          <span className={`harc-fegyver-osszegzo-nyil${kinyitva ? ' nyitva' : ''}`} aria-hidden="true"><Ikon név="lenyit" méret={22} /></span>
         </button>
       )}
       <div className="harc-fegyver-row">

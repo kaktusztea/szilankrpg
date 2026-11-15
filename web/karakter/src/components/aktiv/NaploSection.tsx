@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Karakter } from '../../engine/types';
 import { createCheckpoint, autoCheckpointName } from '../../engine/checkpoint-utils';
 import { MAX_CHECKPOINT_NÉV } from '../../ui-constants';
+import { Ikon } from '../common/Ikon';
 
 interface Props {
   karakter: Karakter;
@@ -88,6 +89,7 @@ export function NaploSection({ karakter, setKarakter }: Props) {
   return (
     <details className="naplo-cp-section naplo-log-section" open={open} onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
       <summary className="naplo-cp-summary naplo-log-summary">
+        <Ikon név="lenyit" className="naplo-cp-nyil" />
         Napló ({karakter.napló.length})
       </summary>
 
