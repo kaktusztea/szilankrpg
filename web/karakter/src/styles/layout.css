@@ -27,22 +27,23 @@
 .title-test { color: var(--warning); }
 
 .header-szilank {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 2px 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--success);
+  /* App name as a plain title + the character's Szilánk value as crystal marks (no box) */
   cursor: pointer;
   white-space: nowrap;
-  align-self: stretch;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 
-.szilank-label { color: var(--text); font-size: 15px; }
+.szilank-label { color: var(--text); font-size: 17px; font-weight: bold; letter-spacing: 0.3px; }
+.szilank-label.title-test { color: var(--warning); }  /* test mode: must beat .szilank-label above */
+.szilank-jelek { display: inline-flex; gap: 2px; }
+.szilank-jel { display: block; }
+.szilank-jel-test { fill: none; stroke: var(--text-muted); stroke-width: 1.3; stroke-linejoin: round; }
+/* Same-color stroke on the filled mark: the outline extends half its width outward, so without it
+   the filled shard would look ~1px smaller than the empty one */
+.szilank-jel.tele .szilank-jel-test { fill: var(--success); stroke: var(--success); }
+.szilank-jel-fazetta { fill: #fff; opacity: 0.3; }
 
 .header-btns {
   display: flex;

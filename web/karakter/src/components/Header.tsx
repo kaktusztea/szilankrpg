@@ -14,11 +14,29 @@ interface Props {
   felszerelésJelző: boolean;
 }
 
+/** Max Szilánk value (the picker offers 0-3). */
+const SZILÁNK_MAX = 3;
+
+/** One crystal shard mark: filled (owned) or outline (empty). */
+function SzilánkJel({ tele }: { tele: boolean }) {
+  return (
+    <svg className={`szilank-jel${tele ? ' tele' : ''}`} width="11" height="15" viewBox="0 0 12 16" aria-hidden="true">
+      <path className="szilank-jel-test" d="M6 1 11 6 6 15 1 6z" />
+      {tele && <path className="szilank-jel-fazetta" d="M6 1 8 6 6 15 4 6z" />}
+    </svg>
+  );
+}
+
 export function Header({ testMode, gameMode, setGameMode, viewingCheckpoint, session, undoCount, setOverlay, felszerelésJelző }: Props) {
   return (
     <header className="header">
-      <span className="header-szilank" onClick={() => setOverlay('showSzilánkPicker', true)}>
-        <span className={`szilank-label${testMode ? ' title-test' : ''}`}>Szilánk</span> {session.szilánk}
+      <span className="header-szilank" role="button" tabIndex={0} aria-label={`Szilánk: ${session.szilánk} / ${SZILÁNK_MAX}`}
+        onClick={() => setOverlay('showSzilánkPicker', true)}
+        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOverlay('showSzilánkPicker', true); } }}>
+        <span className={`szilank-label${testMode ? ' title-test' : ''}`}>Szilánk</span>
+        <span className="szilank-jelek">
+          {Array.from({ length: SZILÁNK_MAX }, (_, i) => <SzilánkJel key={i} tele={i < session.szilánk} />)}
+        </span>
       </span>
       <div className="header-btns">
         <button
