@@ -27,18 +27,32 @@
 
 .tul-header-full { width: 100%; }
 .tul-becenev-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.tul-jk-chip {
+.tul-becenev-kapszula {
+  /* Two-part capsule: Előtörténet icon | JK/NJK toggle (same base look as .kocka-chip) */
   flex-shrink: 0;
-  border-radius: 10px;
-  padding: 3px 10px;
+  display: inline-flex;
+  align-items: stretch;
+  height: 26px;
+  border: 1px solid var(--border-input);
+  border-radius: 13px;
+  overflow: hidden;
+  background: var(--input-bg);
+}
+.tul-kapszula-resz {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 0;
+  margin: 0;
   font-size: 12px;
   font-weight: bold;
-  border: 1px solid var(--border-input);
   cursor: pointer;
-  color: var(--text);
 }
-.tul-jk-chip-jk { background: #2a3a2a; border-color: var(--success); }
-.tul-jk-chip-njk { background: var(--surface); }
+.tul-kapszula-resz:active { background: var(--border-light); }
+.tul-kapszula-elotortenet { padding: 0 8px; color: var(--text-soft); border-right: 1px solid var(--border-input); }
+.tul-kapszula-jk { padding: 0 10px; color: var(--text); }
+.tul-kapszula-jk.jk { color: #81c784; }  /* JK: green text (light --success) */
 .tul-header-two-col { display: flex; gap: 6px; width: 100%; }
 .tul-header-flex1 { flex: 1; }
 .tul-header-label { color: var(--text-dim); }
@@ -166,18 +180,6 @@
 .primer-kp-total { border-top: 1px solid var(--border-input); margin-top: 4px; padding-top: 4px; }
 
 /* --- Előtörténet chip + overlay --- */
-.tul-becenev-chips { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-.tul-elotortenet-chip {
-  background: #1a2a3a;
-  border-color: #7eb8da;
-  color: #7eb8da;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-.tul-elotortenet-chip:active { opacity: 0.7; }
 
 .elotortenet-body { display: flex; flex-direction: column; gap: 12px; padding: 12px; overflow-y: auto; }
 .elotortenet-field { display: flex; flex-direction: column; gap: 4px; }

@@ -47,16 +47,18 @@ export function TulajdonsagokHeader({
         {!gameMode && (
           <div className="tul-header-box tul-header-full tul-becenev-row" onClick={onEditBecenév}>
             <span><span className="tul-header-label">Becenév:</span> <strong>{becenév || '-'}</strong></span>
-            <span className="tul-becenev-chips">
+            {/* One two-part capsule: Előtörténet | JK/NJK toggle */}
+            <span className="tul-becenev-kapszula">
               <button
                 type="button"
-                className="tul-jk-chip tul-elotortenet-chip"
+                className="tul-kapszula-resz tul-kapszula-elotortenet"
                 title="Előtörténet"
+                aria-label="Előtörténet"
                 onClick={e => { e.stopPropagation(); onOpenElotortenet(); }}
-              ><Ikon név="adatlap" /></button>
+              ><Ikon név="előtörténet" méret={16} /></button>
               <button
                 type="button"
-                className={`tul-jk-chip${jk ? ' tul-jk-chip-jk' : ' tul-jk-chip-njk'}`}
+                className={`tul-kapszula-resz tul-kapszula-jk${jk ? ' jk' : ''}`}
                 title="JK / NJK váltás"
                 onClick={e => { e.stopPropagation(); setJk(!jk); }}
               >{jk ? 'JK' : 'NJK'}</button>

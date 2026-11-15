@@ -129,7 +129,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 ### Karakter séma (v2)
 - Egyetlen JSON (`karakter + session`), NEM tartalmaz számított értékeket. Séma: `data/schemas/karakter.yaml`, típus: `engine/types.ts`
 - `session`: runtime harc state (vé_csökkenés, aktív_taktikák, fegyverfogás, stb.)
-- `előtörténet`: biográfiai mezők (`{ származás_helye, szociális_érzék, külső, előtörténet }`) - Előtörténet overlay (🪪)
+- `előtörténet`: biográfiai mezők (`{ származás_helye, szociális_érzék, külső, előtörténet }`) - Előtörténet overlay (Becenév-kapszula tekercs gombja)
 - `felszerelés`: kézi tárgyak (`tárgyak[]`, `méret`) + `kizárt_auto` (pajzs/páncél); a fegyver a saját `felszerelésben` flagjét használja (→ engine_spec §15)
 - `napló[]`, `jegyzetek`: kaland-bejegyzések, szabad jegyzet (Verziók/Napló/Jegyzetek overlay)
 - `checkpoints[]`: kiemelt karakter verziók (snapshot-alapú, → engine_spec §31b)

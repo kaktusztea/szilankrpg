@@ -589,9 +589,9 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
 ### Fejléc (legfelül)
-- **Becenév** sor (CSAK szerkesztő módban, full szélességű box): `Becenév: Agi` - tap a boxra → szerkesztő popup (max 12 karakter). Jobb oldalon két chip:
-  - 🪪 Előtörténet chip (`.tul-elotortenet-chip`) → Előtörténet overlay (lásd lentebb)
-  - JK/NJK toggle chip (`.tul-jk-chip`) → `jk` mező váltás (Játékos Karakter / Nem Játékos Karakter)
+- **Becenév** sor (CSAK szerkesztő módban, full szélességű box): `Becenév: Agi` - tap a boxra → szerkesztő popup (max 12 karakter). Jobb oldalon egy kétrészes kapszula (`.tul-becenev-kapszula`, alap kinézet mint a `.kocka-chip`):
+  - bal rész: Előtörténet gomb (`előtörténet` ikon = lucide ScrollText, szürke) → Előtörténet overlay (lásd lentebb)
+  - jobb rész (függőleges elválasztó után): JK/NJK toggle (`.tul-kapszula-jk`) → `jk` mező váltás (Játékos Karakter / Nem Játékos Karakter); JK zöld felirat, NJK alap szövegszín
 - **Név + Szint** sor (CSAK szerkesztő módban, két box egymás mellett):
   - Név box (flex:1): `Név: von Agabor` - tap → szerkesztő popup (max 40 karakter)
   - Szint box: `Szint: 8` - tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
@@ -605,9 +605,9 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` - tap → szerkesztő popup (max 40 kar)
   - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)
 
-### Előtörténet overlay (🪪)
+### Előtörténet overlay
 
-Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`ElotortenetOverlay.tsx`). ✕ vagy Escape / háttér-katt zárja. Biográfiai és narratív mezők egy helyen. Mezők (mind `.field-input`, karakterlimit `slice`-olva):
+Fullscreen overlay, a Tulajdonságok fejléc Becenév-kapszulájának Előtörténet (tekercs) gombjával nyílik (`ElotortenetOverlay.tsx`). ✕ vagy Escape / háttér-katt zárja. Biográfiai és narratív mezők egy helyen. Mezők (mind `.field-input`, karakterlimit `slice`-olva):
 
 | Mező | Típus | Limit | Tárolás |
 |------|-------|-------|---------|
