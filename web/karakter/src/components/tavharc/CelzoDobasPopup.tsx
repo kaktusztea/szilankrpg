@@ -34,7 +34,6 @@ interface Props {
   /** Az SP bontása a Sebzés popup „Statikus bónuszok" listájához. */
   spBónuszok: SpBónusz[];
   /** Íj: kapcsolható Erőbónusz (md/068_08; alapból BE), l. SebzesPopup. */
-  kapcsolhatóSpBónusz?: { felirat: string; érték: number; kiFelirat: string; limitált?: boolean };
   /** Fegyver Átütés értéke (informatív, ha > 0) */
   átütés?: number;
   /** Collected active effects on CÉ rolls */
@@ -77,7 +76,7 @@ interface CéEredmény {
  *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat → Sebzés button
  *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
  */
-export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBónusz, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, data, karakter, session, setSession, pushUndo, onClose }: Props) {
+export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, átütés, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, páncélMátrix, jelleg, fegyverExtrák, extraDefs, extraKontextus, data, karakter, session, setSession, pushUndo, onClose }: Props) {
   // Egyszerre legfeljebb egy al-popup (a popup korai return-nel vált rájuk).
   const [alPopup, setAlPopup] = useState<'sebzés' | 'taktika' | 'helyzet' | null>(null);
   const [szint, setSzint] = useState(defaultSzint);
@@ -126,7 +125,6 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, kapcsolhatóSpBó
         téK20={k20Érték}
         sebzésHatások={sebzésHatások}
         spBónuszok={spBónuszok}
-        kapcsolhatóSpBónusz={kapcsolhatóSpBónusz}
         megjegyzések={[]}
         átütés={átütés}
         jelleg={jelleg}

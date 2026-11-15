@@ -2,7 +2,7 @@
 
 A Lőfegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a "**Speciális/Megjegyzés**" oszlopban ezt külön feltüntetjük.
 
-Az **Erőbónusz** beszámítása fegyverenként eltérő, a **Speciális/Megjegyzés** mezőt ad támpontot. Alapból az Erőbónusz **nem** adódik hozzá az íjász lőfegyverek **SP** értékéhez.
+Íjaknál az **Erőbónusz** mindig hozzáadódik az **SP** értékhez, az **Erőbónusz limit**ig.
 
 Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász lövedékeket (pl. száradó ruha).
 
@@ -10,14 +10,15 @@ Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász löved
 
 <!-- tag: md_table_tavfegyver_start -->
 
-| Fegyver         | CÉ  | Osztó |   SP   | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Hatótáv | Kategória | Speciális / Megjegyzés                                                                                                                           |
-| --------------- | :-: | :---: | :----: | :------: | :----------: | :------------: | :-------------: | :----: | ------: | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Rövid íj        | `3` |  `4`  |  `+1`  |   `6`    |     `S`      |    kétkezes    |       `2`       |  `0`   |   `60m` | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Hosszú íj       | `4` |  `4`  |  `+3`  |   `8`    |     `S`      |    kétkezes    |       `3`       |  `0`   |  `120m` | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Visszacsapó íj  | `3` |  `4`  |  `+4`  |   `8`    |     `S`      |    kétkezes    |       `4`       |  `3`   |  `160m` | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Elf íj          | `5` |  `5`  |  `+4`  |   `7`    |     `S`      |    kétkezes    |       `0`       |  `0`   |  `120m` | lőfegyver | Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: `4`.<br />Erőbónusz nincs |
-| Fúvócső, kicsi  | `2` |  `3`  | spec\* |   `9`    |     `S`      |    egykezes    |       `0`       |  `0`   |   `16m` | lőfegyver | `k20` dobásnál: `20`-as dobás: `1 ÉP`, különben `0 ÉP`                                                                                           |
-| Fúvócső, vadász | `3` |  `4`  | `-10`  |   `10`   |     `S`      |    kétkezes    |       `0`       |  `0`   |   `30m` | lőfegyver |                                                                                                                                                  |
+| Fegyver                 | CÉ  | Osztó |   SP   | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Hatótáv | Kategória | Speciális / Megjegyzés                                                     |
+| ----------------------- | :-: | :---: | :----: | :------: | :----------: | :------------: | :-------------: | :----: | ------: | --------- | -------------------------------------------------------------------------- |
+| Rövid íj                | `3` |  `4`  |  `+1`  |   `6`    |     `S`      |    kétkezes    |       `2`       |  `0`   |   `60m` | lőfegyver |                                                                            |
+| Hosszú íj               | `4` |  `4`  |  `+3`  |   `8`    |     `S`      |    kétkezes    |       `3`       |  `0`   |  `120m` | lőfegyver |                                                                            |
+| Visszacsapó íj          | `3` |  `4`  |  `+4`  |   `8`    |     `S`      |    kétkezes    |       `4`       |  `3`   |  `160m` | lőfegyver |                                                                            |
+| Elf íj                  | `5` |  `5`  |  `+4`  |   `7`    |     `S`      |    kétkezes    |       `0`       |  `0`   |  `120m` | lőfegyver | Csak a készítője (és egyben birtokosa) kezében érvényesek ezek az értékek. |
+| Elf íj - nem elf kézben | `4` |  `4`  |  `+3`  |   `8`    |     `S`      |    kétkezes    |       `0`       |  `0`   |  `120m` | lőfegyver |                                                                            |
+| Fúvócső, kicsi          | `2` |  `3`  | spec\* |   `9`    |     `S`      |    egykezes    |       `0`       |  `0`   |   `16m` | lőfegyver | `k20` dobásnál: `20`-as dobás: `1 ÉP`, különben `0 ÉP`                     |
+| Fúvócső, vadász         | `3` |  `4`  | `-10`  |   `10`   |     `S`      |    kétkezes    |       `0`       |  `0`   |   `30m` | lőfegyver |                                                                            |
 
 <!-- tag: md_table_tavfegyver_end -->
 

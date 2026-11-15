@@ -49,11 +49,6 @@ interface Props {
   /** Taktika notes relevant to sebzés (e.g. "Sebzés: 0") */
   megjegyzések: { forrás: string; szöveg: string }[];
   /** Hide the automatic SP bonuses list inside StatikusBonuszBtn (e.g. távharc) */
-  /**
-   * Kapcsolható SP-bónusz (pl. íj Erőbónusza, md/068_08): alapból BE (`felirat: +érték`, az SP-be és a bontásba kerül),
-   * kattintásra KI (`kiFelirat`). `limitált`: a bónuszt egy limit vágta → vízszintes vonal az érték fölött.
-   */
-  kapcsolhatóSpBónusz?: { felirat: string; érték: number; kiFelirat: string; limitált?: boolean };
   /** Fegyver Átütés értéke (informatív kijelzés, ha > 0) */
   átütés?: number;
   /** Melee only (md/064_02_07): the target's VÉ drop on hit, shown next to the result. Omitted for ranged. */
@@ -72,7 +67,7 @@ interface SebzésEredmény {
 }
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + ellenfél páncél + k20 roll + info. */
-export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok: spBónuszokAlap, megjegyzések, kapcsolhatóSpBónusz, átütés, véCsökkenésTalálatnál, onClose, onEscape }: Props) {
+export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok, megjegyzések, átütés, véCsökkenésTalálatnál, onClose, onEscape }: Props) {
   // Raw (unclamped) combined value - includes TÉ k20 bonus + active effects.
   // A másodlagos sebzéstípus −1 E/H-ját a hívó (TamadoDobasPopup) már beépítette a defaultElőny-be.
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
@@ -81,10 +76,6 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
   // Ellenfél páncélosztálya (a mátrix SP-delta lookup kulcsa). null = még nincs választva.
   const [páncél, setPáncél] = useState<Páncélosztály | null>(null);
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
-  const [kapcsolt, setKapcsolt] = useState(true);
-  const kb = kapcsolt && kapcsolhatóSpBónusz ? kapcsolhatóSpBónusz : null;
-  const sp = spAlap === SP_NINCS ? spAlap : spAlap + (kb?.érték ?? 0);
-  const spBónuszok = kb ? [...spBónuszokAlap, { forrás: kb.felirat, érték: kb.érték }] : spBónuszokAlap;
 
   // SP_NINCS (-99) sentinel: a fegyver nem sebez (pl. Bola, Dobóháló, Lasszó, Fúvócső).
   // Korai kilépés (a hook-ok UTÁN, Rules of Hooks): a -99 SOHA nem kerül a delta/roll számításba.
@@ -210,19 +201,7 @@ export function SebzesPopup({ sp: spAlap, defaultElőny, téK20, sebzéstípus, 
               </div>
             </div>
 
-            {/* Switchable SP bonus pill (if any) above the E/H box; both share one column (the wider one sets the width) */}
             <div className="dobas-oszlop">
-              {kapcsolhatóSpBónusz && kapcsolhatóSpBónusz.érték > 0 && (
-                <div className="dobas-kapszulak">
-                  <button type="button" className={`dobas-kapszula${kapcsolt ? ' sebzes-stat-pos' : ' dobas-kapszula-halvany'}`} aria-pressed={kapcsolt}
-                    title={kapcsolhatóSpBónusz.limitált ? 'A fegyver Erőbónusz-limitje vágja' : undefined}
-                    onClick={() => { setKapcsolt(v => !v); setEredmény(null); }}>
-                    {kapcsolt
-                      ? <>{kapcsolhatóSpBónusz.felirat} <span className={kapcsolhatóSpBónusz.limitált ? 'sebzes-limit-plafon' : undefined}>+{kapcsolhatóSpBónusz.érték}</span></>
-                      : kapcsolhatóSpBónusz.kiFelirat}
-                  </button>
-                </div>
-              )}
               <div className="elony-blokk">
                 <ElonyLepteto szint={aktuális} onChange={handleSzintChange} />
                 <ForrasLista hatások={eHForrások} szint={aktuális} alapSzint={clampEHSzint(baseRaw)} onVissza={() => { setRawSzint(baseRaw); setEredmény(null); }} />

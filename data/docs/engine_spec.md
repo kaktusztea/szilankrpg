@@ -922,9 +922,7 @@ max_hatótáv = távfegyver.hatótáv_bázis + Erő × távfegyver.hatótáv_er�
 SP = fegyver.SP + Erőbónusz + MF.SP
   Erőbónusz = MAX(0, MIN(Erő, fegyver.erőbónusz_limit))      (md/064_02_06, md/068_07-08)
     Hajítófegyverek: a szokásos módon (limit a táblából, pl. Dárda 99, Hajítótőr 1, Parittya 2)
-    Íjak: CSAK ha az íj az adott Erőre tervezett (md/068_08) → a Sebzés popupban kapcsolható sor,
-          alapból BE („Erőbónusz: +N"; limit vágta → vonal az érték fölött), KI: „Erődre tervezett íj: nem";
-          a kártya / kalkulátor SP-je az íj-Erőbónusz NÉLKÜL; extra: tavharc_ij_erobonusz_tervezett
+    Íjak: mindig, a limitig (md/068_08; pl. Rövid íj 2, Hosszú íj 3, Visszacsapó íj 4, Elf íj 0)
     Nyílpuskák: nincs (limit 0)
   MF.SP: konstansok.mesterfegyver_bónuszok (a megjelölt távfegyverre)
   Fortély-SP: nincs (Orvtámadás távharcban nem végezhető; Pajzshasználat pajzs-kötött). Idea: csak CÉ (§17.7).

@@ -184,36 +184,25 @@ export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState)
 
 // --- Távharci SP (engine_spec §17.6) ---
 
-/** Íj: az Erőbónusz csak az adott Erőre tervezett íjnál jár (md/068_08) - a Sebzés popupban kikapcsolható (alapból BE). */
-const ÍJ_TERVEZETT_ERŐ_EXTRA = 'tavharc_ij_erobonusz_tervezett';
-
 interface TávSP {
   /** Az SP a biztos tagokkal (alap + Erőbónusz + Mesterfegyver); SP_NINCS / mágikus: a nyers érték. */
   sp: number;
   /** Bontás a Sebzés popup „Statikus bónuszok" listájához. */
   bónuszok: { forrás: string; érték: number }[];
-  /** Íjnál a kapcsolható Erőbónusz (nincs benne az `sp`-ben); egyébként 0. */
-  tervezettÍjErő: number;
-  /** Az íj Erőbónuszát a fegyver Erőbónusz-limitje vágta (Erő > limit) - a UI jelzi. */
-  íjErőLimitált: boolean;
 }
 
 /**
- * Távfegyver SP = alap SP + Erőbónusz (min(Erő, erőbónusz_limit); íjnál a Sebzés popupban kapcsolható sor, alapból BE)
+ * Távfegyver SP = alap SP + Erőbónusz (min(Erő, erőbónusz_limit), íjnál is)
  * + Mesterfegyver SP (konstansok.mesterfegyver_bónuszok). Fortély-SP nincs: az egyetlen ilyen feltétel (Orvtámadás)
  * távharcban nem végezhető; a Pajzshasználat pajzs-kötött. Idea: csak a CÉ-re hat (§17.7).
  */
 export function calcTávSP(k: Karakter, data: GameData, def: TavfegyverAlap | undefined, mfAlap: string): TávSP {
-  if (!def || def.SP === SP_NINCS || def.kategória === 'mágikus') return { sp: def?.SP ?? 0, bónuszok: [], tervezettÍjErő: 0, íjErőLimitált: false };
+  if (!def || def.SP === SP_NINCS || def.kategória === 'mágikus') return { sp: def?.SP ?? 0, bónuszok: [] };
   const erő = Math.max(0, Math.min(k.tulajdonságok.erő, def.erőbónusz_limit ?? 0));
-  const íj = (def.extrák ?? []).includes(ÍJ_TERVEZETT_ERŐ_EXTRA);
   const mfSP = data.konstansok.mesterfegyver_bónuszok.find(b => b.fok === getMfFok(k, mfAlap))?.SP ?? 0;
   const bónuszok = [
-    ...(!íj && erő ? [{ forrás: 'Erőbónusz', érték: erő }] : []),
+    ...(erő ? [{ forrás: 'Erőbónusz', érték: erő }] : []),
     ...(mfSP ? [{ forrás: `Mesterfegyver - ${mfAlap}`, érték: mfSP }] : []),
   ];
-  return {
-    sp: def.SP + bónuszok.reduce((s, b) => s + b.érték, 0), bónuszok, tervezettÍjErő: íj ? erő : 0,
-    íjErőLimitált: íj && erő > 0 && k.tulajdonságok.erő > (def.erőbónusz_limit ?? 0),
-  };
+  return { sp: def.SP + bónuszok.reduce((s, b) => s + b.érték, 0), bónuszok };
 }

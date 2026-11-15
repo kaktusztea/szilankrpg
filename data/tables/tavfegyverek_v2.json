@@ -115,7 +115,25 @@
     "extrák": [
       "tavharc_ertekek_csak_keszito_kezeben"
     ],
-    "megjegyzés": "Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: 4. Erőbónusz nincs"
+    "megjegyzés": "Csak a készítője (és egyben birtokosa) kezében érvényesek ezek az értékek."
+  },
+  {
+    "név": "Elf íj - nem elf kézben",
+    "kategória": "lőfegyver",
+    "harcmodor": "Íjászat",
+    "CÉ": 4,
+    "Osztó": 4,
+    "SP": 3,
+    "Sebesség": 8,
+    "sebzésjelleg": "S",
+    "Átütés": 0,
+    "forgatás": "kétkezes",
+    "erőbónusz_limit": 0,
+    "hatótáv_bázis": 120,
+    "hatótáv_erő_szorzó": 0,
+    "idea_default": 0,
+    "extrák": [],
+    "megjegyzés": ""
   },
   {
     "név": "Fúvócső, kicsi",
@@ -210,10 +228,8 @@
     "hatótáv_bázis": 120,
     "hatótáv_erő_szorzó": 0,
     "idea_default": 0,
-    "extrák": [
-      "tavharc_ij_erobonusz_tervezett"
-    ],
-    "megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+    "extrák": [],
+    "megjegyzés": ""
   },
   {
     "név": "Kézi nyílpuska",
@@ -378,10 +394,8 @@
     "hatótáv_bázis": 60,
     "hatótáv_erő_szorzó": 0,
     "idea_default": 0,
-    "extrák": [
-      "tavharc_ij_erobonusz_tervezett"
-    ],
-    "megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+    "extrák": [],
+    "megjegyzés": ""
   },
   {
     "név": "Shad0ni páncéltörő",
@@ -436,10 +450,8 @@
     "hatótáv_bázis": 160,
     "hatótáv_erő_szorzó": 0,
     "idea_default": 0,
-    "extrák": [
-      "tavharc_ij_erobonusz_tervezett"
-    ],
-    "megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+    "extrák": [],
+    "megjegyzés": ""
   },
   {
     "név": "🔆 Nem dobásra készített tárgy",

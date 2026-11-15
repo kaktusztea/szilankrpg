@@ -52,7 +52,7 @@ Apró hajítófegyverek, szálfegyverek
     Rövid, hosszú íj, Kézi nyílpuska
     Mágiatáv IV
   Sebzés bónusz: Erő 1:1
-    (ha erre az Erőre lett tervezve)
+    (az Erőbónusz limitig)
 ```
 
 ```

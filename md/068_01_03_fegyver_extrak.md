@@ -355,17 +355,6 @@ Hatás:    célpont páncél SFÉ: duplán számít
 
 A lövedék páncél ellen különösen hatékony. Példa: Dobócsillag, Parittya.
 
-### Távharc íj Erőbónusz tervezett
-
-```
-id: tavharc_ij_erobonusz_tervezett
-Állapot: Aktív
-Feltétel: az íj a lövő Erő értékére tervezve
-Hatás:    íj Erőbónusza csak ekkor számít (KM)
-```
-
-Az íj Erőbónusza csak akkor jár, ha az íjat kifejezetten erre az Erő értékre készítették.
-
 ### Távharc Közeli lövés automatikus bónusz
 
 ```
@@ -384,7 +373,7 @@ id: tavharc_ertekek_csak_keszito_kezeben
 Állapot: Aktív
 Feltétel: a fegyvert a készítő-birtokos használja
 Hatás: az értékek csak ekkor érvényesek;
-       másnak hagyományos íj (Osztó 4, nincs Erőbónusz)
+       másnak az "Elf íj - nem elf kézben" értékei
 ```
 
 Az egyedi (elf) íj teljes értéke csak a készítőjének jár. Példa: Elf íj.

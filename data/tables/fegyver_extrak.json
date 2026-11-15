@@ -595,19 +595,6 @@
       }
     ]
   },
-  "tavharc_ij_erobonusz_tervezett": {
-    "id": "tavharc_ij_erobonusz_tervezett",
-    "név": "Távharc íj Erőbónusz tervezett",
-    "csoport": "tulajdonság",
-    "állapot": "aktív",
-    "leírás": "Az íj Erőbónusza csak akkor számít, ha az íj erre az Erő értékre lett tervezve (KM).",
-    "hatás": [
-      {
-        "cél": "SP",
-        "mód": "szöveges"
-      }
-    ]
-  },
   "tavharc_kozeli_loves_automatikus_bonusz": {
     "id": "tavharc_kozeli_loves_automatikus_bonusz",
     "név": "Távharc Közeli lövés automatikus bónusz",
@@ -626,7 +613,7 @@
     "név": "Távharc Értékek csak készítő kezében",
     "csoport": "tulajdonság",
     "állapot": "aktív",
-    "leírás": "Az értékek csak a készítő-birtokos kezében érvényesek; másnak hagyományos íjként (Osztó 4, nincs Erőbónusz).",
+    "leírás": "Az értékek csak a készítő-birtokos kezében érvényesek; másnak az \"Elf íj - nem elf kézben\" értékei.",
     "hatás": [
       {
         "cél": "CÉ",

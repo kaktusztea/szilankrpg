@@ -104,8 +104,6 @@
 }
 .sebzes-stat-pos { color: var(--success); }
 .sebzes-stat-neg { color: var(--error); }
-/* Limit vágta bónusz (pl. íj Erőbónusz-limit): vízszintes „plafon" vonal az érték fölött. */
-.sebzes-limit-plafon { border-top: 2px solid currentColor; padding-top: 1px; }
 
 /* Tompított színek (a teljes gomb már nem piros / zöld, csak a szám). */
 .pancel-valaszto-delta-neg { color: #e57373; }

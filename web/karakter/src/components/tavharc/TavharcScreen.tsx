@@ -186,7 +186,6 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             vé={vé}
             sp={távSP.sp}
             spBónuszok={távSP.bónuszok}
-            kapcsolhatóSpBónusz={távSP.tervezettÍjErő ? { felirat: 'Erőbónusz', érték: távSP.tervezettÍjErő, kiFelirat: 'Erődre tervezett íj: nem', limitált: távSP.íjErőLimitált } : undefined}
             átütés={fegyverÁtütés}
             céHatások={céInfo.céHatások}
             céMegjegyzések={céInfo.céMegjegyzések}

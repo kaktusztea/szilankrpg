@@ -18,20 +18,19 @@ const k = (erő: number, mf?: { elem: string; fok: number }) => ({
 describe('calcTávSP', () => {
   it('hajítófegyver: Erőbónusz a limitig (Hajítótőr limit 1, Dárda limit 99)', () => {
     expect(calcTávSP(k(3), data, def('Hajítótőr'), 'Hajítótőr')).toEqual(
-      { sp: def('Hajítótőr').SP + 1, bónuszok: [{ forrás: 'Erőbónusz', érték: 1 }], tervezettÍjErő: 0, íjErőLimitált: false });
+      { sp: def('Hajítótőr').SP + 1, bónuszok: [{ forrás: 'Erőbónusz', érték: 1 }] });
     expect(calcTávSP(k(3), data, def('Dárda'), 'Dárda').sp).toBe(def('Dárda').SP + 3);
     expect(calcTávSP(k(-1), data, def('Dárda'), 'Dárda').sp).toBe(def('Dárda').SP); // negatív Erő nem von le
   });
 
-  it('íj: az Erőbónusz NEM az SP-ben, hanem kapcsolhatóként (Hosszú íj limit 3)', () => {
-    const r = calcTávSP(k(5), data, def('Hosszú íj'), 'Hosszú íj');
-    expect([r.sp, r.bónuszok, r.tervezettÍjErő]).toEqual([def('Hosszú íj').SP, [], 3]);
-    expect(r.íjErőLimitált).toBe(true);   // Erő 5 > limit 3
-    expect(calcTávSP(k(3), data, def('Hosszú íj'), 'Hosszú íj').íjErőLimitált).toBe(false);   // Erő = limit
+  it('íj: az Erőbónusz mindig az SP-ben, a limitig (Hosszú íj limit 3)', () => {
+    expect(calcTávSP(k(5), data, def('Hosszú íj'), 'Hosszú íj')).toEqual(
+      { sp: def('Hosszú íj').SP + 3, bónuszok: [{ forrás: 'Erőbónusz', érték: 3 }] });
+    expect(calcTávSP(k(2), data, def('Hosszú íj'), 'Hosszú íj').sp).toBe(def('Hosszú íj').SP + 2);
   });
 
   it('nyílpuska: nincs Erőbónusz (limit 0)', () => {
-    expect(calcTávSP(k(5), data, def('Nyílpuska'), 'Nyílpuska')).toEqual({ sp: def('Nyílpuska').SP, bónuszok: [], tervezettÍjErő: 0, íjErőLimitált: false });
+    expect(calcTávSP(k(5), data, def('Nyílpuska'), 'Nyílpuska')).toEqual({ sp: def('Nyílpuska').SP, bónuszok: [] });
   });
 
   it('Mesterfegyver SP csak a megjelölt távfegyverre', () => {
@@ -43,6 +42,6 @@ describe('calcTávSP', () => {
 
   it('nem sebző (SP_NINCS) és mágikus: változatlan nyers érték, bontás nélkül', () => {
     expect(calcTávSP(k(5), data, def('Bola'), 'Bola').sp).toBe(SP_NINCS);
-    expect(calcTávSP(k(5), data, def('Mágiatáv I'), 'Mágiatáv I')).toEqual({ sp: 0, bónuszok: [], tervezettÍjErő: 0, íjErőLimitált: false });
+    expect(calcTávSP(k(5), data, def('Mágiatáv I'), 'Mágiatáv I')).toEqual({ sp: 0, bónuszok: [] });
   });
 });
