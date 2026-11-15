@@ -4,7 +4,7 @@ import type { HintType } from '../../hooks/useHint';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { buildPancelLookups } from '../../engine/harc/pancel-calc';
 import { árFormátum } from '../formatters';
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { Ikon } from '../common/Ikon';
 import { ListaPicker } from '../picker/ListaPicker';
 import { FokPottyok } from './FokPottyok';
@@ -68,6 +68,12 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
     setKarakter(prev => prev ? { ...prev, páncél: { ...prev.páncél, ...patch } } : prev);
   }
 
+  // "Páncél viselve": the same session flag as the Harc fül toggle (karakter.session.aktív_páncél), so they stay in sync
+  const viselve = hasAlap && k.session.aktív_páncél;
+  function toggleViselve() {
+    setKarakter(prev => prev ? { ...prev, session: { ...prev.session, aktív_páncél: !prev.session.aktív_páncél } } : prev);
+  }
+
   function mgtBontás() {
     const erő = k.tulajdonságok.erő;
     const nyers = mgt + erő;
@@ -76,14 +82,23 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
   }
 
   const merevvért = <FokPottyok név="Merevvért fok" fok={merevvertFok} max={MAX_FORTÉLY_FOK} onClick={() => onPopup('merevvért')} />;
-  // Subtitle: metal (metal armour only) · craftsmanship · fit · Idea
-  const alcím = [aktStruktúra?.fém ? fémalapanyag : null, k.páncél.kidolgozottság, k.páncél.méret_illeszkedés, `Idea ${k.páncél.idea}`].filter(Boolean).join(' · ');
+  // Subtitle: metal (metal armour only) · craftsmanship · fit · Idea. A fit with an MGT penalty
+  // ("nem passzol" / "borzalmas") is highlighted in the same faded orange as Rongálódás.
+  const rosszMéret = ((konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[])
+    .find(m => m.fokozat === k.páncél.méret_illeszkedés)?.mgt ?? 0) > 0;
+  const alcímRészek = [
+    aktStruktúra?.fém ? fémalapanyag : null,
+    k.páncél.kidolgozottság,
+    rosszMéret ? <span className="he-stat-figyel">{k.páncél.méret_illeszkedés}</span> : k.páncél.méret_illeszkedés,
+    `Idea ${k.páncél.idea}`,
+  ].filter(Boolean);
+  const alcím = alcímRészek.map((r, i) => <Fragment key={i}>{i > 0 && ' · '}{r}</Fragment>);
 
   return (
     <section className="he-section">
       <h3>Páncél</h3>
       {/* Compact card like the weapon cards: title + Merevvért dots, subtitle, Sisak toggle + edit menu, 2-line stats */}
-      <div className="he-fegyver-card">
+      <div className={`he-fegyver-card${hasAlap && !viselve ? ' he-fegyver-card-ki' : ''}`}>
         <div className="he-fegyver-header">
           <div className="he-fegyver-cim">
             <div className={`he-fegyver-nev${hasAlap ? '' : ' he-nincs'}`}>{hasAlap ? k.páncél.alap : 'Nincs páncél'}{merevvért}</div>
@@ -91,9 +106,9 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
           </div>
           {hasAlap && (
             <div className="he-fegyver-ikonok">
-              <button type="button" className={`he-ikon-btn he-felsz-btn${k.páncél.sisak ? ' on' : ''}`} aria-pressed={!!k.páncél.sisak}
-                title={k.páncél.sisak ? 'Sisak: igen' : 'Sisak: nem'} aria-label="Sisak"
-                onClick={() => updatePancel({ sisak: !k.páncél.sisak })}><Ikon név="sisak" /></button>
+              <button type="button" className={`he-ikon-btn he-felsz-btn${viselve ? ' on' : ''}`} aria-pressed={viselve}
+                title={viselve ? 'Páncél viselve: igen' : 'Páncél viselve: nem'} aria-label="Páncél viselve"
+                onClick={toggleViselve}><Ikon név="viselve" /></button>
               <button type="button" className="he-ikon-btn" title="Szerkesztés" aria-label="Szerkesztés" onClick={() => setSzerkNyitva(true)}><Ikon név="szerkeszt" /></button>
             </div>
           )}
@@ -106,10 +121,18 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
               <button type="button" className="he-stat-bontas" onClick={mgtBontás}>MGT</button> <b>{mgt}</b>
             </div>
             <div>
-              Végtag <b>{k.páncél.végtagvédettség}</b>
+              <button type="button" className="he-stat-gomb" onClick={() => onPopup('végtagvédettség')}>Végtag <b>{k.páncél.végtagvédettség}</b></button>
+              {/* Sisak indicator (green = yes), tappable toggle */}
+              <span className="he-stat-sep"> · </span>
+              <button type="button" className={`he-stat-sisak${k.páncél.sisak ? ' on' : ''}`} aria-pressed={!!k.páncél.sisak}
+                title={k.páncél.sisak ? 'Sisak: igen' : 'Sisak: nem'} aria-label="Sisak"
+                onClick={() => updatePancel({ sisak: !k.páncél.sisak })}><Ikon név="sisak" /></button>
               <span className="he-stat-sep"> · </span>Ár <b>{árFormátum(ár)}x</b>
-              {k.páncél.rongálódás > 0 && <><span className="he-stat-sep"> · </span><span className="he-stat-figyel">Rongálódás <b>{k.páncél.rongálódás}</b></span></>}
             </div>
+            {/* Own line, only when damaged */}
+            {k.páncél.rongálódás > 0 && (
+              <div><button type="button" className="he-stat-bontas he-stat-figyel" onClick={() => onPopup('rongálódás')}>Rongálódás <b>{k.páncél.rongálódás}</b></button></div>
+            )}
           </div>
         ) : (
           <button type="button" className="he-add-select" onClick={() => onPopup('struktúra')}>+ Páncél választása...</button>
@@ -124,9 +147,15 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
             { érték: 'méret', név: 'Méret', infó: k.páncél.méret_illeszkedés },
             { érték: 'idea', név: 'Idea', infó: String(k.páncél.idea), disabled: !ideaSzerkeszthető, megjegyzés: ideaSzerkeszthető ? undefined : 'ennél a struktúránál nem állítható' },
             { érték: 'végtagvédettség', név: 'Végtagvédettség', infó: String(k.páncél.végtagvédettség) },
+            { érték: 'sisak', név: 'Sisak', infó: k.páncél.sisak ? 'igen' : 'nem' },
             { érték: 'rongálódás', név: 'Rongálódás', infó: String(k.páncél.rongálódás) },
           ]}
-          onVálaszt={mező => { onMenüből(() => setSzerkNyitva(true)); if (mező === 'idea') onIdeaTarget(); else onPopup(mező); }} />
+          onVálaszt={mező => {
+            // Sisak: plain toggle, no sub-popup (so no "back to menu" registration)
+            if (mező === 'sisak') { updatePancel({ sisak: !k.páncél.sisak }); return; }
+            onMenüből(() => setSzerkNyitva(true));
+            if (mező === 'idea') onIdeaTarget(); else onPopup(mező);
+          }} />
       )}
     </section>
   );

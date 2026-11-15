@@ -140,5 +140,15 @@
   text-decoration: underline dotted; text-underline-offset: 3px;
 }
 .he-stat-figyel, .he-stat-figyel b { color: #c9934f; }  /* faded --warning orange (same as the TÉ box VÉ history) */
-.he-stat-figyel b { font-weight: normal; }  /* Rongálódás: colour is enough, no bold */
+.he-stat-figyel b { font-weight: normal; }
+.he-stat-bontas.he-stat-figyel { text-decoration: none; }  /* tappable Rongálódás: no link underline */  /* Rongálódás: colour is enough, no bold */
 .he-fegyver-card + .he-add-select, .he-fegyver-card .he-add-select { margin-top: 6px; }
+/* Sisak indicator in the armour stats line (after Végtag): small helmet icon, green = yes, tappable toggle */
+.he-stat-sisak {
+  display: inline-flex; align-items: center; vertical-align: -3px; padding: 0 2px;
+  background: none; border: none; font-size: 16px; line-height: 1; cursor: pointer;
+  color: var(--text-muted); opacity: 0.6;
+}
+.he-stat-sisak.on { color: var(--success); opacity: 1; }
+/* Tappable stat (no link underline), e.g. Végtag → végtagvédettség picker */
+.he-stat-gomb { background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }
