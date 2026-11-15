@@ -38,6 +38,16 @@ describe('páncél_ár (rules.json)', () => {
     expect(páncélÁr({ alap: 'lánc/sodrony', fémalapanyag: 'abbitacél' })).toBe(1000);
   });
 
+  // REGRESSZIÓ (2026-11): a Kidolgozottság a TELJES páncélt szorozza (torzó + csatolt tagok), nem csak a tagokat.
+  it('mestermunka a torzót is szorozza: lemez + abbitacél + Idea +3 + 5 tag', () => {
+    // torzó = 1000 × 10 × 7 = 70 000; (70 000 + 5 × 14 000) × 100 = 14 000 000
+    expect(páncélÁr({ alap: 'lemez', fémalapanyag: 'abbitacél', kidolgozottság: 'mestermunka', idea: 3, végtag: 4, sisak: true })).toBe(14_000_000);
+  });
+
+  it('pocsék mellvért tagok nélkül is feleződik (torzó × 0,5)', () => {
+    expect(páncélÁr({ alap: 'bőr', fémalapanyag: 'acél', kidolgozottság: 'pocsék' })).toBe(5);
+  });
+
   // REGRESSZIÓ: fém páncél üres/választatlan fémalapanyaggal NEM nullázhatja az árat
   // (a UI default acél-t mutat, de a karakterben a mező üres lehet felvételkor).
   it('fém páncél üres fémalapanyaggal → semleges 1 szorzó (nem 0)', () => {

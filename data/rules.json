@@ -433,7 +433,7 @@
     },
     {
       "id": "páncél_ár",
-      "formula": "if(páncél_van, páncél_torzó_ár + páncél_csatolt_db * (páncél_torzó_ár / 5 * páncél_kidolgozottság_ár), 0)",
+      "formula": "if(páncél_van, (páncél_torzó_ár + páncél_csatolt_db * páncél_torzó_ár / 5) * páncél_kidolgozottság_ár, 0)",
       "inputs": [
         "páncél_van",
         "páncél_torzó_ár",

@@ -4137,7 +4137,7 @@ note: A távharc cella / cél_VÉ NEM reactive szabály - tavharc/helpers.ts (ca
 | páncél_kidolgozottság_ár | lookup | kidolgozottság_ár tábla (§43.1) |
 | páncél_idea_ár | lookup | idea_ár tábla (§43.1) |
 | páncél_torzó_ár | képlet | struktúra_ár × alapanyag_ár × idea_ár (§43.1) |
-| páncél_ár | if + képlet | páncél_van → torzó_ár + csatolt_db × (torzó_ár/5 × kidolgozottság_ár) (§43.1) |
+| páncél_ár | if + képlet | páncél_van → (torzó_ár + csatolt_db × torzó_ár/5) × kidolgozottság_ár (§43.1) |
 | képzettség_max_szint_primer | képlet | max_szint, tsz |
 | képzettség_max_szint_szekunder | képlet | max_szint, tsz + plusz |
 | fegyver_TÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély - merevvért_TÉ_büntetés |
@@ -4353,7 +4353,7 @@ Az ár egy arány-szorzó (egymáshoz viszonyított érték), nem valuta. Szabá
 
 ```
 páncél_torzó_ár = struktúra_ár × alapanyag_ár × idea_ár
-páncél_ár = páncél_torzó_ár + csatolt_tag_db × (páncél_torzó_ár / 5 × kidolgozottság_ár)
+páncél_ár = (páncél_torzó_ár + csatolt_tag_db × páncél_torzó_ár / 5) × kidolgozottság_ár
 ```
 
 - Lookup-táblák: `konstansok.yaml` → `páncél_struktúrák[].struktúra_ár`, `alapanyag_ár`,

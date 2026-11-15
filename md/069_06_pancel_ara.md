@@ -4,8 +4,9 @@ A páncél teljes árát a következőképpen kaphatjuk meg:
 
 ```
 Teljes ár
-   = Torzó Struktúra Ár
-   + Csatolt tagok Ára
+   = ( Torzó Struktúra Ár
+     + Csatolt tagok Ára )
+   x Kidolgozottság
 ```
 
 ---
@@ -29,11 +30,12 @@ Ez a mellvért tag ára egyedül.
 
 A plusz csatolt tagok egyenként a torzó-darab árának `1/5`-ét érik, így egy teljes (100%) páncél a torzó-darab árának pont a kétszerese.
 
+A Kidolgozottság a teljes páncél árát szorozza (a torzó-darabét és a csatolt tagokét is).
+
 ```
 1 csatolt tag ára
      = 1/5
      x (Torzó ár)
-     x Kidolgozottság
 
 Csatolt tagok (max 5 db)
   felkar-tagok
