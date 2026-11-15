@@ -57,6 +57,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
         data={data} karakter={karakter} setKarakter={undoSetKarakter} gameMode={gameMode}
         onIdeaTarget={idx => popup.setIdeaTarget({ type: 'fegyver', idx })}
         onMfTarget={popup.setMfTarget} onAnyagTarget={popup.setAnyagTarget} onBecenévTarget={popup.setBecenévTarget} onDeleteTarget={popup.setDeleteTarget}
+        onMenüből={popup.nyitMenüből}
       />
 
       <PancelSection
@@ -64,6 +65,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
         merevvertFok={merevvertFok}
         onPopup={popup.setPancelPopup}
         onIdeaTarget={() => popup.setIdeaTarget({ type: 'páncél', idx: 0 })}
+        onMenüből={popup.nyitMenüből}
         showHint={showHint}
       />
 
@@ -74,7 +76,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
 
       <Popups
         data={data} karakter={karakter} képzettségek={képzettségek} state={popup.state}
-        onClose={popup.close}
+        onClose={popup.close} onDismiss={popup.dismiss}
         updateFegyver={mutators.updateFegyver} updatePancel={mutators.updatePancel}
         setMfFok={mutators.setMfFok} setMerevvertFok={mutators.setMerevvertFok}
         setPajzsFok={mutators.setPajzsFok} updatePajzs={mutators.updatePajzs}

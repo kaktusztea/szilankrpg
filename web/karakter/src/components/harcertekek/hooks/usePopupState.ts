@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export interface PopupState {
   ideaTarget: { type: 'fegyver' | 'páncél'; idx: number } | null;
@@ -23,6 +23,16 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
   const [deleteKepzTarget, setDeleteKepzTarget] = useState<string | null>(null);
   const [kepzSzintTarget, setKepzSzintTarget] = useState<string | null>(null);
 
+  // Edit-menu return: a sub-popup opened from a card's edit menu goes back to that menu when it is
+  // dismissed (tap outside / Escape / Mégse). A real selection closes everything (close()).
+  const menüVissza = useRef<(() => void) | null>(null);
+  function nyitMenüből(vissza: () => void) { menüVissza.current = vissza; }
+  function visszaMenübe() {
+    const vissza = menüVissza.current;
+    menüVissza.current = null;
+    vissza?.();
+  }
+
   const anyOpen = !!(ideaTarget || mfTarget !== null || anyagTarget !== null || becenévTarget !== null || pancelPopup || pajzsPopup || deleteTarget !== null || deleteKepzTarget || kepzSzintTarget);
 
   useEffect(() => {
@@ -31,6 +41,7 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
       if (e.key === 'Escape') {
         if (kepzSzintTarget) onEscapeKepz?.(kepzSzintTarget);
         closeAll();
+        visszaMenübe();
       }
     }
     document.addEventListener('keydown', onKey);
@@ -62,6 +73,14 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
       kepzSzintTarget: setKepzSzintTarget,
     };
     setters[key](null);
+    menüVissza.current = null;
+  }
+
+  /** Close without a selection (tap outside / Escape / Mégse): back to the edit menu if opened from there. */
+  function dismiss(key: keyof PopupState) {
+    const vissza = menüVissza.current;
+    close(key);
+    vissza?.();
   }
 
   const state: PopupState = { ideaTarget, mfTarget, anyagTarget, becenévTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget };
@@ -69,6 +88,8 @@ export function usePopupState(onEscapeKepz?: (név: string) => void) {
   return {
     state,
     close,
+    dismiss,
+    nyitMenüből,
     setIdeaTarget,
     setMfTarget,
     setAnyagTarget,

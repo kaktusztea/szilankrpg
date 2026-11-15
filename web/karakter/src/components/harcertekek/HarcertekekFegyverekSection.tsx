@@ -13,6 +13,7 @@ import { buildFegyverGroups } from '../fegyver-groups';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 import { lookupFegyver } from '../../engine/lookup';
 import { ListaPicker } from '../picker/ListaPicker';
+import { FokPottyok } from './FokPottyok';
 import { SP_NINCS } from '../../engine/data-types';
 
 interface Props {
@@ -25,9 +26,11 @@ interface Props {
   onAnyagTarget: (idx: number) => void;
   onBecenévTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
+  /** Register a "back to the edit menu" callback before opening a field popup from the menu. */
+  onMenüből: (vissza: () => void) => void;
 }
 
-export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onIdeaTarget, onMfTarget, onAnyagTarget, onBecenévTarget, onDeleteTarget }: Props) {
+export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onIdeaTarget, onMfTarget, onAnyagTarget, onBecenévTarget, onDeleteTarget, onMenüből }: Props) {
   const { konstansok } = data;
   const [pickerOpen, setPickerOpen] = useState(false);
 
@@ -83,6 +86,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
           onBecenévTarget={onBecenévTarget}
           onDeleteTarget={onDeleteTarget}
           onToggleFelszerelésben={toggleFelszerelésben}
+          onMenüből={onMenüből}
         />
       ))}
       {!gameMode && k.fegyverek.length < MAX_FEGYVER_DARAB && (
@@ -101,7 +105,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
 
 // --- FegyverCard ---
 
-function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget, onMfTarget, onAnyagTarget, onBecenévTarget, onDeleteTarget, onToggleFelszerelésben }: {
+function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget, onMfTarget, onAnyagTarget, onBecenévTarget, onDeleteTarget, onToggleFelszerelésben, onMenüből }: {
   index: number;
   fegyver: FegyverPeldany;
   data: GameData;
@@ -113,6 +117,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
   onBecenévTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
   onToggleFelszerelésben: (idx: number) => void;
+  onMenüből: (vissza: () => void) => void;
 }) {
   const fd = lookupFegyver(data.fegyverek, fegyver.alap);
   const mfFok = getMfFok(data, karakter, fegyver.alap);
@@ -137,10 +142,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
           <div className="he-fegyver-nev">
             {fegyver.név || típusNév}
             {/* MF fok as purple dots (filled / empty), like the fortély fok dots; red when the MF requirement fails */}
-            <button type="button" className={`he-mf-dots${hasError ? ' he-error' : ''}`} title={`MF fok: ${mfFok}`} aria-label={`MF fok: ${mfFok} - módosítás`}
-              onClick={() => onMfTarget(index)}>
-              {Array.from({ length: mfMax }, (_, i) => <span key={i} className={`he-mf-dot${i < mfFok ? ' filled' : ''}`} />)}
-            </button>
+            <FokPottyok név="MF fok" fok={mfFok} max={mfMax} hiba={hasError} onClick={() => onMfTarget(index)} />
           </div>
           <div className="he-fegyver-alcim">{alcím}</div>
           {hasError && <span className="he-mf-error">{errorText}</span>}
@@ -169,6 +171,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
             { érték: 'becenév', név: 'Becenév', infó: fegyver.név || '-' },
           ]}
           onVálaszt={mező => {
+            onMenüből(() => setSzerkNyitva(true));
             if (mező === 'mf') onMfTarget(index);
             else if (mező === 'idea') onIdeaTarget(index);
             else if (mező === 'anyag') onAnyagTarget(index);

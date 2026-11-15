@@ -11,11 +11,13 @@ interface Props {
   merevvertFok: number;
   onUpdate: (patch: Record<string, unknown>) => void;
   onMerevvert: (fok: number) => void;
+  /** Tap outside / Escape without a selection. */
+  onDismiss: () => void;
 }
 
-export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, kidolgozottságOpciók, méretOpciók, merevvertFok, onUpdate, onMerevvert }: Props) {
+export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, kidolgozottságOpciók, méretOpciók, merevvertFok, onUpdate, onMerevvert, onDismiss }: Props) {
   return (
-    <PopupOverlay onClose={() => onUpdate({})}>
+    <PopupOverlay onClose={onDismiss}>
       {popup === 'struktúra' && (
         <ColumnPicker
           wide

@@ -4,6 +4,11 @@ import type { HintType } from '../../hooks/useHint';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { buildPancelLookups } from '../../engine/harc/pancel-calc';
 import { árFormátum } from '../formatters';
+import { useState } from 'react';
+import { Ikon } from '../common/Ikon';
+import { ListaPicker } from '../picker/ListaPicker';
+import { FokPottyok } from './FokPottyok';
+import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 interface Props {
   data: GameData;
@@ -13,6 +18,8 @@ interface Props {
   onPopup: (popup: string) => void;
   onIdeaTarget: () => void;
   showHint: (msg: string, type?: HintType, duration?: number) => void;
+  /** Register a "back to the edit menu" callback before opening a field popup from the menu. */
+  onMenüből: (vissza: () => void) => void;
 }
 
 /** Evaluate páncél rules via reactive engine */
@@ -46,46 +53,81 @@ function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; 
   };
 }
 
-export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, onPopup, onIdeaTarget, showHint }: Props) {
+export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, onPopup, onIdeaTarget, showHint, onMenüből }: Props) {
   const { konstansok } = data;
   const struktúrák = konstansok.páncél_struktúrák;
   const aktStruktúra = struktúrák.find(s => s.struktúra === k.páncél.alap);
   const hasAlap = !!k.páncél.alap;
+  const [szerkNyitva, setSzerkNyitva] = useState(false);
 
   const { sfé_fizikai, sfé_energia, mgt, ár } = calcPancelValues(k, data);
+  const fémalapanyag = k.páncél.fémalapanyag || konstansok.páncél_fémalapanyagok[0]?.anyag || '';
+  const ideaSzerkeszthető = !!aktStruktúra?.idea_plusz_minusz;
 
   function updatePancel(patch: Partial<PancelPeldany>) {
     setKarakter(prev => prev ? { ...prev, páncél: { ...prev.páncél, ...patch } } : prev);
   }
 
+  function mgtBontás() {
+    const erő = k.tulajdonságok.erő;
+    const nyers = mgt + erő;
+    const erőTag = erő > 0 ? `- ${erő} (Erő bónusz)` : erő < 0 ? `+ ${-erő} (Erő büntetés)` : '';
+    showHint(`MGT: ${mgt} = ${nyers}(páncél)${erőTag ? ' ' + erőTag : ''}`, 'info', 2000);
+  }
+
+  const merevvért = <FokPottyok név="Merevvért fok" fok={merevvertFok} max={MAX_FORTÉLY_FOK} onClick={() => onPopup('merevvért')} />;
+  // Subtitle: metal (metal armour only) · craftsmanship · fit · Idea
+  const alcím = [aktStruktúra?.fém ? fémalapanyag : null, k.páncél.kidolgozottság, k.páncél.méret_illeszkedés, `Idea ${k.páncél.idea}`].filter(Boolean).join(' · ');
+
   return (
     <section className="he-section">
       <h3>Páncél</h3>
-      {hasAlap && (
-        <div className="he-pancel-chips">
-          <span className="he-pancel-chip">SFÉ: {sfé_fizikai}/{sfé_energia}</span>
-          <button className="he-pancel-chip he-pancel-chip-btn" onClick={() => {
-            const erő = k.tulajdonságok.erő;
-            const nyers = mgt + erő;
-            const erőTag = erő > 0 ? `- ${erő} (Erő bónusz)` : erő < 0 ? `+ ${-erő} (Erő büntetés)` : '';
-            showHint(`MGT: ${mgt} = ${nyers}(páncél)${erőTag ? ' ' + erőTag : ''}`, 'info', 2000);
-          }}>MGT: {mgt}</button>
-          <span className="he-pancel-chip">Ár: {árFormátum(ár)}x</span>
-          <button className="he-field-btn" onClick={() => onPopup('rongálódás')}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
+      {/* Compact card like the weapon cards: title + Merevvért dots, subtitle, Sisak toggle + edit menu, 2-line stats */}
+      <div className="he-fegyver-card">
+        <div className="he-fegyver-header">
+          <div className="he-fegyver-cim">
+            <div className={`he-fegyver-nev${hasAlap ? '' : ' he-nincs'}`}>{hasAlap ? k.páncél.alap : 'Nincs páncél'}{merevvért}</div>
+            {hasAlap && <div className="he-fegyver-alcim">{alcím}</div>}
+          </div>
+          {hasAlap && (
+            <div className="he-fegyver-ikonok">
+              <button type="button" className={`he-ikon-btn he-felsz-btn${k.páncél.sisak ? ' on' : ''}`} aria-pressed={!!k.páncél.sisak}
+                title={k.páncél.sisak ? 'Sisak: igen' : 'Sisak: nem'} aria-label="Sisak"
+                onClick={() => updatePancel({ sisak: !k.páncél.sisak })}><Ikon név="sisak" /></button>
+              <button type="button" className="he-ikon-btn" title="Szerkesztés" aria-label="Szerkesztés" onClick={() => setSzerkNyitva(true)}><Ikon név="szerkeszt" /></button>
+            </div>
+          )}
         </div>
-      )}
-      <div className="he-fegyver-fields">
-        <button className="he-field-btn" onClick={() => onPopup('struktúra')}>Struktúra: <strong>{k.páncél.alap || '-'}</strong></button>
-        <button className="he-field-btn he-field-fortely" onClick={() => onPopup('merevvért')}>Merevvért fok: <strong>{merevvertFok}</strong></button>
-        <button className={`he-field-btn${!hasAlap || !aktStruktúra?.idea_plusz_minusz ? ' he-field-disabled' : ''}`} disabled={!hasAlap || !aktStruktúra?.idea_plusz_minusz} onClick={onIdeaTarget}>Idea: <strong>{k.páncél.idea}</strong></button>
-        <button className={`he-field-btn${!hasAlap ? ' he-field-disabled' : ''}`} disabled={!hasAlap} onClick={() => onPopup('kidolgozottság')}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>
-        <button className={`he-field-btn${!hasAlap ? ' he-field-disabled' : ''}`} disabled={!hasAlap} onClick={() => updatePancel({ sisak: !k.páncél.sisak })}>Sisak: <strong>{k.páncél.sisak ? 'igen' : 'nem'}</strong></button>
-        <button className={`he-field-btn${!hasAlap ? ' he-field-disabled' : ''}`} disabled={!hasAlap} onClick={() => onPopup('végtagvédettség')}>Végtagvédettség: <strong>{k.páncél.végtagvédettség}</strong></button>
-        <button className={`he-field-btn${!hasAlap ? ' he-field-disabled' : ''}`} disabled={!hasAlap} onClick={() => onPopup('méret')}>Méret: <strong>{k.páncél.méret_illeszkedés}</strong></button>
-        {aktStruktúra?.fém && (
-          <button className="he-field-btn" onClick={() => onPopup('fémalapanyag')}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || konstansok.páncél_fémalapanyagok[0]?.anyag || ''}</strong></button>
+        {hasAlap ? (
+          <div className="he-stat-sor">
+            <div className="he-stat-fo">
+              SFÉ <b>{sfé_fizikai}F</b><span className="he-stat-sep"> / </span><b>{sfé_energia}E</b>
+              <span className="he-stat-sep"> · </span>
+              <button type="button" className="he-stat-bontas" onClick={mgtBontás}>MGT</button> <b>{mgt}</b>
+            </div>
+            <div>
+              Végtag <b>{k.páncél.végtagvédettség}</b>
+              <span className="he-stat-sep"> · </span>Ár <b>{árFormátum(ár)}x</b>
+              {k.páncél.rongálódás > 0 && <><span className="he-stat-sep"> · </span><span className="he-stat-figyel">Rongálódás <b>{k.páncél.rongálódás}</b></span></>}
+            </div>
+          </div>
+        ) : (
+          <button type="button" className="he-add-select" onClick={() => onPopup('struktúra')}>+ Páncél választása...</button>
         )}
       </div>
+      {szerkNyitva && (
+        <ListaPicker title={k.páncél.alap} onClose={() => setSzerkNyitva(false)}
+          opciók={[
+            { érték: 'struktúra', név: 'Struktúra', infó: k.páncél.alap },
+            ...(aktStruktúra?.fém ? [{ érték: 'fémalapanyag', név: 'Fémalapanyag', infó: fémalapanyag }] : []),
+            { érték: 'kidolgozottság', név: 'Kidolgozottság', infó: k.páncél.kidolgozottság },
+            { érték: 'méret', név: 'Méret', infó: k.páncél.méret_illeszkedés },
+            { érték: 'idea', név: 'Idea', infó: String(k.páncél.idea), disabled: !ideaSzerkeszthető, megjegyzés: ideaSzerkeszthető ? undefined : 'ennél a struktúránál nem állítható' },
+            { érték: 'végtagvédettség', név: 'Végtagvédettség', infó: String(k.páncél.végtagvédettség) },
+            { érték: 'rongálódás', név: 'Rongálódás', infó: String(k.páncél.rongálódás) },
+          ]}
+          onVálaszt={mező => { onMenüből(() => setSzerkNyitva(true)); if (mező === 'idea') onIdeaTarget(); else onPopup(mező); }} />
+      )}
     </section>
   );
 }

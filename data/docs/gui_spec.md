@@ -892,25 +892,17 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
 - Mesterfegyver szinkron: MF fok módosítás → `syncMfFortelyok` frissíti a fortélyok tömböt
 
 ### Páncél
-- Chip sor (ha van alap struktúra kiválasztva): `SFÉ: X/Y` | `MGT: Z` (kattintható → info hint: MGT bontás formula, zöld `.he-hint-info`, 2s) | `Rongálódás: N` (`.he-field-btn` stílus, kattintás → popup) | `Ár: Nx` (reactive `páncél_ár`, `árFormátum`, → engine_spec §43.1)
-- Mezők (`he-field-btn` stílus, tap → overlay popup):
-  - Struktúra: lista (konstansok.páncél_struktúrák) + "- nincs -"
-  - Merevvértviselet fok: mindig megjelenik (lila keret, `.he-field-fortely`), popup 0–3
-  - Fémalapanyag: csak fém struktúránál látszik
-  - Kidolgozottság: pocsék / átlagos / mestermunka
-  - Méret: passzol / nem passzol / borzalmas
-  - Sisak: toggle (tap negálja, igen/nem)
-  - Végtagvédettség: kerek gombok 0-4
-  - Idea: 3 soros popup (-4..-1 / 0 / +1..+4)
-  - Rongálódás: kerek gombok 0-5
+Kompakt kártya (2026-11, a fegyverkártya mintájára; `.he-fegyver-card`):
+- Cím: a struktúra neve, mellette a Merevvértviselet fok lila pöttyökben (`FokPottyok`, 0-3, mindig látszik; tap → fok popup 0-3). Alcím (halvány): `fémalapanyag (csak fém struktúránál) · kidolgozottság · méret · Idea N`.
+- Jobb felül ikon-gombok: sisak (`sisak` = lucide HardHat; toggle, zöld = van) + ceruza → szerkesztés menü (`ListaPicker`): Struktúra (lista + "- nincs -") / Fémalapanyag (csak fém) / Kidolgozottság (pocsék / átlagos / mestermunka) / Méret (passzol / nem passzol / borzalmas) / Idea (3 soros popup -4..+4; tiltva, ha a struktúránál nem állítható) / Végtagvédettség (0-4) / Rongálódás (0-5); jobbra az aktuális érték, választás → a mező saját popupja.
+- Statisztika (keret nélkül, monospace, két sor): `SFÉ XF / YE · MGT Z` (15px; az MGT pontozott aláhúzású, tap → info hint: MGT bontás formula, 2s) / `Végtag N · Ár Nx` + `· Rongálódás N` narancssárgán, csak ha > 0.
+- Nincs struktúra: halvány „Nincs páncél" cím (a Merevvért pöttyök maradnak) + `+ Páncél választása...` gomb (→ Struktúra popup).
 
 ### Pajzs
-- Harcérték chip (ha van méret kiválasztva): **VÉ**/TÉ/SP/Sebesség kijelzés (Pajzshasználat fok bónusszal). VÉ első helyen.
-  - VÉ: soha nincs áthúzva (a pajzs VÉ-t mindig ad)
-  - TÉ/SP/Sebesség: áthúzva (`line-through 2px`, opacity 0.5) ha NEM "csak pajzs harc" mód (egyfegyveres + pajzs az ügyesebb kézben)
-- Mezők (`he-field-btn` stílus, tap → overlay popup):
-  - Méret: - nincs - / kis / közepes / nagy
-  - Pajzshasználat fok: kerek gombok 0-3 (szinkronizálja a Pajzshasználat fortélyt a Fortélyok fülön)
+Kompakt kártya (mint a páncél):
+- Cím: a pajzs neve (`buildPajzsFegyverNév`), mellette a Pajzshasználat fok lila pöttyökben (0-3, tap → fok popup; szinkronizálja a Pajzshasználat fortélyt). Ceruza → Méret popup (- nincs - / kis / közepes / nagy).
+- Statisztika (egy sor): `VÉ N · TÉ N · SP N · Sebesség N` (Pajzshasználat fok bónusszal). VÉ soha nincs áthúzva; TÉ/SP/Sebesség áthúzva (`.he-strike`), ha NEM „csak pajzs harc" mód (egyfegyveres + pajzs az ügyesebb kézben).
+- Nincs méret: halvány „Nincs pajzs" cím (pöttyök maradnak) + `+ Pajzs választása...` gomb (→ Méret popup).
 - Pajzshasználat fortély szinkronizáció:
   - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt (a `fortélyok[]` elejére)
   - A Fortélyok fülön normál fortélyként jelenik meg (szerkeszthető/felvehető ott is - a locked mechanizmus megszűnt)

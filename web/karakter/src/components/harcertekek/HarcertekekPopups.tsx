@@ -29,7 +29,10 @@ interface Props {
   karakter: Karakter;
   képzettségek: Kepzettseg[];
   state: PopupState;
+  /** Close after a selection. */
   onClose: (key: keyof PopupState) => void;
+  /** Close without a selection (tap outside / Escape / Mégse) - may return to the card's edit menu. */
+  onDismiss: (key: keyof PopupState) => void;
   updateFegyver: (idx: number, patch: { idea?: number; anyag?: string; név?: string }) => void;
   updatePancel: (patch: Record<string, unknown>) => void;
   setMfFok: (fegyverAlap: string, fok: number) => void;
@@ -41,7 +44,7 @@ interface Props {
 }
 
 export function Popups({
-  data, karakter: k, képzettségek, state, onClose,
+  data, karakter: k, képzettségek, state, onClose, onDismiss,
   updateFegyver, updatePancel, setMfFok, setMerevvertFok,
   setPajzsFok, updatePajzs, removeFegyver, setKépzettségek,
 }: Props) {
@@ -55,7 +58,7 @@ export function Popups({
   return (
     <>
       {ideaTarget && (
-        <PopupOverlay onClose={() => onClose('ideaTarget')}>
+        <PopupOverlay onClose={() => onDismiss('ideaTarget')}>
           <label>Idea érték</label>
           <IdeaGrid
             minIdea={ideaTarget.type === 'fegyver' ? -fegyverIdeaRange : -pancelIdeaRange}
@@ -71,7 +74,7 @@ export function Popups({
       )}
 
       {mfTarget !== null && (
-        <PopupOverlay onClose={() => onClose('mfTarget')}>
+        <PopupOverlay onClose={() => onDismiss('mfTarget')}>
           <label>Mesterfegyver fok</label>
           <FokRadios
             values={FORTÉLY_FOK_VALUES}
@@ -82,7 +85,7 @@ export function Popups({
       )}
 
       {anyagTarget !== null && (
-        <PopupOverlay onClose={() => onClose('anyagTarget')}>
+        <PopupOverlay onClose={() => onDismiss('anyagTarget')}>
           <ColumnPicker
             options={(konstansok.fegyver_anyagok as string[]).map(a => ({ value: a, label: a }))}
             current={k.fegyverek[anyagTarget]?.anyag ?? (konstansok.fegyver_anyagok as string[])[0] ?? ''}
@@ -95,7 +98,7 @@ export function Popups({
         <BecenévPopup
           kezdő={k.fegyverek[becenévTarget]?.név ?? ''}
           onMent={név => { updateFegyver(becenévTarget, { név: név.trim() }); onClose('becenévTarget'); }}
-          onMégse={() => onClose('becenévTarget')}
+          onMégse={() => onDismiss('becenévTarget')}
         />
       )}
 
@@ -109,12 +112,13 @@ export function Popups({
           méretOpciók={(konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[]).map(m => m.fokozat)}
           merevvertFok={fortélyFok(k.fortélyok, 'merevvértviselet')}
           onUpdate={patch => { updatePancel(patch); onClose('pancelPopup'); }}
+          onDismiss={() => onDismiss('pancelPopup')}
           onMerevvert={fok => { setMerevvertFok(fok); onClose('pancelPopup'); }}
         />
       )}
 
       {pajzsPopup && (
-        <PopupOverlay onClose={() => onClose('pajzsPopup')}>
+        <PopupOverlay onClose={() => onDismiss('pajzsPopup')}>
           {pajzsPopup === 'méret' && (
             <ColumnPicker
               wide

@@ -13,7 +13,7 @@ export function FegyverChip({ fd, mfFok, ideaHatás, konstansok, inactive, ár }
   // Plain stats (no box), two lines: TÉ / VÉ / SP, then Sebesség / Ár. Labels neutral (no TÉ/VÉ colors: the card already has enough color).
   return (
     <div className={`he-stat-sor${cls}`}>
-      <div>
+      <div className="he-stat-fo">
         TÉ <b>{fd.TÉ + mf.TÉ + ideaHatás.TÉ}</b>
         <span className="he-stat-sep"> · </span>VÉ <b>{fd.VÉ + mf.VÉ + ideaHatás.VÉ}</b>
         <span className="he-stat-sep"> · </span>SP <b>{fd.SP + mf.SP + ideaHatás.SP}</b>

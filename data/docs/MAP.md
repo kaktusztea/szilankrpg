@@ -260,7 +260,8 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
   HarcertekekHmSection.tsx HM (TÉ/VÉ) szekció - felvett HM elosztása, aszimmetria-limit
   HarcertekekHarciKepzettsegekSection.tsx  Harci képzettségek (szerkeszthető harcmodor szintek)
   HarcertekekFegyverekSection.tsx  Fegyver kártyák
-  HarcertekekFegyverChip.tsx  Egy fegyver chip/kártya (anyag, Idea, MF, Ár)
+  HarcertekekFegyverChip.tsx  Fegyverkártya statisztika-sora (TÉ / VÉ / SP, Sebesség / Ár)
+  FokPottyok.tsx           Fortély fok lila pöttyökben, koppintható (MF, Merevvértviselet, Pajzshasználat)
   fegyver-ar-calc.ts       Fegyver példány ár-szorzó (ár_alap × anyag × idea; §43.2 - a webapp csak a hangolható tengelyeket teszi az ár_alap-ra, fixed fegyver=null)
   HarcertekekPancelSection.tsx     Páncél mezők
   HarcertekekPancelPopup.tsx       Páncél szerkesztő popup (struktúra/alapanyag/kidolgozottság/tagok/idea)

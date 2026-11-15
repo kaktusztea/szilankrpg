@@ -19,7 +19,9 @@ export function TextInputPopup({ label, value, onChange, onConfirm, onCancel, ma
 
   function handleKey(e: React.KeyboardEvent) {
     if (e.key === 'Enter' && !disabled) onConfirm();
-    if (e.key === 'Escape') onCancel();
+    // Escape is handled by OverlayPortal (useEscapeClose → onCancel). Handling it here too ran onCancel
+    // from React's root listener first; a popup reopened by onCancel (e.g. the Harcértékek edit menu)
+    // then registered its own document Escape listener mid-dispatch and closed again on the same keypress.
   }
 
   return (

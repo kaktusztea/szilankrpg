@@ -3,6 +3,9 @@ import type { GameData } from '../../engine/data-loader';
 import { buildPajzsFegyverNév } from '../../engine/utils';
 import { elsődlegesMód } from '../../engine/harc/fegyver-calc';
 import { lookupFegyver } from '../../engine/lookup';
+import { Ikon } from '../common/Ikon';
+import { FokPottyok } from './FokPottyok';
+import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 interface Props {
   data: GameData;
@@ -12,31 +15,25 @@ interface Props {
 }
 
 export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup }: Props) {
-  const pajzsChip = (() => {
-    const pNév = buildPajzsFegyverNév(k);
-    if (!pNév) return null;
-    const pd = lookupFegyver(data.fegyverek, pNév);
+  const pNév = buildPajzsFegyverNév(k);
+  const pd = pNév ? lookupFegyver(data.fegyverek, pNév) : undefined;
+  const pajzsDots = <FokPottyok név="Pajzshasználat fok" fok={pajzsFok} max={MAX_FORTÉLY_FOK} onClick={() => onPajzsPopup('pajzshasználat')} />;
+
+  const statok = (() => {
     if (!pd) return null;
     const mód = elsődlegesMód(pd);
     const mf = data.konstansok.mesterfegyver_bónuszok?.find((b: { fok: number }) => b.fok === pajzsFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
-    // Inactive: pajzs not sole weapon - TÉ/SP/Sebesség struck through
+    // Inactive: shield not the sole weapon → TÉ / SP / Sebesség struck through (VÉ always counts)
     const inactive = !(k.session.fegyverfogás === 'egyfegyveres' && k.session.aktív_fegyver_index === -2);
-    const cls = inactive ? ' he-strike' : '';
-    const vé = mód.VÉ + mf.VÉ;
-    const té = mód.TÉ + mf.TÉ;
-    const sp = mód.SP + mf.SP;
+    const cls = inactive ? 'he-strike' : undefined;
     return (
-      <div className="he-fegyver-fields he-fegyver-chip-mb">
-        <span className="he-field-btn he-field-indicator">
-          <span className="he-stat-label">VÉ:</span>
-          <span>{vé}</span>
-          {' '}<span className={`he-stat-ml${cls}`}>TÉ:</span>
-          <span className={cls}>{té}</span>
-          {' '}<span className={`he-stat-ml${cls}`}>SP:</span>
-          <span className={cls}>{sp}</span>
-          {' '}<span className={`he-stat-ml${cls}`}>Sebesség:</span>
-          <span className={cls}>{mód.Sebesség}</span>
-        </span>
+      <div className="he-stat-sor">
+        <div>
+          VÉ <b>{mód.VÉ + mf.VÉ}</b>
+          <span className="he-stat-sep"> · </span><span className={cls}>TÉ <b>{mód.TÉ + mf.TÉ}</b></span>
+          <span className="he-stat-sep"> · </span><span className={cls}>SP <b>{mód.SP + mf.SP}</b></span>
+          <span className="he-stat-sep"> · </span><span className={cls}>Sebesség <b>{mód.Sebesség ?? '-'}</b></span>
+        </div>
       </div>
     );
   })();
@@ -44,10 +41,19 @@ export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup }: Prop
   return (
     <section className="he-section">
       <h3>Pajzs</h3>
-      {pajzsChip}
-      <div className="he-fegyver-fields">
-        <button className="he-field-btn" onClick={() => onPajzsPopup('méret')}>Méret: <strong>{k.pajzs.méret || '- nincs -'}</strong></button>
-        <button className="he-field-btn he-field-fortely" onClick={() => onPajzsPopup('pajzshasználat')}>Pajzshasználat fok: <strong>{pajzsFok}</strong></button>
+      {/* Compact card like the weapon / armour cards: title + Pajzshasználat dots, edit = size picker */}
+      <div className="he-fegyver-card">
+        <div className="he-fegyver-header">
+          <div className="he-fegyver-cim">
+            <div className={`he-fegyver-nev${pNév ? '' : ' he-nincs'}`}>{pNév ?? 'Nincs pajzs'}{pajzsDots}</div>
+          </div>
+          {pNév && (
+            <div className="he-fegyver-ikonok">
+              <button type="button" className="he-ikon-btn" title="Méret" aria-label="Pajzs méret" onClick={() => onPajzsPopup('méret')}><Ikon név="szerkeszt" /></button>
+            </div>
+          )}
+        </div>
+        {pNév ? statok : <button type="button" className="he-add-select" onClick={() => onPajzsPopup('méret')}>+ Pajzs választása...</button>}
       </div>
     </section>
   );
