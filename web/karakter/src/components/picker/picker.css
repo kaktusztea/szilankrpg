@@ -4,3 +4,7 @@
 .aktiv-extra-fok-dot { color: var(--color-kepzettseg); margin-left: 6px; }
 
 .aktiv-picker-tavharc-header { margin-top: 12px; }
+
+/* ListaPicker: name + optional stats on one line (stats right-aligned, muted, monospace) */
+.lista-picker-sor { display: flex; align-items: baseline; gap: 8px; }
+.lista-picker-info { margin-left: auto; flex-shrink: 0; font-size: 12px; font-family: monospace; color: var(--text-soft); white-space: nowrap; }

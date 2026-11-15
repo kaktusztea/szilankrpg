@@ -4,6 +4,7 @@ import type { Kepzettseg } from '../../engine/types';
 import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
 import { KÉPZETTSÉG_SZINT_MAGAS } from '../../ui-constants';
 import { kattinthatóProps } from '../a11y';
+import { FelvevőGomb } from '../picker/ListaPicker';
 import './common.css';
 
 export interface HarcmodorListaProps {
@@ -44,16 +45,13 @@ export function HarcmodorLista({ kulcsok, felirat, felvételFelirat, tsz, képze
         );
       })}
       {!gameMode && nemFelvett.length > 0 && (
-        <select className="he-add-select" value="" aria-label={felvételFelirat}
-          onChange={e => {
-            const kulcs = e.target.value;
-            if (!kulcs) return;
+        <FelvevőGomb felirat={felvételFelirat}
+          cím={felvételFelirat.replace(/^\+\s*/, '').replace(/\.+$/, '')}
+          opciók={nemFelvett.map(n => ({ érték: n, név: felirat(n) }))}
+          onVálaszt={kulcs => {
             setKépzettségek(prev => [...prev, { ...bontKépzKulcs(kulcs), szint: 0 }]);
             onKepzSzint(kulcs);
-          }}>
-          <option value="">{felvételFelirat}</option>
-          {nemFelvett.map(n => <option key={n} value={n}>{felirat(n)}</option>)}
-        </select>
+          }} />
       )}
     </div>
   );

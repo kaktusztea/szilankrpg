@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Ikon } from '../common/Ikon';
-import { PickerOverlay } from '../picker/PickerOverlay';
+import { ListaPicker } from '../picker/ListaPicker';
 import type { GameData } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
 import { TulajdonsagCell } from './TulajdonsagCell';
@@ -108,14 +108,9 @@ export function TulajdonsagokHeader({
           <span className="tul-header-label">Anyanyelv:</span> <strong>{anyanyelv || '-'}</strong>
         </div>
         {picker && (
-          <PickerOverlay title={picker === 'faj' ? 'Faj' : 'Anyanyelv'} onClose={() => setPicker(null)}>
-            {pickerOpciók.map(o => (
-              <button type="button" key={o} className={`aktiv-picker-item${o === pickerÉrték ? ' active' : ''}`}
-                onClick={() => { if (picker === 'faj') setFaj(o); else setAnyanyelv(o); setPicker(null); }}>
-                <span className="aktiv-picker-item-name">{o === pickerÉrték ? <><Ikon név="pipa" /> </> : null}{o}</span>
-              </button>
-            ))}
-          </PickerOverlay>
+          <ListaPicker title={picker === 'faj' ? 'Faj' : 'Anyanyelv'} aktív={pickerÉrték} onClose={() => setPicker(null)}
+            opciók={pickerOpciók.map(o => ({ érték: o, név: o }))}
+            onVálaszt={o => { if (picker === 'faj') setFaj(o); else setAnyanyelv(o); }} />
         )}
         <div className="tul-header-box" onClick={onEditJátékos}>
           <span className="tul-header-label">Játékos:</span> <strong>{játékos || '-'}</strong>

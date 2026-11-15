@@ -318,6 +318,7 @@
   text-overflow: ellipsis;
 }
 
+.aktiv-field-btn strong.aktiv-field-select { display: block; white-space: nowrap; }  /* value text in a field button */
 .aktiv-field-select {
   background: transparent;
   border: none;

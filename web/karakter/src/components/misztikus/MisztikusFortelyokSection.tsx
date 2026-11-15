@@ -6,6 +6,7 @@ import type { FortelySummary } from '../../engine/data-loader';
 import { FortelyDetails } from '../FortelyDetails';
 import { MAX_FORTÉLY_FOK, MAX_AZONOS_FORTÉLY } from '../../ui-constants';
 import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
+import { FelvevőGomb } from '../picker/ListaPicker';
 
 interface Props {
   misztFortDefs: FortelySummary[];
@@ -79,14 +80,9 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
         );
       })}
       {!gameMode && felvehető.length > 0 && (
-        <select className="he-add-select" value="" onChange={e => {
-          if (!e.target.value) return;
-          const def = misztFortDefs.find(d => d.név === e.target.value);
-          if (def) onFelvétel(def);
-        }}>
-          <option value="">+ Misztikus fortély...</option>
-          {felvehető.map(d => <option key={d.név} value={d.név}>{d.név}</option>)}
-        </select>
+        <FelvevőGomb felirat="+ Misztikus fortély..." cím="Misztikus fortély"
+          opciók={felvehető.map(d => ({ érték: d.név, név: d.név }))}
+          onVálaszt={név => { const def = misztFortDefs.find(d => d.név === név); if (def) onFelvétel(def); }} />
       )}
     </section>
   );

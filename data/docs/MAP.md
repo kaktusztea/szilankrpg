@@ -293,6 +293,7 @@ dobas/                     Dobás-popup készlet (Támadó / Sebzés / CÉ / Man
 picker/                    Taktika- / helyzet-választók (Aktív fül + dobás-popupok; fület nem importálhat)
   picker.css               A pickerek stílusai
   HelyzetPickerPopup.tsx   Harci helyzet választó popup (Aktív fül + Támadó / CÉ dobás)
+  ListaPicker.tsx          Általános lista-választó overlay (natív <select> helyett: Faj, Anyanyelv, fegyverválasztók) + `FelvevőGomb` ("+ Új ..." gomb → lista: távfegyver, harcmodor, arkánum, misztikus fortély)
   PickerOverlay.tsx        Közös picker overlay-keret (fejléc, bezárás, lista)
   TaktikaFokPicker.tsx     Fokozatos taktika fok-választó
   TaktikaPickerList.tsx    Taktika választó lista (pinned + többi)

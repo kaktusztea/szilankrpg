@@ -1,0 +1,63 @@
+import { useState } from 'react';
+import { Ikon } from '../common/Ikon';
+import { PickerOverlay } from './PickerOverlay';
+
+interface ListaOpció {
+  érték: string;
+  név: string;
+  disabled?: boolean;
+  /** Small second line under the name (e.g. why it is disabled). */
+  megjegyzés?: string;
+  /** Short stats on the same line, right of the name (e.g. "CÉ: 5, SP: 8, Osz: 3"). */
+  infó?: string;
+}
+
+interface ListaPickerProps {
+  title: string;
+  opciók: ListaOpció[];
+  /** Currently selected value (✓ + green border), if any. */
+  aktív?: string;
+  onVálaszt: (érték: string) => void;
+  onClose: () => void;
+}
+
+/** Overlay list picker replacing native <select>s: one tap = choose + close. */
+export function ListaPicker({ title, opciók, aktív, onVálaszt, onClose }: ListaPickerProps) {
+  return (
+    <PickerOverlay title={title} onClose={onClose}>
+      {opciók.map(o => (
+        <button type="button" key={o.érték} disabled={o.disabled}
+          className={`aktiv-picker-item${o.érték === aktív ? ' active' : ''}${o.disabled ? ' aktiv-picker-disabled' : ''}`}
+          onClick={() => { onVálaszt(o.érték); onClose(); }}>
+          <span className="lista-picker-sor">
+            <span className="aktiv-picker-item-name">{o.érték === aktív ? <><Ikon név="pipa" /> </> : null}{o.név}</span>
+            {o.infó && <span className="lista-picker-info">{o.infó}</span>}
+          </span>
+          {o.megjegyzés && <span className="aktiv-picker-item-details">{o.megjegyzés}</span>}
+        </button>
+      ))}
+    </PickerOverlay>
+  );
+}
+
+interface FelvevőGombProps {
+  /** Button text, e.g. "+ Új távfegyver..." */
+  felirat: string;
+  /** Picker title, e.g. "Új távfegyver" */
+  cím: string;
+  opciók: ListaOpció[];
+  onVálaszt: (érték: string) => void;
+  disabled?: boolean;
+}
+
+/** "+ Új ..." add button (`he-add-select` look) that opens a ListaPicker - replaces the native add <select>. */
+export function FelvevőGomb({ felirat, cím, opciók, onVálaszt, disabled }: FelvevőGombProps) {
+  const [nyitva, setNyitva] = useState(false);
+  return (
+    <>
+      <button type="button" className={`he-add-select${disabled ? ' he-add-disabled' : ''}`} disabled={disabled}
+        onClick={() => setNyitva(true)}>{felirat}</button>
+      {nyitva && <ListaPicker title={cím} opciók={opciók} onVálaszt={onVálaszt} onClose={() => setNyitva(false)} />}
+    </>
+  );
+}

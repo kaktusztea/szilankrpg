@@ -362,7 +362,7 @@ mert a Harc fül is használja. A korábbi `AktivFegyverSection`/`AktivFegyverfo
 | `harc-reszletek-calc.ts` | Részletes értékek kalkuláció (aktív fegyver meghatározás, bontás adatok) |
 | `HarcFegyverSection.tsx` | Fegyver/fogás szekció (Ügyesebb + Gyengébb kéz + Fogás + páncél/pajzs toggle) - Aktív ÉS Harc fül közös |
 | `HarcFegyverfogas.tsx` | Fegyverfogás picker (egyfegyveres/kétkezes/fegyver_pajzs/fegyver_hárító) |
-| `UgyesebbKezSelect.tsx` / `GyengebbKezSelect.tsx` / `FegyverSelectField.tsx` | Fegyver dropdown-ok + közös select-field |
+| `UgyesebbKezSelect.tsx` / `GyengebbKezSelect.tsx` / `FegyverSelectField.tsx` | Fegyverválasztók: field-gomb → `ListaPicker` overlay (közös `FegyverSelectField`; egyetlen opciónál, pl. pajzs / egy hárító, csak kiírt érték) |
 | `aktiv-fegyver-ctx.ts` | Aktív fegyver kontextus feloldás (kétkezes > fogás > pajzs > jobb kéz) |
 | `ManoverPicker.tsx` | Manőver választó (mód + lista, 2 lépés) |
 
@@ -822,7 +822,7 @@ Minden csoport "Új fortély..." gombjára nyíló overlay popup (azonos minta m
 - Rövid koppintás: nem csinál semmit
 - Tap: fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
   - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se tap-re) - ehelyett "1 fok a maximum" hint (2s)
-- Felvételkor (dropdown): maxfok>1 → azonnal fok popup (egyik sem pre-selected, fok: 0-val kerül be); többszörös → megfelelő picker popup
+- Felvételkor (`+ Misztikus fortély...` gomb → `ListaPicker` overlay): maxfok>1 → azonnal fok popup (egyik sem pre-selected, fok: 0-val kerül be); többszörös → megfelelő picker popup
 - Mesterfegyver bejegyzések: szinkronizálva fegyver példányokból (Harcértékek fül). A Mesterfegyver
   `többszörös_típus: "fegyver"` - a picker a karakter fegyvereihez köti; felvétel a Fortélyok fülön is lehet.
 - ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
@@ -938,7 +938,7 @@ Referencia-táblák a mágia akarata próbához, négy fül (`.miszt-magia-tab`)
    - Altípus picker bezárás (Escape / háttér-katt) → visszalép a tradíció picker-re
    - Altípus picker címe: `{tradíció név} - Pantheon` (Szakrális) vagy `{tradíció név} - altípus` (többi)
    - Felvétel után szint popup felugrik
-2. **Arkánumok** - több felvehető, select dropdown
+2. **Arkánumok** - több felvehető, `+ Arkánum...` gomb → `ListaPicker` overlay
    - Tradíció nélkül: picker disabled ("⚠ Tradíció szükséges"), felvett nevek piros
 3. **Faj misztérium** - 1 db, faj választóhoz kötve (nem picker, nem törölhető), min szint: 0
 4. **Ősi nyelv ismerete** - többször felvehető, free-text popup (név megadás)

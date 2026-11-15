@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { ListaPicker } from '../picker/ListaPicker';
+
 interface Props {
   label: string;
   selectedIdx: number;
@@ -5,17 +8,21 @@ interface Props {
   onChange: (idx: number) => void;
 }
 
+/** Field button (label + selected weapon); tap opens an overlay list picker. */
 export function FegyverSelectField({ label, selectedIdx, options, onChange }: Props) {
+  const [nyitva, setNyitva] = useState(false);
+  const kiválasztott = options.find(f => f.idx === selectedIdx)?.név ?? '-';
   return (
-    <div className="aktiv-field-btn">
-      <span className="aktiv-field-label">{label}</span>
-      <select className="aktiv-field-select" value={selectedIdx} onChange={e => onChange(parseInt(e.target.value))}>
-        {options.map(f => (
-          <option key={f.idx} value={f.idx} disabled={f.disabled}>
-            {f.név}{f.disabled ? ' (nincs nálad)' : ''}
-          </option>
-        ))}
-      </select>
-    </div>
+    <>
+      <button type="button" className="aktiv-field-btn" onClick={() => setNyitva(true)}>
+        <span className="aktiv-field-label">{label}</span>
+        <strong className="aktiv-field-select">{kiválasztott}</strong>
+      </button>
+      {nyitva && (
+        <ListaPicker title={label} aktív={String(selectedIdx)} onClose={() => setNyitva(false)}
+          opciók={options.map(f => ({ érték: String(f.idx), név: f.név, disabled: f.disabled, megjegyzés: f.disabled ? 'nincs nálad' : undefined }))}
+          onVálaszt={v => onChange(parseInt(v))} />
+      )}
+    </>
   );
 }

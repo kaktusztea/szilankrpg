@@ -37,7 +37,7 @@ export function GyengebbKezSelect({ data, karakter, session, setSession, fegyver
     return (
       <div className="aktiv-field-btn">
         <span className="aktiv-field-label">Gyengébb kéz</span>
-        <select className="aktiv-field-select" disabled><option>{pajzsNév}</option></select>
+        <strong className="aktiv-field-select">{pajzsNév}</strong>
       </div>
     );
   }
@@ -62,14 +62,18 @@ function HáritóSelect({ data, karakter, session, setSession }: Pick<HarcBasePr
     }
   }, [validIdx, session.aktív_fegyver_bal_index, setSession]);
 
+  if (háritók.length > 1) {
+    return (
+      <FegyverSelectField label="Gyengébb kéz" selectedIdx={validIdx}
+        options={háritók.map(h => ({ név: h.fp.alap, idx: h.i }))}
+        onChange={idx => setSession(s => ({ ...s, aktív_fegyver_bal_index: idx }))} />
+    );
+  }
+  // Single (or no) parrying weapon: nothing to choose, plain value
   return (
     <div className="aktiv-field-btn">
       <span className="aktiv-field-label">Gyengébb kéz</span>
-      {háritók.length <= 1
-        ? <select className="aktiv-field-select" disabled><option>{háritók[0]?.fp.alap ?? 'Hárítófegyver'}</option></select>
-        : <select className="aktiv-field-select" value={validIdx} onChange={e => setSession(s => ({ ...s, aktív_fegyver_bal_index: parseInt(e.target.value) }))}>
-            {háritók.map(h => <option key={h.i} value={h.i}>{h.fp.alap}</option>)}
-          </select>}
+      <strong className="aktiv-field-select">{háritók[0]?.fp.alap ?? 'Hárítófegyver'}</strong>
     </div>
   );
 }

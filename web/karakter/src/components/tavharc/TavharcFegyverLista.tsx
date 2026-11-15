@@ -3,6 +3,8 @@ import { getAlkalmatlanInfo, calcÚjratöltésEnyhítés } from './helpers';
 import { TavharcFegyverCard } from './TavharcFegyverCard';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 import { lookupTávfegyver } from '../../engine/lookup';
+import { FelvevőGomb } from '../picker/ListaPicker';
+import { SP_NINCS } from '../../engine/data-types';
 
 interface Props extends TavharcProps {
   onMfTarget: (idx: number) => void;
@@ -62,10 +64,9 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
       ))}
 
       {k.távfegyverek.length < MAX_FEGYVER_DARAB && (
-      <select className="he-add-select" value="" onChange={e => { if (e.target.value) addTávfegyver(e.target.value); }}>
-        <option value="">+ Új távfegyver...</option>
-        {felvehető.map(f => <option key={f.név} value={f.név}>{f.név}</option>)}
-      </select>
+      <FelvevőGomb felirat="+ Új távfegyver..." cím="Új távfegyver"
+        opciók={felvehető.map(f => ({ érték: f.név, név: f.név, infó: `CÉ: ${f.CÉ}, SP: ${f.SP === SP_NINCS ? '-' : f.SP}, Osz: ${f.Osztó}` }))}
+        onVálaszt={addTávfegyver} />
       )}
 
       {(alkalmatlan.nevek.length > 0 || alkalmatlan.alkalmiTárgyNév) && (
