@@ -7,7 +7,7 @@
 /* --- Szekciók --- */
 .he-section { margin-bottom: 20px; }
 .he-section + .he-section { border-top: 1px solid var(--border-light); padding-top: 16px; }
-.he-section h3 { margin: 0 0 8px; font-size: 17px; color: var(--text); padding-bottom: 4px; }
+.he-section h3 { margin: 0 0 8px; font-size: 19px; color: var(--text); padding-bottom: 4px; }
 
 /* --- HM grid --- */
 .he-hm-grid { display: flex; flex-direction: column; gap: 6px; }
@@ -78,7 +78,7 @@
   border-radius: 4px;
   color: var(--text);
   padding: 6px 10px;
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
 }
 .he-add-disabled { opacity: 0.4; cursor: not-allowed; }
@@ -94,7 +94,7 @@
 .he-del-confirm { padding: 6px 15px; }
 
 /* --- MF error --- */
-.he-mf-error { display: block; font-size: 11px; margin-top: 2px; color: var(--color-negative); }
+.he-mf-error { display: block; font-size: 13px; margin-top: 2px; color: var(--color-negative); }
 
 /* --- Inline helpers --- */
 .he-strike { text-decoration: line-through; text-decoration-thickness: 2px; opacity: 0.5; }
@@ -102,18 +102,18 @@
 
 /* --- Közelharci fegyverkártya (kompakt): cím + MF jelvény, alcím, ikon-gombok, statisztika-sor --- */
 .he-fegyver-cim { flex: 1; min-width: 0; }
-.he-fegyver-nev { display: flex; align-items: center; gap: 6px; font-size: 17px; font-weight: bold; line-height: 1.25; }
-.he-fegyver-alcim { font-size: 12px; color: var(--text-dim); margin-top: 1px; }
+.he-fegyver-nev { display: flex; align-items: center; gap: 6px; font-size: 19px; font-weight: bold; line-height: 1.25; }
+.he-fegyver-alcim { font-size: 14px; color: var(--text-dim); margin-top: 1px; }
 .he-fegyver-ikonok { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
 .he-ikon-btn {
   display: inline-flex; align-items: center; justify-content: center;
-  background: none; border: none; padding: 6px; font-size: 19px; line-height: 1;
+  background: none; border: none; padding: 6px; font-size: 21px; line-height: 1;
   color: var(--text-dim); cursor: pointer;
 }
 .he-ikon-btn:active { color: var(--text); }
 .he-felsz-btn { color: var(--text-muted); opacity: 0.6; }
 .he-felsz-btn.on { color: var(--success); opacity: 1; }
-.he-stat-sor { display: flex; flex-direction: column; gap: 5px; font-family: monospace; font-size: 14px; color: var(--text-soft); }  /* gap: breathing room between the two stat lines */
+.he-stat-sor { display: flex; flex-direction: column; gap: 5px; font-family: monospace; font-size: 16px; color: var(--text-soft); }  /* gap: breathing room between the two stat lines */
 .he-stat-sor b { color: var(--text); }
 .he-stat-sep { color: var(--text-muted); }
 /* Not carried (Felszerelésben: nem): dimmed title + stats */
@@ -121,7 +121,7 @@
 
 /* Páncél / Pajzs cards (same compact card as the weapons) */
 .he-fegyver-nev.he-nincs { color: var(--text-dim); }
-.he-stat-fo { font-size: 15px; }  /* SFÉ / MGT line: +1px */
+.he-stat-fo { font-size: 17px; }  /* SFÉ / MGT line: +1px */
 .he-stat-bontas {
   background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer;
   text-decoration: underline dotted; text-underline-offset: 3px;
@@ -133,22 +133,9 @@
 /* Sisak indicator in the armour stats line (after Végtag): small helmet icon, green = yes, tappable toggle */
 .he-stat-sisak {
   display: inline-flex; align-items: center; vertical-align: -3px; padding: 0 2px;
-  background: none; border: none; font-size: 16px; line-height: 1; cursor: pointer;
+  background: none; border: none; font-size: 18px; line-height: 1; cursor: pointer;
   color: var(--text-muted); opacity: 0.6;
 }
 .he-stat-sisak.on { color: var(--success); opacity: 1; }
 /* Tappable stat (no link underline), e.g. Végtag → végtagvédettség picker */
 .he-stat-gomb { background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }
-
-/* Mobile: every text size on the Harcértékek cards +2px (uses the free width, easier to read) */
-@media (max-width: 480px) {
-  .he-section h3 { font-size: 19px; }
-  .he-fegyver-nev { font-size: 19px; }
-  .he-fegyver-alcim { font-size: 14px; }
-  .he-stat-sor { font-size: 16px; }
-  .he-stat-fo { font-size: 17px; }
-  .he-ikon-btn { font-size: 21px; }
-  .he-stat-sisak { font-size: 18px; }
-  .he-add-select { font-size: 18px; }
-  .he-mf-error { font-size: 13px; }
-}
