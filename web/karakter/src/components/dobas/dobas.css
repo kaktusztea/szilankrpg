@@ -552,7 +552,8 @@
 .pancel-sav-cim { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.3px; }
 .pancel-sav-valassz { color: var(--warning); text-transform: none; }
 .pancel-sav-gombok { display: flex; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }
-.pancel-sav-kell .pancel-sav-gombok { border-color: var(--warning); }
+/* Not chosen yet: faded red frame (same tone as the Talált button) */
+.pancel-sav-kell .pancel-sav-gombok { border-color: #c76a6a; }
 .pancel-sav-gombok button {
   flex: 1; padding: 7px 0; background: none; border: none; border-left: 1px solid var(--border-input);
   color: var(--text-soft); font-size: 12px; cursor: pointer;
