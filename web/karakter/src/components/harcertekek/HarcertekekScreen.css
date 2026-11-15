@@ -144,8 +144,6 @@
 .he-felsz-btn.on { color: var(--success); opacity: 1; }
 .he-stat-sor { font-family: monospace; font-size: 14px; color: var(--text-soft); }
 .he-stat-sor b { color: var(--text); }
-.he-stat-te { color: var(--color-taktika); }
-.he-stat-ve { color: var(--warning); }
 .he-stat-sep { color: var(--text-muted); }
 /* Not carried (Felszerelésben: nem): dimmed title + stats */
 .he-fegyver-card-ki .he-fegyver-cim, .he-fegyver-card-ki .he-stat-sor { opacity: 0.5; }

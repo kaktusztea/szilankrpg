@@ -880,7 +880,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
   - Cím: becenév, ha van, különben a fegyver típusneve (MK fegyvereknél suffix nélkül); mellette az MF fok pöttyökben (`.he-mf-dots`: max fok darab, teli / üres, fakó fortély-lila, mint a fortély fok-pöttyök; mindig látszik, 0-nál mind üres; hibánál piros; koppintás → MF fok választó), alatta a hiba-sor.
   - Alcím (12px, halvány): `típusnév (csak ha becenév a cím) · anyag (csak fém fegyvernél) · Idea N`.
   - Jobb felül ikon-gombok (keret nélkül): csomag = Felszerelésben toggle (zöld = igen, halvány = nem), ceruza = szerkesztés menü, ✕ = törlés (megerősítő popup).
-  - Statisztika (keret nélkül, monospace, két sor): `TÉ N · VÉ N · SP N` / `Sebesség N · Ár Nx` (TÉ kék, VÉ narancs; `FegyverChip`, `fegyverÁr` szorzó; `ár_alap=null` fixed fegyvernél nincs ár, → engine_spec §43.2).
+  - Statisztika (keret nélkül, monospace, két sor): `TÉ N · VÉ N · SP N` / `Sebesség N · Ár Nx` (semleges címkék, az értékek kiemelve; `FegyverChip`, `fegyverÁr` szorzó; `ár_alap=null` fixed fegyvernél nincs ár, → engine_spec §43.2).
   - Felszerelésben = nem: a cím és a statisztika-sor halványítva (`.he-fegyver-card-ki`).
 - Szerkesztés menü (ceruza → `ListaPicker`, címe a kártya címe): MF fok / Idea / Anyag (nem-fém fegyvernél tiltva) / Becenév sorok, jobbra az aktuális érték; választás → a mező saját popupja:
   - MF fok: kerek gombok 0-3. Piros szöveg ha a Mesterfegyver követelménye nem teljesül. Hiba esetén alatta kis betűs piros sor: `⚠ Harcmodor - Kardvívás ≥ X` (a fegyverhez tartozó konkrét harcmodor).

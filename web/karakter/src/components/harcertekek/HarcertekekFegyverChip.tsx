@@ -10,12 +10,12 @@ interface Props {
 export function FegyverChip({ fd, mfFok, ideaHatás, konstansok, inactive, ár }: Props) {
   const mf = konstansok.mesterfegyver_bónuszok?.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
   const cls = inactive ? ' he-strike' : '';
-  // Plain stats (no box), two lines: TÉ / VÉ / SP, then Sebesség / Ár. TÉ blue / VÉ orange like the Harc fül.
+  // Plain stats (no box), two lines: TÉ / VÉ / SP, then Sebesség / Ár. Labels neutral (no TÉ/VÉ colors: the card already has enough color).
   return (
     <div className={`he-stat-sor${cls}`}>
       <div>
-        <span className="he-stat-te">TÉ</span> <b>{fd.TÉ + mf.TÉ + ideaHatás.TÉ}</b>
-        <span className="he-stat-sep"> · </span><span className="he-stat-ve">VÉ</span> <b>{fd.VÉ + mf.VÉ + ideaHatás.VÉ}</b>
+        TÉ <b>{fd.TÉ + mf.TÉ + ideaHatás.TÉ}</b>
+        <span className="he-stat-sep"> · </span>VÉ <b>{fd.VÉ + mf.VÉ + ideaHatás.VÉ}</b>
         <span className="he-stat-sep"> · </span>SP <b>{fd.SP + mf.SP + ideaHatás.SP}</b>
       </div>
       <div>
