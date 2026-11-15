@@ -142,7 +142,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       <TavharcReszletek bontás={bontás} gameMode={gameMode} karakter={karakter} setKarakter={setKarakter} pushUndo={pushUndo} konstansok={konstansok} />
 
       <TavharcPopups
-        karakter={karakter} setKarakter={setKarakter}
+        karakter={karakter} data={data} session={session} setKarakter={setKarakter}
         popup={popup} closePopup={closePopup}
         távolság={távolság} setTávolság={setTávolság}
         osztó={bontás.osztó}

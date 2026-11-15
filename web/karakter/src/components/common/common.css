@@ -3,8 +3,6 @@
 /* --- Harcmodor lista --- */
 .he-harcmodor-list { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 16px; }
 .he-harcmodor-col { display: flex; flex-direction: column; gap: 4px; }
-.he-idea-row { display: flex; gap: 6px; }
-.he-idea-cell { width: 36px; height: 36px; font-size: 13px; }
 .he-column-layout { display: flex; flex-direction: column; gap: 6px; align-items: center; }
 
 /* --- FokPottyok (fortély fok dots: MF / Merevvértviselet / Pajzshasználat) --- */
@@ -15,3 +13,22 @@
 .he-mf-dot.filled { background: #a98bb0; border-color: #a98bb0; }
 .he-mf-dots.he-error .he-mf-dot { border-color: var(--error); }
 .he-mf-dots.he-error .he-mf-dot.filled { background: var(--error); }
+
+/* --- IdeaSkala: one-row Idea scale + preview --- */
+.idea-skala { display: flex; flex-direction: column; gap: 10px; width: min(340px, 86vw); }
+.idea-skala-sor { display: flex; gap: 2px; }
+.idea-skala-cella {
+  flex: 1; min-width: 0; height: 36px; padding: 0; border: none; border-radius: 4px;
+  background: var(--input-bg); color: var(--text-soft); font-family: monospace; font-size: 12px; cursor: pointer;
+}
+.idea-skala-cella.neg { background: rgba(199, 106, 106, 0.14); }
+.idea-skala-cella.poz { background: rgba(76, 175, 80, 0.14); }
+.idea-skala-cella.nulla { background: #3a3f58; color: var(--text); }
+.idea-skala-cella.active { outline: 2px solid #81c784; outline-offset: -2px; color: var(--text); font-weight: bold; }
+.idea-elonezet { display: flex; justify-content: space-around; gap: 4px; text-align: center; }
+.idea-elonezet-cella { display: flex; flex-direction: column; gap: 2px; }
+.idea-elonezet-cimke { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.3px; }
+.idea-elonezet-ertek { font-family: monospace; font-size: 16px; font-weight: bold; color: var(--text); white-space: nowrap; }
+.idea-poz { font-size: 12px; color: #81c784; }
+.idea-neg { font-size: 12px; color: #e08a8a; }
+.idea-skala-sugo { font-size: 11px; color: var(--text-muted); text-align: center; }

@@ -149,8 +149,6 @@
 .th-lk-celszam-num { color: var(--color-negative); }
 
 /* --- Idea popup --- */
-.th-idea-row { display: flex; gap: 6px; }
-.th-idea-cell { width: 36px; height: 36px; font-size: 13px; }
 
 /* --- Részletek és CM --- */
 .th-reszletek { display: flex; gap: 8px; margin-top: 20px; align-items: stretch; }

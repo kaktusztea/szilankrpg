@@ -1,4 +1,8 @@
-import type { Karakter } from '../../engine/types';
+import type { Karakter, Session } from '../../engine/types';
+import type { GameData } from '../../engine/data-loader';
+import { IdeaSkala } from '../common/PickerComponents';
+import { lookupTávfegyver } from '../../engine/lookup';
+import { calcCÉBontás, getFortélyCÉ } from './helpers';
 import { FORTÉLY_FOK_VALUES } from '../../ui-constants';
 import type { TavharcPopupState } from './types';
 import { PopupOverlay } from '../PopupOverlay';
@@ -8,6 +12,9 @@ import { getMfFok } from './mesterfegyver-calc';
 
 interface Props {
   karakter: Karakter;
+  /** For the Idea preview (CÉ with the selected Idea). */
+  data: GameData;
+  session: Session;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   popup: TavharcPopupState;
   closePopup: (key: keyof TavharcPopupState) => void;
@@ -16,7 +23,7 @@ interface Props {
   osztó: number;
 }
 
-export function TavharcPopups({ karakter, setKarakter, popup, closePopup, távolság, setTávolság, osztó }: Props) {
+export function TavharcPopups({ karakter, data, session, setKarakter, popup, closePopup, távolság, setTávolság, osztó }: Props) {
   const k = karakter;
 
   function setMfFok(alap: string, fok: number) {
@@ -66,23 +73,22 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, távol
 
       {popup.ideaPopup !== null && (
         <PopupOverlay onClose={() => closePopup('ideaPopup')}>
-          <label>Idea érték</label>
-          <div className="he-idea-grid">
-            {[[-5, -4, -3, -2, -1], [0], [1, 2, 3, 4, 5]].map((row, ri) => (
-              <div key={ri} className="th-idea-row">
-                {row.map(n => (
-                  <button key={n} className={`fort-fok-btn th-idea-cell${(k.távfegyverek[popup.ideaPopup!]?.idea ?? 0) === n ? ' active' : ''}`}
-                    onClick={() => {
-                      const idx = popup.ideaPopup!;
-                      setKarakter(prev => prev ? { ...prev, távfegyverek: prev.távfegyverek.map((tf, i) => i === idx ? { ...tf, idea: n } : tf) } : prev);
-                      closePopup('ideaPopup');
-                    }}>
-                    {n > 0 ? `+${n}` : n}
-                  </button>
-                ))}
-              </div>
-            ))}
-          </div>
+          <label className="kep-prompt-text-center">Idea érték</label>
+          {(() => {
+            // Preview: CÉ with the current Idea (Idea is 1:1 to CÉ, relative to the weapon's idea_default)
+            const idx = popup.ideaPopup!;
+            const tf = k.távfegyverek[idx];
+            const def = tf ? lookupTávfegyver(data.tavfegyverek, tf.alap) : undefined;
+            const delta = (tf?.idea ?? 0) - (def?.idea_default ?? 0);
+            const cé = tf ? calcCÉBontás(k, data, session, def, delta, getFortélyCÉ(k, data, session, tf.alap), tf.alap).cé : 0;
+            const range = data.konstansok.fegyver_idea_plusz_minusz;
+            return (
+              <IdeaSkala minIdea={-range} maxIdea={range} current={tf?.idea ?? 0}
+                onSelect={n => setKarakter(prev => prev ? { ...prev, távfegyverek: prev.távfegyverek.map((t, i) => i === idx ? { ...t, idea: n } : t) } : prev)}
+                onKész={() => closePopup('ideaPopup')}
+                előnézet={tf ? [{ címke: 'CÉ', érték: String(cé), változás: delta }] : []} />
+            );
+          })()}
         </PopupOverlay>
       )}
 

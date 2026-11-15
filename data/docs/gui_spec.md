@@ -526,7 +526,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 **Távfegyverek szekció:**
 - Fegyver kártyák: a Harcértékek fül kompakt fegyverkártyájának mintájára (2026-11)
   - Cím: fegyvernév + MF fok lila pöttyökben (`FokPottyok`, 0-3, tap → MF popup; hibánál piros + hiba-sor). Alcím: `Idea ±N` (mágikus fegyvernél nincs).
-  - Jobb felül ikon-gombok: ceruza → Idea popup (-5..+5; mágikus fegyvernél nincs), ✕ → törlés megerősítő popup.
+  - Jobb felül ikon-gombok: ceruza → Idea popup (`IdeaSkala`, -5..+5, előnézet: CÉ; mágikus fegyvernél nincs), ✕ → törlés megerősítő popup.
   - Statisztika-sor (keret nélkül, monospace, 15px): `CÉ N · Támadás Nx · SP N` (nem sebző fegyvernél SP `-`).
 - Aktív fegyver: zöld keret (a kártyára koppintva váltható; az ikon-gombok / pöttyök koppintása nem vált)
 - `+ Új távfegyver...` gomb → lista-választó (`tavfegyverek_v2.json`-ból, 🔆 kiszűrve; név mellett `CÉ / SP / Osz`)
@@ -888,17 +888,19 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
   - Felszerelésben = nem: a cím és a statisztika-sor halványítva (`.he-fegyver-card-ki`).
 - Szerkesztés menü (ceruza → `ListaPicker`, címe a kártya címe): MF fok / Idea / Anyag (nem-fém fegyvernél tiltva) / Becenév sorok, jobbra az aktuális érték; választás → a mező saját popupja:
   - MF fok: kerek gombok 0-3. Piros szöveg ha a Mesterfegyver követelménye nem teljesül. Hiba esetén alatta kis betűs piros sor: `⚠ Harcmodor - Kardvívás ≥ X` (a fegyverhez tartozó konkrét harcmodor).
-  - Idea: 3 soros popup (-5..-1 / 0 / +1..+5)
+  - Idea: `IdeaSkala` popup (lásd lent az „Idea választó" pontot), előnézet: TÉ / VÉ / SP (változás a gyári Ideához képest) + Ár
   - Anyag: 1 oszlopos popup (acél, bronz, abbitacél, mithrill, lunír)
   - Felszerelésben: igen/nem toggle (kattintásra negál, `FegyverPeldany.felszerelésben`). „nem" → a fegyver kikerül a Felszerelés keretből (§15) ÉS a Harc fül fegyverválasztóiban kiszürkül („… (nincs nálad)"); ha épp aktív, a Harc fül Puszta kézre esik vissza (`useFegyverInvalidation`). Jelzés: a kártya csomag-ikonja (lásd fent).
 - \+ Új fegyver dropdown: kategóriánként csoportosítva (MK 2K variáns kiszűrve)
 - MK (másfélkezes) fegyverek: 1 kártya a Harcértékek fülön, 2 sor a Harc fülön (1K + 2K)
 - Mesterfegyver szinkron: MF fok módosítás → `syncMfFortelyok` frissíti a fortélyok tömböt
 
+- **Idea választó** (`IdeaSkala`, `common/PickerComponents.tsx`; fegyver / páncél / távfegyver közös): egysoros skála min..0..max (negatív oldal halványpiros, pozitív halványzöld, 0 kiemelt), alatta előnézet (címke + érték + változás). Koppintás → azonnal beállít, a popup NYITVA marad (a többi fok kipróbálható, az előnézet frissül); a már kiválasztott értékre újra koppintva → bezárul (minden bezárul, a szerkesztés menübe sem tér vissza); mellé koppintás / Escape → bezárul (a szerkesztés menüből nyitva vissza a menübe).
+
 ### Páncél
 Kompakt kártya (2026-11, a fegyverkártya mintájára; `.he-fegyver-card`):
 - Cím: a struktúra neve, mellette a Merevvértviselet fok lila pöttyökben (`FokPottyok`, 0-3, mindig látszik; tap → fok popup 0-3). Alcím (halvány): `fémalapanyag (csak fém struktúránál) · kidolgozottság · méret · Idea N`; MGT-büntetéses méret (nem passzol / borzalmas) fakó narancs (`.he-stat-figyel`, mint a Rongálódás).
-- Jobb felül: „Páncél viselve" ikon-kapcsoló (`viselve` = lucide ShieldCheck, zöld = igen, halvány = nem; ugyanaz a `session.aktív_páncél`, mint a Harc fül „Páncél viselve" gombja, így szinkronban; nem viselve → cím + statisztika halványítva) + ceruza → szerkesztés menü (`ListaPicker`): Struktúra (lista + "- nincs -") / Fémalapanyag (csak fém) / Kidolgozottság (pocsék / átlagos / mestermunka) / Méret (passzol / nem passzol / borzalmas) / Idea (3 soros popup -4..+4; tiltva, ha a struktúránál nem állítható) / Végtagvédettség (0-4) / Sisak (igen/nem - közvetlen váltás, nincs al-popup) / Rongálódás (0-5); jobbra az aktuális érték, választás → a mező saját popupja.
+- Jobb felül: „Páncél viselve" ikon-kapcsoló (`viselve` = lucide ShieldCheck, zöld = igen, halvány = nem; ugyanaz a `session.aktív_páncél`, mint a Harc fül „Páncél viselve" gombja, így szinkronban; nem viselve → cím + statisztika halványítva) + ceruza → szerkesztés menü (`ListaPicker`): Struktúra (lista + "- nincs -") / Fémalapanyag (csak fém) / Kidolgozottság (pocsék / átlagos / mestermunka) / Méret (passzol / nem passzol / borzalmas) / Idea (`IdeaSkala`, a struktúra szerinti ±N, előnézet: SFÉ F / SFÉ E (változás a 0-hoz képest) + Ár; tiltva, ha a struktúránál nem állítható) / Végtagvédettség (0-4) / Sisak (igen/nem - közvetlen váltás, nincs al-popup) / Rongálódás (0-5); jobbra az aktuális érték, választás → a mező saját popupja.
 - Statisztika (keret nélkül, monospace, két sor): `SFÉ XF / YE · MGT Z` (15px; az MGT pontozott aláhúzású, tap → info hint: MGT bontás formula, 2s) / `Végtag N · [sisak ikon] · Ár Nx` (Végtag: aláhúzás nélkül koppintható → végtagvédettség popup 0-4) (sisak = lucide HardHat, zöld = van, halvány = nincs; tap → váltás) + harmadik sorban `Rongálódás N` fakó narancsban, csak ha > 0 (aláhúzás nélkül, tap → Rongálódás popup 0-5).
 - Nincs struktúra: halvány „Nincs páncél" cím (a Merevvért pöttyök maradnak) + `+ Páncél választása...` gomb (→ Struktúra popup).
 

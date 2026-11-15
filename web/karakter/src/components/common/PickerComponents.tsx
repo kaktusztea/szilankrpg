@@ -31,32 +31,48 @@ export function ColumnPicker<T extends string>({ options, current, onSelect, wid
   );
 }
 
-/** Idea grid - 3-row grid (negatives / zero / positives) */
-export function IdeaGrid({ minIdea, maxIdea, current, onSelect }: {
+/** One preview cell under the Idea scale: label, resulting value, change vs. the base (gyári) Idea. */
+export interface IdeaElőnézet { címke: string; érték: string; változás?: number }
+
+/**
+ * Idea picker: one-row scale (min … 0 … max; negative side reddish, positive greenish) + a preview of what
+ * the selected Idea gives. A tap applies the value and the popup stays open (try values); a second tap on the
+ * already selected value confirms + closes (`onKész`). Tap outside / Escape is handled by the popup itself.
+ */
+export function IdeaSkala({ minIdea, maxIdea, current, onSelect, onKész, előnézet }: {
   minIdea: number;
   maxIdea: number;
   current: number;
   onSelect: (v: number) => void;
+  onKész: () => void;
+  előnézet?: IdeaElőnézet[];
 }) {
-  const negatives = Array.from({ length: -minIdea }, (_, i) => minIdea + i);
-  const positives = Array.from({ length: maxIdea }, (_, i) => i + 1);
-  const btn = (n: number) => (
-    <button key={n} className={`fort-fok-btn he-idea-cell${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>
-      {n > 0 ? `+${n}` : n}
-    </button>
-  );
-  const singleRow = maxIdea <= 1;
+  const értékek = Array.from({ length: maxIdea - minIdea + 1 }, (_, i) => minIdea + i);
   return (
-    <div className="he-idea-grid">
-      {singleRow ? (
-        <div className="he-idea-row">{[...negatives, 0, ...positives].map(btn)}</div>
-      ) : (
-        <>
-          <div className="he-idea-row">{negatives.map(btn)}</div>
-          <div className="he-idea-row">{btn(0)}</div>
-          <div className="he-idea-row">{positives.map(btn)}</div>
-        </>
+    <div className="idea-skala">
+      <div className="idea-skala-sor">
+        {értékek.map(n => (
+          <button key={n} type="button" aria-pressed={current === n}
+            className={`idea-skala-cella${n < 0 ? ' neg' : n > 0 ? ' poz' : ' nulla'}${current === n ? ' active' : ''}`}
+            onClick={() => (n === current ? onKész() : onSelect(n))}>
+            {n > 0 ? `+${n}` : n}
+          </button>
+        ))}
+      </div>
+      {előnézet && előnézet.length > 0 && (
+        <div className="idea-elonezet">
+          {előnézet.map(e => (
+            <div key={e.címke} className="idea-elonezet-cella">
+              <span className="idea-elonezet-cimke">{e.címke}</span>
+              <span className="idea-elonezet-ertek">
+                {e.érték}
+                {e.változás ? <span className={e.változás > 0 ? 'idea-poz' : 'idea-neg'}> {e.változás > 0 ? '+' : ''}{e.változás}</span> : null}
+              </span>
+            </div>
+          ))}
+        </div>
       )}
+      <div className="idea-skala-sugo">Újra a kiválasztottra koppintva bezárul</div>
     </div>
   );
 }

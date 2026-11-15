@@ -91,7 +91,6 @@
 .fort-fok-btn.he-picker-btn-wide { width: auto; min-width: 140px; height: auto; padding: 6px 16px; border-radius: 6px; font-size: 14px; }
 
 /* --- Idea grid --- */
-.he-idea-grid { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .he-del-confirm { padding: 6px 15px; }
 
 /* --- MF error --- */

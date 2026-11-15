@@ -6,7 +6,13 @@ import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 import { PancelPopup } from './HarcertekekPancelPopup';
-import { FokRadios, ColumnPicker, IdeaGrid } from '../common/PickerComponents';
+import { FokRadios, ColumnPicker, IdeaSkala, type IdeaElőnézet } from '../common/PickerComponents';
+import { lookupFegyver } from '../../engine/lookup';
+import { elsődlegesMód } from '../../engine/harc/fegyver-calc';
+import { ideaDelta } from '../../engine/utils';
+import { fegyverÁr } from './fegyver-ar-calc';
+import { árFormátum } from '../formatters';
+import { calcPancelValues } from './HarcertekekPancelSection';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { TextInputPopup } from '../common/TextInputPopup';
 import { getMfFok, harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
@@ -55,20 +61,52 @@ export function Popups({
     .find(s => s.struktúra === k.páncél.alap)?.idea_plusz_minusz ?? 0;
   const fegyverIdeaRange = konstansok.fegyver_idea_plusz_minusz;
 
+  /** Idea popup preview: the card's values with the current Idea (weapon: TÉ/VÉ/SP/Ár, armour: SFÉ/Ár). */
+  function ideaElőnézet(): IdeaElőnézet[] {
+    if (!ideaTarget) return [];
+    if (ideaTarget.type === 'páncél') {
+      if (!k.páncél.alap) return [];
+      const most = calcPancelValues(k, data);
+      const alap = calcPancelValues({ ...k, páncél: { ...k.páncél, idea: 0 } }, data);
+      return [
+        { címke: 'SFÉ F', érték: String(most.sfé_fizikai), változás: most.sfé_fizikai - alap.sfé_fizikai },
+        { címke: 'SFÉ E', érték: String(most.sfé_energia), változás: most.sfé_energia - alap.sfé_energia },
+        { címke: 'Ár', érték: `${árFormátum(most.ár)}x` },
+      ];
+    }
+    const fp = k.fegyverek[ideaTarget.idx];
+    const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : undefined;
+    if (!fp || !fd) return [];
+    const mód = elsődlegesMód(fd);
+    const mf = konstansok.mesterfegyver_bónuszok?.find(b => b.fok === getMfFok(data, k, fp.alap)) ?? { TÉ: 0, VÉ: 0, SP: 0 };
+    const d = ideaDelta(fp.idea, fd.idea_default, data.fegyverIdeaTabla);
+    // Non-metal weapons (wood / stone): the price uses the factory material (same rule as the weapon card)
+    const fém = (konstansok.fegyver_anyagok as string[]).includes(fd.alapanyag);
+    const ár = fegyverÁr(fd.ár_alap, fém ? fp.anyag : fd.alapanyag, fp.idea, konstansok);
+    return [
+      { címke: 'TÉ', érték: String(mód.TÉ + mf.TÉ + d.TÉ), változás: d.TÉ },
+      { címke: 'VÉ', érték: String(mód.VÉ + mf.VÉ + d.VÉ), változás: d.VÉ },
+      { címke: 'SP', érték: String(mód.SP + mf.SP + d.SP), változás: d.SP },
+      ...(ár == null ? [] : [{ címke: 'Ár', érték: `${árFormátum(ár)}x` }]),
+    ];
+  }
+
   return (
     <>
       {ideaTarget && (
         <PopupOverlay onClose={() => onDismiss('ideaTarget')}>
-          <label>Idea érték</label>
-          <IdeaGrid
+          <label className="kep-prompt-text-center">Idea érték</label>
+          <IdeaSkala
             minIdea={ideaTarget.type === 'fegyver' ? -fegyverIdeaRange : -pancelIdeaRange}
             maxIdea={ideaTarget.type === 'fegyver' ? fegyverIdeaRange : pancelIdeaRange}
             current={ideaTarget.type === 'fegyver' ? k.fegyverek[ideaTarget.idx]?.idea ?? 0 : k.páncél.idea}
             onSelect={n => {
+              // Applies immediately; the popup stays open so other values can be tried (preview updates)
               if (ideaTarget.type === 'fegyver') updateFegyver(ideaTarget.idx, { idea: n });
               else updatePancel({ idea: n });
-              onClose('ideaTarget');
             }}
+            onKész={() => onClose('ideaTarget')}
+            előnézet={ideaElőnézet()}
           />
         </PopupOverlay>
       )}
