@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Ikon } from '../common/Ikon';
+import { PickerOverlay } from '../picker/PickerOverlay';
 import type { GameData } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
 import { TulajdonsagCell } from './TulajdonsagCell';
@@ -39,6 +41,11 @@ export function TulajdonsagokHeader({
   fortélyBónuszByTul,
 }: Props) {
   const TULAJDONSAG_NEVEK = data.konstansok.tulajdonság_sorrend as (keyof Tulajdonsagok)[];
+  // Faj / Anyanyelv: overlay picker instead of a native <select>
+  const [picker, setPicker] = useState<'faj' | 'anyanyelv' | null>(null);
+  const pickerOpciók = picker === 'faj' ? data.fajNevek
+    : picker === 'anyanyelv' ? data.nyelvek.map(n => n.név).sort((a, b) => a.localeCompare(b, 'hu')) : [];
+  const pickerÉrték = picker === 'faj' ? faj : anyanyelv;
 
   return (
     <>
@@ -90,22 +97,26 @@ export function TulajdonsagokHeader({
       {/* Faj + Kor - csak szerkesztő módban */}
       {!gameMode && (<>
         <div className="tul-faj-kor-row">
-          <div className="tul-faj-row">
-            <span className="tul-header-label">Faj:</span>
-            <select className="field-select faj-select" value={faj} onChange={e => setFaj(e.target.value)}>
-              {data.fajNevek.map(f => <option key={f} value={f}>{f}</option>)}
-            </select>
+          <div className="tul-faj-row" onClick={() => setPicker('faj')}>
+            <span className="tul-header-label">Faj:</span> <strong>{faj}</strong>
           </div>
           <div className="tul-faj-row" onClick={onEditKor}>
             <span className="tul-header-label">Kor:</span> <strong>{kor}</strong>
           </div>
         </div>
-        <div className="tul-faj-row">
-          <span className="tul-header-label">Anyanyelv:</span>
-          <select className="field-select faj-select" value={anyanyelv} onChange={e => setAnyanyelv(e.target.value)}>
-            {[...data.nyelvek].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(n => <option key={n.név} value={n.név}>{n.név}</option>)}
-          </select>
+        <div className="tul-faj-row" onClick={() => setPicker('anyanyelv')}>
+          <span className="tul-header-label">Anyanyelv:</span> <strong>{anyanyelv || '-'}</strong>
         </div>
+        {picker && (
+          <PickerOverlay title={picker === 'faj' ? 'Faj' : 'Anyanyelv'} onClose={() => setPicker(null)}>
+            {pickerOpciók.map(o => (
+              <button type="button" key={o} className={`aktiv-picker-item${o === pickerÉrték ? ' active' : ''}`}
+                onClick={() => { if (picker === 'faj') setFaj(o); else setAnyanyelv(o); setPicker(null); }}>
+                <span className="aktiv-picker-item-name">{o === pickerÉrték ? <><Ikon név="pipa" /> </> : null}{o}</span>
+              </button>
+            ))}
+          </PickerOverlay>
+        )}
         <div className="tul-header-box" onClick={onEditJátékos}>
           <span className="tul-header-label">Játékos:</span> <strong>{játékos || '-'}</strong>
         </div>

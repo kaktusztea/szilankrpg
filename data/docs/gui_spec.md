@@ -598,9 +598,9 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - **Játék módban**: `Név: "{név} ({faj}, {kor})"` full box + külön Szint box (Becenév + chipek rejtve)
 - **Böngésző tab title**: `document.title = karakter.becenév || 'Szilánk'`
 - **Faj + Kor** sor (CSAK szerkesztő módban):
-  - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
+  - Faj box (flex:1): `Faj: <érték>` - tap → `PickerOverlay` lista (faj nevek a tables/fajok.json-ból; aktuális ✓ + zöld keret; választás = bezárás)
   - Kor box: `Kor: 32` - tap → +/− overlay (long press gyorsítás: 200ms→30ms, 7s után ×10 lépés, 1–2000)
-- **Anyanyelv** (CSAK szerkesztő módban): inline `<select>` dropdown (`tables/nyelvek.json`-ból)
+- **Anyanyelv** (CSAK szerkesztő módban): `Anyanyelv: <érték>` box - tap → `PickerOverlay` lista (`tables/nyelvek.json`, ABC sorrend; mint a Faj)
   - Módosítás → szinkronizálja kiérdemelt Nyelvismeret fortélyokat (Közös Alap + anyanyelv Alap, `kiérdemelt: true`)
 - **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` - tap → szerkesztő popup (max 40 kar)
   - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)

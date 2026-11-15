@@ -66,8 +66,6 @@
   cursor: pointer;
 }
 
-/* faj-select → base: .field-select (common.css) */
-.faj-select { font-size: 17px; margin-left: 4px; }
 
 .tul-faj-kor-row { display: flex; gap: 6px; margin-bottom: 10px; }
 .tul-faj-kor-row .tul-faj-row:first-child { flex: 1; }
