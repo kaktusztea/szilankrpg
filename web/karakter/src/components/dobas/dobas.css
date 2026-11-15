@@ -536,3 +536,61 @@
   background: none; border: 1px solid var(--border); border-radius: 8px;
   color: inherit; cursor: pointer;
 }
+
+/* =============================================
+   Támadó / Célzó dobás - képlet-központú elrendezés (2026-11)
+   ============================================= */
+/* Header row: centred title, extras icon on the right */
+.dobas-fejlec { position: relative; width: 100%; display: flex; justify-content: center; }
+.dobas-fejlec .ke-dobas-header { text-transform: none; font-size: 17px; }
+.extrak-ikon-btn {
+  position: absolute; right: -6px; top: 50%; transform: translateY(-50%);
+  display: inline-flex; padding: 6px; background: none; border: none; cursor: pointer;
+  color: var(--text-soft); font-size: 20px; line-height: 1;
+}
+.extrak-ikon-pont {
+  position: absolute; right: 3px; top: 3px; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--success); border: 1px solid var(--surface);
+}
+/* Formula: "25 + k20" (Célzó: "18 + k20 vs 25") */
+.dobas-keplet { font-family: monospace; font-size: 26px; font-weight: bold; text-align: center; color: var(--text); }
+.dobas-keplet-op { color: var(--text-dim); font-weight: normal; }
+.dobas-keplet-kezi.sebzes-stat-pos { color: var(--success); }
+.dobas-keplet-kezi.sebzes-stat-neg { color: var(--error); }
+.dobas-keplet-ve { font-size: 20px; color: var(--warning); }
+/* Előny/Hátrány stepper */
+.elony-blokk { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+.elony-lepteto { display: flex; align-items: stretch; width: 100%; height: 38px; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }
+.elony-lepteto-pm { width: 44px; background: var(--input-bg); border: none; color: var(--text-soft); font-size: 20px; cursor: pointer; }
+.elony-lepteto-pm:disabled { opacity: 0.3; cursor: default; }
+.elony-lepteto-ertek { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; color: var(--text-soft); }
+.elony-lepteto-ertek.elony { color: #81c784; background: rgba(76, 175, 80, 0.12); }
+.elony-lepteto-ertek.hatrany { color: #e08a8a; background: rgba(199, 106, 106, 0.12); }
+/* Sources under the stepper */
+.forras-lista { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; color: var(--text-dim); text-align: center; }
+.forras-badge { font-weight: bold; }
+.forras-badge.előny, .forras-badge.enyhít { color: #81c784; }
+.forras-badge.hátrány { color: #e08a8a; }
+.forras-kezi { display: inline-flex; align-items: center; gap: 8px; color: var(--text-soft); }
+.forras-vissza {
+  display: inline-flex; align-items: center; gap: 3px; background: none; border: none; padding: 0;
+  font-size: 12px; color: var(--text-dim); cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px;
+}
+/* Modifier pills: Taktika / Harci helyzet / Bónusz */
+.dobas-kapszulak { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; width: 100%; }
+.dobas-kapszula {
+  display: inline-flex; align-items: center; gap: 5px; height: 28px; padding: 0 10px;
+  border: 1px solid var(--border-input); border-radius: 14px; background: var(--input-bg);
+  color: var(--text); font-size: 13px; font-weight: bold; cursor: pointer;
+}
+.dobas-kapszula-db { color: var(--text-dim); font-weight: normal; }
+.dobas-kapszula-halvany { color: var(--text-dim); font-weight: normal; }
+.dobas-kapszula.sebzes-stat-pos { color: var(--success); }
+.dobas-kapszula.sebzes-stat-neg { color: var(--error); }
+/* Quiet manual-dice link next to the roll button */
+.manual-dice-link {
+  background: none; border: none; padding: 4px; font-size: 13px; color: var(--text-dim); cursor: pointer;
+  text-decoration: underline dotted; text-underline-offset: 3px;
+}
+.manual-dice-link:disabled { opacity: 0.4; cursor: default; }
+.dobas-btn-ikon { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }

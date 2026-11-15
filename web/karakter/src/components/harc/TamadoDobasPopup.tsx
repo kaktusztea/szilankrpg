@@ -1,7 +1,8 @@
 import { Ikon } from '../common/Ikon';
 import { useState, useEffect } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
-import { ElonyPicker } from '../dobas/ElonyPicker';
+import { ElonyLepteto } from '../dobas/ElonyLepteto';
+import { ForrasLista } from '../dobas/ForrasLista';
 import { SebzesPopup } from '../dobas/SebzesPopup';
 import { VeCsokkentesPopup } from '../dobas/VeCsokkentesPopup';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
@@ -16,7 +17,6 @@ import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine
 import type { Fegyverviszony } from '../../engine/harc/ve-csokkentes-calc';
 import { támadódobástTiltóTaktika } from '../../engine/harc/ve-csokkentes-calc';
 import { netElőnySzint, fegyverSpBónuszok, sebzésElőnyK20ból } from '../../engine/harc/combat-roll-info';
-import { HatasokInfo as HatásokInfo } from '../dobas/HatasokInfo';
 import { ExtrakInfo } from '../dobas/ExtrakInfo';
 import { KeziBonuszBtn } from '../dobas/KeziBonuszBtn';
 import type { ExtraKontextus } from '../../engine/extrak-info-calc';
@@ -223,7 +223,13 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
     <PopupOverlay className="kep-prompt tamado-dobas-wrapper" onClose={() => onClose(null)}>
       <div className="tamado-dobas-popup">
         {téResult && <button className="sebzes-reset-btn" onClick={() => setTéResult(null)}><Ikon név="reset" /></button>}
-        <div className="ke-dobas-header">Támadó dobás ({aktívTé})</div>
+        {/* Header: title + (before the roll) the Fegyver extrák icon on the right */}
+        <div className="dobas-fejlec">
+          <div className="ke-dobas-header">Támadó dobás</div>
+          {!téResult && aktívExtraKontextus && (
+            <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={aktívExtraKontextus} ikon />
+          )}
+        </div>
 
         {!téResult ? (
           <>
@@ -237,21 +243,26 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
                 ))}
               </div>
             )}
+            {/* Formula: TÉ (+ hand bonus) + k20 */}
+            <div className="dobas-keplet">
+              {aktívTé}
+              {kéziBónusz !== 0 && <><span className="dobas-keplet-op"> {kéziBónusz > 0 ? '+' : '−'} </span><span className={`dobas-keplet-kezi ${kéziBónusz > 0 ? 'sebzes-stat-pos' : 'sebzes-stat-neg'}`}>{Math.abs(kéziBónusz)}</span></>}
+              <span className="dobas-keplet-op"> + </span>k20
+            </div>
             {többMódú && (
               <button className="mod-valaszto-btn" onClick={() => setAlPopup('mód')}>
                 Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && <span className="mod-valaszto-masodlagos">(másodlagos)</span>}
               </button>
             )}
-            <TaktikaHelyzetChipek taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
-              onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')} />
-            <ElonyPicker szint={szint} onChange={setSzint} rövid kompakt />
-            {dobásInfo.téHatások.length > 0 && (
-              <HatásokInfo hatások={dobásInfo.téHatások} />
-            )}
-            {aktívExtraKontextus && (
-              <ExtrakInfo fegyverExtrák={fegyverExtrák} extraDefs={extraDefs} kontextus={aktívExtraKontextus} />
-            )}
-            {!tiltóTaktika && <KeziBonuszBtn bónusz={kéziBónusz} onChange={setKéziBónusz} />}
+            {/* Előny/Hátrány: stepper + the sources it starts from (+ hand override line) */}
+            <div className="elony-blokk">
+              <ElonyLepteto szint={szint} onChange={setSzint} />
+              <ForrasLista hatások={dobásInfo.téHatások} szint={szint} alapSzint={téHatásSzint} onVissza={() => setSzint(téHatásSzint)} />
+            </div>
+            <TaktikaHelyzetChipek kapszula taktikaDb={aktívDb.taktika} helyzetDb={aktívDb.helyzet}
+              onTaktika={() => setAlPopup('taktika')} onHelyzet={() => setAlPopup('helyzet')}>
+              {!tiltóTaktika && <KeziBonuszBtn kapszula bónusz={kéziBónusz} onChange={setKéziBónusz} />}
+            </TaktikaHelyzetChipek>
             {tiltóTaktika ? (
               <>
                 <div className="dobas-info-list dobas-notes">
@@ -266,8 +277,8 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
               </>
             ) : (
               <div className="dobas-btn-row">
-                <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás (k20)</button>
-                <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={aktívTé} alapLabel="TÉ" />
+                <button className="tamado-dobas-btn dobas-btn-ikon" onClick={handleDobás}><Ikon név="kocka" méret={22} />Dobás</button>
+                <ManualDicePicker link szint={szint} onSelect={handleManualK20} alapÉrték={aktívTé} alapLabel="TÉ" />
               </div>
             )}
           </>

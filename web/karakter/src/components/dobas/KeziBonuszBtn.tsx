@@ -22,10 +22,12 @@ const RÉSZLETES: number[] = Array.from({ length: 21 }, (_, i) => i - 10);
  * Egy infóban olvasott szituációs bónuszt (pl. „+5 TÉ") lehet beütni, ami a dobás
  * végeredményéhez adódik. A `0` nullázza; a kompakt nézet ▾ nyílra a teljes -10…+10 bomlik ki.
  */
-export function KeziBonuszBtn({ bónusz, onChange, label = 'Statikus bónuszok' }: {
+export function KeziBonuszBtn({ bónusz, onChange, label = 'Statikus bónuszok', kapszula = false }: {
   bónusz: number;
   onChange: (v: number) => void;
   label?: string;
+  /** Pill variant for the Támadó / Célzó modifier row: "+ Bónusz" at 0, "Bónusz +3" otherwise. */
+  kapszula?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   // Ha a jelenlegi érték nincs a kompakt grid-ben, a picker rögtön a részletes nézetben nyílik.
@@ -43,9 +45,15 @@ export function KeziBonuszBtn({ bónusz, onChange, label = 'Statikus bónuszok' 
 
   return (
     <>
-      <button className={`sebzes-stat-btn kezi-bonusz-btn ${colorClass}${bónusz === 0 ? ' kezi-bonusz-btn-nulla' : ''}`} onClick={nyit}>
-        {label}: {bónusz > 0 ? '+' : ''}{bónusz}
-      </button>
+      {kapszula ? (
+        <button type="button" className={`dobas-kapszula${bónusz === 0 ? ' dobas-kapszula-halvany' : ` ${colorClass}`}`} onClick={nyit}>
+          {bónusz === 0 ? '+ Bónusz' : `Bónusz ${bónusz > 0 ? '+' : ''}${bónusz}`}
+        </button>
+      ) : (
+        <button className={`sebzes-stat-btn kezi-bonusz-btn ${colorClass}${bónusz === 0 ? ' kezi-bonusz-btn-nulla' : ''}`} onClick={nyit}>
+          {label}: {bónusz > 0 ? '+' : ''}{bónusz}
+        </button>
+      )}
       {open && (
         <PopupOverlay onClose={() => setOpen(false)}>
           <div className="sebzes-stat-popup">

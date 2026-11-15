@@ -20,13 +20,15 @@ interface Props {
   disabled?: boolean;
   /** Force the picker open (for multi-step flows). */
   forceOpen?: boolean;
+  /** Quiet text-link variant ("kézi") next to the roll button instead of the round 🎲 button. */
+  link?: boolean;
 }
 
 /**
  * Manual dice picker: a 🎲 icon button that opens a value grid.
  * For players who prefer physical dice rolling.
  */
-export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, sides = 20, min, disabled, forceOpen }: Props) {
+export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, sides = 20, min, disabled, forceOpen, link }: Props) {
   const [open, setOpen] = useState(false);
   const isOpen = open || (forceOpen ?? false);
 
@@ -34,7 +36,9 @@ export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, side
 
   return (
     <>
-      <button className="manual-dice-btn" disabled={disabled} onClick={() => setOpen(true)} title="Kézi dobás">🎲</button>
+      {link
+        ? <button type="button" className="manual-dice-link" disabled={disabled} onClick={() => setOpen(true)} title="Kézi dobás">kézi</button>
+        : <button className="manual-dice-btn" disabled={disabled} onClick={() => setOpen(true)} title="Kézi dobás">🎲</button>}
       {isOpen && (
         <PopupOverlay onClose={() => setOpen(false)}>
           <div className="manual-dice-popup">

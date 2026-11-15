@@ -30,12 +30,14 @@ function hatásSorSzínOsztály(szöveg: string, aktív: boolean): string {
  * A fegyver `fegyver_extrak.json`-beli extráit listázza, státusz-jelzéssel (aktív/inaktív/KM).
  * Ha van legalább egy AKTÍV extra, a gomb pulzál (figyelemfelhívás). Nincs extra → nem renderel.
  */
-export function ExtrakInfo({ fegyverExtrák, extraDefs, kontextus, csakManőver = false }: {
+export function ExtrakInfo({ fegyverExtrák, extraDefs, kontextus, csakManőver = false, ikon = false }: {
   fegyverExtrák?: { id: string }[];
   extraDefs?: Record<string, FegyverExtraDef>;
   kontextus: ExtraKontextus;
   /** Manőver ablak: csak az épp választott manőverre ható extrák (a többi dobásnál a teljes lista). */
   csakManőver?: boolean;
+  /** Icon variant (Támadó / Célzó header): a lightbulb button with a green dot when any extra is active. */
+  ikon?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const tételek = extrakInfoTételek(fegyverExtrák, extraDefs, kontextus, csakManőver);
@@ -46,13 +48,20 @@ export function ExtrakInfo({ fegyverExtrák, extraDefs, kontextus, csakManőver 
 
   return (
     <>
-      <button
-        className={`extrak-btn${vanAktív ? ' extrak-btn-pulse' : ''}`}
-        onClick={() => setOpen(true)}
-        title="Fegyver extrák"
-      >
-        <Ikon név="infó" /> Fegyver extrák{aktívDb > 0 ? ` (${aktívDb} aktív)` : ''}
-      </button>
+      {ikon ? (
+        <button type="button" className="extrak-ikon-btn" onClick={() => setOpen(true)}
+          title={`Fegyver extrák${aktívDb > 0 ? ` (${aktívDb} aktív)` : ''}`} aria-label="Fegyver extrák">
+          <Ikon név="infó" />{vanAktív && <span className="extrak-ikon-pont" />}
+        </button>
+      ) : (
+        <button
+          className={`extrak-btn${vanAktív ? ' extrak-btn-pulse' : ''}`}
+          onClick={() => setOpen(true)}
+          title="Fegyver extrák"
+        >
+          <Ikon név="infó" /> Fegyver extrák{aktívDb > 0 ? ` (${aktívDb} aktív)` : ''}
+        </button>
+      )}
       {open && (
         <PopupOverlay onClose={() => setOpen(false)} className="kep-prompt extrak-prompt">
           <div className="extrak-popup">
