@@ -123,6 +123,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
   const fém = fd ? (konstansok.fegyver_anyagok as string[]).includes(fd.alapanyag) : true;
 
   const [szerkNyitva, setSzerkNyitva] = useState(false);
+  const mfMax = Math.max(0, ...(konstansok.mesterfegyver_bónuszok ?? []).map(b => b.fok));
   const típusNév = fegyver.alap.replace(/ \(1K\)$| 1K$/, '');
   const felszerelésben = fegyver.felszerelésben !== false;
   // Subtitle: weapon type (only if a nickname is the title) · material · Idea
@@ -135,7 +136,11 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
         <div className="he-fegyver-cim">
           <div className="he-fegyver-nev">
             {fegyver.név || típusNév}
-            {(mfFok > 0 || hasError) && <span className={`he-mf-badge${hasError ? ' he-error' : ''}`}>MF {mfFok}</span>}
+            {/* MF fok as purple dots (filled / empty), like the fortély fok dots; red when the MF requirement fails */}
+            <button type="button" className={`he-mf-dots${hasError ? ' he-error' : ''}`} title={`MF fok: ${mfFok}`} aria-label={`MF fok: ${mfFok} - módosítás`}
+              onClick={() => onMfTarget(index)}>
+              {Array.from({ length: mfMax }, (_, i) => <span key={i} className={`he-mf-dot${i < mfFok ? ' filled' : ''}`} />)}
+            </button>
           </div>
           <div className="he-fegyver-alcim">{alcím}</div>
           {hasError && <span className="he-mf-error">{errorText}</span>}

@@ -877,7 +877,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
 ### Fegyverek
 - Fegyver példány kártyák listája
 - Kompakt kártya (2026-11):
-  - Cím: becenév, ha van, különben a fegyver típusneve (MK fegyvereknél suffix nélkül); mellette `MF N` jelvény (fortély-lila, csak MF > 0 vagy hiba esetén; hibánál piros), alatta a hiba-sor.
+  - Cím: becenév, ha van, különben a fegyver típusneve (MK fegyvereknél suffix nélkül); mellette az MF fok pöttyökben (`.he-mf-dots`: max fok darab, teli / üres, fakó fortély-lila, mint a fortély fok-pöttyök; mindig látszik, 0-nál mind üres; hibánál piros; koppintás → MF fok választó), alatta a hiba-sor.
   - Alcím (12px, halvány): `típusnév (csak ha becenév a cím) · anyag (csak fém fegyvernél) · Idea N`.
   - Jobb felül ikon-gombok (keret nélkül): csomag = Felszerelésben toggle (zöld = igen, halvány = nem), ceruza = szerkesztés menü, ✕ = törlés (megerősítő popup).
   - Statisztika (keret nélkül, monospace, két sor): `TÉ N · VÉ N · SP N` / `Sebesség N · Ár Nx` (TÉ kék, VÉ narancs; `FegyverChip`, `fegyverÁr` szorzó; `ár_alap=null` fixed fegyvernél nincs ár, → engine_spec §43.2).

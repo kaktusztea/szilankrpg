@@ -125,13 +125,13 @@
 /* --- Közelharci fegyverkártya (kompakt): cím + MF jelvény, alcím, ikon-gombok, statisztika-sor --- */
 .he-fegyver-cim { flex: 1; min-width: 0; }
 .he-fegyver-nev { display: flex; align-items: center; gap: 6px; font-size: 17px; font-weight: bold; line-height: 1.25; }
-.he-mf-badge {
-  display: inline-flex; align-items: center; height: 20px; padding: 0 7px;
-  /* Faded fortély purple (--color-fortely #ce93d8 at reduced strength) */
-  border: 1px solid rgba(206, 147, 216, 0.45); border-radius: 10px;
-  color: #a98bb0; font-size: 12px; font-weight: bold; white-space: nowrap;
-}
-.he-mf-badge.he-error { border-color: var(--error); color: var(--error); }
+/* MF fok dots: faded fortély purple (--color-fortely #ce93d8), filled / empty; red outline on requirement error */
+/* Button: tap = MF fok picker; padding enlarges the tap area around the small dots */
+.he-mf-dots { display: inline-flex; gap: 3px; align-items: center; margin-left: -4px; padding: 6px; background: none; border: none; cursor: pointer; }
+.he-mf-dot { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid rgba(206, 147, 216, 0.55); box-sizing: border-box; }
+.he-mf-dot.filled { background: #a98bb0; border-color: #a98bb0; }
+.he-mf-dots.he-error .he-mf-dot { border-color: var(--error); }
+.he-mf-dots.he-error .he-mf-dot.filled { background: var(--error); }
 .he-fegyver-alcim { font-size: 12px; color: var(--text-dim); margin-top: 1px; }
 .he-fegyver-ikonok { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
 .he-ikon-btn {
