@@ -14,6 +14,11 @@ import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '.
 import './ProbaHub.css';
 import { fortélyBónuszokTulajdonságonként, fortélyBónuszokKépzettségenként, próbaEnyhítésekKépzettségenként } from '../engine/proba/proba-forrasok';
 
+/** Die-type label next to a section header (same look as the Képzettség row roll button). */
+function KockaChip({ kocka }: { kocka: number }) {
+  return <span className="kocka-chip"><Ikon név="kocka" méret={15} />k{kocka}</span>;
+}
+
 interface Props {
   data: GameData;
   karakter: Karakter;
@@ -85,7 +90,8 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
       {hubNyitva && !cél && (
         <PopupOverlay onClose={() => setHubNyitva(false)} className="kep-prompt proba-hub-popup" overlayClassName="proba-hub-overlay">
           <button type="button" className="kep-proba-close-btn proba-hub-close-btn" onClick={() => setHubNyitva(false)} title="Bezárás" aria-label="Bezárás"><Ikon név="bezár" /></button>
-          <h3 className="proba-hub-header">Harci dobás</h3>
+          {/* Combat rolls are k20 (dice.ts rollK20 - not a konstans) */}
+          <h3 className="proba-hub-header">Harci dobás <KockaChip kocka={20} /></h3>
           <div className="proba-hub-grid proba-hub-grid-4">
             <button className="proba-hub-chip proba-hub-chip-harc" onClick={() => {
               const { ké } = harcFejlécÉrtékek(data, karakter);
@@ -97,7 +103,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
             <button className="proba-hub-chip proba-hub-chip-harc proba-hub-chip-manover" title="Manőver (Harc fül)" aria-label="Manőver" onClick={() => { setHubNyitva(false); onHarciDobás('manőver'); }}>Manőver</button>
           </div>
 
-          <h3 className="proba-hub-header">Tulajdonságpróba</h3>
+          <h3 className="proba-hub-header">Tulajdonságpróba <KockaChip kocka={data.konstansok.próba.tulajdonság.kocka} /></h3>
           <div className="proba-hub-grid">
             {tulajdonságok.map(t => (
               <button key={t} className="proba-hub-chip proba-hub-chip-tul" onClick={() => setCél({ típus: 'tulajdonság', kulcs: t })}>
@@ -106,7 +112,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
             ))}
           </div>
 
-          <h3 className="proba-hub-header">Képzettségpróba</h3>
+          <h3 className="proba-hub-header">Képzettségpróba <KockaChip kocka={data.konstansok.próba.képzettség.kocka} /></h3>
           <div className="proba-hub-grid proba-hub-grid-2">
             <button className="proba-hub-chip proba-hub-chip-kepzetlen" onClick={() => setCél({ típus: 'képzetlen' })}>
               Képzetlenül

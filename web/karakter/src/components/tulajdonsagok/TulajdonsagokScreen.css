@@ -212,16 +212,8 @@
 .tul-test-reset-btn:active { opacity: 1; }
 
 /* --- Képzettségpróba dobás (Játék mód) --- */
-.kep-proba-dice-btn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  opacity: 0.8;
-  padding: 2px 4px;
-  line-height: 1;
-}
-.kep-proba-dice-btn:active { opacity: 1; }
+.kep-proba-dice-btn { cursor: pointer; }  /* look: .kocka-chip (common.css) */
+.kep-proba-dice-btn:active { border-color: var(--text-soft); }
 
 .kep-proba-popup {
   display: flex;

@@ -358,3 +358,21 @@
 .dim { font-size: 17px; color: var(--text-dim); }
 /* Inline SVG icon (Ikon component): sits on the text baseline like a glyph */
 .ikon { vertical-align: -0.125em; flex-shrink: 0; }
+
+/* --- Kocka chip: small die icon + die type ("k10"). Button (Képzettség row) or label (Próba hub headers). --- */
+.kocka-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 7px 0 5px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+}
+.kocka-chip .ikon { color: var(--text-soft); }

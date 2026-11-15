@@ -22,13 +22,34 @@ const IKONOK = {
   qr: QrCode, link: Link, vágólap: ClipboardList, könyv: BookOpen, telefon: Smartphone,
 } satisfies Record<string, LucideIcon>;
 
-export type IkonNév = keyof typeof IKONOK;
+/** Own icons (no lucide equivalent), drawn on lucide's 24x24 grid. */
+function Kocka({ size, className }: { size: number | string; className: string }) {
+  // Six-sided die in perspective, outline (lucide stroke style) with a single pip on the top face:
+  // the pip is just enough to read as a die without the clutter of a full pip set.
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}
+      strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M12 2 21 7 21 17 12 22 3 17 3 7z" />
+      <path d="M3 7 12 12 21 7M12 12v10" />
+      <ellipse cx="12" cy="7" rx="1.9" ry="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+const SAJÁT_IKONOK = { kocka: Kocka };
+
+export type IkonNév = keyof typeof IKONOK | keyof typeof SAJÁT_IKONOK;
 
 /**
  * Decorative SVG icon. Default size 1em: scales with the surrounding font-size (like the emoji it replaces)
  * and inherits the text color. Hidden from screen readers - label the parent instead.
  */
 export function Ikon({ név, méret = '1em', className }: { név: IkonNév; méret?: number | string; className?: string }) {
-  const Komponens = IKONOK[név];
-  return <Komponens size={méret} className={className ? `ikon ${className}` : 'ikon'} aria-hidden="true" />;
+  const osztály = className ? `ikon ${className}` : 'ikon';
+  if (név in SAJÁT_IKONOK) {
+    const Saját = SAJÁT_IKONOK[név as keyof typeof SAJÁT_IKONOK];
+    return <Saját size={méret} className={osztály} />;
+  }
+  const Komponens = IKONOK[név as keyof typeof IKONOK];
+  return <Komponens size={méret} className={osztály} aria-hidden="true" />;
 }

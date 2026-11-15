@@ -66,12 +66,13 @@ input, textarea {
 
 /* --- Közös: Adatlap link ikon --- */
 .md-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  font-size: 14px;
-  opacity: 0.6;
+  font-size: 18px;
+  color: var(--text-soft);   /* neutral light grey: readable on the dark-blue rows (link blue was barely visible) */
   margin-left: 6px;
   vertical-align: middle;
 }
 .md-link:hover,
-.md-link:active { opacity: 1; }
+.md-link:active { color: var(--text); }

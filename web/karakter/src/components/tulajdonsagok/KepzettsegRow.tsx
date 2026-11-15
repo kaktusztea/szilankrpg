@@ -36,7 +36,7 @@ export function KepzettsegRow({
         <span className={`kep-név${overLimit || warning ? ' kep-over' : ''}`}>{displayName}</span>
         {gameMode && infoOpen && (
           <span className="kep-header-actions" onClick={e => e.stopPropagation()}>
-            <button className="kep-proba-dice-btn" title="Képzettségpróba dobás" onClick={() => setShowProba(true)}>🎲</button>
+            <button className="kocka-chip kep-proba-dice-btn" title="Képzettségpróba dobás" aria-label="Képzettségpróba dobás" onClick={() => setShowProba(true)}><Ikon név="kocka" méret={15} />k{próba.képzettség.kocka}</button>
           </span>
         )}
         <span className="kep-right">

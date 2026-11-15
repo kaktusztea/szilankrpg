@@ -64,6 +64,9 @@
   transform: none;
 }
 .proba-hub-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 10px 0 6px;
   font-size: 15px;
   text-align: left;
@@ -102,6 +105,8 @@
 /* Harci dobás chip hover: bordó keret. Dupla-class, mert a base .proba-hub-chip:hover később van. */
 .proba-hub-chip.proba-hub-chip-harc:hover {
   border-color: var(--color-harc-dobas);
+  /* +1px inner ring = 2px visual border without changing the chip size (no layout shift on hover) */
+  box-shadow: inset 0 0 0 1px var(--color-harc-dobas);
 }
 .proba-hub-chip {
   padding: 8px 6px;
