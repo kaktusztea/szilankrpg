@@ -90,7 +90,7 @@ Mágiában kisebb/nagyobb mellékhatások jelennek meg, különösen nagy hatalm
 
 ## Szociális ismeretek
 
-Az **Etikett**, **Befolyásolás** és **Emberismeret** képzettségek fedik le ezt az ismerethalmazt, de a meggyőzés, megfélemlítés, átverés jellegű szituációk nem intézhetőek el tisztán egy **Befolyásolás** vs. **Emberismeret** kockadobással - rengeteg múlik a KM és a játékos közti párbeszéden, illetve az elképzelt karaktereken is. A dobást kapcsolódó fortélyok még tovább könnyíthetik, de a szerepjáték részt nem pótolhatják. Bővebben lásd a [Befolyásolás](md/kepzettsegek.primer/altalanos/befolyasolas.md) képzettség leírását, azon belül a [Szerepjátékos módosító](md/kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3) bemutatását.
+Az **Etikett**, **Befolyásolás** és **Emberismeret** képzettségek fedik le ezt az ismerethalmazt, de a meggyőzés, megfélemlítés, átverés jellegű szituációk nem intézhetőek el tisztán egy **Befolyásolás** vs. **Emberismeret** kockadobással - rengeteg múlik a KM és a játékos közti párbeszéden, illetve az elképzelt karaktereken is. A dobást kapcsolódó fortélyok még tovább könnyíthetik, de a szerepjáték részt nem pótolhatják. Bővebben lásd a [Befolyásolás](md/kepzettsegek.primer/altalanos/befolyasolas.md) képzettség leírását, azon belül a [Szerepjátékos módosító](md/kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3) bemutatását.
 
 A rendszer tehát a **_szerep-játékra_** helyezi a hangsúlyt - szemben például egy számítógépes játékkal, ahol minden szociális szituáció dobással kerül elintézésre. Az élő játék egyik legnagyobb előnyét fontosnak tartottuk kiemelten kezelni.
 
@@ -5383,7 +5383,7 @@ Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi
 +0: Azonos nyelven beszéltek
 ```
 
-#### ⚜️  Szerepjátékos módosító
+#### ⚜️  Szerepjátékos módosító 1️⃣
 
 ```
 -3: a játékos nem feccöl bele túl sok
@@ -5396,7 +5396,7 @@ A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
 A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy dobásmódosítót.
 
-Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3).
 
 <br />
 
@@ -6220,7 +6220,7 @@ Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illet
 +3: Porok / nagyító / lámpák (ha segítenek)
 ```
 
-#### ⚜️ Szerepjátékos módosító
+#### ⚜️ Szerepjátékos módosító 1️⃣
 
 ```
 -3: a játékos nem feccöl bele túl sok
@@ -6233,7 +6233,7 @@ A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
 A játékos élőszóban elmondja, hogy mit, hogyan vizsgál át a nyomozás helyszínén, kit kérdez ki. Az ötletek, a kreativitás, a szerep kijátszásának minőségétől függően a KM ad egy dobásmódosítót.
 
-Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3).
 
 <br />
 
@@ -11444,7 +11444,8 @@ A képzettség magában foglalja a következőket:
 ```
 -6: Sziklás
 -3: Kemény
-+3: Puha, hó, sár
+ 0: átlagos erdőtalaj
++3: Puha föld, hó, sár
 ```
 
 ---
@@ -35084,7 +35085,7 @@ Klasszikus szociális helyzetek, melyekben az egyik fél különböző verbális
 
 🔆 Tartsuk észben, hogy ez egy **szerep-játék**, nem pedig társasjáték, így nem kell mindent a kocka döntsön el. A KM dönthet úgy, hogy a játékos meggyőző, - vagy ellenkezőleg - rendkívül bugyuta próbálkozása miatt egyáltalán nincs szükség dobásra. Ilyenkor automatikus siker és automatikus kudarc is megtörténhet.
 
-🔆 Opcionális befolyásoló tényező: [Befolyásolás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+🔆 Opcionális befolyásoló tényező: [Befolyásolás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3).
 
 ### ⚜️ Átverés, hazudozás
 
@@ -35095,7 +35096,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 
 - Tulajdonság: Intelligencia
 - Normál kiterjesztés: [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
-- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
+- Extra: A KM a játékos [előadásának](../kepzettsegek.primer/altalanos/befolyasolas.md#%EF%B8%8F--szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3), karakterének jelleme, háttere ismeretében adhat/levonhat extrát.
 
 `VS`
 
@@ -35861,7 +35862,7 @@ Hátas            SP
 
 Sokszor futunk bele karakterekbe, akikből megpróbálunk kihúzni némi információt. Nyilván nem mindenkit ejtettek a fejére, gyakran nem akarnak választ adni holmi jöttment idegeneknek. Ilyenkor jön jól a **Kihallgatás** fortély.
 
-🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3).
 
 ---
 
@@ -36645,7 +36646,7 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
 
 Példákhoz lásd e kapcsolódó fortélyok ↑ **Nyomozás** képzettséghez kapcsolódó leírásait.
 
-🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3)
+🔆 Opcionális módosító: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#%EF%B8%8F-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3-1%EF%B8%8F%E2%83%A3)
 
 <br />
 
