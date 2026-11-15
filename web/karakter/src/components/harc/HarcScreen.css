@@ -129,6 +129,7 @@
 .harc-header-bottom .harc-manover-btn {
   flex: 1;
   margin: 0;
+  font-size: 18px;  /* same as the MA / MP labels next to it */
 }
 
 .harc-header-bottom .mp-box {
