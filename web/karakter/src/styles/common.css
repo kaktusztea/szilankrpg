@@ -377,3 +377,20 @@
   line-height: 1;
 }
 .kocka-chip .ikon { color: var(--text-soft); }
+
+/* --- Quiet danger button: outline red, faded red label (+ optional icon). VÉ visszaállítás, Sebek törlése. --- */
+.btn-halvany-veszely {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  background: none;
+  border: 1px solid rgba(244, 67, 54, 0.6);
+  border-radius: 4px;
+  color: #ef9a9a;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-halvany-veszely:active { background: rgba(244, 67, 54, 0.12); }

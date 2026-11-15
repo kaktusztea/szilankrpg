@@ -1,5 +1,6 @@
 import type { Session } from '../../engine/types';
 import { PopupOverlay } from '../PopupOverlay';
+import { Ikon } from '../common/Ikon';
 
 interface HarcPopupsProps {
   session: Session;
@@ -15,14 +16,15 @@ export function HarcPopups({ session, showVéHistory, támInfo, onVéReset, onCl
   return (
     <>
       {showVéHistory && (
-        <PopupOverlay onClose={onCloseAll}>
+        <PopupOverlay onClose={onCloseAll} centerText>
           <label className="harc-popup-label">VÉ csökkenés történet</label>
           <div className="harc-popup-text ve-history-list">
             {session.vé_history.length === 0 ? '-' : session.vé_history.map((v, i) => (
               <span key={i}>{v > 0 ? `+${v}` : String(v)}</span>
             ))}
           </div>
-          <button className="btn-del-confirm kep-prompt-btn-confirm ve-history-reset" onClick={onVéReset}>VÉ Reset</button>
+          {/* Quiet (outline) danger button: this popup is mainly for viewing */}
+          <button className="btn-halvany-veszely ve-history-reset" onClick={onVéReset}><Ikon név="reset" />Visszaállítás</button>
         </PopupOverlay>
       )}
 

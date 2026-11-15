@@ -314,8 +314,8 @@
 .harc-confirm-center { display: flex; align-items: center; justify-content: center; }
 .harc-popup-label { font-weight: bold; }
 .harc-popup-text { font-size: 15px; color: var(--text); }
-.ve-history-list { display: flex; flex-wrap: wrap; gap: 4px 8px; max-width: 200px; }
-.ve-history-reset { margin-top: 12px; }
+.ve-history-list { display: flex; flex-wrap: wrap; justify-content: center; align-self: center; gap: 4px 8px; max-width: 200px; }
+.ve-history-reset { align-self: center; margin-top: 12px; }  /* look: .btn-halvany-veszely (common.css) */
 .harc-popup-col { font-size: 15px; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
 .harc-popup-detail { font-size: 13px; color: var(--text-dim); padding-left: 4px; }
 

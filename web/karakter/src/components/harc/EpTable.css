@@ -48,6 +48,10 @@
   cursor: default;
 }
 
+/* ÉP reset confirm: same structure as the other delete confirms (title, description, red button) */
+.ep-reset-confirm { align-items: center; text-align: center; width: 260px; max-width: 90vw; box-sizing: border-box; }
+.ep-reset-confirm-btn { align-self: center; }  /* look: .btn-halvany-veszely (common.css) */
+
 /* --- Grid --- */
 .ep-grid { display: flex; gap: 2px; }
 

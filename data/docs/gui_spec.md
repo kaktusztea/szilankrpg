@@ -456,9 +456,9 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - -3/-2/-1: VÉ csökkentés (disabled ha minden fegyver VÉ = 0 a táblázatban)
   - +1: VÉ visszaadás (disabled ha csökkenés = 0)
   - Előzmény-összevonás: azonos irányú változások `VÉ_COALESCE_MS` (5 s) ablakon belül egy bejegyzésbe kerülnek (-1, -2 → -3). Bármely más interakció a VÉ gombokon kívül (kattintás, menü, popup, fülváltás, billentyű) megszakítja az ablakot.
-  - Reset: csak a VÉ csökkenés történet popup alján lévő piros "VÉ Reset" gombbal. A csökkenés-jelző chip (`-N`, csak ha csökkenés > 0) nem reset: ugyanazt a történet popupot nyitja, mint az érték.
+  - Reset: csak a VÉ csökkenés történet popup alján lévő `Visszaállítás` gombbal (halvány, piros keretes, fakó piros felirat). A csökkenés-jelző chip (`-N`, csak ha csökkenés > 0) nem reset: ugyanazt a történet popupot nyitja, mint az érték.
   - VÉ oszlop flash: sárga animáció csökkenéskor, zöld animáció +1-nél (1s fade-out)
-  - Koppintás a label-re, az értékre vagy a csökkenés-jelző chipre: VÉ csökkenés történet popup (pl. "-3; -2; +1") + alján piros "VÉ Reset" gomb, mellé kopp bezárja
+  - Koppintás a label-re, az értékre vagy a csökkenés-jelző chipre: VÉ csökkenés történet popup (pl. "-3; -2; +1") + alján halvány, piros keretes `Visszaállítás` gomb (`reset` ikon, fakó piros felirat; azonnal visszaállít), mellé kopp bezárja
 - **Fegyver infó popup**: a fegyvertábla ELSŐ oszlopa (fegyver név, pontozott aláhúzás) kattintható → **FegyverInfoPopup** overlay (`PopupOverlay`: portál + Escape + mellé-katt). Tartalom:
   - Meta info-grid: `Harcmodor: <név>: <szint>. szint`, `Anyag` (a felvett példányé), `Idea` (példány; ha eltér a fegyver alap Ideájától: `<idea> (alap: <default>)`), `Extrák` (a fegyver v2 extráinak nevei, vesszővel).
   - Harcértékek aktoronként (módonként) tábla: Aktor (+ elsődleges/másodlagos jelzés), TÉ, VÉ, SP (+jelleg), Át(ütés), Tám(adások). CSAK a fegyver-harcértékek (a `FegyverResult.módok`-ból), taktika/páncél/fogás módosító NÉLKÜL - statikus referencia.
@@ -476,7 +476,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 - **ÉP táblázat**:
   - **Fejléc sor** (4 oszlopos grid, S1-S4-hez igazítva):
     - S1 pozíció: `ÉP: X(Y)` - X=max ÉP, Y=megmaradt ÉP
-    - S2 pozíció: ÉP reset gomb (`reset` ikon, keret és háttér nélkül, 22px, centered; disabled ha nincs seb, megerősítő popup: piros "ÉP Reset" gomb)
+    - S2 pozíció: ÉP reset gomb (`reset` ikon, keret és háttér nélkül, 22px, centered; disabled ha nincs seb, megerősítő popup: „Sebek törlése" cím + „Mind a N kitöltött rubrika kiürül. A visszavonás listából visszahozható." + halvány, piros keretes „Törlés" gomb (`reset` ikon, fakó piros felirat, `.btn-halvany-veszely` - mint a VÉ visszaállítás); mégse = mellé kopp / Escape)
     - S3 pozíció: `⚔️ Seb` gomb (overlay popup, disabled ha minden rubrika ÉP sebekkel betelt)
     - S4 pozíció: `💚 Gyógy` gomb (overlay popup, disabled ha nincs seb)
   - 4 oszlop (S1-S4), mindegyikben ÉP/4 db rubrika

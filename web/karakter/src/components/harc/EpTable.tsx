@@ -108,8 +108,11 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
       )}
       {showResetConfirm && (
         <DialogPortal onClose={() => setShowResetConfirm(false)}>
-          <div className="kep-prompt harc-confirm-center" onClick={e => e.stopPropagation()}>
-            <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={reset}>ÉP Reset</button>
+          {/* Title + what happens + quiet danger confirm (same look as the VÉ visszaállítás); cancel = tap outside / Escape */}
+          <div className="kep-prompt ep-reset-confirm" onClick={e => e.stopPropagation()}>
+            <label className="kep-prompt-label-bold">Sebek törlése</label>
+            <span className="overlay-desc-dim">Mind a {kitöltött} kitöltött rubrika kiürül. A visszavonás listából visszahozható.</span>
+            <button className="btn-halvany-veszely ep-reset-confirm-btn" onClick={reset}><Ikon név="reset" />Törlés</button>
           </div>
         </DialogPortal>
       )}
