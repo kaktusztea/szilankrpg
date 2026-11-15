@@ -1,7 +1,7 @@
 import {
   Activity, BookOpen, BowArrow, Check, ChevronDown, ChevronRight, ClipboardList, Download, FileText, Folder,
   Gamepad2, Heart, IdCard, Lightbulb, Link, Lock, Maximize, Package, Pencil, Plus, QrCode, RefreshCw, RotateCcw,
-  Save, Share2, Shield, Signal, Skull, Smartphone, Sparkles, Sword, Swords, Undo2, User, Wrench, X, Zap,
+  Save, Share2, Shield, Signal, Skull, Smartphone, Sparkles, Sword, Swords, Trash2, Undo2, User, Wrench, X, Zap,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const IKONOK = {
   // UI marks
   bezár: X, pipa: Check, kudarc: X, reset: RotateCcw, visszavon: Undo2, frissít: RefreshCw,
   lenyit: ChevronDown, jobbra: ChevronRight, szerkeszt: Pencil, zár: Lock, infó: Lightbulb,
-  teljesképernyő: Maximize, új: Plus,
+  teljesképernyő: Maximize, új: Plus, kuka: Trash2,
   // tabs and modes
   aktív: Activity, harc: Sword, távharc: BowArrow, pajzs: Shield, misztikus: Sparkles,
   játék: Gamepad2, szerk: Wrench, karakter: User,

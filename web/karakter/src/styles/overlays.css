@@ -140,10 +140,12 @@
 .undo-entry-target { border-color: var(--color-negative); }
 .undo-apply-btn { margin-top: 8px; padding: 8px; border-radius: 4px; background: var(--border); color: #fff; border: none; cursor: default; opacity: 0.5; }
 .undo-apply-active { background: var(--color-negative); cursor: pointer; opacity: 1; }
-.undo-header { display: flex; align-items: center; justify-content: center; gap: 8px; }
-.undo-reset-btn { background: none; border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); font-size: 14px; padding: 2px 6px; cursor: pointer; line-height: 1; }
+/* Title alone and truly centered; the (destructive) clear button sits out of flow in the top-right corner,
+   like the reset button of the próba popups */
+.undo-header { position: relative; display: flex; align-items: center; justify-content: center; min-height: 30px; }
+.undo-reset-btn { position: absolute; right: -4px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; background: none; border: none; color: var(--text-dim); font-size: 22px; padding: 4px; cursor: pointer; line-height: 1; }
 .undo-reset-btn:disabled { opacity: 0.3; cursor: default; }
-.undo-reset-btn:not(:disabled):hover { color: var(--error); border-color: var(--error); }
+.undo-reset-btn:not(:disabled):hover { color: var(--error); }
 
 /* --- 6. Fullscreen overlay (jegyzetek/naplo) --- */
 .fullscreen-overlay { position: fixed; inset: 0; width: 100%; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; background: var(--bg); z-index: 101; }

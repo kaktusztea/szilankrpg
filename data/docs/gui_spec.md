@@ -150,7 +150,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
 
 ### Undo overlay
-- Felugró popup: "Visszavonás" cím + "⟲" reset gomb (előzmények teljes törlése, disabled ha üres stack)
+- Felugró popup: "Visszavonás" cím (pontosan középen) + kuka ikon gomb a jobb felső sarokban (`kuka`, keret nélkül, 22px; előzmények teljes törlése, megerősítés nélkül; disabled ha üres stack)
 - Lista: legutóbbi felül, legrégebbi alul (max 6)
 - Kiválasztás: kattintás → a kiválasztott + felette lévők piros háttérrel kiemelve
 - "Visszaállítás (N művelet)" gomb: piros, csak kiválasztás után aktív
