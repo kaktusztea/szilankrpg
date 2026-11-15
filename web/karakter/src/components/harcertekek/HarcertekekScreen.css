@@ -139,3 +139,16 @@
 .he-stat-sisak.on { color: var(--success); opacity: 1; }
 /* Tappable stat (no link underline), e.g. Végtag → végtagvédettség picker */
 .he-stat-gomb { background: none; border: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+
+/* Mobile: every text size on the Harcértékek cards +2px (uses the free width, easier to read) */
+@media (max-width: 480px) {
+  .he-section h3 { font-size: 19px; }
+  .he-fegyver-nev { font-size: 19px; }
+  .he-fegyver-alcim { font-size: 14px; }
+  .he-stat-sor { font-size: 16px; }
+  .he-stat-fo { font-size: 17px; }
+  .he-ikon-btn { font-size: 21px; }
+  .he-stat-sisak { font-size: 18px; }
+  .he-add-select { font-size: 18px; }
+  .he-mf-error { font-size: 13px; }
+}
