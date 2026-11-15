@@ -476,7 +476,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 - **ÉP táblázat**:
   - **Fejléc sor** (4 oszlopos grid, S1-S4-hez igazítva):
     - S1 pozíció: `ÉP: X(Y)` - X=max ÉP, Y=megmaradt ÉP
-    - S2 pozíció: `⟲ ÉP reset` gomb (centered, max-width 70%, disabled ha nincs seb, megerősítő popup: piros "ÉP Reset" gomb)
+    - S2 pozíció: ÉP reset gomb (`reset` ikon, keret és háttér nélkül, 22px, centered; disabled ha nincs seb, megerősítő popup: piros "ÉP Reset" gomb)
     - S3 pozíció: `⚔️ Seb` gomb (overlay popup, disabled ha minden rubrika ÉP sebekkel betelt)
     - S4 pozíció: `💚 Gyógy` gomb (overlay popup, disabled ha nincs seb)
   - 4 oszlop (S1-S4), mindegyikben ÉP/4 db rubrika

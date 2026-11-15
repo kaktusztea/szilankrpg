@@ -308,7 +308,6 @@
 .sp-bonus-pos { color: var(--success); }
 .sp-bonus-neg { color: var(--error); }
 .harc-monospace { font-family: monospace; }
-.btn-reset-sm { font-size: 15px; }
 .harc-fegyver-active-row { border: 2px solid var(--color-taktika); }
 
 /* --- Popup helpers --- */

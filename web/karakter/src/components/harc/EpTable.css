@@ -14,8 +14,7 @@
 }
 
 .ep-table-header .btn-seb,
-.ep-table-header .btn-heal,
-.ep-table-header .btn-reset {
+.ep-table-header .btn-heal {
   padding: 4px 6px;
   border-radius: 4px;
   border: 1px solid var(--border-input);
@@ -26,7 +25,21 @@
 
 .ep-table-header .btn-seb { background: var(--accent); color: #fff; }
 .ep-table-header .btn-heal { background: var(--success); color: #000; }
-.ep-table-header .btn-reset { background: var(--input-bg); color: var(--text); max-width: 70%; justify-self: center; }
+.ep-table-header .btn-reset {
+  /* Borderless, larger icon (same style as the Visszavonás clear button) */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  background: none;
+  border: none;
+  padding: 2px;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.ep-table-header .btn-reset:not(:disabled):active { color: var(--text); }
 
 .ep-table-header .btn-seb:disabled,
 .ep-table-header .btn-heal:disabled,
@@ -77,7 +90,6 @@
 
 .btn-seb { border-color: #c0392b !important; }
 .btn-heal { border-color: #27ae60 !important; }
-.btn-reset { border-color: #666 !important; }
 
 /* --- Dialógus --- */
 .ep-dialog {
