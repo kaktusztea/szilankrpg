@@ -60,7 +60,8 @@
 /* A közös kep-proba-close-btn a popup sarkához igazodik (itt nincs header-konténer). */
 .proba-hub-close-btn {
   top: 8px;
-  left: 8px;
+  left: auto;
+  right: 8px;
   transform: none;
 }
 .proba-hub-header {
@@ -75,7 +76,7 @@
 /* Az első header az X gomb mellett kezdődik (a gomb az első gyerek). */
 .proba-hub-close-btn + .proba-hub-header {
   margin-top: 0;
-  padding-left: 28px;
+  padding-right: 28px;
 }
 .proba-hub-grid {
   display: grid;
