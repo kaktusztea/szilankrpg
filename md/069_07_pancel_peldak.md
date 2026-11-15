@@ -40,26 +40,26 @@ MGT: 9
  -2: Erő MGT csökkentése
 ```
 
-### Ár: `16x`
+### Ár: `160x`
 
 ```
-Torzó: 10x ár
-  10x (Struktúra Sodrony)
-   1x (Alapanyag: Acél)
-   1x (Idea: Átlagos)
+Torzó: 100x ár
+  100x (Struktúra Sodrony)
+    1x (Alapanyag: Acél)
+    1x (Idea: Átlagos)
 ```
 
 ```
-Csatolt tagok ára: 6x ár
+Csatolt tagok ára: 60x ár
   1/5x (1db alap szorzója)
-  10x  (Torzó ár)
-   1x  (Kidolgozottság "átlagos")
-   3x  (Csatolt tagok db)
+  100x (Torzó ár)
+    3x (Csatolt tagok db)
 ```
 
 ```
-Végleges ár: 13x
-  10x + 6x
+Végleges ár: 160x
+  (100x + 60x)
+  x 1x (Kidolgozottság "átlagos")
 ```
 
 Azaz egy átlagos bőr torzódarab `16`-szeresének megfelelő pénzbe kerül a fenti teljes sodrony páncélszett.
@@ -103,28 +103,28 @@ MGT: 26
  -1: Erő MGT csökkentése
 ```
 
-### Ár: `7,5x`
+### Ár: `75x`
 
 ```
-Torzó: 5x ár
-  100x (Struktúra Lemez)
-  0,5x (Alapanyag: Bronz)
-  0,1x (Idea vacak)
+Torzó: 75x ár
+  1000x (Struktúra Lemez)
+   0,5x (Alapanyag: Bronz)
+  0,15x (Idea vacak)
 
-(100x x 0,5x x 0,1)
+(1000x x 0,5x x 0,15x)
 ```
 
 ```
-Csatolt tagok ára: 2,5x
+Csatolt tagok ára: 75x
   1/5x (1db alap szorzója)
-  5x   (Torzó ár)
-  0,5x (Kidolgozottság "pocsék")
+  75x  (Torzó ár)
   5x   (Csatolt tagok db)
 ```
 
 ```
-Végleges ár: 7,5x
-  (5x + 2,5x)
+Végleges ár: 75x
+  (75x + 75x)
+  x 0,5x (Kidolgozottság "pocsék")
 ```
 
  Azaz egy átlagos bőr mellvért árának `7,5`-szeresének megfelelő pénzbe kerül a fenti teljes gyatra páncélszett.
