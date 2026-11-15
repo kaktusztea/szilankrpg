@@ -4,7 +4,7 @@ import type { HintType } from '../../hooks/useHint';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { buildPancelLookups } from '../../engine/harc/pancel-calc';
 import { árFormátum } from '../formatters';
-import { useState, Fragment } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { Ikon } from '../common/Ikon';
 import { ListaPicker } from '../picker/ListaPicker';
 import { FokPottyok } from '../common/FokPottyok';
@@ -59,6 +59,9 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
   const aktStruktúra = struktúrák.find(s => s.struktúra === k.páncél.alap);
   const hasAlap = !!k.páncél.alap;
   const [szerkNyitva, setSzerkNyitva] = useState(false);
+  // Armour removed (Struktúra "- nincs -" chosen from the menu): drop the pending menu reopen,
+  // otherwise it would pop up the next time an armour is picked.
+  useEffect(() => { if (!hasAlap && szerkNyitva) setSzerkNyitva(false); }, [hasAlap, szerkNyitva]);
 
   const { sfé_fizikai, sfé_energia, mgt, ár } = calcPancelValues(k, data);
   const fémalapanyag = k.páncél.fémalapanyag || konstansok.páncél_fémalapanyagok[0]?.anyag || '';
@@ -138,7 +141,8 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
           <button type="button" className="he-add-select" onClick={() => onPopup('struktúra')}>+ Páncél választása...</button>
         )}
       </div>
-      {szerkNyitva && (
+      {/* hasAlap: after choosing "- nincs -" as Struktúra the menu does not come back for a removed armour */}
+      {szerkNyitva && hasAlap && (
         <ListaPicker title={k.páncél.alap} onClose={() => setSzerkNyitva(false)}
           opciók={[
             { érték: 'struktúra', név: 'Struktúra', infó: k.páncél.alap },
@@ -147,7 +151,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
             { érték: 'méret', név: 'Méret', infó: k.páncél.méret_illeszkedés },
             { érték: 'idea', név: 'Idea', infó: String(k.páncél.idea), disabled: !ideaSzerkeszthető, megjegyzés: ideaSzerkeszthető ? undefined : 'ennél a struktúránál nem állítható' },
             { érték: 'végtagvédettség', név: 'Végtagvédettség', infó: String(k.páncél.végtagvédettség) },
-            { érték: 'sisak', név: 'Sisak', infó: k.páncél.sisak ? 'igen' : 'nem' },
+            { érték: 'sisak', név: 'Sisak', infó: k.páncél.sisak ? 'igen' : 'nem', marad: true },
             { érték: 'rongálódás', név: 'Rongálódás', infó: String(k.páncél.rongálódás) },
           ]}
           onVálaszt={mező => {

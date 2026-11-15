@@ -10,6 +10,8 @@ interface ListaOpció {
   megjegyzés?: string;
   /** Short stats on the same line, right of the name (e.g. "CÉ: 5, SP: 8, Osz: 3"). */
   infó?: string;
+  /** Toggle-like row: choosing it keeps the picker open (the row's infó shows the new state). */
+  marad?: boolean;
 }
 
 interface ListaPickerProps {
@@ -28,7 +30,7 @@ export function ListaPicker({ title, opciók, aktív, onVálaszt, onClose }: Lis
       {opciók.map(o => (
         <button type="button" key={o.érték} disabled={o.disabled}
           className={`aktiv-picker-item${o.érték === aktív ? ' active' : ''}${o.disabled ? ' aktiv-picker-disabled' : ''}`}
-          onClick={() => { onVálaszt(o.érték); onClose(); }}>
+          onClick={() => { onVálaszt(o.érték); if (!o.marad) onClose(); }}>
           <span className="lista-picker-sor">
             <span className="aktiv-picker-item-name">{o.érték === aktív ? <><Ikon név="pipa" /> </> : null}{o.név}</span>
             {o.infó && <span className="lista-picker-info">{o.infó}</span>}

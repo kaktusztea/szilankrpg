@@ -895,7 +895,8 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
 - MK (másfélkezes) fegyverek: 1 kártya a Harcértékek fülön, 2 sor a Harc fülön (1K + 2K)
 - Mesterfegyver szinkron: MF fok módosítás → `syncMfFortelyok` frissíti a fortélyok tömböt
 
-- **Idea választó** (`IdeaSkala`, `common/PickerComponents.tsx`; fegyver / páncél / távfegyver közös): egysoros skála min..0..max (negatív oldal halványpiros, pozitív halványzöld, 0 kiemelt), alatta előnézet (címke + érték + változás). Koppintás → azonnal beállít, a popup NYITVA marad (a többi fok kipróbálható, az előnézet frissül); a már kiválasztott értékre újra koppintva → bezárul (minden bezárul, a szerkesztés menübe sem tér vissza); mellé koppintás / Escape → bezárul (a szerkesztés menüből nyitva vissza a menübe).
+- **Idea választó** (`IdeaSkala`, `common/PickerComponents.tsx`; fegyver / páncél / távfegyver közös): egysoros skála min..0..max (negatív oldal halványpiros, pozitív halványzöld, 0 kiemelt), alatta előnézet (címke + érték + változás). Koppintás → azonnal beállít, a popup NYITVA marad (a többi fok kipróbálható, az előnézet frissül); a már kiválasztott értékre újra koppintva, mellé koppintással vagy Escape-pel → bezárul.
+- **Szerkesztés menü al-ablakai** (fegyver / páncél ceruza-menü): minden menüből nyitott al-ablak bezáráskor (választás után ÉS mellé koppintás / Escape / Mégse esetén is) visszatér a szerkesztés menübe (`usePopupState.nyitMenüből` + `close`). A közvetlenül (nem a menüből) nyitott popupok (pl. MF pöttyök, MGT, Rongálódás, Végtag) egyszerűen bezárulnak. Kapcsoló jellegű menüsor (Sisak) koppintásra vált, a menü nyitva marad (`ListaPicker` `marad`). Páncél eltávolításakor (Struktúra „- nincs -”) a menü nem tér vissza.
 
 ### Páncél
 Kompakt kártya (2026-11, a fegyverkártya mintájára; `.he-fegyver-card`):
