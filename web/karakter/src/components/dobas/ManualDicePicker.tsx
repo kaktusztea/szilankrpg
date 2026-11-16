@@ -34,6 +34,10 @@ export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, side
 
   const szintLabel = szint != null ? (előnyHátrányLabel(szint) || null) : null;
 
+  const kezdő = min ?? (sides === 20 ? 0 : 1);
+  const értékek = Array.from({ length: sides - kezdő + 1 }, (_, i) => i + kezdő);
+  const oszlopok = értékek.length <= 7 ? értékek.length : értékek.length % 5 === 0 ? 5 : 7;
+
   return (
     <>
       {link
@@ -50,8 +54,10 @@ export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, side
               </div>
             )}
             {alapÉrték == null && szintLabel && <div className="manual-dice-szint">{szintLabel}</div>}
-            <div className="manual-dice-grid">
-              {Array.from({ length: sides - (min ?? (sides === 20 ? 0 : 1)) + 1 }, (_, i) => i + (min ?? (sides === 20 ? 0 : 1))).map(v => (
+            {/* Column count fitted to the value count, so every row is full and the grid stays centered under the
+                labels (k6: 1 row of 6, k10: 2 rows of 5, k20 0-20: 3 rows of 7). A fixed 7 left gaps at the right. */}
+            <div className="manual-dice-grid" style={{ gridTemplateColumns: `repeat(${oszlopok}, 36px)` }}>
+              {értékek.map(v => (
                 <button key={v} className="fort-fok-btn"
                   onClick={() => { setOpen(false); onSelect(v); }}>{v}</button>
               ))}

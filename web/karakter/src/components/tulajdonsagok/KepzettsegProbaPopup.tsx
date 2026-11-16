@@ -324,7 +324,7 @@ export function KepzettsegProbaPopup({
 
         {/* --- Dobás / Eredmény szekció --- */}
         {erősTiltott ? (
-          <div className="kep-proba-tiltott">{státuszEH.tiltott ? `${státuszEH.források[0] || 'Automatikus kudarc'}` : 'Nem dobhatsz'}</div>
+          <div className="kep-proba-tiltott">{státuszEH.tiltott ? `${státuszEH.források[0] || 'Automatikus kudarc'}` : felszNemHarcol ? <>Automatikus kudarc<br />(felszerelés túlterhelés)</> : 'Nem dobhatsz'}</div>
         ) : !vanEredmény ? (
           <>
             {kész && (

@@ -321,12 +321,6 @@
   50% { border-color: var(--warning); box-shadow: 0 0 7px 1px rgba(255, 179, 0, 0.5); }
 }
 .kep-proba-neh-tobbi { text-align: center; opacity: 0.7; padding: 2px 0; }
-.kep-proba-neh-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 8px;
-}
 .kep-proba-dual-list {
   display: flex;
   gap: 8px;
@@ -340,7 +334,6 @@
 }
 .kep-proba-dual-col .he-field-btn { white-space: nowrap; }
 /* Tiltott célszám-chip (pl. Ellenpróba, amíg Másodlagos próba aktív): szürke + nem kattintható. */
-.kep-proba-neh-list .he-field-btn:disabled,
 .kep-proba-dual-col .he-field-btn:disabled {
   opacity: 0.35;
   cursor: default;
@@ -635,16 +628,6 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-eh-nyil .ikon { transition: transform 0.15s ease-out; }
 .kep-proba-eh-nyil.nyitva .ikon { transform: rotate(180deg); }
 
-.kep-proba-felsz-warn {
-  margin: 4px 0;
-  padding: 5px 8px;
-  border: 1px solid var(--warning);
-  border-radius: 5px;
-  background: rgba(255, 179, 0, 0.1);
-  color: var(--warning);
-  font-size: 12px;
-  text-align: center;
-}
 
 /* --- Képzettségpróba, plan B: two plain columns (no chip boxes), labeled; everything stays one tap --- */
 .kep-proba-oszlop-cim { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.3px; padding: 0 6px 2px; }
@@ -717,9 +700,13 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .proba-mod-sav button.active { background: rgba(144, 202, 249, 0.22); color: var(--text); font-weight: bold; }
 .proba-mod-sav button:disabled { opacity: 0.35; cursor: default; }
 .kep-proba-celszam-lista { display: flex; flex-direction: column; gap: 1px; }
-.kep-proba-neh-list .kep-proba-celszam-lista { gap: 4px; }
 /* Rejtett: numbers faded (still tappable - a tap switches back to Ismert) */
 .kep-proba-celszam-lista.halvany { opacity: 0.4; }
 
 /* Kiterjesztő picker: "Törzstudás része" row - green check icon */
 .kep-proba-torzs-pipa { color: #81c784; margin-left: 4px; }
+
+/* Tulajdonságpróba: Összetett próba as one line under the E/H box (caption left, segmented bar right) */
+.kep-proba-osszetett-sor { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 2px; }
+.kep-proba-osszetett-sav { flex: 0 0 auto; margin-bottom: 0; }
+.kep-proba-osszetett-sav button { padding: 4px 10px; }

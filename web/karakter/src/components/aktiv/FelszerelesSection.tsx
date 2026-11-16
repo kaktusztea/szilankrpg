@@ -134,8 +134,10 @@ export function FelszerelesSection({ karakter, setKarakter, data }: Props) {
 
       {túlterhelt && (
         <div className="felsz-warning">
-          ⚠ Túlterhelt: Hátrány{hátrány.ehSzint} a Fizikai próbákra
-          {hátrány.nemHarcol && ' - nem tud harcolni, a próbák automatikus kudarcok'}
+          {/* md/010_03_06: -1 / -2 → Hátrány; below -2 the Hátrány no longer matters (no fighting, auto failure) */}
+          {hátrány.nemHarcol
+            ? <>⚠ Túlterhelt ({max - terhelés}): nem tud harcolni, a Fizikai próbák automatikus kudarcok</>
+            : <>⚠ Túlterhelt ({max - terhelés}): Hátrány{hátrány.ehSzint} a Fizikai próbákra</>}
         </div>
       )}
 

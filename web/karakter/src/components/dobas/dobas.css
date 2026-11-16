@@ -373,7 +373,7 @@
 
 .manual-dice-grid {
   display: grid;
-  grid-template-columns: repeat(7, 36px);
+  grid-template-columns: repeat(7, 36px);  /* default; the component sets the fitted column count inline */
   gap: 6px;
   justify-content: center;
 }
@@ -499,6 +499,8 @@
 .tamado-dobas-popup.sebzes-popup-fix { width: min(300px, 84vw); }
 /* Előny/Hátrány box: thin border around the stepper + its sources; the stepper fills the box */
 .elony-blokk { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px; border: 1px solid var(--border-light); border-radius: 10px; }
+/* No source list under the stepper → no frame (the frame only groups the stepper with its info lines) */
+.elony-blokk:not(:has(.forras-lista)) { padding: 0; border-color: transparent; }
 .elony-lepteto { display: flex; align-items: stretch; width: 100%; height: 38px; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }
 .elony-lepteto-pm { width: 44px; background: var(--input-bg); border: none; color: var(--text-soft); font-size: 20px; cursor: pointer; }
 .elony-lepteto-pm:disabled { opacity: 0.3; cursor: default; }

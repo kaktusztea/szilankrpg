@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Ikon } from '../common/Ikon';
+import { ElonyLepteto } from '../dobas/ElonyLepteto';
+import { ForrasLista } from '../dobas/ForrasLista';
+import type { DobásHatás } from '../../engine/harc/combat-roll-info';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
-import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
+import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat, ProbaModValaszto } from './ProbaReszek';
+import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -33,9 +35,12 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const [nehézség, setNehézség] = useState<number | null>(null);
   // Helyzetfüggő módosítók (fortély-bónuszok) külön picker popupban - a képzettségpróba mintájára.
   const [szitNyitva, setSzitNyitva] = useState(false);
-  const [ehBontásNyitva, setEhBontásNyitva] = useState(false);
   // A felszerelés-túlterhelés Hátránya a dobás alap EH-ja (a KM felülírhatja).
   const [ehSzint, setEhSzint] = useState(felszEH);
+  // Source list under the E/H stepper (same as the Támadó dobás): the only source here is Felszerelés túlterhelés
+  const ehForrások: DobásHatás[] = felszEH < 0 && !felszNemHarcol
+    ? [{ forrás: 'Felszerelés túlterhelés', cél: 'té_dobás', operátor: 'hátrány', érték: -felszEH }]
+    : [];
   const [összetettDb, setÖsszetettDb] = useState(0);
   const [ellenpróba, setEllenpróba] = useState(false);
 
@@ -55,14 +60,9 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
         <ProbaFejlec cím="Tulajdonságpróba" vanEredmény={d.vanEredmény} onReset={d.reset} onClose={onClose} />
         <div className="kep-proba-subtitle">{label} ({tulÉrték}){bónusz ? ` + ${bónusz} (fortély)` : ''}</div>
 
-        {(felszEH < 0 || felszNemHarcol) && (
-          <div className="kep-proba-felsz-warn">
-            ⚠ Felszerelés túlterhelés: Hátrány{felszEH} (Fizikai próba)
-            {felszNemHarcol && ' - automatikus kudarc / nem tud harcolni'}
-          </div>
-        )}
 
-        <div className="kep-proba-neh-list">
+        <div className="kep-proba-dual-col kep-proba-celszam-col">
+          <div className="kep-proba-oszlop-cim">Célszám</div>
           <ProbaModValaszto ellenpróba={ellenpróba} ismeretlen={ismeretlen} ellenTiltva={összetettDb > 0}
             onIsmert={váltás(() => { setEllenpróba(false); if (ismeretlen) setNehézség(null); })}
             onRejtett={váltás(() => { setEllenpróba(false); setNehézség(-1); })}
@@ -70,34 +70,39 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
           {!ellenpróba && (<div className={`kep-proba-celszam-lista${ismeretlen ? ' halvany' : ''}`}>
             {p.nehézségek.map(n => (
               <CelszamGomb key={n.érték} aktív={nehézség === n.érték} onClick={váltás(() => setNehézség(n.érték))}>
-                {n.érték} ({n.név})
+                <b>{n.érték}</b><span>{n.név}</span>
               </CelszamGomb>
             ))}
           </div>)}
         </div>
 
         {fortélyBónuszok.length > 0 && !d.vanEredmény && (
-          <div className="kep-proba-row">
-            <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash" onClick={() => setSzitNyitva(true)}>
-              <SzitChipFelirat összeg={bónusz} />
+          <div className="kep-proba-kapszulak">
+            <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash kep-proba-szit-btn" onClick={() => setSzitNyitva(true)}>
+              <span className="kep-proba-kap-cim kep-proba-szit-cim">Helyzetfüggő<br />módosító</span>
+              <span className={`kep-proba-szit-ertek${bónusz > 0 ? ' kep-proba-szit-pos' : bónusz < 0 ? ' kep-proba-szit-neg' : ' kep-proba-kap-ures'}`}>
+                {bónusz > 0 ? '+' : ''}{bónusz}
+              </span>
             </button>
           </div>
         )}
 
         {!d.vanEredmény && (
           <div className="kep-proba-extras-flat">
-            <div className="kep-proba-eh-row">
-              {ELŐNY_HÁTRÁNY_SZINTEK.map(e => (
-                <ExtraGomb key={e.szint} aktív={ehSzint === e.szint} onClick={váltás(() => setEhSzint(e.szint))}>
-                  {e.szint === 0 ? '-' : e.szint > 0 ? `E+${e.szint}` : `H${e.szint}`}
-                </ExtraGomb>
-              ))}
+            {/* Előny/Hátrány: the Támadó dobás stepper + its source list (here the only source is Felszerelés) */}
+            <div className="elony-blokk">
+              <ElonyLepteto szint={ehSzint} onChange={v => { setEhSzint(v); d.reset(); }} />
+              <ForrasLista hatások={ehForrások} szint={ehSzint} alapSzint={felszEH} onVissza={váltás(() => setEhSzint(felszEH))} />
             </div>
-            <div className="kep-proba-osszetett-row">
-              {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
-                <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
-                  onClick={váltás(() => setÖsszetettDb(összetettDb === n ? 0 : n))}>+{n}M</ExtraGomb>
-              ))}
+            {/* Rarely used: one quiet full-width line (caption left, small segmented bar right), anchored to the popup width */}
+            <div className="kep-proba-osszetett-sor">
+              <span className="kep-proba-vm-cim">Összetett próba</span>
+              <div className="proba-mod-sav kep-proba-osszetett-sav" role="group" aria-label="Másodlagos próbák száma">
+                {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
+                  <button key={n} type="button" aria-pressed={összetettDb === n} className={összetettDb === n ? 'active' : ''} disabled={ellenpróba}
+                    onClick={váltás(() => setÖsszetettDb(összetettDb === n ? 0 : n))}>+{n}M</button>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -106,13 +111,15 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
           <>
             {kész && (
               <div className="kep-proba-summary">
-                {vanCélszám
-                  ? <>{érték} <span className="kep-proba-vs">vs</span> <span className="kep-proba-celszam">{nehézség}</span></>
-                  : ismeretlen && !ellenpróba ? <>{érték} + k{p.kocka} <span className="kep-proba-vs">vs</span> <span className="kep-proba-celszam">?</span></>
-                  : <>{érték} + k{p.kocka}</>}
+                <span className="kep-proba-sum-total">{érték}+k{p.kocka}</span>
+                {vanCélszám && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">{nehézség}</span></>}
+                {ismeretlen && !ellenpróba && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">?</span></>}
               </div>
             )}
-            {lehetetlen ? (
+            {felszNemHarcol ? (
+              // md/010_03_06: below -2 Felszerelés the roll is an automatic failure - no roll button at all
+              <div className="kep-proba-tiltott">Automatikus kudarc<br />(felszerelés túlterhelés)</div>
+            ) : lehetetlen ? (
               <div className="kep-proba-tiltott">Lehetetlen</div>
             ) : biztosSiker ? (
               <div className="kep-proba-biztos">Biztos siker</div>
@@ -127,21 +134,8 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
                     </span>
                   )}
                 </button>
-                {/* sibling, not child: nested <button> is invalid and a disabled parent swallows its events */}
-                {ehCímke && felszEH !== 0 && (
-                  <button type="button" className={`kep-proba-eh-nyil${ehBontásNyitva ? ' nyitva' : ''}`}
-                    title="Mi adja a módosítót?" aria-label="Mi adja a módosítót?" aria-expanded={ehBontásNyitva}
-                    onClick={() => setEhBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
-                )}
                 <ManualDicePicker sides={p.kocka} szint={ehSzint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={érték} alapLabel={d.kéziFelirat ?? label} forceOpen={d.kéziFolyamatban} />
               </div>
-              {ehCímke && felszEH !== 0 && ehBontásNyitva && (
-                <div className="kep-proba-eh-accordion">
-                  <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
-                    <div className="kep-proba-eh-bontas-sor">Felszerelés túlterhelés: {előnyHátrányLabel(felszEH)}{felszNemHarcol ? ' (nem tud harcolni)' : ''}</div>
-                  </div>
-                </div>
-              )}
               </>
             )}
           </>
