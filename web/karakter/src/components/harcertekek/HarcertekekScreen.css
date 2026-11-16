@@ -40,7 +40,7 @@
   margin-bottom: 8px;
 }
 
-.he-fegyver-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.he-fegyver-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }  /* gap: separates the name + meta block from the stat lines */
 .he-fegyver-fields { display: flex; flex-wrap: wrap; gap: 8px 12px; font-size: 16px; }
 .he-fegyver-fields label { display: flex; align-items: center; gap: 4px; }
 
