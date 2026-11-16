@@ -27262,17 +27262,6 @@ Hatás:    célpont páncél SFÉ: duplán számít
 
 A lövedék páncél ellen különösen hatékony. Példa: Dobócsillag, Parittya.
 
-### Távharc íj Erőbónusz tervezett
-
-```
-id: tavharc_ij_erobonusz_tervezett
-Állapot: Aktív
-Feltétel: az íj a lövő Erő értékére tervezve
-Hatás:    íj Erőbónusza csak ekkor számít (KM)
-```
-
-Az íj Erőbónusza csak akkor jár, ha az íjat kifejezetten erre az Erő értékre készítették.
-
 ### Távharc Közeli lövés automatikus bónusz
 
 ```
@@ -27291,7 +27280,7 @@ id: tavharc_ertekek_csak_keszito_kezeben
 Állapot: Aktív
 Feltétel: a fegyvert a készítő-birtokos használja
 Hatás: az értékek csak ekkor érvényesek;
-       másnak hagyományos íj (Osztó 4, nincs Erőbónusz)
+       másnak az "Elf íj - nem elf kézben" értékei
 ```
 
 Az egyedi (elf) íj teljes értéke csak a készítőjének jár. Példa: Elf íj.
@@ -27929,7 +27918,7 @@ Kapcsolódó fortély: [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkal
 
 A Lőfegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a "**Speciális/Megjegyzés**" oszlopban ezt külön feltüntetjük.
 
-Az **Erőbónusz** beszámítása fegyverenként eltérő, a **Speciális/Megjegyzés** mezőt ad támpontot. Alapból az Erőbónusz **nem** adódik hozzá az íjász lőfegyverek **SP** értékéhez.
+Íjaknál az **Erőbónusz** mindig hozzáadódik az **SP** értékhez, az **Erőbónusz limit**ig.
 
 Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász lövedékeket (pl. száradó ruha).
 
@@ -27937,14 +27926,15 @@ Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász löved
 
 <!-- tag: md_table_tavfegyver_start -->
 
-| Fegyver         | CÉ  | Osztó |   SP   | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Hatótáv | Kategória | Speciális / Megjegyzés                                                                                                                           |
-| --------------- | :-: | :---: | :----: | :------: | :----------: | :------------: | :-------------: | :----: | ------: | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Rövid íj        | `3` |  `4`  |  `+1`  |   `6`    |     `S`      |    kétkezes    |       `2`       |  `0`   |   `60m` | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Hosszú íj       | `4` |  `4`  |  `+3`  |   `8`    |     `S`      |    kétkezes    |       `3`       |  `0`   |  `120m` | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Visszacsapó íj  | `3` |  `4`  |  `+4`  |   `8`    |     `S`      |    kétkezes    |       `4`       |  `3`   |  `160m` | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Elf íj          | `5` |  `5`  |  `+4`  |   `7`    |     `S`      |    kétkezes    |       `0`       |  `0`   |  `120m` | lőfegyver | Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: `4`.<br />Erőbónusz nincs |
-| Fúvócső, kicsi  | `2` |  `3`  | spec\* |   `9`    |     `S`      |    egykezes    |       `0`       |  `0`   |   `16m` | lőfegyver | `k20` dobásnál: `20`-as dobás: `1 ÉP`, különben `0 ÉP`                                                                                           |
-| Fúvócső, vadász | `3` |  `4`  | `-10`  |   `10`   |     `S`      |    kétkezes    |       `0`       |  `0`   |   `30m` | lőfegyver |                                                                                                                                                  |
+| Fegyver                 | CÉ  | Osztó |   SP   | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Hatótáv | Kategória | Speciális / Megjegyzés                                                     |
+| ----------------------- | :-: | :---: | :----: | :------: | :----------: | :------------: | :-------------: | :----: | ------: | --------- | -------------------------------------------------------------------------- |
+| Rövid íj                | `3` |  `4`  |  `+1`  |   `6`    |     `S`      |    kétkezes    |       `2`       |  `0`   |   `60m` | lőfegyver |                                                                            |
+| Hosszú íj               | `4` |  `4`  |  `+3`  |   `8`    |     `S`      |    kétkezes    |       `3`       |  `0`   |  `120m` | lőfegyver |                                                                            |
+| Visszacsapó íj          | `3` |  `4`  |  `+4`  |   `8`    |     `S`      |    kétkezes    |       `4`       |  `3`   |  `160m` | lőfegyver |                                                                            |
+| Elf íj                  | `5` |  `5`  |  `+4`  |   `7`    |     `S`      |    kétkezes    |       `0`       |  `0`   |  `120m` | lőfegyver | Csak a készítője (és egyben birtokosa) kezében érvényesek ezek az értékek. |
+| Elf íj - nem elf kézben | `4` |  `4`  |  `+3`  |   `8`    |     `S`      |    kétkezes    |       `0`       |  `0`   |  `120m` | lőfegyver |                                                                            |
+| Fúvócső, kicsi          | `2` |  `3`  | spec\* |   `9`    |     `S`      |    egykezes    |       `0`       |  `0`   |   `16m` | lőfegyver | `k20` dobásnál: `20`-as dobás: `1 ÉP`, különben `0 ÉP`                     |
+| Fúvócső, vadász         | `3` |  `4`  | `-10`  |   `10`   |     `S`      |    kétkezes    |       `0`       |  `0`   |   `30m` | lőfegyver |                                                                            |
 
 <!-- tag: md_table_tavfegyver_end -->
 
@@ -29187,8 +29177,9 @@ A páncél teljes árát a következőképpen kaphatjuk meg:
 
 ```
 Teljes ár
-   = Torzó Struktúra Ár
-   + Csatolt tagok Ára
+   = ( Torzó Struktúra Ár
+     + Csatolt tagok Ára )
+   x Kidolgozottság
 ```
 
 ---
@@ -29212,11 +29203,12 @@ Ez a mellvért tag ára egyedül.
 
 A plusz csatolt tagok egyenként a torzó-darab árának `1/5`-ét érik, így egy teljes (100%) páncél a torzó-darab árának pont a kétszerese.
 
+A Kidolgozottság a teljes páncél árát szorozza (a torzó-darabét és a csatolt tagokét is).
+
 ```
 1 csatolt tag ára
      = 1/5
      x (Torzó ár)
-     x Kidolgozottság
 
 Csatolt tagok (max 5 db)
   felkar-tagok
@@ -29333,26 +29325,26 @@ MGT: 9
  -2: Erő MGT csökkentése
 ```
 
-### Ár: `16x`
+### Ár: `160x`
 
 ```
-Torzó: 10x ár
-  10x (Struktúra Sodrony)
-   1x (Alapanyag: Acél)
-   1x (Idea: Átlagos)
+Torzó: 100x ár
+  100x (Struktúra Sodrony)
+    1x (Alapanyag: Acél)
+    1x (Idea: Átlagos)
 ```
 
 ```
-Csatolt tagok ára: 6x ár
+Csatolt tagok ára: 60x ár
   1/5x (1db alap szorzója)
-  10x  (Torzó ár)
-   1x  (Kidolgozottság "átlagos")
-   3x  (Csatolt tagok db)
+  100x (Torzó ár)
+    3x (Csatolt tagok db)
 ```
 
 ```
-Végleges ár: 13x
-  10x + 6x
+Végleges ár: 160x
+  (100x + 60x)
+  x 1x (Kidolgozottság "átlagos")
 ```
 
 Azaz egy átlagos bőr torzódarab `16`-szeresének megfelelő pénzbe kerül a fenti teljes sodrony páncélszett.
@@ -29396,28 +29388,28 @@ MGT: 26
  -1: Erő MGT csökkentése
 ```
 
-### Ár: `7,5x`
+### Ár: `75x`
 
 ```
-Torzó: 5x ár
-  100x (Struktúra Lemez)
-  0,5x (Alapanyag: Bronz)
-  0,1x (Idea vacak)
+Torzó: 75x ár
+  1000x (Struktúra Lemez)
+   0,5x (Alapanyag: Bronz)
+  0,15x (Idea vacak)
 
-(100x x 0,5x x 0,1)
+(1000x x 0,5x x 0,15x)
 ```
 
 ```
-Csatolt tagok ára: 2,5x
+Csatolt tagok ára: 75x
   1/5x (1db alap szorzója)
-  5x   (Torzó ár)
-  0,5x (Kidolgozottság "pocsék")
+  75x  (Torzó ár)
   5x   (Csatolt tagok db)
 ```
 
 ```
-Végleges ár: 7,5x
-  (5x + 2,5x)
+Végleges ár: 75x
+  (75x + 75x)
+  x 0,5x (Kidolgozottság "pocsék")
 ```
 
  Azaz egy átlagos bőr mellvért árának `7,5`-szeresének megfelelő pénzbe kerül a fenti teljes gyatra páncélszett.
@@ -30480,7 +30472,7 @@ Apró hajítófegyverek, szálfegyverek
     Rövid, hosszú íj, Kézi nyílpuska
     Mágiatáv IV
   Sebzés bónusz: Erő 1:1
-    (ha erre az Erőre lett tervezve)
+    (az Erőbónusz limitig)
 ```
 
 ```
