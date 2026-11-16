@@ -113,7 +113,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-width: 240px;
+  min-width: min(320px, 82vw);  /* room for the 13-segment scale bar */
 }
 .sebzes-stat-list {
   display: flex;
@@ -137,51 +137,36 @@
   color: var(--text-dim);
   margin-bottom: 4px;
 }
-.sebzes-stat-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 36px);
-  gap: 6px;
-  justify-content: center;
+/* Segmented scale bar (SkalaSav): hand-bonus pickers - one tap, 0 in the middle */
+.skala-sav { display: flex; width: 100%; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }
+.skala-sav button {
+  flex: 1; min-width: 0; padding: 10px 0; background: none; border: none; border-left: 1px solid var(--border-input);
+  font-family: monospace; font-size: 13px; cursor: pointer;
 }
-.sebzes-stat-circle {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--border-input);
-  border-radius: 50%;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 14px;
-  font-family: monospace;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.skala-sav button:first-child { border-left: none; }
+.skala-sav .skala-pos { color: #81c784; }
+.skala-sav .skala-neg { color: #e57373; }
+.skala-sav .skala-nulla { color: var(--text-dim); flex: 1.2; }
+.skala-sav .active { color: var(--text); font-weight: bold; }
+.skala-sav .skala-pos.active { background: rgba(76, 175, 80, 0.28); }
+.skala-sav .skala-neg.active { background: rgba(244, 67, 54, 0.28); }
+.skala-sav .skala-nulla.active { background: rgba(255, 255, 255, 0.18); }
+.skala-sav-cim { display: flex; justify-content: space-between; align-items: baseline; font-family: monospace; font-weight: bold; }
+.skala-sav-cim .sebzes-stat-manual-label { font-family: inherit; font-weight: normal; margin-bottom: 0; }
+.skala-sav-felirat { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); margin-top: -8px; }
+.sebzes-stat-manual { display: flex; flex-direction: column; gap: 4px; }
+.sebzes-stat-manual .skala-sav-felirat { margin-top: 0; }
+.skala-sav-nullaz {
+  align-self: center; padding: 4px 14px; border: 1px solid var(--border-input); border-radius: 6px;
+  background: var(--input-bg); color: var(--text-dim); font-size: 13px; cursor: pointer;
 }
-.sebzes-stat-circle.active {
-  border-color: var(--warning);
-  background: rgba(255, 152, 0, 0.2);
-  font-weight: bold;
-}
-.sebzes-stat-circle.active.sebzes-stat-pos { border-color: var(--success); background: rgba(76, 175, 80, 0.2); }
-.sebzes-stat-circle.active.sebzes-stat-neg { border-color: var(--error); background: rgba(244, 67, 54, 0.2); }
+.skala-sav-nullaz:disabled { opacity: 0.4; cursor: default; }
 
-/* Kézi bónusz chip grid (Támadó / Célzó / Manőver Végrehajtás) - 3 oszlop, kompakt + kibontható */
-.kezi-bonusz-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 36px);
-  gap: 6px;
-  justify-content: center;
-}
-.kezi-bonusz-ures { width: 36px; height: 36px; }
+/* Kézi bónusz gomb (Támadó / Célzó / Manőver Végrehajtás) */
 .kezi-bonusz-cim { text-align: center; }
 /* Kézi bónusz chip gomb: picit kisebb felirat; 0 értéknél nem félkövér. */
 .kezi-bonusz-btn { font-size: 13px; }
 .kezi-bonusz-btn-nulla { font-weight: 400; }
-/* A 0 cella aktív (bónusz=0) állapotban is semleges: halvány szürke keret + diszkrét kitöltés, nem a warning-narancs. */
-.kezi-bonusz-nulla.active {
-  border-color: var(--border-input);
-  background: rgba(255, 255, 255, 0.18);
-}
 .kezi-bonusz-kibont {
   align-self: center;
   width: 48px;
@@ -511,6 +496,10 @@
 .dobas-keplet-al-sor { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
 /* Modifier pills + E/H box share one column: the wider of the two sets the width (no wrapping) */
 .dobas-oszlop { display: flex; flex-direction: column; align-items: stretch; gap: 12px; width: max-content; max-width: 100%; }
+.dobas-oszlop-teljes { width: 100%; }
+/* Sebzés popup: fixed width, so nothing inside resizes with the Előny/Hátrány label or its source lines */
+/* (.tamado-dobas-popup prefix: beats that rule's own width: 100%, which comes later in HarcScreen.css) */
+.tamado-dobas-popup.sebzes-popup-fix { width: min(300px, 84vw); }
 /* Előny/Hátrány box: thin border around the stepper + its sources; the stepper fills the box */
 .elony-blokk { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px; border: 1px solid var(--border-light); border-radius: 10px; }
 .elony-lepteto { display: flex; align-items: stretch; width: 100%; height: 38px; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }

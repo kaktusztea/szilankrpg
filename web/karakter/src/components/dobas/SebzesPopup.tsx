@@ -1,3 +1,4 @@
+import { SkalaSav, SkalaSavFelirat } from './SkalaSav';
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
@@ -145,7 +146,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
   return (
     <PopupOverlay onClose={() => onClose(eredmény?.végső, eredmény != null)} onEscape={eredmény ? undefined : onEscape}>
-      <div className="tamado-dobas-popup">
+      <div className="tamado-dobas-popup sebzes-popup-fix">
         {eredmény && <button className="sebzes-reset-btn" onClick={() => setEredmény(null)}><Ikon név="reset" /></button>}
         {/* Header: title + (before the roll) the Fegyver extrák icon on the right */}
         <div className="dobas-fejlec">
@@ -201,7 +202,8 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
               </div>
             </div>
 
-            <div className="dobas-oszlop">
+            {/* Full popup width (like the páncél bar): fixed, does not follow the label / source text width */}
+            <div className="dobas-oszlop dobas-oszlop-teljes">
               <div className="elony-blokk">
                 <ElonyLepteto szint={aktuális} onChange={handleSzintChange} />
                 <ForrasLista hatások={eHForrások} szint={aktuális} alapSzint={clampEHSzint(baseRaw)} onVissza={() => { setRawSzint(baseRaw); setEredmény(null); }} />
@@ -233,6 +235,9 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 }
 
 // ─── Statikus bónusz gomb + popup ──────────────────────────────────────────
+
+/** Hand SP bonus scale: -6…+6. */
+const KÉZI_SP_SKÁLA: number[] = Array.from({ length: 13 }, (_, i) => i - 6);
 
 function StatikusBonuszBtn({ bónusz, spBónuszok, onBónuszClick }: {
   bónusz: number;
@@ -266,16 +271,13 @@ function StatikusBonuszBtn({ bónusz, spBónuszok, onBónuszClick }: {
               )) : <span className="sebzes-stat-source">–</span>}
             </div>
             <div className="sebzes-stat-manual">
-              <span className="sebzes-stat-manual-label">Kézi bónusz:</span>
-              <div className="sebzes-stat-grid">
-                {[-6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6].map(v => (
-                  <button key={v}
-                    className={`sebzes-stat-circle${bónusz === v ? ' active' : ''}${v > 0 ? ' sebzes-stat-pos' : v < 0 ? ' sebzes-stat-neg' : ''}`}
-                    onClick={() => { onBónuszClick(v); setOpen(false); }}>
-                    {v > 0 ? `+${v}` : v === 0 ? '0' : v}
-                  </button>
-                ))}
+              <div className="skala-sav-cim">
+                <span className="sebzes-stat-manual-label">Kézi bónusz:</span>
+                <span className={bónusz > 0 ? 'sebzes-stat-pos' : bónusz < 0 ? 'sebzes-stat-neg' : ''}>{bónusz > 0 ? '+' : ''}{bónusz}</span>
               </div>
+              {/* One-tap scale -6…+6 with 0 in the middle (0 clears the hand bonus) */}
+              <SkalaSav értékek={KÉZI_SP_SKÁLA} érték={bónusz} onSelect={v => { onBónuszClick(v); setOpen(false); }} />
+              <SkalaSavFelirat />
             </div>
           </div>
         </PopupOverlay>
