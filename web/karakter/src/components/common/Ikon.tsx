@@ -1,4 +1,5 @@
 import {
+  Layers,
   ArrowLeftRight,
   Copy,
   Activity, BookOpen, BowArrow, Check, ChevronDown, ChevronRight, ClipboardList, Download, FileText, Folder,
@@ -24,6 +25,7 @@ const IKONOK = {
   qr: QrCode, link: Link, vágólap: ClipboardList, könyv: BookOpen, telefon: Smartphone,
   másolat: Copy,
   helyettesít: ArrowLeftRight,
+  összetett: Layers,
 } satisfies Record<string, LucideIcon>;
 
 /** Own icons (no lucide equivalent), drawn on lucide's 24x24 grid. */

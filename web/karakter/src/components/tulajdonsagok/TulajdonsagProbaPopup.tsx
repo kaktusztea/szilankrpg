@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { ElonyLepteto } from '../dobas/ElonyLepteto';
 import { ForrasLista } from '../dobas/ForrasLista';
@@ -35,6 +36,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const [nehézség, setNehézség] = useState<number | null>(null);
   // Helyzetfüggő módosítók (fortély-bónuszok) külön picker popupban - a képzettségpróba mintájára.
   const [szitNyitva, setSzitNyitva] = useState(false);
+  const [összetettNyitva, setÖsszetettNyitva] = useState(false);
   // A felszerelés-túlterhelés Hátránya a dobás alap EH-ja (a KM felülírhatja).
   const [ehSzint, setEhSzint] = useState(felszEH);
   // Source list under the E/H stepper (same as the Támadó dobás): the only source here is Felszerelés túlterhelés
@@ -58,7 +60,15 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
     <PopupOverlay onClose={onClose}>
       <div className="kep-proba-popup">
         <ProbaFejlec cím="Tulajdonságpróba" vanEredmény={d.vanEredmény} onReset={d.reset} onClose={onClose} />
-        <div className="kep-proba-subtitle">{label} ({tulÉrték}){bónusz ? ` + ${bónusz} (fortély)` : ''}</div>
+        <div className="kep-proba-subtitle">
+          {label} ({tulÉrték}){bónusz ? ` + ${bónusz} (fortély)` : ''}
+          {/* Összetett próba: icon chip next to the name (rarely used) → picker; shows "2M" once chosen */}
+          <button type="button" className={`kep-proba-hely-btn${összetettDb > 0 ? ' aktiv kep-proba-osszetett-chip' : ''}`}
+            disabled={ellenpróba || d.vanEredmény} title={ellenpróba ? 'Összetett próba (Ellenpróbánál nem választható)' : 'Összetett próba'}
+            aria-label={`Összetett próba: ${összetettDb > 0 ? `${összetettDb}M` : 'nincs'}`} onClick={() => setÖsszetettNyitva(true)}>
+            {összetettDb > 0 ? `${összetettDb}M` : <Ikon név="összetett" />}
+          </button>
+        </div>
 
 
         <div className="kep-proba-dual-col kep-proba-celszam-col">
@@ -93,16 +103,6 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             <div className="elony-blokk">
               <ElonyLepteto szint={ehSzint} onChange={v => { setEhSzint(v); d.reset(); }} />
               <ForrasLista hatások={ehForrások} szint={ehSzint} alapSzint={felszEH} onVissza={váltás(() => setEhSzint(felszEH))} />
-            </div>
-            {/* Rarely used: one quiet full-width line (caption left, small segmented bar right), anchored to the popup width */}
-            <div className="kep-proba-osszetett-sor">
-              <span className="kep-proba-vm-cim">Összetett próba</span>
-              <div className="proba-mod-sav kep-proba-osszetett-sav" role="group" aria-label="Másodlagos próbák száma">
-                {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
-                  <button key={n} type="button" aria-pressed={összetettDb === n} className={összetettDb === n ? 'active' : ''} disabled={ellenpróba}
-                    onClick={váltás(() => setÖsszetettDb(összetettDb === n ? 0 : n))}>+{n}M</button>
-                ))}
-              </div>
             </div>
           </div>
         )}
@@ -144,6 +144,20 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             összetett={összetettDb > 0 ? d.összetett : null} kocka={p.kocka} kiemeltKülönbség={p.kiemelt_különbség} ehSzint={ehSzint} />
         )}
       </div>
+
+      {összetettNyitva && (
+        <PopupOverlay className="kep-prompt vallas-picker" onClose={() => setÖsszetettNyitva(false)}>
+          <label className="kep-prompt-label-bold-mb">Összetett próba</label>
+          <div className="kep-prompt-flex-col-list">
+            {Array.from({ length: próba.összetett_max_másodlagos + 1 }, (_, n) => n).map(n => (
+              <button key={n} type="button" className={`he-field-btn${összetettDb === n ? ' vallas-active' : ''}`}
+                onClick={váltás(() => { setÖsszetettDb(n); setÖsszetettNyitva(false); })}>
+                {n === 0 ? 'Nincs összetett próba' : `+${n}M (${n} másodlagos próba)`}
+              </button>
+            ))}
+          </div>
+        </PopupOverlay>
+      )}
 
       {szitNyitva && (
         <PopupOverlay className="kep-prompt kep-proba-szit-popup" onClose={() => setSzitNyitva(false)}>

@@ -706,7 +706,6 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 /* Kiterjesztő picker: "Törzstudás része" row - green check icon */
 .kep-proba-torzs-pipa { color: #81c784; margin-left: 4px; }
 
-/* Tulajdonságpróba: Összetett próba as one line under the E/H box (caption left, segmented bar right) */
-.kep-proba-osszetett-sor { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 2px; }
-.kep-proba-osszetett-sav { flex: 0 0 auto; margin-bottom: 0; }
-.kep-proba-osszetett-sav button { padding: 4px 10px; }
+/* Tulajdonságpróba: Összetett próba chip next to the name ("2M" text once chosen) */
+.kep-proba-osszetett-chip { font-family: monospace; font-size: 13px; font-weight: bold; padding: 2px 5px; }
+.kep-proba-hely-btn:disabled { opacity: 0.35; cursor: default; }
