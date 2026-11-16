@@ -123,6 +123,14 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
     ...sebzésHatások,
   ];
 
+  // Formula subtitle: damage type · Átütés · the static bonus already contained in the number
+  const bónuszÖssz = spBónuszok.reduce((s, b) => s + b.érték, 0) + bónusz;
+  const képletAlcím = [
+    jelleg,
+    (átütés ?? 0) > 0 ? `Átütés ${átütés}` : null,
+    bónuszÖssz !== 0 ? `benne bónusz ${bónuszÖssz > 0 ? '+' : ''}${bónuszÖssz}` : null,
+  ].filter(Boolean).join(' · ');
+
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(aktuális);
     setEredmény({ dobás, sp: effektívSp, bónusz, végső: dobás.eredmény + effektívSp + bónusz });
@@ -171,9 +179,12 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
             {/* Order (2026-11): formula, then the wide blocks one after the other (páncél bar, E/H box),
                 then the damage type · Átütés + Bónusz row */}
-            {/* Formula: SP (+ all static bonuses) + k20 */}
-            <div className="dobas-keplet">
-              {effektívSp + bónusz}<span className="dobas-keplet-op"> + </span>k20
+            {/* Formula: SP (+ all static bonuses) + k20; under it what the number already contains */}
+            <div>
+              <div className="dobas-keplet">
+                {effektívSp + bónusz}<span className="dobas-keplet-op"> + </span>k20
+              </div>
+              {képletAlcím && <div className="dobas-keplet-al">{képletAlcím}</div>}
             </div>
 
             {/* Ellenfél páncélja: mandatory, inline segmented bar (the roll is blocked until chosen) */}
@@ -196,20 +207,15 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
             )}
 
             {/* Full popup width (like the páncél bar): fixed, does not follow the label / source text width */}
-            <div className="dobas-oszlop dobas-oszlop-teljes">
-              <div className="elony-blokk">
-                <ElonyLepteto szint={aktuális} onChange={handleSzintChange} />
-                <ForrasLista hatások={eHForrások} szint={aktuális} alapSzint={clampEHSzint(baseRaw)} onVissza={() => { setRawSzint(baseRaw); setEredmény(null); }} />
-              </div>
+            {/* E/H: no outer frame, a small label like the páncél bar (two wide blocks built the same way) */}
+            <div className="elony-blokk-nyitott">
+              <div className="pancel-sav-cim"><span>Előny / Hátrány</span></div>
+              <ElonyLepteto szint={aktuális} onChange={handleSzintChange} />
+              <ForrasLista hatások={eHForrások} szint={aktuális} alapSzint={clampEHSzint(baseRaw)} onVissza={() => { setRawSzint(baseRaw); setEredmény(null); }} />
             </div>
 
-            {/* Damage type · Átütés + the Bónusz pill on one line */}
-            <div className="dobas-keplet-al-sor">
-              {(jelleg || (átütés ?? 0) > 0) && (
-                <span className="dobas-keplet-al">{[jelleg, (átütés ?? 0) > 0 ? `Átütés ${átütés}` : null].filter(Boolean).join(' · ')}</span>
-              )}
-              <StatikusBonuszBtn bónusz={bónusz} spBónuszok={spBónuszok} onBónuszClick={handleBónuszClick} />
-            </div>
+            {/* Bónusz pill (the damage type / Átütés moved under the formula) */}
+            <StatikusBonuszBtn bónusz={bónusz} spBónuszok={spBónuszok} onBónuszClick={handleBónuszClick} />
 
             <div className="dobas-btn-row">
               <button className="tamado-sebzes-btn dobas-btn-ikon sebzes-dobas-btn" onClick={handleDobás} disabled={páncélKell}><Ikon név="kocka" méret={22} />Dobás</button>

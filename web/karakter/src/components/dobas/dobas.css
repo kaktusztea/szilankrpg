@@ -491,12 +491,10 @@
 .dobas-keplet-op { color: var(--text-dim); font-weight: normal; }
 .dobas-keplet-kezi.sebzes-stat-pos { color: var(--success); }
 .dobas-keplet-kezi.sebzes-stat-neg { color: var(--error); }
-.dobas-keplet-ve { font-size: 20px; color: var(--warning); }
+.dobas-keplet-ve { color: var(--warning); }  /* same size as the CÉ value */
 .dobas-keplet-al { font-size: 12px; color: var(--text-dim); text-align: center; }
-.dobas-keplet-al-sor { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
 /* Modifier pills + E/H box share one column: the wider of the two sets the width (no wrapping) */
 .dobas-oszlop { display: flex; flex-direction: column; align-items: stretch; gap: 12px; width: max-content; max-width: 100%; }
-.dobas-oszlop-teljes { width: 100%; }
 /* Sebzés popup: fixed width, so nothing inside resizes with the Előny/Hátrány label or its source lines */
 /* (.tamado-dobas-popup prefix: beats that rule's own width: 100%, which comes later in HarcScreen.css) */
 .tamado-dobas-popup.sebzes-popup-fix { width: min(300px, 84vw); }
@@ -508,6 +506,10 @@
 .elony-lepteto-ertek { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; color: var(--text-soft); }
 .elony-lepteto-ertek.elony { color: #81c784; background: rgba(76, 175, 80, 0.12); }
 .elony-lepteto-ertek.hatrany { color: #e08a8a; background: rgba(199, 106, 106, 0.12); }
+/* Sebzés: frameless E/H block (label + stepper + sources); the stepper value is text-coloured only (less green) */
+.elony-blokk-nyitott { width: 100%; display: flex; flex-direction: column; gap: 4px; }
+.elony-blokk-nyitott .elony-lepteto-ertek.elony, .elony-blokk-nyitott .elony-lepteto-ertek.hatrany { background: none; }
+.elony-blokk-nyitott .forras-lista { margin-top: 2px; }
 /* Sources under the stepper */
 .forras-lista { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; color: var(--text-dim); text-align: center; }
 .forras-badge { font-weight: bold; }
@@ -550,7 +552,7 @@
   color: var(--text-soft); font-size: 12px; cursor: pointer;
 }
 .pancel-sav-gombok button:first-child { border-left: none; }
-.pancel-sav-gombok button.active { background: var(--input-bg); color: var(--text); font-weight: bold; }
+.pancel-sav-gombok button.active { background: #3a3f58; color: var(--text); font-weight: bold; }  /* stronger: the only mandatory choice */
 /* Támadó dobás result: Talált / Nem talált pair */
 .talalat-par { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
 .talalat-gomb {
