@@ -355,10 +355,12 @@ export function KepzettsegProbaPopup({
                 {ehCímke && vanEhForrás && (
                   <button
                     type="button"
-                    className={`kep-proba-eh-info${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}
+                    className={`kep-proba-eh-nyil${ehBontásNyitva ? ' nyitva' : ''}`}
                     title="Mi adja a módosítót?"
+                    aria-label="Mi adja a módosítót?"
+                    aria-expanded={ehBontásNyitva}
                     onClick={() => setEhBontásNyitva(v => { if (!v) setTimeout(() => ehAccordionRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50); return !v; })}
-                  >i</button>
+                  ><Ikon név="lenyit" /></button>
                 )}
                 <ManualDicePicker sides={p.kocka} szint={eh.szint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={bázis} alapLabel={d.kéziFelirat ?? 'Alap'} forceOpen={d.kéziFolyamatban} />
               </div>

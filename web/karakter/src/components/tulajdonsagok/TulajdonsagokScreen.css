@@ -373,8 +373,8 @@
 }
 .kep-proba-sum-total { font-size: 22px; font-weight: bold; color: var(--text); }
 .kep-proba-vs { color: var(--text-muted); font-size: 13px; margin: 0 4px; }
-.kep-proba-celszam { color: var(--color-negative); font-size: 22px; font-weight: bold; }
-.kep-proba-eh { color: var(--warning); font-size: 13px; }
+.kep-proba-celszam { color: var(--color-taktika); font-size: 22px; font-weight: bold; }  /* target number: TÉ blue (red read as an error) */
+.kep-proba-eh { color: #e08a8a; font-size: 13px; }
 .kep-proba-rolls { font-size: 13px; color: var(--text-dim); font-family: monospace; }
 .kep-proba-roll-sel { color: var(--text); font-weight: bold; }
 
@@ -393,8 +393,9 @@
   gap: 1px;
   position: relative;
 }
-.kep-proba-roll-eh { font-size: 13px; font-weight: normal; color: var(--warning); }
-.kep-proba-eh-előny { color: var(--success); }
+/* Előny / Hátrány: the same faded green / red as the Támadó dobás stepper (no loud orange) */
+.kep-proba-roll-eh { font-size: 13px; font-weight: normal; color: #e08a8a; }
+.kep-proba-eh-előny { color: #81c784; }
 .kep-proba-roll-btn:active { background: var(--accent); }
 .kep-proba-roll-btn:disabled { opacity: 0.4; cursor: default; background: var(--primary); }
 
@@ -573,11 +574,13 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-szit-enyhitett .kep-proba-szit-desc { color: #ccc; }
 .kep-proba-eh-bontas { display: block; font-size: 11px; font-weight: 400; margin-top: 4px; color: var(--text-muted); }
 .kep-proba-eh-bontas-sor { display: block; }
-.kep-proba-eh-accordion { margin-top: -10px; max-width: calc(100% - 52px); }
+.kep-proba-eh-accordion { width: 100%; margin-top: -4px; }
+/* Same look as the source list under the Támadó dobás stepper: thin frame, centered small lines */
 .kep-proba-eh-accordion-body {
-  margin-top: 2px; font-size: 12px; color: var(--text-soft); text-align: center;
-  border: 1px solid var(--border); border-radius: 4px;
-  padding: 4px 8px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 12px; color: var(--text-dim); text-align: center;
+  border: 1px solid var(--border-light); border-radius: 10px;
+  padding: 8px 10px; cursor: pointer;
 }
 .kep-proba-rejtett-label { color: #c8c080; }
 .kep-proba-szit-sum-footer {
@@ -622,30 +625,14 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 }
 
 /* Felszerelés-túlterhelés figyelmeztetés a próba-popupban */
-.kep-proba-eh-info {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  margin-left: 6px;
-  padding: 0;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: inherit;
-  font-size: 12px;
-  font-weight: bold;
-  font-style: italic;
-  line-height: 1;
-  cursor: pointer;
-  vertical-align: middle;
-  flex-shrink: 0;
+/* "Mi adja a módosítót?" toggle next to the roll button: the standard chevron, flips up when open */
+.kep-proba-eh-nyil {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 32px; height: 32px; padding: 0; background: none; border: none;
+  color: var(--text-dim); font-size: 20px; cursor: pointer;
 }
-.kep-proba-eh-info:hover { background: rgba(255, 255, 255, 0.25); }
-/* outside the roll button: no longer inherits the E/H label color */
-.kep-proba-eh-info:not(.kep-proba-eh-előny) { color: var(--warning); }
-.kep-proba-eh-info.kep-proba-eh-előny { color: var(--success); }
+.kep-proba-eh-nyil .ikon { transition: transform 0.15s ease-out; }
+.kep-proba-eh-nyil.nyitva .ikon { transform: rotate(180deg); }
 
 .kep-proba-felsz-warn {
   margin: 4px 0;

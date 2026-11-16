@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Ikon } from '../common/Ikon';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
@@ -32,6 +33,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const [nehézség, setNehézség] = useState<number | null>(null);
   // Helyzetfüggő módosítók (fortély-bónuszok) külön picker popupban - a képzettségpróba mintájára.
   const [szitNyitva, setSzitNyitva] = useState(false);
+  const [ehBontásNyitva, setEhBontásNyitva] = useState(false);
   // A felszerelés-túlterhelés Hátránya a dobás alap EH-ja (a KM felülírhatja).
   const [ehSzint, setEhSzint] = useState(felszEH);
   const [összetettDb, setÖsszetettDb] = useState(0);
@@ -117,6 +119,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             ) : biztosSiker ? (
               <div className="kep-proba-biztos">Biztos siker</div>
             ) : (
+              <>
               <div className="dobas-btn-row">
                 <button type="button" className="kep-proba-roll-btn" disabled={!kész} onClick={d.dob}>
                   Dobás (k{p.kocka})
@@ -128,10 +131,20 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
                 </button>
                 {/* sibling, not child: nested <button> is invalid and a disabled parent swallows its events */}
                 {ehCímke && felszEH !== 0 && (
-                  <button type="button" className={`kep-proba-eh-info${ehSzint > 0 ? ' kep-proba-eh-előny' : ''}`} title={`Felszerelés túlterhelés: ${előnyHátrányLabel(felszEH)}${felszNemHarcol ? ' (nem tud harcolni)' : ''}`}>i</button>
+                  <button type="button" className={`kep-proba-eh-nyil${ehBontásNyitva ? ' nyitva' : ''}`}
+                    title="Mi adja a módosítót?" aria-label="Mi adja a módosítót?" aria-expanded={ehBontásNyitva}
+                    onClick={() => setEhBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
                 )}
                 <ManualDicePicker sides={p.kocka} szint={ehSzint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={érték} alapLabel={d.kéziFelirat ?? label} forceOpen={d.kéziFolyamatban} />
               </div>
+              {ehCímke && felszEH !== 0 && ehBontásNyitva && (
+                <div className="kep-proba-eh-accordion">
+                  <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
+                    <div className="kep-proba-eh-bontas-sor">Felszerelés túlterhelés: {előnyHátrányLabel(felszEH)}{felszNemHarcol ? ' (nem tud harcolni)' : ''}</div>
+                  </div>
+                </div>
+              )}
+              </>
             )}
           </>
         ) : (
