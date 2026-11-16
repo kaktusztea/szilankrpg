@@ -104,7 +104,9 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
           </div>
 
           <h3 className="proba-hub-header">Tulajdonságpróba <KockaChip kocka={data.konstansok.próba.tulajdonság.kocka} /></h3>
-          <div className="proba-hub-grid">
+          {/* Column-major (3 columns), same item order: down the first column, then the next one */}
+          <div className="proba-hub-grid proba-hub-grid-oszlopos"
+            style={{ '--proba-hub-sorok': Math.ceil(tulajdonságok.length / 3) } as React.CSSProperties}>
             {tulajdonságok.map(t => (
               <button key={t} className="proba-hub-chip proba-hub-chip-tul" onClick={() => setCél({ típus: 'tulajdonság', kulcs: t })}>
                 {t.charAt(0).toUpperCase() + t.slice(1)}
@@ -113,7 +115,9 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
           </div>
 
           <h3 className="proba-hub-header">Képzettségpróba <KockaChip kocka={data.konstansok.próba.képzettség.kocka} /></h3>
-          <div className="proba-hub-grid proba-hub-grid-2">
+          {/* Column-major order: the ABC list runs down the left column, then continues at the top of the right one */}
+          <div className="proba-hub-grid proba-hub-grid-2 proba-hub-grid-oszlopos"
+            style={{ '--proba-hub-sorok': Math.ceil((karakter.képzettségek.length + 1) / 2) } as React.CSSProperties}>
             <button className="proba-hub-chip proba-hub-chip-kepzetlen" onClick={() => setCél({ típus: 'képzetlen' })}>
               Képzetlenül
             </button>

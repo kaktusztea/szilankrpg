@@ -87,6 +87,11 @@
 .proba-hub-grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
+/* Fill top-to-bottom, then the next column (row count comes from the item count, set inline) */
+.proba-hub-grid-oszlopos {
+  grid-auto-flow: column;
+  grid-template-rows: repeat(var(--proba-hub-sorok, 1), auto);
+}
 /* KÉ / TÉ / CÉ / Manőver egy sorban, mind a 4 chip azonos szélességű. A Manőver kisebb fontja
    (proba-hub-chip-manover) biztosítja, hogy a hosszabb felirat a negyed-szélességbe is beférjen. */
 .proba-hub-grid-4 {
