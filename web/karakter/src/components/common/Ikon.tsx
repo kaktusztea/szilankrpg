@@ -1,4 +1,5 @@
 import {
+  ArrowLeftRight,
   Copy,
   Activity, BookOpen, BowArrow, Check, ChevronDown, ChevronRight, ClipboardList, Download, FileText, Folder,
   Gamepad2, HardHat, Heart, Lightbulb, Link, Lock, Maximize, Package, Pencil, Plus, QrCode, RefreshCw, RotateCcw, ScrollText,
@@ -22,6 +23,7 @@ const IKONOK = {
   mentés: Save, megosztás: Share2, import: Download, csomag: Package, fájl: FileText, mappa: Folder,
   qr: QrCode, link: Link, vágólap: ClipboardList, könyv: BookOpen, telefon: Smartphone,
   másolat: Copy,
+  helyettesít: ArrowLeftRight,
 } satisfies Record<string, LucideIcon>;
 
 /** Own icons (no lucide equivalent), drawn on lucide's 24x24 grid. */

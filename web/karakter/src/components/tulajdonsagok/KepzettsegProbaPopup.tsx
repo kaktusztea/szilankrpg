@@ -12,7 +12,7 @@ import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPic
 import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from '../../engine/proba/proba-common';
 import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat } from './ProbaReszek';
+import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
 
 /** Vállalás próba eredménye (k6 vs vállalás: Kritikus hiba, ha ≤). */
 interface VállalásEredmény {
@@ -193,6 +193,11 @@ export function KepzettsegProbaPopup({
           {helyettesítés
             ? <><span className="kep-proba-strike">{képzettségNév} ({szint})</span><br/>{képzettségNévId(helyettesítés, { kepzettsegDefs })} ({effSzint - vállalás})</>
             : <>{képzettségNév} ({szint})</>}
+          {!vanEredmény && képzettségek.length > 1 && (
+            <button type="button" className={`kep-proba-hely-btn${helyettesítés ? ' aktiv' : ''}`}
+              title={helyettesítés ? `Helyettesítés: ${képzettségNévId(helyettesítés, { kepzettsegDefs })}` : 'Helyettesítés másik képzettséggel'}
+              aria-label="Helyettesítés" onClick={() => setOpenPicker('hely')}><Ikon név="helyettesít" /></button>
+          )}
           {dobásKomment.length > 0 && (
             <button className="kep-proba-info-btn" title="Próbadobás magyarázat" onClick={() => setOpenPicker('info')}><Ikon név="infó" /></button>
           )}
@@ -261,9 +266,13 @@ export function KepzettsegProbaPopup({
         {kiterjesztesek.length > 0 && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
-              {selKits.size === 0 ? 'Kiterjesztő fortély: nincs'
-                : selKits.size === 1 ? <>Kiterjesztő: {selectedKits[0].név} <span className={kitDotClass(selectedKits[0])}>{kitDots(selectedKits[0])}</span></>
-                : `Kiterjesztő: ${selKits.size} fortély`}
+              {/* Caption + value; a long fortély name wraps at word boundaries, the dots stay glued to the last word (nbsp) */}
+              <span className="kep-proba-kap-cim">Kiterjesztő fortély</span>
+              <span className="kep-proba-kap-ertek">
+                {selKits.size === 0 ? <span className="kep-proba-kap-ures">nincs</span>
+                  : selKits.size === 1 ? <>{selectedKits[0].név}{'\u00a0'}<span className={`kep-proba-kap-jel ${kitDotClass(selectedKits[0])}`}>{kitDots(selectedKits[0])}</span></>
+                  : <>{selKits.size} fortély</>}
+              </span>
             </button>
           </div>
         )}
@@ -271,46 +280,46 @@ export function KepzettsegProbaPopup({
         {/* --- Módosító értékek chip (opens picker popup) --- */}
         {módosítóTáblák.length > 0 && (
           <div className="kep-proba-row">
-            <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash" onClick={() => setOpenPicker('szit')}>
-              <SzitChipFelirat összeg={szitModÖsszeg} />
-              {próbaEnyhítések.length > 0 && (
-                <span className="kep-proba-enyhites-lista">
-                  {[...new Map(próbaEnyhítések.map(e => [e.fortély, e])).values()].filter(e => e.fortély).map(e => (
-                    <span key={e.fortély} className="kep-proba-enyhites-fortely">→ fortély: <span className="kep-proba-enyhites-nev">{e.fortély} ({fortélyFokok[e.fortély!] ?? 0})</span></span>
-                  ))}
-                </span>
-              )}
+            <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash kep-proba-szit-btn" onClick={() => setOpenPicker('szit')}>
+              {/* Two-line caption on the left, the value large on the right (spans both lines) */}
+              <span className="kep-proba-kap-cim kep-proba-szit-cim">Helyzetfüggő<br />módosító</span>
+              <span className={`kep-proba-szit-ertek${szitModÖsszeg > 0 ? ' kep-proba-szit-pos' : szitModÖsszeg < 0 ? ' kep-proba-szit-neg' : ' kep-proba-kap-ures'}`}>
+                {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
+                {/* Easing fortély: small green dot (names in the tooltip; per-row old → new values are in the popup) */}
+                {próbaEnyhítések.some(e => e.fortély) && (
+                  <span className="kep-proba-szit-enyhitve" aria-label="enyhítve"
+                    title={'Enyhíti: ' + [...new Map(próbaEnyhítések.map(e => [e.fortély, e])).values()].filter(e => e.fortély)
+                      .map(e => `${e.fortély} (${fortélyFokok[e.fortély!] ?? 0})`).join(', ')}>●</span>
+                )}
+              </span>
             </button>
           </div>
         )}
 
-        {!vanEredmény && képzettségek.length > 1 && (
-          <div className="kep-proba-row">
-            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('hely')}>
-              Helyettesítés{helyettesítés ? `: ${képzettségNévId(helyettesítés, { kepzettsegDefs })}` : ' →'}
-            </button>
-          </div>
-        )}
         </div>
 
         {/* --- Extrák (accordion nélkül, közvetlenül): Vállalás + Összetett sorok --- */}
         {!vanEredmény && (
         <div className="kep-proba-extras-flat">
-          {/* Two labeled rows instead of the cryptic V1 V2 V3 • +1M +2M +3M strip */}
+          {/* Two columns side by side: small grey label above, its buttons under it */}
           <div className="kep-proba-vm-racs">
-            <span className="kep-proba-vm-cim">Vállalás</span>
-            <div className="kep-proba-osszetett-row kep-proba-vm-row">
-              {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
-                <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás} title="Vállalás mértéke"
-                  onClick={d.váltás(() => { setVállalás(vállalás === n ? 0 : n); })}>{n}</ExtraGomb>
-              ))}
+            <div className="kep-proba-vm-oszlop">
+              <span className="kep-proba-vm-cim">Vállalás</span>
+              <div className="kep-proba-osszetett-row kep-proba-vm-row">
+                {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
+                  <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás} title="Vállalás mértéke"
+                    onClick={d.váltás(() => { setVállalás(vállalás === n ? 0 : n); })}>V{n}</ExtraGomb>
+                ))}
+              </div>
             </div>
-            <span className="kep-proba-vm-cim">Összetett próba</span>
-            <div className="kep-proba-osszetett-row kep-proba-vm-row">
-              {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
-                <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
-                  onClick={d.váltás(() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); })}>+{n}</ExtraGomb>
-              ))}
+            <div className="kep-proba-vm-oszlop">
+              <span className="kep-proba-vm-cim">Összetett próba</span>
+              <div className="kep-proba-osszetett-row kep-proba-vm-row">
+                {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
+                  <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
+                    onClick={d.váltás(() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); })}>+{n}M</ExtraGomb>
+                ))}
+              </div>
             </div>
           </div>
         </div>
