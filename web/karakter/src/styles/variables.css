@@ -33,6 +33,9 @@
   --color-kepzettseg: #42a5f5;
   --color-hatter: #e0a050;
   --color-taktika: #90caf9;
+  --color-szakasz: #8fb3d9;     /* section titles on the neutral tabs (Aktív, Harc, Távharc, Harcértékek) */
+  --szakaszcim-meret: 18px;
+  --ablakcim-meret: 17px;       /* one popup / picker title size */     /* one section-title size on every tab */
   --color-helyzet: #4dd0e1;
   --color-statusz: #cd7c6f;
   --color-harc-dobas: #9b1b30;   /* bordó - Harci dobás chipek (ProbaHub) hover kerete */

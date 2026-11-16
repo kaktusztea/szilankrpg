@@ -21,9 +21,9 @@ export function SlotRow({ slot: s, displayName, active, onLoad, onSaveOptions, o
         <span className={`slot-tsz${activeCls}`}> ({s.tsz || '?'}sz)</span>
       </div>
       <div className="slot-chips">
-        <button className="slot-chip" title="Mentés / Exportálás" onClick={e => { e.stopPropagation(); onSaveOptions(s.uid); }}><Ikon név="mentés" /></button>
-        <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
-        <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${displayName} (${s.tsz || '?'}sz)`); }}><Ikon név="bezár" /></button>
+        <button className="slot-chip" title="Mentés / Exportálás" onClick={e => { e.stopPropagation(); onSaveOptions(s.uid); }}><Ikon név="mentés" /><span>Mentés</span></button>
+        <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}><Ikon név="másolat" /><span>Másolat</span></button>
+        <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${displayName} (${s.tsz || '?'}sz)`); }}><Ikon név="bezár" /><span>Törlés</span></button>
       </div>
     </div>
   );

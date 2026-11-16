@@ -449,9 +449,10 @@
   flex: 1;
   text-align: center;
   padding: 4px 12px;
-  background: #2e7d32;
-  color: #fff;
+  background: var(--surface);
+  color: #81c784;  /* quiet: green text only; the red .kp-section-neg stays loud */
 }
+.kp-section-ok + .kp-section-ok { border-left: 1px solid var(--border); }
 
 .kp-section-neg {
   flex: 1;

@@ -1,18 +1,16 @@
 import { useState, type ComponentProps } from 'react';
 import { FortelyPickerOverlay } from './FortelyPickerOverlay';
+import { Ikon } from '../common/Ikon';
 
 type Props = Omit<ComponentProps<typeof FortelyPickerOverlay>, 'onClose'>;
 
-/** "+ Új fortély..." gomb → fortély picker overlay. */
+/** Small "+" button in the group header → fortély picker overlay. */
 export function NewFortelySelect(props: Props) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="item-row item-row-new">
-        <button type="button" className="field-select fort-select fort-picker-btn" onClick={() => setOpen(true)}>
-          + Új fortély...
-        </button>
-      </div>
+      <button type="button" className="csoport-uj-btn" title="Új fortély" aria-label="Új fortély"
+        onClick={e => { e.stopPropagation(); setOpen(true); }}><Ikon név="új" /></button>
       {open && <FortelyPickerOverlay {...props} onClose={() => setOpen(false)} />}
     </>
   );

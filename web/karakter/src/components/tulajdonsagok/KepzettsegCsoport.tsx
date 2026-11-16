@@ -58,7 +58,15 @@ export function KepzettsegCsoport({
   return (
     <div className="kep-csoport">
       <h3 className="csoport-label kep-csoport-label" onClick={onToggleCollapse}>
-        <span className="kep-csoport-arrow"><Ikon név={collapsed ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        <span className="kep-csoport-arrow"><Ikon név={collapsed || slotok.length === 0 ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        {/* Add button lives in the header row (no separate "+ Új képzettség..." row per group).
+            Misztikus: taken on the Misztikus tab (faj / tradíció restrictions). */}
+        {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
+          // stopPropagation: the picker is a portal, its clicks would otherwise bubble to the header (collapse toggle)
+          <span className="csoport-uj" onClick={e => e.stopPropagation()}>
+            <NewKepzettsegButton available={available} kepzettsegDefs={kepzettsegDefs} kiterjesztesek={kiterjesztesek} onAdd={v => onAddKepzettseg(csoport, v)} />
+          </span>
+        )}
       </h3>
       {!collapsed && (<>
         {slotok.map((slot, i) => {
@@ -97,11 +105,6 @@ export function KepzettsegCsoport({
             />
           );
         })}
-        {/* Misztikus képzettségek felvétele a Misztikus fülön történik (faj/tradíció
-            megkötések miatt) - itt csak megjelenítés + szint/törlés. */}
-        {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
-          <NewKepzettsegButton available={available} kepzettsegDefs={kepzettsegDefs} kiterjesztesek={kiterjesztesek} onAdd={v => onAddKepzettseg(csoport, v)} />
-        )}
       </>)}
     </div>
   );
@@ -116,11 +119,8 @@ function NewKepzettsegButton({ available, kepzettsegDefs, kiterjesztesek, onAdd 
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="item-row item-row-new">
-        <button className="field-select kep-select fort-picker-btn" onClick={() => setOpen(true)}>
-          + Új képzettség...
-        </button>
-      </div>
+      <button type="button" className="csoport-uj-btn" title="Új képzettség" aria-label="Új képzettség"
+        onClick={e => { e.stopPropagation(); setOpen(true); }}><Ikon név="új" /></button>
       {open && (
         <KepzettsegPickerOverlay
           available={available}

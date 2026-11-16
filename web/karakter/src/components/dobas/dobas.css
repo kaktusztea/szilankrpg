@@ -476,7 +476,6 @@
    ============================================= */
 /* Header row: centred title, extras icon on the right */
 .dobas-fejlec { position: relative; width: 100%; display: flex; justify-content: center; }
-.dobas-fejlec .ke-dobas-header { text-transform: none; font-size: 17px; }
 .extrak-ikon-btn {
   position: absolute; right: -6px; top: 50%; transform: translateY(-50%);
   display: inline-flex; padding: 6px; background: none; border: none; cursor: pointer;

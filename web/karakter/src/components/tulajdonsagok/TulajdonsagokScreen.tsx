@@ -1,3 +1,4 @@
+import { SzinKor } from '../common/SzinKor';
 import { Ikon } from '../common/Ikon';
 import { clamp } from '../../engine/utils';
 import { useState, useMemo, useCallback } from 'react';
@@ -125,7 +126,7 @@ export function TulajdonsagokScreen({
 
   return (
     <div className="screen tul-screen">
-      <h2>🔵 Tulajdonságok / Képzettségek{isTestKarakter && onTestReset && (
+      <h2><SzinKor szín="kék" /> Tulajdonságok / Képzettségek{isTestKarakter && onTestReset && (
         <button
           type="button"
           className="tul-test-reset-btn"

@@ -2,6 +2,9 @@ import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { SEB_TÍPUSOK, SEB_ALAP_MAX, SEB_BŐVÍTETT_MAX, type SebTípus } from '../../engine/harc/ep-logic';
 
+/** Captions under the seb type letters. */
+const SEB_TÍPUS_FELIRAT: Record<string, string> = { S: 'szúró', V: 'vágó', Z: 'zúzó', FP: 'fájdalom' };
+
 /** Sebesülés dialógus: típus + érték választás → onConfirm. */
 export function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) => void }) {
   const [típus, setTípus] = useState<SebTípus | ''>('');
@@ -17,11 +20,14 @@ export function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) 
   }
 
   return (
-    <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-      <label>Sebesülés</label>
-      <div className="ep-dialog-row">
+    <div className="kep-prompt seb-dialog" onClick={e => e.stopPropagation()}>
+      <label className="overlay-label-center">Sebesülés</label>
+      {/* Type chips with a caption (S / V / Z / FP alone is cryptic); same one-tap flow as before */}
+      <div className="seb-dialog-tipusok">
         {SEB_TÍPUSOK.map(t => (
-          <button key={t} className={`fort-fok-btn ${típus === t ? 'active' : ''}`} onClick={() => handleTípus(t)}>{t}</button>
+          <button key={t} className={`seb-dialog-tipus${típus === t ? ' active' : ''}`} onClick={() => handleTípus(t)}>
+            <b>{t}</b><span>{SEB_TÍPUS_FELIRAT[t]}</span>
+          </button>
         ))}
       </div>
       <div className="kep-szint-grid">
@@ -52,11 +58,11 @@ export function GyógyDialog({ maxÉP, maxFP, onConfirm }: { maxÉP: number; max
   }
 
   return (
-    <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-      <label>Gyógyulás</label>
-      <div className="ep-dialog-row">
-        <button disabled={maxÉP === 0} className={`fort-fok-btn ${típus === 'ÉP' ? 'active' : ''}`} onClick={() => setTípus('ÉP')}>ÉP</button>
-        <button disabled={maxFP === 0} className={`fort-fok-btn ${típus === 'FP' ? 'active' : ''}`} onClick={() => setTípus('FP')}>FP</button>
+    <div className="kep-prompt seb-dialog" onClick={e => e.stopPropagation()}>
+      <label className="overlay-label-center">Gyógyulás</label>
+      <div className="seb-dialog-tipusok">
+        <button disabled={maxÉP === 0} className={`seb-dialog-tipus${típus === 'ÉP' ? ' active' : ''}`} onClick={() => setTípus('ÉP')}><b>ÉP</b><span>életerő</span></button>
+        <button disabled={maxFP === 0} className={`seb-dialog-tipus${típus === 'FP' ? ' active' : ''}`} onClick={() => setTípus('FP')}><b>FP</b><span>fájdalom</span></button>
       </div>
       {típus && (
         <div className="kep-szint-grid">

@@ -2,12 +2,12 @@
    Harcértékek fül (HM, fegyverek, páncél, pajzs)
    ============================================= */
 
-.harcertekek-screen { padding: 12px; font-size: 16px; }
+.harcertekek-screen { padding: 12px 0; font-size: 16px; }
 
 /* --- Szekciók --- */
 .he-section { margin-bottom: 20px; }
 .he-section + .he-section { border-top: 1px solid var(--border-light); padding-top: 16px; }
-.he-section h3 { margin: 0 0 8px; font-size: 19px; color: #8fb3d9; padding-bottom: 4px; }  /* muted blue (toned-down --color-taktika), like the Aktív fül section titles */
+.he-section h3 { margin: 0 0 8px; font-size: var(--szakaszcim-meret); color: var(--color-szakasz); padding-bottom: 4px; }  /* muted blue (toned-down --color-taktika), like the Aktív fül section titles */
 
 /* --- HM grid --- */
 .he-hm-grid { display: flex; flex-direction: column; gap: 6px; }
@@ -99,7 +99,6 @@
 /* --- Inline helpers --- */
 /* Stats that do not apply right now (e.g. the shield's weapon stats): small faded line, no strikethrough */
 .he-stat-halvany { font-size: 13px; color: var(--text-muted); }
-.he-btn-disabled { opacity: 0.3; }
 
 /* --- Közelharci fegyverkártya (kompakt): cím + MF jelvény, alcím, ikon-gombok, statisztika-sor --- */
 .he-fegyver-cim { flex: 1; min-width: 0; }

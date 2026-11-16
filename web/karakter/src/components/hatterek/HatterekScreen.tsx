@@ -1,3 +1,4 @@
+import { SzinKor } from '../common/SzinKor';
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-types';
 import type { Karakter, UndoPatch } from '../../engine/types';
@@ -64,7 +65,7 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
 
   return (
     <div className="screen hatterek-screen">
-      <h2>🟡 Hátterek</h2>
+      <h2><SzinKor szín="sárga" /> Hátterek</h2>
 
       {/* Faj háttér */}
       <div className="hatter-cloud-section">

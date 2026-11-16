@@ -164,7 +164,7 @@ export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, on
         })()}
       </div>
       <div className="menu-footer">
-        <button className="menu-test-chip" onClick={onTest}>T</button>
+        <button className="menu-test-chip" title="Teszt karakter betöltése" onClick={onTest}>Teszt</button>
         <span className="menu-build">{APP_VERSION}</span>
         {document.fullscreenEnabled ? (
           <button className="menu-fs-chip" title="Teljes képernyő" onClick={() => {

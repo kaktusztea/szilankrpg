@@ -1,3 +1,4 @@
+import { harcértékVáltozásCímke } from './undo-cimke';
 import { Ikon } from '../common/Ikon';
 import type { Kepzettseg, UndoPatch } from '../../engine/types';
 import { képzKulcs, fortélyFok } from '../../engine/azonosito';
@@ -28,7 +29,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
 
   // Undo-wrapping setKarakter for sections that don't use explicit patches (fegyverek, páncél)
   const undoSetKarakter: React.Dispatch<React.SetStateAction<Karakter | null>> = (updater) => {
-    pushUndo('Harcértékek módosítás');
+    // Label says what changed (the updater is pure, so evaluating it here for the label is safe)
+    const next = typeof updater === 'function' ? updater(karakter) : updater;
+    pushUndo(harcértékVáltozásCímke(karakter, next));
     setKarakter(updater);
   };
 

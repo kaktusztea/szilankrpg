@@ -88,19 +88,19 @@ képzettség_csoport_sorrend:
 
 fortély_csoport_sorrend:
   - id: "harci"
-    label: "⚔️ Harci"
+    label: "Harci"
   - id: "távharc"
-    label: "🏹 Távharc"
+    label: "Távharc"
   - id: "általános"
-    label: "🔧 Általános"
+    label: "Általános"
   - id: "érzékek"
-    label: "👁️ Érzékek"
+    label: "Érzékek"
   - id: "szabad"
-    label: "🆓 Szabad"
+    label: "Szabad"
   - id: "kiemelt"
-    label: "⭐ Kiemelt"
+    label: "Kiemelt"
   - id: "misztikus"
-    label: "✨ Misztikus"
+    label: "Misztikus"
 
 # ============================================================
 # Fortély követelmény és módosító célok (string alapú)

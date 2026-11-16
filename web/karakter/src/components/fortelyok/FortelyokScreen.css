@@ -19,8 +19,8 @@
 
 /* Fok pöttyök */
 .fort-fok-dots { display: inline-flex; gap: 3px; align-items: center; }
-.fort-dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #ccc; background: transparent; }
-.fort-dot.filled { background: #fff; border-color: #fff; }
+.fort-dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid rgba(206, 147, 216, 0.55); background: transparent; }  /* same purple as .he-mf-dot */
+.fort-dot.filled { background: #a98bb0; border-color: #a98bb0; }
 .fort-dot-hidden { visibility: hidden; }
 
 /* Törlés → base: .item-delete (common.css) */
@@ -42,10 +42,8 @@
 
 /* --- Nyelv picker --- */
 .spec-picker { max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
-.spec-picker-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
-.spec-picker-csoport-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
-/* Harcértékek weapon picker: category labels in the TÉ blue instead of the default orange */
-.spec-picker-fegyver .spec-picker-csoport-label { color: var(--color-taktika); }
+.spec-picker-label { font-size: 13px; font-weight: bold; color: var(--color-taktika); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
+.spec-picker-csoport-label { font-size: 13px; font-weight: bold; color: var(--color-taktika); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
 .spec-picker-list { display: flex; flex-direction: column; gap: 3px; }
 .spec-picker-csoport { display: flex; flex-direction: column; gap: 3px; }
 

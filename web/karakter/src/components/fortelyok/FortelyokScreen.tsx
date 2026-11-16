@@ -1,3 +1,4 @@
+import { SzinKor } from '../common/SzinKor';
 import { useState, useEffect, useMemo } from 'react';
 import type { FortelyokScreenProps, DeleteTarget } from './types';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport, calcSzabadFelvettKp } from './helpers';
@@ -34,7 +35,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
 
   return (
     <div className="screen fort-screen">
-      <h2>🟣 Fortélyok</h2>
+      <h2><SzinKor szín="lila" /> Fortélyok</h2>
       <div className="fort-section">
         {CSOPORT_SORREND.map(csoport => (
           <FortelyCsoport

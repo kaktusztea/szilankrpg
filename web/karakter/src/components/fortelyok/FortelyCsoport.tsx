@@ -26,9 +26,28 @@ export function FortelyCsoport({
   return (
     <div className="fort-csoport">
       <h3 className="csoport-label fort-csoport-label" onClick={onToggleCollapse}>
-        <span className="fort-csoport-arrow"><Ikon név={collapsed ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        <span className="fort-csoport-arrow"><Ikon név={collapsed || slotok.length === 0 ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
         {csoport === 'szabad' && !gameMode && (
           <span className="fort-csoport-ingyenes">● {szabadMaradtIngyenes} ingyenes</span>
+        )}
+        {/* Add button lives in the header row (no separate "+ Új fortély..." row per group).
+            Misztikus: taken on the Misztikus tab (Felvett / Kiérdemelt choice, restrictions). */}
+        {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
+          // stopPropagation: the picker is a portal, its clicks would otherwise bubble to the header (collapse toggle)
+          <span className="csoport-uj" onClick={e => e.stopPropagation()}>
+          <NewFortelySelect
+            available={available}
+            csoport={csoport}
+            slotok={slotok}
+            tsz={tsz}
+            fortélyok={fortélyok}
+            fegyverNevek={fegyverNevek}
+            nyelvtanulásSzint={nyelvtanulásSzint}
+            képzettségek={képzettségek}
+            kepzettsegDefs={data.kepzettsegDefs}
+            onAdd={onAddFortely}
+          />
+          </span>
         )}
       </h3>
       {!collapsed && (<>
@@ -76,23 +95,6 @@ export function FortelyCsoport({
             />
           );
         })}
-
-        {/* Misztikus fortélyok felvétele a Misztikus fülön történik (Felvett/Kiérdemelt
-            választó, megkötések miatt) - itt csak megjelenítés + fok/törlés. */}
-        {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
-          <NewFortelySelect
-            available={available}
-            csoport={csoport}
-            slotok={slotok}
-            tsz={tsz}
-            fortélyok={fortélyok}
-            fegyverNevek={fegyverNevek}
-            nyelvtanulásSzint={nyelvtanulásSzint}
-            képzettségek={képzettségek}
-            kepzettsegDefs={data.kepzettsegDefs}
-            onAdd={onAddFortely}
-          />
-        )}
       </>)}
     </div>
   );

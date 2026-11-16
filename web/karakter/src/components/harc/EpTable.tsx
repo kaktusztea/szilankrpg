@@ -75,8 +75,8 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
               const idx = oszlop * oszlopMéret + sor;
               const r = rubrikák[idx];
               const hue = r.sorszám ? (r.sorszám * 17) % 30 : 0;
-              const bgColor = r.típus === 'FP' ? `hsl(280, 50%, ${35 + (r.sorszám * 5) % 15}%)`
-                            : r.típus ? `hsl(${hue}, 70%, ${35 + (r.sorszám * 3) % 10}%)`
+              const bgColor = r.típus === 'FP' ? `hsl(280, 28%, ${32 + (r.sorszám * 5) % 12}%)`
+                            : r.típus ? `hsl(${hue}, 42%, ${33 + (r.sorszám * 3) % 10}%)`
                             : '';
               return (
                 <div key={sor} className={`ep-cell ${r.típus ? 'filled' : ''}`} style={bgColor ? { background: bgColor } : undefined}>

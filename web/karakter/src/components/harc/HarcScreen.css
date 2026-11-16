@@ -2,7 +2,7 @@
    Harc fül
    ============================================= */
 
-.harc-screen h3 { margin: 12px 0 6px; font-size: 17px; }
+.harc-screen h3 { margin: 12px 0 6px; font-size: var(--szakaszcim-meret); color: var(--color-szakasz); }
 
 /* --- Header box grid --- */
 .harc-header {
@@ -312,7 +312,7 @@
 
 /* --- Popup helpers --- */
 .harc-confirm-center { display: flex; align-items: center; justify-content: center; }
-.harc-popup-label { font-weight: bold; }
+.harc-popup-label { display: block; font-size: var(--ablakcim-meret); font-weight: bold; text-align: center; }
 .harc-popup-text { font-size: 15px; color: var(--text); }
 .ve-history-list { display: flex; flex-wrap: wrap; justify-content: center; align-self: center; gap: 4px 8px; max-width: 200px; }
 .ve-history-reset { align-self: center; margin-top: 12px; }  /* look: .btn-halvany-veszely (common.css) */
@@ -336,10 +336,9 @@
 }
 
 .ke-dobas-header {
-  font-size: 16px;
+  font-size: var(--ablakcim-meret);
   font-weight: bold;
   color: var(--text);
-  text-transform: uppercase;
   text-align: center;
 }
 

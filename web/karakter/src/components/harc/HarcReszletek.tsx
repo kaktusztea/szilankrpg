@@ -50,8 +50,9 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
   const fm = r.fortély ?? fortelyMods; // a sor saját (soronként kiértékelt) fortély-módosítói
 
   return (
-    <div className="debug-box harc-reszletek">
-      <strong className="debug-box-title">Részletes értékek</strong>
+    // Collapsed by default (native <details>): the summary row stays visible, tap to expand
+    <details className="debug-box harc-reszletek">
+      <summary className="debug-box-title">Részletes értékek</summary>
 
       <Section label="Név">
         {d.fegyverNév} [{d.kategória}]
@@ -112,7 +113,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
         <DetailParts parts={[['Fortély', fortelyMods['fegyverhossz'] ?? 0]]} />
         {d.sumFegyverhossz !== null && ` · Összhossz: ${d.sumFegyverhossz + (fortelyMods['fegyverhossz'] ?? 0)}`}
       </Section>
-    </div>
+    </details>
   );
 }
 

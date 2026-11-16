@@ -17,8 +17,9 @@ export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, pus
 
   return (
     <div className="th-reszletek">
-      <div className="debug-box th-reszletek-box">
-        <strong className="debug-box-title">Részletes értékek</strong>
+      {/* Collapsed by default (native <details>): the summary row stays visible, tap to expand */}
+      <details className="debug-box th-reszletek-box">
+        <summary className="debug-box-title">Részletes értékek</summary>
         <div>Fegyver alap CÉ: {fegyverCÉ}</div>
         <div>Fegyver Osztó: {osztó}</div>
         <div>MF CÉ bónusz: {mfCÉ}</div>
@@ -31,7 +32,7 @@ export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, pus
         }
         <div>CÉ alap: {céAlap}</div>
         <div><strong>Összesen: {cé}</strong></div>
-      </div>
+      </details>
       {!gameMode && (
         <div className="th-cm-box">
           <span className="th-cm-label">CM</span>

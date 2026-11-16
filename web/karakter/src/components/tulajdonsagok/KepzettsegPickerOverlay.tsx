@@ -1,3 +1,4 @@
+import { TRADÍCIÓ_ID } from '../../engine/azonosito';
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
@@ -55,7 +56,7 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, kiterjeszte
         </div>
         <div className="fort-picker-list">
           {available.map(opt => {
-            const def = findDef(opt, kepzettsegDefs);
+            const def = pickerOpcióDef(opt.value, kepzettsegDefs);
             const hasInfo = !!def;
             const isExpanded = expandedValue === opt.value || (allExpanded && hasInfo);
 
@@ -84,17 +85,13 @@ export function KepzettsegPickerOverlay({ available, kepzettsegDefs, kiterjeszte
   );
 }
 
-/** Find the KepzettsegDef from picker option value */
-function findDef(opt: PickerOption, defs: KepzettsegDef[]): KepzettsegDef | undefined {
-  const simple = defs.find(d => d.név === opt.value);
-  if (simple) return simple;
-  if (opt.value.includes(':')) {
-    const base = opt.value.split(':')[0];
-    return defs.find(d => d.név === base);
-  }
-  if (opt.value.startsWith('__prompt:')) {
-    const base = opt.value.slice('__prompt:'.length);
-    return defs.find(d => d.név === base);
-  }
-  return undefined;
+/**
+ * Find the KepzettsegDef of a picker option. The option values are id-based (see getAvailableNames):
+ * `<id>`, `<id>/<sub>` (többszörös), `__prompt:<id>` (new free-text element), `__tradicio`.
+ */
+export function pickerOpcióDef(value: string, defs: KepzettsegDef[]): KepzettsegDef | undefined {
+  const id = value === '__tradicio' ? TRADÍCIÓ_ID
+    : value.startsWith('__prompt:') ? value.slice('__prompt:'.length)
+    : value.split('/')[0];
+  return defs.find(d => d.id === id);
 }

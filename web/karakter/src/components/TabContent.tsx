@@ -1,3 +1,4 @@
+import { SzinKor } from './common/SzinKor';
 import { Ikon } from './common/Ikon';
 import type { Kepzettseg, UndoPatch } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
@@ -20,9 +21,9 @@ export const ALL_TABS: TabDef[] = [
   { id: 'tavharc', label: <Ikon név="távharc" />, editOnly: false },
   { id: 'harcertekek', label: <Ikon név="pajzs" />, editOnly: false },
   { id: 'misztikus', label: <Ikon név="misztikus" />, editOnly: false },
-  { id: 'tulajdonsagok', label: '🔵', editOnly: false },
-  { id: 'fortelyok', label: '🟣', editOnly: false },
-  { id: 'hatterek', label: '🟡', editOnly: false },
+  { id: 'tulajdonsagok', label: <SzinKor szín="kék" />, editOnly: false },
+  { id: 'fortelyok', label: <SzinKor szín="lila" />, editOnly: false },
+  { id: 'hatterek', label: <SzinKor szín="sárga" />, editOnly: false },
 ];
 
 interface Props {

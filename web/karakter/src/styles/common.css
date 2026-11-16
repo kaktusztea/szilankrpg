@@ -12,10 +12,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 10px;
-  background: var(--surface);
-  border: 1px solid var(--border-row);
-  border-radius: 4px;
+  /* Line list (no boxes): hairline separator under each row */
+  padding: 8px 4px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
@@ -25,11 +26,21 @@
 
 .item-row-new { opacity: 0.7; }
 
+/* Small "+" (add) button in a group header row */
+.csoport-label { display: flex; align-items: center; gap: 4px; }
+.csoport-uj { margin-left: auto; display: inline-flex; }
+.csoport-uj-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  background: var(--input-bg); border: 1px solid var(--border-input); border-radius: 4px;
+  color: var(--text-soft); font-size: 15px; cursor: pointer;
+}
+
 /* ===================
    Csoport fejléc (collapsible szekció title)
    =================== */
 .csoport-label {
-  font-size: 17px;
+  font-size: var(--szakaszcim-meret);
   font-weight: bold;
   margin-bottom: 4px;
   padding-bottom: 2px;
@@ -74,7 +85,7 @@
 .item-delete {
   background: none;
   border: none;
-  color: #6ec6ff;
+  color: var(--text-muted);  /* quiet: still one tap, just not shouting on every row */
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -116,6 +127,9 @@
   color: var(--text-soft);
 }
 .debug-box-title { color: var(--accent); display: block; margin-bottom: 6px; }
+/* Collapsible variant (<details>): the title is the always-visible summary row */
+summary.debug-box-title { display: list-item; cursor: pointer; font-weight: bold; margin-bottom: 0; }
+details[open] > summary.debug-box-title { margin-bottom: 6px; }
 
 /* ===================
    Picker (±gombos érték választó: kor, távolság)
@@ -201,6 +215,7 @@
   align-items: center;
   padding: 10px 12px;
   border-bottom: 1px solid var(--border);
+  font-size: var(--ablakcim-meret);
   font-weight: bold;
 }
 
@@ -274,7 +289,7 @@
   margin-top: 4px;
 }
 .aktiv-picker-group-pozitív { color: var(--success); }
-.aktiv-picker-group-semleges { color: var(--warning); }
+.aktiv-picker-group-semleges { color: var(--color-taktika); }  /* neutral group label: TÉ blue (same as the spec picker labels) */
 .aktiv-picker-group-negatív { color: var(--error);
 }
 

@@ -32,3 +32,9 @@
 .idea-poz { font-size: 12px; color: #81c784; }
 .idea-neg { font-size: 12px; color: #e08a8a; }
 .idea-skala-sugo { font-size: 11px; color: var(--text-muted); text-align: center; }
+
+/* Flat color dot (SzinKor): tab color codes without emoji. Sized by the surrounding font (1em). */
+.szin-kor { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 50%; vertical-align: -0.08em; flex-shrink: 0; }
+.szin-kor-kék { background: var(--color-kepzettseg); }
+.szin-kor-lila { background: var(--color-fortely); }
+.szin-kor-sárga { background: #e6c04a; }

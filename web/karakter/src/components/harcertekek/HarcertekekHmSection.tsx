@@ -29,22 +29,22 @@ export function HmSection({ data, karakter: k, setKarakter, pushUndo, gameMode }
     setKarakter(prev => prev ? { ...prev, HM_VÉ: clamped } : prev);
   }
 
-  const btnCls = gameMode ? 'he-btn-disabled' : '';
 
   return (
     <section className="he-section">
       <div className="he-hm-grid">
         <div className={`he-hm-row${hasError ? ' he-error' : ''}`}>
           <span>HM TÉ:</span>
-          <button className={btnCls} disabled={gameMode} onClick={() => setHM_TÉ(k.HM_TÉ - 1)}>−</button>
+          {/* Játék mód: read-only, so no stepper buttons at all (nothing disabled to look at) */}
+          {!gameMode && <button onClick={() => setHM_TÉ(k.HM_TÉ - 1)}>−</button>}
           <strong>{k.HM_TÉ}</strong>
-          <button className={btnCls} disabled={gameMode} onClick={() => setHM_TÉ(k.HM_TÉ + 1)}>+</button>
+          {!gameMode && <button onClick={() => setHM_TÉ(k.HM_TÉ + 1)}>+</button>}
         </div>
         <div className={`he-hm-row${hasError ? ' he-error' : ''}`}>
           <span>HM VÉ:</span>
-          <button className={btnCls} disabled={gameMode} onClick={() => setHM_VÉ(k.HM_VÉ - 1)}>−</button>
+          {!gameMode && <button onClick={() => setHM_VÉ(k.HM_VÉ - 1)}>−</button>}
           <strong>{k.HM_VÉ}</strong>
-          <button className={btnCls} disabled={gameMode} onClick={() => setHM_VÉ(k.HM_VÉ + 1)}>+</button>
+          {!gameMode && <button onClick={() => setHM_VÉ(k.HM_VÉ + 1)}>+</button>}
         </div>
       </div>
       <div className="he-hm-info">

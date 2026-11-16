@@ -657,3 +657,40 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
   font-size: 12px;
   text-align: center;
 }
+
+/* --- Képzettségpróba, plan B: two plain columns (no chip boxes), labeled; everything stays one tap --- */
+.kep-proba-oszlop-cim { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.3px; padding: 0 6px 2px; }
+.kep-proba-dual-list { gap: 12px; }
+.kep-proba-dual-col { gap: 1px; }
+.kep-proba-dual-col .he-field-btn {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+  background: none; border: 1px solid transparent; border-radius: 4px;
+  padding: 5px 6px; font-size: 14px; text-align: left;
+}
+.kep-proba-dual-col .he-field-btn b { font-family: monospace; }
+/* Célszám column: number first (fixed width), then its name */
+.kep-proba-celszam-col .he-field-btn { justify-content: flex-start; }
+.kep-proba-celszam-col .he-field-btn b { min-width: 2ch; text-align: right; }
+.kep-proba-dual-col .he-field-btn.vallas-active { background: rgba(144, 202, 249, 0.22); border-color: transparent !important; color: var(--text); font-weight: bold; }  /* !important: beats the global .vallas-active green frame */
+/* Domináns tulajdonság: the ◆ mark + a lighter tone (no background block) */
+.kep-proba-dual-col .kep-proba-dominans:not(.vallas-active) { background: none; color: var(--color-taktika); }
+/* Modifier pills */
+.kep-proba-kapszulak { display: flex; flex-wrap: wrap; gap: 6px; }
+.kep-proba-kapszulak:empty { display: none; }
+.kep-proba-kapszulak .kep-proba-row { display: contents; }
+.kep-proba-kapszulak .kep-proba-kit-btn { width: auto; border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+/* Vállalás / Összetett próba: label + its buttons */
+.kep-proba-vm-racs { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; }
+.kep-proba-vm-cim { font-size: 12px; color: var(--text-dim); }
+
+/* --- Identity block (Becenév, Név, Szint, Faj, Kor, Anyanyelv, Játékos): one compact line list, no separate boxes --- */
+.tul-header { margin-bottom: 0; }
+.tul-header-col { gap: 0; }
+.tul-header-box, .tul-faj-row {
+  background: none; border: none; border-bottom: 1px solid var(--border-light); border-radius: 0; padding: 7px 4px;
+}
+.tul-header-two-col, .tul-faj-kor-row { gap: 16px; }
+.tul-faj-kor-row { margin-bottom: 0; }
+/* Tulajdonság pontok: a readable status line (was 13px dim text) */
+.tul-pont-bar-styled { padding: 8px 4px 10px; font-size: 14px; color: var(--text-soft); }
+.tul-pont-bar-styled.he-error { font-weight: bold; }

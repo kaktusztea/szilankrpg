@@ -211,14 +211,16 @@ export function KepzettsegProbaPopup({
 
         <div className="kep-proba-dual-list">
           <div className="kep-proba-dual-col">
+            <div className="kep-proba-oszlop-cim">Tulajdonság</div>
             {MIND_TULAJDONSÁG.map(t => (
               <CelszamGomb key={t} aktív={selTul === t} onClick={d.váltás(() => { setSelTul(t); })}
                 className={dominánsTulajdonságok.has(tulLabel(t)) ? 'kep-proba-dominans' : ''}>
-                {tulLabel(t)} • {tulajdonságok[t]}
+                <span>{tulLabel(t)}{dominánsTulajdonságok.has(tulLabel(t)) ? ' ◆' : ''}</span><b>{tulajdonságok[t]}</b>
               </CelszamGomb>
             ))}
           </div>
-          <div className="kep-proba-dual-col">
+          <div className="kep-proba-dual-col kep-proba-celszam-col">
+            <div className="kep-proba-oszlop-cim">Célszám</div>
             <CelszamGomb aktív={ellenpróba} disabled={összetettDb > 0}
               onClick={d.váltás(() => { setEllenpróba(!ellenpróba); if (!ellenpróba) setÖsszetettDb(0); })}>
               <span className="kep-proba-rejtett-label">Ellenpróba</span>
@@ -229,7 +231,7 @@ export function KepzettsegProbaPopup({
               </CelszamGomb>
               {p.nehézségek.map(n => (
                 <CelszamGomb key={n.érték} aktív={nehézség === n.érték} onClick={d.váltás(() => { setNehézség(n.érték); })}>
-                  {n.érték} • {n.név}
+                  <b>{n.érték}</b><span>{n.név}</span>
                 </CelszamGomb>
               ))}
               {p.nehézségek_extra.length > 0 && (!nehTöbbi ? (
@@ -254,6 +256,8 @@ export function KepzettsegProbaPopup({
           </div>
         )}
 
+        {/* Modifier pills: Kiterjesztő / Helyzetfüggő / Helyettesítés (each still one tap) */}
+        <div className="kep-proba-kapszulak">
         {kiterjesztesek.length > 0 && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
@@ -287,20 +291,27 @@ export function KepzettsegProbaPopup({
             </button>
           </div>
         )}
+        </div>
 
         {/* --- Extrák (accordion nélkül, közvetlenül): Vállalás + Összetett sorok --- */}
         {!vanEredmény && (
         <div className="kep-proba-extras-flat">
-          <div className="kep-proba-osszetett-row kep-proba-vm-row">
-            {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
-              <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás} title="Vállalás mértéke"
-                onClick={d.váltás(() => { setVállalás(vállalás === n ? 0 : n); })}>V{n}</ExtraGomb>
-            ))}
-            <span className="kep-proba-extras-sep">•</span>
-            {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
-              <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
-                onClick={d.váltás(() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); })}>+{n}M</ExtraGomb>
-            ))}
+          {/* Two labeled rows instead of the cryptic V1 V2 V3 • +1M +2M +3M strip */}
+          <div className="kep-proba-vm-racs">
+            <span className="kep-proba-vm-cim">Vállalás</span>
+            <div className="kep-proba-osszetett-row kep-proba-vm-row">
+              {Array.from({ length: próba.vállalás.max }, (_, i) => i + 1).map(n => (
+                <ExtraGomb key={n} aktív={vállalás === n} disabled={összetettDb > 0 || n > maxVállalás} title="Vállalás mértéke"
+                  onClick={d.váltás(() => { setVállalás(vállalás === n ? 0 : n); })}>{n}</ExtraGomb>
+              ))}
+            </div>
+            <span className="kep-proba-vm-cim">Összetett próba</span>
+            <div className="kep-proba-osszetett-row kep-proba-vm-row">
+              {Array.from({ length: próba.összetett_max_másodlagos }, (_, i) => i + 1).map(n => (
+                <ExtraGomb key={n} aktív={összetettDb === n} disabled={ellenpróba} title="Másodlagos próbák száma"
+                  onClick={d.váltás(() => { setÖsszetettDb(összetettDb === n ? 0 : n); setVállalás(0); })}>+{n}</ExtraGomb>
+              ))}
+            </div>
           </div>
         </div>
         )}

@@ -2,14 +2,14 @@
    Hátterek fül
    ============================================= */
 
-.hatterek-screen { padding: 12px; }
+.hatterek-screen { padding: 12px 0; }  /* side margin: .screen-slide (12px), same on every tab */
 .hatterek-screen h2 { margin: 0 0 12px; }
 
 /* --- Szekciók --- */
 .hatter-cloud-section { margin-bottom: 14px; }
-.hatter-cloud-title { display: block; font-size: 13px; font-weight: bold; color: var(--color-hatter); text-transform: uppercase; margin-bottom: 6px; }
+.hatter-cloud-title { display: block; font-size: var(--szakaszcim-meret); font-weight: bold; color: var(--color-hatter); margin-bottom: 6px; }
 .hatter-cloud-cat { margin-bottom: 8px; }
-.hatter-cat-label { display: block; font-size: 12px; color: var(--color-hatter-cat); font-weight: bold; margin-bottom: 4px; }
+.hatter-cat-label { display: block; font-size: 13px; color: var(--color-hatter-cat); font-weight: bold; margin-bottom: 4px; }
 .hatter-cloud { display: flex; flex-wrap: wrap; gap: 4px; }
 
 /* --- Tag-ek --- */

@@ -19,7 +19,7 @@ export function SzorzóPicker({ label, list, activeId, onSelect }: Props) {
           aria-pressed={item.id === activeId}
           onClick={() => onSelect(item.id)}
         >
-          {item.szorzó}×: {item.leírás}
+          <span className="th-picker-szorzo">{item.szorzó}×</span><span>{item.leírás}</span>
         </button>
       ))}
     </div>

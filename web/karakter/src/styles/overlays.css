@@ -88,7 +88,7 @@
 .overlay-menu { align-items: stretch; gap: 6px; min-width: 200px; }
 .menu-build { font-size: 10px; opacity: 0.5; }
 .menu-footer { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; }
-.menu-test-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 12px; padding: 0; width: 36px; height: 29px; font-size: 14px; font-weight: bold; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
+.menu-test-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 6px; padding: 0 10px; height: 29px; font-size: 13px; color: var(--text-soft); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
 .menu-fs-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 12px; padding: 0; width: 36px; height: 29px; font-size: 17px; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
 .overlay-szilank { align-items: center; gap: 8px; max-height: 85vh; overflow-y: auto; }
 
@@ -99,8 +99,8 @@
 .overlay-confirm { align-items: center; gap: 12px; max-width: 320px; }
 .overlay-slots { align-items: stretch; gap: 8px; min-width: 300px; max-height: 80vh; overflow: auto; }
 .overlay-undo { align-items: stretch; gap: 8px; min-width: 280px; }
-.overlay-label { font-weight: bold; }
-.overlay-label-center { font-weight: bold; text-align: center; }
+.overlay-label { font-size: var(--ablakcim-meret); font-weight: bold; }
+.overlay-label-center { font-size: var(--ablakcim-meret); font-weight: bold; text-align: center; }
 .overlay-label-error { color: var(--error); }
 .overlay-desc { font-size: 13px; color: var(--text); text-align: center; }
 .overlay-desc-pre { white-space: pre-line; }   /* többsoros hibaüzenet (\n) */
@@ -121,8 +121,9 @@
 .slot-name-active { font-weight: bold; }
 .slot-empty { color: var(--text-muted); text-align: center; }
 .slot-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.slot-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 10px; width: 38px; height: 38px; font-size: 18px; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
-.slot-chip-del { color: var(--color-negative); font-weight: bold; }
+.slot-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 6px; height: 34px; padding: 0 10px; gap: 6px; font-size: 16px; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
+.slot-chip span { font-size: 13px; }  /* caption next to the icon (was icon-only) */
+.slot-chip-del { color: var(--color-negative); }
 .slot-actions { display: flex; gap: 8px; margin-top: 8px; }
 .slot-actions-top { margin-top: 0; margin-bottom: 8px; }
 .slot-actions-top .slot-file-btn { padding: 8px 6px 6px; display: flex; flex-direction: column; align-items: center; gap: 3px; }

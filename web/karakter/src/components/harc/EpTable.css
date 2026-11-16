@@ -90,7 +90,7 @@
   background: var(--input-bg);
 }
 
-.ep-cell.filled { color: #fff; }
+.ep-cell.filled { color: #ececec; border-color: transparent; }
 
 .btn-seb { border-color: #c0392b !important; }
 .btn-heal { border-color: #27ae60 !important; }
@@ -137,3 +137,19 @@
 
 .btn-confirm { background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; }
 .ep-expand-btn { text-align: center; color: var(--text-dim); font-size: 28px; cursor: pointer; padding: 2px 0; }
+
+/* --- Sebesülés / Gyógyulás dialog: square chips with captions (same style as the newer popups) --- */
+.seb-dialog { width: min(300px, 86vw); box-sizing: border-box; }
+.seb-dialog-tipusok { display: flex; gap: 6px; }
+.seb-dialog-tipus {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 4px;
+  background: var(--input-bg); border: 1px solid var(--border-input); border-radius: 6px;
+  color: var(--text); cursor: pointer; font: inherit;
+}
+.seb-dialog-tipus b { font-size: 17px; }
+.seb-dialog-tipus span { font-size: 11px; color: var(--text-dim); }
+.seb-dialog-tipus.active { border-color: #c76a6a; background: rgba(199, 106, 106, 0.18); }
+.seb-dialog-tipus:disabled { opacity: 0.35; cursor: default; }
+.seb-dialog .kep-szint-grid { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+.seb-dialog .kep-szint-grid .fort-fok-btn { width: 100%; height: 38px; border-radius: 4px; font-family: monospace; }
+.seb-dialog .kep-szint-grid .fort-fok-btn.active { border-color: #c76a6a; background: rgba(199, 106, 106, 0.3); color: var(--text); }
