@@ -7,7 +7,7 @@
 /* --- Szekciók --- */
 .he-section { margin-bottom: 20px; }
 .he-section + .he-section { border-top: 1px solid var(--border-light); padding-top: 16px; }
-.he-section h3 { margin: 0 0 8px; font-size: 19px; color: var(--text); padding-bottom: 4px; }
+.he-section h3 { margin: 0 0 8px; font-size: 19px; color: #8fb3d9; padding-bottom: 4px; }  /* muted blue (toned-down --color-taktika), like the Aktív fül section titles */
 
 /* --- HM grid --- */
 .he-hm-grid { display: flex; flex-direction: column; gap: 6px; }
