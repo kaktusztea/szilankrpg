@@ -118,3 +118,23 @@ export function CelszamGomb({ aktív, onClick, children, className = '', disable
     </button>
   );
 }
+
+/**
+ * Próba mód (top of the Célszám column): Ismert / Rejtett / Ellen(próba).
+ * These are not target numbers but the kind of roll, so they sit in a segmented bar, not in the number list.
+ * Rejtett = nehézség -1 (the list stays tappable: picking a number switches back to Ismert);
+ * Ellen = ellenpróba (no target list; not combinable with Összetett próba).
+ */
+export function ProbaModValaszto({ ellenpróba, ismeretlen, ellenTiltva, onIsmert, onRejtett, onEllen }: {
+  ellenpróba: boolean; ismeretlen: boolean; ellenTiltva: boolean;
+  onIsmert: () => void; onRejtett: () => void; onEllen: () => void;
+}) {
+  const mód = ellenpróba ? 'ellen' : ismeretlen ? 'rejtett' : 'ismert';
+  return (
+    <div className="proba-mod-sav" role="group" aria-label="Célszám módja">
+      <button type="button" aria-pressed={mód === 'ismert'} className={mód === 'ismert' ? 'active' : ''} onClick={onIsmert}>Ismert</button>
+      <button type="button" aria-pressed={mód === 'rejtett'} className={mód === 'rejtett' ? 'active' : ''} title="Rejtett célszám (a KM tudja)" onClick={onRejtett}>Rejtett</button>
+      <button type="button" aria-pressed={mód === 'ellen'} className={mód === 'ellen' ? 'active' : ''} title="Ellenpróba" disabled={ellenTiltva} onClick={onEllen}>Ellen</button>
+    </div>
+  );
+}

@@ -32,70 +32,66 @@ export function KmJelolesPicker({ aktuális, név, színÉrte, kombináltBetűk,
 
   if (kiegészítőAlap) {
     return (
-      <PopupOverlay onClose={() => setKiegészítőAlap(null)}>
-        <div className="kep-prompt km-jel-picker" onClick={e => e.stopPropagation()}>
-          <label className="kep-prompt-label-bold-mb">Kiegészítő betű - {kiegészítőAlap}+?</label>
-          <div className="km-jel-grid">
-            {KM_JEL_BETŰK.filter(b => b !== kiegészítőAlap).map(b => {
-              const kombinált = kiegészítőAlap + b;
-              return (
-                <button
-                  key={b}
-                  className="km-jel-chip"
-                  style={{ '--jel-szín': színÉrte(kombinált) } as React.CSSProperties}
-                  onClick={() => onPick(kombinált)}
-                >
-                  {kombinált}
-                </button>
-              );
-            })}
-          </div>
-          <button className="he-field-btn km-jel-clear" onClick={() => setKiegészítőAlap(null)}>
-            Mégsem
-          </button>
+      <PopupOverlay className="kep-prompt km-jel-picker" onClose={() => setKiegészítőAlap(null)}>
+        <label className="kep-prompt-label-bold-mb">Kiegészítő betű - {kiegészítőAlap}+?</label>
+        <div className="km-jel-grid">
+          {KM_JEL_BETŰK.filter(b => b !== kiegészítőAlap).map(b => {
+            const kombinált = kiegészítőAlap + b;
+            return (
+              <button
+                key={b}
+                className="km-jel-chip"
+                style={{ '--jel-szín': színÉrte(kombinált) } as React.CSSProperties}
+                onClick={() => onPick(kombinált)}
+              >
+                {kombinált}
+              </button>
+            );
+          })}
         </div>
+        <button className="he-field-btn km-jel-clear" onClick={() => setKiegészítőAlap(null)}>
+          Mégsem
+        </button>
       </PopupOverlay>
     );
   }
 
   return (
-    <PopupOverlay onClose={onClose}>
-      <div className="kep-prompt km-jel-picker" onClick={e => e.stopPropagation()}>
-        <label className="kep-prompt-label-bold-mb">Harci jelölés - {név}</label>
-        <div className="km-jel-grid">
-          {KM_JEL_BETŰK.map(b => (
-            <button
-              key={b}
-              className={`km-jel-chip${b === aktuális ? ' km-jel-chip-active' : ''}`}
-              style={{ '--jel-szín': színÉrte(b) } as React.CSSProperties}
-              title="Tartsd lenyomva kiegészítő betűhöz"
-              {...pressProps(b)}
-            >
-              {b}
-            </button>
-          ))}
-        </div>
-        {kombináltBetűk.length > 0 && (
-          <>
-            <label className="kep-prompt-label-bold-mb km-jel-kombinalt-label">Korábbi kombinált betűk</label>
-            <div className="km-jel-grid">
-              {kombináltBetűk.map(b => (
-                <button
-                  key={b}
-                  className={`km-jel-chip km-jel-chip-kombinalt${b === aktuális ? ' km-jel-chip-active' : ''}`}
-                  style={{ '--jel-szín': színÉrte(b) } as React.CSSProperties}
-                  onClick={() => onPick(b)}
-                >
-                  {b}
-                </button>
-              ))}
-            </div>
-          </>
-        )}
-        <button className="he-field-btn km-jel-clear" onClick={() => onPick('')}>
-          Nincs jelölés ❌
-        </button>
+    <PopupOverlay className="kep-prompt km-jel-picker" onClose={onClose}>
+      <label className="kep-prompt-label-bold-mb">Harci jelölés - {név}</label>
+      <div className="km-jel-grid">
+        {KM_JEL_BETŰK.map(b => (
+          <button
+            key={b}
+            className={`km-jel-chip${b === aktuális ? ' km-jel-chip-active' : ''}`}
+            style={{ '--jel-szín': színÉrte(b) } as React.CSSProperties}
+            title="Tartsd lenyomva kiegészítő betűhöz"
+            {...pressProps(b)}
+          >
+            {b}
+          </button>
+        ))}
       </div>
+      {kombináltBetűk.length > 0 && (
+        <>
+          <label className="kep-prompt-label-bold-mb km-jel-kombinalt-label">Korábbi kombinált betűk</label>
+          <div className="km-jel-grid">
+            {kombináltBetűk.map(b => (
+              <button
+                key={b}
+                className={`km-jel-chip km-jel-chip-kombinalt${b === aktuális ? ' km-jel-chip-active' : ''}`}
+                style={{ '--jel-szín': színÉrte(b) } as React.CSSProperties}
+                onClick={() => onPick(b)}
+              >
+                {b}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+      <button className="he-field-btn km-jel-clear" onClick={() => onPick('')}>
+        Nincs jelölés ❌
+      </button>
     </PopupOverlay>
   );
 }

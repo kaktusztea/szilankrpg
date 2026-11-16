@@ -12,7 +12,7 @@ import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPic
 import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from '../../engine/proba/proba-common';
 import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb } from './ProbaReszek';
+import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, ProbaModValaszto } from './ProbaReszek';
 
 /** Vállalás próba eredménye (k6 vs vállalás: Kritikus hiba, ha ≤). */
 interface VállalásEredmény {
@@ -220,20 +220,17 @@ export function KepzettsegProbaPopup({
             {MIND_TULAJDONSÁG.map(t => (
               <CelszamGomb key={t} aktív={selTul === t} onClick={d.váltás(() => { setSelTul(t); })}
                 className={dominánsTulajdonságok.has(tulLabel(t)) ? 'kep-proba-dominans' : ''}>
-                <span>{tulLabel(t)}{dominánsTulajdonságok.has(tulLabel(t)) ? ' ◆' : ''}</span><b>{tulajdonságok[t]}</b>
+                <span>{tulLabel(t)}</span><b>{tulajdonságok[t]}</b>
               </CelszamGomb>
             ))}
           </div>
           <div className="kep-proba-dual-col kep-proba-celszam-col">
             <div className="kep-proba-oszlop-cim">Célszám</div>
-            <CelszamGomb aktív={ellenpróba} disabled={összetettDb > 0}
-              onClick={d.váltás(() => { setEllenpróba(!ellenpróba); if (!ellenpróba) setÖsszetettDb(0); })}>
-              <span className="kep-proba-rejtett-label">Ellenpróba</span>
-            </CelszamGomb>
-            {!ellenpróba && (<>
-              <CelszamGomb aktív={ismeretlen} onClick={d.váltás(() => { setNehézség(-1); })}>
-                <span className="kep-proba-rejtett-label">Rejtett célszám</span>
-              </CelszamGomb>
+            <ProbaModValaszto ellenpróba={ellenpróba} ismeretlen={ismeretlen} ellenTiltva={összetettDb > 0}
+              onIsmert={d.váltás(() => { setEllenpróba(false); if (ismeretlen) setNehézség(null); })}
+              onRejtett={d.váltás(() => { setEllenpróba(false); setNehézség(-1); })}
+              onEllen={d.váltás(() => { setEllenpróba(true); setÖsszetettDb(0); })} />
+            {!ellenpróba && (<div className={`kep-proba-celszam-lista${ismeretlen ? ' halvany' : ''}`}>
               {p.nehézségek.map(n => (
                 <CelszamGomb key={n.érték} aktív={nehézség === n.érték} onClick={d.váltás(() => { setNehézség(n.érték); })}>
                   <b>{n.érték}</b><span>{n.név}</span>
@@ -246,7 +243,7 @@ export function KepzettsegProbaPopup({
                   <CelszamGomb key={é} aktív={nehézség === é} onClick={d.váltás(() => { setNehézség(é); })}>{é}</CelszamGomb>
                 ))
               ))}
-            </>)}
+            </div>)}
           </div>
         </div>
 
@@ -333,6 +330,7 @@ export function KepzettsegProbaPopup({
             {kész && (
               <div className="kep-proba-summary">
                 <span className="kep-proba-sum-total">{bázis}+k{p.kocka}</span>
+                {ismeretlen && !ellenpróba && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">?</span></>}
                 {vanCélszám && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">{effNehézség}{képzetlenBüntetés > 0 && <span className="kep-proba-kepzetlen-jel"> (képzetlen +{képzetlenBüntetés})</span>}</span></>}
               </div>
             )}

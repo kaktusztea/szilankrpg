@@ -5,7 +5,7 @@ import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
 import { előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat } from './ProbaReszek';
+import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, SzitChipFelirat, ProbaModValaszto } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -63,20 +63,17 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
         )}
 
         <div className="kep-proba-neh-list">
-          <CelszamGomb aktív={ellenpróba} disabled={összetettDb > 0}
-            onClick={váltás(() => { setEllenpróba(!ellenpróba); if (!ellenpróba) setÖsszetettDb(0); })}>
-            <span className="kep-proba-rejtett-label">Ellenpróba</span>
-          </CelszamGomb>
-          {!ellenpróba && (<>
-            <CelszamGomb aktív={ismeretlen} onClick={váltás(() => setNehézség(-1))}>
-              <span className="kep-proba-rejtett-label">Rejtett célszám</span>
-            </CelszamGomb>
+          <ProbaModValaszto ellenpróba={ellenpróba} ismeretlen={ismeretlen} ellenTiltva={összetettDb > 0}
+            onIsmert={váltás(() => { setEllenpróba(false); if (ismeretlen) setNehézség(null); })}
+            onRejtett={váltás(() => { setEllenpróba(false); setNehézség(-1); })}
+            onEllen={váltás(() => { setEllenpróba(true); setÖsszetettDb(0); })} />
+          {!ellenpróba && (<div className={`kep-proba-celszam-lista${ismeretlen ? ' halvany' : ''}`}>
             {p.nehézségek.map(n => (
               <CelszamGomb key={n.érték} aktív={nehézség === n.érték} onClick={váltás(() => setNehézség(n.érték))}>
                 {n.érték} ({n.név})
               </CelszamGomb>
             ))}
-          </>)}
+          </div>)}
         </div>
 
         {fortélyBónuszok.length > 0 && !d.vanEredmény && (
@@ -111,6 +108,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
               <div className="kep-proba-summary">
                 {vanCélszám
                   ? <>{érték} <span className="kep-proba-vs">vs</span> <span className="kep-proba-celszam">{nehézség}</span></>
+                  : ismeretlen && !ellenpróba ? <>{érték} + k{p.kocka} <span className="kep-proba-vs">vs</span> <span className="kep-proba-celszam">?</span></>
                   : <>{érték} + k{p.kocka}</>}
               </div>
             )}

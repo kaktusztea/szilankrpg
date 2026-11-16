@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import type { KiterjesztesEntry } from '../../engine/data-loader';
 import type { ModositoTabla, PróbaEnyhítés } from '../../engine/data-types';
 import type { GameData } from '../../engine/data-loader';
@@ -79,25 +80,23 @@ export function KepzettsegProbaPickers({
   return (
     <>
       {openPicker === 'kit' && (
-        <PopupOverlay onClose={() => setOpenPicker(null)}>
-          <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
-            <label className="kep-prompt-label-bold-mb">Kiterjesztő fortélyok</label>
-            <div className="kep-prompt-flex-col-list">
-              <button className={`he-field-btn${selKits.size === 0 ? ' vallas-active' : ''}`}
-                onClick={() => { setSelKits(new Set()); resetDobás(); }}>
-                Törzstudás (nincs) ❌
-              </button>
-              {kiterjesztesek.map((k, i) => {
-                const active = selKits.has(i);
-                const billenthető = többszörösNevek.has(k.fortély);
-                return (
-                  <button key={i} className={`he-field-btn${active ? ' vallas-active' : ''}`} {...pressProps(i)}>
-                    {k.név} <span className={kitDotClass(k)}>{kitDots(k)}</span>
-                    {billenthető && <span className="kep-proba-kit-longpress" title="Hosszú nyomás: teljesül/nem teljesül">⤺</span>}
-                  </button>
-                );
-              })}
-            </div>
+        <PopupOverlay className="kep-prompt vallas-picker" onClose={() => setOpenPicker(null)}>
+          <label className="kep-prompt-label-bold-mb">Kiterjesztő fortélyok</label>
+          <div className="kep-prompt-flex-col-list">
+            <button className={`he-field-btn${selKits.size === 0 ? ' vallas-active' : ''}`}
+              onClick={() => { setSelKits(new Set()); resetDobás(); }}>
+              Törzstudás része <Ikon név="pipa" className="kep-proba-torzs-pipa" />
+            </button>
+            {kiterjesztesek.map((k, i) => {
+              const active = selKits.has(i);
+              const billenthető = többszörösNevek.has(k.fortély);
+              return (
+                <button key={i} className={`he-field-btn${active ? ' vallas-active' : ''}`} {...pressProps(i)}>
+                  {k.név} <span className={kitDotClass(k)}>{kitDots(k)}</span>
+                  {billenthető && <span className="kep-proba-kit-longpress" title="Hosszú nyomás: teljesül/nem teljesül">⤺</span>}
+                </button>
+              );
+            })}
           </div>
         </PopupOverlay>
       )}
@@ -154,26 +153,24 @@ export function KepzettsegProbaPickers({
       )}
 
       {openPicker === 'hely' && (
-        <PopupOverlay onClose={() => setOpenPicker(null)}>
-          <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
-            <label className="kep-prompt-label-bold-mb">Helyettesítés</label>
-            <div className="kep-prompt-flex-col-list">
-              <button className={`he-field-btn${!helyettesítés ? ' vallas-active' : ''}`}
-                onClick={() => { setHelyettesítés(null); resetDobás(); setOpenPicker(null); }}>
-                Nincs ❌
-              </button>
-              {képzettségek
-                .filter(k => képzKulcs(k) !== képzettségKulcs && k.szint >= helyettesítésParams.min_szint)
-                .map(k => {
-                  const kulcs = képzKulcs(k);
-                  return (
-                    <button key={kulcs} className={`he-field-btn${helyettesítés === kulcs ? ' vallas-active' : ''}`}
-                      onClick={() => { setHelyettesítés(kulcs); resetDobás(); setOpenPicker(null); }}>
-                      {képzettségNévId(k, { kepzettsegDefs })} ({k.szint} → {helyettesítésSzint(k.szint, helyettesítésParams)})
-                    </button>
-                  );
-                })}
-            </div>
+        <PopupOverlay className="kep-prompt vallas-picker" onClose={() => setOpenPicker(null)}>
+          <label className="kep-prompt-label-bold-mb">Helyettesítés</label>
+          <div className="kep-prompt-flex-col-list">
+            <button className={`he-field-btn${!helyettesítés ? ' vallas-active' : ''}`}
+              onClick={() => { setHelyettesítés(null); resetDobás(); setOpenPicker(null); }}>
+              Nincs helyettesítés
+            </button>
+            {képzettségek
+              .filter(k => képzKulcs(k) !== képzettségKulcs && k.szint >= helyettesítésParams.min_szint)
+              .map(k => {
+                const kulcs = képzKulcs(k);
+                return (
+                  <button key={kulcs} className={`he-field-btn${helyettesítés === kulcs ? ' vallas-active' : ''}`}
+                    onClick={() => { setHelyettesítés(kulcs); resetDobás(); setOpenPicker(null); }}>
+                    {képzettségNévId(k, { kepzettsegDefs })} ({k.szint} → {helyettesítésSzint(k.szint, helyettesítésParams)})
+                  </button>
+                );
+              })}
           </div>
         </PopupOverlay>
       )}

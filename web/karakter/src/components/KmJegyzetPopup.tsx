@@ -19,25 +19,23 @@ export function KmJegyzetPopup({ betű, szín, név, jegyzet, onSave, onClose, o
   const zár = () => { onSave(szöveg.trim()); onClose(); };
 
   return (
-    <PopupOverlay onClose={zár}>
-      <div className="kep-prompt km-jegyzet-popup" onClick={e => e.stopPropagation()}>
-        <label className="kep-prompt-label-bold-mb">
-          {név}{betű && <> (<span className="km-jel-betű" style={{ color: szín }}>{betű}</span>)</>}
-        </label>
-        <textarea
-          className="km-jegyzet-input"
-          value={szöveg}
-          maxLength={MAX_KM_JEGYZET}
-          rows={3}
-          autoFocus
-          onChange={e => setSzöveg(e.target.value)}
-        />
-        {onVáltás && (
-          <button className="km-jegyzet-váltás-btn" onClick={() => { zár(); onVáltás(); }}>
-            Váltás a karakterre
-          </button>
-        )}
-      </div>
+    <PopupOverlay className="kep-prompt km-jegyzet-popup" onClose={zár}>
+      <label className="kep-prompt-label-bold-mb">
+        {név}{betű && <> (<span className="km-jel-betű" style={{ color: szín }}>{betű}</span>)</>}
+      </label>
+      <textarea
+        className="km-jegyzet-input"
+        value={szöveg}
+        maxLength={MAX_KM_JEGYZET}
+        rows={3}
+        autoFocus
+        onChange={e => setSzöveg(e.target.value)}
+      />
+      {onVáltás && (
+        <button className="km-jegyzet-váltás-btn" onClick={() => { zár(); onVáltás(); }}>
+          Váltás a karakterre
+        </button>
+      )}
     </PopupOverlay>
   );
 }

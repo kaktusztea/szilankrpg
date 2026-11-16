@@ -232,7 +232,9 @@
 }
 .kep-proba-close-btn {
   position: absolute;
-  left: 0;
+  /* The visible X stroke sits 0.25em inside the SVG box: shift the box so the stroke lines up with
+     the column titles below (they start 6px in, see .kep-proba-oszlop-cim padding) */
+  left: calc(6px - 0.25em);
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -240,7 +242,7 @@
   font-size: 26px;
   cursor: pointer;
   color: var(--text-dim);
-  padding: 2px 6px;
+  padding: 2px 6px 2px 0;
   line-height: 1;
 }
 .kep-proba-close-btn:active { color: var(--text); }
@@ -582,7 +584,6 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
   border: 1px solid var(--border-light); border-radius: 10px;
   padding: 8px 10px; cursor: pointer;
 }
-.kep-proba-rejtett-label { color: #c8c080; }
 .kep-proba-szit-sum-footer {
   margin-top: 10px;
   font-family: monospace;
@@ -659,7 +660,7 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-celszam-col .he-field-btn { justify-content: flex-start; }
 .kep-proba-celszam-col .he-field-btn b { min-width: 2ch; text-align: right; }
 .kep-proba-dual-col .he-field-btn.vallas-active { background: rgba(144, 202, 249, 0.22); border-color: transparent !important; color: var(--text); font-weight: bold; }  /* !important: beats the global .vallas-active green frame */
-/* Domináns tulajdonság: the ◆ mark + a lighter tone (no background block) */
+/* Domináns tulajdonság: blue tone only (no mark, no background block) */
 .kep-proba-dual-col .kep-proba-dominans:not(.vallas-active) { background: none; color: var(--color-taktika); }
 /* Modifier pills */
 .kep-proba-kapszulak { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -705,3 +706,20 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 /* Tulajdonság pontok: a readable status line (was 13px dim text) */
 .tul-pont-bar-styled { padding: 8px 4px 10px; font-size: 14px; color: var(--text-soft); }
 .tul-pont-bar-styled.he-error { font-weight: bold; }
+
+/* Próba mód bar (Ismert / Rejtett / Ellen) at the top of the Célszám column - same segmented look as the other bars */
+.proba-mod-sav { display: flex; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; margin-bottom: 4px; }
+.proba-mod-sav button {
+  flex: 1; min-width: 0; padding: 5px 0; background: none; border: none; border-left: 1px solid var(--border-input);
+  color: var(--text-soft); font-size: 12px; cursor: pointer;
+}
+.proba-mod-sav button:first-child { border-left: none; }
+.proba-mod-sav button.active { background: rgba(144, 202, 249, 0.22); color: var(--text); font-weight: bold; }
+.proba-mod-sav button:disabled { opacity: 0.35; cursor: default; }
+.kep-proba-celszam-lista { display: flex; flex-direction: column; gap: 1px; }
+.kep-proba-neh-list .kep-proba-celszam-lista { gap: 4px; }
+/* Rejtett: numbers faded (still tappable - a tap switches back to Ismert) */
+.kep-proba-celszam-lista.halvany { opacity: 0.4; }
+
+/* Kiterjesztő picker: "Törzstudás része" row - green check icon */
+.kep-proba-torzs-pipa { color: #81c784; margin-left: 4px; }
