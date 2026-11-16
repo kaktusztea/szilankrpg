@@ -169,6 +169,13 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
               </div>
             )}
 
+            {/* Order (2026-11): formula, then the wide blocks one after the other (páncél bar, E/H box),
+                then the damage type · Átütés + Bónusz row */}
+            {/* Formula: SP (+ all static bonuses) + k20 */}
+            <div className="dobas-keplet">
+              {effektívSp + bónusz}<span className="dobas-keplet-op"> + </span>k20
+            </div>
+
             {/* Ellenfél páncélja: mandatory, inline segmented bar (the roll is blocked until chosen) */}
             {páncélMátrix && (
               <div className={`pancel-sav${páncélKell ? ' pancel-sav-kell' : ''}`}>
@@ -188,26 +195,20 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
               </div>
             )}
 
-            {/* Formula: SP (+ all static bonuses) + k20; weapon damage type and Átütés under it */}
-            <div>
-              <div className="dobas-keplet">
-                {effektívSp + bónusz}<span className="dobas-keplet-op"> + </span>k20
-              </div>
-              {/* Damage type · Átütés + the Bónusz pill on one line */}
-              <div className="dobas-keplet-al-sor">
-                {(jelleg || (átütés ?? 0) > 0) && (
-                  <span className="dobas-keplet-al">{[jelleg, (átütés ?? 0) > 0 ? `Átütés ${átütés}` : null].filter(Boolean).join(' · ')}</span>
-                )}
-                <StatikusBonuszBtn bónusz={bónusz} spBónuszok={spBónuszok} onBónuszClick={handleBónuszClick} />
-              </div>
-            </div>
-
             {/* Full popup width (like the páncél bar): fixed, does not follow the label / source text width */}
             <div className="dobas-oszlop dobas-oszlop-teljes">
               <div className="elony-blokk">
                 <ElonyLepteto szint={aktuális} onChange={handleSzintChange} />
                 <ForrasLista hatások={eHForrások} szint={aktuális} alapSzint={clampEHSzint(baseRaw)} onVissza={() => { setRawSzint(baseRaw); setEredmény(null); }} />
               </div>
+            </div>
+
+            {/* Damage type · Átütés + the Bónusz pill on one line */}
+            <div className="dobas-keplet-al-sor">
+              {(jelleg || (átütés ?? 0) > 0) && (
+                <span className="dobas-keplet-al">{[jelleg, (átütés ?? 0) > 0 ? `Átütés ${átütés}` : null].filter(Boolean).join(' · ')}</span>
+              )}
+              <StatikusBonuszBtn bónusz={bónusz} spBónuszok={spBónuszok} onBónuszClick={handleBónuszClick} />
             </div>
 
             <div className="dobas-btn-row">
