@@ -250,8 +250,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
               <span className="dobas-keplet-op"> + </span>k20
             </div>
             {többMódú && (
-              <button className="mod-valaszto-btn" onClick={() => setAlPopup('mód')}>
-                Mód: {aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && <span className="mod-valaszto-masodlagos">(másodlagos)</span>}
+              // Same pill look as the Taktika / Harci helyzet / Bónusz pills
+              <button type="button" className="dobas-kapszula" onClick={() => setAlPopup('mód')}>
+                Mód <span className="dobas-kapszula-db">{aktívMód?.jelleg}{aktívSebzéstípus === 'másodlagos' && ' (másodlagos)'}</span>
               </button>
             )}
             {/* Modifier pills above the E/H box (stepper + its sources); both share one column */}
