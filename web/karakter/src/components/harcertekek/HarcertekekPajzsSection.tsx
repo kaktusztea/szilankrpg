@@ -23,17 +23,24 @@ export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup }: Prop
     if (!pd) return null;
     const mód = elsődlegesMód(pd);
     const mf = data.konstansok.mesterfegyver_bónuszok?.find((b: { fok: number }) => b.fok === pajzsFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
-    // Inactive: shield not the sole weapon → TÉ / SP / Sebesség struck through (VÉ always counts)
-    const inactive = !(k.session.fegyverfogás === 'egyfegyveres' && k.session.aktív_fegyver_index === -2);
-    const cls = inactive ? 'he-strike' : undefined;
+    // The shield's VÉ always counts; TÉ / SP / Sebesség only when it is the sole weapon (Egyfegyveres - Pajzs).
+    // Otherwise they move to a small, faded "fegyverként:" line under the VÉ.
+    const fegyverként = k.session.fegyverfogás === 'egyfegyveres' && k.session.aktív_fegyver_index === -2;
+    const sep = <span className="he-stat-sep"> · </span>;
     return (
       <div className="he-stat-sor">
-        <div>
-          VÉ <b>{mód.VÉ + mf.VÉ}</b>
-          <span className="he-stat-sep"> · </span><span className={cls}>TÉ <b>{mód.TÉ + mf.TÉ}</b></span>
-          <span className="he-stat-sep"> · </span><span className={cls}>SP <b>{mód.SP + mf.SP}</b></span>
-          <span className="he-stat-sep"> · </span><span className={cls}>Sebesség <b>{mód.Sebesség ?? '-'}</b></span>
-        </div>
+        {fegyverként ? (
+          <div>
+            VÉ <b>{mód.VÉ + mf.VÉ}</b>{sep}TÉ <b>{mód.TÉ + mf.TÉ}</b>{sep}SP <b>{mód.SP + mf.SP}</b>{sep}Sebesség <b>{mód.Sebesség ?? '-'}</b>
+          </div>
+        ) : (
+          <>
+            <div>VÉ <b>{mód.VÉ + mf.VÉ}</b></div>
+            <div className="he-stat-halvany">
+              fegyverként: TÉ {mód.TÉ + mf.TÉ} · SP {mód.SP + mf.SP} · Sebesség {mód.Sebesség ?? '-'}
+            </div>
+          </>
+        )}
       </div>
     );
   })();

@@ -97,7 +97,8 @@
 .he-mf-error { display: block; font-size: 13px; margin-top: 2px; color: var(--color-negative); }
 
 /* --- Inline helpers --- */
-.he-strike { text-decoration: line-through; text-decoration-thickness: 2px; opacity: 0.5; }
+/* Stats that do not apply right now (e.g. the shield's weapon stats): small faded line, no strikethrough */
+.he-stat-halvany { font-size: 13px; color: var(--text-muted); }
 .he-btn-disabled { opacity: 0.3; }
 
 /* --- Közelharci fegyverkártya (kompakt): cím + MF jelvény, alcím, ikon-gombok, statisztika-sor --- */
