@@ -490,6 +490,8 @@
   cursor: pointer;
   margin-top: 4px;
 }
+/* Disabled (e.g. a próba with no target picked yet): faded, not clickable */
+.tamado-dobas-btn:disabled { opacity: 0.4; cursor: default; }
 
 .tamado-sebzes-btn {
   padding: 12px 32px;
@@ -645,15 +647,17 @@
 /* --- Dobás button row (button + manual dice icon) --- */
 .dobas-btn-row {
   display: flex;
-  align-items: center;
+  align-items: stretch;  /* every button in the row (Dobás, kézi dobás) has the same height */
   gap: 12px;
   margin-top: 4px;
   width: 100%;
 }
+/* The row already has the top margin; the roll buttons' own margin would offset them from the kézi button */
+.dobas-btn-row > .tamado-dobas-btn, .dobas-btn-row > .tamado-sebzes-btn { margin-top: 0; }
+.dobas-btn-row > .manual-dice-kez { height: auto; width: 48px; }
 .dobas-btn-row > button:first-child,
 .dobas-btn-row > .tamado-dobas-btn,
-.dobas-btn-row > .tamado-sebzes-btn,
-.dobas-btn-row > .kep-proba-roll-btn {
+.dobas-btn-row > .tamado-sebzes-btn {
   flex: 1;
 }
 

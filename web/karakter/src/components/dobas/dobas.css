@@ -322,26 +322,14 @@
   text-align: center;
 }
 
-.manual-dice-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border-input);
-  border-radius: 50%;
-  background: var(--input-bg);
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.manual-dice-kez {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 40px; height: 40px; padding: 0;
+  background: none; border: 1px solid var(--border-input); border-radius: 8px;
+  color: var(--text-soft); font-size: 21px; cursor: pointer;
 }
-
-.manual-dice-btn:hover {
-  background: var(--surface-alt);
-}
-.manual-dice-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
+.manual-dice-kez:active { color: var(--text); background: var(--input-bg); }
+.manual-dice-kez:disabled { opacity: 0.35; cursor: default; }
 
 /* --- Manual dice popup --- */
 .manual-dice-popup {
@@ -532,14 +520,8 @@
 .dobas-kapszula-halvany { color: var(--text-dim); font-weight: normal; }
 .dobas-kapszula.sebzes-stat-pos { color: var(--success); }
 .dobas-kapszula.sebzes-stat-neg { color: var(--error); }
-/* Quiet manual-dice link next to the roll button */
-.manual-dice-link {
-  background: none; border: none; padding: 4px; font-size: 13px; color: var(--text-dim); cursor: pointer;
-  text-decoration: underline dotted; text-underline-offset: 3px;
-}
-.manual-dice-link:disabled { opacity: 0.4; cursor: default; }
 .dobas-btn-ikon { display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; }  /* icon + label stay on one line */
-/* Narrower side padding (beats the 32px of .tamado-dobas-btn / .tamado-sebzes-btn) so the label fits next to "kézi" */
+/* Narrower side padding (beats the 32px of .tamado-dobas-btn / .tamado-sebzes-btn) so the label fits next to the manual-dice button */
 .dobas-btn-row .dobas-btn-ikon { padding-left: 16px; padding-right: 16px; flex-direction: row; }  /* .tamado-sebzes-btn is a column flexbox (icon over label) */
 /* Sebzés: Ellenfél páncélja inline segmented bar (mandatory; warning colour until chosen) */
 .pancel-sav { width: 100%; display: flex; flex-direction: column; gap: 4px; }

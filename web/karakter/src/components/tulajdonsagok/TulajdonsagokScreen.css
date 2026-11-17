@@ -373,26 +373,7 @@
 .kep-proba-rolls { font-size: 13px; color: var(--text-dim); font-family: monospace; }
 .kep-proba-roll-sel { color: var(--text); font-weight: bold; }
 
-.kep-proba-roll-btn {
-  background: var(--primary);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  color: var(--text);
-  font-size: 15px;
-  font-weight: bold;
-  padding: 8px 0;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-  position: relative;
-}
-/* Előny / Hátrány: the same faded green / red as the Támadó dobás stepper (no loud orange) */
-.kep-proba-roll-eh { font-size: 13px; font-weight: normal; color: #e08a8a; }
 .kep-proba-eh-előny { color: #81c784; }
-.kep-proba-roll-btn:active { background: var(--accent); }
-.kep-proba-roll-btn:disabled { opacity: 0.4; cursor: default; background: var(--primary); }
 
 .kep-proba-tiltott {
   text-align: center;
@@ -567,16 +548,6 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-szit-arrow { color: var(--text-muted); margin: 0 3px; font-size: 11px; }
 .kep-proba-szit-new { color: var(--success); font-weight: 700; }
 .kep-proba-szit-enyhitett .kep-proba-szit-desc { color: #ccc; }
-.kep-proba-eh-bontas { display: block; font-size: 11px; font-weight: 400; margin-top: 4px; color: var(--text-muted); }
-.kep-proba-eh-bontas-sor { display: block; }
-.kep-proba-eh-accordion { width: 100%; margin-top: -4px; }
-/* Same look as the source list under the Támadó dobás stepper: thin frame, centered small lines */
-.kep-proba-eh-accordion-body {
-  display: flex; flex-direction: column; align-items: center; gap: 2px;
-  font-size: 12px; color: var(--text-dim); text-align: center;
-  border: 1px solid var(--border-light); border-radius: 10px;
-  padding: 8px 10px; cursor: pointer;
-}
 .kep-proba-szit-sum-footer {
   margin-top: 10px;
   font-family: monospace;
@@ -619,14 +590,6 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 }
 
 /* Felszerelés-túlterhelés figyelmeztetés a próba-popupban */
-/* "Mi adja a módosítót?" toggle next to the roll button: the standard chevron, flips up when open */
-.kep-proba-eh-nyil {
-  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
-  width: 32px; height: 32px; padding: 0; background: none; border: none;
-  color: var(--text-dim); font-size: 20px; cursor: pointer;
-}
-.kep-proba-eh-nyil .ikon { transition: transform 0.15s ease-out; }
-.kep-proba-eh-nyil.nyitva .ikon { transform: rotate(180deg); }
 
 
 /* --- Képzettségpróba, plan B: two plain columns (no chip boxes), labeled; everything stays one tap --- */
@@ -709,3 +672,6 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 /* Tulajdonságpróba: Összetett próba chip next to the name ("2M" text once chosen) */
 .kep-proba-osszetett-chip { font-family: monospace; font-size: 13px; font-weight: bold; padding: 2px 5px; }
 .kep-proba-hely-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* Mode bar inside the half-width Célszám column: smaller text, so "Ismert" (bold) fits its segment */
+.kep-proba-dual-col .proba-mod-sav button { font-size: 11px; padding: 5px 1px; }

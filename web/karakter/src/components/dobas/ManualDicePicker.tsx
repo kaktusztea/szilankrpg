@@ -1,3 +1,4 @@
+import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { előnyHátrányLabel } from '../../engine/dice';
@@ -20,15 +21,13 @@ interface Props {
   disabled?: boolean;
   /** Force the picker open (for multi-step flows). */
   forceOpen?: boolean;
-  /** Quiet text-link variant ("kézi") next to the roll button instead of the round 🎲 button. */
-  link?: boolean;
 }
 
 /**
  * Manual dice picker: a 🎲 icon button that opens a value grid.
  * For players who prefer physical dice rolling.
  */
-export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, sides = 20, min, disabled, forceOpen, link }: Props) {
+export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, sides = 20, min, disabled, forceOpen }: Props) {
   const [open, setOpen] = useState(false);
   const isOpen = open || (forceOpen ?? false);
 
@@ -40,9 +39,8 @@ export function ManualDicePicker({ onSelect, szint, alapÉrték, alapLabel, side
 
   return (
     <>
-      {link
-        ? <button type="button" className="manual-dice-link" disabled={disabled} onClick={() => setOpen(true)} title="Kézi dobás">kézi</button>
-        : <button className="manual-dice-btn" disabled={disabled} onClick={() => setOpen(true)} title="Kézi dobás">🎲</button>}
+      {/* Open palm icon = "I roll the real die by hand and enter the result" (same in every roll popup) */}
+      <button type="button" className="manual-dice-kez" disabled={disabled} onClick={() => setOpen(true)} title="Kézi dobás" aria-label="Kézi dobás"><Ikon név="kézi" /></button>
       {isOpen && (
         <PopupOverlay onClose={() => setOpen(false)}>
           <div className="manual-dice-popup">

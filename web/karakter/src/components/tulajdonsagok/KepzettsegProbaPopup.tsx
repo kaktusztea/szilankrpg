@@ -1,5 +1,8 @@
+import { ElonyLepteto } from '../dobas/ElonyLepteto';
+import { ForrasLista } from '../dobas/ForrasLista';
+import type { DobásHatás } from '../../engine/harc/combat-roll-info';
 import { Ikon } from '../common/Ikon';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import type { Kepzettseg, Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import type { ModositoTabla, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
@@ -9,7 +12,7 @@ import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
-import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from '../../engine/proba/proba-common';
+import { probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám } from '../../engine/proba/proba-common';
 import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
 import { useProbaDobas } from './useProbaDobas';
 import { ProbaFejlec, ExtraGomb, ProbaEredmeny, CelszamGomb, ProbaModValaszto } from './ProbaReszek';
@@ -69,8 +72,8 @@ export function KepzettsegProbaPopup({
   const [fizikaiKépzetlen, setFizikaiKépzetlen] = useState(false);
 
   // Extrák state
-  const [ehBontásNyitva, setEhBontásNyitva] = useState(false);
-  const ehAccordionRef = useRef<HTMLDivElement>(null);
+  // Hand-set Előny/Hátrány (null = the level computed from the sources), like the Támadó dobás stepper
+  const [ehKézi, setEhKézi] = useState<number | null>(null);
   const [összetettDb, setÖsszetettDb] = useState(0); // 0=ki, 1-3=másodlagos dobások száma
   const [vállalás, setVállalás] = useState(0); // 0=ki, 1-3
   const [ellenpróba, setEllenpróba] = useState(false);
@@ -120,10 +123,15 @@ export function KepzettsegProbaPopup({
   const [érzék, setÉrzék] = useState<string | undefined>(érzékek.érintett[0]);
   const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségKulcs, képzettségCsoport, érzék);
   const ehSzintRaw = ehAlap.szint + státuszEH.szint + felszEH;
-  const eh = { szint: clampEHSzint(ehSzintRaw), tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };
+  const ehForrásSzint = clampEHSzint(ehSzintRaw);
+  const eh = { szint: ehKézi ?? ehForrásSzint, tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };
   const erősTiltott = eh.tiltott;
-  // Van-e Előny/Hátrány forrás (a 🛈 info + bontás accordion megjelenítéséhez).
-  const vanEhForrás = ehAlap.szint !== 0 || státuszEH.források.length > 0 || felszEH !== 0;
+  // Sources listed under the E/H stepper (ForrasLista). Státusz sources are ready-made text lines (value included).
+  const ehForrások: DobásHatás[] = [
+    ...(ehAlap.szint !== 0 ? [{ forrás: `Kiterjesztés (${selectedKits.map(k => k.név).join(', ') || '–'})`, cél: 'té_dobás' as const, operátor: (ehAlap.szint > 0 ? 'előny' : 'hátrány') as 'előny' | 'hátrány', érték: Math.abs(ehAlap.szint) }] : []),
+    ...státuszEH.források.map(f => ({ forrás: f, cél: 'té_dobás' as const, operátor: 'szöveges' as const, érték: 0, megjegyzés: '' })),
+    ...(felszEH !== 0 ? [{ forrás: 'Felszerelés túlterhelés', cél: 'té_dobás' as const, operátor: 'hátrány' as const, érték: -felszEH }] : []),
+  ];
 
   // Pötty szín az EFFEKTÍV fok szerint (a negálás már bele van számolva): felvéve → zöld,
   // hiányzó Erős → piros, hiányzó Normál → sárga. Így a negálás mindkét irányban látható
@@ -153,7 +161,6 @@ export function KepzettsegProbaPopup({
   const vanCélszám = !ellenpróba && !ismeretlen && nehézség !== null;
   const lehetetlen = kész && vanCélszám && probaLehetetlen(bázis, p.kocka, effNehézség ?? 0);
   const biztosSiker = kész && vanCélszám && !lehetetlen && probaBiztosSiker(bázis, effNehézség ?? 0);
-  const ehCímke = előnyHátrányLabel(eh.szint);
 
   const d = useProbaDobas({
     bázis, ehSzint: eh.szint, kocka: p.kocka, nehézség: effNehézség, összetettDb, másodlagosLevonás: p.másodlagos_levonás,
@@ -319,6 +326,13 @@ export function KepzettsegProbaPopup({
               </div>
             </div>
           </div>
+          {/* Előny/Hátrány: same stepper + source list as the Tulajdonságpróba / Támadó dobás (not shown when the roll is forbidden) */}
+          {!erősTiltott && (
+            <div className="elony-blokk">
+              <ElonyLepteto szint={eh.szint} onChange={v => { setEhKézi(v); d.reset(); }} />
+              <ForrasLista hatások={ehForrások} szint={eh.szint} alapSzint={ehForrásSzint} onVissza={() => { setEhKézi(null); d.reset(); }} />
+            </div>
+          )}
         </div>
         )}
 
@@ -341,40 +355,10 @@ export function KepzettsegProbaPopup({
             ) : (
               <>
               <div className="dobas-btn-row">
-                <button type="button" className="kep-proba-roll-btn" disabled={!kész} onClick={d.dob}>
-                  Dobás (k{p.kocka})
-                  {ehCímke && (
-                    <span className={`kep-proba-roll-eh${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}>
-                      {ehCímke}
-                    </span>
-                  )}
-                </button>
-                {/* sibling, not child: a disabled roll button would swallow its clicks (and nested <button> is invalid) */}
-                {ehCímke && vanEhForrás && (
-                  <button
-                    type="button"
-                    className={`kep-proba-eh-nyil${ehBontásNyitva ? ' nyitva' : ''}`}
-                    title="Mi adja a módosítót?"
-                    aria-label="Mi adja a módosítót?"
-                    aria-expanded={ehBontásNyitva}
-                    onClick={() => setEhBontásNyitva(v => { if (!v) setTimeout(() => ehAccordionRef.current?.scrollIntoView({ block: 'end', behavior: 'smooth' }), 50); return !v; })}
-                  ><Ikon név="lenyit" /></button>
-                )}
+                {/* Same roll button as the Támadó dobás: the kocka is in the formula above, the E/H in the stepper / sources */}
+                <button type="button" className="tamado-dobas-btn dobas-btn-ikon" disabled={!kész} onClick={d.dob}><Ikon név="kocka" méret={22} />Dobás</button>
                 <ManualDicePicker sides={p.kocka} szint={eh.szint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={bázis} alapLabel={d.kéziFelirat ?? 'Alap'} forceOpen={d.kéziFolyamatban} />
               </div>
-              {vanEhForrás && ehBontásNyitva && (
-                <div className="kep-proba-eh-accordion" ref={ehAccordionRef}>
-                  <div className="kep-proba-eh-accordion-body" onClick={() => setEhBontásNyitva(false)}>
-                    {ehAlap.szint !== 0 && (
-                      <div className="kep-proba-eh-bontas-sor">Kiterjesztés ({selectedKits.map(k => k.név).join(', ') || '–'}): {előnyHátrányLabel(ehAlap.szint)}</div>
-                    )}
-                    {státuszEH.források.map((f, i) => <div key={i} className="kep-proba-eh-bontas-sor">{f}</div>)}
-                    {felszEH !== 0 && (
-                      <div className="kep-proba-eh-bontas-sor">Felszerelés túlterhelés: {előnyHátrányLabel(felszEH)}</div>
-                    )}
-                  </div>
-                </div>
-              )}
               </>
             )}
           </>

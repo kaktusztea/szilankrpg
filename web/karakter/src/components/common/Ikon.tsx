@@ -1,4 +1,5 @@
 import {
+  Hand,
   Layers,
   ArrowLeftRight,
   Copy,
@@ -26,6 +27,7 @@ const IKONOK = {
   másolat: Copy,
   helyettesít: ArrowLeftRight,
   összetett: Layers,
+  kézi: Hand,
 } satisfies Record<string, LucideIcon>;
 
 /** Own icons (no lucide equivalent), drawn on lucide's 24x24 grid. */

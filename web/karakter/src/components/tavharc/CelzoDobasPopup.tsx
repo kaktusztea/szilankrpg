@@ -181,7 +181,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, átütés, céHat
             </TaktikaHelyzetChipek>
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn dobas-btn-ikon" onClick={handleDobás}><Ikon név="kocka" méret={22} />Dobás</button>
-              <ManualDicePicker link szint={szint} onSelect={handleManualK20} alapÉrték={cé} alapLabel="CÉ" />
+              <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={cé} alapLabel="CÉ" />
             </div>
           </>
         ) : (

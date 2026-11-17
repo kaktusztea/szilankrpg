@@ -6,7 +6,7 @@ import type { DobásHatás } from '../../engine/harc/combat-roll-info';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
-import { előnyHátrányLabel, probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
+import { probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
 import { useProbaDobas } from './useProbaDobas';
 import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto } from './ProbaReszek';
 
@@ -52,7 +52,6 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const vanCélszám = !ellenpróba && !ismeretlen && nehézség !== null;
   const lehetetlen = vanCélszám && probaLehetetlen(érték, p.kocka, nehézség);
   const biztosSiker = vanCélszám && !lehetetlen && probaBiztosSiker(érték, nehézség);
-  const ehCímke = előnyHátrányLabel(ehSzint);
   const label = tulLabel(tulajdonságNév);
   const { váltás } = d;
 
@@ -126,14 +125,8 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             ) : (
               <>
               <div className="dobas-btn-row">
-                <button type="button" className="kep-proba-roll-btn" disabled={!kész} onClick={d.dob}>
-                  Dobás (k{p.kocka})
-                  {ehCímke && (
-                    <span className={`kep-proba-roll-eh${ehSzint > 0 ? ' kep-proba-eh-előny' : ''}`}>
-                      {ehCímke}
-                    </span>
-                  )}
-                </button>
+                {/* Same roll button as the Támadó dobás: the kocka is in the formula above, the E/H in the stepper / sources */}
+                <button type="button" className="tamado-dobas-btn dobas-btn-ikon" disabled={!kész} onClick={d.dob}><Ikon név="kocka" méret={22} />Dobás</button>
                 <ManualDicePicker sides={p.kocka} szint={ehSzint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={érték} alapLabel={d.kéziFelirat ?? label} forceOpen={d.kéziFolyamatban} />
               </div>
               </>

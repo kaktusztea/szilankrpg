@@ -219,7 +219,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
             <div className="dobas-btn-row">
               <button className="tamado-sebzes-btn dobas-btn-ikon sebzes-dobas-btn" onClick={handleDobás} disabled={páncélKell}><Ikon név="kocka" méret={22} />Dobás</button>
-              <ManualDicePicker link szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
+              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
             </div>
           </>
         ) : (
