@@ -57,9 +57,10 @@ export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, ki
       {popup === 'rongálódás' && (
         <FokRadios values={[0, 1, 2, 3, 4, 5]} current={páncél.rongálódás} onSelect={v => onUpdate({ rongálódás: v })} />
       )}
-      {popup === 'merevvért' && (
+      {popup === 'merevvért' && (<>
+        <label className="kep-prompt-text-center">Merevvértviselet fortély fok</label>
         <FokRadios values={[0, 1, 2, 3]} current={merevvertFok} onSelect={onMerevvert} />
-      )}
+      </>)}
     </PopupOverlay>
   );
 }

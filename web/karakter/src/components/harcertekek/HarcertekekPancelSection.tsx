@@ -81,10 +81,13 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
     const erő = k.tulajdonságok.erő;
     const nyers = mgt + erő;
     const erőTag = erő > 0 ? `- ${erő} (Erő bónusz)` : erő < 0 ? `+ ${-erő} (Erő büntetés)` : '';
-    showHint(`MGT: ${mgt} = ${nyers}(páncél)${erőTag ? ' ' + erőTag : ''}`, 'info', 2000);
+    showHint(`MGT: ${mgt} = ${nyers}(páncél)${erőTag ? ' ' + erőTag : ''}`, 'info', 3000);
   }
 
-  const merevvért = <FokPottyok név="Merevvért fok" fok={merevvertFok} max={MAX_FORTÉLY_FOK} onClick={() => onPopup('merevvért')} />;
+  // Merevvértviselet only eases rigid armour's TÉ penalty: the dots show only for a rigid (merev) structure
+  const merevvért = aktStruktúra?.merev
+    ? <FokPottyok név="Merevvért fok" fok={merevvertFok} max={MAX_FORTÉLY_FOK} onClick={() => onPopup('merevvért')} />
+    : null;
   // Subtitle: metal (metal armour only) · craftsmanship · fit · Idea. A fit with an MGT penalty
   // ("nem passzol" / "borzalmas") is highlighted in the same faded orange as Rongálódás.
   const rosszMéret = ((konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[])

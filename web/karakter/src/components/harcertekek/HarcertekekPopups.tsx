@@ -113,7 +113,7 @@ export function Popups({
 
       {mfTarget !== null && (
         <PopupOverlay onClose={() => onDismiss('mfTarget')}>
-          <label>Mesterfegyver fok</label>
+          <label className="kep-prompt-text-center">Mesterfegyver fortély fok - {k.fegyverek[mfTarget]?.alap}</label>
           <FokRadios
             values={FORTÉLY_FOK_VALUES}
             current={getMfFok(data, k, k.fegyverek[mfTarget]?.alap ?? '')}
@@ -170,13 +170,14 @@ export function Popups({
               onSelect={v => { updatePajzs({ méret: v }); onClose('pajzsPopup'); }}
             />
           )}
-          {pajzsPopup === 'pajzshasználat' && (
+          {pajzsPopup === 'pajzshasználat' && (<>
+            <label className="kep-prompt-text-center">Pajzshasználat fortély fok</label>
             <FokRadios
               values={FORTÉLY_FOK_VALUES}
               current={fortélyFok(k.fortélyok, 'pajzshasználat')}
               onSelect={n => { setPajzsFok(n); onClose('pajzsPopup'); }}
             />
-          )}
+          </>)}
         </PopupOverlay>
       )}
 
