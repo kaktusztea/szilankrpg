@@ -565,12 +565,10 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Formátum: `Nx: leírás`
 
 **Lövéskitérés box (Játék mód, MINDIG látszik):** önálló, **védekező** eszköz (md/073) - a karakter a CÉLPONT, saját Akrobatikájával tér ki egy BEJÖVŐ (támadó) fegyver lövése elől. Teljesen független a kimenő lövés-kalkulátortól; nincs szükség felvett távfegyverre. Ha van kiválasztott (kimenő) fegyver: a szorzó-grid Szél ereje melletti cellájában; ha nincs: standalone jelenik meg. Tartalma:
-- Bejövő fegyver: field-gomb → popup lista (fegyver-picker stílus, `th-fegyver-picker`). Sorrend: Hajítótőr, Rövid íj, Hosszú íj, Nyílpuska felül; alattuk ABC a konkrét fegyverek; legalul két absztrakt opció: „Korlátosan alkalmas fegyver" és „🔆 Nem dobásra készített tárgy". Alapállapot: „Bejövő fegyver" placeholder (invalid, informatív; Kitérés tiltva).
-- Saját távolság léptető (− Xm +, hold-repeat)
-- Célszám: a fegyver **Osztójából** adódó kategória (md/078: Osztó 1=Nem alkalmas, 2=Korlátosan alkalmas, 3=Dobófegyver, 4=Íj, ≥5=Nyílpuska) + távolság a `konstansok.lövéskitérés` táblából. Közelebb = magasabb; a tábla maxán túl a legkönnyebb (9) marad.
-- „hatótávon kívül vagy": a fegyver tényleges **Hatótáv**-ja alapján (Erő-függő képletnél nincs gát). Ilyenkor Kitérés tiltva.
-- Akrobatika+Gyorsaság érték (Akrobatika szint + Gyorsaság + a fortélyok `lövéskitérés` célú módosítója - Lövéskitérés fejlesztése: +2). A box-ban ez a sor van felül (fehér label + fehér `<strong>` érték), alatta a Célszám sor.
-- „Kitérés" gomb (jobb alsó): `Akrobatika+Gyorsaság + k10` képzettségpróba → popup (KÉ/TÉ dobás mintája), célszámhoz mérve **Siker/Sikertelen** jelzés. Ha a kitérés lehetetlen (Akrobatika+Gyorsaság + max k10 (10) < célszám), a gomb helyén piros „Lehetetlen" felirat.
+- Fejléc: „Lövéskitérés" címke + jobbra „Akrob+Gy N" (Akrobatika szint + Gyorsaság + a fortélyok `lövéskitérés` célú módosítója - Lövéskitérés fejlesztése: +2).
+- Bejövő fegyver: 5 kategória-chip egy sorban (Tárgy / Korl. / Dobó / Íj / Nyílp.; title-ben a teljes név), halvány-kék kijelölt állapot. A kategória az md/078 szerint az Osztóból adódik (1=Nem alkalmas, 2=Korlátosan alkalmas, 3=Dobófegyver, 4=Íj, ≥5=Nyílpuska); konkrét fegyver nem kell, csak a kategória dönt. Alapállapot: nincs kategória, „Válassz bejövő fegyvert" hint.
+- Távsáv-skála: a kiválasztott kategória `konstansok.lövéskitérés` sorai cellánként (≤max_táv / célszám / siker-esély %). Cella-háttér az esély szerint: halvány piros <30%, sárga, zöld >70%; kijelölt cella zöld keret. Kategóriaváltás törli a sáv-választást. (A régi méter-léptető és „hatótávon kívül" gát megszűnt: a tábla utolsó sávja a határ.)
+- „Kitérés · N%" teljes szélességű gomb: `Akrobatika+Gyorsaság + k10` képzettségpróba → popup (KÉ/TÉ dobás mintája), Siker/Sikertelen. Sáv nélkül tiltott („Válassz távot"). 0% esélynél a gomb helyén halvány piros „Lehetetlen".
 
 ### Támadás db formátum
 - `Xx` = X támadás / kör (1 + FLOOR(harckeret / sebesség))

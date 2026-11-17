@@ -122,30 +122,42 @@
 /* --- Lövéskitérés box (a szorzó-grid Szél ereje melletti cellája) --- */
 .th-lk-box { display: flex; flex-direction: column; gap: 6px; border-color: var(--warning); }
 .th-lk-box .th-picker-label { color: color-mix(in srgb, var(--warning) 60%, var(--text-dim)); }
-.th-lk-kat-btn { width: 100%; font-size: 10px; }
-.th-lk-kat-btn-empty { opacity: 0.7; font-style: italic; }
-.th-lk-hint { color: var(--text-muted); font-style: italic; }
-.th-lk-tav { display: flex; align-items: center; justify-content: center; gap: 8px; }
-.th-lk-tav-btn { width: 28px; height: 28px; }
-.th-lk-tav-value { font-size: 14px; font-family: monospace; min-width: 44px; text-align: center; }
-.th-lk-info { display: flex; flex-direction: column; gap: 2px; font-size: 12px; }
-.th-lk-celszam { color: var(--text); }
-.th-lk-celszam strong { color: var(--accent); font-size: 15px; }
-.th-lk-outofrange { color: var(--color-negative); font-style: italic; }
-.th-lk-akrobatika { color: var(--text); }
+.th-lk-fejlec { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
+.th-lk-akrobatika { color: var(--text-dim); font-size: 12px; white-space: nowrap; }
 .th-lk-akrobatika strong { color: var(--text); font-size: 15px; }
-.th-lk-lehetetlen { color: var(--color-negative); font-weight: bold; text-align: center; }
-.th-lk-actions { display: flex; justify-content: flex-end; margin-top: 2px; }
+.th-lk-hint { color: var(--text-muted); font-style: italic; font-size: 12px; text-align: center; padding: 6px 0; }
+/* Category chips: one row, faded-blue selected state (like Vállalás / Összetett) */
+.th-lk-chipek { display: flex; gap: 3px; }
+.th-lk-chip {
+  flex: 1; min-width: 0; padding: 6px 0; border: none; border-radius: 6px;
+  background: var(--input-bg); color: var(--text-dim); font-size: 12px; cursor: pointer; white-space: nowrap;
+}
+.th-lk-chip.active { background: rgba(144, 202, 249, 0.22); color: var(--text); font-weight: bold; }
+/* Distance-band scale: each cell = max distance / célszám / success chance, tinted by chance */
+.th-lk-sav { display: flex; gap: 2px; }
+.th-lk-sav-cella {
+  flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 1px;
+  padding: 4px 0; border: none; border-radius: 4px; cursor: pointer; color: var(--text-dim); font-size: 11px; line-height: 1.2;
+}
+.th-lk-sav-cella strong { font-family: monospace; font-size: 15px; color: var(--text); }
+.th-lk-sav-cella.rossz { background: rgba(199, 106, 106, 0.16); }
+.th-lk-sav-cella.kozepes { background: rgba(230, 192, 74, 0.14); }
+.th-lk-sav-cella.jo { background: rgba(76, 175, 80, 0.16); }
+.th-lk-sav-cella.active { outline: 2px solid #81c784; outline-offset: -2px; color: var(--text); }
+.th-lk-sav-tav, .th-lk-sav-esely { white-space: nowrap; }
+.th-lk-lehetetlen { color: #e08a8a; font-weight: bold; text-align: center; padding: 8px 0; }
 .th-lk-kiteres-btn {
   background: var(--input-bg);
   color: var(--text);
   border: 1px solid var(--success);
-  border-radius: 4px;
-  padding: 4px 12px;
-  font-size: 13px;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
+  width: 100%;
 }
+.th-lk-kiteres-esely { color: #81c784; font-weight: normal; }
 .th-lk-kiteres-btn:disabled { opacity: 0.4; cursor: default; border-color: var(--border); }
 .th-lk-siker { color: var(--success); font-weight: bold; font-size: 15px; }
 .th-lk-sikertelen { color: var(--color-negative); font-weight: bold; font-size: 15px; }

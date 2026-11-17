@@ -1,43 +1,42 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { useHoldRepeat } from '../../hooks/useHoldRepeat';
-import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 import { PopupOverlay } from '../PopupOverlay';
 import { rollK10 } from '../../engine/dice';
 import { probaSiker } from '../../engine/proba/proba-common';
-import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, buildOpciók, type LKOpció } from './loveskiteres-calc';
+import { calcAkrobatikaÉrték, lövéskitérésEsély as esély } from './loveskiteres-calc';
 
 interface Props {
   karakter: Karakter;
   data: GameData;
 }
 
+// Incoming-weapon categories (konstansok.lövéskitérés keys, md/078: decided by the Osztó).
+const KATEGÓRIÁK: { kulcs: string; rövid: string; teljes: string }[] = [
+  { kulcs: 'nem_alkalmas_tárgyak', rövid: 'Tárgy', teljes: 'Dobásra nem alkalmas tárgy' },
+  { kulcs: 'korlátosan_alkalmas', rövid: 'Korl.', teljes: 'Korlátosan alkalmas fegyver' },
+  { kulcs: 'dobófegyverek', rövid: 'Dobó', teljes: 'Dobófegyver' },
+  { kulcs: 'íjak', rövid: 'Íj', teljes: 'Íj' },
+  { kulcs: 'nyílpuskák', rövid: 'Nyílp.', teljes: 'Nyílpuska' },
+];
+
 /**
  * Önálló, védekező Lövéskitérés eszköz (md/073, kategóriák md/078). A karakter a
- * CÉLPONT: saját Akrobatikájával tér ki egy BEJÖVŐ fegyver lövése elől. A célszám a
- * fegyver kategóriájából (Osztó) + távolságból, a „hatótávon kívül" a fegyver Hatótávjából.
+ * CÉLPONT: saját Akrobatikájával tér ki egy BEJÖVŐ lövés elől. Kategória-chip + távsáv-skála
+ * (a célszámot csak a kategória és a táv-sáv dönti el); minden sáv mutatja a célszámot és az esélyt.
  */
 export function TavharcLoveskiteres({ karakter, data }: Props) {
-  const [sel, setSel] = useState<LKOpció | null>(null);
-  const [távolság, setTávolság] = useState(5);
+  const [kat, setKat] = useState<string | null>(null);
+  const [sávIdx, setSávIdx] = useState<number | null>(null);
   const [dobás, setDobás] = useState<{ k10: number; siker: boolean } | null>(null);
-  const [showPicker, setShowPicker] = useState(false);
 
-  const opciók = buildOpciók(data.tavfegyverek);
-  const hatótávonKívül = !!sel && távolság > sel.hatótáv;
-  const célszám = (sel && sel.kategória && !hatótávonKívül)
-    ? calcLöveskitérésCélszám(data.konstansok.lövéskitérés[sel.kategória], távolság)
-    : null;
   const akrobatika = calcAkrobatikaÉrték(karakter, data);
-  // Lehetetlen: még a max k10 (10) dobással sem érhető el a célszám.
-  const lehetetlen = célszám !== null && akrobatika + 10 < célszám;
+  const sávok = kat ? (data.konstansok.lövéskitérés[kat] ?? []) : [];
+  const sáv = sávIdx !== null ? sávok[sávIdx] : undefined;
+  const célszám = sáv?.célszám ?? null;
+  const p = célszám !== null ? esély(akrobatika, célszám) : null;
 
-  const step = useCallback((dir: 1 | -1) => {
-    setTávolság(v => Math.max(1, Math.min(MAX_TÁVOLSÁG_MÉTER, v + dir)));
-  }, []);
-  const { holdProps } = useHoldRepeat(step);
-
+  const választKat = (k: string) => { setKat(k); setSávIdx(null); };
   const kitérés = () => {
     if (célszám === null) return;
     const k10 = rollK10();
@@ -46,51 +45,45 @@ export function TavharcLoveskiteres({ karakter, data }: Props) {
 
   return (
     <div className="th-picker th-lk-box">
-      <div className="th-picker-label">Lövéskitérés</div>
-
-      <button className={`he-field-btn th-lk-kat-btn${sel ? '' : ' th-lk-kat-btn-empty'}`} onClick={() => setShowPicker(true)}>
-        <strong>{sel?.név ?? 'Bejövő fegyver'}</strong>
-      </button>
-
-      <div className="th-lk-tav">
-        <button className="fort-fok-btn th-lk-tav-btn" onClick={() => step(-1)} {...holdProps(-1)}>−</button>
-        <span className="th-lk-tav-value">{távolság}m</span>
-        <button className="fort-fok-btn th-lk-tav-btn" onClick={() => step(1)} {...holdProps(1)}>+</button>
+      <div className="th-lk-fejlec">
+        <span className="th-picker-label">Lövéskitérés</span>
+        <span className="th-lk-akrobatika">Akrob+Gy <strong>{akrobatika}</strong></span>
       </div>
 
-      <div className="th-lk-info">
-        <span className="th-lk-akrobatika">Akrobatika+Gyorsaság: <strong>{akrobatika}</strong></span>
-        {!sel
-          ? <span className="th-lk-hint">Válassz bejövő fegyvert</span>
-          : hatótávonKívül
-            ? <span className="th-lk-outofrange">hatótávon kívül vagy</span>
-            : <span className="th-lk-celszam">Célszám: <strong>{célszám}</strong></span>}
+      <div className="th-lk-chipek" role="group" aria-label="Bejövő fegyver">
+        {KATEGÓRIÁK.map(k => (
+          <button key={k.kulcs} type="button" title={k.teljes} aria-pressed={kat === k.kulcs}
+            className={`th-lk-chip${kat === k.kulcs ? ' active' : ''}`} onClick={() => választKat(k.kulcs)}>
+            {k.rövid}
+          </button>
+        ))}
       </div>
 
-      <div className="th-lk-actions">
-        {lehetetlen ? (
-          <div className="th-lk-lehetetlen">Lehetetlen</div>
-        ) : (
-          <button className="th-lk-kiteres-btn" onClick={kitérés} disabled={célszám === null}>Kitérés</button>
-        )}
-      </div>
-
-      {showPicker && (
-        <PopupOverlay onClose={() => setShowPicker(false)}>
-          <div className="th-fegyver-picker">
-            {opciók.map(o => o.separator ? (
-              <hr key={o.név} className="th-fegyver-picker-sep" />
-            ) : (
-              <button
-                key={o.név}
-                className={`th-fegyver-picker-item${o.név === sel?.név ? ' th-fegyver-picker-active' : ''}`}
-                onClick={() => { setSel(o); setShowPicker(false); }}
-              >
-                {o.név}
+      {kat === null ? (
+        <div className="th-lk-hint">Válassz bejövő fegyvert</div>
+      ) : (
+        <div className="th-lk-sav" role="group" aria-label="Távolság">
+          {sávok.map((s, i) => {
+            const e = esély(akrobatika, s.célszám);
+            const szín = e < 0.3 ? 'rossz' : e > 0.7 ? 'jo' : 'kozepes';
+            return (
+              <button key={s.max_táv} type="button" aria-pressed={sávIdx === i}
+                className={`th-lk-sav-cella ${szín}${sávIdx === i ? ' active' : ''}`} onClick={() => setSávIdx(i)}>
+                <span className="th-lk-sav-tav">≤{s.max_táv}{i === 0 ? 'm' : ''}</span>
+                <strong>{s.célszám}</strong>
+                <span className="th-lk-sav-esely">{Math.round(e * 100)}%</span>
               </button>
-            ))}
-          </div>
-        </PopupOverlay>
+            );
+          })}
+        </div>
+      )}
+
+      {p === 0 ? (
+        <div className="th-lk-lehetetlen">Lehetetlen</div>
+      ) : (
+        <button className="th-lk-kiteres-btn" onClick={kitérés} disabled={célszám === null}>
+          {célszám === null ? (kat ? 'Válassz távot' : 'Kitérés') : <>Kitérés <span className="th-lk-kiteres-esely">· {Math.round((p ?? 0) * 100)}%</span></>}
+        </button>
       )}
 
       {dobás !== null && célszám !== null && (
