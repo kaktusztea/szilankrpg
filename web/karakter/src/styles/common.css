@@ -63,11 +63,23 @@
 .info-panel-row { margin-bottom: 3px; }
 .info-panel-label { color: var(--text-dim); margin-right: 4px; }
 .info-panel-kit { color: var(--success); }
-/* Kiterjesztő fortély szín-jelzés: felvett = zöld (.fort-req-met); hiányzó = sárga (normál) / piros (erős) */
-.kit-hiany-normal { color: var(--warning); }
-.kit-hiany-eros { color: var(--error); }
-/* Kiterjesztő fortélyok közti ";" szeparátor: mindig világos fehér, nem kattintható */
-.kit-sep { color: var(--text); }
+/* Kiterjesztő fortélyok: semleges név + állapot-pötty (felvett = zöld; hiányzó = sárga normál / piros erős) */
+.kit-lista { color: var(--text); }
+.kit-row { border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px 4px; margin: 4px 0; }  /* thin frame per Normál / Erős section */
+.kit-row > .info-panel-label { display: block; }  /* list starts on its own line */
+.kit-szint-ikon { width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.kit-szint-normal { fill: var(--warning); }
+.kit-szint-eros { fill: var(--error); }
+.kit-tetel { margin-right: 6px; white-space: nowrap; }
+.kit-hiany { color: var(--text-dim); }
+.kit-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin: 0 5px 1px 0; vertical-align: middle; }
+.kit-dot-felvett { background: var(--success); }
+.kit-dot-normal { background: var(--warning); }
+.kit-dot-eros { background: var(--error); }
+/* "X - Y" / "X: Y" előtag szerint összevont csoport: "X:" cím, utána a tételek */
+.kit-csoport { display: block; }
+.kit-csoport-cim { display: block; color: var(--text-dim); }
+.kit-csoport-tetelek { display: block; padding-left: 12px; }
 /* Kattintható kiterjesztő-fortély név (van leírás → info popup) */
 .kit-nev-info { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; }
 .kit-info-popup { max-width: 320px; }

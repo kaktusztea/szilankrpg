@@ -46,7 +46,9 @@ export function KepzettsegDetails({ def, kit, fortélyFokok, elem }: Props) {
   );
 }
 
-/** Közös fortély lista renderelő (kiterjesztő fortélyok). Szín: felvett = zöld; hiányzó = sárga (normál) / piros (erős). */
+/** Közös fortély lista renderelő (kiterjesztő fortélyok).
+ *  Állapot: színes pötty (felvett = zöld; hiányzó = sárga normál / piros erős), a név semleges (hiányzó = tompított).
+ *  Az azonos "X - Y" / "X: Y" előtagú tételek egy csoportba vonódnak: "X: Y1, Y2, ...". */
 function FortelyLista({ label, szint, entries, fortélyFokok, onInfo }: {
   label: string;
   szint: 'normál' | 'erős';
@@ -55,27 +57,66 @@ function FortelyLista({ label, szint, entries, fortélyFokok, onInfo }: {
   onInfo: (e: KiterjesztesEntry) => void;
 }) {
   if (entries.length === 0) return null;
-  const hiányClass = szint === 'erős' ? 'kit-hiany-eros' : 'kit-hiany-normal';
+  const csoportok = csoportosít(entries);
+
+  const tétel = (k: KiterjesztesEntry, név: string) => {
+    const felvett = (fortélyFokok?.[k.fortély] ?? 0) > 0;
+    const állapot = felvett ? 'felvett' : szint === 'erős' ? 'eros' : 'normal';
+    const állapotSzöveg = felvett ? 'felvett' : `hiányzó (${szint})`;
+    const hasInfo = !!k.leírás;
+    const névClass = [fortélyFokok && !felvett ? 'kit-hiany' : '', hasInfo ? 'kit-nev-info' : ''].join(' ').trim() || undefined;
+    return (
+      <Fragment key={k.fortély + név}>{' '}<span className="kit-tetel">
+        {fortélyFokok && <span className={`kit-dot kit-dot-${állapot}`} role="img" aria-label={állapotSzöveg} />}
+        <span
+          className={névClass}
+          title={hasInfo ? k.leírás : undefined}
+          {...(hasInfo ? kattinthatóProps(() => onInfo(k)) : {})}
+        >
+          {név}
+        </span>
+      </span></Fragment>
+    );
+  };
+
   return (
-    <div className="info-panel-row">
-      <span className="info-panel-label">{label}:</span>
-      <span className="info-panel-kit">{entries.map((k, i) => {
-        const felvett = (fortélyFokok?.[k.fortély] ?? 0) > 0;
-        const színClass = !fortélyFokok ? undefined : felvett ? 'fort-req-met' : hiányClass;
-        const hasInfo = !!k.leírás;
-        return (
-          <Fragment key={i}>
-            {i > 0 ? <span className="kit-sep">; </span> : null}
-            <span
-              className={`${színClass ?? ''}${hasInfo ? ' kit-nev-info' : ''}`.trim() || undefined}
-              title={hasInfo ? k.leírás : undefined}
-              {...(hasInfo ? kattinthatóProps(() => onInfo(k)) : {})}
-            >
-              {k.név}
-            </span>
-          </Fragment>
-        );
-      })}</span>
+    <div className="info-panel-row kit-row">
+      <span className="info-panel-label">
+        <svg className={`kit-szint-ikon kit-szint-${szint === 'erős' ? 'eros' : 'normal'}`} viewBox="0 0 10 10" aria-hidden="true">
+          <rect width="10" height="10" rx="2" />
+        </svg>
+        {label}
+      </span>
+      <span className="kit-lista">{csoportok.map(cs => cs.előtag === null
+        ? tétel(cs.tételek[0].k, cs.tételek[0].név)
+        : (
+          <span key={cs.előtag} className="kit-csoport">
+            {' '}<span className="kit-csoport-cim">{cs.előtag}:</span>
+            <span className="kit-csoport-tetelek">{cs.tételek.map(t => tétel(t.k, t.név))}</span>
+          </span>
+        ))}</span>
     </div>
   );
+}
+
+/** Prefix separators in fortély names: "Tájtípus - erdős", "Kézműves: Asztalos". */
+const ELŐTAG_RE = /^(.+?)(?: - |: )(.+)$/;
+
+/** Groups entries sharing an "X - Y" / "X: Y" prefix (2+ items); others stay single, original order kept. */
+function csoportosít(entries: KiterjesztesEntry[]) {
+  const előtag = (név: string) => ELŐTAG_RE.exec(név)?.[1] ?? null;
+  const darab = new Map<string, number>();
+  for (const k of entries) { const e = előtag(k.név); if (e) darab.set(e, (darab.get(e) ?? 0) + 1); }
+  const out: { előtag: string | null; tételek: { k: KiterjesztesEntry; név: string }[] }[] = [];
+  const index = new Map<string, number>();
+  for (const k of entries) {
+    const e = előtag(k.név);
+    if (e && (darab.get(e) ?? 0) > 1) {
+      const név = ELŐTAG_RE.exec(k.név)?.[2] ?? k.név;
+      const idx = index.get(e);
+      if (idx === undefined) { index.set(e, out.length); out.push({ előtag: e, tételek: [{ k, név }] }); }
+      else out[idx].tételek.push({ k, név });
+    } else out.push({ előtag: null, tételek: [{ k, név: k.név }] });
+  }
+  return out;
 }
