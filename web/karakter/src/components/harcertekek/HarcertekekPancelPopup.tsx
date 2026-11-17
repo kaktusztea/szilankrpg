@@ -15,9 +15,16 @@ interface Props {
   onDismiss: () => void;
 }
 
+// Header of each armour field picker (what is being set)
+const CÍMEK: Record<string, React.ReactNode> = {
+  struktúra: 'Struktúra', fémalapanyag: 'Fémalapanyag', kidolgozottság: 'Kidolgozottság', méret: 'Méret',
+  végtagvédettség: <>Végtagvédettség<br /><span className="overlay-desc-dim">(csatolt darab)</span></>, rongálódás: 'Rongálódás', merevvért: 'Merevvértviselet fortély fok',
+};
+
 export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, kidolgozottságOpciók, méretOpciók, merevvertFok, onUpdate, onMerevvert, onDismiss }: Props) {
   return (
     <PopupOverlay onClose={onDismiss}>
+      {CÍMEK[popup] && <label className="kep-prompt-text-center">{CÍMEK[popup]}</label>}
       {popup === 'struktúra' && (
         <ColumnPicker
           wide
@@ -57,10 +64,9 @@ export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, ki
       {popup === 'rongálódás' && (
         <FokRadios values={[0, 1, 2, 3, 4, 5]} current={páncél.rongálódás} onSelect={v => onUpdate({ rongálódás: v })} />
       )}
-      {popup === 'merevvért' && (<>
-        <label className="kep-prompt-text-center">Merevvértviselet fortély fok</label>
+      {popup === 'merevvért' && (
         <FokRadios values={[0, 1, 2, 3]} current={merevvertFok} onSelect={onMerevvert} />
-      </>)}
+      )}
     </PopupOverlay>
   );
 }
