@@ -52,7 +52,7 @@ export function TavharcPopups({ karakter, data, session, setKarakter, popup, clo
     <>
       {popup.mfTarget !== null && (
         <PopupOverlay onClose={() => closePopup('mfTarget')}>
-          <h4>Mesterfegyver fok - {k.távfegyverek[popup.mfTarget]?.alap}</h4>
+          <label className="kep-prompt-text-center">Mesterfegyver fok<br /><span className="overlay-desc-dim">{k.távfegyverek[popup.mfTarget]?.alap}</span></label>
           <div className="kep-prompt-flex-fok">
             {FORTÉLY_FOK_VALUES.map(f => (
               <button key={f} className={`fort-fok-btn szin-fortely${getMfFok(k, k.távfegyverek[popup.mfTarget!]?.alap) === f ? ' active' : ''}`}

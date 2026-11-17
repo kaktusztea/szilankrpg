@@ -113,7 +113,7 @@ export function Popups({
 
       {mfTarget !== null && (
         <PopupOverlay onClose={() => onDismiss('mfTarget')}>
-          <label className="kep-prompt-text-center">Mesterfegyver fortély fok - {k.fegyverek[mfTarget]?.alap}</label>
+          <label className="kep-prompt-text-center">Mesterfegyver fok<br /><span className="overlay-desc-dim">{k.fegyverek[mfTarget]?.alap}</span></label>
           <FokRadios
             values={FORTÉLY_FOK_VALUES}
             current={getMfFok(data, k, k.fegyverek[mfTarget]?.alap ?? '')}
