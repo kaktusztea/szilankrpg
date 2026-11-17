@@ -194,7 +194,7 @@ export function KepzettsegProbaPopup({
 
   return (
     <PopupOverlay onClose={handleOuterClose}>
-      <div className="kep-proba-popup">
+      <div className="kep-proba-popup kep-proba-popup-kepz">
         <ProbaFejlec cím="Képzettségpróba" vanEredmény={vanEredmény} onReset={resetDobás} onClose={onClose} />
         <div className="kep-proba-subtitle">
           {helyettesítés

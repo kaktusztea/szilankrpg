@@ -672,3 +672,30 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 
 /* Tulajdonságpróba: Célszám rows ~7% larger than the shared .kep-proba-dual-col base (14px, 5px 6px) - easier to hit */
 .kep-proba-celszam-nagy .he-field-btn { font-size: 15px; padding: 5.5px 6.5px; }
+
+/* Képzettségpróba popup: every text element +1px (Tulajdonságpróba unchanged). Sub-popups are portals
+   (not descendants), so they keep their own sizes. Icon-only buttons (✕, ⟲, 💡, ⇄, kézi kocka, ±) are not scaled. */
+.kep-proba-popup-kepz { font-size: 17px; }
+.kep-proba-popup-kepz .kep-proba-header { font-size: 16px; }
+.kep-proba-popup-kepz .kep-proba-subtitle { font-size: 17px; }
+.kep-proba-popup-kepz .kep-proba-osszetett-chip { font-size: 14px; }
+.kep-proba-popup-kepz .kep-proba-fizikai-toggle { font-size: 13px; }
+.kep-proba-popup-kepz .kep-proba-oszlop-cim { font-size: 12px; }
+.kep-proba-popup-kepz .kep-proba-dual-col .he-field-btn { font-size: 15px; }
+.kep-proba-popup-kepz .kep-proba-dual-col .proba-mod-sav button { font-size: 12px; }
+.kep-proba-popup-kepz .kep-proba-extras-btn { font-size: 14px; }
+.kep-proba-popup-kepz .kep-proba-kapszulak .kep-proba-kit-btn { font-size: 14px; }
+.kep-proba-popup-kepz .kep-proba-kap-cim { font-size: 12px; }
+.kep-proba-popup-kepz .kep-proba-kap-ertek { font-size: 15px; }
+.kep-proba-popup-kepz .kep-proba-szit-cim { font-size: 13px; }
+.kep-proba-popup-kepz .kep-proba-szit-ertek { font-size: 21px; }
+.kep-proba-popup-kepz .elony-lepteto-ertek { font-size: 16px; }
+.kep-proba-popup-kepz .forras-lista, .kep-proba-popup-kepz .forras-vissza { font-size: 13px; }
+.kep-proba-popup-kepz .kep-proba-sum-total, .kep-proba-popup-kepz .kep-proba-celszam { font-size: 23px; }
+.kep-proba-popup-kepz .kep-proba-vs { font-size: 14px; }
+.kep-proba-popup-kepz .kep-proba-kepzetlen-jel { font-size: 12px; }
+.kep-proba-popup-kepz .kep-proba-tiltott, .kep-proba-popup-kepz .kep-proba-biztos { font-size: 17px; }
+.kep-proba-popup-kepz .kep-proba-result-num { font-size: 49px; }
+.kep-proba-popup-kepz .kep-proba-siker, .kep-proba-popup-kepz .kep-proba-sikertelen { font-size: 21px; }
+.kep-proba-popup-kepz .kep-proba-rolls, .kep-proba-popup-kepz .kep-proba-vallalás-result { font-size: 14px; }
+.kep-proba-popup-kepz .kep-proba-osszetett-rows { font-size: 15px; }
