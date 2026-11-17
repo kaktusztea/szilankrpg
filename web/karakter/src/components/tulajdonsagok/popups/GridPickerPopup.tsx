@@ -7,8 +7,8 @@ interface Props {
   onSelect: (v: number) => void;
   onCancel: () => void;
   gridClass?: string;
-  /** Selected chip color: skill blue (default: green). */
-  szín?: 'kepzettseg';
+  /** Selected chip color: skill blue / white for attributes (default: green, e.g. TSZ). */
+  szín?: 'kepzettseg' | 'feher';
 }
 
 export function GridPickerPopup({ label, values, current, onSelect, onCancel, gridClass, szín }: Props) {

@@ -56,6 +56,7 @@ export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, faj
           onSelect={v => { onChange(v); setEditing(false); }}
           onCancel={() => setEditing(false)}
           gridClass="tul-val-grid"
+          szín="feher"
         />
       )}
       {showProba && (
