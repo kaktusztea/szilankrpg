@@ -15,7 +15,7 @@ export function FokPickerPopup({ név, maxfok, currentFok, onPick, onClose }: Pr
         <label>{név} - fok:</label>
         <div className="kep-prompt-flex-fok">
           {Array.from({ length: maxfok }, (_, i) => i + 1).map(n => (
-            <button key={n} className={`fort-fok-btn${currentFok === n ? ' active' : ''}`}
+            <button key={n} className={`fort-fok-btn szin-fortely${currentFok === n ? ' active' : ''}`}
               onClick={() => onPick(n)}>{n}</button>
           ))}
         </div>

@@ -1,14 +1,16 @@
 import './common.css';
 /** Radios row - compact numbered buttons (MF fok, végtagvédettség, rongálódás, stb.) */
-export function FokRadios({ values, current, onSelect }: {
+export function FokRadios({ values, current, onSelect, szín }: {
   values: number[];
   current: number;
   onSelect: (v: number) => void;
+  /** Selected chip color: fortély purple for fortély fok pickers (default: green). */
+  szín?: 'fortely';
 }) {
   return (
     <div className="fort-fok-radios">
       {values.map(n => (
-        <button key={n} className={`fort-fok-btn${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>{n}</button>
+        <button key={n} className={`fort-fok-btn${szín ? ` szin-${szín}` : ''}${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>{n}</button>
       ))}
     </div>
   );
@@ -89,7 +91,7 @@ export function SzintGrid({ current, maxSzint, onSelect, label }: {
       <label>{label}</label>
       <div className="kep-szint-grid">
         {Array.from({ length: maxSzint }, (_, i) => i + 1).map(n => (
-          <button key={n} className={`fort-fok-btn${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>{n}</button>
+          <button key={n} className={`fort-fok-btn szin-kepzettseg${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>{n}</button>
         ))}
       </div>
     </>

@@ -103,7 +103,7 @@ export function FortelyRow({
           <div className="fort-fok-radios">
             {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
               <button key={f}
-                className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}${isNyelv ? ' fort-fok-btn-wide' : ''}`}
+                className={`fort-fok-btn szin-fortely ${slot.fok === f ? 'active' : ''}${isNyelv ? ' fort-fok-btn-wide' : ''}`}
                 onClick={() => { onFokChange(f); setEditing(false); }}>
                 {isNyelv ? nyelvFokLabels[f] ?? f : f}
               </button>

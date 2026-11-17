@@ -118,6 +118,7 @@ export function Popups({
             values={FORTÉLY_FOK_VALUES}
             current={getMfFok(data, k, k.fegyverek[mfTarget]?.alap ?? '')}
             onSelect={n => { setMfFok(k.fegyverek[mfTarget]?.alap ?? '', n); onClose('mfTarget'); }}
+            szín="fortely"
           />
         </PopupOverlay>
       )}
@@ -176,6 +177,7 @@ export function Popups({
               values={FORTÉLY_FOK_VALUES}
               current={fortélyFok(k.fortélyok, 'pajzshasználat')}
               onSelect={n => { setPajzsFok(n); onClose('pajzsPopup'); }}
+              szín="fortely"
             />
           </>)}
         </PopupOverlay>

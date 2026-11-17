@@ -55,7 +55,7 @@ export function TavharcPopups({ karakter, data, session, setKarakter, popup, clo
           <h4>Mesterfegyver fok - {k.távfegyverek[popup.mfTarget]?.alap}</h4>
           <div className="kep-prompt-flex-fok">
             {FORTÉLY_FOK_VALUES.map(f => (
-              <button key={f} className={`fort-fok-btn${getMfFok(k, k.távfegyverek[popup.mfTarget!]?.alap) === f ? ' active' : ''}`}
+              <button key={f} className={`fort-fok-btn szin-fortely${getMfFok(k, k.távfegyverek[popup.mfTarget!]?.alap) === f ? ' active' : ''}`}
                 onClick={() => { setMfFok(k.távfegyverek[popup.mfTarget!]!.alap, f); closePopup('mfTarget'); }}>{f}</button>
             ))}
           </div>

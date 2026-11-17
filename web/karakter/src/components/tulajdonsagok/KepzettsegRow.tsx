@@ -84,6 +84,7 @@ export function KepzettsegRow({
       {szintEditing && (
         <GridPickerPopup
           label={`${displayName} - szint:`}
+          szín="kepzettseg"
           values={SZINT_VALUES}
           current={slot.szint}
           onSelect={n => { onSzintChange(n); setSzintEditing(false); }}

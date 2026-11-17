@@ -99,6 +99,7 @@ export function TulajdonsagokPopups({
     {p.pendingNew && (
       <GridPickerPopup
         label={`${getDisplayName(p.pendingNew.kulcs, data.kepzettsegDefs)} - szint:`}
+        szín="kepzettseg"
         values={SZINT_VALUES}
         current={0}
         onSelect={n => {

@@ -19,7 +19,7 @@ export function SzintPickerPopup({ target, currentSzint, onPick, onClose }: Prop
         <label>{displayName} - szint:</label>
         <div className="kep-szint-grid">
           {options.map(n => (
-            <button key={n} className={`fort-fok-btn${currentSzint === n ? ' active' : ''}`}
+            <button key={n} className={`fort-fok-btn szin-kepzettseg${currentSzint === n ? ' active' : ''}`}
               onClick={() => onPick(n)}>{n}</button>
           ))}
         </div>
