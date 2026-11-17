@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import type { GameData } from '../engine/data-loader';
 import { PopupOverlay } from './PopupOverlay';
 import { buildFegyverGroups } from './fegyver-groups';
 
 // --- Source types ---
 
-/** `info`: optional short stats shown under the label (e.g. "TÉ: 5, VÉ: 12, SP: 8, Sebesség: 6"). */
-export interface PickerItem { value: string; label: string; info?: string }
+/** `info`: optional short stats shown under the label (e.g. "TÉ: 5, VÉ: 12, SP: 8, Sebesség: 6").
+ *  `nevUtán`: optional inline element right after the label (e.g. MF fok dots). */
+export interface PickerItem { value: string; label: string; info?: string; nevUtán?: ReactNode }
 
 function PickerItemLabel({ it }: { it: PickerItem }) {
-  if (!it.info) return <>{it.label}</>;
-  return <><span className="spec-picker-nev">{it.label}</span><span className="spec-picker-info">{it.info}</span></>;
+  if (!it.info) return <>{it.label}{it.nevUtán}</>;
+  return <><span className="spec-picker-nev">{it.label}{it.nevUtán}</span><span className="spec-picker-info">{it.info}</span></>;
 }
 
 export type PickerSource =

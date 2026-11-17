@@ -3,8 +3,12 @@ import { getAlkalmatlanInfo, calcÚjratöltésEnyhítés } from './helpers';
 import { TavharcFegyverCard } from './TavharcFegyverCard';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 import { lookupTávfegyver } from '../../engine/lookup';
-import { PluszGomb } from '../picker/ListaPicker';
-import { SP_NINCS } from '../../engine/data-types';
+import { useState } from 'react';
+import { Ikon } from '../common/Ikon';
+import { SpecPicker, type PickerSource, type PickerItem } from '../SpecPicker';
+import { FokPottyok } from '../common/FokPottyok';
+import { MAX_FORTÉLY_FOK } from '../../ui-constants';
+import { távfegyverStatok } from './TavharcFegyverCard';
 
 interface Props extends TavharcProps {
   onMfTarget: (idx: number) => void;
@@ -26,6 +30,26 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
 
   const isMágikusDef = (alap: string) =>
     lookupTávfegyver(data.tavfegyverek, alap)?.kategória === 'mágikus';
+
+  const [pickerOpen, setPickerOpen] = useState(false);
+
+  // Add-weapon picker (like the Harcértékek one): grouped by harcmodor; each row shows the stats the weapon
+  // WOULD have once taken (CÉ / Támadás / SP incl. MF bonuses, same calc as the card) + the MF fok dots.
+  function pickerSource(): PickerSource {
+    const csoportok = new Map<string, PickerItem[]>();
+    for (const f of felvehető) {
+      const próba = { ...k, távfegyverek: [...k.távfegyverek, { alap: f.név, idea: f.idea_default ?? 0 }] };
+      const st = távfegyverStatok(próba, data, session, próba.távfegyverek.length - 1, gyorsaság, újratöltésEnyhítés);
+      const arr = csoportok.get(f.harcmodor) ?? [];
+      arr.push({
+        value: f.név, label: f.név,
+        info: `CÉ: ${st.bontás.cé}, Támadás: ${st.tám}, SP: ${st.spÉrték}`,
+        nevUtán: <FokPottyok név="MF fok" fok={st.mf} max={MAX_FORTÉLY_FOK} hiba={st.mf > 0 && st.hasError} />,
+      });
+      csoportok.set(f.harcmodor, arr);
+    }
+    return { type: 'grouped', label: 'Új távfegyver', groups: [...csoportok].map(([label, items]) => ({ label, items })) };
+  }
 
   function addTávfegyver(alap: string) {
     const ideaDefault = lookupTávfegyver(data.tavfegyverek, alap)?.idea_default ?? 0;
@@ -50,9 +74,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
         Távfegyverek
         {k.távfegyverek.length < MAX_FEGYVER_DARAB && (
           <span className="csoport-uj">
-            <PluszGomb cím="Új távfegyver"
-              opciók={felvehető.map(f => ({ érték: f.név, név: f.név, infó: `CÉ: ${f.CÉ}, SP: ${f.SP === SP_NINCS ? '-' : f.SP}, Osz: ${f.Osztó}` }))}
-              onVálaszt={addTávfegyver} />
+            <button type="button" className="csoport-uj-btn" title="Új távfegyver" aria-label="Új távfegyver" onClick={() => setPickerOpen(true)}><Ikon név="új" /></button>
           </span>
         )}
       </h3>
@@ -92,6 +114,13 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
             </div>
           )}
         </>
+      )}
+      {pickerOpen && (
+        <SpecPicker
+          source={pickerSource()}
+          onSelect={alap => { addTávfegyver(alap); setPickerOpen(false); }}
+          onCancel={() => setPickerOpen(false)}
+        />
       )}
     </section>
   );

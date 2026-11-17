@@ -22,11 +22,10 @@ interface Props {
   onIdeaPopup: () => void;
 }
 
-export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
+/** Stats of a taken ranged weapon (CÉ / Támadás / SP with its MF bonuses, MF fok) - shared by the card and the game-mode picker. */
+export function távfegyverStatok(k: Karakter, data: GameData, session: Session, index: number, gyorsaság: number, újratöltésEnyhítés: number) {
   const tf = k.távfegyverek[index];
-  const konstansok = data.konstansok;
   const def = lookupTávfegyver(data.tavfegyverek, tf.alap);
-
   // Per-fegyver CÉ-Idea delta (Modell 2, spec §17: az Idea 1:1 a CÉ-hez). A v2 CÉ a idea_default-ot
   // MÁR tartalmazza, ezért a példány Ideájának a default-tól való ELTÉRÉSE módosít.
   const ideaDelta = tf.idea - (def?.idea_default ?? 0);
@@ -34,10 +33,15 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
   const bontás = calcCÉBontás(k, data, session, def, ideaDelta, fortélyCÉ, tf.alap);
   const mf = getMfFok(k, tf.alap);
   const sebesség = def?.Sebesség ?? -1;
-  const tám = bontás.isMágikus ? '-' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
+  const tám = bontás.isMágikus ? '-' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: data.konstansok.nyílpuska_alap_támadás });
   const hasError = mfKövetelményHiba(k, data, tf.alap);
-
   const spÉrték = def?.SP === SP_NINCS ? '-' : calcTávSP(k, data, def, tf.alap).sp;
+  return { bontás, mf, tám, hasError, spÉrték };
+}
+
+export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
+  const tf = k.távfegyverek[index];
+  const { bontás, mf, tám, hasError, spÉrték } = távfegyverStatok(k, data, session, index, gyorsaság, újratöltésEnyhítés);
 
   return (
     // Compact card like the Harcértékek weapon cards; tapping the card selects the active ranged weapon

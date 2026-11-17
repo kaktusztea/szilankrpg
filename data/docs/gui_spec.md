@@ -535,7 +535,8 @@ Fejléc: `<h2>🏹 Távharc</h2>`
   - Jobb felül ikon-gombok: ceruza → Idea popup (`IdeaSkala`, -5..+5, előnézet: CÉ; mágikus fegyvernél nincs), ✕ → törlés megerősítő popup.
   - Statisztika-sor (keret nélkül, monospace, 15px): `CÉ N · Támadás Nx · SP N` (nem sebző fegyvernél SP `-`).
 - Aktív fegyver: zöld keret (a kártyára koppintva váltható; az ikon-gombok / pöttyök koppintása nem vált)
-- „Távfegyverek” címsor végén `+` chip (`PluszGomb`) → lista-választó (`tavfegyverek_v2.json`-ból, 🔆 kiszűrve; név mellett `CÉ / SP / Osz`)
+- „Távfegyverek” címsor végén `+` chip → `SpecPicker` (a Harcértékek fegyver-választó mintájára), harcmodor szerint csoportosítva (`tavfegyverek_v2.json`, 🔆 kiszűrve). Soronként: név + MF fok pöttyök, alatta a fegyver felvétel utáni harcértékei (`CÉ / Támadás / SP`, MF bónuszokkal; ugyanaz a számítás, mint a kártyán: `távfegyverStatok`).
+- Játék mód fegyverválasztó (`TavharcGameSelector`): a felvett fegyvereknél név + MF pöttyök + `CÉ · Támadás · SP`.
 
 **Hajítható fegyverek (fortélyból) szekció:**
 - "Alkalmatlan fegyver hajítása" fortélyból: per spec_elem fegyver kártya (nem törölhető, CÉ:0, Osztó:1)

@@ -118,7 +118,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       )}
 
       {gameMode && (
-        <TavharcGameSelector összesFegyver={összesFegyver} tfIdx={tfIdx} setSession={setSession} mfFok={mfFok} idea={tfPeldany?.idea ?? 0} isMágikus={bontás.isMágikus} />
+        <TavharcGameSelector összesFegyver={összesFegyver} tfIdx={tfIdx} setSession={setSession} mfFok={mfFok} idea={tfPeldany?.idea ?? 0} isMágikus={bontás.isMágikus}
+          karakter={k} data={data} session={session} />
       )}
 
       {tfDef && gameMode && (
