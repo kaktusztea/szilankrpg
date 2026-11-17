@@ -70,7 +70,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
         </div>
 
 
-        <div className="kep-proba-dual-col kep-proba-celszam-col">
+        <div className="kep-proba-dual-col kep-proba-celszam-col kep-proba-celszam-nagy">
           <div className="kep-proba-oszlop-cim">Célszám</div>
           <ProbaModValaszto ellenpróba={ellenpróba} ismeretlen={ismeretlen} ellenTiltva={összetettDb > 0}
             onIsmert={váltás(() => { setEllenpróba(false); if (ismeretlen) setNehézség(null); })}
@@ -88,7 +88,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
         {fortélyBónuszok.length > 0 && !d.vanEredmény && (
           <div className="kep-proba-kapszulak">
             <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash kep-proba-szit-btn" onClick={() => setSzitNyitva(true)}>
-              <span className="kep-proba-kap-cim kep-proba-szit-cim">Helyzetfüggő<br />módosító</span>
+              <span className="kep-proba-kap-cim kep-proba-szit-cim kep-proba-szit-cim-egysor">Helyzetfüggő módosító</span>
               <span className={`kep-proba-szit-ertek${bónusz > 0 ? ' kep-proba-szit-pos' : bónusz < 0 ? ' kep-proba-szit-neg' : ' kep-proba-kap-ures'}`}>
                 {bónusz > 0 ? '+' : ''}{bónusz}
               </span>

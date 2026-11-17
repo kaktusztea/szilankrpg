@@ -617,6 +617,8 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-kap-ures { font-weight: normal; color: var(--text-muted); }
 .kep-proba-kapszulak .kep-proba-szit-btn { flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; }
 .kep-proba-szit-cim { flex: 0 0 auto; max-width: none; white-space: normal; overflow: visible; text-overflow: clip; font-size: 12px; line-height: 1.3; }  /* never truncated: the value gives way, not the caption */
+/* Tulajdonságpróba: the chip is alone in its row → one-line caption, 1px larger */
+.kep-proba-szit-cim-egysor { font-size: 13px; }
 .kep-proba-szit-ertek { flex-shrink: 0; font-family: monospace; font-size: 20px; font-weight: bold; line-height: 1; position: relative; }
 .kep-proba-szit-ertek.kep-proba-kap-ures { font-weight: normal; }
 .kep-proba-szit-enyhitve { position: absolute; top: -4px; right: -8px; font-size: 9px; color: var(--success); }
@@ -658,6 +660,15 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 /* Próba popups: Összetett / Vállalás chip next to the name ("2M" / "V2" text once chosen) */
 .kep-proba-osszetett-chip { font-family: monospace; font-size: 13px; font-weight: bold; padding: 2px 5px; }
 .kep-proba-hely-btn:disabled { opacity: 0.35; cursor: default; }
+/* Helyettesítés picker: width cap so very long skill names (Arkánum: …) wrap instead of widening the popup;
+   the "(3 → 1)" level part never breaks apart */
+.kep-proba-hely-popup { max-width: min(300px, 85vw); }
+.kep-proba-hely-szint { white-space: nowrap; }
+/* Vállalás / Összetett próba / Helyettesítés pickers: one shared option text size (1px under the .he-field-btn 16px) */
+.kep-proba-valaszto .he-field-btn { font-size: 15px; }
 
 /* Mode bar inside the half-width Célszám column: smaller text, so "Ismert" (bold) fits its segment */
 .kep-proba-dual-col .proba-mod-sav button { font-size: 11px; padding: 5px 1px; }
+
+/* Tulajdonságpróba: Célszám rows ~7% larger than the shared .kep-proba-dual-col base (14px, 5px 6px) - easier to hit */
+.kep-proba-celszam-nagy .he-field-btn { font-size: 15px; padding: 5.5px 6.5px; }

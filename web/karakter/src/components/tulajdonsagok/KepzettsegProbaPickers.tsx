@@ -153,7 +153,7 @@ export function KepzettsegProbaPickers({
       )}
 
       {openPicker === 'hely' && (
-        <PopupOverlay className="kep-prompt vallas-picker" onClose={() => setOpenPicker(null)}>
+        <PopupOverlay className="kep-prompt vallas-picker kep-proba-valaszto kep-proba-hely-popup" onClose={() => setOpenPicker(null)}>
           <label className="kep-prompt-label-bold-mb">Helyettesítés</label>
           <div className="kep-prompt-flex-col-list">
             <button className={`he-field-btn${!helyettesítés ? ' vallas-active' : ''}`}
@@ -167,7 +167,7 @@ export function KepzettsegProbaPickers({
                 return (
                   <button key={kulcs} className={`he-field-btn${helyettesítés === kulcs ? ' vallas-active' : ''}`}
                     onClick={() => { setHelyettesítés(kulcs); resetDobás(); setOpenPicker(null); }}>
-                    {képzettségNévId(k, { kepzettsegDefs })} ({k.szint} → {helyettesítésSzint(k.szint, helyettesítésParams)})
+                    {képzettségNévId(k, { kepzettsegDefs })} <span className="kep-proba-hely-szint">({k.szint} → {helyettesítésSzint(k.szint, helyettesítésParams)})</span>
                   </button>
                 );
               })}

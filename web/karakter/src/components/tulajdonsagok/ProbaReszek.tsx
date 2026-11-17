@@ -21,7 +21,7 @@ export function ProbaSzamPicker({ cím, max, érték, felirat, tiltott, onValasz
   tiltott?: (n: number) => boolean; onValaszt: (n: number) => void; onClose: () => void;
 }) {
   return (
-    <PopupOverlay className="kep-prompt vallas-picker" onClose={onClose}>
+    <PopupOverlay className="kep-prompt vallas-picker kep-proba-valaszto" onClose={onClose}>
       <label className="kep-prompt-label-bold-mb">{cím}</label>
       <div className="kep-prompt-flex-col-list">
         {Array.from({ length: max + 1 }, (_, n) => n).map(n => (
