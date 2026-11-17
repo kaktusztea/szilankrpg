@@ -1,5 +1,5 @@
 import { Ikon } from '../common/Ikon';
-import type { Dispatch, SetStateAction, ReactNode } from 'react';
+import { useState, type Dispatch, type SetStateAction, type ReactNode } from 'react';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla } from '../../engine/data-types';
@@ -24,6 +24,7 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
   alap: number; alapLabel: string; kocka: number; szint: number;
   dobás: ProbaDobás | null; setDobás: (d: ProbaDobás | null) => void;
 }) {
+  const [bontásNyitva, setBontásNyitva] = useState(false); // alap + kocka breakdown, collapsed by default
   if (!dobás) {
     return (
       <div className="dobas-btn-row">
@@ -33,12 +34,16 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
     );
   }
   return (
-    <button type="button" className="manover-dobas-eredmeny" onClick={() => setDobás(null)} aria-label="Dobás törlése, újradobás">
-      <span className="ke-dobas-result">{alap + dobás.eredmény}</span>
-      <span className="ke-dobas-detail">
-        {alapLabel} ({alap}) + k{kocka}{dobás.rolls.length > 1 ? ` [${dobás.rolls.join(', ')}] → ${dobás.eredmény}` : ` (${dobás.eredmény})`} <Ikon név="reset" />
-      </span>
-    </button>
+    <div className="manover-dobas-eredmeny">
+      <div className="ke-dobas-result">
+        <button type="button" className="manover-dobas-szam" onClick={() => { setBontásNyitva(false); setDobás(null); }} aria-label="Dobás törlése, újradobás">{alap + dobás.eredmény}</button>
+        <button type="button" className={`sebzes-bontas-nyil${bontásNyitva ? ' nyitva' : ''}`} aria-expanded={bontásNyitva}
+          aria-label="Dobás bontása" title="Bontás" onClick={() => setBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
+      </div>
+      {bontásNyitva && <span className="ke-dobas-detail">
+        {alapLabel} ({alap}) + k{kocka}{dobás.rolls.length > 1 ? ` [${dobás.rolls.join(', ')}] → ${dobás.eredmény}` : ` (${dobás.eredmény})`}
+      </span>}
+    </div>
   );
 }
 

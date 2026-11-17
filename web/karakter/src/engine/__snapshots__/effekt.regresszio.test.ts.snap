@@ -63,7 +63,7 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
   },
   "helyzet Fegyverrántás váratlanul": {
     "f": {
-      "KÉ": 8,
+      "KÉ": 3,
       "SFÉ": 2,
       "harckeret": 4,
     },
@@ -744,7 +744,7 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
   },
   "helyzet Fegyverrántás váratlanul": {
     "f": {
-      "KÉ": 16,
+      "KÉ": 6,
       "SFÉ": 4,
       "harckeret": 6,
     },
@@ -1425,7 +1425,7 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
   },
   "helyzet Fegyverrántás váratlanul": {
     "f": {
-      "KÉ": 19,
+      "KÉ": 9,
       "SFÉ": 6,
       "harckeret": 8,
     },

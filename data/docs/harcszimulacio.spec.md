@@ -834,7 +834,7 @@ Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
 |---|---|
 | Belharci helyzet | `Belharcos` fortély: 1.fok KÉ+1/TÉ+2/VÉ+2 · 2.fok KÉ+2/TÉ+4/VÉ+4. Csak Közelharc harcmodorral és max 1 fegyverhosszú fegyverrel. Nagyobb fegyverek `TÉ = 0, VÉ = 0` (fegyver_override). Puszta kéz belharcban: TÉ/VÉ/SP = 0. Pajzs belharcban max Kis pajzsként véd (VÉ 3/5); Belharcba kerülés Ellenpróba nehézsége a védő pajzsmérete szerint +2/+4/+6 (KM) |
 | Közrefogás | Semlegesíti az ellenfél Fegyverelőnyét → Fegyverazonosság |
-| Fegyverrántás váratlanul | `Fegyverrántás` fortély: KÉ+5 / +10 |
+| Fegyverrántás váratlanul | `Fegyverrántás` fortély: Kezdeményezés dobás E/H skálán +1 / +2 lépés felfelé (`előny` a `ké_dobás`-ra, nettó szint clamp [-2,+2]) |
 | Lovas harc / Léglovas harc | Fortély nélkül (**0.fok alapeset**): `TÉ −9, VÉ −9`. Fortély 1/2/3.fok: `TÉ/VÉ +3/+6/+9` és `Fegyverhossz +2` kategória (min_fegyverméret 3 követelmény, warning-only) |
 | Harci szekér | `Harci kocsihajtás`: TÉ/VÉ +8 / +12 |
 | Páros harc | `Páros harc` fortély: TÉ/VÉ +2/+4/+6, KÉ +1 |
@@ -945,7 +945,7 @@ támadások_effektív(h):
 | Lovas / Léglovas harc | **0.fok: TÉ/VÉ −9** · 1-3.fok: +3/+6/+9 és Fegyverhossz +2 kategória | lovas/léglovas helyzet |
 | Harci kocsihajtás | TÉ/VÉ +8/+12 | harci szekér |
 | Gladiátor bestiái / közönsége | VÉ +3 / TÉ +3 | szörny elleni / közönség előtt |
-| Fegyverrántás | KÉ +5/+10 | fegyverrántás helyzet |
+| Fegyverrántás | ké_dobás Előny+1/+2 (E/H skálán lépés felfelé) | fegyverrántás helyzet |
 | Orgyilkos | SP +1/+2/+3 és Előny+1/+1/+2 sebzésdobás | orvtámadás |
 | Taktikafókusz: Roham | KÉ +5 | `taktika: roham` |
 | Taktikafókusz: Visszafogott | `letilt` a taktika TÉ-jére; `enyhít 2` a sebzés-hátrányon; sebzés = fix alapsebzés | `taktika: visszafogott` |

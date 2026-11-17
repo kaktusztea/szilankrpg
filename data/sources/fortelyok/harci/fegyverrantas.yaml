@@ -28,11 +28,12 @@ fokok:
   - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 4
     típus: "képzettség"
-  hatástext: ""
+  hatástext:
+  - text: "Fegyverrántás Kezdeményezés dobásnál: 1 lépést felfelé ugrasz az Előny/Hátrány skálán."
   módosítók:
-  - cél: "KÉ"
-    érték: 5
-    mód: "flat"
+  - cél: "ké_dobás"
+    érték: 1
+    mód: "előny"
     forrás: ""
     arány: 0
     feltétel: "harci_helyzet:fegyverrántás"
@@ -43,11 +44,12 @@ fokok:
   - név: ["harcmodor/közelharc", "harcmodor/kardvívás", "harcmodor/rombolás", "harcmodor/lándzsavívás", "harcmodor/ostorharc"]
     érték: 8
     típus: "képzettség"
-  hatástext: ""
+  hatástext:
+  - text: "Fegyverrántás Kezdeményezés dobásnál: 2 lépést felfelé ugrasz az Előny/Hátrány skálán."
   módosítók:
-  - cél: "KÉ"
-    érték: 10
-    mód: "flat"
+  - cél: "ké_dobás"
+    érték: 2
+    mód: "előny"
     forrás: ""
     arány: 0
     feltétel: "harci_helyzet:fegyverrántás"

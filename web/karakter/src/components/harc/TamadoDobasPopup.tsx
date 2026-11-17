@@ -85,6 +85,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
   const [téResult, setTéResult] = useState<TéEredmény | null>(null);
   const [kéziBónusz, setKéziBónusz] = useState(0);
+  const [bontásNyitva, setBontásNyitva] = useState(false); // TÉ + k20 breakdown under the result, collapsed by default
 
   // A dobás ELŐTT (nincs eredmény) a megjelenített Előny/Hátrány szint követi az aktív hatásokat,
   // hogy a Gyengébb kéz toggle (ami a session-t írja → új dobásInfo prop) azonnal tükröződjön az
@@ -109,11 +110,13 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
+    setBontásNyitva(false);
     setTéResult({ alap: aktívTé, kézi: kéziBónusz, dobás, eredmény: aktívTé + kéziBónusz + dobás.eredmény });
   }
 
   function handleManualK20(value: number) {
     const dobás: ProbaDobás = { rolls: [value], eredmény: value };
+    setBontásNyitva(false);
     setTéResult({ alap: aktívTé, kézi: kéziBónusz, dobás, eredmény: aktívTé + kéziBónusz + value });
   }
 
@@ -287,15 +290,18 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
           </>
         ) : (
           <>
-            <div className="ke-dobas-result">{téResult.eredmény}</div>
-            <div className="ke-dobas-detail">
+            <div className="ke-dobas-result">{téResult.eredmény}
+              <button type="button" className={`sebzes-bontas-nyil${bontásNyitva ? ' nyitva' : ''}`} aria-expanded={bontásNyitva}
+                aria-label="Támadó dobás bontása" title="Bontás" onClick={() => setBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
+            </div>
+            {bontásNyitva && <div className="ke-dobas-detail">
               TÉ ({téResult.alap})
               {téResult.kézi !== 0 ? ` ${téResult.kézi > 0 ? '+' : ''}${téResult.kézi}` : ''}
               {' + '}k20{téResult.dobás.rolls.length > 1
                 ? ` [${téResult.dobás.rolls.join(', ')}] → ${téResult.dobás.eredmény}`
                 : ` (${téResult.dobás.eredmény})`}
               {szint !== 0 && ` · ${előnyHátrányLabel(szint)}`}
-            </div>
+            </div>}
             {téResult.dobás.eredmény === 1 && (
               <div className="dobas-info-list dobas-notes">
                 <div className="dobas-info-item">

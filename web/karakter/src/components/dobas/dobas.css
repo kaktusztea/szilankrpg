@@ -458,8 +458,10 @@
   display: flex; flex-direction: column; align-items: center; gap: 2px;
   margin: 6px auto 0; padding: 4px 12px;
   background: none; border: 1px solid var(--border); border-radius: 8px;
-  color: inherit; cursor: pointer;
+  color: inherit;
 }
+/* The number itself is the re-roll tap target (the chevron beside it toggles the breakdown) */
+.manover-dobas-szam { background: none; border: none; padding: 0; color: inherit; font: inherit; cursor: pointer; }
 
 /* =============================================
    Támadó / Célzó dobás - képlet-központú elrendezés (2026-11)
