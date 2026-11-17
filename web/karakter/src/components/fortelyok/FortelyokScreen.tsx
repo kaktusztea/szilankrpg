@@ -72,6 +72,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, kar
         <DeleteConfirmPopup
           label={deleteTarget.név}
           buttonText="Fortély törlése"
+          leírás="Minden foka törlődik. A visszavonás listából visszahozható."
           onConfirm={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}
           onClose={() => setDeleteTarget(null)}
         />

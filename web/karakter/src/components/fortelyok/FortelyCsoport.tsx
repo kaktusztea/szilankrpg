@@ -29,7 +29,7 @@ export function FortelyCsoport({
         {csoportLabel} <span className="dim">({slotok.length})</span>
         <span className="fort-csoport-arrow"><Ikon név={collapsed || slotok.length === 0 ? 'jobbra' : 'lenyit'} /></span>
         {csoport === 'szabad' && !gameMode && (
-          <span className="fort-csoport-ingyenes">● {szabadMaradtIngyenes} ingyenes</span>
+          <span className="fort-csoport-ingyenes">{szabadMaradtIngyenes > 0 ? `● ${szabadMaradtIngyenes} ingyenes még` : 'ingyenes keret elköltve'}</span>
         )}
         {/* Add button lives in the header row (no separate "+ Új fortély..." row per group).
             Misztikus: taken on the Misztikus tab (Felvett / Kiérdemelt choice, restrictions). */}

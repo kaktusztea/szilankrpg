@@ -96,6 +96,7 @@ export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióO
 
       {deleteFortIdx !== null && (
         <DeleteConfirmPopup label={delFortLabel} buttonText="Fortély törlése"
+          leírás="Minden foka törlődik. A visszavonás listából visszahozható."
           onConfirm={h.onConfirmDeleteFort} onClose={actions.closeDeleteFort} />
       )}
 

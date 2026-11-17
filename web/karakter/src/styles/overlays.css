@@ -336,3 +336,6 @@
   text-align: center;
   margin-top: 6px;
 }
+/* --- DeleteConfirmPopup: same frame as the ÉP / VÉ reset confirms (title + dim line + quiet danger button) --- */
+.torles-megerosites { align-items: center; text-align: center; width: 260px; max-width: 90vw; box-sizing: border-box; }
+.torles-megerosites-btn { align-self: center; }  /* look: .btn-halvany-veszely (common.css) */
