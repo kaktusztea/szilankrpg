@@ -10581,14 +10581,6 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
-        "fok": 0,
-        "hatás": [],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": [],
-        "próba_enyhítések": []
-      },
-      {
         "fok": 1,
         "hatás": [
           "Kitartott célzás helyzetben: további `+4 CÉ` módosító (összesen `+7`)."

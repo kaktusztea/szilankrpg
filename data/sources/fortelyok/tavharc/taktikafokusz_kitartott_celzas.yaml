@@ -26,11 +26,6 @@ kp_perfok: 6
 ingyenes_perszint: 0
 
 fokok:
-  - fok: 0
-    követelménytext: []
-    követelmények: ""
-    hatástext: []
-    módosítók: []
   - fok: 1
     követelménytext:
       - text: "Csak kiszámíthatóan mozgó cél ellen"
