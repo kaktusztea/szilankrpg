@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Session } from '../../engine/types';
 import type { VirtuálisFegyver } from './types';
 import { PopupOverlay } from '../PopupOverlay';
+import { Ikon } from '../common/Ikon';
 import { FokPottyok } from '../common/FokPottyok';
 import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
@@ -24,11 +25,12 @@ export function TavharcGameSelector({ összesFegyver, tfIdx, setSession, mfFok, 
 
   return (
     <div className="th-row th-controls">
-      <button className="he-field-btn th-game-fegyver-btn" onClick={() => setShowPicker(true)}>
+      <button className="he-field-btn th-game-fegyver-btn" aria-haspopup="dialog" onClick={() => setShowPicker(true)}>
         <span className="th-game-fegyver-szoveg">
           <span className="th-game-fegyver-nev"><strong>{aktívNév}</strong><FokPottyok név="MF fok" fok={mfFok} max={MAX_FORTÉLY_FOK} /></span>
           {!isMágikus && <span className="he-fegyver-alcim">Idea {idea >= 0 ? '+' : ''}{idea}</span>}
         </span>
+        <span className="th-game-fegyver-nyil" aria-hidden="true"><Ikon név="lenyit" méret={22} /></span>
       </button>
 
       {showPicker && (

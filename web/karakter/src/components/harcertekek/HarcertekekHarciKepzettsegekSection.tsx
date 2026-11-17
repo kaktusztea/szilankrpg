@@ -11,9 +11,8 @@ type Props = Pick<HarcmodorListaProps, 'képzettségek' | 'setKépzettségek' | 
 export function HarciKepzettsegekSection({ data, karakter, ...lista }: Props) {
   return (
     <section className="he-section">
-      <h3>Harci képzettségek</h3>
       <HarcmodorLista {...lista} kulcsok={getAllKözelharciNames(data)} felirat={kulcs => harciKepzDisplayName(data, kulcs)}
-        felvételFelirat="+ Harci képzettség..." tsz={karakter.tsz} />
+        felvételFelirat="+ Harci képzettség..." fejléc="Harci képzettségek" tsz={karakter.tsz} />
     </section>
   );
 }

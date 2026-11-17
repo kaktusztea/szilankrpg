@@ -71,7 +71,14 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
 
   return (
     <section className="he-section">
-      <h3>Fegyverek</h3>
+      <h3 className="he-section-cim">
+        Fegyverek
+        {!gameMode && k.fegyverek.length < MAX_FEGYVER_DARAB && (
+          <span className="csoport-uj">
+            <button type="button" className="csoport-uj-btn" title="Új fegyver" aria-label="Új fegyver" onClick={() => setPickerOpen(true)}><Ikon név="új" /></button>
+          </span>
+        )}
+      </h3>
       {k.fegyverek.map((f, i) => (
         <FegyverCard
           key={i}
@@ -89,9 +96,6 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
           onMenüből={onMenüből}
         />
       ))}
-      {!gameMode && k.fegyverek.length < MAX_FEGYVER_DARAB && (
-        <button className="he-add-select" onClick={() => setPickerOpen(true)}>+ Új fegyver…</button>
-      )}
       {pickerOpen && (
         <SpecPicker
           source={pickerSource}
