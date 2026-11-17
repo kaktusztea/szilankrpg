@@ -218,6 +218,10 @@ A KM harc közben megjelölheti, melyik NJK kivel harcol (pl. „A" = Attila ell
 - **Megjelenítés**: a kiválasztott betű színes karikában (`.njk-jel`) a chip legelején, a név előtt.
 - **Jegyzet** (`KmJegyzetPopup.tsx`): a betű-karikára **tap** (a pointer eseményeket a karika elnyeli, hogy ne váltson NJK-t) → kis textarea popup (`.km-jegyzet-input`, max `MAX_KM_JEGYZET` = 120). Nincs OK/Kész gomb: mellé-kattintás vagy Escape ment és zár (`PopupOverlay onClose`). A karika `title` attribútuma a jegyzetet mutatja (hover).
 
+### NJK mód: minden képzettség a 🎲 próba-hubban
+
+NJK-nál (`jk === false`) a lebegő próba-hub (`ProbaHub.tsx`) Képzettségpróba listája a felvett képzettségeken túl minden dobható (`próba: dobható | ellenpróba`) képzettséget mutat, ABC-ben vegyesen. A fel nem vettek halványak, dőltek, szaggatott kerettel (`.proba-hub-chip-nincs`); tap → képzetlen próba arra a képzettségre (`ProbaCél képzetlen_képzettség`, szint 0, a képzettség helyzetfüggő módosítóival). JK-nál csak a felvett képzettségek látszanak.
+
 ---
 
 ## Szerkesztő mód vs Játék mód

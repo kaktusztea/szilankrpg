@@ -138,6 +138,8 @@
 .proba-hub-chip-kep:hover {
   border-color: var(--color-kepzettseg);
 }
+/* NJK mode: a skill the NJK has not taken (untrained roll) - dimmed, italic */
+.proba-hub-chip-nincs { color: var(--text-dim); font-style: italic; border-style: dashed; }
 .proba-hub-chip-kepzetlen {
   border-color: rgba(220, 80, 80, 0.5);
   background: rgba(200, 60, 60, 0.12);

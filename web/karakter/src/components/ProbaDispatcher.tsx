@@ -11,6 +11,8 @@ import { fizikaiTulajdonság, type FelszerelésHátrány } from '../engine/felsz
 export type ProbaCél =
   | { típus: 'tulajdonság'; kulcs: string }
   | { típus: 'képzettség'; idx: number }
+  /** Not-taken skill rolled untrained (NJK mode: the GM can reach every skill). */
+  | { típus: 'képzetlen_képzettség'; kulcs: string }
   | { típus: 'képzetlen' };
 
 interface Props {
@@ -90,6 +92,10 @@ export function ProbaDispatcher(props: Props) {
     const kp = karakter.képzettségek[cél.idx];
     if (!kp) { onClose(); return null; }
     return képzettségPopup(képzKulcs(kp), kp.szint, false, { ...props, onClose });
+  }
+
+  if (cél.típus === 'képzetlen_képzettség') {
+    return képzettségPopup(cél.kulcs, 0, true, { ...props, onClose });
   }
 
   // Képzetlen próba: általános (képzettségtől független) - szint 0, k10 vs célszám, a +3-at a popup

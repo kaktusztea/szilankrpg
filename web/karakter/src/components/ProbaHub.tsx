@@ -72,6 +72,21 @@ export function ProbaHub({ data, karakter, aktív, session, setSession, pushUndo
 
   const próbaEnyhítésekByKép = useMemo(() => próbaEnyhítésekKépzettségenként(karakter.fortélyok, data), [karakter.fortélyok, data]);
 
+  // Skill chips: the taken skills; for an NJK (GM mode) also every rollable skill not taken (untrained roll).
+  const képzettségChipek = useMemo(() => {
+    const ki: { kulcs: string; név: string; cél: ProbaCél }[] = karakter.képzettségek.map((kp, idx) => ({
+      kulcs: képzKulcs(kp) + '#' + idx, név: getDisplayName(képzKulcs(kp), data.kepzettsegDefs), cél: { típus: 'képzettség', idx },
+    }));
+    if (!karakter.jk) {
+      const felvett = new Set(karakter.képzettségek.map(kp => kp.id));
+      for (const d of data.kepzettsegDefs) {
+        if (felvett.has(d.id) || (d.próba !== 'dobható' && d.próba !== 'ellenpróba')) continue;
+        ki.push({ kulcs: d.id, név: d.név, cél: { típus: 'képzetlen_képzettség', kulcs: d.id } });
+      }
+    }
+    return ki.sort((a, b) => a.név.localeCompare(b.név, 'hu'));
+  }, [karakter.képzettségek, karakter.jk, data.kepzettsegDefs]);
+
   if (!aktív) return null;
 
   // A FAB elrejtőzik, ha nyitva van bármi (a hub popup is `.kep-prompt-overlay`, így saját magát is rejti).
@@ -119,18 +134,17 @@ export function ProbaHub({ data, karakter, aktív, session, setSession, pushUndo
           <h3 className="proba-hub-header">Képzettségpróba <KockaChip kocka={data.konstansok.próba.képzettség.kocka} /></h3>
           {/* Column-major order: the ABC list runs down the left column, then continues at the top of the right one */}
           <div className="proba-hub-grid proba-hub-grid-2 proba-hub-grid-oszlopos"
-            style={{ '--proba-hub-sorok': Math.ceil((karakter.képzettségek.length + 1) / 2) } as React.CSSProperties}>
+            style={{ '--proba-hub-sorok': Math.ceil((képzettségChipek.length + 1) / 2) } as React.CSSProperties}>
             <button className="proba-hub-chip proba-hub-chip-kepzetlen" onClick={() => setCél({ típus: 'képzetlen' })}>
               Képzetlenül
             </button>
-            {karakter.képzettségek
-              .map((kp, idx) => ({ kp, idx, név: getDisplayName(képzKulcs(kp), data.kepzettsegDefs) }))
-              .sort((a, b) => a.név.localeCompare(b.név, 'hu'))
-              .map(({ kp, idx, név }) => (
-                <button key={képzKulcs(kp) + idx} className="proba-hub-chip proba-hub-chip-kep" onClick={() => setCél({ típus: 'képzettség', idx })}>
-                  {név}
-                </button>
-              ))}
+            {képzettségChipek.map(c => (
+              <button key={c.kulcs} className={`proba-hub-chip proba-hub-chip-kep${c.cél.típus === 'képzetlen_képzettség' ? ' proba-hub-chip-nincs' : ''}`}
+                title={c.cél.típus === 'képzetlen_képzettség' ? 'Nincs felvéve: képzetlen próba' : undefined}
+                onClick={() => setCél(c.cél)}>
+                {c.név}
+              </button>
+            ))}
           </div>
         </PopupOverlay>
       )}
