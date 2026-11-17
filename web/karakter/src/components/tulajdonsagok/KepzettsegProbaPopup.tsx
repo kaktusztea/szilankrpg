@@ -298,7 +298,10 @@ export function KepzettsegProbaPopup({
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn kep-proba-kit-flash kep-proba-szit-btn" onClick={() => setOpenPicker('szit')}>
               {/* Two-line caption on the left, the value large on the right (spans both lines) */}
-              <span className="kep-proba-kap-cim kep-proba-szit-cim">Helyzetfüggő<br />módosító</span>
+              {/* Single line when it is the only chip in the row (no Kiterjesztő fortély chip) */}
+              <span className={`kep-proba-kap-cim kep-proba-szit-cim${kiterjesztesek.length === 0 ? ' kep-proba-szit-cim-egysor' : ''}`}>
+                {kiterjesztesek.length === 0 ? 'Helyzetfüggő módosító' : <>Helyzetfüggő<br />módosító</>}
+              </span>
               <span className={`kep-proba-szit-ertek${szitModÖsszeg > 0 ? ' kep-proba-szit-pos' : szitModÖsszeg < 0 ? ' kep-proba-szit-neg' : ' kep-proba-kap-ures'}`}>
                 {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
                 {/* Easing fortély: small green dot (names in the tooltip; per-row old → new values are in the popup) */}
