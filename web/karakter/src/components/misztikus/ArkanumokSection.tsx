@@ -1,7 +1,7 @@
 import type { Kepzettseg } from '../../engine/types';
 import type { SectionContext } from './types';
 import { SectionRow } from './SectionRow';
-import { FelvevőGomb } from '../picker/ListaPicker';
+import { PluszGomb } from '../picker/ListaPicker';
 
 interface Props {
   ctx: SectionContext;
@@ -18,16 +18,22 @@ export function ArkánumokSection({ ctx, arkánumok, elérhetőArkánumok, felol
 
   return (
     <section className="miszt-section">
-      <h3 className="miszt-section-title">Arkánumok</h3>
+      <h3 className="miszt-section-title">
+        Arkánumok
+        {!ctx.gameMode && elérhetőArkánumok.length > 0 && (
+          <span className="csoport-uj">
+            <PluszGomb cím="Arkánum" disabled={!feloldva}
+              opciók={elérhetőArkánumok.map(d => ({ érték: d.id, név: d.név.split(':')[1].trim() }))} onVálaszt={onAdd} />
+          </span>
+        )}
+      </h3>
+      {!ctx.gameMode && elérhetőArkánumok.length > 0 && !feloldva && (
+        <span className="miszt-no-faj">⚠ Tradíció vagy faj misztérium szükséges</span>
+      )}
       {arkánumok.map(a => (
         <SectionRow key={a.id} ctx={ctx} név={a.id} szint={a.szint} warning={!feloldva}
           onEdit={() => onEdit(a.id)} onDelete={() => onDelete(a.id)} />
       ))}
-      {!ctx.gameMode && elérhetőArkánumok.length > 0 && (
-        <FelvevőGomb felirat={!feloldva ? '⚠ Tradíció vagy faj misztérium szükséges' : '+ Arkánum...'} cím="Arkánum"
-          disabled={!feloldva}
-          opciók={elérhetőArkánumok.map(d => ({ érték: d.id, név: d.név.split(':')[1].trim() }))} onVálaszt={onAdd} />
-      )}
     </section>
   );
 }

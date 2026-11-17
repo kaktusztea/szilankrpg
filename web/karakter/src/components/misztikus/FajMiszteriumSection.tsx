@@ -15,7 +15,7 @@ export function FajMisztériumSection({ ctx, fajNév, fajMisztId, szint, onEdit 
 
 
   return (
-    <section className="miszt-section">
+    <section className="miszt-section miszt-section-single">
       <h3 className="miszt-section-title">Faj misztérium</h3>
       {!fajNév || !fajMisztId ? (
         <span className="miszt-no-faj">Faj nincs kiválasztva</span>

@@ -6,12 +6,16 @@
 
 /* --- Szekció --- */
 .miszt-section { border-top: 1px solid var(--border); padding-top: 12px; }
-.miszt-section-title { font-size: var(--szakaszcim-meret); color: var(--color-misztikus); margin: 0 0 6px; }
+.miszt-section-title { font-size: var(--szakaszcim-meret); color: var(--color-misztikus); margin: 0 0 6px; display: flex; align-items: center; gap: 4px; }
+/* Add "+" box at the end of the title row */
+.miszt-uj { margin-left: auto; }
 .miszt-section-label { font-size: 13px; color: var(--text-dim); margin-top: 6px; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
 .miszt-no-faj { color: #666; font-size: 13px; }
 
 /* --- Képzettség sor → base: .item-row (common.css) --- */
 .miszt-row { gap: 4px; }
+/* Egyelemű szekció (Tradíció, Faj misztérium): nincs elválasztó a sor alatt */
+.miszt-section-single .miszt-row { border-bottom: none; }
 
 .miszt-row-name { flex: 1; font-size: 17px; }
 .miszt-row-warn { color: var(--color-negative); }

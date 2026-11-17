@@ -6,7 +6,7 @@ import type { FortelySummary } from '../../engine/data-loader';
 import { FortelyDetails } from '../FortelyDetails';
 import { MAX_FORTÉLY_FOK, MAX_AZONOS_FORTÉLY } from '../../ui-constants';
 import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
-import { FelvevőGomb } from '../picker/ListaPicker';
+import { PluszGomb } from '../picker/ListaPicker';
 
 interface Props {
   misztFortDefs: FortelySummary[];
@@ -40,7 +40,16 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
 
   return (
     <section className="miszt-section">
-      <h3 className="miszt-section-title">Misztikus fortélyok</h3>
+      <h3 className="miszt-section-title">
+        Misztikus fortélyok
+        {!gameMode && felvehető.length > 0 && (
+          <span className="csoport-uj">
+            <PluszGomb cím="Misztikus fortély"
+              opciók={felvehető.map(d => ({ érték: d.név, név: d.név }))}
+              onVálaszt={név => { const def = misztFortDefs.find(d => d.név === név); if (def) onFelvétel(def); }} />
+          </span>
+        )}
+      </h3>
       {misztFortSlotok.map((f, i) => {
         const def = misztFortDefs.find(d => d.id === f.id);
         const maxfok = def?.maxfok ?? 1;
@@ -79,11 +88,6 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
           </div>
         );
       })}
-      {!gameMode && felvehető.length > 0 && (
-        <FelvevőGomb felirat="+ Misztikus fortély..." cím="Misztikus fortély"
-          opciók={felvehető.map(d => ({ érték: d.név, név: d.név }))}
-          onVálaszt={név => { const def = misztFortDefs.find(d => d.név === név); if (def) onFelvétel(def); }} />
-      )}
     </section>
   );
 }

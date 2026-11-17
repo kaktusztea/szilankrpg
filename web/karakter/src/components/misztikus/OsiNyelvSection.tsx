@@ -1,6 +1,7 @@
 import type { Kepzettseg } from '../../engine/types';
 import { képzKulcs } from '../../engine/azonosito';
 import type { SectionContext } from './types';
+import { Ikon } from '../common/Ikon';
 import { SectionRow } from './SectionRow';
 import { MAX_AZONOS_KÉPZETTSÉG } from '../../ui-constants';
 
@@ -19,17 +20,17 @@ export function ŐsiNyelvSection({ ctx, ősiNyelvek, onEdit, onDelete, onAdd, on
 
   return (
     <section className="miszt-section">
-      <h3 className="miszt-section-title">Ősi nyelv ismerete</h3>
+      <h3 className="miszt-section-title">
+        Ősi nyelv ismerete
+        {!ctx.gameMode && (
+          <button type="button" className={`csoport-uj-btn miszt-uj${maxed ? ' he-add-disabled' : ''}`} title="Ősi nyelv ismerete" aria-label="Ősi nyelv ismerete"
+            onClick={() => maxed ? onHint(`Ebből a képzettségből max ${MAX_AZONOS_KÉPZETTSÉG} darab vehető fel!`) : onAdd()}><Ikon név="új" /></button>
+        )}
+      </h3>
       {ősiNyelvek.map(k => (
         <SectionRow key={képzKulcs(k)} ctx={ctx} név={képzKulcs(k)} szint={k.szint}
           onEdit={() => onEdit(képzKulcs(k))} onDelete={() => onDelete(képzKulcs(k))} />
       ))}
-      {!ctx.gameMode && (
-        <button className={`he-add-select${maxed ? ' he-add-disabled' : ''}`}
-          onClick={() => maxed ? onHint(`Ebből a képzettségből max ${MAX_AZONOS_KÉPZETTSÉG} darab vehető fel!`) : onAdd()}>
-          + Ősi nyelv ismerete...
-        </button>
-      )}
     </section>
   );
 }
