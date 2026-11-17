@@ -1,11 +1,16 @@
 """Freshness cache: a source YAML-ok, a sémák ÉS a generátor kód hashe alapján skippelhető a futás."""
 
-import hashlib, os
+import hashlib, os, unicodedata
 
 from .common import DATA_DIR, SOURCES_DIR, SCHEMAS_DIR, TABLES_DIR, GEN_DIR
 
 HASH_FILE = os.path.join(TABLES_DIR, '.sources_hash')
 MARKER_FILE = os.path.join(TABLES_DIR, '.generated_marker')
+
+
+def _rel(path):
+    """Machine-independent key for a hashed file: data/-relative, '/' separators, NFC (macOS may store NFD names)."""
+    return unicodedata.normalize('NFC', os.path.relpath(path, DATA_DIR)).replace(os.sep, '/')
 
 
 def _generator_files():
@@ -20,7 +25,7 @@ def compute_sources_hash():
     h = hashlib.md5()
     for path in _generator_files():
         with open(path, 'rb') as f:
-            h.update(path.encode())
+            h.update(_rel(path).encode())
             h.update(f.read())
     # Walk all YAML sources sorted for determinism
     yaml_files = []
@@ -30,9 +35,9 @@ def compute_sources_hash():
             for f in sorted(files):
                 if f.endswith('.yaml') or f.endswith('.yml'):
                     yaml_files.append(os.path.join(root, f))
-    for path in yaml_files:
+    for path in sorted(yaml_files, key=_rel):
         with open(path, 'rb') as f:
-            h.update(path.encode())
+            h.update(_rel(path).encode())
             h.update(f.read())
     return h.hexdigest()
 
