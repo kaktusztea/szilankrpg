@@ -1,7 +1,7 @@
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { AktivBaseProps } from './types';
-import { fmtCode } from '../formatters';
+import { fmtHatásSzöveg } from '../formatters';
 import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
 import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText, getTiltásWarnings } from '../../engine/taktika/helyzet-helpers';
 import { helyzetDef } from '../../engine/lookup';
@@ -33,9 +33,9 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
           const tiltásWarnings = getTiltásWarnings(h, karakter, session, data);
           return (
             <div key={i} className="aktiv-flex-col">
-              <div className="item-row">
+              <div className="item-row aktiv-helyzet-item">
                 <span className="aktiv-flex-1">
-                  <strong className="aktiv-strong-helyzet">{h}:</strong> {fmtCode(infóText)}
+                  <strong className="aktiv-strong-helyzet">{h}:</strong> {fmtHatásSzöveg(infóText)}
                   {minFegyverhosszWarning && <span className="aktiv-min-fegyverhossz-warning">{minFegyverhosszWarning}</span>}
                   {tiltásWarnings.map(w => <span key={w} className="aktiv-min-fegyverhossz-warning">{w}</span>)}
                 </span>

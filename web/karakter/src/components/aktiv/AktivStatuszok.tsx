@@ -2,7 +2,7 @@ import { Ikon } from '../common/Ikon';
 import { useRef, useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Session, UndoPatch } from '../../engine/types';
-import { fmtHatás } from '../formatters';
+import { fmtHatás, fmtHatásSzöveg } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import type { StátuszPerElem } from './aktiv-calc';
@@ -59,7 +59,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           const perElem = státuszPerElem.find(s => s.név === stNév || s.név === `${stNév} (${stFok})`);
           const clickable = !locked && maxFok > 1;
           return (
-            <div key={i} className={`item-row${clickable ? ' aktiv-statusz-row-clickable' : ''}`} onClick={() => {
+            <div key={i} className={`item-row aktiv-statusz-item${clickable ? ' aktiv-statusz-row-clickable' : ''}`} onClick={() => {
               if (!clickable) return;
               const újFok = (stFok % maxFok) + 1;
               setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
@@ -68,7 +68,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
                 <strong className="aktiv-statusz-name">{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}:</strong>
                 {perElem && perElem.hatások.length > 0 && <span> {perElem.hatások.map((h, j) => {
                   const txt = fmtHatás(h, eseményNév);
-                  return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
+                  return txt ? <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span> : null;
                 })}</span>}
               </span>
               {!locked && <button className="item-delete" onClick={e => {
@@ -80,10 +80,10 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           );
         })}
         {session.narratív_módosítók.map((nm, i) => (
-          <div key={`nar${i}`} className="item-row">
+          <div key={`nar${i}`} className="item-row aktiv-statusz-item">
             <span className="aktiv-flex-1">
               <strong className="aktiv-statusz-name">{nm.szöveg}:</strong>
-              <span> {előnyHátrányLabel(nm.érték ?? 0)}</span>
+              <span> {fmtHatásSzöveg(előnyHátrányLabel(nm.érték ?? 0))}</span>
             </span>
             <button className="item-delete" onClick={() => {
               pushUndo(`Narratív−: ${nm.szöveg}`, [{ field: 'session', prev: session }]);

@@ -2,7 +2,17 @@
    Aktív fül
    ============================================= */
 
+/* Redesign (2026-11-17): a fül saját, visszafogott palettája. A globális entitás-színek (--color-taktika stb.)
+   a többi fül / fejléc / lábléc miatt változatlanok; a kategóriát bal oldali színes csík jelzi, a nevek semlegesek. */
 .aktiv-screen {
+  --akt-text: #e6e9f2;
+  --akt-text-2: #9aa3b8;
+  --akt-pos: #6fcf97;
+  --akt-neg: #e5826f;
+  --akt-cat-taktika: #6c8ebf;
+  --akt-cat-helyzet: #5fa8a8;
+  --akt-cat-statusz: #c98274;
+  --akt-cat-fortely: #a58bc9;
   padding: 12px 0;  /* side margin: .screen-slide */
   display: flex;
   flex-direction: column;
@@ -13,7 +23,7 @@
 
 /* --- Szekciók --- */
 .aktiv-section { padding: 10px 0; }
-.aktiv-section h3 { margin: 0 0 6px; font-size: var(--szakaszcim-meret); color: var(--color-szakasz); }
+.aktiv-section h3 { margin: 0 0 6px; font-size: var(--szakaszcim-meret); color: var(--akt-text); }
 .aktiv-section-sm { font-size: 13px; }
 .aktiv-section-noborder { border-bottom: none; font-size: 13px; }
 .aktiv-section-statuszok { border-bottom: none; font-size: 13px; }
@@ -35,7 +45,7 @@
   margin: 8px 0 12px;
   padding-top: 12px;
   font-size: var(--szakaszcim-meret);
-  color: var(--color-szakasz);
+  color: var(--akt-text);
 }
 
 .hatas-pool-cim {
@@ -65,14 +75,16 @@
   border-bottom: 1px solid var(--border-light);
   font-size: 14px;
   line-height: 1.4;
-  color: var(--text-soft);
+  color: var(--akt-text-2);
 }
 .hatas-pool-item > strong { display: block; }
 .hatas-pool-item:last-child { border-bottom: none; }
 
 .hatas-pool-item.positive { color: var(--success); }
 .hatas-pool-item.negative { color: var(--error); }
-.hatas-pool-item .fortely-nev { color: var(--color-fortely); }
+.hatas-pool-item .fortely-nev { color: var(--akt-text); }
+.hatas-pool-item-fortely { padding-left: 12px; box-shadow: inset 3px 0 0 var(--akt-cat-fortely); }
+.hatas-pool-item > strong:not(.fortely-nev) { color: var(--akt-text); }
 
 /* --- Narratív módosítók → base: .field-input (common.css) --- */
 .narrativ-input { flex: 1; font-size: 14px; }
@@ -136,21 +148,28 @@
 /* --- Taktika --- */
 .aktiv-taktika-item { align-items: flex-start; }
 .aktiv-taktika-row-clickable { cursor: pointer; }
-.aktiv-taktika-name { color: var(--color-taktika); }
-.aktiv-taktika-mods { color: var(--color-positive); }
+.aktiv-taktika-name { color: var(--akt-text); }
+.aktiv-taktika-mods { color: var(--akt-pos); }
+.aktiv-screen .aktiv-taktika-item, .aktiv-screen .aktiv-helyzet-item, .aktiv-screen .aktiv-statusz-item { padding-left: 12px; }
+.aktiv-taktika-item { box-shadow: inset 3px 0 0 var(--akt-cat-taktika); }
+.aktiv-helyzet-item { box-shadow: inset 3px 0 0 var(--akt-cat-helyzet); }
+.aktiv-statusz-item { box-shadow: inset 3px 0 0 var(--akt-cat-statusz); }
+.aktiv-screen .aktiv-mod-sep { color: var(--akt-text); }
+.aktiv-screen .fmt-elony { color: var(--akt-pos); }
+.aktiv-screen .fmt-hatrany { color: var(--akt-neg); }
 .aktiv-taktika-header { display: flex; align-items: center; justify-content: space-between; }
-.aktiv-taktika-hatas { font-size: 12px; opacity: 0.85; margin-top: 2px; color: var(--color-statusz); }
+.aktiv-taktika-hatas { font-size: 12px; opacity: 0.85; margin-top: 2px; color: var(--akt-text-2); }
 .aktiv-taktika-note { opacity: 0.7; font-size: 12px; margin-top: 2px; }
 
 /* --- Helyzetek --- */
 .aktiv-helyzet-fortely-sor { padding-left: 12px; flex-wrap: wrap; word-break: break-word; justify-content: flex-start; }
-.aktiv-helyzet-aktiv { color: var(--color-helyzet); }
+.aktiv-helyzet-aktiv { color: var(--akt-pos); }
 .aktiv-helyzet-inaktiv { color: var(--text-muted); }
-.aktiv-helyzet-alapeset { color: var(--color-statusz); }
+.aktiv-helyzet-alapeset { color: var(--akt-text-2); }
 .aktiv-min-fegyverhossz-warning { color: var(--color-negative); margin-left: 6px; }
 
 /* --- Státusz --- */
-.aktiv-statusz-name { color: var(--color-statusz); }
+.aktiv-statusz-name { color: var(--akt-text); }
 .aktiv-statusz-row-clickable { cursor: pointer; }
 
 /* --- Manőver --- */
@@ -167,7 +186,7 @@
 /* --- Helpers --- */
 .aktiv-flex-col { display: flex; flex-direction: column; }
 .aktiv-flex-1 { flex: 1; }
-.aktiv-strong-helyzet { color: var(--color-helyzet); }
+.aktiv-strong-helyzet { color: var(--akt-text); }
 .aktiv-hint-disabled { font-size: 11px; color: var(--text-muted); }
 @keyframes manover-szit-flash {
   0%, 100% { border-color: var(--border); background: transparent; }

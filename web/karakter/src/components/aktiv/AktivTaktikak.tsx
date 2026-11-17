@@ -2,7 +2,7 @@ import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
-import { fmtHatás } from '../formatters';
+import { fmtHatás, fmtHatásSzöveg } from '../formatters';
 import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
 import type { TaktikaHatásPerElem } from './aktiv-calc';
 import { isTaktikaAllowed } from '../../engine/taktika/taktika-megkotes';
@@ -51,7 +51,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                   <div className="aktiv-taktika-header">
                     <span>
                       <strong className="aktiv-taktika-name">{hatásLabel}:</strong>
-                      {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.join(', ')} <Ikon név="pipa" /></span>}
+                      {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.map((m, k) => <span key={k}>{k > 0 && <span className="aktiv-mod-sep">, </span>}<span className={m.includes(':-') ? 'fmt-hatrany' : 'fmt-elony'}>{m}</span></span>)} <Ikon név="pipa" /></span>}
                     </span>
                     <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}><Ikon név="bezár" /></button>
                   </div>
@@ -59,7 +59,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                     <div className="aktiv-taktika-hatas">
                       {hatásEntry.hatások.map((h, j) => {
                         const txt = fmtHatás({ mód: h.mód, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
-                        return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
+                        return txt ? <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span> : null;
                       })}
                     </div>
                   )}

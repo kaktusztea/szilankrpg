@@ -13,6 +13,13 @@ export function fmtCode(text: string): ReactNode[] {
   );
 }
 
+/** Hatás-szöveg: a `kód` formázás + az „Előny+N" / „Hátrány-N" tokenek előjel-színezése (Aktív fül). */
+export function fmtHatásSzöveg(text: string): ReactNode[] {
+  return fmtCode(text).flatMap<ReactNode>((n, i) => typeof n !== 'string' ? [n] :
+    n.split(/((?:Előny|Hátrány)[+-]?\d+)/g).map((p, j) => j % 2 === 0 ? p
+      : <span key={`${i}-${j}`} className={p.startsWith('Előny') ? 'fmt-elony' : 'fmt-hatrany'}>{p}</span>));
+}
+
 export function fmtHatás(h: { mód: string; cél: string; érték?: number; megjegyzés?: string }, eseményNév: (id: string) => string): string | null {
   const op = h.mód;
   if (op === 'szöveges') return h.megjegyzés || null;
