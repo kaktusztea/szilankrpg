@@ -19,9 +19,11 @@ interface Deps {
   setTestMode: (v: boolean) => void;
   setIsDirty: (v: boolean) => void;
   setOverlay: <K extends keyof OverlayState>(key: K, value: OverlayState[K]) => void;
+  /** Duplikálás után (az új karakter már aktív): pl. a Becenév + Név szerkesztő megnyitása. */
+  onDuplicated?: () => void;
 }
 
-export function useKarakterActions({ data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay }: Deps) {
+export function useKarakterActions({ data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay, onDuplicated }: Deps) {
 
   /**
    * Egy karakter aktívvá tétele: state csere + undo stack + teszt mód ki + dirty.
@@ -87,8 +89,8 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     if (njkLimitBlocked(parsed.jk)) { setOverlay('slotLimit', 'njk'); return; }
     const dup = dupKarakter(parsed);
     activateKarakter(dup);
-    // WORKAROUND: state-settle-delay - 100ms delay lets React re-render with new karakter before opening overlay
-    setTimeout(() => setOverlay('showSlotList', true), 100);
+    setOverlay('showSlotList', false);
+    onDuplicated?.();
   }
 
   function handleGenerateSave(mode: 'single' | 'backup') {

@@ -43,6 +43,8 @@ interface Props {
   undoStack: { timestamp: number; leírás: string; patches: unknown[] }[];
   undoTo: (index: number) => void;
   duplicateSlot: (uid: string) => void;
+  /** Játék módban a karakter-tár Másolat / Törlés gombjai inaktívak. */
+  gameMode: boolean;
   handleGenerateSave: (mode: 'single' | 'backup') => void;
   shareFile: (blob: Blob, filename: string) => void;
   downloadFile: (blob: Blob, filename: string) => void;
@@ -60,7 +62,7 @@ interface Props {
 
 export function AppOverlays({
   state: s, setState: set, data, karakter, session, setSession,
-  setKarakter, pushUndo, undoStack, undoTo, duplicateSlot, handleGenerateSave,
+  setKarakter, pushUndo, undoStack, undoTo, duplicateSlot, gameMode, handleGenerateSave,
   shareFile, downloadFile, loadKarakter, shareSlotUrl, saveSlotToFile, importKarakter, deleteSlot,
   activateKarakter, setUndoStack, isDirty, onViewCheckpoint,
 }: Props) {
@@ -97,6 +99,7 @@ export function AppOverlays({
           onSaveFile={(uid) => saveSlotToFile(uid, 'download')}
           onShareFile={(uid) => saveSlotToFile(uid, 'share')}
           onDuplicate={duplicateSlot}
+          gameMode={gameMode}
           onFileLoad={async () => { await loadKarakter(); set('showSlotList', false); }}
           onClipboardImport={handleClipboardImport}
           onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('slotLimit', 'total'); } else { set('showNewConfirm', true); } }}
@@ -112,6 +115,7 @@ export function AppOverlays({
         <SlotDeleteOverlay
           név={s.slotDeleteTarget.név}
           onConfirm={handleSlotDelete}
+          onClose={() => set('slotDeleteTarget', null)}
         />
       )}
 

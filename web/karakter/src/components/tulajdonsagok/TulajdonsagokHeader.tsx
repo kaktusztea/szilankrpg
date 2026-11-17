@@ -23,8 +23,7 @@ interface Props {
   anyanyelv: string;
   jk: boolean;
   setJk: (v: boolean) => void;
-  onEditNév: () => void;
-  onEditBecenév: () => void;
+  onEditNevek: () => void;
   onEditTsz: () => void;
   onEditKor: () => void;
   onEditJátékos: () => void;
@@ -36,7 +35,7 @@ interface Props {
 export function TulajdonsagokHeader({
   data, gameMode, tulajdonságok, setTul, felszHátrány,
   név, becenév, játékos, tsz, kor, faj, anyanyelv,
-  onEditNév, onEditBecenév, onEditTsz, onEditKor, onEditJátékos,
+  onEditNevek, onEditTsz, onEditKor, onEditJátékos,
   setFaj, setAnyanyelv, jk, setJk, onOpenElotortenet,
   fortélyBónuszByTul,
 }: Props) {
@@ -52,7 +51,7 @@ export function TulajdonsagokHeader({
       {/* Fejléc: Becenév + Név + Szint */}
       <div className="tul-header tul-header-col">
         {!gameMode && (
-          <div className="tul-header-box tul-header-full tul-becenev-row" onClick={onEditBecenév}>
+          <div className="tul-header-box tul-header-full tul-becenev-row" onClick={onEditNevek}>
             <span><span className="tul-header-label">Becenév:</span> <strong>{becenév || '-'}</strong></span>
             {/* One two-part capsule: Előtörténet | JK/NJK toggle */}
             <span className="tul-becenev-kapszula">
@@ -74,7 +73,7 @@ export function TulajdonsagokHeader({
         )}
         {!gameMode && (
           <div className="tul-header-two-col">
-            <div className="tul-header-box tul-header-flex1" onClick={onEditNév}>
+            <div className="tul-header-box tul-header-flex1" onClick={onEditNevek}>
               <span className="tul-header-label">Név:</span> <strong>{név}</strong>
             </div>
             <div className="tul-header-box" onClick={onEditTsz}>

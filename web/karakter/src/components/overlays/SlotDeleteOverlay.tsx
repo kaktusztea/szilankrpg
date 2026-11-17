@@ -1,21 +1,21 @@
-import { OverlayPortal } from '../common/OverlayPortal';
+import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 
 interface Props {
   név: string;
   onConfirm: () => void;
+  onClose: () => void;
 }
 
-// Backdrop/Escape dismiss is handled centrally by useOverlays (closeTopmost),
-// so this stacked confirm does not self-dismiss - that would race with the
-// global handler and also close the SlotList behind it.
-export function SlotDeleteOverlay({ név, onConfirm }: Props) {
+// Stacked confirm over the SlotList: its own backdrop click / Escape closes only this popup
+// (OverlayPortal stops the propagation, so useOverlays' global handler does not close the SlotList).
+export function SlotDeleteOverlay({ név, onConfirm, onClose }: Props) {
   return (
-    <OverlayPortal>
-      <div className="kep-prompt overlay-confirm">
-        <label className="overlay-label">Karakter törlése</label>
-        <span className="overlay-desc-dim">Törlöd: &ldquo;{név}&rdquo;?</span>
-        <button className="btn-del-confirm overlay-ok-btn" onClick={onConfirm}>Törlés</button>
-      </div>
-    </OverlayPortal>
+    <DeleteConfirmPopup
+      label="Karakter törlése"
+      leírás={`${név} végleg törlődik (a verzióival és a naplójával együtt).`}
+      buttonText="Törlés"
+      onConfirm={onConfirm}
+      onClose={onClose}
+    />
   );
 }

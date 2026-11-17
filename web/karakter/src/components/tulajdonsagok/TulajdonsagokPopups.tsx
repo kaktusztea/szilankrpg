@@ -17,9 +17,8 @@ export interface PopupState {
   promptValue: string;
   deleteTarget: DeleteTarget | null;
   pendingNew: { kulcs: string; insertAt: number } | null;
-  editingNév: boolean;
+  editingNevek: boolean;
   tempNév: string;
-  editingBecenév: boolean;
   tempBecenév: string;
   editingTsz: boolean;
   editingKor: boolean;
@@ -29,7 +28,7 @@ export interface PopupState {
 
 export const INITIAL_POPUP_STATE: PopupState = {
   promptState: null, promptValue: '', deleteTarget: null, pendingNew: null,
-  editingNév: false, tempNév: '', editingBecenév: false, tempBecenév: '',
+  editingNevek: false, tempNév: '', tempBecenév: '',
   editingTsz: false, editingKor: false, editingJátékos: false, tempJátékos: ''
 };
 
@@ -56,6 +55,11 @@ export function TulajdonsagokPopups({
 }: Props) {
   const p = popup;
   const close = (fields: Partial<PopupState>) => setPopup(prev => ({ ...prev, ...fields }));
+  const saveNevek = () => {
+    setBecenév(p.tempBecenév.trim());
+    if (p.tempNév.trim()) setNév(p.tempNév.trim()); // a név nem lehet üres
+    close({ editingNevek: false });
+  };
 
   const tszValues = Array.from(
     { length: data.konstansok.arányok.max_tsz - data.konstansok.arányok.min_tsz + 1 },
@@ -109,29 +113,24 @@ export function TulajdonsagokPopups({
       />
     )}
 
-    {/* Név szerkesztő */}
-    {p.editingNév && (
-      <TextInputPopup
-        label="Karakter neve:"
-        value={p.tempNév}
-        onChange={v => close({ tempNév: v })}
-        onConfirm={() => { setNév(p.tempNév.trim()); close({ editingNév: false }); }}
-        onCancel={() => close({ editingNév: false })}
-        maxLength={MAX_NÉV}
-        disabled={!p.tempNév.trim()}
-      />
-    )}
-
-    {/* Becenév szerkesztő */}
-    {p.editingBecenév && (
-      <TextInputPopup
-        label={`Becenév (max ${MAX_BECENÉV})`}
-        value={p.tempBecenév}
-        onChange={v => close({ tempBecenév: v })}
-        onConfirm={() => { setBecenév(p.tempBecenév.trim()); close({ editingBecenév: false }); }}
-        onCancel={() => close({ editingBecenév: false })}
-        maxLength={MAX_BECENÉV}
-      />
+    {/* Becenév + Név szerkesztő: egy ablak, nincs OK/Mégse - a mellé-katt menti és zár, Escape elvet */}
+    {p.editingNevek && (
+      <OverlayPortal
+        dismissible
+        onClose={saveNevek}
+        onEscape={() => close({ editingNevek: false })}
+      >
+        <div className="kep-prompt">
+          <label htmlFor="tul-becenev-input">{`Becenév (max ${MAX_BECENÉV})`}</label>
+          <input id="tul-becenev-input" autoFocus maxLength={MAX_BECENÉV} value={p.tempBecenév}
+            onChange={e => close({ tempBecenév: e.target.value })}
+            onKeyDown={e => { if (e.key === 'Enter') document.getElementById('tul-nev-input')?.focus(); }} />
+          <label htmlFor="tul-nev-input">Név</label>
+          <input id="tul-nev-input" maxLength={MAX_NÉV} value={p.tempNév}
+            onChange={e => close({ tempNév: e.target.value })}
+            onKeyDown={e => { if (e.key === 'Enter') saveNevek(); }} />
+        </div>
+      </OverlayPortal>
     )}
 
     {/* TSZ választó */}

@@ -123,6 +123,7 @@
 .slot-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .slot-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 6px; height: 34px; padding: 0 10px; gap: 6px; font-size: 16px; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
 .slot-chip span { font-size: 13px; }  /* caption next to the icon (was icon-only) */
+.slot-chip:disabled { opacity: 0.35; cursor: default; }
 .slot-chip-del { color: var(--color-negative); }
 .slot-actions { display: flex; gap: 8px; margin-top: 8px; }
 .slot-actions-top { margin-top: 0; margin-bottom: 8px; }

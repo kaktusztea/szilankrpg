@@ -44,6 +44,8 @@ function App() {
   const [gameMode, setGameMode] = useState(false);
   // ProbaHub 🗡️/🏹: a cél-fülre váltás után a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot.
   const [pendingDobás, setPendingDobás] = useState<'támadó' | 'célzó' | 'manőver' | null>(null);
+  // Duplikálás után: a Tulajdonságok screen mountkor megnyitja a Becenév + Név szerkesztőt.
+  const [pendingNevek, setPendingNevek] = useState(false);
   const [viewingCheckpointId, setViewingCheckpointId] = useState<string | null>(null);
 
   // When viewing a checkpoint, everything is read-only
@@ -64,6 +66,11 @@ function App() {
 
   const { activateKarakter, importKarakter, shareSlotUrl, saveSlotToFile, duplicateSlot, handleGenerateSave, loadKarakter, deleteSlot } = useKarakterActions({
     data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay,
+    onDuplicated: () => {
+      if (effectiveGameMode) return; // a szerkesztő csak szerkesztő módban van
+      setActiveTab(TABS.findIndex(t => t.id === 'tulajdonsagok'));
+      setPendingNevek(true);
+    },
   });
 
   useUrlImport(data, setOverlay, importKarakter);
@@ -228,6 +235,9 @@ function App() {
                       onTestReset={handleTestReset}
                       pendingDobás={pendingDobás}
                       onPendingDobásConsumed={() => setPendingDobás(null)}
+                      pendingNevek={pendingNevek}
+                      onPendingNevekConsumed={() => setPendingNevek(false)}
+                      onNevekEditorClosed={() => setOverlay('showSlotList', true)}
                     />
                   </ScreenErrorBoundary>
                 )}
@@ -256,7 +266,7 @@ function App() {
         setSession={setSession} setKarakter={setKarakter}
         pushUndo={pushUndo}
         undoStack={undoStack} undoTo={handleUndoTo}
-        duplicateSlot={duplicateSlot}
+        duplicateSlot={duplicateSlot} gameMode={effectiveGameMode}
         handleGenerateSave={handleGenerateSave}
         shareFile={shareFile} downloadFile={downloadFile}
         loadKarakter={loadKarakter} shareSlotUrl={shareSlotUrl} saveSlotToFile={saveSlotToFile}

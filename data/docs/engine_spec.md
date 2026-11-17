@@ -2669,7 +2669,7 @@ Beállítások menü → "📋 Duplikál":
 
 ### 31.6 Karakter törlés
 
-- ✕ chip → megerősítő popup: "Törlöd: {név}?" (SlotDeleteOverlay)
+- ✕ chip → megerősítő popup: cím "Karakter törlése" + halvány leírás "{név} végleg törlődik ..." + "Törlés" gomb (SlotDeleteOverlay)
 - `szilank_char_{uid}` eltávolítás
 - `szilank_slots` frissítés
 - Ha az aktív karakter törlődik: automatikusan a legfrissebb másik lesz aktív

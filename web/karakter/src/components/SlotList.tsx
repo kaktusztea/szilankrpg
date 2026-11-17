@@ -19,6 +19,7 @@ interface Props {
   onSaveFile: (uid: string) => void;
   onShareFile: (uid: string) => void;
   onDuplicate: (uid: string) => void;
+  gameMode: boolean;
   onFileLoad: () => void;
   onClipboardImport: (text: string) => void;
   onNew: () => void;
@@ -29,7 +30,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, onQrCode, onSaveFile, onShareFile, onDuplicate, gameMode, onFileLoad, onClipboardImport, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
   // Full backup: show a spinner in place of the icon while the
   // (Windows) native save dialog is being prepared.
   const [savingBackup, setSavingBackup] = useState(false);
@@ -98,6 +99,7 @@ export function SlotList({ activeUid, onLoad, onLoadError, onDelete, onShare, on
         onLoad={loadSlot}
         onSaveOptions={setSavePopupUid}
         onDuplicate={onDuplicate}
+        gameMode={gameMode}
         onDelete={onDelete}
       />
     );

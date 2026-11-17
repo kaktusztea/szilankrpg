@@ -165,7 +165,8 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - `szilank_active`: aktív karakter uid
 - Autosave: minden karakter/undo változáskor, ha `isDirty=true` és nem testMode
 - "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
-- "Duplikál": deep clone, új uid, név ":2" suffix (ismétlésnél :3, :4...), Karakterek ablak megnyílik
+- "Duplikál": deep clone, új uid, név ":2" suffix (ismétlésnél :3, :4...), a Karakterek ablak bezárul, az új karakter aktív, és (szerkesztő módban) a Tulajdonságok fülön azonnal feljön a Becenév + Név szerkesztő; ennek bezárásakor (mellé-katt vagy Escape) a Karakterek ablak újra megnyílik
+- **Játék módban** (és verzió-nézetben) a slot sor "Másolat" és "Törlés" gombja inaktív (`disabled`, halvány)
 - **Slot limit**: ha `MAX_KARAKTER_DB` (16) elérve → "Új karakter" / "Duplikál" / import / fájlból betöltés (új slot) helyett `SlotLimitOverlay` jelenik meg (`kind='total'`: "Karakter limit" felirat, piros, max szám kiírva, hint: töröld egy régit)
 - **NJK limit**: `MAX_NJK_DB` (10) tárolt NJK felett nem jöhet létre új NJK. Betartatási pontok:
   - Import (fájl/URL/vágólap), fájlból betöltés, duplikálás NJK-ra → `SlotLimitOverlay kind='njk'` ("NJK limit")
@@ -592,11 +593,11 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
 ### Fejléc (legfelül)
-- **Becenév** sor (CSAK szerkesztő módban, full szélességű box): `Becenév: Agi` - tap a boxra → szerkesztő popup (max 12 karakter). Jobb oldalon egy kétrészes kapszula (`.tul-becenev-kapszula`, alap kinézet mint a `.kocka-chip`):
+- **Becenév** sor (CSAK szerkesztő módban, full szélességű box): `Becenév: Agi` - tap a boxra → közös Becenév + Név szerkesztő popup (lásd lentebb; max 12 karakter). Jobb oldalon egy kétrészes kapszula (`.tul-becenev-kapszula`, alap kinézet mint a `.kocka-chip`):
   - bal rész: Előtörténet gomb (`előtörténet` ikon = lucide ScrollText, szürke) → Előtörténet overlay (lásd lentebb)
   - jobb rész (függőleges elválasztó után): JK/NJK toggle (`.tul-kapszula-jk`) → `jk` mező váltás (Játékos Karakter / Nem Játékos Karakter); JK zöld felirat, NJK alap szövegszín
 - **Név + Szint** sor (CSAK szerkesztő módban, két box egymás mellett):
-  - Név box (flex:1): `Név: von Agabor` - tap → szerkesztő popup (max 40 karakter)
+  - Név box (flex:1): `Név: von Agabor` - tap → ugyanaz a közös Becenév + Név popup (max 40 karakter). A popup: felül Becenév, alatta Név input; nincs OK/Mégse - a mellé-katt menti (üres név nem íródik felül) és zár, Enter a Becenév mezőben a Névre ugrik, a Névben ment és zár, Escape elveti a változtatást
   - Szint box: `Szint: 8` - tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
 - **Játék módban**: `Név: "{név} ({faj}, {kor})"` full box + külön Szint box (Becenév + chipek rejtve)
 - **Böngésző tab title**: `document.title = karakter.becenév || 'Szilánk'`
@@ -1354,7 +1355,7 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 
 - `NewCharConfirmOverlay.tsx` - Új karakter megerősítő
 - `SlotListOverlay.tsx` - Karaktertár (slot lista + 🧪 teszt + 📁 fájlból)
-- `SlotDeleteOverlay.tsx` - Slot törlés confirm
+- `SlotDeleteOverlay.tsx` - Slot törlés confirm (az egységes `DeleteConfirmPopup` megjelenéssel: cím + halvány leírás + halvány-veszély "Törlés" gomb; mellé-katt / Escape = mégse, csak ezt a popupot zárja, a Karakterek ablakot nem)
 - `SaveOptionsPopup.tsx` - Mentés/Exportálás mód (link/fájl/share/QR, l. §1385)
 - `SaveFileOverlay.tsx` - Fájl kész (📤 Megosztás / 💾 Letöltés)
 - `UndoOverlay.tsx` - Visszavonás lista
@@ -1472,6 +1473,5 @@ Kódban `// WORKAROUND: <id>` kommenttel jelölve. Mindegyik platform-quirk vagy
 |----|------|--------|-----------------|
 | `iOS-ghost-click` | `hooks/useOverlays.ts` | 400ms guard overlay backdrop dismiss-nél | iOS touchend→click event átmegy az alatta lévő elemre |
 | `double-rAF-paint` | `components/SlotList.tsx` (2 hely) | Double requestAnimationFrame a save/download előtt | Natív file dialog blokkolja a main thread-et, a spinner paint 2 frame-et igényel |
-| `state-settle-delay` | `hooks/useKarakterActions.ts` | 100ms setTimeout duplikálás után overlay megnyitásra | React state update után kell az UI-nak frissülnie mielőtt az overlay renderelődne |
 | `tab-render-delay` | `components/harc/HarcScreen.tsx` | 200ms setTimeout scrollIntoView előtt tab váltásnál | Tab transition/animáció alatt a célelem még nem DOM-ban |
 | `initial-position-no-transition` | `components/TabBar.tsx` | rAF delay a CSS transition engedélyezésére | Indikátor ne animáljon origóból mount-kor, csak pozíció beállítás után |

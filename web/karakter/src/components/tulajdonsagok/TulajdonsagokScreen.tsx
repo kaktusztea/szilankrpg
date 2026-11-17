@@ -1,7 +1,7 @@
 import { SzinKor } from '../common/SzinKor';
 import { Ikon } from '../common/Ikon';
 import { clamp } from '../../engine/utils';
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { Props, KepzettsegSlot } from './types';
@@ -22,7 +22,7 @@ export function TulajdonsagokScreen({
   data, gameMode, karakter, setKarakter, tulajdonságok, setTulajdonságok,
   képzettségek, setKépzettségek, név, setNév, becenév, setBecenév,
   játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv,
-  jk, setJk, onTestReset
+  jk, setJk, onTestReset, pendingNevek, onPendingNevekConsumed, onNevekEditorClosed
 }: Props) {
   const fortélyFokok = buildFortélyFokok(karakter.fortélyok);
 
@@ -71,8 +71,26 @@ export function TulajdonsagokScreen({
   const defsByGroup = useMemo(() => buildDefsByGroup(data.kepzettsegDefs), [data.kepzettsegDefs]);
   const szintLimitek = useMemo(() => képzettségLimitek(data, tsz), [data, tsz]);
 
+  // Duplikálás után: Becenév + Név szerkesztő azonnal
+  // Ref, mert az Escape-es resetPopups a popup state-et is nullázza: a "vissza a Karaktertárba" jelző így nem vész el.
+  const vissza = useRef(false);
+  useEffect(() => {
+    if (!pendingNevek || gameMode) return;
+    vissza.current = true;
+    setPopup(p => ({ ...p, editingNevek: true, tempNév: név, tempBecenév: becenév }));
+    onPendingNevekConsumed?.();
+  }, [pendingNevek, gameMode, név, becenév, onPendingNevekConsumed]);
+
+  // Csak a nyitott -> zárt átmenetre (a jelző a megnyitás előtt már be van állítva).
+  const volt = useRef(false);
+  useEffect(() => {
+    const nyitva = popup.editingNevek;
+    if (volt.current && !nyitva && vissza.current) { vissza.current = false; onNevekEditorClosed?.(); }
+    volt.current = nyitva;
+  }, [popup.editingNevek, onNevekEditorClosed]);
+
   // Escape bezárja az aktív popup-ot
-  const hasAnyPopup = popup.editingNév || popup.editingBecenév || popup.editingTsz
+  const hasAnyPopup = popup.editingNevek || popup.editingTsz
     || popup.editingKor || popup.editingJátékos || popup.deleteTarget !== null
     || popup.pendingNew !== null || popup.promptState !== null;
   const resetPopups = useCallback(() => setPopup(INITIAL_POPUP_STATE), []);
@@ -142,8 +160,7 @@ export function TulajdonsagokScreen({
         fortélyBónuszByTul={fortélyBónuszByTul}
         név={név} becenév={becenév} játékos={játékos} tsz={tsz} kor={kor} faj={faj} anyanyelv={anyanyelv}
         jk={jk} setJk={setJk}
-        onEditNév={() => setPopup(p => ({ ...p, editingNév: true, tempNév: név }))}
-        onEditBecenév={() => setPopup(p => ({ ...p, editingBecenév: true, tempBecenév: becenév }))}
+        onEditNevek={() => setPopup(p => ({ ...p, editingNevek: true, tempNév: név, tempBecenév: becenév }))}
         onEditTsz={() => setPopup(p => ({ ...p, editingTsz: true }))}
         onEditKor={() => setPopup(p => ({ ...p, editingKor: true }))}
         onEditJátékos={() => setPopup(p => ({ ...p, editingJátékos: true, tempJátékos: játékos }))}

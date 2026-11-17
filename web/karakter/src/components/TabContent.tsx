@@ -47,12 +47,17 @@ interface Props {
   /** ProbaHub 🗡️/🏹 → a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot. */
   pendingDobás?: 'támadó' | 'célzó' | 'manőver' | null;
   onPendingDobásConsumed?: () => void;
+  /** Duplikálás után: a Tulajdonságok screen mountkor megnyitja a Becenév + Név szerkesztőt. */
+  pendingNevek?: boolean;
+  onPendingNevekConsumed?: () => void;
+  /** A duplikálás után megnyitott szerkesztő bezárult: vissza a Karaktertárba. */
+  onNevekEditorClosed?: () => void;
 }
 
 export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
   képzettségek, fortélyok, setFortélyok, session, setSession,
   karakter, setKarakter, pushUndo, onToast, onTestReset,
-  pendingDobás, onPendingDobásConsumed }: Props) {
+  pendingDobás, onPendingDobásConsumed, pendingNevek, onPendingNevekConsumed, onNevekEditorClosed }: Props) {
 
   const { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo } = useUndoWrappedSetters({ karakter, setKarakter, pushUndo, data });
 
@@ -81,6 +86,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
         faj={karakter.hátterek.faj} setFaj={makeFajSetter(karakter, pushUndo, setKarakter)}
         anyanyelv={karakter.anyanyelv} setAnyanyelv={setAnyanyelv}
         onTestReset={onTestReset}
+        pendingNevek={pendingNevek} onPendingNevekConsumed={onPendingNevekConsumed} onNevekEditorClosed={onNevekEditorClosed}
       />;
     }
     case 'fortelyok': {

@@ -31,6 +31,10 @@ export interface Props {
   anyanyelv: string;
   setAnyanyelv: (v: string) => void;
   onTestReset?: () => void;
+  /** Duplikálás után: mountkor megnyitja a Becenév + Név szerkesztőt. */
+  pendingNevek?: boolean;
+  onPendingNevekConsumed?: () => void;
+  onNevekEditorClosed?: () => void;
 }
 
 export interface KepzettsegRowProps {
