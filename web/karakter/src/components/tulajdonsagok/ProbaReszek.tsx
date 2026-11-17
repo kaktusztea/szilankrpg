@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Ikon } from '../common/Ikon';
 import type { ReactNode } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
@@ -58,6 +59,14 @@ function DobasKockak({ dobás, kocka, ehSzint }: { dobás: ProbaDobás; kocka: n
   );
 }
 
+/** Kis ▾ nyíl a siker-felirat végén: a dobás bontását (kockák) nyitja/csukja, az ablak magassága csukva nem nő. */
+function BontasNyil({ nyitva, onToggle }: { nyitva: boolean; onToggle: () => void }) {
+  return (
+    <button type="button" className={`kep-proba-bontas-nyil${nyitva ? ' nyitva' : ''}`} aria-expanded={nyitva}
+      aria-label="Dobás bontása" title="Dobás bontása" onClick={onToggle}><Ikon név="lenyit" /></button>
+  );
+}
+
 interface EredményProps {
   bázis: number;
   nehézség: number | null;
@@ -74,6 +83,8 @@ interface EredményProps {
 
 /** A próba eredmény-blokkja: összetett sorok / csak összeg / sima (vs célszám, siker-felirat). */
 export function ProbaEredmeny({ bázis, nehézség, csakÖsszeg, dobás, összetett, kocka, kiemeltKülönbség, ehSzint, children }: EredményProps) {
+  const [bontás, setBontás] = useState(false);
+  const nyíl = <BontasNyil nyitva={bontás} onToggle={() => setBontás(v => !v)} />;
   if (összetett) {
     return (
       <div className="kep-proba-result">
@@ -101,18 +112,18 @@ export function ProbaEredmeny({ bázis, nehézség, csakÖsszeg, dobás, összet
   return (
     <div className="kep-proba-result">
       {csakÖsszeg || nehézség === null ? (
-        <div className="kep-proba-result-num">{eredmény}</div>
+        <div className="kep-proba-result-num">{eredmény}{nyíl}</div>
       ) : (
         <>
           <div className="kep-proba-result-num">
             {eredmény}<span className="kep-proba-result-vs"> vs </span><span className="kep-proba-result-cel">{nehézség}</span>
           </div>
           <div className={eredmény >= nehézség ? 'kep-proba-siker' : 'kep-proba-sikertelen'}>
-            {eredményFelirat(eredmény, nehézség, kiemeltKülönbség)}
+            {eredményFelirat(eredmény, nehézség, kiemeltKülönbség)}{nyíl}
           </div>
         </>
       )}
-      <DobasKockak dobás={dobás} kocka={kocka} ehSzint={ehSzint} />
+      {bontás && <DobasKockak dobás={dobás} kocka={kocka} ehSzint={ehSzint} />}
       {children}
     </div>
   );

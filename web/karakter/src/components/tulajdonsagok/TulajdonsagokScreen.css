@@ -372,6 +372,8 @@
 .kep-proba-eh { color: #e08a8a; font-size: 13px; }
 .kep-proba-rolls { font-size: 13px; color: var(--text-dim); font-family: monospace; }
 .kep-proba-roll-sel { color: var(--text); font-weight: bold; }
+.kep-proba-bontas-nyil { background: none; border: 0; cursor: pointer; color: var(--text-dim); padding: 0 6px; margin-left: 4px; line-height: 0; vertical-align: middle; transition: transform 0.15s; }
+.kep-proba-bontas-nyil.nyitva { transform: rotate(180deg); }
 
 .kep-proba-eh-előny { color: #81c784; }
 
