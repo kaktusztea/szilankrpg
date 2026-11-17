@@ -54,7 +54,7 @@
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1,
-      "leírás": "\\"
+      "leírás": ""
     }
   ],
   "befolyásolás": [
@@ -406,7 +406,7 @@
       "név": "Rejtjelfejtő",
       "típus": "normál",
       "maxfok": 1,
-      "leírás": ""
+      "leírás": "\"Nem volt könnyű, de megfejtettem a titkosírást. Ez egy üzenet a tábornoknak, amiben a csapatokat a hágó elhagyására utasítja.\"\n\"Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni.\""
     },
     {
       "fortély": "térképészet",
@@ -734,7 +734,7 @@
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1,
-      "leírás": "\\"
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_tengerek",
@@ -1056,7 +1056,7 @@
       "név": "Nyomolvasás/eltűntetés",
       "típus": "normál",
       "maxfok": 2,
-      "leírás": ""
+      "leírás": "Nyomok követése a természetben - miután már megtaláltad. \"Erre haladt tovább, látszik a letört ágakból.\"\nNyomok értelmezése a természetben. \"Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett.\""
     },
     {
       "fortély": "tájtípus_barlangi",
@@ -1112,7 +1112,7 @@
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1,
-      "leírás": "\\"
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_tengerek",
@@ -1177,7 +1177,7 @@
       "név": "Tájtípus - sivatagi",
       "típus": "normál",
       "maxfok": 1,
-      "leírás": "\\"
+      "leírás": ""
     },
     {
       "fortély": "tájtípus_tengerek",

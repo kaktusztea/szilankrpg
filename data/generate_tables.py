@@ -15,7 +15,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from gen.common import SOURCES_DIR, hibak_kilep  # noqa: E402
-from gen.cache import sources_unchanged, write_hash, write_marker  # noqa: E402
+from gen.cache import sources_unchanged, invalidate_hash, write_hash, write_marker  # noqa: E402
 from gen.konstansok import generate_konstansok  # noqa: E402
 from gen.kepzettsegek import generate_kepzettsegek  # noqa: E402
 from gen.fortelyok import generate_fortelyok, generate_kiterjesztesek, generate_primer_fortelyok  # noqa: E402
@@ -23,7 +23,7 @@ from gen.fajok import generate_fajok  # noqa: E402
 from gen.aktiv_ful import generate_aktiv_ful  # noqa: E402
 from gen.fegyverek_v2 import generate_fegyverek_v2, generate_sebzesjelleg_pancel_matrix, generate_fegyver_extrak, generate_fegyver_idea_tabla, generate_tavfegyverek_v2  # noqa: E402
 from gen.naming_lint import lint as lint_naming  # noqa: E402
-from gen.kiterjesztes_check import kiterjesztes_sync_hibak  # noqa: E402
+from gen.kiterjesztes_check import kiterjesztes_sync_hibak, kiterjesztes_leiras_hibak  # noqa: E402
 from gen.hivatkozas import id_hivatkozasi_hibak, manover_ref_hibak  # noqa: E402
 
 # Generálási sorrend: a későbbiek az előzők kimenetére építhetnek
@@ -54,6 +54,7 @@ def main():
         return
 
     print("Generating tables...")
+    invalidate_hash()   # a failed run must not leave a valid hash behind (see cache.invalidate_hash)
     for generate in GENERATORS:
         generate()
 
@@ -61,6 +62,7 @@ def main():
     hibak_kilep("Fortély → manőver referenciális hibák", manover_ref_hibak())
     hibak_kilep("Fortély / képzettség id-hivatkozási hibák", id_hivatkozasi_hibak())
     hibak_kilep("Kiterjesztés md ↔ data layer eltérések (a képzettség md a source of truth)", kiterjesztes_sync_hibak())
+    hibak_kilep("Kiterjesztés leírás: md-formázás maradéka (a fortély yaml kiterjeszti leírását javítsd)", kiterjesztes_leiras_hibak())
     write_marker()   # Vite plugin freshness detection
     write_hash()     # a következő futás skip-ellenőrzéséhez
     print("Done.")

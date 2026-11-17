@@ -26,7 +26,8 @@ export function FortelyCsoport({
   return (
     <div className="fort-csoport">
       <h3 className="csoport-label fort-csoport-label" onClick={onToggleCollapse}>
-        <span className="fort-csoport-arrow"><Ikon név={collapsed || slotok.length === 0 ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        {csoportLabel} <span className="dim">({slotok.length})</span>
+        <span className="fort-csoport-arrow"><Ikon név={collapsed || slotok.length === 0 ? 'jobbra' : 'lenyit'} /></span>
         {csoport === 'szabad' && !gameMode && (
           <span className="fort-csoport-ingyenes">● {szabadMaradtIngyenes} ingyenes</span>
         )}

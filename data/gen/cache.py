@@ -46,6 +46,14 @@ def sources_unchanged():
     return stored == compute_sources_hash()
 
 
+def invalidate_hash():
+    """Empty the stored hash BEFORE writing any table. If a generator or build-gate then stops the run,
+    the tables on disk may come from broken sources: with an empty hash the next run regenerates for sure
+    (restoring the sources would otherwise match the old hash and skip, keeping the broken tables)."""
+    with open(HASH_FILE, 'w') as f:
+        f.write('')
+
+
 def write_hash():
     """Hash kiírása sikeres generálás után (a következő futás skip-ellenőrzéséhez)."""
     with open(HASH_FILE, 'w') as f:

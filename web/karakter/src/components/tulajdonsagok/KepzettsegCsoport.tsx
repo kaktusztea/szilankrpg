@@ -58,7 +58,8 @@ export function KepzettsegCsoport({
   return (
     <div className="kep-csoport">
       <h3 className="csoport-label kep-csoport-label" onClick={onToggleCollapse}>
-        <span className="kep-csoport-arrow"><Ikon név={collapsed || slotok.length === 0 ? 'jobbra' : 'lenyit'} /></span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        {csoportLabel} <span className="dim">({slotok.length})</span>
+        <span className="kep-csoport-arrow"><Ikon név={collapsed || slotok.length === 0 ? 'jobbra' : 'lenyit'} /></span>
         {/* Add button lives in the header row (no separate "+ Új képzettség..." row per group).
             Misztikus: taken on the Misztikus tab (faj / tradíció restrictions). */}
         {!gameMode && csoport !== 'misztikus' && available.length > 0 && (

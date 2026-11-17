@@ -72,7 +72,7 @@
 .kit-nev-info { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; }
 .kit-info-popup { max-width: 320px; }
 .kit-info-cim { font-weight: 600; margin-bottom: 6px; }
-.kit-info-leiras { color: var(--text-dim); font-size: 13px; line-height: 1.45; }
+.kit-info-leiras { color: var(--text-dim); font-size: 13px; line-height: 1.45; white-space: pre-line; }  /* multi-part descriptions (md sub-bullets) are joined with \n */
 .info-panel-error { color: var(--error); }
 .info-panel-szit { flex-direction: column; align-items: flex-start; }
 .info-panel-szit-list { display: flex; flex-direction: column; gap: 2px; margin-top: 2px; }

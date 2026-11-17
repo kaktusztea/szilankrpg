@@ -20,15 +20,15 @@ megjegyzések:
 kiterjeszti:
   normál:
     - képzettség: "alkímia"
-      leírás: "\\"
+      leírás: ""
     - képzettség: "lexikum"
-      leírás: "\\"
+      leírás: ""
     - képzettség: "lopakodás_rejtőzés"
       leírás: "Homokos, köves sivatagi lankákon hangtalanul haladni."
     - képzettség: "természetjárás"
-      leírás: "\\"
+      leírás: ""
     - képzettség: "vajákosság"
-      leírás: "\\"
+      leírás: ""
   erős: []
 
 kp_perfok: 6

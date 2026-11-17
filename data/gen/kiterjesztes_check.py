@@ -43,6 +43,17 @@ def _id_by_fajl(subdir):
     return out
 
 
+_ALPONT = re.compile(r'^\s{2,}[-*]\s+\S')
+
+
+def md_tetel_leiras_van(sorok, i, maradek):
+    """Has the md kiterjesztés item at line `i` a description? Either text after the link on the same line
+    (more than md punctuation / the `\\` line break), or indented sub-bullets right under it."""
+    if re.search(r'\w', re.sub(r'\\\s*$', '', maradek)):
+        return True
+    return i + 1 < len(sorok) and bool(_ALPONT.match(sorok[i + 1]))
+
+
 def kiterjesztes_sync_hibak():
     """Visszaad egy hibalistát (üres = szinkron)."""
     fajl2id = _id_by_fajl('fortelyok')
@@ -50,6 +61,7 @@ def kiterjesztes_sync_hibak():
     with open(os.path.join(TABLES_DIR, 'kiterjesztesek.json'), encoding='utf-8') as f:
         kit = json.load(f)
     data_map = {k: {e['fortély']: e['típus'] for e in rows} for k, rows in kit.items()}
+    data_leiras = {k: {e['fortély']: (e.get('leírás') or '').strip() for e in rows} for k, rows in kit.items()}
 
     errors = []
     md_files = sorted(
@@ -61,7 +73,9 @@ def kiterjesztes_sync_hibak():
         kepz_id = kfajl2id.get(base)
         section = None
         md_map = {}
-        for ln in _sorok(md):
+        md_leiras = {}
+        sorok = _sorok(md)
+        for i, ln in enumerate(sorok):
             ln = ln.rstrip('\n')
             h = _HEAD.match(ln)
             if h:
@@ -81,6 +95,7 @@ def kiterjesztes_sync_hibak():
             if fid in md_map and md_map[fid] != section:
                 errors.append(f"{base}.md: '{fid}' Normál ÉS Erős szekcióban is szerepel (tételként)")
             md_map[fid] = section
+            md_leiras[fid] = md_tetel_leiras_van(sorok, i, ln[m.end():])
         if not md_map:
             continue
         if kepz_id is None:
@@ -95,4 +110,26 @@ def kiterjesztes_sync_hibak():
                 errors.append(f"{kepz_id}: data layerben van ({d}), md-ben NINCS: '{fid}'")
             elif m != d:
                 errors.append(f"{kepz_id}: '{fid}' szint eltér - md={m}, data={d}")
+            if m and d and md_leiras.get(fid) and not data_leiras.get(kepz_id, {}).get(fid):
+                errors.append(f"{kepz_id}: '{fid}' az md-ben van leírása (sor vége vagy alpontok), a data layerben ÜRES")
+    return errors
+
+
+def kiterjesztes_leiras_hibak(kit=None):
+    """Kiterjesztés-leírás tartalom-ellenőrzés (2026-11-17).
+
+    A `kiterjeszti` leírásokat egyszeri script bányászta az md-ből; a lista utolsó tétele utáni md
+    sortörés (`\\`) leírásként maradt bent (tajtipus_sivatagi). Egy nem üres leírásban legyen betű vagy
+    szám - különben az md-formázás maradéka (az app aláhúzva, koppinthatóan mutatná).
+    `kit`: tesztből injektálható {képzettség: [ {fortély, leírás, ...} ]}; alapból a legenerált json.
+    """
+    if kit is None:
+        with open(os.path.join(TABLES_DIR, 'kiterjesztesek.json'), encoding='utf-8') as f:
+            kit = json.load(f)
+    errors = []
+    for kepz, rows in kit.items():
+        for e in rows:
+            l = (e.get('leírás') or '').strip()
+            if l and not re.search(r'\w', l):
+                errors.append(f"{kepz}: '{e.get('fortély')}' leírása csak írásjel/formázás: {l!r} (md-maradék? legyen üres)")
     return errors

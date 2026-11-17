@@ -19,7 +19,7 @@ from .validators import (
     validate_hatasok_katalogus, validate_effekt_hivatkozasok, id_hibak, session_toggle_hibak, proba_alcel_hibak,
 )
 from .hivatkozas import id_hivatkozasi_hibak, manover_ref_hibak, kepz_ref_hiba, fortely_ids
-from .kiterjesztes_check import kiterjesztes_sync_hibak
+from .kiterjesztes_check import kiterjesztes_sync_hibak, kiterjesztes_leiras_hibak, md_tetel_leiras_van
 
 
 def bukik(test, fn, *args):
@@ -147,6 +147,51 @@ class HivatkozasGates(unittest.TestCase):
 
     def test_kiterjesztes_sync_valodi_ok(self):
         self.assertEqual(kiterjesztes_sync_hibak(), [])
+
+    def test_kiterjesztes_leiras_valodi_ok(self):
+        self.assertEqual(kiterjesztes_leiras_hibak(), [])
+
+    def test_md_tetel_leiras_felismeres(self):
+        sorok = ['- [A](x.md): Leírás a sorban.', '- [B](x.md):', '  - alpont leírás', '- [C](x.md)\\', '(közös megjegyzés)', '- [D](x.md)']
+        self.assertTrue(md_tetel_leiras_van(sorok, 0, ': Leírás a sorban.'))
+        self.assertTrue(md_tetel_leiras_van(sorok, 1, ':'))           # sub-bullets under it
+        self.assertFalse(md_tetel_leiras_van(sorok, 3, '\\'))        # only the md line break
+        self.assertFalse(md_tetel_leiras_van(sorok, 5, ''))
+
+    def test_kiterjesztes_leiras_md_maradek_bukik(self):
+        kit = {'természetjárás': [
+            {'fortély': 'tájtípus_sivatagi', 'leírás': '\\'},
+            {'fortély': 'tájtípus_erdős', 'leírás': ''},
+            {'fortély': 'keresés_rejtés', 'leírás': 'Nyomok észrevétele.'},
+        ]}
+        hibak = kiterjesztes_leiras_hibak(kit)
+        self.assertEqual(len(hibak), 1)
+        self.assertIn('tájtípus_sivatagi', hibak[0])
+
+
+
+class FrissessegCache(unittest.TestCase):
+    """A failed generation must not leave a valid source hash (else restoring the sources skips regeneration)."""
+
+    def test_bukott_futas_utan_nincs_ervenyes_hash(self):
+        import tempfile
+        import sys as _sys
+        from unittest import mock
+        from . import cache
+        import generate_tables
+        with tempfile.TemporaryDirectory() as tmp:
+            hash_file = os.path.join(tmp, '.sources_hash')
+            with mock.patch.object(cache, 'HASH_FILE', hash_file):
+                cache.write_hash()                       # state after a previous successful run
+                self.assertTrue(cache.sources_unchanged())
+
+                def bukik_generator():
+                    raise SystemExit(1)                  # a generator / gate stops the run mid-way
+                with mock.patch.object(generate_tables, 'GENERATORS', [bukik_generator]), \
+                        mock.patch.object(_sys, 'argv', ['generate_tables.py', '--force']), \
+                        contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit):
+                    generate_tables.main()
+                self.assertFalse(cache.sources_unchanged(), 'a bukott futás után nem maradhat érvényes hash')
 
 
 if __name__ == '__main__':

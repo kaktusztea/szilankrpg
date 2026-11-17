@@ -8,7 +8,7 @@
 /* Csoport fejléc → base: .csoport-label (common.css) */
 .fort-csoport-label { color: var(--color-fortely); }
 
-.fort-csoport-arrow { font-size: 15px; margin-right: 2px; }
+.fort-csoport-arrow { font-size: 17px; margin-left: 2px; display: inline-flex; color: var(--text-dim); }  /* after the label + count (same as the Tulajdonságok tab) */
 .fort-row-wrapper { margin-bottom: 1px; }
 
 /* Sor → base: .item-row (common.css) */
