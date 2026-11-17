@@ -1,13 +1,12 @@
 import { Ikon } from './common/Ikon';
 import { useState, useEffect, useMemo } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter, Session, UndoPatch } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { képzKulcs } from '../engine/azonosito';
 import { PopupOverlay } from './PopupOverlay';
 import { ProbaDispatcher, type ProbaCél } from './ProbaDispatcher';
-import { harcFejlécÉrtékek } from '../engine/harc/harc-fejlec-calc';
-import { DobasPopup } from './harc/DobasPopup';
-import { rollK20 } from '../engine/dice';
+import { pushDobás } from './harc/DobasPopup';
+import { KeDobasPopup } from './harc/KeDobasPopup';
 import { buildFortélyFokok } from '../engine/proba/kepzettseg-proba-calc';
 import { getDisplayName } from './tulajdonsagok/helpers';
 import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../engine/felszereles';
@@ -24,6 +23,10 @@ interface Props {
   karakter: Karakter;
   /** Csak Játék módban (és nem verzió-nézetben) látszik a FAB. */
   aktív: boolean;
+  /** A KÉ dobás popup (Harci helyzet kapszula, előzmény) a session-t írja. */
+  session: Session;
+  setSession: React.Dispatch<React.SetStateAction<Session>>;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   /** TÉ / Manőver chip: switch to the target tab + open the roll popup there; CÉ: switch tab + flash the CÉ-SP-VÉ box (resolved by App). */
   onHarciDobás: (cél: 'támadó' | 'célzó' | 'manőver') => void;
 }
@@ -34,11 +37,11 @@ interface Props {
  * elrejtőzik. A próba-adatokat a karakterből itt állítjuk össze (ugyanaz a logika, mint a
  * TulajdonsagokScreen - l. a memók; a próba-ablakok maguk a meglévő popup-komponensek).
  */
-export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
+export function ProbaHub({ data, karakter, aktív, session, setSession, pushUndo, onHarciDobás }: Props) {
   const [hubNyitva, setHubNyitva] = useState(false);
   const [cél, setCél] = useState<ProbaCél | null>(null);
-  // KÉ dobás helyben (nem vált fület): a Harc fejléc KÉ-értéke + k20.
-  const [kéDobás, setKéDobás] = useState<{ ké: number; eredmény: number } | null>(null);
+  // KÉ dobás helyben (nem vált fület): ugyanaz a popup, mint a Harc fülön.
+  const [kéDobás, setKéDobás] = useState(false);
   // Van-e nyitott overlay a body-ban (bármilyen popup/menü) - ekkor a FAB elrejtőzik.
   const [overlayNyitva, setOverlayNyitva] = useState(false);
 
@@ -94,8 +97,7 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
           <h3 className="proba-hub-header">Harci dobás <KockaChip kocka={20} /></h3>
           <div className="proba-hub-grid proba-hub-grid-4">
             <button className="proba-hub-chip proba-hub-chip-harc" onClick={() => {
-              const { ké } = harcFejlécÉrtékek(data, karakter);
-              setKéDobás({ ké, eredmény: ké + rollK20() });
+              setKéDobás(true);
               setHubNyitva(false);
             }}>KÉ</button>
             <button className="proba-hub-chip proba-hub-chip-harc" title="Támadó dobás (Harc fül)" aria-label="Támadó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('támadó'); }}>TÉ</button>
@@ -134,7 +136,11 @@ export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
       )}
 
       {kéDobás && (
-        <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={kéDobás.ké} eredmény={kéDobás.eredmény} onClose={() => setKéDobás(null)} />
+        <KeDobasPopup data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
+          onClose={eredmény => {
+            setKéDobás(false);
+            if (eredmény != null) setSession(prev => ({ ...prev, ké_dobások: pushDobás(prev.ké_dobások ?? [], eredmény) }));
+          }} />
       )}
 
       {cél && (

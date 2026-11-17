@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { calcHarcComputed } from './harc-computed';
 import { elsődlegesMód } from './fegyver-calc';
-import { collectDobásInfo, collectCéDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, collectCéDobásInfo, collectKéDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../types';
 import type { GameData } from '../data-loader';
 import type { SebzésjellegPáncélMátrix, FegyverAlap } from '../data-types';
@@ -241,5 +241,29 @@ describe('collectCéDobásInfo - Páros, kétkezes hajítás', () => {
     expect(info.céHatások.map(h => [h.forrás, h.operátor, h.érték])).toEqual([['Páros kétkezes hajítás', 'hátrány', -1]]);
     expect(netElőnySzint(info.céHatások)).toBe(-1);
     expect(info.céMegjegyzések.some(m => /Kétkezesség/.test(m.szöveg))).toBe(true);
+  });
+});
+
+// KÉ dobás (Kezdeményezés) E/H hatásai: Fegyverrántás fortély + helyzet, státusz - valódi adaton.
+describe('collectKéDobásInfo - Fegyverrántás és státuszok', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const kiszámol = (fok: number | null, helyzet: boolean, státuszok: string[] = []) => {
+    const session = { ...alap.session, aktív_taktikák: [], aktív_helyzetek: helyzet ? ['Fegyverrántás váratlanul'] : [], aktív_státuszok: státuszok } as Session;
+    const k = { ...alap, fortélyok: fok ? [{ id: 'fegyverrántás', fok, elem: '' }] : [], session } as Karakter;
+    return netElőnySzint(collectKéDobásInfo(session, k, data).kéHatások);
+  };
+
+  it('Fegyverrántás 1./2. fok: +1 / +2 lépés, csak az aktív helyzettel', () => {
+    expect(kiszámol(1, true)).toBe(1);
+    expect(kiszámol(2, true)).toBe(2);
+    expect(kiszámol(2, false)).toBe(0);
+    expect(kiszámol(null, true)).toBe(0);
+  });
+
+  it('a lépés additív a státusz Hátrányával (Fizikai 3: -2 + Fegyverrántás 1 = -1), clamp [-2,+2]', () => {
+    expect(kiszámol(1, true, ['Fizikai (3)'])).toBe(-1);
+    expect(kiszámol(2, true, ['Fizikai (3)'])).toBe(0);
+    expect(kiszámol(null, false, ['Fizikai (3)'])).toBe(-2);
   });
 });

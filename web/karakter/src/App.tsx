@@ -242,6 +242,7 @@ function App() {
       <TabBar tabs={TABS} activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <ProbaHub data={data} karakter={karakter} aktív={gameMode && !viewingCheckpointId}
+        session={session} setSession={setSession} pushUndo={pushUndo}
         onHarciDobás={cél => {
           const tabId = cél === 'célzó' ? 'tavharc' : 'harc';
           const idx = TABS.findIndex(t => t.id === tabId);

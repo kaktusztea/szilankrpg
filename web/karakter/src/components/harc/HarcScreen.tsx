@@ -13,7 +13,8 @@ import { HarcReszletek } from './HarcReszletek';
 import { HarcFegyverSection } from './HarcFegyverSection';
 import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from '../../engine/harc/pancel-calc';
-import { DobasPopup, pushDobás, pushTéDobás } from './DobasPopup';
+import { pushDobás, pushTéDobás } from './DobasPopup';
+import { KeDobasPopup } from './KeDobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
 import { VeCsokkentesPopup } from '../dobas/VeCsokkentesPopup';
 import { TaktikaTiltvaInfoPopup } from './TaktikaTiltvaInfoPopup';
@@ -25,7 +26,6 @@ import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from '../../engine/harc/combat-roll-info';
 import { ManoverDobasPopup } from '../dobas/ManoverDobasPopup';
 import { ManoverPicker } from './ManoverPicker';
-import { rollK20 } from '../../engine/dice';
 import './HarcScreen.css';
 import type { FegyverResult } from '../../engine/harc/types';
 import { lookupFegyver } from '../../engine/lookup';
@@ -34,7 +34,7 @@ type TámInfo = { név: string; sebesség: number; harckeret: number; hk_harcmod
 type ManőverDef = HarcBaseProps['data']['manoverek'][number];
 /** A Harc fül popupjai (egyszerre egy). */
 type HarcPopup =
-  | { t: 'ké'; eredmény: number } | { t: 'támadó' } | { t: 'fárasztás' } | { t: 'teljesVédekezés' }
+  | { t: 'ké' } | { t: 'támadó' } | { t: 'fárasztás' } | { t: 'teljesVédekezés' }
   | { t: 'véHistory' } | { t: 'támInfo'; info: TámInfo } | { t: 'fegyverInfo'; result: FegyverResult }
   | { t: 'fegyverfogás' } | { t: 'páncélInfo' }
   | { t: 'manőverMód' } | { t: 'manőverLista'; mód: 'aktív' | 'passzív' } | { t: 'manőver'; manőver: ManőverDef; mód: 'aktív' | 'passzív' };
@@ -55,12 +55,12 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const { véFlash, changeVé, véSzorzóInfo, setVéSzorzóInfo } = useVéCsökkenés(session, setSession, pushUndo, hc.véVeszSzorzó, hc.maxVéCsökk);
 
   // KÉ dobás handler
-  const handleKéClick = useCallback(() => {
-    setNyitott({ t: 'ké', eredmény: hc.ké + rollK20() });
-  }, [hc.ké]);
+  const handleKéClick = useCallback(() => setNyitott({ t: 'ké' }), []);
 
-  const handleKéDobásClose = useCallback((eredmény: number) => {
+  // A KÉ dobás csak a végigvitt (megdobott) eredményt rögzíti az előzménybe.
+  const handleKéDobásClose = useCallback((eredmény: number | null) => {
     setNyitott(null);
+    if (eredmény == null) return;
     setSession(prev => ({
       ...prev,
       ké_dobások: pushDobás(prev.ké_dobások ?? [], eredmény),
@@ -208,7 +208,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
       />
 
       {nyitott?.t === 'ké' && (
-        <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={nyitott.eredmény} onClose={handleKéDobásClose} />
+        <KeDobasPopup data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} onClose={handleKéDobásClose} />
       )}
 
       {nyitott?.t === 'fegyverInfo' && (

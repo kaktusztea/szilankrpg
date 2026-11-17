@@ -13,7 +13,7 @@ import {
 import { lookupTávfegyver, taktikaDef } from '../lookup';
 import type { FegyverAlap } from '../data-types';
 
-type DobásCél = 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
+type DobásCél = 'ké_dobás' | 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
 
 /**
  * A Támadó/Célzó k20 dobás NYERS sebzés-Előnye (a sebzésdobásra tovább adott Előny), §065:
@@ -152,6 +152,17 @@ export function fegyverSpBónuszok(mód: { sp_erőbónusz?: number; sp_mf?: numb
   if (mód?.sp_erőbónusz) ki.push({ forrás: 'Erőbónusz', érték: mód.sp_erőbónusz });
   if (mód?.sp_mf) ki.push({ forrás: fegyverNév ? `Mesterfegyver - ${fegyverNév}` : 'Mesterfegyver', érték: mód.sp_mf });
   return ki;
+}
+
+/**
+ * Collect effects for KÉ dobás (Kezdeményezés): státuszok (Eszmélet, Fizikai, ...), Fegyverrántás fortély
+ * (a „Fegyverrántás váratlanul" helyzettel) stb. - ugyanazzal a gyűjtővel, mint a Támadó / Célzó dobás.
+ */
+export function collectKéDobásInfo(
+  session: Session, karakter: Karakter, data: GameData, feltételTeljesül?: (feltétel: unknown) => boolean,
+): { kéHatások: DobásHatás[] } {
+  const { hatások } = collectSessionHatások(session, karakter, data, new Set(['ké_dobás']), undefined, feltételTeljesül);
+  return { kéHatások: hatások };
 }
 
 /** Collect effects for CÉ dobás (Távharc fül). */

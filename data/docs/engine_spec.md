@@ -642,7 +642,7 @@ note: feltétel == "" → mindig aktív (karakterlap számolja).
         - "flat", "scaled": calcFortelyMods (fent)
         - "override": CSAK cél: "SP" + feltétel: "fegyver:X" → fegyver-calc.ts (§8 SP override)
         - "enyhít": Hatás pool-ban csökkenti a célra vonatkozó negatív hatás fokát (§22.7)
-        - "előny" / "hátrány": kocka-reroll (combat-roll-info.ts, próba-calc). Célok: sebzésdobás,
+        - "előny" / "hátrány": kocka-reroll (combat-roll-info.ts - KÉ: `collectKéDobásInfo` → KeDobasPopup, próba-calc). Célok: sebzésdobás,
           ké_dobás, té_dobás, cé_dobás, képzettségpróba_dobás, tulajdonságpróba_dobás
         - "szorzó": vé_csökkentés / vé_veszteség (ve-csokkentes-calc.ts, §21)
         - "szöveges": csak megjelenítés

@@ -63,7 +63,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 |------|-----------|
 | `reactive.ts` | Rule engine: evaluate, buildContext, buildArrayContext, `evalRule` (egy szabály skalár inputokkal, a TS-képletmásolatok helyett; minden deklarált input kötelező) |
 | `harc/aktiv-fegyver-ctx.ts` | Aktív fegyver kontextus feloldás (kétkezes > fogás > pajzs > jobb kéz) |
-| `harc/combat-roll-info.ts` | Támadó/Sebzés/CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve) |
+| `harc/combat-roll-info.ts` | KÉ (`collectKéDobásInfo`) / Támadó / Sebzés / CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve) |
 | `harc/ep-logic.ts` | ÉP sebesülés/gyógyulás pure logika |
 | `harc/fegyver-calc.ts` | Per-fegyver TÉ/VÉ/SP/harckeret (optimalizált: 5 rule/fegyver) |
 | `harc/fegyver-helpers.ts` | Fegyver segéd (pajzs-fegyvernév, lookup wrapperek) |
@@ -193,6 +193,8 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   fegyver-info-calc.ts     A FegyverInfoPopup pure adat-összeállítója (buildFegyverInfó)
   HarcHeader.tsx           KÉ, SFÉ, VÉ csökk, MP boxok
   TamadoDobasPopup.tsx     Támadó dobás popup (manuális/auto k20, bónuszok)
+  KeDobasPopup.tsx         Kezdeményezés (KÉ) dobás popup (E/H léptető, Harci helyzet kapszula; Harc fül KÉ box + ProbaHub 🎲)
+  DobasPopup.ts            Dobás-előzmény FIFO segédek (`pushDobás`, `pushTéDobás`; max 3)
   PancelInfoPopup.tsx      SFÉ infó popup (páncél részletek)
   ManoverPicker.tsx        Manőver választó (mód + lista, 2 lépés)
   HarcFegyverSection.tsx   Fegyver/fogás szekció (Ügyesebb + Gyengébb kéz + Fogás + páncél/pajzs toggle) - Aktív ÉS Harc fül közös

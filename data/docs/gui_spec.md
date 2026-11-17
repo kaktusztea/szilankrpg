@@ -331,6 +331,7 @@ A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én haj
 | `StatuszPickerOverlay.tsx` | Státusz választó overlay (kategóriák + fok) |
 | `TaktikaPickerList.tsx` | Taktika választó lista (pinned + többi) |
 | `TaktikaFokPicker.tsx` | Fokozatos taktika fok-választó |
+| `KeDobasPopup.tsx` (harc/) | Kezdeményezés (KÉ) dobás popup (E/H léptető, Harci helyzet / Bónusz kapszula, csukott bontás) |
 | `ManoverDobasPopup.tsx` | Manőver dobás popup (követelmény 0. lépés, fázisok, Siker/Kudarc, MP+TÉ) |
 | `manover-dobas-calc.ts` | Manőver dobás pure logika (követelmény, fázisok, TÉ-bontás, eredmény-hatás) |
 | `aktiv-calc.ts` | Aktív fül kalkuláció (státusz/taktika hatások, fortély emlékeztetők, helyzet/taktika kötések, manőver bónuszok, alapesetek) |
@@ -410,11 +411,10 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Mobilon (≤480px) Játék módban alapból összecsukva: egy koppintható összefoglaló sor (`harc-fegyver-osszegzo`): 1. sor `Jobb + Bal` fegyvernév (fegyver+pajzsnál a pajzs neve), 2. sor kisebben `Fogás · Páncél: Igen/Nem · <session toggle>: Igen/Nem` (Egyfegyveres fogás nem jelenik meg) (csak a karakter által birtokolt toggle-fortélyok, páncél csak ha van). Koppintásra kinyílik a teljes blokk (jobb oldalt kerek háttérben `lenyit` chevron ikon, nyitva 180°-kal elforgatva). A kétkezes figyelmeztetés összecsukva is látszik. Desktopon és Szerkesztő módban nincs összefoglaló.
 - **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 1. sor KÉ + SFÉ alacsony csempe (KÉ: név, érték, jobbra az előzmények 12px-en; SFÉ: név és alatta lefedettség % balra, érték jobbra), 2. sor TÉ teljes szélességben (név, érték, jobbra az előzmények keretes chipként, 13px), 3. sor VÉ teljes szélességben, egy sorban (név, érték, csökkenés-kapszula = reset, jobbra a kis 36px magas gombok `-3 -2 -1 +1` sorrendben); a nevek mobilon 20px-esek):
   - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér). Kattintható (cursor: pointer, min-width: 64px).
-    - Klikk → **Kezdeményező dobás**: KÉ + k20 (random 1-20). Overlay popup jelenik meg:
-      - Fejléc: "Kezdeményezés" (16px, bold, uppercase)
-      - Eredmény: nagy szám (48px, bold, monospace)
-      - Részlet: "KÉ (X) + k20 (Y)" (13px, dim szín)
-      - Mellé kattintás bezárja → eredmény push a session `ké_dobások` FIFO tömbbe (max 3, legújabb elöl)
+    - Klikk → **KeDobasPopup** (Kezdeményezés dobás, a Támadó dobás mintájára; a Játék mód 🎲 hubjából is ugyanez nyílik), kétfázisú:
+      - Fázis 1: képlet `KÉ [± kézi] + k20` → kapszulasor (`Harci helyzet N` - a közelharci helyzet-picker, hogy pl. a Fegyverrántás váratlanul helyben bekapcsolható - + `+ Bónusz`) → **E/H doboz** (`ElonyLepteto` + `ForrasLista`, `ké_dobás` hatások: státuszok, Fegyverrántás fortély a helyzettel; kezdőérték az aktív hatásokból, a helyzet-váltás azonnal tükröződik) → Dobás gomb (SZÁNDÉKOSAN nincs „kézi" dobás: a kezdeményezést sokan dobják egyszerre, a kézi bevitel lassítaná az asztalt). Taktika kapszula nincs (taktikának nincs `ké_dobás` hatása).
+      - Fázis 2: eredmény (nagy szám, 48px, monospace) + mellette jobbra lenyíló nyíl; a bontás („KÉ (X) + k20 (Y) · Előny+N") alapból csukva; ⟲ gomb = újradobás.
+      - Bezárás (mellé kattintás / Escape): a MEGDOBOTT eredmény push a session `ké_dobások` FIFO tömbbe (max 3, legújabb elöl); dobás előtti bezárásnál nincs bejegyzés.
     - Box alján: utolsó max 3 dobott érték egymás mellett (11px, monospace). Sorrend: legrégebbi balra, legújabb jobbra (a tárolás továbbra is legújabb elöl, a kijelzés fordítja). Színek jobbról balra egyre sötétülnek: #ccc → #888 → #555 (legújabb a legvilágosabb). A TÉ box előzmény-mini táblája ugyanígy: legújabb oszlop jobbra.
   - **SFÉ box**: label `SFÉ`, mellette (mobilon jobbra, asztalin alatta) a két érték SVG ikonnal (`Ikon`: pajzs = fizikai, energia = villám), azonos súllyal. Alatta teljes szélességben a páncél lefedettség: vékony sáv + `X%`. Kattintásra **PancelInfoPopup** nyílik (páncél név, struktúra, alapanyag, SFÉ bontás, lefedettség %, MGT, csatolt tagok részletek).
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
