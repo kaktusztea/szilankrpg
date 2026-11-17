@@ -535,7 +535,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
   - Jobb felül ikon-gombok: ceruza → Idea popup (`IdeaSkala`, -5..+5, előnézet: CÉ; mágikus fegyvernél nincs), ✕ → törlés megerősítő popup.
   - Statisztika-sor (keret nélkül, monospace, 15px): `CÉ N · Támadás Nx · SP N` (nem sebző fegyvernél SP `-`).
 - Aktív fegyver: zöld keret (a kártyára koppintva váltható; az ikon-gombok / pöttyök koppintása nem vált)
-- `+ Új távfegyver...` gomb → lista-választó (`tavfegyverek_v2.json`-ból, 🔆 kiszűrve; név mellett `CÉ / SP / Osz`)
+- „Távfegyverek” címsor végén `+` chip (`PluszGomb`) → lista-választó (`tavfegyverek_v2.json`-ból, 🔆 kiszűrve; név mellett `CÉ / SP / Osz`)
 
 **Hajítható fegyverek (fortélyból) szekció:**
 - "Alkalmatlan fegyver hajítása" fortélyból: per spec_elem fegyver kártya (nem törölhető, CÉ:0, Osztó:1)
@@ -907,7 +907,7 @@ Kompakt kártya (2026-11, a fegyverkártya mintájára; `.he-fegyver-card`):
 - Cím: a struktúra neve, mellette a Merevvértviselet fok lila pöttyökben (`FokPottyok`, 0-3, mindig látszik; tap → fok popup 0-3). Alcím (halvány): `fémalapanyag (csak fém struktúránál) · kidolgozottság · méret · Idea N`; MGT-büntetéses méret (nem passzol / borzalmas) fakó narancs (`.he-stat-figyel`, mint a Rongálódás).
 - Jobb felül: „Páncél viselve" ikon-kapcsoló (`viselve` = lucide ShieldCheck, zöld = igen, halvány = nem; ugyanaz a `session.aktív_páncél`, mint a Harc fül „Páncél viselve" gombja, így szinkronban; nem viselve → cím + statisztika halványítva) + ceruza → szerkesztés menü (`ListaPicker`): Struktúra (lista + "- nincs -") / Fémalapanyag (csak fém) / Kidolgozottság (pocsék / átlagos / mestermunka) / Méret (passzol / nem passzol / borzalmas) / Idea (`IdeaSkala`, a struktúra szerinti ±N, előnézet: SFÉ F / SFÉ E (változás a 0-hoz képest) + Ár; tiltva, ha a struktúránál nem állítható) / Végtagvédettség (0-4) / Sisak (igen/nem - közvetlen váltás, nincs al-popup) / Rongálódás (0-5); jobbra az aktuális érték, választás → a mező saját popupja.
 - Statisztika (keret nélkül, monospace, két sor): `SFÉ XF / YE · MGT Z` (15px; az MGT pontozott aláhúzású, tap → info hint: MGT bontás formula, 2s) / `Végtag N · [sisak ikon] · Ár Nx` (Végtag: aláhúzás nélkül koppintható → végtagvédettség popup 0-4) (sisak = lucide HardHat, zöld = van, halvány = nincs; tap → váltás) + harmadik sorban `Rongálódás N` fakó narancsban, csak ha > 0 (aláhúzás nélkül, tap → Rongálódás popup 0-5).
-- Nincs struktúra: halvány „Nincs páncél" cím (a Merevvért pöttyök maradnak) + `+ Páncél választása...` gomb (→ Struktúra popup).
+- Nincs struktúra: halvány „Nincs páncél" cím (a Merevvért pöttyök maradnak) ; a „Páncél” címsor végén `+` chip (→ Struktúra popup).
 
 ### Pajzs
 Kompakt kártya (mint a páncél):

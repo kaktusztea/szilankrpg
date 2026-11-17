@@ -4,7 +4,7 @@ import type { Kepzettseg } from '../../engine/types';
 import { képzKulcs, bontKépzKulcs } from '../../engine/azonosito';
 import { KÉPZETTSÉG_SZINT_MAGAS } from '../../ui-constants';
 import { kattinthatóProps } from '../a11y';
-import { FelvevőGomb, PluszGomb } from '../picker/ListaPicker';
+import { PluszGomb } from '../picker/ListaPicker';
 import './common.css';
 
 export interface HarcmodorListaProps {
@@ -13,8 +13,8 @@ export interface HarcmodorListaProps {
   felirat: (kulcs: string) => string;
   /** A "+ … felvétel" select első opciója. */
   felvételFelirat: string;
-  /** Ha megadott: címsor, a felvétel "+" chip a sor végén (különben a lista alján a "+ …" gomb). */
-  fejléc?: string;
+  /** Section title; the add "+" chip sits at its end. */
+  fejléc: string;
   tsz: number;
   képzettségek: Kepzettseg[];
   setKépzettségek: Dispatch<SetStateAction<Kepzettseg[]>>;
@@ -38,12 +38,10 @@ export function HarcmodorLista({ kulcsok, felirat, felvételFelirat, fejléc, ts
 
   return (
     <div className="he-harcmodor-list he-harcmodor-col">
-      {fejléc && (
-        <h3 className="he-section-cim">
-          {fejléc}
-          {lehetFelvenni && <span className="csoport-uj"><PluszGomb cím={cím} opciók={opciók} onVálaszt={felvétel} /></span>}
-        </h3>
-      )}
+      <h3 className="he-section-cim">
+        {fejléc}
+        {lehetFelvenni && <span className="csoport-uj"><PluszGomb cím={cím} opciók={opciók} onVálaszt={felvétel} /></span>}
+      </h3>
       {felvett.map(h => {
         const kulcs = képzKulcs(h);
         return (
@@ -60,9 +58,6 @@ export function HarcmodorLista({ kulcsok, felirat, felvételFelirat, fejléc, ts
           </div>
         );
       })}
-      {!fejléc && lehetFelvenni && (
-        <FelvevőGomb felirat={felvételFelirat} cím={cím} opciók={opciók} onVálaszt={felvétel} />
-      )}
     </div>
   );
 }

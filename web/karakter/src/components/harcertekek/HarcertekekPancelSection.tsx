@@ -99,7 +99,14 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
 
   return (
     <section className="he-section">
-      <h3>Páncél</h3>
+      <h3 className="he-section-cim">
+        Páncél
+        {!hasAlap && (
+          <span className="csoport-uj">
+            <button type="button" className="csoport-uj-btn" title="Páncél választása" aria-label="Páncél választása" onClick={() => onPopup('struktúra')}><Ikon név="új" /></button>
+          </span>
+        )}
+      </h3>
       {/* Compact card like the weapon cards: title + Merevvért dots, subtitle, Sisak toggle + edit menu, 2-line stats */}
       <div className={`he-fegyver-card${hasAlap && !viselve ? ' he-fegyver-card-ki' : ''}`}>
         <div className="he-fegyver-header">
@@ -116,7 +123,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
             </div>
           )}
         </div>
-        {hasAlap ? (
+        {hasAlap && (
           <div className="he-stat-sor">
             <div className="he-stat-fo">
               SFÉ <b>{sfé_fizikai}F</b><span className="he-stat-sep"> / </span><b>{sfé_energia}E</b>
@@ -137,8 +144,6 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
               <div><button type="button" className="he-stat-bontas he-stat-figyel" onClick={() => onPopup('rongálódás')}>Rongálódás <b>{k.páncél.rongálódás}</b></button></div>
             )}
           </div>
-        ) : (
-          <button type="button" className="he-add-select" onClick={() => onPopup('struktúra')}>+ Páncél választása...</button>
         )}
       </div>
       {/* hasAlap: after choosing "- nincs -" as Struktúra the menu does not come back for a removed armour */}

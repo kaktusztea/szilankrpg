@@ -42,9 +42,7 @@ export function ListaPicker({ title, opciók, aktív, onVálaszt, onClose }: Lis
   );
 }
 
-interface FelvevőGombProps {
-  /** Button text, e.g. "+ Új távfegyver..." */
-  felirat: string;
+interface PluszGombProps {
   /** Picker title, e.g. "Új távfegyver" */
   cím: string;
   opciók: ListaOpció[];
@@ -53,24 +51,12 @@ interface FelvevőGombProps {
 }
 
 /** Small "+" box for a section title row (`csoport-uj-btn` look) that opens a ListaPicker. */
-export function PluszGomb({ cím, opciók, onVálaszt, disabled }: Omit<FelvevőGombProps, 'felirat'>) {
+export function PluszGomb({ cím, opciók, onVálaszt, disabled }: PluszGombProps) {
   const [nyitva, setNyitva] = useState(false);
   return (
     <>
       <button type="button" className={`csoport-uj-btn${disabled ? ' he-add-disabled' : ''}`} title={cím} aria-label={cím}
         disabled={disabled} onClick={() => setNyitva(true)}><Ikon név="új" /></button>
-      {nyitva && <ListaPicker title={cím} opciók={opciók} onVálaszt={onVálaszt} onClose={() => setNyitva(false)} />}
-    </>
-  );
-}
-
-/** "+ Új ..." add button (`he-add-select` look) that opens a ListaPicker - replaces the native add <select>. */
-export function FelvevőGomb({ felirat, cím, opciók, onVálaszt, disabled }: FelvevőGombProps) {
-  const [nyitva, setNyitva] = useState(false);
-  return (
-    <>
-      <button type="button" className={`he-add-select${disabled ? ' he-add-disabled' : ''}`} disabled={disabled}
-        onClick={() => setNyitva(true)}>{felirat}</button>
       {nyitva && <ListaPicker title={cím} opciók={opciók} onVálaszt={onVálaszt} onClose={() => setNyitva(false)} />}
     </>
   );

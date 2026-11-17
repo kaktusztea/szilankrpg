@@ -16,7 +16,7 @@ export function TavharcKepzettsegekSection({ data, karakter, ...lista }: Props) 
   if (lista.gameMode && !lista.képzettségek.some(kp => kulcsok.includes(képzKulcs(kp)) && kp.szint > 0)) return null;
   return (
     <section className="he-section th-kepz-section">
-      <HarcmodorLista {...lista} kulcsok={kulcsok} felirat={távharciFelirat} felvételFelirat="+ Távolsági harcmodor..." tsz={karakter.tsz} />
+      <HarcmodorLista {...lista} kulcsok={kulcsok} felirat={távharciFelirat} felvételFelirat="+ Távolsági harcmodor..." fejléc="Távolsági harcmodorok" tsz={karakter.tsz} />
     </section>
   );
 }

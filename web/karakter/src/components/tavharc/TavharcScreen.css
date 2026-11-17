@@ -36,6 +36,7 @@
 
 /* --- Szekciók --- */
 .th-hajithato-title { margin-top: 12px; font-size: 14px; color: var(--text-soft); }
+.th-section .he-section-cim { display: flex; align-items: center; gap: 4px; }
 .th-section h3 { margin: 0 0 8px 0; font-size: var(--szakaszcim-meret); color: var(--color-szakasz); }
 
 /* --- Game mód kalkulátor --- */
