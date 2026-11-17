@@ -60,6 +60,7 @@ export function TulajdonsagokPopups({
     if (p.tempNév.trim()) setNév(p.tempNév.trim()); // a név nem lehet üres
     close({ editingNevek: false });
   };
+  const saveJátékos = () => { setJátékos(p.tempJátékos.trim()); close({ editingJátékos: false }); };
 
   const tszValues = Array.from(
     { length: data.konstansok.arányok.max_tsz - data.konstansok.arányok.min_tsz + 1 },
@@ -152,16 +153,20 @@ export function TulajdonsagokPopups({
       </OverlayPortal>
     )}
 
-    {/* Játékos szerkesztő */}
+    {/* Játékos szerkesztő: no OK / Mégse - Enter or tap outside saves and closes, Escape discards */}
     {p.editingJátékos && (
-      <TextInputPopup
-        label="Játékos neve"
-        value={p.tempJátékos}
-        onChange={v => close({ tempJátékos: v })}
-        onConfirm={() => { setJátékos(p.tempJátékos); close({ editingJátékos: false }); }}
-        onCancel={() => close({ editingJátékos: false })}
-        maxLength={MAX_NÉV}
-      />
+      <OverlayPortal
+        dismissible
+        onClose={saveJátékos}
+        onEscape={() => close({ editingJátékos: false })}
+      >
+        <div className="kep-prompt">
+          <label htmlFor="tul-jatekos-input">Játékos neve</label>
+          <input id="tul-jatekos-input" autoFocus maxLength={MAX_NÉV} value={p.tempJátékos}
+            onChange={e => close({ tempJátékos: e.target.value })}
+            onKeyDown={e => { if (e.key === 'Enter') saveJátékos(); }} />
+        </div>
+      </OverlayPortal>
     )}
   </>);
 }
