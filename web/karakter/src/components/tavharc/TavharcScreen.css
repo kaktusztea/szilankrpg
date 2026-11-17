@@ -194,7 +194,11 @@
 .th-kepz-section { margin-bottom: 12px; }
 
 /* --- Game mód fegyver picker --- */
-.th-game-fegyver-btn { flex: 1; min-width: 0; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.th-game-fegyver-btn { flex: 1; min-width: 0; text-align: left; display: flex; align-items: center; gap: 8px; }
+.th-game-fegyver-szoveg { display: flex; flex-direction: column; min-width: 0; }
+.th-game-fegyver-nev { display: flex; align-items: center; min-width: 0; white-space: nowrap; overflow: hidden; }
+.th-game-fegyver-btn .th-game-fegyver-nev strong { overflow: hidden; text-overflow: ellipsis; margin-left: 0; }  /* beats .he-field-btn strong (load order independent) */
+.th-game-fegyver-szoveg .he-fegyver-alcim { font-weight: normal; }
 
 .th-fegyver-picker {
   display: flex;
