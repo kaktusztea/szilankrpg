@@ -44,7 +44,17 @@ function Kocka({ size, className }: { size: number | string; className: string }
   );
 }
 
-const SAJÁT_IKONOK = { kocka: Kocka };
+function Vallalas({ size, className }: { size: number | string; className: string }) {
+  // Vállalás (képzettségpróba): a bold stroked "V" letter, lucide stroke style
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4}
+      strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M5 4 12 20 19 4" />
+    </svg>
+  );
+}
+
+const SAJÁT_IKONOK = { kocka: Kocka, vállalás: Vallalas };
 
 export type IkonNév = keyof typeof IKONOK | keyof typeof SAJÁT_IKONOK;
 

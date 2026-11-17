@@ -315,9 +315,11 @@
 
 /* Melee hit: the target's fixed VÉ drop (md/064_02_07) */
 .sebzes-ve-talalat {
-  font-size: 14px;
+  /* second result line under the 48px SP: same monospace look, half the size (the units of the SP line are 24px) */
+  font-size: 24px;
+  font-family: monospace;
   color: #e08a8a;
-  font-weight: 600;
+  font-weight: bold;
   margin-top: 6px;
   text-align: center;
 }
@@ -555,3 +557,10 @@
 }
 /* Unit after the damage result ("21 SP"): smaller and muted next to the 48px number */
 .sebzes-eredmeny-egyseg { font-size: 24px; color: var(--text-dim); }
+/* Breakdown toggle next to the "SP" unit: chevron rotates when open */
+.sebzes-bontas-nyil {
+  background: none; border: none; padding: 0 2px; margin-left: 2px; cursor: pointer;
+  color: var(--text-dim); font-size: 24px; line-height: 1; vertical-align: middle;
+}
+.sebzes-bontas-nyil .ikon { transition: transform 0.15s ease-out; }
+.sebzes-bontas-nyil.nyitva .ikon { transform: rotate(180deg); }

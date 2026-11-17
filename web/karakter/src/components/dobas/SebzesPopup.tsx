@@ -52,7 +52,7 @@ interface Props {
   /** Hide the automatic SP bonuses list inside StatikusBonuszBtn (e.g. távharc) */
   /** Fegyver Átütés értéke (informatív kijelzés, ha > 0) */
   átütés?: number;
-  /** Melee only (md/064_02_07): the target's VÉ drop on hit, shown next to the result. Omitted for ranged. */
+  /** md/064_02_07: the target's fixed VÉ drop on any hit (melee and ranged), shown next to the result. */
   véCsökkenésTalálatnál?: number;
   /** `találat`: true only if the damage step was actually resolved (rolled, or a non-damaging weapon) - closing before the roll is not a recorded hit. */
   onClose: (spEredmény?: number, találat?: boolean) => void;
@@ -77,6 +77,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
   // Ellenfél páncélosztálya (a mátrix SP-delta lookup kulcsa). null = még nincs választva.
   const [páncél, setPáncél] = useState<Páncélosztály | null>(null);
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
+  const [bontásNyitva, setBontásNyitva] = useState(false); // k20 + SP breakdown under the result, collapsed by default
 
   // SP_NINCS (-99) sentinel: a fegyver nem sebez (pl. Bola, Dobóháló, Lasszó, Fúvócső).
   // Korai kilépés (a hook-ok UTÁN, Rules of Hooks): a -99 SOHA nem kerül a delta/roll számításba.
@@ -224,14 +225,17 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
           </>
         ) : (
           <>
-            <div className="ke-dobas-result">{eredmény.végső}<span className="sebzes-eredmeny-egyseg"> SP</span></div>
-            <div className="ke-dobas-detail">
+            <div className="ke-dobas-result">{eredmény.végső}<span className="sebzes-eredmeny-egyseg"> SP</span>
+              <button type="button" className={`sebzes-bontas-nyil${bontásNyitva ? ' nyitva' : ''}`} aria-expanded={bontásNyitva}
+                aria-label="Sebzés bontása" title="Bontás" onClick={() => setBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
+            </div>
+            {bontásNyitva && <div className="ke-dobas-detail">
               k20{eredmény.dobás.rolls.length > 1
                 ? ` [${eredmény.dobás.rolls.join(', ')}] → ${eredmény.dobás.eredmény}`
                 : ` (${eredmény.dobás.eredmény})`}
               {' + '}SP ({eredmény.sp})
               {eredmény.bónusz !== 0 ? ` ${eredmény.bónusz > 0 ? '+' : ''}${eredmény.bónusz}` : ''}
-            </div>
+            </div>}
             {(átütés ?? 0) > 0 && <div className="sebzes-atutes-result">Átütés: {átütés}</div>}
             {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">VÉ −{véCsökkenésTalálatnál}</div>}
           </>

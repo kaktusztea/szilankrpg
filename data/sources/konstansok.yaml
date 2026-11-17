@@ -749,8 +749,8 @@ vé_csökkentés_alap:
   fegyverazonosság: 1
   fegyverelőny: 2
 
-# md/064_02_07_sebzes.md "VÉ csökkenés találatnál": közelharci találat után a célpont VÉ-je
-# mindig ennyivel csökken (akkor is, ha a páncél minden SP-t felfogott). Távharcra NEM vonatkozik.
+# md/064_02_07_sebzes.md "VÉ csökkenés találatnál": találat (közelharci ÉS távharci) után a célpont VÉ-je
+# mindig ennyivel csökken (akkor is, ha a páncél minden SP-t felfogott).
 vé_csökkenés_találatnál: 3
 
 # md/064_02_06_erobonusz_erolimit.md "Fegyverek Erő követelménye": ha a karakter Ereje

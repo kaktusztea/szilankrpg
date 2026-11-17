@@ -1,5 +1,6 @@
 import { Ikon } from '../common/Ikon';
 import type { ReactNode } from 'react';
+import { PopupOverlay } from '../PopupOverlay';
 import type { ProbaDobás } from '../../engine/dice';
 import { előnyHátrányLabel, eredményFelirat, type ÖsszetettEredmény } from '../../engine/proba/proba-common';
 
@@ -11,6 +12,26 @@ export function ProbaFejlec({ cím, vanEredmény, onReset, onClose }: { cím: st
       {cím}
       <button type="button" className="kep-proba-reset-btn" disabled={!vanEredmény} onClick={onReset} title="Újradobás" aria-label="Újradobás"><Ikon név="reset" /></button>
     </div>
+  );
+}
+
+/** Option list popup for a 0..max count (Összetett próba, Vállalás): picking closes it. */
+export function ProbaSzamPicker({ cím, max, érték, felirat, tiltott, onValaszt, onClose }: {
+  cím: string; max: number; érték: number; felirat: (n: number) => string;
+  tiltott?: (n: number) => boolean; onValaszt: (n: number) => void; onClose: () => void;
+}) {
+  return (
+    <PopupOverlay className="kep-prompt vallas-picker" onClose={onClose}>
+      <label className="kep-prompt-label-bold-mb">{cím}</label>
+      <div className="kep-prompt-flex-col-list">
+        {Array.from({ length: max + 1 }, (_, n) => n).map(n => (
+          <button key={n} type="button" className={`he-field-btn${érték === n ? ' vallas-active' : ''}`}
+            disabled={tiltott?.(n)} onClick={() => { onValaszt(n); onClose(); }}>
+            {felirat(n)}
+          </button>
+        ))}
+      </div>
+    </PopupOverlay>
   );
 }
 

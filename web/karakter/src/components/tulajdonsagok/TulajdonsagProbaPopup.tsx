@@ -8,7 +8,7 @@ import { ManualDicePicker } from '../dobas/ManualDicePicker';
 import type { PróbaKonstansok } from '../../engine/data-types';
 import { probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto } from './ProbaReszek';
+import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto, ProbaSzamPicker } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -139,17 +139,9 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
       </div>
 
       {összetettNyitva && (
-        <PopupOverlay className="kep-prompt vallas-picker" onClose={() => setÖsszetettNyitva(false)}>
-          <label className="kep-prompt-label-bold-mb">Összetett próba</label>
-          <div className="kep-prompt-flex-col-list">
-            {Array.from({ length: próba.összetett_max_másodlagos + 1 }, (_, n) => n).map(n => (
-              <button key={n} type="button" className={`he-field-btn${összetettDb === n ? ' vallas-active' : ''}`}
-                onClick={váltás(() => { setÖsszetettDb(n); setÖsszetettNyitva(false); })}>
-                {n === 0 ? 'Nincs összetett próba' : `+${n}M (${n} másodlagos próba)`}
-              </button>
-            ))}
-          </div>
-        </PopupOverlay>
+        <ProbaSzamPicker cím="Összetett próba" max={próba.összetett_max_másodlagos} érték={összetettDb}
+          felirat={n => (n === 0 ? 'Nincs összetett próba' : `+${n}M (${n} másodlagos próba)`)}
+          onValaszt={n => { setÖsszetettDb(n); d.reset(); }} onClose={() => setÖsszetettNyitva(false)} />
       )}
 
       {szitNyitva && (

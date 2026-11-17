@@ -127,6 +127,7 @@ export function CélzóDobasPopup({ cé, vé, sp, spBónuszok, átütés, céHat
         spBónuszok={spBónuszok}
         megjegyzések={[]}
         átütés={átütés}
+        véCsökkenésTalálatnál={data.konstansok.vé_csökkenés_találatnál}
         jelleg={jelleg}
         páncélMátrix={páncélMátrix}
         fegyverExtrák={fegyverExtrák}

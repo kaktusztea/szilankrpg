@@ -10,7 +10,7 @@ import { képzKulcs, képzettségNév as képzettségNévId } from '../../engine
 import { useLongPress } from '../../hooks/useLongPress';
 
 /** Melyik alpicker van nyitva a Képzettségpróba popupban. */
-export type ProbaPickerId = 'kit' | 'szit' | 'info' | 'hely' | null;
+export type ProbaPickerId = 'kit' | 'szit' | 'info' | 'hely' | 'vállalás' | 'összetett' | null;
 
 interface Props {
   openPicker: ProbaPickerId;

@@ -441,16 +441,6 @@
   padding: 0 6px;
   white-space: nowrap;
 }
-.kep-proba-extras-sep {
-  align-self: center;
-  color: var(--text-dim);
-  font-size: 14px;
-  padding: 0 2px;
-}
-/* A Vállalás + Összetett egyesített sor töltse ki a szélességet (mint a felette lévő chipek). */
-.kep-proba-vm-row { width: 100%; }
-.kep-proba-vm-row .kep-proba-extras-btn { flex: 1 1 0; width: auto; }
-.kep-proba-vm-row .kep-proba-extras-sep { flex: 0 0 auto; }
 .kep-proba-extras-btn {
   width: 36px;
   height: 30px;
@@ -630,11 +620,7 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 .kep-proba-szit-ertek { flex-shrink: 0; font-family: monospace; font-size: 20px; font-weight: bold; line-height: 1; position: relative; }
 .kep-proba-szit-ertek.kep-proba-kap-ures { font-weight: normal; }
 .kep-proba-szit-enyhitve { position: absolute; top: -4px; right: -8px; font-size: 9px; color: var(--success); }
-/* Vállalás | Összetett próba: two columns, small grey label above the buttons */
-.kep-proba-vm-racs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.kep-proba-vm-oszlop { display: flex; flex-direction: column; gap: 4px; }
-.kep-proba-vm-cim { font-size: 11px; color: var(--text-dim); }
-/* Helyettesítés: small icon button next to the skill name */
+/* Helyettesítés / Vállalás / Összetett: small icon buttons next to the skill name */
 .kep-proba-hely-btn {
   background: none; border: 1px solid var(--border-input); border-radius: 4px; padding: 1px 4px; margin-left: 6px;
   color: var(--text-dim); font-size: 14px; line-height: 1; vertical-align: middle; cursor: pointer;
@@ -669,7 +655,7 @@ span.kep-proba-szit-neg { color: var(--danger, #e55); font-weight: 700; }
 /* Kiterjesztő picker: "Törzstudás része" row - green check icon */
 .kep-proba-torzs-pipa { color: #81c784; margin-left: 4px; }
 
-/* Tulajdonságpróba: Összetett próba chip next to the name ("2M" text once chosen) */
+/* Próba popups: Összetett / Vállalás chip next to the name ("2M" / "V2" text once chosen) */
 .kep-proba-osszetett-chip { font-family: monospace; font-size: 13px; font-weight: bold; padding: 2px 5px; }
 .kep-proba-hely-btn:disabled { opacity: 0.35; cursor: default; }
 

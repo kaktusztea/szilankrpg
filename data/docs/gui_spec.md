@@ -449,7 +449,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - A `té_dobások` FIFO tömbbe (max 3, legújabb elöl) CSAK a végigvitt folyamat kerül: Sebzés eredménnyel (vagy "nem sebez" fegyverrel), illetve VÉ csökkentés eredménnyel. Ha a Támadó dobás (vagy a Sebzés a dobás előtt) Escape-pel / mellé kattintva félbemarad, NEM keletkezik bejegyzés.
     - Escape a **SebzesPopup**-ban: sebzésdobás ELŐTT csak a Sebzés zárul, vissza a Támadó dobáshoz (TÉ-eredmény megmarad);
       a sebzés-EREDMÉNYNÉL (és mellé kattintva) minden bezárul, a TÉ + SP együtt kerül a `té_dobások`-ba (2026-11-07).
-      Közelharci találatnál a bejegyzés a fix VÉ csökkenést is viszi (`konstansok.vé_csökkenés_találatnál` = 3, md/064_02_07; "nem sebez" fegyvernél is; sebzésdobás ELŐTTI mellé-kattintásnál semmi nem rögzül), és a Sebzés popup kiírja: `VÉ −3`. Távharcra nem vonatkozik.
+      Közelharci találatnál a bejegyzés a fix VÉ csökkenést is viszi (`konstansok.vé_csökkenés_találatnál` = 3, md/064_02_07; "nem sebez" fegyvernél is; sebzésdobás ELŐTTI mellé-kattintásnál semmi nem rögzül), és a Sebzés popup kiírja: `VÉ −3`. Távharcban (Célzó dobás → Sebzés) ugyanez a `VÉ −3` felirat látszik (a távharcnak nincs `té_dobások` bejegyzése).
       A Célzó dobás Sebzés popupja ugyanígy (dobás előtt vissza a Célzó dobáshoz, eredménynél mindent zár).
     - Komponensek: `TamadoDobasPopup.tsx`, `SebzesPopup.tsx`, `ElonyPicker.tsx`, `ManualDicePicker.tsx`, `KeziBonuszBtn.tsx` (kézi Statikus bónusz, közös mindhárom dobás-popupnak), `ExtrakInfo.tsx`, `combat-roll-info.ts`
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
