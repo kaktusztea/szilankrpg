@@ -32,6 +32,7 @@
   --color-fortely: #ce93d8;
   --color-kepzettseg: #42a5f5;
   --color-hatter: #e0a050;
+  --color-hatter-szin: #e6c04a;  /* Hátterek fül pötty sárgája (.szin-kor-sárga) + szekciócímek */
   --color-taktika: #90caf9;
   --color-szakasz: #8fb3d9;     /* section titles on the neutral tabs (Aktív, Harc, Távharc, Harcértékek) */
   --szakaszcim-meret: 18px;

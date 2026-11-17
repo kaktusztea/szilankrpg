@@ -38,4 +38,4 @@
 .szin-kor { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 50%; vertical-align: -0.08em; flex-shrink: 0; }
 .szin-kor-kék { background: var(--color-kepzettseg); }
 .szin-kor-lila { background: var(--color-fortely); }
-.szin-kor-sárga { background: #e6c04a; }
+.szin-kor-sárga { background: var(--color-hatter-szin); }

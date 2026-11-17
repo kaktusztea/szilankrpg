@@ -7,7 +7,7 @@
 
 /* --- Szekciók --- */
 .hatter-cloud-section { margin-bottom: 14px; }
-.hatter-cloud-title { display: block; font-size: var(--szakaszcim-meret); font-weight: bold; color: var(--color-hatter); margin-bottom: 6px; }
+.hatter-cloud-title { display: block; font-size: var(--szakaszcim-meret); font-weight: bold; color: var(--color-hatter-szin); margin-bottom: 6px; }
 .hatter-cloud-cat { margin-bottom: 8px; }
 .hatter-cat-label { display: block; font-size: 13px; color: var(--color-hatter-cat); font-weight: bold; margin-bottom: 4px; }
 .hatter-cloud { display: flex; flex-wrap: wrap; gap: 4px; }
