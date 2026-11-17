@@ -153,6 +153,8 @@ export interface HarciHelyzetEntry {
   tiltott_fegyverfogások?: string[];
   kizár_helyzetek?: string[];
   hatások?: StatuszHatas[];
+  /** ⚠ megjegyzés a dobás-popupban, amíg a helyzet aktív: dobás-cél (esemény-id) → szöveg (pl. `ké_dobás`). */
+  megjegyzés_dobásra?: Record<string, string>;
   /** Nevesített tiltások (§42.4): fegyverenként kiértékelve, `tiltás:<id>`-ként hivatkozható. */
   tiltások?: { id: string; leírás: string; feltétel: { forrás: string; operátor: string; érték: unknown }[] }[];
   fegyver_override?: {

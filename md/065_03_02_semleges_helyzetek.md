@@ -79,7 +79,7 @@ Hátrány-1: Kard méretű
 Hátrány-2: Csatabárd méretű
 ```
 
-🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
+🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `Előny+1` (1.fok), `Előny+2` (2.fok) - összeadódik a fegyverméret `Hátrányával`
 
 #### Ha elveszíted a kezdeményezést
 
@@ -115,7 +115,7 @@ Hátrány-2: Csatabárd méretű
 - Sikeres: előhúztad fegyvered, teljes harcértékeddel védekezhetsz
 - Sikertelen: [Pusztakezes harcértékeiddel](068_01_06_puszta_kez.md) védekezel a kör végéig
 
-🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
+🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `Előny+1` (1.fok), `Előny+2` (2.fok) - összeadódik a fegyverméret `Hátrányával`
 
 ### ⚜️ `3.`Mindkét fél fegyverrántást alkalmaz
 

@@ -96,6 +96,11 @@ class AktivFulGates(unittest.TestCase):
         next(x for x in h if x.get('hatások'))['hatások'][0]['mód'] = 'nincs_ilyen_mód'
         bukik(self, validate_harci_helyzet_hatasok, h, self.A.effekt_modok, self.A.esemenyek, self.A.harcertek_celok)
 
+    def test_helyzet_megjegyzes_dobasra_ismeretlen_cel_bukik(self):
+        h = copy.deepcopy(self.A.helyzetek)
+        next(x for x in h if x.get('megjegyzés_dobásra'))['megjegyzés_dobásra']['nincs_ilyen_cél'] = 'szöveg'
+        bukik(self, validate_harci_helyzet_hatasok, h, self.A.effekt_modok, self.A.esemenyek, self.A.harcertek_celok)
+
     def test_hatas_katalogus_ismeretlen_mod_bukik(self):
         h = copy.deepcopy(self.A.hatasok); h[0]['mechanika'][0]['mód'] = 'nincs_ilyen_mód'
         bukik(self, validate_hatasok_katalogus, h, self.A.effekt_modok, self.A.esemenyek)

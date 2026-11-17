@@ -208,6 +208,11 @@ def validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, harcertek
             if not isinstance(x, dict): errors.append(f"{hctx}: nem objektum"); continue
             if x.get('mód') not in effekt_modok: errors.append(f"{hctx}: ismeretlen mód: '{x.get('mód')}'")
             if x.get('cél') not in valid_cel: errors.append(f"{hctx}: ismeretlen cél: '{x.get('cél')}'")
+        # megjegyzés_dobásra: cél = létező esemény-id, szöveg nem üres
+        for cél, szöveg in (h.get('megjegyzés_dobásra') or {}).items():
+            hctx = f"harci_helyzetek ({h.get('név', '?')}) megjegyzés_dobásra[{cél}]"
+            if cél not in valid_cel: errors.append(f"{hctx}: ismeretlen cél")
+            if not (isinstance(szöveg, str) and szöveg.strip()): errors.append(f"{hctx}: üres szöveg")
     hibak_kilep("Harci helyzet hatás validációs hibák", errors)
 
 

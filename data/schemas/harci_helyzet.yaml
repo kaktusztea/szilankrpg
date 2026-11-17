@@ -13,6 +13,8 @@ harci_helyzetek:
     tiltott_fegyverfogások: [] # opcionális, lista (ezen fegyverfogások disabled amíg ez a helyzet aktív)
     csoport: ""                # kötelező, "játékos" | "km" - picker csoportosítás
     rejtett: false             # opcionális, bool (ha true: nem jelenik meg a picker-ben, automatikus)
+    # ⚠ megjegyzés a dobás-popupban, amíg a helyzet aktív: dobás-cél (esemény-id) → szöveg (pl. ké_dobás: Kezdeményezés popup)
+    megjegyzés_dobásra: {}     # opcionális, map (cél → string)
     # Nevesített tiltások (engine_spec §42.4): fegyverenként kiértékelt korlátozások; `tiltás:<id>` hivatkozás,
     # feloldás effekttel ({cél: "tiltás:<id>", mód: letilt}). feltétel forrás: fegyver.fegyverhossz | fegyver.harcmodor
     tiltások:                  # opcionális

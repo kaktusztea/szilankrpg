@@ -4,6 +4,8 @@ Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél.
 
 Bónuszok 🗡️[Fegyverrántás váratlanul](../065_03_02_semleges_helyzetek.md#fegyverrántás-váratlanul) harci helyzetben (az alkalmazó karakter oldalán):
 
+Az `Előny` a fegyverméret `Hátrányával` összeadódik (az Előny/Hátrány szintek halmozódnak, a keret `[-2, +2]`).
+
 ### 1. fok
 
 🔒 Harcmodor: `4.szint`
@@ -12,8 +14,7 @@ Bónuszok 🗡️[Fegyverrántás váratlanul](../065_03_02_semleges_helyzetek.m
 
 ```
 Fegyverrántás Kezdeményezés dobásnál
-  [Hátrány-2; Előny+2] skálán
-  1 lépést felfele ugrasz
+  Előny+1
 ```
 
 ### 2. fok
@@ -24,8 +25,7 @@ Fegyverrántás Kezdeményezés dobásnál
 
 ```
 Fegyverrántás Kezdeményezés dobásnál
-  [Hátrány-2; Előny+2] skálán
-  2 lépést felfele ugrasz
+  Előny+2
 ```
 
 ---

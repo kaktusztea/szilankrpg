@@ -1268,7 +1268,8 @@ A táblák a `harci_helyzetek.json` kivonatai (a hatás-szöveg az `infó` mező
 | Helyzet | id | Infó (data: `infó`) |
 |---------|-----|---------|
 | Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 1 fegyverhossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0. |
-| Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza. |
+| Fegyverrántás váratlanul | fegyverrántás | KÉ dobás: fegyverméret Hátrány (KM dönt, a KÉ popup ⚠ megjegyzése: `megjegyzés_dobásra`). Fegyverrántás fortély: Előny+1 / +2 `ké_dobás`-ra. |
+| Fegyverrántás meglepetésből | fegyverrántás_meglepetésből | Előny+1 `ké_dobás`. Kizárja a Fegyverrántás váratlanul helyzetet (és fordítva); a fortély lépése nem jár. |
 | Közrefogás | közrefogás | Semlegesíti ellenfél Fegyverelőnyét → Fegyverazonosság. |
 | Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharcos 2.fok bónuszai relevánsak. |
 | Takarásban harcolás | takarásban | Hátrány-1 TÉ, VÉ: +5. |

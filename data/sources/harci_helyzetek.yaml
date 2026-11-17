@@ -89,7 +89,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: ["magasabbról", "levegőből"]
 - név: "Fegyverrántás váratlanul"
-  infó: "KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza."
+  infó: "KÉ dobás: fegyverméret Hátrány (KM dönt). Fegyverrántás fortély: Előny+1 / +2."
   megjegyzések:
   - text: "Fegyvertelenül, harc közben, kör elején próbálod fegyvered előkapni, fegyveres ellenféllel szemben."
   - text: "Kezdeményezésed fegyverméret módosítókkal (KM dönt): alapdobás Tőr méretű, Hátrány-1 Kard méretű, Hátrány-2 Csatabárd méretű."
@@ -97,14 +97,30 @@ harci_helyzetek:
   - text: "Ha megnyered a kezdeményezést: előrántottad fegyvered, teljes fegyveres harcértéked érvényesül, ellenfeled támad azonnal, utána visszatámadhatsz, nem veszítesz támadást."
   - text: "Ha megnyered a kezdeményezést +3 túldobással: előrántottad fegyvered, teljes fegyveres harcértéked érvényesül, te támadsz azonnal."
   - text: "Kör közben, Akció után: Harcmodor képzettségpróbát dobsz fegyverméret módosítókkal, célszám 12; sikeres esetén teljes harcértékeddel védekezhetsz, sikertelen esetén Pusztakezes harcértékeiddel a kör végéig."
-  - text: "Meglepetésből vagy észrevétlen fegyverrántásnál Előny+1 KÉ jár, és nyert kezdeményezés esetén a Meglepetés bónuszait is megkapod."
+  - text: "Meglepetésből vagy észrevétlen fegyverrántásnál lásd a Fegyverrántás meglepetésből helyzetet."
   - text: "Nagy kétkezes fegyverek (szálfegyverek) esetén értelmetlen a fegyverrántás."
   hatások: []
   id: "fegyverrántás"
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["fegyverrántás_meglepetésből"]
+  megjegyzés_dobásra:
+    ké_dobás: "Fegyverméret (KM dönt): Tőr méretű: nincs, Kard méretű: Hátrány-1, Csatabárd méretű: Hátrány-2. Állítsd be a léptetőn."
+- név: "Fegyverrántás meglepetésből"
+  infó: "Előny+1 KÉ dobásra. Nyert kezdeményezésnél a Meglepetés bónuszait is megkapod."
+  megjegyzések:
+  - text: "Beszélgetsz valakivel, váratlanul fegyvert rántasz és megszúrod (meglepetésből, vagy észrevétlen fegyverrántás)."
+  - text: "Nyert Kezdeményezés esetén a Meglepetés helyzet bónuszait kapod: vedd fel a Meglepetés helyzetet is."
+  hatások:
+  - mód: "előny"
+    érték: 1
+    cél: "ké_dobás"
+  id: "fegyverrántás_meglepetésből"
+  csoport: "semleges"
+  rejtett: false
+  tiltja_taktikákat: false
+  kizár_helyzetek: ["fegyverrántás"]
 - név: "Földön fekve"
   infó: "Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik."
   megjegyzések: []

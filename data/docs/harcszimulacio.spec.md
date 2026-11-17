@@ -44,7 +44,7 @@ Ha a specben szereplő szám és a data layer ütközik, **a data layer nyer** -
 | Pajzsok | `data/tables/pajzsok.json` |
 | Harcmodor szint → TÉ/VÉ/CÉ bónusz | `data/tables/harcmodor_kepzettsegek_bonuszok.json` |
 | Taktikák (19 db) | `data/tables/taktikak.json` |
-| Harci helyzetek (39 db) | `data/tables/harci_helyzetek.json` |
+| Harci helyzetek (40 db) | `data/tables/harci_helyzetek.json` |
 | Státuszok (19 db, 50 fok) | `data/tables/statuszok.json` |
 | Fortélyok (177 db) | `data/tables/fortelyok.json` |
 | Kalkulációs szabályok (53) | `data/rules.json` |
@@ -800,7 +800,7 @@ Távharci taktikák (a közelharci szimulációban nem használatosak):
 
 ## §8 Harci helyzetek - gépi tábla
 
-Forrás: `data/tables/harci_helyzetek.json` (39 db). Csak a közelharcra hatók.
+Forrás: `data/tables/harci_helyzetek.json` (40 db). Csak a közelharcra hatók.
 
 ### Dobásokra hatók
 

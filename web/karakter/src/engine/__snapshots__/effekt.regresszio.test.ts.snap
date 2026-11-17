@@ -61,6 +61,14 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
     },
     "t": {},
   },
+  "helyzet Fegyverrántás meglepetésből": {
+    "f": {
+      "KÉ": 3,
+      "SFÉ": 2,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
   "helyzet Fegyverrántás váratlanul": {
     "f": {
       "KÉ": 3,
@@ -735,6 +743,14 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
     "t": {},
   },
   "helyzet Fegyverhátrány": {
+    "f": {
+      "KÉ": 6,
+      "SFÉ": 4,
+      "harckeret": 6,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverrántás meglepetésből": {
     "f": {
       "KÉ": 6,
       "SFÉ": 4,
@@ -1423,6 +1439,14 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > minden fort�
     },
     "t": {},
   },
+  "helyzet Fegyverrántás meglepetésből": {
+    "f": {
+      "KÉ": 9,
+      "SFÉ": 6,
+      "harckeret": 8,
+    },
+    "t": {},
+  },
   "helyzet Fegyverrántás váratlanul": {
     "f": {
       "KÉ": 9,
@@ -2091,6 +2115,13 @@ exports[`fortély- és taktika-módosítók regressziós snapshot > teszt2 1`] =
     "t": {},
   },
   "helyzet Fegyverhátrány": {
+    "f": {
+      "KÉ": 5,
+      "harckeret": 4,
+    },
+    "t": {},
+  },
+  "helyzet Fegyverrántás meglepetésből": {
     "f": {
       "KÉ": 5,
       "harckeret": 4,

@@ -7,7 +7,7 @@ import { KeziBonuszBtn } from '../dobas/KeziBonuszBtn';
 import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
 import { aktívTerületen } from '../../engine/taktika/taktika-helpers';
 import { calcHarcComputed } from '../../engine/harc/harc-computed';
-import { collectKéDobásInfo, netElőnySzint } from '../../engine/harc/combat-roll-info';
+import { collectKéDobásInfo, helyzetDobásMegjegyzések, netElőnySzint } from '../../engine/harc/combat-roll-info';
 import { rollElőnyHátrányK20, előnyHátrányLabel, type ProbaDobás } from '../../engine/dice';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, UndoPatch } from '../../engine/types';
@@ -46,6 +46,7 @@ export function KeDobasPopup({ data, karakter, session, setSession, pushUndo, on
     () => collectKéDobásInfo(session, karakter, data, hc.feltételTeljesül).kéHatások,
     [session, karakter, data, hc.feltételTeljesül],
   );
+  const megjegyzések = helyzetDobásMegjegyzések(session, data, 'ké_dobás');
   const hatásSzint = netElőnySzint(kéHatások);
   const [szint, setSzint] = useState(hatásSzint);
   // Dobás ELŐTT a szint követi az aktív hatásokat (a helyzet-váltás a popupból azonnal látszik); dobás után nem írjuk felül.
@@ -79,6 +80,16 @@ export function KeDobasPopup({ data, karakter, session, setSession, pushUndo, on
 
         {!eredmény ? (
           <>
+            {megjegyzések.length > 0 && (
+              <div className="dobas-info-list dobas-notes">
+                {megjegyzések.map((m, i) => (
+                  <div key={i} className="dobas-info-item">
+                    <span className="dobas-info-badge note">⚠</span>
+                    <span className="dobas-info-source">{m.forrás}: {m.szöveg}</span>
+                  </div>
+                ))}
+              </div>
+            )}
             {/* Formula: KÉ (+ hand bonus) + k20 */}
             <div className="dobas-keplet">
               {alap}

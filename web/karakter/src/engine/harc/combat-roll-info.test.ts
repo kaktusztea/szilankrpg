@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { calcHarcComputed } from './harc-computed';
 import { elsődlegesMód } from './fegyver-calc';
-import { collectDobásInfo, collectCéDobásInfo, collectKéDobásInfo, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, collectCéDobásInfo, collectKéDobásInfo, helyzetDobásMegjegyzések, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../types';
 import type { GameData } from '../data-loader';
 import type { SebzésjellegPáncélMátrix, FegyverAlap } from '../data-types';
@@ -265,5 +265,27 @@ describe('collectKéDobásInfo - Fegyverrántás és státuszok', () => {
     expect(kiszámol(1, true, ['Fizikai (3)'])).toBe(-1);
     expect(kiszámol(2, true, ['Fizikai (3)'])).toBe(0);
     expect(kiszámol(null, false, ['Fizikai (3)'])).toBe(-2);
+  });
+});
+
+describe('helyzetDobásMegjegyzések / Fegyverrántás meglepetésből', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const sessionHelyzet = (aktív_helyzetek: string[]) => ({ ...alap.session, aktív_taktikák: [], aktív_státuszok: [], aktív_helyzetek } as Session);
+
+  it('a Fegyverrántás váratlanul a fegyverméret-megjegyzést adja a KÉ dobásra, mást nem', () => {
+    const m = helyzetDobásMegjegyzések(sessionHelyzet(['Fegyverrántás váratlanul']), data, 'ké_dobás');
+    expect(m).toHaveLength(1);
+    expect(m[0].szöveg).toMatch(/Kard méretű: Hátrány-1/);
+    expect(helyzetDobásMegjegyzések(sessionHelyzet(['Fegyverrántás váratlanul']), data, 'té_dobás')).toEqual([]);
+    expect(helyzetDobásMegjegyzések(sessionHelyzet([]), data, 'ké_dobás')).toEqual([]);
+  });
+
+  it('Fegyverrántás meglepetésből: Előny+1 KÉ, a fortély lépése nem jár hozzá, a két helyzet kizárja egymást', () => {
+    const session = sessionHelyzet(['Fegyverrántás meglepetésből']);
+    const k = { ...alap, fortélyok: [{ id: 'fegyverrántás', fok: 2, elem: '' }], session } as Karakter;
+    expect(netElőnySzint(collectKéDobásInfo(session, k, data).kéHatások)).toBe(1);
+    expect(data.harciHelyzetek.find(h => h.id === 'fegyverrántás')?.kizár_helyzetek).toContain('fegyverrántás_meglepetésből');
+    expect(data.harciHelyzetek.find(h => h.id === 'fegyverrántás_meglepetésből')?.kizár_helyzetek).toContain('fegyverrántás');
   });
 });

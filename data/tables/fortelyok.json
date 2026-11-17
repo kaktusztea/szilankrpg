@@ -3071,7 +3071,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Fegyverrántás Kezdeményezés dobásnál: 1 lépést felfelé ugrasz az Előny/Hátrány skálán."
+          "Fegyverrántás Kezdeményezés dobásnál: Előny+1 (a fegyverméret Hátrányával összeadódik)."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 4.szint"
@@ -3104,7 +3104,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Fegyverrántás Kezdeményezés dobásnál: 2 lépést felfelé ugrasz az Előny/Hátrány skálán."
+          "Fegyverrántás Kezdeményezés dobásnál: Előny+2 (a fegyverméret Hátrányával összeadódik)."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"

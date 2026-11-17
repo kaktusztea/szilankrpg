@@ -363,7 +363,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | `kepzettsegek/{primer,szekunder}/*.yaml` | Képzettség definíciók (81 db, stabil `id` + `név`) | `kepzettsegek.json` |
 | `fajok/*.yaml` | Faj hátterek (27 db) | `fajok.json`, `faj_tulajdonsag_keretek.json`, `faj_fortelyok.json` (faj → {fortély: max_fok}, `faj` követelmény) |
 | `taktikak.yaml` | Harci taktikák (19 db) | `taktikak.json` |
-| `harci_helyzetek.yaml` | Harci helyzetek (39 db) | `harci_helyzetek.json` |
+| `harci_helyzetek.yaml` | Harci helyzetek (40 db) | `harci_helyzetek.json` |
 | `manoverek.yaml` | Manőverek (38 db) | `manoverek.json` |
 | `statuszok.yaml` | Státuszok (19 db) | `statuszok.json` |
 | `hatasok.yaml` | Hatás mechanikák | - (csak validáció, az app nem tölti be) |

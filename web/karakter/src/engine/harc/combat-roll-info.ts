@@ -10,7 +10,7 @@ import { createFeltételEvaluator } from '../feltetel-eval';
 import {
   gyűjtHelyzetEffektek, gyűjtTaktikaEffektek, gyűjtStátuszEffektek, gyűjtFortélyEffektek, kockaSzint, tiltásokFegyverre, type Effekt,
 } from '../effekt';
-import { lookupTávfegyver, taktikaDef } from '../lookup';
+import { lookupTávfegyver, taktikaDef, helyzetDef } from '../lookup';
 import type { FegyverAlap } from '../data-types';
 
 type DobásCél = 'ké_dobás' | 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
@@ -163,6 +163,18 @@ export function collectKéDobásInfo(
 ): { kéHatások: DobásHatás[] } {
   const { hatások } = collectSessionHatások(session, karakter, data, new Set(['ké_dobás']), undefined, feltételTeljesül);
   return { kéHatások: hatások };
+}
+
+/** Az aktív harci helyzetek ⚠ megjegyzései egy dobás-célra (harci_helyzetek.yaml `megjegyzés_dobásra`), aktiválási sorrendben. */
+export function helyzetDobásMegjegyzések(
+  session: Pick<Session, 'aktív_helyzetek'>, data: GameData, cél: DobásCél,
+): { forrás: string; szöveg: string }[] {
+  const ki: { forrás: string; szöveg: string }[] = [];
+  for (const név of session.aktív_helyzetek) {
+    const szöveg = helyzetDef(data, név)?.megjegyzés_dobásra?.[cél];
+    if (szöveg) ki.push({ forrás: név, szöveg });
+  }
+  return ki;
 }
 
 /** Collect effects for CÉ dobás (Távharc fül). */
