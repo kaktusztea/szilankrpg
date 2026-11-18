@@ -4,9 +4,9 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi seg�
 
 Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású matériát.
 
-[Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
+[Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes vagy gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
 
-Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önállóan **NEM** vagy képes készíteni.
+Egy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önállóan **NEM** vagy képes készíteni.
 
 Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
 
@@ -85,18 +85,17 @@ Emlékezet, Intelligencia
 
 - Csillagálláshoz kötött begyűjtés és előkészítés.
 - Gyengén mágikus főzet előkészítése recept alapján
-- Szörnyetegek testéből hatóanyag kinyerése.
+- Szörnyetegek, bestiák testéből hatóanyag kinyerése.
 
 #### Rendkívül nehéz (18) 🎲
 
-- Tömérdek összetevőből álló készítmény hibátlan elkészítése recept alapján.
-- Hamisítványról ránézésre eldönteni, mennyire veszélyes.
+- Sok összetevőből álló készítmény hibátlan elkészítése recept alapján.
 - Ritka mágikus növény biztonságos kezelése, tartósítása.
-- Mágikus szörnyek testrészeinek hatóanyagait kinyerni – de nagy gyógy- vagy varázsital készítéséhez mágushasználó kell.
+- Mágikus szörnyek, bestiák testrészeinek hatóanyagait kinyerni.
 
 #### Emberfeletti (21) 🎲
 
-- Bonyolult, évtizedekig őrzött recept hibátlan reprodukálása.
+- Bonyolult, elfeledett, nagyon egyedi recept hibátlan reprodukálása.
 - Legendás lény (pl. unikornis, mantikór, sárkány) szervének kezelése és hatásainak kinyerése, tartósítása.
 
 ---
