@@ -204,7 +204,7 @@ export function ManoverMpPicker({ költött, max, onSelect, onClose }: { költö
       <label className="kep-prompt-label-bold-mb">MP használata</label>
       <div className="kep-prompt-flex-fok">
         {Array.from({ length: max + 1 }, (_, n) => (
-          <button type="button" key={n} className={`fort-fok-btn${költött === n ? ' active' : ''}`} aria-pressed={költött === n}
+          <button type="button" key={n} className={`fort-fok-btn szin-taktika${költött === n ? ' active' : ''}`} aria-pressed={költött === n}
             onClick={() => { onSelect(n); onClose(); }}>{n === 0 ? '0' : `+${n}`}</button>
         ))}
       </div>

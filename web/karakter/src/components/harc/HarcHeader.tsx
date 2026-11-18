@@ -194,7 +194,7 @@ export function HarcHeader({
             <div className="mp-picker-title">Manőver Pont</div>
             <div className="mp-picker-grid">
               {Array.from({ length: manöverPont + 1 }, (_, i) => (
-                <button key={i} className={`fort-fok-btn${i === aktMP ? ' active' : ''}`}
+                <button key={i} className={`fort-fok-btn szin-taktika${i === aktMP ? ' active' : ''}`}
                   onClick={() => {
                     const használt = manöverPont - i;
                     if (használt !== session.manőver_pont_használt) {

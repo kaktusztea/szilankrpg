@@ -109,10 +109,12 @@
   font-size: 14px;
 }
 /* Harci dobás chip hover: bordó keret. Dupla-class, mert a base .proba-hub-chip:hover később van. */
-.proba-hub-chip.proba-hub-chip-harc:hover {
-  border-color: var(--color-harc-dobas);
-  /* +1px inner ring = 2px visual border without changing the chip size (no layout shift on hover) */
-  box-shadow: inset 0 0 0 1px var(--color-harc-dobas);
+@media (hover: hover) {
+  .proba-hub-chip.proba-hub-chip-harc:hover {
+    border-color: var(--color-harc-dobas);
+    /* +1px inner ring = 2px visual border without changing the chip size (no layout shift on hover) */
+    box-shadow: inset 0 0 0 1px var(--color-harc-dobas);
+  }
 }
 .proba-hub-chip {
   padding: 8px 6px;
@@ -127,16 +129,22 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.proba-hub-chip:hover {
-  border-color: var(--accent, #c8a24a);
+@media (hover: hover) {
+  .proba-hub-chip:hover {
+    border-color: var(--accent, #c8a24a);
+  }
 }
 /* Tulajdonságpróba chip hover: fehér keret. */
-.proba-hub-chip-tul:hover {
-  border-color: #fff;
+@media (hover: hover) {
+  .proba-hub-chip-tul:hover {
+    border-color: #fff;
+  }
 }
 /* Képzettségpróba chip hover: képzettség-kék keret. */
-.proba-hub-chip-kep:hover {
-  border-color: var(--color-kepzettseg);
+@media (hover: hover) {
+  .proba-hub-chip-kep:hover {
+    border-color: var(--color-kepzettseg);
+  }
 }
 /* NJK mode: a skill the NJK has not taken (untrained roll) - dimmed, italic */
 .proba-hub-chip-nincs { color: var(--text-dim); font-style: italic; border-style: dashed; }
@@ -146,8 +154,10 @@
   color: #e08a8a;
 }
 /* Képzetlenül a képzettség-szekcióban van → hover szintén képzettség-kék (nem piros). */
-.proba-hub-chip-kepzetlen:hover {
-  border-color: var(--color-kepzettseg);
+@media (hover: hover) {
+  .proba-hub-chip-kepzetlen:hover {
+    border-color: var(--color-kepzettseg);
+  }
 }
 .kep-proba-kepzetlen-jel {
   font-size: 11px;
