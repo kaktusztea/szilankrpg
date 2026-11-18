@@ -188,7 +188,7 @@ Minimum 100 sikeres orgyilkosság.
 
 A rengeteg gyilkosság megmérgezte a lelkedet, ha nem leplezed, Aurádon jól láthatóak a sötét foltok, melyek beszennyezik.
 
-Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
+Nem gyógyíthatsz mágikus úton, a világi [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
 
 <br />
 

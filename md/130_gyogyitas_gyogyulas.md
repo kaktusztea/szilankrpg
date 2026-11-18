@@ -36,7 +36,7 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi seg�
 
 ---
 
-## ⚜️ [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) képzettség
+## ⚜️ [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) képzettség
 
 Alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi.
 

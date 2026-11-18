@@ -44,7 +44,7 @@ A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék h
 
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
-- [Orvoslás](orvoslas.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
+- [Kirurgia](kirurgia.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 - [Alkímia](../../kepzettsegek.szekunder/alkimia.md) képzettség
 
 ### Domináns Tulajdonságok

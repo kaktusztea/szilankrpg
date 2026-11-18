@@ -2,8 +2,8 @@
 
 Három forrásból vonhatóak ki méreg-alapanyagok. Ezeket két képzettség fedi le:
 
-- Képzettség: [Vajákosság](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.szekunder/vajakossag.md) → növényből/állatból
-- Képzettség: [Alkímia](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.szekunder/alkimia.md) → ásványokból
+- Képzettség: [Vajákosság](kepzettsegek.szekunder/vajakossag.md) → növényből/állatból
+- Képzettség: [Alkímia](kepzettsegek.szekunder/alkimia.md) → ásványokból
 
 ### Egyéni beszerzés követelménye
 

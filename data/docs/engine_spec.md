@@ -1864,8 +1864,8 @@ Közelharc/Kardvívás/Rombolás/Lándzsavívás/Ostorharc, Mesterfegyvernél a 
 | Vezető: Hajóskapitány | 2 | Hajózás ≥ 9 |
 | Vezető: Nyomozó | 1 | Nyomozás ≥ 6 |
 | Vezető: Nyomozó | 2 | Nyomozás ≥ 9 |
-| Vezető: Orvosprofesszor | 1 | Orvoslás ≥ 6 |
-| Vezető: Orvosprofesszor | 2 | Orvoslás ≥ 9 |
+| Vezető: Orvosprofesszor | 1 | Kirurgia ≥ 6 |
+| Vezető: Orvosprofesszor | 2 | Kirurgia ≥ 9 |
 | Vezető: Rendező | 1 | Előadóművészet ≥ 6 |
 | Vezető: Rendező | 2 | Előadóművészet ≥ 9 |
 | Vezető: Tudósprofesszor | 1 | Kvantikum ≥ 6 |

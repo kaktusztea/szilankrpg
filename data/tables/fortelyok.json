@@ -1941,14 +1941,14 @@
       {
         "fok": 1,
         "hatás": [
-          "+2 bónusz csoportos Orvoslás értékre."
+          "+2 bónusz csoportos Kirurgia értékre."
         ],
         "követelmény": [
-          "Orvoslás - 6.szint"
+          "Kirurgia - 6.szint"
         ],
         "követelmények": [
           {
-            "név": "orvoslás",
+            "név": "kirurgia",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -1961,8 +1961,8 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "",
-            "megjegyzés": "csoportos Orvoslás értékre",
-            "alcél": "képzettség:orvoslás"
+            "megjegyzés": "csoportos Kirurgia értékre",
+            "alcél": "képzettség:kirurgia"
           }
         ],
         "próba_enyhítések": []
@@ -1970,14 +1970,14 @@
       {
         "fok": 2,
         "hatás": [
-          "+4 bónusz csoportos Orvoslás értékre."
+          "+4 bónusz csoportos Kirurgia értékre."
         ],
         "követelmény": [
-          "Orvoslás - 9.szint"
+          "Kirurgia - 9.szint"
         ],
         "követelmények": [
           {
-            "név": "orvoslás",
+            "név": "kirurgia",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -1990,8 +1990,8 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "",
-            "megjegyzés": "csoportos Orvoslás értékre",
-            "alcél": "képzettség:orvoslás"
+            "megjegyzés": "csoportos Kirurgia értékre",
+            "alcél": "képzettség:kirurgia"
           }
         ],
         "próba_enyhítések": []

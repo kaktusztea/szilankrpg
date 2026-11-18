@@ -1,10 +1,10 @@
-## 🔵 Orvoslás
+## 🔵 Kirurgia
 
 → [STUDY: Gyógyítás](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.gyogyitas.gyogyulas)
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-Igen sokszintű képzettség, amely alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi. Az Orvoslás tehát magában foglalja a sebgyógyítást és nagyon fejlett szinten a gyógyítást is.
+Igen sokszintű képzettség, amely alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi. A Kirurgia tehát magában foglalja a sebgyógyítást és nagyon fejlett szinten a gyógyítást is.
 
 A képzettség az alábbi tevékenységeket fedi le:
 
@@ -45,7 +45,7 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 
 - [Élettan](../../fortelyok.altalanos/elettan.md) fortély
 - [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
-- [Vezető: Orvosprofesszor](../../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos orvoslás esetén bónuszt ad
+- [Vezető: Orvosprofesszor](../../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos kirurgia esetén bónuszt ad
 
 ### Speciális
 

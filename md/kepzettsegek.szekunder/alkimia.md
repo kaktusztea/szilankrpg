@@ -5,7 +5,11 @@ Próba dobható.
 A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakterülete. Labor (akár tábori is) felszerelést igényel. Ide tartoznak az alábbi ismeretek:
 
 - anyagok összetevőinek elemzése saját laboreszközökkel; kémiai kísérletek
-- szerves és növényi anyagok kutatása
+- szerves anyagok kutatása
+- kristályok kutatása
+- szerves ÉS növényi alapanyagok labori alkotóelemekre bontása, koncentrátumok készítése. Modern gyógyszer készítésére nem alkalmas.
+- szerves, labort igénylő drogok elállítása
+- pálinkafőzés, lepárlás
 - savas, lúgos anyagok, illatszerek, ragasztók, festékek előállítása
 - arany transzmutáció (nagyon magas szinten - félmágikus hatás)
 - mágiához szükséges fizikai komponensek létrehozása, szakszerű tárolása, tartósítása

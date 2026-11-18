@@ -380,6 +380,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
+  "Eszmélet (1) | kirurgia": {
+    "források": [
+      "Eszmélet (Bódultság): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
   "Eszmélet (1) | kvantikum": {
     "források": [
       "Eszmélet (Bódultság): -1",
@@ -472,13 +479,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Eszmélet (1) | nyomozás": {
-    "források": [
-      "Eszmélet (Bódultság): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Eszmélet (1) | orvoslás": {
     "források": [
       "Eszmélet (Bódultság): -1",
     ],
@@ -940,6 +940,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Eszmélet (2) | kirurgia": {
+    "források": [
+      "Eszmélet (Kábultság): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Eszmélet (2) | kvantikum": {
     "források": [
       "Eszmélet (Kábultság): -2",
@@ -1032,13 +1039,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Eszmélet (2) | nyomozás": {
-    "források": [
-      "Eszmélet (Kábultság): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Eszmélet (2) | orvoslás": {
     "források": [
       "Eszmélet (Kábultság): -2",
     ],
@@ -1507,6 +1507,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
+  "Eszmélet (3) | kirurgia": {
+    "források": [
+      "Eszmélet (Ájulás): kudarc",
+    ],
+    "szint": 0,
+    "tiltott": true,
+  },
   "Eszmélet (3) | kvantikum": {
     "források": [
       "Eszmélet (Ájulás): kudarc",
@@ -1599,13 +1606,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": true,
   },
   "Eszmélet (3) | nyomozás": {
-    "források": [
-      "Eszmélet (Ájulás): kudarc",
-    ],
-    "szint": 0,
-    "tiltott": true,
-  },
-  "Eszmélet (3) | orvoslás": {
     "források": [
       "Eszmélet (Ájulás): kudarc",
     ],
@@ -2074,6 +2074,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
+  "Eszmélet (4) | kirurgia": {
+    "források": [
+      "Eszmélet (Kóma): kudarc",
+    ],
+    "szint": 0,
+    "tiltott": true,
+  },
   "Eszmélet (4) | kvantikum": {
     "források": [
       "Eszmélet (Kóma): kudarc",
@@ -2166,13 +2173,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": true,
   },
   "Eszmélet (4) | nyomozás": {
-    "források": [
-      "Eszmélet (Kóma): kudarc",
-    ],
-    "szint": 0,
-    "tiltott": true,
-  },
-  "Eszmélet (4) | orvoslás": {
     "források": [
       "Eszmélet (Kóma): kudarc",
     ],
@@ -2571,6 +2571,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
+  "Fizikai (1) | kirurgia": {
+    "források": [
+      "Fizikai (Fáradtság): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
   "Fizikai (1) | kvantikum": {
     "források": [
       "Fizikai (Fáradtság): -1",
@@ -2600,13 +2607,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Fizikai (1) | művészetismeret": {
-    "források": [
-      "Fizikai (Fáradtság): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Fizikai (1) | orvoslás": {
     "források": [
       "Fizikai (Fáradtság): -1",
     ],
@@ -2942,6 +2942,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Fizikai (2) | kirurgia": {
+    "források": [
+      "Fizikai (Kimerültség): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Fizikai (2) | kvantikum": {
     "források": [
       "Fizikai (Kimerültség): -2",
@@ -2971,13 +2978,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Fizikai (2) | művészetismeret": {
-    "források": [
-      "Fizikai (Kimerültség): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Fizikai (2) | orvoslás": {
     "források": [
       "Fizikai (Kimerültség): -2",
     ],
@@ -3383,6 +3383,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Fizikai (3) | kirurgia": {
+    "források": [
+      "Fizikai (Elcsigázottság): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Fizikai (3) | kvantikum": {
     "források": [
       "Fizikai (Elcsigázottság): -2",
@@ -3475,13 +3482,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Fizikai (3) | nyomozás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Fizikai (3) | orvoslás": {
     "források": [
       "Fizikai (Elcsigázottság): -2",
     ],
@@ -4047,6 +4047,14 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
+  "Hangulat (3) | kirurgia": {
+    "források": [
+      "Hangulat (Eufórikus): +1",
+      "Hangulat (Eufórikus): -2",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
   "Hangulat (3) | kvantikum": {
     "források": [
       "Hangulat (Eufórikus): +1",
@@ -4152,14 +4160,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Hangulat (3) | nyomozás": {
-    "források": [
-      "Hangulat (Eufórikus): +1",
-      "Hangulat (Eufórikus): -2",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Hangulat (3) | orvoslás": {
     "források": [
       "Hangulat (Eufórikus): +1",
       "Hangulat (Eufórikus): -2",
@@ -4591,6 +4591,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
+  "Indulat (3) | kirurgia": {
+    "források": [
+      "Indulat (Őrjöngés): kudarc",
+    ],
+    "szint": 0,
+    "tiltott": true,
+  },
   "Indulat (3) | kvantikum": {
     "források": [
       "Indulat (Őrjöngés): kudarc",
@@ -4620,13 +4627,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": true,
   },
   "Indulat (3) | művészetismeret": {
-    "források": [
-      "Indulat (Őrjöngés): kudarc",
-    ],
-    "szint": 0,
-    "tiltott": true,
-  },
-  "Indulat (3) | orvoslás": {
     "források": [
       "Indulat (Őrjöngés): kudarc",
     ],
@@ -5165,6 +5165,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
+  "Szellemi (2) | kirurgia": {
+    "források": [
+      "Szellemi (Eltompultság): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
   "Szellemi (2) | kvantikum": {
     "források": [
       "Szellemi (Eltompultság): -1",
@@ -5194,13 +5201,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Szellemi (2) | művészetismeret": {
-    "források": [
-      "Szellemi (Eltompultság): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Szellemi (2) | orvoslás": {
     "források": [
       "Szellemi (Eltompultság): -1",
     ],
@@ -5557,6 +5557,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Szellemi (3) | kirurgia": {
+    "források": [
+      "Szellemi (Delírium): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Szellemi (3) | kvantikum": {
     "források": [
       "Szellemi (Delírium): -2",
@@ -5586,13 +5593,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Szellemi (3) | művészetismeret": {
-    "források": [
-      "Szellemi (Delírium): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Szellemi (3) | orvoslás": {
     "források": [
       "Szellemi (Delírium): -2",
     ],
@@ -5998,6 +5998,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
+  "Sérült (1) | kirurgia": {
+    "források": [
+      "Sérült (S3): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
   "Sérült (1) | kvantikum": {
     "források": [
       "Sérült (S3): -1",
@@ -6090,13 +6097,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Sérült (1) | nyomozás": {
-    "források": [
-      "Sérült (S3): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Sérült (1) | orvoslás": {
     "források": [
       "Sérült (S3): -1",
     ],
@@ -6565,6 +6565,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Sérült (2) | kirurgia": {
+    "források": [
+      "Sérült (S4): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Sérült (2) | kvantikum": {
     "források": [
       "Sérült (S4): -2",
@@ -6657,13 +6664,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Sérült (2) | nyomozás": {
-    "források": [
-      "Sérült (S4): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Sérült (2) | orvoslás": {
     "források": [
       "Sérült (S4): -2",
     ],
@@ -7132,6 +7132,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
+  "Sérült (3) | kirurgia": {
+    "források": [
+      "Sérült (Haldoklás): kudarc",
+    ],
+    "szint": 0,
+    "tiltott": true,
+  },
   "Sérült (3) | kvantikum": {
     "források": [
       "Sérült (Haldoklás): kudarc",
@@ -7224,13 +7231,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": true,
   },
   "Sérült (3) | nyomozás": {
-    "források": [
-      "Sérült (Haldoklás): kudarc",
-    ],
-    "szint": 0,
-    "tiltott": true,
-  },
-  "Sérült (3) | orvoslás": {
     "források": [
       "Sérült (Haldoklás): kudarc",
     ],
@@ -7692,6 +7692,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Zavar (1) | kirurgia": {
+    "források": [
+      "Zavar (Kizökkent): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Zavar (1) | kvantikum": {
     "források": [
       "Zavar (Kizökkent): -2",
@@ -7721,13 +7728,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Zavar (1) | művészetismeret": {
-    "források": [
-      "Zavar (Kizökkent): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Zavar (1) | orvoslás": {
     "források": [
       "Zavar (Kizökkent): -2",
     ],
@@ -8084,6 +8084,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
+  "Zavar (2) | kirurgia": {
+    "források": [
+      "Zavar (Megrendült): kudarc",
+    ],
+    "szint": 0,
+    "tiltott": true,
+  },
   "Zavar (2) | kvantikum": {
     "források": [
       "Zavar (Megrendült): kudarc",
@@ -8113,13 +8120,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": true,
   },
   "Zavar (2) | művészetismeret": {
-    "források": [
-      "Zavar (Megrendült): kudarc",
-    ],
-    "szint": 0,
-    "tiltott": true,
-  },
-  "Zavar (2) | orvoslás": {
     "források": [
       "Zavar (Megrendült): kudarc",
     ],
@@ -8525,6 +8525,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 0,
     "tiltott": true,
   },
+  "Zavar (3) | kirurgia": {
+    "források": [
+      "Zavar (Sokk): kudarc",
+    ],
+    "szint": 0,
+    "tiltott": true,
+  },
   "Zavar (3) | kvantikum": {
     "források": [
       "Zavar (Sokk): kudarc",
@@ -8617,13 +8624,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": true,
   },
   "Zavar (3) | nyomozás": {
-    "források": [
-      "Zavar (Sokk): kudarc",
-    ],
-    "szint": 0,
-    "tiltott": true,
-  },
-  "Zavar (3) | orvoslás": {
     "források": [
       "Zavar (Sokk): kudarc",
     ],
@@ -9092,6 +9092,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 1,
     "tiltott": false,
   },
+  "Áldott Képzettség (1) | kirurgia": {
+    "források": [
+      "Áldott Képzettség (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
   "Áldott Képzettség (1) | kvantikum": {
     "források": [
       "Áldott Képzettség (Előny+1): +1",
@@ -9184,13 +9191,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Áldott Képzettség (1) | nyomozás": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | orvoslás": {
     "források": [
       "Áldott Képzettség (Előny+1): +1",
     ],
@@ -9659,6 +9659,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": 2,
     "tiltott": false,
   },
+  "Áldott Képzettség (2) | kirurgia": {
+    "források": [
+      "Áldott Képzettség (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
   "Áldott Képzettség (2) | kvantikum": {
     "források": [
       "Áldott Képzettség (Előny+2): +2",
@@ -9751,13 +9758,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Áldott Képzettség (2) | nyomozás": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | orvoslás": {
     "források": [
       "Áldott Képzettség (Előny+2): +2",
     ],
@@ -10226,6 +10226,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
+  "Átkozott Képzettség (1) | kirurgia": {
+    "források": [
+      "Átkozott Képzettség (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
   "Átkozott Képzettség (1) | kvantikum": {
     "források": [
       "Átkozott Képzettség (Hátrány-1): -1",
@@ -10318,13 +10325,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Átkozott Képzettség (1) | nyomozás": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | orvoslás": {
     "források": [
       "Átkozott Képzettség (Hátrány-1): -1",
     ],
@@ -10793,6 +10793,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Átkozott Képzettség (2) | kirurgia": {
+    "források": [
+      "Átkozott Képzettség (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Átkozott Képzettség (2) | kvantikum": {
     "források": [
       "Átkozott Képzettség (Hátrány-2): -2",
@@ -10885,13 +10892,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Átkozott Képzettség (2) | nyomozás": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (2) | orvoslás": {
     "források": [
       "Átkozott Képzettség (Hátrány-2): -2",
     ],
@@ -11360,6 +11360,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -1,
     "tiltott": false,
   },
+  "Átkozott Viselkedés (1) | kirurgia": {
+    "források": [
+      "Átkozott Viselkedés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
   "Átkozott Viselkedés (1) | kvantikum": {
     "források": [
       "Átkozott Viselkedés (Hátrány-1): -1",
@@ -11452,13 +11459,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Átkozott Viselkedés (1) | nyomozás": {
-    "források": [
-      "Átkozott Viselkedés (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Viselkedés (1) | orvoslás": {
     "források": [
       "Átkozott Viselkedés (Hátrány-1): -1",
     ],
@@ -11927,6 +11927,13 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "szint": -2,
     "tiltott": false,
   },
+  "Átkozott Viselkedés (2) | kirurgia": {
+    "források": [
+      "Átkozott Viselkedés (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Átkozott Viselkedés (2) | kvantikum": {
     "források": [
       "Átkozott Viselkedés (Hátrány-2): -2",
@@ -12019,13 +12026,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség 1`] = `
     "tiltott": false,
   },
   "Átkozott Viselkedés (2) | nyomozás": {
-    "források": [
-      "Átkozott Viselkedés (Hátrány-2): -2",
-    ],
-    "szint": -2,
-    "tiltott": false,
-  },
-  "Átkozott Viselkedés (2) | orvoslás": {
     "források": [
       "Átkozott Viselkedés (Hátrány-2): -2",
     ],

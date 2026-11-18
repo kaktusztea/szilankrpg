@@ -135,7 +135,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
       "Nyomozás ≥ 6",
     ],
     "Vezető: Orvosprofesszor (1)": [
-      "Orvoslás ≥ 6",
+      "Kirurgia ≥ 6",
     ],
     "Vezető: Rendező (1)": [
       "Előadóművészet ≥ 6",
@@ -373,7 +373,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
       "Nyomozás ≥ 9",
     ],
     "Vezető: Orvosprofesszor (2)": [
-      "Orvoslás ≥ 9",
+      "Kirurgia ≥ 9",
     ],
     "Vezető: Rendező (2)": [
       "Előadóművészet ≥ 9",
@@ -1356,7 +1356,7 @@ exports[`karakter számított értékei - id-átállás regressziós snapshot > 
       },
       {
         "kp": 53,
-        "név": "Orvoslás",
+        "név": "Kirurgia",
         "szint": 6,
       },
       {

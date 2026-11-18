@@ -64,7 +64,7 @@ Ilyenkor a karakter `2` percenként `Edzettség` Tulajdonságpróbát dob `Átla
 #### Haldokló stabilizálása
 
 ```
-Sebgyógyítás vagy Gyógyítás
+Kirurgia
  képzettségpróba
 
 Nehézség: 9 (Átlagos)

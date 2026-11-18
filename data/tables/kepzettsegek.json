@@ -1551,6 +1551,60 @@
     "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
   },
   {
+    "id": "kirurgia",
+    "név": "Kirurgia",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Felszerelés",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Felszerelés nélkül"
+          },
+          {
+            "érték": -3,
+            "leírás": "Szegényes felszerelés"
+          },
+          {
+            "érték": 0,
+            "leírás": "Normál felszerelés"
+          }
+        ]
+      },
+      {
+        "kategória": "Körülmény",
+        "mód": "multi",
+        "sorok": [
+          {
+            "érték": -6,
+            "leírás": "Páciens ellenáll"
+          },
+          {
+            "érték": 3,
+            "leírás": "hasznos gyógyszer (vajákos készítette)"
+          },
+          {
+            "érték": 6,
+            "leírás": "legjobb gyógyszer (vajákos készítette)"
+          }
+        ]
+      }
+    ],
+    "dobás_komment": [],
+    "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk_elem": {},
+    "md_fájl": "kepzettsegek.primer/altalanos/kirurgia.md"
+  },
+  {
     "id": "kvantikum",
     "név": "Kvantikum",
     "csoport": "tudományos",
@@ -2362,60 +2416,6 @@
     ],
     "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.primer/altalanos/nyomozas.md"
-  },
-  {
-    "id": "orvoslás",
-    "név": "Orvoslás",
-    "csoport": "tudományos",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia"
-    ],
-    "helyzetfüggő_módosítók": [
-      {
-        "kategória": "Felszerelés",
-        "mód": "single",
-        "sorok": [
-          {
-            "érték": -6,
-            "leírás": "Felszerelés nélkül"
-          },
-          {
-            "érték": -3,
-            "leírás": "Szegényes felszerelés"
-          },
-          {
-            "érték": 0,
-            "leírás": "Normál felszerelés"
-          }
-        ]
-      },
-      {
-        "kategória": "Körülmény",
-        "mód": "multi",
-        "sorok": [
-          {
-            "érték": -6,
-            "leírás": "Páciens ellenáll"
-          },
-          {
-            "érték": 3,
-            "leírás": "hasznos gyógyszer (vajákos készítette)"
-          },
-          {
-            "érték": 6,
-            "leírás": "legjobb gyógyszer (vajákos készítette)"
-          }
-        ]
-      }
-    ],
-    "dobás_komment": [],
-    "kapcsolódó_szituációk": [],
-    "kapcsolódó_szituációk_elem": {},
-    "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
   },
   {
     "id": "ősi_nyelv_ismerete",

@@ -1,8 +1,8 @@
 ---
 schema_version: 1
 
-id: "orvoslás"
-név: "Orvoslás"
+id: "kirurgia"
+név: "Kirurgia"
 leírás: "Sebek ellátása, betegségek kezelése, gyógyítás."
 primer: true
 csoport: "tudományos"

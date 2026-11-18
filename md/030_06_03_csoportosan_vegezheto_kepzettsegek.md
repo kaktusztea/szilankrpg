@@ -18,7 +18,7 @@ A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fejezet
 - [Kvantikum](kepzettsegek.szekunder/kvantikum.md) → [Vezető: Tudósprofesszor](fortelyok.altalanos/vezeto_tudosprofesszor.md) (**szellemi**)
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) → [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md) (**szellemi**)
 - [Nyomozás](kepzettsegek.primer/altalanos/nyomozas.md) → [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md) (**szellemi**)
-- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) → [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md) (**szellemi**)
+- [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) → [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md) (**szellemi**)
 
 ---
 🔗 [Képzettségpróba Hátrányok](030_07_kepzettsegproba_hatranyok.md) →

@@ -1,14 +1,14 @@
 ## 🔵 Vajákosság
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Járatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, kristályokból, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
+A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Járatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
 
 Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású matériát.
 
-[Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes vagy gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
+[Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes vagy gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
 
 Egy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önállóan **NEM** vagy képes készíteni.
 
-Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
+Fontos, hogy a **Vajákosság** nem fedi le a Kirurgia képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
 
 ### Kapcsolódik
 
@@ -75,6 +75,7 @@ Emlékezet, Intelligencia
 #### Átlagos (9) 🎲
 
 - Recept alapján többcélú orvosi főzet előkészítése. Bódító/fájdalomcsillapító szereket (füst, tea, bódító ital).
+- Altató ital (nem öntudattalan állapotba!)
 - Növényből por vagy kenőcs készítése.
 - Recept szerinti bódító ital hozzávalóinak összeállítása.
 

@@ -19,7 +19,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - Lopakodás/rejtőzés
 - Mérgek
 - Nyomozás
-- Orvoslás
+- Kirurgia
 - Ősi nyelv ismerete
 - Tradíció
 
@@ -123,9 +123,9 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Hadászat](kepzettsegek.primer/altalanos/hadaszat.md) 🅿️
 
-🔵 [Mérgek](kepzettsegek.primer/altalanos/mergek.md) 🅿️
+🔵 [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) 🅿️🤝
 
-🔵 [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) 🅿️🤝
+🔵 [Mérgek](kepzettsegek.primer/altalanos/mergek.md) 🅿️
 
 🔵 [Kvantikum](kepzettsegek.szekunder/kvantikum.md) 🤝
 
