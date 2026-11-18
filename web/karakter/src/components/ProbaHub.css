@@ -92,7 +92,7 @@
   grid-auto-flow: column;
   grid-template-rows: repeat(var(--proba-hub-sorok, 1), auto);
 }
-/* KÉ / TÉ / CÉ / Manőver egy sorban, mind a 4 chip azonos szélességű. A Manőver kisebb fontja
+/* Manőver / KÉ / TÉ / CÉ egy sorban (a ritkán használt Manőver van legmesszebb a hüvelykujjtól), mind a 4 chip azonos szélességű. A Manőver kisebb fontja
    (proba-hub-chip-manover) biztosítja, hogy a hosszabb felirat a negyed-szélességbe is beférjen. */
 .proba-hub-grid-4 {
   grid-template-columns: repeat(4, 1fr);

@@ -111,13 +111,13 @@ export function ProbaHub({ data, karakter, aktív, session, setSession, pushUndo
           {/* Combat rolls are k20 (dice.ts rollK20 - not a konstans) */}
           <h3 className="proba-hub-header">Harci dobás <KockaChip kocka={20} /></h3>
           <div className="proba-hub-grid proba-hub-grid-4">
+            <button className="proba-hub-chip proba-hub-chip-harc proba-hub-chip-manover" title="Manőver (Harc fül)" aria-label="Manőver" onClick={() => { setHubNyitva(false); onHarciDobás('manőver'); }}>Manőver</button>
             <button className="proba-hub-chip proba-hub-chip-harc" onClick={() => {
               setKéDobás(true);
               setHubNyitva(false);
             }}>KÉ</button>
             <button className="proba-hub-chip proba-hub-chip-harc" title="Támadó dobás (Harc fül)" aria-label="Támadó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('támadó'); }}>TÉ</button>
             <button className="proba-hub-chip proba-hub-chip-harc" title="Célzó dobás (Távharc fül)" aria-label="Célzó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('célzó'); }}>CÉ</button>
-            <button className="proba-hub-chip proba-hub-chip-harc proba-hub-chip-manover" title="Manőver (Harc fül)" aria-label="Manőver" onClick={() => { setHubNyitva(false); onHarciDobás('manőver'); }}>Manőver</button>
           </div>
 
           <h3 className="proba-hub-header">Tulajdonságpróba <KockaChip kocka={data.konstansok.próba.tulajdonság.kocka} /></h3>
