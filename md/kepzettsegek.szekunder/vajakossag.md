@@ -10,6 +10,10 @@ Egy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány alacsonyab
 
 Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
 
+### Kapcsolódik
+
+- [Méreg alapanyagok beszerzése](../142_mereg_alapanyagok_beszerzese.md)
+
 ### Helyzetfüggő módosítók
 
 #### ⚜️ Felszerelés 1️⃣
