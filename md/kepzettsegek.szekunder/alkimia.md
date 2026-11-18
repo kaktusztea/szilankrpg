@@ -16,6 +16,16 @@ A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakter
 - Prima Materia, Mindent Oldó Szer kutatása
 - Mérgek **alapanyagainak** előállítása (nem magának a méregnek!). Ez által speciális követelménye is a [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettségnek!
 
+### Fontos megkötés
+
+Az alkimista - pusztán ezzel a képzettséggel - NEM képes gyógyítani, még Élettan fortéllyal együtt sem.
+
+### Kapcsolat [Vajákosság](vajakossag.md) képzettséggel
+
+Egy vajákosságban jártas karakter az alkimistának hála jobb alapanyaghoz, igazi kivont esszenciákhoz juthat hozzá, szemben azzal, mint amit mondjuk az adott térségben be tudna szeretni a természetből. Mintha az erdőben megtalálta volna a "szupernövényt".
+
+Ezek hasonlatos ahhoz, mint mikor a méregkeverők ([Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség) számárára "szállítanak" alapanyagokat az Alkímia és Vajákosság képzettség ismerőitől.
+
 ### Helyzetfüggő módosítók
 
 #### ⚜️ Felszerelés 1️⃣
@@ -98,6 +108,7 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 #### Nagyon nehéz (15) 🎲
 
 - Különösen veszélyes vegyület–vegyület reakció stabilizálása.
+- Szupersav készítése, amely fémet is átmar
 
 #### Rendkívül nehéz (18) 🎲
 
