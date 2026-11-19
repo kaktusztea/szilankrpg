@@ -316,7 +316,7 @@
 /* Melee hit: the target's fixed VÉ drop (md/064_02_07) */
 .sebzes-ve-talalat {
   /* second result line under the 48px SP: same monospace look, half the size (the units of the SP line are 24px) */
-  font-size: 24px;
+  font-size: 23px;
   font-family: monospace;
   color: #e08a8a;
   font-weight: bold;

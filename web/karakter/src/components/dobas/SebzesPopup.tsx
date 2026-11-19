@@ -87,7 +87,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
         <div className="tamado-dobas-popup">
           <div className="ke-dobas-header">Sebzés</div>
           <div className="sebzes-nincs">Ez a fegyver nem sebez</div>
-          {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">VÉ −{véCsökkenésTalálatnál}</div>}
+          {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">−{véCsökkenésTalálatnál} VÉ csökkentés</div>}
         </div>
       </PopupOverlay>
     );
@@ -237,7 +237,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
               {eredmény.bónusz !== 0 ? ` ${eredmény.bónusz > 0 ? '+' : ''}${eredmény.bónusz}` : ''}
             </div>}
             {(átütés ?? 0) > 0 && <div className="sebzes-atutes-result">Átütés: {átütés}</div>}
-            {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">VÉ −{véCsökkenésTalálatnál}</div>}
+            {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">−{véCsökkenésTalálatnál} VÉ csökkentés</div>}
           </>
         )}
       </div>
