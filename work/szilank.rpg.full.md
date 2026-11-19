@@ -4836,7 +4836,7 @@ Minimum 100 sikeres orgyilkosság.
 
 A rengeteg gyilkosság megmérgezte a lelkedet, ha nem leplezed, Aurádon jól láthatóak a sötét foltok, melyek beszennyezik.
 
-Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
+Nem gyógyíthatsz mágikus úton, a világi [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
 
 <br />
 
@@ -5009,7 +5009,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - Lopakodás/rejtőzés
 - Mérgek
 - Nyomozás
-- Orvoslás
+- Kirurgia
 - Ősi nyelv ismerete
 - Tradíció
 
@@ -5113,9 +5113,9 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Hadászat](kepzettsegek.primer/altalanos/hadaszat.md) 🅿️
 
-🔵 [Mérgek](kepzettsegek.primer/altalanos/mergek.md) 🅿️
+🔵 [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) 🅿️🤝
 
-🔵 [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) 🅿️🤝
+🔵 [Mérgek](kepzettsegek.primer/altalanos/mergek.md) 🅿️
 
 🔵 [Kvantikum](kepzettsegek.szekunder/kvantikum.md) 🤝
 
@@ -5925,6 +5925,153 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 
 ---
 ---
+## File: md/kepzettsegek.primer/altalanos/kirurgia.md
+
+## 🔵 Kirurgia
+
+→ [STUDY: Gyógyítás](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.gyogyitas.gyogyulas)
+
+Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
+
+Igen sokszintű képzettség, amely alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi. A Kirurgia tehát magában foglalja a sebgyógyítást és nagyon fejlett szinten a gyógyítást is.
+
+A képzettség az alábbi tevékenységeket fedi le:
+
+- vérzés elállítása
+- fertőtlenítés, sebkötözés kencék használatával
+- [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
+- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) (ha azt nem ismered)
+
+Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
+
+### Helyzetfüggő módosítók
+
+#### ⚜️ Felszerelés 1️⃣
+
+```
+-6: Felszerelés nélkül
+-3: Szegényes felszerelés
+ 0: Normál felszerelés
+```
+
+#### ⚜️ Körülmény 🔀
+
+```
+-6: Páciens ellenáll
++3: hasznos gyógyszer (vajákos készítette)
++6: legjobb gyógyszer (vajákos készítette)
+```
+
+---
+
+### Domináns Tulajdonságok
+
+- Érzékenység
+- Emlékezet
+- Intelligencia
+
+### Kapcsolódik
+
+- [Élettan](../../fortelyok.altalanos/elettan.md) fortély
+- [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
+- [Vezető: Orvosprofesszor](../../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos kirurgia esetén bónuszt ad
+
+### Speciális
+
+A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINCS** Összhang, mert az csak a gyógyszer komponens beszerzésének követelménye.
+
+### 🟨 Normál kiterjesztés
+
+⭕xyz. Ha nincs, törölni
+
+### 🟥 Erős kiterjesztés
+
+⭕xyz. Ha nincs, törölni
+
+---
+
+## ⭕TODO⭕
+
+Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni
+
+---
+
+### Betegségek kezelése gyógyszerekkel
+
+A gyógyszerek kikeveréséhez szükség van alapanyagokra, amelyeket a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
+
+Vajákosság szint követelmény: `Betegség szintje / 2`
+
+**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
+
+---
+
+### Sebek kezelése gyógyszerekkel, kencékkel
+
+```
+Próbadobás Célszám:
+  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korreláció⭕
+```
+
+A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
+
+Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
+
+**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
+
+<br />
+
+### Mesterbónuszok
+
+#### 🌟 `9.szint`
+
+⭕TODO⭕ Ettől a szinttől kezdve vagy képes kézrátétellel gyógyítást megpróbálni. A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) szint követelménye a felére csökken, az energia átadása egyre hangsúlyosabb.
+
+#### 🌟 `12.szint`
+
+⭕TODO⭕  Innen próbálkozhatsz a fizikai komponens nélküli, tisztán kézrátételes gyógyítással.
+
+#### 🌟 `15.szint`
+
+⭕TODO⭕
+
+<br />
+
+---
+
+### Próbák 🎲
+
+#### Könnyű (6) 🎲
+
+Közepes seb (max `6 ÉP`) vérzésének elállítása
+
+#### Átlagos (9) 🎲
+
+Gyógyulási sebesség szorzó: `x2`
+
+#### Nehéz (12) 🎲
+
+Gyógyulási sebesség szorzó: `x3`.
+
+#### Nagyon nehéz (15) 🎲
+
+- Gyógyulási sebesség szorzó: `x4`.
+- `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+
+#### Rendkívül nehéz (18) 🎲
+
+- Gyógyulási sebesség szorzó: ⭕`x5`
+- `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+
+#### Emberfeletti (21) 🎲
+
+3 S kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`); csonkolást gyógyítani (csak ha megvan a levágott végtag)
+
+---
+
+
+---
+---
 ## File: md/kepzettsegek.primer/altalanos/lopakodas_rejtozes.md
 
 ## 🔵 Lopakodás/rejtőzés
@@ -6140,7 +6287,7 @@ A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék h
 
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
-- [Orvoslás](orvoslas.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
+- [Kirurgia](kirurgia.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 - [Alkímia](../../kepzettsegek.szekunder/alkimia.md) képzettség
 
 ### Domináns Tulajdonságok
@@ -6325,153 +6472,6 @@ Intelligencia, Emlékezet
 
 - Évek múltán, egy felújított szobában is érzed a csontjaidban: "itt gyilkosság történt."
 - Töredékes jegyzetekből és nagy mennyiségű vegyes dokumentumból képes vagy rekonstruálni egy teljes összeesküvés történetét.
-
----
-
-
----
----
-## File: md/kepzettsegek.primer/altalanos/orvoslas.md
-
-## 🔵 Orvoslás
-
-→ [STUDY: Gyógyítás](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.gyogyitas.gyogyulas)
-
-Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
-
-Igen sokszintű képzettség, amely alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi. Az Orvoslás tehát magában foglalja a sebgyógyítást és nagyon fejlett szinten a gyógyítást is.
-
-A képzettség az alábbi tevékenységeket fedi le:
-
-- vérzés elállítása
-- fertőtlenítés, sebkötözés kencék használatával
-- [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
-- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) (ha azt nem ismered)
-
-Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
-
-### Helyzetfüggő módosítók
-
-#### ⚜️ Felszerelés 1️⃣
-
-```
--6: Felszerelés nélkül
--3: Szegényes felszerelés
- 0: Normál felszerelés
-```
-
-#### ⚜️ Körülmény 🔀
-
-```
--6: Páciens ellenáll
-+3: hasznos gyógyszer (vajákos készítette)
-+6: legjobb gyógyszer (vajákos készítette)
-```
-
----
-
-### Domináns Tulajdonságok
-
-- Érzékenység
-- Emlékezet
-- Intelligencia
-
-### Kapcsolódik
-
-- [Élettan](../../fortelyok.altalanos/elettan.md) fortély
-- [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
-- [Vezető: Orvosprofesszor](../../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos orvoslás esetén bónuszt ad
-
-### Speciális
-
-A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINCS** Összhang, mert az csak a gyógyszer komponens beszerzésének követelménye.
-
-### 🟨 Normál kiterjesztés
-
-⭕xyz. Ha nincs, törölni
-
-### 🟥 Erős kiterjesztés
-
-⭕xyz. Ha nincs, törölni
-
----
-
-## ⭕TODO⭕
-
-Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni
-
----
-
-### Betegségek kezelése gyógyszerekkel
-
-A gyógyszerek kikeveréséhez szükség van alapanyagokra, amelyeket a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
-
-Vajákosság szint követelmény: `Betegség szintje / 2`
-
-**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
-
----
-
-### Sebek kezelése gyógyszerekkel, kencékkel
-
-```
-Próbadobás Célszám:
-  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korreláció⭕
-```
-
-A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
-
-Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
-
-**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
-
-<br />
-
-### Mesterbónuszok
-
-#### 🌟 `9.szint`
-
-⭕TODO⭕ Ettől a szinttől kezdve vagy képes kézrátétellel gyógyítást megpróbálni. A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) szint követelménye a felére csökken, az energia átadása egyre hangsúlyosabb.
-
-#### 🌟 `12.szint`
-
-⭕TODO⭕  Innen próbálkozhatsz a fizikai komponens nélküli, tisztán kézrátételes gyógyítással.
-
-#### 🌟 `15.szint`
-
-⭕TODO⭕
-
-<br />
-
----
-
-### Próbák 🎲
-
-#### Könnyű (6) 🎲
-
-Közepes seb (max `6 ÉP`) vérzésének elállítása
-
-#### Átlagos (9) 🎲
-
-Gyógyulási sebesség szorzó: `x2`
-
-#### Nehéz (12) 🎲
-
-Gyógyulási sebesség szorzó: `x3`.
-
-#### Nagyon nehéz (15) 🎲
-
-- Gyógyulási sebesség szorzó: `x4`.
-- `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
-
-#### Rendkívül nehéz (18) 🎲
-
-- Gyógyulási sebesség szorzó: ⭕`x5`
-- `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
-
-#### Emberfeletti (21) 🎲
-
-3 S kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`); csonkolást gyógyítani (csak ha megvan a levágott végtag)
 
 ---
 
@@ -9336,12 +9336,26 @@ Próba dobható.
 A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakterülete. Labor (akár tábori is) felszerelést igényel. Ide tartoznak az alábbi ismeretek:
 
 - anyagok összetevőinek elemzése saját laboreszközökkel; kémiai kísérletek
-- szerves és növényi anyagok kutatása
+- szerves anyagok kutatása
+- kristályok kutatása
+- szerves ÉS növényi alapanyagok labori alkotóelemekre bontása, koncentrátumok készítése. Modern gyógyszer készítésére nem alkalmas.
+- szerves, labort igénylő drogok elállítása
+- pálinkafőzés, lepárlás
 - savas, lúgos anyagok, illatszerek, ragasztók, festékek előállítása
 - arany transzmutáció (nagyon magas szinten - félmágikus hatás)
 - mágiához szükséges fizikai komponensek létrehozása, szakszerű tárolása, tartósítása
 - Prima Materia, Mindent Oldó Szer kutatása
 - Mérgek **alapanyagainak** előállítása (nem magának a méregnek!). Ez által speciális követelménye is a [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettségnek!
+
+### Fontos megkötés
+
+Az alkimista - pusztán ezzel a képzettséggel - NEM képes gyógyítani, még Élettan fortéllyal együtt sem.
+
+### Kapcsolat [Vajákosság](vajakossag.md) képzettséggel
+
+Egy vajákosságban jártas karakter az alkimistának hála jobb alapanyaghoz, igazi kivont esszenciákhoz juthat hozzá, szemben azzal, mint amit mondjuk az adott térségben be tudna szeretni a természetből. Mintha az erdőben megtalálta volna a "szupernövényt".
+
+Ezek hasonlatos ahhoz, mint mikor a méregkeverők ([Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség) számárára "szállítanak" alapanyagokat az Alkímia és Vajákosság képzettség ismerőitől.
 
 ### Helyzetfüggő módosítók
 
@@ -9425,6 +9439,7 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 #### Nagyon nehéz (15) 🎲
 
 - Különösen veszélyes vegyület–vegyület reakció stabilizálása.
+- Szupersav készítése, amely fémet is átmar
 
 #### Rendkívül nehéz (18) 🎲
 
@@ -11549,15 +11564,19 @@ Segítségedre hívod az erdő állatait.
 
 ## 🔵 Vajákosság
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Járatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, kristályokból, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
+A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Járatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
 
 Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású matériát.
 
-[Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
+[Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes vagy gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
 
-Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önállóan **NEM** vagy képes készíteni.
+Egy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önállóan **NEM** vagy képes készíteni.
 
-Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
+Fontos, hogy a **Vajákosság** nem fedi le a Kirurgia képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
+
+### Kapcsolódik
+
+- [Méreg alapanyagok beszerzése](../142_mereg_alapanyagok_beszerzese.md)
 
 ### Helyzetfüggő módosítók
 
@@ -11620,6 +11639,7 @@ Emlékezet, Intelligencia
 #### Átlagos (9) 🎲
 
 - Recept alapján többcélú orvosi főzet előkészítése. Bódító/fájdalomcsillapító szereket (füst, tea, bódító ital).
+- Altató ital (nem öntudattalan állapotba!)
 - Növényből por vagy kenőcs készítése.
 - Recept szerinti bódító ital hozzávalóinak összeállítása.
 
@@ -11634,18 +11654,17 @@ Emlékezet, Intelligencia
 
 - Csillagálláshoz kötött begyűjtés és előkészítés.
 - Gyengén mágikus főzet előkészítése recept alapján
-- Szörnyetegek testéből hatóanyag kinyerése.
+- Szörnyetegek, bestiák testéből hatóanyag kinyerése.
 
 #### Rendkívül nehéz (18) 🎲
 
-- Tömérdek összetevőből álló készítmény hibátlan elkészítése recept alapján.
-- Hamisítványról ránézésre eldönteni, mennyire veszélyes.
+- Sok összetevőből álló készítmény hibátlan elkészítése recept alapján.
 - Ritka mágikus növény biztonságos kezelése, tartósítása.
-- Mágikus szörnyek testrészeinek hatóanyagait kinyerni – de nagy gyógy- vagy varázsital készítéséhez mágushasználó kell.
+- Mágikus szörnyek, bestiák testrészeinek hatóanyagait kinyerni.
 
 #### Emberfeletti (21) 🎲
 
-- Bonyolult, évtizedekig őrzött recept hibátlan reprodukálása.
+- Bonyolult, elfeledett, nagyon egyedi recept hibátlan reprodukálása.
 - Legendás lény (pl. unikornis, mantikór, sárkány) szervének kezelése és hatásainak kinyerése, tartósítása.
 
 ---
@@ -11976,7 +11995,7 @@ A másik felső korlát lehet az adott kultúra fejletlensége, vagy korlátai. 
 
 ### A 14. és 15. képzettségszint
 
-`14`-es és `15`-ös szintre csak úgy juthat el a karakter, ha a képzettséggel kapcsolatos, nagyon ritka titkos tudásra tesz szert. Ez kaland alapja is lehet! Például megszerezni a "*Gyógyító Érintés Tudományának Titkos Fóliását*" ([Orvosláshoz](kepzettsegek.primer/altalanos/orvoslas.md)).
+`14`-es és `15`-ös szintre csak úgy juthat el a karakter, ha a képzettséggel kapcsolatos, nagyon ritka titkos tudásra tesz szert. Ez kaland alapja is lehet! Például megszerezni a "*Gyógyító Érintés Tudományának Titkos Fóliását*" ([Kirurgiához](kepzettsegek.primer/altalanos/kirurgia.md)).
 
 ---
 
@@ -12343,7 +12362,7 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 ### ⚡További Helyettesítés példák felsorolásszerűen
 
 - [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
-- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) ⇆ [Mérgek](kepzettsegek.primer/altalanos/mergek.md)
+- [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) ⇆ [Mérgek](kepzettsegek.primer/altalanos/mergek.md)
 - [Alkímia](kepzettsegek.szekunder/alkimia.md) ⇆ [Mérgek](kepzettsegek.primer/altalanos/mergek.md)
 - [Vajákosság](kepzettsegek.szekunder/vajakossag.md) ⇆ [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md)
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) ⇆ [Művészetismeret](kepzettsegek.szekunder/muveszetismeret.md)
@@ -12565,7 +12584,7 @@ A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fejezet
 - [Kvantikum](kepzettsegek.szekunder/kvantikum.md) → [Vezető: Tudósprofesszor](fortelyok.altalanos/vezeto_tudosprofesszor.md) (**szellemi**)
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) → [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md) (**szellemi**)
 - [Nyomozás](kepzettsegek.primer/altalanos/nyomozas.md) → [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md) (**szellemi**)
-- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) → [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md) (**szellemi**)
+- [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) → [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md) (**szellemi**)
 
 ---
 🔗 [Képzettségpróba Hátrányok](030_07_kepzettsegproba_hatranyok.md) →
@@ -13587,7 +13606,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 ### Bónuszt ad erre
 
 - [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség: `+2`
-- [Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettség
+- [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettség
 
 ### Kiterjeszti ezeket
 
@@ -14557,25 +14576,25 @@ Vezető orvosprofesszorként koordinálod az alád tartozó orvosok, gyógyító
 
 ### Alapeset
 
-A [Orvoslás](../kepzettsegek.primer/altalanos/orvoslas.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
+A [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
 
 ---
 
 ### 1. fok
 
-A fentiek szerint kiszámolt csoportos **Orvoslás** értéket egy jó vezető professzor képes koordinálásával megemelni.
+A fentiek szerint kiszámolt csoportos **Kirurgia** értéket egy jó vezető professzor képes koordinálásával megemelni.
 
-🔒 Orvoslás - `6.szint`
+🔒 Kirurgia - `6.szint`
 
-🌟 `+2` bónusz csoportos **Orvoslás** értékre
+🌟 `+2` bónusz csoportos **Kirurgia** értékre
 
 <br />
 
 ### 2. fok
 
-🔒 Orvoslás - `9.szint`
+🔒 Kirurgia - `9.szint`
 
-🌟 `+4` bónusz csoportos **Orvoslás** értékre
+🌟 `+4` bónusz csoportos **Kirurgia** értékre
 
 ---
 
@@ -20954,7 +20973,7 @@ Ilyenkor a karakter `2` percenként `Edzettség` Tulajdonságpróbát dob `Átla
 #### Haldokló stabilizálása
 
 ```
-Sebgyógyítás vagy Gyógyítás
+Kirurgia
  képzettségpróba
 
 Nehézség: 9 (Átlagos)
@@ -34021,7 +34040,7 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi seg�
 
 ---
 
-## ⚜️ [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) képzettség
+## ⚜️ [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) képzettség
 
 Alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi.
 
@@ -34373,8 +34392,8 @@ A méreg elkészítéséhez szükséges alapanyagok, extra felszerelés árát a
 
 Három forrásból vonhatóak ki méreg-alapanyagok. Ezeket két képzettség fedi le:
 
-- Képzettség: [Vajákosság](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.szekunder/vajakossag.md) → növényből/állatból
-- Képzettség: [Alkímia](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.szekunder/alkimia.md) → ásványokból
+- Képzettség: [Vajákosság](kepzettsegek.szekunder/vajakossag.md) → növényből/állatból
+- Képzettség: [Alkímia](kepzettsegek.szekunder/alkimia.md) → ásványokból
 
 ### Egyéni beszerzés követelménye
 
