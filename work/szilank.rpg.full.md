@@ -5940,7 +5940,7 @@ A képzettség az alábbi tevékenységeket fedi le:
 - vérzés elállítása
 - fertőtlenítés, sebkötözés kencék használatával
 - [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
-- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) (ha azt nem ismered)
+- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használhatod a Kirurgiát (ha azt nem ismered)
 
 Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
 
@@ -11564,15 +11564,44 @@ Segítségedre hívod az erdő állatait.
 
 ## 🔵 Vajákosság
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Járatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
+A gyógyszerész, a kotyvalékokkal betegségeket gyógyító, növények, állatok alkotóelemeinek ismerője. Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Előfordul [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány, ahi kapcsolódó készítményeket állít elő mágiával.
 
-Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású matériát.
+### Speciális szabályok
 
-[Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes vagy gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
+🔆 `ÉP` sebet ezzel a képzettséggel NEM vagy képes direktben gyógyítani - legfeljebb felgyorsítani a gyógyulást.
 
-Egy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önállóan **NEM** vagy képes készíteni.
+🔆 Vajákosság: [Mérgek](mergek.md) képzettség [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható (Mérgezés gyógyítása)
 
-Fontos, hogy a **Vajákosság** nem fedi le a Kirurgia képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
+### Leírás
+
+Hatóanyag kinyerése, tartósítása
+
+- növényekből
+- állatokból
+- ritka szörnyek testrészeiből
+  - [Kirurgus](../kepzettsegek.primer/altalanos/kirurgia.md) segítségével
+  - [Különleges faj boncolása](../fortelyok.szabad/kulonleges_faj_boncolasa.md) (adott faj) fortéllyal együtt
+
+Az alábbiak készítése, kikeverése tartós állapotban tárolása
+
+- főzetek
+- kenőcsök
+- italok
+- porok
+- labdacsok
+
+A fenti hordozókba foglalt hatások
+
+- [Státuszok](../082_statuszok.md) enyhítése, növelése
+- gyógyulás sebességének gyorsítása
+- betegségek gyógyítása (gyógyszer)
+- Fájdalomcsillapítás
+- nyugtató
+- Élékítők
+- harci drog
+- magasabb szinten fémágikus hatások
+  - éjszakai látás
+  - gyógyital készítése
 
 ### Kapcsolódik
 
@@ -11596,6 +11625,7 @@ Emlékezet, Intelligencia
 
 ### 🟨 Normál kiterjesztés
 
+- [Különleges faj boncolása](../fortelyok.szabad/kulonleges_faj_boncolasa.md)
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
 - [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md)
@@ -11627,7 +11657,7 @@ Emlékezet, Intelligencia
 
 ---
 
-### Próbák 🎲
+### Próbák 🎲 - alapanyagok kivonására
 
 #### Könnyű (6) 🎲
 
