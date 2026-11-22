@@ -40,9 +40,9 @@
   margin-bottom: 12px;
 }
 
+.aktiv-fortely-header-nyithato { cursor: pointer; display: flex; align-items: center; gap: 6px; }
 .aktiv-fortely-header {
-  border-top: 1px solid var(--border);
-  margin: 8px 0 12px;
+  margin: 20px 0 12px;
   padding-top: 12px;
   font-size: var(--szakaszcim-meret);
   color: var(--akt-text);

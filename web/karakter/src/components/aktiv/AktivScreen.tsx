@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Ikon } from '../common/Ikon';
+import { kattinthatóProps } from '../a11y';
 import type { AktivBaseProps } from './types';
 import { calcAktivData, FÜL_SORREND } from './aktiv-calc';
 import { AktivHatasPool } from './AktivHatasPool';
@@ -10,6 +12,8 @@ import './AktivScreen.css';
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
   const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, alapesetek, eseményNév } = calcAktivData(data, karakter, session);
 
+  // The whole "Fortélyok és Alapesetek" block folds with one arrow; collapsed by default
+  const [fortélyNyitva, setFortélyNyitva] = useState(false);
   const vanFortélyBox = FÜL_SORREND.some(({ kulcs }) => fortélyEmlékeztetők[kulcs].length > 0 || alapesetek[kulcs].length > 0);
 
   return (
@@ -25,9 +29,14 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
       <AktivStatuszok data={data} session={session} setSession={setSession} pushUndo={pushUndo}
         státuszPerElem={státuszPerElem} eseményNév={eseményNév} />
 
-      {vanFortélyBox && <h3 className="aktiv-fortely-header">Fortélyok és Alapesetek</h3>}
+      {vanFortélyBox && (
+        <h3 className="aktiv-fortely-header aktiv-fortely-header-nyithato" aria-expanded={fortélyNyitva}
+          {...kattinthatóProps(() => setFortélyNyitva(v => !v))}>
+          Fortélyok és Alapesetek <Ikon név={fortélyNyitva ? 'lenyit' : 'jobbra'} />
+        </h3>
+      )}
 
-      {FÜL_SORREND.map(({ kulcs, cím }) => (
+      {fortélyNyitva && FÜL_SORREND.map(({ kulcs, cím }) => (
         <AktivHatasPool key={kulcs} cím={cím}
           fortélyEmlékeztetők={fortélyEmlékeztetők[kulcs]} alapesetek={alapesetek[kulcs]} />
       ))}

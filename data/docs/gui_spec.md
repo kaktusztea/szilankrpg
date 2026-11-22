@@ -307,6 +307,8 @@ A Harc fül „⚔️ Manőver" gombjáról indul: előbb mód (Aktív = én haj
 5. **Narratív Előny/Hátrányok**: KM által hozzáadott szöveges + Előny/Hátrány értékek.
 
 ### Hatás pool box (`.aktiv-hatas-pool`)
+
+A box-ok fölötti „Fortélyok és Alapesetek” címsor (`.aktiv-fortely-header`) egyetlen nyíllal nyitja/csukja az összes fül-boxot (Harci / Távharci / Mágia / Egyéb); alapból CSUKVA (`useState(false)`, nem perzisztált). A boxokon belüli Alapesetek accordion változatlan.
 6. **Fortély bónuszok**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján). Fortély név lila (`#ce93d8`). Nincs szekció cím.
 7. **Alapesetek**: fortélyok 0.fokának hatástextjei (`<details>` accordion, alapból becsukva). Fejléc: "Alapesetek (N) ▾" szürke. Elemek: fortély név bold fehér + hatástext fehér. Csak feltétel teljesülésekor aktív.
 
