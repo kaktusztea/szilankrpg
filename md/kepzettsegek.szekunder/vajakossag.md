@@ -2,13 +2,17 @@
 
 A betegségek orvosa és a gyógyszerész. Kotyvalékokkal nyavajákat gyógyító, növények, állatok alkotóelemeinek ismerője. Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva, melyből aztán főzetet készít. Előfordul, hogy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány, aki kapcsolódó készítményeket állít elő mágiával.
 
-A [Kirurgia](../../kepzettsegek.szekunder/kirurgia.md) képzettséggel jól kiegészítik egymást. Bővebben lásd: [Gyógyítás, gyógyulás](../../130_gyogyitas_gyogyulas.md) főfejezetet.
+A [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettséggel jól kiegészítik egymást. Bővebben lásd: [Gyógyítás, gyógyulás](../130_gyogyitas_gyogyulas.md) főfejezetet.
 
 ### Speciális szabályok
 
+🔆 Vajákos készítmények előállítása ⭕TODO: link⭕
+- Vajákos készítmények listája ⭕TODO: link⭕
+- Vajákos-készítmény-generátor
+
 🔆 `ÉP` sebet ezzel a képzettséggel **NEM** vagy képes direktben gyógyítani - legfeljebb felgyorsítani a gyógyulást.
 
-🔆 Vajákosság: [Mérgek](mergek.md) képzettség [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható (Mérgezés gyógyítása)
+🔆 Vajákosság: [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség [helyettesítő képzettségként](../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható (Mérgezés gyógyítása)
 
 ### Leírás
 
@@ -44,7 +48,7 @@ A fenti hordozókba foglalt hatások
 ### Kapcsolódik
 
 - [Méreg alapanyagok beszerzése](../142_mereg_alapanyagok_beszerzese.md)
-- [Mérgek](mergek.md) képzettség → Vajákosság képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
+- [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség → Vajákosság képzettséget [helyettesítő képzettség](../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 
 ### Helyzetfüggő módosítók
 
@@ -91,6 +95,38 @@ Emlékezet, Intelligencia
 #### 🌟 `15.szint`
 
 ⭕TODO⭕ Pusztán ránézésből megmondod, mi rejlik a növényben, szervben, kristályban.
+
+<br />
+
+---
+
+### Betegségek kezelése gyógyszerekkel
+
+A gyógyszerek kikeveréséhez szükség van alapanyagokra.
+
+Vajákosság szint követelmény: `Betegség szintje / 2`
+
+**Fontos**: az alapanyagok mástól is beszerezhetőek, aki szintén járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően (akár magasabban is, mint te).
+
+<br />
+
+---
+
+### Sebek kezelése gyógyszerekkel, kencékkel
+
+```
+Hatás
+  A sebgyógyulás sebessége duplázódik (x2).
+
+Próbadobás Célszám:
+  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korreláció⭕
+```
+
+A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén ezen képzettség segítségével lehet beszerezni.
+
+Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
+
+**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
 
 <br />
 

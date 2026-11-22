@@ -51,44 +51,21 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre.
 
 ### 🟨 Normál kiterjesztés
 
-  - [Különleges faj boncolása](../../fortelyok.szabad/kulonleges_faj_boncolasa.md)
-    - már speciális - nem elfszabású fajok sebeit is el tudod látni
-    - [Élettan](../../fortelyok.altalanos/elettan.md) fortéllyal már őket is tudod műteni
+- [Különleges faj boncolása](../../fortelyok.szabad/kulonleges_faj_boncolasa.md)
+  - már speciális - nem elfszabású fajok sebeit is el tudod látni
+  - [Élettan](../../fortelyok.altalanos/elettan.md) fortély ismeretében műteni is tudod őket
 
 ### 🟥 Erős kiterjesztés
 
--  [Élettan](../../fortelyok.altalanos/elettan.md): sebész vagy, aki már az anatómia ismeretében képes szerveket műteni
+- [Élettan](../../fortelyok.altalanos/elettan.md): sebész vagy, aki - az anatómia ismeretében - már műteni is képes (szerveket, egyedi sérüléseket, stb).
 
 ---
 
 ## ⭕TODO⭕
 
-Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni
+Majd ha a mágikus (seb)gyógyítást fejlesztjük, akkor ezzel együtt kezelni
 
 ---
-
-### Betegségek kezelése gyógyszerekkel
-
-A gyógyszerek kikeveréséhez szükség van alapanyagokra, amelyeket a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
-
-Vajákosság szint követelmény: `Betegség szintje / 2`
-
-**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
-
----
-
-### Sebek kezelése gyógyszerekkel, kencékkel
-
-```
-Próbadobás Célszám:
-  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korreláció⭕
-```
-
-A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
-
-Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
-
-**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
 
 <br />
 

@@ -30,7 +30,8 @@ A fentiek a [Kalandozókra vonatkozó gyorsabb gyógyulás](010_03_01_kalandozok
 
 ## ⚜️ [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettség, gyógyitalok
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. **Gyógyításra NEM képes**, de a gyógyszerek előállításához szükséges növényi és állati alapanyagokat be tudja szerezni. Minél magasabb a képzettsége, annál ritkábbakat.
+A betegségek orvosa és a "gyógyszerész". Kotyvalékokkal nyavajákat gyógyító, növények, állatok alkotóelemeinek ismerője.
+Betegségek gyógyítására képes, de közvetlenül **ÉP sebekére NEM**. A gyógyszerek előállításához szükséges növényi és állati alapanyagok beszerzése is ide tartozik. Minél magasabb a képzettsége, annál ritkábbak alkotóelemeket tud beszerezni, amelyek a nehezebb gyógyítások jellemző kellékei.
 
 <br />
 
@@ -38,7 +39,8 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi seg�
 
 ## ⚜️ [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) képzettség
 
-Alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi.
+Alapból felcser, de lehet később sebész is.\
+Alacsony szinten a sebek direkt kezelését, ellátását végzi - legmagasabb szinteken ezt már félmágikus energiaátadással.
 
 <br />
 
@@ -50,6 +52,53 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 
  [Sebgyógyítás formula](magia.papi.varazslatok/sebgyogyitas.md)
 
+<br />
+
 ---
+
+## Tipikus hivatások ismeretei
+
+A KM és a játékosok számára pár példát mutatunk be a jellegzetes, gyógyítással foglalkozó mesterségek példakaraktereiből.
+
+### Általános városi orvos
+
+- Vajákosság képzettség - minimum `6.szint`
+- Kirurgia képzettség - minimum `6.szint`
+- Élettan fortély ismerete
+
+### Piócás ember
+
+- Vajákosság képzettség - `4.szint`
+- Kirurgia képzettség - `4.szint`
+
+### Felcser
+
+- Kirurgia képzettség - minimum `6.szint`
+
+### Lápi banya
+
+- Vajákosság képzettség - `7.szint`
+- Mérgek - `5.szint`
+
+### Vándorló gyógyító
+
+- Vajákosság képzettség - `8.szint`
+- Kirurgia képzettség - `5.szint`
+
+---
+
+<br />
+
+### Járványok
+
+Ezek olyan horderejű, gyorsan terjedő jelenségek, amelyekkel egyszerű vajákosok már nem bírnak. A tömeges, országokat letaroló járványokat varázstudók képesek csak megfékezni.
+
+---
+
+<br />
+
+### Idegen fajok kezelése
+
+A nem elfszabású lények betegségeinek és sebeinek gyógyításához az adott fajra vonatkozó [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortéllyal kell rendelkezned. Ez a fortély tehát kiterjeszti mind a [Vajákosság](kepzettsegek.szekunder/vajakossag.md), mind a [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) képzettségeket.
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#13-gyógyítás-gyógyulás)

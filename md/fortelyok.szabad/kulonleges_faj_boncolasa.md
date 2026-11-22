@@ -19,4 +19,9 @@ A fenti információ más módon - ritka, titkos fóliásokkal bújásával - is
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély
 - Legalább egy nap időtartam, míg a boncolás folyik
 
+### Kiterjeszti ezeket
+
+- [Vajákosság](../kepzettsegek.szekunder/vajakossag.md): e speciális faj betegségeit is képes vagy gyógyítani
+- [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md): e speciális faj sebeit is képes vagy ellátni
+
 ---
