@@ -32,13 +32,13 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 
 ## Szociális szituációk
 
+- [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 - [Befolyásolás módszerei: Megfélemlítés, Csábítás, Átverés, hazudozás](szituaciok/befolyasolas_modszerei.md)
+- [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Énekléssel bájolás](szituaciok/eneklessel_bajolas.md)
+- [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
-- [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
-- [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
-- [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
 - [Piálás](szituaciok/pialas.md) 🟠D
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
