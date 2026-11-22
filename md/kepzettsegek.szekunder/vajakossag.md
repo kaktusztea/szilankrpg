@@ -1,10 +1,12 @@
 ## 🔵 Vajákosság
 
-A gyógyszerész, a kotyvalékokkal betegségeket gyógyító, növények, állatok alkotóelemeinek ismerője. Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Előfordul [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány, ahi kapcsolódó készítményeket állít elő mágiával.
+A betegségek orvosa és a gyógyszerész. Kotyvalékokkal nyavajákat gyógyító, növények, állatok alkotóelemeinek ismerője. Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva, melyből aztán főzetet készít. Előfordul, hogy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány, aki kapcsolódó készítményeket állít elő mágiával.
+
+A [Kirurgia](../../kepzettsegek.szekunder/kirurgia.md) képzettséggel jól kiegészítik egymást. Bővebben lásd: [Gyógyítás, gyógyulás](../../130_gyogyitas_gyogyulas.md) főfejezetet.
 
 ### Speciális szabályok
 
-🔆 `ÉP` sebet ezzel a képzettséggel NEM vagy képes direktben gyógyítani - legfeljebb felgyorsítani a gyógyulást.
+🔆 `ÉP` sebet ezzel a képzettséggel **NEM** vagy képes direktben gyógyítani - legfeljebb felgyorsítani a gyógyulást.
 
 🔆 Vajákosság: [Mérgek](mergek.md) képzettség [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható (Mérgezés gyógyítása)
 
@@ -42,6 +44,7 @@ A fenti hordozókba foglalt hatások
 ### Kapcsolódik
 
 - [Méreg alapanyagok beszerzése](../142_mereg_alapanyagok_beszerzese.md)
+- [Mérgek](mergek.md) képzettség → Vajákosság képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 
 ### Helyzetfüggő módosítók
 
@@ -61,7 +64,7 @@ Emlékezet, Intelligencia
 
 ### 🟨 Normál kiterjesztés
 
-- [Különleges faj boncolása](../fortelyok.szabad/kulonleges_faj_boncolasa.md)
+- [Különleges faj boncolása](../fortelyok.szabad/kulonleges_faj_boncolasa.md): már speciális - nem elfszabású fajok betegségeit is tudod kezelni
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
 - [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md)

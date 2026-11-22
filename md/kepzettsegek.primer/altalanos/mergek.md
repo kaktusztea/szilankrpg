@@ -4,6 +4,8 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 
 Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit, de a mérgek felismerése, ellenszer készítés, mérgezés gyógyítása is ide tartozik. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
 
+🔆 Mérgek: [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható
+
 ### Helyzetfüggő módosítók
 
 #### ⚜️ Felszerelés 1️⃣
@@ -44,7 +46,7 @@ A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék h
 
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
-- [Kirurgia](kirurgia.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
+- [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 - [Alkímia](../../kepzettsegek.szekunder/alkimia.md) képzettség
 
 ### Domináns Tulajdonságok

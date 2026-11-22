@@ -4,16 +4,19 @@
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-Igen sokszintű képzettség, amely alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi. A Kirurgia tehát magában foglalja a sebgyógyítást és nagyon fejlett szinten a gyógyítást is.
+Alapból felcser, de lehet később sebész is.\
+Alacsony szinten a sebek direkt kezelését, ellátását végzi - legmagasabb szinteken ezt már félmágikus energiaátadással. Orvosságokkal NEM foglalkozik, maximum, ami a sebek direkt kezeléséhez kell. Az anatómia ([Élettan](../../fortelyok.altalanos/elettan.md)) külön tanulandó, különben csak sima felcser maradsz.
 
-A képzettség az alábbi tevékenységeket fedi le:
+A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel jól kiegészítik egymást. Bővebben lásd: [Gyógyítás, gyógyulás](../../130_gyogyitas_gyogyulas.md) főfejezetet.
+
+### Mit fed le a képzettség?
 
 - vérzés elállítása
-- fertőtlenítés, sebkötözés kencék használatával
-- [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
-- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használhatod a Kirurgiát (ha azt nem ismered)
+- sebek ellátása harcon kívül: a sérült azonnal visszakap: `+5 ÉP`❗ Ez következő sérülésig nem ismételhető.
+- fertőtlenítés kencék használatával, sebkötözés
+- piócázás
 
-Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
+Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre.
 
 ### Helyzetfüggő módosítók
 
@@ -43,21 +46,18 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 
 ### Kapcsolódik
 
-- [Élettan](../../fortelyok.altalanos/elettan.md) fortély
 - [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
 - [Vezető: Orvosprofesszor](../../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos kirurgia esetén bónuszt ad
 
-### Speciális
-
-A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINCS** Összhang, mert az csak a gyógyszer komponens beszerzésének követelménye.
-
 ### 🟨 Normál kiterjesztés
 
-⭕xyz. Ha nincs, törölni
+  - [Különleges faj boncolása](../../fortelyok.szabad/kulonleges_faj_boncolasa.md)
+    - már speciális - nem elfszabású fajok sebeit is el tudod látni
+    - [Élettan](../../fortelyok.altalanos/elettan.md) fortéllyal már őket is tudod műteni
 
 ### 🟥 Erős kiterjesztés
 
-⭕xyz. Ha nincs, törölni
+-  [Élettan](../../fortelyok.altalanos/elettan.md): sebész vagy, aki már az anatómia ismeretében képes szerveket műteni
 
 ---
 
