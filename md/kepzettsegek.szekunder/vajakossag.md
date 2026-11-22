@@ -7,6 +7,7 @@ A [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettséggel jól 
 ### Speciális szabályok
 
 🔆 Vajákos készítmények előállítása ⭕TODO: link⭕
+
 - Vajákos készítmények listája ⭕TODO: link⭕
 - Vajákos-készítmény-generátor
 
