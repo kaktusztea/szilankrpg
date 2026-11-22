@@ -3,13 +3,13 @@ schema_version: 1
 
 id: "kirurgia"
 név: "Kirurgia"
-leírás: "Sebek ellátása, betegségek kezelése, gyógyítás."
+leírás: "Sebek direkt kezelése, ellátása; magasabb szinten sebészet, legmagasabb szinten félmágikus energiaátadás. Orvosságokkal nem foglalkozik."
 primer: true
 csoport: "tudományos"
 többszörös: []
 csoportos: true
 próba: "dobható"
-domináns_tulajdonságok: ["Érzékenység", "Intelligencia"]
+domináns_tulajdonságok: ["Érzékenység", "Emlékezet", "Intelligencia"]
 mesterbónuszok:
   - szint: 9
     leírás: ""

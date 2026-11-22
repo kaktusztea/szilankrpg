@@ -19,6 +19,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 - [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md): boncolás, halott vizsgálata
 - [Nekromancia](../kepzettsegek.primer/arkanumok/nekromancia.md) arkánum: például homunkulusz kreáláshoz
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
+- [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md): sebész vagy, aki - az anatómia ismeretében - már műteni is képes (szerveket, egyedi sérüléseket, stb).
 
 ---
 

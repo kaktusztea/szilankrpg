@@ -3,7 +3,7 @@ schema_version: 1
 
 id: "vajákosság"
 név: "Vajákosság"
-leírás: "Növényi, állati alapanyagokból hatóanyag kinyerése, tartósítása."
+leírás: "A betegségek orvosa és a gyógyszerész: növényi, állati alapanyagokból hatóanyag kinyerése, tartósítása; főzetek, kenőcsök, gyógyszerek készítése."
 primer: false
 csoport: "világi"
 többszörös: []

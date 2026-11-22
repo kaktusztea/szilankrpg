@@ -53,7 +53,7 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre.
 
 - [Különleges faj boncolása](../../fortelyok.szabad/kulonleges_faj_boncolasa.md)
   - már speciális - nem elfszabású fajok sebeit is el tudod látni
-  - [Élettan](../../fortelyok.altalanos/elettan.md) fortély ismeretében műteni is tudod őket
+  - Élettan fortély ismeretében műteni is tudod őket
 
 ### 🟥 Erős kiterjesztés
 

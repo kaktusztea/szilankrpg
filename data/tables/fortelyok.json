@@ -238,7 +238,8 @@
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [
       "lexikum",
-      "nyomozás"
+      "nyomozás",
+      "kirurgia"
     ],
     "fokok": [
       {
@@ -8852,7 +8853,10 @@
     "többszörös_típus": "faj",
     "többszörös_lista": [],
     "leírás": "Többször felvehető - egyedi fajonként.",
-    "kiterjeszti_normál": [],
+    "kiterjeszti_normál": [
+      "kirurgia",
+      "vajákosság"
+    ],
     "kiterjeszti_erős": [],
     "fokok": [
       {

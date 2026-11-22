@@ -18,7 +18,11 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál:
+    - képzettség: "kirurgia"
+      leírás: "már speciális - nem elfszabású fajok sebeit is el tudod látni. Élettan fortély ismeretében műteni is tudod őket."
+    - képzettség: "vajákosság"
+      leírás: "már speciális - nem elfszabású fajok betegségeit is tudod kezelni"
   erős: []
 
 kp_perfok: 6

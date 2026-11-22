@@ -372,6 +372,22 @@
       "leírás": "\"A térkép szerint is veszélyes homokpadok vannak. Kormányos: jobbra, a sziget bal oldala felé, maradj szél alatt!\". Az egyszerű tájékozódáshoz nem szükséges, ne legyünk szigorúak, de a speciális jelzések ismeretéhez kellhet."
     }
   ],
+  "kirurgia": [
+    {
+      "fortély": "különleges_faj_boncolása",
+      "név": "Különleges faj boncolása",
+      "típus": "normál",
+      "maxfok": 1,
+      "leírás": "már speciális - nem elfszabású fajok sebeit is el tudod látni. Élettan fortély ismeretében műteni is tudod őket."
+    },
+    {
+      "fortély": "élettan",
+      "név": "Élettan",
+      "típus": "erős",
+      "maxfok": 1,
+      "leírás": "sebész vagy, aki - az anatómia ismeretében - már műteni is képes (szerveket, egyedi sérüléseket, stb)."
+    }
+  ],
   "kvantikum": [
     {
       "fortély": "asztrológia",
@@ -1123,6 +1139,13 @@
     }
   ],
   "vajákosság": [
+    {
+      "fortély": "különleges_faj_boncolása",
+      "név": "Különleges faj boncolása",
+      "típus": "normál",
+      "maxfok": 1,
+      "leírás": "már speciális - nem elfszabású fajok betegségeit is tudod kezelni"
+    },
     {
       "fortély": "tájtípus_barlangi",
       "név": "Tájtípus - barlangi",

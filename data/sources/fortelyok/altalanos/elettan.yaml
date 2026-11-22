@@ -21,6 +21,8 @@ kiterjeszti:
       leírás: "Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten."
     - képzettség: "nyomozás"
       leírás: "boncoláshoz"
+    - képzettség: "kirurgia"
+      leírás: "sebész vagy, aki - az anatómia ismeretében - már műteni is képes (szerveket, egyedi sérüléseket, stb)."
 
 kp_perfok: 6
 ingyenes_perszint: 0
