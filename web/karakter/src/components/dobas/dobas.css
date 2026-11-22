@@ -530,6 +530,18 @@
 /* Sebzés: Ellenfél páncélja inline segmented bar (mandatory; warning colour until chosen) */
 .pancel-sav { width: 100%; display: flex; flex-direction: column; gap: 4px; }
 .pancel-sav-cim { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.3px; }
+.pancel-sav-cim-bal { display: inline-flex; align-items: center; gap: 4px; }
+.pancel-bestia-btn {
+  display: inline-flex; align-items: center; justify-content: center; padding: 2px 4px; margin: -2px 0;
+  background: none; border: none; color: var(--text-dim); font-size: 14px; cursor: pointer;
+}
+.pancel-bestia-lista { display: flex; flex-direction: column; gap: 4px; min-width: 240px; }
+.pancel-bestia-sor {
+  display: flex; justify-content: space-between; gap: 12px; padding: 8px 10px; border-radius: 6px;
+  border: 1px solid var(--border-input); background: var(--input-bg); color: var(--text); font-size: 14px; cursor: pointer; text-align: left;
+}
+.pancel-bestia-sor.active { background: rgba(144, 202, 249, 0.22); border-color: transparent; font-weight: bold; }
+.pancel-bestia-pelda { color: var(--text-dim); font-weight: normal; }
 .pancel-sav-valassz { color: var(--warning); text-transform: none; }
 .pancel-sav-gombok { display: flex; border: 1px solid var(--border-input); border-radius: 6px; overflow: hidden; }
 /* Not chosen yet: faded red frame (same tone as the Talált button) */

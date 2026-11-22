@@ -43,5 +43,12 @@
     "lánc/sodrony": "lanc",
     "pikkely": "merev",
     "lemez": "merev"
+  },
+  "bestia_példák": {
+    "csupasz": "egér",
+    "puha": "bundás állatok",
+    "bor": "elefánt, bivaly",
+    "lanc": "krokodil, hasonló hüllők",
+    "merev": "teknős, mágikus bestiák"
   }
 }

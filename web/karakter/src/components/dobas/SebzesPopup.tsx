@@ -76,6 +76,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
   const [bónusz, setBónusz] = useState(0);
   // Ellenfél páncélosztálya (a mátrix SP-delta lookup kulcsa). null = még nincs választva.
   const [páncél, setPáncél] = useState<Páncélosztály | null>(null);
+  const [bestiaSúgó, setBestiaSúgó] = useState(false); // paw icon: beast hide → armour class help (picks on tap)
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
   const [bontásNyitva, setBontásNyitva] = useState(false); // k20 + SP breakdown under the result, collapsed by default
 
@@ -192,7 +193,10 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
             {páncélMátrix && (
               <div className={`pancel-sav${páncélKell ? ' pancel-sav-kell' : ''}`}>
                 <div className="pancel-sav-cim">
-                  <span>Ellenfél páncélja</span>
+                  <span className="pancel-sav-cim-bal">Ellenfél páncélja
+                    <button type="button" className="pancel-bestia-btn" title="Bestiák páncélja" aria-label="Bestiák páncélja"
+                      onClick={() => setBestiaSúgó(true)}><Ikon név="mancs" /></button>
+                  </span>
                   {páncél === null
                     ? <span className="pancel-sav-valassz">válassz</span>
                     : <span className={páncélDelta > 0 ? 'pancel-valaszto-delta-pos' : páncélDelta < 0 ? 'pancel-valaszto-delta-neg' : ''}>SP {páncélDelta > 0 ? '+' : ''}{páncélDelta}</span>}
@@ -205,6 +209,20 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
                   ))}
                 </div>
               </div>
+            )}
+
+            {bestiaSúgó && páncélMátrix && (
+              <PopupOverlay onClose={() => setBestiaSúgó(false)}>
+                <label className="kep-prompt-text-center">Bestia bőre / irhája</label>
+                <div className="pancel-bestia-lista">
+                  {PÁNCÉLOSZTÁLYOK.map(p => (
+                    <button key={p.id} type="button" className={`pancel-bestia-sor${páncél === p.id ? ' active' : ''}`}
+                      onClick={() => { setPáncél(p.id); setEredmény(null); setBestiaSúgó(false); }}>
+                      <span>{p.rövid}</span><span className="pancel-bestia-pelda">{páncélMátrix.bestia_példák?.[p.id] ?? ''}</span>
+                    </button>
+                  ))}
+                </div>
+              </PopupOverlay>
             )}
 
             {/* Full popup width (like the páncél bar): fixed, does not follow the label / source text width */}

@@ -356,6 +356,8 @@ export type Páncélosztály = 'csupasz' | 'puha' | 'bor' | 'lanc' | 'merev';
 export interface SebzésjellegPáncélMátrix {
   matrix: Record<string, Record<Páncélosztály, number>>;
   struktúra_osztály: Record<string, Páncélosztály>;
+  /** Beast hide / fur examples per armour class (md/069_08) - Sebzés popup paw-icon help. */
+  bestia_példák: Record<Páncélosztály, string>;
 }
 
 /** Egy extra feltétele (ÉS-kapcsolat a tömbön belül). */
