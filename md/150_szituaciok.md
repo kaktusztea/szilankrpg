@@ -58,7 +58,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Mászás összetett példa](szituaciok/maszas_osszetett_pelda.md) ⚡
 - [Menekülés, Üldözés, Futás](szituaciok/menekules_uldozes_futas.md)
 - [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md)
-- [Víz alatt bírni](szituaciok/viz_alatt_birni.md)
+- [Víz alatt bírni, harcolni](szituaciok/viz_alatt_birni_harcolni.md)
 
 ## Tudás szituációk
 

@@ -4,7 +4,7 @@ A víz mélye a te közeged, ritkábban kell feljönnöd levegőért.
 
 ### Szituációk
 
-- [Víz alatt bírni](../szituaciok/viz_alatt_birni.md)
+- [Víz alatt bírni](../szituaciok/viz_alatt_birni_harcolni.md)
 
 ### Alapeset
 
