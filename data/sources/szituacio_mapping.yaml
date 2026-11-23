@@ -15,10 +15,8 @@
     fájl: "szituaciok/ugras_magasba_tavolba.md"
   - név: "Lövéskitérés sikertelen"
     fájl: "szituaciok/loveskiteres_sikertelen.md"
-
-"képzettség:álcázás_álruha":
-  - név: "Hamisítás és felismerése"
-    fájl: "szituaciok/hamisitas_es_felismerese.md"
+  - név: "Lövéskitérés próba"
+    fájl: "szituaciok/loveskiteres.md"
 
 "képzettség:befolyásolás":
   - név: "Befolyásolás módszerei"
@@ -41,10 +39,12 @@
 "képzettség:emberismeret":
   - név: "Befolyásolás módszerei"
     fájl: "szituaciok/befolyasolas_modszerei.md"
-  - név: "Érzékelés, Aktív/Passzív Észlelés"
-    fájl: "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
   - név: "Információszerzés valakitől"
     fájl: "szituaciok/informacioszerzes_valakitol.md"
+  - név: "Állapot felmérés: másik elfszabású"
+    fájl: "szituaciok/allapot_felmeres_masik_elfszabasu.md"
+  - név: "Énekléssel bájolás"
+    fájl: "szituaciok/eneklessel_bajolas.md"
 
 "képzettség:észlelés":
   - név: "Érzékelés, Aktív/Passzív Észlelés"
@@ -61,8 +61,6 @@
     fájl: "szituaciok/orvtamadas_harcolo_ellenfelre.md"
   - név: "Vakharc, sötétben, láthatatlanul"
     fájl: "szituaciok/vakharc_sotetben_lathatatlanul.md"
-  - név: "Elugrani lovaskocsi elől"
-    fájl: "szituaciok/elugrani_lovaskocsi_elol.md"
 
 "képzettség:távolsági_harcmodor/hajítás":
   - név: "Hajítás alkalmatlan fegyverrel"
@@ -73,18 +71,24 @@
 "képzettség:kézművesség":
   - név: "Hamisítás és felismerése"
     fájl: "szituaciok/hamisitas_es_felismerese.md"
+  - név: "Ételt készíteni"
+    fájl: "szituaciok/etelt_kesziteni.md"
 
 "képzettség:kvantikum":
   - név: "Nyomok észrevétele - városban"
     fájl: "szituaciok/nyomok_nyomkovetes_varos.md"
   - név: "Térkép készítése, értelmezése"
     fájl: "szituaciok/terkep_keszitese_ertelmezes.md"
+  - név: "Csapda hatástalanítás, szabotálás"
+    fájl: "szituaciok/csapda_hatatalanitas_szabotalas.md"
 
 "képzettség:lexikum":
   - név: "Ismerem ezt a nevet? Mit tudhatok róla?"
     fájl: "szituaciok/ismerem_mit_tudhatok_rola.md"
-  - név: "Csapda hatástalanítás, szabotálás"
-    fájl: "szituaciok/csapda_hatatalanitas_szabotalas.md"
+  - név: "Humán tudományos ismeretek"
+    fájl: "szituaciok/human_tudomanyos_ismeretek.md"
+  - név: "Tárgy, jelkép valódiságának és eredetének felismerése"
+    fájl: "szituaciok/targy_jelkep_eredetenek_felismerese.md"
 
 "képzettség:lopakodás_rejtőzés":
   - név: "Lopakodás/rejtőzés és észlelése"
@@ -127,6 +131,8 @@
     fájl: "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
   - név: "Nyomok észrevétele - természetben"
     fájl: "szituaciok/nyomok_nyomkovetes_termeszet.md"
+  - név: "Állapot felmérés: állat szándékai"
+    fájl: "szituaciok/allapot_felmeres_allat_szandekai.md"
 
 "képzettség:városi_jártasság":
   - név: "Ismerem ezt a nevet? Mit tudhatok róla?"
@@ -139,7 +145,35 @@
 "képzettség:harcmodor":
   - név: "Harci jártasság felmérése"
     fájl: "szituaciok/harci_jartassag_felmerese.md"
+  - név: "Állapot felmérés: másik elfszabású"
+    fájl: "szituaciok/allapot_felmeres_masik_elfszabasu.md"
+
+"képzettség:etikett":
+  - név: "Humán tudományos ismeretek"
+    fájl: "szituaciok/human_tudomanyos_ismeretek.md"
+  - név: "Ismerem ezt a nevet? Mit tudhatok róla?"
+    fájl: "szituaciok/ismerem_mit_tudhatok_rola.md"
+
+"képzettség:művészetismeret":
+  - név: "Hamisítás és felismerése"
+    fájl: "szituaciok/hamisitas_es_felismerese.md"
+  - név: "Humán tudományos ismeretek"
+    fájl: "szituaciok/human_tudomanyos_ismeretek.md"
+
+"képzettség:képzőművészet":
+  - név: "Hamisítás és felismerése"
+    fájl: "szituaciok/hamisitas_es_felismerese.md"
+
+"képzettség:értékbecslés":
+  - név: "Hamisítás és felismerése"
+    fájl: "szituaciok/hamisitas_es_felismerese.md"
+
+"képzettség:nyelvtanulás":
+  - név: "Humán tudományos ismeretek"
+    fájl: "szituaciok/human_tudomanyos_ismeretek.md"
+  - név: "Rokon nyelv értelmezése"
+    fájl: "szituaciok/rokon_nyelv_ertelmezese.md"
 
 "fortély:úszás":
   - név: "Víz alatt bírni"
-    fájl: "szituaciok/viz_alatt_birni.md"
+    fájl: "szituaciok/viz_alatt_birni_harcolni.md"

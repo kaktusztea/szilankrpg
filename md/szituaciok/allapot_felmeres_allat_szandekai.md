@@ -3,7 +3,7 @@
 ### → Képzettségpróba: Természetjárás + Intelligencia
 
 - "Ez a kutya csak játszani akar"
-- "Medve a csak bóklászik, vagy a kicsinyeit védi"
+- "A medve csak bóklászik, vagy a kicsinyeit védi"
 
 ```
 Nehézség: 9

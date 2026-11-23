@@ -1,10 +1,10 @@
 # Szituációk
 
-Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyekkel újra és újra találkoznak a játékosok. Ehhez szeretnénk ebben a fejezetben egyfajta sorvezetést nyúltani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
+Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyekkel újra és újra találkoznak a játékosok. Ehhez szeretnénk ebben a fejezetben egyfajta sorvezetést nyújtani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
 
 ## Harci szituációk
 
-- [Ajtóstul nekirontani az túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
+- [Ajtóstul nekirontani a túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
 - [Belharc folyamata](szituaciok/belharc_folyamata.md)
 - [Fegyverrántás](szituaciok/fegyverrantas.md)
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)

@@ -20,7 +20,7 @@ Hátrány-1 KÉ dobásra
 Hátrány-2 KÉ dobásra
 ```
 
-**Büntetés**: a lőfegyver méretétől függ. Kics/közepes: `-1`, Nagy: `-2`. KM dönt.
+**Büntetés**: a lőfegyver méretétől függ. Kicsi/közepes: `-1`, Nagy: `-2`. KM dönt.
 
 ---
 

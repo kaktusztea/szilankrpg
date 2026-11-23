@@ -8,7 +8,7 @@ Gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kis
 +3: Kapkodós, időnyomás alatt
 +0: némi idő után abba kell hagynod,
     mert feltűnne a hiányod
--3: rérős, nincs időnyomás
+-3: ráérős, nincs időnyomás
 ```
 
 ---

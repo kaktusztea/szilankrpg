@@ -76,7 +76,7 @@ k10 dobás
 
 ### Vállalás dobás
 
-⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes `` pontot fel kell használnia).
+⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes pontot fel kell használnia).
 
 ⚙️ Az `Erő` Tulajdonsága az aktuális jelenet idejére `0` értékre csökken.
 
@@ -127,7 +127,7 @@ Helyzetfüggő módosítók
 ```
 
 ```
-(19 k k10)  vs  18
+(19 + k10)  vs  18
  → megvan biztos tudásból ✅
 ```
 

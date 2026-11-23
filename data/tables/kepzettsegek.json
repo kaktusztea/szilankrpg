@@ -65,6 +65,10 @@
       {
         "név": "Lövéskitérés sikertelen",
         "fájl": "szituaciok/loveskiteres_sikertelen.md"
+      },
+      {
+        "név": "Lövéskitérés próba",
+        "fájl": "szituaciok/loveskiteres.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {},
@@ -414,12 +418,7 @@
       }
     ],
     "dobás_komment": [],
-    "kapcsolódó_szituációk": [
-      {
-        "név": "Hamisítás és felismerése",
-        "fájl": "szituaciok/hamisitas_es_felismerese.md"
-      }
-    ],
+    "kapcsolódó_szituációk": [],
     "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
   },
@@ -666,12 +665,16 @@
         "fájl": "szituaciok/befolyasolas_modszerei.md"
       },
       {
-        "név": "Érzékelés, Aktív/Passzív Észlelés",
-        "fájl": "szituaciok/erzekeles_eszleles_aktiv_passziv.md"
-      },
-      {
         "név": "Információszerzés valakitől",
         "fájl": "szituaciok/informacioszerzes_valakitol.md"
+      },
+      {
+        "név": "Állapot felmérés: másik elfszabású",
+        "fájl": "szituaciok/allapot_felmeres_masik_elfszabasu.md"
+      },
+      {
+        "név": "Énekléssel bájolás",
+        "fájl": "szituaciok/eneklessel_bajolas.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {},
@@ -711,7 +714,16 @@
       }
     ],
     "dobás_komment": [],
-    "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Humán tudományos ismeretek",
+        "fájl": "szituaciok/human_tudomanyos_ismeretek.md"
+      },
+      {
+        "név": "Ismerem ezt a nevet? Mit tudhatok róla?",
+        "fájl": "szituaciok/ismerem_mit_tudhatok_rola.md"
+      }
+    ],
     "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/etikett.md"
   },
@@ -747,7 +759,12 @@
       }
     ],
     "dobás_komment": [],
-    "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Hamisítás és felismerése",
+        "fájl": "szituaciok/hamisitas_es_felismerese.md"
+      }
+    ],
     "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
   },
@@ -825,10 +842,6 @@
       {
         "név": "Vakharc, sötétben, láthatatlanul",
         "fájl": "szituaciok/vakharc_sotetben_lathatatlanul.md"
-      },
-      {
-        "név": "Elugrani lovaskocsi elől",
-        "fájl": "szituaciok/elugrani_lovaskocsi_elol.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {},
@@ -1451,6 +1464,10 @@
       {
         "név": "Harci jártasság felmérése",
         "fájl": "szituaciok/harci_jartassag_felmerese.md"
+      },
+      {
+        "név": "Állapot felmérés: másik elfszabású",
+        "fájl": "szituaciok/allapot_felmeres_masik_elfszabasu.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {
@@ -1509,7 +1526,12 @@
       }
     ],
     "dobás_komment": [],
-    "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Hamisítás és felismerése",
+        "fájl": "szituaciok/hamisitas_es_felismerese.md"
+      }
+    ],
     "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
   },
@@ -1545,6 +1567,10 @@
       {
         "név": "Hamisítás és felismerése",
         "fájl": "szituaciok/hamisitas_es_felismerese.md"
+      },
+      {
+        "név": "Ételt készíteni",
+        "fájl": "szituaciok/etelt_kesziteni.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {},
@@ -1641,6 +1667,10 @@
       {
         "név": "Térkép készítése, értelmezése",
         "fájl": "szituaciok/terkep_keszitese_ertelmezes.md"
+      },
+      {
+        "név": "Csapda hatástalanítás, szabotálás",
+        "fájl": "szituaciok/csapda_hatatalanitas_szabotalas.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {},
@@ -1720,8 +1750,12 @@
         "fájl": "szituaciok/ismerem_mit_tudhatok_rola.md"
       },
       {
-        "név": "Csapda hatástalanítás, szabotálás",
-        "fájl": "szituaciok/csapda_hatatalanitas_szabotalas.md"
+        "név": "Humán tudományos ismeretek",
+        "fájl": "szituaciok/human_tudomanyos_ismeretek.md"
+      },
+      {
+        "név": "Tárgy, jelkép valódiságának és eredetének felismerése",
+        "fájl": "szituaciok/targy_jelkep_eredetenek_felismerese.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {},
@@ -2283,7 +2317,16 @@
       }
     ],
     "dobás_komment": [],
-    "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Hamisítás és felismerése",
+        "fájl": "szituaciok/hamisitas_es_felismerese.md"
+      },
+      {
+        "név": "Humán tudományos ismeretek",
+        "fájl": "szituaciok/human_tudomanyos_ismeretek.md"
+      }
+    ],
     "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
   },
@@ -2315,7 +2358,16 @@
       }
     ],
     "dobás_komment": [],
-    "kapcsolódó_szituációk": [],
+    "kapcsolódó_szituációk": [
+      {
+        "név": "Humán tudományos ismeretek",
+        "fájl": "szituaciok/human_tudomanyos_ismeretek.md"
+      },
+      {
+        "név": "Rokon nyelv értelmezése",
+        "fájl": "szituaciok/rokon_nyelv_ertelmezese.md"
+      }
+    ],
     "kapcsolódó_szituációk_elem": {},
     "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
   },
@@ -2621,6 +2673,10 @@
       {
         "név": "Nyomok észrevétele - természetben",
         "fájl": "szituaciok/nyomok_nyomkovetes_termeszet.md"
+      },
+      {
+        "név": "Állapot felmérés: állat szándékai",
+        "fájl": "szituaciok/allapot_felmeres_allat_szandekai.md"
       }
     ],
     "kapcsolódó_szituációk_elem": {},
