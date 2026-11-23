@@ -55,6 +55,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Elugrani lovaskocsi elől](szituaciok/elugrani_lovaskocsi_elol.md)
 - [Esés magasból](szituaciok/eses_magasbol.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
+- [Kötél/csáklya feldobása a fal mellett](szituaciok/kotel_csaklya_feldobasa_fal_mellett.md)
 - [Kötéltánc](szituaciok/koteltanc.md)
 - [Mászás összetett példa](szituaciok/maszas_osszetett_pelda.md) ⚡
 - [Menekülés, Üldözés, Futás](szituaciok/menekules_uldozes_futas.md)
