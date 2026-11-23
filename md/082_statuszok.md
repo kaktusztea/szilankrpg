@@ -4,7 +4,7 @@ A **Státuszok** ideiglenes, vagy tartós hatások a karakteren, amikből "ki ke
 
 A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, akinek levágták a karját).
 
-Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
+Megszüntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
 
 - [Áldott / Átkozott (1,2)](#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g)
 - [Bénultság (2)](#%EF%B8%8F-b%C3%A9nults%C3%A1g-1-cselekv%C5%91k%C3%A9ptelens%C3%A9g)
@@ -207,7 +207,7 @@ Automatikus kudarc
 Beszéd - némult
 Mozgás - képtelen
 
-Pszi használat elvesztése
+Pszí használat elvesztése
 Varázslás képesség elvesztése
 
 ⭕Antyssjárás⭕ viszont ebben
@@ -294,7 +294,7 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (kalandozók)
 Mozgás - képtelen
 Harcképtelenség
 Varázslás képesség elvesztése
-Pszi használat elvesztése
+Pszí használat elvesztése
 
 Csak mágia vagy démonok hatására
   kerülhetsz ebbe az állapotba
@@ -314,7 +314,7 @@ Hátrány-1
 
 ⚡ Példa
 
-- napok óta napja nem aludtál
+- napok óta nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete nem ettél
 
@@ -378,7 +378,7 @@ Hátrány-1
 
 ### ✴️ Hangulat (3) Eufórikus
 
-Euforikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására. Ilyenkor túlzottan magabiztos vagy, meggondolatlan döntéseket hozhatsz.
+Eufórikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására. Ilyenkor túlzottan magabiztos vagy, meggondolatlan döntéseket hozhatsz.
 
 ```
 Előny+1
@@ -560,7 +560,7 @@ Automatikus kudarc
 Harcképtelenség
 Mozgás - lecövekelt
 
-Pszi használat elvesztése
+Pszí használat elvesztése
 Varázslás képesség elvesztése
 ```
 
@@ -689,7 +689,7 @@ Automatikus kudarc
 Harcképtelenség
 Mozgás - lecövekelt
 
-Pszi használat elvesztése
+Pszí használat elvesztése
 Varázslás képesség elvesztése
 
 Beszéd (zavart, vagy némult)

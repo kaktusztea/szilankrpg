@@ -191,7 +191,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 
 ---
 
-### 🔥 Pszi használat elvesztése
+### 🔥 Pszí használat elvesztése
 
 Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással.
 
@@ -220,7 +220,7 @@ Max 1 támadás / kör
 
 ### 🔥 Varázslás képesség elvesztése
 
-Képtelen vagy bármilyen mágia létrehozára, fenntartására. Az Aurádra nincs hatással.
+Képtelen vagy bármilyen mágia létrehozására, fenntartására. Az Aurádra nincs hatással.
 
 <br />
 
