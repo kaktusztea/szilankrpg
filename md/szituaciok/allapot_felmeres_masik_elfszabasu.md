@@ -19,7 +19,6 @@ Nehézség: 9
   - `1.` Random emberek verekszenek
   - `2.` van két harcoló csapat/a piros sapkás matrózok verekszenek a helyi tímárcéh tagjaival, és látom azt is, hogy kik a vezetőik
 
-
 ---
 
 🔗 [Szituációk](../150_szituaciok.md) ↑
