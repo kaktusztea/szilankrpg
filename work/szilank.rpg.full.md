@@ -5933,16 +5933,19 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 
 Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-Igen sokszintű képzettség, amely alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi. A Kirurgia tehát magában foglalja a sebgyógyítást és nagyon fejlett szinten a gyógyítást is.
+Alapból felcser, de lehet később sebész is.\
+Alacsony szinten a sebek direkt kezelését, ellátását végzi - legmagasabb szinteken ezt már félmágikus energiaátadással. Orvosságokkal NEM foglalkozik, maximum, ami a sebek direkt kezeléséhez kell. Az anatómia ([Élettan](../../fortelyok.altalanos/elettan.md)) külön tanulandó, különben csak sima felcser maradsz.
 
-A képzettség az alábbi tevékenységeket fedi le:
+A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel jól kiegészítik egymást. Bővebben lásd: [Gyógyítás, gyógyulás](../../130_gyogyitas_gyogyulas.md) főfejezetet.
+
+### Mit fed le a képzettség?
 
 - vérzés elállítása
-- fertőtlenítés, sebkötözés kencék használatával
-- [vajákos](../../kepzettsegek.szekunder/vajakossag.md) által beszerzett készítmények használata
-- mérgezés gyógyítása: [Mérgek](mergek.md) képzettséget [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használhatod a Kirurgiát (ha azt nem ismered)
+- sebek ellátása harcon kívül: a sérült azonnal visszakap: `+5 ÉP`❗ Ez következő sérülésig nem ismételhető.
+- fertőtlenítés kencék használatával, sebkötözés
+- piócázás
 
-Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverékekre.
+Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre.
 
 ### Helyzetfüggő módosítók
 
@@ -5972,52 +5975,26 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 
 ### Kapcsolódik
 
-- [Élettan](../../fortelyok.altalanos/elettan.md) fortély
 - [Csoportos szellemi képzettségpróba](../../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
 - [Vezető: Orvosprofesszor](../../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos kirurgia esetén bónuszt ad
 
-### Speciális
-
-A [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINCS** Összhang, mert az csak a gyógyszer komponens beszerzésének követelménye.
-
 ### 🟨 Normál kiterjesztés
 
-⭕xyz. Ha nincs, törölni
+- [Különleges faj boncolása](../../fortelyok.szabad/kulonleges_faj_boncolasa.md)
+  - már speciális - nem elfszabású fajok sebeit is el tudod látni
+  - Élettan fortély ismeretében műteni is tudod őket
 
 ### 🟥 Erős kiterjesztés
 
-⭕xyz. Ha nincs, törölni
+- [Élettan](../../fortelyok.altalanos/elettan.md): sebész vagy, aki - az anatómia ismeretében - már műteni is képes (szerveket, egyedi sérüléseket, stb).
 
 ---
 
 ## ⭕TODO⭕
 
-Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni
+Majd ha a mágikus (seb)gyógyítást fejlesztjük, akkor ezzel együtt kezelni
 
 ---
-
-### Betegségek kezelése gyógyszerekkel
-
-A gyógyszerek kikeveréséhez szükség van alapanyagokra, amelyeket a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
-
-Vajákosság szint követelmény: `Betegség szintje / 2`
-
-**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
-
----
-
-### Sebek kezelése gyógyszerekkel, kencékkel
-
-```
-Próbadobás Célszám:
-  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korreláció⭕
-```
-
-A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén a [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
-
-Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
-
-**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
 
 <br />
 
@@ -6247,6 +6224,8 @@ Ez egy [Primer képzettség](../../010_09_primer_szekunder_ismeretek.md). Próba
 
 Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit, de a mérgek felismerése, ellenszer készítés, mérgezés gyógyítása is ide tartozik. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
 
+🔆 Mérgek: [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható
+
 ### Helyzetfüggő módosítók
 
 #### ⚜️ Felszerelés 1️⃣
@@ -6287,7 +6266,7 @@ A mágikus/szakrális rituálék, együttállások, varázstárgyak, ereklyék h
 
 - [Méregálló](../../fortelyok.altalanos/meregallo.md) fortély
 - [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség
-- [Kirurgia](kirurgia.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
+- [Vajákosság](../../kepzettsegek.szekunder/vajakossag.md) képzettség → Mérgek képzettséget [helyettesítő képzettség](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 - [Alkímia](../../kepzettsegek.szekunder/alkimia.md) képzettség
 
 ### Domináns Tulajdonságok
@@ -11564,13 +11543,20 @@ Segítségedre hívod az erdő állatait.
 
 ## 🔵 Vajákosság
 
-A gyógyszerész, a kotyvalékokkal betegségeket gyógyító, növények, állatok alkotóelemeinek ismerője. Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Előfordul [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány, ahi kapcsolódó készítményeket állít elő mágiával.
+A betegségek orvosa és a gyógyszerész. Kotyvalékokkal nyavajákat gyógyító, növények, állatok alkotóelemeinek ismerője. Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva, melyből aztán főzetet készít. Előfordul, hogy [Vulgármágiát](../051_02_vulgarmagia.md) gyakorló boszorkány, aki kapcsolódó készítményeket állít elő mágiával.
+
+A [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md) képzettséggel jól kiegészítik egymást. Bővebben lásd: [Gyógyítás, gyógyulás](../130_gyogyitas_gyogyulas.md) főfejezetet.
 
 ### Speciális szabályok
 
-🔆 `ÉP` sebet ezzel a képzettséggel NEM vagy képes direktben gyógyítani - legfeljebb felgyorsítani a gyógyulást.
+🔆 Vajákos készítmények előállítása ⭕TODO: link⭕
 
-🔆 Vajákosság: [Mérgek](mergek.md) képzettség [helyettesítő képzettségként](../../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható (Mérgezés gyógyítása)
+- Vajákos készítmények listája ⭕TODO: link⭕
+- Vajákos-készítmény-generátor
+
+🔆 `ÉP` sebet ezzel a képzettséggel **NEM** vagy képes direktben gyógyítani - legfeljebb felgyorsítani a gyógyulást.
+
+🔆 Vajákosság: [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség [helyettesítő képzettségként](../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s) használható (Mérgezés gyógyítása)
 
 ### Leírás
 
@@ -11606,6 +11592,7 @@ A fenti hordozókba foglalt hatások
 ### Kapcsolódik
 
 - [Méreg alapanyagok beszerzése](../142_mereg_alapanyagok_beszerzese.md)
+- [Mérgek](../kepzettsegek.primer/altalanos/mergek.md) képzettség → Vajákosság képzettséget [helyettesítő képzettség](../030_06_01_kepzettsegproba.md#helyettes%C3%ADt%C3%A9s)
 
 ### Helyzetfüggő módosítók
 
@@ -11625,7 +11612,7 @@ Emlékezet, Intelligencia
 
 ### 🟨 Normál kiterjesztés
 
-- [Különleges faj boncolása](../fortelyok.szabad/kulonleges_faj_boncolasa.md)
+- [Különleges faj boncolása](../fortelyok.szabad/kulonleges_faj_boncolasa.md): már speciális - nem elfszabású fajok betegségeit is tudod kezelni
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
 - [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md)
@@ -11652,6 +11639,38 @@ Emlékezet, Intelligencia
 #### 🌟 `15.szint`
 
 ⭕TODO⭕ Pusztán ránézésből megmondod, mi rejlik a növényben, szervben, kristályban.
+
+<br />
+
+---
+
+### Betegségek kezelése gyógyszerekkel
+
+A gyógyszerek kikeveréséhez szükség van alapanyagokra.
+
+Vajákosság szint követelmény: `Betegség szintje / 2`
+
+**Fontos**: az alapanyagok mástól is beszerezhetőek, aki szintén járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően (akár magasabban is, mint te).
+
+<br />
+
+---
+
+### Sebek kezelése gyógyszerekkel, kencékkel
+
+```
+Hatás
+  A sebgyógyulás sebessége duplázódik (x2).
+
+Próbadobás Célszám:
+  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korreláció⭕
+```
+
+A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén ezen képzettség segítségével lehet beszerezni.
+
+Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
+
+**Fontos**: az alapanyagok mástól is beszerezhetőek, aki járatos a **Vajákosság** képzettségben a fent leírt szint követelményének megfelelően.
 
 <br />
 
@@ -13643,6 +13662,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 - [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md): boncolás, halott vizsgálata
 - [Nekromancia](../kepzettsegek.primer/arkanumok/nekromancia.md) arkánum: például homunkulusz kreáláshoz
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
+- [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md): sebész vagy, aki - az anatómia ismeretében - már műteni is képes (szerveket, egyedi sérüléseket, stb).
 
 ---
 
@@ -18608,6 +18628,11 @@ A fenti információ más módon - ritka, titkos fóliásokkal bújásával - is
 
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély
 - Legalább egy nap időtartam, míg a boncolás folyik
+
+### Kiterjeszti ezeket
+
+- [Vajákosság](../kepzettsegek.szekunder/vajakossag.md): e speciális faj betegségeit is képes vagy gyógyítani
+- [Kirurgia](../kepzettsegek.primer/altalanos/kirurgia.md): e speciális faj sebeit is képes vagy ellátni
 
 ---
 
@@ -34064,7 +34089,8 @@ A fentiek a [Kalandozókra vonatkozó gyorsabb gyógyulás](010_03_01_kalandozok
 
 ## ⚜️ [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettség, gyógyitalok
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. **Gyógyításra NEM képes**, de a gyógyszerek előállításához szükséges növényi és állati alapanyagokat be tudja szerezni. Minél magasabb a képzettsége, annál ritkábbakat.
+A betegségek orvosa és a "gyógyszerész". Kotyvalékokkal nyavajákat gyógyító, növények, állatok alkotóelemeinek ismerője.
+Betegségek gyógyítására képes, de közvetlenül **ÉP sebekére NEM**. A gyógyszerek előállításához szükséges növényi és állati alapanyagok beszerzése is ide tartozik. Minél magasabb a képzettsége, annál ritkábbak alkotóelemeket tud beszerezni, amelyek a nehezebb gyógyítások jellemző kellékei.
 
 <br />
 
@@ -34072,7 +34098,8 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi seg�
 
 ## ⚜️ [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) képzettség
 
-Alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel, magasabb szinten félmágikus energiaátadással végzi.
+Alapból felcser, de lehet később sebész is.\
+Alacsony szinten a sebek direkt kezelését, ellátását végzi - legmagasabb szinteken ezt már félmágikus energiaátadással.
 
 <br />
 
@@ -34084,7 +34111,54 @@ Isteni energiákkal, pusztán kézrátétellel és a pap hitével való gyógyí
 
  [Sebgyógyítás formula](magia.papi.varazslatok/sebgyogyitas.md)
 
+<br />
+
 ---
+
+## Tipikus hivatások ismeretei
+
+A KM és a játékosok számára pár példát mutatunk be a jellegzetes, gyógyítással foglalkozó mesterségek példakaraktereiből.
+
+### Általános városi orvos
+
+- Vajákosság képzettség - minimum `6.szint`
+- Kirurgia képzettség - minimum `6.szint`
+- Élettan fortély ismerete
+
+### Piócás ember
+
+- Vajákosság képzettség - `4.szint`
+- Kirurgia képzettség - `4.szint`
+
+### Felcser
+
+- Kirurgia képzettség - minimum `6.szint`
+
+### Lápi banya
+
+- Vajákosság képzettség - `7.szint`
+- Mérgek - `5.szint`
+
+### Vándorló gyógyító
+
+- Vajákosság képzettség - `8.szint`
+- Kirurgia képzettség - `5.szint`
+
+---
+
+<br />
+
+### Járványok
+
+Ezek olyan horderejű, gyorsan terjedő jelenségek, amelyekkel egyszerű vajákosok már nem bírnak. A tömeges, országokat letaroló járványokat varázstudók képesek csak megfékezni.
+
+---
+
+<br />
+
+### Idegen fajok kezelése
+
+A nem elfszabású lények betegségeinek és sebeinek gyógyításához az adott fajra vonatkozó [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) fortéllyal kell rendelkezned. Ez a fortély tehát kiterjeszti mind a [Vajákosság](kepzettsegek.szekunder/vajakossag.md), mind a [Kirurgia](kepzettsegek.primer/altalanos/kirurgia.md) képzettségeket.
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#13-gyógyítás-gyógyulás)
 
@@ -34989,13 +35063,13 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 
 ## Szociális szituációk
 
+- [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 - [Befolyásolás módszerei: Megfélemlítés, Csábítás, Átverés, hazudozás](szituaciok/befolyasolas_modszerei.md)
+- [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Énekléssel bájolás](szituaciok/eneklessel_bajolas.md)
+- [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
-- [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
-- [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
-- [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
 - [Piálás](szituaciok/pialas.md) 🟠D
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
