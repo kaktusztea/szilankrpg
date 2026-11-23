@@ -42,6 +42,18 @@ A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkez�
 
 ---
 
+### ⚜️  Menekülés közben elbújni
+
+```
+Lopakodás/rejtőzés + Ügyesség
+                -3: időnyomás
+          vs.
+Észlelés + Érzékenység
+              +3 aktív
+```
+
+---
+
 🔗 [Szituációk](../150_szituaciok.md) ↑
 
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

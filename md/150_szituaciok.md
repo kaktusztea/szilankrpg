@@ -40,6 +40,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
 - [Piálás](szituaciok/pialas.md) 🟠D
+- [Rokon nyelv értelmezése](szituaciok/rokon_nyelv_ertelmezese.md) 🟠D
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
@@ -64,6 +65,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 
 - [Csapda hatástalanítás, mechanikus szerkezet szabotálása](szituaciok/csapda_hatatalanitas_szabotalas.md)
 - [Hamisítás és felismerése](szituaciok/hamisitas_es_felismerese.md)
+- [Tárgy, jelkép valódiságának és eredetének felismerése](szituaciok/targy_jelkep_eredetenek_felismerese.md)
 - [Térkép készítése, értelmezése](szituaciok/terkep_keszitese_ertelmezes.md)
 
 ---
