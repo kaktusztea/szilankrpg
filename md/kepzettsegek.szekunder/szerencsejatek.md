@@ -45,9 +45,9 @@ Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről sz
 A játék során sokszor ellenpróbaként dobják, főleg csalás kiszúrásánál:
 
 ```
-Szerencsejáték
+Szerencsejáték + Intelligencia
      vs
-Szerencsejáték
+Szerencsejáték + Intelligencia
 ```
 
 #### Könnyű (6) 🎲
