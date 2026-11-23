@@ -69,6 +69,7 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 
 - [Csapda hatástalanítás, mechanikus szerkezet szabotálása](szituaciok/csapda_hatatalanitas_szabotalas.md)
 - [Hamisítás és felismerése](szituaciok/hamisitas_es_felismerese.md)
+- [Humán tudományos ismeretek](szituaciok/human_tudomanyos_ismeretek.md)
 - [Tárgy, jelkép valódiságának és eredetének felismerése](szituaciok/targy_jelkep_eredetenek_felismerese.md)
 - [Térkép készítése, értelmezése](szituaciok/terkep_keszitese_ertelmezes.md)
 
