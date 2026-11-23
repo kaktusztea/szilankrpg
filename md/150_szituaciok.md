@@ -38,11 +38,11 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Befolyásolás módszerei: Megfélemlítés, Csábítás, Átverés, hazudozás](szituaciok/befolyasolas_modszerei.md)
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Énekléssel bájolás](szituaciok/eneklessel_bajolas.md)
-- [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
+- [Ételt készíteni](szituaciok/etelt_kesziteni.md) 
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
-- [Piálás](szituaciok/pialas.md) 🟠D
-- [Rokon nyelv értelmezése](szituaciok/rokon_nyelv_ertelmezese.md) 🟠D
+- [Piálás](szituaciok/pialas.md)
+- [Rokon nyelv értelmezése](szituaciok/rokon_nyelv_ertelmezese.md)
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
