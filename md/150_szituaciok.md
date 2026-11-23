@@ -32,6 +32,8 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 
 ## Szociális szituációk
 
+- [Állapot felmérés: másik elfszabású](szituaciok/allapot_felmeres_masik_elfszabasu.md)
+- [Állapot felmérés: állat szándékai](szituaciok/allapot_felmeres_allat_szandekai.md)
 - [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 - [Befolyásolás módszerei: Megfélemlítés, Csábítás, Átverés, hazudozás](szituaciok/befolyasolas_modszerei.md)
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
