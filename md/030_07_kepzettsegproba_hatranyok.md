@@ -8,25 +8,30 @@ Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2
 
 `Hátrány-1`
 
-- Átkozott Képzettség (1) (adott Képzettségre)
-- Átkozott Viselkedés (1) (KM határozza meg)
-- Eszmélet (1) Bódultság
-- Hangulat (4) Obszesszív (kivéve az obszesszió tárgyát)
-- Sérült (1) S3
+- Átkozott Képzettség (`1`) (adott Képzettségre)
+- Átkozott Viselkedés (`1`) (KM határozza meg)
+- Eszmélet (`1`) Bódultság
+- Hangulat (`2`) Inspirált (koncentrációt igénylő feladatokra)
+- Hangulat (`4`) Obszesszív (kivéve az obszesszió tárgyát)
+- Sérült (`1`) S3
+- Szellemi (`1`) Kialvatlanság (Észlelés)
 
 `Hátrány-2`
 
-- Átkozott Képzettség (2) (adott Képzettségre)
-- Átkozott Viselkedés (2) (KM határozza meg)
-- Eszmélet (2) Kábultság
-- Sérült (2) S4
+- Átkozott Képzettség (`2`) (adott Képzettségre)
+- Átkozott Viselkedés (`2`) (KM határozza meg)
+- Eszmélet (`2`) Kábultság
+- Fizikai (`3`) Elcsigázottság (nem-harci képzettségekre)
+- Hangulat (`3`) Eufórikus (koncentrációt igénylő feladatokra)
+- Sérült (`2`) S4
 
 Automatikus kudarc
 
-- Eszmélet (3) Ájulás
-- Eszmélet (4) Kóma
-- Sérült (3) Haldoklás
-- Zavar (3) Sokk
+- Eszmélet (`3`) Ájulás
+- Eszmélet (`4`) Kóma
+- Hangulat (`4`) Obszesszív (amire a KM kijelöli)
+- Sérült (`3`) Haldoklás
+- Zavar (`3`) Sokk
 
 ---
 
@@ -54,7 +59,7 @@ Automatikus kudarc
 `Hátrány-2`
 
 - Fizikai (`2`) Kimerültség
-- Szellemi (`3`) Delírium
+- Szellemi (`3`) Delírium (nem-mágikus)
 - Zavar (`1`) Kizökkent
 
 Automatikus kudarc
@@ -71,10 +76,12 @@ Automatikus kudarc
 - Félelem (`1`) Szorongás
 - Rosszullét (`2`) Erős
 - Szellemi (`2`) Eltompultság
+- Trauma (`1`) Lélekrepedés (Önuralom / Érzékenység használatakor)
 
 `Hátrány-2`
 
 - Szellemi (`3`) Delírium
+- Trauma (`2`) Lélektörés (Önuralom / Érzékenység használatakor)
 - Zavar (`1`) Kizökkent
 
 Automatikus kudarc
@@ -82,6 +89,18 @@ Automatikus kudarc
 - Félelem (`2`) Rettegés/Pánik
 - Indulat (`3`) Őrjöngés
 - Zavar (`2`) Megrendült
+
+---
+
+### Mágiahasználat hátrányok
+
+`Hátrány-1`
+
+- Szellemi (`2`) Eltompultság (random mágia hatás esélye ↑)
+
+`Hátrány-2`
+
+- Szellemi (`3`) Delírium
 
 <br />
 
