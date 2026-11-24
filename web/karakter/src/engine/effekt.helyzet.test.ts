@@ -43,8 +43,8 @@ describe('státusz-effektek (§42 4b-2)', () => {
     expect(eff.some(e => e.cél === 'vé_veszteség' && e.mód === 'szorzó' && e.érték === 2 && e.forrás.név === 'Fizikai (2)')).toBe(true);
   });
 
-  it('Félelem (2): max 1 támadás minden fegyversoron; a VÉ-veszteség szorzó a Fizikai (2)-ből jön', () => {
-    const ki = hc([]), be = hc(['Félelem (2)']);
+  it('Zavar (1): max 1 támadás minden fegyversoron; a VÉ-veszteség szorzó a Fizikai (2)-ből jön', () => {
+    const ki = hc([]), be = hc(['Zavar (1)']);
     const meneth = (h: ReturnType<typeof hc>) => h.fegyverResults.find(r => r.fegyver_név === 'Meneth')!.támadások;
     expect([meneth(ki), meneth(be)]).toEqual([2, 1]);
     expect(be.fegyverResults.every(r => r.támadások <= 1 && r.módok.every(m => m.támadások <= 1))).toBe(true);

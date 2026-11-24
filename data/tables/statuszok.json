@@ -488,7 +488,15 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "érzék_próba"
+            "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:érzékenység",
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -1,
+            "cél": "érzék_próba",
+            "megjegyzés": "Érzékenységgel dobott Képzettségpróbára"
           }
         ]
       },
@@ -499,7 +507,15 @@
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "érzék_próba"
+            "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:érzékenység",
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -2,
+            "cél": "érzék_próba",
+            "megjegyzés": "Érzékenységgel dobott Képzettségpróbára"
           }
         ]
       },
@@ -509,8 +525,14 @@
         "hatások": [
           {
             "mód": "letilt",
+            "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:érzékenység",
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára (automatikus kudarc)"
+          },
+          {
+            "mód": "letilt",
             "cél": "érzék_próba",
-            "megjegyzés": "automatikus kudarc"
+            "megjegyzés": "Érzékenységgel dobott Képzettségpróbára (automatikus kudarc)"
           }
         ]
       }
@@ -552,11 +574,6 @@
           }
         ],
         "hatások": [
-          {
-            "mód": "max_limit",
-            "érték": 1,
-            "cél": "támadások_száma"
-          },
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
@@ -609,7 +626,7 @@
         "alcím": "Fáradtság",
         "megjegyzések": [
           {
-            "text": "Példák: napok óta nem aludtál; Edzettségedhez mérten elfáradtál hegymászás során; egy hete nem ettél."
+            "text": "Példák: Edzettségedhez mérten elfáradtál hegymászás során; egy hete nem ettél."
           }
         ],
         "hatások": [
@@ -756,7 +773,7 @@
         "alcím": "Eufórikus",
         "megjegyzések": [
           {
-            "text": "A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására; ilyenkor túlzottan magabiztos, meggondolatlan döntéseket hozhat."
+            "text": "A karakter eufórikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására; ilyenkor túlzottan magabiztos, meggondolatlan döntéseket hozhat."
           }
         ],
         "hatások": [
@@ -1084,6 +1101,11 @@
       {
         "fok": 1,
         "alcím": "Kialvatlanság",
+        "megjegyzések": [
+          {
+            "text": "Példa: egy-két átvirrasztott éjszaka."
+          }
+        ],
         "hatások": [
           {
             "mód": "hátrány",

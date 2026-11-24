@@ -6,6 +6,9 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 
 Megszüntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
 
+Ugyanabból a Státuszból egyszerre egy fok lehet aktív, súlyosbodáskor a magasabb fok lép érvénybe.\
+Kivétel: Érzékvesztés (érzékenként).
+
 - [Áldott / Átkozott (1,2)](#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g)
 - [Bénultság (2)](#%EF%B8%8F-b%C3%A9nults%C3%A1g-1-cselekv%C5%91k%C3%A9ptelens%C3%A9g)
 - [Blokkolt (2)](#%EF%B8%8F-blokkolt-1-k%C3%B6zepesen)
@@ -232,6 +235,7 @@ Látás, Hallás, Szaglás.
 ```
 Hátrány-1
   Érzék(x) Tulajdonságpróbákra
+  Érzékenységgel dobott Képzettségpróbákra
 ```
 
 ### ✴️ Érzékvesztés (2) Részleges
@@ -239,6 +243,7 @@ Hátrány-1
 ```
 Hátrány-2
   Érzék(x) Tulajdonságpróbákra
+  Érzékenységgel dobott Képzettségpróbákra
 ```
 
 ### ✴️ Érzékvesztés (3) Teljes
@@ -246,6 +251,7 @@ Hátrány-2
 ```
 Automatikus kudarc
   Érzék(x) Tulajdonságpróbákra
+  Érzékenységgel dobott Képzettségpróbákra
 ```
 
 <br />
@@ -277,7 +283,6 @@ Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 ### ✴️ Félelem (2) Rettegés/Pánik
 
 ```
-Többszörös támadás elvesztése
 Teljes Védekezés taktika kötelező
 
 Automatikus kudarc
@@ -314,7 +319,6 @@ Hátrány-1
 
 ⚡ Példa
 
-- napok óta nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete nem ettél
 
@@ -574,6 +578,8 @@ Varázslás képesség elvesztése
 Hátrány-1
   Észlelés képzettségpróba
 ```
+
+⚡ Példa: egy-két átvirrasztott éjszaka
 
 ### ✴️ Szellemi (2) Eltompultság
 

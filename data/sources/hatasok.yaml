@@ -104,7 +104,7 @@ hatások:
 
 # --- Pszi ---
 - id: "pszi_elvesztése"
-  név: "Pszi használat elvesztése"
+  név: "Pszí használat elvesztése"
   leírás: "Képtelen vagy Pszí alkalmazására. Az Aurádra nincs hatással."
   mechanika: [{mód: "letilt", cél: "pszi"}]
 

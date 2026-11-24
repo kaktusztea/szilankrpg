@@ -55,6 +55,8 @@ Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs fegyverméret-korlá
 
 Ha olyan a szituáció, hogy az alkalmazó nem képes, vagy nem akarja alkalmazni harca közben ezt a stílust (pl. túl feltűnő lenne az ugrabugrálása), akkor nem kapja meg a leírt bónuszokat.
 
+[Fizikai (3) Elcsigázottság](../082_statuszok.md#%EF%B8%8F-fizikai-3-elcsig%C3%A1zotts%C3%A1g) Státusz alatt nem alkalmazható (automatikus kudarc).
+
 #### Helyigény
 
 A KM dönt, hogy van-e elég hely az alkalmazáshoz, de ne legyen túl szigorú; egy közepes szobában is alkalmazható (falra ugrás, elrugaszkodás, stb).
