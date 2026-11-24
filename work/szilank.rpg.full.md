@@ -11327,9 +11327,9 @@ Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről sz
 A játék során sokszor ellenpróbaként dobják, főleg csalás kiszúrásánál:
 
 ```
-Szerencsejáték
+Szerencsejáték + Intelligencia
      vs
-Szerencsejáték
+Szerencsejáték + Intelligencia
 ```
 
 #### Könnyű (6) 🎲
@@ -13774,7 +13774,7 @@ A víz mélye a te közeged, ritkábban kell feljönnöd levegőért.
 
 ### Szituációk
 
-- [Víz alatt bírni](../szituaciok/viz_alatt_birni.md)
+- [Víz alatt bírni](../szituaciok/viz_alatt_birni_harcolni.md)
 
 ### Alapeset
 
@@ -31157,7 +31157,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 
 ---
 
-### 🔥 Pszi használat elvesztése
+### 🔥 Pszí használat elvesztése
 
 Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással.
 
@@ -31186,7 +31186,7 @@ Max 1 támadás / kör
 
 ### 🔥 Varázslás képesség elvesztése
 
-Képtelen vagy bármilyen mágia létrehozára, fenntartására. Az Aurádra nincs hatással.
+Képtelen vagy bármilyen mágia létrehozására, fenntartására. Az Aurádra nincs hatással.
 
 <br />
 
@@ -31260,7 +31260,7 @@ A **Státuszok** ideiglenes, vagy tartós hatások a karakteren, amikből "ki ke
 
 A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, akinek levágták a karját).
 
-Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
+Megszüntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
 
 - [Áldott / Átkozott (1,2)](#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g)
 - [Bénultság (2)](#%EF%B8%8F-b%C3%A9nults%C3%A1g-1-cselekv%C5%91k%C3%A9ptelens%C3%A9g)
@@ -31463,7 +31463,7 @@ Automatikus kudarc
 Beszéd - némult
 Mozgás - képtelen
 
-Pszi használat elvesztése
+Pszí használat elvesztése
 Varázslás képesség elvesztése
 
 ⭕Antyssjárás⭕ viszont ebben
@@ -31550,7 +31550,7 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (kalandozók)
 Mozgás - képtelen
 Harcképtelenség
 Varázslás képesség elvesztése
-Pszi használat elvesztése
+Pszí használat elvesztése
 
 Csak mágia vagy démonok hatására
   kerülhetsz ebbe az állapotba
@@ -31570,7 +31570,7 @@ Hátrány-1
 
 ⚡ Példa
 
-- napok óta napja nem aludtál
+- napok óta nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete nem ettél
 
@@ -31634,7 +31634,7 @@ Hátrány-1
 
 ### ✴️ Hangulat (3) Eufórikus
 
-Euforikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására. Ilyenkor túlzottan magabiztos vagy, meggondolatlan döntéseket hozhatsz.
+Eufórikus állapotban vagy, talán valamilyen sikerélmény vagy varázslat hatására. Ilyenkor túlzottan magabiztos vagy, meggondolatlan döntéseket hozhatsz.
 
 ```
 Előny+1
@@ -31816,7 +31816,7 @@ Automatikus kudarc
 Harcképtelenség
 Mozgás - lecövekelt
 
-Pszi használat elvesztése
+Pszí használat elvesztése
 Varázslás képesség elvesztése
 ```
 
@@ -31945,7 +31945,7 @@ Automatikus kudarc
 Harcképtelenség
 Mozgás - lecövekelt
 
-Pszi használat elvesztése
+Pszí használat elvesztése
 Varázslás képesség elvesztése
 
 Beszéd (zavart, vagy némult)
@@ -35031,16 +35031,17 @@ Lassan, de folyamatosan ható fegyverméreg: a véráramba jutva rontja a vér o
 
 # Szituációk
 
-Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyekkel újra és újra találkoznak a játékosok. Ehhez szeretnénk ebben a fejezetben egyfajta sorvezetést nyúltani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
+Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyekkel újra és újra találkoznak a játékosok. Ehhez szeretnénk ebben a fejezetben egyfajta sorvezetést nyújtani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
 
 ## Harci szituációk
 
-- [Ajtóstul nekirontani az túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
+- [Ajtóstul nekirontani a túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
 - [Belharc folyamata](szituaciok/belharc_folyamata.md)
 - [Fegyverrántás](szituaciok/fegyverrantas.md)
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
+- [Pajzs ártalmatlanítása](szituaciok/pajzs_artalmatlanitasa.md)
 - [Vakharc, sötétben, láthatatlanul](szituaciok/vakharc_sotetben_lathatatlanul.md)
 
 ## Sunyi támadások
@@ -35063,14 +35064,17 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 
 ## Szociális szituációk
 
+- [Állapot felmérés: másik elfszabású](szituaciok/allapot_felmeres_masik_elfszabasu.md)
+- [Állapot felmérés: állat szándékai](szituaciok/allapot_felmeres_allat_szandekai.md)
 - [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 - [Befolyásolás módszerei: Megfélemlítés, Csábítás, Átverés, hazudozás](szituaciok/befolyasolas_modszerei.md)
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
 - [Énekléssel bájolás](szituaciok/eneklessel_bajolas.md)
-- [Ételt készíteni](szituaciok/etelt_kesziteni.md)  🟠D
+- [Ételt készíteni](szituaciok/etelt_kesziteni.md)
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
-- [Piálás](szituaciok/pialas.md) 🟠D
+- [Piálás](szituaciok/pialas.md)
+- [Rokon nyelv értelmezése](szituaciok/rokon_nyelv_ertelmezese.md)
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
@@ -35085,16 +35089,19 @@ Játék során vannak klasszikus, gyakran előforduló **Szituációk**, amelyek
 - [Elugrani lovaskocsi elől](szituaciok/elugrani_lovaskocsi_elol.md)
 - [Esés magasból](szituaciok/eses_magasbol.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
+- [Kötél/csáklya feldobása a fal mellett](szituaciok/kotel_csaklya_feldobasa_fal_mellett.md)
 - [Kötéltánc](szituaciok/koteltanc.md)
 - [Mászás összetett példa](szituaciok/maszas_osszetett_pelda.md) ⚡
 - [Menekülés, Üldözés, Futás](szituaciok/menekules_uldozes_futas.md)
 - [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md)
-- [Víz alatt bírni](szituaciok/viz_alatt_birni.md)
+- [Víz alatt bírni, harcolni](szituaciok/viz_alatt_birni_harcolni.md)
 
 ## Tudás szituációk
 
 - [Csapda hatástalanítás, mechanikus szerkezet szabotálása](szituaciok/csapda_hatatalanitas_szabotalas.md)
 - [Hamisítás és felismerése](szituaciok/hamisitas_es_felismerese.md)
+- [Humán tudományos ismeretek](szituaciok/human_tudomanyos_ismeretek.md)
+- [Tárgy, jelkép valódiságának és eredetének felismerése](szituaciok/targy_jelkep_eredetenek_felismerese.md)
 - [Térkép készítése, értelmezése](szituaciok/terkep_keszitese_ertelmezes.md)
 
 ---
@@ -35115,6 +35122,60 @@ Fegyvertelen VÉ
 ```
 
 → Harci helyzet: [Meglepetés](../065_03_01_pozitiv_helyzetek.md#meglepetés)
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/allapot_felmeres_allat_szandekai.md
+
+## Állapot felmérés: állat szándékai
+
+### → Képzettségpróba: Természetjárás + Intelligencia
+
+- "Ez a kutya csak játszani akar"
+- "A medve csak bóklászik, vagy a kicsinyeit védi"
+
+```
+Nehézség: 9
+```
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/allapot_felmeres_masik_elfszabasu.md
+
+## Állapot felmérés:  másik elfszabású
+
+### → Képzettségpróba: Emberismeret + Intelligencia
+
+```
+Nehézség: 9
+```
+
+- Éber-e a városőr, vagy félig alszik
+- Keménykedni/verekedni akar az asztaltársaság
+
+### → Képzettségpróba: Harcmodor (legmagasabb) + Intelligencia
+
+```
+Nehézség: 9
+```
+
+- Benyitok a kocsmába, megy a bunyó. Mit látok?
+  - `1.` Random emberek verekszenek
+  - `2.` van két harcoló csapat/a piros sapkás matrózok verekszenek a helyi tímárcéh tagjaival, és látom azt is, hogy kik a vezetőik
 
 ---
 
@@ -35971,6 +36032,26 @@ Hátas            SP
 
 ---
 ---
+## File: md/szituaciok/human_tudomanyos_ismeretek.md
+
+## Humán tudományos ismeretek
+
+Ezekre nem adunk külön-külön példákat. Az alábbi képzettségek használatát ajánljuk, a megfelelő, őket kiterjesztő fortélyokkal kombinálva.
+
+- [Etikett](../kepzettsegek.szekunder/etikett.md)
+- [Lexikum](../kepzettsegek.szekunder/lexikum.md)
+- [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md)
+- [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md)
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
 ## File: md/szituaciok/informacioszerzes_valakitol.md
 
 ## Információszerzés valakitől
@@ -36125,6 +36206,26 @@ Ha nem veszel részt a harcban és úgy akarsz mozgást végezni, akkor is dobno
 
 ---
 ---
+## File: md/szituaciok/kotel_csaklya_feldobasa_fal_mellett.md
+
+## Kötél, csáklya feldobása a fal mellett
+
+### → Tulajdonságpróba: Ügyesség, Erő
+
+```
+Ügyesség próba: 5
+Erő próba: 4
+```
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
 ## File: md/szituaciok/koteltanc.md
 
 ## Kötéltánc
@@ -36194,6 +36295,18 @@ Ha az észlelő odafigyel, számít a támadásra: bónusz ↑
 ```
 
 A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkező dob, bónusszal ↑
+
+---
+
+### ⚜️  Menekülés közben elbújni
+
+```
+Lopakodás/rejtőzés + Ügyesség
+                -3: időnyomás
+          vs.
+Észlelés + Érzékenység
+              +3 aktív
+```
 
 ---
 
@@ -36348,7 +36461,7 @@ Hátrány-1 KÉ dobásra
 Hátrány-2 KÉ dobásra
 ```
 
-**Büntetés**: a lőfegyver méretétől függ. Kics/közepes: `-1`, Nagy: `-2`. KM dönt.
+**Büntetés**: a lőfegyver méretétől függ. Kicsi/közepes: `-1`, Nagy: `-2`. KM dönt.
 
 ---
 
@@ -36439,7 +36552,7 @@ k10 dobás
 
 ### Vállalás dobás
 
-⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes `` pontot fel kell használnia).
+⚙️ Tetves úgy dönt, beveti `+2`-es **Erő** Tulajdonságát, hogy csökkentse a Vállalás kockázatát (kötelezően az összes pontot fel kell használnia).
 
 ⚙️ Az `Erő` Tulajdonsága az aktuális jelenet idejére `0` értékre csökken.
 
@@ -36490,7 +36603,7 @@ Helyzetfüggő módosítók
 ```
 
 ```
-(19 k k10)  vs  18
+(19 + k10)  vs  18
  → megvan biztos tudásból ✅
 ```
 
@@ -36728,7 +36841,7 @@ Gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kis
 +3: Kapkodós, időnyomás alatt
 +0: némi idő után abba kell hagynod,
     mert feltűnne a hiányod
--3: rérős, nincs időnyomás
+-3: ráérős, nincs időnyomás
 ```
 
 ---
@@ -36914,6 +37027,31 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 
 ---
 ---
+## File: md/szituaciok/pajzs_artalmatlanitasa.md
+
+## Pajzs ártalmatlanítása
+
+Pajzsos ellenfelek ellen érdemes olyan taktikát választani, amely lerontja, vagy akár meg is fosztja azt ezen fegyverétől.
+
+### 🔆 Rongálás
+
+→ Használj olyan pusztakezes fegyvert, amely rendelkezik "[Pajzsrongáló](../068_01_03_fegyver_extrak.md#pajzsrong%C3%A1l%C3%B3)" fegyver extrával. Nem kell külön cselekedet a pajzs rongálásához - a mechanizmust lásd a leírásánál.
+
+<br />
+
+### 🔆 Bénítás
+
+→ Dobj a pajzsba olyan hajítófegyvert, ami rendelkezik "[Pajzsbénító](../068_01_03_fegyver_extrak.md#pajzsb%C3%A9n%C3%ADt%C3%B3)" fegyver extrával. A hatást lásd a leírásánál.
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
 ## File: md/szituaciok/pialas.md
 
 ## Piálás
@@ -36931,6 +37069,50 @@ Edzettség ellenpróba
   részegség mértékével
   emelkedő Nehézséggel
 ```
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/rokon_nyelv_ertelmezese.md
+
+## Rokon nyelv értelmezése
+
+Nem ismered a nyelvet, de a nyelvcsaládot igen.
+
+```
+Nyelvtanulás + intelligencia
+          vs 12
+```
+
+→ [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md) képzettség
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+
+
+---
+---
+## File: md/szituaciok/targy_jelkep_eredetenek_felismerese.md
+
+## Tárgy, jelkép valódiságának és eredetének felismerése
+
+Országok, fővárosok, fontos tartományok és szervezetek zászlóinak, szimbólumainak felismerése.
+
+```
+Lexikum + Emlékezet
+   🟨 Heraldika fortély kiterjesztéssel
+```
+
+→ [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettség
 
 ---
 
@@ -37097,7 +37279,7 @@ Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol:
 
 ---
 ---
-## File: md/szituaciok/viz_alatt_birni.md
+## File: md/szituaciok/viz_alatt_birni_harcolni.md
 
 ## Víz alatt bírni
 
@@ -37108,6 +37290,15 @@ Mindenki az adott látási viszonyoknak megfelelő módosítókkal harcol:
 → Fortély: [Úszás](../fortelyok.altalanos/uszas.md) - `1.fok` **követelmény**
 
 → Fortély: [Gyöngyhalász](../fortelyok.altalanos/gyongyhalasz.md) bónuszt ad
+
+<br />
+
+---
+
+## Víz alatt harcolni
+
+- [Feszítés, Leszorítás belharcos manőver](../066_06_belharcos_manoverek.md#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s)
+- közben a fenti "Víz alatt bírni" **fele** idő után fulladás
 
 ---
 
