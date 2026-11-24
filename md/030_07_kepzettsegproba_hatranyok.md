@@ -11,7 +11,7 @@ Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2
 - Átkozott Képzettség (`1`) (adott Képzettségre)
 - Átkozott Viselkedés (`1`) (KM határozza meg)
 - Eszmélet (`1`) Bódultság
-- Érzékvesztés (`1`) Zavart (adott érzéken alapuló próbákra)
+- Érzékvesztés (`1`) Zavart (Érzék Tulajdonságpróba, ill. Érzékenységgel dobott Képzettségpróba)
 - Hangulat (`2`) Inspirált (koncentrációt igénylő feladatokra)
 - Hangulat (`4`) Obszesszív (kivéve az obszesszió tárgyát)
 - Sérült (`1`) S3
@@ -22,7 +22,7 @@ Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2
 - Átkozott Képzettség (`2`) (adott Képzettségre)
 - Átkozott Viselkedés (`2`) (KM határozza meg)
 - Eszmélet (`2`) Kábultság
-- Érzékvesztés (`2`) Részleges (adott érzéken alapuló próbákra)
+- Érzékvesztés (`2`) Részleges (Érzék Tulajdonságpróba, ill. Érzékenységgel dobott Képzettségpróba)
 - Fizikai (`3`) Elcsigázottság (nem-harci képzettségekre)
 - Hangulat (`3`) Eufórikus (koncentrációt igénylő feladatokra)
 - Sérült (`2`) S4
@@ -31,7 +31,7 @@ Automatikus kudarc
 
 - Eszmélet (`3`) Ájulás
 - Eszmélet (`4`) Kóma
-- Érzékvesztés (`3`) Teljes (adott érzéken alapuló próbákra)
+- Érzékvesztés (`3`) Teljes (Érzék Tulajdonságpróba, ill. Érzékenységgel dobott Képzettségpróba)
 - Hangulat (`4`) Obszesszív (amire a KM kijelöli)
 - Sérült (`3`) Haldoklás
 - Zavar (`3`) Sokk
