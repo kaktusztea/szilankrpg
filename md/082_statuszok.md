@@ -429,12 +429,16 @@ Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erej�
 Ilyenkor
 
 - maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
-- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
+- minden defenzív jellegű taktika tiltott ❌
+- Kiváró taktika tiltott ❌
 
 ### ✴️ Indulat (2) Gyűlölet
 
 - maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
-- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
+- minden defenzív jellegű taktika tiltott ❌
+- Kiváró taktika tiltott ❌
 - [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika kötelező egyszer
 - [Roham](065_02_harci_taktikak.md#roham-taktika) taktika kötelező utána - ha van hely
 
