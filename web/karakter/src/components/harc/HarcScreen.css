@@ -313,7 +313,6 @@
 .harc-fegyver-active-row { border: 2px solid var(--color-taktika); }
 
 /* --- Popup helpers --- */
-.harc-confirm-center { display: flex; align-items: center; justify-content: center; }
 .harc-popup-label { display: block; font-size: var(--ablakcim-meret); font-weight: bold; text-align: center; }
 .harc-popup-text { font-size: 15px; color: var(--text); }
 .ve-history-list { display: flex; flex-wrap: wrap; justify-content: center; align-self: center; gap: 4px 8px; max-width: 200px; }

@@ -1,7 +1,7 @@
 import { SzinKor } from '../common/SzinKor';
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-types';
-import type { Karakter, UndoPatch } from '../../engine/types';
+import type { Karakter, PushUndo } from '../../engine/types';
 import type { HátterField } from './types';
 import { TagCloud } from './TagCloud';
 import { KarmaCloud } from './KarmaCloud';
@@ -14,7 +14,7 @@ interface Props {
   data: GameData;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  pushUndo: PushUndo;
   gameMode: boolean;
   onNavigate?: (tab: string) => void;
 }

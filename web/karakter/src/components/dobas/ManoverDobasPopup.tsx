@@ -1,6 +1,6 @@
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
-import type { Karakter, Session } from '../../engine/types';
+import type { Karakter, Session, SetSession } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
@@ -37,7 +37,7 @@ interface Props {
   mód: Mód;
   karakter: Karakter;
   session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
+  setSession: SetSession;
   data: GameData;
   /** Manőver Alap - kanonikus érték a reactive engine-ből (rules.json: manőver_alap). */
   manőverAlap: number;

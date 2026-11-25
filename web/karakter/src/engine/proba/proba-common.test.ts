@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import {
-  előnyHátrányLabel, ELŐNY_HÁTRÁNY_SZINTEK, probaLehetetlen, probaBiztosSiker, probaSiker,
+  probaLehetetlen, probaBiztosSiker, probaSiker, státuszEHForrások, felszerelésEHForrás,
   eredményFelirat, összetettCélszámok, összetettEredmény, összetettKéziFelirat, képzetlenCélszám,
 } from './proba-common';
-import { EH_SZINT_MAX } from '../dice';
+import { EH_SZINT_MAX, előnyHátrányLabel } from '../dice';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 
 describe('előnyHátrányLabel', () => {
@@ -15,10 +15,13 @@ describe('előnyHátrányLabel', () => {
   });
 });
 
-describe('ELŐNY_HÁTRÁNY_SZINTEK', () => {
-  it('-2..+2, a 0 semleges jellel', () => {
-    expect(ELŐNY_HÁTRÁNY_SZINTEK.map(e => e.szint)).toEqual([-2, -1, 0, 1, 2]);
-    expect(ELŐNY_HÁTRÁNY_SZINTEK.map(e => e.label)).toEqual(['Hátrány-2', 'Hátrány-1', '-', 'Előny+1', 'Előny+2']);
+describe('próba E/H forrás-sorok', () => {
+  it('Felszerelés túlterhelés: csak Hátránynál, pozitív értékkel', () => {
+    expect(felszerelésEHForrás(0)).toEqual([]);
+    expect(felszerelésEHForrás(-2)).toEqual([{ forrás: 'Felszerelés túlterhelés', cél: 'té_dobás', operátor: 'hátrány', érték: 2 }]);
+  });
+  it('státusz-sorok: kész szöveg, szöveges operátor', () => {
+    expect(státuszEHForrások(['Félelem (2): Hátrány-1'])).toEqual([{ forrás: 'Félelem (2): Hátrány-1', cél: 'té_dobás', operátor: 'szöveges', érték: 0, megjegyzés: '' }]);
   });
 });
 

@@ -343,10 +343,9 @@ A box-ok fölötti „Fortélyok és Alapesetek” címsor (`.aktiv-fortely-head
 | `ManoverDobasPopup.tsx` | Manőver dobás popup (követelmény 0. lépés, fázisok, Siker/Kudarc, MP+TÉ) |
 | `manover-dobas-calc.ts` | Manőver dobás pure logika (követelmény, fázisok, TÉ-bontás, eredmény-hatás) |
 | `aktiv-calc.ts` | Aktív fül kalkuláció (státusz/taktika hatások, fortély emlékeztetők, helyzet/taktika kötések, manőver bónuszok, alapesetek) |
-| `AktivHelpers.ts` | Barrel re-export (taktika-megkotes + helyzet-helpers) |
-| `taktika-megkotes.ts` | Taktika megkötés-kiértékelés (isTaktikaAllowed) |
+| `taktika-megkotes.ts` (engine/taktika/) | Taktika megkötés-kiértékelés (`taktikaTiltásOka`; `isTaktikaAllowed` = nincs tiltás oka) |
 | `taktika-helpers.ts` | Taktika módosító-formázás + fok-interpoláció |
-| `helyzet-helpers.ts` | Helyzet elérhetőség, min fegyverhossz, infó |
+| `helyzet-helpers.ts` (engine/taktika/) | Helyzet elérhetőség, felvétel (`helyzetFelvéve`), min fegyverhossz, infó |
 | `NaploTab.tsx` + `CheckpointSection.tsx` + `NaploSection.tsx` | Verziók + Napló accordionok (overlay tartalom) |
 
 Megjegyzés: a Manőver VÁLASZTÓ (`ManoverPicker.tsx`) és a teljes FEGYVER/FOGÁS szekció

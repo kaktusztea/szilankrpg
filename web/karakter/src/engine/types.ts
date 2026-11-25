@@ -248,6 +248,12 @@ export type UndoPatch =
   | { field: string; op: 'remove'; index: number; item: unknown }             // was removed → undo = re-insert
   | { field: string; op: 'update'; index: number; prev: unknown }             // was updated → undo = restore prev
 
+/** Undo stack push (useUndo): description + inverse patches (+ the new value for coalescing). */
+export type PushUndo = (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+
+/** The session state setter passed down to the session-editing pickers / popups. */
+export type SetSession = (next: Session | ((prev: Session) => Session)) => void;
+
 export interface UndoEntry {
   timestamp: number;
   leírás: string;

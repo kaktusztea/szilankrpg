@@ -3,7 +3,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { AktívAlapeset } from '../../engine/alapeset';
 import { evaluateAlapesetek } from '../../engine/alapeset';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
-import { eseményDef, fortélyDef, státuszDef, taktikaDef } from '../../engine/lookup';
+import { eseményDef, fortélyDef, státuszDef, taktikaDef, helyzetDefId } from '../../engine/lookup';
 import { parseStátusz, hatásKitöltve } from '../../engine/statusz';
 
 // --- Types ---
@@ -137,7 +137,7 @@ function calcFortélyPool(
 
     // Categorize: helyzet-bound vs taktika-bound vs box-kombó emlékeztető
     if (helyzetKötés) {
-      const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
+      const hNév = helyzetDefId(data, helyzetKötés)?.név || helyzetKötés;
       const arr = helyzetFortélyok.get(hNév) || [];
       arr.push({ név: def.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
       helyzetFortélyok.set(hNév, arr);
@@ -174,7 +174,7 @@ function calcAlapesetPool(
     if (hFelt) {
       // Helyzet-kötött alapeset → a helyzet-chip alá kerül, nem a box-kombóba.
       const hId = hFelt.feltétel.slice(14);
-      const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${hId}`)?.név || hId;
+      const hNév = helyzetDefId(data, hId)?.név || hId;
       const arr = helyzetFortélyok.get(hNév) || [];
       arr.push({ név: `⚠ ${ae.fortély_név}`, fok: 0, hatás: ae.hatástext.join(' '), aktív: session.aktív_helyzetek.includes(hNév) });
       helyzetFortélyok.set(hNév, arr);

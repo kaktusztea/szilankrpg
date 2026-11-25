@@ -1,18 +1,16 @@
 import { Ikon } from '../common/Ikon';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyLepteto } from '../dobas/ElonyLepteto';
 import { ForrasLista } from '../dobas/ForrasLista';
 import { SebzesPopup } from '../dobas/SebzesPopup';
 import { VeCsokkentesPopup } from '../dobas/VeCsokkentesPopup';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
-import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
-import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
+import { TaktikaHelyzetPicker } from '../picker/TaktikaHelyzetPicker';
+import { MegjegyzesLista, DobasKeplet, BontasNyil, k20Eredmény, kéziDobás, k20BontásSzöveg, useEHSzint, type K20Eredmény } from '../dobas/K20Reszek';
 import { aktívTerületen } from '../../engine/taktika/taktika-helpers';
-import { rollElőnyHátrányK20, előnyHátrányLabel, type ProbaDobás } from '../../engine/dice';
+import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo } from '../../engine/harc/combat-roll-info';
-import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, UndoPatch } from '../../engine/types';
 import type { SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import type { Fegyverviszony } from '../../engine/harc/ve-csokkentes-calc';
 import { támadódobástTiltóTaktika } from '../../engine/harc/ve-csokkentes-calc';
@@ -23,8 +21,9 @@ import type { ExtraKontextus } from '../../engine/extrak-info-calc';
 import { taktikaDef } from '../../engine/lookup';
 import type { FegyverResultMód } from '../../engine/harc/types';
 import { TaktikaHelyzetChipek } from '../dobas/TaktikaHelyzetChipek';
+import type { SessionProps } from '../session-props';
 
-interface Props {
+interface Props extends SessionProps {
   /** Active weapon TÉ value (fallback: elsődleges mód, ha nincs módok lista) */
   té: number;
   /** Active weapon SP value (from reactive engine; fallback az elsődleges mód) */
@@ -56,20 +55,7 @@ interface Props {
   véCsökkentésSzorzóForrás?: string;
   /** Harci helyzetek vé_csökkentés flat bővítései (pl. Meglepetés +2) - a VÉ-csökkentés popupnak továbbadva. */
   helyzetVéCsökkentés?: { forrás: string; érték: number }[];
-  /** A Taktika / Harci helyzet kapcsoló chipekhez (ugyanaz a picker-ablak, mint az Aktív fülön). */
-  data: GameData;
-  karakter: Karakter;
-  session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onClose: (eredmény: { té: number; sp?: number; veCsökkentés?: number } | null) => void;
-}
-
-interface TéEredmény {
-  alap: number;
-  kézi: number;
-  dobás: ProbaDobás;
-  eredmény: number;
 }
 
 /**
@@ -82,18 +68,12 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   // Egyszerre legfeljebb egy al-popup (a popup korai return-nel vált rájuk).
   const [alPopup, setAlPopup] = useState<'mód' | 'sebzés' | 'véCsökkentés' | 'taktika' | 'helyzet' | null>(null);
   const [módIndex, setMódIndex] = useState(0);
-  const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
-  const [téResult, setTéResult] = useState<TéEredmény | null>(null);
+  const [téResult, setTéResult] = useState<K20Eredmény | null>(null);
   const [kéziBónusz, setKéziBónusz] = useState(0);
   const [bontásNyitva, setBontásNyitva] = useState(false); // TÉ + k20 breakdown under the result, collapsed by default
 
-  // A dobás ELŐTT (nincs eredmény) a megjelenített Előny/Hátrány szint követi az aktív hatásokat,
-  // hogy a Gyengébb kéz toggle (ami a session-t írja → új dobásInfo prop) azonnal tükröződjön az
-  // ElonyPicker kijelölésében. Dobás után (téResult) a felhasználó választását nem írjuk felül.
   const téHatásSzint = netElőnySzint(dobásInfo.téHatások);
-  useEffect(() => {
-    if (!téResult) setSzint(téHatásSzint);
-  }, [téHatásSzint, téResult]);
+  const [szint, setSzint] = useEHSzint(téHatásSzint, !!téResult);
 
   // Aktív mód: a kiválasztott mód a listából (ha van), különben a prop-értékek.
   // A `té`/`sp` propok az ELSŐDLEGES mód már-korrigált (taktika mods, levonás) értékei;
@@ -108,16 +88,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   const aktívÁtütés = aktívMód?.Átütés ?? átütés;
   const aktívSebzéstípus = aktívMód?.sebzéstípus ?? 'elsődleges';
 
-  function handleDobás() {
-    const dobás = rollElőnyHátrányK20(szint);
+  function rögzít(dobás: ProbaDobás) {
     setBontásNyitva(false);
-    setTéResult({ alap: aktívTé, kézi: kéziBónusz, dobás, eredmény: aktívTé + kéziBónusz + dobás.eredmény });
-  }
-
-  function handleManualK20(value: number) {
-    const dobás: ProbaDobás = { rolls: [value], eredmény: value };
-    setBontásNyitva(false);
-    setTéResult({ alap: aktívTé, kézi: kéziBónusz, dobás, eredmény: aktívTé + kéziBónusz + value });
+    setTéResult(k20Eredmény(aktívTé, kéziBónusz, dobás));
   }
 
   const k20Érték = téResult?.dobás.eredmény ?? 0;
@@ -129,7 +102,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
   // `megjegyzés`-éből jön (egy igazságforrás: taktikak.yaml) - l. HarcScreen.onTéClick ugyanezen ágai.
   // A chipek száma: csak a közelharci aktívak (a picker is csak ezeket mutatja).
   const aktívDb = aktívTerületen(session, data, 'közelharc');
-  const tiltóTaktika = támadódobástTiltóTaktika(session);
+  const tiltóTaktika = támadódobástTiltóTaktika(session, data);
   const tiltóMegjegyzés = tiltóTaktika ? taktikaDef(data, tiltóTaktika)?.megjegyzés ?? '' : '';
 
   // Az aktuálisan választott mód aktorára igazított extra-kontextus (az `aktor`-feltételes extrák -
@@ -186,16 +159,9 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
     );
   }
 
-  if (alPopup === 'taktika') {
+  if (alPopup === 'taktika' || alPopup === 'helyzet') {
     return (
-      <TaktikaPickerPopup data={data} karakter={karakter} session={session} terület="közelharc"
-        setSession={setSession} pushUndo={pushUndo} onClose={() => setAlPopup(null)} />
-    );
-  }
-
-  if (alPopup === 'helyzet') {
-    return (
-      <HelyzetPickerPopup data={data} karakter={karakter} session={session} terület="közelharc"
+      <TaktikaHelyzetPicker fajta={alPopup} terület="közelharc" data={data} karakter={karakter} session={session}
         setSession={setSession} pushUndo={pushUndo} onClose={() => setAlPopup(null)} />
     );
   }
@@ -236,22 +202,8 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
 
         {!téResult ? (
           <>
-            {!tiltóTaktika && dobásInfo.téMegjegyzések.length > 0 && (
-              <div className="dobas-info-list dobas-notes">
-                {dobásInfo.téMegjegyzések.map((m, i) => (
-                  <div key={i} className="dobas-info-item">
-                    <span className="dobas-info-badge note">⚠</span>
-                    <span className="dobas-info-source">{m.forrás}: {m.szöveg}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {/* Formula: TÉ (+ hand bonus) + k20 */}
-            <div className="dobas-keplet">
-              {aktívTé}
-              {kéziBónusz !== 0 && <><span className="dobas-keplet-op"> {kéziBónusz > 0 ? '+' : '−'} </span><span className={`dobas-keplet-kezi ${kéziBónusz > 0 ? 'sebzes-stat-pos' : 'sebzes-stat-neg'}`}>{Math.abs(kéziBónusz)}</span></>}
-              <span className="dobas-keplet-op"> + </span>k20
-            </div>
+            {!tiltóTaktika && <MegjegyzesLista lista={dobásInfo.téMegjegyzések} />}
+            <DobasKeplet alap={aktívTé} kézi={kéziBónusz} />
             {többMódú && (
               // Same pill look as the Taktika / Harci helyzet / Bónusz pills
               <button type="button" className="dobas-kapszula" onClick={() => setAlPopup('mód')}>
@@ -271,44 +223,26 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
             </div>
             {tiltóTaktika ? (
               <>
-                <div className="dobas-info-list dobas-notes">
-                  <div className="dobas-info-item">
-                    <span className="dobas-info-badge note">⚠</span>
-                    <span className="dobas-info-source">{tiltóTaktika}: {tiltóMegjegyzés}</span>
-                  </div>
-                </div>
+                <MegjegyzesLista lista={[{ forrás: tiltóTaktika, szöveg: tiltóMegjegyzés }]} />
                 <div className="dobas-btn-row">
                   <button className="tamado-ve-csokkentes-btn" onClick={() => onClose(null)}>Bezár</button>
                 </div>
               </>
             ) : (
               <div className="dobas-btn-row">
-                <button className="tamado-dobas-btn dobas-btn-ikon" onClick={handleDobás}><Ikon név="kocka" méret={22} />Dobás</button>
-                <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={aktívTé} alapLabel="TÉ" />
+                <button className="tamado-dobas-btn dobas-btn-ikon" onClick={() => rögzít(rollElőnyHátrányK20(szint))}><Ikon név="kocka" méret={22} />Dobás</button>
+                <ManualDicePicker szint={szint} onSelect={v => rögzít(kéziDobás(v))} alapÉrték={aktívTé} alapLabel="TÉ" />
               </div>
             )}
           </>
         ) : (
           <>
             <div className="ke-dobas-result">{téResult.eredmény}
-              <button type="button" className={`sebzes-bontas-nyil${bontásNyitva ? ' nyitva' : ''}`} aria-expanded={bontásNyitva}
-                aria-label="Támadó dobás bontása" title="Bontás" onClick={() => setBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
+              <BontasNyil nyitva={bontásNyitva} onVált={() => setBontásNyitva(v => !v)} label="Támadó dobás bontása" />
             </div>
-            {bontásNyitva && <div className="ke-dobas-detail">
-              TÉ ({téResult.alap})
-              {téResult.kézi !== 0 ? ` ${téResult.kézi > 0 ? '+' : ''}${téResult.kézi}` : ''}
-              {' + '}k20{téResult.dobás.rolls.length > 1
-                ? ` [${téResult.dobás.rolls.join(', ')}] → ${téResult.dobás.eredmény}`
-                : ` (${téResult.dobás.eredmény})`}
-              {szint !== 0 && ` · ${előnyHátrányLabel(szint)}`}
-            </div>}
+            {bontásNyitva && <div className="ke-dobas-detail">{k20BontásSzöveg('TÉ', téResult, szint)}</div>}
             {téResult.dobás.eredmény === 1 && (
-              <div className="dobas-info-list dobas-notes">
-                <div className="dobas-info-item">
-                  <span className="dobas-info-badge note">⚠</span>
-                  <span className="dobas-info-source">Dobás: 1 (k20) - ha a támadás sikertelen, narratív hátrány érhet.</span>
-                </div>
-              </div>
+              <MegjegyzesLista lista={[{ forrás: 'Dobás', szöveg: '1 (k20) - ha a támadás sikertelen, narratív hátrány érhet.' }]} />
             )}
             {/* The two outcomes: hit → Sebzés dobás, miss → VÉ csökkentés */}
             <div className="talalat-par">

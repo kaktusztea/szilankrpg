@@ -10,7 +10,7 @@ import { calcTaktikaMods } from './taktika-calc';
 import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, jelölFegyverTiltások, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../fortely-mods';
-import { véVesztésSzorzó } from './shared';
+import { véVesztésSzorzó, páncélStringKontextus, páncélSzámInputok } from './shared';
 import { aktívTiltások, tiltásokFegyverre, fegyverOverrideÉrtékek, fegyverJárulékHatások, gyűjtHelyzetEffektek, gyűjtStátuszEffektek, értékCélra, flatBontás } from '../effekt';
 import { alkalmazEffektek } from '../extrak-effekt';
 import type { HarcComputed } from './types';
@@ -40,11 +40,7 @@ export function calcHarcComputed(data: GameData, karakter: Karakter, session: Se
   const merevvértFok = fortélyFok(k.fortélyok, 'merevvértviselet');
   const lookupArrays = buildPancelLookups(konstansok);
 
-  const stringCtx = new Map<string, string>();
-  stringCtx.set('páncél_alap', k.páncél.alap);
-  stringCtx.set('páncél_fémalapanyag', k.páncél.fémalapanyag);
-  stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
-  stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
+  const stringCtx = páncélStringKontextus(k.páncél);
 
   // Aktív fegyverhossz
   const aktívFegyverFp = session.aktív_fegyver_index >= 0 ? k.fegyverek[session.aktív_fegyver_index] : null;
@@ -61,10 +57,7 @@ export function calcHarcComputed(data: GameData, karakter: Karakter, session: Se
     HM_TÉ: k.HM_TÉ, HM_VÉ: k.HM_VÉ, CM: k.CM,
     alakzatharc_szint: 0,
     merevvért_fok: merevvértFok,
-    páncél_van: k.páncél.alap ? 1 : 0,
-    páncél_végtagvédettség: k.páncél.végtagvédettség,
-    páncél_sisak: k.páncél.sisak ? 1 : 0,
-    páncél_idea: k.páncél.idea, páncél_rongálódás: k.páncél.rongálódás,
+    ...páncélSzámInputok(k.páncél),
   });
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 

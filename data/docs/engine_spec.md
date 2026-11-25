@@ -1170,6 +1170,9 @@ note: Forrás: tables/taktikak.json (kombó: `kombó_mód` + `kombó_lista`). A 
       A "Támadás erőből" fortély megszűnt - a skálázható rendszer váltja ki.
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
       Fárasztás: nem támadás, nem kombinálható mással.
+      Támadó dobás kizárása: a taktika `támadódobás` mezője (taktikak.yaml, nincs taktika-név a kódban):
+        `vé_csökkentés` (Fárasztás) = a TÉ chip a VÉ csökkentés popupot nyitja; `nincs` (Teljes Védekezés) = info popup.
+        Kód: `ve-csokkentes-calc.ts` `taktikaVéCsökkentésÁllapot` / `támadódobástTiltóTaktika`; enum gate: `validate_aktiv_ful`.
       Teljes Védekezés (md/065_02): a karakter maga NEM okoz VÉ-csökkentést (saját VÉcsökk: 0). Az ellene irányuló
         VÉ-csökkentés fix `1 + k20P` (NEM a fegyverviszony-tábla k20P/1+k20P/2+k20P), kiegészülve a Fárasztó taktika
         bónuszával. A lények méretkülönbség-módosítója továbbra is hozzáadódik/levonódik. (A webapp a data `megjegyzés`-ében
@@ -1560,7 +1563,8 @@ célpontok:  # (yaml-ban: események - legacy elnevezés)
 
 #### Próba-kategóriák (md/010_11 "Ökölszabály: Próba-kategóriák", 2026-11-25)
 
-A próba-célpontok definíciója a célponton él (`esemenyek.yaml`, opcionális mezők, séma: `esemeny.yaml`), a fogyasztók innen olvassák:
+A próba-célpontok definíciója a célponton él (`esemenyek.yaml`, opcionális mezők, séma: `esemeny.yaml`), a fogyasztók innen olvassák.
+Próba-célnak a `csoport: próba` események számítanak (`statusz-proba.ts`: nincs kódbeli id-lista).
 
 | Célpont | Definíció | Fogyasztó |
 |---|---|---|

@@ -1,8 +1,7 @@
 import type { Karakter, PancelPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { HintType } from '../../hooks/useHint';
-import { evaluate, buildContext } from '../../engine/reactive';
-import { buildPancelLookups } from '../../engine/harc/pancel-calc';
+import { calcPancelValues } from '../../engine/harc/pancel-calc';
 import { árFormátum } from '../formatters';
 import { useState, useEffect, Fragment } from 'react';
 import { Ikon } from '../common/Ikon';
@@ -20,37 +19,6 @@ interface Props {
   showHint: (msg: string, type?: HintType, duration?: number) => void;
   /** Register a "back to the edit menu" callback before opening a field popup from the menu. */
   onMenüből: (vissza: () => void) => void;
-}
-
-/** Evaluate páncél rules via reactive engine */
-export function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; sfé_energia: number; mgt: number; ár: number } {
-  if (!k.páncél.alap) return { sfé_fizikai: 0, sfé_energia: 0, mgt: 0, ár: 0 };
-
-  const { konstansok } = data;
-  const lookupArrays = buildPancelLookups(konstansok);
-
-  const stringCtx = new Map<string, string>();
-  stringCtx.set('páncél_alap', k.páncél.alap);
-  stringCtx.set('páncél_fémalapanyag', k.páncél.fémalapanyag);
-  stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
-  stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
-
-  const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
-    páncél_van: 1,
-    páncél_végtagvédettség: k.páncél.végtagvédettség,
-    páncél_sisak: k.páncél.sisak ? 1 : 0,
-    páncél_idea: k.páncél.idea,
-    páncél_rongálódás: k.páncél.rongálódás,
-  });
-
-  const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
-
-  return {
-    sfé_fizikai: computed.get('sfé_fizikai') ?? 0,
-    sfé_energia: computed.get('sfé_energia') ?? 0,
-    mgt: computed.get('páncél_MGT') ?? 0,
-    ár: computed.get('páncél_ár') ?? 0,
-  };
 }
 
 export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, onPopup, onIdeaTarget, showHint, onMenüből }: Props) {

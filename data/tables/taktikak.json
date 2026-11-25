@@ -69,6 +69,7 @@
       }
     ],
     "megjegyzés": "Nincs támadódobás.",
+    "támadódobás": "vé_csökkentés",
     "megkötések": [
       {
         "típus": "harci_helyzet",
@@ -382,6 +383,7 @@
       "VÉ": 8
     },
     "megjegyzés": "Nem támadsz, hátrálsz. Ellenfeled VÉ csökkentése: 1+k20P.",
+    "támadódobás": "nincs",
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,

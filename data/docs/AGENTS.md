@@ -63,8 +63,12 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
 - Több popup / al-popup egy komponensben: EGY összetett állapot (`useState<Popup | null>`, típusonként a saját adatával),
   nem `showX` kapcsolók halmaza (minta: `HarcScreen` `nyitott`, `ManoverDobasPopup` `alPopup`).
 - `react-hooks/exhaustive-deps` HIBA szinten: szándékosan szűk deps-lista csak indokolt `eslint-disable… -- <ok>`-kal.
-- GameData entitás név / id szerint: `engine/lookup.ts` (`lookupFegyver`, `taktikaDef`, `fortélyDef` …), NEM `.find(...)`
+- GameData entitás név / id szerint: `engine/lookup.ts` (`lookupFegyver`, `taktikaDef`, `helyzetDefId`, `fortélyDef` …), NEM `.find(...)`
   és NEM kézi `toLowerCase()`-összevetés. A nevek kis/nagybetű-függetlenek, az id-k pontosak.
+- Session-szerkesztő komponens propjai: `components/session-props.ts` `SessionProps` (+ `PushUndo` / `SetSession` az `engine/types.ts`-ben),
+  nem a mezők újrafelsorolása. A k20 dobás-popupok közös részei: `components/dobas/K20Reszek.tsx`; a próba popupoké: `tulajdonsagok/ProbaReszek.tsx`.
+- Új kódban játékszabály-entitás (taktika, helyzet, esemény) NEVE / id-je nem kerül kódba viselkedés-kapcsolóként: a data hordozza egy
+  mezőben (pl. taktika `támadódobás`, esemény `csoport: próba`), a kód azt olvassa. Régi kivételek: `refactorlog/2026-11-25.md`.
 
 ## Konvenciók
 

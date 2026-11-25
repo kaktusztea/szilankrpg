@@ -1,15 +1,9 @@
-import type { Kepzettseg, UndoPatch } from '../../engine/types';
-import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session } from '../../engine/types';
+import type { Karakter, Kepzettseg } from '../../engine/types';
 import type { TavfegyverAlap } from '../../engine/data-types';
+import type { SessionProps } from '../session-props';
 
-export interface TavharcProps {
-  data: GameData;
-  karakter: Karakter;
-  session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
+export interface TavharcProps extends SessionProps {
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   képzettségek: Kepzettseg[];
   setKépzettségek: React.Dispatch<React.SetStateAction<Kepzettseg[]>>;
   gameMode: boolean;

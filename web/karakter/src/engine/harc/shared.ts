@@ -1,4 +1,5 @@
 import type { Effekt } from '../effekt';
+import type { PancelPeldany } from '../types';
 
 /** Nagyobb/kisebb fegyver meghatározása fegyverhossz-kategória szerint. */
 export function resolveNagyobbKisebb<T extends { fegyverhossz: number }>(
@@ -60,4 +61,20 @@ export function coalesceVéHistory(history: number[], delta: number, elapsedMs: 
     return [...history.slice(0, -1), last + delta];
   }
   return [...history, delta];
+}
+
+/** The armour's string inputs of the rules.json evaluation. */
+export function páncélStringKontextus(p: PancelPeldany): Map<string, string> {
+  return new Map([
+    ['páncél_alap', p.alap], ['páncél_fémalapanyag', p.fémalapanyag],
+    ['páncél_kidolgozottság', p.kidolgozottság], ['páncél_méret_illeszkedés', p.méret_illeszkedés],
+  ]);
+}
+
+/** The armour's numeric inputs of the rules.json evaluation (`páncél_van`: a Struktúra is chosen). */
+export function páncélSzámInputok(p: PancelPeldany): Record<string, number> {
+  return {
+    páncél_van: p.alap ? 1 : 0, páncél_végtagvédettség: p.végtagvédettség, páncél_sisak: p.sisak ? 1 : 0,
+    páncél_idea: p.idea, páncél_rongálódás: p.rongálódás,
+  };
 }

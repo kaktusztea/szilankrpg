@@ -12,7 +12,7 @@ import { elsődlegesMód } from '../../engine/harc/fegyver-calc';
 import { ideaDelta } from '../../engine/utils';
 import { fegyverÁr } from './fegyver-ar-calc';
 import { árFormátum } from '../formatters';
-import { calcPancelValues } from './HarcertekekPancelSection';
+import { calcPancelValues } from '../../engine/harc/pancel-calc';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { TextInputPopup } from '../common/TextInputPopup';
 import { getMfFok, harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';

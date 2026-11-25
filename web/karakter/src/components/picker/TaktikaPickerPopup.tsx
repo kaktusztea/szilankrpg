@@ -1,19 +1,14 @@
 import { useState } from 'react';
-import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, AktívTaktika, UndoPatch } from '../../engine/types';
+import type { AktívTaktika } from '../../engine/types';
 import { PickerOverlay } from './PickerOverlay';
 import { TaktikaPickerList } from './TaktikaPickerList';
 import { TaktikaFokPicker } from './TaktikaFokPicker';
 import type { HarcTerület } from '../../engine/taktika/taktika-helpers';
 import { taktikaDef } from '../../engine/lookup';
 import './picker.css';
+import type { SessionProps } from '../session-props';
 
-interface Props {
-  data: GameData;
-  karakter: Karakter;
-  session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+interface Props extends SessionProps {
   onClose: () => void;
   /** Csak az adott terület taktikái (l. TaktikaPickerList). */
   terület?: HarcTerület;

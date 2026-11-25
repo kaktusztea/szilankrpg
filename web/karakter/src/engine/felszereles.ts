@@ -11,7 +11,7 @@
  */
 import type { Karakter } from './types';
 import type { GameData } from './data-loader';
-import { lookupFegyver } from './lookup';
+import { lookupFegyver, eseményDef } from './lookup';
 import { evalRule } from './reactive';
 
 export interface FelszerelésSor {
@@ -155,7 +155,7 @@ export function felszerelésHátrány(terhelés: number, max: number, data: Game
 
 /** Egy tulajdonság Fizikai-e (kap-e felszerelés-Hátrányt a Tulajdonságpróbánál): esemenyek.yaml → fizikai_próba.tulajdonságok (md/010_11). */
 export function fizikaiTulajdonság(tulajdonság: string, data: Pick<GameData, 'esemenyek'>): boolean {
-  return !!data.esemenyek.find(e => e.id === 'fizikai_próba')?.tulajdonságok?.includes(tulajdonság);
+  return !!eseményDef(data, 'fizikai_próba')?.tulajdonságok?.includes(tulajdonság);
 }
 
 // ============================================================

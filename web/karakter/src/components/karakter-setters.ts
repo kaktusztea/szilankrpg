@@ -1,4 +1,4 @@
-import type { Karakter, Fortely, UndoPatch } from '../engine/types';
+import type { Karakter, Fortely, PushUndo } from '../engine/types';
 import { képzettségSzint } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';
 import { njkLimitBlocked } from '../hooks/njk-slots';
@@ -7,7 +7,7 @@ import { MAX_NJK_DB } from '../ui-constants';
 /** Generikus undo-aware field setter gyár. */
 export function makeFieldSetter(
   karakter: Karakter,
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
+  pushUndo: PushUndo,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return function setField<K extends keyof Karakter>(
@@ -70,7 +70,7 @@ export function makeJkSetter(
 /** Faj setter (nested hátterek.faj). */
 export function makeFajSetter(
   karakter: Karakter,
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
+  pushUndo: PushUndo,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return (v: string) => {

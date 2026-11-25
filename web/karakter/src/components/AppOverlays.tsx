@@ -1,4 +1,4 @@
-import type { Karakter, Session, UndoPatch, UndoEntry } from '../engine/types';
+import type { Karakter, Session, UndoEntry, PushUndo } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { isSlotFull } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
@@ -39,7 +39,7 @@ interface Props {
   session: Session;
   setSession: (v: Session | ((prev: Session) => Session)) => void;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  pushUndo: PushUndo;
   undoStack: { timestamp: number; leírás: string; patches: unknown[] }[];
   undoTo: (index: number) => void;
   duplicateSlot: (uid: string) => void;

@@ -4,7 +4,7 @@ import type { Session } from '../../engine/types';
 import type { StatuszEntry } from '../../engine/data-types';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import { hatásFeliratok } from '../formatters';
-import { eseményDef, státuszDef } from '../../engine/lookup';
+import { eseményDef, státuszDef, képzettségDef } from '../../engine/lookup';
 import { alkategóriaCímke, státuszKulcs, választhatóAlkategóriák, státuszFelvehető, hatásKitöltve } from '../../engine/statusz';
 
 interface Props {
@@ -35,7 +35,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
   const [fokVálasztó, setFokVálasztó] = useState<{ id: string; alkategória?: string } | null>(null);
 
   const eseményNév = (id: string) => eseményDef(data, id)?.név ?? id;
-  const képzettségNév = (id: string) => data.kepzettsegDefs.find(k => k.id === id)?.név;
+  const képzettségNév = (id: string) => képzettségDef(data, id)?.név;
   const fokDef = fokVálasztó ? státuszDef(data, fokVálasztó.id) : undefined;
   const cím = fokVálasztó && fokDef
     ? `${fokDef.név}${fokVálasztó.alkategória ? `: ${alkategóriaCímke(fokDef, fokVálasztó.alkategória)}` : ''} - fok választó`

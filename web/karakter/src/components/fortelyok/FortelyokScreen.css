@@ -25,9 +25,6 @@
 
 /* Törlés → base: .item-delete (common.css) */
 
-/* Select → base: .field-select (common.css) */
-.fort-select { font-size: 15px; width: 100%; }
-
 /* Info panel → base: .info-panel (common.css) */
 .fort-info-desc { color: var(--text-dim); margin-bottom: 4px; font-style: italic; }
 
@@ -165,7 +162,3 @@
   pointer-events: none;
 }
 
-.fort-picker-btn {
-  cursor: pointer;
-  text-align: left;
-}

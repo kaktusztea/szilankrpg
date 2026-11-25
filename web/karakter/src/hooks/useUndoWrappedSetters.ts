@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import type { Karakter, Tulajdonsagok, Fortely, Kepzettseg, UndoPatch } from '../engine/types';
+import type { Karakter, Tulajdonsagok, Fortely, Kepzettseg, UndoPatch, PushUndo } from '../engine/types';
 import { describeKepChange } from '../engine/utils';
 import { képzKulcs, fortélyNév } from '../engine/azonosito';
 import type { GameData } from '../engine/data-loader';
@@ -7,7 +7,7 @@ import type { GameData } from '../engine/data-loader';
 interface Deps {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  pushUndo: PushUndo;
   /** A napló-feliratok fortély/képzettség-neveihez (id → név). */
   data: GameData;
 }

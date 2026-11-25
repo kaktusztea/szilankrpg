@@ -1,7 +1,6 @@
-import { előnyHátrányLabel, EH_SZINT_MIN, EH_SZINT_MAX, type ProbaDobás } from '../dice';
+import type { ProbaDobás } from '../dice';
 import type { PróbaKonstansok } from '../data-types';
-
-export { előnyHátrányLabel };
+import type { DobásHatás } from '../harc/combat-roll-info';
 
 /**
  * Próba (Tulajdonság- és Képzettségpróba) közös logikája és típusai (§37).
@@ -9,10 +8,15 @@ export { előnyHátrányLabel };
  * `konstansok.próba.<típus>` paraméterekben tér el - a szabálylogika és a dobás-állapot (`useProbaDobas`) közös.
  */
 
-/** Előny/Hátrány választható szintek (mindkét próbatípusnál azonos skála). */
-export const ELŐNY_HÁTRÁNY_SZINTEK: { szint: number; label: string }[] =
-  Array.from({ length: EH_SZINT_MAX - EH_SZINT_MIN + 1 }, (_, i) => EH_SZINT_MIN + i)
-    .map(szint => ({ szint, label: előnyHátrányLabel(szint) || '-' }));
+/** E/H source lines of a próba (ForrasLista): the státusz lines are ready-made text (value included). */
+export function státuszEHForrások(források: readonly string[]): DobásHatás[] {
+  return források.map(f => ({ forrás: f, cél: 'té_dobás', operátor: 'szöveges', érték: 0, megjegyzés: '' }));
+}
+
+/** The Felszerelés túlterhelés Hátrány as an E/H source line (none when there is no Hátrány). */
+export function felszerelésEHForrás(felszEH: number): DobásHatás[] {
+  return felszEH < 0 ? [{ forrás: 'Felszerelés túlterhelés', cél: 'té_dobás', operátor: 'hátrány', érték: -felszEH }] : [];
+}
 
 /** Tulajdonság-kulcs → felirat ("erő" → "Erő"). */
 export function tulLabel(kulcs: string): string {

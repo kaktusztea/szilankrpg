@@ -1,4 +1,5 @@
 import type { GameData } from '../data-loader';
+import type { TaktikaEntry } from '../data-types';
 import type { Karakter, Session } from '../types';
 /**
  * Sikertelen támadás VÉ csökkentésének kalkulációja (harcszimulacio.spec.md §5.3).
@@ -129,21 +130,19 @@ export function fortélyVéCsökkentésBővítések(
     .map(e => ({ forrás: e.forrás.név, érték: e.érték! }));
 }
 
-/** Taktika-név → definíció (a session a taktikát név szerint tárolja). */
-
 /**
- * A Harc fül taktika-függő VÉ-csökkentés állapota (md/065_02):
- * - Fárasztás: a TÉ chip direktben a VÉ csökkentés popupot nyitja (taktika-override + fortély-bővítés);
+ * A Harc fül taktika-függő VÉ-csökkentés állapota (md/065_02). A Támadó dobást kizáró taktikákat a
+ * `taktikak.yaml` `támadódobás` mezője jelöli (nincs név a kódban):
+ * - `vé_csökkentés` (Fárasztás): a TÉ chip direktben a VÉ csökkentés popupot nyitja (taktika-override + fortély-bővítés);
  * - Roham / Öngyilkos roham: a Fegyverviszony-alapú VÉ csökkentés szorzója (oldalon belül a legnagyobb, §42.3),
  *   a szorzót adó taktikák nevével (bontás-felirat);
- * - Teljes Védekezés: nem támad - a TÉ chip info popupot nyit.
+ * - `nincs` (Teljes Védekezés): nem támad - a TÉ chip info popupot nyit.
  */
 export function taktikaVéCsökkentésÁllapot(
   data: GameData, karakter: Karakter, session: Session,
   feltételTeljesül: (feltétel: string) => boolean, helyzetVéCsökkentés: FortélyMódosítóBontás[],
 ) {
-  const aktív = (név: string) => session.aktív_taktikák.some(t => t.név === név);
-  const fárasztásDef = aktív(FÁRASZTÁS) ? taktikaDef(data, FÁRASZTÁS) : undefined;
+  const fárasztásDef = támadódobásTaktika(session, data, 'vé_csökkentés');
   const fárasztásEredmény = fárasztásDef
     ? calcTaktikaVéCsökkentés(fárasztásDef.hatások, fortélyVéCsökkentésBővítések(karakter, session, data, feltételTeljesül),
       feltételTeljesül, helyzetVéCsökkentés)
@@ -160,22 +159,27 @@ export function taktikaVéCsökkentésÁllapot(
     fárasztásDef, fárasztásEredmény,
     véCsökkentésSzorzó: szorzó,
     véCsökkentésSzorzóForrás: szorzóForrások.join(', ') || undefined,
-    teljesVédekezésDef: aktív(TELJES_VÉDEKEZÉS) ? taktikaDef(data, TELJES_VÉDEKEZÉS) : undefined,
+    teljesVédekezésDef: támadódobásTaktika(session, data, 'nincs'),
   };
 }
 
-/** Taktika-nevek, amelyekhez a Harc fül TÉ chip-je eltérő viselkedést kapcsol. */
-const FÁRASZTÁS = 'Fárasztás';
-const TELJES_VÉDEKEZÉS = 'Teljes Védekezés';
+/** Az első aktív taktika, amely kizárja a rendes Támadó dobást (`támadódobás` mező), opcionálisan adott módra szűrve. */
+function támadódobásTaktika(
+  session: Session, data: GameData, mód?: TaktikaEntry['támadódobás'],
+): TaktikaEntry | undefined {
+  for (const t of session.aktív_taktikák) {
+    const def = taktikaDef(data, t.név);
+    if (def?.támadódobás && (!mód || def.támadódobás === mód)) return def;
+  }
+  return undefined;
+}
 
 /**
- * A rendes Támadó dobást kizáró aktív taktika NEVE, ha van ilyen (különben null):
- *  - Fárasztás: a TÉ chip a VÉ csökkentés popupot nyitja (nincs támadódobás);
- *  - Teljes Védekezés: a karakter nem támad (hátrál).
- * A Támadó dobás popup erre figyel, ha a taktikát a popupon BELÜL kapcsolják be (akkor is érvényesülnie
- * kell, nem csak a popup újranyitásakor) - l. HarcScreen.onTéClick ugyanezen két taktika ágai.
- * A visszaadott névvel a popup a taktika `megjegyzés`-ét mutatja (egy igazságforrás: taktikak.yaml).
+ * A rendes Támadó dobást kizáró aktív taktika NEVE, ha van ilyen (különben null) - `taktikak.yaml` `támadódobás`
+ * (Fárasztás: VÉ csökkentés; Teljes Védekezés: nem támad). A Támadó dobás popup erre figyel, ha a taktikát a popupon
+ * BELÜL kapcsolják be (akkor is érvényesülnie kell, nem csak a popup újranyitásakor) - l. HarcScreen.onTéClick.
+ * A visszaadott névvel a popup a taktika `megjegyzés`-ét mutatja.
  */
-export function támadódobástTiltóTaktika(session: Session): string | null {
-  return session.aktív_taktikák.find(t => t.név === FÁRASZTÁS || t.név === TELJES_VÉDEKEZÉS)?.név ?? null;
+export function támadódobástTiltóTaktika(session: Session, data: GameData): string | null {
+  return támadódobásTaktika(session, data)?.név ?? null;
 }

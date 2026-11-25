@@ -5,7 +5,8 @@ import type { GameData } from '../../engine/data-loader';
 import type { ModositoTabla } from '../../engine/data-types';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from './ManualDicePicker';
-import { rollElőnyHátrányDie, type ProbaDobás } from '../../engine/dice';
+import { rollElőnyHátrányDie, kockaBontás, type ProbaDobás } from '../../engine/dice';
+import { BontasNyil, kéziDobás } from './K20Reszek';
 import {
   type Mód, type ManőverDef, type AktívFegyverInfo,
   követelményTeljesül, követelményJelölés, követelményCimke, getFázisFelirat, fázisCselekvő, eredményHatás,
@@ -29,7 +30,7 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
     return (
       <div className="dobas-btn-row">
         <button type="button" className="tamado-dobas-btn" onClick={() => setDobás(rollElőnyHátrányDie(szint, kocka))}>Dobás</button>
-        <ManualDicePicker sides={kocka} szint={szint} onSelect={v => setDobás({ rolls: [v], eredmény: v })} alapÉrték={alap} alapLabel={alapLabel} />
+        <ManualDicePicker sides={kocka} szint={szint} onSelect={v => setDobás(kéziDobás(v))} alapÉrték={alap} alapLabel={alapLabel} />
       </div>
     );
   }
@@ -37,11 +38,10 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
     <div className="manover-dobas-eredmeny">
       <div className="ke-dobas-result">
         <button type="button" className="manover-dobas-szam" onClick={() => { setBontásNyitva(false); setDobás(null); }} aria-label="Dobás törlése, újradobás">{alap + dobás.eredmény}</button>
-        <button type="button" className={`sebzes-bontas-nyil${bontásNyitva ? ' nyitva' : ''}`} aria-expanded={bontásNyitva}
-          aria-label="Dobás bontása" title="Bontás" onClick={() => setBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
+        <BontasNyil nyitva={bontásNyitva} onVált={() => setBontásNyitva(v => !v)} label="Dobás bontása" />
       </div>
       {bontásNyitva && <span className="ke-dobas-detail">
-        {alapLabel} ({alap}) + k{kocka}{dobás.rolls.length > 1 ? ` [${dobás.rolls.join(', ')}] → ${dobás.eredmény}` : ` (${dobás.eredmény})`}
+        {alapLabel} ({alap}) + k{kocka}{kockaBontás(dobás)}
       </span>}
     </div>
   );

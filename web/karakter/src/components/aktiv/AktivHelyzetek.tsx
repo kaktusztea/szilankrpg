@@ -1,13 +1,13 @@
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
-import type { AktivBaseProps } from './types';
+import type { SessionProps } from '../session-props';
 import { fmtHatásSzöveg } from '../formatters';
 import { HelyzetPickerPopup } from '../picker/HelyzetPickerPopup';
 import { isHelyzetAvailable, getMinFegyverhosszWarning, getHelyzetInfoText, getTiltásWarnings } from '../../engine/taktika/helyzet-helpers';
 import { helyzetDef } from '../../engine/lookup';
 import { KotottFortelySorok } from './KotottFortelySorok';
 
-interface Props extends AktivBaseProps {
+interface Props extends SessionProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
 }
 

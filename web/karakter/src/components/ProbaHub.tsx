@@ -1,6 +1,6 @@
 import { Ikon } from './common/Ikon';
 import { useState, useEffect, useMemo } from 'react';
-import type { Karakter, Session, UndoPatch } from '../engine/types';
+import type { Karakter, Session, PushUndo, SetSession } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { képzKulcs } from '../engine/azonosito';
 import { PopupOverlay } from './PopupOverlay';
@@ -25,8 +25,8 @@ interface Props {
   aktív: boolean;
   /** A KÉ dobás popup (Harci helyzet kapszula, előzmény) a session-t írja. */
   session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  setSession: SetSession;
+  pushUndo: PushUndo;
   /** TÉ / Manőver chip: switch to the target tab + open the roll popup there; CÉ: switch tab + flash the CÉ-SP-VÉ box (resolved by App). */
   onHarciDobás: (cél: 'támadó' | 'célzó' | 'manőver') => void;
 }

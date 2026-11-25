@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Session, UndoPatch } from '../../engine/types';
+import type { Session, PushUndo, SetSession } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 import { Ikon } from '../common/Ikon';
@@ -17,8 +17,8 @@ interface HarcHeaderProps {
   hm: number;
   maxVéCsökk: number;
   session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  setSession: SetSession;
+  pushUndo: PushUndo;
   konstansok: GameData['konstansok'];
   /** delta: nyers, nem szorzott csökkenés/(negatív) visszanyerés mennyisége. */
   onVéChange: (delta: number) => void;

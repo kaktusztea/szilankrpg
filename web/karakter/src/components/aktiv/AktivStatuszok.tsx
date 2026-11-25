@@ -1,20 +1,20 @@
 import { Ikon } from '../common/Ikon';
 import { useRef, useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
-import type { Session, UndoPatch } from '../../engine/types';
+import type { Session, PushUndo, SetSession } from '../../engine/types';
 import { hatásFeliratok, fmtHatásSzöveg } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import type { StátuszPerElem } from './aktiv-calc';
 import { előnyHátrányLabel } from '../../engine/dice';
-import { státuszDef } from '../../engine/lookup';
+import { státuszDef, képzettségDef } from '../../engine/lookup';
 import { parseStátusz, státuszKulcs, státuszCímke } from '../../engine/statusz';
 
 interface Props {
   data: GameData;
   session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  setSession: SetSession;
+  pushUndo: PushUndo;
   státuszPerElem: StátuszPerElem[];
   eseményNév: (id: string) => string;
 }
@@ -67,7 +67,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
               <span className="aktiv-flex-1">
                 <strong className="aktiv-statusz-name">{státuszCímke(def, p)}{alcím ? ` - ${alcím}` : ''}:</strong>
                 {perElem && perElem.hatások.length > 0 && <span> {hatásFeliratok(perElem.hatások, eseményNév,
-                  id => data.kepzettsegDefs.find(k => k.id === id)?.név).map((txt, j) =>
+                  id => képzettségDef(data, id)?.név).map((txt, j) =>
                   <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span>)}</span>}
               </span>
               {!locked && <button className="item-delete" onClick={e => {

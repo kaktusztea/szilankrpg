@@ -3,7 +3,7 @@ import type { Karakter, Session } from '../types';
 import { buildPajzsFegyverNév } from '../utils';
 import { buildAktívFeltételek } from '../feltetelek';
 import { aktívTiltások } from '../effekt';
-import { lookupFegyver, fortélyDef, helyzetDef } from '../lookup';
+import { lookupFegyver, fortélyDef, helyzetDef, helyzetDefId } from '../lookup';
 
 /** Helyzet elérhető-e a pickerben */
 export function isHelyzetAvailable(
@@ -16,6 +16,22 @@ export function isHelyzetAvailable(
     if (ahDef?.kizár_helyzetek?.includes(h.id)) return false;
   }
   return true;
+}
+
+/**
+ * Session after switching on a helyzet: the helyzetek it excludes (`kizár_helyzetek`) are dropped, `tiltja_taktikákat`
+ * clears the taktikák, a `tiltott_fegyverfogások` hit falls back to egyfegyveres (no kétkezes / pajzs / bal kéz).
+ */
+export function helyzetFelvéve(s: Session, név: string, data: GameData): Session {
+  const def = helyzetDef(data, név);
+  const kizártNevek = (def?.kizár_helyzetek ?? []).map(id => helyzetDefId(data, id)?.név);
+  const fogásTiltott = !!def?.tiltott_fegyverfogások?.includes(s.fegyverfogás);
+  return {
+    ...s,
+    ...(fogásTiltott ? { fegyverfogás: 'egyfegyveres', kétkezes_harc: false, aktív_pajzs: false, aktív_fegyver_bal_index: -1 } : {}),
+    aktív_helyzetek: [...s.aktív_helyzetek, név].filter(h => !kizártNevek.includes(h)),
+    aktív_taktikák: def?.tiltja_taktikákat ? [] : s.aktív_taktikák,
+  };
 }
 
 /** Min fegyverhossz figyelmeztetés */

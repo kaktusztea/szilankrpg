@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Ikon } from '../common/Ikon';
 import { kattinthatóProps } from '../a11y';
-import type { AktivBaseProps } from './types';
+import type { SessionProps } from '../session-props';
 import { calcAktivData, FÜL_SORREND } from './aktiv-calc';
 import { AktivHatasPool } from './AktivHatasPool';
 import { AktivHelyzetek } from './AktivHelyzetek';
@@ -9,7 +9,7 @@ import { AktivTaktikak } from './AktivTaktikak';
 import { AktivStatuszok } from './AktivStatuszok';
 import './AktivScreen.css';
 
-export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
+export function AktivScreen({ data, karakter, session, setSession, pushUndo }: SessionProps) {
   const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, taktikaFortélyok, alapesetek, eseményNév } = calcAktivData(data, karakter, session);
 
   // The whole "Fortélyok és Alapesetek" block folds with one arrow; collapsed by default

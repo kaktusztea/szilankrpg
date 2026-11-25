@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Ikon } from '../common/Ikon';
 import type { ReactNode } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
-import type { ProbaDobás } from '../../engine/dice';
-import { előnyHátrányLabel, eredményFelirat, type ÖsszetettEredmény } from '../../engine/proba/proba-common';
+import { előnyHátrányLabel, type ProbaDobás } from '../../engine/dice';
+import { eredményFelirat, type ÖsszetettEredmény } from '../../engine/proba/proba-common';
+import { ManualDicePicker } from '../dobas/ManualDicePicker';
+import type { useProbaDobas } from './useProbaDobas';
 
 /** Popup fejléc: ✕ bezárás, cím, ⟲ újradobás (csak ha van eredmény). */
 export function ProbaFejlec({ cím, vanEredmény, onReset, onClose }: { cím: string; vanEredmény: boolean; onReset: () => void; onClose: () => void }) {
@@ -37,7 +39,7 @@ export function ProbaSzamPicker({ cím, max, érték, felirat, tiltott, onValasz
 }
 
 /** Kapcsoló gomb az Extrák sorban. */
-export function ExtraGomb({ aktív, disabled, title, onClick, children }: { aktív: boolean; disabled?: boolean; title?: string; onClick: () => void; children: ReactNode }) {
+function ExtraGomb({ aktív, disabled, title, onClick, children }: { aktív: boolean; disabled?: boolean; title?: string; onClick: () => void; children: ReactNode }) {
   return (
     <button type="button" className={`kep-proba-extras-btn${aktív ? ' kep-proba-extras-btn-active' : ''}`}
       aria-pressed={aktív} disabled={disabled} title={title} onClick={onClick}>
@@ -154,6 +156,70 @@ export function ProbaModValaszto({ ellenpróba, ismeretlen, ellenTiltva, onIsmer
       <button type="button" aria-pressed={mód === 'ismert'} className={mód === 'ismert' ? 'active' : ''} onClick={onIsmert}>Ismert</button>
       <button type="button" aria-pressed={mód === 'rejtett'} className={mód === 'rejtett' ? 'active' : ''} title="Rejtett célszám (a KM tudja)" onClick={onRejtett}>Rejtett</button>
       <button type="button" aria-pressed={mód === 'ellen'} className={mód === 'ellen' ? 'active' : ''} title="Ellenpróba" disabled={ellenTiltva} onClick={onEllen}>Ellen</button>
+    </div>
+  );
+}
+
+/** Összetett próba icon chip next to the name (rarely used) → picker; shows "2M" once chosen. */
+export function OsszetettChip({ db, ellenpróba, vanEredmény, onClick }: { db: number; ellenpróba: boolean; vanEredmény: boolean; onClick: () => void }) {
+  return (
+    <button type="button" className={`kep-proba-hely-btn${db > 0 ? ' aktiv kep-proba-osszetett-chip' : ''}`}
+      disabled={ellenpróba || vanEredmény} title={ellenpróba ? 'Összetett próba (Ellenpróbánál nem választható)' : 'Összetett próba'}
+      aria-label={`Összetett próba: ${db > 0 ? `${db}M` : 'nincs'}`} onClick={onClick}>
+      {db > 0 ? `${db}M` : <Ikon név="összetett" />}
+    </button>
+  );
+}
+
+/** The Összetett próba count picker (0 = none). */
+export function OsszetettPicker({ max, érték, onValaszt, onClose }: { max: number; érték: number; onValaszt: (n: number) => void; onClose: () => void }) {
+  return (
+    <ProbaSzamPicker cím="Összetett próba" max={max} érték={érték}
+      felirat={n => (n === 0 ? 'Nincs összetett próba' : `+${n}M (${n} másodlagos próba)`)}
+      onValaszt={onValaszt} onClose={onClose} />
+  );
+}
+
+/** Used-sense chips (an alkategóriás státusz - Érzékvesztés: Látás - hits only the chosen sense); tap again = none. */
+export function ErzekSor({ érzékek, érzék, onVálaszt }: {
+  érzékek: { opciók: string[]; érintett: string[] }; érzék: string | undefined; onVálaszt: (é: string | undefined) => void;
+}) {
+  return (
+    <div className="kep-proba-osszetett-row kep-proba-erzek-row" role="group" aria-label="Használt érzék">
+      {érzékek.opciók.map(é => (
+        <ExtraGomb key={é} aktív={érzék === é} title={érzékek.érintett.includes(é) ? 'Érzékvesztés érinti' : undefined}
+          onClick={() => onVálaszt(érzék === é ? undefined : é)}>
+          {é}{érzékek.érintett.includes(é) ? ' ⚠' : ''}
+        </ExtraGomb>
+      ))}
+    </div>
+  );
+}
+
+/** Formula before the roll: `bázis+kN vs célszám` (`?` when hidden); `children` goes after the célszám (e.g. képzetlen +3). */
+export function ProbaOsszegzo({ bázis, kocka, célszám, rejtett, children }: {
+  bázis: number; kocka: number; célszám: number | null; rejtett: boolean; children?: ReactNode;
+}) {
+  return (
+    <div className="kep-proba-summary">
+      <span className="kep-proba-sum-total">{bázis}+k{kocka}</span>
+      {rejtett ? <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">?</span></>
+        : célszám !== null && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">{célszám}{children}</span></>}
+    </div>
+  );
+}
+
+/** Roll row: Lehetetlen / Biztos siker, or the roll button + manual dice entry (same as the Támadó dobás). */
+export function ProbaDobasSor({ d, kocka, ehSzint, bázis, kész, alapLabel, lehetetlen, biztosSiker }: {
+  d: ReturnType<typeof useProbaDobas>; kocka: number; ehSzint: number; bázis: number; kész: boolean;
+  alapLabel: string; lehetetlen: boolean; biztosSiker: boolean;
+}) {
+  if (lehetetlen) return <div className="kep-proba-tiltott">Lehetetlen</div>;
+  if (biztosSiker) return <div className="kep-proba-biztos">Biztos siker</div>;
+  return (
+    <div className="dobas-btn-row">
+      <button type="button" className="tamado-dobas-btn dobas-btn-ikon" disabled={!kész} onClick={d.dob}><Ikon név="kocka" méret={22} />Dobás</button>
+      <ManualDicePicker sides={kocka} szint={ehSzint} onSelect={d.kéziDobás} disabled={!kész} alapÉrték={bázis} alapLabel={d.kéziFelirat ?? alapLabel} forceOpen={d.kéziFolyamatban} />
     </div>
   );
 }

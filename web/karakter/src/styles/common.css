@@ -24,8 +24,6 @@
   cursor: pointer;
 }
 
-.item-row-new { opacity: 0.7; }
-
 /* Small "+" (add) button in a group header row */
 .csoport-label { display: flex; align-items: center; gap: 4px; }
 .csoport-uj { margin-left: auto; display: inline-flex; }
@@ -102,18 +100,6 @@
   font-weight: bold;
   cursor: pointer;
   padding: 0;
-}
-
-/* ===================
-   Select mező
-   =================== */
-.field-select {
-  background: var(--input-bg);
-  color: var(--text);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 16px;
 }
 
 /* ===================

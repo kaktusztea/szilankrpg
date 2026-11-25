@@ -37,6 +37,7 @@ taktikák:
   - { mód: "override", érték: 3, cél: "vé_csökkentés", megjegyzés: "VÉ csökkentés: 3 fixen", feltétel: "" }
   - { mód: "flat", érték: 1, cél: "vé_csökkentés", megjegyzés: "Fegyverelőnyben: +1 VÉ csökkentés", feltétel: "harci_helyzet:fegyverelőny" }
   megjegyzés: "Nincs támadódobás."
+  támadódobás: "vé_csökkentés"
   megkötések:
   - típus: "harci_helyzet"
     mód: "tiltott"
@@ -217,6 +218,7 @@ taktikák:
   módosítók:
     VÉ: 8
   megjegyzés: "Nem támadsz, hátrálsz. Ellenfeled VÉ csökkentése: 1+k20P."
+  támadódobás: "nincs"
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null

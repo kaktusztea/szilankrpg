@@ -147,19 +147,24 @@ describe('calcVéCsökkentésSzorzó - Roham/Öngyilkos roham duplázás', () =>
   });
 });
 
-describe('támadódobástTiltóTaktika - Fárasztás / Teljes Védekezés → a Támadó dobás popup nem enged dobni', () => {
-  const sess = (taktikák: string[]) => ({ aktív_taktikák: taktikák.map(név => ({ név })) }) as unknown as Session;
+describe('támadódobástTiltóTaktika - taktikak.yaml `támadódobás` (Fárasztás / Teljes Védekezés) → a Támadó dobás popup nem enged dobni', () => {
+  const data = loadGameDataSync();
+  const tilt = (taktikák: string[]) => támadódobástTiltóTaktika({ aktív_taktikák: taktikák.map(név => ({ név })) } as unknown as Session, data);
 
   it('Fárasztás aktív → a taktika neve', () => {
-    expect(támadódobástTiltóTaktika(sess(['Fárasztás']))).toBe('Fárasztás');
+    expect(tilt(['Fárasztás'])).toBe('Fárasztás');
   });
   it('Teljes Védekezés aktív → a taktika neve', () => {
-    expect(támadódobástTiltóTaktika(sess(['Teljes Védekezés']))).toBe('Teljes Védekezés');
+    expect(tilt(['Teljes Védekezés'])).toBe('Teljes Védekezés');
   });
   it('nincs aktív taktika → null', () => {
-    expect(támadódobástTiltóTaktika(sess([]))).toBeNull();
+    expect(tilt([])).toBeNull();
   });
   it('más taktika (pl. Roham) nem tiltja a támadódobást → null', () => {
-    expect(támadódobástTiltóTaktika(sess(['Roham']))).toBeNull();
+    expect(tilt(['Roham'])).toBeNull();
+  });
+  it('a data dönt, nem a név: pontosan a `támadódobás` mezős taktikák tiltanak', () => {
+    expect(data.taktikak.filter(t => tilt([t.név])).map(t => [t.név, t.támadódobás]))
+      .toEqual([['Fárasztás', 'vé_csökkentés'], ['Teljes Védekezés', 'nincs']]);
   });
 });

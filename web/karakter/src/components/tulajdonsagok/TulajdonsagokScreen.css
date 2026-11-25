@@ -134,9 +134,6 @@
 
 /* Törlés → base: .item-delete (common.css) */
 
-/* Select → base: .field-select (common.css) */
-.kep-select { font-size: 17px; }
-
 /* Info panel → base: .info-panel (common.css) */
 
 /* --- Popup szint grid --- */
@@ -311,7 +308,6 @@
   flex-direction: column;
   gap: 8px;
 }
-.kep-proba-row .field-select { width: 100%; }
 .kep-proba-kit-btn { width: 100%; text-align: left; }
 /* A Helyzetfüggő módosítók chip megnyitáskori figyelemfelkeltő villanása (egyszeri, 3 ütem, majd leáll).
    Ritkán jelenik meg (főleg a Tulajdonságpróbánál), ezért a megnyitáskor jelezni kell a létét. */

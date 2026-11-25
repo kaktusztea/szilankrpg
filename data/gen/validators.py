@@ -110,6 +110,8 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok
         if km not in ('whitelist', 'blacklist'): errors.append(f"{ctx}: 'kombó_mód' invalid: '{km}'")
         if not isinstance(t.get('kombó_lista'), list): errors.append(f"{ctx}: 'kombó_lista' nem lista")
         if t.get('fokozatos') and not t.get('fokok'): errors.append(f"{ctx}: fokozatos de nincs 'fokok'")
+        if t.get('támadódobás', 'vé_csökkentés') not in ('vé_csökkentés', 'nincs'):
+            errors.append(f"{ctx}: 'támadódobás' invalid: '{t.get('támadódobás')}' (érvényes: vé_csökkentés | nincs)")
         if not t.get('fokozatos') and not isinstance(t.get('módosítók', {}), dict): errors.append(f"{ctx}: 'módosítók' nem dict")
         # Nem-fokozatos taktika opcionális strukturált hatások egy dobáscélra/numerikus célra.
         # Több elem egy célra: §42.3 precedencia (override = bázis-csere, utána flat/szorzó).

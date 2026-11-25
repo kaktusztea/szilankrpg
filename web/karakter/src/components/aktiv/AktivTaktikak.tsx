@@ -1,7 +1,7 @@
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, UndoPatch } from '../../engine/types';
+import type { Karakter, Session, PushUndo, SetSession } from '../../engine/types';
 import { fmtHatás, fmtHatásSzöveg } from '../formatters';
 import { TaktikaPickerPopup } from '../picker/TaktikaPickerPopup';
 import type { TaktikaHatásPerElem } from './aktiv-calc';
@@ -14,8 +14,8 @@ interface Props {
   data: GameData;
   karakter: Karakter;
   session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  setSession: SetSession;
+  pushUndo: PushUndo;
   taktikaHatásPerElem: TaktikaHatásPerElem[];
   taktikaFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
   eseményNév: (id: string) => string;

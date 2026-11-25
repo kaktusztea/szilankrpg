@@ -34,6 +34,12 @@ export interface DobásHatás {
   megjegyzés?: string;
 }
 
+/** A ⚠ note shown in a roll popup (taktika / helyzet `megjegyzés`). */
+export interface DobásMegjegyzés {
+  forrás: string;
+  szöveg: string;
+}
+
 export interface SpBónusz {
   forrás: string;
   érték: number;
@@ -43,13 +49,13 @@ export interface DobásInfo {
   téHatások: DobásHatás[];
   sebzésHatások: DobásHatás[];
   spBónuszok: SpBónusz[];
-  téMegjegyzések: { forrás: string; szöveg: string }[];
-  sebzésMegjegyzések: { forrás: string; szöveg: string }[];
+  téMegjegyzések: DobásMegjegyzés[];
+  sebzésMegjegyzések: DobásMegjegyzés[];
 }
 
 interface CéDobásInfo {
   céHatások: DobásHatás[];
-  céMegjegyzések: { forrás: string; szöveg: string }[];
+  céMegjegyzések: DobásMegjegyzés[];
 }
 
 // ─── Internal helpers ────────────────────────────────────────────────────────
@@ -105,7 +111,7 @@ function collectSessionHatások(
       && (e.forrás.típus === 'taktika' || célFilter.has('sebzésdobás')) && e.forrás.típus !== 'helyzet' && e.forrás.típus !== 'státusz')
     .map(e => ({ forrás: forrásCímke(e), érték: e.érték! }));
 
-  const taktikaMegjegyzések: { forrás: string; szöveg: string }[] = [];
+  const taktikaMegjegyzések: DobásMegjegyzés[] = [];
   for (const at of session.aktív_taktikák) {
     const def = taktikaDef(data, at.név);
     if (def?.megjegyzés) taktikaMegjegyzések.push({ forrás: at.név, szöveg: def.megjegyzés });
@@ -184,8 +190,8 @@ export function harcképtelenForrások(
 /** Az aktív harci helyzetek ⚠ megjegyzései egy dobás-célra (harci_helyzetek.yaml `megjegyzés_dobásra`), aktiválási sorrendben. */
 export function helyzetDobásMegjegyzések(
   session: Pick<Session, 'aktív_helyzetek'>, data: GameData, cél: DobásCél,
-): { forrás: string; szöveg: string }[] {
-  const ki: { forrás: string; szöveg: string }[] = [];
+): DobásMegjegyzés[] {
+  const ki: DobásMegjegyzés[] = [];
   for (const név of session.aktív_helyzetek) {
     const szöveg = helyzetDef(data, név)?.megjegyzés_dobásra?.[cél];
     if (szöveg) ki.push({ forrás: név, szöveg });

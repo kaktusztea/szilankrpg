@@ -134,6 +134,8 @@ export interface TaktikaEntry {
   hatások?: StatuszHatas[];
   fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number; hatások?: StatuszHatas[] }[];
   megjegyzés?: string;
+  /** A taktika kizárja a rendes Támadó dobást: `vé_csökkentés` = a TÉ chip a VÉ csökkentést nyitja (Fárasztás), `nincs` = nem támad (Teljes Védekezés). */
+  támadódobás?: 'vé_csökkentés' | 'nincs';
   megkötések?: TaktikaMegkötés[];
   kombó_mód: string;
   kombó_lista: string[];

@@ -1,11 +1,7 @@
 import type { EsemenyEntry, StatuszEntry } from './data-types';
 import { clampEHSzint } from './dice';
 import { gyűjtStátuszEffektek } from './effekt';
-
-/** Státusz-hatás célok, amelyek próbára vonatkoznak (esemenyek.yaml, csoport: próba). */
-const PRÓBA_CÉLOK = new Set([
-  'képzettségpróba', 'tulajdonságpróba', 'szociális_próba', 'szellemi_próba', 'fizikai_próba', 'nem_harci_próba', 'érzék_próba',
-]);
+import { eseményDef } from './lookup';
 
 /**
  * A próba, amire a státusz-hatásokat szűrjük. Képzettségpróbánál `képzettség` adott; a `tulajdonság` a dobáshoz
@@ -119,7 +115,9 @@ export function próbaÉrzékek(
 /** Eldönti, hogy egy státusz-hatás vonatkozik-e az adott próbára (md/010_11 Próba-kategóriák, esemenyek.yaml). */
 function hatásVonatkozik(h: { cél: string; alcél?: string }, esemenyek: EsemenyEntry[], ctx: PróbaKontextus): boolean {
   const { cél } = h;
-  if (!PRÓBA_CÉLOK.has(cél)) return false;
+  // Only the próba events count (esemenyek.yaml `csoport: próba` - the data is the single source of the próba-kategóriák).
+  const def = eseményDef({ esemenyek }, cél);
+  if (def?.csoport !== 'próba') return false;
   const kp = ctx.képzettség;
 
   // Specifikus alcél (§42.4): csak arra az egy képzettségre / Tulajdonságra hat
@@ -134,7 +132,6 @@ function hatásVonatkozik(h: { cél: string; alcél?: string }, esemenyek: Eseme
     } else if (pre !== 'érzék') return false;   // érzék:<X>: az érzék-szűrést a hívó végzi (hatásÉrzéke)
   }
 
-  const def = esemenyek.find(e => e.id === cél);
   switch (cél) {
     case 'képzettségpróba': return !!kp;
     case 'tulajdonságpróba': return !kp;

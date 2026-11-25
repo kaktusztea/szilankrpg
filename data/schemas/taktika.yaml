@@ -27,6 +27,9 @@ taktikák:
     fokok:                     # opcionális (fokozatos: true esetén)
       - { fok: 1, TÉ: 0, VÉ: 0, KÉ: 0, SP: 0 }
     megjegyzés: ""             # opcionális, string
+    # A taktika kizárja a rendes Támadó dobást (a Harc fül TÉ chipje és a Támadó dobás popup ehhez igazodik):
+    # "vé_csökkentés" = a TÉ chip a VÉ csökkentés popupot nyitja (Fárasztás); "nincs" = nem támad, csak info (Teljes Védekezés).
+    támadódobás: ""            # opcionális, enum: "vé_csökkentés" | "nincs"
     # Megkötések: kontextuális feltételek a taktika alkalmazhatóságára
     # típus: "harci_helyzet" | "harcmodor" | "szituáció" | "támadások" | "többes_harc" | "per_küzdelem"
     # mód: "tiltott" | "szükséges" | "min" | "max"

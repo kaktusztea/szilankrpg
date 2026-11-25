@@ -8,7 +8,6 @@
 .th-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .th-controls { gap: 6px; }
 
-/* th-select → base: .field-select (common.css) */
 
 .th-badge {
   background: var(--input-bg);
@@ -240,4 +239,3 @@
 .th-fegyver-picker-stat b { color: var(--text); }
 .th-fegyver-picker-item:hover { background: var(--border-light); }
 .th-fegyver-picker-active { border-color: var(--success); background: rgba(76, 175, 80, 0.12); }
-.th-fegyver-picker-sep { border: none; border-top: 1px solid var(--border); margin: 4px 0; }

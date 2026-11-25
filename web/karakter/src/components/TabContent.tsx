@@ -1,6 +1,6 @@
 import { SzinKor } from './common/SzinKor';
 import { Ikon } from './common/Ikon';
-import type { Kepzettseg, UndoPatch } from '../engine/types';
+import type { Kepzettseg, PushUndo, SetSession } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, Fortely, Tulajdonsagok } from '../engine/types';
 import type { TabDef } from './TabBar';
@@ -38,10 +38,10 @@ interface Props {
   fortélyok: Fortely[];
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
   session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
+  setSession: SetSession;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  pushUndo: PushUndo;
   onToast: (msg: string, type: 'success' | 'error') => void;
   onTestReset?: () => void;
   /** ProbaHub 🗡️/🏹 → a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot. */

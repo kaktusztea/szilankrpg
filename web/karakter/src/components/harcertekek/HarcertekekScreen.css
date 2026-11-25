@@ -42,18 +42,6 @@
 }
 
 .he-fegyver-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }  /* gap: separates the name + meta block from the stat lines */
-.he-fegyver-fields { display: flex; flex-wrap: wrap; gap: 8px 12px; font-size: 16px; }
-.he-fegyver-fields label { display: flex; align-items: center; gap: 4px; }
-
-.he-fegyver-fields select {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  color: var(--text);
-  padding: 2px 6px;
-  font-size: 16px;
-}
-
 
 /* --- Field gombok --- */
 .he-field-btn {
@@ -68,9 +56,6 @@
 }
 
 .he-field-btn strong { color: var(--success); margin-left: 4px; }
-.he-field-disabled { opacity: 0.4; pointer-events: none; }
-.he-field-off { opacity: 0.55; text-decoration: line-through; }
-
 /* --- Add select --- */
 .he-add-select {
   width: 100%;

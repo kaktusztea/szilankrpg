@@ -56,3 +56,19 @@ export function useProbaDobas({ bázis, ehSzint, kocka, nehézség, összetettDb
     reset, váltás, dob, kéziDobás,
   };
 }
+
+/**
+ * Used sense for the státusz Hatások (alkategóriás státusz, Érzékvesztés: Látás): `null` = automatic (the first
+ * affected sense, follows a Tulajdonság change), `undefined` = switched off by hand.
+ */
+export function useVálasztottÉrzék(érintett: string[]) {
+  const [kézi, setÉrzék] = useState<string | undefined | null>(null);
+  return [kézi === null ? érintett[0] : kézi, setÉrzék] as const;
+}
+
+/** On/off set of the situational (`szituációs`) E/H rows - all off by default. */
+export function useKapcsolóHalmaz() {
+  const [be, setBe] = useState<ReadonlySet<string>>(new Set());
+  const vált = (k: string) => setBe(b => { const n = new Set(b); if (!n.delete(k)) n.add(k); return n; });
+  return [be, vált] as const;
+}

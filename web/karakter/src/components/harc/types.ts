@@ -1,13 +1,8 @@
-import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, UndoPatch } from '../../engine/types';
+import type { Karakter } from '../../engine/types';
+import type { SessionProps } from '../session-props';
 
-export interface HarcBaseProps {
-  data: GameData;
-  karakter: Karakter;
-  session: Session;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
+export interface HarcBaseProps extends SessionProps {
   setKarakter?: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onNavigate?: (tabId: string) => void;
   gameMode?: boolean;
   /** A ProbaHub 🗡️ chipje: ha 'támadó', a Harc fül mountkor megnyitja a Támadó dobás popupot (majd consume). */

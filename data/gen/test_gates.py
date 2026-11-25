@@ -88,6 +88,10 @@ class AktivFulGates(unittest.TestCase):
         self.assertEqual(sablon_hibak(A.hatasok, A.effekt_modok, A.esemenyek), [])
         validate_effekt_hivatkozasok(A.helyzetek, A.extrak, A.statuszok)
 
+    def test_taktika_ismeretlen_tamadodobas_bukik(self):
+        t = copy.deepcopy(self.A.taktikak); t[0]['támadódobás'] = 'nincs_ilyen'
+        bukik(self, validate_aktiv_ful, t, self.A.helyzetek, [], self.A.manoverek, self.A.effekt_modok)
+
     def test_esemeny_duplikalt_id_bukik(self):
         e = copy.deepcopy(self.A.esemenyek); e.append(copy.deepcopy(e[0]))
         bukik(self, validate_esemenyek, e)

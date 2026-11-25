@@ -6,6 +6,22 @@ import { fortélyFok } from '../azonosito';
 import { isHárító } from './fegyver-helpers';
 import { elsődlegesMód } from './fegyver-calc';
 import { lookupFegyver } from '../lookup';
+import { evaluate, buildContext } from '../reactive';
+import { páncélStringKontextus, páncélSzámInputok } from './shared';
+
+/** The armour's own values (Harcértékek fül; no session: worn or not does not matter here). */
+export function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; sfé_energia: number; mgt: number; ár: number } {
+  if (!k.páncél.alap) return { sfé_fizikai: 0, sfé_energia: 0, mgt: 0, ár: 0 };
+  const { konstansok } = data;
+  const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok, páncélSzámInputok(k.páncél));
+  const computed = evaluate(data.rules, ctx, buildPancelLookups(konstansok), páncélStringKontextus(k.páncél));
+  return {
+    sfé_fizikai: computed.get('sfé_fizikai') ?? 0,
+    sfé_energia: computed.get('sfé_energia') ?? 0,
+    mgt: computed.get('páncél_MGT') ?? 0,
+    ár: computed.get('páncél_ár') ?? 0,
+  };
+}
 
 /** Páncél lookup táblák építése */
 export function buildPancelLookups(

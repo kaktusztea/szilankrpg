@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import { lookupFegyver, lookupTávfegyver, taktikaDef, helyzetDef, státuszDef, fortélyDef, képzettségDef, eseményDef } from './lookup';
+import { lookupFegyver, lookupTávfegyver, taktikaDef, helyzetDef, helyzetDefId, státuszDef, fortélyDef, képzettségDef, eseményDef } from './lookup';
 import type { GameData, FegyverAlap, TavfegyverAlap } from './data-types';
 
 const fegyverek = [{ név: 'Kard, hosszú' }, { név: 'Puszta kéz' }, { név: 'KARD, HOSSZÚ', extra: 'second' }] as unknown as FegyverAlap[];
@@ -33,6 +33,14 @@ describe('engine/lookup', () => {
     expect(képzettségDef(data, 'akrobatika')).toBeDefined();
     expect(eseményDef(data, 'kinzas')).toBeDefined();
   });
+
+  it('one array, two indexes: helyzet by név and by id do not share a cache', () => {
+    const data = { harciHelyzetek: [{ név: 'Belharci helyzet', id: 'belharc' }] } as unknown as GameData;
+    expect(helyzetDef(data, 'belharci HELYZET')?.id).toBe('belharc');
+    expect(helyzetDefId(data, 'belharc')?.név).toBe('Belharci helyzet');
+    expect(helyzetDefId(data, 'Belharci helyzet')).toBeUndefined();
+    expect(helyzetDef(data, 'belharc')).toBeUndefined();
+  });
 });
 
 // Guard: the case-insensitive name index must never merge two real entries (silent wrong lookup otherwise).
@@ -58,7 +66,7 @@ describe('data tables: lookup keys are unique', () => {
   const load = (f: string) => JSON.parse(readFileSync(resolve(T, f), 'utf-8'));
   const cases: [string, string, boolean][] = [
     ['fegyverek_v2.json', 'név', true], ['tavfegyverek_v2.json', 'név', true], ['taktikak.json', 'név', true],
-    ['harci_helyzetek.json', 'név', true], ['statuszok.json', 'név', true], ['fortelyok.json', 'id', false],
+    ['harci_helyzetek.json', 'név', true], ['harci_helyzetek.json', 'id', false], ['statuszok.json', 'név', true], ['statuszok.json', 'id', false], ['fortelyok.json', 'id', false],
     ['kepzettsegek.json', 'id', false], ['esemenyek.json', 'id', false],
   ];
   for (const [file, key, ci] of cases) {

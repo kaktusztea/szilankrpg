@@ -23,6 +23,11 @@ export function rollK10(): number {
  */
 export interface ProbaDobás { rolls: number[]; eredmény: number }
 
+/** A roll's dice for a breakdown line: ` [7, 12] → 12` (Előny/Hátrány, several dice) or ` (12)` (one die). */
+export function kockaBontás(d: ProbaDobás): string {
+  return d.rolls.length > 1 ? ` [${d.rolls.join(', ')}] → ${d.eredmény}` : ` (${d.eredmény})`;
+}
+
 /**
  * Előny/Hátrány szint → megjelenítendő címke: `Előny+2`, `Hátrány-1`, `''` (sima dobás).
  * Egyetlen hely, ahol ez a formázás el van döntve.
@@ -37,7 +42,7 @@ export function előnyHátrányLabel(szint: number): string {
 // ponytail: a konstansok.yaml próba.előny_hátrány_max szinkron másolata (a kocka-réteg adat nélkül, szinkron fut);
 // az egyezést a dice.konstans.test.ts őrzi.
 export const EH_SZINT_MAX = 2;
-export const EH_SZINT_MIN = -EH_SZINT_MAX;
+const EH_SZINT_MIN = -EH_SZINT_MAX;
 
 /** Előny/Hátrány szint a [-2, +2] tartományra szorítva - a kézi `Math.max(-2, Math.min(2, x))` helyett. */
 export function clampEHSzint(szint: number): number {

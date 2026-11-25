@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Karakter, Session } from '../../engine/types';
+import type { Karakter, Session, SetSession } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { távfegyverStatok } from './TavharcFegyverCard';
 import { calcÚjratöltésEnyhítés } from './helpers';
@@ -12,7 +12,7 @@ import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 interface Props {
   összesFegyver: VirtuálisFegyver[];
   tfIdx: number;
-  setSession: React.Dispatch<React.SetStateAction<Session>>;
+  setSession: SetSession;
   mfFok: number;
   idea: number;
   isMágikus?: boolean;

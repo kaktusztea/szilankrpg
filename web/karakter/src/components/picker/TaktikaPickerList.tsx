@@ -1,7 +1,7 @@
 import { Ikon } from '../common/Ikon';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
-import { isTaktikaAllowed, taktikaTiltásOka } from '../../engine/taktika/taktika-megkotes';
+import { taktikaTiltásOka } from '../../engine/taktika/taktika-megkotes';
 import { formatFokMods, területIllik, type HarcTerület } from '../../engine/taktika/taktika-helpers';
 import './picker.css';
 
@@ -45,8 +45,8 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
       if (showHeader) tavharcHeaderShown = true;
       const aktív = session.aktív_taktikák.some(a => a.név === t.név);
       // Toggle-módban a nem-aktív, de nem-engedélyezett taktikák halványan/letiltva (okkal: kizárás/megkötés).
-      const tiltott = toggle && !aktív && !isTaktikaAllowed(t.név, session, karakter, data);
-      const tiltásOk = tiltott ? taktikaTiltásOka(t.név, session, karakter, data) : null;
+      const tiltásOk = toggle && !aktív ? taktikaTiltásOka(t.név, session, karakter, data) : null;
+      const tiltott = tiltásOk !== null;
       return <div key={t.név}>
         {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header"><Ikon név="távharc" /> Távharci taktikák</div>}
         <button type="button"

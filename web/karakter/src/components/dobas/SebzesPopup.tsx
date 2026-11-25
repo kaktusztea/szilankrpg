@@ -5,8 +5,9 @@ import { PopupOverlay } from '../PopupOverlay';
 import { ElonyLepteto } from './ElonyLepteto';
 import { ForrasLista } from './ForrasLista';
 import { ManualDicePicker } from './ManualDicePicker';
-import { rollElőnyHátrányK20, type ProbaDobás, clampEHSzint } from '../../engine/dice';
-import type { DobásHatás, SpBónusz } from '../../engine/harc/combat-roll-info';
+import { rollElőnyHátrányK20, kockaBontás, type ProbaDobás, clampEHSzint } from '../../engine/dice';
+import { MegjegyzesLista, BontasNyil, kéziDobás } from './K20Reszek';
+import type { DobásHatás, DobásMegjegyzés, SpBónusz } from '../../engine/harc/combat-roll-info';
 import { netElőnySzint, sebzésPáncélDelta, célPáncélKategória, sebzésElőnyK20ból } from '../../engine/harc/combat-roll-info';
 import type { Páncélosztály, SebzésjellegPáncélMátrix, FegyverExtraDef } from '../../engine/data-types';
 import { ExtrakInfo } from './ExtrakInfo';
@@ -48,7 +49,7 @@ interface Props {
   /** Active static SP bonuses from taktikák (informational) */
   spBónuszok: SpBónusz[];
   /** Taktika notes relevant to sebzés (e.g. "Sebzés: 0") */
-  megjegyzések: { forrás: string; szöveg: string }[];
+  megjegyzések: DobásMegjegyzés[];
   /** Hide the automatic SP bonuses list inside StatikusBonuszBtn (e.g. távharc) */
   /** Fegyver Átütés értéke (informatív kijelzés, ha > 0) */
   átütés?: number;
@@ -133,15 +134,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
     bónuszÖssz !== 0 ? `benne bónusz ${bónuszÖssz > 0 ? '+' : ''}${bónuszÖssz}` : null,
   ].filter(Boolean).join(' · ');
 
-  function handleDobás() {
-    const dobás = rollElőnyHátrányK20(aktuális);
-    setEredmény({ dobás, sp: effektívSp, bónusz, végső: dobás.eredmény + effektívSp + bónusz });
-  }
-
-  function handleManualK20(value: number) {
-    const dobás: ProbaDobás = { rolls: [value], eredmény: value };
-    setEredmény({ dobás, sp: effektívSp, bónusz, végső: value + effektívSp + bónusz });
-  }
+  const rögzít = (dobás: ProbaDobás) => setEredmény({ dobás, sp: effektívSp, bónusz, végső: dobás.eredmény + effektívSp + bónusz });
 
   function handleBónuszClick(val: number) {
     setBónusz(prev => prev === val ? 0 : val);
@@ -168,16 +161,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
         {!eredmény ? (
           <>
-            {megjegyzések.length > 0 && (
-              <div className="dobas-info-list dobas-notes">
-                {megjegyzések.map((m, i) => (
-                  <div key={i} className="dobas-info-item">
-                    <span className="dobas-info-badge note">⚠</span>
-                    <span className="dobas-info-source">{m.forrás}: {m.szöveg}</span>
-                  </div>
-                ))}
-              </div>
-            )}
+            <MegjegyzesLista lista={megjegyzések} />
 
             {/* Order (2026-11): formula, then the wide blocks one after the other (páncél bar, E/H box),
                 then the damage type · Átütés + Bónusz row */}
@@ -237,20 +221,17 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
             <StatikusBonuszBtn bónusz={bónusz} spBónuszok={spBónuszok} onBónuszClick={handleBónuszClick} />
 
             <div className="dobas-btn-row">
-              <button className="tamado-sebzes-btn dobas-btn-ikon sebzes-dobas-btn" onClick={handleDobás} disabled={páncélKell}><Ikon név="kocka" méret={22} />Dobás</button>
-              <ManualDicePicker szint={aktuális} onSelect={handleManualK20} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
+              <button className="tamado-sebzes-btn dobas-btn-ikon sebzes-dobas-btn" onClick={() => rögzít(rollElőnyHátrányK20(aktuális))} disabled={páncélKell}><Ikon név="kocka" méret={22} />Dobás</button>
+              <ManualDicePicker szint={aktuális} onSelect={v => rögzít(kéziDobás(v))} alapÉrték={effektívSp + bónusz} alapLabel="SP" disabled={páncélKell} />
             </div>
           </>
         ) : (
           <>
             <div className="ke-dobas-result">{eredmény.végső}<span className="sebzes-eredmeny-egyseg"> SP</span>
-              <button type="button" className={`sebzes-bontas-nyil${bontásNyitva ? ' nyitva' : ''}`} aria-expanded={bontásNyitva}
-                aria-label="Sebzés bontása" title="Bontás" onClick={() => setBontásNyitva(v => !v)}><Ikon név="lenyit" /></button>
+              <BontasNyil nyitva={bontásNyitva} onVált={() => setBontásNyitva(v => !v)} label="Sebzés bontása" />
             </div>
             {bontásNyitva && <div className="ke-dobas-detail">
-              k20{eredmény.dobás.rolls.length > 1
-                ? ` [${eredmény.dobás.rolls.join(', ')}] → ${eredmény.dobás.eredmény}`
-                : ` (${eredmény.dobás.eredmény})`}
+              k20{kockaBontás(eredmény.dobás)}
               {' + '}SP ({eredmény.sp})
               {eredmény.bónusz !== 0 ? ` ${eredmény.bónusz > 0 ? '+' : ''}${eredmény.bónusz}` : ''}
             </div>}

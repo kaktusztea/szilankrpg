@@ -1,4 +1,4 @@
-import type { Karakter, UndoPatch } from '../../engine/types';
+import type { Karakter, PushUndo } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { CÉBontás } from './types';
 
@@ -7,7 +7,7 @@ interface Props {
   gameMode: boolean;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  pushUndo: PushUndo;
   konstansok: GameData['konstansok'];
 }
 
