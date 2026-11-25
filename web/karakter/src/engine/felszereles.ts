@@ -153,9 +153,9 @@ export function felszerelésHátrány(terhelés: number, max: number, data: Game
   return { ehSzint: maxSáv, autoKudarc: true, nemHarcol: true };
 }
 
-/** Egy tulajdonság Fizikai-e (kap-e felszerelés-Hátrányt a Tulajdonságpróbánál). */
-export function fizikaiTulajdonság(tulajdonság: string, data: GameData): boolean {
-  return data.konstansok.felszerelés.hátrány_tulajdonságok.includes(tulajdonság);
+/** Egy tulajdonság Fizikai-e (kap-e felszerelés-Hátrányt a Tulajdonságpróbánál): esemenyek.yaml → fizikai_próba.tulajdonságok (md/010_11). */
+export function fizikaiTulajdonság(tulajdonság: string, data: Pick<GameData, 'esemenyek'>): boolean {
+  return !!data.esemenyek.find(e => e.id === 'fizikai_próba')?.tulajdonságok?.includes(tulajdonság);
 }
 
 // ============================================================

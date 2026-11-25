@@ -1,24 +1,20 @@
-import type { StatuszEntry } from './data-types';
+import type { EsemenyEntry, StatuszEntry } from './data-types';
 import { clampEHSzint } from './dice';
 import { gyűjtStátuszEffektek } from './effekt';
 
+/** Státusz-hatás célok, amelyek próbára vonatkoznak (esemenyek.yaml, csoport: próba). */
+const PRÓBA_CÉLOK = new Set([
+  'képzettségpróba', 'tulajdonságpróba', 'szociális_próba', 'szellemi_próba', 'fizikai_próba', 'nem_harci_próba', 'érzék_próba',
+]);
+
 /**
- * Próba cél → képzettség csoport mapping.
- * Ha a cél specifikusabb (szociális, szellemi, fizikai, érzék), az csak bizonyos csoportokra hat.
+ * A próba, amire a státusz-hatásokat szűrjük. Képzettségpróbánál `képzettség` adott; a `tulajdonság` a dobáshoz
+ * VÁLASZTOTT Tulajdonság kulcsa (kisbetűs) - a fizikai / szellemi / érzék próba-kategória ezen múlik (md/010_11).
  */
-const CÉL_CSOPORT_MAP: Record<string, string[]> = {
-  képzettségpróba: [], // üres = minden csoportra hat
-  szociális_próba: ['világi'], // Befolyásolás, Etikett, Emberismeret
-  szellemi_próba: ['tudományos', 'művészeti', 'misztikus'],
-  fizikai_próba: ['fizikai', 'alvilági'],
-  érzék_próba: [], // speciális: csak Észlelés
-};
-
-/** Szociális képzettségek (a világi csoportból nem mind szociális) */
-const SZOCIÁLIS_NEVEK = new Set(['befolyásolás', 'etikett', 'emberismeret']);   // képzettség-id-k
-
-/** Érzék képzettségek */
-const ÉRZÉK_NEVEK = new Set(['észlelés']);   // képzettség-id
+interface PróbaKontextus {
+  képzettség?: { kulcs: string; csoport: string };
+  tulajdonság?: string;
+}
 
 interface PróbaEHEredmény {
   /** Összesített EH szint (clamp [-2, +2]) */
@@ -29,29 +25,15 @@ interface PróbaEHEredmény {
   források: string[];
 }
 
-/**
- * Kiszámolja az aktív státuszok Előny/Hátrány hatását egy adott képzettségpróbára - a közös effekt-gyűjtőből
- * (`gyűjtStátuszEffektek`, §42), a próba-célt a képzettség-csoportra / -id-re szűrve.
- *
- * @param aktívStátuszok - session.aktív_státuszok tömb ("Név (fok)" / "Név: Alkategória (fok)" formátum)
- * @param statuszDefs - GameData.statuszok (StatuszEntry[])
- * @param képzettségNév - a próbázott képzettség hivatkozási KULCSa ("észlelés", "harcmodor/kardvívás"; 2026-10-17 óta)
- * @param képzettségCsoport - a próbázott képzettség csoportja
- * @param érzék - a próbához használt érzék (pl. „Látás"); alkategóriás státusz-hatás csak az illő érzékre él
- */
-export function calcStátuszPróbaEH(
-  aktívStátuszok: string[],
-  statuszDefs: StatuszEntry[],
-  képzettségNév: string,
-  képzettségCsoport: string,
-  érzék?: string,
+function calcEH(
+  aktívStátuszok: string[], statuszDefs: StatuszEntry[], esemenyek: EsemenyEntry[], ctx: PróbaKontextus, érzék?: string,
 ): PróbaEHEredmény {
   let ehSzint = 0;
   let tiltott = false;
   const források: string[] = [];
 
   for (const e of gyűjtStátuszEffektek({ aktív_státuszok: aktívStátuszok }, { statuszok: statuszDefs })) {
-    if (!hatásVonatkozik(e, képzettségNév, képzettségCsoport)) continue;
+    if (!hatásVonatkozik(e, esemenyek, ctx)) continue;
     if (e.alkategória && e.alkategória !== érzék) continue;
     // Felirat: „Név (alcím)" / „Név: Alkategória (alcím)"
     const címke = e.forrás.név.replace(/\(\d+\)$/, `(${e.forrás.alcím})`);
@@ -64,11 +46,38 @@ export function calcStátuszPróbaEH(
     }
   }
 
-  return {
-    szint: clampEHSzint(ehSzint),
-    tiltott,
-    források,
-  };
+  return { szint: clampEHSzint(ehSzint), tiltott, források };
+}
+
+/**
+ * Az aktív státuszok Előny/Hátrány + automatikus kudarc hatása egy Képzettségpróbára - a közös effekt-gyűjtőből
+ * (`gyűjtStátuszEffektek`, §42), a próba-célt a képzettségre, a választott Tulajdonságra és az érzékre szűrve.
+ *
+ * @param aktívStátuszok - session.aktív_státuszok ("Név (fok)" / "Név: Alkategória (fok)")
+ * @param statuszDefs - GameData.statuszok
+ * @param esemenyek - GameData.esemenyek (a próba-kategóriák definíciója, md/010_11)
+ * @param képzettségNév - a próbázott képzettség hivatkozási KULCSa ("észlelés", "harcmodor/kardvívás")
+ * @param képzettségCsoport - a próbázott képzettség csoportja
+ * @param érzék - a próbához használt érzék (pl. „Látás"); alkategóriás státusz-hatás csak az illő érzékre él
+ * @param tulajdonság - a dobáshoz választott Tulajdonság kulcsa; nélküle a fizikai / szellemi / érzék próba nem hat
+ */
+export function calcStátuszPróbaEH(
+  aktívStátuszok: string[],
+  statuszDefs: StatuszEntry[],
+  esemenyek: EsemenyEntry[],
+  képzettségNév: string,
+  képzettségCsoport: string,
+  érzék?: string,
+  tulajdonság?: string,
+): PróbaEHEredmény {
+  return calcEH(aktívStátuszok, statuszDefs, esemenyek, { képzettség: { kulcs: képzettségNév, csoport: képzettségCsoport }, tulajdonság }, érzék);
+}
+
+/** Ugyanez Tulajdonságpróbára (a `tulajdonság` a próbázott Tulajdonság kulcsa). */
+export function calcStátuszTulajdonságPróbaEH(
+  aktívStátuszok: string[], statuszDefs: StatuszEntry[], esemenyek: EsemenyEntry[], tulajdonság: string, érzék?: string,
+): PróbaEHEredmény {
+  return calcEH(aktívStátuszok, statuszDefs, esemenyek, { tulajdonság }, érzék);
 }
 
 /**
@@ -76,42 +85,38 @@ export function calcStátuszPróbaEH(
  * érintett státuszok összes alkategóriája). Üres `érintett` → nincs érzék-választás a próbán.
  */
 export function próbaÉrzékek(
-  aktívStátuszok: string[], statuszDefs: StatuszEntry[], képzettségNév: string, képzettségCsoport: string,
+  aktívStátuszok: string[], statuszDefs: StatuszEntry[], esemenyek: EsemenyEntry[],
+  képzettségNév: string | null, képzettségCsoport: string, tulajdonság?: string,
 ): { opciók: string[]; érintett: string[] } {
+  const ctx: PróbaKontextus = { ...(képzettségNév !== null ? { képzettség: { kulcs: képzettségNév, csoport: képzettségCsoport } } : {}), tulajdonság };
   const érintett = [...new Set(gyűjtStátuszEffektek({ aktív_státuszok: aktívStátuszok }, { statuszok: statuszDefs })
-    .filter(e => e.alkategória && hatásVonatkozik(e, képzettségNév, képzettségCsoport))
+    .filter(e => e.alkategória && hatásVonatkozik(e, esemenyek, ctx))
     .map(e => e.alkategória!))];
   const opciók = [...new Set(statuszDefs.filter(s => s.alkategóriák?.some(a => érintett.includes(a))).flatMap(s => s.alkategóriák ?? []))];
   return { opciók, érintett };
 }
 
-/** Eldönti, hogy egy hatás vonatkozik-e az adott képzettségre. */
-function hatásVonatkozik(h: { cél: string; alcél?: string }, képzettségNév: string, képzettségCsoport: string): boolean {
-  const cél = h.cél;
+/** Eldönti, hogy egy státusz-hatás vonatkozik-e az adott próbára (md/010_11 Próba-kategóriák, esemenyek.yaml). */
+function hatásVonatkozik(h: { cél: string; alcél?: string }, esemenyek: EsemenyEntry[], ctx: PróbaKontextus): boolean {
+  const { cél } = h;
+  if (!PRÓBA_CÉLOK.has(cél)) return false;
+  const kp = ctx.képzettség;
 
-  // Nem próba-jellegű cél
-  if (!(cél in CÉL_CSOPORT_MAP)) return false;
-
-  // Specifikus alcél ("képzettség:<név>", §42.4): csak arra az egy képzettségre hat
+  // Specifikus alcél (§42.4): csak arra az egy képzettségre / Tulajdonságra hat
   if (h.alcél) {
-    return h.alcél === `képzettség:${képzettségNév}`;
+    const [pre, név] = h.alcél.split(':');
+    if (pre === 'képzettség') return !!kp && cél === 'képzettségpróba' && név === kp.kulcs;
+    if (pre === 'tulajdonság') return !kp && cél === 'tulajdonságpróba' && név === ctx.tulajdonság;
+    return false;
   }
 
-  // Generikus cél-ek
-  if (cél === 'képzettségpróba') return true;
-
-  if (cél === 'szociális_próba') {
-    return SZOCIÁLIS_NEVEK.has(képzettségNév);
+  const def = esemenyek.find(e => e.id === cél);
+  switch (cél) {
+    case 'képzettségpróba': return !!kp;
+    case 'tulajdonságpróba': return !kp;
+    case 'szociális_próba': return !!kp && !!def?.képzettségek?.includes(kp.kulcs);
+    case 'nem_harci_próba': return !!kp && !!kp.kulcs && !(def?.kizárt_csoportok ?? []).includes(kp.csoport);
+    // fizikai_próba / szellemi_próba / érzék_próba: a dobás Tulajdonsága dönti el (Tulajdonság- és Képzettségpróbán is)
+    default: return !!ctx.tulajdonság && !!def?.tulajdonságok?.includes(ctx.tulajdonság);
   }
-
-  if (cél === 'érzék_próba') {
-    return ÉRZÉK_NEVEK.has(képzettségNév);
-  }
-
-  const csoportok = CÉL_CSOPORT_MAP[cél];
-  if (csoportok && csoportok.length > 0) {
-    return csoportok.includes(képzettségCsoport);
-  }
-
-  return false;
 }

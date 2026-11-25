@@ -5,10 +5,12 @@ import { ForrasLista } from '../dobas/ForrasLista';
 import type { DobásHatás } from '../../engine/harc/combat-roll-info';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
-import type { PróbaKonstansok } from '../../engine/data-types';
+import type { EsemenyEntry, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
+import { calcStátuszTulajdonságPróbaEH, próbaÉrzékek } from '../../engine/statusz-proba';
+import { clampEHSzint } from '../../engine/dice';
 import { probaLehetetlen, probaBiztosSiker, tulLabel } from '../../engine/proba/proba-common';
 import { useProbaDobas } from './useProbaDobas';
-import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto, ProbaSzamPicker } from './ProbaReszek';
+import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto, ProbaSzamPicker, ExtraGomb } from './ProbaReszek';
 
 interface Props {
   tulajdonságNév: string;
@@ -20,6 +22,10 @@ interface Props {
   felszNemHarcol?: boolean;
   /** Fortély szituációs bónuszai (kapcsolható, alapból ki - a helyzetet a játékos/KM dönti el). */
   fortélyBónuszok?: { érték: number; leírás: string }[];
+  /** session.aktív_státuszok + GameData.statuszok / esemenyek: a státuszok Hatásai a Tulajdonságpróbára (md/010_11 Próba-kategóriák). */
+  aktívStátuszok?: string[];
+  statuszDefs?: StatuszEntry[];
+  esemenyek?: EsemenyEntry[];
   onClose: () => void;
 }
 
@@ -27,7 +33,7 @@ interface Props {
  * Tulajdonságpróba dobás popup (Játék mód): Tulajdonság + k6 vs célszám (§37.1).
  * Extrák szekció: Előny/Hátrány, Összetett próba, Fortélyok, Ellenpróba.
  */
-export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, próba, felszEH = 0, felszNemHarcol = false, fortélyBónuszok = [], onClose }: Props) {
+export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, próba, felszEH = 0, felszNemHarcol = false, fortélyBónuszok = [], aktívStátuszok = [], statuszDefs = [], esemenyek = [], onClose }: Props) {
   const p = próba.tulajdonság;
   // Bekapcsolt fortély-bónuszok: a dobás alapértékéhez adódnak.
   const [bónuszBe, setBónuszBe] = useState<boolean[]>(() => fortélyBónuszok.map(() => false));
@@ -37,12 +43,21 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   // Helyzetfüggő módosítók (fortély-bónuszok) külön picker popupban - a képzettségpróba mintájára.
   const [szitNyitva, setSzitNyitva] = useState(false);
   const [összetettNyitva, setÖsszetettNyitva] = useState(false);
-  // A felszerelés-túlterhelés Hátránya a dobás alap EH-ja (a KM felülírhatja).
-  const [ehSzint, setEhSzint] = useState(felszEH);
-  // Source list under the E/H stepper (same as the Támadó dobás): the only source here is Felszerelés túlterhelés
-  const ehForrások: DobásHatás[] = felszEH < 0 && !felszNemHarcol
-    ? [{ forrás: 'Felszerelés túlterhelés', cél: 'té_dobás', operátor: 'hátrány', érték: -felszEH }]
-    : [];
+  // Státuszok (§42 gyűjtő, statusz-proba.ts): Előny/Hátrány + automatikus kudarc erre a Tulajdonságpróbára. Alkategóriás
+  // státusz (Érzékvesztés: Látás) csak a választott érzékre hat - Érzékenység-próbánál érzék-chip sor, mint a Képzettségpróbán.
+  const érzékek = próbaÉrzékek(aktívStátuszok, statuszDefs, esemenyek, null, '', tulajdonságNév);
+  const [érzékKézi, setÉrzék] = useState<string | undefined | null>(null); // null = automatikus (első érintett)
+  const érzék = érzékKézi === null ? érzékek.érintett[0] : érzékKézi;
+  const státuszEH = calcStátuszTulajdonságPróbaEH(aktívStátuszok, statuszDefs, esemenyek, tulajdonságNév, érzék);
+  // A felszerelés-túlterhelés + a státuszok Hátránya a dobás alap EH-ja (a KM felülírhatja).
+  const alapEH = clampEHSzint(felszEH + státuszEH.szint);
+  const [ehKézi, setEhKézi] = useState<number | null>(null);
+  const ehSzint = ehKézi ?? alapEH;
+  // Source list under the E/H stepper (same as the Támadó dobás): Felszerelés túlterhelés + státuszok
+  const ehForrások: DobásHatás[] = [
+    ...(felszEH < 0 && !felszNemHarcol ? [{ forrás: 'Felszerelés túlterhelés', cél: 'té_dobás' as const, operátor: 'hátrány' as const, érték: -felszEH }] : []),
+    ...státuszEH.források.map(f => ({ forrás: f, cél: 'té_dobás' as const, operátor: 'szöveges' as const, érték: 0, megjegyzés: '' })),
+  ];
   const [összetettDb, setÖsszetettDb] = useState(0);
   const [ellenpróba, setEllenpróba] = useState(false);
 
@@ -96,12 +111,23 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
           </div>
         )}
 
+        {érzékek.érintett.length > 0 && !d.vanEredmény && (
+          <div className="kep-proba-osszetett-row kep-proba-erzek-row" role="group" aria-label="Használt érzék">
+            {érzékek.opciók.map(é => (
+              <ExtraGomb key={é} aktív={érzék === é} title={érzékek.érintett.includes(é) ? 'Érzékvesztés érinti' : undefined}
+                onClick={váltás(() => { setÉrzék(érzék === é ? undefined : é); })}>
+                {é}{érzékek.érintett.includes(é) ? ' ⚠' : ''}
+              </ExtraGomb>
+            ))}
+          </div>
+        )}
+
         {!d.vanEredmény && (
           <div className="kep-proba-extras-flat">
             {/* Előny/Hátrány: the Támadó dobás stepper + its source list (here the only source is Felszerelés) */}
             <div className="elony-blokk">
-              <ElonyLepteto szint={ehSzint} onChange={v => { setEhSzint(v); d.reset(); }} />
-              <ForrasLista hatások={ehForrások} szint={ehSzint} alapSzint={felszEH} onVissza={váltás(() => setEhSzint(felszEH))} />
+              <ElonyLepteto szint={ehSzint} onChange={v => { setEhKézi(v); d.reset(); }} />
+              <ForrasLista hatások={ehForrások} szint={ehSzint} alapSzint={alapEH} onVissza={váltás(() => setEhKézi(null))} />
             </div>
           </div>
         )}
@@ -115,9 +141,10 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
                 {ismeretlen && !ellenpróba && <><span className="kep-proba-vs">vs</span><span className="kep-proba-celszam">?</span></>}
               </div>
             )}
-            {felszNemHarcol ? (
-              // md/010_03_06: below -2 Felszerelés the roll is an automatic failure - no roll button at all
-              <div className="kep-proba-tiltott">Automatikus kudarc<br />(felszerelés túlterhelés)</div>
+            {felszNemHarcol || státuszEH.tiltott ? (
+              // md/010_03_06: below -2 Felszerelés the roll is an automatic failure - no roll button at all; same for a
+              // státusz `letilt` (Ájulás, Sokk, Haldoklás, Érzékvesztés (3) …)
+              <div className="kep-proba-tiltott">Automatikus kudarc<br />({felszNemHarcol ? 'felszerelés túlterhelés' : 'státusz'})</div>
             ) : lehetetlen ? (
               <div className="kep-proba-tiltott">Lehetetlen</div>
             ) : biztosSiker ? (

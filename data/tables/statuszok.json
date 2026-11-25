@@ -10,10 +10,9 @@
         "alcím": "Előny+1",
         "hatások": [
           {
-            "mód": "előny",
-            "érték": 1,
+            "mód": "szöveges",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "adott Tulajdonságra, feltétel esetén"
+            "megjegyzés": "Előny+1 adott Tulajdonságra, feltétel esetén (KM; a Tulajdonság még nem választható)"
           }
         ]
       },
@@ -22,10 +21,9 @@
         "alcím": "Előny+2",
         "hatások": [
           {
-            "mód": "előny",
-            "érték": 2,
+            "mód": "szöveges",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "adott Tulajdonságra, feltétel esetén"
+            "megjegyzés": "Előny+2 adott Tulajdonságra, feltétel esetén (KM; a Tulajdonság még nem választható)"
           }
         ]
       }
@@ -42,10 +40,9 @@
         "alcím": "Hátrány-1",
         "hatások": [
           {
-            "mód": "hátrány",
-            "érték": -1,
+            "mód": "szöveges",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "adott Tulajdonságra"
+            "megjegyzés": "Hátrány-1 adott Tulajdonságra (KM; a Tulajdonság még nem választható)"
           }
         ]
       },
@@ -54,10 +51,9 @@
         "alcím": "Hátrány-2",
         "hatások": [
           {
-            "mód": "hátrány",
-            "érték": -2,
+            "mód": "szöveges",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "adott Tulajdonságra"
+            "megjegyzés": "Hátrány-2 adott Tulajdonságra (KM; a Tulajdonság még nem választható)"
           }
         ]
       }
@@ -488,15 +484,8 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "tulajdonságpróba",
-            "alcél": "tulajdonság:érzékenység",
-            "megjegyzés": "Érzék(x) Tulajdonságpróbára"
-          },
-          {
-            "mód": "hátrány",
-            "érték": -1,
             "cél": "érzék_próba",
-            "megjegyzés": "Érzékenységgel dobott Képzettségpróbára"
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára"
           }
         ]
       },
@@ -507,15 +496,8 @@
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "tulajdonságpróba",
-            "alcél": "tulajdonság:érzékenység",
-            "megjegyzés": "Érzék(x) Tulajdonságpróbára"
-          },
-          {
-            "mód": "hátrány",
-            "érték": -2,
             "cél": "érzék_próba",
-            "megjegyzés": "Érzékenységgel dobott Képzettségpróbára"
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára"
           }
         ]
       },
@@ -525,14 +507,8 @@
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "tulajdonságpróba",
-            "alcél": "tulajdonság:érzékenység",
-            "megjegyzés": "Érzék(x) Tulajdonságpróbára (automatikus kudarc)"
-          },
-          {
-            "mód": "letilt",
             "cél": "érzék_próba",
-            "megjegyzés": "Érzékenységgel dobott Képzettségpróbára (automatikus kudarc)"
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára (automatikus kudarc)"
           }
         ]
       }
@@ -696,8 +672,7 @@
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "képzettségpróba",
-            "megjegyzés": "nem-harci"
+            "cél": "nem_harci_próba"
           },
           {
             "mód": "max_limit",
@@ -896,20 +871,21 @@
         "alcím": "Sugallat",
         "megjegyzések": [
           {
-            "text": "Akaraterő Tulajdonságpróbát kell dobni, hogy a karakter ellen tud-e állni a késztetésnek."
+            "text": "Önuralom Tulajdonságpróbát kell dobni, hogy a karakter ellen tud-e állni a késztetésnek."
           },
           {
             "text": "Példa: Kleptománia - \"El kéne lopni valamit...\""
           },
           {
-            "text": "Példa: Alkoholizmus (\"Igyak piát?\") - 1. fok: Akaraterő tulajdonságpróba (Nagyivó)."
+            "text": "Példa: Alkoholizmus (\"Igyak piát?\") - 1. fok: Önuralom tulajdonságpróba (Nagyivó)."
           }
         ],
         "hatások": [
           {
             "mód": "szöveges",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Automatikus Akaraterő próba (12)"
+            "alcél": "tulajdonság:önuralom",
+            "megjegyzés": "Automatikus Önuralom próba (12)"
           }
         ]
       },
@@ -926,7 +902,8 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Akaraterő próbára"
+            "alcél": "tulajdonság:önuralom",
+            "megjegyzés": "Önuralom próbára"
           }
         ]
       },
@@ -943,7 +920,8 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Akaraterő próbára"
+            "alcél": "tulajdonság:önuralom",
+            "megjegyzés": "Önuralom próbára"
           }
         ]
       }
@@ -1110,8 +1088,8 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "érzék_próba",
-            "megjegyzés": "Észlelés"
+            "cél": "képzettségpróba",
+            "alcél": "képzettség:észlelés"
           }
         ]
       },
@@ -1188,12 +1166,14 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:önuralom",
             "megjegyzés": "Önuralom"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:érzékenység",
             "megjegyzés": "Érzékenység"
           },
           {
@@ -1217,12 +1197,14 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:önuralom",
             "megjegyzés": "Önuralom"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:érzékenység",
             "megjegyzés": "Érzékenység"
           },
           {
@@ -1267,7 +1249,13 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Gyorsaság, Ügyesség"
+            "alcél": "tulajdonság:gyorsaság"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:ügyesség"
           },
           {
             "mód": "hátrány",
@@ -1317,7 +1305,13 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Gyorsaság, Ügyesség"
+            "alcél": "tulajdonság:gyorsaság"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:ügyesség"
           },
           {
             "mód": "max_limit",

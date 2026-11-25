@@ -148,8 +148,10 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok
     hibak_kilep("Aktív fül validációs hibák", errors)
 
 
-def validate_esemenyek(esemenyek):
-    """Validate esemenyek.yaml."""
+def validate_esemenyek(esemenyek, refs=None, kepz_csoportok=None):
+    """Validate esemenyek.yaml. `refs` (proba_alcel_refs) / `kepz_csoportok` megadásakor a próba-kategória
+    definíciók (md/010_11) hivatkozásait is: tulajdonság / képzettség / csoport létezik, csak `próba` célponton,
+    és a fizikai_próba + szellemi_próba Tulajdonságai átfedés nélkül lefedik mind a 8-at."""
     errors = []
     valid_csoport = {'harci', 'próba', 'fizikai', 'képesség', 'egyéb'}
     ids_seen = set()
@@ -160,6 +162,23 @@ def validate_esemenyek(esemenyek):
         if e.get('csoport') not in valid_csoport: errors.append(f"{ctx}: 'csoport' invalid: '{e.get('csoport')}'")
         if e.get('id') in ids_seen: errors.append(f"{ctx}: duplikált id!")
         ids_seen.add(e.get('id'))
+        mezok = {k: e.get(k) for k in ('tulajdonságok', 'képzettségek', 'kizárt_csoportok') if e.get(k)}
+        if mezok and e.get('csoport') != 'próba': errors.append(f"{ctx}: próba-kategória mező csak 'próba' csoportban")
+        if refs is not None:
+            for t in e.get('tulajdonságok') or []:
+                if t not in refs['tulajdonság']: errors.append(f"{ctx}: ismeretlen tulajdonság '{t}'")
+            for k in e.get('képzettségek') or []:
+                if k not in refs['képzettség']: errors.append(f"{ctx}: ismeretlen képzettség '{k}'")
+        if kepz_csoportok is not None:
+            for c in e.get('kizárt_csoportok') or []:
+                if c not in kepz_csoportok: errors.append(f"{ctx}: ismeretlen képzettség-csoport '{c}'")
+    if refs is not None:
+        by_id = {e.get('id'): e for e in esemenyek}
+        fiz = set((by_id.get('fizikai_próba') or {}).get('tulajdonságok') or [])
+        szel = set((by_id.get('szellemi_próba') or {}).get('tulajdonságok') or [])
+        if fiz & szel: errors.append(f"fizikai_próba / szellemi_próba: átfedő tulajdonság(ok): {sorted(fiz & szel)}")
+        if (fiz | szel) != refs['tulajdonság']:
+            errors.append(f"fizikai_próba + szellemi_próba nem fedi le a Tulajdonságokat (hiányzik: {sorted(refs['tulajdonság'] - fiz - szel)})")
     hibak_kilep("Esemény validációs hibák", errors)
 
 

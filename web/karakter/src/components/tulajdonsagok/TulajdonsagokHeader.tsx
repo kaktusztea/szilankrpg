@@ -14,6 +14,8 @@ interface Props {
   felszHátrány: FelszerelésHátrány;
   /** Fortély szituációs tulajdonságpróba-bónuszai tulajdonság-kulcsonként (pl. Futás: Edzettség hosszútávon +1). */
   fortélyBónuszByTul?: Record<string, { érték: number; leírás: string }[]>;
+  /** session.aktív_státuszok - a Tulajdonságpróba státusz-Hatásaihoz. */
+  aktívStátuszok?: string[];
   név: string;
   becenév: string;
   játékos: string;
@@ -37,7 +39,7 @@ export function TulajdonsagokHeader({
   név, becenév, játékos, tsz, kor, faj, anyanyelv,
   onEditNevek, onEditTsz, onEditKor, onEditJátékos,
   setFaj, setAnyanyelv, jk, setJk, onOpenElotortenet,
-  fortélyBónuszByTul,
+  fortélyBónuszByTul, aktívStátuszok,
 }: Props) {
   const TULAJDONSAG_NEVEK = data.konstansok.tulajdonság_sorrend as (keyof Tulajdonsagok)[];
   // Faj / Anyanyelv: overlay picker instead of a native <select>
@@ -145,6 +147,9 @@ export function TulajdonsagokHeader({
             fortélyBónuszok={fortélyBónuszByTul?.[key]}
             próba={data.konstansok.próba}
             tartomány={data.konstansok.tulajdonság_érték}
+            aktívStátuszok={aktívStátuszok}
+            statuszDefs={data.statuszok}
+            esemenyek={data.esemenyek}
           />
         ))}
       </div>

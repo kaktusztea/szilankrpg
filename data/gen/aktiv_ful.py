@@ -5,7 +5,7 @@ import os
 from .common import SOURCES_DIR, load_yaml, write_json
 from .schema import validate_schema
 from .validators import (
-    validate_aktiv_ful, validate_esemenyek,
+    validate_aktiv_ful, validate_esemenyek, proba_alcel_refs,
     validate_statuszok, validate_hatasok_katalogus, validate_harci_helyzet_hatasok, validate_effekt_hivatkozasok,
 )
 
@@ -39,7 +39,7 @@ def generate_aktiv_ful():
     validate_schema('hatter', hatterek.get('leíró_hátterek', []), 'hatterek.yaml[leíró]', root_key='leíró_hátterek', name_key='kategória')
     validate_schema('hatter', hatterek.get('karma_hátterek', []), 'hatterek.yaml[karma]', root_key='karma_hátterek')
     validate_aktiv_ful(taktikak, helyzetek, [], manoverek, effekt_modok)
-    validate_esemenyek(esemenyek)
+    validate_esemenyek(esemenyek, proba_alcel_refs(SOURCES_DIR, statuszok), _konstansok.get('képzettség_csoportok', []))
     validate_statuszok(statuszok, effekt_modok, esemenyek)
     validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, _konstansok.get('harcérték_célok', []))
     validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek)

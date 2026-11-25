@@ -5,7 +5,7 @@ import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Kepzettseg, Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import type { ModositoTabla, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
+import type { EsemenyEntry, ModositoTabla, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 import { képzettségSzint, képzettségNév as képzettségNévId, findDef } from '../../engine/azonosito';
 import { calcStátuszPróbaEH, próbaÉrzékek } from '../../engine/statusz-proba';
 import { rollDie, clampEHSzint } from '../../engine/dice';
@@ -41,6 +41,8 @@ interface Props {
   képzettségek: Kepzettseg[];
   aktívStátuszok: string[];
   statuszDefs: StatuszEntry[];
+  /** GameData.esemenyek - a próba-kategóriák definíciója (md/010_11). */
+  esemenyek: EsemenyEntry[];
   módosítóTáblák: ModositoTabla[];
   próbaEnyhítések: PróbaEnyhítés[];
   dobásKomment: { line: string }[];
@@ -60,7 +62,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségKulcs, kepzettsegDefs, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, próba, képzetlen = false, képzetlenFizikaiToggle = false, onClose,
+  képzettségNév, képzettségKulcs, kepzettsegDefs, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, esemenyek, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, próba, képzetlen = false, képzetlenFizikaiToggle = false, onClose,
 }: Props) {
   const p = próba.képzettség;
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
@@ -119,9 +121,12 @@ export function KepzettsegProbaPopup({
   const ehAlap = calcMultiKiterjesztésEH(selectedKits, effFortélyFokok);
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt). Alkategóriás státusz (Érzékvesztés: Látás)
   // csak a választott érzékre hat; alapból az első érintett érzék (a büntetés látható, átkapcsolható / kikapcsolható).
-  const érzékek = próbaÉrzékek(aktívStátuszok, statuszDefs, képzettségKulcs, képzettségCsoport);
-  const [érzék, setÉrzék] = useState<string | undefined>(érzékek.érintett[0]);
-  const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, képzettségKulcs, képzettségCsoport, érzék);
+  // A fizikai / szellemi / érzék próba-kategória a választott Tulajdonságon múlik (md/010_11) - Tulajdonság nélkül nem hat.
+  const érzékek = próbaÉrzékek(aktívStátuszok, statuszDefs, esemenyek, képzettségKulcs, képzettségCsoport, selTul ?? undefined);
+  // null = automatikus (az első érintett érzék, Tulajdonság-váltáskor is követi); undefined = kézzel kikapcsolva
+  const [érzékKézi, setÉrzék] = useState<string | undefined | null>(null);
+  const érzék = érzékKézi === null ? érzékek.érintett[0] : érzékKézi;
+  const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, esemenyek, képzettségKulcs, képzettségCsoport, érzék, selTul ?? undefined);
   const ehSzintRaw = ehAlap.szint + státuszEH.szint + felszEH;
   const ehForrásSzint = clampEHSzint(ehSzintRaw);
   const eh = { szint: ehKézi ?? ehForrásSzint, tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };

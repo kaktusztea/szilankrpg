@@ -597,7 +597,7 @@ note:
   Pure logika: `engine/felszereles.ts` (`felszerelésMax`, `felszerelésTerhelés`,
   `felszerelésSorok`, `felszerelésHátrány`, `fizikaiTulajdonság`), konstans:
   `konstansok.yaml` → `felszerelés` (méret/súly/forgatás/pajzs/páncél pont-táblák,
-  `páncél_fedés_min`, `hátrány_sáv`, `hátrány_tulajdonságok`). A fegyver pontja
+  `páncél_fedés_min`, `hátrány_sáv`); a Fizikai Tulajdonságok: `esemenyek.yaml` → `fizikai_próba.tulajdonságok`. A fegyver pontja
   VAGY-VAGY: `max(hossz_pont, súly_pont)`. A hatás a próba-EH ágba megy (§33.1), NEM a
   harckeretbe - a régi `felszerelés_mgt` → harckeret reactive út KIVEZETVE.
   Fegyverenkénti „számít-e": `FegyverPeldany.felszerelésben` flag (Harcértékek fül chip);
@@ -1552,11 +1552,42 @@ a mód + érték párosból adódik.
 ```yaml
 célpontok:  # (yaml-ban: események - legacy elnevezés)
   # harci: ké_dobás, té_dobás, cé_dobás, manőver_ellenpróba, sebzésdobás, támadások_száma, vé_veszteség, vé_csökkentés
-  # próba: tulajdonságpróba, képzettségpróba, szociális_próba, szellemi_próba, fizikai_próba, érzék_próba, mágiaellenállás, mágia_akarata
+  # próba: tulajdonságpróba, képzettségpróba, szociális_próba, szellemi_próba, fizikai_próba, nem_harci_próba, érzék_próba, mágiaellenállás, mágia_akarata
   # fizikai: mozgás, beszéd
   # képesség: harci_képesség, varázslás, pszi, antyssjárás
   # egyéb: általános
 ```
+
+#### Próba-kategóriák (md/010_11 "Ökölszabály: Próba-kategóriák", 2026-11-25)
+
+A próba-célpontok definíciója a célponton él (`esemenyek.yaml`, opcionális mezők, séma: `esemeny.yaml`), a fogyasztók innen olvassák:
+
+| Célpont | Definíció | Fogyasztó |
+|---|---|---|
+| `fizikai_próba` | `tulajdonságok: [erő, edzettség, ügyesség, gyorsaság]` | `statusz-proba.ts` (a dobás Tulajdonsága; Tulajdonság- és Képzettségpróbán), `felszereles.ts` `fizikaiTulajdonság()` (felszerelés-Hátrány) |
+| `szellemi_próba` | `tulajdonságok: [intelligencia, emlékezet, önuralom, érzékenység]` | `statusz-proba.ts` (a dobás Tulajdonsága) |
+| `érzék_próba` | `tulajdonságok: [érzékenység]` | `statusz-proba.ts` (a dobás Tulajdonsága; alkategóriás státusz: a választott érzék) |
+| `szociális_próba` | `képzettségek: [befolyásolás, etikett, emberismeret]` | `statusz-proba.ts` (csak Képzettségpróba) |
+| `nem_harci_próba` | `kizárt_csoportok: [harci]` | `statusz-proba.ts` (csak Képzettségpróba; pl. Fizikai (3) Hátrány-2) |
+
+Cél-szemantika a próba-számításban (`statusz-proba.ts` `hatásVonatkozik`, 2026-11-25):
+- `képzettségpróba` → minden Képzettségpróba; `tulajdonságpróba` → minden Tulajdonságpróba.
+- `alcél: képzettség:<id>` → csak az a képzettség (Képzettségpróbán); `alcél: tulajdonság:<kulcs>` → csak az a Tulajdonság
+  Tulajdonságpróbáján (pl. Trauma: Önuralom / Érzékenység, Zavar: Gyorsaság / Ügyesség, Késztetés: Önuralom). Az azzal a
+  Tulajdonsággal dobott Képzettségpróbára NEM hat.
+- `fizikai_próba` / `szellemi_próba` / `érzék_próba` → a dobáshoz választott Tulajdonság benne van a célpont listájában
+  (Tulajdonság- és Képzettségpróbán is). Képzettségpróbán Tulajdonság-választás előtt nem hatnak (a dobáshoz úgyis kell).
+
+API: `calcStátuszPróbaEH(…, képzettség, csoport, érzék?, tulajdonság?)` (KepzettsegProbaPopup: `selTul`),
+`calcStátuszTulajdonságPróbaEH(…, tulajdonság, érzék?)` (TulajdonsagProbaPopup: Előny/Hátrány alapszint = felszerelés +
+státusz, forráslista, automatikus kudarc, érzék-chip sor Érzékenység-próbánál), `próbaÉrzékek(…, képzettség | null, csoport,
+tulajdonság?)`.
+
+Build-gate (`validate_esemenyek`): a mezők csak `próba` csoportú célponton; a tulajdonság-kulcs (karakter-séma), a képzettség-id
+és a csoport (`konstansok.képzettség_csoportok`) létezik; a `fizikai_próba` + `szellemi_próba` Tulajdonságai átfedés nélkül
+lefedik mind a 8 Tulajdonságot. Negatív tesztek: `gen/test_gates.py`.
+
+Nyitott: az Áldott / Átkozott Tulajdonság `szöveges` (a státusz-választóban nem adható meg, melyik Tulajdonság).
 
 ### 22.4 Hatások (hatasok.yaml)
 
@@ -2852,8 +2883,8 @@ Integráció:
   - Képzettségpróba (fizikai csoport): KepzettsegProbaPopup EH-jába (`felszEH` prop,
     a KepzettsegCsoport `csoport === 'fizikai'` ágán). nemHarcol → tiltott (auto kudarc).
   - Tulajdonságpróba: TulajdonsagProbaPopup `ehSzint` kezdőérték (`felszEH`), a Fizikai
-    tulajdonságoknál (`konstansok.felszerelés.hátrány_tulajdonságok`:
-    erő/edzettség/ügyesség/gyorsaság/érzékenység). A KM a pickerrel felülírhatja.
+    tulajdonságoknál (`esemenyek.yaml` → `fizikai_próba.tulajdonságok`:
+    erő/edzettség/ügyesség/gyorsaság; md/010_11 Próba-kategóriák). A KM a pickerrel felülírhatja.
   - KM-mérlegeléses: a jelzés figyelmeztet (warning + alap-EH), nem blokkol harci akciót.
 
 Adatmodell:
@@ -4265,7 +4296,7 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
   alakban: `képzettségpróba` → `képzettség:<képzettség név>`, `tulajdonságpróba` → `tulajdonság:<karakter-séma kulcs>`
   (kisbetűs, pl. `tulajdonság:edzettség`), `érzék_próba` → `érzék:<Érzék-státusz alkategória>` (pl. `érzék:Látás`).
   Build-gate (`validators.proba_alcel_hibak`, fortély + státusz): a prefix illik a célhoz, a név létezik. Fogyasztó:
-  `engine/statusz-proba.ts` (képzettség-egyezés). Alkategóriás státusz (`"Érzékvesztés: Látás (2)"`): a gyűjtő `alkategória`
+  `engine/statusz-proba.ts` (képzettség- és Tulajdonság-egyezés, §22.3 Próba-kategóriák). Alkategóriás státusz (`"Érzékvesztés: Látás (2)"`): a gyűjtő `alkategória`
   mezője szűkít - csak a próbához választott érzékre hat (Képzettségpróba popup „Érzék:" sora, 2026-10-18). Így az alcél MINDEN forrásban `prefix:érték` (felszerelés / próba-scope).
 
 ### 42.5 (megszűnt - a migráció kész, l. `refactorlog/2026-10-16.md`)

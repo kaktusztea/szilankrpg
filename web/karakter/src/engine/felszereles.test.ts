@@ -115,10 +115,11 @@ describe('felszerelésTerhelés / sorok', () => {
 });
 
 describe('fizikaiTulajdonság', () => {
-  it('Erő/Edzettség/Ügyesség/Gyorsaság/Érzékenység fizikai; Intelligencia nem', () => {
-    for (const t of ['erő', 'edzettség', 'ügyesség', 'gyorsaság', 'érzékenység']) {
+  it('Erő/Edzettség/Ügyesség/Gyorsaság fizikai; Érzékenység, Intelligencia nem (md/010_11 Próba-kategóriák)', () => {
+    for (const t of ['erő', 'edzettség', 'ügyesség', 'gyorsaság']) {
       expect(fizikaiTulajdonság(t, data)).toBe(true);
     }
+    expect(fizikaiTulajdonság('érzékenység', data)).toBe(false);
     expect(fizikaiTulajdonság('intelligencia', data)).toBe(false);
     expect(fizikaiTulajdonság('önuralom', data)).toBe(false);
   });

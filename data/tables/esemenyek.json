@@ -52,22 +52,50 @@
   {
     "id": "szociális_próba",
     "név": "Szociális képzettségpróba",
-    "csoport": "próba"
+    "csoport": "próba",
+    "képzettségek": [
+      "befolyásolás",
+      "etikett",
+      "emberismeret"
+    ]
   },
   {
     "id": "szellemi_próba",
-    "név": "Szellemi képzettségpróba",
-    "csoport": "próba"
+    "név": "Szellemi próba",
+    "csoport": "próba",
+    "tulajdonságok": [
+      "intelligencia",
+      "emlékezet",
+      "önuralom",
+      "érzékenység"
+    ]
   },
   {
     "id": "fizikai_próba",
-    "név": "Fizikai képzettség/tulajdonságpróba",
-    "csoport": "próba"
+    "név": "Fizikai próba",
+    "csoport": "próba",
+    "tulajdonságok": [
+      "erő",
+      "edzettség",
+      "ügyesség",
+      "gyorsaság"
+    ]
+  },
+  {
+    "id": "nem_harci_próba",
+    "név": "Nem-harci képzettségpróba",
+    "csoport": "próba",
+    "kizárt_csoportok": [
+      "harci"
+    ]
   },
   {
     "id": "érzék_próba",
-    "név": "Érzék Tulajdonságpróba",
-    "csoport": "próba"
+    "név": "Érzék próba",
+    "csoport": "próba",
+    "tulajdonságok": [
+      "érzékenység"
+    ]
   },
   {
     "id": "mágiaellenállás",

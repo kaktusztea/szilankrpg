@@ -67,8 +67,7 @@ felszerelés:
   hátrány_sáv:
     1: -1
     2: -2
-  # mely tulajdonságok Fizikai Tulajdonságpróbáira hat a felszerelés-Hátrány
-  hátrány_tulajdonságok: ["erő", "edzettség", "ügyesség", "gyorsaság", "érzékenység"]
+  # a felszerelés-Hátrány a Fizikai próbákra hat: a Fizikai Tulajdonságok listája esemenyek.yaml → fizikai_próba.tulajdonságok
 
 képzettség_csoport_sorrend:
   - id: "harci"

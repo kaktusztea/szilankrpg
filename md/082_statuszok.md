@@ -462,27 +462,27 @@ Automatikus kudarc
 
 ```
 Automatikus Tulajdonságpróba
-  Akaraterő
+  Önuralom
 ```
 
-**Akaraterő** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz-e állni a késztetésnek.
+**Önuralom** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (2) Vágy
 
 ```
 Hátrány-1
-  Akaraterő Tulajdonságpróbára
+  Önuralom Tulajdonságpróbára
 ```
 
-**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
+**Önuralom** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (3) Kényszer
 
 ```
-Hátrány-2 Akaraterő Tulajdonságpróbára
+Hátrány-2 Önuralom Tulajdonságpróbára
 ```
 
-**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
+**Önuralom** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 #### ⚡ Példák
 

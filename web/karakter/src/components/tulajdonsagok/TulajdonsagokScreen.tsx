@@ -158,6 +158,7 @@ export function TulajdonsagokScreen({
         tulajdonságok={tulajdonságok} setTul={setTul}
         felszHátrány={felszHátrány}
         fortélyBónuszByTul={fortélyBónuszByTul}
+        aktívStátuszok={karakter.session.aktív_státuszok}
         név={név} becenév={becenév} játékos={játékos} tsz={tsz} kor={kor} faj={faj} anyanyelv={anyanyelv}
         jk={jk} setJk={setJk}
         onEditNevek={() => setPopup(p => ({ ...p, editingNevek: true, tempNév: név, tempBecenév: becenév }))}
@@ -195,6 +196,7 @@ export function TulajdonsagokScreen({
             onRemove={handleRemove}
             aktívStátuszok={karakter.session.aktív_státuszok}
             statuszDefs={data.statuszok}
+            esemenyek={data.esemenyek}
             felszHátrány={felszHátrány}
             próbaEnyhítésekByKép={próbaEnyhítésekByKép}
             fortélyBónuszByKép={fortélyBónuszByKép}

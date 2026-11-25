@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { GridPickerPopup } from './popups';
 import { TulajdonsagProbaPopup } from './TulajdonsagProbaPopup';
-import type { PróbaKonstansok } from '../../engine/data-types';
+import type { EsemenyEntry, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 
 interface Props {
   név: string;
@@ -17,9 +17,13 @@ interface Props {
   próba: PróbaKonstansok;
   /** konstansok.tulajdonság_érték - a szerkesztő grid értékei. */
   tartomány: { min: number; max: number };
+  /** Státuszok a Tulajdonságpróbához (session.aktív_státuszok + GameData.statuszok / esemenyek). */
+  aktívStátuszok?: string[];
+  statuszDefs?: StatuszEntry[];
+  esemenyek?: EsemenyEntry[];
 }
 
-export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax, felszEH = 0, felszNemHarcol = false, fortélyBónuszok, próba, tartomány }: Props) {
+export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax, felszEH = 0, felszNemHarcol = false, fortélyBónuszok, próba, tartomány, aktívStátuszok, statuszDefs, esemenyek }: Props) {
   const [editing, setEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
 
@@ -67,6 +71,9 @@ export function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, faj
           fortélyBónuszok={fortélyBónuszok}
           felszNemHarcol={felszNemHarcol}
           próba={próba}
+          aktívStátuszok={aktívStátuszok}
+          statuszDefs={statuszDefs}
+          esemenyek={esemenyek}
           onClose={() => setShowProba(false)}
         />
       )}

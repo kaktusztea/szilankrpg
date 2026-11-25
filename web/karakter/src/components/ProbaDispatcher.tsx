@@ -56,6 +56,7 @@ function képzettségPopup(
       képzettségek={karakter.képzettségek}
       aktívStátuszok={karakter.session.aktív_státuszok}
       statuszDefs={data.statuszok}
+      esemenyek={data.esemenyek}
       módosítóTáblák={[...(def.helyzetfüggő_módosítók || []),
         ...(fortélyBónuszok.length ? [{ kategória: 'Fortélyok', mód: 'multi' as const, sorok: fortélyBónuszok }] : [])]}
       próbaEnyhítések={próbaEnyhítésekByKép[kulcs] ?? []}
@@ -81,6 +82,9 @@ export function ProbaDispatcher(props: Props) {
         érték={karakter.tulajdonságok[név as keyof typeof karakter.tulajdonságok]}
         felszEH={fizikai ? felszHátrány.ehSzint : 0}
         fortélyBónuszok={fortélyBónuszByTul[név] ?? []}
+        aktívStátuszok={karakter.session.aktív_státuszok}
+        statuszDefs={data.statuszok}
+        esemenyek={data.esemenyek}
         felszNemHarcol={fizikai ? felszHátrány.nemHarcol : false}
         próba={data.konstansok.próba}
         onClose={onClose}
@@ -116,6 +120,7 @@ export function ProbaDispatcher(props: Props) {
       képzettségek={karakter.képzettségek}
       aktívStátuszok={karakter.session.aktív_státuszok}
       statuszDefs={data.statuszok}
+      esemenyek={data.esemenyek}
       módosítóTáblák={[]}
       próbaEnyhítések={[]}
       dobásKomment={[]}

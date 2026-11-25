@@ -215,6 +215,12 @@ export interface EsemenyEntry {
   id: string;
   név: string;
   csoport: string;
+  /** Próba-kategória definíció (md/010_11 "Ökölszabály: Próba-kategóriák"): a dobás Tulajdonsága dönti el. */
+  tulajdonságok?: string[];
+  /** Próba-kategória: rögzített képzettség-id lista (pl. szociális_próba). */
+  képzettségek?: string[];
+  /** Próba-kategória: minden képzettségpróba, kivéve ezeket a csoportokat (pl. nem_harci_próba). */
+  kizárt_csoportok?: string[];
 }
 
 export interface LeíróHátterKategória {
@@ -277,7 +283,6 @@ export interface KonstansokRaw {
     pajzs_pont: Record<string, number>;
     páncél_pont: { hajlékony: number; merev: number };
     hátrány_sáv: Record<string, number>;
-    hátrány_tulajdonságok: string[];
   };
   páncél_struktúrák: {
     struktúra: string; leírás: string; fém: boolean; merev: boolean;

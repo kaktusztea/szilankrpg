@@ -2,7 +2,7 @@ import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { képzKulcs, TRADÍCIÓ_ID, findDef as findDefHelper } from '../../engine/azonosito';
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import type { PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
+import type { EsemenyEntry, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegSlot } from './types';
 import type { KépzettségLimitek } from './kepzettseg-limit';
@@ -35,6 +35,7 @@ interface Props {
   onRemove: (globalIdx: number, slot: KepzettsegSlot) => void;
   aktívStátuszok: string[];
   statuszDefs: StatuszEntry[];
+  esemenyek: EsemenyEntry[];
   felszHátrány: FelszerelésHátrány;
   próbaEnyhítésekByKép: Record<string, PróbaEnyhítés[]>;
   /** Fortély szituációs próba-bónuszai képzettségenként (a próba popup „Fortélyok" táblájához). */
@@ -46,7 +47,7 @@ export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, szintLimitek, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
   fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál,
-  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, felszHátrány, próbaEnyhítésekByKép, fortélyBónuszByKép, próba
+  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, esemenyek, felszHátrány, próbaEnyhítésekByKép, fortélyBónuszByKép, próba
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -98,6 +99,7 @@ export function KepzettsegCsoport({
               képzettségek={képzettségek}
               aktívStátuszok={aktívStátuszok}
               statuszDefs={statuszDefs}
+              esemenyek={esemenyek}
               felszEH={csoport === 'fizikai' ? felszHátrány.ehSzint : 0}
               felszNemHarcol={csoport === 'fizikai' ? felszHátrány.nemHarcol : false}
               próbaEnyhítések={próbaEnyhítésekByKép[kulcs] || []}

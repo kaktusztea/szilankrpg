@@ -17,6 +17,7 @@ from .naming_lint import lint
 from .validators import (
     validate_aktiv_ful, validate_esemenyek, validate_statuszok, validate_harci_helyzet_hatasok,
     validate_hatasok_katalogus, validate_effekt_hivatkozasok, id_hibak, session_toggle_hibak, proba_alcel_hibak,
+    proba_alcel_refs,
 )
 from .hivatkozas import id_hivatkozasi_hibak, manover_ref_hibak, kepz_ref_hiba, fortely_ids
 from .kiterjesztes_check import kiterjesztes_sync_hibak, kiterjesztes_leiras_hibak, md_tetel_leiras_van
@@ -75,7 +76,7 @@ class AktivFulGates(unittest.TestCase):
     def test_valodi_ok(self):
         A = self.A
         validate_aktiv_ful(A.taktikak, A.helyzetek, [], A.manoverek, A.effekt_modok)
-        validate_esemenyek(A.esemenyek)
+        validate_esemenyek(A.esemenyek, proba_alcel_refs(SOURCES_DIR, A.statuszok), A.konstansok['képzettség_csoportok'])
         validate_statuszok(A.statuszok, A.effekt_modok, A.esemenyek)
         validate_harci_helyzet_hatasok(A.helyzetek, A.effekt_modok, A.esemenyek, A.harcertek_celok)
         validate_hatasok_katalogus(A.hatasok, A.effekt_modok, A.esemenyek)
@@ -84,6 +85,29 @@ class AktivFulGates(unittest.TestCase):
     def test_esemeny_duplikalt_id_bukik(self):
         e = copy.deepcopy(self.A.esemenyek); e.append(copy.deepcopy(e[0]))
         bukik(self, validate_esemenyek, e)
+
+    def _esemeny_kat_bukik(self, módosít):
+        e = copy.deepcopy(self.A.esemenyek)
+        módosít({x['id']: x for x in e})
+        bukik(self, validate_esemenyek, e, proba_alcel_refs(SOURCES_DIR, self.A.statuszok), self.A.konstansok['képzettség_csoportok'])
+
+    def test_proba_kategoria_ismeretlen_tulajdonsag_bukik(self):
+        self._esemeny_kat_bukik(lambda d: d['fizikai_próba']['tulajdonságok'].append('nincs_ilyen'))
+
+    def test_proba_kategoria_atfedes_bukik(self):
+        self._esemeny_kat_bukik(lambda d: d['fizikai_próba']['tulajdonságok'].append('intelligencia'))
+
+    def test_proba_kategoria_hianyos_lefedes_bukik(self):
+        self._esemeny_kat_bukik(lambda d: d['szellemi_próba']['tulajdonságok'].remove('érzékenység'))
+
+    def test_proba_kategoria_ismeretlen_kepzettseg_bukik(self):
+        self._esemeny_kat_bukik(lambda d: d['szociális_próba']['képzettségek'].append('nincs_ilyen'))
+
+    def test_proba_kategoria_ismeretlen_csoport_bukik(self):
+        self._esemeny_kat_bukik(lambda d: d['nem_harci_próba']['kizárt_csoportok'].append('nincs_ilyen'))
+
+    def test_proba_kategoria_nem_proba_csoporton_bukik(self):
+        self._esemeny_kat_bukik(lambda d: d['mozgás'].update({'tulajdonságok': ['erő']}))
 
     def test_statusz_ismeretlen_mod_bukik(self):
         s = copy.deepcopy(self.A.statuszok)

@@ -1,5 +1,5 @@
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import type { PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
+import type { EsemenyEntry, PróbaEnyhítés, PróbaKonstansok, StatuszEntry } from '../../engine/data-types';
 import type { Tulajdonsagok, Karakter, Kepzettseg } from '../../engine/types';
 
 /** A karakter egy képzettsége (engine/types Kepzettseg). */
@@ -57,6 +57,7 @@ export interface KepzettsegRowProps {
   képzettségek: KepzettsegSlot[];
   aktívStátuszok: string[];
   statuszDefs: StatuszEntry[];
+  esemenyek: EsemenyEntry[];
   próbaEnyhítések: PróbaEnyhítés[];
   /** Fortély szituációs próba-bónuszai erre a képzettségre (kapcsolható „Fortélyok" tábla a popupban). */
   fortélyBónuszok?: { érték: number; leírás: string }[];

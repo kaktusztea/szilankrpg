@@ -61,14 +61,7 @@
     "hátrány_sáv": {
       "1": -1,
       "2": -2
-    },
-    "hátrány_tulajdonságok": [
-      "erő",
-      "edzettség",
-      "ügyesség",
-      "gyorsaság",
-      "érzékenység"
-    ]
+    }
   },
   "képzettség_csoport_sorrend": [
     {

@@ -38,18 +38,27 @@ események:
   - id: "képzettségpróba"
     név: "Képzettségpróba"
     csoport: "próba"
+  # Próba-kategóriák: md/010_11 "Ökölszabály: Próba-kategóriák" (a definíció itt él, a fogyasztók innen olvassák)
   - id: "szociális_próba"
     név: "Szociális képzettségpróba"
     csoport: "próba"
+    képzettségek: ["befolyásolás", "etikett", "emberismeret"]
   - id: "szellemi_próba"
-    név: "Szellemi képzettségpróba"
+    név: "Szellemi próba"
     csoport: "próba"
+    tulajdonságok: ["intelligencia", "emlékezet", "önuralom", "érzékenység"]
   - id: "fizikai_próba"
-    név: "Fizikai képzettség/tulajdonságpróba"
+    név: "Fizikai próba"
     csoport: "próba"
+    tulajdonságok: ["erő", "edzettség", "ügyesség", "gyorsaság"]
+  - id: "nem_harci_próba"
+    név: "Nem-harci képzettségpróba"
+    csoport: "próba"
+    kizárt_csoportok: ["harci"]
   - id: "érzék_próba"
-    név: "Érzék Tulajdonságpróba"
+    név: "Érzék próba"
     csoport: "próba"
+    tulajdonságok: ["érzékenység"]
   - id: "mágiaellenállás"
     név: "Mágiaellenállás dobás"
     csoport: "próba"
