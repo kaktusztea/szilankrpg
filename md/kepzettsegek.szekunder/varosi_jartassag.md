@@ -9,7 +9,7 @@ Az alábbi területeket fedi le:
 - felismered a különböző társadalmi rétegek találkozópontjait (piac, ivó, színház, cirkusz, templom),
 - megérzed, mi mozdul a színfalak mögött (korrupció, kihasználható helyzet, információáramlás).
 
-Szereplőtipikus: **tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági futár, zsoldos** – vagy akár egy **nemes, aki mindig tudja, kit kell lefizetni.**
+Tipikus karakterek: tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági futár, zsoldos – vagy akár egy nemes, aki mindig tudja, kit kell lefizetni.
 
 ### Helyzetfüggő módosítók
 
@@ -81,8 +81,6 @@ Célszám: 9 + város méret módosítója
 ---
 
 ### Próbák 🎲
-
-Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 
 #### Könnyű (6) 🎲
 
