@@ -158,8 +158,9 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 - Részletek → engine_spec §5-§13, §17, §26-§27
 
 ### Taktikák / Helyzetek
-- Taktika (`taktikak.yaml`, 19 db): kombó (`kombó_mód` + `kombó_lista`), `megkötések`, `hatások` (`{mód, cél, érték, feltétel?}`, pl. `vé_csökkentés`; §42.3 precedencia), fokozatos taktikák (`fokozatos` + `fokok`)
+- Taktika (`taktikak.yaml`, 19 db): kombó (`kombó_mód` + `kombó_lista`), `megkötések`, `hatások` (`{mód, cél, érték, feltétel?}`, pl. `vé_csökkentés`; §42.3 precedencia), fokozatos taktikák (`fokozatos` + `fokok`), `támadódobás` (`vé_csökkentés` | `nincs`: a Támadó dobást kizáró taktika - Fárasztás / Teljes Védekezés; enum gate)
 - Harci helyzet (`harci_helyzetek.yaml`, 40 db): `kizár_helyzetek` (id), `megjegyzés_dobásra` (cél → ⚠ szöveg a dobás-popupban), `tiltott_fegyverfogások`, `tiltja_taktikákat`, `tiltások[]` (nevesített, fegyverenként kiértékelve, `tiltás:<id>`), `fegyver_override` (alapérték-csere, alcél `felszerelés:fegyver`; pl. Belharc: a túl hosszú fegyver alap `TÉ`/`VÉ` = 0), `hatások` (`{mód, cél, érték, alcél?}`, §42)
+- Esemény (`esemenyek.yaml`): a `csoport: próba` események a próba-célok (státusz-hatások próbára: `statusz-proba.ts`), a próba-kategória mezők (`tulajdonságok`, `képzettségek`, `kizárt_csoportok`) is itt élnek (engine_spec „Próba-kategóriák")
 - Részletek → engine_spec §21
 
 ### Reactive Engine

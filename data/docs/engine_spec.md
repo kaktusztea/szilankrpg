@@ -3099,8 +3099,9 @@ Forrás: md/010_05_04_tulajdonsagproba.md, md/030_06_01_kepzettsegproba.md
 **Paraméterek a data layerben** (2026-10-17): `konstansok.yaml → próba` - típusonként (`tulajdonság` / `képzettség`)
 kocka, célszám-lista (`nehézségek`, `nehézségek_extra`), `kiemelt_különbség`, `másodlagos_levonás`; közös:
 `előny_hátrány_max`, `összetett_max_másodlagos`, `vállalás {max, kocka}`, `helyettesítés {min_szint, osztó, max}`.
-A két popup közös logikája: `engine/proba/proba-common.ts` (pure), `useProbaDobas.ts` (dobás-állapot),
-`ProbaReszek.tsx` (UI-részek). Az E/H skála a kocka-rétegben (`engine/dice.ts EH_SZINT_MAX`) szinkron másolat,
+A két popup közös logikája: `engine/proba/proba-common.ts` (pure; E/H forrás-sorok: `státuszEHForrások`, `felszerelésEHForrás`),
+`useProbaDobas.ts` (dobás-állapot + `useVálasztottÉrzék`, `useKapcsolóHalmaz`), `ProbaReszek.tsx` (UI-részek: Összetett chip / picker,
+érzék-sor, összegző, dobás-sor, eredmény). Az E/H skála a kocka-rétegben (`engine/dice.ts EH_SZINT_MAX`) szinkron másolat,
 az egyezést teszt őrzi.
 
 ### 37.1 Tulajdonságpróba
@@ -4152,9 +4153,12 @@ Végső kiértékelés: `new Function(...)` - biztonságos (nincs user input a f
 |------|----------|---------------|
 | `components/kp-calc.ts` (calcKpDetails, App.tsx-ből) | Teljes buildContext + buildArrayContext (összes tömb) | KP, primer keret, tulajdonság pont keret, max_HM, max_CM, ÉP |
 | `engine/harc/harc-computed.ts` | buildContext + páncél lookupArrays + stringCtx | Páncél SFÉ/MGT, merevvért, lefedettség, KÉ, manőver alap/pont |
+
+note: A páncél inputjai (`páncél_van` … `páncél_rongálódás`, string: alap / fémalapanyag / kidolgozottság / méret_illeszkedés)
+      egy helyen épülnek: `engine/harc/shared.ts` `páncélSzámInputok` / `páncélStringKontextus` (harc-computed, fegyver-calc, calcPancelValues).
 | `engine/harc/fegyver-calc.ts` | Per-fegyver × per-mód buildContext (fegyver-specifikus extras) | TÉ, VÉ, SP, harckeret, támadások |
 | `engine/harc/harcertekek-helpers.ts` (calcMaxAszimmetria) | Alap context (tsz) | max_HM_aszimmetria |
-| `harcertekek/HarcertekekPancelSection.tsx` | Páncél context + lookupArrays + stringCtx | páncél SFÉ/MGT kijelzés |
+| `engine/harc/pancel-calc.ts` (calcPancelValues, a Harcértékek fülről) | Páncél context + lookupArrays + stringCtx | páncél SFÉ/MGT/ár kijelzés |
 | `tulajdonsagok/kepzettseg-limit.ts` | Alap context | képzettség max szint (§19) |
 | `hooks/njk-slots.ts` | Alap context (NJK switcher stat) | ÉP, KÉ |
 | `misztikus/MisztikusScreen.tsx` | Alap context | Aura |
