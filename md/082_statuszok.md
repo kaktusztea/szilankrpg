@@ -649,6 +649,26 @@ Antyssjárás esetén "nagyon rossz" helyre kerülsz
 
 ---
 
+### ✴️ Vérző (1) közepesen
+
+```
+Vérzés - közepes
+```
+
+<br />
+
+---
+
+### ✴️ Vérző (2) erősen
+
+```
+Vérzés - erős
+```
+
+<br />
+
+---
+
 ### ✴️ Zavar (1) Kizökkent
 
 ```

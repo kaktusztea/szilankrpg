@@ -289,27 +289,18 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 
 ---
 
-### 🔥 Vérzés - gyenge
-
-```
--1 ÉP / 10 perc
-(harcban nem számít)
-```
-
----
-
 ### 🔥 Vérzés - közepes
 
-```
--1 ÉP / 2 kör
-```
+Addig tart, míg valaki el nem állítja. Kirurgus, vagy bajtárs.
 
----
+```
+-2 ÉP / kör
+```
 
 ### 🔥 Vérzés - erős
 
 ```
--1 ÉP / kör
+-4 ÉP / kör
 ```
 
 ---
