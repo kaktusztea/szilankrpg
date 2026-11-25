@@ -23,6 +23,7 @@
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
 - [Terelés](#terel%C3%A9s)
+- [Véreztetés](#véreztetés-1)
 
 ---
 
@@ -528,6 +529,36 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 **Kapcsolódó szituáció:** [Orvtámadás](szituaciok/orvtamadas_harcon_kivul.md)
 
 <br/>
+
+---
+
+### Véreztetés (1)
+
+- Nehézség: `10`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- 🟥 Erős követelmény: [Élettan](fortelyok.altalanos/elettan.md) fortély
+- Helyzetfüggő módosítók:
+  - Fegyver sebzés típus:
+    - `-2`: Szúró
+    - `+0`: Vágás egyenes penge
+    - `+2` Vágás íves penge
+**Hatás**:
+  - Státusz: [Vérző (1)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-1-k%C3%B6zepesen)
+  - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést
+
+### Véreztetés (2)
+
+- Nehézség: `12`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- 🟥 Erős követelmény: [Élettan](fortelyok.altalanos/elettan.md) fortély
+- Helyzetfüggő módosítók:
+  - Fegyver sebzés típus:
+    - `-2`: Szúró
+    - `+0`: Vágás egyenes penge
+    - `+2` Vágás íves penge
+**Hatás**:
+  - Státusz: [Vérző (1)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-2-er%C5%91sen)
+  - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést
 
 ---
 

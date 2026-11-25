@@ -686,7 +686,7 @@ Hátrány-2
   Szociális képzettségpróbákra
 ```
 
-Példa: ledöbbenés, stb.
+Példa: ledöbbenés.
 
 ### ✴️ Zavar (2) Megrendült
 
