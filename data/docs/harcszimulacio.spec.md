@@ -1189,7 +1189,7 @@ Hátrány), kivéve ha kifejezetten a másodlagos sebzést vizsgálod.
 ### 13.7 Vérzés ütemezése
 
 `md/064_02_08`: "a szituációtól és a KM szavától függ". Vérzés státuszok:
-gyenge 1 ÉP/10 perc, közepes 1 ÉP/2 kör, erős 1 ÉP/kör.
+közepes -2 ÉP/kör, erős -4 ÉP/kör (amíg el nem állítják).
 → Hangolási tesztekben **kikapcsolva**, hacsak nem tárgya a vizsgálatnak.
 
 ### 13.8 Manőverek

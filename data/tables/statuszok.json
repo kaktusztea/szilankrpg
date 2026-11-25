@@ -1943,6 +1943,41 @@
     ]
   },
   {
+    "id": "vérző",
+    "név": "Vérző",
+    "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Közepesen",
+        "hatások": [
+          {
+            "mód": "szöveges",
+            "cél": "általános",
+            "megjegyzés": "Vérzés - közepes: -2 ÉP / kör",
+            "hatás_id": "vérzés_közepes",
+            "hatás_név": "Vérzés - közepes"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Erősen",
+        "hatások": [
+          {
+            "mód": "szöveges",
+            "cél": "általános",
+            "megjegyzés": "Vérzés - erős: -4 ÉP / kör",
+            "hatás_id": "vérzés_erős",
+            "hatás_név": "Vérzés - erős"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "zavar",
     "név": "Zavar",
     "kategória": "fizikai",
@@ -1957,7 +1992,7 @@
             "text": "A következő kör végéig tart."
           },
           {
-            "text": "Példa: ledöbbenés, stb."
+            "text": "Példa: ledöbbenés."
           }
         ],
         "hatások": [

@@ -190,22 +190,16 @@ hatások:
   mechanika: [{mód: "szöveges", cél: "vé_csökkentés"}]
 
 # --- Vérzés ---
-- id: "vérzés_gyenge"
-  név: "Vérzés - gyenge"
-  leírás: "1 ÉP / 10 perc. Harcban nem számít."
-  szöveg: "Vérzés - gyenge: 1 ÉP / 10 perc"
-  mechanika: [{mód: "szöveges", cél: "általános"}]
-
 - id: "vérzés_közepes"
   név: "Vérzés - közepes"
-  leírás: "1 ÉP / 2 kör."
-  szöveg: "Vérzés - közepes: 1 ÉP / 2 kör"
+  leírás: "-2 ÉP / kör. Addig tart, míg valaki el nem állítja (kirurgus, vagy bajtárs)."
+  szöveg: "Vérzés - közepes: -2 ÉP / kör"
   mechanika: [{mód: "szöveges", cél: "általános"}]
 
 - id: "vérzés_erős"
   név: "Vérzés - erős"
-  leírás: "1 ÉP / kör."
-  szöveg: "Vérzés - erős: 1 ÉP / kör"
+  leírás: "-4 ÉP / kör. Addig tart, míg valaki el nem állítja (kirurgus, vagy bajtárs)."
+  szöveg: "Vérzés - erős: -4 ÉP / kör"
   mechanika: [{mód: "szöveges", cél: "általános"}]
 
 # --- Narratív (nem 081 Hatás: KM-tartalom a státuszból) ---

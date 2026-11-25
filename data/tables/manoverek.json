@@ -1273,6 +1273,110 @@
     "végrehajtás_té_módosító": 5
   },
   {
+    "név": "Véreztetés (1)",
+    "típus": "általános",
+    "nehézség": 10,
+    "fázisok": "V,E",
+    "hatás": {
+      "aktív": [
+        "Ellenfeled Vérző (1) közepesen státuszba került.",
+        "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      ],
+      "passzív": [
+        "Vérző (1) közepesen státuszba kerültél.",
+        "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      ]
+    },
+    "id": "véreztetés_1",
+    "követelmények": [
+      {
+        "erősség": "erős",
+        "típus": "fortély",
+        "név": "élettan",
+        "érték": 1
+      }
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Fegyver sebzés típus",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -2,
+            "leírás": "Szúró"
+          },
+          {
+            "érték": 0,
+            "leírás": "Vágás egyenes penge"
+          },
+          {
+            "érték": 2,
+            "leírás": "Vágás íves penge"
+          }
+        ]
+      }
+    ],
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
+    "fázis_cselekvő": {},
+    "ellenpróba_bünteti": false,
+    "végrehajtás_té_módosító": 5
+  },
+  {
+    "név": "Véreztetés (2)",
+    "típus": "általános",
+    "nehézség": 12,
+    "fázisok": "V,E",
+    "hatás": {
+      "aktív": [
+        "Ellenfeled Vérző (2) erősen státuszba került.",
+        "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      ],
+      "passzív": [
+        "Vérző (2) erősen státuszba kerültél.",
+        "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      ]
+    },
+    "id": "véreztetés_2",
+    "követelmények": [
+      {
+        "erősség": "erős",
+        "típus": "fortély",
+        "név": "élettan",
+        "érték": 1
+      }
+    ],
+    "helyzetfüggő_módosítók": [
+      {
+        "kategória": "Fegyver sebzés típus",
+        "mód": "single",
+        "sorok": [
+          {
+            "érték": -2,
+            "leírás": "Szúró"
+          },
+          {
+            "érték": 0,
+            "leírás": "Vágás egyenes penge"
+          },
+          {
+            "érték": 2,
+            "leírás": "Vágás íves penge"
+          }
+        ]
+      }
+    ],
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
+    "fázis_cselekvő": {},
+    "ellenpróba_bünteti": false,
+    "végrehajtás_té_módosító": 5
+  },
+  {
     "név": "Átdobás",
     "típus": "belharcos",
     "nehézség": 7,

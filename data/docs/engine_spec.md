@@ -1650,7 +1650,7 @@ taktika / fortély id, taktika-fok, kötelező megjegyzés; `hivatkozas_kotelezo
 | szabad_varázslás_elvesztése / varázslás_elvesztése | Varázslás: szabad … / Varázslás képesség elvesztése | - | szöveges / letilt varázslás |
 | vé_veszteség_duplázódik | VÉ veszteség duplázódik | - | szorzó 2 vé_veszteség |
 | vé_csökkentés_bónusz / _fix | VÉ csökkentés bónusz +{érték} / VÉ csökkentés: {érték} | érték | szöveges vé_csökkentés |
-| vérzés_gyenge / közepes / erős | Vérzés - … | - | szöveges általános |
+| vérzés_közepes / erős | Vérzés - … | - | szöveges általános |
 | narratív | (a státusz megjegyzése) | cél | szöveges {cél} |
 
 Fogyasztó a `fortély_letiltás`-ra (2026-11-25): `engine/effekt.ts` `státuszLetiltottFortélyok` → a `gyűjtFortélyEffektek` (és a

@@ -667,6 +667,20 @@ státuszok:
       érték: -2
       cél: szociális_próba
       alcél: "tulajdonság:érzékenység"
+- id: vérző
+  név: Vérző
+  kategória: fizikai
+  többszörös: false
+  alkategóriák: []
+  fokok:
+  - fok: 1
+    alcím: Közepesen
+    hatások:
+    - hatás: vérzés_közepes
+  - fok: 2
+    alcím: Erősen
+    hatások:
+    - hatás: vérzés_erős
 - id: zavar
   név: Zavar
   kategória: fizikai
@@ -677,7 +691,7 @@ státuszok:
     alcím: Kizökkent
     megjegyzések:
     - text: "A következő kör végéig tart."
-    - text: "Példa: ledöbbenés, stb."
+    - text: "Példa: ledöbbenés."
     hatások:
     - hatás: támadás_elvesztés_többszörös
     - hatás: hátrány
