@@ -24,6 +24,7 @@ Kivétel: Érzékvesztés (érzékenként).
 - [Sérült (2)](#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3)
 - [Szellemi (3)](#%EF%B8%8F-szellemi-1-kialvatlans%C3%A1g)
 - [Trauma (2)](#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s)
+- [Vérző (2)](#%EF%B8%8F-v%C3%A9rz%C5%91-1-k%C3%B6zepesen)
 - [Zavar (3)](#%EF%B8%8F-zavar-1-kiz%C3%B6kkent)
 
 ---
