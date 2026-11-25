@@ -4,9 +4,9 @@ A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy
 
 Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod. Mágikus tárgyak, fegyverek is képesek lehetnek **Hatások** okozására.
 
-### Szorzó hatások ökölszabály
+### 🔆 [Szorzó hatások ökölszabály](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
-→ [Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
+### 🔆 [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák)
 
 <br />
 

@@ -32,6 +32,20 @@ MIN,MAX: [-2, +2]
 
 Sem az `Előny`, sem a `Hátrány` dobások nem mehetnek `-2` alá és `+2` fölé semmilyen bónusz/büntetés halmozással.
 
+## 🔆 Ökölszabály: Próba-kategóriák
+
+A **Státuszok** Hatásai gyakran egy próba-kategóriára vonatkoznak. Hogy egy próba fizikai vagy szellemi, azt a dobáshoz használt **Tulajdonság** dönti el (a Képzettségpróbánál a KM választja, lásd [Képzettségpróba](030_06_01_kepzettsegproba.md#próbadobás)).
+
+- **Fizikai próba**: [Erő](010_05_01_01_ero.md), [Edzettség](010_05_01_02_edzettseg.md), [Ügyesség](010_05_01_03_ugyesseg.md) vagy [Gyorsaság](010_05_01_04_gyorsasag.md) Tulajdonsággal dobott Tulajdonságpróba vagy Képzettségpróba
+- **Szellemi próba**: [Intelligencia](010_05_01_05_intelligencia.md), [Emlékezet](010_05_01_06_emlekezet.md), [Önuralom](010_05_01_07_onuralom.md) vagy [Érzékenység](010_05_01_08_erzekenyseg.md) Tulajdonsággal dobott Tulajdonságpróba vagy Képzettségpróba
+- **Szociális képzettségpróba**: [Befolyásolás](kepzettsegek.primer/altalanos/befolyasolas.md), [Etikett](kepzettsegek.szekunder/etikett.md), [Emberismeret](kepzettsegek.primer/altalanos/emberismeret.md)
+- **Nem-harci képzettségpróba**: minden Képzettségpróba, kivéve a [Harci képzettségeket](030_01_kepzettseglista.md#harci-képzettségek-️)
+- **Kreatív / koncentrációt igénylő** tevékenység: a KM dönti el, szituációtól függően
+
+🔆 Egy próba több kategóriába is tartozhat (pl. Intelligenciával dobott Etikett: szellemi és szociális is). Ilyenkor minden érintett Hatás érvényes, a [korlátokon](#-ökölszabály-előnyhátrány-korlátok) belül.
+
+🔆 A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fizikai / szellemi típusa más fogalom: az együttműködés módját jelöli.
+
 ---
 
 🔗 [Szilánk](010_06_szilank.md) →

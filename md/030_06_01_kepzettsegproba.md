@@ -89,6 +89,8 @@ Túl sok cipelt tárgy  fizikai **Képzettségpróbák** végrehajtásában.
 
 Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
 
+Hogy mi számít fizikai Képzettségpróbának, lásd: [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák).
+
 <br />
 
 ---

@@ -31,6 +31,8 @@ Fizikai Képzettségpróbákra
 próbadobások pedig automatikus kudarcok.
 ```
 
+Hogy mi számít fizikai próbának, lásd: [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák).
+
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
 
