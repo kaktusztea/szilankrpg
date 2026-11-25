@@ -112,6 +112,9 @@ export interface Session {
   aktív_helyzetek: string[];
   aktív_manőver: string;
   aktív_státuszok: string[];
+  /** Automatikus státusz-források (Akadály → fizikai, ÉP → sérült) nyilvántartása: a beállított `fok` és az alatta
+   *  lévő kézi fok (`alatta`), hogy a forrás megszűnésekor a kézi fok visszaálljon (md/082: a magasabb fok érvényes). */
+  auto_státuszok: Record<string, AutoStátuszRekord>;
   narratív_módosítók: NarratívMódosító[];
   harci_akrobatika: boolean;
   fegyverfogás: 'egyfegyveres' | 'fegyver_pajzs' | 'fegyver_hárító' | 'kétkezes';
@@ -125,6 +128,12 @@ export interface TéDobás {
   té: number;
   sp?: number;
   veCsökkentés?: number;
+}
+
+/** Egy automatikus státusz-forrás nyilvántartása (`Session.auto_státuszok`, engine/statusz.ts `autoStátuszLépés`). */
+export interface AutoStátuszRekord {
+  fok: number;
+  alatta: number;
 }
 
 export interface NarratívMódosító {
@@ -215,6 +224,7 @@ export const DEFAULT_SESSION: Session = {
   aktív_helyzetek: [],
   aktív_manőver: '',
   aktív_státuszok: [],
+  auto_státuszok: {},
   narratív_módosítók: [],
   harci_akrobatika: false,
   fegyverfogás: 'egyfegyveres',

@@ -129,6 +129,7 @@ session:
   aktív_helyzetek: []         # string[] - aktív harci helyzetek nevei
   aktív_manőver: ""
   aktív_státuszok: []         # string[]
+  auto_státuszok: {}          # { <státusz id>: { fok, alatta } } - automatikus státusz (Akadály → fizikai, ÉP → sérült) által felülírt kézi fok (engine/statusz.ts autoStátuszLépés)
   narratív_módosítók: []      # { szöveg: string, érték?: number }[] - KM által hozzáadott
   harci_akrobatika: false     # session_toggle fortély runtime állapota
   fegyverfogás: "egyfegyveres"  # enum: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes

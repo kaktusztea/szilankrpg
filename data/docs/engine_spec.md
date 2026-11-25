@@ -1683,7 +1683,10 @@ Kifejtett sor (`tables/statuszok.json`, a webapp ezt olvassa): `mód`, `érték?
 `"félelem (2)"`, `"érzékvesztés: Látás (2)"`, `"átkozott_képzettség: lexikum (1)"`. A hivatkozás a státusz `id`-je (statuszok.yaml);
 a megjelenítés a `név` + az alkategória címkéje (`alkategória_címkék`). Kód: `engine/statusz.ts` (`parseStátusz`, `státuszKulcs`,
 `státuszCímke`, `választhatóAlkategóriák`, `státuszFelvehető`, `aktívStátuszIdk`). Automatikák: `sérült (N)` (useSérültStátusz),
-`fizikai (N)` (useAkadalyStatusz). Extra-feltétel `{típus: státusz, név: <id>}` a felvett státuszok id-halmazán.
+`fizikai (N)` (useAkadalyStatusz) - közös logika `autoStátuszLépés` / `autoStátuszSession`: érvényes fok = max(kézi, forrás)
+(md/082: egy fok aktív, a magasabb érvényes); `session.auto_státuszok.<id> = { fok, alatta }` nyilvántartja a felülírt kézi
+fokot, a forrás megszűnésekor (0) az áll vissza; a lépések közti kézi módosítás az új `alatta`. Csak a forrás-fok
+változásakor fut. Extra-feltétel `{típus: státusz, név: <id>}` a felvett státuszok id-halmazán.
 
 #### Alkategória (felvételkor választott paraméter, 2026-11-25)
 

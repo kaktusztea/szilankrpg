@@ -3,6 +3,7 @@
  * A hivatkozás a státusz `id`-je (statuszok.yaml); a megjelenítés a `név` + az alkategória olvasható címkéje.
  */
 import type { StatuszEntry } from './data-types';
+import type { AutoStátuszRekord, Session } from './types';
 
 export interface StátuszPéldány { id: string; alkategória?: string; fok: number }
 
@@ -66,4 +67,33 @@ export function hatásKitöltve<T extends { alcél?: string; megjegyzés?: strin
   if (!al) return h;
   const címke = alkategóriaCímke(def, al);
   return { ...h, alcél: alkategóriaKitölt(h.alcél, al), megjegyzés: alkategóriaKitölt(h.megjegyzés, címke), hatás_név: alkategóriaKitölt(h.hatás_név, címke) };
+}
+
+/**
+ * Automatikus státusz-forrás (Akadály → `fizikai`, ÉP → `sérült`) egy lépése a cél-fok változásakor. md/082: egy
+ * státuszból egy fok aktív, a magasabb érvényes - ezért a kézi fok (`alatta`) nem vész el: az érvényes fok
+ * max(alatta, célFok), a forrás megszűnésekor (célFok = 0) a kézi fok áll vissza. Ha a státusz a legutóbbi lépés óta
+ * kézzel változott (a jelenlegi fok ≠ `rekord.fok`), a jelenlegi fok az új `alatta`.
+ * Változatlan állapotnál ugyanazt a tömböt adja vissza (a hívó ebből látja, hogy nincs mit írni).
+ */
+export function autoStátuszLépés(
+  aktív: string[], id: string, célFok: number, rekord: AutoStátuszRekord | undefined,
+): { aktív: string[]; rekord: AutoStátuszRekord | undefined } {
+  const jelenlegi = aktív.map(parseStátusz).find(p => p?.id === id && !p.alkategória)?.fok ?? 0;
+  const alatta = rekord && rekord.fok === jelenlegi ? rekord.alatta : jelenlegi;
+  const fok = Math.max(alatta, célFok);
+  const újRekord = célFok > 0 ? { fok, alatta } : undefined;
+  if (fok === jelenlegi) return { aktív, rekord: újRekord };
+  const többi = aktív.filter(s => parseStátusz(s)?.id !== id);
+  return { aktív: fok > 0 ? [...többi, státuszKulcs({ id, fok })] : többi, rekord: újRekord };
+}
+
+/** A session-re alkalmazva (`auto_státuszok` nyilvántartással); változás nélkül ugyanazt a session-t adja. */
+export function autoStátuszSession(prev: Session, id: string, célFok: number): Session {
+  const rekordok = prev.auto_státuszok ?? {};   // older saves have no such field
+  const { aktív, rekord } = autoStátuszLépés(prev.aktív_státuszok, id, célFok, rekordok[id]);
+  const rekordVáltozott = (rekord?.fok ?? -1) !== (rekordok[id]?.fok ?? -1) || (rekord?.alatta ?? -1) !== (rekordok[id]?.alatta ?? -1);
+  if (aktív === prev.aktív_státuszok && !rekordVáltozott) return prev;
+  const { [id]: _régi, ...többiRekord } = rekordok;
+  return { ...prev, aktív_státuszok: aktív, auto_státuszok: rekord ? { ...többiRekord, [id]: rekord } : többiRekord };
 }

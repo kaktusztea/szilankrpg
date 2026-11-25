@@ -79,7 +79,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     }
   }, [setSession]);
 
-  useSérültStátusz(sebCount, hc.oszlopMéret, session.aktív_státuszok, setSession);
+  useSérültStátusz(sebCount, hc.oszlopMéret, setSession);
 
 
   const { fárasztásDef, fárasztásEredmény, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, teljesVédekezésDef } =

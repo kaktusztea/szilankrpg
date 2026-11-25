@@ -170,7 +170,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
   AktivStatuszok.tsx       Státusz picker
   StatuszPickerOverlay.tsx Státusz választó overlay (kategóriák → alkategória → fok)
-  engine/statusz.ts        Felvett státusz: "<id>: <alkategória> (fok)" parse / kulcs / címke, választható alkategóriák
+  engine/statusz.ts        Felvett státusz: "<id>: <alkategória> (fok)" parse / kulcs / címke, választható alkategóriák, automatikus státusz-forrás lépés (`autoStátuszLépés`: Akadály → fizikai, ÉP → sérült)
   AktivHatasPool.tsx       Hatás pool box
   KotottFortelySorok.tsx   Aktív helyzethez / taktikához kötött fortélyok sorai (AktivHelyzetek + AktivTaktikak közös)
   aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)
@@ -183,7 +183,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcScreen.tsx           Fő screen
   useVeCsokkenes.ts        VÉ-csökkenés kezelés hook (szorzó, korlát, undo, history-összevonás, flash)
-  useSerultStatusz.ts      „Sérült (N)" státusz automatikus karbantartása az ÉP-rubrikák szerint
+  useSerultStatusz.ts      „Sérült (N)" státusz automatikus karbantartása az ÉP-rubrikák szerint (kézi magasabb fok megmarad: `autoStátuszSession`)
   harc-reszletek-calc.ts   Részletes értékek bontás
   HarcReszletek.tsx        Részletes értékek box (aktív fegyver harcérték bontás megjelenítés)
   VeSzorzoInfoPopup.tsx    VÉ csökkentés szorzó/bázis infó popup
