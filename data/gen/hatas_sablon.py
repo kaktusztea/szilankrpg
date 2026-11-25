@@ -54,6 +54,9 @@ def sablon_hibak(hatasok, effekt_modok, esemenyek):
                 errors.append(f"{ctx}: paraméter '{pn}': az 'érzék' típushoz 'értékek' lista kell")
             for c in pd.get('csoport') or []:
                 if c not in csoportok: errors.append(f"{ctx}: paraméter '{pn}': ismeretlen célpont-csoport '{c}'")
+            # 'célpontok': explicit extra allowed targets outside the 'csoport' filter (e.g. ké_dobás for automatikus_kudarc)
+            for c in pd.get('célpontok') or []:
+                if c not in esemeny_ids: errors.append(f"{ctx}: paraméter '{pn}': ismeretlen célpont '{c}'")
         deklarált = set(params)
         for mező in ('név', 'szöveg'):
             for p in HELYŐRZŐ.findall(h.get(mező) or ''):
@@ -80,8 +83,9 @@ def _param_hiba(pn, pd, v, esemeny_by_id, taktika_ids, fortely_ids):
     elif t == 'célpont':
         e = esemeny_by_id.get(v)
         if not e: return f"'{pn}': ismeretlen célpont '{v}'"
-        if pd.get('csoport') and e.get('csoport') not in pd['csoport']:
-            return f"'{pn}' = '{v}': a célpont csoportja '{e.get('csoport')}', megengedett {pd['csoport']}"
+        if pd.get('csoport') and e.get('csoport') not in pd['csoport'] and v not in (pd.get('célpontok') or []):
+            extra = f" + {pd['célpontok']}" if pd.get('célpontok') else ''
+            return f"'{pn}' = '{v}': a célpont csoportja '{e.get('csoport')}', megengedett {pd['csoport']}{extra}"
     elif t == 'taktika':
         if v not in taktika_ids: return f"'{pn}': ismeretlen taktika '{v}'"
     elif t == 'fortély':

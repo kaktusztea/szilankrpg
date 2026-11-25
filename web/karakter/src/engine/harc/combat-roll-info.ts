@@ -96,6 +96,8 @@ function collectSessionHatások(
       forrás: forrásCímke(e), cél: e.cél as DobásCél, operátor: e.mód as DobásHatás['operátor'],
       érték: e.érték ?? 0, megjegyzés: e.megjegyzés,
     }));
+  // Tiltó (letilt) források a cél-szűrőre (pl. Automatikus kudarc KÉ dobásra) - forrás-felirat, duplikátum nélkül.
+  const letiltók = [...new Set(effektek.filter(e => célFilter.has(e.cél) && e.mód === 'letilt').map(forrásCímke))];
   // SP-bónusz: taktika mindig (a hívó dönt), fortély csak sebzésdobás-szűrőnél (mint eddig).
   const spBónuszok: SpBónusz[] = effektek
     .filter(e => e.cél === 'SP' && e.mód === 'flat' && typeof e.érték === 'number'
@@ -108,7 +110,7 @@ function collectSessionHatások(
     if (def?.megjegyzés) taktikaMegjegyzések.push({ forrás: at.név, szöveg: def.megjegyzés });
   }
 
-  return { hatások, spBónuszok, taktikaMegjegyzések };
+  return { hatások, spBónuszok, taktikaMegjegyzések, letiltók };
 }
 
 // ─── Public API ──────────────────────────────────────────────────────────────
@@ -157,12 +159,14 @@ export function fegyverSpBónuszok(mód: { sp_erőbónusz?: number; sp_mf?: numb
 /**
  * Collect effects for KÉ dobás (Kezdeményezés): státuszok (Eszmélet, Fizikai, ...), Fegyverrántás fortély
  * (a „Fegyverrántás váratlanul" helyzettel) stb. - ugyanazzal a gyűjtővel, mint a Támadó / Célzó dobás.
+ * `automatikusKudarc`: a KÉ dobást tiltó (`letilt`) források felirata - nem üres → nincs dobás, utolsónak kezdeményez.
  */
 export function collectKéDobásInfo(
   session: Session, karakter: Karakter, data: GameData, feltételTeljesül?: (feltétel: unknown) => boolean,
-): { kéHatások: DobásHatás[] } {
-  const { hatások } = collectSessionHatások(session, karakter, data, new Set(['ké_dobás']), undefined, feltételTeljesül);
-  return { kéHatások: hatások };
+): { kéHatások: DobásHatás[]; automatikusKudarc: string[] } {
+  const { hatások, letiltók } = collectSessionHatások(session, karakter, data, new Set(['ké_dobás']), undefined, feltételTeljesül);
+  // automatikusKudarc: a `letilt` ké_dobás források (md/081 Automatikus kudarc: KÉ dobásra → utolsónak kezdeményezel).
+  return { kéHatások: hatások, automatikusKudarc: letiltók };
 }
 
 /** Az aktív harci helyzetek ⚠ megjegyzései egy dobás-célra (harci_helyzetek.yaml `megjegyzés_dobásra`), aktiválási sorrendben. */

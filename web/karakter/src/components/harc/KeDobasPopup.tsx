@@ -42,8 +42,8 @@ export function KeDobasPopup({ data, karakter, session, setSession, pushUndo, on
   const [bontásNyitva, setBontásNyitva] = useState(false); // KÉ + k20 breakdown under the result, collapsed by default
 
   const hc = useMemo(() => calcHarcComputed(data, karakter, session), [data, karakter, session]);
-  const kéHatások = useMemo(
-    () => collectKéDobásInfo(session, karakter, data, hc.feltételTeljesül).kéHatások,
+  const { kéHatások, automatikusKudarc } = useMemo(
+    () => collectKéDobásInfo(session, karakter, data, hc.feltételTeljesül),
     [session, karakter, data, hc.feltételTeljesül],
   );
   const megjegyzések = helyzetDobásMegjegyzések(session, data, 'ké_dobás');
@@ -78,7 +78,13 @@ export function KeDobasPopup({ data, karakter, session, setSession, pushUndo, on
           <div className="ke-dobas-header">Kezdeményezés</div>
         </div>
 
-        {!eredmény ? (
+        {!eredmény && automatikusKudarc.length > 0 ? (
+          // Automatikus kudarc (md/081): no roll, the character initiates last. Closing records nothing.
+          <div className="kep-proba-tiltott">
+            <div>Automatikus kudarc: utolsónak kezdeményezel</div>
+            {automatikusKudarc.map(f => <div key={f} className="dobas-info-source">{f}</div>)}
+          </div>
+        ) : !eredmény ? (
           <>
             {megjegyzések.length > 0 && (
               <div className="dobas-info-list dobas-notes">

@@ -268,6 +268,27 @@ describe('collectKéDobásInfo - Fegyverrántás és státuszok', () => {
   });
 });
 
+// Automatikus kudarc KÉ dobásra (md/081): a `letilt` ké_dobás forrás nem E/H hatás, hanem automatikusKudarc felirat.
+describe('collectKéDobásInfo - automatikus kudarc', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const session = { ...alap.session, aktív_taktikák: [], aktív_helyzetek: [], aktív_státuszok: ['fizikai (3)'] } as Session;
+  const k = { ...alap, fortélyok: [], session } as Karakter;
+
+  it('valódi adaton nincs KÉ-tiltás (Fizikai 3: csak Hátrány)', () => {
+    expect(collectKéDobásInfo(session, k, data).automatikusKudarc).toEqual([]);
+  });
+
+  it('letilt ké_dobás státusz-hatás → a státusz felirata, a Hátrány megmarad', () => {
+    const statuszok = data.statuszok.map(s => s.id !== 'fizikai' ? s : {
+      ...s, fokok: s.fokok.map(f => f.fok !== 3 ? f : { ...f, hatások: [...f.hatások, { mód: 'letilt', cél: 'ké_dobás' }] }),
+    });
+    const info = collectKéDobásInfo(session, k, { ...data, statuszok } as typeof data);
+    expect(info.automatikusKudarc).toEqual(['Fizikai (3)']);
+    expect(netElőnySzint(info.kéHatások)).toBe(-2);
+  });
+});
+
 describe('helyzetDobásMegjegyzések / Fegyverrántás meglepetésből', () => {
   const data = loadGameDataSync();
   const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));

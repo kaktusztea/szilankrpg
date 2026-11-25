@@ -1600,7 +1600,7 @@ az `aktiv_ful.py` hívja) kifejti a sablon `mechanika`-ját a futó mód/cél ef
 Sablon mezői:
 - `id`, `név` (`{param}` helyőrzővel), `leírás`
 - `paraméterek` (opcionális): `{név: {típus, opcionális?, értékek?, csoport?}}`; típus: `szám` (`értékek`: megengedett lista) |
-  `célpont` (esemenyek.yaml id, `csoport`: megengedett csoportok) | `taktika` (taktikak.yaml id) | `taktika_fok` (≥1 vagy `"MAX"`) |
+  `célpont` (esemenyek.yaml id, `csoport`: megengedett csoportok, `célpontok`: csoporton kívül megengedett id-k) | `taktika` (taktikak.yaml id) | `taktika_fok` (≥1 vagy `"MAX"`) |
   `fortély` (fortély-id)
 - `mechanika`: effekt-sorok; `"{param}"` = a paraméter értéke, részleges helyőrző (`"fortély:{fortély}"`) a nyers id-vel töltődik
 - `szöveg` (opcionális): `szöveges` mechanikánál a kifejtett sor `megjegyzés`-e; a státusz `megjegyzés`-e " - " után hozzáfűződik
@@ -1619,7 +1619,7 @@ taktika / fortély id, taktika-fok, kötelező megjegyzés; `hivatkozas_kotelezo
 |----|-----------------|-------------|-----------|
 | előny | Előny+{érték} | érték 1/2, cél (harci/próba/képesség) | előny {érték} → {cél} |
 | hátrány | Hátrány{érték} | érték -1/-2, cél (harci/próba/képesség) | hátrány {érték} → {cél} |
-| automatikus_kudarc | Automatikus kudarc | cél (próba) | letilt {cél} |
+| automatikus_kudarc | Automatikus kudarc | cél (próba + `ké_dobás`) | letilt {cél} (KÉ: `collectKéDobásInfo().automatikusKudarc` → KeDobasPopup: nincs dobás, utolsónak kezdeményez) |
 | automatikus_próba | Automatikus Tulajdonság/Képzettségpróba | cél (próba) | szöveges {cél} |
 | beszéd_zavart / beszéd_némult | Beszéd - zavart / némult | - | szöveges / letilt beszéd |
 | érzék_hátrány | Érzék - Hátrány{érték} | érték -1/-2 | hátrány {érték} → érzék_próba |
