@@ -12655,25 +12655,33 @@ Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2
 
 `Hátrány-1`
 
-- Átkozott Képzettség (1) (adott Képzettségre)
-- Átkozott Viselkedés (1) (KM határozza meg)
-- Eszmélet (1) Bódultság
-- Hangulat (4) Obszesszív (kivéve az obszesszió tárgyát)
-- Sérült (1) S3
+- Átkozott Képzettség (`1`) (adott Képzettségre)
+- Átkozott Viselkedés (`1`) (KM határozza meg)
+- Eszmélet (`1`) Bódultság
+- Érzékvesztés (`1`) Zavart (Érzék Tulajdonságpróba, ill. Érzékenységgel dobott Képzettségpróba)
+- Hangulat (`2`) Inspirált (koncentrációt igénylő feladatokra)
+- Hangulat (`4`) Obszesszív (kivéve az obszesszió tárgyát)
+- Sérült (`1`) S3
+- Szellemi (`1`) Kialvatlanság (Észlelés)
 
 `Hátrány-2`
 
-- Átkozott Képzettség (2) (adott Képzettségre)
-- Átkozott Viselkedés (2) (KM határozza meg)
-- Eszmélet (2) Kábultság
-- Sérült (2) S4
+- Átkozott Képzettség (`2`) (adott Képzettségre)
+- Átkozott Viselkedés (`2`) (KM határozza meg)
+- Eszmélet (`2`) Kábultság
+- Érzékvesztés (`2`) Részleges (Érzék Tulajdonságpróba, ill. Érzékenységgel dobott Képzettségpróba)
+- Fizikai (`3`) Elcsigázottság (nem-harci képzettségekre)
+- Hangulat (`3`) Eufórikus (koncentrációt igénylő feladatokra)
+- Sérült (`2`) S4
 
 Automatikus kudarc
 
-- Eszmélet (3) Ájulás
-- Eszmélet (4) Kóma
-- Sérült (3) Haldoklás
-- Zavar (3) Sokk
+- Eszmélet (`3`) Ájulás
+- Eszmélet (`4`) Kóma
+- Érzékvesztés (`3`) Teljes (Érzék Tulajdonságpróba, ill. Érzékenységgel dobott Képzettségpróba)
+- Hangulat (`4`) Obszesszív (amire a KM kijelöli)
+- Sérült (`3`) Haldoklás
+- Zavar (`3`) Sokk
 
 ---
 
@@ -12701,7 +12709,7 @@ Automatikus kudarc
 `Hátrány-2`
 
 - Fizikai (`2`) Kimerültség
-- Szellemi (`3`) Delírium
+- Szellemi (`3`) Delírium (nem-mágikus)
 - Zavar (`1`) Kizökkent
 
 Automatikus kudarc
@@ -12718,10 +12726,12 @@ Automatikus kudarc
 - Félelem (`1`) Szorongás
 - Rosszullét (`2`) Erős
 - Szellemi (`2`) Eltompultság
+- Trauma (`1`) Lélekrepedés (Önuralom / Érzékenység használatakor)
 
 `Hátrány-2`
 
 - Szellemi (`3`) Delírium
+- Trauma (`2`) Lélektörés (Önuralom / Érzékenység használatakor)
 - Zavar (`1`) Kizökkent
 
 Automatikus kudarc
@@ -12729,6 +12739,18 @@ Automatikus kudarc
 - Félelem (`2`) Rettegés/Pánik
 - Indulat (`3`) Őrjöngés
 - Zavar (`2`) Megrendült
+
+---
+
+### Mágiahasználat hátrányok
+
+`Hátrány-1`
+
+- Szellemi (`2`) Eltompultság (random mágia hatás esélye ↑)
+
+`Hátrány-2`
+
+- Szellemi (`3`) Delírium
 
 <br />
 
@@ -15396,6 +15418,8 @@ Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs fegyverméret-korlá
 #### Alkalmazás
 
 Ha olyan a szituáció, hogy az alkalmazó nem képes, vagy nem akarja alkalmazni harca közben ezt a stílust (pl. túl feltűnő lenne az ugrabugrálása), akkor nem kapja meg a leírt bónuszokat.
+
+[Fizikai (3) Elcsigázottság](../082_statuszok.md#%EF%B8%8F-fizikai-3-elcsig%C3%A1zotts%C3%A1g) Státusz alatt nem alkalmazható (automatikus kudarc).
 
 #### Helyigény
 
@@ -31001,6 +31025,11 @@ Mágiaellenállás
 
 🔆 Halmozódásuk esetén is alsó és felső korlátuk érvényes: `[-2, +2]`.
 
+🔆 Az Előnyök és Hátrányok előjelesen összeadódnak, a korlát az összegre vonatkozik.\
+Példa: `Hátrány-1` + `Hátrány-2` + `Előny+2` → `Hátrány-1`.
+
+🔆 Az **Automatikus kudarc** minden Előnyt felülír.
+
 🔆 Az Előny/Hátrány modell **Státuszok** és **Képzettség-kiterjesztések** esetén alkalmazandó. Ezzel szemben a **Fortélyok** bónuszai és **Harci taktikák** esetén konstans, statikus módosítókat alkalmazunk.
 
 ### 🔥 Előny+1
@@ -31262,6 +31291,9 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 
 Megszüntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
 
+Ugyanabból a Státuszból egyszerre egy fok lehet aktív, súlyosbodáskor a magasabb fok lép érvénybe.\
+Kivétel: Érzékvesztés (érzékenként).
+
 - [Áldott / Átkozott (1,2)](#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g)
 - [Bénultság (2)](#%EF%B8%8F-b%C3%A9nults%C3%A1g-1-cselekv%C5%91k%C3%A9ptelens%C3%A9g)
 - [Blokkolt (2)](#%EF%B8%8F-blokkolt-1-k%C3%B6zepesen)
@@ -31488,6 +31520,7 @@ Látás, Hallás, Szaglás.
 ```
 Hátrány-1
   Érzék(x) Tulajdonságpróbákra
+  Érzékenységgel dobott Képzettségpróbákra
 ```
 
 ### ✴️ Érzékvesztés (2) Részleges
@@ -31495,6 +31528,7 @@ Hátrány-1
 ```
 Hátrány-2
   Érzék(x) Tulajdonságpróbákra
+  Érzékenységgel dobott Képzettségpróbákra
 ```
 
 ### ✴️ Érzékvesztés (3) Teljes
@@ -31502,6 +31536,7 @@ Hátrány-2
 ```
 Automatikus kudarc
   Érzék(x) Tulajdonságpróbákra
+  Érzékenységgel dobott Képzettségpróbákra
 ```
 
 <br />
@@ -31533,7 +31568,6 @@ Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 ### ✴️ Félelem (2) Rettegés/Pánik
 
 ```
-Többszörös támadás elvesztése
 Teljes Védekezés taktika kötelező
 
 Automatikus kudarc
@@ -31570,7 +31604,6 @@ Hátrány-1
 
 ⚡ Példa
 
-- napok óta nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete nem ettél
 
@@ -31681,12 +31714,16 @@ Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erej�
 Ilyenkor
 
 - maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
-- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
+- minden defenzív jellegű taktika tiltott ❌
+- Kiváró taktika tiltott ❌
 
 ### ✴️ Indulat (2) Gyűlölet
 
 - maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
-- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható, de más defenzív jellegű taktika nem (pl. Kiváró, stb).
+- [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
+- minden defenzív jellegű taktika tiltott ❌
+- Kiváró taktika tiltott ❌
 - [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika kötelező egyszer
 - [Roham](065_02_harci_taktikak.md#roham-taktika) taktika kötelező utána - ha van hely
 
@@ -31830,6 +31867,8 @@ Varázslás képesség elvesztése
 Hátrány-1
   Észlelés képzettségpróba
 ```
+
+⚡ Példa: egy-két átvirrasztott éjszaka
 
 ### ✴️ Szellemi (2) Eltompultság
 
