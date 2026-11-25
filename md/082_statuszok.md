@@ -261,7 +261,7 @@ Automatikus kudarc
 ### ✴️ Félelem (1) Szorongás
 
 ```
-Védő taktikában harcol
+Taktika kötelező: Védő taktika (3)
   VÉ:+3; TÉ:-6
 
 Hátrány-1
@@ -283,7 +283,7 @@ Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 ### ✴️ Félelem (2) Rettegés/Pánik
 
 ```
-Teljes Védekezés taktika kötelező
+Taktika kötelező: Teljes Védekezés taktika
 
 Automatikus kudarc
   Szociális képzettségpróbákra
@@ -428,19 +428,19 @@ Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erej�
 
 Ilyenkor
 
-- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- Taktika kötelező: [Támadó taktika](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) (`MAX`)
 - [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
 - minden defenzív jellegű taktika tiltott ❌
 - Kiváró taktika tiltott ❌
 
 ### ✴️ Indulat (2) Gyűlölet
 
-- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- Taktika kötelező: [Támadó taktika](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) (`MAX`)
 - [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
 - minden defenzív jellegű taktika tiltott ❌
 - Kiváró taktika tiltott ❌
-- [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika kötelező egyszer
-- [Roham](065_02_harci_taktikak.md#roham-taktika) taktika kötelező utána - ha van hely
+- Taktika kötelező: [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika - egyszer
+- Taktika kötelező: [Roham](065_02_harci_taktikak.md#roham-taktika) taktika - utána, ha van hely
 
 ### ✴️ Indulat (3) Őrjöngés
 

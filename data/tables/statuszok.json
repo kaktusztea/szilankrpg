@@ -556,7 +556,7 @@
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Védő taktika (VÉ:+3, TÉ:-6)"
+            "megjegyzés": "Taktika kötelező: Védő taktika (3) (VÉ:+3, TÉ:-6)"
           },
           {
             "mód": "hátrány",
@@ -577,7 +577,7 @@
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Teljes Védekezés taktika kötelező"
+            "megjegyzés": "Taktika kötelező: Teljes Védekezés taktika"
           },
           {
             "mód": "letilt",
@@ -840,14 +840,14 @@
             "text": "Aki Haragból harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör."
           },
           {
-            "text": "Ebben az állapotban a karakter használhatja a Kezdeményező Taktikát, de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb.)."
+            "text": "Ebben az állapotban a karakter használhatja a Kezdeményező Taktikát; minden defenzív jellegű taktika és a Kiváró taktika tiltott."
           }
         ],
         "hatások": [
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Kötelező max Támadó taktika; Kezdeményező használható, más defenzív taktika nem"
+            "megjegyzés": "Taktika kötelező: Támadó taktika (MAX); Kezdeményező használható; minden defenzív taktika és a Kiváró tiltott"
           }
         ]
       },
@@ -858,7 +858,7 @@
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Kötelező max Támadó taktika (Kezdeményező használható); Öngyilkos roham kötelező egyszer, utána Roham kötelező (ha van hely)"
+            "megjegyzés": "Taktika kötelező: Támadó taktika (MAX); Kezdeményező használható; minden defenzív taktika és a Kiváró tiltott; Taktika kötelező: Öngyilkos roham taktika - egyszer; Taktika kötelező: Roham taktika - utána, ha van hely"
           }
         ]
       },

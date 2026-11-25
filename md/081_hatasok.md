@@ -213,6 +213,19 @@ Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással
 
 ---
 
+### 🔥 Taktika kötelező: X
+
+[Harci taktika](065_02_harci_taktikak.md) listából kötelezően alkalmaznod kell egyet.
+
+- Taktika neve: kötelező paraméter
+- Taktika alkalmazásának foka: opcionális paraméter (ha értelmezhető)
+  - lehet `X`
+  - lehet `MAX`
+
+<br />
+
+---
+
 ### 🔥 Többszörös támadás elvesztése
 
 ```

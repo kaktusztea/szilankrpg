@@ -108,6 +108,12 @@ hatások:
   leírás: "Képtelen vagy Pszí alkalmazására. Az Aurádra nincs hatással."
   mechanika: [{mód: "letilt", cél: "pszi"}]
 
+# --- Taktika ---
+- id: "taktika_kötelező"
+  név: "Taktika kötelező: X"
+  leírás: "A Harci taktika listából kötelezően alkalmaznod kell egyet. Paraméterek: taktika neve (kötelező), foka (opcionális, ha értelmezhető: X vagy MAX)."
+  mechanika: [{mód: "szöveges", cél: "harci_képesség", megjegyzés: "kötelező taktika (név, opcionális fok: X / MAX)"}]
+
 # --- Támadások ---
 - id: "támadás_elvesztés_1"
   név: "1 támadás elvesztése"
