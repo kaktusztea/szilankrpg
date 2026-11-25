@@ -995,7 +995,7 @@
             "alcél": "érzék:{alkategória}",
             "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára (automatikus kudarc)",
             "hatás_id": "érzék_kioltott",
-            "hatás_név": "Érzék - automatikus kudarc (kioltott) ({alkategória})"
+            "hatás_név": "Érzék - automatikus kudarc ({alkategória})"
           }
         ]
       }

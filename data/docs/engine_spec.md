@@ -1621,7 +1621,7 @@ taktika / fortély id, taktika-fok, kötelező megjegyzés; `hivatkozas_kotelezo
 | automatikus_próba | Automatikus Tulajdonság/Képzettségpróba | cél (próba) | szöveges {cél} |
 | beszéd_zavart / beszéd_némult | Beszéd - zavart / némult | - | szöveges / letilt beszéd |
 | érzék_hátrány | Érzék - Hátrány{érték} | érték -1/-2 | hátrány {érték} → érzék_próba |
-| érzék_kioltott | Érzék - automatikus kudarc (kioltott) | - | letilt érzék_próba |
+| érzék_kioltott | Érzék - automatikus kudarc | - | letilt érzék_próba |
 | fortély_letiltás | Fortély hatás letiltása: {fortély} | fortély | letilt fortély (alcél fortély:{fortély}) |
 | antyssjárás_elvesztése | Antyssjárás elvesztése | - | letilt antyssjárás |
 | fp_s1 / fp_s2 | FP S1 / FP S2 | - | szöveges általános |

@@ -118,7 +118,7 @@ Ami másnak automatikus siker, az neked már próbadobásos.
 
 ---
 
-### 🔥 Érzék - Hátrány-1 (zavart)
+### 🔥 Érzék - Hátrány-1
 
 Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
@@ -128,7 +128,7 @@ Hátrány-1 minden adott érzéken
   Képzettségpróbára
 ```
 
-### 🔥 Érzék - Hátrány-2 (részleges)
+### 🔥 Érzék - Hátrány-2
 
 Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
@@ -138,7 +138,7 @@ Hátrány-2 minden adott érzéken
   Képzettségpróbára
 ```
 
-### 🔥 Érzék - automatikus kudarc (kioltott)
+### 🔥 Érzék - automatikus kudarc
 
 Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 

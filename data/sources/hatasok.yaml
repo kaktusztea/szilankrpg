@@ -65,14 +65,14 @@ hatások:
 # --- Érzék ---
 - id: "érzék_hátrány"
   név: "Érzék - Hátrány{érték}{érzék}"
-  leírás: "Hátrány-1 (zavart) / Hátrány-2 (részleges) minden adott érzéken alapuló próbára. Az érzék a státusz alkategóriájából (pl. Érzékvesztés: Látás) vagy az `érzék` paraméterből jön."
+  leírás: "Hátrány-1 / Hátrány-2 minden adott érzéken alapuló próbára. Az érzék a státusz alkategóriájából (pl. Érzékvesztés: Látás) vagy az `érzék` paraméterből jön."
   paraméterek:
     érték: {típus: "szám", értékek: [-1, -2]}
     érzék: {típus: "érzék", opcionális: true, értékek: ["Látás", "Hallás", "Szaglás", "Tapintás", "Ízlelés"]}
   mechanika: [{mód: "hátrány", érték: "{érték}", cél: "érzék_próba", alcél: "érzék:{érzék}"}]
 
 - id: "érzék_kioltott"
-  név: "Érzék - automatikus kudarc (kioltott){érzék}"
+  név: "Érzék - automatikus kudarc{érzék}"
   leírás: "Automatikus kudarc minden adott érzéken alapuló próbára. Az érzék a státusz alkategóriájából vagy az `érzék` paraméterből jön."
   paraméterek:
     érzék: {típus: "érzék", opcionális: true, értékek: ["Látás", "Hallás", "Szaglás", "Tapintás", "Ízlelés"]}
