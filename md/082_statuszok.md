@@ -422,7 +422,7 @@ Hátrány-1
 
 ### ✴️ Indulat (1) Harag
 
-⭕TODO: kapcsolódhat/ütközhet ezzel: [Harci láz képzettség](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.primer/harci/harci_laz.md)⭕
+⭕TODO: kapcsolódhat/ütközhet ezzel: [Harci láz képzettség](kepzettsegek.primer/harci/harci_laz.md)⭕
 
 Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör.
 
