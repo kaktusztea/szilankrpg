@@ -1,4 +1,5 @@
 import { Ikon } from '../common/Ikon';
+import { aktívStátuszIdk } from '../../engine/statusz';
 import { useState, useCallback, useEffect } from 'react';
 import { harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
 import { képzKulcs } from '../../engine/azonosito';
@@ -178,7 +179,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         const extraKontextus = {
           aktívFeltételek: buildAktívFeltételek(session, data),
           fortélyFokok: new Map(k.fortélyok.map(f => [f.id, f.fok])),
-          aktívStátuszok: new Set(session.aktív_státuszok),
+          aktívStátuszok: aktívStátuszIdk(session.aktív_státuszok),
           aktívManőver: session.aktív_manőver || undefined,
         };
         return (

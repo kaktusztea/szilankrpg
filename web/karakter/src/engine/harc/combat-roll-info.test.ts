@@ -262,9 +262,9 @@ describe('collectKéDobásInfo - Fegyverrántás és státuszok', () => {
   });
 
   it('a lépés additív a státusz Hátrányával (Fizikai 3: -2 + Fegyverrántás 1 = -1), clamp [-2,+2]', () => {
-    expect(kiszámol(1, true, ['Fizikai (3)'])).toBe(-1);
-    expect(kiszámol(2, true, ['Fizikai (3)'])).toBe(0);
-    expect(kiszámol(null, false, ['Fizikai (3)'])).toBe(-2);
+    expect(kiszámol(1, true, ['fizikai (3)'])).toBe(-1);
+    expect(kiszámol(2, true, ['fizikai (3)'])).toBe(0);
+    expect(kiszámol(null, false, ['fizikai (3)'])).toBe(-2);
   });
 });
 

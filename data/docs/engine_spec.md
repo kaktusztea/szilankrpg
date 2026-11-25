@@ -1512,7 +1512,7 @@ Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 |-------|------|--------|
 | **Hatás mechanika** | `konstansok.yaml → effekt_módok` | Egységes effekt-módok (§42.2): flat, szorzó, override, max_limit, előny, hátrány, enyhít, letilt, szöveges, scaled |
 | **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (23 db): dobások, képességek, fizikai |
-| **Hatások** | `hatasok.yaml` (29 db, csak build-validáció, §22.4) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
+| **Hatások** | `hatasok.yaml` (29 db paraméterezhető sablon, build-idejű kifejtés, §22.4) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
 | **Státuszok** | `statuszok.yaml` (19 db) | Állapotok fokozatokkal, amelyek Hatás(oka)t okoznak. |
 | **Harci helyzetek** | `harci_helyzetek.yaml` (40 db) | Speciális harci státuszok, amelyek szintén Hatás(oka)t okoznak. |
 
@@ -1554,7 +1554,7 @@ célpontok:  # (yaml-ban: események - legacy elnevezés)
   # harci: ké_dobás, té_dobás, cé_dobás, manőver_ellenpróba, sebzésdobás, támadások_száma, vé_veszteség, vé_csökkentés
   # próba: tulajdonságpróba, képzettségpróba, szociális_próba, szellemi_próba, fizikai_próba, nem_harci_próba, érzék_próba, mágiaellenállás, mágia_akarata
   # fizikai: mozgás, beszéd
-  # képesség: harci_képesség, varázslás, pszi, antyssjárás
+  # képesség: fortély, harci_képesség, varázslás, pszi, antyssjárás
   # egyéb: általános
 ```
 
@@ -1589,88 +1589,105 @@ lefedik mind a 8 Tulajdonságot. Negatív tesztek: `gen/test_gates.py`.
 
 Nyitott: az Áldott / Átkozott Tulajdonság `szöveges` (a státusz-választóban nem adható meg, melyik Tulajdonság).
 
-### 22.4 Hatások (hatasok.yaml)
+### 22.4 Hatások (hatasok.yaml) - paraméterezhető sablonok (2026-11-25)
 
-Elnevezett, magas szintű hatáscsomagok (081_hatasok.md). Forrás: `data/sources/hatasok.yaml`.
-Minden Hatás leírható mechanika+cél párokkal.
+Elnevezett, magas szintű hatáscsomagok (081_hatasok.md), **paraméterezhető sablonként**. Forrás: `data/sources/hatasok.yaml`.
+A státuszok (`statuszok.yaml`) a Hatás id-jére hivatkoznak (`hatás: <id>` + paraméterek); a **build** (`data/gen/hatas_sablon.py`,
+az `aktiv_ful.py` hívja) kifejti a sablon `mechanika`-ját a futó mód/cél effekt-sorokra. A webapp a kifejtett sorokat kapja
+(`statuszok.json` alakja változatlan), kiegészítve: `hatás_id`, `hatás_név` (a kitöltött 081-es név, pl. "Hátrány-1",
+"Taktika kötelező: Védő taktika (3)"). A `hatasok.yaml`-nak továbbra sincs JSON kimenete.
 
-STÁTUSZ (fontos): a `hatasok.yaml` jelenleg CSAK build-validációs/dokumentációs réteg.
-  - NEM generál JSON-t és a webapp NEM tölti be (`aktiv_ful.py` - csak a `validate_hatasok_katalogus`
-    olvassa build-időben: minden hatás `mechanika`-ja érvényes `mód` (effekt_módok) + `esemenyek` id-re mutat).
-  - A RUNTIME lánc NEM ezen megy át: a `statuszok.yaml`/`harci_helyzetek.yaml` KÖZVETLENÜL a
-    `mód` (előny/hátrány/szorzó/…) + `esemenyek` (cél: té_dobás/…) értékeket hivatkozza,
-    NEM a `hatasok.yaml` nevesített id-ket (előny_1, mozgás_feleződik, …). A köztes "nevesített hatás"
-    réteg jelenleg nincs bekötve a futó rendszerbe.
-  - A katalógus tartalma UP-TO-DATE a szabálykönyvvel (081_hatasok.md): 1:1 lefedés (29 hatás),
-    nevek + mechanika-leírások egyeznek. A build-validáció tartja szinkronban.
-  - Jövő: a nevesített hatás-réteg a §42 egységes effekt-modell runtime fogyasztójának van előkészítve
-    (akkor válik a statusz→hatasok.yaml→mechanika lánc élővé).
+Sablon mezői:
+- `id`, `név` (`{param}` helyőrzővel), `leírás`
+- `paraméterek` (opcionális): `{név: {típus, opcionális?, értékek?, csoport?}}`; típus: `szám` (`értékek`: megengedett lista) |
+  `célpont` (esemenyek.yaml id, `csoport`: megengedett csoportok) | `taktika` (taktikak.yaml id) | `taktika_fok` (≥1 vagy `"MAX"`) |
+  `fortély` (fortély-id)
+- `mechanika`: effekt-sorok; `"{param}"` = a paraméter értéke, részleges helyőrző (`"fortély:{fortély}"`) a nyers id-vel töltődik
+- `szöveg` (opcionális): `szöveges` mechanikánál a kifejtett sor `megjegyzés`-e; a státusz `megjegyzés`-e " - " után hozzáfűződik
+  (enélkül a státusz megjegyzése megy át); `megjegyzés_kötelező` (opcionális, pl. `narratív`)
+- A státusz-sor `alcél` és `megjegyzés` mezője minden Hatásnál átmegy. Egy fokon belül az azonos (mód, cél, alcél, érték) sorok
+  összevonódnak (pl. Harcképtelenség + Mozgás - képtelen: egy `letilt harci_képesség`); `szöveges` sornál a megjegyzés is kulcs.
 
-| id | Hatás neve | Mechanika | Cél | Leírás |
-|----|-----------|-----------|-----|--------|
-| előny_1 | Előny+1 | előny +1 | (változó) | 2x dob, nagyobb számít |
-| előny_2 | Előny+2 | előny +2 | (változó) | 3x dob, legnagyobb számít |
-| hátrány_1 | Hátrány-1 | hátrány -1 | (változó) | 2x dob, kisebb számít |
-| hátrány_2 | Hátrány-2 | hátrány -2 | (változó) | 3x dob, legkisebb számít |
-| automatikus_kudarc | Automatikus kudarc | letilt | próbák | Nem dobhatsz, azonnali kudarc |
-| automatikus_próba | Aut. próba | szöveges | - | Aut. siker → sima próba |
-| beszéd_zavart | Beszéd - zavart | szöveges | beszéd | Nehézkes, mágiánál extra próba |
-| beszéd_némult | Beszéd - némult | letilt | beszéd | Hangkiadás képtelen |
-| érzék_zavart | Érzék - zavart | hátrány -1 | érzék_próba | Adott érzékre |
-| érzék_részleges | Érzék - részleges | hátrány -2 | érzék_próba | Adott érzékre |
-| érzék_kioltott | Érzék - kioltott | letilt | érzék_próba | Aut. kudarc érzékpróbára |
-| antyssjárás_elvesztése | Antyssjárás elvesztése | letilt | antyssjárás | Nem lép be Antyss síkra |
-| fp_s1 | FP S1 | szöveges | - | S1 rubrikák FP feltöltés |
-| fp_s2 | FP S2 | szöveges | - | S1+S2 rubrikák FP feltöltés |
-| harcképtelenség | Harcképtelenség | letilt | harci_képesség | Mozog, nem harcol |
-| mozgás_feleződik | Mozgás - feleződik | arányos 0.5 | mozgás | Feleződik |
-| mozgás_lecövekelt | Mozgás - lecövekelt | letilt | mozgás | Helyváltoztatás képtelen |
-| mozgás_képtelen | Mozgás - képtelen | letilt | mozgás+harci | Nyaktól lefelé mozdulni sem |
-| pszi_elvesztése | Pszi elvesztése | letilt | pszi | Diszciplínák használhatatlan |
-| támadás_elvesztés_1 | 1 támadás elvesztése | szöveges | támadások_száma | -1 támadás (min 1) |
-| támadás_elvesztés_többszörös | Többsz. tám. elvesztés | max_limit 1 | támadások_száma | Max 1 tám/kör |
-| varázslás_elvesztése | Varázslás elvesztése | letilt | varázslás | Mágia végzése képtelen |
-| vé_veszteség_duplázódik | VÉ veszteség dupl. | duplázás 2 | vé_veszteség | Elszenvedett VÉ veszt. ×2 |
-| vé_csökkentés_bónusz | VÉ csökk bónusz | szöveges | vé_veszteség | +1..+2 bónusz |
-| vé_csökkentés_fix | VÉ csökkentés: X | szöveges | vé_veszteség | Fix VÉ csökkentés |
-| vérzés_gyenge | Vérzés - gyenge | szöveges | - | 1 ÉP / 10 perc |
-| vérzés_közepes | Vérzés - közepes | szöveges | - | 1 ÉP / 2 kör |
-| vérzés_erős | Vérzés - erős | szöveges | - | 1 ÉP / kör |
+Build-gate (`hatas_sablon.py`): `sablon_hibak` (id egyedi, név, paraméter-típus / célpont-csoport, mechanika mód / cél, deklarált
+helyőrzők) + `kifejt_statuszok` (ismeretlen Hatás, ismeretlen / hiányzó paraméter, nem megengedett érték, célpont-csoport,
+taktika / fortély id, taktika-fok, kötelező megjegyzés; `hivatkozas_kotelezo`: nyers `mód:` sor tiltása). Negatív tesztek:
+`gen/test_gates.py`.
+
+| id | Név (kitöltött) | Paraméterek | Mechanika |
+|----|-----------------|-------------|-----------|
+| előny | Előny+{érték} | érték 1/2, cél (harci/próba/képesség) | előny {érték} → {cél} |
+| hátrány | Hátrány{érték} | érték -1/-2, cél (harci/próba/képesség) | hátrány {érték} → {cél} |
+| automatikus_kudarc | Automatikus kudarc | cél (próba) | letilt {cél} |
+| automatikus_próba | Automatikus Tulajdonság/Képzettségpróba | cél (próba) | szöveges {cél} |
+| beszéd_zavart / beszéd_némult | Beszéd - zavart / némult | - | szöveges / letilt beszéd |
+| érzék_hátrány | Érzék - Hátrány{érték} | érték -1/-2 | hátrány {érték} → érzék_próba |
+| érzék_kioltott | Érzék - automatikus kudarc (kioltott) | - | letilt érzék_próba |
+| fortély_letiltás | Fortély hatás letiltása: {fortély} | fortély | letilt fortély (alcél fortély:{fortély}) |
+| antyssjárás_elvesztése | Antyssjárás elvesztése | - | letilt antyssjárás |
+| fp_s1 / fp_s2 | FP S1 / FP S2 | - | szöveges általános |
+| harcképtelenség | Harcképtelenség | - | letilt harci_képesség |
+| mozgás_feleződik / lecövekelt / képtelen | Mozgás - … | - | szorzó 0.5 / letilt mozgás / letilt mozgás + harci_képesség |
+| pszi_elvesztése | Pszí használat elvesztése | - | letilt pszi |
+| taktika_kötelező | Taktika kötelező: {taktika} taktika{fok} | taktika, fok? | szöveges harci_képesség |
+| támadás_elvesztés_1 / _többszörös | 1 támadás / Többszörös támadás elvesztése | - | szöveges / max_limit 1 támadások_száma |
+| szabad_varázslás_elvesztése / varázslás_elvesztése | Varázslás: szabad … / Varázslás képesség elvesztése | - | szöveges / letilt varázslás |
+| vé_veszteség_duplázódik | VÉ veszteség duplázódik | - | szorzó 2 vé_veszteség |
+| vé_csökkentés_bónusz / _fix | VÉ csökkentés bónusz +{érték} / VÉ csökkentés: {érték} | érték | szöveges vé_csökkentés |
+| vérzés_gyenge / közepes / erős | Vérzés - … | - | szöveges általános |
+| narratív | (a státusz megjegyzése) | cél | szöveges {cél} |
+
+Fogyasztó a `fortély_letiltás`-ra (2026-11-25): `engine/effekt.ts` `státuszLetiltottFortélyok` → a `gyűjtFortélyEffektek` (és a
+taktika-letiltás) kihagyja a letiltott fortély módosítóit / alapesetét; a Harc fül `SessionToggles` a kapcsolós fortélyt
+letiltja és kikapcsolja (hint: "<státusz>: Fortély hatás letiltása"). Pl. Fizikai (3) → Harci akrobatika.
 
 ### 22.5 Státusz struktúra (statuszok.yaml)
 
 ```yaml
 státuszok:
   - név: "Blokkolt"
-    kategória: "mágikus"          # fizikai | szellemi | mágikus
+    kategória: "fizikai"          # fizikai | szellemi | mágikus
+    # id: "blokkolt"              # kötelező hivatkozási kulcs (session, feltételek); a fenti példa a forrás-alak
     többszörös: false             # true = több példány egyszerre
     alkategóriák: []              # pl. Érzékvesztés: érzékenként
     fokok:
       - fok: 1
         alcím: "Közepesen"
-        hatások:                   # strukturált lista: mechanika + érték + cél
+        hatások:                   # Hatás-hivatkozások (hatasok.yaml sablon + paraméterek, §22.4)
           - { hatás: "hátrány", érték: -1, cél: "té_dobás" }
-          - { hatás: "arányos", érték: 0.5, cél: "mozgás" }
-      - fok: 2
-        alcím: "Erősen"
-        hatások:
-          - { mód: "hátrány", érték: -2, cél: "té_dobás" }
-          - { mód: "szorzó", érték: 0.5, cél: "mozgás" }
+          - { hatás: "mozgás_feleződik" }
 ```
 
-Hatás objektum mezői:
-- `mód`: effekt-mód (kötelező, konstansok.yaml → effekt_módok)
-- `érték`: szám (opcionális, mód-függő)
-- `cél`: célpont id (kötelező, esemenyek.yaml-ból VAGY csupasz harcérték-cél: konstansok.yaml → harcérték_célok)
-- `megjegyzés`: string (opcionális, kontextuális kiegészítés)
+Hatás-sor mezői (forrás): `hatás` (kötelező, hatasok.yaml id) + a sablon paraméterei + opcionális `alcél`, `megjegyzés`.
+Nyers `mód:` sor (sablon nélkül) a `statuszok.yaml`-ban nem megengedett (build-gate, 2026-11-25). Narratív KM-tartalom:
+`{hatás: narratív, cél: <célpont>, megjegyzés: "..."}`.
+
+Kifejtett sor (`tables/statuszok.json`, a webapp ezt olvassa): `mód`, `érték?`, `cél`, `alcél?`, `megjegyzés?`, `hatás_id`, `hatás_név`
+(l. §22.4). A régi alak (`mód` / `érték` / `cél` közvetlenül a forrásban) a kifejtett JSON alakja maradt.
 
 ### 22.6 Session
 
-`session.aktív_státuszok: string[]` - formátum: `"Státusznév (fok)"`, pl. `"Félelem (2)"`
+`session.aktív_státuszok: string[]` - formátum (2026-11-25): `"<id> (fok)"` vagy `"<id>: <alkategória> (fok)"`, pl.
+`"félelem (2)"`, `"érzékvesztés: Látás (2)"`, `"átkozott_képzettség: lexikum (1)"`. A hivatkozás a státusz `id`-je (statuszok.yaml);
+a megjelenítés a `név` + az alkategória címkéje (`alkategória_címkék`). Kód: `engine/statusz.ts` (`parseStátusz`, `státuszKulcs`,
+`státuszCímke`, `választhatóAlkategóriák`, `státuszFelvehető`, `aktívStátuszIdk`). Automatikák: `sérült (N)` (useSérültStátusz),
+`fizikai (N)` (useAkadalyStatusz). Extra-feltétel `{típus: státusz, név: <id>}` a felvett státuszok id-halmazán.
+
+#### Alkategória (felvételkor választott paraméter, 2026-11-25)
+
+A státusz `alkategóriák` listája (vagy `alkategória_forrás: tulajdonságok | képzettségek` → a build tölti ki, + `alkategória_címkék`)
+a felvételkor választandó érték. A hatás-sorban a `{alkategória}` helyőrző (paraméter-érték vagy alcél) a build után változatlan
+marad a JSON-ban; a `gyűjtStátuszEffektek` a felvett alkategóriával tölti ki (alcél, megjegyzés). Példák:
+- Érzékvesztés: `érzék_hátrány` `érzék: "{alkategória}"` → `alcél: érzék:Látás` (Látás / Hallás / Szaglás / Tapintás / Ízlelés)
+- Áldott / Átkozott Tulajdonság (`alkategória_forrás: tulajdonságok`, többszörös): `alcél: "tulajdonság:{alkategória}"`
+- Áldott / Átkozott Képzettség (`alkategória_forrás: képzettségek`, többszörös): `alcél: "képzettség:{alkategória}"`; a képzettség-id
+  a specializációkra is hat (`képzettség:harcmodor` → `harcmodor/kardvívás`)
+
+Gate: a helyőrző csak alkategóriás státuszban; minden alkategória érvényes a paraméterre / alcélra; `alkategóriák` és
+`alkategória_forrás` egyszerre nem. Egy alkategória státuszonként egyszer vehető fel (a választó nem kínálja újra).
 
 ### 22.7 Webapp megjelenítés
 
-- Aktív fülön: dropdown-ból választható (státusz név + fok + alcím)
+- Aktív fülön: választó (kategória → státusz → alkategória, ha van: érzék / Tulajdonság / képzettség-csoportonként → fok)
 - Chip megjelenítés: "Félelem (2) - Rettegés" + ✕ törlés
 - Koppintás (Játék mód): hatások listája lenyílik (accordion)
 
@@ -4271,7 +4288,7 @@ Több szorzó (DÖNTÉS 2026-10-16, "keverék" szabály; md/081 "Szorzó hatáso
 ### 42.4 Cél-fajták (prefix-vokabulár)
 
 - **Csupasz** (harcérték / esemény-cél): `TÉ VÉ SP SFÉ CÉ KÉ harckeret fegyverhossz pajzs-VÉ vé_veszteség manőver_ellenpróba …` (esemény-célok: `esemenyek.yaml`)
-- **Entitás cél-prefix**: `fortély:<név>`, `képzettség:<név>`.
+- **Entitás cél-prefix**: `fortély:<név>`, `képzettség:<név>`. Státusz-alcél: `fortély:<id>` a `fortély` célponton (Fortély hatás letiltása, §22.4).
 - **Al-feltétel prefix** (per-hatás `feltétel`): `manőver:<id>` (a konkrét manőver, `manoverek.yaml` id) - a manőver-effektek célja `manőver_ellenpróba`, a KONKRÉT manővert al-feltétel adja.
 - A prefix-készletet a `konstansok.yaml → feltétel_prefixek`-kel kell összehangolni (közös vokabulár a
   cél- és a feltétel-oldalon).
@@ -4313,7 +4330,7 @@ kimenetéből szűrve, ill. a megnevezett helyen):
 | `override` | `engine/harc/fegyver-calc.ts` (SP override, fegyver_override) + `engine/extrak-effekt.ts` (extrák) | §5–8, §21 |
 | `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`engine/harc/combat-roll-info.ts`: a `gyűjt*Effektek` szűrése dobás-célokra; nettó szint: `kockaSzint`, 2026-10-18) | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
-| `letilt` | `engine/effekt.ts` taktika-gyűjtő (fortély `letilt` → a taktika adott célú hozzájárulása kiesik, pl. Taktikafókusz: Visszafogott) + tiltás-feloldás (`tiltás:<id>`) + `engine/statusz-proba.ts` (próba auto-kudarc) | §21, §42.4 |
+| `letilt` | `engine/effekt.ts` taktika-gyűjtő (fortély `letilt` → a taktika adott célú hozzájárulása kiesik, pl. Taktikafókusz: Visszafogott) + tiltás-feloldás (`tiltás:<id>`) + `engine/statusz-proba.ts` (próba auto-kudarc) + `státuszLetiltottFortélyok` (státusz `letilt fortély` → a fortély-gyűjtő kihagyja, §22.4) | §21, §22.4, §42.4 |
 | `szöveges` | `formatters.tsx` / `dobas/HatasokInfo.tsx` (megjelenítés) | §22 |
 | `szorzó` | `engine/harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `engine/harc/shared.ts` `véVesztésSzorzó` (vé_veszteség - a `gyűjtHelyzetEffektek` + `gyűjtStátuszEffektek` effektjeiből) + `engine/extrak-effekt.ts` | §21, §22 |
 | `max_limit` | `engine/extrak-effekt.ts` motor; `calcHarcComputed`: helyzet/státusz `támadások_száma` (pl. Félelem (2): max 1) a fegyversorok + kétkezes `támadások`-ára (2026-10-16) | §42.3 |

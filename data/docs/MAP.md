@@ -169,7 +169,8 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivTaktikak.tsx        Taktika picker + chip-ek
   AktivHelyzetek.tsx       Harci helyzet picker (3 csoport)
   AktivStatuszok.tsx       Státusz picker
-  StatuszPickerOverlay.tsx Státusz választó overlay (kategóriák + fok)
+  StatuszPickerOverlay.tsx Státusz választó overlay (kategóriák → alkategória → fok)
+  engine/statusz.ts        Felvett státusz: "<id>: <alkategória> (fok)" parse / kulcs / címke, választható alkategóriák
   AktivHatasPool.tsx       Hatás pool box
   KotottFortelySorok.tsx   Aktív helyzethez / taktikához kötött fortélyok sorai (AktivHelyzetek + AktivTaktikak közös)
   aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)

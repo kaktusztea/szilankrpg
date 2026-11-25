@@ -75,6 +75,9 @@ események:
     csoport: "fizikai"
 
   # --- Képességek ---
+  - id: "fortély"
+    név: "Fortély hatás"
+    csoport: "képesség"
   - id: "harci_képesség"
     név: "Harci képesség"
     csoport: "képesség"

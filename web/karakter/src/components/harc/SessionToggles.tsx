@@ -3,6 +3,7 @@ import { képzettségSzint } from '../../engine/azonosito';
 import type { HarcBaseProps } from './types';
 import { getFegyverhossz } from '../../engine/harc/fegyver-helpers';
 import { fortélyToggleAktív } from '../../engine/utils';
+import { státuszLetiltottFortélyok } from '../../engine/effekt';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> {
   páncélMGT: number;
@@ -50,12 +51,21 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
 
   const harciAkroDisabled = akroKépzHiba || páncélHajlHiba || mgtHiba || fhHiba;
 
+  // Státusz által letiltott kapcsolós fortély (md/081 „Fortély hatás letiltása: X", pl. Fizikai (3) → Harci akrobatika)
+  const státuszLetiltott = státuszLetiltottFortélyok(session, data);
+  const letiltottKulcs = toggleForts.filter(tf => státuszLetiltott.has(tf.id)).map(tf => tf.id).join(',');
+
   // Force OFF when disabled
   useEffect(() => {
     if (harciAkroDisabled && session.harci_akrobatika) {
       setSession(s => ({ ...s, harci_akrobatika: false }));
     }
   }, [harciAkroDisabled, session.harci_akrobatika, setSession]);
+  useEffect(() => {
+    if (!letiltottKulcs) return;
+    const ki = letiltottKulcs.split(',').filter(id => fortélyToggleAktív(session, id));
+    if (ki.length) setSession(s => ({ ...s, ...Object.fromEntries(ki.map(id => [id, false])) }));
+  }, [letiltottKulcs, session, setSession]);
 
   return (
     <>
@@ -63,7 +73,8 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
         const has = karakter.fortélyok.some(f => f.id === tf.id && f.fok > 0);
         const sessionKey = tf.id;   // session-kulcs = fortély-id (pl. harci_akrobatika)
         const active = fortélyToggleAktív(session, sessionKey);
-        const feltételDisabled = sessionKey === 'harci_akrobatika' && harciAkroDisabled;
+        const letiltó = státuszLetiltott.get(tf.id);
+        const feltételDisabled = (sessionKey === 'harci_akrobatika' && harciAkroDisabled) || !!letiltó;
         const disabled = !has || feltételDisabled;
         return (
           // disabled-nál is kattintható (aria-disabled): a tiltás okát hint-ben mutatja
@@ -71,7 +82,9 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
             aria-pressed={active && !disabled} aria-disabled={disabled || undefined}
             onClick={() => {
               if (disabled) {
-                if (sessionKey === 'harci_akrobatika') {
+                if (has && letiltó) {
+                  showHint(`${letiltó}: Fortély hatás letiltása`);
+                } else if (sessionKey === 'harci_akrobatika') {
                   const lines: string[] = [];
                   if (!has) lines.push('Harci akrobatika fortély hiányzik');
                   if (páncélHajlHiba) lines.push(hajlÉrték === 'nem_merev' ? 'Páncél: nem-merev (Hajlékony) vért' : 'Páncél: posztó / fegyverkabát / bőr');

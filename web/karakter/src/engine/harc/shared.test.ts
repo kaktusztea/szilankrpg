@@ -85,7 +85,7 @@ describe('véVesztésSzorzó (helyzet + státusz effektek)', () => {
     expect(véVesztésSzorzó([e('vé_veszteség', 'szorzó', 2, 'Földön fekve')])).toEqual({ szorzó: 2, forrás: 'Földön fekve' });
   });
   it('helyzet + státusz nem halmozódik - a legnagyobb dominál (×2, nem ×4, §42.3)', () => {
-    expect(véVesztésSzorzó([e('vé_veszteség', 'szorzó', 2, 'Földön fekve'), e('vé_veszteség', 'szorzó', 2, 'Fizikai (2)', 'státusz')]))
+    expect(véVesztésSzorzó([e('vé_veszteség', 'szorzó', 2, 'Földön fekve'), e('vé_veszteség', 'szorzó', 2, 'fizikai (2)', 'státusz')]))
       .toEqual({ szorzó: 2, forrás: 'Földön fekve' });
   });
 });

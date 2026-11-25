@@ -3,7 +3,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { akadályÁllapot } from '../../engine/felszereles';
 
-const FIZIKAI_ELŐTAG = 'Fizikai (';
+const FIZIKAI_ELŐTAG = 'fizikai (';   // státusz-id (statuszok.yaml)
 
 /**
  * Az Akadály-állapot (md/010_03_07) „Fizikai (N)" státuszának automatikus karbantartása a
@@ -29,7 +29,7 @@ export function useAkadalyStatusz(karakter: Karakter | null, data: GameData | nu
     if (célFok === jelenlegiFok) return;
     setSession(prev => {
       const többi = prev.aktív_státuszok.filter(s => !s.startsWith(FIZIKAI_ELŐTAG));
-      return { ...prev, aktív_státuszok: célFok === 0 ? többi : [...többi, `Fizikai (${célFok})`] };
+      return { ...prev, aktív_státuszok: célFok === 0 ? többi : [...többi, `fizikai (${célFok})`] };
     });
     // ponytail: csak a cél-fok változására fut (mint a useSérültStátusz) - a kézi státusz-választást
     // nem írja felül azonnal, csak amikor az Akadály-fok ténylegesen változik.

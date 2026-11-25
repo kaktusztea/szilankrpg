@@ -8,6 +8,7 @@ import { PickerOverlay } from '../picker/PickerOverlay';
 import type { StátuszPerElem } from './aktiv-calc';
 import { előnyHátrányLabel } from '../../engine/dice';
 import { státuszDef } from '../../engine/lookup';
+import { parseStátusz, státuszKulcs, státuszCímke } from '../../engine/statusz';
 
 interface Props {
   data: GameData;
@@ -44,28 +45,27 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
       <div className="aktiv-section aktiv-section-statuszok">
         <h3>Státuszok
           <button className="aktiv-add-btn aktiv-add-btn-sm"
-            disabled={data.statuszok.every(s => s.többszörös || session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))}
+            disabled={data.statuszok.every(s => !s.többszörös && session.aktív_státuszok.some(st => parseStátusz(st)?.id === s.id))}
             onClick={() => setShowPicker(true)}>+</button>
         </h3>
         {session.aktív_státuszok.map((st, i) => {
-          const match = st.match(/^(.+) \((\d+)\)$/);
-          const stNév = match?.[1] ?? st;
-          const stFok = match ? parseInt(match[2]) : 1;
-          const baseName = stNév.includes(': ') ? stNév.split(': ')[0] : stNév;
-          const def = státuszDef(data, baseName);
+          const p = parseStátusz(st);
+          if (!p) return null;
+          const def = státuszDef(data, p.id);
           const maxFok = def?.fokok.length ?? 1;
-          const alcím = def?.fokok.find(f => f.fok === stFok)?.alcím;
-          const locked = baseName === 'Sérült';
-          const perElem = státuszPerElem.find(s => s.név === stNév || s.név === `${stNév} (${stFok})`);
+          const alcím = def?.fokok.find(f => f.fok === p.fok)?.alcím;
+          const locked = p.id === 'sérült';   // az ÉP-rubrikák vezérlik (useSérültStátusz)
+          const perElem = státuszPerElem.find(s => s.név === st);
           const clickable = !locked && maxFok > 1;
           return (
             <div key={i} className={`item-row aktiv-statusz-item${clickable ? ' aktiv-statusz-row-clickable' : ''}`} onClick={() => {
               if (!clickable) return;
-              const újFok = (stFok % maxFok) + 1;
-              setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
+              const új = státuszKulcs({ ...p, fok: (p.fok % maxFok) + 1 });
+              pushUndo(`Státusz fok: ${új}`, [{ field: 'session', prev: session }]);
+              setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? új : v) }));
             }}>
               <span className="aktiv-flex-1">
-                <strong className="aktiv-statusz-name">{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}:</strong>
+                <strong className="aktiv-statusz-name">{státuszCímke(def, p)}{alcím ? ` - ${alcím}` : ''}:</strong>
                 {perElem && perElem.hatások.length > 0 && <span> {perElem.hatások.map((h, j) => {
                   const txt = fmtHatás(h, eseményNév);
                   return txt ? <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span> : null;

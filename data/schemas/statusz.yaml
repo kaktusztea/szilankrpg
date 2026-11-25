@@ -3,10 +3,13 @@
 # Gyökér: státuszok (lista)
 
 státuszok:
-  - név: ""                    # kötelező, string
+  - id: ""                     # kötelező, egyedi azonosító (kisbetű, ékezet, _ elválasztó) - minden hivatkozás (session, feltétel) ezt használja
+    név: ""                    # kötelező, string (megjelenítési név)
     kategória: ""              # kötelező, enum: "fizikai" | "szellemi" | "harci" | "mágikus"
     többszörös: false          # opcionális, boolean (default: false) - többször felvehető alkategóriánként
-    alkategóriák: []           # opcionális, string lista - ha többszörös, az almenü opciói
+    alkategóriák: []           # opcionális, string lista - a felvételkor választandó alkategória (pl. érzék); a hatás-sorban "{alkategória}" helyőrző
+    alkategória_forrás: ""     # opcionális, enum: "tulajdonságok" | "képzettségek" - az alkategóriák listáját a build tölti ki (alkategóriák helyett)
+    alkategória_címkék: {}     # generált (alkategória_forrás esetén): alkategória → megjelenítési név
     fokok:                     # kötelező, lista (min 1 elem)
       - fok: 1                 # kötelező, number (1-N)
         alcím: ""              # kötelező, string (a fok elnevezése)

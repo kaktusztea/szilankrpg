@@ -1,46 +1,61 @@
 ---
 # Hatások katalógus - 081_hatasok.md alapján
-# Minden hatás = elnevezett, magas szintű játékfogalom
-# Státuszok és Harci helyzetek ezeket okozzák
+# Minden hatás = elnevezett, magas szintű játékfogalom; Státuszok (és később Harci helyzetek) ezekre hivatkoznak.
+#
+# Hatás-sablon (engine_spec §22.4): a státusz `hatások[]` sora `hatás: <id>` + paraméterek (érték lehet "{alkategória}": a státusz
+# felvételekor választott alkategória tölti ki, futásidőben); a build (gen/hatas_sablon.py)
+# a `mechanika` szerint kifejti a futó mód/cél effekt-sorokra (statuszok.json alakja változatlan + hatás_id / hatás_név).
+#   név          - megjelenítési név; `{param}` helyőrzővel (a kitöltött név = a 081 heading-alakja)
+#   paraméterek  - opcionális; {név: {típus, opcionális?, értékek?, csoport?}}
+#                  típus: szám (értékek: megengedett lista) | célpont (esemenyek.yaml id; csoport: megengedett csoportok)
+#                         | taktika (taktikak.yaml id) | taktika_fok (szám >= 1 vagy "MAX") | fortély (fortély-id)
+#                         | érzék (értékek: megengedett érzékek; az alcél érzék:<X> szűkít)
+#   mechanika    - effekt-sorok; a "{param}" érték-helyőrző a paraméter értékét kapja; ha a (rész)helyőrző opcionális
+#                  paramétere hiányzik, a kulcs kimarad (pl. alcél: "érzék:{érzék}" érzék nélkül)
+#   szöveg       - opcionális; szöveges mechanikánál a kifejtett sor megjegyzése (a státusz megjegyzése " - " után hozzáfűződik)
+#   megjegyzés_kötelező - opcionális; a státusz-sornak kötelező megjegyzést adnia (pl. narratív)
+#   A státusz-sor `alcél` és `megjegyzés` mezője minden Hatásnál átmegy a kifejtett sorokba.
 
 hatások:
 # --- Előny/Hátrány rendszer ---
-- id: "előny_1"
-  név: "Előny+1"
-  leírás: "2x dob, nagyobb számít. Védekezésnél: támadó Hátrány-1."
-  mechanika: [{mód: "előny", érték: 1}]
+- id: "előny"
+  név: "Előny+{érték}"
+  leírás: "2x (Előny+1) / 3x (Előny+2) dob, a nagyobb számít."
+  paraméterek:
+    érték: {típus: "szám", értékek: [1, 2]}
+    cél: {típus: "célpont", csoport: ["harci", "próba", "képesség"]}
+  mechanika: [{mód: "előny", érték: "{érték}", cél: "{cél}"}]
 
-- id: "előny_2"
-  név: "Előny+2"
-  leírás: "3x dob, legnagyobb számít. Védekezésnél: támadó Hátrány-2."
-  mechanika: [{mód: "előny", érték: 2}]
-
-- id: "hátrány_1"
-  név: "Hátrány-1"
-  leírás: "2x dob, kisebb számít. Védekezésnél: támadó Előny+1."
-  mechanika: [{mód: "hátrány", érték: -1}]
-
-- id: "hátrány_2"
-  név: "Hátrány-2"
-  leírás: "3x dob, legkisebb számít. Védekezésnél: támadó Előny+2."
-  mechanika: [{mód: "hátrány", érték: -2}]
+- id: "hátrány"
+  név: "Hátrány{érték}"
+  leírás: "2x (Hátrány-1) / 3x (Hátrány-2) dob, a kisebb számít."
+  paraméterek:
+    érték: {típus: "szám", értékek: [-1, -2]}
+    cél: {típus: "célpont", csoport: ["harci", "próba", "képesség"]}
+  mechanika: [{mód: "hátrány", érték: "{érték}", cél: "{cél}"}]
 
 # --- Kudarc ---
 - id: "automatikus_kudarc"
   név: "Automatikus kudarc"
   leírás: "Nem dobhatsz próbát, azonnali kudarc."
-  mechanika: [{mód: "letilt", cél: "képzettségpróba"}, {mód: "letilt", cél: "tulajdonságpróba"}]
+  paraméterek:
+    cél: {típus: "célpont", csoport: ["próba"]}
+  mechanika: [{mód: "letilt", cél: "{cél}"}]
 
 - id: "automatikus_próba"
-  név: "Automatikus tulajdonság/képzettségpróba"
+  név: "Automatikus Tulajdonság/Képzettségpróba"
   leírás: "Ami másnak automatikus siker, az neked sima próbadobás."
-  mechanika: [{mód: "szöveges", megjegyzés: "automatikus siker → sima próba"}]
+  paraméterek:
+    cél: {típus: "célpont", csoport: ["próba"]}
+  szöveg: "Automatikus próba"
+  mechanika: [{mód: "szöveges", cél: "{cél}"}]
 
 # --- Beszéd ---
 - id: "beszéd_zavart"
   név: "Beszéd - zavart"
   leírás: "Nehezen formálsz szavakat. Varázslásnál: extra Önuralom próba (Nehéz)."
-  mechanika: [{mód: "szöveges", cél: "beszéd", megjegyzés: "nehézkes beszéd, extra próba mágiánál"}]
+  szöveg: "Beszéd - zavart"
+  mechanika: [{mód: "szöveges", cél: "beszéd"}]
 
 - id: "beszéd_némult"
   név: "Beszéd - némult"
@@ -48,20 +63,28 @@ hatások:
   mechanika: [{mód: "letilt", cél: "beszéd"}]
 
 # --- Érzék ---
-- id: "érzék_zavart"
-  név: "Érzék - zavart"
-  leírás: "Hátrány-1 minden adott érzéken alapuló próbára."
-  mechanika: [{mód: "hátrány", érték: -1, cél: "érzék_próba"}]
-
-- id: "érzék_részleges"
-  név: "Érzék - részleges"
-  leírás: "Hátrány-2 minden adott érzéken alapuló próbára."
-  mechanika: [{mód: "hátrány", érték: -2, cél: "érzék_próba"}]
+- id: "érzék_hátrány"
+  név: "Érzék - Hátrány{érték}{érzék}"
+  leírás: "Hátrány-1 (zavart) / Hátrány-2 (részleges) minden adott érzéken alapuló próbára. Az érzék a státusz alkategóriájából (pl. Érzékvesztés: Látás) vagy az `érzék` paraméterből jön."
+  paraméterek:
+    érték: {típus: "szám", értékek: [-1, -2]}
+    érzék: {típus: "érzék", opcionális: true, értékek: ["Látás", "Hallás", "Szaglás", "Tapintás", "Ízlelés"]}
+  mechanika: [{mód: "hátrány", érték: "{érték}", cél: "érzék_próba", alcél: "érzék:{érzék}"}]
 
 - id: "érzék_kioltott"
-  név: "Érzék - kioltott"
-  leírás: "Automatikus kudarc minden adott érzéken alapuló próbára."
-  mechanika: [{mód: "letilt", cél: "érzék_próba"}]
+  név: "Érzék - automatikus kudarc (kioltott){érzék}"
+  leírás: "Automatikus kudarc minden adott érzéken alapuló próbára. Az érzék a státusz alkategóriájából vagy az `érzék` paraméterből jön."
+  paraméterek:
+    érzék: {típus: "érzék", opcionális: true, értékek: ["Látás", "Hallás", "Szaglás", "Tapintás", "Ízlelés"]}
+  mechanika: [{mód: "letilt", cél: "érzék_próba", alcél: "érzék:{érzék}"}]
+
+# --- Fortély ---
+- id: "fortély_letiltás"
+  név: "Fortély hatás letiltása: {fortély}"
+  leírás: "Egy adott fortély hatását, bónuszait ideiglenesen letiltja."
+  paraméterek:
+    fortély: {típus: "fortély"}
+  mechanika: [{mód: "letilt", cél: "fortély", alcél: "fortély:{fortély}"}]
 
 # --- Antyssjárás ---
 - id: "antyssjárás_elvesztése"
@@ -73,12 +96,14 @@ hatások:
 - id: "fp_s1"
   név: "FP S1"
   leírás: "S1 Egészség kategória rubrikái feltöltődnek FP jelölőkkel."
-  mechanika: [{mód: "szöveges", megjegyzés: "S1 FP feltöltés"}]
+  szöveg: "FP S1"
+  mechanika: [{mód: "szöveges", cél: "általános"}]
 
 - id: "fp_s2"
   név: "FP S2"
   leírás: "S1 és S2 Egészség kategóriák rubrikái feltöltődnek FP jelölőkkel."
-  mechanika: [{mód: "szöveges", megjegyzés: "S1+S2 FP feltöltés"}]
+  szöveg: "FP S2"
+  mechanika: [{mód: "szöveges", cél: "általános"}]
 
 # --- Harci képesség ---
 - id: "harcképtelenség"
@@ -110,15 +135,20 @@ hatások:
 
 # --- Taktika ---
 - id: "taktika_kötelező"
-  név: "Taktika kötelező: X"
-  leírás: "A Harci taktika listából kötelezően alkalmaznod kell egyet. Paraméterek: taktika neve (kötelező), foka (opcionális, ha értelmezhető: X vagy MAX)."
-  mechanika: [{mód: "szöveges", cél: "harci_képesség", megjegyzés: "kötelező taktika (név, opcionális fok: X / MAX)"}]
+  név: "Taktika kötelező: {taktika} taktika{fok}"
+  leírás: "A Harci taktika listából kötelezően alkalmaznod kell egyet. Paraméterek: taktika (kötelező), fok (opcionális: X vagy MAX)."
+  paraméterek:
+    taktika: {típus: "taktika"}
+    fok: {típus: "taktika_fok", opcionális: true}
+  szöveg: "Taktika kötelező: {taktika} taktika{fok}"
+  mechanika: [{mód: "szöveges", cél: "harci_képesség"}]
 
 # --- Támadások ---
 - id: "támadás_elvesztés_1"
   név: "1 támadás elvesztése"
   leírás: "-1 támadás a körben (min 1)."
-  mechanika: [{mód: "szöveges", cél: "támadások_száma", megjegyzés: "-1 támadás"}]
+  szöveg: "1 támadás elvesztése"
+  mechanika: [{mód: "szöveges", cél: "támadások_száma"}]
 
 - id: "támadás_elvesztés_többszörös"
   név: "Többszörös támadás elvesztése"
@@ -126,6 +156,12 @@ hatások:
   mechanika: [{mód: "max_limit", érték: 1, cél: "támadások_száma"}]
 
 # --- Varázslás ---
+- id: "szabad_varázslás_elvesztése"
+  név: "Varázslás: szabad varázslás elvesztése"
+  leírás: "Képtelen vagy a szabad (at-will) varázslataidat elvégezni. A rekesz alapú varázslataidat még alkalmazhatod."
+  szöveg: "Varázslás: szabad varázslás elvesztése"
+  mechanika: [{mód: "szöveges", cél: "varázslás"}]
+
 - id: "varázslás_elvesztése"
   név: "Varázslás képesség elvesztése"
   leírás: "Képtelen vagy bármilyen mágia végzésére, fenntartására."
@@ -138,27 +174,45 @@ hatások:
   mechanika: [{mód: "szorzó", érték: 2, cél: "vé_veszteség"}]
 
 - id: "vé_csökkentés_bónusz"
-  név: "VÉ csökkentés bónusz"
+  név: "VÉ csökkentés bónusz +{érték}"
   leírás: "VÉ csökkentésedhez +1 vagy +2 bónusz. Additív, de maximális értéke összesen +2."
-  mechanika: [{mód: "szöveges", cél: "vé_csökkentés", megjegyzés: "+1..+2 VÉ csökkentés bónusz (additív, max +2)"}]
+  paraméterek:
+    érték: {típus: "szám", értékek: [1, 2]}
+  szöveg: "VÉ csökkentés bónusz +{érték}"
+  mechanika: [{mód: "szöveges", cél: "vé_csökkentés"}]
 
 - id: "vé_csökkentés_fix"
-  név: "VÉ csökkentés: X"
+  név: "VÉ csökkentés: {érték}"
   leírás: "Ellenfeled VÉ-t csökkented X értékkel."
-  mechanika: [{mód: "szöveges", cél: "vé_csökkentés", megjegyzés: "fix VÉ csökkentés"}]
+  paraméterek:
+    érték: {típus: "szám"}
+  szöveg: "VÉ csökkentés: {érték}"
+  mechanika: [{mód: "szöveges", cél: "vé_csökkentés"}]
 
 # --- Vérzés ---
 - id: "vérzés_gyenge"
   név: "Vérzés - gyenge"
   leírás: "1 ÉP / 10 perc. Harcban nem számít."
-  mechanika: [{mód: "szöveges", megjegyzés: "1 ÉP / 10 perc"}]
+  szöveg: "Vérzés - gyenge: 1 ÉP / 10 perc"
+  mechanika: [{mód: "szöveges", cél: "általános"}]
 
 - id: "vérzés_közepes"
   név: "Vérzés - közepes"
   leírás: "1 ÉP / 2 kör."
-  mechanika: [{mód: "szöveges", megjegyzés: "1 ÉP / 2 kör"}]
+  szöveg: "Vérzés - közepes: 1 ÉP / 2 kör"
+  mechanika: [{mód: "szöveges", cél: "általános"}]
 
 - id: "vérzés_erős"
   név: "Vérzés - erős"
   leírás: "1 ÉP / kör."
-  mechanika: [{mód: "szöveges", megjegyzés: "1 ÉP / kör"}]
+  szöveg: "Vérzés - erős: 1 ÉP / kör"
+  mechanika: [{mód: "szöveges", cél: "általános"}]
+
+# --- Narratív (nem 081 Hatás: KM-tartalom a státuszból) ---
+- id: "narratív"
+  név: "Narratív"
+  leírás: "Szöveges, KM által alkalmazott tartalom, amelyre nincs nevesített Hatás (a státusz megjegyzése adja)."
+  paraméterek:
+    cél: {típus: "célpont"}
+  megjegyzés_kötelező: true
+  mechanika: [{mód: "szöveges", cél: "{cél}"}]

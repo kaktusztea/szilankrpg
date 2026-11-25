@@ -39,16 +39,16 @@ describe('státusz-effektek (§42 4b-2)', () => {
   };
 
   it('gyűjtStátuszEffektek: fok-hatások, alkategóriás cél-kiegészítéssel; ismeretlen bejegyzés kimarad', () => {
-    const eff = gyűjtStátuszEffektek({ aktív_státuszok: ['Fizikai (2)', 'nincs ilyen'] } as Session, data);
+    const eff = gyűjtStátuszEffektek({ aktív_státuszok: ['fizikai (2)', 'nincs ilyen'] } as Session, data);
     expect(eff.some(e => e.cél === 'vé_veszteség' && e.mód === 'szorzó' && e.érték === 2 && e.forrás.név === 'Fizikai (2)')).toBe(true);
   });
 
   it('Zavar (1): max 1 támadás minden fegyversoron; a VÉ-veszteség szorzó a Fizikai (2)-ből jön', () => {
-    const ki = hc([]), be = hc(['Zavar (1)']);
+    const ki = hc([]), be = hc(['zavar (1)']);
     const meneth = (h: ReturnType<typeof hc>) => h.fegyverResults.find(r => r.fegyver_név === 'Meneth')!.támadások;
     expect([meneth(ki), meneth(be)]).toEqual([2, 1]);
     expect(be.fegyverResults.every(r => r.támadások <= 1 && r.módok.every(m => m.támadások <= 1))).toBe(true);
-    expect([hc(['Fizikai (2)']).véVeszSzorzó, hc(['Fizikai (2)']).véVeszSzorzóForrás]).toEqual([2, 'Fizikai (2)']);
+    expect([hc(['fizikai (2)']).véVeszSzorzó, hc(['fizikai (2)']).véVeszSzorzóForrás]).toEqual([2, 'Fizikai (2)']);
   });
 });
 

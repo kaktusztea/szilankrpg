@@ -2,9 +2,9 @@ import { useEffect, type Dispatch, type SetStateAction } from 'react';
 import type { Session } from '../../engine/types';
 import { calcSérültFok } from '../../engine/harc/ep-logic';
 
-const SÉRÜLT_ELŐTAG = 'Sérült (';
+const SÉRÜLT_ELŐTAG = 'sérült (';   // státusz-id (statuszok.yaml)
 
-/** Az ÉP-rubrikák kitöltöttsége szerinti „Sérült (N)" státusz automatikus karbantartása a session-ben. */
+/** Az ÉP-rubrikák kitöltöttsége szerinti „sérült (N)" státusz automatikus karbantartása a session-ben. */
 export function useSérültStátusz(sebCount: number, oszlopMéret: number, aktívStátuszok: string[], setSession: Dispatch<SetStateAction<Session>>) {
   useEffect(() => {
     const célFok = calcSérültFok(sebCount, oszlopMéret);
@@ -13,7 +13,7 @@ export function useSérültStátusz(sebCount: number, oszlopMéret: number, akt�
     if (célFok === jelenlegiFok) return;
     setSession(prev => {
       const többi = prev.aktív_státuszok.filter(s => !s.startsWith(SÉRÜLT_ELŐTAG));
-      return { ...prev, aktív_státuszok: célFok === 0 ? többi : [...többi, `Sérült (${célFok})`] };
+      return { ...prev, aktív_státuszok: célFok === 0 ? többi : [...többi, `sérült (${célFok})`] };
     });
     // ponytail: szándékosan csak a seb-szám / oszlopméret változására fut (mint eddig) - a kézi státusz-
     // változtatást nem írja felül azonnal.

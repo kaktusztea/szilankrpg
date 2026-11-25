@@ -1,4 +1,5 @@
 import type { GameData } from '../data-loader';
+import { aktívStátuszIdk } from '../statusz';
 import type { Karakter, Session } from '../types';
 import { evaluate, buildContext } from '../reactive';
 import { harcmodorÖsszeg as calcHarcmodorÖsszeg, buildPajzsFegyverNév } from '../utils';
@@ -129,7 +130,7 @@ export function calcHarcComputed(data: GameData, karakter: Karakter, session: Se
     extraKontextus: {
       aktívFeltételek,
       fortélyFokok: new Map(k.fortélyok.map(f => [f.id, f.fok])),
-      aktívStátuszok: new Set(session.aktív_státuszok),
+      aktívStátuszok: aktívStátuszIdk(session.aktív_státuszok),
       aktorNév: aktívFegyverDef?.módok?.[0]?.aktor,
       forgatás: aktívFegyverDef?.módok?.[0]?.Forgatás,
       aktívManőver: session.aktív_manőver || undefined,

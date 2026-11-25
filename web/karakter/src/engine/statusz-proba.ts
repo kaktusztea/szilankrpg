@@ -16,6 +16,11 @@ interface PróbaKontextus {
   tulajdonság?: string;
 }
 
+/** A hatás érzéke: `alcél: érzék:<X>` (érzék_hátrány / érzék_kioltott `érzék` paramétere; Érzékvesztésnél a felvett alkategória). */
+function hatásÉrzéke(e: { alcél?: string }): string | undefined {
+  return e.alcél?.startsWith('érzék:') ? e.alcél.slice('érzék:'.length) : undefined;
+}
+
 interface PróbaEHEredmény {
   /** Összesített EH szint (clamp [-2, +2]) */
   szint: number;
@@ -34,7 +39,8 @@ function calcEH(
 
   for (const e of gyűjtStátuszEffektek({ aktív_státuszok: aktívStátuszok }, { statuszok: statuszDefs })) {
     if (!hatásVonatkozik(e, esemenyek, ctx)) continue;
-    if (e.alkategória && e.alkategória !== érzék) continue;
+    const hÉrzék = hatásÉrzéke(e);
+    if (hÉrzék && hÉrzék !== érzék) continue;
     // Felirat: „Név (alcím)" / „Név: Alkategória (alcím)"
     const címke = e.forrás.név.replace(/\(\d+\)$/, `(${e.forrás.alcím})`);
     if (e.mód === 'letilt') {
@@ -53,7 +59,7 @@ function calcEH(
  * Az aktív státuszok Előny/Hátrány + automatikus kudarc hatása egy Képzettségpróbára - a közös effekt-gyűjtőből
  * (`gyűjtStátuszEffektek`, §42), a próba-célt a képzettségre, a választott Tulajdonságra és az érzékre szűrve.
  *
- * @param aktívStátuszok - session.aktív_státuszok ("Név (fok)" / "Név: Alkategória (fok)")
+ * @param aktívStátuszok - session.aktív_státuszok ("<id> (fok)" / "<id>: <alkategória> (fok)", engine/statusz.ts)
  * @param statuszDefs - GameData.statuszok
  * @param esemenyek - GameData.esemenyek (a próba-kategóriák definíciója, md/010_11)
  * @param képzettségNév - a próbázott képzettség hivatkozási KULCSa ("észlelés", "harcmodor/kardvívás")
@@ -90,9 +96,10 @@ export function próbaÉrzékek(
 ): { opciók: string[]; érintett: string[] } {
   const ctx: PróbaKontextus = { ...(képzettségNév !== null ? { képzettség: { kulcs: képzettségNév, csoport: képzettségCsoport } } : {}), tulajdonság };
   const érintett = [...new Set(gyűjtStátuszEffektek({ aktív_státuszok: aktívStátuszok }, { statuszok: statuszDefs })
-    .filter(e => e.alkategória && hatásVonatkozik(e, esemenyek, ctx))
-    .map(e => e.alkategória!))];
-  const opciók = [...new Set(statuszDefs.filter(s => s.alkategóriák?.some(a => érintett.includes(a))).flatMap(s => s.alkategóriák ?? []))];
+    .filter(e => hatásÉrzéke(e) && hatásVonatkozik(e, esemenyek, ctx))
+    .map(e => hatásÉrzéke(e)!))];
+  // A választható érzékek: az érintett alkategóriás státuszok összes alkategóriája + az `érzék:<X>` alcélos hatások érzéke.
+  const opciók = [...new Set([...statuszDefs.filter(s => s.alkategóriák?.some(a => érintett.includes(a))).flatMap(s => s.alkategóriák ?? []), ...érintett])];
   return { opciók, érintett };
 }
 
@@ -105,9 +112,11 @@ function hatásVonatkozik(h: { cél: string; alcél?: string }, esemenyek: Eseme
   // Specifikus alcél (§42.4): csak arra az egy képzettségre / Tulajdonságra hat
   if (h.alcél) {
     const [pre, név] = h.alcél.split(':');
-    if (pre === 'képzettség') return !!kp && cél === 'képzettségpróba' && név === kp.kulcs;
+    // a képzettség-id a specializációkra is hat (képzettség:harcmodor → harcmodor/kardvívás)
+    if (pre === 'képzettség') return !!kp && cél === 'képzettségpróba' && (név === kp.kulcs || kp.kulcs.startsWith(`${név}/`));
     if (pre === 'tulajdonság') return !kp && cél === 'tulajdonságpróba' && név === ctx.tulajdonság;
-    return false;
+    // érzék:<X>: az érzék-szűrést a hívó végzi (hatásÉrzéke), a próba-illesztés a cél szerinti (lent)
+    if (pre !== 'érzék') return false;
   }
 
   const def = esemenyek.find(e => e.id === cél);

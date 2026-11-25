@@ -772,6 +772,230 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
     "szint": 0,
     "tiltott": true,
   },
+  "Áldott Tulajdonság: edzettség (1) | edzettség": {
+    "források": [
+      "Áldott Tulajdonság: Edzettség (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: edzettség (2) | edzettség": {
+    "források": [
+      "Áldott Tulajdonság: Edzettség (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: emlékezet (1) | emlékezet": {
+    "források": [
+      "Áldott Tulajdonság: Emlékezet (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: emlékezet (2) | emlékezet": {
+    "források": [
+      "Áldott Tulajdonság: Emlékezet (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: erő (1) | erő": {
+    "források": [
+      "Áldott Tulajdonság: Erő (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: erő (2) | erő": {
+    "források": [
+      "Áldott Tulajdonság: Erő (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: gyorsaság (1) | gyorsaság": {
+    "források": [
+      "Áldott Tulajdonság: Gyorsaság (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: gyorsaság (2) | gyorsaság": {
+    "források": [
+      "Áldott Tulajdonság: Gyorsaság (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: intelligencia (1) | intelligencia": {
+    "források": [
+      "Áldott Tulajdonság: Intelligencia (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: intelligencia (2) | intelligencia": {
+    "források": [
+      "Áldott Tulajdonság: Intelligencia (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: érzékenység (1) | érzékenység": {
+    "források": [
+      "Áldott Tulajdonság: Érzékenység (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: érzékenység (2) | érzékenység": {
+    "források": [
+      "Áldott Tulajdonság: Érzékenység (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: önuralom (1) | önuralom": {
+    "források": [
+      "Áldott Tulajdonság: Önuralom (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: önuralom (2) | önuralom": {
+    "források": [
+      "Áldott Tulajdonság: Önuralom (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: ügyesség (1) | ügyesség": {
+    "források": [
+      "Áldott Tulajdonság: Ügyesség (Előny+1): +1",
+    ],
+    "szint": 1,
+    "tiltott": false,
+  },
+  "Áldott Tulajdonság: ügyesség (2) | ügyesség": {
+    "források": [
+      "Áldott Tulajdonság: Ügyesség (Előny+2): +2",
+    ],
+    "szint": 2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: edzettség (1) | edzettség": {
+    "források": [
+      "Átkozott Tulajdonság: Edzettség (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: edzettség (2) | edzettség": {
+    "források": [
+      "Átkozott Tulajdonság: Edzettség (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: emlékezet (1) | emlékezet": {
+    "források": [
+      "Átkozott Tulajdonság: Emlékezet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: emlékezet (2) | emlékezet": {
+    "források": [
+      "Átkozott Tulajdonság: Emlékezet (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: erő (1) | erő": {
+    "források": [
+      "Átkozott Tulajdonság: Erő (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: erő (2) | erő": {
+    "források": [
+      "Átkozott Tulajdonság: Erő (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: gyorsaság (1) | gyorsaság": {
+    "források": [
+      "Átkozott Tulajdonság: Gyorsaság (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: gyorsaság (2) | gyorsaság": {
+    "források": [
+      "Átkozott Tulajdonság: Gyorsaság (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: intelligencia (1) | intelligencia": {
+    "források": [
+      "Átkozott Tulajdonság: Intelligencia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: intelligencia (2) | intelligencia": {
+    "források": [
+      "Átkozott Tulajdonság: Intelligencia (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: érzékenység (1) | érzékenység": {
+    "források": [
+      "Átkozott Tulajdonság: Érzékenység (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: érzékenység (2) | érzékenység": {
+    "források": [
+      "Átkozott Tulajdonság: Érzékenység (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: önuralom (1) | önuralom": {
+    "források": [
+      "Átkozott Tulajdonság: Önuralom (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: önuralom (2) | önuralom": {
+    "források": [
+      "Átkozott Tulajdonság: Önuralom (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: ügyesség (1) | ügyesség": {
+    "források": [
+      "Átkozott Tulajdonság: Ügyesség (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Tulajdonság: ügyesség (2) | ügyesség": {
+    "források": [
+      "Átkozott Tulajdonság: Ügyesség (Hátrány-2): -2",
+    ],
+    "szint": -2,
+    "tiltott": false,
+  },
   "Érzékvesztés: Hallás (1) | érzékenység": {
     "források": [
       "Érzékvesztés: Hallás (Zavart): -1",
@@ -6801,2270 +7025,2270 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség (Tulajdo
     "szint": 0,
     "tiltott": true,
   },
-  "Áldott Képzettség (1) | akrobatika": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | alakzatharc": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | alkímia": {
+  "Áldott Képzettség: alakzatharc (1) | alakzatharc": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Alakzatharc (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia": {
+  "Áldott Képzettség: alakzatharc (2) | alakzatharc": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Alakzatharc (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_aurahangolás": {
+  "Áldott Képzettség: alkímia (1) | alkímia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Alkímia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_belső_síkok_lényeinek_idézése": {
+  "Áldott Képzettség: alkímia (2) | alkímia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Alkímia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_elemi_mágia": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_időmágia": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_illúziók": {
+  "Áldott Képzettség: arkánum_aurahangolás (1) | arkánum_aurahangolás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Aurahangolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_külső_síkok_lényeinek_idézése": {
+  "Áldott Képzettség: arkánum_aurahangolás (2) | arkánum_aurahangolás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Aurahangolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_mentálmágia": {
+  "Áldott Képzettség: arkánum_belső_síkok_lényeinek_idézése (1) | arkánum_belső_síkok_lényeinek_idézése": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Belső síkok lényeinek idézése (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_metamágia": {
+  "Áldott Képzettség: arkánum_belső_síkok_lényeinek_idézése (2) | arkánum_belső_síkok_lényeinek_idézése": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Belső síkok lényeinek idézése (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_nekromancia": {
+  "Áldott Képzettség: arkánum_elemi_mágia (1) | arkánum_elemi_mágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Elemi mágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_sors_befolyásolás": {
+  "Áldott Képzettség: arkánum_elemi_mágia (2) | arkánum_elemi_mágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Elemi mágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_sors_érzékelése": {
+  "Áldott Képzettség: arkánum_időmágia (1) | arkánum_időmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Időmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_természetes_anyagok_mágiája": {
+  "Áldott Képzettség: arkánum_időmágia (2) | arkánum_időmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Időmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_természeti_jelenségek": {
+  "Áldott Képzettség: arkánum_illúziók (1) | arkánum_illúziók": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Illúziók (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_térmágia": {
+  "Áldott Képzettség: arkánum_illúziók (2) | arkánum_illúziók": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Illúziók (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_életerő_manipulálása": {
+  "Áldott Képzettség: arkánum_külső_síkok_lényeinek_idézése (1) | arkánum_külső_síkok_lényeinek_idézése": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Külső síkok lényeinek idézése (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás": {
+  "Áldott Képzettség: arkánum_külső_síkok_lényeinek_idézése (2) | arkánum_külső_síkok_lényeinek_idézése": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Külső síkok lényeinek idézése (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | csapdaállítás": {
+  "Áldott Képzettség: arkánum_mentálmágia (1) | arkánum_mentálmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Mentálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet": {
+  "Áldott Képzettség: arkánum_mentálmágia (2) | arkánum_mentálmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Mentálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | emberismeret": {
+  "Áldott Képzettség: arkánum_metamágia (1) | arkánum_metamágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Metamágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | etikett": {
+  "Áldott Képzettség: arkánum_metamágia (2) | arkánum_metamágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Metamágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_amund": {
+  "Áldott Képzettség: arkánum_nekromancia (1) | arkánum_nekromancia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Nekromancia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_anatyda": {
+  "Áldott Képzettség: arkánum_nekromancia (2) | arkánum_nekromancia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Nekromancia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_buzzgoblin": {
+  "Áldott Képzettség: arkánum_sors_befolyásolás (1) | arkánum_sors_befolyásolás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Sors befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_dzsenn": {
+  "Áldott Képzettség: arkánum_sors_befolyásolás (2) | arkánum_sors_befolyásolás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Sors befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_elar": {
+  "Áldott Képzettség: arkánum_sors_érzékelése (1) | arkánum_sors_érzékelése": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Sors érzékelése (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_elf": {
+  "Áldott Képzettség: arkánum_sors_érzékelése (2) | arkánum_sors_érzékelése": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Sors érzékelése (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_ember_déli": {
+  "Áldott Képzettség: arkánum_természetes_anyagok_mágiája (1) | arkánum_természetes_anyagok_mágiája": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Természetes anyagok mágiája (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_ember_korg": {
+  "Áldott Képzettség: arkánum_természetes_anyagok_mágiája (2) | arkánum_természetes_anyagok_mágiája": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Természetes anyagok mágiája (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_ember_slan": {
+  "Áldott Képzettség: arkánum_természeti_jelenségek (1) | arkánum_természeti_jelenségek": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Természeti jelenségek (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_ember_északi": {
+  "Áldott Képzettség: arkánum_természeti_jelenségek (2) | arkánum_természeti_jelenségek": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Természeti jelenségek (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_erdőpille": {
+  "Áldott Képzettség: arkánum_térmágia (1) | arkánum_térmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Térmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_feenhar": {
+  "Áldott Képzettség: arkánum_térmágia (2) | arkánum_térmágia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Térmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_gnóm": {
+  "Áldott Képzettség: arkánum_életerő_manipulálása (1) | arkánum_életerő_manipulálása": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Életerő Manipulálása (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_goblin": {
+  "Áldott Képzettség: arkánum_életerő_manipulálása (2) | arkánum_életerő_manipulálása": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Életerő Manipulálása (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_gyíklény": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_homoki_elf": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_hómanó": {
+  "Áldott Képzettség: csapdaállítás (1) | csapdaállítás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Csapdaállítás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_khál": {
+  "Áldott Képzettség: csapdaállítás (2) | csapdaállítás": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Csapdaállítás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_kineta": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_kobold": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_kyr": {
+  "Áldott Képzettség: emberismeret (1) | emberismeret": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Emberismeret (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_ork": {
+  "Áldott Képzettség: emberismeret (2) | emberismeret": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Emberismeret (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_sáskaharcos": {
+  "Áldott Képzettség: etikett (1) | etikett": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Etikett (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_törpe": {
+  "Áldott Képzettség: etikett (2) | etikett": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Etikett (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_tűzkobold": {
+  "Áldott Képzettség: faj_misztérium_amund (1) | faj_misztérium_amund": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Amund (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | faj_misztérium_udvari_ork": {
+  "Áldott Képzettség: faj_misztérium_amund (2) | faj_misztérium_amund": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Amund (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | fájdalomtűrés": {
+  "Áldott Képzettség: faj_misztérium_anatyda (1) | faj_misztérium_anatyda": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Anatyda (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | hadászat": {
+  "Áldott Képzettség: faj_misztérium_anatyda (2) | faj_misztérium_anatyda": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Anatyda (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | hajózás": {
+  "Áldott Képzettség: faj_misztérium_buzzgoblin (1) | faj_misztérium_buzzgoblin": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Buzzgoblin (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harci_láz": {
+  "Áldott Képzettség: faj_misztérium_buzzgoblin (2) | faj_misztérium_buzzgoblin": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Buzzgoblin (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor": {
+  "Áldott Képzettség: faj_misztérium_dzsenn (1) | faj_misztérium_dzsenn": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Dzsenn (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | kirurgia": {
+  "Áldott Képzettség: faj_misztérium_dzsenn (2) | faj_misztérium_dzsenn": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Dzsenn (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | kvantikum": {
+  "Áldott Képzettség: faj_misztérium_elar (1) | faj_misztérium_elar": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Elar (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | képzőművészet": {
+  "Áldott Képzettség: faj_misztérium_elar (2) | faj_misztérium_elar": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Elar (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | kézművesség": {
+  "Áldott Képzettség: faj_misztérium_elf (1) | faj_misztérium_elf": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Elf (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum": {
+  "Áldott Képzettség: faj_misztérium_elf (2) | faj_misztérium_elf": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Elf (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopakodás_rejtőzés": {
+  "Áldott Képzettség: faj_misztérium_ember_déli (1) | faj_misztérium_ember_déli": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (déli) (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás": {
+  "Áldott Képzettség: faj_misztérium_ember_déli (2) | faj_misztérium_ember_déli": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (déli) (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lovaglás": {
+  "Áldott Képzettség: faj_misztérium_ember_korg (1) | faj_misztérium_ember_korg": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (korg) (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | léglovaglás": {
+  "Áldott Képzettség: faj_misztérium_ember_korg (2) | faj_misztérium_ember_korg": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (korg) (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | mágikus_célzás": {
+  "Áldott Képzettség: faj_misztérium_ember_slan (1) | faj_misztérium_ember_slan": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (Slan) (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | mászás": {
+  "Áldott Képzettség: faj_misztérium_ember_slan (2) | faj_misztérium_ember_slan": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (Slan) (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | mérgek": {
+  "Áldott Képzettség: faj_misztérium_ember_északi (1) | faj_misztérium_ember_északi": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (Északi) (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | művészetismeret": {
+  "Áldott Képzettség: faj_misztérium_ember_északi (2) | faj_misztérium_ember_északi": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Ember (Északi) (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | nyelvtanulás": {
+  "Áldott Képzettség: faj_misztérium_erdőpille (1) | faj_misztérium_erdőpille": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Erdőpille (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | nyomozás": {
+  "Áldott Képzettség: faj_misztérium_erdőpille (2) | faj_misztérium_erdőpille": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Erdőpille (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | szerencsejáték": {
+  "Áldott Képzettség: faj_misztérium_feenhar (1) | faj_misztérium_feenhar": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Feenhar (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | természetjárás": {
+  "Áldott Képzettség: faj_misztérium_feenhar (2) | faj_misztérium_feenhar": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Feenhar (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | tradíció": {
+  "Áldott Képzettség: faj_misztérium_gnóm (1) | faj_misztérium_gnóm": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Gnóm (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | távolsági_harcmodor": {
+  "Áldott Képzettség: faj_misztérium_gnóm (2) | faj_misztérium_gnóm": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Gnóm (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | vajákosság": {
+  "Áldott Képzettség: faj_misztérium_goblin (1) | faj_misztérium_goblin": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Goblin (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | városi_jártasság": {
+  "Áldott Képzettség: faj_misztérium_goblin (2) | faj_misztérium_goblin": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Goblin (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | zárnyitás": {
+  "Áldott Képzettség: faj_misztérium_gyíklény (1) | faj_misztérium_gyíklény": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Gyíklény (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | álcázás_álruha": {
+  "Áldott Képzettség: faj_misztérium_gyíklény (2) | faj_misztérium_gyíklény": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Gyíklény (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | értékbecslés": {
+  "Áldott Képzettség: faj_misztérium_homoki_elf (1) | faj_misztérium_homoki_elf": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Homoki elf (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés": {
+  "Áldott Képzettség: faj_misztérium_homoki_elf (2) | faj_misztérium_homoki_elf": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Homoki elf (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | ősi_nyelv_ismerete": {
+  "Áldott Képzettség: faj_misztérium_hómanó (1) | faj_misztérium_hómanó": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Faj misztérium: Hómanó (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | akrobatika": {
+  "Áldott Képzettség: faj_misztérium_hómanó (2) | faj_misztérium_hómanó": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Hómanó (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | alakzatharc": {
+  "Áldott Képzettség: faj_misztérium_khál (1) | faj_misztérium_khál": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Khál (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | alkímia": {
+  "Áldott Képzettség: faj_misztérium_khál (2) | faj_misztérium_khál": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Khál (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia": {
+  "Áldott Képzettség: faj_misztérium_kineta (1) | faj_misztérium_kineta": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Kineta (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_aurahangolás": {
+  "Áldott Képzettség: faj_misztérium_kineta (2) | faj_misztérium_kineta": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Kineta (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_belső_síkok_lényeinek_idézése": {
+  "Áldott Képzettség: faj_misztérium_kobold (1) | faj_misztérium_kobold": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Kobold (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_elemi_mágia": {
+  "Áldott Képzettség: faj_misztérium_kobold (2) | faj_misztérium_kobold": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Kobold (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_időmágia": {
+  "Áldott Képzettség: faj_misztérium_kyr (1) | faj_misztérium_kyr": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Kyr (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_illúziók": {
+  "Áldott Képzettség: faj_misztérium_kyr (2) | faj_misztérium_kyr": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Kyr (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_külső_síkok_lényeinek_idézése": {
+  "Áldott Képzettség: faj_misztérium_ork (1) | faj_misztérium_ork": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Ork (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_mentálmágia": {
+  "Áldott Képzettség: faj_misztérium_ork (2) | faj_misztérium_ork": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Ork (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_metamágia": {
+  "Áldott Képzettség: faj_misztérium_sáskaharcos (1) | faj_misztérium_sáskaharcos": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Sáskaharcos (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_nekromancia": {
+  "Áldott Képzettség: faj_misztérium_sáskaharcos (2) | faj_misztérium_sáskaharcos": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Sáskaharcos (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_sors_befolyásolás": {
+  "Áldott Képzettség: faj_misztérium_törpe (1) | faj_misztérium_törpe": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Törpe (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_sors_érzékelése": {
+  "Áldott Képzettség: faj_misztérium_törpe (2) | faj_misztérium_törpe": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Törpe (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_természetes_anyagok_mágiája": {
+  "Áldott Képzettség: faj_misztérium_tűzkobold (1) | faj_misztérium_tűzkobold": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Tűzkobold (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_természeti_jelenségek": {
+  "Áldott Képzettség: faj_misztérium_tűzkobold (2) | faj_misztérium_tűzkobold": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Tűzkobold (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_térmágia": {
+  "Áldott Képzettség: faj_misztérium_udvari_ork (1) | faj_misztérium_udvari_ork": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Udvari ork (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_életerő_manipulálása": {
+  "Áldott Képzettség: faj_misztérium_udvari_ork (2) | faj_misztérium_udvari_ork": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Faj misztérium: Udvari ork (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás": {
+  "Áldott Képzettség: fájdalomtűrés (1) | fájdalomtűrés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Fájdalomtűrés (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | csapdaállítás": {
+  "Áldott Képzettség: fájdalomtűrés (2) | fájdalomtűrés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Fájdalomtűrés (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet": {
+  "Áldott Képzettség: hadászat (1) | hadászat": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Hadászat (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | emberismeret": {
+  "Áldott Képzettség: hadászat (2) | hadászat": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Hadászat (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | etikett": {
+  "Áldott Képzettség: hajózás (1) | hajózás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Hajózás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_amund": {
+  "Áldott Képzettség: hajózás (2) | hajózás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Hajózás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_anatyda": {
+  "Áldott Képzettség: harci_láz (1) | harci_láz": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harci láz (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_buzzgoblin": {
+  "Áldott Képzettség: harci_láz (2) | harci_láz": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harci láz (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_dzsenn": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_elar": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_elf": {
+  "Áldott Képzettség: kirurgia (1) | kirurgia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Kirurgia (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_ember_déli": {
+  "Áldott Képzettség: kirurgia (2) | kirurgia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Kirurgia (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_ember_korg": {
+  "Áldott Képzettség: kvantikum (1) | kvantikum": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Kvantikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_ember_slan": {
+  "Áldott Képzettség: kvantikum (2) | kvantikum": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Kvantikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_ember_északi": {
+  "Áldott Képzettség: képzőművészet (1) | képzőművészet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Képzőművészet (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_erdőpille": {
+  "Áldott Képzettség: képzőművészet (2) | képzőművészet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Képzőművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_feenhar": {
+  "Áldott Képzettség: kézművesség (1) | kézművesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Kézművesség (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_gnóm": {
+  "Áldott Képzettség: kézművesség (2) | kézművesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Kézművesség (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_goblin": {
+  "Áldott Képzettség: lexikum (1) | lexikum": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_gyíklény": {
+  "Áldott Képzettség: lexikum (2) | lexikum": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_homoki_elf": {
+  "Áldott Képzettség: lopakodás_rejtőzés (1) | lopakodás_rejtőzés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopakodás/rejtőzés (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_hómanó": {
+  "Áldott Képzettség: lopakodás_rejtőzés (2) | lopakodás_rejtőzés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopakodás/rejtőzés (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_khál": {
+  "Áldott Képzettség: lopás (1) | lopás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_kineta": {
+  "Áldott Képzettség: lopás (2) | lopás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_kobold": {
+  "Áldott Képzettség: lovaglás (1) | lovaglás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lovaglás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_kyr": {
+  "Áldott Képzettség: lovaglás (2) | lovaglás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lovaglás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_ork": {
+  "Áldott Képzettség: léglovaglás (1) | léglovaglás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Léglovaglás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_sáskaharcos": {
+  "Áldott Képzettség: léglovaglás (2) | léglovaglás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Léglovaglás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_törpe": {
+  "Áldott Képzettség: mágikus_célzás (1) | mágikus_célzás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Mágikus célzás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_tűzkobold": {
+  "Áldott Képzettség: mágikus_célzás (2) | mágikus_célzás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Mágikus célzás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | faj_misztérium_udvari_ork": {
+  "Áldott Képzettség: mászás (1) | mászás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Mászás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | fájdalomtűrés": {
+  "Áldott Képzettség: mászás (2) | mászás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Mászás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | hadászat": {
+  "Áldott Képzettség: mérgek (1) | mérgek": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Mérgek (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | hajózás": {
+  "Áldott Képzettség: mérgek (2) | mérgek": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Mérgek (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harci_láz": {
+  "Áldott Képzettség: művészetismeret (1) | művészetismeret": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Művészetismeret (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor": {
+  "Áldott Képzettség: művészetismeret (2) | művészetismeret": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Művészetismeret (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | kirurgia": {
+  "Áldott Képzettség: nyelvtanulás (1) | nyelvtanulás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Nyelvtanulás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | kvantikum": {
+  "Áldott Képzettség: nyelvtanulás (2) | nyelvtanulás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Nyelvtanulás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | képzőművészet": {
+  "Áldott Képzettség: nyomozás (1) | nyomozás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Nyomozás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | kézművesség": {
+  "Áldott Képzettség: nyomozás (2) | nyomozás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Nyomozás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum": {
+  "Áldott Képzettség: szerencsejáték (1) | szerencsejáték": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Szerencsejáték (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopakodás_rejtőzés": {
+  "Áldott Képzettség: szerencsejáték (2) | szerencsejáték": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Szerencsejáték (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás": {
+  "Áldott Képzettség: természetjárás (1) | természetjárás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Természetjárás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lovaglás": {
+  "Áldott Képzettség: természetjárás (2) | természetjárás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Természetjárás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | léglovaglás": {
+  "Áldott Képzettség: tradíció (1) | tradíció": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Tradíció (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | mágikus_célzás": {
+  "Áldott Képzettség: tradíció (2) | tradíció": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Tradíció (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | mászás": {
+  "Áldott Képzettség: távolsági_harcmodor (1) | távolsági_harcmodor": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Távolsági harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | mérgek": {
+  "Áldott Képzettség: távolsági_harcmodor (2) | távolsági_harcmodor": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Távolsági harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | művészetismeret": {
+  "Áldott Képzettség: vajákosság (1) | vajákosság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Vajákosság (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | nyelvtanulás": {
+  "Áldott Képzettség: vajákosság (2) | vajákosság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Vajákosság (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | nyomozás": {
+  "Áldott Képzettség: városi_jártasság (1) | városi_jártasság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Városi jártasság (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | szerencsejáték": {
+  "Áldott Képzettség: városi_jártasság (2) | városi_jártasság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Városi jártasság (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | természetjárás": {
+  "Áldott Képzettség: zárnyitás (1) | zárnyitás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Zárnyitás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | tradíció": {
+  "Áldott Képzettség: zárnyitás (2) | zárnyitás": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Zárnyitás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | távolsági_harcmodor": {
+  "Áldott Képzettség: álcázás_álruha (1) | álcázás_álruha": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Álcázás/Álruha (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | vajákosság": {
+  "Áldott Képzettség: álcázás_álruha (2) | álcázás_álruha": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Álcázás/Álruha (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | városi_jártasság": {
+  "Áldott Képzettség: értékbecslés (1) | értékbecslés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Értékbecslés (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | zárnyitás": {
+  "Áldott Képzettség: értékbecslés (2) | értékbecslés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Értékbecslés (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | álcázás_álruha": {
+  "Áldott Képzettség: észlelés (1) | észlelés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | értékbecslés": {
+  "Áldott Képzettség: észlelés (2) | észlelés": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés": {
+  "Áldott Képzettség: ősi_nyelv_ismerete (1) | ősi_nyelv_ismerete": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Ősi nyelv ismerete (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | ősi_nyelv_ismerete": {
+  "Áldott Képzettség: ősi_nyelv_ismerete (2) | ősi_nyelv_ismerete": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Ősi nyelv ismerete (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | akrobatika": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | alakzatharc": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | alkímia": {
+  "Átkozott Képzettség: alakzatharc (1) | alakzatharc": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Alakzatharc (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia": {
+  "Átkozott Képzettség: alakzatharc (2) | alakzatharc": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Alakzatharc (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_aurahangolás": {
+  "Átkozott Képzettség: alkímia (1) | alkímia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Alkímia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_belső_síkok_lényeinek_idézése": {
+  "Átkozott Képzettség: alkímia (2) | alkímia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Alkímia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_elemi_mágia": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_időmágia": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_illúziók": {
+  "Átkozott Képzettség: arkánum_aurahangolás (1) | arkánum_aurahangolás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Aurahangolás (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_külső_síkok_lényeinek_idézése": {
+  "Átkozott Képzettség: arkánum_aurahangolás (2) | arkánum_aurahangolás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Aurahangolás (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_mentálmágia": {
+  "Átkozott Képzettség: arkánum_belső_síkok_lényeinek_idézése (1) | arkánum_belső_síkok_lényeinek_idézése": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Belső síkok lényeinek idézése (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_metamágia": {
+  "Átkozott Képzettség: arkánum_belső_síkok_lényeinek_idézése (2) | arkánum_belső_síkok_lényeinek_idézése": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Belső síkok lényeinek idézése (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_nekromancia": {
+  "Átkozott Képzettség: arkánum_elemi_mágia (1) | arkánum_elemi_mágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Elemi mágia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_sors_befolyásolás": {
+  "Átkozott Képzettség: arkánum_elemi_mágia (2) | arkánum_elemi_mágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Elemi mágia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_sors_érzékelése": {
+  "Átkozott Képzettség: arkánum_időmágia (1) | arkánum_időmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Időmágia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_természetes_anyagok_mágiája": {
+  "Átkozott Képzettség: arkánum_időmágia (2) | arkánum_időmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Időmágia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_természeti_jelenségek": {
+  "Átkozott Képzettség: arkánum_illúziók (1) | arkánum_illúziók": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Illúziók (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_térmágia": {
+  "Átkozott Képzettség: arkánum_illúziók (2) | arkánum_illúziók": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Illúziók (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | arkánum_életerő_manipulálása": {
+  "Átkozott Képzettség: arkánum_külső_síkok_lényeinek_idézése (1) | arkánum_külső_síkok_lényeinek_idézése": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Külső síkok lényeinek idézése (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | befolyásolás": {
+  "Átkozott Képzettség: arkánum_külső_síkok_lényeinek_idézése (2) | arkánum_külső_síkok_lényeinek_idézése": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Külső síkok lényeinek idézése (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | csapdaállítás": {
+  "Átkozott Képzettség: arkánum_mentálmágia (1) | arkánum_mentálmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Mentálmágia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | előadóművészet": {
+  "Átkozott Képzettség: arkánum_mentálmágia (2) | arkánum_mentálmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Mentálmágia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | emberismeret": {
+  "Átkozott Képzettség: arkánum_metamágia (1) | arkánum_metamágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Metamágia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | etikett": {
+  "Átkozott Képzettség: arkánum_metamágia (2) | arkánum_metamágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Metamágia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_amund": {
+  "Átkozott Képzettség: arkánum_nekromancia (1) | arkánum_nekromancia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Nekromancia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_anatyda": {
+  "Átkozott Képzettség: arkánum_nekromancia (2) | arkánum_nekromancia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Nekromancia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_buzzgoblin": {
+  "Átkozott Képzettség: arkánum_sors_befolyásolás (1) | arkánum_sors_befolyásolás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Sors befolyásolás (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_dzsenn": {
+  "Átkozott Képzettség: arkánum_sors_befolyásolás (2) | arkánum_sors_befolyásolás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Sors befolyásolás (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_elar": {
+  "Átkozott Képzettség: arkánum_sors_érzékelése (1) | arkánum_sors_érzékelése": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Sors érzékelése (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_elf": {
+  "Átkozott Képzettség: arkánum_sors_érzékelése (2) | arkánum_sors_érzékelése": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Sors érzékelése (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_ember_déli": {
+  "Átkozott Képzettség: arkánum_természetes_anyagok_mágiája (1) | arkánum_természetes_anyagok_mágiája": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Természetes anyagok mágiája (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_ember_korg": {
+  "Átkozott Képzettség: arkánum_természetes_anyagok_mágiája (2) | arkánum_természetes_anyagok_mágiája": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Természetes anyagok mágiája (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_ember_slan": {
+  "Átkozott Képzettség: arkánum_természeti_jelenségek (1) | arkánum_természeti_jelenségek": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Természeti jelenségek (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_ember_északi": {
+  "Átkozott Képzettség: arkánum_természeti_jelenségek (2) | arkánum_természeti_jelenségek": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Természeti jelenségek (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_erdőpille": {
+  "Átkozott Képzettség: arkánum_térmágia (1) | arkánum_térmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Térmágia (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_feenhar": {
+  "Átkozott Képzettség: arkánum_térmágia (2) | arkánum_térmágia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Térmágia (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_gnóm": {
+  "Átkozott Képzettség: arkánum_életerő_manipulálása (1) | arkánum_életerő_manipulálása": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Életerő Manipulálása (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_goblin": {
+  "Átkozott Képzettség: arkánum_életerő_manipulálása (2) | arkánum_életerő_manipulálása": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Arkánum: Életerő Manipulálása (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_gyíklény": {
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_homoki_elf": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_hómanó": {
+  "Átkozott Képzettség: csapdaállítás (1) | csapdaállítás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Csapdaállítás (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_khál": {
+  "Átkozott Képzettség: csapdaállítás (2) | csapdaállítás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Csapdaállítás (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_kineta": {
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_kobold": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_kyr": {
+  "Átkozott Képzettség: emberismeret (1) | emberismeret": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Emberismeret (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_ork": {
+  "Átkozott Képzettség: emberismeret (2) | emberismeret": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Emberismeret (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_sáskaharcos": {
+  "Átkozott Képzettség: etikett (1) | etikett": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Etikett (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_törpe": {
+  "Átkozott Képzettség: etikett (2) | etikett": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Etikett (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_tűzkobold": {
+  "Átkozott Képzettség: faj_misztérium_amund (1) | faj_misztérium_amund": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Amund (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | faj_misztérium_udvari_ork": {
+  "Átkozott Képzettség: faj_misztérium_amund (2) | faj_misztérium_amund": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Amund (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | fájdalomtűrés": {
+  "Átkozott Képzettség: faj_misztérium_anatyda (1) | faj_misztérium_anatyda": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Anatyda (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | hadászat": {
+  "Átkozott Képzettség: faj_misztérium_anatyda (2) | faj_misztérium_anatyda": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Anatyda (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | hajózás": {
+  "Átkozott Képzettség: faj_misztérium_buzzgoblin (1) | faj_misztérium_buzzgoblin": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Buzzgoblin (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | harci_láz": {
+  "Átkozott Képzettség: faj_misztérium_buzzgoblin (2) | faj_misztérium_buzzgoblin": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Buzzgoblin (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | harcmodor": {
+  "Átkozott Képzettség: faj_misztérium_dzsenn (1) | faj_misztérium_dzsenn": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Dzsenn (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | kirurgia": {
+  "Átkozott Képzettség: faj_misztérium_dzsenn (2) | faj_misztérium_dzsenn": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Dzsenn (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | kvantikum": {
+  "Átkozott Képzettség: faj_misztérium_elar (1) | faj_misztérium_elar": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Elar (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | képzőművészet": {
+  "Átkozott Képzettség: faj_misztérium_elar (2) | faj_misztérium_elar": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Elar (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | kézművesség": {
+  "Átkozott Képzettség: faj_misztérium_elf (1) | faj_misztérium_elf": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Elf (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum": {
+  "Átkozott Képzettség: faj_misztérium_elf (2) | faj_misztérium_elf": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Elf (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopakodás_rejtőzés": {
+  "Átkozott Képzettség: faj_misztérium_ember_déli (1) | faj_misztérium_ember_déli": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (déli) (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás": {
+  "Átkozott Képzettség: faj_misztérium_ember_déli (2) | faj_misztérium_ember_déli": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (déli) (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lovaglás": {
+  "Átkozott Képzettség: faj_misztérium_ember_korg (1) | faj_misztérium_ember_korg": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (korg) (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | léglovaglás": {
+  "Átkozott Képzettség: faj_misztérium_ember_korg (2) | faj_misztérium_ember_korg": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (korg) (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | mágikus_célzás": {
+  "Átkozott Képzettség: faj_misztérium_ember_slan (1) | faj_misztérium_ember_slan": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (Slan) (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | mászás": {
+  "Átkozott Képzettség: faj_misztérium_ember_slan (2) | faj_misztérium_ember_slan": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (Slan) (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | mérgek": {
+  "Átkozott Képzettség: faj_misztérium_ember_északi (1) | faj_misztérium_ember_északi": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (Északi) (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | művészetismeret": {
+  "Átkozott Képzettség: faj_misztérium_ember_északi (2) | faj_misztérium_ember_északi": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Ember (Északi) (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | nyelvtanulás": {
+  "Átkozott Képzettség: faj_misztérium_erdőpille (1) | faj_misztérium_erdőpille": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Erdőpille (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | nyomozás": {
+  "Átkozott Képzettség: faj_misztérium_erdőpille (2) | faj_misztérium_erdőpille": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Erdőpille (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | szerencsejáték": {
+  "Átkozott Képzettség: faj_misztérium_feenhar (1) | faj_misztérium_feenhar": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Feenhar (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | természetjárás": {
+  "Átkozott Képzettség: faj_misztérium_feenhar (2) | faj_misztérium_feenhar": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Feenhar (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | tradíció": {
+  "Átkozott Képzettség: faj_misztérium_gnóm (1) | faj_misztérium_gnóm": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Gnóm (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | távolsági_harcmodor": {
+  "Átkozott Képzettség: faj_misztérium_gnóm (2) | faj_misztérium_gnóm": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Gnóm (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | vajákosság": {
+  "Átkozott Képzettség: faj_misztérium_goblin (1) | faj_misztérium_goblin": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Goblin (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | városi_jártasság": {
+  "Átkozott Képzettség: faj_misztérium_goblin (2) | faj_misztérium_goblin": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Goblin (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | zárnyitás": {
+  "Átkozott Képzettség: faj_misztérium_gyíklény (1) | faj_misztérium_gyíklény": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Gyíklény (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | álcázás_álruha": {
+  "Átkozott Képzettség: faj_misztérium_gyíklény (2) | faj_misztérium_gyíklény": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Gyíklény (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | értékbecslés": {
+  "Átkozott Képzettség: faj_misztérium_homoki_elf (1) | faj_misztérium_homoki_elf": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Homoki elf (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés": {
+  "Átkozott Képzettség: faj_misztérium_homoki_elf (2) | faj_misztérium_homoki_elf": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Homoki elf (Hátrány-2): -2",
     ],
-    "szint": -1,
+    "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | ősi_nyelv_ismerete": {
+  "Átkozott Képzettség: faj_misztérium_hómanó (1) | faj_misztérium_hómanó": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Faj misztérium: Hómanó (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika": {
+  "Átkozott Képzettség: faj_misztérium_hómanó (2) | faj_misztérium_hómanó": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Hómanó (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | alakzatharc": {
+  "Átkozott Képzettség: faj_misztérium_khál (1) | faj_misztérium_khál": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Khál (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | alkímia": {
+  "Átkozott Képzettség: faj_misztérium_khál (2) | faj_misztérium_khál": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Khál (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia": {
+  "Átkozott Képzettség: faj_misztérium_kineta (1) | faj_misztérium_kineta": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Kineta (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_aurahangolás": {
+  "Átkozott Képzettség: faj_misztérium_kineta (2) | faj_misztérium_kineta": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Kineta (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_belső_síkok_lényeinek_idézése": {
+  "Átkozott Képzettség: faj_misztérium_kobold (1) | faj_misztérium_kobold": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Kobold (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_elemi_mágia": {
+  "Átkozott Képzettség: faj_misztérium_kobold (2) | faj_misztérium_kobold": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Kobold (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_időmágia": {
+  "Átkozott Képzettség: faj_misztérium_kyr (1) | faj_misztérium_kyr": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Kyr (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_illúziók": {
+  "Átkozott Képzettség: faj_misztérium_kyr (2) | faj_misztérium_kyr": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Kyr (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_külső_síkok_lényeinek_idézése": {
+  "Átkozott Képzettség: faj_misztérium_ork (1) | faj_misztérium_ork": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Ork (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_mentálmágia": {
+  "Átkozott Képzettség: faj_misztérium_ork (2) | faj_misztérium_ork": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Ork (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_metamágia": {
+  "Átkozott Képzettség: faj_misztérium_sáskaharcos (1) | faj_misztérium_sáskaharcos": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Sáskaharcos (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_nekromancia": {
+  "Átkozott Képzettség: faj_misztérium_sáskaharcos (2) | faj_misztérium_sáskaharcos": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Sáskaharcos (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_sors_befolyásolás": {
+  "Átkozott Képzettség: faj_misztérium_törpe (1) | faj_misztérium_törpe": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Törpe (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_sors_érzékelése": {
+  "Átkozott Képzettség: faj_misztérium_törpe (2) | faj_misztérium_törpe": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Törpe (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_természetes_anyagok_mágiája": {
+  "Átkozott Képzettség: faj_misztérium_tűzkobold (1) | faj_misztérium_tűzkobold": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Tűzkobold (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_természeti_jelenségek": {
+  "Átkozott Képzettség: faj_misztérium_tűzkobold (2) | faj_misztérium_tűzkobold": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Tűzkobold (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_térmágia": {
+  "Átkozott Képzettség: faj_misztérium_udvari_ork (1) | faj_misztérium_udvari_ork": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Udvari ork (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_életerő_manipulálása": {
+  "Átkozott Képzettség: faj_misztérium_udvari_ork (2) | faj_misztérium_udvari_ork": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Faj misztérium: Udvari ork (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás": {
+  "Átkozott Képzettség: fájdalomtűrés (1) | fájdalomtűrés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Fájdalomtűrés (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | csapdaállítás": {
+  "Átkozott Képzettség: fájdalomtűrés (2) | fájdalomtűrés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Fájdalomtűrés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet": {
+  "Átkozott Képzettség: hadászat (1) | hadászat": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Hadászat (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | emberismeret": {
+  "Átkozott Képzettség: hadászat (2) | hadászat": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Hadászat (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | etikett": {
+  "Átkozott Képzettség: hajózás (1) | hajózás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Hajózás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_amund": {
+  "Átkozott Képzettség: hajózás (2) | hajózás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Hajózás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_anatyda": {
+  "Átkozott Képzettség: harci_láz (1) | harci_láz": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harci láz (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_buzzgoblin": {
+  "Átkozott Képzettség: harci_láz (2) | harci_láz": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harci láz (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_dzsenn": {
+  "Átkozott Képzettség: harcmodor (1) | harcmodor": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_elar": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_elf": {
+  "Átkozott Képzettség: kirurgia (1) | kirurgia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Kirurgia (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_ember_déli": {
+  "Átkozott Képzettség: kirurgia (2) | kirurgia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Kirurgia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_ember_korg": {
+  "Átkozott Képzettség: kvantikum (1) | kvantikum": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Kvantikum (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_ember_slan": {
+  "Átkozott Képzettség: kvantikum (2) | kvantikum": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Kvantikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_ember_északi": {
+  "Átkozott Képzettség: képzőművészet (1) | képzőművészet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Képzőművészet (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_erdőpille": {
+  "Átkozott Képzettség: képzőművészet (2) | képzőművészet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Képzőművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_feenhar": {
+  "Átkozott Képzettség: kézművesség (1) | kézművesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Kézművesség (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_gnóm": {
+  "Átkozott Képzettség: kézművesség (2) | kézművesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Kézművesség (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_goblin": {
+  "Átkozott Képzettség: lexikum (1) | lexikum": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_gyíklény": {
+  "Átkozott Képzettség: lexikum (2) | lexikum": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_homoki_elf": {
+  "Átkozott Képzettség: lopakodás_rejtőzés (1) | lopakodás_rejtőzés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopakodás/rejtőzés (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_hómanó": {
+  "Átkozott Képzettség: lopakodás_rejtőzés (2) | lopakodás_rejtőzés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopakodás/rejtőzés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_khál": {
+  "Átkozott Képzettség: lopás (1) | lopás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_kineta": {
+  "Átkozott Képzettség: lopás (2) | lopás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_kobold": {
+  "Átkozott Képzettség: lovaglás (1) | lovaglás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lovaglás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_kyr": {
+  "Átkozott Képzettség: lovaglás (2) | lovaglás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lovaglás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_ork": {
+  "Átkozott Képzettség: léglovaglás (1) | léglovaglás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Léglovaglás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_sáskaharcos": {
+  "Átkozott Képzettség: léglovaglás (2) | léglovaglás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Léglovaglás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_törpe": {
+  "Átkozott Képzettség: mágikus_célzás (1) | mágikus_célzás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Mágikus célzás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_tűzkobold": {
+  "Átkozott Képzettség: mágikus_célzás (2) | mágikus_célzás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Mágikus célzás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | faj_misztérium_udvari_ork": {
+  "Átkozott Képzettség: mászás (1) | mászás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Mászás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | fájdalomtűrés": {
+  "Átkozott Képzettség: mászás (2) | mászás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Mászás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | hadászat": {
+  "Átkozott Képzettség: mérgek (1) | mérgek": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Mérgek (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | hajózás": {
+  "Átkozott Képzettség: mérgek (2) | mérgek": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Mérgek (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harci_láz": {
+  "Átkozott Képzettség: művészetismeret (1) | művészetismeret": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Művészetismeret (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor": {
+  "Átkozott Képzettség: művészetismeret (2) | művészetismeret": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Művészetismeret (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | kirurgia": {
+  "Átkozott Képzettség: nyelvtanulás (1) | nyelvtanulás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Nyelvtanulás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | kvantikum": {
+  "Átkozott Képzettség: nyelvtanulás (2) | nyelvtanulás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Nyelvtanulás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | képzőművészet": {
+  "Átkozott Képzettség: nyomozás (1) | nyomozás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Nyomozás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | kézművesség": {
+  "Átkozott Képzettség: nyomozás (2) | nyomozás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Nyomozás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum": {
+  "Átkozott Képzettség: szerencsejáték (1) | szerencsejáték": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Szerencsejáték (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopakodás_rejtőzés": {
+  "Átkozott Képzettség: szerencsejáték (2) | szerencsejáték": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Szerencsejáték (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás": {
+  "Átkozott Képzettség: természetjárás (1) | természetjárás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Természetjárás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lovaglás": {
+  "Átkozott Képzettség: természetjárás (2) | természetjárás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Természetjárás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | léglovaglás": {
+  "Átkozott Képzettség: tradíció (1) | tradíció": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Tradíció (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | mágikus_célzás": {
+  "Átkozott Képzettség: tradíció (2) | tradíció": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Tradíció (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | mászás": {
+  "Átkozott Képzettség: távolsági_harcmodor (1) | távolsági_harcmodor": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Távolsági harcmodor (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | mérgek": {
+  "Átkozott Képzettség: távolsági_harcmodor (2) | távolsági_harcmodor": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Távolsági harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | művészetismeret": {
+  "Átkozott Képzettség: vajákosság (1) | vajákosság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Vajákosság (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | nyelvtanulás": {
+  "Átkozott Képzettség: vajákosság (2) | vajákosság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Vajákosság (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | nyomozás": {
+  "Átkozott Képzettség: városi_jártasság (1) | városi_jártasság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Városi jártasság (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | szerencsejáték": {
+  "Átkozott Képzettség: városi_jártasság (2) | városi_jártasság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Városi jártasság (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | természetjárás": {
+  "Átkozott Képzettség: zárnyitás (1) | zárnyitás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Zárnyitás (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | tradíció": {
+  "Átkozott Képzettség: zárnyitás (2) | zárnyitás": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Zárnyitás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | távolsági_harcmodor": {
+  "Átkozott Képzettség: álcázás_álruha (1) | álcázás_álruha": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Álcázás/Álruha (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | vajákosság": {
+  "Átkozott Képzettség: álcázás_álruha (2) | álcázás_álruha": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Álcázás/Álruha (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | városi_jártasság": {
+  "Átkozott Képzettség: értékbecslés (1) | értékbecslés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Értékbecslés (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | zárnyitás": {
+  "Átkozott Képzettség: értékbecslés (2) | értékbecslés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Értékbecslés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | álcázás_álruha": {
+  "Átkozott Képzettség: észlelés (1) | észlelés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | értékbecslés": {
+  "Átkozott Képzettség: észlelés (2) | észlelés": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés": {
+  "Átkozott Képzettség: ősi_nyelv_ismerete (1) | ősi_nyelv_ismerete": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Ősi nyelv ismerete (Hátrány-1): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | ősi_nyelv_ismerete": {
+  "Átkozott Képzettség: ősi_nyelv_ismerete (2) | ősi_nyelv_ismerete": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Ősi nyelv ismerete (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
@@ -17184,1794 +17408,1794 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szint": 0,
     "tiltott": true,
   },
-  "Áldott Képzettség (1) | akrobatika | edzettség": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | akrobatika | emlékezet": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | akrobatika | erő": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | erő": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | akrobatika | gyorsaság": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | akrobatika | intelligencia": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | akrobatika | érzékenység": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | akrobatika | önuralom": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | akrobatika | ügyesség": {
+  "Áldott Képzettség: akrobatika (1) | akrobatika | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | edzettség": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | emlékezet": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | erő": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | gyorsaság": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | intelligencia": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | érzékenység": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | önuralom": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | arkánum_asztrálmágia | ügyesség": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (1) | befolyásolás | edzettség": {
-    "források": [
-      "Áldott Képzettség (Előny+1): +1",
-    ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás | emlékezet": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás | erő": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | erő": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás | gyorsaság": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás | intelligencia": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás | érzékenység": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás | önuralom": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | befolyásolás | ügyesség": {
+  "Áldott Képzettség: akrobatika (2) | akrobatika | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Akrobatika (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | edzettség": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | emlékezet": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | erő": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | erő": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | gyorsaság": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | intelligencia": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | érzékenység": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | önuralom": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | előadóművészet | ügyesség": {
+  "Áldott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | edzettség": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | emlékezet": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | erő": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | erő": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | gyorsaság": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | intelligencia": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | érzékenység": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | önuralom": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | harcmodor | ügyesség": {
+  "Áldott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Arkánum: Asztrálmágia (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | edzettség": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | emlékezet": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | erő": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | erő": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | gyorsaság": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | intelligencia": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | érzékenység": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | önuralom": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lexikum | ügyesség": {
+  "Áldott Képzettség: befolyásolás (1) | befolyásolás | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | edzettség": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | emlékezet": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | erő": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | erő": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | gyorsaság": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | intelligencia": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | érzékenység": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | önuralom": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | lopás | ügyesség": {
+  "Áldott Képzettség: befolyásolás (2) | befolyásolás | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Befolyásolás (Előny+2): +2",
     ],
-    "szint": 1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | edzettség": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | emlékezet": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | erő": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | erő": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | gyorsaság": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | intelligencia": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | érzékenység": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | önuralom": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (1) | észlelés | ügyesség": {
+  "Áldott Képzettség: előadóművészet (1) | előadóművészet | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+1): +1",
+      "Áldott Képzettség: Előadóművészet (Előny+1): +1",
     ],
     "szint": 1,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | edzettség": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | emlékezet": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | erő": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | gyorsaság": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | intelligencia": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | érzékenység": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | önuralom": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
-    "tiltott": false,
-  },
-  "Áldott Képzettség (2) | akrobatika | ügyesség": {
-    "források": [
-      "Áldott Képzettség (Előny+2): +2",
-    ],
-    "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | edzettség": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | emlékezet": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | erő": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | erő": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | gyorsaság": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | intelligencia": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | érzékenység": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | önuralom": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | arkánum_asztrálmágia | ügyesség": {
+  "Áldott Képzettség: előadóművészet (2) | előadóművészet | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Előadóművészet (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | edzettség": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | emlékezet": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | erő": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | erő": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | gyorsaság": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | intelligencia": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | érzékenység": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | önuralom": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | befolyásolás | ügyesség": {
+  "Áldott Képzettség: harcmodor (1) | harcmodor | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | edzettség": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | emlékezet": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | erő": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | erő": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | gyorsaság": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | intelligencia": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | érzékenység": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | önuralom": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | előadóművészet | ügyesség": {
+  "Áldott Képzettség: harcmodor (2) | harcmodor | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Harcmodor (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | edzettség": {
+  "Áldott Képzettség: lexikum (1) | lexikum | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | emlékezet": {
+  "Áldott Képzettség: lexikum (1) | lexikum | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | erő": {
+  "Áldott Képzettség: lexikum (1) | lexikum | erő": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | gyorsaság": {
+  "Áldott Képzettség: lexikum (1) | lexikum | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | intelligencia": {
+  "Áldott Képzettség: lexikum (1) | lexikum | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | érzékenység": {
+  "Áldott Képzettség: lexikum (1) | lexikum | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | önuralom": {
+  "Áldott Képzettség: lexikum (1) | lexikum | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | harcmodor | ügyesség": {
+  "Áldott Képzettség: lexikum (1) | lexikum | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | edzettség": {
+  "Áldott Képzettség: lexikum (2) | lexikum | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | emlékezet": {
+  "Áldott Képzettség: lexikum (2) | lexikum | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | erő": {
+  "Áldott Képzettség: lexikum (2) | lexikum | erő": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | gyorsaság": {
+  "Áldott Képzettség: lexikum (2) | lexikum | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | intelligencia": {
+  "Áldott Képzettség: lexikum (2) | lexikum | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | érzékenység": {
+  "Áldott Képzettség: lexikum (2) | lexikum | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | önuralom": {
+  "Áldott Képzettség: lexikum (2) | lexikum | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lexikum | ügyesség": {
+  "Áldott Képzettség: lexikum (2) | lexikum | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lexikum (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | edzettség": {
+  "Áldott Képzettség: lopás (1) | lopás | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | emlékezet": {
+  "Áldott Képzettség: lopás (1) | lopás | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | erő": {
+  "Áldott Képzettség: lopás (1) | lopás | erő": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | gyorsaság": {
+  "Áldott Képzettség: lopás (1) | lopás | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | intelligencia": {
+  "Áldott Képzettség: lopás (1) | lopás | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | érzékenység": {
+  "Áldott Képzettség: lopás (1) | lopás | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | önuralom": {
+  "Áldott Képzettség: lopás (1) | lopás | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | lopás | ügyesség": {
+  "Áldott Képzettség: lopás (1) | lopás | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+1): +1",
     ],
-    "szint": 2,
+    "szint": 1,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | edzettség": {
+  "Áldott Képzettség: lopás (2) | lopás | edzettség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | emlékezet": {
+  "Áldott Képzettség: lopás (2) | lopás | emlékezet": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | erő": {
+  "Áldott Képzettség: lopás (2) | lopás | erő": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | gyorsaság": {
+  "Áldott Képzettség: lopás (2) | lopás | gyorsaság": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | intelligencia": {
+  "Áldott Képzettség: lopás (2) | lopás | intelligencia": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | érzékenység": {
+  "Áldott Képzettség: lopás (2) | lopás | érzékenység": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | önuralom": {
+  "Áldott Képzettség: lopás (2) | lopás | önuralom": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
     "tiltott": false,
   },
-  "Áldott Képzettség (2) | észlelés | ügyesség": {
+  "Áldott Képzettség: lopás (2) | lopás | ügyesség": {
     "források": [
-      "Áldott Képzettség (Előny+2): +2",
+      "Áldott Képzettség: Lopás (Előny+2): +2",
     ],
     "szint": 2,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | edzettség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | emlékezet": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | erő": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | gyorsaság": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | intelligencia": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | érzékenység": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | önuralom": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | akrobatika | ügyesség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | edzettség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | emlékezet": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | erő": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | gyorsaság": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | intelligencia": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | érzékenység": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | önuralom": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | arkánum_asztrálmágia | ügyesség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | edzettség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | emlékezet": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | erő": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | gyorsaság": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | intelligencia": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | érzékenység": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | önuralom": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | befolyásolás | ügyesség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | előadóművészet | edzettség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | előadóművészet | emlékezet": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | előadóművészet | erő": {
+  "Áldott Képzettség: észlelés (1) | észlelés | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | előadóművészet | gyorsaság": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | előadóművészet | intelligencia": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | előadóművészet | érzékenység": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | előadóművészet | önuralom": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | előadóművészet | ügyesség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | edzettség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | emlékezet": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | erő": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | gyorsaság": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | intelligencia": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | érzékenység": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | önuralom": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | harcmodor | ügyesség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
-    "tiltott": false,
-  },
-  "Átkozott Képzettség (1) | lexikum | edzettség": {
-    "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
-    ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum | emlékezet": {
+  "Áldott Képzettség: észlelés (1) | észlelés | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum | erő": {
+  "Áldott Képzettség: észlelés (1) | észlelés | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum | gyorsaság": {
+  "Áldott Képzettség: észlelés (1) | észlelés | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum | intelligencia": {
+  "Áldott Képzettség: észlelés (1) | észlelés | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum | érzékenység": {
+  "Áldott Képzettség: észlelés (1) | észlelés | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum | önuralom": {
+  "Áldott Képzettség: észlelés (1) | észlelés | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lexikum | ügyesség": {
+  "Áldott Képzettség: észlelés (1) | észlelés | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+1): +1",
     ],
-    "szint": -1,
+    "szint": 1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | edzettség": {
+  "Áldott Képzettség: észlelés (2) | észlelés | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | emlékezet": {
+  "Áldott Képzettség: észlelés (2) | észlelés | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | erő": {
+  "Áldott Képzettség: észlelés (2) | észlelés | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | gyorsaság": {
+  "Áldott Képzettség: észlelés (2) | észlelés | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | intelligencia": {
+  "Áldott Képzettség: észlelés (2) | észlelés | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | érzékenység": {
+  "Áldott Képzettség: észlelés (2) | észlelés | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | önuralom": {
+  "Áldott Képzettség: észlelés (2) | észlelés | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | lopás | ügyesség": {
+  "Áldott Képzettség: észlelés (2) | észlelés | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Áldott Képzettség: Észlelés (Előny+2): +2",
     ],
-    "szint": -1,
+    "szint": 2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | edzettség": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | emlékezet": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | erő": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | gyorsaság": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | intelligencia": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | érzékenység": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | önuralom": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (1) | észlelés | ügyesség": {
+  "Átkozott Képzettség: akrobatika (1) | akrobatika | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-1): -1",
+      "Átkozott Képzettség: Akrobatika (Hátrány-1): -1",
     ],
     "szint": -1,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | edzettség": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | emlékezet": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | erő": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | gyorsaság": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | intelligencia": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | érzékenység": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | önuralom": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | akrobatika | ügyesség": {
+  "Átkozott Képzettség: akrobatika (2) | akrobatika | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Akrobatika (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | edzettség": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | emlékezet": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | erő": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | gyorsaság": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | intelligencia": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | érzékenység": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | önuralom": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (1) | arkánum_asztrálmágia | ügyesség": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | edzettség": {
+    "források": [
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | emlékezet": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | erő": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | gyorsaság": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | intelligencia": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | érzékenység": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | önuralom": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | arkánum_asztrálmágia | ügyesség": {
+  "Átkozott Képzettség: arkánum_asztrálmágia (2) | arkánum_asztrálmágia | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Arkánum: Asztrálmágia (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | edzettség": {
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | emlékezet": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | erő": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | gyorsaság": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | intelligencia": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | érzékenység": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | önuralom": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (1) | befolyásolás | ügyesség": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | edzettség": {
+    "források": [
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | emlékezet": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | erő": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | gyorsaság": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | intelligencia": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | érzékenység": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | önuralom": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | befolyásolás | ügyesség": {
+  "Átkozott Képzettség: befolyásolás (2) | befolyásolás | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Befolyásolás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | edzettség": {
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | emlékezet": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | erő": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | gyorsaság": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | intelligencia": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | érzékenység": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | önuralom": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (1) | előadóművészet | ügyesség": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | edzettség": {
+    "források": [
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | emlékezet": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | erő": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | gyorsaság": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | intelligencia": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | érzékenység": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | önuralom": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | előadóművészet | ügyesség": {
+  "Átkozott Képzettség: előadóművészet (2) | előadóművészet | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Előadóművészet (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | edzettség": {
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | emlékezet": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | erő": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | gyorsaság": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | intelligencia": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | érzékenység": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | önuralom": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (1) | harcmodor | ügyesség": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | edzettség": {
+    "források": [
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | emlékezet": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | erő": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | gyorsaság": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | intelligencia": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | érzékenység": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | önuralom": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | harcmodor | ügyesség": {
+  "Átkozott Képzettség: harcmodor (2) | harcmodor | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Harcmodor (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | edzettség": {
+  "Átkozott Képzettség: lexikum (1) | lexikum | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (1) | lexikum | emlékezet": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (1) | lexikum | erő": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (1) | lexikum | gyorsaság": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (1) | lexikum | intelligencia": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (1) | lexikum | érzékenység": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (1) | lexikum | önuralom": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (1) | lexikum | ügyesség": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lexikum (2) | lexikum | edzettség": {
+    "források": [
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | emlékezet": {
+  "Átkozott Képzettség: lexikum (2) | lexikum | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | erő": {
+  "Átkozott Képzettség: lexikum (2) | lexikum | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | gyorsaság": {
+  "Átkozott Képzettség: lexikum (2) | lexikum | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | intelligencia": {
+  "Átkozott Képzettség: lexikum (2) | lexikum | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | érzékenység": {
+  "Átkozott Képzettség: lexikum (2) | lexikum | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | önuralom": {
+  "Átkozott Képzettség: lexikum (2) | lexikum | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lexikum | ügyesség": {
+  "Átkozott Képzettség: lexikum (2) | lexikum | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lexikum (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | edzettség": {
+  "Átkozott Képzettség: lopás (1) | lopás | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (1) | lopás | emlékezet": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (1) | lopás | erő": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (1) | lopás | gyorsaság": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (1) | lopás | intelligencia": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (1) | lopás | érzékenység": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (1) | lopás | önuralom": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (1) | lopás | ügyesség": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: lopás (2) | lopás | edzettség": {
+    "források": [
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | emlékezet": {
+  "Átkozott Képzettség: lopás (2) | lopás | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | erő": {
+  "Átkozott Képzettség: lopás (2) | lopás | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | gyorsaság": {
+  "Átkozott Képzettség: lopás (2) | lopás | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | intelligencia": {
+  "Átkozott Képzettség: lopás (2) | lopás | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | érzékenység": {
+  "Átkozott Képzettség: lopás (2) | lopás | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | önuralom": {
+  "Átkozott Képzettség: lopás (2) | lopás | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | lopás | ügyesség": {
+  "Átkozott Képzettség: lopás (2) | lopás | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Lopás (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | edzettség": {
+  "Átkozott Képzettség: észlelés (1) | észlelés | edzettség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (1) | észlelés | emlékezet": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (1) | észlelés | erő": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (1) | észlelés | gyorsaság": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (1) | észlelés | intelligencia": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (1) | észlelés | érzékenység": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (1) | észlelés | önuralom": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (1) | észlelés | ügyesség": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-1): -1",
+    ],
+    "szint": -1,
+    "tiltott": false,
+  },
+  "Átkozott Képzettség: észlelés (2) | észlelés | edzettség": {
+    "források": [
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | emlékezet": {
+  "Átkozott Képzettség: észlelés (2) | észlelés | emlékezet": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | erő": {
+  "Átkozott Képzettség: észlelés (2) | észlelés | erő": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | gyorsaság": {
+  "Átkozott Képzettség: észlelés (2) | észlelés | gyorsaság": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | intelligencia": {
+  "Átkozott Képzettség: észlelés (2) | észlelés | intelligencia": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | érzékenység": {
+  "Átkozott Képzettség: észlelés (2) | észlelés | érzékenység": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | önuralom": {
+  "Átkozott Képzettség: észlelés (2) | észlelés | önuralom": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,
   },
-  "Átkozott Képzettség (2) | észlelés | ügyesség": {
+  "Átkozott Képzettség: észlelés (2) | észlelés | ügyesség": {
     "források": [
-      "Átkozott Képzettség (Hátrány-2): -2",
+      "Átkozott Képzettség: Észlelés (Hátrány-2): -2",
     ],
     "szint": -2,
     "tiltott": false,

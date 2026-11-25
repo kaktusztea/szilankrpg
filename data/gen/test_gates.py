@@ -14,9 +14,11 @@ import unittest
 from .common import SOURCES_DIR, SCHEMAS_DIR, load_yaml
 from .schema import validate_schema
 from .naming_lint import lint
+from .hatas_sablon import sablon_hibak, kifejt_statuszok, alkategoria_kifejt
+from .validators import fortely_lista
 from .validators import (
     validate_aktiv_ful, validate_esemenyek, validate_statuszok, validate_harci_helyzet_hatasok,
-    validate_hatasok_katalogus, validate_effekt_hivatkozasok, id_hibak, session_toggle_hibak, proba_alcel_hibak,
+    validate_effekt_hivatkozasok, id_hibak, session_toggle_hibak, proba_alcel_hibak,
     proba_alcel_refs,
 )
 from .hivatkozas import id_hivatkozasi_hibak, manover_ref_hibak, kepz_ref_hiba, fortely_ids
@@ -77,9 +79,13 @@ class AktivFulGates(unittest.TestCase):
         A = self.A
         validate_aktiv_ful(A.taktikak, A.helyzetek, [], A.manoverek, A.effekt_modok)
         validate_esemenyek(A.esemenyek, proba_alcel_refs(SOURCES_DIR, A.statuszok), A.konstansok['képzettség_csoportok'])
-        validate_statuszok(A.statuszok, A.effekt_modok, A.esemenyek)
+        st = copy.deepcopy(A.statuszok)
+        self.assertEqual(alkategoria_kifejt(st, A.konstansok['tulajdonság_sorrend'], ['lexikum']), [])
+        self.assertEqual(id_hibak([(s['név'], s) for s in st], 'státusz'), [])
+        self.assertEqual(kifejt_statuszok(st, A.hatasok, A.esemenyek, A.taktikak, fortely_lista(SOURCES_DIR), hivatkozas_kotelezo=True), [])
+        validate_statuszok(st, A.effekt_modok, A.esemenyek)
         validate_harci_helyzet_hatasok(A.helyzetek, A.effekt_modok, A.esemenyek, A.harcertek_celok)
-        validate_hatasok_katalogus(A.hatasok, A.effekt_modok, A.esemenyek)
+        self.assertEqual(sablon_hibak(A.hatasok, A.effekt_modok, A.esemenyek), [])
         validate_effekt_hivatkozasok(A.helyzetek, A.extrak, A.statuszok)
 
     def test_esemeny_duplikalt_id_bukik(self):
@@ -125,9 +131,84 @@ class AktivFulGates(unittest.TestCase):
         next(x for x in h if x.get('megjegyzés_dobásra'))['megjegyzés_dobásra']['nincs_ilyen_cél'] = 'szöveg'
         bukik(self, validate_harci_helyzet_hatasok, h, self.A.effekt_modok, self.A.esemenyek, self.A.harcertek_celok)
 
+    def _st(self):
+        """A státuszok másolata, a build sorrendjében előkészítve (alkategória_forrás → alkategóriák)."""
+        st = copy.deepcopy(self.A.statuszok)
+        alkategoria_kifejt(st, self.A.konstansok['tulajdonság_sorrend'], ['lexikum'])
+        return st
+
+    def _kifejt_hiba(self, sor, kotelezo=False):
+        """Egy státusz-hatás sor a Blokkolt (1)-be téve: a kifejtés hibát ad-e."""
+        st = self._st()
+        next(x for x in st if x['név'] == 'Blokkolt')['fokok'][0]['hatások'] = [sor]
+        return kifejt_statuszok(st, self.A.hatasok, self.A.esemenyek, self.A.taktikak, fortely_lista(SOURCES_DIR), hivatkozas_kotelezo=kotelezo)
+
+    def test_hatas_hivatkozas_ervenyes_ok(self):
+        self.assertEqual(self._kifejt_hiba({'hatás': 'hátrány', 'érték': -1, 'cél': 'té_dobás'}), [])
+        self.assertEqual(self._kifejt_hiba({'hatás': 'taktika_kötelező', 'taktika': 'támadó', 'fok': 'MAX'}), [])
+        self.assertEqual(self._kifejt_hiba({'hatás': 'fortély_letiltás', 'fortély': 'harci_akrobatika'}), [])
+        self.assertEqual(self._kifejt_hiba({'hatás': 'érzék_hátrány', 'érték': -1, 'érzék': 'Látás'}), [])
+        self.assertEqual(self._kifejt_hiba({'hatás': 'érzék_kioltott'}), [])
+
+    def test_hatas_hivatkozas_hibak(self):
+        for sor in [
+            {'hatás': 'nincs_ilyen_hatás'},
+            {'hatás': 'mozgás_feleződik', 'érték': 1},                         # ismeretlen paraméter
+            {'hatás': 'hátrány', 'érték': -1},                                  # hiányzó cél
+            {'hatás': 'hátrány', 'érték': -3, 'cél': 'té_dobás'},               # nem megengedett érték
+            {'hatás': 'hátrány', 'érték': -1, 'cél': 'nincs_ilyen_cél'},        # ismeretlen célpont
+            {'hatás': 'automatikus_kudarc', 'cél': 'té_dobás'},                 # célpont-csoport nem próba
+            {'hatás': 'taktika_kötelező', 'taktika': 'nincs_ilyen'},            # ismeretlen taktika
+            {'hatás': 'taktika_kötelező', 'taktika': 'védő', 'fok': 0},         # rossz fok
+            {'hatás': 'narratív', 'cél': 'általános'},                          # kötelező megjegyzés hiányzik
+            {'hatás': 'fortély_letiltás', 'fortély': 'nincs_ilyen_fortély'},    # ismeretlen fortély
+            {'hatás': 'érzék_hátrány', 'érték': -1, 'érzék': 'Ultrahang'},      # nem megengedett érzék
+        ]:
+            with self.subTest(sor=sor):
+                self.assertTrue(self._kifejt_hiba(sor))
+
+    def test_kifejtes_osszevonas(self):
+        """Azonos nem-szöveges mechanika egyszer marad; különböző szövegű szöveges sorok mind megmaradnak."""
+        st = self._st()
+        fok = next(x for x in st if x['név'] == 'Blokkolt')['fokok'][0]
+        fok['hatások'] = [{'hatás': 'harcképtelenség'}, {'hatás': 'mozgás_képtelen'},
+                          {'hatás': 'taktika_kötelező', 'taktika': 'támadó', 'fok': 'MAX'},
+                          {'hatás': 'narratív', 'cél': 'harci_képesség', 'megjegyzés': 'x'}]
+        self.assertEqual(kifejt_statuszok(st, self.A.hatasok, self.A.esemenyek, self.A.taktikak, fortely_lista(SOURCES_DIR)), [])
+        self.assertEqual([(h['mód'], h['cél']) for h in fok['hatások']],
+                         [('letilt', 'harci_képesség'), ('letilt', 'mozgás'), ('szöveges', 'harci_képesség'), ('szöveges', 'harci_képesség')])
+
+    def test_alkategoria_hibak(self):
+        st = [{'id': 'a', 'alkategória_forrás': 'nincs_ilyen'}, {'id': 'b', 'alkategóriák': ['x'], 'alkategória_forrás': 'tulajdonságok'}]
+        self.assertEqual(len(alkategoria_kifejt(st, ['erő'], ['lexikum'])), 2)
+        st = [{'id': 'c', 'alkategória_forrás': 'tulajdonságok'}]
+        self.assertEqual(alkategoria_kifejt(st, ['erő', 'ügyesség'], []), []); self.assertEqual(st[0]['alkategóriák'], ['erő', 'ügyesség'])
+
+    def test_alkategoria_helyorzo(self):
+        # Blokkolt: nincs alkategória → a {alkategória} helyőrző hiba
+        self.assertTrue(self._kifejt_hiba({'hatás': 'érzék_hátrány', 'érték': -1, 'érzék': '{alkategória}'}))
+        self.assertTrue(self._kifejt_hiba({'hatás': 'előny', 'érték': 1, 'cél': 'tulajdonságpróba', 'alcél': 'tulajdonság:{alkategória}'}))
+        # alkategóriával: érvényes; nem megengedett érzék-alkategória: hiba
+        st = copy.deepcopy(self.A.statuszok)
+        b = next(x for x in st if x['név'] == 'Blokkolt'); b['fokok'] = [b['fokok'][0]]
+        b['alkategóriák'] = ['Látás']; b['fokok'][0]['hatások'] = [{'hatás': 'érzék_hátrány', 'érték': -1, 'érzék': '{alkategória}'}]
+        args = (self.A.hatasok, self.A.esemenyek, self.A.taktikak, fortely_lista(SOURCES_DIR))
+        self.assertEqual(kifejt_statuszok([b], *args), [])
+        self.assertEqual(b['fokok'][0]['hatások'][0]['alcél'], 'érzék:{alkategória}')
+        b['alkategóriák'] = ['Ultrahang']; b['fokok'][0]['hatások'] = [{'hatás': 'érzék_hátrány', 'érték': -1, 'érzék': '{alkategória}'}]
+        self.assertTrue(kifejt_statuszok([b], *args))
+
+    def test_nyers_sor_kotelezo_hivatkozasnal_bukik(self):
+        self.assertTrue(self._kifejt_hiba({'mód': 'hátrány', 'érték': -1, 'cél': 'té_dobás'}, kotelezo=True))
+        self.assertEqual(self._kifejt_hiba({'mód': 'hátrány', 'érték': -1, 'cél': 'té_dobás'}), [])
+
+    def test_hatas_sablon_nem_deklaralt_helyorzo_bukik(self):
+        h = copy.deepcopy(self.A.hatasok); next(x for x in h if x['id'] == 'mozgás_feleződik')['név'] = 'Mozgás {nincs}'
+        self.assertTrue(sablon_hibak(h, self.A.effekt_modok, self.A.esemenyek))
+
     def test_hatas_katalogus_ismeretlen_mod_bukik(self):
         h = copy.deepcopy(self.A.hatasok); h[0]['mechanika'][0]['mód'] = 'nincs_ilyen_mód'
-        bukik(self, validate_hatasok_katalogus, h, self.A.effekt_modok, self.A.esemenyek)
+        self.assertTrue(sablon_hibak(h, self.A.effekt_modok, self.A.esemenyek))
 
     def test_effekt_hivatkozas_ismeretlen_helyzet_bukik(self):
         x = copy.deepcopy(self.A.extrak)

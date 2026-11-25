@@ -118,6 +118,11 @@
     "csoport": "fizikai"
   },
   {
+    "id": "fortély",
+    "név": "Fortély hatás",
+    "csoport": "képesség"
+  },
+  {
     "id": "harci_képesség",
     "név": "Harci képesség",
     "csoport": "képesség"

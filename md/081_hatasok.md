@@ -120,7 +120,7 @@ Ami másnak automatikus siker, az neked már próbadobásos.
 
 ### 🔥 Érzék - Hátrány-1 (zavart)
 
-Látás / Hallás / Szaglás.
+Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
 ```
 Hátrány-1 minden adott érzéken
@@ -130,7 +130,7 @@ Hátrány-1 minden adott érzéken
 
 ### 🔥 Érzék - Hátrány-2 (részleges)
 
-Látás / Hallás / Szaglás.
+Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
 ```
 Hátrány-2 minden adott érzéken
@@ -140,12 +140,20 @@ Hátrány-2 minden adott érzéken
 
 ### 🔥 Érzék - automatikus kudarc (kioltott)
 
-Látás / Hallás / Szaglás.
+Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
 ```
 Automatikus kudarc minden
   adott érzéken alapuló próbára.
 ```
+
+<br />
+
+---
+
+### 🔥 Fortély hatás letiltása: X
+
+Egy adott fortély hatását, bónuszait ideiglenesen letiltja.
 
 <br />
 
@@ -236,6 +244,14 @@ Max 1 támadás / kör
 
 ---
 
+### 🔥 Varázslás: szabad varázslás elvesztése
+
+Képtelen vagy a szabad varázslataidat elvégezni. A "rekesz" alapú varázslataidat még alkalmazhatod.
+
+<br />
+
+---
+
 ### 🔥 Varázslás képesség elvesztése
 
 Képtelen vagy bármilyen mágia létrehozására, fenntartására. Az Aurádra nincs hatással.
@@ -248,7 +264,7 @@ Képtelen vagy bármilyen mágia létrehozására, fenntartására. Az Aurádra 
 
 Irányodba indított támadásnál az elszenvedett `VÉ` veszteséged duplázódik.
 
-🔆 Nem halmozható többször. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
+🔆 Nem halmozható többször. Lásd még: [Halmozódás más szorzókkal](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
 <br />
 

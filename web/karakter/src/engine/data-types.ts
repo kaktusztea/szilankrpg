@@ -195,6 +195,9 @@ export interface StatuszHatas {
   alcél?: string;
   megjegyzés?: string;
   feltétel?: string;
+  /** A Hatás-sablon (hatasok.yaml) id-je és kitöltött neve (build-idejű kifejtés, engine_spec §22.4). */
+  hatás_id?: string;
+  hatás_név?: string;
 }
 
 export interface StatuszFok {
@@ -204,10 +207,16 @@ export interface StatuszFok {
 }
 
 export interface StatuszEntry {
+  /** Hivatkozási kulcs (session.aktív_státuszok, feltételek). */
+  id: string;
   név: string;
   kategória: string;
   többszörös?: boolean;
   alkategóriák?: string[];
+  /** Az alkategóriák forrása (a build tölti ki az `alkategóriák`-at), a feliratokhoz. */
+  alkategória_forrás?: 'tulajdonságok' | 'képzettségek';
+  /** Generált (alkategória_forrás esetén): alkategória → megjelenítési név (pl. lexikum → Lexikum). */
+  alkategória_címkék?: Record<string, string>;
   fokok: StatuszFok[];
 }
 

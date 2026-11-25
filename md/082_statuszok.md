@@ -173,8 +173,8 @@ Hátrány-1
   Tulajdonságpróbákra
 
 1 támadás elvesztése
-⭕Nincs (at-will) varázslás
-  kivéve papok, ők részegen is tudnak⭕
+Varázslás: szabad varázslás elvesztése
+  ⭕kivéve papok, ők részegen is tudnak⭕
 
 Előny+1 Fájdalomtűrés dobásra
   Áfiumok, kábítószerek, fejbekólintás hatására
@@ -230,7 +230,7 @@ Mint az Ájulásnál, továbbá:
 
 ### ✴️ Érzékvesztés (1) Zavart
 
-Látás, Hallás, Szaglás.
+Látás, Hallás, Szaglás, Tapintás, Ízlelés.
 
 ```
 Hátrány-1
@@ -280,7 +280,9 @@ Hátrány-1
 
 Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 
-### ✴️ Félelem (2) Rettegés/Pánik
+### ✴️ Félelem (2) Rettegés
+
+Pánik érzete is ide tartozik.
 
 ```
 Taktika kötelező: Teljes Védekezés taktika
@@ -317,6 +319,8 @@ Hátrány-1
   Szellemi képzettségpróbákra
 ```
 
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
+
 ⚡ Példa
 
 - Edzettségedhez mérten elfáradtál hegymászás során
@@ -330,6 +334,8 @@ Hátrány-1 KÉ dobásra
 Hátrány-2 Szellemi képzettségpróbákra
 FP S1
 ```
+
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 
 ⚡ Példák
 
@@ -349,12 +355,14 @@ FP S2
 
 Mozgás - feleződik
 
-Automatikus kudarc
+Fortély hatás letiltása:
   Harci akrobatika
   (nincs harcérték bónusz)
 ```
 
-Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
+
+Kapcsolódik: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
 
 ⚡ Példa: éhhalál szélén tengődsz
 
@@ -589,7 +597,6 @@ Hátrány-1
 
 ```
 Pszí használat elvesztése
-Lassabb gondolkodás
 
 Hátrány-1
   Szellemi képzettségpróbákra
@@ -602,7 +609,6 @@ Hátrány-1
 
 ```
 Pszí használat elvesztése
-Lassabb gondolkodás
 
 Hátrány-2
   Mágiahasználat

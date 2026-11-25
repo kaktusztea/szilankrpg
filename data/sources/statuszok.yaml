@@ -1,77 +1,88 @@
 státuszok:
-- név: Áldott Tulajdonság
+- id: áldott_tulajdonság
+  név: Áldott Tulajdonság
   kategória: mágikus
-  többszörös: false
-  alkategóriák: []
+  többszörös: true
+  alkategória_forrás: tulajdonságok
   fokok:
   - fok: 1
     alcím: Előny+1
     hatások:
-    - mód: szöveges
+    - hatás: előny
+      érték: 1
       cél: tulajdonságpróba
-      megjegyzés: "Előny+1 adott Tulajdonságra, feltétel esetén (KM; a Tulajdonság még nem választható)"
+      alcél: "tulajdonság:{alkategória}"
+      megjegyzés: feltétel esetén
   - fok: 2
     alcím: Előny+2
     hatások:
-    - mód: szöveges
+    - hatás: előny
+      érték: 2
       cél: tulajdonságpróba
-      megjegyzés: "Előny+2 adott Tulajdonságra, feltétel esetén (KM; a Tulajdonság még nem választható)"
-- név: Átkozott Tulajdonság
+      alcél: "tulajdonság:{alkategória}"
+      megjegyzés: feltétel esetén
+- id: átkozott_tulajdonság
+  név: Átkozott Tulajdonság
   kategória: mágikus
-  többszörös: false
-  alkategóriák: []
+  többszörös: true
+  alkategória_forrás: tulajdonságok
   fokok:
   - fok: 1
     alcím: Hátrány-1
     hatások:
-    - mód: szöveges
+    - hatás: hátrány
+      érték: -1
       cél: tulajdonságpróba
-      megjegyzés: "Hátrány-1 adott Tulajdonságra (KM; a Tulajdonság még nem választható)"
+      alcél: "tulajdonság:{alkategória}"
   - fok: 2
     alcím: Hátrány-2
     hatások:
-    - mód: szöveges
+    - hatás: hátrány
+      érték: -2
       cél: tulajdonságpróba
-      megjegyzés: "Hátrány-2 adott Tulajdonságra (KM; a Tulajdonság még nem választható)"
-- név: Áldott Képzettség
+      alcél: "tulajdonság:{alkategória}"
+- id: áldott_képzettség
+  név: Áldott Képzettség
   kategória: mágikus
-  többszörös: false
-  alkategóriák: []
+  többszörös: true
+  alkategória_forrás: képzettségek
   fokok:
   - fok: 1
     alcím: Előny+1
     hatások:
-    - mód: előny
+    - hatás: előny
       érték: 1
       cél: képzettségpróba
-      megjegyzés: adott Képzettségre
+      alcél: "képzettség:{alkategória}"
   - fok: 2
     alcím: Előny+2
     hatások:
-    - mód: előny
+    - hatás: előny
       érték: 2
       cél: képzettségpróba
-      megjegyzés: adott Képzettségre
-- név: Átkozott Képzettség
+      alcél: "képzettség:{alkategória}"
+- id: átkozott_képzettség
+  név: Átkozott Képzettség
   kategória: mágikus
-  többszörös: false
-  alkategóriák: []
+  többszörös: true
+  alkategória_forrás: képzettségek
   fokok:
   - fok: 1
     alcím: Hátrány-1
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: képzettségpróba
-      megjegyzés: adott Képzettségre
+      alcél: "képzettség:{alkategória}"
   - fok: 2
     alcím: Hátrány-2
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: képzettségpróba
-      megjegyzés: adott Képzettségre
-- név: Átkozott Viselkedés
+      alcél: "képzettség:{alkategória}"
+- id: átkozott_viselkedés
+  név: Átkozott Viselkedés
   kategória: szellemi
   többszörös: false
   alkategóriák: []
@@ -86,7 +97,7 @@ státuszok:
     - text: "Példa: Irigy - nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni."
     - text: "Átkozott (1) Érzékek esetén lásd az Érzékvesztés Státuszt."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: képzettségpróba
       megjegyzés: KM határozza meg
@@ -95,11 +106,12 @@ státuszok:
     megjegyzések:
     - text: "Átkozott (2) Érzékek esetén lásd az Érzékvesztés Státuszt."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: képzettségpróba
       megjegyzés: KM határozza meg
-- név: Bénultság
+- id: bénultság
+  név: Bénultság
   kategória: fizikai
   többszörös: false
   alkategóriák: []
@@ -109,21 +121,17 @@ státuszok:
     megjegyzések:
     - text: "Beszélni még tudsz, és szellemi képességeket tudsz használni."
     hatások:
-    - mód: letilt
-      cél: harci_képesség
-    - mód: letilt
-      cél: mozgás
+    - hatás: harcképtelenség
+    - hatás: mozgás_képtelen
       megjegyzés: nyaktól lefelé
   - fok: 2
     alcím: Paralízis
     hatások:
-    - mód: letilt
-      cél: harci_képesség
-    - mód: letilt
-      cél: mozgás
-    - mód: letilt
-      cél: beszéd
-- név: Blokkolt
+    - hatás: harcképtelenség
+    - hatás: mozgás_képtelen
+    - hatás: beszéd_némult
+- id: blokkolt
+  név: Blokkolt
   kategória: fizikai
   többszörös: false
   alkategóriák: []
@@ -133,22 +141,19 @@ státuszok:
     megjegyzések:
     - text: "Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: té_dobás
-    - mód: szorzó
-      érték: 0.5
-      cél: mozgás
+    - hatás: mozgás_feleződik
   - fok: 2
     alcím: Erősen
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: té_dobás
-    - mód: szorzó
-      érték: 0.5
-      cél: mozgás
-- név: Eszmélet
+    - hatás: mozgás_feleződik
+- id: eszmélet
+  név: Eszmélet
   kategória: fizikai
   többszörös: false
   alkategóriák: []
@@ -158,22 +163,22 @@ státuszok:
     megjegyzések:
     - text: "Példa: sima részegség."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: té_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: képzettségpróba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
-    - mód: szöveges
-      cél: támadások_száma
-      megjegyzés: -1 támadás
-    - mód: előny
+    - hatás: támadás_elvesztés_1
+    - hatás: szabad_varázslás_elvesztése
+      megjegyzés: "kivéve papok: ők részegen is tudnak"
+    - hatás: előny
       érték: 1
       cél: képzettségpróba
       alcél: "képzettség:fájdalomtűrés"
@@ -182,26 +187,22 @@ státuszok:
     alcím: Kábultság
     megjegyzések:
     - text: "Példa: pocsolya részegség."
-    - text: "A papok részegen is tudnak varázslást használni (at-will), más varázstudó nem."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: té_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: képzettségpróba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
-    - mód: max_limit
-      érték: 1
-      cél: támadások_száma
-    - mód: letilt
-      cél: varázslás
-    - mód: előny
+    - hatás: támadás_elvesztés_többszörös
+    - hatás: varázslás_elvesztése
+    - hatás: előny
       érték: 2
       cél: képzettségpróba
       alcél: "képzettség:fájdalomtűrés"
@@ -211,73 +212,61 @@ státuszok:
     megjegyzések:
     - text: "Az Antyssjárás ebben az állapotban is működik."
     hatások:
-    - mód: letilt
-      cél: harci_képesség
-    - mód: letilt
+    - hatás: harcképtelenség
+    - hatás: automatikus_kudarc
       cél: képzettségpróba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: tulajdonságpróba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
-      cél: mozgás
-    - mód: letilt
-      cél: beszéd
-    - mód: letilt
-      cél: pszi
-    - mód: letilt
-      cél: varázslás
+    - hatás: mozgás_képtelen
+    - hatás: beszéd_némult
+    - hatás: pszi_elvesztése
+    - hatás: varázslás_elvesztése
   - fok: 4
     alcím: Kóma
     megjegyzések:
     - text: "Mint az Ájulásnál, továbbá automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy."
     - text: "Az Antyss a valóságod; Antyssjárás képzettség nélkül haladni, cselekedni is alig tudsz."
     hatások:
-    - mód: letilt
-      cél: harci_képesség
-    - mód: letilt
+    - hatás: harcképtelenség
+    - hatás: automatikus_kudarc
       cél: képzettségpróba
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: tulajdonságpróba
-    - mód: letilt
-      cél: mozgás
-    - mód: letilt
-      cél: beszéd
-    - mód: letilt
-      cél: pszi
-    - mód: letilt
-      cél: varázslás
-    - mód: szöveges
+    - hatás: mozgás_képtelen
+    - hatás: beszéd_némult
+    - hatás: pszi_elvesztése
+    - hatás: varázslás_elvesztése
+    - hatás: narratív
       cél: antyssjárás
       megjegyzés: Antysson ragadsz
-- név: Érzékvesztés
+- id: érzékvesztés
+  név: Érzékvesztés
   kategória: fizikai
   többszörös: true
   alkategóriák: ["Látás", "Hallás", "Szaglás", "Tapintás", "Ízlelés"]
   fokok:
   - fok: 1
     alcím: Zavart
-    megjegyzések:
-    - text: "Alkategóriák: Látás, Hallás, Szaglás (a szabálykönyvben említett érzékek - a Tapintás/Ízlelés a webapp-kiterjesztés)."
     hatások:
-    - mód: hátrány
+    - hatás: érzék_hátrány
       érték: -1
-      cél: érzék_próba
+      érzék: "{alkategória}"
       megjegyzés: Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára
   - fok: 2
     alcím: Részleges
     hatások:
-    - mód: hátrány
+    - hatás: érzék_hátrány
       érték: -2
-      cél: érzék_próba
+      érzék: "{alkategória}"
       megjegyzés: Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára
   - fok: 3
     alcím: Teljes
     hatások:
-    - mód: letilt
-      cél: érzék_próba
+    - hatás: érzék_kioltott
+      érzék: "{alkategória}"
       megjegyzés: Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára (automatikus kudarc)
-- név: Félelem
+- id: félelem
+  név: Félelem
   kategória: szellemi
   többszörös: false
   alkategóriák: []
@@ -287,37 +276,34 @@ státuszok:
     megjegyzések:
     - text: "Mi okozhatja? Nem bírja a stresszt; kezdő a harcban; meg lett félemlítve (pl. Befolyásolás+Félelemkeltés képzettség ellenpróbával, KM dönt)."
     hatások:
-    - mód: szöveges
-      cél: harci_képesség
-      megjegyzés: "Taktika kötelező: Védő taktika (3) (VÉ:+3, TÉ:-6)"
-    - mód: hátrány
+    - hatás: taktika_kötelező
+      taktika: védő
+      fok: 3
+      megjegyzés: "VÉ:+3, TÉ:-6"
+    - hatás: hátrány
       érték: -1
       cél: szociális_próba
   - fok: 2
     alcím: Rettegés
     megjegyzések:
-    - text: "Csak mágia vagy démonok hatására érhető el."
+    - text: "Pánik érzete is ide tartozik."
     hatások:
-    - mód: szöveges
-      cél: harci_képesség
-      megjegyzés: "Taktika kötelező: Teljes Védekezés taktika"
-    - mód: letilt
+    - hatás: taktika_kötelező
+      taktika: teljes_védekezés
+    - hatás: automatikus_kudarc
       cél: szociális_próba
-      megjegyzés: automatikus kudarc
   - fok: 3
     alcím: Bénító félelem
     megjegyzések:
     - text: "Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)."
+    - text: "Csak mágia vagy démonok hatására kerülhetsz ebbe az állapotba."
     hatások:
-    - mód: letilt
-      cél: mozgás
-    - mód: letilt
-      cél: harci_képesség
-    - mód: letilt
-      cél: varázslás
-    - mód: letilt
-      cél: pszi
-- név: Fizikai
+    - hatás: mozgás_képtelen
+    - hatás: harcképtelenség
+    - hatás: varázslás_elvesztése
+    - hatás: pszi_elvesztése
+- id: fizikai
+  név: Fizikai
   kategória: fizikai
   többszörös: false
   alkategóriák: []
@@ -326,11 +312,12 @@ státuszok:
     alcím: Fáradtság
     megjegyzések:
     - text: "Példák: Edzettségedhez mérten elfáradtál hegymászás során; egy hete nem ettél."
+    - text: "Kapcsolódik: Szívósság fortély."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: szellemi_próba
   - fok: 2
@@ -339,43 +326,35 @@ státuszok:
     - text: "Példák: már nem is emlékszel, mikor aludtál utoljára; összeverten menekülsz órák óta."
     - text: "Kapcsolódik: Szívósság fortély."
     hatások:
-    - mód: szorzó
-      érték: 2
-      cél: vé_veszteség
-    - mód: hátrány
+    - hatás: vé_veszteség_duplázódik
+    - hatás: hátrány
       érték: -1
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: szellemi_próba
-    - mód: szöveges
-      cél: általános
-      megjegyzés: FP S1 feltöltődik
+    - hatás: fp_s1
   - fok: 3
     alcím: Elcsigázottság
     megjegyzések:
     - text: "Példa: éhhalál szélén tengődés."
-    - text: "Kapcsolódik: Szívósság fortély, Harci akrobatika fortély."
+    - text: "Kapcsolódik: Szívósság fortély."
+    - text: "Kapcsolódik: Harci akrobatika fortély."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: nem_harci_próba
-    - mód: max_limit
-      érték: 1
-      cél: támadások_száma
-    - mód: szorzó
-      érték: 2
-      cél: vé_veszteség
-    - mód: szorzó
-      érték: 0.5
-      cél: mozgás
-    - mód: szöveges
-      cél: képzettségpróba
-      megjegyzés: FP S2; Automatikus kudarc Harci akrobatika
-- név: Hangulat
+    - hatás: támadás_elvesztés_többszörös
+    - hatás: vé_veszteség_duplázódik
+    - hatás: mozgás_feleződik
+    - hatás: fp_s2
+    - hatás: fortély_letiltás
+      fortély: harci_akrobatika
+- id: hangulat
+  név: Hangulat
   kategória: szellemi
   többszörös: false
   alkategóriák: []
@@ -385,7 +364,7 @@ státuszok:
     megjegyzések:
     - text: "A nem-mágikus érzékszervi, vagy érzelmi ingerek fokozottabban hatnak rád. Érzelmileg jobban megnyílsz - pozitív és negatív értelemben is."
     hatások:
-    - mód: szöveges
+    - hatás: narratív
       cél: képzettségpróba
       megjegyzés: KM adhat Előny+1 vagy Hátrány-1 szituáció függően
   - fok: 2
@@ -393,11 +372,11 @@ státuszok:
     megjegyzések:
     - text: "A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról."
     hatások:
-    - mód: előny
+    - hatás: előny
       érték: 1
       cél: képzettségpróba
       megjegyzés: kreatív tevékenységekre
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: képzettségpróba
       megjegyzés: koncentrációt igénylő feladatokra
@@ -406,14 +385,14 @@ státuszok:
     megjegyzések:
     - text: "A karakter eufórikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására; ilyenkor túlzottan magabiztos, meggondolatlan döntéseket hozhat."
     hatások:
-    - mód: előny
+    - hatás: előny
       érték: 1
       cél: képzettségpróba
       megjegyzés: kreatív tevékenységekre
-    - mód: szöveges
+    - hatás: narratív
       cél: varázslás
-      megjegyzés: "Ellenséges varázstudó Asztrálmágia Komplexitás-próbájára Hátrány-1 (az asztrális befolyásolásnak jobban ellenáll az eufórikus személy)"
-    - mód: hátrány
+      megjegyzés: Ellenséges varázstudó Asztrálmágia Komplexitás-próbájára Hátrány-1 (az asztrális befolyásolásnak jobban ellenáll az eufórikus személy)
+    - hatás: hátrány
       érték: -2
       cél: képzettségpróba
       megjegyzés: koncentrációt igénylő feladatokra
@@ -422,18 +401,19 @@ státuszok:
     megjegyzések:
     - text: "A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet."
     hatások:
-    - mód: előny
+    - hatás: előny
       érték: 1
       cél: képzettségpróba
       megjegyzés: obszesszió tárgyához kötődő
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: képzettségpróba
       megjegyzés: minden más
-    - mód: szöveges
+    - hatás: narratív
       cél: képzettségpróba
       megjegyzés: Automatikus kudarc (KM mondja meg mire)
-- név: Indulat
+- id: indulat
+  név: Indulat
   kategória: szellemi
   többszörös: false
   alkategóriák: []
@@ -444,28 +424,39 @@ státuszok:
     - text: "Aki Haragból harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör."
     - text: "Ebben az állapotban a karakter használhatja a Kezdeményező Taktikát; minden defenzív jellegű taktika és a Kiváró taktika tiltott."
     hatások:
-    - mód: szöveges
+    - hatás: taktika_kötelező
+      taktika: támadó
+      fok: "MAX"
+    - hatás: narratív
       cél: harci_képesség
-      megjegyzés: "Taktika kötelező: Támadó taktika (MAX); Kezdeményező használható; minden defenzív taktika és a Kiváró tiltott"
+      megjegyzés: Kezdeményező taktika használható; minden defenzív jellegű taktika és a Kiváró taktika tiltott
   - fok: 2
     alcím: Gyűlölet
     hatások:
-    - mód: szöveges
+    - hatás: taktika_kötelező
+      taktika: támadó
+      fok: "MAX"
+    - hatás: narratív
       cél: harci_képesség
-      megjegyzés: "Taktika kötelező: Támadó taktika (MAX); Kezdeményező használható; minden defenzív taktika és a Kiváró tiltott; Taktika kötelező: Öngyilkos roham taktika - egyszer; Taktika kötelező: Roham taktika - utána, ha van hely"
+      megjegyzés: Kezdeményező taktika használható; minden defenzív jellegű taktika és a Kiváró taktika tiltott
+    - hatás: taktika_kötelező
+      taktika: öngyilkos_roham
+      megjegyzés: egyszer
+    - hatás: taktika_kötelező
+      taktika: roham
+      megjegyzés: utána, ha van hely
   - fok: 3
     alcím: Őrjöngés
     hatások:
-    - mód: szöveges
+    - hatás: narratív
       cél: harci_képesség
       megjegyzés: Mint Gyűlölet + mindenkit megtámad
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: szociális_próba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: szellemi_próba
-      megjegyzés: automatikus kudarc
-- név: Késztetés
+- id: késztetés
+  név: Késztetés
   kategória: szellemi
   többszörös: false
   alkategóriák: []
@@ -477,16 +468,16 @@ státuszok:
     - text: "Példa: Kleptománia - \"El kéne lopni valamit...\""
     - text: "Példa: Alkoholizmus (\"Igyak piát?\") - 1. fok: Önuralom tulajdonságpróba (Nagyivó)."
     hatások:
-    - mód: szöveges
+    - hatás: automatikus_próba
       cél: tulajdonságpróba
       alcél: "tulajdonság:önuralom"
-      megjegyzés: Automatikus Önuralom próba (12)
+      megjegyzés: Önuralom (12)
   - fok: 2
     alcím: Vágy
     megjegyzések:
     - text: "Példa: Alkoholizmus - 2. fok: Hátrány-1 (Alkoholista)."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
       alcél: "tulajdonság:önuralom"
@@ -496,12 +487,13 @@ státuszok:
     megjegyzések:
     - text: "Példa: Alkoholizmus - 3. fok: Hátrány-2 (Masszív alkoholista)."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
       alcél: "tulajdonság:önuralom"
       megjegyzés: Önuralom próbára
-- név: Rosszullét
+- id: rosszullét
+  név: Rosszullét
   kategória: fizikai
   többszörös: false
   alkategóriák: []
@@ -509,31 +501,32 @@ státuszok:
   - fok: 1
     alcím: Közepes
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: té_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: fizikai_próba
   - fok: 2
     alcím: Erős
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: té_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: fizikai_próba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: szociális_próba
-- név: Sérült
+- id: sérült
+  név: Sérült
   kategória: fizikai
   többszörös: false
   alkategóriák: []
@@ -543,10 +536,10 @@ státuszok:
     megjegyzések:
     - text: "Bővebben lásd a Sebesülés fejezetet (sérülés hatása Tulajdonság- és Képzettségpróbára)."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: képzettségpróba
   - fok: 2
@@ -554,10 +547,10 @@ státuszok:
     megjegyzések:
     - text: "Bővebben lásd a Sebesülés fejezetet (sérülés hatása Tulajdonság- és Képzettségpróbára)."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: képzettségpróba
   - fok: 3
@@ -565,22 +558,16 @@ státuszok:
     megjegyzések:
     - text: "Ha 0 ÉP értékre ér a karakter, haldoklani kezd - bővebben lásd a Haldoklás alfejezetet."
     hatások:
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: képzettségpróba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: tulajdonságpróba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
-      cél: harci_képesség
-    - mód: letilt
-      cél: mozgás
-      megjegyzés: lecövekelt
-    - mód: letilt
-      cél: pszi
-    - mód: letilt
-      cél: varázslás
-- név: Szellemi
+    - hatás: harcképtelenség
+    - hatás: mozgás_lecövekelt
+    - hatás: pszi_elvesztése
+    - hatás: varázslás_elvesztése
+- id: szellemi
+  név: Szellemi
   kategória: szellemi
   többszörös: false
   alkategóriák: []
@@ -590,41 +577,40 @@ státuszok:
     megjegyzések:
     - text: "Példa: egy-két átvirrasztott éjszaka."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: képzettségpróba
       alcél: "képzettség:észlelés"
   - fok: 2
     alcím: Eltompultság
     hatások:
-    - mód: letilt
-      cél: pszi
-    - mód: hátrány
+    - hatás: pszi_elvesztése
+    - hatás: hátrány
       érték: -1
       cél: szellemi_próba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: szociális_próba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: varázslás
       megjegyzés: random hatás esélye ↑
   - fok: 3
     alcím: Delírium
     hatások:
-    - mód: letilt
-      cél: pszi
-    - mód: hátrány
+    - hatás: pszi_elvesztése
+    - hatás: hátrány
       érték: -2
       cél: varázslás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: szellemi_próba
       megjegyzés: nem-mágikus
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: szociális_próba
-- név: Trauma
+- id: trauma
+  név: Trauma
   kategória: szellemi
   többszörös: false
   alkategóriák: []
@@ -634,17 +620,17 @@ státuszok:
     megjegyzések:
     - text: "Antyssjárás esetén a karakter \"rossz\" helyre kerül."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
       alcél: "tulajdonság:önuralom"
       megjegyzés: Önuralom
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
       alcél: "tulajdonság:érzékenység"
       megjegyzés: Érzékenység
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: szociális_próba
       megjegyzés: Önuralom/Érzékenység használatakor
@@ -653,21 +639,22 @@ státuszok:
     megjegyzések:
     - text: "Antyssjárás esetén a karakter \"nagyon rossz\" helyre kerül."
     hatások:
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
       alcél: "tulajdonság:önuralom"
       megjegyzés: Önuralom
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
       alcél: "tulajdonság:érzékenység"
       megjegyzés: Érzékenység
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: szociális_próba
       megjegyzés: Önuralom/Érzékenység használatakor
-- név: Zavar
+- id: zavar
+  név: Zavar
   kategória: fizikai
   többszörös: false
   alkategóriák: []
@@ -678,24 +665,22 @@ státuszok:
     - text: "A következő kör végéig tart."
     - text: "Példa: ledöbbenés, stb."
     hatások:
-    - mód: max_limit
-      érték: 1
-      cél: támadások_száma
-    - mód: hátrány
+    - hatás: támadás_elvesztés_többszörös
+    - hatás: hátrány
       érték: -1
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
       alcél: "tulajdonság:gyorsaság"
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
       alcél: "tulajdonság:ügyesség"
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: szellemi_próba
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: szociális_próba
   - fok: 2
@@ -704,35 +689,27 @@ státuszok:
     - text: "A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból ismert, \"stunned\"."
     - text: "Példa: becsapó villámvarázs (ez okozhat más Státuszt is, mint például az Érzékvesztés, több érzékszervre is akár)."
     hatások:
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: szellemi_próba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: szociális_próba
-      megjegyzés: automatikus kudarc
-    - mód: hátrány
+    - hatás: hátrány
       érték: -1
       cél: té_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: ké_dobás
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
       alcél: "tulajdonság:gyorsaság"
-    - mód: hátrány
+    - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
       alcél: "tulajdonság:ügyesség"
-    - mód: max_limit
-      érték: 1
-      cél: támadások_száma
-    - mód: letilt
-      cél: mozgás
-      megjegyzés: lecövekelt
-    - mód: szöveges
-      cél: beszéd
-      megjegyzés: zavart
+    - hatás: támadás_elvesztés_többszörös
+    - hatás: mozgás_lecövekelt
+    - hatás: beszéd_zavart
   - fok: 3
     alcím: Sokk
     megjegyzések:
@@ -741,21 +718,14 @@ státuszok:
     - text: "Kihozni valakit: Emberismeret + Érzékenység Képzettségpróba, Célszám 12 (Nehéz) → siker enyhíti 2. fokra. Mágiával kihozva 1, 2 vagy 3 szintet enyhít."
     - text: "Példák: természetes villám lecsap melléd; szakrális mágiák mellékhatása."
     hatások:
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: tulajdonságpróba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
+    - hatás: automatikus_kudarc
       cél: képzettségpróba
-      megjegyzés: automatikus kudarc
-    - mód: letilt
-      cél: harci_képesség
-    - mód: letilt
-      cél: mozgás
-      megjegyzés: lecövekelt
-    - mód: letilt
-      cél: pszi
-    - mód: letilt
-      cél: varázslás
-    - mód: szöveges
+    - hatás: harcképtelenség
+    - hatás: mozgás_lecövekelt
+    - hatás: pszi_elvesztése
+    - hatás: varázslás_elvesztése
+    - hatás: narratív
       cél: beszéd
-      megjegyzés: zavart vagy némult
+      megjegyzés: Beszéd - zavart vagy némult (szituációfüggő)

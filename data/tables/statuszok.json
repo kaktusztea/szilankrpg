@@ -1,18 +1,23 @@
 [
   {
+    "id": "áldott_tulajdonság",
     "név": "Áldott Tulajdonság",
     "kategória": "mágikus",
-    "többszörös": false,
-    "alkategóriák": [],
+    "többszörös": true,
+    "alkategória_forrás": "tulajdonságok",
     "fokok": [
       {
         "fok": 1,
         "alcím": "Előny+1",
         "hatások": [
           {
-            "mód": "szöveges",
+            "mód": "előny",
+            "érték": 1,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Előny+1 adott Tulajdonságra, feltétel esetén (KM; a Tulajdonság még nem választható)"
+            "alcél": "tulajdonság:{alkategória}",
+            "megjegyzés": "feltétel esetén",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+1"
           }
         ]
       },
@@ -21,28 +26,56 @@
         "alcím": "Előny+2",
         "hatások": [
           {
-            "mód": "szöveges",
+            "mód": "előny",
+            "érték": 2,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Előny+2 adott Tulajdonságra, feltétel esetén (KM; a Tulajdonság még nem választható)"
+            "alcél": "tulajdonság:{alkategória}",
+            "megjegyzés": "feltétel esetén",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+2"
           }
         ]
       }
-    ]
+    ],
+    "alkategóriák": [
+      "erő",
+      "edzettség",
+      "ügyesség",
+      "gyorsaság",
+      "intelligencia",
+      "emlékezet",
+      "önuralom",
+      "érzékenység"
+    ],
+    "alkategória_címkék": {
+      "erő": "Erő",
+      "edzettség": "Edzettség",
+      "ügyesség": "Ügyesség",
+      "gyorsaság": "Gyorsaság",
+      "intelligencia": "Intelligencia",
+      "emlékezet": "Emlékezet",
+      "önuralom": "Önuralom",
+      "érzékenység": "Érzékenység"
+    }
   },
   {
+    "id": "átkozott_tulajdonság",
     "név": "Átkozott Tulajdonság",
     "kategória": "mágikus",
-    "többszörös": false,
-    "alkategóriák": [],
+    "többszörös": true,
+    "alkategória_forrás": "tulajdonságok",
     "fokok": [
       {
         "fok": 1,
         "alcím": "Hátrány-1",
         "hatások": [
           {
-            "mód": "szöveges",
+            "mód": "hátrány",
+            "érték": -1,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Hátrány-1 adott Tulajdonságra (KM; a Tulajdonság még nem választható)"
+            "alcél": "tulajdonság:{alkategória}",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -51,19 +84,43 @@
         "alcím": "Hátrány-2",
         "hatások": [
           {
-            "mód": "szöveges",
+            "mód": "hátrány",
+            "érték": -2,
             "cél": "tulajdonságpróba",
-            "megjegyzés": "Hátrány-2 adott Tulajdonságra (KM; a Tulajdonság még nem választható)"
+            "alcél": "tulajdonság:{alkategória}",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       }
-    ]
+    ],
+    "alkategóriák": [
+      "erő",
+      "edzettség",
+      "ügyesség",
+      "gyorsaság",
+      "intelligencia",
+      "emlékezet",
+      "önuralom",
+      "érzékenység"
+    ],
+    "alkategória_címkék": {
+      "erő": "Erő",
+      "edzettség": "Edzettség",
+      "ügyesség": "Ügyesség",
+      "gyorsaság": "Gyorsaság",
+      "intelligencia": "Intelligencia",
+      "emlékezet": "Emlékezet",
+      "önuralom": "Önuralom",
+      "érzékenység": "Érzékenység"
+    }
   },
   {
+    "id": "áldott_képzettség",
     "név": "Áldott Képzettség",
     "kategória": "mágikus",
-    "többszörös": false,
-    "alkategóriák": [],
+    "többszörös": true,
+    "alkategória_forrás": "képzettségek",
     "fokok": [
       {
         "fok": 1,
@@ -73,7 +130,9 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
-            "megjegyzés": "adott Képzettségre"
+            "alcél": "képzettség:{alkategória}",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+1"
           }
         ]
       },
@@ -85,17 +144,186 @@
             "mód": "előny",
             "érték": 2,
             "cél": "képzettségpróba",
-            "megjegyzés": "adott Képzettségre"
+            "alcél": "képzettség:{alkategória}",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+2"
           }
         ]
       }
-    ]
+    ],
+    "alkategóriák": [
+      "akrobatika",
+      "alakzatharc",
+      "alkímia",
+      "arkánum_asztrálmágia",
+      "arkánum_aurahangolás",
+      "arkánum_belső_síkok_lényeinek_idézése",
+      "arkánum_elemi_mágia",
+      "arkánum_időmágia",
+      "arkánum_illúziók",
+      "arkánum_külső_síkok_lényeinek_idézése",
+      "arkánum_mentálmágia",
+      "arkánum_metamágia",
+      "arkánum_nekromancia",
+      "arkánum_sors_befolyásolás",
+      "arkánum_sors_érzékelése",
+      "arkánum_természetes_anyagok_mágiája",
+      "arkánum_természeti_jelenségek",
+      "arkánum_térmágia",
+      "arkánum_életerő_manipulálása",
+      "befolyásolás",
+      "csapdaállítás",
+      "előadóművészet",
+      "emberismeret",
+      "etikett",
+      "faj_misztérium_amund",
+      "faj_misztérium_anatyda",
+      "faj_misztérium_buzzgoblin",
+      "faj_misztérium_dzsenn",
+      "faj_misztérium_elar",
+      "faj_misztérium_elf",
+      "faj_misztérium_ember_déli",
+      "faj_misztérium_ember_korg",
+      "faj_misztérium_ember_slan",
+      "faj_misztérium_ember_északi",
+      "faj_misztérium_erdőpille",
+      "faj_misztérium_feenhar",
+      "faj_misztérium_gnóm",
+      "faj_misztérium_goblin",
+      "faj_misztérium_gyíklény",
+      "faj_misztérium_homoki_elf",
+      "faj_misztérium_hómanó",
+      "faj_misztérium_khál",
+      "faj_misztérium_kineta",
+      "faj_misztérium_kobold",
+      "faj_misztérium_kyr",
+      "faj_misztérium_ork",
+      "faj_misztérium_sáskaharcos",
+      "faj_misztérium_törpe",
+      "faj_misztérium_tűzkobold",
+      "faj_misztérium_udvari_ork",
+      "fájdalomtűrés",
+      "hadászat",
+      "hajózás",
+      "harci_láz",
+      "harcmodor",
+      "kirurgia",
+      "kvantikum",
+      "képzőművészet",
+      "kézművesség",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "lopás",
+      "lovaglás",
+      "léglovaglás",
+      "mágikus_célzás",
+      "mászás",
+      "mérgek",
+      "művészetismeret",
+      "nyelvtanulás",
+      "nyomozás",
+      "szerencsejáték",
+      "természetjárás",
+      "tradíció",
+      "távolsági_harcmodor",
+      "vajákosság",
+      "városi_jártasság",
+      "zárnyitás",
+      "álcázás_álruha",
+      "értékbecslés",
+      "észlelés",
+      "ősi_nyelv_ismerete"
+    ],
+    "alkategória_címkék": {
+      "akrobatika": "Akrobatika",
+      "alakzatharc": "Alakzatharc",
+      "alkímia": "Alkímia",
+      "arkánum_asztrálmágia": "Arkánum: Asztrálmágia",
+      "arkánum_aurahangolás": "Arkánum: Aurahangolás",
+      "arkánum_belső_síkok_lényeinek_idézése": "Arkánum: Belső síkok lényeinek idézése",
+      "arkánum_elemi_mágia": "Arkánum: Elemi mágia",
+      "arkánum_időmágia": "Arkánum: Időmágia",
+      "arkánum_illúziók": "Arkánum: Illúziók",
+      "arkánum_külső_síkok_lényeinek_idézése": "Arkánum: Külső síkok lényeinek idézése",
+      "arkánum_mentálmágia": "Arkánum: Mentálmágia",
+      "arkánum_metamágia": "Arkánum: Metamágia",
+      "arkánum_nekromancia": "Arkánum: Nekromancia",
+      "arkánum_sors_befolyásolás": "Arkánum: Sors befolyásolás",
+      "arkánum_sors_érzékelése": "Arkánum: Sors érzékelése",
+      "arkánum_természetes_anyagok_mágiája": "Arkánum: Természetes anyagok mágiája",
+      "arkánum_természeti_jelenségek": "Arkánum: Természeti jelenségek",
+      "arkánum_térmágia": "Arkánum: Térmágia",
+      "arkánum_életerő_manipulálása": "Arkánum: Életerő Manipulálása",
+      "befolyásolás": "Befolyásolás",
+      "csapdaállítás": "Csapdaállítás",
+      "előadóművészet": "Előadóművészet",
+      "emberismeret": "Emberismeret",
+      "etikett": "Etikett",
+      "faj_misztérium_amund": "Faj misztérium: Amund",
+      "faj_misztérium_anatyda": "Faj misztérium: Anatyda",
+      "faj_misztérium_buzzgoblin": "Faj misztérium: Buzzgoblin",
+      "faj_misztérium_dzsenn": "Faj misztérium: Dzsenn",
+      "faj_misztérium_elar": "Faj misztérium: Elar",
+      "faj_misztérium_elf": "Faj misztérium: Elf",
+      "faj_misztérium_ember_déli": "Faj misztérium: Ember (déli)",
+      "faj_misztérium_ember_korg": "Faj misztérium: Ember (korg)",
+      "faj_misztérium_ember_slan": "Faj misztérium: Ember (Slan)",
+      "faj_misztérium_ember_északi": "Faj misztérium: Ember (Északi)",
+      "faj_misztérium_erdőpille": "Faj misztérium: Erdőpille",
+      "faj_misztérium_feenhar": "Faj misztérium: Feenhar",
+      "faj_misztérium_gnóm": "Faj misztérium: Gnóm",
+      "faj_misztérium_goblin": "Faj misztérium: Goblin",
+      "faj_misztérium_gyíklény": "Faj misztérium: Gyíklény",
+      "faj_misztérium_homoki_elf": "Faj misztérium: Homoki elf",
+      "faj_misztérium_hómanó": "Faj misztérium: Hómanó",
+      "faj_misztérium_khál": "Faj misztérium: Khál",
+      "faj_misztérium_kineta": "Faj misztérium: Kineta",
+      "faj_misztérium_kobold": "Faj misztérium: Kobold",
+      "faj_misztérium_kyr": "Faj misztérium: Kyr",
+      "faj_misztérium_ork": "Faj misztérium: Ork",
+      "faj_misztérium_sáskaharcos": "Faj misztérium: Sáskaharcos",
+      "faj_misztérium_törpe": "Faj misztérium: Törpe",
+      "faj_misztérium_tűzkobold": "Faj misztérium: Tűzkobold",
+      "faj_misztérium_udvari_ork": "Faj misztérium: Udvari ork",
+      "fájdalomtűrés": "Fájdalomtűrés",
+      "hadászat": "Hadászat",
+      "hajózás": "Hajózás",
+      "harci_láz": "Harci láz",
+      "harcmodor": "Harcmodor",
+      "kirurgia": "Kirurgia",
+      "kvantikum": "Kvantikum",
+      "képzőművészet": "Képzőművészet",
+      "kézművesség": "Kézművesség",
+      "lexikum": "Lexikum",
+      "lopakodás_rejtőzés": "Lopakodás/rejtőzés",
+      "lopás": "Lopás",
+      "lovaglás": "Lovaglás",
+      "léglovaglás": "Léglovaglás",
+      "mágikus_célzás": "Mágikus célzás",
+      "mászás": "Mászás",
+      "mérgek": "Mérgek",
+      "művészetismeret": "Művészetismeret",
+      "nyelvtanulás": "Nyelvtanulás",
+      "nyomozás": "Nyomozás",
+      "szerencsejáték": "Szerencsejáték",
+      "természetjárás": "Természetjárás",
+      "tradíció": "Tradíció",
+      "távolsági_harcmodor": "Távolsági harcmodor",
+      "vajákosság": "Vajákosság",
+      "városi_jártasság": "Városi jártasság",
+      "zárnyitás": "Zárnyitás",
+      "álcázás_álruha": "Álcázás/Álruha",
+      "értékbecslés": "Értékbecslés",
+      "észlelés": "Észlelés",
+      "ősi_nyelv_ismerete": "Ősi nyelv ismerete"
+    }
   },
   {
+    "id": "átkozott_képzettség",
     "név": "Átkozott Képzettség",
     "kategória": "mágikus",
-    "többszörös": false,
-    "alkategóriák": [],
+    "többszörös": true,
+    "alkategória_forrás": "képzettségek",
     "fokok": [
       {
         "fok": 1,
@@ -105,7 +333,9 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
-            "megjegyzés": "adott Képzettségre"
+            "alcél": "képzettség:{alkategória}",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -117,13 +347,182 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
-            "megjegyzés": "adott Képzettségre"
+            "alcél": "képzettség:{alkategória}",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       }
-    ]
+    ],
+    "alkategóriák": [
+      "akrobatika",
+      "alakzatharc",
+      "alkímia",
+      "arkánum_asztrálmágia",
+      "arkánum_aurahangolás",
+      "arkánum_belső_síkok_lényeinek_idézése",
+      "arkánum_elemi_mágia",
+      "arkánum_időmágia",
+      "arkánum_illúziók",
+      "arkánum_külső_síkok_lényeinek_idézése",
+      "arkánum_mentálmágia",
+      "arkánum_metamágia",
+      "arkánum_nekromancia",
+      "arkánum_sors_befolyásolás",
+      "arkánum_sors_érzékelése",
+      "arkánum_természetes_anyagok_mágiája",
+      "arkánum_természeti_jelenségek",
+      "arkánum_térmágia",
+      "arkánum_életerő_manipulálása",
+      "befolyásolás",
+      "csapdaállítás",
+      "előadóművészet",
+      "emberismeret",
+      "etikett",
+      "faj_misztérium_amund",
+      "faj_misztérium_anatyda",
+      "faj_misztérium_buzzgoblin",
+      "faj_misztérium_dzsenn",
+      "faj_misztérium_elar",
+      "faj_misztérium_elf",
+      "faj_misztérium_ember_déli",
+      "faj_misztérium_ember_korg",
+      "faj_misztérium_ember_slan",
+      "faj_misztérium_ember_északi",
+      "faj_misztérium_erdőpille",
+      "faj_misztérium_feenhar",
+      "faj_misztérium_gnóm",
+      "faj_misztérium_goblin",
+      "faj_misztérium_gyíklény",
+      "faj_misztérium_homoki_elf",
+      "faj_misztérium_hómanó",
+      "faj_misztérium_khál",
+      "faj_misztérium_kineta",
+      "faj_misztérium_kobold",
+      "faj_misztérium_kyr",
+      "faj_misztérium_ork",
+      "faj_misztérium_sáskaharcos",
+      "faj_misztérium_törpe",
+      "faj_misztérium_tűzkobold",
+      "faj_misztérium_udvari_ork",
+      "fájdalomtűrés",
+      "hadászat",
+      "hajózás",
+      "harci_láz",
+      "harcmodor",
+      "kirurgia",
+      "kvantikum",
+      "képzőművészet",
+      "kézművesség",
+      "lexikum",
+      "lopakodás_rejtőzés",
+      "lopás",
+      "lovaglás",
+      "léglovaglás",
+      "mágikus_célzás",
+      "mászás",
+      "mérgek",
+      "művészetismeret",
+      "nyelvtanulás",
+      "nyomozás",
+      "szerencsejáték",
+      "természetjárás",
+      "tradíció",
+      "távolsági_harcmodor",
+      "vajákosság",
+      "városi_jártasság",
+      "zárnyitás",
+      "álcázás_álruha",
+      "értékbecslés",
+      "észlelés",
+      "ősi_nyelv_ismerete"
+    ],
+    "alkategória_címkék": {
+      "akrobatika": "Akrobatika",
+      "alakzatharc": "Alakzatharc",
+      "alkímia": "Alkímia",
+      "arkánum_asztrálmágia": "Arkánum: Asztrálmágia",
+      "arkánum_aurahangolás": "Arkánum: Aurahangolás",
+      "arkánum_belső_síkok_lényeinek_idézése": "Arkánum: Belső síkok lényeinek idézése",
+      "arkánum_elemi_mágia": "Arkánum: Elemi mágia",
+      "arkánum_időmágia": "Arkánum: Időmágia",
+      "arkánum_illúziók": "Arkánum: Illúziók",
+      "arkánum_külső_síkok_lényeinek_idézése": "Arkánum: Külső síkok lényeinek idézése",
+      "arkánum_mentálmágia": "Arkánum: Mentálmágia",
+      "arkánum_metamágia": "Arkánum: Metamágia",
+      "arkánum_nekromancia": "Arkánum: Nekromancia",
+      "arkánum_sors_befolyásolás": "Arkánum: Sors befolyásolás",
+      "arkánum_sors_érzékelése": "Arkánum: Sors érzékelése",
+      "arkánum_természetes_anyagok_mágiája": "Arkánum: Természetes anyagok mágiája",
+      "arkánum_természeti_jelenségek": "Arkánum: Természeti jelenségek",
+      "arkánum_térmágia": "Arkánum: Térmágia",
+      "arkánum_életerő_manipulálása": "Arkánum: Életerő Manipulálása",
+      "befolyásolás": "Befolyásolás",
+      "csapdaállítás": "Csapdaállítás",
+      "előadóművészet": "Előadóművészet",
+      "emberismeret": "Emberismeret",
+      "etikett": "Etikett",
+      "faj_misztérium_amund": "Faj misztérium: Amund",
+      "faj_misztérium_anatyda": "Faj misztérium: Anatyda",
+      "faj_misztérium_buzzgoblin": "Faj misztérium: Buzzgoblin",
+      "faj_misztérium_dzsenn": "Faj misztérium: Dzsenn",
+      "faj_misztérium_elar": "Faj misztérium: Elar",
+      "faj_misztérium_elf": "Faj misztérium: Elf",
+      "faj_misztérium_ember_déli": "Faj misztérium: Ember (déli)",
+      "faj_misztérium_ember_korg": "Faj misztérium: Ember (korg)",
+      "faj_misztérium_ember_slan": "Faj misztérium: Ember (Slan)",
+      "faj_misztérium_ember_északi": "Faj misztérium: Ember (Északi)",
+      "faj_misztérium_erdőpille": "Faj misztérium: Erdőpille",
+      "faj_misztérium_feenhar": "Faj misztérium: Feenhar",
+      "faj_misztérium_gnóm": "Faj misztérium: Gnóm",
+      "faj_misztérium_goblin": "Faj misztérium: Goblin",
+      "faj_misztérium_gyíklény": "Faj misztérium: Gyíklény",
+      "faj_misztérium_homoki_elf": "Faj misztérium: Homoki elf",
+      "faj_misztérium_hómanó": "Faj misztérium: Hómanó",
+      "faj_misztérium_khál": "Faj misztérium: Khál",
+      "faj_misztérium_kineta": "Faj misztérium: Kineta",
+      "faj_misztérium_kobold": "Faj misztérium: Kobold",
+      "faj_misztérium_kyr": "Faj misztérium: Kyr",
+      "faj_misztérium_ork": "Faj misztérium: Ork",
+      "faj_misztérium_sáskaharcos": "Faj misztérium: Sáskaharcos",
+      "faj_misztérium_törpe": "Faj misztérium: Törpe",
+      "faj_misztérium_tűzkobold": "Faj misztérium: Tűzkobold",
+      "faj_misztérium_udvari_ork": "Faj misztérium: Udvari ork",
+      "fájdalomtűrés": "Fájdalomtűrés",
+      "hadászat": "Hadászat",
+      "hajózás": "Hajózás",
+      "harci_láz": "Harci láz",
+      "harcmodor": "Harcmodor",
+      "kirurgia": "Kirurgia",
+      "kvantikum": "Kvantikum",
+      "képzőművészet": "Képzőművészet",
+      "kézművesség": "Kézművesség",
+      "lexikum": "Lexikum",
+      "lopakodás_rejtőzés": "Lopakodás/rejtőzés",
+      "lopás": "Lopás",
+      "lovaglás": "Lovaglás",
+      "léglovaglás": "Léglovaglás",
+      "mágikus_célzás": "Mágikus célzás",
+      "mászás": "Mászás",
+      "mérgek": "Mérgek",
+      "művészetismeret": "Művészetismeret",
+      "nyelvtanulás": "Nyelvtanulás",
+      "nyomozás": "Nyomozás",
+      "szerencsejáték": "Szerencsejáték",
+      "természetjárás": "Természetjárás",
+      "tradíció": "Tradíció",
+      "távolsági_harcmodor": "Távolsági harcmodor",
+      "vajákosság": "Vajákosság",
+      "városi_jártasság": "Városi jártasság",
+      "zárnyitás": "Zárnyitás",
+      "álcázás_álruha": "Álcázás/Álruha",
+      "értékbecslés": "Értékbecslés",
+      "észlelés": "Észlelés",
+      "ősi_nyelv_ismerete": "Ősi nyelv ismerete"
+    }
   },
   {
+    "id": "átkozott_viselkedés",
     "név": "Átkozott Viselkedés",
     "kategória": "szellemi",
     "többszörös": false,
@@ -157,7 +556,9 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
-            "megjegyzés": "KM határozza meg"
+            "megjegyzés": "KM határozza meg",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -174,13 +575,16 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
-            "megjegyzés": "KM határozza meg"
+            "megjegyzés": "KM határozza meg",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       }
     ]
   },
   {
+    "id": "bénultság",
     "név": "Bénultság",
     "kategória": "fizikai",
     "többszörös": false,
@@ -197,12 +601,16 @@
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "harci_képesség"
+            "cél": "harci_képesség",
+            "hatás_id": "harcképtelenség",
+            "hatás_név": "Harcképtelenség"
           },
           {
             "mód": "letilt",
             "cél": "mozgás",
-            "megjegyzés": "nyaktól lefelé"
+            "megjegyzés": "nyaktól lefelé",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
           }
         ]
       },
@@ -212,21 +620,28 @@
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "harci_képesség"
+            "cél": "harci_képesség",
+            "hatás_id": "harcképtelenség",
+            "hatás_név": "Harcképtelenség"
           },
           {
             "mód": "letilt",
-            "cél": "mozgás"
+            "cél": "mozgás",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
           },
           {
             "mód": "letilt",
-            "cél": "beszéd"
+            "cél": "beszéd",
+            "hatás_id": "beszéd_némult",
+            "hatás_név": "Beszéd - némult"
           }
         ]
       }
     ]
   },
   {
+    "id": "blokkolt",
     "név": "Blokkolt",
     "kategória": "fizikai",
     "többszörös": false,
@@ -244,12 +659,16 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "té_dobás"
+            "cél": "té_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "szorzó",
             "érték": 0.5,
-            "cél": "mozgás"
+            "cél": "mozgás",
+            "hatás_id": "mozgás_feleződik",
+            "hatás_név": "Mozgás - feleződik"
           }
         ]
       },
@@ -260,18 +679,23 @@
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "té_dobás"
+            "cél": "té_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "szorzó",
             "érték": 0.5,
-            "cél": "mozgás"
+            "cél": "mozgás",
+            "hatás_id": "mozgás_feleződik",
+            "hatás_név": "Mozgás - feleződik"
           }
         ]
       }
     ]
   },
   {
+    "id": "eszmélet",
     "név": "Eszmélet",
     "kategória": "fizikai",
     "többszörös": false,
@@ -289,34 +713,53 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "té_dobás"
+            "cél": "té_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "képzettségpróba"
+            "cél": "képzettségpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "tulajdonságpróba"
+            "cél": "tulajdonságpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "szöveges",
             "cél": "támadások_száma",
-            "megjegyzés": "-1 támadás"
+            "megjegyzés": "1 támadás elvesztése",
+            "hatás_id": "támadás_elvesztés_1",
+            "hatás_név": "1 támadás elvesztése"
+          },
+          {
+            "mód": "szöveges",
+            "cél": "varázslás",
+            "megjegyzés": "Varázslás: szabad varázslás elvesztése - kivéve papok: ők részegen is tudnak",
+            "hatás_id": "szabad_varázslás_elvesztése",
+            "hatás_név": "Varázslás: szabad varázslás elvesztése"
           },
           {
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
             "alcél": "képzettség:fájdalomtűrés",
-            "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására"
+            "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+1"
           }
         ]
       },
@@ -326,47 +769,58 @@
         "megjegyzések": [
           {
             "text": "Példa: pocsolya részegség."
-          },
-          {
-            "text": "A papok részegen is tudnak varázslást használni (at-will), más varázstudó nem."
           }
         ],
         "hatások": [
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "té_dobás"
+            "cél": "té_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "képzettségpróba"
+            "cél": "képzettségpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "tulajdonságpróba"
+            "cél": "tulajdonságpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "max_limit",
             "érték": 1,
-            "cél": "támadások_száma"
+            "cél": "támadások_száma",
+            "hatás_id": "támadás_elvesztés_többszörös",
+            "hatás_név": "Többszörös támadás elvesztése"
           },
           {
             "mód": "letilt",
-            "cél": "varázslás"
+            "cél": "varázslás",
+            "hatás_id": "varázslás_elvesztése",
+            "hatás_név": "Varázslás képesség elvesztése"
           },
           {
             "mód": "előny",
             "érték": 2,
             "cél": "képzettségpróba",
             "alcél": "képzettség:fájdalomtűrés",
-            "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására"
+            "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+2"
           }
         ]
       },
@@ -381,33 +835,45 @@
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "harci_képesség"
+            "cél": "harci_képesség",
+            "hatás_id": "harcképtelenség",
+            "hatás_név": "Harcképtelenség"
           },
           {
             "mód": "letilt",
             "cél": "képzettségpróba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
-            "cél": "mozgás"
+            "cél": "mozgás",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
           },
           {
             "mód": "letilt",
-            "cél": "beszéd"
+            "cél": "beszéd",
+            "hatás_id": "beszéd_némult",
+            "hatás_név": "Beszéd - némult"
           },
           {
             "mód": "letilt",
-            "cél": "pszi"
+            "cél": "pszi",
+            "hatás_id": "pszi_elvesztése",
+            "hatás_név": "Pszí használat elvesztése"
           },
           {
             "mód": "letilt",
-            "cél": "varázslás"
+            "cél": "varázslás",
+            "hatás_id": "varázslás_elvesztése",
+            "hatás_név": "Varázslás képesség elvesztése"
           }
         ]
       },
@@ -425,42 +891,59 @@
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "harci_képesség"
+            "cél": "harci_képesség",
+            "hatás_id": "harcképtelenség",
+            "hatás_név": "Harcképtelenség"
           },
           {
             "mód": "letilt",
-            "cél": "képzettségpróba"
+            "cél": "képzettségpróba",
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
-            "cél": "tulajdonságpróba"
+            "cél": "tulajdonságpróba",
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
-            "cél": "mozgás"
+            "cél": "mozgás",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
           },
           {
             "mód": "letilt",
-            "cél": "beszéd"
+            "cél": "beszéd",
+            "hatás_id": "beszéd_némult",
+            "hatás_név": "Beszéd - némult"
           },
           {
             "mód": "letilt",
-            "cél": "pszi"
+            "cél": "pszi",
+            "hatás_id": "pszi_elvesztése",
+            "hatás_név": "Pszí használat elvesztése"
           },
           {
             "mód": "letilt",
-            "cél": "varázslás"
+            "cél": "varázslás",
+            "hatás_id": "varázslás_elvesztése",
+            "hatás_név": "Varázslás képesség elvesztése"
           },
           {
             "mód": "szöveges",
             "cél": "antyssjárás",
-            "megjegyzés": "Antysson ragadsz"
+            "megjegyzés": "Antysson ragadsz",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           }
         ]
       }
     ]
   },
   {
+    "id": "érzékvesztés",
     "név": "Érzékvesztés",
     "kategória": "fizikai",
     "többszörös": true,
@@ -475,17 +958,15 @@
       {
         "fok": 1,
         "alcím": "Zavart",
-        "megjegyzések": [
-          {
-            "text": "Alkategóriák: Látás, Hallás, Szaglás (a szabálykönyvben említett érzékek - a Tapintás/Ízlelés a webapp-kiterjesztés)."
-          }
-        ],
         "hatások": [
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "érzék_próba",
-            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára"
+            "alcél": "érzék:{alkategória}",
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára",
+            "hatás_id": "érzék_hátrány",
+            "hatás_név": "Érzék - Hátrány-1 ({alkategória})"
           }
         ]
       },
@@ -497,7 +978,10 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "érzék_próba",
-            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára"
+            "alcél": "érzék:{alkategória}",
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára",
+            "hatás_id": "érzék_hátrány",
+            "hatás_név": "Érzék - Hátrány-2 ({alkategória})"
           }
         ]
       },
@@ -508,13 +992,17 @@
           {
             "mód": "letilt",
             "cél": "érzék_próba",
-            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára (automatikus kudarc)"
+            "alcél": "érzék:{alkategória}",
+            "megjegyzés": "Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára (automatikus kudarc)",
+            "hatás_id": "érzék_kioltott",
+            "hatás_név": "Érzék - automatikus kudarc (kioltott) ({alkategória})"
           }
         ]
       }
     ]
   },
   {
+    "id": "félelem",
     "név": "Félelem",
     "kategória": "szellemi",
     "többszörös": false,
@@ -532,12 +1020,16 @@
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Taktika kötelező: Védő taktika (3) (VÉ:+3, TÉ:-6)"
+            "megjegyzés": "Taktika kötelező: Védő taktika (3) - VÉ:+3, TÉ:-6",
+            "hatás_id": "taktika_kötelező",
+            "hatás_név": "Taktika kötelező: Védő taktika (3)"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "szociális_próba"
+            "cél": "szociális_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -546,19 +1038,22 @@
         "alcím": "Rettegés",
         "megjegyzések": [
           {
-            "text": "Csak mágia vagy démonok hatására érhető el."
+            "text": "Pánik érzete is ide tartozik."
           }
         ],
         "hatások": [
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Taktika kötelező: Teljes Védekezés taktika"
+            "megjegyzés": "Taktika kötelező: Teljes Védekezés taktika",
+            "hatás_id": "taktika_kötelező",
+            "hatás_név": "Taktika kötelező: Teljes Védekezés taktika"
           },
           {
             "mód": "letilt",
             "cél": "szociális_próba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           }
         ]
       },
@@ -568,30 +1063,42 @@
         "megjegyzések": [
           {
             "text": "Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)."
+          },
+          {
+            "text": "Csak mágia vagy démonok hatására kerülhetsz ebbe az állapotba."
           }
         ],
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "mozgás"
+            "cél": "mozgás",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
           },
           {
             "mód": "letilt",
-            "cél": "harci_képesség"
+            "cél": "harci_képesség",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
           },
           {
             "mód": "letilt",
-            "cél": "varázslás"
+            "cél": "varázslás",
+            "hatás_id": "varázslás_elvesztése",
+            "hatás_név": "Varázslás képesség elvesztése"
           },
           {
             "mód": "letilt",
-            "cél": "pszi"
+            "cél": "pszi",
+            "hatás_id": "pszi_elvesztése",
+            "hatás_név": "Pszí használat elvesztése"
           }
         ]
       }
     ]
   },
   {
+    "id": "fizikai",
     "név": "Fizikai",
     "kategória": "fizikai",
     "többszörös": false,
@@ -603,18 +1110,25 @@
         "megjegyzések": [
           {
             "text": "Példák: Edzettségedhez mérten elfáradtál hegymászás során; egy hete nem ettél."
+          },
+          {
+            "text": "Kapcsolódik: Szívósság fortély."
           }
         ],
         "hatások": [
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "szellemi_próba"
+            "cél": "szellemi_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -633,22 +1147,30 @@
           {
             "mód": "szorzó",
             "érték": 2,
-            "cél": "vé_veszteség"
+            "cél": "vé_veszteség",
+            "hatás_id": "vé_veszteség_duplázódik",
+            "hatás_név": "VÉ veszteség duplázódik"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "szellemi_próba"
+            "cél": "szellemi_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "szöveges",
             "cél": "általános",
-            "megjegyzés": "FP S1 feltöltődik"
+            "megjegyzés": "FP S1",
+            "hatás_id": "fp_s1",
+            "hatás_név": "FP S1"
           }
         ]
       },
@@ -660,45 +1182,68 @@
             "text": "Példa: éhhalál szélén tengődés."
           },
           {
-            "text": "Kapcsolódik: Szívósság fortély, Harci akrobatika fortély."
+            "text": "Kapcsolódik: Szívósság fortély."
+          },
+          {
+            "text": "Kapcsolódik: Harci akrobatika fortély."
           }
         ],
         "hatások": [
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "nem_harci_próba"
+            "cél": "nem_harci_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "max_limit",
             "érték": 1,
-            "cél": "támadások_száma"
+            "cél": "támadások_száma",
+            "hatás_id": "támadás_elvesztés_többszörös",
+            "hatás_név": "Többszörös támadás elvesztése"
           },
           {
             "mód": "szorzó",
             "érték": 2,
-            "cél": "vé_veszteség"
+            "cél": "vé_veszteség",
+            "hatás_id": "vé_veszteség_duplázódik",
+            "hatás_név": "VÉ veszteség duplázódik"
           },
           {
             "mód": "szorzó",
             "érték": 0.5,
-            "cél": "mozgás"
+            "cél": "mozgás",
+            "hatás_id": "mozgás_feleződik",
+            "hatás_név": "Mozgás - feleződik"
           },
           {
             "mód": "szöveges",
-            "cél": "képzettségpróba",
-            "megjegyzés": "FP S2; Automatikus kudarc Harci akrobatika"
+            "cél": "általános",
+            "megjegyzés": "FP S2",
+            "hatás_id": "fp_s2",
+            "hatás_név": "FP S2"
+          },
+          {
+            "mód": "letilt",
+            "cél": "fortély",
+            "alcél": "fortély:harci_akrobatika",
+            "hatás_id": "fortély_letiltás",
+            "hatás_név": "Fortély hatás letiltása: Harci akrobatika"
           }
         ]
       }
     ]
   },
   {
+    "id": "hangulat",
     "név": "Hangulat",
     "kategória": "szellemi",
     "többszörös": false,
@@ -716,7 +1261,9 @@
           {
             "mód": "szöveges",
             "cél": "képzettségpróba",
-            "megjegyzés": "KM adhat Előny+1 vagy Hátrány-1 szituáció függően"
+            "megjegyzés": "KM adhat Előny+1 vagy Hátrány-1 szituáció függően",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           }
         ]
       },
@@ -733,13 +1280,17 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
-            "megjegyzés": "kreatív tevékenységekre"
+            "megjegyzés": "kreatív tevékenységekre",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
-            "megjegyzés": "koncentrációt igénylő feladatokra"
+            "megjegyzés": "koncentrációt igénylő feladatokra",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -756,18 +1307,24 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
-            "megjegyzés": "kreatív tevékenységekre"
+            "megjegyzés": "kreatív tevékenységekre",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+1"
           },
           {
             "mód": "szöveges",
             "cél": "varázslás",
-            "megjegyzés": "Ellenséges varázstudó Asztrálmágia Komplexitás-próbájára Hátrány-1 (az asztrális befolyásolásnak jobban ellenáll az eufórikus személy)"
+            "megjegyzés": "Ellenséges varázstudó Asztrálmágia Komplexitás-próbájára Hátrány-1 (az asztrális befolyásolásnak jobban ellenáll az eufórikus személy)",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
-            "megjegyzés": "koncentrációt igénylő feladatokra"
+            "megjegyzés": "koncentrációt igénylő feladatokra",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       },
@@ -784,24 +1341,31 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
-            "megjegyzés": "obszesszió tárgyához kötődő"
+            "megjegyzés": "obszesszió tárgyához kötődő",
+            "hatás_id": "előny",
+            "hatás_név": "Előny+1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
-            "megjegyzés": "minden más"
+            "megjegyzés": "minden más",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "szöveges",
             "cél": "képzettségpróba",
-            "megjegyzés": "Automatikus kudarc (KM mondja meg mire)"
+            "megjegyzés": "Automatikus kudarc (KM mondja meg mire)",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           }
         ]
       }
     ]
   },
   {
+    "id": "indulat",
     "név": "Indulat",
     "kategória": "szellemi",
     "többszörös": false,
@@ -822,7 +1386,16 @@
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Taktika kötelező: Támadó taktika (MAX); Kezdeményező használható; minden defenzív taktika és a Kiváró tiltott"
+            "megjegyzés": "Taktika kötelező: Támadó taktika (MAX)",
+            "hatás_id": "taktika_kötelező",
+            "hatás_név": "Taktika kötelező: Támadó taktika (MAX)"
+          },
+          {
+            "mód": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Kezdeményező taktika használható; minden defenzív jellegű taktika és a Kiváró taktika tiltott",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           }
         ]
       },
@@ -833,7 +1406,30 @@
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Taktika kötelező: Támadó taktika (MAX); Kezdeményező használható; minden defenzív taktika és a Kiváró tiltott; Taktika kötelező: Öngyilkos roham taktika - egyszer; Taktika kötelező: Roham taktika - utána, ha van hely"
+            "megjegyzés": "Taktika kötelező: Támadó taktika (MAX)",
+            "hatás_id": "taktika_kötelező",
+            "hatás_név": "Taktika kötelező: Támadó taktika (MAX)"
+          },
+          {
+            "mód": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Kezdeményező taktika használható; minden defenzív jellegű taktika és a Kiváró taktika tiltott",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
+          },
+          {
+            "mód": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Taktika kötelező: Öngyilkos roham taktika - egyszer",
+            "hatás_id": "taktika_kötelező",
+            "hatás_név": "Taktika kötelező: Öngyilkos roham taktika"
+          },
+          {
+            "mód": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Taktika kötelező: Roham taktika - utána, ha van hely",
+            "hatás_id": "taktika_kötelező",
+            "hatás_név": "Taktika kötelező: Roham taktika"
           }
         ]
       },
@@ -844,23 +1440,28 @@
           {
             "mód": "szöveges",
             "cél": "harci_képesség",
-            "megjegyzés": "Mint Gyűlölet + mindenkit megtámad"
+            "megjegyzés": "Mint Gyűlölet + mindenkit megtámad",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           },
           {
             "mód": "letilt",
             "cél": "szociális_próba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
             "cél": "szellemi_próba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           }
         ]
       }
     ]
   },
   {
+    "id": "késztetés",
     "név": "Késztetés",
     "kategória": "szellemi",
     "többszörös": false,
@@ -885,7 +1486,9 @@
             "mód": "szöveges",
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Automatikus Önuralom próba (12)"
+            "megjegyzés": "Automatikus próba - Önuralom (12)",
+            "hatás_id": "automatikus_próba",
+            "hatás_név": "Automatikus Tulajdonság/Képzettségpróba"
           }
         ]
       },
@@ -903,7 +1506,9 @@
             "érték": -1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom próbára"
+            "megjegyzés": "Önuralom próbára",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -921,13 +1526,16 @@
             "érték": -2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom próbára"
+            "megjegyzés": "Önuralom próbára",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       }
     ]
   },
   {
+    "id": "rosszullét",
     "név": "Rosszullét",
     "kategória": "fizikai",
     "többszörös": false,
@@ -940,17 +1548,23 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "té_dobás"
+            "cél": "té_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "fizikai_próba"
+            "cél": "fizikai_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -961,28 +1575,37 @@
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "té_dobás"
+            "cél": "té_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "fizikai_próba"
+            "cél": "fizikai_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "szociális_próba"
+            "cél": "szociális_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       }
     ]
   },
   {
+    "id": "sérült",
     "név": "Sérült",
     "kategória": "fizikai",
     "többszörös": false,
@@ -1000,12 +1623,16 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "tulajdonságpróba"
+            "cél": "tulajdonságpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "képzettségpróba"
+            "cél": "képzettségpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -1021,12 +1648,16 @@
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "tulajdonságpróba"
+            "cél": "tulajdonságpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "képzettségpróba"
+            "cél": "képzettségpróba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       },
@@ -1042,35 +1673,45 @@
           {
             "mód": "letilt",
             "cél": "képzettségpróba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
-            "cél": "harci_képesség"
+            "cél": "harci_képesség",
+            "hatás_id": "harcképtelenség",
+            "hatás_név": "Harcképtelenség"
           },
           {
             "mód": "letilt",
             "cél": "mozgás",
-            "megjegyzés": "lecövekelt"
+            "hatás_id": "mozgás_lecövekelt",
+            "hatás_név": "Mozgás - lecövekelt"
           },
           {
             "mód": "letilt",
-            "cél": "pszi"
+            "cél": "pszi",
+            "hatás_id": "pszi_elvesztése",
+            "hatás_név": "Pszí használat elvesztése"
           },
           {
             "mód": "letilt",
-            "cél": "varázslás"
+            "cél": "varázslás",
+            "hatás_id": "varázslás_elvesztése",
+            "hatás_név": "Varázslás képesség elvesztése"
           }
         ]
       }
     ]
   },
   {
+    "id": "szellemi",
     "név": "Szellemi",
     "kategória": "szellemi",
     "többszörös": false,
@@ -1089,7 +1730,9 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
-            "alcél": "képzettség:észlelés"
+            "alcél": "képzettség:észlelés",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -1099,23 +1742,31 @@
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "pszi"
+            "cél": "pszi",
+            "hatás_id": "pszi_elvesztése",
+            "hatás_név": "Pszí használat elvesztése"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "szellemi_próba"
+            "cél": "szellemi_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "szociális_próba"
+            "cél": "szociális_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "varázslás",
-            "megjegyzés": "random hatás esélye ↑"
+            "megjegyzés": "random hatás esélye ↑",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -1125,29 +1776,38 @@
         "hatások": [
           {
             "mód": "letilt",
-            "cél": "pszi"
+            "cél": "pszi",
+            "hatás_id": "pszi_elvesztése",
+            "hatás_név": "Pszí használat elvesztése"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "varázslás"
+            "cél": "varázslás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "szellemi_próba",
-            "megjegyzés": "nem-mágikus"
+            "megjegyzés": "nem-mágikus",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "szociális_próba"
+            "cél": "szociális_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       }
     ]
   },
   {
+    "id": "trauma",
     "név": "Trauma",
     "kategória": "szellemi",
     "többszörös": false,
@@ -1167,20 +1827,26 @@
             "érték": -1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom"
+            "megjegyzés": "Önuralom",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:érzékenység",
-            "megjegyzés": "Érzékenység"
+            "megjegyzés": "Érzékenység",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba",
-            "megjegyzés": "Önuralom/Érzékenység használatakor"
+            "megjegyzés": "Önuralom/Érzékenység használatakor",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           }
         ]
       },
@@ -1198,26 +1864,33 @@
             "érték": -2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom"
+            "megjegyzés": "Önuralom",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:érzékenység",
-            "megjegyzés": "Érzékenység"
+            "megjegyzés": "Érzékenység",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "szociális_próba",
-            "megjegyzés": "Önuralom/Érzékenység használatakor"
+            "megjegyzés": "Önuralom/Érzékenység használatakor",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       }
     ]
   },
   {
+    "id": "zavar",
     "név": "Zavar",
     "kategória": "fizikai",
     "többszörös": false,
@@ -1238,34 +1911,46 @@
           {
             "mód": "max_limit",
             "érték": 1,
-            "cél": "támadások_száma"
+            "cél": "támadások_száma",
+            "hatás_id": "támadás_elvesztés_többszörös",
+            "hatás_név": "Többszörös támadás elvesztése"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "ké_dobás"
-          },
-          {
-            "mód": "hátrány",
-            "érték": -1,
-            "cél": "tulajdonságpróba",
-            "alcél": "tulajdonság:gyorsaság"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
-            "alcél": "tulajdonság:ügyesség"
+            "alcél": "tulajdonság:gyorsaság",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba",
+            "alcél": "tulajdonság:ügyesség",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "szellemi_próba"
+            "cél": "szellemi_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "szociális_próba"
+            "cél": "szociális_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           }
         ]
       },
@@ -1284,49 +1969,64 @@
           {
             "mód": "letilt",
             "cél": "szellemi_próba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
             "cél": "szociális_próba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "té_dobás"
+            "cél": "té_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1"
           },
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "ké_dobás"
+            "cél": "ké_dobás",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
-            "alcél": "tulajdonság:gyorsaság"
+            "alcél": "tulajdonság:gyorsaság",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
-            "alcél": "tulajdonság:ügyesség"
+            "alcél": "tulajdonság:ügyesség",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2"
           },
           {
             "mód": "max_limit",
             "érték": 1,
-            "cél": "támadások_száma"
+            "cél": "támadások_száma",
+            "hatás_id": "támadás_elvesztés_többszörös",
+            "hatás_név": "Többszörös támadás elvesztése"
           },
           {
             "mód": "letilt",
             "cél": "mozgás",
-            "megjegyzés": "lecövekelt"
+            "hatás_id": "mozgás_lecövekelt",
+            "hatás_név": "Mozgás - lecövekelt"
           },
           {
             "mód": "szöveges",
             "cél": "beszéd",
-            "megjegyzés": "zavart"
+            "megjegyzés": "Beszéd - zavart",
+            "hatás_id": "beszéd_zavart",
+            "hatás_név": "Beszéd - zavart"
           }
         ]
       },
@@ -1351,34 +2051,45 @@
           {
             "mód": "letilt",
             "cél": "tulajdonságpróba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
             "cél": "képzettségpróba",
-            "megjegyzés": "automatikus kudarc"
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc"
           },
           {
             "mód": "letilt",
-            "cél": "harci_képesség"
+            "cél": "harci_képesség",
+            "hatás_id": "harcképtelenség",
+            "hatás_név": "Harcképtelenség"
           },
           {
             "mód": "letilt",
             "cél": "mozgás",
-            "megjegyzés": "lecövekelt"
+            "hatás_id": "mozgás_lecövekelt",
+            "hatás_név": "Mozgás - lecövekelt"
           },
           {
             "mód": "letilt",
-            "cél": "pszi"
+            "cél": "pszi",
+            "hatás_id": "pszi_elvesztése",
+            "hatás_név": "Pszí használat elvesztése"
           },
           {
             "mód": "letilt",
-            "cél": "varázslás"
+            "cél": "varázslás",
+            "hatás_id": "varázslás_elvesztése",
+            "hatás_név": "Varázslás képesség elvesztése"
           },
           {
             "mód": "szöveges",
             "cél": "beszéd",
-            "megjegyzés": "zavart vagy némult"
+            "megjegyzés": "Beszéd - zavart vagy némult (szituációfüggő)",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           }
         ]
       }

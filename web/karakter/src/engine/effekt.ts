@@ -19,6 +19,7 @@ import { interpolateFokDef, buildPajzsFegyverNév, fortélyToggleAktív } from '
 import { extraFeltételTeljesül } from './extrak-info-calc';
 import { clampEHSzint } from './dice';
 import { lookupFegyver, fortélyDef, helyzetDef, státuszDef, taktikaDef } from './lookup';
+import { parseStátusz, státuszCímke, alkategóriaKitölt } from './statusz';
 import type { FegyverAlap } from './data-types';
 
 type EffektForrásTípus = 'fortély' | 'alapeset' | 'taktika' | 'helyzet' | 'státusz';
@@ -33,25 +34,38 @@ export interface Effekt {
   arány?: number;
   /** A forrás-sor szöveges kontextusa (pl. „Fájdalomtűrés próba kínzás esetén") - szituációs megjelenítéshez. */
   megjegyzés?: string;
-  /** Alkategóriás státusz (pl. „Érzékvesztés: Látás (2)") alkategóriája: a hatás csak erre az érzékre/fajtára él. */
-  alkategória?: string;
   forrás: {
     típus: EffektForrásTípus; név: string;
-    /** fortély-forrásnál a fortély-id */ id?: string;
+    /** fortély-forrásnál a fortély-id, státusz-forrásnál a státusz-id */ id?: string;
     /** státusz-forrásnál a fok alcíme (pl. „Zavart") - feliratokhoz */ alcím?: string;
     /** fortély-forrásnál a többszörös példány eleme (pl. fegyver) */ elem?: string;
     /** fokozatos taktika választott foka */ fok?: number;
   };
 }
 
-/** Fortély-módosítók + alapesetek (fok 0) aktív effektjei. */
+/**
+ * Az aktív státuszok által letiltott fortélyok (md/081 „Fortély hatás letiltása: X"; státusz-hatás
+ * `{mód: letilt, cél: fortély, alcél: fortély:<id>}`): fortély-id → a letiltó státusz neve (pl. „Fizikai (3) Elcsigázottság").
+ */
+export function státuszLetiltottFortélyok(session: Pick<Session, 'aktív_státuszok'>, data: Pick<GameData, 'statuszok'>): Map<string, string> {
+  const ki = new Map<string, string>();
+  if (!session.aktív_státuszok?.length || !data.statuszok) return ki;   // részleges (teszt-)adat: nincs státusz
+  for (const e of gyűjtStátuszEffektek(session, data)) {
+    if (e.mód === 'letilt' && e.cél === 'fortély' && e.alcél?.startsWith('fortély:')) ki.set(e.alcél.slice('fortély:'.length), `${e.forrás.név} ${e.forrás.alcím ?? ''}`.trim());
+  }
+  return ki;
+}
+
+/** Fortély-módosítók + alapesetek (fok 0) aktív effektjei. Státusz által letiltott fortély kimarad (md/081). */
 export function gyűjtFortélyEffektek(
   k: Karakter, session: Session, data: GameData,
   aktívFeltételek: Set<string>,
   feltételTeljesül: (feltétel: unknown) => boolean,
 ): Effekt[] {
   const ki: Effekt[] = [];
+  const letiltott = státuszLetiltottFortélyok(session, data);
   for (const kf of k.fortélyok) {
+    if (letiltott.has(kf.id)) continue;
     const def = fortélyDef(data, kf.id);
     const fokDef = def?.fokok.find(fd => fd.fok === kf.fok);
     if (!def || !fokDef?.módosítók) continue;
@@ -73,7 +87,9 @@ export function gyűjtFortélyEffektek(
       }
     }
   }
+  const letiltottNevek = new Set([...letiltott.keys()].map(id => fortélyDef(data, id)?.név));
   for (const ae of evaluateAlapesetek(data.fortelySummaries, k, session, aktívFeltételek)) {
+    if (letiltottNevek.has(ae.fortély_név)) continue;
     for (const mod of ae.módosítók) {
       if (!mod.mód) continue; // a séma szerint kötelező; típusban opcionális
       ki.push({ cél: mod.cél, mód: mod.mód, érték: mod.érték, forrás: { típus: 'alapeset', név: ae.fortély_név } });
@@ -87,9 +103,11 @@ export function gyűjtFortélyEffektek(
  * Returns a Set of `"${taktika_feltétel_kulcs}|${cél}"` keys (e.g. "taktika:visszafogott|TÉ").
  * Number-independent: the taktika's contribution to that cél is dropped entirely.
  */
-function collectTaktikaLetiltások(k: Karakter, data: GameData): Set<string> {
+function collectTaktikaLetiltások(k: Karakter, session: Session, data: GameData): Set<string> {
   const letiltva = new Set<string>();
+  const státuszLetiltott = státuszLetiltottFortélyok(session, data);   // a letiltott fortély letiltása sem él
   for (const kf of k.fortélyok) {
+    if (státuszLetiltott.has(kf.id)) continue;
     const def = fortélyDef(data, kf.id);
     if (!def) continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
@@ -116,7 +134,7 @@ export function gyűjtTaktikaEffektek(
   session: Session, data: GameData, k: Karakter | undefined,
   feltételTeljesül: (feltétel: unknown) => boolean,
 ): Effekt[] {
-  const letiltva = k ? collectTaktikaLetiltások(k, data) : new Set<string>();
+  const letiltva = k ? collectTaktikaLetiltások(k, session, data) : new Set<string>();
   const ki: Effekt[] = [];
   let véÖsszeg = 0;
   for (const at of session.aktív_taktikák) {
@@ -163,21 +181,27 @@ export function gyűjtHelyzetEffektek(session: Session, data: GameData): Effekt[
 }
 
 /**
- * Az aktív státuszok (`"Név (fok)"` vagy `"Név: Alkategória (fok)"`, a StatuszPickerOverlay formátuma) adott
- * fokának `hatások[]`-a közös alakban. Alkategóriás státusznál a cél kanonikus marad, az `alkategória` mező
- * szűkíti (pl. Érzékvesztés: Látás → csak a látással végzett érzék-próbára).
+ * Az aktív státuszok (`"<id> (fok)"` / `"<id>: <alkategória> (fok)"`, engine/statusz.ts) adott fokának `hatások[]`-a
+ * közös alakban. Alkategóriás státusznál a hatás-sor `{alkategória}` helyőrzője (alcél, megjegyzés) a felvett
+ * alkategóriát kapja (pl. Érzékvesztés: Látás → `alcél: érzék:Látás`; Átkozott Képzettség: lexikum → `képzettség:lexikum`).
+ * A forrás neve a megjelenítési címke („Érzékvesztés: Látás (2)").
  */
-export function gyűjtStátuszEffektek(session: Pick<Session, 'aktív_státuszok'>, data: Pick<GameData, 'statuszok'>): Effekt[] {
+export function gyűjtStátuszEffektek(
+  session: Pick<Session, 'aktív_státuszok'>, data: Pick<GameData, 'statuszok'>,
+): Effekt[] {
   const ki: Effekt[] = [];
   for (const st of session.aktív_státuszok) {
-    const m = st.match(/^(.+) \((\d+)\)$/);
-    if (!m) continue;
-    const [alapNév, al] = m[1].split(': ');
-    const fokDef = státuszDef(data, alapNév)?.fokok.find(f => f.fok === parseInt(m[2]));
-    for (const h of fokDef?.hatások ?? []) {
-      ki.push({ cél: h.cél, ...(h.alcél ? { alcél: h.alcél } : {}), ...(al ? { alkategória: al } : {}),
-        mód: h.mód, érték: h.érték, ...(h.megjegyzés ? { megjegyzés: h.megjegyzés } : {}),
-        forrás: { típus: 'státusz', név: st, alcím: fokDef!.alcím } });
+    const p = parseStátusz(st);
+    if (!p) continue;
+    const def = státuszDef(data, p.id);
+    const fokDef = def?.fokok.find(f => f.fok === p.fok);
+    if (!fokDef) continue;
+    const név = státuszCímke(def, p);
+    for (const h of fokDef.hatások) {
+      const alcél = alkategóriaKitölt(h.alcél, p.alkategória);
+      const megjegyzés = alkategóriaKitölt(h.megjegyzés, p.alkategória);
+      ki.push({ cél: h.cél, ...(alcél ? { alcél } : {}), mód: h.mód, érték: h.érték, ...(megjegyzés ? { megjegyzés } : {}),
+        forrás: { típus: 'státusz', név, id: p.id, alcím: fokDef.alcím } });
     }
   }
   return ki;

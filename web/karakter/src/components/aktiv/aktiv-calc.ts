@@ -4,6 +4,7 @@ import type { AktívAlapeset } from '../../engine/alapeset';
 import { evaluateAlapesetek } from '../../engine/alapeset';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { eseményDef, fortélyDef, státuszDef, taktikaDef } from '../../engine/lookup';
+import { parseStátusz, alkategóriaCímke, alkategóriaKitölt } from '../../engine/statusz';
 
 // --- Types ---
 
@@ -50,15 +51,17 @@ interface AktivCalcData {
 function calcStátuszHatások(session: Session, data: GameData): StátuszPerElem[] {
   const result: StátuszPerElem[] = [];
   for (const st of session.aktív_státuszok) {
-    const match = st.match(/^(.+) \((\d+)\)$/);
-    if (!match) continue;
-    const stNév = match[1];
-    const baseName = stNév.includes(': ') ? stNév.split(': ')[0] : stNév;
-    const subName = stNév.includes(': ') ? stNév.split(': ')[1] : '';
-    const def = státuszDef(data, baseName);
-    const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
+    const p = parseStátusz(st);
+    if (!p) continue;
+    const def = státuszDef(data, p.id);
+    const fokDef = def?.fokok.find(f => f.fok === p.fok);
     if (fokDef) {
-      const hatások = fokDef.hatások.map(h => subName ? { ...h, cél: `${h.cél} (${subName.toLowerCase()})` } : h);
+      // Alkategóriás státusz: a hatás-sor helyőrzője kitöltve, a célhoz az alkategória címkéje (pl. „érzék_próba (Látás)")
+      const al = p.alkategória;
+      const címke = al ? alkategóriaCímke(def, al) : '';
+      const hatások = fokDef.hatások.map(h => al
+        ? { ...h, cél: `${h.cél} (${címke})`, alcél: alkategóriaKitölt(h.alcél, al), megjegyzés: alkategóriaKitölt(h.megjegyzés, al) }
+        : h);
       result.push({ név: st, alcím: fokDef.alcím, hatások });
     }
   }

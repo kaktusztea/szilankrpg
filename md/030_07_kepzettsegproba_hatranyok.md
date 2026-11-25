@@ -91,7 +91,7 @@ Automatikus kudarc
 
 Automatikus kudarc
 
-- Félelem (`2`) Rettegés/Pánik
+- Félelem (`2`) Rettegés
 - Indulat (`3`) Őrjöngés
 - Zavar (`2`) Megrendült
 

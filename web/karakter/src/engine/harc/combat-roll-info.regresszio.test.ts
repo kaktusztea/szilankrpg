@@ -33,10 +33,13 @@ function sessionVariánsok(base: Session): [string, Session][] {
   }
   for (const h of data.harciHelyzetek) ki.push([`helyzet ${h.név}`, { ...üres, aktív_helyzetek: [h.név] }]);
   for (const s of data.statuszok) for (const f of s.fokok) {
-    const nevek = s.alkategóriák?.length ? s.alkategóriák.map(a => `${s.név}: ${a} (${f.fok})`) : [`${s.név} (${f.fok})`];
-    for (const n of nevek) ki.push([`státusz ${n}`, { ...üres, aktív_státuszok: [n] }]);
+    // Kulcs: a megjelenítési név (stabil snapshot), a session-bejegyzés az id (engine/statusz.ts). Tulajdonság- /
+    // képzettség-forrású alkategóriánál elég egy (harci dobásra nem hatnak).
+    const alk = s.alkategória_forrás ? (s.alkategóriák ?? []).slice(0, 1) : s.alkategóriák ?? [];
+    const párok = alk.length ? alk.map(a => [`${s.név}: ${a} (${f.fok})`, `${s.id}: ${a} (${f.fok})`]) : [[`${s.név} (${f.fok})`, `${s.id} (${f.fok})`]];
+    for (const [n, kulcs] of párok) ki.push([`státusz ${n}`, { ...üres, aktív_státuszok: [kulcs] }]);
   }
-  ki.push(['kombó', { ...üres, aktív_taktikák: [{ név: 'Roham' }, { név: 'Visszafogott' }], aktív_helyzetek: ['Orvtámadás'], aktív_státuszok: ['Félelem (1)'] } as Session]);
+  ki.push(['kombó', { ...üres, aktív_taktikák: [{ név: 'Roham' }, { név: 'Visszafogott' }], aktív_helyzetek: ['Orvtámadás'], aktív_státuszok: ['félelem (1)'] } as Session]);
   return ki;
 }
 

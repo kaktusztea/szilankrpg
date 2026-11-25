@@ -22,7 +22,7 @@ describe('engine/lookup', () => {
 
   it('names case-insensitive, ids exact', () => {
     const data = {
-      taktikak: [{ név: 'Támadó' }], harciHelyzetek: [{ név: 'Belharc' }], statuszok: [{ név: 'Félelem' }],
+      taktikak: [{ név: 'Támadó' }], harciHelyzetek: [{ név: 'Belharc' }], statuszok: [{ id: 'félelem', név: 'Félelem' }],
       fortelySummaries: [{ id: 'harci_akrobatika' }], kepzettsegDefs: [{ id: 'akrobatika' }], esemenyek: [{ id: 'kinzas' }],
     } as unknown as GameData;
     expect(taktikaDef(data, 'támadó')?.név).toBe('Támadó');

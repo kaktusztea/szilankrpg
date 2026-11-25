@@ -31,8 +31,8 @@ export const taktikaDef = (data: D<'taktikak'>, név: string): Elem<'taktikak'> 
   indexBy(data.taktikak, t => kis(t.név)).get(kis(név));
 export const helyzetDef = (data: D<'harciHelyzetek'>, név: string): Elem<'harciHelyzetek'> | undefined =>
   indexBy(data.harciHelyzetek, h => kis(h.név)).get(kis(név));
-export const státuszDef = (data: D<'statuszok'>, név: string): Elem<'statuszok'> | undefined =>
-  indexBy(data.statuszok, s => kis(s.név)).get(kis(név));
+export const státuszDef = (data: D<'statuszok'>, id: string): Elem<'statuszok'> | undefined =>
+  indexBy(data.statuszok, s => s.id).get(id);
 export const fortélyDef = (data: D<'fortelySummaries'>, id: string): Elem<'fortelySummaries'> | undefined =>
   indexBy(data.fortelySummaries, f => f.id).get(id);
 export const képzettségDef = (data: D<'kepzettsegDefs'>, id: string): Elem<'kepzettsegDefs'> | undefined =>

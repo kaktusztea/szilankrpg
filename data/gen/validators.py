@@ -12,7 +12,8 @@ def tiltas_ids_of(helyzetek):
 
 
 # Próba-alcél (§42.4): a cél határozza meg a kötelező prefixet.
-ALCEL_PROBA_PREFIX = {'képzettségpróba': 'képzettség', 'tulajdonságpróba': 'tulajdonság', 'érzék_próba': 'érzék'}
+ALCEL_PROBA_PREFIX = {'képzettségpróba': 'képzettség', 'tulajdonságpróba': 'tulajdonság', 'érzék_próba': 'érzék',
+                      'fortély': 'fortély'}   # fortély: Fortély hatás letiltása (md/081), alcél fortély:<id>
 
 
 def proba_alcel_hibak(cel, alcel, ctx, refs):
@@ -36,7 +37,30 @@ def proba_alcel_refs(sources_dir, statuszok):
     with open(os.path.join(sources_dir, '..', 'schemas', 'karakter.yaml'), encoding='utf-8') as fh:
         tul = set(yaml.safe_load(fh)['tulajdonságok'])
     erz = {a for s in statuszok for a in (s.get('alkategóriák') or [])}
-    return {'képzettség': kepz, 'tulajdonság': tul, 'érzék': erz}
+    fort = {f['id'] for f in fortely_lista(sources_dir)}
+    return {'képzettség': kepz, 'tulajdonság': tul, 'érzék': erz, 'fortély': fort}
+
+
+def kepzettseg_nevek(sources_dir):
+    """A képzettség-forrásfájlok {id: név} párjai, id szerint rendezve (sources/kepzettsegek/**/*.yaml)."""
+    import glob, os, yaml
+    ki = {}
+    for f in glob.glob(os.path.join(sources_dir, 'kepzettsegek', '**', '*.yaml'), recursive=True):
+        with open(f, encoding='utf-8') as fh:
+            d = yaml.safe_load(fh)
+        if isinstance(d, dict) and d.get('id'): ki[d['id']] = d.get('név', d['id'])
+    return dict(sorted(ki.items()))
+
+
+def fortely_lista(sources_dir):
+    """A fortély-forrásfájlok {id, név} párjai (sources/fortelyok/**/*.yaml)."""
+    import glob, os, yaml
+    ki = []
+    for f in sorted(glob.glob(os.path.join(sources_dir, 'fortelyok', '**', '*.yaml'), recursive=True)):
+        with open(f, encoding='utf-8') as fh:
+            d = yaml.safe_load(fh)
+        if isinstance(d, dict) and d.get('id'): ki.append({'id': d['id'], 'név': d.get('név', d['id'])})
+    return ki
 
 
 def validate_effekt_hivatkozasok(helyzetek, extrak, statuszok=()):
@@ -47,7 +71,7 @@ def validate_effekt_hivatkozasok(helyzetek, extrak, statuszok=()):
     errors = []
     tiltasok = tiltas_ids_of(helyzetek)
     helyzet_ids = {h.get('id') for h in helyzetek}
-    statusz_nevek = {s.get('név') for s in statuszok}
+    statusz_ids = {s.get('id') for s in statuszok}
     def ref(s, hely):
         if not isinstance(s, str) or ':' not in s: return
         pre, _, val = s.partition(':')
@@ -65,8 +89,8 @@ def validate_effekt_hivatkozasok(helyzetek, extrak, statuszok=()):
         for f in e.get('feltétel') or []:
             if f.get('típus') == 'harci_helyzet' and f.get('id') not in helyzet_ids:
                 errors.append(f"extrak [{e.get('id')}]: ismeretlen harci helyzet '{f.get('id')}' (feltétel)")
-            if f.get('típus') == 'státusz' and f.get('név') not in statusz_nevek:
-                errors.append(f"extrak [{e.get('id')}]: ismeretlen státusz '{f.get('név')}' (feltétel)")
+            if f.get('típus') == 'státusz' and f.get('név') not in statusz_ids:
+                errors.append(f"extrak [{e.get('id')}]: ismeretlen státusz-id '{f.get('név')}' (feltétel)")
     hibak_kilep("Effekt-hivatkozás hibák (tiltás / ellenfél_harci_helyzet)", errors)
 
 
@@ -212,7 +236,12 @@ def validate_statuszok(statuszok, effekt_modok, esemenyek):
                         if not isinstance(h, dict): errors.append(f"{hctx}: nem objektum"); continue
                         if h.get('mód') not in effekt_modok: errors.append(f"{hctx}: ismeretlen mód: '{h.get('mód')}'")
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
-                        errors.extend(proba_alcel_hibak(h.get('cél'), h.get('alcél'), hctx, alcel_refs))
+                        alcel = h.get('alcél') or ''
+                        if '{alkategória}' in alcel:
+                            for alk in s.get('alkategóriák') or []:
+                                errors.extend(proba_alcel_hibak(h.get('cél'), alcel.replace('{alkategória}', alk), f"{hctx} [{alk}]", alcel_refs))
+                        else:
+                            errors.extend(proba_alcel_hibak(h.get('cél'), h.get('alcél'), hctx, alcel_refs))
     hibak_kilep("Státusz validációs hibák", errors)
 
 
@@ -233,27 +262,6 @@ def validate_harci_helyzet_hatasok(helyzetek, effekt_modok, esemenyek, harcertek
             if cél not in valid_cel: errors.append(f"{hctx}: ismeretlen cél")
             if not (isinstance(szöveg, str) and szöveg.strip()): errors.append(f"{hctx}: üres szöveg")
     hibak_kilep("Harci helyzet hatás validációs hibák", errors)
-
-
-def validate_hatasok_katalogus(hatasok, effekt_modok, esemenyek):
-    """Validate hatasok.yaml - id egyediség + mechanika referenciális integritás."""
-    errors = []
-    valid_cel_ids = {e['id'] for e in esemenyek}
-    ids_seen = set()
-    for i, h in enumerate(hatasok):
-        ctx = f"hatások[{i}] ({h.get('id', '?')})"
-        if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
-        elif h['id'] in ids_seen: errors.append(f"{ctx}: duplikált id")
-        else: ids_seen.add(h['id'])
-        if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
-        mechanika = h.get('mechanika')
-        if not mechanika or not isinstance(mechanika, list): errors.append(f"{ctx}: hiányzó vagy üres 'mechanika'")
-        else:
-            for j, m in enumerate(mechanika):
-                mctx = f"{ctx} mechanika[{j}]"
-                if m.get('mód') not in effekt_modok: errors.append(f"{mctx}: ismeretlen mód: '{m.get('mód')}'")
-                if m.get('cél') and m['cél'] not in valid_cel_ids: errors.append(f"{mctx}: ismeretlen cél: '{m.get('cél')}'")
-    hibak_kilep("Hatás katalógus validációs hibák", errors)
 
 
 ID_FORMÁTUM = re.compile(r'^[0-9a-záéíóöőúüű]+(_[0-9a-záéíóöőúüű]+)*$')

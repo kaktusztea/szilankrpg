@@ -335,7 +335,7 @@ A box-ok fölötti „Fortélyok és Alapesetek” címsor (`.aktiv-fortely-head
 | `AktivStatuszok.tsx` | Státusz picker + chip-ek |
 | `AktivHatasPool.tsx` | Hatás pool box (fortély bónuszok + alapesetek + státusz/taktika hatások) |
 | `PickerOverlay.tsx` | Generikus picker overlay wrapper |
-| `StatuszPickerOverlay.tsx` | Státusz választó overlay (kategóriák + fok) |
+| `StatuszPickerOverlay.tsx` | Státusz választó overlay (kategóriák → státusz → alkategória, ha van: érzék / Tulajdonság / képzettség csoportonként → fok; a felvett alkategória nem kínálható újra) |
 | `TaktikaPickerList.tsx` | Taktika választó lista (pinned + többi) |
 | `TaktikaFokPicker.tsx` | Fokozatos taktika fok-választó |
 | `KeDobasPopup.tsx` (harc/) | Kezdeményezés (KÉ) dobás popup (E/H léptető, Harci helyzet / Bónusz kapszula, csukott bontás) |
