@@ -2,7 +2,7 @@ import { Ikon } from '../common/Ikon';
 import { useRef, useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Session, UndoPatch } from '../../engine/types';
-import { fmtHatás, fmtHatásSzöveg } from '../formatters';
+import { hatásFeliratok, fmtHatásSzöveg } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import type { StátuszPerElem } from './aktiv-calc';
@@ -66,10 +66,9 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
             }}>
               <span className="aktiv-flex-1">
                 <strong className="aktiv-statusz-name">{státuszCímke(def, p)}{alcím ? ` - ${alcím}` : ''}:</strong>
-                {perElem && perElem.hatások.length > 0 && <span> {perElem.hatások.map((h, j) => {
-                  const txt = fmtHatás(h, eseményNév);
-                  return txt ? <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span> : null;
-                })}</span>}
+                {perElem && perElem.hatások.length > 0 && <span> {hatásFeliratok(perElem.hatások, eseményNév,
+                  id => data.kepzettsegDefs.find(k => k.id === id)?.név).map((txt, j) =>
+                  <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span>)}</span>}
               </span>
               {!locked && <button className="item-delete" onClick={e => {
                 e.stopPropagation();

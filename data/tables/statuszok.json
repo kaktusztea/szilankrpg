@@ -17,7 +17,7 @@
             "alcél": "tulajdonság:{alkategória}",
             "megjegyzés": "feltétel esetén",
             "hatás_id": "előny",
-            "hatás_név": "Előny+1"
+            "hatás_név": "Előny+1: Tulajdonságpróba"
           }
         ]
       },
@@ -32,7 +32,7 @@
             "alcél": "tulajdonság:{alkategória}",
             "megjegyzés": "feltétel esetén",
             "hatás_id": "előny",
-            "hatás_név": "Előny+2"
+            "hatás_név": "Előny+2: Tulajdonságpróba"
           }
         ]
       }
@@ -75,7 +75,7 @@
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:{alkategória}",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           }
         ]
       },
@@ -89,7 +89,7 @@
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:{alkategória}",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           }
         ]
       }
@@ -132,7 +132,7 @@
             "cél": "képzettségpróba",
             "alcél": "képzettség:{alkategória}",
             "hatás_id": "előny",
-            "hatás_név": "Előny+1"
+            "hatás_név": "Előny+1: Képzettségpróba"
           }
         ]
       },
@@ -146,7 +146,7 @@
             "cél": "képzettségpróba",
             "alcél": "képzettség:{alkategória}",
             "hatás_id": "előny",
-            "hatás_név": "Előny+2"
+            "hatás_név": "Előny+2: Képzettségpróba"
           }
         ]
       }
@@ -335,7 +335,7 @@
             "cél": "képzettségpróba",
             "alcél": "képzettség:{alkategória}",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Képzettségpróba"
           }
         ]
       },
@@ -349,7 +349,7 @@
             "cél": "képzettségpróba",
             "alcél": "képzettség:{alkategória}",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Képzettségpróba"
           }
         ]
       }
@@ -558,7 +558,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "KM határozza meg",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Képzettségpróba"
           }
         ]
       },
@@ -577,7 +577,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "KM határozza meg",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Képzettségpróba"
           }
         ]
       }
@@ -611,6 +611,13 @@
             "megjegyzés": "nyaktól lefelé",
             "hatás_id": "mozgás_képtelen",
             "hatás_név": "Mozgás - képtelen"
+          },
+          {
+            "mód": "letilt",
+            "cél": "harci_képesség",
+            "megjegyzés": "nyaktól lefelé",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
           }
         ]
       },
@@ -627,6 +634,12 @@
           {
             "mód": "letilt",
             "cél": "mozgás",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
+          },
+          {
+            "mód": "letilt",
+            "cél": "harci_képesség",
             "hatás_id": "mozgás_képtelen",
             "hatás_név": "Mozgás - képtelen"
           },
@@ -661,7 +674,7 @@
             "érték": -1,
             "cél": "té_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: TÉ dobás"
           },
           {
             "mód": "szorzó",
@@ -681,7 +694,7 @@
             "érték": -2,
             "cél": "té_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: TÉ dobás"
           },
           {
             "mód": "szorzó",
@@ -715,28 +728,28 @@
             "érték": -1,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: KÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "té_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: TÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Képzettségpróba"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           },
           {
             "mód": "szöveges",
@@ -759,7 +772,7 @@
             "alcél": "képzettség:fájdalomtűrés",
             "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására",
             "hatás_id": "előny",
-            "hatás_név": "Előny+1"
+            "hatás_név": "Előny+1: Képzettségpróba"
           }
         ]
       },
@@ -777,28 +790,28 @@
             "érték": -2,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: KÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "té_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: TÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Képzettségpróba"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           },
           {
             "mód": "max_limit",
@@ -820,7 +833,7 @@
             "alcél": "képzettség:fájdalomtűrés",
             "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására",
             "hatás_id": "előny",
-            "hatás_név": "Előny+2"
+            "hatás_név": "Előny+2: Képzettségpróba"
           }
         ]
       },
@@ -843,17 +856,23 @@
             "mód": "letilt",
             "cél": "képzettségpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Képzettségpróba"
           },
           {
             "mód": "letilt",
             "cél": "tulajdonságpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Tulajdonságpróba"
           },
           {
             "mód": "letilt",
             "cél": "mozgás",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
+          },
+          {
+            "mód": "letilt",
+            "cél": "harci_képesség",
             "hatás_id": "mozgás_képtelen",
             "hatás_név": "Mozgás - képtelen"
           },
@@ -899,17 +918,23 @@
             "mód": "letilt",
             "cél": "képzettségpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Képzettségpróba"
           },
           {
             "mód": "letilt",
             "cél": "tulajdonságpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Tulajdonságpróba"
           },
           {
             "mód": "letilt",
             "cél": "mozgás",
+            "hatás_id": "mozgás_képtelen",
+            "hatás_név": "Mozgás - képtelen"
+          },
+          {
+            "mód": "letilt",
+            "cél": "harci_képesség",
             "hatás_id": "mozgás_képtelen",
             "hatás_név": "Mozgás - képtelen"
           },
@@ -1029,7 +1054,7 @@
             "érték": -1,
             "cél": "szociális_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Szociális képzettségpróba"
           }
         ]
       },
@@ -1053,7 +1078,7 @@
             "mód": "letilt",
             "cél": "szociális_próba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Szociális képzettségpróba"
           }
         ]
       },
@@ -1080,6 +1105,12 @@
             "cél": "harci_képesség",
             "hatás_id": "mozgás_képtelen",
             "hatás_név": "Mozgás - képtelen"
+          },
+          {
+            "mód": "letilt",
+            "cél": "harci_képesség",
+            "hatás_id": "harcképtelenség",
+            "hatás_név": "Harcképtelenség"
           },
           {
             "mód": "letilt",
@@ -1121,14 +1152,14 @@
             "érték": -1,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: KÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "szellemi_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Szellemi próba"
           }
         ]
       },
@@ -1156,14 +1187,14 @@
             "érték": -1,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: KÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "szellemi_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Szellemi próba"
           },
           {
             "mód": "szöveges",
@@ -1194,14 +1225,14 @@
             "érték": -2,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: KÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "nem_harci_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Nem-harci képzettségpróba"
           },
           {
             "mód": "max_limit",
@@ -1282,7 +1313,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "kreatív tevékenységekre",
             "hatás_id": "előny",
-            "hatás_név": "Előny+1"
+            "hatás_név": "Előny+1: Képzettségpróba"
           },
           {
             "mód": "hátrány",
@@ -1290,7 +1321,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "koncentrációt igénylő feladatokra",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Képzettségpróba"
           }
         ]
       },
@@ -1309,7 +1340,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "kreatív tevékenységekre",
             "hatás_id": "előny",
-            "hatás_név": "Előny+1"
+            "hatás_név": "Előny+1: Képzettségpróba"
           },
           {
             "mód": "szöveges",
@@ -1324,7 +1355,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "koncentrációt igénylő feladatokra",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Képzettségpróba"
           }
         ]
       },
@@ -1343,7 +1374,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "obszesszió tárgyához kötődő",
             "hatás_id": "előny",
-            "hatás_név": "Előny+1"
+            "hatás_név": "Előny+1: Képzettségpróba"
           },
           {
             "mód": "hátrány",
@@ -1351,7 +1382,7 @@
             "cél": "képzettségpróba",
             "megjegyzés": "minden más",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Képzettségpróba"
           },
           {
             "mód": "szöveges",
@@ -1448,13 +1479,13 @@
             "mód": "letilt",
             "cél": "szociális_próba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Szociális képzettségpróba"
           },
           {
             "mód": "letilt",
             "cél": "szellemi_próba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Szellemi próba"
           }
         ]
       }
@@ -1488,7 +1519,7 @@
             "alcél": "tulajdonság:önuralom",
             "megjegyzés": "Automatikus próba - Önuralom (12)",
             "hatás_id": "automatikus_próba",
-            "hatás_név": "Automatikus Tulajdonság/Képzettségpróba"
+            "hatás_név": "Automatikus Tulajdonság/Képzettségpróba: Tulajdonságpróba"
           }
         ]
       },
@@ -1506,9 +1537,8 @@
             "érték": -1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom próbára",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           }
         ]
       },
@@ -1526,9 +1556,8 @@
             "érték": -2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom próbára",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           }
         ]
       }
@@ -1550,21 +1579,21 @@
             "érték": -1,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: KÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "té_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: TÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "fizikai_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Fizikai próba"
           }
         ]
       },
@@ -1577,28 +1606,28 @@
             "érték": -2,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: KÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "té_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: TÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "fizikai_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Fizikai próba"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Szociális képzettségpróba"
           }
         ]
       }
@@ -1625,14 +1654,14 @@
             "érték": -1,
             "cél": "tulajdonságpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Képzettségpróba"
           }
         ]
       },
@@ -1650,14 +1679,14 @@
             "érték": -2,
             "cél": "tulajdonságpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Képzettségpróba"
           }
         ]
       },
@@ -1674,13 +1703,13 @@
             "mód": "letilt",
             "cél": "képzettségpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Képzettségpróba"
           },
           {
             "mód": "letilt",
             "cél": "tulajdonságpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Tulajdonságpróba"
           },
           {
             "mód": "letilt",
@@ -1732,7 +1761,7 @@
             "cél": "képzettségpróba",
             "alcél": "képzettség:észlelés",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Képzettségpróba"
           }
         ]
       },
@@ -1751,14 +1780,14 @@
             "érték": -1,
             "cél": "szellemi_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Szellemi próba"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Szociális képzettségpróba"
           },
           {
             "mód": "hátrány",
@@ -1766,7 +1795,7 @@
             "cél": "varázslás",
             "megjegyzés": "random hatás esélye ↑",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Varázslás képesség"
           }
         ]
       },
@@ -1785,7 +1814,7 @@
             "érték": -2,
             "cél": "varázslás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Varázslás képesség"
           },
           {
             "mód": "hátrány",
@@ -1793,14 +1822,14 @@
             "cél": "szellemi_próba",
             "megjegyzés": "nem-mágikus",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Szellemi próba"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "szociális_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Szociális képzettségpróba"
           }
         ]
       }
@@ -1827,18 +1856,16 @@
             "érték": -1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:érzékenység",
-            "megjegyzés": "Érzékenység",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
@@ -1846,7 +1873,7 @@
             "cél": "szociális_próba",
             "megjegyzés": "Önuralom/Érzékenység használatakor",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Szociális képzettségpróba"
           }
         ]
       },
@@ -1864,18 +1891,16 @@
             "érték": -2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:önuralom",
-            "megjegyzés": "Önuralom",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:érzékenység",
-            "megjegyzés": "Érzékenység",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
@@ -1883,7 +1908,7 @@
             "cél": "szociális_próba",
             "megjegyzés": "Önuralom/Érzékenység használatakor",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Szociális képzettségpróba"
           }
         ]
       }
@@ -1920,7 +1945,7 @@
             "érték": -1,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: KÉ dobás"
           },
           {
             "mód": "hátrány",
@@ -1928,7 +1953,7 @@
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:gyorsaság",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
@@ -1936,21 +1961,21 @@
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:ügyesség",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "szellemi_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Szellemi próba"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "szociális_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Szociális képzettségpróba"
           }
         ]
       },
@@ -1970,27 +1995,27 @@
             "mód": "letilt",
             "cél": "szellemi_próba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Szellemi próba"
           },
           {
             "mód": "letilt",
             "cél": "szociális_próba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Szociális képzettségpróba"
           },
           {
             "mód": "hátrány",
             "érték": -1,
             "cél": "té_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1"
+            "hatás_név": "Hátrány-1: TÉ dobás"
           },
           {
             "mód": "hátrány",
             "érték": -2,
             "cél": "ké_dobás",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: KÉ dobás"
           },
           {
             "mód": "hátrány",
@@ -1998,7 +2023,7 @@
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:gyorsaság",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           },
           {
             "mód": "hátrány",
@@ -2006,7 +2031,7 @@
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:ügyesség",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2"
+            "hatás_név": "Hátrány-2: Tulajdonságpróba"
           },
           {
             "mód": "max_limit",
@@ -2052,13 +2077,13 @@
             "mód": "letilt",
             "cél": "tulajdonságpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Tulajdonságpróba"
           },
           {
             "mód": "letilt",
             "cél": "képzettségpróba",
             "hatás_id": "automatikus_kudarc",
-            "hatás_név": "Automatikus kudarc"
+            "hatás_név": "Automatikus kudarc: Képzettségpróba"
           },
           {
             "mód": "letilt",

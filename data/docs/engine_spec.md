@@ -1605,8 +1605,10 @@ Sablon mezői:
 - `mechanika`: effekt-sorok; `"{param}"` = a paraméter értéke, részleges helyőrző (`"fortély:{fortély}"`) a nyers id-vel töltődik
 - `szöveg` (opcionális): `szöveges` mechanikánál a kifejtett sor `megjegyzés`-e; a státusz `megjegyzés`-e " - " után hozzáfűződik
   (enélkül a státusz megjegyzése megy át); `megjegyzés_kötelező` (opcionális, pl. `narratív`)
-- A státusz-sor `alcél` és `megjegyzés` mezője minden Hatásnál átmegy. Egy fokon belül az azonos (mód, cél, alcél, érték) sorok
-  összevonódnak (pl. Harcképtelenség + Mozgás - képtelen: egy `letilt harci_képesség`); `szöveges` sornál a megjegyzés is kulcs.
+- A státusz-sor `alcél` és `megjegyzés` mezője minden Hatásnál átmegy. Nincs összevonás (2026-11-25): az ismétlődő tiltó /
+  szorzó / max-korlát / szöveges sor ugyanazt adja, és a megjelenítésben mindkét Hatás látszik (pl. Harcképtelenség + Mozgás -
+  képtelen). Összeadódó mód (előny, hátrány, enyhít, flat, scaled, override) ismétlése ugyanarra a célra + alcélra: gate-hiba.
+  A `hatás_név` célpont-paraméteres Hatásnál a cél nevét is tartalmazza (pl. "Hátrány-1: TÉ dobás", "Automatikus kudarc: Szociális képzettségpróba").
 
 Build-gate (`hatas_sablon.py`): `sablon_hibak` (id egyedi, név, paraméter-típus / célpont-csoport, mechanika mód / cél, deklarált
 helyőrzők) + `kifejt_statuszok` (ismeretlen Hatás, ismeretlen / hiányzó paraméter, nem megengedett érték, célpont-csoport,
@@ -1699,7 +1701,12 @@ Formátum:
 - **Taktika neve (fok)** halvány kék (`#90caf9`) - alatta soronként a hatásai
 - **Státusz név (fok) alcím** gesztenye/bordó (`#cd7c6f`) - alatta soronként a hatásai fehéren
 
-Hatás sor formázás:
+Hatás sor formázás (`components/formatters.tsx` `fmtHatás` / `hatásFeliratok`, 2026-11-25):
+- Státusz-hatás (`hatás_név` van): a Hatás neve (+ ` (<alcél neve>)` képzettség / Tulajdonság szűkítésnél, + ` - <megjegyzés>`),
+  pl. "Mozgás - feleződik", "Előny+1: Képzettségpróba (Fájdalomtűrés) - áfiumok, …". Alkategóriás státusznál a `{alkategória}`
+  helyőrzőt a felvett alkategória címkéje tölti ki (`engine/statusz.ts` `hatásKitöltve`). Az egymás után ismétlődő felirat
+  (több mechanika-sorból álló Hatás) egyszer jelenik meg.
+- Egyéb (taktika-hatás, `hatás_név` nélkül), módonként:
 - `szöveges`: csak a `megjegyzés` szöveg (cél nem jelenik meg)
 - `letilt`: "❌ Letiltva: {cél név}"
 - `előny`/`hátrány`: "Előny+N: {cél név}" / "Hátrány-N: {cél név}"

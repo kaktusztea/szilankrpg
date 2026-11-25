@@ -3,9 +3,9 @@ import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
 import type { StatuszEntry } from '../../engine/data-types';
 import { PickerOverlay } from '../picker/PickerOverlay';
-import { fmtHatás } from '../formatters';
+import { hatásFeliratok } from '../formatters';
 import { eseményDef, státuszDef } from '../../engine/lookup';
-import { alkategóriaCímke, státuszKulcs, választhatóAlkategóriák, státuszFelvehető } from '../../engine/statusz';
+import { alkategóriaCímke, státuszKulcs, választhatóAlkategóriák, státuszFelvehető, hatásKitöltve } from '../../engine/statusz';
 
 interface Props {
   data: GameData;
@@ -35,6 +35,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
   const [fokVálasztó, setFokVálasztó] = useState<{ id: string; alkategória?: string } | null>(null);
 
   const eseményNév = (id: string) => eseményDef(data, id)?.név ?? id;
+  const képzettségNév = (id: string) => data.kepzettsegDefs.find(k => k.id === id)?.név;
   const fokDef = fokVálasztó ? státuszDef(data, fokVálasztó.id) : undefined;
   const cím = fokVálasztó && fokDef
     ? `${fokDef.név}${fokVálasztó.alkategória ? `: ${alkategóriaCímke(fokDef, fokVálasztó.alkategória)}` : ''} - fok választó`
@@ -96,9 +97,8 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
       {fokVálasztó && fokDef && fokDef.fokok.map(f => (
         <button type="button" key={f.fok} className="aktiv-picker-item" onClick={() => onPick(státuszKulcs({ ...fokVálasztó, fok: f.fok }))}>
           <span className="aktiv-picker-item-name">{f.alcím} ({f.fok})</span>
-          <span className="aktiv-picker-item-hatas">{f.hatások.slice(0, 4)
-            .map(h => fmtHatás(h, eseményNév))
-            .filter(Boolean).join('; ')}</span>
+          <span className="aktiv-picker-item-hatas">{hatásFeliratok(
+            f.hatások.map(h => hatásKitöltve(h, fokDef, fokVálasztó.alkategória)), eseményNév, képzettségNév).slice(0, 4).join('; ')}</span>
         </button>
       ))}
     </PickerOverlay>

@@ -55,3 +55,15 @@ export function státuszFelvehető(def: StatuszEntry, aktívStátuszok: string[]
   if (def.alkategóriák?.length) return választhatóAlkategóriák(def, aktívStátuszok).length > 0;
   return !aktívStátuszok.some(s => parseStátusz(s)?.id === def.id);
 }
+
+/**
+ * Egy státusz-hatás sor megjelenítéshez kitöltve a felvett alkategóriával: az `alcél` a nyers értéket kapja (pl.
+ * `képzettség:lexikum`), a `hatás_név` / `megjegyzés` az olvasható címkét (pl. „Érzék - Hátrány-2 (Látás)").
+ */
+export function hatásKitöltve<T extends { alcél?: string; megjegyzés?: string; hatás_név?: string }>(
+  h: T, def: Pick<StatuszEntry, 'alkategória_címkék'> | undefined, al: string | undefined,
+): T {
+  if (!al) return h;
+  const címke = alkategóriaCímke(def, al);
+  return { ...h, alcél: alkategóriaKitölt(h.alcél, al), megjegyzés: alkategóriaKitölt(h.megjegyzés, címke), hatás_név: alkategóriaKitölt(h.hatás_név, címke) };
+}

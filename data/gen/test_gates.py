@@ -168,15 +168,29 @@ class AktivFulGates(unittest.TestCase):
                 self.assertTrue(self._kifejt_hiba(sor))
 
     def test_kifejtes_osszevonas(self):
-        """Azonos nem-szöveges mechanika egyszer marad; különböző szövegű szöveges sorok mind megmaradnak."""
+        """Nincs összevonás: az ismétlődő tiltás mindkét Hatással megmarad; összeadódó mód ismétlése ugyanarra a célra hiba."""
         st = self._st()
         fok = next(x for x in st if x['név'] == 'Blokkolt')['fokok'][0]
         fok['hatások'] = [{'hatás': 'harcképtelenség'}, {'hatás': 'mozgás_képtelen'},
                           {'hatás': 'taktika_kötelező', 'taktika': 'támadó', 'fok': 'MAX'},
                           {'hatás': 'narratív', 'cél': 'harci_képesség', 'megjegyzés': 'x'}]
         self.assertEqual(kifejt_statuszok(st, self.A.hatasok, self.A.esemenyek, self.A.taktikak, fortely_lista(SOURCES_DIR)), [])
-        self.assertEqual([(h['mód'], h['cél']) for h in fok['hatások']],
-                         [('letilt', 'harci_képesség'), ('letilt', 'mozgás'), ('szöveges', 'harci_képesség'), ('szöveges', 'harci_képesség')])
+        self.assertEqual([(h['mód'], h['cél'], h['hatás_id']) for h in fok['hatások']],
+                         [('letilt', 'harci_képesség', 'harcképtelenség'), ('letilt', 'mozgás', 'mozgás_képtelen'),
+                          ('letilt', 'harci_képesség', 'mozgás_képtelen'), ('szöveges', 'harci_képesség', 'taktika_kötelező'),
+                          ('szöveges', 'harci_képesség', 'narratív')])
+        self.assertTrue(self._kifejt_hiba({'hatás': 'hátrány', 'érték': -1, 'cél': 'té_dobás'}) == [])
+        st = self._st()
+        fok = next(x for x in st if x['név'] == 'Blokkolt')['fokok'][0]
+        fok['hatások'] = [{'hatás': 'hátrány', 'érték': -1, 'cél': 'té_dobás'}, {'hatás': 'hátrány', 'érték': -2, 'cél': 'té_dobás'}]
+        self.assertTrue(kifejt_statuszok(st, self.A.hatasok, self.A.esemenyek, self.A.taktikak, fortely_lista(SOURCES_DIR)))
+
+    def test_hatas_nev_celponttal(self):
+        st = self._st()
+        fok = next(x for x in st if x['név'] == 'Blokkolt')['fokok'][0]
+        fok['hatások'] = [{'hatás': 'automatikus_kudarc', 'cél': 'szociális_próba'}, {'hatás': 'mozgás_feleződik'}]
+        kifejt_statuszok(st, self.A.hatasok, self.A.esemenyek, self.A.taktikak, fortely_lista(SOURCES_DIR))
+        self.assertEqual([h['hatás_név'] for h in fok['hatások']], ['Automatikus kudarc: Szociális képzettségpróba', 'Mozgás - feleződik'])
 
     def test_alkategoria_hibak(self):
         st = [{'id': 'a', 'alkategória_forrás': 'nincs_ilyen'}, {'id': 'b', 'alkategóriák': ['x'], 'alkategória_forrás': 'tulajdonságok'}]

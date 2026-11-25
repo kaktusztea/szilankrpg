@@ -11,6 +11,7 @@ PARAM_TIPUSOK = {'szám', 'célpont', 'taktika', 'taktika_fok', 'fortély', 'ér
 HELYŐRZŐ = re.compile(r'\{([^{}]+)\}')
 ALKATEGÓRIA = '{alkategória}'   # futásidejű helyőrző: a státusz felvételekor választott alkategória (a webapp tölti ki)
 ALKATEGÓRIA_FORRÁSOK = ('tulajdonságok', 'képzettségek')
+ÖSSZEADÓDÓ_MÓDOK = {'előny', 'hátrány', 'enyhít', 'flat', 'scaled', 'override'}   # ismétlésük ugyanarra a célra kétszer számolna
 
 
 def alkategoria_kifejt(statuszok, tulajdonsagok, kepzettsegek):
@@ -149,6 +150,9 @@ def kifejt_statuszok(statuszok, hatasok, esemenyek, taktikak, fortelyok=(), hiva
                 disp = {pn: _megjelenít(pn, pd, ertekek.get(pn), taktika_nev, fortely_nev) for pn, pd in pdef.items()}
                 tölt = lambda minta: HELYŐRZŐ.sub(lambda m: disp.get(m.group(1), m.group(0)), minta)
                 hatás_név = tölt(sablon['név'])
+                célp = [pn for pn, pd in pdef.items() if pd['típus'] == 'célpont' and pn in ertekek and '{' + pn + '}' not in sablon['név']]
+                if célp and sablon['id'] != 'narratív':
+                    hatás_név += ': ' + esemeny_by_id.get(ertekek[célp[0]], {}).get('név', ertekek[célp[0]])
                 for m in sablon['mechanika']:
                     row = {}
                     for kk, vv in m.items():
@@ -171,13 +175,15 @@ def kifejt_statuszok(statuszok, hatasok, esemenyek, taktikak, fortelyok=(), hiva
                     row['hatás_id'] = sablon['id']
                     row['hatás_név'] = hatás_név
                     ki.append(row)
-            # Azonos mechanika-sor (mód, cél, alcél, érték) egy fokon belül egyszer: pl. Harcképtelenség + Mozgás - képtelen
-            # mindkettő letiltja a harci_képesség-et. Szöveges sornál a megjegyzés a tartalom, ezért az is a kulcs része.
-            látott, egyedi = set(), []
+            # Nincs összevonás: a tiltó / szorzó / max-korlát / szöveges sor ismétlése ugyanazt adja (pl. Harcképtelenség +
+            # Mozgás - képtelen mindkettő letiltja a harci_képesség-et - a megjelenítésben mindkét Hatás látszik). Az
+            # összeadódó (kocka / additív) mód ugyanarra a célra viszont kétszer számolna: hiba.
+            látott = set()
             for r in ki:
-                kulcs = (r.get('mód'), r.get('cél'), r.get('alcél'), r.get('érték'),
-                         r.get('megjegyzés') if r.get('mód') == 'szöveges' else None)
-                if kulcs in látott: continue
-                látott.add(kulcs); egyedi.append(r)
-            f['hatások'] = egyedi
+                if r.get('mód') not in ÖSSZEADÓDÓ_MÓDOK: continue
+                kulcs = (r.get('mód'), r.get('cél'), r.get('alcél'))
+                if kulcs in látott:
+                    errors.append(f"státusz '{s.get('név')}' fok {f.get('fok')}: ismétlődő {kulcs[0]} hatás ugyanarra a célra ({kulcs[1]}{', ' + kulcs[2] if kulcs[2] else ''})")
+                látott.add(kulcs)
+            f['hatások'] = ki
     return errors

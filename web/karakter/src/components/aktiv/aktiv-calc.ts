@@ -4,11 +4,11 @@ import type { AktívAlapeset } from '../../engine/alapeset';
 import { evaluateAlapesetek } from '../../engine/alapeset';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { eseményDef, fortélyDef, státuszDef, taktikaDef } from '../../engine/lookup';
-import { parseStátusz, alkategóriaCímke, alkategóriaKitölt } from '../../engine/statusz';
+import { parseStátusz, hatásKitöltve } from '../../engine/statusz';
 
 // --- Types ---
 
-interface HatásEntry { cél: string; mód: string; érték?: number; megjegyzés?: string }
+interface HatásEntry { cél: string; mód: string; érték?: number; megjegyzés?: string; alcél?: string; hatás_név?: string }
 export interface StátuszPerElem { név: string; alcím?: string; hatások: HatásEntry[] }
 export interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
 interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
@@ -56,12 +56,8 @@ function calcStátuszHatások(session: Session, data: GameData): StátuszPerElem
     const def = státuszDef(data, p.id);
     const fokDef = def?.fokok.find(f => f.fok === p.fok);
     if (fokDef) {
-      // Alkategóriás státusz: a hatás-sor helyőrzője kitöltve, a célhoz az alkategória címkéje (pl. „érzék_próba (Látás)")
-      const al = p.alkategória;
-      const címke = al ? alkategóriaCímke(def, al) : '';
-      const hatások = fokDef.hatások.map(h => al
-        ? { ...h, cél: `${h.cél} (${címke})`, alcél: alkategóriaKitölt(h.alcél, al), megjegyzés: alkategóriaKitölt(h.megjegyzés, al) }
-        : h);
+      // Alkategóriás státusz: a hatás-sor helyőrzője kitöltve (alcél: nyers érték, név / megjegyzés: címke)
+      const hatások = fokDef.hatások.map(h => hatásKitöltve(h, def, p.alkategória));
       result.push({ név: st, alcím: fokDef.alcím, hatások });
     }
   }
