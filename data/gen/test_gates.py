@@ -224,6 +224,15 @@ class AktivFulGates(unittest.TestCase):
         h = copy.deepcopy(self.A.hatasok); h[0]['mechanika'][0]['mód'] = 'nincs_ilyen_mód'
         self.assertTrue(sablon_hibak(h, self.A.effekt_modok, self.A.esemenyek))
 
+    def test_szituacios_atmegy(self):
+        """A 'szituációs' jelző a kifejtett sorba kerül; hiánya esetén a kulcs kimarad."""
+        st = self._st()
+        fok = next(x for x in st if x['id'] == 'hangulat')['fokok'][1]
+        self.assertEqual(kifejt_statuszok(st, self.A.hatasok, self.A.esemenyek, self.A.taktikak, fortely_lista(SOURCES_DIR)), [])
+        self.assertTrue(all(h.get('szituációs') is True for h in fok['hatások'] if h['mód'] in ('előny', 'hátrány')))
+        sérült = next(x for x in st if x['id'] == 'sérült')['fokok'][0]['hatások']
+        self.assertFalse(any('szituációs' in h for h in sérült))
+
     def test_automatikus_kudarc_ke_dobas(self):
         """'célpontok' extra allow-list: ké_dobás megengedett a próba-csoport mellett, más harci cél nem; ismeretlen id bukik."""
         self.assertEqual(self._kifejt_hiba({'hatás': 'automatikus_kudarc', 'cél': 'ké_dobás'}), [])

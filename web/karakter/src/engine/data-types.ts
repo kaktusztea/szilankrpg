@@ -194,6 +194,8 @@ export interface StatuszHatas {
   cél: string;
   alcél?: string;
   megjegyzés?: string;
+  /** Helyzetfüggő (KM dönti): a próba popupban kapcsolható, alapból ki - nem számít automatikusan (engine_spec §22.4). */
+  szituációs?: boolean;
   feltétel?: string;
   /** A Hatás-sablon (hatasok.yaml) id-je és kitöltött neve (build-idejű kifejtés, engine_spec §22.4). */
   hatás_id?: string;

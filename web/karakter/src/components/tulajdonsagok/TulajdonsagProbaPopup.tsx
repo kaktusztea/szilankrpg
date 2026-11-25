@@ -2,6 +2,7 @@ import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import { ElonyLepteto } from '../dobas/ElonyLepteto';
 import { ForrasLista } from '../dobas/ForrasLista';
+import { SzituaciosEHLista, szituációsSzint } from '../dobas/SzituaciosEHLista';
 import type { DobásHatás } from '../../engine/harc/combat-roll-info';
 import { PopupOverlay } from '../PopupOverlay';
 import { ManualDicePicker } from '../dobas/ManualDicePicker';
@@ -50,7 +51,10 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
   const érzék = érzékKézi === null ? érzékek.érintett[0] : érzékKézi;
   const státuszEH = calcStátuszTulajdonságPróbaEH(aktívStátuszok, statuszDefs, esemenyek, tulajdonságNév, érzék);
   // A felszerelés-túlterhelés + a státuszok Hátránya a dobás alap EH-ja (a KM felülírhatja).
-  const alapEH = clampEHSzint(felszEH + státuszEH.szint);
+  // Helyzetfüggő státusz-sorok (szituációs): alapból ki, a lista alatt kapcsolhatók.
+  const [szitBe, setSzitBe] = useState<ReadonlySet<string>>(new Set());
+  const szitVált = (k: string) => setSzitBe(b => { const n = new Set(b); if (!n.delete(k)) n.add(k); return n; });
+  const alapEH = clampEHSzint(felszEH + státuszEH.szint + szituációsSzint(státuszEH.szituációs, szitBe));
   const [ehKézi, setEhKézi] = useState<number | null>(null);
   const ehSzint = ehKézi ?? alapEH;
   // Source list under the E/H stepper (same as the Támadó dobás): Felszerelés túlterhelés + státuszok
@@ -128,6 +132,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték: tulÉrték, p
             <div className="elony-blokk">
               <ElonyLepteto szint={ehSzint} onChange={v => { setEhKézi(v); d.reset(); }} />
               <ForrasLista hatások={ehForrások} szint={ehSzint} alapSzint={alapEH} onVissza={váltás(() => setEhKézi(null))} />
+              <SzituaciosEHLista lista={státuszEH.szituációs} be={szitBe} onVált={k => váltás(() => szitVált(k))()} />
             </div>
           </div>
         )}

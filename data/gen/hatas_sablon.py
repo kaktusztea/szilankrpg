@@ -7,7 +7,7 @@ a `hatás_id` / `hatás_név` mezőkkel. Nyers `mód:` sor (sablon nélkül) is 
 import re
 
 PARAM_TIPUSOK = {'szám', 'célpont', 'taktika', 'taktika_fok', 'fortély', 'érzék'}
-ÁTMENŐ = ('alcél', 'megjegyzés')   # a státusz-sor mezői, amelyek minden Hatásnál átmennek a kifejtett sorokba
+ÁTMENŐ = ('alcél', 'megjegyzés', 'szituációs')   # a státusz-sor mezői, amelyek minden Hatásnál átmennek a kifejtett sorokba
 HELYŐRZŐ = re.compile(r'\{([^{}]+)\}')
 ALKATEGÓRIA = '{alkategória}'   # futásidejű helyőrző: a státusz felvételekor választott alkategória (a webapp tölti ki)
 ALKATEGÓRIA_FORRÁSOK = ('tulajdonságok', 'képzettségek')
@@ -172,6 +172,7 @@ def kifejt_statuszok(statuszok, hatasok, esemenyek, taktikak, fortelyok=(), hiva
                         else:
                             row[kk] = vv
                     if sor.get('alcél'): row['alcél'] = sor['alcél']
+                    if sor.get('szituációs'): row['szituációs'] = True   # KM-judged: offered as a toggle on the próba, not auto-applied
                     alap = tölt(sablon['szöveg']) if row.get('mód') == 'szöveges' and sablon.get('szöveg') else None
                     mj = sor.get('megjegyzés')
                     mj_ki = f"{alap} - {mj}" if alap and mj else (alap or mj)

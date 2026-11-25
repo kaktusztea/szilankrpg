@@ -1,5 +1,6 @@
 import { ElonyLepteto } from '../dobas/ElonyLepteto';
 import { ForrasLista } from '../dobas/ForrasLista';
+import { SzituaciosEHLista, szituációsSzint } from '../dobas/SzituaciosEHLista';
 import type { DobásHatás } from '../../engine/harc/combat-roll-info';
 import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
@@ -127,7 +128,10 @@ export function KepzettsegProbaPopup({
   const [érzékKézi, setÉrzék] = useState<string | undefined | null>(null);
   const érzék = érzékKézi === null ? érzékek.érintett[0] : érzékKézi;
   const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, esemenyek, képzettségKulcs, képzettségCsoport, érzék, selTul ?? undefined);
-  const ehSzintRaw = ehAlap.szint + státuszEH.szint + felszEH;
+  // Helyzetfüggő státusz-sorok (szituációs, pl. Hangulat: kreatív / koncentráció): alapból ki, a lista alatt kapcsolhatók.
+  const [szitBe, setSzitBe] = useState<ReadonlySet<string>>(new Set());
+  const szitVált = (k: string) => setSzitBe(b => { const n = new Set(b); if (!n.delete(k)) n.add(k); return n; });
+  const ehSzintRaw = ehAlap.szint + státuszEH.szint + szituációsSzint(státuszEH.szituációs, szitBe) + felszEH;
   const ehForrásSzint = clampEHSzint(ehSzintRaw);
   const eh = { szint: ehKézi ?? ehForrásSzint, tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };
   const erősTiltott = eh.tiltott;
@@ -328,6 +332,7 @@ export function KepzettsegProbaPopup({
           <div className="elony-blokk">
             <ElonyLepteto szint={eh.szint} onChange={v => { setEhKézi(v); d.reset(); }} />
             <ForrasLista hatások={ehForrások} szint={eh.szint} alapSzint={ehForrásSzint} onVissza={() => { setEhKézi(null); d.reset(); }} />
+            <SzituaciosEHLista lista={státuszEH.szituációs} be={szitBe} onVált={k => d.váltás(() => szitVált(k))()} />
           </div>
         </div>
         )}

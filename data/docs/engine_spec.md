@@ -1575,6 +1575,11 @@ Cél-szemantika a próba-számításban (`statusz-proba.ts` `hatásVonatkozik`, 
 - `alcél: képzettség:<id>` → csak az a képzettség (Képzettségpróbán); `alcél: tulajdonság:<kulcs>` → csak az a Tulajdonság
   Tulajdonságpróbáján (pl. Trauma: Önuralom / Érzékenység, Zavar: Gyorsaság / Ügyesség, Késztetés: Önuralom). Az azzal a
   Tulajdonsággal dobott Képzettségpróbára NEM hat.
+- `szociális_próba` + `alcél: tulajdonság:<kulcs>` → csak az azzal a Tulajdonsággal dobott szociális Képzettségpróba
+  (Trauma: Önuralom / Érzékenység használatakor).
+- `szituációs: true` (előny / hátrány sor): helyzetfüggő, KM dönti (pl. Hangulat: kreatív / koncentráció, Eszmélet:
+  Fájdalomtűrés áfiumtól, Áldott Tulajdonság: feltétel esetén, Átkozott viselkedés). NEM számít a `szint`-be: a
+  `calcStátusz…PróbaEH().szituációs` listában jön, a próba popup kapcsolható sorként mutatja (alapból ki, `SzituaciosEHLista`).
 - `fizikai_próba` / `szellemi_próba` / `érzék_próba` → a dobáshoz választott Tulajdonság benne van a célpont listájában
   (Tulajdonság- és Képzettségpróbán is). Képzettségpróbán Tulajdonság-választás előtt nem hatnak (a dobáshoz úgyis kell).
 
@@ -1605,7 +1610,7 @@ Sablon mezői:
 - `mechanika`: effekt-sorok; `"{param}"` = a paraméter értéke, részleges helyőrző (`"fortély:{fortély}"`) a nyers id-vel töltődik
 - `szöveg` (opcionális): `szöveges` mechanikánál a kifejtett sor `megjegyzés`-e; a státusz `megjegyzés`-e " - " után hozzáfűződik
   (enélkül a státusz megjegyzése megy át); `megjegyzés_kötelező` (opcionális, pl. `narratív`)
-- A státusz-sor `alcél` és `megjegyzés` mezője minden Hatásnál átmegy. Nincs összevonás (2026-11-25): az ismétlődő tiltó /
+- A státusz-sor `alcél`, `megjegyzés` és `szituációs` mezője minden Hatásnál átmegy. Nincs összevonás (2026-11-25): az ismétlődő tiltó /
   szorzó / max-korlát / szöveges sor ugyanazt adja, és a megjelenítésben mindkét Hatás látszik (pl. Harcképtelenség + Mozgás -
   képtelen). Összeadódó mód (előny, hátrány, enyhít, flat, scaled, override) ismétlése ugyanarra a célra + alcélra: gate-hiba.
   A `hatás_név` célpont-paraméteres Hatásnál a cél nevét is tartalmazza (pl. "Hátrány-1: TÉ dobás", "Automatikus kudarc: Szociális képzettségpróba").

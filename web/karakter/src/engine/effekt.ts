@@ -34,6 +34,8 @@ export interface Effekt {
   arány?: number;
   /** A forrás-sor szöveges kontextusa (pl. „Fájdalomtűrés próba kínzás esetén") - szituációs megjelenítéshez. */
   megjegyzés?: string;
+  /** Státusz-sor: helyzetfüggő, nem automatikus (a próba popupban kapcsolható). */
+  szituációs?: boolean;
   forrás: {
     típus: EffektForrásTípus; név: string;
     /** fortély-forrásnál a fortély-id, státusz-forrásnál a státusz-id */ id?: string;
@@ -201,7 +203,7 @@ export function gyűjtStátuszEffektek(
       const alcél = alkategóriaKitölt(h.alcél, p.alkategória);
       const megjegyzés = alkategóriaKitölt(h.megjegyzés, p.alkategória);
       ki.push({ cél: h.cél, ...(alcél ? { alcél } : {}), mód: h.mód, érték: h.érték, ...(megjegyzés ? { megjegyzés } : {}),
-        forrás: { típus: 'státusz', név, id: p.id, alcím: fokDef.alcím } });
+        ...(h.szituációs ? { szituációs: true } : {}), forrás: { típus: 'státusz', név, id: p.id, alcím: fokDef.alcím } });
     }
   }
   return ki;

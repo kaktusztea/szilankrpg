@@ -27,7 +27,7 @@ describe('hatás-pool feliratok (fmtHatás + hatás_név)', () => {
   it('a nem szöveges sor megjegyzése és alcélja is látszik', () => {
     expect(pool('hangulat (2)')).toEqual(['Előny+1: Képzettségpróba - kreatív tevékenységekre', 'Hátrány-1: Képzettségpróba - koncentrációt igénylő feladatokra']);
     expect(pool('eszmélet (1)')).toContain('Előny+1: Képzettségpróba (Fájdalomtűrés) - áfiumok, kábítószerek, fejbekólintás hatására');
-    expect(pool('trauma (1)')).toEqual(['Hátrány-1: Tulajdonságpróba (Önuralom)', 'Hátrány-1: Tulajdonságpróba (Érzékenység)', 'Hátrány-1: Szociális képzettségpróba - Önuralom/Érzékenység használatakor']);
+    expect(pool('trauma (1)')).toEqual(['Hátrány-1: Tulajdonságpróba (Önuralom)', 'Hátrány-1: Tulajdonságpróba (Érzékenység)', 'Hátrány-1: Szociális képzettségpróba (Önuralom)', 'Hátrány-1: Szociális képzettségpróba (Érzékenység)']);
   });
 
   it('alkategóriás státusz: a címke a helyőrző helyén', () => {

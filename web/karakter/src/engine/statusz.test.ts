@@ -40,7 +40,9 @@ describe('engine/statusz - id + alkategória', () => {
 
   it('Áldott / Átkozott Tulajdonság csak a választott Tulajdonságra; Átkozott Képzettség csak a választott képzettségre', () => {
     const tp = (st: string, t: string) => calcStátuszTulajdonságPróbaEH([st], data.statuszok, data.esemenyek, t).szint;
-    expect([tp('áldott_tulajdonság: erő (2)', 'erő'), tp('áldott_tulajdonság: erő (2)', 'ügyesség')]).toEqual([2, 0]);
+    // Áldott Tulajdonság: "feltétel esetén" - szituációs (kapcsolható) sor, nem automatikus szint
+    const szit = (st: string, t: string) => calcStátuszTulajdonságPróbaEH([st], data.statuszok, data.esemenyek, t).szituációs.map(x => x.érték);
+    expect([szit('áldott_tulajdonság: erő (2)', 'erő'), szit('áldott_tulajdonság: erő (2)', 'ügyesség')]).toEqual([[2], []]);
     expect([tp('átkozott_tulajdonság: önuralom (1)', 'önuralom'), tp('átkozott_tulajdonság: önuralom (1)', 'erő')]).toEqual([-1, 0]);
     const kp = (st: string, k: string, cs = '') => calcStátuszPróbaEH([st], data.statuszok, data.esemenyek, k, cs).szint;
     expect([kp('átkozott_képzettség: lexikum (1)', 'lexikum'), kp('átkozott_képzettség: lexikum (1)', 'etikett')]).toEqual([-1, 0]);

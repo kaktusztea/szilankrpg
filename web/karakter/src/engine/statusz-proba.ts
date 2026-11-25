@@ -28,6 +28,16 @@ interface PróbaEHEredmény {
   tiltott: boolean;
   /** Debug: mely státuszok hatnak */
   források: string[];
+  /** Helyzetfüggő (`szituációs`) Előny/Hátrány sorok - NEM számítanak a `szint`-be, a popupban kapcsolhatók (alapból ki). */
+  szituációs: SzituációsEH[];
+}
+
+export interface SzituációsEH {
+  /** Stabil kulcs a kapcsoló-állapothoz (forrás + érték + megjegyzés). */
+  kulcs: string;
+  címke: string;
+  érték: number;
+  megjegyzés?: string;
 }
 
 function calcEH(
@@ -36,6 +46,7 @@ function calcEH(
   let ehSzint = 0;
   let tiltott = false;
   const források: string[] = [];
+  const szituációs: SzituációsEH[] = [];
 
   for (const e of gyűjtStátuszEffektek({ aktív_státuszok: aktívStátuszok }, { statuszok: statuszDefs })) {
     if (!hatásVonatkozik(e, esemenyek, ctx)) continue;
@@ -46,13 +57,15 @@ function calcEH(
     if (e.mód === 'letilt') {
       tiltott = true;
       források.push(`${címke}: kudarc`);
+    } else if ((e.mód === 'előny' || e.mód === 'hátrány') && e.szituációs) {
+      szituációs.push({ kulcs: `${címke}|${e.érték}|${e.megjegyzés ?? ''}`, címke, érték: e.érték ?? 0, megjegyzés: e.megjegyzés });
     } else if (e.mód === 'előny' || e.mód === 'hátrány') {
       ehSzint += e.érték ?? 0;
       források.push(`${címke}: ${e.érték! > 0 ? '+' : ''}${e.érték}`);
     }
   }
 
-  return { szint: clampEHSzint(ehSzint), tiltott, források };
+  return { szint: clampEHSzint(ehSzint), tiltott, források, szituációs };
 }
 
 /**
@@ -114,9 +127,11 @@ function hatásVonatkozik(h: { cél: string; alcél?: string }, esemenyek: Eseme
     const [pre, név] = h.alcél.split(':');
     // a képzettség-id a specializációkra is hat (képzettség:harcmodor → harcmodor/kardvívás)
     if (pre === 'képzettség') return !!kp && cél === 'képzettségpróba' && (név === kp.kulcs || kp.kulcs.startsWith(`${név}/`));
-    if (pre === 'tulajdonság') return !kp && cél === 'tulajdonságpróba' && név === ctx.tulajdonság;
-    // érzék:<X>: az érzék-szűrést a hívó végzi (hatásÉrzéke), a próba-illesztés a cél szerinti (lent)
-    if (pre !== 'érzék') return false;
+    if (pre === 'tulajdonság') {
+      if (név !== ctx.tulajdonság) return false;
+      if (cél === 'tulajdonságpróba') return !kp;
+      // más próba-kategória (szociális_próba): a választott Tulajdonság szűkít, a kategória-illesztés lent (Trauma)
+    } else if (pre !== 'érzék') return false;   // érzék:<X>: az érzék-szűrést a hívó végzi (hatásÉrzéke)
   }
 
   const def = esemenyek.find(e => e.id === cél);

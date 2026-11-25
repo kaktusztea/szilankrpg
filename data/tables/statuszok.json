@@ -15,6 +15,7 @@
             "érték": 1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:{alkategória}",
+            "szituációs": true,
             "megjegyzés": "feltétel esetén",
             "hatás_id": "előny",
             "hatás_név": "Előny+1: Tulajdonságpróba"
@@ -30,6 +31,7 @@
             "érték": 2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:{alkategória}",
+            "szituációs": true,
             "megjegyzés": "feltétel esetén",
             "hatás_id": "előny",
             "hatás_név": "Előny+2: Tulajdonságpróba"
@@ -556,6 +558,7 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "KM határozza meg",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-1: Képzettségpróba"
@@ -575,6 +578,7 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "KM határozza meg",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-2: Képzettségpróba"
@@ -770,6 +774,7 @@
             "érték": 1,
             "cél": "képzettségpróba",
             "alcél": "képzettség:fájdalomtűrés",
+            "szituációs": true,
             "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására",
             "hatás_id": "előny",
             "hatás_név": "Előny+1: Képzettségpróba"
@@ -831,6 +836,7 @@
             "érték": 2,
             "cél": "képzettségpróba",
             "alcél": "képzettség:fájdalomtűrés",
+            "szituációs": true,
             "megjegyzés": "áfiumok, kábítószerek, fejbekólintás hatására",
             "hatás_id": "előny",
             "hatás_név": "Előny+2: Képzettségpróba"
@@ -1311,6 +1317,7 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "kreatív tevékenységekre",
             "hatás_id": "előny",
             "hatás_név": "Előny+1: Képzettségpróba"
@@ -1319,6 +1326,7 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "koncentrációt igénylő feladatokra",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-1: Képzettségpróba"
@@ -1338,6 +1346,7 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "kreatív tevékenységekre",
             "hatás_id": "előny",
             "hatás_név": "Előny+1: Képzettségpróba"
@@ -1353,6 +1362,7 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "koncentrációt igénylő feladatokra",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-2: Képzettségpróba"
@@ -1372,6 +1382,7 @@
             "mód": "előny",
             "érték": 1,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "obszesszió tárgyához kötődő",
             "hatás_id": "előny",
             "hatás_név": "Előny+1: Képzettségpróba"
@@ -1380,6 +1391,7 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "képzettségpróba",
+            "szituációs": true,
             "megjegyzés": "minden más",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-1: Képzettségpróba"
@@ -1871,7 +1883,15 @@
             "mód": "hátrány",
             "érték": -1,
             "cél": "szociális_próba",
-            "megjegyzés": "Önuralom/Érzékenység használatakor",
+            "alcél": "tulajdonság:önuralom",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1: Szociális képzettségpróba"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -1,
+            "cél": "szociális_próba",
+            "alcél": "tulajdonság:érzékenység",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-1: Szociális képzettségpróba"
           }
@@ -1906,7 +1926,15 @@
             "mód": "hátrány",
             "érték": -2,
             "cél": "szociális_próba",
-            "megjegyzés": "Önuralom/Érzékenység használatakor",
+            "alcél": "tulajdonság:önuralom",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-2: Szociális képzettségpróba"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -2,
+            "cél": "szociális_próba",
+            "alcél": "tulajdonság:érzékenység",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-2: Szociális képzettségpróba"
           }

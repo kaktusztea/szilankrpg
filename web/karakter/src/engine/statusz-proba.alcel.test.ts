@@ -8,7 +8,8 @@ describe('statusz-proba - alcél prefix-alak', () => {
   const data = loadGameDataSync();
   const eszmélet = státuszDef(data, 'eszmélet')!;
   const fok = eszmélet.fokok.find(f => f.hatások.some(h => h.alcél === 'képzettség:fájdalomtűrés'))!.fok;
-  const eh = (képzettség: string) => calcStátuszPróbaEH([`eszmélet (${fok})`], data.statuszok, data.esemenyek, képzettség, '').források;
+  // Az alcélos Fájdalomtűrés-Előny szituációs (áfium / fejbekólintás): a kapcsolható sorok közt jelenik meg.
+  const eh = (képzettség: string) => calcStátuszPróbaEH([`eszmélet (${fok})`], data.statuszok, data.esemenyek, képzettség, '').szituációs;
 
   it('a Fájdalomtűrés próbára hat, másra (pl. Lexikum) nem az alcélos sor', () => {
     expect(eh('fájdalomtűrés').length).toBeGreaterThan(eh('lexikum').length);

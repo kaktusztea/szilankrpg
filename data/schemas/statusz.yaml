@@ -20,3 +20,4 @@ státuszok:
             cél: ""            # kötelező, esemény id (esemenyek.yaml)
             alcél: ""          # opcionális, "prefix:név" - a próba-cél szűkítése (képzettség:<név> / tulajdonság:<kulcs> / érzék:<név>; üres = minden), engine_spec §42.4
             megjegyzés: ""     # opcionális, string (kontextuális kiegészítés)
+            szituációs: false  # opcionális, boolean - helyzetfüggő (KM dönti): a próba popupban kapcsolható, alapból ki, nem számít automatikusan

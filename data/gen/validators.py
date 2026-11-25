@@ -13,7 +13,8 @@ def tiltas_ids_of(helyzetek):
 
 # Próba-alcél (§42.4): a cél határozza meg a kötelező prefixet.
 ALCEL_PROBA_PREFIX = {'képzettségpróba': 'képzettség', 'tulajdonságpróba': 'tulajdonság', 'érzék_próba': 'érzék',
-                      'fortély': 'fortély'}   # fortély: Fortély hatás letiltása (md/081), alcél fortély:<id>
+                      'fortély': 'fortély',   # fortély: Fortély hatás letiltása (md/081), alcél fortély:<id>
+                      'szociális_próba': 'tulajdonság'}   # a dobáshoz választott Tulajdonságra szűkít (Trauma: Önuralom / Érzékenység)
 
 
 def proba_alcel_hibak(cel, alcel, ctx, refs):

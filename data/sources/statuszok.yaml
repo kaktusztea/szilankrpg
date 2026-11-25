@@ -13,6 +13,7 @@ státuszok:
       cél: tulajdonságpróba
       alcél: "tulajdonság:{alkategória}"
       megjegyzés: feltétel esetén
+      szituációs: true
   - fok: 2
     alcím: Előny+2
     hatások:
@@ -21,6 +22,7 @@ státuszok:
       cél: tulajdonságpróba
       alcél: "tulajdonság:{alkategória}"
       megjegyzés: feltétel esetén
+      szituációs: true
 - id: átkozott_tulajdonság
   név: Átkozott Tulajdonság
   kategória: mágikus
@@ -101,6 +103,7 @@ státuszok:
       érték: -1
       cél: képzettségpróba
       megjegyzés: KM határozza meg
+      szituációs: true
   - fok: 2
     alcím: Hátrány-2
     megjegyzések:
@@ -110,6 +113,7 @@ státuszok:
       érték: -2
       cél: képzettségpróba
       megjegyzés: KM határozza meg
+      szituációs: true
 - id: bénultság
   név: Bénultság
   kategória: fizikai
@@ -183,6 +187,7 @@ státuszok:
       cél: képzettségpróba
       alcél: "képzettség:fájdalomtűrés"
       megjegyzés: áfiumok, kábítószerek, fejbekólintás hatására
+      szituációs: true
   - fok: 2
     alcím: Kábultság
     megjegyzések:
@@ -207,6 +212,7 @@ státuszok:
       cél: képzettségpróba
       alcél: "képzettség:fájdalomtűrés"
       megjegyzés: áfiumok, kábítószerek, fejbekólintás hatására
+      szituációs: true
   - fok: 3
     alcím: Ájulás
     megjegyzések:
@@ -376,10 +382,12 @@ státuszok:
       érték: 1
       cél: képzettségpróba
       megjegyzés: kreatív tevékenységekre
+      szituációs: true
     - hatás: hátrány
       érték: -1
       cél: képzettségpróba
       megjegyzés: koncentrációt igénylő feladatokra
+      szituációs: true
   - fok: 3
     alcím: Eufórikus
     megjegyzések:
@@ -389,6 +397,7 @@ státuszok:
       érték: 1
       cél: képzettségpróba
       megjegyzés: kreatív tevékenységekre
+      szituációs: true
     - hatás: narratív
       cél: varázslás
       megjegyzés: Ellenséges varázstudó Asztrálmágia Komplexitás-próbájára Hátrány-1 (az asztrális befolyásolásnak jobban ellenáll az eufórikus személy)
@@ -396,6 +405,7 @@ státuszok:
       érték: -2
       cél: képzettségpróba
       megjegyzés: koncentrációt igénylő feladatokra
+      szituációs: true
   - fok: 4
     alcím: Obszesszív
     megjegyzések:
@@ -405,10 +415,12 @@ státuszok:
       érték: 1
       cél: képzettségpróba
       megjegyzés: obszesszió tárgyához kötődő
+      szituációs: true
     - hatás: hátrány
       érték: -1
       cél: képzettségpróba
       megjegyzés: minden más
+      szituációs: true
     - hatás: narratív
       cél: képzettségpróba
       megjegyzés: Automatikus kudarc (KM mondja meg mire)
@@ -629,7 +641,11 @@ státuszok:
     - hatás: hátrány
       érték: -1
       cél: szociális_próba
-      megjegyzés: Önuralom/Érzékenység használatakor
+      alcél: "tulajdonság:önuralom"
+    - hatás: hátrány
+      érték: -1
+      cél: szociális_próba
+      alcél: "tulajdonság:érzékenység"
   - fok: 2
     alcím: Lélektörés
     megjegyzések:
@@ -646,7 +662,11 @@ státuszok:
     - hatás: hátrány
       érték: -2
       cél: szociális_próba
-      megjegyzés: Önuralom/Érzékenység használatakor
+      alcél: "tulajdonság:önuralom"
+    - hatás: hátrány
+      érték: -2
+      cél: szociális_próba
+      alcél: "tulajdonság:érzékenység"
 - id: zavar
   név: Zavar
   kategória: fizikai
