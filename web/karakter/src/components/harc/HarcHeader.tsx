@@ -27,13 +27,15 @@ interface HarcHeaderProps {
   onTéClick: () => void;
   onSféClick: () => void;
   onManőverClick: () => void;
+  /** Harcképtelen (md/081): a VÉ box ⚠ jelzése - ellened minden támadás automatikus Sebzés. */
+  harcképtelen?: boolean;
   gameMode?: boolean;
 }
 
 export function HarcHeader({
   ké, aktívTÉ, aktívVÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont, manőverAlap, hm,
   maxVéCsökk, session, setSession, pushUndo, konstansok,
-  onVéChange, onVéLabelTap, onKéClick, onTéClick, onSféClick, onManőverClick, gameMode,
+  onVéChange, onVéLabelTap, onKéClick, onTéClick, onSféClick, onManőverClick, harcképtelen = false, gameMode,
 }: HarcHeaderProps) {
   const [showMpPicker, setShowMpPicker] = useState(false);
   const [showMaInfo, setShowMaInfo] = useState(false);
@@ -128,6 +130,9 @@ export function HarcHeader({
             <button className="ve-csokk-badge" aria-label={`VÉ csökkenés (${session.vé_csökkenés}) - történet`}>-{session.vé_csökkenés}</button>
           )}
         </div>
+        {harcképtelen && (
+          <div className="ve-harckeptelen" title="Harcképtelen: ellened minden támadás automatikus Sebzés">⚠ ellened auto Sebzés</div>
+        )}
         <div className="ve-btns">
           {(konstansok.vé_csökkentés_gombok as number[]).map(n => (
             <button key={n} disabled={!gameMode || session.vé_csökkenés >= maxVéCsökk}

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { mondatokraTörve } from './TaktikaTiltvaInfoPopup';
+import { mondatokraTörve } from './TiltvaInfoPopup';
 
 describe('mondatokraTörve', () => {
   it('a "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20P." szöveg 2 mondatra törik', () => {

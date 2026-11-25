@@ -96,8 +96,9 @@ function collectSessionHatások(
       forrás: forrásCímke(e), cél: e.cél as DobásCél, operátor: e.mód as DobásHatás['operátor'],
       érték: e.érték ?? 0, megjegyzés: e.megjegyzés,
     }));
-  // Tiltó (letilt) források a cél-szűrőre (pl. Automatikus kudarc KÉ dobásra) - forrás-felirat, duplikátum nélkül.
-  const letiltók = [...new Set(effektek.filter(e => célFilter.has(e.cél) && e.mód === 'letilt').map(forrásCímke))];
+  // Tiltó (letilt) források a cél-szűrőre (pl. Automatikus kudarc KÉ dobásra) - „Forrás: Hatás" felirat, duplikátum nélkül.
+  const letiltók = [...new Set(effektek.filter(e => célFilter.has(e.cél) && e.mód === 'letilt')
+    .map(e => (e.hatásNév ? `${forrásCímke(e)}: ${e.hatásNév}` : forrásCímke(e))))];
   // SP-bónusz: taktika mindig (a hívó dönt), fortély csak sebzésdobás-szűrőnél (mint eddig).
   const spBónuszok: SpBónusz[] = effektek
     .filter(e => e.cél === 'SP' && e.mód === 'flat' && typeof e.érték === 'number'
@@ -167,6 +168,17 @@ export function collectKéDobásInfo(
   const { hatások, letiltók } = collectSessionHatások(session, karakter, data, new Set(['ké_dobás']), undefined, feltételTeljesül);
   // automatikusKudarc: a `letilt` ké_dobás források (md/081 Automatikus kudarc: KÉ dobásra → utolsónak kezdeményezel).
   return { kéHatások: hatások, automatikusKudarc: letiltók };
+}
+
+/**
+ * A harci képességet tiltó források (Harcképtelenség, Mozgás - képtelen: `letilt harci_képesség`, md/081) feliratai.
+ * Nem üres → nincs Támadó / Célzó / aktív Manőver dobás; passzív Manővernél a Megakasztás auto kudarc, a Végrehajtás
+ * auto siker (az ellenfélé), az Ellenpróba marad. KÉ dobás engedélyezett.
+ */
+export function harcképtelenForrások(
+  session: Session, karakter: Karakter, data: GameData, feltételTeljesül?: (feltétel: unknown) => boolean,
+): string[] {
+  return collectSessionHatások(session, karakter, data, new Set(['harci_képesség']), undefined, feltételTeljesül).letiltók;
 }
 
 /** Az aktív harci helyzetek ⚠ megjegyzései egy dobás-célra (harci_helyzetek.yaml `megjegyzés_dobásra`), aktiválási sorrendben. */

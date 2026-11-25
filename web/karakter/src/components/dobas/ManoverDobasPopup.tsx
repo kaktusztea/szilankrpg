@@ -62,14 +62,18 @@ interface Props {
   /** A rontott V fázis dobásának + a hozzá választott VÉ-csökkentésnek a TÉ-chip history-ba vezetése
    *  (ugyanaz a `té_dobások` tömb, mint a Támadó dobásnál - a megjelenített érték az ellenfélé). */
   onTéDobás?: (té: number, veCsökkentés: number) => void;
+  /** Harcképtelen (md/081, `harcképtelenForrások`): passzív módban a Megakasztás / Végrehajtás kimarad, csak az Ellenpróba. */
+  harcképtelen?: boolean;
   onClose: () => void;
 }
 
-export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onTéDobás, onClose }: Props) {
+export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onTéDobás, harcképtelen = false, onClose }: Props) {
   const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
   const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
   const aktívFegyver = mód === 'aktív' ? aktívFegyverInfo(karakter, session, data) : null;
-  const fázisok = könnyítettFázisok(parseFázisok(manőver.fázisok), mód, session);
+  const nyersFázisok = parseFázisok(manőver.fázisok);
+  const fázisok = könnyítettFázisok(nyersFázisok, mód, session, harcképtelen);
+  const harcképtelenKönnyítés = harcképtelen && mód === 'passzív' && nyersFázisok.some(f => f !== 'E');
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
   // Kockadobások: csak a kocka értéke tárolt, az összeg élőben számol (a módosító/MP változása utólag is érvényes).
@@ -350,6 +354,12 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         {vanKönnyítés && (
           <div className="manover-konnyites-chip">
             {[könnyítés.meglepetés && 'Meglepetés', könnyítés.orvtámadás && 'Orvtámadás'].filter(Boolean).join(' + ')}: nincs Megakasztás és támadó dobás (a találat automatikus, sebzés a fegyvertáblán)
+          </div>
+        )}
+
+        {harcképtelenKönnyítés && (
+          <div className="manover-konnyites-chip">
+            Harcképtelen: a Megakasztás automatikus kudarc, a Végrehajtás automatikus siker (az ellenfélé) - csak az Ellenpróbát dobod
           </div>
         )}
 

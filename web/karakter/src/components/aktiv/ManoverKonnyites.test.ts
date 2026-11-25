@@ -42,6 +42,11 @@ describe('könnyítettFázisok', () => {
   it('Passzív módban NEM könnyít', () => {
     expect(könnyítettFázisok(['M', 'V', 'E'], 'passzív', sessionWith(['Meglepetés']))).toEqual(['M', 'V', 'E']);
   });
+  it('Passzív + Harcképtelen → Megakasztás / Végrehajtás kiesik (a manőver felé dől), az Ellenpróba marad; aktívra nem hat', () => {
+    expect(könnyítettFázisok(['M', 'V', 'E'], 'passzív', sessionWith([]), true)).toEqual(['E']);
+    expect(könnyítettFázisok(['V'], 'passzív', sessionWith([]), true)).toEqual([]);
+    expect(könnyítettFázisok(['M', 'V', 'E'], 'aktív', sessionWith([]), true)).toEqual(['M', 'V', 'E']);
+  });
 });
 
 describe('követelményTeljesül - helyzet auto-kiértékelés', () => {

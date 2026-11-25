@@ -1,12 +1,13 @@
 import { Ikon } from '../common/Ikon';
 import { aktívStátuszIdk } from '../../engine/statusz';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { harciKepzDisplayName } from '../../engine/harc/harcertekek-helpers';
 import { képzKulcs } from '../../engine/azonosito';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
 import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, calcTávSP } from './helpers';
 import { getMfFok } from './mesterfegyver-calc';
-import { collectCéDobásInfo, netElőnySzint, collectDobásInfo, távjellegMátrixKulcs } from '../../engine/harc/combat-roll-info';
+import { collectCéDobásInfo, netElőnySzint, collectDobásInfo, távjellegMátrixKulcs, harcképtelenForrások } from '../../engine/harc/combat-roll-info';
+import { TiltvaInfoPopup, HARCKÉPTELEN_SZÖVEG } from '../dobas/TiltvaInfoPopup';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
@@ -33,6 +34,11 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   // --- Célzó dobás popup ---
   const [showCéDobás, setShowCéDobás] = useState(false);
+  // Harcképtelen (md/081): a CÉ dobás helyett info popup.
+  const harcképtelenRaw = useMemo(() => harcképtelenForrások(session, karakter, data), [session, karakter, data]);
+  // „Felülbírál" (KM mégis engedi): a megnyitott CÉ dobás erejéig, bezáráskor visszaáll.
+  const [felülbírálva, setFelülbírálva] = useState(false);
+  const harcképtelen = felülbírálva ? [] : harcképtelenRaw;
 
   // ProbaHub CÉ chip: no direct roll (multipliers must be set first) - flash the CÉ-SP-VÉ box instead.
   // Counter so a repeated chip click re-triggers the animation (used as the box key).
@@ -164,7 +170,12 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         />
       )}
 
-      {showCéDobás && (() => {
+      {showCéDobás && harcképtelen.length > 0 && (
+        <TiltvaInfoPopup cím="Harcképtelen" szöveg={HARCKÉPTELEN_SZÖVEG} források={harcképtelen}
+          onFelülbírál={() => setFelülbírálva(true)} onClose={() => setShowCéDobás(false)} />
+      )}
+
+      {showCéDobás && harcképtelen.length === 0 && (() => {
         // ponytail: a távharci gyűjtés a feltétel-kiértékelőt nem kapja meg (nincs calcHarcComputed a fülön) → a
         // computed- / tulajdonság-forrású strukturált feltétel (pl. páncél_merev) itt mindig hamis; a "prefix:érték"
         // és a session-mezős feltétel működik. Ma egyetlen távharci kocka-hatás sem ilyen. Ha lesz: a collectDobásInfo
@@ -199,7 +210,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             extraDefs={data.fegyverExtrák}
             extraKontextus={extraKontextus}
             data={data} karakter={k} session={session} setSession={setSession} pushUndo={pushUndo}
-            onClose={() => setShowCéDobás(false)}
+            onClose={() => { setShowCéDobás(false); setFelülbírálva(false); }}
           />
         );
       })()}

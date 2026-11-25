@@ -1583,6 +1583,12 @@ Cél-szemantika a próba-számításban (`statusz-proba.ts` `hatásVonatkozik`, 
 - `fizikai_próba` / `szellemi_próba` / `érzék_próba` → a dobáshoz választott Tulajdonság benne van a célpont listájában
   (Tulajdonság- és Képzettségpróbán is). Képzettségpróbán Tulajdonság-választás előtt nem hatnak (a dobáshoz úgyis kell).
 
+Harcképtelen (`letilt harci_képesség`: Harcképtelenség, Mozgás - képtelen; md/081): `harcképtelenForrások()`
+(`combat-roll-info.ts`, „Forrás: Hatás" feliratok). Nem üres → a Támadó dobás (TÉ chip, Próba-hub), az aktív Manőver és a
+Célzó dobás helyett `TiltvaInfoPopup`; passzív Manővernél `könnyítettFázisok(…, harcképtelen)` → a Megakasztás (auto kudarc)
+és a Végrehajtás (az ellenfél auto sikere) kimarad, csak az Ellenpróba; a KÉ dobás engedélyezett; VÉ box ⚠. A többi tiltás
+(`mozgás`, `varázslás`, `pszi`, `beszéd`) csak felirat (nincs hozzá dobás a webappban).
+
 API: `calcStátuszPróbaEH(…, képzettség, csoport, érzék?, tulajdonság?)` (KepzettsegProbaPopup: `selTul`),
 `calcStátuszTulajdonságPróbaEH(…, tulajdonság, érzék?)` (TulajdonsagProbaPopup: Előny/Hátrány alapszint = felszerelés +
 státusz, forráslista, automatikus kudarc, érzék-chip sor Érzékenység-próbánál), `próbaÉrzékek(…, képzettség | null, csoport,

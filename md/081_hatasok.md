@@ -175,6 +175,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 
 - Tudsz mozogni, menni, de harcolni nem
 - minden támadás ellened: automatikus Sebzés
+- `KÉ` dobás engedélyezett
 
 <br />
 

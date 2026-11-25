@@ -585,3 +585,6 @@
 }
 .sebzes-bontas-nyil .ikon { transition: transform 0.15s ease-out; }
 .sebzes-bontas-nyil.nyitva .ikon { transform: rotate(180deg); }
+
+/* Override button in the block-info popups (TiltvaInfoPopup, KÉ automatikus kudarc): secondary look */
+.tiltva-felulbiral-btn { background: transparent; border: 1px solid var(--border-input); color: var(--text-soft); }

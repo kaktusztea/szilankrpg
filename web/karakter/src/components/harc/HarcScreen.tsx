@@ -1,5 +1,5 @@
 import { Ikon } from '../common/Ikon';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import type { HarcBaseProps } from './types';
 import type { SebzésRubrika } from '../../engine/types';
 import { harcFejlécÉrtékek } from '../../engine/harc/harc-fejlec-calc';
@@ -17,13 +17,13 @@ import { pushDobás, pushTéDobás } from './DobasPopup';
 import { KeDobasPopup } from './KeDobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
 import { VeCsokkentesPopup } from '../dobas/VeCsokkentesPopup';
-import { TaktikaTiltvaInfoPopup } from './TaktikaTiltvaInfoPopup';
+import { TiltvaInfoPopup, HARCKÉPTELEN_SZÖVEG } from '../dobas/TiltvaInfoPopup';
 import { taktikaVéCsökkentésÁllapot } from '../../engine/harc/ve-csokkentes-calc';
 import { useSérültStátusz } from './useSerultStatusz';
 import { useVéCsökkenés } from './useVeCsokkenes';
 import { VeSzorzoInfoPopup } from './VeSzorzoInfoPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
-import { collectDobásInfo } from '../../engine/harc/combat-roll-info';
+import { collectDobásInfo, harcképtelenForrások } from '../../engine/harc/combat-roll-info';
 import { ManoverDobasPopup } from '../dobas/ManoverDobasPopup';
 import { ManoverPicker } from './ManoverPicker';
 import './HarcScreen.css';
@@ -35,6 +35,8 @@ type ManőverDef = HarcBaseProps['data']['manoverek'][number];
 /** A Harc fül popupjai (egyszerre egy). */
 type HarcPopup =
   | { t: 'ké' } | { t: 'támadó' } | { t: 'fárasztás' } | { t: 'teljesVédekezés' }
+  /** Harcképtelen info; `tovább`: a „Felülbírál" után nyíló (tiltott) popup. */
+  | { t: 'harcképtelen'; tovább: HarcPopup }
   | { t: 'véHistory' } | { t: 'támInfo'; info: TámInfo } | { t: 'fegyverInfo'; result: FegyverResult }
   | { t: 'fegyverfogás' } | { t: 'páncélInfo' }
   | { t: 'manőverMód' } | { t: 'manőverLista'; mód: 'aktív' | 'passzív' } | { t: 'manőver'; manőver: ManőverDef; mód: 'aktív' | 'passzív' };
@@ -83,12 +85,17 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const { fárasztásDef, fárasztásEredmény, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, teljesVédekezésDef } =
     taktikaVéCsökkentésÁllapot(data, karakter, session, hc.feltételTeljesül, hc.helyzetVéCsökkentés);
 
-  // A TÉ chip / ProbaHub TÉ chip közös dispatch-e: Teljes Védekezés → info, Fárasztás → VÉ csökkentés popup,
-  // különben rendes Támadó dobás. EGY igazságforrás (a pending effect és az onTéClick is ezt hívja).
+  // Harcképtelen (státusz `letilt harci_képesség`, md/081): nincs Támadó / aktív Manőver dobás, csak info.
+  const harcképtelen = useMemo(() => harcképtelenForrások(session, karakter, data, hc.feltételTeljesül),
+    [session, karakter, data, hc.feltételTeljesül]);
+
+  // A TÉ chip / ProbaHub TÉ chip közös dispatch-e: Harcképtelen → info, Teljes Védekezés → info, Fárasztás → VÉ
+  // csökkentés popup, különben rendes Támadó dobás. EGY igazságforrás (a pending effect és az onTéClick is ezt hívja).
   const openTámadóDobás = useCallback(() => {
     if (aktívTÉ == null) return;
-    setNyitott({ t: teljesVédekezésDef ? 'teljesVédekezés' : fárasztásDef ? 'fárasztás' : 'támadó' });
-  }, [aktívTÉ, teljesVédekezésDef, fárasztásDef]);
+    const tovább: HarcPopup = { t: teljesVédekezésDef ? 'teljesVédekezés' : fárasztásDef ? 'fárasztás' : 'támadó' };
+    setNyitott(harcképtelen.length ? { t: 'harcképtelen', tovább } : tovább);
+  }, [aktívTÉ, harcképtelen, teljesVédekezésDef, fárasztásDef]);
 
   // ProbaHub 🗡️: a Harc fülre váltás után itt nyílik meg a Támadó dobás / Manőver (a pendinget rögtön consume-oljuk).
   useEffect(() => {
@@ -147,6 +154,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
         onTéClick={openTámadóDobás}
         onSféClick={() => setNyitott({ t: 'páncélInfo' })}
         onManőverClick={() => setNyitott({ t: 'manőverMód' })}
+        harcképtelen={harcképtelen.length > 0}
         gameMode={gameMode}
       />
 
@@ -256,11 +264,17 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
       )}
 
       {nyitott?.t === 'teljesVédekezés' && teljesVédekezésDef && (
-        <TaktikaTiltvaInfoPopup
+        <TiltvaInfoPopup
           cím="Teljes védekezés taktika"
           szöveg={teljesVédekezésDef.megjegyzés ?? ''}
+          onFelülbírál={() => setNyitott({ t: fárasztásDef ? 'fárasztás' : 'támadó' })}
           onClose={bezár}
         />
+      )}
+
+      {nyitott?.t === 'harcképtelen' && (
+        <TiltvaInfoPopup cím="Harcképtelen" szöveg={HARCKÉPTELEN_SZÖVEG} források={harcképtelen}
+          onFelülbírál={() => setNyitott(nyitott.tovább)} onClose={bezár} />
       )}
 
       {nyitott?.t === 'fegyverfogás' && (
@@ -290,7 +304,12 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           fázis={nyitott.t === 'manőverMód' ? 'mód' : 'lista'}
           manoverek={data.manoverek}
           onMód={mód => setNyitott({ t: 'manőverLista', mód })}
-          onPick={m => setNyitott({ t: 'manőver', manőver: m, mód: nyitott.t === 'manőverLista' ? nyitott.mód : 'aktív' })}
+          onPick={m => {
+            const mód = nyitott.t === 'manőverLista' ? nyitott.mód : 'aktív';
+            // Harcképtelen: aktív manővert nem hajthatsz végre (info); passzívnál az Ellenpróba marad (ManoverDobasPopup).
+            const tovább: HarcPopup = { t: 'manőver', manőver: m, mód };
+            setNyitott(mód === 'aktív' && harcképtelen.length ? { t: 'harcképtelen', tovább } : tovább);
+          }}
           onClose={bezár}
         />
       )}
@@ -315,6 +334,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           extraDefs={data.fegyverExtrák}
           extraKontextus={hc.extraKontextus}
           onTéDobás={(té, veCsökkentés) => setSession(prev => ({ ...prev, té_dobások: pushTéDobás(prev.té_dobások ?? [], { té, veCsökkentés }) }))}
+          harcképtelen={harcképtelen.length > 0}
           onClose={bezár}
         />
       )}

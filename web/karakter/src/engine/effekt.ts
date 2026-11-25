@@ -36,6 +36,8 @@ export interface Effekt {
   megjegyzés?: string;
   /** Státusz-sor: helyzetfüggő, nem automatikus (a próba popupban kapcsolható). */
   szituációs?: boolean;
+  /** Státusz-sor: a Hatás-sablon kitöltött neve (pl. „Harcképtelenség"), feliratokhoz (§22.4). */
+  hatásNév?: string;
   forrás: {
     típus: EffektForrásTípus; név: string;
     /** fortély-forrásnál a fortély-id, státusz-forrásnál a státusz-id */ id?: string;
@@ -203,7 +205,7 @@ export function gyűjtStátuszEffektek(
       const alcél = alkategóriaKitölt(h.alcél, p.alkategória);
       const megjegyzés = alkategóriaKitölt(h.megjegyzés, p.alkategória);
       ki.push({ cél: h.cél, ...(alcél ? { alcél } : {}), mód: h.mód, érték: h.érték, ...(megjegyzés ? { megjegyzés } : {}),
-        ...(h.szituációs ? { szituációs: true } : {}), forrás: { típus: 'státusz', név, id: p.id, alcím: fokDef.alcím } });
+        ...(h.szituációs ? { szituációs: true } : {}), ...(h.hatás_név ? { hatásNév: h.hatás_név } : {}), forrás: { típus: 'státusz', név, id: p.id, alcím: fokDef.alcím } });
     }
   }
   return ki;

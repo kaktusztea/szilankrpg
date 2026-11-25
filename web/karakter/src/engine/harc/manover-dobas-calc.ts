@@ -323,10 +323,14 @@ export function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
  * Aktív Meglepetés/Orvtámadás könnyítés a fázissorra (§066_03, csak Aktív mód):
  * a célpont nem védekezik → kimarad a Megakasztás (M) ÉS a támadó dobás (V is).
  * A sebzést nem a popup dobja (fegyvertábla), így az nem érintett.
- * Passzív módban (vagy ha nincs ilyen helyzet) a fázissor változatlan.
+ * Passzív módban a fázissor változatlan, kivéve Harcképtelennél (`harcképtelen`): akkor csak az Ellenpróba (E) marad.
  */
-export function könnyítettFázisok(fázisok: ('M' | 'V' | 'E')[], mód: Mód, session: Session): ('M' | 'V' | 'E')[] {
-  if (mód !== 'aktív') return fázisok;
+export function könnyítettFázisok(
+  fázisok: ('M' | 'V' | 'E')[], mód: Mód, session: Session, harcképtelen = false,
+): ('M' | 'V' | 'E')[] {
+  // Passzív + Harcképtelen (md/081): a Megakasztás auto kudarc (nálam), a Végrehajtás auto siker (az ellenfélé) -
+  // mindkettő a manőver sikere felé dől, így csak az Ellenpróba marad.
+  if (mód !== 'aktív') return harcképtelen ? fázisok.filter(f => f === 'E') : fázisok;
   const h = helyzetKönnyítés(session);
   if (!h.meglepetés && !h.orvtámadás) return fázisok;
   return fázisok.filter(f => f === 'E');

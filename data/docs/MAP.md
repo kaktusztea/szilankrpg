@@ -63,7 +63,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 |------|-----------|
 | `reactive.ts` | Rule engine: evaluate, buildContext, buildArrayContext, `evalRule` (egy szabály skalár inputokkal, a TS-képletmásolatok helyett; minden deklarált input kötelező) |
 | `harc/aktiv-fegyver-ctx.ts` | Aktív fegyver kontextus feloldás (kétkezes > fogás > pajzs > jobb kéz) |
-| `harc/combat-roll-info.ts` | KÉ (`collectKéDobásInfo`) / Támadó / Sebzés / CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve) |
+| `harc/combat-roll-info.ts` | KÉ (`collectKéDobásInfo`, automatikus kudarc) / Harcképtelen tiltó források (`harcképtelenForrások`) / Támadó / Sebzés / CÉ dobás-hatások + SP-bónuszok (a közös `engine/effekt.ts` gyűjtőből, dobás-célokra szűrve) |
 | `harc/ep-logic.ts` | ÉP sebesülés/gyógyulás pure logika |
 | `harc/fegyver-calc.ts` | Per-fegyver TÉ/VÉ/SP/harckeret (optimalizált: 5 rule/fegyver) |
 | `harc/fegyver-helpers.ts` | Fegyver segéd (pajzs-fegyvernév, lookup wrapperek) |
@@ -203,7 +203,6 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   UgyesebbKezSelect.tsx / GyengebbKezSelect.tsx / FegyverSelectField.tsx  Fegyver dropdown-ok + közös select-field
   SessionToggles.tsx       Session-toggle fortély gombok (Harci akrobatika: fok-függő fegyver v2 követelmény-tiltás + hint)
   HarcPopups.tsx           Harc fül popup-dispatcher (session-alapú popupok összefogása)
-  TaktikaTiltvaInfoPopup.tsx  Taktika-tiltás indok infó popup
   DialogPortal.tsx         createPortal dialógus-wrapper (Seb/Gyógy dialógusokhoz)
 
 tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
@@ -294,6 +293,7 @@ dobas/                     Dobás-popup készlet (Támadó / Sebzés / CÉ / Man
   ManualDicePicker.tsx     Manuális kockadobás érték választó
   SebzesPopup.tsx          Sebzésdobás popup (SP bontás, mód-választó, kötelező "Ellenfél páncél" választó → sebzésjelleg×páncél mátrix + cél_páncél SP-delta, másodlagos passzív info-label, újradobás)
   TaktikaHelyzetChipek.tsx Taktika / Harci helyzet gyors-chipek (Támadó + Célzó dobás popup)
+  TiltvaInfoPopup.tsx      Tiltás-indok infó popup (Teljes védekezés taktika; Harcképtelen: TÉ / aktív Manőver / CÉ dobás helyett, a tiltó forrásokkal; „Felülbírál" gomb)
   VeCsokkentesPopup.tsx    VÉ csökkentés popup (fegyverviszony választó + taktika/extra hatások, k20P; a Roham/Öngyilkos roham ×2 szorzó forrás-taktikája kiírva a gombon és a bontásban)
 
 picker/                    Taktika- / helyzet-választók (Aktív fül + dobás-popupok; fület nem importálhat)

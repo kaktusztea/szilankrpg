@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { calcHarcComputed } from './harc-computed';
 import { elsődlegesMód } from './fegyver-calc';
-import { collectDobásInfo, collectCéDobásInfo, collectKéDobásInfo, helyzetDobásMegjegyzések, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, collectCéDobásInfo, collectKéDobásInfo, harcképtelenForrások, helyzetDobásMegjegyzések, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../types';
 import type { GameData } from '../data-loader';
 import type { SebzésjellegPáncélMátrix, FegyverAlap } from '../data-types';
@@ -286,6 +286,27 @@ describe('collectKéDobásInfo - automatikus kudarc', () => {
     const info = collectKéDobásInfo(session, k, { ...data, statuszok } as typeof data);
     expect(info.automatikusKudarc).toEqual(['Fizikai (3)']);
     expect(netElőnySzint(info.kéHatások)).toBe(-2);
+  });
+});
+
+// Harcképtelen (md/081): a `letilt harci_képesség` források „Forrás: Hatás" feliratai - valódi adaton.
+describe('harcképtelenForrások', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const források = (st: string[]) => {
+    const session = { ...alap.session, aktív_taktikák: [], aktív_helyzetek: [], aktív_státuszok: st } as Session;
+    return harcképtelenForrások(session, { ...alap, fortélyok: [], session } as Karakter, data);
+  };
+
+  it('Bénultság (1): Harcképtelenség + Mozgás - képtelen; Fizikai (1) / nincs státusz: üres', () => {
+    expect(források(['bénultság (1)'])).toEqual(['Bénultság (1): Harcképtelenség', 'Bénultság (1): Mozgás - képtelen']);
+    expect(források(['fizikai (1)'])).toEqual([]);
+    expect(források([])).toEqual([]);
+  });
+
+  it('a KÉ dobás nem tiltott Harcképtelenül (md/081)', () => {
+    const session = { ...alap.session, aktív_taktikák: [], aktív_helyzetek: [], aktív_státuszok: ['bénultság (1)'] } as Session;
+    expect(collectKéDobásInfo(session, { ...alap, fortélyok: [], session } as Karakter, data).automatikusKudarc).toEqual([]);
   });
 });
 

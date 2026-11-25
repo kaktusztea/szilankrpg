@@ -39,7 +39,8 @@ export function KeDobasPopup({ data, karakter, session, setSession, pushUndo, on
   const [alPopup, setAlPopup] = useState<'helyzet' | null>(null);
   const [eredmény, setEredmény] = useState<KéEredmény | null>(null);
   const [kéziBónusz, setKéziBónusz] = useState(0);
-  const [bontásNyitva, setBontásNyitva] = useState(false); // KÉ + k20 breakdown under the result, collapsed by default
+  const [bontásNyitva, setBontásNyitva] = useState(false);
+  const [felülbírálva, setFelülbírálva] = useState(false); // KM override of the Automatikus kudarc block // KÉ + k20 breakdown under the result, collapsed by default
 
   const hc = useMemo(() => calcHarcComputed(data, karakter, session), [data, karakter, session]);
   const { kéHatások, automatikusKudarc } = useMemo(
@@ -78,11 +79,14 @@ export function KeDobasPopup({ data, karakter, session, setSession, pushUndo, on
           <div className="ke-dobas-header">Kezdeményezés</div>
         </div>
 
-        {!eredmény && automatikusKudarc.length > 0 ? (
+        {!eredmény && automatikusKudarc.length > 0 && !felülbírálva ? (
           // Automatikus kudarc (md/081): no roll, the character initiates last. Closing records nothing.
           <div className="kep-proba-tiltott">
             <div>Automatikus kudarc: utolsónak kezdeményezel</div>
             {automatikusKudarc.map(f => <div key={f} className="dobas-info-source">{f}</div>)}
+            <div className="dobas-btn-row">
+              <button type="button" className="tamado-dobas-btn tiltva-felulbiral-btn" onClick={() => setFelülbírálva(true)}>Felülbírál</button>
+            </div>
           </div>
         ) : !eredmény ? (
           <>
