@@ -104,12 +104,12 @@ Gyógyulási sebesség szorzó: `x3`.
 #### Nagyon nehéz (15) 🎲
 
 - Gyógyulási sebesség szorzó: `x4`.
-- `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+- `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`) ⭕Mágia TODO: felülvizsgálni⭕
 
 #### Rendkívül nehéz (18) 🎲
 
 - Gyógyulási sebesség szorzó: ⭕`x5`
-- `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+- `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)  ⭕Mágia TODO: felülvizsgálni⭕
 
 #### Emberfeletti (21) 🎲
 

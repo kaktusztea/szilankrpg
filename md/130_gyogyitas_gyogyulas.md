@@ -85,17 +85,17 @@ A KM és a játékosok számára pár példát mutatunk be a jellegzetes, gyógy
 - Vajákosság képzettség - `8.szint`
 - Kirurgia képzettség - `5.szint`
 
----
-
 <br />
+
+---
 
 ### Járványok
 
 Ezek olyan horderejű, gyorsan terjedő jelenségek, amelyekkel egyszerű vajákosok már nem bírnak. A tömeges, országokat letaroló járványokat varázstudók képesek csak megfékezni.
 
----
-
 <br />
+
+---
 
 ### Idegen fajok kezelése
 

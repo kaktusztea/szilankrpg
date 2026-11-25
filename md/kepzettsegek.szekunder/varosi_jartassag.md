@@ -87,13 +87,13 @@ Célszám: 9 + város méret módosítója
 - Megtalálni a legnépszerűbb kocsmát.
 - Hallomásból tudni a helyi színházi darabról.
 - Pár órán belül koldusoktól megszerezni egy alap pletykát.
+- Felmérni, hova nem ajánlott bemerészkedni éjszaka.
 
 #### Átlagos (9) 🎲
 
-- Megtalálni, hol lehet információhoz jutni: matrózok, szajhák, őrök, koldusok.
+- Megtalálni, hol lehet információhoz jutni.
 - Kideríteni, ki az adott városban a legfőbb orgazda.
 - Kapcsolatot találni szürke zónás alakokhoz (csempész, kocsmai verekedő, verőember).
-- Felmérni, hova nem ajánlott bemerészkedni éjszaka.
 - Egy lebujban egy matrózból/zsoldosból információkat kihúzni.
 
 #### Nehéz (12) 🎲
