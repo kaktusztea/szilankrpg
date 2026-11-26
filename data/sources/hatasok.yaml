@@ -108,7 +108,7 @@ hatások:
 # --- Harci képesség ---
 - id: "harcképtelenség"
   név: "Harcképtelenség"
-  leírás: "Mozogni tudsz, harcolni nem. Minden támadás ellened automatikusan sebző."
+  leírás: "Mozogni tudsz, harcolni nem. Minden támadás ellened automatikusan sebző. KÉ dobás engedélyezett."
   mechanika: [{mód: "letilt", cél: "harci_képesség"}]
 
 # --- Mozgás ---
@@ -124,7 +124,7 @@ hatások:
 
 - id: "mozgás_képtelen"
   név: "Mozgás - képtelen"
-  leírás: "Mozdulni se bírsz nyaktól lefelé. Szemmozgás, légzés működik. Minden támadás ellened automatikusan sebző."
+  leírás: "Mozdulni se bírsz nyaktól lefelé. Szemmozgás, légzés működik. Minden támadás ellened automatikusan sebző. Csak fizikai hatás, mentális hatása nincs."
   mechanika: [{mód: "letilt", cél: "mozgás"}, {mód: "letilt", cél: "harci_képesség"}]
 
 # --- Pszi ---
@@ -164,13 +164,13 @@ hatások:
 
 - id: "varázslás_elvesztése"
   név: "Varázslás képesség elvesztése"
-  leírás: "Képtelen vagy bármilyen mágia végzésére, fenntartására."
+  leírás: "Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra nincs hatással."
   mechanika: [{mód: "letilt", cél: "varázslás"}]
 
 # --- VÉ ---
 - id: "vé_veszteség_duplázódik"
   név: "VÉ veszteség duplázódik"
-  leírás: "Elszenvedett VÉ veszteséged duplázódik."
+  leírás: "Elszenvedett VÉ veszteséged duplázódik. Nem halmozható többször."
   mechanika: [{mód: "szorzó", érték: 2, cél: "vé_veszteség"}]
 
 - id: "vé_csökkentés_bónusz"

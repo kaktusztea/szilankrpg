@@ -867,7 +867,7 @@ Forrás: `data/tables/statuszok.json`. Formátum: `"Név (fok)"`.
 | Félelem (1) | Szorongás | *szöveges* harci_képesség (KM ítéli meg) |
 | Félelem (2) | Rettegés | **max 1 támadás**; *szöveges* harci_képesség |
 | Félelem (3) | Bénító félelem | ❌ mozgás, ❌ harci_képesség |
-| Fizikai (1) | Fáradtság | Hátrány-1 ké_dobás |
+| Fizikai (1) | Fáradtság, Fejfájás | Hátrány-1 ké_dobás |
 | Fizikai (2) | Kimerültség | **VÉ veszteség ×2**; Hátrány-1 ké_dobás |
 | Fizikai (3) | Elcsigázottság | Hátrány-2 ké_dobás; **max 1 támadás**; **VÉ veszteség ×2**; mozgás ×0,5 |
 | Indulat (1..3) | Harag/Gyűlölet/Őrjöngés | *szöveges* harci_képesség |

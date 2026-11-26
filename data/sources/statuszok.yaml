@@ -319,7 +319,7 @@ státuszok:
   alkategóriák: []
   fokok:
   - fok: 1
-    alcím: Fáradtság
+    alcím: Fáradtság, Fejfájás
     megjegyzések:
     - text: "Példák: Edzettségedhez mérten elfáradtál hegymászás során; egy hete nem ettél."
     - text: "Kapcsolódik: Szívósság fortély."
@@ -418,7 +418,7 @@ státuszok:
     - hatás: előny
       érték: 1
       cél: képzettségpróba
-      megjegyzés: obszesszió tárgyához kötődő
+      megjegyzés: obszesszió tárgyához kötődő (nem harci/misztikus dobásokra)
       szituációs: true
     - hatás: hátrány
       érték: -1

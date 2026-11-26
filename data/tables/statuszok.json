@@ -1155,7 +1155,7 @@
     "fokok": [
       {
         "fok": 1,
-        "alcím": "Fáradtság",
+        "alcím": "Fáradtság, Fejfájás",
         "megjegyzések": [
           {
             "text": "Példák: Edzettségedhez mérten elfáradtál hegymászás során; egy hete nem ettél."
@@ -1395,7 +1395,7 @@
             "érték": 1,
             "cél": "képzettségpróba",
             "szituációs": true,
-            "megjegyzés": "obszesszió tárgyához kötődő",
+            "megjegyzés": "obszesszió tárgyához kötődő (nem harci/misztikus dobásokra)",
             "hatás_id": "előny",
             "hatás_név": "Előny+1: Képzettségpróba"
           },

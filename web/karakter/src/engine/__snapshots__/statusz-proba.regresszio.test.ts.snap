@@ -260,7 +260,7 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
   },
   "Fizikai (1) | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -268,7 +268,7 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
   },
   "Fizikai (1) | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -276,7 +276,7 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
   },
   "Fizikai (1) | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -284,7 +284,7 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
   },
   "Fizikai (1) | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11788,7 +11788,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | akrobatika | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11796,7 +11796,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | akrobatika | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11804,7 +11804,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | akrobatika | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11812,7 +11812,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | akrobatika | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11820,7 +11820,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | arkánum_asztrálmágia | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11828,7 +11828,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | arkánum_asztrálmágia | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11836,7 +11836,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | arkánum_asztrálmágia | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11844,7 +11844,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | arkánum_asztrálmágia | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11852,7 +11852,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | befolyásolás | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11860,7 +11860,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | befolyásolás | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11868,7 +11868,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | befolyásolás | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11876,7 +11876,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | befolyásolás | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11884,7 +11884,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | előadóművészet | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11892,7 +11892,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | előadóművészet | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11900,7 +11900,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | előadóművészet | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11908,7 +11908,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | előadóművészet | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11916,7 +11916,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | harcmodor | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11924,7 +11924,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | harcmodor | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11932,7 +11932,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | harcmodor | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11940,7 +11940,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | harcmodor | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11948,7 +11948,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lexikum | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11956,7 +11956,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lexikum | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11964,7 +11964,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lexikum | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11972,7 +11972,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lexikum | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11980,7 +11980,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lopás | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11988,7 +11988,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lopás | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -11996,7 +11996,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lopás | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -12004,7 +12004,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | lopás | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -12012,7 +12012,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | észlelés | emlékezet": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -12020,7 +12020,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | észlelés | intelligencia": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -12028,7 +12028,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | észlelés | érzékenység": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
@@ -12036,7 +12036,7 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (1) | észlelés | önuralom": {
     "források": [
-      "Fizikai (Fáradtság): -1",
+      "Fizikai (Fáradtság, Fejfájás): -1",
     ],
     "szint": -1,
     "szituációs": [],
