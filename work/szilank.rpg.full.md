@@ -1473,6 +1473,8 @@ Fizikai Képzettségpróbákra
 próbadobások pedig automatikus kudarcok.
 ```
 
+Hogy mi számít fizikai próbának, lásd: [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák).
+
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
 
@@ -3077,6 +3079,20 @@ MIN,MAX: [-2, +2]
 ```
 
 Sem az `Előny`, sem a `Hátrány` dobások nem mehetnek `-2` alá és `+2` fölé semmilyen bónusz/büntetés halmozással.
+
+## 🔆 Ökölszabály: Próba-kategóriák
+
+A **Státuszok** Hatásai gyakran egy próba-kategóriára vonatkoznak. Hogy egy próba fizikai vagy szellemi, azt a dobáshoz használt **Tulajdonság** dönti el (a Képzettségpróbánál a KM választja, lásd [Képzettségpróba](030_06_01_kepzettsegproba.md#próbadobás)).
+
+- **Fizikai próba**: [Erő](010_05_01_01_ero.md), [Edzettség](010_05_01_02_edzettseg.md), [Ügyesség](010_05_01_03_ugyesseg.md) vagy [Gyorsaság](010_05_01_04_gyorsasag.md) Tulajdonsággal dobott Tulajdonságpróba vagy Képzettségpróba
+- **Szellemi próba**: [Intelligencia](010_05_01_05_intelligencia.md), [Emlékezet](010_05_01_06_emlekezet.md), [Önuralom](010_05_01_07_onuralom.md) vagy [Érzékenység](010_05_01_08_erzekenyseg.md) Tulajdonsággal dobott Tulajdonságpróba vagy Képzettségpróba
+- **Szociális képzettségpróba**: [Befolyásolás](kepzettsegek.primer/altalanos/befolyasolas.md), [Etikett](kepzettsegek.szekunder/etikett.md), [Emberismeret](kepzettsegek.primer/altalanos/emberismeret.md)
+- **Nem-harci képzettségpróba**: minden Képzettségpróba, kivéve a [Harci képzettségeket](030_01_kepzettseglista.md#harci-képzettségek-🅿️)
+- **Kreatív / koncentrációt igénylő** tevékenység: a KM dönti el, szituációtól függően
+
+🔆 Egy próba több kategóriába is tartozhat (pl. Intelligenciával dobott Etikett: szellemi és szociális is). Ilyenkor minden érintett Hatás érvényes, a [korlátokon](#-ökölszabály-előnyhátrány-korlátok) belül.
+
+🔆 A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fizikai / szellemi típusa más fogalom: az együttműködés módját jelöli.
 
 ---
 
@@ -6033,12 +6049,12 @@ Gyógyulási sebesség szorzó: `x3`.
 #### Nagyon nehéz (15) 🎲
 
 - Gyógyulási sebesség szorzó: `x4`.
-- `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+- `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`) ⭕Mágia TODO: felülvizsgálni⭕
 
 #### Rendkívül nehéz (18) 🎲
 
 - Gyógyulási sebesség szorzó: ⭕`x5`
-- `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+- `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)  ⭕Mágia TODO: felülvizsgálni⭕
 
 #### Emberfeletti (21) 🎲
 
@@ -8773,7 +8789,7 @@ Ez írja le a képzettség használatát.
 
 ## 🔵 Harci láz
 
-⭕TODO: kapcsolódhat/ütközhet ezzel: [Indulat Státusz](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-indulat-1-harag) ⭕
+⭕TODO: kapcsolódhat/ütközhet ezzel: [Indulat Státusz](../../082_statuszok.md#%EF%B8%8F-indulat-1-harag) ⭕
 
 Ez egy [Primer (harci) képzettség](../../010_09_primer_szekunder_ismeretek.md).
 
@@ -11734,7 +11750,7 @@ Az alábbi területeket fedi le:
 - felismered a különböző társadalmi rétegek találkozópontjait (piac, ivó, színház, cirkusz, templom),
 - megérzed, mi mozdul a színfalak mögött (korrupció, kihasználható helyzet, információáramlás).
 
-Szereplőtipikus: **tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági futár, zsoldos** – vagy akár egy **nemes, aki mindig tudja, kit kell lefizetni.**
+Tipikus karakterek: tolvaj, csavargó, szajha, kocsmai bajkeverő, alvilági futár, zsoldos – vagy akár egy nemes, aki mindig tudja, kit kell lefizetni.
 
 ### Helyzetfüggő módosítók
 
@@ -11807,20 +11823,18 @@ Célszám: 9 + város méret módosítója
 
 ### Próbák 🎲
 
-Példa: keresek egy koldust, aki járatos a piac pletykáiban.
-
 #### Könnyű (6) 🎲
 
 - Megtalálni a legnépszerűbb kocsmát.
 - Hallomásból tudni a helyi színházi darabról.
 - Pár órán belül koldusoktól megszerezni egy alap pletykát.
+- Felmérni, hova nem ajánlott bemerészkedni éjszaka.
 
 #### Átlagos (9) 🎲
 
-- Megtalálni, hol lehet információhoz jutni: matrózok, szajhák, őrök, koldusok.
+- Megtalálni, hol lehet információhoz jutni.
 - Kideríteni, ki az adott városban a legfőbb orgazda.
 - Kapcsolatot találni szürke zónás alakokhoz (csempész, kocsmai verekedő, verőember).
-- Felmérni, hova nem ajánlott bemerészkedni éjszaka.
 - Egy lebujban egy matrózból/zsoldosból információkat kihúzni.
 
 #### Nehéz (12) 🎲
@@ -12192,6 +12206,8 @@ A Tulajdonságpróbánál már említett [Státusz rendszer](080_hatasok_es_stat
 Túl sok cipelt tárgy  fizikai **Képzettségpróbák** végrehajtásában.
 
 Ezt a [Felszerelés](010_03_06_felszereles.md) fejezet írja le.
+
+Hogy mi számít fizikai Képzettségpróbának, lásd: [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák).
 
 <br />
 
@@ -12649,6 +12665,8 @@ A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fejezet
 
 Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2](081_hatasok.md#%EF%B8%8F-el%C5%91ny12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok) Hatásokat szenvedhetsz el képzettségpróba dobásodra. Az alábbiak egyfajta "fordított kivonatot" mutatnak a **Státuszok** oldalból kiválogatva.
 
+A Fizikai / Szellemi / Szociális / nem-harci kategóriák jelentése: [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák).
+
 ---
 
 ### Képzettségpróba hátrányok (összes)
@@ -12736,7 +12754,7 @@ Automatikus kudarc
 
 Automatikus kudarc
 
-- Félelem (`2`) Rettegés/Pánik
+- Félelem (`2`) Rettegés
 - Indulat (`3`) Őrjöngés
 - Zavar (`2`) Megrendült
 
@@ -15419,7 +15437,7 @@ Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs fegyverméret-korlá
 
 Ha olyan a szituáció, hogy az alkalmazó nem képes, vagy nem akarja alkalmazni harca közben ezt a stílust (pl. túl feltűnő lenne az ugrabugrálása), akkor nem kapja meg a leírt bónuszokat.
 
-[Fizikai (3) Elcsigázottság](../082_statuszok.md#%EF%B8%8F-fizikai-3-elcsig%C3%A1zotts%C3%A1g) Státusz alatt nem alkalmazható (automatikus kudarc).
+[Fizikai (3) Elcsigázottság](../082_statuszok.md#%EF%B8%8F-fizikai-3-elcsig%C3%A1zotts%C3%A1g) Státusz alatt nem alkalmazható ([Fortély hatás letiltása](../081_hatasok.md#-fortély-hatás-letiltása-x)).
 
 #### Helyigény
 
@@ -23600,7 +23618,7 @@ Első oda-vissza csapásnál:
 
 ❌ Ostorharc harcmodorban
 
-🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
+🔆 [Halmozódás más szorzókkal](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
 A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy hatalmas sebzést érjen el. Súlyosan sérült harcosok utolsó mentsvára lehet.
 
@@ -23651,7 +23669,7 @@ Első oda-vissza csapásnál:
 
 ❌ Ostorharc harcmodorban
 
-🔆 [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
+🔆 [Halmozódás más szorzókkal](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
 🔆 Ha a rohamozó betalál (nem muszáj sebzőnek lennie):
 
@@ -25506,6 +25524,7 @@ A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mint
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
 - [Terelés](#terel%C3%A9s)
+- [Véreztetés](#véreztetés-1)
 
 ---
 
@@ -26011,6 +26030,36 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 **Kapcsolódó szituáció:** [Orvtámadás](szituaciok/orvtamadas_harcon_kivul.md)
 
 <br/>
+
+---
+
+### Véreztetés (1)
+
+- Nehézség: `10`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- 🟥 Erős követelmény: [Élettan](fortelyok.altalanos/elettan.md) fortély
+- Helyzetfüggő módosítók:
+  - Fegyver sebzés típus:
+    - `-2`: Szúró
+    - `+0`: Vágás egyenes penge
+    - `+2` Vágás íves penge
+- **Hatás**:
+  - Státusz: [Vérző (1)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-1-k%C3%B6zepesen)
+  - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést
+
+### Véreztetés (2)
+
+- Nehézség: `12`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- 🟥 Erős követelmény: [Élettan](fortelyok.altalanos/elettan.md) fortély
+- Helyzetfüggő módosítók:
+  - Fegyver sebzés típus:
+    - `-2`: Szúró
+    - `+0`: Vágás egyenes penge
+    - `+2` Vágás íves penge
+- **Hatás**:
+  - Státusz: [Vérző (2)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-2-er%C5%91sen)
+  - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést
 
 ---
 
@@ -30994,9 +31043,9 @@ A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy
 
 Egy **Státusz** több **Hatást** is képes okozni a karakteren. Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod. Mágikus tárgyak, fegyverek is képesek lehetnek **Hatások** okozására.
 
-### Szorzó hatások ökölszabály
+### 🔆 [Szorzó hatások ökölszabály](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
-→ [Lásd itt](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
+### 🔆 [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák)
 
 <br />
 
@@ -31108,9 +31157,9 @@ Ami másnak automatikus siker, az neked már próbadobásos.
 
 ---
 
-### 🔥 Érzék - Hátrány-1 (zavart)
+### 🔥 Érzék - Hátrány-1
 
-Látás / Hallás / Szaglás.
+Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
 ```
 Hátrány-1 minden adott érzéken
@@ -31118,9 +31167,9 @@ Hátrány-1 minden adott érzéken
   Képzettségpróbára
 ```
 
-### 🔥 Érzék - Hátrány-2 (részleges)
+### 🔥 Érzék - Hátrány-2
 
-Látás / Hallás / Szaglás.
+Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
 ```
 Hátrány-2 minden adott érzéken
@@ -31128,14 +31177,22 @@ Hátrány-2 minden adott érzéken
   Képzettségpróbára
 ```
 
-### 🔥 Érzék - automatikus kudarc (kioltott)
+### 🔥 Érzék - automatikus kudarc
 
-Látás / Hallás / Szaglás.
+Látás / Hallás / Szaglás / Tapintás / Ízlelés.
 
 ```
 Automatikus kudarc minden
   adott érzéken alapuló próbára.
 ```
+
+<br />
+
+---
+
+### 🔥 Fortély hatás letiltása: X
+
+Egy adott fortély hatását, bónuszait ideiglenesen letiltja.
 
 <br />
 
@@ -31157,6 +31214,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 
 - Tudsz mozogni, menni, de harcolni nem
 - minden támadás ellened: automatikus Sebzés
+- `KÉ` dobás engedélyezett
 
 <br />
 
@@ -31203,11 +31261,32 @@ Képtelen vagy [Pszí](090_pszi.md) alkalmazására. Az Aurádra nincs hatással
 
 ---
 
+### 🔥 Taktika kötelező: X
+
+[Harci taktika](065_02_harci_taktikak.md) listából kötelezően alkalmaznod kell egyet.
+
+- Taktika neve: kötelező paraméter
+- Taktika alkalmazásának foka: opcionális paraméter (ha értelmezhető)
+  - lehet `X`
+  - lehet `MAX`
+
+<br />
+
+---
+
 ### 🔥 Többszörös támadás elvesztése
 
 ```
 Max 1 támadás / kör
 ```
+
+<br />
+
+---
+
+### 🔥 Varázslás: szabad varázslás elvesztése
+
+Képtelen vagy a szabad varázslataidat elvégezni. A "rekesz" alapú varázslataidat még alkalmazhatod.
 
 <br />
 
@@ -31225,7 +31304,7 @@ Képtelen vagy bármilyen mágia létrehozására, fenntartására. Az Aurádra 
 
 Irányodba indított támadásnál az elszenvedett `VÉ` veszteséged duplázódik.
 
-🔆 Nem halmozható többször. Lásd még: [Halmozódás más szorzókkal](081_hatasok.md#szorzó-hatások-ökölszabály)
+🔆 Nem halmozható többször. Lásd még: [Halmozódás más szorzókkal](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-szorzó-hatások)
 
 <br />
 
@@ -31249,27 +31328,18 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 
 ---
 
-### 🔥 Vérzés - gyenge
-
-```
--1 ÉP / 10 perc
-(harcban nem számít)
-```
-
----
-
 ### 🔥 Vérzés - közepes
 
-```
--1 ÉP / 2 kör
-```
+Addig tart, míg valaki el nem állítja. Kirurgus, vagy bajtárs.
 
----
+```
+-2 ÉP / kör
+```
 
 ### 🔥 Vérzés - erős
 
 ```
--1 ÉP / kör
+-4 ÉP / kör
 ```
 
 ---
@@ -31309,6 +31379,7 @@ Kivétel: Érzékvesztés (érzékenként).
 - [Sérült (2)](#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3)
 - [Szellemi (3)](#%EF%B8%8F-szellemi-1-kialvatlans%C3%A1g)
 - [Trauma (2)](#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s)
+- [Vérző (2)](#%EF%B8%8F-v%C3%A9rz%C5%91-1-k%C3%B6zepesen)
 - [Zavar (3)](#%EF%B8%8F-zavar-1-kiz%C3%B6kkent)
 
 ---
@@ -31458,8 +31529,8 @@ Hátrány-1
   Tulajdonságpróbákra
 
 1 támadás elvesztése
-⭕Nincs (at-will) varázslás
-  kivéve papok, ők részegen is tudnak⭕
+Varázslás: szabad varázslás elvesztése
+  ⭕kivéve papok, ők részegen is tudnak⭕
 
 Előny+1 Fájdalomtűrés dobásra
   Áfiumok, kábítószerek, fejbekólintás hatására
@@ -31515,7 +31586,7 @@ Mint az Ájulásnál, továbbá:
 
 ### ✴️ Érzékvesztés (1) Zavart
 
-Látás, Hallás, Szaglás.
+Látás, Hallás, Szaglás, Tapintás, Ízlelés.
 
 ```
 Hátrány-1
@@ -31546,7 +31617,7 @@ Automatikus kudarc
 ### ✴️ Félelem (1) Szorongás
 
 ```
-Védő taktikában harcol
+Taktika kötelező: Védő taktika (3)
   VÉ:+3; TÉ:-6
 
 Hátrány-1
@@ -31565,10 +31636,12 @@ Hátrány-1
 
 Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 
-### ✴️ Félelem (2) Rettegés/Pánik
+### ✴️ Félelem (2) Rettegés
+
+Pánik érzete is ide tartozik.
 
 ```
-Teljes Védekezés taktika kötelező
+Taktika kötelező: Teljes Védekezés taktika
 
 Automatikus kudarc
   Szociális képzettségpróbákra
@@ -31602,6 +31675,8 @@ Hátrány-1
   Szellemi képzettségpróbákra
 ```
 
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
+
 ⚡ Példa
 
 - Edzettségedhez mérten elfáradtál hegymászás során
@@ -31615,6 +31690,8 @@ Hátrány-1 KÉ dobásra
 Hátrány-2 Szellemi képzettségpróbákra
 FP S1
 ```
+
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 
 ⚡ Példák
 
@@ -31634,12 +31711,14 @@ FP S2
 
 Mozgás - feleződik
 
-Automatikus kudarc
+Fortély hatás letiltása:
   Harci akrobatika
   (nincs harcérték bónusz)
 ```
 
-Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
+
+Kapcsolódik: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
 
 ⚡ Példa: éhhalál szélén tengődsz
 
@@ -31707,25 +31786,25 @@ Hátrány-1
 
 ### ✴️ Indulat (1) Harag
 
-⭕TODO: kapcsolódhat/ütközhet ezzel: [Harci láz képzettség](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.primer/harci/harci_laz.md)⭕
+⭕TODO: kapcsolódhat/ütközhet ezzel: [Harci láz képzettség](kepzettsegek.primer/harci/harci_laz.md)⭕
 
 Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör.
 
 Ilyenkor
 
-- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- Taktika kötelező: [Támadó taktika](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) (`MAX`)
 - [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
 - minden defenzív jellegű taktika tiltott ❌
 - Kiváró taktika tiltott ❌
 
 ### ✴️ Indulat (2) Gyűlölet
 
-- maximális [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcolsz
+- Taktika kötelező: [Támadó taktika](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) (`MAX`)
 - [Kezdeményező Taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika) használható
 - minden defenzív jellegű taktika tiltott ❌
 - Kiváró taktika tiltott ❌
-- [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika kötelező egyszer
-- [Roham](065_02_harci_taktikak.md#roham-taktika) taktika kötelező utána - ha van hely
+- Taktika kötelező: [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika - egyszer
+- Taktika kötelező: [Roham](065_02_harci_taktikak.md#roham-taktika) taktika - utána, ha van hely
 
 ### ✴️ Indulat (3) Őrjöngés
 
@@ -31747,27 +31826,27 @@ Automatikus kudarc
 
 ```
 Automatikus Tulajdonságpróba
-  Akaraterő
+  Önuralom
 ```
 
-**Akaraterő** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz-e állni a késztetésnek.
+**Önuralom** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (2) Vágy
 
 ```
 Hátrány-1
-  Akaraterő Tulajdonságpróbára
+  Önuralom Tulajdonságpróbára
 ```
 
-**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
+**Önuralom** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (3) Kényszer
 
 ```
-Hátrány-2 Akaraterő Tulajdonságpróbára
+Hátrány-2 Önuralom Tulajdonságpróbára
 ```
 
-**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
+**Önuralom** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 #### ⚡ Példák
 
@@ -31874,7 +31953,6 @@ Hátrány-1
 
 ```
 Pszí használat elvesztése
-Lassabb gondolkodás
 
 Hátrány-1
   Szellemi képzettségpróbákra
@@ -31887,7 +31965,6 @@ Hátrány-1
 
 ```
 Pszí használat elvesztése
-Lassabb gondolkodás
 
 Hátrány-2
   Mágiahasználat
@@ -31928,6 +32005,26 @@ Antyssjárás esetén "nagyon rossz" helyre kerülsz
 
 ---
 
+### ✴️ Vérző (1) közepesen
+
+```
+Vérzés - közepes
+```
+
+<br />
+
+---
+
+### ✴️ Vérző (2) erősen
+
+```
+Vérzés - erős
+```
+
+<br />
+
+---
+
 ### ✴️ Zavar (1) Kizökkent
 
 ```
@@ -31944,7 +32041,7 @@ Hátrány-2
   Szociális képzettségpróbákra
 ```
 
-Példa: ledöbbenés, stb.
+Példa: ledöbbenés.
 
 ### ✴️ Zavar (2) Megrendült
 
@@ -34183,17 +34280,17 @@ A KM és a játékosok számára pár példát mutatunk be a jellegzetes, gyógy
 - Vajákosság képzettség - `8.szint`
 - Kirurgia képzettség - `5.szint`
 
----
-
 <br />
+
+---
 
 ### Járványok
 
 Ezek olyan horderejű, gyorsan terjedő jelenségek, amelyekkel egyszerű vajákosok már nem bírnak. A tömeges, országokat letaroló járványokat varázstudók képesek csak megfékezni.
 
----
-
 <br />
+
+---
 
 ### Idegen fajok kezelése
 
