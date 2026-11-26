@@ -35,9 +35,10 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
             <div key={i} className="aktiv-flex-col">
               <div className="item-row aktiv-helyzet-item">
                 <span className="aktiv-flex-1">
-                  <strong className="aktiv-strong-helyzet">{h}:</strong> {fmtHatásSzöveg(infóText)}
+                  <strong className="aktiv-strong-helyzet">{h}</strong>
                   {minFegyverhosszWarning && <span className="aktiv-min-fegyverhossz-warning">{minFegyverhosszWarning}</span>}
                   {tiltásWarnings.map(w => <span key={w} className="aktiv-min-fegyverhossz-warning">{w}</span>)}
+                  {infóText && <div className="aktiv-taktika-hatas">{fmtHatásSzöveg(infóText)}</div>}
                 </span>
                 <button className="item-delete" onClick={e => {
                   e.stopPropagation();

@@ -50,7 +50,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                 <div className="aktiv-flex-1">
                   <div className="aktiv-taktika-header">
                     <span>
-                      <strong className="aktiv-taktika-name">{hatásLabel}:</strong>
+                      <strong className="aktiv-taktika-name">{hatásLabel}</strong>
                       {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.map((m, k) => <span key={k}>{k > 0 && <span className="aktiv-mod-sep">, </span>}<span className={m.includes(':-') ? 'fmt-hatrany' : 'fmt-elony'}>{m}</span></span>)} <Ikon név="pipa" /></span>}
                     </span>
                     <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}><Ikon név="bezár" /></button>

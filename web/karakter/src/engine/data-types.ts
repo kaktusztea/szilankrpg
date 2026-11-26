@@ -221,6 +221,8 @@ export interface StatuszEntry {
   alkategória_forrás?: 'tulajdonságok' | 'képzettségek';
   /** Generált (alkategória_forrás esetén): alkategória → megjelenítési név (pl. lexikum → Lexikum). */
   alkategória_címkék?: Record<string, string>;
+  /** Felvételkor kötelező szabad szöveg max hossza (pl. Szakrális bélyeg); alkategóriaként tárolódik, a `{alkategória}` helyőrzőt tölti ki. */
+  szabad_szöveg?: number;
   fokok: StatuszFok[];
 }
 

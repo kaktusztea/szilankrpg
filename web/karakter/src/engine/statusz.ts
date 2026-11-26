@@ -26,10 +26,16 @@ export function alkategóriaCímke(def: Pick<StatuszEntry, 'alkategória_címké
   return def?.alkategória_címkék?.[al] ?? al;
 }
 
-/** „Név: Alkategória-címke (fok)" - feliratokhoz, forrás-listákhoz. */
+/** „Név: Alkategória-címke (fok)" - feliratokhoz, forrás-listákhoz. Szabad szövegnél a szöveg nem kerül a címkébe (a megjegyzésben van). */
 export function státuszCímke(def: StatuszEntry | undefined, p: StátuszPéldány): string {
   const név = def?.név ?? p.id;
-  return `${név}${p.alkategória ? `: ${alkategóriaCímke(def, p.alkategória)}` : ''} (${p.fok})`;
+  const al = p.alkategória && !def?.szabad_szöveg ? `: ${alkategóriaCímke(def, p.alkategória)}` : '';
+  return `${név}${al} (${p.fok})`;
+}
+
+/** A fok alcíme csak a fokszámot ismétli-e („N. fok"): ilyenkor a felirat a fokszám mellé nem írja ki. */
+export function alcímCsakFok(f: { fok: number; alcím: string }): boolean {
+  return f.alcím === `${f.fok}. fok`;
 }
 
 /** A hatás-sor futásidejű helyőrzőjének kitöltése a felvett alkategóriával (statuszok.json: `"{alkategória}"`). */

@@ -8,7 +8,7 @@ import { PickerOverlay } from '../picker/PickerOverlay';
 import type { StátuszPerElem } from './aktiv-calc';
 import { előnyHátrányLabel } from '../../engine/dice';
 import { státuszDef, képzettségDef } from '../../engine/lookup';
-import { parseStátusz, státuszKulcs, státuszCímke } from '../../engine/statusz';
+import { parseStátusz, státuszKulcs, státuszCímke, alcímCsakFok } from '../../engine/statusz';
 
 interface Props {
   data: GameData;
@@ -53,7 +53,8 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           if (!p) return null;
           const def = státuszDef(data, p.id);
           const maxFok = def?.fokok.length ?? 1;
-          const alcím = def?.fokok.find(f => f.fok === p.fok)?.alcím;
+          const fokDef = def?.fokok.find(f => f.fok === p.fok);
+          const alcím = fokDef && !alcímCsakFok(fokDef) ? fokDef.alcím : undefined;
           const locked = p.id === 'sérült';   // az ÉP-rubrikák vezérlik (useSérültStátusz)
           const perElem = státuszPerElem.find(s => s.név === st);
           const clickable = !locked && maxFok > 1;
@@ -65,10 +66,10 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
               setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? új : v) }));
             }}>
               <span className="aktiv-flex-1">
-                <strong className="aktiv-statusz-name">{státuszCímke(def, p)}{alcím ? ` - ${alcím}` : ''}:</strong>
-                {perElem && perElem.hatások.length > 0 && <span> {hatásFeliratok(perElem.hatások, eseményNév,
+                <strong className="aktiv-statusz-name">{státuszCímke(def, p)}{alcím ? ` - ${alcím}` : ''}</strong>
+                {perElem && perElem.hatások.length > 0 && <div className="aktiv-taktika-hatas">{hatásFeliratok(perElem.hatások, eseményNév,
                   id => képzettségDef(data, id)?.név).map((txt, j) =>
-                  <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span>)}</span>}
+                  <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span>)}</div>}
               </span>
               {!locked && <button className="item-delete" onClick={e => {
                 e.stopPropagation();
@@ -81,8 +82,8 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
         {session.narratív_módosítók.map((nm, i) => (
           <div key={`nar${i}`} className="item-row aktiv-statusz-item">
             <span className="aktiv-flex-1">
-              <strong className="aktiv-statusz-name">{nm.szöveg}:</strong>
-              <span> {fmtHatásSzöveg(előnyHátrányLabel(nm.érték ?? 0))}</span>
+              <strong className="aktiv-statusz-name">{nm.szöveg}</strong>
+              <div className="aktiv-taktika-hatas">{fmtHatásSzöveg(előnyHátrányLabel(nm.érték ?? 0))}</div>
             </span>
             <button className="item-delete" onClick={() => {
               pushUndo(`Narratív−: ${nm.szöveg}`, [{ field: 'session', prev: session }]);

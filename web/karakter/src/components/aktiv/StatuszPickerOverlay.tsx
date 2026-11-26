@@ -5,7 +5,7 @@ import type { StatuszEntry } from '../../engine/data-types';
 import { PickerOverlay } from '../picker/PickerOverlay';
 import { hatásFeliratok } from '../formatters';
 import { eseményDef, státuszDef, képzettségDef } from '../../engine/lookup';
-import { alkategóriaCímke, státuszKulcs, választhatóAlkategóriák, státuszFelvehető, hatásKitöltve } from '../../engine/statusz';
+import { alkategóriaCímke, státuszKulcs, választhatóAlkategóriák, státuszFelvehető, hatásKitöltve, alcímCsakFok } from '../../engine/statusz';
 
 interface Props {
   data: GameData;
@@ -33,22 +33,26 @@ function alkategóriaCsoportok(def: StatuszEntry, opciók: string[], data: GameD
 export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarratív }: Props) {
   const [alkVálasztó, setAlkVálasztó] = useState<string | null>(null);                       // státusz-id
   const [fokVálasztó, setFokVálasztó] = useState<{ id: string; alkategória?: string } | null>(null);
+  const [szövegVálasztó, setSzövegVálasztó] = useState<string | null>(null);                 // státusz-id (szabad_szöveg)
+  const [szöveg, setSzöveg] = useState('');
 
   const eseményNév = (id: string) => eseményDef(data, id)?.név ?? id;
   const képzettségNév = (id: string) => képzettségDef(data, id)?.név;
   const fokDef = fokVálasztó ? státuszDef(data, fokVálasztó.id) : undefined;
+  const szövegDef = szövegVálasztó ? státuszDef(data, szövegVálasztó) : undefined;
   const cím = fokVálasztó && fokDef
     ? `${fokDef.név}${fokVálasztó.alkategória ? `: ${alkategóriaCímke(fokDef, fokVálasztó.alkategória)}` : ''} - fok választó`
-    : 'Státusz választó';
+    : szövegDef ? szövegDef.név : 'Státusz választó';
 
   const kiválaszt = (def: StatuszEntry, alkategória?: string) => {
     if (def.fokok.length === 1) onPick(státuszKulcs({ id: def.id, alkategória, fok: def.fokok[0].fok }));
-    else { setFokVálasztó({ id: def.id, ...(alkategória ? { alkategória } : {}) }); setAlkVálasztó(null); }
+    else { setFokVálasztó({ id: def.id, ...(alkategória ? { alkategória } : {}) }); setAlkVálasztó(null); setSzövegVálasztó(null); }
   };
+  const szövegOk = () => { const t = szöveg.trim(); if (t && szövegDef) kiválaszt(szövegDef, t); };
 
   return (
     <PickerOverlay title={cím} onClose={onClose}>
-      {!fokVálasztó && !alkVálasztó && ['fizikai', 'szellemi', 'mágikus'].map(kat => {
+      {!fokVálasztó && !alkVálasztó && !szövegVálasztó && ['fizikai', 'szellemi', 'mágikus'].map(kat => {
         const items = data.statuszok
           .filter(s => s.kategória === kat && státuszFelvehető(s, session.aktív_státuszok))
           .sort((a, b) => a.név.localeCompare(b.név, 'hu'));
@@ -62,22 +66,32 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
                 <button type="button" key={s.id} className={`aktiv-picker-item${isAuto ? ' aktiv-picker-disabled' : ''}`} disabled={isAuto} onClick={() => {
                   if (isAuto) return;
                   if (s.alkategóriák?.length) setAlkVálasztó(s.id);
+                  else if (s.szabad_szöveg) { setSzöveg(''); setSzövegVálasztó(s.id); }
                   else kiválaszt(s);
                 }}>
                   <span className="aktiv-picker-item-name">{isAuto ? `${s.név} (auto)` : s.név}</span>
-                  <span className="aktiv-picker-item-details">{s.fokok.map(f => `${f.fok}. ${f.alcím}`).join(' • ')}</span>
+                  <span className="aktiv-picker-item-details">{s.fokok.map(f => alcímCsakFok(f) ? f.alcím : `${f.fok}. ${f.alcím}`).join(' • ')}</span>
                 </button>
               );
             })}
           </div>
         );
       })}
-      {!fokVálasztó && !alkVálasztó && onNarratív && (
+      {!fokVálasztó && !alkVálasztó && !szövegVálasztó && onNarratív && (
         <div>
           <div className="aktiv-picker-category">Narratív</div>
           <button type="button" className="aktiv-picker-item" onClick={onNarratív}>
             <span className="aktiv-picker-item-name">🔆 Narratív Előny/Hátrányok</span>
           </button>
+        </div>
+      )}
+      {szövegDef && !fokVálasztó && (
+        // Free text (required, max `szabad_szöveg` chars): stored as the alkategória, fills the `{alkategória}` placeholder.
+        <div className="narrativ-popup-content">
+          <input className="field-input narrativ-input narrativ-input-full" placeholder="Leírás..." autoFocus
+            maxLength={szövegDef.szabad_szöveg} value={szöveg} onChange={e => setSzöveg(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') szövegOk(); }} />
+          <button type="button" className="narrativ-add-btn narrativ-add-btn-center" disabled={!szöveg.trim()} onClick={szövegOk}>OK</button>
         </div>
       )}
       {alkVálasztó && !fokVálasztó && (() => {
@@ -96,7 +110,7 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarrat�
       })()}
       {fokVálasztó && fokDef && fokDef.fokok.map(f => (
         <button type="button" key={f.fok} className="aktiv-picker-item" onClick={() => onPick(státuszKulcs({ ...fokVálasztó, fok: f.fok }))}>
-          <span className="aktiv-picker-item-name">{f.alcím} ({f.fok})</span>
+          <span className="aktiv-picker-item-name">{alcímCsakFok(f) ? f.alcím : `${f.alcím} (${f.fok})`}</span>
           <span className="aktiv-picker-item-hatas">{hatásFeliratok(
             f.hatások.map(h => hatásKitöltve(h, fokDef, fokVálasztó.alkategória)), eseményNév, képzettségNév).slice(0, 4).join('; ')}</span>
         </button>

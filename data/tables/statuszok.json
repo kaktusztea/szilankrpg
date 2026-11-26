@@ -76,6 +76,8 @@
             "érték": -1,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:{alkategória}",
+            "szituációs": true,
+            "megjegyzés": "feltétel esetén",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-1: Tulajdonságpróba"
           }
@@ -90,6 +92,8 @@
             "érték": -2,
             "cél": "tulajdonságpróba",
             "alcél": "tulajdonság:{alkategória}",
+            "szituációs": true,
+            "megjegyzés": "feltétel esetén",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-2: Tulajdonságpróba"
           }
@@ -586,6 +590,110 @@
         ]
       }
     ]
+  },
+  {
+    "id": "áldott_szakrális_bélyeg",
+    "név": "Áldott Szakrális bélyeg",
+    "kategória": "mágikus",
+    "többszörös": false,
+    "szabad_szöveg": 30,
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "1. fok",
+        "megjegyzések": [
+          {
+            "text": "Okozhatja Áldott személy Karma-Háttér is."
+          },
+          {
+            "text": "Példák: Domvik érintése; Orwella érintése."
+          }
+        ],
+        "hatások": [
+          {
+            "mód": "szöveges",
+            "cél": "általános",
+            "megjegyzés": "Aurádon egy szakrális bélyeg tündököl: {alkategória}",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "2. fok",
+        "megjegyzések": [
+          {
+            "text": "Okozhatja Áldott személy Karma-Háttér is."
+          },
+          {
+            "text": "Példák: Domvik érintése; Orwella érintése."
+          }
+        ],
+        "hatások": [
+          {
+            "mód": "szöveges",
+            "cél": "általános",
+            "megjegyzés": "Aurádon egy szakrális bélyeg tündököl: {alkategória}",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
+          }
+        ]
+      }
+    ],
+    "alkategóriák": []
+  },
+  {
+    "id": "átkozott_szakrális_bélyeg",
+    "név": "Átkozott Szakrális bélyeg",
+    "kategória": "mágikus",
+    "többszörös": false,
+    "szabad_szöveg": 30,
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "1. fok",
+        "megjegyzések": [
+          {
+            "text": "Okozhatja Átkozott személy Karma-Háttér is."
+          },
+          {
+            "text": "Példák: Domvik érintése; Orwella érintése."
+          }
+        ],
+        "hatások": [
+          {
+            "mód": "szöveges",
+            "cél": "általános",
+            "megjegyzés": "Aurádon egy szakrális bélyeg éktelenkedik: {alkategória}",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "2. fok",
+        "megjegyzések": [
+          {
+            "text": "Okozhatja Átkozott személy Karma-Háttér is."
+          },
+          {
+            "text": "Példák: Domvik érintése; Orwella érintése."
+          }
+        ],
+        "hatások": [
+          {
+            "mód": "szöveges",
+            "cél": "általános",
+            "megjegyzés": "Aurádon egy szakrális bélyeg éktelenkedik: {alkategória}",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
+          }
+        ]
+      }
+    ],
+    "alkategóriák": []
   },
   {
     "id": "bénultság",
@@ -1582,6 +1690,33 @@
             "alcél": "tulajdonság:önuralom",
             "hatás_id": "hátrány",
             "hatás_név": "Hátrány-2: Tulajdonságpróba"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mérgezés",
+    "név": "Mérgezés",
+    "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Mérgezett",
+        "megjegyzések": [
+          {
+            "text": "Lásd a Méregrendszer fejezetben a mérgek hatásait."
+          }
+        ],
+        "hatások": [
+          {
+            "mód": "szöveges",
+            "cél": "általános",
+            "megjegyzés": "A méreg hatásait lásd a Méregrendszer fejezetben",
+            "hatás_id": "narratív",
+            "hatás_név": "Narratív"
           }
         ]
       }

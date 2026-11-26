@@ -1582,7 +1582,7 @@ Cél-szemantika a próba-számításban (`statusz-proba.ts` `hatásVonatkozik`, 
 - `szociális_próba` + `alcél: tulajdonság:<kulcs>` → csak az azzal a Tulajdonsággal dobott szociális Képzettségpróba
   (Trauma: Önuralom / Érzékenység használatakor).
 - `szituációs: true` (előny / hátrány sor): helyzetfüggő, KM dönti (pl. Hangulat: kreatív / koncentráció, Eszmélet:
-  Fájdalomtűrés áfiumtól, Áldott Tulajdonság: feltétel esetén, Átkozott viselkedés). NEM számít a `szint`-be: a
+  Fájdalomtűrés áfiumtól, Áldott / Átkozott Tulajdonság: feltétel esetén, Átkozott viselkedés). NEM számít a `szint`-be: a
   `calcStátusz…PróbaEH().szituációs` listában jön, a próba popup kapcsolható sorként mutatja (alapból ki, `SzituaciosEHLista`).
 - `fizikai_próba` / `szellemi_próba` / `érzék_próba` → a dobáshoz választott Tulajdonság benne van a célpont listájában
   (Tulajdonság- és Képzettségpróbán is). Képzettségpróbán Tulajdonság-választás előtt nem hatnak (a dobáshoz úgyis kell).
@@ -1705,9 +1705,15 @@ marad a JSON-ban; a `gyűjtStátuszEffektek` a felvett alkategóriával tölti k
 Gate: a helyőrző csak alkategóriás státuszban; minden alkategória érvényes a paraméterre / alcélra; `alkategóriák` és
 `alkategória_forrás` egyszerre nem. Egy alkategória státuszonként egyszer vehető fel (a választó nem kínálja újra).
 
+**Szabad szöveg** (`szabad_szöveg: <max hossz>`, 2026-11-26): lista helyett kötelező szabad szöveg a felvételkor (Áldott / Átkozott
+Szakrális bélyeg: `30`). A session-ben alkategóriaként tárolódik (`"áldott_szakrális_bélyeg: Domvik érintése (1)"`), és csak a
+`{alkategória}` helyőrzőn át, a megjegyzésben jelenik meg (`"Aurádon egy szakrális bélyeg tündököl: {alkategória}"`); a `státuszCímke`
+nem írja ki (redundáns lenne). Felirat: a csak fokszámot ismétlő alcím („N. fok", `alcímCsakFok`) nem jelenik meg a fokszám mellett.
+Gate: pozitív egész; `alkategóriák` / `alkategória_forrás` mellett nem állhat. Nem többszörös → egyszer vehető fel.
+
 ### 22.7 Webapp megjelenítés
 
-- Aktív fülön: választó (kategória → státusz → alkategória, ha van: érzék / Tulajdonság / képzettség-csoportonként → fok)
+- Aktív fülön: választó (kategória → státusz → alkategória, ha van: érzék / Tulajdonság / képzettség-csoportonként, ill. `szabad_szöveg`-nél kötelező szövegmező → fok)
 - Chip megjelenítés: "Félelem (2) - Rettegés" + ✕ törlés
 - Koppintás (Játék mód): hatások listája lenyílik (accordion)
 

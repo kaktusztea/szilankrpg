@@ -19,6 +19,10 @@ def alkategoria_kifejt(statuszok, tulajdonsagok, kepzettsegek):
     `kepzettsegek`: id-lista vagy {id: név}."""
     errors = []
     for s in statuszok:
+        sz = s.get('szabad_szöveg')
+        if sz is not None:
+            if not isinstance(sz, int) or isinstance(sz, bool) or sz < 1: errors.append(f"státusz '{s.get('id')}': 'szabad_szöveg' pozitív egész (max hossz) kell")
+            if s.get('alkategóriák') or s.get('alkategória_forrás'): errors.append(f"státusz '{s.get('id')}': 'szabad_szöveg' és alkategória egyszerre")
         f = s.get('alkategória_forrás')
         if not f: continue
         if s.get('alkategóriák'): errors.append(f"státusz '{s.get('id')}': 'alkategóriák' és 'alkategória_forrás' egyszerre"); continue

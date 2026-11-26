@@ -201,6 +201,10 @@ class AktivFulGates(unittest.TestCase):
         self.assertEqual(len(alkategoria_kifejt(st, ['erő'], ['lexikum'])), 2)
         st = [{'id': 'c', 'alkategória_forrás': 'tulajdonságok'}]
         self.assertEqual(alkategoria_kifejt(st, ['erő', 'ügyesség'], []), []); self.assertEqual(st[0]['alkategóriák'], ['erő', 'ügyesség'])
+        # szabad_szöveg: positive int, never together with alkategória
+        self.assertEqual(alkategoria_kifejt([{'id': 'd', 'szabad_szöveg': 20}], [], []), [])
+        st = [{'id': 'e', 'szabad_szöveg': 0}, {'id': 'f', 'szabad_szöveg': 20, 'alkategóriák': ['x']}, {'id': 'g', 'szabad_szöveg': 20, 'alkategória_forrás': 'tulajdonságok'}]
+        self.assertEqual(len(alkategoria_kifejt(st, ['erő'], [])), 3)
 
     def test_alkategoria_helyorzo(self):
         # Blokkolt: nincs alkategória → a {alkategória} helyőrző hiba

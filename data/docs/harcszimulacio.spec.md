@@ -880,7 +880,7 @@ Forrás: `data/tables/statuszok.json`. Formátum: `"Név (fok)"`.
 | Zavar (2) | Megrendült | Hátrány-2 ké_dobás; **max 1 támadás**; ❌ mozgás |
 | Zavar (3) | Sokk | ❌ harci_képesség, ❌ mozgás, ❌ ké_dobás (utolsónak cselekszik) |
 
-A többi státusz (Áldott/Átkozott *, Érzékvesztés, Hangulat, Késztetés, Szellemi, Trauma)
+A többi státusz (Áldott/Átkozott *, Érzékvesztés, Hangulat, Késztetés, Mérgezés, Szellemi, Trauma)
 csak próbákra hat - a közelharci szimulációban elhagyható.
 
 ### 9.1 Hatás operátorok szemantikája

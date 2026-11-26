@@ -36,6 +36,8 @@ státuszok:
       érték: -1
       cél: tulajdonságpróba
       alcél: "tulajdonság:{alkategória}"
+      megjegyzés: feltétel esetén
+      szituációs: true
   - fok: 2
     alcím: Hátrány-2
     hatások:
@@ -43,6 +45,8 @@ státuszok:
       érték: -2
       cél: tulajdonságpróba
       alcél: "tulajdonság:{alkategória}"
+      megjegyzés: feltétel esetén
+      szituációs: true
 - id: áldott_képzettség
   név: Áldott Képzettség
   kategória: mágikus
@@ -114,6 +118,54 @@ státuszok:
       cél: képzettségpróba
       megjegyzés: KM határozza meg
       szituációs: true
+- id: áldott_szakrális_bélyeg
+  név: Áldott Szakrális bélyeg
+  kategória: mágikus
+  többszörös: false
+  szabad_szöveg: 30
+  fokok:
+  - fok: 1
+    alcím: 1. fok
+    megjegyzések:
+    - text: "Okozhatja Áldott személy Karma-Háttér is."
+    - text: "Példák: Domvik érintése; Orwella érintése."
+    hatások:
+    - hatás: narratív
+      cél: általános
+      megjegyzés: "Aurádon egy szakrális bélyeg tündököl: {alkategória}"
+  - fok: 2
+    alcím: 2. fok
+    megjegyzések:
+    - text: "Okozhatja Áldott személy Karma-Háttér is."
+    - text: "Példák: Domvik érintése; Orwella érintése."
+    hatások:
+    - hatás: narratív
+      cél: általános
+      megjegyzés: "Aurádon egy szakrális bélyeg tündököl: {alkategória}"
+- id: átkozott_szakrális_bélyeg
+  név: Átkozott Szakrális bélyeg
+  kategória: mágikus
+  többszörös: false
+  szabad_szöveg: 30
+  fokok:
+  - fok: 1
+    alcím: 1. fok
+    megjegyzések:
+    - text: "Okozhatja Átkozott személy Karma-Háttér is."
+    - text: "Példák: Domvik érintése; Orwella érintése."
+    hatások:
+    - hatás: narratív
+      cél: általános
+      megjegyzés: "Aurádon egy szakrális bélyeg éktelenkedik: {alkategória}"
+  - fok: 2
+    alcím: 2. fok
+    megjegyzések:
+    - text: "Okozhatja Átkozott személy Karma-Háttér is."
+    - text: "Példák: Domvik érintése; Orwella érintése."
+    hatások:
+    - hatás: narratív
+      cél: általános
+      megjegyzés: "Aurádon egy szakrális bélyeg éktelenkedik: {alkategória}"
 - id: bénultság
   név: Bénultság
   kategória: fizikai
@@ -506,6 +558,20 @@ státuszok:
       érték: -2
       cél: tulajdonságpróba
       alcél: "tulajdonság:önuralom"
+- id: mérgezés
+  név: Mérgezés
+  kategória: fizikai
+  többszörös: false
+  alkategóriák: []
+  fokok:
+  - fok: 1
+    alcím: Mérgezett
+    megjegyzések:
+    - text: "Lásd a Méregrendszer fejezetben a mérgek hatásait."
+    hatások:
+    - hatás: narratív
+      cél: általános
+      megjegyzés: A méreg hatásait lásd a Méregrendszer fejezetben
 - id: rosszullét
   név: Rosszullét
   kategória: fizikai
