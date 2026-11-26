@@ -14,8 +14,6 @@ tulajdonság_keretek:
   érzékenység: [-5, 5]
 érzék_fortélyok:
   - név: "ultralátás"
-    max_fok: 2
-  - név: "ultralátás"
     max_fok: 3
 faj_misztérium: "faj_misztérium_amund"
 kötelező_fortélyok: []

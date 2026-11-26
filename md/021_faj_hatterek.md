@@ -63,7 +63,7 @@ Példa:
 
 ## `2.` Felvehető Érzék-Fortélyok maximuma
 
-Amennyiben egy játékos választ egy Faj Hátteret a karakterének, akkor az annál felsorolt lehetséges [Érzék-Fortélyok](043_altalanos_fortelyok.md#érzék-fortélyok) közül **minimum 1 fokot** köteles `KP`-ból felvenni hozzá.
+Amennyiben egy játékos választ egy Faj Hátteret a karakterének, és annál szerepel legalább egy felvehető Érzék-Fortély, akkor az annál felsorolt lehetséges [Érzék-Fortélyok](043_altalanos_fortelyok.md#érzék-fortélyok) közül **minimum 1 fokot** köteles `KP`-ból felvenni hozzá.
 
 Tehát például ha spórolna a `KP` javadalmazáson, akkor alkothat egy olyan **ork** karaktert, akinek mindösszesen "**Infralátás - 1.fok**" Érzék-Fortélya van. Nincs kiemelkedően jó szaglása, vagy hallása és a föld alatt sem kap bónuszokat. Ezt megteheti, mivel egy faj nem minden egyede egyforma.
 
