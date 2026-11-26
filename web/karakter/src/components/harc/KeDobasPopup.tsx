@@ -64,9 +64,9 @@ export function KeDobasPopup({ data, karakter, session, setSession, pushUndo, on
         </div>
 
         {!eredmény && automatikusKudarc.length > 0 && !felülbírálva ? (
-          // Automatikus kudarc (md/081): no roll, the character initiates last. Closing records nothing.
+          // Automatikus kudarc (md/081): no roll, the character acts last in the round. Closing records nothing.
           <div className="kep-proba-tiltott">
-            <div>Automatikus kudarc: utolsónak kezdeményezel</div>
+            <div>Automatikus kudarc: utolsónak cselekedhetsz a körben</div>
             {automatikusKudarc.map(f => <div key={f} className="dobas-info-source">{f}</div>)}
             <div className="dobas-btn-row">
               <button type="button" className="tamado-dobas-btn tiltva-felulbiral-btn" onClick={() => setFelülbírálva(true)}>Felülbírál</button>

@@ -862,8 +862,8 @@ Forrás: `data/tables/statuszok.json`. Formátum: `"Név (fok)"`.
 | Blokkolt (2) | Erősen | Hátrány-2 té_dobás; mozgás ×0,5 |
 | Eszmélet (1) | Bódultság | Hátrány-1: ké_dobás, té_dobás, manőver_ellenpróba; −1 támadás (min 1) |
 | Eszmélet (2) | Kábultság | Hátrány-2: ké_dobás, té_dobás, manőver_ellenpróba; **max 1 támadás**; ❌ varázslás |
-| Eszmélet (3) | Ájulás | ❌ harci_képesség, ❌ mozgás |
-| Eszmélet (4) | Kóma | ❌ harci_képesség, ❌ mozgás |
+| Eszmélet (3) | Ájulás | ❌ harci_képesség, ❌ mozgás, ❌ ké_dobás (utolsónak cselekszik) |
+| Eszmélet (4) | Kóma | ❌ harci_képesség, ❌ mozgás, ❌ ké_dobás (utolsónak cselekszik) |
 | Félelem (1) | Szorongás | *szöveges* harci_képesség (KM ítéli meg) |
 | Félelem (2) | Rettegés | **max 1 támadás**; *szöveges* harci_képesség |
 | Félelem (3) | Bénító félelem | ❌ mozgás, ❌ harci_képesség |
@@ -878,7 +878,7 @@ Forrás: `data/tables/statuszok.json`. Formátum: `"Név (fok)"`.
 | **Sérült (3)** | Haldoklás | ❌ harci_képesség, ❌ mozgás |
 | Zavar (1) | Kizökkent | **max 1 támadás**; Hátrány-1 ké_dobás |
 | Zavar (2) | Megrendült | Hátrány-2 ké_dobás; **max 1 támadás**; ❌ mozgás |
-| Zavar (3) | Sokk | ❌ harci_képesség, ❌ mozgás |
+| Zavar (3) | Sokk | ❌ harci_képesség, ❌ mozgás, ❌ ké_dobás (utolsónak cselekszik) |
 
 A többi státusz (Áldott/Átkozott *, Érzékvesztés, Hangulat, Késztetés, Szellemi, Trauma)
 csak próbákra hat - a közelharci szimulációban elhagyható.

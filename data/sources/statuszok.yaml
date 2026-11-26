@@ -220,6 +220,8 @@ státuszok:
     hatások:
     - hatás: harcképtelenség
     - hatás: automatikus_kudarc
+      cél: ké_dobás
+    - hatás: automatikus_kudarc
       cél: képzettségpróba
     - hatás: automatikus_kudarc
       cél: tulajdonságpróba
@@ -230,10 +232,12 @@ státuszok:
   - fok: 4
     alcím: Kóma
     megjegyzések:
-    - text: "Mint az Ájulásnál, továbbá automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy."
+    - text: "Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy."
     - text: "Az Antyss a valóságod; Antyssjárás képzettség nélkül haladni, cselekedni is alig tudsz."
     hatások:
     - hatás: harcképtelenség
+    - hatás: automatikus_kudarc
+      cél: ké_dobás
     - hatás: automatikus_kudarc
       cél: képzettségpróba
     - hatás: automatikus_kudarc
@@ -746,6 +750,8 @@ státuszok:
     - text: "Kihozni valakit: Emberismeret + Érzékenység Képzettségpróba, Célszám 12 (Nehéz) → siker enyhíti 2. fokra. Mágiával kihozva 1, 2 vagy 3 szintet enyhít."
     - text: "Példák: természetes villám lecsap melléd; szakrális mágiák mellékhatása."
     hatások:
+    - hatás: automatikus_kudarc
+      cél: ké_dobás
     - hatás: automatikus_kudarc
       cél: tulajdonságpróba
     - hatás: automatikus_kudarc

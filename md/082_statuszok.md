@@ -205,6 +205,7 @@ Varázslás képesség elvesztése
 Harcképtelenség
 
 Automatikus kudarc
+  KÉ dobás
   Képzettségpróbák
   Tulajdonságpróbák
 
@@ -220,10 +221,28 @@ Varázslás képesség elvesztése
 
 ### ✴️ Eszmélet (4) Kóma
 
-Mint az Ájulásnál, továbbá:
+```
+Harcképtelenség
 
-- Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy.
-- Az Antyss a valóságod. Ha nincs ⭕Antyssjárás⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
+Automatikus kudarc
+  KÉ dobás
+  Képzettségpróbák
+  Tulajdonságpróbák
+
+Beszéd - némult
+Mozgás - képtelen
+
+Pszí használat elvesztése
+Varázslás képesség elvesztése
+
+Automatikusan Antysson ragadsz,
+  nem is feltétlenül vagy vele
+  tisztában, hogy ott vagy.
+
+Az Antyss a valóságod. Ha nincs
+  ⭕Antyssjárás⭕ képzettséged, akkor
+  haladni, cselekedni is alig tudsz.
+```
 
 <br />
 
@@ -720,6 +739,7 @@ Nagyjából `10-20` percig tart, KM dönt. Az aktuális harci jelenetben nem ké
 
 ```
 Automatikus kudarc
+  KÉ dobás
   Tulajdonságpróbákra
   Képzettségpróbákra
 

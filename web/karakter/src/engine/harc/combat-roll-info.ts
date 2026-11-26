@@ -166,13 +166,13 @@ export function fegyverSpBónuszok(mód: { sp_erőbónusz?: number; sp_mf?: numb
 /**
  * Collect effects for KÉ dobás (Kezdeményezés): státuszok (Eszmélet, Fizikai, ...), Fegyverrántás fortély
  * (a „Fegyverrántás váratlanul" helyzettel) stb. - ugyanazzal a gyűjtővel, mint a Támadó / Célzó dobás.
- * `automatikusKudarc`: a KÉ dobást tiltó (`letilt`) források felirata - nem üres → nincs dobás, utolsónak kezdeményez.
+ * `automatikusKudarc`: a KÉ dobást tiltó (`letilt`) források felirata - nem üres → nincs dobás, utolsónak cselekszik a körben.
  */
 export function collectKéDobásInfo(
   session: Session, karakter: Karakter, data: GameData, feltételTeljesül?: (feltétel: unknown) => boolean,
 ): { kéHatások: DobásHatás[]; automatikusKudarc: string[] } {
   const { hatások, letiltók } = collectSessionHatások(session, karakter, data, new Set(['ké_dobás']), undefined, feltételTeljesül);
-  // automatikusKudarc: a `letilt` ké_dobás források (md/081 Automatikus kudarc: KÉ dobásra → utolsónak kezdeményezel).
+  // automatikusKudarc: a `letilt` ké_dobás források (md/081 Automatikus kudarc: KÉ dobás → utolsónak cselekedhetsz a körben).
   return { kéHatások: hatások, automatikusKudarc: letiltók };
 }
 

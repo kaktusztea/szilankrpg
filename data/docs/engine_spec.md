@@ -1634,7 +1634,7 @@ taktika / fortély id, taktika-fok, kötelező megjegyzés; `hivatkozas_kotelezo
 |----|-----------------|-------------|-----------|
 | előny | Előny+{érték} | érték 1/2, cél (harci/próba/képesség) | előny {érték} → {cél} |
 | hátrány | Hátrány{érték} | érték -1/-2, cél (harci/próba/képesség) | hátrány {érték} → {cél} |
-| automatikus_kudarc | Automatikus kudarc | cél (próba + `ké_dobás`) | letilt {cél} (KÉ: `collectKéDobásInfo().automatikusKudarc` → KeDobasPopup: nincs dobás, utolsónak kezdeményez) |
+| automatikus_kudarc | Automatikus kudarc | cél (próba + `ké_dobás`) | letilt {cél} (KÉ: `collectKéDobásInfo().automatikusKudarc` → KeDobasPopup: nincs dobás, utolsónak cselekszik a körben) |
 | automatikus_próba | Automatikus Tulajdonság/Képzettségpróba | cél (próba) | szöveges {cél} |
 | beszéd_zavart / beszéd_némult | Beszéd - zavart / némult | - | szöveges / letilt beszéd |
 | érzék_hátrány | Érzék - Hátrány{érték} | érték -1/-2 | hátrány {érték} → érzék_próba |

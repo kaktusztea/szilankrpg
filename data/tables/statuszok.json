@@ -860,6 +860,12 @@
           },
           {
             "mód": "letilt",
+            "cél": "ké_dobás",
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc: KÉ dobás"
+          },
+          {
+            "mód": "letilt",
             "cél": "képzettségpróba",
             "hatás_id": "automatikus_kudarc",
             "hatás_név": "Automatikus kudarc: Képzettségpróba"
@@ -907,7 +913,7 @@
         "alcím": "Kóma",
         "megjegyzések": [
           {
-            "text": "Mint az Ájulásnál, továbbá automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy."
+            "text": "Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy."
           },
           {
             "text": "Az Antyss a valóságod; Antyssjárás képzettség nélkül haladni, cselekedni is alig tudsz."
@@ -919,6 +925,12 @@
             "cél": "harci_képesség",
             "hatás_id": "harcképtelenség",
             "hatás_név": "Harcképtelenség"
+          },
+          {
+            "mód": "letilt",
+            "cél": "ké_dobás",
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc: KÉ dobás"
           },
           {
             "mód": "letilt",
@@ -2136,6 +2148,12 @@
           }
         ],
         "hatások": [
+          {
+            "mód": "letilt",
+            "cél": "ké_dobás",
+            "hatás_id": "automatikus_kudarc",
+            "hatás_név": "Automatikus kudarc: KÉ dobás"
+          },
           {
             "mód": "letilt",
             "cél": "tulajdonságpróba",

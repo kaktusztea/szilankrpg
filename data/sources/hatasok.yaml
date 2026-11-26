@@ -37,7 +37,7 @@ hatások:
 # --- Kudarc ---
 - id: "automatikus_kudarc"
   név: "Automatikus kudarc"
-  leírás: "Nem dobhatsz próbát, azonnali kudarc. KÉ dobásnál: utolsónak kezdeményezel."
+  leírás: "Nem dobhatsz próbát, azonnali kudarc. KÉ dobásnál: utolsónak cselekedhetsz a körben."
   paraméterek:
     cél: {típus: "célpont", csoport: ["próba"], célpontok: ["ké_dobás"]}
   mechanika: [{mód: "letilt", cél: "{cél}"}]

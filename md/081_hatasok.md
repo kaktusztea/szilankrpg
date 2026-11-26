@@ -81,7 +81,7 @@ Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni -
 
 ### 🔥 Automatikus kudarc
 
-- KÉ dobásra → utolsónak kezdeményezhetsz
+- KÉ dobás → utolsónak cselekedhetsz a körben
 - Tulajdonságpróbára
 - Képzettségpróbára
 
