@@ -552,9 +552,6 @@
           },
           {
             "text": "Példa: Irigy - nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni."
-          },
-          {
-            "text": "Átkozott (1) Érzékek esetén lásd az Érzékvesztés Státuszt."
           }
         ],
         "hatások": [
@@ -572,11 +569,6 @@
       {
         "fok": 2,
         "alcím": "Hátrány-2",
-        "megjegyzések": [
-          {
-            "text": "Átkozott (2) Érzékek esetén lásd az Érzékvesztés Státuszt."
-          }
-        ],
         "hatások": [
           {
             "mód": "hátrány",
@@ -1109,6 +1101,11 @@
       {
         "fok": 1,
         "alcím": "Zavart",
+        "megjegyzések": [
+          {
+            "text": "Átkozott (1) Érzékek esetén is ezt a Státuszt alkalmazd."
+          }
+        ],
         "hatások": [
           {
             "mód": "hátrány",
@@ -1124,6 +1121,11 @@
       {
         "fok": 2,
         "alcím": "Részleges",
+        "megjegyzések": [
+          {
+            "text": "Átkozott (2) Érzékek esetén is ezt a Státuszt alkalmazd."
+          }
+        ],
         "hatások": [
           {
             "mód": "hátrány",
@@ -1139,6 +1141,11 @@
       {
         "fok": 3,
         "alcím": "Teljes",
+        "megjegyzések": [
+          {
+            "text": "Átkozott (3) Érzékek esetén is ezt a Státuszt alkalmazd."
+          }
+        ],
         "hatások": [
           {
             "mód": "letilt",

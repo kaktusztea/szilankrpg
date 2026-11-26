@@ -101,7 +101,6 @@ státuszok:
     - text: "Példa: Meggondolatlan - Hátrány-1 Önuralom próba; hajlamos vagy kockázatos döntéseket hozni, még akkor is, ha nincs rá szükség."
     - text: "Példa: Paranoiás - folyamatosan gyanakszol másokra, és nehezen bízol meg bárkiben."
     - text: "Példa: Irigy - nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni."
-    - text: "Átkozott (1) Érzékek esetén lásd az Érzékvesztés Státuszt."
     hatások:
     - hatás: hátrány
       érték: -1
@@ -110,8 +109,6 @@ státuszok:
       szituációs: true
   - fok: 2
     alcím: Hátrány-2
-    megjegyzések:
-    - text: "Átkozott (2) Érzékek esetén lásd az Érzékvesztés Státuszt."
     hatások:
     - hatás: hátrány
       érték: -2
@@ -309,6 +306,8 @@ státuszok:
   fokok:
   - fok: 1
     alcím: Zavart
+    megjegyzések:
+    - text: "Átkozott (1) Érzékek esetén is ezt a Státuszt alkalmazd."
     hatások:
     - hatás: érzék_hátrány
       érték: -1
@@ -316,6 +315,8 @@ státuszok:
       megjegyzés: Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára
   - fok: 2
     alcím: Részleges
+    megjegyzések:
+    - text: "Átkozott (2) Érzékek esetén is ezt a Státuszt alkalmazd."
     hatások:
     - hatás: érzék_hátrány
       érték: -2
@@ -323,6 +324,8 @@ státuszok:
       megjegyzés: Érzék(x) Tulajdonságpróbára, Érzékenységgel dobott Képzettségpróbára
   - fok: 3
     alcím: Teljes
+    megjegyzések:
+    - text: "Átkozott (3) Érzékek esetén is ezt a Státuszt alkalmazd."
     hatások:
     - hatás: érzék_kioltott
       érzék: "{alkategória}"
