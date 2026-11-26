@@ -262,6 +262,10 @@ export interface PróbaTípusKonstansok {
   másodlagos_levonás: number;
   /** Képzetlen próba célszám-büntetése (csak képzettségnél; nem-fizikai képzettségre). */
   képzetlen_büntetés?: number;
+  /** Missing Normal-extension fortély: penalty on the skill check (képzettség only; md/030_08_01). */
+  kiterjesztés_hiány?: number;
+  /** Extension fortély bonus per level from 2.fok (képzettség only; md/030_08_01). */
+  kiterjesztés_fokbónusz?: number;
   nehézségek: { érték: number; név: string }[];
   nehézségek_extra: number[];
 }

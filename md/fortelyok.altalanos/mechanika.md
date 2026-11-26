@@ -33,7 +33,7 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 🌟 **Hatás**:
 
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+4`
-- A kapcsolódó képzettségek kiterjesztés követelményeként már `Előny+1` bónuszt is ad.
+- Kiterjesztett képzettségek esetén már `+2` bónuszt is ad
 
 ---
 

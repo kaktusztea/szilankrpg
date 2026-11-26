@@ -620,6 +620,8 @@ próba:
     kiemelt_különbség: 6
     másodlagos_levonás: 3
     képzetlen_büntetés: 3           # Próba képzetlenül: +3 célszám (nem-fizikai képzettségnél; §030_06_01)
+    kiterjesztés_hiány: 3           # Normál kiterjesztő fortély hiánya: -3 a próbára (§030_08_01)
+    kiterjesztés_fokbónusz: 2       # Kiterjesztő fortély 2.foktól fokonként: +2 a próbára (§030_08_01)
     nehézségek:
       - { érték: 6, név: "Könnyű" }
       - { érték: 9, név: "Átlagos" }

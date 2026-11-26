@@ -76,7 +76,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `harc/shared.ts` | Harc fül közös utils: resolveNagyobbKisebb, computeTÉ / computeVÉ, véVesztésSzorzó, coalesceVéHistory, `páncélStringKontextus` / `páncélSzámInputok` (a páncél rules.json inputjai: harc-computed, fegyver-calc, calcPancelValues) |
 | `harc/taktika-calc.ts` | Taktika módosítók |
 | `harc/ve-csokkentes-calc.ts` | Sikertelen támadás VÉ csökkentése (Fegyverviszony bázis + k20P; taktika override/flat; fortély flat) - §5.3/§13.1 |
-| `proba/kepzettseg-proba-calc.ts` | Képzettségpróba tiszta kalkuláció (célszámok, kiterjesztés EH, szituációs módosítók, enyhítés) |
+| `proba/kepzettseg-proba-calc.ts` | Képzettségpróba tiszta kalkuláció (célszámok, kiterjesztés statikus módosító, szituációs módosítók, enyhítés) |
 | `proba/proba-common.ts` | Próba közös logika (konstansok.próba-vezérelt: lehetetlen/biztos siker, siker-felirat, helyettesítés, összetett próbák; E/H forrás-sorok: `státuszEHForrások`, `felszerelésEHForrás`) |
 | `proba/proba-forrasok.ts` | A próbák fortély-forrásai karakterre bontva (Tulajdonságok fül + Próba-hub közös): próba-bónuszok tulajdonságonként / képzettségenként, próba-enyhítések |
 | `taktika/helyzet-helpers.ts` | Helyzet elérhetőség, `helyzetFelvéve` (felvétel session-logikája: kizárt helyzetek, taktika-tiltás, tiltott fegyverfogás), min fegyverhossz, infó szöveg |

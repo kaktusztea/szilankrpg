@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import type { Tulajdonsagok } from '../types';
 import {
-  kiterjesztésElőnyHátrány, buildFortélyFokok, enyhítettSorRészletes, calcSzitModÖsszeg, calcEffSzint,
+  kiterjesztésMódosító, calcMultiKiterjesztésMod, buildFortélyFokok, enyhítettSorRészletes, calcSzitModÖsszeg, calcEffSzint,
   effektívKiterjesztésFok, effektívFortélyFokok, negálásKulcs,
 } from './kepzettseg-proba-calc';
 import { probaSiker, probaBiztosSiker, probaLehetetlen, helyettesítésSzint, összetettCélszámok } from './proba-common';
@@ -22,20 +22,48 @@ describe('probaSiker', () => {
   });
 });
 
-describe('kiterjesztésElőnyHátrány (md/030_08_01)', () => {
-  it('Normál, nincs felvéve (0.fok) → Hátrány-2', () => {
-    expect(kiterjesztésElőnyHátrány('normál', 0)).toEqual({ szint: -2, tiltott: false });
+// Static extension modifier constants from the REAL konstansok.json (md/030_08_01: -3 / +0 / +2 / +4).
+const KIT = { hiány: PRÓBA.képzettség.kiterjesztés_hiány ?? NaN, fokbónusz: PRÓBA.képzettség.kiterjesztés_fokbónusz ?? NaN };
+
+describe('kiterjesztésMódosító (md/030_08_01)', () => {
+  it('konstansok bekötve: hiány 3, fokbónusz 2', () => {
+    expect(KIT).toEqual({ hiány: 3, fokbónusz: 2 });
+  });
+  it('Normál, nincs felvéve (0.fok) → -3', () => {
+    expect(kiterjesztésMódosító('normál', 0, KIT)).toEqual({ mod: -3, tiltott: false });
   });
   it('Erős, nincs felvéve (0.fok) → tiltott', () => {
-    expect(kiterjesztésElőnyHátrány('erős', 0)).toEqual({ szint: 0, tiltott: true });
+    expect(kiterjesztésMódosító('erős', 0, KIT)).toEqual({ mod: 0, tiltott: true });
   });
-  it('1.fok → sima dobás (0)', () => {
-    expect(kiterjesztésElőnyHátrány('normál', 1)).toEqual({ szint: 0, tiltott: false });
-    expect(kiterjesztésElőnyHátrány('erős', 1)).toEqual({ szint: 0, tiltott: false });
+  it('1.fok → +0', () => {
+    expect(kiterjesztésMódosító('normál', 1, KIT)).toEqual({ mod: 0, tiltott: false });
+    expect(kiterjesztésMódosító('erős', 1, KIT)).toEqual({ mod: 0, tiltott: false });
   });
-  it('2.fok → Előny+1, 3.fok → Előny+2', () => {
-    expect(kiterjesztésElőnyHátrány('normál', 2)).toEqual({ szint: 1, tiltott: false });
-    expect(kiterjesztésElőnyHátrány('erős', 3)).toEqual({ szint: 2, tiltott: false });
+  it('2.fok → +2, 3.fok → +4', () => {
+    expect(kiterjesztésMódosító('normál', 2, KIT)).toEqual({ mod: 2, tiltott: false });
+    expect(kiterjesztésMódosító('erős', 3, KIT)).toEqual({ mod: 4, tiltott: false });
+  });
+});
+
+describe('calcMultiKiterjesztésMod (md/030_08_01 "Több fortély")', () => {
+  const e = (fortély: string, típus: 'normál' | 'erős', maxfok: number) => ({ fortély, típus, maxfok }) as never;
+  it('nincs kijelölt → 0', () => {
+    expect(calcMultiKiterjesztésMod([], {}, KIT)).toEqual({ mod: 0, tiltott: false });
+  });
+  it('több hiányzó Normál → -3 (nem halmozódik)', () => {
+    expect(calcMultiKiterjesztésMod([e('A', 'normál', 2), e('B', 'normál', 1)], {}, KIT)).toEqual({ mod: -3, tiltott: false });
+  });
+  it('bármelyik Erős hiányzik → tiltott', () => {
+    expect(calcMultiKiterjesztésMod([e('A', 'normál', 2), e('B', 'erős', 1)], { A: 2 }, KIT).tiltott).toBe(true);
+  });
+  it('A 2.fok (max 3), B 3.fok → az alacsonyabb: +2', () => {
+    expect(calcMultiKiterjesztésMod([e('A', 'normál', 3), e('B', 'normál', 3)], { A: 2, B: 3 }, KIT).mod).toBe(2);
+  });
+  it('Horgas Apó: Nyomolvasás 2.fok + Tájtípus 1.fok (maxolt) → +2', () => {
+    expect(calcMultiKiterjesztésMod([e('Ny', 'normál', 2), e('T', 'normál', 1)], { Ny: 2, T: 1 }, KIT).mod).toBe(2);
+  });
+  it('mind maxolt → a legmagasabb', () => {
+    expect(calcMultiKiterjesztésMod([e('A', 'normál', 1), e('B', 'normál', 2)], { A: 1, B: 2 }, KIT).mod).toBe(2);
   });
 });
 

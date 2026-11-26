@@ -40,7 +40,7 @@ Példa: `Hátrány-1` + `Hátrány-2` + `Előny+2` → `Hátrány-1`.
 
 🔆 Az **Automatikus kudarc** minden Előnyt felülír.
 
-🔆 Az Előny/Hátrány modell **Státuszok** és **Képzettség-kiterjesztések** esetén alkalmazandó. Ezzel szemben a **Fortélyok** bónuszai és **Harci taktikák** esetén konstans, statikus módosítókat alkalmazunk.
+🔆 Az Előny/Hátrány modell **Státuszok** esetén alkalmazandó. Ezzel szemben a **Fortélyok** bónuszai, a **Képzettség-kiterjesztések** és a **Harci taktikák** esetén konstans, statikus módosítókat alkalmazunk.
 
 ### 🔥 Előny+1
 

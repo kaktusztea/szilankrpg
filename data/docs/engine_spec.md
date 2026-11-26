@@ -3148,8 +3148,8 @@ Célszámok:
 
 Lépésköz: 3 (fokozatonként)
 Siker/Kudarc mérték: ±6 különbség (2 fokozat) = kiemelt eredmény
-Előny/Hátrány: [-2; +2] skála (Státuszok `statusz-proba.ts → calcStátuszPróbaEH` + kiterjesztés §37.7
-  + Felszerelés §33.1 fizikai csoportnál; clampEHSzint)
+Előny/Hátrány: [-2; +2] skála (Státuszok `statusz-proba.ts → calcStátuszPróbaEH`
+  + Felszerelés §33.1 fizikai csoportnál; clampEHSzint). A kiterjesztés §37.7 statikus módosító, nem E/H.
 Helyzetfüggő módosítók: a képzettség yaml táblái (dobó-oldali pontok, enyhítéssel - kepzettseg-proba-calc.ts)
 Lehetetlen: tulajdonság + szint + 10 < célszám → nem dobható
 Biztos siker: tulajdonság + szint + 1 >= célszám → dobás nélkül sikeres
@@ -3193,12 +3193,12 @@ Max helyettesítő érték: 5
 Nem adódik hozzá - kiváltja az elsődleges képzettséget.
 ```
 
-### 37.7 Képzettség-kiterjesztés Előny/Hátrány (fortély foka szerint)
+### 37.7 Képzettség-kiterjesztés statikus módosító (fortély foka szerint)
 
 Forrás: md/030_08_01_kepzettsegek_fortelyok_kapcsolata.md
 
 Egy fortély Normál vagy Erős kiterjesztésben kapcsolódhat egy képzettséghez (`tables/kiterjesztesek.json`).
-A képzettségpróba Előny/Hátrány szintje a kiterjesztő fortély **felvett fokából** adódik:
+A képzettségpróba alapjára adott statikus módosító a kiterjesztő fortély **felvett fokából** adódik (NEM Előny/Hátrány, így a Státuszok `[-2; +2]` korlátja nem nyeli el):
 
 `kiterjesztesek.json` entry (inverz mapping, kulcs = képzettség-id): `{ fortély (id), név, típus (normál/erős),
 maxfok, leírás }`. A `leírás` (2026-10-28) a kapcsolat szövege a kapcsolódó képzettség md-jéből, a fortély yaml
@@ -3213,17 +3213,21 @@ listaelem elején álló ELSŐ `fortelyok.*` link (a leírásban hivatkozott tov
 ```
 típus    fok            hatás
 ──────────────────────────────────────
-Normál   0 (nincs)      Hátrány-2
-Normál   1              sima (0)
-Normál   2              Előny+1
-Normál   3              Előny+2
+Normál   0 (nincs)      -3
+Normál   1              +0
+Normál   2              +2
+Normál   3              +4
 Erős     0 (nincs)      nem dobható (auto kudarc)
-Erős     1              sima (0)
-Erős     2              Előny+1
-Erős     3              Előny+2
+Erős     1              +0
+Erős     2              +2
+Erős     3              +4
 ```
 
-Általánosan (fok ≥ 1): `szint = min(fok - 1, 2)`. Erős 0.fok esetén a próba tiltott.
+Általánosan (fok ≥ 1): `mod = (fok - 1) × kiterjesztés_fokbónusz`; Normál 0.fok: `-kiterjesztés_hiány`; Erős 0.fok esetén a próba tiltott.
+Konstansok: `konstansok.yaml → próba.képzettség.kiterjesztés_hiány: 3`, `kiterjesztés_fokbónusz: 2`.
+Több kijelölt kiterjesztés (`calcMultiKiterjesztésMod`): hiányzó Erős → tiltott; hiányzó Normál → `-3` (nem halmozódik);
+egyébként a legalacsonyabb bónusz, kivéve ha az maxfokú → a következő; mind maxfokú → a legmagasabb.
+A módosító a `bázis`-ba kerül: `bázis = tulÉrték + effSzint + kitMod` (`KepzettsegProbaPopup.tsx`).
 
 Előny/Hátrány dobás (webapp): `engine/dice.ts → rollElőnyHátrányDie(szint, 10)`:
 - `szint > 0` (Előny+N): `N+1` db k10, a legnagyobb számít
@@ -3231,8 +3235,7 @@ Előny/Hátrány dobás (webapp): `engine/dice.ts → rollElőnyHátrányDie(szi
 - `szint == 0`: egyetlen k10
 
 Implementáció: `KepzettsegProbaPopup.tsx` (Játék mód, képzettség accordion 🎲).
-Pure helperek (teszteltek, `kepzettseg-proba-calc.ts`; `előnyHátrányLabel` a `dice.ts`-ben): `kiterjesztésElőnyHátrány(típus, fok)`, `buildFortélyFokok(fortélyok)`, `előnyHátrányLabel(szint)`; a siker-feltétel: `proba-common.ts → probaSiker(bázis, dobás, célszám)`.
-A UI egy kiterjesztést kezel egyszerre (picker); a több-fortélyes eset (md/030_08_01 speciális szakasz) a KM döntése.
+Pure helperek (teszteltek, `kepzettseg-proba-calc.ts`; `előnyHátrányLabel` a `dice.ts`-ben): `kiterjesztésMódosító(típus, fok, konstansok)`, `calcMultiKiterjesztésMod(kitek, fokok, konstansok)`, `buildFortélyFokok(fortélyok)`, `előnyHátrányLabel(szint)`; a siker-feltétel: `proba-common.ts → probaSiker(bázis, dobás, célszám)`.
 
 ---
 

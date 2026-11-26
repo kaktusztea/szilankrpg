@@ -714,6 +714,8 @@
       "kiemelt_különbség": 6,
       "másodlagos_levonás": 3,
       "képzetlen_büntetés": 3,
+      "kiterjesztés_hiány": 3,
+      "kiterjesztés_fokbónusz": 2,
       "nehézségek": [
         {
           "érték": 6,

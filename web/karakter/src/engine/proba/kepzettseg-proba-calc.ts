@@ -2,7 +2,6 @@ import type { Tulajdonsagok, Fortely } from '../types';
 import type { KiterjesztesEntry } from '../data-loader';
 import type { ModositoTabla, ModositoSor, PróbaEnyhítés, PróbaKonstansok } from '../data-types';
 import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
-import { EH_SZINT_MAX } from '../dice';
 import { helyettesítésSzint } from './proba-common';
 
 /**
@@ -47,7 +46,7 @@ export function effektívKiterjesztésFok(
 
 /**
  * A `fortélyFokok` map egy adott képzettséghez igazított („effektív") változata: a képzettség
- * kiterjesztő fortélyainál a negálást alkalmazza. A calc (`calcMultiKiterjesztésEH`) ezt kapja,
+ * kiterjesztő fortélyainál a negálást alkalmazza. A calc (`calcMultiKiterjesztésMod`) ezt kapja,
  * így a manuális felülbírálás VALÓDI (nem csak színez).
  */
 export function effektívFortélyFokok(
@@ -63,67 +62,44 @@ export function effektívFortélyFokok(
   return eff;
 }
 
+/** Static extension modifier constants (konstansok.próba.képzettség.kiterjesztés_*). */
+export interface KiterjesztésKonstansok { hiány: number; fokbónusz: number }
+
 /**
- * Képzettség-kiterjesztés fok → próba Előny/Hátrány szint (md/030_08_01).
- * Normál 0.fok: Hátrány-2. Erős 0.fok: nem dobható. 1.fok: 0, 2.fok: Előny+1, 3.fok: Előny+2.
+ * Képzettség-kiterjesztés fok → static modifier on the skill check (md/030_08_01).
+ * Normál 0.fok: -hiány. Erős 0.fok: not rollable. 1.fok: +0, from 2.fok: +fokbónusz per level.
  */
-export function kiterjesztésElőnyHátrány(típus: 'normál' | 'erős', fok: number): { szint: number; tiltott: boolean } {
-  if (fok <= 0) return típus === 'erős' ? { szint: 0, tiltott: true } : { szint: -EH_SZINT_MAX, tiltott: false };
-  return { szint: Math.min(fok - 1, EH_SZINT_MAX), tiltott: false };
+export function kiterjesztésMódosító(
+  típus: 'normál' | 'erős', fok: number, k: KiterjesztésKonstansok,
+): { mod: number; tiltott: boolean } {
+  if (fok <= 0) return típus === 'erős' ? { mod: 0, tiltott: true } : { mod: -k.hiány, tiltott: false };
+  return { mod: (fok - 1) * k.fokbónusz, tiltott: false };
 }
 
 /**
- * Több kiterjesztő fortély összesített Előny/Hátrány (md/030_08_01 "Speciális: Több fortély").
- * - Több hiányzó Normál: Hátrány-2 NEM halmozódik.
- * - Bármelyik Erős hiányzik (0.fok): tiltott.
- * - Előny: min(bónuszok), kivéve ha az alacsonyabb maxfokú → magasabb számít.
+ * Combined static modifier of several extension fortélyok (md/030_08_01 "Speciális: Több fortély").
+ * - Several missing Normál: the penalty does NOT stack.
+ * - Any Erős missing (0.fok): not rollable.
+ * - Bonus: the lowest one counts, unless that one is at its max level → the next higher counts.
  */
-export function calcMultiKiterjesztésEH(
+export function calcMultiKiterjesztésMod(
   selectedKits: KiterjesztesEntry[],
   fortélyFokok: Record<string, number>,
-): { szint: number; tiltott: boolean } {
-  if (selectedKits.length === 0) return { szint: 0, tiltott: false };
-  if (selectedKits.length === 1) {
-    const k = selectedKits[0];
-    return kiterjesztésElőnyHátrány(k.típus, fortélyFokok[k.fortély] ?? 0);
-  }
+  k: KiterjesztésKonstansok,
+): { mod: number; tiltott: boolean } {
+  if (selectedKits.length === 0) return { mod: 0, tiltott: false };
+  const fokOf = (e: KiterjesztesEntry) => fortélyFokok[e.fortély] ?? 0;
+  if (selectedKits.length === 1) return kiterjesztésMódosító(selectedKits[0].típus, fokOf(selectedKits[0]), k);
 
-  // Check erős tiltás
-  for (const k of selectedKits) {
-    if (k.típus === 'erős' && (fortélyFokok[k.fortély] ?? 0) <= 0) {
-      return { szint: 0, tiltott: true };
-    }
-  }
+  if (selectedKits.some(e => e.típus === 'erős' && fokOf(e) <= 0)) return { mod: 0, tiltott: true };
+  if (selectedKits.some(e => e.típus === 'normál' && fokOf(e) <= 0)) return { mod: -k.hiány, tiltott: false };
 
-  // Check normál hátrány (nem halmozódik)
-  let vanHiányzóNormál = false;
-  for (const k of selectedKits) {
-    if (k.típus === 'normál' && (fortélyFokok[k.fortély] ?? 0) <= 0) {
-      vanHiányzóNormál = true;
-      break;
-    }
-  }
-  if (vanHiányzóNormál) return { szint: -EH_SZINT_MAX, tiltott: false };
-
-  // Előny kalkuláció: min(bónuszok), de ha alacsonyabb maxfokú → magasabb számít
-  const bónuszok = selectedKits.map(k => {
-    const fok = fortélyFokok[k.fortély] ?? 0;
-    const bónusz = Math.min(fok - 1, EH_SZINT_MAX); // 1.fok=0, 2.fok=1, 3.fok=2
-    const maxolt = fok >= k.maxfok;
-    return { bónusz, maxolt };
-  }).filter(b => b.bónusz >= 0);
-
-  if (bónuszok.length === 0) return { szint: 0, tiltott: false };
-
-  // Sort by bónusz ascending
-  bónuszok.sort((a, b) => a.bónusz - b.bónusz);
-
-  // Az alacsonyabb számít, KIVÉVE ha az maxfokú → következő számít
-  for (const b of bónuszok) {
-    if (!b.maxolt) return { szint: b.bónusz, tiltott: false };
-  }
-  // Mind maxfokú → a legmagasabb bónusz érvényes
-  return { szint: bónuszok[bónuszok.length - 1].bónusz, tiltott: false };
+  const bónuszok = selectedKits
+    .map(e => ({ bónusz: (fokOf(e) - 1) * k.fokbónusz, maxolt: fokOf(e) >= e.maxfok }))
+    .sort((a, b) => a.bónusz - b.bónusz);
+  // The lowest counts, EXCEPT when it is maxed → the next one counts; all maxed → the highest.
+  const első = bónuszok.find(b => !b.maxolt) ?? bónuszok[bónuszok.length - 1];
+  return { mod: első.bónusz, tiltott: false };
 }
 
 /**

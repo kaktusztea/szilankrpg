@@ -139,6 +139,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 ### Képzettségek
 - `többszörös`: `[]`=egyszeri, `["X","Y"]`=fix lista, `["*"]`=freetext
 - Harci → Harcértékek fül; Misztikus → Misztikus fül; többi → Tul/Képz
+- Kiterjesztés (md/030_08_01): statikus módosító a próba alapjára, NEM Előny/Hátrány - Normál hiány `-3`, Erős hiány letilt, `1.fok` `+0`, `2.fok`-tól fokonként `+2` (`konstansok.yaml → próba.képzettség.kiterjesztés_*`; engine_spec §37.7)
 
 ### Fortélyok
 - Tárolás (séma v3): `{ id, elem, fok, kiérdemelt? }` - `id` = a fortély yaml `id`-je, `elem` = többszörös példány; a név csak megjelenítés (`engine/azonosito.ts`)

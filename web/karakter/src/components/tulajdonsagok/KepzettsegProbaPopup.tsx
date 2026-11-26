@@ -13,7 +13,7 @@ import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
 import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
 import { probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám, státuszEHForrások, felszerelésEHForrás } from '../../engine/proba/proba-common';
-import { MIND_TULAJDONSÁG, calcMultiKiterjesztésEH, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
+import { MIND_TULAJDONSÁG, calcMultiKiterjesztésMod, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
 import { useProbaDobas, useVálasztottÉrzék, useKapcsolóHalmaz } from './useProbaDobas';
 import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto, ProbaSzamPicker, OsszetettChip, OsszetettPicker, ErzekSor, ProbaOsszegzo, ProbaDobasSor } from './ProbaReszek';
 
@@ -118,7 +118,8 @@ export function KepzettsegProbaPopup({
   );
 
   const selectedKits = [...selKits].map(i => kiterjesztesek[i]);
-  const ehAlap = calcMultiKiterjesztésEH(selectedKits, effFortélyFokok);
+  // Extension fortély → static modifier on the base (md/030_08_01: -3 / +0 / +2 / +4; Erős missing → not rollable).
+  const kit = calcMultiKiterjesztésMod(selectedKits, effFortélyFokok, { hiány: p.kiterjesztés_hiány ?? 0, fokbónusz: p.kiterjesztés_fokbónusz ?? 0 });
   // Státuszok hatása a képzettségpróbára (Előny/Hátrány + letilt). Alkategóriás státusz (Érzékvesztés: Látás)
   // csak a választott érzékre hat; alapból az első érintett érzék (a büntetés látható, átkapcsolható / kikapcsolható).
   // A fizikai / szellemi / érzék próba-kategória a választott Tulajdonságon múlik (md/010_11) - Tulajdonság nélkül nem hat.
@@ -127,13 +128,12 @@ export function KepzettsegProbaPopup({
   const státuszEH = calcStátuszPróbaEH(aktívStátuszok, statuszDefs, esemenyek, képzettségKulcs, képzettségCsoport, érzék, selTul ?? undefined);
   // Helyzetfüggő státusz-sorok (szituációs, pl. Hangulat: kreatív / koncentráció): alapból ki, a lista alatt kapcsolhatók.
   const [szitBe, szitVált] = useKapcsolóHalmaz();
-  const ehSzintRaw = ehAlap.szint + státuszEH.szint + szituációsSzint(státuszEH.szituációs, szitBe) + felszEH;
+  const ehSzintRaw = státuszEH.szint + szituációsSzint(státuszEH.szituációs, szitBe) + felszEH;
   const ehForrásSzint = clampEHSzint(ehSzintRaw);
-  const eh = { szint: ehKézi ?? ehForrásSzint, tiltott: ehAlap.tiltott || státuszEH.tiltott || felszNemHarcol };
+  const eh = { szint: ehKézi ?? ehForrásSzint, tiltott: kit.tiltott || státuszEH.tiltott || felszNemHarcol };
   const erősTiltott = eh.tiltott;
   // Sources listed under the E/H stepper (ForrasLista). Státusz sources are ready-made text lines (value included).
   const ehForrások: DobásHatás[] = [
-    ...(ehAlap.szint !== 0 ? [{ forrás: `Kiterjesztés (${selectedKits.map(k => k.név).join(', ') || '–'})`, cél: 'té_dobás' as const, operátor: (ehAlap.szint > 0 ? 'előny' : 'hátrány') as 'előny' | 'hátrány', érték: Math.abs(ehAlap.szint) }] : []),
     ...státuszEHForrások(státuszEH.források),
     ...felszerelésEHForrás(felszEH),
   ];
@@ -162,7 +162,7 @@ export function KepzettsegProbaPopup({
   const tulÉrték = selTul !== null ? tulajdonságok[selTul] : 0;
   const helyettesítőSzint = helyettesítés ? képzettségSzint(képzettségek, helyettesítés) : null;
   const effSzint = calcEffSzint(szint, helyettesítőSzint, vállalás, szitModÖsszeg, próba.helyettesítés);
-  const bázis = tulÉrték + effSzint;
+  const bázis = tulÉrték + effSzint + kit.mod;
   const vanCélszám = !ellenpróba && !ismeretlen && nehézség !== null;
   const lehetetlen = kész && vanCélszám && probaLehetetlen(bázis, p.kocka, effNehézség ?? 0);
   const biztosSiker = kész && vanCélszám && !lehetetlen && probaBiztosSiker(bázis, effNehézség ?? 0);
@@ -282,6 +282,7 @@ export function KepzettsegProbaPopup({
                 {selKits.size === 0 ? <span className="kep-proba-kap-ures">nincs</span>
                   : selKits.size === 1 ? <>{selectedKits[0].név}{'\u00a0'}<span className={`kep-proba-kap-jel ${kitDotClass(selectedKits[0])}`}>{kitDots(selectedKits[0])}</span></>
                   : <>{selKits.size} fortély</>}
+                {kit.mod !== 0 && <span className={kit.mod > 0 ? 'kep-proba-szit-pos' : 'kep-proba-szit-neg'}>{'\u00a0'}{kit.mod > 0 ? '+' : ''}{kit.mod}</span>}
               </span>
             </button>
           </div>
