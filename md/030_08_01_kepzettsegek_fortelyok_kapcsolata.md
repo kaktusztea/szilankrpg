@@ -47,8 +47,6 @@ Fortély foka és
 0.fok: -3
 1.fok: +0
 2.fok: +2
-3.fok: +4
-...
 ```
 
 `0.fok:` ha nincs meg a fortély, akkor `-3` módosítóval dobjuk a képzettségpróbát
@@ -68,8 +66,6 @@ Fortély foka és
 0.fok: letilt
 1.fok: +0
 2.fok: +2
-3.fok: +4
-...
 ```
 
 `0.fok:` ha nincs meg a fortély, akkor az adott próba nem is dobható, automatikusan sikertelen
@@ -103,9 +99,9 @@ Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy k
 Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjeszt
 
 - `A` fortély - `2.fok`
-- `B` fortély - `3.fok`
+- `B` fortély - `1.fok` (de van `2.foka` is)
 
-... akkor csak `+2` jár a képzettségpróbára, mivel a `2.fok` (alacsonyabb) bónusza határozza meg a plusz értéket.
+... akkor nem jár bónusz (`+0`), mivel a `B` fortély `1.foka` (alacsonyabb) határozza meg a plusz értéket. Ha viszont a `B` fortélynak nincs `1`-nél magasabb foka (kimaxolt), akkor az `A` fortély `+2` bónusza érvényes (lásd lent a Horgas Apó példát).
 
 <br />
 

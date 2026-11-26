@@ -3216,11 +3216,9 @@ típus    fok            hatás
 Normál   0 (nincs)      -3
 Normál   1              +0
 Normál   2              +2
-Normál   3              +4
 Erős     0 (nincs)      nem dobható (auto kudarc)
 Erős     1              +0
 Erős     2              +2
-Erős     3              +4
 ```
 
 Általánosan (fok ≥ 1): `mod = (fok - 1) × kiterjesztés_fokbónusz`; Normál 0.fok: `-kiterjesztés_hiány`; Erős 0.fok esetén a próba tiltott.
