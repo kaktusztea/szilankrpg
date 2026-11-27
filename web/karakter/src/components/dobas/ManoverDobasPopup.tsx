@@ -88,6 +88,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const módosítóTáblák = szitTáblákMódszerint(manőver.helyzetfüggő_módosítók, mód, data);
   // A popupon belül egyszerre legfeljebb egy al-popup nyitott (TÉ magyarázat / MP / Helyzetfüggő módosítók / VÉ csökkentés).
   const [alPopup, setAlPopup] = useState<'té' | 'mp' | 'szit' | 'véCsökk' | null>(null);
+  // Outside click in the middle of the multi-phase flow asks first (accidental tap would lose the phases)
+  const [megszakításKérdés, setMegszakításKérdés] = useState(false);
   const alZár = () => setAlPopup(null);
   const [szitMods, setSzitMods] = useState<Record<string, number>>(
     () => szitModKezdőÁllapot(módosítóTáblák, karakter, session, data).single,
@@ -134,6 +136,9 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     : manőverMárSikertelen ? 'sikertelen'
     : eredmények.includes('pending') ? 'folyamatban'
     : eredmények.every((e, i) => fázisSikeresM(i, e)) ? 'sikeres' : 'sikertelen';
+  // Anything done in the flow yet (a phase result, a roll, spent MP, a requirement decision) - only then an outside click asks.
+  const vanHaladás = eredmények.some(e => e !== 'pending') || vDobás != null || eDobás != null || költöttMP > 0
+    || követelményDöntés !== kövÁllapot.kezdőDöntés;
 
   // Bünteti-manőver (Átsiklás/Kibontakozás) sikeres, de rontott ellenpróbával → "büntetve"
   // (a manőver átment, de megcsaphatták/megcsaptad). Ez a végeredmény-sáv SÁRGA átmeneti állapota.
@@ -317,7 +322,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
   return (
     <>
-    <PopupOverlay onClose={onClose} onEscape={() => { if (!alPopup) onClose(); }}>
+    <PopupOverlay onClose={() => (vanHaladás && végeredmény === 'folyamatban' ? setMegszakításKérdés(true) : onClose())}
+      onEscape={() => { if (!alPopup) onClose(); }}>
       <div className="manover-dobas-popup">
         <div className="manover-dobas-header">
           <span className="manover-dobas-title">{manőver.név} ({fázisok.join(' ')})</span>
@@ -378,6 +384,16 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     {alPopup === 'szit' && (
       <ManoverSzitPicker táblák={módosítóTáblák} szitMods={szitMods} setSzitMods={setSzitMods} multiMods={multiMods} setMultiMods={setMultiMods}
         összeg={szitModÖsszeg} karakter={karakter} session={session} data={data} onClose={alZár} />
+    )}
+    {megszakításKérdés && (
+      <PopupOverlay onClose={() => setMegszakításKérdés(false)} centerText className="kep-prompt torles-megerosites">
+        <label className="kep-prompt-label-bold">Megszakítod a manővert?</label>
+        <span className="overlay-desc-dim">Az eddigi fázisok eredménye elvész.</span>
+        <div className="manover-megszakitas-gombok">
+          <button type="button" className="he-field-btn" onClick={() => setMegszakításKérdés(false)}>Folytatás</button>
+          <button type="button" className="btn-halvany-veszely" onClick={onClose}>Megszakítás</button>
+        </div>
+      </PopupOverlay>
     )}
     {alPopup === 'mp' && <ManoverMpPicker költött={költöttMP} max={maxKölthető} onSelect={setKöltöttMP} onClose={alZár} />}
     {alPopup === 'té' && (

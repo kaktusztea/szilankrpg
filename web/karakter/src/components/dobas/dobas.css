@@ -540,3 +540,7 @@
 
 /* Override button in the block-info popups (TiltvaInfoPopup, KÉ automatikus kudarc): secondary look */
 .tiltva-felulbiral-btn { background: transparent; border: 1px solid var(--border-input); color: var(--text-soft); }
+
+/* Manőver: outside-click confirm buttons (Folytatás / Megszakítás) */
+.manover-megszakitas-gombok { display: flex; gap: 8px; justify-content: center; }
+.manover-megszakitas-gombok .he-field-btn { height: 36px; }
