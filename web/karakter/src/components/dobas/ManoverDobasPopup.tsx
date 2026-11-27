@@ -224,17 +224,13 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     }
   }
 
+  /** Final Végrehajtás TÉ (aktív mode only): base TÉ + manőver modifier + manual bonus. */
+  const téVégső = mód === 'aktív' && aktívTÉ != null ? aktívTÉ + manőver.végrehajtás_té_módosító + téKéziBónusz : null;
+
   function renderVégrehajtás() {
     if (mód === 'aktív') {
-      const téMód = manőver.végrehajtás_té_módosító;
-      const téVégső = aktívTÉ != null ? aktívTÉ + téMód + téKéziBónusz : null;
       return (
         <div className="manover-fazis-info manover-te-center">
-          {téVégső != null && (
-            <button type="button" className="manover-te-chip" onClick={() => setAlPopup('té')}>
-              TÉ: <strong>{téVégső}</strong> <span className="manover-te-info">ⓘ</span>
-            </button>
-          )}
           {téVégső != null && !vDobás && <ElonyPicker szint={téSzint} onChange={setTéSzint} rövid />}
           {téVégső != null && !vDobás && téHatások.length > 0 && <HatásokInfo hatások={téHatások} />}
           {téVégső != null && !vDobás && <KeziBonuszBtn bónusz={téKéziBónusz} onChange={setTéKéziBónusz} />}
@@ -383,11 +379,18 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
             return (
               <div key={i} className={`manover-fazis${isAktív ? ' manover-fazis-aktiv' : ''}${isDonePhase ? ' manover-fazis-done' : ''}`}>
                 <div className="manover-fazis-label">
+                  <span>{FÁZIS_FELIRAT[f]}</span>
+                  {/* Outcome mark at the end of the row (same as the Követelmények accordion) */}
                   {isDonePhase && (sikeresAManőverSzempontjából
-                    ? <span className="manover-fazis-ok"><Ikon név="pipa" /> </span>
-                    : <span className="manover-fazis-fail"><Ikon név="kudarc" /> </span>
+                    ? <span className="manover-fazis-ok"><Ikon név="pipa" /></span>
+                    : <span className="manover-fazis-fail"><Ikon név="kudarc" /></span>
                   )}
-                  {FÁZIS_FELIRAT[f]}
+                  {/* Végrehajtás TÉ chip in the top-right corner of the active V phase (opens the TÉ breakdown) */}
+                  {isAktív && f === 'V' && téVégső != null && (
+                    <button type="button" className="manover-te-chip" onClick={() => setAlPopup('té')}>
+                      TÉ: <strong>{téVégső}</strong> <span className="manover-te-info">ⓘ</span>
+                    </button>
+                  )}
                 </div>
                 {isAktív && (() => {
                   // A fázis_info mód-tudatos: aktív = alkalmazó nézőpont, passzív = elszenvedő nézőpont

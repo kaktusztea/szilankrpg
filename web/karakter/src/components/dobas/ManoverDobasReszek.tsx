@@ -56,33 +56,55 @@ export function ManoverKovetelmenyLepes({ követelmények, karakter, data, sessi
   erősHiány: boolean; normálHiány: boolean;
   vanNormál: boolean; vanErős: boolean;
 }) {
-  return (
-    <div className={`manover-kov-lepes${kész ? ' manover-fazis-done' : ' manover-fazis-aktiv'}`}>
-      <div className="manover-fazis-label">Követelmények</div>
-      <div className="manover-kov-lista">
-        {követelmények.map((köv, i) => {
-          // Gépileg eldöntetlen (null) sor a KM döntése UTÁN tükrözze a döntést.
-          const jelölés = követelményJelölés(követelményTeljesül(köv, karakter, data, session, aktívFegyver), köv.erősség, döntés);
-          return (
-            <div key={i} className="manover-kov-sor">
-              <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟨'}</span>
-              <span className="manover-kov-cimke">{követelményCimke(köv)}</span>
-              {jelölés === '✓' && <span className="manover-fazis-ok"><Ikon név="pipa" /></span>}
-              {jelölés === '✗' && <span className="manover-fazis-fail"><Ikon név="kudarc" /></span>}
-              {jelölés === '?' && <span className="manover-kov-info">?</span>}
-            </div>
-          );
-        })}
-      </div>
-      {erősHiány
-        ? <div className="manover-kov-auto-fail">Erős követelmény hiányzik - a manőver nem kísérelhető meg.</div>
-        : !kész && (
-          <div className="manover-fazis-chips">
-            <button type="button" className="manover-chip manover-chip-igen" disabled={normálHiány} onClick={() => setDöntés('mind')}>Teljesül mind</button>
-            {vanNormál && <button type="button" className="manover-chip manover-chip-normal" onClick={() => setDöntés('normál')}>Normál hiány</button>}
-            {vanErős && <button type="button" className="manover-chip manover-chip-nem" onClick={() => setDöntés('erős')}>Erős hiány</button>}
+  // Once decided, the step collapses into an accordion (header: label + chevron + outcome mark).
+  const [nyitva, setNyitva] = useState(false);
+  const lista = (
+    <div className="manover-kov-lista">
+      {követelmények.map((köv, i) => {
+        // Gépileg eldöntetlen (null) sor a KM döntése UTÁN tükrözze a döntést.
+        const jelölés = követelményJelölés(követelményTeljesül(köv, karakter, data, session, aktívFegyver), köv.erősség, döntés);
+        return (
+          <div key={i} className="manover-kov-sor">
+            <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟨'}</span>
+            <span className="manover-kov-cimke">{követelményCimke(köv)}</span>
+            {jelölés === '✓' && <span className="manover-fazis-ok"><Ikon név="pipa" /></span>}
+            {jelölés === '✗' && <span className="manover-fazis-fail"><Ikon név="kudarc" /></span>}
+            {jelölés === '?' && <span className="manover-kov-info">?</span>}
           </div>
-        )}
+        );
+      })}
+    </div>
+  );
+  const autoFail = erősHiány && <div className="manover-kov-auto-fail">Erős követelmény hiányzik - a manőver nem kísérelhető meg.</div>;
+
+  if (kész) {
+    return (
+      <div className="manover-kov-lepes manover-fazis-done">
+        <button type="button" className="manover-kov-fejlec" aria-expanded={nyitva} onClick={() => setNyitva(v => !v)}>
+          <span className="manover-fazis-label">Követelmények</span>
+          <span className={`sebzes-bontas-nyil manover-kov-nyil${nyitva ? ' nyitva' : ''}`}><Ikon név="lenyit" /></span>
+          <span className="manover-kov-eredmeny">
+            {döntés === 'mind' && <span className="manover-fazis-ok"><Ikon név="pipa" /></span>}
+            {döntés === 'normál' && <span className="manover-kov-normal"><Ikon név="pipa" /></span>}
+            {döntés === 'erős' && <span className="manover-fazis-fail"><Ikon név="kudarc" /></span>}
+          </span>
+        </button>
+        {nyitva && <>{lista}{autoFail}</>}
+      </div>
+    );
+  }
+
+  return (
+    <div className="manover-kov-lepes manover-fazis-aktiv">
+      <div className="manover-fazis-label">Követelmények</div>
+      {lista}
+      {autoFail || (
+        <div className="manover-fazis-chips">
+          <button type="button" className="manover-chip manover-chip-igen" disabled={normálHiány} onClick={() => setDöntés('mind')}>Teljesül mind</button>
+          {vanNormál && <button type="button" className="manover-chip manover-chip-normal" onClick={() => setDöntés('normál')}>Normál hiány</button>}
+          {vanErős && <button type="button" className="manover-chip manover-chip-nem" onClick={() => setDöntés('erős')}>Erős hiány</button>}
+        </div>
+      )}
     </div>
   );
 }

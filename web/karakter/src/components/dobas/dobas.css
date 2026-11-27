@@ -393,7 +393,7 @@
 .manover-fazis { padding: 8px; border-radius: 6px; background: rgba(255,255,255,0.03); }
 .manover-fazis-aktiv { background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-left: 3px solid #6b9bd1; }
 .manover-fazis-done { opacity: 0.6; }
-.manover-fazis-label { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: #f5f5f0; }
+.manover-fazis-label { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #f5f5f0; }
 .manover-fazis-ok { color: var(--success); }
 .manover-fazis-fail { color: var(--error); }
 
@@ -404,7 +404,7 @@
 /* A Támadó dobás függőleges Előny/Hátrány listája a manőver-boxban egy kompakt sor (a box keskeny, a fázis-gombok férjenek el). */
 .manover-te-center .tamado-elony-list { flex-direction: row; gap: 4px; }
 .manover-te-center .tamado-elony-chip { flex: 1 1 0; min-width: 0; padding: 6px 2px; font-size: 13px; white-space: nowrap; }
-.manover-te-chip { padding: 4px 14px; border-radius: 14px; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 14px; cursor: pointer; }
+.manover-te-chip { flex-shrink: 0; padding: 2px 10px; border-radius: 12px; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 13px; font-weight: normal; white-space: nowrap; cursor: pointer; }
 .manover-te-chip:hover { background: rgba(255,255,255,0.06); }
 .manover-te-info { color: var(--text-dim); font-size: 12px; margin-left: 2px; }
 .manover-te-body { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
@@ -437,6 +437,12 @@
 .manover-kov-cimke { flex: 1; }
 .manover-kov-auto-fail { font-size: 13px; color: var(--error); margin-top: 6px; }
 .manover-kov-info { color: #fff; font-weight: bold; }
+/* Collapsed requirements step: whole header row toggles the list */
+.manover-kov-fejlec { display: flex; align-items: center; gap: 4px; width: 100%; padding: 0; background: none; border: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.manover-kov-fejlec .manover-fazis-label { margin-bottom: 0; }
+.manover-kov-nyil { font-size: 18px; margin-left: 0; }
+.manover-kov-eredmeny { margin-left: auto; }
+.manover-kov-normal { color: #e0b84a; }
 .manover-hatrany2 { color: #e0b84a; font-weight: bold; }
 .manover-fazis-magyarazat { font-size: 12px; color: #8fb3d9; line-height: 1.4; margin-bottom: 6px; }
 
@@ -456,7 +462,7 @@
 /* Manőver dobás: a kockadobás eredménye (tap → törlés/újradobás) */
 .manover-dobas-eredmeny {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
-  margin: 6px auto 0; padding: 4px 12px;
+  margin: 4px auto 0; padding: 4px 12px;  /* 4px top = 14px gap above, matching the 14px below (fázis-info 6px + chips 8px) */
   background: none; border: 1px solid var(--border); border-radius: 8px;
   color: inherit;
 }
