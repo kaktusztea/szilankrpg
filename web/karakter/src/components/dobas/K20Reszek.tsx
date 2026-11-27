@@ -47,12 +47,12 @@ export function MegjegyzesLista({ lista }: { lista: readonly DobásMegjegyzés[]
 }
 
 /** Formula line before the roll: `alap (± hand bonus) + k20`, `children` after it (e.g. `vs VÉ`). */
-export function DobasKeplet({ alap, kézi, children }: { alap: number; kézi: number; children?: ReactNode }) {
+export function DobasKeplet({ alap, kézi, kocka = 20, children }: { alap: number; kézi: number; kocka?: number; children?: ReactNode }) {
   return (
     <div className="dobas-keplet">
       {alap}
       {kézi !== 0 && <><span className="dobas-keplet-op"> {kézi > 0 ? '+' : '−'} </span><span className={`dobas-keplet-kezi ${kézi > 0 ? 'sebzes-stat-pos' : 'sebzes-stat-neg'}`}>{Math.abs(kézi)}</span></>}
-      <span className="dobas-keplet-op"> + </span>k20
+      <span className="dobas-keplet-op"> + </span>k{kocka}
       {children}
     </div>
   );

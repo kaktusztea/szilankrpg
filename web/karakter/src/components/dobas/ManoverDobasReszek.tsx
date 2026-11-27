@@ -31,7 +31,7 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
   if (!dobás) {
     return (
       <div className="dobas-btn-row">
-        <button type="button" className="tamado-dobas-btn" onClick={() => setDobás(rollElőnyHátrányDie(szint, kocka))}>Dobás</button>
+        <button type="button" className="tamado-dobas-btn dobas-btn-ikon" onClick={() => setDobás(rollElőnyHátrányDie(szint, kocka))}><Ikon név="kocka" méret={22} />Dobás</button>
         <ManualDicePicker sides={kocka} szint={szint} onSelect={v => setDobás(kéziDobás(v))} alapÉrték={alap} alapLabel={alapLabel} />
       </div>
     );

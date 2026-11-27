@@ -1,4 +1,5 @@
 import { Ikon } from '../common/Ikon';
+import { DobasKeplet } from './K20Reszek';
 import { useState } from 'react';
 import type { Karakter, Session, SetSession } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -268,34 +269,33 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     }
   }
 
-  /** MP-választó gomb (a "Helyzetfüggő módosítók" gombbal azonos stílus). Popup: karikás fok-választó. */
-  function renderMpGomb() {
-    if (maxKölthető <= 0) return null;
-    return (
-      <button type="button" className="manover-szit-btn" onClick={() => setAlPopup('mp')}>
-        <span className="manover-szit-label">MP használata →</span>
-        {költöttMP > 0 && <span className="manover-szit-sum manover-szit-pos">+{költöttMP}</span>}
-      </button>
-    );
+  /** Signed value span for a modifier pill: dim 0, green +, red -. */
+  function kapszulaÉrték(n: number) {
+    if (n === 0) return <span className="dobas-kapszula-db">0</span>;
+    return <span className={n > 0 ? 'manover-szit-pos' : 'manover-szit-neg'}>{n > 0 ? '+' : ''}{n}</span>;
   }
 
-  /** Helyzetfüggő módosítók gomb (aktív ÉS passzív módban - a táblák módonként szűrve, l. szitTáblákMódszerint). */
-  function renderSzitGomb() {
-    if (módosítóTáblák.length === 0) return null;
-    const vanÉrték = szitLehetetlen || szitImmunis || szitModÖsszeg !== 0;
+  /** Ellenpróba modifier pills (same look as the Támadó dobás pills): Helyzet (flashes on mount) + MP. */
+  function renderKapszulak() {
+    const szit = módosítóTáblák.length > 0;
+    const mp = maxKölthető > 0;
+    if (!szit && !mp) return null;
     return (
-      <button type="button" className={`manover-szit-btn manover-szit-btn-flash${vanÉrték ? ' manover-szit-btn-val' : ''}`} onClick={() => setAlPopup('szit')}>
-        <span className="manover-szit-label">Helyzetfüggő módosítók{vanÉrték ? ': ' : ' →'}</span>
-        {szitLehetetlen
-          ? <span className="manover-szit-sum manover-szit-neg">letilt</span>
-          : szitImmunis
-          ? <span className="manover-szit-sum manover-szit-pos">immunis</span>
-          : szitModÖsszeg !== 0 && (
-            <span className={`manover-szit-sum${szitModÖsszeg > 0 ? ' manover-szit-pos' : ' manover-szit-neg'}`}>
-              {szitModÖsszeg > 0 ? '+' : ''}{szitModÖsszeg}
-            </span>
-          )}
-      </button>
+      <div className="dobas-kapszulak manover-kapszulak">
+        {szit && (
+          <button type="button" className="dobas-kapszula manover-szit-btn-flash" onClick={() => setAlPopup('szit')}>
+            Helyzet {szitLehetetlen
+              ? <span className="manover-szit-neg">letilt</span>
+              : szitImmunis ? <span className="manover-szit-pos">immunis</span>
+              : kapszulaÉrték(szitModÖsszeg)}
+          </button>
+        )}
+        {mp && (
+          <button type="button" className="dobas-kapszula" onClick={() => setAlPopup('mp')}>
+            MP {kapszulaÉrték(költöttMP)}
+          </button>
+        )}
+      </div>
     );
   }
 
@@ -309,15 +309,13 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       return (
         <div className="manover-fazis-info">
           {/* After the roll the situational modifiers and MP are locked (they would change the result) */}
-          {!eDobás && renderSzitGomb()}
-          {!eDobás && renderMpGomb()}
+          {!eDobás && renderKapszulak()}
           {!szitLehetetlen && !szitImmunis && !eDobás && (
-            <div className="manover-ep-vs-row">
-              <span className="manover-ep-side"><strong>{dobásÉrték}</strong> + {ellenpróbaHátrány2 ? <span className="manover-hatrany2">k{ELLENPRÓBA_KOCKA} (Hátrány{ELLENPRÓBA_NORMÁL_HIÁNY_EH})</span> : `k${ELLENPRÓBA_KOCKA}`}</span>
-              <span className="manover-ep-vs">vs</span>
-              <span className="manover-ep-side">
-                {cél}
-              </span>
+            <div className="manover-ep-keplet">
+              <DobasKeplet alap={dobásÉrték} kézi={0} kocka={ELLENPRÓBA_KOCKA}>
+                {ellenpróbaHátrány2 && <span className="manover-hatrany2 manover-keplet-hatrany"> Hátrány{ELLENPRÓBA_NORMÁL_HIÁNY_EH}</span>}
+              </DobasKeplet>
+              <div className="manover-dobas-cel"><span className="manover-ep-vs">vs</span> {cél}</div>
             </div>
           )}
           {!szitLehetetlen && !szitImmunis && <ManoverDobasSor alap={dobásÉrték} alapLabel="Dobás" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány2 ? ELLENPRÓBA_NORMÁL_HIÁNY_EH : 0} dobás={eDobás} setDobás={d => onEDobás(d, dobásÉrték)} cél={cél} />}
@@ -329,8 +327,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       const célszámAlap = manőverAlap + manőver.nehézség + költöttMP + belharcBónusz + szitModÖsszeg;
       return (
         <div className="manover-fazis-info">
-          {renderSzitGomb()}
-          {renderMpGomb()}
+          {renderKapszulak()}
           <div className="manover-ep-vs-row">
             <span className="manover-ep-side">Célszám: <strong className="manover-celszam-ertek">{célszámAlap}</strong></span>
           </div>
@@ -400,7 +397,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
             return (
               <div key={i} className={`manover-fazis${isAktív ? ' manover-fazis-aktiv' : ''}${isDonePhase ? ' manover-fazis-done' : ''}`}>
-                <div className="manover-fazis-label">
+                <div className={`manover-fazis-label${isAktív && f === 'E' ? ' manover-fazis-label-kozep' : ''}`}>
                   <span>{FÁZIS_FELIRAT[f]}</span>
                   {/* Outcome mark at the end of the row (same as the Követelmények accordion), rolled value before it */}
                   {isDonePhase && lezártÉrték(f) && <span className="manover-fazis-ertek-kesz">{lezártÉrték(f)}</span>}
