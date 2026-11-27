@@ -44,7 +44,7 @@ export function KeziBonuszBtn({ bónusz, onChange, label = 'Statikus bónuszok',
   return (
     <>
       {kapszula ? (
-        <button type="button" className={`dobas-kapszula${bónusz === 0 ? ' dobas-kapszula-halvany' : ` ${colorClass}`}`} onClick={nyit}>
+        <button type="button" className={`dobas-kapszula${bónusz === 0 ? '' : ` ${colorClass}`}`} onClick={nyit}>
           {bónusz === 0 ? '+ Bónusz' : `Bónusz ${bónusz > 0 ? '+' : ''}${bónusz}`}
         </button>
       ) : (
