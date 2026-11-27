@@ -8,8 +8,8 @@ function szintFelirat(szint: number): string {
 }
 
 /**
- * Előny/Hátrány stepper (− value +) - the compact alternative of ElonyPicker's 5 chips (Támadó / Célzó dobás).
- * Same range as ElonyPicker (-2 … +2).
+ * Előny/Hátrány stepper (− value +), shared by the roll popups (Támadó / Célzó dobás, Manőver Végrehajtás).
+ * Range -2 … +2.
  */
 export function ElonyLepteto({ szint, onChange, min = -2, max = 2 }: {
   szint: number;

@@ -195,7 +195,7 @@
 @media (prefers-reduced-motion: reduce) {
   .manover-szit-btn-flash { animation: none; }
 }
-.manover-te-center .tamado-elony-list, .manover-te-center .dobas-btn-row { width: 100%; }
+.manover-te-center .manover-elony-blokk, .manover-te-center .dobas-btn-row { width: 100%; box-sizing: border-box; }
 @keyframes manover-ve-csokk-pulzal {
   0%, 100% { border-color: currentColor; box-shadow: none; }
   50% { border-color: var(--warning); box-shadow: 0 0 6px 1px rgba(255, 179, 0, 0.5); }

@@ -3,9 +3,9 @@ import { useState } from 'react';
 import type { Karakter, Session, SetSession } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
-import { ElonyPicker } from './ElonyPicker';
+import { ElonyLepteto } from './ElonyLepteto';
+import { ForrasLista } from './ForrasLista';
 import { KeziBonuszBtn } from './KeziBonuszBtn';
-import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 import { ExtrakInfo } from './ExtrakInfo';
 import { VeCsokkentesPopup } from './VeCsokkentesPopup';
 import type { Fegyverviszony } from '../../engine/harc/ve-csokkentes-calc';
@@ -77,7 +77,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
   // Kockadobások: csak a kocka értéke tárolt, az összeg élőben számol (a módosító/MP változása utólag is érvényes).
-  const [téSzint, setTéSzint] = useState(() => netElőnySzint(téHatások));
+  const téHatásSzint = netElőnySzint(téHatások);
+  const [téSzint, setTéSzint] = useState(téHatásSzint);
   const [téKéziBónusz, setTéKéziBónusz] = useState(0);
   const [vDobás, setVDobás] = useState<ProbaDobás | null>(null);
   const [eDobás, setEDobás] = useState<ProbaDobás | null>(null);
@@ -246,9 +247,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     if (mód === 'aktív') {
       return (
         <div className="manover-fazis-info manover-te-center">
-          {téVégső != null && !vDobás && <ElonyPicker szint={téSzint} onChange={setTéSzint} rövid />}
-          {téVégső != null && !vDobás && téHatások.length > 0 && <HatásokInfo hatások={téHatások} />}
-          {téVégső != null && !vDobás && <KeziBonuszBtn bónusz={téKéziBónusz} onChange={setTéKéziBónusz} />}
+          {/* Same E/H block as the Támadó dobás: stepper + its sources (with "back to computed") */}
+          {téVégső != null && !vDobás && (
+            <div className="elony-blokk manover-elony-blokk">
+              <ElonyLepteto szint={téSzint} onChange={setTéSzint} />
+              <ForrasLista hatások={téHatások} szint={téSzint} alapSzint={téHatásSzint} onVissza={() => setTéSzint(téHatásSzint)} />
+            </div>
+          )}
+          {téVégső != null && !vDobás && <KeziBonuszBtn kapszula bónusz={téKéziBónusz} onChange={setTéKéziBónusz} />}
           {téVégső != null && <ManoverDobasSor alap={téVégső} alapLabel="TÉ" kocka={VÉGREHAJTÁS_KOCKA} szint={téSzint} dobás={vDobás} setDobás={setVDobás} />}
         </div>
       );

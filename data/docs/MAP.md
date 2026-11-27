@@ -284,8 +284,7 @@ common/                    Közös UI-elemek (több fül használja; fület nem 
 dobas/                     Dobás-popup készlet (Támadó / Sebzés / CÉ / Manőver popupok közös elemei; fület nem importálhat)
   dobas.css                A dobás-popupok stílusai (Támadó / Sebzés / Célzó / Manőver / VÉ csökkentés)
   K20Reszek.tsx            k20 dobás-popupok közös részei (KÉ / Támadó / Célzó / Sebzés / Manőver): `K20Eredmény`, `useEHSzint`, `MegjegyzesLista`, `DobasKeplet`, `BontasNyil`, `k20BontásSzöveg`, `kéziDobás`
-  ElonyPicker.tsx          Előny/Hátrány kocka picker
-  ElonyLepteto.tsx         Előny/Hátrány léptető (− érték +) - Támadó / Célzó dobás
+  ElonyLepteto.tsx         Előny/Hátrány léptető (− érték +) - Támadó / Célzó dobás, Manőver Végrehajtás
   ForrasLista.tsx          E/H források listája a léptető alatt + kézi felülírás jelzés (vissza a forrásokra)
   ExtrakInfo.tsx           "Extrák" gomb (💡, pulzál ha van aktív) + popup: fegyver-extrák listája státusz-jelzéssel (Támadó + Sebzés popupban)
   HatasokInfo.tsx          Dobás-hatás badge feliratok (Előny/Hátrány/Enyhít formázás, pure fn)
