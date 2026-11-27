@@ -121,9 +121,12 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const vanNormál = hiányLehet('normál');
   const vanErős = hiányLehet('erős');
   const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data, session, aktívFegyver);
+  // Every requirement machine-verified as met (all green) -> auto 'mind', no KM confirmation needed.
+  const mindZöld = vanKövetelmény
+    && követelmények.every(k => követelményTeljesül(k, karakter, data, session, aktívFegyver) === true);
   // Auto-kudarc, ha gépi Erős hiány. Ekkor a döntés nem is választható.
   const [követelményDöntés, setKövetelményDöntés] = useState<KövetelményDöntés>(
-    () => gépiStátusz.erősHiány ? 'erős' : 'pending',
+    () => gépiStátusz.erősHiány ? 'erős' : mindZöld ? 'mind' : 'pending',
   );
   // A 0. lépés akkor "kész", ha van döntés (vagy nincs követelmény).
   const követelményKész = !vanKövetelmény || követelményDöntés !== 'pending';
