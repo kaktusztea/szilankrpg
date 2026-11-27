@@ -120,7 +120,7 @@ export function ManoverFazisChipek({ fázis, mód, manőver, biztosRontás, leti
   fázis: 'M' | 'V' | 'E'; mód: Mód; manőver: ManőverDef;
   /** 99 sentinel (aktív E fázis): a siker gomb eltűnik, a Manőver ezekkel a körülményekkel nem sikerülhet. */
   biztosRontás: boolean;
-  /** A siker/kudarc gombok tiltva (aktív V/E fázisnál a Dobás megtörténtéig nincs mit elkönyvelni). */
+  /** A siker/kudarc gombok rejtve (aktív V/E fázisnál a Dobás megtörténtéig nincs mit elkönyvelni). */
   letiltva?: boolean;
   onSiker: (siker: boolean) => void;
 }) {
@@ -130,11 +130,13 @@ export function ManoverFazisChipek({ fázis, mód, manőver, biztosRontás, leti
       ? { siker: 'Átjutott', kudarc: 'Megcsapkodod (1x)' }
       : { siker: 'Sikeres', kudarc: 'Rontott (megcsapkodnak)' })
     : getFázisFelirat(fázis, mód, fázisCselekvő(fázis, manőver.fázis_cselekvő));
+  // Hidden (not just disabled) until there is a roll to book.
+  if (letiltva) return null;
   const sikerZöld = mód !== 'passzív';
   return (
     <div className="manover-fazis-chips">
-      {!biztosRontás && <button type="button" disabled={letiltva} className={`manover-chip ${sikerZöld ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => onSiker(true)}>{felirat.siker}</button>}
-      <button type="button" disabled={letiltva} className={`manover-chip ${sikerZöld ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => onSiker(false)}>{felirat.kudarc}</button>
+      {!biztosRontás && <button type="button" className={`manover-chip ${sikerZöld ? 'manover-chip-igen' : 'manover-chip-nem'}`} onClick={() => onSiker(true)}>{felirat.siker}</button>}
+      <button type="button" className={`manover-chip ${sikerZöld ? 'manover-chip-nem' : 'manover-chip-igen'}`} onClick={() => onSiker(false)}>{felirat.kudarc}</button>
     </div>
   );
 }

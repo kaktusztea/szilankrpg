@@ -408,7 +408,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
                         M: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást). */}
                     {(f === 'E' || f === 'V' || !magyarázat) && renderFázisInfo(f)}
                     {/* Biztos rontás: 99 sentinel aktív E fázisban. (Immunis / passzív letilt → azonnali végeredmény, nincs aktív fázis.) */}
-                    {/* A siker/kudarc gombok csak a Dobás UTÁN aktívak (aktív mód, V/E fázis): a dobás
+                    {/* A siker/kudarc gombok csak a Dobás UTÁN jelennek meg (aktív mód, V/E fázis): a dobás
                         adja az eredményt, előtte nincs mit elkönyvelni. Passzív módban nincs dobás-sor
                         (az ellenfél dob) → nincs gate. */}
                     <ManoverFazisChipek fázis={f} mód={mód} manőver={manőver}
