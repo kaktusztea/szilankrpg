@@ -1,5 +1,4 @@
 import { Ikon } from '../common/Ikon';
-import { DobasKeplet } from './K20Reszek';
 import { useState } from 'react';
 import type { Karakter, Session, SetSession } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -309,15 +308,17 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       return (
         <div className="manover-fazis-info">
           {/* After the roll the situational modifiers and MP are locked (they would change the result) */}
-          {!eDobás && renderKapszulak()}
+          {/* One-line duel: my roll vs the target; the pills below modify my (left) side */}
           {!szitLehetetlen && !szitImmunis && !eDobás && (
-            <div className="manover-ep-keplet">
-              <DobasKeplet alap={dobásÉrték} kézi={0} kocka={ELLENPRÓBA_KOCKA}>
-                {ellenpróbaHátrány2 && <span className="manover-hatrany2 manover-keplet-hatrany"> Hátrány{ELLENPRÓBA_NORMÁL_HIÁNY_EH}</span>}
-              </DobasKeplet>
-              <div className="manover-dobas-cel"><span className="manover-ep-vs">vs</span> {cél}</div>
+            <div className="manover-ep-parbaj">
+              <span>{dobásÉrték} <span className="manover-ep-op">+</span> k{ELLENPRÓBA_KOCKA}
+                {ellenpróbaHátrány2 && <span className="manover-hatrany2 manover-ep-hatrany">H{ELLENPRÓBA_NORMÁL_HIÁNY_EH}</span>}
+              </span>
+              <span className="manover-ep-vs">vs</span>
+              <span><span className="manover-celszam-ertek">{célszám}</span> <span className="manover-ep-op">+</span> <span className="manover-ep-ma">MA</span></span>
             </div>
           )}
+          {!eDobás && renderKapszulak()}
           {!szitLehetetlen && !szitImmunis && <ManoverDobasSor alap={dobásÉrték} alapLabel="Dobás" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány2 ? ELLENPRÓBA_NORMÁL_HIÁNY_EH : 0} dobás={eDobás} setDobás={d => onEDobás(d, dobásÉrték)} cél={cél} />}
         </div>
       );
