@@ -1,7 +1,8 @@
 import { Ikon } from '../common/Ikon';
 import { useRef, useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
-import type { Session, PushUndo, SetSession } from '../../engine/types';
+import type { Karakter, Session, PushUndo, SetSession } from '../../engine/types';
+import { kötelezőTaktikaSzinkron } from '../../engine/taktika/kotelezo-taktika';
 import { hatásFeliratok, fmtHatásSzöveg } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 import { PickerOverlay } from '../picker/PickerOverlay';
@@ -12,6 +13,7 @@ import { parseStátusz, státuszKulcs, státuszCímke, alcímCsakFok } from '../
 
 interface Props {
   data: GameData;
+  karakter: Karakter;
   session: Session;
   setSession: SetSession;
   pushUndo: PushUndo;
@@ -26,7 +28,10 @@ const NARRATÍV_ÉRTÉKEK = [
   { v: 2, l: 'Előny+2' },
 ] as const;
 
-export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPerElem, eseményNév }: Props) {
+export function AktivStatuszok({ data, karakter, session, setSession, pushUndo, státuszPerElem, eseményNév }: Props) {
+  // Status list change + the taktikák it makes mandatory (Félelem → Védő (3) …): set / removed together
+  const státuszVáltás = (f: (st: string[]) => string[]) =>
+    setSession(s => kötelezőTaktikaSzinkron(s, { ...s, aktív_státuszok: f(s.aktív_státuszok) }, karakter, data));
   const [showPicker, setShowPicker] = useState(false);
   const [showNarratív, setShowNarratív] = useState(false);
   const [narÉrték, setNarÉrték] = useState<number | undefined>(undefined);
@@ -63,7 +68,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
               if (!clickable) return;
               const új = státuszKulcs({ ...p, fok: (p.fok % maxFok) + 1 });
               pushUndo(`Státusz fok: ${új}`, [{ field: 'session', prev: session }]);
-              setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? új : v) }));
+              státuszVáltás(a => a.map((v, j) => j === i ? új : v));
             }}>
               <span className="aktiv-flex-1">
                 <strong className="aktiv-statusz-name">{státuszCímke(def, p)}{alcím ? ` - ${alcím}` : ''}</strong>
@@ -74,7 +79,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
               {!locked && <button className="item-delete" onClick={e => {
                 e.stopPropagation();
                 pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`, [{ field: 'session', prev: session }]);
-                setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }));
+                státuszVáltás(a => a.filter((_, j) => j !== i));
               }}><Ikon név="bezár" /></button>}
             </div>
           );
@@ -98,7 +103,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           data={data} session={session}
           onPick={fullName => {
             pushUndo(`Státusz: ${fullName}`, [{ field: 'session', prev: session }]);
-            setSession(prev => ({ ...prev, aktív_státuszok: [...prev.aktív_státuszok, fullName] }));
+            státuszVáltás(a => [...a, fullName]);
             setShowPicker(false);
           }}
           onNarratív={() => { setShowPicker(false); setShowNarratív(true); }}

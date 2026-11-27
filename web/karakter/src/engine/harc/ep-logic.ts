@@ -61,7 +61,9 @@ export function applyGyógy(rubrikák: Rubrika[], típusSzűrő: 'FP' | 'ÉP', �
 }
 
 /** Kiszámolja a Sérült státusz fokát a kitöltött rubrikák alapján. */
-export function calcSérültFok(sebCount: number, oszlopMéret: number): number {
+export function calcSérültFok(sebCount: number, oszlopMéret: number, kategóriák = 4): number {
+  // ÉP 0 (every wound box filled) → Sérült (3) Haldoklás (md/061_03 „Haldoklás")
+  if (oszlopMéret > 0 && sebCount >= kategóriák * oszlopMéret) return 3;
   if (sebCount > 3 * oszlopMéret) return 2;
   if (sebCount > 2 * oszlopMéret) return 1;
   return 0;

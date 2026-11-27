@@ -141,7 +141,9 @@ hatások:
     taktika: {típus: "taktika"}
     fok: {típus: "taktika_fok", opcionális: true}
   szöveg: "Taktika kötelező: {taktika} taktika{fok}"
-  mechanika: [{mód: "szöveges", cél: "harci_képesség"}]
+  # taktika / taktika_fok: a webapp ezekből veszi fel automatikusan a taktikát a státusszal (és törli vele);
+  # a `szituációs: true` sor (feltételes, pl. "egyszer") csak szöveg marad.
+  mechanika: [{mód: "szöveges", cél: "harci_képesség", taktika: "{taktika}", taktika_fok: "{fok}"}]
 
 # --- Támadások ---
 - id: "támadás_elvesztés_1"

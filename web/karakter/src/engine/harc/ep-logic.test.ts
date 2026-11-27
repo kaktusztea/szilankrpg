@@ -84,5 +84,11 @@ describe('calcSérültFok', () => {
   });
   it('returns 2 above 3x', () => {
     expect(calcSérültFok(16, 5)).toBe(2);
+    expect(calcSérültFok(19, 5)).toBe(2);
+  });
+  it('returns 3 (Haldoklás) when every box is filled - ÉP 0', () => {
+    expect(calcSérültFok(20, 5)).toBe(3);
+    expect(calcSérültFok(20, 5, 4)).toBe(3);
+    expect(calcSérültFok(15, 5, 3)).toBe(3);
   });
 });

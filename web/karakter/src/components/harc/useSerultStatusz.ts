@@ -8,10 +8,10 @@ import { autoStátuszSession } from '../../engine/statusz';
  * `autoStátuszSession` (engine/statusz.ts) - a kézzel felvett, magasabb Sérült fok megmarad, az ÉP-fok megszűnésekor
  * a kézi fok áll vissza (`session.auto_státuszok.sérült`).
  */
-export function useSérültStátusz(sebCount: number, oszlopMéret: number, setSession: Dispatch<SetStateAction<Session>>) {
+export function useSérültStátusz(sebCount: number, oszlopMéret: number, kategóriák: number, setSession: Dispatch<SetStateAction<Session>>) {
   useEffect(() => {
-    const célFok = calcSérültFok(sebCount, oszlopMéret);
+    const célFok = calcSérültFok(sebCount, oszlopMéret, kategóriák);
     setSession(prev => autoStátuszSession(prev, 'sérült', célFok));
     // Only on wound change: a manual status edit in between is kept (becomes the new `alatta`).
-  }, [sebCount, oszlopMéret]); // eslint-disable-line react-hooks/exhaustive-deps -- only on wound change, must not override manual status edits
+  }, [sebCount, oszlopMéret, kategóriák]); // eslint-disable-line react-hooks/exhaustive-deps -- only on wound change, must not override manual status edits
 }

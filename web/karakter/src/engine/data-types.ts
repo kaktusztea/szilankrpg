@@ -126,6 +126,8 @@ export interface TaktikaMegkötés {
 }
 
 export interface TaktikaEntry {
+  /** Stable id (taktikak.yaml) - e.g. the `taktika_kötelező` Hatás refers to it. */
+  id?: string;
   név: string;
   feltétel_kulcs: string;
   fokozatos: boolean;
@@ -202,6 +204,9 @@ export interface StatuszHatas {
   /** A Hatás-sablon (hatasok.yaml) id-je és kitöltött neve (build-idejű kifejtés, engine_spec §22.4). */
   hatás_id?: string;
   hatás_név?: string;
+  /** `taktika_kötelező`: the required taktika (taktikak.yaml id) and its fok (number or "MAX"). */
+  taktika?: string;
+  taktika_fok?: number | 'MAX';
 }
 
 export interface StatuszFok {

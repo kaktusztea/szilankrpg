@@ -1,4 +1,7 @@
 import { PopupOverlay } from '../PopupOverlay';
+import { gyűjtStátuszEffektek } from '../../engine/effekt';
+import type { GameData } from '../../engine/data-loader';
+import type { Session } from '../../engine/types';
 
 interface Props {
   cím: string;
@@ -10,8 +13,20 @@ interface Props {
   onClose: () => void;
 }
 
-/** A Harcképtelenség (md/081) szövege az info popupban (Harc fül TÉ / aktív Manőver, Távharc CÉ dobás). */
-export const HARCKÉPTELEN_SZÖVEG = 'Tudsz mozogni, menni, de harcolni nem. Ellened minden támadás automatikus Sebzés. KÉ dobás engedélyezett.';
+/**
+ * A Harcképtelenség (md/081) szövege az info popupban (Harc fül TÉ / aktív Manőver, Távharc CÉ dobás). Az általános
+ * mondatok nem mondhatnak ellent egy másik aktív státusznak: mozgást tiltó státusz („Mozgás - képtelen / lecövekelt") mellett nincs „tudsz mozogni",
+ * a KÉ dobást tiltó státusz (pl. Zavar (3), Eszmélet (3)) mellett a KÉ automatikus kudarc.
+ */
+export function harcképtelenSzöveg(session: Pick<Session, 'aktív_státuszok'>, data: Pick<GameData, 'statuszok'>): string {
+  const eff = gyűjtStátuszEffektek(session, data);
+  const tilt = (cél: string) => eff.some(e => e.mód === 'letilt' && e.cél === cél);
+  return [
+    tilt('mozgás') ? 'Helyet változtatni és harcolni sem tudsz.' : 'Tudsz mozogni, menni, de harcolni nem.',
+    'Ellened minden támadás automatikus Sebzés.',
+    tilt('ké_dobás') ? 'KÉ dobás: automatikus kudarc.' : 'KÉ dobás engedélyezett.',
+  ].join(' ');
+}
 
 /** Szöveg mondatokra bontása (". " határon), a záró pont normalizálásával minden mondat végén. */
 export function mondatokraTörve(szöveg: string): string[] {

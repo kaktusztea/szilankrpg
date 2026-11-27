@@ -7,7 +7,7 @@ import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types
 import { getAlkalmatlanInfo, getAktívTfDef, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, calcTávSP } from './helpers';
 import { getMfFok } from './mesterfegyver-calc';
 import { collectCéDobásInfo, netElőnySzint, collectDobásInfo, távjellegMátrixKulcs, harcképtelenForrások } from '../../engine/harc/combat-roll-info';
-import { TiltvaInfoPopup, HARCKÉPTELEN_SZÖVEG } from '../dobas/TiltvaInfoPopup';
+import { TiltvaInfoPopup, harcképtelenSzöveg } from '../dobas/TiltvaInfoPopup';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
@@ -171,7 +171,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       )}
 
       {showCéDobás && harcképtelen.length > 0 && (
-        <TiltvaInfoPopup cím="Harcképtelen" szöveg={HARCKÉPTELEN_SZÖVEG} források={harcképtelen}
+        <TiltvaInfoPopup cím="Harcképtelen" szöveg={harcképtelenSzöveg(session, data)} források={harcképtelen}
           onFelülbírál={() => setFelülbírálva(true)} onClose={() => setShowCéDobás(false)} />
       )}
 

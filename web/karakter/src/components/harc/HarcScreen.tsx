@@ -17,7 +17,7 @@ import { pushDobás, pushTéDobás } from './DobasPopup';
 import { KeDobasPopup } from './KeDobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
 import { VeCsokkentesPopup } from '../dobas/VeCsokkentesPopup';
-import { TiltvaInfoPopup, HARCKÉPTELEN_SZÖVEG } from '../dobas/TiltvaInfoPopup';
+import { TiltvaInfoPopup, harcképtelenSzöveg } from '../dobas/TiltvaInfoPopup';
 import { taktikaVéCsökkentésÁllapot } from '../../engine/harc/ve-csokkentes-calc';
 import { useSérültStátusz } from './useSerultStatusz';
 import { useVéCsökkenés } from './useVeCsokkenes';
@@ -79,7 +79,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
     }
   }, [setSession]);
 
-  useSérültStátusz(sebCount, hc.oszlopMéret, setSession);
+  useSérültStátusz(sebCount, hc.oszlopMéret, data.konstansok.sebesülés_kategóriák_száma, setSession);
 
 
   const { fárasztásDef, fárasztásEredmény, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, teljesVédekezésDef } =
@@ -274,7 +274,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
       )}
 
       {nyitott?.t === 'harcképtelen' && (
-        <TiltvaInfoPopup cím="Harcképtelen" szöveg={HARCKÉPTELEN_SZÖVEG} források={harcképtelen}
+        <TiltvaInfoPopup cím="Harcképtelen" szöveg={harcképtelenSzöveg(session, data)} források={harcképtelen}
           onFelülbírál={() => setNyitott(nyitott.tovább)} onClose={bezár} />
       )}
 

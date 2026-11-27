@@ -74,13 +74,13 @@ describe('applyGyógy fuzz', () => {
 });
 
 describe('calcSérültFok fuzz', () => {
-  it('always returns 0, 1, or 2', () => {
+  it('always returns 0 … 3', () => {
     fc.assert(fc.property(
       fc.integer({ min: 0, max: 100 }),
       fc.integer({ min: 1, max: 20 }),
       (sebCount, oszlopMéret) => {
         const result = calcSérültFok(sebCount, oszlopMéret);
-        expect([0, 1, 2]).toContain(result);
+        expect([0, 1, 2, 3]).toContain(result);
       }
     ), { numRuns: 200 });
   });

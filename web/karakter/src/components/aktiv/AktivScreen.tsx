@@ -26,7 +26,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: S
       <AktivHelyzetek data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
         helyzetFortélyok={helyzetFortélyok} />
 
-      <AktivStatuszok data={data} session={session} setSession={setSession} pushUndo={pushUndo}
+      <AktivStatuszok data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
         státuszPerElem={státuszPerElem} eseményNév={eseményNév} />
 
       {vanFortélyBox && (

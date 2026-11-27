@@ -513,9 +513,11 @@ státuszok:
     - hatás: taktika_kötelező
       taktika: öngyilkos_roham
       megjegyzés: egyszer
+      szituációs: true      # conditional (one-off): not set automatically
     - hatás: taktika_kötelező
       taktika: roham
       megjegyzés: utána, ha van hely
+      szituációs: true      # conditional: not set automatically
   - fok: 3
     alcím: Őrjöngés
     hatások:
