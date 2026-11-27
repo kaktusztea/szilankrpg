@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseFázisok, fázisSikeres, rontottVFázis, ellenpróbaBiztosKudarc } from '../../engine/harc/manover-dobas-calc';
+import { parseFázisok, fázisSikeres, manőverFázisSikeres, rontottVFázis, ellenpróbaBiztosKudarc } from '../../engine/harc/manover-dobas-calc';
 import type { FázisEredmény } from '../../engine/harc/manover-dobas-calc';
 
 describe('parseFázisok', () => {
@@ -73,5 +73,22 @@ describe('ellenpróbaBiztosKudarc', () => {
   });
   it('Nehézség fölött → nem biztos kudarc', () => {
     expect(ellenpróbaBiztosKudarc(15, 12)).toBe(false);
+  });
+});
+
+describe('manőverFázisSikeres', () => {
+  const sima = { ellenpróba_bünteti: false, fázis_cselekvő: {} };
+  const bünteti = { ellenpróba_bünteti: true, fázis_cselekvő: {} };
+  it('alapeset: cselekvő-alapú (V én: igen = siker, M ellenfél: nem = siker)', () => {
+    expect(manőverFázisSikeres('V', 'igen', sima)).toBe(true);
+    expect(manőverFázisSikeres('E', 'nem', sima)).toBe(false);
+    expect(manőverFázisSikeres('M', 'nem', sima)).toBe(true);
+  });
+  it('bünteti + E: a rontott ellenpróba sem buktat, csak a pending nem siker', () => {
+    expect(manőverFázisSikeres('E', 'nem', bünteti)).toBe(true);
+    expect(manőverFázisSikeres('E', 'pending', bünteti)).toBe(false);
+  });
+  it('bünteti, de nem E fázis → cselekvő-alapú', () => {
+    expect(manőverFázisSikeres('V', 'nem', bünteti)).toBe(false);
   });
 });

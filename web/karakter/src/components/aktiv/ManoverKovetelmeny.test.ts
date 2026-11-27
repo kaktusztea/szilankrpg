@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { követelményTeljesül, gépiKövetelményStátusz } from '../../engine/harc/manover-dobas-calc';
+import { követelményTeljesül, követelményÁllapot } from '../../engine/harc/manover-dobas-calc';
 import type { ManoverKövetelmény } from '../../engine/data-types';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -69,21 +69,43 @@ describe('követelményTeljesül', () => {
   });
 });
 
-describe('gépiKövetelményStátusz', () => {
+describe('követelményÁllapot (gépi hiányok)', () => {
   it('minden gépi teljesül → nincs hiány', () => {
     const k: ManoverKövetelmény[] = [{ erősség: 'normál', típus: 'képzettség', név: 'harcmodor/kardvívás', érték: 6 }];
-    expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: false, normálHiány: false });
+    expect(követelményÁllapot(k, karakter, data)).toMatchObject({ erősHiány: false, normálHiány: false });
   });
   it('gépi Normál hiány', () => {
     const k: ManoverKövetelmény[] = [{ erősség: 'normál', típus: 'képzettség', név: 'harcmodor/lándzsavívás', érték: 6 }];
-    expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: false, normálHiány: true });
+    expect(követelményÁllapot(k, karakter, data)).toMatchObject({ erősHiány: false, normálHiány: true });
   });
   it('gépi Erős hiány', () => {
     const k: ManoverKövetelmény[] = [{ erősség: 'erős', típus: 'fortély', név: 'pajzshasználat', érték: 2 }];
-    expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: true, normálHiány: false });
+    expect(követelményÁllapot(k, karakter, data)).toMatchObject({ erősHiány: true, normálHiány: false });
   });
   it('informatív követelmény nem befolyásol (null)', () => {
     const k: ManoverKövetelmény[] = [{ erősség: 'erős', típus: 'egyéb', leírás: 'Fegyverelőny' }];
-    expect(gépiKövetelményStátusz(k, karakter, data)).toEqual({ erősHiány: false, normálHiány: false });
+    expect(követelményÁllapot(k, karakter, data)).toMatchObject({ erősHiány: false, normálHiány: false });
+  });
+});
+
+describe('követelményÁllapot (kezdő döntés, hiány-gombok)', () => {
+  const kardOk: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'harcmodor/kardvívás', érték: 6 };
+  const lándzsaHiány: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'harcmodor/lándzsavívás', érték: 6 };
+  const pajzsHiány: ManoverKövetelmény = { erősség: 'erős', típus: 'fortély', név: 'pajzshasználat', érték: 2 };
+  const info: ManoverKövetelmény = { erősség: 'erős', típus: 'egyéb', leírás: 'Fegyverelőny' };
+  it('minden gépi teljesül → "mind" (nincs KM-döntés), nincs hiány-gomb', () => {
+    expect(követelményÁllapot([kardOk], karakter, data)).toMatchObject({ kezdőDöntés: 'mind', vanNormál: false, vanErős: false, teljesülések: [true] });
+  });
+  it('gépi Erős hiány → "erős" (auto-kudarc)', () => {
+    expect(követelményÁllapot([kardOk, pajzsHiány], karakter, data).kezdőDöntés).toBe('erős');
+  });
+  it('informatív (?) sor → "pending", Erős hiány gomb kell', () => {
+    expect(követelményÁllapot([kardOk, info], karakter, data)).toMatchObject({ kezdőDöntés: 'pending', vanErős: true, vanNormál: false, teljesülések: [true, null] });
+  });
+  it('gépi Normál hiány → "pending" + Normál hiány gomb', () => {
+    expect(követelményÁllapot([lándzsaHiány], karakter, data)).toMatchObject({ kezdőDöntés: 'pending', vanNormál: true, normálHiány: true });
+  });
+  it('nincs követelmény → "pending" (a popup ilyenkor nem mutat 0. lépést)', () => {
+    expect(követelményÁllapot([], karakter, data).kezdőDöntés).toBe('pending');
   });
 });

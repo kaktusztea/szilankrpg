@@ -8,13 +8,12 @@ import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányDie, kockaBontás, type ProbaDobás } from '../../engine/dice';
 import { BontasNyil, kéziDobás } from './K20Reszek';
 import {
-  type Mód, type ManőverDef, type AktívFegyverInfo,
-  követelményTeljesül, követelményJelölés, követelményCimke, getFázisFelirat, fázisCselekvő, eredményHatás,
+  type Mód, type ManőverDef, type KövetelményDöntés, type KövetelményÁllapot,
+  követelményJelölés, követelményCimke, getFázisFelirat, fázisCselekvő, eredményHatás,
   extraHordozóNév,
 } from '../../engine/harc/manover-dobas-calc';
 import './dobas.css';
 
-export type KövetelményDöntés = 'pending' | 'mind' | 'normál' | 'erős';
 export type Végeredmény = 'folyamatban' | 'sikeres' | 'sikertelen';
 
 /** Előjeles szám-felirat ("+2", "-1", "0"). */
@@ -50,22 +49,21 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
   );
 }
 
-/** 0. lépés: követelmények listája + KM döntés (Teljesül mind / Normál hiány / Erős hiány). */
-export function ManoverKovetelmenyLepes({ követelmények, karakter, data, session, aktívFegyver, döntés, setDöntés, kész, erősHiány, normálHiány, vanNormál, vanErős }: {
+/** 0. lépés: követelmények listája + KM döntés (Teljesül mind / Normál hiány / Erős hiány); döntés után accordion. */
+export function ManoverKovetelmenyLepes({ követelmények, állapot, döntés, setDöntés, kész }: {
   követelmények: NonNullable<ManőverDef['követelmények']>;
-  karakter: Karakter; data: GameData; session: Session; aktívFegyver: AktívFegyverInfo | null;
+  /** Evaluated once by the popup (`követelményÁllapot`): per-item results, missing flags, button visibility. */
+  állapot: KövetelményÁllapot;
   döntés: KövetelményDöntés; setDöntés: (d: KövetelményDöntés) => void; kész: boolean;
-  /** Gépileg megállapított hiányok (Erős → auto-kudarc; Normál → a "Teljesül mind" tiltva). */
-  erősHiány: boolean; normálHiány: boolean;
-  vanNormál: boolean; vanErős: boolean;
 }) {
+  const { teljesülések, erősHiány, normálHiány, vanNormál, vanErős } = állapot;
   // Once decided, the step collapses into an accordion (header: label + chevron + outcome mark).
   const [nyitva, setNyitva] = useState(false);
   const lista = (
     <div className="manover-kov-lista">
       {követelmények.map((köv, i) => {
         // Gépileg eldöntetlen (null) sor a KM döntése UTÁN tükrözze a döntést.
-        const jelölés = követelményJelölés(követelményTeljesül(köv, karakter, data, session, aktívFegyver), köv.erősség, döntés);
+        const jelölés = követelményJelölés(teljesülések[i], köv.erősség, döntés);
         return (
           <div key={i} className="manover-kov-sor">
             <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟨'}</span>

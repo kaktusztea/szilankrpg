@@ -4367,7 +4367,7 @@ kimenetéből szűrve, ill. a megnevezett helyen):
 | `előny` / `hátrány` | `engine/dice.ts` (rollElőnyHátrányDie) + `engine/statusz-proba.ts` (a `gyűjtStátuszEffektek`-ből, 2026-10-18) / harc-popupok (`engine/harc/combat-roll-info.ts`: a `gyűjt*Effektek` szűrése dobás-célokra; nettó szint: `kockaSzint`, 2026-10-18) | §22 |
 | `enyhít` | `engine/statusz-proba.ts` / Hatás pool | §22.7 |
 | `letilt` | `engine/effekt.ts` taktika-gyűjtő (fortély `letilt` → a taktika adott célú hozzájárulása kiesik, pl. Taktikafókusz: Visszafogott) + tiltás-feloldás (`tiltás:<id>`) + `engine/statusz-proba.ts` (próba auto-kudarc) + `státuszLetiltottFortélyok` (státusz `letilt fortély` → a fortély-gyűjtő kihagyja, §22.4) | §21, §22.4, §42.4 |
-| `szöveges` | `formatters.tsx` / `dobas/HatasokInfo.tsx` (megjelenítés) | §22 |
+| `szöveges` | `formatters.tsx` / `dobas/ForrasLista.tsx` (megjelenítés) | §22 |
 | `szorzó` | `engine/harc/ve-csokkentes-calc.ts` (taktika vé_csökkentés ×2) + `engine/harc/shared.ts` `véVesztésSzorzó` (vé_veszteség - a `gyűjtHelyzetEffektek` + `gyűjtStátuszEffektek` effektjeiből) + `engine/extrak-effekt.ts` | §21, §22 |
 | `max_limit` | `engine/extrak-effekt.ts` motor; `calcHarcComputed`: helyzet/státusz `támadások_száma` (pl. Félelem (2): max 1) a fegyversorok + kétkezes `támadások`-ára (2026-10-16) | §42.3 |
 

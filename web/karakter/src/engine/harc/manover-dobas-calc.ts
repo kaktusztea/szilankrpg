@@ -286,24 +286,40 @@ export function követelményTeljesül(
   return fok >= küszöb;
 }
 
-/**
- * A gépi követelmények kiértékelése egy manőverre.
- * - `erősHiány`: van hiányzó gépi Erős követelmény → auto-kudarc (nem dobható).
- * - `normálHiány`: van hiányzó gépi Normál követelmény → a "Teljesül mind" gomb tiltandó.
- */
-export function gépiKövetelményStátusz(
+/** KM decision of the requirements step (0. lépés): pending, all met, Normál missing, Erős missing. */
+export type KövetelményDöntés = 'pending' | 'mind' | 'normál' | 'erős';
+
+export interface KövetelményÁllapot {
+  /** Per requirement: true / false = machine-decided, null = only the KM can decide (`egyéb`). */
+  teljesülések: (boolean | null)[];
+  /** A "Normál hiány" / "Erős hiány" button is needed: that strength has an item that may be missing. */
+  vanNormál: boolean;
+  vanErős: boolean;
+  /** Machine-detected missing Erős → auto-fail (cannot be attempted). */
+  erősHiány: boolean;
+  /** Machine-detected missing Normál → the "Teljesül mind" button is disabled. */
+  normálHiány: boolean;
+  /** Starting decision: Erős missing → 'erős', every item machine-met → 'mind', otherwise the KM decides. */
+  kezdőDöntés: KövetelményDöntés;
+}
+
+/** The requirements of a manőver evaluated once (each `követelményTeljesül` call runs exactly once). */
+export function követelményÁllapot(
   követelmények: ManoverKövetelmény[], karakter: Karakter, data: GameData,
   session?: Session, aktívFegyver?: AktívFegyverInfo | null,
-): { erősHiány: boolean; normálHiány: boolean } {
-  let erősHiány = false, normálHiány = false;
-  for (const köv of követelmények) {
-    const teljesül = követelményTeljesül(köv, karakter, data, session, aktívFegyver);
-    if (teljesül === false) {
-      if (köv.erősség === 'erős') erősHiány = true;
-      else normálHiány = true;
-    }
-  }
-  return { erősHiány, normálHiány };
+): KövetelményÁllapot {
+  const teljesülések = követelmények.map(k => követelményTeljesül(k, karakter, data, session, aktívFegyver));
+  const van = (pred: (k: ManoverKövetelmény, t: boolean | null) => boolean) => követelmények.some((k, i) => pred(k, teljesülések[i]));
+  // A strength may be missing if it has an informative item (KM decides) or a machine item that fails.
+  const hiányLehet = (erősség: 'normál' | 'erős') =>
+    van((k, t) => k.erősség === erősség && t !== true && (k.típus === 'egyéb' || t === false));
+  const erősHiány = van((k, t) => k.erősség === 'erős' && t === false);
+  const normálHiány = van((k, t) => k.erősség !== 'erős' && t === false);
+  const mindZöld = teljesülések.length > 0 && teljesülések.every(t => t === true);
+  return {
+    teljesülések, vanNormál: hiányLehet('normál'), vanErős: hiányLehet('erős'), erősHiány, normálHiány,
+    kezdőDöntés: erősHiány ? 'erős' : mindZöld ? 'mind' : 'pending',
+  };
 }
 
 /** Parse fázisok string (e.g. "M,V,E" or "E (M*)") into phase list, PRESERVING the
@@ -385,6 +401,18 @@ export function fázisSikeres(eredmény: FázisEredmény, cselekvő: 'én' | 'el
 }
 
 /**
+ * Phase success FOR THE MANŐVER: actor-based, except the Ellenpróba of an `ellenpróba_bünteti`
+ * manőver, where a failed roll does not fail the manőver (it only brings a penalty).
+ */
+export function manőverFázisSikeres(
+  fázis: 'M' | 'V' | 'E', eredmény: FázisEredmény,
+  manőver: Pick<ManőverDef, 'ellenpróba_bünteti' | 'fázis_cselekvő'>,
+): boolean {
+  if (manőver.ellenpróba_bünteti && fázis === 'E') return eredmény !== 'pending';
+  return fázisSikeres(eredmény, fázisCselekvő(fázis, manőver.fázis_cselekvő));
+}
+
+/**
  * Fázis gomb-feliratok a KONKRÉT dobás alapján. A cselekvő (én/ellenfél) + a mód
  * együtt adja, hogy a képernyő előtt ülő dob-e: tényleges = cselekvő XOR (passzív).
  * A `siker`/`kudarc` a MANŐVER-siker felé mutató, ill. attól elvezető dobás-eredmény.
@@ -446,7 +474,7 @@ export function követelményCimke(köv: ManoverKövetelmény): string {
 export function követelményJelölés(
   teljesül: boolean | null,
   erősség: 'normál' | 'erős',
-  döntés: 'pending' | 'mind' | 'normál' | 'erős',
+  döntés: KövetelményDöntés,
 ): '✓' | '✗' | '?' {
   if (teljesül === true) return '✓';
   if (teljesül === false) return '✗';

@@ -1,4 +1,3 @@
-import { Ikon } from '../common/Ikon';
 import { useState } from 'react';
 import type { Karakter, Session, SetSession } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
@@ -15,15 +14,16 @@ import { netElőnySzint } from '../../engine/harc/combat-roll-info';
 import type { DobásHatás } from '../../engine/harc/combat-roll-info';
 import type { ProbaDobás } from '../../engine/dice';
 import {
-  type Mód, type FázisEredmény, type ManőverDef,
-  követelményTeljesül, gépiKövetelményStátusz, parseFázisok, könnyítettFázisok, helyzetKönnyítés, aktívFegyverInfo,
-  calcManőverPont, getBelharcFok, ellenpróbaBiztosKudarc, fázisCselekvő, fázisSikeres, FÁZIS_FELIRAT, rontottVFázis, fejlécChip,
+  type Mód, type FázisEredmény, type ManőverDef, type KövetelményDöntés,
+  követelményÁllapot, parseFázisok, könnyítettFázisok, helyzetKönnyítés, aktívFegyverInfo,
+  calcManőverPont, getBelharcFok, ellenpróbaBiztosKudarc, fázisCselekvő, manőverFázisSikeres, rontottVFázis,
   szitModKezdőÁllapot, szitTáblákMódszerint, szitModÁllapot,
 } from '../../engine/harc/manover-dobas-calc';
 import {
   ManoverDobasSor, ManoverKovetelmenyLepes, ManoverFazisChipek, ManoverVegeredmeny, ManoverSzitPicker, ManoverMpPicker, ManoverTePopup,
-  type KövetelményDöntés, type Végeredmény,
+  type Végeredmény,
 } from './ManoverDobasReszek';
+import { ManoverFejlecChip, ManoverFazisFejlec, ManoverKapszulak, EllenprobaParbaj } from './ManoverFazisReszek';
 import './dobas.css';
 
 /** Kockák: Végrehajtás = támadó dobás (k20), Ellenpróba = k10 (§066). */
@@ -109,38 +109,19 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const maxKölthető = Math.min(aktMP, mód === 'aktív' ? mk.max_mp_támadó : mk.max_mp_védő);
   const belharcBónusz = isBelharcos ? belharcFok * mk.belharc_fok_szorzó : 0;
 
-  // 0. lépés: követelmények (CSAK aktív módban - az alkalmazóra vonatkoznak).
+  // 0. lépés: követelmények (CSAK aktív módban - az alkalmazóra vonatkoznak), egyszer kiértékelve.
   const követelmények = mód === 'aktív' ? (manőver.követelmények ?? []) : [];
   const vanKövetelmény = követelmények.length > 0;
-  // Egy erősségre csak akkor kell "hiány" gomb, ha van HIÁNYOZHATÓ eleme:
-  // informatív (a játékos dönthet hiányról) VAGY gépi, ami nem teljesül.
-  // Ha egy erősség minden eleme gépi ÉS mind teljesül → a hiány kizárt → nincs gomb.
-  const hiányLehet = (erősség: 'normál' | 'erős') =>
-    követelmények.some(k => k.erősség === erősség
-      && (k.típus === 'egyéb' || követelményTeljesül(k, karakter, data, session, aktívFegyver) === false)
-      && követelményTeljesül(k, karakter, data, session, aktívFegyver) !== true);
-  const vanNormál = hiányLehet('normál');
-  const vanErős = hiányLehet('erős');
-  const gépiStátusz = gépiKövetelményStátusz(követelmények, karakter, data, session, aktívFegyver);
-  // Every requirement machine-verified as met (all green) -> auto 'mind', no KM confirmation needed.
-  const mindZöld = vanKövetelmény
-    && követelmények.every(k => követelményTeljesül(k, karakter, data, session, aktívFegyver) === true);
-  // Auto-kudarc, ha gépi Erős hiány. Ekkor a döntés nem is választható.
-  const [követelményDöntés, setKövetelményDöntés] = useState<KövetelményDöntés>(
-    () => gépiStátusz.erősHiány ? 'erős' : mindZöld ? 'mind' : 'pending',
-  );
+  const kövÁllapot = követelményÁllapot(követelmények, karakter, data, session, aktívFegyver);
+  // Gépi Erős hiány → auto-kudarc; minden gépileg teljesül → auto "mind" (nincs KM-jóváhagyás).
+  const [követelményDöntés, setKövetelményDöntés] = useState<KövetelményDöntés>(kövÁllapot.kezdőDöntés);
   // A 0. lépés akkor "kész", ha van döntés (vagy nincs követelmény).
   const követelményKész = !vanKövetelmény || követelményDöntés !== 'pending';
   const követelményKudarc = követelményDöntés === 'erős';
   // Hátrány-2 az Ellenpróbán, ha a döntés "normál" (Normál hiány).
-  const ellenpróbaHátrány2 = követelményDöntés === 'normál';
+  const ellenpróbaHátrány = követelményDöntés === 'normál' ? ELLENPRÓBA_NORMÁL_HIÁNY_EH : null;
 
-  // Egy fázis sikere a manővernek: cselekvő-alapú, DE ha ellenpróba_bünteti és E fázis,
-  // a rontott dobás NEM buktat (a manőver sikeres, csak büntetés jár).
-  const fázisSikeresM = (i: number, e: FázisEredmény): boolean => {
-    if (manőver.ellenpróba_bünteti && fázisok[i] === 'E') return e !== 'pending';
-    return fázisSikeres(e, fázisCselekvő(fázisok[i], manőver.fázis_cselekvő));
-  };
+  const fázisSikeresM = (i: number, e: FázisEredmény) => manőverFázisSikeres(fázisok[i], e, manőver);
 
   // Find current active phase (first pending), but stop if manőver already failed.
   const manőverMárSikertelen = eredmények.some((e, i) => e !== 'pending' && !fázisSikeresM(i, e));
@@ -191,12 +172,6 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
    * A gombok a MANŐVER sikere felé mutatnak. A tárolt igen/nem reprezentáció a cselekvőtől
    * függ: én-cselekvőnél a találat (igen) a siker, ellenfél-megakasztónál a hibázás (nem).
    */
-  /** Aktív Ellenpróba roll: below the bare Nehézség the target can't be reached even with ellen MA 0 -> auto "Nem értem el". */
-  function onEDobás(d: ProbaDobás | null, dobásÉrték: number) {
-    setEDobás(d);
-    if (d && ellenpróbaBiztosKudarc(dobásÉrték + d.eredmény, manőver.nehézség)) handleSiker(false);
-  }
-
   function handleSiker(siker: boolean) {
     if (aktívFázisIdx === -1) return;
     const cs = fázisCselekvő(fázisok[aktívFázisIdx], manőver.fázis_cselekvő);
@@ -233,12 +208,23 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
   /** Final Végrehajtás TÉ (aktív mode only): base TÉ + manőver modifier + manual bonus. */
   const téVégső = mód === 'aktív' && aktívTÉ != null ? aktívTÉ + manőver.végrehajtás_té_módosító + téKéziBónusz : null;
-  /** Aktív Ellenpróba roll base (Manőver Alap + MP + belharc + situational), without the k10. */
-  const ellenpróbaAlap = manőverAlap + költöttMP + belharcBónusz + szitModÖsszeg;
+  /** Rolled Végrehajtás total (aktív): final TÉ + k20. */
+  const vÖsszeg = téVégső != null && vDobás ? téVégső + vDobás.eredmény : null;
+  /** Ellenpróba modifiers (MP + belharc + situational): aktív → added to my roll, passzív → to the opponent's target. */
+  const ellenpróbaMódosító = költöttMP + belharcBónusz + szitModÖsszeg;
+  /** Aktív Ellenpróba roll base (Manőver Alap + modifiers), without the k10. */
+  const ellenpróbaAlap = manőverAlap + ellenpróbaMódosító;
+
+  /** Aktív Ellenpróba roll: below the bare Nehézség the target can't be reached even with ellen MA 0 -> auto "Nem értem el". */
+  function onEDobás(d: ProbaDobás | null) {
+    setEDobás(d);
+    if (d && ellenpróbaBiztosKudarc(ellenpróbaAlap + d.eredmény, manőver.nehézség)) handleSiker(false);
+  }
+
   /** Rolled result shown in a closed phase header (aktív V/E only; passive mode has no own roll). */
   function lezártÉrték(f: 'M' | 'V' | 'E'): string | null {
     if (mód !== 'aktív') return null;
-    if (f === 'V' && vDobás && téVégső != null) return `${téVégső + vDobás.eredmény}`;
+    if (f === 'V' && vÖsszeg != null) return `${vÖsszeg}`;
     if (f === 'E' && eDobás) return `${ellenpróbaAlap + eDobás.eredmény} vs ${manőver.nehézség}+MA`;
     return null;
   }
@@ -268,74 +254,65 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     }
   }
 
-  /** Signed value span for a modifier pill: dim 0, green +, red -. */
-  function kapszulaÉrték(n: number) {
-    if (n === 0) return <span className="dobas-kapszula-db">0</span>;
-    return <span className={n > 0 ? 'manover-szit-pos' : 'manover-szit-neg'}>{n > 0 ? '+' : ''}{n}</span>;
-  }
-
-  /** Ellenpróba modifier pills (same look as the Támadó dobás pills): Helyzet (flashes on mount) + MP. */
-  function renderKapszulak() {
-    const szit = módosítóTáblák.length > 0;
-    const mp = maxKölthető > 0;
-    if (!szit && !mp) return null;
-    return (
-      <div className="dobas-kapszulak manover-kapszulak">
-        {szit && (
-          <button type="button" className="dobas-kapszula manover-szit-btn-flash" onClick={() => setAlPopup('szit')}>
-            Helyzet {szitLehetetlen
-              ? <span className="manover-szit-neg">letilt</span>
-              : szitImmunis ? <span className="manover-szit-pos">immunis</span>
-              : kapszulaÉrték(szitModÖsszeg)}
-          </button>
-        )}
-        {mp && (
-          <button type="button" className="dobas-kapszula" onClick={() => setAlPopup('mp')}>
-            MP {kapszulaÉrték(költöttMP)}
-          </button>
-        )}
-      </div>
-    );
-  }
+  const kapszulák = (
+    <ManoverKapszulak vanSzit={módosítóTáblák.length > 0} vanMp={maxKölthető > 0}
+      szitÖsszeg={szitModÖsszeg} szitLehetetlen={szitLehetetlen} szitImmunis={szitImmunis} költöttMP={költöttMP}
+      onSzit={() => setAlPopup('szit')} onMp={() => setAlPopup('mp')} />
+  );
 
   function renderEllenpróba() {
     if (mód === 'aktív') {
       // §066_04: a Helyzetfüggő módosítók a DOBÁShoz adódnak (nem a Célszámhoz). A Célszám fix:
       // a Manőver Nehézsége + ellenfél Manőver Alapja. Pozitív szitMod könnyít (nagyobb dobás).
-      const dobásÉrték = ellenpróbaAlap;
-      const célszám = manőver.nehézség;
-      const cél = <><strong className="manover-celszam-ertek">{célszám}</strong> + ellen MA</>;
+      // Dobás után a módosítók (Helyzet, MP) zárolva: utólag már nem változtathatják az eredményt.
+      const dobható = !szitLehetetlen && !szitImmunis;
       return (
         <div className="manover-fazis-info">
-          {/* After the roll the situational modifiers and MP are locked (they would change the result) */}
-          {/* One-line duel: my roll vs the target; the pills below modify my (left) side */}
-          {!szitLehetetlen && !szitImmunis && !eDobás && (
-            <div className="manover-ep-parbaj">
-              <span>{dobásÉrték} <span className="manover-ep-op">+</span> k{ELLENPRÓBA_KOCKA}
-                {ellenpróbaHátrány2 && <span className="manover-hatrany2 manover-ep-hatrany">H{ELLENPRÓBA_NORMÁL_HIÁNY_EH}</span>}
-              </span>
-              <span className="manover-ep-vs">vs</span>
-              <span><span className="manover-celszam-ertek">{célszám}</span> <span className="manover-ep-op">+</span> <span className="manover-ep-ma">MA</span></span>
-            </div>
+          {dobható && !eDobás && (
+            <EllenprobaParbaj alap={ellenpróbaAlap} kocka={ELLENPRÓBA_KOCKA} hátrány={ellenpróbaHátrány} célszám={manőver.nehézség} />
           )}
-          {!eDobás && renderKapszulak()}
-          {!szitLehetetlen && !szitImmunis && <ManoverDobasSor alap={dobásÉrték} alapLabel="Dobás" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány2 ? ELLENPRÓBA_NORMÁL_HIÁNY_EH : 0} dobás={eDobás} setDobás={d => onEDobás(d, dobásÉrték)} cél={cél} />}
-        </div>
-      );
-    } else {
-      // Passzív: a passzív-oldali táblák (pl. fegyver-extrák: "Lefegyverzés ellene nehezebb +2") a passzív
-      // fél szemszögéből értendők - pozitív = neki kedvez → az ellenfél célszáma nő (mint a költött MP).
-      const célszámAlap = manőverAlap + manőver.nehézség + költöttMP + belharcBónusz + szitModÖsszeg;
-      return (
-        <div className="manover-fazis-info">
-          {renderKapszulak()}
-          <div className="manover-ep-vs-row">
-            <span className="manover-ep-side">Célszám: <strong className="manover-celszam-ertek">{célszámAlap}</strong></span>
-          </div>
-          <div className="manover-fazis-desc">Ellenfél dob: MA + k{ELLENPRÓBA_KOCKA} ≥ célszám</div>
+          {!eDobás && kapszulák}
+          {dobható && (
+            <ManoverDobasSor alap={ellenpróbaAlap} alapLabel="Dobás" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány ?? 0}
+              dobás={eDobás} setDobás={onEDobás}
+              cél={<><strong className="manover-celszam-ertek">{manőver.nehézség}</strong> + ellen MA</>} />
+          )}
         </div>
       );
     }
+    // Passzív: a passzív-oldali táblák (pl. fegyver-extrák: "Lefegyverzés ellene nehezebb +2") a passzív
+    // fél szemszögéből értendők - pozitív = neki kedvez → az ellenfél célszáma nő (mint a költött MP).
+    const célszám = manőverAlap + manőver.nehézség + ellenpróbaMódosító;
+    return (
+      <div className="manover-fazis-info">
+        {kapszulák}
+        <div className="manover-ep-vs-row">
+          <span className="manover-ep-side">Célszám: <strong className="manover-celszam-ertek">{célszám}</strong></span>
+        </div>
+        <div className="manover-fazis-desc">Ellenfél dob: MA + k{ELLENPRÓBA_KOCKA} ≥ célszám</div>
+      </div>
+    );
+  }
+
+  /** Body of the active phase: mode-aware explanation, phase info and the outcome buttons. */
+  function renderAktívFázis(f: 'M' | 'V' | 'E') {
+    // A fázis_info mód-tudatos: aktív = alkalmazó nézőpont, passzív = elszenvedő nézőpont
+    // (data/sources/manoverek.yaml `fázis_info: { aktív, passzív }`).
+    const magyarázat = manőver.fázis_info?.[mód]?.[f];
+    return (
+      <>
+        {magyarázat && <div className="manover-fazis-magyarazat">ⓘ {magyarázat}</div>}
+        {/* E és V: a dobás-UI mindig kell (a magyarázat KIEGÉSZÍTI). M: a magyarázat helyettesíti a fix
+            érték-sort (elkerüli az ellentmondást). */}
+        {(f === 'E' || f === 'V' || !magyarázat) && renderFázisInfo(f)}
+        {/* Biztos rontás: 99 sentinel aktív E fázisban. A siker/kudarc gombok aktív V/E fázisban csak a
+            Dobás UTÁN jelennek meg (a dobás adja az eredményt); passzív módban az ellenfél dob → nincs gate. */}
+        <ManoverFazisChipek fázis={f} mód={mód} manőver={manőver}
+          biztosRontás={szitLehetetlen && f === 'E' && mód === 'aktív'}
+          letiltva={mód === 'aktív' && ((f === 'V' && !vDobás) || (f === 'E' && !eDobás))}
+          onSiker={handleSiker} />
+      </>
+    );
   }
 
   return (
@@ -344,25 +321,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       <div className="manover-dobas-popup">
         <div className="manover-dobas-header">
           <span className="manover-dobas-title">{manőver.név} ({fázisok.join(' ')})</span>
-          {/* Fejléc-chip fázis-tudatos (a popup eltakarja a HarcHeader VÉ-dobozát):
-              - passzív mód: mindig VÉ (kézi VÉ-csökkenés könyveléshez);
-              - aktív mód, Megakasztás (M) fázis: VÉ (az ellenfél támad a VÉ-d ellen);
-              - aktív mód, V/E fázis: TÉ (a saját támadó/próba értéked a releváns).
-              M-nél az aktívFázisIdx == -1 esetén is a manőver Megakasztásos volta dönt. */}
-          {(() => {
-            const aktFázis = aktívFázisIdx >= 0 ? fázisok[aktívFázisIdx] : null;
-            if (fejlécChip(mód, aktFázis, fázisok) === 'VÉ') {
-              return aktívVÉ != null && <span className="manover-dobas-ve-chip">VÉ: <strong>{aktívVÉ}</strong></span>;
-            }
-            // TÉ bontva: nyers fegyveres TÉ + a Végrehajtás-bónusz (ha ≠ 0), hogy a fejléc és a
-            // Végrehajtás-fázis TÉ-je (aktívTÉ + bónusz) ne tűnjön ellentmondásosnak.
-            const téMód = manőver.végrehajtás_té_módosító;
-            return aktívTÉ != null && (
-              <span className="manover-dobas-ve-chip">
-                TÉ: <strong>{aktívTÉ}</strong>{téMód !== 0 && <span className="manover-dobas-te-bonus"> ({téMód > 0 ? '+' : ''}{téMód})</span>}
-              </span>
-            );
-          })()}
+          <ManoverFejlecChip mód={mód} aktFázis={aktívFázisIdx >= 0 ? fázisok[aktívFázisIdx] : null} fázisok={fázisok}
+            aktívTÉ={aktívTÉ} aktívVÉ={aktívVÉ} téMódosító={manőver.végrehajtás_té_módosító} />
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
 
@@ -383,61 +343,19 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         )}
 
         {vanKövetelmény && (
-          <ManoverKovetelmenyLepes követelmények={követelmények} karakter={karakter} data={data} session={session} aktívFegyver={aktívFegyver}
-            döntés={követelményDöntés} setDöntés={setKövetelményDöntés} kész={követelményKész}
-            erősHiány={gépiStátusz.erősHiány} normálHiány={gépiStátusz.normálHiány} vanNormál={vanNormál} vanErős={vanErős} />
+          <ManoverKovetelmenyLepes követelmények={követelmények} állapot={kövÁllapot}
+            döntés={követelményDöntés} setDöntés={setKövetelményDöntés} kész={követelményKész} />
         )}
 
         <div className="manover-dobas-fazisok">
           {fázisok.map((f, i) => {
-            const eredmény = eredmények[i];
             const isAktív = i === aktívFázisIdx;
-            const isDonePhase = eredmény !== 'pending';
-            // Determine if this phase was a success FOR THE MANŐVER.
-            const sikeresAManőverSzempontjából = fázisSikeresM(i, eredmény);
-
+            const kész = eredmények[i] !== 'pending';
             return (
-              <div key={i} className={`manover-fazis${isAktív ? ' manover-fazis-aktiv' : ''}${isDonePhase ? ' manover-fazis-done' : ''}`}>
-                <div className={`manover-fazis-label${isAktív && f === 'E' ? ' manover-fazis-label-kozep' : ''}`}>
-                  <span>{FÁZIS_FELIRAT[f]}</span>
-                  {/* Outcome mark at the end of the row (same as the Követelmények accordion), rolled value before it */}
-                  {isDonePhase && lezártÉrték(f) && <span className="manover-fazis-ertek-kesz">{lezártÉrték(f)}</span>}
-                  {isDonePhase && (sikeresAManőverSzempontjából
-                    ? <span className="manover-fazis-ok"><Ikon név="pipa" /></span>
-                    : <span className="manover-fazis-fail"><Ikon név="kudarc" /></span>
-                  )}
-                  {/* Végrehajtás TÉ chip in the top-right corner of the active V phase (opens the TÉ breakdown) */}
-                  {isAktív && f === 'V' && téVégső != null && (
-                    <button type="button" className="manover-te-chip" onClick={() => setAlPopup('té')}>
-                      TÉ: <strong>{téVégső}</strong> <span className="manover-te-info">ⓘ</span>
-                    </button>
-                  )}
-                </div>
-                {isAktív && (() => {
-                  // A fázis_info mód-tudatos: aktív = alkalmazó nézőpont, passzív = elszenvedő nézőpont
-                  // (data/sources/manoverek.yaml `fázis_info: { aktív, passzív }`). A passzív szöveg nem
-                  // utal aktív-only mechanikára (TÉ+4, dobás). Mindkét módban a saját ágat mutatjuk.
-                  const magyarázat = manőver.fázis_info?.[mód]?.[f];
-                  return (
-                  <>
-                    {magyarázat && (
-                      <div className="manover-fazis-magyarazat">ⓘ {magyarázat}</div>
-                    )}
-                    {/* E és V: a dobás-UI mindig kell (E: módosítók/MP/célszám; V: TÉ chip a
-                        tényleges támadó dobás értékével - a magyarázat KIEGÉSZÍTI, nem helyettesíti).
-                        M: a magyarázat helyettesíti a fix érték-sort (elkerüli az ellentmondást). */}
-                    {(f === 'E' || f === 'V' || !magyarázat) && renderFázisInfo(f)}
-                    {/* Biztos rontás: 99 sentinel aktív E fázisban. (Immunis / passzív letilt → azonnali végeredmény, nincs aktív fázis.) */}
-                    {/* A siker/kudarc gombok csak a Dobás UTÁN jelennek meg (aktív mód, V/E fázis): a dobás
-                        adja az eredményt, előtte nincs mit elkönyvelni. Passzív módban nincs dobás-sor
-                        (az ellenfél dob) → nincs gate. */}
-                    <ManoverFazisChipek fázis={f} mód={mód} manőver={manőver}
-                      biztosRontás={szitLehetetlen && f === 'E' && mód === 'aktív'}
-                      letiltva={mód === 'aktív' && ((f === 'V' && !vDobás) || (f === 'E' && !eDobás))}
-                      onSiker={handleSiker} />
-                  </>
-                  );
-                })()}
+              <div key={i} className={`manover-fazis${isAktív ? ' manover-fazis-aktiv' : ''}${kész ? ' manover-fazis-done' : ''}`}>
+                <ManoverFazisFejlec fázis={f} aktív={isAktív} kész={kész} sikeres={fázisSikeresM(i, eredmények[i])}
+                  lezártÉrték={kész ? lezártÉrték(f) : null} téVégső={téVégső} onTé={() => setAlPopup('té')} />
+                {isAktív && renderAktívFázis(f)}
               </div>
             );
           })}
@@ -481,8 +399,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           // csak a VÉ-popupot - vissza a végeredmény-sávhoz.
           if (eredmény) {
             // A rontott V dobás + a választott VÉ-csökkentés a TÉ-chip history-ba (mint a Támadó dobás).
-            const vÖsszeg = (aktívTÉ ?? 0) + manőver.végrehajtás_té_módosító + téKéziBónusz + (vDobás?.eredmény ?? 0);
-            onTéDobás?.(vÖsszeg, eredmény.végső);
+            onTéDobás?.(vÖsszeg ?? 0, eredmény.végső);
             onClose();
           } else {
             alZár();

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  helyzetKönnyítés, könnyítettFázisok, követelményTeljesül, gépiKövetelményStátusz, követelményJelölés,
+  helyzetKönnyítés, könnyítettFázisok, követelményTeljesül, követelményÁllapot, követelményJelölés,
   követelményCimke, type AktívFegyverInfo,
 } from '../../engine/harc/manover-dobas-calc';
 import type { ManoverKövetelmény } from '../../engine/data-types';
@@ -73,11 +73,11 @@ describe('követelményTeljesül - helyzet auto-kiértékelés', () => {
   it('tagadó szöveg ("sincs Fegyverelőnyben") → null (manuális, nem "aktív helyzet kell")', () => {
     expect(követelményTeljesül(tagadóKöv, karakter, data, sessionWith(['Fegyverelőny']))).toBeNull();
   });
-  it('gépiKövetelményStátusz: nincs Orvtámadás → erős hiány (auto-kudarc)', () => {
-    expect(gépiKövetelményStátusz([orvKöv], karakter, data, sessionWith([])))
-      .toEqual({ erősHiány: true, normálHiány: false });
-    expect(gépiKövetelményStátusz([orvKöv], karakter, data, sessionWith(['Orvtámadás'])))
-      .toEqual({ erősHiány: false, normálHiány: false });
+  it('követelményÁllapot: nincs Orvtámadás → erős hiány (auto-kudarc)', () => {
+    expect(követelményÁllapot([orvKöv], karakter, data, sessionWith([])))
+      .toMatchObject({ erősHiány: true, normálHiány: false });
+    expect(követelményÁllapot([orvKöv], karakter, data, sessionWith(['Orvtámadás'])))
+      .toMatchObject({ erősHiány: false, normálHiány: false });
   });
 });
 
@@ -121,11 +121,11 @@ describe('követelményTeljesül - fegyver-alapú gépi típusok', () => {
     expect(követelményTeljesül(katKöv, karakter, data, undefined, null)).toBeNull();
     expect(követelményTeljesül(sebKöv, karakter, data)).toBeNull();
   });
-  it('gépiKövetelményStátusz: rossz fegyver → erős hiány', () => {
-    expect(gépiKövetelményStátusz([katKöv, sebKöv], karakter, data, undefined, buzogány))
-      .toEqual({ erősHiány: true, normálHiány: false });
-    expect(gépiKövetelményStátusz([katKöv, sebKöv], karakter, data, undefined, kard))
-      .toEqual({ erősHiány: false, normálHiány: false });
+  it('követelményÁllapot: rossz fegyver → erős hiány', () => {
+    expect(követelményÁllapot([katKöv, sebKöv], karakter, data, undefined, buzogány))
+      .toMatchObject({ erősHiány: true, normálHiány: false });
+    expect(követelményÁllapot([katKöv, sebKöv], karakter, data, undefined, kard))
+      .toMatchObject({ erősHiány: false, normálHiány: false });
   });
 });
 
