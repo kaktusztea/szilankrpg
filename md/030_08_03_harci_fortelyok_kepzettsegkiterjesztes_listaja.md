@@ -3,9 +3,14 @@
 🟨 Normál kiterjesztés\
 🟥 Erős kiterjesztés
 
-![](images/038_harci_fortelyok_kiterjeszteslistaja_1.png)
-
-![](images/038_harci_fortelyok_kiterjeszteslistaja_2.png)
+```
+Vezető: Alakzatparancsnok(2)   🟨 Hadászat
+Vezető: Fejvadász strategis(2) 🟨 Hadászat
+Vezető: Íjászparancsnok(2)     🟨 Hadászat
+Vezető: Lovaskapitány(2)       🟨 Hadászat
+Vezető: Léglovaskapitány(2)    🟨 Hadászat
+Vezető: Testőrparancsnok(2)    🟨 Hadászat
+```
 
 ---
 
