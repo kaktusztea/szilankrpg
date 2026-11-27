@@ -463,6 +463,15 @@ export const FÁZIS_FELIRAT: Record<'M' | 'V' | 'E', string> = {
 };
 
 /**
+ * Ellenpróba auto-kudarc (aktív mód): a célszám = ellen MA + Nehézség, ahol az ellen MA >= 0
+ * (HM/10 ↑), a KM [-5;+5] módosítója pedig a dobás előtt dől el. Ha a dobás végső értéke
+ * (Manőver Alap + módosítók + k10) a Nehézséget sem éri el, a célszám semmiképp nem teljesül.
+ */
+export function ellenpróbaBiztosKudarc(dobásVégső: number, nehézség: number): boolean {
+  return dobásVégső < nehézség;
+}
+
+/**
  * A rontott Végrehajtás (V) fázis VÉ-csökkentést okoz, mint egy sima sikertelen támadás
  * (md/066_04 „Sikertelen Manőver és VÉ csökkentés"). CSAK aktív módban és KIZÁRÓLAG a V fázisra:
  * a Megakasztás (M) rontása kifejezetten NEM okoz VÉ-csökkentést (md/066_04 🔆). A `vanVDobás` azt

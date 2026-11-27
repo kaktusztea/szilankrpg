@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseFázisok, fázisSikeres, rontottVFázis } from '../../engine/harc/manover-dobas-calc';
+import { parseFázisok, fázisSikeres, rontottVFázis, ellenpróbaBiztosKudarc } from '../../engine/harc/manover-dobas-calc';
 import type { FázisEredmény } from '../../engine/harc/manover-dobas-calc';
 
 describe('parseFázisok', () => {
@@ -61,5 +61,17 @@ describe('rontottVFázis (sikertelen V → VÉ csökkentés, md/066_04)', () => 
   it('rontott Megakasztás (M nem) NEM okoz VÉ-csökkentést, ha V nem fut (md/066_04 🔆)', () => {
     // M-only fázissor: a V hiányzik, így a rontott M-re sem jár VÉ-csökkentés.
     expect(rontottVFázis(P('M'), E('nem'), 'aktív', true)).toBe(false);
+  });
+});
+
+describe('ellenpróbaBiztosKudarc', () => {
+  it('Nehézség - 1 → biztos kudarc (ellen MA 0 mellett sem éri el)', () => {
+    expect(ellenpróbaBiztosKudarc(11, 12)).toBe(true);
+  });
+  it('pont a Nehézség → nem biztos kudarc (ellen MA 0 esetén elérheti)', () => {
+    expect(ellenpróbaBiztosKudarc(12, 12)).toBe(false);
+  });
+  it('Nehézség fölött → nem biztos kudarc', () => {
+    expect(ellenpróbaBiztosKudarc(15, 12)).toBe(false);
   });
 });
