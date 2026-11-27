@@ -284,21 +284,22 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       // a Manőver Nehézsége + ellenfél Manőver Alapja. Pozitív szitMod könnyít (nagyobb dobás).
       const dobásÉrték = manőverAlap + költöttMP + belharcBónusz + szitModÖsszeg;
       const célszám = manőver.nehézség;
+      const cél = <><strong className="manover-celszam-ertek">{célszám}</strong> + ellen MA</>;
       return (
         <div className="manover-fazis-info">
-          {renderSzitGomb()}
-          {renderMpGomb()}
-          {!szitLehetetlen && !szitImmunis && (
+          {/* After the roll the situational modifiers and MP are locked (they would change the result) */}
+          {!eDobás && renderSzitGomb()}
+          {!eDobás && renderMpGomb()}
+          {!szitLehetetlen && !szitImmunis && !eDobás && (
             <div className="manover-ep-vs-row">
               <span className="manover-ep-side"><strong>{dobásÉrték}</strong> + {ellenpróbaHátrány2 ? <span className="manover-hatrany2">k{ELLENPRÓBA_KOCKA} (Hátrány{ELLENPRÓBA_NORMÁL_HIÁNY_EH})</span> : `k${ELLENPRÓBA_KOCKA}`}</span>
               <span className="manover-ep-vs">vs</span>
               <span className="manover-ep-side">
-                <strong className="manover-celszam-ertek">{célszám}</strong>
-                {' '}+ ellen MA
+                {cél}
               </span>
             </div>
           )}
-          {!szitLehetetlen && !szitImmunis && <ManoverDobasSor alap={dobásÉrték} alapLabel="Dobás" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány2 ? ELLENPRÓBA_NORMÁL_HIÁNY_EH : 0} dobás={eDobás} setDobás={setEDobás} />}
+          {!szitLehetetlen && !szitImmunis && <ManoverDobasSor alap={dobásÉrték} alapLabel="Dobás" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány2 ? ELLENPRÓBA_NORMÁL_HIÁNY_EH : 0} dobás={eDobás} setDobás={setEDobás} cél={cél} />}
         </div>
       );
     } else {

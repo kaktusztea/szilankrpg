@@ -467,6 +467,7 @@
   color: inherit;
 }
 /* The number itself is the re-roll tap target (the chevron beside it toggles the breakdown) */
+.manover-dobas-cel { font-size: 15px; margin-top: -4px; }
 .manover-dobas-szam { background: none; border: none; padding: 0; color: inherit; font: inherit; cursor: pointer; }
 
 /* =============================================

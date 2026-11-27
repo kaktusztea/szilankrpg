@@ -21,9 +21,11 @@ export type Végeredmény = 'folyamatban' | 'sikeres' | 'sikertelen';
 const előjeles = (n: number) => `${n > 0 ? '+' : ''}${n}`;
 
 /** Dobó-sor (Dobás gomb + kézi 🎲), vagy az eredmény „alap + kocka = összeg" alakban (katt = újradobás). */
-export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDobás }: {
+export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDobás, cél }: {
   alap: number; alapLabel: string; kocka: number; szint: number;
   dobás: ProbaDobás | null; setDobás: (d: ProbaDobás | null) => void;
+  /** Optional target shown under the rolled value ("vs <cél>"). */
+  cél?: ReactNode;
 }) {
   const [bontásNyitva, setBontásNyitva] = useState(false); // alap + kocka breakdown, collapsed by default
   if (!dobás) {
@@ -40,6 +42,7 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
         <button type="button" className="manover-dobas-szam" onClick={() => { setBontásNyitva(false); setDobás(null); }} aria-label="Dobás törlése, újradobás">{alap + dobás.eredmény}</button>
         <BontasNyil nyitva={bontásNyitva} onVált={() => setBontásNyitva(v => !v)} label="Dobás bontása" />
       </div>
+      {cél && <div className="manover-dobas-cel"><span className="manover-ep-vs">vs</span> {cél}</div>}
       {bontásNyitva && <span className="ke-dobas-detail">
         {alapLabel} ({alap}) + k{kocka}{kockaBontás(dobás)}
       </span>}
