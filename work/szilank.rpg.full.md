@@ -3228,7 +3228,7 @@ Példa:
 
 ## `2.` Felvehető Érzék-Fortélyok maximuma
 
-Amennyiben egy játékos választ egy Faj Hátteret a karakterének, akkor az annál felsorolt lehetséges [Érzék-Fortélyok](043_altalanos_fortelyok.md#érzék-fortélyok) közül **minimum 1 fokot** köteles `KP`-ból felvenni hozzá.
+Amennyiben egy játékos választ egy Faj Hátteret a karakterének, és annál szerepel legalább egy felvehető Érzék-Fortély, akkor az annál felsorolt lehetséges [Érzék-Fortélyok](043_altalanos_fortelyok.md#érzék-fortélyok) közül **minimum 1 fokot** köteles `KP`-ból felvenni hozzá.
 
 Tehát például ha spórolna a `KP` javadalmazáson, akkor alkothat egy olyan **ork** karaktert, akinek mindösszesen "**Infralátás - 1.fok**" Érzék-Fortélya van. Nincs kiemelkedően jó szaglása, vagy hallása és a föld alatt sem kap bónuszokat. Ezt megteheti, mivel egy faj nem minden egyede egyforma.
 
@@ -3308,8 +3308,8 @@ A Taba el-Ibara holdkék szemű ősfaja.
 
 ### ⚜️Felvehető Érzék-Fortélyok maximuma
 
-- [Ultralátás](../fortelyok.erzekek/emberentuli_szaglas.md) - 2. fok (átlagos amund)
-- [Ultralátás](../fortelyok.erzekek/emberentuli_szaglas.md) - 3. fok (csak a papi kaszt)
+- [Ultralátás](../fortelyok.erzekek/ultralatas.md) - 2. fok (átlagos amund)
+- [Ultralátás](../fortelyok.erzekek/ultralatas.md) - 3. fok (csak a papi kaszt)
 
 ### ⚜️Faj misztérium
 
@@ -3853,7 +3853,7 @@ bevezető ⭕
 
 ### ⚜️Érzék-Fortélyok maximuma
 
-- [Ultralátás](../fortelyok.erzekek/emberentuli_szaglas.md) - `3.fok`
+- [Ultralátás](../fortelyok.erzekek/ultralatas.md) - `3.fok`
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - `2.fok`
 - [Irányérzék](../fortelyok.erzekek/iranyerzek.md) - `1.fok`
 
@@ -4296,7 +4296,7 @@ bevezető ⭕
 
 ### ⚜️Érzék-Fortélyok maximuma
 
-- [Ultralátás](../fortelyok.erzekek/emberentuli_szaglas.md) - 1. fok
+- [Ultralátás](../fortelyok.erzekek/ultralatas.md) - 1. fok
 
 ### ⚜️Faj misztérium
 
@@ -12823,17 +12823,22 @@ Amennyiben nincs olyan fortély, amely az adott próba esetén szükséges lenne
 
 ### 🟨 `2.1` Normál kiterjesztés
 
-Ebben a kapcsolatban a fortély megléte nem követelmény, de hiánya esetén hátrány dobással próbálkozhat a játékos, mivel a törzstudás (a képzettség maga) nem nyújt az adott területen teljes körű ismeretet.
+Ebben a kapcsolatban a fortély megléte nem követelmény, de hiánya esetén levonással dobhat a játékos, mivel a törzstudás (a képzettség maga) nem nyújt az adott területen teljes körű ismeretet.
 
 ```
 Fortély foka és
  hatása képzettségpróbára
 
-0.fok: Hátrány-2 a dobásra
-1.fok: 0 (sima dobás)
-2.fok: Előny+1 a dobásra
-3.fok: Előny+2 a dobásra
+0.fok: -3
+1.fok: +0
+2.fok: +2
 ```
+
+`0.fok:` ha nincs meg a fortély, akkor `-3` módosítóval dobjuk a képzettségpróbát
+
+`1.fok:` ekkor simán, alapértékkel dobjuk a képzettségpróbát
+
+`2+.fok`: ha több fokú a fortély, akkor minden további foka `+2` bónuszt ad a próbára
 
 ### 🟥 `2.2` Erős kiterjesztés
 
@@ -12843,11 +12848,16 @@ Ekkor a kapcsolat olyan erős a két ismeret között, hogy a fortély követelm
 Fortély foka és
  hatása képzettségpróbára
 
-0.fok: kudarc, nem is dobhatsz
-1.fok: 0 (sima dobás)
-2.fok: Előny+1
-3.fok: Előny+2
+0.fok: letilt
+1.fok: +0
+2.fok: +2
 ```
+
+`0.fok:` ha nincs meg a fortély, akkor az adott próba nem is dobható, automatikusan sikertelen
+
+`1.fok`: ekkor simán, alapértékkel dobjuk a képzettségpróbát
+
+`2+.fok`: ha több fokú a fortély, akkor minden további foka `+2` bónuszt ad a próbára
 
 <br />
 
@@ -12859,7 +12869,7 @@ Van, hogy egy képzettségpróba esetén nem csak egy, hanem több fortély is s
 
 #### • Több Normál kiterjesztés hiányzik
 
-A Normál kiterjesztések `Hátrány-2` büntetése **NEM** halmozódik. Ha több (Normál kiterjesztésű) fortély kapcsolódik a képzettségpróbához és egyik sincs meg, a büntetés akkor is `Hátrány-2` marad.
+A Normál kiterjesztések `-3` büntetései **NEM** additívak. Ha több (Normál kiterjesztésű) fortély kapcsolódik a képzettségpróbához és egyik sincs meg, a büntetés akkor is összesen `-3`-ban maximálódik.
 
 #### • Legalább 1 Erős kiterjesztés hiányzik
 
@@ -12869,14 +12879,14 @@ Ha több fortély terjeszt ki egy képzettséget a próba során és **legalább
 
 ### 🔆 Speciális: Több fortély bónusza
 
-Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges Előny bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokát. Ilyenkor a magasabb bónusza az irányadó.
+Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokát. Ilyenkor a magasabb bónusza az irányadó.
 
 Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjeszt
 
 - `A` fortély - `2.fok`
-- `B` fortély - `3.fok`
+- `B` fortély - `1.fok` (de van `2.foka` is)
 
-... akkor csak `Előny+1` jár a képzettségpróbára, mivel a `2.fok` (alacsonyabb) bónusza határozza meg az Előny fokozatát.
+... akkor nem jár bónusz (`+0`), mivel a `B` fortély `1.foka` (alacsonyabb) határozza meg a plusz értéket. Ha viszont a `B` fortélynak nincs `1`-nél magasabb foka (kimaxolt), akkor az `A` fortély `+2` bónusza érvényes (lásd lent a Horgas Apó példát).
 
 <br />
 
@@ -12892,15 +12902,15 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 
 \- JK: "Nincs. A Lexikum képzettségem amúgy `8.szintű`."
 
-\- KM: "A Heraldika fortély **Normál kiterjesztésben** van a Lexikummal, így - bár nincs meg a Heraldika Szabad Fortélyod - így is dobhatsz képzettségpróbát, de `Hátrány-2`-vel. A próbánál az **Emlékezet** Tulajdonságodat használd."
+\- KM: "A Heraldika fortély **Normál kiterjesztésben** van a Lexikummal, így - bár nincs meg a Heraldika Szabad Fortélyod - így is dobhatsz képzettségpróbát, de csak `-3`-mal. A próbánál az **Emlékezet** Tulajdonságodat használd."
 
-\- JK: "Jó, akkor `+2` (Emlékezet) + `8` (Lexikum) + `k10` (`Hátrány-2`)  vs. `12`"
+\- JK: "Jó, akkor `+2` (Emlékezet) + `8-3` (Lexikum -3) + `k10`  vs. `12`"
 
 ```
-10 + k10 (Hátrány-2)  vs  12
+7 + k10  vs  12
 ```
 
-  → Tehát `k10`-zel háromszor dobok és a legkisebb számít.
+  → Tehát ha legalább `5`-öt dobok `k10`-en, akkor sikerül a próba.
 
 <br />
 
@@ -12916,14 +12926,14 @@ Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_
 
 \- JK: "Természetjárás: `6.szint`, Érzékenység: `+1`"
 
-\- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Fortély** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de `Hátrány-2`-vel."
+\- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Fortély** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de csak `-3` büntetéssel."
 
 - [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
 - [Tájtípus: erdős](fortelyok.szabad/tajtipus_erdos.md)
 
 \- JK: "Nyomolvasás: `2.fok`, Tájtípus: erdős: `1.fok`, kimaxoltam."
 
-\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `Előny+1` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`." A "Tájtípus: erdős" nem korlátozza le a Nyomolvasás/eltűntetés bónuszát, mert nincs magasabb foka, mint `1`.\
+\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`." A "Tájtípus: erdős" nem korlátozza le a Nyomolvasás/eltűntetés bónuszát, mert nincs magasabb foka, mint `1`.\
 Összetett képzettségpróba lesz, mert hosszan kell követni a nyomokat. Két próbát kell dobnod:
 
 ```
@@ -12934,10 +12944,9 @@ Nehéz: 12
 \- JK: "OK, az **Átlagos (9)** így már dobás nélkül is megvan. A **Nehéz (12)**-re dobok... megvan!
 
 ```
-Alap: 6 + 1 = 7
+Alap: 6 + 1 + 2(bónusz) = 9
 
-7 + k10 (Előny+1)  vs  12
-→ k10-zel kétszer dobok, nagyobb számít
+9 + k10  vs  12
 ```
 
 \- KM: "Rendben, meglátod a következő csizmanyomot, aztán pár letört ágat, némi szőrcsomóval, ami beleakadt. Észak felé, a hegyek irányába haladtok..."
@@ -14116,7 +14125,7 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 🌟 **Hatás**:
 
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+4`
-- A kapcsolódó képzettségek kiterjesztés követelményeként már `Előny+1` bónuszt is ad.
+- Kiterjesztett képzettségek esetén már `+2` bónuszt is ad
 
 ---
 
@@ -31079,7 +31088,7 @@ Példa: `Hátrány-1` + `Hátrány-2` + `Előny+2` → `Hátrány-1`.
 
 🔆 Az **Automatikus kudarc** minden Előnyt felülír.
 
-🔆 Az Előny/Hátrány modell **Státuszok** és **Képzettség-kiterjesztések** esetén alkalmazandó. Ezzel szemben a **Fortélyok** bónuszai és **Harci taktikák** esetén konstans, statikus módosítókat alkalmazunk.
+🔆 Az Előny/Hátrány modell **Státuszok** esetén alkalmazandó. Ezzel szemben a **Fortélyok** bónuszai, a **Képzettség-kiterjesztések** és a **Harci taktikák** esetén konstans, statikus módosítókat alkalmazunk.
 
 ### 🔥 Előny+1
 
@@ -31120,7 +31129,7 @@ Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni -
 
 ### 🔥 Automatikus kudarc
 
-- KÉ dobásra → utolsónak kezdeményezhetsz
+- KÉ dobás → utolsónak cselekedhetsz a körben
 - Tulajdonságpróbára
 - Képzettségpróbára
 
@@ -31560,6 +31569,7 @@ Varázslás képesség elvesztése
 Harcképtelenség
 
 Automatikus kudarc
+  KÉ dobás
   Képzettségpróbák
   Tulajdonságpróbák
 
@@ -31575,10 +31585,28 @@ Varázslás képesség elvesztése
 
 ### ✴️ Eszmélet (4) Kóma
 
-Mint az Ájulásnál, továbbá:
+```
+Harcképtelenség
 
-- Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy.
-- Az Antyss a valóságod. Ha nincs ⭕Antyssjárás⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
+Automatikus kudarc
+  KÉ dobás
+  Képzettségpróbák
+  Tulajdonságpróbák
+
+Beszéd - némult
+Mozgás - képtelen
+
+Pszí használat elvesztése
+Varázslás képesség elvesztése
+
+Automatikusan Antysson ragadsz,
+  nem is feltétlenül vagy vele
+  tisztában, hogy ott vagy.
+
+Az Antyss a valóságod. Ha nincs
+  ⭕Antyssjárás⭕ képzettséged, akkor
+  haladni, cselekedni is alig tudsz.
+```
 
 <br />
 
@@ -32075,6 +32103,7 @@ Nagyjából `10-20` percig tart, KM dönt. Az aktuális harci jelenetben nem ké
 
 ```
 Automatikus kudarc
+  KÉ dobás
   Tulajdonságpróbákra
   Képzettségpróbákra
 
