@@ -3,8 +3,9 @@
 🟨 Normál kiterjesztés\
 🟥 Erős kiterjesztés
 
+### 🔆 Tudományos fortélyok
+
 ```
-🔆 TUDOMÁNYOS
 Élettan(1)    🟥 Kirurgia, Lexikum, Nyomozás
 Építészet(2)  🟨 Művészetismeret, Nyomozás
               🟥 Kvantikum
@@ -15,8 +16,11 @@ Mechanika(2)  🟨 Kézművesség
   🟨 Értékbecslés, Lexikum, Művészetismeret
   🟥 Képzőművészet
 Történelemismeret(2) 🟥 Hadászat, Lexikum
+```
 
-🔆 ALVILÁGI ÉS FIZIKAI
+### 🔆 Alvilági és fizikai fortélyok
+
+```
 Csábítás(1)   🟨 Befolyásolás, Emberismeret
 Hamisítás(1)  🟨 Értékbecslés, Képzőművészet,
                  Kézművesség, Művészetismeret
@@ -24,11 +28,16 @@ Hazudozás(1)  🟨 Befolyásolás, Emberismeret,
                  Nyomozás
 Keresés/Rejtés(2) 🟨 Észlelés, Természetjárás
 Kézműves(2)   🟥 Kézművesség
-  Fegyverkovács, Páncélkovács
+       (Fegyverkovács, Páncélkovács)
 Megfélemlítés(1) 🟨 Befolyásolás, Emberismeret
 Nyomolvasás/eltűntetés(2) 🟨 Természetjárás
 
-🔆 SZABAD
+```
+
+### 🔆 Szabad fortélyok
+
+```
+
 Alkudozás     🟨 Befolyásolás, Emberismeret
 Asztrológia   🟨 Kvantikum
 Bűvészet      🟨 Befolyásolás, Lopás
@@ -48,15 +57,19 @@ Irodalom      🟨 Művészetismeret
 Jogismeret    🟥 Lexikum, Nyomozás
 Kalligráfia   🟨 Művészetismeret
               🟥 Képzőművészet
+
 Kézműves      🟨 Kézművesség
-  Ács, Asztalos, Cipész, Cserző, Cukrász,
-  Kádár, Kőműves, Kötélgyártó, Molnár, Pék,
+  Ács, Asztalos, Cipész, Cserző,
+  Cukrász, Kádár, Kőműves,
+  Kötélgyártó, Molnár, Pék,
   Szabó, Szakács, Szűcs
+
 Kézműves      🟥 Kézművesség
-  Ékszerész, Kovács, Lakatos, Pénzverő
+  (Ékszerész, Kovács, Lakatos, Pénzverő)
+
 Kihallgatás   🟨 Emberismeret, Nyomozás
 Különleges faj boncolása
-         🟨 Kirurgia, Vajákosság
+     🟨 Kirurgia, Vajákosság
 Pénzügyek     🟨 Kvantikum 🟥 Nyomozás
 Rejtjelfejtő  🟨 Kvantikum, Nyomozás
 Stratégia     🟨 Hadászat, Lexikum
@@ -66,21 +79,31 @@ Színjátszás   🟨 Művészetismeret
 Szobrászat    🟨 Értékbecslés, Művészetismeret
               🟥 Képzőművészet
 Szónoklás     🟨 Befolyásolás, Emberismeret
-Tájtípus 🟨 Alkímia, Lexikum, Lopakodás/rejtőzés,
-            Természetjárás, Vajákosság
-  barlangi, dzsungel, erdős, jégmezők,
-  magaslati, mocsaras, puszta, sivatagi
+
+Tájtípus
+     🟨 Alkímia, Lexikum, Lopakodás/rejtőzés,
+        Természetjárás, Vajákosság
+  (barlangi, dzsungel, erdős, jégmezők,
+   magaslati, mocsaras, puszta, sivatagi)
+
 Tájtípus: tengerek
      🟨 Lexikum, Természetjárás, Vajákosság
+
 Tánc 🟨 Művészetismeret 🟥 Előadóművészet
 Tánc: speciális/belső stílus
      🟥 Előadóművészet, Etikett, Művészetismeret
-Térképészet 🟨 Hajózás, Kvantikum, Nyomozás
+
+Térképészet
+     🟨 Hajózás, Kvantikum, Nyomozás
 Titkos szervezet
-   🟨 Nyomozás 🟥 Etikett, Városi jártasság
+     🟨 Nyomozás 🟥 Etikett, Városi jártasság
+
 Vadállat idomítása  🟥 Befolyásolás
-Zenélés 🟨 Művészetismeret 🟥 Előadóművészet
-  fúvós, húros, ütős hangszerek
+
+Zenélés
+     🟨 Művészetismeret 🟥 Előadóművészet
+     (fúvós, húros, ütős hangszerek)
+
 Zeneszerző    🟥 Előadóművészet
 Zsonglőrködés 🟥 Előadóművészet
 ```
