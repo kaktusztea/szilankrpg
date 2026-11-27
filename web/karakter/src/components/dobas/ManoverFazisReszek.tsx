@@ -12,11 +12,11 @@ type Fázis = 'M' | 'V' | 'E';
  * - active mode, V/E: TÉ (your own attack / roll value matters).
  * The TÉ is shown split (raw weapon TÉ + the Végrehajtás bonus), so it does not seem to contradict the V phase TÉ.
  */
-export function ManoverFejlecChip({ mód, aktFázis, fázisok, aktívTÉ, aktívVÉ, téMódosító }: {
-  mód: Mód; aktFázis: Fázis | null; fázisok: Fázis[];
+export function ManoverFejlecChip({ mód, aktFázis, fázisok, lezárt, aktívTÉ, aktívVÉ, téMódosító }: {
+  mód: Mód; aktFázis: Fázis | null; fázisok: Fázis[]; lezárt: boolean;
   aktívTÉ: number | null; aktívVÉ: number | null; téMódosító: number;
 }) {
-  if (fejlécChip(mód, aktFázis, fázisok) === 'VÉ') {
+  if (fejlécChip(mód, aktFázis, fázisok, lezárt) === 'VÉ') {
     return aktívVÉ != null ? <span className="manover-dobas-ve-chip">VÉ: <strong>{aktívVÉ}</strong></span> : null;
   }
   return aktívTÉ != null ? (

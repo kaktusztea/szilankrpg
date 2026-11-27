@@ -6,6 +6,10 @@ import {
 import type { ManoverKövetelmény } from '../../engine/data-types';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import { loadGameDataSync } from '../../__tests__/load-gamedata';
+
+// Real skill / fortély names for the requirement labels
+const NEVEK = loadGameDataSync();
 
 const data = {
   konstansok: { fegyver_kategória_harcmodor: { kard: 'Kardvívás' } },
@@ -131,13 +135,15 @@ describe('követelményTeljesül - fegyver-alapú gépi típusok', () => {
 
 describe('követelményCimke', () => {
   it('fegyver_kategória → "<kulcs> harcmodor"', () => {
-    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_kategória', érték: 'kardvívó' })).toBe('kardvívó harcmodor');
+    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_kategória', érték: 'kardvívó' }, NEVEK)).toBe('kardvívó harcmodor');
   });
   it('fegyver_sebzéstípus → "<Név>fegyver"', () => {
-    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' })).toBe('Vágófegyver');
-    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'Z' })).toBe('Zúzófegyver');
+    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' }, NEVEK)).toBe('Vágófegyver');
+    expect(követelményCimke({ erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'Z' }, NEVEK)).toBe('Zúzófegyver');
   });
-  it('képzettség → "<Név> <érték>.szint"', () => {
-    expect(követelményCimke({ erősség: 'normál', típus: 'képzettség', név: 'Kardvívás', érték: 6 })).toBe('Kardvívás 6.szint');
+  it('képzettség / fortély → displayed name (not the id) + szint / fok', () => {
+    expect(követelményCimke({ erősség: 'normál', típus: 'képzettség', név: 'harcmodor/kardvívás', érték: 6 }, NEVEK)).toBe('Kardvívás 6.szint');
+    expect(követelményCimke({ erősség: 'normál', típus: 'képzettség', név: 'harcmodor', érték: 5 }, NEVEK)).toBe('Harcmodor 5.szint');
+    expect(követelményCimke({ erősség: 'normál', típus: 'fortély', név: 'lovas_harc', érték: 2 }, NEVEK)).toBe('Lovas harc 2.fok');
   });
 });

@@ -17,6 +17,11 @@ describe('fejlécChip (fázis-tudatos VÉ/TÉ a manőver-popup fejlécében)', (
     expect(fejlécChip('aktív', 'M', ['M', 'V', 'E'])).toBe('VÉ');
   });
 
+  it('aktív mód, lezárt manőver (eredmény): TÉ', () => {
+    expect(fejlécChip('aktív', null, ['M', 'V', 'E'], true)).toBe('TÉ');
+    expect(fejlécChip('passzív', null, ['M', 'V', 'E'], true)).toBe('VÉ');
+  });
+
   it('aktív mód, nincs aktív fázis: a manőver M-tartalma dönt', () => {
     expect(fejlécChip('aktív', null, ['M', 'V', 'E'])).toBe('VÉ');
     expect(fejlécChip('aktív', null, ['V', 'E'])).toBe('TÉ');

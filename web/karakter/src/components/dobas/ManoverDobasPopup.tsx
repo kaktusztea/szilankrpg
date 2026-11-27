@@ -273,7 +273,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           )}
           {!eDobás && kapszulák}
           {dobható && (
-            <ManoverDobasSor alap={ellenpróbaAlap} alapLabel="Dobás" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány ?? 0}
+            <ManoverDobasSor alap={ellenpróbaAlap} alapLabel="Alap" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány ?? 0}
               dobás={eDobás} setDobás={onEDobás}
               cél={<><strong className="manover-celszam-ertek">{manőver.nehézség}</strong> + ellen MA</>} />
           )}
@@ -322,7 +322,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         <div className="manover-dobas-header">
           <span className="manover-dobas-title">{manőver.név} ({fázisok.join(' ')})</span>
           <ManoverFejlecChip mód={mód} aktFázis={aktívFázisIdx >= 0 ? fázisok[aktívFázisIdx] : null} fázisok={fázisok}
-            aktívTÉ={aktívTÉ} aktívVÉ={aktívVÉ} téMódosító={manőver.végrehajtás_té_módosító} />
+            lezárt={végeredmény !== 'folyamatban'} aktívTÉ={aktívTÉ} aktívVÉ={aktívVÉ} téMódosító={manőver.végrehajtás_té_módosító} />
           <span className="manover-dobas-mod-label">{mód === 'aktív' ? 'Aktív' : 'Passzív'}</span>
         </div>
 
@@ -343,7 +343,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
         )}
 
         {vanKövetelmény && (
-          <ManoverKovetelmenyLepes követelmények={követelmények} állapot={kövÁllapot}
+          <ManoverKovetelmenyLepes követelmények={követelmények} állapot={kövÁllapot} data={data}
             döntés={követelményDöntés} setDöntés={setKövetelményDöntés} kész={követelményKész} />
         )}
 

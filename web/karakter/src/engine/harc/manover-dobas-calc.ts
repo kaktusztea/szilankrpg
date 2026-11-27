@@ -2,7 +2,7 @@
 // Kiemelve a ManoverDobasPopup.tsx-ből (2026-09-11 refaktor): a komponens csak a
 // dobás-folyamat state-jét és JSX-ét tartja, minden számítás/feltétel ide kerül.
 // Ezekre a fn-ekre írt tesztek: Manover{Kovetelmeny,TeBontas,FazisFelirat,EredmenyHatas}.test.ts
-import { HARCMODOR_ID, képzettségSzint, fortélyFok } from '../azonosito';
+import { HARCMODOR_ID, képzettségSzint, fortélyFok, képzettségNév, fortélyNév } from '../azonosito';
 import type { Karakter, Session } from '../types';
 import type { GameData } from '../data-loader';
 import type { ModositoTabla, ManoverKövetelmény } from '../data-types';
@@ -359,8 +359,9 @@ export function könnyítettFázisok(
  * - aktív mód, V/E fázis → 'TÉ' (a saját támadó/próba értéked a releváns).
  * Ha nincs aktív fázis (vég/követelmény-lépés), a manőver M-tartalma dönt.
  */
-export function fejlécChip(mód: Mód, aktFázis: 'M' | 'V' | 'E' | null, fázisok: ('M' | 'V' | 'E')[]): 'VÉ' | 'TÉ' {
+export function fejlécChip(mód: Mód, aktFázis: 'M' | 'V' | 'E' | null, fázisok: ('M' | 'V' | 'E')[], lezárt = false): 'VÉ' | 'TÉ' {
   if (mód !== 'aktív') return 'VÉ';
+  if (lezárt) return 'TÉ'; // closed manőver (result shown): the last chip is the TÉ
   if (aktFázis === 'M') return 'VÉ';
   if (aktFázis === null && fázisok.includes('M')) return 'VÉ';
   return 'TÉ';
@@ -451,8 +452,8 @@ export function eredményHatás(hatás: string[]): string[] {
   return hatás.filter(s => !/^\s*(sikertelen|kudarc|feltétel)\b/i.test(s));
 }
 
-/** Egy követelménysor emberi olvasású címkéje (minden típusra). */
-export function követelményCimke(köv: ManoverKövetelmény): string {
+/** Egy követelménysor emberi olvasású címkéje (minden típusra). Képzettség / fortély: a megjelenített név (nem az id). */
+export function követelményCimke(köv: ManoverKövetelmény, data: Pick<GameData, 'kepzettsegDefs' | 'fortelySummaries'>): string {
   switch (köv.típus) {
     case 'egyéb': return köv.leírás ?? '';
     case 'fegyver_kategória': return `${köv.érték} harcmodor`;
@@ -460,8 +461,10 @@ export function követelményCimke(köv: ManoverKövetelmény): string {
       const nevek: Record<string, string> = { V: 'Vágó', S: 'Szúró', Z: 'Zúzó' };
       return `${nevek[String(köv.érték).toUpperCase()] ?? köv.érték}fegyver`;
     }
-    default: // képzettség / fortély
-      return `${köv.név}${köv.érték != null ? ` ${köv.érték}${köv.típus === 'fortély' ? '.fok' : '.szint'}` : ''}`;
+    default: { // képzettség / fortély
+      const név = köv.típus === 'fortély' ? fortélyNév(köv.név ?? '', data) : képzettségNév(köv.név ?? '', data);
+      return `${név}${köv.érték != null ? ` ${köv.érték}${köv.típus === 'fortély' ? '.fok' : '.szint'}` : ''}`;
+    }
   }
 }
 

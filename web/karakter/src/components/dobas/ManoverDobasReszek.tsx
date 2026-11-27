@@ -50,15 +50,17 @@ export function ManoverDobasSor({ alap, alapLabel, kocka, szint, dobás, setDob�
 }
 
 /** 0. lépés: követelmények listája + KM döntés (Teljesül mind / Normál hiány / Erős hiány); döntés után accordion. */
-export function ManoverKovetelmenyLepes({ követelmények, állapot, döntés, setDöntés, kész }: {
+export function ManoverKovetelmenyLepes({ követelmények, állapot, döntés, setDöntés, kész, data }: {
   követelmények: NonNullable<ManőverDef['követelmények']>;
+  data: GameData;
   /** Evaluated once by the popup (`követelményÁllapot`): per-item results, missing flags, button visibility. */
   állapot: KövetelményÁllapot;
   döntés: KövetelményDöntés; setDöntés: (d: KövetelményDöntés) => void; kész: boolean;
 }) {
   const { teljesülések, erősHiány, normálHiány, vanNormál, vanErős } = állapot;
   // Once decided, the step collapses into an accordion (header: label + chevron + outcome mark).
-  const [nyitva, setNyitva] = useState(false);
+  // Automatic failure (a strong requirement is missing): open, so the reason is visible at once.
+  const [nyitva, setNyitva] = useState(erősHiány);
   const lista = (
     <div className="manover-kov-lista">
       {követelmények.map((köv, i) => {
@@ -67,7 +69,7 @@ export function ManoverKovetelmenyLepes({ követelmények, állapot, döntés, s
         return (
           <div key={i} className="manover-kov-sor">
             <span className={`manover-kov-erosseg manover-kov-${köv.erősség}`}>{köv.erősség === 'erős' ? '🟥' : '🟨'}</span>
-            <span className="manover-kov-cimke">{követelményCimke(köv)}</span>
+            <span className="manover-kov-cimke">{követelményCimke(köv, data)}</span>
             {jelölés === '✓' && <span className="manover-fazis-ok"><Ikon név="pipa" /></span>}
             {jelölés === '✗' && <span className="manover-fazis-fail"><Ikon név="kudarc" /></span>}
             {jelölés === '?' && <span className="manover-kov-info">?</span>}
