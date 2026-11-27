@@ -15,21 +15,22 @@ Mechanika(2)  🟨 Kézművesség
 Ősi kultúrkör(1)
   🟨 Értékbecslés, Lexikum, Művészetismeret
   🟥 Képzőművészet
-Történelemismeret(2) 🟥 Hadászat, Lexikum
+Történelemismeret(2)
+  🟥 Hadászat, Lexikum
 ```
 
 ### 🔆 Alvilági és fizikai fortélyok
 
 ```
-Csábítás(1)   🟨 Befolyásolás, Emberismeret
-Hamisítás(1)  🟨 Értékbecslés, Képzőművészet,
-                 Kézművesség, Művészetismeret
-Hazudozás(1)  🟨 Befolyásolás, Emberismeret,
-                 Nyomozás
+Csábítás(1)  🟨 Befolyásolás, Emberismeret
+Hamisítás(1) 🟨 Értékbecslés, Képzőművészet,
+                Kézművesség, Művészetismeret
+Hazudozás(1) 🟨 Befolyásolás, Emberismeret,
+                Nyomozás
 Keresés/Rejtés(2) 🟨 Észlelés, Természetjárás
-Kézműves(2)   🟥 Kézművesség
+Kézműves(2)       🟥 Kézművesség
        (Fegyverkovács, Páncélkovács)
-Megfélemlítés(1) 🟨 Befolyásolás, Emberismeret
+Megfélemlítés(1)  🟨 Befolyásolás, Emberismeret
 Nyomolvasás/eltűntetés(2) 🟨 Természetjárás
 
 ```
@@ -38,47 +39,47 @@ Nyomolvasás/eltűntetés(2) 🟨 Természetjárás
 
 ```
 
-Alkudozás     🟨 Befolyásolás, Emberismeret
-Asztrológia   🟨 Kvantikum
-Bűvészet      🟨 Befolyásolás, Lopás
-              🟥 Előadóművészet
-Éneklés       🟨 Művészetismeret
-              🟥 Előadóművészet
-Festészet     🟨 Értékbecslés, Művészetismeret
-              🟥 Képzőművészet
-Gazdálkodás   🟨 Kvantikum
-Hadtáp        🟨 Hadászat
-Hátas         🟨 Léglovaglás, Lovaglás
+Alkudozás    🟨 Befolyásolás, Emberismeret
+Asztrológia  🟨 Kvantikum
+Bűvészet     🟨 Befolyásolás, Lopás
+             🟥 Előadóművészet
+Éneklés      🟨 Művészetismeret
+             🟥 Előadóművészet
+Festészet    🟨 Értékbecslés, Művészetismeret
+             🟥 Képzőművészet
+Gazdálkodás  🟨 Kvantikum
+Hadtáp       🟨 Hadászat
+Hátas        🟨 Léglovaglás, Lovaglás
 Háziállatok idomítása 🟥 Befolyásolás
-Heraldika     🟨 Lexikum, Nyomozás
-Hivatalnok    🟥 Lexikum
-Irodalom      🟨 Művészetismeret
-              🟥 Előadóművészet
-Jogismeret    🟥 Lexikum, Nyomozás
-Kalligráfia   🟨 Művészetismeret
-              🟥 Képzőművészet
+Heraldika    🟨 Lexikum, Nyomozás
+Hivatalnok   🟥 Lexikum
+Irodalom     🟨 Művészetismeret
+             🟥 Előadóművészet
+Jogismeret   🟥 Lexikum, Nyomozás
+Kalligráfia  🟨 Művészetismeret
+             🟥 Képzőművészet
 
-Kézműves      🟨 Kézművesség
+Kézműves     🟨 Kézművesség
   Ács, Asztalos, Cipész, Cserző,
   Cukrász, Kádár, Kőműves,
   Kötélgyártó, Molnár, Pék,
   Szabó, Szakács, Szűcs
 
-Kézműves      🟥 Kézművesség
+Kézműves     🟥 Kézművesség
   (Ékszerész, Kovács, Lakatos, Pénzverő)
 
-Kihallgatás   🟨 Emberismeret, Nyomozás
+Kihallgatás  🟨 Emberismeret, Nyomozás
 Különleges faj boncolása
      🟨 Kirurgia, Vajákosság
-Pénzügyek     🟨 Kvantikum 🟥 Nyomozás
-Rejtjelfejtő  🟨 Kvantikum, Nyomozás
-Stratégia     🟨 Hadászat, Lexikum
-Szertartás    🟥 Etikett
-Színjátszás   🟨 Művészetismeret
-              🟥 Előadóművészet
-Szobrászat    🟨 Értékbecslés, Művészetismeret
-              🟥 Képzőművészet
-Szónoklás     🟨 Befolyásolás, Emberismeret
+Pénzügyek    🟨 Kvantikum 🟥 Nyomozás
+Rejtjelfejtő 🟨 Kvantikum, Nyomozás
+Stratégia    🟨 Hadászat, Lexikum
+Szertartás   🟥 Etikett
+Színjátszás  🟨 Művészetismeret
+             🟥 Előadóművészet
+Szobrászat   🟨 Értékbecslés, Művészetismeret
+             🟥 Képzőművészet
+Szónoklás    🟨 Befolyásolás, Emberismeret
 
 Tájtípus
      🟨 Alkímia, Lexikum, Lopakodás/rejtőzés,
@@ -98,7 +99,7 @@ Térképészet
 Titkos szervezet
      🟨 Nyomozás 🟥 Etikett, Városi jártasság
 
-Vadállat idomítása  🟥 Befolyásolás
+Vadállat idomítása 🟥 Befolyásolás
 
 Zenélés
      🟨 Művészetismeret 🟥 Előadóművészet
