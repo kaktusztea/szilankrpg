@@ -1,12 +1,10 @@
 import { Ikon } from './common/Ikon';
 import { useState, useEffect, useMemo } from 'react';
-import type { Karakter, Session, PushUndo, SetSession } from '../engine/types';
+import type { Karakter } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { képzKulcs } from '../engine/azonosito';
 import { PopupOverlay } from './PopupOverlay';
 import { ProbaDispatcher, type ProbaCél } from './ProbaDispatcher';
-import { pushDobás } from './harc/DobasPopup';
-import { KeDobasPopup } from './harc/KeDobasPopup';
 import { buildFortélyFokok } from '../engine/proba/kepzettseg-proba-calc';
 import { getDisplayName } from './tulajdonsagok/helpers';
 import { felszerelésMax, felszerelésTerhelés, felszerelésHátrány } from '../engine/felszereles';
@@ -23,12 +21,8 @@ interface Props {
   karakter: Karakter;
   /** Csak Játék módban (és nem verzió-nézetben) látszik a FAB. */
   aktív: boolean;
-  /** A KÉ dobás popup (Harci helyzet kapszula, előzmény) a session-t írja. */
-  session: Session;
-  setSession: SetSession;
-  pushUndo: PushUndo;
-  /** TÉ / Manőver chip: switch to the target tab + open the roll popup there; CÉ: switch tab + flash the CÉ-SP-VÉ box (resolved by App). */
-  onHarciDobás: (cél: 'támadó' | 'célzó' | 'manőver') => void;
+  /** TÉ / Manőver / KÉ chip: switch to the target tab + open the roll popup there; CÉ: switch tab + flash the CÉ-SP-VÉ box (resolved by App). */
+  onHarciDobás: (cél: 'támadó' | 'célzó' | 'manőver' | 'ké') => void;
 }
 
 /**
@@ -37,11 +31,9 @@ interface Props {
  * elrejtőzik. A próba-adatokat a karakterből itt állítjuk össze (ugyanaz a logika, mint a
  * TulajdonsagokScreen - l. a memók; a próba-ablakok maguk a meglévő popup-komponensek).
  */
-export function ProbaHub({ data, karakter, aktív, session, setSession, pushUndo, onHarciDobás }: Props) {
+export function ProbaHub({ data, karakter, aktív, onHarciDobás }: Props) {
   const [hubNyitva, setHubNyitva] = useState(false);
   const [cél, setCél] = useState<ProbaCél | null>(null);
-  // KÉ dobás helyben (nem vált fület): ugyanaz a popup, mint a Harc fülön.
-  const [kéDobás, setKéDobás] = useState(false);
   // Van-e nyitott overlay a body-ban (bármilyen popup/menü) - ekkor a FAB elrejtőzik.
   const [overlayNyitva, setOverlayNyitva] = useState(false);
 
@@ -112,10 +104,7 @@ export function ProbaHub({ data, karakter, aktív, session, setSession, pushUndo
           <h3 className="proba-hub-header">Harci dobás <KockaChip kocka={20} /></h3>
           <div className="proba-hub-grid proba-hub-grid-4">
             <button className="proba-hub-chip proba-hub-chip-harc proba-hub-chip-manover" title="Manőver (Harc fül)" aria-label="Manőver" onClick={() => { setHubNyitva(false); onHarciDobás('manőver'); }}>Manőver</button>
-            <button className="proba-hub-chip proba-hub-chip-harc" onClick={() => {
-              setKéDobás(true);
-              setHubNyitva(false);
-            }}>KÉ</button>
+            <button className="proba-hub-chip proba-hub-chip-harc" title="KÉ dobás (Harc fül)" aria-label="KÉ dobás" onClick={() => { setHubNyitva(false); onHarciDobás('ké'); }}>KÉ</button>
             <button className="proba-hub-chip proba-hub-chip-harc" title="Támadó dobás (Harc fül)" aria-label="Támadó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('támadó'); }}>TÉ</button>
             <button className="proba-hub-chip proba-hub-chip-harc" title="Célzó dobás (Távharc fül)" aria-label="Célzó dobás" onClick={() => { setHubNyitva(false); onHarciDobás('célzó'); }}>CÉ</button>
           </div>
@@ -149,13 +138,6 @@ export function ProbaHub({ data, karakter, aktív, session, setSession, pushUndo
         </PopupOverlay>
       )}
 
-      {kéDobás && (
-        <KeDobasPopup data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
-          onClose={eredmény => {
-            setKéDobás(false);
-            if (eredmény != null) setSession(prev => ({ ...prev, ké_dobások: pushDobás(prev.ké_dobások ?? [], eredmény) }));
-          }} />
-      )}
 
       {cél && (
         <ProbaDispatcher

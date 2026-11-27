@@ -6,6 +6,6 @@ export interface HarcBaseProps extends SessionProps {
   onNavigate?: (tabId: string) => void;
   gameMode?: boolean;
   /** A ProbaHub 🗡️ chipje: ha 'támadó', a Harc fül mountkor megnyitja a Támadó dobás popupot (majd consume). */
-  pendingDobás?: 'támadó' | 'manőver' | null;
+  pendingDobás?: 'támadó' | 'manőver' | 'ké' | null;
   onPendingDobásConsumed?: () => void;
 }

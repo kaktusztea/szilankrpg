@@ -43,7 +43,7 @@ function App() {
   const [activeTab, setActiveTab] = useState(5);
   const [gameMode, setGameMode] = useState(false);
   // ProbaHub 🗡️/🏹: a cél-fülre váltás után a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot.
-  const [pendingDobás, setPendingDobás] = useState<'támadó' | 'célzó' | 'manőver' | null>(null);
+  const [pendingDobás, setPendingDobás] = useState<'támadó' | 'célzó' | 'manőver' | 'ké' | null>(null);
   // Duplikálás után: a Tulajdonságok screen mountkor megnyitja a Becenév + Név szerkesztőt.
   const [pendingNevek, setPendingNevek] = useState(false);
   const [viewingCheckpointId, setViewingCheckpointId] = useState<string | null>(null);
@@ -252,7 +252,6 @@ function App() {
       <TabBar tabs={TABS} activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <ProbaHub data={data} karakter={karakter} aktív={gameMode && !viewingCheckpointId}
-        session={session} setSession={setSession} pushUndo={pushUndo}
         onHarciDobás={cél => {
           const tabId = cél === 'célzó' ? 'tavharc' : 'harc';
           const idx = TABS.findIndex(t => t.id === tabId);

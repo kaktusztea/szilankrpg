@@ -45,7 +45,7 @@ interface Props {
   onToast: (msg: string, type: 'success' | 'error') => void;
   onTestReset?: () => void;
   /** ProbaHub 🗡️/🏹 → a Harc/Távharc screen mountkor megnyitja a kért dobás-popupot. */
-  pendingDobás?: 'támadó' | 'célzó' | 'manőver' | null;
+  pendingDobás?: 'támadó' | 'célzó' | 'manőver' | 'ké' | null;
   onPendingDobásConsumed?: () => void;
   /** Duplikálás után: a Tulajdonságok screen mountkor megnyitja a Becenév + Név szerkesztőt. */
   pendingNevek?: boolean;
@@ -64,7 +64,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
   switch (tab) {
     case 'aktiv': return <AktivScreen data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} />;
     case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}
-      pendingDobás={pendingDobás === 'támadó' || pendingDobás === 'manőver' ? pendingDobás : null} onPendingDobásConsumed={onPendingDobásConsumed}
+      pendingDobás={pendingDobás === 'célzó' ? null : pendingDobás} onPendingDobásConsumed={onPendingDobásConsumed}
       onNavigate={(id) => {
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
