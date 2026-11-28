@@ -130,8 +130,8 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 ![](https://progress-bar.xyz/100/?title=H%C3%A1tterek%20%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/98/?title=Harcrendszer%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/85/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/90/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
+![](https://progress-bar.xyz/95/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/95/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
 
 ## Eszközök
 
