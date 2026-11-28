@@ -20,7 +20,8 @@
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Piszkos trükk](#piszkos-trükk)
 - [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s)
-- [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
+- [Rávetődés hátulról - észrevétlenül](#rávetődés-hátulról---észrevétlenül)
+- [Rávetődés hátulról - egyszerűen](#rávetődés-hátulról---egyszerűen)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
 - [Terelés](#terel%C3%A9s)
 - [Véreztetés](#véreztetés-1)
@@ -477,8 +478,10 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés + Ügyess
 - [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
 - [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja (az ehhez tartozó Ellenpróba dobására `-2` Helyzetfüggő módosítót kap).
 
+<br />
 
 ---
+
 ### Rávetődés hátulról - egyszerűen
 
 Ha sikerült ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
