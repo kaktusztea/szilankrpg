@@ -89,6 +89,9 @@ Az egyes Manőverek adatlapján található **Helyzetfüggő módosítók** szin
 **[Belharcos](fortelyok.harci/belharcos.md) fortély** ismerete bónuszt ad a **támadó** és **védekező** számára is az **Ellenpróba** fázisnál. Ettől függetlenül Belharci szituációban mindenki, képzetlenül is megpróbálhatja mindegyik Manővert.
 
 ```
++1 / Manőver pont
+  (max 4 költhető)
+
 +2 / Belharc fortély foka (támadó)
 
 Belharc körülmények (KM):
