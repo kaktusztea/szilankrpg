@@ -18,8 +18,8 @@
 
 ## 🟥 Erős Követelmény: [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
-- mindegyik Belharcos Manőverre.
-- kivéve a **Belharcba kerülést**.
+- mindegyik Belharcos Manőverre
+- kivétel: **Belharcba kerülés**
 
 ## Ellenpróba módosítói belharcos manővereknél
 
