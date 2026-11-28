@@ -16,9 +16,10 @@
 
 ---
 
-## Követelmény: [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
+## 🟥 Erős Követelmény: [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
-🟥 **Erős követelmény** mindegyik Belharcos Manővernek - kivéve a **Belharcba kerülést**. Enélkül a manőver nem kísérelhető meg.
+- mindegyik Belharcos Manőverre. Enélkül a manőver nem kísérelhető meg.
+- kivéve a **Belharcba kerülést**.
 
 ## Ellenpróba módosítói belharcos manővereknél
 
