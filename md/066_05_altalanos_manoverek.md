@@ -544,8 +544,10 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
     - `+2`: Vágás íves penge
     - `99`: Zúzó fegyver → a Manőver nem kísérelhető meg
 - **Hatás**:
-  - Státusz: [Vérző (1)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-1-k%C3%B6zepesen)
-  - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést
+  - HA Sebzésed átment az esetleges páncélon
+    - Státusz: [Vérző (1)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-1-k%C3%B6zepesen)
+    - Nincs fegyver sebzés
+    - Vérző(1) Státusz Hatása érvényesül minden körben (ebben is) amíg el nem állítják a vérzést.
 
 ### Véreztetés (2)
 
@@ -559,8 +561,10 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
     - `+2`: Vágás íves penge
     - `99`: Zúzó fegyver → a Manőver nem kísérelhető meg
 - **Hatás**:
-  - Státusz: [Vérző (2)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-2-er%C5%91sen)
-  - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést
+  - HA Sebzésed átment az esetleges páncélon
+    - Státusz: [Vérző (2)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-2-er%C5%91sen)
+    - Nincs fegyver sebzés
+    - Vérző(2) Státusz Hatása érvényesül minden körben (ebben is) amíg el nem állítják a vérzést.
 
 ---
 
