@@ -604,7 +604,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Belharcba kerülés"
   típus: "belharcos"
@@ -641,7 +641,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Belharcból kibontakozás"
   típus: "belharcos"
@@ -668,7 +668,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Feszítés, Leszorítás"
   típus: "belharcos"
@@ -697,7 +697,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Feszítésből kijövetel"
   típus: "belharcos"
@@ -724,7 +724,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Gáncsolás"
   típus: "belharcos"
@@ -745,7 +745,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Kéztörés"
   típus: "belharcos"
@@ -765,7 +765,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Lábtörés"
   típus: "belharcos"
@@ -785,7 +785,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Lefejelés"
   típus: "belharcos"
@@ -805,7 +805,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Leforgatás/Irányítás"
   típus: "belharcos"
@@ -831,7 +831,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Nyaktörés"
   típus: "belharcos"
@@ -855,7 +855,7 @@ manőverek:
       sorok:
         - { érték: 6, leírás: "Testméret / páncél / Erő előny" }
         - { érték: 3, leírás: "Testméret / páncél / Erő előny" }
-        - { érték: -3, leírás: "Testméret / páncél / Erő előny" }
+        - { érték: -3, leírás: "Testméret / páncél / Erő hátrány" }
         - { érték: -6, leírás: "Testméret / páncél / Erő hátrány" }
 - név: "Hátas táncoltatása"
   típus: "lovas"

@@ -86,8 +86,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [eDobás, setEDobás] = useState<ProbaDobás | null>(null);
 
   // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák (mód_oldal szerint, §066_04). Aktív: aktív-
-  // oldali táblák + globális módosítók; passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
-  const módosítóTáblák = szitTáblákMódszerint(manőver.helyzetfüggő_módosítók, mód, data);
+  // oldali táblák + globális módosítók (belharcos manővernél nem); passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
+  const módosítóTáblák = szitTáblákMódszerint(manőver.helyzetfüggő_módosítók, mód, data, manőver.típus === 'belharcos');
   // A popupon belül egyszerre legfeljebb egy al-popup nyitott (TÉ magyarázat / MP / Helyzetfüggő módosítók / VÉ csökkentés).
   const [alPopup, setAlPopup] = useState<'té' | 'mp' | 'szit' | 'véCsökk' | null>(null);
   // Outside click in the middle of the multi-phase flow asks first (accidental tap would lose the phases)

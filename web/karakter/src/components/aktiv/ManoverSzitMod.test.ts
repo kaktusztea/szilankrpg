@@ -116,7 +116,7 @@ describe('szitModSentinelLehetetlen (immunis -99 sentinel)', () => {
 });
 
 /**
- * szitTáblákMódszerint: a mód szerint szűri a táblákat (aktív = aktív-oldali + globális;
+ * szitTáblákMódszerint: a mód szerint szűri a táblákat (aktív = aktív-oldali + globális, belharcosnál globális nélkül;
  * passzív = passzív-oldali). Regresszió: passzív extrák csak passzív módban, globálisok csak aktívban.
  */
 describe('szitTáblákMódszerint', () => {
@@ -126,15 +126,23 @@ describe('szitTáblákMódszerint', () => {
   const data = { konstansok: { manőver: { globális_módosítók: [globális] } } } as unknown as GameData;
 
   it('aktív mód → aktív-oldali táblák + globálisok', () => {
-    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'aktív', data);
+    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'aktív', data, false);
     expect(r.map(t => t.kategória)).toEqual(['Fegyver', 'Körülmények']);
   });
   it('passzív mód → csak a passzív-oldali táblák (globális nélkül)', () => {
-    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'passzív', data);
+    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'passzív', data, false);
     expect(r.map(t => t.kategória)).toEqual(['Törés ellen']);
   });
   it('nincs helyzetfüggő módosító → aktívban csak a globálisok', () => {
-    expect(szitTáblákMódszerint(undefined, 'aktív', data).map(t => t.kategória)).toEqual(['Körülmények']);
+    expect(szitTáblákMódszerint(undefined, 'aktív', data, false).map(t => t.kategória)).toEqual(['Körülmények']);
+  });
+  it('belharcos manőver, aktív mód → aktív-oldali táblák, globális nélkül (md/066_04)', () => {
+    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'aktív', data, true);
+    expect(r.map(t => t.kategória)).toEqual(['Fegyver']);
+  });
+  it('belharcos manőver, passzív mód → csak a passzív-oldali táblák', () => {
+    const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'passzív', data, true);
+    expect(r.map(t => t.kategória)).toEqual(['Törés ellen']);
   });
 });
 

@@ -197,16 +197,18 @@ export function szitModSentinelExtraId(
 /**
  * A dobó-oldalhoz illő Helyzetfüggő módosító táblák a mód szerint:
  *   - aktív: a manőver aktív-oldali táblái (mód_oldal != 'passzív') + a globális módosítók
- *     (konstansok.yaml → manőver.globális_módosítók, §066_04),
+ *     (konstansok.yaml → manőver.globális_módosítók, §066_04) - belharcos manővernél a globálisok
+ *     NÉLKÜL (ott a "Belharc körülmények (KM)" tábla váltja ki a KM ±3-at, md/066_04),
  *   - passzív: a manőver passzív-oldali táblái (mód_oldal === 'passzív') - pl. fegyver-extrák
  *     a fegyver birtokosát érintik (Lefegyverezhetőbb, Fegyvertörés-immunis).
  */
 export function szitTáblákMódszerint(
-  helyzetfüggőMódosítók: ModositoTabla[] | undefined, mód: Mód, data: GameData,
+  helyzetfüggőMódosítók: ModositoTabla[] | undefined, mód: Mód, data: GameData, belharcos: boolean,
 ): ModositoTabla[] {
   const táblák = helyzetfüggőMódosítók ?? [];
+  const globálisok = belharcos ? [] : (data.konstansok.manőver.globális_módosítók ?? []);
   return mód === 'aktív'
-    ? [...táblák.filter(t => t.mód_oldal !== 'passzív'), ...(data.konstansok.manőver.globális_módosítók ?? [])]
+    ? [...táblák.filter(t => t.mód_oldal !== 'passzív'), ...globálisok]
     : táblák.filter(t => t.mód_oldal === 'passzív');
 }
 
