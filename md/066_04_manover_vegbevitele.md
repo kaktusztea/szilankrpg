@@ -81,7 +81,7 @@ Belharcos manővereknél csak:
   +2: Nagyobb vagy  (Erő diff min: +2)
   -2: ellenfeled fémpáncélban van
 
-[-5;+5]
+[-3;+3]
   KM által megadott +/- érték.
   Körülmény függő könnyítés / nehezítés.
 
