@@ -17,7 +17,7 @@
 ## Nyitott tételek (áttekintés)
 
 - **Fegyverek: hangolás és utómunka** - paraméter-hangolási javaslat (jóváhagyásra vár), `raw`→`final`, custom fegyver
-- **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), ellenfél statblokk nézet (nem sürgős)
+- **Good to have** 💡 - Harc alakzatban (§28), Méreggenerátor (§39), Manőver popup konstansok → `konstansok.yaml`, ellenfél statblokk nézet (nem sürgős)
 
 ---
 ## Fegyverek: hangolás és utómunka 🚧
@@ -119,6 +119,10 @@ TODO:
 - [ ] Méreggenerátor overlay (KM eszköz)
 - [ ] Preset mérgek (144_peldamergek.md)
 
+### Manőver popup: kódba írt konstansok
+
+A `ManoverDobasPopup.tsx` `VÉGREHAJTÁS_KOCKA` (20), `ELLENPRÓBA_KOCKA` (10), `ELLENPRÓBA_NORMÁL_HIÁNY_EH` (-2) konstansai → `konstansok.yaml` (`manőver` blokk) + séma. Javaslat (refactorlog `2026-11-27.md` "Nem része"), külön döntés.
+
 ### Ellenfél statblokk nézet
 
 Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ, VÉ, aktuális harci helyzete), hogy a ma KM-re bízott, ellenfél-függő effektek (sebzésjelleg×páncél mátrix, `cél_páncél` és `ellenfél_harci_helyzet:*` feltételek) ténylegesen kiértékelődjenek. Ma csak részei léteznek: a Sebzés popup „Ellenfél páncél" választója pontszerű input, a `hiányzóInfósExtrák` (`extrak-effekt.ts`) pedig KM-warning badge-ként jelzi a nem-eldönthető hatásokat. Új feature - UX-tervezés + gui_spec szekció + jóváhagyás kell (hol él az állapot, harc idejére/NJK-ból, milyen részletes).
@@ -135,6 +139,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 - `checkpoints[]`: kiemelt karakter verziók (snapshot-alapú, → engine_spec §31b)
 - Multi-slot localStorage: `szilank_char_{uid}`, max 16 slot, ebből max 10 NJK (`ui-constants.ts`: `MAX_KARAKTER_DB`, `MAX_NJK_DB`)
 - Template / teszt karakterek: `data/karakter/` (`empty_karakter.json`, `test_karakter2.json` = single source of truth, `test_karakter3.json`)
+- Tulajdonság-kategóriák (md/010_05_01_00): egyetlen forrás a `konstansok.yaml` → `tulajdonság_kategóriák` (`fizikai` / `szellemi`); ebből derivált a `tulajdonság_sorrend` (`konstansok.json`) és a `fizikai_próba` / `szellemi_próba` Tulajdonság-listája (`gen/tulajdonsag.py`, build-gate: átfedés nélkül fedi le a 8 Tulajdonságot). Kivétel: `url-share.ts` `TULAJ_ORDER` (link-formátum, teszt őrzi az egyezést)
 
 ### Képzettségek
 - `többszörös`: `[]`=egyszeri, `["X","Y"]`=fix lista, `["*"]`=freetext
@@ -148,7 +153,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 - Részletek → engine_spec §16, §16.1, §24, §25, §42
 
 ### Fegyver v2 adatmodell
-- Runtime táblák (a webapp ezeket olvassa): `data/tables/fegyverek_v2.json` (72 közelharci fegyver + 3 pajzs), `data/tables/tavfegyverek_v2.json` (28 távfegyver), `sebzesjelleg_pancel_matrix.json`, `fegyver_extrak.json`. Generátor: `data/gen/fegyverek_v2.py` (build-gate).
+- Runtime táblák (a webapp ezeket olvassa): `data/tables/fegyverek_v2.json` (72 közelharci fegyver + 3 pajzs), `data/tables/tavfegyverek_v2.json` (29 távfegyver), `sebzesjelleg_pancel_matrix.json`, `fegyver_extrak.json`. Generátor: `data/gen/fegyverek_v2.py` (build-gate).
 - Források: `data/sources/fegyverek/` - `fegyverek.yaml` (WORK paraméterek, a generátor modellen át), `fegyverek_fixed.json` (kézzel írt kivételek: Garott, hárítók, Kopják, pajzsok - `aktor: "kivétel"`), `tavfegyverek_fixed.json`, `extrak.yaml`, `konstansok.yaml`, mátrix.
 - Egy fegyvernek EGY rekordja van (nincs külön 1K/2K entry). `FegyverAlap`: név, kategória, fegyverhossz, akadály, súly, övön_hordható, ár (ár-modell: §43.2; a generált fegyvereknek példány-független alapár, a `fegyverek_fixed.json` kivételeké `null`), idea_default, erő_követelmény, extrák, `módok[]`. Mesterfegyver fok és Idea a karakter-példányon.
 - `FegyverMod` (aktoronként egy): aktor, jelleg (`zúzó` / `szúró` / `vágó-egyenes` / `vágó-íves`), sebzéstípus (`elsődleges` = 1. aktor / `másodlagos` = a többi), TÉ, VÉ, SP, Átütés, Sebesség, Forgatás, Erőlimit, FP. A másfélkezes fegyver minden aktorához egy `másfélkezes · 1 kézzel` mód is tartozik (max 4 mód / fegyver).
@@ -159,9 +164,11 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 - Részletek → engine_spec §5-§13, §17, §26-§27
 
 ### Taktikák / Helyzetek
+- Státusz által kötelező taktika (`taktika_kötelező` Hatás, pl. Félelem (1): Védő (3), Indulat: Támadó (`MAX`)): automatikusan aktív, a `MAX` a karakter elérhető legmagasabb foka (`engine/taktika/kotelezo-taktika.ts`); a `szituációs` sor csak szöveg
 - Taktika (`taktikak.yaml`, 19 db): kombó (`kombó_mód` + `kombó_lista`), `megkötések`, `hatások` (`{mód, cél, érték, feltétel?}`, pl. `vé_csökkentés`; §42.3 precedencia), fokozatos taktikák (`fokozatos` + `fokok`), `támadódobás` (`vé_csökkentés` | `nincs`: a Támadó dobást kizáró taktika - Fárasztás / Teljes Védekezés; enum gate)
 - Harci helyzet (`harci_helyzetek.yaml`, 40 db): `kizár_helyzetek` (id), `megjegyzés_dobásra` (cél → ⚠ szöveg a dobás-popupban), `tiltott_fegyverfogások`, `tiltja_taktikákat`, `tiltások[]` (nevesített, fegyverenként kiértékelve, `tiltás:<id>`), `fegyver_override` (alapérték-csere, alcél `felszerelés:fegyver`; pl. Belharc: a túl hosszú fegyver alap `TÉ`/`VÉ` = 0), `hatások` (`{mód, cél, érték, alcél?}`, §42)
-- Esemény (`esemenyek.yaml`): a `csoport: próba` események a próba-célok (státusz-hatások próbára: `statusz-proba.ts`), a próba-kategória mezők (`tulajdonságok`, `képzettségek`, `kizárt_csoportok`) is itt élnek (engine_spec „Próba-kategóriák")
+- Esemény (`esemenyek.yaml`): a `csoport: próba` események a próba-célok (státusz-hatások próbára: `statusz-proba.ts`), a próba-kategória mezők (`tulajdonság_kategória` → build: `tulajdonságok`, `tulajdonságok`, `képzettségek`, `kizárt_csoportok`) is itt élnek (engine_spec „Próba-kategóriák")
+- Státusz (`statuszok.yaml`, 23 db): fokonként `hatás: <id>` hivatkozás a `hatasok.yaml` sablonokra (a build kifejti mód/cél sorokra, §22.4); felvételi paraméter: `alkategóriák` / `alkategória_forrás` (lista) vagy `szabad_szöveg: <max hossz>` (kötelező szöveg, pl. Szakrális bélyeg) - a `{alkategória}` helyőrzőt tölti ki; `szituációs: true` sor = kapcsolható, alapból ki (pl. Áldott / Átkozott Tulajdonság). Részletek → engine_spec §22
 - Részletek → engine_spec §21
 
 ### Reactive Engine
@@ -172,7 +179,7 @@ Egy KM-nézet, ahol megadható az ellenfél statblokkja (páncélosztály, SFÉ,
 
 ### Build pipeline
 - `generate_tables.py`: belépési pont (CLI + freshness + sorrend), a generátorok a `data/gen/` csomagban (Vite buildStart + prebuild)
-  - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés, `hibak_kilep` gate-kimenet) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful,fegyverek_v2}.py` · `gen/validators.py` (referenciális ellenőrzések) · `gen/hivatkozas.py` (id-hivatkozás + manőver-referencia gate) · `gen/naming_lint.py` (YAML naming build-gate) · `gen/kiterjesztes_check.py` (képzettség md ↔ kiterjesztesek.json szinkron build-gate)
+  - `gen/common.py` (útvonalak, YAML/JSON I/O, magyar rendezés, `hibak_kilep` gate-kimenet) · `gen/cache.py` (hash-alapú skip) · `gen/schema.py` (séma validáció) · `gen/{konstansok,kepzettsegek,fortelyok,fajok,aktiv_ful,fegyverek_v2}.py` · `gen/validators.py` (referenciális ellenőrzések) · `gen/hatas_sablon.py` (Hatás-sablonok: státusz `hatás:` sorainak kifejtése, alkategória / szabad_szöveg gate) · `gen/tulajdonsag.py` (Tulajdonság-kategóriák: derivált sorrend + esemény próba-kategóriák, gate) · `gen/hivatkozas.py` (id-hivatkozás + manőver-referencia gate) · `gen/naming_lint.py` (YAML naming build-gate) · `gen/kiterjesztes_check.py` (képzettség md ↔ kiterjesztesek.json szinkron build-gate)
   - **Gate-tesztek**: `gen/test_gates.py` - minden gate valódi adaton zöld ÉS elrontott másolaton bukik (`npm run test:gates`, a prebuild futtatja)
   - **Séma validáció**: minden source entitás kulcshalmazát a `schemas/*.yaml`-hoz méri (ismeretlen kulcs / hiányzó kötelező mező → build hiba). Kötelezőség a séma megjegyzéseiből: `# opcionális` → elhagyható, `# generált` → a generátor adja hozzá
   - Hash-alapú skip: ha a YAML source-ok, a sémák (`schemas/`) és a generátor kód nem változtak, automatikusan kihagy (`tables/.sources_hash`)

@@ -82,6 +82,7 @@ code/                        Python scriptek (generate.markdown.py + lib/JinjaHa
 | `proba/proba-forrasok.ts` | A próbák fortély-forrásai karakterre bontva (Tulajdonságok fül + Próba-hub közös): próba-bónuszok tulajdonságonként / képzettségenként, próba-enyhítések |
 | `taktika/helyzet-helpers.ts` | Helyzet elérhetőség, `helyzetFelvéve` (felvétel session-logikája: kizárt helyzetek, taktika-tiltás, tiltott fegyverfogás), min fegyverhossz, infó szöveg |
 | `taktika/taktika-helpers.ts` | Taktika módosító-formázás + fok-bővítés (getTaktikaMods, getExtraFokok, formatFokMods) |
+| `taktika/kotelezo-taktika.ts` | `kötelezőTaktikák`: a státuszok `taktika_kötelező` Hatásából automatikusan aktív taktikák (`MAX` fok feloldása; §21.1) |
 | `taktika/taktika-megkotes.ts` | Taktika megkötés-kiértékelés: `taktikaTiltásOka` az egyetlen szabálylista (session/fegyver/harcmodor/támadás/távfegyver + kombó), `isTaktikaAllowed` = nincs tiltás oka |
 | `reactive-parse.ts` | Formula parser: evalFormula, aggregate resolverek (sum, lookup, stb.) |
 | `types.ts` | Mentett karakter: Karakter, Session (+ `SessionBoolKulcs`), Fortely / Kepzettseg / példány-típusok, `DEFAULT_*`, `UndoPatch` / `UndoEntry` |

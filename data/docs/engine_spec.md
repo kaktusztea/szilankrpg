@@ -1202,6 +1202,12 @@ note: Forrás: tables/taktikak.json (kombó: `kombó_mód` + `kombó_lista`). A 
 - `szűrő_harcmodorok`: string[] - ha nem üres, a taktika CÉ módosítója csak akkor érvényes, ha az aktív távfegyver Harcmodor mezője szerepel a listában. A picker-ben a taktika nem jelenik meg ha a feltétel nem teljesül.
 - `megkötések[].típus === 'távfegyver_kategória'` + `mód: 'szükséges'`: taktika disabled ha az aktív távfegyver Kategória mezője nem egyezik az értékkel.
 
+#### Státusz által kötelező taktika
+
+A státusz `taktika_kötelező` Hatása (pl. Félelem (1): Védő (3), Indulat (1-2): Támadó (`MAX`)) automatikusan aktív taktikát ad:
+`engine/taktika/kotelezo-taktika.ts` `kötelezőTaktikák()`. A `MAX` fok = a karakter számára elérhető legmagasabb fok (skálázható
+taktika, `getExtraFokok`); a `szituációs` sor (pl. Öngyilkos roham „egyszer") csak szöveg, nem aktiválódik; egy taktika egyszer.
+
 ### 21.1b Skálázható taktikák
 
 A `skálázható: true` flag-gel jelölt taktikáknál (Támadó, Védő, Kezdeményező, Támadás erőből) a felső fok korlát
@@ -1653,7 +1659,7 @@ taktika / fortély id, taktika-fok, kötelező megjegyzés; `hivatkozas_kotelezo
 | harcképtelenség | Harcképtelenség | - | letilt harci_képesség |
 | mozgás_feleződik / lecövekelt / képtelen | Mozgás - … | - | szorzó 0.5 / letilt mozgás / letilt mozgás + harci_képesség |
 | pszi_elvesztése | Pszí használat elvesztése | - | letilt pszi |
-| taktika_kötelező | Taktika kötelező: {taktika} taktika{fok} | taktika, fok? | szöveges harci_képesség |
+| taktika_kötelező | Taktika kötelező: {taktika} taktika{fok} | taktika, fok? | szöveges harci_képesség (+ a taktikát a `kötelezőTaktikák` automatikusan aktiválja, §21.1) |
 | támadás_elvesztés_1 / _többszörös | 1 támadás / Többszörös támadás elvesztése | - | szöveges / max_limit 1 támadások_száma |
 | szabad_varázslás_elvesztése / varázslás_elvesztése | Varázslás: szabad … / Varázslás képesség elvesztése | - | szöveges / letilt varázslás |
 | vé_veszteség_duplázódik | VÉ veszteség duplázódik | - | szorzó 2 vé_veszteség |
