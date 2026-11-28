@@ -368,9 +368,12 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 ### ✴️ Fizikai (3) Elcsigázottság
 
 ```
+Hátrány-1
+  Fizikai Képzettségpróbákra
+  Fizikai Tulajdonságpróbákra
 Hátrány-2
   KÉ dobásra
-  Nem-harci Képzettségpróbákra
+  Szellemi Képzettségpróbákra
   Szellemi Tulajdonságpróbákra
 
 Többszörös támadás elvesztése
@@ -561,7 +564,7 @@ Hátrány-2
   Fizikai Tulajdonságpróbákra
 
 Hátrány-1
-  Szociális Képzettségpróbákra
+  Szellemi Képzettségpróbákra
   Szellemi Tulajdonságpróbákra
 ```
 
