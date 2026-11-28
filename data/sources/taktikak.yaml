@@ -23,6 +23,8 @@ taktikák:
   fokozatos: false
   módosítók:
     TÉ: 3
+  hatások:
+  - { mód: "letilt", cél: "sebzésdobás", megjegyzés: "Sebzés: 0. Csak megérintés.", feltétel: "" }
   megjegyzés: "Sebzés: 0. Csak megérintés."
   kombó_mód: "whitelist"
   kombó_lista: ["Védő", "Kezdeményező", "1 támadás", "Plusz támadás"]

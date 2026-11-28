@@ -51,6 +51,8 @@ export interface DobásInfo {
   spBónuszok: SpBónusz[];
   téMegjegyzések: DobásMegjegyzés[];
   sebzésMegjegyzések: DobásMegjegyzés[];
+  /** Sebzésdobást tiltó (`letilt sebzésdobás`) források feliratai, pl. Érintő taktika - nem üres → a találat nem sebez. */
+  sebzésTiltók: string[];
 }
 
 interface CéDobásInfo {
@@ -149,7 +151,9 @@ export function collectDobásInfo(
     });
   }
 
-  return { téHatások, sebzésHatások, spBónuszok, téMegjegyzések, sebzésMegjegyzések };
+  const sebzésTiltók = collectSessionHatások(session, karakter, data, new Set(['sebzésdobás']), aktívFegyver, feltételTeljesül).letiltók;
+
+  return { téHatások, sebzésHatások, spBónuszok, téMegjegyzések, sebzésMegjegyzések, sebzésTiltók };
 }
 
 /**

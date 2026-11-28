@@ -123,6 +123,7 @@ export function TamadoDobasPopup({ té, sp, átütés, módok, fegyverNév, pán
         sebzésHatások={dobásInfo.sebzésHatások}
         spBónuszok={[...fegyverSpBónuszok(aktívMód ?? elsődleges, fegyverNév), ...dobásInfo.spBónuszok]}
         megjegyzések={dobásInfo.sebzésMegjegyzések}
+        nemSebez={dobásInfo.sebzésTiltók}
         átütés={aktívÁtütés}
         jelleg={aktívMód?.jelleg}
         páncélMátrix={páncélMátrix}

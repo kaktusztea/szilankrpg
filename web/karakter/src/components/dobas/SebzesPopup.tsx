@@ -57,6 +57,8 @@ interface Props {
   véCsökkenésTalálatnál?: number;
   /** `találat`: true only if the damage step was actually resolved (rolled, or a non-damaging weapon) - closing before the roll is not a recorded hit. */
   onClose: (spEredmény?: number, találat?: boolean) => void;
+  /** Sebzésdobást tiltó források (pl. Érintő taktika): nem üres → „Nem sebez" (mint a nem sebző fegyver), a VÉ csökkentés marad. */
+  nemSebez?: string[];
   /** ESC sebzésdobás ELŐTT: csak ez a popup zárul (vissza a hívó dobáshoz). Eredmény után (és nélküle) az ESC = onClose. */
   onEscape?: () => void;
 }
@@ -69,7 +71,7 @@ interface SebzésEredmény {
 }
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + ellenfél páncél + k20 roll + info. */
-export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok, megjegyzések, átütés, véCsökkenésTalálatnál, onClose, onEscape }: Props) {
+export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, páncélMátrix, fegyverExtrák, extraDefs, extraKontextus, sebzésHatások, spBónuszok, megjegyzések, átütés, véCsökkenésTalálatnál, nemSebez = [], onClose, onEscape }: Props) {
   // Raw (unclamped) combined value - includes TÉ k20 bonus + active effects.
   // A másodlagos sebzéstípus −1 E/H-ját a hívó (TamadoDobasPopup) már beépítette a defaultElőny-be.
   const baseRaw = defaultElőny + netElőnySzint(sebzésHatások);
@@ -83,12 +85,14 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzéstípus, jelleg, 
 
   // SP_NINCS (-99) sentinel: a fegyver nem sebez (pl. Bola, Dobóháló, Lasszó, Fúvócső).
   // Korai kilépés (a hook-ok UTÁN, Rules of Hooks): a -99 SOHA nem kerül a delta/roll számításba.
-  if (sp === SP_NINCS) {
+  // Ugyanez, ha egy forrás tiltja a sebzésdobást (pl. Érintő taktika): a találat nem sebez, a VÉ csökkentés marad.
+  if (sp === SP_NINCS || nemSebez.length > 0) {
     return (
       <PopupOverlay onClose={() => onClose(undefined, true)} onEscape={onEscape}>
         <div className="tamado-dobas-popup">
           <div className="ke-dobas-header">Sebzés</div>
-          <div className="sebzes-nincs">Ez a fegyver nem sebez</div>
+          <div className="sebzes-nincs">{sp === SP_NINCS ? 'Ez a fegyver nem sebez' : 'Nem sebez'}</div>
+          {sp !== SP_NINCS && <MegjegyzesLista lista={megjegyzések} />}
           {véCsökkenésTalálatnál != null && <div className="sebzes-ve-talalat">−{véCsökkenésTalálatnál} VÉ csökkentés</div>}
         </div>
       </PopupOverlay>

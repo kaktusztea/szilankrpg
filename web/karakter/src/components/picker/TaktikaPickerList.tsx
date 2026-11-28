@@ -49,7 +49,8 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
       const tiltott = tiltásOk !== null;
       return <div key={t.név}>
         {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header"><Ikon név="távharc" /> Távharci taktikák</div>}
-        <button type="button"
+        {/* Forbidden (combo / restriction): really disabled, the reason stays visible */}
+        <button type="button" disabled={tiltott}
           className={`aktiv-picker-item${aktív ? ' aktiv-picker-item-active-accent' : ''}${tiltott ? ' aktiv-picker-item-disabled-inline' : ''}`}
           onClick={() => {
             if (aktív) { onRemove?.(t.név); return; }
