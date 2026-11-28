@@ -82,16 +82,11 @@ Manőver Célszám =
 [-2; +2] Páncél különbség
 
 Helyzetfüggő módosítók ∓
-
-Hátrány-1
-  Eszmélet: Bódultság Státus
-Hátrány-2
-  Eszmélet: Kábultság Státus
 ```
 
 Az egyes Manőverek adatlapján található **Helyzetfüggő módosítók** szintén az **Ellenpróba** dobásodhoz adódnak hozzá (nem a Célszámhoz). A pozitív érték értelemszerűen könnyít, a negatív nehezít.
 
-### 🔆Manőver Célszám extra módosítói
+### 🔆 Manőver Célszám extra módosítói
 
 ```
 +1 / Manőver Pont (ellenfél)

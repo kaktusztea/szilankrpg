@@ -172,6 +172,7 @@ Hátrány-1
   TÉ dobásra
   Képzettségpróbákra
   Tulajdonságpróbákra
+  Manőver Ellenpróba
 
 1 támadás elvesztése
 Varázslás: szabad varázslás elvesztése
@@ -191,6 +192,7 @@ Hátrány-2
   TÉ dobásra
   Képzettségpróbákra
   Tulajdonságpróbákra
+  Manőver Ellenpróba
 
 Előny+2 Fájdalomtűrés dobásra
   Áfiumok, kábítószerek, fejbekólintás hatására

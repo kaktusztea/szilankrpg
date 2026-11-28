@@ -31,6 +31,7 @@ Képzettségpróba (mágia is)
 Sebzésdobás
 Mágia Akarata
 Mágiaellenállás
+Manőver Ellenpróba
 ```
 
 🔆 Halmozódásuk esetén is alsó és felső korlátuk érvényes: `[-2, +2]`.
