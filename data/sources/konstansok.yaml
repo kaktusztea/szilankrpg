@@ -198,6 +198,9 @@ manőver:
       mód: "single"
       sorok:
         - { érték: -2, leírás: "Ismételt alkalmazás - nem halmozódik (KM)" }
+  # KM körülmény-módosító: CSAK nem-belharcos manővernél (belharcosnál a manőverenkénti
+  # "Belharc körülmények (KM)" tábla váltja ki). Aktív módban fűzi a popup. L. md/066_04.
+  nem_belharcos_módosítók:
     - kategória: "Körülmények"
       mód: "single"
       sorok:

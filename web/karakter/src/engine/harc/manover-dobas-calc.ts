@@ -19,8 +19,8 @@ const ORVTÁMADÁS = 'Orvtámadás';
 
 /**
  * Aktív harci helyzet adta könnyítés a manőver dobásra (§066_03: Meglepetés / Orvtámadás).
- * Mindkettőnél a célpont nem védekezik → nincs Megakasztás (M) és nincs támadó dobás (V);
- * a találat automatikus (sebzést a fegyvertáblán dobunk, ez nem érinti). Csak Aktív módban.
+ * Meglepetés: nincs Megakasztás (M); Orvtámadás: nincs M és támadó dobás (V) sem (a találat
+ * automatikus, sebzést a fegyvertáblán dobunk). Csak Aktív módban - l. `könnyítettFázisok`.
  */
 export function helyzetKönnyítés(session: Session): { meglepetés: boolean; orvtámadás: boolean } {
   return {
@@ -62,20 +62,16 @@ export interface ManőverDef {
   helyzetfüggő_módosítók: ModositoTabla[];
 }
 
-/** Egy harcmodor-képzettség szintje-e, ill. bármely harcmodor max szintje ("Harcmodor"). */
-function harcmodorMaxSzint(karakter: Karakter, data: GameData): number {
-  const elemek = new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[]);
-  return Math.max(0, ...karakter.képzettségek.filter(k => k.id === HARCMODOR_ID && elemek.has(k.elem)).map(k => k.szint));
-}
 
 /** Az aktív (támadó) fegyver a manőver-követelmény gépi kiértékeléséhez. */
 export interface AktívFegyverInfo {
   kategória: string;   // pl. "kardvívó", "romboló" (fegyverek.json Kategória)
   sebzésMódja: string; // a jelleg teljes szava, pl. "vágó-egyenes", "szúró", "zúzó" (fegyverek_v2.json jelleg)
+  harcmodorSzint: number; // a fegyver kategóriájához tartozó (= használt) harcmodor szintje
 }
 
 /**
- * Az aktív jobb kéz fegyverének kategóriája + sebzésmódja a session alapján.
+ * Az aktív jobb kéz fegyverének kategóriája + sebzésmódja + használt harcmodor-szintje a session alapján.
  * null, ha nincs kiválasztott fegyver (puszta kéz / index<0) → a fegyver-követelmények manuálisak.
  * ponytail: a jobb kéz fegyvere a mérvadó (kétkezes/pajzs finomságát nem bontjuk - a kézifegyveres
  * manőver-követelményekhez ez elég; upgrade: aktív-fegyver-ctx bevonása, ha később kell.)
@@ -86,7 +82,11 @@ export function aktívFegyverInfo(karakter: Karakter, session: Session, data: Ga
   if (!fp) return null;
   const def = lookupFegyver(data.fegyverek, fp.alap);
   if (!def) return null;
-  return { kategória: def.kategória, sebzésMódja: elsődlegesMód(def).jelleg };
+  const harcmodor = data.konstansok.fegyver_kategória_harcmodor[def.kategória] ?? 'közelharc';
+  return {
+    kategória: def.kategória, sebzésMódja: elsődlegesMód(def).jelleg,
+    harcmodorSzint: képzettségSzint(karakter.képzettségek, `${HARCMODOR_ID}/${harcmodor}`),
+  };
 }
 
 /**
@@ -197,8 +197,9 @@ export function szitModSentinelExtraId(
 /**
  * A dobó-oldalhoz illő Helyzetfüggő módosító táblák a mód szerint:
  *   - aktív: a manőver aktív-oldali táblái (mód_oldal != 'passzív') + a globális módosítók
- *     (konstansok.yaml → manőver.globális_módosítók, §066_04) - belharcos manővernél a globálisok
- *     NÉLKÜL (ott a "Belharc körülmények (KM)" tábla váltja ki a KM ±3-at, md/066_04),
+ *     (konstansok.yaml → manőver.globális_módosítók, §066_04) + nem-belharcos manővernél a
+ *     KM körülmény-módosító (manőver.nem_belharcos_módosítók; belharcosnál a "Belharc körülmények (KM)"
+ *     tábla váltja ki),
  *   - passzív: a manőver passzív-oldali táblái (mód_oldal === 'passzív') - pl. fegyver-extrák
  *     a fegyver birtokosát érintik (Lefegyverezhetőbb, Fegyvertörés-immunis).
  */
@@ -206,7 +207,8 @@ export function szitTáblákMódszerint(
   helyzetfüggőMódosítók: ModositoTabla[] | undefined, mód: Mód, data: GameData, belharcos: boolean,
 ): ModositoTabla[] {
   const táblák = helyzetfüggőMódosítók ?? [];
-  const globálisok = belharcos ? [] : (data.konstansok.manőver.globális_módosítók ?? []);
+  const mk = data.konstansok.manőver;
+  const globálisok = [...(mk.globális_módosítók ?? []), ...(belharcos ? [] : (mk.nem_belharcos_módosítók ?? []))];
   return mód === 'aktív'
     ? [...táblák.filter(t => t.mód_oldal !== 'passzív'), ...globálisok]
     : táblák.filter(t => t.mód_oldal === 'passzív');
@@ -280,9 +282,12 @@ export function követelményTeljesül(
   }
   const küszöb = typeof köv.érték === 'number' ? köv.érték : 0;
   if (köv.típus === 'képzettség') {
-    const szint = köv.név === HARCMODOR_ID
-      ? harcmodorMaxSzint(karakter, data)
-      : képzettségSzint(karakter.képzettségek, köv.név ?? '');
+    // "Harcmodor" (elem nélkül) = az aktuálisan HASZNÁLT harcmodor; aktív fegyver nélkül manuális.
+    if (köv.név === HARCMODOR_ID) {
+      if (!aktívFegyver) return null;
+      return aktívFegyver.harcmodorSzint >= küszöb;
+    }
+    const szint = képzettségSzint(karakter.képzettségek, köv.név ?? '');
     return szint >= küszöb;
   }
   // fortély: a felvett (max) fok
@@ -314,9 +319,9 @@ export function követelményÁllapot(
 ): KövetelményÁllapot {
   const teljesülések = követelmények.map(k => követelményTeljesül(k, karakter, data, session, aktívFegyver));
   const van = (pred: (k: ManoverKövetelmény, t: boolean | null) => boolean) => követelmények.some((k, i) => pred(k, teljesülések[i]));
-  // A strength may be missing if it has an informative item (KM decides) or a machine item that fails.
-  const hiányLehet = (erősség: 'normál' | 'erős') =>
-    van((k, t) => k.erősség === erősség && t !== true && (k.típus === 'egyéb' || t === false));
+  // A strength may be missing if any of its items is not met: failed (false) or undecidable (null, KM decides) -
+  // e.g. a weapon-based machine item with no active weapon.
+  const hiányLehet = (erősség: 'normál' | 'erős') => van((k, t) => k.erősség === erősség && t !== true);
   const erősHiány = van((k, t) => k.erősség === 'erős' && t === false);
   const normálHiány = van((k, t) => k.erősség !== 'erős' && t === false);
   const mindZöld = teljesülések.length > 0 && teljesülések.every(t => t === true);
@@ -341,8 +346,9 @@ export function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
 
 /**
  * Aktív Meglepetés/Orvtámadás könnyítés a fázissorra (§066_03, csak Aktív mód):
- * a célpont nem védekezik → kimarad a Megakasztás (M) ÉS a támadó dobás (V is).
- * A sebzést nem a popup dobja (fegyvertábla), így az nem érintett.
+ *   - Meglepetés: csak a Megakasztás (M) marad ki; a Végrehajtás (V) megmarad (TÉ:+5, az Előny+1 a
+ *     helyzet té_dobás hatásaként jön a téHatások-ban),
+ *   - Orvtámadás: csak az Ellenpróba (E) marad (M és V is kiesik).
  * Passzív módban a fázissor változatlan, kivéve Harcképtelennél (`harcképtelen`): akkor csak az Ellenpróba (E) marad.
  */
 export function könnyítettFázisok(
@@ -352,8 +358,9 @@ export function könnyítettFázisok(
   // mindkettő a manőver sikere felé dől, így csak az Ellenpróba marad.
   if (mód !== 'aktív') return harcképtelen ? fázisok.filter(f => f === 'E') : fázisok;
   const h = helyzetKönnyítés(session);
-  if (!h.meglepetés && !h.orvtámadás) return fázisok;
-  return fázisok.filter(f => f === 'E');
+  if (h.orvtámadás) return fázisok.filter(f => f === 'E');
+  if (h.meglepetés) return fázisok.filter(f => f !== 'M');
+  return fázisok;
 }
 
 /**

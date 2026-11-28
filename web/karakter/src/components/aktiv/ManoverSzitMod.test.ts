@@ -116,29 +116,30 @@ describe('szitModSentinelLehetetlen (immunis -99 sentinel)', () => {
 });
 
 /**
- * szitTáblákMódszerint: a mód szerint szűri a táblákat (aktív = aktív-oldali + globális, belharcosnál globális nélkül;
+ * szitTáblákMódszerint: a mód szerint szűri a táblákat (aktív = aktív-oldali + globális + nem-belharcos KM körülmény;
  * passzív = passzív-oldali). Regresszió: passzív extrák csak passzív módban, globálisok csak aktívban.
  */
 describe('szitTáblákMódszerint', () => {
   const aktívTábla: ModositoTabla = { kategória: 'Fegyver', mód: 'single', sorok: [{ érték: 2, leírás: 'A' }] };
   const passzívTábla: ModositoTabla = { kategória: 'Törés ellen', mód_oldal: 'passzív', mód: 'single', sorok: [{ érték: -2, leírás: 'B' }] };
-  const globális: ModositoTabla = { kategória: 'Körülmények', mód: 'single', sorok: [{ érték: 3, leírás: 'KM' }] };
-  const data = { konstansok: { manőver: { globális_módosítók: [globális] } } } as unknown as GameData;
+  const globális: ModositoTabla = { kategória: 'Újrapróbálkozás', mód: 'single', sorok: [{ érték: -2, leírás: 'Ism' }] };
+  const körülmény: ModositoTabla = { kategória: 'Körülmények', mód: 'single', sorok: [{ érték: 3, leírás: 'KM' }] };
+  const data = { konstansok: { manőver: { globális_módosítók: [globális], nem_belharcos_módosítók: [körülmény] } } } as unknown as GameData;
 
-  it('aktív mód → aktív-oldali táblák + globálisok', () => {
+  it('aktív mód → aktív-oldali táblák + globálisok + KM körülmény', () => {
     const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'aktív', data, false);
-    expect(r.map(t => t.kategória)).toEqual(['Fegyver', 'Körülmények']);
+    expect(r.map(t => t.kategória)).toEqual(['Fegyver', 'Újrapróbálkozás', 'Körülmények']);
   });
   it('passzív mód → csak a passzív-oldali táblák (globális nélkül)', () => {
     const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'passzív', data, false);
     expect(r.map(t => t.kategória)).toEqual(['Törés ellen']);
   });
   it('nincs helyzetfüggő módosító → aktívban csak a globálisok', () => {
-    expect(szitTáblákMódszerint(undefined, 'aktív', data, false).map(t => t.kategória)).toEqual(['Körülmények']);
+    expect(szitTáblákMódszerint(undefined, 'aktív', data, false).map(t => t.kategória)).toEqual(['Újrapróbálkozás', 'Körülmények']);
   });
-  it('belharcos manőver, aktív mód → aktív-oldali táblák, globális nélkül (md/066_04)', () => {
+  it('belharcos manőver, aktív mód → aktív-oldali táblák + globálisok, KM körülmény nélkül (md/066_04)', () => {
     const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'aktív', data, true);
-    expect(r.map(t => t.kategória)).toEqual(['Fegyver']);
+    expect(r.map(t => t.kategória)).toEqual(['Fegyver', 'Újrapróbálkozás']);
   });
   it('belharcos manőver, passzív mód → csak a passzív-oldali táblák', () => {
     const r = szitTáblákMódszerint([aktívTábla, passzívTábla], 'passzív', data, true);

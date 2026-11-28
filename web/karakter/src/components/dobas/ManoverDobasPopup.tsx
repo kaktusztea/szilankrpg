@@ -86,7 +86,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const [eDobás, setEDobás] = useState<ProbaDobás | null>(null);
 
   // Helyzetfüggő módosítók - a dobó-oldalhoz illő táblák (mód_oldal szerint, §066_04). Aktív: aktív-
-  // oldali táblák + globális módosítók (belharcos manővernél nem); passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
+  // oldali táblák + globális módosítók (+ KM körülmény, belharcos manővernél nem); passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
   const módosítóTáblák = szitTáblákMódszerint(manőver.helyzetfüggő_módosítók, mód, data, manőver.típus === 'belharcos');
   // A popupon belül egyszerre legfeljebb egy al-popup nyitott (TÉ magyarázat / MP / Helyzetfüggő módosítók / VÉ csökkentés).
   const [alPopup, setAlPopup] = useState<'té' | 'mp' | 'szit' | 'véCsökk' | null>(null);
@@ -350,7 +350,9 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
 
         {vanKönnyítés && (
           <div className="manover-konnyites-chip">
-            {[könnyítés.meglepetés && 'Meglepetés', könnyítés.orvtámadás && 'Orvtámadás'].filter(Boolean).join(' + ')}: nincs Megakasztás és támadó dobás (a találat automatikus, sebzés a fegyvertáblán)
+            {könnyítés.orvtámadás
+              ? `${[könnyítés.meglepetés && 'Meglepetés', 'Orvtámadás'].filter(Boolean).join(' + ')}: nincs Megakasztás és támadó dobás (a találat automatikus, sebzés a fegyvertáblán)`
+              : 'Meglepetés: nincs Megakasztás (a Végrehajtás dobásra Előny+1)'}
           </div>
         )}
 

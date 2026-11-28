@@ -15,10 +15,11 @@ function makeData(): GameData {
     ],
     taktikak: [{ név: 'Roham', feltétel_kulcs: 'taktika:roham', fokozatos: false, módosítók: {}, hatások: [], kombó_mód: 'whitelist', kombó_lista: [] }],
     harciHelyzetek: [],
+    konstansok: { fegyver_kategória_harcmodor: { kardvívó: 'kardvívás' } },
   } as unknown as GameData;
 }
 
-const karakter = { fegyverek: [{ alap: 'Tőrkard' }], pajzs: { méret: 'közepes' } } as unknown as Karakter;
+const karakter = { fegyverek: [{ alap: 'Tőrkard' }], képzettségek: [], pajzs: { méret: 'közepes' } } as unknown as Karakter;
 
 function session(over: Partial<Session> = {}): Session {
   return {

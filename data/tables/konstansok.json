@@ -209,7 +209,9 @@
             "leírás": "Ismételt alkalmazás - nem halmozódik (KM)"
           }
         ]
-      },
+      }
+    ],
+    "nem_belharcos_módosítók": [
       {
         "kategória": "Körülmények",
         "mód": "single",

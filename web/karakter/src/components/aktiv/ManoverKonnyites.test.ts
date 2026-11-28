@@ -33,12 +33,16 @@ describe('helyzetKönnyítés', () => {
 });
 
 describe('könnyítettFázisok', () => {
-  it('Aktív + Meglepetés → M és V kiesik, csak E marad', () => {
-    expect(könnyítettFázisok(['M', 'V', 'E'], 'aktív', sessionWith(['Meglepetés']))).toEqual(['E']);
-    expect(könnyítettFázisok(['V', 'E'], 'aktív', sessionWith(['Orvtámadás']))).toEqual(['E']);
+  it('Aktív + Meglepetés → csak M kiesik, V és E marad (md/066_03)', () => {
+    expect(könnyítettFázisok(['M', 'V', 'E'], 'aktív', sessionWith(['Meglepetés']))).toEqual(['V', 'E']);
+    expect(könnyítettFázisok(['M', 'E'], 'aktív', sessionWith(['Meglepetés']))).toEqual(['E']);
   });
-  it('Aktív + Meglepetés, csak M,V manőver → üres fázissor (azonnal sikeres)', () => {
-    expect(könnyítettFázisok(['M', 'V'], 'aktív', sessionWith(['Meglepetés']))).toEqual([]);
+  it('Aktív + Orvtámadás → M és V kiesik, csak E marad (Meglepetéssel együtt is)', () => {
+    expect(könnyítettFázisok(['V', 'E'], 'aktív', sessionWith(['Orvtámadás']))).toEqual(['E']);
+    expect(könnyítettFázisok(['M', 'V', 'E'], 'aktív', sessionWith(['Meglepetés', 'Orvtámadás']))).toEqual(['E']);
+  });
+  it('Aktív + Orvtámadás, csak M,V manőver → üres fázissor (azonnal sikeres)', () => {
+    expect(könnyítettFázisok(['M', 'V'], 'aktív', sessionWith(['Orvtámadás']))).toEqual([]);
   });
   it('nincs ilyen helyzet → változatlan', () => {
     expect(könnyítettFázisok(['M', 'V', 'E'], 'aktív', sessionWith([]))).toEqual(['M', 'V', 'E']);
@@ -110,8 +114,8 @@ describe('követelményJelölés', () => {
 describe('követelményTeljesül - fegyver-alapú gépi típusok', () => {
   const katKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_kategória', érték: 'kardvívó' };
   const sebKöv: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' };
-  const kard: AktívFegyverInfo = { kategória: 'kardvívó', sebzésMódja: 'V/S' };
-  const buzogány: AktívFegyverInfo = { kategória: 'romboló', sebzésMódja: 'Z' };
+  const kard: AktívFegyverInfo = { kategória: 'kardvívó', sebzésMódja: 'V/S', harcmodorSzint: 0 };
+  const buzogány: AktívFegyverInfo = { kategória: 'romboló', sebzésMódja: 'Z', harcmodorSzint: 0 };
 
   it('fegyver_kategória: egyezés → true, eltérés → false', () => {
     expect(követelményTeljesül(katKöv, karakter, data, undefined, kard)).toBe(true);

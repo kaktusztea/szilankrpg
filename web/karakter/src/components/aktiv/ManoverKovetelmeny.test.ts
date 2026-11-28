@@ -18,9 +18,13 @@ const karakter = {
 } as unknown as Karakter;
 
 describe('követelményTeljesül', () => {
-  it('"Harcmodor" = bármely harcmodor-képzettség max szintje (Kardvívás 6 ≥ 5)', () => {
+  it('"Harcmodor" = az aktuálisan HASZNÁLT harcmodor szintje (md/066_03); aktív fegyver nélkül manuális', () => {
     const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'harcmodor', érték: 5 };
-    expect(követelményTeljesül(köv, karakter, data)).toBe(true);
+    const kard = { kategória: 'kardvívó', sebzésMódja: 'vágó-egyenes', harcmodorSzint: 6 };
+    const lándzsa = { kategória: 'lándzsavívó', sebzésMódja: 'szúró', harcmodorSzint: 2 };
+    expect(követelményTeljesül(köv, karakter, data, undefined, kard)).toBe(true);
+    expect(követelményTeljesül(köv, karakter, data, undefined, lándzsa)).toBe(false);
+    expect(követelményTeljesül(köv, karakter, data)).toBeNull();
   });
   it('konkrét képzettség szint alatt → false', () => {
     const köv: ManoverKövetelmény = { erősség: 'normál', típus: 'képzettség', név: 'harcmodor/lándzsavívás', érték: 6 };
@@ -42,25 +46,25 @@ describe('követelményTeljesül', () => {
   describe('fegyver_sebzéstípus (jelleg kezdőbetű → S/V/Z)', () => {
     const kövV: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'V' };
     it('vágó-egyenes jelleg teljesíti a V követelményt (bug: korábban false volt)', () => {
-      const af = { kategória: 'kardvívó', sebzésMódja: 'vágó-egyenes' };
+      const af = { kategória: 'kardvívó', sebzésMódja: 'vágó-egyenes', harcmodorSzint: 0 };
       expect(követelményTeljesül(kövV, karakter, data, undefined, af)).toBe(true);
     });
     it('vágó-íves jelleg is V', () => {
-      const af = { kategória: 'kardvívó', sebzésMódja: 'vágó-íves' };
+      const af = { kategória: 'kardvívó', sebzésMódja: 'vágó-íves', harcmodorSzint: 0 };
       expect(követelményTeljesül(kövV, karakter, data, undefined, af)).toBe(true);
     });
     it('szúró jelleg NEM V', () => {
-      const af = { kategória: 'kardvívó', sebzésMódja: 'szúró' };
+      const af = { kategória: 'kardvívó', sebzésMódja: 'szúró', harcmodorSzint: 0 };
       expect(követelményTeljesül(kövV, karakter, data, undefined, af)).toBe(false);
     });
     it('szúró jelleg teljesíti az S követelményt', () => {
       const kövS: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'S' };
-      const af = { kategória: 'tőrvívó', sebzésMódja: 'szúró' };
+      const af = { kategória: 'tőrvívó', sebzésMódja: 'szúró', harcmodorSzint: 0 };
       expect(követelményTeljesül(kövS, karakter, data, undefined, af)).toBe(true);
     });
     it('zúzó jelleg teljesíti a Z követelményt', () => {
       const kövZ: ManoverKövetelmény = { erősség: 'erős', típus: 'fegyver_sebzéstípus', érték: 'Z' };
-      const af = { kategória: 'romboló', sebzésMódja: 'zúzó' };
+      const af = { kategória: 'romboló', sebzésMódja: 'zúzó', harcmodorSzint: 0 };
       expect(követelményTeljesül(kövZ, karakter, data, undefined, af)).toBe(true);
     });
     it('nincs aktív fegyver → null (manuális)', () => {
@@ -107,5 +111,12 @@ describe('követelményÁllapot (kezdő döntés, hiány-gombok)', () => {
   });
   it('nincs követelmény → "pending" (a popup ilyenkor nem mutat 0. lépést)', () => {
     expect(követelményÁllapot([], karakter, data).kezdőDöntés).toBe('pending');
+  });
+  it('a HASZNÁLT harcmodor szintje dönt; aktív fegyver nélkül a KM jelölheti a hiányt (null → hiány-gomb)', () => {
+    const köv: ManoverKövetelmény = { erősség: 'erős', típus: 'képzettség', név: 'harcmodor', érték: 3 };
+    const af = (harcmodorSzint: number) => ({ kategória: 'kard', sebzésMódja: 'szúró', harcmodorSzint });
+    expect(követelményÁllapot([köv], karakter, data, undefined, af(2)).kezdőDöntés).toBe('erős');
+    expect(követelményÁllapot([köv], karakter, data, undefined, af(3)).kezdőDöntés).toBe('mind');
+    expect(követelményÁllapot([köv], karakter, data, undefined, null)).toMatchObject({ kezdőDöntés: 'pending', vanErős: true });
   });
 });
