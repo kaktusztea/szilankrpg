@@ -16,7 +16,7 @@
 
 ---
 
-## Követelmény: [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet) harci helyzet
+## Követelmény: [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
 
 🟥 **Erős követelmény** mindegyik Belharcos Manővernek - kivéve a **Belharcba kerülést**. Enélkül a manőver nem kísérelhető meg.
 
