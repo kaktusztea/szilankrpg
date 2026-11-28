@@ -360,7 +360,7 @@ nehézségét a védekező pajzsmérete növeli: Kis +2, Közepes +4, Nagy +6.
 ```
 manőver_alap = CEIL((HM_TÉ + HM_VÉ) / 10)              # statikus
 harcmodor_összeg = Σ(Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc szintek)
-manőver_pont = CEIL(harcmodor_összeg × 2 / tsz)        # [0;10]; max 4 MP/támadás, 2 MP/védés
+manőver_pont = CEIL(harcmodor_összeg / tsz) × 2        # [0;10]; max 4 MP/támadás, 2 MP/védés
 
 FT_enyhítés = a legnagyobb küszöb, amit a Fájdalomtűrés szint elér:
   szint  4→1  6→2  8→3  10→4  11→5  12→6  13→7  14→8  15→9
@@ -1012,7 +1012,7 @@ pajzs: közepes
 | merevvért_TÉ_büntetés | lánc nem merev | **0** |
 | páncél_lefedettség | torzó 50 + sisak 10 + 3×10 | **90 %** |
 | manőver_alap | CEIL((15+13)/10) | **3** |
-| manőver_pont | CEIL((8+6+4)×2 / 10) | **4** |
+| manőver_pont | CEIL((8+6+4) / 10) × 2 | **4** |
 
 **Fegyverenkénti harcértékek** (egyfegyveres, pajzs nélkül, taktika nélkül):
 

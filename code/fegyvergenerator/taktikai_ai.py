@@ -130,11 +130,11 @@ def manover_alap(profil: "S.Profil"):
 
 
 def manover_pont(profil: "S.Profil", harcmodor_osszeg, limit=4):
-    """§3.13 + md/066_02: CEIL(harcmodor_összeg × 2 / tsz), [0,10] clamp, a felhasználható
+    """§3.13 + md/066_02: CEIL(harcmodor_összeg / tsz) × 2, [0,10] clamp, a felhasználható
     mennyiség viszont Ellenpróbánként limitált: TÁMADÓ oldalon max 4 MP, VÉDEKEZŐ ("counter",
     a Nehézséget növeli) oldalon max 2 MP - ez a `limit` paraméter."""
     import math
-    mp = math.ceil(harcmodor_osszeg * 2 / max(1, profil.tsz))
+    mp = math.ceil(harcmodor_osszeg / max(1, profil.tsz)) * 2
     return min(limit, max(0, min(10, mp)))
 
 
