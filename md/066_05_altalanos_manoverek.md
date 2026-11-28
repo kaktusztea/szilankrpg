@@ -122,7 +122,7 @@ Eltöröd ellenfeled fegyverét. Azokkal a fegyverekkel végezheted, amelyek Har
 
 - Nehézség: `12`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟨 Normál követelmény: Harcmodor – `5.szint`
+- 🟨 Normál követelmény: Aktuális Harcmodor – `5.szint`
 - 🟥 Erős követelmény: karmok/szarvak ellen nem használható (ott **Csonkolás** szükséges).
 - Helyzetfüggő módosítók:
   - Saját fegyver alkalmassága:
@@ -290,7 +290,7 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
 
 - Nehézség: `10`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- 🟨 Normál követelmény: Harcmodor – `5.szint`
+- 🟨 Normál követelmény: Aktuális Harcmodor – `5.szint`
 - 🟥 Erős követelmény: Kardvívás / Lándzsavívás / Ostorharc harcmodor
 - Helyzetfüggő módosítók:
   - Saját fegyver alkalmassága:
@@ -490,7 +490,7 @@ Ha kezedben legalább `2` fegyverhossz-kategóriával nagyobb fegyver forog, min
 
 - Nehézség: `5`
 - Fázisok: `Megakasztás* Ellenpróba`
-- 🟨 Normál követelmény: Harcmodor - `5.szint`
+- 🟨 Normál követelmény: Aktuális Harcmodor - `5.szint`
 - 🟥 Erős követelmény: [Fegyverelőny](065_03_04_fegyver_harci_helyzetek.md#️-fegyverelőny)
 - Helyzetfüggő módosítók:
   - Harci alakzat:
