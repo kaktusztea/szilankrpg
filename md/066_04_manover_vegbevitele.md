@@ -79,6 +79,9 @@ KM módosító
   -3: KM: nehezebb körülmények
   +3: KM: könnyebb körülmények
 
+-2: Újrapróbálkozás
+  → az ellenfél már számít rá
+
 Adott Manőver - Helyzetfüggő módosítók ∓
 ```
 
