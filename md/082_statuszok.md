@@ -285,7 +285,7 @@ Taktika kötelező: Védő taktika (3)
   VÉ:+3; TÉ:-6
 
 Hátrány-1
-  Szociális képzettségpróbákra
+  Szociális Képzettségpróbákra
 ```
 
 #### Mi okozhatja?
@@ -308,7 +308,7 @@ Pánik érzete is ide tartozik.
 Taktika kötelező: Teljes Védekezés taktika
 
 Automatikus kudarc
-  Szociális képzettségpróbákra
+  Szociális Képzettségpróbákra
 ```
 
 Lásd: [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktika
@@ -336,7 +336,8 @@ Csak mágia vagy démonok hatására
 ```
 Hátrány-1
   KÉ dobásra
-  Szellemi képzettségpróbákra
+  Szellemi Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 ```
 
 Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
@@ -351,7 +352,9 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 ```
 VÉ veszteség duplázódik
 Hátrány-1 KÉ dobásra
-Hátrány-2 Szellemi képzettségpróbákra
+Hátrány-2
+  Szellemi Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 FP S1
 ```
 
@@ -367,7 +370,8 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 ```
 Hátrány-2
   KÉ dobásra
-  Nem-harci képzettségpróbákra
+  Nem-harci Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 
 Többszörös támadás elvesztése
 VÉ veszteség duplázódik
@@ -478,8 +482,9 @@ Lásd "Indulat (2) Gyűlölet"
     barát, szövetséges..
 
 Automatikus kudarc
-  Szociális képzettségpróbákra
-  Szellemi képzettségpróbákra
+  Szociális Képzettségpróbákra
+  Szellemi Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 ```
 
 <br />
@@ -542,8 +547,8 @@ Lásd a [Méregrendszer](140_meregrendszer.md) fejezetben a mérgek **hatásait*
 Hátrány-1
   KÉ dobásra
   TÉ dobásra
-  Fizikai Képzettségpróbára
-  Fizikai Tulajdonságpróbára
+  Fizikai Képzettségpróbákra
+  Fizikai Tulajdonságpróbákra
 ```
 
 ### ✴️  Rosszullét (2) Erős
@@ -552,11 +557,12 @@ Hátrány-1
 Hátrány-2
   KÉ dobásra
   TÉ dobásra
-  Fizikai képzettségpróbára
-  Fizikai Tulajdonságpróbára
+  Fizikai Képzettségpróbákra
+  Fizikai Tulajdonságpróbákra
 
 Hátrány-1
-  Szociális képzettségpróbákra
+  Szociális Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 ```
 
 <br />
@@ -619,8 +625,9 @@ Hátrány-1
 Pszí használat elvesztése
 
 Hátrány-1
-  Szellemi képzettségpróbákra
-  Szociális képzettségpróbákra
+  Szellemi Képzettségpróbákra
+  Szociális Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
   Mágiahasználat
     (random mágia hatás esélye ↑)
 ```
@@ -632,8 +639,9 @@ Pszí használat elvesztése
 
 Hátrány-2
   Mágiahasználat
-  Nem-mágikus szellemi képzettségpróbákra
-  Szociális képzettségpróbákra
+  Nem-mágikus Szellemi Képzettségpróbákra
+  Szociális Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 ```
 
 <br />
@@ -646,7 +654,7 @@ Hátrány-2
 Hátrány-1
   Önuralom Tulajdonságpróbára
   Érzékenység Tulajdonságpróbára
-  Szociális képzettségpróbákra,
+  Szociális Képzettségpróbákra,
     mikor Önuralom/Érzékenység
     Tulajdonságok egyikét használod
 
@@ -659,7 +667,7 @@ Antyssjárás esetén "rossz" helyre kerülsz
 Hátrány-2
   Önuralom Tulajdonságpróba
   Érzékenység Tulajdonságpróba
-  Szociális képzettségpróbákra,
+  Szociális Képzettségpróbákra,
     mikor a fenti 2 Tulajdonságot használod
 
 Antyssjárás esetén "nagyon rossz" helyre kerülsz
@@ -701,8 +709,9 @@ Hátrány-1
   Gyorsaság és Ügyesség Tulajdonságpróbákra
 
 Hátrány-2
-  Szellemi képzettségpróbákra
-  Szociális képzettségpróbákra
+  Szellemi Képzettségpróbákra
+  Szociális Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 ```
 
 Példa: ledöbbenés.
@@ -715,8 +724,9 @@ A következő utáni kör végéig tart csak (`2 kör`). Ez a videójátékokbó
 2 körig tart
 
 Automatikus kudarc
-  Szellemi képzettségpróbákra
-  Szociális képzettségpróbákra
+  Szellemi Képzettségpróbákra
+  Szociális Képzettségpróbákra
+  Szellemi Tulajdonságpróbákra
 
 Hátrány-1
   TÉ dobásra
