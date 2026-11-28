@@ -147,11 +147,13 @@ Jártassági küszöb - például adott **Harcmodor** szint, **fortély** fok. H
 ### 🟥 Erős Manőver-követelmények
 
 ```
-• 3. szintű Harcmodor (mindig)
-• Fizikai / eszköz / szituációs előfeltétel
+Előfeltételek
+• Fizikai
+• Eszköz
+• Szituációs 
 ```
 
-Ezek lehetnek fizikai / eszköz / szituációs előfeltételek - például megfelelő **fegyvertípus**, **harci helyzet**, **anatómia**, megelőző **Manőver**. Ha az Erős követelményekből akár `1 db` is hiányzik, a Manőver automatikus kudarc, dobni sem lehet.
+Például megfelelő **fegyvertípus**, **harci helyzet**, **anatómia**, megelőző **Manőver**. Ha az Erős követelményekből akár `1 db` is hiányzik, a Manőver automatikus kudarc, dobni sem lehet.
 
 🔆 Ha van akár `1 db` hiányzó Erős követelmény, a Manőver akkor sem dobható, ha egyébként minden Normál követelmény teljesül.
 
