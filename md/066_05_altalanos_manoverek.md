@@ -316,8 +316,7 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, akkor lefegyverezés manőver
 Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
 
 - Nehézség: `6`
-- Fázisok: `Végrehajtás, Ellenpróba`
-  - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás))
+- Fázisok: `Ellenpróba`
 - 🟥 Erős követelmény:
   - [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet
   - Célpont elfszabású anatómiával
@@ -464,15 +463,30 @@ Meglepetés esetén is kell **Ellenpróbát** dobni.
 
 ---
 
-### Rávetődés hátulról
+### Rávetődés hátulról - észrevétlenül
 
 Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés + Ügyesség** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
 
 - Nehézség: `6`
+- Fázisok: `Ellenpróba`
+- 🟥 Erős követelmény: [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet
+
+**Hatás**:
+
+- Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
+- [Belharci helyzet](065_03_02_semleges_helyzetek.md#belharci-helyzet)
+- [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja (az ehhez tartozó Ellenpróba dobására `-2` Helyzetfüggő módosítót kap).
+
+
+---
+### Rávetődés hátulról - egyszerűen
+
+Ha sikerült ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
+
+- Nehézség: `6`
 - Fázisok:
-  - Orvtámadás esetén: `Ellenpróba`
-  - Nincs Orvtámadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
-- 🟥 Erős követelmény: [Orvtámadás](065_03_01_pozitiv_helyzetek.md#orvtámadás), VAGY [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet
+  - `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
+- 🟥 Erős követelmény: [Hátulról támadás](065_03_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet
 
 **Hatás**:
 
