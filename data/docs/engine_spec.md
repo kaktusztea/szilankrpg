@@ -571,7 +571,7 @@ input:  közelharci harcmodor szintek (konstansok.fegyver_kategória_harcmodor v
 
 formula:
   harcmodor_összeg = SUM(UNIQUE(konstansok.fegyver_kategória_harcmodor.values) → képzettség szintek)
-  manőver_pont = CEIL(harcmodor_összeg x 2 / tsz)
+  manőver_pont = CEIL(harcmodor_összeg / tsz) x 2
 
 output: manőver_pont
 note: Értéke [0; 10] tartományban mozog. Egy harci jelenet alatt használható fel, VÉ regenerálódáskor visszatöltődik.

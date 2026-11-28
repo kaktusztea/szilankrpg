@@ -105,7 +105,7 @@
     },
     {
       "id": "manőver_pont",
-      "formula": "ceil(harcmodor_összeg * 2 / tsz)",
+      "formula": "ceil(harcmodor_összeg / tsz) * 2",
       "inputs": [
         "harcmodor_összeg",
         "tsz"

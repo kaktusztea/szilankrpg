@@ -1200,7 +1200,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 | összes_kp | képlet | tsz x (perszint + intelligencia) |
 | összes_szekunder_kp | képlet | tsz x (szekunder_perszint + emlékezet) |
 | tulajdonság_pont_keret | képlet | alap + floor(tsz/2) |
-| manőver_pont | képlet | ceil(harcmodor_összeg x 2 / tsz) |
+| manőver_pont | képlet | ceil(harcmodor_összeg / tsz) x 2 |
 | max_CM | képlet | tsz x max_cm_perszint |
 | max_HM | sum_where | harci fortélyok (MF nélkül) + harcmodorok + alakzatharc |
 | max_HM_aszimmetria | képlet | floor(tsz / 2) |

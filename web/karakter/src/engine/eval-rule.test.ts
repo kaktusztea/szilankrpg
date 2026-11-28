@@ -7,10 +7,10 @@ import { evalRule, type Rule } from './reactive';
 const RULES: Rule[] = (JSON.parse(readFileSync(resolve(__dirname, '../../../../data/rules.json'), 'utf-8')) as { rules: Rule[] }).rules;
 
 describe('evalRule', () => {
-  it('manőver_pont = ceil(harcmodor_összeg * 2 / tsz)', () => {
+  it('manőver_pont = ceil(harcmodor_összeg / tsz) * 2 (md/066_02: előbb kerekít, utána szoroz)', () => {
     for (const harcmodor_összeg of [0, 7, 12, 25, 40]) {
       for (const tsz of [1, 3, 5, 10]) {
-        expect(evalRule(RULES, 'manőver_pont', { harcmodor_összeg, tsz })).toBe(Math.ceil(harcmodor_összeg * 2 / tsz));
+        expect(evalRule(RULES, 'manőver_pont', { harcmodor_összeg, tsz })).toBe(Math.ceil(harcmodor_összeg / tsz) * 2);
       }
     }
   });
