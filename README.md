@@ -125,7 +125,7 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 
 ![](https://progress-bar.xyz/100/?title=Karakteralkotás%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/100/?title=K%C3%A9pzetts%C3%A9grendszer%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/95/?title=K%C3%A9pzetts%C3%A9gek%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/98/?title=K%C3%A9pzetts%C3%A9gek%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/100/?title=Fort%C3%A9lyok%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/100/?title=H%C3%A1tterek%20%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/98/?title=Harcrendszer%20%20%20%20%20%20%20&width=200&color=babaca)\
