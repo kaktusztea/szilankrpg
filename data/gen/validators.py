@@ -177,8 +177,9 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek, effekt_modok
 
 def validate_esemenyek(esemenyek, refs=None, kepz_csoportok=None):
     """Validate esemenyek.yaml. `refs` (proba_alcel_refs) / `kepz_csoportok` megadásakor a próba-kategória
-    definíciók (md/010_11) hivatkozásait is: tulajdonság / képzettség / csoport létezik, csak `próba` célponton,
-    és a fizikai_próba + szellemi_próba Tulajdonságai átfedés nélkül lefedik mind a 8-at."""
+    definíciók (md/010_11) hivatkozásait is: tulajdonság / képzettség / csoport létezik, csak `próba` célponton.
+    A fizikai / szellemi lefedést a `tulajdonság_kategóriák` gate őrzi (gen/tulajdonsag.py); a `tulajdonság_kategória`
+    hivatkozást a hívó ez előtt fejti ki (`esemeny_kategoria_kifejt`)."""
     errors = []
     valid_csoport = {'harci', 'próba', 'fizikai', 'képesség', 'egyéb'}
     ids_seen = set()
@@ -199,13 +200,6 @@ def validate_esemenyek(esemenyek, refs=None, kepz_csoportok=None):
         if kepz_csoportok is not None:
             for c in e.get('kizárt_csoportok') or []:
                 if c not in kepz_csoportok: errors.append(f"{ctx}: ismeretlen képzettség-csoport '{c}'")
-    if refs is not None:
-        by_id = {e.get('id'): e for e in esemenyek}
-        fiz = set((by_id.get('fizikai_próba') or {}).get('tulajdonságok') or [])
-        szel = set((by_id.get('szellemi_próba') or {}).get('tulajdonságok') or [])
-        if fiz & szel: errors.append(f"fizikai_próba / szellemi_próba: átfedő tulajdonság(ok): {sorted(fiz & szel)}")
-        if (fiz | szel) != refs['tulajdonság']:
-            errors.append(f"fizikai_próba + szellemi_próba nem fedi le a Tulajdonságokat (hiányzik: {sorted(refs['tulajdonság'] - fiz - szel)})")
     hibak_kilep("Esemény validációs hibák", errors)
 
 

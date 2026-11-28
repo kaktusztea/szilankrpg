@@ -1,4 +1,4 @@
-import type { Tulajdonsagok, Fortely } from '../types';
+import type { Fortely } from '../types';
 import type { KiterjesztesEntry } from '../data-loader';
 import type { ModositoTabla, ModositoSor, PróbaEnyhítés, PróbaKonstansok } from '../data-types';
 import { PRÓBA_IMMUNITÁS_KÜSZÖB } from '../../ui-constants';
@@ -8,10 +8,6 @@ import { helyettesítésSzint } from './proba-common';
  * Képzettségpróba tiszta kalkulációs logika (§37.2) - a popup UI nélkül,
  * hogy tesztelhető és a Misztikus/Tulajdonságok screen-ekből is használható legyen.
  */
-
-export const MIND_TULAJDONSÁG: (keyof Tulajdonsagok)[] = [
-  'erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység',
-];
 
 /** Fortély-id → felvett (max) fok. Többszörös fortélynél a legmagasabb példány foka. */
 export function buildFortélyFokok(fortélyok: Fortely[]): Record<string, number> {

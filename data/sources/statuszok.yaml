@@ -411,7 +411,10 @@ státuszok:
       cél: ké_dobás
     - hatás: hátrány
       érték: -2
-      cél: nem_harci_próba
+      cél: szellemi_próba
+    - hatás: hátrány
+      érték: -1
+      cél: fizikai_próba
     - hatás: támadás_elvesztés_többszörös
     - hatás: vé_veszteség_duplázódik
     - hatás: mozgás_feleződik
@@ -609,7 +612,7 @@ státuszok:
       cél: fizikai_próba
     - hatás: hátrány
       érték: -1
-      cél: szociális_próba
+      cél: szellemi_próba
 - id: sérült
   név: Sérült
   kategória: fizikai

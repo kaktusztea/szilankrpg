@@ -4,6 +4,7 @@ import os
 
 from .common import SOURCES_DIR, load_yaml, write_json, hibak_kilep
 from .hatas_sablon import sablon_hibak, kifejt_statuszok, alkategoria_kifejt
+from .tulajdonsag import tulajdonsag_sorrend, esemeny_kategoria_kifejt
 from .schema import validate_schema
 from .validators import (
     validate_aktiv_ful, validate_esemenyek, proba_alcel_refs, fortely_lista, id_hibak, kepzettseg_nevek,
@@ -40,11 +41,12 @@ def generate_aktiv_ful():
     validate_schema('hatter', hatterek.get('leíró_hátterek', []), 'hatterek.yaml[leíró]', root_key='leíró_hátterek', name_key='kategória')
     validate_schema('hatter', hatterek.get('karma_hátterek', []), 'hatterek.yaml[karma]', root_key='karma_hátterek')
     validate_aktiv_ful(taktikak, helyzetek, [], manoverek, effekt_modok)
+    hibak_kilep("Esemény tulajdonság-kategória hibák", esemeny_kategoria_kifejt(esemenyek, _konstansok))
     validate_esemenyek(esemenyek, proba_alcel_refs(SOURCES_DIR, statuszok), _konstansok.get('képzettség_csoportok', []))
     # Hatás-sablonok (hatasok.yaml, engine_spec §22.4): katalógus-validáció, majd a státuszok `hatás:` sorainak kifejtése
     hibak_kilep("Státusz id hibák", id_hibak([(f"statuszok.yaml [{s.get('név')}]", s) for s in statuszok], 'státusz'))
     hibak_kilep("Státusz alkategória hibák", alkategoria_kifejt(
-        statuszok, _konstansok['tulajdonság_sorrend'], kepzettseg_nevek(SOURCES_DIR)))
+        statuszok, tulajdonsag_sorrend(_konstansok), kepzettseg_nevek(SOURCES_DIR)))
     hibak_kilep("Hatás-sablon validációs hibák", sablon_hibak(hatasok, effekt_modok, esemenyek))
     hibak_kilep("Státusz hatás-hivatkozás hibák", kifejt_statuszok(statuszok, hatasok, esemenyek, taktikak, fortely_lista(SOURCES_DIR), hivatkozas_kotelezo=True))
     validate_statuszok(statuszok, effekt_modok, esemenyek)

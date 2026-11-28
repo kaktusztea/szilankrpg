@@ -3,6 +3,7 @@
 import os
 
 from .common import SOURCES_DIR, load_yaml, write_json, hibak_kilep
+from .tulajdonsag import tulajdonsag_sorrend
 from .schema import validate_schema
 
 
@@ -13,7 +14,7 @@ def generate_fajok():
     keretek = {}
     faj_fortelyok = {}   # faj → {fortély-id: max_fok} (érzék + ajánlott) - a `faj` követelmény-típus forrása
     errors = []
-    required_tul = {'erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység'}
+    required_tul = set(tulajdonsag_sorrend(load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))))
     for f in sorted(os.listdir(fdir)):
         if not f.endswith('.yaml'):
             continue

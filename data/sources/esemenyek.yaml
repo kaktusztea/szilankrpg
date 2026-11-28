@@ -46,11 +46,11 @@ események:
   - id: "szellemi_próba"
     név: "Szellemi próba"
     csoport: "próba"
-    tulajdonságok: ["intelligencia", "emlékezet", "önuralom", "érzékenység"]
+    tulajdonság_kategória: "szellemi"   # konstansok.yaml → tulajdonság_kategóriák
   - id: "fizikai_próba"
     név: "Fizikai próba"
     csoport: "próba"
-    tulajdonságok: ["erő", "edzettség", "ügyesség", "gyorsaság"]
+    tulajdonság_kategória: "fizikai"    # konstansok.yaml → tulajdonság_kategóriák
   - id: "nem_harci_próba"
     név: "Nem-harci képzettségpróba"
     csoport: "próba"

@@ -64,6 +64,7 @@ function képzettségPopup(
       felszEH={fizikai ? felszHátrány.ehSzint : 0}
       felszNemHarcol={fizikai ? felszHátrány.nemHarcol : false}
       próba={data.konstansok.próba}
+      tulajdonságSorrend={data.konstansok.tulajdonság_sorrend}
       képzetlen={képzetlen}
       onClose={onClose}
     />
@@ -127,6 +128,7 @@ export function ProbaDispatcher(props: Props) {
       felszEH={0}
       felszNemHarcol={false}
       próba={data.konstansok.próba}
+      tulajdonságSorrend={data.konstansok.tulajdonság_sorrend}
       képzetlen
       képzetlenFizikaiToggle
       onClose={onClose}

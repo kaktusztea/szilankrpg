@@ -8,5 +8,6 @@ események:
     csoport: ""                # kötelező, enum: "harci" | "próba" | "fizikai" | "képesség"
     # Próba-kategória definíció (md/010_11 "Ökölszabály: Próba-kategóriák"), csak csoport: "próba" célpontnál:
     tulajdonságok: []          # opcionális - a dobáshoz használt Tulajdonság (karakter-séma kulcs) dönti el a kategóriát
+    tulajdonság_kategória: ""  # opcionális, enum: "fizikai" | "szellemi" (konstansok.tulajdonság_kategóriák) - a build ebből tölti ki a `tulajdonságok`-at; a kettő egyszerre nem
     képzettségek: []           # opcionális - rögzített képzettség-id lista
     kizárt_csoportok: []       # opcionális - minden képzettségpróba, kivéve ezeket a képzettség-csoportokat (konstansok.képzettség_csoportok)

@@ -68,4 +68,6 @@ export interface KepzettsegRowProps {
   felszNemHarcol?: boolean;
   /** konstansok.próba - a Képzettségpróba popuphoz. */
   próba: PróbaKonstansok;
+  /** konstansok.tulajdonság_sorrend - a Képzettségpróba popup Tulajdonság-oszlopához. */
+  tulajdonságSorrend: string[];
 }

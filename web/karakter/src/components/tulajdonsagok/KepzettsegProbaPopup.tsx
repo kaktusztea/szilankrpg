@@ -13,7 +13,7 @@ import { rollDie, clampEHSzint } from '../../engine/dice';
 import { PopupOverlay } from '../PopupOverlay';
 import { KepzettsegProbaPickers, type ProbaPickerId } from './KepzettsegProbaPickers';
 import { probaLehetetlen, probaBiztosSiker, tulLabel, képzetlenCélszám, státuszEHForrások, felszerelésEHForrás } from '../../engine/proba/proba-common';
-import { MIND_TULAJDONSÁG, calcMultiKiterjesztésMod, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
+import { calcMultiKiterjesztésMod, calcSzitModÖsszeg, calcEffSzint, effektívFortélyFokok } from '../../engine/proba/kepzettseg-proba-calc';
 import { useProbaDobas, useVálasztottÉrzék, useKapcsolóHalmaz } from './useProbaDobas';
 import { ProbaFejlec, ProbaEredmeny, CelszamGomb, ProbaModValaszto, ProbaSzamPicker, OsszetettChip, OsszetettPicker, ErzekSor, ProbaOsszegzo, ProbaDobasSor } from './ProbaReszek';
 
@@ -50,6 +50,8 @@ interface Props {
   felszNemHarcol?: boolean;
   /** konstansok.próba (célszámok, kocka, összetett / vállalás / helyettesítés paraméterek). */
   próba: PróbaKonstansok;
+  /** konstansok.tulajdonság_sorrend (a build deriválja a tulajdonság_kategóriák-ból) - a Tulajdonság-oszlop sorrendje. */
+  tulajdonságSorrend: string[];
   /** Képzetlen próba (szint 0, a listában nem felvett): nem-fizikai képzettségnél +3 célszám (§030_06_01). */
   képzetlen?: boolean;
   /** Általános képzetlen próba (nincs konkrét képzettség): belső "Fizikai képzettség" kapcsoló dönti a +3-at. */
@@ -62,7 +64,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, képzettségKulcs, kepzettsegDefs, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, esemenyek, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, próba, képzetlen = false, képzetlenFizikaiToggle = false, onClose,
+  képzettségNév, képzettségKulcs, kepzettsegDefs, képzettségCsoport, szint, tulajdonságok, kiterjesztesek, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, képzettségek, aktívStátuszok, statuszDefs, esemenyek, módosítóTáblák, próbaEnyhítések, dobásKomment, felszEH = 0, felszNemHarcol = false, próba, tulajdonságSorrend, képzetlen = false, képzetlenFizikaiToggle = false, onClose,
 }: Props) {
   const p = próba.képzettség;
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
@@ -237,7 +239,7 @@ export function KepzettsegProbaPopup({
         <div className="kep-proba-dual-list">
           <div className="kep-proba-dual-col">
             <div className="kep-proba-oszlop-cim">Tulajdonság</div>
-            {MIND_TULAJDONSÁG.map(t => (
+            {(tulajdonságSorrend as (keyof Tulajdonsagok)[]).map(t => (
               <CelszamGomb key={t} aktív={selTul === t} onClick={d.váltás(() => { setSelTul(t); })}
                 className={dominánsTulajdonságok.has(tulLabel(t)) ? 'kep-proba-dominans' : ''}>
                 <span>{tulLabel(t)}</span><b>{tulajdonságok[t]}</b>

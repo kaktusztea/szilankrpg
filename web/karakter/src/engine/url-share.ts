@@ -31,7 +31,12 @@ function fromBase64Url(str: string): Uint8Array {
 // Kompaktálás (§40.2–40.8)
 // ============================================================
 
-const TULAJ_ORDER = ['erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység'] as const;
+/**
+ * The share-link encoding order of the Tulajdonságok. Deliberately a fixed literal (part of the link format): links
+ * already sent out must keep decoding even if the data order changes. A test guards that it matches
+ * konstansok.tulajdonság_sorrend.
+ */
+export const TULAJ_ORDER = ['erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység'] as const;
 
 interface CompactKarakter {
   sv: number;

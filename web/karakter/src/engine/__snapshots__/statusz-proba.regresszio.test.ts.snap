@@ -322,6 +322,70 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
     "szituációs": [],
     "tiltott": false,
   },
+  "Fizikai (3) | edzettség": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | emlékezet": {
+    "források": [
+      "Fizikai (Elcsigázottság): -2",
+    ],
+    "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | erő": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | gyorsaság": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | intelligencia": {
+    "források": [
+      "Fizikai (Elcsigázottság): -2",
+    ],
+    "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | érzékenység": {
+    "források": [
+      "Fizikai (Elcsigázottság): -2",
+    ],
+    "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | önuralom": {
+    "források": [
+      "Fizikai (Elcsigázottság): -2",
+    ],
+    "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | ügyesség": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Indulat (3) | emlékezet": {
     "források": [
       "Indulat (Őrjöngés): kudarc",
@@ -410,6 +474,14 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | erő": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -423,6 +495,30 @@ exports[`statusz-proba regressziós snapshot > státusz × Tulajdonságpróba 1`
       "Rosszullét (Erős): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -3613,614 +3709,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség (Tulajdo
     "szituációs": [],
     "tiltott": true,
   },
-  "Fizikai (3) | akrobatika": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | alkímia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_asztrálmágia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_aurahangolás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_belső_síkok_lényeinek_idézése": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_elemi_mágia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_időmágia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_illúziók": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_külső_síkok_lényeinek_idézése": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_mentálmágia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_metamágia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_nekromancia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_sors_befolyásolás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_sors_érzékelése": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_természetes_anyagok_mágiája": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_természeti_jelenségek": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_térmágia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | arkánum_életerő_manipulálása": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | befolyásolás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | csapdaállítás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | előadóművészet": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | emberismeret": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | etikett": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_amund": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_anatyda": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_buzzgoblin": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_dzsenn": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_elar": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_elf": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_ember_déli": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_ember_korg": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_ember_slan": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_ember_északi": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_erdőpille": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_feenhar": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_gnóm": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_goblin": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_gyíklény": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_homoki_elf": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_hómanó": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_khál": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_kineta": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_kobold": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_kyr": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_ork": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_sáskaharcos": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_törpe": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_tűzkobold": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | faj_misztérium_udvari_ork": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | fájdalomtűrés": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | hadászat": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | hajózás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | kirurgia": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | kvantikum": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | képzőművészet": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | kézművesség": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | lexikum": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | lopakodás_rejtőzés": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | lopás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | lovaglás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | léglovaglás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | mászás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | mérgek": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | művészetismeret": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | nyelvtanulás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | nyomozás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | szerencsejáték": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | természetjárás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | tradíció": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | vajákosság": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | városi_jártasság": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | zárnyitás": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | álcázás_álruha": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | értékbecslés": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | észlelés": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Fizikai (3) | ősi_nyelv_ismerete": {
-    "források": [
-      "Fizikai (Elcsigázottság): -2",
-    ],
-    "szint": -2,
-    "szituációs": [],
-    "tiltott": false,
-  },
   "Félelem (1) | befolyásolás": {
     "források": [
       "Félelem (Szorongás): -1",
@@ -4292,30 +3780,6 @@ exports[`statusz-proba regressziós snapshot > státusz × képzettség (Tulajdo
     "szint": 0,
     "szituációs": [],
     "tiltott": true,
-  },
-  "Rosszullét (2) | befolyásolás": {
-    "források": [
-      "Rosszullét (Erős): -1",
-    ],
-    "szint": -1,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Rosszullét (2) | emberismeret": {
-    "források": [
-      "Rosszullét (Erős): -1",
-    ],
-    "szint": -1,
-    "szituációs": [],
-    "tiltott": false,
-  },
-  "Rosszullét (2) | etikett": {
-    "források": [
-      "Rosszullét (Erős): -1",
-    ],
-    "szint": -1,
-    "szituációs": [],
-    "tiltott": false,
   },
   "Szellemi (1) | észlelés": {
     "források": [
@@ -12172,9 +11636,9 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | akrobatika | edzettség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12188,17 +11652,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | akrobatika | erő": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | akrobatika | gyorsaság": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12228,17 +11692,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | akrobatika | ügyesség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | arkánum_asztrálmágia | edzettség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12252,17 +11716,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | arkánum_asztrálmágia | erő": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | arkánum_asztrálmágia | gyorsaság": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12292,17 +11756,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | arkánum_asztrálmágia | ügyesség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | befolyásolás | edzettség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12316,17 +11780,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | befolyásolás | erő": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | befolyásolás | gyorsaság": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12356,17 +11820,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | befolyásolás | ügyesség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | előadóművészet | edzettség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12380,17 +11844,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | előadóművészet | erő": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | előadóművészet | gyorsaság": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12420,17 +11884,81 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | előadóművészet | ügyesség": {
     "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | harcmodor | edzettség": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | harcmodor | emlékezet": {
+    "források": [
       "Fizikai (Elcsigázottság): -2",
     ],
     "szint": -2,
     "szituációs": [],
     "tiltott": false,
   },
-  "Fizikai (3) | lexikum | edzettség": {
+  "Fizikai (3) | harcmodor | erő": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | harcmodor | gyorsaság": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | harcmodor | intelligencia": {
     "források": [
       "Fizikai (Elcsigázottság): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | harcmodor | érzékenység": {
+    "források": [
+      "Fizikai (Elcsigázottság): -2",
+    ],
+    "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | harcmodor | önuralom": {
+    "források": [
+      "Fizikai (Elcsigázottság): -2",
+    ],
+    "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | harcmodor | ügyesség": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Fizikai (3) | lexikum | edzettség": {
+    "források": [
+      "Fizikai (Elcsigázottság): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12444,17 +11972,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | lexikum | erő": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | lexikum | gyorsaság": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12484,17 +12012,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | lexikum | ügyesség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | lopás | edzettség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12508,17 +12036,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | lopás | erő": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | lopás | gyorsaság": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12548,17 +12076,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | lopás | ügyesség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | észlelés | edzettség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12572,17 +12100,17 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | észlelés | erő": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
   "Fizikai (3) | észlelés | gyorsaság": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -12612,9 +12140,9 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   },
   "Fizikai (3) | észlelés | ügyesség": {
     "források": [
-      "Fizikai (Elcsigázottság): -2",
+      "Fizikai (Elcsigázottság): -1",
     ],
-    "szint": -2,
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -13302,6 +12830,14 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | akrobatika | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | akrobatika | erő": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13315,6 +12851,30 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
       "Rosszullét (Erős): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | akrobatika | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | akrobatika | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | akrobatika | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -13334,6 +12894,14 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | arkánum_asztrálmágia | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | arkánum_asztrálmágia | erő": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13350,6 +12918,30 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | arkánum_asztrálmágia | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | arkánum_asztrálmágia | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | arkánum_asztrálmágia | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | arkánum_asztrálmágia | ügyesség": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13361,7 +12953,6 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   "Rosszullét (2) | befolyásolás | edzettség": {
     "források": [
       "Rosszullét (Erős): -2",
-      "Rosszullét (Erős): -1",
     ],
     "szint": -2,
     "szituációs": [],
@@ -13378,7 +12969,6 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   "Rosszullét (2) | befolyásolás | erő": {
     "források": [
       "Rosszullét (Erős): -2",
-      "Rosszullét (Erős): -1",
     ],
     "szint": -2,
     "szituációs": [],
@@ -13387,7 +12977,6 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   "Rosszullét (2) | befolyásolás | gyorsaság": {
     "források": [
       "Rosszullét (Erős): -2",
-      "Rosszullét (Erős): -1",
     ],
     "szint": -2,
     "szituációs": [],
@@ -13420,7 +13009,6 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
   "Rosszullét (2) | befolyásolás | ügyesség": {
     "források": [
       "Rosszullét (Erős): -2",
-      "Rosszullét (Erős): -1",
     ],
     "szint": -2,
     "szituációs": [],
@@ -13431,6 +13019,14 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
       "Rosszullét (Erős): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | előadóművészet | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -13450,6 +13046,30 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | előadóművészet | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | előadóművészet | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | előadóművészet | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | előadóművészet | ügyesség": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13463,6 +13083,14 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
       "Rosszullét (Erős): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | harcmodor | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -13482,6 +13110,30 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | harcmodor | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | harcmodor | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | harcmodor | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | harcmodor | ügyesség": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13495,6 +13147,14 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
       "Rosszullét (Erős): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | lexikum | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -13514,6 +13174,30 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | lexikum | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | lexikum | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | lexikum | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | lexikum | ügyesség": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13527,6 +13211,14 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
       "Rosszullét (Erős): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | lopás | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },
@@ -13546,6 +13238,30 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | lopás | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | lopás | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | lopás | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | lopás | ügyesség": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13562,6 +13278,14 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
     "szituációs": [],
     "tiltott": false,
   },
+  "Rosszullét (2) | észlelés | emlékezet": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
   "Rosszullét (2) | észlelés | erő": {
     "források": [
       "Rosszullét (Erős): -2",
@@ -13575,6 +13299,30 @@ exports[`statusz-proba regressziós snapshot > státusz × minta-képzettség ×
       "Rosszullét (Erős): -2",
     ],
     "szint": -2,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | észlelés | intelligencia": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | észlelés | érzékenység": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
+    "szituációs": [],
+    "tiltott": false,
+  },
+  "Rosszullét (2) | észlelés | önuralom": {
+    "források": [
+      "Rosszullét (Erős): -1",
+    ],
+    "szint": -1,
     "szituációs": [],
     "tiltott": false,
   },

@@ -7,7 +7,8 @@ nincs duplikáció (a fortély a mérvadó).
 
 import os
 
-from .common import SOURCES_DIR, load_yaml, write_json
+from .common import SOURCES_DIR, load_yaml, write_json, hibak_kilep
+from .tulajdonsag import tulajdonsag_sorrend, tulajdonsag_kategoria_hibak
 
 _MF_CÉLOK = ('TÉ', 'VÉ', 'CÉ', 'SP')
 
@@ -27,7 +28,9 @@ def _derive_mf_bónuszok():
 
 
 def generate_konstansok():
-    """konstansok.yaml → konstansok.json (+ derivált mesterfegyver_bónuszok)"""
+    """konstansok.yaml → konstansok.json (+ derivált mesterfegyver_bónuszok, tulajdonság_sorrend)"""
     data = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
+    hibak_kilep("Tulajdonság-kategória hibák", tulajdonsag_kategoria_hibak(data))
+    data['tulajdonság_sorrend'] = tulajdonsag_sorrend(data)
     data['mesterfegyver_bónuszok'] = _derive_mf_bónuszok()
     write_json('konstansok.json', data)

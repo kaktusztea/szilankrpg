@@ -347,7 +347,10 @@ export interface KonstansokRaw {
   közös_nyelv: string;
   fortély_csoport_sorrend: { id: string; label: string }[];
   nyelv_fok_nevek: Record<number, string>;
+  /** Generált (a build a tulajdonság_kategóriák-ból deriválja: fizikai, majd szellemi). */
   tulajdonság_sorrend: string[];
+  /** Tulajdonság-kategóriák (md/010_05_01_00) - az egyetlen forrás; esemenyek fizikai_próba / szellemi_próba is ebből. */
+  tulajdonság_kategóriák: { fizikai: string[]; szellemi: string[] };
   képzettség_csoport_sorrend: { id: string; label: string }[];
 
   // Aura / Misztikus (§34)

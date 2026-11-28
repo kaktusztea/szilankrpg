@@ -15,6 +15,7 @@ from .common import SOURCES_DIR, SCHEMAS_DIR, load_yaml
 from .schema import validate_schema
 from .naming_lint import lint
 from .hatas_sablon import sablon_hibak, kifejt_statuszok, alkategoria_kifejt
+from .tulajdonsag import tulajdonsag_sorrend, tulajdonsag_kategoria_hibak, esemeny_kategoria_kifejt
 from .validators import fortely_lista
 from .validators import (
     validate_aktiv_ful, validate_esemenyek, validate_statuszok, validate_harci_helyzet_hatasok,
@@ -45,6 +46,7 @@ class Adat:
     hatasok = src('hatasok.yaml')['hatások']
     extrak = src('fegyverek', 'extrak.yaml')['extrak']
     konstansok = src('konstansok.yaml')
+    esemeny_kategoria_kifejt(esemenyek, konstansok)   # as in the pipeline: `tulajdonság_kategória` → `tulajdonságok`
     effekt_modok = set(konstansok['effekt_módok'])
     harcertek_celok = konstansok.get('harcérték_célok', [])
 
@@ -80,7 +82,7 @@ class AktivFulGates(unittest.TestCase):
         validate_aktiv_ful(A.taktikak, A.helyzetek, [], A.manoverek, A.effekt_modok)
         validate_esemenyek(A.esemenyek, proba_alcel_refs(SOURCES_DIR, A.statuszok), A.konstansok['képzettség_csoportok'])
         st = copy.deepcopy(A.statuszok)
-        self.assertEqual(alkategoria_kifejt(st, A.konstansok['tulajdonság_sorrend'], ['lexikum']), [])
+        self.assertEqual(alkategoria_kifejt(st, tulajdonsag_sorrend(A.konstansok), ['lexikum']), [])
         self.assertEqual(id_hibak([(s['név'], s) for s in st], 'státusz'), [])
         self.assertEqual(kifejt_statuszok(st, A.hatasok, A.esemenyek, A.taktikak, fortely_lista(SOURCES_DIR), hivatkozas_kotelezo=True), [])
         validate_statuszok(st, A.effekt_modok, A.esemenyek)
@@ -104,11 +106,25 @@ class AktivFulGates(unittest.TestCase):
     def test_proba_kategoria_ismeretlen_tulajdonsag_bukik(self):
         self._esemeny_kat_bukik(lambda d: d['fizikai_próba']['tulajdonságok'].append('nincs_ilyen'))
 
-    def test_proba_kategoria_atfedes_bukik(self):
-        self._esemeny_kat_bukik(lambda d: d['fizikai_próba']['tulajdonságok'].append('intelligencia'))
+    def test_tulajdonsag_kategoriak(self):
+        k = self.A.konstansok
+        self.assertEqual(tulajdonsag_kategoria_hibak(k), [])
+        self.assertEqual(len(tulajdonsag_sorrend(k)), 8)
+        def hibas(módosít):
+            kk = copy.deepcopy(k); módosít(kk['tulajdonság_kategóriák']); return tulajdonsag_kategoria_hibak(kk)
+        self.assertTrue(hibas(lambda d: d['fizikai'].append('intelligencia')))   # overlap
+        self.assertTrue(hibas(lambda d: d['szellemi'].remove('érzékenység')))    # missing
+        self.assertTrue(hibas(lambda d: d['fizikai'].append('nincs_ilyen')))     # unknown
+        self.assertTrue(hibas(lambda d: d.update({'harmadik': []})))             # unknown category
 
-    def test_proba_kategoria_hianyos_lefedes_bukik(self):
-        self._esemeny_kat_bukik(lambda d: d['szellemi_próba']['tulajdonságok'].remove('érzékenység'))
+    def test_esemeny_kategoria_kifejt(self):
+        e = copy.deepcopy(src('esemenyek.yaml')['események'])
+        self.assertEqual(esemeny_kategoria_kifejt(e, self.A.konstansok), [])
+        by_id = {x['id']: x for x in e}
+        self.assertEqual(by_id['fizikai_próba']['tulajdonságok'], self.A.konstansok['tulajdonság_kategóriák']['fizikai'])
+        self.assertNotIn('tulajdonság_kategória', by_id['szellemi_próba'])
+        rossz = [{'id': 'a', 'tulajdonság_kategória': 'nincs_ilyen'}, {'id': 'b', 'tulajdonság_kategória': 'fizikai', 'tulajdonságok': ['erő']}]
+        self.assertEqual(len(esemeny_kategoria_kifejt(rossz, self.A.konstansok)), 2)
 
     def test_proba_kategoria_ismeretlen_kepzettseg_bukik(self):
         self._esemeny_kat_bukik(lambda d: d['szociális_próba']['képzettségek'].append('nincs_ilyen'))
@@ -138,7 +154,7 @@ class AktivFulGates(unittest.TestCase):
     def _st(self):
         """A státuszok másolata, a build sorrendjében előkészítve (alkategória_forrás → alkategóriák)."""
         st = copy.deepcopy(self.A.statuszok)
-        alkategoria_kifejt(st, self.A.konstansok['tulajdonság_sorrend'], ['lexikum'])
+        alkategoria_kifejt(st, tulajdonsag_sorrend(self.A.konstansok), ['lexikum'])
         return st
 
     def _kifejt_hiba(self, sor, kotelezo=False):

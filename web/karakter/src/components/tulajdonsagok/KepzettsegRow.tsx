@@ -11,7 +11,7 @@ import { DELETE_BTN_TAP_ZONE_PX, SZINT_VALUES, KÉPZETTSÉG_SZINT_MAGAS } from '
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
   kiterjesztesek, infoOpen, onInfoToggle,
-  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, esemenyek, próbaEnyhítések, fortélyBónuszok, kepzettsegDefs, felszEH = 0, felszNemHarcol = false, próba
+  displayName, findDef, overLimit, warning, fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál, tulajdonságok, képzettségek, aktívStátuszok, statuszDefs, esemenyek, próbaEnyhítések, fortélyBónuszok, kepzettsegDefs, felszEH = 0, felszNemHarcol = false, próba, tulajdonságSorrend
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
   const [showProba, setShowProba] = useState(false);
@@ -78,6 +78,7 @@ export function KepzettsegRow({
           felszEH={felszEH}
           felszNemHarcol={felszNemHarcol}
           próba={próba}
+          tulajdonságSorrend={tulajdonságSorrend}
           onClose={() => setShowProba(false)}
         />
       )}

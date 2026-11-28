@@ -21,15 +21,11 @@ pinned_taktikák:
 
 közös_nyelv: "Közös (pyarroni)"
 
-tulajdonság_sorrend:
-  - "erő"
-  - "edzettség"
-  - "ügyesség"
-  - "gyorsaság"
-  - "intelligencia"
-  - "emlékezet"
-  - "önuralom"
-  - "érzékenység"
+# Tulajdonság-kategóriák (md/010_05_01_00): az egyetlen forrás. A build ebből deriválja a `tulajdonság_sorrend`-et
+# (konstansok.json: fizikai, majd szellemi) és az esemenyek.yaml `tulajdonság_kategória` próba-kategóriák listáját.
+tulajdonság_kategóriák:
+  fizikai: ["erő", "edzettség", "ügyesség", "gyorsaság"]
+  szellemi: ["intelligencia", "emlékezet", "önuralom", "érzékenység"]
 
 # Felszerelés keret és terhelés (md/010_03_06_felszereles.md).
 # A keret = 2 + Erő; a cipelt tárgyak/fegyver/pajzs/páncél pontot vonnak le. Ha a terhelés
@@ -67,7 +63,7 @@ felszerelés:
   hátrány_sáv:
     1: -1
     2: -2
-  # a felszerelés-Hátrány a Fizikai próbákra hat: a Fizikai Tulajdonságok listája esemenyek.yaml → fizikai_próba.tulajdonságok
+  # a felszerelés-Hátrány a Fizikai próbákra hat: a Fizikai Tulajdonságok listája → tulajdonság_kategóriák.fizikai
 
 képzettség_csoport_sorrend:
   - id: "harci"

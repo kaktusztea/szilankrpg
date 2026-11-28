@@ -15,7 +15,8 @@ data/
   gen/                       Generátor modulok: common, cache, schema, konstansok, kepzettsegek,
                              fortelyok, fajok, aktiv_ful, validators, naming_lint (YAML naming build-gate),
                              hivatkozas (fortély/képzettség id-hivatkozás formátum + feloldó),
-                             kiterjesztes_check (képzettség md ↔ kiterjesztesek.json szinkron build-gate)
+                             kiterjesztes_check (képzettség md ↔ kiterjesztesek.json szinkron build-gate),
+                             tulajdonsag (tulajdonság_kategóriák → tulajdonság_sorrend + esemény próba-kategóriák, gate)
                              common.hibak_kilep (gate-kimenet + SystemExit), hivatkozas.id_hivatkozasi_hibak /
                              manover_ref_hibak; test_gates.py (gate-ek pozitív + negatív tesztje, `npm run test:gates`)
 web/karakter/                React app gyökere
@@ -361,7 +362,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 
 | Fájl | Tartalom | Generált JSON |
 |------|----------|--------------|
-| `konstansok.yaml` | Központi konstansok (harcértékek, arányok, limitek) | `konstansok.json` |
+| `konstansok.yaml` | Központi konstansok (harcértékek, arányok, limitek; `tulajdonság_kategóriák` → derivált `tulajdonság_sorrend`) | `konstansok.json` |
 | `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml` | Fortély definíciók (184 db, stabil `id` + `név`) | `fortelyok.json` |
 | `kepzettsegek/{primer,szekunder}/*.yaml` | Képzettség definíciók (81 db, stabil `id` + `név`) | `kepzettsegek.json` |
 | `fajok/*.yaml` | Faj hátterek (27 db) | `fajok.json`, `faj_tulajdonsag_keretek.json`, `faj_fortelyok.json` (faj → {fortély: max_fok}, `faj` követelmény) |

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import { encodeKarakterUrl, decodeKarakterFromHash, extractHashFromText } from './url-share';
+import { encodeKarakterUrl, decodeKarakterFromHash, extractHashFromText, TULAJ_ORDER } from './url-share';
 import { DEFAULT_SESSION, type Karakter } from './types';
 
 const DATA_ROOT = resolve(__dirname, '../../../../data');
@@ -86,5 +86,12 @@ describe('extractHashFromText', () => {
   it('üres szöveg / csak szóköz → üres', () => {
     expect(extractHashFromText('')).toBe('');
     expect(extractHashFromText('   ')).toBe('');
+  });
+});
+
+describe('url-share - Tulajdonság order', () => {
+  it('TULAJ_ORDER matches konstansok.tulajdonság_sorrend (a change would silently break sent links)', () => {
+    const k = JSON.parse(readFileSync(resolve(DATA_ROOT, 'tables/konstansok.json'), 'utf-8'));
+    expect([...TULAJ_ORDER]).toEqual(k.tulajdonság_sorrend);
   });
 });

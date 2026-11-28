@@ -27,7 +27,15 @@ describe('statusz-proba - Tulajdonság-alapú próba-kategóriák', () => {
     expect(tp(['sérült (2)'], 'erő').szint).toBe(-2);
     expect(tp(['sérült (3)'], 'erő').tiltott).toBe(true);
     expect(tp(['félelem (1)'], 'önuralom').szint).toBe(0); // szociális képzettségpróba - Tulajdonságpróbán nem
-    expect(tp(['fizikai (3)'], 'gyorsaság').szint).toBe(0); // nem_harci_próba - Tulajdonságpróbán nem
+  });
+
+  it('Fizikai (3) / Rosszullét (2): fizikai és szellemi Hátrány külön szinttel, a dobás Tulajdonsága szerint (md/082)', () => {
+    expect(tp(['fizikai (3)'], 'gyorsaság').szint).toBe(-1);
+    expect(tp(['fizikai (3)'], 'intelligencia').szint).toBe(-2);
+    expect(kp(['fizikai (3)'], 'lexikum', 'intelligencia').szint).toBe(-2);
+    expect(tp(['rosszullét (2)'], 'erő').szint).toBe(-2);
+    expect(tp(['rosszullét (2)'], 'önuralom').szint).toBe(-1);
+    expect(kp(['rosszullét (2)'], 'etikett', 'érzékenység').szint).toBe(-1);   // no longer szociális: one Hátrány-1
   });
 
   it('alcél tulajdonság:<kulcs>: Trauma / Zavar / Késztetés csak a megnevezett Tulajdonságra', () => {

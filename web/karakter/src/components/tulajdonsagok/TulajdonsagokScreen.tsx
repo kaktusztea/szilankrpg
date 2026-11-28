@@ -174,6 +174,7 @@ export function TulajdonsagokScreen({
           <KepzettsegCsoport
             key={csoport}
             próba={data.konstansok.próba}
+            tulajdonságSorrend={data.konstansok.tulajdonság_sorrend}
             csoport={csoport}
             csoportLabel={CSOPORT_LABEL[csoport]}
             gameMode={gameMode}

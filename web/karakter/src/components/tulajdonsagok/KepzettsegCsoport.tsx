@@ -41,13 +41,14 @@ interface Props {
   /** Fortély szituációs próba-bónuszai képzettségenként (a próba popup „Fortélyok" táblájához). */
   fortélyBónuszByKép?: Record<string, { érték: number; leírás: string }[]>;
   próba: PróbaKonstansok;
+  tulajdonságSorrend: string[];
 }
 
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, szintLimitek, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
   fortélyFokok, többszörösNevek, negáltKulcsok, onToggleNegál,
-  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, esemenyek, felszHátrány, próbaEnyhítésekByKép, fortélyBónuszByKép, próba
+  tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, aktívStátuszok, statuszDefs, esemenyek, felszHátrány, próbaEnyhítésekByKép, fortélyBónuszByKép, próba, tulajdonságSorrend
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -105,6 +106,7 @@ export function KepzettsegCsoport({
               próbaEnyhítések={próbaEnyhítésekByKép[kulcs] || []}
               fortélyBónuszok={fortélyBónuszByKép?.[kulcs]}
               próba={próba}
+              tulajdonságSorrend={tulajdonságSorrend}
             />
           );
         })}

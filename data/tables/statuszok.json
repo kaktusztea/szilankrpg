@@ -1366,9 +1366,16 @@
           {
             "mód": "hátrány",
             "érték": -2,
-            "cél": "nem_harci_próba",
+            "cél": "szellemi_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-2: Nem-harci képzettségpróba"
+            "hatás_név": "Hátrány-2: Szellemi próba"
+          },
+          {
+            "mód": "hátrány",
+            "érték": -1,
+            "cél": "fizikai_próba",
+            "hatás_id": "hátrány",
+            "hatás_név": "Hátrány-1: Fizikai próba"
           },
           {
             "mód": "max_limit",
@@ -1802,9 +1809,9 @@
           {
             "mód": "hátrány",
             "érték": -1,
-            "cél": "szociális_próba",
+            "cél": "szellemi_próba",
             "hatás_id": "hátrány",
-            "hatás_név": "Hátrány-1: Szociális képzettségpróba"
+            "hatás_név": "Hátrány-1: Szellemi próba"
           }
         ]
       }
