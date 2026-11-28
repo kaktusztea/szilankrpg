@@ -319,6 +319,8 @@
 .manover-dobas-mod-label { font-size: 12px; color: var(--text-dim); white-space: nowrap; }
 .manover-dobas-ve-chip { font-size: 13px; color: var(--text); white-space: nowrap; padding: 2px 8px; border-radius: 6px; border: 1px solid var(--border); background: rgba(255, 255, 255, 0.04); }
 .manover-dobas-te-bonus { font-size: 11px; color: var(--text-dim); }
+.manover-ellenem { justify-content: flex-start; margin-bottom: 8px; }
+.manover-ellenem .dobas-kapszula { height: 24px; font-size: 12px; font-weight: normal; }
 .manover-konnyites-chip { font-size: 12px; color: #e0b84a; background: rgba(224, 184, 74, 0.12); border: 1px solid rgba(224, 184, 74, 0.4); border-radius: 6px; padding: 6px 10px; margin-bottom: 10px; }
 .manover-szit-pos { color: var(--success); }
 .manover-szit-neg { color: var(--error); }

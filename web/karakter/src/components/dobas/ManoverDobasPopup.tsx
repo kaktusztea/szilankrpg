@@ -69,12 +69,23 @@ interface Props {
   onClose: () => void;
 }
 
+/** Passzív mód: engem ért helyzet (md/066_03 - Meglepetés / Orvtámadás az áldozat oldalán). */
+type EllenemHelyzet = 'nincs' | 'meglepetés' | 'orvtámadás';
+const ELLENEM_FELIRAT: Record<EllenemHelyzet, string> = { nincs: 'alap', meglepetés: 'Meglepetés', orvtámadás: 'Orvtámadás' };
+const ELLENEM_LEÍRÁS: Record<EllenemHelyzet, string> = {
+  nincs: '', meglepetés: 'Nincs Megakasztás, nincs ellen-MP', orvtámadás: 'Csak Ellenpróba, nincs ellen-MP',
+};
+
 export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], ellenpróbaHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onTéDobás, harcképtelen = false, onClose }: Props) {
   const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
   const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
   const aktívFegyver = mód === 'aktív' ? aktívFegyverInfo(karakter, session, data) : null;
   const nyersFázisok = parseFázisok(manőver.fázisok);
-  const fázisok = könnyítettFázisok(nyersFázisok, mód, session, harcképtelen);
+  // Passzív: az engem (áldozatot) érő Meglepetés / Orvtámadás (md/066_03) - a session nem tartja nyilván,
+  // kézi kapcsoló. Fázissor mint az aktív oldalon + nincs ellen-MP.
+  const [ellenem, setEllenem] = useState<EllenemHelyzet>('nincs');
+  const ellenemKönnyítés = { meglepetés: ellenem === 'meglepetés', orvtámadás: ellenem === 'orvtámadás' };
+  const fázisok = könnyítettFázisok(nyersFázisok, mód, session, harcképtelen, ellenemKönnyítés);
   const harcképtelenKönnyítés = harcképtelen && mód === 'passzív' && nyersFázisok.some(f => f !== 'E');
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
@@ -89,7 +100,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   // oldali táblák + globális módosítók (+ KM körülmény, belharcos manővernél nem); passzív: passzív-oldali táblák (fegyver-extrák, pl. Fegyvertörés-immunis).
   const módosítóTáblák = szitTáblákMódszerint(manőver.helyzetfüggő_módosítók, mód, data, manőver.típus === 'belharcos');
   // A popupon belül egyszerre legfeljebb egy al-popup nyitott (TÉ magyarázat / MP / Helyzetfüggő módosítók / VÉ csökkentés).
-  const [alPopup, setAlPopup] = useState<'té' | 'mp' | 'szit' | 'véCsökk' | null>(null);
+  const [alPopup, setAlPopup] = useState<'té' | 'mp' | 'szit' | 'véCsökk' | 'ellenem' | null>(null);
   // Outside click in the middle of the multi-phase flow asks first (accidental tap would lose the phases)
   const [megszakításKérdés, setMegszakításKérdés] = useState(false);
   const alZár = () => setAlPopup(null);
@@ -110,7 +121,8 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const belharcFok = getBelharcFok(karakter);
   const isBelharcos = manőver.típus === 'belharcos';
   const mk = data.konstansok.manőver;
-  const maxKölthető = Math.min(aktMP, mód === 'aktív' ? mk.max_mp_támadó : mk.max_mp_védő);
+  const maxKölthető = mód === 'aktív' ? Math.min(aktMP, mk.max_mp_támadó)
+    : ellenem !== 'nincs' ? 0 : Math.min(aktMP, mk.max_mp_védő);
   const belharcBónusz = isBelharcos ? belharcFok * mk.belharc_fok_szorzó : 0;
 
   // 0. lépés: követelmények (CSAK aktív módban - az alkalmazóra vonatkoznak), egyszer kiértékelve.
@@ -170,6 +182,15 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
     manőverÁllapot: mód,
     aktívManőver: manőver.id,
   };
+
+  /** Passzív "Ellenem" kapcsoló: a fázissor változik → a fázis-eredmények és az ellen-MP újraindul. */
+  const fázisHaladás = eredmények.some(e => e !== 'pending') || vDobás != null || eDobás != null;
+  function váltEllenem(v: EllenemHelyzet) {
+    setEllenem(v);
+    const h = { meglepetés: v === 'meglepetés', orvtámadás: v === 'orvtámadás' };
+    setEredmények(könnyítettFázisok(nyersFázisok, mód, session, harcképtelen, h).map(() => 'pending'));
+    setKöltöttMP(0);
+  }
 
   function handleChip(igen: boolean) {
     if (aktívFázisIdx === -1) return;
@@ -362,6 +383,16 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
           </div>
         )}
 
+        {/* Rare case (md/066_03): a small pill, only while it can still be changed or is set. */}
+        {mód === 'passzív' && (!fázisHaladás || ellenem !== 'nincs') && (
+          <div className="dobas-kapszulak manover-ellenem">
+            <button type="button" className="dobas-kapszula" disabled={fázisHaladás} onClick={() => setAlPopup('ellenem')}
+              title="Meglepetés: nincs Megakasztás · Orvtámadás: csak Ellenpróba · mindkettő: nincs ellen-MP">
+              Ellenem <span className="dobas-kapszula-db">{ELLENEM_FELIRAT[ellenem]}</span>
+            </button>
+          </div>
+        )}
+
         {vanKövetelmény && (
           <ManoverKovetelmenyLepes követelmények={követelmények} állapot={kövÁllapot} data={data}
             döntés={követelményDöntés} setDöntés={setKövetelményDöntés} kész={követelményKész} />
@@ -410,6 +441,20 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       </PopupOverlay>
     )}
     {alPopup === 'mp' && <ManoverMpPicker költött={költöttMP} max={maxKölthető} onSelect={setKöltöttMP} onClose={alZár} />}
+    {alPopup === 'ellenem' && (
+      <PopupOverlay className="kep-prompt vallas-picker" onClose={alZár}>
+        <label className="kep-prompt-label-bold-mb">Ellenem</label>
+        <div className="kep-prompt-flex-col-list">
+          {(Object.keys(ELLENEM_FELIRAT) as EllenemHelyzet[]).map(v => (
+            <button key={v} type="button" className={`he-field-btn${ellenem === v ? ' vallas-active' : ''}`}
+              onClick={() => { váltEllenem(v); alZár(); }}>
+              <div>{v === 'nincs' ? 'Alap' : ELLENEM_FELIRAT[v]}</div>
+              {ELLENEM_LEÍRÁS[v] && <div className="he-fegyver-alcim">{ELLENEM_LEÍRÁS[v]}</div>}
+            </button>
+          ))}
+        </div>
+      </PopupOverlay>
+    )}
     {alPopup === 'té' && (
       <ManoverTePopup módosító={manőver.végrehajtás_té_módosító} standard={mk.végrehajtás_TÉ_standard} aktívTÉ={aktívTÉ} onClose={alZár} />
     )}

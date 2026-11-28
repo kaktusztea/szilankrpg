@@ -22,7 +22,10 @@ const ORVTÁMADÁS = 'Orvtámadás';
  * Meglepetés: nincs Megakasztás (M); Orvtámadás: nincs M és támadó dobás (V) sem (a találat
  * automatikus, sebzést a fegyvertáblán dobunk). Csak Aktív módban - l. `könnyítettFázisok`.
  */
-export function helyzetKönnyítés(session: Session): { meglepetés: boolean; orvtámadás: boolean } {
+export interface HelyzetKönnyítés { meglepetés: boolean; orvtámadás: boolean }
+const NINCS_KÖNNYÍTÉS: HelyzetKönnyítés = { meglepetés: false, orvtámadás: false };
+
+export function helyzetKönnyítés(session: Session): HelyzetKönnyítés {
   return {
     meglepetés: session.aktív_helyzetek.includes(MEGLEPETÉS),
     orvtámadás: session.aktív_helyzetek.includes(ORVTÁMADÁS),
@@ -344,23 +347,30 @@ export function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
   return result;
 }
 
-/**
- * Aktív Meglepetés/Orvtámadás könnyítés a fázissorra (§066_03, csak Aktív mód):
- *   - Meglepetés: csak a Megakasztás (M) marad ki; a Végrehajtás (V) megmarad (TÉ:+5, az Előny+1 a
- *     helyzet té_dobás hatásaként jön a téHatások-ban),
- *   - Orvtámadás: csak az Ellenpróba (E) marad (M és V is kiesik).
- * Passzív módban a fázissor változatlan, kivéve Harcképtelennél (`harcképtelen`): akkor csak az Ellenpróba (E) marad.
- */
-export function könnyítettFázisok(
-  fázisok: ('M' | 'V' | 'E')[], mód: Mód, session: Session, harcképtelen = false,
-): ('M' | 'V' | 'E')[] {
-  // Passzív + Harcképtelen (md/081): a Megakasztás auto kudarc (nálam), a Végrehajtás auto siker (az ellenfélé) -
-  // mindkettő a manőver sikere felé dől, így csak az Ellenpróba marad.
-  if (mód !== 'aktív') return harcképtelen ? fázisok.filter(f => f === 'E') : fázisok;
-  const h = helyzetKönnyítés(session);
+/** Meglepetés: kimarad a Megakasztás (M); Orvtámadás: csak az Ellenpróba (E) marad (md/066_03). */
+function könnyítésFázisokra(fázisok: ('M' | 'V' | 'E')[], h: HelyzetKönnyítés): ('M' | 'V' | 'E')[] {
   if (h.orvtámadás) return fázisok.filter(f => f === 'E');
   if (h.meglepetés) return fázisok.filter(f => f !== 'M');
   return fázisok;
+}
+
+/**
+ * Meglepetés/Orvtámadás könnyítés a fázissorra (§066_03), mindkét oldalon ugyanaz a fázissor:
+ *   - Meglepetés: csak a Megakasztás (M) marad ki; a Végrehajtás (V) megmarad (TÉ:+5, az Előny+1 a
+ *     helyzet té_dobás hatásaként jön a téHatások-ban),
+ *   - Orvtámadás: csak az Ellenpróba (E) marad (M és V is kiesik).
+ * Aktív módban a saját harci helyzetekből (session), passzív módban az `ellenem` kézi kapcsolóból
+ * (az áldozatot érő helyzetet a session nem tartja nyilván).
+ * Passzív + Harcképtelen (`harcképtelen`): csak az Ellenpróba (E) marad.
+ */
+export function könnyítettFázisok(
+  fázisok: ('M' | 'V' | 'E')[], mód: Mód, session: Session, harcképtelen = false,
+  ellenem: HelyzetKönnyítés = NINCS_KÖNNYÍTÉS,
+): ('M' | 'V' | 'E')[] {
+  // Passzív + Harcképtelen (md/081): a Megakasztás auto kudarc (nálam), a Végrehajtás auto siker (az ellenfélé) -
+  // mindkettő a manőver sikere felé dől, így csak az Ellenpróba marad.
+  if (mód !== 'aktív') return harcképtelen ? fázisok.filter(f => f === 'E') : könnyítésFázisokra(fázisok, ellenem);
+  return könnyítésFázisokra(fázisok, helyzetKönnyítés(session));
 }
 
 /**

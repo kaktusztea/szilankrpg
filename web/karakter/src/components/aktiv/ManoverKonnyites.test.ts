@@ -47,8 +47,13 @@ describe('könnyítettFázisok', () => {
   it('nincs ilyen helyzet → változatlan', () => {
     expect(könnyítettFázisok(['M', 'V', 'E'], 'aktív', sessionWith([]))).toEqual(['M', 'V', 'E']);
   });
-  it('Passzív módban NEM könnyít', () => {
+  it('Passzív módban a saját session-helyzet NEM könnyít', () => {
     expect(könnyítettFázisok(['M', 'V', 'E'], 'passzív', sessionWith(['Meglepetés']))).toEqual(['M', 'V', 'E']);
+  });
+  it('Passzív + "Ellenem" kapcsoló → ugyanaz a fázissor, mint az aktív oldalon (md/066_03)', () => {
+    const s = sessionWith([]);
+    expect(könnyítettFázisok(['M', 'V', 'E'], 'passzív', s, false, { meglepetés: true, orvtámadás: false })).toEqual(['V', 'E']);
+    expect(könnyítettFázisok(['M', 'V', 'E'], 'passzív', s, false, { meglepetés: false, orvtámadás: true })).toEqual(['E']);
   });
   it('Passzív + Harcképtelen → Megakasztás / Végrehajtás kiesik (a manőver felé dől), az Ellenpróba marad; aktívra nem hat', () => {
     expect(könnyítettFázisok(['M', 'V', 'E'], 'passzív', sessionWith([]), true)).toEqual(['E']);
