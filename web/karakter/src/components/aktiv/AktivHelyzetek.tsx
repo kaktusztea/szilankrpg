@@ -11,6 +11,12 @@ interface Props extends SessionProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
 }
 
+/** Info text → one effect per line: split at a sentence end or a comma when a capital letter follows
+ *  ("Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik."); abbreviations ("többsz. tám.") stay together. */
+function hatásSorok(t: string): string[] {
+  return t.split(/(?<=\.)\s+(?=[A-ZÁÉÍÓÖŐÚÜŰ])|,\s+(?=[A-ZÁÉÍÓÖŐÚÜŰ])/).map(x => x.trim()).filter(Boolean);
+}
+
 export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, helyzetFortélyok }: Props) {
   const [showPicker, setShowPicker] = useState(false);
 
@@ -38,7 +44,8 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
                   <strong className="aktiv-strong-helyzet">{h}</strong>
                   {minFegyverhosszWarning && <span className="aktiv-min-fegyverhossz-warning">{minFegyverhosszWarning}</span>}
                   {tiltásWarnings.map(w => <span key={w} className="aktiv-min-fegyverhossz-warning">{w}</span>)}
-                  {infóText && <div className="aktiv-taktika-hatas">{fmtHatásSzöveg(infóText)}</div>}
+                  {/* One sentence per line, like the Taktikák / Státuszok sections */}
+                  {infóText && <div className="aktiv-taktika-hatas aktiv-statusz-hatasok">{hatásSorok(infóText).map((m, j) => <div key={j}>{fmtHatásSzöveg(m)}</div>)}</div>}
                 </span>
                 <button className="item-delete" onClick={e => {
                   e.stopPropagation();

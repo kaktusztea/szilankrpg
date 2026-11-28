@@ -56,10 +56,11 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                     <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}><Ikon név="bezár" /></button>
                   </div>
                   {hatásEntry && (
-                    <div className="aktiv-taktika-hatas">
+                    // One effect per line, like the Státuszok section
+                    <div className="aktiv-taktika-hatas aktiv-statusz-hatasok">
                       {hatásEntry.hatások.map((h, j) => {
                         const txt = fmtHatás({ mód: h.mód, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
-                        return txt ? <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span> : null;
+                        return txt ? <div key={j}>{fmtHatásSzöveg(txt)}</div> : null;
                       })}
                     </div>
                   )}

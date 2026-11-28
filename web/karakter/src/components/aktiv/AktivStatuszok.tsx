@@ -72,9 +72,10 @@ export function AktivStatuszok({ data, karakter, session, setSession, pushUndo, 
             }}>
               <span className="aktiv-flex-1">
                 <strong className="aktiv-statusz-name">{státuszCímke(def, p)}{alcím ? ` - ${alcím}` : ''}</strong>
-                {perElem && perElem.hatások.length > 0 && <div className="aktiv-taktika-hatas">{hatásFeliratok(perElem.hatások, eseményNév,
+                {/* One effect per line (easier to read than a comma list) */}
+                {perElem && perElem.hatások.length > 0 && <div className="aktiv-taktika-hatas aktiv-statusz-hatasok">{hatásFeliratok(perElem.hatások, eseményNév,
                   id => képzettségDef(data, id)?.név).map((txt, j) =>
-                  <span key={j}>{j > 0 ? ', ' : ''}{fmtHatásSzöveg(txt)}</span>)}</div>}
+                  <div key={j}>{fmtHatásSzöveg(txt)}</div>)}</div>}
               </span>
               {!locked && <button className="item-delete" onClick={e => {
                 e.stopPropagation();
