@@ -1369,7 +1369,8 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 | Pajzzsal felöklelés | pajzzsal_felöklelés | 7 | V,E |
 | Piszkos trükk | piszkos_trükk | 7 | V,E |
 | Precíz támadás | precíz_támadás | 6 | V,E |
-| Rávetődés hátulról | rávetődés_hátulról | 6 | E |
+| Rávetődés hátulról - észrevétlenül | rávetődés_hátulról_észrevétlenül | 6 | E |
+| Rávetődés hátulról - egyszerűen | rávetődés_hátulról_egyszerűen | 6 | V,E |
 | Távoltartás | távoltartás | 5 | M,E |
 | Terelés | terelés | 8 | E |
 

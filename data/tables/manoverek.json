@@ -744,7 +744,7 @@
     "név": "Leütés hátulról",
     "típus": "általános",
     "nehézség": 6,
-    "fázisok": "V,E",
+    "fázisok": "E",
     "hatás": {
       "aktív": [
         "Ájulás ha sebzés ≥ ÉP/4↓.",
@@ -760,11 +760,9 @@
     "id": "leütés_hátulról",
     "fázis_info": {
       "aktív": {
-        "V": "Célpont VÉ = a mozgás jellegétől függő érték (lásd Orvtámadás). Fegyver markolat sebzése: k20+0 SP + Erőbónusz (Zúzó).",
-        "E": "Ájulás, ha a sebzés eléri az áldozat Max ÉP/4↓ értékét; egyébként Bódultság. A sebzés FP-ként jelenik meg."
+        "E": "Ájulás, ha a sebzés eléri az áldozat Max ÉP/4↓ értékét; egyébként Bódultság. A sebzés FP-ként jelenik meg. Fegyver markolat sebzése: k20+0 SP + Erőbónusz (Zúzó)."
       },
       "passzív": {
-        "V": "Markolattal mért ütés tarkón (Zúzó sebzés).",
         "E": "Elájulsz, ha a sebzés eléri a Max ÉP/4↓ értékedet; egyébként Bódultság. A sebzés FP-ként jelenik meg."
       }
     },
@@ -1107,7 +1105,7 @@
     "ellenpróba_bünteti": false
   },
   {
-    "név": "Rávetődés hátulról",
+    "név": "Rávetődés hátulról - észrevétlenül",
     "típus": "általános",
     "nehézség": 6,
     "fázisok": "E",
@@ -1119,12 +1117,42 @@
         "Ellenfeled a hátadra csimpaszkodott → Belharci szituáció + folyamatos Hátulról támadás bónusz ellened."
       ]
     },
-    "id": "rávetődés_hátulról",
+    "id": "rávetődés_hátulról_észrevétlenül",
     "követelmények": [
       {
         "erősség": "erős",
         "típus": "egyéb",
-        "leírás": "Orvtámadás vagy Hátulról támadás harci helyzet"
+        "leírás": "Orvtámadás harci helyzet"
+      }
+    ],
+    "helyzetfüggő_módosítók": [],
+    "fázis_info": {
+      "aktív": {},
+      "passzív": {}
+    },
+    "fázis_cselekvő": {},
+    "ellenpróba_bünteti": false,
+    "végrehajtás_té_módosító": 5
+  },
+  {
+    "név": "Rávetődés hátulról - egyszerűen",
+    "típus": "általános",
+    "nehézség": 6,
+    "fázisok": "V,E",
+    "hatás": {
+      "aktív": [
+        "Rácsimpaszkodtál ellenfeled hátára → Belharci szituáció + folyamatos Hátulról támadás bónusz."
+      ],
+      "passzív": [
+        "Ellenfeled a hátadra csimpaszkodott → Belharci szituáció + folyamatos Hátulról támadás bónusz ellened."
+      ]
+    },
+    "id": "rávetődés_hátulról_egyszerűen",
+    "követelmények": [
+      {
+        "erősség": "erős",
+        "típus": "egyéb",
+        "leírás": "Hátulról támadás harci helyzet"
       }
     ],
     "helyzetfüggő_módosítók": [],

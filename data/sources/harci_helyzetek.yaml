@@ -343,7 +343,7 @@ harci_helyzetek:
   - text: "Egyéb TÉ bónusz nincs."
   - text: "Harci taktikák NEM használhatóak."
   - text: "Manőver: Precíz támadás használható (páncél megkerüléséhez)."
-  - text: "Manőver: Leütés hátulról, Rávetődés hátulról - követelményük az Orvtámadás helyzet."
+  - text: "Manőver: Leütés hátulról, Rávetődés hátulról - észrevétlenül - követelményük az Orvtámadás helyzet."
   - text: "Manőverek és Orvtámadás viszonya: Ellenpróba dobás csak."
   hatások:
   - mód: "előny"

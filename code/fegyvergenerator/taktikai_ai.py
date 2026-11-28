@@ -62,7 +62,7 @@ MANOVER_NEHEZSEG = {mid: _MANOVEREK_RAW[mid]["nehézség"] for mid in (
     "belharcba_kerülés", "belharcból_kibontakozás", "mögékerülés",
     "földrevitel", "gáncsolás", "átdobás", "pajzzsal_felöklelés",
     "lábkirántás_szálfegyverrel", "felállás_földről",
-    "rávetődés_hátulról",
+    "rávetődés_hátulról_észrevétlenül", "rávetődés_hátulról_egyszerűen",
 )}
 
 # Melyik manőver milyen `Harcos.helyzet` értéket állít be sikeres Ellenpróba esetén.
@@ -70,7 +70,8 @@ MANOVER_HELYZET_HATAS = {
     "belharcba_kerülés": "belharci_helyzet",
     "belharcból_kibontakozás": None,          # kilép a belharciból
     "mögékerülés": "hátulról",
-    "rávetődés_hátulról": "belharci_helyzet",  # + folyamatos hátulról bónusz (l. adapter docstring)
+    "rávetődés_hátulról_észrevétlenül": "belharci_helyzet",  # + folyamatos hátulról bónusz (l. adapter docstring)
+    "rávetődés_hátulról_egyszerűen": "belharci_helyzet",
     "földrevitel": "földön_fekve",
     "gáncsolás": "földön_fekve",
     "átdobás": "földön_fekve",
@@ -86,7 +87,8 @@ MANOVER_HATAS_IRANYA = {
     "belharcba_kerülés": "mindkettő",   # a belharc közös, fizikai szituáció
     "belharcból_kibontakozás": "én",
     "mögékerülés": "én",
-    "rávetődés_hátulról": "mindkettő",
+    "rávetődés_hátulról_észrevétlenül": "mindkettő",
+    "rávetődés_hátulról_egyszerűen": "mindkettő",
     "földrevitel": "cél",
     "gáncsolás": "cél",
     "átdobás": "cél",
@@ -104,8 +106,10 @@ def manover_kovetelmeny_teljesul(mid, harcos: "S.Harcos", cel):
         return harcos.helyzet == "belharci_helyzet"
     if mid == "mögékerülés":
         return cel is not None and cel.helyzet != "hátulról"
-    if mid == "rávetődés_hátulról":
-        return harcos.helyzet in ("orvtámadás", "hátulról")
+    if mid == "rávetődés_hátulról_észrevétlenül":
+        return harcos.helyzet == "orvtámadás"
+    if mid == "rávetődés_hátulról_egyszerűen":
+        return harcos.helyzet == "hátulról"
     if mid == "földrevitel":
         return harcos.profil.harcmodor_szint >= 5 and cel is not None and cel.helyzet != "földön_fekve"
     if mid == "gáncsolás":
@@ -290,8 +294,9 @@ def dontesi_szabalyok(harcos: "S.Harcos", ctx):
         szabalyok.append(("átdobás", 1.0))
     if manover_kovetelmeny_teljesul("lábkirántás_szálfegyverrel", harcos, ctx["cel"]):
         szabalyok.append(("lábkirántás_szálfegyverrel", 1.0))
-    if manover_kovetelmeny_teljesul("rávetődés_hátulról", harcos, ctx["cel"]):
-        szabalyok.append(("rávetődés_hátulról", 2.0))
+    for mid in ("rávetődés_hátulról_észrevétlenül", "rávetődés_hátulról_egyszerűen"):
+        if manover_kovetelmeny_teljesul(mid, harcos, ctx["cel"]):
+            szabalyok.append((mid, 2.0))
 
     # --- Taktikák - az ÖSSZES közelharci taktikák.json id (lovas/távharci taktikák kizárva) ---
     # Belharcban lévő taktikák nem érvényesek: a "tiltja_taktikákat" jellegű megkötéseket
