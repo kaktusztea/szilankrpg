@@ -69,35 +69,47 @@ Manőver Célszám =
 
 🔆 A dobás `k10`-je **`Hátrány-2`** (`3 db k10`, a legkisebb számít), ha az alkalmazó bármely **Normál követelményt** nem teljesít (lásd lentebb). Hiányzó **Erős követelmény** esetén dobni sem lehet.
 
-### 🔆 Ellenpróba Dobás extra módosítói
+### 🔆 Ellenpróba Dobás extra módosítói - nem-belharcos manővereknél
 
 ```
 +1 / Manőver pont
   (max 4 költhető)
 
-Belharcos manővereknél csak:
-  +2 / Belharc fortély fok
-  -2: Kisebb vagy (Erő diff min: -2)
-  +2: Nagyobb vagy  (Erő diff min: +2)
-  -2: ellenfeled fémpáncélban van
-
 KM módosító
   -3: KM: nehezebb körülmények
   +3: KM: könnyebb körülmények
 
-Helyzetfüggő módosítók ∓
+Adott Manőver - Helyzetfüggő módosítók ∓
 ```
 
 Az egyes Manőverek adatlapján található **Helyzetfüggő módosítók** szintén az **Ellenpróba** dobásodhoz adódnak hozzá (nem a Célszámhoz). A pozitív érték értelemszerűen könnyít, a negatív nehezít.
 
+### 🔆 Ellenpróba Dobás extra módosítói - csak belharcos manővereknél
+
+**[Belharcos](fortelyok.harci/belharcos.md) fortély** ismerete bónuszt ad a **támadó** és **védekező** számára is az **Ellenpróba** fázisnál. Ettől függetlenül Belharci szituációban mindenki, képzetlenül is megpróbálhatja mindegyik Manővert.
+
+```
++2 / Belharc fortély foka (támadó)
+
+Belharc körülmények (KM):
+  -6: Testméret / páncél / Erő hátrány
+  -3: Testméret / páncél / Erő előny
+  +3: Testméret / páncél / Erő előny
+  +6: Testméret / páncél / Erő előny
+
+Adott Manőver - Helyzetfüggő módosítók ∓
+```
+
+Belharc körülmények (KM): **mindegyik** belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 felsorolt adottságának ismeretében.
+
 ### 🔆 Manőver Célszám extra módosítói
 
 ```
-+1 / Manőver Pont (ellenfél)
++1 / Manőver Pont (védekező)
   (max 2 költhető)
 
 Belharcos manővereknél csak:
-  +2 / Belharc fortély fok (ellenfél)
+  +2 / Belharc fortély fok (védekező)
 
 +2: Újrapróbálkozás
   → az ellenfél már számít rá
@@ -110,6 +122,12 @@ Az **Ellenpróba** dobása során a KM meghatározza a próba **Célszámát**, 
 Ha csak az **Ellenpróba** az adott Manőver követelménye, akkor annak sikere esetén az egész **Manőver** automatikusan sikeresnek tekinthető.
 
 ### Manőver Pontok
+
+```
+Egyszerre elkölthető
+ max 4: Támadó
+ max 2: Védekező
+```
 
 Opcionális felhasználásukkal mindkét fél növelheti esélyeit: a támadó fél az **Ellenpróba** dobásához adhat bónusz pontokat, a védekező a Manőver Célszámát növelheti ugyanígy. Támadó oldalán egy manőverre maximum `4 MP`, védő oldalon `2 MP` használható fel és ezt előre be kell jelenteniük - még a dobások előtt.
 

@@ -570,7 +570,6 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 - Speciális: Ha egy Vérző (1) Státuszú ellenfélre alkalmazod, simán átkerül [Vérző (2)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-2-er%C5%91sen) Státuszba, nincs más extra. ([Újradobás](https://github.com/kaktusztea/szilankrpg/blob/master/md/066_04_manover_vegbevitele.md#man%C5%91ver-c%C3%A9lsz%C3%A1m-extra-m%C3%B3dos%C3%ADt%C3%B3i): +2 Célszámra)
 - Speciális: ha egy Vérző (2) Státuszú ellenfélre alkalmazod, akkor csak simán **Sebzés dobást** teszel, nem lesz semmilyen más hatása. Ez igaz **Vérző** Státuszt okozó csapdákra is, amelyek ilyenkor sima `k20` Sebzést okoznak.
 
-
 ---
 
 🔗 [Belharcos Manőverek listája](066_06_belharcos_manoverek.md) →

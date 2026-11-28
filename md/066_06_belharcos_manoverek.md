@@ -20,23 +20,9 @@
 
 🟥 **Erős követelmény** mindegyik Belharcos Manővernek - kivéve a **Belharcba kerülést**. Enélkül a manőver nem kísérelhető meg.
 
-## [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) módosítói
+## Ellenpróba módosítói belharcos manővereknél
 
-**[Belharcos](fortelyok.harci/belharcos.md) fortély** ismerete bónuszt ad a **támadó** és **védekező** számára is az **Ellenpróba** fázisnál. Ettől függetlenül Belharci szituációban mindenki, képzetlenül is megpróbálhatja mindegyik Manővert.
-
-```
-+2 / Belharc fortély foka
-  Támadó és Védekező számára
-```
-
-- Helyzetfüggő módosítók:
-  - Belharc körülmények (KM):
-    - `+6`: Testméret / páncél / Erő előny
-    - `+3`: Testméret / páncél / Erő előny
-    - `-3`: Testméret / páncél / Erő előny
-    - `-6`: Testméret / páncél / Erő hátrány
-
-A fenti módosító **mindegyik** belharcos manőverre érvényes. Ez a KM - szubjektív értékelésétől függő - módosító a két fél közti testméret / páncél / Erő különbségtől függ. Nem szükséges erre bonyolult matematikai képlet, a KM döntsön a két fél 3 felsorolt adottságának ismeretében.
+[Lásd itt](066_04_manover_vegbevitele.md#-ellenpróba-dobás-extra-módosítói---csak-belharcos-manővereknél)
 
 <br />
 
