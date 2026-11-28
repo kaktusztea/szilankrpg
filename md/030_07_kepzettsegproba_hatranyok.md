@@ -2,7 +2,7 @@
 
 Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2](081_hatasok.md#%EF%B8%8F-el%C5%91ny12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok) Hatásokat szenvedhetsz el képzettségpróba dobásodra. Az alábbiak egyfajta "fordított kivonatot" mutatnak a **Státuszok** oldalból kiválogatva.
 
-A Fizikai / Szellemi / Szociális / nem-harci kategóriák jelentése: [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák).
+A Fizikai / Szellemi / Szociális kategóriák jelentése: [Próba-kategóriák](010_11_bonuszok_alkalmazasi_sorrendje_okolszabalyok.md#-ökölszabály-próba-kategóriák).
 
 ---
 
@@ -25,7 +25,6 @@ A Fizikai / Szellemi / Szociális / nem-harci kategóriák jelentése: [Próba-k
 - Átkozott Viselkedés (`2`) (KM határozza meg)
 - Eszmélet (`2`) Kábultság
 - Érzékvesztés (`2`) Részleges (Érzék Tulajdonságpróba, ill. Érzékenységgel dobott Képzettségpróba)
-- Fizikai (`3`) Elcsigázottság (nem-harci képzettségekre)
 - Hangulat (`3`) Eufórikus (koncentrációt igénylő feladatokra)
 - Sérült (`2`) S4
 
@@ -45,6 +44,7 @@ Automatikus kudarc
 `Hátrány-1`
 
 - Felszerelés keret aktuális értéke: `-1`
+- Fizikai (`3`) Elcsigázottság
 - Rosszullét (`1`) Közepes
 
 `Hátrány-2`
@@ -58,12 +58,14 @@ Automatikus kudarc
 
 `Hátrány-1`
 
-- Fizikai (`1`) Fáradtság
+- Fizikai (`1`) Fáradtság, Fejfájás
+- Rosszullét (`2`) Erős
 - Szellemi (`2`) Eltompultság
 
 `Hátrány-2`
 
 - Fizikai (`2`) Kimerültség
+- Fizikai (`3`) Elcsigázottság
 - Szellemi (`3`) Delírium (nem-mágikus)
 - Zavar (`1`) Kizökkent
 
@@ -79,7 +81,6 @@ Automatikus kudarc
 `Hátrány-1`
 
 - Félelem (`1`) Szorongás
-- Rosszullét (`2`) Erős
 - Szellemi (`2`) Eltompultság
 - Trauma (`1`) Lélekrepedés (Önuralom / Érzékenység használatakor)
 
