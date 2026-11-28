@@ -228,6 +228,9 @@ státuszok:
     - hatás: hátrány
       érték: -1
       cél: tulajdonságpróba
+    - hatás: hátrány
+      érték: -1
+      cél: manőver_ellenpróba
     - hatás: támadás_elvesztés_1
     - hatás: szabad_varázslás_elvesztése
       megjegyzés: "kivéve papok: ők részegen is tudnak"
@@ -254,6 +257,9 @@ státuszok:
     - hatás: hátrány
       érték: -2
       cél: tulajdonságpróba
+    - hatás: hátrány
+      érték: -2
+      cél: manőver_ellenpróba
     - hatás: támadás_elvesztés_többszörös
     - hatás: varázslás_elvesztése
     - hatás: előny

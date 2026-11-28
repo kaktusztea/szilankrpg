@@ -23,7 +23,7 @@ import { useSérültStátusz } from './useSerultStatusz';
 import { useVéCsökkenés } from './useVeCsokkenes';
 import { VeSzorzoInfoPopup } from './VeSzorzoInfoPopup';
 import { PancelInfoPopup } from './PancelInfoPopup';
-import { collectDobásInfo, harcképtelenForrások } from '../../engine/harc/combat-roll-info';
+import { collectDobásInfo, collectManőverEllenpróbaHatások, harcképtelenForrások } from '../../engine/harc/combat-roll-info';
 import { ManoverDobasPopup } from '../dobas/ManoverDobasPopup';
 import { ManoverPicker } from './ManoverPicker';
 import './HarcScreen.css';
@@ -327,6 +327,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
           aktívTÉ={aktívTÉ}
           aktívVÉ={aktívVÉ}
           téHatások={dobásInfo().téHatások}
+          ellenpróbaHatások={collectManőverEllenpróbaHatások(session, karakter, data, hc.feltételTeljesül)}
           véCsökkentésAlap={data.konstansok.vé_csökkentés_alap}
           véCsökkentésSzorzó={véCsökkentésSzorzó}
           véCsökkentésSzorzóForrás={véCsökkentésSzorzóForrás}

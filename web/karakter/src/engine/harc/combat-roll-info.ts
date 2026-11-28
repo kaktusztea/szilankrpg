@@ -13,7 +13,7 @@ import {
 import { lookupTávfegyver, taktikaDef, helyzetDef } from '../lookup';
 import type { FegyverAlap } from '../data-types';
 
-type DobásCél = 'ké_dobás' | 'té_dobás' | 'sebzésdobás' | 'cé_dobás';
+type DobásCél = 'ké_dobás' | 'té_dobás' | 'sebzésdobás' | 'cé_dobás' | 'manőver_ellenpróba';
 
 /**
  * A Támadó/Célzó k20 dobás NYERS sebzés-Előnye (a sebzésdobásra tovább adott Előny), §065:
@@ -178,6 +178,17 @@ export function collectKéDobásInfo(
   const { hatások, letiltók } = collectSessionHatások(session, karakter, data, new Set(['ké_dobás']), undefined, feltételTeljesül);
   // automatikusKudarc: a `letilt` ké_dobás források (md/081 Automatikus kudarc: KÉ dobás → utolsónak cselekedhetsz a körben).
   return { kéHatások: hatások, automatikusKudarc: letiltók };
+}
+
+/**
+ * Előny/Hátrány sources on the own Manőver Ellenpróba roll: every active source (helyzet / taktika / státusz / fortély)
+ * effect with `cél: manőver_ellenpróba` (md/081).
+ * Only the actor's own roll (aktív mode); in passzív mode the opponent rolls.
+ */
+export function collectManőverEllenpróbaHatások(
+  session: Session, karakter: Karakter, data: GameData, feltételTeljesül?: (feltétel: unknown) => boolean,
+): DobásHatás[] {
+  return collectSessionHatások(session, karakter, data, new Set(['manőver_ellenpróba']), undefined, feltételTeljesül).hatások;
 }
 
 /**

@@ -4,11 +4,12 @@ import { resolve } from 'path';
 import { loadGameDataSync } from '../../__tests__/load-gamedata';
 import { calcHarcComputed } from './harc-computed';
 import { elsődlegesMód } from './fegyver-calc';
-import { collectDobásInfo, collectCéDobásInfo, collectKéDobásInfo, harcképtelenForrások, helyzetDobásMegjegyzések, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
+import { collectDobásInfo, collectCéDobásInfo, collectKéDobásInfo, collectManőverEllenpróbaHatások, harcképtelenForrások, helyzetDobásMegjegyzések, fegyverSpBónuszok, netElőnySzint, sebzésPáncélDelta, távjellegMátrixKulcs, type DobásHatás } from './combat-roll-info';
 import type { Session, Karakter } from '../types';
 import type { GameData } from '../data-loader';
 import type { SebzésjellegPáncélMátrix, FegyverAlap } from '../data-types';
 import { fortélyDef, taktikaDef } from '../lookup';
+import { státuszKulcs } from '../statusz';
 
 // Minimal fixtures - only the fields collectDobásInfo touches for the taktika path.
 function makeData(): GameData {
@@ -329,5 +330,34 @@ describe('helyzetDobásMegjegyzések / Fegyverrántás meglepetésből', () => {
     expect(netElőnySzint(collectKéDobásInfo(session, k, data).kéHatások)).toBe(1);
     expect(data.harciHelyzetek.find(h => h.id === 'fegyverrántás')?.kizár_helyzetek).toContain('fegyverrántás_meglepetésből');
     expect(data.harciHelyzetek.find(h => h.id === 'fegyverrántás_meglepetésből')?.kizár_helyzetek).toContain('fegyverrántás');
+  });
+});
+
+// Manőver Ellenpróba E/H - data-driven: every státusz fok with a `manőver_ellenpróba` E/H effect yields exactly that level.
+describe('collectManőverEllenpróbaHatások - státuszok (adatvezérelt)', () => {
+  const data = loadGameDataSync();
+  const alap: Karakter = JSON.parse(readFileSync(resolve(__dirname, '../../../../../data/karakter/test_karakter2.json'), 'utf-8'));
+  const szint = (státuszok: string[]) => {
+    const session = { ...alap.session, aktív_taktikák: [], aktív_helyzetek: [], aktív_státuszok: státuszok } as Session;
+    return netElőnySzint(collectManőverEllenpróbaHatások(session, { ...alap, session } as Karakter, data));
+  };
+  const esetek = data.statuszok.flatMap(st => st.fokok.flatMap(f => {
+    const hatások = f.hatások.filter(h => h.cél === 'manőver_ellenpróba' && (h.mód === 'előny' || h.mód === 'hátrány'));
+    if (!hatások.length) return [];
+    const kulcs = státuszKulcs({ id: st.id, ...(st.alkategóriák?.length ? { alkategória: st.alkategóriák[0] } : {}), fok: f.fok });
+    const elvárt = Math.max(-2, Math.min(2, hatások.reduce((a, h) => a + (h.érték ?? 0), 0)));
+    return [{ kulcs, elvárt }];
+  }));
+
+  it('van legalább egy ilyen státusz az adatban (a teszt nem üresen fut)', () => {
+    expect(esetek.length).toBeGreaterThan(0);
+  });
+
+  it.each(esetek)('$kulcs → $elvárt', ({ kulcs, elvárt }) => {
+    expect(szint([kulcs])).toBe(elvárt);
+  });
+
+  it('státusz nélkül 0', () => {
+    expect(szint([])).toBe(0);
   });
 });

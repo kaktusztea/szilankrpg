@@ -542,9 +542,13 @@ manőverek:
     aktív:
       - "Ha sebzésed átment az esetleges páncélon: ellenfeled Vérző (1) közepesen státuszba kerül."
       - "Nincs fegyver sebzés: a Vérző (1) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
+      - "Ha Vérző (1) ellenfélre (akár újra) alkalmazod: Vérző (2) erősen státuszba kerül (Újrapróbálkozás: Célszám +2)."
+      - "Ha Vérző (2) ellenfélre alkalmazod: csak sima Sebzés dobás, más hatás nincs (Vérzést okozó csapdánál is: sima k20 Sebzés)."
     passzív:
       - "Ha ellenfeled sebzése átment az esetleges páncélodon: Vérző (1) közepesen státuszba kerülsz."
       - "Nincs fegyver sebzés: a Vérző (1) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
+      - "Ha már Vérző (1) státuszban vagy (akár újra): Vérző (2) erősen státuszba kerülsz."
+      - "Ha már Vérző (2) státuszban vagy: csak sima Sebzés dobás ér, más hatás nincs (Vérzést okozó csapdánál is: sima k20 Sebzés)."
   id: "véreztetés_1"
   követelmények:
     - { erősség: "erős", típus: "fortély", név: "élettan", érték: 1 }
@@ -564,9 +568,13 @@ manőverek:
     aktív:
       - "Ha sebzésed átment az esetleges páncélon: ellenfeled Vérző (2) erősen státuszba kerül."
       - "Nincs fegyver sebzés: a Vérző (2) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
+      - "Ha Vérző (1) ellenfélre alkalmazod: Vérző (2) erősen státuszba kerül, nincs más extra (Újrapróbálkozás: Célszám +2)."
+      - "Ha Vérző (2) ellenfélre alkalmazod: csak sima Sebzés dobás, más hatás nincs (Vérzést okozó csapdánál is: sima k20 Sebzés)."
     passzív:
       - "Ha ellenfeled sebzése átment az esetleges páncélodon: Vérző (2) erősen státuszba kerülsz."
       - "Nincs fegyver sebzés: a Vérző (2) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
+      - "Ha már Vérző (1) státuszban vagy: Vérző (2) erősen státuszba kerülsz, nincs más extra."
+      - "Ha már Vérző (2) státuszban vagy: csak sima Sebzés dobás ér, más hatás nincs (Vérzést okozó csapdánál is: sima k20 Sebzés)."
   id: "véreztetés_2"
   követelmények:
     - { erősség: "erős", típus: "fortély", név: "élettan", érték: 1 }

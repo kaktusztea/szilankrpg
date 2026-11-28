@@ -47,6 +47,8 @@ interface Props {
   aktívVÉ: number | null;
   /** Aktív TÉ-dobás hatások (helyzet/státusz Előny/Hátrány) - kezdőszint + forrás-sor, mint a Támadó dobásnál. */
   téHatások?: DobásHatás[];
+  /** Own Manőver Ellenpróba E/H sources (every active source with `cél: manőver_ellenpróba`) - added to the Normál requirement-miss Hátrány, clamp [-2,+2]. */
+  ellenpróbaHatások?: DobásHatás[];
   /** `konstansok.yaml` → `vé_csökkentés_alap` (Fegyverviszony bázis) - a rontott V fázis VÉ-csökkentéséhez. */
   véCsökkentésAlap?: Record<Fegyverviszony, number>;
   /** Taktika-eredetű szorzó a Fegyverviszony-alapú VÉ csökkentésre (pl. Roham: 2) - mint a Támadó dobásnál. */
@@ -67,7 +69,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onTéDobás, harcképtelen = false, onClose }: Props) {
+export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, manőverAlap, aktívTÉ, aktívVÉ, téHatások = [], ellenpróbaHatások = [], véCsökkentésAlap, véCsökkentésSzorzó, véCsökkentésSzorzóForrás, helyzetVéCsökkentés = [], fegyverExtrák, extraDefs, extraKontextus, onTéDobás, harcképtelen = false, onClose }: Props) {
   const könnyítés = mód === 'aktív' ? helyzetKönnyítés(session) : { meglepetés: false, orvtámadás: false };
   const vanKönnyítés = könnyítés.meglepetés || könnyítés.orvtámadás;
   const aktívFegyver = mód === 'aktív' ? aktívFegyverInfo(karakter, session, data) : null;
@@ -121,7 +123,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
   const követelményKész = !vanKövetelmény || követelményDöntés !== 'pending';
   const követelményKudarc = követelményDöntés === 'erős';
   // Hátrány-2 az Ellenpróbán, ha a döntés "normál" (Normál hiány).
-  const ellenpróbaHátrány = követelményDöntés === 'normál' ? ELLENPRÓBA_NORMÁL_HIÁNY_EH : null;
+  // + the own E/H sources (státusz); summed with sign, clamp [-2,+2] (md/081).
+  const ellenpróbaForrások: DobásHatás[] = mód !== 'aktív' ? [] : [
+    ...(követelményDöntés === 'normál'
+      ? [{ forrás: 'Követelmény hiány (Normál)', cél: 'manőver_ellenpróba' as const, operátor: 'hátrány' as const, érték: ELLENPRÓBA_NORMÁL_HIÁNY_EH }]
+      : []),
+    ...ellenpróbaHatások,
+  ];
+  const ellenpróbaSzint = netElőnySzint(ellenpróbaForrások);
 
   const fázisSikeresM = (i: number, e: FázisEredmény) => manőverFázisSikeres(fázisok[i], e, manőver);
 
@@ -274,11 +283,14 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
       return (
         <div className="manover-fazis-info">
           {dobható && !eDobás && (
-            <EllenprobaParbaj alap={ellenpróbaAlap} kocka={ELLENPRÓBA_KOCKA} hátrány={ellenpróbaHátrány} célszám={manőver.nehézség} />
+            <EllenprobaParbaj alap={ellenpróbaAlap} kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaSzint} célszám={manőver.nehézség} />
+          )}
+          {dobható && !eDobás && ellenpróbaForrások.length > 0 && (
+            <ForrasLista hatások={ellenpróbaForrások} szint={ellenpróbaSzint} alapSzint={ellenpróbaSzint} onVissza={() => {}} />
           )}
           {!eDobás && kapszulák}
           {dobható && (
-            <ManoverDobasSor alap={ellenpróbaAlap} alapLabel="Alap" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaHátrány ?? 0}
+            <ManoverDobasSor alap={ellenpróbaAlap} alapLabel="Alap" kocka={ELLENPRÓBA_KOCKA} szint={ellenpróbaSzint}
               dobás={eDobás} setDobás={onEDobás}
               cél={<><strong className="manover-celszam-ertek">{manőver.nehézség}</strong> + ellen MA</>} />
           )}

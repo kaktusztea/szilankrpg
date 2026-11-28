@@ -94,16 +94,16 @@ export function ManoverKapszulak({ vanSzit, vanMp, szitÖsszeg, szitLehetetlen, 
 }
 
 /** Ellenpróba one-line duel: `<alap> + k10 [H-2] vs <Nehézség> + MA` (the pills below modify the left side). */
-export function EllenprobaParbaj({ alap, kocka, hátrány, célszám }: {
+export function EllenprobaParbaj({ alap, kocka, szint, célszám }: {
   alap: number; kocka: number;
-  /** Fixed Hátrány level from a Normál requirement miss (e.g. -2), or null. */
-  hátrány: number | null;
+  /** Net Előny/Hátrány level of the roll (requirement miss + státusz), [-2,+2]; 0 = none. */
+  szint: number;
   célszám: number;
 }) {
   return (
     <div className="manover-ep-parbaj">
       <span>{alap} <span className="manover-ep-op">+</span> k{kocka}
-        {hátrány != null && <span className="manover-hatrany2 manover-ep-hatrany">H{hátrány}</span>}
+        {szint !== 0 && <span className="manover-hatrany2 manover-ep-hatrany">{szint > 0 ? `E+${szint}` : `H${szint}`}</span>}
       </span>
       <span className="manover-ep-vs">vs</span>
       <span><span className="manover-celszam-ertek">{célszám}</span> <span className="manover-ep-op">+</span> <span className="manover-ep-ma">MA</span></span>
