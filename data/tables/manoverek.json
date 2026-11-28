@@ -1303,15 +1303,23 @@
         "sorok": [
           {
             "érték": -2,
-            "leírás": "Szúró"
+            "leírás": "Szúró",
+            "feltétel": "fegyver_sebzésjelleg:szúró"
           },
           {
             "érték": 0,
-            "leírás": "Vágás egyenes penge"
+            "leírás": "Vágás egyenes penge",
+            "feltétel": "fegyver_sebzésjelleg:vágó-egyenes"
           },
           {
             "érték": 2,
-            "leírás": "Vágás íves penge"
+            "leírás": "Vágás íves penge",
+            "feltétel": "fegyver_sebzésjelleg:vágó-íves"
+          },
+          {
+            "érték": 99,
+            "leírás": "Zúzó fegyver: nem alkalmas véreztetésre",
+            "feltétel": "fegyver_sebzésjelleg:zúzó"
           }
         ]
       }
@@ -1355,15 +1363,23 @@
         "sorok": [
           {
             "érték": -2,
-            "leírás": "Szúró"
+            "leírás": "Szúró",
+            "feltétel": "fegyver_sebzésjelleg:szúró"
           },
           {
             "érték": 0,
-            "leírás": "Vágás egyenes penge"
+            "leírás": "Vágás egyenes penge",
+            "feltétel": "fegyver_sebzésjelleg:vágó-egyenes"
           },
           {
             "érték": 2,
-            "leírás": "Vágás íves penge"
+            "leírás": "Vágás íves penge",
+            "feltétel": "fegyver_sebzésjelleg:vágó-íves"
+          },
+          {
+            "érték": 99,
+            "leírás": "Zúzó fegyver: nem alkalmas véreztetésre",
+            "feltétel": "fegyver_sebzésjelleg:zúzó"
           }
         ]
       }

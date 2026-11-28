@@ -4430,7 +4430,9 @@ Megjegyzés: a `calcFortelyMods` / `calcTaktikaMods` / `értékCélra` minden nu
   `forrás_korlát` struktúra - YAGNI; második ilyen esetnél általánosítandó). A taktika-feltételes fortély-módosító
   a fortély-csoportba tartozik, a plafonon kívül.
 - **Prefix-vokabulár**: a `konstansok.yaml → feltétel_prefixek` tartalmazza a `fortély`, `képzettség`,
-  `manőver_állapot`, `ellenfél_fegyver_sebzésjelleg` prefixeket is.
+  `manőver_állapot`, `ellenfél_fegyver_sebzésjelleg`, `fegyver_sebzésjelleg` prefixeket is. A `fegyver_sebzésjelleg:<jelleg>`
+  a SAJÁT aktív fegyver elsődleges módjának `jelleg`-ét nézi (`szitFeltételTeljesül`, manőver helyzetfüggő módosító
+  auto-választás, pl. Véreztetés; másodlagos módnál kézi átkattintás).
 - **Backward-compat**: nincs; a régi localStorage invalidálható.
 - **Fortély `mód` build-enforce (KÉSZ, 2026-09-20)**: `konstansok.yaml → effekt_módok` kanonikus lista +
   `data/gen/fortelyok.py` validálja ellene. Az egységes mód-enum így a fortélynál is

@@ -111,7 +111,7 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 ### Feltétel rendszer
 - String feltétel: `"prefix:érték"` → aktívFeltételek Set lookup
 - Strukturált: `[{forrás, operátor, érték}]` → computed/session/ctx lookup
-- Prefixek: `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `fegyverfogás:`
+- Prefixek: `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `fegyverfogás:`, `fegyver_sebzésjelleg:` (aktív fegyver elsődleges módjának `jelleg`-e, pl. Véreztetés sebzés típus auto-választás)
 
 ## Szabályrendszer (md/)
 - Éles: `/repo/github/szilank.code/md/` - tartalomjegyzék: `szabalyrendszer.md`

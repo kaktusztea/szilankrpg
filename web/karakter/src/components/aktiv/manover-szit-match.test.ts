@@ -50,6 +50,19 @@ describe('szitFeltételTeljesül', () => {
     expect(szitFeltételTeljesül('fegyver_kategória:romboló', karakter, session(), makeData())).toBe(false);
   });
 
+  it('fegyver_sebzésjelleg: az aktív fegyver ELSŐDLEGES módjának jellege (Véreztetés)', () => {
+    expect(szitFeltételTeljesül('fegyver_sebzésjelleg:szúró', karakter, session(), makeData())).toBe(true);
+    expect(szitFeltételTeljesül('fegyver_sebzésjelleg:vágó-egyenes', karakter, session(), makeData())).toBe(false);
+    // puszta kéz → nincs aktív fegyver → nem illik (kézi)
+    expect(szitFeltételTeljesül('fegyver_sebzésjelleg:szúró', karakter, session({ aktív_fegyver_index: -1 }), makeData())).toBe(false);
+    const tábla: ModositoTabla[] = [{ kategória: 'Fegyver sebzés típus', mód: 'single', sorok: [
+      { érték: -2, leírás: 'Szúró', feltétel: 'fegyver_sebzésjelleg:szúró' },
+      { érték: 0, leírás: 'Vágás egyenes penge', feltétel: 'fegyver_sebzésjelleg:vágó-egyenes' },
+      { érték: 99, leírás: 'Zúzó', feltétel: 'fegyver_sebzésjelleg:zúzó' },
+    ] } as ModositoTabla];
+    expect(szitModKezdőÁllapot(tábla, karakter, session(), makeData()).single['Fegyver sebzés típus']).toBe(0);
+  });
+
   it('taktika: az aktív taktikák feltétel-kulcsa', () => {
     expect(szitFeltételTeljesül('taktika:roham', karakter, session({ aktív_taktikák: [{ név: 'Roham' }] as never }), makeData())).toBe(true);
     expect(szitFeltételTeljesül('taktika:roham', karakter, session(), makeData())).toBe(false);

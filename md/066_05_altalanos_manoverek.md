@@ -541,7 +541,8 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
   - Fegyver sebzés típus:
     - `-2`: Szúró
     - `+0`: Vágás egyenes penge
-    - `+2` Vágás íves penge
+    - `+2`: Vágás íves penge
+    - `99`: Zúzó fegyver → a Manőver nem kísérelhető meg
 - **Hatás**:
   - Státusz: [Vérző (1)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-1-k%C3%B6zepesen)
   - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést
@@ -555,7 +556,8 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
   - Fegyver sebzés típus:
     - `-2`: Szúró
     - `+0`: Vágás egyenes penge
-    - `+2` Vágás íves penge
+    - `+2`: Vágás íves penge
+    - `99`: Zúzó fegyver → a Manőver nem kísérelhető meg
 - **Hatás**:
   - Státusz: [Vérző (2)](082_statuszok.md#%EF%B8%8F-v%C3%A9rz%C5%91-2-er%C5%91sen)
   - nincs fegyver sebzés, hanem a fenti Hatás / kör alkalmazódik rögtön amíg el nem állítják a vérzést

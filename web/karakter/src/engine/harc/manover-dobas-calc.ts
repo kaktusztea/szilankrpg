@@ -108,7 +108,8 @@ export function extraHordozóNév(extraId: string, karakter: Karakter, session: 
 /**
  * Egy helyzetfüggő módosító sor `feltétel` STRING-je (`"prefix:érték"`) teljesül-e a jelen manőver-
  * kontextusban. Támogatott prefixek: `fegyver_extra:<id>` (az aktív fegyver VAGY a használt pajzs hordozza-e),
- * `taktika:<id>` / `harci_helyzet:<id>` / `fegyverfogás:<id>` (aktív feltételek), `fegyver_kategória:<kat>`.
+ * `taktika:<id>` / `harci_helyzet:<id>` / `fegyverfogás:<id>` (aktív feltételek), `fegyver_kategória:<kat>`,
+ * `fegyver_sebzésjelleg:<jelleg>` (the active weapon's PRIMARY mode `jelleg`, e.g. "vágó-íves").
  * Ismeretlen prefix / nincs feltétel → false (nem auto-matchel, marad kézi).
  */
 export function szitFeltételTeljesül(feltétel: string | undefined, karakter: Karakter, session: Session, data: GameData): boolean {
@@ -122,6 +123,7 @@ export function szitFeltételTeljesül(feltétel: string | undefined, karakter: 
     const fdef = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
     return fdef?.kategória === érték;
   }
+  if (prefix === 'fegyver_sebzésjelleg') return aktívFegyverInfo(karakter, session, data)?.sebzésMódja === érték;
   // taktika / harci_helyzet / fegyverfogás → az aktív feltétel-kulcsok között.
   return buildAktívFeltételek(session, data).has(feltétel);
 }
