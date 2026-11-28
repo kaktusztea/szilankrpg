@@ -16,7 +16,7 @@ Az **Ellenfél** teszi. Sima (extra) támadás, ami ha talál, a Manőver automa
 
 #### `2.` Végrehajtás
 
-Manővert végző teszi aktuális, fegyveres `TÉ` értékkel. Sikeréhez sebzést érő támadás szükséges `TÉ:+5` módosítóval, de nem okoz sebet. Ha a támadás sikertelen, a Manőver is. Azért dobjuk ezt az Ellenpróba előtt, mert ez ad gyorsabban eredményt 🔆
+Manővert végző teszi aktuális, fegyveres `TÉ` értékkel. Alapeset: sikeréhez sebzést érő támadás szükséges `TÉ:+5` módosítóval, de nem okoz sebet. Ha a támadás sikertelen, a Manőver is. Azért dobjuk ezt az Ellenpróba előtt, mert ez ad gyorsabban eredményt 🔆
 
 #### `3.` Ellenpróba
 
@@ -96,9 +96,12 @@ Az egyes Manőverek adatlapján található **Helyzetfüggő módosítók** szin
 
 Belharc körülmények (KM):
   -6: Testméret / páncél / Erő hátrány
-  -3: Testméret / páncél / Erő előny
+  -3: Testméret / páncél / Erő hátrány
   +3: Testméret / páncél / Erő előny
   +6: Testméret / páncél / Erő előny
+
+-2: Újrapróbálkozás
+  → az ellenfél már számít rá
 
 Adott Manőver - Helyzetfüggő módosítók ∓
 ```
@@ -113,9 +116,6 @@ Belharc körülmények (KM): **mindegyik** belharcos manőverre érvényes. Ez a
 
 Belharcos manővereknél csak:
   +2 / Belharc fortély fok (védekező)
-
-+2: Újrapróbálkozás
-  → az ellenfél már számít rá
 ```
 
 Az **Ellenpróba** azt modellezi, hogy a karakter képes-e megteremteni maga számára a lehetőséget, úgymond "megágyazni magának", hogy megkísérelhesse a **Manővert**. A harcban ez helyezkedést, "pozícióba kerülést" jelent, amelynek sikere függ a karakter és ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van).
@@ -162,11 +162,6 @@ Például megfelelő **fegyvertípus**, **harci helyzet**, **anatómia**, megel�
 A Manőver ha sikeres volt, ha nem – az Ellenfél legközelebb már számít az ilyen jellegű támadásra, ezért amennyiben ismét ezt a Manővert kísérli meg az alkalmazó, akkor az **Ellenpróba** során `-2` Helyzetfüggő módosítót kapsz dobásodra. Ez a büntetés **nem** halmozódik.
 
 A fenti módosító akkor is megjelenhet, ha az Ellenfél az alkalmazót már látta korábban küzdeni és egy konkrét Manővert gyakran alkalmazni. KM dönt.
-
-### Körülmények
-
-A KM a körülményektől és szituációtól függően adhat pozitív/negatív célszám módosítót:`-3`, `+3`.\
-Sőt, a KM dönthet úgy, hogy a feltételei adottak, nincs szükség Ellenpróbára.
 
 ### Sikertelen Manőver és VÉ csökkentés
 

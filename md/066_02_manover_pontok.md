@@ -41,7 +41,7 @@ Max 2 MP / manőver
 
 Itt az angol nyelvű szerepjátékokban előforduló "counter" jellegű felhasználásra gondolunk.
 
-Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni, akkor ő is beletehet maximum `2 MP` bónuszt a dobás Nehézségébe.
+Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni, akkor ő is beletehet maximum `2 MP` bónuszt a dobás Célszámába.
 
 **Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha végül nem sikerül ellene a Manőver, akkor feleslegesen használta el a beáldozott pontot.
 
