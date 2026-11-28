@@ -75,11 +75,15 @@ Manőver Célszám =
 +1 / Manőver pont
   (max 4 költhető)
 
-+2 / Belharc fortély fok
-  (csak belharcos manővereknél)
+Belharcos manővereknél csak:
+  +2 / Belharc fortély fok
+  -2: Kisebb vagy (Erő diff min: -2)
+  +2: Nagyobb vagy  (Erő diff min: +2)
+  -2: ellenfeled fémpáncélban van
 
-[-2; +2] Testméret különbség
-[-2; +2] Páncél különbség
+[-5;+5]
+  KM által megadott +/- érték.
+  Körülmény függő könnyítés / nehezítés.
 
 Helyzetfüggő módosítók ∓
 ```
@@ -92,15 +96,11 @@ Az egyes Manőverek adatlapján található **Helyzetfüggő módosítók** szin
 +1 / Manőver Pont (ellenfél)
   (max 2 költhető)
 
-+2 / Belharc fortély fok (ellenfél)
-  (csak belharcos manővereknél)
+Belharcos manővereknél csak:
+  +2 / Belharc fortély fok (ellenfél)
 
 +2: Újrapróbálkozás
   → az ellenfél már számít rá
-
-[-5;+5]
-  KM által megadott +/- érték.
-  Körülmény függő könnyítés / nehezítés.
 ```
 
 Az **Ellenpróba** azt modellezi, hogy a karakter képes-e megteremteni maga számára a lehetőséget, úgymond "megágyazni magának", hogy megkísérelhesse a **Manővert**. A harcban ez helyezkedést, "pozícióba kerülést" jelent, amelynek sikere függ a karakter és ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van).
