@@ -540,11 +540,11 @@ manőverek:
   fázisok: "V,E"
   hatás:
     aktív:
-      - "Ellenfeled Vérző (1) közepesen státuszba került."
-      - "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      - "Ha sebzésed átment az esetleges páncélon: ellenfeled Vérző (1) közepesen státuszba kerül."
+      - "Nincs fegyver sebzés: a Vérző (1) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
     passzív:
-      - "Vérző (1) közepesen státuszba kerültél."
-      - "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      - "Ha ellenfeled sebzése átment az esetleges páncélodon: Vérző (1) közepesen státuszba kerülsz."
+      - "Nincs fegyver sebzés: a Vérző (1) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
   id: "véreztetés_1"
   követelmények:
     - { erősség: "erős", típus: "fortély", név: "élettan", érték: 1 }
@@ -562,11 +562,11 @@ manőverek:
   fázisok: "V,E"
   hatás:
     aktív:
-      - "Ellenfeled Vérző (2) erősen státuszba került."
-      - "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      - "Ha sebzésed átment az esetleges páncélon: ellenfeled Vérző (2) erősen státuszba kerül."
+      - "Nincs fegyver sebzés: a Vérző (2) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
     passzív:
-      - "Vérző (2) erősen státuszba kerültél."
-      - "Nincs fegyver sebzés: a vérzés körönként rögtön alkalmazódik, amíg el nem állítják."
+      - "Ha ellenfeled sebzése átment az esetleges páncélodon: Vérző (2) erősen státuszba kerülsz."
+      - "Nincs fegyver sebzés: a Vérző (2) Hatása minden körben érvényesül (már ebben is), amíg el nem állítják a vérzést."
   id: "véreztetés_2"
   követelmények:
     - { erősség: "erős", típus: "fortély", név: "élettan", érték: 1 }
